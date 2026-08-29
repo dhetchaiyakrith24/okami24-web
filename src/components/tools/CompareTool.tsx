@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import type { Product } from "@/types/catalog";
 import { getProduct } from "@/data/products";
 import { ProductPicker } from "@/components/tools/ProductPicker";
-import { Badge } from "@/components/ui/Badge";
 import { brandName, categoryName, familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 
 interface Row {

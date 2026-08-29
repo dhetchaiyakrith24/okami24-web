@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X, Search, Heart, ChevronDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -19,13 +18,8 @@ const PRIMARY_LINKS = [
 ];
 
 export function Header() {
-  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
-
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -121,7 +115,13 @@ export function Header() {
           mobileOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <nav className="flex flex-col gap-1 p-6" aria-label="Mobile">
+        <nav
+          className="flex flex-col gap-1 p-6"
+          aria-label="Mobile"
+          onClick={(e) => {
+            if ((e.target as HTMLElement).closest("a")) setMobileOpen(false);
+          }}
+        >
           <span className="label-mono px-3 py-2 text-xs text-foreground-dim">Products</span>
           <Link href="/products" className="rounded-lg px-3 py-3 text-base font-semibold text-foreground hover:bg-surface-2">
             All Products

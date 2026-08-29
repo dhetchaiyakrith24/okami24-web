@@ -52,9 +52,20 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   if (!product) notFound();
 
   const related = getRelatedProducts(product);
+  const brand = getBrand(product.brandId);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.displayName,
+    description: product.shortDescription,
+    brand: brand ? { "@type": "Brand", name: brand.name } : undefined,
+    category: product.categoryId,
+  };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <ProductHero product={product} />
       <ProductGallery product={product} />
       {product.isFlagship && <ProductAnatomy product={product} />}

@@ -1,24 +1,38 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useSyncExternalStore } from "react";
 
 const STORAGE_KEY = "nova-vapor-age-verified";
+const EVENT = "nova-vapor-age-gate-change";
+
+function getSnapshot() {
+  try {
+    return window.localStorage.getItem(STORAGE_KEY) === "true";
+  } catch {
+    return false;
+  }
+}
+
+// Assume verified during SSR/first paint so the gate never server-renders —
+// the client corrects this on mount via useSyncExternalStore.
+function getServerSnapshot() {
+  return true;
+}
+
+function subscribe(callback: () => void) {
+  window.addEventListener(EVENT, callback);
+  window.addEventListener("storage", callback);
+  return () => {
+    window.removeEventListener(EVENT, callback);
+    window.removeEventListener("storage", callback);
+  };
+}
 
 export function AgeGate() {
-  const [open, setOpen] = useState(false);
-  const [checked, setChecked] = useState(false);
+  const verified = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const open = !verified;
   const dialogRef = useRef<HTMLDivElement>(null);
   const confirmRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    setChecked(true);
-    try {
-      const verified = window.localStorage.getItem(STORAGE_KEY);
-      if (verified !== "true") setOpen(true);
-    } catch {
-      setOpen(true);
-    }
-  }, []);
 
   useEffect(() => {
     if (open) {
@@ -48,17 +62,17 @@ export function AgeGate() {
   function confirm() {
     try {
       window.localStorage.setItem(STORAGE_KEY, "true");
+      window.dispatchEvent(new Event(EVENT));
     } catch {
-      // ignore — localStorage may be unavailable; session-only gate is an acceptable fallback
+      // localStorage unavailable — the gate will simply reappear next load
     }
-    setOpen(false);
   }
 
   function decline() {
     window.location.href = "https://www.google.com";
   }
 
-  if (!checked || !open) return null;
+  if (!open) return null;
 
   return (
     <div
