@@ -47,13 +47,32 @@ only, are not redistributed for commercial use, and are not sourced from third-p
 | Zero Nano | https://www.salthub.com/wp-content/uploads/2025/06/zero_nano.webp | `zero_nano.webp` | `zero-nano/card.webp` | **card** — isolated | 2026-08-29 |
 | Zero Cartridge | https://www.salthub.com/wp-content/uploads/2025/05/zero_cartridge.webp | `zero_cartridge.webp` | `zero-cartridge/card.webp` | **card** — isolated (shown in "Strawberry Zero" flavor variant) | 2026-08-29 |
 
-## VOOPOO — voopoo.com / shop.voopoo.com (0/9 — in progress)
+## VOOPOO — voopoo.com / shop.voopoo.com (9/9 products have a card image)
 
-Both domains were unreachable in the prior research session (WebFetch: DNS failure on
-`www.voopoo.com`, HTTP 403 on `shop.voopoo.com`; Browser tool: persistent "Policy check
-temporarily unavailable" on every content-read call). A dedicated retry is in progress as part
-of this real-first sourcing pass; all 9 VOOPOO products currently use the `DeviceGlyph`
-fallback pending its result.
+The earlier "Policy check temporarily unavailable" Browser-tool error was confirmed to be a
+session-wide outage (reproduced even on example.com), not a voopoo.com-specific block; the
+retry worked around it with direct `curl` (pinning DNS for `www.voopoo.com`, which failed to
+resolve locally but works via `--resolve` to a known-good IP).
+
+| Product | Source URL | Original filename | Local file | Purpose | Accessed |
+|---|---|---|---|---|---|
+| ARGUS G4 | https://sen.voopoo.com.cn/www-voopoo/static/dist/uploads/202606/20260611/argus-g4.png (via voopoo.com/argus-series/argus-g4) | `argus-g4.png` | `argus-g4/card.png` | **card** — isolated; cropped locally with sharp to remove a third-party review-site award badge in the corner | 2026-08-29 |
+| ARGUS G4 mini | https://sen.voopoo.com.cn/www-voopoo/static/dist/uploads/202606/20260611/argus-g4-mini.png | `argus-g4-mini.png` | `argus-g4-mini/card.png` | **card** — isolated; badge cropped | 2026-08-29 |
+| ARGUS P3 | https://sen.voopoo.com.cn/www-voopoo/static/dist/uploads/202512/20251226/argus-p3.png | `argus-p3.png` | `argus-p3/card.png` | **card** — isolated; badge cropped | 2026-08-29 |
+| ARGUS G3 mini | https://img-va.myshopline.com/image/store/1747294110724/argus-G3-MINI-(11).jpg (via shop.voopoo.com/products/argus-g3-mini, on VOOPOO's own storefront CDN) | `argus-G3-MINI-(11).jpg` | `argus-g3-mini/card.png` | **card** — original showed the device next to its retail box; cropped locally with sharp to isolate the device alone | 2026-08-29 |
+| DRAG 6 | https://sen.voopoo.com.cn/www-voopoo/static/dist/uploads/202606/20260611/DRAG-6.png (via voopoo.com/drag-series/drag-6) | `DRAG-6.png` | `drag-6/card.png` | **card** — isolated; 4 stacked award badges cropped | 2026-08-29 |
+| DRAG S3 | https://sen.voopoo.com.cn/www-voopoo/static/dist/uploads/202606/20260603/drag-S3.png | `drag-S3.png` | `drag-s3/card.png` | **card** — isolated; 3 stacked award badges cropped | 2026-08-29 |
+| DRAG X3 | https://sen.voopoo.com.cn/www-voopoo/static/dist/uploads/202606/20260603/drag-X3.png | `drag-X3.png` | `drag-x3/card.png` | **card** — isolated; 3 stacked award badges cropped | 2026-08-29 |
+| VINCI S | https://sen.voopoo.com.cn/www-voopoo/static/dist/images/product/detail/vinci-s/part15-pro2.png (via voopoo.com/vinci-series/vinci-s) | `part15-pro2.png` | `vinci-s/card.png` | **card** — isolated, no badge, used as-is | 2026-08-29 |
+| VMATE i3 | https://sen.voopoo.com.cn/www-voopoo/static/dist/uploads/202509/20250912/vmate-i3.png (via voopoo.com/v-series/vmate-i3) | `vmate-i3.png` | `vmate-i3/card.png` | **card** — isolated, no badge, used as-is | 2026-08-29 |
+
+All 9 source images are opaque white-studio-background PNGs/JPG hosted on VOOPOO's own domains
+(`voopoo.com.cn` CDN used by voopoo.com, and the Shopline CDN backing the official
+shop.voopoo.com storefront) — not third-party retailers. 7 of the 9 originals carried small
+review-site award badges (igeekphone, MUSE Design Awards, Top Vapelier, Versed Vaper) baked
+into the top-left corner; since every source image shared the same plain white background and
+device position, those badges were cropped out locally with `sharp` (Node) before use, keeping
+only the isolated device.
 
 ## Notes on card-image quality
 

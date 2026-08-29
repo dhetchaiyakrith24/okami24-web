@@ -29,7 +29,18 @@ export const voopooProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C, 5V/2A (~45 min full charge)",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/argus-g4/card.png",
+        alt: "VOOPOO ARGUS G4, orange-to-red gradient colourway, isolated product shot",
+        angle: "Front, isolated (cropped to remove a third-party review-site award badge)",
+        transparentBackground: false,
+        sourceName: "VOOPOO",
+        sourceUrl: "https://www.voopoo.com/argus-series/argus-g4",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1650mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–35W", sourceStatus: "verified" },
@@ -106,7 +117,18 @@ export const voopooProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/argus-g4-mini/card.png",
+        alt: "VOOPOO ARGUS G4 mini, lilac colourway, isolated product shot",
+        angle: "Front, isolated (cropped to remove a third-party review-site award badge)",
+        transparentBackground: false,
+        sourceName: "VOOPOO",
+        sourceUrl: "https://www.voopoo.com/argus-series/argus-g4-mini",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1650mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified" },
@@ -153,7 +175,18 @@ export const voopooProducts: Product[] = [
       beginnerFriendly: false,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/argus-p3/card.png",
+        alt: "VOOPOO ARGUS P3, blue colourway, screen-on isolated product shot",
+        angle: "Front, isolated (cropped to remove a third-party review-site award badge)",
+        transparentBackground: false,
+        sourceName: "VOOPOO",
+        sourceUrl: "https://www.voopoo.com/argus-series/argus-p3",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1500mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified" },
@@ -200,7 +233,18 @@ export const voopooProducts: Product[] = [
       weightG: 41,
       dimensions: "95.3 × 25.8 × 13.7 mm",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/argus-g3-mini/card.png",
+        alt: "VOOPOO ARGUS G3 mini, Midnight Black colourway, isolated product shot",
+        angle: "Front, isolated (cropped from a device+retail-box shot to show the device alone)",
+        transparentBackground: false,
+        sourceName: "VOOPOO",
+        sourceUrl: "https://shop.voopoo.com/products/argus-g3-mini",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1350mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "30W (auto-adjusts to pod, fixed wattage)", sourceStatus: "verified" },
@@ -254,7 +298,18 @@ export const voopooProducts: Product[] = [
       beginnerFriendly: false,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/drag-6/card.png",
+        alt: "VOOPOO DRAG 6, brown colourway, isolated product shot",
+        angle: "Front, isolated (cropped to remove third-party review-site award badges)",
+        transparentBackground: false,
+        sourceName: "VOOPOO",
+        sourceUrl: "https://www.voopoo.com/drag-series/drag-6",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "4400mAh built-in (two 2200mAh cells)", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "220W", sourceStatus: "verified" },
@@ -315,7 +370,18 @@ export const voopooProducts: Product[] = [
       beginnerFriendly: false,
       chargingType: "USB-C, 5V/2A",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/drag-s3/card.png",
+        alt: "VOOPOO DRAG S3, cream/gold colourway, isolated product shot",
+        angle: "Front, isolated (cropped to remove third-party review-site award badges)",
+        transparentBackground: false,
+        sourceName: "VOOPOO",
+        sourceUrl: "https://www.voopoo.com/drag-series/drag-s3",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "3000mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–60W", sourceStatus: "verified" },
@@ -363,7 +429,18 @@ export const voopooProducts: Product[] = [
       beginnerFriendly: false,
       chargingType: "USB-C, 5V/2A (device); external cell charged separately",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/drag-x3/card.png",
+        alt: "VOOPOO DRAG X3, black colourway, isolated product shot",
+        angle: "Front, isolated (cropped to remove third-party review-site award badges)",
+        transparentBackground: false,
+        sourceName: "VOOPOO",
+        sourceUrl: "https://www.voopoo.com/drag-series/drag-x3",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "Single external 18650 or 21700 cell (not included)", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–80W", sourceStatus: "verified" },
@@ -422,7 +499,18 @@ export const voopooProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C, 5V/1A",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/vinci-s/card.png",
+        alt: "VOOPOO VINCI S, teal-to-gold gradient colourway, isolated product shot",
+        angle: "Front, isolated",
+        transparentBackground: false,
+        sourceName: "VOOPOO",
+        sourceUrl: "https://www.voopoo.com/vinci-series/vinci-s",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "2000mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–40W", sourceStatus: "verified" },
@@ -472,7 +560,18 @@ export const voopooProducts: Product[] = [
       chargingType: "USB-C, 2A",
       dimensions: "103 × 28.5 × 15.1 mm",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/vmate-i3/card.png",
+        alt: "VOOPOO VMATE i3, teal gradient colourway, isolated product shot",
+        angle: "Front, isolated",
+        transparentBackground: false,
+        sourceName: "VOOPOO",
+        sourceUrl: "https://www.voopoo.com/v-series/vmate-i3",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1500mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified" },
