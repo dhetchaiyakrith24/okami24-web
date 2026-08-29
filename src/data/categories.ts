@@ -1,0 +1,53 @@
+import type { Category } from "@/types/catalog";
+
+export const categories: Category[] = [
+  {
+    id: "pod-systems",
+    slug: "pod-systems",
+    name: "Open-System Pod Devices",
+    shortName: "Pod Systems",
+    description:
+      "Refillable pod devices built around interchangeable coil pods — fill your own e-liquid, swap resistances, and control airflow by hand.",
+    systemTypes: ["open-pod"],
+  },
+  {
+    id: "pod-kits",
+    slug: "pod-kits",
+    name: "Pod Kits & Pod Mods",
+    shortName: "Pod Kits",
+    description:
+      "Higher-output pod devices with chip-driven firmware, adjustable wattage, and swappable resistance pod platforms — the step up from a simple open pod.",
+    systemTypes: ["pod-kit"],
+  },
+  {
+    id: "disposables",
+    slug: "disposables",
+    name: "Disposable / Prefilled",
+    shortName: "Disposables",
+    description:
+      "Prefilled, rechargeable, single-use-cartridge devices designed to run until the e-liquid is gone — no coils to swap, no e-liquid to fill.",
+    systemTypes: ["disposable"],
+  },
+  {
+    id: "pods-cartridges",
+    slug: "pods-cartridges",
+    name: "Pods & Cartridges",
+    shortName: "Pods",
+    description:
+      "Replacement pods and cartridges for open-system and switch-style devices — the consumable side of the ecosystem.",
+    systemTypes: ["pod-cartridge"],
+  },
+  {
+    id: "coils-accessories",
+    slug: "coils-accessories",
+    name: "Coils & Accessories",
+    shortName: "Coils & Accessories",
+    description:
+      "Replacement coil heads and the accessories that keep a device running — chargers, cases, drip tips, and cleaning kits.",
+    systemTypes: ["coil", "accessory"],
+  },
+];
+
+export function getCategory(id: string): Category | undefined {
+  return categories.find((c) => c.id === id || c.slug === id);
+}

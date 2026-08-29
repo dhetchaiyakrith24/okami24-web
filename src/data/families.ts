@@ -1,0 +1,92 @@
+import type { ProductFamily } from "@/types/catalog";
+
+export const families: ProductFamily[] = [
+  {
+    id: "caliburn",
+    slug: "caliburn",
+    brandId: "uwell",
+    categoryId: "pod-systems",
+    name: "Caliburn",
+    tagline: "The open-system pod family that defined the category.",
+    description:
+      "UWELL's long-running open-system pod line. Each generation (G3 → G4 → G5) keeps the same refillable-pod, swap-the-coil formula while adding onboard displays, adjustable wattage, and gesture/touch controls.",
+  },
+  {
+    id: "argus",
+    slug: "argus",
+    brandId: "voopoo",
+    categoryId: "pod-kits",
+    name: "ARGUS",
+    tagline: "Multi-resistance pod kits built for everyday carry.",
+    description:
+      "VOOPOO's mainstream pod-kit series, built around a shared top-fill cartridge platform that accepts multiple coil resistances in one pod — from compact minis to full-screen touch models.",
+  },
+  {
+    id: "drag",
+    slug: "drag",
+    brandId: "voopoo",
+    categoryId: "pod-kits",
+    name: "DRAG",
+    tagline: "VOOPOO's flagship, chip-driven pod mods.",
+    description:
+      "The highest-output series in the VOOPOO lineup, running GENE-series chips with large color/touch displays, external or high-capacity built-in batteries, and RBA/TC modes for advanced users.",
+  },
+  {
+    id: "vinci",
+    slug: "vinci",
+    brandId: "voopoo",
+    categoryId: "pod-kits",
+    name: "VINCI",
+    tagline: "Balanced pod mods for daily flavor-chasing.",
+    description:
+      "A mid-output pod series positioned between the compact ARGUS line and the high-power DRAG series, with a focus on flavor and topside-fill convenience.",
+  },
+  {
+    id: "vmate",
+    slug: "vmate",
+    brandId: "voopoo",
+    categoryId: "pod-kits",
+    name: "VMATE",
+    tagline: "Ultra-light pods for pure portability.",
+    description:
+      "VOOPOO's lightest, most compact pod-kit series, prioritizing slim dimensions and low weight over maximum output.",
+  },
+  {
+    id: "m-bar",
+    slug: "m-bar",
+    brandId: "salthub",
+    categoryId: "disposables",
+    name: "M Bar",
+    tagline: "High-puff-count, rechargeable disposables.",
+    description:
+      "SALTHUB's disposable line, differentiated primarily by rated puff count (9K / 10K / 15K), all built around a rechargeable battery, mesh coil, and multi-mode airflow.",
+  },
+  {
+    id: "m-switch",
+    slug: "m-switch",
+    brandId: "salthub",
+    categoryId: "pod-kits",
+    name: "M Switch",
+    tagline: "A reusable body, swappable pre-filled cartridges.",
+    description:
+      "A reusable device body paired with prefilled M Switch Pod cartridges, positioned between an open-system pod and a disposable — no e-liquid filling, but a device you keep.",
+  },
+  {
+    id: "zero",
+    slug: "zero",
+    brandId: "salthub",
+    categoryId: "pod-kits",
+    name: "Zero",
+    tagline: "Compact switch-style devices with adjustable output.",
+    description:
+      "SALTHUB's second reusable cartridge platform, spanning the multi-mode Zero Pro and the ultra-compact Zero Nano, both paired with Zero Cartridge refills.",
+  },
+];
+
+export function getFamily(id: string): ProductFamily | undefined {
+  return families.find((f) => f.id === id || f.slug === id);
+}
+
+export function familiesForBrand(brandId: string): ProductFamily[] {
+  return families.filter((f) => f.brandId === brandId);
+}

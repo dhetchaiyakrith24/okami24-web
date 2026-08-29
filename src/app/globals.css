@@ -1,26 +1,128 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   Design tokens — dark tech foundation, ember + steel accents.
+   ========================================================================== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surfaces: tonal graphite steps, never pure black */
+  --surface-0: #0e0e10; /* page background */
+  --surface-1: #17181b; /* section / card background */
+  --surface-2: #1f2024; /* elevated card */
+  --surface-3: #2a2b30; /* hover / active */
+  --surface-border: #34353c;
+  --surface-border-soft: #26272c;
+
+  /* Foreground */
+  --foreground: #f3f1ec;
+  --foreground-muted: #b1afb2;
+  --foreground-dim: #78777c;
+
+  /* Accents */
+  --accent-ember: #ff6a2c;
+  --accent-ember-strong: #ff8347;
+  --accent-ember-soft: #4a2a1b;
+  --accent-steel: #6fb8d8;
+  --accent-steel-strong: #8ccbe6;
+  --accent-steel-soft: #1c3038;
+
+  /* Semantic */
+  --state-verified: #7ed08a;
+  --state-unverified: #d6ab52;
+  --state-danger: #e2685f;
+
+  /* Type scale (fluid) */
+  --text-display: clamp(2.75rem, 2rem + 3.5vw, 6rem);
+  --text-h1: clamp(2.25rem, 1.7rem + 2.4vw, 3.75rem);
+  --text-h2: clamp(1.75rem, 1.4rem + 1.5vw, 2.75rem);
+  --text-h3: clamp(1.375rem, 1.2rem + 0.8vw, 1.875rem);
+  --text-h4: clamp(1.125rem, 1.05rem + 0.3vw, 1.375rem);
+  --text-body-lg: clamp(1.0625rem, 1rem + 0.25vw, 1.25rem);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-surface-0: var(--surface-0);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-surface-border: var(--surface-border);
+  --color-surface-border-soft: var(--surface-border-soft);
+
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-dim: var(--foreground-dim);
+
+  --color-ember: var(--accent-ember);
+  --color-ember-strong: var(--accent-ember-strong);
+  --color-ember-soft: var(--accent-ember-soft);
+  --color-steel: var(--accent-steel);
+  --color-steel-strong: var(--accent-steel-strong);
+  --color-steel-soft: var(--accent-steel-soft);
+
+  --color-verified: var(--state-verified);
+  --color-unverified: var(--state-unverified);
+  --color-danger: var(--state-danger);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
 body {
-  background: var(--background);
+  background: var(--surface-0);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--accent-ember);
+  color: #14100d;
+}
+
+/* Focus visibility — never suppressed */
+:focus-visible {
+  outline: 2px solid var(--accent-ember);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Technical label style used across spec chips / metadata */
+.label-mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Thin scroll rails for horizontal product rails */
+.rail-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-3) transparent;
+}
+.rail-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.rail-scroll::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 999px;
 }
