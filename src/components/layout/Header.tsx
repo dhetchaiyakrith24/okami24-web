@@ -35,6 +35,7 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
+    <>
     <header className="sticky top-0 z-50 border-b border-surface-border-soft bg-surface-0/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-6 sm:h-20">
         <Link href="/" className="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
@@ -112,6 +113,7 @@ export function Header() {
           </button>
         </div>
       </Container>
+    </header>
 
       <div
         className={cn(
@@ -140,6 +142,6 @@ export function Header() {
           </Link>
         </nav>
       </div>
-    </header>
+    </>
   );
 }

@@ -63,8 +63,9 @@ export default function AboutPage() {
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
               Every product illustration on this site is an original, parametric vector rendering generated from
               that product&apos;s own catalog data — form factor, screen type, flagship status — rather than
-              manufacturer photography. The visual system was built from scratch for this project rather than
-              copying any referenced brand&apos;s layout.
+              manufacturer photography. Two of the three flagship pages additionally include a small gallery of
+              official campaign photography, clearly labeled with its source. The visual system itself was built
+              from scratch for this project rather than copying any referenced brand&apos;s layout.
             </p>
           </section>
 

@@ -41,7 +41,24 @@ export const uwellProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C, 5V/2A",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        src: "/assets/products/caliburn-g5/hero.jpg",
+        alt: "Official UWELL Caliburn G5 campaign image, \"Simple Tap. Supreme Taste.\"",
+        angle: "Campaign hero",
+        sourceName: "UWELL",
+        sourceUrl: "https://www.myuwell.com/",
+      },
+      {
+        kind: "official-photo",
+        src: "/assets/products/caliburn-g5/detail-01.webp",
+        alt: "UWELL Caliburn G5 GPP pod cartridge, detail view",
+        angle: "Pod detail",
+        sourceName: "UWELL",
+        sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1600mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–35W", sourceStatus: "verified" },

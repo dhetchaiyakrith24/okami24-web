@@ -26,7 +26,32 @@ export const salthubProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        src: "/assets/products/m-bar-10k/angle-01.webp",
+        alt: "Official SALTHUB M Bar 10K campaign image, \"Timeless Elegance\"",
+        angle: "Campaign hero",
+        sourceName: "SALTHUB",
+        sourceUrl: "https://www.salthub.com/",
+      },
+      {
+        kind: "official-photo",
+        src: "/assets/products/m-bar-10k/angle-02.webp",
+        alt: "SALTHUB M Bar 10K device against a night-sky backdrop",
+        angle: "Studio shot",
+        sourceName: "SALTHUB",
+        sourceUrl: "https://www.salthub.com/mbar-10k/",
+      },
+      {
+        kind: "official-photo",
+        src: "/assets/products/m-bar-10k/angle-03.webp",
+        alt: "SALTHUB M Bar 10K mini display, 4-LED battery indicator and Eco/Soft/Boost RGB status indicator",
+        angle: "Feature detail",
+        sourceName: "SALTHUB",
+        sourceUrl: "https://www.salthub.com/mbar-10k/",
+      },
+    ],
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 10,000", sourceStatus: "verified" },
       { key: "battery", label: "Battery", value: "600mAh rechargeable, USB-C", sourceStatus: "verified" },

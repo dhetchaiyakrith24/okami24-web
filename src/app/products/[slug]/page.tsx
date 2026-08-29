@@ -6,6 +6,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { ProductHero } from "@/components/product/ProductHero";
+import { ProductGallery } from "@/components/product/ProductGallery";
 import { ProductAnatomy } from "@/components/product/ProductAnatomy";
 import { FeatureGrid } from "@/components/product/FeatureGrid";
 import { SpecSheet } from "@/components/product/SpecSheet";
@@ -13,6 +14,7 @@ import { CompatibilitySection } from "@/components/product/CompatibilitySection"
 import { ProductFAQ } from "@/components/product/ProductFAQ";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { SourceNote } from "@/components/product/SourceNote";
+import { getBrand } from "@/data/brands";
 
 export function generateStaticParams() {
   return [...categories.map((c) => ({ slug: c.slug })), ...allProducts.map((p) => ({ slug: p.slug }))];
@@ -54,6 +56,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   return (
     <>
       <ProductHero product={product} />
+      <ProductGallery product={product} />
       {product.isFlagship && <ProductAnatomy product={product} />}
       <FeatureGrid product={product} />
       <SpecSheet product={product} />
