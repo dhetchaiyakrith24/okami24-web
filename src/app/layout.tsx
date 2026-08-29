@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { AgeGate } from "@/components/layout/AgeGate";
 import "./globals.css";
 
 const displayFont = Barlow_Condensed({
@@ -44,7 +47,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-surface-0 text-foreground font-body">
-        {children}
+        <AgeGate />
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -1,0 +1,44 @@
+import Link from "next/link";
+import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
+
+type ButtonVariant = "primary" | "secondary" | "ghost";
+
+const variantClasses: Record<ButtonVariant, string> = {
+  primary: "bg-ember text-[#181008] hover:bg-ember-strong",
+  secondary: "border border-surface-border text-foreground hover:border-foreground-dim hover:bg-surface-2",
+  ghost: "text-foreground-muted hover:text-foreground",
+};
+
+const baseClasses =
+  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-tight transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-ember";
+
+export function Button({
+  children,
+  variant = "primary",
+  href,
+  className,
+  onClick,
+  type = "button",
+}: {
+  children: ReactNode;
+  variant?: ButtonVariant;
+  href?: string;
+  className?: string;
+  onClick?: () => void;
+  type?: "button" | "submit";
+}) {
+  const classes = cn(baseClasses, variantClasses[variant], className);
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+  return (
+    <button type={type} onClick={onClick} className={classes}>
+      {children}
+    </button>
+  );
+}
