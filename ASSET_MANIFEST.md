@@ -1,31 +1,44 @@
 # Asset Manifest
 
-Real official photography used on this site, limited to the 3 flagship products per the
-approved hybrid-imagery plan. Every other product (25 of 28) uses the original parametric
-`DeviceGlyph` SVG illustration — no manufacturer imagery.
+Real official photography sourced under the **real-first hybrid** asset strategy: every
+catalog product is checked against its manufacturer's official site first; when a trustworthy
+isolated/studio product image is available it's used as that product's `role: "card"` asset
+(shown in the catalog card, product hero, compare picker, and home page) and any additional
+angle/detail shots become `role: "detail"` assets (shown only in the product-page gallery).
+When no trustworthy official image can be sourced, the product falls back to the original
+parametric `DeviceGlyph` SVG illustration — DeviceGlyph is never deleted, only superseded per
+product as real imagery is found.
 
 This is a non-commercial design/engineering demonstration project. These images remain the
 property of their respective brands; they are used here for illustrative/reference purposes
-only and are not redistributed for commercial use.
+only, are not redistributed for commercial use, and are not sourced from third-party retailers.
 
-| File | Product | Source URL | Fetched | Notes |
-|---|---|---|---|---|
-| `public/assets/products/caliburn-g5/hero.jpg` | UWELL Caliburn G5 | https://files.myuwell.com/uwell/ow-home-banner/G5-banner-3840-1620-20260421160504521.jpg (found via https://www.myuwell.com/) | 2026-08-29 | Official campaign banner, 3840×1620, white background with baked-in tagline text |
-| `public/assets/products/caliburn-g5/detail-01.webp` | UWELL Caliburn G5 | https://files.myuwell.com/uwell/product/caliburn-g5/pc/pic3-yandan.webp (found via https://www.myuwell.com/caliburn/caliburn-g5) | 2026-08-29 | Pod/cartridge detail shot, transparent background |
+## UWELL — myuwell.com
 
-| `public/assets/products/m-bar-10k/angle-01.webp` | SALTHUB M Bar 10K | https://img.salthub.com/mbar10k/MBar10K_01.webp (found via https://www.salthub.com/mbar-10k/) | 2026-08-29 | Official campaign banner, "Timeless Elegance" |
-| `public/assets/products/m-bar-10k/angle-02.webp` | SALTHUB M Bar 10K | https://img.salthub.com/mbar10k/MBar10K_02.webp | 2026-08-29 | Studio shot against night-sky backdrop |
-| `public/assets/products/m-bar-10k/angle-03.webp` | SALTHUB M Bar 10K | https://img.salthub.com/mbar10k/MBar10K_03.webp | 2026-08-29 | Feature detail — mini display, LED battery indicator, RGB mode indicator (confirms Eco/Soft/Boost colors match catalog data) |
+| Product | Source URL | Original filename | Local file | Purpose | Accessed |
+|---|---|---|---|---|---|
+| Caliburn G5 | https://files.myuwell.com/uwell/ow-home-banner/G5-banner-3840-1620-20260421160504521.jpg (via myuwell.com) | `G5-banner-3840-1620-...jpg` | `public/assets/products/caliburn-g5/hero.jpg` | detail (campaign banner, white bg + tagline text — not isolated enough for card use) | 2026-08-29 |
+| Caliburn G5 | https://files.myuwell.com/uwell/product/caliburn-g5/pc/pic3-yandan.webp (via myuwell.com/caliburn/caliburn-g5) | `pic3-yandan.webp` | `public/assets/products/caliburn-g5/detail-01.webp` | detail (pod/cartridge close-up, transparent bg — not the full device) | 2026-08-29 |
 
-**VOOPOO ARGUS G4** — no real photography included. `voopoo.com` and `shop.voopoo.com` were
-unreachable from this session (DNS failure via WebFetch, 403 via WebFetch, and a persistent
-"Policy check temporarily unavailable" error from the Browser-pane tool on every content-read
-call, even though page navigation itself succeeded). The ARGUS G4 page uses the same original
-`DeviceGlyph` illustration as the rest of the non-flagship catalog. This can be revisited in a
-future session if that domain becomes reachable.
+## SALTHUB — salthub.com
 
-All images are displayed via a dedicated "Gallery" section on each flagship product page
-(labeled as official campaign imagery with a source link) rather than replacing the primary
-`DeviceGlyph` illustration in the hero — this keeps the site's own visual system consistent
-across all 28 products while still surfacing real photography for the 2 flagships it was
-possible to source this session.
+| Product | Source URL | Original filename | Local file | Purpose | Accessed |
+|---|---|---|---|---|---|
+| M Bar 10K | https://img.salthub.com/mbar10k/MBar10K_01.webp (via salthub.com/mbar-10k/) | `MBar10K_01.webp` | `public/assets/products/m-bar-10k/angle-01.webp` | detail (campaign banner, "Timeless Elegance") | 2026-08-29 |
+| M Bar 10K | https://img.salthub.com/mbar10k/MBar10K_02.webp | `MBar10K_02.webp` | `public/assets/products/m-bar-10k/angle-02.webp` | detail (studio shot, night-sky backdrop) | 2026-08-29 |
+| M Bar 10K | https://img.salthub.com/mbar10k/MBar10K_03.webp | `MBar10K_03.webp` | `public/assets/products/m-bar-10k/angle-03.webp` | detail (feature callout — mini display / LED / RGB mode indicator) | 2026-08-29 |
+
+## VOOPOO — voopoo.com / shop.voopoo.com
+
+No assets yet. Both domains were unreachable in the prior session (WebFetch: DNS failure on
+`www.voopoo.com`, HTTP 403 on `shop.voopoo.com`; Browser tool: persistent "Policy check
+temporarily unavailable" on every content-read call, even though navigation itself sometimes
+succeeded). Being retried as part of the real-first sourcing pass below.
+
+## Pending — real-first sourcing pass (this session)
+
+Background research is in progress to find isolated/transparent `role: "card"` product shots
+for all 28 catalog products (not just the 3 flagships), per the approved real-first hybrid
+strategy. This section will be filled in with confirmed sources as images are downloaded;
+products without a trustworthy official isolated image keep the `DeviceGlyph` fallback and are
+noted explicitly rather than left silently unexplained.
