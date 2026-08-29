@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Product } from "@/types/catalog";
-import { DeviceGlyph } from "@/components/visual/DeviceGlyph";
+import { ProductMedia } from "@/components/visual/ProductMedia";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { brandName, formatBattery, formatWattage } from "@/lib/utils";
@@ -48,7 +48,7 @@ export function Hero({ flagship }: { flagship: Product }) {
         <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
           <div className="absolute inset-0 rounded-[2rem] border border-surface-border bg-surface-1/60 backdrop-blur-sm" />
           <div className="relative h-full w-full p-10">
-            <DeviceGlyph product={flagship} />
+            <ProductMedia product={flagship} sizes="(min-width: 1024px) 25vw, 60vw" />
           </div>
           <Link
             href={`/products/${flagship.slug}`}

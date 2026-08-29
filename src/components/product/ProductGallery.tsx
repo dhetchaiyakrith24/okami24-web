@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function ProductGallery({ product }: { product: Product }) {
-  const photos = product.assets.filter((a) => a.kind === "official-photo");
+  const photos = product.assets.filter((a) => a.kind === "official-photo" && a.role === "detail");
   if (photos.length === 0) return null;
 
   return (

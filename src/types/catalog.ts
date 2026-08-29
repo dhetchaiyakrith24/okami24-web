@@ -72,9 +72,14 @@ export interface Compatibility {
 
 export interface ProductAsset {
   kind: "official-photo" | "illustration";
+  /** "card" = isolated/transparent shot used everywhere the product appears
+   *  (catalog card, hero, picker, home rails) in place of DeviceGlyph.
+   *  "detail" = supplementary shot shown only in the product page gallery. */
+  role: "card" | "detail";
   src: string;
   alt: string;
   angle?: string;
+  transparentBackground?: boolean;
   sourceName?: string;
   sourceUrl?: string;
 }

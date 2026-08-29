@@ -1,5 +1,5 @@
 import type { Product } from "@/types/catalog";
-import { DeviceGlyph } from "@/components/visual/DeviceGlyph";
+import { ProductMedia } from "@/components/visual/ProductMedia";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
@@ -11,7 +11,7 @@ export function CompareCTA({ products }: { products: Product[] }) {
           {products.slice(0, 3).map((p, i) => (
             <div key={p.id} className="flex items-center gap-3">
               <div className="h-20 w-16 opacity-90">
-                <DeviceGlyph product={p} />
+                <ProductMedia product={p} sizes="10vw" />
               </div>
               {i < 2 && <span className="label-mono text-xs text-foreground-dim">vs</span>}
             </div>

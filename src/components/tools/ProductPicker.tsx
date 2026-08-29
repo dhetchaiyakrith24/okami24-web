@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { Search, X } from "lucide-react";
 import type { Product } from "@/types/catalog";
 import { allProducts } from "@/data/products";
-import { DeviceGlyph } from "@/components/visual/DeviceGlyph";
+import { ProductMedia } from "@/components/visual/ProductMedia";
 import { brandName } from "@/lib/utils";
 
 export function ProductPicker({
@@ -41,7 +41,7 @@ export function ProductPicker({
               <X size={12} aria-hidden />
             </button>
             <div className="h-16 w-full">
-              <DeviceGlyph product={product} />
+              <ProductMedia product={product} sizes="10vw" />
             </div>
             <p className="mt-2 text-xs font-semibold text-foreground">{product.name}</p>
             <p className="label-mono text-[0.6rem] text-foreground-dim">{brandName(product.brandId)}</p>

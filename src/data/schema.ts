@@ -23,9 +23,11 @@ const compatibilitySchema = z.object({
 
 const assetSchema = z.object({
   kind: z.enum(["official-photo", "illustration"]),
+  role: z.enum(["card", "detail"]),
   src: z.string().min(1),
   alt: z.string().min(1),
   angle: z.string().optional(),
+  transparentBackground: z.boolean().optional(),
   sourceName: z.string().optional(),
   sourceUrl: z.string().optional(),
 });

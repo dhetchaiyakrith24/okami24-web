@@ -44,6 +44,7 @@ export const uwellProducts: Product[] = [
     assets: [
       {
         kind: "official-photo",
+        role: "detail",
         src: "/assets/products/caliburn-g5/hero.jpg",
         alt: "Official UWELL Caliburn G5 campaign image, \"Simple Tap. Supreme Taste.\"",
         angle: "Campaign hero",
@@ -52,9 +53,11 @@ export const uwellProducts: Product[] = [
       },
       {
         kind: "official-photo",
+        role: "detail",
         src: "/assets/products/caliburn-g5/detail-01.webp",
         alt: "UWELL Caliburn G5 GPP pod cartridge, detail view",
         angle: "Pod detail",
+        transparentBackground: true,
         sourceName: "UWELL",
         sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5",
       },

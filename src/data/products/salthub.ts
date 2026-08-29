@@ -29,6 +29,7 @@ export const salthubProducts: Product[] = [
     assets: [
       {
         kind: "official-photo",
+        role: "detail",
         src: "/assets/products/m-bar-10k/angle-01.webp",
         alt: "Official SALTHUB M Bar 10K campaign image, \"Timeless Elegance\"",
         angle: "Campaign hero",
@@ -37,6 +38,7 @@ export const salthubProducts: Product[] = [
       },
       {
         kind: "official-photo",
+        role: "detail",
         src: "/assets/products/m-bar-10k/angle-02.webp",
         alt: "SALTHUB M Bar 10K device against a night-sky backdrop",
         angle: "Studio shot",
@@ -45,6 +47,7 @@ export const salthubProducts: Product[] = [
       },
       {
         kind: "official-photo",
+        role: "detail",
         src: "/assets/products/m-bar-10k/angle-03.webp",
         alt: "SALTHUB M Bar 10K mini display, 4-LED battery indicator and Eco/Soft/Boost RGB status indicator",
         angle: "Feature detail",

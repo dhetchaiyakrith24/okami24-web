@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Product } from "@/types/catalog";
-import { DeviceGlyph } from "@/components/visual/DeviceGlyph";
+import { ProductMedia } from "@/components/visual/ProductMedia";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { Badge } from "@/components/ui/Badge";
 import { brandName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
@@ -22,7 +22,7 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
         <FavoriteButton slug={product.slug} className="absolute right-3 top-3" />
         <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
-          <DeviceGlyph product={product} />
+          <ProductMedia product={product} sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw" />
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 import type { Product } from "@/types/catalog";
-import { DeviceGlyph } from "@/components/visual/DeviceGlyph";
+import { ProductMedia } from "@/components/visual/ProductMedia";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -45,7 +45,7 @@ export function EditorialSplit({
         <div className={cn("relative mx-auto aspect-square w-full max-w-sm p-8", reverse && "lg:order-1")}>
           <div className="absolute inset-0 rounded-[2rem] border border-surface-border-soft bg-surface-2/30" />
           <div className="relative h-full w-full p-6">
-            <DeviceGlyph product={product} />
+            <ProductMedia product={product} sizes="(min-width: 1024px) 25vw, 60vw" />
           </div>
         </div>
       </Container>

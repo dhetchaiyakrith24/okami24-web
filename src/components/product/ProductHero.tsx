@@ -1,5 +1,5 @@
 import type { Product } from "@/types/catalog";
-import { DeviceGlyph } from "@/components/visual/DeviceGlyph";
+import { ProductMedia } from "@/components/visual/ProductMedia";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -59,7 +59,7 @@ export function ProductHero({ product }: { product: Product }) {
           <div className="absolute inset-0 rounded-[2rem] border border-surface-border bg-surface-0/60" />
           <FavoriteButton slug={product.slug} className="absolute right-4 top-4" />
           <div className="relative h-full w-full p-10">
-            <DeviceGlyph product={product} />
+            <ProductMedia product={product} sizes="(min-width: 1024px) 30vw, 60vw" />
           </div>
         </div>
       </Container>
