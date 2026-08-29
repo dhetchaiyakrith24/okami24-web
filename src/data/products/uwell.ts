@@ -44,6 +44,16 @@ export const uwellProducts: Product[] = [
     assets: [
       {
         kind: "official-photo",
+        role: "card",
+        src: "/assets/products/caliburn-g5/card.png",
+        alt: "UWELL Caliburn G5, Mystic Forest colourway, isolated product shot",
+        angle: "Front, isolated",
+        transparentBackground: true,
+        sourceName: "UWELL",
+        sourceUrl: "https://www.myuwell.com/products/caliburn",
+      },
+      {
+        kind: "official-photo",
         role: "detail",
         src: "/assets/products/caliburn-g5/hero.jpg",
         alt: "Official UWELL Caliburn G5 campaign image, \"Simple Tap. Supreme Taste.\"",
@@ -137,7 +147,18 @@ export const uwellProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/caliburn-g5-lite/card.webp",
+        alt: "UWELL Caliburn G5 Lite, orange colourway, isolated product shot",
+        angle: "3/4, isolated",
+        transparentBackground: true,
+        sourceName: "UWELL",
+        sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1600mAh, long-run", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "35W", sourceStatus: "verified" },
@@ -190,7 +211,18 @@ export const uwellProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/caliburn-g5-lite-se/card.webp",
+        alt: "UWELL Caliburn G5 Lite SE, lilac leather-texture colourway, isolated product shot",
+        angle: "3/4, isolated",
+        transparentBackground: true,
+        sourceName: "UWELL",
+        sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1600mAh, long-run", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "35W", sourceStatus: "verified" },
@@ -235,7 +267,18 @@ export const uwellProducts: Product[] = [
       beginnerFriendly: false,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/caliburn-g4-pro-koko/card.png",
+        alt: "UWELL Caliburn G4 Pro KOKO, gunmetal gray colourway, isolated product shot",
+        angle: "Front, isolated",
+        transparentBackground: true,
+        sourceName: "UWELL",
+        sourceUrl: "https://www.myuwell.com/products/caliburn",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "2000mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "35W", sourceStatus: "verified" },
@@ -301,7 +344,18 @@ export const uwellProducts: Product[] = [
       beginnerFriendly: false,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/caliburn-g4-pro/card.png",
+        alt: "UWELL Caliburn G4 Pro, pearl-silver colourway, isolated product shot",
+        angle: "Front, isolated",
+        transparentBackground: true,
+        sourceName: "UWELL",
+        sourceUrl: "https://www.myuwell.com/products/caliburn",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1800mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "35W", sourceStatus: "verified" },
@@ -352,7 +406,18 @@ export const uwellProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C, 2A",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/caliburn-g4/card.webp",
+        alt: "UWELL Caliburn G4, Seashell White colourway, front and back isolated product shot",
+        angle: "Front + back, isolated",
+        transparentBackground: true,
+        sourceName: "UWELL",
+        sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1300mAh built-in", sourceStatus: "verified" },
       { key: "charge-time", label: "Charge time", value: "~30 minutes at 2A", sourceStatus: "verified" },
@@ -397,7 +462,18 @@ export const uwellProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C, 2A",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/caliburn-g4-mini/card.webp",
+        alt: "UWELL Caliburn G4 Mini, gunmetal gray colourway, front and back isolated product shot",
+        angle: "Front + back, isolated",
+        transparentBackground: true,
+        sourceName: "UWELL",
+        sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-mini",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1100mAh built-in", sourceStatus: "verified" },
       { key: "charge-time", label: "Charge time", value: "~58 minutes at 2A", sourceStatus: "verified" },
@@ -441,7 +517,18 @@ export const uwellProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/caliburn-g4-classic/card.png",
+        alt: "UWELL Caliburn G4 Classic, classic silver colourway, isolated product shot",
+        angle: "Front, isolated",
+        transparentBackground: true,
+        sourceName: "UWELL",
+        sourceUrl: "https://www.myuwell.com/products/caliburn",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "Treated as equivalent to the standard G4 (1300mAh) — not independently confirmed for this specific edition", sourceStatus: "unverified" },
       { key: "variant", label: "Variant", value: "Classic-finish edition of the Caliburn G4", sourceStatus: "unverified" },
@@ -485,7 +572,18 @@ export const uwellProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C, 2A",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/caliburn-g3-pro/card.png",
+        alt: "UWELL Caliburn G3 Pro, Space Gray colourway, isolated product shot",
+        angle: "Front, isolated (cropped from official colourway lineup)",
+        transparentBackground: false,
+        sourceName: "UWELL",
+        sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1000mAh, USB-C 2A charging", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–35W", sourceStatus: "verified" },
@@ -537,7 +635,18 @@ export const uwellProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/caliburn-g3-pro-koko/card.webp",
+        alt: "UWELL Caliburn G3 Pro KOKO, green and purple colourways, front and back isolated shot",
+        angle: "Angled pair, isolated",
+        transparentBackground: true,
+        sourceName: "UWELL",
+        sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "Treated as equivalent to the G3 Pro (1000mAh) — not independently confirmed for this specific edition", sourceStatus: "unverified" },
       { key: "variant", label: "Variant", value: "KOKO edition of the Caliburn G3 Pro", sourceStatus: "unverified" },

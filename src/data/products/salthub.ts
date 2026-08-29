@@ -29,6 +29,16 @@ export const salthubProducts: Product[] = [
     assets: [
       {
         kind: "official-photo",
+        role: "card",
+        src: "/assets/products/m-bar-10k/card.webp",
+        alt: "SALTHUB M Bar 10K, black-to-blue gradient, isolated product shot",
+        angle: "3/4, isolated",
+        transparentBackground: false,
+        sourceName: "SALTHUB",
+        sourceUrl: "https://www.salthub.com/mbar-10k/",
+      },
+      {
+        kind: "official-photo",
         role: "detail",
         src: "/assets/products/m-bar-10k/angle-01.webp",
         alt: "Official SALTHUB M Bar 10K campaign image, \"Timeless Elegance\"",
@@ -123,7 +133,18 @@ export const salthubProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/m-bar-9k/card.webp",
+        alt: "SALTHUB M Bar 9K, black colourway, isolated product shot",
+        angle: "3/4, isolated",
+        transparentBackground: false,
+        sourceName: "SALTHUB",
+        sourceUrl: "https://www.salthub.com/",
+      },
+    ],
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 9,000", sourceStatus: "verified" },
       { key: "battery", label: "Battery", value: "600mAh rechargeable, USB-C", sourceStatus: "verified" },
@@ -168,7 +189,18 @@ export const salthubProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C, fast charging",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/m-bar-15k/card.webp",
+        alt: "SALTHUB M Bar 15K, smoke-to-black gradient with Cola flavor window, isolated product shot",
+        angle: "3/4, isolated",
+        transparentBackground: false,
+        sourceName: "SALTHUB",
+        sourceUrl: "https://www.salthub.com/",
+      },
+    ],
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 15,000", sourceStatus: "verified" },
       { key: "coil", label: "Coil", value: "Cotton mesh coil", sourceStatus: "verified" },
@@ -212,7 +244,18 @@ export const salthubProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/m-switch-kit/card.webp",
+        alt: "SALTHUB M Switch Kit, navy body with digital battery display, isolated product shot",
+        angle: "3/4, isolated",
+        transparentBackground: false,
+        sourceName: "SALTHUB",
+        sourceUrl: "https://www.salthub.com/",
+      },
+    ],
     specifications: [
       { key: "puffs-per-pod", label: "Puffs per pod", value: "Up to 15,000", sourceStatus: "verified" },
       { key: "format", label: "Format", value: "Reusable device body + prefilled swap-in cartridges", sourceStatus: "verified" },
@@ -260,7 +303,18 @@ export const salthubProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "N/A — cartridge only",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/m-switch-pod/card.webp",
+        alt: "SALTHUB M Switch Pod, smoke-grey cartridge with Cola flavor band, isolated product shot",
+        angle: "3/4, isolated",
+        transparentBackground: false,
+        sourceName: "SALTHUB",
+        sourceUrl: "https://www.salthub.com/",
+      },
+    ],
     specifications: [
       { key: "capacity", label: "Capacity", value: "2.2mL prefilled", sourceStatus: "verified" },
       { key: "compat", label: "Compatible device", value: "M Switch Kit", sourceStatus: "verified" },
@@ -291,7 +345,18 @@ export const salthubProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "N/A — cartridge only",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/m-bar-pod/card.webp",
+        alt: "SALTHUB M Bar Pod, matte black cartridge with Grape Aloe flavor label, isolated product shot",
+        angle: "3/4, isolated",
+        transparentBackground: false,
+        sourceName: "SALTHUB",
+        sourceUrl: "https://www.salthub.com/",
+      },
+    ],
     specifications: [
       { key: "flavors", label: "Flavor range", value: "15+ flavors", sourceStatus: "verified" },
       { key: "capacity", label: "Capacity", value: "Not independently confirmed", sourceStatus: "unverified" },
@@ -323,7 +388,18 @@ export const salthubProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/zero-pro/card.webp",
+        alt: "SALTHUB Zero Pro, black pen-style device with M logo, isolated product shot",
+        angle: "3/4, isolated",
+        transparentBackground: false,
+        sourceName: "SALTHUB",
+        sourceUrl: "https://www.salthub.com/",
+      },
+    ],
     specifications: [
       { key: "puffs-per-pod", label: "Puffs per cartridge", value: "Up to 5,000", sourceStatus: "verified" },
       { key: "modes", label: "Power modes", value: "3 modes", sourceStatus: "verified" },
@@ -362,7 +438,18 @@ export const salthubProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/zero-nano/card.webp",
+        alt: "SALTHUB Zero Nano, teal compact device, isolated product shot",
+        angle: "3/4, isolated",
+        transparentBackground: false,
+        sourceName: "SALTHUB",
+        sourceUrl: "https://www.salthub.com/",
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "500mAh", sourceStatus: "verified" },
       { key: "format", label: "Format", value: "Ultra-compact reusable body, Zero Cartridge compatible", sourceStatus: "verified" },
@@ -400,7 +487,18 @@ export const salthubProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "N/A — cartridge only",
     },
-    assets: [],
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/zero-cartridge/card.webp",
+        alt: "SALTHUB Zero Cartridge, smoke-clear cartridge with Strawberry Zero label, isolated product shot",
+        angle: "3/4, isolated",
+        transparentBackground: false,
+        sourceName: "SALTHUB",
+        sourceUrl: "https://www.salthub.com/",
+      },
+    ],
     specifications: [
       { key: "capacity", label: "Capacity", value: "2.2mL", sourceStatus: "verified" },
       { key: "compat", label: "Compatible devices", value: "Zero Pro, Zero Nano", sourceStatus: "verified" },
