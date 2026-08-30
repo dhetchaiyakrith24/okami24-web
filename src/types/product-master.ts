@@ -295,7 +295,7 @@ export interface ProductMaster {
   pricing: {
     sellingPrice: number | null;
     compareAtPrice?: number;
-    priceReference?: { source: "vapenow" | "manual"; value: number; capturedAt: string };
+    priceReference?: { source: "vapenow" | "manual" | "shipnity"; value: number; capturedAt: string };
     lastPriceReview: string | null;
     /**
      * NOT a publish gate. Gates whether `sellingPrice` is treated as the final, ready-to-use

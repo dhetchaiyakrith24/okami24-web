@@ -9,7 +9,7 @@
  */
 
 import { rawActiveParents, excludedNonProductRows, type RawActiveParent } from "./active-catalog-source";
-import { classifyChildLabel, type OptionType, type Provenance, type ChildRole } from "./classify";
+import { classifyParentChildren, type OptionType, type Provenance, type ChildRole } from "./classify";
 
 export interface ActiveChildRecord {
   shipnityVariantId: string;
@@ -33,16 +33,22 @@ export interface ActiveParentRecord {
 }
 
 function buildParent(raw: RawActiveParent): ActiveParentRecord {
+  // Classified as one batch per parent, not child-by-child — group-context reconciliation
+  // (see classify.ts file header) needs every sibling's signal available at once.
+  const classified = classifyParentChildren(
+    raw.shipnityProductId,
+    raw.children.map((c) => c.rawLabel)
+  );
   return {
     shipnityProductId: raw.shipnityProductId,
     name: raw.name,
     operationalSellingPrice: raw.operationalSellingPrice,
     operationalCost: raw.operationalCost,
     sourcePages: raw.sourcePages,
-    children: raw.children.map((c) => ({
+    children: raw.children.map((c, i) => ({
       shipnityVariantId: c.shipnityVariantId,
       rawLabel: c.rawLabel,
-      ...classifyChildLabel(raw.shipnityProductId, c.rawLabel),
+      ...classified[i],
     })),
   };
 }

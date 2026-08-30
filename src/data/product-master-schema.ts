@@ -201,7 +201,10 @@ export const productMasterSchema = z.object({
     compareAtPrice: z.number().positive().optional(),
     priceReference: z
       .object({
-        source: z.enum(["vapenow", "manual"]),
+        // "shipnity" added Phase 2.5 — a genuine current consumer: the Shipnity active-catalog
+        // projection needs to represent Shipnity's own first-party operational selling price as
+        // a distinct source from "vapenow" (third-party reference) and "manual" (hand-entered).
+        source: z.enum(["vapenow", "manual", "shipnity"]),
         value: z.number().positive(),
         capturedAt: z.string(),
       })

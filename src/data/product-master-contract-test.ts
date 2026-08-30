@@ -209,6 +209,22 @@ const CASES: ContractCase[] = (() => {
       },
     },
     {
+      // Phase 2.5 — proves the "shipnity" priceReference.source value (added this phase) is
+      // accepted, distinct from "vapenow"/"manual".
+      name: "priceReference.source = shipnity is accepted",
+      expectRejection: false,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-shipnity-price-reference",
+        slug: "synthetic-shipnity-price-reference",
+        pricing: {
+          sellingPrice: null,
+          priceReference: { source: "shipnity", value: 1090, capturedAt: "2026-08-31T00:00:00.000Z" },
+          lastPriceReview: null,
+          priceApprovedByOwner: false,
+        },
+      }),
+    },
+    {
       name: "dangling relatedProducts.targetInternalId",
       expectRejection: true,
       product: baseSyntheticProduct({

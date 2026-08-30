@@ -1,27 +1,36 @@
 /**
- * OKami24 — Phase 2.4: Active Catalog Seed, classification layer.
+ * OKami24 — Phase 2.4/2.5: Active Catalog Seed, classification layer.
  *
  * Pure derivation from `active-catalog-source.ts`'s raw labels. Never mutates the raw
  * transcription; only reads it. Classification is intentionally NOT reused from the Phase 2.2
  * Excel-derived 98-group analysis — the active ("มีของ") view often shows a different subset
- * of children than the historical Excel export did (e.g. Coil-21 historically had resistance-
- * bearing children, but its only *active* child today is "Argus mix (coil เวอร์ชั่นใหม่)", which
- * has no resistance marker at all) — carrying forward the old group-level verdict would silently
- * launder a historical inference onto data it was never actually derived from. Every record here
- * is (re)classified from exactly the raw labels currently in the active view.
+ * of children than the historical Excel export did, so every record here is (re)classified from
+ * exactly the raw labels currently in the active view.
  *
  * === Three distinct facts, kept distinct on purpose (not merged into one confidence score) ===
  * 1. `rawLabel` (on the record, from the source layer) — always a literal UI transcription.
- * 2. `optionType` + `optionTypeProvenance` — WHAT semantic axis this child represents, and
- *    whether that axis comes from an owner/UI-confirmed decision about the whole parent group
- *    (`confirmed-owner`) or from a keyword heuristic on this one label (`inferred`), or neither
- *    (`unresolved`). A group-level owner confirmation is a fact about the GROUP, not about
- *    whether any single child's text happens to contain a matching keyword — so it is never
- *    downgraded to "inferred" just because one label (e.g. "Lemon Mint" under the owner-
- *    confirmed Pod-173=color group) also happens to contain an unrelated keyword.
+ * 2. `optionType` + `optionTypeProvenance` — WHAT semantic axis this child represents:
+ *    `confirmed-owner` (owner confirmed the whole parent group's axis — always wins, never
+ *    downgraded by a per-child keyword collision), `inferred` (keyword/heuristic — including
+ *    group-context reconciliation, see below), or `unresolved` (no evidence, no guess).
  * 3. `childRole` — WHETHER this child is a product-variant option at all, independent of
- *    optionType (see `deriveChildRole` below). A Shipnity child code does not always mean a
- *    ProductVariant — see `ChildRole` doc.
+ *    optionType. See `ChildRole` doc.
+ *
+ * === Group-context reconciliation (Phase 2.5 revision) ===
+ * A single keyword list checked in isolation misclassifies real cases: "Orange" (a genuine
+ * device color on Pod-179) also appears in the flavor vocabulary; "Pink Berry" / "Green Tea" /
+ * "White Slush" carry BOTH a color word and a flavor word in the same label; "Hales Blue Boy" (a
+ * real mango-variety flavor name) contains the standalone word "Blue" with no flavor keyword
+ * anywhere else in the label to disambiguate it from a per-label view alone.
+ *
+ * None of these can be resolved by picking one axis to check first globally — "Orange" is a
+ * color on Pod-179 and would legitimately be a flavor elsewhere. The fix is per-PARENT, not
+ * per-word: `classifyParentChildren` looks at the whole sibling group before deciding. If a
+ * parent's other children establish an overwhelming, coherent single axis (see thresholds
+ * below), an ambiguous/conflicting child is reinterpreted onto that axis — always as `inferred`
+ * provenance, never `confirmed-owner`, and the sibling group is NEVER forced onto one axis when
+ * both axes have real (non-isolated) representation — that stays a genuine, reported deviation
+ * (see `mixedAxisError` in `active-catalog-to-product-master.ts`).
  */
 
 export type OptionType = "color" | "flavor" | "resistance" | "size" | "strength" | "unresolved";
@@ -63,12 +72,16 @@ const OWNER_CONFIRMED_PARENT_TYPE: Record<string, OptionType> = {
   "coil-78": "resistance", // not present in the active view, kept for completeness/documentation
 };
 
+// "orange" is deliberately in BOTH lists — it is a real device color (Pod-179) AND a real flavor
+// word elsewhere (Orange Sour, Orange Soda). This is exactly the kind of word group-context
+// reconciliation exists for; it must never be hard-assigned to one axis globally.
 const COLOR_WORDS = [
-  "black", "white", "blue", "red", "silver", "gold", "grey", "gray", "pink", "purple", "green",
+  "black", "white", "blue", "red", "silver", "gold", "golden", "grey", "gray", "pink", "purple", "green",
   "navy", "champagne", "gunmetal", "copper", "teal", "charcoal", "neon", "olive", "brown", "cyan",
   "rose", "bronze", "titanium", "glit", "slate", "ash", "pebble", "azure", "breeze", "oasis",
   "bright", "beige", "sapphire", "midnight", "aspen", "terracotta", "violet", "razer", "supreme",
   "lava", "aurora", "twilight", "stripe", "matcha", "clear", "sienna", "emerald", "ruby", "pearl",
+  "orange",
   "สี", "ดำ", "แดง", "ขาว", "เขียว", "เหลือง", "น้ำเงิน", "ฟ้า", "ม่วง", "ชมพู", "เทา", "ทอง",
   "เงิน", "น้ำตาล", "ส้ม", "ครีม",
 ];
@@ -92,14 +105,41 @@ const PACKAGING_PHRASE = /กล่อง|ยกกล่อง|แพ็ค|\bp
 // just "ฐานแบตเตอรี่" / Pod-154-19). Not a guess at every possible accessory word.
 const ACCESSORY_WORDS = ["ฐาน", "แบตเตอรี่", "อะไหล่", "สายชาร์จ", "charger", "adapter"];
 
-function detectAxis(text: string): OptionType | null {
-  if (RESISTANCE_MARK.test(text)) return "resistance";
-  if (SIZE_MARK.test(text)) return "size";
-  if (STRENGTH_MARK.test(text)) return "strength";
+// \p{M} (combining marks) must stay attached to their base letter — Thai vowel/tone signs like
+// ิ/ุ/้ are Unicode category Mn, not \p{L}, so splitting on "anything that isn't a letter" alone
+// fractures Thai words (e.g. "เงิน" without \p{M} splits into unmatchable fragments).
+function tokenize(text: string): string[] {
+  return text.toLowerCase().split(/[^\p{L}\p{N}\p{M}]+/gu).filter(Boolean);
+}
+
+/**
+ * Color words are matched as whole tokens, not substrings — "blue" must NOT match inside
+ * "Blueberry" (a real bug found in Phase 2.5: several flavor names were misread as colors
+ * purely because a color word happened to be a substring of a longer flavor word).
+ */
+function matchesColorWord(text: string): boolean {
+  const tokens = new Set(tokenize(text));
+  return COLOR_WORDS.some((w) => (w.includes(" ") ? text.toLowerCase().includes(w) : tokens.has(w)));
+}
+
+/**
+ * Flavor words are still matched as substrings — deliberately, unlike color. Product naming
+ * frequently compounds flavor vocabulary into one word with no separator (e.g. "Mixberry"
+ * contains "berry" with no space) in a way color naming in this dataset never does. Requiring
+ * whole-token matches here would silently turn many real flavor names into "unresolved".
+ */
+function matchesFlavorWord(text: string): boolean {
   const low = text.toLowerCase();
-  if (COLOR_WORDS.some((w) => low.includes(w))) return "color";
-  if (FLAVOR_WORDS.some((w) => low.includes(w))) return "flavor";
-  return null;
+  return FLAVOR_WORDS.some((w) => low.includes(w));
+}
+
+interface BaseSignal {
+  rawLabel: string;
+  value: string;
+  note: string | null;
+  numericAxis: "resistance" | "size" | "strength" | null;
+  colorMatch: boolean;
+  flavorMatch: boolean;
 }
 
 /**
@@ -114,81 +154,129 @@ function splitPackaging(rawLabel: string): { value: string; note: string | null 
   return { value: rawLabel.trim(), note: null };
 }
 
+function detectNumericAxis(text: string): BaseSignal["numericAxis"] {
+  if (RESISTANCE_MARK.test(text)) return "resistance";
+  if (SIZE_MARK.test(text)) return "size";
+  if (STRENGTH_MARK.test(text)) return "strength";
+  return null;
+}
+
+function baseSignal(rawLabel: string): BaseSignal {
+  const { value, note } = splitPackaging(rawLabel);
+  let subject = value;
+  let numericAxis = detectNumericAxis(subject);
+  let colorMatch = matchesColorWord(subject);
+  let flavorMatch = matchesFlavorWord(subject);
+  // If splitting off the packaging side removed the only semantic signal, fall back to
+  // checking the untouched raw label once — never invent a value that isn't in the text.
+  if (!numericAxis && !colorMatch && !flavorMatch) {
+    subject = rawLabel;
+    numericAxis = detectNumericAxis(subject);
+    colorMatch = matchesColorWord(subject);
+    flavorMatch = matchesFlavorWord(subject);
+  }
+  return { rawLabel, value, note, numericAxis, colorMatch, flavorMatch };
+}
+
 /**
  * Strips packaging/unit-of-sale vocabulary and digits/punctuation from the full raw label and
  * returns whatever text remains. Used only to decide `childRole` for children whose optionType
  * came back "unresolved": if nothing substantial is left, the label was packaging/quantity text
- * through and through ("sell-unit"); if a real name-like remainder survives ("Dimension
- * Apricity"), the label differentiates something we just can't type yet — stays "unresolved",
- * never forced into "sell-unit" or "variant".
+ * through and through ("sell-unit"); if a real name-like remainder survives, the label
+ * differentiates something we just can't type yet — stays "unresolved".
  */
 const PACKAGING_TOKENS = /(ขายยกกล่อง|ยกกล่อง|กล่อง|ต่อตัว|ตัว|หัว|ซอง|แพ็ค|pack|ลัง|มี|\d+(\.\d+)?|[/.,()]+)/gi;
 function nonPackagingResidue(text: string): string {
   return text.replace(PACKAGING_TOKENS, "").replace(/\s+/g, " ").trim();
 }
 
-function deriveChildRole(
-  optionType: OptionType,
-  rawLabel: string,
-  cleanedValue: string | null
-): ChildRole {
+function deriveChildRole(optionType: OptionType, rawLabel: string): ChildRole {
   if (optionType !== "unresolved") return "variant";
-
   const low = rawLabel.toLowerCase();
   if (ACCESSORY_WORDS.some((w) => low.includes(w.toLowerCase()))) return "accessory-component";
-
   if (nonPackagingResidue(rawLabel).length === 0) return "sell-unit";
-
-  // Something differentiating survives (e.g. "Dimension Apricity") but its type is unknown —
-  // stay unresolved rather than guessing "variant" from the mere presence of a proper noun.
-  void cleanedValue;
   return "unresolved";
 }
 
-export function classifyChildLabel(shipnityProductId: string, rawLabel: string): ClassifiedValue {
-  const { value, note } = splitPackaging(rawLabel);
-
-  const axisFromValue = detectAxis(value);
-  // If splitting off the "packaging" side removed the only semantic signal (e.g. the whole
-  // label is packaging text with no distinguishable value), fall back to checking the full
-  // raw label once before giving up — but never invent a value that isn't in the text.
-  const axis = axisFromValue ?? detectAxis(rawLabel);
-
-  const ownerType = OWNER_CONFIRMED_PARENT_TYPE[shipnityProductId];
-
-  if (ownerType) {
-    // Group-level owner confirmation always wins for optionType AND provenance — see file
-    // header. "Lemon Mint" under Pod-173 is color, full stop, not downgraded to "inferred"
-    // just because "mint" also happens to appear in the flavor keyword list.
-    const cleanedValue = value || null;
-    return {
-      optionType: ownerType,
-      optionTypeProvenance: "confirmed-owner",
-      cleanedValue,
-      packagingNote: note,
-      childRole: "variant",
-    };
-  }
-  if (axis) {
-    return {
-      optionType: axis,
-      optionTypeProvenance: "inferred",
-      cleanedValue: value,
-      packagingNote: note,
-      childRole: "variant",
-    };
-  }
-
-  // No semantic marker found anywhere in the label.
-  const isPureNote = note !== null && value.length === 0;
-  const cleanedValue = isPureNote ? null : value || null;
-  const packagingNote = note ?? (PACKAGING_PHRASE.test(rawLabel) ? rawLabel : null);
-
+function unresolvedResult(b: BaseSignal): ClassifiedValue {
+  const isPureNote = b.note !== null && b.value.length === 0;
+  const cleanedValue = isPureNote ? null : b.value || null;
+  const packagingNote = b.note ?? (PACKAGING_PHRASE.test(b.rawLabel) ? b.rawLabel : null);
   return {
     optionType: "unresolved",
     optionTypeProvenance: "unresolved",
     cleanedValue,
     packagingNote,
-    childRole: deriveChildRole("unresolved", rawLabel, cleanedValue),
+    childRole: deriveChildRole("unresolved", b.rawLabel),
   };
+}
+
+function resolvedResult(axis: Exclude<OptionType, "unresolved">, provenance: Provenance, b: BaseSignal): ClassifiedValue {
+  return {
+    optionType: axis,
+    optionTypeProvenance: provenance,
+    cleanedValue: b.value || null,
+    packagingNote: b.note,
+    childRole: "variant",
+  };
+}
+
+/**
+ * Classifies every child under one parent together, so color/flavor ambiguity can be resolved
+ * from group context (see file header). `rawLabels` must all belong to the SAME
+ * `shipnityProductId` — call this once per parent, not once per child.
+ */
+export function classifyParentChildren(shipnityProductId: string, rawLabels: string[]): ClassifiedValue[] {
+  const ownerType = OWNER_CONFIRMED_PARENT_TYPE[shipnityProductId];
+  const bases = rawLabels.map(baseSignal);
+
+  if (ownerType) {
+    // Group-level owner confirmation always wins — see file header. Never downgraded to
+    // "inferred" just because a token also happens to match an unrelated keyword.
+    return bases.map((b) => resolvedResult(ownerType as Exclude<OptionType, "unresolved">, "confirmed-owner", b));
+  }
+
+  // Numeric-pattern axes (Ω/ml/mg) are exclusive and trustworthy by construction — never subject
+  // to color/flavor group reconciliation.
+  const nonNumeric = bases.filter((b) => !b.numericAxis);
+  const confidentColor = nonNumeric.filter((b) => b.colorMatch && !b.flavorMatch);
+  const confidentFlavor = nonNumeric.filter((b) => b.flavorMatch && !b.colorMatch);
+  const colorN = confidentColor.length;
+  const flavorN = confidentFlavor.length;
+
+  let dominantAxis: "color" | "flavor" | null = null;
+  if (colorN > 0 && flavorN === 0) dominantAxis = "color";
+  else if (flavorN > 0 && colorN === 0) dominantAxis = "flavor";
+  else if (colorN > 0 && flavorN > 0) {
+    // Both axes have SOME confident representation. Only collapse onto one when the other side
+    // is a truly isolated outlier (exactly 1) against a real, established pattern (>=3
+    // corroborating siblings) — anything more than an isolated single outlier is treated as
+    // genuine multi-dimension evidence and left as a reported deviation, never forced.
+    const minority = Math.min(colorN, flavorN);
+    const majority = Math.max(colorN, flavorN);
+    if (minority <= 1 && majority >= 3) {
+      dominantAxis = colorN > flavorN ? "color" : "flavor";
+    }
+    // else: dominantAxis stays null — genuine mixed group, not resolved here.
+  }
+
+  return bases.map((b) => {
+    if (b.numericAxis) return resolvedResult(b.numericAxis, "inferred", b);
+
+    const isConflicted = b.colorMatch && b.flavorMatch;
+    const isConfidentColor = b.colorMatch && !b.flavorMatch;
+    const isConfidentFlavor = b.flavorMatch && !b.colorMatch;
+
+    if (dominantAxis) {
+      const needsReinterpretation =
+        isConflicted || (isConfidentColor && dominantAxis === "flavor") || (isConfidentFlavor && dominantAxis === "color");
+      if (needsReinterpretation) return resolvedResult(dominantAxis, "inferred", b);
+    }
+    if (isConfidentColor) return resolvedResult("color", "inferred", b);
+    if (isConfidentFlavor) return resolvedResult("flavor", "inferred", b);
+
+    // Either no evidence at all, or conflicted with no resolvable group dominance (genuine
+    // mixed-axis group) — never guessed.
+    return unresolvedResult(b);
+  });
 }
