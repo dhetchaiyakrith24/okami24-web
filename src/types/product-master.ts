@@ -1,5 +1,8 @@
 /**
- * OKami24 Product Master — Phase 1 (type definitions only).
+ * OKami24 Product Master — Phase 1 (type definitions), calibrated in Phase 2.1 against the
+ * results of running all 28 real legacy products through this schema (see
+ * `product-master-adapter.ts`'s reality test). Fields that 100% of real data couldn't
+ * populate meaningfully were revised here rather than left forcing fabricated defaults.
  *
  * This is a NEW, additive data model. It does not replace `src/types/catalog.ts` or the
  * 28 existing products — those keep powering the live site unchanged. This file exists so
@@ -93,6 +96,14 @@ export interface ProductVariant {
 // discontinued-but-still-informationally-useful product page.
 // ===================================================================================
 
+/**
+ * KNOWN LIMITATION (Phase 2.1): all 28 legacy products map to "active" — none of them can
+ * exercise "draft" / "coming-soon" / "discontinued" / "archived". This union is a deliberate
+ * design decision (see plan), not something the current data has pressure-tested. Do not
+ * redesign it just because legacy data can't exercise it; a synthetic contract test isn't
+ * warranted here either since there's no invariant to violate (it's a plain enum with no
+ * cross-field relationship to check) — the real test is future non-active real inventory.
+ */
 export type ProductLifecycleStatus = "draft" | "active" | "coming-soon" | "discontinued" | "archived";
 
 export type AvailabilityStatus = "in-stock" | "out-of-stock" | "unknown";
@@ -106,15 +117,19 @@ export interface AvailabilitySnapshot {
 }
 
 /**
- * INVARIANT (must hold once Phase 2's adapter/derivation logic exists):
+ * INVARIANT — now enforced, not just documented (Phase 2.1):
  * - If `ProductMaster.variants` is empty, `ProductMaster.availability` is the sole,
  *   authoritative value.
  * - If `ProductMaster.variants` is non-empty, `ProductMaster.availability` MUST be derived
  *   from `variants[].availability` (e.g. "in-stock" if at least one variant is in-stock,
  *   "out-of-stock" if every variant is out-of-stock) — it must never be hand-maintained as
  *   an independent second source of truth that could disagree with the variants.
- * Phase 1 only records this invariant; the derivation function and the validation that
- * checks it holds are Phase 2 work.
+ * See `deriveAvailabilityStatus()` and the check inside `validateProductMasterRegistry()` in
+ * `src/data/product-master-schema.ts` for the executable version of this rule, and
+ * `src/data/product-master-contract-test.ts` for synthetic fixtures that exercise both the
+ * pass and fail case (KNOWN LIMITATION: none of the 28 real legacy products have variants at
+ * all, so this invariant is untested by real data — only by synthetic fixtures — until a
+ * real variant-bearing product exists).
  */
 export const AVAILABILITY_INVARIANT_NOTE =
   "product.availability must equal derive(variants[].availability) whenever variants is non-empty";
@@ -164,19 +179,33 @@ export interface CompatibilityLink {
   /** Fallback display text, used whenever there's no structured target yet. */
   label: string;
   note?: string;
-  verified: boolean;
+  /**
+   * Tri-state, not a boolean (Phase 2.1 revision — a required boolean was semantically wrong:
+   * the adapter reality test showed 100% of legacy compatibility entries have no per-entry
+   * provenance to derive true/false from, so every one of them would have had to default to
+   * the same fabricated value). "unknown" is the honest state for data with no provenance —
+   * it must never be silently coerced to "unverified" or "verified".
+   */
+  verificationStatus: "verified" | "unverified" | "unknown";
 }
 
 export interface RelatedProductLink {
   targetInternalId: string;
-  reason:
+  /**
+   * Optional (Phase 2.1 revision) — legacy `relatedProductSlugs` never recorded *why* two
+   * products are related, and 100% of the 28 legacy products' related-product entries would
+   * have needed a fabricated classification here. Leave absent when migrating data with no
+   * real classification; require it (via stronger validation, not this base type) for
+   * newly-authored structured relationships going forward.
+   */
+  reason?:
     | "cross-sell-pod"
     | "cross-sell-coil"
     | "cross-sell-accessory"
     | "similar-product"
     | "alternative-if-out-of-stock"
     | "editorial";
-  source: "manufacturer" | "merchant-knowledge" | "editorial";
+  source?: "manufacturer" | "merchant-knowledge" | "editorial";
 }
 
 // ===================================================================================
@@ -290,7 +319,12 @@ export interface ProductMaster {
     careTips?: string;
   };
   merchantContent: {
-    bestFor?: string;
+    /**
+     * Multiple entries (Phase 2.1 revision — was a single `string`). Legacy `whoIsThisFor`
+     * is a bullet list, and collapsing it into one newline-joined string was lossy (couldn't
+     * be rendered back out as separate bullets without re-parsing). Maps 1:1 from legacy now.
+     */
+    bestFor?: string[];
     whyWeRecommend?: string;
     storeNotes?: string;
     warningNotes?: string;

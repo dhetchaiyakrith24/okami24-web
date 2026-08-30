@@ -1,15 +1,12 @@
 /**
- * OKami24 Product Master — Phase 1 (Zod schema + referential-integrity layer).
+ * OKami24 Product Master — Phase 1 (Zod schema + referential-integrity layer), calibrated in
+ * Phase 2.1 against the adapter reality test's findings (see `product-master-adapter.ts`).
  *
  * Mirrors `src/types/product-master.ts` field-for-field. This file is intentionally
  * self-contained (its own small `specificationSchema`/`featureSchema`/`assetSchema`, not
- * imported from `src/data/schema.ts`) per the approved plan: Phase 1 must not touch the
+ * imported from `src/data/schema.ts`) per the approved plan: this must not touch the
  * existing `catalog.ts`/`schema.ts`/product data at all, so nothing here risks changing the
  * live site's validation behavior.
- *
- * Not wired up to real data yet — there is no `ProductMaster[]` array to validate until
- * Phase 2 (the legacy→ProductMaster adapter) exists. `validateProductMasterRegistry` is
- * exported ready to use once that array exists.
  */
 
 import { z } from "zod";
@@ -112,20 +109,25 @@ const compatibilityLinkSchema = z.object({
   targetInternalId: z.string().optional(),
   label: z.string().min(1),
   note: z.string().optional(),
-  verified: z.boolean(),
+  // Tri-state (Phase 2.1) — see type-level doc comment for why this isn't a boolean.
+  verificationStatus: z.enum(["verified", "unverified", "unknown"]),
 });
 
 const relatedProductLinkSchema = z.object({
   targetInternalId: z.string().min(1),
-  reason: z.enum([
-    "cross-sell-pod",
-    "cross-sell-coil",
-    "cross-sell-accessory",
-    "similar-product",
-    "alternative-if-out-of-stock",
-    "editorial",
-  ]),
-  source: z.enum(["manufacturer", "merchant-knowledge", "editorial"]),
+  // Optional (Phase 2.1) — legacy migration must not fabricate a classification. See
+  // type-level doc comment.
+  reason: z
+    .enum([
+      "cross-sell-pod",
+      "cross-sell-coil",
+      "cross-sell-accessory",
+      "similar-product",
+      "alternative-if-out-of-stock",
+      "editorial",
+    ])
+    .optional(),
+  source: z.enum(["manufacturer", "merchant-knowledge", "editorial"]).optional(),
 });
 
 const merchantTagRefSchema = z.object({
@@ -218,7 +220,8 @@ export const productMasterSchema = z.object({
     careTips: z.string().optional(),
   }),
   merchantContent: z.object({
-    bestFor: z.string().optional(),
+    // Array, not a single string (Phase 2.1) — preserves legacy whoIsThisFor[] granularity.
+    bestFor: z.array(z.string().min(1)).optional(),
     whyWeRecommend: z.string().optional(),
     storeNotes: z.string().optional(),
     warningNotes: z.string().optional(),
@@ -255,6 +258,21 @@ export type ProductMasterInput = z.infer<typeof productMasterSchema>;
 // before. It throws a specific, actionable error per broken reference rather than failing
 // silently, matching the existing "fail the build, not the page" convention.
 // ===================================================================================
+
+/**
+ * Derives the product-level availability status from its variants, per the invariant
+ * documented on `AvailabilitySnapshot` in `product-master.ts`. "in-stock" if any variant is
+ * in-stock; "out-of-stock" only if every variant is out-of-stock; "unknown" otherwise (e.g.
+ * a mix of "unknown" and "out-of-stock" — deliberately not optimistic-defaulted to
+ * "out-of-stock" just because nothing is confirmed in-stock).
+ */
+export function deriveAvailabilityStatus(
+  variants: { availability: { status: "in-stock" | "out-of-stock" | "unknown" } }[]
+): "in-stock" | "out-of-stock" | "unknown" {
+  if (variants.some((v) => v.availability.status === "in-stock")) return "in-stock";
+  if (variants.every((v) => v.availability.status === "out-of-stock")) return "out-of-stock";
+  return "unknown";
+}
 
 interface RegistryInputs {
   products: ProductMasterInput[];
@@ -293,6 +311,15 @@ export function validateProductMasterRegistry({
     }
     if (!categorySet.has(p.categoryId)) {
       throw new Error(`${p.internalId} references unknown categoryId: ${p.categoryId}`);
+    }
+
+    if (p.variants.length > 0) {
+      const derived = deriveAvailabilityStatus(p.variants);
+      if (p.availability.status !== derived) {
+        throw new Error(
+          `${p.internalId} has variants but product.availability.status ("${p.availability.status}") does not match the derived value ("${derived}") from variants[].availability — product-level availability must be derived, not independently maintained, once variants exist`
+        );
+      }
     }
 
     const optionCodeSet = new Set(p.optionDefinitions.map((o) => o.code));
