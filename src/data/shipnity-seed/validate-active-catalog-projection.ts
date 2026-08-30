@@ -21,6 +21,8 @@ export interface ProjectionValidationIssue {
 export interface ProjectionValidationReport {
   totalParents: number;
   candidateCount: number;
+  draftCandidateCount: number; // candidates missing at least one publication-readiness field
+  readyCandidateCount: number; // candidates that would already pass publication readiness
   blockedCount: number;
   blockedByReason: Record<ProjectionBlockReason, number>;
   totalChildrenAccountedFor: number; // excludedChildren + variants, across every parent — must equal 228
@@ -34,8 +36,6 @@ export function runActiveCatalogProjectionValidation(): ProjectionValidationRepo
   const results = projectActiveCatalog();
 
   const blockedByReason: Record<ProjectionBlockReason, number> = {
-    "no-taxonomy-match": 0,
-    "no-attributes-evidence": 0,
     "identity-matches-existing-legacy-product": 0,
     "mixed-variant-axis": 0,
   };
@@ -104,9 +104,13 @@ export function runActiveCatalogProjectionValidation(): ProjectionValidationRepo
     });
   }
 
+  const draftCandidateCount = candidates.filter((c) => c.status === "candidate" && c.isDraft).length;
+
   return {
     totalParents: results.length,
     candidateCount: candidates.length,
+    draftCandidateCount,
+    readyCandidateCount: candidates.length - draftCandidateCount,
     blockedCount: blocked.length,
     blockedByReason,
     totalChildrenAccountedFor,

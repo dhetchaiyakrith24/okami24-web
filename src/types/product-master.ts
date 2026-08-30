@@ -251,16 +251,56 @@ export interface ProductMaster {
   /** Fully independent of `pricing` — see file header. */
   publicationStatus: "published" | "unpublished";
 
-  brandId: string;
-  familyId: string;
-  categoryId: string;
-  systemType: SystemType;
+  /**
+   * Phase 2.6 — nullable so a real, evidence-backed product identity (e.g. from Shipnity) can
+   * be ADMITTED to ProductMaster before it has been slotted into OKami24's taxonomy, without
+   * fabricating a brand/family/category. `categoryId` gates real-world discoverability (site
+   * category navigation + JSON-LD) so `validateProductMasterRegistry` requires it non-null
+   * before `publicationStatus` may be "published" — `familyId` does not (see its own doc
+   * comment: it is display/filter convenience only, never load-bearing for routing or a
+   * product's own page).
+   */
+  brandId: string | null;
+  /**
+   * Convenience taxonomy only — confirmed by evidence (Phase 2.6 field-requiredness audit):
+   * every real usage in the frontend is a display badge or a sort/filter key (ProductHero,
+   * CompareTool, CatalogBrowser), never a route parameter or an SEO-required field. A product
+   * may be published with `familyId: null` — this is NOT enforced at publication readiness.
+   */
+  familyId: string | null;
+  categoryId: string | null;
+  /**
+   * Nullable (Phase 2.6). NOT enforced at publication readiness (Phase 2.6 revision) — unlike
+   * `categoryId`, this is a closed enum designed only for vape devices (open-pod/pod-kit/
+   * disposable/pod-cartridge/coil/accessory); there is no value that correctly describes an
+   * e-liquid or IQOS product, so requiring it universally would force a fabricated
+   * classification rather than surface a genuinely missing one. Deferred to a future phase
+   * once the enum (or a type-conditional readiness model) can actually express this — see
+   * Phase 2.6 report.
+   */
+  systemType: SystemType | null;
 
   // ---- Manufacturer / product facts (unchanged shape from catalog.ts) ----
   name: string;
   displayName: string;
-  tagline: string;
-  shortDescription: string;
+  /**
+   * Nullable (Phase 2.6, discovered empirically) — grouped with `attributes` under this same
+   * "manufacturer/product facts" comment in the original schema, so treated with the identical
+   * evidence rule: Shipnity gives no marketing/editorial copy, never fabricated, required only
+   * once `publicationStatus` becomes "published".
+   */
+  tagline: string | null;
+  shortDescription: string | null;
+  /**
+   * Nullable (Phase 2.6) — Shipnity-sourced identity never carries manufacturer spec evidence.
+   * NOT enforced at publication readiness (Phase 2.6 revision): every field in this shape is
+   * device-specific (screenType/drawStyle/portability/chargingType — a screen, a draw style, a
+   * charging port), meaningless for an e-liquid bottle or an accessory. Requiring it
+   * universally would fabricate irrelevant values for non-device products. Real per-category
+   * attribute readiness needs a type-conditional shape ProductMaster does not have yet
+   * (deliberately not built this phase — see Phase 2.6 report). Never fabricated to satisfy
+   * admission or publication in the meantime.
+   */
   attributes: {
     batteryMah?: number;
     wattageMin?: number;
@@ -275,7 +315,7 @@ export interface ProductMaster {
     chargingType: string;
     weightG?: number;
     dimensions?: string;
-  };
+  } | null;
   specifications: Specification[];
   features: Feature[];
   assets: ProductAsset[];

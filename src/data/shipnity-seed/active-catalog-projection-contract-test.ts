@@ -192,17 +192,28 @@ export function runProjectionContractTests(): ProjectionContractResult[] {
     JSON.stringify(pod179)
   );
 
+  // Phase 2.6 — these no longer block: both become real draft candidates (unpublished,
+  // schema-valid) instead of being rejected outright for missing taxonomy/attributes evidence.
   const coil1 = byId.get("Coil-1");
   check(
-    "real pipeline: Coil-1 (family known, no attributes evidence) blocks as no-attributes-evidence",
-    coil1?.status === "blocked" && coil1.reason === "no-attributes-evidence",
+    "real pipeline: Coil-1 (family known, no attributes evidence) is a draft candidate — brandId/familyId/categoryId/systemType present, attributes/tagline/shortDescription null",
+    coil1?.status === "candidate" &&
+      coil1.isDraft &&
+      coil1.product.brandId === "voopoo" &&
+      coil1.product.attributes === null &&
+      coil1.product.publicationStatus === "unpublished",
     JSON.stringify(coil1)
   );
 
   const eliquid62 = byId.get("eliquid-62");
   check(
-    "real pipeline: eliquid-62 (no taxonomy overlap at all) blocks as no-taxonomy-match",
-    eliquid62?.status === "blocked" && eliquid62.reason === "no-taxonomy-match",
+    "real pipeline: eliquid-62 (no taxonomy overlap at all) is a draft candidate with all taxonomy fields null",
+    eliquid62?.status === "candidate" &&
+      eliquid62.isDraft &&
+      eliquid62.product.brandId === null &&
+      eliquid62.product.familyId === null &&
+      eliquid62.product.categoryId === null &&
+      eliquid62.product.systemType === null,
     JSON.stringify(eliquid62)
   );
 

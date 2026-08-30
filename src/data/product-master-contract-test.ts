@@ -225,6 +225,134 @@ const CASES: ContractCase[] = (() => {
       }),
     },
     {
+      // Phase 2.6 — CORE PRINCIPLE: identity/admission is a lower bar than publication.
+      name: "draft record: null brandId/familyId/categoryId/attributes, unpublished — schema + registry valid",
+      expectRejection: false,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-draft-incomplete",
+        slug: "synthetic-draft-incomplete",
+        publicationStatus: "unpublished",
+        brandId: null,
+        familyId: null,
+        categoryId: null,
+        attributes: null,
+      }),
+    },
+    {
+      name: "published record: null brandId — rejected by publication readiness (registry)",
+      expectRejection: true,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-missing-brand",
+        slug: "synthetic-published-missing-brand",
+        publicationStatus: "published",
+        brandId: null,
+      }),
+    },
+    {
+      name: "published record: null categoryId — rejected by publication readiness (registry)",
+      expectRejection: true,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-missing-category",
+        slug: "synthetic-published-missing-category",
+        publicationStatus: "published",
+        categoryId: null,
+      }),
+    },
+    {
+      // Phase 2.6 revision — attributes is device-shaped (screenType/chargingType/...) and
+      // NOT universally applicable (an e-liquid has no charging port), so it is deliberately
+      // NOT enforced at publication readiness — forcing it would fabricate irrelevant data for
+      // non-device product types. Deferred to a future type-conditional readiness model.
+      name: "published record: null attributes — accepted (not a universal readiness requirement)",
+      expectRejection: false,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-missing-attributes",
+        slug: "synthetic-published-missing-attributes",
+        publicationStatus: "published",
+        attributes: null,
+      }),
+    },
+    {
+      // Phase 2.6 revision — SystemType is a closed enum with no e-liquid/IQOS value; there is
+      // no CORRECT value to require here for those product types, so it is deliberately NOT
+      // enforced at publication readiness (unlike categoryId, whose gap is missing DATA, not a
+      // structural mismatch).
+      name: "published record: null systemType — accepted (not a universal readiness requirement)",
+      expectRejection: false,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-missing-systemtype",
+        slug: "synthetic-published-missing-systemtype",
+        publicationStatus: "published",
+        systemType: null,
+      }),
+    },
+    {
+      name: "published record: null tagline/shortDescription — rejected by publication readiness (registry)",
+      expectRejection: true,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-missing-copy",
+        slug: "synthetic-published-missing-copy",
+        publicationStatus: "published",
+        tagline: null,
+        shortDescription: null,
+      }),
+    },
+    {
+      // familyId is deliberately NOT a publication requirement (convenience taxonomy only).
+      name: "published record: null familyId but everything else present — accepted",
+      expectRejection: false,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-no-family",
+        slug: "synthetic-published-no-family",
+        publicationStatus: "published",
+        familyId: null,
+      }),
+    },
+    {
+      name: "published record: brandId/categoryId/attributes/familyId all present — accepted (complete)",
+      expectRejection: false,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-complete",
+        slug: "synthetic-published-complete",
+        publicationStatus: "published",
+      }),
+    },
+    {
+      // A non-null taxonomy reference must still resolve — draft admission relaxes ABSENCE, not
+      // correctness. Unpublished so this isolates the FK check from the readiness check.
+      name: "draft record: non-null but dangling categoryId is still rejected",
+      expectRejection: true,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-draft-dangling-category",
+        slug: "synthetic-draft-dangling-category",
+        publicationStatus: "unpublished",
+        categoryId: "does-not-exist-anywhere",
+      }),
+    },
+    {
+      // lifecycleStatus:"draft" means the merchandising decision itself isn't finalized —
+      // publishing it is an internally inconsistent state, independent of taxonomy/content
+      // completeness (this fixture is otherwise fully complete).
+      name: "draft lifecycle + published — rejected as internally inconsistent",
+      expectRejection: true,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-draft-lifecycle-published",
+        slug: "synthetic-draft-lifecycle-published",
+        lifecycleStatus: "draft",
+        publicationStatus: "published",
+      }),
+    },
+    {
+      name: "draft lifecycle + unpublished — accepted (consistent)",
+      expectRejection: false,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-draft-lifecycle-unpublished",
+        slug: "synthetic-draft-lifecycle-unpublished",
+        lifecycleStatus: "draft",
+        publicationStatus: "unpublished",
+      }),
+    },
+    {
       name: "dangling relatedProducts.targetInternalId",
       expectRejection: true,
       product: baseSyntheticProduct({

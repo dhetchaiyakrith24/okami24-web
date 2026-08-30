@@ -1,28 +1,33 @@
 /**
- * OKami24 — Phase 2.5: Active Catalog → ProductMaster projection.
+ * OKami24 — Phase 2.5/2.6: Active Catalog → ProductMaster projection.
  *
  * Pure, read-only projection from `activeCatalogSeed` (Phase 2.4) toward `ProductMasterInput`
- * (Phase 1/2/2.1/2.3). Nothing here is imported by any frontend/app code, and nothing here
- * writes to `src/data/products/*` or the legacy catalog. See README.md §Phase 2.5.
+ * (Phase 1/2/2.1/2.3/2.6). Nothing here is imported by any frontend/app code, and nothing here
+ * writes to `src/data/products/*` or the legacy catalog. See README.md.
  *
- * === The central finding of this phase ===
- * `ProductMaster.attributes` requires `screenType`/`drawStyle`/`portability`/`beginnerFriendly`/
- * `chargingType` with NO nullable/"unknown" escape hatch, and `brandId`/`familyId`/`categoryId`
- * are required FKs validated against the existing (28-product, 3-brand) legacy taxonomy — a
- * taxonomy built for the NOVA VAPOR demo catalog, not for OKami24's real Shipnity product range.
- * Shipnity gives us commerce identity, operational price, and variant structure — it gives us
- * ZERO manufacturer spec evidence and, for the large majority of products, zero brand/family/
- * category evidence either (different brands entirely: Marbo, Muro, KS, Esko Bar, IQOS, etc.).
+ * === Phase 2.6 revision ===
+ * Phase 2.5 found that every one of the 56 active parents was BLOCKED from becoming a
+ * ProductMaster record by required `brandId`/`familyId`/`categoryId`/`systemType`/`tagline`/
+ * `shortDescription`/`attributes` — fields ProductMaster required unconditionally, with no
+ * nullable escape hatch, regardless of lifecycle/publication state. Phase 2.6 made all of those
+ * fields nullable at the schema level (admission-time). Only `brandId`/`categoryId`/`tagline`/
+ * `shortDescription` are required non-null at PUBLICATION time (see
+ * `validateProductMasterRegistry`'s readiness check) — `familyId` is convenience-only,
+ * `systemType`/`attributes` are deliberately NOT enforced universally because they are
+ * device-specific (a closed enum / an object shaped entirely around screens and charging ports)
+ * with no correct value for an e-liquid or IQOS product; see that function's own comment. This
+ * file no longer blocks on missing taxonomy/attributes at all. Every parent that isn't an
+ * exact-legacy duplicate or a genuine mixed-axis variant problem now becomes a real, schema-
+ * valid DRAFT candidate: `lifecycleStatus: "active"` (it genuinely is, per Shipnity's own "have
+ * stock" view) and `publicationStatus: "unpublished"` (not customer-visible — evidence is
+ * incomplete).
  *
- * Per the Phase 2.5 brief: "ถ้า schema บังคับจนต้อง fabricate ให้ report friction แทนการแต่งข้อมูล"
- * — so this file NEVER invents `attributes` or an unevidenced `brandId`/`familyId`/`categoryId`.
- * Every one of the 56 active parents is classified as either a `candidate` (schema-valid,
- * evidence-only) or `blocked` (with a specific, reported reason) — see `ProjectionResult`.
+ * Only two block reasons remain, and both are structural, not data-gap:
+ * - `identity-matches-existing-legacy-product` — a dedup/merge case, not a new-record case.
+ * - `mixed-variant-axis` — the variant children genuinely span more than one optionType.
  */
 
-import type {
-  ProductMasterInput,
-} from "@/data/product-master-schema";
+import type { ProductMasterInput } from "@/data/product-master-schema";
 import type { SystemType } from "@/types/catalog";
 import type { OptionType } from "./classify";
 import { activeCatalogSeed, type ActiveParentRecord, type ActiveChildRecord } from "./build-active-catalog";
@@ -54,7 +59,9 @@ function slugifyValue(text: string): string {
 // committed in src/data/brands.ts / families.ts (never the reverse: never picking a brand
 // from outside knowledge of what a coil platform "really" is). Substring matches that could
 // be a false positive (e.g. "Marbo Zero Pro" containing "Zero" — a SALTHUB family name — but
-// clearly Marbo's own product line, not SaltHub's) are deliberately excluded.
+// clearly Marbo's own product line, not SaltHub's) are deliberately excluded. Parents with no
+// entry here are still admitted (Phase 2.6) as a draft with brandId/familyId/categoryId/
+// systemType all null — absence of a taxonomy match is no longer an admission blocker.
 // ===================================================================================
 
 interface TaxonomyMatch {
@@ -157,7 +164,7 @@ export function buildVariantStructure(
     id: c.shipnityVariantId,
     parentInternalId,
     optionSelections: [{ optionCode: axis, valueCode: slugifyValue(c.cleanedValue ?? c.rawLabel) }],
-    sku: null, // never fabricated — see file header / README
+    sku: null, // never fabricated — see README
     integrationRef: {
       provider: "shipnity",
       externalId: c.shipnityVariantId,
@@ -175,8 +182,6 @@ export function buildVariantStructure(
 // ===================================================================================
 
 export type ProjectionBlockReason =
-  | "no-taxonomy-match" // no evidenced brandId/familyId/categoryId at all
-  | "no-attributes-evidence" // brand/family known, but manufacturer attributes have zero evidence
   | "identity-matches-existing-legacy-product" // dedup — needs a merge into the legacy record, not a new one
   | "mixed-variant-axis"; // variant children span more than one optionType
 
@@ -193,6 +198,11 @@ export interface ProjectionCandidate {
   status: "candidate";
   shipnityProductId: string;
   product: ProductMasterInput;
+  /** True when brandId/categoryId/tagline/shortDescription are not all present — i.e. this
+   *  candidate would fail publication readiness as-is (Phase 2.6: familyId/systemType/
+   *  attributes are NOT part of readiness, see validateProductMasterRegistry). Informational
+   *  only; the candidate itself is still a fully schema-valid draft. */
+  isDraft: boolean;
   excludedChildren: ExcludedChild[];
 }
 
@@ -215,6 +225,78 @@ function allChildrenExcluded(parent: ActiveParentRecord, variantStructure: Varia
       reason: `parent "${parent.shipnityProductId}" blocked (${blockReason}) before this variant-role child could be built`,
     }));
   return [...variantStructure.excludedChildren, ...parentBlockedEntries];
+}
+
+function buildDraftCandidate(
+  parent: ActiveParentRecord,
+  match: TaxonomyMatch | undefined,
+  variantStructure: VariantStructureResult
+): ProjectionCandidate {
+  const internalId = parent.shipnityProductId.toLowerCase();
+
+  const product: ProductMasterInput = {
+    internalId,
+    slug: internalId, // Shipnity codes are already ASCII alnum+hyphen — no invented SEO slug
+    lifecycleStatus: "active", // genuinely active per Shipnity's own "have stock" view
+    publicationStatus: "unpublished", // not customer-visible — evidence is incomplete
+    brandId: match?.brandId ?? null,
+    familyId: match?.familyId ?? null,
+    categoryId: match?.categoryId ?? null,
+    systemType: match?.systemType ?? null,
+
+    name: parent.name,
+    displayName: parent.name, // no separate display-name evidence — reuse the one real string
+    tagline: null, // no editorial copy evidence
+    shortDescription: null, // no editorial copy evidence
+    attributes: null, // no manufacturer spec evidence
+    specifications: [],
+    features: [],
+    assets: [],
+    sourceUrls: [],
+
+    commerce: {
+      internalSku: null, // never fabricated
+      integrationRef: {
+        provider: "shipnity",
+        externalId: parent.shipnityProductId,
+        lastSyncedAt: CAPTURE_DATE,
+        syncStatus: "ok",
+      },
+    },
+
+    pricing: {
+      sellingPrice: null, // owner has not approved this as the final website price
+      priceReference: { source: "shipnity", value: parent.operationalSellingPrice, capturedAt: CAPTURE_DATE },
+      lastPriceReview: null,
+      priceApprovedByOwner: false,
+    },
+
+    optionDefinitions: variantStructure.optionDefinitions,
+    variants: variantStructure.variants,
+
+    availability: { status: "in-stock", source: "shipnity", observedAt: CAPTURE_DATE },
+
+    editorialContent: {},
+    merchantContent: {},
+    merchantTags: [],
+    compatibility: [],
+    relatedProducts: [],
+    faqRefs: [],
+    seo: {},
+    isFlagship: false,
+  };
+
+  // Mirrors validateProductMasterRegistry's actual publication-readiness check (Phase 2.6
+  // revision) — familyId/systemType/attributes are deliberately excluded, see that function's
+  // comment. Kept in sync manually since this is a UI/reporting convenience flag, not itself a
+  // validation gate (the registry validator is the single source of truth for readiness).
+  const isDraft =
+    product.brandId === null ||
+    product.categoryId === null ||
+    product.tagline === null ||
+    product.shortDescription === null;
+
+  return { status: "candidate", shipnityProductId: parent.shipnityProductId, product, isDraft, excludedChildren: variantStructure.excludedChildren };
 }
 
 function projectParent(parent: ActiveParentRecord): ProjectionResult {
@@ -246,28 +328,9 @@ function projectParent(parent: ActiveParentRecord): ProjectionResult {
     };
   }
 
-  if (!match) {
-    return {
-      status: "blocked",
-      shipnityProductId: parent.shipnityProductId,
-      name: parent.name,
-      reason: "no-taxonomy-match",
-      detail: `No brandId/familyId/categoryId can be evidenced from "${parent.name}" against the current 3-brand/8-family legacy taxonomy — inventing one would fabricate classification data.`,
-      excludedChildren: allChildrenExcluded(parent, variantStructure, "no-taxonomy-match"),
-    };
-  }
-
-  // Brand/family identified, but ProductMaster.attributes (screenType/drawStyle/portability/
-  // beginnerFriendly/chargingType) has NO nullable escape hatch and zero evidence exists for
-  // any of these products from Shipnity data alone.
-  return {
-    status: "blocked",
-    shipnityProductId: parent.shipnityProductId,
-    name: parent.name,
-    reason: "no-attributes-evidence",
-    detail: `Taxonomy identified (${match.evidence}), but ProductMaster.attributes requires screenType/drawStyle/portability/beginnerFriendly/chargingType with no nullable fallback, and no manufacturer spec evidence exists for this product in the Shipnity seed.`,
-    excludedChildren: allChildrenExcluded(parent, variantStructure, "no-attributes-evidence"),
-  };
+  // Phase 2.6 — no more blocking on missing taxonomy/attributes. Build a draft candidate with
+  // whatever real evidence exists (TAXONOMY_MATCHES) and null for whatever doesn't.
+  return buildDraftCandidate(parent, match, variantStructure);
 }
 
 export function projectActiveCatalog(): ProjectionResult[] {

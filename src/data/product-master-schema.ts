@@ -160,30 +160,38 @@ export const productMasterSchema = z.object({
   lifecycleStatus: z.enum(["draft", "active", "coming-soon", "discontinued", "archived"]),
   publicationStatus: z.enum(["published", "unpublished"]),
 
-  brandId: z.string().min(1),
-  familyId: z.string().min(1),
-  categoryId: z.string().min(1),
-  systemType: z.enum(["open-pod", "pod-kit", "disposable", "pod-cartridge", "coil", "accessory"]),
+  // Phase 2.6 — nullable so a draft ProductMaster record can be admitted before it has real
+  // taxonomy evidence. Publication readiness (brandId/categoryId non-null; familyId excused —
+  // see type-level doc comment) is enforced in validateProductMasterRegistry, not here.
+  brandId: z.string().min(1).nullable(),
+  familyId: z.string().min(1).nullable(),
+  categoryId: z.string().min(1).nullable(),
+  // Nullable (Phase 2.6, discovered empirically) — see type-level doc comment.
+  systemType: z.enum(["open-pod", "pod-kit", "disposable", "pod-cartridge", "coil", "accessory"]).nullable(),
 
   name: z.string().min(1),
   displayName: z.string().min(1),
-  tagline: z.string().min(1),
-  shortDescription: z.string().min(1),
-  attributes: z.object({
-    batteryMah: z.number().positive().optional(),
-    wattageMin: z.number().positive().optional(),
-    wattageMax: z.number().positive().optional(),
-    puffCount: z.number().positive().optional(),
-    capacityMl: z.number().positive().optional(),
-    screenType: z.enum(["none", "led-indicator", "color-display", "touchscreen"]),
-    screenSize: z.string().optional(),
-    drawStyle: z.enum(["MTL", "RDL", "DTL", "MTL/RDL"]),
-    portability: z.enum(["ultra-compact", "compact", "standard"]),
-    beginnerFriendly: z.boolean(),
-    chargingType: z.string().min(1),
-    weightG: z.number().positive().optional(),
-    dimensions: z.string().optional(),
-  }),
+  // Nullable (Phase 2.6, discovered empirically) — grouped with attributes, same evidence rule.
+  tagline: z.string().min(1).nullable(),
+  shortDescription: z.string().min(1).nullable(),
+  // Phase 2.6 — nullable; never fabricated to satisfy admission. Required at publication.
+  attributes: z
+    .object({
+      batteryMah: z.number().positive().optional(),
+      wattageMin: z.number().positive().optional(),
+      wattageMax: z.number().positive().optional(),
+      puffCount: z.number().positive().optional(),
+      capacityMl: z.number().positive().optional(),
+      screenType: z.enum(["none", "led-indicator", "color-display", "touchscreen"]),
+      screenSize: z.string().optional(),
+      drawStyle: z.enum(["MTL", "RDL", "DTL", "MTL/RDL"]),
+      portability: z.enum(["ultra-compact", "compact", "standard"]),
+      beginnerFriendly: z.boolean(),
+      chargingType: z.string().min(1),
+      weightG: z.number().positive().optional(),
+      dimensions: z.string().optional(),
+    })
+    .nullable(),
   specifications: z.array(specificationSchema),
   features: z.array(featureSchema),
   assets: z.array(assetSchema),
@@ -309,14 +317,70 @@ export function validateProductMasterRegistry({
   }
 
   for (const p of products) {
-    if (!brandSet.has(p.brandId)) {
+    // Phase 2.6 — null means "not yet known" (an admitted draft), not "invalid". A non-null
+    // value must still resolve to a real record — never a dangling reference, draft or not.
+    if (p.brandId !== null && !brandSet.has(p.brandId)) {
       throw new Error(`${p.internalId} references unknown brandId: ${p.brandId}`);
     }
-    if (!familySet.has(p.familyId)) {
+    if (p.familyId !== null && !familySet.has(p.familyId)) {
       throw new Error(`${p.internalId} references unknown familyId: ${p.familyId}`);
     }
-    if (!categorySet.has(p.categoryId)) {
+    if (p.categoryId !== null && !categorySet.has(p.categoryId)) {
       throw new Error(`${p.internalId} references unknown categoryId: ${p.categoryId}`);
+    }
+
+    // Publication readiness — a "published" record is customer-visible and must be
+    // commerce/content-complete, not merely admitted. Enforced HERE, inside the same registry
+    // validator every ProductMaster list must already run through, so a caller cannot
+    // accidentally publish an incomplete draft by forgetting to call a separate readiness
+    // helper.
+    //
+    // Phase 2.6 revision: only fields that are UNIVERSALLY applicable regardless of product
+    // type are enforced here.
+    //   - brandId, categoryId: every real product has a maker and belongs to some category —
+    //     universal in principle. The current taxonomy DATA is incomplete for non-vape-device
+    //     brands/categories (e.g. no "Marbo" brand, no "e-liquid" category exist yet), which is
+    //     a data-population gap, not a conceptual mismatch — an e-liquid product genuinely CAN
+    //     get a correct brandId/categoryId once those records are added (out of scope this
+    //     phase: no taxonomy expansion). Until then it correctly stays unpublishable, which is
+    //     the honest outcome, not a false block.
+    //   - tagline, shortDescription: generic marketing copy, applicable to any product type.
+    //   - familyId: deliberately NOT required — see its type-level doc comment (display/filter
+    //     convenience only, confirmed by real frontend usage, never load-bearing).
+    // systemType and attributes are DEFERRED, not enforced here: SystemType is a closed enum
+    // designed for vape devices (open-pod/pod-kit/disposable/pod-cartridge/coil/accessory) with
+    // no value that correctly describes an e-liquid or IQOS product — there is no correct
+    // answer to assign, not merely a missing data record, so forcing it would fabricate a
+    // classification. `attributes` is entirely device-shaped (screenType/drawStyle/portability/
+    // chargingType) and is meaningless for an e-liquid bottle. Expressing "required, but only
+    // for device-type products" needs some notion of per-category attribute schemas that
+    // ProductMaster does not have yet (deliberately not built this phase — see Phase 2.6
+    // report: "do not redesign ProductMaster into a giant polymorphic schema"). Until that
+    // exists, requiring systemType/attributes universally would either fabricate data for
+    // non-device products or block them from ever publishing — both wrong. Real category-
+    // specific readiness for these two fields is a deferred future phase, not implemented here.
+    if (p.publicationStatus === "published") {
+      const missingForReadiness: string[] = [];
+      if (p.brandId === null) missingForReadiness.push("brandId");
+      if (p.categoryId === null) missingForReadiness.push("categoryId");
+      if (p.tagline === null) missingForReadiness.push("tagline");
+      if (p.shortDescription === null) missingForReadiness.push("shortDescription");
+      if (missingForReadiness.length > 0) {
+        throw new Error(
+          `${p.internalId} is publicationStatus:"published" but missing required readiness field(s): ${missingForReadiness.join(", ")} — these may be null while lifecycleStatus/publicationStatus reflect a draft, but never on a published record`
+        );
+      }
+    }
+
+    // An "draft" lifecycle product is, by definition, not a finalized merchandising decision —
+    // publishing it would be an internally inconsistent state (unlike e.g. "discontinued" +
+    // "published", which is a real, intentional combination per the stock-page-preservation
+    // rule in docs/BUSINESS_SOURCE_OF_TRUTH.md §6). No prior committed code enforced this; it
+    // is a genuine gap, not a duplicate of an existing rule.
+    if (p.lifecycleStatus === "draft" && p.publicationStatus === "published") {
+      throw new Error(
+        `${p.internalId} has lifecycleStatus:"draft" but publicationStatus:"published" — a draft merchandising decision cannot be customer-visible`
+      );
     }
 
     if (p.variants.length > 0) {
