@@ -98,5 +98,37 @@ export function runClassifyContractTests(): ClassifyContractResult[] {
     );
   }
 
+  // ---- 8. Phase 2.8 regression: Thai packaging words "ตัว"/"หัว" — \b never matched them ----
+  {
+    // The real reported bug: "Black / 1 หัว" (Coil-87) leaked through unsplit.
+    const r1 = classifyParentChildren("Test-Packaging-1", ["Black / 1 หัว"]);
+    check(
+      '"Black / 1 หัว" splits into value="Black", note="1 หัว" (was previously left unsplit)',
+      r1[0].cleanedValue === "Black" && r1[0].packagingNote === "1 หัว",
+      JSON.stringify(r1[0])
+    );
+  }
+  {
+    // Same class of bug via "ตัว" — a resistance value with a per-piece unit note.
+    const r2 = classifyParentChildren("Test-Packaging-2", ["0.15Ω / ตัว"]);
+    check(
+      '"0.15Ω / ตัว" splits into value="0.15Ω", note="ตัว"',
+      r2[0].cleanedValue === "0.15Ω" && r2[0].packagingNote === "ตัว" && r2[0].optionType === "resistance",
+      JSON.stringify(r2[0])
+    );
+  }
+  {
+    // False-positive guard: "หัว" must NOT match as a substring inside an unrelated real word
+    // like "หัวเปล่า" (a phrase that appears in several real product names in this dataset).
+    // A single-child group with no color/flavor/numeric signal and no " / " separator should
+    // stay unresolved, not have "หัวเปล่า..." mistaken for a packaging note via substring.
+    const r3 = classifyParentChildren("Test-Packaging-3", ["หัวเปล่าทดสอบ"]);
+    check(
+      '"หัวเปล่าทดสอบ" (containing "หัว" as a substring of a real word, no separator) is not misread as packaging text',
+      r3[0].optionType === "unresolved" && r3[0].packagingNote === null,
+      JSON.stringify(r3[0])
+    );
+  }
+
   return results;
 }

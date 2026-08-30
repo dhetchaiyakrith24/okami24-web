@@ -84,15 +84,29 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "Coil-53": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn" (UWELL CALIBURN family) + Shipnity "Coil-" prefix' },
   "Coil-55": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn" (UWELL CALIBURN family) + Shipnity "Coil-" prefix' },
   "Coil-72": { brandId: "voopoo", familyId: "vmate", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Vmate" (VOOPOO VMATE family) + Shipnity "Coil-" prefix' },
-  "Coil-74": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn" (UWELL CALIBURN family) + Shipnity "Coil-" prefix' },
+  // Phase 2.8 correction — official UWELL evidence (myuwell.com/caliburn/caliburn-x) describes
+  // the Caliburn X as having a 3 ml REFILLABLE POD with separately replaceable coils. This
+  // record's own child ("3ml. / 1 กล่อง 2 หัว" — a 3ml capacity, a pod-level spec, not a coil
+  // spec) matches the pod, not a bare coil head, despite the Shipnity name saying "หัวเปล่า"
+  // (bare head). categoryId/systemType corrected to the existing "pods-cartridges"/
+  // "pod-cartridge" values — no new taxonomy needed, both already exist.
+  "Coil-74": { brandId: "uwell", familyId: "caliburn", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name contains "Caliburn" (UWELL CALIBURN family); child spec (3ml capacity) matches the official Caliburn X refillable pod, not a coil' },
   "Coil-83": { brandId: "voopoo", familyId: "argus", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Argus" (VOOPOO ARGUS family) + Shipnity "Coil-" prefix' },
   "Coil-94": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn G4&G3" (UWELL CALIBURN family) + Shipnity "Coil-" prefix' },
   // Phase 2.7 — brand explicit in text ("Voopoo"), but "PnP"/"TPP" are not committed families —
-  // familyId genuinely absent, not a fabricated guess. categoryId/systemType still resolve from
-  // the Shipnity "Coil-" prefix + Thai "หัวเปล่า"/"คอยล์" the same way as the Phase 2.5 matches.
-  "Coil-56": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "หัวเปล่า Voopoo PnP-X" states "Voopoo" explicitly — no committed "PnP" family exists' },
-  "Coil-87": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "Voopoo TPP Pod" states "Voopoo" explicitly — no committed "TPP" family exists' },
-  "Coil-92": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "คอยล์ Voopoo PnP X" states "Voopoo" explicitly — no committed "PnP" family exists' },
+  // familyId genuinely absent, not a fabricated guess.
+  //
+  // Phase 2.8 correction — official VOOPOO evidence: the "PnP X Cartridge" comes in
+  // Black/Grey/Silver, matching THIS record's active variants (Black/Gray/Silver) exactly —
+  // this is the cartridge/pod, not a coil (VOOPOO's PnP X *coils* are a separate resistance-
+  // variant product). categoryId/systemType corrected to "pods-cartridges"/"pod-cartridge".
+  "Coil-56": { brandId: "voopoo", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัวเปล่า Voopoo PnP-X" states "Voopoo" explicitly; active variants (Black/Gray/Silver) match the official PnP X Cartridge color range, not the resistance-variant coil' },
+  // Phase 2.8 correction — VOOPOO documents "TPP Pod"/"Pod Tank" as a distinct product from TPP
+  // coils; the Shipnity name itself literally says "Pod". categoryId/systemType corrected.
+  "Coil-87": { brandId: "voopoo", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "Voopoo TPP Pod" states "Voopoo" explicitly and literally says "Pod" — VOOPOO documents TPP Pod/Pod Tank separately from TPP coils' },
+  // Confirmed coil (Phase 2.8 official-evidence pass) — VOOPOO's PnP X coil line (resistance
+  // variants) is a real, separate product from the PnP X Cartridge above.
+  "Coil-92": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "คอยล์ Voopoo PnP X" states "Voopoo" explicitly — official VOOPOO PnP X coils (resistance variants) confirm this is a real coil line, distinct from the PnP X Cartridge' },
   // "Pod-147" ("M Switch 15k") deliberately has NO entry (Phase 2.7 revision) — the earlier
   // brandId:"salthub" assignment relied on "M Switch" text coincidentally matching an EXISTING
   // family name in our own (NOVA-demo-era) taxonomy, not on "SaltHub" appearing in the Shipnity
@@ -126,17 +140,25 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "คอยล์ Caliburn G2 จากแบรนด์ UWELL",
     shortDescription: "คอยล์รุ่น Caliburn G2 เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
   },
+  // Phase 2.8 correction — was worded as a coil ("คอยล์"); official VOOPOO evidence (matching
+  // active variant colors) identifies this as the PnP X cartridge, not a coil. See
+  // TAXONOMY_MATCHES["Coil-56"] for the evidence.
   "Coil-56": {
-    tagline: "คอยล์ Voopoo PnP-X",
-    shortDescription: "คอยล์รุ่น PnP-X จากแบรนด์ VOOPOO",
+    tagline: "คาร์ทริดจ์ Voopoo PnP-X",
+    shortDescription: "คาร์ทริดจ์รุ่น PnP-X จากแบรนด์ VOOPOO",
   },
+  // Phase 2.8 correction — was worded as a bare coil head ("หัวคอยล์เปล่า"); official UWELL
+  // evidence describes the Caliburn X as a 3ml refillable pod. See
+  // TAXONOMY_MATCHES["Coil-74"] for the evidence.
   "Coil-74": {
-    tagline: "หัวคอยล์เปล่า Caliburn X จากแบรนด์ UWELL",
-    shortDescription: "หัวคอยล์เปล่ารุ่น Caliburn X เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
+    tagline: "พอต Caliburn X จากแบรนด์ UWELL",
+    shortDescription: "พอตรุ่น Caliburn X เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
   },
+  // Phase 2.8 correction — was worded as a coil; the Shipnity name itself says "Pod", and
+  // VOOPOO documents TPP Pod separately from TPP coils. See TAXONOMY_MATCHES["Coil-87"].
   "Coil-87": {
-    tagline: "คอยล์ Voopoo TPP Pod",
-    shortDescription: "คอยล์รุ่น TPP Pod จากแบรนด์ VOOPOO",
+    tagline: "พอต Voopoo TPP Pod",
+    shortDescription: "พอตรุ่น TPP Pod จากแบรนด์ VOOPOO",
   },
   "Coil-92": {
     tagline: "คอยล์ Voopoo PnP X",

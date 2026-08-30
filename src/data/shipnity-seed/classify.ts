@@ -99,7 +99,17 @@ const FLAVOR_WORDS = [
 const RESISTANCE_MARK = /\d+(\.\d+)?\s*(Ω|ohm|โอห์ม)/i;
 const SIZE_MARK = /\d+(\.\d+)?\s*(ml|มล)\.?/i;
 const STRENGTH_MARK = /\d+\s*mg/i;
-const PACKAGING_PHRASE = /กล่อง|ยกกล่อง|แพ็ค|\bpack\b|ลัง|ต่อตัว|ขายยกกล่อง|1 ซอง|\bตัว\b|\bหัว\b/i;
+// Phase 2.8 fix: "ตัว"/"หัว" used to be wrapped in \b...\b, but JS \b is an ASCII word-boundary
+// only — Thai script is never \w, so a boundary never forms next to it and \bหัว\b/\bตัว\b could
+// NEVER match (a real bug: "Black / 1 หัว" was never split, the whole raw label leaked through
+// as the option value). These two are matched as exact TOKENS instead (see `isPackagingPhrase`
+// below), not substrings — "หัว" is also a substring of unrelated real words already present in
+// this dataset (e.g. "หัวเปล่า" appears in several product names), so a substring match would
+// misfire. The other phrases here are either multi-character (safe as substrings) or ASCII
+// ("pack", where \b works correctly), so they keep working exactly as before.
+const PACKAGING_PHRASE_SUBSTRINGS = ["กล่อง", "ยกกล่อง", "แพ็ค", "ลัง", "ต่อตัว", "ขายยกกล่อง", "1 ซอง"];
+const PACKAGING_PHRASE_TOKENS = ["ตัว", "หัว"];
+const ENGLISH_PACKAGING_WORD = /\bpack\b/i;
 
 // Small, evidence-driven list — only expanded when a real active record needs it (currently
 // just "ฐานแบตเตอรี่" / Pod-154-19). Not a guess at every possible accessory word.
@@ -133,6 +143,15 @@ function matchesFlavorWord(text: string): boolean {
   return FLAVOR_WORDS.some((w) => low.includes(w));
 }
 
+/** See the PACKAGING_PHRASE_* comment above for why "ตัว"/"หัว" must be token-matched. */
+function isPackagingPhrase(text: string): boolean {
+  const low = text.toLowerCase();
+  if (PACKAGING_PHRASE_SUBSTRINGS.some((w) => low.includes(w))) return true;
+  if (ENGLISH_PACKAGING_WORD.test(text)) return true;
+  const tokens = tokenize(text);
+  return PACKAGING_PHRASE_TOKENS.some((w) => tokens.includes(w));
+}
+
 interface BaseSignal {
   rawLabel: string;
   value: string;
@@ -148,7 +167,7 @@ interface BaseSignal {
  */
 function splitPackaging(rawLabel: string): { value: string; note: string | null } {
   const parts = rawLabel.split(" / ");
-  if (parts.length >= 2 && PACKAGING_PHRASE.test(parts[parts.length - 1])) {
+  if (parts.length >= 2 && isPackagingPhrase(parts[parts.length - 1])) {
     return { value: parts.slice(0, -1).join(" / ").trim(), note: parts[parts.length - 1].trim() };
   }
   return { value: rawLabel.trim(), note: null };
@@ -201,7 +220,7 @@ function deriveChildRole(optionType: OptionType, rawLabel: string): ChildRole {
 function unresolvedResult(b: BaseSignal): ClassifiedValue {
   const isPureNote = b.note !== null && b.value.length === 0;
   const cleanedValue = isPureNote ? null : b.value || null;
-  const packagingNote = b.note ?? (PACKAGING_PHRASE.test(b.rawLabel) ? b.rawLabel : null);
+  const packagingNote = b.note ?? (isPackagingPhrase(b.rawLabel) ? b.rawLabel : null);
   return {
     optionType: "unresolved",
     optionTypeProvenance: "unresolved",
