@@ -75,6 +75,14 @@ export interface ProductVariant {
   optionSelections: { optionCode: string; valueCode: string }[];
   /** Nullable while legacy/migrated products don't have a canonical SKU assigned yet. */
   sku: string | null;
+  /**
+   * Shipnity's own identifier for this specific variant (e.g. child code `Pod-179-1`),
+   * kept separate from `sku` for the same reason `commerce.integrationRef` is separate from
+   * `commerce.internalSku` at the product level — an external system's opaque reference must
+   * never be conflated with OKami24's own commerce SKU. Optional: no legacy/migrated product
+   * has variants yet, so there is nothing to reference until real variant-bearing data exists.
+   */
+  integrationRef?: IntegrationRef;
   image?: ProductAsset;
   /**
    * Optional per-variant price override. Absent = inherit `ProductMaster.pricing`. Only set

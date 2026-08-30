@@ -152,6 +152,63 @@ const CASES: ContractCase[] = (() => {
       },
     },
     {
+      // Proves three things at once (Phase 2.3): (1) commerce.integrationRef identifies a
+      // Shipnity parent product, (2) each variant's own integrationRef identifies its
+      // Shipnity child record independently, (3) sku stays null/independent throughout —
+      // integrationRef (external, opaque) and sku (OKami24-owned) never get conflated.
+      name: "product + variant integrationRef identify Shipnity parent/child, sku stays independent",
+      expectRejection: false,
+      product: {
+        ...withVariantsValid,
+        internalId: "synthetic-with-shipnity-integration",
+        slug: "synthetic-with-shipnity-integration",
+        commerce: {
+          internalSku: null,
+          integrationRef: {
+            provider: "shipnity",
+            externalId: "Pod-179",
+            lastSyncedAt: "2026-08-31T00:00:00.000Z",
+            syncStatus: "ok",
+          },
+        },
+        variants: withVariantsValid.variants.map((v, i) => ({
+          ...v,
+          sku: null,
+          integrationRef: {
+            provider: "shipnity",
+            externalId: `Pod-179-${i + 1}`,
+            lastSyncedAt: "2026-08-31T00:00:00.000Z",
+            syncStatus: "ok",
+          },
+        })),
+      },
+    },
+    {
+      // integrationRef is opaque by design (see type-level doc comment) — there is no FK/
+      // registry check for it, only Zod shape validation. This proves the shape check itself
+      // still rejects malformed data (empty externalId violates `.min(1)`).
+      name: "variant integrationRef with empty externalId is rejected",
+      expectRejection: true,
+      product: {
+        ...withVariantsValid,
+        internalId: "synthetic-bad-integration-ref",
+        slug: "synthetic-bad-integration-ref",
+        variants: withVariantsValid.variants.map((v) =>
+          v.id === "v1"
+            ? {
+                ...v,
+                integrationRef: {
+                  provider: "shipnity" as const,
+                  externalId: "",
+                  lastSyncedAt: null,
+                  syncStatus: "never-synced" as const,
+                },
+              }
+            : v
+        ),
+      },
+    },
+    {
       name: "dangling relatedProducts.targetInternalId",
       expectRejection: true,
       product: baseSyntheticProduct({

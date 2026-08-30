@@ -64,6 +64,13 @@ const availabilitySnapshotSchema = z.object({
   observedAt: z.string().nullable(),
 });
 
+const integrationRefSchema = z.object({
+  provider: z.literal("shipnity"),
+  externalId: z.string().min(1),
+  lastSyncedAt: z.string().nullable(),
+  syncStatus: z.enum(["ok", "stale", "error", "never-synced"]),
+});
+
 const variantSchema = z.object({
   id: z.string().min(1),
   parentInternalId: z.string().min(1),
@@ -74,6 +81,9 @@ const variantSchema = z.object({
     })
   ),
   sku: z.string().min(1).nullable(),
+  // Reuses the same IntegrationRef shape as commerce.integrationRef — see type-level doc
+  // comment on ProductVariant.integrationRef for why this must not be merged with `sku`.
+  integrationRef: integrationRefSchema.optional(),
   image: assetSchema.optional(),
   pricingOverride: z
     .object({
@@ -82,13 +92,6 @@ const variantSchema = z.object({
     })
     .optional(),
   availability: availabilitySnapshotSchema,
-});
-
-const integrationRefSchema = z.object({
-  provider: z.literal("shipnity"),
-  externalId: z.string().min(1),
-  lastSyncedAt: z.string().nullable(),
-  syncStatus: z.enum(["ok", "stale", "error", "never-synced"]),
 });
 
 export const faqEntrySchema = z.object({
