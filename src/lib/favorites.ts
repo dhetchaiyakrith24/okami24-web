@@ -2,8 +2,8 @@
 
 import { useCallback, useSyncExternalStore } from "react";
 
-const STORAGE_KEY = "nova-vapor-favorites";
-const EVENT = "nova-vapor-favorites-change";
+const STORAGE_KEY = "okami24-favorites";
+const EVENT = "okami24-favorites-change";
 
 const EMPTY: string[] = [];
 let cachedRaw: string | null = null;

@@ -6,7 +6,7 @@ import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 
 export const metadata: Metadata = {
   title: "All Products",
-  description: "Every device in the NOVA VAPOR catalog — pod systems, pod kits, disposables, pods, and cartridges from UWELL, VOOPOO, and SALTHUB.",
+  description: "Every device in the OKami24 catalog — pod systems, pod kits, disposables, pods, and cartridges from UWELL, VOOPOO, and SALTHUB.",
 };
 
 export default function ProductsPage() {

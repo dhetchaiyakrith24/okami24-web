@@ -7,11 +7,11 @@ import { FAQAccordion } from "@/components/content/FAQAccordion";
 
 export const metadata: Metadata = {
   title: "FAQ",
-  description: "Answers about how this catalog, comparison tool, and finder work — and what this project is (and isn't).",
+  description: "Answers about ordering from OKami24, how the catalog, comparison tool, and finder work.",
 };
 
 const CATEGORY_LABELS: Record<SiteFAQ["category"], string> = {
-  ordering: "About This Site",
+  ordering: "Ordering",
   devices: "Devices & Catalog",
   "e-liquid": "E-Liquid",
   safety: "Safety & Compliance",
@@ -23,7 +23,7 @@ const CATEGORY_ORDER: SiteFAQ["category"][] = ["ordering", "devices", "e-liquid"
 export default function FAQPage() {
   return (
     <>
-      <PageHeader eyebrow="Support" title="FAQ" description={`${siteFaqs.length} answers about this project, the catalog, and how the tools work.`} />
+      <PageHeader eyebrow="Support" title="FAQ" description={`${siteFaqs.length} answers about ordering, the catalog, and how the tools work.`} />
       <Container className="max-w-3xl py-12 lg:py-16">
         <div className="flex flex-col gap-12">
           {CATEGORY_ORDER.map((category) => {

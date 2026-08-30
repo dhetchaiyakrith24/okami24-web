@@ -4,9 +4,9 @@ export const siteFaqs: SiteFAQ[] = [
   {
     id: "what-is-this-site",
     category: "ordering",
-    question: "Is this a real store — can I actually buy anything here?",
+    question: "How do I actually order from OKami24?",
     answer:
-      "No. NOVA VAPOR is a product-discovery and design demonstration project. There is no checkout, no real inventory, and no transactions — every page exists for catalog, comparison, and education purposes only.",
+      "Browse, compare, and use the Finder here to figure out what fits you — then message OKami24's LINE OA (@okM24) with the product you're interested in. An admin will confirm stock and payment and help you place the order from there.",
   },
   {
     id: "where-specs-come-from",
@@ -48,7 +48,7 @@ export const siteFaqs: SiteFAQ[] = [
     category: "safety",
     question: "Why is there an age gate on this site?",
     answer:
-      "Nicotine and vaping products are age-restricted. The age gate is a standard, responsible-presentation practice for this category, even though this is a demo project with no real purchasing.",
+      "Nicotine and vaping products are age-restricted. Confirming you're 21+ before browsing is a standard, responsible-presentation practice for this category.",
   },
   {
     id: "health-claims",
@@ -69,7 +69,7 @@ export const siteFaqs: SiteFAQ[] = [
     category: "account",
     question: "Do I need an account to use Favorites?",
     answer:
-      "No. Favorites is a local, browser-based demo — it's stored only on your device and isn't tied to any account or server-side profile.",
+      "No. Favorites is stored locally in your browser — it's saved only on your device and isn't tied to any account or server-side profile yet.",
   },
 ];
 

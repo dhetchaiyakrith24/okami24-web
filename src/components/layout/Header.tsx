@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X, Search, Heart, ChevronDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
@@ -32,8 +33,15 @@ export function Header() {
     <>
     <header className="sticky top-0 z-50 border-b border-surface-border-soft bg-surface-0/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-6 sm:h-20">
-        <Link href="/" className="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
-          NOVA<span className="text-ember"> VAPOR</span>
+        <Link href="/" className="flex items-center" aria-label="OKami24">
+          <Image
+            src="/brand/okami-logo-red.png"
+            alt="OKami24"
+            width={568}
+            height={480}
+            priority
+            className="h-10 w-auto sm:h-12"
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">

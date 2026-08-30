@@ -13,6 +13,15 @@ This is a non-commercial design/engineering demonstration project. These images 
 property of their respective brands; they are used here for illustrative/reference purposes
 only, are not redistributed for commercial use, and are not sourced from third-party retailers.
 
+## Brand — OKami24 (owner-supplied)
+
+| Asset | Source | Original filename | Local file | Purpose | Accessed |
+|---|---|---|---|---|---|
+| OKami24 logo (red variant) | Owner-supplied Google Drive folder (`logo-okami-Edited.png`, public link) | `logo-okami-Edited.png` (3708×3708, RGBA) | `public/brand/okami-logo-red.png` (568×480) | Header/Footer wordmark. Cropped tight to the badge's real alpha bounding box only — no redrawing/re-tracing, proportions preserved, original left untouched. | 2026-08-30 |
+| OKami24 favicon | Same source, same crop | — | `src/app/icon.png` (512×512) | Site favicon/app icon. Same tight crop, then padded with transparent pixels to a 1:1 square (content itself not stretched/distorted) since the source badge isn't natively square. | 2026-08-30 |
+
+`--accent-red` (`#8d0000`) in `src/app/globals.css` was colour-sampled directly from this logo file (most common red pixel value in the crop) rather than invented. A second file in the same folder, `OKAMI.png`, was also inspected — it's a purple/violet colourway, not the requested red variant, so it wasn't used.
+
 ## UWELL — myuwell.com (10/10 products have a card image)
 
 | Product | Source URL | Original filename | Local file | Purpose | Accessed |

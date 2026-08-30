@@ -3,6 +3,7 @@ import { Barlow_Condensed, Inter, IBM_Plex_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AgeGate } from "@/components/layout/AgeGate";
+import { LineContact } from "@/components/layout/LineContact";
 import "./globals.css";
 
 const displayFont = Barlow_Condensed({
@@ -25,17 +26,19 @@ const monoFont = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "NOVA VAPOR — Premium Pod, Disposable & E-Liquid Platform",
-    template: "%s — NOVA VAPOR",
+    default: "OKami24 — ของแท้ ราคาตรง บริการจริง",
+    template: "%s — OKami24",
   },
   description:
-    "An original product-discovery platform for pod systems, disposables, e-liquid, and vape technology — flagship devices, buying guides, comparison and a guided product finder.",
+    "OKami24: ร้านอุปกรณ์พอดซิสเต็ม ดิสโพส และน้ำยา คัดสรรของแท้ ราคาตรงไปตรงมา พร้อมบริการหลังการขายที่ดูแลคุณจริง สอบถามและสั่งซื้อผ่าน LINE OA @okM24",
+  // NOTE: metadataBase intentionally left as the existing placeholder domain — the real
+  // production domain is TBD (see docs/BUSINESS_SOURCE_OF_TRUTH.md §19) and is deliberately
+  // deferred to the deployment/SEO phase, not decided here.
   metadataBase: new URL("https://nova-vapor.example.com"),
   openGraph: {
-    title: "NOVA VAPOR — Premium Pod, Disposable & E-Liquid Platform",
-    description:
-      "A complete product-discovery ecosystem for pod systems, disposables, e-liquid, and vape technology.",
-    siteName: "NOVA VAPOR",
+    title: "OKami24 — ของแท้ ราคาตรง บริการจริง",
+    description: "อุปกรณ์พอดซิสเต็ม ดิสโพส และน้ำยา ของแท้ ราคาตรง บริการจริง — สอบถามและสั่งซื้อผ่าน LINE OA",
+    siteName: "OKami24",
     type: "website",
   },
 };
@@ -51,6 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <LineContact />
       </body>
     </html>
   );

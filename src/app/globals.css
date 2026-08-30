@@ -25,6 +25,14 @@
   --accent-steel-strong: #8ccbe6;
   --accent-steel-soft: #1c3038;
 
+  /* Brand identity red — sampled from the real OKami24 logo (public/brand/okami-logo-red.png).
+     Used ONLY for brand-identity moments (logo, favicon, a few explicit "this is OKami24"
+     mentions) — never for general interaction, which stays ember. -strong is the same hue
+     lightened for AA text contrast on dark surfaces; -soft is a tinted background wash. */
+  --accent-red: #8d0000;
+  --accent-red-strong: #f23030;
+  --accent-red-soft: #3a1418;
+
   /* Semantic */
   --state-verified: #7ed08a;
   --state-unverified: #d6ab52;
@@ -57,6 +65,10 @@
   --color-steel: var(--accent-steel);
   --color-steel-strong: var(--accent-steel-strong);
   --color-steel-soft: var(--accent-steel-soft);
+
+  --color-red: var(--accent-red);
+  --color-red-strong: var(--accent-red-strong);
+  --color-red-soft: var(--accent-red-soft);
 
   --color-verified: var(--state-verified);
   --color-unverified: var(--state-unverified);

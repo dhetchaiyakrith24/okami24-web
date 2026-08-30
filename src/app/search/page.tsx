@@ -5,7 +5,7 @@ import { SearchTool } from "@/components/tools/SearchTool";
 
 export const metadata: Metadata = {
   title: "Search",
-  description: "Search the NOVA VAPOR catalog by product name, brand, family, category, or feature.",
+  description: "Search the OKami24 catalog by product name, brand, family, category, or feature.",
 };
 
 export default async function SearchPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {

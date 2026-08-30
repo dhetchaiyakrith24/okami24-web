@@ -49,8 +49,8 @@ export default function ELiquidPage() {
         <div className="mt-14 rounded-2xl border border-surface-border-soft bg-surface-1 p-6">
           <p className="text-sm leading-relaxed text-foreground-muted">
             This section makes no health, safety, or comparative claims about vaping, and does not distinguish
-            nicotine-free from nicotine-containing products — this is an editorial demonstration, not a store.
-            Nicotine strength always varies by product and jurisdiction.
+            nicotine-free from nicotine-containing products for every listing here.
+            Nicotine strength always varies by product — check the product page or ask via LINE OA.
           </p>
         </div>
       </Container>

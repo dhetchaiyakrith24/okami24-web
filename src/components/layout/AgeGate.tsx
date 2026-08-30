@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useSyncExternalStore } from "react";
 
-const STORAGE_KEY = "nova-vapor-age-verified";
-const EVENT = "nova-vapor-age-gate-change";
+const STORAGE_KEY = "okami24-age-verified";
+const EVENT = "okami24-age-gate-change";
 
 function getSnapshot() {
   try {
@@ -85,18 +85,16 @@ export function AgeGate() {
       onKeyDown={handleKeyDown}
     >
       <div className="w-full max-w-md rounded-2xl border border-surface-border bg-surface-1 p-8 shadow-2xl">
-        <span className="label-mono text-xs text-ember">Age &amp; Content Notice</span>
+        <span className="label-mono text-xs text-ember">ประกาศเรื่องอายุ</span>
         <h2 id="age-gate-title" className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
-          Are you 21 or older?
+          คุณอายุ 21 ปีขึ้นไปหรือไม่?
         </h2>
         <p id="age-gate-desc" className="mt-4 text-sm leading-relaxed text-foreground-muted">
-          This site presents nicotine vaping products for informational and demonstration purposes. It is intended
-          for adults of legal purchase age in their jurisdiction and is <strong className="text-foreground">not
-          an active storefront</strong> — no products can be purchased here.
+          เว็บไซต์นี้นำเสนอสินค้าอุปกรณ์บุหรี่ไฟฟ้าและน้ำยา สำหรับผู้มีอายุครบ <strong className="text-foreground">21
+          ปีบริบูรณ์ขึ้นไปเท่านั้น</strong> การสอบถามและสั่งซื้อสินค้าดำเนินการผ่าน LINE OA ของ OKami24
         </p>
         <p className="mt-3 text-xs leading-relaxed text-foreground-dim">
-          Nicotine is an addictive chemical. This project makes no health, safety, or cessation claims about
-          vaping.
+          นิโคตินเป็นสารเสพติด เว็บไซต์นี้ไม่มีการกล่าวอ้างด้านสุขภาพ ความปลอดภัย หรือการเลิกบุหรี่ใดๆ เกี่ยวกับการสูบไอ
         </p>
         <div className="mt-7 flex flex-col gap-3 sm:flex-row">
           <button
@@ -104,13 +102,13 @@ export function AgeGate() {
             onClick={confirm}
             className="flex-1 rounded-full bg-ember px-6 py-3 text-sm font-semibold text-[#181008] transition-colors hover:bg-ember-strong focus-visible:outline-2 focus-visible:outline-ember"
           >
-            Yes, I&apos;m 21+
+            ใช่ ฉันอายุ 21 ปีขึ้นไป
           </button>
           <button
             onClick={decline}
             className="flex-1 rounded-full border border-surface-border px-6 py-3 text-sm font-semibold text-foreground-muted transition-colors hover:border-foreground-dim hover:text-foreground focus-visible:outline-2 focus-visible:outline-ember"
           >
-            No, I&apos;m under 21
+            ไม่ใช่ ฉันอายุต่ำกว่า 21 ปี
           </button>
         </div>
       </div>

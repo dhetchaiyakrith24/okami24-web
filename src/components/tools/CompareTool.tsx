@@ -107,7 +107,7 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
               ))}
             </div>
             <p className="mt-4 text-xs text-foreground-dim">
-              These notes describe fit, not rank — NOVA VAPOR doesn&apos;t declare a universal &ldquo;winner&rdquo; between devices built for different use cases.
+              These notes describe fit, not rank — OKami24 doesn&apos;t declare a universal &ldquo;winner&rdquo; between devices built for different use cases.
             </p>
           </div>
         </div>
