@@ -66,7 +66,9 @@ function slugifyValue(text: string): string {
 
 interface TaxonomyMatch {
   brandId: string;
-  familyId: string;
+  /** Absent when the brand is explicit in the text but no matching family/product-line record
+   *  exists yet (e.g. "Voopoo PnP-X" — brand=voopoo confirmed, but no "PnP" family is committed). */
+  familyId?: string;
   /** Present only when categoryId/systemType can be determined with real evidence too. */
   categoryId?: string;
   systemType?: SystemType;
@@ -85,10 +87,61 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "Coil-74": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn" (UWELL CALIBURN family) + Shipnity "Coil-" prefix' },
   "Coil-83": { brandId: "voopoo", familyId: "argus", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Argus" (VOOPOO ARGUS family) + Shipnity "Coil-" prefix' },
   "Coil-94": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn G4&G3" (UWELL CALIBURN family) + Shipnity "Coil-" prefix' },
-  "Pod-147": { brandId: "salthub", familyId: "m-switch", evidence: 'name contains "M Switch" (SALTHUB M SWITCH family) — categoryId/systemType left undetermined: ambiguous between the reusable device body and a prefilled pod/cartridge, no textual evidence resolves it either way' },
+  // Phase 2.7 — brand explicit in text ("Voopoo"), but "PnP"/"TPP" are not committed families —
+  // familyId genuinely absent, not a fabricated guess. categoryId/systemType still resolve from
+  // the Shipnity "Coil-" prefix + Thai "หัวเปล่า"/"คอยล์" the same way as the Phase 2.5 matches.
+  "Coil-56": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "หัวเปล่า Voopoo PnP-X" states "Voopoo" explicitly — no committed "PnP" family exists' },
+  "Coil-87": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "Voopoo TPP Pod" states "Voopoo" explicitly — no committed "TPP" family exists' },
+  "Coil-92": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "คอยล์ Voopoo PnP X" states "Voopoo" explicitly — no committed "PnP" family exists' },
+  // "Pod-147" ("M Switch 15k") deliberately has NO entry (Phase 2.7 revision) — the earlier
+  // brandId:"salthub" assignment relied on "M Switch" text coincidentally matching an EXISTING
+  // family name in our own (NOVA-demo-era) taxonomy, not on "SaltHub" appearing in the Shipnity
+  // text itself. External research found conflicting brand attribution for this product.
+  // Without owner/UI/project evidence confirming the brand, it stays fully unmatched (draft,
+  // needs-research) rather than treating a taxonomy-name coincidence as confirmation.
   "Pod-168": { brandId: "uwell", familyId: "caliburn", exactLegacyMatch: "caliburn-g4-pro", evidence: 'name "Caliburn G4 Pro" is an exact match to legacy product internalId "caliburn-g4-pro" (displayName "UWELL CALIBURN G4 PRO")' },
   "Pod-177": { brandId: "voopoo", familyId: "vmate", exactLegacyMatch: "vmate-i3", evidence: 'name "Vmate i3" is an exact match to legacy product internalId "vmate-i3" (displayName "VOOPOO VMATE i3")' },
   "Pod-179": { brandId: "voopoo", familyId: "argus", exactLegacyMatch: "argus-g4", evidence: 'name "Voopoo Argus G4" is an exact match to legacy product internalId "argus-g4" (displayName "VOOPOO ARGUS G4")' },
+};
+
+// ===================================================================================
+// Minimum-enrichment copy — Phase 2.7. Identity/type/brand level only, verbatim from the
+// product's own Shipnity model name. Never a compatibility claim ("for", "สำหรับ" — that
+// implies verified fit with a separate device we have not confirmed), never a spec/performance
+// claim (puff count, battery, charging derived from a "9K"/"15K"-style model number), never
+// manufacturer marketing copy we did not source. Present ONLY for products whose brand already
+// has a real, non-fabricated Brand record (see BRAND SCHEMA CHECK in the Phase 2.7 report) —
+// currently just the UWELL/VOOPOO-branded coils; Marbo/Muro/Nexbar are deliberately absent here
+// because adding them would require a Brand record with fabricated tagline/description/
+// referenceUrl, which Phase 2.7 explicitly refused to do.
+// ===================================================================================
+
+interface MinimumCopy {
+  tagline: string;
+  shortDescription: string;
+}
+
+const MINIMUM_COPY: Record<string, MinimumCopy> = {
+  "Coil-53": {
+    tagline: "คอยล์ Caliburn G2 จากแบรนด์ UWELL",
+    shortDescription: "คอยล์รุ่น Caliburn G2 เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
+  },
+  "Coil-56": {
+    tagline: "คอยล์ Voopoo PnP-X",
+    shortDescription: "คอยล์รุ่น PnP-X จากแบรนด์ VOOPOO",
+  },
+  "Coil-74": {
+    tagline: "หัวคอยล์เปล่า Caliburn X จากแบรนด์ UWELL",
+    shortDescription: "หัวคอยล์เปล่ารุ่น Caliburn X เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
+  },
+  "Coil-87": {
+    tagline: "คอยล์ Voopoo TPP Pod",
+    shortDescription: "คอยล์รุ่น TPP Pod จากแบรนด์ VOOPOO",
+  },
+  "Coil-92": {
+    tagline: "คอยล์ Voopoo PnP X",
+    shortDescription: "คอยล์รุ่น PnP X จากแบรนด์ VOOPOO",
+  },
 };
 
 // ===================================================================================
@@ -233,12 +286,14 @@ function buildDraftCandidate(
   variantStructure: VariantStructureResult
 ): ProjectionCandidate {
   const internalId = parent.shipnityProductId.toLowerCase();
+  const copy = MINIMUM_COPY[parent.shipnityProductId];
 
   const product: ProductMasterInput = {
     internalId,
     slug: internalId, // Shipnity codes are already ASCII alnum+hyphen — no invented SEO slug
     lifecycleStatus: "active", // genuinely active per Shipnity's own "have stock" view
-    publicationStatus: "unpublished", // not customer-visible — evidence is incomplete
+    publicationStatus: "unpublished", // not customer-visible — Phase 2.7 keeps this true even
+    // for minimum-enriched candidates; see README §Publication-ready by simulation.
     brandId: match?.brandId ?? null,
     familyId: match?.familyId ?? null,
     categoryId: match?.categoryId ?? null,
@@ -246,8 +301,8 @@ function buildDraftCandidate(
 
     name: parent.name,
     displayName: parent.name, // no separate display-name evidence — reuse the one real string
-    tagline: null, // no editorial copy evidence
-    shortDescription: null, // no editorial copy evidence
+    tagline: copy?.tagline ?? null, // Phase 2.7 minimum copy — see MINIMUM_COPY, never fabricated
+    shortDescription: copy?.shortDescription ?? null,
     attributes: null, // no manufacturer spec evidence
     specifications: [],
     features: [],
