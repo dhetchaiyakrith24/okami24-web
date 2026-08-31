@@ -10,8 +10,12 @@ export interface ReadModelContractResult {
   detail: string;
 }
 
-// Phase 3.4 added Coil-1/21/72/83/94 to the Phase 2.7 batch — see PREVIEW_SHIPNITY_IDS.
-const EXPECTED_IDS = ["Coil-53", "Coil-56", "Coil-74", "Coil-87", "Coil-92", "Coil-1", "Coil-21", "Coil-72", "Coil-83", "Coil-94"];
+// Phase 3.4 added Coil-1/21/72/83/94; Phase 3.5 added Coil-38/63/68/70/89 (see PREVIEW_SHIPNITY_IDS).
+const EXPECTED_IDS = [
+  "Coil-53", "Coil-56", "Coil-74", "Coil-87", "Coil-92",
+  "Coil-1", "Coil-21", "Coil-72", "Coil-83", "Coil-94",
+  "Coil-38", "Coil-63", "Coil-68", "Coil-70", "Coil-89",
+];
 
 export function runStorefrontReadModelContractTests(): ReadModelContractResult[] {
   const results: ReadModelContractResult[] = [];
@@ -19,7 +23,7 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
 
   const views = buildStorefrontPreview();
 
-  check("exactly the 10 Phase 2.7 + Phase 3.4 products are present, nothing more", views.length === 10, JSON.stringify(views.map((v) => v.shipnityProductId)));
+  check("exactly the 15 Phase 2.7 + 3.4 + 3.5 products are present, nothing more", views.length === 15, JSON.stringify(views.map((v) => v.shipnityProductId)));
 
   check(
     "every expected Shipnity id is present",

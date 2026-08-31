@@ -107,15 +107,33 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // Confirmed coil (Phase 2.8 official-evidence pass) — VOOPOO's PnP X coil line (resistance
   // variants) is a real, separate product from the PnP X Cartridge above.
   "Coil-92": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "คอยล์ Voopoo PnP X" states "Voopoo" explicitly — official VOOPOO PnP X coils (resistance variants) confirm this is a real coil line, distinct from the PnP X Cartridge' },
-  // "Pod-147" ("M Switch 15k") deliberately has NO entry (Phase 2.7 revision) — the earlier
-  // brandId:"salthub" assignment relied on "M Switch" text coincidentally matching an EXISTING
-  // family name in our own (NOVA-demo-era) taxonomy, not on "SaltHub" appearing in the Shipnity
-  // text itself. External research found conflicting brand attribution for this product.
-  // Without owner/UI/project evidence confirming the brand, it stays fully unmatched (draft,
-  // needs-research) rather than treating a taxonomy-name coincidence as confirmation.
+  // Phase 3.5 resolution — the Phase 2.7 blocker was "coincidental family-name match, no real
+  // brand evidence." Real evidence now exists: this parent's children are FLAVORS (Grape Aloe,
+  // Strawberry Watermelon, Apple Aloe), matching a prefilled-cartridge product shape, not a
+  // device-body shape — and legacy `m-switch-pod` (SALTHUB M Switch Pod, the prefilled cartridge
+  // for the M Switch Kit) is exactly that shape. Legacy `m-switch-kit`'s own copy states the pod
+  // is "rated up to 15,000 puffs per pod" — an exact match to this parent's own "15k" name. This
+  // is the same real-world item as `m-switch-pod`, not a new record.
+  "Pod-147": { brandId: "salthub", familyId: "m-switch", exactLegacyMatch: "m-switch-pod", evidence: 'name "M Switch 15k" + flavor-shaped children (cartridge, not device) + legacy m-switch-kit copy stating its pod is "rated up to 15,000 puffs per pod" — an exact match, not a coincidental family-name substring' },
   "Pod-168": { brandId: "uwell", familyId: "caliburn", exactLegacyMatch: "caliburn-g4-pro", evidence: 'name "Caliburn G4 Pro" is an exact match to legacy product internalId "caliburn-g4-pro" (displayName "UWELL CALIBURN G4 PRO")' },
   "Pod-177": { brandId: "voopoo", familyId: "vmate", exactLegacyMatch: "vmate-i3", evidence: 'name "Vmate i3" is an exact match to legacy product internalId "vmate-i3" (displayName "VOOPOO VMATE i3")' },
   "Pod-179": { brandId: "voopoo", familyId: "argus", exactLegacyMatch: "argus-g4", evidence: 'name "Voopoo Argus G4" is an exact match to legacy product internalId "argus-g4" (displayName "VOOPOO ARGUS G4")' },
+
+  // ===================================================================================
+  // Phase 3.5 — second real-brand batch, verified against official first-party sources (see the
+  // Phase 3.5 report for the WebSearch/WebFetch evidence trail). Same rule as every entry above:
+  // never a guess, never a name coincidence, always cited.
+  // ===================================================================================
+  "Coil-38": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "Coil TPP" + children "TPP-DM2 (0.2Ω)"/"TPP-DM4 (0.3Ω)" match shop.voopoo.com\'s official TPP Coils listing (0.2Ω/0.3Ω variants, compatible with TPP Pod/DRAG 3/DRAG X Plus) exactly' },
+  // "หัวเปล่า" ("bare/empty head") in this seed's naming does not reliably mean coil — same
+  // correction as Coil-74/56/87 above. This parent's only child is a COLOR ("Black"), not a
+  // resistance value; official VOOPOO/retailer evidence confirms "ITO-X Empty Pod Cartridge" is
+  // sold in Black/Silver, and shop.voopoo.com lists "ITO-X Pod (3.5ml)" as a real pod-cartridge
+  // product (for the Drag Q Pod Kit) — a color-variant cartridge, not a resistance-variant coil.
+  "Coil-68": { brandId: "voopoo", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัวเปล่า ITO-X" + single color child ("Black") matches official VOOPOO "ITO-X Pod Cartridge 3.5mL" (Black/Silver), not the separate ITO resistance-variant coil line' },
+  "Coil-70": { brandId: "dotmod", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "คอยล์ Dotmod Aio V2" states the brand explicitly ("Dotmod"); child "0.7Ω" matches dotmod.com\'s official dotCoils lineup for the dotAIO V2 (0.3Ω/0.7Ω/0.9Ω)' },
+  "Coil-63": { brandId: "rincoe", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "Coil Jelly Nano" + child "0.5Ω" matches RINCOE\'s official Jellybox Nano replacement coil (0.5Ω RDL / 1.0Ω MTL mesh options)' },
+  "Coil-89": { brandId: "rincoe", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "Coil Jellybox V" + children "0.8Ω"/"1.0Ω" match RINCOE\'s official Jellybox V replacement pod/coil options (0.8Ω and 1.0Ω mesh) exactly' },
 };
 
 // ===================================================================================
@@ -195,6 +213,29 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   "Coil-94": {
     tagline: "คอยล์ Caliburn G4&G3 Series จากแบรนด์ UWELL",
     shortDescription: "คอยล์รุ่น Caliburn G4&G3 Series เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
+  },
+  // Phase 3.5 — second batch. No familyId on any of these (TPP/ITO-X/Jelly Nano/Jellybox
+  // V/Dotmod Aio V2 are not committed ProductFamily records), so shortDescription omits the
+  // "เป็นผลิตภัณฑ์ในกลุ่ม X" clause — same convention as Coil-56/87/92 above.
+  "Coil-38": {
+    tagline: "คอยล์ TPP จากแบรนด์ VOOPOO",
+    shortDescription: "คอยล์รุ่น TPP จากแบรนด์ VOOPOO",
+  },
+  "Coil-63": {
+    tagline: "คอยล์ Jelly Nano จากแบรนด์ RINCOE",
+    shortDescription: "คอยล์รุ่น Jelly Nano จากแบรนด์ RINCOE",
+  },
+  "Coil-68": {
+    tagline: "คาร์ทริดจ์ ITO-X จากแบรนด์ VOOPOO",
+    shortDescription: "คาร์ทริดจ์รุ่น ITO-X จากแบรนด์ VOOPOO",
+  },
+  "Coil-70": {
+    tagline: "คอยล์ Dotmod Aio V2 จากแบรนด์ DOTMOD",
+    shortDescription: "คอยล์รุ่น Dotmod Aio V2 จากแบรนด์ DOTMOD",
+  },
+  "Coil-89": {
+    tagline: "คอยล์ Jellybox V จากแบรนด์ RINCOE",
+    shortDescription: "คอยล์รุ่น Jellybox V จากแบรนด์ RINCOE",
   },
 };
 

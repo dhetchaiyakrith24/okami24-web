@@ -31,6 +31,27 @@ export const brands: Brand[] = [
       "A disposable- and switch-pod-focused brand built around the M Bar disposable line and the M Switch / Zero reusable cartridge platforms, emphasizing high puff counts, multi-mode airflow, and cartridge-based refill systems.",
     referenceUrl: "https://www.salthub.com/",
   },
+  {
+    id: "rincoe",
+    slug: "rincoe",
+    name: "RINCOE",
+    fullName: "Rincoe",
+    tagline: "Pod systems and vape hardware.",
+    description:
+      "A vape hardware manufacturer best known for the Jellybox pod-system line, offering interchangeable mesh-coil pods across multiple device generations (Jellybox V, Jellybox Nano, and related kits).",
+    referenceUrl: "https://rincoe-store.com/",
+  },
+  {
+    id: "dotmod",
+    slug: "dotmod",
+    name: "DOTMOD",
+    fullName: "dotmod",
+    tagline: "Power Meets Portability.",
+    description:
+      "A vaping device manufacturer, active since 2013, known for the dotAIO all-in-one pod line and its dotCoils replacement-coil platform, alongside dotPod systems and both regulated and mechanical box mods.",
+    founded: "2013",
+    referenceUrl: "https://dotmod.com/",
+  },
 ];
 
 export function getBrand(id: string): Brand | undefined {
