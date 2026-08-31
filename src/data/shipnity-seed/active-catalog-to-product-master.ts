@@ -134,6 +134,14 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "Coil-70": { brandId: "dotmod", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "คอยล์ Dotmod Aio V2" states the brand explicitly ("Dotmod"); child "0.7Ω" matches dotmod.com\'s official dotCoils lineup for the dotAIO V2 (0.3Ω/0.7Ω/0.9Ω)' },
   "Coil-63": { brandId: "rincoe", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "Coil Jelly Nano" + child "0.5Ω" matches RINCOE\'s official Jellybox Nano replacement coil (0.5Ω RDL / 1.0Ω MTL mesh options)' },
   "Coil-89": { brandId: "rincoe", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "Coil Jellybox V" + children "0.8Ω"/"1.0Ω" match RINCOE\'s official Jellybox V replacement pod/coil options (0.8Ω and 1.0Ω mesh) exactly' },
+
+  // Third Phase 3.5 wave — disposables/cartridges, verified against each brand's official
+  // first-party site (WebFetch, not a retailer or reseller). Every one of these has flavor-shaped
+  // children (a real prefilled-product signature), consistent with its resolved systemType.
+  "Pod-159": { brandId: "esko-bar", categoryId: "pod-kits", systemType: "pod-kit", evidence: 'name "เครื่อง Esko Bar Switch 20k" ("เครื่อง" = device) states the brand explicitly; eskobarvape.com (official) lists "ESKO BAR SWITCH POD" as a real reusable-body product line distinct from its disposable line' },
+  "Pod-149": { brandId: "ske", categoryId: "disposables", systemType: "disposable", evidence: 'name "SKE Crystal B20K Puffs" states the brand explicitly; skevape.com (official) confirms SKE\'s Crystal Bar / high-puff-count disposable series as a real product line' },
+  "Pod-150": { brandId: "kardinal-stick", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "KS Quikpro 15K หัวพอต" ("หัวพอต" = pod cartridge) states the brand explicitly ("KS"); kardinal.com (official) confirms Quikpro as a real hybrid-cartridge product rated "up to 15,000 puffs" — an exact match to this parent\'s own "15K" name' },
+  "Disposable-34": { brandId: "instabar", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity\'s own "Disposable-" id prefix + name "Insta Bar PX 15000 Puffs" states the brand explicitly; instabar.net (official) confirms Instabar as a real disposable-vape manufacturer with a tiered puff-count product range including a 15,000-puff tier' },
 };
 
 // ===================================================================================
@@ -236,6 +244,25 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   "Coil-89": {
     tagline: "คอยล์ Jellybox V จากแบรนด์ RINCOE",
     shortDescription: "คอยล์รุ่น Jellybox V จากแบรนด์ RINCOE",
+  },
+  // Third Phase 3.5 wave — same template, extended with two more real, established Thai vape-
+  // retail type-words: "ชุดอุปกรณ์" (device kit, for a pod-kit systemType) and "พอตใช้แล้วทิ้ง"
+  // (disposable pod, for a disposable systemType) — factual category words, not marketing copy.
+  "Pod-159": {
+    tagline: "ชุดอุปกรณ์ Esko Bar Switch 20k จากแบรนด์ ESKO BAR",
+    shortDescription: "ชุดอุปกรณ์รุ่น Esko Bar Switch 20k จากแบรนด์ ESKO BAR",
+  },
+  "Pod-149": {
+    tagline: "พอตใช้แล้วทิ้ง SKE Crystal B20K Puffs จากแบรนด์ SKE",
+    shortDescription: "พอตใช้แล้วทิ้งรุ่น SKE Crystal B20K Puffs จากแบรนด์ SKE",
+  },
+  "Pod-150": {
+    tagline: "คาร์ทริดจ์ KS Quikpro 15K จากแบรนด์ KS",
+    shortDescription: "คาร์ทริดจ์รุ่น KS Quikpro 15K จากแบรนด์ KS",
+  },
+  "Disposable-34": {
+    tagline: "พอตใช้แล้วทิ้ง Insta Bar PX 15000 Puffs จากแบรนด์ INSTABAR",
+    shortDescription: "พอตใช้แล้วทิ้งรุ่น Insta Bar PX 15000 Puffs จากแบรนด์ INSTABAR",
   },
 };
 

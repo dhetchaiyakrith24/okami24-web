@@ -57,11 +57,12 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
 
   // --- category-name-only match ("cartridge" only appears in the English category name, not
   //     in any pilot tagline, which are in Thai) ---
-  // Phase 3.5's Coil-68 ("ITO-X" pod cartridge) is also pods-cartridges, growing this from 3 to 4.
+  // Phase 3.5's Coil-68 ("ITO-X") and Pod-150 ("KS Quikpro") are also pods-cartridges, growing
+  // this from 3 to 5.
   const cartridgeResults = searchPilotProducts("cartridge");
   check(
-    '"cartridge" matches the 4 pods-cartridges pilot products via categoryName, not a fabricated field',
-    cartridgeResults.length === 4 && cartridgeResults.every((p) => p.categoryId === "pods-cartridges"),
+    '"cartridge" matches the 5 pods-cartridges pilot products via categoryName, not a fabricated field',
+    cartridgeResults.length === 5 && cartridgeResults.every((p) => p.categoryId === "pods-cartridges"),
     JSON.stringify(cartridgeResults.map((p) => p.slug))
   );
 
@@ -96,20 +97,27 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   );
 
   // --- category/brand/related bridge helpers stay consistent (Phase 3.0 behavior, re-asserted) ---
-  // pods-cartridges grew from 3 to 4 with Phase 3.5's Coil-68; coils-accessories grew from 7 to
-  // 11 (Coil-38/63/70/89). rincoe and dotmod are Phase 3.5's first two new Brand records.
-  check("pods-cartridges category has exactly 4 pilot products", getPilotProductsByCategory("pods-cartridges").length === 4, "n/a");
+  // pods-cartridges grew from 3 to 5 (Coil-68, Pod-150); coils-accessories stayed at 11 (this
+  // wave added no coils-accessories products); disposables and pod-kits are brand new to the
+  // pilot this wave. esko-bar/ske/kardinal-stick/instabar are Phase 3.5's third-wave brands.
+  check("pods-cartridges category has exactly 5 pilot products", getPilotProductsByCategory("pods-cartridges").length === 5, "n/a");
   check("coils-accessories category has exactly 11 pilot products", getPilotProductsByCategory("coils-accessories").length === 11, "n/a");
+  check("disposables category has exactly 2 pilot products", getPilotProductsByCategory("disposables").length === 2, "n/a");
+  check("pod-kits category has exactly 1 pilot product", getPilotProductsByCategory("pod-kits").length === 1, "n/a");
   check("voopoo brand has exactly 9 pilot products", getPilotProductsByBrand("voopoo").length === 9, "n/a");
   check("uwell brand has exactly 3 pilot products", getPilotProductsByBrand("uwell").length === 3, "n/a");
   check("rincoe brand has exactly 2 pilot products", getPilotProductsByBrand("rincoe").length === 2, "n/a");
   check("dotmod brand has exactly 1 pilot product", getPilotProductsByBrand("dotmod").length === 1, "n/a");
+  check("esko-bar brand has exactly 1 pilot product", getPilotProductsByBrand("esko-bar").length === 1, "n/a");
+  check("ske brand has exactly 1 pilot product", getPilotProductsByBrand("ske").length === 1, "n/a");
+  check("kardinal-stick brand has exactly 1 pilot product", getPilotProductsByBrand("kardinal-stick").length === 1, "n/a");
+  check("instabar brand has exactly 1 pilot product", getPilotProductsByBrand("instabar").length === 1, "n/a");
 
   if (coil56) {
     const related = getPilotRelatedProducts(coil56);
     check(
-      "coil-56's related pilot products are exactly coil-68, coil-74, and coil-87 (same categoryId, self excluded)",
-      related.length === 3 && related.every((p) => ["coil-68", "coil-74", "coil-87"].includes(p.slug)),
+      "coil-56's related pilot products are exactly coil-68, coil-74, coil-87, and pod-150 (same categoryId, self excluded)",
+      related.length === 4 && related.every((p) => ["coil-68", "coil-74", "coil-87", "pod-150"].includes(p.slug)),
       JSON.stringify(related.map((p) => p.slug))
     );
   }
@@ -119,6 +127,7 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
     "coil-53", "coil-56", "coil-74", "coil-87", "coil-92",
     "coil-1", "coil-21", "coil-72", "coil-83", "coil-94",
     "coil-38", "coil-63", "coil-68", "coil-70", "coil-89",
+    "pod-159", "pod-149", "pod-150", "disposable-34",
   ];
   check(
     "no pilot slug collides with an existing legacy product slug",

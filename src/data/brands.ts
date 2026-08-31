@@ -52,6 +52,46 @@ export const brands: Brand[] = [
     founded: "2013",
     referenceUrl: "https://dotmod.com/",
   },
+  {
+    id: "esko-bar",
+    slug: "esko-bar",
+    name: "ESKO BAR",
+    fullName: "Esko Bar",
+    tagline: "Enjoy the vibe.",
+    description:
+      "A disposable-vape brand offering both single-use ESKO BAR Disposable devices and the ESKO BAR SWITCH reusable pod system.",
+    referenceUrl: "https://eskobarvape.com/",
+  },
+  {
+    id: "ske",
+    slug: "ske",
+    name: "SKE",
+    fullName: "SKE (Speed Skier Extreme)",
+    tagline: "Embrace Challenges, Keep Original Intention.",
+    description:
+      "An e-cigarette brand best known for the Crystal Bar disposable line, alongside the SKE Bar and other high-puff-count disposable series.",
+    referenceUrl: "https://www.skevape.com/",
+  },
+  {
+    id: "kardinal-stick",
+    slug: "kardinal-stick",
+    name: "KS",
+    fullName: "Kardinal Stick",
+    tagline: "Engineering the Future of Alternative Tobacco.",
+    description:
+      "A Southeast Asian e-cigarette manufacturer, founded in 2017 in Malacca, Malaysia, known for its closed-pod systems and the Quik/Quikpro disposable and hybrid-cartridge line.",
+    founded: "2017",
+    referenceUrl: "https://www.kardinal.com/",
+  },
+  {
+    id: "instabar",
+    slug: "instabar",
+    name: "INSTABAR",
+    fullName: "Instabar",
+    tagline: "Best disposable and prefilled vape brand.",
+    description: "A disposable- and prefilled-vape manufacturer offering a tiered range of high-puff-count devices.",
+    referenceUrl: "https://www.instabar.net/",
+  },
 ];
 
 export function getBrand(id: string): Brand | undefined {
