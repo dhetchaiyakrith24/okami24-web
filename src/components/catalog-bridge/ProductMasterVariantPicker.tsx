@@ -5,12 +5,16 @@ import { cn } from "@/lib/utils";
 import type { StorefrontVariantView } from "@/data/shipnity-seed/storefront-preview-read-model";
 
 /**
- * Exercises real selected/default variant behavior (Phase 2.8 VARIANTS requirement) — defaults
- * to the first variant, click switches selection. Every option rendered here is already
- * guaranteed by the projection to be `childRole: "variant"` — no accessory/sell-unit/unresolved
- * child can reach this component (see `buildVariantStructure` in the projection adapter).
+ * Shared between the isolated `/preview/product-master` route (Phase 2.8) and the main
+ * storefront pilot (Phase 3.0) — moved out of the preview route's private `_components/` folder
+ * so main-app code doesn't reach across route segments.
+ *
+ * Exercises real selected/default variant behavior — defaults to the first variant, click
+ * switches selection. Every option rendered here is already guaranteed by the projection to be
+ * `childRole: "variant"` — no accessory/sell-unit/unresolved child can reach this component (see
+ * `buildVariantStructure` in the projection adapter).
  */
-export function PreviewVariantPicker({ optionAxisLabel, variants }: { optionAxisLabel: string | null; variants: StorefrontVariantView[] }) {
+export function ProductMasterVariantPicker({ optionAxisLabel, variants }: { optionAxisLabel: string | null; variants: StorefrontVariantView[] }) {
   const [selectedId, setSelectedId] = useState(variants[0]?.id ?? null);
 
   if (variants.length === 0) return null;

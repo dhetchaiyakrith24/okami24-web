@@ -12,6 +12,11 @@
  * Scoped to the 5 Phase 2.7 minimum-enriched candidates only — not all 53 drafts. A product is
  * only included if every field this view needs is genuinely non-null; anything else is left out
  * rather than rendered with an invented placeholder.
+ *
+ * Phase 3.0 adds a second consumer: `storefront-bridge.ts` wraps `buildStorefrontPreview()` with
+ * a dev-only environment gate and pipes the same views into the main storefront's category/brand/
+ * detail pages. This file itself stays environment-agnostic — the gate lives at the bridge
+ * boundary, not here, so this remains a pure, reusable data→view mapping.
  */
 
 import { getBrand } from "@/data/brands";
@@ -51,7 +56,12 @@ export interface StorefrontProductView {
   shipnityProductId: string;
   displayName: string;
   tagline: string;
+  /** Real ProductMaster brandId/categoryId (e.g. "voopoo", "pods-cartridges") — kept alongside
+   *  the display names so Phase 3.0's storefront bridge can filter by category/brand the same
+   *  way the legacy catalog does, without re-deriving them from the display strings. */
+  brandId: string;
   brandName: string;
+  categoryId: string;
   categoryName: string;
   systemType: string | null;
   glyphKind: PreviewGlyphKind;
@@ -86,7 +96,9 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
     shipnityProductId: product.commerce.integrationRef?.externalId ?? product.internalId,
     displayName: product.displayName,
     tagline: product.tagline,
+    brandId: product.brandId,
     brandName: brand.name,
+    categoryId: product.categoryId,
     categoryName: category.name,
     systemType: product.systemType,
     glyphKind: glyphKindFor(product.systemType),

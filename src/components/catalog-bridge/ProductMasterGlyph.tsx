@@ -2,16 +2,15 @@ import { cn } from "@/lib/utils";
 import type { PreviewGlyphKind } from "@/data/shipnity-seed/storefront-preview-read-model";
 
 /**
- * DEV-PREVIEW-ONLY fallback illustration — not production-approved media, not an exact
- * hardware likeness. Phase 2.8 replaced the single coil-only glyph after browser review
- * surfaced that 3 of the 5 preview products are actually pods/cartridges, not coils (see the
- * Phase 2.8 report §PRODUCT TYPE CORRECTIONS) — rendering all 5 with a coil silhouette would
- * have been a real, visible misrepresentation of physical product type, not just a labeling
- * nit. Reuses the same visual language (steel-accent, same CSS design tokens) as the approved
- * `DeviceGlyph` component's coil/cartridge variants, redrawn locally: `DeviceGlyph` requires
- * `product.attributes.screenType`, which is `null` on every Shipnity-sourced draft.
+ * Shared between the isolated `/preview/product-master` route (Phase 2.8) and the main
+ * storefront pilot (Phase 3.0) — moved out of the preview route's private `_components/` folder
+ * so main-app code doesn't reach across route segments. Not production-approved media, not an
+ * exact hardware likeness: a fallback illustration for ProductMaster drafts with no verified
+ * official photo. Reuses the same visual language (steel-accent, same CSS design tokens) as the
+ * legacy `DeviceGlyph` component's coil/cartridge variants, redrawn locally: `DeviceGlyph`
+ * requires `product.attributes.screenType`, which is `null` on every Shipnity-sourced draft.
  */
-export function PreviewProductGlyph({ kind, className }: { kind: PreviewGlyphKind; className?: string }) {
+export function ProductMasterGlyph({ kind, className }: { kind: PreviewGlyphKind; className?: string }) {
   return (
     <svg viewBox="0 0 240 400" className={cn("h-full w-full", className)} role="img" aria-label={`${kind === "generic" ? "Product" : kind} illustration (placeholder, not the real product photo)`}>
       <defs>
@@ -36,8 +35,8 @@ export function PreviewProductGlyph({ kind, className }: { kind: PreviewGlyphKin
           <circle cx="120" cy="200" r="18" fill="var(--color-surface-2)" />
         </g>
       ) : (
-        // Generic placeholder — used only if a future preview batch has a systemType this
-        // component doesn't have a dedicated shape for yet. Deliberately plain, not a guess.
+        // Generic placeholder — used only if a future batch has a systemType this component
+        // doesn't have a dedicated shape for yet. Deliberately plain, not a guess.
         <g>
           <rect x="70" y="70" width="100" height="260" rx="20" fill="url(#preview-glyph-body)" stroke="var(--color-surface-border)" strokeWidth="1.5" />
           <circle cx="120" cy="200" r="10" fill="var(--color-steel)" opacity="0.5" />

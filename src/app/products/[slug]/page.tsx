@@ -15,9 +15,19 @@ import { ProductFAQ } from "@/components/product/ProductFAQ";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { SourceNote } from "@/components/product/SourceNote";
 import { getBrand } from "@/data/brands";
+import { getPilotProduct, getPilotProducts, getPilotProductsByCategory, getPilotRelatedProducts } from "@/data/shipnity-seed/storefront-bridge";
+import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
+import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDetail";
 
 export function generateStaticParams() {
-  return [...categories.map((c) => ({ slug: c.slug })), ...allProducts.map((p) => ({ slug: p.slug }))];
+  // `getPilotProducts()` returns [] whenever NODE_ENV === "production" (see storefront-bridge.ts)
+  // — so a production `next build` never statically generates these 5 slugs, matching the legacy
+  // catalog's own build-time-only generation.
+  return [
+    ...categories.map((c) => ({ slug: c.slug })),
+    ...allProducts.map((p) => ({ slug: p.slug })),
+    ...getPilotProducts().map((p) => ({ slug: p.slug })),
+  ];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -26,6 +36,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (category) return { title: category.name, description: category.description };
   const product = getProduct(slug);
   if (product) return { title: product.displayName, description: product.shortDescription };
+  const pilotProduct = getPilotProduct(slug);
+  if (pilotProduct) return { title: pilotProduct.displayName, description: pilotProduct.tagline };
   return {};
 }
 
@@ -35,21 +47,31 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const category = getCategory(slug);
   if (category) {
     const products = getProductsByCategory(category.id);
+    const pilotProducts = getPilotProductsByCategory(category.id);
     return (
       <>
         <PageHeader eyebrow="Catalog" title={category.name} description={category.description} />
-        <Container className="py-12 lg:py-16">
-          <CatalogBrowser
-            products={products}
-            emptyStateNote={products.length === 0 ? "No products are catalogued in this category yet — check back as the catalog grows." : undefined}
-          />
+        <Container className="flex flex-col gap-12 py-12 lg:py-16">
+          {(products.length > 0 || pilotProducts.length === 0) && (
+            <CatalogBrowser
+              products={products}
+              emptyStateNote={products.length === 0 ? "No products are catalogued in this category yet — check back as the catalog grows." : undefined}
+            />
+          )}
+          <PilotProductSection products={pilotProducts} />
         </Container>
       </>
     );
   }
 
   const product = getProduct(slug);
-  if (!product) notFound();
+  if (!product) {
+    const pilotProduct = getPilotProduct(slug);
+    if (pilotProduct) {
+      return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} />;
+    }
+    notFound();
+  }
 
   const related = getRelatedProducts(product);
   const brand = getBrand(product.brandId);

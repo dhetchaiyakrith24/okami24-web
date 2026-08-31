@@ -7,8 +7,8 @@ import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { buildStorefrontPreview, getStorefrontPreviewBySlug } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { PreviewBanner } from "../_components/PreviewBanner";
-import { PreviewProductGlyph } from "../_components/PreviewProductGlyph";
-import { PreviewVariantPicker } from "../_components/PreviewVariantPicker";
+import { ProductMasterGlyph } from "@/components/catalog-bridge/ProductMasterGlyph";
+import { ProductMasterVariantPicker } from "@/components/catalog-bridge/ProductMasterVariantPicker";
 import { assertPreviewAllowedInThisEnvironment } from "../_components/preview-guard";
 
 export function generateStaticParams() {
@@ -57,7 +57,7 @@ export default async function ProductMasterPreviewDetailPage({ params }: { param
               priority
             />
           ) : (
-            <PreviewProductGlyph kind={product.glyphKind} />
+            <ProductMasterGlyph kind={product.glyphKind} />
           )}
         </div>
 
@@ -72,7 +72,7 @@ export default async function ProductMasterPreviewDetailPage({ params }: { param
             </p>
           </div>
 
-          <PreviewVariantPicker optionAxisLabel={product.optionAxisLabel} variants={product.variants} />
+          <ProductMasterVariantPicker optionAxisLabel={product.optionAxisLabel} variants={product.variants} />
 
           <Link href="/preview/product-master" className="label-mono text-xs text-foreground-dim underline underline-offset-4">
             ← กลับไปหน้ารายการ preview

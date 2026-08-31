@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
-import { PreviewProductGlyph } from "./PreviewProductGlyph";
+import { ProductMasterGlyph } from "@/components/catalog-bridge/ProductMasterGlyph";
 
 /**
  * Adapted, not reused, from `ProductCard` — that component unconditionally reads
@@ -31,7 +31,7 @@ export function PreviewProductCard({ product }: { product: StorefrontProductView
               className="object-contain p-2"
             />
           ) : (
-            <PreviewProductGlyph kind={product.glyphKind} />
+            <ProductMasterGlyph kind={product.glyphKind} />
           )}
         </div>
       </div>

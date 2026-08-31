@@ -7,6 +7,8 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { Badge } from "@/components/ui/Badge";
+import { getPilotProductsByBrand } from "@/data/shipnity-seed/storefront-bridge";
+import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 
 export function generateStaticParams() {
   return brands.map((b) => ({ brand: b.slug }));
@@ -26,6 +28,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
 
   const families = familiesForBrand(brand.id);
   const products = getProductsByBrand(brand.id);
+  const pilotProducts = getPilotProductsByBrand(brand.id);
 
   return (
     <>
@@ -51,8 +54,9 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
           </div>
         }
       />
-      <Container className="py-12 lg:py-16">
+      <Container className="flex flex-col gap-12 py-12 lg:py-16">
         <CatalogBrowser products={products} />
+        <PilotProductSection products={pilotProducts} />
       </Container>
     </>
   );
