@@ -1,5 +1,6 @@
 import { getFlagshipProducts, getProduct, getProductsByFamily, getProductsByBrand } from "@/data/products";
 import { guides } from "@/data/guides";
+import { CinematicIntro } from "@/components/home/cinematic/CinematicIntro";
 import { Hero } from "@/components/home/Hero";
 import { CategoryNav } from "@/components/home/CategoryNav";
 import { ProductRailSection } from "@/components/home/ProductRailSection";
@@ -17,6 +18,7 @@ export default function Home() {
 
   return (
     <>
+      <CinematicIntro />
       <Hero flagship={flagship} />
       <CategoryNav />
 
