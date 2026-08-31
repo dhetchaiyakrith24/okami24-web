@@ -28,7 +28,7 @@
  */
 
 import type { ProductMasterInput } from "@/data/product-master-schema";
-import type { SystemType } from "@/types/catalog";
+import type { ProductAsset, SystemType } from "@/types/catalog";
 import type { OptionType } from "./classify";
 import { activeCatalogSeed, type ActiveParentRecord, type ActiveChildRecord } from "./build-active-catalog";
 
@@ -164,6 +164,34 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "คอยล์ Voopoo PnP X",
     shortDescription: "คอยล์รุ่น PnP X จากแบรนด์ VOOPOO",
   },
+};
+
+// ===================================================================================
+// Verified media — Phase 2.9. Official-manufacturer-sourced only (see
+// PHASE_2_9_ASSET_PROVENANCE.md for the full research/rejection trail). A product is present
+// here ONLY if a genuine official-first-party photo was found AND passed identity/variant/
+// authenticity checks. `Coil-92`'s only candidate source (VOOPOO's own Shopline CDN) carries an
+// embedded XMP `TC260:AIGC` tag with `Label:"1"` and a `ProduceID` path containing
+// "aigc_inpaint" — i.e. the file is independently self-flagged as AI-generated/AI-inpainted
+// content by its own metadata, which the owner's media policy explicitly excludes ("never use
+// ... AI-recreated images"). It is deliberately absent here; Coil-92 keeps the DEV fallback
+// glyph. Coil-53/74/87 have no verified official source at all (see the provenance doc) and
+// also keep the glyph fallback.
+// ===================================================================================
+
+const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
+  "Coil-56": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-56/card.webp",
+      alt: "VOOPOO PnP-X Cartridge, silver colorway, isolated product shot",
+      angle: "Front, isolated (cropped locally from an official multi-unit retail photo; original plain-white studio background removed locally to match the site's transparent-card convention)",
+      transparentBackground: true,
+      sourceName: "VOOPOO (official Shopline storefront CDN)",
+      sourceUrl: "https://shop.voopoo.com/products/pnp-x-cartridge",
+    },
+  ],
 };
 
 // ===================================================================================
@@ -328,7 +356,7 @@ function buildDraftCandidate(
     attributes: null, // no manufacturer spec evidence
     specifications: [],
     features: [],
-    assets: [],
+    assets: VERIFIED_MEDIA[parent.shipnityProductId] ?? [], // Phase 2.9 — official-photo only, never fabricated
     sourceUrls: [],
 
     commerce: {

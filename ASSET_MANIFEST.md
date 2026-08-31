@@ -97,3 +97,34 @@ borderline and worth flagging for human review:
   neighbouring colourway at the edges.
 - **Caliburn G3 Pro KOKO** shows two devices (front+back) at an angle rather than one flat
   studio shot, since that was the only non-lifestyle, non-pod-closeup image available.
+
+## ProductMaster / Shipnity preview pilot — Phase 2.9
+
+Distinct from the 28-product legacy catalog above: these assets belong to `ProductMasterInput`
+drafts sourced from Shipnity (see `src/data/shipnity-seed/`), wired only into the isolated,
+`noindex`, production-guarded `/preview/product-master` route (`src/data/shipnity-seed/
+active-catalog-to-product-master.ts`, `VERIFIED_MEDIA`). Not linked from the live catalog; every
+underlying record stays `publicationStatus: "unpublished"`.
+
+Researched for all 5 Phase 2.7 minimum-enriched candidates (Coil-53/56/74/87/92). Only one
+passed every check — the other 4 keep the DEV `PreviewProductGlyph` fallback:
+
+| Shipnity ID | Product | Result | Reason |
+|---|---|---|---|
+| Coil-56 | VOOPOO PnP-X Cartridge (Silver) | **Used** | See table below |
+| Coil-92 | VOOPOO PnP X Coil | Rejected | Only candidate source (VOOPOO's own Shopline CDN, `PNP-X-0-15-NEW.png`) carries an embedded XMP `TC260:AIGC` tag — `Label:"1"`, `ProduceID` path containing `aigc_inpaint` — i.e. the file is self-flagged by its own metadata as AI-generated/AI-inpainted content. Excluded per owner media policy ("never use ... AI-recreated images"), even though the CDN host itself is first-party. |
+| Coil-53 | UWELL Caliburn G2 coil | No image used | No official isolated coil-only shot found; all UWELL gallery images show the assembled pod with the coil installed, not the bare coil, so none could serve as an accurate coil-only card image. |
+| Coil-74 | UWELL Caliburn X pod | No image used | Same category-level gap — no official bare-pod isolated shot located. |
+| Coil-87 | VOOPOO TPP Pod | No image used | VOOPOO's official TPP Pod Tank product page (`shop.voopoo.com/products/tpp-pod-tank-kit`, `voopoo.com/pnp-platform/tpp-pod-tank.html`) redirects to the site homepage and site search returns no results — the product appears discontinued/delisted from VOOPOO's current official storefront. |
+
+| Product | Source URL | Original filename | Local file | Purpose | Accessed |
+|---|---|---|---|---|---|
+| Coil-56 (VOOPOO PnP-X Cartridge, Silver) | https://img-va.myshopline.com/image/store/1747294110724/dtl-silver.jpg (via shop.voopoo.com/products/pnp-x-cartridge) | `dtl-silver.jpg` (600×600 jpeg, one unit isolated from a 2-pack retail photo) | `coil-56/card.webp` (284×451 webp, transparent) | **card** — cropped locally with `sharp` to isolate a single cartridge unit and remove the retail box/second unit, trimmed to natural silhouette, original plain-white studio background removed locally (threshold-based alpha keying on near-white/low-saturation pixels) to match the site's transparent-card convention, modestly upscaled (~2.3×) with `lanczos3` + sharpen since the native crop region was small (~115×189px before padding) | 2026-08-31 |
+
+Shows the **Silver** colorway specifically — this product has 3 active colors (Black/Gray/
+Silver) but only one was sourced with a verified official photo. The `alt` text names the
+Silver colorway explicitly rather than implying the image represents every variant; per-variant
+card images are not wired up in this pilot (`ProductMasterInput.assets` is product-level, not
+per-variant). The locally-applied background removal is a simple threshold-based technique (not
+ML segmentation) — edges are clean at this display size but, like the two UWELL cards flagged
+above, worth a human glance if the asset is later reused at a larger size.

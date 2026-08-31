@@ -41,6 +41,11 @@ function glyphKindFor(systemType: string | null): PreviewGlyphKind {
   return "generic";
 }
 
+export interface StorefrontProductImageView {
+  src: string;
+  alt: string;
+}
+
 export interface StorefrontProductView {
   slug: string;
   shipnityProductId: string;
@@ -50,6 +55,10 @@ export interface StorefrontProductView {
   categoryName: string;
   systemType: string | null;
   glyphKind: PreviewGlyphKind;
+  /** Phase 2.9 — set only when a verified official-manufacturer photo exists (see
+   *  VERIFIED_MEDIA in the projection adapter). `null` for every product still relying on the
+   *  DEV fallback glyph — never a placeholder image standing in for a real one. */
+  image: StorefrontProductImageView | null;
   isFlagship: boolean;
   publicationStatus: "published" | "unpublished";
   /** Shipnity's own operational selling price — a reference value, never the confirmed final
@@ -70,6 +79,7 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
 
   const axis = product.optionDefinitions[0];
   const valueLabelByCode = new Map(axis?.allowedValues.map((v) => [v.code, v.label] as const) ?? []);
+  const cardAsset = product.assets.find((a) => a.role === "card" && a.kind === "official-photo");
 
   return {
     slug: product.slug,
@@ -80,6 +90,7 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
     categoryName: category.name,
     systemType: product.systemType,
     glyphKind: glyphKindFor(product.systemType),
+    image: cardAsset ? { src: cardAsset.src, alt: cardAsset.alt } : null,
     isFlagship: product.isFlagship,
     publicationStatus: product.publicationStatus,
     priceReferenceValue: product.pricing.priceReference?.value ?? null,

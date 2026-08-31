@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
@@ -20,8 +21,18 @@ export function PreviewProductCard({ product }: { product: StorefrontProductView
         <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
           <Badge tone="unverified">Draft</Badge>
         </div>
-        <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">
-          <PreviewProductGlyph kind={product.glyphKind} />
+        <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
+          {product.image ? (
+            <Image
+              src={product.image.src}
+              alt={product.image.alt}
+              fill
+              sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 90vw"
+              className="object-contain p-2"
+            />
+          ) : (
+            <PreviewProductGlyph kind={product.glyphKind} />
+          )}
         </div>
       </div>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -45,8 +46,19 @@ export default async function ProductMasterPreviewDetailPage({ params }: { param
         }
       />
       <Container className="grid gap-10 py-12 lg:grid-cols-2 lg:py-16">
-        <div className="aspect-[4/5] w-full rounded-2xl border border-surface-border bg-surface-1 p-10">
-          <PreviewProductGlyph kind={product.glyphKind} />
+        <div className="relative aspect-[4/5] w-full rounded-2xl border border-surface-border bg-surface-1 p-10">
+          {product.image ? (
+            <Image
+              src={product.image.src}
+              alt={product.image.alt}
+              fill
+              sizes="(min-width: 1024px) 40vw, 90vw"
+              className="object-contain p-4"
+              priority
+            />
+          ) : (
+            <PreviewProductGlyph kind={product.glyphKind} />
+          )}
         </div>
 
         <div className="flex flex-col gap-6">
