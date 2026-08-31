@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import { searchProducts } from "@/data/products";
 import { searchPilotProducts } from "@/data/shipnity-seed/storefront-bridge";
@@ -20,17 +21,41 @@ import { pluralCount } from "@/i18n/dictionaries";
  */
 export function SearchTool({ initialQuery = "" }: { initialQuery?: string }) {
   const { dict } = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [query, setQuery] = useState(initialQuery);
+  const inputRef = useRef<HTMLInputElement>(null);
   const legacyResults = useMemo(() => searchProducts(query), [query]);
   const pilotResults = useMemo(() => searchPilotProducts(query), [query]);
   const totalCount = legacyResults.length + pilotResults.length;
+
+  useEffect(() => {
+    const trimmed = query.trim();
+    // Skip when the URL already matches: on mount (including right after back-navigation) the
+    // URL is already in sync, and re-issuing router.replace() here — even a same-URL, scroll:false
+    // one — retriggers a router transition that stomps the browser's native scroll restoration
+    // for that back-navigation (see Phase 3.2 verification). Only sync when the user's typing has
+    // actually diverged the query from the URL.
+    if (trimmed === (searchParams.get("q") ?? "")) return;
+    const url = trimmed === "" ? pathname : `${pathname}?q=${encodeURIComponent(trimmed)}`;
+    router.replace(url, { scroll: false });
+  }, [query, pathname, router, searchParams]);
+
+  useEffect(() => {
+    // `autoFocus` calls `element.focus()` with the browser default of scrolling the element into
+    // view, which fights the scroll position the browser is restoring on back-navigation into this
+    // page (see Phase 3.2 verification). `preventScroll` keeps the same focus-on-mount UX without
+    // that side effect.
+    inputRef.current?.focus({ preventScroll: true });
+  }, []);
 
   return (
     <div className="flex flex-col gap-10">
       <div className="relative mx-auto w-full max-w-xl">
         <Search size={18} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-foreground-dim" aria-hidden />
         <input
-          autoFocus
+          ref={inputRef}
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
