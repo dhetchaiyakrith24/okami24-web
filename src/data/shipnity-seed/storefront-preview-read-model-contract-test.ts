@@ -10,7 +10,8 @@ export interface ReadModelContractResult {
   detail: string;
 }
 
-const EXPECTED_IDS = ["Coil-53", "Coil-56", "Coil-74", "Coil-87", "Coil-92"];
+// Phase 3.4 added Coil-1/21/72/83/94 to the Phase 2.7 batch — see PREVIEW_SHIPNITY_IDS.
+const EXPECTED_IDS = ["Coil-53", "Coil-56", "Coil-74", "Coil-87", "Coil-92", "Coil-1", "Coil-21", "Coil-72", "Coil-83", "Coil-94"];
 
 export function runStorefrontReadModelContractTests(): ReadModelContractResult[] {
   const results: ReadModelContractResult[] = [];
@@ -18,7 +19,7 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
 
   const views = buildStorefrontPreview();
 
-  check("exactly the 5 Phase 2.7 products are present, nothing more", views.length === 5, JSON.stringify(views.map((v) => v.shipnityProductId)));
+  check("exactly the 10 Phase 2.7 + Phase 3.4 products are present, nothing more", views.length === 10, JSON.stringify(views.map((v) => v.shipnityProductId)));
 
   check(
     "every expected Shipnity id is present",
@@ -44,11 +45,19 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
     JSON.stringify(views.map((v) => v.variants))
   );
 
-  // Every one of the 5 real products in this batch happens to have exactly 1 active variant —
-  // that's the real active-catalog data, not something to force. Just confirm every product has
-  // at least one (an empty variants array would mean buildVariantStructure silently dropped
-  // something it shouldn't have for this specific known-good batch).
-  check("every product has at least one variant", views.every((v) => v.variants.length >= 1), JSON.stringify(views.map((v) => v.variants.length)));
+  // Every one of the original 5 Phase 2.7 products happens to have exactly 1 active variant —
+  // real active-catalog data, not something to force. Phase 3.4's Coil-21/Coil-83 are genuinely
+  // single-SKU (their only Shipnity child is packaging/unresolved text, not a real option — see
+  // buildVariantStructure), so a blanket ">=1 for everyone" is no longer a valid invariant. What
+  // IS still checkable: the zero-variant set must be exactly this known real pair — anything else
+  // at 0 would mean buildVariantStructure silently dropped a real variant for a product that
+  // should have one.
+  const zeroVariantIds = views.filter((v) => v.variants.length === 0).map((v) => v.shipnityProductId);
+  check(
+    "the only zero-variant products are the known real single-SKU pair (Coil-21, Coil-83)",
+    zeroVariantIds.length === 2 && ["Coil-21", "Coil-83"].every((id) => zeroVariantIds.includes(id)),
+    JSON.stringify(views.map((v) => ({ id: v.shipnityProductId, variantCount: v.variants.length })))
+  );
 
   check(
     "priceReferenceValue is a positive number sourced from Shipnity for every product",

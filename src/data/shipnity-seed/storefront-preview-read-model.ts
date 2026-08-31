@@ -9,9 +9,10 @@
  * `product.attributes.*`, which is `null` for every Shipnity-sourced draft; forcing them to
  * accept these records would mean inventing screenType/puffCount/batteryMah out of nothing).
  *
- * Scoped to the 5 Phase 2.7 minimum-enriched candidates only — not all 53 drafts. A product is
- * only included if every field this view needs is genuinely non-null; anything else is left out
- * rather than rendered with an invented placeholder.
+ * Scoped to the Phase 2.7 + Phase 3.4 minimum-enriched candidates only (10 total, as of Phase
+ * 3.4) — not all 53 drafts. A product is only included if every field this view needs is
+ * genuinely non-null; anything else is left out rather than rendered with an invented
+ * placeholder.
  *
  * Phase 3.0 adds a second consumer: `storefront-bridge.ts` wraps `buildStorefrontPreview()` with
  * a dev-only environment gate and pipes the same views into the main storefront's category/brand/
@@ -24,10 +25,12 @@ import { getCategory } from "@/data/categories";
 import type { ProductMasterInput } from "@/data/product-master-schema";
 import { projectActiveCatalog } from "./active-catalog-to-product-master";
 
-/** The Phase 2.7 minimum-enriched batch. Deliberately hardcoded, not "every ready candidate" —
- *  this preview is scoped to exactly what was reviewed and approved, not whatever the pipeline
- *  happens to produce next. */
-const PREVIEW_SHIPNITY_IDS = ["Coil-53", "Coil-56", "Coil-74", "Coil-87", "Coil-92"];
+/** The Phase 2.7 + Phase 3.4 minimum-enriched batch. Deliberately hardcoded, not "every ready
+ *  candidate" — this preview is scoped to exactly what was reviewed and approved, not whatever
+ *  the pipeline happens to produce next. Phase 3.4 added the 5 IDs after Coil-92: real taxonomy
+ *  evidence (TAXONOMY_MATCHES) plus minimum identity-only copy (MINIMUM_COPY), same bar as the
+ *  original 5. Coil-55 was evaluated and deliberately deferred — see MINIMUM_COPY's comment. */
+const PREVIEW_SHIPNITY_IDS = ["Coil-53", "Coil-56", "Coil-74", "Coil-87", "Coil-92", "Coil-1", "Coil-21", "Coil-72", "Coil-83", "Coil-94"];
 
 export interface StorefrontVariantView {
   id: string;

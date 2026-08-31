@@ -194,15 +194,21 @@ export function runProjectionContractTests(): ProjectionContractResult[] {
 
   // Phase 2.6 — these no longer block: both become real draft candidates (unpublished,
   // schema-valid) instead of being rejected outright for missing taxonomy/attributes evidence.
-  const coil1 = byId.get("Coil-1");
+  //
+  // Phase 3.4 note: this example was originally Coil-1, but Coil-1 is now one of the Phase 3.4
+  // minimum-enriched products (real tagline/shortDescription — see MINIMUM_COPY), so it's no
+  // longer a draft. Coil-55 has the same real taxonomy evidence but was deliberately deferred
+  // (identity collision with Coil-53 — see MINIMUM_COPY's comment), so it still genuinely
+  // demonstrates this state.
+  const coil55 = byId.get("Coil-55");
   check(
-    "real pipeline: Coil-1 (family known, no attributes evidence) is a draft candidate — brandId/familyId/categoryId/systemType present, attributes/tagline/shortDescription null",
-    coil1?.status === "candidate" &&
-      coil1.isDraft &&
-      coil1.product.brandId === "voopoo" &&
-      coil1.product.attributes === null &&
-      coil1.product.publicationStatus === "unpublished",
-    JSON.stringify(coil1)
+    "real pipeline: Coil-55 (family known, no attributes evidence) is a draft candidate — brandId/familyId/categoryId/systemType present, attributes/tagline/shortDescription null",
+    coil55?.status === "candidate" &&
+      coil55.isDraft &&
+      coil55.product.brandId === "uwell" &&
+      coil55.product.attributes === null &&
+      coil55.product.publicationStatus === "unpublished",
+    JSON.stringify(coil55)
   );
 
   const eliquid62 = byId.get("eliquid-62");

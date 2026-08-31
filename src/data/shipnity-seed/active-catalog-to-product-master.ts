@@ -164,6 +164,38 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "คอยล์ Voopoo PnP X",
     shortDescription: "คอยล์รุ่น PnP X จากแบรนด์ VOOPOO",
   },
+  // Phase 3.4 — second enrichment batch. Same rule as above: identity/brand/family level only,
+  // assembled from fields already verified in TAXONOMY_MATCHES (brand.name/family.name) plus the
+  // Shipnity record's own model text. No spec/performance/compatibility claim added.
+  //
+  // "Coil-55" ("หัวแทงค์ Caliburn G2") deliberately has NO entry here despite having the same
+  // real brand/family/category evidence as the rest of this batch: its raw name collides with
+  // Coil-53's ("Coil Caliburn G2") — both would display as "Caliburn G2" under this batch's
+  // identity-only copy convention. Whether they are the same physical item listed twice or two
+  // genuinely different SKUs (e.g. bare coil vs. tank-head assembly) isn't resolvable from the
+  // seed alone, and publishing both under near-identical names risks looking like a broken
+  // duplicate rather than two real products — see the Phase 3.4 report §DEFERRED PRODUCTS.
+  // Stays a draft (brandId/categoryId known, tagline/shortDescription null) until clarified.
+  "Coil-1": {
+    tagline: "คอยล์ Vinci จากแบรนด์ VOOPOO",
+    shortDescription: "คอยล์รุ่น Vinci เป็นผลิตภัณฑ์ในกลุ่ม VINCI จากแบรนด์ VOOPOO",
+  },
+  "Coil-21": {
+    tagline: "คอยล์ Argus Pod จากแบรนด์ VOOPOO",
+    shortDescription: "คอยล์รุ่น Argus Pod เป็นผลิตภัณฑ์ในกลุ่ม ARGUS จากแบรนด์ VOOPOO",
+  },
+  "Coil-72": {
+    tagline: "คอยล์ Vmate Infinity Edition จากแบรนด์ VOOPOO",
+    shortDescription: "คอยล์รุ่น Vmate Infinity Edition เป็นผลิตภัณฑ์ในกลุ่ม VMATE จากแบรนด์ VOOPOO",
+  },
+  "Coil-83": {
+    tagline: "คอยล์ Argus P1 จากแบรนด์ VOOPOO",
+    shortDescription: "คอยล์รุ่น Argus P1 เป็นผลิตภัณฑ์ในกลุ่ม ARGUS จากแบรนด์ VOOPOO",
+  },
+  "Coil-94": {
+    tagline: "คอยล์ Caliburn G4&G3 Series จากแบรนด์ UWELL",
+    shortDescription: "คอยล์รุ่น Caliburn G4&G3 Series เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
+  },
 };
 
 // ===================================================================================

@@ -34,19 +34,24 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   );
 
   // --- pilot query by brand ---
+  // Phase 3.4 added Coil-1/21/72/83 (voopoo) and Coil-94 (uwell) to the pilot batch, so the
+  // voopoo count grew from 3 to 7 (Coil-56/87/92 + the 4 new ones); uwell's own brand-count
+  // assertion below grew from 2 to 3 for the same reason (Coil-53/74 + Coil-94).
   const voopooPilot = searchPilotProducts("voopoo");
   check(
-    'searching "voopoo" (lowercase) returns exactly the 3 voopoo pilot products',
-    voopooPilot.length === 3 && voopooPilot.every((p) => p.brandName.toLowerCase() === "voopoo"),
+    'searching "voopoo" (lowercase) returns exactly the 7 voopoo pilot products',
+    voopooPilot.length === 7 && voopooPilot.every((p) => p.brandName.toLowerCase() === "voopoo"),
     JSON.stringify(voopooPilot.map((p) => p.slug))
   );
 
   // --- legacy + pilot mixed result ---
+  // Phase 3.4's Coil-94 ("คอยล์ Caliburn G4&G3 Series") also matches "caliburn", growing this
+  // from 2 to 3 pilot results.
   const caliburnLegacy = searchProducts("caliburn");
   const caliburnPilot = searchPilotProducts("caliburn");
   check(
-    '"caliburn" matches both legacy UWELL Caliburn products and pilot Coil-53/Coil-74 — a real mixed result',
-    caliburnLegacy.length > 0 && caliburnPilot.length === 2 && caliburnPilot.every((p) => ["coil-53", "coil-74"].includes(p.slug)),
+    '"caliburn" matches both legacy UWELL Caliburn products and pilot Coil-53/Coil-74/Coil-94 — a real mixed result',
+    caliburnLegacy.length > 0 && caliburnPilot.length === 3 && caliburnPilot.every((p) => ["coil-53", "coil-74", "coil-94"].includes(p.slug)),
     `legacy=${caliburnLegacy.length} pilot=${JSON.stringify(caliburnPilot.map((p) => p.slug))}`
   );
 
@@ -90,10 +95,12 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   );
 
   // --- category/brand/related bridge helpers stay consistent (Phase 3.0 behavior, re-asserted) ---
+  // pods-cartridges is untouched by Phase 3.4 (all 5 new products are coils-accessories), so it
+  // stays at 3; coils-accessories grew from 2 (Coil-53, Coil-92) to 7 with the new batch.
   check("pods-cartridges category has exactly 3 pilot products", getPilotProductsByCategory("pods-cartridges").length === 3, "n/a");
-  check("coils-accessories category has exactly 2 pilot products", getPilotProductsByCategory("coils-accessories").length === 2, "n/a");
-  check("voopoo brand has exactly 3 pilot products", getPilotProductsByBrand("voopoo").length === 3, "n/a");
-  check("uwell brand has exactly 2 pilot products", getPilotProductsByBrand("uwell").length === 2, "n/a");
+  check("coils-accessories category has exactly 7 pilot products", getPilotProductsByCategory("coils-accessories").length === 7, "n/a");
+  check("voopoo brand has exactly 7 pilot products", getPilotProductsByBrand("voopoo").length === 7, "n/a");
+  check("uwell brand has exactly 3 pilot products", getPilotProductsByBrand("uwell").length === 3, "n/a");
 
   if (coil56) {
     const related = getPilotRelatedProducts(coil56);
@@ -104,8 +111,8 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
     );
   }
 
-  // --- none of the 5 pilot slugs collide with a real legacy product slug ---
-  const pilotSlugs = ["coil-53", "coil-56", "coil-74", "coil-87", "coil-92"];
+  // --- none of the pilot slugs collide with a real legacy product slug ---
+  const pilotSlugs = ["coil-53", "coil-56", "coil-74", "coil-87", "coil-92", "coil-1", "coil-21", "coil-72", "coil-83", "coil-94"];
   check(
     "no pilot slug collides with an existing legacy product slug",
     pilotSlugs.every((s) => getProduct(s) === undefined),

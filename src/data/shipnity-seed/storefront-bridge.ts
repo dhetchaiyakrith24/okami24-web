@@ -9,7 +9,7 @@
  * mistake the owner explicitly ruled out. So the gate lives here instead, at the bridge boundary:
  * these functions return nothing at all outside local development, regardless of what
  * `publicationStatus` says. `next build` always runs with `NODE_ENV=production`, so this also
- * means the 5 pilot products are never included in `generateStaticParams`, never statically
+ * means the pilot products are never included in `generateStaticParams`, never statically
  * generated, and any direct request to their slug in a production deployment falls through to
  * the same `notFound()` the legacy catalog already uses for an unknown slug.
  */
@@ -42,7 +42,7 @@ export function getPilotProductsByBrand(brandId: string): StorefrontProductView[
  * only. Never crosses into the legacy 28 products (no verified relationship data exists between
  * a Shipnity draft and a legacy demo product) and never claims compatibility, only shared
  * category. Returns an empty list rather than padding with a weaker match — see the Phase 3.0
- * report §RELATED-PRODUCT BEHAVIOR for which of the 5 pilot products end up with zero.
+ * report §RELATED-PRODUCT BEHAVIOR for which pilot products end up with zero.
  */
 export function getPilotRelatedProducts(product: StorefrontProductView): StorefrontProductView[] {
   return getPilotProducts().filter((p) => p.slug !== product.slug && p.categoryId === product.categoryId);

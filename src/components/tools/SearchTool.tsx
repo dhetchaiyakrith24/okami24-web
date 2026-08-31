@@ -15,7 +15,7 @@ import { pluralCount } from "@/i18n/dictionaries";
  * `StorefrontProductView[]`, each rendered by its own card component (`ProductCard` requires
  * legacy `attributes.*`, `PilotProductCard` doesn't have it — see storefront-bridge.ts). Legacy
  * results keep their existing order/position; pilot results are appended after, never
- * interleaved by a fabricated relevance score. No deduplication — none of these 5 pilot products
+ * interleaved by a fabricated relevance score. No deduplication — none of the pilot products
  * has a known `exactLegacyMatch`, so there is nothing to merge (see the Phase 3.1 report
  * §LEGACY + PRODUCTMASTER RESULT BEHAVIOR).
  */
