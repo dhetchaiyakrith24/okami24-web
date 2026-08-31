@@ -47,3 +47,22 @@ export function getPilotProductsByBrand(brandId: string): StorefrontProductView[
 export function getPilotRelatedProducts(product: StorefrontProductView): StorefrontProductView[] {
   return getPilotProducts().filter((p) => p.slug !== product.slug && p.categoryId === product.categoryId);
 }
+
+/**
+ * Phase 3.1 — same haystack-join-includes matching as the legacy `searchProducts` (see
+ * src/data/products/index.ts), restricted to fields that genuinely exist on a Shipnity-sourced
+ * draft: displayName, brand name, category name, tagline, and active variant labels. No
+ * `attributes`/`specifications`/`features` text to match against (none exist), and nothing
+ * fabricated to widen recall — a query that only matches on a legacy-only concept (puff count,
+ * battery, etc.) correctly returns no pilot results. Inherits the same NODE_ENV production gate
+ * as every other `getPilotProducts()` consumer — a production build always sees zero results
+ * here without any extra gating code.
+ */
+export function searchPilotProducts(query: string): StorefrontProductView[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  return getPilotProducts().filter((p) => {
+    const haystack = [p.displayName, p.brandName, p.categoryName, p.tagline, ...p.variants.map((v) => v.label)].join(" ").toLowerCase();
+    return haystack.includes(q);
+  });
+}
