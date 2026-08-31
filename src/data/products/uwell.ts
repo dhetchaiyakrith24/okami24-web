@@ -576,10 +576,10 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g3-pro/card.png",
+        src: "/assets/products/caliburn-g3-pro/card.webp",
         alt: "UWELL Caliburn G3 Pro, Space Gray colourway, isolated product shot",
-        angle: "Front, isolated (cropped from official colourway lineup)",
-        transparentBackground: false,
+        angle: "Front, isolated from UWELL's official G3 Pro campaign banner (g3pro.jpg, 1920×1080) — a much higher-resolution source than the original colourway-lineup crop it replaces, so the screen readout and body detail are genuinely sharp rather than upscaled. The banner's own dark atmospheric background (not a plain studio backdrop) is kept, since at #17181b-adjacent tones it already matches the site's dark theme; edges are feathered to blend rather than fully cut out.",
+        transparentBackground: true,
         sourceName: "UWELL",
         sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro",
       },

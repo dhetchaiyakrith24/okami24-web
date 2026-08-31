@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AgeGate } from "@/components/layout/AgeGate";
 import { LineContact } from "@/components/layout/LineContact";
+import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import "./globals.css";
 
 const displayFont = Barlow_Condensed({
@@ -45,16 +46,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
+    // `lang="en"` matches DEFAULT_LOCALE — LocaleProvider corrects this attribute client-side
+    // once it reads the visitor's actual locale cookie (see LocaleProvider.tsx for why this
+    // stays a Server Component with no cookies()/headers() call).
     <html
       lang="en"
       className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-surface-0 text-foreground font-body">
-        <AgeGate />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <LineContact />
+        <LocaleProvider>
+          <AgeGate />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <LineContact />
+        </LocaleProvider>
       </body>
     </html>
   );

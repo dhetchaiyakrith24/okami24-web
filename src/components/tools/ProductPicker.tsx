@@ -6,6 +6,7 @@ import type { Product } from "@/types/catalog";
 import { allProducts } from "@/data/products";
 import { ProductMedia } from "@/components/visual/ProductMedia";
 import { brandName } from "@/lib/utils";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 export function ProductPicker({
   selected,
@@ -18,6 +19,7 @@ export function ProductPicker({
   onRemove: (slug: string) => void;
   max?: number;
 }) {
+  const { dict } = useLocale();
   const [query, setQuery] = useState("");
   const selectedSlugs = new Set(selected.map((p) => p.slug));
 
@@ -35,7 +37,7 @@ export function ProductPicker({
           <div key={product.slug} className="relative rounded-xl border border-surface-border bg-surface-1 p-3">
             <button
               onClick={() => onRemove(product.slug)}
-              aria-label={`Remove ${product.name}`}
+              aria-label={`${dict.compare.removeAriaPrefix} ${product.name}`}
               className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full border border-surface-border bg-surface-0 text-foreground-muted hover:text-foreground"
             >
               <X size={12} aria-hidden />
@@ -62,7 +64,7 @@ export function ProductPicker({
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder={`Add a product to compare (${selected.length}/${max})…`}
+            placeholder={`${dict.compare.addPlaceholder} (${selected.length}/${max})…`}
             className="w-full rounded-lg border border-surface-border bg-surface-1 py-2.5 pl-9 pr-3 text-sm text-foreground placeholder:text-foreground-dim focus-visible:outline-2 focus-visible:outline-ember"
           />
           {results.length > 0 && (

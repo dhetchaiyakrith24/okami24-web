@@ -1,32 +1,37 @@
 "use client";
 
+"use client";
+
 import { useMemo, useState } from "react";
 import type { Product } from "@/types/catalog";
 import { getProduct } from "@/data/products";
 import { ProductPicker } from "@/components/tools/ProductPicker";
 import { brandName, categoryName, familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+import type { Dictionary } from "@/i18n/dictionaries";
 
 interface Row {
   label: string;
   values: string[];
 }
 
-function classificationRows(products: Product[]): Row[] {
+function classificationRows(products: Product[], dict: Dictionary): Row[] {
+  const t = dict.compare;
   return [
-    { label: "Brand", values: products.map((p) => brandName(p.brandId)) },
-    { label: "Family", values: products.map((p) => familyName(p.familyId)) },
-    { label: "Category", values: products.map((p) => categoryName(p.categoryId)) },
-    { label: "Battery", values: products.map((p) => formatBattery(p.attributes.batteryMah)) },
-    { label: "Output", values: products.map((p) => formatWattage(p.attributes.wattageMin, p.attributes.wattageMax)) },
-    { label: "Rated puffs", values: products.map((p) => formatPuffs(p.attributes.puffCount)) },
-    { label: "Capacity", values: products.map((p) => (p.attributes.capacityMl ? `${p.attributes.capacityMl}mL` : "—")) },
-    { label: "Screen", values: products.map((p) => screenLabel(p)) },
-    { label: "Draw style", values: products.map((p) => p.attributes.drawStyle) },
-    { label: "Portability", values: products.map((p) => titleCase(p.attributes.portability.replace("-", " "))) },
-    { label: "Beginner-friendly", values: products.map((p) => (p.attributes.beginnerFriendly ? "Yes" : "No")) },
-    { label: "Charging", values: products.map((p) => p.attributes.chargingType) },
-    { label: "Dimensions", values: products.map((p) => p.attributes.dimensions ?? "—") },
-    { label: "Weight", values: products.map((p) => (p.attributes.weightG ? `${p.attributes.weightG}g` : "—")) },
+    { label: t.rowBrand, values: products.map((p) => brandName(p.brandId)) },
+    { label: t.rowFamily, values: products.map((p) => familyName(p.familyId)) },
+    { label: t.rowCategory, values: products.map((p) => categoryName(p.categoryId)) },
+    { label: t.rowBattery, values: products.map((p) => formatBattery(p.attributes.batteryMah)) },
+    { label: t.rowOutput, values: products.map((p) => formatWattage(p.attributes.wattageMin, p.attributes.wattageMax)) },
+    { label: t.rowRatedPuffs, values: products.map((p) => formatPuffs(p.attributes.puffCount)) },
+    { label: t.rowCapacity, values: products.map((p) => (p.attributes.capacityMl ? `${p.attributes.capacityMl}mL` : "—")) },
+    { label: t.rowScreen, values: products.map((p) => screenLabel(p, dict)) },
+    { label: t.rowDrawStyle, values: products.map((p) => p.attributes.drawStyle) },
+    { label: t.rowPortability, values: products.map((p) => titleCase(p.attributes.portability.replace("-", " "))) },
+    { label: t.rowBeginnerFriendly, values: products.map((p) => (p.attributes.beginnerFriendly ? t.yes : t.no)) },
+    { label: t.rowCharging, values: products.map((p) => p.attributes.chargingType) },
+    { label: t.rowDimensions, values: products.map((p) => p.attributes.dimensions ?? "—") },
+    { label: t.rowWeight, values: products.map((p) => (p.attributes.weightG ? `${p.attributes.weightG}g` : "—")) },
   ].filter((row) => row.values.some((v) => v && v !== "—"));
 }
 
@@ -34,16 +39,16 @@ function titleCase(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-function screenLabel(p: Product) {
+function screenLabel(p: Product, dict: Dictionary) {
   switch (p.attributes.screenType) {
     case "none":
-      return "None";
+      return dict.catalog.screenNone;
     case "led-indicator":
-      return "LED indicator";
+      return dict.catalog.screenLed;
     case "color-display":
-      return `Colour display${p.attributes.screenSize ? ` (${p.attributes.screenSize})` : ""}`;
+      return `${dict.catalog.screenColor}${p.attributes.screenSize ? ` (${p.attributes.screenSize})` : ""}`;
     case "touchscreen":
-      return `Touchscreen${p.attributes.screenSize ? ` (${p.attributes.screenSize})` : ""}`;
+      return `${dict.catalog.screenTouch}${p.attributes.screenSize ? ` (${p.attributes.screenSize})` : ""}`;
   }
 }
 
@@ -65,10 +70,11 @@ function verifiedSpecRows(products: Product[]): Row[] {
 }
 
 export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
+  const { dict } = useLocale();
   const [slugs, setSlugs] = useState<string[]>(initialSlugs);
   const products = useMemo(() => slugs.map((s) => getProduct(s)).filter((p): p is Product => Boolean(p)), [slugs]);
 
-  const classification = useMemo(() => classificationRows(products), [products]);
+  const classification = useMemo(() => classificationRows(products, dict), [products, dict]);
   const specs = useMemo(() => verifiedSpecRows(products), [products]);
 
   function addProduct(slug: string) {
@@ -84,20 +90,16 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
 
       {products.length < 2 ? (
         <div className="flex flex-col items-center gap-2 rounded-2xl border border-dashed border-surface-border py-16 text-center">
-          <p className="font-display text-xl font-semibold text-foreground">Add at least two products</p>
-          <p className="max-w-sm text-sm text-foreground-muted">Search above to add devices — you can compare up to four at once.</p>
+          <p className="font-display text-xl font-semibold text-foreground">{dict.compare.addAtLeastTwoTitle}</p>
+          <p className="max-w-sm text-sm text-foreground-muted">{dict.compare.addAtLeastTwoHint}</p>
         </div>
       ) : (
         <div className="flex flex-col gap-10">
-          <ComparisonTable title="Classification" rows={classification} />
-          <ComparisonTable
-            title="Verified Specifications"
-            rows={specs}
-            emptyNote="No shared attribute was independently verified across every selected product, so no specification rows are shown here."
-          />
+          <ComparisonTable title={dict.compare.classificationTitle} rows={classification} />
+          <ComparisonTable title={dict.compare.verifiedSpecsTitle} rows={specs} emptyNote={dict.compare.verifiedSpecsEmptyNote} />
 
           <div>
-            <h2 className="font-display text-xl font-semibold text-foreground">Best fit for</h2>
+            <h2 className="font-display text-xl font-semibold text-foreground">{dict.compare.bestFitFor}</h2>
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {products.map((p) => (
                 <div key={p.slug} className="rounded-xl border border-surface-border-soft bg-surface-1 p-4">
@@ -106,9 +108,7 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-xs text-foreground-dim">
-              These notes describe fit, not rank — OKami24 doesn&apos;t declare a universal &ldquo;winner&rdquo; between devices built for different use cases.
-            </p>
+            <p className="mt-4 text-xs text-foreground-dim">{dict.compare.disclaimer}</p>
           </div>
         </div>
       )}

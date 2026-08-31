@@ -7,20 +7,23 @@ import { Menu, X, Search, Heart, ChevronDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { categories } from "@/data/categories";
 import { cn } from "@/lib/utils";
-
-const PRIMARY_LINKS = [
-  { label: "E-Liquid", href: "/e-liquid" },
-  { label: "Compare", href: "/compare" },
-  { label: "Finder", href: "/finder" },
-  { label: "Guides", href: "/guides" },
-  { label: "Technology", href: "/technology" },
-  { label: "FAQ", href: "/faq" },
-  { label: "About", href: "/about" },
-];
+import { useLocale } from "@/components/i18n/LocaleProvider";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const { dict } = useLocale();
+
+  const PRIMARY_LINKS = [
+    { label: dict.nav.eliquid, href: "/e-liquid" },
+    { label: dict.nav.compare, href: "/compare" },
+    { label: dict.nav.finder, href: "/finder" },
+    { label: dict.nav.guides, href: "/guides" },
+    { label: dict.nav.technology, href: "/technology" },
+    { label: dict.nav.faq, href: "/faq" },
+    { label: dict.nav.about, href: "/about" },
+  ];
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -56,7 +59,7 @@ export function Header() {
               aria-expanded={productsOpen}
               aria-haspopup="true"
             >
-              Products <ChevronDown size={14} aria-hidden />
+              {dict.nav.products} <ChevronDown size={14} aria-hidden />
             </button>
             {productsOpen && (
               <div className="absolute left-0 top-full w-72 rounded-xl border border-surface-border bg-surface-1 p-3 shadow-2xl">
@@ -64,7 +67,7 @@ export function Header() {
                   href="/products"
                   className="block rounded-lg px-3 py-2 text-sm font-semibold text-foreground hover:bg-surface-2"
                 >
-                  All Products
+                  {dict.nav.allProducts}
                 </Link>
                 <div className="my-2 h-px bg-surface-border-soft" />
                 {categories.map((c) => (
@@ -91,16 +94,17 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-1 sm:gap-2">
+          <LanguageSwitcher />
           <Link
             href="/search"
-            aria-label="Search products"
+            aria-label={dict.nav.search}
             className="rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground"
           >
             <Search size={19} aria-hidden />
           </Link>
           <Link
             href="/favorites"
-            aria-label="Favorites"
+            aria-label={dict.nav.favorites}
             className="hidden rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground sm:inline-flex"
           >
             <Heart size={19} aria-hidden />
@@ -108,7 +112,7 @@ export function Header() {
           <button
             className="rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground lg:hidden"
             onClick={() => setMobileOpen((v) => !v)}
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-label={mobileOpen ? dict.nav.closeMenu : dict.nav.openMenu}
             aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X size={22} aria-hidden /> : <Menu size={22} aria-hidden />}
@@ -130,9 +134,9 @@ export function Header() {
             if ((e.target as HTMLElement).closest("a")) setMobileOpen(false);
           }}
         >
-          <span className="label-mono px-3 py-2 text-xs text-foreground-dim">Products</span>
+          <span className="label-mono px-3 py-2 text-xs text-foreground-dim">{dict.nav.products}</span>
           <Link href="/products" className="rounded-lg px-3 py-3 text-base font-semibold text-foreground hover:bg-surface-2">
-            All Products
+            {dict.nav.allProducts}
           </Link>
           {categories.map((c) => (
             <Link key={c.id} href={`/products/${c.slug}`} className="rounded-lg px-3 py-3 text-base text-foreground-muted hover:bg-surface-2">
@@ -146,7 +150,7 @@ export function Header() {
             </Link>
           ))}
           <Link href="/favorites" className="rounded-lg px-3 py-3 text-base text-foreground hover:bg-surface-2">
-            Favorites
+            {dict.nav.favorites}
           </Link>
         </nav>
       </div>

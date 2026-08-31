@@ -1,11 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { brandName, formatBattery, formatWattage } from "@/lib/utils";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 export function Hero({ flagship }: { flagship: Product }) {
+  const { dict } = useLocale();
   return (
     <section className="relative overflow-hidden border-b border-surface-border-soft bg-surface-0">
       <div
@@ -19,29 +23,26 @@ export function Hero({ flagship }: { flagship: Product }) {
       <Container className="relative grid grid-cols-1 items-center gap-10 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6 lg:py-24">
         <div className="flex flex-col gap-7">
           <span className="label-mono inline-flex w-fit items-center gap-2 rounded-full border border-surface-border bg-surface-1 px-3 py-1.5 text-[0.65rem] text-foreground-muted">
-            {brandName(flagship.brandId)} · Current Flagship
+            {brandName(flagship.brandId)} {dict.hero.badgeSuffix}
           </span>
           <h1 className="font-display text-[length:var(--text-display)] font-bold leading-[0.92] tracking-tight text-foreground">
-            Vaping,
+            {dict.hero.headingLine1}
             <br />
-            engineered
+            {dict.hero.headingLine2}
             <br />
-            <span className="text-ember">for clarity.</span>
+            <span className="text-ember">{dict.hero.headingAccent}</span>
           </h1>
-          <p className="max-w-md text-base leading-relaxed text-foreground-muted sm:text-lg">
-            A complete ecosystem of pod systems, disposables, and e-liquid — organized by real specifications, not
-            marketing noise. Every device documented, compared, and matched to how you actually vape.
-          </p>
+          <p className="max-w-md text-base leading-relaxed text-foreground-muted sm:text-lg">{dict.hero.description}</p>
           <div className="flex flex-wrap gap-3 pt-2">
-            <Button href="/products">Explore the catalog</Button>
+            <Button href="/products">{dict.hero.ctaPrimary}</Button>
             <Button href="/finder" variant="secondary">
-              Take the Finder
+              {dict.hero.ctaSecondary}
             </Button>
           </div>
           <dl className="mt-4 grid max-w-md grid-cols-3 gap-4 border-t border-surface-border-soft pt-6">
-            <StatBlock label="Products" value="28" />
-            <StatBlock label="Brands" value="3" />
-            <StatBlock label="Families" value="8" />
+            <StatBlock label={dict.hero.statProducts} value="28" />
+            <StatBlock label={dict.hero.statBrands} value="3" />
+            <StatBlock label={dict.hero.statFamilies} value="8" />
           </dl>
         </div>
 
@@ -60,7 +61,7 @@ export function Hero({ flagship }: { flagship: Product }) {
                 {formatBattery(flagship.attributes.batteryMah)} · {formatWattage(flagship.attributes.wattageMin, flagship.attributes.wattageMax)}
               </p>
             </div>
-            <span className="label-mono text-xs text-ember">View →</span>
+            <span className="label-mono text-xs text-ember">{dict.hero.viewProduct}</span>
           </Link>
         </div>
       </Container>

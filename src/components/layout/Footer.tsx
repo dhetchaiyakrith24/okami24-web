@@ -1,25 +1,30 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { categories } from "@/data/categories";
 import { brands } from "@/data/brands";
 import { CONTACT } from "@/data/contact";
-
-const LEARN_LINKS = [
-  { label: "Guides", href: "/guides" },
-  { label: "Technology", href: "/technology" },
-  { label: "E-Liquid", href: "/e-liquid" },
-  { label: "FAQ", href: "/faq" },
-];
-
-const TOOL_LINKS = [
-  { label: "Compare", href: "/compare" },
-  { label: "Product Finder", href: "/finder" },
-  { label: "Search", href: "/search" },
-  { label: "Favorites", href: "/favorites" },
-];
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 export function Footer() {
+  const { dict } = useLocale();
+
+  const LEARN_LINKS = [
+    { label: dict.nav.guides, href: "/guides" },
+    { label: dict.nav.technology, href: "/technology" },
+    { label: dict.nav.eliquid, href: "/e-liquid" },
+    { label: dict.nav.faq, href: "/faq" },
+  ];
+
+  const TOOL_LINKS = [
+    { label: dict.nav.compare, href: "/compare" },
+    { label: dict.nav.finder, href: "/finder" },
+    { label: dict.nav.search, href: "/search" },
+    { label: dict.nav.favorites, href: "/favorites" },
+  ];
+
   return (
     <footer className="border-t border-surface-border-soft bg-surface-1">
       <Container className="grid grid-cols-2 gap-10 py-14 sm:grid-cols-4 lg:grid-cols-5 lg:py-20">
@@ -27,10 +32,7 @@ export function Footer() {
           <Link href="/" className="flex items-center" aria-label="OKami24">
             <Image src="/brand/okami-logo-red.png" alt="OKami24" width={568} height={480} className="h-10 w-auto" />
           </Link>
-          <p className="max-w-sm text-sm leading-relaxed text-foreground-muted">
-            OKami24 — ของแท้ ราคาตรง บริการจริง อุปกรณ์พอด ดิสโพส และน้ำยา คัดสรรจากผู้ขายที่เข้าใจสินค้าจริง
-            พร้อมบริการหลังการขายที่ดูแลคุณต่อ
-          </p>
+          <p className="max-w-sm text-sm leading-relaxed text-foreground-muted">{dict.footer.tagline}</p>
           <div className="flex items-center gap-3 pt-1">
             <Link
               href={CONTACT.lineUrl}
@@ -53,7 +55,7 @@ export function Footer() {
           </div>
         </div>
 
-        <FooterColumn title="Shop">
+        <FooterColumn title={dict.footer.shop}>
           {categories.map((c) => (
             <FooterLink key={c.id} href={`/products/${c.slug}`}>
               {c.shortName}
@@ -61,7 +63,7 @@ export function Footer() {
           ))}
         </FooterColumn>
 
-        <FooterColumn title="Learn">
+        <FooterColumn title={dict.footer.learn}>
           {LEARN_LINKS.map((l) => (
             <FooterLink key={l.href} href={l.href}>
               {l.label}
@@ -69,7 +71,7 @@ export function Footer() {
           ))}
         </FooterColumn>
 
-        <FooterColumn title="Tools">
+        <FooterColumn title={dict.footer.tools}>
           {TOOL_LINKS.map((l) => (
             <FooterLink key={l.href} href={l.href}>
               {l.label}
@@ -88,8 +90,7 @@ export function Footer() {
             ))}
           </div>
           <p className="max-w-2xl leading-relaxed">
-            สำหรับผู้มีอายุ 21 ปีขึ้นไปเท่านั้น นิโคตินเป็นสารเสพติด สอบถามและสั่งซื้อผ่าน LINE OA{" "}
-            {CONTACT.lineId}
+            {dict.footer.ageNotice} {CONTACT.lineId}
           </p>
         </Container>
       </div>

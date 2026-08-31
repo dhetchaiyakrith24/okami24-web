@@ -6,23 +6,26 @@ import { ProductCard } from "@/components/catalog/ProductCard";
 import { brands } from "@/data/brands";
 import { familyName } from "@/lib/utils";
 import { X } from "lucide-react";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+import { pluralCount } from "@/i18n/dictionaries";
 
 type SortMode = "featured" | "alphabetical" | "family";
 
-const SCREEN_LABELS: Record<ScreenType, string> = {
-  none: "No screen",
-  "led-indicator": "LED indicator",
-  "color-display": "Colour display",
-  touchscreen: "Touchscreen",
-};
+export function CatalogBrowser({ products, isEmptyCategory }: { products: Product[]; isEmptyCategory?: boolean }) {
+  const { dict } = useLocale();
 
-const PORTABILITY_LABELS: Record<Portability, string> = {
-  "ultra-compact": "Ultra-compact",
-  compact: "Compact",
-  standard: "Standard",
-};
+  const SCREEN_LABELS: Record<ScreenType, string> = {
+    none: dict.catalog.screenNone,
+    "led-indicator": dict.catalog.screenLed,
+    "color-display": dict.catalog.screenColor,
+    touchscreen: dict.catalog.screenTouch,
+  };
 
-export function CatalogBrowser({ products, emptyStateNote }: { products: Product[]; emptyStateNote?: string }) {
+  const PORTABILITY_LABELS: Record<Portability, string> = {
+    "ultra-compact": dict.catalog.portabilityUltraCompact,
+    compact: dict.catalog.portabilityCompact,
+    standard: dict.catalog.portabilityStandard,
+  };
   const [query, setQuery] = useState("");
   const [brandFilter, setBrandFilter] = useState<Set<string>>(new Set());
   const [screenFilter, setScreenFilter] = useState<Set<ScreenType>>(new Set());
@@ -81,20 +84,20 @@ export function CatalogBrowser({ products, emptyStateNote }: { products: Product
       <aside className="flex flex-col gap-8">
         <div>
           <label htmlFor="catalog-search" className="label-mono mb-2 block text-xs text-foreground-dim">
-            Search
+            {dict.catalog.searchLabel}
           </label>
           <input
             id="catalog-search"
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search this catalog…"
+            placeholder={dict.catalog.searchPlaceholder}
             className="w-full rounded-lg border border-surface-border bg-surface-1 px-3 py-2 text-sm text-foreground placeholder:text-foreground-dim focus-visible:outline-2 focus-visible:outline-ember"
           />
         </div>
 
         {availableBrands.length > 1 && (
-          <FilterGroup title="Brand">
+          <FilterGroup title={dict.catalog.filterBrand}>
             {availableBrands.map((b) => (
               <FilterCheckbox key={b.id} label={b.name} checked={brandFilter.has(b.id)} onChange={() => toggle(brandFilter, b.id, setBrandFilter)} />
             ))}
@@ -102,7 +105,7 @@ export function CatalogBrowser({ products, emptyStateNote }: { products: Product
         )}
 
         {availableScreens.length > 1 && (
-          <FilterGroup title="Screen">
+          <FilterGroup title={dict.catalog.filterScreen}>
             {availableScreens.map((s) => (
               <FilterCheckbox key={s} label={SCREEN_LABELS[s]} checked={screenFilter.has(s)} onChange={() => toggle(screenFilter, s, setScreenFilter)} />
             ))}
@@ -110,7 +113,7 @@ export function CatalogBrowser({ products, emptyStateNote }: { products: Product
         )}
 
         {availablePortability.length > 1 && (
-          <FilterGroup title="Portability">
+          <FilterGroup title={dict.catalog.filterPortability}>
             {availablePortability.map((p) => (
               <FilterCheckbox
                 key={p}
@@ -122,8 +125,8 @@ export function CatalogBrowser({ products, emptyStateNote }: { products: Product
           </FilterGroup>
         )}
 
-        <FilterGroup title="Experience level">
-          <FilterCheckbox label="Beginner-friendly only" checked={beginnerOnly} onChange={() => setBeginnerOnly((v) => !v)} />
+        <FilterGroup title={dict.catalog.filterExperienceLevel}>
+          <FilterCheckbox label={dict.catalog.filterBeginnerOnly} checked={beginnerOnly} onChange={() => setBeginnerOnly((v) => !v)} />
         </FilterGroup>
 
         {activeFilterCount > 0 && (
@@ -136,7 +139,7 @@ export function CatalogBrowser({ products, emptyStateNote }: { products: Product
             }}
             className="label-mono flex items-center gap-1.5 text-xs text-ember hover:underline"
           >
-            <X size={12} aria-hidden /> Clear filters ({activeFilterCount})
+            <X size={12} aria-hidden /> {dict.catalog.clearFilters} ({activeFilterCount})
           </button>
         )}
       </aside>
@@ -144,11 +147,11 @@ export function CatalogBrowser({ products, emptyStateNote }: { products: Product
       <div className="flex flex-col gap-6">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-surface-border-soft pb-4">
           <p className="label-mono text-xs text-foreground-dim">
-            {filtered.length} product{filtered.length === 1 ? "" : "s"}
+            {filtered.length} {pluralCount(filtered.length, dict.catalog.productCountOne, dict.catalog.productCountOther)}
           </p>
           <div className="flex items-center gap-2">
             <label htmlFor="catalog-sort" className="label-mono text-xs text-foreground-dim">
-              Sort
+              {dict.catalog.sortLabel}
             </label>
             <select
               id="catalog-sort"
@@ -156,19 +159,17 @@ export function CatalogBrowser({ products, emptyStateNote }: { products: Product
               onChange={(e) => setSort(e.target.value as SortMode)}
               className="rounded-lg border border-surface-border bg-surface-1 px-2 py-1.5 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-ember"
             >
-              <option value="featured">Featured</option>
-              <option value="alphabetical">Alphabetical</option>
-              <option value="family">Product family</option>
+              <option value="featured">{dict.catalog.sortFeatured}</option>
+              <option value="alphabetical">{dict.catalog.sortAlphabetical}</option>
+              <option value="family">{dict.catalog.sortFamily}</option>
             </select>
           </div>
         </div>
 
         {filtered.length === 0 ? (
           <div className="flex flex-col items-center gap-2 rounded-2xl border border-dashed border-surface-border py-20 text-center">
-            <p className="font-display text-xl font-semibold text-foreground">No matching products</p>
-            <p className="max-w-sm text-sm text-foreground-muted">
-              {emptyStateNote ?? "Try clearing a filter or searching a different term."}
-            </p>
+            <p className="font-display text-xl font-semibold text-foreground">{dict.catalog.noMatchTitle}</p>
+            <p className="max-w-sm text-sm text-foreground-muted">{isEmptyCategory ? dict.catalog.emptyStateNote : dict.catalog.noMatchHint}</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

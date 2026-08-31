@@ -36,7 +36,7 @@ only, are not redistributed for commercial use, and are not sourced from third-p
 | Caliburn G4 | https://files.myuwell.com/uwell/product/caliburn-g4/pc/2.webp (via myuwell.com/caliburn/caliburn-g4) | `2.webp` | `caliburn-g4/card.webp` | **card** — isolated, transparent | 2026-08-29 |
 | Caliburn G4 Mini | https://files.myuwell.com/uwell/product/caliburn-g4-mini/pc/1.webp (via myuwell.com/caliburn/caliburn-g4-mini) | `1.webp` | `caliburn-g4-mini/card.webp` | **card** — isolated, transparent | 2026-08-29 |
 | Caliburn G4 Classic | https://files.myuwell.com/uwell/ow-product-color/Classic%20Silver-...png | `Classic Silver-...png` | `caliburn-g4-classic/card.png` | **card** — isolated, transparent | 2026-08-29 |
-| Caliburn G3 Pro | https://files.myuwell.com/uwell/product/caliburnG3Pro/pack1.webp (via myuwell.com/caliburn/caliburn-g3-pro) | `pack1.webp` | `caliburn-g3-pro/card.png` | **card** — locally cropped: the source is a 16-colourway grid with no single-device shot, so the "Space Gray" cell was cropped out with `sharp` (Node) to get one isolated device. Original grid not saved. | 2026-08-29 |
+| Caliburn G3 Pro | https://files.myuwell.com/uwell/product/caliburnG3Pro/g3pro.jpg (via myuwell.com/caliburn/caliburn-g3-pro) | `g3pro.jpg` (1920×1080 jpeg, official campaign banner) | `caliburn-g3-pro/card.webp` | **card** — Phase 3.2.1 replacement: the Phase 3.2 re-crop (from the low-res `pack1.webp` colourway grid, 1920×1000 but with each device only ~50px wide in-frame) still looked soft/upscaled once cropped down to a single device. Found a genuinely higher-detail source instead — UWELL's own G3 Pro campaign banner shows the Space Gray unit at ~280px native width, sharp enough to need no upscaling. Cropped to isolate that device, edges feathered (not fully cut out) since the banner's own dark atmospheric background already closely matches the site's `#17181b` surface tone. | 2026-08-29 (original crop, superseded) / 2026-08-31 (higher-res replacement) |
 | Caliburn G3 Pro KOKO | https://files.myuwell.com/uwell/product/caliburn-g3-pro-koko/power-y.webp (via myuwell.com/caliburn/caliburn-g3-pro-koko) | `power-y.webp` | `caliburn-g3-pro-koko/card.webp` | **card** — isolated pair (front+back), transparent | 2026-08-29 |
 
 ## SALTHUB — salthub.com (9/9 products have a card image)
@@ -71,7 +71,7 @@ resolve locally but works via `--resolve` to a known-good IP).
 | ARGUS G4 | https://sen.voopoo.com.cn/www-voopoo/static/dist/images/product/detail/argus-g4/part5-pro1.webp | `part5-pro1.webp` | `argus-g4/detail-screen.webp` | detail — screen/interface close-up (wattage, battery, resistance, lock) | 2026-08-29 |
 | ARGUS G4 mini | https://sen.voopoo.com.cn/www-voopoo/static/dist/uploads/202606/20260611/argus-g4-mini.png | `argus-g4-mini.png` | `argus-g4-mini/card.png` | **card** — isolated; badge cropped | 2026-08-29 |
 | ARGUS P3 | https://sen.voopoo.com.cn/www-voopoo/static/dist/uploads/202512/20251226/argus-p3.png | `argus-p3.png` | `argus-p3/card.png` | **card** — isolated; badge cropped | 2026-08-29 |
-| ARGUS G3 mini | https://img-va.myshopline.com/image/store/1747294110724/argus-G3-MINI-(11).jpg (via shop.voopoo.com/products/argus-g3-mini, on VOOPOO's own storefront CDN) | `argus-G3-MINI-(11).jpg` | `argus-g3-mini/card.png` | **card** — original showed the device next to its retail box; cropped locally with sharp to isolate the device alone | 2026-08-29 |
+| ARGUS G3 mini | https://img-va.myshopline.com/image/store/1747294110724/argus-G3-MINI-(11).jpg (via shop.voopoo.com/products/argus-g3-mini, on VOOPOO's own storefront CDN) | `argus-G3-MINI-(11).jpg` | `argus-g3-mini/card.webp` | **card** — device isolation from the original crop was already correct; the only defect was an opaque white background (no alpha) rendering as a visible white box against the dark theme. Phase 3.2 re-processed the same crop with background removal and converted to WebP. Phase 3.2.1 fix: that first removal only thresholded alpha, leaving a faint light-colour fringe at the edges (the semi-transparent boundary pixels still carried spill from the white backdrop); reprocessed with colour decontamination (un-premultiplying edge pixel RGB against the removed white) so the edge colour is the device's own, not a white/black blend — no re-crop needed either time. | 2026-08-29 (original crop) / 2026-08-31 (bg removal, then edge-colour fix same day) |
 | DRAG 6 | https://sen.voopoo.com.cn/www-voopoo/static/dist/uploads/202606/20260611/DRAG-6.png (via voopoo.com/drag-series/drag-6) | `DRAG-6.png` | `drag-6/card.png` | **card** — isolated; 4 stacked award badges cropped | 2026-08-29 |
 | DRAG S3 | https://sen.voopoo.com.cn/www-voopoo/static/dist/uploads/202606/20260603/drag-S3.png | `drag-S3.png` | `drag-s3/card.png` | **card** — isolated; 3 stacked award badges cropped | 2026-08-29 |
 | DRAG X3 | https://sen.voopoo.com.cn/www-voopoo/static/dist/uploads/202606/20260603/drag-X3.png | `drag-X3.png` | `drag-x3/card.png` | **card** — isolated; 3 stacked award badges cropped | 2026-08-29 |
@@ -90,13 +90,17 @@ only the isolated device.
 
 Per the approved real-first brief, priority order was: isolated/transparent PNG-WebP product
 renders > clean studio photography on a plain background > campaign banners (used only as
-`detail` gallery supplements, never as the primary `card` image). Two UWELL cards are
+`detail` gallery supplements, never as the primary `card` image). One UWELL card remains
 borderline and worth flagging for human review:
-- **Caliburn G3 Pro** required a manual crop from a 16-colourway comparison grid (no
-  single-device shot exists on the official page) — the crop may show a sliver of the
-  neighbouring colourway at the edges.
 - **Caliburn G3 Pro KOKO** shows two devices (front+back) at an angle rather than one flat
   studio shot, since that was the only non-lifestyle, non-pod-closeup image available.
+
+**Resolved in Phase 3.2** — the owner visually flagged Caliburn G3 Pro and ARGUS G3 mini as
+noticeably lower quality than neighbouring cards. Root cause for both: an opaque (non-transparent)
+`card.png` rendering its white background as a visible box against the dark theme; Caliburn G3
+Pro additionally still carried a sliver of its neighbouring colourway plus text labels from the
+original grid crop. Both re-processed (re-crop for Caliburn G3 Pro, background removal for both)
+— see their entries above for details.
 
 ## ProductMaster / Shipnity preview pilot — Phase 2.9
 
@@ -119,7 +123,7 @@ passed every check — the other 4 keep the DEV `PreviewProductGlyph` fallback:
 
 | Product | Source URL | Original filename | Local file | Purpose | Accessed |
 |---|---|---|---|---|---|
-| Coil-56 (VOOPOO PnP-X Cartridge, Silver) | https://img-va.myshopline.com/image/store/1747294110724/dtl-silver.jpg (via shop.voopoo.com/products/pnp-x-cartridge) | `dtl-silver.jpg` (600×600 jpeg, one unit isolated from a 2-pack retail photo) | `coil-56/card.webp` (284×451 webp, transparent) | **card** — cropped locally with `sharp` to isolate a single cartridge unit and remove the retail box/second unit, trimmed to natural silhouette, original plain-white studio background removed locally (threshold-based alpha keying on near-white/low-saturation pixels) to match the site's transparent-card convention, modestly upscaled (~2.3×) with `lanczos3` + sharpen since the native crop region was small (~115×189px before padding) | 2026-08-31 |
+| Coil-56 (VOOPOO PnP-X Cartridge, Silver) | https://img-va.myshopline.com/image/store/1747294110724/dtl-silver.jpg (via shop.voopoo.com/products/pnp-x-cartridge) | `dtl-silver.jpg` (600×600 jpeg, one unit isolated from a 2-pack retail photo) | `coil-56/card.webp` (131×205 webp, transparent) | **card** — cropped locally with `sharp` to isolate a single cartridge unit and remove the retail box/second unit, trimmed to natural silhouette, original plain-white studio background removed locally (threshold-based alpha keying on near-white/low-saturation pixels) to match the site's transparent-card convention. Phase 3.2.1: re-checked VOOPOO's official storefront for a sharper single-unit shot — every available image has the same small in-frame device size, so no better source exists — and reduced from the earlier 284×451 (a ~2.3× upscale of a 115×189 native crop, which looked soft) down to a near-native 131×205 with only a light sharpen, honestly presenting the source's real resolution ceiling instead of enlarging past it. | 2026-08-31 (both passes) |
 
 Shows the **Silver** colorway specifically — this product has 3 active colors (Black/Gray/
 Silver) but only one was sourced with a verified official photo. The `alt` text names the

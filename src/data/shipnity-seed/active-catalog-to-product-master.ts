@@ -186,7 +186,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       role: "card",
       src: "/assets/products/coil-56/card.webp",
       alt: "VOOPOO PnP-X Cartridge, silver colorway, isolated product shot",
-      angle: "Front, isolated (cropped locally from an official multi-unit retail photo; original plain-white studio background removed locally to match the site's transparent-card convention)",
+      angle: "Front, isolated (cropped locally from an official multi-unit retail photo; original plain-white studio background removed locally to match the site's transparent-card convention). Re-checked VOOPOO's storefront for a higher-resolution single-unit shot (Phase 3.2.1) — every available official image is the same small in-frame device size (~110-150px), so no sharper source exists; rendered at a smaller, closer-to-native size (131×205, down from an earlier 284×451 that upscaled the same crop too aggressively) rather than blown up further, per the owner's own guidance to prefer honest scale over a blurry enlargement.",
       transparentBackground: true,
       sourceName: "VOOPOO (official Shopline storefront CDN)",
       sourceUrl: "https://shop.voopoo.com/products/pnp-x-cartridge",

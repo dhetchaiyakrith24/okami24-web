@@ -1,7 +1,10 @@
+"use client";
+
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { PilotProductRail } from "./PilotProductRail";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 /**
  * Same shell as the legacy `RelatedProducts`, fed by `getPilotRelatedProducts` (same-categoryId
@@ -10,12 +13,13 @@ import { PilotProductRail } from "./PilotProductRail";
  * section.
  */
 export function PilotRelatedProducts({ products }: { products: StorefrontProductView[] }) {
+  const { dict } = useLocale();
   if (products.length === 0) return null;
 
   return (
     <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">
       <Container className="mb-8">
-        <SectionHeading eyebrow="Related" title="You might also consider." />
+        <SectionHeading eyebrow={dict.product.relatedEyebrow} title={dict.product.relatedTitle} />
       </Container>
       <Container>
         <PilotProductRail products={products} />

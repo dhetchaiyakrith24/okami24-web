@@ -267,10 +267,10 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/argus-g3-mini/card.png",
+        src: "/assets/products/argus-g3-mini/card.webp",
         alt: "VOOPOO ARGUS G3 mini, Midnight Black colourway, isolated product shot",
-        angle: "Front, isolated (cropped from a device+retail-box shot to show the device alone)",
-        transparentBackground: false,
+        angle: "Front, isolated (cropped from a device+retail-box shot to show the device alone; background removed locally with white-spill colour decontamination at the alpha edges — the first pass left a faint light fringe around the black body when viewed against the dark theme, fixed by un-premultiplying edge pixel colour rather than only thresholding alpha)",
+        transparentBackground: true,
         sourceName: "VOOPOO",
         sourceUrl: "https://shop.voopoo.com/products/argus-g3-mini",
       },

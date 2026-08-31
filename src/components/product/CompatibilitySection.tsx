@@ -1,8 +1,12 @@
+"use client";
+
 import type { Product } from "@/types/catalog";
 import { Plug, Users } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 export function CompatibilitySection({ product }: { product: Product }) {
+  const { dict } = useLocale();
   if (product.compatibility.length === 0 && product.whoIsThisFor.length === 0) return null;
 
   return (
@@ -12,7 +16,7 @@ export function CompatibilitySection({ product }: { product: Product }) {
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-2">
               <Plug size={18} className="text-steel" aria-hidden />
-              <h2 className="font-display text-xl font-semibold text-foreground">Compatibility</h2>
+              <h2 className="font-display text-xl font-semibold text-foreground">{dict.product.compatibilityTitle}</h2>
             </div>
             <ul className="flex flex-col gap-3">
               {product.compatibility.map((c, i) => (
@@ -29,7 +33,7 @@ export function CompatibilitySection({ product }: { product: Product }) {
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-2">
               <Users size={18} className="text-ember" aria-hidden />
-              <h2 className="font-display text-xl font-semibold text-foreground">Who is this for?</h2>
+              <h2 className="font-display text-xl font-semibold text-foreground">{dict.product.whoIsThisForTitle}</h2>
             </div>
             <ul className="flex flex-col gap-3">
               {product.whoIsThisFor.map((point, i) => (

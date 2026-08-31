@@ -1,6 +1,10 @@
+"use client";
+
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { PilotProductCard } from "./PilotProductCard";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+import { pluralCount } from "@/i18n/dictionaries";
 
 /**
  * Appended to a category/brand page below the existing `CatalogBrowser` grid — never fed into
@@ -10,14 +14,15 @@ import { PilotProductCard } from "./PilotProductCard";
  * `CatalogBrowser`'s, no search/filter/sort controls (5 products doesn't need them yet).
  */
 export function PilotProductSection({ products }: { products: StorefrontProductView[] }) {
+  const { dict } = useLocale();
   if (products.length === 0) return null;
 
   return (
     <div className="flex flex-col gap-6 pt-4">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-surface-border-soft pb-4">
-        <SectionHeading eyebrow="Shipnity" title="Also in stock right now" />
+        <SectionHeading eyebrow={dict.pilot.sectionEyebrow} title={dict.pilot.sectionTitle} />
         <p className="label-mono text-xs text-foreground-dim">
-          {products.length} product{products.length === 1 ? "" : "s"}
+          {products.length} {pluralCount(products.length, dict.catalog.productCountOne, dict.catalog.productCountOther)}
         </p>
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

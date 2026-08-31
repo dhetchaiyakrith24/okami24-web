@@ -75,7 +75,14 @@ export interface StorefrontProductView {
    *  website price. See README §Price. */
   priceReferenceValue: number | null;
   priceReferenceSource: string | null;
+  /** Pre-baked Thai label (from AXIS_LABEL_TH in the projection adapter) — kept only as a
+   *  fallback for an unrecognized axis code. Real consumers should translate `optionAxisCode`
+   *  through the active locale's dictionary instead (see Phase 3.2.1 report §LANGUAGE FIX
+   *  RESULT — this label used to render unconditionally regardless of locale, a real bug). */
   optionAxisLabel: string | null;
+  /** Raw axis type ("color"/"flavor"/"resistance"/"size"/"strength") — the machine-readable key
+   *  behind `optionAxisLabel`, straight from `optionDefinitions[0].code`. */
+  optionAxisCode: string | null;
   variants: StorefrontVariantView[];
 }
 
@@ -108,6 +115,7 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
     priceReferenceValue: product.pricing.priceReference?.value ?? null,
     priceReferenceSource: product.pricing.priceReference?.source ?? null,
     optionAxisLabel: axis?.label ?? null,
+    optionAxisCode: axis?.code ?? null,
     variants: product.variants.map((v) => {
       const selection = v.optionSelections[0];
       const label = selection ? (valueLabelByCode.get(selection.valueCode) ?? selection.valueCode) : v.id;

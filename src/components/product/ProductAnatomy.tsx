@@ -1,7 +1,10 @@
+"use client";
+
 import type { Product } from "@/types/catalog";
 import { DeviceGlyph } from "@/components/visual/DeviceGlyph";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 interface AnatomyPoint {
   x: number; // percent
@@ -34,6 +37,7 @@ function getAnatomyPoints(product: Product): AnatomyPoint[] {
 }
 
 export function ProductAnatomy({ product }: { product: Product }) {
+  const { dict } = useLocale();
   const points = getAnatomyPoints(product);
 
   return (
@@ -53,7 +57,7 @@ export function ProductAnatomy({ product }: { product: Product }) {
           ))}
         </div>
         <div className="flex flex-col gap-6">
-          <SectionHeading eyebrow="Anatomy" title="Built from the outside in." />
+          <SectionHeading eyebrow={dict.product.anatomyEyebrow} title={dict.product.anatomyTitle} />
           <ol className="flex flex-col gap-4">
             {points.map((p, i) => (
               <li key={i} className="flex gap-4">

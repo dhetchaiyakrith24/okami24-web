@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { CompareTool } from "@/components/tools/CompareTool";
+import { ComparePageHeader } from "@/components/tools/ComparePageHeader";
 import { getProduct } from "@/data/products";
 
 export const metadata: Metadata = {
@@ -19,11 +19,7 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
 
   return (
     <>
-      <PageHeader
-        eyebrow="Tools"
-        title="Compare Devices"
-        description="Pick two to four products. Only attributes shared and independently verified across every selected device are shown as specifications — differences are highlighted."
-      />
+      <ComparePageHeader />
       <Container className="py-12 lg:py-16">
         <CompareTool initialSlugs={initialSlugs} />
       </Container>

@@ -1,9 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import type { Product } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 export function ProductGallery({ product }: { product: Product }) {
+  const { dict } = useLocale();
   const photos = product.assets.filter((a) => a.kind === "official-photo" && a.role === "detail");
   if (photos.length === 0) return null;
 
@@ -11,8 +15,8 @@ export function ProductGallery({ product }: { product: Product }) {
     <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">
       <Container className="flex flex-col gap-8">
         <SectionHeading
-          eyebrow="Gallery"
-          title="Official campaign imagery."
+          eyebrow={dict.product.galleryEyebrow}
+          title={dict.product.galleryTitle}
           description={`Real photography from ${photos[0].sourceName}, used here for reference — not redistributed for commercial purposes.`}
         />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -35,7 +39,7 @@ export function ProductGallery({ product }: { product: Product }) {
                     <>
                       {" · "}
                       <a href={photo.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="hover:text-foreground-muted">
-                        source
+                        {dict.product.gallerySourceLinkLabel}
                       </a>
                     </>
                   )}

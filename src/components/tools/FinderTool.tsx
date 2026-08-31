@@ -6,6 +6,15 @@ import { matchProducts } from "@/lib/finder";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { Button } from "@/components/ui/Button";
 import { CheckCircle2 } from "lucide-react";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+
+/**
+ * The 6 questions/options below are deliberately left in English regardless of locale — this is
+ * real, substantial interactive content (24 option label/description pairs), not generic chrome,
+ * and translating it accurately without an owner-reviewed glossary risks subtly mis-describing a
+ * real product-fit question. The surrounding chrome (progress line, back button, results labels)
+ * IS translated below — see the Phase 3.2.1 report §LANGUAGE FIX RESULT for this scope line.
+ */
 
 interface Question<K extends keyof FinderAnswers> {
   key: K;
@@ -72,6 +81,7 @@ const QUESTIONS: Question<keyof FinderAnswers>[] = [
 ];
 
 export function FinderTool() {
+  const { dict } = useLocale();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Partial<FinderAnswers>>({});
 
@@ -92,9 +102,9 @@ export function FinderTool() {
     return (
       <div className="flex flex-col gap-12">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <h2 className="font-display text-2xl font-semibold text-foreground">Your top matches</h2>
+          <h2 className="font-display text-2xl font-semibold text-foreground">{dict.finder.topMatches}</h2>
           <Button variant="secondary" onClick={restart}>
-            Start over
+            {dict.finder.startOver}
           </Button>
         </div>
 
@@ -104,7 +114,7 @@ export function FinderTool() {
               <div className="relative">
                 {i === 0 && (
                   <span className="label-mono absolute left-3 top-3 z-10 rounded-full border border-ember/40 bg-ember-soft/60 px-2.5 py-1 text-[0.65rem] text-ember">
-                    Best match
+                    {dict.finder.bestMatch}
                   </span>
                 )}
                 <ProductCard product={m.product} />
@@ -123,10 +133,8 @@ export function FinderTool() {
 
         {results.alternatives.length > 0 && (
           <div>
-            <h3 className="font-display text-lg font-semibold text-foreground">Alternatives worth a look</h3>
-            <p className="mt-1 max-w-xl text-sm text-foreground-muted">
-              From different product families, in case the top matches don&apos;t feel right.
-            </p>
+            <h3 className="font-display text-lg font-semibold text-foreground">{dict.finder.alternatives}</h3>
+            <p className="mt-1 max-w-xl text-sm text-foreground-muted">{dict.finder.alternativesHint}</p>
             <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {results.alternatives.map((m) => (
                 <ProductCard key={m.product.slug} product={m.product} />
@@ -149,7 +157,7 @@ export function FinderTool() {
       </div>
       <div>
         <span className="label-mono text-xs text-foreground-dim">
-          Question {step + 1} of {QUESTIONS.length}
+          {dict.finder.questionProgressPrefix} {step + 1} {dict.finder.questionProgressMiddle} {QUESTIONS.length}
         </span>
         <h2 className="mt-2 font-display text-2xl font-semibold text-foreground sm:text-3xl">{question.title}</h2>
       </div>
@@ -167,7 +175,7 @@ export function FinderTool() {
       </div>
       {step > 0 && (
         <button onClick={() => setStep((s) => s - 1)} className="label-mono w-fit text-xs text-foreground-dim hover:text-foreground">
-          ← Back
+          {dict.finder.back}
         </button>
       )}
     </div>

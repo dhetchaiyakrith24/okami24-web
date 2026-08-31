@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+import { pilotAxisLabel } from "./axis-label";
 
 /**
  * Phase 3.0 — the storefront-native sibling of the isolated preview's `PreviewProductCard`.
@@ -14,6 +18,7 @@ import { ProductMasterGlyph } from "./ProductMasterGlyph";
  * `batteryMah`/`wattageMin`/`wattageMax`, none of which exist on a Shipnity-sourced draft.
  */
 export function PilotProductCard({ product }: { product: StorefrontProductView }) {
+  const { dict } = useLocale();
   return (
     <Link
       href={`/products/${product.slug}`}
@@ -21,7 +26,7 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
     >
       <div className="relative aspect-[4/5] w-full bg-surface-2/40 p-6">
         <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
-          <Badge tone="unverified">Unpublished</Badge>
+          <Badge tone="unverified">{dict.pilot.unpublishedBadge}</Badge>
         </div>
         <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
           {product.image ? (
@@ -48,7 +53,7 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
             <>
               <span aria-hidden>·</span>
               <span className="label-mono">
-                {product.variants.length} {product.optionAxisLabel ?? "variant"}
+                {product.variants.length} {pilotAxisLabel(dict, product) ?? dict.pilot.variantFallback}
               </span>
             </>
           )}

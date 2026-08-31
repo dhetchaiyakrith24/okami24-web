@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
@@ -6,6 +8,8 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
 import { ProductMasterVariantPicker } from "./ProductMasterVariantPicker";
 import { PilotRelatedProducts } from "./PilotRelatedProducts";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+import { pilotAxisLabel } from "./axis-label";
 
 /**
  * Phase 3.0 — storefront-native product detail body for a ProductMaster pilot product, rendered
@@ -18,6 +22,9 @@ import { PilotRelatedProducts } from "./PilotRelatedProducts";
  * page for these 5 products, just gated to non-production by `storefront-bridge.ts`.
  */
 export function PilotProductDetail({ product, related }: { product: StorefrontProductView; related: StorefrontProductView[] }) {
+  const { dict } = useLocale();
+  const axisLabel = pilotAxisLabel(dict, product);
+
   return (
     <>
       <PageHeader
@@ -27,38 +34,47 @@ export function PilotProductDetail({ product, related }: { product: StorefrontPr
         meta={
           <div className="flex flex-wrap items-center gap-2">
             <Badge tone="steel">{product.brandName}</Badge>
-            <Badge tone="unverified">Unpublished</Badge>
+            <Badge tone="unverified">{dict.pilot.unpublishedBadge}</Badge>
           </div>
         }
       />
-      <Container className="grid gap-10 py-12 lg:grid-cols-2 lg:py-16">
-        <div className="relative aspect-[4/5] w-full rounded-2xl border border-surface-border bg-surface-1 p-10">
-          {product.image ? (
-            <Image
-              src={product.image.src}
-              alt={product.image.alt}
-              fill
-              sizes="(min-width: 1024px) 40vw, 90vw"
-              className="object-contain p-4"
-              priority
-            />
-          ) : (
-            <ProductMasterGlyph kind={product.glyphKind} />
-          )}
-        </div>
-
-        <div className="flex flex-col gap-6">
+      <Container className="grid gap-10 py-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:py-16">
+        <div className="order-2 flex flex-col gap-6 lg:order-1">
           <div>
-            <span className="label-mono text-xs text-foreground-dim">ราคาอ้างอิงจากระบบปฏิบัติการ (Shipnity)</span>
+            <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceReferenceLabel}</span>
             <p className="font-display text-3xl font-bold text-foreground">
-              {product.priceReferenceValue !== null ? `฿${product.priceReferenceValue.toLocaleString("th-TH")}` : "ไม่มีข้อมูล"}
+              {product.priceReferenceValue !== null ? `฿${product.priceReferenceValue.toLocaleString("th-TH")}` : dict.pilot.priceUnavailable}
             </p>
             <p className="text-xs text-foreground-muted">
-              แหล่งที่มา: {product.priceReferenceSource ?? "—"} — ยังไม่ใช่ราคาขายสุดท้ายที่ owner อนุมัติ
+              {dict.pilot.priceSourcePrefix} {product.priceReferenceSource ?? "—"} {dict.pilot.priceDisclaimer}
             </p>
           </div>
 
-          <ProductMasterVariantPicker optionAxisLabel={product.optionAxisLabel} variants={product.variants} />
+          <ProductMasterVariantPicker optionAxisLabel={axisLabel} variants={product.variants} />
+        </div>
+
+        <div className="relative order-1 aspect-[4/5] w-full lg:order-2">
+          {product.image ? (
+            <>
+              <div
+                className="pointer-events-none absolute inset-0"
+                style={{ background: "radial-gradient(ellipse 58% 54% at 50% 40%, var(--color-steel-soft) 0%, transparent 72%)" }}
+                aria-hidden
+              />
+              <div className="relative h-full w-full p-8 lg:p-12">
+                <Image src={product.image.src} alt={product.image.alt} fill sizes="(min-width: 1024px) 42vw, 90vw" className="object-contain" priority />
+              </div>
+              <div
+                className="pointer-events-none absolute inset-x-16 bottom-6 h-10 rounded-full opacity-70"
+                style={{ background: "radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 75%)", filter: "blur(10px)" }}
+                aria-hidden
+              />
+            </>
+          ) : (
+            <div className="h-full w-full rounded-2xl border border-surface-border bg-surface-1 p-10">
+              <ProductMasterGlyph kind={product.glyphKind} />
+            </div>
+          )}
         </div>
       </Container>
 

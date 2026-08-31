@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { SearchTool } from "@/components/tools/SearchTool";
+import { SearchPageHeader } from "@/components/tools/SearchPageHeader";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -12,7 +12,7 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
   const { q } = await searchParams;
   return (
     <>
-      <PageHeader eyebrow="Search" title="Find a product" />
+      <SearchPageHeader />
       <Container className="py-12 lg:py-16">
         <SearchTool initialQuery={q ?? ""} />
       </Container>

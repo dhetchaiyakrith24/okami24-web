@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { categories, getCategory } from "@/data/categories";
 import { allProducts, getProduct, getProductsByCategory, getRelatedProducts } from "@/data/products";
-import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { ProductHero } from "@/components/product/ProductHero";
@@ -18,6 +17,7 @@ import { getBrand } from "@/data/brands";
 import { getPilotProduct, getPilotProducts, getPilotProductsByCategory, getPilotRelatedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDetail";
+import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
 
 export function generateStaticParams() {
   // `getPilotProducts()` returns [] whenever NODE_ENV === "production" (see storefront-bridge.ts)
@@ -50,13 +50,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     const pilotProducts = getPilotProductsByCategory(category.id);
     return (
       <>
-        <PageHeader eyebrow="Catalog" title={category.name} description={category.description} />
+        <CategoryPageHeader category={category} />
         <Container className="flex flex-col gap-12 py-12 lg:py-16">
           {(products.length > 0 || pilotProducts.length === 0) && (
-            <CatalogBrowser
-              products={products}
-              emptyStateNote={products.length === 0 ? "No products are catalogued in this category yet — check back as the catalog grows." : undefined}
-            />
+            <CatalogBrowser products={products} isEmptyCategory={products.length === 0} />
           )}
           <PilotProductSection products={pilotProducts} />
         </Container>
