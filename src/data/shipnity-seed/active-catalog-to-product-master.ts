@@ -142,6 +142,22 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "Pod-149": { brandId: "ske", categoryId: "disposables", systemType: "disposable", evidence: 'name "SKE Crystal B20K Puffs" states the brand explicitly; skevape.com (official) confirms SKE\'s Crystal Bar / high-puff-count disposable series as a real product line' },
   "Pod-150": { brandId: "kardinal-stick", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "KS Quikpro 15K หัวพอต" ("หัวพอต" = pod cartridge) states the brand explicitly ("KS"); kardinal.com (official) confirms Quikpro as a real hybrid-cartridge product rated "up to 15,000 puffs" — an exact match to this parent\'s own "15K" name' },
   "Disposable-34": { brandId: "instabar", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity\'s own "Disposable-" id prefix + name "Insta Bar PX 15000 Puffs" states the brand explicitly; instabar.net (official) confirms Instabar as a real disposable-vape manufacturer with a tiered puff-count product range including a 15,000-puff tier' },
+
+  // ===================================================================================
+  // Phase 3.5 (E-liquid wave) — first e-liquid ProductMaster candidates. `categoryId: "e-liquid"`
+  // (see categories.ts), `systemType` deliberately omitted (stays null — SystemType is a closed
+  // device enum with no correct e-liquid value, an already-supported non-blocking state, see
+  // validateProductMasterRegistry's own comment). All three resolve to the EXISTING `salthub`
+  // brand — no new Brand record needed. "Salt Hub" appears explicitly in eliquid-133's own
+  // Shipnity name; for ELIQUID-1/Eliquid-109 ("Marboro"), multiple independent Thai retailers
+  // (thai-vapes.com, vape69th.com, goatvapethai.com) consistently describe the Marboro salt-nic
+  // line as produced "by Salt Hub" — convergent tier-2 (distributor/retailer) evidence, not a
+  // single source's idiosyncratic categorization. This is evidence about the E-LIQUID line
+  // specifically and does NOT resolve the separate, still-unresolved Marbo-device question (see
+  // MINIMUM_COPY's Coil-55 comment and the Phase 3.5 report §MARBO) — kept deliberately separate.
+  "ELIQUID-1": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "MARBORO SALT NIC 30 ML"; 3 independent Thai retailers (thai-vapes.com "Salt Hub - Marbo Salt Nic", vape69th.com, goatvapethai.com) consistently attribute the Marboro salt-nic line to Salt Hub' },
+  "Eliquid-109": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Marboro Freebase ขวดยาว" — same Marboro/Salt Hub evidence as ELIQUID-1, different nicotine formulation (freebase vs. salt nic) and bottle format' },
+  "eliquid-133": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Yogurt Salt Hub" states the brand explicitly and directly — no inference needed' },
 };
 
 // ===================================================================================
@@ -263,6 +279,22 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   "Disposable-34": {
     tagline: "พอตใช้แล้วทิ้ง Insta Bar PX 15000 Puffs จากแบรนด์ INSTABAR",
     shortDescription: "พอตใช้แล้วทิ้งรุ่น Insta Bar PX 15000 Puffs จากแบรนด์ INSTABAR",
+  },
+  // E-liquid wave — "น้ำยา" (e-liquid/juice), the same plain, factual type word used throughout
+  // Thai vape retail (including in this session's own research results), not invented marketing
+  // language. No family grouping clause: no ProductFamily record exists for "Marboro" or
+  // "Yogurt" — same convention as every brand-explicit-no-family entry above.
+  "ELIQUID-1": {
+    tagline: "น้ำยา MARBORO SALT NIC 30 ML จากแบรนด์ SALTHUB",
+    shortDescription: "น้ำยารุ่น MARBORO SALT NIC 30 ML จากแบรนด์ SALTHUB",
+  },
+  "Eliquid-109": {
+    tagline: "น้ำยา Marboro Freebase ขวดยาว จากแบรนด์ SALTHUB",
+    shortDescription: "น้ำยารุ่น Marboro Freebase ขวดยาว จากแบรนด์ SALTHUB",
+  },
+  "eliquid-133": {
+    tagline: "น้ำยา Yogurt Salt Hub จากแบรนด์ SALTHUB",
+    shortDescription: "น้ำยารุ่น Yogurt Salt Hub จากแบรนด์ SALTHUB",
   },
 };
 

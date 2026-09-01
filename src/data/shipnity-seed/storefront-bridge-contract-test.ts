@@ -104,6 +104,9 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   check("coils-accessories category has exactly 11 pilot products", getPilotProductsByCategory("coils-accessories").length === 11, "n/a");
   check("disposables category has exactly 2 pilot products", getPilotProductsByCategory("disposables").length === 2, "n/a");
   check("pod-kits category has exactly 1 pilot product", getPilotProductsByCategory("pod-kits").length === 1, "n/a");
+  // e-liquid is the pilot's first non-device category (ELIQUID-1, Eliquid-109, eliquid-133), all
+  // resolving to the existing salthub brand — its first-ever pilot products.
+  check("e-liquid category has exactly 3 pilot products", getPilotProductsByCategory("e-liquid").length === 3, "n/a");
   check("voopoo brand has exactly 9 pilot products", getPilotProductsByBrand("voopoo").length === 9, "n/a");
   check("uwell brand has exactly 3 pilot products", getPilotProductsByBrand("uwell").length === 3, "n/a");
   check("rincoe brand has exactly 2 pilot products", getPilotProductsByBrand("rincoe").length === 2, "n/a");
@@ -112,6 +115,7 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   check("ske brand has exactly 1 pilot product", getPilotProductsByBrand("ske").length === 1, "n/a");
   check("kardinal-stick brand has exactly 1 pilot product", getPilotProductsByBrand("kardinal-stick").length === 1, "n/a");
   check("instabar brand has exactly 1 pilot product", getPilotProductsByBrand("instabar").length === 1, "n/a");
+  check("salthub brand has exactly 3 pilot products", getPilotProductsByBrand("salthub").length === 3, "n/a");
 
   if (coil56) {
     const related = getPilotRelatedProducts(coil56);
@@ -128,11 +132,20 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
     "coil-1", "coil-21", "coil-72", "coil-83", "coil-94",
     "coil-38", "coil-63", "coil-68", "coil-70", "coil-89",
     "pod-159", "pod-149", "pod-150", "disposable-34",
+    "eliquid-1", "eliquid-109", "eliquid-133",
   ];
   check(
     "no pilot slug collides with an existing legacy product slug",
     pilotSlugs.every((s) => getProduct(s) === undefined),
     JSON.stringify(pilotSlugs)
+  );
+
+  // --- e-liquid pilot products surface through search, resolving to the existing salthub brand ---
+  const salthubEliquid = searchPilotProducts("salthub");
+  check(
+    'searching "salthub" (lowercase) returns exactly the 3 e-liquid pilot products (brand text match)',
+    salthubEliquid.length === 3 && salthubEliquid.every((p) => p.brandId === "salthub" && p.categoryId === "e-liquid"),
+    JSON.stringify(salthubEliquid.map((p) => p.slug))
   );
 
   return results;

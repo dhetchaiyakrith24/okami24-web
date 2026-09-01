@@ -46,6 +46,21 @@ export const categories: Category[] = [
       "Replacement coil heads and the accessories that keep a device running — chargers, cases, drip tips, and cleaning kits.",
     systemTypes: ["coil", "accessory"],
   },
+  // Phase 3.5 (E-liquid) — deliberately `systemTypes: []`, not a guess at a device value. `SystemType`
+  // is a closed enum designed for vape hardware (open-pod/pod-kit/disposable/pod-cartridge/coil/
+  // accessory); no value describes a bottled e-liquid correctly, so every e-liquid ProductMaster
+  // record keeps `systemType: null` (already a fully supported, non-blocking state — see
+  // `validateProductMasterRegistry`'s own comment on why systemType/attributes are excluded from
+  // publication readiness). `systemTypes` on `Category` itself is declared but never actually read
+  // anywhere in the app (verified by search before adding this) — an empty array is safe.
+  {
+    id: "e-liquid",
+    slug: "e-liquid",
+    name: "E-Liquid",
+    shortName: "E-Liquid",
+    description: "Bottled e-liquid for refillable devices — flavor, nicotine formulation, and bottle size, sourced from real operational stock.",
+    systemTypes: [],
+  },
 ];
 
 export function getCategory(id: string): Category | undefined {

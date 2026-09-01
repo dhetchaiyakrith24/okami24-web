@@ -28,19 +28,24 @@ import { projectActiveCatalog } from "./active-catalog-to-product-master";
 /** The Phase 2.7 + 3.4 + 3.5 minimum-enriched batch. Deliberately hardcoded, not "every ready
  *  candidate" — this preview is scoped to exactly what was reviewed and approved, not whatever
  *  the pipeline happens to produce next. Phase 3.4 added 5 IDs after Coil-92 (existing voopoo/
- *  uwell brands only). Phase 3.5 added 10 more across three waves, including 6 new Brand records
+ *  uwell brands only). Phase 3.5 added 13 more across four waves, including 6 new Brand records
  *  (rincoe, dotmod, esko-bar, ske, kardinal-stick, instabar) added on real, WebFetch/WebSearch-
  *  verified official-source evidence — see that phase's TAXONOMY_MATCHES comments for the
- *  citation trail. Coil-55 stays deferred (see MINIMUM_COPY's comment); Pod-147 resolved as an
- *  exact-legacy-match to `m-switch-pod`, not a new preview candidate. Several other candidates
- *  (Muro/Marbo/Nexbar/Vazer/MOOOD-branded parents) were investigated and deliberately deferred —
- *  no verifiable official first-party source for a real Brand record (or, for Marbo, a genuinely
- *  ambiguous relationship to the existing salthub brand) — see the Phase 3.5 report. */
+ *  citation trail. The fourth wave is the pilot's first E-LIQUID products (ELIQUID-1,
+ *  Eliquid-109, eliquid-133) — resolves to the existing `salthub` brand, no new Brand record;
+ *  `categoryId: "e-liquid"` is the pilot's first non-device category (see categories.ts's own
+ *  comment for why `systemType` stays null for these, by design, not a gap). Coil-55 stays
+ *  deferred (see MINIMUM_COPY's comment); Pod-147 resolved as an exact-legacy-match to
+ *  `m-switch-pod`, not a new preview candidate. Several other candidates (Muro/Marbo/Nexbar/
+ *  Vazer/MOOOD/BAAM/Dooze/Pepo/Dundu-branded parents) were investigated and deliberately
+ *  deferred — no verifiable official first-party source for a real Brand record (or, for Marbo,
+ *  a genuinely ambiguous relationship to the existing salthub brand) — see the Phase 3.5 report. */
 const PREVIEW_SHIPNITY_IDS = [
   "Coil-53", "Coil-56", "Coil-74", "Coil-87", "Coil-92",
   "Coil-1", "Coil-21", "Coil-72", "Coil-83", "Coil-94",
   "Coil-38", "Coil-63", "Coil-68", "Coil-70", "Coil-89",
   "Pod-159", "Pod-149", "Pod-150", "Disposable-34",
+  "ELIQUID-1", "Eliquid-109", "eliquid-133",
 ];
 
 export interface StorefrontVariantView {
