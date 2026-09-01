@@ -47,14 +47,21 @@ import { projectActiveCatalog } from "./active-catalog-to-product-master";
  *  `categoryId: "e-liquid"` is the pilot's first non-device category (see categories.ts's own
  *  comment for why `systemType` stays null for these, by design, not a gap). Wave 5
  *  (coil-54/coil-62/Pod-169) resolves "Feelin" to NEVOKS and "infy" to INFY, both official
- *  first-party sources. Coil-55 stays deferred (see MINIMUM_COPY's comment); Pod-147 resolved as
- *  an exact-legacy-match to `m-switch-pod`, not a new preview candidate. Several other candidates
- *  (Muro/Marbo/Nexbar/Vazer/MOOOD/BAAM/Dooze/Pepo/Dundu/Reswa/Foli Bar/Pop Up-branded parents)
- *  were investigated and deliberately deferred — no verifiable official first-party source for a
- *  real Brand record (or, for Marbo, a genuinely ambiguous relationship to the existing salthub
- *  brand) — see the Phase 3.5 report. */
+ *  first-party sources. Pod-147 resolved as an exact-legacy-match to `m-switch-pod`, not a new
+ *  preview candidate. Several other candidates (Muro/Marbo/Nexbar/Vazer/MOOOD/BAAM/Dooze/Pepo/
+ *  Dundu/Reswa/Foli Bar/Pop Up-branded parents) were investigated and deliberately deferred — no
+ *  verifiable official first-party source for a real Brand record (or, for Marbo, a genuinely
+ *  ambiguous relationship to the existing salthub brand) — see the Phase 3.5 report. Also
+ *  investigated and correctly NOT added: Pod-168/Pod-177/Pod-179 (Caliburn G4 Pro / Vmate i3 /
+ *  Argus G4) — real, well-known flagship devices, but each already exists in the legacy catalog
+ *  (`caliburn-g4-pro`/`vmate-i3`/`argus-g4`); `projectActiveCatalog()`'s own dedup check already
+ *  catches these (`status: "blocked", reason: "identity-matches-existing-legacy-product"`), so
+ *  adding them here would only create duplicate identity/content. Wave 6 (this session) resolves
+ *  Coil-55 ("หัวแทงค์ Caliburn G2") — deferred since Phase 3.4 as a possible Coil-53 duplicate —
+ *  as a genuinely distinct real product (the empty pod, not the coil); see
+ *  `TAXONOMY_MATCHES["Coil-55"]`'s comment in `active-catalog-to-product-master.ts`. */
 const PREVIEW_SHIPNITY_IDS = [
-  "Coil-53", "Coil-56", "Coil-74", "Coil-87", "Coil-92",
+  "Coil-53", "Coil-55", "Coil-56", "Coil-74", "Coil-87", "Coil-92",
   "Coil-1", "Coil-21", "Coil-72", "Coil-83", "Coil-94",
   "Coil-38", "Coil-63", "Coil-68", "Coil-70", "Coil-89",
   "Pod-159", "Pod-149", "Pod-150", "Disposable-34",

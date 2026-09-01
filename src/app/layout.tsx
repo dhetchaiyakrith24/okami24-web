@@ -33,9 +33,14 @@ export const metadata: Metadata = {
   },
   description:
     "OKami24: ร้านอุปกรณ์พอดซิสเต็ม ดิสโพส และน้ำยา คัดสรรของแท้ ราคาตรงไปตรงมา พร้อมบริการหลังการขายที่ดูแลคุณจริง สอบถามและสั่งซื้อผ่าน LINE OA @okM24",
-  // NOTE: metadataBase intentionally left as the existing placeholder domain — the real
-  // production domain is TBD (see docs/BUSINESS_SOURCE_OF_TRUTH.md §19) and is deliberately
-  // deferred to the deployment/SEO phase, not decided here. See src/lib/seo.ts's SITE_URL.
+  // The real production domain is TBD (see docs/BUSINESS_SOURCE_OF_TRUTH.md §19) — never
+  // hardcoded here. See src/lib/seo.ts's SITE_URL: reads `SITE_URL` from the environment, falls
+  // back to localhost in dev, and refuses to build at all in production without it.
+  //
+  // Deliberately NO `alternates.canonical` here — Next.js metadata is deep-inherited, so a
+  // canonical set on the root layout becomes the DEFAULT for every page that doesn't set its own
+  // (search/favorites/pilot products/etc. would all wrongly canonicalize to "/"). The homepage
+  // sets its own canonical directly on `src/app/page.tsx` instead — see that file.
   metadataBase: new URL(SITE_URL),
   openGraph: {
     title: "OKami24 — ของแท้ ราคาตรง บริการจริง",

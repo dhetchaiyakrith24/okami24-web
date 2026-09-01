@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getFlagshipProducts, getProduct, getProductsByFamily, getProductsByBrand } from "@/data/products";
 import { guides } from "@/data/guides";
 import { CinematicIntro } from "@/components/home/cinematic/CinematicIntro";
@@ -8,6 +9,11 @@ import { EditorialSplit } from "@/components/home/EditorialSplit";
 import { FlavorTeaser } from "@/components/home/FlavorTeaser";
 import { CompareCTA } from "@/components/home/CompareCTA";
 import { GuideTeaserGrid } from "@/components/home/GuideTeaserGrid";
+import { canonicalFor } from "@/lib/seo";
+
+// The homepage's own canonical — deliberately set HERE, not on the root layout, so it doesn't
+// leak as the default for every other page (see layout.tsx's metadata comment).
+export const metadata: Metadata = canonicalFor("/");
 
 export default function Home() {
   const flagships = getFlagshipProducts();

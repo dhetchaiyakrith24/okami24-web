@@ -197,16 +197,20 @@ export function runProjectionContractTests(): ProjectionContractResult[] {
   //
   // Phase 3.4 note: this example was originally Coil-1, but Coil-1 is now one of the Phase 3.4
   // minimum-enriched products (real tagline/shortDescription — see MINIMUM_COPY), so it's no
-  // longer a draft. Coil-55 has the same real taxonomy evidence but was deliberately deferred
-  // (identity collision with Coil-53 — see MINIMUM_COPY's comment), so it still genuinely
-  // demonstrates this state.
+  // longer a draft. Coil-55 had the same real taxonomy evidence but was deliberately deferred
+  // (identity collision with Coil-53) through Phase 3.4/3.5 — resolved this session with real
+  // evidence (see TAXONOMY_MATCHES["Coil-55"]'s comment), so it's now fully enriched, not a
+  // draft either. No real Shipnity candidate is currently in the "taxonomy known, copy null"
+  // state — that admission-time nullability invariant is still covered, just synthetically, by
+  // product-master-contract-test.ts's fixtures rather than a real example here.
   const coil55 = byId.get("Coil-55");
   check(
-    "real pipeline: Coil-55 (family known, no attributes evidence) is a draft candidate — brandId/familyId/categoryId/systemType present, attributes/tagline/shortDescription null",
+    "real pipeline: Coil-55 is now a fully-enriched, non-draft candidate (uwell, pods-cartridges, real copy) after this session's taxonomy correction",
     coil55?.status === "candidate" &&
-      coil55.isDraft &&
+      !coil55.isDraft &&
       coil55.product.brandId === "uwell" &&
-      coil55.product.attributes === null &&
+      coil55.product.categoryId === "pods-cartridges" &&
+      coil55.product.tagline !== null &&
       coil55.product.publicationStatus === "unpublished",
     JSON.stringify(coil55)
   );

@@ -4,10 +4,12 @@ import { Citrus, Snowflake, Cookie, Coffee, Leaf } from "lucide-react";
 import { flavorFamilies } from "@/data/flavors";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
+import { canonicalFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "E-Liquid",
   description: "An editorial map of flavor families — not a catalog of branded bottled e-liquid.",
+  ...canonicalFor("/e-liquid"),
 };
 
 const ICONS = {

@@ -4,10 +4,12 @@ import { brands } from "@/data/brands";
 import { CONTACT } from "@/data/contact";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
+import { canonicalFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "About",
   description: "OKami24 คือใคร ทำไมของแท้ ราคาตรง และบริการจริงถึงเป็นหัวใจของร้าน พร้อมนโยบายเคลมสินค้าและช่องทางติดต่อ",
+  ...canonicalFor("/about"),
 };
 
 export default function AboutPage() {

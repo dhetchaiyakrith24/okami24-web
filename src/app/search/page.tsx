@@ -2,10 +2,16 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { SearchTool } from "@/components/tools/SearchTool";
 import { SearchPageHeader } from "@/components/tools/SearchPageHeader";
+import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Search",
   description: "Search the OKami24 catalog by product name, brand, family, category, or feature.",
+  // noindex — an internal search results page is an unbounded space of thin, query-driven
+  // permutations with no unique landing-page value; canonical to the query-less base path is
+  // kept as defense in depth, not the primary signal.
+  ...canonicalFor("/search"),
+  ...NOINDEX_FOLLOW,
 };
 
 export default async function SearchPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {

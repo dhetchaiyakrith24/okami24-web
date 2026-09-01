@@ -3,10 +3,12 @@ import Link from "next/link";
 import { guides } from "@/data/guides";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
+import { canonicalFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Guides",
   description: "Practical buying guidance and how-it-works explainers — not marketing copy.",
+  ...canonicalFor("/guides"),
 };
 
 const CATEGORY_LABELS: Record<string, string> = {

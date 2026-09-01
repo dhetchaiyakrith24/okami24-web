@@ -83,7 +83,15 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "Coil-1": { brandId: "voopoo", familyId: "vinci", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Vinci" (VOOPOO VINCI family) + Shipnity "Coil-" prefix' },
   "Coil-21": { brandId: "voopoo", familyId: "argus", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Argus" (VOOPOO ARGUS family) + Shipnity "Coil-" prefix' },
   "Coil-53": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn" (UWELL CALIBURN family) + Shipnity "Coil-" prefix' },
-  "Coil-55": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn" (UWELL CALIBURN family) + Shipnity "Coil-" prefix' },
+  // Correction (this session) — resolves the Phase 3.4 "Coil-55 vs Coil-53" deferral below (kept
+  // for history). "หัวแทงค์" (tank-head) is NOT the coil: 10+ independent retailers consistently
+  // describe "UWELL Caliburn G2 Empty Replacement Pod" as a real, distinct product — the
+  // refillable 2mL POD/TANK itself, sold separately from the coil it houses ("compatible with
+  // Caliburn G2 Coils"). This record's own child ("1 กล่อง / มี 2ตัว" — a box of 2) matches the
+  // retail "2-pack" pod listing exactly, not a coil pack. Same "หัว(...) doesn't reliably mean
+  // coil" pattern already found for Coil-56/68/74/87/coil-54/coil-62 — now resolved for Coil-55
+  // specifically, not assumed from the pattern alone.
+  "Coil-55": { brandId: "uwell", familyId: "caliburn", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name contains "Caliburn" (UWELL CALIBURN family); "หัวแทงค์" + 2-piece box child matches the official Caliburn G2 empty replacement pod (2mL, top-fill, houses the coil), not the coil itself — genuinely distinct from Coil-53' },
   "Coil-72": { brandId: "voopoo", familyId: "vmate", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Vmate" (VOOPOO VMATE family) + Shipnity "Coil-" prefix' },
   // Phase 2.8 correction — official UWELL evidence (myuwell.com/caliburn/caliburn-x) describes
   // the Caliburn X as having a 3 ml REFILLABLE POD with separately replaceable coils. This
@@ -197,6 +205,13 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "คอยล์ Caliburn G2 จากแบรนด์ UWELL",
     shortDescription: "คอยล์รุ่น Caliburn G2 เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
   },
+  // New this session — resolves the Phase 3.4 deferral. Worded distinctly from Coil-53 ("คอยล์"
+  // = coil vs "พอตเปล่า" = empty pod) on purpose: these are two genuinely different real products
+  // that must never read as a duplicate listing. See TAXONOMY_MATCHES["Coil-55"] for the evidence.
+  "Coil-55": {
+    tagline: "พอตเปล่า Caliburn G2 จากแบรนด์ UWELL",
+    shortDescription: "พอตเปล่ารุ่น Caliburn G2 (บรรจุ 2 ชิ้น) เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL แยกชิ้นจากคอยล์",
+  },
   // Phase 2.8 correction — was worded as a coil ("คอยล์"); official VOOPOO evidence (matching
   // active variant colors) identifies this as the PnP X cartridge, not a coil. See
   // TAXONOMY_MATCHES["Coil-56"] for the evidence.
@@ -225,14 +240,10 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // assembled from fields already verified in TAXONOMY_MATCHES (brand.name/family.name) plus the
   // Shipnity record's own model text. No spec/performance/compatibility claim added.
   //
-  // "Coil-55" ("หัวแทงค์ Caliburn G2") deliberately has NO entry here despite having the same
-  // real brand/family/category evidence as the rest of this batch: its raw name collides with
-  // Coil-53's ("Coil Caliburn G2") — both would display as "Caliburn G2" under this batch's
-  // identity-only copy convention. Whether they are the same physical item listed twice or two
-  // genuinely different SKUs (e.g. bare coil vs. tank-head assembly) isn't resolvable from the
-  // seed alone, and publishing both under near-identical names risks looking like a broken
-  // duplicate rather than two real products — see the Phase 3.4 report §DEFERRED PRODUCTS.
-  // Stays a draft (brandId/categoryId known, tagline/shortDescription null) until clarified.
+  // "Coil-55" ("หัวแทงค์ Caliburn G2") was deferred here through Phase 3.4 pending exactly this
+  // resolution — see TAXONOMY_MATCHES["Coil-55"]'s comment for the evidence now resolving it as a
+  // genuinely distinct product (empty pod, not the coil). Its own entry now lives below, in the
+  // Phase 2.8-style correction block, not this identity-only batch.
   "Coil-1": {
     tagline: "คอยล์ Vinci จากแบรนด์ VOOPOO",
     shortDescription: "คอยล์รุ่น Vinci เป็นผลิตภัณฑ์ในกลุ่ม VINCI จากแบรนด์ VOOPOO",

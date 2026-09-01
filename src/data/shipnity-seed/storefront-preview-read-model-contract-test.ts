@@ -13,10 +13,11 @@ export interface ReadModelContractResult {
 
 // Phase 3.4 added Coil-1/21/72/83/94; Phase 3.5 added Coil-38/63/68/70/89, Pod-159/149/150,
 // Disposable-34, the pilot's first e-liquid products (ELIQUID-1/Eliquid-109/eliquid-133), and a
-// final wave (coil-54/coil-62/Pod-169, resolving "Feelin"->NEVOKS and "infy"->INFY) — see
+// final wave (coil-54/coil-62/Pod-169, resolving "Feelin"->NEVOKS and "infy"->INFY). This
+// session's catalog-expansion slice resolved Coil-55 (deferred since Phase 3.4) — see
 // PREVIEW_SHIPNITY_IDS.
 const EXPECTED_IDS = [
-  "Coil-53", "Coil-56", "Coil-74", "Coil-87", "Coil-92",
+  "Coil-53", "Coil-55", "Coil-56", "Coil-74", "Coil-87", "Coil-92",
   "Coil-1", "Coil-21", "Coil-72", "Coil-83", "Coil-94",
   "Coil-38", "Coil-63", "Coil-68", "Coil-70", "Coil-89",
   "Pod-159", "Pod-149", "Pod-150", "Disposable-34",
@@ -30,7 +31,7 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
 
   const views = buildStorefrontPreview();
 
-  check("exactly the 25 Phase 2.7 + 3.4 + 3.5 products are present, nothing more", views.length === 25, JSON.stringify(views.map((v) => v.shipnityProductId)));
+  check("exactly the 26 Phase 2.7 + 3.4 + 3.5 + this-session products are present, nothing more", views.length === 26, JSON.stringify(views.map((v) => v.shipnityProductId)));
 
   check(
     "every expected Shipnity id is present",
@@ -65,14 +66,16 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
   // Pod-149/coil-54 are genuinely single-SKU (their only Shipnity child is packaging text or,
   // for Pod-149, a label classify.ts's flavor-keyword heuristic doesn't recognize — a real
   // classifier gap for that one label, deliberately not force-fixed here since a zero-variant
-  // single-SKU product already renders correctly). So a blanket ">=1 for everyone" is no longer a
-  // valid invariant. What IS still checkable: the zero-variant set must be exactly this known
-  // real quartet — anything else at 0 would mean buildVariantStructure silently dropped a real
-  // variant for a product that should have one.
+  // single-SKU product already renders correctly). This session's Coil-55 joins them for the same
+  // reason — its only child ("1 กล่อง / มี 2ตัว") is packaging text, correctly excluded as
+  // sell-unit. So a blanket ">=1 for everyone" is no longer a valid invariant. What IS still
+  // checkable: the zero-variant set must be exactly this known real quintet — anything else at 0
+  // would mean buildVariantStructure silently dropped a real variant for a product that should
+  // have one.
   const zeroVariantIds = views.filter((v) => v.variants.length === 0).map((v) => v.shipnityProductId);
   check(
-    "the only zero-variant products are the known real single-SKU quartet (Coil-21, Coil-83, Pod-149, coil-54)",
-    zeroVariantIds.length === 4 && ["Coil-21", "Coil-83", "Pod-149", "coil-54"].every((id) => zeroVariantIds.includes(id)),
+    "the only zero-variant products are the known real single-SKU quintet (Coil-21, Coil-55, Coil-83, Pod-149, coil-54)",
+    zeroVariantIds.length === 5 && ["Coil-21", "Coil-55", "Coil-83", "Pod-149", "coil-54"].every((id) => zeroVariantIds.includes(id)),
     JSON.stringify(views.map((v) => ({ id: v.shipnityProductId, variantCount: v.variants.length })))
   );
 

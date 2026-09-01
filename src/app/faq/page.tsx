@@ -4,10 +4,12 @@ import type { SiteFAQ } from "@/types/catalog";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { FAQAccordion } from "@/components/content/FAQAccordion";
+import { canonicalFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "FAQ",
   description: "Answers about ordering from OKami24, how the catalog, comparison tool, and finder work.",
+  ...canonicalFor("/faq"),
 };
 
 const CATEGORY_LABELS: Record<SiteFAQ["category"], string> = {

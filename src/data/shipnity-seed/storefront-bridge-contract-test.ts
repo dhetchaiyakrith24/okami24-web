@@ -55,12 +55,13 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
 
   // --- legacy + pilot mixed result ---
   // Phase 3.4's Coil-94 ("คอยล์ Caliburn G4&G3 Series") also matches "caliburn", growing this
-  // from 2 to 3 pilot results.
+  // from 2 to 3 pilot results. This session's Coil-55 resolution ("หัวแทงค์ Caliburn G2") grows
+  // it again, to 4.
   const caliburnLegacy = searchProducts("caliburn");
   const caliburnPilot = searchPilotProducts("caliburn");
   check(
-    '"caliburn" matches both legacy UWELL Caliburn products and pilot Coil-53/Coil-74/Coil-94 — a real mixed result',
-    caliburnLegacy.length > 0 && caliburnPilot.length === 3 && caliburnPilot.every((p) => ["coil-53", "coil-74", "coil-94"].includes(p.slug)),
+    '"caliburn" matches both legacy UWELL Caliburn products and pilot Coil-53/Coil-55/Coil-74/Coil-94 — a real mixed result',
+    caliburnLegacy.length > 0 && caliburnPilot.length === 4 && caliburnPilot.every((p) => ["coil-53", "coil-55", "coil-74", "coil-94"].includes(p.slug)),
     `legacy=${caliburnLegacy.length} pilot=${JSON.stringify(caliburnPilot.map((p) => p.slug))}`
   );
 
@@ -68,11 +69,12 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   //     in any pilot tagline, which are in Thai) ---
   // Phase 3.5 grew pods-cartridges from 3 to 8: Coil-68 ("ITO-X"), Pod-150 ("KS Quikpro"),
   // Pod-169 ("infy"), coil-54/coil-62 (both "Feelin", reclassified from coil to cartridge).
-  // Coil-56 (also pods-cartridges) then graduated to published, dropping this pilot count to 7.
+  // Coil-56 (also pods-cartridges) then graduated to published, dropping this pilot count to 7;
+  // this session's Coil-55 resolution adds it back to 8.
   const cartridgeResults = searchPilotProducts("cartridge");
   check(
-    '"cartridge" matches the 7 remaining pods-cartridges pilot products via categoryName (coil-56 now published, not pilot)',
-    cartridgeResults.length === 7 && cartridgeResults.every((p) => p.categoryId === "pods-cartridges"),
+    '"cartridge" matches the 8 pods-cartridges pilot products via categoryName (coil-56 published, coil-55 newly resolved)',
+    cartridgeResults.length === 8 && cartridgeResults.every((p) => p.categoryId === "pods-cartridges"),
     JSON.stringify(cartridgeResults.map((p) => p.slug))
   );
 
@@ -106,9 +108,10 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
 
   // --- category/brand/related bridge helpers stay consistent (Phase 3.0 behavior, re-asserted) ---
   // pods-cartridges grew from 3 to 8 (Coil-68, Pod-150, Pod-169, coil-54, coil-62), then dropped
-  // to 7 once Coil-56 graduated to published; coils-accessories stayed at 11; disposables/pod-
-  // kits/e-liquid are all new to the pilot this phase.
-  check("pods-cartridges category has exactly 7 pilot products (coil-56 now published, not pilot)", getPilotProductsByCategory("pods-cartridges").length === 7, "n/a");
+  // to 7 once Coil-56 graduated to published, then back to 8 with this session's Coil-55
+  // resolution; coils-accessories stayed at 11; disposables/pod-kits/e-liquid are all new to the
+  // pilot this phase.
+  check("pods-cartridges category has exactly 8 pilot products (coil-56 published, coil-55 newly resolved)", getPilotProductsByCategory("pods-cartridges").length === 8, "n/a");
   check("coils-accessories category has exactly 11 pilot products", getPilotProductsByCategory("coils-accessories").length === 11, "n/a");
   check("disposables category has exactly 2 pilot products", getPilotProductsByCategory("disposables").length === 2, "n/a");
   check("pod-kits category has exactly 1 pilot product", getPilotProductsByCategory("pod-kits").length === 1, "n/a");
@@ -116,7 +119,7 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   // resolving to the existing salthub brand — its first-ever pilot products.
   check("e-liquid category has exactly 3 pilot products", getPilotProductsByCategory("e-liquid").length === 3, "n/a");
   check("voopoo brand has exactly 8 pilot products (coil-56 now published, not pilot)", getPilotProductsByBrand("voopoo").length === 8, "n/a");
-  check("uwell brand has exactly 3 pilot products", getPilotProductsByBrand("uwell").length === 3, "n/a");
+  check("uwell brand has exactly 4 pilot products (coil-55 newly resolved)", getPilotProductsByBrand("uwell").length === 4, "n/a");
   check("rincoe brand has exactly 2 pilot products", getPilotProductsByBrand("rincoe").length === 2, "n/a");
   check("dotmod brand has exactly 1 pilot product", getPilotProductsByBrand("dotmod").length === 1, "n/a");
   check("esko-bar brand has exactly 1 pilot product", getPilotProductsByBrand("esko-bar").length === 1, "n/a");
@@ -128,21 +131,21 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   check("infy brand has exactly 1 pilot product", getPilotProductsByBrand("infy").length === 1, "n/a");
 
   // getPilotRelatedProducts still proven with a still-pilot pods-cartridges product (coil-74) —
-  // its pilot category-mates are the remaining 6 pods-cartridges pilot products, correctly
-  // excluding coil-56 (no longer pilot) and itself.
+  // its pilot category-mates are the remaining 7 pods-cartridges pilot products (6 plus this
+  // session's newly-resolved coil-55), correctly excluding coil-56 (no longer pilot) and itself.
   const coil74Pilot = getPilotProduct("coil-74");
   if (coil74Pilot) {
     const related = getPilotRelatedProducts(coil74Pilot);
     check(
-      "coil-74's related pilot products are exactly coil-68, coil-87, pod-150, pod-169, coil-54, and coil-62 (same categoryId, self + published coil-56 excluded)",
-      related.length === 6 && related.every((p) => ["coil-68", "coil-87", "pod-150", "pod-169", "coil-54", "coil-62"].includes(p.slug)),
+      "coil-74's related pilot products are exactly coil-55, coil-68, coil-87, pod-150, pod-169, coil-54, and coil-62 (same categoryId, self + published coil-56 excluded)",
+      related.length === 7 && related.every((p) => ["coil-55", "coil-68", "coil-87", "pod-150", "pod-169", "coil-54", "coil-62"].includes(p.slug)),
       JSON.stringify(related.map((p) => p.slug))
     );
   }
 
   // --- none of the pilot slugs collide with a real legacy product slug ---
   const pilotSlugs = [
-    "coil-53", "coil-56", "coil-74", "coil-87", "coil-92",
+    "coil-53", "coil-55", "coil-56", "coil-74", "coil-87", "coil-92",
     "coil-1", "coil-21", "coil-72", "coil-83", "coil-94",
     "coil-38", "coil-63", "coil-68", "coil-70", "coil-89",
     "pod-159", "pod-149", "pod-150", "disposable-34",

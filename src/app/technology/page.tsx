@@ -3,10 +3,12 @@ import Link from "next/link";
 import { technologyEntries } from "@/data/technology";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
+import { canonicalFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Technology",
   description: "How the mechanisms behind current pod and disposable devices actually work — mesh coils, multi-resistance cartridges, chip platforms, and control systems.",
+  ...canonicalFor("/technology"),
 };
 
 export default function TechnologyPage() {
