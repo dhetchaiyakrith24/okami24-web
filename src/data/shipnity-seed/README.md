@@ -90,3 +90,162 @@ Recorded in `excludedNonProductRows`, not silently dropped, and checked for acci
 The "มีของ" filter hides any child SKU currently out of stock, so a parent's active children are
 often non-contiguous (e.g. `Pod-179` shows `-1,-2,-4,-5,-6` — no `-3`). This is not a
 transcription gap; no missing suffix was invented to fill it.
+
+---
+
+## Catalog reconciliation methodology (durable — read before doing new identity/media work)
+
+Everything below was learned the hard way across the full-catalog mission (2026-09-02) and is
+kept here, in the repo, instead of only in a Claude session's private memory — memory is
+account-scoped and doesn't survive a memory reset or help a different contributor. This section
+is the methodology; current per-product state (what's published, what's blocked and why) belongs
+in a session's memory or a status report, not here — this file goes stale if it tries to track
+that.
+
+### Identity evidence tiers
+
+1. Official first-party manufacturer source (brand's own site).
+2. Authorized distributor whose imagery is clearly manufacturer-supplied.
+3. A retailer, when identity/variant evidence is independently strong (exact resistance/color
+   printed on the box, exact puff-count match, etc.) — always labeled "retailer, tier-2" in
+   `sourceName`, never upgraded to sound like tier 1. If a retailer's own page *claims* its photo
+   is "provided by the manufacturer," that claim is the retailer's own, unverified — cite it as
+   such, don't launder it into an official-source claim.
+4. Multi-retailer convergence (5-10+ independent sellers agreeing on a brand name) is real
+   evidence a product exists and is correctly identified, but is **not sufficient on its own** to
+   add a `Brand` record — a `Brand` needs a real `referenceUrl`, `tagline`, `description`, which
+   cannot be honestly written without a first-party site to draw from. Convergence-only brands
+   stay documented as "real but unresolved," not force-fit into a fabricated Brand entry.
+
+### Before treating a Shipnity parent as a new product
+
+Always check, in this order, before writing a new `TAXONOMY_MATCHES` entry:
+1. Does an `exactLegacyMatch` already exist in `src/data/products/*.ts` under this brand/family?
+   Grep every `id: "<family>-*"` directly — don't infer novelty from an official site's product
+   list alone (a real miss this project made once: assumed "9K" was a new generation because the
+   brand's site listed it, without grepping the legacy file first, where it already existed).
+2. Does the Shipnity operational name/prefix reliably describe the physical product? **It often
+   doesn't.** The recurring "หัว(เปล่า) doesn't reliably mean bare coil" pattern: a name starting
+   with "หัว"/"หัวเปล่า" ("(bare) head") or even a `Coil-` id prefix turned out to be a pod/
+   cartridge, not a coil, on confirmed occasions — the tell is usually a COLOR or FLAVOR child
+   (cartridges/prefilled pods are differentiated by color/flavor) where a real coil would be
+   differentiated by resistance (Ω). Check the children's actual shape before trusting the name.
+3. Two Shipnity parents with similar names are not automatically duplicates OR automatically
+   distinct — resolve with real evidence (exact retail packaging text, child count/shape match),
+   never by assumption either direction.
+
+### Media verification & rejection rules
+
+Never: AI-generated imagery (check embedded XMP/metadata — VOOPOO's own CDN has served an
+AI-generated coil photo self-flagged via a `TC260:AIGC` XMP tag), watermarked retailer imagery
+used as-is, the wrong resistance/color/flavor, a generic multi-item group shot standing in for one
+specific variant, a lifestyle/marketing banner with decorative text overlays passed off as product
+photography.
+
+**Watermark handling:** if a real, correctly-identified source photo carries a retailer watermark
+baked into one corner of the frame, the correct fix is cropping to the watermark-free region of
+the SAME real photo — never discard a genuine source over a watermark, and never generate a
+replacement. Use `extractThenTrim()` from `scripts/product-image.ts` for this.
+
+**Multi-variant products, one static card image:** when a product has more real variants than can
+be honestly shown in one photo, prefer, in order: (1) a real per-variant photo for each variant
+that has one — see "Variant-specific media" below; (2) for variants without one, a composite of
+several individually-verified real photos (`compositeGrid()` in `scripts/product-image.ts`) rather
+than one variant's photo standing in for all; (3) never let a composite/generic image visually
+imply it represents ONE specific selected variant it wasn't verified for — see "neutral fallback"
+below.
+
+**Provenance wording:** `sourceName` must say what the source actually is (`"X (vape retailer)"`,
+not `"X (official)"` unless it genuinely is the brand's own site). `angle` should record exactly
+how identity/variant match was confirmed (box text, a retailer's own variant→image JSON mapping,
+etc.), not just assert "verified."
+
+### The OKami24 Product Media Quality Standard
+
+Technical validity is necessary but not sufficient. A real product image being correctly
+identified, correctly sized, and decodable does not automatically mean it's good enough to publish
+— it also has to look right at the size it's actually shown at. Both bars apply together:
+
+- Sharp and clear at its real storefront display size (card grid, Product Detail hero, OG share) —
+  not just "large enough in pixels" on paper.
+- Sufficient useful resolution for that display size; no visible pixelation.
+- No obvious compression artifacts, no unintended blur.
+- No stretching or distorted proportions.
+- A clean, intentional crop — nothing important about the product accidentally cut off, and the
+  product isn't left looking unnecessarily tiny inside a lot of empty canvas.
+- Clean background/alpha edges (no ragged keying, no leftover halo from a bad crop).
+- Reasonably consistent visual quality across a multi-variant product's set of images — one
+  variant shouldn't look noticeably worse than its siblings for no real reason.
+- No broken/missing image state reaching a customer.
+- Truthful exact product/variant identity remains mandatory throughout — nothing in this standard
+  ever trades identity accuracy for a better-looking picture.
+
+**Automated checks are a technical guardrail, not the final judge.** `checkQuality()` /
+`npx tsx scripts/product-image.ts audit` (see "Tooling" below) catch objective, measurable
+problems — broken files, under-resolution, aspect-ratio drift, suspiciously small byte size — and
+stay deliberately limited to those. A file can cleanly pass every automated check and still be
+visually weak (soft focus, an awkward crop, excess dead space, a washed-out alpha edge) — none of
+that is reliably detectable by pixel-counting. **Production media therefore needs both:** the
+automated audit to find the objectively broken/undersized cases fast, and an actual visual look at
+representative and suspicious assets (at their real rendered size, not 1:1 pixel-peeping) before
+calling a catalog media pass done. Do not build a numeric "beauty score" into the tooling to skip
+this — subjective visual quality doesn't reduce to a reliable formula, and a fake-precise number
+would be worse than an honest "look at it" step.
+
+**Benchmark:** the earlier OKami24 product photography the owner has explicitly called strong is
+the practical visual-quality bar for new/replacement assets to match — not a specific pixel
+dimension. Treat any asset flagged as visually weak as a real candidate for replacement even if it
+passes every automated check.
+
+### Variant-specific media architecture
+
+`ProductVariant.image` (schema field, `src/types/product-master.ts` / `product-master-schema.ts`)
+lets one specific variant carry its own verified photo, distinct from the product-level card. Wire
+it via `VERIFIED_VARIANT_MEDIA` in `active-catalog-to-product-master.ts` (keyed by
+`shipnityProductId` → `shipnityVariantId`), which flows through `StorefrontVariantView.image` in
+the read model into `PilotProductDetail`'s variant picker. A variant with no entry there simply
+falls back to the product-level card image — this is correct default behavior for most products
+and needs no per-product opt-out.
+
+If a product's card image is itself a multi-variant composite (see above) and some variants still
+lack their own real photo, selecting one of those unmapped variants would otherwise show the
+composite as if it specifically represented that selection — visually misleading even though the
+underlying data is technically a "fallback." Fix with a **separate** `NEUTRAL_VARIANT_FALLBACK`
+entry (same file) — a real, flavor/color-neutral image (e.g. an official product-construction
+diagram with no variant-specific branding) shown only when a selected variant has no photo of its
+own. This never touches the product-level card/OG image, which keeps its normal job as the
+catalog-grid/social-share representative shot.
+
+### Efficient research techniques
+
+- **A specific color/flavor/variant product page's own `og:image` meta tag** is a reliable way to
+  get an exact, page-specific official photo on sites where a generic asset-server naming scheme
+  doesn't obviously encode the variant (repeatedly worked on iqos.com — each
+  `/shop/<model>-<color>.html` page's own `og:image` pointed at a real, color-specific,
+  high-resolution official render). Try this before giving up on a domain that resists generic
+  scraping.
+- **Shopify/WooCommerce retailer pages often embed a `variants` JSON blob in the raw HTML**
+  mapping each option label (e.g. `"0.7 ohm"`) directly to its own `featured_image`/product-image
+  URL — grep the raw HTML for the variant's exact label text to find a high-confidence exact-match
+  image, far more reliable than eyeballing a multi-item group photo.
+- Several vape-retail domains (e.g. `shop.voopoo.com`) have been observed to reliably block
+  automated content-reading tools (browser-automation content extraction, sometimes `WebFetch`)
+  while responding fine to a plain `curl` for raw HTML — if one channel is blocked, try the other
+  before concluding a source is unreachable.
+- **A retailer's own image CDN often serves multiple resolutions via a URL size suffix or query
+  param** (`_w1728`, `?wid=800`, etc.) — try a larger size before accepting a small default if the
+  visible thumbnail looks under-resolution; the CDN may just ignore an unsupported size and return
+  its native asset instead of erroring.
+
+### Tooling
+
+- `npm run verify:catalog` (or `npm run verify:catalog -- --full` to include a real build + start +
+  publication-leakage check) — runs typecheck, lint, and every contract/validation script under
+  `src/` in one command. See `scripts/verify-catalog.ts`.
+- `npm run audit:images` — scans every image under `public/assets/products/` and flags likely-weak
+  assets (under-resolution for their role, broken/undecodable files, aspect-ratio drift, suspicious
+  file size) by objective measurement, not subjective scoring. See `scripts/product-image.ts`,
+  which also exports `extractThenTrim()`/`resizeSafe()`/`compositeGrid()`/`checkQuality()` for use
+  in one-off processing scripts — import from there rather than re-deriving `sharp` pipelines
+  (`sharp(x).extract(region).trim()` chained in one call intermittently throws in this project's
+  sharp version; `extractThenTrim()` already works around it).

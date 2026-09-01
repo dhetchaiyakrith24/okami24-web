@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify:catalog": "npx tsx scripts/verify-catalog.ts",
+    "audit:images": "npx tsx scripts/product-image.ts audit"
   },
   "dependencies": {
     "clsx": "^2.1.1",
