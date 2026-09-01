@@ -52,9 +52,9 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
   // correctly reflects that; the pilot/preview EXCLUSION of published records happens one layer
   // up, in storefront-bridge.ts's getPilotProduct(s) (proven by storefront-bridge-contract-test.ts),
   // not here.
-  const PUBLISHED_IDS = new Set(["Coil-38", "Coil-56", "Coil-74", "Coil-89", "Coil-92"]);
+  const PUBLISHED_IDS = new Set(["Coil-38", "Coil-53", "Coil-55", "Coil-56", "Coil-74", "Coil-89", "Coil-92"]);
   check(
-    "every view's publicationStatus is unpublished except the genuinely published products (Coil-38, Coil-56, Coil-74, Coil-89, Coil-92)",
+    "every view's publicationStatus is unpublished except the genuinely published products (Coil-38, Coil-53, Coil-55, Coil-56, Coil-74, Coil-89, Coil-92)",
     views.every((v) => v.publicationStatus === (PUBLISHED_IDS.has(v.shipnityProductId) ? "published" : "unpublished")),
     JSON.stringify(views.map((v) => ({ id: v.shipnityProductId, status: v.publicationStatus })))
   );
@@ -98,10 +98,14 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
   const publishedNow = buildPublishedCatalog();
   const findPublished = (id: string) => publishedNow.find((p) => p.shipnityProductId === id);
   check(
-    "buildPublishedCatalog() against REAL current data returns exactly the five genuinely approved products (Coil-38 ฿450, Coil-56 ฿300, Coil-74 ฿250, Coil-89 ฿350, Coil-92 ฿130)",
-    publishedNow.length === 5 &&
+    "buildPublishedCatalog() against REAL current data returns exactly the seven genuinely approved products (Coil-38 ฿450, Coil-53 ฿550, Coil-55 ฿299, Coil-56 ฿300, Coil-74 ฿250, Coil-89 ฿350, Coil-92 ฿130)",
+    publishedNow.length === 7 &&
       findPublished("Coil-38")?.sellingPrice === 450 &&
       findPublished("Coil-38")?.variants.length === 2 &&
+      findPublished("Coil-53")?.sellingPrice === 550 &&
+      findPublished("Coil-53")?.variants.length === 1 &&
+      findPublished("Coil-55")?.sellingPrice === 299 &&
+      findPublished("Coil-55")?.variants.length === 0 &&
       findPublished("Coil-56")?.sellingPrice === 300 &&
       findPublished("Coil-56")?.variants.length === 1 &&
       findPublished("Coil-56")?.variants[0]?.id === "Coil-56-3" &&

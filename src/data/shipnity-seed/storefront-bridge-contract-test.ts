@@ -55,13 +55,13 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   );
 
   // --- legacy + pilot mixed result ---
-  // Phase 3.4's Coil-94 ("คอยล์ Caliburn G4&G3 Series") also matches "caliburn". Coil-55 joined
-  // (Phase this-session's resolution), then Coil-74 graduated to published, netting back to 3.
+  // Phase 3.4's Coil-94 ("คอยล์ Caliburn G4&G3 Series") also matches "caliburn". Coil-55, Coil-74,
+  // and now Coil-53 all graduated to published, netting down to 1 (Coil-94 alone).
   const caliburnLegacy = searchProducts("caliburn");
   const caliburnPilot = searchPilotProducts("caliburn");
   check(
-    '"caliburn" matches both legacy UWELL Caliburn products and pilot Coil-53/Coil-55/Coil-94 — a real mixed result (coil-74 now published, not pilot)',
-    caliburnLegacy.length > 0 && caliburnPilot.length === 3 && caliburnPilot.every((p) => ["coil-53", "coil-55", "coil-94"].includes(p.slug)),
+    '"caliburn" matches both legacy UWELL Caliburn products and pilot Coil-94 — a real mixed result (coil-53/coil-55/coil-74 all now published, not pilot)',
+    caliburnLegacy.length > 0 && caliburnPilot.length === 1 && caliburnPilot[0]?.slug === "coil-94",
     `legacy=${caliburnLegacy.length} pilot=${JSON.stringify(caliburnPilot.map((p) => p.slug))}`
   );
 
@@ -70,10 +70,10 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   // Phase 3.5 grew pods-cartridges from 3 to 8: Coil-68 ("ITO-X"), Pod-150 ("KS Quikpro"),
   // Pod-169 ("infy"), coil-54/coil-62 (both "Feelin", reclassified from coil to cartridge).
   // Coil-56 graduated to published (8->7); Coil-55 resolution added one back (7->8); Coil-74
-  // graduated to published (8->7).
+  // graduated to published (8->7); Coil-55 itself then also graduated to published (7->6).
   const cartridgeResults = searchPilotProducts("cartridge");
   check(
-    '"cartridge" matches the 7 remaining pods-cartridges pilot products via categoryName (coil-56 and coil-74 both now published, not pilot)',
+    '"cartridge" matches the 7 remaining pods-cartridges pilot products via categoryName (coil-56/coil-74/coil-55 published, not pilot; coil-94 reclassified in from coils-accessories)',
     cartridgeResults.length === 7 && cartridgeResults.every((p) => p.categoryId === "pods-cartridges"),
     JSON.stringify(cartridgeResults.map((p) => p.slug))
   );
@@ -111,15 +111,23 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   // published (8->7), Coil-55 resolution (7->8), Coil-74 published (8->7). coils-accessories:
   // stayed at 11 until Coil-89 published this session (11->10). disposables/pod-kits/e-liquid are
   // all new to the pilot this phase.
-  check("pods-cartridges category has exactly 7 pilot products (coil-56 and coil-74 both published, not pilot)", getPilotProductsByCategory("pods-cartridges").length === 7, "n/a");
-  check("coils-accessories category has exactly 8 pilot products (coil-89, coil-38, and coil-92 all now published, not pilot)", getPilotProductsByCategory("coils-accessories").length === 8, "n/a");
+  check(
+    "pods-cartridges category has exactly 7 pilot products (coil-56/coil-74/coil-55 published, not pilot; coil-94 reclassified in from coils-accessories)",
+    getPilotProductsByCategory("pods-cartridges").length === 7,
+    "n/a"
+  );
+  check(
+    "coils-accessories category has exactly 6 pilot products (coil-89/coil-38/coil-92/coil-53 published, not pilot; coil-94 reclassified out to pods-cartridges)",
+    getPilotProductsByCategory("coils-accessories").length === 6,
+    "n/a"
+  );
   check("disposables category has exactly 2 pilot products", getPilotProductsByCategory("disposables").length === 2, "n/a");
   check("pod-kits category has exactly 1 pilot product", getPilotProductsByCategory("pod-kits").length === 1, "n/a");
   // e-liquid is the pilot's first non-device category (ELIQUID-1, Eliquid-109, eliquid-133), all
   // resolving to the existing salthub brand — its first-ever pilot products.
   check("e-liquid category has exactly 3 pilot products", getPilotProductsByCategory("e-liquid").length === 3, "n/a");
   check("voopoo brand has exactly 6 pilot products (coil-56, coil-38, and coil-92 all now published, not pilot)", getPilotProductsByBrand("voopoo").length === 6, "n/a");
-  check("uwell brand has exactly 3 pilot products (coil-55 newly resolved, coil-74 now published, not pilot)", getPilotProductsByBrand("uwell").length === 3, "n/a");
+  check("uwell brand has exactly 1 pilot product, coil-94 (coil-53/coil-55/coil-74 all now published, not pilot)", getPilotProductsByBrand("uwell").length === 1, "n/a");
   check("rincoe brand has exactly 1 pilot product (coil-89 now published, not pilot)", getPilotProductsByBrand("rincoe").length === 1, "n/a");
   check("dotmod brand has exactly 1 pilot product", getPilotProductsByBrand("dotmod").length === 1, "n/a");
   check("esko-bar brand has exactly 1 pilot product", getPilotProductsByBrand("esko-bar").length === 1, "n/a");
@@ -130,16 +138,18 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   check("nevoks brand has exactly 2 pilot products", getPilotProductsByBrand("nevoks").length === 2, "n/a");
   check("infy brand has exactly 1 pilot product", getPilotProductsByBrand("infy").length === 1, "n/a");
 
-  // getPilotRelatedProducts still proven with a still-pilot pods-cartridges product — coil-74
-  // graduated to published this session, so coil-55 takes over as the test subject. Its pilot
-  // category-mates are the remaining 6 pods-cartridges pilot products, correctly excluding
-  // itself and both published pods-cartridges products (coil-56, coil-74).
-  const coil55Pilot = getPilotProduct("coil-55");
-  if (coil55Pilot) {
-    const related = getPilotRelatedProducts(coil55Pilot);
+  // getPilotRelatedProducts still proven with a still-pilot pods-cartridges product — coil-74 and
+  // then coil-55 both graduated to published, so coil-68 takes over as the test subject
+  // (coil-94 also joined the pilot pool here this session, reclassified in from
+  // coils-accessories). Its pilot category-mates are the remaining 6 pods-cartridges pilot
+  // products, correctly excluding itself and all three published pods-cartridges products
+  // (coil-55, coil-56, coil-74).
+  const coil68Pilot = getPilotProduct("coil-68");
+  if (coil68Pilot) {
+    const related = getPilotRelatedProducts(coil68Pilot);
     check(
-      "coil-55's related pilot products are exactly coil-68, coil-87, pod-150, pod-169, coil-54, and coil-62 (same categoryId, self + both published pods-cartridges products excluded)",
-      related.length === 6 && related.every((p) => ["coil-68", "coil-87", "pod-150", "pod-169", "coil-54", "coil-62"].includes(p.slug)),
+      "coil-68's related pilot products are exactly coil-87, coil-94, pod-150, pod-169, coil-54, and coil-62 (same categoryId, self + all three published pods-cartridges products excluded)",
+      related.length === 6 && related.every((p) => ["coil-87", "coil-94", "pod-150", "pod-169", "coil-54", "coil-62"].includes(p.slug)),
       JSON.stringify(related.map((p) => p.slug))
     );
   }
@@ -168,19 +178,35 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   );
 
   // ===================================================================================
-  // Published bridge — publication-pipeline audit. OWNER_APPROVED_PUBLICATION now has three real
-  // entries (Coil-56 ฿300, Coil-74 ฿250, Coil-89 ฿350 — see publication-approvals.ts and the
-  // mission reports), so every published-* function must return EXACTLY those three products and
-  // nothing else against REAL data — this proves both "the real approvals genuinely surface" and
-  // "nothing beyond them leaks." Unlike the pilot functions, these are NEVER environment-gated,
-  // so this must hold regardless of NODE_ENV.
+  // Published bridge — publication-pipeline audit. OWNER_APPROVED_PUBLICATION now has seven real
+  // entries (Coil-38 ฿450, Coil-53 ฿550, Coil-55 ฿299, Coil-56 ฿300, Coil-74 ฿250, Coil-89 ฿350,
+  // Coil-92 ฿130 — see publication-approvals.ts and the mission reports), so every published-*
+  // function must return EXACTLY those seven products and nothing else against REAL data — this
+  // proves both "the real approvals genuinely surface" and "nothing beyond them leaks." Unlike
+  // the pilot functions, these are NEVER environment-gated, so this must hold regardless of
+  // NODE_ENV.
   // ===================================================================================
 
   const allPublished = getPublishedProducts();
   check(
-    "getPublishedProducts() returns exactly the five genuinely approved products (coil-38, coil-56, coil-74, coil-89, coil-92)",
-    allPublished.length === 5 && ["coil-38", "coil-56", "coil-74", "coil-89", "coil-92"].every((s) => allPublished.some((p) => p.slug === s)),
+    "getPublishedProducts() returns exactly the seven genuinely approved products (coil-38, coil-53, coil-55, coil-56, coil-74, coil-89, coil-92)",
+    allPublished.length === 7 &&
+      ["coil-38", "coil-53", "coil-55", "coil-56", "coil-74", "coil-89", "coil-92"].every((s) => allPublished.some((p) => p.slug === s)),
     JSON.stringify(allPublished.map((p) => p.slug))
+  );
+
+  const publishedCoil53 = getPublishedProduct("coil-53");
+  check(
+    "getPublishedProduct('coil-53') returns the real published product with the ฿550 price and its one real variant",
+    publishedCoil53?.slug === "coil-53" && publishedCoil53?.sellingPrice === 550 && publishedCoil53?.variants.length === 1 && publishedCoil53?.variants[0]?.id === "Coil-53-2",
+    JSON.stringify(publishedCoil53)
+  );
+
+  const publishedCoil55 = getPublishedProduct("coil-55");
+  check(
+    "getPublishedProduct('coil-55') returns the real published product with the ฿299 price and its zero real variants (packaging-only child correctly excluded)",
+    publishedCoil55?.slug === "coil-55" && publishedCoil55?.sellingPrice === 299 && publishedCoil55?.variants.length === 0,
+    JSON.stringify(publishedCoil55)
   );
 
   const publishedCoil38 = getPublishedProduct("coil-38");
@@ -226,14 +252,14 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
 
   const publishedCoilsAccessories = getPublishedProductsByCategory("coils-accessories");
   check(
-    "getPublishedProductsByCategory('coils-accessories') returns exactly coil-38, coil-89, and coil-92",
-    publishedCoilsAccessories.length === 3 && ["coil-38", "coil-89", "coil-92"].every((s) => publishedCoilsAccessories.some((p) => p.slug === s)),
+    "getPublishedProductsByCategory('coils-accessories') returns exactly coil-38, coil-53, coil-89, and coil-92",
+    publishedCoilsAccessories.length === 4 && ["coil-38", "coil-53", "coil-89", "coil-92"].every((s) => publishedCoilsAccessories.some((p) => p.slug === s)),
     JSON.stringify(publishedCoilsAccessories.map((p) => p.slug))
   );
   const publishedPodsCartridges = getPublishedProductsByCategory("pods-cartridges");
   check(
-    "getPublishedProductsByCategory('pods-cartridges') returns exactly coil-56 and coil-74",
-    publishedPodsCartridges.length === 2 && ["coil-56", "coil-74"].every((s) => publishedPodsCartridges.some((p) => p.slug === s)),
+    "getPublishedProductsByCategory('pods-cartridges') returns exactly coil-55, coil-56, and coil-74",
+    publishedPodsCartridges.length === 3 && ["coil-55", "coil-56", "coil-74"].every((s) => publishedPodsCartridges.some((p) => p.slug === s)),
     JSON.stringify(publishedPodsCartridges.map((p) => p.slug))
   );
   const publishedVoopoo = getPublishedProductsByBrand("voopoo");
@@ -242,10 +268,11 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
     publishedVoopoo.length === 3 && ["coil-38", "coil-56", "coil-92"].every((s) => publishedVoopoo.some((p) => p.slug === s)),
     JSON.stringify(publishedVoopoo.map((p) => p.slug))
   );
+  const publishedUwell = getPublishedProductsByBrand("uwell");
   check(
-    "getPublishedProductsByBrand('uwell') returns exactly coil-74",
-    getPublishedProductsByBrand("uwell").length === 1 && getPublishedProductsByBrand("uwell")[0]?.slug === "coil-74",
-    "n/a"
+    "getPublishedProductsByBrand('uwell') returns exactly coil-53, coil-55, and coil-74",
+    publishedUwell.length === 3 && ["coil-53", "coil-55", "coil-74"].every((s) => publishedUwell.some((p) => p.slug === s)),
+    JSON.stringify(publishedUwell.map((p) => p.slug))
   );
   check(
     "getPublishedProductsByBrand('rincoe') returns exactly coil-89",
@@ -260,25 +287,38 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   );
   check("searchPublishedProducts('xyznonexistentquery123') returns nothing", searchPublishedProducts("xyznonexistentquery123").length === 0, "n/a");
 
-  // getPublishedRelatedProducts(coil-56) must return exactly coil-74 — both are pods-cartridges,
-  // coil-38/coil-89 are a different category (coils-accessories) so must NOT leak in.
+  // getPublishedRelatedProducts(coil-56) must return exactly coil-55 and coil-74 — all three are
+  // pods-cartridges, coil-38/coil-89/coil-92 are a different category (coils-accessories) so must
+  // NOT leak in.
   if (publishedCoil56) {
     const related56 = getPublishedRelatedProducts(publishedCoil56);
     check(
-      "getPublishedRelatedProducts(coil-56) returns exactly coil-74 (same category), never coil-38/coil-89 (different category) or itself",
-      related56.length === 1 && related56[0]?.slug === "coil-74",
+      "getPublishedRelatedProducts(coil-56) returns exactly coil-55 and coil-74 (same category), never coil-38/coil-89/coil-92 (different category) or itself",
+      related56.length === 2 && ["coil-55", "coil-74"].every((s) => related56.some((p) => p.slug === s)),
       JSON.stringify(related56.map((p) => p.slug))
     );
   }
 
-  // getPublishedRelatedProducts(coil-89) must return exactly coil-38 and coil-92 — all three are
-  // now coils-accessories, coil-56/coil-74 are a different category (pods-cartridges).
+  // getPublishedRelatedProducts(coil-89) must return exactly coil-38, coil-53, and coil-92 — all
+  // four are now coils-accessories, coil-55/coil-56/coil-74 are a different category
+  // (pods-cartridges).
   if (publishedCoil89) {
     const related89 = getPublishedRelatedProducts(publishedCoil89);
     check(
-      "getPublishedRelatedProducts(coil-89) returns exactly coil-38 and coil-92 (same category), never coil-56/coil-74 (different category) or itself",
-      related89.length === 2 && ["coil-38", "coil-92"].every((s) => related89.some((p) => p.slug === s)),
+      "getPublishedRelatedProducts(coil-89) returns exactly coil-38, coil-53, and coil-92 (same category), never coil-55/coil-56/coil-74 (different category) or itself",
+      related89.length === 3 && ["coil-38", "coil-53", "coil-92"].every((s) => related89.some((p) => p.slug === s)),
       JSON.stringify(related89.map((p) => p.slug))
+    );
+  }
+
+  // getPublishedRelatedProducts(coil-53) must return exactly coil-38, coil-89, and coil-92 — the
+  // same coils-accessories category-mates, symmetric to the coil-89 check above.
+  if (publishedCoil53) {
+    const related53 = getPublishedRelatedProducts(publishedCoil53);
+    check(
+      "getPublishedRelatedProducts(coil-53) returns exactly coil-38, coil-89, and coil-92 (same category), never coil-55/coil-56/coil-74 (different category) or itself",
+      related53.length === 3 && ["coil-38", "coil-89", "coil-92"].every((s) => related53.some((p) => p.slug === s)),
+      JSON.stringify(related53.map((p) => p.slug))
     );
   }
 

@@ -63,6 +63,16 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // — the resistance/wattage is etched directly on the photographed coil, no variant ambiguity).
   // Single unambiguous operationalSellingPrice.
   "Coil-92": { sellingPrice: 130, lastPriceReview: "2026-09-01" },
+  // Same pricing rule, fourth wave: real tier-2 media closed the gap (see
+  // VERIFIED_MEDIA["Coil-55"] — the retail box explicitly reads "CALIBURN G2 Empty Cartridge" /
+  // "2 PCS", matching this record's real identity and child count exactly). Single unambiguous
+  // operationalSellingPrice.
+  "Coil-55": { sellingPrice: 299, lastPriceReview: "2026-09-01" },
+  // Same pricing rule, fifth wave: real tier-2 media closed the gap AND resolved the resistance-
+  // identity conflict in the same source (see VERIFIED_MEDIA["Coil-53"] / TAXONOMY_MATCHES["Coil-53"]
+  // — the retail box explicitly reads "1 Ω", and myuwell.com's own Caliburn G2 page confirms 1.0Ω
+  // as a real, G2-compatible UWELL coil resistance). Single unambiguous operationalSellingPrice.
+  "Coil-53": { sellingPrice: 550, lastPriceReview: "2026-09-01" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {

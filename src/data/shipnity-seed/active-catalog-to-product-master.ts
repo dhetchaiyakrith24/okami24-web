@@ -82,7 +82,17 @@ interface TaxonomyMatch {
 const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "Coil-1": { brandId: "voopoo", familyId: "vinci", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Vinci" (VOOPOO VINCI family) + Shipnity "Coil-" prefix' },
   "Coil-21": { brandId: "voopoo", familyId: "argus", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Argus" (VOOPOO ARGUS family) + Shipnity "Coil-" prefix' },
-  "Coil-53": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn" (UWELL CALIBURN family) + Shipnity "Coil-" prefix' },
+  // Resolution (this session) — the earlier "0.8Ω/1.2Ω-only" mismatch note (see
+  // VERIFIED_SPECIFICATIONS's old comment) was based on an incomplete search snippet. Fetched
+  // myuwell.com/caliburn/caliburn-g2 directly: its own text states the Caliburn G2 device is
+  // "Compatible with 1.0 Ω coil and 0.8 Ω coil of Caliburn G" — i.e. 1.0Ω is a real, official
+  // UWELL coil resistance (from the original Caliburn G coil lineup, explicitly documented as
+  // G2-compatible), not a fabricated or mismatched value. Independently confirmed by Giant Vapes,
+  // whose "Uwell CALIBURN G Replacement Coils" product lists exactly two variants, "0.8 ohm" and
+  // "1.0 ohm" — an exact match to this record's own active variant. Kept as categoryId
+  // "coils-accessories"/systemType "coil" (unchanged) — the resolution is about the resistance
+  // value's identity, not the product type.
+  "Coil-53": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn" (UWELL CALIBURN family) + Shipnity "Coil-" prefix; active variant (1.0Ω) is the real UWELL "Caliburn G" replacement-coil resistance, documented as Caliburn G2-compatible on myuwell.com\'s own G2 page and confirmed by Giant Vapes\' "Caliburn G Replacement Coils" (0.8Ω/1.0Ω) listing' },
   // Correction (this session) — resolves the Phase 3.4 "Coil-55 vs Coil-53" deferral below (kept
   // for history). "หัวแทงค์" (tank-head) is NOT the coil: 10+ independent retailers consistently
   // describe "UWELL Caliburn G2 Empty Replacement Pod" as a real, distinct product — the
@@ -101,7 +111,14 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // "pod-cartridge" values — no new taxonomy needed, both already exist.
   "Coil-74": { brandId: "uwell", familyId: "caliburn", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name contains "Caliburn" (UWELL CALIBURN family); child spec (3ml capacity) matches the official Caliburn X refillable pod, not a coil' },
   "Coil-83": { brandId: "voopoo", familyId: "argus", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Argus" (VOOPOO ARGUS family) + Shipnity "Coil-" prefix' },
-  "Coil-94": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn G4&G3" (UWELL CALIBURN family) + Shipnity "Coil-" prefix' },
+  // Correction (this session) — same "หัว(...)/"Coil-" doesn't reliably mean bare coil" pattern
+  // as Coil-55/56/68/74/87/54/62. Giant Vapes' real "Uwell CALIBURN G3 Replacement Pods" product
+  // lists exactly four resistance options — "0.4 ohm Meshed"/"0.6 ohm Meshed"/"0.9 ohm Meshed"/
+  // "1.2 ohm Meshed" — an EXACT match to this record's own four active variants (0.4Ω/0.6Ω/0.9Ω/
+  // 1.2Ω), and its own product photo shows a real retail box printed "CALIBURN G3 INTEGRATED COIL
+  // CARTRIDGE" / "0.4 Ω" / "2 ml" — a pod with a built-in coil, not a bare replacement coil.
+  // categoryId/systemType corrected to "pods-cartridges"/"pod-cartridge".
+  "Coil-94": { brandId: "uwell", familyId: "caliburn", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name contains "Caliburn G4&G3" (UWELL CALIBURN family); four active resistance variants (0.4Ω/0.6Ω/0.9Ω/1.2Ω) match Giant Vapes\' "Caliburn G3 Replacement Pods" exactly, whose own product photo shows a real retail box reading "CALIBURN G3 INTEGRATED COIL CARTRIDGE" — a pod, not a bare coil' },
   // Phase 2.7 — brand explicit in text ("Voopoo"), but "PnP"/"TPP" are not committed families —
   // familyId genuinely absent, not a fabricated guess.
   //
@@ -219,9 +236,15 @@ interface MinimumCopy {
 }
 
 const MINIMUM_COPY: Record<string, MinimumCopy> = {
+  // Correction (review pass) — "คอยล์ Caliburn G2" (unqualified) would imply UWELL has a
+  // separate NATIVE "Caliburn G2 1.0Ω" coil, which the evidence does not support (UWELL's own G2
+  // page lists its native coils as 0.8Ω/1.2Ω only). The real evidence is narrower: this IS the
+  // UWELL "Caliburn G" 1.0Ω coil, and myuwell.com's G2 page documents it as G2-compatible — see
+  // TAXONOMY_MATCHES["Coil-53"]. Worded to state the real product (Caliburn G, 1.0Ω) plus the
+  // actual compatibility fact (G2), never a native-G2-coil claim.
   "Coil-53": {
-    tagline: "คอยล์ Caliburn G2 จากแบรนด์ UWELL",
-    shortDescription: "คอยล์รุ่น Caliburn G2 เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
+    tagline: "คอยล์ Caliburn G (1.0Ω) จากแบรนด์ UWELL ใช้ได้กับ Caliburn G2",
+    shortDescription: "คอยล์ Caliburn G ความต้านทาน 1.0Ω จากแบรนด์ UWELL ใช้ได้กับอุปกรณ์ Caliburn G และ Caliburn G2",
   },
   // New this session — resolves the Phase 3.4 deferral. Worded distinctly from Coil-53 ("คอยล์"
   // = coil vs "พอตเปล่า" = empty pod) on purpose: these are two genuinely different real products
@@ -278,9 +301,12 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "คอยล์ Argus P1 จากแบรนด์ VOOPOO",
     shortDescription: "คอยล์รุ่น Argus P1 เป็นผลิตภัณฑ์ในกลุ่ม ARGUS จากแบรนด์ VOOPOO",
   },
+  // Correction (this session) — was worded as a bare coil ("คอยล์"); real Giant Vapes evidence
+  // (exact 0.4Ω/0.6Ω/0.9Ω/1.2Ω match + retail box reading "INTEGRATED COIL CARTRIDGE") identifies
+  // this as the pod, not a bare coil. See TAXONOMY_MATCHES["Coil-94"] for the evidence.
   "Coil-94": {
-    tagline: "คอยล์ Caliburn G4&G3 Series จากแบรนด์ UWELL",
-    shortDescription: "คอยล์รุ่น Caliburn G4&G3 Series เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
+    tagline: "คาร์ทริดจ์ Caliburn G4&G3 Series จากแบรนด์ UWELL",
+    shortDescription: "คาร์ทริดจ์รุ่น Caliburn G4&G3 Series เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
   },
   // Phase 3.5 — second batch. No familyId on any of these (TPP/ITO-X/Jelly Nano/Jellybox
   // V/Dotmod Aio V2 are not committed ProductFamily records), so shortDescription omits the
@@ -366,12 +392,20 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // carries an AI-generated candidate for Coil-92 (embedded XMP `TC260:AIGC` tag with `Label:"1"`
 // and a `ProduceID` path containing "aigc_inpaint" — self-flagged by its own metadata), correctly
 // excluded — a genuine tier-2 retailer photo was found instead this session (see below).
-// Coil-53/87 still have no verified source of either tier (see each's TAXONOMY_MATCHES/report
-// notes) and keep the glyph fallback — Coil-87 specifically was investigated this session too (a
-// real, exact-name "TPP POD" retail box was found), but a real color-variant risk (Black vs
-// Gunmetal, no confident way to tell which is pictured in the only clean multi-item shot found)
-// meant not using it, per the "no wrong-variant media" rule. `Coil-74`/`Coil-89`/`Coil-38`/
-// `Coil-92` (this session) use tier 2: real retailer product photography, each identity-verified
+// Coil-87 still has no verified source of either tier (see its TAXONOMY_MATCHES/report notes)
+// and keeps the glyph fallback — investigated again this session (re-checked Giant Vapes,
+// Element Vape, Vapesourcing, VaporDNA for a standalone TPP Pod Tank listing) with no new source
+// found; the real color-variant risk (Black vs Gunmetal, no confident way to tell which is
+// pictured in the only clean multi-item shot ever found) still stands. Coil-94's IDENTITY was
+// resolved this session (see TAXONOMY_MATCHES["Coil-94"]) but its media stays blocked too: Giant
+// Vapes' matching "Caliburn G3 Replacement Pods" listing uses the SAME shared product photo for
+// all four of its resistance options, and that photo's own retail box is explicitly printed
+// "0.4 Ω" — using it here would misrepresent this record's other three active variants (0.6Ω/
+// 0.9Ω/1.2Ω), the same "one static card image, all variants" risk the Coil-38 correction fixed;
+// no distinct per-resistance photo exists at this source to build a true composite from. Coil-68
+// (VOOPOO ITO-X Pod, Black) has the identical problem — its retailer's Black and Silver options
+// both point to one shared, non-color-specific box photo — so it also keeps the glyph fallback.
+// `Coil-74`/`Coil-89`/`Coil-38`/`Coil-92`/`Coil-53` (this session) use tier 2: real retailer product photography, each identity-verified
 // before use — Coil-74 by cross-checking the pod's silhouette pixel-for-pixel against the
 // OFFICIAL myuwell.com Caliburn X device photo; Coil-89 by using real RINCOE retail packaging
 // explicitly resistance-labeled ("Mesh 1.0Ω coil" / "Mesh 0.8Ω coil"); Coil-38 by using a
@@ -381,7 +415,13 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // card was corrected mid-review: the storefront shows one static card image regardless of which
 // variant a customer selects, so a single-variant image would misrepresent the product whenever
 // the OTHER variant is selected; Coil-92 by using a real retailer photo where the exact resistance/wattage ("0.15Ω" / "60-80W")
-// is etched directly onto the physical coil itself, removing all variant-matching ambiguity.
+// is etched directly onto the physical coil itself, removing all variant-matching ambiguity;
+// Coil-55 by using a real retailer photo of retail packaging that reads "CALIBURN G2 Empty
+// Cartridge" / "2 PCS" outright — no inference needed, and the "2 PCS" count matches this
+// record's own child label exactly; Coil-53 by using a real retailer photo of retail packaging
+// that reads "1 Ω" directly on the box, from the retailer's own dedicated "1.0 ohm" variant image
+// (confirmed via that page's own variant→image JSON mapping, same technique as Coil-38/92) —
+// resolving both the media gap and the resistance-identity question with the same source.
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
@@ -445,6 +485,30 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://giantvapes.com/products/voopoo-pnp-x-replacement-coils",
     },
   ],
+  "Coil-55": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-55/card.webp",
+      alt: "UWELL Caliburn G2 Empty Cartridge, 2-piece retail box, isolated product shot",
+      angle: "Plain rectangular crop/trim of a real retailer product photo. Unambiguous exact match: the box itself reads \"CALIBURN G2 Empty Cartridge\" / \"2 PCS\", and shows exactly 2 empty pod cartridges — matching this record's own child label (\"1 กล่อง / มี 2ตัว\", 1 box of 2) exactly, both in product identity (empty cartridge, not the coil) and quantity.",
+      transparentBackground: false,
+      sourceName: "Giant Vapes (US vape retailer)",
+      sourceUrl: "https://giantvapes.com/products/uwell-caliburn-g2-replacement-pods",
+    },
+  ],
+  "Coil-53": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-53/card.webp",
+      alt: "UWELL Caliburn G replacement coil, 1.0Ω, 4-pack retail box, isolated product shot",
+      angle: "Plain rectangular crop/trim of a real retailer product photo — the retailer's own dedicated \"1.0 ohm\" variant image, confirmed via that page's own variant→image JSON mapping (same technique used for Coil-38/Coil-92). Unambiguous exact match: the box itself reads \"1 Ω\" directly, resolving both the media gap and the resistance-identity question at once — see TAXONOMY_MATCHES[\"Coil-53\"] for the full identity evidence.",
+      transparentBackground: false,
+      sourceName: "Giant Vapes (US vape retailer)",
+      sourceUrl: "https://giantvapes.com/products/uwell-caliburn-g-replacement-coils",
+    },
+  ],
 };
 
 // ===================================================================================
@@ -452,11 +516,11 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
 // individually cited (see `sourceUrls` alongside), sourced via WebSearch/WebFetch against the
 // brand's own official storefront — never copied marketing paragraphs, only discrete facts
 // (resistance/wattage/capacity/compatible-device). A product absent here simply has no
-// specifications yet — not a placeholder, not a gap that blocks anything else. Deliberately NOT
-// attempted for Coil-53 this round: WebSearch surfaced myuwell.com's Caliburn G2 coil options as
-// 0.8Ω/1.2Ω, which does not match this parent's real Shipnity variant (1.0Ω) — rather than cite a
-// mismatched fact, this is left unresolved (a real UNKNOWN, not a discrepancy confidently proven
-// either way from search alone; needs a closer manual check, not a guess).
+// specifications yet — not a placeholder, not a gap that blocks anything else. Coil-53's earlier
+// "0.8Ω/1.2Ω-only, doesn't match 1.0Ω" note was based on an incomplete WebSearch snippet — a
+// direct WebFetch of myuwell.com/caliburn/caliburn-g2 (this session) found its own text states
+// the device is "Compatible with 1.0 Ω coil and 0.8 Ω coil of Caliburn G", resolving the
+// discrepancy with real official evidence rather than a guess — see TAXONOMY_MATCHES["Coil-53"].
 // ===================================================================================
 
 interface VerifiedSpecEntry {
@@ -493,6 +557,20 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "Coil-92": {
     specifications: [{ key: "wattage", label: "กำลังไฟที่แนะนำ (0.15Ω)", value: "60-80W (DTL)", sourceStatus: "verified" }],
     sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils"],
+  },
+  "Coil-53": {
+    specifications: [
+      { key: "resistance", label: "ความต้านทาน", value: "1.0Ω", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Caliburn G, Caliburn G2", sourceStatus: "verified" },
+    ],
+    sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-g2", "https://giantvapes.com/products/uwell-caliburn-g-replacement-coils"],
+  },
+  "Coil-94": {
+    specifications: [
+      { key: "resistance-range", label: "ความต้านทาน", value: "0.4Ω / 0.6Ω / 0.9Ω / 1.2Ω (Meshed)", sourceStatus: "verified" },
+      { key: "capacity", label: "ความจุ", value: "2mL", sourceStatus: "verified" },
+    ],
+    sourceUrls: ["https://giantvapes.com/products/uwell-caliburn-g3-replacement-pods"],
   },
 };
 
