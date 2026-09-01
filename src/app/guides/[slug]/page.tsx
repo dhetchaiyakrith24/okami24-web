@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { ArticleBody } from "@/components/content/ArticleBody";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import type { Product } from "@/types/catalog";
+import { canonicalFor } from "@/lib/seo";
 
 export function generateStaticParams() {
   return guides.map((g) => ({ slug: g.slug }));
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const guide = getGuide(slug);
   if (!guide) return {};
-  return { title: guide.title, description: guide.dek };
+  return { title: guide.title, description: guide.dek, ...canonicalFor(`/guides/${slug}`) };
 }
 
 export default async function GuideDetailPage({ params }: { params: Promise<{ slug: string }> }) {

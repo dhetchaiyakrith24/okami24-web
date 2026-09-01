@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { ArticleBody } from "@/components/content/ArticleBody";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import type { Product } from "@/types/catalog";
+import { canonicalFor } from "@/lib/seo";
 
 export function generateStaticParams() {
   return technologyEntries.map((t) => ({ slug: t.slug }));
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const entry = getTechnologyEntry(slug);
   if (!entry) return {};
-  return { title: entry.name, description: entry.summary };
+  return { title: entry.name, description: entry.summary, ...canonicalFor(`/technology/${slug}`) };
 }
 
 export default async function TechnologyDetailPage({ params }: { params: Promise<{ slug: string }> }) {

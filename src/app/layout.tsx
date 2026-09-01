@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { AgeGate } from "@/components/layout/AgeGate";
 import { LineContact } from "@/components/layout/LineContact";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
+import { SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 const displayFont = Barlow_Condensed({
@@ -34,8 +35,8 @@ export const metadata: Metadata = {
     "OKami24: ร้านอุปกรณ์พอดซิสเต็ม ดิสโพส และน้ำยา คัดสรรของแท้ ราคาตรงไปตรงมา พร้อมบริการหลังการขายที่ดูแลคุณจริง สอบถามและสั่งซื้อผ่าน LINE OA @okM24",
   // NOTE: metadataBase intentionally left as the existing placeholder domain — the real
   // production domain is TBD (see docs/BUSINESS_SOURCE_OF_TRUTH.md §19) and is deliberately
-  // deferred to the deployment/SEO phase, not decided here.
-  metadataBase: new URL("https://nova-vapor.example.com"),
+  // deferred to the deployment/SEO phase, not decided here. See src/lib/seo.ts's SITE_URL.
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     title: "OKami24 — ของแท้ ราคาตรง บริการจริง",
     description: "อุปกรณ์พอดซิสเต็ม ดิสโพส และน้ำยา ของแท้ ราคาตรง บริการจริง — สอบถามและสั่งซื้อผ่าน LINE OA",

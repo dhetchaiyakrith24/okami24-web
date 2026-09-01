@@ -9,6 +9,7 @@ import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { getPilotProductsByBrand, getPublishedProductsByBrand } from "@/data/shipnity-seed/storefront-bridge";
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { BrandPageMeta } from "@/components/catalog/BrandPageMeta";
+import { canonicalFor } from "@/lib/seo";
 
 export function generateStaticParams() {
   return brands.map((b) => ({ brand: b.slug }));
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ brand: st
   const { brand: brandSlug } = await params;
   const brand = getBrand(brandSlug);
   if (!brand) return {};
-  return { title: brand.name, description: brand.description };
+  return { title: brand.name, description: brand.description, ...canonicalFor(`/brands/${brandSlug}`) };
 }
 
 export default async function BrandPage({ params }: { params: Promise<{ brand: string }> }) {

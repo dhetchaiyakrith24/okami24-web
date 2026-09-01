@@ -27,6 +27,8 @@ import {
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDetail";
 import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
+import { absoluteUrl, canonicalFor, openGraphWithImage } from "@/lib/seo";
+import { categoryName as categoryNameOf } from "@/lib/utils";
 
 export function generateStaticParams() {
   // `getPilotProducts()` returns [] whenever NODE_ENV === "production" (see storefront-bridge.ts)
@@ -44,14 +46,41 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  const path = `/products/${slug}`;
   const category = getCategory(slug);
-  if (category) return { title: category.name, description: category.description };
+  if (category) return { title: category.name, description: category.description, ...canonicalFor(path) };
+
   const product = getProduct(slug);
-  if (product) return { title: product.displayName, description: product.shortDescription };
+  if (product) {
+    const cardImage = product.assets.find((a) => a.role === "card");
+    return {
+      title: product.displayName,
+      description: product.shortDescription,
+      ...canonicalFor(path),
+      ...(cardImage ? openGraphWithImage({ title: product.displayName, description: product.shortDescription, path, image: cardImage }) : {}),
+    };
+  }
+
+  // Published/pilot images only ever come from a real card asset (see storefront-preview-read-
+  // model.ts's toView()) — never fabricated, same rule as the legacy branch above.
   const publishedProduct = getPublishedProduct(slug);
-  if (publishedProduct) return { title: publishedProduct.displayName, description: publishedProduct.tagline };
+  if (publishedProduct) {
+    return {
+      title: publishedProduct.displayName,
+      description: publishedProduct.tagline,
+      ...canonicalFor(path),
+      ...(publishedProduct.image ? openGraphWithImage({ title: publishedProduct.displayName, description: publishedProduct.tagline ?? undefined, path, image: publishedProduct.image }) : {}),
+    };
+  }
   const pilotProduct = getPilotProduct(slug);
-  if (pilotProduct) return { title: pilotProduct.displayName, description: pilotProduct.tagline };
+  if (pilotProduct) {
+    return {
+      title: pilotProduct.displayName,
+      description: pilotProduct.tagline,
+      robots: { index: false, follow: false }, // DEV-only preview data — never real customer-facing content, even though the production notFound() gate already keeps it out of any real build.
+      ...(pilotProduct.image ? openGraphWithImage({ title: pilotProduct.displayName, description: pilotProduct.tagline ?? undefined, path, image: pilotProduct.image }) : {}),
+    };
+  }
   return {};
 }
 
@@ -88,7 +117,11 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         name: publishedProduct.displayName,
         description: publishedProduct.tagline,
         brand: { "@type": "Brand", name: publishedProduct.brandName },
-        category: publishedProduct.categoryId,
+        category: categoryNameOf(publishedProduct.categoryId),
+        image: publishedProduct.image ? [absoluteUrl(publishedProduct.image.src)] : undefined,
+        // Only a genuinely published product has an owner-approved price — never fabricated from
+        // priceReference (see buildPublishedCatalog()'s own readiness gate).
+        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice } : undefined,
       };
       return (
         <>
@@ -107,13 +140,17 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const related = getRelatedProducts(product);
   const brand = getBrand(product.brandId);
 
+  const legacyCardImage = product.assets.find((a) => a.role === "card");
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.displayName,
     description: product.shortDescription,
     brand: brand ? { "@type": "Brand", name: brand.name } : undefined,
-    category: product.categoryId,
+    category: categoryNameOf(product.categoryId),
+    image: legacyCardImage ? [absoluteUrl(legacyCardImage.src)] : undefined,
+    // No `offers` here — the legacy catalog has no price field at all (see docs/BUSINESS_SOURCE_OF_TRUTH.md);
+    // never fabricated.
   };
 
   return (

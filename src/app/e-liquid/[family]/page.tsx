@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { flavorFamilies, getFlavorFamily } from "@/data/flavors";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
+import { canonicalFor } from "@/lib/seo";
 
 export function generateStaticParams() {
   return flavorFamilies.map((f) => ({ family: f.slug }));
@@ -12,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ family: s
   const { family: familySlug } = await params;
   const family = getFlavorFamily(familySlug);
   if (!family) return {};
-  return { title: family.name, description: family.description };
+  return { title: family.name, description: family.description, ...canonicalFor(`/e-liquid/${familySlug}`) };
 }
 
 export default async function FlavorFamilyPage({ params }: { params: Promise<{ family: string }> }) {
