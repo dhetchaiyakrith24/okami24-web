@@ -92,6 +92,26 @@ export const brands: Brand[] = [
     description: "A disposable- and prefilled-vape manufacturer offering a tiered range of high-puff-count devices.",
     referenceUrl: "https://www.instabar.net/",
   },
+  {
+    id: "nevoks",
+    slug: "nevoks",
+    name: "NEVOKS",
+    fullName: "Shenzhen Nevoks Technology Co., Ltd",
+    tagline: "Enjoy This Moment.",
+    description:
+      "A vaping device manufacturer known for the FEELIN pod-system series (Feelin Mini, Feelin C1, and related kits) alongside disposables and platform accessories.",
+    referenceUrl: "https://nevoks.com/",
+  },
+  {
+    id: "infy",
+    slug: "infy",
+    name: "INFY",
+    fullName: "INFY",
+    tagline: "Vape pod systems and cartridges.",
+    description:
+      "A regional vape brand operating across Southeast Asian markets (including Thailand) offering closed-pod devices and prefilled cartridges, including a 2.5mL cartridge line.",
+    referenceUrl: "https://www.infy.my/",
+  },
 ];
 
 export function getBrand(id: string): Brand | undefined {

@@ -11,14 +11,16 @@ export interface ReadModelContractResult {
 }
 
 // Phase 3.4 added Coil-1/21/72/83/94; Phase 3.5 added Coil-38/63/68/70/89, Pod-159/149/150,
-// Disposable-34, and the pilot's first e-liquid products (ELIQUID-1/Eliquid-109/eliquid-133) —
-// see PREVIEW_SHIPNITY_IDS.
+// Disposable-34, the pilot's first e-liquid products (ELIQUID-1/Eliquid-109/eliquid-133), and a
+// final wave (coil-54/coil-62/Pod-169, resolving "Feelin"->NEVOKS and "infy"->INFY) — see
+// PREVIEW_SHIPNITY_IDS.
 const EXPECTED_IDS = [
   "Coil-53", "Coil-56", "Coil-74", "Coil-87", "Coil-92",
   "Coil-1", "Coil-21", "Coil-72", "Coil-83", "Coil-94",
   "Coil-38", "Coil-63", "Coil-68", "Coil-70", "Coil-89",
   "Pod-159", "Pod-149", "Pod-150", "Disposable-34",
   "ELIQUID-1", "Eliquid-109", "eliquid-133",
+  "coil-54", "coil-62", "Pod-169",
 ];
 
 export function runStorefrontReadModelContractTests(): ReadModelContractResult[] {
@@ -27,7 +29,7 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
 
   const views = buildStorefrontPreview();
 
-  check("exactly the 22 Phase 2.7 + 3.4 + 3.5 products are present, nothing more", views.length === 22, JSON.stringify(views.map((v) => v.shipnityProductId)));
+  check("exactly the 25 Phase 2.7 + 3.4 + 3.5 products are present, nothing more", views.length === 25, JSON.stringify(views.map((v) => v.shipnityProductId)));
 
   check(
     "every expected Shipnity id is present",
@@ -54,20 +56,18 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
   );
 
   // Every one of the original 5 Phase 2.7 products happens to have exactly 1 active variant —
-  // real active-catalog data, not something to force. Phase 3.4's Coil-21/Coil-83 are genuinely
-  // single-SKU (their only Shipnity child is packaging/unresolved text, not a real option — see
-  // buildVariantStructure). Phase 3.5's Pod-149 joins them: its only child, "Thai Milk Green
-  // Tea", isn't recognized by classify.ts's flavor-keyword heuristic and stays `unresolved` — a
-  // real classifier gap for this one label, not something to force-fix here (see the Phase 3.5
-  // report; touching classify.ts's keyword list wasn't necessary to represent this product
-  // correctly, since a zero-variant single-SKU product already renders correctly). So a blanket
-  // ">=1 for everyone" is no longer a valid invariant. What IS still checkable: the zero-variant
-  // set must be exactly this known real trio — anything else at 0 would mean buildVariantStructure
-  // silently dropped a real variant for a product that should have one.
+  // real active-catalog data, not something to force. Phase 3.4's Coil-21/Coil-83 and Phase 3.5's
+  // Pod-149/coil-54 are genuinely single-SKU (their only Shipnity child is packaging text or,
+  // for Pod-149, a label classify.ts's flavor-keyword heuristic doesn't recognize — a real
+  // classifier gap for that one label, deliberately not force-fixed here since a zero-variant
+  // single-SKU product already renders correctly). So a blanket ">=1 for everyone" is no longer a
+  // valid invariant. What IS still checkable: the zero-variant set must be exactly this known
+  // real quartet — anything else at 0 would mean buildVariantStructure silently dropped a real
+  // variant for a product that should have one.
   const zeroVariantIds = views.filter((v) => v.variants.length === 0).map((v) => v.shipnityProductId);
   check(
-    "the only zero-variant products are the known real single-SKU trio (Coil-21, Coil-83, Pod-149)",
-    zeroVariantIds.length === 3 && ["Coil-21", "Coil-83", "Pod-149"].every((id) => zeroVariantIds.includes(id)),
+    "the only zero-variant products are the known real single-SKU quartet (Coil-21, Coil-83, Pod-149, coil-54)",
+    zeroVariantIds.length === 4 && ["Coil-21", "Coil-83", "Pod-149", "coil-54"].every((id) => zeroVariantIds.includes(id)),
     JSON.stringify(views.map((v) => ({ id: v.shipnityProductId, variantCount: v.variants.length })))
   );
 

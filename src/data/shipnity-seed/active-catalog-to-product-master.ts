@@ -158,6 +158,20 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "ELIQUID-1": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "MARBORO SALT NIC 30 ML"; 3 independent Thai retailers (thai-vapes.com "Salt Hub - Marbo Salt Nic", vape69th.com, goatvapethai.com) consistently attribute the Marboro salt-nic line to Salt Hub' },
   "Eliquid-109": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Marboro Freebase ขวดยาว" — same Marboro/Salt Hub evidence as ELIQUID-1, different nicotine formulation (freebase vs. salt nic) and bottle format' },
   "eliquid-133": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Yogurt Salt Hub" states the brand explicitly and directly — no inference needed' },
+
+  // Part B (device wave 2) — "Feelin" resolves to NEVOKS (nevoks.com, official): both Feelin Mini
+  // and Feelin C1 are confirmed real pod-system products in Nevoks' own FEELIN series. Both
+  // parents are reclassified pod-cartridge, not coil — same "หัวเปล่า doesn't reliably mean coil"
+  // correction as Coil-56/68/74/87 above, now confirmed a 5th/6th time: coil-54's only child is
+  // packaging text ("2 heads per box"), matching a real retailer listing for "Feelin Mini pod
+  // cartridge... 2 empty tanks, 2ml capacity" (a refillable cartridge, not a coil); coil-62's only
+  // child is "Matcha Clear" — a FLAVOR, not a resistance value, meaning this is a prefilled
+  // cartridge for the Feelin C1, not its separate SPL10-branded coil line.
+  "coil-54": { brandId: "nevoks", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัวเปล่า Feelin Mini" + sell-unit-only child (no resistance value) matches a real retailer listing for the Feelin Mini refillable pod cartridge (2 empty tanks, 2ml); nevoks.com confirms Feelin Mini as a real Nevoks product, with its actual coils sold separately as "SPL10"' },
+  "coil-62": { brandId: "nevoks", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัวเปล่า Feelin C1" + single FLAVOR child ("Matcha Clear", not a resistance value) confirms this is a prefilled cartridge for the Feelin C1, not its separate SPL10-branded coil; nevoks.com confirms Feelin C1 as a real Nevoks product' },
+  // "หัว infy 2.5 ml" — brand explicit; INFY's own official site (infy.my) lists "2.5ML Cartridge"
+  // as a real current product line — an exact size match, not a coincidence.
+  "Pod-169": { brandId: "infy", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัว infy 2.5 ml" states the brand explicitly; infy.my (official) lists "2.5ML Cartridge" as a real INFY product line — an exact size match' },
 };
 
 // ===================================================================================
@@ -295,6 +309,20 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   "eliquid-133": {
     tagline: "น้ำยา Yogurt Salt Hub จากแบรนด์ SALTHUB",
     shortDescription: "น้ำยารุ่น Yogurt Salt Hub จากแบรนด์ SALTHUB",
+  },
+  // Part B (device wave 2) — coil-54/coil-62 use "คาร์ทริดจ์" (cartridge), matching their real
+  // pod-cartridge reclassification above, not "คอยล์".
+  "coil-54": {
+    tagline: "คาร์ทริดจ์ Feelin Mini จากแบรนด์ NEVOKS",
+    shortDescription: "คาร์ทริดจ์รุ่น Feelin Mini จากแบรนด์ NEVOKS",
+  },
+  "coil-62": {
+    tagline: "คาร์ทริดจ์ Feelin C1 จากแบรนด์ NEVOKS",
+    shortDescription: "คาร์ทริดจ์รุ่น Feelin C1 จากแบรนด์ NEVOKS",
+  },
+  "Pod-169": {
+    tagline: "คาร์ทริดจ์ infy 2.5 ml จากแบรนด์ INFY",
+    shortDescription: "คาร์ทริดจ์รุ่น infy 2.5 ml จากแบรนด์ INFY",
   },
 };
 
