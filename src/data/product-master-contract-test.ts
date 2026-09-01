@@ -26,7 +26,10 @@ const REAL_BRAND_ID = brands[0].id;
 const REAL_FAMILY_ID = families.find((f) => f.brandId === REAL_BRAND_ID)!.id;
 const REAL_CATEGORY_ID = categories[0].id;
 
-function baseSyntheticProduct(overrides: Partial<ProductMasterInput> = {}): ProductMasterInput {
+// Exported so other contract-test files (e.g. storefront-preview-read-model-contract-test.ts's
+// buildPublishedCatalogFrom coverage) can reuse the same "fully-ready synthetic product" fixture
+// instead of duplicating this shape.
+export function baseSyntheticProduct(overrides: Partial<ProductMasterInput> = {}): ProductMasterInput {
   return {
     internalId: "synthetic-base",
     slug: "synthetic-base",

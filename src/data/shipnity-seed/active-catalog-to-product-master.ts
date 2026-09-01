@@ -31,6 +31,7 @@ import type { ProductMasterInput } from "@/data/product-master-schema";
 import type { ProductAsset, SystemType } from "@/types/catalog";
 import type { OptionType } from "./classify";
 import { activeCatalogSeed, type ActiveParentRecord, type ActiveChildRecord } from "./build-active-catalog";
+import { getPublicationApproval } from "./publication-approvals";
 
 /** When this seed's evidence was captured/authored — used for every `observedAt`/`capturedAt`/
  *  `lastSyncedAt` stamp below. Reflects the Phase 2.4/2.5 authoring session, not a literal
@@ -546,13 +547,16 @@ function buildDraftCandidate(
 ): ProjectionCandidate {
   const internalId = parent.shipnityProductId.toLowerCase();
   const copy = MINIMUM_COPY[parent.shipnityProductId];
+  // The ONLY thing that can ever make a real candidate publicationStatus:"published" — see
+  // publication-approvals.ts's own doc comment. Everything else in this function stays evidence-
+  // based and environment-agnostic; this is the one owner-business-decision seam.
+  const approval = getPublicationApproval(parent.shipnityProductId);
 
   const product: ProductMasterInput = {
     internalId,
     slug: internalId, // Shipnity codes are already ASCII alnum+hyphen — no invented SEO slug
     lifecycleStatus: "active", // genuinely active per Shipnity's own "have stock" view
-    publicationStatus: "unpublished", // not customer-visible — Phase 2.7 keeps this true even
-    // for minimum-enriched candidates; see README §Publication-ready by simulation.
+    publicationStatus: approval ? "published" : "unpublished",
     brandId: match?.brandId ?? null,
     familyId: match?.familyId ?? null,
     categoryId: match?.categoryId ?? null,
@@ -579,10 +583,10 @@ function buildDraftCandidate(
     },
 
     pricing: {
-      sellingPrice: null, // owner has not approved this as the final website price
+      sellingPrice: approval?.sellingPrice ?? null, // never copied from priceReference — see publication-approvals.ts
       priceReference: { source: "shipnity", value: parent.operationalSellingPrice, capturedAt: CAPTURE_DATE },
-      lastPriceReview: null,
-      priceApprovedByOwner: false,
+      lastPriceReview: approval?.lastPriceReview ?? null,
+      priceApprovedByOwner: approval !== undefined,
     },
 
     optionDefinitions: variantStructure.optionDefinitions,

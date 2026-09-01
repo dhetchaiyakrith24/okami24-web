@@ -1,28 +1,39 @@
 /**
- * OKami24 — Phase 2.8: ProductMaster → storefront read model.
+ * OKami24 — ProductMaster → storefront read model.
  *
  * The ONLY file in `shipnity-seed/` meant to be imported by app/frontend code — every other
  * file here is explicitly data/pipeline-only (see README.md). This is a thin, one-way VIEW
- * MODEL: it reads `ProductMasterInput` and exposes only the fields the isolated preview route
- * can present without fabrication. It does not reuse the legacy `Product` type (see Phase 2.8
- * report §FRONTEND CONSUMER FRICTION — `ProductCard`/`DeviceGlyph` unconditionally read
+ * MODEL: it reads `ProductMasterInput` and exposes only the fields the storefront can present
+ * without fabrication. It does not reuse the legacy `Product` type (see Phase 2.8 report
+ * §FRONTEND CONSUMER FRICTION — `ProductCard`/`DeviceGlyph` unconditionally read
  * `product.attributes.*`, which is `null` for every Shipnity-sourced draft; forcing them to
  * accept these records would mean inventing screenType/puffCount/batteryMah out of nothing).
  *
- * Scoped to the Phase 2.7 + 3.4 + 3.5 minimum-enriched candidates only (15 total, as of Phase
- * 3.5) — not all 53 drafts. A product is only included if every field this view needs is
- * genuinely non-null; anything else is left out rather than rendered with an invented
- * placeholder.
+ * Two independent entry points share the one `toView()` mapper below — this is the
+ * "consolidate duplicated publication filtering" move from the publication-pipeline audit,
+ * replacing what would otherwise be two near-identical mapping functions:
  *
- * Phase 3.0 adds a second consumer: `storefront-bridge.ts` wraps `buildStorefrontPreview()` with
- * a dev-only environment gate and pipes the same views into the main storefront's category/brand/
- * detail pages. This file itself stays environment-agnostic — the gate lives at the bridge
- * boundary, not here, so this remains a pure, reusable data→view mapping.
+ * - `buildStorefrontPreview()` — the DEV-only preview pool. Scoped to `PREVIEW_SHIPNITY_IDS`, a
+ *   deliberately hardcoded review whitelist (not "every ready candidate") — see that constant's
+ *   own comment for the batch history. Gated to non-production entirely by `storefront-bridge.ts`.
+ * - `buildPublishedCatalog()` — the REAL, environment-independent publication pool. Scoped to
+ *   `product.publicationStatus === "published"` — which only `publication-approvals.ts` can ever
+ *   set (see that file). Re-validates every published candidate through the full
+ *   `validateProductMasterRegistry` readiness gate before returning anything — an approval-table
+ *   entry alone is necessary but not sufficient; a genuinely incomplete "published" record fails
+ *   loudly here rather than leaking. NOT gated by NODE_ENV: safety here comes from the approval
+ *   table being genuinely curated (today, empty), not from an environment check — a single,
+ *   auditable, version-controlled source of truth instead of "did every consumer remember to gate
+ *   itself."
+ *
+ * A product is only included in either pool if every field its own view needs is genuinely
+ * non-null; anything else is left out rather than rendered with an invented placeholder.
  */
 
-import { getBrand } from "@/data/brands";
-import { getCategory } from "@/data/categories";
-import type { ProductMasterInput } from "@/data/product-master-schema";
+import { brands, getBrand } from "@/data/brands";
+import { categories, getCategory } from "@/data/categories";
+import { families } from "@/data/families";
+import { validateProductMasterRegistry, type ProductMasterInput } from "@/data/product-master-schema";
 import { projectActiveCatalog } from "./active-catalog-to-product-master";
 
 /** The Phase 2.7 + 3.4 + 3.5 minimum-enriched batch. Deliberately hardcoded, not "every ready
@@ -181,4 +192,47 @@ export function buildStorefrontPreview(): StorefrontProductView[] {
 
 export function getStorefrontPreviewBySlug(slug: string): StorefrontProductView | undefined {
   return buildStorefrontPreview().find((v) => v.slug === slug);
+}
+
+/**
+ * The real, environment-independent publication pool — see this file's header comment. Takes
+ * candidates directly (rather than calling `projectActiveCatalog()` itself) so contract tests can
+ * exercise the real readiness-enforcement/mapping logic with synthetic fixtures, the same
+ * convention `product-master-contract-test.ts` already uses, without needing a genuine owner
+ * approval to exist. `buildPublishedCatalog()` below is the real entry point the app actually
+ * calls.
+ *
+ * Throws (does not silently filter) if any `publicationStatus: "published"` candidate fails the
+ * full registry validation — "fail the build, not the page," the same philosophy
+ * `validateProductMasterRegistry` already uses for every other invariant it checks. An
+ * `OWNER_APPROVED_PUBLICATION` entry is necessary but never sufficient on its own.
+ */
+export function buildPublishedCatalogFrom(candidates: ProductMasterInput[]): StorefrontProductView[] {
+  const published = candidates.filter((p) => p.publicationStatus === "published");
+  if (published.length === 0) return [];
+
+  validateProductMasterRegistry({
+    products: published,
+    brandIds: brands.map((b) => b.id),
+    familyIds: families.map((f) => f.id),
+    categoryIds: categories.map((c) => c.id),
+    faqEntryIds: [],
+  });
+
+  const views: StorefrontProductView[] = [];
+  for (const product of published) {
+    const view = toView(product);
+    if (view) views.push(view);
+  }
+  return views;
+}
+
+export function buildPublishedCatalog(): StorefrontProductView[] {
+  const results = projectActiveCatalog();
+  const candidates = results.filter((r) => r.status === "candidate").map((r) => r.product);
+  return buildPublishedCatalogFrom(candidates);
+}
+
+export function getPublishedProductBySlug(slug: string): StorefrontProductView | undefined {
+  return buildPublishedCatalog().find((v) => v.slug === slug);
 }

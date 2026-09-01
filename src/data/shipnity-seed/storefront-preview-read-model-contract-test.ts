@@ -1,8 +1,9 @@
 /**
- * OKami24 — Phase 2.8: storefront preview read model, contract tests.
+ * OKami24 — storefront preview + published-catalog read model, contract tests.
  */
 
-import { buildStorefrontPreview } from "./storefront-preview-read-model";
+import { baseSyntheticProduct } from "@/data/product-master-contract-test";
+import { buildStorefrontPreview, buildPublishedCatalog, buildPublishedCatalogFrom } from "./storefront-preview-read-model";
 
 export interface ReadModelContractResult {
   name: string;
@@ -75,6 +76,86 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
     "priceReferenceValue is a positive number sourced from Shipnity for every product",
     views.every((v) => v.priceReferenceValue !== null && v.priceReferenceValue > 0 && v.priceReferenceSource === "shipnity"),
     JSON.stringify(views.map((v) => ({ id: v.shipnityProductId, price: v.priceReferenceValue, source: v.priceReferenceSource })))
+  );
+
+  // ===================================================================================
+  // buildPublishedCatalog(From) — publication-pipeline audit. Proves the real, environment-
+  // independent publication pool works correctly using synthetic fixtures (same convention as
+  // product-master-contract-test.ts), never mutating or depending on real approved data.
+  // ===================================================================================
+
+  const publishedNow = buildPublishedCatalog();
+  check(
+    "buildPublishedCatalog() against REAL current data is empty — no real product has genuine owner publication approval yet",
+    publishedNow.length === 0,
+    JSON.stringify(publishedNow)
+  );
+
+  check("buildPublishedCatalogFrom([]) returns an empty array without throwing", buildPublishedCatalogFrom([]).length === 0, "n/a");
+
+  const unpublishedOnly = baseSyntheticProduct({ internalId: "synthetic-unpublished", slug: "synthetic-unpublished", publicationStatus: "unpublished" });
+  check(
+    "buildPublishedCatalogFrom excludes unpublished candidates, no throw",
+    buildPublishedCatalogFrom([unpublishedOnly]).length === 0,
+    "n/a"
+  );
+
+  const fullyReadyPublished = baseSyntheticProduct({ internalId: "synthetic-fully-ready", slug: "synthetic-fully-ready", publicationStatus: "published" });
+  const readyResult = (() => {
+    try {
+      return { views: buildPublishedCatalogFrom([fullyReadyPublished]), error: null };
+    } catch (e) {
+      return { views: null, error: e instanceof Error ? e.message : String(e) };
+    }
+  })();
+  check(
+    "buildPublishedCatalogFrom maps a fully-ready published candidate into a real StorefrontProductView (correct slug, publicationStatus, price)",
+    readyResult.views !== null &&
+      readyResult.views.length === 1 &&
+      readyResult.views[0].slug === "synthetic-fully-ready" &&
+      readyResult.views[0].publicationStatus === "published" &&
+      readyResult.views[0].priceReferenceValue === null, // this fixture has no priceReference override — proves toView() doesn't fabricate one
+    JSON.stringify(readyResult)
+  );
+
+  const missingMediaPublished = baseSyntheticProduct({
+    internalId: "synthetic-missing-media-published",
+    slug: "synthetic-missing-media-published",
+    publicationStatus: "published",
+    assets: [],
+  });
+  const missingMediaResult = (() => {
+    try {
+      buildPublishedCatalogFrom([missingMediaPublished]);
+      return { threw: false, message: "" };
+    } catch (e) {
+      return { threw: true, message: e instanceof Error ? e.message : String(e) };
+    }
+  })();
+  check(
+    "buildPublishedCatalogFrom THROWS (not silently filters) for a published candidate missing verified media — an approval-table entry alone is not sufficient",
+    missingMediaResult.threw && missingMediaResult.message.includes("assets"),
+    JSON.stringify(missingMediaResult)
+  );
+
+  const missingPricePublished = baseSyntheticProduct({
+    internalId: "synthetic-missing-price-published",
+    slug: "synthetic-missing-price-published",
+    publicationStatus: "published",
+    pricing: { sellingPrice: null, lastPriceReview: null, priceApprovedByOwner: false },
+  });
+  const missingPriceResult = (() => {
+    try {
+      buildPublishedCatalogFrom([missingPricePublished]);
+      return { threw: false, message: "" };
+    } catch (e) {
+      return { threw: true, message: e instanceof Error ? e.message : String(e) };
+    }
+  })();
+  check(
+    "buildPublishedCatalogFrom THROWS for a published candidate missing an owner-approved price",
+    missingPriceResult.threw && missingPriceResult.message.includes("pricing.sellingPrice"),
+    JSON.stringify(missingPriceResult)
   );
 
   return results;
