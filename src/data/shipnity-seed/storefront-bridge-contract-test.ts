@@ -13,6 +13,12 @@ import {
   getPilotProductsByBrand,
   getPilotRelatedProducts,
   searchPilotProducts,
+  getPublishedProduct,
+  getPublishedProducts,
+  getPublishedProductsByCategory,
+  getPublishedProductsByBrand,
+  getPublishedRelatedProducts,
+  searchPublishedProducts,
 } from "./storefront-bridge";
 
 export interface BridgeContractResult {
@@ -149,6 +155,32 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
     salthubEliquid.length === 3 && salthubEliquid.every((p) => p.brandId === "salthub" && p.categoryId === "e-liquid"),
     JSON.stringify(salthubEliquid.map((p) => p.slug))
   );
+
+  // ===================================================================================
+  // Published bridge — publication-pipeline audit. Since OWNER_APPROVED_PUBLICATION is
+  // genuinely empty (no real product has owner price approval), every published-* function must
+  // return nothing at all against REAL data — this is the leakage check, not a placeholder.
+  // Unlike the pilot functions, these are NEVER environment-gated, so this must hold regardless
+  // of NODE_ENV.
+  // ===================================================================================
+
+  check("getPublishedProducts() is empty — no real product has owner publication approval yet", getPublishedProducts().length === 0, "n/a");
+  check("getPublishedProduct('coil-56') is undefined — the strongest DEV candidate is still not actually published", getPublishedProduct("coil-56") === undefined, "n/a");
+  check("getPublishedProductsByCategory('coils-accessories') is empty", getPublishedProductsByCategory("coils-accessories").length === 0, "n/a");
+  check("getPublishedProductsByBrand('voopoo') is empty", getPublishedProductsByBrand("voopoo").length === 0, "n/a");
+  check("searchPublishedProducts('voopoo') returns nothing", searchPublishedProducts("voopoo").length === 0, "n/a");
+
+  // getPublishedRelatedProducts takes a StorefrontProductView — reuse a real pilot view (its
+  // shape is identical) purely to exercise the function; since the published pool is empty,
+  // related results must be empty regardless of which product is passed.
+  const anyPilotView = getPilotProducts()[0];
+  if (anyPilotView) {
+    check(
+      "getPublishedRelatedProducts(anyProduct) returns nothing while the published pool is empty",
+      getPublishedRelatedProducts(anyPilotView).length === 0,
+      "n/a"
+    );
+  }
 
   return results;
 }
