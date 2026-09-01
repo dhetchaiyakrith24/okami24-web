@@ -362,21 +362,26 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // order per the owner's media policy: (1) official first-party, (2) an authorized distributor/
 // retailer relaying what is identifiably manufacturer-supplied artwork, (3) another source only
 // when provenance and exact identity are strong enough to justify it. Never AI-generated, never
-// the wrong model/variant, never watermarked/misleadingly cropped. `Coil-92`'s only candidate
-// source (VOOPOO's own Shopline CDN) carries an embedded XMP `TC260:AIGC` tag with `Label:"1"`
-// and a `ProduceID` path containing "aigc_inpaint" — i.e. the file is independently self-flagged
-// as AI-generated/AI-inpainted content by its own metadata, explicitly excluded by policy. It is
-// deliberately absent here; Coil-92 keeps the DEV fallback glyph. Coil-53/87 still have no
-// verified source of either tier (see each's TAXONOMY_MATCHES/report notes) and also keep the
-// glyph fallback — Coil-87 specifically was investigated this session too (a real, exact-name
-// "TPP POD" retail box was found), but a real color-variant risk (Black vs Gunmetal, no confident
-// way to tell which is pictured in the only clean multi-item shot found) meant not using it,
-// per the "no wrong-variant media" rule. `Coil-74`/`Coil-89` (this session) use tier 2: real
-// retailer product photography, each identity-verified before use — Coil-74 by cross-checking the
-// pod's silhouette pixel-for-pixel against the OFFICIAL myuwell.com Caliburn X device photo (the
-// same distinctive black-cap/clear-tank shape is visible on the device in the official shot);
-// Coil-89 by using real RINCOE retail packaging explicitly resistance-labeled ("Mesh 1.0Ω coil" /
-// "Mesh 0.8Ω coil"), removing any variant-matching ambiguity entirely.
+// the wrong model/variant, never watermarked/misleadingly cropped. VOOPOO's own Shopline CDN
+// carries an AI-generated candidate for Coil-92 (embedded XMP `TC260:AIGC` tag with `Label:"1"`
+// and a `ProduceID` path containing "aigc_inpaint" — self-flagged by its own metadata), correctly
+// excluded — a genuine tier-2 retailer photo was found instead this session (see below).
+// Coil-53/87 still have no verified source of either tier (see each's TAXONOMY_MATCHES/report
+// notes) and keep the glyph fallback — Coil-87 specifically was investigated this session too (a
+// real, exact-name "TPP POD" retail box was found), but a real color-variant risk (Black vs
+// Gunmetal, no confident way to tell which is pictured in the only clean multi-item shot found)
+// meant not using it, per the "no wrong-variant media" rule. `Coil-74`/`Coil-89`/`Coil-38`/
+// `Coil-92` (this session) use tier 2: real retailer product photography, each identity-verified
+// before use — Coil-74 by cross-checking the pod's silhouette pixel-for-pixel against the
+// OFFICIAL myuwell.com Caliburn X device photo; Coil-89 by using real RINCOE retail packaging
+// explicitly resistance-labeled ("Mesh 1.0Ω coil" / "Mesh 0.8Ω coil"); Coil-38 by using a
+// side-by-side composite of two real, individually variant-verified retailer photos — one showing
+// the TPP-DM2 (0.2Ω) box, one the TPP-DM4 (0.3Ω) box (both of this record's real children,
+// confirmed via the retailer page's own variant→image JSON mapping) — after an initial DM2-only
+// card was corrected mid-review: the storefront shows one static card image regardless of which
+// variant a customer selects, so a single-variant image would misrepresent the product whenever
+// the OTHER variant is selected; Coil-92 by using a real retailer photo where the exact resistance/wattage ("0.15Ω" / "60-80W")
+// is etched directly onto the physical coil itself, removing all variant-matching ambiguity.
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
@@ -414,6 +419,30 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       transparentBackground: false,
       sourceName: "The Vape Town (retailer; official RINCOE retail packaging photo)",
       sourceUrl: "https://thevapetown.com/products/rincoe-jellybox-v-pod-cartridge-0-8-ohm-1pc",
+    },
+  ],
+  "Coil-38": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-38/card.webp",
+      alt: "VOOPOO TPP-DM2 (0.2Ω) and TPP-DM4 (0.3Ω) replacement coil retail packaging, side by side",
+      angle: "MEDIA-CORRECTION (2026-09-01): the original card showed only the TPP-DM2 box — since this site currently displays one static card image regardless of which variant a customer selects (StorefrontVariantView carries no per-variant image, and the product detail component doesn't swap images on variant selection), a DM2-only card would misrepresent the product while a customer has TPP-DM4 selected. Replaced with a plain, unaltered side-by-side composite of two individually real, variant-specific box photos from the SAME retailer's product-photography set — confirmed via the retailer page's own variant→image JSON mapping that each file is genuinely served for its labeled resistance ('0.2 ohm TPP-DM2 Mesh Coils' / '0.3 ohm TPP-DM4 Mesh Coils'), not a shared/generic image. No content was altered, recolored, or relabeled in either half; they are placed next to each other, nothing more. If per-variant image display is ever added to the storefront architecture, this can be split back into two separate variant-level images at that point.",
+      transparentBackground: false,
+      sourceName: "Giant Vapes (US vape retailer; official VOOPOO product photography)",
+      sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils",
+    },
+  ],
+  "Coil-92": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-92/card.webp",
+      alt: "VOOPOO PnP X replacement coil, 0.15Ω, isolated product shot",
+      angle: "Front, isolated (cropped locally from the retailer's own variant-specific product photo — confirmed via the page's own variant→image JSON mapping that this exact file is served for the '0.15 ohm' option, not a generic/shared image; alpha-keyed from a clean white studio background). The resistance and wattage ('0.15Ω' / '60-80W') are etched directly onto the physical coil itself and legible in the photo, removing any variant-matching ambiguity — the same official VOOPOO Shopline source considered earlier this project was an AI-generated image (self-flagged XMP metadata) and was correctly rejected; this is a real photograph from an independent retailer instead.",
+      transparentBackground: true,
+      sourceName: "Giant Vapes (US vape retailer)",
+      sourceUrl: "https://giantvapes.com/products/voopoo-pnp-x-replacement-coils",
     },
   ],
 };

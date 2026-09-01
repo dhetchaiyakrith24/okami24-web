@@ -47,13 +47,15 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
     JSON.stringify(views)
   );
 
-  // Coil-56 is now genuinely published (real owner-approved price, see publication-approvals.ts)
-  // — buildStorefrontPreview() is the raw per-record mapping and correctly reflects that; the
-  // pilot/preview EXCLUSION of published records happens one layer up, in storefront-bridge.ts's
-  // getPilotProduct(s) (proven by storefront-bridge-contract-test.ts), not here.
+  // Coil-56/Coil-74/Coil-89 are now genuinely published (real approved prices, see
+  // publication-approvals.ts) — buildStorefrontPreview() is the raw per-record mapping and
+  // correctly reflects that; the pilot/preview EXCLUSION of published records happens one layer
+  // up, in storefront-bridge.ts's getPilotProduct(s) (proven by storefront-bridge-contract-test.ts),
+  // not here.
+  const PUBLISHED_IDS = new Set(["Coil-38", "Coil-56", "Coil-74", "Coil-89", "Coil-92"]);
   check(
-    "every view's publicationStatus is unpublished except the one genuinely published product (Coil-56)",
-    views.every((v) => v.publicationStatus === (v.shipnityProductId === "Coil-56" ? "published" : "unpublished")),
+    "every view's publicationStatus is unpublished except the genuinely published products (Coil-38, Coil-56, Coil-74, Coil-89, Coil-92)",
+    views.every((v) => v.publicationStatus === (PUBLISHED_IDS.has(v.shipnityProductId) ? "published" : "unpublished")),
     JSON.stringify(views.map((v) => ({ id: v.shipnityProductId, status: v.publicationStatus })))
   );
 
@@ -94,13 +96,21 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
   // ===================================================================================
 
   const publishedNow = buildPublishedCatalog();
+  const findPublished = (id: string) => publishedNow.find((p) => p.shipnityProductId === id);
   check(
-    "buildPublishedCatalog() against REAL current data returns exactly the one genuinely approved product (Coil-56, ฿300, one real variant)",
-    publishedNow.length === 1 &&
-      publishedNow[0]?.shipnityProductId === "Coil-56" &&
-      publishedNow[0]?.sellingPrice === 300 &&
-      publishedNow[0]?.variants.length === 1 &&
-      publishedNow[0]?.variants[0]?.id === "Coil-56-3",
+    "buildPublishedCatalog() against REAL current data returns exactly the five genuinely approved products (Coil-38 ฿450, Coil-56 ฿300, Coil-74 ฿250, Coil-89 ฿350, Coil-92 ฿130)",
+    publishedNow.length === 5 &&
+      findPublished("Coil-38")?.sellingPrice === 450 &&
+      findPublished("Coil-38")?.variants.length === 2 &&
+      findPublished("Coil-56")?.sellingPrice === 300 &&
+      findPublished("Coil-56")?.variants.length === 1 &&
+      findPublished("Coil-56")?.variants[0]?.id === "Coil-56-3" &&
+      findPublished("Coil-74")?.sellingPrice === 250 &&
+      findPublished("Coil-74")?.variants.length === 1 &&
+      findPublished("Coil-89")?.sellingPrice === 350 &&
+      findPublished("Coil-89")?.variants.length === 2 &&
+      findPublished("Coil-92")?.sellingPrice === 130 &&
+      findPublished("Coil-92")?.variants.length === 1,
     JSON.stringify(publishedNow)
   );
 
