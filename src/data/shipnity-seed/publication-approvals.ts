@@ -73,6 +73,31 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // — the retail box explicitly reads "1 Ω", and myuwell.com's own Caliburn G2 page confirms 1.0Ω
   // as a real, G2-compatible UWELL coil resistance). Single unambiguous operationalSellingPrice.
   "Coil-53": { sellingPrice: 550, lastPriceReview: "2026-09-01" },
+  // Full-catalog mission (2026-09-02): second media wave closed the gap for 7 more taxonomy-
+  // resolved candidates (see VERIFIED_MEDIA entries in active-catalog-to-product-master.ts).
+  // Same pricing rule throughout: single, unambiguous operationalSellingPrice, no conflicting
+  // price found anywhere else in the project.
+  "Coil-68": { sellingPrice: 300, lastPriceReview: "2026-09-02" },
+  "Coil-63": { sellingPrice: 350, lastPriceReview: "2026-09-02" },
+  "Coil-1": { sellingPrice: 130, lastPriceReview: "2026-09-02" },
+  "Coil-72": { sellingPrice: 350, lastPriceReview: "2026-09-02" },
+  "Coil-94": { sellingPrice: 450, lastPriceReview: "2026-09-02" },
+  "Pod-159": { sellingPrice: 549, lastPriceReview: "2026-09-02" },
+  "coil-54": { sellingPrice: 250, lastPriceReview: "2026-09-02" },
+  // Heated-tobacco wave — same pricing rule, same full readiness (identity/brand/category/media/
+  // price all real and cited — see TAXONOMY_MATCHES/VERIFIED_MEDIA/VERIFIED_SPECIFICATIONS
+  // entries). IQOSHEET-17 ("Iqos iluma one") is DELIBERATELY EXCLUDED from this table — not a
+  // business-scope hesitation (that question is settled), but a genuine, specific data conflict:
+  // its 2 active children (Pebble Grey / Breeze Blue) are two different real hardware generations
+  // with different real specs, incorrectly conflated under one Shipnity parent. Publishing it would
+  // mean shipping one card image/spec sheet that is factually wrong for whichever child a customer
+  // didn't get — the same "never misrepresent a variant" rule this whole file already enforces
+  // everywhere else. Needs either a Shipnity-side split into two real parents, or owner
+  // clarification on which generation is actually stocked, before this can honestly publish.
+  "IQOSHEET-14": { sellingPrice: 2390, lastPriceReview: "2026-09-02" },
+  "IQOSHEET-15": { sellingPrice: 220, lastPriceReview: "2026-09-02" },
+  "IQOSHEET-16": { sellingPrice: 4900, lastPriceReview: "2026-09-02" },
+  "IQOSHEET-18": { sellingPrice: 3900, lastPriceReview: "2026-09-02" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {

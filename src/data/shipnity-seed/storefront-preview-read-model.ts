@@ -34,7 +34,7 @@ import { brands, getBrand } from "@/data/brands";
 import { categories, getCategory } from "@/data/categories";
 import { families } from "@/data/families";
 import { validateProductMasterRegistry, type ProductMasterInput } from "@/data/product-master-schema";
-import { projectActiveCatalog } from "./active-catalog-to-product-master";
+import { projectActiveCatalog, getNeutralVariantFallback } from "./active-catalog-to-product-master";
 
 /** The Phase 2.7 + 3.4 + 3.5 minimum-enriched batch. Deliberately hardcoded, not "every ready
  *  candidate" — this preview is scoped to exactly what was reviewed and approved, not whatever
@@ -78,11 +78,24 @@ const PREVIEW_SHIPNITY_IDS = [
   "Pod-159", "Pod-149", "Pod-150", "Disposable-34",
   "ELIQUID-1", "Eliquid-109", "eliquid-133",
   "coil-54", "coil-62", "Pod-169",
+  // Full-catalog mission — Nexbar (Pod-180) resolved to WOTOFO with real official specs; stays
+  // media-blocked (no confidently variant-matching isolated product image found — see
+  // TAXONOMY_MATCHES["Pod-180"]'s comment), same "resolved identity, no VERIFIED_MEDIA entry yet"
+  // pattern as several other pilot entries above.
+  "Pod-180",
+  // Heated-tobacco wave — full identity/taxonomy/media/spec/price treatment (owner has settled
+  // the business/legal-scope question for this category). IQOSHEET-17 included for DEV-review
+  // visibility despite staying unpublished — see publication-approvals.ts for why.
+  "IQOSHEET-14", "IQOSHEET-15", "IQOSHEET-16", "IQOSHEET-17", "IQOSHEET-18",
 ];
 
 export interface StorefrontVariantView {
   id: string;
   label: string;
+  /** Set only when a real, verified per-variant photo exists (see VERIFIED_VARIANT_MEDIA in the
+   *  projection adapter) — undefined for every variant still relying on the product-level card
+   *  image, never a placeholder standing in for a real one. */
+  image?: StorefrontProductImageView;
 }
 
 /** Which dev-preview fallback illustration applies — derived from `systemType`, itself
@@ -132,6 +145,13 @@ export interface StorefrontProductView {
    *  VERIFIED_MEDIA in the projection adapter). `null` for every product still relying on the
    *  DEV fallback glyph — never a placeholder image standing in for a real one. */
   image: StorefrontProductImageView | null;
+  /** Shown on Product Detail ONLY when the customer has selected a specific variant that has no
+   *  dedicated photo of its own (see NEUTRAL_VARIANT_FALLBACK in the projection adapter) —
+   *  deliberately separate from `image` above, which stays the catalog/OG/grid representative
+   *  shot. Prevents an unrelated named variant's photo from reading as "this is what you picked."
+   *  `undefined` for every product that doesn't need one (either no variant media at all, or
+   *  every variant already has its own real photo). */
+  variantFallbackImage?: StorefrontProductImageView;
   isFlagship: boolean;
   publicationStatus: "published" | "unpublished";
   /** The real, owner-approved final selling price — only ever non-null when this record is
@@ -171,6 +191,7 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
   const axis = product.optionDefinitions[0];
   const valueLabelByCode = new Map(axis?.allowedValues.map((v) => [v.code, v.label] as const) ?? []);
   const cardAsset = product.assets.find((a) => a.role === "card" && a.kind === "official-photo");
+  const neutralFallback = getNeutralVariantFallback(product.commerce.integrationRef?.externalId ?? product.internalId);
 
   return {
     slug: product.slug,
@@ -184,6 +205,7 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
     systemType: product.systemType,
     glyphKind: glyphKindFor(product.systemType),
     image: cardAsset ? { src: cardAsset.src, alt: cardAsset.alt } : null,
+    variantFallbackImage: neutralFallback ? { src: neutralFallback.src, alt: neutralFallback.alt } : undefined,
     isFlagship: product.isFlagship,
     publicationStatus: product.publicationStatus,
     sellingPrice: product.pricing.sellingPrice,
@@ -194,7 +216,7 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
     variants: product.variants.map((v) => {
       const selection = v.optionSelections[0];
       const label = selection ? (valueLabelByCode.get(selection.valueCode) ?? selection.valueCode) : v.id;
-      return { id: v.id, label };
+      return { id: v.id, label, image: v.image ? { src: v.image.src, alt: v.image.alt } : undefined };
     }),
     specifications: product.specifications,
     sourceUrls: product.sourceUrls,

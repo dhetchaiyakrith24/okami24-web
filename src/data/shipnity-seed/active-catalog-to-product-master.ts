@@ -216,6 +216,58 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // "หัว infy 2.5 ml" — brand explicit; INFY's own official site (infy.my) lists "2.5ML Cartridge"
   // as a real current product line — an exact size match, not a coincidence.
   "Pod-169": { brandId: "infy", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัว infy 2.5 ml" states the brand explicitly; infy.my (official) lists "2.5ML Cartridge" as a real INFY product line — an exact size match' },
+
+  // Full-catalog mission — Nexbar resolved to WOTOFO (an established international hardware
+  // brand with a real official site), settling the earlier "collision risk with Wotofo's own
+  // nexBAR" deferral in its favor rather than against it: wotofo.com/collections/nexbar-series
+  // and wotofo.com/products/wotofo-nexbar-18k directly confirm a real "nexBAR 18K" product
+  // (750mAh, USB-C, up to 18,000 puffs, dual nexMESH coils 1.2Ω, 20 flavor options) — an exact
+  // puff-count and price-tier match to this Shipnity parent. The Shipnity name's "Clear" qualifier
+  // could not be independently confirmed against a distinctly-named official edition (Wotofo's own
+  // site shows "Standard"/"Vivid Edition" naming, no edition explicitly called "Clear"/
+  // "Transparent") — carried forward as-is from the source, not asserted as verified.
+  "Pod-180": { brandId: "wotofo", categoryId: "disposables", systemType: "disposable", evidence: 'name "Nexbar Clear 18k" — wotofo.com\'s own official nexBAR 18K product/collection pages confirm a real, matching product (18,000 puffs, 750mAh, dual nexMESH coils, 20 flavors); the "Clear" edition-name qualifier itself is carried from the Shipnity label, not independently confirmed against an official edition name' },
+
+  // ===================================================================================
+  // Heated-tobacco wave — owner has settled the business/legal-scope question for this category;
+  // processed with the same evidence discipline as every other entry above, no health/safety
+  // claims anywhere in this batch's copy. "systemType" stays null throughout (same reasoning as
+  // e-liquid — SystemType is a closed vape-device enum with no correct heated-tobacco value).
+  // ===================================================================================
+  // "Lambda i8" is explicitly NOT an IQOS/PMI product despite the Shipnity "IQOSHEET-" id prefix —
+  // lambdasmoke.com (official, Shenzhen Original Technology) confirms it as a third-party
+  // heat-not-burn device merely marketed as compatible with TEREA/SENTIA sticks. Real color match:
+  // official lineup is Gold/Green/Black/Gray/Red/White; Shipnity's active children (Red, Gold) are
+  // an exact 2-of-6 subset.
+  "IQOSHEET-14": { brandId: "lambda", categoryId: "heated-tobacco-devices", evidence: 'name "Lambda i8" states the brand explicitly; lambdasmoke.com (official) confirms the i8 as a real LAMBDA heat-not-burn device, NOT an IQOS/PMI product despite the Shipnity id prefix; active children (Red, Gold) are an exact subset of the official 6-color lineup (Gold/Green/Black/Gray/Red/White)' },
+  // "IQOS TEREA" — official PMI heated-tobacco CONSUMABLE (a stick, not a device), confirmed via
+  // official iqos.com regional shop pages (media.iqos.com's own TEREA-FK-<FLAVOR> asset naming).
+  // 5 of the 16 active flavor children have an exact official name match (Green/Blue/Sienna/
+  // Bronze/Oasis Pearl); the other 11 were not individually re-verified this session.
+  "IQOSHEET-15": { brandId: "iqos", categoryId: "heated-tobacco-consumables", evidence: 'name "IQOS TEREA" states the brand and product line explicitly; official iqos.com regional shop pages confirm TEREA as PMI\'s real heated-tobacco stick line, with at least 5 of this parent\'s 16 active flavor children (Green, Blue, Sienna, Bronze, Oasis Pearl) exact-matching real official flavor names' },
+  // "IQOS iluma Prime" — official PMI device, confirmed via iqos.com/ph's own "iluma-i-prime-kit-
+  // aspen-green" product page. Active children (Midnight Black, Breeze Blue, Aspen Green) are an
+  // exact 3-of-4 subset of the official ILUMA i PRIME color range (+ Garnet Red, not stocked).
+  "IQOSHEET-16": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'name "IQOS iluma Prime" states the brand/model explicitly; iqos.com/ph\'s own dedicated "ILUMA i PRIME Aspen Green" product page confirms this exact color as real, official PMI hardware; Midnight Black and Breeze Blue are also real official ILUMA i PRIME colors' },
+  // "Iqos iluma Standard" — RESOLVED as a real identity correction, not a guess: Shipnity's own
+  // "Standard" label is a naming approximation, not the literal original "IQOS ILUMA" device. Both
+  // active children (Midnight Black, Breeze Blue) are official colors of the mid-tier "IQOS ILUMA
+  // i" device specifically (confirmed via iqos.com/ph's own "iluma-i-kit-breeze-blue" product
+  // page, whose own on-page copy states "IQOS ILUMA i is designed to be used with TEREA tobacco
+  // sticks") — NEITHER color appears in the original (non-"i") ILUMA's official 5-color list
+  // (Azure Blue/Moss Green/Pebble Beige/Pebble Gray/Sunset Red), so this is confidently the newer
+  // "ILUMA i" mid-tier device, not the original "Standard"/"ILUMA" model.
+  "IQOSHEET-18": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'name "Iqos iluma Standard" — both active children (Midnight Black, Breeze Blue) exact-match the official "IQOS ILUMA i" (mid-tier) color range and do NOT appear in the original ILUMA\'s 5-color list, resolving this as the ILUMA i device, not the original/Standard generation; confirmed via iqos.com/ph\'s own "ILUMA i Breeze Blue" product page' },
+  // "Iqos iluma one" — DELIBERATELY NOT resolved to one generation, and NOT published (see
+  // publication-approvals.ts comment): this is a genuine data conflict, not a research gap. Child
+  // "Pebble Grey" exact-matches the ORIGINAL (non-"i") ILUMA ONE's real official color list
+  // (confirmed via iqos.com/ph's own "iluma-one-kit-pebble-grey" page), while child "Breeze Blue"
+  // exact-matches the NEWER "ILUMA i ONE" device's real official color list instead — these are
+  // two different real physical products (different generation, different real specs) genuinely
+  // conflated under one Shipnity parent. Admitting a draft candidate here is still correct (real
+  // brand/category evidence exists for "ILUMA ONE" as a concept), but no single generation-
+  // specific spec sheet or description can honestly represent both active children at once.
+  "IQOSHEET-17": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'name "Iqos iluma one" — child "Pebble Grey" exact-matches the ORIGINAL ILUMA ONE\'s official color list; child "Breeze Blue" exact-matches the NEWER "ILUMA i ONE" instead — a genuine two-generation conflict within one Shipnity parent, not a single resolvable identity' },
 };
 
 // ===================================================================================
@@ -380,6 +432,32 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "คาร์ทริดจ์ infy 2.5 ml จากแบรนด์ INFY",
     shortDescription: "คาร์ทริดจ์รุ่น infy 2.5 ml จากแบรนด์ INFY",
   },
+  // Heated-tobacco wave — factual, identity-level copy only, no health/reduced-harm claims
+  // (heat-not-burn is not risk-free; this project makes no such claim anywhere).
+  "IQOSHEET-14": {
+    tagline: "อุปกรณ์ให้ความร้อนยาสูบ LAMBDA i8 (ไม่ใช่ผลิตภัณฑ์ IQOS/PMI)",
+    shortDescription: "อุปกรณ์ heat-not-burn รุ่น i8 จากแบรนด์ LAMBDA ใช้ร่วมกับแท่งยาสูบ TEREA/SENTIA Smartcore",
+  },
+  "IQOSHEET-15": {
+    tagline: "แท่งยาสูบให้ความร้อน IQOS TEREA",
+    shortDescription: "แท่งยาสูบสำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International) ให้ความร้อนโดยไม่เผาไหม้",
+  },
+  "IQOSHEET-16": {
+    tagline: "อุปกรณ์ให้ความร้อนยาสูบ IQOS ILUMA i PRIME",
+    shortDescription: "อุปกรณ์รุ่น ILUMA i PRIME จากแบรนด์ IQOS ใช้ร่วมกับแท่งยาสูบ TEREA เท่านั้น",
+  },
+  "IQOSHEET-18": {
+    tagline: "อุปกรณ์ให้ความร้อนยาสูบ IQOS ILUMA i",
+    shortDescription: "อุปกรณ์รุ่น ILUMA i (รุ่นกลาง) จากแบรนด์ IQOS ใช้ร่วมกับแท่งยาสูบ TEREA เท่านั้น",
+  },
+  "IQOSHEET-17": {
+    tagline: "อุปกรณ์ให้ความร้อนยาสูบ IQOS ILUMA ONE",
+    shortDescription: "อุปกรณ์รุ่น ILUMA ONE จากแบรนด์ IQOS — ข้อมูล Shipnity ปัจจุบันมี 2 รุ่นย่อยปนกัน (ตัวถังเดิมสีเทา และรุ่น i สีฟ้า) ยังไม่แยกชัดเจน",
+  },
+  "Pod-180": {
+    tagline: "พอตใช้แล้วทิ้ง Nexbar 18K จากแบรนด์ WOTOFO",
+    shortDescription: "พอตใช้แล้วทิ้งรุ่น nexBAR 18K จากแบรนด์ WOTOFO",
+  },
 };
 
 // ===================================================================================
@@ -425,6 +503,157 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
+  // Full-catalog mission — second media wave. All tier-2 (real retailer product photography of
+  // official manufacturer packaging, never AI-generated, never watermarked — checked and, where a
+  // source carried a retailer watermark baked into the frame, cropped to the watermark-free
+  // portion of the same real photo rather than used as-is).
+  "Coil-68": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-68/card.webp",
+      alt: "VOOPOO ITO-X Pod Cartridge, Black, isolated product shot",
+      angle: "Front, isolated (alpha background from source). The pod body itself is printed \"ITO-X\", and the retailer's own variant-specific product photo/title/alt text are all labeled \"Black\" — matching this record's single active child exactly.",
+      transparentBackground: true,
+      sourceName: "Black Note (US vape retailer; product photography)",
+      sourceUrl: "https://www.blacknote.com/e-juice/voopoo-ito-x-coils/",
+    },
+  ],
+  "Coil-63": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-63/card.webp",
+      alt: "RINCOE Jellybox Nano replacement coil, 0.5Ω mesh, 3-pack, isolated product shot",
+      angle: "Front, plain crop, not alpha-keyed. Provenance: this is a retailer (3FVape) product photo, tier-2 — the retailer's own listing carries a \"Picture is Provided by the Manufacturer\" caption, but that is the retailer's own unverified claim, not an independent confirmation, so this is documented as retailer/tier-2 sourcing, not upgraded to official/first-party. Each coil in the photo is legibly printed \"Mesh 0.5Ω 20-28W\" — an exact resistance match to this record's single active child, and the listing itself is a dedicated 0.5Ω-only product (not a shared 0.5/1.0Ω selector image).",
+      transparentBackground: false,
+      sourceName: "3FVape (vape retailer; not RINCOE's own site — tier-2 sourcing)",
+      sourceUrl: "https://www.3fvape.com/coil/51745-authentic-rincoe-jellybox-nano-pod-system-pod-cartridge-replacement-mesh-coil-05ohm-rdl--freebase--3-pcs.html",
+    },
+  ],
+  "Coil-1": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-1/card.webp",
+      alt: "VOOPOO PnP-TW15 (0.15Ω), PnP-DW60 (0.6Ω), and PnP-TR1 (1.2Ω) replacement coil retail packaging, side by side",
+      angle: "Plain composite (white canvas, no recoloring/relabeling) of 3 real, individually-verified retailer box photos, each printed with its own exact resistance/product code (\"PNP-TW I5 0.15Ω\", \"PNP-DW60 0.6Ω\", \"PnP-TR1 1.2Ω\") — covers all 4 of this record's active children. VARIANT-MODELING NOTE (audited explicitly, not hand-waved): Coil-1-11 (\"1.2Ω ยางขาว\"/white rubber) and Coil-1-12 (\"1.2Ω ยางฟ้า\"/blue rubber) render in the storefront as two separately-selectable buttons because classify.ts's generic keyword-based axis inference has no logic to treat a rubber-grommet color as a sub-attribute of a shared resistance value — it keeps the full raw string as each variant's label. Real market research found ZERO retailers selling or photographing \"white rubber\" vs \"blue rubber\" PnP-TR1 1.2Ω as separate SKUs; every source treats PnP-TR1 1.2Ω as one undifferentiated product. This strongly suggests the two Shipnity child records reflect an internal warehouse/batch-tracking distinction, not a real customer-facing choice — but this is a genuine, disclosed LIMITATION of the shared classification pipeline (out of scope to special-case for one product), not a media-sourcing shortcut. The single real 1.2Ω photo used here correctly matches BOTH entries on every fact that market evidence can confirm (brand, model, resistance, box art) — the only unconfirmed element is a cosmetic rubber-ring color that no market source treats as meaningfully distinct. Same one-static-card-image-per-product rationale as the existing Coil-38 composite for the resistance axis itself.",
+      transparentBackground: false,
+      sourceName: "Black Note and Turn It Up Vape (US vape retailers; VOOPOO product photography)",
+      sourceUrl: "https://www.blacknote.com/e-juice/voopoo-pnp-coils/",
+    },
+  ],
+  "Coil-72": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-72/card.webp",
+      alt: "VOOPOO VMATE Infinity Edition Cartridge retail packaging — 0.7Ω, 1.2Ω, 0.4Ω Top Fill, and 0.7Ω Top Fill, one box per variant",
+      angle: "Plain 2x2 composite of 4 real, individually-verified retailer box photos, one per active child, each box printed with its own exact capacity/resistance (\"3mL | 0.7Ω\", \"3mL | 1.2Ω\", \"3mL | 0.4Ω\" Top Fill, \"3mL | 0.7Ω\" Top Fill) — an exact match to all 4 active variants. Each source photo carried a retailer watermark baked into the bottom-right corner of the frame; cropped locally to the watermark-free upper portion of the same real photo (box + variant label, nothing altered/added) rather than used as-is or discarded.",
+      transparentBackground: false,
+      sourceName: "Huff and Puffers (US vape retailer; VOOPOO product photography, watermark cropped)",
+      sourceUrl: "https://www.huffandpuffers.com/products/voopoo-vmate-infinity-edition-cartridge",
+    },
+  ],
+  "Coil-94": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-94/card.webp",
+      alt: "UWELL CALIBURN G3 Refillable Pod retail packaging — 0.4Ω, 0.6Ω, 0.9Ω, and 1.2Ω meshed, one box per resistance",
+      angle: "Plain 2x2 composite of 4 real, individually-verified retailer photos, one per active resistance, each box printed with its own exact resistance (\"0.4Ω\", \"0.6Ω\", \"0.9Ω\", \"1.2Ω\", all \"Meshed\") — resolves the earlier blocker (a single shared \"0.4Ω\"-box photo previously found at a different retailer, which would have misrepresented the other 3 active variants).",
+      transparentBackground: false,
+      sourceName: "Black Note (US vape retailer; UWELL product photography)",
+      sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/",
+    },
+  ],
+  "Pod-159": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/pod-159/card.webp",
+      alt: "ESKO BAR SWITCH reusable pod device, Purple and Yellow colorways, isolated product shot",
+      angle: "Front, isolated (alpha background from source), official manufacturer render. Note: this Shipnity parent's active children (\"Cool Mint\", \"Cola\") are the brand's own bundled-pod-flavor labels for this device kit, confirmed directly against eskobarvape.com's own product page — not device colorways (the device itself ships in Purple/Yellow/Black) — so this image honestly shows the real reusable hardware being sold rather than implying the flavor names are device colors.",
+      transparentBackground: true,
+      sourceName: "ESKO BAR (official brand site)",
+      sourceUrl: "https://eskobarvape.com/product/pod-system/",
+    },
+  ],
+  "coil-54": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-54/card.webp",
+      alt: "NEVOKS Feelin Mini refillable pod cartridge, box of 2, isolated product shot",
+      angle: "Plain crop of a real retailer product photo showing the retail box plus exactly 2 cartridges — matching this record's single active child (\"ขายยกกล่อง 1 กล่อง 2 หัว\", sold as 1 box of 2) exactly.",
+      transparentBackground: false,
+      sourceName: "Aromes et Liquides (French authorized NEVOKS retailer)",
+      sourceUrl: "https://www.aromes-et-liquides.fr/nevoks-feelin-mini-cartouche-x2",
+    },
+  ],
+  // Heated-tobacco wave — official first-party media throughout (found via each specific
+  // color/flavor product page's own `og:image` meta tag, which points at the brand's real CDN
+  // asset for that exact page, not a generic/shared image).
+  "IQOSHEET-14": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/iqosheet-14/card.webp",
+      alt: "LAMBDA i8 heat-not-burn device, full 6-color official lineup (Gold, Green, Black, Gray, Red, White)",
+      angle: "Official manufacturer lineup render (lambdasmoke.com's own product page), trimmed only — not a single-color crop, because this parent's 2 active children (Red, Gold) are both real official colors and a lineup shot honestly shows both without guessing which single unit to isolate.",
+      transparentBackground: false,
+      sourceName: "LAMBDA (official brand site, lambdasmoke.com)",
+      sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html",
+    },
+  ],
+  "IQOSHEET-15": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/iqosheet-15/card.webp",
+      alt: "IQOS TEREA tobacco sticks, 5 official flavor packs (Green, Blue, Sienna, Bronze, Oasis Pearl)",
+      angle: "Composite of 5 real official pack photos (media.iqos.com's own per-flavor CDN assets), each cropped to the branded face only (removing the region-specific graphic health-warning panel — packaging text, not product identity). Represents 5 of this parent's 16 active flavor children with an exact official-name match; the other 11 were not individually re-verified this session, so this is disclosed as a partial, not complete, flavor range.",
+      transparentBackground: false,
+      sourceName: "IQOS (official brand CDN, media.iqos.com)",
+      sourceUrl: "https://www.iqos.com/ph/en/shop.html",
+    },
+  ],
+  "IQOSHEET-16": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/iqosheet-16/card.webp",
+      alt: "IQOS ILUMA i PRIME, Aspen Green, isolated official product render",
+      angle: "Official manufacturer render, sourced directly from iqos.com/ph's own dedicated \"ILUMA i PRIME Aspen Green\" product page (via that page's own og:image meta tag, confirmed page-specific, not a generic/shared image). Aspen Green is one of this parent's 3 real active colors (also Midnight Black, Breeze Blue) — shown as the representative shot per the same one-static-card-image convention used elsewhere; not claimed to show all 3.",
+      transparentBackground: true,
+      sourceName: "IQOS (official brand site)",
+      sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html",
+    },
+  ],
+  "IQOSHEET-18": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/iqosheet-18/card.webp",
+      alt: "IQOS ILUMA i, Breeze Blue, isolated official product render",
+      angle: "Official manufacturer render, sourced directly from iqos.com/ph's own dedicated \"ILUMA i Breeze Blue\" product page (via that page's own og:image meta tag). That same page's own on-page copy states \"IQOS ILUMA i is designed to be used with TEREA tobacco sticks\" — independent confirmation this is genuinely the ILUMA i device, not the original/Standard generation (see TAXONOMY_MATCHES[\"IQOSHEET-18\"]).",
+      transparentBackground: true,
+      sourceName: "IQOS (official brand site)",
+      sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html",
+    },
+  ],
+  "IQOSHEET-17": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/iqosheet-17/card.webp",
+      alt: "IQOS ILUMA ONE, Pebble Grey, isolated official product render (original, non-\"i\" generation)",
+      angle: "Official manufacturer render, sourced directly from iqos.com/ph's own dedicated \"ILUMA ONE Pebble Grey\" product page. IMPORTANT: this photo shows ONLY the Pebble Grey (original ILUMA ONE) child accurately — the other active child, Breeze Blue, is a DIFFERENT real device (the newer ILUMA i ONE) with a different real appearance/specs, not shown here. Present for DEV-review/documentation completeness only — see publication-approvals.ts for why this record is NOT published despite having real media, real price, and real brand/category evidence.",
+      transparentBackground: true,
+      sourceName: "IQOS (official brand site)",
+      sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-one-kit-pebble-grey.html",
+    },
+  ],
   "Coil-56": [
     {
       kind: "official-photo",
@@ -529,6 +758,19 @@ interface VerifiedSpecEntry {
 }
 
 const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
+  // Full-catalog mission — VOOPOO's official VINCI replacement-coil line runs on the PnP coil
+  // platform (confirmed by both sources below); this parent's 3 active resistances (0.15Ω/0.6Ω/
+  // 1.2Ω, one 0.6Ω/1.2Ω pair differing only by rubber-grommet color) map to real official
+  // PnP-platform coil codes and wattage ranges.
+  "Coil-1": {
+    specifications: [
+      { key: "wattage-015", label: "กำลังไฟที่แนะนำ (0.15Ω, DTL)", value: "60-80W", sourceStatus: "verified" },
+      { key: "wattage-06", label: "กำลังไฟที่แนะนำ (0.6Ω, PnP-M2)", value: "20-28W", sourceStatus: "verified" },
+      { key: "wattage-12", label: "กำลังไฟที่แนะนำ (1.2Ω, PnP-C1, MTL)", value: "10-15W", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "VINCI Pod, VINCI X Pod, DRAG Baby Trio", sourceStatus: "verified" },
+    ],
+    sourceUrls: ["https://www.alivape.com/products/voopoo-vinci-replacement-pnp-coil", "https://www.blacknote.com/e-juice/voopoo-pnp-coils/"],
+  },
   "Coil-38": {
     specifications: [
       { key: "wattage-02", label: "กำลังไฟที่แนะนำ (TPP-DM2, 0.2Ω)", value: "40-60W", sourceStatus: "verified" },
@@ -536,6 +778,10 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "compatible-devices", label: "ใช้ได้กับ", value: "TPP Pod, DRAG 3 Kit, DRAG X Plus Kit", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://shop.voopoo.com/products/tpp-coils"],
+  },
+  "Coil-63": {
+    specifications: [{ key: "wattage", label: "กำลังไฟที่แนะนำ (0.5Ω, RDL)", value: "20-28W", sourceStatus: "verified" }],
+    sourceUrls: ["https://www.fogbuddies.com/products/rincoe-jellybox-nano-coil"],
   },
   "Coil-56": {
     specifications: [{ key: "capacity", label: "ความจุ", value: "5mL", sourceStatus: "verified" }],
@@ -565,6 +811,14 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-g2", "https://giantvapes.com/products/uwell-caliburn-g-replacement-coils"],
   },
+  "Coil-89": {
+    specifications: [
+      { key: "capacity", label: "ความจุ", value: "3.0mL, เติมด้านข้าง", sourceStatus: "verified" },
+      { key: "wattage", label: "กำลังไฟที่แนะนำ", value: "10-16W (ปรับอัตโนมัติตามความต้านทาน)", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Jellybox V1, V2, V3", sourceStatus: "verified" },
+    ],
+    sourceUrls: ["https://thevapetown.com/products/rincoe-jellybox-v-pod-cartridge-0-8-ohm-1pc", "https://www.alivape.com/products/rincoe-jellybox-v-replacement-pods"],
+  },
   "Coil-94": {
     specifications: [
       { key: "resistance-range", label: "ความต้านทาน", value: "0.4Ω / 0.6Ω / 0.9Ω / 1.2Ω (Meshed)", sourceStatus: "verified" },
@@ -572,7 +826,132 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://giantvapes.com/products/uwell-caliburn-g3-replacement-pods"],
   },
+  "Pod-180": {
+    specifications: [
+      { key: "battery", label: "แบตเตอรี่", value: "750mAh, ชาร์จ USB-C", sourceStatus: "verified" },
+      { key: "coil", label: "คอยล์", value: "Dual nexMESH coil 1.2Ω (ในตัว)", sourceStatus: "verified" },
+      { key: "capacity", label: "ความจุน้ำยา", value: "~18 mL", sourceStatus: "verified" },
+    ],
+    sourceUrls: ["https://www.wotofo.com/products/wotofo-nexbar-18k"],
+  },
+  "IQOSHEET-14": {
+    specifications: [
+      { key: "battery", label: "แบตเตอรี่", value: "3200mAh", sourceStatus: "verified" },
+      { key: "temperature", label: "อุณหภูมิ", value: "ปรับได้ 200-300°C", sourceStatus: "verified" },
+      { key: "compatible-sticks", label: "ใช้ได้กับแท่งยาสูบ", value: "TEREA, SENTIA Smartcore Sticks", sourceStatus: "verified" },
+    ],
+    sourceUrls: ["https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html"],
+  },
+  "IQOSHEET-15": {
+    specifications: [{ key: "compatible-devices", label: "ใช้ได้กับอุปกรณ์", value: "IQOS ILUMA (ทุกรุ่น)", sourceStatus: "verified" }],
+    sourceUrls: ["https://www.iqos.com/ph/en/shop.html"],
+  },
+  "IQOSHEET-16": {
+    specifications: [
+      { key: "battery", label: "แบตเตอรี่", value: "2380mAh", sourceStatus: "verified" },
+      { key: "charging", label: "การชาร์จ", value: "USB-C, ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified" },
+      { key: "sessions", label: "จำนวนแท่งต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 แท่ง", sourceStatus: "verified" },
+      { key: "compatible-sticks", label: "ใช้ได้กับแท่งยาสูบ", value: "TEREA เท่านั้น", sourceStatus: "verified" },
+    ],
+    sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html"],
+  },
+  "IQOSHEET-18": {
+    specifications: [{ key: "compatible-sticks", label: "ใช้ได้กับแท่งยาสูบ", value: "TEREA เท่านั้น", sourceStatus: "verified" }],
+    sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html"],
+  },
 };
+
+// ===================================================================================
+// Verified VARIANT-specific media — full-catalog mission, second delta pass. Keyed by
+// shipnityProductId → shipnityVariantId → ProductAsset. Wires through the previously-unused
+// `ProductVariant.image` schema field (present since Phase 2/2.1, never populated until now)
+// so a customer selecting a specific color/resistance/flavor sees the exact verified photo for
+// THAT selection, not a generic composite. A product/variant absent here simply has no
+// variant-specific image yet — `toView()` falls back to the product-level `assets` card, which
+// stays the honest choice for every product not listed below (nothing here ever weakens or
+// replaces the product-level fallback, it only adds a more specific option when real per-variant
+// evidence exists). Every entry is a real, individually-verified photo — same sourcing standard
+// as VERIFIED_MEDIA, same rule against watermarks/AI-generated/wrong-variant images. Where two
+// variant ids share the exact same file, that reflects a real, disclosed identity finding (see
+// TAXONOMY_MATCHES["Coil-1"]'s comment for the 1.2Ω dual-color case), not a placeholder.
+// ===================================================================================
+
+const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
+  "Coil-1": {
+    "Coil-1-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variants/Coil-1-1.webp", alt: "VOOPOO PnP-TW15 coil, 0.15Ω, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/voopoo-pnp-coils/" },
+    "Coil-1-14": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variants/Coil-1-14.webp", alt: "VOOPOO PnP-DW60 coil, 0.6Ω, retail box", transparentBackground: false, sourceName: "Turn It Up Vape (US vape retailer)", sourceUrl: "https://www.turnitupvape.com/product-page/voopoo-pnp-dw60-coils-0-6-ohm-5-per-pack" },
+    "Coil-1-11": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variants/Coil-1-11.webp", alt: "VOOPOO PnP-TR1 coil, 1.2Ω, retail box (rubber-grommet color not distinguished by any market source — see identity note)", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/voopoo-pnp-coils/" },
+    "Coil-1-12": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variants/Coil-1-12.webp", alt: "VOOPOO PnP-TR1 coil, 1.2Ω, retail box (rubber-grommet color not distinguished by any market source — see identity note)", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/voopoo-pnp-coils/" },
+  },
+  "Coil-72": {
+    "Coil-72-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variants/Coil-72-1.webp", alt: "VOOPOO VMATE Cartridge V2, 0.7Ω side-fill, retail box", transparentBackground: false, sourceName: "Huff and Puffers (US vape retailer, watermark cropped)", sourceUrl: "https://www.huffandpuffers.com/products/voopoo-vmate-infinity-edition-cartridge" },
+    "Coil-72-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variants/Coil-72-2.webp", alt: "VOOPOO VMATE Cartridge V2, 1.2Ω side-fill, retail box", transparentBackground: false, sourceName: "Huff and Puffers (US vape retailer, watermark cropped)", sourceUrl: "https://www.huffandpuffers.com/products/voopoo-vmate-infinity-edition-cartridge" },
+    "Coil-72-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variants/Coil-72-3.webp", alt: "VOOPOO VMATE Top Fill Cartridge, 0.4Ω, retail box", transparentBackground: false, sourceName: "Huff and Puffers (US vape retailer, watermark cropped)", sourceUrl: "https://www.huffandpuffers.com/products/voopoo-vmate-infinity-edition-cartridge" },
+    "Coil-72-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variants/Coil-72-4.webp", alt: "VOOPOO VMATE Top Fill Cartridge, 0.7Ω, retail box", transparentBackground: false, sourceName: "Huff and Puffers (US vape retailer, watermark cropped)", sourceUrl: "https://www.huffandpuffers.com/products/voopoo-vmate-infinity-edition-cartridge" },
+  },
+  "Coil-94": {
+    "Coil-94-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-1.webp", alt: "UWELL CALIBURN G3 pod, 0.4Ω meshed", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
+    "Coil-94-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-2.webp", alt: "UWELL CALIBURN G3 pod, 0.6Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
+    "Coil-94-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-3.webp", alt: "UWELL CALIBURN G3 pod, 0.9Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
+    "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-4.webp", alt: "UWELL CALIBURN G3 pod, 1.2Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
+  },
+  // IQOSHEET-15 — 6 of 12 selectable flavors have a real, exact-name official photo (Green, Blue,
+  // Sienna, Purple Wave, Bronze, Oasis Pearl). The other 6 selectable flavors (Black Green, Bright
+  // Wave, Emerald Edition, Golden Edition, Sun Pearl, Black Ruby) fall back to the product-level
+  // composite — genuinely no matching official asset found for those specific names this session,
+  // not a shortcut. This is a real improvement over the prior all-composite state, not a claim of
+  // full 16-flavor coverage.
+  "IQOSHEET-15": {
+    "IQOSHEET-15-2": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variants/IQOSHEET-15-2.webp", alt: "IQOS TEREA Green pack", transparentBackground: false, sourceName: "IQOS (official brand CDN)", sourceUrl: "https://www.iqos.com/ph/en/shop.html" },
+    "IQOSHEET-15-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variants/IQOSHEET-15-3.webp", alt: "IQOS TEREA Blue pack", transparentBackground: false, sourceName: "IQOS (official brand CDN)", sourceUrl: "https://www.iqos.com/ph/en/shop.html" },
+    "IQOSHEET-15-4": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variants/IQOSHEET-15-4.webp", alt: "IQOS TEREA Sienna pack", transparentBackground: false, sourceName: "IQOS (official brand CDN)", sourceUrl: "https://www.iqos.com/ph/en/shop.html" },
+    "IQOSHEET-15-5": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variants/IQOSHEET-15-5.webp", alt: "IQOS TEREA Purple Wave pack", transparentBackground: false, sourceName: "IQOS (official brand CDN)", sourceUrl: "https://www.iqos.com/ph/en/shop.html" },
+    "IQOSHEET-15-6": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variants/IQOSHEET-15-6.webp", alt: "IQOS TEREA Bronze pack", transparentBackground: false, sourceName: "IQOS (official brand CDN)", sourceUrl: "https://www.iqos.com/ph/en/shop.html" },
+    "IQOSHEET-15-15": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variants/IQOSHEET-15-15.webp", alt: "IQOS TEREA Oasis Pearl pack", transparentBackground: false, sourceName: "IQOS (official brand CDN)", sourceUrl: "https://www.iqos.com/ph/en/shop.html" },
+  },
+  "IQOSHEET-16": {
+    "IQOSHEET-16-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-1.webp", alt: "IQOS ILUMA i PRIME, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-midnight-black.html" },
+    "IQOSHEET-16-2": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-2.webp", alt: "IQOS ILUMA i PRIME, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-breeze-blue.html" },
+    "IQOSHEET-16-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-3.webp", alt: "IQOS ILUMA i PRIME, Aspen Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
+  },
+  "IQOSHEET-18": {
+    "IQOSHEET-18-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-1.webp", alt: "IQOS ILUMA i, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-midnight-black.html" },
+    "IQOSHEET-18-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-3.webp", alt: "IQOS ILUMA i, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+  },
+  // IQOSHEET-14 (Lambda i8) deliberately NOT split into per-variant crops: the only source is a
+  // 1000×1000 6-device lineup photo, and cropping a single ~155px-wide device out of it would
+  // fall below production-quality resolution. The lineup shot already truthfully shows both real
+  // active colors (Red, Gold) together with no risk of one being mistaken for the other — a
+  // genuine case where the product-level image alone already satisfies the truthfulness bar, not
+  // an oversight.
+};
+
+// ===================================================================================
+// Neutral variant-fallback media — third delta pass. Separate from `VERIFIED_MEDIA` (the
+// product-level card/OG image) on purpose: IQOSHEET-15's product-level card is a real 6-flavor
+// composite, genuinely correct as a CATALOG THUMBNAIL ("here is a representative set of real
+// TEREA packs") — that framing is only misleading in the ONE specific place a customer has
+// already selected a DIFFERENT, unmapped flavor on the Product Detail page, where showing 5 named
+// boxes reads as "this is what you picked." This table exists to break that association: a
+// product listed here gets a truthful, flavor-NEUTRAL image shown ONLY when the selected variant
+// has no dedicated photo of its own — never touching the product-level card/grid/OG image, which
+// keeps using VERIFIED_MEDIA exactly as before for every other purpose.
+const NEUTRAL_VARIANT_FALLBACK: Record<string, ProductAsset> = {
+  "IQOSHEET-15": {
+    kind: "official-photo",
+    role: "detail",
+    src: "/assets/products/iqosheet-15/variant-fallback.webp",
+    alt: "IQOS TEREA tobacco stick construction — a neutral, non-flavor-specific view",
+    angle: "Official manufacturer product-anatomy diagram (iqos.com/ph's own \"TEREA-components\" asset, found on the same official TEREA-variants listing page as the per-flavor pack photos). Shows the real physical stick construction with zero flavor name/color visible anywhere — deliberately chosen so it cannot be mistaken for representing any specific one of the 10 flavors that don't have their own verified photo.",
+    transparentBackground: false,
+    sourceName: "IQOS (official brand CDN)",
+    sourceUrl: "https://www.iqos.com/ph/en/iqos-heated-tobacco/terea-variants.html",
+  },
+};
+
+export function getNeutralVariantFallback(shipnityProductId: string): ProductAsset | undefined {
+  return NEUTRAL_VARIANT_FALLBACK[shipnityProductId];
+}
 
 // ===================================================================================
 // Variant structure — built ONLY from childRole === "variant" children. Never from
@@ -710,6 +1089,15 @@ function allChildrenExcluded(parent: ActiveParentRecord, variantStructure: Varia
   return [...variantStructure.excludedChildren, ...parentBlockedEntries];
 }
 
+/** Attaches a verified per-variant image where one exists in VERIFIED_VARIANT_MEDIA, leaving
+ *  every other variant's `image` unset so it falls back to the product-level card asset — see
+ *  that table's own header comment. Never mutates a variant that already has no matching entry. */
+function attachVariantMedia(shipnityProductId: string, variants: ProductMasterInput["variants"]): ProductMasterInput["variants"] {
+  const media = VERIFIED_VARIANT_MEDIA[shipnityProductId];
+  if (!media) return variants;
+  return variants.map((v) => (media[v.id] ? { ...v, image: media[v.id] } : v));
+}
+
 function buildDraftCandidate(
   parent: ActiveParentRecord,
   match: TaxonomyMatch | undefined,
@@ -760,7 +1148,7 @@ function buildDraftCandidate(
     },
 
     optionDefinitions: variantStructure.optionDefinitions,
-    variants: variantStructure.variants,
+    variants: attachVariantMedia(parent.shipnityProductId, variantStructure.variants),
 
     availability: { status: "in-stock", source: "shipnity", observedAt: CAPTURE_DATE },
 

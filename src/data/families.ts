@@ -81,6 +81,16 @@ export const families: ProductFamily[] = [
     description:
       "SALTHUB's second reusable cartridge platform, spanning the multi-mode Zero Pro and the ultra-compact Zero Nano, both paired with Zero Cartridge refills.",
   },
+  {
+    id: "iluma",
+    slug: "iluma",
+    brandId: "iqos",
+    categoryId: "heated-tobacco-devices",
+    name: "ILUMA",
+    tagline: "Induction heating, no blade to clean.",
+    description:
+      "IQOS's current heated-tobacco device generation, spanning ILUMA i PRIME, ILUMA i, ILUMA i ONE, and the original (pre-\"i\") ILUMA ONE — all using SMARTCORE induction heating instead of a heating blade, paired exclusively with TEREA sticks.",
+  },
 ];
 
 export function getFamily(id: string): ProductFamily | undefined {

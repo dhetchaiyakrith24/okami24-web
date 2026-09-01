@@ -112,6 +112,44 @@ export const brands: Brand[] = [
       "A regional vape brand operating across Southeast Asian markets (including Thailand) offering closed-pod devices and prefilled cartridges, including a 2.5mL cartridge line.",
     referenceUrl: "https://www.infy.my/",
   },
+  {
+    id: "wotofo",
+    slug: "wotofo",
+    name: "WOTOFO",
+    fullName: "Wotofo",
+    tagline: "Made by Vapers.",
+    description:
+      "A vape hardware manufacturer known for its atomizer lineup (RDAs/RTAs/RDTAs) and, more recently, the nexBAR disposable-vape series spanning multiple puff-count tiers.",
+    referenceUrl: "https://www.wotofo.com/",
+  },
+  // Deliberately NOT adding a "NEXT" Brand record for Pod-173 ("Next Pro 2 Beyond") — no official
+  // first-party site found (Thai retailer + one review-site convergence only), same evidentiary
+  // bar that already excludes Muro/BAAM/Dooze/Pepo/Dundu/Reswa/MOOOD/Foli/Vape City below. See the
+  // catalog mission report for the citation trail; do not fabricate a referenceUrl to admit it.
+
+  // Full-catalog mission — heated-tobacco brands. Owner has settled the business/legal-scope
+  // question for this category; these are processed with the same evidence discipline as every
+  // other brand above. No health/safety claims in tagline/description — factual only.
+  {
+    id: "iqos",
+    slug: "iqos",
+    name: "IQOS",
+    fullName: "IQOS (Philip Morris International)",
+    tagline: "Heat-not-burn tobacco system.",
+    description:
+      "Philip Morris International's heated-tobacco device brand — the ILUMA device family (Prime/i/i ONE/ONE) paired with TEREA tobacco sticks, using induction heating instead of combustion.",
+    referenceUrl: "https://www.iqos.com/",
+  },
+  {
+    id: "lambda",
+    slug: "lambda",
+    name: "LAMBDA",
+    fullName: "LAMBDA",
+    tagline: "Smart Induction Heating System.",
+    description:
+      "A Shenzhen-based heat-not-burn device manufacturer, not affiliated with Philip Morris International — its devices (e.g. the i8) are third-party heaters marketed as compatible with TEREA and SENTIA Smartcore sticks, not official IQOS hardware.",
+    referenceUrl: "https://www.lambdasmoke.com/",
+  },
 ];
 
 export function getBrand(id: string): Brand | undefined {

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
@@ -23,11 +24,25 @@ import { pilotAxisLabel } from "./axis-label";
  * Deliberately NOT the legacy `ProductHero`/`ProductGallery`/`ProductAnatomy`/`FeatureGrid`/
  * `SpecSheet`/`CompatibilitySection` — every one of those reads `product.attributes`/
  * `.specifications`/`.features`/`.compatibility`, none of which exist on a Shipnity-sourced draft.
+ *
+ * Variant-specific media (full-catalog mission, second delta pass): selection state now lives
+ * here, not inside `ProductMasterVariantPicker`, so selecting a variant can swap the displayed
+ * image to that variant's own verified photo (`variant.image`) when one exists. Falls back to the
+ * product-level card image (`product.image`) — unchanged behavior — whenever the selected variant
+ * has no dedicated photo, which is still the case for most variants on most products; this is
+ * strictly additive, never a regression for a product with no variant media at all.
  */
 export function PilotProductDetail({ product, related }: { product: StorefrontProductView; related: StorefrontProductView[] }) {
   const { dict } = useLocale();
   const axisLabel = pilotAxisLabel(dict, product);
   const isPublished = product.publicationStatus === "published";
+  const [selectedVariantId, setSelectedVariantId] = useState(product.variants[0]?.id ?? null);
+  const selectedVariant = product.variants.find((v) => v.id === selectedVariantId);
+  // A selected variant with no photo of its own prefers the neutral fallback (when the product
+  // has one — see `variantFallbackImage`'s own doc comment) over the generic product-level card,
+  // so an unrelated named variant's photo never reads as "this is what you picked." Products
+  // without a neutral fallback fall through to `product.image` exactly as before — unchanged.
+  const displayImage = selectedVariant?.image ?? product.variantFallbackImage ?? product.image;
 
   return (
     <>
@@ -61,7 +76,12 @@ export function PilotProductDetail({ product, related }: { product: StorefrontPr
             </div>
           )}
 
-          <ProductMasterVariantPicker optionAxisLabel={axisLabel} variants={product.variants} />
+          <ProductMasterVariantPicker
+            optionAxisLabel={axisLabel}
+            variants={product.variants}
+            selectedId={selectedVariantId}
+            onSelect={setSelectedVariantId}
+          />
 
           {product.specifications.length > 0 && (
             <div className="flex flex-col gap-2">
@@ -79,7 +99,7 @@ export function PilotProductDetail({ product, related }: { product: StorefrontPr
         </div>
 
         <div className="relative order-1 aspect-[4/5] w-full lg:order-2">
-          {product.image ? (
+          {displayImage ? (
             <>
               <div
                 className="pointer-events-none absolute inset-0"
@@ -87,7 +107,7 @@ export function PilotProductDetail({ product, related }: { product: StorefrontPr
                 aria-hidden
               />
               <div className="relative h-full w-full p-8 lg:p-12">
-                <Image src={product.image.src} alt={product.image.alt} fill sizes="(min-width: 1024px) 42vw, 90vw" className="object-contain" priority />
+                <Image key={displayImage.src} src={displayImage.src} alt={displayImage.alt} fill sizes="(min-width: 1024px) 42vw, 90vw" className="object-contain" priority />
               </div>
               <div
                 className="pointer-events-none absolute inset-x-16 bottom-6 h-10 rounded-full opacity-70"

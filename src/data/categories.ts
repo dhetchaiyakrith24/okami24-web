@@ -61,6 +61,27 @@ export const categories: Category[] = [
     description: "Bottled e-liquid for refillable devices — flavor, nicotine formulation, and bottle size, sourced from real operational stock.",
     systemTypes: [],
   },
+  // Full-catalog mission — heated tobacco is a physically different product category from vapor
+  // hardware (heats tobacco leaf without combustion, not vaporized e-liquid), so it gets its own
+  // two categories rather than being forced into an existing vape-shaped one — same reasoning as
+  // the e-liquid category above: `systemTypes: []` deliberately, since `SystemType` has no correct
+  // heated-tobacco value.
+  {
+    id: "heated-tobacco-devices",
+    slug: "heated-tobacco-devices",
+    name: "Heated Tobacco Devices",
+    shortName: "HNB Devices",
+    description: "Heat-not-burn devices that heat tobacco sticks without combustion — official IQOS ILUMA devices and compatible third-party heaters.",
+    systemTypes: [],
+  },
+  {
+    id: "heated-tobacco-consumables",
+    slug: "heated-tobacco-consumables",
+    name: "Heated Tobacco Sticks",
+    shortName: "HNB Sticks",
+    description: "Tobacco sticks for heat-not-burn devices — the consumable side of the heated-tobacco ecosystem.",
+    systemTypes: [],
+  },
 ];
 
 export function getCategory(id: string): Category | undefined {
