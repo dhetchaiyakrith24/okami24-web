@@ -357,16 +357,26 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 };
 
 // ===================================================================================
-// Verified media — Phase 2.9. Official-manufacturer-sourced only (see
-// PHASE_2_9_ASSET_PROVENANCE.md for the full research/rejection trail). A product is present
-// here ONLY if a genuine official-first-party photo was found AND passed identity/variant/
-// authenticity checks. `Coil-92`'s only candidate source (VOOPOO's own Shopline CDN) carries an
-// embedded XMP `TC260:AIGC` tag with `Label:"1"` and a `ProduceID` path containing
-// "aigc_inpaint" — i.e. the file is independently self-flagged as AI-generated/AI-inpainted
-// content by its own metadata, which the owner's media policy explicitly excludes ("never use
-// ... AI-recreated images"). It is deliberately absent here; Coil-92 keeps the DEV fallback
-// glyph. Coil-53/74/87 have no verified official source at all (see the provenance doc) and
-// also keep the glyph fallback.
+// Verified media — Phase 2.9, extended this session. A product is present here ONLY if a real
+// product photo/render was found AND passed identity/variant/authenticity checks — preference
+// order per the owner's media policy: (1) official first-party, (2) an authorized distributor/
+// retailer relaying what is identifiably manufacturer-supplied artwork, (3) another source only
+// when provenance and exact identity are strong enough to justify it. Never AI-generated, never
+// the wrong model/variant, never watermarked/misleadingly cropped. `Coil-92`'s only candidate
+// source (VOOPOO's own Shopline CDN) carries an embedded XMP `TC260:AIGC` tag with `Label:"1"`
+// and a `ProduceID` path containing "aigc_inpaint" — i.e. the file is independently self-flagged
+// as AI-generated/AI-inpainted content by its own metadata, explicitly excluded by policy. It is
+// deliberately absent here; Coil-92 keeps the DEV fallback glyph. Coil-53/87 still have no
+// verified source of either tier (see each's TAXONOMY_MATCHES/report notes) and also keep the
+// glyph fallback — Coil-87 specifically was investigated this session too (a real, exact-name
+// "TPP POD" retail box was found), but a real color-variant risk (Black vs Gunmetal, no confident
+// way to tell which is pictured in the only clean multi-item shot found) meant not using it,
+// per the "no wrong-variant media" rule. `Coil-74`/`Coil-89` (this session) use tier 2: real
+// retailer product photography, each identity-verified before use — Coil-74 by cross-checking the
+// pod's silhouette pixel-for-pixel against the OFFICIAL myuwell.com Caliburn X device photo (the
+// same distinctive black-cap/clear-tank shape is visible on the device in the official shot);
+// Coil-89 by using real RINCOE retail packaging explicitly resistance-labeled ("Mesh 1.0Ω coil" /
+// "Mesh 0.8Ω coil"), removing any variant-matching ambiguity entirely.
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
@@ -380,6 +390,30 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       transparentBackground: true,
       sourceName: "VOOPOO (official Shopline storefront CDN)",
       sourceUrl: "https://shop.voopoo.com/products/pnp-x-cartridge",
+    },
+  ],
+  "Coil-74": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-74/card.webp",
+      alt: "UWELL Caliburn X empty replacement pod, isolated product shot",
+      angle: "Front, isolated (cropped locally from a retailer product listing's own dedicated 'empty pod' render; brand wordmark and generous white padding removed locally via a smooth/anti-aliased alpha key, 2x-resampled with a lanczos3 kernel before keying to avoid the jagged edge a hard threshold produces at this source's native resolution, then rendered at 320×427). Tier-2 provenance per the owner's media policy — not fetched directly from UWELL's own site, but identity-verified by cross-checking the pod's silhouette (rounded black cap, clear tank body, matching proportions) against the OFFICIAL myuwell.com Caliburn X device photo, where the same pod is visible mounted on the device.",
+      transparentBackground: true,
+      sourceName: "vape.com (US vape retailer; product artwork appears manufacturer-supplied)",
+      sourceUrl: "https://vape.com/products/uwell-caliburn-x-replacement-pods-2-pack",
+    },
+  ],
+  "Coil-89": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-89/card.webp",
+      alt: "RINCOE Jellybox V Pod Cartridge retail packaging, showing both real 1.0Ω and 0.8Ω mesh coil variants",
+      angle: "Full retail packaging photo, plain rectangular crop (no alpha-key — same accepted convention as several legacy assets, e.g. m-bar-9k/card.webp). Kept as a real, unaltered photo rather than risking a cropping/keying artifact: an isolated-pod crop attempt from this same source left a visible grey background wash that couldn't be cleanly keyed out, so the honest full-box photo was used instead. No color/variant-matching risk either way — both real boxes are explicitly resistance-labeled ('Mesh 1.0Ω coil' / 'Mesh 0.8Ω coil'), exactly matching this record's two real children.",
+      transparentBackground: false,
+      sourceName: "The Vape Town (retailer; official RINCOE retail packaging photo)",
+      sourceUrl: "https://thevapetown.com/products/rincoe-jellybox-v-pod-cartridge-0-8-ohm-1pc",
     },
   ],
 };
