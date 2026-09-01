@@ -358,6 +358,13 @@ export function validateProductMasterRegistry({
     //     deliberately NOT sufficient on its own — it must never be treated as an implicit
     //     stand-in for an approved price, which is exactly what allowing it to satisfy
     //     readiness would do.
+    //   - assets (added — publication-pipeline audit): every real product needs at least one
+    //     verified official-photo card asset — universal, not device-specific. The DEV-preview
+    //     glyph fallback (`ProductMasterGlyph`) is explicitly documented as "Not production-
+    //     approved media, not an exact hardware likeness" in its own source comment; it is a
+    //     review aid, not a customer-facing substitute. Requiring this here means the DEV-only
+    //     glyph fallback can never silently become a published record's only imagery — a real
+    //     photo must exist first.
     // systemType and attributes are DEFERRED, not enforced here: SystemType is a closed enum
     // designed for vape devices (open-pod/pod-kit/disposable/pod-cartridge/coil/accessory) with
     // no value that correctly describes an e-liquid or IQOS product — there is no correct
@@ -378,6 +385,7 @@ export function validateProductMasterRegistry({
       if (p.shortDescription === null) missingForReadiness.push("shortDescription");
       if (p.pricing.sellingPrice === null) missingForReadiness.push("pricing.sellingPrice");
       if (!p.pricing.priceApprovedByOwner) missingForReadiness.push("pricing.priceApprovedByOwner");
+      if (!p.assets.some((a) => a.kind === "official-photo" && a.role === "card")) missingForReadiness.push("assets (official-photo, card)");
       if (missingForReadiness.length > 0) {
         throw new Error(
           `${p.internalId} is publicationStatus:"published" but missing required readiness field(s): ${missingForReadiness.join(", ")} — these may be null while lifecycleStatus/publicationStatus reflect a draft, but never on a published record`

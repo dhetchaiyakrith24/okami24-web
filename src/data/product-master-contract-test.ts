@@ -49,7 +49,10 @@ function baseSyntheticProduct(overrides: Partial<ProductMasterInput> = {}): Prod
     },
     specifications: [],
     features: [],
-    assets: [],
+    // A real card/official-photo asset by default — same "each fixture tests one thing" reasoning
+    // as the pricing default below. Fixtures that specifically exercise the media readiness rule
+    // override this explicitly.
+    assets: [{ kind: "official-photo", role: "card", src: "https://example.com/card.webp", alt: "contract test fixture" }],
     sourceUrls: ["https://example.com"],
     commerce: { internalSku: null },
     // A fully-ready price by default — matches the file's own stated design ("each fixture only
@@ -330,6 +333,45 @@ const CASES: ContractCase[] = (() => {
         slug: "synthetic-published-price-approved",
         publicationStatus: "published",
         pricing: { sellingPrice: 500, lastPriceReview: "2026-01-01", priceApprovedByOwner: true },
+      }),
+    },
+    {
+      // Publication-pipeline audit — the DEV-preview glyph fallback must never satisfy this: an
+      // empty `assets` array is exactly what every real ProductMaster candidate has today (see
+      // VERIFIED_MEDIA in active-catalog-to-product-master.ts), so this proves the rule actually
+      // blocks the real current gap, not just a contrived one.
+      name: "published record: empty assets — rejected by publication readiness (registry)",
+      expectRejection: true,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-missing-media",
+        slug: "synthetic-published-missing-media",
+        publicationStatus: "published",
+        assets: [],
+      }),
+    },
+    {
+      // An "illustration" asset (the glyph's own `kind`) must not satisfy the rule either — only
+      // `kind: "official-photo"` counts, proving this isn't just an "assets.length > 0" check.
+      name: "published record: illustration-only asset — rejected by publication readiness (registry)",
+      expectRejection: true,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-illustration-only",
+        slug: "synthetic-published-illustration-only",
+        publicationStatus: "published",
+        assets: [{ kind: "illustration", role: "card", src: "https://example.com/glyph.svg", alt: "fallback illustration" }],
+      }),
+    },
+    {
+      // A "detail" (gallery) photo alone must not satisfy the rule — the card asset specifically
+      // is what every consumer (ProductCard, PilotProductCard, category/search grids) actually
+      // renders; a product with only a detail shot would still show no image in every grid.
+      name: "published record: official-photo present but role is detail, not card — rejected by publication readiness (registry)",
+      expectRejection: true,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-detail-only",
+        slug: "synthetic-published-detail-only",
+        publicationStatus: "published",
+        assets: [{ kind: "official-photo", role: "detail", src: "https://example.com/detail.webp", alt: "detail shot" }],
       }),
     },
     {

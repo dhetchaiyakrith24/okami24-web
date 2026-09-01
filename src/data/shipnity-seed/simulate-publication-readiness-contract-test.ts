@@ -1,13 +1,15 @@
 /**
  * OKami24 — Phase 2.7: publication-readiness simulation, contract tests.
  *
- * Proves (1) the 5 minimum-enriched coil candidates simulate as NOT ready — SPECIFICALLY and
- * ONLY because of the pricing-readiness rule added in the production-readiness audit
- * (sellingPrice/priceApprovedByOwner), not because their brand/category/tagline/shortDescription
- * evidence regressed, (2) the same 5 WOULD simulate as ready if given an owner-approved price,
- * proving the fix is precisely scoped, (3) products without minimum copy correctly simulate as
- * NOT ready (missing tagline/shortDescription), and (4) simulation never mutates the real
- * candidate's publicationStatus or pricing.
+ * Proves (1) the 5 minimum-enriched coil candidates simulate as NOT ready, each for its OWN real,
+ * precise reason (pricing for all 5; ALSO media for 4 of the 5 — Coil-53/74/87/92 have no
+ * verified official photo, only Coil-56 does — see the publication-pipeline audit), never because
+ * their brand/category/tagline/shortDescription evidence regressed, (2) Coil-56 specifically
+ * WOULD simulate as ready if given just an owner-approved price (proving it really is the
+ * strongest candidate, media already solved), while the other 4 would NOT — media remains a real,
+ * separate blocker for them even with a price added, (3) products without minimum copy correctly
+ * simulate as NOT ready, and (4) simulation never mutates the real candidate's publicationStatus
+ * or pricing.
  */
 
 import { productMasterSchema, validateProductMasterRegistry } from "@/data/product-master-schema";
@@ -18,6 +20,9 @@ import { projectActiveCatalog } from "./active-catalog-to-product-master";
 import { runPublicationReadinessSimulation } from "./simulate-publication-readiness";
 
 const PHASE_2_7_BATCH = ["Coil-53", "Coil-56", "Coil-74", "Coil-87", "Coil-92"];
+// Coil-56 is the only one of the 5 with verified official media (VERIFIED_MEDIA in the projection
+// adapter) — see the publication-pipeline audit's readiness-matrix correction.
+const HAS_VERIFIED_MEDIA = new Set(["Coil-56"]);
 
 export interface SimulationContractResult {
   name: string;
@@ -32,12 +37,14 @@ export function runSimulationContractTests(): SimulationContractResult[] {
   const simResults = runPublicationReadinessSimulation(PHASE_2_7_BATCH);
   for (const id of PHASE_2_7_BATCH) {
     const r = simResults.find((s) => s.shipnityProductId === id);
+    const expectMediaBlocked = !HAS_VERIFIED_MEDIA.has(id);
     check(
-      `${id} simulates as NOT publication-ready — blocked ONLY by missing owner-approved price, not brand/category/copy`,
+      `${id} simulates as NOT publication-ready — blocked by missing price${expectMediaBlocked ? " AND missing media" : " only (media already verified)"}, never brand/category/copy`,
       r?.publicationReadyBySimulation === false &&
         r.failureReason !== null &&
         r.failureReason.includes("pricing.sellingPrice") &&
         r.failureReason.includes("pricing.priceApprovedByOwner") &&
+        r.failureReason.includes("assets") === expectMediaBlocked &&
         !r.failureReason.includes("brandId") &&
         !r.failureReason.includes("categoryId") &&
         !r.failureReason.includes("tagline") &&
@@ -46,10 +53,11 @@ export function runSimulationContractTests(): SimulationContractResult[] {
     );
   }
 
-  // Proves the block above is precisely the pricing rule, not a regression elsewhere: cloning the
-  // same 5 real candidates with an owner-approved price added (same pattern as
-  // runPublicationReadinessSimulation itself, but with pricing also overridden) makes every one
-  // of them pass. This never runs against the real, unpublished candidate objects.
+  // Proves the block above is precise, not a regression elsewhere: cloning the same 5 real
+  // candidates with an owner-approved price added (same pattern as
+  // runPublicationReadinessSimulation itself, but with pricing also overridden) makes ONLY
+  // Coil-56 pass — the other 4 correctly still fail on media alone. This never runs against the
+  // real, unpublished candidate objects.
   const realResults = projectActiveCatalog();
   const brandIds = brands.map((b) => b.id);
   const familyIds = families.map((f) => f.id);
@@ -75,7 +83,12 @@ export function runSimulationContractTests(): SimulationContractResult[] {
     } else {
       detail = shape.error.issues[0]?.message ?? "schema rejected";
     }
-    check(`${id} WOULD be publication-ready if given an owner-approved sellingPrice`, readyWithPrice, detail);
+    const expectReady = HAS_VERIFIED_MEDIA.has(id);
+    check(
+      `${id} ${expectReady ? "WOULD be publication-ready if given just an owner-approved sellingPrice (media already verified)" : "would STILL NOT be publication-ready even with a price — media remains a real, separate blocker"}`,
+      readyWithPrice === expectReady,
+      detail
+    );
   }
 
   // A product with no minimum copy (e.g. eliquid-62 — no brand/category/copy at all) must
