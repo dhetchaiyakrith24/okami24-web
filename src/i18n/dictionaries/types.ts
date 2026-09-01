@@ -129,6 +129,15 @@ export interface Dictionary {
      *  VERIFIED_SPECIFICATIONS in the projection adapter. Only rendered when a product actually
      *  has specifications. */
     specificationsTitle: string;
+    /** Real price label for a genuinely PUBLISHED product (sellingPrice !== null) — replaces
+     *  priceReferenceLabel/priceDisclaimer, which only apply to the DEV-preview/unapproved
+     *  reference-price state. See publication-approvals.ts. */
+    priceLabel: string;
+    /** PilotProductSection heading override for the real, published-products call (category/brand
+     *  pages) — distinct from sectionEyebrow/sectionTitle, which are specifically DEV-preview
+     *  ("Shipnity / Also in stock right now") wording and would be dishonest for real products. */
+    publishedSectionEyebrow: string;
+    publishedSectionTitle: string;
   };
   compare: {
     metaTitle: string;

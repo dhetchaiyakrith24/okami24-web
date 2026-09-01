@@ -116,6 +116,10 @@ export interface StorefrontProductView {
   image: StorefrontProductImageView | null;
   isFlagship: boolean;
   publicationStatus: "published" | "unpublished";
+  /** The real, owner-approved final selling price — only ever non-null when this record is
+   *  genuinely `publicationStatus: "published"` (see publication-approvals.ts). This is what a
+   *  customer actually pays; never confuse it with `priceReferenceValue` below. */
+  sellingPrice: number | null;
   /** Shipnity's own operational selling price — a reference value, never the confirmed final
    *  website price. See README §Price. */
   priceReferenceValue: number | null;
@@ -164,6 +168,7 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
     image: cardAsset ? { src: cardAsset.src, alt: cardAsset.alt } : null,
     isFlagship: product.isFlagship,
     publicationStatus: product.publicationStatus,
+    sellingPrice: product.pricing.sellingPrice,
     priceReferenceValue: product.pricing.priceReference?.value ?? null,
     priceReferenceSource: product.pricing.priceReference?.source ?? null,
     optionAxisLabel: axis?.label ?? null,

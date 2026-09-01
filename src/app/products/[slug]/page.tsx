@@ -14,18 +14,30 @@ import { ProductFAQ } from "@/components/product/ProductFAQ";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { SourceNote } from "@/components/product/SourceNote";
 import { getBrand } from "@/data/brands";
-import { getPilotProduct, getPilotProducts, getPilotProductsByCategory, getPilotRelatedProducts } from "@/data/shipnity-seed/storefront-bridge";
+import {
+  getPilotProduct,
+  getPilotProducts,
+  getPilotProductsByCategory,
+  getPilotRelatedProducts,
+  getPublishedProduct,
+  getPublishedProducts,
+  getPublishedProductsByCategory,
+  getPublishedRelatedProducts,
+} from "@/data/shipnity-seed/storefront-bridge";
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDetail";
 import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
 
 export function generateStaticParams() {
   // `getPilotProducts()` returns [] whenever NODE_ENV === "production" (see storefront-bridge.ts)
-  // — so a production `next build` never statically generates these 5 slugs, matching the legacy
-  // catalog's own build-time-only generation.
+  // — so a production `next build` never statically generates DEV-preview-only slugs, matching
+  // the legacy catalog's own build-time-only generation. `getPublishedProducts()` is NOT
+  // environment-gated — a genuinely published product is statically generated in every build,
+  // dev and production alike, exactly like a legacy product.
   return [
     ...categories.map((c) => ({ slug: c.slug })),
     ...allProducts.map((p) => ({ slug: p.slug })),
+    ...getPublishedProducts().map((p) => ({ slug: p.slug })),
     ...getPilotProducts().map((p) => ({ slug: p.slug })),
   ];
 }
@@ -36,6 +48,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (category) return { title: category.name, description: category.description };
   const product = getProduct(slug);
   if (product) return { title: product.displayName, description: product.shortDescription };
+  const publishedProduct = getPublishedProduct(slug);
+  if (publishedProduct) return { title: publishedProduct.displayName, description: publishedProduct.tagline };
   const pilotProduct = getPilotProduct(slug);
   if (pilotProduct) return { title: pilotProduct.displayName, description: pilotProduct.tagline };
   return {};
@@ -47,14 +61,15 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const category = getCategory(slug);
   if (category) {
     const products = getProductsByCategory(category.id);
+    const publishedProducts = getPublishedProductsByCategory(category.id);
     const pilotProducts = getPilotProductsByCategory(category.id);
+    const isEmptyCategory = products.length === 0 && publishedProducts.length === 0 && pilotProducts.length === 0;
     return (
       <>
         <CategoryPageHeader category={category} />
         <Container className="flex flex-col gap-12 py-12 lg:py-16">
-          {(products.length > 0 || pilotProducts.length === 0) && (
-            <CatalogBrowser products={products} isEmptyCategory={products.length === 0} />
-          )}
+          {(products.length > 0 || isEmptyCategory) && <CatalogBrowser products={products} isEmptyCategory={products.length === 0} />}
+          <PilotProductSection products={publishedProducts} variant="published" />
           <PilotProductSection products={pilotProducts} />
         </Container>
       </>
@@ -63,6 +78,25 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
 
   const product = getProduct(slug);
   if (!product) {
+    const publishedProduct = getPublishedProduct(slug);
+    if (publishedProduct) {
+      // Same schema.org shape as the legacy branch below — a published ProductMaster product is
+      // a real product page and deserves the same structured-data completeness.
+      const publishedJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: publishedProduct.displayName,
+        description: publishedProduct.tagline,
+        brand: { "@type": "Brand", name: publishedProduct.brandName },
+        category: publishedProduct.categoryId,
+      };
+      return (
+        <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedJsonLd) }} />
+          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} />
+        </>
+      );
+    }
     const pilotProduct = getPilotProduct(slug);
     if (pilotProduct) {
       return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} />;

@@ -122,6 +122,9 @@ export const en: Dictionary = {
     axisSize: "Size",
     axisStrength: "Strength",
     specificationsTitle: "Specifications",
+    priceLabel: "Price",
+    publishedSectionEyebrow: "OKami24",
+    publishedSectionTitle: "Now Available",
   },
   compare: {
     metaTitle: "Compare",

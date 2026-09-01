@@ -120,6 +120,9 @@ export const zh: Dictionary = {
     axisSize: "尺寸",
     axisStrength: "浓度",
     specificationsTitle: "产品规格",
+    priceLabel: "价格",
+    publishedSectionEyebrow: "OKami24",
+    publishedSectionTitle: "现已上市",
   },
   compare: {
     metaTitle: "产品对比",

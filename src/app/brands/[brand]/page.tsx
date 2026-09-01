@@ -6,7 +6,7 @@ import { getProductsByBrand } from "@/data/products";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
-import { getPilotProductsByBrand } from "@/data/shipnity-seed/storefront-bridge";
+import { getPilotProductsByBrand, getPublishedProductsByBrand } from "@/data/shipnity-seed/storefront-bridge";
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { BrandPageMeta } from "@/components/catalog/BrandPageMeta";
 
@@ -28,6 +28,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
 
   const families = familiesForBrand(brand.id);
   const products = getProductsByBrand(brand.id);
+  const publishedProducts = getPublishedProductsByBrand(brand.id);
   const pilotProducts = getPilotProductsByBrand(brand.id);
 
   return (
@@ -40,6 +41,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
       />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
         <CatalogBrowser products={products} />
+        <PilotProductSection products={publishedProducts} variant="published" />
         <PilotProductSection products={pilotProducts} />
       </Container>
     </>

@@ -116,6 +116,9 @@ export const th: Dictionary = {
     axisSize: "ขนาด",
     axisStrength: "ความเข้มข้น",
     specificationsTitle: "ข้อมูลจำเพาะ",
+    priceLabel: "ราคา",
+    publishedSectionEyebrow: "OKami24",
+    publishedSectionTitle: "วางจำหน่ายแล้ว",
   },
   compare: {
     metaTitle: "เปรียบเทียบสินค้า",

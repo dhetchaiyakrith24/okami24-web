@@ -13,18 +13,21 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotAxisLabel } from "./axis-label";
 
 /**
- * Phase 3.0 — storefront-native product detail body for a ProductMaster pilot product, rendered
- * from the real `/products/[slug]` route (see that page's third branch). Deliberately NOT the
- * legacy `ProductHero`/`ProductGallery`/`ProductAnatomy`/`FeatureGrid`/`SpecSheet`/
- * `CompatibilitySection` — every one of those reads `product.attributes`/`.specifications`/
- * `.features`/`.compatibility`, none of which exist on a Shipnity-sourced draft (see the
- * Phase 3.0 report §LEGACY CONSUMER FRICTION). Structure carried over from the Phase 2.8/2.9
- * isolated preview's detail page, minus the "internal preview" framing — this now IS the real
- * page for these 5 products, just gated to non-production by `storefront-bridge.ts`.
+ * Storefront-native product detail body for a ProductMaster product, rendered from the real
+ * `/products/[slug]` route. Shared by BOTH ProductMaster pools (see storefront-bridge.ts) — DEV
+ * preview and the real, environment-independent published pool — driven entirely by
+ * `product.publicationStatus`/`product.sellingPrice`, never by which function fetched it: the
+ * "Unpublished" badge and the unapproved-reference-price disclaimer only show for genuinely
+ * `publicationStatus: "unpublished"` data; a real published product shows its real, owner-
+ * approved price with no disclaimer, same honesty standard as everything else in this pipeline.
+ * Deliberately NOT the legacy `ProductHero`/`ProductGallery`/`ProductAnatomy`/`FeatureGrid`/
+ * `SpecSheet`/`CompatibilitySection` — every one of those reads `product.attributes`/
+ * `.specifications`/`.features`/`.compatibility`, none of which exist on a Shipnity-sourced draft.
  */
 export function PilotProductDetail({ product, related }: { product: StorefrontProductView; related: StorefrontProductView[] }) {
   const { dict } = useLocale();
   const axisLabel = pilotAxisLabel(dict, product);
+  const isPublished = product.publicationStatus === "published";
 
   return (
     <>
@@ -35,21 +38,28 @@ export function PilotProductDetail({ product, related }: { product: StorefrontPr
         meta={
           <div className="flex flex-wrap items-center gap-2">
             <Badge tone="steel">{product.brandName}</Badge>
-            <Badge tone="unverified">{dict.pilot.unpublishedBadge}</Badge>
+            {!isPublished && <Badge tone="unverified">{dict.pilot.unpublishedBadge}</Badge>}
           </div>
         }
       />
       <Container className="grid gap-10 py-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:py-16">
         <div className="order-2 flex flex-col gap-6 lg:order-1">
-          <div>
-            <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceReferenceLabel}</span>
-            <p className="font-display text-3xl font-bold text-foreground">
-              {product.priceReferenceValue !== null ? `฿${product.priceReferenceValue.toLocaleString("th-TH")}` : dict.pilot.priceUnavailable}
-            </p>
-            <p className="text-xs text-foreground-muted">
-              {dict.pilot.priceSourcePrefix} {product.priceReferenceSource ?? "—"} {dict.pilot.priceDisclaimer}
-            </p>
-          </div>
+          {isPublished && product.sellingPrice !== null ? (
+            <div>
+              <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceLabel}</span>
+              <p className="font-display text-3xl font-bold text-foreground">฿{product.sellingPrice.toLocaleString("th-TH")}</p>
+            </div>
+          ) : (
+            <div>
+              <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceReferenceLabel}</span>
+              <p className="font-display text-3xl font-bold text-foreground">
+                {product.priceReferenceValue !== null ? `฿${product.priceReferenceValue.toLocaleString("th-TH")}` : dict.pilot.priceUnavailable}
+              </p>
+              <p className="text-xs text-foreground-muted">
+                {dict.pilot.priceSourcePrefix} {product.priceReferenceSource ?? "—"} {dict.pilot.priceDisclaimer}
+              </p>
+            </div>
+          )}
 
           <ProductMasterVariantPicker optionAxisLabel={axisLabel} variants={product.variants} />
 

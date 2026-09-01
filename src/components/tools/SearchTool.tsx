@@ -4,20 +4,21 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import { searchProducts } from "@/data/products";
-import { searchPilotProducts } from "@/data/shipnity-seed/storefront-bridge";
+import { searchPilotProducts, searchPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pluralCount } from "@/i18n/dictionaries";
 
 /**
- * Phase 3.1 — one flat result grid mixing legacy `Product[]` and ProductMaster pilot
- * `StorefrontProductView[]`, each rendered by its own card component (`ProductCard` requires
- * legacy `attributes.*`, `PilotProductCard` doesn't have it — see storefront-bridge.ts). Legacy
- * results keep their existing order/position; pilot results are appended after, never
- * interleaved by a fabricated relevance score. No deduplication — none of the pilot products
- * has a known `exactLegacyMatch`, so there is nothing to merge (see the Phase 3.1 report
- * §LEGACY + PRODUCTMASTER RESULT BEHAVIOR).
+ * One flat result grid mixing legacy `Product[]` and ProductMaster `StorefrontProductView[]`
+ * (both published and DEV-preview), each rendered by its own card component (`ProductCard`
+ * requires legacy `attributes.*`, `PilotProductCard` doesn't have it — see storefront-bridge.ts).
+ * Order: legacy first, then real PUBLISHED ProductMaster results (also genuinely customer-facing,
+ * same as legacy — `PilotProductCard` itself hides the "Unpublished" badge for these), then
+ * DEV-preview-only results last (`searchPilotProducts` — never present in production). No
+ * deduplication — none of the pilot products has a known `exactLegacyMatch`, so there is nothing
+ * to merge.
  */
 export function SearchTool({ initialQuery = "" }: { initialQuery?: string }) {
   const { dict } = useLocale();
@@ -27,8 +28,9 @@ export function SearchTool({ initialQuery = "" }: { initialQuery?: string }) {
   const [query, setQuery] = useState(initialQuery);
   const inputRef = useRef<HTMLInputElement>(null);
   const legacyResults = useMemo(() => searchProducts(query), [query]);
+  const publishedResults = useMemo(() => searchPublishedProducts(query), [query]);
   const pilotResults = useMemo(() => searchPilotProducts(query), [query]);
-  const totalCount = legacyResults.length + pilotResults.length;
+  const totalCount = legacyResults.length + publishedResults.length + pilotResults.length;
 
   useEffect(() => {
     const trimmed = query.trim();
@@ -81,6 +83,9 @@ export function SearchTool({ initialQuery = "" }: { initialQuery?: string }) {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {legacyResults.map((p) => (
               <ProductCard key={p.slug} product={p} />
+            ))}
+            {publishedResults.map((p) => (
+              <PilotProductCard key={p.slug} product={p} />
             ))}
             {pilotResults.map((p) => (
               <PilotProductCard key={p.slug} product={p} />

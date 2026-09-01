@@ -11,11 +11,13 @@ import { pilotAxisLabel } from "./axis-label";
 /**
  * Phase 3.0 — the storefront-native sibling of the isolated preview's `PreviewProductCard`.
  * Same visual language, but links into the real `/products/[slug]` route instead of
- * `/preview/product-master/[slug]`, and swaps the preview's "Draft" wording for "Unpublished" —
- * a small, honest marker (this genuinely is `publicationStatus: "unpublished"` data) rather than
- * a "this page isn't real" banner, since this card now renders inside the real storefront tree.
- * Not reusing the legacy `ProductCard`: it unconditionally reads `product.attributes.puffCount`/
- * `batteryMah`/`wattageMin`/`wattageMax`, none of which exist on a Shipnity-sourced draft.
+ * `/preview/product-master/[slug]`. Shared by BOTH ProductMaster pools (see storefront-bridge.ts):
+ * the DEV-only preview and the real, environment-independent published pool — driven entirely by
+ * `product.publicationStatus`, never by which function fetched it. The "Unpublished" badge only
+ * shows for genuinely `publicationStatus: "unpublished"` data — a real, published product renders
+ * with no such marker, same as a legacy product would. Not reusing the legacy `ProductCard`: it
+ * unconditionally reads `product.attributes.puffCount`/`batteryMah`/`wattageMin`/`wattageMax`,
+ * none of which exist on a Shipnity-sourced draft.
  */
 export function PilotProductCard({ product }: { product: StorefrontProductView }) {
   const { dict } = useLocale();
@@ -25,9 +27,11 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-surface-border bg-surface-1 transition-all duration-300 hover:-translate-y-1 hover:border-foreground-dim"
     >
       <div className="relative aspect-[4/5] w-full bg-surface-2/40 p-6">
-        <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
-          <Badge tone="unverified">{dict.pilot.unpublishedBadge}</Badge>
-        </div>
+        {product.publicationStatus === "unpublished" && (
+          <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
+            <Badge tone="unverified">{dict.pilot.unpublishedBadge}</Badge>
+          </div>
+        )}
         <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
           {product.image ? (
             <Image
