@@ -347,6 +347,17 @@ export function validateProductMasterRegistry({
     //   - tagline, shortDescription: generic marketing copy, applicable to any product type.
     //   - familyId: deliberately NOT required — see its type-level doc comment (display/filter
     //     convenience only, confirmed by real frontend usage, never load-bearing).
+    //   - sellingPrice, priceApprovedByOwner (added — production-readiness audit): every real
+    //     product needs a real, owner-approved selling price to be sold — universal, not
+    //     device-specific, unlike systemType/attributes below. This was a genuine gap: nothing
+    //     previously stopped a record from reaching `publicationStatus: "published"` with
+    //     `sellingPrice: null`, which would silently violate
+    //     docs/BUSINESS_SOURCE_OF_TRUTH.md §5 ("Owner approval is the final gate for
+    //     selling-price changes... Do NOT automatically assume Shipnity price is the website
+    //     selling price"). `priceReference` (the Shipnity/vapenow reference value) is
+    //     deliberately NOT sufficient on its own — it must never be treated as an implicit
+    //     stand-in for an approved price, which is exactly what allowing it to satisfy
+    //     readiness would do.
     // systemType and attributes are DEFERRED, not enforced here: SystemType is a closed enum
     // designed for vape devices (open-pod/pod-kit/disposable/pod-cartridge/coil/accessory) with
     // no value that correctly describes an e-liquid or IQOS product — there is no correct
@@ -365,6 +376,8 @@ export function validateProductMasterRegistry({
       if (p.categoryId === null) missingForReadiness.push("categoryId");
       if (p.tagline === null) missingForReadiness.push("tagline");
       if (p.shortDescription === null) missingForReadiness.push("shortDescription");
+      if (p.pricing.sellingPrice === null) missingForReadiness.push("pricing.sellingPrice");
+      if (!p.pricing.priceApprovedByOwner) missingForReadiness.push("pricing.priceApprovedByOwner");
       if (missingForReadiness.length > 0) {
         throw new Error(
           `${p.internalId} is publicationStatus:"published" but missing required readiness field(s): ${missingForReadiness.join(", ")} — these may be null while lifecycleStatus/publicationStatus reflect a draft, but never on a published record`

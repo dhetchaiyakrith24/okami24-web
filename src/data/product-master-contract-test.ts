@@ -52,7 +52,11 @@ function baseSyntheticProduct(overrides: Partial<ProductMasterInput> = {}): Prod
     assets: [],
     sourceUrls: ["https://example.com"],
     commerce: { internalSku: null },
-    pricing: { sellingPrice: null, lastPriceReview: null, priceApprovedByOwner: false },
+    // A fully-ready price by default — matches the file's own stated design ("each fixture only
+    // tests the one thing it's meant to"). Fixtures that specifically exercise the pricing
+    // readiness rule override this explicitly; see the sellingPrice/priceApprovedByOwner cases
+    // below.
+    pricing: { sellingPrice: 999, lastPriceReview: "2026-01-01", priceApprovedByOwner: true },
     optionDefinitions: [],
     variants: [],
     availability: { status: "unknown", source: "unknown", observedAt: null },
@@ -210,12 +214,15 @@ const CASES: ContractCase[] = (() => {
     },
     {
       // Phase 2.5 — proves the "shipnity" priceReference.source value (added this phase) is
-      // accepted, distinct from "vapenow"/"manual".
+      // accepted, distinct from "vapenow"/"manual". Unpublished (with sellingPrice: null) so
+      // this isolates the schema-shape check from the pricing-readiness check below — this
+      // fixture's only real concern is the priceReference.source enum, not readiness.
       name: "priceReference.source = shipnity is accepted",
       expectRejection: false,
       product: baseSyntheticProduct({
         internalId: "synthetic-shipnity-price-reference",
         slug: "synthetic-shipnity-price-reference",
+        publicationStatus: "unpublished",
         pricing: {
           sellingPrice: null,
           priceReference: { source: "shipnity", value: 1090, capturedAt: "2026-08-31T00:00:00.000Z" },
@@ -284,6 +291,45 @@ const CASES: ContractCase[] = (() => {
         slug: "synthetic-published-missing-systemtype",
         publicationStatus: "published",
         systemType: null,
+      }),
+    },
+    {
+      // Production-readiness audit — sellingPrice/priceApprovedByOwner are now universal
+      // readiness requirements (see the registry validator's own comment). Note priceReference
+      // is deliberately still populated here, proving that a reference price alone is NOT
+      // sufficient — it must never stand in for an owner-approved sellingPrice.
+      name: "published record: null sellingPrice — rejected by publication readiness (registry)",
+      expectRejection: true,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-missing-price",
+        slug: "synthetic-published-missing-price",
+        publicationStatus: "published",
+        pricing: {
+          sellingPrice: null,
+          priceReference: { source: "shipnity", value: 500, capturedAt: "2026-01-01" },
+          lastPriceReview: null,
+          priceApprovedByOwner: false,
+        },
+      }),
+    },
+    {
+      name: "published record: sellingPrice set but priceApprovedByOwner false — rejected by publication readiness (registry)",
+      expectRejection: true,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-price-not-approved",
+        slug: "synthetic-published-price-not-approved",
+        publicationStatus: "published",
+        pricing: { sellingPrice: 500, lastPriceReview: null, priceApprovedByOwner: false },
+      }),
+    },
+    {
+      name: "published record: sellingPrice set and priceApprovedByOwner true — accepted",
+      expectRejection: false,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-price-approved",
+        slug: "synthetic-published-price-approved",
+        publicationStatus: "published",
+        pricing: { sellingPrice: 500, lastPriceReview: "2026-01-01", priceApprovedByOwner: true },
       }),
     },
     {
