@@ -33,8 +33,14 @@ export interface PublicationApproval {
 }
 
 export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
-  // Intentionally empty. Example shape for when a real approval exists:
-  // "Coil-56": { sellingPrice: 350, lastPriceReview: "2026-09-15" },
+  // First real publication approval (2026-09-01). Owner approved Coil-56-1/56-2/56-3 at ฿300
+  // each; the current active (have_stock=true) seed has only ONE in-stock child, Coil-56-3
+  // (Silver) — see active-catalog-source.ts. Pricing is a product-level field here (variants only
+  // carry an OPTIONAL pricingOverride), so this single entry correctly represents the owner's
+  // approval regardless of how many of the three named children are currently in stock. Coil-56-1
+  // and Coil-56-2 are NOT fabricated as variants — they simply are not in the current evidence;
+  // see the publication-pipeline memory / final mission report for the flagged discrepancy.
+  "Coil-56": { sellingPrice: 300, lastPriceReview: "2026-09-01" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {

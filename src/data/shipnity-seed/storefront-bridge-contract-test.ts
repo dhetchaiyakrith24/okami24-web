@@ -32,21 +32,24 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   const check = (name: string, condition: boolean, detail: string) => results.push({ name, passed: condition, detail });
 
   // --- pilot query by model/name ---
+  // Coil-56 graduated from pilot to genuinely published (see publication-approvals.ts) — it is
+  // excluded from every getPilotProducts()-derived result below by design (storefront-bridge.ts),
+  // so "PnP" now matches only coil-92 within the pilot pool.
   const pnpResults = searchPilotProducts("PnP");
   check(
-    'searching "PnP" returns the two real PnP-named pilot products (coil-56, coil-92) and nothing else',
-    pnpResults.length === 2 && pnpResults.every((p) => ["coil-56", "coil-92"].includes(p.slug)),
+    'searching "PnP" returns only the one remaining PnP-named pilot product (coil-92) — coil-56 is now published, not pilot',
+    pnpResults.length === 1 && pnpResults[0]?.slug === "coil-92",
     JSON.stringify(pnpResults.map((p) => p.slug))
   );
 
   // --- pilot query by brand ---
   // Phase 3.4 added Coil-1/21/72/83 (voopoo) and Coil-94 (uwell) to the pilot batch (voopoo
   // 3->7, uwell 2->3). Phase 3.5 added Coil-38/68 (voopoo, 7->9) plus the first two rincoe/
-  // dotmod products — see the brand-count assertions below.
+  // dotmod products. Coil-56 (voopoo) then graduated to published, dropping this to 8.
   const voopooPilot = searchPilotProducts("voopoo");
   check(
-    'searching "voopoo" (lowercase) returns exactly the 9 voopoo pilot products',
-    voopooPilot.length === 9 && voopooPilot.every((p) => p.brandName.toLowerCase() === "voopoo"),
+    'searching "voopoo" (lowercase) returns exactly the 8 remaining voopoo pilot products (coil-56 now published, not pilot)',
+    voopooPilot.length === 8 && voopooPilot.every((p) => p.brandName.toLowerCase() === "voopoo"),
     JSON.stringify(voopooPilot.map((p) => p.slug))
   );
 
@@ -65,10 +68,11 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   //     in any pilot tagline, which are in Thai) ---
   // Phase 3.5 grew pods-cartridges from 3 to 8: Coil-68 ("ITO-X"), Pod-150 ("KS Quikpro"),
   // Pod-169 ("infy"), coil-54/coil-62 (both "Feelin", reclassified from coil to cartridge).
+  // Coil-56 (also pods-cartridges) then graduated to published, dropping this pilot count to 7.
   const cartridgeResults = searchPilotProducts("cartridge");
   check(
-    '"cartridge" matches the 8 pods-cartridges pilot products via categoryName, not a fabricated field',
-    cartridgeResults.length === 8 && cartridgeResults.every((p) => p.categoryId === "pods-cartridges"),
+    '"cartridge" matches the 7 remaining pods-cartridges pilot products via categoryName (coil-56 now published, not pilot)',
+    cartridgeResults.length === 7 && cartridgeResults.every((p) => p.categoryId === "pods-cartridges"),
     JSON.stringify(cartridgeResults.map((p) => p.slug))
   );
 
@@ -95,24 +99,23 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   );
 
   // --- result identity links to the correct /products/<slug> ---
-  const coil56 = getPilotProduct("coil-56");
-  check(
-    "coil-56's slug is exactly the one used by the real /products/[slug] route (no separate preview-only slug)",
-    coil56?.slug === "coil-56",
-    JSON.stringify(coil56?.slug)
-  );
+  // Coil-56 is now genuinely published, not pilot — getPilotProduct("coil-56") correctly returns
+  // undefined (storefront-bridge.ts excludes anything published from the pilot pool); its real
+  // identity is proven through getPublishedProduct instead, in the published-bridge section below.
+  check("coil-56 is no longer reachable through getPilotProduct — it graduated to published", getPilotProduct("coil-56") === undefined, "n/a");
 
   // --- category/brand/related bridge helpers stay consistent (Phase 3.0 behavior, re-asserted) ---
-  // pods-cartridges grew from 3 to 8 (Coil-68, Pod-150, Pod-169, coil-54, coil-62); coils-
-  // accessories stayed at 11; disposables/pod-kits/e-liquid are all new to the pilot this phase.
-  check("pods-cartridges category has exactly 8 pilot products", getPilotProductsByCategory("pods-cartridges").length === 8, "n/a");
+  // pods-cartridges grew from 3 to 8 (Coil-68, Pod-150, Pod-169, coil-54, coil-62), then dropped
+  // to 7 once Coil-56 graduated to published; coils-accessories stayed at 11; disposables/pod-
+  // kits/e-liquid are all new to the pilot this phase.
+  check("pods-cartridges category has exactly 7 pilot products (coil-56 now published, not pilot)", getPilotProductsByCategory("pods-cartridges").length === 7, "n/a");
   check("coils-accessories category has exactly 11 pilot products", getPilotProductsByCategory("coils-accessories").length === 11, "n/a");
   check("disposables category has exactly 2 pilot products", getPilotProductsByCategory("disposables").length === 2, "n/a");
   check("pod-kits category has exactly 1 pilot product", getPilotProductsByCategory("pod-kits").length === 1, "n/a");
   // e-liquid is the pilot's first non-device category (ELIQUID-1, Eliquid-109, eliquid-133), all
   // resolving to the existing salthub brand — its first-ever pilot products.
   check("e-liquid category has exactly 3 pilot products", getPilotProductsByCategory("e-liquid").length === 3, "n/a");
-  check("voopoo brand has exactly 9 pilot products", getPilotProductsByBrand("voopoo").length === 9, "n/a");
+  check("voopoo brand has exactly 8 pilot products (coil-56 now published, not pilot)", getPilotProductsByBrand("voopoo").length === 8, "n/a");
   check("uwell brand has exactly 3 pilot products", getPilotProductsByBrand("uwell").length === 3, "n/a");
   check("rincoe brand has exactly 2 pilot products", getPilotProductsByBrand("rincoe").length === 2, "n/a");
   check("dotmod brand has exactly 1 pilot product", getPilotProductsByBrand("dotmod").length === 1, "n/a");
@@ -124,11 +127,15 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   check("nevoks brand has exactly 2 pilot products", getPilotProductsByBrand("nevoks").length === 2, "n/a");
   check("infy brand has exactly 1 pilot product", getPilotProductsByBrand("infy").length === 1, "n/a");
 
-  if (coil56) {
-    const related = getPilotRelatedProducts(coil56);
+  // getPilotRelatedProducts still proven with a still-pilot pods-cartridges product (coil-74) —
+  // its pilot category-mates are the remaining 6 pods-cartridges pilot products, correctly
+  // excluding coil-56 (no longer pilot) and itself.
+  const coil74Pilot = getPilotProduct("coil-74");
+  if (coil74Pilot) {
+    const related = getPilotRelatedProducts(coil74Pilot);
     check(
-      "coil-56's related pilot products are exactly coil-68, coil-74, coil-87, pod-150, pod-169, coil-54, and coil-62 (same categoryId, self excluded)",
-      related.length === 7 && related.every((p) => ["coil-68", "coil-74", "coil-87", "pod-150", "pod-169", "coil-54", "coil-62"].includes(p.slug)),
+      "coil-74's related pilot products are exactly coil-68, coil-87, pod-150, pod-169, coil-54, and coil-62 (same categoryId, self + published coil-56 excluded)",
+      related.length === 6 && related.every((p) => ["coil-68", "coil-87", "pod-150", "pod-169", "coil-54", "coil-62"].includes(p.slug)),
       JSON.stringify(related.map((p) => p.slug))
     );
   }
@@ -157,27 +164,63 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   );
 
   // ===================================================================================
-  // Published bridge — publication-pipeline audit. Since OWNER_APPROVED_PUBLICATION is
-  // genuinely empty (no real product has owner price approval), every published-* function must
-  // return nothing at all against REAL data — this is the leakage check, not a placeholder.
-  // Unlike the pilot functions, these are NEVER environment-gated, so this must hold regardless
-  // of NODE_ENV.
+  // Published bridge — publication-pipeline audit. OWNER_APPROVED_PUBLICATION now has exactly
+  // one real entry (Coil-56, ฿300 — see publication-approvals.ts and the mission report), so
+  // every published-* function must return EXACTLY that one product and nothing else against
+  // REAL data — this proves both "the real approval genuinely surfaces" and "nothing beyond it
+  // leaks." Unlike the pilot functions, these are NEVER environment-gated, so this must hold
+  // regardless of NODE_ENV.
   // ===================================================================================
 
-  check("getPublishedProducts() is empty — no real product has owner publication approval yet", getPublishedProducts().length === 0, "n/a");
-  check("getPublishedProduct('coil-56') is undefined — the strongest DEV candidate is still not actually published", getPublishedProduct("coil-56") === undefined, "n/a");
-  check("getPublishedProductsByCategory('coils-accessories') is empty", getPublishedProductsByCategory("coils-accessories").length === 0, "n/a");
-  check("getPublishedProductsByBrand('voopoo') is empty", getPublishedProductsByBrand("voopoo").length === 0, "n/a");
-  check("searchPublishedProducts('voopoo') returns nothing", searchPublishedProducts("voopoo").length === 0, "n/a");
+  const allPublished = getPublishedProducts();
+  check(
+    "getPublishedProducts() returns exactly the one genuinely approved product (coil-56)",
+    allPublished.length === 1 && allPublished[0]?.slug === "coil-56",
+    JSON.stringify(allPublished.map((p) => p.slug))
+  );
 
-  // getPublishedRelatedProducts takes a StorefrontProductView — reuse a real pilot view (its
-  // shape is identical) purely to exercise the function; since the published pool is empty,
-  // related results must be empty regardless of which product is passed.
-  const anyPilotView = getPilotProducts()[0];
-  if (anyPilotView) {
+  const publishedCoil56 = getPublishedProduct("coil-56");
+  check(
+    "getPublishedProduct('coil-56') returns the real published product with the owner-approved ฿300 price and its one real variant",
+    publishedCoil56?.slug === "coil-56" && publishedCoil56?.sellingPrice === 300 && publishedCoil56?.variants.length === 1 && publishedCoil56?.variants[0]?.id === "Coil-56-3",
+    JSON.stringify(publishedCoil56)
+  );
+
+  check("getPublishedProductsByCategory('coils-accessories') is empty — coil-56 is pods-cartridges, not coils-accessories", getPublishedProductsByCategory("coils-accessories").length === 0, "n/a");
+  check(
+    "getPublishedProductsByCategory('pods-cartridges') returns exactly coil-56",
+    getPublishedProductsByCategory("pods-cartridges").length === 1 && getPublishedProductsByCategory("pods-cartridges")[0]?.slug === "coil-56",
+    "n/a"
+  );
+  check(
+    "getPublishedProductsByBrand('voopoo') returns exactly coil-56",
+    getPublishedProductsByBrand("voopoo").length === 1 && getPublishedProductsByBrand("voopoo")[0]?.slug === "coil-56",
+    "n/a"
+  );
+  check(
+    "searchPublishedProducts('voopoo') returns exactly coil-56",
+    searchPublishedProducts("voopoo").length === 1 && searchPublishedProducts("voopoo")[0]?.slug === "coil-56",
+    "n/a"
+  );
+  check("searchPublishedProducts('xyznonexistentquery123') returns nothing", searchPublishedProducts("xyznonexistentquery123").length === 0, "n/a");
+
+  // getPublishedRelatedProducts(coil-56) must be empty — coil-56 is currently the ONLY published
+  // product, so there is no other published product to relate it to (self is always excluded).
+  if (publishedCoil56) {
     check(
-      "getPublishedRelatedProducts(anyProduct) returns nothing while the published pool is empty",
-      getPublishedRelatedProducts(anyPilotView).length === 0,
+      "getPublishedRelatedProducts(coil-56) returns nothing — it is currently the only published product",
+      getPublishedRelatedProducts(publishedCoil56).length === 0,
+      "n/a"
+    );
+  }
+
+  // A still-pilot, different-category product must see zero published relations (no cross-
+  // category leakage into the published pool).
+  const coil53Pilot = getPilotProduct("coil-53");
+  if (coil53Pilot) {
+    check(
+      "getPublishedRelatedProducts(coil-53, coils-accessories) returns nothing — coil-56 is pods-cartridges, no cross-category leak",
+      getPublishedRelatedProducts(coil53Pilot).length === 0,
       "n/a"
     );
   }

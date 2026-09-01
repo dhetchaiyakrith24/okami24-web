@@ -44,9 +44,13 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
     JSON.stringify(views)
   );
 
+  // Coil-56 is now genuinely published (real owner-approved price, see publication-approvals.ts)
+  // — buildStorefrontPreview() is the raw per-record mapping and correctly reflects that; the
+  // pilot/preview EXCLUSION of published records happens one layer up, in storefront-bridge.ts's
+  // getPilotProduct(s) (proven by storefront-bridge-contract-test.ts), not here.
   check(
-    "every view's publicationStatus is unpublished — the read model never observes a published record",
-    views.every((v) => v.publicationStatus === "unpublished"),
+    "every view's publicationStatus is unpublished except the one genuinely published product (Coil-56)",
+    views.every((v) => v.publicationStatus === (v.shipnityProductId === "Coil-56" ? "published" : "unpublished")),
     JSON.stringify(views.map((v) => ({ id: v.shipnityProductId, status: v.publicationStatus })))
   );
 
@@ -86,8 +90,12 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
 
   const publishedNow = buildPublishedCatalog();
   check(
-    "buildPublishedCatalog() against REAL current data is empty — no real product has genuine owner publication approval yet",
-    publishedNow.length === 0,
+    "buildPublishedCatalog() against REAL current data returns exactly the one genuinely approved product (Coil-56, ฿300, one real variant)",
+    publishedNow.length === 1 &&
+      publishedNow[0]?.shipnityProductId === "Coil-56" &&
+      publishedNow[0]?.sellingPrice === 300 &&
+      publishedNow[0]?.variants.length === 1 &&
+      publishedNow[0]?.variants[0]?.id === "Coil-56-3",
     JSON.stringify(publishedNow)
   );
 
