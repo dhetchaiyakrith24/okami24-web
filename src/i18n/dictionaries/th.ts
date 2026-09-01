@@ -115,6 +115,7 @@ export const th: Dictionary = {
     axisResistance: "ความต้านทาน",
     axisSize: "ขนาด",
     axisStrength: "ความเข้มข้น",
+    specificationsTitle: "ข้อมูลจำเพาะ",
   },
   compare: {
     metaTitle: "เปรียบเทียบสินค้า",

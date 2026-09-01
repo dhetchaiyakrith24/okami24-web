@@ -125,6 +125,10 @@ export interface Dictionary {
     axisResistance: string;
     axisSize: string;
     axisStrength: string;
+    /** Heading for the manufacturer-facts block on a pilot product's detail page — see
+     *  VERIFIED_SPECIFICATIONS in the projection adapter. Only rendered when a product actually
+     *  has specifications. */
+    specificationsTitle: string;
   };
   compare: {
     metaTitle: string;

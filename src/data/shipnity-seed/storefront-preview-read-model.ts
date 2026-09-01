@@ -73,6 +73,18 @@ export interface StorefrontProductImageView {
   alt: string;
 }
 
+/** A single manufacturer-fact line — key/label/value only, matching `Specification` in
+ *  `src/types/catalog.ts`. `sourceStatus` is always `"verified"` for what this preview exposes
+ *  (see VERIFIED_SPECIFICATIONS in the projection adapter — an unverified fact is never added in
+ *  the first place, so there is nothing to filter here yet; kept as a real field, not hardcoded,
+ *  so a future unverified entry renders honestly rather than silently). */
+export interface StorefrontSpecificationView {
+  key: string;
+  label: string;
+  value: string;
+  sourceStatus: "verified" | "unverified";
+}
+
 export interface StorefrontProductView {
   slug: string;
   shipnityProductId: string;
@@ -106,6 +118,13 @@ export interface StorefrontProductView {
    *  behind `optionAxisLabel`, straight from `optionDefinitions[0].code`. */
   optionAxisCode: string | null;
   variants: StorefrontVariantView[];
+  /** Manufacturer facts only (see VERIFIED_SPECIFICATIONS) — never OKami24 editorial or merchant
+   *  knowledge, which stay separate fields for exactly this reason. Empty for every product this
+   *  hasn't been researched for yet — absence, not a placeholder. */
+  specifications: StorefrontSpecificationView[];
+  /** Official sources this product's copy/specifications were verified against — shown so a
+   *  customer (or future reviewer) can check provenance themselves. */
+  sourceUrls: string[];
 }
 
 function toView(product: ProductMasterInput): StorefrontProductView | null {
@@ -143,6 +162,8 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
       const label = selection ? (valueLabelByCode.get(selection.valueCode) ?? selection.valueCode) : v.id;
       return { id: v.id, label };
     }),
+    specifications: product.specifications,
+    sourceUrls: product.sourceUrls,
   };
 }
 

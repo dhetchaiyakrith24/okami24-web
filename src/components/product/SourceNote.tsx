@@ -1,10 +1,12 @@
 "use client";
 
-import type { Product } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 
-export function SourceNote({ product }: { product: Product }) {
+// Structural prop type (not the legacy `Product`) — this only ever reads `sourceUrls`, so it
+// works unchanged for both the legacy catalog and the ProductMaster pilot's `StorefrontProductView`
+// (production-readiness audit: reused here instead of a duplicate pilot-only component).
+export function SourceNote({ product }: { product: { sourceUrls: string[] } }) {
   const { dict } = useLocale();
   return (
     <section className="bg-surface-1 py-8">

@@ -119,6 +119,7 @@ export const zh: Dictionary = {
     axisResistance: "电阻值",
     axisSize: "尺寸",
     axisStrength: "浓度",
+    specificationsTitle: "产品规格",
   },
   compare: {
     metaTitle: "产品对比",

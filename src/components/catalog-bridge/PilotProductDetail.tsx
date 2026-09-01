@@ -8,6 +8,7 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
 import { ProductMasterVariantPicker } from "./ProductMasterVariantPicker";
 import { PilotRelatedProducts } from "./PilotRelatedProducts";
+import { SourceNote } from "@/components/product/SourceNote";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotAxisLabel } from "./axis-label";
 
@@ -51,6 +52,20 @@ export function PilotProductDetail({ product, related }: { product: StorefrontPr
           </div>
 
           <ProductMasterVariantPicker optionAxisLabel={axisLabel} variants={product.variants} />
+
+          {product.specifications.length > 0 && (
+            <div className="flex flex-col gap-2">
+              <span className="label-mono text-xs text-foreground-dim">{dict.pilot.specificationsTitle}</span>
+              <dl className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
+                {product.specifications.map((spec) => (
+                  <div key={spec.key} className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
+                    <dt className="text-foreground-muted">{spec.label}</dt>
+                    <dd className="text-right font-medium text-foreground">{spec.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          )}
         </div>
 
         <div className="relative order-1 aspect-[4/5] w-full lg:order-2">
@@ -79,6 +94,7 @@ export function PilotProductDetail({ product, related }: { product: StorefrontPr
       </Container>
 
       <PilotRelatedProducts products={related} />
+      {product.sourceUrls.length > 0 && <SourceNote product={product} />}
     </>
   );
 }

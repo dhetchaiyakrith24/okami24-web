@@ -121,6 +121,7 @@ export const en: Dictionary = {
     axisResistance: "Resistance",
     axisSize: "Size",
     axisStrength: "Strength",
+    specificationsTitle: "Specifications",
   },
   compare: {
     metaTitle: "Compare",

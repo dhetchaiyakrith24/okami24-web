@@ -355,6 +355,55 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
 };
 
 // ===================================================================================
+// Verified specifications — production-readiness audit. Manufacturer facts only, each one
+// individually cited (see `sourceUrls` alongside), sourced via WebSearch/WebFetch against the
+// brand's own official storefront — never copied marketing paragraphs, only discrete facts
+// (resistance/wattage/capacity/compatible-device). A product absent here simply has no
+// specifications yet — not a placeholder, not a gap that blocks anything else. Deliberately NOT
+// attempted for Coil-53 this round: WebSearch surfaced myuwell.com's Caliburn G2 coil options as
+// 0.8Ω/1.2Ω, which does not match this parent's real Shipnity variant (1.0Ω) — rather than cite a
+// mismatched fact, this is left unresolved (a real UNKNOWN, not a discrepancy confidently proven
+// either way from search alone; needs a closer manual check, not a guess).
+// ===================================================================================
+
+interface VerifiedSpecEntry {
+  specifications: ProductMasterInput["specifications"];
+  sourceUrls: string[];
+}
+
+const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
+  "Coil-38": {
+    specifications: [
+      { key: "wattage-02", label: "กำลังไฟที่แนะนำ (TPP-DM2, 0.2Ω)", value: "40-60W", sourceStatus: "verified" },
+      { key: "wattage-03", label: "กำลังไฟที่แนะนำ (TPP-DM4, 0.3Ω)", value: "32-40W", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "TPP Pod, DRAG 3 Kit, DRAG X Plus Kit", sourceStatus: "verified" },
+    ],
+    sourceUrls: ["https://shop.voopoo.com/products/tpp-coils"],
+  },
+  "Coil-56": {
+    specifications: [{ key: "capacity", label: "ความจุ", value: "5mL", sourceStatus: "verified" }],
+    sourceUrls: ["https://shop.voopoo.com/products/pnp-x-cartridge"],
+  },
+  "Coil-74": {
+    specifications: [
+      { key: "capacity", label: "ความจุ", value: "3mL (เติมน้ำยาได้)", sourceStatus: "verified" },
+      { key: "coil-replacement", label: "คอยล์", value: "เปลี่ยนคอยล์แยกได้", sourceStatus: "verified" },
+    ],
+    sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-x"],
+  },
+  "Coil-87": {
+    // The compatible-device list comes from the TPP coil page (the coil this Pod houses), not a
+    // dedicated TPP Pod spec page — real evidence, same source, one step removed.
+    specifications: [{ key: "compatible-devices", label: "ใช้ได้กับ", value: "DRAG 3 Kit, DRAG X Plus Kit", sourceStatus: "verified" }],
+    sourceUrls: ["https://shop.voopoo.com/products/tpp-coils"],
+  },
+  "Coil-92": {
+    specifications: [{ key: "wattage", label: "กำลังไฟที่แนะนำ (0.15Ω)", value: "60-80W (DTL)", sourceStatus: "verified" }],
+    sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils"],
+  },
+};
+
+// ===================================================================================
 // Variant structure — built ONLY from childRole === "variant" children. Never from
 // accessory-component/sell-unit/unresolved. Reports every excluded child instead of
 // silently dropping it.
@@ -514,10 +563,10 @@ function buildDraftCandidate(
     tagline: copy?.tagline ?? null, // Phase 2.7 minimum copy — see MINIMUM_COPY, never fabricated
     shortDescription: copy?.shortDescription ?? null,
     attributes: null, // no manufacturer spec evidence
-    specifications: [],
+    specifications: VERIFIED_SPECIFICATIONS[parent.shipnityProductId]?.specifications ?? [], // production-readiness audit — cited manufacturer facts only, never fabricated
     features: [],
     assets: VERIFIED_MEDIA[parent.shipnityProductId] ?? [], // Phase 2.9 — official-photo only, never fabricated
-    sourceUrls: [],
+    sourceUrls: VERIFIED_SPECIFICATIONS[parent.shipnityProductId]?.sourceUrls ?? [],
 
     commerce: {
       internalSku: null, // never fabricated
