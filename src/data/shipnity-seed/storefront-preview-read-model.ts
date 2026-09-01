@@ -48,18 +48,29 @@ import { projectActiveCatalog } from "./active-catalog-to-product-master";
  *  comment for why `systemType` stays null for these, by design, not a gap). Wave 5
  *  (coil-54/coil-62/Pod-169) resolves "Feelin" to NEVOKS and "infy" to INFY, both official
  *  first-party sources. Pod-147 resolved as an exact-legacy-match to `m-switch-pod`, not a new
- *  preview candidate. Several other candidates (Muro/Marbo/Nexbar/Vazer/MOOOD/BAAM/Dooze/Pepo/
- *  Dundu/Reswa/Foli Bar/Pop Up-branded parents) were investigated and deliberately deferred — no
- *  verifiable official first-party source for a real Brand record (or, for Marbo, a genuinely
- *  ambiguous relationship to the existing salthub brand) — see the Phase 3.5 report. Also
+ *  preview candidate. Several other candidates (Muro/Nexbar/Vazer/MOOOD/BAAM/Dooze/Pepo/Dundu/
+ *  Reswa/Foli Bar/Pop Up-branded parents) were investigated and deliberately deferred — no
+ *  verifiable official first-party source for a real Brand record — see the Phase 3.5 report (and
+ *  this session's report for a fresh, still-negative re-check of Muro/Vape Maker, Foli Bar,
+ *  Reswa, and Nexbar specifically — Nexbar in particular has a real naming-collision risk with
+ *  Wotofo's own, unrelated "nexBar" product, so leave it deferred rather than guess). Also
  *  investigated and correctly NOT added: Pod-168/Pod-177/Pod-179 (Caliburn G4 Pro / Vmate i3 /
  *  Argus G4) — real, well-known flagship devices, but each already exists in the legacy catalog
  *  (`caliburn-g4-pro`/`vmate-i3`/`argus-g4`); `projectActiveCatalog()`'s own dedup check already
  *  catches these (`status: "blocked", reason: "identity-matches-existing-legacy-product"`), so
- *  adding them here would only create duplicate identity/content. Wave 6 (this session) resolves
- *  Coil-55 ("หัวแทงค์ Caliburn G2") — deferred since Phase 3.4 as a possible Coil-53 duplicate —
- *  as a genuinely distinct real product (the empty pod, not the coil); see
- *  `TAXONOMY_MATCHES["Coil-55"]`'s comment in `active-catalog-to-product-master.ts`. */
+ *  adding them here would only create duplicate identity/content. Wave 6 resolves Coil-55
+ *  ("หัวแทงค์ Caliburn G2") — deferred since Phase 3.4 as a possible Coil-53 duplicate — as a
+ *  genuinely distinct real product (the empty pod, not the coil); see
+ *  `TAXONOMY_MATCHES["Coil-55"]`'s comment. This session ALSO resolved the previously "genuinely
+ *  ambiguous" Marbo↔Salthub relationship with real official evidence: Marbo IS Salthub's
+ *  pre-rebrand name (salthub.com's own backend still carries "Marbo-LOGO" files, and its current
+ *  lineup is exactly "M Bar series 9K/10K/15K" and "ZERO PRO") — but all three device-Marbo
+ *  Shipnity records (Disposable-25 "Marbo Bar 9K", Pod-178 "Marbo Zero Pro", Pod-85 "หัวพอต Marbo
+ *  Zero") turned out to be exact duplicates of already-existing legacy products (`m-bar-9k`,
+ *  `zero-pro`, `zero-cartridge` respectively) — correctly NOT added, same dedup mechanism as
+ *  Pod-168/177/179 above (Disposable-25 was initially miscategorized as new before a direct
+ *  grep of every legacy `id: "m-bar-*"` caught the match — see
+ *  `TAXONOMY_MATCHES["Disposable-25"/"Pod-178"/"Pod-85"]`'s comments. */
 const PREVIEW_SHIPNITY_IDS = [
   "Coil-53", "Coil-55", "Coil-56", "Coil-74", "Coil-87", "Coil-92",
   "Coil-1", "Coil-21", "Coil-72", "Coil-83", "Coil-94",

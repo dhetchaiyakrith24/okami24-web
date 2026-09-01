@@ -128,6 +128,24 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "Pod-177": { brandId: "voopoo", familyId: "vmate", exactLegacyMatch: "vmate-i3", evidence: 'name "Vmate i3" is an exact match to legacy product internalId "vmate-i3" (displayName "VOOPOO VMATE i3")' },
   "Pod-179": { brandId: "voopoo", familyId: "argus", exactLegacyMatch: "argus-g4", evidence: 'name "Voopoo Argus G4" is an exact match to legacy product internalId "argus-g4" (displayName "VOOPOO ARGUS G4")' },
 
+  // Resolves the Marbo↔Salthub deferral (previously "genuinely ambiguous relationship" — see the
+  // catalog-expansion report). New this session: the OFFICIAL salthub.com site's own backend
+  // still carries "Marbo-LOGO" image filenames, and its CURRENT product lineup is exactly "M Bar
+  // series (9K / 10K / 15K)" and "ZERO PRO" — i.e. Marbo is the brand's OLD name, not a separate
+  // company. Independently corroborated by vapeauras.com's own collection copy: "Explore
+  // Salthub—your one-stop vape brand featuring the Marbo Bar 9K disposable vape, the sleek Marbo
+  // Zero pod device, and the high-capacity Marbo M Switch device." Two of the three device-Marbo
+  // Shipnity records are exact duplicates of already-existing legacy products (see below); only
+  // Marbo Bar 9K is a genuinely new SKU (legacy only has the 10K generation).
+  "Pod-178": { brandId: "salthub", familyId: "zero", exactLegacyMatch: "zero-pro", evidence: 'name "Marbo Zero Pro" is the pre-rebrand name of legacy "zero-pro" (SALTHUB ZERO PRO) — official salthub.com currently sells this exact device as "ZERO PRO"; color variants (Gunmetal/Copper/Charcoal Red/Blue Purple/Champagne) match a device-body shape, not a cartridge' },
+  "Pod-85": { brandId: "salthub", familyId: "zero", exactLegacyMatch: "zero-cartridge", evidence: 'name "หัวพอต Marbo Zero" (Marbo Zero pod head) + flavor-shaped children (Apple Aloe, Fruit Tea) is the pre-rebrand name of legacy "zero-cartridge" (SALTHUB ZERO CARTRIDGE) — both are the same 2.2mL prefilled cartridge for the Zero Pro/Zero Nano device bodies' },
+  // Marbo Bar 9K — CORRECTED mid-session: initially treated as a genuinely new SKU (legacy only
+  // seemed to have the 10K generation at a glance), but legacy in fact already has `m-bar-9k`
+  // (full real data: real photo, specs, everything) — same dedup pattern as Pod-178/Pod-85 above,
+  // just missed on the first pass by checking the official site's claim without directly
+  // grep-checking every `id: "m-bar-*"` in salthub.ts first. Same evidence chain otherwise.
+  "Disposable-25": { brandId: "salthub", familyId: "m-bar", exactLegacyMatch: "m-bar-9k", evidence: 'name "Marbo Bar 9K" is the pre-rebrand name of legacy "m-bar-9k" (SALTHUB M BAR 9K) — official salthub.com currently sells this exact 9,000-puff SKU as part of its "M Bar series (9K / 10K / 15K)"' },
+
   // ===================================================================================
   // Phase 3.5 — second real-brand batch, verified against official first-party sources (see the
   // Phase 3.5 report for the WebSearch/WebFetch evidence trail). Same rule as every entry above:

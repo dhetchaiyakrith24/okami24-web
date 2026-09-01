@@ -14,8 +14,10 @@ export interface ReadModelContractResult {
 // Phase 3.4 added Coil-1/21/72/83/94; Phase 3.5 added Coil-38/63/68/70/89, Pod-159/149/150,
 // Disposable-34, the pilot's first e-liquid products (ELIQUID-1/Eliquid-109/eliquid-133), and a
 // final wave (coil-54/coil-62/Pod-169, resolving "Feelin"->NEVOKS and "infy"->INFY). This
-// session's catalog-expansion slice resolved Coil-55 (deferred since Phase 3.4) — see
-// PREVIEW_SHIPNITY_IDS.
+// session's catalog-expansion slice resolved Coil-55 (deferred since Phase 3.4). It also resolved
+// the Marbo↔Salthub rebrand relationship, but all three device-Marbo Shipnity records turned out
+// to be exact duplicates of already-existing legacy products (`m-bar-9k`/`zero-pro`/
+// `zero-cartridge`) — correctly none of them added here — see PREVIEW_SHIPNITY_IDS.
 const EXPECTED_IDS = [
   "Coil-53", "Coil-55", "Coil-56", "Coil-74", "Coil-87", "Coil-92",
   "Coil-1", "Coil-21", "Coil-72", "Coil-83", "Coil-94",
