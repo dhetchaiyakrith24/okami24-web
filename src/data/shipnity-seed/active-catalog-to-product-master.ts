@@ -81,7 +81,17 @@ interface TaxonomyMatch {
 
 const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "Coil-1": { brandId: "voopoo", familyId: "vinci", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Vinci" (VOOPOO VINCI family) + Shipnity "Coil-" prefix' },
-  "Coil-21": { brandId: "voopoo", familyId: "argus", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Argus" (VOOPOO ARGUS family) + Shipnity "Coil-" prefix' },
+  // Catalog-intelligence mission correction — the "หัว / Coil- prefix does not reliably mean bare
+  // coil" pattern again, this time resolved from VOOPOO's OWN product page. shop.voopoo.com's
+  // "Argus Pod Cartridge" documents an "Integrated 0.7ohm Or 1.2ohm Coil", 2ml PCTG capacity, side
+  // filling, magnetic connection, 3 pieces per pack — a replacement POD with a built-in coil, not a
+  // bare coil head. The Thai "คอยล์" in the Shipnity name is retailer shorthand. Same correction
+  // class as Coil-55/56/68/74/87/94/coil-54/coil-62. STILL UNPUBLISHED: the single active child
+  // "Argus mix (coil เวอร์ชั่นใหม่)" names no resistance, and 0.7Ω and 1.2Ω have DIFFERENT official
+  // photos, so no card image can be chosen without misrepresenting one of them. "Argus mix" is also
+  // not a VOOPOO product name — most plausibly the Thai retailer's own "คละ" (assorted) box, but
+  // that reading is an inference, not evidence, so it is not recorded as fact.
+  "Coil-21": { brandId: "voopoo", familyId: "argus", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name contains "Argus" (VOOPOO ARGUS family); shop.voopoo.com own "Argus Pod Cartridge" page documents an integrated-coil 2ml replacement pod (3pcs/pack), not a bare coil' },
   // Resolution (this session) — the earlier "0.8Ω/1.2Ω-only" mismatch note (see
   // VERIFIED_SPECIFICATIONS's old comment) was based on an incomplete search snippet. Fetched
   // myuwell.com/caliburn/caliburn-g2 directly: its own text states the Caliburn G2 device is
@@ -110,7 +120,13 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // (bare head). categoryId/systemType corrected to the existing "pods-cartridges"/
   // "pod-cartridge" values — no new taxonomy needed, both already exist.
   "Coil-74": { brandId: "uwell", familyId: "caliburn", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name contains "Caliburn" (UWELL CALIBURN family); child spec (3ml capacity) matches the official Caliburn X refillable pod, not a coil' },
-  "Coil-83": { brandId: "voopoo", familyId: "argus", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Argus" (VOOPOO ARGUS family) + Shipnity "Coil-" prefix' },
+  // Catalog-intelligence mission correction. A THIRD distinct resolution of the "หัวเปล่า" pattern:
+  // here the Thai label ("bare head") is literally accurate — but as EMPTY POD, not bare coil. The
+  // retail box photographed for VERIFIED_MEDIA reads "ARGUS POD / Empty Cartridge / 2pcs / 2.0mL",
+  // and the two pods in frame have a visibly empty coil socket — the coil (VOOPOO ITO M-series) is
+  // sold separately. The box count matches this record's child exactly: "1 กล่อง2 หัว" (1 box,
+  // 2 heads) = "2pcs". categoryId/systemType corrected to "pods-cartridges"/"pod-cartridge".
+  "Coil-83": { brandId: "voopoo", familyId: "argus", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name contains "Argus" (VOOPOO ARGUS family); the retail box in this record own verified media reads "ARGUS POD / Empty Cartridge / 2pcs / 2.0mL" with a visibly empty coil socket — an empty refillable pod that takes ITO coils separately, not a coil' },
   // Correction (this session) — same "หัว(...)/"Coil-" doesn't reliably mean bare coil" pattern
   // as Coil-55/56/68/74/87/54/62. Giant Vapes' real "Uwell CALIBURN G3 Replacement Pods" product
   // lists exactly four resistance options — "0.4 ohm Meshed"/"0.6 ohm Meshed"/"0.9 ohm Meshed"/
@@ -129,7 +145,13 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "Coil-56": { brandId: "voopoo", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัวเปล่า Voopoo PnP-X" states "Voopoo" explicitly; active variants (Black/Gray/Silver) match the official PnP X Cartridge color range, not the resistance-variant coil' },
   // Phase 2.8 correction — VOOPOO documents "TPP Pod"/"Pod Tank" as a distinct product from TPP
   // coils; the Shipnity name itself literally says "Pod". categoryId/systemType corrected.
-  "Coil-87": { brandId: "voopoo", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "Voopoo TPP Pod" states "Voopoo" explicitly and literally says "Pod" — VOOPOO documents TPP Pod/Pod Tank separately from TPP coils' },
+  // Catalog-intelligence mission — the long-standing "Black vs Gunmetal" ambiguity is RESOLVED,
+  // and it was a false dichotomy: both are real VOOPOO colorways. Element Vape's raw HTML carries a
+  // variant-to-image mapping (variant "Black" = SKU VPO097-BLA, "Gunmetal" = VPO097-GUN, plus a
+  // third "Silver"), and the Black-variant photo itself shows the retail box printed with a rounded
+  // "BLACK" badge — manufacturer packaging artwork, so the color name is VOOPOO's own, not a
+  // retailer's invention. This record's single active child is "Black".
+  "Coil-87": { brandId: "voopoo", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "Voopoo TPP Pod" states "Voopoo" explicitly and literally says "Pod" — VOOPOO documents TPP Pod/Pod Tank separately from TPP coils; the "Black" colorway is confirmed by VOOPOO retail-box artwork (a printed "BLACK" badge, visible in this record verified media) and by the retailer variant-to-SKU mapping VPO097-BLA' },
   // Confirmed coil (Phase 2.8 official-evidence pass) — VOOPOO's PnP X coil line (resistance
   // variants) is a real, separate product from the PnP X Cartridge above.
   "Coil-92": { brandId: "voopoo", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "คอยล์ Voopoo PnP X" states "Voopoo" explicitly — official VOOPOO PnP X coils (resistance variants) confirm this is a real coil line, distinct from the PnP X Cartridge' },
@@ -183,9 +205,52 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // first-party site (WebFetch, not a retailer or reseller). Every one of these has flavor-shaped
   // children (a real prefilled-product signature), consistent with its resolved systemType.
   "Pod-159": { brandId: "esko-bar", categoryId: "pod-kits", systemType: "pod-kit", evidence: 'name "เครื่อง Esko Bar Switch 20k" ("เครื่อง" = device) states the brand explicitly; eskobarvape.com (official) lists "ESKO BAR SWITCH POD" as a real reusable-body product line distinct from its disposable line' },
-  "Pod-149": { brandId: "ske", categoryId: "disposables", systemType: "disposable", evidence: 'name "SKE Crystal B20K Puffs" states the brand explicitly; skevape.com (official) confirms SKE\'s Crystal Bar / high-puff-count disposable series as a real product line' },
-  "Pod-150": { brandId: "kardinal-stick", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "KS Quikpro 15K หัวพอต" ("หัวพอต" = pod cartridge) states the brand explicitly ("KS"); kardinal.com (official) confirms Quikpro as a real hybrid-cartridge product rated "up to 15,000 puffs" — an exact match to this parent\'s own "15K" name' },
-  "Disposable-34": { brandId: "instabar", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity\'s own "Disposable-" id prefix + name "Insta Bar PX 15000 Puffs" states the brand explicitly; instabar.net (official) confirms Instabar as a real disposable-vape manufacturer with a tiered puff-count product range including a 15,000-puff tier' },
+  // Catalog-intelligence mission (2026-09-02) — BRAND CLAIM WITHDRAWN (this entry previously
+  // asserted brandId:"ske"/categoryId:"disposables"). Re-checked directly against skevape.com's
+  // OWN sitemap and full product-page enumeration rather than search snippets: SKE's real
+  // catalogue is Crystal Bar, Crystal Original, Crystal Plus, Crystal 4in1, CL2000, CL6000,
+  // B12000, BOX Bi15000, SKE Bar 15K, CL-15000, MG 25000, Crystal Vision 30000, Fresa 40k — there
+  // is NO "B20000" model. It does not appear on any reachable UK/EU retailer either; every
+  // "SKE Crystal B20000" listing found is a Thai grey-market page. SKE's own site additionally
+  // runs multiple authenticity-verification pages (a "how to verify a genuine Crystal Bar"
+  // article and a scratch-code checker at skevape.com/product_verify) — the signature of a
+  // heavily-counterfeited brand. This is either a genuine Thailand/SEA-exclusive SKU SKE never
+  // published globally, or a counterfeit trading on the Crystal name, and there is no way to tell
+  // which from public evidence — the SKE brand record itself stays (real, first-party), but
+  // attributing THIS specific product to it is not supportable. Removing the entry leaves
+  // brandId/categoryId null, correctly keeping this record unpublishable. RECOMMENDATION: do not
+  // publish this product at all unless the owner can verify authenticity directly against SKE's
+  // own scratch-code checker on physical stock — a wrong call here is a counterfeit-goods risk,
+  // not just a data-accuracy one.
+  //   (was: "Pod-149": { brandId: "ske", categoryId: "disposables", systemType: "disposable", ... })
+  // Catalog-intelligence mission (2026-09-02) — re-checked against kardinal.com's OWN Quikpro
+  // page directly (official first-party — note the brand's real domain is kardinal.com/
+  // kardinalstick.com; there is NO Thailand-market edition, so any "Kardinal Stick Official"-
+  // branded Thai site is a reseller, not first-party). Confirmed cited facts: 15ml cartridge, up
+  // to 15,000 puffs, hybrid ceraKoil ceramic-mesh coil, official flavor list of 15 names. FLAG:
+  // this record's "Watermelon" child is NOT in Kardinal's official 15-flavor list (which has
+  // Grape and Lychee instead) — either a Thailand-exclusive SKU, a retailer rename, or a
+  // non-genuine cartridge; needs an owner decision before publishing that specific child. STILL
+  // UNPUBLISHED (media): every reachable official Quikpro cartridge asset is a dimension diagram
+  // or a 64px flavor icon, both failing the card-image resolution floor; every available
+  // photograph is of the reusable BATTERY DEVICE, not this cartridge — using one would misrepresent
+  // the product being sold.
+  "Pod-150": { brandId: "kardinal-stick", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "KS Quikpro 15K หัวพอต" ("หัวพอต" = pod cartridge) states the brand explicitly ("KS"); kardinal.com (official) confirms Quikpro as a real hybrid-cartridge product rated "up to 15,000 puffs" — an exact match to this parent\'s own "15K" name; official 15-flavor list confirmed, though this record\'s "Watermelon" child is not among them (flagged for owner review)' },
+  // Catalog-intelligence mission — BRAND CLAIM WITHDRAWN (this entry previously asserted
+  // brandId:"instabar"). Re-checked against instabar.net's OWN /products.json catalogue rather
+  // than search snippets: the full Instabar lineup is Glow 100K, Max S 50K, Mega 120K, Zerofog
+  // Twin 50k, DC 15000, Pro Max 70K, instapod Prime/Prime Lite/Prime Pro/Mate, Hi5 series, GO,
+  // EVA 30000, Switch Plus, BE 40000, OC 12000, WT 15000, Ultra 12000, Air 600, Jar, Max 7500 —
+  // there is NO PX model. The old evidence string ("a 15,000-puff tier") is true only of DC 15000
+  // and WT 15000, which are different products. Meanwhile a real "Hyper Bar PX 15000" exists with
+  // matching specs (20ml, 5% salt nic, 15,000 puffs) and the SAME "Yummy Bear" flavor on what
+  // appears to be an identical chassis, and Chinese wholesalers already sell the item as "Insta
+  // Hyperbar Px 15000". The product is real and widely stocked in Thailand (8+ independent Thai
+  // retailers, ฿329-349), but attributing it to INSTABAR is not supportable from Instabar's own
+  // catalogue. Removing the entry rather than keeping a weaker one leaves brandId/categoryId
+  // null, which correctly keeps this record unpublishable until the owner can read the physical
+  // branding off actual stock. The `instabar` Brand record itself stays — it is a real brand,
+  // just not evidenced as this product's brand.
 
   // ===================================================================================
   // Phase 3.5 (E-liquid wave) — first e-liquid ProductMaster candidates. `categoryId: "e-liquid"`
@@ -199,9 +264,48 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // single source's idiosyncratic categorization. This is evidence about the E-LIQUID line
   // specifically and does NOT resolve the separate, still-unresolved Marbo-device question (see
   // MINIMUM_COPY's Coil-55 comment and the Phase 3.5 report §MARBO) — kept deliberately separate.
-  "ELIQUID-1": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "MARBORO SALT NIC 30 ML"; 3 independent Thai retailers (thai-vapes.com "Salt Hub - Marbo Salt Nic", vape69th.com, goatvapethai.com) consistently attribute the Marboro salt-nic line to Salt Hub' },
-  "Eliquid-109": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Marboro Freebase ขวดยาว" — same Marboro/Salt Hub evidence as ELIQUID-1, different nicotine formulation (freebase vs. salt nic) and bottle format' },
-  "eliquid-133": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Yogurt Salt Hub" states the brand explicitly and directly — no inference needed' },
+  // Catalog-intelligence mission (2026-09-02) — TRADEMARK RISK FLAG, owner review required before
+  // ANY of these three publish, independent of their data-completeness state.
+  //
+  // "Marbo"/"มาโบโร่" (ELIQUID-1, Eliquid-109) is confirmed as a genuine Salt Hub product line
+  // (salthub.com's own favicon is literally "Marbo-M" branded, and the physical label prints "A
+  // product by: Salt hub" — this is real, not a naming coincidence). However, the bottle artwork
+  // itself reproduces Marlboro's red roof/chevron device, and the Red/Gold/Silver/Blue color tier
+  // naming echoes Marlboro's own pack-color tiers — the Red variant is explicitly tobacco-flavored,
+  // which strengthens the visual association. Marlboro trade dress is aggressively enforced by its
+  // owner. eliquid-133 ("Yogurt Salt Hub") is sold by at least one retailer AS A VARIANT of this
+  // same Marbo line (though its own bottle label reads only "Yogurt probiotics — The Original,"
+  // with no visible Marbo/tobacco branding — brand attribution here is retailer-asserted, not
+  // label-printed) and separately carries a real, uncorroborated nicotine-strength conflict across
+  // sources (30mg vs 35mg).
+  //
+  // This is a business/legal-risk decision, not a data-completeness one — publishing packaging
+  // that imitates a real, aggressively-protected trademark is a materially different kind of risk
+  // than an incomplete spec sheet, and not something to resolve by web research or by this
+  // pipeline's ordinary evidence tiers. All three stay UNPUBLISHED and are deliberately NOT run
+  // through the rest of the readiness pipeline (no VERIFIED_MEDIA/VERIFIED_SPECIFICATIONS entries
+  // added this session, even though real tier-3 media and specs were independently sourced and
+  // verified for 4 of ELIQUID-1's 5 colors, all of Eliquid-109, and eliquid-133) until the owner
+  // has explicitly decided whether to sell this line at all under this packaging. Taxonomy
+  // (brandId/categoryId) is left resolved below since Salt Hub genuinely is the real brand — only
+  // publication is held.
+  "ELIQUID-1": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "MARBORO SALT NIC 30 ML"; 3 independent Thai retailers (thai-vapes.com "Salt Hub - Marbo Salt Nic", vape69th.com, goatvapethai.com) consistently attribute the Marboro salt-nic line to Salt Hub; salthub.com\'s own favicon and the physical bottle label ("A product by: Salt hub") independently confirm this. See the trademark-risk flag above — NOT cleared for publication regardless of data completeness.' },
+  "Eliquid-109": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Marboro Freebase ขวดยาว" — same Marboro/Salt Hub evidence as ELIQUID-1, different nicotine formulation (freebase vs. salt nic) and bottle format. See the trademark-risk flag above — NOT cleared for publication regardless of data completeness.' },
+  "eliquid-133": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Yogurt Salt Hub" states the brand explicitly and directly — no inference needed, though the actual bottle label reads only "Yogurt probiotics — The Original" with no visible Salt Hub/Marbo branding (retailer-asserted attribution). See the trademark-risk flag above — held alongside ELIQUID-1/Eliquid-109 pending owner review, plus an unresolved 30mg/35mg nicotine-strength conflict across sources.' },
+
+  // Catalog-intelligence mission (2026-09-02) — Eliquid-64 ("Double Mint Salt Nic") deliberately
+  // has NO entry here, and none should be added without an explicit owner decision. Research
+  // confirmed "Double Mint" is the product LINE name, not the flavor (its real variant list is
+  // Apple, Grape, Lychee, Mint, Peach, Watermelon — this record's Watermelon/Peach children match
+  // exactly, "Mint" is a sibling flavor). The line's actual bottle label reads "RIGLEY'S
+  // DOUBLEMINT CHEWING GUM" rendered in Wrigley's own green-arrow trade dress, with the brand name
+  // deliberately misspelled by one letter — a direct counterfeit of a real, actively-owned Mars/
+  // Wrigley trademark, not a genre convention (unlike the milder Marbo/Marlboro case above; this
+  // one is unambiguous). There is no legitimate brand to resolve "Double Mint" to. This is
+  // recorded here specifically so a future session does not re-research and admit it as if it
+  // were an ordinary "brand identity unresolved" case — it is not unresolved, it is a confirmed
+  // counterfeit, and the correct default is to never carry it into the catalog under this
+  // packaging, pending an explicit owner decision to the contrary.
 
   // Part B (device wave 2) — "Feelin" resolves to NEVOKS (nevoks.com, official): both Feelin Mini
   // and Feelin C1 are confirmed real pod-system products in Nevoks' own FEELIN series. Both
@@ -212,7 +316,19 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // child is "Matcha Clear" — a FLAVOR, not a resistance value, meaning this is a prefilled
   // cartridge for the Feelin C1, not its separate SPL10-branded coil line.
   "coil-54": { brandId: "nevoks", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัวเปล่า Feelin Mini" + sell-unit-only child (no resistance value) matches a real retailer listing for the Feelin Mini refillable pod cartridge (2 empty tanks, 2ml); nevoks.com confirms Feelin Mini as a real Nevoks product, with its actual coils sold separately as "SPL10"' },
-  "coil-62": { brandId: "nevoks", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัวเปล่า Feelin C1" + single FLAVOR child ("Matcha Clear", not a resistance value) confirms this is a prefilled cartridge for the Feelin C1, not its separate SPL10-branded coil; nevoks.com confirms Feelin C1 as a real Nevoks product' },
+  // Catalog-intelligence mission (2026-09-02) correction — the earlier evidence string called this
+  // a "prefilled cartridge," which was wrong. Direct evidence: NEVOKS' own C1 kit page describes a
+  // 2.8ml PCTG clear pod, and a retailer teardown states it is "delivered empty, without coil" —
+  // the coil (NEVOKS SPL-10, 0.6Ω/1.0Ω) is a SEPARATE purchase that drops into this empty tank.
+  // "หัวเปล่า" (bare head) is therefore literally accurate here, as EMPTY POD, not as a coil itself
+  // (the coil-62 id prefix is again a Shipnity operational artifact, not physical evidence) —
+  // categoryId/systemType are unchanged (still correctly "pods-cartridges"/"pod-cartridge"), only
+  // the "prefilled" characterization is corrected. STILL UNPUBLISHED: no photo of the "Matcha
+  // Clear" colorway exists anywhere reachable — NEVOKS' own product feed sells only the C1 kit
+  // (no separate cartridge SKU/color list), and no NEVOKS-authorized retailer stocks a Matcha
+  // variant (only Black/Red/Frost/Light Blue/Smoke/Amber found) — "Matcha" appears to be an
+  // Asia-market-exclusive color with no located product photography.
+  "coil-62": { brandId: "nevoks", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัวเปล่า Feelin C1" + single color child ("Matcha Clear", axis owner-confirmed) — NEVOKS\' own C1 kit page and an independent retailer teardown confirm this is an empty, coil-less 2.8ml PCTG replacement pod (the SPL-10 coil is sold separately), not the coil itself; nevoks.com confirms Feelin C1 as a real Nevoks product' },
   // "หัว infy 2.5 ml" — brand explicit; INFY's own official site (infy.my) lists "2.5ML Cartridge"
   // as a real current product line — an exact size match, not a coincidence.
   "Pod-169": { brandId: "infy", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัว infy 2.5 ml" states the brand explicitly; infy.my (official) lists "2.5ML Cartridge" as a real INFY product line — an exact size match' },
@@ -226,6 +342,20 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // could not be independently confirmed against a distinctly-named official edition (Wotofo's own
   // site shows "Standard"/"Vivid Edition" naming, no edition explicitly called "Clear"/
   // "Transparent") — carried forward as-is from the source, not asserted as verified.
+  // Catalog-intelligence mission (2026-09-02) — attempted to close the media gap this session.
+  // Downloaded and visually inspected wotofo.com's own two official nexBAR 18K product renders
+  // (Shopify CDN, cdn.shopify.com/.../wotofo-nexbar-18k-{1,26}.jpg — both tier-1, first-party).
+  // REJECTED both: the retail-box shot legibly prints "DOUBLE APPLE" and the device-only shot
+  // prints "LEMON LIME" directly on the unit — neither flavor is in this record's active
+  // 10-flavor Thai lineup, and Wotofo's variant data has no image_id per flavor to select from
+  // (every official shot is a fixed flavor, not swappable). Using either would show a customer a
+  // real Wotofo product printed with a flavor OKami24 doesn't stock. STILL UNPUBLISHED (media) —
+  // no clean alternative found; a retailer's per-flavor set exists but is a heavy marketing
+  // composite with no watermark-free crop (see also the Thai-flavor-lineup mismatch flag below).
+  // ALSO FLAGGED: this record's own 10-flavor lineup matches NO single official or retailer
+  // source found (Wotofo's own list, and two different Thai retailers' stock, are each a
+  // different 10) — the flavors here are plausibly a genuine Thai-market lineup but that has not
+  // been independently corroborated; publish, if ever, as retailer-supplied and uncorroborated.
   "Pod-180": { brandId: "wotofo", categoryId: "disposables", systemType: "disposable", evidence: 'name "Nexbar Clear 18k" — wotofo.com\'s own official nexBAR 18K product/collection pages confirm a real, matching product (18,000 puffs, 750mAh, dual nexMESH coils, 20 flavors); the "Clear" edition-name qualifier itself is carried from the Shipnity label, not independently confirmed against an official edition name' },
 
   // ===================================================================================
@@ -259,15 +389,40 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // "ILUMA i" mid-tier device, not the original "Standard"/"ILUMA" model.
   "IQOSHEET-18": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'name "Iqos iluma Standard" — both active children (Midnight Black, Breeze Blue) exact-match the official "IQOS ILUMA i" (mid-tier) color range and do NOT appear in the original ILUMA\'s 5-color list, resolving this as the ILUMA i device, not the original/Standard generation; confirmed via iqos.com/ph\'s own "ILUMA i Breeze Blue" product page' },
   // "Iqos iluma one" — DELIBERATELY NOT resolved to one generation, and NOT published (see
-  // publication-approvals.ts comment): this is a genuine data conflict, not a research gap. Child
-  // "Pebble Grey" exact-matches the ORIGINAL (non-"i") ILUMA ONE's real official color list
-  // (confirmed via iqos.com/ph's own "iluma-one-kit-pebble-grey" page), while child "Breeze Blue"
-  // exact-matches the NEWER "ILUMA i ONE" device's real official color list instead — these are
-  // two different real physical products (different generation, different real specs) genuinely
-  // conflated under one Shipnity parent. Admitting a draft candidate here is still correct (real
-  // brand/category evidence exists for "ILUMA ONE" as a concept), but no single generation-
-  // specific spec sheet or description can honestly represent both active children at once.
-  "IQOSHEET-17": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'name "Iqos iluma one" — child "Pebble Grey" exact-matches the ORIGINAL ILUMA ONE\'s official color list; child "Breeze Blue" exact-matches the NEWER "ILUMA i ONE" instead — a genuine two-generation conflict within one Shipnity parent, not a single resolvable identity' },
+  // publication-approvals.ts comment): this is a genuine data conflict, not a research gap.
+  //
+  // Catalog-intelligence mission (2026-09-02) re-checked this from scratch across FIVE first-party
+  // iqos.com/jp.iqos.com markets (MY, ID, PH, GB, JP) specifically to see if the earlier finding
+  // was stale. It is not — it is now confirmed with much stronger evidence than before:
+  //   - "Pebble Grey" (SKU G0000592) cross-links on iqos.com/my and /id ONLY to the ORIGINAL
+  //     ILUMA ONE's 5-color lineup (Azure Blue, Moss Green, Pebble Beige, Pebble Grey, Sunset
+  //     Red) — "Breeze Blue" does not exist in that lineup (negative-control 404s confirmed on
+  //     /my, /ph, /gb).
+  //   - "Breeze Blue" (SKU G0002077) cross-links on iqos.com/ph and /my ONLY to the ILUMA i ONE's
+  //     6-color lineup (Breeze Blue, Digital Violet, Electric Purple, Midnight Black, Spring
+  //     Green, Vivid Terracotta) — "Pebble Grey" does not exist in that lineup (negative-control
+  //     404s confirmed on /ph, /my).
+  //   - Independently corroborated by DIFFERENT PMI device SKU codes (G0000592 vs G0002077) and
+  //     by directly inspecting both official renders: physically different chassis (two-tone body
+  //     with a round button and thin line-LED, vs. single-tone i-generation body with a recessed
+  //     oval button and segmented LED window) — not a recolor of one device.
+  //   - The two generations have materially different real specs that a shared sheet would get
+  //     wrong for whichever child a customer didn't order: ILUMA i ONE adds a touch screen,
+  //     Autostart, and a first-3-minutes Pause Mode that the original ILUMA ONE has none of
+  //     (iqos.com/my "iluma-one-kit-pebble-grey" vs "iluma-i-one-breeze-blue-kit";
+  //     jp.iqos.com/products/iluma/iluma-i-one).
+  //   - A THIRD complication, not previously documented: "Pebble Grey" alone is ALSO ambiguous —
+  //     it names TWO distinct hardware SKUs, the original ILUMA ONE (G0000592) and a later "ILUMA
+  //     ONE Refreshed" (G0001811), both sold in Pebble Grey on iqos.com/my. Which one is
+  //     physically in stock cannot be determined from Shipnity's text alone.
+  //   - No official IQOS Thailand storefront exists to check against directly: th.iqos.com does
+  //     not resolve and iqos.com/th/{th,en}/ both 404 — PMI does not operate a TH site. Thai
+  //     market stock is commonly JP-imported per retailer chatter, which matters because
+  //     jp.iqos.com/products/iluma/iluma-one now REDIRECTS to /iluma-i-one — Japan has retired
+  //     the non-i ILUMA ONE entirely, raising a real question about what generation "Pebble Grey"
+  //     stock in Thailand actually is.
+  // See publication-approvals.ts's own comment for the pricing angle this evidence also affects.
+  "IQOSHEET-17": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'name "Iqos iluma one" — child "Pebble Grey" (SKU G0000592) exact-matches ONLY the ORIGINAL ILUMA ONE\'s official 5-color lineup on iqos.com/my+/id (with confirmed negative-control 404s for Breeze Blue on that lineup); child "Breeze Blue" (SKU G0002077) exact-matches ONLY the NEWER ILUMA i ONE\'s official 6-color lineup on iqos.com/ph+/my (with confirmed negative-control 404s for Pebble Grey on that lineup) — independently corroborated by distinct PMI SKU codes and visibly different chassis renders. A genuine two-generation conflict within one Shipnity parent, not a single resolvable identity' },
 };
 
 // ===================================================================================
@@ -390,10 +545,9 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "ชุดอุปกรณ์ Esko Bar Switch 20k จากแบรนด์ ESKO BAR",
     shortDescription: "ชุดอุปกรณ์รุ่น Esko Bar Switch 20k จากแบรนด์ ESKO BAR",
   },
-  "Pod-149": {
-    tagline: "พอตใช้แล้วทิ้ง SKE Crystal B20K Puffs จากแบรนด์ SKE",
-    shortDescription: "พอตใช้แล้วทิ้งรุ่น SKE Crystal B20K Puffs จากแบรนด์ SKE",
-  },
+  // "Pod-149" copy removed alongside its brand-claim withdrawal above — see TAXONOMY_MATCHES's
+  // comment. Copy that names "แบรนด์ SKE" would misattribute the product; MINIMUM_COPY never
+  // fabricates a brand name that isn't independently supportable.
   "Pod-150": {
     tagline: "คาร์ทริดจ์ KS Quikpro 15K จากแบรนด์ KS",
     shortDescription: "คาร์ทริดจ์รุ่น KS Quikpro 15K จากแบรนด์ KS",
@@ -529,6 +683,60 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
+  // ---------------------------------------------------------------------------------
+  // Catalog-intelligence mission (2026-09-02) — media wave. Every asset below was
+  // downloaded, decoded, checked through `checkQuality()` at role "card", AND looked at
+  // directly before being committed (the README's "automated checks are a guardrail, not
+  // the final judge" rule). Provenance tier is stated truthfully per entry.
+  // ---------------------------------------------------------------------------------
+  "Coil-70": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-70/card.webp",
+      alt: "dotmod dotCoil 0.7Ω replacement coils, 5-pack retail box with five blister-packed brass coil heads",
+      angle: "Front, plain white-background product photography, whitespace-trimmed only (no recolor, relabel or composite). VARIANT PROOF: the retail box in frame is legibly printed \"0.7Ω (14-20w)\" alongside \"Copyright 2021 DOTMOD\", \"Made In China\", barcode 850010 57398 and www.dotmod.com — an exact match to this record's single active child (0.7Ω). PHYSICAL-TYPE PROOF: five individually blister-packed brass coil heads with no tank or pod body are visible, confirming this is a genuine BARE COIL (unlike Coil-21/55/56/68/74/83/87/94, where the same naming pattern resolved to pods). Sourced from Element Vape's own variant-to-image mapping for the 0.7Ω option (SKU DM036-07), so the resistance-to-photo pairing is the retailer's, not this project's inference. NOTE ON TIER: dotmod.com's current dotCoils lineup is 0.15Ω/0.3Ω/0.6Ω only — 0.7Ω is legacy stock with no tier-1 image still published, which is why a tier-2 source is used here rather than preferred.",
+      transparentBackground: false,
+      sourceName: "Element Vape (US vape retailer; product photography — NOT dotmod's own site)",
+      sourceUrl: "https://www.elementvape.com/dotmod-dotaio-v2-dotcoils",
+    },
+  ],
+  "Coil-83": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-83/card.webp",
+      alt: "VOOPOO ARGUS POD Empty Cartridge, 2.0mL, 2-piece retail box with two empty transparent pods",
+      angle: "Front, plain white-background product photography, whitespace-trimmed only. IDENTITY + PACK-COUNT PROOF: the VOOPOO-branded box in frame reads \"ARGUS POD\" / \"Empty Cartridge\" / \"2pcs\" / \"2.0mL\" — the \"2pcs\" matches this record's only active child (\"1 กล่อง2 หัว\", 1 box of 2 heads) exactly. PHYSICAL-TYPE PROOF: the two pods shown are transparent with a visibly EMPTY coil socket, confirming an empty refillable pod sold without a coil (VOOPOO ITO M-series coils are bought separately) rather than a bare coil head. Deliberate care point: Coil-21 (Argus Pod Cartridge, integrated coil, 3pcs) is a near-identical-looking pod in near-identical packaging — the two card images must never be swapped; this one is identifiable by \"Empty Cartridge / 2pcs\", Coil-21's by a resistance badge and \"3PCS\".",
+      transparentBackground: false,
+      sourceName: "HealthCabin (vape wholesaler; product photography — NOT VOOPOO's own site)",
+      sourceUrl: "https://www.healthcabin.net/voopoo-argus-pod-argus-p1-argus-z-argus-g-argus-a-empty-cartridge-p/28679.html",
+    },
+  ],
+  "Coil-87": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-87/card.webp",
+      alt: "VOOPOO TPP Pod in Black, 5.5mL, retail box with two pods, one showing the ADAPT TPP COILS base engraving",
+      angle: "Front, plain white-background product photography, whitespace-trimmed only. VARIANT PROOF (this is what resolved the record's long-standing Black-vs-Gunmetal question): the VOOPOO box in frame carries a printed rounded \"BLACK\" badge under the pod render, above \"TPP POD\" / \"COMPATIBLE WITH ALL TPP COIL\" — manufacturer packaging artwork, so the colour name is VOOPOO's own. Independently corroborated by the retailer's variant-to-SKU mapping (Black = VPO097-BLA, Gunmetal = VPO097-GUN). TWO DISCLOSED IMPERFECTIONS, both deliberate: (1) this is the US-market box, so a printed FDA nicotine-warning panel occupies part of the frame — it is genuine retail packaging, not a decorative marketing overlay, and a pods-only crop that excluded it was rejected for falling under product-image.ts's 400px card floor; (2) the box shows a 2-pack while this record's child is \"Black / 1 หัว\" (one head) — the Thai retailer splits the box, so product copy must never claim a 2-pack.",
+      transparentBackground: false,
+      sourceName: "Element Vape (US vape retailer; product photography — NOT VOOPOO's own site)",
+      sourceUrl: "https://www.elementvape.com/voopoo-tpp-pods",
+    },
+  ],
+  "Pod-169": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/pod-169/card.webp",
+      alt: "INFY PLUS 2.5ML prefilled pod cartridge retail boxes, seven flavours from the INFY \"This Is Salts\" series",
+      angle: "First-party INFY brand product render, cropped to the product cluster to remove a large decorative backdrop (composition only — nothing about the product was removed, recoloured or relabelled). PRODUCT-LEVEL LINEUP SHOT, flagged as exactly that per the README's multi-variant rule, not a per-flavour image. IDENTITY PROOF: every box reads \"INFY PLUS\" / \"2.5 ML CAPACITY\" / \"THIS IS SALTS · MALAYSIA SERIES\", matching this record's name (\"หัว infy 2.5 ml\") and infy.my's own 2.5ML Cartridge product page. DISCLOSED LIMITATION: of the seven flavours pictured, only \"Tropical Mix Fruit\" is one of this record's nine active children — INFY's own published media covers the brand's wider (largely Malaysian) flavour range, and no first-party photo exists for the other eight Thai-market flavours. The frame is therefore truthful about WHAT the product is and is not a claim about which flavours are stocked; the variant picker remains the authority on that.",
+      transparentBackground: false,
+      sourceName: "INFY / This Is Salts (infy.my — the brand's own site, first-party)",
+      sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/",
+    },
+  ],
   // Full-catalog mission — second media wave. All tier-2 (real retailer product photography of
   // official manufacturer packaging, never AI-generated, never watermarked — checked and, where a
   // source carried a retailer watermark baked into the frame, cropped to the watermark-free
@@ -674,7 +882,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       role: "card",
       src: "/assets/products/iqosheet-17/card.webp",
       alt: "IQOS ILUMA ONE, Pebble Grey, isolated official product render (original, non-\"i\" generation)",
-      angle: "Official manufacturer render, sourced directly from iqos.com/ph's own dedicated \"ILUMA ONE Pebble Grey\" product page. IMPORTANT: this photo shows ONLY the Pebble Grey (original ILUMA ONE) child accurately — the other active child, Breeze Blue, is a DIFFERENT real device (the newer ILUMA i ONE) with a different real appearance/specs, not shown here. Present for DEV-review/documentation completeness only — see publication-approvals.ts for why this record is NOT published despite having real media, real price, and real brand/category evidence.",
+      angle: "Official manufacturer render, sourced directly from iqos.com/ph's own dedicated \"ILUMA ONE Pebble Grey\" product page. IMPORTANT: this photo shows ONLY the Pebble Grey (original ILUMA ONE, SKU G0000592) child accurately — the other active child, Breeze Blue, is a DIFFERENT real device (the newer ILUMA i ONE, SKU G0002077) with a visibly different chassis and different real specs (touch screen, Autostart, Pause Mode), not shown here. A second official Breeze Blue/ILUMA i ONE render was independently sourced and verified in the catalog-intelligence mission (2026-09-02) but is deliberately NOT added as a local asset here — this record is not close to publishable (see the owner-decision note in publication-approvals.ts), and adding product-specific asset files for an identity that may end up split across two different slugs would be premature; its citation is kept here for whoever resolves this: https://www.iqos.com/ph/en/shop/iluma-i-one-breeze-blue-kit.html . Present for DEV-review/documentation completeness only — see publication-approvals.ts for why this record is NOT published despite having real media, real price, and real brand/category evidence.",
       transparentBackground: true,
       sourceName: "IQOS (official brand site)",
       sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-one-kit-pebble-grey.html",
@@ -784,6 +992,53 @@ interface VerifiedSpecEntry {
 }
 
 const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
+  // ---------------------------------------------------------------------------------
+  // Catalog-intelligence mission (2026-09-02). Discrete, individually-sourced manufacturer
+  // facts only — no marketing paragraphs, and anything a source did not actually state is
+  // simply absent rather than guessed.
+  // ---------------------------------------------------------------------------------
+  "Coil-70": {
+    specifications: [
+      { key: "resistance", label: "ความต้านทาน", value: "0.7Ω", sourceStatus: "verified" },
+      { key: "wattage", label: "กำลังไฟที่แนะนำ", value: "14-20W", sourceStatus: "verified" },
+      { key: "pack-size", label: "จำนวนต่อกล่อง", value: "5 หัว (บรรจุแยกซองละหัว)", sourceStatus: "verified" },
+      { key: "construction", label: "โครงสร้าง", value: "ตัวเรือนทองเหลือง คอยล์เมชเดี่ยว", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "dotAIO V2, dotAIO V2 Lite, dotStick Revo, dotPod Max, dotTank 25mm", sourceStatus: "verified" },
+    ],
+    // Wattage/resistance are read directly off the retail box in this record's own card photo;
+    // pack size, brass construction and the device list are from dotmod's own dotCoils page.
+    sourceUrls: ["https://dotmod.com/products/dotcoils", "https://www.elementvape.com/dotmod-dotaio-v2-dotcoils"],
+  },
+  "Coil-83": {
+    specifications: [
+      { key: "capacity", label: "ความจุ", value: "2.0 ml", sourceStatus: "verified" },
+      { key: "pack-size", label: "จำนวนต่อกล่อง", value: "2 หัว", sourceStatus: "verified" },
+      { key: "coil-included", label: "คอยล์ในกล่อง", value: "ไม่มี (เป็นหัวเปล่า ต้องซื้อคอยล์ ITO แยก)", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Argus Pod, Argus P1, Argus Z, Argus G, Argus A", sourceStatus: "verified" },
+    ],
+    sourceUrls: ["https://www.healthcabin.net/voopoo-argus-pod-argus-p1-argus-z-argus-g-argus-a-empty-cartridge-p/28679.html"],
+  },
+  "Coil-87": {
+    specifications: [
+      { key: "capacity", label: "ความจุ", value: "5.5 ml", sourceStatus: "verified" },
+      { key: "coil-included", label: "คอยล์ในกล่อง", value: "ไม่มี (เป็นหัวเปล่า ใช้ร่วมกับคอยล์ TPP)", sourceStatus: "verified" },
+      { key: "coil-fit", label: "การติดตั้งคอยล์", value: "แบบกดล็อก (press-fit) รองรับคอยล์ตระกูล TPP", sourceStatus: "verified" },
+      { key: "connection", label: "การเชื่อมต่อ", value: "แม่เหล็ก", sourceStatus: "verified" },
+    ],
+    // Capacity is also legible on the retail box in this record's own card photo ("5.5ml").
+    sourceUrls: ["https://www.elementvape.com/voopoo-tpp-pods"],
+  },
+  "Pod-169": {
+    specifications: [
+      { key: "capacity", label: "ความจุ", value: "2.5 ml", sourceStatus: "verified" },
+      { key: "prefilled", label: "ชนิดหัวพอต", value: "หัวพอตแบบเติมน้ำยามาแล้ว พร้อมคอยล์ในตัว (ระบบปิด เติมน้ำยาเองไม่ได้)", sourceStatus: "verified" },
+    ],
+    // Capacity from infy.my's own 2.5ML Cartridge page (first-party) — it explicitly notes the
+    // upgrade from the earlier 2ml cartridge. The prefilled/closed-system fact comes from a
+    // retailer reproducing the manufacturer blurb verbatim; battery/puff-count/nicotine figures
+    // circulating on Thai listings are NOT first-party and are deliberately not recorded here.
+    sourceUrls: ["https://www.infy.my/infy-2-5ml-cartridge/", "https://www.infy.my/thailand/"],
+  },
   // Full-catalog mission — VOOPOO's official VINCI replacement-coil line runs on the PnP coil
   // platform (confirmed by both sources below); this parent's 3 active resistances (0.15Ω/0.6Ω/
   // 1.2Ω, one 0.6Ω/1.2Ω pair differing only by rubber-grommet color) map to real official
@@ -820,12 +1075,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-x"],
   },
-  "Coil-87": {
-    // The compatible-device list comes from the TPP coil page (the coil this Pod houses), not a
-    // dedicated TPP Pod spec page — real evidence, same source, one step removed.
-    specifications: [{ key: "compatible-devices", label: "ใช้ได้กับ", value: "DRAG 3 Kit, DRAG X Plus Kit", sourceStatus: "verified" }],
-    sourceUrls: ["https://shop.voopoo.com/products/tpp-coils"],
-  },
+  // (The earlier, single-fact "Coil-87" entry that lived here has been MERGED into the fuller
+  //  entry at the top of this table — a duplicate object key would have silently discarded one of
+  //  them. Its one fact, the compatible-device list, was deliberately NOT carried over: it was
+  //  derived from the TPP *coil* page rather than a TPP Pod page, and this mission's compatibility
+  //  research established that none of the devices it names — DRAG 3, DRAG X Plus — exists in this
+  //  catalog, so the claim had no linkable endpoint and no independent confirmation. See
+  //  src/data/catalog-relationships.ts for how device compatibility is now recorded instead.)
   "Coil-92": {
     specifications: [{ key: "wattage", label: "กำลังไฟที่แนะนำ (0.15Ω)", value: "60-80W (DTL)", sourceStatus: "verified" }],
     sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils"],

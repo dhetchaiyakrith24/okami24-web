@@ -10,6 +10,7 @@ import { ProductAnatomy } from "@/components/product/ProductAnatomy";
 import { FeatureGrid } from "@/components/product/FeatureGrid";
 import { SpecSheet } from "@/components/product/SpecSheet";
 import { CompatibilitySection } from "@/components/product/CompatibilitySection";
+import { CompatibleProducts } from "@/components/product/CompatibleProducts";
 import { ProductFAQ } from "@/components/product/ProductFAQ";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { SourceNote } from "@/components/product/SourceNote";
@@ -29,6 +30,7 @@ import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDeta
 import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
 import { absoluteUrl, canonicalFor, openGraphWithImage } from "@/lib/seo";
 import { categoryName as categoryNameOf } from "@/lib/utils";
+import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 
 export function generateStaticParams() {
   // `getPilotProducts()` returns [] whenever NODE_ENV === "production" (see storefront-bridge.ts)
@@ -165,6 +167,11 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <FeatureGrid product={product} />
       <SpecSheet product={product} />
       <CompatibilitySection product={product} />
+      {/* Structured, clickable compatibility — real catalog products verified to fit, on top of
+          (not instead of) the free-text platform facts above. Renders nothing when there are no
+          verified links, so an unlinked product's page is unchanged. */}
+      <CompatibleProducts direction="works-with" items={getCompatibleConsumables(product.slug)} />
+      <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
       <ProductFAQ faqs={product.faqs} />
       <RelatedProducts products={related} />
       <SourceNote product={product} />

@@ -106,6 +106,12 @@ async function runFullLeakageCheck(): Promise<boolean> {
 
   const { getPublishedProducts } = await import(pathToFileURL(path.join(SRC_DIR, "data", "shipnity-seed", "storefront-bridge.ts")).href);
   const { activeCatalogSeed } = await import(pathToFileURL(path.join(SRC_DIR, "data", "shipnity-seed", "build-active-catalog.ts")).href);
+  const { relationshipCoverageReport } = await import(pathToFileURL(path.join(SRC_DIR, "data", "catalog-relationships.ts")).href);
+  const coverage = relationshipCoverageReport();
+  console.log(
+    `\n→ relationship coverage: ${coverage.liveDeviceConsumableEdges}/${coverage.deviceConsumableEdges} device-consumable edges live` +
+      (coverage.darkEndpoints.length > 0 ? ` (dark: ${coverage.darkEndpoints.join(", ")})` : "")
+  );
   const publishedSlugs: string[] = getPublishedProducts().map((p: { slug: string }) => p.slug);
   const publishedIds = new Set(getPublishedProducts().map((p: { shipnityProductId: string }) => p.shipnityProductId));
   const unpublishedSample: string[] = activeCatalogSeed

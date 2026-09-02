@@ -99,6 +99,9 @@ export const en: Dictionary = {
     specsEyebrow: "Specifications",
     specsTitle: "What's actually documented.",
     compatibilityTitle: "Compatibility",
+    worksWithTitle: "Works with this device",
+    fitsDevicesTitle: "Fits these devices",
+    verifiedCompatibilityNote: "Every link here is checked against a manufacturer or retailer source.",
     whoIsThisForTitle: "Who is this for?",
     faqEyebrow: "FAQ",
     faqTitle: "Common questions about this device.",
@@ -134,6 +137,8 @@ export const en: Dictionary = {
     rowBrand: "Brand",
     rowFamily: "Family",
     rowCategory: "Category",
+    rowPrice: "Price",
+    rowOptions: "Options",
     rowBattery: "Battery",
     rowOutput: "Output",
     rowRatedPuffs: "Rated puffs",
@@ -156,6 +161,8 @@ export const en: Dictionary = {
     disclaimer: "These notes describe fit, not rank — OKami24 doesn't declare a universal “winner” between devices built for different use cases.",
     removeAriaPrefix: "Remove",
     addPlaceholder: "Add a product to compare",
+    mixedCoverageNote:
+      "Some selected products are consumables — coils, pods, cartridges, e-liquid — rather than devices, so device attributes like battery or screen simply don't apply to them and are shown as —.",
   },
   finder: {
     metaTitle: "Product Finder",
@@ -170,6 +177,9 @@ export const en: Dictionary = {
     bestMatch: "Best match",
     alternatives: "Alternatives worth a look",
     alternativesHint: "From different product families, in case the top matches don't feel right.",
+    alsoInCatalogTitle: "Also in the catalog, not ranked",
+    scopeNote:
+      "The Finder ranks devices that have a full documented attribute set. Consumables — coils, pods, cartridges and e-liquid — aren't scored here; browse them by category or use Search.",
   },
   languageSwitcher: {
     label: "Language",

@@ -94,6 +94,47 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // didn't get — the same "never misrepresent a variant" rule this whole file already enforces
   // everywhere else. Needs either a Shipnity-side split into two real parents, or owner
   // clarification on which generation is actually stocked, before this can honestly publish.
+  //
+  // Catalog-intelligence mission (2026-09-02) re-confirmed the block with much stronger evidence
+  // (see TAXONOMY_MATCHES["IQOSHEET-17"]'s comment: distinct PMI SKU codes, negative-control 404s
+  // across 5 markets, visibly different chassis) and ALSO found the PRICING RULE ITSELF cannot
+  // responsibly apply here, independent of the identity conflict: this file's rule auto-approves
+  // "a normal, unambiguous current price" — but a single ฿2900 covering what real-world evidence
+  // shows are TWO DIFFERENTLY-PRICED products (ILUMA i ONE retails above the original ILUMA ONE at
+  // every market checked) is not an unambiguous price for either one specifically; approving ฿2900
+  // for whichever generation turns out to be correct would be a guess dressed as a citation. This
+  // is exactly the "ambiguous ... price" carve-out in this file's own header comment, not an
+  // oversight. Splitting this into two real ProductMaster records would also require the
+  // projection pipeline (`active-catalog-to-product-master.ts`) to support one Shipnity parent
+  // producing more than one candidate, which it deliberately does not today (see that file's
+  // 1-parent-to-1-candidate `projectParent`) — building that capability for one blocked SKU would
+  // be disproportionate engineering for a record that is blocked on genuine business/physical-
+  // stock facts anyway, not on missing code.
+  //
+  // OWNER DECISION NEEDED, precisely: (1) confirm which physical generation is actually in stock
+  // for "Pebble Grey" and "Breeze Blue" — note "Pebble Grey" itself is ambiguous between the
+  // original ILUMA ONE (SKU G0000592) and a later "ILUMA ONE Refreshed" (SKU G0001811), both sold
+  // in that color; (2) provide the real, separate selling price for whichever generation(s) are
+  // actually stocked — Shipnity's single ฿2900 cannot be trusted to apply to either specifically.
+  // No official IQOS Thailand storefront exists to resolve this independently (th.iqos.com does
+  // not resolve; iqos.com/th/* 404s) — this is not resolvable by further web research.
+  // Catalog-intelligence mission (2026-09-02) — fourth media wave. Same pricing rule throughout:
+  // a single, unambiguous `operationalSellingPrice` in active-catalog-source.ts with no conflicting
+  // price anywhere else in the project. What changed for each of these is MEDIA plus, in three
+  // cases, a real identity/taxonomy correction — see the TAXONOMY_MATCHES / VERIFIED_MEDIA /
+  // VERIFIED_SPECIFICATIONS comments for the citation trail:
+  //   Coil-70  — dotmod dotCoil 0.7Ω; confirmed a genuine BARE COIL (5 blister-packed brass heads
+  //              visible), resistance + wattage printed on the box in frame.
+  //   Coil-83  — reclassified coil -> EMPTY POD CARTRIDGE; box reads "ARGUS POD / Empty Cartridge /
+  //              2pcs / 2.0mL", an exact match to the "1 box of 2 heads" child.
+  //   Coil-87  — the long-standing Black-vs-Gunmetal ambiguity resolved: both are real VOOPOO
+  //              colorways, and "BLACK" is printed on VOOPOO's own box in the sourced photo.
+  //   Pod-169  — INFY Plus 2.5ml; first-party brand media and a first-party capacity spec, closing
+  //              a blocker that two earlier sessions had recorded as a dead end.
+  "Coil-70": { sellingPrice: 390, lastPriceReview: "2026-09-02" },
+  "Coil-83": { sellingPrice: 250, lastPriceReview: "2026-09-02" },
+  "Coil-87": { sellingPrice: 250, lastPriceReview: "2026-09-02" },
+  "Pod-169": { sellingPrice: 129, lastPriceReview: "2026-09-02" },
   "IQOSHEET-14": { sellingPrice: 2390, lastPriceReview: "2026-09-02" },
   "IQOSHEET-15": { sellingPrice: 220, lastPriceReview: "2026-09-02" },
   "IQOSHEET-16": { sellingPrice: 4900, lastPriceReview: "2026-09-02" },

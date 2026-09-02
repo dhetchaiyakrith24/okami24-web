@@ -9,6 +9,8 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
 import { ProductMasterVariantPicker } from "./ProductMasterVariantPicker";
 import { PilotRelatedProducts } from "./PilotRelatedProducts";
+import { CompatibleProducts } from "@/components/product/CompatibleProducts";
+import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 import { SourceNote } from "@/components/product/SourceNote";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotAxisLabel } from "./axis-label";
@@ -123,6 +125,11 @@ export function PilotProductDetail({ product, related }: { product: StorefrontPr
         </div>
       </Container>
 
+      {/* Structured, clickable compatibility — same component and same evidence-backed edge
+          table the legacy product page uses, so a published ProductMaster part can link to the
+          legacy device it fits and vice versa. Renders nothing when there are no verified links. */}
+      <CompatibleProducts direction="works-with" items={getCompatibleConsumables(product.slug)} />
+      <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
       <PilotRelatedProducts products={related} />
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
     </>

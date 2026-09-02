@@ -2,8 +2,10 @@
 
 import { useMemo, useState } from "react";
 import type { FinderAnswers } from "@/lib/finder";
-import { matchProducts } from "@/lib/finder";
+import { matchProducts, unscoredCatalogMatches } from "@/lib/finder";
 import { ProductCard } from "@/components/catalog/ProductCard";
+import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
+import { getPublishedProduct } from "@/data/shipnity-seed/storefront-bridge";
 import { Button } from "@/components/ui/Button";
 import { CheckCircle2 } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -87,6 +89,9 @@ export function FinderTool() {
 
   const isComplete = step >= QUESTIONS.length;
   const results = useMemo(() => (isComplete ? matchProducts(answers as FinderAnswers) : null), [isComplete, answers]);
+  // Real, purchasable ProductMaster devices the scored quiz structurally cannot rank — see
+  // `unscoredCatalogMatches`. Shown separately and unranked rather than excluded or fake-scored.
+  const unranked = useMemo(() => (isComplete ? unscoredCatalogMatches(answers as FinderAnswers) : []), [isComplete, answers]);
 
   function selectAnswer(key: keyof FinderAnswers, value: FinderAnswers[keyof FinderAnswers]) {
     setAnswers((prev) => ({ ...prev, [key]: value }));
@@ -139,6 +144,19 @@ export function FinderTool() {
               {results.alternatives.map((m) => (
                 <ProductCard key={m.product.slug} product={m.product} />
               ))}
+            </div>
+          </div>
+        )}
+
+        {unranked.length > 0 && (
+          <div>
+            <h3 className="font-display text-lg font-semibold text-foreground">{dict.finder.alsoInCatalogTitle}</h3>
+            <p className="mt-1 max-w-xl text-sm text-foreground-muted">{dict.finder.scopeNote}</p>
+            <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {unranked.map((item) => {
+                const published = getPublishedProduct(item.slug);
+                return published ? <PilotProductCard key={item.slug} product={published} /> : null;
+              })}
             </div>
           </div>
         )}

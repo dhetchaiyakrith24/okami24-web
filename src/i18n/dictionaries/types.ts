@@ -99,6 +99,9 @@ export interface Dictionary {
     specsEyebrow: string;
     specsTitle: string;
     compatibilityTitle: string;
+    worksWithTitle: string;
+    fitsDevicesTitle: string;
+    verifiedCompatibilityNote: string;
     whoIsThisForTitle: string;
     faqEyebrow: string;
     faqTitle: string;
@@ -143,6 +146,8 @@ export interface Dictionary {
     rowBrand: string;
     rowFamily: string;
     rowCategory: string;
+    rowPrice: string;
+    rowOptions: string;
     rowBattery: string;
     rowOutput: string;
     rowRatedPuffs: string;
@@ -165,6 +170,7 @@ export interface Dictionary {
     disclaimer: string;
     removeAriaPrefix: string;
     addPlaceholder: string;
+    mixedCoverageNote: string;
   };
   finder: {
     metaTitle: string;
@@ -179,6 +185,8 @@ export interface Dictionary {
     bestMatch: string;
     alternatives: string;
     alternativesHint: string;
+    scopeNote: string;
+    alsoInCatalogTitle: string;
   };
   languageSwitcher: {
     label: string;

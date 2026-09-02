@@ -97,6 +97,9 @@ export const zh: Dictionary = {
     specsEyebrow: "产品规格",
     specsTitle: "真实可查的参数。",
     compatibilityTitle: "兼容性",
+    worksWithTitle: "可搭配本机使用",
+    fitsDevicesTitle: "适配以下设备",
+    verifiedCompatibilityNote: "以下每一条均已对照厂商或零售商来源核实。",
     whoIsThisForTitle: "适合谁使用？",
     faqEyebrow: "常见问题",
     faqTitle: "关于该设备的常见问题。",
@@ -131,6 +134,8 @@ export const zh: Dictionary = {
     rowBrand: "品牌",
     rowFamily: "产品系列",
     rowCategory: "分类",
+    rowPrice: "价格",
+    rowOptions: "选项",
     rowBattery: "电池容量",
     rowOutput: "功率输出",
     rowRatedPuffs: "标称烟弹口数",
@@ -153,6 +158,8 @@ export const zh: Dictionary = {
     disclaimer: "以上说明的是适用场景，而非排名——不同设备针对不同使用需求设计，OKami24 不对其进行\"孰优孰劣\"的判定。",
     removeAriaPrefix: "移除",
     addPlaceholder: "添加产品以对比",
+    mixedCoverageNote:
+      "所选产品中有部分属于耗材（芯、烟弹、烟仓、烟油）而非主机，因此电池、屏幕等主机属性并不适用，显示为 —。",
   },
   finder: {
     metaTitle: "选购助手",
@@ -167,6 +174,9 @@ export const zh: Dictionary = {
     bestMatch: "最佳匹配",
     alternatives: "其他值得考虑的选择",
     alternativesHint: "来自不同产品系列，以备首选结果不完全合适时参考。",
+    alsoInCatalogTitle: "目录中的其他产品（未参与排序）",
+    scopeNote:
+      "选品助手仅对具备完整属性资料的主机进行排序。芯、烟弹、烟仓与烟油等耗材不在此排序，请按分类浏览或使用搜索。",
   },
   languageSwitcher: {
     label: "语言",

@@ -1,67 +1,96 @@
 "use client";
 
-"use client";
-
 import { useMemo, useState } from "react";
-import type { Product } from "@/types/catalog";
-import { getProduct } from "@/data/products";
+import { getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { ProductPicker } from "@/components/tools/ProductPicker";
-import { brandName, categoryName, familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
+import { familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { categoryName as categoryNameOf } from "@/lib/utils";
 import type { Dictionary } from "@/i18n/dictionaries";
+
+/**
+ * Compares any two-to-four CURRENTLY VISIBLE catalog products — legacy or published
+ * ProductMaster. It previously read `getProduct`/`allProducts` directly, so a published
+ * ProductMaster product (a real, purchasable catalog product with a real price) simply could not
+ * be compared at all.
+ *
+ * The honest part: only the legacy half has the normalized `attributes` block (battery, wattage,
+ * screen, draw style, …) — it is genuinely `null` on ProductMaster records, which have no
+ * manufacturer attribute evidence behind them. Rather than fabricate values or exclude
+ * ProductMaster products from the tool, an attribute a product does not have renders as "—", the
+ * same as every other missing cell, and a note is shown whenever the selection actually mixes the
+ * two so the blanks are explained rather than read as "this device has no battery."
+ *
+ * Rows that are empty for EVERY selected product are dropped entirely (unchanged behavior) —
+ * comparing two coils never shows a screen row at all.
+ */
 
 interface Row {
   label: string;
   values: string[];
 }
 
-function classificationRows(products: Product[], dict: Dictionary): Row[] {
-  const t = dict.compare;
-  return [
-    { label: t.rowBrand, values: products.map((p) => brandName(p.brandId)) },
-    { label: t.rowFamily, values: products.map((p) => familyName(p.familyId)) },
-    { label: t.rowCategory, values: products.map((p) => categoryName(p.categoryId)) },
-    { label: t.rowBattery, values: products.map((p) => formatBattery(p.attributes.batteryMah)) },
-    { label: t.rowOutput, values: products.map((p) => formatWattage(p.attributes.wattageMin, p.attributes.wattageMax)) },
-    { label: t.rowRatedPuffs, values: products.map((p) => formatPuffs(p.attributes.puffCount)) },
-    { label: t.rowCapacity, values: products.map((p) => (p.attributes.capacityMl ? `${p.attributes.capacityMl}mL` : "—")) },
-    { label: t.rowScreen, values: products.map((p) => screenLabel(p, dict)) },
-    { label: t.rowDrawStyle, values: products.map((p) => p.attributes.drawStyle) },
-    { label: t.rowPortability, values: products.map((p) => titleCase(p.attributes.portability.replace("-", " "))) },
-    { label: t.rowBeginnerFriendly, values: products.map((p) => (p.attributes.beginnerFriendly ? t.yes : t.no)) },
-    { label: t.rowCharging, values: products.map((p) => p.attributes.chargingType) },
-    { label: t.rowDimensions, values: products.map((p) => p.attributes.dimensions ?? "—") },
-    { label: t.rowWeight, values: products.map((p) => (p.attributes.weightG ? `${p.attributes.weightG}g` : "—")) },
-  ].filter((row) => row.values.some((v) => v && v !== "—"));
+const EM_DASH = "—";
+
+function screenLabel(item: CatalogItem, dict: Dictionary): string {
+  const a = item.attributes;
+  if (!a) return EM_DASH;
+  switch (a.screenType) {
+    case "none":
+      return dict.catalog.screenNone;
+    case "led-indicator":
+      return dict.catalog.screenLed;
+    case "color-display":
+      return `${dict.catalog.screenColor}${a.screenSize ? ` (${a.screenSize})` : ""}`;
+    case "touchscreen":
+      return `${dict.catalog.screenTouch}${a.screenSize ? ` (${a.screenSize})` : ""}`;
+  }
 }
 
 function titleCase(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-function screenLabel(p: Product, dict: Dictionary) {
-  switch (p.attributes.screenType) {
-    case "none":
-      return dict.catalog.screenNone;
-    case "led-indicator":
-      return dict.catalog.screenLed;
-    case "color-display":
-      return `${dict.catalog.screenColor}${p.attributes.screenSize ? ` (${p.attributes.screenSize})` : ""}`;
-    case "touchscreen":
-      return `${dict.catalog.screenTouch}${p.attributes.screenSize ? ` (${p.attributes.screenSize})` : ""}`;
-  }
+function classificationRows(items: CatalogItem[], dict: Dictionary): Row[] {
+  const t = dict.compare;
+  return [
+    { label: t.rowBrand, values: items.map((p) => p.brandName) },
+    // ProductMaster records deliberately carry no familyId (no family record exists for most of
+    // them) — "—" is the honest value, not a fabricated family name.
+    { label: t.rowFamily, values: items.map((p) => (p.familyId ? familyName(p.familyId) : EM_DASH)) },
+    { label: t.rowCategory, values: items.map((p) => categoryNameOf(p.categoryId)) },
+    // Price exists only on the ProductMaster half — the legacy catalog has no price field at all
+    // (see docs/BUSINESS_SOURCE_OF_TRUTH.md), so "—" here means "no price on file", never "free".
+    { label: t.rowPrice, values: items.map((p) => (p.sellingPrice !== null ? `฿${p.sellingPrice.toLocaleString("en-US")}` : EM_DASH)) },
+    // Variant options exist only on the ProductMaster half.
+    { label: t.rowOptions, values: items.map((p) => (p.variantLabels.length > 0 ? p.variantLabels.join(", ") : EM_DASH)) },
+    { label: t.rowBattery, values: items.map((p) => (p.attributes ? formatBattery(p.attributes.batteryMah) : EM_DASH)) },
+    { label: t.rowOutput, values: items.map((p) => (p.attributes ? formatWattage(p.attributes.wattageMin, p.attributes.wattageMax) : EM_DASH)) },
+    { label: t.rowRatedPuffs, values: items.map((p) => (p.attributes ? formatPuffs(p.attributes.puffCount) : EM_DASH)) },
+    { label: t.rowCapacity, values: items.map((p) => (p.attributes?.capacityMl ? `${p.attributes.capacityMl}mL` : EM_DASH)) },
+    { label: t.rowScreen, values: items.map((p) => screenLabel(p, dict)) },
+    { label: t.rowDrawStyle, values: items.map((p) => p.attributes?.drawStyle ?? EM_DASH) },
+    { label: t.rowPortability, values: items.map((p) => (p.attributes ? titleCase(p.attributes.portability.replace("-", " ")) : EM_DASH)) },
+    { label: t.rowBeginnerFriendly, values: items.map((p) => (p.attributes ? (p.attributes.beginnerFriendly ? t.yes : t.no) : EM_DASH)) },
+    { label: t.rowCharging, values: items.map((p) => p.attributes?.chargingType ?? EM_DASH) },
+    { label: t.rowDimensions, values: items.map((p) => p.attributes?.dimensions ?? EM_DASH) },
+    { label: t.rowWeight, values: items.map((p) => (p.attributes?.weightG ? `${p.attributes.weightG}g` : EM_DASH)) },
+  ].filter((row) => row.values.some((v) => v && v !== EM_DASH));
 }
 
-function verifiedSpecRows(products: Product[]): Row[] {
-  if (products.length < 2) return [];
-  const [first, ...rest] = products;
+/** Shared, independently-verified manufacturer facts. Both halves carry `specifications` with a
+ *  real `sourceStatus`, so this works across the boundary unchanged — a spec row is shown only
+ *  when EVERY selected product has that same label AND every one of them is `verified`. */
+function verifiedSpecRows(items: CatalogItem[]): Row[] {
+  if (items.length < 2) return [];
+  const [first, ...rest] = items;
   const sharedLabels = first.specifications
     .map((s) => s.label)
     .filter((label) => rest.every((p) => p.specifications.some((s) => s.label === label)));
 
   return sharedLabels
     .map((label) => {
-      const entries = products.map((p) => p.specifications.find((s) => s.label === label)!);
+      const entries = items.map((p) => p.specifications.find((s) => s.label === label)!);
       const allVerified = entries.every((e) => e.sourceStatus === "verified");
       if (!allVerified) return null;
       return { label, values: entries.map((e) => e.value) };
@@ -72,10 +101,14 @@ function verifiedSpecRows(products: Product[]): Row[] {
 export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
   const { dict } = useLocale();
   const [slugs, setSlugs] = useState<string[]>(initialSlugs);
-  const products = useMemo(() => slugs.map((s) => getProduct(s)).filter((p): p is Product => Boolean(p)), [slugs]);
+  const items = useMemo(() => slugs.map((s) => getCatalogItem(s)).filter((p): p is CatalogItem => Boolean(p)), [slugs]);
 
-  const classification = useMemo(() => classificationRows(products, dict), [products, dict]);
-  const specs = useMemo(() => verifiedSpecRows(products), [products]);
+  const classification = useMemo(() => classificationRows(items, dict), [items, dict]);
+  const specs = useMemo(() => verifiedSpecRows(items), [items]);
+  // Only worth explaining when the selection genuinely mixes a product that has the attribute
+  // block with one that doesn't — not whenever a single cell happens to be empty.
+  const hasMixedAttributeCoverage = items.some((i) => i.attributes) && items.some((i) => !i.attributes);
+  const bestFitItems = items.filter((i) => i.whoIsThisFor.length > 0);
 
   function addProduct(slug: string) {
     setSlugs((prev) => (prev.includes(slug) || prev.length >= 4 ? prev : [...prev, slug]));
@@ -86,9 +119,9 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
 
   return (
     <div className="flex flex-col gap-12">
-      <ProductPicker selected={products} onAdd={addProduct} onRemove={removeProduct} />
+      <ProductPicker selected={items} onAdd={addProduct} onRemove={removeProduct} />
 
-      {products.length < 2 ? (
+      {items.length < 2 ? (
         <div className="flex flex-col items-center gap-2 rounded-2xl border border-dashed border-surface-border py-16 text-center">
           <p className="font-display text-xl font-semibold text-foreground">{dict.compare.addAtLeastTwoTitle}</p>
           <p className="max-w-sm text-sm text-foreground-muted">{dict.compare.addAtLeastTwoHint}</p>
@@ -96,20 +129,23 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
       ) : (
         <div className="flex flex-col gap-10">
           <ComparisonTable title={dict.compare.classificationTitle} rows={classification} />
+          {hasMixedAttributeCoverage && <p className="-mt-6 text-xs leading-relaxed text-foreground-dim">{dict.compare.mixedCoverageNote}</p>}
           <ComparisonTable title={dict.compare.verifiedSpecsTitle} rows={specs} emptyNote={dict.compare.verifiedSpecsEmptyNote} />
 
-          <div>
-            <h2 className="font-display text-xl font-semibold text-foreground">{dict.compare.bestFitFor}</h2>
-            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {products.map((p) => (
-                <div key={p.slug} className="rounded-xl border border-surface-border-soft bg-surface-1 p-4">
-                  <p className="text-sm font-semibold text-foreground">{p.name}</p>
-                  <p className="mt-2 text-xs leading-relaxed text-foreground-muted">{p.whoIsThisFor[0]}</p>
-                </div>
-              ))}
+          {bestFitItems.length > 0 && (
+            <div>
+              <h2 className="font-display text-xl font-semibold text-foreground">{dict.compare.bestFitFor}</h2>
+              <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {bestFitItems.map((p) => (
+                  <div key={p.slug} className="rounded-xl border border-surface-border-soft bg-surface-1 p-4">
+                    <p className="text-sm font-semibold text-foreground">{p.name}</p>
+                    <p className="mt-2 text-xs leading-relaxed text-foreground-muted">{p.whoIsThisFor[0]}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-xs text-foreground-dim">{dict.compare.disclaimer}</p>
             </div>
-            <p className="mt-4 text-xs text-foreground-dim">{dict.compare.disclaimer}</p>
-          </div>
+          )}
         </div>
       )}
     </div>
@@ -141,7 +177,7 @@ function ComparisonTable({ title, rows, emptyNote }: { title: string; rows: Row[
                   </th>
                   {row.values.map((v, i) => (
                     <td key={i} className={`p-3 text-foreground ${!allSame ? "bg-steel-soft/40" : ""}`}>
-                      {v || "—"}
+                      {v || EM_DASH}
                     </td>
                   ))}
                 </tr>

@@ -2,19 +2,24 @@
 
 import { useMemo, useState } from "react";
 import { Search, X } from "lucide-react";
-import type { Product } from "@/types/catalog";
-import { allProducts } from "@/data/products";
-import { ProductMedia } from "@/components/visual/ProductMedia";
-import { brandName } from "@/lib/utils";
+import { allCatalogItems, type CatalogItem } from "@/lib/catalog-index";
+import { CatalogItemMedia } from "@/components/visual/CatalogItemMedia";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 
+/**
+ * Searches the UNIFIED customer-visible catalog (legacy + published ProductMaster), not just the
+ * legacy half — a published ProductMaster product is a real, purchasable catalog product and was
+ * previously unreachable from Compare purely because this picker read `allProducts` directly.
+ * `allCatalogItems()` is the single visibility gate (see lib/catalog-index.ts); nothing
+ * unpublished or DEV-preview-only can surface here.
+ */
 export function ProductPicker({
   selected,
   onAdd,
   onRemove,
   max = 4,
 }: {
-  selected: Product[];
+  selected: CatalogItem[];
   onAdd: (slug: string) => void;
   onRemove: (slug: string) => void;
   max?: number;
@@ -26,7 +31,9 @@ export function ProductPicker({
   const results = useMemo(() => {
     if (!query.trim()) return [];
     const q = query.trim().toLowerCase();
-    return allProducts.filter((p) => !selectedSlugs.has(p.slug) && `${p.name} ${p.brandId}`.toLowerCase().includes(q)).slice(0, 8);
+    return allCatalogItems()
+      .filter((p) => !selectedSlugs.has(p.slug) && `${p.name} ${p.brandName} ${p.brandId}`.toLowerCase().includes(q))
+      .slice(0, 8);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, selected]);
 
@@ -43,10 +50,10 @@ export function ProductPicker({
               <X size={12} aria-hidden />
             </button>
             <div className="h-16 w-full">
-              <ProductMedia product={product} sizes="10vw" />
+              <CatalogItemMedia item={product} sizes="10vw" />
             </div>
             <p className="mt-2 text-xs font-semibold text-foreground">{product.name}</p>
-            <p className="label-mono text-[0.6rem] text-foreground-dim">{brandName(product.brandId)}</p>
+            <p className="label-mono text-[0.6rem] text-foreground-dim">{product.brandName}</p>
           </div>
         ))}
         {selected.length < max &&
@@ -79,7 +86,7 @@ export function ProductPicker({
                   className="flex w-full items-center justify-between gap-3 px-4 py-2.5 text-left text-sm text-foreground hover:bg-surface-2"
                 >
                   <span>{p.name}</span>
-                  <span className="label-mono text-[0.6rem] text-foreground-dim">{brandName(p.brandId)}</span>
+                  <span className="label-mono text-[0.6rem] text-foreground-dim">{p.brandName}</span>
                 </button>
               ))}
             </div>

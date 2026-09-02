@@ -1,5 +1,6 @@
 import type { Product } from "@/types/catalog";
 import { allProducts } from "@/data/products";
+import { allCatalogItems, type CatalogItem } from "@/lib/catalog-index";
 
 export interface FinderAnswers {
   format: "open-pod" | "pod-kit" | "disposable" | "no-preference";
@@ -96,6 +97,31 @@ export function scoreProduct(product: Product, answers: FinderAnswers): { score:
   }
 
   return { score, reasons };
+}
+
+/**
+ * Published ProductMaster DEVICES that the scored quiz above structurally cannot rank.
+ *
+ * Every one of `scoreProduct`'s six axes reads `product.attributes.*` — battery, wattage, screen,
+ * draw style, portability, beginner-friendliness. That block is genuinely `null` on every
+ * ProductMaster record (no manufacturer attribute evidence behind it), so a ProductMaster device
+ * put through `scoreProduct` would be ranked almost entirely on the absence of data, landing it
+ * at an arbitrary position among fully-documented legacy devices. Inventing the missing
+ * attributes to make it scoreable is exactly the fabrication this catalog forbids.
+ *
+ * So instead of silently excluding real, purchasable devices from a device-finder (the behavior
+ * before this — Finder read `allProducts` and therefore only ever saw the 28 legacy records),
+ * they are returned separately and rendered UNRANKED, with the reason stated. The only signal
+ * used is the one that is genuinely present and genuinely comparable: `systemType` against the
+ * customer's chosen format.
+ *
+ * Consumables (coils, pods, cartridges, e-liquid) are never returned — `format` only offers
+ * device types, so a consumable can never match, and listing one under a device question would
+ * answer a question the customer didn't ask.
+ */
+export function unscoredCatalogMatches(answers: FinderAnswers): CatalogItem[] {
+  if (answers.format === "no-preference") return [];
+  return allCatalogItems().filter((item) => item.origin === "product-master" && item.systemType === answers.format);
 }
 
 export function matchProducts(answers: FinderAnswers): { matches: FinderMatch[]; alternatives: FinderMatch[] } {
