@@ -70,6 +70,7 @@ export const en: Dictionary = {
     productCountOne: "product",
     productCountOther: "products",
     filterBrand: "Brand",
+    filterCategory: "Category",
     filterScreen: "Screen",
     filterPortability: "Portability",
     filterExperienceLevel: "Experience level",
@@ -123,8 +124,6 @@ export const en: Dictionary = {
     axisStrength: "Strength",
     specificationsTitle: "Specifications",
     priceLabel: "Price",
-    publishedSectionEyebrow: "OKami24",
-    publishedSectionTitle: "Now Available",
   },
   compare: {
     metaTitle: "Compare",

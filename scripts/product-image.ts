@@ -308,6 +308,15 @@ async function printAudit(dir: string) {
     }
   }
   console.log(`\n${rows.length} images scanned under ${dir}, ${flaggedCount} flagged, ${rows.length - flaggedCount} clean.`);
+  if (flaggedCount > 0) {
+    // Real finding from the storefront mission (2026-09-02): the width-floor WARN below fires
+    // on plenty of genuinely excellent narrow/tall device photography (an Argus/Vinci-shaped pod
+    // is legitimately ~150-300px wide even at good resolution) — width alone cannot tell "small
+    // canvas" apart from "narrow product." Treat every WARN as "go look at it," never as an
+    // automatic replace-this-file signal — see the Media Quality Standard in
+    // shipnity-seed/README.md.
+    console.log(`(WARN-level flags are visual-review candidates, not automatic replacements — see the Media Quality Standard in shipnity-seed/README.md.)`);
+  }
   const errorCount = rows.filter((r) => r.report.flags.some((f) => f.level === "error")).length;
   if (errorCount > 0) {
     console.error(`${errorCount} image(s) have ERROR-level flags (broken/undecodable).`);

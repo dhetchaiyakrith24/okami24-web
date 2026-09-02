@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
+import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotAxisLabel } from "./axis-label";
 
@@ -32,6 +33,7 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
             <Badge tone="unverified">{dict.pilot.unpublishedBadge}</Badge>
           </div>
         )}
+        <FavoriteButton slug={product.slug} className="absolute right-3 top-3" />
         <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-105">
           {product.image ? (
             <Image

@@ -269,7 +269,7 @@ export const voopooProducts: Product[] = [
         role: "card",
         src: "/assets/products/argus-g3-mini/card.webp",
         alt: "VOOPOO ARGUS G3 mini, Midnight Black colourway, isolated product shot",
-        angle: "Front, isolated (cropped from a device+retail-box shot to show the device alone; background removed locally with white-spill colour decontamination at the alpha edges — the first pass left a faint light fringe around the black body when viewed against the dark theme, fixed by un-premultiplying edge pixel colour rather than only thresholding alpha)",
+        angle: "Front, isolated (cropped from VOOPOO's official device+retail-box gallery shot, argus-G3-MINI-(11).jpg, at its full native 878×877 resolution — replaces a prior version built from the same source but downscaled to 125×449, which both the owner and this project's own automated audit flagged as materially weaker/undersized. Background removed with white-spill colour decontamination at the alpha edges (un-premultiplying edge pixel colour rather than only thresholding alpha), verified fringe-free by compositing onto the site's actual dark theme colour before use)",
         transparentBackground: true,
         sourceName: "VOOPOO",
         sourceUrl: "https://shop.voopoo.com/products/argus-g3-mini",

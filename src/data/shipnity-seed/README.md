@@ -197,6 +197,16 @@ the practical visual-quality bar for new/replacement assets to match — not a s
 dimension. Treat any asset flagged as visually weak as a real candidate for replacement even if it
 passes every automated check.
 
+**Confirmed finding (full-catalog + storefront mission, 2026-09-02):** the reverse is just as real
+— a narrow automated-audit WARN does NOT mean the asset is weak. Visually re-checked all 19
+card-role assets under `product-image.ts`'s ~400px card-width floor from the legacy VOOPOO/UWELL
+catalog (Argus/Vinci/Vmate/Drag/Caliburn G3-G5 lines): the large majority are genuinely sharp,
+well-lit, benchmark-tier photography — they're narrow because the real device is narrow/tall
+(~150-300px at good resolution is a legitimately isolated pod-shaped product, not a small canvas).
+Width alone cannot distinguish "small source image" from "correctly narrow product" — this is
+exactly why the tool's own WARN wording says "likely undersized," and its audit CLI now prints a
+reminder pointing back here. Do not batch-replace a WARN queue without looking at each one.
+
 ### Variant-specific media architecture
 
 `ProductVariant.image` (schema field, `src/types/product-master.ts` / `product-master-schema.ts`)

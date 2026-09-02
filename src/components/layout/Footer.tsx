@@ -4,12 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { categories } from "@/data/categories";
-import { brands } from "@/data/brands";
 import { CONTACT } from "@/data/contact";
+import { brandsWithProducts } from "@/lib/brand-visibility";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 
 export function Footer() {
   const { dict } = useLocale();
+  // Only link brands that actually have a real product in the catalog right now — a brand added
+  // on real evidence but still fully media-blocked (see shipnity-seed/README.md) would otherwise
+  // be a dead-end link from primary navigation. See brand-visibility.ts's own doc comment.
+  const brands = brandsWithProducts();
 
   const LEARN_LINKS = [
     { label: dict.nav.guides, href: "/guides" },

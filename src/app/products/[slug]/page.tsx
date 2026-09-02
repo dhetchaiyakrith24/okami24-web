@@ -92,13 +92,16 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     const products = getProductsByCategory(category.id);
     const publishedProducts = getPublishedProductsByCategory(category.id);
     const pilotProducts = getPilotProductsByCategory(category.id);
-    const isEmptyCategory = products.length === 0 && publishedProducts.length === 0 && pilotProducts.length === 0;
+    const isEmptyCategory = products.length === 0 && publishedProducts.length === 0;
     return (
       <>
         <CategoryPageHeader category={category} />
         <Container className="flex flex-col gap-12 py-12 lg:py-16">
-          {(products.length > 0 || isEmptyCategory) && <CatalogBrowser products={products} isEmptyCategory={products.length === 0} />}
-          <PilotProductSection products={publishedProducts} variant="published" />
+          {/* A genuinely published ProductMaster product is a real catalog product — it belongs in
+              the SAME grid/filter/sort experience as a legacy one, not a separate "Now Available"
+              block underneath (see CatalogBrowser's own doc comment). Still-unpublished DEV-preview
+              data stays in its own, clearly-labeled section below — never mixed in. */}
+          <CatalogBrowser products={products} publishedProducts={publishedProducts} isEmptyCategory={isEmptyCategory} />
           <PilotProductSection products={pilotProducts} />
         </Container>
       </>

@@ -7,30 +7,19 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pluralCount } from "@/i18n/dictionaries";
 
 /**
- * Appended to a category/brand page below the existing `CatalogBrowser` grid — never fed into
- * it. `CatalogBrowser` filters on legacy-only fields (`attributes.screenType`, `.portability`,
- * `.beginnerFriendly`), so mixing ProductMaster products into that array would mean fabricating
- * those fields. This is a second, independent grid instead — same card size/spacing as
- * `CatalogBrowser`'s, no search/filter/sort controls (this few products doesn't need them yet).
- *
- * `variant` picks the heading: "preview" (default) uses the DEV-preview wording ("Shipnity / Also
- * in stock right now"); "published" uses honest, real-catalog wording — pass this for the real,
- * published-products call (see products/[slug]/page.tsx and brands/[brand]/page.tsx). A plain
- * variant flag rather than literal override strings so the heading stays correctly locale-aware
- * (resolved here via `useLocale()`, same as everything else in this component) even though the
- * page that renders this is a Server Component with no locale of its own.
+ * DEV-preview-only section, appended below `CatalogBrowser` on a category/brand page — genuinely
+ * published ProductMaster products are no longer rendered here; they're merged directly into
+ * `CatalogBrowser`'s own grid (see that component's doc comment), the same real-catalog treatment
+ * a legacy product gets. This section is now exclusively for the still-unpublished DEV-preview
+ * pool (`getPilotProducts*`), which is entirely absent from a production build regardless — kept
+ * as its own small, clearly-labeled block since it's explicitly not customer-facing data and
+ * doesn't need `CatalogBrowser`'s search/filter/sort machinery for a handful of review items.
  */
-export function PilotProductSection({
-  products,
-  variant = "preview",
-}: {
-  products: StorefrontProductView[];
-  variant?: "preview" | "published";
-}) {
+export function PilotProductSection({ products }: { products: StorefrontProductView[] }) {
   const { dict } = useLocale();
   if (products.length === 0) return null;
-  const eyebrow = variant === "published" ? dict.pilot.publishedSectionEyebrow : dict.pilot.sectionEyebrow;
-  const title = variant === "published" ? dict.pilot.publishedSectionTitle : dict.pilot.sectionTitle;
+  const eyebrow = dict.pilot.sectionEyebrow;
+  const title = dict.pilot.sectionTitle;
 
   return (
     <div className="flex flex-col gap-6 pt-4">

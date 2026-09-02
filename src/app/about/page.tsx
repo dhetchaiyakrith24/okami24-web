@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { brands } from "@/data/brands";
 import { CONTACT } from "@/data/contact";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { canonicalFor } from "@/lib/seo";
+import { brandsWithProducts } from "@/lib/brand-visibility";
 
 export const metadata: Metadata = {
   title: "About",
@@ -13,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  // Only feature brands with a real, currently-catalogued product — see brand-visibility.ts.
+  const brands = brandsWithProducts();
   return (
     <>
       <PageHeader

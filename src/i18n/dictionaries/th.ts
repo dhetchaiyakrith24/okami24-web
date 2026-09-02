@@ -64,6 +64,7 @@ export const th: Dictionary = {
     productCountOne: "รายการ",
     productCountOther: "รายการ",
     filterBrand: "แบรนด์",
+    filterCategory: "หมวดหมู่",
     filterScreen: "หน้าจอ",
     filterPortability: "ขนาดพกพา",
     filterExperienceLevel: "ระดับผู้ใช้งาน",
@@ -117,8 +118,6 @@ export const th: Dictionary = {
     axisStrength: "ความเข้มข้น",
     specificationsTitle: "ข้อมูลจำเพาะ",
     priceLabel: "ราคา",
-    publishedSectionEyebrow: "OKami24",
-    publishedSectionTitle: "วางจำหน่ายแล้ว",
   },
   compare: {
     metaTitle: "เปรียบเทียบสินค้า",

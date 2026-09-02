@@ -68,6 +68,7 @@ export const zh: Dictionary = {
     productCountOne: "件产品",
     productCountOther: "件产品",
     filterBrand: "品牌",
+    filterCategory: "分类",
     filterScreen: "屏幕",
     filterPortability: "便携性",
     filterExperienceLevel: "使用经验",
@@ -121,8 +122,6 @@ export const zh: Dictionary = {
     axisStrength: "浓度",
     specificationsTitle: "产品规格",
     priceLabel: "价格",
-    publishedSectionEyebrow: "OKami24",
-    publishedSectionTitle: "现已上市",
   },
   compare: {
     metaTitle: "产品对比",

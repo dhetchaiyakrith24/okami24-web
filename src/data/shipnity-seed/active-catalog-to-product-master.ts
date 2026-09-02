@@ -500,6 +500,32 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // that reads "1 Ω" directly on the box, from the retailer's own dedicated "1.0 ohm" variant image
 // (confirmed via that page's own variant→image JSON mapping, same technique as Coil-38/92) —
 // resolving both the media gap and the resistance-identity question with the same source.
+// Continuation session (2026-09-02) — media research on the remaining ProductMaster candidates,
+// all still blocked, none added here:
+// - Pod-169 (infy 2.5ml cartridge): brand confirmed (Shipnity's own name literally says "infy");
+//   found and verified a real, non-AI, correctly-sized (1000x1000) official product photo for the
+//   "Strawberry" flavor at infy.my (og:image technique) — but the other 8 active flavors (Grape
+//   Jelly/Gummies/Bubblegum/Apple, Strawberry Grape, Tropical Mix Fruit, Blueberry, Lychee
+//   Raspberry) do not match any product page found on infy.my; the site's only "Grape" listings
+//   are "Yoyo Grape"/"Kyoho Grape", neither of which is one of this parent's real children, and the
+//   site's product-category listing page 404s (can't be crawled for a full flavor index). No
+//   flavor-neutral pack shot exists either — every real infy.my product photo is flavor-branded
+//   (checked the "Single"/"10-in-1"/"Carton Box" generic-looking template images; all three are
+//   printed "MINT", not neutral). One confirmed flavor photo is not enough to build an honest
+//   product-level card or a meaningfully-populated variant media table — stays on the glyph
+//   fallback. Do not re-attempt this exact path (slug-guessing individual flavor URLs) without a
+//   better index of infy.my's current flavor lineup.
+// - Pod-150 (KS Quikpro 15K cartridge): brand/model confirmed at the official kardinal.com product
+//   page, which explicitly states "up to 15,000 puffs" for the cartridge — an exact match. The only
+//   cartridge-specific image on that page is a grey technical dimension diagram (line-art, no
+//   color/material), not a product photograph — rejected as not representative. Stays blocked.
+// - Pod-149 (SKE Crystal B20K), Disposable-34 (Insta Bar PX 15000), coil-62 (Feelin C1 "Matcha
+//   Clear" cartridge): quick official-site checks found real product lines at skevape.com/
+//   instabar.net/nevoks.com but no exact model/puff-count/color match in the results returned
+//   (SKE's real lineup tops out at "15K" not "20K"; Instabar's real models are "DC"/"WT" not "PX";
+//   Nevoks' Feelin C1 product page did not expose a "Matcha" variant or per-color image mapping).
+//   Not pursued further this session — each would need a dedicated, deeper site crawl to resolve
+//   the naming gap, which is disproportionate effort for one item in a long low-leverage queue.
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
