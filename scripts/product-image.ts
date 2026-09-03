@@ -34,6 +34,7 @@
 import sharp from "sharp";
 import { readdirSync, statSync, existsSync } from "node:fs";
 import path from "node:path";
+import { MIN_ABSOLUTE_DETAIL_WIDTH } from "../src/lib/media-quality";
 
 // ===================================================================================
 // Processing helpers
@@ -136,11 +137,23 @@ export type ProductImageRole = "card" | "detail" | "variant" | "og";
 /** Minimum useful pixel width per role, based on this storefront's real rendered sizes
  *  (`PilotProductCard` renders up to 20vw, `PilotProductDetail`'s hero up to 42vw, OG/share
  *  images want to survive being embedded at social-card size). Deliberately a floor, not a
- *  target — plenty of real assets are larger. */
+ *  target — plenty of real assets are larger.
+ *
+ * `detail`/`variant` corrected from an earlier 300 (storefront quality correction pass,
+ * 2026-09-02): 300px stretched into the hero's real ~600-800px rendered width is a 2-3x upscale
+ * that visibly blurs, and this floor was false-passing exactly that (coil-56 at 131px and coil-74
+ * at 320px were both flagged live by the owner). Now imports `MIN_ABSOLUTE_DETAIL_WIDTH` from
+ * `src/lib/media-quality.ts`, which stays a deliberately simple, aspect-ratio-blind floor (this
+ * audit has no box to reason about) — the actual precise enforcement against upscale-blur lives in
+ * that file's aspect-aware `getImageDisplayInfo()`, used at Product Detail render time, which
+ * additionally prevents any asset from ever being upscaled even before better media exists. A
+ * flat width floor alone is NOT sufficient for the runtime decision — see that file's header for
+ * why (a genuinely narrow-but-sharp product photo, e.g. a tall pod device, can fail a naive width
+ * check while looking fine). */
 const MIN_WIDTH_BY_ROLE: Record<ProductImageRole, number> = {
   card: 400,
-  detail: 300,
-  variant: 300,
+  detail: MIN_ABSOLUTE_DETAIL_WIDTH,
+  variant: MIN_ABSOLUTE_DETAIL_WIDTH,
   og: 600,
 };
 
