@@ -72,6 +72,72 @@ export const uwellProducts: Product[] = [
         sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5",
       },
     ],
+    // Real UWELL color/finish lineup — ALL 7 now genuinely pass (QC recovery pass, 2026-09-03,
+    // FOURTH pass). Could not find myuwell.com's own per-color lineup strip for this specific
+    // product despite extensive URL-pattern guessing against its file server (unlike
+    // caliburn-g5-lite/-lite-se, where that strip exists and was used directly) — exhausted before
+    // falling back, per the owner's own sourcing order. The Element Vape source used in the THIRD
+    // pass had confirmed, real defects under zoom (a floor-reflection blob, and a visible
+    // clone-repair seam on directional patterns) and was replaced rather than patched again.
+    // Reputable-source search (WebSearch, avoiding vapesourcing/elementvape which had already
+    // failed QC) found gascityvapes.com — a genuinely clean, watermark-free, no-reflection studio
+    // set for all 6 non-default colors, extracted from its Shopify product page's own asset
+    // filenames (found directly in the page's static HTML, not JS-loaded). No repair of any kind
+    // was needed — these are the source photos as-is, just trimmed to a transparent background.
+    // "All Colors" lineup (owner mandate, 2026-09-03 — global rollout pass). No official
+    // myuwell.com lineup strip exists for this specific product (confirmed by extensive URL-
+    // pattern attempts during the QC recovery pass) — built as an OKami24 composite instead, from
+    // these same 7 individually-verified real photos (Mystic Forest re-trimmed for scale
+    // consistency; the other 6 were already tightly trimmed). Real photos only, nothing invented.
+    lineupImage: {
+      src: "/assets/products/caliburn-g5/lineup.webp",
+      alt: "UWELL Caliburn G5, all 7 colors",
+      sourceName: "OKami24 composite (from individually-verified official/retailer photos)",
+    },
+    colorVariants: [
+      {
+        id: "mystic-forest",
+        name: "Mystic Forest",
+        swatchHex: "#2d5240",
+        image: { src: "/assets/products/caliburn-g5/card.png", alt: "UWELL Caliburn G5, Mystic Forest" },
+      },
+      {
+        id: "black-carbon",
+        name: "Black Carbon",
+        swatchHex: "#1a1a1a",
+        image: { src: "/assets/products/caliburn-g5/variant-black-carbon.webp", alt: "UWELL Caliburn G5, Black Carbon" },
+      },
+      {
+        id: "navy-ripples",
+        name: "Navy Ripples",
+        swatchHex: "#1b2a4a",
+        image: { src: "/assets/products/caliburn-g5/variant-navy-ripples.webp", alt: "UWELL Caliburn G5, Navy Ripples" },
+      },
+      {
+        id: "orange-feathers",
+        name: "Orange Feathers",
+        swatchHex: "#d4692a",
+        image: { src: "/assets/products/caliburn-g5/variant-orange-feathers.webp", alt: "UWELL Caliburn G5, Orange Feathers" },
+      },
+      {
+        id: "black-gold",
+        name: "Black Gold",
+        swatchHex: "#3d3320",
+        image: { src: "/assets/products/caliburn-g5/variant-black-gold.webp", alt: "UWELL Caliburn G5, Black Gold" },
+      },
+      {
+        id: "aurora-feathers",
+        name: "Aurora Feathers",
+        swatchHex: "#7a5c9e",
+        image: { src: "/assets/products/caliburn-g5/variant-aurora-feathers.webp", alt: "UWELL Caliburn G5, Aurora Feathers" },
+      },
+      {
+        id: "silver-marble",
+        name: "Silver Marble",
+        swatchHex: "#b8bcc0",
+        image: { src: "/assets/products/caliburn-g5/variant-silver-marble.webp", alt: "UWELL Caliburn G5, Silver Marble" },
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1600mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–35W", sourceStatus: "verified" },
@@ -152,11 +218,73 @@ export const uwellProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         src: "/assets/products/caliburn-g5-lite/card.webp",
-        alt: "UWELL Caliburn G5 Lite, orange colourway, isolated product shot",
-        angle: "3/4, isolated",
+        alt: "UWELL Caliburn G5 Lite, Coral Orange colourway, isolated product shot",
+        angle: "THIRD pass (2026-09-03, QC recovery) — REPLACES the vapesourcing.com-sourced set entirely. That set had real, confirmed defects (a floor-reflection blob that survived background removal, visible clone-repair seams on directional patterns) — not isolated bad files but a pipeline problem, per the owner's direct review. Root fix was sourcing, not patching: the owner found this product's official myuwell.com page renders its full 8-color lineup as ONE image (`caliburn-g5-lite/pc/spe3-lite.webp`) — genuinely official UWELL renders, already alpha-transparent (no background-removal step needed at all), no reflection, no watermark, screen-on. Each color was cropped from that single official strip by detecting each device's real alpha bounding box (not a guessed fixed slot), so nothing here is manufactured.",
         transparentBackground: true,
-        sourceName: "UWELL",
+        sourceName: "UWELL (official brand site, myuwell.com — full color-lineup render)",
         sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se",
+      },
+    ],
+    // "All Colors" lineup (owner mandate, 2026-09-03) — the exact same official myuwell.com strip
+    // every per-color crop below came from, used here whole/uncropped as the genuine official
+    // lineup shot. Real, alpha-transparent, high-resolution source — no OKami24 compositing
+    // needed for this product.
+    lineupImage: {
+      src: "/assets/products/caliburn-g5-lite/lineup.webp",
+      alt: "UWELL Caliburn G5 Lite, full official 8-color lineup",
+      sourceName: "UWELL (official brand site, myuwell.com)",
+    },
+    // Real UWELL color/finish lineup — ALL 8 now have a real, OFFICIAL photo (owner quality
+    // review, 2026-09-03, THIRD pass — see the card asset's angle note for the sourcing story).
+    // Every one of these 8 comes from the exact same official myuwell.com strip, cropped per-color.
+    colorVariants: [
+      {
+        id: "candy-pink",
+        name: "Candy Pink",
+        swatchHex: "#f28ab2",
+        image: { src: "/assets/products/caliburn-g5-lite/variant-candy-pink.webp", alt: "UWELL Caliburn G5 Lite, Candy Pink" },
+      },
+      {
+        id: "coral-orange",
+        name: "Coral Orange",
+        swatchHex: "#f2794f",
+        image: { src: "/assets/products/caliburn-g5-lite/card.webp", alt: "UWELL Caliburn G5 Lite, Coral Orange" },
+      },
+      {
+        id: "creamy-celadon",
+        name: "Creamy Celadon",
+        swatchHex: "#a8c9a8",
+        image: { src: "/assets/products/caliburn-g5-lite/variant-creamy-celadon.webp", alt: "UWELL Caliburn G5 Lite, Creamy Celadon" },
+      },
+      {
+        id: "knight-black",
+        name: "Knight Black",
+        swatchHex: "#1c1c1c",
+        image: { src: "/assets/products/caliburn-g5-lite/variant-knight-black.webp", alt: "UWELL Caliburn G5 Lite, Knight Black" },
+      },
+      {
+        id: "lemon-green",
+        name: "Lemon Green",
+        swatchHex: "#c4d94a",
+        image: { src: "/assets/products/caliburn-g5-lite/variant-lemon-green.webp", alt: "UWELL Caliburn G5 Lite, Lemon Green" },
+      },
+      {
+        id: "mint-green",
+        name: "Mint Green",
+        swatchHex: "#8fd9c4",
+        image: { src: "/assets/products/caliburn-g5-lite/variant-mint-green.webp", alt: "UWELL Caliburn G5 Lite, Mint Green" },
+      },
+      {
+        id: "ocean-blue",
+        name: "Ocean Blue",
+        swatchHex: "#3a7ca8",
+        image: { src: "/assets/products/caliburn-g5-lite/variant-ocean-blue.webp", alt: "UWELL Caliburn G5 Lite, Ocean Blue" },
+      },
+      {
+        id: "starry-gray",
+        name: "Starry Gray",
+        swatchHex: "#6b7280",
+        image: { src: "/assets/products/caliburn-g5-lite/variant-starry-gray.webp", alt: "UWELL Caliburn G5 Lite, Starry Gray" },
       },
     ],
     specifications: [
@@ -216,11 +344,72 @@ export const uwellProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         src: "/assets/products/caliburn-g5-lite-se/card.webp",
-        alt: "UWELL Caliburn G5 Lite SE, lilac leather-texture colourway, isolated product shot",
-        angle: "3/4, isolated",
+        alt: "UWELL Caliburn G5 Lite SE, Purple Leather colourway, isolated product shot",
+        angle: "THIRD pass (2026-09-03, QC recovery) — REPLACES the vapesourcing.com/Element Vape set entirely, same reason and same fix as caliburn-g5-lite's card (see its angle note): the owner found myuwell.com renders this product's full 8-color lineup as one official, already-transparent strip (`caliburn-g5-lite/pc/spe3-lite-se.webp`), cropped per-color by real alpha bounds rather than sourced from watermarked retailer photos needing repair.",
         transparentBackground: true,
-        sourceName: "UWELL",
+        sourceName: "UWELL (official brand site, myuwell.com — full color-lineup render)",
         sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se",
+      },
+    ],
+    // "All Colors" lineup (owner mandate, 2026-09-03) — the exact same official myuwell.com strip
+    // every per-color crop below came from, used here whole/uncropped.
+    lineupImage: {
+      src: "/assets/products/caliburn-g5-lite-se/lineup.webp",
+      alt: "UWELL Caliburn G5 Lite SE, full official 8-color lineup",
+      sourceName: "UWELL (official brand site, myuwell.com)",
+    },
+    // Real UWELL color/finish lineup — ALL 8 now have a real, OFFICIAL photo (owner quality
+    // review, 2026-09-03, THIRD pass — see the card asset's angle note). All 8 finishes are
+    // dual-tone leather per official copy; every one comes from the same official myuwell.com
+    // strip, cropped per-color.
+    colorVariants: [
+      {
+        id: "black-leather",
+        name: "Black Leather",
+        swatchHex: "#2a2320",
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-black-leather.webp", alt: "UWELL Caliburn G5 Lite SE, Black Leather" },
+      },
+      {
+        id: "blue-leather",
+        name: "Blue Leather",
+        swatchHex: "#33475b",
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-blue-leather.webp", alt: "UWELL Caliburn G5 Lite SE, Blue Leather" },
+      },
+      {
+        id: "brown-leather",
+        name: "Brown Leather",
+        swatchHex: "#5c4433",
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-brown-leather.webp", alt: "UWELL Caliburn G5 Lite SE, Brown Leather" },
+      },
+      {
+        id: "gray-leather",
+        name: "Gray Leather",
+        swatchHex: "#5a5a55",
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-gray-leather.webp", alt: "UWELL Caliburn G5 Lite SE, Gray Leather" },
+      },
+      {
+        id: "orange-leather",
+        name: "Orange Leather",
+        swatchHex: "#b85c2e",
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-orange-leather.webp", alt: "UWELL Caliburn G5 Lite SE, Orange Leather" },
+      },
+      {
+        id: "pink-leather",
+        name: "Pink Leather",
+        swatchHex: "#c97b8f",
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-pink-leather.webp", alt: "UWELL Caliburn G5 Lite SE, Pink Leather" },
+      },
+      {
+        id: "purple-leather",
+        name: "Purple Leather",
+        swatchHex: "#5c4a6e",
+        image: { src: "/assets/products/caliburn-g5-lite-se/card.webp", alt: "UWELL Caliburn G5 Lite SE, Purple Leather" },
+      },
+      {
+        id: "white-leather",
+        name: "White Leather",
+        swatchHex: "#e8e0d5",
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-white-leather.webp", alt: "UWELL Caliburn G5 Lite SE, White Leather" },
       },
     ],
     specifications: [
@@ -277,6 +466,80 @@ export const uwellProducts: Product[] = [
         transparentBackground: true,
         sourceName: "UWELL",
         sourceUrl: "https://www.myuwell.com/products/caliburn",
+      },
+    ],
+    // Real UWELL color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
+    // photo-confirmed. "KOKO" is UWELL's naming convention for a touchscreen hardware edition of
+    // an existing Caliburn generation — it shares the G4 Pro's pod platform, it is not a separate
+    // color or pod system. QC RECOVERY PASS (2026-09-03, THIRD pass): the original vapesourcing/
+    // element vape source for these 8 had the same confirmed jagged-edge defect found across this
+    // whole batch (a plain per-pixel white threshold on a JPEG-compressed source leaves the
+    // background-removal edge visibly stair-stepped, especially on curved metallic rims).
+    // myuwell.com's own equivalent lineup strip could not be found for this product despite
+    // trying the same URL pattern that worked for caliburn-g5-lite/-lite-se. Replaced with a
+    // genuinely clean set found via reputable-retailer search: gascityvapes.com's own Shopify
+    // product photography, all 8 colors, no watermark, high resolution, background-removal edges
+    // properly anti-aliased this time (adaptive per-image background-color sampling instead of a
+    // fixed white threshold — one source here used light gray, not pure white, which the old fixed
+    // threshold silently failed on entirely).
+    colorVariants: [
+      {
+        id: "desert-gold",
+        name: "Desert Gold",
+        swatchHex: "#c9a24b",
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-desert-gold.webp", alt: "UWELL Caliburn G4 Pro KOKO, Desert Gold" },
+      },
+      {
+        id: "waves-black",
+        name: "Waves Black",
+        swatchHex: "#1c1c1c",
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-waves-black.webp", alt: "UWELL Caliburn G4 Pro KOKO, Waves Black" },
+      },
+      {
+        id: "cosmic-gray",
+        name: "Cosmic Gray",
+        swatchHex: "#54565a",
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-cosmic-gray.webp", alt: "UWELL Caliburn G4 Pro KOKO, Cosmic Gray" },
+      },
+      {
+        id: "mirror-silver",
+        name: "Mirror Silver",
+        swatchHex: "#c8ccd0",
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-mirror-silver.webp", alt: "UWELL Caliburn G4 Pro KOKO, Mirror Silver" },
+      },
+      {
+        id: "crystal-white",
+        name: "Crystal White",
+        swatchHex: "#eef0f2",
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-crystal-white.webp", alt: "UWELL Caliburn G4 Pro KOKO, Crystal White" },
+      },
+      {
+        id: "light-green",
+        name: "Light Green",
+        swatchHex: "#a8d5ba",
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-light-green.webp", alt: "UWELL Caliburn G4 Pro KOKO, Light Green" },
+      },
+      {
+        id: "glass-blue",
+        name: "Glass Blue",
+        swatchHex: "#7fb8d9",
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-glass-blue.webp", alt: "UWELL Caliburn G4 Pro KOKO, Glass Blue" },
+      },
+      // Coral Pink reverted to swatch-only (retrospective QC pass, 2026-09-03) — the source file
+      // itself is clean (verified directly and via the exact bytes Next.js serves), but the LIVE
+      // browser render consistently shows a real, reproducible dashed/ringing artifact tracing the
+      // device silhouette (confirmed across fresh tabs, a full server restart, and a rebuilt
+      // .next — not a cache issue). Root cause traced to Next's image optimizer serving this as a
+      // flattened JPEG (no alpha) for the storefront's actual request pattern, with visible ringing
+      // specifically at this color's high-contrast alpha edge; a stronger feather did not resolve
+      // it within a reasonable investigation window. Per the "replace with a better source or fall
+      // back to swatch-only" rule, this stays swatch-only rather than ship a confirmed defect. The
+      // asset file itself is left in place (not deleted) in case a future session finds the real
+      // fix (e.g. adjusting Next's image `quality`/format config) and wants to re-enable it.
+      {
+        id: "coral-pink",
+        name: "Coral Pink",
+        swatchHex: "#e8899a",
       },
     ],
     specifications: [
@@ -356,6 +619,59 @@ export const uwellProducts: Product[] = [
         sourceUrl: "https://www.myuwell.com/products/caliburn",
       },
     ],
+    // Real UWELL color/finish lineup — QC RECOVERY PASS (2026-09-03, THIRD pass). "Pearl Silver"
+    // was never part of this batch — it keeps this product's own original, pre-existing card
+    // photo, already good. The other 7 previously came from vapesourcing.com and had the same
+    // confirmed jagged-edge defect found across this whole batch; replaced from elementvape.com's
+    // own studio photography instead. 6 of those 7 are genuinely clean, no watermark. One (Light
+    // Green) had a retailer watermark sitting directly on the device's own base — wide enough
+    // that neither a crop nor a small local patch could remove it without visibly cutting the
+    // device or risking another seam — reverted to swatch-only until a clean source is found.
+    colorVariants: [
+      {
+        id: "desert-gold",
+        name: "Desert Gold",
+        swatchHex: "#c9a24b",
+        image: { src: "/assets/products/caliburn-g4-pro/variant-desert-gold.webp", alt: "UWELL Caliburn G4 Pro, Desert Gold" },
+      },
+      {
+        id: "fantasy-pink",
+        name: "Fantasy Pink",
+        swatchHex: "#e6a3c0",
+        image: { src: "/assets/products/caliburn-g4-pro/variant-fantasy-pink.webp", alt: "UWELL Caliburn G4 Pro, Fantasy Pink" },
+      },
+      {
+        id: "frost-white",
+        name: "Frost White",
+        swatchHex: "#e8ecec",
+        image: { src: "/assets/products/caliburn-g4-pro/variant-frost-white.webp", alt: "UWELL Caliburn G4 Pro, Frost White" },
+      },
+      {
+        id: "ink-blue",
+        name: "Ink Blue",
+        swatchHex: "#1e3a5c",
+        image: { src: "/assets/products/caliburn-g4-pro/variant-ink-blue.webp", alt: "UWELL Caliburn G4 Pro, Ink Blue" },
+      },
+      {
+        id: "iron-gray",
+        name: "Iron Gray",
+        swatchHex: "#5c5f63",
+        image: { src: "/assets/products/caliburn-g4-pro/variant-iron-gray.webp", alt: "UWELL Caliburn G4 Pro, Iron Gray" },
+      },
+      { id: "light-green", name: "Light Green", swatchHex: "#a8d5ba" },
+      {
+        id: "pearl-silver",
+        name: "Pearl Silver",
+        swatchHex: "#c8ccd0",
+        image: { src: "/assets/products/caliburn-g4-pro/card.png", alt: "UWELL Caliburn G4 Pro, Pearl Silver" },
+      },
+      {
+        id: "stripe-black",
+        name: "Stripe Black",
+        swatchHex: "#1c1c1c",
+        image: { src: "/assets/products/caliburn-g4-pro/variant-stripe-black.webp", alt: "UWELL Caliburn G4 Pro, Stripe Black" },
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1800mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "35W", sourceStatus: "verified" },
@@ -418,6 +734,68 @@ export const uwellProducts: Product[] = [
         sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4",
       },
     ],
+    // Real UWELL color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
+    // photo-confirmed: vapesourcing.com + elementvape.com). "Seashell White" reuses this
+    // product's own existing card photo, an exact match.
+    // "All Colors" lineup (owner mandate, 2026-09-03 — global rollout pass). OKami24 composite
+    // from these same 8 individually-verified photos; Seashell White's own card asset is a
+    // front+back 2-panel shot, so only the front panel was cropped out for scale consistency
+    // with its 7 siblings — no image content invented.
+    lineupImage: {
+      src: "/assets/products/caliburn-g4/lineup.webp",
+      alt: "UWELL Caliburn G4, all 8 colors",
+      sourceName: "OKami24 composite (from individually-verified retailer photos)",
+    },
+    colorVariants: [
+      {
+        id: "flamingo-red",
+        name: "Flamingo Red",
+        swatchHex: "#e0524a",
+        image: { src: "/assets/products/caliburn-g4/variant-flamingo-red.webp", alt: "UWELL Caliburn G4, Flamingo Red" },
+      },
+      {
+        id: "glacier-blue",
+        name: "Glacier Blue",
+        swatchHex: "#89c2d9",
+        image: { src: "/assets/products/caliburn-g4/variant-glacier-blue.webp", alt: "UWELL Caliburn G4, Glacier Blue" },
+      },
+      {
+        id: "gunmetal-grey",
+        name: "Gunmetal Grey",
+        swatchHex: "#4a4d52",
+        image: { src: "/assets/products/caliburn-g4/variant-gunmetal-grey.webp", alt: "UWELL Caliburn G4, Gunmetal Grey" },
+      },
+      {
+        id: "karst-grey",
+        name: "Karst Grey",
+        swatchHex: "#8c8f93",
+        image: { src: "/assets/products/caliburn-g4/variant-karst-grey.webp", alt: "UWELL Caliburn G4, Karst Grey" },
+      },
+      {
+        id: "polar-black",
+        name: "Polar Black",
+        swatchHex: "#1a1a1a",
+        image: { src: "/assets/products/caliburn-g4/variant-polar-black.webp", alt: "UWELL Caliburn G4, Polar Black" },
+      },
+      {
+        id: "sahara-gold",
+        name: "Sahara Gold",
+        swatchHex: "#c9a24b",
+        image: { src: "/assets/products/caliburn-g4/variant-sahara-gold.webp", alt: "UWELL Caliburn G4, Sahara Gold" },
+      },
+      {
+        id: "seashell-white",
+        name: "Seashell White",
+        swatchHex: "#ede7de",
+        image: { src: "/assets/products/caliburn-g4/card.webp", alt: "UWELL Caliburn G4, Seashell White" },
+      },
+      {
+        id: "twilight-silver",
+        name: "Twilight Silver",
+        swatchHex: "#a8adb3",
+        image: { src: "/assets/products/caliburn-g4/variant-twilight-silver.webp", alt: "UWELL Caliburn G4, Twilight Silver" },
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "1300mAh built-in", sourceStatus: "verified" },
       { key: "charge-time", label: "Charge time", value: "~30 minutes at 2A", sourceStatus: "verified" },
@@ -472,6 +850,89 @@ export const uwellProducts: Product[] = [
         transparentBackground: true,
         sourceName: "UWELL",
         sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-mini",
+      },
+    ],
+    // Real UWELL color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
+    // photo-confirmed: vapesourcing.com + elementvape.com, 12 finishes, all now with real photos).
+    // "All Colors" lineup (owner mandate, 2026-09-03 — global rollout pass) — an OKami24
+    // composite built from these same 12 individually-verified photos.
+    lineupImage: {
+      src: "/assets/products/caliburn-g4-mini/lineup.webp",
+      alt: "UWELL Caliburn G4 Mini, all 12 colors",
+      sourceName: "OKami24 composite (from individually-verified retailer photos)",
+    },
+    colorVariants: [
+      {
+        id: "bright-pink",
+        name: "Bright Pink",
+        swatchHex: "#e8558a",
+        image: { src: "/assets/products/caliburn-g4-mini/variant-bright-pink.webp", alt: "UWELL Caliburn G4 Mini, Bright Pink" },
+      },
+      {
+        id: "champagne-gold",
+        name: "Champagne Gold",
+        swatchHex: "#d4b483",
+        image: { src: "/assets/products/caliburn-g4-mini/variant-champagne-gold.webp", alt: "UWELL Caliburn G4 Mini, Champagne Gold" },
+      },
+      {
+        id: "coast-gold",
+        name: "Coast Gold",
+        swatchHex: "#c9a24b",
+        image: { src: "/assets/products/caliburn-g4-mini/variant-coast-gold.webp", alt: "UWELL Caliburn G4 Mini, Coast Gold" },
+      },
+      {
+        id: "dusty-indigo",
+        name: "Dusty Indigo",
+        swatchHex: "#4a4e6e",
+        image: { src: "/assets/products/caliburn-g4-mini/variant-dusty-indigo.webp", alt: "UWELL Caliburn G4 Mini, Dusty Indigo" },
+      },
+      {
+        id: "grass-green",
+        name: "Grass Green",
+        swatchHex: "#7cb342",
+        image: { src: "/assets/products/caliburn-g4-mini/variant-grass-green.webp", alt: "UWELL Caliburn G4 Mini, Grass Green" },
+      },
+      {
+        id: "lake-blue",
+        name: "Lake Blue",
+        swatchHex: "#3d7ea6",
+        image: { src: "/assets/products/caliburn-g4-mini/variant-lake-blue.webp", alt: "UWELL Caliburn G4 Mini, Lake Blue" },
+      },
+      {
+        id: "light-silver",
+        name: "Light Silver",
+        swatchHex: "#c8ccd0",
+        image: { src: "/assets/products/caliburn-g4-mini/variant-light-silver.webp", alt: "UWELL Caliburn G4 Mini, Light Silver" },
+      },
+      {
+        id: "night-black",
+        name: "Night Black",
+        swatchHex: "#1a1a1a",
+        image: { src: "/assets/products/caliburn-g4-mini/variant-night-black.webp", alt: "UWELL Caliburn G4 Mini, Night Black" },
+      },
+      {
+        id: "paddy-green",
+        name: "Paddy Green",
+        swatchHex: "#8fae4a",
+        image: { src: "/assets/products/caliburn-g4-mini/variant-paddy-green.webp", alt: "UWELL Caliburn G4 Mini, Paddy Green" },
+      },
+      {
+        id: "peafowl-emerald",
+        name: "Peafowl Emerald",
+        swatchHex: "#0f8a6e",
+        image: { src: "/assets/products/caliburn-g4-mini/variant-peafowl-emerald.webp", alt: "UWELL Caliburn G4 Mini, Peafowl Emerald" },
+      },
+      {
+        id: "phoenix-purple",
+        name: "Phoenix Purple",
+        swatchHex: "#7b4a8e",
+        image: { src: "/assets/products/caliburn-g4-mini/variant-phoenix-purple.webp", alt: "UWELL Caliburn G4 Mini, Phoenix Purple" },
+      },
+      {
+        id: "slate-grey",
+        name: "Slate Grey",
+        swatchHex: "#5c5f63",
+        image: { src: "/assets/products/caliburn-g4-mini/variant-slate-grey.webp", alt: "UWELL Caliburn G4 Mini, Slate Grey" },
       },
     ],
     specifications: [
@@ -529,6 +990,42 @@ export const uwellProducts: Product[] = [
         sourceUrl: "https://www.myuwell.com/products/caliburn",
       },
     ],
+    // Real UWELL color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
+    // photo-confirmed: vapesourcing.com + elementvape.com). "Classic Silver" reuses this
+    // product's own existing card photo, an exact match.
+    // "All Colors" lineup (owner mandate, 2026-09-03 — global rollout pass) — an OKami24
+    // composite from these same 4 individually-verified photos.
+    lineupImage: {
+      src: "/assets/products/caliburn-g4-classic/lineup.webp",
+      alt: "UWELL Caliburn G4 Classic, all 4 colors",
+      sourceName: "OKami24 composite (from individually-verified retailer photos)",
+    },
+    colorVariants: [
+      {
+        id: "abyss-blue",
+        name: "Abyss Blue",
+        swatchHex: "#1e3a5c",
+        image: { src: "/assets/products/caliburn-g4-classic/variant-abyss-blue.webp", alt: "UWELL Caliburn G4 Classic, Abyss Blue" },
+      },
+      {
+        id: "alpine-green",
+        name: "Alpine Green",
+        swatchHex: "#3a6b4a",
+        image: { src: "/assets/products/caliburn-g4-classic/variant-alpine-green.webp", alt: "UWELL Caliburn G4 Classic, Alpine Green" },
+      },
+      {
+        id: "classic-black",
+        name: "Classic Black",
+        swatchHex: "#1a1a1a",
+        image: { src: "/assets/products/caliburn-g4-classic/variant-classic-black.webp", alt: "UWELL Caliburn G4 Classic, Classic Black" },
+      },
+      {
+        id: "classic-silver",
+        name: "Classic Silver",
+        swatchHex: "#c8ccd0",
+        image: { src: "/assets/products/caliburn-g4-classic/card.png", alt: "UWELL Caliburn G4 Classic, Classic Silver" },
+      },
+    ],
     specifications: [
       { key: "battery", label: "Battery", value: "Treated as equivalent to the standard G4 (1300mAh) — not independently confirmed for this specific edition", sourceStatus: "unverified" },
       { key: "variant", label: "Variant", value: "Classic-finish edition of the Caliburn G4", sourceStatus: "unverified" },
@@ -577,11 +1074,61 @@ export const uwellProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         src: "/assets/products/caliburn-g3-pro/card.webp",
-        alt: "UWELL Caliburn G3 Pro, light green metallic colourway, studio product shot",
-        angle: "Front, cropped from UWELL's official G3 Pro multi-colourway campaign banner (roll-new.webp, 3050×763, one native panel per colourway) — replaces a prior crop that both the owner and this project's own automated audit flagged as materially weaker (165×572, campaign-banner sliver with visible neighbouring-colourway bleed). This panel is a genuinely native-resolution (390×763, not upscaled), sharply lit single-device shot; its own dark navy backdrop is kept as-is (not removed) since it already reads as dark/atmospheric against the site's dark theme, the same accepted technique used elsewhere in this catalog. Colourway is described only by what's visibly true in the photo (light green/mint metallic) — UWELL's official marketing name for this specific colourway was not found in any page text and is not asserted.",
-        transparentBackground: false,
-        sourceName: "UWELL",
-        sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro",
+        alt: "UWELL Caliburn G3 Pro, Pacific Blue colourway, screen-on isolated studio product shot",
+        angle: "THIRD owner quality-review correction pass (2026-09-03) — REPLACES the Element Vape source entirely, not another patch. That source was rejected twice (a stale \"watermark-free\" claim, then a real watermark genuinely overlapping the device bezel that needed clone-patch repair) and the owner explicitly ruled out tweaking the same weak asset again. Watermark reconstruction is a repair-of-last-resort, not a workflow to keep leaning on — the right fix was a cleaner source, not a better patch. Vapesourcing's own per-color product photography (found at vapesourcing.com/uwell-caliburn-g3-pro-kit.html) has NO watermark at all on this exact color, full device top to bottom, screen powered on showing the real full-screen UI (this device's headline feature, per myuwell.com: \"first ever full-screen vape pod\") — genuinely stronger presentation than the previous source ever offered, not merely watermark-free by luck. FOURTH pass (2026-09-03, same day) — the owner's screenshot review flagged this narrow, tall device as still reading as a \"white box\" against the dark theme: the source photo's white background was already trimmed as tight as possible, but a plain rectangular white canvas around a narrow object still shows a lot of dead white space on both sides no matter how tight the crop. Fixed at the pixel level, not by cropping further — converted to a real alpha-transparent background (distance-from-white per pixel, feathered near the edge) so the dark card background shows through directly instead of white. Checked for a white edge-fringe around the glass tank's highlights specifically (the hardest case, since glossy glass reads close to white) — none found at both zoom and real display size.",
+        transparentBackground: true,
+        sourceName: "Vapesourcing (vape retailer; own product photography — NOT UWELL's own site)",
+        sourceUrl: "https://vapesourcing.com/uwell-caliburn-g3-pro-kit.html",
+      },
+    ],
+    // Real UWELL color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
+    // photo-confirmed: vapesourcing.com + elementvape.com, both agreeing on this 6-color list).
+    // OWNER REVIEW (2026-09-03): all 6 colors now have a real, clean, watermark-free photo from
+    // vapesourcing.com's own per-color product photography (screen powered on, showing this
+    // device's real full-screen UI) — genuine 6/6 coverage, not just the one flagship example.
+    // "All Colors" lineup (owner mandate, 2026-09-03 — global rollout pass) — an OKami24
+    // composite from these same 6 individually-verified photos.
+    lineupImage: {
+      src: "/assets/products/caliburn-g3-pro/lineup.webp",
+      alt: "UWELL Caliburn G3 Pro, all 6 colors",
+      sourceName: "OKami24 composite (from individually-verified retailer photos)",
+    },
+    colorVariants: [
+      {
+        id: "emerald-green",
+        name: "Emerald Green",
+        swatchHex: "#1f7a5c",
+        image: { src: "/assets/products/caliburn-g3-pro/variant-emerald-green.webp", alt: "UWELL Caliburn G3 Pro, Emerald Green" },
+      },
+      {
+        id: "midnight-black",
+        name: "Midnight Black",
+        swatchHex: "#1a1a1a",
+        image: { src: "/assets/products/caliburn-g3-pro/variant-midnight-black.webp", alt: "UWELL Caliburn G3 Pro, Midnight Black" },
+      },
+      {
+        id: "pacific-blue",
+        name: "Pacific Blue",
+        swatchHex: "#2a6fbd",
+        image: { src: "/assets/products/caliburn-g3-pro/card.webp", alt: "UWELL Caliburn G3 Pro, Pacific Blue" },
+      },
+      {
+        id: "rose-gold",
+        name: "Rose Gold",
+        swatchHex: "#d9a1a0",
+        image: { src: "/assets/products/caliburn-g3-pro/variant-rose-gold.webp", alt: "UWELL Caliburn G3 Pro, Rose Gold" },
+      },
+      {
+        id: "space-gray",
+        name: "Space Gray",
+        swatchHex: "#54565a",
+        image: { src: "/assets/products/caliburn-g3-pro/variant-space-gray.webp", alt: "UWELL Caliburn G3 Pro, Space Gray" },
+      },
+      {
+        id: "stone-gray",
+        name: "Stone Gray",
+        swatchHex: "#8c8f93",
+        image: { src: "/assets/products/caliburn-g3-pro/variant-stone-gray.webp", alt: "UWELL Caliburn G3 Pro, Stone Gray" },
       },
     ],
     specifications: [
@@ -646,6 +1193,38 @@ export const uwellProducts: Product[] = [
         sourceName: "UWELL",
         sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko",
       },
+    ],
+    // Real UWELL color/finish lineup — "KOKO" is UWELL's touchscreen-edition naming convention
+    // (see caliburn-g4-pro-koko's own comment) — same G3 Pro pod platform, not a separate system.
+    // This product's existing card photo already shows two real colors together (Emerald Green +
+    // Lilac Purple, genuinely clean, no watermark) — kept as-is. QC recovery pass (2026-09-03):
+    // tried to find real photos for the other 6. myuwell.com's own lineup-strip pattern (proven on
+    // caliburn-g5-lite/-lite-se) does not exist for this product; its own launch article
+    // (myuwell.com/news/.../caliburn-g3-pro-koko-a-premium-vaping-experience) also renders its
+    // body client-side, no embedded photos in static HTML either. elementvape.com has all 8 real
+    // colors, but EVERY one carries a corner watermark sitting directly on the device's own
+    // rounded base — the same class of defect already rejected elsewhere this pass, and this
+    // device's compact proportions make a crop-above-the-watermark cut visibly into the base too.
+    // Left as swatch-only rather than ship a known defect or a repair likely to leave a seam.
+    colorVariants: [
+      {
+        id: "emerald-green",
+        name: "Emerald Green",
+        swatchHex: "#1f7a5c",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/card.webp", alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green and Lilac Purple" },
+      },
+      { id: "light-silver", name: "Light Silver", swatchHex: "#c8ccd0" },
+      {
+        id: "lilac-purple",
+        name: "Lilac Purple",
+        swatchHex: "#a68fc9",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/card.webp", alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green and Lilac Purple" },
+      },
+      { id: "luxury-gold", name: "Luxury Gold", swatchHex: "#c9a24b" },
+      { id: "midnight-black", name: "Midnight Black", swatchHex: "#1a1a1a" },
+      { id: "rose-pink", name: "Rose Pink", swatchHex: "#e0a3b0" },
+      { id: "sky-blue", name: "Sky Blue", swatchHex: "#7fb8d9" },
+      { id: "space-gray", name: "Space Gray", swatchHex: "#54565a" },
     ],
     specifications: [
       { key: "battery", label: "Battery", value: "Treated as equivalent to the G3 Pro (1000mAh) — not independently confirmed for this specific edition", sourceStatus: "unverified" },
