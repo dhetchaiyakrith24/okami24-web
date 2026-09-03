@@ -84,6 +84,12 @@ export const en: Dictionary = {
     portabilityStandard: "Standard",
   },
   product: {
+    colorLabel: "Color",
+    flavorLabel: "Flavor",
+    allVariantsLabel: "All",
+    outOfStockChip: "Out of stock",
+    reviewVideoEyebrow: "OKami24 Review",
+    watchOnYoutube: "Watch on YouTube",
     statBattery: "Battery",
     statOutput: "Output",
     statRatedPuffs: "Rated puffs",
@@ -128,6 +134,13 @@ export const en: Dictionary = {
     specificationsTitle: "Specifications",
     priceLabel: "Price",
   },
+  /** Product Detail add-to-cart control — only rendered for a genuinely published, priced
+   *  product; see PilotProductDetail.tsx. */
+  productActions: {
+    addToCartCta: "Add to cart",
+    outOfStockLabel: "Out of stock",
+    outOfStockCta: "Ask on LINE",
+  },
   compare: {
     metaTitle: "Compare",
     metaDescription: "Compare up to four pod systems, pod kits, or disposables side by side — verified, shared attributes only.",
@@ -163,6 +176,8 @@ export const en: Dictionary = {
     addPlaceholder: "Add a product to compare",
     mixedCoverageNote:
       "Some selected products are consumables — coils, pods, cartridges, e-liquid — rather than devices, so device attributes like battery or screen simply don't apply to them and are shown as —.",
+    uncertainSpecsNote:
+      "One or more selected products has an open identity or spec question (see its own product page for details) — treat the classification values above as provisional for that product, not confirmed fact.",
   },
   finder: {
     metaTitle: "Product Finder",

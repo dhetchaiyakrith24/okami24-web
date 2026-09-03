@@ -78,6 +78,12 @@ export const th: Dictionary = {
     portabilityStandard: "มาตรฐาน",
   },
   product: {
+    colorLabel: "สี",
+    flavorLabel: "รสชาติ",
+    allVariantsLabel: "ทั้งหมด",
+    outOfStockChip: "สินค้าหมด",
+    reviewVideoEyebrow: "รีวิวจาก OKami24",
+    watchOnYoutube: "ดูบน YouTube",
     statBattery: "แบตเตอรี่",
     statOutput: "กำลังไฟ",
     statRatedPuffs: "จำนวนคำที่ระบุ",
@@ -122,6 +128,11 @@ export const th: Dictionary = {
     specificationsTitle: "ข้อมูลจำเพาะ",
     priceLabel: "ราคา",
   },
+  productActions: {
+    addToCartCta: "เพิ่มลงตะกร้า",
+    outOfStockLabel: "สินค้าหมด",
+    outOfStockCta: "สอบถามทาง LINE",
+  },
   compare: {
     metaTitle: "เปรียบเทียบสินค้า",
     metaDescription: "เปรียบเทียบพอดซิสเต็ม พอดคิท หรือดิสโพสได้สูงสุด 4 รายการ — เฉพาะคุณสมบัติที่ยืนยันแล้วและมีร่วมกันเท่านั้น",
@@ -156,6 +167,8 @@ export const th: Dictionary = {
     addPlaceholder: "เพิ่มสินค้าเพื่อเปรียบเทียบ",
     mixedCoverageNote:
       "สินค้าบางรายการที่เลือกเป็นของสิ้นเปลือง (คอยล์ หัวพอต ตลับ น้ำยา) ไม่ใช่ตัวเครื่อง จึงไม่มีคุณสมบัติระดับเครื่อง เช่น แบตเตอรี่หรือหน้าจอ และแสดงเป็น —",
+    uncertainSpecsNote:
+      "สินค้าที่เลือกอย่างน้อย 1 ชิ้นยังมีข้อมูลที่ต้องยืนยันเพิ่มเติม (ดูรายละเอียดในหน้าสินค้านั้น) — ค่าที่แสดงในตารางด้านบนสำหรับสินค้าชิ้นนั้นจึงยังเป็นข้อมูลเบื้องต้น ไม่ใช่ข้อเท็จจริงที่ยืนยันแล้ว",
   },
   finder: {
     metaTitle: "ตัวช่วยเลือกสินค้า",

@@ -82,6 +82,12 @@ export const zh: Dictionary = {
     portabilityStandard: "标准尺寸",
   },
   product: {
+    colorLabel: "颜色",
+    flavorLabel: "口味",
+    allVariantsLabel: "全部",
+    outOfStockChip: "缺货",
+    reviewVideoEyebrow: "OKami24 评测",
+    watchOnYoutube: "在 YouTube 上观看",
     statBattery: "电池容量",
     statOutput: "功率输出",
     statRatedPuffs: "标称烟弹口数",
@@ -126,6 +132,11 @@ export const zh: Dictionary = {
     specificationsTitle: "产品规格",
     priceLabel: "价格",
   },
+  productActions: {
+    addToCartCta: "加入购物车",
+    outOfStockLabel: "缺货",
+    outOfStockCta: "LINE 咨询",
+  },
   compare: {
     metaTitle: "产品对比",
     metaDescription: "并排对比最多四款烟弹系统、烟弹套装或一次性设备——仅显示经过验证的共同参数。",
@@ -160,6 +171,8 @@ export const zh: Dictionary = {
     addPlaceholder: "添加产品以对比",
     mixedCoverageNote:
       "所选产品中有部分属于耗材（芯、烟弹、烟仓、烟油）而非主机，因此电池、屏幕等主机属性并不适用，显示为 —。",
+    uncertainSpecsNote:
+      "所选产品中至少有一款存在尚未确认的身份或参数问题（详见其产品页面）——该产品在上方分类表中的数值仅供参考，尚未最终确认。",
   },
   finder: {
     metaTitle: "选购助手",

@@ -84,6 +84,12 @@ export interface Dictionary {
   /** Product detail page section chrome — eyebrows/titles/stat labels/buttons. Per-product
    *  feature/spec/FAQ/compatibility VALUES stay untranslated (see the module doc comment). */
   product: {
+    colorLabel: string;
+    flavorLabel: string;
+    allVariantsLabel: string;
+    outOfStockChip: string;
+    reviewVideoEyebrow: string;
+    watchOnYoutube: string;
     statBattery: string;
     statOutput: string;
     statRatedPuffs: string;
@@ -138,6 +144,13 @@ export interface Dictionary {
      *  reference-price state. See publication-approvals.ts. */
     priceLabel: string;
   };
+  /** Product Detail add-to-cart control — only rendered for a genuinely published, priced
+   *  product; see PilotProductDetail.tsx. */
+  productActions: {
+    addToCartCta: string;
+    outOfStockLabel: string;
+    outOfStockCta: string;
+  };
   compare: {
     metaTitle: string;
     metaDescription: string;
@@ -171,6 +184,7 @@ export interface Dictionary {
     removeAriaPrefix: string;
     addPlaceholder: string;
     mixedCoverageNote: string;
+    uncertainSpecsNote: string;
   };
   finder: {
     metaTitle: string;
