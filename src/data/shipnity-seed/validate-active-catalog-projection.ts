@@ -90,11 +90,17 @@ export function runActiveCatalogProjectionValidation(): ProjectionValidationRepo
   }
 
   // 5. No child silently dropped — every child across every parent is either in a candidate's
-  // variants[] or listed in some result's excludedChildren[].
+  // variants[] or listed in some result's excludedChildren[]. Only variants carrying a real
+  // `integrationRef` to Shipnity count as "a child" here — a `VERIFIED_ADDITIONAL_VARIANTS` entry
+  // (owner mandate, 2026-09-03: real manufacturer flavors not yet in Shipnity's active stock
+  // export) was never a Shipnity child in the first place, so it must not be tallied against
+  // `totalActiveChildren` (which is counted straight from `activeCatalogSeed`, real children only).
   let totalChildrenAccountedFor = 0;
   for (const r of results) {
     totalChildrenAccountedFor += r.excludedChildren.length;
-    if (r.status === "candidate") totalChildrenAccountedFor += r.product.variants.length;
+    if (r.status === "candidate") {
+      totalChildrenAccountedFor += r.product.variants.filter((v) => v.integrationRef?.provider === "shipnity").length;
+    }
   }
   const totalActiveChildren = activeCatalogSeed.reduce((s, p) => s + p.children.length, 0);
   if (totalChildrenAccountedFor !== totalActiveChildren) {
@@ -118,4 +124,18 @@ export function runActiveCatalogProjectionValidation(): ProjectionValidationRepo
     passed: issues.length === 0,
     issues,
   };
+}
+
+// Storefront quality-correction pass (2026-09-02) — see product-master-contract-test.ts's own
+// comment on this same fix: this file had no self-executing runner, so it never actually ran its
+// checks when invoked directly (exactly how scripts/verify-catalog.ts invokes it).
+if (require.main === module) {
+  const report = runActiveCatalogProjectionValidation();
+  console.log(JSON.stringify({ ...report, issues: undefined }, null, 2));
+  for (const issue of report.issues) console.log(`FAIL  ${issue.check}\n      ${issue.detail}`);
+  if (!report.passed) {
+    console.error(`\n${report.issues.length} issue(s) found.`);
+    process.exit(1);
+  }
+  console.log("\nNo issues found.");
 }

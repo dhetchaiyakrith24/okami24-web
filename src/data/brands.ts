@@ -107,9 +107,9 @@ export const brands: Brand[] = [
     slug: "infy",
     name: "INFY",
     fullName: "INFY",
-    tagline: "Vape pod systems and cartridges.",
+    tagline: "Vape pod systems, cartridges, and disposables.",
     description:
-      "A regional vape brand operating across Southeast Asian markets (including Thailand) offering closed-pod devices and prefilled cartridges, including a 2.5mL cartridge line.",
+      "A regional vape brand operating across Southeast Asian markets (including Thailand) offering closed-pod devices, prefilled cartridges (a 2.5mL line), and high-puff disposables — the brand's own official site indexes disposables only up to 12K, so higher-puff models sold regionally (e.g. 20K) are confirmed via retailer convergence rather than the brand's own site.",
     referenceUrl: "https://www.infy.my/",
   },
   {
@@ -139,6 +139,37 @@ export const brands: Brand[] = [
     description:
       "Philip Morris International's heated-tobacco device brand — the ILUMA device family (Prime/i/i ONE/ONE) paired with TEREA tobacco sticks, using induction heating instead of combustion.",
     referenceUrl: "https://www.iqos.com/",
+  },
+  // Tier-1 disposable growth mission (2026-09-03) — owner-named business-priority brands.
+  {
+    id: "relx",
+    slug: "relx",
+    name: "RELX",
+    fullName: "RELX (Shenzhen RELX Technology Co., Ltd)",
+    tagline: "A global closed-pod and disposable vape brand.",
+    description:
+      "A major international vape brand (relxnow.com, self-described \"RELX Global Official\") spanning a modular closed-pod system (RELX Creator Pro device + Creator Pod cartridges) alongside standalone high-puff disposables such as Smash GO.",
+    referenceUrl: "https://www.relxnow.com/",
+  },
+  {
+    id: "joiway",
+    slug: "joiway",
+    name: "JOIWAY",
+    fullName: "Joiway",
+    tagline: "Disposable vapes and vaping accessories.",
+    description:
+      "A vape device manufacturer (myjoiway.com) selling disposables under an \"X Series\" naming pattern, including the F-series disposable line, alongside e-juice and accessories.",
+    referenceUrl: "https://myjoiway.com/",
+  },
+  {
+    id: "tfit",
+    slug: "tfit",
+    name: "TFIT",
+    fullName: "TFIT (Thinkvape)",
+    tagline: "Disposable vape devices.",
+    description:
+      "A Shenzhen-based e-cigarette brand (tfitvape.com, under Thinkvape) known for its NOVA disposable line and, per independent retailer listings and OKami24's own product-review history, an \"M Power\" high-puff disposable model.",
+    referenceUrl: "https://www.tfitvape.com/",
   },
   {
     id: "lambda",

@@ -91,6 +91,44 @@ export const families: ProductFamily[] = [
     description:
       "IQOS's current heated-tobacco device generation, spanning ILUMA i PRIME, ILUMA i, ILUMA i ONE, and the original (pre-\"i\") ILUMA ONE — all using SMARTCORE induction heating instead of a heating blade, paired exclusively with TEREA sticks.",
   },
+  // Tier-1 disposable growth mission (2026-09-03).
+  {
+    id: "relx-disposables",
+    slug: "relx-disposables",
+    brandId: "relx",
+    categoryId: "disposables",
+    name: "RELX Disposables",
+    tagline: "High-puff-count disposables from a global closed-pod brand.",
+    description:
+      "RELX's standalone disposable line (distinct from the refillable Creator Pro/Pod cartridge system), spanning Smash Go and Creator-branded high-puff single-use devices.",
+  },
+  {
+    id: "joiway-f-series",
+    slug: "joiway-f-series",
+    brandId: "joiway",
+    categoryId: "disposables",
+    name: "Joiway F Series",
+    tagline: "Joiway's numbered disposable line.",
+    description: "Joiway's F-series disposables, a numbered generational line of high-puff-count rechargeable disposables.",
+  },
+  {
+    id: "infy-disposables",
+    slug: "infy-disposables",
+    brandId: "infy",
+    categoryId: "disposables",
+    name: "INFY Disposables",
+    tagline: "INFY's high-puff disposable line.",
+    description: "INFY's disposable line, distinct from the brand's 2.5mL closed-pod cartridge system.",
+  },
+  {
+    id: "tfit-power",
+    slug: "tfit-power",
+    brandId: "tfit",
+    categoryId: "disposables",
+    name: "TFIT Power",
+    tagline: "TFIT's high-puff disposable line.",
+    description: "TFIT's higher-puff-count disposable model line, sold alongside the brand's NOVA series.",
+  },
 ];
 
 export function getFamily(id: string): ProductFamily | undefined {

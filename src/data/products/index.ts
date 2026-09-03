@@ -3,8 +3,20 @@ import { productListSchema } from "@/data/schema";
 import { uwellProducts } from "./uwell";
 import { voopooProducts } from "./voopoo";
 import { salthubProducts } from "./salthub";
+import { relxProducts } from "./relx";
+import { joiwayProducts } from "./joiway";
+import { tfitProducts } from "./tfit";
+import { infyProducts } from "./infy";
 
-export const allProducts: Product[] = [...uwellProducts, ...voopooProducts, ...salthubProducts];
+export const allProducts: Product[] = [
+  ...uwellProducts,
+  ...voopooProducts,
+  ...salthubProducts,
+  ...relxProducts,
+  ...joiwayProducts,
+  ...tfitProducts,
+  ...infyProducts,
+];
 
 // Validated once at module load — a malformed product record fails the build
 // rather than shipping silently broken data.

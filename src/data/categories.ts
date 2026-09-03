@@ -25,7 +25,7 @@ export const categories: Category[] = [
     name: "Disposable / Prefilled",
     shortName: "Disposables",
     description:
-      "Prefilled, rechargeable, single-use-cartridge devices designed to run until the e-liquid is gone — no coils to swap, no e-liquid to fill.",
+      "Prefilled, rechargeable, single-use-cartridge devices designed to run until the e-liquid is gone — no coils to swap, no e-liquid to fill. Models mainly differ by rated puff count and battery capacity, so the right pick usually comes down to how long you want one device to last between replacements.",
     systemTypes: ["disposable"],
   },
   {

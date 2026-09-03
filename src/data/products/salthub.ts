@@ -17,6 +17,9 @@ export const salthubProducts: Product[] = [
       "A rechargeable disposable rated for up to 10,000 puffs, with a cotton mesh coil, three switchable power modes, and an RGB indicator that shows the active mode.",
     isFlagship: true,
     editorialTag: "Flagship",
+    // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
+    // youtube.com/@OKM_24 — one of OKami24's own three channels.
+    reviewVideo: { videoId: "yrVZ-QpHqNs", title: "M BAR 10K กลิ่นสายขนม \"MATCHA LATTE\"", channelName: "OKAMI" },
     attributes: {
       batteryMah: 600,
       puffCount: 10000,
@@ -123,6 +126,9 @@ export const salthubProducts: Product[] = [
     shortDescription:
       "A rechargeable disposable with 14mL of prefilled e-liquid, adjustable airflow spanning tight MTL to airier DTL draws, and a mesh coil rated up to 9,000 puffs.",
     isFlagship: false,
+    // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
+    // youtube.com/@OKM_24 — one of OKami24's own three channels.
+    reviewVideo: { videoId: "SijUuq9qRpE", title: "M BAR 9K รวมกลิ่นสายขนม มีรสอะไรบ้าง? 2026", channelName: "OKAMI" },
     attributes: {
       batteryMah: 600,
       puffCount: 9000,
@@ -144,6 +150,41 @@ export const salthubProducts: Product[] = [
         sourceName: "SALTHUB",
         sourceUrl: "https://www.salthub.com/",
       },
+    ],
+    // Real flavor lineup — Tier-1 disposable growth mission (2026-09-03). All 22 names verified
+    // directly against salthub.com's own official M Bar 9K flavor-card gallery (5 grid images,
+    // each device card explicitly printed "BAR9K"/"9000 PUFF" — genuine own-product evidence, not
+    // inferred from a generic site listing). Media note: the official cards themselves are clean,
+    // unwatermarked brand artwork, but cropping one flavor out of each 5-up grid image could not
+    // be done precisely enough to pass this catalog's photo standard (neighboring-card bleed,
+    // clipped name text) — per the "no bad crops, fall back to swatch-only" rule, every flavor
+    // here is swatch-only rather than shipping an imperfect crop. `availability: "unknown"` for
+    // all of them, honestly: Legacy SALTHUB products are not Shipnity-integrated (no live
+    // per-flavor stock signal exists to check against), and Legacy Product Detail has no
+    // cart/purchase action to gate in the first place — this is catalog truth only.
+    flavorVariants: [
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#6b4a8e", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
+      { id: "doublemint", name: "Doublemint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#c23a4e", availability: "unknown" },
+      { id: "peach", name: "Peach", swatchHex: "#e8a06b", availability: "unknown" },
+      { id: "rainbow-candy", name: "Rainbow Candy", swatchHex: "#d1479c", availability: "unknown" },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9b5fa8", availability: "unknown" },
+      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7cb342", availability: "unknown" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#6b3a5e", availability: "unknown" },
+      { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#6a4c93", availability: "unknown" },
+      { id: "orange-sour", name: "Orange Sour", swatchHex: "#e07b39", availability: "unknown" },
+      { id: "sparkling-lemon", name: "Sparkling Lemon", swatchHex: "#d9c93e", availability: "unknown" },
+      { id: "sour-gummy", name: "Sour Gummy", swatchHex: "#9ccc4f", availability: "unknown" },
+      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e0669a", availability: "unknown" },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d9527a", availability: "unknown" },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e07a6b", availability: "unknown" },
+      { id: "strawberry-milkshake", name: "Strawberry Milkshake", swatchHex: "#eb9fb0", availability: "unknown" },
+      { id: "menthol-freeze", name: "Menthol Freeze", swatchHex: "#7fd4e0", availability: "unknown" },
+      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#4a2c5e", availability: "unknown" },
+      { id: "zapple", name: "Zapple", swatchHex: "#8bc34a", availability: "unknown" },
     ],
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 9,000", sourceStatus: "verified" },
@@ -236,6 +277,10 @@ export const salthubProducts: Product[] = [
     shortDescription:
       "A reusable device body paired with prefilled M Switch Pod cartridges rated up to 15,000 puffs per pod — a device you keep and recharge, refilled by swapping cartridges rather than bottled e-liquid.",
     isFlagship: false,
+    // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
+    // youtube.com/@PODSYSTEM-OKAMI-II — one of OKami24's own three channels. A dedicated 30-day
+    // usage review, the strongest kind of review evidence found this mission.
+    reviewVideo: { videoId: "DaJHk4e6_Y8", title: "30 วันกับ M SWITCH 15K เป็นยังไงบ้าง? (หัวรุ่นแรก)", channelName: "POD SYSTEM OKAMI II" },
     attributes: {
       puffCount: 15000,
       screenType: "led-indicator",
@@ -314,6 +359,31 @@ export const salthubProducts: Product[] = [
         sourceName: "SALTHUB",
         sourceUrl: "https://www.salthub.com/",
       },
+    ],
+    // Real flavor lineup — Tier-1 disposable growth mission (2026-09-03). All 14 names read
+    // directly off salthub.com's own official "M SWITCH Pod #1" retail-box photography (own-
+    // product-name evidence — the box explicitly reads "M SWITCH", not a generic/shared asset).
+    // Every one of those source photos is a busy marketing composite (real fruit/liquid-splash
+    // imagery, a competing visual style to this catalog's clean-isolated-photo standard) — the
+    // NAMES are trustworthy (read directly off each flavor's own labeled box), the PHOTOS are not,
+    // so this stays swatch-only rather than shipping a cluttered image. `availability: "unknown"`
+    // for the same reason as M Bar 9K — no Shipnity/stock integration exists for Legacy SALTHUB
+    // products, and this page has no purchase action to gate.
+    flavorVariants: [
+      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7cb342", availability: "unknown" },
+      { id: "black-berry", name: "Black Berry", swatchHex: "#3a2340", availability: "unknown" },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
+      { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown" },
+      { id: "doublemint", name: "Doublemint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#6a4c93", availability: "unknown" },
+      { id: "mango-passion", name: "Mango Passion", swatchHex: "#e0a83e", availability: "unknown" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#6b3a5e", availability: "unknown" },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e07a6b", availability: "unknown" },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d9527a", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#c23a4e", availability: "unknown" },
+      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#d9647a", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
+      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e0669a", availability: "unknown" },
     ],
     specifications: [
       { key: "capacity", label: "Capacity", value: "2.2mL prefilled", sourceStatus: "verified" },
@@ -399,6 +469,37 @@ export const salthubProducts: Product[] = [
         sourceName: "SALTHUB",
         sourceUrl: "https://www.salthub.com/",
       },
+    ],
+    // Real color lineup — owner quality review, 2026-09-02, re-verified during the UWELL/VOOPOO
+    // QC recovery pass (2026-09-03). Color names/count confirmed real via relxc9.net's own
+    // "Marbo Zero Pro" listing (found at relxc9.net/product/marbo-zero-pro/), which does have a
+    // dedicated image per color — but every one is a branded marketing tile (a third-party
+    // "RELX CS.COM" watermark, a colored smoke-cloud background, two devices per tile, overlaid
+    // spec-bullet text), not an isolated product photo, so none pass this catalog's photo
+    // standard (no third-party watermarks, no background clutter). Per the same rule already
+    // applied to Caliburn G4 Pro's Light Green and Caliburn G3 Pro KOKO (real color confirmed,
+    // no clean photo available → swatch-only rather than a forced/defective image), these 7
+    // stay swatch-only. NOTE: this research also found "Salthub" functions as a retail/
+    // authorized-distributor brand name, while the product itself is manufactured and marketed
+    // as "Marbo" (Marbo Bar / Marbo Zero / Marbo M Switch) across the wider vape retail
+    // ecosystem, and salthub.com's own footer displays the Marbo logo — flagged here for a
+    // future brand-taxonomy decision, NOT silently changed (brandId stays "salthub" until the
+    // owner confirms this). "Black" reuses this product's own existing card photo, an exact
+    // match sourced independently of relxc9.net.
+    colorVariants: [
+      { id: "blue-purple", name: "Blue Purple", swatchHex: "#4a4e8e" },
+      { id: "golden-fade", name: "Golden Fade", swatchHex: "#c9a24b" },
+      { id: "gunmetal", name: "Gunmetal", swatchHex: "#4a4d52" },
+      {
+        id: "black",
+        name: "Black",
+        swatchHex: "#1a1a1a",
+        image: { src: "/assets/products/zero-pro/card.webp", alt: "SALTHUB / Marbo Zero Pro, Black" },
+      },
+      { id: "pink", name: "Pink", swatchHex: "#e8899a" },
+      { id: "teal", name: "Teal", swatchHex: "#2a8a8a" },
+      { id: "red", name: "Red", swatchHex: "#b83a3a" },
+      { id: "charcoal-red", name: "Charcoal Red", swatchHex: "#6e3535" },
     ],
     specifications: [
       { key: "puffs-per-pod", label: "Puffs per cartridge", value: "Up to 5,000", sourceStatus: "verified" },

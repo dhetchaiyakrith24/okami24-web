@@ -136,9 +136,26 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "Coil-87": { sellingPrice: 250, lastPriceReview: "2026-09-02" },
   "Pod-169": { sellingPrice: 129, lastPriceReview: "2026-09-02" },
   "IQOSHEET-14": { sellingPrice: 2390, lastPriceReview: "2026-09-02" },
-  "IQOSHEET-15": { sellingPrice: 220, lastPriceReview: "2026-09-02" },
+  // IQOSHEET-15 (IQOS TEREA) — WITHDRAWN from publication (owner quality review, 2026-09-03,
+  // Sections 6/7). Was approved above at ฿220 as of 2026-09-02; the owner's screenshot-based
+  // review does not approve the current TEREA presentation and asked for it to come down "for
+  // now, until a future review approves it again." Re-evaluating against the new visual/truth
+  // standard (Section 7) confirms real coherence gaps behind that call: only 11 of this parent's
+  // 16 real active flavor children have an exact official photo (the other 5 fall back to a
+  // neutral placeholder), so the published flavor family is not yet uniformly backed by real
+  // per-flavor media — an inconsistent set, not a complete one, even though every flavor name
+  // itself is a verified real TEREA flavor. Removing this entry (rather than deleting any TEREA
+  // data) is the actual, literal unpublish action per this file's own contract — every other
+  // TEREA data/media/copy asset is left in place so a future pass can re-approve without
+  // rebuilding. See docs/BUSINESS_SOURCE_OF_TRUTH.md if this withdrawal should also be reflected
+  // there.
   "IQOSHEET-16": { sellingPrice: 4900, lastPriceReview: "2026-09-02" },
   "IQOSHEET-18": { sellingPrice: 3900, lastPriceReview: "2026-09-02" },
+  // Tier-1 disposable growth mission (2026-09-03): Pod-180 (Nexbar Clear 18k, WOTOFO) was the last
+  // media-blocked candidate from a real Shipnity price+flavor set — see VERIFIED_MEDIA["Pod-180"]
+  // for the sourcing. Same pricing rule as every entry above: single, unambiguous
+  // operationalSellingPrice, no conflicting price found anywhere else in the project.
+  "Pod-180": { sellingPrice: 359, lastPriceReview: "2026-09-03" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {

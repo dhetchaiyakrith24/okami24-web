@@ -34,6 +34,7 @@ import { brands, getBrand } from "@/data/brands";
 import { categories, getCategory } from "@/data/categories";
 import { families } from "@/data/families";
 import { validateProductMasterRegistry, type ProductMasterInput } from "@/data/product-master-schema";
+import type { AvailabilityStatus } from "@/types/product-master";
 import { projectActiveCatalog, getNeutralVariantFallback } from "./active-catalog-to-product-master";
 
 /** The Phase 2.7 + 3.4 + 3.5 minimum-enriched batch. Deliberately hardcoded, not "every ready
@@ -71,7 +72,7 @@ import { projectActiveCatalog, getNeutralVariantFallback } from "./active-catalo
  *  Pod-168/177/179 above (Disposable-25 was initially miscategorized as new before a direct
  *  grep of every legacy `id: "m-bar-*"` caught the match — see
  *  `TAXONOMY_MATCHES["Disposable-25"/"Pod-178"/"Pod-85"]`'s comments. */
-const PREVIEW_SHIPNITY_IDS = [
+export const PREVIEW_SHIPNITY_IDS = [
   "Coil-53", "Coil-55", "Coil-56", "Coil-74", "Coil-87", "Coil-92",
   "Coil-1", "Coil-21", "Coil-72", "Coil-83", "Coil-94",
   "Coil-38", "Coil-63", "Coil-68", "Coil-70", "Coil-89",
@@ -96,6 +97,12 @@ export interface StorefrontVariantView {
    *  projection adapter) — undefined for every variant still relying on the product-level card
    *  image, never a placeholder standing in for a real one. */
   image?: StorefrontProductImageView;
+  /** Commerce foundation (2026-09-02) — straight from `ProductVariant.availability.status`,
+   *  which `validateProductMasterRegistry` already guarantees is consistent with the product-
+   *  level `availability` below (see AVAILABILITY_INVARIANT_NOTE in product-master.ts). Added so
+   *  the cart/checkout stock-validation step can reject a specific out-of-stock variant even when
+   *  the product as a whole still has other in-stock variants. */
+  availabilityStatus: AvailabilityStatus;
 }
 
 /** Which dev-preview fallback illustration applies — derived from `systemType`, itself
@@ -171,6 +178,13 @@ export interface StorefrontProductView {
    *  behind `optionAxisLabel`, straight from `optionDefinitions[0].code`. */
   optionAxisCode: string | null;
   variants: StorefrontVariantView[];
+  /** Commerce foundation (2026-09-02) — the product-level `AvailabilityStatus`, which is either
+   *  the sole stock signal (zero-variant products) or a value already validated to agree with
+   *  `variants[].availabilityStatus` (see AVAILABILITY_INVARIANT_NOTE). This is the only stock
+   *  signal this codebase has today — a boolean/tri-state snapshot from the seed data, not a
+   *  live quantity — see docs/BUSINESS_SOURCE_OF_TRUTH.md §19 ("Shipnity integration mechanism"
+   *  is TBD). Checkout must treat this as authoritative pending a real Shipnity API. */
+  availabilityStatus: AvailabilityStatus;
   /** Manufacturer facts only (see VERIFIED_SPECIFICATIONS) — never OKami24 editorial or merchant
    *  knowledge, which stay separate fields for exactly this reason. Empty for every product this
    *  hasn't been researched for yet — absence, not a placeholder. */
@@ -178,6 +192,9 @@ export interface StorefrontProductView {
   /** Official sources this product's copy/specifications were verified against — shown so a
    *  customer (or future reviewer) can check provenance themselves. */
   sourceUrls: string[];
+  /** A real OKami24-channel review video — see `Product.reviewVideo` in `catalog.ts` for the full
+   *  rationale. Absent unless one was specifically confirmed for this exact product. */
+  reviewVideo?: { videoId: string; title: string; channelName: string };
 }
 
 function toView(product: ProductMasterInput): StorefrontProductView | null {
@@ -213,13 +230,20 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
     priceReferenceSource: product.pricing.priceReference?.source ?? null,
     optionAxisLabel: axis?.label ?? null,
     optionAxisCode: axis?.code ?? null,
+    availabilityStatus: product.availability.status,
     variants: product.variants.map((v) => {
       const selection = v.optionSelections[0];
       const label = selection ? (valueLabelByCode.get(selection.valueCode) ?? selection.valueCode) : v.id;
-      return { id: v.id, label, image: v.image ? { src: v.image.src, alt: v.image.alt } : undefined };
+      return {
+        id: v.id,
+        label,
+        image: v.image ? { src: v.image.src, alt: v.image.alt } : undefined,
+        availabilityStatus: v.availability.status,
+      };
     }),
     specifications: product.specifications,
     sourceUrls: product.sourceUrls,
+    reviewVideo: product.reviewVideo,
   };
 }
 
