@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { ProductHero } from "@/components/product/ProductHero";
 import { ProductGallery } from "@/components/product/ProductGallery";
+import { ProductReviewSection } from "@/components/product/ProductReviewSection";
 import { ProductAnatomy } from "@/components/product/ProductAnatomy";
 import { FeatureGrid } from "@/components/product/FeatureGrid";
 import { SpecSheet } from "@/components/product/SpecSheet";
@@ -28,9 +29,20 @@ import {
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDetail";
 import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
-import { absoluteUrl, canonicalFor, openGraphWithImage } from "@/lib/seo";
+import { absoluteUrl, breadcrumbJsonLd, canonicalFor, openGraphWithImage } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
+import { getImageDisplayInfo, buildImageDisplayMap } from "@/lib/media-quality";
+import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
+
+/** Every image src `PilotProductDetail` could possibly display for this product — the
+ *  product-level card, the neutral variant fallback, and each variant's own photo. The variant
+ *  picker swaps between these client-side, so the server precomputes display info for all of
+ *  them up front rather than just the one shown on first render. See media-quality.ts. */
+function storefrontProductImageSrcs(product: StorefrontProductView): (string | undefined)[] {
+  return [product.image?.src, product.variantFallbackImage?.src, ...product.variants.map((v) => v.image?.src)];
+}
 
 export function generateStaticParams() {
   // `getPilotProducts()` returns [] whenever NODE_ENV === "production" (see storefront-bridge.ts)
@@ -128,16 +140,25 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         // priceReference (see buildPublishedCatalog()'s own readiness gate).
         offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice } : undefined,
       };
+      const publishedImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(publishedProduct));
+      const publishedTrail = [
+        { name: "Home", path: "/" },
+        { name: publishedProduct.categoryName, path: `/products/${publishedProduct.categoryId}` },
+        { name: publishedProduct.displayName, path: `/products/${publishedProduct.slug}` },
+      ];
       return (
         <>
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedJsonLd) }} />
-          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(publishedTrail)) }} />
+          <Breadcrumbs trail={publishedTrail} />
+          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} imageDisplayMap={publishedImageDisplayMap} />
         </>
       );
     }
     const pilotProduct = getPilotProduct(slug);
     if (pilotProduct) {
-      return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} />;
+      const pilotImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(pilotProduct));
+      return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} imageDisplayMap={pilotImageDisplayMap} />;
     }
     notFound();
   }
@@ -146,6 +167,9 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const brand = getBrand(product.brandId);
 
   const legacyCardImage = product.assets.find((a) => a.role === "card");
+  // Server-side only — reads the real file under public/ to decide whether ProductHero can fill
+  // its large box without visibly upscaling. See src/lib/media-quality.ts.
+  const heroImageDisplayInfo = legacyCardImage ? await getImageDisplayInfo(legacyCardImage.src) : null;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -157,11 +181,19 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     // No `offers` here — the legacy catalog has no price field at all (see docs/BUSINESS_SOURCE_OF_TRUTH.md);
     // never fabricated.
   };
+  const legacyTrail = [
+    { name: "Home", path: "/" },
+    { name: categoryNameOf(product.categoryId), path: `/products/${product.categoryId}` },
+    { name: product.displayName, path: `/products/${product.slug}` },
+  ];
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <ProductHero product={product} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(legacyTrail)) }} />
+      <Breadcrumbs trail={legacyTrail} />
+      <ProductHero product={product} imageDisplayInfo={heroImageDisplayInfo} />
+      <ProductReviewSection product={product} />
       <ProductGallery product={product} />
       {product.isFlagship && <ProductAnatomy product={product} />}
       <FeatureGrid product={product} />

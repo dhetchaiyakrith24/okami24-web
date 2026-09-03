@@ -12,8 +12,10 @@ import { PilotRelatedProducts } from "./PilotRelatedProducts";
 import { CompatibleProducts } from "@/components/product/CompatibleProducts";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 import { SourceNote } from "@/components/product/SourceNote";
+import { ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotAxisLabel } from "./axis-label";
+import type { ImageDisplayInfo } from "@/lib/media-quality";
 
 /**
  * Storefront-native product detail body for a ProductMaster product, rendered from the real
@@ -34,7 +36,19 @@ import { pilotAxisLabel } from "./axis-label";
  * has no dedicated photo, which is still the case for most variants on most products; this is
  * strictly additive, never a regression for a product with no variant media at all.
  */
-export function PilotProductDetail({ product, related }: { product: StorefrontProductView; related: StorefrontProductView[] }) {
+export function PilotProductDetail({
+  product,
+  related,
+  imageDisplayMap,
+}: {
+  product: StorefrontProductView;
+  related: StorefrontProductView[];
+  /** Storefront quality-correction pass — server-computed fill-vs-intrinsic sizing info, keyed by
+   *  image src, for every image the variant picker could swap to. A missing entry (e.g. computed
+   *  on a code path that didn't build the map) falls back to the original always-fill behavior.
+   *  See `src/lib/media-quality.ts`. */
+  imageDisplayMap?: Record<string, ImageDisplayInfo>;
+}) {
   const { dict } = useLocale();
   const axisLabel = pilotAxisLabel(dict, product);
   const isPublished = product.publicationStatus === "published";
@@ -45,6 +59,8 @@ export function PilotProductDetail({ product, related }: { product: StorefrontPr
   // so an unrelated named variant's photo never reads as "this is what you picked." Products
   // without a neutral fallback fall through to `product.image` exactly as before — unchanged.
   const displayImage = selectedVariant?.image ?? product.variantFallbackImage ?? product.image;
+  const displayImageInfo = displayImage ? imageDisplayMap?.[displayImage.src] : undefined;
+  const fillHero = displayImageInfo ? displayImageInfo.fillHero : true;
 
   return (
     <>
@@ -83,6 +99,7 @@ export function PilotProductDetail({ product, related }: { product: StorefrontPr
             variants={product.variants}
             selectedId={selectedVariantId}
             onSelect={setSelectedVariantId}
+            outOfStockLabel={dict.productActions.outOfStockLabel}
           />
 
           {product.specifications.length > 0 && (
@@ -108,8 +125,25 @@ export function PilotProductDetail({ product, related }: { product: StorefrontPr
                 style={{ background: "radial-gradient(ellipse 58% 54% at 50% 40%, var(--color-steel-soft) 0%, transparent 72%)" }}
                 aria-hidden
               />
-              <div className="relative h-full w-full p-8 lg:p-12">
-                <Image key={displayImage.src} src={displayImage.src} alt={displayImage.alt} fill sizes="(min-width: 1024px) 42vw, 90vw" className="object-contain" priority />
+              <div className={fillHero ? "relative h-full w-full p-8 lg:p-12" : "relative flex h-full w-full items-center justify-center p-8 lg:p-12"}>
+                {fillHero ? (
+                  <Image key={displayImage.src} src={displayImage.src} alt={displayImage.alt} fill sizes="(min-width: 1024px) 42vw, 90vw" className="object-contain" priority />
+                ) : (
+                  // Storefront quality-correction pass — a source too small for the hero box would
+                  // visibly blur if stretched to fill it (see media-quality.ts). Rendering at its
+                  // own intrinsic size instead, centered in the same visual area, keeps it sharp
+                  // and reads as an intentional smaller presentation rather than a broken asset.
+                  <Image
+                    key={displayImage.src}
+                    src={displayImage.src}
+                    alt={displayImage.alt}
+                    width={displayImageInfo!.width}
+                    height={displayImageInfo!.height}
+                    sizes="(min-width: 1024px) 42vw, 90vw"
+                    className="h-auto max-h-full w-auto max-w-full object-contain"
+                    priority
+                  />
+                )}
               </div>
               <div
                 className="pointer-events-none absolute inset-x-16 bottom-6 h-10 rounded-full opacity-70"
@@ -125,6 +159,27 @@ export function PilotProductDetail({ product, related }: { product: StorefrontPr
         </div>
       </Container>
 
+      {product.reviewVideo && (
+        <Container className="flex flex-col gap-8 border-b border-surface-border-soft py-14 lg:py-20">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "VideoObject",
+                name: product.reviewVideo.title,
+                description: `${product.reviewVideo.channelName} — ${dict.product.reviewVideoEyebrow}: ${product.displayName}`,
+                thumbnailUrl: [`https://i.ytimg.com/vi/${product.reviewVideo.videoId}/hqdefault.jpg`],
+                embedUrl: `https://www.youtube-nocookie.com/embed/${product.reviewVideo.videoId}`,
+              }),
+            }}
+          />
+          <span className="label-mono text-xs text-foreground-dim">{dict.product.reviewVideoEyebrow}</span>
+          <div className="max-w-2xl">
+            <ProductReviewVideo video={product.reviewVideo} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} />
+          </div>
+        </Container>
+      )}
       {/* Structured, clickable compatibility — same component and same evidence-backed edge
           table the legacy product page uses, so a published ProductMaster part can link to the
           legacy device it fits and vice versa. Renders nothing when there are no verified links. */}

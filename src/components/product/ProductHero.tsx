@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
+import { ColorVariantRail } from "@/components/product/ColorVariantRail";
+import { FlavorVariantGrid } from "@/components/product/FlavorVariantGrid";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -9,13 +12,28 @@ import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
+import type { ImageDisplayInfo } from "@/lib/media-quality";
 
-export function ProductHero({ product }: { product: Product }) {
+/** `imageDisplayInfo` — the storefront quality-correction pass's fill-vs-intrinsic sizing switch,
+ *  computed server-side (reads the real file under `public/`, never a value that could go stale)
+ *  and passed down as plain data since this is a client component. `undefined` (e.g. the source
+ *  file couldn't be read) falls back to the original always-fill behavior. See
+ *  `src/lib/media-quality.ts` for the full rationale. */
+export function ProductHero({ product, imageDisplayInfo }: { product: Product; imageDisplayInfo?: ImageDisplayInfo | null }) {
   const { locale, dict } = useLocale();
   // Thai locale adds a translated tagline/description under the English original — never
   // replacing it, and only for the 28 legacy products with a real (human-checked, not machine-
   // guessed) Thai entry. See product-copy-th.ts header for why this stays presentation-only.
   const copyTh = locale === "th" ? PRODUCT_COPY_TH[product.slug] : undefined;
+  const [selectedColorId, setSelectedColorId] = useState<string | null>(product.colorVariants?.[0]?.id ?? null);
+  const [selectedFlavorId, setSelectedFlavorId] = useState<string | null>(product.flavorVariants?.[0]?.id ?? null);
+  // "All Colors" (owner mandate, 2026-09-03) is a third hero-image state, not a third variant list
+  // — it only exists when a real lineup shot does. Starts unselected (an individual color/default
+  // photo is still the strongest first impression); the customer opts INTO the lineup view.
+  const [showAllColors, setShowAllColors] = useState(false);
+  const selectedColor = product.colorVariants?.find((c) => c.id === selectedColorId);
+  const selectedFlavor = product.flavorVariants?.find((f) => f.id === selectedFlavorId);
+  const heroOverrideImage = showAllColors ? product.lineupImage ?? null : selectedColor?.image ?? selectedFlavor?.image ?? null;
   const stats = [
     { label: dict.product.statBattery, value: formatBattery(product.attributes.batteryMah) },
     { label: dict.product.statOutput, value: formatWattage(product.attributes.wattageMin, product.attributes.wattageMax) },
@@ -51,6 +69,31 @@ export function ProductHero({ product }: { product: Product }) {
             {copyTh && <p className="max-w-lg text-sm leading-relaxed text-foreground-dim/75">{copyTh.shortDescription}</p>}
           </div>
 
+          {product.colorVariants && product.colorVariants.length > 0 && (
+            <ColorVariantRail
+              variants={product.colorVariants}
+              selectedId={selectedColorId}
+              onSelect={(id) => {
+                setSelectedColorId(id);
+                setShowAllColors(false);
+              }}
+              label={dict.product.colorLabel}
+              allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
+              isAllSelected={showAllColors}
+              onSelectAll={product.lineupImage ? () => setShowAllColors(true) : undefined}
+            />
+          )}
+
+          {product.flavorVariants && product.flavorVariants.length > 0 && (
+            <FlavorVariantGrid
+              variants={product.flavorVariants}
+              selectedId={selectedFlavorId}
+              onSelect={setSelectedFlavorId}
+              label={dict.product.flavorLabel}
+              outOfStockLabel={dict.product.outOfStockChip}
+            />
+          )}
+
           <div className="flex flex-wrap gap-3 pt-2">
             <Button href={`/compare?slugs=${product.slug}`}>{dict.product.addToComparison}</Button>
             <Button href="#specifications" variant="secondary">
@@ -78,7 +121,12 @@ export function ProductHero({ product }: { product: Product }) {
           />
           <FavoriteButton slug={product.slug} className="absolute right-2 top-2 z-10" />
           <div className="relative h-full w-full p-8 lg:p-12">
-            <ProductMedia product={product} sizes="(min-width: 1024px) 42vw, 85vw" />
+            <ProductMedia
+              product={product}
+              sizes="(min-width: 1024px) 42vw, 85vw"
+              qualityAware={imageDisplayInfo}
+              overrideImage={heroOverrideImage}
+            />
           </div>
           <div
             className="pointer-events-none absolute inset-x-16 bottom-6 h-10 rounded-full opacity-70"

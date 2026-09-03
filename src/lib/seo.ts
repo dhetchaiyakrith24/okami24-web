@@ -68,6 +68,25 @@ export function absoluteUrl(path: string): string {
   return new URL(path, SITE_URL).toString();
 }
 
+/**
+ * `BreadcrumbList` JSON-LD for a page's real navigational path (owner mandate, 2026-09-03 —
+ * "structured data... breadcrumbs" as part of the disposable-discovery SEO push). Real hierarchy
+ * only — every trail passed in must reflect an actual, navigable ancestor path (Home → Category →
+ * Product), never an invented one for SEO padding. Positions are 1-indexed per the schema.org spec.
+ */
+export function breadcrumbJsonLd(trail: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: trail.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
+}
+
 /** Always safe to add to any page — purely additive, no merge collision with inherited
  *  metadata (unlike `openGraph`, which replaces the parent's object wholesale when set). */
 export function canonicalFor(path: string): Pick<Metadata, "alternates"> {

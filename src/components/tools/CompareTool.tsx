@@ -108,6 +108,14 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
   // Only worth explaining when the selection genuinely mixes a product that has the attribute
   // block with one that doesn't — not whenever a single cell happens to be empty.
   const hasMixedAttributeCoverage = items.some((i) => i.attributes) && items.some((i) => !i.attributes);
+  // `attributes` (battery/puffs/capacity/etc, driving the classification rows above) has no
+  // per-field provenance of its own — `specifications` is the only place a product's evidence
+  // quality is actually recorded. A product like RELX Creator or TFIT M Power, where research
+  // could not independently confirm the numbers, has every specification `sourceStatus:
+  // "unverified"`; using that (rather than `editorialTag`, which also carries pure curation
+  // labels like "Flagship"/"Tier-1 priority" that would false-positive here) ties this warning to
+  // the same truth signal `verifiedSpecRows` below already trusts.
+  const hasUncertainItems = items.some((i) => i.specifications.some((s) => s.sourceStatus === "unverified"));
   const bestFitItems = items.filter((i) => i.whoIsThisFor.length > 0);
 
   function addProduct(slug: string) {
@@ -129,6 +137,7 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
       ) : (
         <div className="flex flex-col gap-10">
           <ComparisonTable title={dict.compare.classificationTitle} rows={classification} />
+          {hasUncertainItems && <p className="-mt-6 text-xs leading-relaxed text-ember">{dict.compare.uncertainSpecsNote}</p>}
           {hasMixedAttributeCoverage && <p className="-mt-6 text-xs leading-relaxed text-foreground-dim">{dict.compare.mixedCoverageNote}</p>}
           <ComparisonTable title={dict.compare.verifiedSpecsTitle} rows={specs} emptyNote={dict.compare.verifiedSpecsEmptyNote} />
 
