@@ -255,6 +255,15 @@ export const productMasterSchema = z.object({
 
   isFlagship: z.boolean(),
   editorialTag: z.string().optional(),
+
+  reviewVideo: z
+    .object({
+      videoId: z.string().min(1),
+      title: z.string().min(1),
+      channelName: z.string().min(1),
+      publishedAt: z.string().optional(),
+    })
+    .optional(),
 });
 
 export const productMasterListSchema = z.array(productMasterSchema);
