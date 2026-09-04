@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local commerce database (SQLite dev/foundation store — see src/lib/db/client.ts's header comment)
+/.data/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

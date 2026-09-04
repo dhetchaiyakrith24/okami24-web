@@ -62,7 +62,7 @@ Logo assets are supplied separately by the owner. The primary production logo us
 
 ## 3. Social / Contact
 
-- **LINE OA:** `@okM24`
+- **LINE OA:** `@okm24`
 - **LINE link:** https://lin.ee/QNJWw6o
 - **Primary YouTube:** https://www.youtube.com/@OKMYARZ
 

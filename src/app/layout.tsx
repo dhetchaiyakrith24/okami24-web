@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s — OKami24",
   },
   description:
-    "OKami24: ร้านอุปกรณ์พอดซิสเต็ม ดิสโพส และน้ำยา คัดสรรของแท้ ราคาตรงไปตรงมา พร้อมบริการหลังการขายที่ดูแลคุณจริง สอบถามและสั่งซื้อผ่าน LINE OA @okM24",
+    "OKami24: ร้านอุปกรณ์พอดซิสเต็ม ดิสโพส และน้ำยา คัดสรรของแท้ ราคาตรงไปตรงมา พร้อมบริการหลังการขายที่ดูแลคุณจริง สอบถามและสั่งซื้อผ่าน LINE OA @okm24",
   // The real production domain is TBD (see docs/BUSINESS_SOURCE_OF_TRUTH.md §19) — never
   // hardcoded here. See src/lib/seo.ts's SITE_URL: reads `SITE_URL` from the environment, falls
   // back to localhost in dev, and refuses to build at all in production without it.
