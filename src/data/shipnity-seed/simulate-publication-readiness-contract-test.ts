@@ -1,19 +1,26 @@
 /**
  * OKami24 — Phase 2.7: publication-readiness simulation, contract tests.
  *
- * Proves (1) the 1 remaining media/identity-blocked coil candidate (Coil-87) simulates as NOT
- * ready, for its OWN real, precise reason (pricing + media — no verified source of either
- * provenance tier), never because its brand/category/tagline/shortDescription evidence
- * regressed, (2) it would STILL NOT be ready even with a price added — media remains a real,
- * separate blocker, (3) Coil-38/Coil-53/Coil-74/Coil-89/Coil-92 (each a real tier-2 retailer
- * photo, identity-verified before use) now simulate as ready with just a price, proving media
- * alone was the blocker for them specifically, (4) products without minimum copy correctly
- * simulate as NOT ready, (5) simulation never mutates a still-unpublished real candidate's
- * publicationStatus or pricing, and (6) Coil-38/Coil-53/Coil-55/Coil-56/Coil-74/Coil-89/Coil-92
- * are now GENUINELY published in real data (not simulated) — see publication-approvals.ts for
- * each entry and the mission reports for why Coil-56-1/56-2 (named in the owner's original
- * approval) are not fabricated as variants — they simply aren't in the current active
- * (have_stock=true) seed.
+ * Proves (1) a media/identity-blocked coil candidate simulates as NOT ready, for its OWN real,
+ * precise reason (pricing + media — no verified source of either provenance tier), never because
+ * its brand/category/tagline/shortDescription evidence regressed, (2) it would STILL NOT be ready
+ * even with a price added — media remains a real, separate blocker, (3) several coils (each a
+ * real tier-2/official photo, identity-verified before use) now simulate as ready with just a
+ * price, proving media alone was the blocker for them specifically, (4) products without minimum
+ * copy correctly simulate as NOT ready, (5) simulation never mutates a still-unpublished real
+ * candidate's publicationStatus or pricing, and (6) a list of coils are now GENUINELY published in
+ * real data (not simulated) — see publication-approvals.ts for each entry.
+ *
+ * STILL_BLOCKED_BATCH fixture (storefront quality-correction pass, 2026-09-02): this was
+ * originally "Coil-87" — it genuinely was blocked on both price and media when this test was
+ * written, but the catalog-intelligence mission later published it for real (see
+ * publication-approvals.ts), which silently broke every assertion below until this file's
+ * previously-missing self-executing runner was added and finally surfaced the failures. Swapped
+ * to "coil-62" (NEVOKS Feelin C1), which has the same real profile today — brand/category/copy
+ * all resolved, media genuinely unavailable (no Matcha Clear photo found anywhere, see that
+ * record's own TAXONOMY_MATCHES comment), no price approval. Whoever eventually resolves coil-62's
+ * media blocker will need to swap this fixture again — that is an expected, healthy consequence of
+ * this test tracking real catalog state rather than a synthetic one, not a flaw to design around.
  */
 
 import { productMasterSchema, validateProductMasterRegistry } from "@/data/product-master-schema";
@@ -23,10 +30,10 @@ import { categories } from "@/data/categories";
 import { projectActiveCatalog } from "./active-catalog-to-product-master";
 import { runPublicationReadinessSimulation } from "./simulate-publication-readiness";
 
-// Coil-38/Coil-53/Coil-55/Coil-56/Coil-74/Coil-89/Coil-92 all graduated to genuinely published
-// (see publication-approvals.ts) — each proven separately below, not as part of the "still
-// blocked on media" batch.
-const STILL_BLOCKED_BATCH = ["Coil-87"];
+// See this file's header comment for the fixture history — every other coil named there has
+// since graduated to genuinely published (see publication-approvals.ts) and is proven separately
+// below, not as part of the "still blocked on media" batch.
+const STILL_BLOCKED_BATCH = ["coil-62"];
 
 export interface SimulationContractResult {
   name: string;
@@ -114,6 +121,11 @@ export function runSimulationContractTests(): SimulationContractResult[] {
   checkGenuinelyPublished("Coil-74", 250, 1);
   checkGenuinelyPublished("Coil-89", 350, 2);
   checkGenuinelyPublished("Coil-92", 130, 1);
+  // Storefront quality-correction pass (2026-09-02) additions.
+  checkGenuinelyPublished("Coil-70", 390, 1);
+  checkGenuinelyPublished("Coil-83", 250, 0);
+  checkGenuinelyPublished("Coil-87", 250, 1);
+  checkGenuinelyPublished("Pod-169", 129, 8);
 
   // A product with no minimum copy (e.g. eliquid-62 — no brand/category/copy at all) must
   // correctly simulate as NOT ready, proving the simulation isn't rubber-stamping everything.
@@ -144,4 +156,20 @@ export function runSimulationContractTests(): SimulationContractResult[] {
   );
 
   return results;
+}
+
+// Storefront quality-correction pass (2026-09-02) — see product-master-contract-test.ts's own
+// comment on this same fix: this file had no self-executing runner, so it never actually ran its
+// checks when invoked directly (exactly how scripts/verify-catalog.ts invokes it).
+if (require.main === module) {
+  const results = runSimulationContractTests();
+  const failed = results.filter((r) => !r.passed);
+  for (const r of results) {
+    console.log(`${r.passed ? "PASS" : "FAIL"}  ${r.name}${r.detail ? `\n      ${r.detail}` : ""}`);
+  }
+  if (failed.length > 0) {
+    console.error(`\n${failed.length} of ${results.length} checks failed.`);
+    process.exit(1);
+  }
+  console.log(`\nAll ${results.length} checks passed.`);
 }

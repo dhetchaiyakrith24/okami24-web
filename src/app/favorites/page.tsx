@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { FavoritesList } from "@/components/tools/FavoritesList";
+import { FavoritesPageHeader } from "@/components/tools/FavoritesPageHeader";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function FavoritesPage() {
   return (
     <>
-      <PageHeader eyebrow="Saved" title="Favorites" description="Stored locally in this browser — not tied to an account." />
+      <FavoritesPageHeader />
       <Container className="py-12 lg:py-16">
         <FavoritesList />
       </Container>

@@ -1000,8 +1000,8 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       role: "card",
       src: "/assets/products/nexbar-clear-18k/card.webp",
       alt: "WOTOFO nexBAR 18K disposable, isolated product shot",
-      angle: "Front, plain black-background studio photography (kept as a flat, non-alpha crop — the device's own black plastic body is too close in color to the black backdrop for a clean alpha key, so a rectangular trim was used instead of forcing a keying artifact). This is wotofo.com's own default/featured product image, shared across every one of ITS listed flavor variants on the official site — used here as a general device-identity shot, not a claim about representing any one specific Thai-market flavor.",
-      transparentBackground: false,
+      angle: "Front, isolated. Owner-reported correction (2026-09-04): the prior flat black-background crop is replaced with a genuinely alpha-keyed version of the SAME source photo. The device's own black plastic body is pixel-identical to the black studio backdrop in places (confirmed by direct pixel sampling), so a plain color-distance key alone punches a hole through the device — fixed with a two-pass approach: key the background at a tight tolerance (most of the device survives since it isn't perfectly pure black), then restore full opacity to any transparent pixel NOT connected to the image's outer border (i.e. an interior \"hole\" surrounded by real device pixels, not actual background) using its own original color. This is wotofo.com's own default/featured product image, shared across every one of ITS listed flavor variants on the official site — used here as a general device-identity shot, not a claim about representing any one specific Thai-market flavor.",
+      transparentBackground: true,
       sourceName: "WOTOFO (official brand site, wotofo.com)",
       sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k",
     },
@@ -1562,7 +1562,11 @@ function buildDraftCandidate(
     brandId: match?.brandId ?? null,
     familyId: match?.familyId ?? null,
     categoryId: match?.categoryId ?? null,
-    systemType: match?.systemType ?? null,
+    // ProductMaster's own SystemType is device-only by design (see product-master-schema.ts's own
+    // doc comment) — no TAXONOMY_MATCHES entry actually uses "e-liquid" today, this narrowing just
+    // keeps the type-level door open for `Product`'s SystemType (now wider, for the Legacy
+    // catalog's own e-liquid support) without silently widening ProductMaster's.
+    systemType: match?.systemType === "e-liquid" ? null : match?.systemType ?? null,
 
     name: parent.name,
     displayName: deriveDisplayName(parent.name, match?.brandId ?? null), // see deriveDisplayName's own comment

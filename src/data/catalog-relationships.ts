@@ -276,8 +276,17 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
   //   coil-68 (ITO-X pod) — fits the Drag Q and Doric E, neither in catalog. The ARGUS
   //           devices share the ITO *coil* but not the ITO-X *pod* — coil sharing is not
   //           pod sharing, and treating it as such would be a real mis-sell.
-  //   coil-63 / coil-89 (RINCOE) and coil-54 (NEVOKS) — structural: the catalog contains
-  //           zero Rincoe and zero Nevoks devices, so no endpoint can exist.
+  //   coil-63 / coil-89 (RINCOE), coil-54 (NEVOKS), coil-70 (dotmod), pod-169 (INFY) —
+  //           structural: the catalog contains zero Rincoe, zero Nevoks, zero dotmod, and
+  //           zero INFY DEVICES (each brand's only catalog presence is this one consumable),
+  //           so no endpoint can exist for any of them regardless of further research.
+  //   coil-87 (VOOPOO TPP Pod) — same TPP platform as coil-38 above, same conclusion: its
+  //           devices (Drag 3, Drag X Plus) are absent from the catalog.
+  //   coil-83 (VOOPOO Argus P1 Empty Cartridge) — the empty-cartridge counterpart to
+  //           Coil-21's integrated-coil cartridge, for the SAME reason: no source found
+  //           confirms which of the catalog's four ARGUS devices (G4/G4 mini/P3/G3 mini) —
+  //           if any — the "P1" cartridge specifically fits. Falls under the same ARGUS gap
+  //           noted below rather than a confirmed link to a wrong device.
   //   zero-cartridge → zero-pro / zero-nano — NOT established. salthub.com currently 404s
   //           /zero-cartridge/, /zero-nano/ and /m-bar-pod/, so the legacy catalog's own
   //           free-text claim could not be confirmed at source. The free text is left

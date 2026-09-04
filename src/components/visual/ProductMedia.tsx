@@ -15,13 +15,24 @@ import type { ImageDisplayInfo } from "@/lib/media-quality";
  * — see `src/lib/media-quality.ts` for the full rationale. Only Product Detail's hero passes it;
  * every other caller (cards, pickers, rails) omits it and keeps the original always-`fill`
  * behavior unchanged, since a small source already looks acceptable at those smaller sizes.
+ * MUST be the display info for whichever image is actually being shown (`overrideImage` when set,
+ * the card otherwise) — see the bug note below.
  *
- * `overrideImage` (optional) — Legacy color-variant selection (owner quality review, 2026-09-02).
- * When the customer picks a real, photographed color via `ColorVariantRail`, the parent passes
- * that color's own image here instead of mutating `product`; omitted/`null` falls back to the
- * product's own default card photo exactly as before. Rendered in plain `fill` mode (not
- * quality-aware) since these are sourced as full studio photos, not the smaller/weaker legacy
- * assets that motivated the intrinsic-size path.
+ * `overrideImage` (optional) — Legacy color/flavor-variant selection (owner quality review,
+ * 2026-09-02). When the customer picks a real, photographed color/flavor via
+ * `ColorVariantRail`/`FlavorVariantGrid`, the parent passes that variant's own image here instead
+ * of mutating `product`; omitted/`null` falls back to the product's own default card photo.
+ *
+ * BUG FIX (owner-reported, 2026-09-04): this used to unconditionally render `overrideImage` with
+ * `fill` regardless of `qualityAware`, on the assumption that variant photos were always "full
+ * studio photos" too large to ever need intrinsic sizing. That assumption stopped being true once
+ * per-color crops as small as ~140px wide were added (VOOPOO batch) — `fill` stretched them well
+ * past their real resolution and they read as broken/blurry, while the SAME product's card image
+ * (correctly quality-aware) looked fine, and the lineup composite (a separately-built, larger
+ * image) also looked fine — exactly the "composite's OK, one color looks broken" pattern reported.
+ * Fix: apply the identical fill-vs-intrinsic check to `overrideImage` too — the caller is
+ * responsible for passing the RIGHT `ImageDisplayInfo` for whichever image is current (see
+ * `ProductHero`'s `imageDisplayMap` lookup).
  */
 export function ProductMedia({
   product,
@@ -39,7 +50,7 @@ export function ProductMedia({
   const cardPhoto = overrideImage ?? product.assets.find((a) => a.role === "card");
 
   if (cardPhoto) {
-    if (!overrideImage && qualityAware && !qualityAware.fillHero) {
+    if (qualityAware && !qualityAware.fillHero) {
       return (
         <div className={cn("relative flex h-full w-full items-center justify-center", className)}>
           <Image

@@ -232,3 +232,19 @@ export function runProjectionContractTests(): ProjectionContractResult[] {
 
   return results;
 }
+
+// Storefront quality-correction pass (2026-09-02) — see product-master-contract-test.ts's own
+// comment on this same fix: this file had no self-executing runner, so it never actually ran its
+// checks when invoked directly (exactly how scripts/verify-catalog.ts invokes it).
+if (require.main === module) {
+  const results = runProjectionContractTests();
+  const failed = results.filter((r) => !r.passed);
+  for (const r of results) {
+    console.log(`${r.passed ? "PASS" : "FAIL"}  ${r.name}${r.detail ? `\n      ${r.detail}` : ""}`);
+  }
+  if (failed.length > 0) {
+    console.error(`\n${failed.length} of ${results.length} checks failed.`);
+    process.exit(1);
+  }
+  console.log(`\nAll ${results.length} checks passed.`);
+}

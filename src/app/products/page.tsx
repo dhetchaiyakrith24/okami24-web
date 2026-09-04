@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { allProducts } from "@/data/products";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
-import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
+import { ProductsPageHeader } from "@/components/catalog/ProductsPageHeader";
 import { canonicalFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -20,11 +20,7 @@ export default function ProductsPage() {
   const totalCount = allProducts.length + publishedProducts.length;
   return (
     <>
-      <PageHeader
-        eyebrow="Catalog"
-        title="All Products"
-        description={`${totalCount} products across the OKami24 catalog — filter by brand, category, screen, and portability, or search by name.`}
-      />
+      <ProductsPageHeader totalCount={totalCount} />
       <Container className="py-12 lg:py-16">
         <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} />
       </Container>

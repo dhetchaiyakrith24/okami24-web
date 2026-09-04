@@ -1,12 +1,17 @@
 import type { SiteFAQ } from "@/types/catalog";
+import { CONTACT } from "@/data/contact";
 
+// Owner review (2026-09-03) — "FAQ must become actionable": each `action` below is added only
+// where the question naturally leads somewhere useful (judgment call per item, not a blanket
+// CTA). See FAQAction's own doc comment in types/catalog.ts for why labels are keyed, not raw text.
 export const siteFaqs: SiteFAQ[] = [
   {
     id: "what-is-this-site",
     category: "ordering",
     question: "How do I actually order from OKami24?",
     answer:
-      "Browse, compare, and use the Finder here to figure out what fits you — then message OKami24's LINE OA (@okM24) with the product you're interested in. An admin will confirm stock and payment and help you place the order from there.",
+      "Browse, compare, and use the Finder here to figure out what fits you — then message OKami24's LINE OA (@okm24) with the product you're interested in. An admin will confirm stock and payment and help you place the order from there.",
+    action: { href: CONTACT.lineUrl, labelKey: "contactLineCta" },
   },
   {
     id: "where-specs-come-from",
@@ -28,6 +33,7 @@ export const siteFaqs: SiteFAQ[] = [
     question: "What's the real difference between an open-system pod and a disposable?",
     answer:
       "An open-system pod is refilled with e-liquid you buy separately and uses replaceable coil pods; a disposable arrives prefilled and is used until the puff count or e-liquid runs out. See the Open-System vs. Disposable guide for a full breakdown.",
+    action: { href: "/guides/open-system-vs-disposable", labelKey: "viewGuideCta" },
   },
   {
     id: "nicotine-strength-meaning",
@@ -42,6 +48,7 @@ export const siteFaqs: SiteFAQ[] = [
     question: "What are the flavor families on the E-Liquid pages?",
     answer:
       "They're editorial groupings (Fruit, Menthol & Cooling, Dessert, Beverage, Tobacco-Style) used to organize flavor character, not a catalog of specific branded e-liquid products.",
+    action: { href: "/e-liquid", labelKey: "eliquid" },
   },
   {
     id: "age-gate-why",
@@ -63,6 +70,7 @@ export const siteFaqs: SiteFAQ[] = [
     question: "Does the Compare tool declare a \"best\" product?",
     answer:
       "No. Compare highlights differences between the products you select and notes which type of user each one tends to fit better — it deliberately avoids declaring a universal winner.",
+    action: { href: "/compare", labelKey: "compare" },
   },
   {
     id: "favorites-account",
@@ -70,6 +78,7 @@ export const siteFaqs: SiteFAQ[] = [
     question: "Do I need an account to use Favorites?",
     answer:
       "No. Favorites is stored locally in your browser — it's saved only on your device and isn't tied to any account or server-side profile yet.",
+    action: { href: "/favorites", labelKey: "favorites" },
   },
 ];
 

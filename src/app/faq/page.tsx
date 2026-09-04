@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { siteFaqs, faqsByCategory } from "@/data/faqs";
 import type { SiteFAQ } from "@/types/catalog";
-import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { FAQAccordion } from "@/components/content/FAQAccordion";
+import { FAQPageHeader } from "@/components/content/FAQPageHeader";
+import { FAQCategoryHeading } from "@/components/content/FAQCategoryHeading";
 import { canonicalFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -12,20 +13,12 @@ export const metadata: Metadata = {
   ...canonicalFor("/faq"),
 };
 
-const CATEGORY_LABELS: Record<SiteFAQ["category"], string> = {
-  ordering: "Ordering",
-  devices: "Devices & Catalog",
-  "e-liquid": "E-Liquid",
-  safety: "Safety & Compliance",
-  account: "Favorites & Local Data",
-};
-
 const CATEGORY_ORDER: SiteFAQ["category"][] = ["ordering", "devices", "e-liquid", "safety", "account"];
 
 export default function FAQPage() {
   return (
     <>
-      <PageHeader eyebrow="Support" title="FAQ" description={`${siteFaqs.length} answers about ordering, the catalog, and how the tools work.`} />
+      <FAQPageHeader count={siteFaqs.length} />
       <Container className="max-w-3xl py-12 lg:py-16">
         <div className="flex flex-col gap-12">
           {CATEGORY_ORDER.map((category) => {
@@ -33,7 +26,7 @@ export default function FAQPage() {
             if (items.length === 0) return null;
             return (
               <div key={category}>
-                <h2 className="label-mono mb-2 text-xs text-ember">{CATEGORY_LABELS[category]}</h2>
+                <FAQCategoryHeading category={category} />
                 <FAQAccordion items={items} />
               </div>
             );

@@ -11,10 +11,29 @@ export interface FinderAnswers {
   experience: "beginner" | "experienced";
 }
 
+/**
+ * Identifies WHICH match reason to show, without the literal English text baked in — `scoreProduct`
+ * is a plain function (not a component), so it cannot read the locale dict itself. Owner review,
+ * 2026-09-03: found these reasons were the one Finder surface still hardcoded in English while every
+ * other Finder string was already localized (see `dict.finder.reasons.*`, which the rendering
+ * component resolves this to) — the same "translated the surrounding UI but missed a dynamically
+ * generated content type" gap as Guides/Technology's listing cards earlier in this same pass.
+ */
+export type FinderReasonKey =
+  | { key: "format-match" }
+  | { key: "portability"; value: "ultra-compact" | "compact" }
+  | { key: "screen"; value: "none" | "basic" | "full" }
+  | { key: "battery" }
+  | { key: "output-low" }
+  | { key: "output-high" }
+  | { key: "output-flexible" }
+  | { key: "beginner-friendly" }
+  | { key: "advanced" };
+
 export interface FinderMatch {
   product: Product;
   score: number;
-  reasons: string[];
+  reasons: FinderReasonKey[];
 }
 
 function screenMatches(preference: FinderAnswers["screen"], product: Product) {
@@ -25,15 +44,15 @@ function screenMatches(preference: FinderAnswers["screen"], product: Product) {
   return false;
 }
 
-export function scoreProduct(product: Product, answers: FinderAnswers): { score: number; reasons: string[] } {
+export function scoreProduct(product: Product, answers: FinderAnswers): { score: number; reasons: FinderReasonKey[] } {
   let score = 0;
-  const reasons: string[] = [];
+  const reasons: FinderReasonKey[] = [];
   const a = product.attributes;
 
   if (answers.format !== "no-preference") {
     if (product.systemType === answers.format) {
       score += 3;
-      reasons.push("Matches your preferred device format.");
+      reasons.push({ key: "format-match" });
     } else {
       score -= 1;
     }
@@ -42,7 +61,7 @@ export function scoreProduct(product: Product, answers: FinderAnswers): { score:
   if (answers.portability !== "no-preference") {
     if (a.portability === answers.portability) {
       score += 2;
-      reasons.push(`${a.portability === "ultra-compact" ? "Ultra-compact" : "Compact"} form factor, as you asked for.`);
+      reasons.push({ key: "portability", value: a.portability === "ultra-compact" ? "ultra-compact" : "compact" });
     } else if (answers.portability === "ultra-compact" && a.portability === "compact") {
       score += 0.5;
     }
@@ -50,15 +69,13 @@ export function scoreProduct(product: Product, answers: FinderAnswers): { score:
 
   if (answers.screen !== "no-preference" && screenMatches(answers.screen, product)) {
     score += 1.5;
-    reasons.push(
-      answers.screen === "none" ? "No screen to manage — simple, button-or-draw operation." : answers.screen === "basic" ? "Has an onboard colour display." : "Full touchscreen control."
-    );
+    reasons.push({ key: "screen", value: answers.screen === "none" ? "none" : answers.screen === "basic" ? "basic" : "full" });
   }
 
   if (answers.battery === "critical") {
     if ((a.batteryMah && a.batteryMah >= 1800) || (a.puffCount && a.puffCount >= 10000)) {
       score += 2;
-      reasons.push("Larger battery or puff rating for longer stretches between charges.");
+      reasons.push({ key: "battery" });
     } else if (a.batteryMah && a.batteryMah >= 1300) {
       score += 1;
     }
@@ -67,32 +84,32 @@ export function scoreProduct(product: Product, answers: FinderAnswers): { score:
   if (answers.output === "low") {
     if (a.drawStyle === "MTL" || (a.wattageMax && a.wattageMax <= 35)) {
       score += 1.5;
-      reasons.push("Lower-wattage range suited to a tighter MTL draw.");
+      reasons.push({ key: "output-low" });
     }
   } else if (answers.output === "high") {
     if (a.wattageMax && a.wattageMax >= 60) {
       score += 1.5;
-      reasons.push("High wattage headroom for a more open, powerful draw.");
+      reasons.push({ key: "output-high" });
     }
     if (a.drawStyle === "DTL") score += 1;
   } else if (answers.output === "flexible") {
     if (a.drawStyle === "MTL/RDL") {
       score += 1;
-      reasons.push("Flexible draw style — comfortable switching between tighter and looser airflow.");
+      reasons.push({ key: "output-flexible" });
     }
   }
 
   if (answers.experience === "beginner") {
     if (a.beginnerFriendly) {
       score += 2;
-      reasons.push("Editorially flagged as beginner-friendly.");
+      reasons.push({ key: "beginner-friendly" });
     } else {
       score -= 1;
     }
   } else {
     if (!a.beginnerFriendly) {
       score += 1;
-      reasons.push("More advanced control set for an experienced vaper.");
+      reasons.push({ key: "advanced" });
     }
   }
 

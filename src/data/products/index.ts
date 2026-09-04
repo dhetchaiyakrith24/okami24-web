@@ -7,6 +7,7 @@ import { relxProducts } from "./relx";
 import { joiwayProducts } from "./joiway";
 import { tfitProducts } from "./tfit";
 import { infyProducts } from "./infy";
+import { unbrandedProducts } from "./unbranded";
 
 export const allProducts: Product[] = [
   ...uwellProducts,
@@ -16,6 +17,7 @@ export const allProducts: Product[] = [
   ...joiwayProducts,
   ...tfitProducts,
   ...infyProducts,
+  ...unbrandedProducts,
 ];
 
 // Validated once at module load — a malformed product record fails the build

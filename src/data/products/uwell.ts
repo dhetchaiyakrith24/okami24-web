@@ -1186,45 +1186,81 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g3-pro-koko/card.webp",
-        alt: "UWELL Caliburn G3 Pro KOKO, green and purple colourways, front and back isolated shot",
-        angle: "Angled pair, isolated",
+        src: "/assets/products/caliburn-g3-pro-koko/variant-emerald-green.webp",
+        alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green, isolated product shot",
+        angle: "Front, isolated",
         transparentBackground: true,
-        sourceName: "UWELL",
-        sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko",
+        sourceName: "UWELL (retailer-redistributed studio photo, vapesourcing.com — matches myuwell.com's own render, tier-2)",
+        sourceUrl: "https://vapesourcing.com/uwell-caliburn-g3-pro-koko.html",
       },
     ],
+    // "All Colors" lineup (2026-09-04) — OKami24 composite built from the 8 individually-verified
+    // photos below now that every color has one; no fallback/generic image involved.
+    lineupImage: {
+      src: "/assets/products/caliburn-g3-pro-koko/lineup.webp",
+      alt: "UWELL Caliburn G3 Pro KOKO, all 8 colors",
+      sourceName: "OKami24 composite (from individually-verified retailer photos)",
+    },
     // Real UWELL color/finish lineup — "KOKO" is UWELL's touchscreen-edition naming convention
     // (see caliburn-g4-pro-koko's own comment) — same G3 Pro pod platform, not a separate system.
-    // This product's existing card photo already shows two real colors together (Emerald Green +
-    // Lilac Purple, genuinely clean, no watermark) — kept as-is. QC recovery pass (2026-09-03):
-    // tried to find real photos for the other 6. myuwell.com's own lineup-strip pattern (proven on
-    // caliburn-g5-lite/-lite-se) does not exist for this product; its own launch article
-    // (myuwell.com/news/.../caliburn-g3-pro-koko-a-premium-vaping-experience) also renders its
-    // body client-side, no embedded photos in static HTML either. elementvape.com has all 8 real
-    // colors, but EVERY one carries a corner watermark sitting directly on the device's own
-    // rounded base — the same class of defect already rejected elsewhere this pass, and this
-    // device's compact proportions make a crop-above-the-watermark cut visibly into the base too.
-    // Left as swatch-only rather than ship a known defect or a repair likely to leave a seam.
+    // QC pass (2026-09-04, owner visual review): the previous card asset was a 2-color group shot
+    // ("Emerald Green and Lilac Purple" in one frame) reused for BOTH of those color slots — an
+    // established anti-pattern (a group shot must never stand in for one specific variant). Fixed
+    // by sourcing genuine individual per-color photos for all 8 colors from vapesourcing.com
+    // (800x800, clean, no watermark, screen-on renders pixel-matching myuwell.com's own official
+    // asset — strong evidence of manufacturer-supplied photography redistributed by the retailer,
+    // tagged tier-2 since it isn't fetched from myuwell.com itself). Each source image carried its
+    // own baked-in color-name caption below the device (same class of defect fixed on Caliburn
+    // G4/G4 Mini/G4 Classic this pass) — cropped off before background removal, not left in.
     colorVariants: [
       {
         id: "emerald-green",
         name: "Emerald Green",
         swatchHex: "#1f7a5c",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/card.webp", alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green and Lilac Purple" },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-emerald-green.webp", alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green" },
       },
-      { id: "light-silver", name: "Light Silver", swatchHex: "#c8ccd0" },
+      {
+        id: "light-silver",
+        name: "Light Silver",
+        swatchHex: "#c8ccd0",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-light-silver.webp", alt: "UWELL Caliburn G3 Pro KOKO, Light Silver" },
+      },
       {
         id: "lilac-purple",
         name: "Lilac Purple",
         swatchHex: "#a68fc9",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/card.webp", alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green and Lilac Purple" },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-lilac-purple.webp", alt: "UWELL Caliburn G3 Pro KOKO, Lilac Purple" },
       },
-      { id: "luxury-gold", name: "Luxury Gold", swatchHex: "#c9a24b" },
-      { id: "midnight-black", name: "Midnight Black", swatchHex: "#1a1a1a" },
-      { id: "rose-pink", name: "Rose Pink", swatchHex: "#e0a3b0" },
-      { id: "sky-blue", name: "Sky Blue", swatchHex: "#7fb8d9" },
-      { id: "space-gray", name: "Space Gray", swatchHex: "#54565a" },
+      {
+        id: "luxury-gold",
+        name: "Luxury Gold",
+        swatchHex: "#c9a24b",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-luxury-gold.webp", alt: "UWELL Caliburn G3 Pro KOKO, Luxury Gold" },
+      },
+      {
+        id: "midnight-black",
+        name: "Midnight Black",
+        swatchHex: "#1a1a1a",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-midnight-black.webp", alt: "UWELL Caliburn G3 Pro KOKO, Midnight Black" },
+      },
+      {
+        id: "rose-pink",
+        name: "Rose Pink",
+        swatchHex: "#e0a3b0",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-rose-pink.webp", alt: "UWELL Caliburn G3 Pro KOKO, Rose Pink" },
+      },
+      {
+        id: "sky-blue",
+        name: "Sky Blue",
+        swatchHex: "#7fb8d9",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-sky-blue.webp", alt: "UWELL Caliburn G3 Pro KOKO, Sky Blue" },
+      },
+      {
+        id: "space-gray",
+        name: "Space Gray",
+        swatchHex: "#54565a",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-space-gray.webp", alt: "UWELL Caliburn G3 Pro KOKO, Space Gray" },
+      },
     ],
     specifications: [
       { key: "battery", label: "Battery", value: "Treated as equivalent to the G3 Pro (1000mAh) — not independently confirmed for this specific edition", sourceStatus: "unverified" },

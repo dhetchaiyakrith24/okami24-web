@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTechnologyEntry, technologyEntries } from "@/data/technology";
 import { getProduct } from "@/data/products";
-import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { ArticleBody } from "@/components/content/ArticleBody";
+import { TechnologyEntryPageHeader } from "@/components/content/TechnologyEntryPageHeader";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import type { Product } from "@/types/catalog";
 import { canonicalFor } from "@/lib/seo";
+import { TECHNOLOGY_COPY_TH, TECHNOLOGY_COPY_ZH } from "@/i18n/technology-copy";
 
 export function generateStaticParams() {
   return technologyEntries.map((t) => ({ slug: t.slug }));
@@ -31,9 +32,12 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
 
   return (
     <>
-      <PageHeader eyebrow="Technology" title={entry.name} description={entry.summary} />
+      <TechnologyEntryPageHeader id={entry.id} title={entry.name} description={entry.summary} />
       <Container className="max-w-3xl py-12 lg:py-16">
-        <ArticleBody sections={entry.body} />
+        <ArticleBody
+          sections={entry.body}
+          translated={{ th: TECHNOLOGY_COPY_TH[entry.id]?.body, zh: TECHNOLOGY_COPY_ZH[entry.id]?.body }}
+        />
       </Container>
       <RelatedProducts products={related} />
     </>

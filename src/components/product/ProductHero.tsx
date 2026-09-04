@@ -19,7 +19,21 @@ import type { ImageDisplayInfo } from "@/lib/media-quality";
  *  and passed down as plain data since this is a client component. `undefined` (e.g. the source
  *  file couldn't be read) falls back to the original always-fill behavior. See
  *  `src/lib/media-quality.ts` for the full rationale. */
-export function ProductHero({ product, imageDisplayInfo }: { product: Product; imageDisplayInfo?: ImageDisplayInfo | null }) {
+export function ProductHero({
+  product,
+  imageDisplayInfo,
+  imageDisplayMap,
+}: {
+  product: Product;
+  imageDisplayInfo?: ImageDisplayInfo | null;
+  /** Per-image lookup (owner-reported bug fix, 2026-09-04) — `imageDisplayInfo` alone only ever
+   *  described the CARD photo, so selecting a color/flavor whose own image is smaller than the
+   *  card silently kept the card's fill decision instead of its own. When provided, the currently
+   *  displayed image's own entry is looked up here instead; falls back to `imageDisplayInfo` for
+   *  the card when a specific entry is missing (e.g. `getImageDisplayInfo` couldn't read the file).
+   *  See `src/lib/media-quality.ts` and `ProductMedia`'s doc comment. */
+  imageDisplayMap?: Record<string, ImageDisplayInfo>;
+}) {
   const { locale, dict } = useLocale();
   // Thai locale adds a translated tagline/description under the English original — never
   // replacing it, and only for the 28 legacy products with a real (human-checked, not machine-
@@ -34,6 +48,11 @@ export function ProductHero({ product, imageDisplayInfo }: { product: Product; i
   const selectedColor = product.colorVariants?.find((c) => c.id === selectedColorId);
   const selectedFlavor = product.flavorVariants?.find((f) => f.id === selectedFlavorId);
   const heroOverrideImage = showAllColors ? product.lineupImage ?? null : selectedColor?.image ?? selectedFlavor?.image ?? null;
+  // The display-info entry for whichever image is ACTUALLY shown right now, not just the card's —
+  // see this component's own prop doc comment for the bug this fixes.
+  const currentImageDisplayInfo = heroOverrideImage
+    ? imageDisplayMap?.[heroOverrideImage.src] ?? null
+    : imageDisplayInfo;
   const stats = [
     { label: dict.product.statBattery, value: formatBattery(product.attributes.batteryMah) },
     { label: dict.product.statOutput, value: formatWattage(product.attributes.wattageMin, product.attributes.wattageMax) },
@@ -124,7 +143,7 @@ export function ProductHero({ product, imageDisplayInfo }: { product: Product; i
             <ProductMedia
               product={product}
               sizes="(min-width: 1024px) 42vw, 85vw"
-              qualityAware={imageDisplayInfo}
+              qualityAware={currentImageDisplayInfo}
               overrideImage={heroOverrideImage}
             />
           </div>

@@ -27,7 +27,7 @@ export function Scene3Voopoo({ progress }: { progress: MotionValue<number> }) {
       <div className="absolute inset-0 flex items-center justify-center" style={{ perspective: 1600 }}>
         <HeroProduct
           progress={progress}
-          src="/assets/products/argus-g4/card.png"
+          src="/assets/products/argus-g4/card.webp"
           alt="VOOPOO ARGUS G4"
           sizeClass="h-[50vh] w-[17vh] sm:h-[64vh] sm:w-[22vh]"
           glow="rgba(255,106,44,0.4)"

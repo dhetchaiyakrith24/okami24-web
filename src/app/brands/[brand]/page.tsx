@@ -3,12 +3,12 @@ import { notFound } from "next/navigation";
 import { brands, getBrand } from "@/data/brands";
 import { familiesForBrand } from "@/data/families";
 import { getProductsByBrand } from "@/data/products";
-import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { getPilotProductsByBrand, getPublishedProductsByBrand } from "@/data/shipnity-seed/storefront-bridge";
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { BrandPageMeta } from "@/components/catalog/BrandPageMeta";
+import { BrandPageHeader } from "@/components/catalog/BrandPageHeader";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -44,12 +44,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
 
   return (
     <>
-      <PageHeader
-        eyebrow={brand.tagline}
-        title={brand.name}
-        description={brand.description}
-        meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />}
-      />
+      <BrandPageHeader brand={brand} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
         <CatalogBrowser products={products} publishedProducts={publishedProducts} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} />
         <PilotProductSection products={pilotProducts} />

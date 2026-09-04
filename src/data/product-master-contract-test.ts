@@ -506,3 +506,22 @@ export function runContractTests(): ContractTestResult[] {
     };
   });
 }
+
+// Storefront quality-correction pass (2026-09-02) — this file previously had NO self-executing
+// runner, so `npx tsx <this file>` (exactly what scripts/verify-catalog.ts's process-spawn-based
+// runner does) exited 0 without ever calling runContractTests() — every check in this file was
+// silently inert despite `verify:catalog` reporting it as a passing step. Found while fixing the
+// exact same defect in src/i18n/i18n-contract-test.ts and confirmed to be systemic across every
+// other *-contract-test.ts/validate-*.ts file, all fixed alongside this one.
+if (require.main === module) {
+  const results = runContractTests();
+  const failed = results.filter((r) => !r.passed);
+  for (const r of results) {
+    console.log(`${r.passed ? "PASS" : "FAIL"}  ${r.name}${r.detail ? `\n      ${r.detail}` : ""}`);
+  }
+  if (failed.length > 0) {
+    console.error(`\n${failed.length} of ${results.length} checks failed.`);
+    process.exit(1);
+  }
+  console.log(`\nAll ${results.length} checks passed.`);
+}

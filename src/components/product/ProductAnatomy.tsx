@@ -23,7 +23,7 @@ function getAnatomyPoints(product: Product): AnatomyPoint[] {
       ...(product.attributes.screenType === "led-indicator"
         ? [{ x: 50, y: 86, label: "Status LED", detail: "Battery level and active-mode indicator." }]
         : []),
-      { x: 50, y: 95, label: "Charging port", detail: product.attributes.chargingType },
+      { x: 50, y: 95, label: "Charging port", detail: product.attributes.chargingType ?? "—" },
     ];
   }
 
@@ -32,7 +32,7 @@ function getAnatomyPoints(product: Product): AnatomyPoint[] {
     { x: 50, y: 15, label: "Pod / cartridge", detail: "Removable coil pod — capacity and resistance vary by pod." },
     ...(hasScreen ? [{ x: 50, y: 39, label: "Display", detail: `${product.attributes.screenSize ?? ""} ${product.attributes.screenType === "touchscreen" ? "touchscreen" : "colour display"}`.trim() }] : []),
     { x: 22, y: 83, label: "Airflow control", detail: "Adjusts draw resistance." },
-    { x: 50, y: 97, label: "Charging port", detail: product.attributes.chargingType },
+    { x: 50, y: 97, label: "Charging port", detail: product.attributes.chargingType ?? "—" },
   ];
 }
 

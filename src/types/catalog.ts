@@ -12,7 +12,8 @@ export type SystemType =
   | "disposable" // prefilled disposable
   | "pod-cartridge" // replacement pod / cartridge
   | "coil"
-  | "accessory";
+  | "accessory"
+  | "e-liquid"; // bottled e-liquid — no hardware, see `attributes`' e-liquid-only fields below
 
 export type DrawStyle = "MTL" | "RDL" | "DTL" | "MTL/RDL";
 
@@ -170,21 +171,28 @@ export interface Product {
   isFlagship: boolean;
   editorialTag?: string; // e.g. "Editor's Pick" — explicitly demo curation, never sales data
 
-  // Normalized attributes — power the filters, compare table, and finder.
+  // Normalized attributes — power the filters, compare table, and finder. The device-only fields
+  // (screenType/drawStyle/portability/chargingType) are optional so an `e-liquid` SystemType
+  // product isn't forced to fabricate a screen/draw-style/charging-type it genuinely doesn't have
+  // — deliberately not a per-category attribute schema (see product-master-schema.ts's own doc
+  // comment on why that's out of scope), just making the device-shaped fields non-mandatory.
   attributes: {
     batteryMah?: number;
     wattageMin?: number;
     wattageMax?: number;
     puffCount?: number; // disposables
-    capacityMl?: number;
-    screenType: ScreenType;
+    capacityMl?: number; // pod/tank capacity, OR e-liquid bottle volume — same unit either way
+    screenType?: ScreenType;
     screenSize?: string;
-    drawStyle: DrawStyle;
-    portability: Portability;
+    drawStyle?: DrawStyle;
+    portability?: Portability;
     beginnerFriendly: boolean;
-    chargingType: string;
+    chargingType?: string;
     weightG?: number;
     dimensions?: string;
+    // E-liquid-only fields — absent for every device product.
+    nicotineMg?: number;
+    liquidBase?: "salt-nic" | "freebase";
   };
 
   assets: ProductAsset[];

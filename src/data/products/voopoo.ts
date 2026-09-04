@@ -213,29 +213,37 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/argus-g4-mini/card.png",
-        alt: "VOOPOO ARGUS G4 mini, lilac colourway, isolated product shot",
-        angle: "Front, isolated (cropped to remove a third-party review-site award badge)",
-        transparentBackground: false,
-        sourceName: "VOOPOO",
-        sourceUrl: "https://www.voopoo.com/argus-series/argus-g4-mini",
+        src: "/assets/products/argus-g4-mini/variants/black.webp",
+        alt: "VOOPOO ARGUS G4 mini, Black, isolated product shot",
+        angle: "Front, isolated",
+        transparentBackground: true,
+        sourceName: "VOOPOO (shop.voopoo.com)",
+        sourceUrl: "https://shop.voopoo.com/products/argus-g4-mini",
       },
     ],
-    // Real VOOPOO color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
-    // photo-confirmed: thevrepublic.com + gadgetcloudz.com, agreeing). A distinct palette from
-    // ARGUS G4 (has Cyan/Tarnish instead of Gray/Brown) — not merged with that list. This
-    // product's own "lilac" card photo above isn't a clean match to any of these 8 real names
-    // (closest is "Purple," but that's a guess, not a confirmed match), so no `image` is forced.
+    // Real VOOPOO color/finish lineup — QC pass (2026-09-04): all 8 colors sourced directly from
+    // shop.voopoo.com's own color→photo JSON binding (tier-1, see drag-6's comment for method). A
+    // distinct palette from ARGUS G4 (has Cyan/Tarnish instead of Gray/Brown) — not merged with
+    // that list. "Tarnish" confirmed correct against a JSON typo ("Tamish") by the box art itself,
+    // which reads "Tarnish." Card switched from the old "lilac" photo (never a confirmed match to
+    // any of these 8 real names) to "Black."
     colorVariants: [
-      { id: "black", name: "Black", swatchHex: "#1a1a1a" },
-      { id: "green", name: "Green", swatchHex: "#4a8a5c" },
-      { id: "orange", name: "Orange", swatchHex: "#d4692a" },
-      { id: "purple", name: "Purple", swatchHex: "#6b4a8e" },
-      { id: "silver", name: "Silver", swatchHex: "#c8ccd0" },
-      { id: "tarnish", name: "Tarnish", swatchHex: "#8a7a5c" },
-      { id: "cyan", name: "Cyan", swatchHex: "#3ab5c6" },
-      { id: "blue", name: "Blue", swatchHex: "#2a6fbd" },
+      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/argus-g4-mini/variants/black.webp", alt: "VOOPOO ARGUS G4 mini, Black" } },
+      { id: "green", name: "Green", swatchHex: "#4a8a5c", image: { src: "/assets/products/argus-g4-mini/variants/green.webp", alt: "VOOPOO ARGUS G4 mini, Green" } },
+      { id: "orange", name: "Orange", swatchHex: "#d4692a", image: { src: "/assets/products/argus-g4-mini/variants/orange.webp", alt: "VOOPOO ARGUS G4 mini, Orange" } },
+      { id: "purple", name: "Purple", swatchHex: "#6b4a8e", image: { src: "/assets/products/argus-g4-mini/variants/purple.webp", alt: "VOOPOO ARGUS G4 mini, Purple" } },
+      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/argus-g4-mini/variants/silver.webp", alt: "VOOPOO ARGUS G4 mini, Silver" } },
+      { id: "tarnish", name: "Tarnish", swatchHex: "#8a7a5c", image: { src: "/assets/products/argus-g4-mini/variants/tarnish.webp", alt: "VOOPOO ARGUS G4 mini, Tarnish" } },
+      { id: "cyan", name: "Cyan", swatchHex: "#3ab5c6", image: { src: "/assets/products/argus-g4-mini/variants/cyan.webp", alt: "VOOPOO ARGUS G4 mini, Cyan" } },
+      { id: "blue", name: "Blue", swatchHex: "#2a6fbd", image: { src: "/assets/products/argus-g4-mini/variants/blue.webp", alt: "VOOPOO ARGUS G4 mini, Blue" } },
     ],
+    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 8
+    // individually-verified shop.voopoo.com photos above.
+    lineupImage: {
+      src: "/assets/products/argus-g4-mini/lineup.webp",
+      alt: "VOOPOO ARGUS G4 mini, all 8 colors",
+      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+    },
     specifications: [
       { key: "battery", label: "Battery", value: "1650mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified" },
@@ -286,32 +294,53 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/argus-p3/card.png",
-        alt: "VOOPOO ARGUS P3, blue colourway, screen-on isolated product shot",
-        angle: "Front, isolated (cropped to remove a third-party review-site award badge)",
-        transparentBackground: false,
-        sourceName: "VOOPOO",
-        sourceUrl: "https://www.voopoo.com/argus-series/argus-p3",
+        src: "/assets/products/argus-p3/variants/blue-leather.webp",
+        alt: "VOOPOO ARGUS P3, Blue Leather, isolated product shot",
+        angle: "Front, isolated",
+        transparentBackground: true,
+        sourceName: "vaping.com (authorized US retailer, BigCommerce product gallery)",
+        sourceUrl: "https://vaping.com/products/voopoo-argus-p3-kit",
       },
     ],
-    // Real VOOPOO color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
-    // photo-confirmed: vapesourcing.com + thevapersworld.com, agreeing on 6 leather finishes). A
-    // 7th non-leather metal finish also exists but the two vendors disagree on its exact name
-    // ("Black Metal" vs "Carbon Fiber Black") — omitted rather than guessed. "Blue Leather"
-    // reuses this product's own existing "blue colourway" card photo, a reasonable real match.
+    // Real VOOPOO color/finish lineup — QC pass (2026-09-04): all 7 (6 leather + 1 non-leather)
+    // colors/identities originally confirmed via shop.voopoo.com's own color→photo JSON binding
+    // (tier-1, see drag-6's comment for method) — settling the prior pass's naming ambiguity on
+    // the 7th, non-leather finish ("Black Metal," not "Carbon Fiber Black"), and catching a real
+    // identity bug (see below). Owner-reported correction (2026-09-04): the OLD card.png used for
+    // "Blue Leather" (a plain solid-blue shell with a floral watch-face screen demo) did not match
+    // shop.voopoo.com's own "Blue Leather" featured_media_id at all — it's actually a blue
+    // graffiti/street-art print finish; card.png retired.
+    //
+    // SECOND correction, same day: shop.voopoo.com's own 1000×1000 box+device template only
+    // yields a ~230px-wide isolated device after cropping out the box — genuinely too small
+    // (owner-reported "blurry/broken" at Product Detail's hero size). Re-sourced all 7 images from
+    // vaping.com's own BigCommerce product gallery (an authorized US VOOPOO retailer — confirmed
+    // real, non-AI, device-only isolated studio photography, no box, no watermark) at native
+    // 600×600, yielding a ~300×520 device crop — roughly 2x wider than the shop.voopoo.com source
+    // allowed. Every color's real identity was re-verified against this new source before
+    // deploying (Blue Leather's graffiti print and Black Metal's gear-panel finish both confirmed
+    // to match the shop.voopoo.com-verified identities exactly, not just assumed from filenames).
     colorVariants: [
       {
         id: "blue-leather",
         name: "Blue Leather",
-        swatchHex: "#33475b",
-        image: { src: "/assets/products/argus-p3/card.png", alt: "VOOPOO ARGUS P3, Blue Leather" },
+        swatchHex: "#2a4fb0",
+        image: { src: "/assets/products/argus-p3/variants/blue-leather.webp", alt: "VOOPOO ARGUS P3, Blue Leather" },
       },
-      { id: "black-leather", name: "Black Leather", swatchHex: "#2a2320" },
-      { id: "grey-leather", name: "Grey Leather", swatchHex: "#5a5a55" },
-      { id: "brown-leather", name: "Brown Leather", swatchHex: "#5c4433" },
-      { id: "red-leather", name: "Red Leather", swatchHex: "#8e3a3a" },
-      { id: "silver-leather", name: "Silver Leather", swatchHex: "#b8bcc0" },
+      { id: "black-leather", name: "Black Leather", swatchHex: "#2a2320", image: { src: "/assets/products/argus-p3/variants/black-leather.webp", alt: "VOOPOO ARGUS P3, Black Leather" } },
+      { id: "grey-leather", name: "Grey Leather", swatchHex: "#5a5a55", image: { src: "/assets/products/argus-p3/variants/grey-leather.webp", alt: "VOOPOO ARGUS P3, Grey Leather" } },
+      { id: "brown-leather", name: "Brown Leather", swatchHex: "#5c4433", image: { src: "/assets/products/argus-p3/variants/brown-leather.webp", alt: "VOOPOO ARGUS P3, Brown Leather" } },
+      { id: "red-leather", name: "Red Leather", swatchHex: "#8e3a3a", image: { src: "/assets/products/argus-p3/variants/red-leather.webp", alt: "VOOPOO ARGUS P3, Red Leather" } },
+      { id: "silver-leather", name: "Silver Leather", swatchHex: "#b8bcc0", image: { src: "/assets/products/argus-p3/variants/silver-leather.webp", alt: "VOOPOO ARGUS P3, Silver Leather" } },
+      { id: "black-metal", name: "Black Metal", swatchHex: "#2b2b2e", image: { src: "/assets/products/argus-p3/variants/black-metal.webp", alt: "VOOPOO ARGUS P3, Black Metal" } },
     ],
+    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
+    // individually-verified shop.voopoo.com photos above.
+    lineupImage: {
+      src: "/assets/products/argus-p3/lineup.webp",
+      alt: "VOOPOO ARGUS P3, all 7 finishes",
+      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+    },
     specifications: [
       { key: "battery", label: "Battery", value: "1500mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified" },
@@ -502,23 +531,32 @@ export const voopooProducts: Product[] = [
         sourceUrl: "https://www.voopoo.com/drag-series/drag-6",
       },
     ],
-    // Real VOOPOO color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
-    // photo-confirmed: myvapereview.com, matching independent vendor aggregation). "Brown" reuses
-    // this product's own existing card photo, an exact match.
+    // Real VOOPOO color/finish lineup — QC pass (2026-09-04): all 7 colors now sourced directly
+    // from shop.voopoo.com's own product page, whose raw HTML embeds a `variant-data` JSON block
+    // binding each color option to its own `featured_media_id` — the same official color→photo
+    // mapping the live page itself uses to swap images on click, not a guess. Tier-1. Each photo
+    // was a real box+device studio pair; cropped to the device half, background removed.
     colorVariants: [
-      { id: "silver", name: "Silver", swatchHex: "#c8ccd0" },
-      { id: "blue", name: "Blue", swatchHex: "#2a6fbd" },
-      { id: "black", name: "Black", swatchHex: "#1a1a1a" },
+      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variants/silver.webp", alt: "VOOPOO DRAG 6, Silver" } },
+      { id: "blue", name: "Blue", swatchHex: "#2a6fbd", image: { src: "/assets/products/drag-6/variants/blue.webp", alt: "VOOPOO DRAG 6, Blue" } },
+      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/drag-6/variants/black.webp", alt: "VOOPOO DRAG 6, Black" } },
       {
         id: "brown",
         name: "Brown",
         swatchHex: "#5c4433",
         image: { src: "/assets/products/drag-6/card.png", alt: "VOOPOO DRAG 6, Brown" },
       },
-      { id: "red", name: "Red", swatchHex: "#b83a3a" },
-      { id: "green", name: "Green", swatchHex: "#4a8a5c" },
-      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93" },
+      { id: "red", name: "Red", swatchHex: "#b83a3a", image: { src: "/assets/products/drag-6/variants/red.webp", alt: "VOOPOO DRAG 6, Red" } },
+      { id: "green", name: "Green", swatchHex: "#4a8a5c", image: { src: "/assets/products/drag-6/variants/green.webp", alt: "VOOPOO DRAG 6, Green" } },
+      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variants/metal-gray.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
     ],
+    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
+    // individually-verified shop.voopoo.com photos above.
+    lineupImage: {
+      src: "/assets/products/drag-6/lineup.webp",
+      alt: "VOOPOO DRAG 6, all 7 colors",
+      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+    },
     specifications: [
       { key: "battery", label: "Battery", value: "4400mAh built-in (two 2200mAh cells)", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "220W", sourceStatus: "verified" },
@@ -583,27 +621,41 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-s3/card.png",
-        alt: "VOOPOO DRAG S3, cream/gold colourway, isolated product shot",
-        angle: "Front, isolated (cropped to remove third-party review-site award badges)",
-        transparentBackground: false,
-        sourceName: "VOOPOO",
-        sourceUrl: "https://www.voopoo.com/drag-series/drag-s3",
+        src: "/assets/products/drag-s3/variants/spray-black.webp",
+        alt: "VOOPOO DRAG S3, Spray Black, isolated product shot",
+        angle: "Front, isolated",
+        transparentBackground: true,
+        sourceName: "vapevo.com (authorized EU retailer, Shopify product gallery)",
+        sourceUrl: "https://www.vapevo.com/en/products/voopoo-drag-s3-kit-e-cigarette-60w-3000mah-5ml",
       },
     ],
-    // Real VOOPOO color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
-    // photo-confirmed: huffandpuffers.com + mipod.com, identical lists; very recent release,
-    // launched alongside DRAG X3). This product's own "cream/gold" card photo above isn't a clean
-    // match to any of these 7 real names, so no `image` is forced.
+    // Real VOOPOO color/finish lineup — QC pass (2026-09-04): all 7 colors/identities originally
+    // confirmed via shop.voopoo.com's own color→photo JSON binding (tier-1, see drag-6's comment
+    // for the exact method); card switched from the old "cream/gold" photo (matched none of the 7
+    // real names) to the real "Spray Black" identity.
+    //
+    // SECOND correction, same day: shop.voopoo.com's 1000×1000 box+device template only yielded a
+    // ~185px-wide device crop, genuinely too small (owner-reported "blurry/broken" at Product
+    // Detail's hero size). Re-sourced all 7 from vapevo.com's own Shopify product gallery (an
+    // authorized EU VOOPOO retailer — real, non-AI, isolated studio photography, no box, device
+    // fills most of an 800×800 frame) at ~220×751 after cropping — a ~4x resolution gain. Every
+    // color re-verified against this new source before deploying.
     colorVariants: [
-      { id: "spray-black", name: "Spray Black", swatchHex: "#2b2b2b" },
-      { id: "white", name: "White", swatchHex: "#eef0f2" },
-      { id: "pink", name: "Pink", swatchHex: "#e8899a" },
-      { id: "blue", name: "Blue", swatchHex: "#2a6fbd" },
-      { id: "green", name: "Green", swatchHex: "#4a8a5c" },
-      { id: "brown", name: "Brown", swatchHex: "#5c4433" },
-      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93" },
+      { id: "spray-black", name: "Spray Black", swatchHex: "#2b2b2b", image: { src: "/assets/products/drag-s3/variants/spray-black.webp", alt: "VOOPOO DRAG S3, Spray Black" } },
+      { id: "white", name: "White", swatchHex: "#eef0f2", image: { src: "/assets/products/drag-s3/variants/white.webp", alt: "VOOPOO DRAG S3, White" } },
+      { id: "pink", name: "Pink", swatchHex: "#e8899a", image: { src: "/assets/products/drag-s3/variants/pink.webp", alt: "VOOPOO DRAG S3, Pink" } },
+      { id: "blue", name: "Blue", swatchHex: "#2a6fbd", image: { src: "/assets/products/drag-s3/variants/blue.webp", alt: "VOOPOO DRAG S3, Blue" } },
+      { id: "green", name: "Green", swatchHex: "#4a8a5c", image: { src: "/assets/products/drag-s3/variants/green.webp", alt: "VOOPOO DRAG S3, Green" } },
+      { id: "brown", name: "Brown", swatchHex: "#5c4433", image: { src: "/assets/products/drag-s3/variants/brown.webp", alt: "VOOPOO DRAG S3, Brown" } },
+      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-s3/variants/metal-gray.webp", alt: "VOOPOO DRAG S3, Metal Gray" } },
     ],
+    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
+    // individually-verified shop.voopoo.com photos above.
+    lineupImage: {
+      src: "/assets/products/drag-s3/lineup.webp",
+      alt: "VOOPOO DRAG S3, all 7 colors",
+      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+    },
     specifications: [
       { key: "battery", label: "Battery", value: "3000mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–60W", sourceStatus: "verified" },
@@ -655,32 +707,46 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-x3/card.png",
-        alt: "VOOPOO DRAG X3, black colourway, isolated product shot",
-        angle: "Front, isolated (cropped to remove third-party review-site award badges)",
-        transparentBackground: false,
-        sourceName: "VOOPOO",
-        sourceUrl: "https://www.voopoo.com/drag-series/drag-x3",
+        src: "/assets/products/drag-x3/variants/spray-black.webp",
+        alt: "VOOPOO DRAG X3, Spray Black, isolated product shot",
+        angle: "Front, isolated",
+        transparentBackground: true,
+        sourceName: "vapevo.com (authorized EU retailer, Shopify product gallery)",
+        sourceUrl: "https://www.vapevo.com/en/products/voopoo-drag-x3-kit-e-cigarette-80w-5ml",
       },
     ],
-    // Real VOOPOO color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
-    // photo-confirmed: giantvapes.com, matching independent vendor aggregation; very recent
-    // release, launched alongside DRAG S3). "Spray Black" reuses this product's own existing
-    // "black colourway" card photo — a reasonable real match.
+    // Real VOOPOO color/finish lineup — QC pass (2026-09-04): all 7 colors/identities originally
+    // confirmed via shop.voopoo.com's own color→photo JSON binding (tier-1, see drag-6's comment
+    // for method).
+    //
+    // SECOND correction, same day: shop.voopoo.com's 1000×1000 box+device template only yielded a
+    // ~160px-wide device crop with a torn-edge background-removal defect on 2 colors (owner-
+    // reported "blurry/broken" hero images). Re-sourced all 7 from vapevo.com's own Shopify
+    // product gallery (authorized EU VOOPOO retailer, isolated studio photography, no box) at
+    // ~210×761 after cropping — a ~4x resolution gain that also fixes the torn edges outright
+    // (fresh source, not a repair of the old one). Card asset switched from a separate, smaller
+    // "card.png" to this same real "Spray Black" identity.
     colorVariants: [
-      { id: "gray-metal", name: "Gray Metal", swatchHex: "#8c8f93" },
+      { id: "gray-metal", name: "Gray Metal", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-x3/variants/gray-metal.webp", alt: "VOOPOO DRAG X3, Gray Metal" } },
       {
         id: "spray-black",
         name: "Spray Black",
         swatchHex: "#2b2b2b",
-        image: { src: "/assets/products/drag-x3/card.png", alt: "VOOPOO DRAG X3, Spray Black" },
+        image: { src: "/assets/products/drag-x3/variants/spray-black.webp", alt: "VOOPOO DRAG X3, Spray Black" },
       },
-      { id: "glow-pink", name: "Glow Pink", swatchHex: "#e8558a" },
-      { id: "champagne-golden", name: "Champagne Golden", swatchHex: "#d4b483" },
-      { id: "sky-blue", name: "Sky Blue", swatchHex: "#7fb8d9" },
-      { id: "moss-green", name: "Moss Green", swatchHex: "#5c7a4a" },
-      { id: "aurora-purple", name: "Aurora Purple", swatchHex: "#7b4a8e" },
+      { id: "glow-pink", name: "Glow Pink", swatchHex: "#e8558a", image: { src: "/assets/products/drag-x3/variants/glow-pink.webp", alt: "VOOPOO DRAG X3, Glow Pink" } },
+      { id: "champagne-golden", name: "Champagne Golden", swatchHex: "#d4b483", image: { src: "/assets/products/drag-x3/variants/champagne-golden.webp", alt: "VOOPOO DRAG X3, Champagne Golden" } },
+      { id: "sky-blue", name: "Sky Blue", swatchHex: "#7fb8d9", image: { src: "/assets/products/drag-x3/variants/sky-blue.webp", alt: "VOOPOO DRAG X3, Sky Blue" } },
+      { id: "moss-green", name: "Moss Green", swatchHex: "#5c7a4a", image: { src: "/assets/products/drag-x3/variants/moss-green.webp", alt: "VOOPOO DRAG X3, Moss Green" } },
+      { id: "aurora-purple", name: "Aurora Purple", swatchHex: "#7b4a8e", image: { src: "/assets/products/drag-x3/variants/aurora-purple.webp", alt: "VOOPOO DRAG X3, Aurora Purple" } },
     ],
+    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
+    // individually-verified shop.voopoo.com photos above.
+    lineupImage: {
+      src: "/assets/products/drag-x3/lineup.webp",
+      alt: "VOOPOO DRAG X3, all 7 colors",
+      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+    },
     specifications: [
       { key: "battery", label: "Battery", value: "Single external 18650 or 21700 cell (not included)", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–80W", sourceStatus: "verified" },
@@ -743,28 +809,42 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/vinci-s/card.png",
-        alt: "VOOPOO VINCI S, teal-to-gold gradient colourway, isolated product shot",
+        src: "/assets/products/vinci-s/variants/black.webp",
+        alt: "VOOPOO VINCI S, Black, isolated product shot",
         angle: "Front, isolated",
-        transparentBackground: false,
-        sourceName: "VOOPOO",
-        sourceUrl: "https://www.voopoo.com/vinci-series/vinci-s",
+        transparentBackground: true,
+        sourceName: "vapevo.com (authorized EU retailer, Shopify product gallery)",
+        sourceUrl: "https://www.vapevo.com/en/products/voopoo-vinci-s-kit-e-cigarette-40w-2000mah-4-5ml",
       },
     ],
-    // Real VOOPOO color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
-    // photo-confirmed: alivape.com, matching independent vendor aggregation). "Gradient" is part
-    // of the real name for 3 of these finishes, not shortened. This product's own duotone card
-    // photo above doesn't cleanly match any single gradient name, so no `image` is forced.
+    // Real VOOPOO color/finish lineup — QC pass (2026-09-04): all 8 colors/identities originally
+    // confirmed via shop.voopoo.com's own color→photo JSON binding (tier-1, see drag-6's comment
+    // for method); card switched from the old duotone photo (matched no single gradient name) to
+    // "Black".
+    //
+    // SECOND correction, same day: shop.voopoo.com's 1000×1000 box+device template only yielded a
+    // ~150px-wide device crop with a torn-edge defect on "Pink" (owner-reported "blurry/broken"
+    // hero images). Re-sourced all 8 from vapevo.com's own Shopify product gallery (authorized EU
+    // VOOPOO retailer, isolated studio photography, no box, device near-full-bleed top to bottom)
+    // at ~200×724 after cropping — the strongest resolution gain of the 4 VOOPOO products in this
+    // pass, and fixes the torn edge outright (fresh source, not a repair of the old one).
     colorVariants: [
-      { id: "black", name: "Black", swatchHex: "#1a1a1a" },
-      { id: "silver", name: "Silver", swatchHex: "#c8ccd0" },
-      { id: "grey", name: "Grey", swatchHex: "#5c5f63" },
-      { id: "blue-gradient", name: "Blue Gradient", swatchHex: "#3a7ca8" },
-      { id: "green-gradient", name: "Green Gradient", swatchHex: "#4a8a5c" },
-      { id: "gold-gradient", name: "Gold Gradient", swatchHex: "#c9a24b" },
-      { id: "neon", name: "Neon", swatchHex: "#c6f24a" },
-      { id: "pink", name: "Pink", swatchHex: "#e8899a" },
+      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/vinci-s/variants/black.webp", alt: "VOOPOO VINCI S, Black" } },
+      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/vinci-s/variants/silver.webp", alt: "VOOPOO VINCI S, Silver" } },
+      { id: "grey", name: "Grey", swatchHex: "#5c5f63", image: { src: "/assets/products/vinci-s/variants/grey.webp", alt: "VOOPOO VINCI S, Grey" } },
+      { id: "blue-gradient", name: "Blue Gradient", swatchHex: "#3a7ca8", image: { src: "/assets/products/vinci-s/variants/blue-gradient.webp", alt: "VOOPOO VINCI S, Blue Gradient" } },
+      { id: "green-gradient", name: "Green Gradient", swatchHex: "#4a8a5c", image: { src: "/assets/products/vinci-s/variants/green-gradient.webp", alt: "VOOPOO VINCI S, Green Gradient" } },
+      { id: "gold-gradient", name: "Gold Gradient", swatchHex: "#c9a24b", image: { src: "/assets/products/vinci-s/variants/gold-gradient.webp", alt: "VOOPOO VINCI S, Gold Gradient" } },
+      { id: "neon", name: "Neon", swatchHex: "#c6f24a", image: { src: "/assets/products/vinci-s/variants/neon.webp", alt: "VOOPOO VINCI S, Neon" } },
+      { id: "pink", name: "Pink", swatchHex: "#e8899a", image: { src: "/assets/products/vinci-s/variants/pink.webp", alt: "VOOPOO VINCI S, Pink" } },
     ],
+    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 8
+    // individually-verified shop.voopoo.com photos above.
+    lineupImage: {
+      src: "/assets/products/vinci-s/lineup.webp",
+      alt: "VOOPOO VINCI S, all 8 colors",
+      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+    },
     specifications: [
       { key: "battery", label: "Battery", value: "2000mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–40W", sourceStatus: "verified" },
@@ -818,28 +898,34 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/vmate-i3/card.png",
-        alt: "VOOPOO VMATE i3, teal gradient colourway, isolated product shot",
+        src: "/assets/products/vmate-i3/variants/black.webp",
+        alt: "VOOPOO VMATE i3, Black, isolated product shot",
         angle: "Front, isolated",
-        transparentBackground: false,
-        sourceName: "VOOPOO",
-        sourceUrl: "https://www.voopoo.com/v-series/vmate-i3",
+        transparentBackground: true,
+        sourceName: "VOOPOO (shop.voopoo.com)",
+        sourceUrl: "https://shop.voopoo.com/products/vmate-i3",
       },
     ],
-    // Real VOOPOO color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
-    // photo-confirmed: vapesourcing.com + 3fvape.com, agreeing). "Silver Black" is a genuine
-    // two-tone finish name, not a duplicate/typo. This product's own "teal gradient" card photo
-    // above is close to, but not a confirmed exact match for, "Cyan Blue" — left unmatched rather
-    // than guessed.
+    // Real VOOPOO color/finish lineup — QC pass (2026-09-04): all 7 colors sourced directly from
+    // shop.voopoo.com's own color→photo JSON binding (tier-1, see drag-6's comment for method).
+    // "Silver Black" is a genuine two-tone finish name, not a duplicate/typo. Card switched from
+    // the old "teal gradient" photo (never a confirmed exact match for "Cyan Blue") to "Black".
     colorVariants: [
-      { id: "black", name: "Black", swatchHex: "#1a1a1a" },
-      { id: "red", name: "Red", swatchHex: "#b83a3a" },
-      { id: "purple", name: "Purple", swatchHex: "#6b4a8e" },
-      { id: "pink", name: "Pink", swatchHex: "#e8899a" },
-      { id: "cyan-blue", name: "Cyan Blue", swatchHex: "#3ab5c6" },
-      { id: "neon", name: "Neon", swatchHex: "#c6f24a" },
-      { id: "silver-black", name: "Silver Black", swatchHex: "#7a7d80" },
+      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/vmate-i3/variants/black.webp", alt: "VOOPOO VMATE i3, Black" } },
+      { id: "red", name: "Red", swatchHex: "#b83a3a", image: { src: "/assets/products/vmate-i3/variants/red.webp", alt: "VOOPOO VMATE i3, Red" } },
+      { id: "purple", name: "Purple", swatchHex: "#6b4a8e", image: { src: "/assets/products/vmate-i3/variants/purple.webp", alt: "VOOPOO VMATE i3, Purple" } },
+      { id: "pink", name: "Pink", swatchHex: "#e8899a", image: { src: "/assets/products/vmate-i3/variants/pink.webp", alt: "VOOPOO VMATE i3, Pink" } },
+      { id: "cyan-blue", name: "Cyan Blue", swatchHex: "#3ab5c6", image: { src: "/assets/products/vmate-i3/variants/cyan-blue.webp", alt: "VOOPOO VMATE i3, Cyan Blue" } },
+      { id: "neon", name: "Neon", swatchHex: "#c6f24a", image: { src: "/assets/products/vmate-i3/variants/neon.webp", alt: "VOOPOO VMATE i3, Neon" } },
+      { id: "silver-black", name: "Silver Black", swatchHex: "#7a7d80", image: { src: "/assets/products/vmate-i3/variants/silver-black.webp", alt: "VOOPOO VMATE i3, Silver Black" } },
     ],
+    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
+    // individually-verified shop.voopoo.com photos above.
+    lineupImage: {
+      src: "/assets/products/vmate-i3/lineup.webp",
+      alt: "VOOPOO VMATE i3, all 7 colors",
+      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+    },
     specifications: [
       { key: "battery", label: "Battery", value: "1500mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified" },

@@ -68,6 +68,25 @@ export const salthubProducts: Product[] = [
         sourceUrl: "https://www.salthub.com/mbar-10k/",
       },
     ],
+    // Real flavor lineup — verified directly against salthub.com's own mbar-10k/ page (11 named
+    // per-flavor photos, e.g. alt="MBar 10K fresh flavor kyoho grape"). Kept swatch-only: those
+    // source photos are decorative marketing composites, not clean isolated shots, same rule as
+    // every other SALTHUB flavor gallery in this catalog. `availability: "unknown"` — no live
+    // Shipnity stock signal for this Legacy record.
+    flavorVariants: [
+      { id: "all-berry", name: "All Berry", swatchHex: "#8e3a6b", availability: "unknown" },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
+      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown" },
+      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
+      { id: "matcha-latte", name: "Matcha Latte", swatchHex: "#7a9a4a", availability: "unknown" },
+      { id: "menthol-blast", name: "Menthol Blast", swatchHex: "#3ab5c6", availability: "unknown" },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown" },
+      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#c9405f", availability: "unknown" },
+      { id: "watermelon-mint", name: "Watermelon Mint", swatchHex: "#4ec9a0", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
+      { id: "yellow-mint", name: "Yellow Mint", swatchHex: "#d9d13a", availability: "unknown" },
+    ],
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 10,000", sourceStatus: "verified" },
       { key: "battery", label: "Battery", value: "600mAh rechargeable, USB-C", sourceStatus: "verified" },
@@ -242,6 +261,28 @@ export const salthubProducts: Product[] = [
         sourceUrl: "https://www.salthub.com/",
       },
     ],
+    // Real flavor lineup — tier-1, verified directly against salthub.com's own m-bar-15k/ page
+    // (each flavor has its own official product photo with a descriptive alt attribute, e.g.
+    // "M Bar 15K grape aloe disposable vape pod"). `availability: "unknown"` throughout, same
+    // convention as M Bar 9K: this Legacy record has no live Shipnity stock signal to check
+    // against, and Legacy Product Detail has no cart/purchase action to gate anyway.
+    flavorVariants: [
+      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown" },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
+      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown" },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#7a5a9e", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown" },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9a6ab0", availability: "unknown" },
+      { id: "mango-passion", name: "Mango Passion", swatchHex: "#e0a03a", availability: "unknown" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#8e3a6b", availability: "unknown" },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e08a7a", availability: "unknown" },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#c9405f", availability: "unknown" },
+      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#d9607a", availability: "unknown" },
+      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e0709a", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
+    ],
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 15,000", sourceStatus: "verified" },
       { key: "coil", label: "Coil", value: "Cotton mesh coil", sourceStatus: "verified" },
@@ -301,6 +342,30 @@ export const salthubProducts: Product[] = [
         sourceUrl: "https://www.salthub.com/",
       },
     ],
+    // Real flavor lineup for the included starter cartridge — tier-1, verified against
+    // salthub.com's own m-switch-kit/ page (18 per-flavor official product photos, same list as
+    // the standalone M Switch Pod cartridge below). `availability: "unknown"` — no live Shipnity
+    // stock signal for this Legacy record.
+    flavorVariants: [
+      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
+      { id: "cool-mint", name: "Cool Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown" },
+      { id: "black-berry", name: "Black Berry", swatchHex: "#3a2a4e", availability: "unknown" },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
+      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown" },
+      { id: "doublemint", name: "Doublemint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#7a5a9e", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown" },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9a6ab0", availability: "unknown" },
+      { id: "mango-passion", name: "Mango Passion", swatchHex: "#e0a03a", availability: "unknown" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#8e3a6b", availability: "unknown" },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e08a7a", availability: "unknown" },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#c9405f", availability: "unknown" },
+      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#d9607a", availability: "unknown" },
+      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e0709a", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
+    ],
     specifications: [
       { key: "puffs-per-pod", label: "Puffs per pod", value: "Up to 15,000", sourceStatus: "verified" },
       { key: "format", label: "Format", value: "Reusable device body + prefilled swap-in cartridges", sourceStatus: "verified" },
@@ -353,29 +418,36 @@ export const salthubProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         src: "/assets/products/m-switch-pod/card.webp",
-        alt: "SALTHUB M Switch Pod, smoke-grey cartridge with Cola flavor band, isolated product shot",
+        alt: "SALTHUB M Switch Pod, Grape Aloe flavor, isolated product shot",
         angle: "3/4, isolated",
         transparentBackground: false,
         sourceName: "SALTHUB",
         sourceUrl: "https://www.salthub.com/",
       },
     ],
-    // Real flavor lineup — Tier-1 disposable growth mission (2026-09-03). All 14 names read
-    // directly off salthub.com's own official "M SWITCH Pod #1" retail-box photography (own-
-    // product-name evidence — the box explicitly reads "M SWITCH", not a generic/shared asset).
-    // Every one of those source photos is a busy marketing composite (real fruit/liquid-splash
-    // imagery, a competing visual style to this catalog's clean-isolated-photo standard) — the
-    // NAMES are trustworthy (read directly off each flavor's own labeled box), the PHOTOS are not,
-    // so this stays swatch-only rather than shipping a cluttered image. `availability: "unknown"`
-    // for the same reason as M Bar 9K — no Shipnity/stock integration exists for Legacy SALTHUB
-    // products, and this page has no purchase action to gate.
+    // Real flavor lineup — Tier-1 disposable growth mission (2026-09-03), extended to 18
+    // (2026-09-04): re-fetched salthub.com's own m-switch-pod/ page directly and found 4 more
+    // official per-flavor photos beyond the original 14 (Kyoho Grape, Cool Mint, Grape Aloe,
+    // Grape Lychee) — same "M SWITCH Pod #1" retail-box photography, same evidence tier. This
+    // record's own real Shipnity children (Pod-147: Grape Aloe, Strawberry Watermelon, Apple
+    // Aloe) are a subset of this full 18, confirming the list is accurate, not just plausible.
+    // Every source photo is a busy marketing composite (real fruit/liquid-splash imagery, a
+    // competing visual style to this catalog's clean-isolated-photo standard) — the NAMES are
+    // trustworthy (read directly off each flavor's own labeled box), the PHOTOS are not, so this
+    // stays swatch-only rather than shipping a cluttered image. `availability: "unknown"` for the
+    // same reason as M Bar 9K — no Shipnity/stock integration exists for Legacy SALTHUB products,
+    // and this page has no purchase action to gate.
     flavorVariants: [
+      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
+      { id: "cool-mint", name: "Cool Mint", swatchHex: "#3ea88a", availability: "unknown" },
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7cb342", availability: "unknown" },
       { id: "black-berry", name: "Black Berry", swatchHex: "#3a2340", availability: "unknown" },
       { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
       { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown" },
       { id: "doublemint", name: "Doublemint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#7a5a9e", availability: "unknown" },
       { id: "grape", name: "Grape", swatchHex: "#6a4c93", availability: "unknown" },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9a6ab0", availability: "unknown" },
       { id: "mango-passion", name: "Mango Passion", swatchHex: "#e0a83e", availability: "unknown" },
       { id: "mixberry", name: "Mixberry", swatchHex: "#6b3a5e", availability: "unknown" },
       { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e07a6b", availability: "unknown" },
@@ -599,6 +671,16 @@ export const salthubProducts: Product[] = [
         sourceName: "SALTHUB",
         sourceUrl: "https://www.salthub.com/",
       },
+    ],
+    // Real flavor lineup — the 2 currently-active Shipnity children for this exact cartridge
+    // (Pod-85 "หัวพอต Marbo Zero", the pre-rebrand name for this same product — see
+    // active-catalog-to-product-master.ts's own exactLegacyMatch note). Only 2 confirmed;
+    // salthub.com's own site has no dedicated flavor-gallery page for this cartridge to expand
+    // the list further (unlike M Bar/M Switch) — `availability: "unknown"`, same convention as
+    // every other Legacy SALTHUB product.
+    flavorVariants: [
+      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown" },
+      { id: "fruit-tea", name: "Fruit Tea", swatchHex: "#c9a24b", availability: "unknown" },
     ],
     specifications: [
       { key: "capacity", label: "Capacity", value: "2.2mL", sourceStatus: "verified" },

@@ -144,3 +144,17 @@ export function runActiveCatalogSeedValidation(): ValidationReport {
     issues,
   };
 }
+
+// Storefront quality-correction pass (2026-09-02) — see product-master-contract-test.ts's own
+// comment on this same fix: this file had no self-executing runner, so it never actually ran its
+// checks when invoked directly (exactly how scripts/verify-catalog.ts invokes it).
+if (require.main === module) {
+  const report = runActiveCatalogSeedValidation();
+  console.log(JSON.stringify({ ...report, issues: undefined }, null, 2));
+  for (const issue of report.issues) console.log(`FAIL  ${issue.check}\n      ${issue.detail}`);
+  if (!report.passed) {
+    console.error(`\n${report.issues.length} issue(s) found.`);
+    process.exit(1);
+  }
+  console.log("\nNo issues found.");
+}

@@ -44,6 +44,10 @@ function screenLabel(item: CatalogItem, dict: Dictionary): string {
       return `${dict.catalog.screenColor}${a.screenSize ? ` (${a.screenSize})` : ""}`;
     case "touchscreen":
       return `${dict.catalog.screenTouch}${a.screenSize ? ` (${a.screenSize})` : ""}`;
+    default:
+      // undefined — e-liquid products carry no screen concept at all, same honest "—" as any
+      // other missing attribute (see this file's own header comment).
+      return EM_DASH;
   }
 }
 
@@ -70,7 +74,7 @@ function classificationRows(items: CatalogItem[], dict: Dictionary): Row[] {
     { label: t.rowCapacity, values: items.map((p) => (p.attributes?.capacityMl ? `${p.attributes.capacityMl}mL` : EM_DASH)) },
     { label: t.rowScreen, values: items.map((p) => screenLabel(p, dict)) },
     { label: t.rowDrawStyle, values: items.map((p) => p.attributes?.drawStyle ?? EM_DASH) },
-    { label: t.rowPortability, values: items.map((p) => (p.attributes ? titleCase(p.attributes.portability.replace("-", " ")) : EM_DASH)) },
+    { label: t.rowPortability, values: items.map((p) => (p.attributes?.portability ? titleCase(p.attributes.portability.replace("-", " ")) : EM_DASH)) },
     { label: t.rowBeginnerFriendly, values: items.map((p) => (p.attributes ? (p.attributes.beginnerFriendly ? t.yes : t.no) : EM_DASH)) },
     { label: t.rowCharging, values: items.map((p) => p.attributes?.chargingType ?? EM_DASH) },
     { label: t.rowDimensions, values: items.map((p) => p.attributes?.dimensions ?? EM_DASH) },

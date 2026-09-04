@@ -125,14 +125,22 @@ export function mapLegacyProductToMaster(p: Product): ProductMasterInput {
     brandId: p.brandId,
     familyId: p.familyId,
     categoryId: p.categoryId,
-    systemType: p.systemType,
+    // DEFAULT (e-liquid only) — ProductMaster's SystemType enum is device-only by design (see
+    // product-master-schema.ts's own doc comment: "no value that correctly describes an
+    // e-liquid... forcing it would fabricate a classification"). `null` is that same schema's own
+    // documented escape hatch, not a gap introduced here.
+    systemType: p.systemType === "e-liquid" ? null : p.systemType,
 
     // ---- Manufacturer / product facts (CLEAN — identical shape) ----
     name: p.name,
     displayName: p.displayName,
     tagline: p.tagline,
     shortDescription: p.shortDescription,
-    attributes: { ...p.attributes },
+    // DEFAULT (e-liquid only) — same reasoning as systemType above: ProductMaster's `attributes`
+    // shape is entirely device-shaped (screenType/drawStyle/portability/chargingType), so an
+    // e-liquid product maps to `null` (an explicitly allowed value on this field) rather than
+    // fabricating a screen type or draw style a bottle of e-liquid doesn't have.
+    attributes: p.systemType === "e-liquid" ? null : { ...p.attributes, screenType: p.attributes.screenType ?? "none", drawStyle: p.attributes.drawStyle ?? "MTL", portability: p.attributes.portability ?? "compact", chargingType: p.attributes.chargingType ?? "N/A" },
     specifications: p.specifications.map((s) => ({ ...s })),
     features: p.features.map((f) => ({ ...f })),
     assets: p.assets.map((a) => ({ ...a })),

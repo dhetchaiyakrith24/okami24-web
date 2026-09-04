@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { FinderAnswers } from "@/lib/finder";
+import type { FinderAnswers, FinderReasonKey } from "@/lib/finder";
 import { matchProducts, unscoredCatalogMatches } from "@/lib/finder";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
@@ -9,14 +9,41 @@ import { getPublishedProduct } from "@/data/shipnity-seed/storefront-bridge";
 import { Button } from "@/components/ui/Button";
 import { CheckCircle2 } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { FINDER_COPY_TH, FINDER_COPY_ZH } from "@/i18n/finder-copy";
 
 /**
- * The 6 questions/options below are deliberately left in English regardless of locale — this is
- * real, substantial interactive content (24 option label/description pairs), not generic chrome,
- * and translating it accurately without an owner-reviewed glossary risks subtly mis-describing a
- * real product-fit question. The surrounding chrome (progress line, back button, results labels)
- * IS translated below — see the Phase 3.2.1 report §LANGUAGE FIX RESULT for this scope line.
+ * Content-level i18n fix (owner quality review, 2026-09-02) — OVERRIDES the previous, deliberate
+ * "leave this English" decision (see finder-copy.ts's header comment for the full reasoning: the
+ * owner's fresh review named Finder directly as still-broken localization, and the earlier
+ * caution's actual concern — mistranslating technical terms like MTL/DTL/RDL — is addressed by
+ * keeping those exact terms untouched in the translations, translating only the plain descriptive
+ * sentences). `localizeQuestion` below replaces English title/label/description with a real TH/ZH
+ * translation when one exists, falling back to English per-field otherwise.
  */
+
+/** Resolves a `FinderReasonKey` (see finder.ts's own doc comment) to real localized text. */
+function reasonLabel(dict: ReturnType<typeof useLocale>["dict"], reason: FinderReasonKey): string {
+  switch (reason.key) {
+    case "format-match":
+      return dict.finder.reasons.formatMatch;
+    case "portability":
+      return reason.value === "ultra-compact" ? dict.finder.reasons.portabilityUltraCompact : dict.finder.reasons.portabilityCompact;
+    case "screen":
+      return reason.value === "none" ? dict.finder.reasons.screenNone : reason.value === "basic" ? dict.finder.reasons.screenBasic : dict.finder.reasons.screenFull;
+    case "battery":
+      return dict.finder.reasons.battery;
+    case "output-low":
+      return dict.finder.reasons.outputLow;
+    case "output-high":
+      return dict.finder.reasons.outputHigh;
+    case "output-flexible":
+      return dict.finder.reasons.outputFlexible;
+    case "beginner-friendly":
+      return dict.finder.reasons.beginnerFriendly;
+    case "advanced":
+      return dict.finder.reasons.advanced;
+  }
+}
 
 interface Question<K extends keyof FinderAnswers> {
   key: K;
@@ -82,8 +109,21 @@ const QUESTIONS: Question<keyof FinderAnswers>[] = [
   },
 ];
 
+function localizeQuestion(question: Question<keyof FinderAnswers>, locale: string): Question<keyof FinderAnswers> {
+  const overlay = locale === "th" ? FINDER_COPY_TH[question.key] : locale === "zh" ? FINDER_COPY_ZH[question.key] : undefined;
+  if (!overlay) return question;
+  return {
+    ...question,
+    title: overlay.title ?? question.title,
+    options: question.options.map((opt) => {
+      const optOverlay = overlay.options[String(opt.value)];
+      return optOverlay ? { ...opt, label: optOverlay.label, description: optOverlay.description } : opt;
+    }),
+  };
+}
+
 export function FinderTool() {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Partial<FinderAnswers>>({});
 
@@ -128,7 +168,7 @@ export function FinderTool() {
                 {m.reasons.slice(0, 3).map((reason, ri) => (
                   <li key={ri} className="flex gap-2 text-xs leading-relaxed text-foreground-muted">
                     <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-steel" aria-hidden />
-                    {reason}
+                    {reasonLabel(dict, reason)}
                   </li>
                 ))}
               </ul>
@@ -164,7 +204,7 @@ export function FinderTool() {
     );
   }
 
-  const question = QUESTIONS[step];
+  const question = localizeQuestion(QUESTIONS[step], locale);
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-8">

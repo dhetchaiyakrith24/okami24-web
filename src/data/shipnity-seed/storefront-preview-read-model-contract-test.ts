@@ -3,7 +3,10 @@
  */
 
 import { baseSyntheticProduct } from "@/data/product-master-contract-test";
-import { buildStorefrontPreview, buildPublishedCatalog, buildPublishedCatalogFrom } from "./storefront-preview-read-model";
+import { buildStorefrontPreview, buildPublishedCatalog, buildPublishedCatalogFrom, PREVIEW_SHIPNITY_IDS } from "./storefront-preview-read-model";
+import { OWNER_APPROVED_PUBLICATION } from "./publication-approvals";
+import { projectActiveCatalog } from "./active-catalog-to-product-master";
+import { activeCatalogSeed } from "./build-active-catalog";
 
 export interface ReadModelContractResult {
   name: string;
@@ -11,21 +14,25 @@ export interface ReadModelContractResult {
   detail: string;
 }
 
-// Phase 3.4 added Coil-1/21/72/83/94; Phase 3.5 added Coil-38/63/68/70/89, Pod-159/149/150,
-// Disposable-34, the pilot's first e-liquid products (ELIQUID-1/Eliquid-109/eliquid-133), and a
-// final wave (coil-54/coil-62/Pod-169, resolving "Feelin"->NEVOKS and "infy"->INFY). This
-// session's catalog-expansion slice resolved Coil-55 (deferred since Phase 3.4). It also resolved
-// the Marbo↔Salthub rebrand relationship, but all three device-Marbo Shipnity records turned out
-// to be exact duplicates of already-existing legacy products (`m-bar-9k`/`zero-pro`/
-// `zero-cartridge`) — correctly none of them added here — see PREVIEW_SHIPNITY_IDS.
-const EXPECTED_IDS = [
-  "Coil-53", "Coil-55", "Coil-56", "Coil-74", "Coil-87", "Coil-92",
-  "Coil-1", "Coil-21", "Coil-72", "Coil-83", "Coil-94",
-  "Coil-38", "Coil-63", "Coil-68", "Coil-70", "Coil-89",
-  "Pod-159", "Pod-149", "Pod-150", "Disposable-34",
-  "ELIQUID-1", "Eliquid-109", "eliquid-133",
-  "coil-54", "coil-62", "Pod-169",
-];
+// Storefront quality-correction pass (2026-09-02) — this used to be a hand-maintained literal
+// copy of PREVIEW_SHIPNITY_IDS, updated wave by wave in a header comment. It silently drifted out
+// of sync with the real list (this file had no self-executing runner — see the fix below — so
+// nothing caught it) and was reduced to importing the real constant directly: by construction it
+// can never disagree with what buildStorefrontPreview() actually iterates.
+const EXPECTED_IDS = PREVIEW_SHIPNITY_IDS;
+// Two of the whitelisted ids (Disposable-34, Pod-149) no longer render at all — their brand
+// claims were withdrawn this session (see active-catalog-to-product-master.ts's own comments),
+// so `toView()` correctly drops them for missing brandId/categoryId rather than fabricating a
+// placeholder. Re-derived here, not hardcoded, from the same real candidate data the read model
+// itself reads.
+const projectedForExpectations = projectActiveCatalog();
+const candidateById = new Map(
+  projectedForExpectations.filter((r) => r.status === "candidate").map((r) => [r.shipnityProductId, r.product] as const)
+);
+const EXPECTED_RENDERABLE_IDS = EXPECTED_IDS.filter((id) => {
+  const c = candidateById.get(id);
+  return Boolean(c?.brandId && c?.categoryId && c?.tagline);
+});
 
 export function runStorefrontReadModelContractTests(): ReadModelContractResult[] {
   const results: ReadModelContractResult[] = [];
@@ -33,12 +40,22 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
 
   const views = buildStorefrontPreview();
 
-  check("exactly the 26 Phase 2.7 + 3.4 + 3.5 + this-session products are present, nothing more", views.length === 26, JSON.stringify(views.map((v) => v.shipnityProductId)));
+  check(
+    `exactly the ${EXPECTED_RENDERABLE_IDS.length} whitelist ids with complete-enough taxonomy to render are present, nothing more`,
+    views.length === EXPECTED_RENDERABLE_IDS.length,
+    JSON.stringify(views.map((v) => v.shipnityProductId))
+  );
 
   check(
-    "every expected Shipnity id is present",
-    EXPECTED_IDS.every((id) => views.some((v) => v.shipnityProductId === id)),
+    "every renderable expected Shipnity id is present",
+    EXPECTED_RENDERABLE_IDS.every((id) => views.some((v) => v.shipnityProductId === id)),
     JSON.stringify(views.map((v) => v.shipnityProductId))
+  );
+
+  check(
+    "the non-renderable whitelist ids (incomplete taxonomy) are correctly absent, not silently fabricated",
+    EXPECTED_IDS.filter((id) => !EXPECTED_RENDERABLE_IDS.includes(id)).every((id) => !views.some((v) => v.shipnityProductId === id)),
+    JSON.stringify(EXPECTED_IDS.filter((id) => !EXPECTED_RENDERABLE_IDS.includes(id)))
   );
 
   check(
@@ -47,14 +64,15 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
     JSON.stringify(views)
   );
 
-  // Coil-56/Coil-74/Coil-89 are now genuinely published (real approved prices, see
+  // Several whitelist products are now genuinely published (real approved prices, see
   // publication-approvals.ts) — buildStorefrontPreview() is the raw per-record mapping and
   // correctly reflects that; the pilot/preview EXCLUSION of published records happens one layer
   // up, in storefront-bridge.ts's getPilotProduct(s) (proven by storefront-bridge-contract-test.ts),
-  // not here.
-  const PUBLISHED_IDS = new Set(["Coil-38", "Coil-53", "Coil-55", "Coil-56", "Coil-74", "Coil-89", "Coil-92"]);
+  // not here. Derived from the real approval table rather than hardcoded, so a future publication
+  // updates this expectation automatically.
+  const PUBLISHED_IDS = new Set(Object.keys(OWNER_APPROVED_PUBLICATION));
   check(
-    "every view's publicationStatus is unpublished except the genuinely published products (Coil-38, Coil-53, Coil-55, Coil-56, Coil-74, Coil-89, Coil-92)",
+    `every view's publicationStatus is unpublished except the ${PUBLISHED_IDS.size} genuinely approved products`,
     views.every((v) => v.publicationStatus === (PUBLISHED_IDS.has(v.shipnityProductId) ? "published" : "unpublished")),
     JSON.stringify(views.map((v) => ({ id: v.shipnityProductId, status: v.publicationStatus })))
   );
@@ -65,22 +83,23 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
     JSON.stringify(views.map((v) => v.variants))
   );
 
-  // Every one of the original 5 Phase 2.7 products happens to have exactly 1 active variant —
-  // real active-catalog data, not something to force. Phase 3.4's Coil-21/Coil-83 and Phase 3.5's
-  // Pod-149/coil-54 are genuinely single-SKU (their only Shipnity child is packaging text or,
-  // for Pod-149, a label classify.ts's flavor-keyword heuristic doesn't recognize — a real
-  // classifier gap for that one label, deliberately not force-fixed here since a zero-variant
-  // single-SKU product already renders correctly). This session's Coil-55 joins them for the same
-  // reason — its only child ("1 กล่อง / มี 2ตัว") is packaging text, correctly excluded as
-  // sell-unit. So a blanket ">=1 for everyone" is no longer a valid invariant. What IS still
-  // checkable: the zero-variant set must be exactly this known real quintet — anything else at 0
-  // would mean buildVariantStructure silently dropped a real variant for a product that should
-  // have one.
-  const zeroVariantIds = views.filter((v) => v.variants.length === 0).map((v) => v.shipnityProductId);
+  // Several products are genuinely single-SKU (their only Shipnity child is packaging text, or a
+  // label classify.ts's keyword heuristic doesn't recognize) — a zero-variant product renders
+  // correctly on its own, so a blanket ">=1 for everyone" is not a valid invariant. What IS
+  // checkable without hardcoding a list that will drift every time a candidate's real child data
+  // changes: every zero-variant VIEW must trace back to a raw active-catalog parent whose children
+  // genuinely contain zero `variant`-role entries — checked against the RAW seed, independent of
+  // buildVariantStructure's own output, so this can't just be circularly re-confirming whatever
+  // the pipeline already produced. A view with 0 variants whose raw parent actually HAS
+  // variant-role children would mean buildVariantStructure silently dropped a real one.
+  const zeroVariantViews = views.filter((v) => v.variants.length === 0);
   check(
-    "the only zero-variant products are the known real single-SKU quintet (Coil-21, Coil-55, Coil-83, Pod-149, coil-54)",
-    zeroVariantIds.length === 5 && ["Coil-21", "Coil-55", "Coil-83", "Pod-149", "coil-54"].every((id) => zeroVariantIds.includes(id)),
-    JSON.stringify(views.map((v) => ({ id: v.shipnityProductId, variantCount: v.variants.length })))
+    "every zero-variant view's raw Shipnity parent genuinely has zero variant-role children (not a dropped one)",
+    zeroVariantViews.every((v) => {
+      const parent = activeCatalogSeed.find((p) => p.shipnityProductId === v.shipnityProductId);
+      return parent !== undefined && parent.children.every((c) => c.childRole !== "variant");
+    }),
+    JSON.stringify(zeroVariantViews.map((v) => v.shipnityProductId))
   );
 
   check(
@@ -95,27 +114,23 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
   // product-master-contract-test.ts), never mutating or depending on real approved data.
   // ===================================================================================
 
+  // Derived from the real approval table rather than a hardcoded list/count — see this file's
+  // header comment on why that drifted silently before. Cross-checks against `candidateById`
+  // (the same real projection the read model itself is built from) rather than duplicating price/
+  // variant numbers a second time.
   const publishedNow = buildPublishedCatalog();
   const findPublished = (id: string) => publishedNow.find((p) => p.shipnityProductId === id);
+  const expectedPublishedIds = Object.keys(OWNER_APPROVED_PUBLICATION);
   check(
-    "buildPublishedCatalog() against REAL current data returns exactly the seven genuinely approved products (Coil-38 ฿450, Coil-53 ฿550, Coil-55 ฿299, Coil-56 ฿300, Coil-74 ฿250, Coil-89 ฿350, Coil-92 ฿130)",
-    publishedNow.length === 7 &&
-      findPublished("Coil-38")?.sellingPrice === 450 &&
-      findPublished("Coil-38")?.variants.length === 2 &&
-      findPublished("Coil-53")?.sellingPrice === 550 &&
-      findPublished("Coil-53")?.variants.length === 1 &&
-      findPublished("Coil-55")?.sellingPrice === 299 &&
-      findPublished("Coil-55")?.variants.length === 0 &&
-      findPublished("Coil-56")?.sellingPrice === 300 &&
-      findPublished("Coil-56")?.variants.length === 1 &&
-      findPublished("Coil-56")?.variants[0]?.id === "Coil-56-3" &&
-      findPublished("Coil-74")?.sellingPrice === 250 &&
-      findPublished("Coil-74")?.variants.length === 1 &&
-      findPublished("Coil-89")?.sellingPrice === 350 &&
-      findPublished("Coil-89")?.variants.length === 2 &&
-      findPublished("Coil-92")?.sellingPrice === 130 &&
-      findPublished("Coil-92")?.variants.length === 1,
-    JSON.stringify(publishedNow)
+    `buildPublishedCatalog() against REAL current data returns exactly the ${expectedPublishedIds.length} genuinely approved products, each with its real approved price and variant count`,
+    publishedNow.length === expectedPublishedIds.length &&
+      expectedPublishedIds.every((id) => {
+        const approval = OWNER_APPROVED_PUBLICATION[id];
+        const candidate = candidateById.get(id);
+        const view = findPublished(id);
+        return view?.sellingPrice === approval.sellingPrice && view?.variants.length === candidate?.variants.length;
+      }),
+    JSON.stringify(publishedNow.map((p) => ({ id: p.shipnityProductId, price: p.sellingPrice, variants: p.variants.length })))
   );
 
   check("buildPublishedCatalogFrom([]) returns an empty array without throwing", buildPublishedCatalogFrom([]).length === 0, "n/a");
@@ -186,4 +201,20 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
   );
 
   return results;
+}
+
+// Storefront quality-correction pass (2026-09-02) — see product-master-contract-test.ts's own
+// comment on this same fix: this file had no self-executing runner, so it never actually ran its
+// checks when invoked directly (exactly how scripts/verify-catalog.ts invokes it).
+if (require.main === module) {
+  const results = runStorefrontReadModelContractTests();
+  const failed = results.filter((r) => !r.passed);
+  for (const r of results) {
+    console.log(`${r.passed ? "PASS" : "FAIL"}  ${r.name}${r.detail ? `\n      ${r.detail}` : ""}`);
+  }
+  if (failed.length > 0) {
+    console.error(`\n${failed.length} of ${results.length} checks failed.`);
+    process.exit(1);
+  }
+  console.log(`\nAll ${results.length} checks passed.`);
 }

@@ -33,8 +33,9 @@ import { absoluteUrl, breadcrumbJsonLd, canonicalFor, openGraphWithImage } from 
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
-import { getImageDisplayInfo, buildImageDisplayMap } from "@/lib/media-quality";
+import { buildImageDisplayMap } from "@/lib/media-quality";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
+import type { Product } from "@/types/catalog";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
  *  product-level card, the neutral variant fallback, and each variant's own photo. The variant
@@ -42,6 +43,24 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
  *  them up front rather than just the one shown on first render. See media-quality.ts. */
 function storefrontProductImageSrcs(product: StorefrontProductView): (string | undefined)[] {
   return [product.image?.src, product.variantFallbackImage?.src, ...product.variants.map((v) => v.image?.src)];
+}
+
+/** Same idea as `storefrontProductImageSrcs`, for the Legacy catalog: every image src
+ *  `ProductHero` could possibly display for this product — the card, the lineup ("All Colors")
+ *  shot, and each color/flavor variant's own photo. Fixes a real bug (owner-reported, 2026-09-04):
+ *  `heroImageDisplayInfo` used to be computed ONLY for the card image, then reused unchanged no
+ *  matter which color/flavor the customer selected — so a variant photo smaller than the card
+ *  silently inherited the CARD's fill-vs-intrinsic decision and could get force-stretched past its
+ *  own real resolution. Precomputing a map for every possible image (mirrors the ProductMaster
+ *  side, which never had this bug) and having `ProductHero` look up whichever image is currently
+ *  shown fixes it for every legacy product at once, not per-SKU. */
+function legacyProductImageSrcs(product: Product): (string | undefined)[] {
+  return [
+    product.assets.find((a) => a.role === "card")?.src,
+    product.lineupImage?.src,
+    ...(product.colorVariants ?? []).map((v) => v.image?.src),
+    ...(product.flavorVariants ?? []).map((v) => v.image?.src),
+  ];
 }
 
 export function generateStaticParams() {
@@ -167,9 +186,13 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const brand = getBrand(product.brandId);
 
   const legacyCardImage = product.assets.find((a) => a.role === "card");
-  // Server-side only — reads the real file under public/ to decide whether ProductHero can fill
-  // its large box without visibly upscaling. See src/lib/media-quality.ts.
-  const heroImageDisplayInfo = legacyCardImage ? await getImageDisplayInfo(legacyCardImage.src) : null;
+  // Server-side only — reads the real files under public/ to decide, PER IMAGE, whether
+  // ProductHero can fill its large box without visibly upscaling. Computed for every image the
+  // hero could ever show (card, lineup, each color/flavor) so switching variants client-side never
+  // silently reuses another image's fill decision. See src/lib/media-quality.ts and
+  // `legacyProductImageSrcs`'s own doc comment for the bug this fixes.
+  const heroImageDisplayMap = await buildImageDisplayMap(legacyProductImageSrcs(product));
+  const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -192,7 +215,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(legacyTrail)) }} />
       <Breadcrumbs trail={legacyTrail} />
-      <ProductHero product={product} imageDisplayInfo={heroImageDisplayInfo} />
+      <ProductHero product={product} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} />
       <ProductReviewSection product={product} />
       <ProductGallery product={product} />
       {product.isFlagship && <ProductAnatomy product={product} />}

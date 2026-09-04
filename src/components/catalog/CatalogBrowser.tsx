@@ -6,7 +6,6 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { brands } from "@/data/brands";
-import { categories } from "@/data/categories";
 import { familyName } from "@/lib/utils";
 import { X } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -62,8 +61,8 @@ function toEntries(products: Product[], publishedProducts: StorefrontProductView
     isFlagship: p.isFlagship,
     hasEditorialTag: Boolean(p.editorialTag),
     familyId: p.familyId,
-    screenType: p.attributes.screenType,
-    portability: p.attributes.portability,
+    screenType: p.attributes.screenType ?? null,
+    portability: p.attributes.portability ?? null,
     beginnerFriendly: p.attributes.beginnerFriendly,
     legacyProduct: p,
   }));
@@ -111,7 +110,6 @@ export function CatalogBrowser({
   };
   const [query, setQuery] = useState("");
   const [brandFilter, setBrandFilter] = useState<Set<string>>(new Set());
-  const [categoryFilter, setCategoryFilter] = useState<Set<string>>(new Set());
   const [screenFilter, setScreenFilter] = useState<Set<ScreenType>>(new Set());
   const [portabilityFilter, setPortabilityFilter] = useState<Set<Portability>>(new Set());
   const [beginnerOnly, setBeginnerOnly] = useState(false);
@@ -124,25 +122,16 @@ export function CatalogBrowser({
     return brands.filter((b) => ids.has(b.id));
   }, [entries]);
 
-  // Only real when a list genuinely spans more than one category (e.g. `/products`) — a
-  // category-scoped page's list has exactly one categoryId, so this filter group stays hidden
-  // there via the same `length > 1` convention as every other facet below (never show a filter
-  // with only one possible, always-true value).
-  const availableCategories = useMemo(() => {
-    const ids = new Set(entries.map((e) => e.categoryId));
-    return categories.filter((c) => ids.has(c.id));
-  }, [entries]);
-
   // Screen-type/portability facets only ever come from legacy data (published records don't carry
   // `attributes` — see product-master-schema.ts) — computing these from `products`, not `entries`,
   // is intentional, not an oversight.
   const availableScreens = useMemo(() => {
-    const set = new Set(products.map((p) => p.attributes.screenType));
+    const set = new Set(products.map((p) => p.attributes.screenType).filter((s): s is ScreenType => s !== undefined));
     return Array.from(set);
   }, [products]);
 
   const availablePortability = useMemo(() => {
-    const set = new Set(products.map((p) => p.attributes.portability));
+    const set = new Set(products.map((p) => p.attributes.portability).filter((p): p is Portability => p !== undefined));
     return Array.from(set);
   }, [products]);
 
@@ -153,7 +142,6 @@ export function CatalogBrowser({
       list = list.filter((e) => e.searchText.includes(q));
     }
     if (brandFilter.size > 0) list = list.filter((e) => brandFilter.has(e.brandId));
-    if (categoryFilter.size > 0) list = list.filter((e) => categoryFilter.has(e.categoryId));
     if (screenFilter.size > 0) list = list.filter((e) => e.screenType !== null && screenFilter.has(e.screenType));
     if (portabilityFilter.size > 0) list = list.filter((e) => e.portability !== null && portabilityFilter.has(e.portability));
     if (beginnerOnly) list = list.filter((e) => e.beginnerFriendly === true);
@@ -168,7 +156,7 @@ export function CatalogBrowser({
       sorted.sort((a, b) => Number(b.isFlagship) - Number(a.isFlagship) || Number(b.hasEditorialTag) - Number(a.hasEditorialTag));
     }
     return sorted;
-  }, [entries, query, brandFilter, categoryFilter, screenFilter, portabilityFilter, beginnerOnly, sort]);
+  }, [entries, query, brandFilter, screenFilter, portabilityFilter, beginnerOnly, sort]);
 
   function toggle<T>(set: Set<T>, value: T, setter: (s: Set<T>) => void) {
     const next = new Set(set);
@@ -177,7 +165,7 @@ export function CatalogBrowser({
     setter(next);
   }
 
-  const activeFilterCount = brandFilter.size + categoryFilter.size + screenFilter.size + portabilityFilter.size + (beginnerOnly ? 1 : 0);
+  const activeFilterCount = brandFilter.size + screenFilter.size + portabilityFilter.size + (beginnerOnly ? 1 : 0);
 
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-[240px_1fr]">
@@ -204,18 +192,14 @@ export function CatalogBrowser({
           </FilterGroup>
         )}
 
-        {availableCategories.length > 1 && (
-          <FilterGroup title={dict.catalog.filterCategory}>
-            {availableCategories.map((c) => (
-              <FilterCheckbox
-                key={c.id}
-                label={c.shortName}
-                checked={categoryFilter.has(c.id)}
-                onChange={() => toggle(categoryFilter, c.id, setCategoryFilter)}
-              />
-            ))}
-          </FilterGroup>
-        )}
+        {/* Storefront quality-correction pass (2026-09-02) — the Category checkbox filter that
+            used to live here was removed at the owner's request: this component only ever shows
+            it on `/products` (a category-scoped subpage's list has exactly one categoryId, so it
+            was already hidden there), and `/products` sits directly under primary navigation's
+            own category submenu — a customer can already reach any single category in one click
+            from the header, making an in-page checkbox for the exact same thing pure duplication.
+            Brand and the other real per-product facets below are unaffected; this removes only
+            the one genuinely redundant control. */}
 
         {availableScreens.length > 1 && (
           <FilterGroup title={dict.catalog.filterScreen}>
@@ -248,7 +232,6 @@ export function CatalogBrowser({
           <button
             onClick={() => {
               setBrandFilter(new Set());
-              setCategoryFilter(new Set());
               setScreenFilter(new Set());
               setPortabilityFilter(new Set());
               setBeginnerOnly(false);
