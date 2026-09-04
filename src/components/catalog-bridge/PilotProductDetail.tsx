@@ -16,6 +16,9 @@ import { ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotAxisLabel } from "./axis-label";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
+import { Button } from "@/components/ui/Button";
+import { CONTACT } from "@/data/contact";
+import { addToCartAction } from "@/app/cart/actions";
 
 /**
  * Storefront-native product detail body for a ProductMaster product, rendered from the real
@@ -101,6 +104,35 @@ export function PilotProductDetail({
             onSelect={setSelectedVariantId}
             outOfStockLabel={dict.productActions.outOfStockLabel}
           />
+
+          {isPublished && product.sellingPrice !== null && (
+            <div>
+              {/* Catalog-truth-vs-stock-truth mandate (owner, 2026-09-03): a verified real flavor
+                  with no live Shipnity stock signal ("unknown") must be exactly as non-purchasable
+                  as one explicitly confirmed empty ("out-of-stock") — only a confirmed "in-stock"
+                  signal may show the real Add to Cart action. */}
+              {(selectedVariant?.availabilityStatus ?? product.availabilityStatus) !== "in-stock" ? (
+                <div className="flex flex-col items-start gap-2">
+                  <span className="label-mono text-xs text-ember">{dict.productActions.outOfStockLabel}</span>
+                  <a
+                    href={CONTACT.lineUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-surface-border px-6 py-3 text-sm font-semibold tracking-tight text-foreground transition-colors duration-200 hover:border-foreground-dim hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-ember"
+                  >
+                    {dict.productActions.outOfStockCta}
+                  </a>
+                </div>
+              ) : (
+                <form action={addToCartAction}>
+                  <input type="hidden" name="slug" value={product.slug} />
+                  {selectedVariantId && <input type="hidden" name="variantId" value={selectedVariantId} />}
+                  <input type="hidden" name="quantity" value={1} />
+                  <Button type="submit">{dict.productActions.addToCartCta}</Button>
+                </form>
+              )}
+            </div>
+          )}
 
           {product.specifications.length > 0 && (
             <div className="flex flex-col gap-2">

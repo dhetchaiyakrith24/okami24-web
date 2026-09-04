@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Menu, X, Search, Heart, ChevronDown } from "lucide-react";
+import { Menu, X, Search, Heart, ShoppingCart, ChevronDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { categories } from "@/data/categories";
 import { cn } from "@/lib/utils";
@@ -109,6 +109,13 @@ export function Header() {
           >
             <Heart size={19} aria-hidden />
           </Link>
+          <Link
+            href="/cart"
+            aria-label={dict.nav.cart}
+            className="rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground"
+          >
+            <ShoppingCart size={19} aria-hidden />
+          </Link>
           <button
             className="rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground lg:hidden"
             onClick={() => setMobileOpen((v) => !v)}
@@ -151,6 +158,9 @@ export function Header() {
           ))}
           <Link href="/favorites" className="rounded-lg px-3 py-3 text-base text-foreground hover:bg-surface-2">
             {dict.nav.favorites}
+          </Link>
+          <Link href="/cart" className="rounded-lg px-3 py-3 text-base text-foreground hover:bg-surface-2">
+            {dict.nav.cart}
           </Link>
         </nav>
       </div>
