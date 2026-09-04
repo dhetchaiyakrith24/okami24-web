@@ -39,6 +39,9 @@ yarn-error.log*
 # local commerce database (SQLite dev/foundation store — see src/lib/db/client.ts's header comment)
 /.data/
 
+# staging area for downloaded source media awaiting review (never shipped, never committed)
+/_incoming/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
