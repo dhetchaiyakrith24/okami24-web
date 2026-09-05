@@ -48,3 +48,6 @@ next-env.d.ts
 
 # Claude desktop app output folder (belongs to the app, not the project)
 /Claude outputs/
+
+# Claude desktop app agent/skill scaffolding (belongs to the app, not the project)
+/.agents/
