@@ -62,7 +62,11 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // Same pricing rule, third wave: real tier-2 media closed the gap (see VERIFIED_MEDIA["Coil-92"]
   // — the resistance/wattage is etched directly on the photographed coil, no variant ambiguity).
   // Single unambiguous operationalSellingPrice.
-  "Coil-92": { sellingPrice: 130, lastPriceReview: "2026-09-01" },
+  // "Coil-92": { sellingPrice: 130, lastPriceReview: "2026-09-01" },
+  //   ^ WITHDRAWN 2026-09-06 (owner decision, LAUNCH_AUDIT item 11): the only card image has
+  //     warped lettering on the coil (looks AI-generated) — not fit to sell from. Entry removed
+  //     = the literal unpublish action (same mechanism as IQOSHEET-15 below); all Coil-92 data,
+  //     media and copy stay in place. Re-add this line to republish once a real photo exists.
   // Same pricing rule, fourth wave: real tier-2 media closed the gap (see
   // VERIFIED_MEDIA["Coil-55"] — the retail box explicitly reads "CALIBURN G2 Empty Cartridge" /
   // "2 PCS", matching this record's real identity and child count exactly). Single unambiguous
@@ -78,7 +82,10 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // Same pricing rule throughout: single, unambiguous operationalSellingPrice, no conflicting
   // price found anywhere else in the project.
   "Coil-68": { sellingPrice: 300, lastPriceReview: "2026-09-02" },
-  "Coil-63": { sellingPrice: 350, lastPriceReview: "2026-09-02" },
+  // "Coil-63": { sellingPrice: 350, lastPriceReview: "2026-09-02" },
+  //   ^ WITHDRAWN 2026-09-06 (owner decision, LAUNCH_AUDIT item 11): card image carries another
+  //     shop's text baked into the picture. Entry removed = unpublished; data/media/copy kept.
+  //     Re-add this line to republish once a clean photo exists.
   "Coil-1": { sellingPrice: 130, lastPriceReview: "2026-09-02" },
   "Coil-72": { sellingPrice: 350, lastPriceReview: "2026-09-02" },
   "Coil-94": { sellingPrice: 450, lastPriceReview: "2026-09-02" },
@@ -134,8 +141,14 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "Coil-70": { sellingPrice: 390, lastPriceReview: "2026-09-02" },
   "Coil-83": { sellingPrice: 250, lastPriceReview: "2026-09-02" },
   "Coil-87": { sellingPrice: 250, lastPriceReview: "2026-09-02" },
-  "Pod-169": { sellingPrice: 129, lastPriceReview: "2026-09-02" },
-  "IQOSHEET-14": { sellingPrice: 2390, lastPriceReview: "2026-09-02" },
+  // "Pod-169": { sellingPrice: 129, lastPriceReview: "2026-09-02" },
+  //   ^ WITHDRAWN 2026-09-06 (owner decision, LAUNCH_AUDIT item 11): the card shows an INFY PLUS
+  //     device with a flavour set that is not the one sold here — wrong-variant imagery.
+  //     Entry removed = unpublished; data/media/copy kept. Re-add to republish with a correct photo.
+  // "IQOSHEET-14": { sellingPrice: 2390, lastPriceReview: "2026-09-02" },
+  //   ^ WITHDRAWN 2026-09-06 (owner decision, LAUNCH_AUDIT item 11): LAMBDA card is a blurry crop
+  //     from a lifestyle photo — not acceptable for a ฿2,390 device. Entry removed = unpublished;
+  //     data/media/copy kept. Re-add to republish once an isolated product photo exists.
   // IQOSHEET-15 (IQOS TEREA) — WITHDRAWN from publication (owner quality review, 2026-09-03,
   // Sections 6/7). Was approved above at ฿220 as of 2026-09-02; the owner's screenshot-based
   // review does not approve the current TEREA presentation and asked for it to come down "for

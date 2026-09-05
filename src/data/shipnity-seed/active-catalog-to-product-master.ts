@@ -1342,20 +1342,19 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
   // Tier-1 disposable growth mission (2026-09-03). Pod-159's active (have_stock=true) children are
   // only the 2 flavors currently bundled in stock (Cool Mint, Cola) — but eskobarvape.com's own
   // official SWITCH product page (https://eskobarvape.com/product/pod-system/) shows a real,
-  // photographed 20-flavor range for this exact device. Adding the other 18 as catalog truth,
+  // photographed flavor range for this exact device. Adding the others as catalog truth,
   // explicitly non-purchasable (availability "unknown", never "in-stock") until Shipnity actually
   // stocks them — never silently omitted, never fabricated as available.
+  // CORRECTION 2026-09-06 (owner decision, LAUNCH_AUDIT item 6): 5 of the originally-added 18
+  // (Blueberry Jam, Chocolate Mint, Coconut, Extra Menthol, Mango) matched the Excel export's
+  // Pod-160 (a different parent) exactly and were not Pod-159 flavors — removed. Pod-159 now
+  // lists 2 active + 13 additional = 15 flavors, the same count the Excel export has for Pod-159.
   "Pod-159": [
     { code: "apple-aloe", label: "Apple Aloe", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
-    { code: "blueberry-jam", label: "Blueberry Jam", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "blueberry", label: "Blueberry", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
-    { code: "chocolate-mint", label: "Chocolate Mint", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
-    { code: "coconut", label: "Coconut", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
-    { code: "extra-menthol", label: "Extra Menthol", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "grape", label: "Grape", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "honeydew", label: "Honeydew", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "lychee", label: "Lychee", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
-    { code: "mango", label: "Mango", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "mix-berry", label: "Mix Berry", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "pineapple", label: "Pineapple", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "pink-guava", label: "Pink Guava", sourceUrl: "https://eskobarvape.com/product/pod-system/" },

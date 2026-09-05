@@ -141,6 +141,7 @@ export const unbrandedProducts: Product[] = [
   {
     id: "muro-space-15k",
     slug: "muro-space-15k",
+    hiddenFromStorefront: { since: "2026-09-06", reason: "owner decision (LAUNCH_AUDIT item 11): card image has the device cut off at the bottom edge with leftover template text — hidden until a clean photo exists" },
     brandId: "Unbranded",
     familyId: "Muro",
     categoryId: "disposables",
@@ -514,6 +515,7 @@ export const unbrandedProducts: Product[] = [
   {
     id: "vazer-one-pod",
     slug: "vazer-one-pod",
+    hiddenFromStorefront: { since: "2026-09-06", reason: "owner decision (LAUNCH_AUDIT item 11): card image shows another website's URL in large text — hidden until a clean photo exists" },
     brandId: "Unbranded",
     familyId: "Vazer",
     categoryId: "pods-cartridges",
@@ -565,6 +567,7 @@ export const unbrandedProducts: Product[] = [
   {
     id: "reswa-sportcan-12k",
     slug: "reswa-sportcan-12k",
+    hiddenFromStorefront: { since: "2026-09-06", reason: "owner decision (LAUNCH_AUDIT item 11): card image is a banner crop with the can cut off and another product visible — hidden until a clean photo exists" },
     brandId: "Unbranded",
     familyId: "Reswa",
     categoryId: "disposables",
