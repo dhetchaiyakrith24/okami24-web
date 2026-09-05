@@ -1,5 +1,7 @@
 @AGENTS.md
 
+กฎการทำงานของทีมอยู่ที่ `~/.claude/CLAUDE.md` หมวด 13 (ขั้นของงาน 5 ค่า · ใครตรวจรับ · ผู้แก้ไฟล์คนเดียว)
+
 # Business context
 
 This project is being converted from the NOVA VAPOR demo into the production website for
