@@ -4,6 +4,7 @@ import crypto from "node:crypto";
 import { getDb } from "@/lib/db/client";
 import { getSession } from "./session";
 import { resolveProductRef, type ProductRef, type ResolveFailureReason } from "./catalog-resolver";
+import { getCatalogItem } from "@/lib/catalog-index";
 import { priceLine, computeOrderTotals, type OrderTotals, type PricedLine } from "./pricing";
 
 const CART_COOKIE = "okami24_cart";
@@ -120,7 +121,7 @@ export async function getCart(): Promise<CartView> {
     .all(cartId) as CartItemRow[];
 
   const lines: CartLineView[] = rows.map((row) => {
-    const ref: ProductRef = { origin: "product-master", slug: row.product_slug, variantId: row.variant_id };
+    const ref: ProductRef = { origin: getCatalogItem(row.product_slug)?.origin ?? "product-master", slug: row.product_slug, variantId: row.variant_id };
     const resolved = resolveProductRef(ref);
     if (!resolved.ok) {
       return {

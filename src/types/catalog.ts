@@ -111,6 +111,10 @@ export interface ColorVariant {
   /** Present only when a real, sourced photo of this exact color exists. */
   image?: { src: string; alt: string };
   sourceUrl?: string;
+  /** Catalog truth vs. operational stock truth — same contract as `FlavorVariant.availability`
+   *  (see `VariantAvailability`). Optional here because colour lists predate the stock field;
+   *  absent means "no signal" and is treated exactly like `"unknown"`. */
+  availability?: VariantAvailability;
 }
 
 /**

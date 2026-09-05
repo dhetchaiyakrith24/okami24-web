@@ -7,6 +7,7 @@
 import { resolveProductRef } from "./catalog-resolver";
 import { buildPublishedCatalog } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { allProducts as legacyProducts } from "@/data/products";
+import { LEGACY_APPROVED_PRICING } from "@/data/shipnity-seed/legacy-price-approvals";
 
 export interface ResolverContractResult {
   name: string;
@@ -21,7 +22,15 @@ export function runCatalogResolverContractTests(): ResolverContractResult[] {
   const published = buildPublishedCatalog();
   const withVariants = published.find((p) => p.variants.length > 0);
   const withoutVariants = published.find((p) => p.variants.length === 0);
-  const legacySlug = legacyProducts[0]?.slug;
+  // Since 2026-09-05 the legacy catalog is split: products with an entry in
+  // legacy-price-approvals.ts are purchasable, the rest stay browse-only. Both branches are
+  // derived from the real data so a future approval can't silently invalidate this file.
+  const legacyUnpriced = legacyProducts.find((p) => !(p.slug in LEGACY_APPROVED_PRICING));
+  const legacySlug = legacyUnpriced?.slug;
+  const legacyPriced = legacyProducts.find((p) => p.slug in LEGACY_APPROVED_PRICING && ((p.colorVariants?.length ?? 0) + (p.flavorVariants?.length ?? 0)) > 0);
+  const legacySoldOut = legacyProducts
+    .filter((p) => p.slug in LEGACY_APPROVED_PRICING)
+    .flatMap((p) => [...(p.colorVariants ?? []), ...(p.flavorVariants ?? [])].filter((v) => v.availability === "out-of-stock").map((v) => ({ product: p, variant: v })))[0];
 
   check(
     "test fixture sanity: at least one published product has variants and one has zero (otherwise this file can't exercise both branches)",
@@ -90,7 +99,7 @@ export function runCatalogResolverContractTests(): ResolverContractResult[] {
   }
 
   check(
-    "test fixture sanity: at least one legacy-catalog product exists to exercise the legacy-rejection branch",
+    "test fixture sanity: at least one legacy-catalog product WITHOUT an approved price exists to exercise the browse-only rejection branch",
     legacySlug !== undefined,
     `legacySlug=${legacySlug}`
   );
@@ -104,7 +113,7 @@ export function runCatalogResolverContractTests(): ResolverContractResult[] {
     // supplies) alongside the normal "legacy" tag, both should reject identically.
     const legacyResult = resolveProductRef({ origin: "legacy", slug: legacySlug, variantId: null });
     check(
-      `a legacy slug ("${legacySlug}") is rejected as not-purchasable because it has no price — not because \`ref.origin\` says "legacy" (see src/lib/catalog-index.ts)`,
+      `an UNPRICED legacy slug ("${legacySlug}") is rejected as not-purchasable because it has no approved price — not because \`ref.origin\` says "legacy" (see src/lib/catalog-index.ts)`,
       !legacyResult.ok && legacyResult.reason === "not-purchasable",
       JSON.stringify(legacyResult)
     );
@@ -114,6 +123,58 @@ export function runCatalogResolverContractTests(): ResolverContractResult[] {
       `the SAME legacy slug is rejected identically even when the caller mislabels \`ref.origin\` as "product-master" — proving rejection is driven by price presence, not the origin tag`,
       !mislabeledResult.ok && mislabeledResult.reason === "not-purchasable",
       JSON.stringify(mislabeledResult)
+    );
+  }
+
+  // Priced legacy products (legacy-price-approvals.ts, 2026-09-05) — the legacy branch of the
+  // money boundary: variant required, unknown variant rejected, out-of-stock option rejected,
+  // otherwise priced at the approved price regardless of the caller's origin tag.
+  check(
+    "test fixture sanity: at least one PRICED legacy product with colour/flavour options exists to exercise the legacy purchase branch",
+    legacyPriced !== undefined,
+    `legacyPriced=${legacyPriced?.slug}`
+  );
+  if (legacyPriced) {
+    const approved = LEGACY_APPROVED_PRICING[legacyPriced.slug].sellingPrice;
+    const noVariant = resolveProductRef({ origin: "legacy", slug: legacyPriced.slug, variantId: null });
+    check(
+      `a priced legacy product with options ("${legacyPriced.slug}") requires a variantId — omitting it is rejected, not defaulted`,
+      !noVariant.ok && noVariant.reason === "variant-required",
+      JSON.stringify(noVariant)
+    );
+    const sellable = [...(legacyPriced.colorVariants ?? []), ...(legacyPriced.flavorVariants ?? [])].find((v) => v.availability !== "out-of-stock");
+    if (sellable) {
+      const ok = resolveProductRef({ origin: "legacy", slug: legacyPriced.slug, variantId: sellable.id });
+      check(
+        `a priced legacy product ("${legacyPriced.slug}" / "${sellable.id}") resolves with its approved price (฿${approved}) and the option's own name as the variant label`,
+        ok.ok && ok.line.unitPrice === approved && ok.line.variantLabel === sellable.name,
+        JSON.stringify(ok)
+      );
+      const mislabeled = resolveProductRef({ origin: "product-master", slug: legacyPriced.slug, variantId: sellable.id });
+      check(
+        "the SAME priced legacy ref resolves identically when the caller mislabels \`ref.origin\` as \"product-master\" — the index's provenance decides, not the tag",
+        mislabeled.ok && mislabeled.line.unitPrice === approved,
+        JSON.stringify(mislabeled)
+      );
+    }
+    const fake = resolveProductRef({ origin: "legacy", slug: legacyPriced.slug, variantId: "not-a-real-variant-id" });
+    check(
+      "an unrecognized colour/flavour id on a priced legacy product is rejected, not silently priced at the product level",
+      !fake.ok && fake.reason === "variant-not-found",
+      JSON.stringify(fake)
+    );
+  }
+  check(
+    "test fixture sanity: at least one priced legacy product carries an option marked out-of-stock (the 2026-09-06 additions) to exercise the legacy sold-out branch",
+    legacySoldOut !== undefined,
+    legacySoldOut ? `${legacySoldOut.product.slug} / ${legacySoldOut.variant.id}` : "none found"
+  );
+  if (legacySoldOut) {
+    const soldOut = resolveProductRef({ origin: "legacy", slug: legacySoldOut.product.slug, variantId: legacySoldOut.variant.id });
+    check(
+      `a legacy option marked out-of-stock ("${legacySoldOut.product.slug}" / "${legacySoldOut.variant.id}") is rejected at the money boundary`,
+      !soldOut.ok && soldOut.reason === "out-of-stock",
+      JSON.stringify(soldOut)
     );
   }
 

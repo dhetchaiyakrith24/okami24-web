@@ -17,6 +17,12 @@ import { cn } from "@/lib/utils";
  * passes `onSelectAll` (i.e. `product.lineupImage` exists — see `ProductHero`) so a family with no
  * real lineup shot never shows a chip that does nothing. Deliberately styled as a small labeled
  * pill, not another color dot — it isn't a color, and shouldn't visually pretend to be one.
+ *
+ * Sold-out colours (owner instruction, 2026-09-06): a colour whose `availability` is
+ * `"out-of-stock"` still renders — catalog truth is never hidden — but dimmed, struck through
+ * with a diagonal, labelled in its tooltip, and NOT selectable (`disabled`), so it can never
+ * become the colour that goes into the cart. `"unknown"`/absent renders like in-stock, matching
+ * the legacy cart gate in `resolveProductRef()`.
  */
 export function ColorVariantRail({
   variants,
@@ -26,6 +32,7 @@ export function ColorVariantRail({
   allLabel,
   isAllSelected,
   onSelectAll,
+  outOfStockLabel,
 }: {
   variants: ColorVariant[];
   selectedId: string | null;
@@ -34,6 +41,7 @@ export function ColorVariantRail({
   allLabel?: string;
   isAllSelected?: boolean;
   onSelectAll?: () => void;
+  outOfStockLabel?: string;
 }) {
   const selected = variants.find((v) => v.id === selectedId);
 
@@ -61,29 +69,51 @@ export function ColorVariantRail({
             {allLabel}
           </button>
         )}
-        {variants.map((v) => (
-          <button
-            key={v.id}
-            type="button"
-            onClick={() => onSelect(v.id)}
-            aria-label={v.name}
-            aria-pressed={!isAllSelected && v.id === selectedId}
-            title={v.name}
-            className={cn(
-              "h-8 w-8 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-surface-1 transition-all duration-150",
-              !isAllSelected && v.id === selectedId
-                ? "scale-110 ring-ember"
-                : "ring-transparent hover:scale-105 hover:ring-surface-border"
-            )}
-          >
-            <span
-              className="block h-full w-full rounded-full border border-black/10 shadow-inner"
-              style={{ backgroundColor: v.swatchHex }}
-              aria-hidden
-            />
-          </button>
-        ))}
+        {variants.map((v) => {
+          const outOfStock = v.availability === "out-of-stock";
+          return (
+            <button
+              key={v.id}
+              type="button"
+              onClick={outOfStock ? undefined : () => onSelect(v.id)}
+              disabled={outOfStock}
+              aria-disabled={outOfStock || undefined}
+              aria-label={outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : v.name}
+              aria-pressed={!isAllSelected && v.id === selectedId}
+              title={outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : v.name}
+              className={cn(
+                "relative h-8 w-8 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-surface-1 transition-all duration-150",
+                !isAllSelected && v.id === selectedId
+                  ? "scale-110 ring-ember"
+                  : "ring-transparent hover:scale-105 hover:ring-surface-border",
+                outOfStock && "cursor-not-allowed hover:scale-100 hover:ring-transparent"
+              )}
+            >
+              <span
+                className={cn("block h-full w-full rounded-full border border-black/10 shadow-inner", outOfStock && "opacity-35")}
+                style={{ backgroundColor: v.swatchHex }}
+                aria-hidden
+              />
+              {outOfStock && (
+                <span
+                  className="pointer-events-none absolute left-1/2 top-1/2 h-[2px] w-9 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-foreground/80"
+                  aria-hidden
+                />
+              )}
+            </button>
+          );
+        })}
       </div>
+      {outOfStockLabel && variants.some((v) => v.availability === "out-of-stock") && (
+        <span className="text-xs text-foreground-dim">
+          {variants
+            .filter((v) => v.availability === "out-of-stock")
+            .map((v) => v.name)
+            .join(", ")}
+          {" — "}
+          {outOfStockLabel}
+        </span>
+      )}
     </div>
   );
 }

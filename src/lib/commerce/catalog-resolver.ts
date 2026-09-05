@@ -5,7 +5,8 @@
 // self-executing-runner convention in scripts/verify-catalog.ts) — `server-only`'s Node entry
 // throws unconditionally outside a bundler's "react-server" condition, which would break that.
 import { getPublishedProductBySlug } from "@/data/shipnity-seed/storefront-preview-read-model";
-import { getCatalogItem } from "@/lib/catalog-index";
+import { getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
+import { getProduct } from "@/data/products";
 
 /**
  * A cart/order line's reference into the catalog. `origin` is carried through for
@@ -68,12 +69,11 @@ export function resolveProductRef(ref: ProductRef): ResolveResult {
     return { ok: false, reason: "not-purchasable", detail: `"${ref.slug}" has no owner-approved selling price yet.` };
   }
 
-  // A price exists, so this must be a product-master-origin record — the legacy catalog has no
-  // price field at all (see catalog-index.ts), so the `sellingPrice !== null` check above is
-  // structurally impossible to pass for a legacy item today. Full stock/variant detail lives only
-  // in the published read-model, so resolution continues there; if a legacy item ever gains a
-  // real price, this function will need an equivalent variant/stock lookup for that origin too —
-  // flagged here rather than silently assumed.
+  // A price exists. Since 2026-09-05 that can be either half of the catalog: ProductMaster
+  // (publication-approvals.ts) or legacy (legacy-price-approvals.ts). The index's own provenance
+  // tag decides which variant/stock lookup applies — never the caller-supplied `ref.origin`.
+  if (catalogItem.origin === "legacy") return resolveLegacyRef(ref, catalogItem);
+
   const product = getPublishedProductBySlug(ref.slug);
   if (!product) {
     return { ok: false, reason: "not-found", detail: `No published product for slug "${ref.slug}".` };
@@ -132,6 +132,61 @@ export function resolveProductRef(ref: ProductRef): ResolveResult {
       // catalogItem.sellingPrice, not product.sellingPrice — already verified non-null above, and
       // catalog-index.ts derives it from this same published record's sellingPrice, so the two
       // are guaranteed identical whenever both are non-null.
+      unitPrice: catalogItem.sellingPrice,
+    },
+  };
+}
+
+/**
+ * Legacy-catalog half of the money boundary (2026-09-05, owner instruction: every product in the
+ * owner's Shipnity price export must be purchasable). Same shape as the ProductMaster branch:
+ * a variant is required whenever the product offers any (colour OR flavour — the legacy schema
+ * allows both axes, and a variantId is looked up across both), an unknown id is rejected, and
+ * the price is the index's approved one, never anything client-supplied.
+ *
+ * STOCK RULE FOR LEGACY — a deliberate, TEMPORARY exception to the ProductMaster rule above.
+ * ProductMaster variants carry a real Shipnity signal, so anything short of a confirmed
+ * "in-stock" is blocked. Legacy variants carry NO Shipnity signal at all (their `availability`
+ * is hand-maintained; nearly all read "unknown"), so applying the same rule here would block the
+ * entire legacy catalog — i.e. no cart button anywhere, which is the opposite of the owner's
+ * instruction. The owner set the operating default on 2026-09-06 instead: options explicitly
+ * marked "out-of-stock" (the colours/flavours added that day) are blocked; everything else sells.
+ * When Shipnity stock is wired to the legacy catalog, collapse this back to the confirmed-positive
+ * rule and delete this comment. The client-side gate in ProductHero mirrors exactly this rule.
+ */
+function resolveLegacyRef(ref: ProductRef, catalogItem: CatalogItem): ResolveResult {
+  const product = getProduct(ref.slug);
+  if (!product || catalogItem.sellingPrice === null) {
+    return { ok: false, reason: "not-found", detail: `No legacy product for slug "${ref.slug}".` };
+  }
+  const options = [
+    ...(product.colorVariants ?? []).map((v) => ({ id: v.id, label: v.name, availability: v.availability ?? "unknown" })),
+    ...(product.flavorVariants ?? []).map((v) => ({ id: v.id, label: v.name, availability: v.availability })),
+  ];
+
+  let variantLabel: string | null = null;
+  if (options.length > 0) {
+    if (ref.variantId === null) {
+      return { ok: false, reason: "variant-required", detail: `"${ref.slug}" requires a colour/flavour selection.` };
+    }
+    const option = options.find((o) => o.id === ref.variantId);
+    if (!option) {
+      return { ok: false, reason: "variant-not-found", detail: `Variant "${ref.variantId}" not found on "${ref.slug}".` };
+    }
+    if (option.availability === "out-of-stock") {
+      return { ok: false, reason: "out-of-stock", detail: `"${ref.slug}" (${option.label}) is out of stock.` };
+    }
+    variantLabel = option.label;
+  }
+
+  return {
+    ok: true,
+    line: {
+      ref,
+      productSlug: product.slug,
+      variantId: ref.variantId,
+      displayName: product.displayName,
+      variantLabel,
       unitPrice: catalogItem.sellingPrice,
     },
   };

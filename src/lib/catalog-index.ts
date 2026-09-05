@@ -14,7 +14,7 @@
  * resolution logic a third time. This module is that shared, honest middle layer.
  *
  * WHAT IT GUARANTEES
- * - Only CURRENTLY customer-visible products: all 28 legacy, plus ProductMaster records that are
+ * - Only CURRENTLY customer-visible products: every legacy product, plus ProductMaster records that are
  *   genuinely `publicationStatus: "published"` (via `getPublishedProducts()`, which re-validates
  *   every one through the full readiness gate). Unpublished/DEV-preview data can never appear.
  * - Every field on `CatalogItem` is one that BOTH halves genuinely have. Anything only one half
@@ -29,6 +29,7 @@ import type { Product, Specification } from "@/types/catalog";
 import { allProducts } from "@/data/products";
 import { getBrand } from "@/data/brands";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
+import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
 
 /** A resolved, render-ready reference to a real, customer-visible catalog product. */
 export interface CatalogRef {
@@ -61,8 +62,10 @@ export interface CatalogItem extends CatalogRef {
   attributes: Product["attributes"] | null;
   /** LEGACY ONLY editorial copy. */
   whoIsThisFor: string[];
-  /** PRODUCTMASTER ONLY. The owner-approved final selling price. The legacy catalog has no price
-   *  field at all (see docs/BUSINESS_SOURCE_OF_TRUTH.md), so this is `null` for legacy — an
+  /** The owner-approved final selling price. ProductMaster: from publication-approvals.ts.
+   *  Legacy: from legacy-price-approvals.ts (since 2026-09-05) — the legacy `Product` type itself
+   *  still has no price field (see docs/BUSINESS_SOURCE_OF_TRUTH.md), so `null` here means
+   *  "no approved price yet" and the product stays browse-only — an
    *  absence of data, never a claim the product is free. */
   sellingPrice: number | null;
   /** PRODUCTMASTER ONLY. Active variant labels (colors/flavors/resistances). */
@@ -85,7 +88,7 @@ function legacyToItem(p: Product): CatalogItem {
     specifications: p.specifications,
     attributes: p.attributes,
     whoIsThisFor: p.whoIsThisFor,
-    sellingPrice: null,
+    sellingPrice: getLegacyApprovedPrice(p.slug),
     variantLabels: [],
   };
 }

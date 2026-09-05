@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { addToCart, setCartItemQuantity, removeCartItem } from "@/lib/commerce/cart";
 import type { ProductRef } from "@/lib/commerce/catalog-resolver";
+import { getCatalogItem } from "@/lib/catalog-index";
 
 function readVariantId(formData: FormData): string | null {
   const raw = formData.get("variantId");
@@ -11,7 +12,9 @@ function readVariantId(formData: FormData): string | null {
 
 export async function addToCartAction(formData: FormData): Promise<void> {
   const slug = String(formData.get("slug") ?? "");
-  const ref: ProductRef = { origin: "product-master", slug, variantId: readVariantId(formData) };
+  // origin is provenance for labeling only (see resolveProductRef) — read it from the catalog
+  // index rather than assuming ProductMaster, now that priced legacy products are purchasable.
+  const ref: ProductRef = { origin: getCatalogItem(slug)?.origin ?? "product-master", slug, variantId: readVariantId(formData) };
   const quantity = Number(formData.get("quantity") ?? "1") || 1;
   await addToCart(ref, quantity);
   revalidatePath("/cart");

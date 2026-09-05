@@ -13,11 +13,13 @@ import { cn } from "@/lib/utils";
  *
  * Catalog truth vs. stock truth (see `VariantAvailability`'s doc comment) is rendered, not hidden:
  * an `"out-of-stock"` flavor still appears — a verified real flavor is never removed from view
- * just because it isn't currently stocked — but is visually dimmed with a small "หมด" mark. Legacy
- * Product Detail has no cart/purchase action at all (informational-only, unlike ProductMaster's
- * real commerce pipeline), so there is no button-disabling to do here — the badge is the entire
- * honesty mechanism. `"unknown"` renders like `"in-stock"` deliberately: we have no live signal
- * either way, and marking it as if confirmed-unavailable would be its own kind of fabrication.
+ * just because it isn't currently stocked — but is visually dimmed, carries the sold-out label,
+ * and (since 2026-09-06, owner instruction) is NOT selectable: `disabled`, no click handler, so it
+ * can never become the flavour that goes into the cart. Priced legacy products now DO have a real
+ * cart action (see `ProductHero` / `resolveProductRef()`'s legacy branch), and the server-side gate
+ * rejects an out-of-stock option anyway — this is the matching client-side half. `"unknown"`
+ * renders like `"in-stock"` deliberately: we have no live signal either way, and marking it as if
+ * confirmed-unavailable would be its own kind of fabrication.
  */
 export function FlavorVariantGrid({
   variants,
@@ -40,14 +42,16 @@ export function FlavorVariantGrid({
         {label}
         {selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
       </span>
-      <div className="flex max-h-56 flex-wrap gap-2 overflow-y-auto pr-1">
+      <div className="flex flex-wrap gap-2 sm:max-h-56 sm:overflow-y-auto sm:pr-1">
         {variants.map((v) => {
           const outOfStock = v.availability === "out-of-stock";
           return (
             <button
               key={v.id}
               type="button"
-              onClick={() => onSelect(v.id)}
+              onClick={outOfStock ? undefined : () => onSelect(v.id)}
+              disabled={outOfStock}
+              aria-disabled={outOfStock || undefined}
               aria-pressed={v.id === selectedId}
               title={outOfStock ? `${v.name} — ${outOfStockLabel}` : v.name}
               className={cn(
@@ -55,7 +59,7 @@ export function FlavorVariantGrid({
                 v.id === selectedId
                   ? "border-ember bg-ember/10 text-foreground"
                   : "border-surface-border text-foreground-muted hover:border-foreground-dim hover:text-foreground",
-                outOfStock && "opacity-50"
+                outOfStock && "cursor-not-allowed border-dashed opacity-50 hover:border-surface-border hover:text-foreground-muted"
               )}
             >
               <span
@@ -63,7 +67,7 @@ export function FlavorVariantGrid({
                 style={{ backgroundColor: v.swatchHex }}
                 aria-hidden
               />
-              {v.name}
+              <span>{v.name}</span>
               {outOfStock && <span className="text-[0.6rem] uppercase tracking-wide text-foreground-dim">{outOfStockLabel}</span>}
             </button>
           );

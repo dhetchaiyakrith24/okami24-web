@@ -33,6 +33,7 @@ import { absoluteUrl, breadcrumbJsonLd, canonicalFor, openGraphWithImage } from 
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
+import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
 import { buildImageDisplayMap } from "@/lib/media-quality";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import type { Product } from "@/types/catalog";
@@ -193,6 +194,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   // `legacyProductImageSrcs`'s own doc comment for the bug this fixes.
   const heroImageDisplayMap = await buildImageDisplayMap(legacyProductImageSrcs(product));
   const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
+  // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
+  const legacySellingPrice = getLegacyApprovedPrice(product.slug);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -201,8 +204,9 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     brand: brand ? { "@type": "Brand", name: brand.name } : undefined,
     category: categoryNameOf(product.categoryId),
     image: legacyCardImage ? [absoluteUrl(legacyCardImage.src)] : undefined,
-    // No `offers` here — the legacy catalog has no price field at all (see docs/BUSINESS_SOURCE_OF_TRUTH.md);
-    // never fabricated.
+    // `offers` only when an owner-approved price exists (legacy-price-approvals.ts) — the legacy
+    // Product type itself still has no price field; never fabricated.
+    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice } : undefined,
   };
   const legacyTrail = [
     { name: "Home", path: "/" },
@@ -215,7 +219,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(legacyTrail)) }} />
       <Breadcrumbs trail={legacyTrail} />
-      <ProductHero product={product} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} />
+      <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} />
       <ProductReviewSection product={product} />
       <ProductGallery product={product} />
       {product.isFlagship && <ProductAnatomy product={product} />}

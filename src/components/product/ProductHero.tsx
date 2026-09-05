@@ -13,6 +13,16 @@ import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
+import { CONTACT } from "@/data/contact";
+import { addToCartAction } from "@/app/cart/actions";
+
+/** First option a customer may actually buy — skips options marked out-of-stock so the page never
+ *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
+ *  is sold out, so the name label and photo still work). */
+function firstSellable<T extends { id: string; availability?: string }>(options: T[] | undefined): string | null {
+  if (!options || options.length === 0) return null;
+  return (options.find((o) => o.availability !== "out-of-stock") ?? options[0]).id;
+}
 
 /** `imageDisplayInfo` — the storefront quality-correction pass's fill-vs-intrinsic sizing switch,
  *  computed server-side (reads the real file under `public/`, never a value that could go stale)
@@ -21,10 +31,14 @@ import type { ImageDisplayInfo } from "@/lib/media-quality";
  *  `src/lib/media-quality.ts` for the full rationale. */
 export function ProductHero({
   product,
+  sellingPrice = null,
   imageDisplayInfo,
   imageDisplayMap,
 }: {
   product: Product;
+  /** Owner-approved price from legacy-price-approvals.ts (2026-09-05). `null` = browse-only: no
+   *  price, no cart action — exactly how every legacy product rendered before that date. */
+  sellingPrice?: number | null;
   imageDisplayInfo?: ImageDisplayInfo | null;
   /** Per-image lookup (owner-reported bug fix, 2026-09-04) — `imageDisplayInfo` alone only ever
    *  described the CARD photo, so selecting a color/flavor whose own image is smaller than the
@@ -39,8 +53,8 @@ export function ProductHero({
   // replacing it, and only for the 28 legacy products with a real (human-checked, not machine-
   // guessed) Thai entry. See product-copy-th.ts header for why this stays presentation-only.
   const copyTh = locale === "th" ? PRODUCT_COPY_TH[product.slug] : undefined;
-  const [selectedColorId, setSelectedColorId] = useState<string | null>(product.colorVariants?.[0]?.id ?? null);
-  const [selectedFlavorId, setSelectedFlavorId] = useState<string | null>(product.flavorVariants?.[0]?.id ?? null);
+  const [selectedColorId, setSelectedColorId] = useState<string | null>(firstSellable(product.colorVariants));
+  const [selectedFlavorId, setSelectedFlavorId] = useState<string | null>(firstSellable(product.flavorVariants));
   // "All Colors" (owner mandate, 2026-09-03) is a third hero-image state, not a third variant list
   // — it only exists when a real lineup shot does. Starts unselected (an individual color/default
   // photo is still the strongest first impression); the customer opts INTO the lineup view.
@@ -53,6 +67,15 @@ export function ProductHero({
   const currentImageDisplayInfo = heroOverrideImage
     ? imageDisplayMap?.[heroOverrideImage.src] ?? null
     : imageDisplayInfo;
+  // Cart gate (client half — the server half is resolveProductRef()'s legacy branch, which
+  // re-checks all of this on submit, so nothing here is trusted for money): the option that would
+  // go into the cart is whichever axis this product has (no legacy product has both), and only an
+  // option explicitly marked out-of-stock blocks the purchase — "unknown" sells, per the owner's
+  // 2026-09-06 default for the legacy catalog.
+  const hasOptions = (product.colorVariants?.length ?? 0) + (product.flavorVariants?.length ?? 0) > 0;
+  const cartVariantId = selectedColor?.id ?? selectedFlavor?.id ?? null;
+  const selectedOutOfStock = (selectedColor?.availability ?? selectedFlavor?.availability) === "out-of-stock";
+  const canAddToCart = sellingPrice !== null && !selectedOutOfStock && (!hasOptions || cartVariantId !== null);
   const stats = [
     { label: dict.product.statBattery, value: formatBattery(product.attributes.batteryMah) },
     { label: dict.product.statOutput, value: formatWattage(product.attributes.wattageMin, product.attributes.wattageMax) },
@@ -88,6 +111,13 @@ export function ProductHero({
             {copyTh && <p className="max-w-lg text-sm leading-relaxed text-foreground-dim/75">{copyTh.shortDescription}</p>}
           </div>
 
+          {sellingPrice !== null && (
+            <div>
+              <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceLabel}</span>
+              <p className="font-display text-3xl font-bold text-foreground">฿{sellingPrice.toLocaleString("th-TH")}</p>
+            </div>
+          )}
+
           {product.colorVariants && product.colorVariants.length > 0 && (
             <ColorVariantRail
               variants={product.colorVariants}
@@ -100,6 +130,7 @@ export function ProductHero({
               allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => setShowAllColors(true) : undefined}
+              outOfStockLabel={dict.product.outOfStockChip}
             />
           )}
 
@@ -113,8 +144,35 @@ export function ProductHero({
             />
           )}
 
-          <div className="flex flex-wrap gap-3 pt-2">
-            <Button href={`/compare?slugs=${product.slug}`}>{dict.product.addToComparison}</Button>
+          {sellingPrice !== null && (
+            <div className="flex flex-col gap-3 pt-1">
+              {canAddToCart ? (
+                <form action={addToCartAction} className="flex flex-wrap gap-3">
+                  <input type="hidden" name="slug" value={product.slug} />
+                  {cartVariantId && <input type="hidden" name="variantId" value={cartVariantId} />}
+                  <input type="hidden" name="quantity" value={1} />
+                  <Button type="submit">{dict.productActions.addToCartCta}</Button>
+                </form>
+              ) : (
+                <div className="flex flex-col items-start gap-2">
+                  <span className="label-mono text-xs text-ember">{dict.productActions.outOfStockLabel}</span>
+                  <a
+                    href={CONTACT.lineUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-surface-border px-6 py-3 text-sm font-semibold tracking-tight text-foreground transition-colors duration-200 hover:border-foreground-dim hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-ember"
+                  >
+                    {dict.productActions.outOfStockCta}
+                  </a>
+                </div>
+              )}
+            </div>
+          )}
+
+          <div className={`flex flex-wrap gap-3 ${sellingPrice !== null ? "pt-1" : "pt-2"}`}>
+            <Button href={`/compare?slugs=${product.slug}`} variant={sellingPrice !== null ? "secondary" : "primary"}>
+              {dict.product.addToComparison}
+            </Button>
             <Button href="#specifications" variant="secondary">
               {dict.product.viewSpecifications}
             </Button>
