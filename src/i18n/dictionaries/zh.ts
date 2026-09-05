@@ -29,7 +29,7 @@ export const zh: Dictionary = {
     shop: "购买",
     learn: "了解更多",
     tools: "工具",
-    ageNotice: "仅限21岁以上人士购买。尼古丁为成瘾性物质。如需咨询或订购，请通过 LINE OA 联系我们。",
+    ageNotice: "仅限21岁以上人士购买。尼古丁为成瘾性物质。可直接在本站下单，咨询请加 LINE",
   },
   hero: {
     badgeSuffix: "· 当前旗舰产品",

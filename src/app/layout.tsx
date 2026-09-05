@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s — OKami24",
   },
   description:
-    "OKami24: ร้านอุปกรณ์พอดซิสเต็ม ดิสโพส และน้ำยา คัดสรรของแท้ ราคาตรงไปตรงมา พร้อมบริการหลังการขายที่ดูแลคุณจริง สอบถามและสั่งซื้อผ่าน LINE OA @okm24",
+    "OKami24: พอดซิสเต็ม ดิสโพส และน้ำยา ของแท้ ราคาตรง สั่งซื้อบนเว็บได้เลย ส่งไว มีเลขติดตาม สอบถามหรือให้ช่วยเลือก ทัก LINE @okm24",
   // The real production domain is TBD (see docs/BUSINESS_SOURCE_OF_TRUTH.md §19) — never
   // hardcoded here. See src/lib/seo.ts's SITE_URL: reads `SITE_URL` from the environment, falls
   // back to localhost in dev, and refuses to build at all in production without it.
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   openGraph: {
     title: "OKami24 — ของแท้ ราคาตรง บริการจริง",
-    description: "อุปกรณ์พอดซิสเต็ม ดิสโพส และน้ำยา ของแท้ ราคาตรง บริการจริง — สอบถามและสั่งซื้อผ่าน LINE OA",
+    description: "พอดซิสเต็ม ดิสโพส และน้ำยา ของแท้ ราคาตรง บริการจริง — สั่งซื้อบนเว็บได้เลย หรือทัก LINE @okm24",
     siteName: "OKami24",
     type: "website",
   },

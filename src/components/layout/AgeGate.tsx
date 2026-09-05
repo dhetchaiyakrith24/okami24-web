@@ -91,7 +91,7 @@ export function AgeGate() {
         </h2>
         <p id="age-gate-desc" className="mt-4 text-sm leading-relaxed text-foreground-muted">
           เว็บไซต์นี้นำเสนอสินค้าอุปกรณ์บุหรี่ไฟฟ้าและน้ำยา สำหรับผู้มีอายุครบ <strong className="text-foreground">21
-          ปีบริบูรณ์ขึ้นไปเท่านั้น</strong> การสอบถามและสั่งซื้อสินค้าดำเนินการผ่าน LINE OA ของ OKami24
+          ปีบริบูรณ์ขึ้นไปเท่านั้น</strong> สั่งซื้อบนเว็บนี้ได้เลย หรือทักไลน์ OA ของ OKami24 หากต้องการสอบถามก่อน
         </p>
         <p className="mt-3 text-xs leading-relaxed text-foreground-dim">
           นิโคตินเป็นสารเสพติด เว็บไซต์นี้ไม่มีการกล่าวอ้างด้านสุขภาพ ความปลอดภัย หรือการเลิกบุหรี่ใดๆ เกี่ยวกับการสูบไอ

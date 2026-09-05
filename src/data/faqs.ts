@@ -1,5 +1,4 @@
 import type { SiteFAQ } from "@/types/catalog";
-import { CONTACT } from "@/data/contact";
 
 // Owner review (2026-09-03) — "FAQ must become actionable": each `action` below is added only
 // where the question naturally leads somewhere useful (judgment call per item, not a blanket
@@ -10,8 +9,10 @@ export const siteFaqs: SiteFAQ[] = [
     category: "ordering",
     question: "How do I actually order from OKami24?",
     answer:
-      "Browse, compare, and use the Finder here to figure out what fits you — then message OKami24's LINE OA (@okm24) with the product you're interested in. An admin will confirm stock and payment and help you place the order from there.",
-    action: { href: CONTACT.lineUrl, labelKey: "contactLineCta" },
+      "Add what you want to the cart, verify your phone number with the OTP code, enter your delivery address, and confirm the order. Then pay by bank transfer or QR scan — once an admin has checked the payment, the order is approved and shipped with a tracking number. Shipping is 60 baht, free on orders from 500 baht up. If a product isn't buyable on the site yet, or you'd like help picking a model, message us on LINE @okm24.",
+    // Owner decision (2026-09-06): the site has a real cart now, so the ordering FAQ sends people
+    // to the catalog instead of LINE. LINE stays the fallback inside the answer text itself.
+    action: { href: "/products", labelKey: "browseProductsCta" },
   },
   {
     id: "where-specs-come-from",

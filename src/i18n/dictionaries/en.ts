@@ -30,7 +30,7 @@ export const en: Dictionary = {
     shop: "Shop",
     learn: "Learn",
     tools: "Tools",
-    ageNotice: "สำหรับผู้มีอายุ 21 ปีขึ้นไปเท่านั้น นิโคตินเป็นสารเสพติด สอบถามและสั่งซื้อผ่าน LINE OA",
+    ageNotice: "For ages 21 and over only. Nicotine is addictive. Order right here on the site, or ask us on LINE",
   },
   hero: {
     badgeSuffix: "· Current Flagship",

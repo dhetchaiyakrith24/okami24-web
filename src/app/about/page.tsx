@@ -54,11 +54,12 @@ export default function AboutPage() {
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">ติดต่อเรา</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              ช่องทางหลักในการสอบถามและสั่งซื้อคือ LINE OA{" "}
+              สั่งซื้อบนเว็บได้เลย เลือกสินค้าใส่ตะกร้า ยืนยันเบอร์โทร กรอกที่อยู่ แล้วโอนเงินหรือสแกน QR ได้ในขั้นตอนเดียวกัน
+              ถ้าอยากสอบถามก่อน ให้ช่วยเลือกรุ่น หรือติดตามออเดอร์ที่สั่งไว้ ทักไลน์ OA{" "}
               <Link href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-red">
                 {CONTACT.lineId}
               </Link>{" "}
-              แอดมินพร้อมช่วยตรวจสอบสต๊อกและแนะนำสินค้าที่เหมาะกับคุณ
+              ได้เลย แอดมินช่วยเช็คสต๊อกและแนะนำสินค้าที่เหมาะกับคุณ
             </p>
           </section>
 
