@@ -120,12 +120,24 @@ export function runSimulationContractTests(): SimulationContractResult[] {
   checkGenuinelyPublished("Coil-56", 300, 1);
   checkGenuinelyPublished("Coil-74", 250, 1);
   checkGenuinelyPublished("Coil-89", 350, 2);
-  checkGenuinelyPublished("Coil-92", 130, 1);
   // Storefront quality-correction pass (2026-09-02) additions.
   checkGenuinelyPublished("Coil-70", 390, 1);
   checkGenuinelyPublished("Coil-83", 250, 0);
   checkGenuinelyPublished("Coil-87", 250, 1);
-  checkGenuinelyPublished("Pod-169", 129, 8);
+
+  // Owner image-quality withdrawal (2026-09-06, LAUNCH_AUDIT item 11): Coil-92, Coil-63, Pod-169
+  // and IQOSHEET-14 had their publication-approvals.ts entries removed because their only card
+  // image is not fit to sell from. They must still be real candidates (data intact) but NOT
+  // published — the withdrawal is the approval entry's absence, nothing else.
+  const checkWithdrawn = (id: string) => {
+    const real = realResults.find((r) => r.shipnityProductId === id);
+    const ok = real?.status === "candidate" && real.product.publicationStatus !== "published";
+    check(`${id} is a real candidate but WITHDRAWN from publication (approval entry removed 2026-09-06)`, ok, JSON.stringify(real));
+  };
+  checkWithdrawn("Coil-92");
+  checkWithdrawn("Coil-63");
+  checkWithdrawn("Pod-169");
+  checkWithdrawn("IQOSHEET-14");
 
   // A product with no minimum copy (e.g. eliquid-62 — no brand/category/copy at all) must
   // correctly simulate as NOT ready, proving the simulation isn't rubber-stamping everything.

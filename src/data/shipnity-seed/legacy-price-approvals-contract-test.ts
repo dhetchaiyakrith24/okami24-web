@@ -5,7 +5,7 @@
  * that couldn't be a real THB selling price. Discovered and run by scripts/verify-catalog.ts.
  */
 import { LEGACY_APPROVED_PRICING } from "./legacy-price-approvals";
-import { allProducts } from "@/data/products";
+import { allProducts, catalogIncludingHidden } from "@/data/products";
 import { getCatalogItem } from "@/lib/catalog-index";
 
 export interface LegacyPricingContractResult {
@@ -19,7 +19,12 @@ export function runLegacyPricingContractTests(): LegacyPricingContractResult[] {
   const check = (name: string, condition: boolean, detail: string) => results.push({ name, passed: condition, detail });
 
   const entries = Object.entries(LEGACY_APPROVED_PRICING);
-  const legacySlugs = new Set(allProducts.map((p) => p.slug));
+  // A product hidden from the storefront (`hiddenFromStorefront`, e.g. awaiting a usable photo —
+  // owner decision 2026-09-06) is still a real legacy record whose approved price stays valid, so
+  // "is this a real product" is checked against the full list; "is the price wired" only against
+  // what the storefront actually shows (the catalog index is built from `allProducts`).
+  const legacySlugs = new Set(catalogIncludingHidden.map((p) => p.slug));
+  const visibleSlugs = new Set(allProducts.map((p) => p.slug));
 
   const unknownSlugs = entries.filter(([slug]) => !legacySlugs.has(slug)).map(([slug]) => slug);
   check("every approved slug is a real legacy catalog product", unknownSlugs.length === 0, unknownSlugs.length ? `unknown: ${unknownSlugs.join(", ")}` : `${entries.length} entries`);
@@ -44,8 +49,16 @@ export function runLegacyPricingContractTests(): LegacyPricingContractResult[] {
 
   // The index is the only path the money boundary reads prices through — assert the wiring, not
   // just the table.
-  const notWired = entries.filter(([slug, a]) => getCatalogItem(slug)?.sellingPrice !== a.sellingPrice).map(([slug]) => slug);
-  check("catalog-index exposes exactly the approved price for every entry (and nothing else)", notWired.length === 0, notWired.join(", ") || "ok");
+  const notWired = entries.filter(([slug, a]) => visibleSlugs.has(slug) && getCatalogItem(slug)?.sellingPrice !== a.sellingPrice).map(([slug]) => slug);
+  check("catalog-index exposes exactly the approved price for every visible entry (and nothing else)", notWired.length === 0, notWired.join(", ") || "ok");
+
+  const hiddenButPriced = entries.filter(([slug]) => legacySlugs.has(slug) && !visibleSlugs.has(slug)).map(([slug]) => slug);
+  const hiddenLeak = hiddenButPriced.filter((slug) => getCatalogItem(slug) !== undefined);
+  check(
+    "a hidden legacy product keeps its approval but is absent from the catalog index (not purchasable while hidden)",
+    hiddenLeak.length === 0,
+    hiddenLeak.length ? `leaked: ${hiddenLeak.join(", ")}` : `${hiddenButPriced.length} hidden-with-approval: ${hiddenButPriced.join(", ") || "none"}`
+  );
 
   const leaked = allProducts.filter((p) => !(p.slug in LEGACY_APPROVED_PRICING) && getCatalogItem(p.slug)?.sellingPrice !== null).map((p) => p.slug);
   check("a legacy product with no approval has no price in the catalog index (browse-only)", leaked.length === 0, leaked.join(", ") || "ok");
