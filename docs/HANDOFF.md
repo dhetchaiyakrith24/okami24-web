@@ -261,8 +261,9 @@ branch 3.3.1 (22e5109) และ main (570d7fb) · กฎ "จ่ายแล้
 
 วิธี verify: npx tsc --noEmit · npm run verify:commerce · npm run verify:catalog -- --full
 เปิดเว็บ: preview_start name "vapor-dev" · ทดสอบซื้อ: /products/pod-180 · OTP อ่านจาก log (otp:stub)
-Browser pane อ่านเว็บบุหรี่ไฟฟ้าไม่ได้ (policy gate) → ใช้ curl · แคปมือถือ: หน้าต่างอายุใช้ localStorage
-key "okami24-age-verified" · sharp บน Windows: ส่ง Buffer ไม่ใช่ path ไม่งั้นทับไฟล์ไม่ได้
+Browser pane อ่านเว็บบุหรี่ไฟฟ้าไม่ได้ (policy gate) → ใช้ curl · แคปมือถือเป็นไฟล์: npm run shot -- out.png <url>
+(ข้ามหน้าต่างอายุให้เอง) · นับรูปที่ขาด: npm run audit:gaps · ทำรูปใหม่: npm run process:images -- --dry-run
+sharp บน Windows: ส่ง Buffer ไม่ใช่ path ไม่งั้นทับไฟล์ไม่ได้ · เซิร์ฟเวอร์ dev ค้าง = curl ไม่ตอบ → kill แล้วเปิดใหม่
 
 ตัดสินใจที่รอเจ้าของ: ที่ deploy (VPS เครื่องเดียว+ดิสก์ถาวร) · เลขบัญชี/QR · โดเมน (SITE_URL) ·
 ผู้ให้บริการ SMS · Shipnity API · Funta Grape/Green เช็คของจริง · รูป Coral Pink/Golden Carbon/7 สินค้าที่ซ่อน

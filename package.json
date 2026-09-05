@@ -9,7 +9,10 @@
     "lint": "eslint",
     "verify:catalog": "npx tsx scripts/verify-catalog.ts",
     "verify:commerce": "npx tsx scripts/verify-commerce-db.ts",
-    "audit:images": "npx tsx scripts/product-image.ts audit"
+    "audit:images": "npx tsx scripts/product-image.ts audit",
+    "audit:gaps": "npx tsx scripts/image-audit.ts _incoming/image-audit.json && node scripts/image-audit-md.js _incoming/image-audit.json docs/IMAGE_AUDIT.md",
+    "process:images": "npx tsx scripts/process-images.ts",
+    "shot": "node scripts/shot.js"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.3",
