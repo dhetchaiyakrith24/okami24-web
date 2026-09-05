@@ -31,6 +31,7 @@
  */
 
 import { brands, getBrand } from "@/data/brands";
+import { isListedSoldOut } from "@/data/stock/apply-sold-out";
 import { categories, getCategory } from "@/data/categories";
 import { families } from "@/data/families";
 import { validateProductMasterRegistry, type ProductMasterInput } from "@/data/product-master-schema";
@@ -238,7 +239,9 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
         id: v.id,
         label,
         image: v.image ? { src: v.image.src, alt: v.image.alt } : undefined,
-        availabilityStatus: v.availability.status,
+        // Owner's sold-out list (src/data/stock/sold-out.ts) can only ever force a variant OUT of
+        // stock; a Shipnity "unknown"/"out-of-stock" is never promoted by it.
+        availabilityStatus: isListedSoldOut(product.slug, label, v.id) ? "out-of-stock" : v.availability.status,
       };
     }),
     specifications: product.specifications,

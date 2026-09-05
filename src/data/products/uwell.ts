@@ -559,9 +559,8 @@ export const uwellProducts: Product[] = [
         id: "golden-carbon",
         name: "Golden Carbon",
         swatchHex: "#b8923a",
-        // Added 2026-09-06 with no stock (owner default for that day's additions) — see
-        // resolveProductRef()'s legacy branch for how this gates the cart.
-        availability: "out-of-stock",
+        // Added 2026-09-06 with no stock — listed in src/data/stock/sold-out.ts (the owner's
+        // single stock list), never hard-coded here.
       },
     ],
     specifications: [

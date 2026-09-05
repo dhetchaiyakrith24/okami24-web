@@ -8,6 +8,7 @@ import { joiwayProducts } from "./joiway";
 import { tfitProducts } from "./tfit";
 import { infyProducts } from "./infy";
 import { unbrandedProducts } from "./unbranded";
+import { applySoldOut } from "@/data/stock/apply-sold-out";
 
 /**
  * EVERY legacy product record, including ones hidden from the storefront. Validation, duplicate
@@ -15,7 +16,10 @@ import { unbrandedProducts } from "./unbranded";
  * consistent data. Only reach for this when you genuinely need hidden records (audits, adapters,
  * identity/dedup checks) — storefront code must use `allProducts`.
  */
-export const catalogIncludingHidden: Product[] = [
+// `applySoldOut`: the owner's sold-out list (src/data/stock/sold-out.ts) is the ONE place stock is
+// hand-maintained — it marks listed colours/flavours out-of-stock here, at load, so every consumer
+// (storefront, cart gate, contract tests) sees the same answer. Product files keep "unknown".
+export const catalogIncludingHidden: Product[] = applySoldOut([
   ...uwellProducts,
   ...voopooProducts,
   ...salthubProducts,
@@ -24,7 +28,7 @@ export const catalogIncludingHidden: Product[] = [
   ...tfitProducts,
   ...infyProducts,
   ...unbrandedProducts,
-];
+]);
 
 // Validated once at module load — a malformed product record fails the build
 // rather than shipping silently broken data.
