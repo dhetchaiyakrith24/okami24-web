@@ -12,7 +12,9 @@
     "audit:images": "npx tsx scripts/product-image.ts audit",
     "audit:gaps": "npx tsx scripts/image-audit.ts _incoming/image-audit.json && node scripts/image-audit-md.js _incoming/image-audit.json docs/IMAGE_AUDIT.md",
     "process:images": "npx tsx scripts/process-images.ts",
-    "shot": "node scripts/shot.js"
+    "shot": "node scripts/shot.js",
+    "backup:data": "npx tsx scripts/backup-data.ts",
+    "backup:restore-test": "npx tsx scripts/restore-test.ts"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.3",
