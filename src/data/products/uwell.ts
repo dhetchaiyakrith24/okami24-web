@@ -55,9 +55,12 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "detail",
-        src: "/assets/products/caliburn-g5/hero.jpg",
+        // 2026-09-05: white background cut by scripts/process-images.ts --fix-opaque and re-saved as
+        // WebP (hero.jpg left on disk untouched — delete only on owner's say-so)
+        src: "/assets/products/caliburn-g5/hero.webp",
         alt: "Official UWELL Caliburn G5 campaign image, \"Simple Tap. Supreme Taste.\"",
         angle: "Campaign hero",
+        transparentBackground: true,
         sourceName: "UWELL",
         sourceUrl: "https://www.myuwell.com/",
       },
@@ -540,6 +543,22 @@ export const uwellProducts: Product[] = [
         id: "coral-pink",
         name: "Coral Pink",
         swatchHex: "#e8899a",
+        // 2026-09-05: re-tried enabling the image under the owner's "show every colour" rule and
+        // re-checked in a fresh mobile-width headless render — the dashed white ringing around the
+        // silhouette IS still there (screenshot in the 2026-09-05 night report). Stays swatch-only;
+        // the colour itself is listed. Fix candidates for a future pass: re-cut the file with a
+        // softer/pre-multiplied alpha edge, or a different source photo.
+      },
+      // 2026-09-05: 9th official colour, added under the owner's rule that the showcase must list
+      // every colour the manufacturer makes (myuwell.com product page lists 9: Coral Pink, Light
+      // Green, Glass Blue, Cosmic Gray, Crystal White, Mirror Silver, Waves Black, Desert Gold,
+      // Golden Carbon — read from the printed label on each official color-N.webp). Swatch-only:
+      // UWELL's official image for it is a scene banner with the device cropped at the frame edge,
+      // which fails docs/IMAGE_SPEC.md (no partial product). Stock unknown until Shipnity is wired.
+      {
+        id: "golden-carbon",
+        name: "Golden Carbon",
+        swatchHex: "#b8923a",
       },
     ],
     specifications: [
@@ -611,8 +630,13 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g4-pro/card.png",
-        alt: "UWELL Caliburn G4 Pro, pearl-silver colourway, isolated product shot",
+        // 2026-09-05: replaced by UWELL's own official Pearl Silver render (myuwell.com
+        // files.myuwell.com/uwell/product/caliburn-g4-pro/pc/color-4.webp, 1539×1671, two devices
+        // front+back, printed colour name erased) processed to the 1000×1000 spec by
+        // scripts/process-images.ts. The whole G4 Pro set (card + 8 colours) was redone from the
+        // same official series so every colour shares one canvas. card.png left on disk untouched.
+        src: "/assets/products/caliburn-g4-pro/card.webp",
+        alt: "UWELL Caliburn G4 Pro, pearl-silver colourway, official render (front and back)",
         angle: "Front, isolated",
         transparentBackground: true,
         sourceName: "UWELL",
@@ -658,12 +682,19 @@ export const uwellProducts: Product[] = [
         swatchHex: "#5c5f63",
         image: { src: "/assets/products/caliburn-g4-pro/variant-iron-gray.webp", alt: "UWELL Caliburn G4 Pro, Iron Gray" },
       },
-      { id: "light-green", name: "Light Green", swatchHex: "#a8d5ba" },
+      {
+        id: "light-green",
+        name: "Light Green",
+        swatchHex: "#a8d5ba",
+        // 2026-09-05: official myuwell.com color-7.webp (owner-supplied link; the numbered file the
+        // owner named, color-8, turned out to be Fantasy Pink — each file's printed label was read)
+        image: { src: "/assets/products/caliburn-g4-pro/variant-light-green.webp", alt: "UWELL Caliburn G4 Pro, Light Green" },
+      },
       {
         id: "pearl-silver",
         name: "Pearl Silver",
         swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/caliburn-g4-pro/card.png", alt: "UWELL Caliburn G4 Pro, Pearl Silver" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-pearl-silver.webp", alt: "UWELL Caliburn G4 Pro, Pearl Silver" },
       },
       {
         id: "stripe-black",

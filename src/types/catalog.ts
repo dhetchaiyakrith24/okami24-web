@@ -169,6 +169,13 @@ export interface Product {
   tagline: string;
   shortDescription: string;
   isFlagship: boolean;
+  /**
+   * Owner rule (docs/IMAGE_SPEC.md §4, 2026-09-06): a product with NO card photo is hidden from
+   * the storefront until it has one — it stays in the data (validated, referenced, ready) but is
+   * excluded from `allProducts` (catalog, search, sitemap, product page). See
+   * `src/data/products/index.ts` for the split. Always record why + since when.
+   */
+  hiddenFromStorefront?: { since: string; reason: string };
   editorialTag?: string; // e.g. "Editor's Pick" — explicitly demo curation, never sales data
 
   // Normalized attributes — power the filters, compare table, and finder. The device-only fields

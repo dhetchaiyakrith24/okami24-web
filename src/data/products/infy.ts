@@ -6,6 +6,7 @@ export const infyProducts: Product[] = [
   {
     id: "infy-20k",
     slug: "infy-20k",
+    hiddenFromStorefront: { since: "2026-09-06", reason: "no card photo (IMAGE_SPEC §4)" },
     brandId: "infy",
     familyId: "infy-disposables",
     categoryId: "disposables",

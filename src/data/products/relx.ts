@@ -83,6 +83,7 @@ export const relxProducts: Product[] = [
   {
     id: "relx-creator",
     slug: "relx-creator",
+    hiddenFromStorefront: { since: "2026-09-06", reason: "no card photo (IMAGE_SPEC §4); also which RELX Creator generation is stocked is still unconfirmed" },
     brandId: "relx",
     familyId: "relx-disposables",
     categoryId: "disposables",

@@ -558,20 +558,31 @@ export const salthubProducts: Product[] = [
     // future brand-taxonomy decision, NOT silently changed (brandId stays "salthub" until the
     // owner confirms this). "Black" reuses this product's own existing card photo, an exact
     // match sourced independently of relxc9.net.
+    //
+    // UPDATE 2026-09-05: all 8 colours now have a real per-colour photo. Source: salthub.com's OWN
+    // product page (https://www.salthub.com/zero-pro/ → m_zero_pro_pod_kits_d_3.webp / _d_4.webp,
+    // two official 4-colour composites, 1920px). Each device was cut out pixel-for-pixel (no resize,
+    // no colour change; background disc + faint watermark removed) and re-canvased to the 1000×1000
+    // spec by scripts/process-images.ts — see _incoming/salthub/SOURCE.md for the full chain and
+    // the owner's confirmed name mapping (official name → our id): Flesh Pink→pink, Red→red,
+    // Black and Red Gradient→charcoal-red, Blue-Purple Gradient→blue-purple, Black→black,
+    // Silver-Grey→gunmetal, Light Blue→teal, Yellow and Black Gradient→golden-fade. Our ids/names
+    // are deliberately unchanged. Source device height is 796–800px (owner accepted, 2026-09-04).
     colorVariants: [
-      { id: "blue-purple", name: "Blue Purple", swatchHex: "#4a4e8e" },
-      { id: "golden-fade", name: "Golden Fade", swatchHex: "#c9a24b" },
-      { id: "gunmetal", name: "Gunmetal", swatchHex: "#4a4d52" },
+      { id: "blue-purple", name: "Blue Purple", swatchHex: "#4a4e8e", image: { src: "/assets/products/zero-pro/variant-blue-purple.webp", alt: "SALTHUB / Marbo Zero Pro, Blue Purple (official: Blue-Purple Gradient)" } },
+      { id: "golden-fade", name: "Golden Fade", swatchHex: "#c9a24b", image: { src: "/assets/products/zero-pro/variant-golden-fade.webp", alt: "SALTHUB / Marbo Zero Pro, Golden Fade (official: Yellow and Black Gradient)" } },
+      { id: "gunmetal", name: "Gunmetal", swatchHex: "#4a4d52", image: { src: "/assets/products/zero-pro/variant-gunmetal.webp", alt: "SALTHUB / Marbo Zero Pro, Gunmetal (official: Silver-Grey)" } },
       {
         id: "black",
         name: "Black",
         swatchHex: "#1a1a1a",
-        image: { src: "/assets/products/zero-pro/card.webp", alt: "SALTHUB / Marbo Zero Pro, Black" },
+        // was this product's card photo; now its own cut-out so all 8 colours share one canvas
+        image: { src: "/assets/products/zero-pro/variant-black.webp", alt: "SALTHUB / Marbo Zero Pro, Black" },
       },
-      { id: "pink", name: "Pink", swatchHex: "#e8899a" },
-      { id: "teal", name: "Teal", swatchHex: "#2a8a8a" },
-      { id: "red", name: "Red", swatchHex: "#b83a3a" },
-      { id: "charcoal-red", name: "Charcoal Red", swatchHex: "#6e3535" },
+      { id: "pink", name: "Pink", swatchHex: "#e8899a", image: { src: "/assets/products/zero-pro/variant-pink.webp", alt: "SALTHUB / Marbo Zero Pro, Pink (official: Flesh Pink)" } },
+      { id: "teal", name: "Teal", swatchHex: "#2a8a8a", image: { src: "/assets/products/zero-pro/variant-teal.webp", alt: "SALTHUB / Marbo Zero Pro, Teal (official: Light Blue)" } },
+      { id: "red", name: "Red", swatchHex: "#b83a3a", image: { src: "/assets/products/zero-pro/variant-red.webp", alt: "SALTHUB / Marbo Zero Pro, Red" } },
+      { id: "charcoal-red", name: "Charcoal Red", swatchHex: "#6e3535", image: { src: "/assets/products/zero-pro/variant-charcoal-red.webp", alt: "SALTHUB / Marbo Zero Pro, Charcoal Red (official: Black and Red Gradient)" } },
     ],
     specifications: [
       { key: "puffs-per-pod", label: "Puffs per cartridge", value: "Up to 5,000", sourceStatus: "verified" },

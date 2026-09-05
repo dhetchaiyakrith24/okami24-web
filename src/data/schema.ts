@@ -50,6 +50,7 @@ export const productSchema = z.object({
   tagline: z.string().min(1),
   shortDescription: z.string().min(1),
   isFlagship: z.boolean(),
+  hiddenFromStorefront: z.object({ since: z.string().min(1), reason: z.string().min(1) }).optional(),
   editorialTag: z.string().optional(),
   attributes: z.object({
     batteryMah: z.number().positive().optional(),

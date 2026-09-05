@@ -471,6 +471,7 @@ export const unbrandedProducts: Product[] = [
   {
     id: "foli-bar-15k",
     slug: "foli-bar-15k",
+    hiddenFromStorefront: { since: "2026-09-06", reason: "no card photo (IMAGE_SPEC §4); no source photo matches this exact 9-flavour SKU" },
     brandId: "Unbranded",
     familyId: "Foli Bar",
     categoryId: "disposables",
@@ -616,6 +617,7 @@ export const unbrandedProducts: Product[] = [
   {
     id: "next-pro-2-beyond",
     slug: "next-pro-2-beyond",
+    hiddenFromStorefront: { since: "2026-09-06", reason: "no card photo (IMAGE_SPEC §4); only source is a Facebook album" },
     brandId: "Unbranded",
     familyId: "Next",
     categoryId: "pod-kits",
@@ -665,6 +667,7 @@ export const unbrandedProducts: Product[] = [
   {
     id: "muro-freebase",
     slug: "muro-freebase",
+    hiddenFromStorefront: { since: "2026-09-06", reason: "no card photo (IMAGE_SPEC §4)" },
     brandId: "Unbranded",
     familyId: "Muro",
     categoryId: "e-liquid",
@@ -700,6 +703,7 @@ export const unbrandedProducts: Product[] = [
   {
     id: "muro-salt-nic",
     slug: "muro-salt-nic",
+    hiddenFromStorefront: { since: "2026-09-06", reason: "no card photo (IMAGE_SPEC §4)" },
     brandId: "Unbranded",
     familyId: "Muro",
     categoryId: "e-liquid",

@@ -6,6 +6,7 @@ export const tfitProducts: Product[] = [
   {
     id: "tfit-m-power-20k",
     slug: "tfit-m-power-20k",
+    hiddenFromStorefront: { since: "2026-09-06", reason: "no card photo (IMAGE_SPEC §4)" },
     brandId: "tfit",
     familyId: "tfit-power",
     categoryId: "disposables",

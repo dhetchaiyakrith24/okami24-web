@@ -49,7 +49,7 @@
  *    No code change, and no risk of an unpublished product leaking through a relationship link.
  */
 
-import { allProducts } from "@/data/products";
+import { catalogIncludingHidden } from "@/data/products";
 import { getCatalogItem, toCatalogRef, type CatalogRef } from "@/lib/catalog-index";
 import { projectActiveCatalog } from "@/data/shipnity-seed/active-catalog-to-product-master";
 
@@ -309,7 +309,9 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
  *  projected ProductMaster candidate, published or not (see "TWO-LAYER SAFETY" #1). Built once
  *  at module load. */
 function knownIdentitySlugs(): Set<string> {
-  const slugs = new Set(allProducts.map((p) => p.slug));
+  // identity/dedup must see hidden products too — a hidden legacy record is still the same
+  // real product, and a Shipnity candidate must not be mistaken for "new" just because it's hidden
+  const slugs = new Set(catalogIncludingHidden.map((p) => p.slug));
   for (const result of projectActiveCatalog()) {
     if (result.status === "candidate") slugs.add(result.product.slug);
   }
