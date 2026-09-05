@@ -27,28 +27,30 @@ export function Scene4Hero({ progress }: { progress: MotionValue<number> }) {
         />
       </motion.div>
 
-      <div className="absolute inset-0 flex items-center justify-center" style={{ perspective: 1600 }}>
+      <div className="absolute inset-0 flex items-center justify-center" style={{ perspective: 1400 }}>
         <HeroProduct
           progress={progress}
           src="/assets/products/m-bar-10k/card.webp"
           alt="SaltHub M Bar 10K"
-          sizeClass="h-[56vh] w-[28vh] sm:h-[72vh] sm:w-[36vh]"
-          glow="rgba(255,106,44,0.45)"
-          focusAt={[0.06, 0.24, 0.5, 0.64]}
-          entry={{ x: "6vw", y: "48vh", z: -1700, rotate: 10, blur: 22 }}
-          focus={{ x: "0vw", y: "0vh", z: 0, rotate: -3, blur: 0 }}
-          exit={{ x: "-10vw", y: "-48vh", z: 1000, rotate: -8, blur: 20 }}
+          sizeClass="h-[52vh] w-[26vh] sm:h-[60vh] sm:w-[30vh]"
+          glow="rgba(255,106,44,0.5)"
+          focusAt={[0.06, 0.22, 0.40, 0.54]}
+          entry={{ x: "6vw", y: "38vh", rotate: 10, rotateY: -24, scale: 0.6, blur: 22 }}
+          focus={{ x: "0vw", y: "-5vh", rotate: -3, rotateY: -4, scale: 1, blur: 0 }}
+          settle={{ x: "0vw", y: "-5vh", rotate: -2, rotateY: -2, scale: 1.05, blur: 0 }}
+          exit={{ x: "-8vw", y: "-44vh", rotate: -8, rotateY: 10, scale: 1.6, blur: 18 }}
         />
         <HeroProduct
           progress={progress}
           src="/assets/products/m-bar-15k/card.webp"
           alt="SaltHub M Bar 15K"
-          sizeClass="h-[54vh] w-[27vh] sm:h-[70vh] sm:w-[35vh]"
-          glow="rgba(255,60,60,0.4)"
-          focusAt={[0.48, 0.66, 0.88, 0.98]}
-          entry={{ x: "-8vw", y: "46vh", z: -1800, rotate: -12, blur: 24 }}
-          focus={{ x: "4vw", y: "0vh", z: 0, rotate: 5, blur: 0 }}
-          exit={{ x: "12vw", y: "-46vh", z: 1050, rotate: 10, blur: 20 }}
+          sizeClass="h-[50vh] w-[25vh] sm:h-[58vh] sm:w-[29vh]"
+          glow="rgba(255,60,60,0.45)"
+          focusAt={[0.38, 0.54, 0.68, 0.80]}
+          entry={{ x: "-8vw", y: "38vh", rotate: -12, rotateY: 26, scale: 0.6, blur: 24 }}
+          focus={{ x: "4vw", y: "-5vh", rotate: 5, rotateY: 4, scale: 1, blur: 0 }}
+          settle={{ x: "4vw", y: "-5vh", rotate: 4, rotateY: 2, scale: 1.05, blur: 0 }}
+          exit={{ x: "10vw", y: "-44vh", rotate: 10, rotateY: -10, scale: 1.6, blur: 18 }}
         />
       </div>
 

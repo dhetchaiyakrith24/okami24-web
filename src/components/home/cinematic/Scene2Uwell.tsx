@@ -23,31 +23,33 @@ export function Scene2Uwell({ progress }: { progress: MotionValue<number> }) {
 
   return (
     <motion.div style={{ opacity }} className="absolute inset-0 overflow-hidden">
-      <div className="absolute inset-0 flex items-center justify-center" style={{ perspective: 1600 }}>
+      <div className="absolute inset-0 flex items-center justify-center" style={{ perspective: 1400 }}>
         <HeroProduct
           progress={progress}
           src="/assets/products/caliburn-g5/card.png"
           alt="UWELL Caliburn G5"
-          sizeClass="h-[52vh] w-[21vh] sm:h-[64vh] sm:w-[26vh]"
-          glow="rgba(111,184,216,0.4)"
-          focusAt={[0.06, 0.24, 0.5, 0.64]}
-          entry={{ x: "-38vw", y: "40vh", z: -1700, rotate: -16, blur: 22 }}
-          focus={{ x: "0vw", y: "0vh", z: 0, rotate: -2, blur: 0 }}
-          exit={{ x: "34vw", y: "-46vh", z: 950, rotate: 14, blur: 20 }}
+          sizeClass="h-[50vh] w-[20vh] sm:h-[62vh] sm:w-[25vh]"
+          glow="rgba(111,184,216,0.45)"
+          focusAt={[0.06, 0.22, 0.42, 0.56]}
+          entry={{ x: "-34vw", y: "32vh", rotate: -14, rotateY: -32, scale: 0.6, blur: 22 }}
+          focus={{ x: "0vw", y: "-5vh", rotate: -2, rotateY: -8, scale: 1, blur: 0 }}
+          settle={{ x: "1vw", y: "-6vh", rotate: -1, rotateY: -4, scale: 1.04, blur: 0 }}
+          exit={{ x: "30vw", y: "-40vh", rotate: 12, rotateY: 24, scale: 1.55, blur: 18 }}
         />
         <HeroProduct
           progress={progress}
           src="/assets/products/caliburn-g4-pro-koko/card.png"
           alt="UWELL Caliburn G4 Pro KOKO"
-          sizeClass="h-[50vh] w-[32vh] sm:h-[62vh] sm:w-[40vh]"
-          glow="rgba(111,184,216,0.35)"
-          focusAt={[0.48, 0.66, 0.88, 0.98]}
-          entry={{ x: "-32vw", y: "44vh", z: -1800, rotate: -20, blur: 24 }}
-          focus={{ x: "2vw", y: "0vh", z: 0, rotate: 2, blur: 0 }}
-          exit={{ x: "38vw", y: "-42vh", z: 1000, rotate: -10, blur: 20 }}
+          sizeClass="h-[46vh] w-[30vh] sm:h-[58vh] sm:w-[38vh]"
+          glow="rgba(111,184,216,0.4)"
+          focusAt={[0.40, 0.56, 0.72, 0.84]}
+          entry={{ x: "-30vw", y: "34vh", rotate: -16, rotateY: -34, scale: 0.6, blur: 24 }}
+          focus={{ x: "2vw", y: "-5vh", rotate: 2, rotateY: -6, scale: 1, blur: 0 }}
+          settle={{ x: "3vw", y: "-6vh", rotate: 1, rotateY: -3, scale: 1.04, blur: 0 }}
+          exit={{ x: "34vw", y: "-38vh", rotate: -8, rotateY: 22, scale: 1.55, blur: 18 }}
         />
 
-        <motion.div aria-hidden style={{ opacity: bracketOpacity }} className="absolute h-[36vh] w-[22vh] sm:h-[44vh] sm:w-[28vh]">
+        <motion.div aria-hidden style={{ opacity: bracketOpacity, y: "-5vh" }} className="absolute h-[36vh] w-[22vh] sm:h-[44vh] sm:w-[28vh]">
           {[
             "left-0 top-0 border-l border-t",
             "right-0 top-0 border-r border-t",

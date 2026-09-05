@@ -24,28 +24,30 @@ export function Scene3Voopoo({ progress }: { progress: MotionValue<number> }) {
         <div className="h-full w-full rounded-full" style={{ background: "radial-gradient(circle, var(--color-ember-soft) 0%, transparent 68%)" }} />
       </motion.div>
 
-      <div className="absolute inset-0 flex items-center justify-center" style={{ perspective: 1600 }}>
+      <div className="absolute inset-0 flex items-center justify-center" style={{ perspective: 1400 }}>
         <HeroProduct
           progress={progress}
           src="/assets/products/argus-g4/card.webp"
           alt="VOOPOO ARGUS G4"
-          sizeClass="h-[50vh] w-[17vh] sm:h-[64vh] sm:w-[22vh]"
-          glow="rgba(255,106,44,0.4)"
-          focusAt={[0.06, 0.24, 0.5, 0.64]}
-          entry={{ x: "40vw", y: "38vh", z: -1700, rotate: 18, blur: 22 }}
-          focus={{ x: "0vw", y: "0vh", z: 0, rotate: -6, blur: 0 }}
-          exit={{ x: "-36vw", y: "-44vh", z: 950, rotate: -16, blur: 20 }}
+          sizeClass="h-[48vh] w-[16vh] sm:h-[62vh] sm:w-[21vh]"
+          glow="rgba(255,106,44,0.45)"
+          focusAt={[0.06, 0.22, 0.42, 0.56]}
+          entry={{ x: "36vw", y: "30vh", rotate: 16, rotateY: 34, scale: 0.6, blur: 22 }}
+          focus={{ x: "0vw", y: "-5vh", rotate: -6, rotateY: 10, scale: 1, blur: 0 }}
+          settle={{ x: "-1vw", y: "-6vh", rotate: -5, rotateY: 5, scale: 1.04, blur: 0 }}
+          exit={{ x: "-32vw", y: "-40vh", rotate: -16, rotateY: -26, scale: 1.55, blur: 18 }}
         />
         <HeroProduct
           progress={progress}
           src="/assets/products/drag-6/card.png"
           alt="VOOPOO DRAG 6"
-          sizeClass="h-[46vh] w-[27vh] sm:h-[58vh] sm:w-[34vh]"
+          sizeClass="h-[44vh] w-[26vh] sm:h-[56vh] sm:w-[33vh]"
           glow="rgba(255,106,44,0.4)"
-          focusAt={[0.48, 0.66, 0.88, 0.98]}
-          entry={{ x: "34vw", y: "42vh", z: -1800, rotate: 22, blur: 24 }}
-          focus={{ x: "-2vw", y: "0vh", z: 0, rotate: 6, blur: 0 }}
-          exit={{ x: "-40vw", y: "-40vh", z: 1000, rotate: 12, blur: 20 }}
+          focusAt={[0.40, 0.56, 0.72, 0.84]}
+          entry={{ x: "32vw", y: "34vh", rotate: 20, rotateY: 36, scale: 0.6, blur: 24 }}
+          focus={{ x: "-2vw", y: "-5vh", rotate: 6, rotateY: 8, scale: 1, blur: 0 }}
+          settle={{ x: "-3vw", y: "-6vh", rotate: 5, rotateY: 4, scale: 1.04, blur: 0 }}
+          exit={{ x: "-36vw", y: "-36vh", rotate: 12, rotateY: -24, scale: 1.55, blur: 18 }}
         />
       </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useSceneProgress } from "./scroll-range";
 import { Atmosphere } from "./Atmosphere";
 import { CinematicMark } from "./CinematicMark";
@@ -33,7 +33,22 @@ import { CINEMATIC_COPY } from "./copy";
 export function CinematicIntro() {
   const prefersReducedMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
+  const { scrollYProgress: rawProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
+
+  // Phase 3.3.4: every scene, wipe and the atmosphere read ONE spring-smoothed copy of the scroll
+  // position rather than the raw value. Wheels/trackpads deliver scroll in discrete steps (a
+  // wheel notch is ~100px, i.e. ~2% of the whole desktop sequence), so a value bound 1:1 to
+  // scrollY makes the products hop between poses. The spring turns those steps into a continuous
+  // glide with a small amount of weight (~0.2s settle, overdamped so it never overshoots back
+  // through a SceneWipe window). skipInitialAnimation: when the browser restores a mid-page
+  // scroll position on reload, jump straight there instead of replaying the intro from 0.
+  const scrollYProgress = useSpring(rawProgress, {
+    stiffness: 160,
+    damping: 32,
+    mass: 0.6,
+    restDelta: 0.0005,
+    skipInitialAnimation: true,
+  });
 
   // Adjacent scenes overlap substantially on purpose (~0.06–0.10 of the whole sequence) so that at
   // each SceneWipe boundary below, the outgoing product is still mid-exit (visible, blurred,
@@ -66,7 +81,11 @@ export function CinematicIntro() {
 
   return (
     <div ref={containerRef} className="relative h-[320vh] sm:h-[420vh] lg:h-[600vh]">
-      <div className="sticky top-0 z-10 h-screen w-full overflow-hidden bg-surface-0">
+      {/* h-svh, not h-screen: on phones 100vh is the LARGEST viewport (URL bar hidden), so a
+          100vh stage overflowed the visible screen by the bar's height whenever the bar was
+          showing — the skip button and captions sat under it. 100svh is the stable smallest
+          visible height (no mid-scroll resize like dvh would cause); desktop is unaffected. */}
+      <div className="sticky top-0 z-10 h-svh w-full overflow-hidden bg-surface-0">
         <Atmosphere progress={scrollYProgress} />
         <CinematicMark progress={ambientMark} mode="ambient" />
 
