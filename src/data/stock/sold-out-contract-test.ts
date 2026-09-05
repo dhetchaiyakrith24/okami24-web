@@ -23,8 +23,7 @@ export function runSoldOutContractTests(): SoldOutContractResult[] {
   // Report REAL file line numbers (what the owner sees in Notepad), not positions inside the
   // template string: the string starts right after the backtick on the `export const` line.
   const listFile = path.join(process.cwd(), "src", "data", "stock", "sold-out.ts");
-  const exportLine = fs.readFileSync(listFile, "utf8").split(/?
-/).findIndex((l) => l.includes("SOLD_OUT_LIST = `")) + 1;
+  const exportLine = fs.readFileSync(listFile, "utf8").split(/\r?\n/).findIndex((l) => l.includes("SOLD_OUT_LIST = `")) + 1;
   const fileLine = (line: number) => (exportLine > 0 ? exportLine + line - 1 : line);
   const parsed = parseSoldOutList();
   const entries = parsed.entries.map((e) => ({ ...e, line: fileLine(e.line) }));
