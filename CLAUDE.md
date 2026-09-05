@@ -10,6 +10,11 @@ authoritative source for brand, product-source-of-truth, pricing authority, stoc
 payment model, and known TBDs. Do not infer or invent business rules; if something isn't
 covered there, treat it as unresolved rather than guessing.
 
+**Catalog completeness rule (owner, 2026-09-06):** every product must show **every colour and every
+flavour the manufacturer offers, even ones the shop has no stock of**. Never drop a colour/flavour/image
+because "we don't sell it" — stock, "Sold out" and greyed-out states are the cart/stock system's job
+later, not a reason to cut catalog truth. Image standards live in `docs/IMAGE_SPEC.md`.
+
 If instructions conflict, resolve in this order: (1) the current user's explicit
 instruction, (2) `docs/BUSINESS_SOURCE_OF_TRUTH.md`, (3) this file, (4) implementation
 assumptions. Never silently overwrite business rules in the source-of-truth doc.
