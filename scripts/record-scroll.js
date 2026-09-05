@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // Scroll-through recorder: real wheel events, frames as JPEG + timestamps.
 // node record.js <outdir> <url> <width> <height> <totalScrollPx> <frames> [wheelDelta]
 const { spawn } = require("child_process"); const http = require("http"); const fs = require("fs"); const path = require("path");

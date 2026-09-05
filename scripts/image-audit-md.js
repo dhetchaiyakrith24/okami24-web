@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // Builds docs/IMAGE_AUDIT.md (v2 rules) from image-audit.json. Usage: node image-audit-md.js <in.json> <out.md>
 const fs = require("node:fs");
 const [, , inFile, outFile] = process.argv;

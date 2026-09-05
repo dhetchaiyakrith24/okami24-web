@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // node assemble.js <framesdir> <out.gif|out.webp> <targetWidth> [everyNth=1]
 const sharp = require("sharp"); const fs = require("fs"); const path = require("path");
 const [dir, out, tw, nth = "1"] = process.argv.slice(2); const N = +nth;

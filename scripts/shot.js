@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // Mobile-width full-page screenshots via Chrome DevTools Protocol (no puppeteer needed; Node 22+ has WebSocket).
 //
 //   node scripts/shot.js <out.png> <url> [--click "<css selector>"]... [--wait ms] [--width 375]
