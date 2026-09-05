@@ -1,0 +1,155 @@
+/**
+ * OKami24 — approved selling prices for LEGACY catalog products (`src/data/products/*`).
+ *
+ * Companion to `publication-approvals.ts`, which does the same job for ProductMaster records.
+ * The legacy `Product` type deliberately has no price field (docs/BUSINESS_SOURCE_OF_TRUTH.md §5:
+ * the final selling price is the owner's call, never a field silently copied from a supplier
+ * record) — so, exactly like the ProductMaster side, a price lives ONLY here, as an explicit,
+ * auditable approval. No entry = no price = the product stays browse-only (no cart button), which
+ * is what every legacy product was until 2026-09-05.
+ *
+ * SOURCE (owner instruction, 2026-09-05): the owner's Shipnity export `Data_31-08-2026.xlsx`
+ * (988 child-SKU rows, one "ราคาขาย" per parent group) is the price source for this file. The
+ * owner's rule for this pass: never guess a price — a legacy product only gets an entry when its
+ * Shipnity parent group can be identified with real evidence, cited per entry below. Products the
+ * export doesn't cover (or covers only ambiguously) are NOT here; they're listed for the owner in
+ * the 2026-09-05 report instead.
+ *
+ * Every price here equals the export's "ราคาขาย" for that parent group verbatim (all children of a
+ * group share one price in the export). `shipnityProductId` is the parent code in that export, and
+ * `evidence` says how the legacy product was matched to it:
+ *   - "exact-legacy-match": the projection adapter already records this parent as an exact
+ *     duplicate of the legacy product (`exactLegacyMatch` in active-catalog-to-product-master.ts).
+ *   - "active-parent-name": the parent's own Shipnity name (active-catalog-source.ts) IS the
+ *     legacy product's name, and its child option names match the legacy variant list.
+ *   - "child-option-match": the parent has no Shipnity name in project data (historical group);
+ *     matched because its child option names coincide with the legacy variant list (counts given).
+ *     These are the weakest tier and are flagged for the owner's confirmation in the report.
+ *
+ * `src/lib/catalog-index.ts` reads this to fill `sellingPrice` for legacy items, which is what
+ * `resolveProductRef()` (the cart/checkout money boundary) checks — so adding an entry here is the
+ * literal act of making a legacy product purchasable. Treat it with the same care as
+ * `publication-approvals.ts` and `docs/BUSINESS_SOURCE_OF_TRUTH.md`.
+ */
+
+export interface LegacyPriceApproval {
+  /** THB, integer. The price a customer pays — verbatim "ราคาขาย" of the matched Shipnity parent. */
+  sellingPrice: number;
+  /** ISO date the price was reviewed/approved. */
+  lastPriceReview: string;
+  /** Shipnity parent code in Data_31-08-2026.xlsx, e.g. "Pod-168". */
+  shipnityProductId: string;
+  /** How the legacy product was matched to that parent — see the header for the three tiers. */
+  evidence: string;
+}
+
+export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
+  // ---- Tier 1: exact legacy duplicates already recorded by the projection adapter ------------
+  "caliburn-g4-pro": {
+    sellingPrice: 1190,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-168",
+    evidence: 'exact-legacy-match: Shipnity "Caliburn G4 Pro" (Pod-168, 4 colours, ฿1190) — exactLegacyMatch in active-catalog-to-product-master.ts',
+  },
+  "argus-g4": {
+    sellingPrice: 1090,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-179",
+    evidence: 'exact-legacy-match: Shipnity "Voopoo Argus G4" (Pod-179, 6 colours, ฿1090); 6 of 6 Excel colour names are in the legacy colour list',
+  },
+  "vmate-i3": {
+    sellingPrice: 690,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-177",
+    evidence: 'exact-legacy-match: Shipnity "Vmate i3" (Pod-177, 5 colours, ฿690); 5 of 5 Excel colour names are in the legacy colour list',
+  },
+  "zero-pro": {
+    sellingPrice: 990,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-178",
+    evidence: 'exact-legacy-match: Shipnity "Marbo Zero Pro" (Pod-178, 8 colours, ฿990) — pre-rebrand name of SALTHUB Zero Pro; 6 of 8 Excel colour names match',
+  },
+  "zero-cartridge": {
+    sellingPrice: 129,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-85",
+    evidence: 'exact-legacy-match: Shipnity "หัวพอต Marbo Zero" (Pod-85, 31 flavours, ฿129) — the Zero pod head; both legacy flavours are in the Excel list',
+  },
+  "m-bar-9k": {
+    sellingPrice: 349,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Disposable-25",
+    evidence: 'exact-legacy-match: Shipnity "Marbo Bar 9K" (Disposable-25, 23 flavours, ฿349); 21 of 22 legacy flavours are in the Excel list',
+  },
+  "m-switch-pod": {
+    sellingPrice: 349,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-147",
+    evidence: 'exact-legacy-match: Shipnity "M Switch 15k" (Pod-147, 17 flavours, ฿349) — the prefilled cartridge; 16 of 18 legacy flavours are in the Excel list',
+  },
+
+  // ---- Tier 2: the Shipnity parent's own name is the legacy product (Unbranded tier) --------
+  "mood-monster-14k": {
+    sellingPrice: 350,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Disposable-37",
+    evidence: 'active-parent-name: Shipnity "MOOOD Monster 14K Puffs" (Disposable-37, 23 flavours, ฿350); 10 of 10 legacy flavours are in the Excel list',
+  },
+  "muro-space-15k": {
+    sellingPrice: 329,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Disposable-38",
+    evidence: 'active-parent-name: Shipnity "Muro Space 15k" (Disposable-38, 15 flavours, ฿329); 5 of 5 legacy flavours are in the Excel list',
+  },
+  "muro-3ml": {
+    sellingPrice: 99,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-120",
+    evidence: 'active-parent-name: Shipnity "Muro 3 ML" (Pod-120, 14 flavours, ฿99); 10 of 10 legacy flavours are in the Excel list',
+  },
+  "muro-sc-8000": {
+    sellingPrice: 259,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-166",
+    evidence: 'active-parent-name: Shipnity "Muro SC 8000 Puffs" (Pod-166, 12 flavours, ฿259); 8 of 8 legacy flavours are in the Excel list',
+  },
+  "muro-connector-20k": {
+    sellingPrice: 259,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-171",
+    evidence: 'active-parent-name: Shipnity "Muro Connector 20k" (Pod-171, 33 flavours, ฿259); 20 of 20 legacy flavours are in the Excel list',
+  },
+  "vazer-one-pod": {
+    sellingPrice: 59,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-115",
+    evidence: 'active-parent-name: Shipnity "หัวพอต Vazer One" (Pod-115, 5 flavours, ฿59); 3 of 3 legacy flavours are in the Excel list',
+  },
+  "reswa-sportcan-12k": {
+    sellingPrice: 229,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-142",
+    evidence: 'active-parent-name: Shipnity "Reswa Sportcan 12k" (Pod-142, 5 flavours, ฿229); 3 of 3 legacy flavours are in the Excel list',
+  },
+
+  // ---- Tier 3: historical parent (no Shipnity name in project data), matched by option names --
+  // Flagged for owner confirmation in the 2026-09-05 report; remove the entry to revert the product
+  // to browse-only if the match is wrong.
+  "joiway-f3": {
+    sellingPrice: 329,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-133",
+    evidence: 'child-option-match: Pod-133 (20 flavours, ฿329, Excel remaining 0 on 31-08). 15 of the 16 original Joiway F3 flavours are in its list (only "Funta Grape" absent — Excel has "Funta Green", the known Grape/Green naming question); the other Excel-only name is "Vodka" vs legacy "Vodak". No other Excel group overlaps F3 by more than 6 names.',
+  },
+  "m-bar-10k": {
+    sellingPrice: 379,
+    lastPriceReview: "2026-09-05",
+    shipnityProductId: "Pod-172",
+    evidence: 'child-option-match: Pod-172 (12 flavours, ฿379). 11 of 12 Excel flavours are in the legacy M Bar 10K list (Excel-only: "Matcha Late"); the runner-up group (Pod-156, ฿550) overlaps only 6 of 12.',
+  },
+};
+
+/** Convenience accessor — `null` when a legacy product has no approved price (browse-only). */
+export function getLegacyApprovedPrice(slug: string): number | null {
+  return LEGACY_APPROVED_PRICING[slug]?.sellingPrice ?? null;
+}
