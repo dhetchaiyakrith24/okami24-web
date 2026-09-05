@@ -23,7 +23,7 @@
 ## 1. สถานะปัจจุบัน
 
 - **โปรเจกต์:** เว็บร้าน OKami24 (บุหรี่ไฟฟ้า/น้ำยา/IQOS) — Next.js 16 + TypeScript + Tailwind v4 + SQLite (better-sqlite3) แปลงจากเดโม NOVA VAPOR (ไม่มีคำนี้เหลือในโค้ดแล้ว grep = 0)
-- **โฟลเดอร์:** `C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3` (git worktree — ห้าม cd ไปโฟลเดอร์หลัก)
+- **โฟลเดอร์:** `C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3` — **ตั้งแต่ 2026-09-06 เป็นโฟลเดอร์หลักเดี่ยว ไม่ใช่ worktree แล้ว** (โฟลเดอร์ `Claude-Web-Lab-v3` เดิมหายไป ดู §8 ข้อ 8)
 - **branch/HEAD:** `checkpoint/phase-3.3.3` @ `a68b896` = origin · ไฟล์ยังไม่ commit: **0** (ไฟล์ HANDOFF นี้จะ commit ตามหลัง) · `.agents/skills/catalog-research/` เป็นโฟลเดอร์ที่แอป Claude สร้าง (timestamp 01:52) ไม่ใช่ของโปรเจกต์ ยังไม่ได้ใส่ .gitignore
 - **อยู่ตรงไหน:** หน้าร้าน+ตะกร้า+สั่งซื้อทำงานได้ใน dev · **ตรวจก่อนเปิดขายเสร็จแล้ว** (LAUNCH_AUDIT) · เจ้าของตัดสินใจแล้วว่าจะเริ่มแก้กลุ่ม 1 พรุ่งนี้ (2026-09-07) · ยังไม่ deploy ไม่มีโดเมน
 
@@ -125,6 +125,7 @@
 5. **รูป VOOPOO "ทางการ" หลายรูปเป็นภาพ AI** — grep `AIGC` ก่อนใช้ · coil-92 เป็นตัวอย่างที่หลุดมาแล้ว
 6. **บทเรียนเครื่องมือของเซสชันนี้ (ไม่ใช่บั๊กโปรเจกต์):** (ก) Browser pane ของแอปคลิก/สกรีนช็อตไม่ได้เมื่อหน้าต่างซ่อน → ใช้ Chrome headless ผ่าน CDP (`scripts/shot.js` หรือดัดแปลง) (ข) **Git Bash แปลง path ที่ขึ้นต้นด้วย `/` เป็น `C:/Program Files/Git/...`** เมื่อส่งเป็น argument ให้ node → รันสคริปต์แบบนั้นผ่าน PowerShell แทน (ค) dev server ของแชทอื่นกิน port 3000 (`next dev` จะปฏิเสธเปิดตัวที่ 2) → ใช้ตัวที่รันอยู่ผ่าน curl หรือ `next start -p 3412` จาก build ของ verify (ง) ไม่มี xlsx lib และไม่มี Python → อ่าน Excel ได้โดยแตก zip แล้ว parse `xl/worksheets/sheet1.xml` (inline string) ตรง ๆ
 7. `docs/PROJECT_HANDOFF.md` ล้าสมัย · ของเก่าจาก v2 §8 ข้อ 4 (ห้าม `node -e` แก้ไฟล์, ห้ามต่อ commit ด้วย `;`) ยังมีผล
+8. **เหตุการณ์ 2026-09-06 เวลา 02:55 — โฟลเดอร์หลัก `C:\Users\dhetc\Claude-Web-Lab-v3` หายไปทั้งโฟลเดอร์** [ตรวจแล้วจริง] (ไม่อยู่ในถังขยะ หาทั้งเครื่องไม่เจอ ไม่รู้สาเหตุ — แชทนี้ไม่เคย cd ไปที่นั่น มีแชท Claude อีกหน้าต่างเปิดค้างที่โฟลเดอร์งานเดียวกันตอนนั้น) โฟลเดอร์งานเคยเป็น git worktree ที่พึ่งประวัติในโฟลเดอร์หลัก จึงใช้ git ไม่ได้ทันที · **กู้แล้วตามคำสั่งเจ้าของ:** โคลนประวัติจาก GitHub (`github.com/dhetchaiyakrith24/okami24-web`) มาใส่เป็น `.git` ของโฟลเดอร์งานตรง ๆ → **จากนี้ `C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3` คือโฟลเดอร์หลัก ไม่ใช่ worktree แล้ว** (มี branch ครบ 3: 3.3.3 / 3.3.1 `22e5109` / main `570d7fb` ตรง GitHub ทุกตัว ไม่มีอะไรหาย เพราะทุกอย่างถูก push ไว้ก่อนแล้ว) · ไฟล์ชี้ทาง worktree เดิมและสำเนาไฟล์ที่แก้วันนั้นเก็บไว้ที่ `_incoming/backup-2026-09-07/` · บทเรียน: **push ทุกครั้งที่จบก้อนงาน** เพราะครั้งนี้รอดเพราะ push ไว้เท่านั้น
 
 ---
 
@@ -216,7 +217,7 @@
 
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) แปลงจากเดโม NOVA VAPOR
-โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 (git worktree — ห้าม cd ไปโฟลเดอร์หลัก)
+โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 (โฟลเดอร์หลักเดี่ยวตั้งแต่ 2026-09-06 — โฟลเดอร์ Claude-Web-Lab-v3 เดิมหายแล้ว ดู HANDOFF §8 ข้อ 8)
 Branch: checkpoint/phase-3.3.3 · HEAD = a68b896 (+ commit HANDOFF ถัดไป) · push แล้ว · working tree สะอาด
 อ่านก่อน: ~/.claude/CLAUDE.md (หมวด 13) → CLAUDE.md โปรเจกต์ → docs/BUSINESS_SOURCE_OF_TRUTH.md → docs/HANDOFF.md
 → **docs/LAUNCH_AUDIT.md = รายการงานหลัก 28 เรื่อง** (เจ้าของอนุมัติ 2026-09-06) · docs/IMAGE_SPEC.md ก่อนแตะรูป
