@@ -35,7 +35,7 @@ export const voopooProducts: Product[] = [
         role: "card",
         src: "/assets/products/argus-g4/card.webp",
         alt: "VOOPOO ARGUS G4, Orange colourway, isolated product shot",
-        angle: "QC recovery pass (2026-09-03) — REPLACES the previous small (147×480) card asset, which the owner flagged as rendering too small on the real storefront. Re-sourced from VOOPOO's own shop (shop.voopoo.com/products/argus-g4 — the www.voopoo.com marketing site is DNS-blocked from this project's network, but the shop subdomain works with a Referer header) at genuinely high resolution (900×900 source), full official box+device gallery covering all 7 real colors. While re-sourcing, found the product's true color range is Brown/Blue/Gray/Orange/Purple/Black/Silver — \"Green\", previously listed here, does not appear anywhere in VOOPOO's own 7-image gallery and has been corrected to Black.",
+        angle: "Re-processed 2026-09-06 (LAUNCH_AUDIT 11): same official shop.voopoo.com gallery fetched at its native 2533×2533 — the standalone device cropped off the box shot is now ≈1441px on the 1000px canvas (was 519px, blurry on the home page). Earlier history: QC recovery pass (2026-09-03) — REPLACES the previous small (147×480) card asset, which the owner flagged as rendering too small on the real storefront. Re-sourced from VOOPOO's own shop (shop.voopoo.com/products/argus-g4 — the www.voopoo.com marketing site is DNS-blocked from this project's network, but the shop subdomain works with a Referer header) at genuinely high resolution (900×900 source), full official box+device gallery covering all 7 real colors. While re-sourcing, found the product's true color range is Brown/Blue/Gray/Orange/Purple/Black/Silver — \"Green\", previously listed here, does not appear anywhere in VOOPOO's own 7-image gallery and has been corrected to Black.",
         transparentBackground: true,
         sourceName: "VOOPOO (official brand shop, shop.voopoo.com)",
         sourceUrl: "https://shop.voopoo.com/products/argus-g4",
@@ -84,9 +84,12 @@ export const voopooProducts: Product[] = [
     // official photo, not a partially-guessed list.
     // "All Colors" lineup (owner mandate, 2026-09-03 — global rollout pass) — an OKami24 composite
     // built from these same 7 individually-verified official shop.voopoo.com photos.
+    // 2026-09-06: whole set re-sourced from the same shop.voopoo.com gallery at its native 2533px
+    // (device ≈1441px on the 1000px canvas, was 519px) and the lineup rebuilt with 8 colours —
+    // VOOPOO added Green since the 2026-09-03 pass. Sources: _incoming/argus-g4/SOURCE.md
     lineupImage: {
       src: "/assets/products/argus-g4/lineup.webp",
-      alt: "VOOPOO ARGUS G4, all 7 colors",
+      alt: "VOOPOO ARGUS G4, all 8 colors",
       sourceName: "OKami24 composite (from individually-verified official VOOPOO photos)",
     },
     colorVariants: [
@@ -100,37 +103,48 @@ export const voopooProducts: Product[] = [
         id: "black",
         name: "Black",
         swatchHex: "#1a1a1a",
-        image: { src: "/assets/products/argus-g4/variants/black.webp", alt: "VOOPOO ARGUS G4, Black" },
+        image: { src: "/assets/products/argus-g4/variant-black.webp", alt: "VOOPOO ARGUS G4, Black" },
       },
       {
         id: "purple",
         name: "Purple",
         swatchHex: "#6b4a8e",
-        image: { src: "/assets/products/argus-g4/variants/purple.webp", alt: "VOOPOO ARGUS G4, Purple" },
+        image: { src: "/assets/products/argus-g4/variant-purple.webp", alt: "VOOPOO ARGUS G4, Purple" },
       },
       {
         id: "silver",
         name: "Silver",
         swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/argus-g4/variants/silver.webp", alt: "VOOPOO ARGUS G4, Silver" },
+        image: { src: "/assets/products/argus-g4/variant-silver.webp", alt: "VOOPOO ARGUS G4, Silver" },
       },
       {
         id: "blue",
         name: "Blue",
         swatchHex: "#2a6fbd",
-        image: { src: "/assets/products/argus-g4/variants/blue.webp", alt: "VOOPOO ARGUS G4, Blue" },
+        image: { src: "/assets/products/argus-g4/variant-blue.webp", alt: "VOOPOO ARGUS G4, Blue" },
       },
       {
         id: "gray",
         name: "Gray",
         swatchHex: "#5c5f63",
-        image: { src: "/assets/products/argus-g4/variants/gray.webp", alt: "VOOPOO ARGUS G4, Gray" },
+        image: { src: "/assets/products/argus-g4/variant-gray.webp", alt: "VOOPOO ARGUS G4, Gray" },
       },
       {
         id: "brown",
         name: "Brown",
         swatchHex: "#5c4433",
-        image: { src: "/assets/products/argus-g4/variants/brown.webp", alt: "VOOPOO ARGUS G4, Brown" },
+        image: { src: "/assets/products/argus-g4/variant-brown.webp", alt: "VOOPOO ARGUS G4, Brown" },
+      },
+      {
+        // Added 2026-09-06 — VOOPOO's own shop now lists an 8th colourway, Green (variant option +
+        // its own gallery photo, Sliver-(9)-(1).jpg). Owner rule 2026-09-06: show every colour the
+        // maker offers. swatch = measured from the device's teal side frame in the official photo
+        // (designer 2026-09-06: the whole-body mean read as grey-green; the frame is the colour a
+        // customer sees). Front panel is a paler mint (#b9d0bb).
+        id: "green",
+        name: "Green",
+        swatchHex: "#5caba5",
+        image: { src: "/assets/products/argus-g4/variant-green.webp", alt: "VOOPOO ARGUS G4, Green" },
       },
     ],
     specifications: [
