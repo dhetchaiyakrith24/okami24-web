@@ -134,12 +134,14 @@ export function OrderStatusView({ order, token, payment = null }: { order: Order
                 {qrHref && (
                   <div className="flex flex-col gap-2">
                     <p className="text-sm text-foreground-muted">{dict.orderStatus.paymentQrNote}</p>
-                    {/* plain <img>: the route handler is per-order and sends no-store, so next/image's optimizer cache must not sit in front of it */}
+                    {/* plain <img>: the route handler is per-order and sends no-store, so next/image's
+                        optimizer cache must not sit in front of it.
+                        320, not 280: the owner's QR is a full PromptPay slip, so its header/footer eat
+                        over half the frame and the scannable square was only ~130px at 280.
+                        320×434 = the file's real 885×1200 aspect — a square guess made the page jump as
+                        the image finished loading. (both: designer 2026-09-06) */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    {/* 320, not 280: the owner's QR is a full PromptPay slip, so its header/footer
-                        eat over half the frame and the scannable square is only ~130px at 280
-                        (designer 2026-09-06). The column is wide enough for 320 without overflow. */}
-                    <img src={qrHref} alt={dict.orderStatus.paymentQrAlt} width={320} height={320} className="w-full max-w-[320px] self-center rounded-lg bg-white p-2" />
+                    <img src={qrHref} alt={dict.orderStatus.paymentQrAlt} width={320} height={434} className="w-full max-w-[320px] self-center rounded-lg bg-white p-2" />
                   </div>
                 )}
                 <p className="text-sm text-foreground">{dict.orderStatus.paymentVerifyNameWarning}</p>

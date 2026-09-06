@@ -59,7 +59,10 @@ export function PhoneVerifyForm({ otpEnabled }: { otpEnabled: boolean }) {
           </form>
         ) : (
           <>
-            <form action={formAction} className="flex flex-col gap-3">
+            {/* Same card as the phone step — this branch is unreachable while verification is off,
+                so without it the code step would silently go back to a floating form the day
+                OTP_VERIFICATION_ENABLED is flipped back on (designer 2026-09-06). */}
+            <form action={formAction} className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4">
               <input type="hidden" name="intent" value="verify" />
               <input type="hidden" name="phone" value={state.phone} />
               <p className="text-sm text-foreground-muted">{state.phone}</p>
