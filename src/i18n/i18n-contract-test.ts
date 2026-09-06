@@ -1,23 +1,33 @@
 /**
  * OKami24 — Phase 3.2: i18n foundation contract tests.
  *
- * Covers locale resolution (`detectLocale`), dictionary structural coverage (every locale
- * implements the same keys — a missing key would otherwise only surface as `undefined` rendered
- * in the UI), and the middleware's "never overwrite an existing choice" precedence guarantee.
+ * Covers the owner's 2026-09-06 language rule (Thai for everyone, no country guessing, the
+ * visitor's own choice remembered), dictionary structural coverage (every locale implements the
+ * same keys — a missing key would otherwise only surface as `undefined` rendered in the UI), and
+ * the structural guards that keep translated content actually reaching the page.
  */
 
-import { NextRequest } from "next/server";
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import fs, { readFileSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
-import { LOCALES } from "./config";
-import { detectLocale } from "./detect-locale";
+import { DEFAULT_LOCALE, LOCALE_COOKIE, LOCALES } from "./config";
+import { readLocaleCookie, writeLocaleCookie } from "./cookie";
 import { getDictionary } from "./dictionaries";
-import { proxy } from "../proxy";
 
 export interface I18nContractResult {
   name: string;
   passed: boolean;
   detail: string;
+}
+
+/** Every .ts/.tsx file under a folder — used by the "no geo detection anywhere" guard. */
+function sourceFilesUnder(dir: string): string[] {
+  const out: string[] = [];
+  for (const entry of readdirSync(dir)) {
+    const full = path.join(dir, entry);
+    if (statSync(full).isDirectory()) out.push(...sourceFilesUnder(full));
+    else if (/\.tsx?$/.test(entry)) out.push(full);
+  }
+  return out;
 }
 
 function flattenKeys(obj: unknown, prefix = ""): string[] {
@@ -29,35 +39,61 @@ export function runI18nContractTests(): I18nContractResult[] {
   const results: I18nContractResult[] = [];
   const check = (name: string, condition: boolean, detail: string) => results.push({ name, passed: condition, detail });
 
-  // --- locale resolution ---
-  check("Thailand geo resolves to th", detectLocale({ country: "TH", acceptLanguage: null }) === "th", "n/a");
-  check("China geo resolves to zh", detectLocale({ country: "CN", acceptLanguage: null }) === "zh", "n/a");
+  // --- Thai is the default for everyone (owner decision 2026-09-06, BSOT §20) ---
+  check("Thai is the site-wide default locale", DEFAULT_LOCALE === "th", `DEFAULT_LOCALE=${DEFAULT_LOCALE}`);
+  check("all three locales are still offered, so the switcher can reach them", LOCALES.join(",") === "th,en,zh", LOCALES.join(","));
+
+  // The static HTML a crawler receives carries no cookie, so `<html lang>` in the root layout IS
+  // what Google reads. Checked as text because rendering the layout here would need a full React
+  // server render; the attribute is a literal in the file exactly so it can be checked this way.
+  const rootLayout = readFileSync(path.join(process.cwd(), "src", "app", "layout.tsx"), "utf-8");
   check(
-    "an unrelated geo country resolves to en, not the DEFAULT_LOCALE constant by coincidence",
-    detectLocale({ country: "US", acceptLanguage: null }) === "en",
-    "n/a"
+    'the root layout server-renders lang="th" — what a crawler with no cookie sees',
+    /<html\s[^>]*lang="th"/.test(rootLayout),
+    (rootLayout.match(/lang="[a-z-]+"/) ?? ["none found"])[0]
   );
+
+  // Regression guard: the country-guessing path was deleted, not re-pointed at another host's
+  // header (Render sits behind Cloudflare, which offers `cf-ipcountry` — the owner's decision was
+  // explicitly NOT to use it). Anything reintroducing a geo guess should fail here first.
+  // Matches real code — a request header being read for a country, or an import of the deleted
+  // detector — not prose. The files' own comments are free to explain the history (config.ts
+  // does), and a guard that fired on its own explanation would only teach the next session to
+  // delete the explanation.
+  const GEO_CODE = [/headers\s*\.\s*get\(\s*["'`][^"'`]*country/i, /from\s+["'`][^"'`]*detect-locale["'`]/, /geoip/i];
+  const geoOffenders = sourceFilesUnder(path.join(process.cwd(), "src"))
+    .filter((file) => !file.endsWith("i18n-contract-test.ts"))
+    .filter((file) => GEO_CODE.some((re) => re.test(readFileSync(file, "utf-8"))))
+    .map((file) => path.relative(process.cwd(), file));
   check(
-    "no geo signal + Accept-Language starting with th resolves to th (dev fallback path)",
-    detectLocale({ country: null, acceptLanguage: "th-TH,th;q=0.9,en;q=0.8" }) === "th",
-    "n/a"
+    "no country/geo detection anywhere in src — Thai is not conditional on where a visitor is",
+    !fs.existsSync(path.join(process.cwd(), "src", "proxy.ts")) &&
+      !fs.existsSync(path.join(process.cwd(), "src", "i18n", "detect-locale.ts")) &&
+      geoOffenders.length === 0,
+    JSON.stringify(geoOffenders)
   );
-  check(
-    "no geo signal + Accept-Language starting with zh resolves to zh",
-    detectLocale({ country: null, acceptLanguage: "zh-CN,zh;q=0.9" }) === "zh",
-    "n/a"
-  );
-  check(
-    "no geo signal + unsupported Accept-Language (e.g. fr) falls back to DEFAULT_LOCALE",
-    detectLocale({ country: null, acceptLanguage: "fr-FR,fr;q=0.9" }) === "en",
-    "n/a"
-  );
-  check("no signals at all falls back to DEFAULT_LOCALE (en)", detectLocale({ country: null, acceptLanguage: null }) === "en", "n/a");
-  check(
-    "geo takes priority over a conflicting Accept-Language",
-    detectLocale({ country: "TH", acceptLanguage: "zh-CN,zh;q=0.9" }) === "th",
-    "n/a"
-  );
+
+  // --- the visitor's own choice is remembered (the only thing that changes the language) ---
+  // cookie.ts is browser-only by design; a minimal `document` stub is enough to prove the
+  // round-trip its two functions promise — write a choice, read the same choice back.
+  const savedDocument = (globalThis as { document?: unknown }).document;
+  try {
+    (globalThis as { document?: unknown }).document = { cookie: "" };
+    check("no cookie yet → nothing to read, so the visitor gets DEFAULT_LOCALE (th)", readLocaleCookie() === null, "n/a");
+    writeLocaleCookie("en");
+    check("choosing English writes the cookie and reads back as English on the next visit", readLocaleCookie() === "en", String((globalThis as { document?: { cookie?: string } }).document?.cookie));
+    check(
+      "the remembered choice lasts a year and is site-wide (path=/)",
+      /max-age=31536000/.test(String((globalThis as { document?: { cookie?: string } }).document?.cookie)) &&
+        /path=\//.test(String((globalThis as { document?: { cookie?: string } }).document?.cookie)),
+      String((globalThis as { document?: { cookie?: string } }).document?.cookie)
+    );
+    (globalThis as { document?: unknown }).document = { cookie: `${LOCALE_COOKIE}=klingon` };
+    check("a junk cookie value is ignored rather than rendering an unsupported locale", readLocaleCookie() === null, "n/a");
+  } finally {
+    if (savedDocument === undefined) delete (globalThis as { document?: unknown }).document;
+    else (globalThis as { document?: unknown }).document = savedDocument;
+  }
 
   // --- dictionary structural coverage ---
   const [enKeys, thKeys, zhKeys] = LOCALES.map((l) => flattenKeys(getDictionary(l)).sort());
@@ -69,25 +105,17 @@ export function runI18nContractTests(): I18nContractResult[] {
     check(`${l} dictionary has no empty-string values`, values.every((v) => typeof v === "string" && v.length > 0), "n/a");
   }
 
-  // --- middleware precedence: manual/previous choice must never be overwritten ---
-  const noCookieRequest = new NextRequest("http://localhost:3000/products/pod-systems", {
-    headers: { "accept-language": "en", "x-vercel-ip-country": "TH" },
-  });
-  const freshResponse = proxy(noCookieRequest);
+  // The language button is the ONLY way the language changes now, so it has to be on every page.
+  // Header and Footer are both rendered by the root layout — the switcher living in either one
+  // reaches every page; checking both files keeps the guard honest if it moves between them.
+  const switcherHomes = [
+    path.join(process.cwd(), "src", "components", "layout", "Header.tsx"),
+    path.join(process.cwd(), "src", "components", "layout", "Footer.tsx"),
+  ].filter((file) => fs.existsSync(file) && readFileSync(file, "utf-8").includes("LanguageSwitcher"));
   check(
-    "middleware sets the cookie on a genuinely first visit, matching the detected locale",
-    freshResponse.cookies.get("okami24_locale")?.value === "th",
-    JSON.stringify(freshResponse.cookies.get("okami24_locale"))
-  );
-
-  const existingCookieRequest = new NextRequest("http://localhost:3000/products/pod-systems", {
-    headers: { "accept-language": "en", "x-vercel-ip-country": "TH", cookie: "okami24_locale=en" },
-  });
-  const preservedResponse = proxy(existingCookieRequest);
-  check(
-    "middleware never overwrites an existing locale cookie even when geo strongly suggests a different one",
-    preservedResponse.cookies.get("okami24_locale") === undefined,
-    JSON.stringify(preservedResponse.cookies.get("okami24_locale"))
+    "the language switcher is mounted in a layout-level component, so every page can reach it",
+    switcherHomes.length > 0 && readFileSync(path.join(process.cwd(), "src", "app", "layout.tsx"), "utf-8").match(/Header|Footer/) !== null,
+    switcherHomes.map((f) => path.basename(f)).join(",") || "not found in Header.tsx or Footer.tsx"
   );
 
   // --- static regression guard: a Server Component `page.tsx` calling `<PageHeader>` directly

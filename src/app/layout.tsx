@@ -52,11 +52,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    // `lang="en"` matches DEFAULT_LOCALE — LocaleProvider corrects this attribute client-side
-    // once it reads the visitor's actual locale cookie (see LocaleProvider.tsx for why this
-    // stays a Server Component with no cookies()/headers() call).
+    // `lang="th"` matches DEFAULT_LOCALE — Thai is what every visitor and every crawler gets
+    // (owner decision 2026-09-06, BSOT §20; see i18n/config.ts). LocaleProvider corrects this
+    // attribute client-side only for a visitor who has chosen another language and carries the
+    // cookie (see LocaleProvider.tsx for why this stays a Server Component with no
+    // cookies()/headers() call). Search engines send no cookie, so they read the Thai HTML.
     <html
-      lang="en"
+      lang="th"
       className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-surface-0 text-foreground font-body">
