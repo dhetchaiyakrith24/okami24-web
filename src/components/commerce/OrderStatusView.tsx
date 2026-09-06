@@ -136,12 +136,14 @@ export function OrderStatusView({ order, token, payment = null }: { order: Order
                     <p className="text-sm text-foreground-muted">{dict.orderStatus.paymentQrNote}</p>
                     {/* plain <img>: the route handler is per-order and sends no-store, so next/image's
                         optimizer cache must not sit in front of it.
-                        320, not 280: the owner's QR is a full PromptPay slip, so its header/footer eat
-                        over half the frame and the scannable square was only ~130px at 280.
-                        320×434 = the file's real 885×1200 aspect — a square guess made the page jump as
-                        the image finished loading. (both: designer 2026-09-06) */}
+                        320×320: the served file is now the QR square only (500×500). The owner's
+                        original was a full PromptPay slip whose blue header, logo and four text lines
+                        ate over half the frame — and its masked account number (xxx-x-x9240-x)
+                        contradicted the full number in the table above, which made customers hesitate.
+                        Cropped on the owner's instruction 2026-09-06; the untouched slip is kept beside
+                        it as .data/private/promptpay-qr-fullslip.png. */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={qrHref} alt={dict.orderStatus.paymentQrAlt} width={320} height={434} className="w-full max-w-[320px] self-center rounded-lg bg-white p-2" />
+                    <img src={qrHref} alt={dict.orderStatus.paymentQrAlt} width={320} height={320} className="w-full max-w-[320px] self-center rounded-lg bg-white p-2" />
                   </div>
                 )}
                 <p className="text-sm text-foreground">{dict.orderStatus.paymentVerifyNameWarning}</p>
