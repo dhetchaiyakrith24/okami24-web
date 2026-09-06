@@ -19,13 +19,26 @@ services:
     region: singapore
     # `main` is the live branch (owner decision 2026-09-06).
     branch: main
-    # `npm ci` installs exactly what package-lock.json pins. It does NOT compile anything: both
-    # native modules ship prebuilt binaries and pick one at load time — better-sqlite3 carries all
-    # platforms inside the package (N-API, so the same file works across Node versions), and sharp
-    # pulls a per-platform `@img/sharp-linux-x64` package, which package-lock.json does contain even
-    # though the lock was generated on Windows. Verified 2026-09-06 while chasing the exit-139 crash;
-    # an earlier version of this comment claimed a compile step that does not happen.
-    buildCommand: npm ci && npm run build
+    # Four steps. The two in the middle exist because of the exit-139 crash of 2026-09-06 (the
+    # first "add to cart" on the live site killed the process — docs/INCIDENT_2026-09-06_sqlite-segfault.md):
+    #   npm ci                              installs exactly what package-lock.json pins. It compiles
+    #                                       nothing — both native modules ship prebuilt binaries.
+    #   node scripts/build-native-sqlite.js OPT-IN, does nothing unless OKAMI24_SQLITE_FROM_SOURCE=1
+    #                                       is set in the dashboard: compiles better-sqlite3 on this
+    #                                       host and removes the shipped Linux binary. Not the fix
+    #                                       for the 2026-09-06 crash (see below) — kept for the day a
+    #                                       shipped binary genuinely does not fit the host.
+    #   node scripts/check-native-sqlite.js THE GATE. First asks whether this Node's Node-API version
+    #                                       is at least what better-sqlite3 declares, and fails with a
+    #                                       plain-language message if not — that mismatch IS the
+    #                                       2026-09-06 crash, and asking beforehand is the only way to
+    #                                       see it, because loading the addon on the wrong Node kills
+    #                                       the process without a word. Then loads the addon, opens a
+    #                                       database, writes and reads. Any failure fails the deploy.
+    #   npm run build                       the Next.js build.
+    # A failing gate fails the deploy — on purpose. The alternative was learning about it from a
+    # customer.
+    buildCommand: npm ci && node scripts/build-native-sqlite.js && node scripts/check-native-sqlite.js && npm run build
     startCommand: npm start
     healthCheckPath: /
     # Deliberately manual for launch: a push to `main` should not reach customers before someone
@@ -40,6 +53,13 @@ services:
       sizeGB: 1
     envVars:
       # Node 22 LTS. Next 16 requires >= 20.9 (node_modules/next/package.json "engines").
+      #
+      # !! 22.11.0 IS the 2026-09-06 crash. better-sqlite3 13 declares Node-API version 10, which
+      # Node only gained in 22.14.0; on 22.11.0 loading the addon segfaults instead of erroring.
+      # Anything from 22.14.0 up works; 24 LTS is what the shipped Linux binary was built with and
+      # what the dev machine runs. The value is left for the owner to choose — the gate in the
+      # buildCommand refuses to build on a Node that cannot load the addon, so a wrong value fails
+      # the deploy with a message rather than the site.
       - key: NODE_VERSION
         value: 22.11.0
       # Backup file names and log timestamps are written in the server's local time — without
