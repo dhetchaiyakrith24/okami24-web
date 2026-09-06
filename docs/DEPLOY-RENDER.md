@@ -58,22 +58,23 @@ Render จะตัดบัตรทุกเดือนจนกว่าจ�
 > | Branch | `main` |
 > | Region | Singapore |
 > | Runtime / Language | Node |
-> | Build Command | `npm ci && npm run build` |
+> | Build Command | `npm ci && node scripts/build-native-sqlite.js && node scripts/check-native-sqlite.js && npm run build` — ตัวที่สามคือ**ด่านตรวจ**: เช็คก่อนว่า Node รุ่นที่ใช้โหลดตัวจัดการฐานข้อมูลได้ไหม ไม่ได้ = build ล้มพร้อมบอกว่าต้องใช้ Node รุ่นไหน (เหตุการณ์ 2026-09-06 เว็บล่มเพราะ Node 22.11 เก่าเกินไป — ดู `docs/INCIDENT_2026-09-06_sqlite-segfault.md`) **ห้ามตัดออก** · ตัวที่สองเป็นตัวเลือก ปกติไม่ทำอะไร |
 > | Start Command | `npm start` |
 > | Instance Type | Starter ($7) |
 > | Health Check Path | `/` |
 > | Auto-Deploy | **Off** (ปิดไว้ก่อน) |
 >
 > แล้วเพิ่ม **Disk**: Name `okami24-data` · Mount Path `/var/data` · Size `1` GB
-> แล้วเพิ่ม **Environment Variables** 5 ตัว:
+> แล้วเพิ่ม **Environment Variables** 6 ตัว:
 >
 > | Key | Value |
 > |---|---|
-> | `NODE_VERSION` | `22.11.0` |
+> | `NODE_VERSION` | ⚠️ **ห้ามใช้ `22.11.0`** (ค่าเดิมใน `render.yaml` — ทำเว็บล่ม 2026-09-06 เพราะเก่ากว่าที่ตัวจัดการฐานข้อมูลต้องการ) · ใช้ **`24.14.1`** (default ของ Render, รุ่นเดียวกับที่ binary ถูกสร้าง — ทีมแนะนำ) หรือ 22.x ที่ **≥ 22.14.0** · เจ้าของเป็นคนเลือก ดู `docs/INCIDENT_2026-09-06_sqlite-segfault.md` ข้อ 7 · **บริการที่สร้างมือจะอ่านค่าจากหน้านี้ ไม่ใช่จาก render.yaml** — แก้ให้ตรงกันทั้งสองที่ |
 > | `TZ` | `Asia/Bangkok` |
 > | `SITE_URL` | `https://okami24.store` |
 > | `OKAMI24_DATA_DIR` | `/var/data/app-data` |
 > | `OKAMI24_BACKUP_DIR` | `/var/data/backups` |
+> | `NODE_OPTIONS` | `--report-on-fatalerror --report-on-signal --report-directory=/var/data` (ให้ Node เขียนรายงานตอนตายเองลงดิสก์ · ไม่ช่วยกรณี segfault จาก native — ดู `render.yaml`) |
 
 ### ทำไมค่าพวกนี้สำคัญ (อ่านผ่าน ๆ พอ)
 
