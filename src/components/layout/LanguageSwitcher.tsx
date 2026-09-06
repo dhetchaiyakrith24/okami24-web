@@ -10,7 +10,13 @@ import { cn } from "@/lib/utils";
  *  every width (mobile through desktop) so it doesn't need a separate mobile-menu variant.
  *  Click-toggle only (no hover-open/close): a hover-leave handler here would close the menu the
  *  moment the pointer drifts off the small button after clicking, before a selection can be
- *  made — closes instead on an outside click/tap, the standard accessible pattern. */
+ *  made — closes instead on an outside click/tap, the standard accessible pattern.
+ *
+ *  Drawn as a bordered chip in the ember accent rather than a bare grey icon like the search /
+ *  favourites / cart buttons beside it (designer review, 2026-09-06). Since the site now serves
+ *  Thai to everyone and never guesses (BSOT §20), this button is the ONLY way a foreign visitor
+ *  reaches their language — as a fourth grey glyph it read as one more icon and was missable.
+ *  The chip keeps the same footprint, so the mobile header does not get tighter. */
 export function LanguageSwitcher() {
   const { locale, dict, setLocale } = useLocale();
   const [open, setOpen] = useState(false);
@@ -33,10 +39,10 @@ export function LanguageSwitcher() {
         aria-expanded={open}
         aria-haspopup="true"
         aria-label={dict.languageSwitcher.label}
-        className="flex items-center gap-1 rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground"
+        className="flex items-center gap-1 rounded-full border border-ember/40 bg-ember-soft/40 py-1.5 pl-2 pr-2.5 text-ember transition-colors hover:border-ember/70 hover:bg-ember-soft hover:text-ember-strong"
       >
-        <Globe size={19} aria-hidden />
-        <span className="label-mono text-[0.65rem]">{locale.toUpperCase()}</span>
+        <Globe size={17} aria-hidden />
+        <span className="label-mono text-[0.7rem] font-semibold">{locale.toUpperCase()}</span>
       </button>
       {open && (
         <div className="absolute right-0 top-full w-36 rounded-xl border border-surface-border bg-surface-1 p-1.5 shadow-2xl">
