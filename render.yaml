@@ -1,0 +1,54 @@
+# OKami24 — Render deployment blueprint (owner decision 2026-09-06: Render, Singapore).
+#
+# This file is the deploy settings written down, so the dashboard form does not have to be filled
+# in from memory. In Render: New → Blueprint → pick this repo → it reads this file.
+# Step-by-step, in plain Thai, including what to click and what "success" looks like:
+#   docs/DEPLOY-RENDER.md
+#
+# The three things this file exists to get right, because getting them wrong loses orders:
+#   1. ONE instance, never more. The store is a single SQLite file; a second instance would open
+#      its own copy and split the orders (see src/lib/db/client.ts).
+#   2. A persistent disk, with the app's data folder pointed at it. Without the disk, every
+#      redeploy starts from an empty database.
+#   3. Singapore — the customers are in Thailand.
+services:
+  - type: web
+    name: okami24
+    runtime: node
+    plan: starter
+    region: singapore
+    # `main` is the live branch (owner decision 2026-09-06).
+    branch: main
+    # `npm ci` installs exactly what package-lock.json pins, and compiles better-sqlite3 + sharp
+    # for this Linux machine — they are native modules and cannot be copied from a Windows PC.
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    # Deliberately manual for launch: a push to `main` should not reach customers before someone
+    # has looked at it. Turn this on in Settings once the site has been live and stable for a
+    # while — the owner decides, not this file.
+    autoDeploy: false
+    disk:
+      name: okami24-data
+      mountPath: /var/data
+      # The database is measured in kilobytes today; 1 GB is already enormous for it. Render can
+      # grow a disk later but never shrink it, so this starts small on purpose.
+      sizeGB: 1
+    envVars:
+      # Node 22 LTS. Next 16 requires >= 20.9 (node_modules/next/package.json "engines").
+      - key: NODE_VERSION
+        value: 22.11.0
+      # Backup file names and log timestamps are written in the server's local time — without
+      # this they would read 7 hours behind Thai time and be confusing to match against a report.
+      - key: TZ
+        value: Asia/Bangkok
+      # Baked into canonical/sitemap/robots/OpenGraph/JSON-LD. src/lib/seo.ts refuses to build in
+      # production without it, on purpose.
+      - key: SITE_URL
+        value: https://okami24.store
+      # The two paths that MUST live on the disk above: the SQLite store + the private PromptPay
+      # QR folder, and the automatic backups. See src/lib/paths.ts.
+      - key: OKAMI24_DATA_DIR
+        value: /var/data/app-data
+      - key: OKAMI24_BACKUP_DIR
+        value: /var/data/backups

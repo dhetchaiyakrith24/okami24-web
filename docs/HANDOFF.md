@@ -9,6 +9,21 @@
 
 ---
 
+## อัปเดตหลัง v8 — เซสชัน "โฮสต์ + ภาษา" (2026-09-06 เย็น) · **[ตรวจแล้วจริง]**
+
+เอกสารนี้ยังเป็น v8 ทั้งฉบับ ส่วนนี้คือสิ่งที่เปลี่ยนไปหลังจากนั้น อ่านตรงนี้ก่อน:
+
+1. **เจ้าของเลือกโฮสต์แล้ว: Render สิงคโปร์** (~$7.25/เดือน) หลังผมเทียบ Railway / Render / VPS Vultr ตามเกณฑ์ของเจ้าของ · **ยังไม่ได้สมัคร ยังไม่ออนไลน์** — เหลือเจ้าของสมัคร+ผูกบัตร+ชี้ DNS ทำด้วยกัน 30 นาที · ขั้นตอนทีละข้ออยู่ที่ **`docs/DEPLOY-RENDER.md`** (ไฟล์ใหม่) · ค่าตั้งทั้งหมดอยู่ใน **`render.yaml`** (ไฟล์ใหม่)
+2. **โดเมนซื้อแล้ว: `okami24.store`** จดที่ Cloudflare · `SITE_URL` ทุกที่ใช้ค่านี้แล้ว (เดิม `okami24.co` เป็นค่าชั่วคราว) · **ยังไม่ได้ชี้ DNS** เพราะยังไม่มีเซิร์ฟเวอร์ให้ชี้
+3. **ภาษาไทยเป็นค่าเริ่มต้นของทุกคนแล้ว** (คำสั่งเจ้าของ · BSOT §20 เป็นกฎถาวร) — `DEFAULT_LOCALE="th"` + `<html lang="th">` · **ลบโค้ดเดาประเทศทิ้งทั้งหมด** (`src/proxy.ts` และ `src/i18n/detect-locale.ts` ไม่มีแล้ว — อย่าไปตามหา) · ปุ่มสลับภาษาทำเป็น chip สีส้มให้เห็นชัด (designer ตีกลับรอบแรกว่าจางเกินไป) · จำภาษาที่เลือกไว้ 1 ปีเหมือนเดิม
+4. **ข้อมูลที่ไม่อยู่ใน git ตามดิสก์ถาวรได้แล้ว** — `src/lib/paths.ts` (ไฟล์ใหม่) เป็นจุดเดียวที่ตัดสินว่าฐานข้อมูล/ไฟล์สำรอง/รูป QR อยู่ที่ไหน ควบคุมด้วย `OKAMI24_DATA_DIR` · ไม่ตั้ง = `<cwd>/.data` เหมือนเดิมเป๊ะ
+5. **วิธีเอารูป QR ขึ้นโฮสต์** — `npm run qr:upload-text` แปลงรูปเป็นข้อความ แล้วเจ้าของวางในแดชบอร์ด Render ครั้งเดียว (`OKAMI24_PROMPTPAY_QR_BASE64`) · เซิร์ฟเวอร์เขียนลงดิสก์ให้ตอนเปิด ไม่ทับของเดิม ไม่ใช่ PNG ไม่เขียน
+6. **branch `main` เป็นตัวจริงแล้ว** (เจ้าของสั่ง) — รวมจาก `checkpoint/phase-3.3.3` แบบ fast-forward · Render จะ deploy จาก `main`
+7. **LAUNCH_AUDIT รอบ 10** — แยกข้อ 7 (โฮสต์) กับ 7b (โดเมน) เป็นคนละบรรทัด · ข้อ 5 (ข้อมูลทดสอบ) ปิดเคสแล้วเพราะฐานข้อมูลไม่ขึ้น git · ข้อ 19 (ภาษา/SEO) เหลือแค่ hreflang
+8. **ยังไม่ได้เริ่มงานรูป 12 ตัว** — ข้อ 7 ใน "ข้อขัดแย้ง" ข้างล่างยังจริงอยู่ทุกตัวอักษร
+
+---
+
 ## ข้อขัดแย้งที่พบ
 
 เทียบ HANDOFF v7 กับของจริง — ทุกข้อ **[ตรวจแล้วจริง]**:
@@ -253,7 +268,7 @@ Branch: checkpoint/phase-3.3.3 · HEAD = <ดู git log> = origin · branch อ
 ห้ามรื้อ: นโยบายเคลม /warranty (7 อาการมาจากเจ้าของ ห้ามเพิ่ม/ทำให้อ่อนลง) · สวิตช์ OTP src/lib/commerce/otp-mode.ts และโค้ดตรวจ OTP ใน auth.ts (คือทางกลับ) · src/data/payment.ts ต้อง server-only เลขบัญชีห้ามอยู่ในหน้าสาธารณะ/dictionary · เส้นทาง /orders/<n>/payment-qr ต้องตรวจสิทธิ์ · ไฟล์ QR ห้ามเข้า public/ · ห้ามลบ promptpay-qr-fullslip.png · กฎ BSOT §8/§20/§21 · IMAGE_SPEC หมวด 0 · โครง 3 ภาษา src/i18n/service-pages (แก้ต้องครบ 3 ภาษา) · publication-approvals.ts + legacy-price-approvals.ts · sold-out.ts · ชื่อ id/name สี-รสเดิม · "จ่ายแล้ว≠ยืนยัน" · หน้าแรก 3.3.4 · src/lib/backup
 
 Git: revert ไม่ reset · commit แยกชนิด docs/scripts/code/data/test · push เมื่อจบก้อน · ห้าม force push · ห้าม deploy · ลงท้าย commit: Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> · git commit ใช้ -F <ไฟล์>
-Verify: npx tsc --noEmit · npm run verify:commerce · $env:SITE_URL='https://okami24.co'; npm run verify:catalog -- --full (ต้องผ่านก่อน commit) · npx tsx scripts/count-storefront.ts · npm run audit:gaps (เขียนผลลง docs/IMAGE_AUDIT.md — เจ้าของสั่งให้รันตอนจบทุกก้อนรูป) · checker ก่อนพูดว่าเสร็จ · designer ก่อน+หลังงาน UI
+Verify: npx tsc --noEmit · npm run verify:commerce · $env:SITE_URL='https://okami24.store'; npm run verify:catalog -- --full (ต้องผ่านก่อน commit) · npx tsx scripts/count-storefront.ts · npm run audit:gaps (เขียนผลลง docs/IMAGE_AUDIT.md — เจ้าของสั่งให้รันตอนจบทุกก้อนรูป) · checker ก่อนพูดว่าเสร็จ · designer ก่อน+หลังงาน UI
 เครื่องมือ: Browser pane ใช้กับเว็บนี้ไม่ได้ → node scripts/shot.js out.png <url> --width 390 · ภาษา: LOCALE=en node _incoming/qc/shot-locale.js … · ทำรูป: npx tsx scripts/process-images.ts --dry-run / --only <slug> (แม็ป scripts/process-images.map.json รองรับ crop, canvas, minLong, keepLargestComponent, alphaCut) · วัดรูป: _incoming/qc/measure-bbox.js, measure-white-bbox.js, mean-colour.js · เปลี่ยนรูปแล้วลบ .next/cache/images + .next/dev/cache/images ก่อนแคป · ลบเส้นทางใน src/app แล้ว tsc ฟ้อง .next/types → ลบ .next/types แล้วโหลดหน้าใหม่ · node -e ที่มี backtick โดน bash กลืน → ใช้ node --input-type=module -e '...' · เอเจนต์ล้มเพราะโควตา เปิดใหม่ระบุ model · dev server ค้างแต่จอง port → taskkill //PID <pid> //F (ล็อกที่ .next/dev/lock) · ไฟล์ช่วยงานเก็บใน scripts/ หรือ _incoming/ · ปิดแชท Claude เก่าทุกหน้าต่างก่อนเริ่ม
 
 สิ่งแรกที่ต้องทำ: รัน git status + git log -5 เทียบกับ docs/HANDOFF.md ถ้าไม่ตรงเชื่อ repo → อ่าน BSOT §21 + IMAGE_SPEC หมวด 0 → เริ่มงานรูปก้อนที่ 1 ได้เลย ไม่ต้องถาม · ห้ามถามเรื่องแอดมิน/OTP

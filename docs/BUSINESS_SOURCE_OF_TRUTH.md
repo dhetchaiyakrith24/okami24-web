@@ -458,19 +458,51 @@ Explicit unresolved items — **never invent answers for these**:
 - SMS provider — still unchosen, and no longer blocking: OTP is switched off for launch (§9)
 - Final Product Master schema
 - Exact warehouse integration
-- Final production domain
 - Complete product/variant dataset
+
+**Resolved on 2026-09-06 — no longer unknowns:**
+
+- **Domain: `okami24.store`** — bought by the owner, registered and managed at Cloudflare (the
+  same account as `okami-pod.com`). This is the production domain; `SITE_URL` is set to
+  `https://okami24.store` everywhere. The earlier `https://okami24.co` in verify scripts was a
+  placeholder and has been replaced.
+- **Hosting: Render, Singapore region**, one Starter instance with a persistent disk, chosen by
+  the owner after comparing Railway, Render and a Vultr VPS against his own criteria (easy for a
+  non-coder · safe long-term with nobody administering a server · fast for Thai customers · good
+  for SEO). Not yet signed up for at the time of writing — the account, the card and the DNS are
+  the owner's steps, written out in `docs/DEPLOY-RENDER.md`.
 
 ---
 
 ## 20. Website Language (owner rule, 2026-09-06)
 
-Recorded on the owner's instruction. **Nothing has been implemented from this section yet** — it
-is the brief for the "Thai language pass" item in `docs/LAUNCH_AUDIT.md`.
+Recorded on the owner's instruction. The **default-language rule below is implemented and
+verified**; the wording rules under it are still the brief for the "Thai language pass" item in
+`docs/LAUNCH_AUDIT.md`.
 
-- **Default language will become Thai.** Today the site server-renders in English
-  (`DEFAULT_LOCALE` in `src/i18n/config.ts`) and switches to the visitor's cookie language in the
-  browser. The owner wants Thai as the default. This is a site-wide change, not a per-page one.
+### The permanent rule: Thai is the site's default (owner decision, 2026-09-06)
+
+**Thai is what every visitor gets, everywhere, on every page, on a first visit — no exceptions and
+no conditions.** This is a standing rule, not a phase: a future session may not make the language
+depend on the visitor again.
+
+- **The site never guesses.** It does not read the visitor's country (no `cf-ipcountry`, no
+  `x-vercel-ip-country`, no geo-IP service) and does not read the browser's `Accept-Language`.
+  The guessing code — `src/proxy.ts` and `src/i18n/detect-locale.ts` — was **deleted** rather than
+  pointed at the new host's header, on the owner's instruction: "ยิ่งน้อยยิ่งพลาดยาก". A contract
+  test in `src/i18n/i18n-contract-test.ts` fails the build if geo detection reappears.
+- **The language button stays visible** on every page (header, all widths) so foreign visitors can
+  switch themselves. Thai customers are the business; other languages are a courtesy.
+- **A visitor's own choice is remembered** for a year, site-wide, in the `okami24_locale` cookie,
+  and a redeploy never resets it.
+- **Search engines read the site in Thai**: the server renders `<html lang="th">` and Thai text
+  into the static HTML, and a crawler sends no cookie. Verified 2026-09-06 by fetching `/`,
+  `/products` and `/warranty` as Googlebot — `lang="th"` on all three, and 1,611 / 3,219 / 3,414
+  Thai characters in the HTML respectively (evidence in `_incoming/qc/2026-09-06-lang/`).
+- Implemented in `src/i18n/config.ts` (`DEFAULT_LOCALE = "th"`) and `src/app/layout.tsx`.
+
+### How the Thai itself must read (still the brief for the language pass)
+
 - **Never translate into Thai:**
   - **Category names** — every category, e.g. Pod System, Disposable Pod, Pod Kit, Coils &
     Accessories, HNB Devices, HNB Sticks, E-Liquid.
