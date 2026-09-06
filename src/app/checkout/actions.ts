@@ -1,7 +1,8 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { requestOtp, verifyOtp } from "@/lib/commerce/auth";
+import { requestOtp, signInWithoutOtp, verifyOtp } from "@/lib/commerce/auth";
+import { OTP_VERIFICATION_ENABLED } from "@/lib/commerce/otp-mode";
 import { addAddress, type AddressInput } from "@/lib/commerce/addresses";
 import { placeOrder, submitPaymentClaim } from "@/lib/commerce/orders";
 
@@ -28,6 +29,15 @@ export async function otpStepAction(prev: OtpFormState, formData: FormData): Pro
 
   if (intent === "request") {
     const phone = String(formData.get("phone") ?? "");
+
+    // Verification switched off (owner 2026-09-06, BSOT §9): the code step would be a dead end
+    // with no SMS provider, so the phone number alone opens the session and checkout continues.
+    if (!OTP_VERIFICATION_ENABLED) {
+      const signIn = await signInWithoutOtp(phone);
+      if (!signIn.ok) return { step: "phone", phone, errorKey: "errorInvalidPhone" };
+      redirect("/checkout/address");
+    }
+
     const result = await requestOtp(phone);
     if (!result.ok) {
       return { step: "phone", phone, errorKey: result.error === "invalid-phone" ? "errorInvalidPhone" : "errorRateLimited" };

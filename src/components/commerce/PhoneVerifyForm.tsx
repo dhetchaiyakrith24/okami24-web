@@ -18,17 +18,20 @@ function errorText(dict: Dictionary, key: string | null): string | null {
   return dict.checkout[key as keyof Dictionary["checkout"]] ?? null;
 }
 
-export function PhoneVerifyForm() {
+/** `otpEnabled` comes from the server page — src/lib/commerce/otp-mode.ts is server-only, so the
+ *  switch is read there and passed down rather than imported into this client component. */
+export function PhoneVerifyForm({ otpEnabled }: { otpEnabled: boolean }) {
   const { dict } = useLocale();
   const [state, formAction, pending] = useActionState(otpStepAction, initialOtpState);
 
   return (
     <>
-      <PageHeader eyebrow={dict.checkout.phoneEyebrow} title={dict.checkout.phoneTitle} />
+      <PageHeader eyebrow={dict.checkout.phoneEyebrow} title={otpEnabled ? dict.checkout.phoneTitle : dict.checkout.phoneTitleNoOtp} />
       <Container className="flex max-w-md flex-col gap-4 py-12 lg:py-16">
         {state.step === "phone" ? (
           <form action={formAction} className="flex flex-col gap-3">
             <input type="hidden" name="intent" value="request" />
+            {!otpEnabled && <p className="text-sm leading-relaxed text-foreground-muted">{dict.checkout.noOtpNote}</p>}
             <label className="flex flex-col gap-1.5 text-sm text-foreground-muted" htmlFor="phone">
               {dict.checkout.phoneLabel}
               <input
@@ -44,7 +47,7 @@ export function PhoneVerifyForm() {
             </label>
             {errorText(dict, state.errorKey) && <p className="text-sm text-ember">{errorText(dict, state.errorKey)}</p>}
             <Button type="submit" className="mt-2 w-full justify-center">
-              {pending ? "…" : dict.checkout.sendCodeCta}
+              {pending ? "…" : otpEnabled ? dict.checkout.sendCodeCta : dict.checkout.continueCta}
             </Button>
           </form>
         ) : (

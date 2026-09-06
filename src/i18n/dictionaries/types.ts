@@ -326,6 +326,11 @@ export interface Dictionary {
     phoneLabel: string;
     phonePlaceholder: string;
     sendCodeCta: string;
+    /** Shown instead of the code step while OTP verification is switched off (owner 2026-09-06,
+     *  see src/lib/commerce/otp-mode.ts). */
+    continueCta: string;
+    phoneTitleNoOtp: string;
+    noOtpNote: string;
     codeLabel: string;
     codePlaceholder: string;
     verifyCta: string;

@@ -4,6 +4,7 @@ import { getDb } from "@/lib/db/client";
 import { normalizePhone } from "./phone";
 import { otpSender } from "@/lib/otp/sender";
 import { createSession } from "./session";
+import { OTP_VERIFICATION_ENABLED } from "./otp-mode";
 
 const OTP_TTL_MS = 5 * 60 * 1000;
 const MAX_VERIFY_ATTEMPTS = 5;
@@ -32,6 +33,9 @@ export type RequestOtpResult = { ok: true } | { ok: false; error: "invalid-phone
 export async function requestOtp(rawPhone: string): Promise<RequestOtpResult> {
   const phone = normalizePhone(rawPhone);
   if (!phone) return { ok: false, error: "invalid-phone" };
+  // Verification is switched off (owner 2026-09-06) — issuing a code nobody can receive would only
+  // fill the challenge table and hand the customer a dead end. Callers use `signInWithoutOtp`.
+  if (!OTP_VERIFICATION_ENABLED) return { ok: true };
 
   const db = getDb();
   const recent = db
@@ -62,6 +66,12 @@ export type VerifyOtpResult =
 export async function verifyOtp(rawPhone: string, code: string): Promise<VerifyOtpResult> {
   const phone = normalizePhone(rawPhone);
   if (!phone) return { ok: false, error: "invalid-phone" };
+  // Nothing was ever issued while verification is off, so an old bookmarked code step must not be
+  // able to sit here failing forever — treat it as the same "sign in by phone" path.
+  if (!OTP_VERIFICATION_ENABLED) {
+    const result = await signInWithoutOtp(rawPhone);
+    return result.ok ? { ok: true } : { ok: false, error: "invalid-phone" };
+  }
 
   const db = getDb();
   const challenge = db
@@ -82,6 +92,30 @@ export async function verifyOtp(rawPhone: string, code: string): Promise<VerifyO
 
   db.prepare("UPDATE otp_challenges SET consumed_at = datetime('now') WHERE id = ?").run(challenge.id);
 
+  let customer = db.prepare("SELECT id FROM customers WHERE phone = ?").get(phone) as { id: number } | undefined;
+  if (!customer) {
+    const result = db.prepare("INSERT INTO customers (phone) VALUES (?)").run(phone);
+    customer = { id: Number(result.lastInsertRowid) };
+  }
+
+  await createSession(customer.id);
+  return { ok: true };
+}
+
+export type SignInWithoutOtpResult = { ok: true } | { ok: false; error: "invalid-phone" | "otp-enabled" };
+
+/**
+ * Phone-only sign-in used while `OTP_VERIFICATION_ENABLED` is false (owner 2026-09-06). Same
+ * find-or-create-customer + open-session tail as `verifyOtp`, minus the code check — deliberately
+ * refuses to run when verification is switched back on, so this can never become a silent bypass.
+ */
+export async function signInWithoutOtp(rawPhone: string): Promise<SignInWithoutOtpResult> {
+  if (OTP_VERIFICATION_ENABLED) return { ok: false, error: "otp-enabled" };
+
+  const phone = normalizePhone(rawPhone);
+  if (!phone) return { ok: false, error: "invalid-phone" };
+
+  const db = getDb();
   let customer = db.prepare("SELECT id FROM customers WHERE phone = ?").get(phone) as { id: number } | undefined;
   if (!customer) {
     const result = db.prepare("INSERT INTO customers (phone) VALUES (?)").run(phone);
