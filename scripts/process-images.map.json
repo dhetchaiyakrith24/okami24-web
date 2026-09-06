@@ -640,5 +640,40 @@
     "keepLargestComponent": true,
     "note": "dual-flavour pair #16 (cool-mint-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
     "minLong": 734
-  }
+  },
+  {
+    "source": "_incoming/argus-g4/raw/voopoo-Sliver-9.jpg",
+    "slug": "argus-g4",
+    "role": "card",
+    "replaces": "/assets/products/argus-g4/card.webp",
+    "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 },
+    "note": "LAUNCH_AUDIT 11 (8) — official shop.voopoo.com gallery re-fetched at 2533px (was 900px → device 519px). Each gallery image is box + a standalone device on the right; the crop keeps only the device column (white gap between box and device = cols 1575–1745). Orange stays the card, matching the hero. See _incoming/argus-g4/SOURCE.md"
+  },
+  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-9.jpg", "slug": "argus-g4", "role": "variant", "id": "orange", "replaces": "/assets/products/argus-g4/card.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 }, "note": "orange also written as its own variant file so all 8 colours share one canvas (whole-set rule)" },
+  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-11.jpg", "slug": "argus-g4", "role": "variant", "id": "black", "replaces": "/assets/products/argus-g4/variants/black.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 } },
+  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-10.jpg", "slug": "argus-g4", "role": "variant", "id": "purple", "replaces": "/assets/products/argus-g4/variants/purple.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 } },
+  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-12.jpg", "slug": "argus-g4", "role": "variant", "id": "silver", "replaces": "/assets/products/argus-g4/variants/silver.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 } },
+  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-7.jpg", "slug": "argus-g4", "role": "variant", "id": "blue", "replaces": "/assets/products/argus-g4/variants/blue.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 } },
+  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-8.jpg", "slug": "argus-g4", "role": "variant", "id": "gray", "replaces": "/assets/products/argus-g4/variants/gray.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 } },
+  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-6.jpg", "slug": "argus-g4", "role": "variant", "id": "brown", "replaces": "/assets/products/argus-g4/variants/brown.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 } },
+  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-9-1.jpg", "slug": "argus-g4", "role": "variant", "id": "green", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 }, "note": "NEW colour 2026-09-06 — VOOPOO's own shop now lists 8 colours incl. Green (variant options + own photo); owner rule: show every colour the maker offers" },
+  {
+    "source": "_incoming/relx-smash-go-12k/raw/grape.jpg",
+    "slug": "relx-smash-go-12k",
+    "role": "card",
+    "replaces": "/assets/products/relx-smash-go-12k/card.webp",
+    "minLong": 700,
+    "canvas": 860,
+    "note": "LAUNCH_AUDIT 11 (9) — official relxnow.com per-flavour photos re-fetched at native 1224px (device ≈724px; the old files were 712px cut from the same set with JPEG artefacts). 724 < 800 but the owner lifted the 800 floor on 2026-09-06: use the largest original that exists, no upscaling. canvas 860 keeps the device at the standard 84% without upscaling (designer 2026-09-06: at 1000 it rendered ~20% smaller than every other card). Grape stays the card. See _incoming/relx-smash-go-12k/SOURCE.md"
+  },
+  { "source": "_incoming/relx-smash-go-12k/raw/apple.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "apple", "replaces": "/assets/products/relx-smash-go-12k/variants/apple.webp", "minLong": 700, "canvas": 860 },
+  { "source": "_incoming/relx-smash-go-12k/raw/cola.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "cola", "replaces": "/assets/products/relx-smash-go-12k/variants/cola.webp", "minLong": 700, "canvas": 860 },
+  { "source": "_incoming/relx-smash-go-12k/raw/double-mint.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "double-mint", "replaces": "/assets/products/relx-smash-go-12k/variants/double-mint.webp", "minLong": 700, "canvas": 860 },
+  { "source": "_incoming/relx-smash-go-12k/raw/grape.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "grape", "replaces": "/assets/products/relx-smash-go-12k/variants/grape.webp", "minLong": 700, "canvas": 860 },
+  { "source": "_incoming/relx-smash-go-12k/raw/grape-lychee.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "grape-lychee", "replaces": "/assets/products/relx-smash-go-12k/variants/grape-lychee.webp", "minLong": 700, "canvas": 860 },
+  { "source": "_incoming/relx-smash-go-12k/raw/green-mango.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "green-mango", "replaces": "/assets/products/relx-smash-go-12k/variants/green-mango.webp", "minLong": 700, "canvas": 860 },
+  { "source": "_incoming/relx-smash-go-12k/raw/mixberry.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "mixberry", "replaces": "/assets/products/relx-smash-go-12k/variants/mixberry.webp", "minLong": 700, "canvas": 860 },
+  { "source": "_incoming/relx-smash-go-12k/raw/passion-fruit.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "passion-fruit", "replaces": "/assets/products/relx-smash-go-12k/variants/passion-fruit.webp", "minLong": 700, "canvas": 860 },
+  { "source": "_incoming/relx-smash-go-12k/raw/peach-strawberry.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "peach-strawberry", "replaces": "/assets/products/relx-smash-go-12k/variants/peach-strawberry.webp", "minLong": 700, "canvas": 860 },
+  { "source": "_incoming/relx-smash-go-12k/raw/watermelon.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "watermelon", "replaces": "/assets/products/relx-smash-go-12k/variants/watermelon.webp", "minLong": 700, "canvas": 860 }
 ]

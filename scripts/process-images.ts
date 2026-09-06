@@ -63,6 +63,11 @@ interface MapEntry {
   /** owner-approved exception to MIN_SOURCE_LONG for this one file (e.g. 796 — "รับขนาด 796–800px", 2026-09-04).
    *  Must be written in the map on purpose; there is no global override. */
   minLong?: number;
+  /** smaller output canvas for this file (px, ≤ the role default). Owner rule 2026-09-06: when the
+   *  largest real original is below the 800 floor, keep the product at the standard 84% of the
+   *  canvas by shrinking the canvas instead of upscaling the pixels (e.g. 722px device → 860 canvas).
+   *  The storefront fits images to their box, so the card renders the same size as every other. */
+  canvas?: number;
   note?: string;
 }
 
@@ -207,7 +212,7 @@ async function processEntry(e: MapEntry): Promise<Decision> {
     if (!FORCE && existingLong !== null && sourceLong <= existingLong) return { ...d, action: "kept-existing", reason: `existing ${rel(compareFile)} has product long side ${existingLong}px ≥ new ${sourceLong}px` };
     if (FORCE && existingLong !== null && sourceLong <= existingLong) d.reason = `--force: re-processed over existing ${existingLong}px`; }
 
-  const canvasSize = CANVAS[e.role]; const boxPx = Math.round(canvasSize * BOX_RATIO);
+  const canvasSize = e.canvas ? Math.min(e.canvas, CANVAS[e.role]) : CANVAS[e.role]; d.canvas = canvasSize; const boxPx = Math.round(canvasSize * BOX_RATIO);
   const scale = Math.min(boxPx / sourceLong, MAX_UPSCALE); d.scale = Math.round(scale * 1000) / 1000;
   const cropped = await fromRaw(raw).extract(box).png().toBuffer();
   const w = Math.max(1, Math.round(box.width * scale)), h = Math.max(1, Math.round(box.height * scale));
