@@ -17,7 +17,8 @@
  * SIGSEGV instead of a message. Compiling the addon from source does not help: the compiled file
  * declares the same version 10 and dies the same way (#1514 confirms). The fix is a Node that speaks
  * Node-API 10 — 22.14 or later, or 24 LTS, which is the version the shipped Linux binary was built
- * with. Which one is the owner's call, in render.yaml.
+ * with. The owner chose 24.14.1 on 2026-09-06; render.yaml carries it, and the service is
+ * Blueprint-managed, so that file is the only place the value counts.
  *
  * So the FIRST check here is the one that would have named this in one line: is this Node's
  * Node-API version at least what the package asks for? It is answered before anything native is
@@ -55,14 +56,16 @@ const gyp = fs.readFileSync(path.join(pkgDir, "binding.gyp"), "utf8");
 const declared = Number((gyp.match(/NAPI_VERSION=(\d+)/) || [])[1]);
 const supported = Number(process.versions.napi);
 if (declared && supported && supported < declared) {
-  say(`[native-check] !! Node รุ่นนี้ (${process.version}) เก่าเกินไปสำหรับตัวจัดการฐานข้อมูล — ต้องเปลี่ยนค่า NODE_VERSION เป็น 24.14.1 (หรือ 22.x ที่ ≥ 22.14.0) ทั้งใน render.yaml และในหน้า Environment ของ Render แล้วกด Manual Deploy ใหม่ · build นี้หยุดไว้ก่อน เว็บจะไม่ถูกแทนที่`);
+  say(`[native-check] !! Node รุ่นนี้ (${process.version}) เก่าเกินไปสำหรับตัวจัดการฐานข้อมูล — ต้องเปลี่ยนค่า NODE_VERSION ใน render.yaml เป็น 24.14.1 (ห้ามต่ำกว่า 22.14.0) → merge main → กด Manual Deploy ใหม่ · บริการนี้เป็น Blueprint managed ค่าในหน้า Environment จะถูกทับ แก้ที่ไฟล์เท่านั้น · build นี้หยุดไว้ก่อน เว็บจะไม่ถูกแทนที่`);
   fail(
     `better-sqlite3 ${pkgVersion} needs Node-API version ${declared}, but Node ${process.version} only speaks version ${supported}. ` +
       `Loading the addon on this Node crashes the process (SIGSEGV) instead of raising an error — see docs/INCIDENT_2026-09-06_sqlite-segfault.md. ` +
-      `Fix: set NODE_VERSION to a Node that has Node-API ${declared} (22.14.0 or later, or 24 LTS) — in render.yaml AND in the service's Environment tab, whichever the service reads. Compiling from source will not help; the compiled file declares the same version.`
+      `Fix: set NODE_VERSION in render.yaml to a Node that has Node-API ${declared} (24.14.1; never below 22.14.0), merge main, Manual Deploy. The service is Blueprint-managed — dashboard values are overwritten, only the file counts. Compiling from source will not help; the compiled file declares the same version.`
   );
 }
-say(`[native-check] Node-API ${supported} ≥ ${declared || "?"} required — this Node can load the addon`);
+// Owner's instruction 2026-09-06: the measured value goes into every build log, on its own line, so
+// that "the version went up" is something you can read rather than something you assume.
+say(`[native-check] Node-API version on this host: ${supported} (better-sqlite3 needs ≥ ${declared || "?"}) — this Node can load the addon`);
 
 // ---- 2. Only when the source build was requested: it must have produced a binary that wins ----
 const fromSource = process.env.OKAMI24_SQLITE_FROM_SOURCE === "1";
