@@ -312,6 +312,8 @@ export interface Dictionary {
    *  product; see PilotProductDetail.tsx. */
   productActions: {
     addToCartCta: string;
+    /** Small line under the cart button — LINE is the backup order channel (owner 2026-09-06, BSOT §8). */
+    orderOnLineNote: string;
     outOfStockLabel: string;
     outOfStockCta: string;
   };
@@ -365,7 +367,19 @@ export interface Dictionary {
     shipToTitle: string;
     totalsTitle: string;
     paymentInstructionsTitle: string;
-    bankDetailsTbdNote: string;
+    /** Bank-details block (owner 2026-09-06). The account values themselves are NOT in the
+     *  dictionary — they come from the server-only src/data/payment.ts via page props. */
+    paymentTransferTitle: string;
+    paymentBankLabel: string;
+    paymentAccountNameLabel: string;
+    paymentAccountNumberLabel: string;
+    paymentQrNote: string;
+    paymentQrAlt: string;
+    paymentVerifyNameWarning: string;
+    paymentAfterTransferNote: string;
+    paymentNoRefundWarning: string;
+    paymentCopyCta: string;
+    paymentCopiedLabel: string;
     referenceNoteLabel: string;
     submitPaymentCta: string;
     paymentSubmittedNote: string;

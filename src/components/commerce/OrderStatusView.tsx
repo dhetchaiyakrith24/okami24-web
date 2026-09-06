@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -8,13 +9,60 @@ import { submitPaymentAction } from "@/app/checkout/actions";
 import { orderStatusLabel } from "@/lib/commerce/order-status";
 import { CONTACT } from "@/data/contact";
 import type { OrderDetail } from "@/lib/commerce/orders";
+import type { PaymentAccountView } from "@/data/payment";
 
 function formatTHB(value: number): string {
   return `฿${value.toLocaleString("th-TH")}`;
 }
 
-export function OrderStatusView({ order, token }: { order: OrderDetail; token: string | null }) {
+/** Turns the "@okm24" inside a dictionary sentence into the LINE link (normal weight, not a warning colour). */
+function withLineLink(sentence: string) {
+  const parts = sentence.split(CONTACT.lineId);
+  if (parts.length < 2) return sentence;
+  return parts.flatMap((part, i) =>
+    i === 0
+      ? [part]
+      : [
+          <a key={i} href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground underline-offset-2 hover:underline">
+            {CONTACT.lineId}
+          </a>,
+          part,
+        ],
+  );
+}
+
+/** Copy-to-clipboard for the account number — a 10-digit number is hard to long-press-select on a phone
+ *  (designer 2026-09-06). Copies digits only, so it pastes cleanly into a banking app. */
+function CopyButton({ value, label, doneLabel }: { value: string; label: string; doneLabel: string }) {
+  const [done, setDone] = useState(false);
+  return (
+    <button
+      type="button"
+      onClick={async () => {
+        try {
+          await navigator.clipboard.writeText(value);
+          setDone(true);
+          setTimeout(() => setDone(false), 2000);
+        } catch {
+          /* clipboard blocked (http, old browser) — the number is still readable on screen */
+        }
+      }}
+      className="rounded-full border border-surface-border px-3 py-1 text-xs font-semibold text-foreground-muted transition-colors hover:border-foreground-dim hover:text-foreground"
+    >
+      {done ? doneLabel : label}
+    </button>
+  );
+}
+
+/**
+ * `payment` is resolved by the server page from src/data/payment.ts (server-only) and is only
+ * non-null for orders still awaiting payment — owner rule 2026-09-06: bank details and the QR
+ * appear at the last step of a real order, never on a public page. The QR itself is fetched from
+ * a route handler that re-checks the viewer's access to this order.
+ */
+export function OrderStatusView({ order, token, payment = null }: { order: OrderDetail; token: string | null; payment?: PaymentAccountView | null }) {
   const { dict, locale } = useLocale();
+  const qrHref = payment?.hasQr ? `/orders/${encodeURIComponent(order.orderNumber)}/payment-qr${token ? `?token=${encodeURIComponent(token)}` : ""}` : null;
 
   return (
     <>
@@ -69,10 +117,36 @@ export function OrderStatusView({ order, token }: { order: OrderDetail; token: s
         {order.status === "pending_payment" && (
           <div className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4">
             <span className="label-mono text-xs text-foreground-dim">{dict.orderStatus.paymentInstructionsTitle}</span>
-            <p className="text-sm text-foreground-muted">{dict.orderStatus.bankDetailsTbdNote}</p>
-            <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-red underline">
-              {CONTACT.lineId}
-            </a>
+            {payment && (
+              <div className="flex flex-col gap-3">
+                <p className="text-sm font-semibold text-foreground">{dict.orderStatus.paymentTransferTitle}</p>
+                <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 rounded-lg border border-surface-border-soft bg-surface-2 p-3 text-sm">
+                  <dt className="text-foreground-muted">{dict.orderStatus.paymentBankLabel}</dt>
+                  <dd className="text-foreground">{payment.bankName[locale]}</dd>
+                  <dt className="text-foreground-muted">{dict.orderStatus.paymentAccountNameLabel}</dt>
+                  <dd className="font-medium text-foreground">{payment.accountName}</dd>
+                  <dt className="text-foreground-muted">{dict.orderStatus.paymentAccountNumberLabel}</dt>
+                  <dd className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <span className="font-display text-2xl font-semibold tracking-wide text-foreground">{payment.accountNumber}</span>
+                    <CopyButton value={payment.accountNumber.replace(/-/g, "")} label={dict.orderStatus.paymentCopyCta} doneLabel={dict.orderStatus.paymentCopiedLabel} />
+                  </dd>
+                </dl>
+                {qrHref && (
+                  <div className="flex flex-col gap-2">
+                    <p className="text-sm text-foreground-muted">{dict.orderStatus.paymentQrNote}</p>
+                    {/* plain <img>: the route handler is per-order and sends no-store, so next/image's optimizer cache must not sit in front of it */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={qrHref} alt={dict.orderStatus.paymentQrAlt} width={280} height={280} className="w-full max-w-[280px] self-center rounded-lg bg-white p-2" />
+                  </div>
+                )}
+                <p className="text-sm text-foreground">{dict.orderStatus.paymentVerifyNameWarning}</p>
+                <p className="text-sm text-foreground-muted">
+                  {/* the LINE handle inside the sentence is the link (designer 2026-09-06: no floating red link under the warnings) */}
+                  {withLineLink(dict.orderStatus.paymentAfterTransferNote)}
+                </p>
+                <p className="text-sm font-medium text-ember">{dict.orderStatus.paymentNoRefundWarning}</p>
+              </div>
+            )}
             <form action={submitPaymentAction} className="flex flex-col gap-2">
               <input type="hidden" name="orderNumber" value={order.orderNumber} />
               {token && <input type="hidden" name="token" value={token} />}

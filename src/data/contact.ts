@@ -5,4 +5,7 @@ export const CONTACT = {
   lineId: "@okm24",
   lineUrl: "https://lin.ee/QNJWw6o",
   youtubeUrl: "https://www.youtube.com/@OKMYARZ",
+  // Owner 2026-09-06 (PAGE_COPY answer 8 / 10): the shop's official written channel — shown on
+  // the contact page and named as the PDPA contact. BSOT §3.
+  email: "okamisalt@gmail.com",
 } as const;

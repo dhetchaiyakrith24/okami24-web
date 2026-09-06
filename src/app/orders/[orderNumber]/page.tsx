@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { existsSync } from "node:fs";
+import path from "node:path";
 import { getOrderDetailForViewer } from "@/lib/commerce/orders";
 import { OrderStatusView } from "@/components/commerce/OrderStatusView";
 import { OrderNotFoundMessage } from "@/components/commerce/OrderNotFoundMessage";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
+import { PAYMENT_ACCOUNT, PROMPTPAY_QR_RELATIVE_PATH, type PaymentAccountView } from "@/data/payment";
 
 export const metadata: Metadata = {
   title: "Order status",
@@ -23,5 +26,18 @@ export default async function OrderStatusPage({
   const order = await getOrderDetailForViewer(orderNumber, token ?? null);
 
   if (!order) return <OrderNotFoundMessage />;
-  return <OrderStatusView order={order} token={token ?? null} />;
+
+  // Bank details only for an order that is still waiting for payment (owner rule 2026-09-06,
+  // BSOT §9) — resolved here on the server, never shipped in the client dictionary.
+  let payment: PaymentAccountView | null = null;
+  if (order.status === "pending_payment") {
+    payment = {
+      bankName: PAYMENT_ACCOUNT.bankName,
+      accountName: PAYMENT_ACCOUNT.accountName,
+      accountNumber: PAYMENT_ACCOUNT.accountNumber,
+      hasQr: existsSync(path.join(process.cwd(), PROMPTPAY_QR_RELATIVE_PATH)),
+    };
+  }
+
+  return <OrderStatusView order={order} token={token ?? null} payment={payment} />;
 }

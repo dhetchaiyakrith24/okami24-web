@@ -124,11 +124,15 @@ export function PilotProductDetail({
                   </a>
                 </div>
               ) : (
-                <form action={addToCartAction}>
+                <form action={addToCartAction} className="flex flex-col items-start gap-2">
                   <input type="hidden" name="slug" value={product.slug} />
                   {selectedVariantId && <input type="hidden" name="variantId" value={selectedVariantId} />}
                   <input type="hidden" name="quantity" value={1} />
                   <Button type="submit">{dict.productActions.addToCartCta}</Button>
+                  {/* LINE = backup order channel (owner 2026-09-06, BSOT §8): one small line, cart button stays primary */}
+                  <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-foreground-muted hover:text-foreground">
+                    {dict.productActions.orderOnLineNote}
+                  </a>
                 </form>
               )}
             </div>

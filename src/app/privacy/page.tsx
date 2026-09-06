@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { canonicalFor } from "@/lib/seo";
-import { AgeNote, LineLink, PendingFact, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt } from "@/components/content/ServicePage";
+import { AgeNote, EmailLink, LineLink, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt } from "@/components/content/ServicePage";
 
 // Copy: writer draft 2026-09-06 (docs/PAGE_COPY_2026-09-06.md). Written from what the code
 // actually stores (src/lib/db/migrations/0001_init.sql: phone, recipient name/phone, address,
 // order lines; OTP hashed+salted) and what runs in the browser (session cookie, locale cookie,
 // age flag + favorites in localStorage; no analytics/ad pixels in the codebase as of 2026-09-06).
-// Retention period and the PDPA controller identity are owner questions (PendingFact).
+// Retention (1 year), controller (the shop OKami24), official channel (email) and "no DPO" are
+// the owner's 2026-09-06 answers 9–11 (BSOT §11).
 export const metadata: Metadata = {
   title: "นโยบายความเป็นส่วนตัว",
   description: "นโยบายความเป็นส่วนตัว OKami24 — เก็บอะไร ใช้ทำอะไร แชร์ให้ใคร และวิธีขอดู แก้ หรือลบข้อมูลของคุณตาม PDPA",
@@ -19,7 +20,7 @@ export default function PrivacyPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Privacy policy"
+        eyebrow="ข้อมูลของคุณ"
         title="ความเป็นส่วนตัว"
         description="เราเก็บข้อมูลอะไรของคุณบ้าง เอาไปทำอะไร และคุณขอให้ลบได้ยังไง — เขียนไว้ตรง ๆ ไม่ใช่ภาษากฎหมายให้งง"
         meta={<UpdatedAt date={SERVICE_PAGES_UPDATED} />}
@@ -83,10 +84,12 @@ export default function PrivacyPage() {
           </ServiceSection>
 
           <ServiceSection title="5. เก็บไว้นานแค่ไหน">
-            <PendingFact
-              question="เก็บข้อมูล​อ⁠อ⁠เ⁠ด⁠อ⁠ร⁠์และที่อยู่ไว้กี่ปี (ปกติร้านค้าเก็บตามอายุเอกสารทางบัญชี แต่ต้องยืนยันตัวเลขจริงก่อน)"
-              fallback={<>เราเก็บข้อมูลคำสั่งซื้อไว้เท่าที่จำเป็นต่อการจัดส่ง การติดตาม​อ⁠อ⁠เ⁠ด⁠อ⁠ร⁠์ และการเคลม (7 วันหลังได้รับของ) ถ้าต้องการให้ลบก่อนหน้านั้น ทักไลน์ <LineLink /> ได้ทุกเมื่อ</>}
-            />
+            <p>
+              เราเก็บข้อมูลคำสั่งซื้อและที่อยู่จัดส่งไว้ <strong className="text-foreground">1 ปี</strong> นับจากวันที่คำสั่งซื้อเสร็จสิ้น ครบแล้วลบทิ้ง
+            </p>
+            <p>
+              อยากให้ลบก่อนครบ 1 ปี ทักไลน์ <LineLink /> หรืออีเมล <EmailLink /> ได้ทุกเมื่อ
+            </p>
           </ServiceSection>
 
           <ServiceSection title="6. สิทธิ์ของคุณ">
@@ -98,12 +101,19 @@ export default function PrivacyPage() {
               <li>ขอให้หยุดใช้ข้อมูล</li>
             </ul>
             <p>
-              ใช้สิทธิ์ได้โดยทักไลน์ <LineLink /> บอกว่าต้องการอะไร แล้วแจ้งเบอร์ที่ใช้สั่งซื้อเพื่อยืนยันตัวตน
+              ใช้สิทธิ์ได้โดยส่งอีเมลมาที่ <EmailLink /> หรือทักไลน์ <LineLink /> บอกว่าต้องการอะไร แล้วแจ้งเบอร์ที่ใช้สั่งซื้อเพื่อยืนยันตัวตน
             </p>
-            <PendingFact
-              question="ชื่อผู้ควบคุมข้อมูล (ชื่อร้าน/นิติบุคคล) · ช่องทางทางการนอกจากไลน์ เช่น อีเมล · มีเจ้าหน้าที่คุ้มครองข้อมูล (DPO) ไหม — PDPA กำหนดให้ระบุตัวผู้ควบคุมข้อมูลและช่องทางติดต่อ ไลน์อย่างเดียวอาจไม่พอ ควรถามคนที่รู้กฎหมายก่อนเปิดจริง"
-              fallback={<>ผู้ควบคุมข้อมูล: OKami24 · ช่องทางติดต่อเรื่องข้อมูลส่วนบุคคล: LINE <LineLink /></>}
-            />
+            <ul className="flex flex-col gap-1.5 text-sm">
+              <li>
+                <strong className="text-foreground">ผู้ควบคุมข้อมูลส่วนบุคคล</strong> — ร้าน OKami24
+              </li>
+              <li>
+                <strong className="text-foreground">ช่องทางเป็นทางการ</strong> — อีเมล <EmailLink /> (จะทักไลน์ <LineLink /> ก่อนก็ได้ แต่เรื่องที่ต้องมีหลักฐาน ส่งอีเมลมาดีกว่า)
+              </li>
+              <li>
+                <strong className="text-foreground">ไม่มีเจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล (DPO)</strong> — ติดต่อตามช่องทางข้างบนได้เลย
+              </li>
+            </ul>
           </ServiceSection>
 
           <ServiceSection title="7. อายุผู้ใช้">

@@ -87,6 +87,15 @@ export function LineLink({ children }: { children?: ReactNode }) {
   );
 }
 
+/** The shop's official written channel (owner 2026-09-06, BSOT §3) — same styling as LineLink. */
+export function EmailLink({ children }: { children?: ReactNode }) {
+  return (
+    <a href={`mailto:${CONTACT.email}`} className="font-semibold text-foreground hover:text-red">
+      {children ?? CONTACT.email}
+    </a>
+  );
+}
+
 /**
  * A fact the owner still has to confirm. Dev: shows the question inline (unverified tone, same
  * as the spec labels). Production: renders `fallback` only — never the placeholder, never an

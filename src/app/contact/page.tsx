@@ -5,14 +5,15 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { canonicalFor } from "@/lib/seo";
-import { AgeNote, InfoCard, LineLink, PendingFact, SERVICE_PAGES_UPDATED, ServiceSection, UpdatedAt } from "@/components/content/ServicePage";
+import { AgeNote, InfoCard, LineLink, SERVICE_PAGES_UPDATED, ServiceSection, UpdatedAt } from "@/components/content/ServicePage";
 
 // Copy: writer draft 2026-09-06 (docs/PAGE_COPY_2026-09-06.md). Channels from BSOT §3 /
-// src/data/contact.ts. No contact form on purpose (nobody would be watching it — designer note);
-// opening hours and business-entity details are owner questions (PendingFact).
+// src/data/contact.ts. No contact form on purpose (nobody would be watching it — designer note).
+// Hours (24/7), email and "LINE = backup order channel" are the owner's 2026-09-06 answers 7, 8,
+// 18. Still open (BSOT §11): e-commerce registration and legally required seller details.
 export const metadata: Metadata = {
   title: "ติดต่อเรา",
-  description: "ติดต่อ OKami24 ทางไลน์ @okm24 สอบถามสินค้า ช่วยเลือกรุ่น ติดตาม​อ⁠อ⁠เ⁠ด⁠อ⁠ร⁠์ ส่งสลิป — แอดมินตอบเอง ไม่ใช่บอท",
+  description: "ติดต่อ OKami24 — LINE @okm24 ทักได้ทุกวัน 24 ชั่วโมง แอดมินตอบเอง ไม่ใช่บอท · อีเมล okamisalt@gmail.com สำหรับเรื่องเอกสารและข้อมูลส่วนบุคคล",
   ...canonicalFor("/contact"),
 };
 
@@ -20,7 +21,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Contact"
+        eyebrow="ช่องทางติดต่อ"
         title="ติดต่อเรา"
         description="มีเรื่องอยากถาม อยากให้ช่วยเลือกรุ่น หรือตาม​อ⁠อ⁠เ⁠ด⁠อ⁠ร⁠์ ทักมาได้เลย แอดมินตอบเอง"
         meta={
@@ -43,7 +44,18 @@ export default function ContactPage() {
                 <p>
                   <LineLink>{CONTACT.lineUrl}</LineLink>
                 </p>
-                <PendingFact question="เวลาทำการ / เวลาที่ตอบไลน์ เช่น “ทุกวัน 10:00–20:00” หรือ “ตอบภายใน X ชั่วโมง”" />
+                <p>
+                  <strong className="text-foreground">ทักได้ทุกวัน ตลอด 24 ชั่วโมง</strong> ไม่มีวันหยุด — คนตอบ ไม่ใช่บอท ดึก ๆ อาจช้าหน่อยแต่ได้คำตอบแน่นอน
+                </p>
+              </InfoCard>
+              <InfoCard title="อีเมล — เรื่องเอกสารและข้อมูลส่วนบุคคล">
+                <p>ช่องทางเป็นทางการของร้าน ใช้สำหรับเรื่องเอกสาร เรื่องข้อมูลส่วนบุคคล และเรื่องที่ต้องมีหลักฐานเป็นลายลักษณ์อักษร</p>
+                <p>
+                  <a href={`mailto:${CONTACT.email}`} className="font-semibold text-foreground hover:text-red">
+                    {CONTACT.email}
+                  </a>
+                </p>
+                <p>เรื่องสั่งของ ตามของ ส่งสลิป ทักไลน์เร็วกว่า</p>
               </InfoCard>
               <InfoCard title="YouTube @OKMYARZ — ดูของจริงก่อนตัดสินใจ">
                 <p>รีวิวสินค้าจากเราเอง อยากเห็นตัวจริงก่อนสั่ง เข้าไปดูได้</p>
@@ -53,8 +65,9 @@ export default function ContactPage() {
                   </a>
                 </p>
               </InfoCard>
-              <InfoCard title="สั่งซื้อ — สั่งบนเว็บ">
-                <p>เลือกสินค้าใส่ตะกร้าแล้วกดสั่งได้เลย ไม่ต้องทักมาสั่ง ระบบจะออกเลขคำสั่งซื้อและหน้าสถานะให้คุณติดตามเอง ไลน์มีไว้สำหรับสอบถามและช่วยเหลือ</p>
+              <InfoCard title="สั่งซื้อ — เว็บเป็นทางหลัก ไลน์เป็นทางสำรอง">
+                <p>เลือกสินค้าใส่ตะกร้าแล้วกดสั่งได้เลย ไม่ต้องทักมาก่อน ระบบออกเลขคำสั่งซื้อและหน้าสถานะให้ติดตามเอง</p>
+                <p>ไม่ถนัดสั่งบนเว็บ ทักสั่งทางไลน์ได้ แอดมินเปิดคำสั่งซื้อให้แล้วส่งลิงก์หน้าสถานะกลับไป</p>
                 <p>
                   <Link href="/how-to-order" className="font-semibold text-foreground hover:text-red">
                     ดูวิธีสั่งซื้อทีละขั้น →
@@ -74,7 +87,16 @@ export default function ContactPage() {
               <li>แจ้งของมีปัญหา → เลขคำสั่งซื้อ + คลิปตอนแกะกล่อง</li>
             </ul>
             <p>ถ้าเป็นเรื่องถามสินค้าเฉย ๆ ทักมาได้เลย ไม่ต้องเตรียมอะไร</p>
-            <PendingFact question="จะเปิดเผยเบอร์โทร อีเมล ที่อยู่ร้าน หรือชื่อนิติบุคคลบนเว็บไหม — ถ้าจดทะเบียนพาณิชย์อิเล็กทรอนิกส์ กฎหมายไทยกำหนดให้ต้องแสดงข้อมูลผู้ขายบางส่วน ควรเช็คก่อนเปิดร้านจริง" />
+          </ServiceSection>
+
+          <ServiceSection title="ข้อมูลผู้ขาย">
+            <p>
+              ร้าน OKami24 · ช่องทางเป็นทางการ อีเมล{" "}
+              <a href={`mailto:${CONTACT.email}`} className="font-semibold text-foreground hover:text-red">
+                {CONTACT.email}
+              </a>{" "}
+              · ช่องทางคุยเร็ว LINE <LineLink />
+            </p>
           </ServiceSection>
 
           <AgeNote />

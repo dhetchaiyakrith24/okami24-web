@@ -9,7 +9,6 @@ import {
   AgeNote,
   LineLink,
   NumberedSteps,
-  PendingFact,
   PhaseLabel,
   SERVICE_PAGES_UPDATED,
   ServiceSection,
@@ -20,6 +19,8 @@ import {
 // Copy: writer draft 2026-09-06 (docs/PAGE_COPY_2026-09-06.md), facts from BSOT §8–§10 and the
 // real checkout flow (src/i18n/dictionaries/th.ts checkout/orders). Layout: designer direction A
 // ("steps in one column, phase labels between groups, primary CTA in the header").
+// 2026-09-06 (evening): owner answers 1, 2, 18 filled in — bank details live on the order page
+// only, cancel before transfer / no refund after, LINE is the backup order channel.
 export const metadata: Metadata = {
   title: "วิธีสั่งซื้อ",
   description:
@@ -31,7 +32,7 @@ export default function HowToOrderPage() {
   return (
     <>
       <PageHeader
-        eyebrow="How to order"
+        eyebrow="เริ่มต้นที่นี่"
         title="วิธีสั่งซื้อ"
         description="สั่งบนเว็บได้เลย ไม่ต้องทักแชทก่อน ใช้เวลาไม่กี่นาที — ด้านล่างคือทุกขั้นตอนตั้งแต่กดใส่ตะกร้าจนของถึงมือ"
         meta={
@@ -101,9 +102,11 @@ export default function HowToOrderPage() {
                       title: "โอนเงิน",
                       body: (
                         <>
-                          รายละเอียดบัญชีและ QR จะแสดงในหน้าสถานะคำสั่งซื้อ <strong className="text-foreground">ตอนนี้ระบบยังอยู่ระหว่างจัดเตรียมบัญชี</strong> ถ้าหน้าเว็บยังไม่ขึ้นเลขบัญชี ให้ทักไลน์ <LineLink /> พร้อมเลขคำสั่งซื้อ แอดมินส่งรายละเอียดให้ทันที
+                          รายละเอียดบัญชีและ QR อยู่ในหน้าสถานะคำสั่งซื้อของคุณ กดเข้าไปดูได้เลยหลังกดยืนยันคำสั่งซื้อ ยอดที่ต้องโอนขึ้นให้ครบแล้ว รวมค่าส่ง
                           <br />
                           เรารับโอนธนาคารและสแกน QR เท่านั้น — <strong className="text-foreground">ไม่รับบัตรเครดิต และไม่มีเก็บเงินปลายทาง</strong>
+                          <br />
+                          <strong className="text-foreground">โอนแล้วยกเลิกไม่ได้</strong> ตรวจรายการและยอดให้ครบก่อนโอน
                         </>
                       ),
                     },
@@ -141,20 +144,20 @@ export default function HowToOrderPage() {
               <li><strong className="text-foreground">จัดส่งแล้ว</strong> — ส่งออกแล้ว พร้อมเลขพัสดุให้กดติดตาม</li>
               <li><strong className="text-foreground">สำเร็จ</strong> — ของถึงมือคุณแล้ว</li>
             </ul>
-            <p>ถ้ามีเหตุต้องยกเลิก ระบบมีสถานะ <strong className="text-foreground">ยกเลิก</strong> รองรับอยู่</p>
-            <PendingFact
-              question="ลูกค้ายกเลิกเองได้ถึงขั้นไหน โอนแล้วยกเลิกได้ไหม คืนเงินยังไง"
-              fallback={<>อยากยกเลิกหรือแก้​อ⁠อ⁠เ⁠ด⁠อ⁠ร⁠์ ทักไลน์ <LineLink /> พร้อมเลขคำสั่งซื้อให้เร็วที่สุด ก่อนที่ของจะถูกส่งออก</>}
-            />
+            <p>ถ้ามีเหตุต้องยกเลิก ระบบมีสถานะ ยกเลิก รองรับอยู่</p>
+            <p>ยกเลิกได้ตราบใดที่ยังไม่ได้โอน ทักไลน์ <LineLink /> พร้อมเลขคำสั่งซื้อ บอกว่าจะยกเลิก แอดมินจัดการให้</p>
+            <p>
+              <strong className="text-ember">โอนแล้วยกเลิกไม่ได้ และไม่มีการคืนเงิน</strong> เพราะฉะนั้นเช็ครายการ สี กลิ่น และจำนวนให้ครบก่อนโอนทุกครั้ง
+            </p>
           </ServiceSection>
 
           <ServiceSection title="ก่อนโอน เช็ค 2 อย่าง">
             <ul className="flex flex-col gap-2 text-sm">
               <li>
-                <strong className="text-foreground">ชื่อบัญชีต้องตรงกับที่แสดงในหน้าสถานะคำสั่งซื้อ</strong> — ถ้ามีคนส่งเลขบัญชีอื่นมาให้ อย่าโอน
+                <strong className="text-foreground">ชื่อบัญชีต้องตรง</strong>กับที่แสดงในหน้าสถานะคำสั่งซื้อ — ถ้ามีคนส่งเลขบัญชีอื่นมาให้ อย่าโอน
               </li>
               <li>
-                <strong className="text-foreground">ไลน์ทางการของเรามีชื่อเดียวคือ {CONTACT.lineId}</strong> — เช็คได้จากปุ่มไลน์ท้ายเว็บนี้ทุกหน้า
+                <strong className="text-foreground">ไลน์ทางการมีชื่อเดียวคือ {CONTACT.lineId}</strong> — เช็คได้จากปุ่มไลน์ท้ายเว็บนี้ทุกหน้า
               </li>
             </ul>
           </ServiceSection>
@@ -163,7 +166,10 @@ export default function HowToOrderPage() {
             <p>
               ทักไลน์ <LineLink /> ได้เลย บอกเลขคำสั่งซื้อมาด้วยจะเร็วที่สุด แอดมินตอบเอง ไม่ใช่บอท ช่วยเช็คสต๊อก ช่วยเลือกรุ่น ตาม​อ⁠อ⁠เ⁠ด⁠อ⁠ร⁠์ ส่งสลิป — เรื่องพวกนี้คุยทางไลน์ได้หมด
             </p>
-            <p>ส่วนการสั่งซื้อจริง ให้สั่งบนเว็บ ระบบจะออกเลขคำสั่งซื้อและเก็บประวัติไว้ให้ทั้งสองฝั่ง</p>
+            <p>
+              <strong className="text-foreground">สั่งบนเว็บเป็นทางหลัก</strong> ระบบออกเลขคำสั่งซื้อและเก็บประวัติไว้ให้ทั้งสองฝั่ง ตามของเองได้ ไม่ต้องรอถาม
+            </p>
+            <p>ถ้าไม่ถนัดสั่งบนเว็บ ทักสั่งทางไลน์ <LineLink /> ก็ได้ แอดมินเปิดคำสั่งซื้อให้แล้วส่งลิงก์หน้าสถานะกลับไปให้</p>
             <p className="text-sm">
               อ่านต่อ: <Link href="/shipping" className="text-foreground hover:text-red">การจัดส่ง</Link> · <Link href="/contact" className="text-foreground hover:text-red">ติดต่อเรา</Link> · <Link href="/faq" className="text-foreground hover:text-red">คำถามที่พบบ่อย</Link>
             </p>

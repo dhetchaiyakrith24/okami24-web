@@ -152,6 +152,10 @@ export function ProductHero({
                   {cartVariantId && <input type="hidden" name="variantId" value={cartVariantId} />}
                   <input type="hidden" name="quantity" value={1} />
                   <Button type="submit">{dict.productActions.addToCartCta}</Button>
+                  {/* LINE = backup order channel (owner 2026-09-06, BSOT §8): one small line, cart button stays primary */}
+                  <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="basis-full text-xs text-foreground-muted hover:text-foreground">
+                    {dict.productActions.orderOnLineNote}
+                  </a>
                 </form>
               ) : (
                 <div className="flex flex-col items-start gap-2">
