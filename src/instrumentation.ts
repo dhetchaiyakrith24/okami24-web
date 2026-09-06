@@ -24,11 +24,34 @@ export async function register(): Promise<void> {
   const { runStartupCheck } = await import("./lib/db/startup-check");
   await runStartupCheck();
 
+  // Every outcome prints a `[qr]` line — including the two quiet ones. The first live deploy
+  // (2026-09-06) ran a whole day with no QR on the disk and nobody knew, because "nothing to install
+  // from" and "already there" used to print nothing. One line per boot is cheap; a day of customers
+  // paying without a QR is not.
   try {
     const { installPromptpayQrIfMissing } = await import("./lib/promptpay-qr-install");
     const qr = installPromptpayQrIfMissing();
-    if (qr.status === "installed") console.log(`[qr] installed from ${qr.from}: ${qr.path} (${qr.bytes} bytes)`);
-    else if (qr.status === "rejected") console.error(`[qr] NOT installed — ${qr.reason} (source: ${qr.from})`);
+    const fallback = "order pages show the bank account without a QR until this is fixed";
+    switch (qr.status) {
+      case "installed":
+        console.log(`[qr] OK — installed from ${qr.from}, written and read back: ${qr.path} (${qr.bytes} bytes)`);
+        break;
+      case "already-present":
+        console.log(`[qr] OK — already on disk, not overwritten: ${qr.path} (${qr.bytes} bytes)`);
+        break;
+      case "no-source":
+        console.warn(
+          `[qr] MISSING — no file at ${qr.path}, and nothing to install it from: OKAMI24_PROMPTPAY_QR_BASE64 is not set and there is no promptpay-qr.b64 secret file. ` +
+            `${fallback}. How to paste it: docs/DEPLOY-RENDER.md §5`
+        );
+        break;
+      case "rejected":
+        console.error(`[qr] NOT installed — the pasted value (${qr.from}) was rejected: ${qr.reason}. ${fallback}`);
+        break;
+      case "write-failed":
+        console.error(`[qr] NOT installed — could not write ${qr.path} (from ${qr.from}): ${qr.reason}. ${fallback}`);
+        break;
+    }
   } catch (err) {
     console.error(`[qr] install step failed — ${err instanceof Error ? err.message : String(err)}`);
   }

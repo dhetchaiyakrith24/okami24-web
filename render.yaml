@@ -90,3 +90,15 @@ services:
       # ordinary shutdown during a redeploy is unaffected.
       - key: NODE_OPTIONS
         value: --report-on-fatalerror --report-on-signal --report-directory=/var/data
+      # The shop's PromptPay QR, as base64 text. The VALUE is never written here — this file is in
+      # git and the QR is the shop's payment detail. The owner pastes it once in the dashboard
+      # (Environment → "+ Add Environment Variable"; docs/DEPLOY-RENDER.md §5 is the click-by-click).
+      # `sync: false` is how a Blueprint says "this key exists, its value lives in the dashboard":
+      # Render ignores sync:false keys on every Blueprint update, so a sync can never overwrite or
+      # remove what the owner pasted (render.com/docs/blueprint-spec, checked 2026-09-07). It is
+      # declared at all because the first live deploy (2026-09-06) ran a day without a QR and
+      # nothing in this file said one was needed.
+      # On boot the server writes the image to $OKAMI24_DATA_DIR/private/promptpay-qr.png if it is
+      # not there yet, reads it back, and logs a `[qr]` line either way (src/lib/promptpay-qr-install.ts).
+      - key: OKAMI24_PROMPTPAY_QR_BASE64
+        sync: false
