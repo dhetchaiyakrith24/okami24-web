@@ -41,13 +41,27 @@ function reportEnvironment() {
   }
   say(`node ${process.version} ${process.platform}-${process.arch} · glibcVersionRuntime=${glibc ?? "(absent)"}`);
 
-  // Mirrors better-sqlite3's own rule in lib/binding.js: musl is assumed whenever the diagnostic
-  // report carries no runtime glibc version. Getting this wrong means dlopen'ing a musl-linked
-  // shared object into a glibc process, which is exactly the kind of thing that segfaults rather
-  // than failing cleanly — so the chosen file is named here before anything loads it.
-  const isMusl = process.platform === "linux" && !glibc;
-  say(`better-sqlite3 will load prebuilds/${isMusl ? "linuxmusl" : process.platform}-${process.arch}.node`);
-  if (isMusl) say(`!! that is the MUSL build — wrong on a glibc host (Debian/Ubuntu, which Render uses)`);
+  // Ask better-sqlite3's own resolver which file it is about to load, rather than re-deriving its
+  // rule. Absolute path because the package's `exports` map hides lib/binding.js from a bare
+  // require. The shipped prebuild is the normal, correct answer — it is fine on any Node that
+  // speaks the Node-API version it declares.
+  const pkgDir = path.dirname(require.resolve("better-sqlite3/package.json"));
+  const resolver = require(path.join(pkgDir, "lib", "binding.js"));
+  const chosen = resolver.getPrebuildPath() ?? path.join(pkgDir, "build", "Release", "better_sqlite3.node");
+  say(`better-sqlite3 will load ${chosen}`);
+
+  // The 2026-09-06 crash, named before anything is loaded: the package declares a Node-API version
+  // (binding.gyp NAPI_VERSION=10) and a Node that cannot serve it — 22.11.0 stops at 9 — dies with
+  // SIGSEGV on the refusal path instead of raising an error. Same check as
+  // scripts/check-native-sqlite.js, repeated here because this runs at every boot.
+  const declared = Number((fs.readFileSync(path.join(pkgDir, "binding.gyp"), "utf8").match(/NAPI_VERSION=(\d+)/) || [])[1]);
+  const supported = Number(process.versions.napi);
+  say(`Node-API: this Node speaks ${supported}, better-sqlite3 declares ${declared || "?"}`);
+  if (declared && supported && supported < declared) {
+    say(`!! this Node cannot load better-sqlite3 — Node-API ${supported} < ${declared}. Loading it would segfault. Set NODE_VERSION to 22.14.0+ or 24 LTS (docs/INCIDENT_2026-09-06_sqlite-segfault.md). Stopping before the load.`);
+    say(`!! Node รุ่นนี้เก่าเกินไปสำหรับตัวจัดการฐานข้อมูล — ต้องเปลี่ยน NODE_VERSION เป็น 24.14.1 (หรือ 22.x ที่ ≥ 22.14.0) แล้ว deploy ใหม่`);
+    process.exit(3);
+  }
 
   const constrained = typeof process.constrainedMemory === "function" ? process.constrainedMemory() : 0;
   const mb = (b) => `${Math.round(b / 1024 / 1024)}MB`;
