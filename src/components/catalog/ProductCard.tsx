@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
+import { OptionCountBadge } from "@/components/catalog/OptionCountBadge";
 import { Badge } from "@/components/ui/Badge";
 import { brandName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 
@@ -19,6 +20,7 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="relative aspect-[4/5] w-full bg-surface-2/40 p-6">
         <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
           {product.editorialTag && <Badge tone="ember">{product.editorialTag}</Badge>}
+          <OptionCountBadge product={product} />
         </div>
         <FavoriteButton slug={product.slug} className="absolute right-3 top-3" />
         <div className="h-full w-full transition-transform duration-500 group-hover:scale-105">

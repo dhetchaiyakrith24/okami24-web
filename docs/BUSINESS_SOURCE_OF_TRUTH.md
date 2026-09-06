@@ -544,3 +544,45 @@ they are the brief for the image batches in `docs/LAUNCH_AUDIT.md`.
   must NOT be marked `[ยังไม่มีรูป]`.
 - If the two pages turn out to describe two different products, **split them into two products the
   same way salthub.com does** rather than merging or guessing.
+
+#### Answered 2026-09-06 — the clear set belongs to M Bar 15K
+The question above was put to the owner with the evidence laid out, and **the owner chose M Bar
+15K**. So this is settled, not inferred:
+- The 15 clean clear-pod photos (Vapeauras / ueeshop CDN) are **`m-bar-15k`'s per-flavour images**.
+  They are live at `public/assets/products/m-bar-15k/variant-<id>.webp`, with a composed
+  `lineup.webp` beside them.
+- **`m-switch-pod` keeps the black COTTON MESH pod** and did not get per-flavour images: a 12-source
+  search on 2026-09-06 found exactly one clean black-pod photo out of 18 flavours, and its product
+  pixels (640px) were no larger than the card already in place, so nothing was overwritten. The
+  other 17 flavours stand at `[ยังไม่มีรูป]` rather than borrowing the clear pod — the owner's rule
+  "หาไม่ได้ใส่ [ยังไม่มีรูป] ห้ามเอารูปตัวเลือกอื่นแทน" applies, and the two pods differ visibly.
+- The evidence the decision rested on: salthub.com/m-bar-15k/ illustrates its flavours with the
+  clear pod (alt text "M Bar 15K &lt;flavour&gt;"), salthub.com/m-switch-pod/ uses the black one, the
+  clear set is exactly the 15 flavours `m-bar-15k` carries, and the `m-bar-15k` card photo is a
+  device with this same clear pod seated in it.
+
+#### Answered 2026-09-06 — the lineup shot is NOT the first image
+`docs/IMAGE_SPEC.md` §0 rule 5 says the all-options lineup should be the first card. Shown both
+options rendered at real phone size, **the owner chose to keep a single clear flavour as the opening
+image** and to say "there are many" in words instead:
+- Catalogue cards carry an option-count badge ("15 กลิ่น" / "8 สี" / "15 flavours"), added as
+  `src/components/catalog/OptionCountBadge.tsx`. It shows on **every** product with 2+ options.
+- The lineup stays behind the "ทั้งหมด" button on the product page.
+- Reason: at 15–18 options the lineup gives each flavour ~17px inside a catalogue card and ~43px in
+  the hero — good for "there are many", useless for "I want that one".
+- This supersedes IMAGE_SPEC §0 rule 5's "ให้เป็นการ์ดใบแรก" for high-option products. The lineup
+  image itself is still required, and is still built to spec.
+
+#### Answered 2026-09-06 — M Switch Pod stays without per-flavour photos until the owner supplies them
+- After a 12-source search found no clean black-pod photo set, the owner chose to **leave
+  `m-switch-pod`'s 17 unphotographed flavours at `[ยังไม่มีรูป]`** rather than borrow the clear-pod
+  set or retouch the marketing composites. **The owner will request the photo files from the
+  supplier directly.** Nobody else should go looking again; when the files arrive they go through
+  `scripts/process-images.ts` like any other set.
+
+#### Answered 2026-09-06 — Cool Mint is a real M Switch Pod flavour; keep it
+- Research flagged that salthub.com lists 17 flavours without Cool Mint, and no reseller checked
+  carried it either. **The owner confirms Cool Mint is genuinely sold and stays in the catalogue**
+  (`m-switch-pod` and `m-switch-kit`, id `cool-mint`) even though the manufacturer's site does not
+  show it. Do not remove it on the strength of the manufacturer's page; the shop's own stock is the
+  authority here. It still needs a photo — see the entry above.

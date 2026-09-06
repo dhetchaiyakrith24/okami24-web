@@ -19,9 +19,26 @@ services:
     region: singapore
     # `main` is the live branch (owner decision 2026-09-06).
     branch: main
-    # `npm ci` installs exactly what package-lock.json pins, and compiles better-sqlite3 + sharp
-    # for this Linux machine — they are native modules and cannot be copied from a Windows PC.
-    buildCommand: npm ci && npm run build
+    # Four steps. The two in the middle exist because of the exit-139 crash of 2026-09-06 (the
+    # first "add to cart" on the live site killed the process — docs/INCIDENT_2026-09-06_sqlite-segfault.md):
+    #   npm ci                              installs exactly what package-lock.json pins. It compiles
+    #                                       nothing — both native modules ship prebuilt binaries.
+    #   node scripts/build-native-sqlite.js OPT-IN, does nothing unless OKAMI24_SQLITE_FROM_SOURCE=1
+    #                                       is set in the dashboard: compiles better-sqlite3 on this
+    #                                       host and removes the shipped Linux binary. Not the fix
+    #                                       for the 2026-09-06 crash (see below) — kept for the day a
+    #                                       shipped binary genuinely does not fit the host.
+    #   node scripts/check-native-sqlite.js THE GATE. First asks whether this Node's Node-API version
+    #                                       is at least what better-sqlite3 declares, and fails with a
+    #                                       plain-language message if not — that mismatch IS the
+    #                                       2026-09-06 crash, and asking beforehand is the only way to
+    #                                       see it, because loading the addon on the wrong Node kills
+    #                                       the process without a word. Then loads the addon, opens a
+    #                                       database, writes and reads. Any failure fails the deploy.
+    #   npm run build                       the Next.js build.
+    # A failing gate fails the deploy — on purpose. The alternative was learning about it from a
+    # customer.
+    buildCommand: npm ci && node scripts/build-native-sqlite.js && node scripts/check-native-sqlite.js && npm run build
     startCommand: npm start
     healthCheckPath: /
     # Deliberately manual for launch: a push to `main` should not reach customers before someone
@@ -35,9 +52,17 @@ services:
       # grow a disk later but never shrink it, so this starts small on purpose.
       sizeGB: 1
     envVars:
-      # Node 22 LTS. Next 16 requires >= 20.9 (node_modules/next/package.json "engines").
+      # Node 24 LTS — owner's decision 2026-09-06, after confirming the cause in Render's shell.
+      #
+      # !! NEVER BELOW 22.14.0. better-sqlite3 13 declares Node-API version 10, which Node gained in
+      # 22.14.0; on anything older, loading the addon segfaults instead of raising an error — that
+      # was the 2026-09-06 outage, pinned at 22.11.0 right here. 24.14.1 is Render's default, the
+      # version the shipped Linux binary was built with, and the major the dev machine runs, so dev
+      # and prod agree. package.json "engines" carries the same floor, and the gate in the
+      # buildCommand refuses to build on a Node that cannot load the addon, so a wrong value here
+      # fails the deploy with a message rather than the site.
       - key: NODE_VERSION
-        value: 22.11.0
+        value: 24.14.1
       # Backup file names and log timestamps are written in the server's local time — without
       # this they would read 7 hours behind Thai time and be confusing to match against a report.
       - key: TZ
@@ -52,3 +77,16 @@ services:
         value: /var/data/app-data
       - key: OKAMI24_BACKUP_DIR
         value: /var/data/backups
+      # Node's diagnostic report, written to the DISK so it survives the restart that follows a
+      # crash. Honest about what this does and does not catch (tested 2026-09-06):
+      #   - it DOES catch Node dying on its own — an out-of-memory heap abort writes a full report
+      #     (native stack, loaded libraries, memory, cgroup limits)
+      #   - it does NOT catch a segfault inside a native addon. The kernel kills the process outright
+      #     and no Node handler runs, so the exit-139 crash this file is dated against would leave no
+      #     report at all. The evidence for that one is the `[probe]` log written at boot by
+      #     scripts/native-probe.js, not a file here.
+      # Kept because the OOM case is real and cheap to cover, and because ruling memory in or out is
+      # one of the open questions. `--report-on-signal` listens on SIGUSR2, not SIGTERM, so Render's
+      # ordinary shutdown during a redeploy is unaffected.
+      - key: NODE_OPTIONS
+        value: --report-on-fatalerror --report-on-signal --report-directory=/var/data

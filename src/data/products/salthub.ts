@@ -256,32 +256,45 @@ export const salthubProducts: Product[] = [
         src: "/assets/products/m-bar-15k/card.webp",
         alt: "SALTHUB M Bar 15K, smoke-to-black gradient with Cola flavor window, isolated product shot",
         angle: "3/4, isolated",
-        transparentBackground: false,
+        // Corrected 2026-09-06: the file has had a real alpha channel all along (measured: 56%
+        // transparent pixels), the flag just never caught up. Metadata only — nothing renders off it.
+        transparentBackground: true,
         sourceName: "SALTHUB",
         sourceUrl: "https://www.salthub.com/",
       },
     ],
+    // Composed 2026-09-06 from the 15 processed flavour files by scripts/build-lineup-grid.js
+    // (5×3 on a square 1600 canvas — designer direction: the hero frame is square, so the shop's
+    // older single-row strips waste ~74% of it and render each device ~32px wide on a phone).
+    // Reached through the "All" button, not the first image: the owner chose on 2026-09-06 to keep
+    // a single clear flavour as the opening shot, because at 15 flavours the lineup shrinks each
+    // pod to ~43px on a phone — good for "there are many", bad for "I want that one".
+    lineupImage: {
+      src: "/assets/products/m-bar-15k/lineup.webp",
+      alt: "SALTHUB M Bar 15K, all 15 flavours",
+      sourceName: "OKami24 composite (from official Marbo per-flavour photos)",
+    },
     // Real flavor lineup — tier-1, verified directly against salthub.com's own m-bar-15k/ page
     // (each flavor has its own official product photo with a descriptive alt attribute, e.g.
     // "M Bar 15K grape aloe disposable vape pod"). `availability: "unknown"` throughout, same
     // convention as M Bar 9K: this Legacy record has no live Shipnity stock signal to check
     // against, and Legacy Product Detail has no cart/purchase action to gate anyway.
     flavorVariants: [
-      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown" },
-      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
-      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown" },
-      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown" },
-      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#7a5a9e", availability: "unknown" },
-      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown" },
-      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9a6ab0", availability: "unknown" },
-      { id: "mango-passion", name: "Mango Passion", swatchHex: "#e0a03a", availability: "unknown" },
-      { id: "mixberry", name: "Mixberry", swatchHex: "#8e3a6b", availability: "unknown" },
-      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e08a7a", availability: "unknown" },
-      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown" },
-      { id: "strawberry", name: "Strawberry", swatchHex: "#c9405f", availability: "unknown" },
-      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#d9607a", availability: "unknown" },
-      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e0709a", availability: "unknown" },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
+      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-apple-aloe.webp", alt: "SALTHUB M Bar 15K, Apple Aloe" } },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-blue-ice.webp", alt: "SALTHUB M Bar 15K, Blue Ice" } },
+      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-cola.webp", alt: "SALTHUB M Bar 15K, Cola" } },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-double-mint.webp", alt: "SALTHUB M Bar 15K, Double Mint" } },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#7a5a9e", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-grape-aloe.webp", alt: "SALTHUB M Bar 15K, Grape Aloe" } },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-grape.webp", alt: "SALTHUB M Bar 15K, Grape" } },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9a6ab0", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-grape-lychee.webp", alt: "SALTHUB M Bar 15K, Grape Lychee" } },
+      { id: "mango-passion", name: "Mango Passion", swatchHex: "#e0a03a", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-mango-passion.webp", alt: "SALTHUB M Bar 15K, Mango Passion" } },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-mixberry.webp", alt: "SALTHUB M Bar 15K, Mixberry" } },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e08a7a", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-peach-strawberry.webp", alt: "SALTHUB M Bar 15K, Peach Strawberry" } },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-pink-berry.webp", alt: "SALTHUB M Bar 15K, Pink Berry" } },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-strawberry.webp", alt: "SALTHUB M Bar 15K, Strawberry" } },
+      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#d9607a", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-strawberry-watermelon.webp", alt: "SALTHUB M Bar 15K, Strawberry Watermelon" } },
+      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e0709a", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-watermelon-bubblegum.webp", alt: "SALTHUB M Bar 15K, Watermelon Bubblegum" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-watermelon.webp", alt: "SALTHUB M Bar 15K, Watermelon" } },
     ],
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 15,000", sourceStatus: "verified" },
@@ -348,6 +361,8 @@ export const salthubProducts: Product[] = [
     // stock signal for this Legacy record.
     flavorVariants: [
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
+      // Cool Mint is not on salthub.com's own list (17 flavours) and no reseller checked on 2026-09-06 had it;
+      // the owner confirms it is genuinely sold and it stays. BSOT §21 — do not remove on the maker's say-so.
       { id: "cool-mint", name: "Cool Mint", swatchHex: "#3ea88a", availability: "unknown" },
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown" },
       { id: "black-berry", name: "Black Berry", swatchHex: "#3a2a4e", availability: "unknown" },
@@ -439,6 +454,8 @@ export const salthubProducts: Product[] = [
     // and this page has no purchase action to gate.
     flavorVariants: [
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
+      // Cool Mint is not on salthub.com's own list (17 flavours) and no reseller checked on 2026-09-06 had it;
+      // the owner confirms it is genuinely sold and it stays. BSOT §21 — do not remove on the maker's say-so.
       { id: "cool-mint", name: "Cool Mint", swatchHex: "#3ea88a", availability: "unknown" },
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7cb342", availability: "unknown" },
       { id: "black-berry", name: "Black Berry", swatchHex: "#3a2340", availability: "unknown" },

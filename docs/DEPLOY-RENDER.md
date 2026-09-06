@@ -49,6 +49,8 @@ Render จะตัดบัตรทุกเดือนจนกว่าจ�
 
 **สำเร็จเมื่อ:** สถานะขึ้นเป็น **Live** สีเขียว และกดลิงก์ `okami24-xxxx.onrender.com` แล้วเว็บเปิดได้จริง
 
+> **บริการจริงของเราสร้างด้วยวิธีนี้ = "Blueprint managed"** (เจ้าของตรวจจากหน้า Render 2026-09-06) → ค่าทุกช่องและตัวแปรทุกตัวที่ประกาศใน `render.yaml` **ถูกอ่านจากไฟล์ใน branch `main` เท่านั้น** ค่าที่ไปแก้ในหน้า Environment **ที่ขัดกับไฟล์** จะถูก Blueprint ทับกลับตอน sync · อยากเปลี่ยนอะไร (เช่น `NODE_VERSION` ซึ่งตอนนี้เป็น `24.14.1` แล้ว) ให้แก้ไฟล์ → merge `main` → Manual Deploy · ตัวแปรที่เพิ่มในหน้าเว็บโดย**ไม่มี**ในไฟล์ (เช่น QR ในข้อ 5) จะ**ไม่ถูกลบ** — Render ทับเฉพาะค่าที่ขัดกับไฟล์ (render.com/docs/infrastructure-as-code หัวข้อ "Modifying a resource outside of its Blueprint" · ตรวจ 2026-09-06)
+
 > **ถ้า Blueprint ใช้ไม่ได้** (Render เปลี่ยนหน้าตาหรือฟ้อง error เรื่องไฟล์) ให้กด **New + → Web Service** แล้วกรอกมือตามตารางนี้
 > ค่าทุกช่องคัดมาจาก `render.yaml` ตัวเดียวกัน:
 >
@@ -58,22 +60,23 @@ Render จะตัดบัตรทุกเดือนจนกว่าจ�
 > | Branch | `main` |
 > | Region | Singapore |
 > | Runtime / Language | Node |
-> | Build Command | `npm ci && npm run build` |
+> | Build Command | `npm ci && node scripts/build-native-sqlite.js && node scripts/check-native-sqlite.js && npm run build` — ตัวที่สามคือ**ด่านตรวจ**: เช็คก่อนว่า Node รุ่นที่ใช้โหลดตัวจัดการฐานข้อมูลได้ไหม ไม่ได้ = build ล้มพร้อมบอกว่าต้องใช้ Node รุ่นไหน (เหตุการณ์ 2026-09-06 เว็บล่มเพราะ Node 22.11 เก่าเกินไป — ดู `docs/INCIDENT_2026-09-06_sqlite-segfault.md`) **ห้ามตัดออก** · ตัวที่สองเป็นตัวเลือก ปกติไม่ทำอะไร |
 > | Start Command | `npm start` |
 > | Instance Type | Starter ($7) |
 > | Health Check Path | `/` |
 > | Auto-Deploy | **Off** (ปิดไว้ก่อน) |
 >
 > แล้วเพิ่ม **Disk**: Name `okami24-data` · Mount Path `/var/data` · Size `1` GB
-> แล้วเพิ่ม **Environment Variables** 5 ตัว:
+> แล้วเพิ่ม **Environment Variables** 6 ตัว:
 >
 > | Key | Value |
 > |---|---|
-> | `NODE_VERSION` | `22.11.0` |
+> | `NODE_VERSION` | `24.14.1` (เจ้าของเลือก 2026-09-06) · **ห้ามต่ำกว่า 22.14.0** — Node ที่เก่ากว่านั้นโหลดตัวจัดการฐานข้อมูลไม่ได้ เว็บล่มทันที (เหตุการณ์ 2026-09-06 ตอนใช้ 22.11.0 · ดู `docs/INCIDENT_2026-09-06_sqlite-segfault.md`) · บริการที่กรอกมือ**อ่านค่าจากหน้านี้จริง** กรอกให้ตรงกับ `render.yaml` |
 > | `TZ` | `Asia/Bangkok` |
 > | `SITE_URL` | `https://okami24.store` |
 > | `OKAMI24_DATA_DIR` | `/var/data/app-data` |
 > | `OKAMI24_BACKUP_DIR` | `/var/data/backups` |
+> | `NODE_OPTIONS` | `--report-on-fatalerror --report-on-signal --report-directory=/var/data` (ให้ Node เขียนรายงานตอนตายเองลงดิสก์ · ไม่ช่วยกรณี segfault จาก native — ดู `render.yaml`) |
 
 ### ทำไมค่าพวกนี้สำคัญ (อ่านผ่าน ๆ พอ)
 
@@ -116,6 +119,8 @@ npm run qr:upload-text
     - Key: `OKAMI24_PROMPTPAY_QR_BASE64`
     - Value: **Ctrl+V** (วางที่คัดลอกมา)
 20. กด **Save Changes** → Render จะรีสตาร์ตเว็บให้เอง
+
+> **ค่านี้ปลอดภัยจาก Blueprint sync** — คีย์นี้ไม่ได้อยู่ใน `render.yaml` และ Render ทับเฉพาะค่าที่ขัดกับไฟล์ (เอกสาร Render ตรวจ 2026-09-06) จึงไม่หายตอน sync · **ข้อเสนอของทีม (รอเจ้าของสั่ง เพราะเป็นการแตะตัวแปรระบบ):** ประกาศคีย์ไว้ในไฟล์แบบ `sync: false` (ไม่ใส่ค่า) เพื่อให้มีบันทึกว่าบริการนี้ต้องใช้คีย์นี้และการันตีไม่โดนทับ — ค่าจริงยังต้องใส่ในหน้าเว็บเหมือนเดิม เพราะ Render ถามค่าเฉพาะตอนสร้าง Blueprint ครั้งแรก (render.com/docs/blueprint-spec: "When you update an existing Blueprint, Render ignores any environment variables with sync: false") · **ห้ามใส่ค่า base64 ของ QR ลงในไฟล์เด็ดขาด** (ไฟล์อยู่ใน git)
 
 **สำเร็จเมื่อ:** เปิดหน้าออเดอร์ที่ยังรอโอนเงินแล้วเห็นรูป QR ขึ้นมา (ถ้ายังไม่มีออเดอร์จริง ให้ Javis ตรวจใน log ว่าขึ้นบรรทัด `[qr] installed`)
 

@@ -60,6 +60,10 @@ function runMigrations(db: Database.Database): void {
   const insertApplied = db.prepare("INSERT INTO schema_migrations (id) VALUES (?)");
   for (const file of files) {
     if (applied.has(file)) continue;
+    // Named before it runs, not after: on the live crash of 2026-09-06 the database file did not
+    // exist yet, so the first "add to cart" was also the first time every migration ran. If one of
+    // them is what kills the process, this line is the last thing in the log.
+    trace(`applying migration ${file}`);
     const sql = fs.readFileSync(path.join(MIGRATIONS_DIR, file), "utf8");
     const applyMigration = db.transaction(() => {
       db.exec(sql);
@@ -69,15 +73,33 @@ function runMigrations(db: Database.Database): void {
   }
 }
 
+/** Breadcrumb for the one code path that can kill the process without raising anything catchable.
+ *  `fs.writeSync` rather than `console.log` on purpose: stdout is a pipe under a process manager and
+ *  pipe writes are asynchronous, so a segfault immediately afterwards would swallow the message that
+ *  says where it happened. Runs once per process — `createDb()` is called once behind the singleton.
+ *  Added 2026-09-06 for the live exit-139 crash; see src/lib/db/startup-check.ts for the full note. */
+function trace(step: string): void {
+  try {
+    fs.writeSync(1, `[db] ${step}\n`);
+  } catch {
+    // a logger must never be the reason a request fails
+  }
+}
+
 function createDb(): Database.Database {
   // Resolved per call, not at module load, so the folder always reflects the environment the
   // server actually started with (`OKAMI24_DATA_DIR` on a host with a mounted disk — see
   // src/lib/paths.ts; unset locally, which keeps the historical `<cwd>/.data`).
-  fs.mkdirSync(dataDir(), { recursive: true });
+  const dir = dataDir();
+  trace(`opening the store — data dir ${dir}`);
+  fs.mkdirSync(dir, { recursive: true });
   const db = new Database(dbPath());
+  trace(`opened ${dbPath()} — setting journal_mode = WAL`);
   db.pragma("journal_mode = WAL");
   db.pragma("foreign_keys = ON");
+  trace(`running migrations from ${MIGRATIONS_DIR}`);
   runMigrations(db);
+  trace(`store ready`);
   return db;
 }
 

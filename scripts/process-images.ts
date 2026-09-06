@@ -11,7 +11,8 @@
  * Pipeline per map entry (see `MapEntry`): AI-image check → optional erase/crop → background removal
  * (only when the file is opaque AND the background is flat) → trim → measure the product's real long
  * side (must be ≥ MIN_SOURCE_LONG) → scale to the 84% box (upscale capped at +5%, the owner's
- * tolerance) → centre on a transparent square canvas → WebP q82 → size-cap check → write.
+ * tolerance) → centre on a transparent square canvas → WebP q82 (a floor — never lowered to fit the
+ * size cap) → size-cap check → write.
  * Idempotent: an existing destination is only replaced when the new product pixels are LARGER than
  * the product pixels in the file it replaces (IMAGE_SPEC §6). Every decision is printed and written
  * to `_incoming/process-images.report.json` so nothing happens silently.
@@ -31,8 +32,10 @@ const MAX_BYTES = { card: 150 * 1024, variant: 150 * 1024, detail: 400 * 1024 } 
 const BOX_RATIO = 0.84; // 8% margin each side
 const MIN_SOURCE_LONG = 800;
 const MAX_UPSCALE = 1.05;
+/** Owner rule 2026-09-06 (IMAGE_SPEC §1–§2): 82 is the FLOOR, not a starting point. The size cap is
+ *  never a reason to encode below it — when a file will not fit at q82 the answer is a smaller canvas
+ *  (`canvas` in the map) or a better source, decided by a human. There is no quality fallback ladder. */
 const WEBP_QUALITY = 82;
-const WEBP_FALLBACK_QUALITIES = [80, 78, 76, 74, 72, 70];
 
 const ROOT = process.cwd();
 const PUBLIC_PRODUCTS = path.join(ROOT, "public", "assets", "products");
@@ -75,7 +78,7 @@ interface Decision {
   source: string; slug: string; role: Role; id?: string | number; dest: string;
   action: "written" | "would-write" | "skipped" | "kept-existing";
   reason?: string;
-  sourceLong?: number; existingLong?: number; scale?: number; bytes?: number; quality?: number; canvas?: number;
+  sourceLong?: number; existingLong?: number; scale?: number; bytes?: number; quality?: number; canvas?: number; overCap?: boolean;
   bgRemoved?: boolean;
 }
 
@@ -163,10 +166,13 @@ async function productLongSide(file: string): Promise<number | null> {
 
 function isAiGenerated(file: string): boolean { const buf = readFileSync(file); return buf.includes("AIGC") || buf.includes("aigc_inpaint"); }
 
-async function encodeWithin(canvas: Sharp, maxBytes: number): Promise<{ buf: Buffer; quality: number }> {
+/** Encode at q82, always. The only size lever left is encoder effort (slower search, same quality);
+ *  if the file still exceeds the cap it is returned over-cap and flagged, never re-encoded lower. */
+async function encodeWithin(canvas: Sharp, maxBytes: number): Promise<{ buf: Buffer; quality: number; overCap: boolean }> {
   const base = await canvas.png().toBuffer();
-  for (const q of [WEBP_QUALITY, ...WEBP_FALLBACK_QUALITIES]) { const buf = await sharp(base).webp({ quality: q, alphaQuality: 100, effort: 5 }).toBuffer(); if (buf.length <= maxBytes) return { buf, quality: q }; }
-  const buf = await sharp(base).webp({ quality: 70, alphaQuality: 100, effort: 6 }).toBuffer(); return { buf, quality: 70 };
+  let buf = await sharp(base).webp({ quality: WEBP_QUALITY, alphaQuality: 100, effort: 5 }).toBuffer();
+  if (buf.length > maxBytes) { const harder = await sharp(base).webp({ quality: WEBP_QUALITY, alphaQuality: 100, effort: 6 }).toBuffer(); if (harder.length < buf.length) buf = harder; }
+  return { buf, quality: WEBP_QUALITY, overCap: buf.length > maxBytes };
 }
 
 function destFor(e: MapEntry): string {
@@ -219,8 +225,8 @@ async function processEntry(e: MapEntry): Promise<Decision> {
   const resized = await sharp(cropped).resize({ width: w, height: h, fit: "fill", kernel: "lanczos3" }).png().toBuffer();
   const canvas = sharp({ create: { width: canvasSize, height: canvasSize, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
     .composite([{ input: resized, left: Math.round((canvasSize - w) / 2), top: Math.round((canvasSize - h) / 2) }]);
-  const { buf, quality } = await encodeWithin(canvas, MAX_BYTES[e.role]); d.bytes = buf.length; d.quality = quality;
-  if (buf.length > MAX_BYTES[e.role]) d.reason = `WARNING: ${Math.round(buf.length / 1024)}KB exceeds cap even at q70`;
+  const { buf, quality, overCap } = await encodeWithin(canvas, MAX_BYTES[e.role]); d.bytes = buf.length; d.quality = quality; d.overCap = overCap;
+  if (overCap) d.reason = `WARNING: ${Math.round(buf.length / 1024)}KB over the ${Math.round(MAX_BYTES[e.role] / 1024)}KB cap at q${WEBP_QUALITY} — quality is NOT lowered (IMAGE_SPEC §1–§2). Fix by adding "canvas": <px> to the map entry, or use a better source.`;
   if (DRY) return { ...d, action: "would-write" };
   mkdirSync(path.dirname(dest), { recursive: true }); await writeWithRetry(dest, buf); return { ...d, action: "written" };
 }
@@ -271,6 +277,13 @@ async function fixOpaque(): Promise<Decision[]> {
   for (const d of decisions) console.log(`${d.action.padEnd(14)} ${d.slug.padEnd(22)} ${(d.role + (d.id != null ? ":" + d.id : "")).padEnd(24)} ${d.sourceLong ? `${d.sourceLong}px` : ""}${d.existingLong ? ` (have ${d.existingLong}px)` : ""}${d.scale ? ` ×${d.scale}` : ""}${d.bytes ? ` ${Math.round(d.bytes / 1024)}KB q${d.quality}` : ""}${d.bgRemoved ? " bg-cut" : ""}  ${d.reason ?? ""}  ← ${d.source}`);
   const sum = decisions.reduce((a, d) => ((a[d.action] = (a[d.action] ?? 0) + 1), a), {} as Record<string, number>);
   console.log(`\n${DRY ? "[dry-run] " : ""}${JSON.stringify(sum)}`);
+  // Quality floor is q82 (IMAGE_SPEC §1–§2). Over-cap files are written at q82 and listed here so the
+  // size cap is a human decision (smaller canvas / better source), never a silent quality drop.
+  const overCap = decisions.filter((d) => d.overCap);
+  if (overCap.length) {
+    console.log(`\n!! ${overCap.length} file(s) exceed the size cap at q${WEBP_QUALITY} — quality was NOT lowered:`);
+    for (const d of overCap) console.log(`   ${d.dest}  ${Math.round((d.bytes ?? 0) / 1024)}KB  (fix: add "canvas": <px> to the map entry, or use a better source)`);
+  }
   const reportPath = path.join(ROOT, "_incoming", `process-images${FIX_OPAQUE ? ".fix-opaque" : ""}${DRY ? ".dry-run" : ""}.report.json`);
   mkdirSync(path.dirname(reportPath), { recursive: true }); writeFileSync(reportPath, JSON.stringify({ generatedAt: new Date().toISOString(), dryRun: DRY, decisions }, null, 1));
   console.log(`report: ${rel(reportPath)}`);
