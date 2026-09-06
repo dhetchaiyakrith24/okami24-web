@@ -65,8 +65,12 @@ Logo assets are supplied separately by the owner. The primary production logo us
 - **LINE OA:** `@okm24`
 - **LINE link:** https://lin.ee/QNJWw6o
 - **Primary YouTube:** https://www.youtube.com/@OKMYARZ
+- **Email (official written channel):** okamisalt@gmail.com — owner 2026-09-06 (answer 8). Shown on
+  the contact page next to LINE. Use for documents, PDPA requests, anything that needs a paper trail.
 
-**Primary customer communication channel:** LINE OA.
+**Primary customer communication channel:** LINE OA — **answered every day, 24 hours** (owner
+2026-09-06, answer 7). Customer-facing wording may say "ทักได้ทุกวัน ตลอด 24 ชั่วโมง"; it must not
+promise a reply within N minutes.
 
 ---
 
@@ -157,6 +161,15 @@ operational information.
 
 LINE remains an important support/sales channel — it is not being replaced.
 
+**Order-channel rule (owner 2026-09-06, answer 18) — supersedes the 2026-09-06 morning rule
+"never bring 'order via LINE' back":**
+- **Website = primary order channel.** The primary button on every product stays "add to cart".
+- **LINE = secondary (backup) order channel.** Product pages carry one small line under the cart
+  button: "หรือสั่งทางไลน์ @okm24". Service pages say the same in one sentence — LINE is *also*
+  a way to order, not the main one. Admin opens the order and sends the customer their order
+  status link.
+- Do not present LINE as the main way to buy, and do not remove the cart/checkout flow.
+
 ---
 
 ## 9. Payment Model
@@ -178,12 +191,38 @@ customer says they paid.
 
 Do not implement payment automation yet.
 
+**Receiving account (owner 2026-09-06, answer 1):**
+- Bank: **Kasikornbank (KBank)** — read from the owner's PromptPay QR image (K+ branding);
+  account name **นาย จีระศักดิ์ เกษมสวัสดิ์** (also read from that image); account number
+  **153-8-29240-7** (owner typed `153-8-292407`; same digits, KBank grouping).
+- Payment methods: bank transfer to that account, or the owner's **PromptPay QR** (file kept
+  outside `public/` at `.data/private/promptpay-qr.png`, served only through the order page).
+- **Visibility rule:** the account number and QR are shown **only on the order status page of a
+  placed order that is still awaiting payment** — never on public pages, never in the how-to-order
+  page, never in the client-side dictionary. Public pages may say "bank details appear on your
+  order page after you place the order".
+- Source of the lines above: owner chat message 2026-09-06 (account number, "ไม่โชว์ Public จนกว่าจะ
+  ถึงขั้นตอนสุดท้ายของการสั่งซื้อ") + the QR image attached to it.
+
+**Cancellation / refund (owner 2026-09-06, answer 2):** a customer may cancel **before
+transferring**. **After the transfer there is no cancellation and no refund.** Say this on the
+how-to-order page and on the order page next to the bank details.
+
 ---
 
 ## 10. Shipping
 
 - **Standard shipping fee:** 60 THB
 - **Free shipping threshold:** 500 THB
+- **Cut-off (owner 2026-09-06, answer 3):** orders with payment made **and reported before 15:00**
+  ship the same day; later ones ship the next working day. (The owner wrote "สั่งก่อน 15:00"; the
+  site phrases it as "โอนและแจ้งชำระเงินก่อน 15:00" because nothing ships before the admin has
+  verified the payment — see §9. If the owner meant "order placed before 15:00", change both.)
+- **Delivery time (answer 3):** 1–3 days after dispatch.
+- **Shipping days (answer 4):** Monday–Saturday; no dispatch on Sundays and Thai public holidays.
+- **Carriers (answer 5):** Thailand Post (EMS) and Flash Express — chosen per destination. No
+  rule yet for which carrier goes where; do not invent one.
+- **Coverage (answer 6):** Thailand only. No international shipping.
 
 Customer-facing messaging should emphasize fast dispatch and tracking provided. Do not
 expose unnecessary internal warehouse or logistics details in customer-facing content.
@@ -201,6 +240,15 @@ Do not collect unnecessary personal information.
 **Future account capabilities** (implement only when approved): order history, favorites,
 addresses, tracking, product interests.
 
+**Personal data (PDPA) — owner 2026-09-06, answers 9–11:**
+- **Retention:** order and address data are kept **1 year**, counted from order completion, then
+  deleted. Customers may ask for earlier deletion via LINE or email.
+- **Data controller:** the shop **OKami24** (no legal-entity name given — do not invent one).
+- **Official channel for data requests:** email okamisalt@gmail.com (LINE accepted too).
+- **DPO:** none.
+- Still open (not answered, keep as a LAUNCH_AUDIT item): whether the shop is registered for
+  e-commerce and what seller details Thai law then requires on the site.
+
 ---
 
 ## 12. After-Sales / Trust
@@ -212,6 +260,20 @@ OKami24 provides a **7-day claim window** when a product has a problem.
 Before publishing final wording, the exact claim policy should be reviewed so the website
 promise does not exceed actual operations. Use this policy as a major Trust / Service
 differentiator.
+
+**Claim policy details (owner 2026-09-06, answers 13–17):**
+- **Outcome of an approved claim (13):** replacement with the **same item**. If it is out of
+  stock, the customer picks **another item of the same price**. **No cash refund**, ever.
+- **Shipping costs (14):** the customer pays to send the item back; the shop pays to send the
+  replacement.
+- **Return (15):** the item **must** be sent back in every approved case. Admin gives the return
+  address **on LINE after approval**. **The return address is never shown on the website.**
+- **Decision time (16):** within **3 working days**.
+- **Factory warranty (17):** none. Claims are handled by the shop only.
+- **Still open (12):** which symptoms are accepted / rejected — the owner will tick the list from
+  the draft claims page (ก/ข/ค per item). Until then the claims page stays a `/preview` draft.
+- Target public URL once approved: **/warranty** (owner wording 2026-09-06), linked from the
+  footer help column and the sitemap.
 
 ---
 
@@ -354,7 +416,10 @@ Explicit unresolved items — **never invent answers for these**:
 - Exact production database/backend
 - Shipnity integration mechanism/API availability
 - Final authentication implementation
-- Final payment implementation
+- Final payment implementation (automation / slip verification — the receiving account itself is
+  resolved, see §9)
+- Claim symptom list (§12 item 12) — awaiting the owner's ticks
+- E-commerce registration / legally required seller details (§11)
 - Final Product Master schema
 - Exact warehouse integration
 - Final production domain
