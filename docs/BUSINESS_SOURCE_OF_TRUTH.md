@@ -197,6 +197,13 @@ Do not implement payment automation yet.
   **153-8-29240-7** (owner typed `153-8-292407`; same digits, KBank grouping).
 - Payment methods: bank transfer to that account, or the owner's **PromptPay QR** (file kept
   outside `public/` at `.data/private/promptpay-qr.png`, served only through the order page).
+- **QR file = the QR square only, cropped (owner 2026-09-06).** The owner's original was a full
+  PromptPay slip; its blue header, logo and four text lines ate over half the frame, and the
+  masked account number printed on it (`xxx-x-x9240-x`) contradicted the full number in the table
+  above it — "ลูกค้าจะลังเล". Cropped to 500×500 with a quiet zone; the untouched slip is kept
+  beside it as `.data/private/promptpay-qr-fullslip.png` so this is one file-copy to undo.
+  **Not owner-approved yet: the owner will scan the cropped code with a phone before it counts as
+  passed.** If it does not scan, restore from the backup file.
 - **Visibility rule:** the account number and QR are shown **only on the order status page of a
   placed order that is still awaiting payment** — never on public pages, never in the how-to-order
   page, never in the client-side dictionary. Public pages may say "bank details appear on your
@@ -476,3 +483,32 @@ is the brief for the "Thai language pass" item in `docs/LAUNCH_AUDIT.md`.
 - The owner reviewed the five service pages on 2026-09-06 and **approved them as published**, while
   noting the Thai still reads stiff in places; rewriting that copy is the separate language-pass
   job above, not a reason to hold the pages back.
+
+---
+
+## 21. Product / Flavour Decisions (owner, 2026-09-06)
+
+Answers given while the image work was being planned. **Nothing has been built from these yet** —
+they are the brief for the image batches in `docs/LAUNCH_AUDIT.md`.
+
+### Esko Bar Switch 20K (`pod-159`) — expand to the manufacturer's full 20 flavours
+- The manufacturer's own site (`eskobarvape.com/product/pod-system/`) lists **20 flavours** with a
+  clean per-flavour photo each (single black pod, flat white background, no watermark). Our data
+  currently carries **2** (Cool Mint, Cola).
+- **Owner decision: add all 20**, under the standing catalogue rule "show every flavour the maker
+  offers even with no stock". Flavours with no stock get the greyed-out / sold-out treatment
+  (`src/data/stock/sold-out.ts`) — they are not dropped.
+- This is the one sanctioned exception to IMAGE_SPEC §5 ("do not add flavours yourself"): the
+  owner asked for it explicitly, so add them; do not invent names beyond the manufacturer's list.
+
+### M Bar 15K / M Switch Pod — the shop sells BOTH pod types
+- **Owner correction to the 2026-09-04 note** (which said only the black COTTON MESH pod is
+  stocked): **both the clear pod and the black pod are genuinely sold.**
+- Authoritative references, given by the owner — follow how salthub.com itself splits them, do not
+  guess which product is which:
+  - https://www.salthub.com/m-switch-pod/
+  - https://www.salthub.com/m-bar-15k/
+- Therefore the clean 15-flavour clear-pod set found on 2026-09-06 **is usable** — these products
+  must NOT be marked `[ยังไม่มีรูป]`.
+- If the two pages turn out to describe two different products, **split them into two products the
+  same way salthub.com does** rather than merging or guessing.
