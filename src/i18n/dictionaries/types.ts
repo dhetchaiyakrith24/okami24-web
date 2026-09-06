@@ -29,6 +29,8 @@ export interface Dictionary {
     shipping: string;
     contact: string;
     privacy: string;
+    /** /warranty — published 2026-09-06 once the owner approved the claim conditions (BSOT §12). */
+    warranty: string;
   };
   footer: {
     tagline: string;

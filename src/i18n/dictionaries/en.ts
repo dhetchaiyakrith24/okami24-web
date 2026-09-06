@@ -22,6 +22,7 @@ export const en: Dictionary = {
     shipping: "Shipping",
     contact: "Contact",
     privacy: "Privacy",
+    warranty: "Warranty & claims",
   },
   footer: {
     // Deliberately left in Thai even in the English dictionary: this is OKami24's real brand-

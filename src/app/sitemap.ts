@@ -9,10 +9,9 @@ import { SITE_URL as BASE_URL } from "@/lib/seo";
 import { brandsWithProducts } from "@/lib/brand-visibility";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Customer-service pages (2026-09-06): how-to-order, shipping, contact, privacy are public.
-  // The claims-policy page is a DRAFT awaiting owner sign-off (BSOT §12) — it lives under
-  // /preview/ (production 404 + robots disallow) and is deliberately NOT listed here.
-  const staticRoutes = ["", "/products", "/e-liquid", "/compare", "/finder", "/guides", "/technology", "/faq", "/about", "/how-to-order", "/shipping", "/contact", "/privacy", "/search", "/favorites"];
+  // Customer-service pages (2026-09-06): how-to-order, shipping, contact, privacy and — since the
+  // owner approved the claim conditions the same day (BSOT §12) — /warranty are all public.
+  const staticRoutes = ["", "/products", "/e-liquid", "/compare", "/finder", "/guides", "/technology", "/faq", "/about", "/how-to-order", "/shipping", "/warranty", "/contact", "/privacy", "/search", "/favorites"];
 
   const routes: MetadataRoute.Sitemap = staticRoutes.map((path) => ({
     url: `${BASE_URL}${path}`,

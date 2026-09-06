@@ -28,7 +28,7 @@ export interface ShippingCopy {
   problemTitle: string;
   problem: ReactNode;
   readNext: string;
-  links: { howToOrder: string; contact: string };
+  links: { howToOrder: string; contact: string; warranty: string };
 }
 
 export const SHIPPING: ServiceCopy<ShippingCopy> = {
@@ -63,7 +63,7 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     problemTitle: "ของมีปัญหาตอนได้รับ",
     problem: <><B>ถ่ายคลิปตอนแกะกล่องไว้ทุกครั้ง</B> ถ้าสินค้ามีปัญหา เคลมได้ภายใน 7 วันหลังได้รับของ และคลิปแกะกล่องคือหลักฐานที่เราต้องใช้พิจารณา</>,
     readNext: "อ่านต่อ:",
-    links: { howToOrder: "วิธีสั่งซื้อ", contact: "ติดต่อเรา" },
+    links: { howToOrder: "วิธีสั่งซื้อ", contact: "ติดต่อเรา", warranty: "นโยบายเคลม" },
   },
   en: {
     eyebrow: "Cost and timing",
@@ -96,7 +96,7 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     problemTitle: "If something’s wrong when it arrives",
     problem: <><B>Always film yourself unboxing.</B> If there’s a problem with the product you can claim within 7 days of receiving it, and the unboxing video is the evidence we need in order to consider it.</>,
     readNext: "Read next:",
-    links: { howToOrder: "How to order", contact: "Contact" },
+    links: { howToOrder: "How to order", contact: "Contact", warranty: "Warranty & claims" },
   },
   zh: {
     eyebrow: "运费与时效",
@@ -129,6 +129,6 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     problemTitle: "收到货有问题",
     problem: <><B>每次都请拍下开箱视频。</B>商品如有问题，可在收货后 7 天内申请售后，而开箱视频是我们受理时必须依据的凭证。</>,
     readNext: "继续阅读：",
-    links: { howToOrder: "如何下单", contact: "联系我们" },
+    links: { howToOrder: "如何下单", contact: "联系我们", warranty: "售后政策" },
   },
 };

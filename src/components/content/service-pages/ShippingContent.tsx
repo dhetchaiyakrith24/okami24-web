@@ -61,7 +61,8 @@ export function ShippingContent() {
           <ServiceSection title={c.problemTitle}>
             <p>{c.problem}</p>
             <p className="text-sm">
-              {c.readNext} <Link href="/how-to-order" className={link}>{c.links.howToOrder}</Link> · <Link href="/contact" className={link}>{c.links.contact}</Link>
+              {c.readNext} <Link href="/warranty" className={link}>{c.links.warranty}</Link> · <Link href="/how-to-order" className={link}>{c.links.howToOrder}</Link> ·{" "}
+              <Link href="/contact" className={link}>{c.links.contact}</Link>
             </p>
           </ServiceSection>
 

@@ -1,28 +1,23 @@
 "use client";
 
+import Link from "next/link";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
-import { Badge } from "@/components/ui/Badge";
-import { AgeNote, InfoCard, NumberedSteps, PendingFact, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt } from "@/components/content/ServicePage";
+import { AgeNote, InfoCard, NumberedSteps, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt } from "@/components/content/ServicePage";
 import { CLAIMS } from "@/i18n/service-pages/claims-policy";
 
-/** Body of the claims-policy DRAFT in the active language (copy: src/i18n/service-pages/claims-policy.tsx).
- *  The `draft` flag renders the DRAFT bar and the owner's open question (item 12); it is dropped
- *  when the page moves from /preview to /warranty. */
-export function ClaimsPolicyContent({ draft }: { draft: boolean }) {
+/**
+ * Body of /warranty in the active language (copy: src/i18n/service-pages/claims-policy.tsx).
+ * Published 2026-09-06 after the owner ticked the symptom list (BSOT §12) — the DRAFT bar and
+ * the "owner to confirm" box that lived here while it was a /preview draft are gone.
+ */
+export function ClaimsPolicyContent() {
   const { locale } = useLocale();
   const c = CLAIMS[locale];
+  const link = "text-foreground hover:text-red";
   return (
     <>
-      {draft && (
-        <div className="border-b border-unverified/30 bg-unverified/10">
-          <Container className="flex flex-wrap items-center gap-3 py-3 text-sm text-unverified">
-            <Badge tone="unverified">DRAFT</Badge>
-            <span>{c.draftBar}</span>
-          </Container>
-        </div>
-      )}
       <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.description} />
       <Container className="max-w-2xl py-12 lg:py-16">
         <div className="flex flex-col gap-10">
@@ -38,16 +33,6 @@ export function ClaimsPolicyContent({ draft }: { draft: boolean }) {
           </ServiceSection>
 
           <ServiceSection title={c.symptoms.title}>
-            {draft && (
-              <PendingFact
-                always
-                question={{
-                  th: "อาการแบบไหนที่รับเคลม และแบบไหนที่ไม่รับ — ขีดเลือกจากรายการด้านล่าง (ก รับ / ข ไม่รับ / ค แล้วแต่กรณี)",
-                  en: "Which faults are covered and which are not — the owner ticks each line below (ก = covered / ข = not covered / ค = case by case)",
-                  zh: "哪些故障受理、哪些不受理 —— 店主逐条勾选下方列表（ก = 受理 / ข = 不受理 / ค = 视情况而定）",
-                }}
-              />
-            )}
             <div className="grid gap-3 sm:grid-cols-2">
               <InfoCard title={c.symptoms.acceptTitle}>
                 {c.symptoms.acceptItems.map((it) => (
@@ -60,6 +45,7 @@ export function ClaimsPolicyContent({ draft }: { draft: boolean }) {
                 ))}
               </InfoCard>
             </div>
+            <p>{c.symptoms.caseByCase}</p>
           </ServiceSection>
 
           <ServiceSection title={c.outcome.title}>
@@ -76,6 +62,10 @@ export function ClaimsPolicyContent({ draft }: { draft: boolean }) {
             <p>{c.honest.p1}</p>
             <p>{c.honest.p2}</p>
             <p>{c.honest.p3}</p>
+            <p className="text-sm">
+              {c.readNext} <Link href="/how-to-order" className={link}>{c.links.howToOrder}</Link> · <Link href="/shipping" className={link}>{c.links.shipping}</Link> ·{" "}
+              <Link href="/contact" className={link}>{c.links.contact}</Link>
+            </p>
           </ServiceSection>
 
           <AgeNote />

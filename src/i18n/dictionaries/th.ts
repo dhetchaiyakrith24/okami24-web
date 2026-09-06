@@ -21,6 +21,7 @@ export const th: Dictionary = {
     shipping: "การจัดส่ง",
     contact: "ติดต่อเรา",
     privacy: "ความเป็นส่วนตัว",
+    warranty: "นโยบายเคลม",
   },
   footer: {
     tagline:

@@ -21,12 +21,13 @@ export function Footer() {
     { label: dict.nav.eliquid, href: "/e-liquid" },
   ];
 
-  // Customer-service column (2026-09-06, LAUNCH_AUDIT 3/4). FAQ moved here from "Learn" — it is
-  // a help page, not reading material (designer direction). The claims-policy DRAFT is
-  // deliberately not linked anywhere until the owner approves its wording (BSOT §12).
+  // Customer-service column (2026-09-06, LAUNCH_AUDIT 3/4/12). FAQ moved here from "Learn" — it
+  // is a help page, not reading material (designer direction). /warranty joined the column on
+  // 2026-09-06 once the owner approved the claim conditions (BSOT §12).
   const HELP_LINKS = [
     { label: dict.nav.howToOrder, href: "/how-to-order" },
     { label: dict.nav.shipping, href: "/shipping" },
+    { label: dict.nav.warranty, href: "/warranty" },
     { label: dict.nav.faq, href: "/faq" },
     { label: dict.nav.contact, href: "/contact" },
     { label: dict.nav.privacy, href: "/privacy" },

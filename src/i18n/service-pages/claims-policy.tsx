@@ -4,31 +4,31 @@ import { LineLink, type Step } from "@/components/content/ServicePage";
 import { B, type ServiceCopy } from "./shared";
 
 /**
- * Claims policy — still a DRAFT under /preview (owner has not ticked item 12, the accepted /
- * rejected symptom list). The "→ รับ / ไม่รับ" placeholders inside the symptom cards are the
- * owner's tick boxes and stay Thai in every language on purpose; they are replaced with real
- * wording (Covered / Not covered · 受理 / 不受理) when the owner answers.
+ * Claims policy — PUBLISHED at /warranty since 2026-09-06: the owner ticked the symptom list
+ * (PAGE_COPY item 12: 1ก 2ก 3ก 4ข 5ข 6ค 7ข), so the placeholder "→ รับ / ไม่รับ" boxes are gone
+ * and every line now states the shop's real answer. Facts: BSOT §12.
  */
 export interface ClaimsCopy {
-  draftBar: string;
   eyebrow: string;
   title: string;
   description: string;
   summary: { label: string; value: string; note: string }[];
   window: { title: string; body: ReactNode };
   video: { title: string; p1: ReactNode; p2: string };
-  symptoms: { title: string; acceptTitle: string; acceptItems: string[]; declineTitle: string; declineItems: string[] };
+  /** `caseByCase` = the owner's answer "ค" on item 6 (used for a while, then it breaks). */
+  symptoms: { title: string; acceptTitle: string; acceptItems: string[]; declineTitle: string; declineItems: string[]; caseByCase: ReactNode };
   outcome: { title: string; p1: ReactNode; p2: string; p3: ReactNode };
   steps: { title: string; items: Step[] };
   honest: { title: string; p1: string; p2: string; p3: ReactNode };
+  readNext: string;
+  links: { howToOrder: string; shipping: string; contact: string };
 }
 
 const line = CONTACT.lineId;
 
 export const CLAIMS: ServiceCopy<ClaimsCopy> = {
   th: {
-    draftBar: "ร่าง — ยังไม่เผยแพร่ รอเจ้าของอ่านอนุมัติ · หน้านี้เปิดได้เฉพาะเครื่องพัฒนา ไม่มีลิงก์จากหน้าอื่น ไม่อยู่ใน sitemap",
-    eyebrow: "ร่าง · ของมีปัญหา",
+    eyebrow: "ของมีปัญหา",
     title: "นโยบายเคลม",
     description: "ของมีปัญหาเคลมได้ภายใน 7 วัน ต้องมีคลิปตอนแกะกล่อง — อ่านเงื่อนไขให้ครบก่อนสั่ง",
     summary: [
@@ -44,10 +44,15 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
     },
     symptoms: {
       title: "แบบไหนเคลมได้ แบบไหนไม่ได้",
-      acceptTitle: "ตัวอย่างที่ร้านทั่วไปมัก “รับ”",
-      acceptItems: ["ของผิดรุ่น ผิดสี ผิดกลิ่น จากที่สั่ง → รับ / ไม่รับ", "เครื่องเสียตั้งแต่แกะ กดไม่ติด ชาร์จไม่เข้า → รับ / ไม่รับ", "น้ำยารั่ว ซึม ในสภาพยังไม่ได้ใช้ → รับ / ไม่รับ"],
-      declineTitle: "ตัวอย่างที่ร้านทั่วไปมัก “ไม่รับ”",
-      declineItems: ["กล่องบุบ แต่ของใช้ได้ปกติ → รับ / ไม่รับ", "ตกหล่น โดนน้ำ ใช้งานผิดวิธี → รับ / ไม่รับ", "ใช้ไปแล้วสักพักแล้วเสีย → รับ / ไม่รับ (ถ้ารับ กี่วัน)", "ไม่ชอบ เปลี่ยนใจ อยากเปลี่ยนกลิ่น → รับ / ไม่รับ"],
+      acceptTitle: "เคลมได้",
+      acceptItems: ["ของผิดรุ่น ผิดสี ผิดกลิ่น จากที่สั่ง", "เครื่องเสียตั้งแต่แกะ กดไม่ติด ชาร์จไม่เข้า", "น้ำยารั่ว ซึม ในสภาพยังไม่ได้ใช้"],
+      declineTitle: "เคลมไม่ได้",
+      declineItems: ["กล่องบุบ แต่ของใช้ได้ปกติ", "ตกหล่น โดนน้ำ ใช้งานผิดวิธี", "ไม่ชอบ เปลี่ยนใจ อยากเปลี่ยนกลิ่น"],
+      caseByCase: (
+        <>
+          <B>ใช้ไปแล้วสักพักแล้วเสีย — ดูเป็นกรณีไป</B> ถ้าแจ้งภายใน 7 วันนับจากวันที่ได้รับของ เราพิจารณาให้ เกิน 7 วันแล้วเคลมไม่ได้
+        </>
+      ),
     },
     outcome: {
       title: "เคลมแล้วได้อะไร",
@@ -71,10 +76,11 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
       p2: "สิ่งที่เรารับปากได้คือ ถ้าของมีปัญหาจริงและคุณมีคลิปแกะกล่อง เราจะดูให้และตอบคุณตรง ๆ ว่าทำอะไรให้ได้บ้าง",
       p3: <><B>สินค้าที่เราขายไม่มีประกันจากโรงงาน</B> เคลมได้กับร้านเราตามเงื่อนไขหน้านี้เท่านั้น</>,
     },
+    readNext: "อ่านต่อ:",
+    links: { howToOrder: "วิธีสั่งซื้อ", shipping: "การจัดส่ง", contact: "ติดต่อเรา" },
   },
   en: {
-    draftBar: "Draft — not published, awaiting the owner’s review and approval · this page only opens on a development machine, is not linked from anywhere, and is not in the sitemap",
-    eyebrow: "Draft · Faulty items",
+    eyebrow: "Faulty items",
     title: "Claims policy",
     description: "Faulty items can be claimed within 7 days, and an unboxing video is required — read the conditions in full before you order.",
     summary: [
@@ -90,10 +96,15 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
     },
     symptoms: {
       title: "What’s covered and what isn’t",
-      acceptTitle: "Examples most shops usually “accept”",
-      acceptItems: ["Wrong model, wrong colour or wrong flavour from what you ordered → รับ / ไม่รับ", "Dead on arrival — won’t switch on, won’t charge → รับ / ไม่รับ", "E-liquid leaking or seeping while still unused → รับ / ไม่รับ"],
-      declineTitle: "Examples most shops usually “decline”",
-      declineItems: ["Dented box, but the product works fine → รับ / ไม่รับ", "Dropped, water damage, or misuse → รับ / ไม่รับ", "Breaks after you’ve been using it for a while → รับ / ไม่รับ (ถ้ารับ กี่วัน)", "Don’t like it, changed your mind, want a different flavour → รับ / ไม่รับ"],
+      acceptTitle: "Covered",
+      acceptItems: ["Wrong model, wrong colour or wrong flavour from what you ordered", "Dead on arrival — won’t switch on, won’t charge", "E-liquid leaking or seeping while still unused"],
+      declineTitle: "Not covered",
+      declineItems: ["Dented box, but the product works fine", "Dropped, water damage, or misuse", "Don’t like it, changed your mind, want a different flavour"],
+      caseByCase: (
+        <>
+          <B>Breaks after you’ve been using it for a while — case by case.</B> Tell us within 7 days of the date you received it and we’ll look at it. After 7 days it can’t be claimed.
+        </>
+      ),
     },
     outcome: {
       title: "What you get if a claim is approved",
@@ -117,10 +128,11 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
       p2: "What we can promise: if the item genuinely has a problem and you have the unboxing video, we’ll look into it and tell you straight what we can do.",
       p3: <><B>The products we sell come with no manufacturer’s warranty.</B> Claims are made with our shop only, under the conditions on this page.</>,
     },
+    readNext: "Read next:",
+    links: { howToOrder: "How to order", shipping: "Shipping", contact: "Contact" },
   },
   zh: {
-    draftBar: "草稿 —— 尚未发布，等待店主阅读并批准 · 本页仅在开发环境可打开，没有任何页面链接到它，也不在 sitemap 中",
-    eyebrow: "草稿 · 商品有问题",
+    eyebrow: "商品有问题",
     title: "售后政策",
     description: "商品有问题可在 7 天内申请售后，必须提供开箱视频 —— 下单前请完整阅读条件。",
     summary: [
@@ -136,10 +148,15 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
     },
     symptoms: {
       title: "哪些情况受理，哪些不受理",
-      acceptTitle: "一般店铺通常「受理」的例子",
-      acceptItems: ["型号、颜色或口味与所下订单不符 → รับ / ไม่รับ", "拆封即故障 —— 无法开机、无法充电 → รับ / ไม่รับ", "未使用状态下出现漏油、渗液 → รับ / ไม่รับ"],
-      declineTitle: "一般店铺通常「不受理」的例子",
-      declineItems: ["包装盒有凹陷，但商品使用正常 → รับ / ไม่รับ", "摔落、进水、使用方式不当 → รับ / ไม่รับ", "使用一段时间后损坏 → รับ / ไม่รับ (ถ้ารับ กี่วัน)", "不喜欢、改变主意、想换口味 → รับ / ไม่รับ"],
+      acceptTitle: "可以受理",
+      acceptItems: ["型号、颜色或口味与所下订单不符", "拆封即故障 —— 无法开机、无法充电", "未使用状态下出现漏油、渗液"],
+      declineTitle: "不受理",
+      declineItems: ["包装盒有凹陷，但商品使用正常", "摔落、进水、使用方式不当", "不喜欢、改变主意、想换口味"],
+      caseByCase: (
+        <>
+          <B>使用一段时间后损坏 —— 视情况而定。</B>在收货之日起 7 天内告知我们，我们会受理查看；超过 7 天则无法申请售后。
+        </>
+      ),
     },
     outcome: {
       title: "售后通过后能得到什么",
@@ -163,5 +180,7 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
       p2: "我们能承诺的是：如果商品确实有问题，而您有开箱视频，我们会认真查看，并直接告诉您我们能做什么。",
       p3: <><B>我们销售的商品没有原厂保修。</B>售后仅能依据本页条件向本店申请。</>,
     },
+    readNext: "继续阅读：",
+    links: { howToOrder: "如何下单", shipping: "配送", contact: "联系我们" },
   },
 };

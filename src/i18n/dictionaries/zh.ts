@@ -27,6 +27,7 @@ export const zh: Dictionary = {
     shipping: "配送说明",
     contact: "联系我们",
     privacy: "隐私政策",
+    warranty: "售后政策",
   },
   footer: {
     tagline: "OKami24 — 正品保证，价格透明，服务实在。精选电子烟设备、一次性烟弹与烟油，售后服务持续跟进。",
