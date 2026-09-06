@@ -93,7 +93,7 @@ async function runFullLeakageCheck(): Promise<boolean> {
     stdio: "pipe",
     shell: process.platform === "win32",
     encoding: "utf-8",
-    env: { ...process.env, SITE_URL: process.env.SITE_URL ?? "https://okami24.co" },
+    env: { ...process.env, SITE_URL: process.env.SITE_URL ?? "https://okami24.store" },
   });
   const buildOk = build.status === 0;
   results.push({ name: "next build", ok: buildOk, durationMs: Date.now() - buildStart, output: buildOk ? undefined : `${build.stdout ?? ""}\n${build.stderr ?? ""}` });
@@ -125,7 +125,7 @@ async function runFullLeakageCheck(): Promise<boolean> {
   const { spawn } = await import("node:child_process");
   const child = spawn("npx", ["next", "start", "-p", String(port)], {
     shell: process.platform === "win32",
-    env: { ...process.env, SITE_URL: process.env.SITE_URL ?? "https://okami24.co" },
+    env: { ...process.env, SITE_URL: process.env.SITE_URL ?? "https://okami24.store" },
     stdio: "ignore",
   });
 

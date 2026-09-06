@@ -43,7 +43,7 @@ function resolveSiteUrl(): string {
       try {
         parsed = new URL(trimmed);
       } catch {
-        throw new Error(`SITE_URL ("${trimmed}") is not a valid absolute URL. Set it to the real OKami24 production domain, e.g. "https://okami24.com".`);
+        throw new Error(`SITE_URL ("${trimmed}") is not a valid absolute URL. Set it to the real OKami24 production domain, e.g. "https://okami24.store".`);
       }
       const problem = checkObviouslyInvalidProductionHost(parsed.hostname);
       if (problem) {

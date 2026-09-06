@@ -1,6 +1,6 @@
 /**
  * Restore drill — proves a backup can actually be brought back, in a SEPARATE folder, without
- * touching the live `.data/` database.
+ * touching the live database (`.data/` locally, `OKAMI24_DATA_DIR` on a host).
  *
  *   npm run backup:restore-test                 → uses the newest backup in the backup folder
  *   npm run backup:restore-test -- <file.db>    → uses that backup file
@@ -16,6 +16,7 @@ import Database from "better-sqlite3";
 import fs from "node:fs";
 import path from "node:path";
 import { defaultBackupDir, fileStamp, listBackups } from "../src/lib/backup/data-backup";
+import { dbPath } from "../src/lib/paths";
 
 const TABLES = [
   "customers",
@@ -69,7 +70,7 @@ function main(): void {
   db.close();
 
   const restoredCounts = countAll(restored);
-  const livePath = path.join(process.cwd(), ".data", "okami24.db");
+  const livePath = dbPath();
   const liveCounts = fs.existsSync(livePath) ? countAll(livePath) : null;
 
   const missing = TABLES.filter((t) => restoredCounts[t] === "missing");
