@@ -19,7 +19,17 @@ export function Footer() {
     { label: dict.nav.guides, href: "/guides" },
     { label: dict.nav.technology, href: "/technology" },
     { label: dict.nav.eliquid, href: "/e-liquid" },
+  ];
+
+  // Customer-service column (2026-09-06, LAUNCH_AUDIT 3/4). FAQ moved here from "Learn" — it is
+  // a help page, not reading material (designer direction). The claims-policy DRAFT is
+  // deliberately not linked anywhere until the owner approves its wording (BSOT §12).
+  const HELP_LINKS = [
+    { label: dict.nav.howToOrder, href: "/how-to-order" },
+    { label: dict.nav.shipping, href: "/shipping" },
     { label: dict.nav.faq, href: "/faq" },
+    { label: dict.nav.contact, href: "/contact" },
+    { label: dict.nav.privacy, href: "/privacy" },
   ];
 
   const TOOL_LINKS = [
@@ -31,7 +41,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-surface-border-soft bg-surface-1">
-      <Container className="grid grid-cols-2 gap-10 py-14 sm:grid-cols-4 lg:grid-cols-5 lg:py-20">
+      <Container className="grid grid-cols-2 gap-10 py-14 sm:grid-cols-4 lg:grid-cols-6 lg:py-20">
         <div className="col-span-2 flex flex-col gap-4 lg:col-span-2">
           <Link href="/" className="flex items-center" aria-label="OKami24">
             <Image src="/brand/okami-logo-red.png" alt="OKami24" width={568} height={480} className="h-10 w-auto" />
@@ -82,10 +92,19 @@ export function Footer() {
             </FooterLink>
           ))}
         </FooterColumn>
+
+        <FooterColumn title={dict.footer.help}>
+          {HELP_LINKS.map((l) => (
+            <FooterLink key={l.href} href={l.href}>
+              {l.label}
+            </FooterLink>
+          ))}
+        </FooterColumn>
       </Container>
 
       <div className="border-t border-surface-border-soft">
-        <Container className="flex flex-col gap-4 py-8 text-xs text-foreground-dim sm:flex-row sm:items-center sm:justify-between">
+        {/* pb-24 on mobile: the floating LINE button sits over the last footer lines otherwise (designer review 2026-09-06). */}
+        <Container className="flex flex-col gap-4 pt-8 pb-24 text-xs text-foreground-dim sm:flex-row sm:items-center sm:justify-between sm:py-8">
           <div className="flex flex-wrap gap-x-4 gap-y-2">
             {brands.map((b) => (
               <Link key={b.id} href={`/brands/${b.slug}`} className="hover:text-foreground-muted">

@@ -23,12 +23,17 @@ export const zh: Dictionary = {
     cart: "购物车",
     openMenu: "打开菜单",
     closeMenu: "关闭菜单",
+    howToOrder: "购买流程",
+    shipping: "配送说明",
+    contact: "联系我们",
+    privacy: "隐私政策",
   },
   footer: {
     tagline: "OKami24 — 正品保证，价格透明，服务实在。精选电子烟设备、一次性烟弹与烟油，售后服务持续跟进。",
     shop: "购买",
     learn: "了解更多",
     tools: "工具",
+    help: "帮助",
     ageNotice: "仅限21岁以上人士购买。尼古丁为成瘾性物质。可直接在本站下单，咨询请加 LINE",
   },
   hero: {

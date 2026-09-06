@@ -129,7 +129,22 @@ export function runI18nContractTests(): I18nContractResult[] {
   //     hardcoded eyebrow next to hardcoded Thai title/description is consistent, not broken —
   //     switching only the eyebrow while the rest of the page stays Thai would be a worse,
   //     half-translated result than leaving it alone.
-  const EXCLUDED = [path.join("preview", "product-master"), path.join("about", "page.tsx")];
+  //   - how-to-order / shipping / contact / privacy (2026-09-06, LAUNCH_AUDIT 3/4) — the SAME
+  //     exception as about/page.tsx: whole-page Thai brand/policy copy drafted by the writer from
+  //     docs/BUSINESS_SOURCE_OF_TRUTH.md (see docs/PAGE_COPY_2026-09-06.md), pending owner answers
+  //     on the open facts. Translating only the header would be the same half-translated result;
+  //     a full th/en/zh version of policy text needs owner-reviewed wording first (BSOT §12).
+  //   - preview/claims-policy — the claims-policy DRAFT: NODE_ENV-gated like product-master,
+  //     `notFound()` in production, not linked, not in the sitemap; owner-only reading copy.
+  const EXCLUDED = [
+    path.join("preview", "product-master"),
+    path.join("preview", "claims-policy"),
+    path.join("about", "page.tsx"),
+    path.join("how-to-order", "page.tsx"),
+    path.join("shipping", "page.tsx"),
+    path.join("contact", "page.tsx"),
+    path.join("privacy", "page.tsx"),
+  ];
   const offendingPages: string[] = [];
   for (const file of findPageFiles(APP_DIR)) {
     const rel = path.relative(process.cwd(), file);

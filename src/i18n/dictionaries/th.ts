@@ -17,6 +17,10 @@ export const th: Dictionary = {
     cart: "ตะกร้าสินค้า",
     openMenu: "เปิดเมนู",
     closeMenu: "ปิดเมนู",
+    howToOrder: "วิธีสั่งซื้อ",
+    shipping: "การจัดส่ง",
+    contact: "ติดต่อเรา",
+    privacy: "ความเป็นส่วนตัว",
   },
   footer: {
     tagline:
@@ -24,6 +28,7 @@ export const th: Dictionary = {
     shop: "เลือกซื้อ",
     learn: "เรียนรู้",
     tools: "เครื่องมือ",
+    help: "ช่วยเหลือ",
     ageNotice: "สำหรับผู้มีอายุ 21 ปีขึ้นไปเท่านั้น นิโคตินเป็นสารเสพติด สั่งซื้อบนเว็บได้เลย สอบถามทาง LINE",
   },
   hero: {

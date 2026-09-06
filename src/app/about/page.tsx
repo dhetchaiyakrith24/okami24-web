@@ -61,6 +61,20 @@ export default function AboutPage() {
               </Link>{" "}
               ได้เลย แอดมินช่วยเช็คสต๊อกและแนะนำสินค้าที่เหมาะกับคุณ
             </p>
+            <p className="mt-3 text-sm text-foreground-muted">
+              อ่านต่อ:{" "}
+              <Link href="/how-to-order" className="text-foreground hover:text-red">
+                วิธีสั่งซื้อ
+              </Link>{" "}
+              ·{" "}
+              <Link href="/shipping" className="text-foreground hover:text-red">
+                การจัดส่ง
+              </Link>{" "}
+              ·{" "}
+              <Link href="/contact" className="text-foreground hover:text-red">
+                ติดต่อเรา
+              </Link>
+            </p>
           </section>
 
           <section>

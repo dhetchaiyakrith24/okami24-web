@@ -23,12 +23,20 @@ export interface Dictionary {
     cart: string;
     openMenu: string;
     closeMenu: string;
+    /** Customer-service pages added 2026-09-06 (LAUNCH_AUDIT 3/4): /how-to-order, /shipping,
+     *  /contact, /privacy — linked from the footer "help" column. */
+    howToOrder: string;
+    shipping: string;
+    contact: string;
+    privacy: string;
   };
   footer: {
     tagline: string;
     shop: string;
     learn: string;
     tools: string;
+    /** Column title for the customer-service links (วิธีสั่งซื้อ / การจัดส่ง / ติดต่อเรา / ความเป็นส่วนตัว). */
+    help: string;
     ageNotice: string;
   };
   hero: {

@@ -17,6 +17,7 @@ export function Button({
   children,
   variant = "primary",
   href,
+  external = false,
   className,
   onClick,
   type = "button",
@@ -24,11 +25,20 @@ export function Button({
   children: ReactNode;
   variant?: ButtonVariant;
   href?: string;
+  /** Off-site link (LINE, YouTube): opens in a new tab with rel="noopener noreferrer". */
+  external?: boolean;
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit";
 }) {
   const classes = cn(baseClasses, variantClasses[variant], className);
+  if (href && external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+        {children}
+      </a>
+    );
+  }
   if (href) {
     return (
       <Link href={href} className={classes}>

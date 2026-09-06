@@ -18,6 +18,10 @@ export const en: Dictionary = {
     cart: "Cart",
     openMenu: "Open menu",
     closeMenu: "Close menu",
+    howToOrder: "How to Order",
+    shipping: "Shipping",
+    contact: "Contact",
+    privacy: "Privacy",
   },
   footer: {
     // Deliberately left in Thai even in the English dictionary: this is OKami24's real brand-
@@ -30,6 +34,7 @@ export const en: Dictionary = {
     shop: "Shop",
     learn: "Learn",
     tools: "Tools",
+    help: "Help",
     ageNotice: "For ages 21 and over only. Nicotine is addictive. Order right here on the site, or ask us on LINE",
   },
   hero: {
