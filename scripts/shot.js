@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // Mobile-width full-page screenshots via Chrome DevTools Protocol (no puppeteer needed; Node 22+ has WebSocket).
 //
-//   node scripts/shot.js <out.png> <url> [--click "<css selector>"]... [--wait ms] [--width 375]
+//   node scripts/shot.js <out.png> <url> [--click "<css selector>"]... [--cookie name=value]... [--wait ms] [--width 375]
 //   e.g. node scripts/shot.js shot.png http://localhost:3000/products/zero-pro --wait 4000
 //
 // Why this exists: the Browser pane's screenshot can't be saved to a file, and plain headless
@@ -13,7 +13,10 @@ const { spawn } = require("child_process"); const http = require("http"); const 
 const CHROME = process.env.CHROME_PATH || "C:/Program Files/Google/Chrome/Application/chrome.exe";
 const args = process.argv.slice(2); const out = args[0], url = args[1];
 const clicks = []; let wait = 2500, width = 375; const AGE_KEY = process.env.AGE_KEY || "okami24-age-verified";
-for (let i = 2; i < args.length; i++) { if (args[i] === "--click") clicks.push(args[++i]); else if (args[i] === "--wait") wait = +args[++i]; else if (args[i] === "--width") width = +args[++i]; }
+// --cookie name=value (repeatable): the site picks its language from the `okami24_locale` cookie,
+// not from the URL, so this is the only way to screenshot the English or Chinese page.
+const cookies = [];
+for (let i = 2; i < args.length; i++) { if (args[i] === "--click") clicks.push(args[++i]); else if (args[i] === "--wait") wait = +args[++i]; else if (args[i] === "--width") width = +args[++i]; else if (args[i] === "--cookie") cookies.push(args[++i]); }
 const port = 9333 + Math.floor(Math.random() * 500);
 // one throw-away profile per run — a shared profile is locked by any Chrome still alive from an
 // earlier run, and Chrome then exits silently (the DevTools endpoint never appears)
@@ -36,6 +39,7 @@ async function getJson(p) { return new Promise((res, rej) => http.get(`http://12
   await send("Emulation.setDeviceMetricsOverride", { width, height: 800, deviceScaleFactor: 2, mobile: true });
   await send("Emulation.setUserAgentOverride", { userAgent: "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Mobile Safari/537.36" });
   await send("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem(${JSON.stringify(AGE_KEY)},"true")}catch(e){}` });
+  if (cookies.length) await send("Page.addScriptToEvaluateOnNewDocument", { source: cookies.map((c) => `try{document.cookie=${JSON.stringify(`${c}; path=/`)}}catch(e){}`).join("") });
   await send("Page.navigate", { url }); await sleep(wait);
   for (const sel of clicks) { await send("Runtime.evaluate", { expression: `(()=>{const el=document.querySelector(${JSON.stringify(sel)});if(!el)return "missing";el.scrollIntoView({block:"center"});el.click();return "clicked"})()`, returnByValue: true }); await sleep(900); }
   await send("Runtime.evaluate", { expression: "window.scrollTo(0,0)" }); await sleep(300);

@@ -1,679 +1,982 @@
 [
-  {
-    "source": "_incoming/salthub/zero-pro/split/blue-purple-gradient.png",
-    "slug": "zero-pro",
-    "role": "variant",
-    "id": "blue-purple",
-    "note": "Salthub official composite product-03 col 4; owner confirmed mapping 2026-09-04",
-    "minLong": 796
-  },
-  {
-    "source": "_incoming/salthub/zero-pro/split/yellow-and-black-gradient.png",
-    "slug": "zero-pro",
-    "role": "variant",
-    "id": "golden-fade",
-    "minLong": 796
-  },
-  {
-    "source": "_incoming/salthub/zero-pro/split/silver-grey.png",
-    "slug": "zero-pro",
-    "role": "variant",
-    "id": "gunmetal",
-    "minLong": 796
-  },
-  {
-    "source": "_incoming/salthub/zero-pro/split/black.png",
-    "slug": "zero-pro",
-    "role": "variant",
-    "id": "black",
-    "note": "black already has the card photo; written as its own variant so all 8 colours share one canvas (whole-set rule)",
-    "minLong": 796
-  },
-  {
-    "source": "_incoming/salthub/zero-pro/split/flesh-pink.png",
-    "slug": "zero-pro",
-    "role": "variant",
-    "id": "pink",
-    "minLong": 796
-  },
-  {
-    "source": "_incoming/salthub/zero-pro/split/light-blue.png",
-    "slug": "zero-pro",
-    "role": "variant",
-    "id": "teal",
-    "minLong": 796
-  },
-  {
-    "source": "_incoming/salthub/zero-pro/split/red.png",
-    "slug": "zero-pro",
-    "role": "variant",
-    "id": "red",
-    "minLong": 796
-  },
-  {
-    "source": "_incoming/salthub/zero-pro/split/black-and-red-gradient.png",
-    "slug": "zero-pro",
-    "role": "variant",
-    "id": "charcoal-red",
-    "minLong": 796
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/main.png",
-    "slug": "joiway-f3",
-    "role": "card",
-    "note": "thai.myjoiway.com API img (official)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/main.webp",
-    "slug": "joiway-f4",
-    "role": "card",
-    "note": "thai.myjoiway.com API img (official) — 741px is BELOW the 800 spec; written under an explicit exception because the product currently has NO photo at all (glyph). Needs owner OK; revert = delete public/assets/products/joiway-f4/card.webp + the data reference.",
-    "minLong": 741
-  },
-  {
-    "source": "_incoming/uwell/caliburn-g4-pro/color-1.webp",
-    "slug": "caliburn-g4-pro",
-    "role": "variant",
-    "id": "desert-gold",
-    "eraseRects": [
-      {
-        "x0": 0.56,
-        "y0": 0.88,
-        "x1": 1,
-        "y1": 1
-      }
-    ],
-    "note": "myuwell.com official 2-device render; printed colour name erased bottom-right"
-  },
-  {
-    "source": "_incoming/uwell/caliburn-g4-pro/color-2.webp",
-    "slug": "caliburn-g4-pro",
-    "role": "variant",
-    "id": "stripe-black",
-    "eraseRects": [
-      {
-        "x0": 0.56,
-        "y0": 0.88,
-        "x1": 1,
-        "y1": 1
-      }
-    ]
-  },
-  {
-    "source": "_incoming/uwell/caliburn-g4-pro/color-3.webp",
-    "slug": "caliburn-g4-pro",
-    "role": "variant",
-    "id": "iron-gray",
-    "eraseRects": [
-      {
-        "x0": 0.56,
-        "y0": 0.88,
-        "x1": 1,
-        "y1": 1
-      }
-    ]
-  },
-  {
-    "source": "_incoming/uwell/caliburn-g4-pro/color-4.webp",
-    "slug": "caliburn-g4-pro",
-    "role": "variant",
-    "id": "pearl-silver",
-    "eraseRects": [
-      {
-        "x0": 0.56,
-        "y0": 0.88,
-        "x1": 1,
-        "y1": 1
-      }
-    ],
-    "note": " · original card.png deleted 2026-09-06 (owner) after this replaced it"
-  },
-  {
-    "source": "_incoming/uwell/caliburn-g4-pro/color-4.webp",
-    "slug": "caliburn-g4-pro",
-    "role": "card",
-    "eraseRects": [
-      {
-        "x0": 0.56,
-        "y0": 0.88,
-        "x1": 1,
-        "y1": 1
-      }
-    ],
-    "note": "card = Pearl Silver, same colour the current card.png shows · original card.png deleted 2026-09-06 (owner) after this replaced it"
-  },
-  {
-    "source": "_incoming/uwell/caliburn-g4-pro/color-5.webp",
-    "slug": "caliburn-g4-pro",
-    "role": "variant",
-    "id": "frost-white",
-    "eraseRects": [
-      {
-        "x0": 0.56,
-        "y0": 0.88,
-        "x1": 1,
-        "y1": 1
-      }
-    ]
-  },
-  {
-    "source": "_incoming/uwell/caliburn-g4-pro/color-6.webp",
-    "slug": "caliburn-g4-pro",
-    "role": "variant",
-    "id": "ink-blue",
-    "eraseRects": [
-      {
-        "x0": 0.56,
-        "y0": 0.88,
-        "x1": 1,
-        "y1": 1
-      }
-    ]
-  },
-  {
-    "source": "_incoming/uwell/caliburn-g4-pro/color-7.webp",
-    "slug": "caliburn-g4-pro",
-    "role": "variant",
-    "id": "light-green",
-    "eraseRects": [
-      {
-        "x0": 0.56,
-        "y0": 0.88,
-        "x1": 1,
-        "y1": 1
-      }
-    ]
-  },
-  {
-    "source": "_incoming/uwell/caliburn-g4-pro/color-8.webp",
-    "slug": "caliburn-g4-pro",
-    "role": "variant",
-    "id": "fantasy-pink",
-    "eraseRects": [
-      {
-        "x0": 0.56,
-        "y0": 0.88,
-        "x1": 1,
-        "y1": 1
-      }
-    ]
-  },
-  {
-    "source": "_incoming/salthub/m-bar-15k/product-01.webp",
-    "slug": "m-bar-15k",
-    "role": "card",
-    "replaces": "/assets/products/m-bar-15k/card.webp",
-    "note": "candidate only — salthub.com promo shot; the flat-background + size gates decide"
-  },
-  {
-    "source": "_incoming/salthub/m-bar-9k/product-01.webp",
-    "slug": "m-bar-9k",
-    "role": "card",
-    "replaces": "/assets/products/m-bar-9k/card.webp",
-    "note": "candidate only"
-  },
-  {
-    "source": "_incoming/salthub/m-switch-kit/product-01.webp",
-    "slug": "m-switch-kit",
-    "role": "card",
-    "replaces": "/assets/products/m-switch-kit/card.webp",
-    "note": "candidate only — salthub.com \"M Switch Kit vape pod kit\" shot (product-main.webp is a blank/white wordmark, rejected)"
-  },
-  {
-    "source": "_incoming/salthub/m-switch-pod/cola.webp",
-    "slug": "m-switch-pod",
-    "role": "card",
-    "replaces": "/assets/products/m-switch-pod/card.webp",
-    "note": "candidate only — black COTTON MESH pod (the pod the shop stocks); marketing background expected to fail the flat-bg gate"
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-aloe-grape.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "aloe-grape",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-american-cookies.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "american-cookies",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-berries-party.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "berries-party",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-blueberry-ice.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "blueberry-ice",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-blueberry-lime.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "blueberry-lime",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-cola-ice.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "cola-ice",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-cola-lemon.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "cola-lemon",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-cool-mint-ice.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "cool-mint-ice",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-english-iced-tea.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "english-iced-tea",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-funta-green.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "funta-grape",
-    "keepLargestComponent": true,
-    "note": "official file is named Funta GREEN; our id/name stays funta-grape (owner 2026-09-06) — flagged in HANDOFF",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-golden-energy.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "golden-energy",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-grape-ice.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "grape-ice",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-green-apple-ice.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "green-apple-ice",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-green-tangerine-mint.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "green-tangerine-mint",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-hokkaido-ice-cream.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "hokkaido-ice-cream",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-hokkaido-melon-ice.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "hokkaido-melon-ice",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-hokkaido-peach.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "hokkaido-peach",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-japanese-sake.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "japanese-sake",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-lemon-tea.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "lemon-tea",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-lychee-ice.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "lychee-ice",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-orange-soda.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "orange-soda",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-passion-fruit.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "passion-fruit",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-rainbow-candy.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "rainbow-candy",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-strawberry-ice.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "strawberry-ice",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-thai-ovaltine.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "thai-ovaltine",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-thai-tea.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "thai-tea",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-virginia-tobacco.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "virginia-tobacco",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-vodak.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "vodak",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-watermelon-ice.jpg",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "watermelon-ice",
-    "keepLargestComponent": true,
-    "note": "existing flavour, official per-flavour photo",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f3/option-watermelon-orange.webp",
-    "slug": "joiway-f3",
-    "role": "variant",
-    "id": "watermelon-orange",
-    "keepLargestComponent": true,
-    "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
-    "alphaCut": 200
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-01-grape-ice+lychee-ice.png",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "grape-ice-and-lychee-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #01 (grape-ice + lychee-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-02-grape-ice+watermelon-ice.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "grape-ice-and-watermelon-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #02 (grape-ice + watermelon-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-03-grape-ice+blueberry-ice.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "grape-ice-and-blueberry-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #03 (grape-ice + blueberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-04-blueberry-ice+lychee-ice.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "blueberry-ice-and-lychee-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #04 (blueberry-ice + lychee-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-05-blueberry-ice+watermelon-ice.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "blueberry-ice-and-watermelon-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #05 (blueberry-ice + watermelon-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-06-watermelon-ice+strawberry-ice.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "watermelon-ice-and-strawberry-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #06 (watermelon-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-07-watermelon-ice+lychee-ice.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "watermelon-ice-and-lychee-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #07 (watermelon-ice + lychee-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-08-watermelon-ice+rainbow-candy.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "watermelon-ice-and-rainbow-candy",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #08 (watermelon-ice + rainbow-candy) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-09-cola-ice+green-apple-ice.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "cola-ice-and-green-apple-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #09 (cola-ice + green-apple-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-10-cola-ice+strawberry-ice.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "cola-ice-and-strawberry-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #10 (cola-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-11-green-apple-ice+american-cookies.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "green-apple-ice-and-american-cookies",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #11 (green-apple-ice + american-cookies) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-12-green-apple-ice+strawberry-ice.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "green-apple-ice-and-strawberry-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #12 (green-apple-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-13-rainbow-candy+cool-mint-ice.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "rainbow-candy-and-cool-mint-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #13 (rainbow-candy + cool-mint-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-14-rainbow-candy+strawberry-ice.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "rainbow-candy-and-strawberry-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #14 (rainbow-candy + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-15-lychee-ice+american-cookies.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "lychee-ice-and-american-cookies",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #15 (lychee-ice + american-cookies) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/joiway/joiway-f4/option-16-cool-mint-ice+strawberry-ice.webp",
-    "slug": "joiway-f4",
-    "role": "variant",
-    "id": "cool-mint-ice-and-strawberry-ice",
-    "keepLargestComponent": true,
-    "note": "dual-flavour pair #16 (cool-mint-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-    "minLong": 734
-  },
-  {
-    "source": "_incoming/argus-g4/raw/voopoo-Sliver-9.jpg",
-    "slug": "argus-g4",
-    "role": "card",
-    "replaces": "/assets/products/argus-g4/card.webp",
-    "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 },
-    "note": "LAUNCH_AUDIT 11 (8) — official shop.voopoo.com gallery re-fetched at 2533px (was 900px → device 519px). Each gallery image is box + a standalone device on the right; the crop keeps only the device column (white gap between box and device = cols 1575–1745). Orange stays the card, matching the hero. See _incoming/argus-g4/SOURCE.md"
-  },
-  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-9.jpg", "slug": "argus-g4", "role": "variant", "id": "orange", "replaces": "/assets/products/argus-g4/card.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 }, "note": "orange also written as its own variant file so all 8 colours share one canvas (whole-set rule)" },
-  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-11.jpg", "slug": "argus-g4", "role": "variant", "id": "black", "replaces": "/assets/products/argus-g4/variants/black.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 } },
-  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-10.jpg", "slug": "argus-g4", "role": "variant", "id": "purple", "replaces": "/assets/products/argus-g4/variants/purple.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 } },
-  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-12.jpg", "slug": "argus-g4", "role": "variant", "id": "silver", "replaces": "/assets/products/argus-g4/variants/silver.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 } },
-  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-7.jpg", "slug": "argus-g4", "role": "variant", "id": "blue", "replaces": "/assets/products/argus-g4/variants/blue.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 } },
-  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-8.jpg", "slug": "argus-g4", "role": "variant", "id": "gray", "replaces": "/assets/products/argus-g4/variants/gray.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 } },
-  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-6.jpg", "slug": "argus-g4", "role": "variant", "id": "brown", "replaces": "/assets/products/argus-g4/variants/brown.webp", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 } },
-  { "source": "_incoming/argus-g4/raw/voopoo-Sliver-9-1.jpg", "slug": "argus-g4", "role": "variant", "id": "green", "crop": { "x0": 0.675, "y0": 0, "x1": 0.83, "y1": 1 }, "note": "NEW colour 2026-09-06 — VOOPOO's own shop now lists 8 colours incl. Green (variant options + own photo); owner rule: show every colour the maker offers" },
-  {
-    "source": "_incoming/relx-smash-go-12k/raw/grape.jpg",
-    "slug": "relx-smash-go-12k",
-    "role": "card",
-    "replaces": "/assets/products/relx-smash-go-12k/card.webp",
-    "minLong": 700,
-    "canvas": 860,
-    "note": "LAUNCH_AUDIT 11 (9) — official relxnow.com per-flavour photos re-fetched at native 1224px (device ≈724px; the old files were 712px cut from the same set with JPEG artefacts). 724 < 800 but the owner lifted the 800 floor on 2026-09-06: use the largest original that exists, no upscaling. canvas 860 keeps the device at the standard 84% without upscaling (designer 2026-09-06: at 1000 it rendered ~20% smaller than every other card). Grape stays the card. See _incoming/relx-smash-go-12k/SOURCE.md"
-  },
-  { "source": "_incoming/relx-smash-go-12k/raw/apple.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "apple", "replaces": "/assets/products/relx-smash-go-12k/variants/apple.webp", "minLong": 700, "canvas": 860 },
-  { "source": "_incoming/relx-smash-go-12k/raw/cola.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "cola", "replaces": "/assets/products/relx-smash-go-12k/variants/cola.webp", "minLong": 700, "canvas": 860 },
-  { "source": "_incoming/relx-smash-go-12k/raw/double-mint.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "double-mint", "replaces": "/assets/products/relx-smash-go-12k/variants/double-mint.webp", "minLong": 700, "canvas": 860 },
-  { "source": "_incoming/relx-smash-go-12k/raw/grape.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "grape", "replaces": "/assets/products/relx-smash-go-12k/variants/grape.webp", "minLong": 700, "canvas": 860 },
-  { "source": "_incoming/relx-smash-go-12k/raw/grape-lychee.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "grape-lychee", "replaces": "/assets/products/relx-smash-go-12k/variants/grape-lychee.webp", "minLong": 700, "canvas": 860 },
-  { "source": "_incoming/relx-smash-go-12k/raw/green-mango.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "green-mango", "replaces": "/assets/products/relx-smash-go-12k/variants/green-mango.webp", "minLong": 700, "canvas": 860 },
-  { "source": "_incoming/relx-smash-go-12k/raw/mixberry.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "mixberry", "replaces": "/assets/products/relx-smash-go-12k/variants/mixberry.webp", "minLong": 700, "canvas": 860 },
-  { "source": "_incoming/relx-smash-go-12k/raw/passion-fruit.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "passion-fruit", "replaces": "/assets/products/relx-smash-go-12k/variants/passion-fruit.webp", "minLong": 700, "canvas": 860 },
-  { "source": "_incoming/relx-smash-go-12k/raw/peach-strawberry.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "peach-strawberry", "replaces": "/assets/products/relx-smash-go-12k/variants/peach-strawberry.webp", "minLong": 700, "canvas": 860 },
-  { "source": "_incoming/relx-smash-go-12k/raw/watermelon.jpg", "slug": "relx-smash-go-12k", "role": "variant", "id": "watermelon", "replaces": "/assets/products/relx-smash-go-12k/variants/watermelon.webp", "minLong": 700, "canvas": 860 }
+ {
+  "source": "_incoming/salthub/zero-pro/split/blue-purple-gradient.png",
+  "slug": "zero-pro",
+  "role": "variant",
+  "id": "blue-purple",
+  "note": "Salthub official composite product-03 col 4; owner confirmed mapping 2026-09-04",
+  "minLong": 796
+ },
+ {
+  "source": "_incoming/salthub/zero-pro/split/yellow-and-black-gradient.png",
+  "slug": "zero-pro",
+  "role": "variant",
+  "id": "golden-fade",
+  "minLong": 796
+ },
+ {
+  "source": "_incoming/salthub/zero-pro/split/silver-grey.png",
+  "slug": "zero-pro",
+  "role": "variant",
+  "id": "gunmetal",
+  "minLong": 796
+ },
+ {
+  "source": "_incoming/salthub/zero-pro/split/black.png",
+  "slug": "zero-pro",
+  "role": "variant",
+  "id": "black",
+  "note": "black already has the card photo; written as its own variant so all 8 colours share one canvas (whole-set rule)",
+  "minLong": 796
+ },
+ {
+  "source": "_incoming/salthub/zero-pro/split/flesh-pink.png",
+  "slug": "zero-pro",
+  "role": "variant",
+  "id": "pink",
+  "minLong": 796
+ },
+ {
+  "source": "_incoming/salthub/zero-pro/split/light-blue.png",
+  "slug": "zero-pro",
+  "role": "variant",
+  "id": "teal",
+  "minLong": 796
+ },
+ {
+  "source": "_incoming/salthub/zero-pro/split/red.png",
+  "slug": "zero-pro",
+  "role": "variant",
+  "id": "red",
+  "minLong": 796
+ },
+ {
+  "source": "_incoming/salthub/zero-pro/split/black-and-red-gradient.png",
+  "slug": "zero-pro",
+  "role": "variant",
+  "id": "charcoal-red",
+  "minLong": 796
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/main.png",
+  "slug": "joiway-f3",
+  "role": "card",
+  "note": "thai.myjoiway.com API img (official)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/main.webp",
+  "slug": "joiway-f4",
+  "role": "card",
+  "note": "thai.myjoiway.com API img (official) — 741px is BELOW the 800 spec; written under an explicit exception because the product currently has NO photo at all (glyph). Needs owner OK; revert = delete public/assets/products/joiway-f4/card.webp + the data reference.",
+  "minLong": 741
+ },
+ {
+  "source": "_incoming/uwell/caliburn-g4-pro/color-1.webp",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "desert-gold",
+  "eraseRects": [
+   {
+    "x0": 0.56,
+    "y0": 0.88,
+    "x1": 1,
+    "y1": 1
+   }
+  ],
+  "note": "myuwell.com official 2-device render; printed colour name erased bottom-right"
+ },
+ {
+  "source": "_incoming/uwell/caliburn-g4-pro/color-2.webp",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "stripe-black",
+  "eraseRects": [
+   {
+    "x0": 0.56,
+    "y0": 0.88,
+    "x1": 1,
+    "y1": 1
+   }
+  ]
+ },
+ {
+  "source": "_incoming/uwell/caliburn-g4-pro/color-3.webp",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "iron-gray",
+  "eraseRects": [
+   {
+    "x0": 0.56,
+    "y0": 0.88,
+    "x1": 1,
+    "y1": 1
+   }
+  ]
+ },
+ {
+  "source": "_incoming/uwell/caliburn-g4-pro/color-4.webp",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "pearl-silver",
+  "eraseRects": [
+   {
+    "x0": 0.56,
+    "y0": 0.88,
+    "x1": 1,
+    "y1": 1
+   }
+  ],
+  "note": " · original card.png deleted 2026-09-06 (owner) after this replaced it"
+ },
+ {
+  "source": "_incoming/uwell/caliburn-g4-pro/color-4.webp",
+  "slug": "caliburn-g4-pro",
+  "role": "card",
+  "eraseRects": [
+   {
+    "x0": 0.56,
+    "y0": 0.88,
+    "x1": 1,
+    "y1": 1
+   }
+  ],
+  "note": "card = Pearl Silver, same colour the current card.png shows · original card.png deleted 2026-09-06 (owner) after this replaced it"
+ },
+ {
+  "source": "_incoming/uwell/caliburn-g4-pro/color-5.webp",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "frost-white",
+  "eraseRects": [
+   {
+    "x0": 0.56,
+    "y0": 0.88,
+    "x1": 1,
+    "y1": 1
+   }
+  ]
+ },
+ {
+  "source": "_incoming/uwell/caliburn-g4-pro/color-6.webp",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "ink-blue",
+  "eraseRects": [
+   {
+    "x0": 0.56,
+    "y0": 0.88,
+    "x1": 1,
+    "y1": 1
+   }
+  ]
+ },
+ {
+  "source": "_incoming/uwell/caliburn-g4-pro/color-7.webp",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "light-green",
+  "eraseRects": [
+   {
+    "x0": 0.56,
+    "y0": 0.88,
+    "x1": 1,
+    "y1": 1
+   }
+  ]
+ },
+ {
+  "source": "_incoming/uwell/caliburn-g4-pro/color-8.webp",
+  "slug": "caliburn-g4-pro",
+  "role": "variant",
+  "id": "fantasy-pink",
+  "eraseRects": [
+   {
+    "x0": 0.56,
+    "y0": 0.88,
+    "x1": 1,
+    "y1": 1
+   }
+  ]
+ },
+ {
+  "source": "_incoming/salthub/m-bar-15k/product-01.webp",
+  "slug": "m-bar-15k",
+  "role": "card",
+  "replaces": "/assets/products/m-bar-15k/card.webp",
+  "note": "candidate only — salthub.com promo shot; the flat-background + size gates decide"
+ },
+ {
+  "source": "_incoming/salthub/m-bar-9k/product-01.webp",
+  "slug": "m-bar-9k",
+  "role": "card",
+  "replaces": "/assets/products/m-bar-9k/card.webp",
+  "note": "candidate only"
+ },
+ {
+  "source": "_incoming/salthub/m-switch-kit/product-01.webp",
+  "slug": "m-switch-kit",
+  "role": "card",
+  "replaces": "/assets/products/m-switch-kit/card.webp",
+  "note": "candidate only — salthub.com \"M Switch Kit vape pod kit\" shot (product-main.webp is a blank/white wordmark, rejected)"
+ },
+ {
+  "source": "_incoming/salthub/m-switch-pod/cola.webp",
+  "slug": "m-switch-pod",
+  "role": "card",
+  "replaces": "/assets/products/m-switch-pod/card.webp",
+  "note": "candidate only — black COTTON MESH pod (the pod the shop stocks); marketing background expected to fail the flat-bg gate"
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-aloe-grape.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "aloe-grape",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-american-cookies.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "american-cookies",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-berries-party.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "berries-party",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-blueberry-ice.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "blueberry-ice",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-blueberry-lime.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "blueberry-lime",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-cola-ice.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "cola-ice",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-cola-lemon.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "cola-lemon",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-cool-mint-ice.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "cool-mint-ice",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-english-iced-tea.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "english-iced-tea",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-funta-green.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "funta-grape",
+  "keepLargestComponent": true,
+  "note": "official file is named Funta GREEN; our id/name stays funta-grape (owner 2026-09-06) — flagged in HANDOFF",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-golden-energy.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "golden-energy",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-grape-ice.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "grape-ice",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-green-apple-ice.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "green-apple-ice",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-green-tangerine-mint.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "green-tangerine-mint",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-hokkaido-ice-cream.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "hokkaido-ice-cream",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-hokkaido-melon-ice.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "hokkaido-melon-ice",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-hokkaido-peach.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "hokkaido-peach",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-japanese-sake.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "japanese-sake",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-lemon-tea.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "lemon-tea",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-lychee-ice.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "lychee-ice",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-orange-soda.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "orange-soda",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-passion-fruit.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "passion-fruit",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-rainbow-candy.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "rainbow-candy",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-strawberry-ice.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "strawberry-ice",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-thai-ovaltine.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "thai-ovaltine",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-thai-tea.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "thai-tea",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-virginia-tobacco.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "virginia-tobacco",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-vodak.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "vodak",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-watermelon-ice.jpg",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "watermelon-ice",
+  "keepLargestComponent": true,
+  "note": "existing flavour, official per-flavour photo",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f3/option-watermelon-orange.webp",
+  "slug": "joiway-f3",
+  "role": "variant",
+  "id": "watermelon-orange",
+  "keepLargestComponent": true,
+  "note": "NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
+  "alphaCut": 200
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-01-grape-ice+lychee-ice.png",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "grape-ice-and-lychee-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #01 (grape-ice + lychee-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-02-grape-ice+watermelon-ice.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "grape-ice-and-watermelon-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #02 (grape-ice + watermelon-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-03-grape-ice+blueberry-ice.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "grape-ice-and-blueberry-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #03 (grape-ice + blueberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-04-blueberry-ice+lychee-ice.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "blueberry-ice-and-lychee-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #04 (blueberry-ice + lychee-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-05-blueberry-ice+watermelon-ice.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "blueberry-ice-and-watermelon-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #05 (blueberry-ice + watermelon-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-06-watermelon-ice+strawberry-ice.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "watermelon-ice-and-strawberry-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #06 (watermelon-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-07-watermelon-ice+lychee-ice.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "watermelon-ice-and-lychee-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #07 (watermelon-ice + lychee-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-08-watermelon-ice+rainbow-candy.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "watermelon-ice-and-rainbow-candy",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #08 (watermelon-ice + rainbow-candy) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-09-cola-ice+green-apple-ice.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "cola-ice-and-green-apple-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #09 (cola-ice + green-apple-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-10-cola-ice+strawberry-ice.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "cola-ice-and-strawberry-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #10 (cola-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-11-green-apple-ice+american-cookies.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "green-apple-ice-and-american-cookies",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #11 (green-apple-ice + american-cookies) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-12-green-apple-ice+strawberry-ice.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "green-apple-ice-and-strawberry-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #12 (green-apple-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-13-rainbow-candy+cool-mint-ice.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "rainbow-candy-and-cool-mint-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #13 (rainbow-candy + cool-mint-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-14-rainbow-candy+strawberry-ice.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "rainbow-candy-and-strawberry-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #14 (rainbow-candy + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-15-lychee-ice+american-cookies.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "lychee-ice-and-american-cookies",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #15 (lychee-ice + american-cookies) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/joiway/joiway-f4/option-16-cool-mint-ice+strawberry-ice.webp",
+  "slug": "joiway-f4",
+  "role": "variant",
+  "id": "cool-mint-ice-and-strawberry-ice",
+  "keepLargestComponent": true,
+  "note": "dual-flavour pair #16 (cool-mint-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
+  "minLong": 734
+ },
+ {
+  "source": "_incoming/argus-g4/raw/voopoo-Sliver-9.jpg",
+  "slug": "argus-g4",
+  "role": "card",
+  "replaces": "/assets/products/argus-g4/card.webp",
+  "crop": {
+   "x0": 0.675,
+   "y0": 0,
+   "x1": 0.83,
+   "y1": 1
+  },
+  "note": "LAUNCH_AUDIT 11 (8) — official shop.voopoo.com gallery re-fetched at 2533px (was 900px → device 519px). Each gallery image is box + a standalone device on the right; the crop keeps only the device column (white gap between box and device = cols 1575–1745). Orange stays the card, matching the hero. See _incoming/argus-g4/SOURCE.md"
+ },
+ {
+  "source": "_incoming/argus-g4/raw/voopoo-Sliver-9.jpg",
+  "slug": "argus-g4",
+  "role": "variant",
+  "id": "orange",
+  "replaces": "/assets/products/argus-g4/card.webp",
+  "crop": {
+   "x0": 0.675,
+   "y0": 0,
+   "x1": 0.83,
+   "y1": 1
+  },
+  "note": "orange also written as its own variant file so all 8 colours share one canvas (whole-set rule)"
+ },
+ {
+  "source": "_incoming/argus-g4/raw/voopoo-Sliver-11.jpg",
+  "slug": "argus-g4",
+  "role": "variant",
+  "id": "black",
+  "replaces": "/assets/products/argus-g4/variants/black.webp",
+  "crop": {
+   "x0": 0.675,
+   "y0": 0,
+   "x1": 0.83,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/argus-g4/raw/voopoo-Sliver-10.jpg",
+  "slug": "argus-g4",
+  "role": "variant",
+  "id": "purple",
+  "replaces": "/assets/products/argus-g4/variants/purple.webp",
+  "crop": {
+   "x0": 0.675,
+   "y0": 0,
+   "x1": 0.83,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/argus-g4/raw/voopoo-Sliver-12.jpg",
+  "slug": "argus-g4",
+  "role": "variant",
+  "id": "silver",
+  "replaces": "/assets/products/argus-g4/variants/silver.webp",
+  "crop": {
+   "x0": 0.675,
+   "y0": 0,
+   "x1": 0.83,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/argus-g4/raw/voopoo-Sliver-7.jpg",
+  "slug": "argus-g4",
+  "role": "variant",
+  "id": "blue",
+  "replaces": "/assets/products/argus-g4/variants/blue.webp",
+  "crop": {
+   "x0": 0.675,
+   "y0": 0,
+   "x1": 0.83,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/argus-g4/raw/voopoo-Sliver-8.jpg",
+  "slug": "argus-g4",
+  "role": "variant",
+  "id": "gray",
+  "replaces": "/assets/products/argus-g4/variants/gray.webp",
+  "crop": {
+   "x0": 0.675,
+   "y0": 0,
+   "x1": 0.83,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/argus-g4/raw/voopoo-Sliver-6.jpg",
+  "slug": "argus-g4",
+  "role": "variant",
+  "id": "brown",
+  "replaces": "/assets/products/argus-g4/variants/brown.webp",
+  "crop": {
+   "x0": 0.675,
+   "y0": 0,
+   "x1": 0.83,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/argus-g4/raw/voopoo-Sliver-9-1.jpg",
+  "slug": "argus-g4",
+  "role": "variant",
+  "id": "green",
+  "crop": {
+   "x0": 0.675,
+   "y0": 0,
+   "x1": 0.83,
+   "y1": 1
+  },
+  "note": "NEW colour 2026-09-06 — VOOPOO's own shop now lists 8 colours incl. Green (variant options + own photo); owner rule: show every colour the maker offers"
+ },
+ {
+  "source": "_incoming/relx-smash-go-12k/raw/grape.jpg",
+  "slug": "relx-smash-go-12k",
+  "role": "card",
+  "replaces": "/assets/products/relx-smash-go-12k/card.webp",
+  "minLong": 700,
+  "canvas": 860,
+  "note": "LAUNCH_AUDIT 11 (9) — official relxnow.com per-flavour photos re-fetched at native 1224px (device ≈724px; the old files were 712px cut from the same set with JPEG artefacts). 724 < 800 but the owner lifted the 800 floor on 2026-09-06: use the largest original that exists, no upscaling. canvas 860 keeps the device at the standard 84% without upscaling (designer 2026-09-06: at 1000 it rendered ~20% smaller than every other card). Grape stays the card. See _incoming/relx-smash-go-12k/SOURCE.md"
+ },
+ {
+  "source": "_incoming/relx-smash-go-12k/raw/apple.jpg",
+  "slug": "relx-smash-go-12k",
+  "role": "variant",
+  "id": "apple",
+  "replaces": "/assets/products/relx-smash-go-12k/variants/apple.webp",
+  "minLong": 700,
+  "canvas": 860
+ },
+ {
+  "source": "_incoming/relx-smash-go-12k/raw/cola.jpg",
+  "slug": "relx-smash-go-12k",
+  "role": "variant",
+  "id": "cola",
+  "replaces": "/assets/products/relx-smash-go-12k/variants/cola.webp",
+  "minLong": 700,
+  "canvas": 860
+ },
+ {
+  "source": "_incoming/relx-smash-go-12k/raw/double-mint.jpg",
+  "slug": "relx-smash-go-12k",
+  "role": "variant",
+  "id": "double-mint",
+  "replaces": "/assets/products/relx-smash-go-12k/variants/double-mint.webp",
+  "minLong": 700,
+  "canvas": 860
+ },
+ {
+  "source": "_incoming/relx-smash-go-12k/raw/grape.jpg",
+  "slug": "relx-smash-go-12k",
+  "role": "variant",
+  "id": "grape",
+  "replaces": "/assets/products/relx-smash-go-12k/variants/grape.webp",
+  "minLong": 700,
+  "canvas": 860
+ },
+ {
+  "source": "_incoming/relx-smash-go-12k/raw/grape-lychee.jpg",
+  "slug": "relx-smash-go-12k",
+  "role": "variant",
+  "id": "grape-lychee",
+  "replaces": "/assets/products/relx-smash-go-12k/variants/grape-lychee.webp",
+  "minLong": 700,
+  "canvas": 860
+ },
+ {
+  "source": "_incoming/relx-smash-go-12k/raw/green-mango.jpg",
+  "slug": "relx-smash-go-12k",
+  "role": "variant",
+  "id": "green-mango",
+  "replaces": "/assets/products/relx-smash-go-12k/variants/green-mango.webp",
+  "minLong": 700,
+  "canvas": 860
+ },
+ {
+  "source": "_incoming/relx-smash-go-12k/raw/mixberry.jpg",
+  "slug": "relx-smash-go-12k",
+  "role": "variant",
+  "id": "mixberry",
+  "replaces": "/assets/products/relx-smash-go-12k/variants/mixberry.webp",
+  "minLong": 700,
+  "canvas": 860
+ },
+ {
+  "source": "_incoming/relx-smash-go-12k/raw/passion-fruit.jpg",
+  "slug": "relx-smash-go-12k",
+  "role": "variant",
+  "id": "passion-fruit",
+  "replaces": "/assets/products/relx-smash-go-12k/variants/passion-fruit.webp",
+  "minLong": 700,
+  "canvas": 860
+ },
+ {
+  "source": "_incoming/relx-smash-go-12k/raw/peach-strawberry.jpg",
+  "slug": "relx-smash-go-12k",
+  "role": "variant",
+  "id": "peach-strawberry",
+  "replaces": "/assets/products/relx-smash-go-12k/variants/peach-strawberry.webp",
+  "minLong": 700,
+  "canvas": 860
+ },
+ {
+  "source": "_incoming/relx-smash-go-12k/raw/watermelon.jpg",
+  "slug": "relx-smash-go-12k",
+  "role": "variant",
+  "id": "watermelon",
+  "replaces": "/assets/products/relx-smash-go-12k/variants/watermelon.webp",
+  "minLong": 700,
+  "canvas": 860
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/apple-aloe.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "apple-aloe",
+  "minLong": 470,
+  "canvas": 580,
+  "note": "LAUNCH_AUDIT 34 / batch 1 — official Marbo M SWITCH clear-pod flavour shots via the Vapeauras retail CDN (ueeshop), 600x600, already transparent, no watermark, no AIGC marker. Owner decided 2026-09-06 that this clear-pod set belongs to M Bar 15K, not M Switch Pod: salthub.com/m-bar-15k/ uses the clear pod (alt \"M Bar 15K <flavour>\") while salthub.com/m-switch-pod/ uses the black COTTON MESH pod, and the set is exactly the 15 flavours M Bar 15K carries. Pod long side 477-493px, under the script default 800 — accepted under IMAGE_SPEC section 0 rule 1 (largest original that exists, never upscale); canvas 580 puts the pod back at the standard 84% instead of inventing pixels. See _incoming/ueeshop/SOURCE.md"
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/blue-ice.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "blue-ice",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/cola.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "cola",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/doublemint.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "double-mint",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/grape-aloe.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "grape-aloe",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/grape.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "grape",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/grape-lychee.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "grape-lychee",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/mango-passion.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "mango-passion",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/mixberry.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "mixberry",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/peach-strawberry.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "peach-strawberry",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/pink-berry.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "pink-berry",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/strawberry.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "strawberry",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/strawberry-watermelon.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "strawberry-watermelon",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/watermelon.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "watermelon",
+  "minLong": 470,
+  "canvas": 580
+ },
+ {
+  "source": "_incoming/ueeshop/m-switch-clear/watermelon-bubblegum.webp",
+  "slug": "m-bar-15k",
+  "role": "variant",
+  "id": "watermelon-bubblegum",
+  "minLong": 470,
+  "canvas": 580
+ }
 ]
