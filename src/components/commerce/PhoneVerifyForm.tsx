@@ -26,12 +26,19 @@ export function PhoneVerifyForm({ otpEnabled }: { otpEnabled: boolean }) {
 
   return (
     <>
-      <PageHeader eyebrow={dict.checkout.phoneEyebrow} title={otpEnabled ? dict.checkout.phoneTitle : dict.checkout.phoneTitleNoOtp} />
+      {/* With verification off the step has one field left, so the explanation moves up into the
+          header (where every other page puts its description) and the form sits in the site's
+          standard card — otherwise it reads as a stray input floating on an empty page
+          (designer 2026-09-06). */}
+      <PageHeader
+        eyebrow={dict.checkout.phoneEyebrow}
+        title={otpEnabled ? dict.checkout.phoneTitle : dict.checkout.phoneTitleNoOtp}
+        description={otpEnabled ? undefined : dict.checkout.noOtpNote}
+      />
       <Container className="flex max-w-md flex-col gap-4 py-12 lg:py-16">
         {state.step === "phone" ? (
-          <form action={formAction} className="flex flex-col gap-3">
+          <form action={formAction} className="flex flex-col gap-3 rounded-xl border border-surface-border-soft bg-surface-1 p-4">
             <input type="hidden" name="intent" value="request" />
-            {!otpEnabled && <p className="text-sm leading-relaxed text-foreground-muted">{dict.checkout.noOtpNote}</p>}
             <label className="flex flex-col gap-1.5 text-sm text-foreground-muted" htmlFor="phone">
               {dict.checkout.phoneLabel}
               <input

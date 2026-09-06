@@ -76,11 +76,16 @@ export function NumberedSteps({ steps, start = 1 }: { steps: Step[]; start?: num
   );
 }
 
-/** Plain card, same look as the brand cards on /about. */
-export function InfoCard({ title, children }: { title: ReactNode; children: ReactNode }) {
+/** Plain card, same look as the brand cards on /about.
+ *  `tone` (designer 2026-09-06) tints only the border and the title, using colours the site
+ *  already uses — `verified` is the green of the free-shipping row, `warn` the ember of the
+ *  no-refund warning. Default keeps every existing InfoCard exactly as it was. */
+export function InfoCard({ title, children, tone = "plain" }: { title: ReactNode; children: ReactNode; tone?: "plain" | "verified" | "warn" }) {
+  const border = tone === "verified" ? "border-verified/25" : tone === "warn" ? "border-ember/25" : "border-surface-border-soft";
+  const titleColor = tone === "verified" ? "text-verified" : tone === "warn" ? "text-ember" : "text-foreground";
   return (
-    <div className="rounded-xl border border-surface-border-soft bg-surface-1 p-4">
-      <p className="font-semibold text-balance text-foreground">{title}</p>
+    <div className={`rounded-xl border ${border} bg-surface-1 p-4`}>
+      <p className={`font-semibold text-balance ${titleColor}`}>{title}</p>
       <div className="mt-1.5 flex flex-col gap-1.5 text-sm leading-relaxed text-foreground-muted">{children}</div>
     </div>
   );

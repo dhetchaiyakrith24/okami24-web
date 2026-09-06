@@ -33,19 +33,23 @@ export function ClaimsPolicyContent() {
           </ServiceSection>
 
           <ServiceSection title={c.symptoms.title}>
+            {/* tone: the two cards were identical grey and told apart by two words only — a claim
+                dispute is exactly where a misread costs real money (designer 2026-09-06). */}
             <div className="grid gap-3 sm:grid-cols-2">
-              <InfoCard title={c.symptoms.acceptTitle}>
+              <InfoCard title={c.symptoms.acceptTitle} tone="verified">
                 {c.symptoms.acceptItems.map((it) => (
                   <p key={it}>{it}</p>
                 ))}
               </InfoCard>
-              <InfoCard title={c.symptoms.declineTitle}>
+              <InfoCard title={c.symptoms.declineTitle} tone="warn">
                 {c.symptoms.declineItems.map((it) => (
                   <p key={it}>{it}</p>
                 ))}
               </InfoCard>
             </div>
-            <p>{c.symptoms.caseByCase}</p>
+            {/* mt-3 on top of the section's own gap-3: this is an exception to BOTH cards, not a
+                third category, so it needs to sit apart from them (designer 2026-09-06). */}
+            <p className="mt-3">{c.symptoms.caseByCase}</p>
           </ServiceSection>
 
           <ServiceSection title={c.outcome.title}>

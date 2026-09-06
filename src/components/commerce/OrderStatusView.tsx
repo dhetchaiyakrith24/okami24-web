@@ -136,7 +136,10 @@ export function OrderStatusView({ order, token, payment = null }: { order: Order
                     <p className="text-sm text-foreground-muted">{dict.orderStatus.paymentQrNote}</p>
                     {/* plain <img>: the route handler is per-order and sends no-store, so next/image's optimizer cache must not sit in front of it */}
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={qrHref} alt={dict.orderStatus.paymentQrAlt} width={280} height={280} className="w-full max-w-[280px] self-center rounded-lg bg-white p-2" />
+                    {/* 320, not 280: the owner's QR is a full PromptPay slip, so its header/footer
+                        eat over half the frame and the scannable square is only ~130px at 280
+                        (designer 2026-09-06). The column is wide enough for 320 without overflow. */}
+                    <img src={qrHref} alt={dict.orderStatus.paymentQrAlt} width={320} height={320} className="w-full max-w-[320px] self-center rounded-lg bg-white p-2" />
                   </div>
                 )}
                 <p className="text-sm text-foreground">{dict.orderStatus.paymentVerifyNameWarning}</p>
