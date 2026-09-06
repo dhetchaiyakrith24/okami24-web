@@ -203,6 +203,23 @@ Do not implement payment automation yet.
   order page after you place the order".
 - Source of the lines above: owner chat message 2026-09-06 (account number, "ไม่โชว์ Public จนกว่าจะ
   ถึงขั้นตอนสุดท้ายของการสั่งซื้อ") + the QR image attached to it.
+- **Owner verified these details against the bank and confirmed them correct on 2026-09-06** —
+  bank, account name and account number are settled, not inferred.
+
+**Phone verification (OTP) — SWITCHED OFF, owner decision 2026-09-06:**
+> "OTP: ปิดชั่วคราวตอนเปิดขาย ไม่ต้องต่อ SMS … เปิดใหม่ได้ทีหลังถ้าเจอออเดอร์ผี"
+- At checkout the customer enters a mobile number and continues; **no code is sent and none is
+  asked for.** The number still identifies the customer, carries the order, and gives them their
+  order-status link.
+- The switch is one line: `OTP_VERIFICATION_ENABLED` in `src/lib/commerce/otp-mode.ts`. The whole
+  verification path (hash+salt, 5-minute expiry, attempt cap, hourly rate limit) is left intact —
+  **set it to `true` to turn verification back on**, nothing else changes.
+- **Trigger to turn it back on:** fake/ghost orders start appearing (owner's own condition).
+- **What this costs:** a phone number at checkout is no longer proved to belong to whoever typed
+  it. The compensating control is the one that already exists — payment is verified by a human
+  before anything ships ("จ่ายแล้ว ≠ ยืนยัน", above).
+- Customer-facing copy was corrected to match (how-to-order step 3 + the checkout form in th/en/zh)
+  — the site must never say a code will be texted while this is off.
 
 **Cancellation / refund (owner 2026-09-06, answer 2):** a customer may cancel **before
 transferring**. **After the transfer there is no cancellation and no refund.** Say this on the
@@ -431,8 +448,7 @@ Explicit unresolved items — **never invent answers for these**:
 - Final payment implementation (automation / slip verification — the receiving account itself is
   resolved, see §9)
 - E-commerce registration / legally required seller details (§11)
-- Owner confirmation that the bank name and account name printed on the PromptPay QR were read
-  correctly into §9 (the owner has NOT confirmed these yet — do not mark §9 as owner-approved)
+- SMS provider — still unchosen, and no longer blocking: OTP is switched off for launch (§9)
 - Final Product Master schema
 - Exact warehouse integration
 - Final production domain
