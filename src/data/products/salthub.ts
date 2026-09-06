@@ -361,6 +361,8 @@ export const salthubProducts: Product[] = [
     // stock signal for this Legacy record.
     flavorVariants: [
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
+      // Cool Mint is not on salthub.com's own list (17 flavours) and no reseller checked on 2026-09-06 had it;
+      // the owner confirms it is genuinely sold and it stays. BSOT §21 — do not remove on the maker's say-so.
       { id: "cool-mint", name: "Cool Mint", swatchHex: "#3ea88a", availability: "unknown" },
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown" },
       { id: "black-berry", name: "Black Berry", swatchHex: "#3a2a4e", availability: "unknown" },
@@ -452,6 +454,8 @@ export const salthubProducts: Product[] = [
     // and this page has no purchase action to gate.
     flavorVariants: [
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
+      // Cool Mint is not on salthub.com's own list (17 flavours) and no reseller checked on 2026-09-06 had it;
+      // the owner confirms it is genuinely sold and it stays. BSOT §21 — do not remove on the maker's say-so.
       { id: "cool-mint", name: "Cool Mint", swatchHex: "#3ea88a", availability: "unknown" },
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7cb342", availability: "unknown" },
       { id: "black-berry", name: "Black Berry", swatchHex: "#3a2340", availability: "unknown" },
