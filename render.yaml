@@ -19,8 +19,12 @@ services:
     region: singapore
     # `main` is the live branch (owner decision 2026-09-06).
     branch: main
-    # `npm ci` installs exactly what package-lock.json pins, and compiles better-sqlite3 + sharp
-    # for this Linux machine — they are native modules and cannot be copied from a Windows PC.
+    # `npm ci` installs exactly what package-lock.json pins. It does NOT compile anything: both
+    # native modules ship prebuilt binaries and pick one at load time — better-sqlite3 carries all
+    # platforms inside the package (N-API, so the same file works across Node versions), and sharp
+    # pulls a per-platform `@img/sharp-linux-x64` package, which package-lock.json does contain even
+    # though the lock was generated on Windows. Verified 2026-09-06 while chasing the exit-139 crash;
+    # an earlier version of this comment claimed a compile step that does not happen.
     buildCommand: npm ci && npm run build
     startCommand: npm start
     healthCheckPath: /
@@ -52,3 +56,16 @@ services:
         value: /var/data/app-data
       - key: OKAMI24_BACKUP_DIR
         value: /var/data/backups
+      # Node's diagnostic report, written to the DISK so it survives the restart that follows a
+      # crash. Honest about what this does and does not catch (tested 2026-09-06):
+      #   - it DOES catch Node dying on its own — an out-of-memory heap abort writes a full report
+      #     (native stack, loaded libraries, memory, cgroup limits)
+      #   - it does NOT catch a segfault inside a native addon. The kernel kills the process outright
+      #     and no Node handler runs, so the exit-139 crash this file is dated against would leave no
+      #     report at all. The evidence for that one is the `[probe]` log written at boot by
+      #     scripts/native-probe.js, not a file here.
+      # Kept because the OOM case is real and cheap to cover, and because ruling memory in or out is
+      # one of the open questions. `--report-on-signal` listens on SIGUSR2, not SIGTERM, so Render's
+      # ordinary shutdown during a redeploy is unaffected.
+      - key: NODE_OPTIONS
+        value: --report-on-fatalerror --report-on-signal --report-directory=/var/data
