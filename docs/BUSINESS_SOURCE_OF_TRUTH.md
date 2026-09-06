@@ -572,3 +572,17 @@ image** and to say "there are many" in words instead:
   the hero — good for "there are many", useless for "I want that one".
 - This supersedes IMAGE_SPEC §0 rule 5's "ให้เป็นการ์ดใบแรก" for high-option products. The lineup
   image itself is still required, and is still built to spec.
+
+#### Answered 2026-09-06 — M Switch Pod stays without per-flavour photos until the owner supplies them
+- After a 12-source search found no clean black-pod photo set, the owner chose to **leave
+  `m-switch-pod`'s 17 unphotographed flavours at `[ยังไม่มีรูป]`** rather than borrow the clear-pod
+  set or retouch the marketing composites. **The owner will request the photo files from the
+  supplier directly.** Nobody else should go looking again; when the files arrive they go through
+  `scripts/process-images.ts` like any other set.
+
+#### Answered 2026-09-06 — Cool Mint is a real M Switch Pod flavour; keep it
+- Research flagged that salthub.com lists 17 flavours without Cool Mint, and no reseller checked
+  carried it either. **The owner confirms Cool Mint is genuinely sold and stays in the catalogue**
+  (`m-switch-pod` and `m-switch-kit`, id `cool-mint`) even though the manufacturer's site does not
+  show it. Do not remove it on the strength of the manufacturer's page; the shop's own stock is the
+  authority here. It still needs a photo — see the entry above.
