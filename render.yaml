@@ -52,16 +52,17 @@ services:
       # grow a disk later but never shrink it, so this starts small on purpose.
       sizeGB: 1
     envVars:
-      # Node 22 LTS. Next 16 requires >= 20.9 (node_modules/next/package.json "engines").
+      # Node 24 LTS — owner's decision 2026-09-06, after confirming the cause in Render's shell.
       #
-      # !! 22.11.0 IS the 2026-09-06 crash. better-sqlite3 13 declares Node-API version 10, which
-      # Node only gained in 22.14.0; on 22.11.0 loading the addon segfaults instead of erroring.
-      # Anything from 22.14.0 up works; 24 LTS is what the shipped Linux binary was built with and
-      # what the dev machine runs. The value is left for the owner to choose — the gate in the
-      # buildCommand refuses to build on a Node that cannot load the addon, so a wrong value fails
-      # the deploy with a message rather than the site.
+      # !! NEVER BELOW 22.14.0. better-sqlite3 13 declares Node-API version 10, which Node gained in
+      # 22.14.0; on anything older, loading the addon segfaults instead of raising an error — that
+      # was the 2026-09-06 outage, pinned at 22.11.0 right here. 24.14.1 is Render's default, the
+      # version the shipped Linux binary was built with, and the major the dev machine runs, so dev
+      # and prod agree. package.json "engines" carries the same floor, and the gate in the
+      # buildCommand refuses to build on a Node that cannot load the addon, so a wrong value here
+      # fails the deploy with a message rather than the site.
       - key: NODE_VERSION
-        value: 22.11.0
+        value: 24.14.1
       # Backup file names and log timestamps are written in the server's local time — without
       # this they would read 7 hours behind Thai time and be confusing to match against a report.
       - key: TZ
