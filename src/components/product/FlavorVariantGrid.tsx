@@ -26,12 +26,23 @@ export function FlavorVariantGrid({
   selectedId,
   onSelect,
   label,
+  allLabel,
+  isAllSelected,
+  onSelectAll,
   outOfStockLabel,
 }: {
   variants: FlavorVariant[];
   selectedId: string | null;
   onSelect: (id: string) => void;
   label: string;
+  /** "All" chip — same three props as `ColorVariantRail`, added 2026-09-06 when M Bar 15K became
+   *  the first FLAVOUR product to carry a `lineupImage`. Until then the lineup view was wired only
+   *  to the colour rail, so a flavour product's lineup shot was composed, shipped, and unreachable:
+   *  the button that reveals it simply did not exist on this axis. Omit `onSelectAll` and no chip
+   *  renders, exactly as before. */
+  allLabel?: string;
+  isAllSelected?: boolean;
+  onSelectAll?: () => void;
   outOfStockLabel: string;
 }) {
   const selected = variants.find((v) => v.id === selectedId);
@@ -40,9 +51,26 @@ export function FlavorVariantGrid({
     <div className="flex flex-col gap-2.5">
       <span className="label-mono text-xs text-foreground-dim">
         {label}
-        {selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
+        {!isAllSelected && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
+        {isAllSelected && allLabel && <span className="ml-2 font-sans normal-case text-foreground-muted">{allLabel}</span>}
       </span>
       <div className="flex flex-wrap gap-2 sm:max-h-56 sm:overflow-y-auto sm:pr-1">
+        {onSelectAll && (
+          <button
+            type="button"
+            onClick={onSelectAll}
+            aria-pressed={isAllSelected}
+            title={allLabel}
+            className={cn(
+              "inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold tracking-tight transition-all duration-150",
+              isAllSelected
+                ? "border-ember bg-ember/10 text-foreground"
+                : "border-surface-border text-foreground-muted hover:border-foreground-dim hover:text-foreground"
+            )}
+          >
+            {allLabel}
+          </button>
+        )}
         {variants.map((v) => {
           const outOfStock = v.availability === "out-of-stock";
           return (
@@ -56,7 +84,7 @@ export function FlavorVariantGrid({
               title={outOfStock ? `${v.name} — ${outOfStockLabel}` : v.name}
               className={cn(
                 "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-150",
-                v.id === selectedId
+                v.id === selectedId && !isAllSelected
                   ? "border-ember bg-ember/10 text-foreground"
                   : "border-surface-border text-foreground-muted hover:border-foreground-dim hover:text-foreground",
                 outOfStock && "cursor-not-allowed border-dashed opacity-50 hover:border-surface-border hover:text-foreground-muted"

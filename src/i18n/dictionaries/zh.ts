@@ -86,6 +86,8 @@ export const zh: Dictionary = {
     portabilityUltraCompact: "超轻巧",
     portabilityCompact: "小巧",
     portabilityStandard: "标准尺寸",
+    optionCountFlavors: "{n} 种口味",
+    optionCountColors: "{n} 种颜色",
   },
   product: {
     colorLabel: "颜色",

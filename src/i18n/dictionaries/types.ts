@@ -90,6 +90,12 @@ export interface Dictionary {
     portabilityUltraCompact: string;
     portabilityCompact: string;
     portabilityStandard: string;
+    /** Card badge telling a shopper a product comes in many options before they open it.
+     *  `{n}` is replaced with the count. Owner decision 2026-09-06: the shop needed a way to say
+     *  "many flavours" on the catalogue card, because the all-flavours lineup shrinks to ~17px per
+     *  flavour at card size and cannot say it. */
+    optionCountFlavors: string;
+    optionCountColors: string;
   };
   /** Product detail page section chrome — eyebrows/titles/stat labels/buttons. Per-product
    *  feature/spec/FAQ/compatibility VALUES stay untranslated (see the module doc comment). */

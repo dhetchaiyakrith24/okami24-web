@@ -138,8 +138,14 @@ export function ProductHero({
             <FlavorVariantGrid
               variants={product.flavorVariants}
               selectedId={selectedFlavorId}
-              onSelect={setSelectedFlavorId}
+              onSelect={(id) => {
+                setSelectedFlavorId(id);
+                setShowAllColors(false);
+              }}
               label={dict.product.flavorLabel}
+              allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
+              isAllSelected={showAllColors}
+              onSelectAll={product.lineupImage ? () => setShowAllColors(true) : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
             />
           )}

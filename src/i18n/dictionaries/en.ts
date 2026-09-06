@@ -88,6 +88,8 @@ export const en: Dictionary = {
     portabilityUltraCompact: "Ultra-compact",
     portabilityCompact: "Compact",
     portabilityStandard: "Standard",
+    optionCountFlavors: "{n} flavours",
+    optionCountColors: "{n} colours",
   },
   product: {
     colorLabel: "Color",
