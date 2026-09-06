@@ -19,11 +19,14 @@ export const PAYMENT_ACCOUNT = {
   accountNumber: "153-8-29240-7",
 } as const;
 
-/** The PromptPay QR file — kept in the gitignored `.data/private/` folder, never under `public/`.
- *  NOT covered by the automatic .data backup (that copies the SQLite file only); the owner holds
- *  the original image, and docs/BACKUP.md says to copy it by hand when moving hosts.
+/** The PromptPay QR file — kept in the gitignored private data folder, never under `public/`.
+ *  Locally that is `.data/private/promptpay-qr.png`; on a host it follows `OKAMI24_DATA_DIR` onto
+ *  the mounted disk (src/lib/paths.ts), which is why this is resolved through a function instead
+ *  of a fixed relative string.
+ *  NOT covered by the automatic backup (that copies the SQLite file only); the owner holds the
+ *  original image, and docs/BACKUP.md + docs/DEPLOY-RENDER.md say how to put it on the disk.
  *  Missing file = the order page simply shows the account number without a QR. */
-export const PROMPTPAY_QR_RELATIVE_PATH = ".data/private/promptpay-qr.png";
+export { promptpayQrPath } from "@/lib/paths";
 
 export type PaymentAccountView = {
   /** all three locales — the client view picks the active one (the page has no server locale helper) */

@@ -2,6 +2,7 @@ import "server-only";
 import Database from "better-sqlite3";
 import fs from "node:fs";
 import path from "node:path";
+import { dataDir, dbPath } from "@/lib/paths";
 
 // Commerce foundation (2026-09-02, corrected 2026-09-03 — see the architecture-review self-audit
 // in the final report). SQLite via better-sqlite3, not a claim that this is the final production
@@ -27,14 +28,15 @@ import path from "node:path";
 // `fs`/native-addon support at all), or more than one horizontally-scaled instance (each process
 // would open its OWN separate `.data/okami24.db` file, splitting orders/customers/sessions across
 // instances inconsistently, with no shared source of truth). Deploy this as one always-on process
-// — a small VPS, or a single-instance container with `.data/` on a persistent volume that survives
-// redeploys — never a platform's auto-scaling/serverless product tier. Do not read this file as an
-// infra decision the owner didn't get to make — it is a placeholder pending that decision, but the
-// deployment CONSTRAINT above is a fact about the code as written, not a preference to revisit
-// lightly without also re-architecting the persistence layer.
+// — a small VPS, or a single-instance container with the data folder on a persistent volume that
+// survives redeploys — never a platform's auto-scaling/serverless product tier.
+//
+// The owner made that infra decision on 2026-09-06: Render, Singapore region, one Starter
+// instance with a persistent disk, no horizontal scaling (docs/DEPLOY-RENDER.md). The folder is
+// pointed at that disk with `OKAMI24_DATA_DIR` — see src/lib/paths.ts. The deployment CONSTRAINT
+// above remains a fact about the code as written, not a preference to revisit lightly without
+// also re-architecting the persistence layer.
 
-const DB_DIR = path.join(process.cwd(), ".data");
-const DB_PATH = path.join(DB_DIR, "okami24.db");
 const MIGRATIONS_DIR = path.join(process.cwd(), "src", "lib", "db", "migrations");
 
 declare global {
@@ -68,8 +70,11 @@ function runMigrations(db: Database.Database): void {
 }
 
 function createDb(): Database.Database {
-  fs.mkdirSync(DB_DIR, { recursive: true });
-  const db = new Database(DB_PATH);
+  // Resolved per call, not at module load, so the folder always reflects the environment the
+  // server actually started with (`OKAMI24_DATA_DIR` on a host with a mounted disk — see
+  // src/lib/paths.ts; unset locally, which keeps the historical `<cwd>/.data`).
+  fs.mkdirSync(dataDir(), { recursive: true });
+  const db = new Database(dbPath());
   db.pragma("journal_mode = WAL");
   db.pragma("foreign_keys = ON");
   runMigrations(db);

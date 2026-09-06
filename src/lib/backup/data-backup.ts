@@ -2,14 +2,16 @@
  * OKami24 — local backup of the data that is NOT in git (LAUNCH_AUDIT item 29).
  *
  * What is backed up
- *   - `.data/okami24.db` — the SQLite store (orders, customers, OTP, sessions, carts). Copied with
- *     SQLite's own online-backup API from a read-only connection, so the copy is a consistent
- *     snapshot even while the server is writing (WAL mode) — never a raw file copy of a live DB.
+ *   - the SQLite store — orders, customers, OTP, sessions, carts. `.data/okami24.db` locally,
+ *     `<OKAMI24_DATA_DIR>/okami24.db` on a host (src/lib/paths.ts). Copied with SQLite's own
+ *     online-backup API from a read-only connection, so the copy is a consistent snapshot even
+ *     while the server is writing (WAL mode) — never a raw file copy of a live DB.
  *   - `.env*` files in the project root, when they exist (none exist yet as of 2026-09-06). They
  *     hold server secrets, so they go to the same local backup folder and nowhere else.
  *
  * Where it goes
- *   `OKAMI24_BACKUP_DIR` if set, otherwise `<home>/OKami24-backups` — deliberately OUTSIDE the
+ *   `OKAMI24_BACKUP_DIR` if set, else `<OKAMI24_DATA_DIR>/backups` on a host, else
+ *   `<home>/OKami24-backups` (see defaultBackupDir) — deliberately OUTSIDE the
  *   project folder (the main project folder vanished on 2026-09-06 02:55, cause unknown) and
  *   never inside git. Backups are never attached to reports: they contain customer data.
  *
@@ -26,6 +28,7 @@ import Database from "better-sqlite3";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { dataDir, dbPath } from "../paths";
 
 export const BACKUP_FILE_PREFIX = "okami24-";
 export const BACKUP_FILE_RE = /^okami24-(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2})(?:-\d+)?\.db$/;
@@ -42,7 +45,7 @@ export const ENV_FILE_NAMES = [
 ] as const;
 
 export interface BackupOptions {
-  /** Defaults to `<projectRoot>/.data/okami24.db`. */
+  /** Defaults to `dbPath(projectRoot)` — `<projectRoot>/.data/okami24.db`, or `OKAMI24_DATA_DIR`. */
   sourceDbPath?: string;
   /** Defaults to `process.cwd()`. Used to find `.data/` and `.env*`. */
   projectRoot?: string;
@@ -68,9 +71,23 @@ export type BackupResult =
     }
   | { ok: false; reason: string; destDir: string };
 
+/**
+ * Where the copies go, in order of preference:
+ *   1. `OKAMI24_BACKUP_DIR` — an explicit choice always wins.
+ *   2. `<OKAMI24_DATA_DIR>/backups` — when a host has pointed the data folder at a mounted disk
+ *      (see src/lib/paths.ts) but nobody set a backup folder. Without this fallback the copies
+ *      would land in the container's throwaway home directory and vanish on the next deploy,
+ *      silently, while every log line still said the backup succeeded. Same-disk copies protect
+ *      against a corrupted or deleted file, not against losing the disk — the host's own disk
+ *      snapshots are the second layer (docs/DEPLOY-RENDER.md).
+ *   3. `<home>/OKami24-backups` — the historical local-machine default, unchanged.
+ */
 export function defaultBackupDir(): string {
   const fromEnv = process.env.OKAMI24_BACKUP_DIR?.trim();
-  return fromEnv && fromEnv.length > 0 ? fromEnv : path.join(os.homedir(), "OKami24-backups");
+  if (fromEnv && fromEnv.length > 0) return fromEnv;
+  const hostDataDir = process.env.OKAMI24_DATA_DIR?.trim();
+  if (hostDataDir && hostDataDir.length > 0) return path.join(dataDir(), "backups");
+  return path.join(os.homedir(), "OKami24-backups");
 }
 
 /** Local-time stamp safe for file names: 2026-09-06T21-05-33 */
@@ -170,7 +187,7 @@ function prune(destDir: string, keep: number): string[] {
 
 export async function runBackup(opts: BackupOptions = {}): Promise<BackupResult> {
   const projectRoot = opts.projectRoot ?? process.cwd();
-  const source = opts.sourceDbPath ?? path.join(projectRoot, ".data", "okami24.db");
+  const source = opts.sourceDbPath ?? dbPath(projectRoot);
   const destDir = opts.destDir ?? defaultBackupDir();
   const keep = Math.max(1, opts.keep ?? DEFAULT_KEEP);
   const now = opts.now ?? new Date();

@@ -1,8 +1,7 @@
 import { readFile } from "node:fs/promises";
-import path from "node:path";
 import { NextResponse, type NextRequest } from "next/server";
 import { getOrderDetailForViewer } from "@/lib/commerce/orders";
-import { PROMPTPAY_QR_RELATIVE_PATH } from "@/data/payment";
+import { promptpayQrPath } from "@/data/payment";
 
 /**
  * Serves the shop's PromptPay QR to the viewer of ONE order — owner rule 2026-09-06: the QR is
@@ -19,7 +18,7 @@ export async function GET(request: NextRequest, context: { params: Promise<{ ord
   if (!order || order.status !== "pending_payment") return new NextResponse(null, { status: 404 });
 
   try {
-    const file = await readFile(path.join(process.cwd(), PROMPTPAY_QR_RELATIVE_PATH));
+    const file = await readFile(promptpayQrPath());
     return new NextResponse(new Uint8Array(file), {
       status: 200,
       headers: {
