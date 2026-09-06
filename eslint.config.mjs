@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Project scratch area (gitignored): helper scripts, QC shots, logs, downloaded sources.
+    // Not shipped code — never lint it, so a helper script there can't fail verify:catalog.
+    "_incoming/**",
   ]),
 ]);
 
