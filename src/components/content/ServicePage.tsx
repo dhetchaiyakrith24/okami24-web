@@ -10,10 +10,16 @@
  * production build only the safe `fallback` sentence renders (or nothing). See
  * docs/PAGE_COPY_2026-09-06.md for the full list of open questions.
  */
+"use client";
+
+// Client module since 2026-09-06 (ง): the five service pages now render their body through a
+// locale-aware client component (src/components/content/service-pages/*), and AgeNote /
+// UpdatedAt read the active locale themselves. Nothing here needs server-only APIs.
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { CONTACT } from "@/data/contact";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 export function ServiceSection({ title, children }: { title: string; children: ReactNode }) {
   return (
@@ -31,7 +37,8 @@ export function SummaryCards({ items }: { items: { label: string; value: ReactNo
       {items.map((it) => (
         <div key={it.label} className="rounded-xl border border-surface-border-soft bg-surface-1 p-4">
           <span className="label-mono text-xs text-foreground-dim">{it.label}</span>
-          <p className="mt-2 font-display text-xl font-semibold leading-tight text-foreground">{it.value}</p>
+          {/* text-balance: keeps a two-line value from stranding one character on line 2 (zh, designer 2026-09-06) */}
+          <p className="mt-2 font-display text-xl font-semibold leading-tight text-balance text-foreground">{it.value}</p>
           {it.note && <p className="mt-1 text-xs text-foreground-muted">{it.note}</p>}
         </div>
       ))}
@@ -73,7 +80,7 @@ export function NumberedSteps({ steps, start = 1 }: { steps: Step[]; start?: num
 export function InfoCard({ title, children }: { title: ReactNode; children: ReactNode }) {
   return (
     <div className="rounded-xl border border-surface-border-soft bg-surface-1 p-4">
-      <p className="font-semibold text-foreground">{title}</p>
+      <p className="font-semibold text-balance text-foreground">{title}</p>
       <div className="mt-1.5 flex flex-col gap-1.5 text-sm leading-relaxed text-foreground-muted">{children}</div>
     </div>
   );
@@ -102,33 +109,53 @@ export function EmailLink({ children }: { children?: ReactNode }) {
  * invented number. `always` forces the note to show (used on the claims-policy DRAFT page, which
  * itself never ships to production).
  */
-export function PendingFact({ question, fallback, always = false }: { question: string; fallback?: ReactNode; always?: boolean }) {
+const PENDING_FACT = {
+  th: { badge: "เจ้าของต้องตอบ", prefix: "[ยังไม่มีข้อมูล]" },
+  en: { badge: "Owner to confirm", prefix: "[No data yet]" },
+  zh: { badge: "待店主确认", prefix: "[暂无资料]" },
+} as const;
+
+export function PendingFact({ question, fallback, always = false }: { question: string | Record<"th" | "en" | "zh", string>; fallback?: ReactNode; always?: boolean }) {
+  const { locale } = useLocale();
   const showNote = always || process.env.NODE_ENV !== "production";
+  const text = typeof question === "string" ? question : question[locale];
   return (
     <>
       {fallback && <p>{fallback}</p>}
       {showNote && (
         <div className="rounded-xl border border-unverified/30 bg-unverified/10 p-3 text-sm leading-relaxed text-unverified">
           <Badge tone="unverified" className="mb-1.5">
-            เจ้าของต้องตอบ
+            {PENDING_FACT[locale].badge}
           </Badge>
-          <p>[ยังไม่มีข้อมูล] {question}</p>
+          <p>
+            {PENDING_FACT[locale].prefix} {text}
+          </p>
         </div>
       )}
     </>
   );
 }
 
+const AGE_NOTE = {
+  th: "เว็บไซต์นี้สำหรับผู้มีอายุ 21 ปีขึ้นไป · นิโคตินเป็นสารเสพติด",
+  en: "This site is for people aged 21 and over · Nicotine is addictive",
+  zh: "本网站面向 21 岁及以上人士 · 尼古丁具有成瘾性",
+} as const;
+
+const UPDATED_AT = { th: "อัปเดตล่าสุด", en: "Last updated", zh: "最后更新" } as const;
+
 export function AgeNote() {
-  return (
-    <p className="border-t border-surface-border-soft pt-6 text-xs leading-relaxed text-foreground-dim">
-      เว็บไซต์นี้สำหรับผู้มีอายุ 21 ปีขึ้นไป · นิโคตินเป็นสารเสพติด
-    </p>
-  );
+  const { locale } = useLocale();
+  return <p className="border-t border-surface-border-soft pt-6 text-xs leading-relaxed text-foreground-dim">{AGE_NOTE[locale]}</p>;
 }
 
 export function UpdatedAt({ date }: { date: string }) {
-  return <span className="label-mono text-xs text-foreground-dim">อัปเดตล่าสุด {date}</span>;
+  const { locale } = useLocale();
+  return (
+    <span className="label-mono text-xs text-foreground-dim">
+      {UPDATED_AT[locale]} {date}
+    </span>
+  );
 }
 
 export const SERVICE_PAGES_UPDATED = "2026-09-06";

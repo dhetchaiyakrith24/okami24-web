@@ -43,11 +43,22 @@ const STATUS_LABEL_TH: Record<OrderStatus, string> = {
   cancelled: "ยกเลิก",
 };
 
+// Chinese labels written 2026-09-06 together with the zh service pages (writer agent), so the
+// status a customer reads on /how-to-order matches the one on their order page.
+const STATUS_LABEL_ZH: Record<OrderStatus, string> = {
+  pending_payment: "待付款",
+  payment_submitted: "已提交付款",
+  awaiting_verification: "等待管理员核实",
+  approved: "已批准",
+  processing: "备货中",
+  shipped: "已发货",
+  completed: "已完成",
+  cancelled: "已取消",
+};
+
 export function orderStatusLabel(status: OrderStatus, locale: "en" | "th" | "zh"): string {
-  // No Chinese translation exists for order-status copy yet (this is new commerce content, not
-  // part of the i18n dictionary this session already fixed) — English is the honest fallback
-  // rather than a guessed Chinese string. Fix forward when zh commerce copy is actually written.
   if (locale === "th") return STATUS_LABEL_TH[status];
+  if (locale === "zh") return STATUS_LABEL_ZH[status];
   return STATUS_LABEL_EN[status];
 }
 
