@@ -157,6 +157,10 @@ const MIN_WIDTH_BY_ROLE: Record<ProductImageRole, number> = {
   og: 600,
 };
 
+/** WebP quality floor for every storefront image (owner, 2026-09-06 — IMAGE_SPEC §1–§2). Kept in
+ *  step with `WEBP_QUALITY` in scripts/process-images.ts. */
+const WEBP_MIN_QUALITY = 82;
+
 export interface QualityFlag {
   level: "error" | "warn";
   message: string;
@@ -252,8 +256,11 @@ export async function checkQuality(input: string | Buffer, opts: QualityOptions 
  *  truncated/corrupt write instead of trusting that `toFile()` not throwing means the output is
  *  actually valid. */
 export async function saveWebp(buffer: Buffer, destPath: string, opts: { quality?: number } & QualityOptions = {}): Promise<QualityReport> {
+  // Owner rule 2026-09-06 (IMAGE_SPEC §1–§2): 82 is the floor for every storefront image. A caller
+  // asking for less is clamped rather than obeyed — smaller files come from canvas/source, not quality.
+  const quality = Math.max(WEBP_MIN_QUALITY, opts.quality ?? 90);
   await sharp(buffer)
-    .webp({ quality: opts.quality ?? 90 })
+    .webp({ quality })
     .toFile(destPath);
   return checkQuality(destPath, opts);
 }
