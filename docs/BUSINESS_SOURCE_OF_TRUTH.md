@@ -270,10 +270,22 @@ differentiator.
   address **on LINE after approval**. **The return address is never shown on the website.**
 - **Decision time (16):** within **3 working days**.
 - **Factory warranty (17):** none. Claims are handled by the shop only.
-- **Still open (12):** which symptoms are accepted / rejected — the owner will tick the list from
-  the draft claims page (ก/ข/ค per item). Until then the claims page stays a `/preview` draft.
-- Target public URL once approved: **/warranty** (owner wording 2026-09-06), linked from the
-  footer help column and the sitemap.
+- **Which faults are covered (owner ticked 2026-09-06, PAGE_COPY item 12 — `1ก 2ก 3ก 4ข 5ข 6ค 7ข`):**
+
+  | # | Symptom | Answer |
+  |---|---|---|
+  | 1 | Wrong model / colour / flavour vs what was ordered | **covered** |
+  | 2 | Dead on arrival — won't switch on, won't charge | **covered** |
+  | 3 | E-liquid leaking or seeping while still unused | **covered** |
+  | 4 | Dented box but the product works fine | not covered |
+  | 5 | Dropped, water damage, misuse | not covered |
+  | 6 | Breaks after a while of use | **case by case, only inside the 7-day window** (owner's note: "รับภายใน 7 วันนับจากวันได้รับของ") |
+  | 7 | Doesn't like it / changed mind / wants another flavour | not covered |
+
+  This list is the whole policy — do not add symptoms to it, and do not soften a "not covered"
+  line on the website.
+- **Published at /warranty on 2026-09-06** (owner wording), linked from the footer help column,
+  the shipping page and the sitemap. The old `/preview/claims-policy` draft route is deleted.
 
 ---
 
@@ -418,9 +430,33 @@ Explicit unresolved items — **never invent answers for these**:
 - Final authentication implementation
 - Final payment implementation (automation / slip verification — the receiving account itself is
   resolved, see §9)
-- Claim symptom list (§12 item 12) — awaiting the owner's ticks
 - E-commerce registration / legally required seller details (§11)
+- Owner confirmation that the bank name and account name printed on the PromptPay QR were read
+  correctly into §9 (the owner has NOT confirmed these yet — do not mark §9 as owner-approved)
 - Final Product Master schema
 - Exact warehouse integration
 - Final production domain
 - Complete product/variant dataset
+
+---
+
+## 20. Website Language (owner rule, 2026-09-06)
+
+Recorded on the owner's instruction. **Nothing has been implemented from this section yet** — it
+is the brief for the "Thai language pass" item in `docs/LAUNCH_AUDIT.md`.
+
+- **Default language will become Thai.** Today the site server-renders in English
+  (`DEFAULT_LOCALE` in `src/i18n/config.ts`) and switches to the visitor's cookie language in the
+  browser. The owner wants Thai as the default. This is a site-wide change, not a per-page one.
+- **Never translate into Thai:**
+  - **Category names** — every category, e.g. Pod System, Disposable Pod, Pod Kit, Coils &
+    Accessories, HNB Devices, HNB Sticks, E-Liquid.
+  - **Product names and model names** — e.g. ARGUS G4, Caliburn G4 Pro, RELX Smash Go 12K.
+  - **Trade terms the Thai vape market uses in English** — Coil, Pod, Nicotine, Puffs, mAh, Mesh.
+- **Never transliterate a term Thai customers don't actually say** (e.g. writing "ดิสโพส" for
+  disposable). If there is no Thai word real customers use, keep the English word as-is.
+- Everything else that a customer reads — sentences, explanations, buttons, help pages — should
+  read like natural spoken Thai, not translated-from-English Thai.
+- The owner reviewed the five service pages on 2026-09-06 and **approved them as published**, while
+  noting the Thai still reads stiff in places; rewriting that copy is the separate language-pass
+  job above, not a reason to hold the pages back.
