@@ -77,6 +77,7 @@ Render จะตัดบัตรทุกเดือนจนกว่าจ�
 > | `OKAMI24_DATA_DIR` | `/var/data/app-data` |
 > | `OKAMI24_BACKUP_DIR` | `/var/data/backups` |
 > | `NODE_OPTIONS` | `--report-on-fatalerror --report-on-signal --report-directory=/var/data` (ให้ Node เขียนรายงานตอนตายเองลงดิสก์ · ไม่ช่วยกรณี segfault จาก native — ดู `render.yaml`) |
+> | `OKAMI24_ORDERING` | `off` (เจ้าของสั่งปิดสั่งซื้อออนไลน์ 2026-09-07 — ลูกค้าดูได้ครบ ซื้อทางไลน์ @okm24) · **เปิดกลับ = แก้เป็น `on` ในไฟล์นี้ → merge → "Save, rebuild, and deploy"** (ต้อง rebuild ไม่ใช่แค่รีสตาร์ต เพราะหน้าสินค้า/แคตตาล็อกอ่านค่าตอน build) · ค่าอื่นทุกค่าที่ไม่ใช่ `on` = ปิด |
 
 ### ทำไมค่าพวกนี้สำคัญ (อ่านผ่าน ๆ พอ)
 

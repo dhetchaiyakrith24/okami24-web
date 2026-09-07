@@ -151,6 +151,23 @@ operational information.
 
 ## 8. Sales Channels
 
+> **TEMPORARY EXCEPTION — online ordering switched OFF (owner decision 2026-09-07).**
+> Reason, in the owner's words: "ข้อมูลสินค้ายังไม่นิ่ง". While it is off the rule below ("website =
+> primary order channel") is suspended, not changed: the catalogue stays fully browsable with
+> prices, colours/flavours, specs, images, categories, search and compare; the "add to cart"
+> button on every product becomes "สั่งซื้อทางไลน์ @okm24" (opens the shop's LINE and copies the
+> product name + selected option to the clipboard); the header's cart icon is hidden; /cart and
+> /checkout send the visitor to /products with the note "ตอนนี้สั่งทางไลน์เร็วกว่า ทัก @okm24 ได้เลย".
+> Nothing was deleted — the whole cart/checkout code is intact, and the order-status page plus the
+> "I have paid" action keep working for orders that already exist (the owner's test order stays).
+> Structured data keeps the price and marks offers `InStoreOnly` (owner-approved 2026-09-07).
+> Three sentences that said "order on the site" were approved as the only wording exceptions to
+> the "do not touch site text" rule (LAUNCH_AUDIT item 30): the site description for search
+> engines, the how-to-order page intro, and the "how do I order" FAQ answer — all switch-bound.
+> **How to turn ordering back on:** in Render, set `OKAMI24_ORDERING` to `on` (in `render.yaml`
+> then merge, since the service is Blueprint-managed) and choose "Save, rebuild, and deploy".
+> Code: `src/lib/commerce/ordering-mode.ts`. Tracked as LAUNCH_AUDIT item 43.
+
 **Current:**
 - Website → customer discovers product → contacts LINE OA → admin assists → order
 - YouTube → customer discovers product → contacts LINE OA → admin assists → order
