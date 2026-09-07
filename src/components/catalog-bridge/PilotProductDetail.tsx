@@ -16,10 +16,7 @@ import { ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotAxisLabel } from "./axis-label";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
-import { Button } from "@/components/ui/Button";
-import { CONTACT } from "@/data/contact";
-import { addToCartAction } from "@/app/cart/actions";
-import { OrderViaLineButton } from "@/components/commerce/OrderViaLineButton";
+import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 
 /**
  * Storefront-native product detail body for a ProductMaster product, rendered from the real
@@ -117,33 +114,17 @@ export function PilotProductDetail({
                   with no live Shipnity stock signal ("unknown") must be exactly as non-purchasable
                   as one explicitly confirmed empty ("out-of-stock") — only a confirmed "in-stock"
                   signal may show the real Add to Cart action. */}
-              {(selectedVariant?.availabilityStatus ?? product.availabilityStatus) !== "in-stock" ? (
-                <div className="flex flex-col items-start gap-2">
-                  <span className="label-mono text-xs text-ember">{dict.productActions.outOfStockLabel}</span>
-                  <a
-                    href={CONTACT.lineUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-surface-border px-6 py-3 text-sm font-semibold tracking-tight text-foreground transition-colors duration-200 hover:border-foreground-dim hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-ember"
-                  >
-                    {dict.productActions.outOfStockCta}
-                  </a>
-                </div>
-              ) : !orderingEnabled ? (
-                /* Online ordering off (owner 2026-09-07): same slot, same weight, LINE instead of the cart. */
-                <OrderViaLineButton productName={product.displayName} variantLabel={selectedVariant?.label ?? null} />
-              ) : (
-                <form action={addToCartAction} className="flex flex-col items-start gap-2">
-                  <input type="hidden" name="slug" value={product.slug} />
-                  {selectedVariantId && <input type="hidden" name="variantId" value={selectedVariantId} />}
-                  <input type="hidden" name="quantity" value={1} />
-                  <Button type="submit">{dict.productActions.addToCartCta}</Button>
-                  {/* LINE = backup order channel (owner 2026-09-06, BSOT §8): one small line, cart button stays primary */}
-                  <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-foreground-muted hover:text-foreground">
-                    {dict.productActions.orderOnLineNote}
-                  </a>
-                </form>
-              )}
+              {/* One shared buy action for every product page and the mobile bar — see
+                  ProductBuyAction.tsx (mobile round, 2026-09-08). Its defaults are this file's
+                  original form/note classes, so nothing renders differently. */}
+              <ProductBuyAction
+                available={(selectedVariant?.availabilityStatus ?? product.availabilityStatus) === "in-stock"}
+                orderingEnabled={orderingEnabled}
+                slug={product.slug}
+                variantId={selectedVariantId}
+                productName={product.displayName}
+                variantLabel={selectedVariant?.label ?? null}
+              />
             </div>
           )}
 

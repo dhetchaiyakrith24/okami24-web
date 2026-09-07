@@ -13,9 +13,7 @@ import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
-import { CONTACT } from "@/data/contact";
-import { addToCartAction } from "@/app/cart/actions";
-import { OrderViaLineButton } from "@/components/commerce/OrderViaLineButton";
+import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -158,33 +156,19 @@ export function ProductHero({
 
           {sellingPrice !== null && (
             <div className="flex flex-col gap-3 pt-1">
-              {canAddToCart && !orderingEnabled ? (
-                /* Online ordering off (owner 2026-09-07): same slot, same weight, LINE instead of the cart. */
-                <OrderViaLineButton productName={product.displayName} variantLabel={selectedColor?.name ?? selectedFlavor?.name ?? null} />
-              ) : canAddToCart ? (
-                <form action={addToCartAction} className="flex flex-wrap gap-3">
-                  <input type="hidden" name="slug" value={product.slug} />
-                  {cartVariantId && <input type="hidden" name="variantId" value={cartVariantId} />}
-                  <input type="hidden" name="quantity" value={1} />
-                  <Button type="submit">{dict.productActions.addToCartCta}</Button>
-                  {/* LINE = backup order channel (owner 2026-09-06, BSOT §8): one small line, cart button stays primary */}
-                  <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="basis-full text-xs text-foreground-muted hover:text-foreground">
-                    {dict.productActions.orderOnLineNote}
-                  </a>
-                </form>
-              ) : (
-                <div className="flex flex-col items-start gap-2">
-                  <span className="label-mono text-xs text-ember">{dict.productActions.outOfStockLabel}</span>
-                  <a
-                    href={CONTACT.lineUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-surface-border px-6 py-3 text-sm font-semibold tracking-tight text-foreground transition-colors duration-200 hover:border-foreground-dim hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-ember"
-                  >
-                    {dict.productActions.outOfStockCta}
-                  </a>
-                </div>
-              )}
+              {/* One shared buy action for every product page and the mobile bar — see
+                  ProductBuyAction.tsx (mobile round, 2026-09-08). The legacy form/note classes
+                  are passed in so this renders exactly as it did when the branch lived here. */}
+              <ProductBuyAction
+                available={canAddToCart}
+                orderingEnabled={orderingEnabled}
+                slug={product.slug}
+                variantId={cartVariantId}
+                productName={product.displayName}
+                variantLabel={selectedColor?.name ?? selectedFlavor?.name ?? null}
+                formClassName="flex flex-wrap gap-3"
+                noteClassName="basis-full text-xs text-foreground-muted hover:text-foreground"
+              />
             </div>
           )}
 
