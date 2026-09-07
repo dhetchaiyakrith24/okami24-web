@@ -10,7 +10,10 @@ import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 
-export function Header() {
+/** `orderingEnabled` comes from the root layout (src/lib/commerce/ordering-mode.ts — owner
+ *  2026-09-07): while online ordering is off, the cart icon and the mobile-menu cart link are not
+ *  rendered at all, because /cart would only redirect. Defaults to true so nothing else changes. */
+export function Header({ orderingEnabled = true }: { orderingEnabled?: boolean } = {}) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const { dict } = useLocale();
@@ -109,13 +112,15 @@ export function Header() {
           >
             <Heart size={19} aria-hidden />
           </Link>
-          <Link
-            href="/cart"
-            aria-label={dict.nav.cart}
-            className="rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground"
-          >
-            <ShoppingCart size={19} aria-hidden />
-          </Link>
+          {orderingEnabled && (
+            <Link
+              href="/cart"
+              aria-label={dict.nav.cart}
+              className="rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground"
+            >
+              <ShoppingCart size={19} aria-hidden />
+            </Link>
+          )}
           <button
             className="rounded-full p-2 text-foreground-muted transition-colors hover:bg-surface-2 hover:text-foreground lg:hidden"
             onClick={() => setMobileOpen((v) => !v)}
@@ -159,9 +164,11 @@ export function Header() {
           <Link href="/favorites" className="rounded-lg px-3 py-3 text-base text-foreground hover:bg-surface-2">
             {dict.nav.favorites}
           </Link>
-          <Link href="/cart" className="rounded-lg px-3 py-3 text-base text-foreground hover:bg-surface-2">
-            {dict.nav.cart}
-          </Link>
+          {orderingEnabled && (
+            <Link href="/cart" className="rounded-lg px-3 py-3 text-base text-foreground hover:bg-surface-2">
+              {dict.nav.cart}
+            </Link>
+          )}
         </nav>
       </div>
     </>

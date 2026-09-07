@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { FAQ_COPY_TH, FAQ_COPY_ZH } from "@/i18n/faq-copy";
+import { ORDERING_FAQ_ID, ORDERING_ON_LINE_FAQ_ANSWER } from "@/data/faqs";
 import type { FAQAction } from "@/types/catalog";
 
 interface Item {
@@ -37,7 +38,10 @@ function actionLabel(dict: ReturnType<typeof useLocale>["dict"], labelKey: FAQAc
   }
 }
 
-export function FAQAccordion({ items }: { items: Item[] }) {
+/** `orderingEnabled` comes from the /faq page (src/lib/commerce/ordering-mode.ts — owner
+ *  2026-09-07): while online ordering is off, the one "how do I order" answer is swapped for the
+ *  LINE version in the active language; every other item is untouched. Defaults to true. */
+export function FAQAccordion({ items, orderingEnabled = true }: { items: Item[]; orderingEnabled?: boolean }) {
   const [openId, setOpenId] = useState<string | null>(null);
   const { dict, locale } = useLocale();
   // Content-level i18n fix (owner quality review, 2026-09-02) — REPLACES the English question/
@@ -48,7 +52,10 @@ export function FAQAccordion({ items }: { items: Item[] }) {
   const localizedItems = items.map((item) => ({
     ...item,
     question: overlay?.[item.id]?.question ?? item.question,
-    answer: overlay?.[item.id]?.answer ?? item.answer,
+    answer:
+      !orderingEnabled && item.id === ORDERING_FAQ_ID
+        ? ORDERING_ON_LINE_FAQ_ANSWER[locale]
+        : (overlay?.[item.id]?.answer ?? item.answer),
   }));
 
   return (

@@ -15,6 +15,7 @@ import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
 import { CONTACT } from "@/data/contact";
 import { addToCartAction } from "@/app/cart/actions";
+import { OrderViaLineButton } from "@/components/commerce/OrderViaLineButton";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -34,8 +35,13 @@ export function ProductHero({
   sellingPrice = null,
   imageDisplayInfo,
   imageDisplayMap,
+  orderingEnabled = true,
 }: {
   product: Product;
+  /** From the server page (src/lib/commerce/ordering-mode.ts — owner 2026-09-07). False = the
+   *  cart form is replaced by OrderViaLineButton; everything else on the page is unchanged.
+   *  Defaults to true so every other caller renders exactly as before. */
+  orderingEnabled?: boolean;
   /** Owner-approved price from legacy-price-approvals.ts (2026-09-05). `null` = browse-only: no
    *  price, no cart action — exactly how every legacy product rendered before that date. */
   sellingPrice?: number | null;
@@ -152,7 +158,10 @@ export function ProductHero({
 
           {sellingPrice !== null && (
             <div className="flex flex-col gap-3 pt-1">
-              {canAddToCart ? (
+              {canAddToCart && !orderingEnabled ? (
+                /* Online ordering off (owner 2026-09-07): same slot, same weight, LINE instead of the cart. */
+                <OrderViaLineButton productName={product.displayName} variantLabel={selectedColor?.name ?? selectedFlavor?.name ?? null} />
+              ) : canAddToCart ? (
                 <form action={addToCartAction} className="flex flex-wrap gap-3">
                   <input type="hidden" name="slug" value={product.slug} />
                   {cartVariantId && <input type="hidden" name="variantId" value={cartVariantId} />}

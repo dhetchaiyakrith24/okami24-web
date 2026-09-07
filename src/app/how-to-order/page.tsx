@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { canonicalFor } from "@/lib/seo";
 import { HowToOrderContent } from "@/components/content/service-pages/HowToOrderContent";
+import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 
 // Copy: writer draft 2026-09-06 (docs/PAGE_COPY_2026-09-06.md) + the owner's 2026-09-06 answers
 // (BSOT §8–§10). Since the same evening the body is rendered in th/en/zh by HowToOrderContent
@@ -13,5 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function HowToOrderPage() {
-  return <HowToOrderContent />;
+  return <HowToOrderContent orderingEnabled={ORDERING_ENABLED} />;
 }

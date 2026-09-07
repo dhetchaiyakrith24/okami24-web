@@ -3,6 +3,21 @@ import type { SiteFAQ } from "@/types/catalog";
 // Owner review (2026-09-03) — "FAQ must become actionable": each `action` below is added only
 // where the question naturally leads somewhere useful (judgment call per item, not a blanket
 // CTA). See FAQAction's own doc comment in types/catalog.ts for why labels are keyed, not raw text.
+/**
+ * The "how do I order" answer while online ordering is OFF (OKAMI24_ORDERING — owner 2026-09-07,
+ * approved as one of three wording exceptions to the "do not touch site text" rule). The English
+ * answer below stays canonical and untouched; FAQAccordion swaps in this one, per locale, only
+ * while the cart is off, so switching ordering back on restores the original with no edit.
+ * Shipping figures are the same ones the original answer already states.
+ */
+export const ORDERING_ON_LINE_FAQ_ANSWER: Record<"en" | "th" | "zh", string> = {
+  en: "Right now the easier way to order is LINE @okm24: message us the model, colour or flavour you want, and the admin confirms the total and how to pay in the chat. Once the payment is checked, the order ships with a tracking number. Shipping is 60 baht, free on orders from 500 baht up. Want help picking a model? Just ask.",
+  th: "ช่วงนี้สั่งผ่านไลน์ @okm24 สะดวกกว่า ทักมาบอกรุ่น สี หรือกลิ่นที่ต้องการ แอดมินสรุปยอดและวิธีโอนให้ในแชท จ่ายแล้วแอดมินตรวจยอดโอนก่อน แล้วจึงจัดส่งพร้อมเลขพัสดุให้ติดตาม ค่าส่ง 60 บาท ยอด 500 บาทขึ้นไปส่งฟรี อยากให้ช่วยเลือกรุ่นก็ทักมาได้เลย",
+  zh: "这段时间用 LINE @okm24 下单更方便：告诉店主想要的型号、颜色或口味，店主会在聊天里确认总价和付款方式。核对到账后安排出货，并提供物流单号查询。运费 60 泰铢，满 500 泰铢免运费。想让店主帮忙挑型号也可以直接问。",
+};
+/** The FAQ id whose answer `ORDERING_ON_LINE_FAQ_ANSWER` replaces. */
+export const ORDERING_FAQ_ID = "what-is-this-site";
+
 export const siteFaqs: SiteFAQ[] = [
   {
     id: "what-is-this-site",
