@@ -5,6 +5,8 @@ import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
 import { ColorVariantRail } from "@/components/product/ColorVariantRail";
 import { FlavorVariantGrid } from "@/components/product/FlavorVariantGrid";
+import { MobileVariantGallery, MOBILE_SLIDE_SIZES } from "@/components/product/MobileVariantGallery";
+import { legacyVariantOptions } from "@/components/product/variant-options";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -14,6 +16,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
 import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
+import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -27,7 +30,16 @@ function firstSellable<T extends { id: string; availability?: string }>(options:
  *  computed server-side (reads the real file under `public/`, never a value that could go stale)
  *  and passed down as plain data since this is a client component. `undefined` (e.g. the source
  *  file couldn't be read) falls back to the original always-fill behavior. See
- *  `src/lib/media-quality.ts` for the full rationale. */
+ *  `src/lib/media-quality.ts` for the full rationale.
+ *
+ *  Phone layout (mobile round A, MOBILE_SPEC M2 + owner decisions A-ข/D-ข, 2026-09-08 — every
+ *  `max-lg:` / `lg:hidden` class in this file): below `lg` the two desktop columns dissolve
+ *  (`max-lg:contents`) so every block becomes a direct child of the one-column grid and can be
+ *  re-ordered without touching the desktop tree: name → swipe gallery with position dots →
+ *  colour/flavour chips → price → (tagline, description) → compare/spec buttons → stats. The
+ *  in-page buy button hides on phones because the sticky `MobileBuyBar` carries the same
+ *  `ProductBuyAction`. Selection state is unchanged and still lives here (P1: M5 reads it next).
+ *  At `lg` and above every class that was here before is still here, untouched. */
 export function ProductHero({
   product,
   sellingPrice = null,
@@ -87,7 +99,50 @@ export function ProductHero({
     product.attributes.capacityMl ? { label: dict.product.statCapacity, value: `${product.attributes.capacityMl}mL` } : null,
   ].filter((s): s is { label: string; value: string } => Boolean(s) && s!.value !== "—");
 
+  // Phone gallery (M2.2/M2.3): one slide per option, each showing that option's own photo or —
+  // when it has none yet — the product's default photo with only the name changing. Swiping IS
+  // selecting: it sets the same state the chips set, including onto a sold-out option (owner
+  // decision A-ข: the customer may look at it; the page then shows the sold-out state and the
+  // chip stays disabled). "All Colors" is not a slide — while it is on, the lineup photo shows.
+  const options = legacyVariantOptions(product);
+  const hasColorAxis = (product.colorVariants?.length ?? 0) > 0;
+  const selectedOptionId = hasColorAxis ? selectedColorId : selectedFlavorId;
+  const selectOption = (id: string) => {
+    if (hasColorAxis) setSelectedColorId(id);
+    else setSelectedFlavorId(id);
+    setShowAllColors(false);
+  };
+  const slides =
+    options.length > 0
+      ? options.map((o) => ({
+          id: o.id,
+          node: (
+            <div className="h-full w-full p-2">
+              <ProductMedia
+                product={product}
+                sizes={MOBILE_SLIDE_SIZES}
+                qualityAware={o.image ? imageDisplayMap?.[o.image.src] ?? null : imageDisplayInfo}
+                overrideImage={o.image}
+                priority={o.id === selectedOptionId}
+              />
+            </div>
+          ),
+        }))
+      : [
+          {
+            id: "default",
+            node: (
+              <div className="h-full w-full p-2">
+                <ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayInfo} priority />
+              </div>
+            ),
+          },
+        ];
+  const selectedOptionLabel = showAllColors ? (product.lineupImage ? dict.product.allVariantsLabel : null) : selectedColor?.name ?? selectedFlavor?.name ?? null;
+  const priceText = sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : null;
+
   return (
+    <>
     <section className="relative overflow-hidden border-b border-surface-border-soft bg-surface-1">
       <div
         className="pointer-events-none absolute inset-0 opacity-50"
@@ -96,29 +151,29 @@ export function ProductHero({
         }}
         aria-hidden
       />
-      <Container className="relative grid grid-cols-1 items-center gap-10 py-14 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:py-20">
-        <div className="order-2 flex flex-col gap-5 lg:order-1">
-          <div className="flex flex-wrap items-center gap-2">
+      <Container className="relative grid grid-cols-1 items-center gap-10 py-14 max-lg:gap-4 max-lg:py-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:py-20">
+        <div className="order-2 flex flex-col gap-5 max-lg:contents lg:order-1">
+          <div className="flex flex-wrap items-center gap-2 max-lg:order-1">
             <Badge tone="steel">{brandName(product.brandId)}</Badge>
             <Badge tone="neutral">{familyName(product.familyId)}</Badge>
             {product.editorialTag && <Badge tone="ember">{product.editorialTag}</Badge>}
           </div>
-          <h1 className="font-display text-[length:var(--text-h1)] font-bold leading-[0.95] tracking-tight text-foreground">
+          <h1 className="font-display text-[length:var(--text-h1)] font-bold leading-[0.95] tracking-tight text-foreground max-lg:order-2 max-lg:text-[1.75rem] max-lg:leading-[1.1]">
             {product.name}
           </h1>
-          <div className="flex flex-col gap-1.5">
+          <div className="flex flex-col gap-1.5 max-lg:order-7">
             <p className="max-w-lg text-lg leading-relaxed text-foreground-muted">{product.tagline}</p>
             {copyTh && <p className="max-w-lg text-lg leading-relaxed text-foreground-muted/75">{copyTh.tagline}</p>}
           </div>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 max-lg:order-8">
             <p className="max-w-lg text-sm leading-relaxed text-foreground-dim">{product.shortDescription}</p>
             {copyTh && <p className="max-w-lg text-sm leading-relaxed text-foreground-dim/75">{copyTh.shortDescription}</p>}
           </div>
 
           {sellingPrice !== null && (
-            <div>
+            <div className="max-lg:order-5">
               <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceLabel}</span>
-              <p className="font-display text-3xl font-bold text-foreground">฿{sellingPrice.toLocaleString("th-TH")}</p>
+              <p className="font-display text-3xl font-bold text-foreground max-lg:text-2xl">฿{sellingPrice.toLocaleString("th-TH")}</p>
             </div>
           )}
 
@@ -135,6 +190,7 @@ export function ProductHero({
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => setShowAllColors(true) : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
+              className="max-lg:order-4"
             />
           )}
 
@@ -151,11 +207,12 @@ export function ProductHero({
               isAllSelected={showAllColors}
               onSelectAll={product.lineupImage ? () => setShowAllColors(true) : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
+              className="max-lg:order-4"
             />
           )}
 
           {sellingPrice !== null && (
-            <div className="flex flex-col gap-3 pt-1">
+            <div className="flex flex-col gap-3 pt-1 max-lg:hidden">
               {/* One shared buy action for every product page and the mobile bar — see
                   ProductBuyAction.tsx (mobile round, 2026-09-08). The legacy form/note classes
                   are passed in so this renders exactly as it did when the branch lived here. */}
@@ -172,7 +229,7 @@ export function ProductHero({
             </div>
           )}
 
-          <div className={`flex flex-wrap gap-3 ${sellingPrice !== null ? "pt-1" : "pt-2"}`}>
+          <div className={`flex flex-wrap gap-3 max-lg:order-9 ${sellingPrice !== null ? "pt-1" : "pt-2"}`}>
             <Button href={`/compare?slugs=${product.slug}`} variant={sellingPrice !== null ? "secondary" : "primary"}>
               {dict.product.addToComparison}
             </Button>
@@ -182,7 +239,7 @@ export function ProductHero({
           </div>
 
           {stats.length > 0 && (
-            <dl className="mt-4 grid grid-cols-2 gap-4 border-t border-surface-border-soft pt-6 sm:grid-cols-4">
+            <dl className="mt-4 grid grid-cols-2 gap-4 border-t border-surface-border-soft pt-6 max-lg:order-10 sm:grid-cols-4">
               {stats.map((s) => (
                 <div key={s.label} className="flex flex-col gap-1">
                   <dt className="label-mono text-[0.6rem] text-foreground-dim">{s.label}</dt>
@@ -193,14 +250,19 @@ export function ProductHero({
           )}
         </div>
 
-        <div className="relative order-1 mx-auto aspect-square w-full max-w-lg lg:order-2 lg:max-w-none">
+        {/* The image box: same element and same children order as before for desktop; on phones
+            (max-lg) it re-orders under the name and its still hero image gives way to the swipe
+            gallery, which is absolutely positioned over the same square. One FavoriteButton in its
+            original DOM slot serves both — a second copy for the phone view was found (2026-09-08)
+            to perturb the desktop render of the heart's backdrop blur by ±2/255. */}
+        <div className="relative order-1 mx-auto aspect-square w-full max-w-lg max-lg:order-3 max-lg:max-w-none lg:order-2 lg:max-w-none">
           <div
             className="pointer-events-none absolute inset-0"
             style={{ background: "radial-gradient(ellipse 58% 54% at 50% 40%, var(--color-steel-soft) 0%, transparent 72%)" }}
             aria-hidden
           />
           <FavoriteButton slug={product.slug} className="absolute right-2 top-2 z-10" />
-          <div className="relative h-full w-full p-8 lg:p-12">
+          <div className="relative h-full w-full p-8 max-lg:hidden lg:p-12">
             <ProductMedia
               product={product}
               sizes="(min-width: 1024px) 42vw, 85vw"
@@ -209,12 +271,42 @@ export function ProductHero({
             />
           </div>
           <div
-            className="pointer-events-none absolute inset-x-16 bottom-6 h-10 rounded-full opacity-70"
+            className="pointer-events-none absolute inset-x-16 bottom-6 h-10 rounded-full opacity-70 max-lg:hidden"
             style={{ background: "radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 75%)", filter: "blur(10px)" }}
             aria-hidden
           />
+          {/* Phone gallery — hidden at lg+, where the still image above is the hero. */}
+          <div className="absolute inset-0 lg:hidden">
+            {showAllColors && product.lineupImage ? (
+              <div className="relative h-full w-full p-2">
+                <ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayMap?.[product.lineupImage.src] ?? null} overrideImage={product.lineupImage} />
+              </div>
+            ) : (
+              <MobileVariantGallery
+                slides={slides}
+                selectedId={selectedOptionId ?? "default"}
+                onSelect={selectOption}
+                className="h-full"
+                ariaLabel={hasColorAxis ? dict.product.colorLabel : dict.product.flavorLabel}
+              />
+            )}
+          </div>
         </div>
       </Container>
     </section>
+    {sellingPrice !== null && (
+      <MobileBuyBar priceText={priceText} optionLabel={selectedOptionLabel}>
+        <ProductBuyAction
+          available={canAddToCart}
+          orderingEnabled={orderingEnabled}
+          slug={product.slug}
+          variantId={cartVariantId}
+          productName={product.displayName}
+          variantLabel={selectedColor?.name ?? selectedFlavor?.name ?? null}
+          compact
+        />
+      </MobileBuyBar>
+    )}
+    </>
   );
 }

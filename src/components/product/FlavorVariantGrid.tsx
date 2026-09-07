@@ -1,7 +1,9 @@
 "use client";
 
+import { useRef } from "react";
 import type { FlavorVariant } from "@/types/catalog";
 import { cn } from "@/lib/utils";
+import { useChipAutoscroll } from "./use-chip-autoscroll";
 
 /**
  * Real manufacturer flavor selector for a Legacy Product Detail hero (owner mandate, 2026-09-03 —
@@ -20,6 +22,10 @@ import { cn } from "@/lib/utils";
  * rejects an out-of-stock option anyway — this is the matching client-side half. `"unknown"`
  * renders like `"in-stock"` deliberately: we have no live signal either way, and marking it as if
  * confirmed-unavailable would be its own kind of fabrication.
+ *
+ * Phones (mobile round A, 2026-09-08 — every `max-lg:` class): one sideways-scrolling row edge
+ * to edge instead of a wrapped grid, pills at least 44px tall, and the selected pill scrolls
+ * itself into view when a gallery swipe selects it (useChipAutoscroll). `lg` and above unchanged.
  */
 export function FlavorVariantGrid({
   variants,
@@ -30,6 +36,7 @@ export function FlavorVariantGrid({
   isAllSelected,
   onSelectAll,
   outOfStockLabel,
+  className,
 }: {
   variants: FlavorVariant[];
   selectedId: string | null;
@@ -44,17 +51,24 @@ export function FlavorVariantGrid({
   isAllSelected?: boolean;
   onSelectAll?: () => void;
   outOfStockLabel: string;
+  /** Extra classes on the root (the product page uses it for its phone-only ordering). */
+  className?: string;
 }) {
   const selected = variants.find((v) => v.id === selectedId);
+  const listRef = useRef<HTMLDivElement>(null);
+  useChipAutoscroll(listRef, isAllSelected ? null : selectedId);
 
   return (
-    <div className="flex flex-col gap-2.5">
+    <div className={cn("flex flex-col gap-2.5", className)}>
       <span className="label-mono text-xs text-foreground-dim">
         {label}
         {!isAllSelected && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
         {isAllSelected && allLabel && <span className="ml-2 font-sans normal-case text-foreground-muted">{allLabel}</span>}
       </span>
-      <div className="flex flex-wrap gap-2 sm:max-h-56 sm:overflow-y-auto sm:pr-1">
+      <div
+        ref={listRef}
+        className="flex flex-wrap gap-2 sm:max-h-56 sm:overflow-y-auto sm:pr-1 max-lg:-mx-5 max-lg:max-h-none max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:px-5 max-lg:py-0.5 max-lg:pr-5 max-lg:[scrollbar-width:none] max-lg:[&::-webkit-scrollbar]:hidden"
+      >
         {onSelectAll && (
           <button
             type="button"
@@ -62,7 +76,7 @@ export function FlavorVariantGrid({
             aria-pressed={isAllSelected}
             title={allLabel}
             className={cn(
-              "inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold tracking-tight transition-all duration-150",
+              "inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold tracking-tight transition-all duration-150 max-lg:min-h-11 max-lg:shrink-0 max-lg:px-4 max-lg:text-sm",
               isAllSelected
                 ? "border-ember bg-ember/10 text-foreground"
                 : "border-surface-border text-foreground-muted hover:border-foreground-dim hover:text-foreground"
@@ -77,13 +91,14 @@ export function FlavorVariantGrid({
             <button
               key={v.id}
               type="button"
+              data-option-id={v.id}
               onClick={outOfStock ? undefined : () => onSelect(v.id)}
               disabled={outOfStock}
               aria-disabled={outOfStock || undefined}
               aria-pressed={v.id === selectedId}
               title={outOfStock ? `${v.name} — ${outOfStockLabel}` : v.name}
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-150",
+                "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-150 max-lg:min-h-11 max-lg:shrink-0 max-lg:whitespace-nowrap max-lg:px-4 max-lg:text-sm",
                 v.id === selectedId && !isAllSelected
                   ? "border-ember bg-ember/10 text-foreground"
                   : "border-surface-border text-foreground-muted hover:border-foreground-dim hover:text-foreground",

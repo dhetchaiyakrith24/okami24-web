@@ -17,6 +17,9 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotAxisLabel } from "./axis-label";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
 import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
+import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
+import { MobileVariantGallery, MOBILE_SLIDE_SIZES } from "@/components/product/MobileVariantGallery";
+import { pilotVariantOptions } from "@/components/product/variant-options";
 
 /**
  * Storefront-native product detail body for a ProductMaster product, rendered from the real
@@ -36,6 +39,12 @@ import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
  * product-level card image (`product.image`) — unchanged behavior — whenever the selected variant
  * has no dedicated photo, which is still the case for most variants on most products; this is
  * strictly additive, never a regression for a product with no variant media at all.
+ *
+ * Phone layout (mobile round A, MOBILE_SPEC M2 + owner decisions A-ข/D-ข, 2026-09-08 — every
+ * `max-lg:` / `lg:hidden` class): below `lg` the left column dissolves (`max-lg:contents`) so its
+ * blocks re-order under the page title as: swipe gallery with dots → variant chips → price →
+ * specs; the in-page buy button hides because the sticky `MobileBuyBar` carries the same
+ * `ProductBuyAction`. Selection state stays here (P1). `lg` and above: unchanged.
  */
 export function PilotProductDetail({
   product,
@@ -68,6 +77,38 @@ export function PilotProductDetail({
   const displayImageInfo = displayImage ? imageDisplayMap?.[displayImage.src] : undefined;
   const fillHero = displayImageInfo ? displayImageInfo.fillHero : true;
 
+  const available = (selectedVariant?.availabilityStatus ?? product.availabilityStatus) === "in-stock";
+  const showBuy = isPublished && product.sellingPrice !== null;
+
+  // Phone gallery slides — same photo rule per option as `displayImage` above (own photo →
+  // neutral fallback → product card), so an option without its own photo shows the same image
+  // with only the name changing (M2.3) until a real photo is added to the data.
+  const renderImage = (img: typeof displayImage, priority: boolean) => {
+    if (!img) {
+      return (
+        <div className="h-full w-full rounded-2xl border border-surface-border bg-surface-1 p-6">
+          <ProductMasterGlyph kind={product.glyphKind} />
+        </div>
+      );
+    }
+    const info = imageDisplayMap?.[img.src];
+    const fill = info ? info.fillHero : true;
+    return fill ? (
+      <div className="relative h-full w-full p-2">
+        <Image key={img.src} src={img.src} alt={img.alt} fill sizes={MOBILE_SLIDE_SIZES} className="object-contain" priority={priority} />
+      </div>
+    ) : (
+      <div className="relative flex h-full w-full items-center justify-center p-2">
+        <Image key={img.src} src={img.src} alt={img.alt} width={info!.width} height={info!.height} sizes={MOBILE_SLIDE_SIZES} className="h-auto max-h-full w-auto max-w-full object-contain" priority={priority} />
+      </div>
+    );
+  };
+  const options = pilotVariantOptions(product);
+  const slides =
+    options.length > 0
+      ? options.map((o) => ({ id: o.id, node: renderImage(o.image ?? product.variantFallbackImage ?? product.image, o.id === selectedVariantId) }))
+      : [{ id: "default", node: renderImage(product.image, true) }];
+
   return (
     <>
       <PageHeader
@@ -81,17 +122,20 @@ export function PilotProductDetail({
           </div>
         }
       />
-      <Container className="grid gap-10 py-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:py-16">
-        <div className="order-2 flex flex-col gap-6 lg:order-1">
+      {/* max-lg:grid-cols-1 = minmax(0,1fr): without it the single implicit column is `auto` and
+          grows to the swipe track's max-content width (all slides side by side), which made the
+          phone page 546px wide on a 390px screen (designer, 2026-09-08). lg keeps its own template. */}
+      <Container className="grid gap-10 py-12 max-lg:grid-cols-1 max-lg:gap-4 max-lg:py-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:py-16">
+        <div className="order-2 flex flex-col gap-6 max-lg:contents lg:order-1">
           {isPublished && product.sellingPrice !== null ? (
-            <div>
+            <div className="max-lg:order-3">
               <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceLabel}</span>
-              <p className="font-display text-3xl font-bold text-foreground">฿{product.sellingPrice.toLocaleString("th-TH")}</p>
+              <p className="font-display text-3xl font-bold text-foreground max-lg:text-2xl">฿{product.sellingPrice.toLocaleString("th-TH")}</p>
             </div>
           ) : (
-            <div>
+            <div className="max-lg:order-3">
               <span className="label-mono text-xs text-foreground-dim">{dict.pilot.priceReferenceLabel}</span>
-              <p className="font-display text-3xl font-bold text-foreground">
+              <p className="font-display text-3xl font-bold text-foreground max-lg:text-2xl">
                 {product.priceReferenceValue !== null ? `฿${product.priceReferenceValue.toLocaleString("th-TH")}` : dict.pilot.priceUnavailable}
               </p>
               <p className="text-xs text-foreground-muted">
@@ -106,10 +150,11 @@ export function PilotProductDetail({
             selectedId={selectedVariantId}
             onSelect={setSelectedVariantId}
             outOfStockLabel={dict.productActions.outOfStockLabel}
+            className="max-lg:order-2"
           />
 
-          {isPublished && product.sellingPrice !== null && (
-            <div>
+          {showBuy && (
+            <div className="max-lg:hidden">
               {/* Catalog-truth-vs-stock-truth mandate (owner, 2026-09-03): a verified real flavor
                   with no live Shipnity stock signal ("unknown") must be exactly as non-purchasable
                   as one explicitly confirmed empty ("out-of-stock") — only a confirmed "in-stock"
@@ -118,7 +163,7 @@ export function PilotProductDetail({
                   ProductBuyAction.tsx (mobile round, 2026-09-08). Its defaults are this file's
                   original form/note classes, so nothing renders differently. */}
               <ProductBuyAction
-                available={(selectedVariant?.availabilityStatus ?? product.availabilityStatus) === "in-stock"}
+                available={available}
                 orderingEnabled={orderingEnabled}
                 slug={product.slug}
                 variantId={selectedVariantId}
@@ -129,7 +174,7 @@ export function PilotProductDetail({
           )}
 
           {product.specifications.length > 0 && (
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 max-lg:order-4">
               <span className="label-mono text-xs text-foreground-dim">{dict.pilot.specificationsTitle}</span>
               <dl className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
                 {product.specifications.map((spec) => (
@@ -143,7 +188,17 @@ export function PilotProductDetail({
           )}
         </div>
 
-        <div className="relative order-1 aspect-[4/5] w-full lg:order-2">
+        {/* Phone gallery — hidden at lg+, where the desktop image box below is the hero. */}
+        <div className="relative aspect-square w-full max-lg:order-1 lg:hidden">
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{ background: "radial-gradient(ellipse 58% 54% at 50% 40%, var(--color-steel-soft) 0%, transparent 72%)" }}
+            aria-hidden
+          />
+          <MobileVariantGallery slides={slides} selectedId={selectedVariantId ?? "default"} onSelect={setSelectedVariantId} className="h-full" ariaLabel={axisLabel ?? undefined} />
+        </div>
+
+        <div className="relative order-1 aspect-[4/5] w-full max-lg:hidden lg:order-2">
           {displayImage ? (
             <>
               <div
@@ -213,6 +268,11 @@ export function PilotProductDetail({
       <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
       <PilotRelatedProducts products={related} />
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
+      {showBuy && (
+        <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant?.label ?? null}>
+          <ProductBuyAction available={available} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} compact />
+        </MobileBuyBar>
+      )}
     </>
   );
 }
