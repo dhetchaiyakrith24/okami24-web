@@ -11,13 +11,16 @@ const ARIA_LABEL = "ติดต่อสอบถามสินค้าทา
 export function LineContact() {
   return (
     <>
-      {/* Desktop: compact icon pill, expands to show the label on hover AND keyboard focus */}
+      {/* Desktop: compact icon pill, expands to show the label on hover AND keyboard focus.
+          Below lg (tablet widths, where this pill already shows) it also climbs above a product
+          page's mobile buy bar via --okami-fab-lift from globals.css (owner B-ก, 2026-09-08);
+          at lg and above the original bottom-8 applies untouched. */}
       <a
         href={CONTACT.lineUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={ARIA_LABEL}
-        className="group fixed bottom-8 right-8 z-30 hidden items-center gap-2 overflow-hidden rounded-full border border-surface-border bg-surface-1/95 px-3.5 py-3.5 text-foreground shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-red/50 hover:px-5 focus-visible:border-red/50 focus-visible:px-5 focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-2 sm:flex"
+        className="group fixed bottom-8 right-8 z-30 hidden items-center gap-2 overflow-hidden rounded-full border border-surface-border bg-surface-1/95 px-3.5 py-3.5 text-foreground shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-red/50 hover:px-5 focus-visible:border-red/50 focus-visible:px-5 focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-2 max-lg:bottom-[calc(2rem+var(--okami-fab-lift,0px))] sm:flex"
       >
         <LineIcon className="h-5 w-5 shrink-0 text-red" />
         <span
@@ -36,7 +39,8 @@ export function LineContact() {
         aria-label={ARIA_LABEL}
         className="fixed z-30 flex h-12 w-12 items-center justify-center rounded-full border border-surface-border bg-surface-1/95 text-red shadow-2xl backdrop-blur-md transition-colors focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-2 sm:hidden"
         style={{
-          bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))",
+          // + --okami-fab-lift: above the product page's sticky buy bar on phones (B-ก, 2026-09-08)
+          bottom: "calc(1rem + var(--okami-fab-lift, 0px) + env(safe-area-inset-bottom, 0px))",
           right: "calc(1rem + env(safe-area-inset-right, 0px))",
         }}
       >

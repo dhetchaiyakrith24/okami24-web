@@ -31,11 +31,16 @@ export function OrderViaLineButton({
   productName,
   variantLabel = null,
   className,
+  hideHint = false,
 }: {
   productName: string;
   /** The colour/flavour the customer has selected right now, if the product has options. */
   variantLabel?: string | null;
   className?: string;
+  /** Mobile sticky bar (mobile round 2026-09-08): the bar has no room for the helper line, so it
+   *  renders the button alone. The copy-to-clipboard behaviour is unchanged; only the visible
+   *  hint/confirmation line is omitted. Default false = exactly the original render. */
+  hideHint?: boolean;
 }) {
   const { dict } = useLocale();
   const [copied, setCopied] = useState(false);
@@ -55,6 +60,14 @@ export function OrderViaLineButton({
       /* same */
     }
   };
+
+  if (hideHint) {
+    return (
+      <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" onClick={copyProductDetails} className={cn(buttonClasses, className)}>
+        {dict.productActions.orderOnLineCta}
+      </a>
+    );
+  }
 
   return (
     <div className={cn("flex flex-col items-start gap-2", className)}>

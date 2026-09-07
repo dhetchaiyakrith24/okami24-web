@@ -40,12 +40,16 @@ export function ProductMedia({
   sizes,
   qualityAware,
   overrideImage,
+  priority = false,
 }: {
   product: Product;
   className?: string;
   sizes?: string;
   qualityAware?: ImageDisplayInfo | null;
   overrideImage?: { src: string; alt: string } | null;
+  /** Mobile round (2026-09-08): the phone gallery's first-shown slide is the page's largest
+   *  paint, so it may ask for eager loading + preload. Default false = unchanged everywhere else. */
+  priority?: boolean;
 }) {
   const cardPhoto = overrideImage ?? product.assets.find((a) => a.role === "card");
 
@@ -61,6 +65,7 @@ export function ProductMedia({
             height={qualityAware.height}
             sizes={sizes ?? "(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 80vw"}
             className="h-auto max-h-full w-auto max-w-full object-contain"
+            priority={priority}
           />
         </div>
       );
@@ -74,6 +79,7 @@ export function ProductMedia({
           fill
           sizes={sizes ?? "(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 80vw"}
           className="object-contain"
+          priority={priority}
         />
       </div>
     );

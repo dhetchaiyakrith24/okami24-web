@@ -1,7 +1,9 @@
 "use client";
 
+import { useRef } from "react";
 import type { ColorVariant } from "@/types/catalog";
 import { cn } from "@/lib/utils";
+import { useChipAutoscroll } from "./use-chip-autoscroll";
 
 /**
  * Real manufacturer color/finish selector for a Legacy Product Detail hero (owner quality review,
@@ -23,6 +25,11 @@ import { cn } from "@/lib/utils";
  * with a diagonal, labelled in its tooltip, and NOT selectable (`disabled`), so it can never
  * become the colour that goes into the cart. `"unknown"`/absent renders like in-stock, matching
  * the legacy cart gate in `resolveProductRef()`.
+ *
+ * Phones (mobile round A, 2026-09-08 — every `max-lg:` class): the row no longer wraps, it
+ * scrolls sideways edge to edge, each dot is a 44×44 target, and the selected dot scrolls itself
+ * into view when the gallery swipe changes the selection (useChipAutoscroll). At `lg` and above
+ * nothing here changed.
  */
 export function ColorVariantRail({
   variants,
@@ -33,6 +40,7 @@ export function ColorVariantRail({
   isAllSelected,
   onSelectAll,
   outOfStockLabel,
+  className,
 }: {
   variants: ColorVariant[];
   selectedId: string | null;
@@ -42,17 +50,24 @@ export function ColorVariantRail({
   isAllSelected?: boolean;
   onSelectAll?: () => void;
   outOfStockLabel?: string;
+  /** Extra classes on the root (the product page uses it for its phone-only ordering). */
+  className?: string;
 }) {
   const selected = variants.find((v) => v.id === selectedId);
+  const listRef = useRef<HTMLDivElement>(null);
+  useChipAutoscroll(listRef, isAllSelected ? null : selectedId);
 
   return (
-    <div className="flex flex-col gap-2.5">
+    <div className={cn("flex flex-col gap-2.5", className)}>
       <span className="label-mono text-xs text-foreground-dim">
         {label}
         {!isAllSelected && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
         {isAllSelected && allLabel && <span className="ml-2 font-sans normal-case text-foreground-muted">{allLabel}</span>}
       </span>
-      <div className="flex flex-wrap items-center gap-2.5">
+      <div
+        ref={listRef}
+        className="flex flex-wrap items-center gap-2.5 max-lg:-mx-5 max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:px-5 max-lg:py-1.5 max-lg:[scrollbar-width:none] max-lg:[&::-webkit-scrollbar]:hidden"
+      >
         {onSelectAll && (
           <button
             type="button"
@@ -60,7 +75,7 @@ export function ColorVariantRail({
             aria-pressed={isAllSelected}
             title={allLabel}
             className={cn(
-              "flex h-8 shrink-0 items-center rounded-full border px-3 text-xs font-semibold tracking-tight transition-all duration-150",
+              "flex h-8 shrink-0 items-center rounded-full border px-3 text-xs font-semibold tracking-tight transition-all duration-150 max-lg:h-11 max-lg:px-4 max-lg:text-sm",
               isAllSelected
                 ? "border-ember bg-ember/10 text-foreground"
                 : "border-surface-border text-foreground-muted hover:border-foreground-dim hover:text-foreground"
@@ -75,6 +90,7 @@ export function ColorVariantRail({
             <button
               key={v.id}
               type="button"
+              data-option-id={v.id}
               onClick={outOfStock ? undefined : () => onSelect(v.id)}
               disabled={outOfStock}
               aria-disabled={outOfStock || undefined}
@@ -82,7 +98,7 @@ export function ColorVariantRail({
               aria-pressed={!isAllSelected && v.id === selectedId}
               title={outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : v.name}
               className={cn(
-                "relative h-8 w-8 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-surface-1 transition-all duration-150",
+                "relative h-8 w-8 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-surface-1 transition-all duration-150 max-lg:h-11 max-lg:w-11",
                 !isAllSelected && v.id === selectedId
                   ? "scale-110 ring-ember"
                   : "ring-transparent hover:scale-105 hover:ring-surface-border",
@@ -96,7 +112,7 @@ export function ColorVariantRail({
               />
               {outOfStock && (
                 <span
-                  className="pointer-events-none absolute left-1/2 top-1/2 h-[2px] w-9 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-foreground/80"
+                  className="pointer-events-none absolute left-1/2 top-1/2 h-[2px] w-9 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-full bg-foreground/80 max-lg:w-12"
                   aria-hidden
                 />
               )}

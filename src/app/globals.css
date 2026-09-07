@@ -84,6 +84,17 @@ html {
   color-scheme: dark;
 }
 
+/* Mobile round A (owner 2026-09-08, MOBILE_SPEC M2.4 + decision B-ก): while a product page shows
+   the sticky buy bar (.mobile-buy-bar), the page gets room under its last line so the footer is
+   never hidden behind the bar, and the floating LINE button climbs above it. Phone/tablet widths
+   only — same cut-off as Tailwind's `lg` — so desktop is untouched. */
+@media (max-width: 63.98rem) {
+  body:has(.mobile-buy-bar) {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+    --okami-fab-lift: 4.75rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
