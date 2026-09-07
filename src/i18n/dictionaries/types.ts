@@ -66,6 +66,11 @@ export interface Dictionary {
   };
   catalog: {
     eyebrow: string;
+    /** Shown on /products only after /cart or /checkout redirected there while online ordering is
+     *  off (OKAMI24_ORDERING, owner 2026-09-07). Tone: "LINE is the faster way right now", never
+     *  "closed". See LineOrderingNotice.tsx. */
+    lineOrderingNotice: string;
+    lineOrderingCta: string;
     emptyStateNote: string;
     searchLabel: string;
     searchPlaceholder: string;
@@ -324,6 +329,15 @@ export interface Dictionary {
     orderOnLineNote: string;
     outOfStockLabel: string;
     outOfStockCta: string;
+    /** While online ordering is OFF (OKAMI24_ORDERING, owner 2026-09-07) these four replace the
+     *  cart button: the button label (shows the LINE ID on purpose — if the link fails the
+     *  customer can still type it), the line under it before a tap, the line after the tap has
+     *  copied the product details, and the word that starts the copied text
+     *  ("สนใจ <product> <option> — @okm24"). See OrderViaLineButton.tsx. */
+    orderOnLineCta: string;
+    orderOnLineHint: string;
+    orderOnLineCopied: string;
+    orderOnLineClipboardPrefix: string;
   };
   /** `/checkout`, `/checkout/address`, `/checkout/review`. */
   checkout: {

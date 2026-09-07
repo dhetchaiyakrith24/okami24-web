@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed, Inter, IBM_Plex_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
+import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { Footer } from "@/components/layout/Footer";
 import { AgeGate } from "@/components/layout/AgeGate";
 import { LineContact } from "@/components/layout/LineContact";
@@ -26,13 +27,18 @@ const monoFont = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
+// One clause of the site description depends on whether online ordering is on
+// (src/lib/commerce/ordering-mode.ts — owner 2026-09-07, approved as the only wording change in
+// this file): while the cart is off, the site must not tell Google "order on the site". Both
+// strings are otherwise the owner's exact copy.
+const ORDER_CHANNEL_CLAUSE = ORDERING_ENABLED ? "สั่งซื้อบนเว็บได้เลย" : "ช่วงนี้สั่งซื้อผ่าน LINE @okm24";
+
 export const metadata: Metadata = {
   title: {
     default: "OKami24 — ของแท้ ราคาตรง บริการจริง",
     template: "%s — OKami24",
   },
-  description:
-    "OKami24: พอดซิสเต็ม ดิสโพส และน้ำยา ของแท้ ราคาตรง สั่งซื้อบนเว็บได้เลย ส่งไว มีเลขติดตาม สอบถามหรือให้ช่วยเลือก ทัก LINE @okm24",
+  description: `OKami24: พอดซิสเต็ม ดิสโพส และน้ำยา ของแท้ ราคาตรง ${ORDER_CHANNEL_CLAUSE} ส่งไว มีเลขติดตาม สอบถามหรือให้ช่วยเลือก ทัก LINE @okm24`,
   // The real production domain is TBD (see docs/BUSINESS_SOURCE_OF_TRUTH.md §19) — never
   // hardcoded here. See src/lib/seo.ts's SITE_URL: reads `SITE_URL` from the environment, falls
   // back to localhost in dev, and refuses to build at all in production without it.
@@ -44,7 +50,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   openGraph: {
     title: "OKami24 — ของแท้ ราคาตรง บริการจริง",
-    description: "พอดซิสเต็ม ดิสโพส และน้ำยา ของแท้ ราคาตรง บริการจริง — สั่งซื้อบนเว็บได้เลย หรือทัก LINE @okm24",
+    description: ORDERING_ENABLED
+      ? "พอดซิสเต็ม ดิสโพส และน้ำยา ของแท้ ราคาตรง บริการจริง — สั่งซื้อบนเว็บได้เลย หรือทัก LINE @okm24"
+      : "พอดซิสเต็ม ดิสโพส และน้ำยา ของแท้ ราคาตรง บริการจริง — ช่วงนี้สั่งซื้อผ่าน LINE @okm24",
     siteName: "OKami24",
     type: "website",
   },
@@ -64,7 +72,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-surface-0 text-foreground font-body">
         <LocaleProvider>
           <AgeGate />
-          <Header />
+          <Header orderingEnabled={ORDERING_ENABLED} />
           <main className="flex-1">{children}</main>
           <Footer />
           <LineContact />

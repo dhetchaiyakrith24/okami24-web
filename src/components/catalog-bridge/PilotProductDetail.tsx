@@ -19,6 +19,7 @@ import type { ImageDisplayInfo } from "@/lib/media-quality";
 import { Button } from "@/components/ui/Button";
 import { CONTACT } from "@/data/contact";
 import { addToCartAction } from "@/app/cart/actions";
+import { OrderViaLineButton } from "@/components/commerce/OrderViaLineButton";
 
 /**
  * Storefront-native product detail body for a ProductMaster product, rendered from the real
@@ -43,9 +44,14 @@ export function PilotProductDetail({
   product,
   related,
   imageDisplayMap,
+  orderingEnabled = true,
 }: {
   product: StorefrontProductView;
   related: StorefrontProductView[];
+  /** From the server page (src/lib/commerce/ordering-mode.ts — owner 2026-09-07). False = the
+   *  cart form is replaced by OrderViaLineButton; the out-of-stock branch is unchanged.
+   *  Defaults to true so every other caller renders exactly as before. */
+  orderingEnabled?: boolean;
   /** Storefront quality-correction pass — server-computed fill-vs-intrinsic sizing info, keyed by
    *  image src, for every image the variant picker could swap to. A missing entry (e.g. computed
    *  on a code path that didn't build the map) falls back to the original always-fill behavior.
@@ -123,6 +129,9 @@ export function PilotProductDetail({
                     {dict.productActions.outOfStockCta}
                   </a>
                 </div>
+              ) : !orderingEnabled ? (
+                /* Online ordering off (owner 2026-09-07): same slot, same weight, LINE instead of the cart. */
+                <OrderViaLineButton productName={product.displayName} variantLabel={selectedVariant?.label ?? null} />
               ) : (
                 <form action={addToCartAction} className="flex flex-col items-start gap-2">
                   <input type="hidden" name="slug" value={product.slug} />

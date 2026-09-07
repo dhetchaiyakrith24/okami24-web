@@ -5,6 +5,9 @@ import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { ProductsPageHeader } from "@/components/catalog/ProductsPageHeader";
 import { canonicalFor } from "@/lib/seo";
+import { Suspense } from "react";
+import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+import { LineOrderingNotice } from "@/components/commerce/LineOrderingNotice";
 
 export const metadata: Metadata = {
   title: "All Products",
@@ -22,6 +25,14 @@ export default function ProductsPage() {
     <>
       <ProductsPageHeader totalCount={totalCount} />
       <Container className="py-12 lg:py-16">
+        {/* Only while online ordering is off, and only visible when /cart or /checkout sent the
+            visitor here (?order=line) — read client-side so this page stays prerendered.
+            src/lib/commerce/ordering-mode.ts, owner 2026-09-07. */}
+        {!ORDERING_ENABLED && (
+          <Suspense fallback={null}>
+            <LineOrderingNotice />
+          </Suspense>
+        )}
         <CatalogBrowser products={allProducts} publishedProducts={publishedProducts} />
       </Container>
     </>

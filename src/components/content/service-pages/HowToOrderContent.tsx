@@ -11,7 +11,7 @@ import { HOW_TO_ORDER } from "@/i18n/service-pages/how-to-order";
 
 /** Body of /how-to-order in the active language (copy: src/i18n/service-pages/how-to-order.tsx).
  *  Layout unchanged from the Thai-only version (designer direction A, 2026-09-06). */
-export function HowToOrderContent() {
+export function HowToOrderContent({ orderingEnabled = true }: { orderingEnabled?: boolean } = {}) {
   const { locale } = useLocale();
   const c = HOW_TO_ORDER[locale];
   const link = "text-foreground hover:text-red";
@@ -20,7 +20,7 @@ export function HowToOrderContent() {
       <PageHeader
         eyebrow={c.eyebrow}
         title={c.title}
-        description={c.description}
+        description={orderingEnabled ? c.description : c.descriptionWhileOrderingOnLine}
         meta={
           <div className="flex flex-wrap gap-3">
             <Button href="/products">{c.browseCta}</Button>

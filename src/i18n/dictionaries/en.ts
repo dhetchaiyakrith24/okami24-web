@@ -64,6 +64,8 @@ export const en: Dictionary = {
   },
   catalog: {
     eyebrow: "Catalog",
+    lineOrderingNotice: "Ordering on LINE is faster right now — message @okm24.",
+    lineOrderingCta: "Message @okm24",
     emptyStateNote: "No products are catalogued in this category yet — check back as the catalog grows.",
     searchLabel: "Search",
     searchPlaceholder: "Search this catalog…",
@@ -281,6 +283,10 @@ export const en: Dictionary = {
     orderOnLineNote: "Or order on LINE @okm24",
     outOfStockLabel: "Out of stock",
     outOfStockCta: "Ask on LINE",
+    orderOnLineCta: "Order on LINE @okm24",
+    orderOnLineHint: "Opens our LINE. Message us there — the admin replies in person.",
+    orderOnLineCopied: "Product details copied — paste them in LINE.",
+    orderOnLineClipboardPrefix: "Interested in",
   },
   checkout: {
     phoneEyebrow: "Checkout",

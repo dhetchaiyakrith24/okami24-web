@@ -28,6 +28,14 @@ import {
 } from "@/data/shipnity-seed/storefront-bridge";
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { PilotProductDetail } from "@/components/catalog-bridge/PilotProductDetail";
+import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
+
+/** JSON-LD `Offer.availability` while online ordering is off (owner 2026-09-07, approved
+ *  InStoreOnly): the price stays in structured data so Google keeps showing it, but the offer
+ *  no longer claims the product can be bought online — schema.org's InStoreOnly is "available
+ *  through a channel other than online", which is what "order on LINE" is. With ordering on,
+ *  nothing is added and the offers are exactly what they were. */
+const OFFER_AVAILABILITY = ORDERING_ENABLED ? {} : { availability: "https://schema.org/InStoreOnly" };
 import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
 import { absoluteUrl, breadcrumbJsonLd, canonicalFor, openGraphWithImage } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -158,7 +166,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         image: publishedProduct.image ? [absoluteUrl(publishedProduct.image.src)] : undefined,
         // Only a genuinely published product has an owner-approved price — never fabricated from
         // priceReference (see buildPublishedCatalog()'s own readiness gate).
-        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice } : undefined,
+        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...OFFER_AVAILABILITY } : undefined,
       };
       const publishedImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(publishedProduct));
       const publishedTrail = [
@@ -171,14 +179,14 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedJsonLd) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(publishedTrail)) }} />
           <Breadcrumbs trail={publishedTrail} />
-          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} imageDisplayMap={publishedImageDisplayMap} />
+          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />
         </>
       );
     }
     const pilotProduct = getPilotProduct(slug);
     if (pilotProduct) {
       const pilotImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(pilotProduct));
-      return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} imageDisplayMap={pilotImageDisplayMap} />;
+      return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} imageDisplayMap={pilotImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />;
     }
     notFound();
   }
@@ -206,7 +214,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     image: legacyCardImage ? [absoluteUrl(legacyCardImage.src)] : undefined,
     // `offers` only when an owner-approved price exists (legacy-price-approvals.ts) — the legacy
     // Product type itself still has no price field; never fabricated.
-    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice } : undefined,
+    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...OFFER_AVAILABILITY } : undefined,
   };
   const legacyTrail = [
     { name: "Home", path: "/" },
@@ -219,7 +227,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(legacyTrail)) }} />
       <Breadcrumbs trail={legacyTrail} />
-      <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} />
+      <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />
       <ProductReviewSection product={product} />
       <ProductGallery product={product} />
       {product.isFlagship && <ProductAnatomy product={product} />}

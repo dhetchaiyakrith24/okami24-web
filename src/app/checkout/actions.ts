@@ -3,6 +3,15 @@
 import { redirect } from "next/navigation";
 import { requestOtp, signInWithoutOtp, verifyOtp } from "@/lib/commerce/auth";
 import { OTP_VERIFICATION_ENABLED } from "@/lib/commerce/otp-mode";
+import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
+
+/** Online ordering off (owner 2026-09-07): every step that moves a visitor towards a NEW order
+ *  refuses, the same way the checkout pages do. `submitPaymentAction` is deliberately NOT guarded —
+ *  it belongs to an order that already exists (the owner's test order, any earlier customer), and
+ *  "I have paid" must keep working for those. See src/lib/commerce/ordering-mode.ts. */
+function refuseWhileOrderingOff(): void {
+  if (!ORDERING_ENABLED) redirect(ORDERING_PAUSED_REDIRECT);
+}
 import { addAddress, type AddressInput } from "@/lib/commerce/addresses";
 import { placeOrder, submitPaymentClaim } from "@/lib/commerce/orders";
 
@@ -25,6 +34,7 @@ export interface OtpFormState {
  * code sub-form must remember the phone number the code was sent to). See PhoneVerifyForm.tsx.
  */
 export async function otpStepAction(prev: OtpFormState, formData: FormData): Promise<OtpFormState> {
+  refuseWhileOrderingOff();
   const intent = String(formData.get("intent") ?? "request");
 
   if (intent === "request") {
@@ -67,6 +77,7 @@ export async function otpStepAction(prev: OtpFormState, formData: FormData): Pro
 }
 
 export async function addAddressAction(formData: FormData): Promise<void> {
+  refuseWhileOrderingOff();
   const input: AddressInput = {
     recipientName: String(formData.get("recipientName") ?? ""),
     phone: String(formData.get("phone") ?? ""),
@@ -84,11 +95,13 @@ export async function addAddressAction(formData: FormData): Promise<void> {
 }
 
 export async function selectAddressAction(formData: FormData): Promise<void> {
+  refuseWhileOrderingOff();
   const addressId = Number(formData.get("addressId"));
   redirect(`/checkout/review?addressId=${addressId}`);
 }
 
 export async function placeOrderAction(formData: FormData): Promise<void> {
+  refuseWhileOrderingOff();
   const addressId = Number(formData.get("addressId"));
   const idempotencyKey = String(formData.get("idempotencyKey") ?? "");
   const result = await placeOrder(addressId, idempotencyKey);

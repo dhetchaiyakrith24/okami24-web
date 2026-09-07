@@ -1,16 +1,26 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import { addToCart, setCartItemQuantity, removeCartItem } from "@/lib/commerce/cart";
 import type { ProductRef } from "@/lib/commerce/catalog-resolver";
 import { getCatalogItem } from "@/lib/catalog-index";
+import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
 
 function readVariantId(formData: FormData): string | null {
   const raw = formData.get("variantId");
   return typeof raw === "string" && raw.length > 0 ? raw : null;
 }
 
+/** Online ordering off (owner 2026-09-07): the buttons that post here are not rendered, but a
+ *  form kept open in a tab, or a hand-made POST, still must not touch a cart. Same destination as
+ *  the /cart page itself. */
+function refuseWhileOrderingOff(): void {
+  if (!ORDERING_ENABLED) redirect(ORDERING_PAUSED_REDIRECT);
+}
+
 export async function addToCartAction(formData: FormData): Promise<void> {
+  refuseWhileOrderingOff();
   const slug = String(formData.get("slug") ?? "");
   // origin is provenance for labeling only (see resolveProductRef) — read it from the catalog
   // index rather than assuming ProductMaster, now that priced legacy products are purchasable.
@@ -21,6 +31,7 @@ export async function addToCartAction(formData: FormData): Promise<void> {
 }
 
 export async function updateQuantityAction(formData: FormData): Promise<void> {
+  refuseWhileOrderingOff();
   const slug = String(formData.get("slug") ?? "");
   const variantId = readVariantId(formData);
   const quantity = Number(formData.get("quantity") ?? "0") || 0;
@@ -29,6 +40,7 @@ export async function updateQuantityAction(formData: FormData): Promise<void> {
 }
 
 export async function removeItemAction(formData: FormData): Promise<void> {
+  refuseWhileOrderingOff();
   const slug = String(formData.get("slug") ?? "");
   const variantId = readVariantId(formData);
   await removeCartItem(slug, variantId);

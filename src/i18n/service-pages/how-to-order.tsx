@@ -7,6 +7,11 @@ export interface HowToOrderCopy {
   eyebrow: string;
   title: string;
   description: string;
+  /** Replaces `description` while online ordering is off (OKAMI24_ORDERING — owner 2026-09-07,
+   *  approved as one of three wording exceptions to the "do not touch site text" rule). The steps
+   *  below it still describe the site flow; this sentence is the only one that must not claim
+   *  "order on the site" while the cart is off. */
+  descriptionWhileOrderingOnLine: string;
   browseCta: string;
   askLineCta: string;
   summary: { label: string; value: string; note: string }[];
@@ -40,6 +45,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     eyebrow: "เริ่มต้นที่นี่",
     title: "วิธีสั่งซื้อ",
     description: "สั่งบนเว็บได้เลย ไม่ต้องทักแชทก่อน ใช้เวลาไม่กี่นาที — ด้านล่างคือทุกขั้นตอนตั้งแต่กดใส่ตะกร้าจนของถึงมือ",
+    descriptionWhileOrderingOnLine: "ช่วงนี้สั่งผ่านไลน์ @okm24 สะดวกกว่า ทักมาบอกรุ่นที่อยากได้ แอดมินจัดให้ — ด้านล่างคือขั้นตอนการสั่งบนเว็บ เก็บไว้ดูเป็นแนวทาง",
     browseCta: "เลือกดูสินค้า",
     askLineCta: `ถามก่อนทางไลน์ ${line}`,
     summary: [
@@ -119,6 +125,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     eyebrow: "Start here",
     title: "How to order",
     description: "Order right here on the site — no need to message us first, and it only takes a few minutes. Below is every step, from adding to cart to the parcel in your hands.",
+    descriptionWhileOrderingOnLine: "Right now the easier way to order is LINE @okm24 — message us the model you want and the admin sorts it out. The steps below describe ordering on the site, kept here for reference.",
     browseCta: "Browse products",
     askLineCta: `Ask on LINE ${line}`,
     summary: [
@@ -198,6 +205,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     eyebrow: "从这里开始",
     title: "如何下单",
     description: "直接在网站下单，不用先联系我们，几分钟就能完成。下面是从加入购物车到收到货的每一步。",
+    descriptionWhileOrderingOnLine: "这段时间用 LINE @okm24 下单更方便，告诉店主想要的型号，帮你备好。下面是网站下单的步骤，仅供参考。",
     browseCta: "浏览商品",
     askLineCta: `先在 LINE 咨询 ${line}`,
     summary: [

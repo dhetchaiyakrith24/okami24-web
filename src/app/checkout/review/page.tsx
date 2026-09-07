@@ -6,6 +6,7 @@ import { getOwnedAddress } from "@/lib/commerce/addresses";
 import { getCart } from "@/lib/commerce/cart";
 import { ReviewStepView } from "@/components/commerce/ReviewStepView";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
+import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
 
 export const metadata: Metadata = {
   title: "Checkout — Review",
@@ -19,6 +20,8 @@ export default async function CheckoutReviewPage({
 }: {
   searchParams: Promise<{ addressId?: string; error?: string }>;
 }) {
+  // Online ordering off (owner 2026-09-07) — see src/lib/commerce/ordering-mode.ts.
+  if (!ORDERING_ENABLED) redirect(ORDERING_PAUSED_REDIRECT);
   const session = await getSession();
   if (!session) redirect("/checkout");
 

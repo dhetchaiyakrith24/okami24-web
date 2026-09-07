@@ -58,6 +58,8 @@ export const th: Dictionary = {
   },
   catalog: {
     eyebrow: "แคตตาล็อก",
+    lineOrderingNotice: "ตอนนี้สั่งทางไลน์เร็วกว่า ทัก @okm24 ได้เลย",
+    lineOrderingCta: "ทักไลน์ @okm24",
     emptyStateNote: "ยังไม่มีสินค้าในหมวดนี้ — กลับมาดูใหม่เมื่อมีสินค้าเพิ่ม",
     searchLabel: "ค้นหา",
     searchPlaceholder: "ค้นหาในหมวดนี้…",
@@ -274,6 +276,10 @@ export const th: Dictionary = {
     orderOnLineNote: "หรือสั่งทางไลน์ @okm24",
     outOfStockLabel: "สินค้าหมด",
     outOfStockCta: "สอบถามทาง LINE",
+    orderOnLineCta: "สั่งซื้อทางไลน์ @okm24",
+    orderOnLineHint: "กดแล้วเปิดไลน์ร้าน ทักได้เลย แอดมินตอบเอง",
+    orderOnLineCopied: "ก็อปข้อมูลสินค้าแล้ว วางในไลน์ได้เลย",
+    orderOnLineClipboardPrefix: "สนใจ",
   },
   checkout: {
     phoneEyebrow: "ชำระเงิน",

@@ -62,6 +62,8 @@ export const zh: Dictionary = {
   },
   catalog: {
     eyebrow: "产品目录",
+    lineOrderingNotice: "现在用 LINE 下单更快，加 @okm24 就好",
+    lineOrderingCta: "联系 @okm24",
     emptyStateNote: "该分类下暂无产品——请稍后再来查看。",
     searchLabel: "搜索",
     searchPlaceholder: "在此分类中搜索…",
@@ -277,6 +279,10 @@ export const zh: Dictionary = {
     orderOnLineNote: "也可通过 LINE @okm24 下单",
     outOfStockLabel: "缺货",
     outOfStockCta: "LINE 咨询",
+    orderOnLineCta: "用 LINE 下单 @okm24",
+    orderOnLineHint: "点击后打开本店 LINE，直接问，店主亲自回复",
+    orderOnLineCopied: "已复制商品信息，在 LINE 里粘贴即可",
+    orderOnLineClipboardPrefix: "想买",
   },
   checkout: {
     phoneEyebrow: "结算",

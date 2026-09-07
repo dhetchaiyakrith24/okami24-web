@@ -102,3 +102,16 @@ services:
       # not there yet, reads it back, and logs a `[qr]` line either way (src/lib/promptpay-qr-install.ts).
       - key: OKAMI24_PROMPTPAY_QR_BASE64
         sync: false
+      # Online ordering switch (owner decision 2026-09-07: "ปิดการสั่งซื้อชั่วคราว — ข้อมูลสินค้า
+      # ยังไม่นิ่ง"). "off" = the catalogue is fully browsable with prices, but "Add to cart" becomes
+      # "Order on LINE @okm24", the header's cart icon is hidden, and /cart + /checkout send the
+      # visitor to /products with a one-line note. Nothing is deleted: the cart code is all still
+      # there. "on" = the shop exactly as built.
+      # !! TO TURN ORDERING BACK ON: change this to "on" (here, then merge — or in the dashboard,
+      # which a Blueprint sync would then revert to this file) and choose "Save, rebuild, and
+      # deploy". A REBUILD is required, not a restart: the catalogue and product pages are
+      # prerendered and read this value at build time. src/lib/commerce/ordering-mode.ts.
+      # Anything other than the exact word "on" (unset, "true", "1", a typo) means OFF — a fresh
+      # host must never open a checkout the owner has not switched on.
+      - key: OKAMI24_ORDERING
+        value: "off"
