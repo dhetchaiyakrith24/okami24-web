@@ -33,6 +33,22 @@ this file rather than letting the knowledge live only in chat history.
 **Brand promise:**
 > "การบริการที่ดี คือสิ่งที่ OKami24 มีให้คุณ"
 
+**Slogan and promise approved by the owner on 2026-09-07.** Both are already live (the site title
+on every page and the /about hero). Background: the owner's original interview file drafted the
+promise as "การบริการที่ดีที่ Okami มีให้คุณ" and asked for a slogan to be written; the two lines above
+are the result and are now settled — do not propose alternatives.
+
+> **"The interview file"** referred to in §1, §5, §10, §11 and §12 = the owner's upstream brand
+> questionnaire, kept **outside this repo** on the owner's machine at
+> `C:\Users\dhetc\OneDrive\Desktop\Run prompt\Backup\1. ตัวตนของแบรนด์.txt` (attached to the chat on
+> 2026-09-07 and compared against this document that day). Quotes from it in this document are
+> spelling-normalised; the file itself has typos. Where it disagrees with a dated owner decision in
+> this document, the dated decision wins.
+
+**Previous website (history only, nothing to do):** https://okmi24.com — the shop's earlier site,
+red / white / black colour scheme. Recorded 2026-09-07 so the reference is not lost. It is not a
+price source (see §5) and not a design source (see §2).
+
 ---
 
 ## 2. Brand Visual Identity
@@ -121,6 +137,10 @@ This must become the website's main commerce/catalog data layer for:
 - Do NOT automatically assume Shipnity price is the website selling price.
 - Do NOT automatically publish supplier price changes.
 - Owner approval is the final gate for selling-price changes.
+- **The shop's legacy prices are stale (owner, interview file; confirmed 2026-09-07):** the owner
+  said the old shop's prices "ไม่ได้อัพราคานานแล้ว". "Existing OKami24 pricing" stays a reference, but
+  every one of the 22 legacy prices must be confirmed by the owner before online ordering is
+  switched back on — this is criterion 1 of LAUNCH_AUDIT item 44 (the "ข้อมูลสินค้านิ่ง" gate).
 
 ---
 
@@ -268,11 +288,23 @@ how-to-order page and on the order page next to the bank details.
 Customer-facing messaging should emphasize fast dispatch and tracking provided. Do not
 expose unnecessary internal warehouse or logistics details in customer-facing content.
 
+**Carrier names are NOT shown to customers (owner decision 2026-09-07).** The shipping page and
+its meta description must not name EMS / Thailand Post / Flash Express. Say only
+"ส่งไว 1–3 วัน มีเลข Track ให้เช็ค". The carriers listed above are internal knowledge for the team.
+The owner said this in the original interview ("ไม่อยากให้ขึ้น … อยากโชว์เรื่องส่งไว") and re-confirmed
+it on 2026-09-07 after the live /shipping page was found to name both carriers. **The wording change
+is queued as point 4 of LAUNCH_AUDIT item 30 (the Thai language pass) — the page is not edited yet.**
+
 ---
 
 ## 11. Customer Account
 
-A customer account is required for the target production experience.
+**Owner decision 2026-09-07 — guest checkout, no sign-up required.** This supersedes the
+interview answer "อยากให้สมัครนะ" and the earlier line here that "a customer account is required".
+Customers buy without registering, but the shop must still capture customer data — at minimum the
+phone number. Build this in the round that turns online ordering back on (§8 exception), not now.
+Today's checkout already asks for a phone number with no code (§9, OTP off); whether that alone
+counts as "captured" is settled in that round.
 
 **Initial required customer identity field:** phone number.
 
@@ -327,6 +359,9 @@ differentiator.
   line on the website.
 - **Published at /warranty on 2026-09-06** (owner wording), linked from the footer help column,
   the shipping page and the sitemap. The old `/preview/claims-policy` draft route is deleted.
+- **Owner decision 2026-09-07:** the original interview file's wording "ภายใน 7 วัน เคลมทุกกรณี" is
+  superseded. The policy is exactly what /warranty says — 7 days + unboxing video + the three
+  "not covered" lines in the table above. Do not widen it back to "every case".
 
 ---
 
