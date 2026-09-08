@@ -90,7 +90,14 @@ html {
    only — same cut-off as Tailwind's `lg` — so desktop is untouched. */
 @media (max-width: 63.98rem) {
   body:has(.mobile-buy-bar) {
-    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+    /* 5rem clears the bar itself (56px + the home-indicator inset, which `env()` adds on top).
+       The extra 1.5rem is headroom the owner asked for on 2026-09-08 after seeing the bar cover
+       the last footer line on a real iPhone: in headless Chrome the last line already clears the
+       bar by 119px at 390 wide, so the cause is something only iOS Safari does — its bottom
+       toolbar overlays the visual viewport while `position: fixed` anchors to the layout viewport,
+       which eats roughly a toolbar's worth of the gap that is measurable here. Waiting on the
+       owner's screenshot after this deploys to confirm the headroom is enough. */
+    padding-bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
     --okami-fab-lift: 4.25rem;
   }
   /* M3 (owner, real-phone test 2026-09-08): with the buy bar on screen the phone's floating LINE
