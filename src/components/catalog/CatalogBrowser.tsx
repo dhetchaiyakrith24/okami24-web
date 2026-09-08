@@ -349,6 +349,9 @@ export function CatalogBrowser({
         closeLabel={dict.nav.closeMenu}
         footer={
           <div className="flex items-center gap-3">
+            {/* Clears everything the sheet's own number counts — the facets and the search box the
+                sheet owns. The sidebar's clear button leaves the search box alone because its
+                number does too; each button undoes exactly what its own count adds up. */}
             <button
               type="button"
               onClick={() => {
