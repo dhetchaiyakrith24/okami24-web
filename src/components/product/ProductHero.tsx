@@ -123,7 +123,14 @@ export function ProductHero({
                 sizes={MOBILE_SLIDE_SIZES}
                 qualityAware={o.image ? imageDisplayMap?.[o.image.src] ?? null : imageDisplayInfo}
                 overrideImage={o.image}
-                priority={o.id === selectedOptionId}
+                // The slide the customer is actually looking at is this page's largest paint, so
+                // it must not wait for the lazy-loading threshold. It used to say `priority`,
+                // which Next 16 deprecated into a no-op — a DOM probe on 2026-09-08 found the
+                // rendered <img> still carrying `loading="auto"`/`fetchpriority="auto"`, i.e. the
+                // hint had been doing nothing since the upgrade. These two attributes are the
+                // replacement Next 16's own docs point at.
+                loading={o.id === selectedOptionId ? "eager" : "lazy"}
+                fetchPriority={o.id === selectedOptionId ? "high" : "auto"}
               />
             </div>
           ),
@@ -133,7 +140,7 @@ export function ProductHero({
             id: "default",
             node: (
               <div className="h-full w-full p-2">
-                <ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayInfo} priority />
+                <ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayInfo} loading="eager" fetchPriority="high" />
               </div>
             ),
           },

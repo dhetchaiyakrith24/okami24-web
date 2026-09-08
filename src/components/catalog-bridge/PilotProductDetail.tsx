@@ -83,7 +83,12 @@ export function PilotProductDetail({
   // Phone gallery slides — same photo rule per option as `displayImage` above (own photo →
   // neutral fallback → product card), so an option without its own photo shows the same image
   // with only the name changing (M2.3) until a real photo is added to the data.
-  const renderImage = (img: typeof displayImage, priority: boolean) => {
+  // `isCurrent` = this is the slide on screen, so it is the page's largest paint and must load
+  // eagerly. It used to be called `priority` and was passed straight to `<Image priority>`, which
+  // Next 16 deprecated into a no-op (measured 2026-09-08: the rendered <img> still said
+  // `loading="auto"`, `fetchpriority="auto"`). Renamed because the old name now points at an
+  // attribute that no longer exists.
+  const renderImage = (img: typeof displayImage, isCurrent: boolean) => {
     if (!img) {
       return (
         <div className="h-full w-full rounded-2xl border border-surface-border bg-surface-1 p-6">
@@ -95,11 +100,11 @@ export function PilotProductDetail({
     const fill = info ? info.fillHero : true;
     return fill ? (
       <div className="relative h-full w-full p-2">
-        <Image key={img.src} src={img.src} alt={img.alt} fill sizes={MOBILE_SLIDE_SIZES} className="object-contain" priority={priority} />
+        <Image key={img.src} src={img.src} alt={img.alt} fill sizes={MOBILE_SLIDE_SIZES} className="object-contain" loading={isCurrent ? "eager" : "lazy"} fetchPriority={isCurrent ? "high" : "auto"} />
       </div>
     ) : (
       <div className="relative flex h-full w-full items-center justify-center p-2">
-        <Image key={img.src} src={img.src} alt={img.alt} width={info!.width} height={info!.height} sizes={MOBILE_SLIDE_SIZES} className="h-auto max-h-full w-auto max-w-full object-contain" priority={priority} />
+        <Image key={img.src} src={img.src} alt={img.alt} width={info!.width} height={info!.height} sizes={MOBILE_SLIDE_SIZES} className="h-auto max-h-full w-auto max-w-full object-contain" loading={isCurrent ? "eager" : "lazy"} fetchPriority={isCurrent ? "high" : "auto"} />
       </div>
     );
   };
@@ -215,7 +220,9 @@ export function PilotProductDetail({
               />
               <div className={fillHero ? "relative h-full w-full p-8 lg:p-12" : "relative flex h-full w-full items-center justify-center p-8 lg:p-12"}>
                 {fillHero ? (
-                  <Image key={displayImage.src} src={displayImage.src} alt={displayImage.alt} fill sizes="(min-width: 1024px) 42vw, 90vw" className="object-contain" priority />
+                  // `loading`/`fetchPriority` rather than `priority`: same no-op story as the
+                  // phone slides above — this is the desktop hero, the page's largest paint.
+                  <Image key={displayImage.src} src={displayImage.src} alt={displayImage.alt} fill sizes="(min-width: 1024px) 42vw, 90vw" className="object-contain" loading="eager" fetchPriority="high" />
                 ) : (
                   // Storefront quality-correction pass — a source too small for the hero box would
                   // visibly blur if stretched to fill it (see media-quality.ts). Rendering at its
@@ -229,7 +236,8 @@ export function PilotProductDetail({
                     height={displayImageInfo!.height}
                     sizes="(min-width: 1024px) 42vw, 90vw"
                     className="h-auto max-h-full w-auto max-w-full object-contain"
-                    priority
+                    loading="eager"
+                    fetchPriority="high"
                   />
                 )}
               </div>

@@ -40,7 +40,6 @@ export function ProductMedia({
   sizes,
   qualityAware,
   overrideImage,
-  priority = false,
   loading,
   fetchPriority,
 }: {
@@ -49,18 +48,16 @@ export function ProductMedia({
   sizes?: string;
   qualityAware?: ImageDisplayInfo | null;
   overrideImage?: { src: string; alt: string } | null;
-  /** Mobile round (2026-09-08): the phone gallery's first-shown slide is the page's largest
-   *  paint, so it may ask for eager loading + preload. Default false = unchanged everywhere else.
+  /** How the browser should fetch this image, passed straight through to `next/image`. Undefined
+   *  for every caller that just wants the default (lazy, normal priority).
    *
-   *  KNOWN DEAD as of Next.js 16 (measured 2026-09-08, mobile round C): `priority` is deprecated
-   *  in this version — `node_modules/next/dist/docs/01-app/03-api-reference/02-components/image.md`
-   *  §priority — and a DOM probe of a `priority`-marked hero came back `loading="auto"`,
-   *  `fetchpriority="auto"`, i.e. the prop changed nothing. It is left exactly as it was on
-   *  purpose: its only caller is the phone product-gallery from round A/M2, and round C is not
-   *  allowed to change product-page behaviour. Repairing that caller belongs to its own round. */
-  priority?: boolean;
-  /** Next 16's replacements for `priority`, passed straight through to `next/image`. Undefined
-   *  everywhere except the homepage hero, so every other caller keeps the browser defaults. */
+   *  These replaced a `priority` prop on 2026-09-09. `priority` is deprecated in Next 16
+   *  (`node_modules/next/dist/docs/01-app/03-api-reference/02-components/image.md` §priority) and
+   *  had quietly stopped doing anything: a DOM probe of a `priority`-marked hero came back
+   *  `loading="auto"`, `fetchpriority="auto"`. Every caller that used to pass it — the phone
+   *  product gallery and the homepage hero — now says what it actually wants. Deliberately not
+   *  `preload`: that injects a `<link rel="preload">` into every visitor's head, which is the
+   *  wrong trade for an image that may be below the fold on some layouts. */
   loading?: "eager" | "lazy";
   fetchPriority?: "high" | "low" | "auto";
 }) {
@@ -78,7 +75,6 @@ export function ProductMedia({
             height={qualityAware.height}
             sizes={sizes ?? "(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 80vw"}
             className="h-auto max-h-full w-auto max-w-full object-contain"
-            priority={priority}
             loading={loading}
             fetchPriority={fetchPriority}
           />
@@ -94,7 +90,6 @@ export function ProductMedia({
           fill
           sizes={sizes ?? "(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 80vw"}
           className="object-contain"
-          priority={priority}
           loading={loading}
           fetchPriority={fetchPriority}
         />
