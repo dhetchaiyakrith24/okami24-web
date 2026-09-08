@@ -1,13 +1,15 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import type { Product, ScreenType, Portability } from "@/types/catalog";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
+import { BottomSheet } from "@/components/ui/BottomSheet";
 import { brands } from "@/data/brands";
 import { familyName } from "@/lib/utils";
-import { X } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { ChevronDown, SlidersHorizontal, X } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pluralCount } from "@/i18n/dictionaries";
 
@@ -30,6 +32,12 @@ type SortMode = "featured" | "alphabetical" | "family";
  * Still-unpublished DEV-preview products are NEVER passed here — they stay in the separate,
  * clearly-labeled `PilotProductSection` below, which is the correct place for genuinely
  * not-customer-facing data (and is entirely absent from a production build regardless).
+ *
+ * Phones and tablets (mobile round B, owner 2026-09-08, MOBILE_SPEC M4): below `lg` the sidebar
+ * is hidden and the same filters live in a bottom sheet behind one "filters (n)" button on the
+ * results bar, so the first product is on the first screen. The sidebar's markup is untouched —
+ * it only gained `max-lg:hidden` — and the phone-only pieces are display:none at `lg`, so the
+ * desktop page is exactly what it was. One state feeds both the sidebar and the sheet.
  */
 interface CatalogEntry {
   kind: "legacy" | "published";
@@ -85,6 +93,9 @@ function toEntries(products: Product[], publishedProducts: StorefrontProductView
   return [...legacyEntries, ...publishedEntries];
 }
 
+/** The sheet's collapsible groups, keyed so the open/closed state survives re-renders. */
+type SheetGroupId = "brand" | "screen" | "portability" | "level";
+
 export function CatalogBrowser({
   products,
   publishedProducts = [],
@@ -114,6 +125,11 @@ export function CatalogBrowser({
   const [portabilityFilter, setPortabilityFilter] = useState<Set<Portability>>(new Set());
   const [beginnerOnly, setBeginnerOnly] = useState(false);
   const [sort, setSort] = useState<SortMode>("featured");
+
+  // Phone sheet (M4). Groups start with only the brand list open — it is the facet a shopper
+  // reaches for first — and any group that already has a tick opens itself when the sheet does.
+  const [sheetOpen, setSheetOpen] = useState(false);
+  const [openGroups, setOpenGroups] = useState<Set<SheetGroupId>>(() => new Set<SheetGroupId>(["brand"]));
 
   const entries = useMemo(() => toEntries(products, publishedProducts), [products, publishedProducts]);
 
@@ -166,10 +182,36 @@ export function CatalogBrowser({
   }
 
   const activeFilterCount = brandFilter.size + screenFilter.size + portabilityFilter.size + (beginnerOnly ? 1 : 0);
+  // The phone button counts the search text too — the sheet is the only place it can be typed
+  // there, so a button reading "filters" with no number while a search narrows the grid would lie.
+  const mobileActiveCount = activeFilterCount + (query.trim() ? 1 : 0);
+
+  const clearFacets = () => {
+    setBrandFilter(new Set());
+    setScreenFilter(new Set());
+    setPortabilityFilter(new Set());
+    setBeginnerOnly(false);
+  };
+
+  const openSheet = () => {
+    setOpenGroups((prev) => {
+      const next = new Set(prev);
+      if (brandFilter.size > 0) next.add("brand");
+      if (screenFilter.size > 0) next.add("screen");
+      if (portabilityFilter.size > 0) next.add("portability");
+      if (beginnerOnly) next.add("level");
+      return next;
+    });
+    setSheetOpen(true);
+  };
+  const closeSheet = useCallback(() => setSheetOpen(false), []);
+  const toggleGroup = (id: SheetGroupId) => toggle(openGroups, id, setOpenGroups);
+
+  const countText = `${filtered.length} ${pluralCount(filtered.length, dict.catalog.productCountOne, dict.catalog.productCountOther)}`;
 
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-[240px_1fr]">
-      <aside className="flex flex-col gap-8">
+      <aside className="flex flex-col gap-8 max-lg:hidden">
         <div>
           <label htmlFor="catalog-search" className="label-mono mb-2 block text-xs text-foreground-dim">
             {dict.catalog.searchLabel}
@@ -230,12 +272,7 @@ export function CatalogBrowser({
 
         {activeFilterCount > 0 && (
           <button
-            onClick={() => {
-              setBrandFilter(new Set());
-              setScreenFilter(new Set());
-              setPortabilityFilter(new Set());
-              setBeginnerOnly(false);
-            }}
+            onClick={clearFacets}
             className="label-mono flex items-center gap-1.5 text-xs text-ember hover:underline"
           >
             <X size={12} aria-hidden /> {dict.catalog.clearFilters} ({activeFilterCount})
@@ -245,18 +282,37 @@ export function CatalogBrowser({
 
       <div className="flex flex-col gap-6">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-surface-border-soft pb-4">
-          <p className="label-mono text-xs text-foreground-dim">
+          {/* Phone/tablet only (M4): the one button that replaces the sidebar. */}
+          <button
+            type="button"
+            onClick={openSheet}
+            aria-haspopup="dialog"
+            aria-expanded={sheetOpen}
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-surface-border bg-surface-1 px-4 text-sm font-semibold tracking-tight text-foreground transition-colors hover:border-foreground-dim hover:bg-surface-2 lg:hidden"
+          >
+            <SlidersHorizontal size={16} aria-hidden />
+            {dict.catalog.filtersButton}
+            {mobileActiveCount > 0 && ` (${mobileActiveCount})`}
+          </button>
+          {/* Left exactly as it was — three JSX children, not one joined string. Joining them
+              merges three DOM text nodes into one, which re-shapes the line and moved a handful of
+              antialiased pixels at 1440 (proved by the masked compare). The joined `countText`
+              above is only for the sheet's button label. */}
+          <p className="label-mono text-xs text-foreground-dim max-lg:ml-auto">
             {filtered.length} {pluralCount(filtered.length, dict.catalog.productCountOne, dict.catalog.productCountOther)}
           </p>
           <div className="flex items-center gap-2">
-            <label htmlFor="catalog-sort" className="label-mono text-xs text-foreground-dim">
+            {/* On phones the word "sort by" is read out but not drawn: the button, the count and
+                the select only fit on one bar (the owner asked for one bar) without it, and the
+                select shows the chosen order in full. Unchanged from `lg` up. */}
+            <label htmlFor="catalog-sort" className="label-mono text-xs text-foreground-dim max-lg:sr-only">
               {dict.catalog.sortLabel}
             </label>
             <select
               id="catalog-sort"
               value={sort}
               onChange={(e) => setSort(e.target.value as SortMode)}
-              className="rounded-lg border border-surface-border bg-surface-1 px-2 py-1.5 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-ember"
+              className="rounded-lg border border-surface-border bg-surface-1 px-2 py-1.5 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-ember max-lg:min-h-11"
             >
               <option value="featured">{dict.catalog.sortFeatured}</option>
               <option value="alphabetical">{dict.catalog.sortAlphabetical}</option>
@@ -282,6 +338,96 @@ export function CatalogBrowser({
           </div>
         )}
       </div>
+
+      {/* Phone/tablet filter sheet (M4) — the same state as the sidebar, in a BottomSheet that is
+          only in the DOM while open. The grid behind it filters live, so the confirm button can
+          say how many products are waiting. */}
+      <BottomSheet
+        open={sheetOpen}
+        onClose={closeSheet}
+        title={dict.catalog.filtersButton}
+        closeLabel={dict.nav.closeMenu}
+        footer={
+          <div className="flex items-center gap-3">
+            {/* Clears everything the sheet's own number counts — the facets and the search box the
+                sheet owns. The sidebar's clear button leaves the search box alone because its
+                number does too; each button undoes exactly what its own count adds up. */}
+            <button
+              type="button"
+              onClick={() => {
+                clearFacets();
+                setQuery("");
+              }}
+              disabled={mobileActiveCount === 0}
+              className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-full border border-surface-border px-4 text-sm font-semibold tracking-tight text-foreground transition-colors hover:border-foreground-dim hover:bg-surface-2 disabled:opacity-40"
+            >
+              <X size={14} aria-hidden />
+              {dict.catalog.clearFilters}
+            </button>
+            <button
+              type="button"
+              onClick={closeSheet}
+              className="inline-flex min-h-11 flex-1 items-center justify-center rounded-full bg-ember px-4 text-sm font-semibold tracking-tight text-[#181008] transition-colors hover:bg-ember-strong"
+            >
+              {dict.catalog.filtersApply.replace("{count}", countText)}
+            </button>
+          </div>
+        }
+      >
+        <div className="flex flex-col">
+          <div className="py-3">
+            <label htmlFor="catalog-search-sheet" className="label-mono mb-2 block text-xs text-foreground-dim">
+              {dict.catalog.searchLabel}
+            </label>
+            <input
+              id="catalog-search-sheet"
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={dict.catalog.searchPlaceholder}
+              className="min-h-11 w-full rounded-lg border border-surface-border bg-surface-0 px-3 text-base text-foreground placeholder:text-foreground-dim focus-visible:outline-2 focus-visible:outline-ember"
+            />
+          </div>
+
+          {availableBrands.length > 1 && (
+            <SheetGroup id="brand" title={dict.catalog.filterBrand} activeCount={brandFilter.size} open={openGroups.has("brand")} onToggle={toggleGroup}>
+              {availableBrands.map((b) => (
+                <SheetCheckbox key={b.id} label={b.name} checked={brandFilter.has(b.id)} onChange={() => toggle(brandFilter, b.id, setBrandFilter)} />
+              ))}
+            </SheetGroup>
+          )}
+          {availableScreens.length > 1 && (
+            <SheetGroup id="screen" title={dict.catalog.filterScreen} activeCount={screenFilter.size} open={openGroups.has("screen")} onToggle={toggleGroup}>
+              {availableScreens.map((s) => (
+                <SheetCheckbox key={s} label={SCREEN_LABELS[s]} checked={screenFilter.has(s)} onChange={() => toggle(screenFilter, s, setScreenFilter)} />
+              ))}
+            </SheetGroup>
+          )}
+          {availablePortability.length > 1 && (
+            <SheetGroup
+              id="portability"
+              title={dict.catalog.filterPortability}
+              activeCount={portabilityFilter.size}
+              open={openGroups.has("portability")}
+              onToggle={toggleGroup}
+            >
+              {availablePortability.map((p) => (
+                <SheetCheckbox
+                  key={p}
+                  label={PORTABILITY_LABELS[p]}
+                  checked={portabilityFilter.has(p)}
+                  onChange={() => toggle(portabilityFilter, p, setPortabilityFilter)}
+                />
+              ))}
+            </SheetGroup>
+          )}
+          {products.length > 0 && (
+            <SheetGroup id="level" title={dict.catalog.filterExperienceLevel} activeCount={beginnerOnly ? 1 : 0} open={openGroups.has("level")} onToggle={toggleGroup}>
+              <SheetCheckbox label={dict.catalog.filterBeginnerOnly} checked={beginnerOnly} onChange={() => setBeginnerOnly((v) => !v)} />
+            </SheetGroup>
+          )}
+        </div>
+      </BottomSheet>
     </div>
   );
 }
@@ -303,6 +449,62 @@ function FilterCheckbox({ label, checked, onChange }: { label: string; checked: 
         checked={checked}
         onChange={onChange}
         className="h-4 w-4 rounded border-surface-border bg-surface-1 text-ember accent-ember focus-visible:outline-2 focus-visible:outline-ember"
+      />
+      {label}
+    </label>
+  );
+}
+
+/** A collapsible group inside the phone sheet: a 44px header row (title · ticked count · chevron)
+ *  and the same checkboxes as the sidebar, at finger size. */
+function SheetGroup({
+  id,
+  title,
+  activeCount,
+  open,
+  onToggle,
+  children,
+}: {
+  id: SheetGroupId;
+  title: string;
+  activeCount: number;
+  open: boolean;
+  onToggle: (id: SheetGroupId) => void;
+  children: React.ReactNode;
+}) {
+  const panelId = `catalog-sheet-group-${id}`;
+  return (
+    <div className="border-t border-surface-border-soft">
+      <button
+        type="button"
+        onClick={() => onToggle(id)}
+        aria-expanded={open}
+        aria-controls={panelId}
+        className="flex min-h-12 w-full items-center gap-3 py-2 text-left"
+      >
+        <span className="label-mono flex-1 text-xs text-foreground">{title}</span>
+        {activeCount > 0 && (
+          <span className="rounded-full bg-ember/15 px-2 py-0.5 text-xs font-semibold text-ember" aria-hidden>
+            {activeCount}
+          </span>
+        )}
+        <ChevronDown size={18} aria-hidden className={cn("text-foreground-dim transition-transform duration-200", open && "rotate-180")} />
+      </button>
+      <div id={panelId} hidden={!open} className="flex flex-col pb-2">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function SheetCheckbox({ label, checked, onChange }: { label: string; checked: boolean; onChange: () => void }) {
+  return (
+    <label className="flex min-h-11 cursor-pointer items-center gap-3 text-base text-foreground-muted">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={onChange}
+        className="h-5 w-5 shrink-0 rounded border-surface-border bg-surface-1 text-ember accent-ember focus-visible:outline-2 focus-visible:outline-ember"
       />
       {label}
     </label>

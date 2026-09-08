@@ -90,7 +90,14 @@ html {
    only — same cut-off as Tailwind's `lg` — so desktop is untouched. */
 @media (max-width: 63.98rem) {
   body:has(.mobile-buy-bar) {
-    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+    /* 5rem clears the bar itself (56px + the home-indicator inset, which `env()` adds on top).
+       The extra 1.5rem is headroom the owner asked for on 2026-09-08 after seeing the bar cover
+       the last footer line on a real iPhone: in headless Chrome the last line already clears the
+       bar by 119px at 390 wide, so the cause is something only iOS Safari does — its bottom
+       toolbar overlays the visual viewport while `position: fixed` anchors to the layout viewport,
+       which eats roughly a toolbar's worth of the gap that is measurable here. Waiting on the
+       owner's screenshot after this deploys to confirm the headroom is enough. */
+    padding-bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
     --okami-fab-lift: 4.25rem;
   }
   /* M3 (owner, real-phone test 2026-09-08): with the buy bar on screen the phone's floating LINE
@@ -99,6 +106,20 @@ html {
     body:has(.mobile-buy-bar) .okami-line-fab {
       display: none;
     }
+  }
+}
+
+/* Mobile round B, B4 (owner 2026-09-08): the colour/flavour chip rows scroll sideways on phones
+   (the `max-lg:` classes in ColorVariantRail / FlavorVariantGrid / ProductMasterVariantPicker) and
+   were cut off hard at the right edge with nothing saying "more this way". The right 2.5rem now
+   fades out; the row's own end padding grows to the same 2.5rem so the last chip, once scrolled
+   fully into view, sits before the fade and is never dimmed. Phone/tablet only — at lg the rows
+   wrap and this rule does not exist. */
+@media (max-width: 63.98rem) {
+  .okami-chip-row {
+    padding-right: 2.5rem;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
   }
 }
 

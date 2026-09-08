@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { Minus, Plus } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { categories } from "@/data/categories";
 import { CONTACT } from "@/data/contact";
 import { brandsWithProducts } from "@/lib/brand-visibility";
+import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 
 export function Footer() {
@@ -42,8 +45,11 @@ export function Footer() {
 
   return (
     <footer className="border-t border-surface-border-soft bg-surface-1">
-      <Container className="grid grid-cols-2 gap-10 py-14 sm:grid-cols-4 lg:grid-cols-6 lg:py-20">
-        <div className="col-span-2 flex flex-col gap-4 lg:col-span-2">
+      {/* Phones (mobile round B, B3): one column, so each link group can be its own tappable row
+          (see FooterColumn). `sm` and up keep the exact grid they had — same columns, same gap,
+          same span on the brand block. */}
+      <Container className="grid grid-cols-1 gap-10 py-14 max-sm:gap-0 sm:grid-cols-4 lg:grid-cols-6 lg:py-20">
+        <div className="flex flex-col gap-4 max-sm:pb-8 sm:col-span-2 lg:col-span-2">
           <Link href="/" className="flex items-center" aria-label="OKami24">
             <Image src="/brand/okami-logo-red.png" alt="OKami24" width={568} height={480} className="h-10 w-auto" />
           </Link>
@@ -70,7 +76,7 @@ export function Footer() {
           </div>
         </div>
 
-        <FooterColumn title={dict.footer.shop}>
+        <FooterColumn title={dict.footer.shop} defaultOpen>
           {categories.map((c) => (
             <FooterLink key={c.id} href={`/products/${c.slug}`}>
               {c.shortName}
@@ -122,11 +128,36 @@ export function Footer() {
   );
 }
 
-function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
+/**
+ * Phones (mobile round B, B3 — the owner picked this layout from two mock-ups, 2026-09-08): the
+ * four link groups used to sit in a two-column grid whose rows were as tall as their tallest
+ * group, so "Shop" (eight links) left a long empty gap beside "Learn" (three). Below `sm` each
+ * group is now a full-width row you tap to open, with the first one open so what a tap does is
+ * obvious. The link text and the link order are exactly what they were.
+ *
+ * At `sm` and above the plain title and the always-visible list render instead — the button is
+ * `display:none` there and the title span is `display:none` on phones, so only one of the two is
+ * ever drawn and the tablet/desktop footer is untouched.
+ */
+function FooterColumn({ title, defaultOpen = false, children }: { title: string; defaultOpen?: boolean; children: React.ReactNode }) {
+  const [open, setOpen] = useState(defaultOpen);
+  const panelId = `footer-group-${title}`;
   return (
-    <div className="flex flex-col gap-3">
-      <span className="label-mono text-xs text-foreground-dim">{title}</span>
-      <div className="flex flex-col gap-2.5">{children}</div>
+    <div className="flex flex-col gap-3 max-sm:gap-0 max-sm:border-t max-sm:border-surface-border-soft">
+      <span className="label-mono text-xs text-foreground-dim max-sm:hidden">{title}</span>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls={panelId}
+        className="hidden min-h-12 w-full items-center justify-between gap-3 text-left max-sm:flex"
+      >
+        <span className="label-mono text-xs text-foreground-dim">{title}</span>
+        {open ? <Minus size={18} aria-hidden className="text-foreground-dim" /> : <Plus size={18} aria-hidden className="text-foreground-dim" />}
+      </button>
+      <div id={panelId} className={cn("flex flex-col gap-2.5 max-sm:pb-5", !open && "max-sm:hidden")}>
+        {children}
+      </div>
     </div>
   );
 }

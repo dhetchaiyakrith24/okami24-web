@@ -92,6 +92,8 @@ export const en: Dictionary = {
     portabilityStandard: "Standard",
     optionCountFlavors: "{n} flavours",
     optionCountColors: "{n} colours",
+    filtersButton: "Filters",
+    filtersApply: "Show {count}",
   },
   product: {
     colorLabel: "Color",

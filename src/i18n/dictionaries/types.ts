@@ -101,6 +101,13 @@ export interface Dictionary {
      *  flavour at card size and cannot say it. */
     optionCountFlavors: string;
     optionCountColors: string;
+    /** Mobile round B (owner 2026-09-08, MOBILE_SPEC M4): on phones the whole filter panel folds
+     *  into one button that opens a bottom sheet. `filtersButton` is that button's word and the
+     *  sheet's title — the button (not the title) also shows " (n)" while n filters are on;
+     *  `filtersApply` is the sheet's confirm button, `{count}` = "<n> <productCountOne/Other>".
+     *  The Thai words are the owner's own from the brief; en/zh are pending the owner's review. */
+    filtersButton: string;
+    filtersApply: string;
   };
   /** Product detail page section chrome — eyebrows/titles/stat labels/buttons. Per-product
    *  feature/spec/FAQ/compatibility VALUES stay untranslated (see the module doc comment). */
