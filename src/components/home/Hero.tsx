@@ -77,8 +77,12 @@ export function Hero({ flagship }: { flagship: Product }) {
         </div>
 
         <div className="okami-hero-media relative mx-auto aspect-[4/5] w-full max-w-sm">
-          <div className="absolute inset-0 rounded-[2rem] border border-surface-border bg-surface-1/60 backdrop-blur-sm" />
-          <div className="relative h-full w-full p-10">
+          {/* The three class hooks below (frame / pad / name bar) exist only so the phone rules in
+              globals.css can address these boxes by name instead of by child position — M1.2
+              re-proportions all three, and a positional selector would break silently the next
+              time anything is added here. They carry no styling of their own at any width. */}
+          <div className="okami-hero-frame absolute inset-0 rounded-[2rem] border border-surface-border bg-surface-1/60 backdrop-blur-sm" />
+          <div className="okami-hero-pad relative h-full w-full p-10">
             {/* MOBILE_SPEC [M1]: the phone's hero photo is the page's largest paint, so it must
                 not be lazy. `priority` is deprecated in Next 16 and measurably does nothing (see
                 ProductMedia), so this asks for the two attributes that still work. Deliberately
@@ -105,7 +109,7 @@ export function Hero({ flagship }: { flagship: Product }) {
           </div>
           <Link
             href={`/products/${flagship.slug}`}
-            className="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-xl border border-surface-border bg-surface-0/90 px-4 py-3 backdrop-blur transition-colors hover:border-ember/50"
+            className="okami-hero-namebar absolute inset-x-4 bottom-4 flex items-center justify-between rounded-xl border border-surface-border bg-surface-0/90 px-4 py-3 backdrop-blur transition-colors hover:border-ember/50"
           >
             <div>
               <p className="font-display text-lg font-semibold leading-tight text-foreground">{flagship.name}</p>
