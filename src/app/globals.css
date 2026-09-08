@@ -190,6 +190,48 @@ html {
     filter: blur(6px);
   }
 
+  /* M1.2 (owner picked option "ข" from two rendered mockups, 2026-09-08): the flagship card under
+     the 28/3/8 figures was too big on a phone — 438px tall, more than half a 700px screen. It was
+     tall because of its 4:5 frame, not because of its contents: the device itself is only ~80px
+     wide inside a 350px box, and the name strip floating over the bottom edge was covering the
+     device's lower third.
+
+     A portrait phone is short on height and has width to spare, so the card turns on its side: a
+     4:3 frame with the device down the left and the name/spec/link stacked in a panel on the
+     right. Measured at 390px: 438 -> 263 tall (-40%), and the device is now fully visible instead
+     of being cut off by the strip. Verified against the owner's constraint at 390x700 — the CTA
+     row (481) and the 28/3/8 figures (571, ending ~631) both stay above the fold, and the card's
+     top edge peeks in at 670 to show there is more below.
+
+     Same DOM as desktop, addressed through the class hooks in Hero.tsx; at `lg` none of this
+     exists and the card keeps the 4:5 proportion the owner approved. */
+  .okami-hero-media {
+    aspect-ratio: 4 / 3;
+    /* The grid's own 40px gap is more than this shorter card needs above it. */
+    margin-top: -1rem;
+  }
+  /* 2rem corners read as a pill on a box only 263 tall. */
+  .okami-hero-frame,
+  .okami-hero-sheen {
+    border-radius: 1.5rem;
+  }
+  /* Right padding clears the panel (48% of the box) plus the gap between them. */
+  .okami-hero-pad {
+    padding: 0.75rem calc(48% + 1.5rem) 0.75rem 0.75rem;
+  }
+  .okami-hero-namebar {
+    top: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    left: auto;
+    width: 48%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.875rem;
+    padding: 0.75rem 0.875rem;
+  }
+
   /* [M1] final bullet: the three brand names that used to take a full screen each inside the
      desktop intro become one slow strip under the hero. The track holds the list twice, so a
      -50% travel lands the copy exactly where the original started and the loop has no seam. */
