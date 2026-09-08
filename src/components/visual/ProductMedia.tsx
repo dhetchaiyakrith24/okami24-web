@@ -41,6 +41,8 @@ export function ProductMedia({
   qualityAware,
   overrideImage,
   priority = false,
+  loading,
+  fetchPriority,
 }: {
   product: Product;
   className?: string;
@@ -48,8 +50,19 @@ export function ProductMedia({
   qualityAware?: ImageDisplayInfo | null;
   overrideImage?: { src: string; alt: string } | null;
   /** Mobile round (2026-09-08): the phone gallery's first-shown slide is the page's largest
-   *  paint, so it may ask for eager loading + preload. Default false = unchanged everywhere else. */
+   *  paint, so it may ask for eager loading + preload. Default false = unchanged everywhere else.
+   *
+   *  KNOWN DEAD as of Next.js 16 (measured 2026-09-08, mobile round C): `priority` is deprecated
+   *  in this version — `node_modules/next/dist/docs/01-app/03-api-reference/02-components/image.md`
+   *  §priority — and a DOM probe of a `priority`-marked hero came back `loading="auto"`,
+   *  `fetchpriority="auto"`, i.e. the prop changed nothing. It is left exactly as it was on
+   *  purpose: its only caller is the phone product-gallery from round A/M2, and round C is not
+   *  allowed to change product-page behaviour. Repairing that caller belongs to its own round. */
   priority?: boolean;
+  /** Next 16's replacements for `priority`, passed straight through to `next/image`. Undefined
+   *  everywhere except the homepage hero, so every other caller keeps the browser defaults. */
+  loading?: "eager" | "lazy";
+  fetchPriority?: "high" | "low" | "auto";
 }) {
   const cardPhoto = overrideImage ?? product.assets.find((a) => a.role === "card");
 
@@ -66,6 +79,8 @@ export function ProductMedia({
             sizes={sizes ?? "(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 80vw"}
             className="h-auto max-h-full w-auto max-w-full object-contain"
             priority={priority}
+            loading={loading}
+            fetchPriority={fetchPriority}
           />
         </div>
       );
@@ -80,6 +95,8 @@ export function ProductMedia({
           sizes={sizes ?? "(min-width: 1024px) 25vw, (min-width: 640px) 40vw, 80vw"}
           className="object-contain"
           priority={priority}
+          loading={loading}
+          fetchPriority={fetchPriority}
         />
       </div>
     );

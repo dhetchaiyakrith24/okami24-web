@@ -123,6 +123,177 @@ html {
   }
 }
 
+/* Mobile round C, M1 (owner spec docs/MOBILE_SPEC.md [M1], 2026-09-08) — the homepage's phone
+   motion. Desktop keeps the scroll-scrubbed cinematic intro exactly as it is; a phone never gets
+   it at all (see HomeIntro.tsx) and instead gets this: 0.78s of motion played ONCE, over content
+   that is already on screen, in the same 64rem cut-off M2–M4 use.
+
+   Three rules the shape of this block comes from:
+   - It has to be CSS, not framer-motion. CSS animations start with the first painted frame; a
+     JS-driven one cannot start until hydration, which on a phone is several hundred ms later —
+     the visitor would watch a still page and then a late twitch.
+   - Only `transform` and `opacity` are animated, so the motion cannot produce layout shift. CLS
+     stays 0 by construction, not by luck.
+   - Nothing starts from `opacity: 0`. The owner's rule is that the photo, the heading and the
+     buttons are all visible in the FIRST frame — so each element starts dimmed-but-readable and
+     lifts into place. It also keeps the hero photo eligible as the Largest Contentful Paint from
+     the moment it decodes; a fully transparent element is not counted by the browser at all.
+
+   Timeline (ends at 0.78s, spec ceiling 0.8s): photo 0→0.45 · light sweep 0.15→0.65 · heading
+   lines 0.06→0.40, 0.14→0.48, 0.22→0.56 · CTA row 0.44→0.78. */
+@media (max-width: 63.98rem) {
+  html:not([data-okami-intro="played"]) .okami-hero-media {
+    animation: okami-hero-media-in 0.45s cubic-bezier(0.22, 0.72, 0.24, 1) both;
+  }
+  html:not([data-okami-intro="played"]) .okami-hero-sheen-bar {
+    animation: okami-hero-sheen 0.5s 0.15s cubic-bezier(0.4, 0, 0.4, 1) both;
+  }
+  html:not([data-okami-intro="played"]) .okami-hero-line-1,
+  html:not([data-okami-intro="played"]) .okami-hero-line-2,
+  html:not([data-okami-intro="played"]) .okami-hero-line-3 {
+    animation: okami-hero-rise 0.34s cubic-bezier(0.22, 0.72, 0.24, 1) both;
+  }
+  html:not([data-okami-intro="played"]) .okami-hero-line-1 {
+    animation-delay: 0.06s;
+  }
+  html:not([data-okami-intro="played"]) .okami-hero-line-2 {
+    animation-delay: 0.14s;
+  }
+  html:not([data-okami-intro="played"]) .okami-hero-line-3 {
+    animation-delay: 0.22s;
+  }
+  html:not([data-okami-intro="played"]) .okami-hero-cta {
+    animation: okami-hero-rise 0.34s 0.44s cubic-bezier(0.22, 0.72, 0.24, 1) both;
+  }
+
+  /* `transform` does nothing to an inline box, so the three heading lines become inline-block —
+     but ONLY here. Above 64rem they stay plain inline spans and the desktop line boxes are the
+     ones the owner already signed off on. */
+  .okami-hero-line-1,
+  .okami-hero-line-2,
+  .okami-hero-line-3 {
+    display: inline-block;
+  }
+
+  /* The single light pass across the device. `w-1/2` in the markup, parked half a box to the left
+     of the frame, travelling far enough right to leave it completely. */
+  .okami-hero-sheen-bar {
+    left: -60%;
+    background: linear-gradient(
+      100deg,
+      transparent 0%,
+      rgb(255 255 255 / 0.1) 40%,
+      rgb(255 255 255 / 0.26) 50%,
+      rgb(255 255 255 / 0.1) 60%,
+      transparent 100%
+    );
+    filter: blur(6px);
+  }
+
+  /* M1.2 (owner picked option "ข" from two rendered mockups, 2026-09-08): the flagship card under
+     the 28/3/8 figures was too big on a phone — 438px tall, more than half a 700px screen. It was
+     tall because of its 4:5 frame, not because of its contents: the device itself is only ~80px
+     wide inside a 350px box, and the name strip floating over the bottom edge was covering the
+     device's lower third.
+
+     A portrait phone is short on height and has width to spare, so the card turns on its side: a
+     4:3 frame with the device down the left and the name/spec/link stacked in a panel on the
+     right. Measured at 390px: 438 -> 263 tall (-40%), and the device is now fully visible instead
+     of being cut off by the strip. Verified against the owner's constraint at 390x700 — the CTA
+     row (481) and the 28/3/8 figures (571, ending ~631) both stay above the fold, and the card's
+     top edge peeks in at 670 to show there is more below.
+
+     Same DOM as desktop, addressed through the class hooks in Hero.tsx; at `lg` none of this
+     exists and the card keeps the 4:5 proportion the owner approved. */
+  .okami-hero-media {
+    aspect-ratio: 4 / 3;
+    /* The grid's own 40px gap is more than this shorter card needs above it. */
+    margin-top: -1rem;
+  }
+  /* 2rem corners read as a pill on a box only 263 tall. */
+  .okami-hero-frame,
+  .okami-hero-sheen {
+    border-radius: 1.5rem;
+  }
+  /* Right padding clears the panel (48% of the box) plus the gap between them. */
+  .okami-hero-pad {
+    padding: 0.75rem calc(48% + 1.5rem) 0.75rem 0.75rem;
+  }
+  .okami-hero-namebar {
+    top: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    left: auto;
+    width: 48%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.875rem;
+    padding: 0.75rem 0.875rem;
+  }
+
+  /* [M1] final bullet: the three brand names that used to take a full screen each inside the
+     desktop intro become one slow strip under the hero. The track holds the list twice, so a
+     -50% travel lands the copy exactly where the original started and the loop has no seam. */
+  .okami-brand-marquee-track {
+    animation: okami-brand-marquee 32s linear infinite;
+  }
+  /* Both ends fade instead of stopping dead, so names slide in and out of the strip rather than
+     appearing and vanishing at a hard edge — the same mask technique round B's chip rows use. */
+  .okami-brand-marquee {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  }
+}
+
+@keyframes okami-hero-media-in {
+  0% {
+    opacity: 0.6;
+    transform: translate3d(0, 20px, 0) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes okami-hero-rise {
+  0% {
+    opacity: 0.5;
+    transform: translate3d(0, 14px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes okami-hero-sheen {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(360%, 0, 0);
+  }
+}
+
+@keyframes okami-brand-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -134,6 +305,22 @@ html {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+  /* Round C: the rule above already collapses every animation to nothing, but the homepage's
+     phone motion says so outright — `animation: none` leaves each element in its ordinary,
+     fully-visible resting state (the animations all END there), and the brand strip simply sits
+     still instead of creeping. Nothing here depends on an animation to become readable. */
+  .okami-hero-media,
+  .okami-hero-sheen-bar,
+  .okami-hero-line-1,
+  .okami-hero-line-2,
+  .okami-hero-line-3,
+  .okami-hero-cta,
+  .okami-brand-marquee-track {
+    animation: none !important;
+  }
+  .okami-hero-sheen {
+    display: none !important;
   }
 }
 

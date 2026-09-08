@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // Mobile-width full-page screenshots via Chrome DevTools Protocol (no puppeteer needed; Node 22+ has WebSocket).
 //
-//   node scripts/shot.js <out.png> <url> [--click "<css selector>"]... [--cookie name=value]... [--wait ms] [--width 375]
+//   node scripts/shot.js <out.png> <url> [--click "<css selector>"]... [--cookie name=value]... [--wait ms] [--width 375] [--reduced-motion]
 //   e.g. node scripts/shot.js shot.png http://localhost:3000/products/zero-pro --wait 4000
 //
 // Why this exists: the Browser pane's screenshot can't be saved to a file, and plain headless
@@ -29,8 +29,13 @@ const evals = [];
 // the page out at its whole height, which can move inner scroll containers; when the proof is
 // "what is on screen right after the interaction", this is the honest capture.
 let viewportOnly = false;
+// --reduced-motion: answer `(prefers-reduced-motion: reduce)` the way a visitor who has switched
+// motion off in their OS does. Added for mobile round C (MOBILE_SPEC [M1] "reduced motion means
+// perfectly still"), which otherwise has no way to prove that path — the setting lives in the OS,
+// not in the page. Opt-in, so every existing call keeps answering "no-preference" as before.
+let reducedMotion = false;
 for (let i = 2; i < args.length; i++) {
-  if (args[i] === "--viewport") { viewportOnly = true; continue; } if (args[i] === "--click") clicks.push(args[++i]); else if (args[i] === "--wait") wait = +args[++i]; else if (args[i] === "--width") width = +args[++i]; else if (args[i] === "--cookie") cookies.push(args[++i]); else if (args[i] === "--desktop") desktop = true; else if (args[i] === "--eval") evals.push(args[++i]); }
+  if (args[i] === "--viewport") { viewportOnly = true; continue; } if (args[i] === "--reduced-motion") { reducedMotion = true; continue; } if (args[i] === "--click") clicks.push(args[++i]); else if (args[i] === "--wait") wait = +args[++i]; else if (args[i] === "--width") width = +args[++i]; else if (args[i] === "--cookie") cookies.push(args[++i]); else if (args[i] === "--desktop") desktop = true; else if (args[i] === "--eval") evals.push(args[++i]); }
 const port = 9333 + Math.floor(Math.random() * 500);
 // one throw-away profile per run — a shared profile is locked by any Chrome still alive from an
 // earlier run, and Chrome then exits silently (the DevTools endpoint never appears)
@@ -52,6 +57,7 @@ async function getJson(p) { return new Promise((res, rej) => http.get(`http://12
   await send("Page.enable"); await send("Runtime.enable");
   await send("Emulation.setDeviceMetricsOverride", desktop ? { width, height: 900, deviceScaleFactor: 1, mobile: false } : { width, height: 800, deviceScaleFactor: 2, mobile: true });
   await send("Emulation.setUserAgentOverride", { userAgent: desktop ? "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36" : "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Mobile Safari/537.36" });
+  if (reducedMotion) await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
   await send("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem(${JSON.stringify(AGE_KEY)},"true")}catch(e){}` });
   if (cookies.length) await send("Page.addScriptToEvaluateOnNewDocument", { source: cookies.map((c) => `try{document.cookie=${JSON.stringify(`${c}; path=/`)}}catch(e){}`).join("") });
   await send("Page.navigate", { url }); await sleep(wait);
