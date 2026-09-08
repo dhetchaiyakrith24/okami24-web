@@ -115,6 +115,10 @@ export function PilotProductDetail({
         eyebrow={product.categoryName}
         title={product.displayName}
         description={product.tagline}
+        // M3 (2026-09-08): on phones the tagline sits below the fold anyway; hiding it here (CSS
+        // only, still in the HTML) is what brings the chips and the price into the first screen
+        // above the sticky bar — the M2 leftover on ProductMaster pages.
+        descriptionClassName="max-lg:hidden"
         meta={
           <div className="flex flex-wrap items-center gap-2">
             <Badge tone="steel">{product.brandName}</Badge>
@@ -125,7 +129,7 @@ export function PilotProductDetail({
       {/* max-lg:grid-cols-1 = minmax(0,1fr): without it the single implicit column is `auto` and
           grows to the swipe track's max-content width (all slides side by side), which made the
           phone page 546px wide on a 390px screen (designer, 2026-09-08). lg keeps its own template. */}
-      <Container className="grid gap-10 py-12 max-lg:grid-cols-1 max-lg:gap-4 max-lg:py-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:py-16">
+      <Container className="grid gap-10 py-12 max-lg:grid-cols-1 max-lg:gap-3 max-lg:pb-6 max-lg:pt-3 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:py-16">
         <div className="order-2 flex flex-col gap-6 max-lg:contents lg:order-1">
           {isPublished && product.sellingPrice !== null ? (
             <div className="max-lg:order-3">
@@ -188,8 +192,11 @@ export function PilotProductDetail({
           )}
         </div>
 
-        {/* Phone gallery — hidden at lg+, where the desktop image box below is the hero. */}
-        <div className="relative aspect-square w-full max-lg:order-1 lg:hidden">
+        {/* Phone gallery — hidden at lg+, where the desktop image box below is the hero. 4:3 rather
+            than the legacy pages' square (D-ข): ProductMaster photos are mostly landscape boxes
+            (coils, pods) that filled a 350px square only ~220px high; the shorter frame shows the
+            same photo at the same size and lifts the chips and price into the first screen. */}
+        <div className="relative aspect-[4/3] w-full max-lg:order-1 lg:hidden">
           <div
             className="pointer-events-none absolute inset-0"
             style={{ background: "radial-gradient(ellipse 58% 54% at 50% 40%, var(--color-steel-soft) 0%, transparent 72%)" }}

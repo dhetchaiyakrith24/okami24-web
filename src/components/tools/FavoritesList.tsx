@@ -32,7 +32,7 @@ export function FavoritesList() {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4">
       {legacyProducts.map((p) => (
         <ProductCard key={p.slug} product={p} />
       ))}
