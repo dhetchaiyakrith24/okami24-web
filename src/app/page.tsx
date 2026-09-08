@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { getFlagshipProducts, getProduct, getProductsByFamily, getProductsByBrand } from "@/data/products";
 import { guides } from "@/data/guides";
-import { CinematicIntro } from "@/components/home/cinematic/CinematicIntro";
+import { HomeIntro } from "@/components/home/HomeIntro";
 import { Hero } from "@/components/home/Hero";
+import { BrandMarquee } from "@/components/home/BrandMarquee";
 import { CategoryNav } from "@/components/home/CategoryNav";
 import { ProductRailSection } from "@/components/home/ProductRailSection";
 import { EditorialSplit } from "@/components/home/EditorialSplit";
@@ -24,8 +25,23 @@ export default function Home() {
 
   return (
     <>
-      <CinematicIntro />
+      {/* Mobile round C, MOBILE_SPEC [M1] "plays once, and not again on back". The phone's hero
+          motion is pure CSS so that it starts in the first painted frame, before hydration —
+          which means the "has this already played?" decision has to be made before that frame
+          too, or a reload inside the same session would restart the animation and then have it
+          cut short mid-flight. This line runs while the HTML is still parsing and, on a repeat
+          view, marks <html> so the CSS never arms the animation at all. Back/forward inside the
+          app is a client render that never re-runs this, so Hero.tsx sets the same attribute
+          itself once the motion has finished (see the effect there). Desktop never reads it. */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html:
+            'try{if(sessionStorage.getItem("okami24-home-intro"))document.documentElement.dataset.okamiIntro="played"}catch(e){}',
+        }}
+      />
+      <HomeIntro />
       <Hero flagship={flagship} />
+      <BrandMarquee />
       <CategoryNav />
 
       <ProductRailSection
