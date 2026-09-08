@@ -19,7 +19,9 @@ export function FavoriteButton({ slug, className }: { slug: string; className?: 
       aria-pressed={active}
       aria-label={active ? "Remove from favorites" : "Add to favorites"}
       className={cn(
-        "z-10 flex h-9 w-9 items-center justify-center rounded-full border border-surface-border bg-surface-0/70 backdrop-blur transition-colors hover:border-foreground-dim",
+        // Phones (mobile round A, M3, 2026-09-08): the visible 36px circle stays, an invisible
+        // ::before ring widens the tap target to the 44px the spec requires (max-lg only).
+        "z-10 flex h-9 w-9 items-center justify-center rounded-full border border-surface-border bg-surface-0/70 backdrop-blur transition-colors hover:border-foreground-dim max-lg:before:absolute max-lg:before:-inset-1 max-lg:before:content-['']",
         className
       )}
     >
