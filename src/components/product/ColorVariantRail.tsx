@@ -66,7 +66,7 @@ export function ColorVariantRail({
       </span>
       <div
         ref={listRef}
-        className="flex flex-wrap items-center gap-2.5 max-lg:-mx-5 max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:px-5 max-lg:py-1.5 max-lg:[scrollbar-width:none] max-lg:[&::-webkit-scrollbar]:hidden"
+        className="okami-chip-row flex flex-wrap items-center gap-2.5 max-lg:-mx-5 max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:px-5 max-lg:py-1.5 max-lg:[scrollbar-width:none] max-lg:[&::-webkit-scrollbar]:hidden"
       >
         {onSelectAll && (
           <button

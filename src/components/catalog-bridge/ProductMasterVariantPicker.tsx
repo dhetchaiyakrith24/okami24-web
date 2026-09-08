@@ -64,7 +64,7 @@ export function ProductMasterVariantPicker({
       {optionAxisLabel && <span className="label-mono text-xs text-foreground-dim">{optionAxisLabel}</span>}
       <div
         ref={listRef}
-        className="flex flex-wrap gap-2 max-lg:-mx-5 max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:px-5 max-lg:py-0.5 max-lg:[scrollbar-width:none] max-lg:[&::-webkit-scrollbar]:hidden"
+        className="okami-chip-row flex flex-wrap gap-2 max-lg:-mx-5 max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:px-5 max-lg:py-0.5 max-lg:[scrollbar-width:none] max-lg:[&::-webkit-scrollbar]:hidden"
       >
         {variants.map((v) => {
           const outOfStock = v.availabilityStatus !== "in-stock";

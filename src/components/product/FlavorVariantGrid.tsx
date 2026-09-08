@@ -67,7 +67,7 @@ export function FlavorVariantGrid({
       </span>
       <div
         ref={listRef}
-        className="flex flex-wrap gap-2 sm:max-h-56 sm:overflow-y-auto sm:pr-1 max-lg:-mx-5 max-lg:max-h-none max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:px-5 max-lg:py-0.5 max-lg:pr-5 max-lg:[scrollbar-width:none] max-lg:[&::-webkit-scrollbar]:hidden"
+        className="okami-chip-row flex flex-wrap gap-2 sm:max-h-56 sm:overflow-y-auto sm:pr-1 max-lg:-mx-5 max-lg:max-h-none max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:px-5 max-lg:py-0.5 max-lg:pr-5 max-lg:[scrollbar-width:none] max-lg:[&::-webkit-scrollbar]:hidden"
       >
         {onSelectAll && (
           <button

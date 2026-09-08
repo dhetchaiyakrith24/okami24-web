@@ -102,6 +102,20 @@ html {
   }
 }
 
+/* Mobile round B, B4 (owner 2026-09-08): the colour/flavour chip rows scroll sideways on phones
+   (the `max-lg:` classes in ColorVariantRail / FlavorVariantGrid / ProductMasterVariantPicker) and
+   were cut off hard at the right edge with nothing saying "more this way". The right 2.5rem now
+   fades out; the row's own end padding grows to the same 2.5rem so the last chip, once scrolled
+   fully into view, sits before the fade and is never dimmed. Phone/tablet only — at lg the rows
+   wrap and this rule does not exist. */
+@media (max-width: 63.98rem) {
+  .okami-chip-row {
+    padding-right: 2.5rem;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
