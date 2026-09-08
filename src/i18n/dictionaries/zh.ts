@@ -90,6 +90,8 @@ export const zh: Dictionary = {
     portabilityStandard: "标准尺寸",
     optionCountFlavors: "{n} 种口味",
     optionCountColors: "{n} 种颜色",
+    filtersButton: "筛选",
+    filtersApply: "查看 {count}",
   },
   product: {
     colorLabel: "颜色",

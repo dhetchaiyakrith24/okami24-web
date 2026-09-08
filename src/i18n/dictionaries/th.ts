@@ -86,6 +86,8 @@ export const th: Dictionary = {
     portabilityStandard: "มาตรฐาน",
     optionCountFlavors: "{n} กลิ่น",
     optionCountColors: "{n} สี",
+    filtersButton: "ตัวกรอง",
+    filtersApply: "ดูผล ({count})",
   },
   product: {
     colorLabel: "สี",
