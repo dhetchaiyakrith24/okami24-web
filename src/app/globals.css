@@ -90,8 +90,15 @@ html {
    only — same cut-off as Tailwind's `lg` — so desktop is untouched. */
 @media (max-width: 63.98rem) {
   body:has(.mobile-buy-bar) {
-    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
-    --okami-fab-lift: 4.75rem;
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+    --okami-fab-lift: 4.25rem;
+  }
+  /* M3 (owner, real-phone test 2026-09-08): with the buy bar on screen the phone's floating LINE
+     button is redundant — hide it. Phone widths only; the tablet pill just stays lifted. */
+  @media (max-width: 39.98rem) {
+    body:has(.mobile-buy-bar) .okami-line-fab {
+      display: none;
+    }
   }
 }
 

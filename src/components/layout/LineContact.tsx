@@ -37,7 +37,7 @@ export function LineContact() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={ARIA_LABEL}
-        className="fixed z-30 flex h-12 w-12 items-center justify-center rounded-full border border-surface-border bg-surface-1/95 text-red shadow-2xl backdrop-blur-md transition-colors focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-2 sm:hidden"
+        className="okami-line-fab fixed z-30 flex h-12 w-12 items-center justify-center rounded-full border border-surface-border bg-surface-1/95 text-red shadow-2xl backdrop-blur-md transition-colors focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-2 sm:hidden"
         style={{
           // + --okami-fab-lift: above the product page's sticky buy bar on phones (B-ก, 2026-09-08)
           bottom: "calc(1rem + var(--okami-fab-lift, 0px) + env(safe-area-inset-bottom, 0px))",
