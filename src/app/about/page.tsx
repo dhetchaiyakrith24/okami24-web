@@ -35,7 +35,7 @@ export default function AboutPage() {
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">สินค้าที่เราคัดสรร</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              เว็บไซต์นี้รวบรวมอุปกรณ์พอดซิสเต็ม พอดคิท ดิสโพส และคาร์ทริดจ์จากสามแบรนด์หลัก — UWELL, VOOPOO และ SALTHUB
+              เว็บไซต์นี้รวบรวมอุปกรณ์พอดซิสเต็ม พอดคิท ดิสโพส และคาร์ทริดจ์จาก {brands.length} แบรนด์ที่เราคัดมา — UWELL, VOOPOO, SALTHUB และอื่น ๆ
               พร้อมเครื่องมือเปรียบเทียบและ Product Finder ที่ช่วยหาสินค้าที่เหมาะกับคุณ ทุกสเปกถูกวิจัยจากหน้าทางการของแบรนด์
               และติดป้าย <span className="text-verified">verified</span> หรือ{" "}
               <span className="text-unverified">unverified</span> กำกับไว้เสมอ — ข้อมูลที่ยืนยันไม่ได้จะถูกระบุไว้ตรงๆ
@@ -54,8 +54,8 @@ export default function AboutPage() {
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">ติดต่อเรา</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              สั่งซื้อบนเว็บได้เลย เลือกสินค้าใส่ตะกร้า ยืนยันเบอร์โทร กรอกที่อยู่ แล้วโอนเงินหรือสแกน QR ได้ในขั้นตอนเดียวกัน
-              ถ้าอยากสอบถามก่อน ให้ช่วยเลือกรุ่น หรือติดตามออเดอร์ที่สั่งไว้ ทักไลน์ OA{" "}
+              ดูสินค้าและราคาได้ครบทั้งเว็บ ส่วนการสั่งซื้อ ตอนนี้สั่งทางไลน์ทางเดียว ทักมาบอกรุ่น สี หรือกลิ่นที่อยากได้
+              แอดมินสรุปยอดรวมค่าส่งและวิธีโอนให้ในแชท โอนแล้วแอดมินตรวจยอดก่อนจัดส่ง พร้อมเลขพัสดุให้ติดตาม ทักไลน์ OA{" "}
               <Link href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-red">
                 {CONTACT.lineId}
               </Link>{" "}
