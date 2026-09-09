@@ -151,6 +151,7 @@
 6. **นิยาม agent ถูกอ่านตอนเปิดเซสชัน** — แก้ไฟล์ `.claude/agents/*.md` แล้ว **เซสชันปัจจุบันไม่เห็นการเปลี่ยนแปลง** ต้องเปิดเซสชันใหม่ · เป็นข้อจำกัดของเครื่องมือ ไม่ใช่บั๊กของโปรเจกต์
 7. **Browser pane ใช้ไม่ได้ในเครื่องนี้** — ใช้ `scripts/shot.js` แทนทุกครั้ง · Windows ไม่มี Docker/WSL/Python/ffmpeg
 8. **`heredoc` หรือ `node -e` ที่มี backtick พังบน shell เครื่องนี้** — ใช้ Write/Edit เขียนไฟล์แทน
+9. **ปิดเซิร์ฟเวอร์ทดสอบ ต้องเจาะจง PID เสมอ — `taskkill //PID <pid> //F` เท่านั้น · ห้ามใช้ `taskkill /F /IM node.exe /T` เด็ดขาด** (เจ้าของสั่ง 2026-09-10) · **เคยเกิดจริงคืน 9 ก.ย.:** checker สั่งฆ่า node ทั้งเครื่องเพื่อเคลียร์เซิร์ฟเวอร์ของตัวเอง **ดับไป 5 process** ซึ่งไม่ใช่ของมันทั้งหมด — ถ้าเจ้าของมี dev server หรืองาน node อื่นค้างอยู่ตอนนั้นก็ดับไปด้วยโดยไม่มีใครรู้ · หา PID ด้วย `netstat -ano | grep ":<port>.*LISTENING"` แล้วฆ่าเฉพาะตัวนั้น · **ข้อนี้ต้องเขียนใส่คำสั่งของ checker/agent ทุกตัวที่ให้รันเซิร์ฟเวอร์เอง** ไม่ใช่หวังว่ามันจะรู้เอง
 
 ### 8.4 หน้าที่ "ไม่นิ่งเอง" — วัดซ้ำแล้วเกิดกับโค้ดเดิมด้วย **[ตรวจแล้วจริง]**
 
@@ -323,7 +324,9 @@ Branch: checkpoint/phase-3.3.3 HEAD 8906480 (สะอาด) · origin/main 3c4
   · เทียบภาพ: _incoming/qc/2026-09-08-mobile-B/compare-png.js · compare-masked.js <base> <after> <mask.json> · crop-png.js
   · server ทดสอบ: SITE_URL=https://okami24.store npx next build แล้ว SITE_URL=https://okami24.store OKAMI24_DATA_DIR=<tmp>
     OKAMI24_BACKUP_DISABLED=1 OKAMI24_STARTUP_PROBE=0 npx next start -p 3412 (ห้ามชี้ .data จริง · ไม่ใส่ SITE_URL แล้ว /search /compare จะ 500)
-  · Windows ไม่มี Docker/WSL/Python/ffmpeg · taskkill //PID <pid> //F · heredoc/node -e ที่มี backtick พัง ใช้ Write/Edit · ไฟล์ช่วยงานเก็บใน scripts/ หรือ _incoming/ เท่านั้น
+  · Windows ไม่มี Docker/WSL/Python/ffmpeg · ปิด server: หา PID ด้วย netstat -ano | grep ":<port>.*LISTENING" แล้ว taskkill //PID <pid> //F
+    **ห้าม taskkill /F /IM node.exe /T เด็ดขาด** (คืน 9 ก.ย. checker ทำแล้วดับไป 5 process) · ข้อนี้ต้องเขียนใส่คำสั่ง agent ทุกตัวที่ให้รันเซิร์ฟเวอร์เอง
+  · heredoc/node -e ที่มี backtick พัง ใช้ Write/Edit · ไฟล์ช่วยงานเก็บใน scripts/ หรือ _incoming/ เท่านั้น
 Verify: npx tsc --noEmit · npx eslint <ไฟล์ .tsx> (eslint ข้าม globals.css ไม่ได้ตรวจ CSS) · npm run verify:commerce (16)
   · SITE_URL=… npm run verify:catalog -- --full (20 · ปิด server ก่อน) · npx tsx scripts/count-storefront.ts (53/31) · npx tsx src/i18n/i18n-contract-test.ts (16)
 Git: commit แยกชนิด docs/scripts/code/css/data/config · git commit -F <ไฟล์> · message อังกฤษ · Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> · push ทันทีที่จบก้อน
