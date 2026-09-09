@@ -122,7 +122,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     noRefund: <><E>โอนแล้วยกเลิกไม่ได้ และไม่มีการคืนเงิน</E> เพราะฉะนั้นเช็ครายการ สี กลิ่น และจำนวนให้ครบก่อนโอนทุกครั้ง</>,
     checkTitle: "ก่อนโอน เช็ค 2 อย่าง",
     checks: [
-      <><B>ชื่อบัญชีต้องตรง</B>กับที่แสดงในหน้าสถานะคำสั่งซื้อ — ถ้ามีคนส่งเลขบัญชีอื่นมาให้ อย่าโอน</>,
+      <><B>โอนเข้าบัญชีที่แอดมินส่งให้ในไลน์ {line} เท่านั้น</B> — ถ้ามีคนส่งเลขบัญชีอื่นมาให้ อย่าโอน</>,
       <><B>ไลน์ทางการมีชื่อเดียวคือ {line}</B> — เช็คได้จากปุ่มไลน์ท้ายเว็บนี้ทุกหน้า</>,
     ],
     stuckTitle: "ถ้าติดตรงไหน",
@@ -204,7 +204,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     noRefund: <><E>Once you’ve transferred, the order can’t be cancelled and the money isn’t refundable.</E> So check your items, colours, flavours and quantities every time before you transfer.</>,
     checkTitle: "Two things to check before you transfer",
     checks: [
-      <><B>The account name must match</B> the one shown on your order status page — if anyone sends you a different account number, do not transfer.</>,
+      <><B>Only transfer to the account an admin sends you on LINE {line}</B> — if anyone sends you a different account number, do not transfer.</>,
       <><B>Our only official LINE account is {line}</B> — you can check it from the LINE button in the footer of every page.</>,
     ],
     stuckTitle: "If you get stuck",
@@ -286,7 +286,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     noRefund: <><E>转账后订单不可取消，也不退款。</E>所以每次转账前，请务必核对商品、颜色、口味和数量。</>,
     checkTitle: "转账前请核对两件事",
     checks: [
-      <><B>户名必须一致</B> —— 与订单状态页显示的户名相同；若有人发来其他账号，请勿转账。</>,
+      <><B>只能转账到管理员在 LINE {line} 上发给您的账号</B> —— 若有人发来其他账号，请勿转账。</>,
       <><B>我们唯一的官方 LINE 账号是 {line}</B> —— 每个页面底部的 LINE 按钮都可以核对。</>,
     ],
     stuckTitle: "遇到问题怎么办",
