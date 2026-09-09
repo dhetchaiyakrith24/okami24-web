@@ -32,6 +32,15 @@ export function HowToOrderContent({ orderingEnabled = true }: { orderingEnabled?
       />
       <Container className="max-w-2xl py-12 lg:py-16">
         <div className="flex flex-col gap-10">
+          {/* The sentence under the page title already says ordering is on LINE, but it is a
+              screen above this and the block below names buttons that are not on the site right
+              now ("Add to cart", "Go to checkout"). Ember border, no heading: it has to read as a
+              note on the steps, not compete with the three summary cards under it. */}
+          {!orderingEnabled && (
+            <p role="note" className="rounded-xl border border-ember/25 bg-surface-1 px-4 py-3 text-sm leading-relaxed text-foreground">
+              <strong className="font-semibold">{c.stepsPausedLead}</strong> {c.stepsPausedNotice}
+            </p>
+          )}
           <SummaryCards items={c.summary} />
 
           <ServiceSection title={c.stepsTitle}>

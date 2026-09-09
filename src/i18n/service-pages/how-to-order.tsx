@@ -12,6 +12,15 @@ export interface HowToOrderCopy {
    *  below it still describe the site flow; this sentence is the only one that must not claim
    *  "order on the site" while the cart is off. */
   descriptionWhileOrderingOnLine: string;
+  /** Sits above the summary cards while ordering is off. The sentence under the page title already
+   *  says ordering happens on LINE, but the steps below it name real buttons ("Add to cart",
+   *  "Go to checkout") and are a screen further down — a visitor who scrolls past that sentence
+   *  has nothing telling them those buttons are not there right now (designer, 2026-09-10).
+   *  Split in two so the first clause can be bold: at 14px in a thin ember-bordered box the notice
+   *  read as "a box", not as a warning, and this page's one ember-bold slot is already spent on
+   *  "transfers cannot be undone" (designer, 2026-09-10). */
+  stepsPausedLead: string;
+  stepsPausedNotice: string;
   browseCta: string;
   askLineCta: string;
   summary: { label: string; value: string; note: string }[];
@@ -46,6 +55,8 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     title: "วิธีสั่งซื้อ",
     description: "สั่งบนเว็บได้เลย ไม่ต้องทักแชทก่อน ใช้เวลาไม่กี่นาที — ด้านล่างคือทุกขั้นตอนตั้งแต่กดใส่ตะกร้าจนของถึงมือ",
     descriptionWhileOrderingOnLine: "ช่วงนี้สั่งผ่านไลน์ @okm24 สะดวกกว่า ทักมาบอกรุ่นที่อยากได้ แอดมินจัดให้ — ด้านล่างคือขั้นตอนการสั่งบนเว็บ เก็บไว้ดูเป็นแนวทาง",
+    stepsPausedLead: "ตะกร้ายังปิดอยู่",
+    stepsPausedNotice: "ขั้นตอนกับชื่อปุ่มด้านล่างยังกดใช้จริงไม่ได้ ตอนนี้สั่งทางไลน์อย่างเดียว",
     browseCta: "เลือกดูสินค้า",
     askLineCta: `ถามก่อนทางไลน์ ${line}`,
     summary: [
@@ -117,7 +128,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     stuckTitle: "ถ้าติดตรงไหน",
     stuck1: <>ทักไลน์ <LineLink /> ได้เลย บอกเลขคำสั่งซื้อมาด้วยจะเร็วที่สุด แอดมินตอบเอง ไม่ใช่บอท ช่วยเช็คสต๊อก ช่วยเลือกรุ่น ตามคำสั่งซื้อ ส่งสลิป — เรื่องพวกนี้คุยทางไลน์ได้หมด</>,
     stuck2: <><B>ยังไม่แน่ใจว่าจะเอาตัวไหน ดูจากบนเว็บก่อนได้</B> ทุกรุ่นมีสเปก ราคา สี กลิ่น ครบ อยากเทียบหลายตัวก็มีหน้าเปรียบเทียบให้ เลือกได้แล้วค่อยทักมาบอกชื่อรุ่น คุยจบเร็วกว่าเยอะ</>,
-    stuck3: <>ตอนนี้สั่งซื้อทำผ่านไลน์ <LineLink /> อย่างเดียว ทักมาบอกรุ่น สี หรือกลิ่นที่อยากได้ แอดมินเช็คของให้ แล้วสรุปยอดกับวิธีโอนกลับไป</>,
+    stuck3: <>ตอนนี้สั่งซื้อทำผ่านไลน์ <LineLink /> อย่างเดียว ทักมาบอกรุ่น สี หรือกลิ่นที่อยากได้ แอดมินเช็คของให้ แล้วสรุปยอดกับวิธีโอนกลับไป พร้อมเลขคำสั่งซื้อในแชท เก็บไว้ใช้อ้างอิงตอนทักถามทีหลัง</>,
     readNext: "อ่านต่อ:",
     links: { shipping: "การจัดส่ง", contact: "ติดต่อเรา", faq: "คำถามที่พบบ่อย" },
   },
@@ -126,6 +137,8 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     title: "How to order",
     description: "Order right here on the site — no need to message us first, and it only takes a few minutes. Below is every step, from adding to cart to the parcel in your hands.",
     descriptionWhileOrderingOnLine: "Right now the easier way to order is LINE @okm24 — message us the model you want and the admin sorts it out. The steps below describe ordering on the site, kept here for reference.",
+    stepsPausedLead: "The cart is switched off right now.",
+    stepsPausedNotice: "The steps and button names below aren’t live yet — orders go through LINE instead.",
     browseCta: "Browse products",
     askLineCta: `Ask on LINE ${line}`,
     summary: [
@@ -197,7 +210,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     stuckTitle: "If you get stuck",
     stuck1: <>Just message us on LINE <LineLink /> — include your order number and it’ll be quickest. You’re talking to an admin, not a bot. Stock checks, help choosing a model, order updates, sending a slip — all of that works over LINE.</>,
     stuck2: <><B>Not sure which one you want? Check it here first.</B> Every model has its specs, price, colours and flavours, and the compare page lines a few up side by side. Pick one, then message us — much quicker that way.</>,
-    stuck3: <>Right now ordering happens on LINE <LineLink /> only. Message us the model, the colour or flavour you want — an admin checks stock, then sends back the total and how to pay.</>,
+    stuck3: <>Right now ordering happens on LINE <LineLink /> only. Message us the model, the colour or flavour you want — an admin checks stock, then sends back the total, how to pay, and your order number. Keep that number and quote it when you message us later.</>,
     readNext: "Read next:",
     links: { shipping: "Shipping", contact: "Contact", faq: "FAQ" },
   },
@@ -206,6 +219,8 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     title: "如何下单",
     description: "直接在网站下单，不用先联系我们，几分钟就能完成。下面是从加入购物车到收到货的每一步。",
     descriptionWhileOrderingOnLine: "这段时间用 LINE @okm24 下单更方便，告诉店主想要的型号，帮你备好。下面是网站下单的步骤，仅供参考。",
+    stepsPausedLead: "目前购物车是关闭的。",
+    stepsPausedNotice: "下面的步骤和按钮名称还不能实际使用，下单请走 LINE。",
     browseCta: "浏览商品",
     askLineCta: `先在 LINE 咨询 ${line}`,
     summary: [
@@ -277,7 +292,7 @@ export const HOW_TO_ORDER: ServiceCopy<HowToOrderCopy> = {
     stuckTitle: "遇到问题怎么办",
     stuck1: <>直接通过 LINE <LineLink /> 联系我们，附上订单编号最快。回复您的是管理员，不是机器人。查库存、帮您选型号、跟进订单、发送转账凭证 —— 这些都可以在 LINE 上处理。</>,
     stuck2: <><B>还没想好要哪一款，可以先在网站看。</B>每款的参数、价格、颜色和口味都写清楚了，还有对比页可以把几款并排看。选好再来找我们，会快很多。</>,
-    stuck3: <>目前只能通过 LINE <LineLink /> 下单。告诉我们想要的型号、颜色或口味，管理员确认有货后，会把总金额和付款方式发给您。</>,
+    stuck3: <>目前只能通过 LINE <LineLink /> 下单。告诉我们想要的型号、颜色或口味，管理员确认有货后，会把总金额、付款方式和订单编号一起发给您。请保存这个编号，之后联系我们时报给管理员。</>,
     readNext: "继续阅读：",
     links: { shipping: "配送", contact: "联系我们", faq: "常见问题" },
   },
