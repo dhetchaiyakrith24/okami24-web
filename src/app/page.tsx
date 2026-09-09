@@ -33,14 +33,20 @@ export default function Home() {
           view, marks <html> so the CSS never arms the animation at all. Back/forward inside the
           app is a client render that never re-runs this, so Hero.tsx sets the same attribute
           itself once the motion has finished (see the effect there). Desktop never reads it. */}
+      {/* The second line is M1b's Save-Data / 2G opt-out. It has to run here, before the first
+          painted frame, for the same reason as the line above it: the hero's background motion is
+          CSS, so the decision not to arm it cannot wait for hydration. `data-okami-lite` drops the
+          whole layer in globals.css, which also means its lazy ghost image is never requested —
+          the point of honouring Save-Data in the first place. */}
       <script
         dangerouslySetInnerHTML={{
           __html:
-            'try{if(sessionStorage.getItem("okami24-home-intro"))document.documentElement.dataset.okamiIntro="played"}catch(e){}',
+            'try{if(sessionStorage.getItem("okami24-home-intro"))document.documentElement.dataset.okamiIntro="played"}catch(e){}' +
+            'try{var c=navigator.connection;if(c&&(c.saveData||/(^|-)2g$/.test(c.effectiveType||"")))document.documentElement.dataset.okamiLite="1"}catch(e){}',
         }}
       />
       <HomeIntro />
-      <Hero flagship={flagship} />
+      <Hero flagship={flagship} backdrop={mBar10k} />
       <BrandMarquee />
       <CategoryNav />
 

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, type CSSProperties } from "react";
+import { getImageProps } from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
@@ -13,8 +14,45 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
  *  ceiling is 0.8s; the last keyframe finishes at 0.78s and this leaves a small margin on top. */
 const HERO_MOTION_MS = 900;
 
-export function Hero({ flagship }: { flagship: Product }) {
+export function Hero({ flagship, backdrop }: { flagship: Product; backdrop?: Product }) {
   const { dict } = useLocale();
+  const backdropRef = useRef<HTMLDivElement>(null);
+
+  // M1b: the phone's hero has a slow, permanent background layer (see `okami-hero-bg-*` in
+  // globals.css). "Permanent" only while it is on screen — an animation that keeps running under
+  // a page the visitor has scrolled past is battery spent on nothing, so the layer is observed and
+  // genuinely paused, not merely faded. The attribute drives both halves in CSS: opacity for the
+  // fade, `animation-play-state: paused` for the stop. Desktop never runs this — the layer is
+  // `lg:hidden`, so `backdropRef.current` still exists but its own media query leaves it inert,
+  // and the observer costs one callback per scroll past the hero.
+  useEffect(() => {
+    const layer = backdropRef.current;
+    const section = layer?.parentElement;
+    if (!layer || !section || typeof IntersectionObserver === "undefined") return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        layer.dataset.visible = entry.isIntersecting ? "1" : "0";
+      },
+      { threshold: 0 },
+    );
+    io.observe(section);
+    return () => io.disconnect();
+  }, []);
+
+  // The one product photo that appears behind everything, blurred almost to nothing. Falls back to
+  // no ghost at all if the product has no isolated card shot — the light and dust layers stand on
+  // their own, and an un-isolated photo would read as a rectangle, not a device.
+  //
+  // 96px wide, and that number is doing real work. Chrome sizes an LCP candidate by the SMALLER of
+  // its intrinsic and displayed size, so asking for a deliberately tiny file keeps this decorative
+  // layer well under the hero photo's ~36k px² and out of the running: measured at 390px, a
+  // full-size background made `.okami-hero-bg-ghost` the LCP element, which is not what the page's
+  // largest paint should be. It is also 7px-blurred at 18% opacity behind everything, so 96px is
+  // all the detail that can possibly survive — and it costs ~4KB instead of ~55KB.
+  const ghost = backdrop?.assets.find((a) => a.role === "card");
+  const ghostSrc = ghost
+    ? getImageProps({ src: ghost.src, alt: "", width: 96, height: 192, quality: 75 }).props.src
+    : null;
 
   // MOBILE_SPEC [M1] "plays once, never again on back". Once the motion has finished, mark the
   // document so the CSS stops arming it: the attribute lives on <html>, which survives every
@@ -36,6 +74,49 @@ export function Hero({ flagship }: { flagship: Product }) {
 
   return (
     <section className="relative overflow-hidden border-b border-surface-border-soft bg-surface-0">
+      {/* M1b (owner picked option "ค" from three rendered mockups, 2026-09-09). Round M1's hero
+          motion was an intro: it played for 0.78s and then the phone sat perfectly still, which the
+          owner read on a real device as "the motion is gone, there's nothing there". This layer is
+          the opposite — it never stops while the hero is on screen, and it is slow enough (10-15s
+          periods, 12px of travel end to end) that it reads as depth rather than as something moving.
+
+          Four layers, all of them BEHIND every existing one because this is the section's first
+          child: a second device from the catalogue, blurred and dimmed to 18%; one ember cloud
+          drifting along the bottom; a wide band of light crossing every 12s; and ten specks of
+          dust. Only `transform`/`opacity` animate, everything is `position: absolute`, so there is
+          no layout to shift and CLS stays 0 by construction.
+
+          `lg:hidden` is what protects the desktop: at >=64rem the whole layer is display:none, so
+          the desktop hero — including the cinematic intro above it — is byte-for-byte unchanged. */}
+      <div
+        ref={backdropRef}
+        aria-hidden
+        className="okami-hero-bg pointer-events-none absolute inset-0 overflow-hidden lg:hidden"
+      >
+        {/* The ghost is a CSS background, not an <img>, and that is a deliberate choice made after
+            measuring. With an `<img>` here the 1440px proof came back 0.094% different every single
+            run: the extra element changed the order the browser worked through the page's lazy
+            images, and one product card downstream ended up decoded in time for the screenshot when
+            it previously was not. Nothing had MOVED — but "desktop does not change" has to mean the
+            pixels, so the image moved into CSS, where a `display: none` ancestor means the file is
+            never requested at all. The path still comes from the catalogue rather than being
+            written into the stylesheet: `getImageProps` builds the URL the same way `<Image>` would,
+            so the optimiser still serves it — but at 96px, which is a few KB to encode rather than
+            a full card photo, and one stable URL the edge can keep for the full 30 days. */}
+        {ghostSrc ? (
+          <div
+            className="okami-hero-bg-ghost"
+            style={{ "--okami-hero-ghost": `url(${ghostSrc})` } as CSSProperties}
+          />
+        ) : null}
+        <div className="okami-hero-bg-blob" />
+        <div className="okami-hero-bg-sweep" />
+        <div className="okami-hero-bg-dust">
+          {Array.from({ length: 10 }, (_, i) => (
+            <i key={i} />
+          ))}
+        </div>
+      </div>
       <div
         className="pointer-events-none absolute inset-0 opacity-60"
         style={{
