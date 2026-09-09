@@ -8,8 +8,11 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+// mAh is written without a thousands separator site-wide (owner, 2026-09-09, round 30.1): the
+// hand-written Thai product copy already says "1600mAh", and a formatted "1,600mAh" next to it on
+// the same page read as two different numbers.
 export function formatBattery(mah?: number): string {
-  return mah ? `${mah.toLocaleString()}mAh` : "—";
+  return mah ? `${mah}mAh` : "—";
 }
 
 export function formatWattage(min?: number, max?: number): string {
