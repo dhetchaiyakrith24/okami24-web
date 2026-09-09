@@ -15,7 +15,7 @@ services:
   - type: web
     name: okami24
     runtime: node
-    plan: starter
+    plan: standard
     region: singapore
     # `main` is the live branch (owner decision 2026-09-06).
     branch: main
