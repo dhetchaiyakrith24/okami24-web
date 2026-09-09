@@ -294,6 +294,191 @@ html {
   }
 }
 
+/* M1b — the phone hero's permanent background layer (see the comment on the layer itself in
+   Hero.tsx). Everything here is scoped to phone/tablet widths and to `.okami-hero-bg`, which the
+   markup only renders below `lg`; nothing in this block can reach the desktop hero.
+
+   Rules the numbers come from:
+   - Only `transform` and `opacity` are animated. The blurs, sizes and positions are static, so
+     the layer cannot cause layout shift and the compositor can run all of it off the main thread.
+   - Periods are 10-17s. The three DRIFTING layers travel at most 12px end to end — the round's
+     ceiling — measured as the actual distance covered, not per axis: ghost 12.00px (0,12), ember
+     cloud 11.66px (10,6), dust 9.49px (3,9). Two things are easy to get wrong here and both were
+     caught in review: an `alternate` animation covers its keyframe distance TWICE per cycle (so
+     6px each way IS the 12px budget), and a diagonal drift's real distance is the hypotenuse, not
+     its larger axis. The light sweep is deliberately outside that budget and always was: it is a
+     band of light crossing the whole hero (0 -> 340%), which the round specified by period alone
+     (>=10s; it runs at 12s). Anything faster than these reads as a distraction next to the product
+     photo; at these speeds it reads as depth.
+   - The ghost device sits top-right and the ember cloud bottom-left, both clear of the headline
+     column, so the white type keeps the contrast it was signed off with.
+   - `data-visible="0"` (set by the IntersectionObserver in Hero.tsx once the section leaves the
+      viewport) both fades the layer out AND pauses every animation inside it. */
+@media (max-width: 63.98rem) {
+  .okami-hero-bg {
+    z-index: 0;
+    transition: opacity 0.6s ease;
+  }
+  .okami-hero-bg[data-visible="0"] {
+    opacity: 0;
+  }
+  .okami-hero-bg[data-visible="0"] * {
+    animation-play-state: paused !important;
+  }
+
+  /* A second device from the catalogue, blurred back into the dark. The file comes in as a CSS
+     background through `--okami-hero-ghost`, set on the element by Hero.tsx from the catalogue —
+     see the comment there for why this is not an `<img>`. `aspect-ratio` gives the box a height of
+     its own (there is no image in the layout to provide one); 1/2 is the shape of the card shots
+     (~463x925), and `contain` means a differently-proportioned photo still fits rather than
+     cropping. */
+  .okami-hero-bg-ghost {
+    position: absolute;
+    top: 2%;
+    right: -14%;
+    width: 58%;
+    aspect-ratio: 1 / 2;
+    /* The photo comes in as a MASK over a flat colour, not as a background image, and that is a
+       measurement result rather than a style choice: as a background image this box became the
+       page's Largest Contentful Paint element at 390px (measured three runs: 916ms cold, 168ms,
+       136ms), which is wrong — the largest paint should be the product the page is about, not a
+       decorative layer at 18% opacity. A masked colour is not an image candidate at all, so the
+       hero photo keeps the title, and what the eye gets is the same silhouette: at 7px of blur
+       behind everything else, the device's own colours were never legible anyway. */
+    /* Steel at 12%, chosen against the mockup the owner picked: a neutral grey silhouette read as
+       a flat cut-out sitting on top of the page, while the steel tint sinks back into the dark the
+       way the photographed device did. */
+    background-color: var(--color-steel);
+    -webkit-mask-image: var(--okami-hero-ghost);
+    mask-image: var(--okami-hero-ghost);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    opacity: 0.12;
+    filter: blur(7px) grayscale(0.35);
+    animation: okami-hero-bg-float 10s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  /* One ember cloud breathing along the bottom edge, deliberately offset from the static wash
+     above it (that one sits top-right / bottom-left at 60%) so the two do not stack into a blob. */
+  .okami-hero-bg-blob {
+    position: absolute;
+    left: -20%;
+    bottom: 2%;
+    width: 82%;
+    height: 44%;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, var(--color-ember-soft) 0%, transparent 72%);
+    opacity: 0.75;
+    filter: blur(16px);
+    animation: okami-hero-bg-drift 15s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  /* The one thing that crosses the whole hero rather than staying in a corner: a wide, very soft
+     band of light, once every 12s. This is what makes the section read as alive from the far side
+     of the room; the ghost and the cloud only register once you look. */
+  .okami-hero-bg-sweep {
+    position: absolute;
+    inset-block: -10%;
+    left: -50%;
+    width: 46%;
+    background: linear-gradient(
+      100deg,
+      transparent 0%,
+      rgb(255 255 255 / 0.09) 35%,
+      rgb(255 255 255 / 0.2) 50%,
+      rgb(255 255 255 / 0.09) 65%,
+      transparent 100%
+    );
+    filter: blur(22px);
+    animation: okami-hero-bg-sweep 12s linear infinite;
+    will-change: transform;
+  }
+
+  .okami-hero-bg-dust {
+    position: absolute;
+    inset: 0;
+  }
+  .okami-hero-bg-dust i {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--color-ember-soft);
+    filter: blur(1px);
+    animation: okami-hero-bg-dust 12s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+  /* Ten specks, each with its own position, period and negative delay so they never pulse in
+     unison — the giveaway that would make this look like an effect rather than air. */
+  .okami-hero-bg-dust i:nth-child(1)  { left: 12%; top: 22%; opacity: 0.3;  animation-duration: 11s; animation-delay: -1s; }
+  .okami-hero-bg-dust i:nth-child(2)  { left: 27%; top: 61%; opacity: 0.22; animation-duration: 14s; animation-delay: -4s; }
+  .okami-hero-bg-dust i:nth-child(3)  { left: 41%; top: 13%; opacity: 0.26; animation-duration: 13s; animation-delay: -7s; }
+  .okami-hero-bg-dust i:nth-child(4)  { left: 56%; top: 44%; opacity: 0.2;  animation-duration: 15s; animation-delay: -2s; }
+  .okami-hero-bg-dust i:nth-child(5)  { left: 69%; top: 72%; opacity: 0.28; animation-duration: 12s; animation-delay: -9s; }
+  .okami-hero-bg-dust i:nth-child(6)  { left: 82%; top: 31%; opacity: 0.24; animation-duration: 16s; animation-delay: -5s; }
+  .okami-hero-bg-dust i:nth-child(7)  { left: 91%; top: 55%; opacity: 0.18; animation-duration: 13s; animation-delay: -11s; }
+  .okami-hero-bg-dust i:nth-child(8)  { left: 34%; top: 86%; opacity: 0.22; animation-duration: 15s; animation-delay: -3s; }
+  .okami-hero-bg-dust i:nth-child(9)  { left: 63%; top: 92%; opacity: 0.16; animation-duration: 14s; animation-delay: -8s; }
+  .okami-hero-bg-dust i:nth-child(10) { left: 19%; top: 40%; opacity: 0.2;  animation-duration: 17s; animation-delay: -6s; }
+}
+
+/* Save-Data, or a connection the browser reports as 2G: the whole layer is dropped, which also
+   means its lazy ghost image is never fetched. The attribute is set by the inline script in
+   page.tsx before the first frame, so this costs nothing at runtime. */
+html[data-okami-lite="1"] .okami-hero-bg {
+  display: none;
+}
+
+@keyframes okami-hero-bg-float {
+  0% {
+    transform: translate3d(0, 6px, 0);
+  }
+  100% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes okami-hero-bg-drift {
+  0% {
+    transform: translate3d(-5px, 3px, 0);
+  }
+  100% {
+    transform: translate3d(5px, -3px, 0);
+  }
+}
+
+@keyframes okami-hero-bg-sweep {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(340%, 0, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes okami-hero-bg-dust {
+  0% {
+    transform: translate3d(0, 4px, 0);
+  }
+  100% {
+    transform: translate3d(3px, -5px, 0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -320,6 +505,12 @@ html {
     animation: none !important;
   }
   .okami-hero-sheen {
+    display: none !important;
+  }
+  /* M1b: "reduced motion means perfectly still" — the background layer exists only to move, so a
+     visitor who has switched motion off simply does not get it. Dropping it also stops its ghost
+     image from ever being fetched. */
+  .okami-hero-bg {
     display: none !important;
   }
 }
