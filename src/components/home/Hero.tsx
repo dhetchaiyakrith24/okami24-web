@@ -14,7 +14,18 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
  *  ceiling is 0.8s; the last keyframe finishes at 0.78s and this leaves a small margin on top. */
 const HERO_MOTION_MS = 900;
 
-export function Hero({ flagship, backdrop }: { flagship: Product; backdrop?: Product }) {
+export function Hero({
+  flagship,
+  backdrop,
+  productCount,
+  brandCount,
+}: {
+  flagship: Product;
+  backdrop?: Product;
+  /** Counted in page.tsx from the same sources /products counts — never hardcoded here again. */
+  productCount: number;
+  brandCount: number;
+}) {
   const { dict } = useLocale();
   const backdropRef = useRef<HTMLDivElement>(null);
 
@@ -151,8 +162,8 @@ export function Hero({ flagship, backdrop }: { flagship: Product; backdrop?: Pro
             </Button>
           </div>
           <dl className="mt-4 grid max-w-md grid-cols-3 gap-4 border-t border-surface-border-soft pt-6">
-            <StatBlock label={dict.hero.statProducts} value="28" />
-            <StatBlock label={dict.hero.statBrands} value="3" />
+            <StatBlock label={dict.hero.statProducts} value={String(productCount)} />
+            <StatBlock label={dict.hero.statBrands} value={String(brandCount)} />
             <StatBlock label={dict.hero.statFamilies} value="8" />
           </dl>
         </div>

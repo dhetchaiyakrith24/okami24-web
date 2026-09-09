@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { getFlagshipProducts, getProduct, getProductsByFamily, getProductsByBrand } from "@/data/products";
+import { allProducts, getFlagshipProducts, getProduct, getProductsByFamily, getProductsByBrand } from "@/data/products";
+import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
+import { brands } from "@/data/brands";
 import { guides } from "@/data/guides";
 import { HomeIntro } from "@/components/home/HomeIntro";
 import { Hero } from "@/components/home/Hero";
@@ -22,6 +24,15 @@ export default function Home() {
   const caliburnFamily = getProductsByFamily("caliburn");
   const voopooProducts = getProductsByBrand("voopoo");
   const mBar10k = getProduct("m-bar-10k")!;
+
+  // The hero's two counters used to be hardcoded ("28 products", "3 brands") and had drifted far
+  // from the catalog — /products already showed 53. Both are now counted from the same two sources
+  // that page counts, and the brand figure from the same list its brand filter is built from, so
+  // the homepage cannot silently go stale again (owner, 2026-09-09, round 30.1).
+  const publishedProducts = getPublishedProducts();
+  const productCount = allProducts.length + publishedProducts.length;
+  const brandIdsInCatalog = new Set([...allProducts.map((p) => p.brandId), ...publishedProducts.map((p) => p.brandId)]);
+  const brandCount = brands.filter((b) => brandIdsInCatalog.has(b.id)).length;
 
   return (
     <>
@@ -46,7 +57,7 @@ export default function Home() {
         }}
       />
       <HomeIntro />
-      <Hero flagship={flagship} backdrop={mBar10k} />
+      <Hero flagship={flagship} backdrop={mBar10k} productCount={productCount} brandCount={brandCount} />
       <BrandMarquee />
       <CategoryNav />
 

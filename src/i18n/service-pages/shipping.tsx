@@ -21,7 +21,10 @@ export interface ShippingCopy {
   when4: ReactNode;
   trackTitle: string;
   track1: string;
-  track2: string;
+  /** ReactNode since 2026-09-10: this is the most load-bearing sentence in the tracking section —
+   *  the two numbers a customer gets are different things — and it was the only paragraph there
+   *  with no emphasis at all, while the less important carrier note below it had some (designer). */
+  track2: ReactNode;
   track3: ReactNode;
   intlTitle: string;
   intl: ReactNode;
@@ -39,7 +42,7 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     summary: [
       { label: "ค่าส่ง", value: "60 บาท", note: "อัตราเดียวทั่วประเทศ · ฟรีเมื่อ 500 บาทขึ้นไป" },
       { label: "ถึงมือใน", value: "1–3 วัน", note: "โอนก่อน 15:00 ส่งวันเดียวกัน" },
-      { label: "ติดตามพัสดุ", value: "มีเลขพัสดุทุกคำสั่งซื้อ", note: "ดูได้ในหน้าสถานะคำสั่งซื้อ" },
+      { label: "ติดตามพัสดุ", value: "มีทุกคำสั่งซื้อ", note: "แอดมินแจ้งให้ทางไลน์" },
     ],
     feeTitle: "ค่าจัดส่ง",
     tableHeadTotal: "ยอดสั่งซื้อ",
@@ -48,16 +51,16 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     rowUnderFee: "60 บาท",
     rowOver: "500 บาทขึ้นไป",
     rowOverFee: "ฟรี",
-    feeNote: "ค่าส่งอัตราเดียวทั่วประเทศ ระบบคิดให้อัตโนมัติในหน้าตะกร้า คุณเห็นยอดรวมทั้งหมดก่อนกดยืนยันเสมอ",
+    feeNote: "ค่าส่งอัตราเดียวทั่วประเทศ แอดมินสรุปยอดรวมค่าส่งให้ในไลน์ก่อนโอน คุณเห็นยอดเต็มก่อนจ่ายเสมอ",
     whenTitle: "ส่งเมื่อไหร่",
-    when1: <>เราจะจัดส่งหลังแอดมินตรวจยอดโอนและอนุมัติคำสั่งซื้อแล้ว ก่อนหน้านั้นคำสั่งซื้อจะค้างที่สถานะ “<span className="whitespace-nowrap">รอตรวจสอบโดยแอดมิน</span>”</>,
-    when2: <><B>โอนและกดแจ้งชำระเงินก่อน 15:00 เราจัดส่งให้ในวันเดียวกัน</B> หลัง 15:00 ส่งวันทำการถัดไป</>,
+    when1: "โอนแล้วของยังไม่ออกทันที แอดมินต้องเช็คยอดที่เข้าจริงก่อน ตรวจผ่านแล้วถึงแพ็กและส่งออก อยากรู้ว่าถึงไหนแล้ว ทักไลน์ถามได้",
+    when2: <><B>โอนก่อน 15:00 แล้วส่งสลิปทางไลน์ เราจัดส่งให้วันเดียวกัน</B> หลัง 15:00 ส่งวันทำการถัดไป</>,
     when3: "ส่งจันทร์ถึงเสาร์ หยุดวันอาทิตย์และวันหยุดนักขัตฤกษ์ สั่งวันอาทิตย์ของจะออกวันจันทร์",
     when4: <>ส่งออกแล้ว <B>ถึงมือภายใน 1–3 วัน</B></>,
     trackTitle: "ติดตามพัสดุ",
-    track1: "พอคำสั่งซื้อขึ้นสถานะ “จัดส่งแล้ว” คุณจะเห็นเลขพัสดุในหน้าสถานะคำสั่งซื้อ ใช้เลขนี้ตามของได้เอง",
-    track2: "ลิงก์หน้าสถานะคือลิงก์เฉพาะของคำสั่งซื้อคุณ เปิดดูได้ทุกเมื่อ ไม่ต้องรอถามแอดมิน",
-    track3: <>เราส่งด้วย <B>ไปรษณีย์ไทย (EMS)</B> และ <B>Flash Express</B> เลือกให้ตามพื้นที่ปลายทาง เลขพัสดุที่ได้จะระบุไว้ว่าเป็นของเจ้าไหน ใช้ตามของในเว็บหรือแอปของขนส่งเจ้านั้นได้เลย</>,
+    track1: "ของออกจากร้านเมื่อไหร่ แอดมินส่งเลขพัสดุให้ทางไลน์ ใช้เลขนี้ตามของได้เอง",
+    track2: <><B>เลขคำสั่งซื้อกับเลขพัสดุเป็นคนละเลขกัน</B> เลขคำสั่งซื้อแอดมินให้ตอนสั่ง ไว้อ้างอิงเวลาทักถาม ส่วนเลขพัสดุได้ตอนของออกจากร้าน ไว้ตามพัสดุ เก็บไว้ทั้งคู่</>,
+    track3: <>เราเลือกขนส่งให้ตามพื้นที่ปลายทาง <B>เลขพัสดุจะบอกไว้ว่าเป็นของขนส่งเจ้าไหน</B> เอาไปเช็คในเว็บหรือแอปของเจ้านั้นได้เลย ไม่แน่ใจว่าเช็คที่ไหน ทักไลน์ถามแอดมินได้</>,
     intlTitle: "ส่งต่างประเทศ",
     intl: <><B>ตอนนี้ส่งเฉพาะในประเทศไทย</B> ยังไม่รับส่งต่างประเทศ</>,
     problemTitle: "ของมีปัญหาตอนได้รับ",
@@ -72,7 +75,7 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     summary: [
       { label: "Shipping", value: "฿60", note: "Flat rate nationwide · free on orders ฿500 and over" },
       { label: "Arrives in", value: "1–3 days", note: "Transfer before 15:00 and we ship the same day" },
-      { label: "Tracking", value: "A tracking number on every order", note: "Shown on your order status page" },
+      { label: "Tracking", value: "On every order", note: "The admin sends it on LINE" },
     ],
     feeTitle: "Shipping cost",
     tableHeadTotal: "Order total",
@@ -81,16 +84,16 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     rowUnderFee: "฿60",
     rowOver: "฿500 and over",
     rowOverFee: "Free",
-    feeNote: "One flat rate for the whole country, calculated automatically in your cart. You always see the full total before you place the order.",
+    feeNote: "One flat rate for the whole country. The admin gives you the total with shipping included on LINE before you transfer, so you always see the full amount before you pay.",
     whenTitle: "When we ship",
-    when1: <>We ship after an admin has checked your transfer and approved the order. Until then it sits at “Awaiting admin verification”.</>,
-    when2: <><B>Transfer and submit your payment before 15:00 and we ship the same day.</B> After 15:00 it goes out the next working day.</>,
+    when1: "Transferring doesn’t send your parcel out straight away — an admin checks the money that actually arrived first, then we pack it and ship it. Want to know where your order stands? Just ask us on LINE.",
+    when2: <><B>Transfer before 15:00, send us the payment slip on LINE, and we ship the same day.</B> After 15:00 it goes out the next working day.</>,
     when3: "We ship Monday to Saturday, and not on Sundays or public holidays. Order on a Sunday and it goes out on Monday.",
     when4: <>Once it’s out, it <B>arrives within 1–3 days</B>.</>,
     trackTitle: "Tracking your parcel",
-    track1: "As soon as your order reaches “Shipped”, the tracking number appears on your order status page — use it to follow the parcel yourself.",
-    track2: "That status link belongs to your order alone. Open it whenever you like — no need to wait for an admin to reply.",
-    track3: <>We ship with <B>Thailand Post (EMS)</B> and <B>Flash Express</B>, choosing whichever suits the destination. Your tracking number says which carrier it is, so you can track it on that carrier’s website or app.</>,
+    track1: "When your parcel leaves the shop, the admin sends you the tracking number on LINE — use it to follow the parcel yourself.",
+    track2: <><B>Your order number and your tracking number are not the same thing.</B> The admin gives you the order number when you order — quote it whenever you message us. The tracking number comes later, when the parcel goes out, and that’s the one you follow it with. Keep both.</>,
+    track3: <>We choose the carrier that suits the destination. <B>Your tracking number tells you which carrier it is</B>, so you can track it on that carrier’s website or app. If you’re not sure where to check, ask us on LINE.</>,
     intlTitle: "International shipping",
     intl: <><B>We currently ship within Thailand only.</B> No international shipping yet.</>,
     problemTitle: "If something’s wrong when it arrives",
@@ -105,7 +108,7 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     summary: [
       { label: "运费", value: "60 铢", note: "全国统一价 · 满 500 铢免运费" },
       { label: "送达时间", value: "1–3 天", note: "15:00 前转账，当天发货" },
-      { label: "快递查询", value: "每笔订单都有快递单号", note: "可在订单状态页查看" },
+      { label: "快递查询", value: "每笔订单都有", note: "管理员在 LINE 上发给您" },
     ],
     feeTitle: "运费",
     tableHeadTotal: "订单金额",
@@ -114,16 +117,16 @@ export const SHIPPING: ServiceCopy<ShippingCopy> = {
     rowUnderFee: "60 铢",
     rowOver: "500 铢及以上",
     rowOverFee: "免运费",
-    feeNote: "全国统一运费，购物车会自动计算。您在提交订单前一定能看到完整的总金额。",
+    feeNote: "全国统一运费。转账前管理员会在 LINE 上把含运费的总金额告诉您，付款前您一定看得到完整金额。",
     whenTitle: "什么时候发货",
-    when1: <>管理员核对转账并批准订单后我们才会发货。在此之前，订单会停留在「等待管理员核实」状态。</>,
-    when2: <><B>在 15:00 前完成转账并提交付款，我们当天发货。</B>15:00 之后则顺延至下一个工作日。</>,
+    when1: "转账后不会立刻发货。管理员会先核对实际到账的金额，确认无误后才打包寄出。想知道进度，随时可以在 LINE 上问我们。",
+    when2: <><B>在 15:00 前转账并把转账凭证发到 LINE，我们当天发货。</B>15:00 之后则顺延至下一个工作日。</>,
     when3: "我们周一至周六发货，周日和法定节假日不发货。周日下单的订单周一寄出。",
     when4: <>寄出后 <B>1–3 天内送达</B>。</>,
     trackTitle: "查询快递",
-    track1: "订单进入「已发货」状态后，订单状态页就会显示快递单号，您可以用它自行查询包裹。",
-    track2: "这个状态页链接是您订单专属的，随时都能打开，不必等管理员回复。",
-    track3: <>我们使用 <B>泰国邮政（EMS）</B> 和 <B>Flash Express</B> 发货，会根据收货地区选择。快递单号会注明是哪家快递，您可以在该快递的网站或 App 上查询。</>,
+    track1: "包裹寄出后，管理员会在 LINE 上把快递单号发给您，用它就能自行查询包裹。",
+    track2: <><B>订单编号和快递单号不是同一个号码。</B>订单编号是下单时管理员发给您的，之后联系我们时报这个编号；快递单号是包裹寄出时才有的，用来查询物流。两个都请保存好。</>,
+    track3: <>我们会根据收货地区选择快递公司。<B>快递单号会注明是哪家快递</B>，您可以在该快递的网站或 App 上查询。不确定去哪查，可以在 LINE 上问我们。</>,
     intlTitle: "国际配送",
     intl: <><B>目前仅在泰国境内配送。</B>暂不接受国际配送。</>,
     problemTitle: "收到货有问题",
