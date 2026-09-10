@@ -2,6 +2,7 @@ import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { HomeText } from "@/components/home/HomeCopy";
 
 export function CompareCTA({ products }: { products: Product[] }) {
   return (
@@ -18,22 +19,25 @@ export function CompareCTA({ products }: { products: Product[] }) {
           ))}
         </div>
         <SectionHeadingInline />
-        <Button href="/compare">Compare devices side by side</Button>
+        <Button href="/compare">
+          <HomeText k="compareCta" />
+        </Button>
       </Container>
     </section>
   );
 }
 
+// Round 30.3ข: heading, lede and button read the visitor's language via <HomeText>; the "Compare"
+// eyebrow and the "vs" separators stay English (THAI_STYLE §5 group ก).
 function SectionHeadingInline() {
   return (
     <div className="flex flex-col gap-3">
       <span className="label-mono text-xs text-ember">Compare</span>
       <h2 className="font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">
-        Put up to four devices side by side.
+        <HomeText k="compareTitle" />
       </h2>
       <p className="mx-auto max-w-lg text-base text-foreground-muted">
-        Only verified, shared attributes are compared — differences are highlighted, and every device gets a
-        &ldquo;best fit for&rdquo; note instead of a declared winner.
+        <HomeText k="compareDescription" />
       </p>
     </div>
   );

@@ -6,8 +6,8 @@ import { TechnologyEntryGrid } from "@/components/content/TechnologyEntryGrid";
 import { canonicalFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Technology",
-  description: "How the mechanisms behind current pod and disposable devices actually work — mesh coils, multi-resistance cartridges, chip platforms, and control systems.",
+  title: "เทคโนโลยีพอต: คอยล์ mesh ชิป และจอทัชสกรีน",
+  description: "คอยล์ mesh ต่างจากคอยล์ลวดตรงไหน หัวพอตทรงเดียวรองรับหลายโอห์มได้ยังไง ชิปในเครื่องวัตต์สูงทำอะไร จอทัชสกรีนและการควบคุมด้วยท่าทาง อธิบายแบบเข้าใจง่าย",
   ...canonicalFor("/technology"),
 };
 

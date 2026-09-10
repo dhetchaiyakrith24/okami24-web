@@ -45,6 +45,8 @@ import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approv
 import { buildImageDisplayMap } from "@/lib/media-quality";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import type { Product } from "@/types/catalog";
+import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
+import { productTitleTh } from "@/i18n/search-titles";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
  *  product-level card, the neutral variant fallback, and each variant's own photo. The variant
@@ -90,16 +92,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const path = `/products/${slug}`;
   const category = getCategory(slug);
-  if (category) return { title: category.name, description: category.description, ...canonicalFor(path) };
+  // Round 30.3ข: the "English / ไทย" label and Thai lede the Thai page shows (CategoryPageHeader).
+  if (category) return { title: category.labelTh, description: category.descriptionTh, ...canonicalFor(path) };
 
   const product = getProduct(slug);
   if (product) {
     const cardImage = product.assets.find((a) => a.role === "card");
+    // Round 30.3ข (owner, 2026-09-11): search-facing text is Thai. The <title> is the model name
+    // (English, THAI_STYLE layer 1) plus the locked category word — i18n/search-titles.ts — and
+    // the meta description is the Thai shortDescription the page already shows under the English
+    // one (ProductHero); English stays the fallback for a product with no Thai copy.
+    const title = productTitleTh(product.displayName, product.categoryId);
+    const description = PRODUCT_COPY_TH[product.slug]?.shortDescription ?? product.shortDescription;
     return {
-      title: product.displayName,
-      description: product.shortDescription,
+      title,
+      description,
       ...canonicalFor(path),
-      ...(cardImage ? openGraphWithImage({ title: product.displayName, description: product.shortDescription, path, image: cardImage }) : {}),
+      ...(cardImage ? openGraphWithImage({ title, description, path, image: cardImage }) : {}),
     };
   }
 
@@ -107,11 +116,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // model.ts's toView()) — never fabricated, same rule as the legacy branch above.
   const publishedProduct = getPublishedProduct(slug);
   if (publishedProduct) {
+    // Same title template as the legacy branch; the tagline (the Thai source line) is the meta.
+    const title = productTitleTh(publishedProduct.displayName, publishedProduct.categoryId);
     return {
-      title: publishedProduct.displayName,
+      title,
       description: publishedProduct.tagline,
       ...canonicalFor(path),
-      ...(publishedProduct.image ? openGraphWithImage({ title: publishedProduct.displayName, description: publishedProduct.tagline ?? undefined, path, image: publishedProduct.image }) : {}),
+      ...(publishedProduct.image ? openGraphWithImage({ title, description: publishedProduct.tagline ?? undefined, path, image: publishedProduct.image }) : {}),
     };
   }
   const pilotProduct = getPilotProduct(slug);

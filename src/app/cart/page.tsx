@@ -6,8 +6,8 @@ import { redirect } from "next/navigation";
 import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
 
 export const metadata: Metadata = {
-  title: "Cart",
-  description: "Your OKami24 cart.",
+  title: "ตะกร้าสินค้า",
+  description: "ตะกร้าสินค้า — OKami24",
   ...canonicalFor("/cart"),
   ...NOINDEX_FOLLOW,
 };

@@ -18,7 +18,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const guide = getGuide(slug);
   if (!guide) return {};
-  return { title: guide.title, description: guide.dek, ...canonicalFor(`/guides/${slug}`) };
+  // Round 30.3ข (owner, 2026-09-11): <title>/meta are one server-side string — what a crawler
+  // reads is the Thai HTML (DEFAULT_LOCALE), so search-facing text is Thai. The Thai title/dek the
+  // page already shows as its H1 (GuideDetailPageHeader) is reused here; English stays the
+  // fallback for a guide with no Thai copy.
+  const th = GUIDES_COPY_TH[guide.id];
+  return { title: th?.title ?? guide.title, description: th?.dek ?? guide.dek, ...canonicalFor(`/guides/${slug}`) };
 }
 
 export default async function GuideDetailPage({ params }: { params: Promise<{ slug: string }> }) {

@@ -1,7 +1,9 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import type { Product } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { ProductRail } from "@/components/catalog/ProductRail";
+import { HomeText } from "@/components/home/HomeCopy";
 
 export function ProductRailSection({
   eyebrow,
@@ -11,8 +13,9 @@ export function ProductRailSection({
   products,
 }: {
   eyebrow: string;
-  title: string;
-  description?: string;
+  /** ReactNode since round 30.3ข so the page can pass <HomeText> (the visitor's language). */
+  title: ReactNode;
+  description?: ReactNode;
   viewAllHref: string;
   products: Product[];
 }) {
@@ -28,7 +31,7 @@ export function ProductRailSection({
             {description && <p className="max-w-xl text-base text-foreground-muted">{description}</p>}
           </div>
           <Link href={viewAllHref} className="label-mono shrink-0 text-xs text-foreground-muted hover:text-ember">
-            View all →
+            <HomeText k="viewAll" />
           </Link>
         </div>
       </Container>

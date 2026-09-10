@@ -9,8 +9,8 @@ import { canonicalFor } from "@/lib/seo";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 
 export const metadata: Metadata = {
-  title: "FAQ",
-  description: "Answers about ordering from OKami24, how the catalog, comparison tool, and finder work.",
+  title: "คำถามที่พบบ่อย",
+  description: "สั่งซื้อยังไง สเปกสินค้ามาจากไหน พอตซิสเต็มกับพอตใช้แล้วทิ้งต่างกันตรงไหน นิโคติน 30mg หมายถึงอะไร ถ้ายังไม่เจอคำตอบ ทัก LINE @okm24",
   ...canonicalFor("/faq"),
 };
 

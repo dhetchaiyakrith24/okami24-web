@@ -11,7 +11,8 @@ export function SectionHeading({
 }: {
   eyebrow?: string;
   title: ReactNode;
-  description?: string;
+  /** ReactNode since round 30.3ข — the homepage passes <HomeText> here. */
+  description?: ReactNode;
   align?: "left" | "center";
   className?: string;
   titleClassName?: string;

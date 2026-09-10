@@ -7,7 +7,7 @@ import { canonicalFor } from "@/lib/seo";
 import { brandsWithProducts } from "@/lib/brand-visibility";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "เกี่ยวกับเรา",
   description: "OKami24 คือใคร ทำไมของแท้ ราคาตรง และบริการจริงถึงเป็นหัวใจของร้าน พร้อมนโยบายเคลมสินค้าและช่องทางติดต่อ",
   ...canonicalFor("/about"),
 };

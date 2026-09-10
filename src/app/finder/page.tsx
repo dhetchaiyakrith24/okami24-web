@@ -5,8 +5,8 @@ import { FinderPageHeader } from "@/components/tools/FinderPageHeader";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Product Finder",
-  description: "Answer six quick questions and get matched to real catalog products, with an explanation of why each one fits.",
+  title: "ตัวช่วยเลือกสินค้า",
+  description: "ตอบ 6 คำถามสั้น ๆ ระบบจะเลือกรุ่นที่ตรงกับคุณจากสินค้าจริงในร้าน พร้อมบอกเหตุผลว่าทำไมถึงเหมาะ",
   // noindex — a personalized quiz tool whose output depends on the visitor's answers; the tool
   // shell itself has no unique static content to rank on.
   ...canonicalFor("/finder"),
