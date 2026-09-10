@@ -9,6 +9,7 @@ import {
   ELiquidFamilyDisclaimer,
 } from "@/components/content/ELiquidFamilyPageHeader";
 import { canonicalFor } from "@/lib/seo";
+import { FLAVOR_COPY_TH } from "@/i18n/flavor-copy";
 
 export function generateStaticParams() {
   return flavorFamilies.map((f) => ({ family: f.slug }));
@@ -18,7 +19,10 @@ export async function generateMetadata({ params }: { params: Promise<{ family: s
   const { family: familySlug } = await params;
   const family = getFlavorFamily(familySlug);
   if (!family) return {};
-  return { title: family.name, description: family.description, ...canonicalFor(`/e-liquid/${familySlug}`) };
+  // Round 30.3ข: search-facing text is Thai (see guides/[slug]/page.tsx) — the same Thai name/
+  // description the page shows as its H1 and lede, English as the fallback.
+  const th = FLAVOR_COPY_TH[family.id];
+  return { title: th?.name ?? family.name, description: th?.description ?? family.description, ...canonicalFor(`/e-liquid/${familySlug}`) };
 }
 
 export default async function FlavorFamilyPage({ params }: { params: Promise<{ family: string }> }) {

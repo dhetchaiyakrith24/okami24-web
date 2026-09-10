@@ -6,8 +6,8 @@ import { GuideCard } from "@/components/content/GuideCard";
 import { canonicalFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Guides",
-  description: "Practical buying guidance and how-it-works explainers — not marketing copy.",
+  title: "คู่มือเลือกและดูแลพอต",
+  description: "เลือกพอตเครื่องแรก พอตซิสเต็มกับพอตใช้แล้วทิ้งต่างกันตรงไหน MTL กับ DTL คืออะไร อ่านสเปกยังไง ดูแลคอยล์และแบตยังไง ข้อมูลจริง ไม่ใช่โฆษณา",
   ...canonicalFor("/guides"),
 };
 

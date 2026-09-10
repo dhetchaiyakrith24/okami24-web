@@ -18,7 +18,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const entry = getTechnologyEntry(slug);
   if (!entry) return {};
-  return { title: entry.name, description: entry.summary, ...canonicalFor(`/technology/${slug}`) };
+  // Round 30.3ข: search-facing text is Thai (see guides/[slug]/page.tsx) — the same Thai name/
+  // summary the page shows as its H1 and lede, English as the fallback.
+  const th = TECHNOLOGY_COPY_TH[entry.id];
+  return { title: th?.name ?? entry.name, description: th?.summary ?? entry.summary, ...canonicalFor(`/technology/${slug}`) };
 }
 
 export default async function TechnologyDetailPage({ params }: { params: Promise<{ slug: string }> }) {

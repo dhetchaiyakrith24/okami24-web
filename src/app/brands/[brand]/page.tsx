@@ -10,6 +10,7 @@ import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSec
 import { BrandPageMeta } from "@/components/catalog/BrandPageMeta";
 import { BrandPageHeader } from "@/components/catalog/BrandPageHeader";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
+import { brandTitleTh } from "@/i18n/search-titles";
 
 export function generateStaticParams() {
   return brands.map((b) => ({ brand: b.slug }));
@@ -24,9 +25,12 @@ export async function generateMetadata({ params }: { params: Promise<{ brand: st
   // primary navigation either — see brand-visibility.ts. Re-evaluates automatically as soon as the
   // brand gets a real product; never a permanent exclusion.
   const isEmpty = getProductsByBrand(brand.id).length === 0 && getPublishedProductsByBrand(brand.id).length === 0;
+  // Round 30.3ข: search-facing text is Thai (see i18n/search-titles.ts). A brand with nothing on
+  // the storefront keeps its plain English title/description — the page is noindex anyway and
+  // "ของแท้ทุกรุ่นที่ร้านมี" would be an empty promise there.
   return {
-    title: brand.name,
-    description: brand.description,
+    title: isEmpty ? brand.name : brandTitleTh(brand.name),
+    description: brand.descriptionTh ?? brand.description,
     ...canonicalFor(`/brands/${brandSlug}`),
     ...(isEmpty ? NOINDEX_FOLLOW : {}),
   };

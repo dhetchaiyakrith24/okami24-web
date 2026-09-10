@@ -7,8 +7,8 @@ import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 import { ORDERING_ENABLED, ORDERING_PAUSED_REDIRECT } from "@/lib/commerce/ordering-mode";
 
 export const metadata: Metadata = {
-  title: "Checkout",
-  description: "Checkout — OKami24.",
+  title: "ชำระเงิน",
+  description: "ชำระเงิน — OKami24",
   ...canonicalFor("/checkout"),
   ...NOINDEX_FOLLOW,
 };

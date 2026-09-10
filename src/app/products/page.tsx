@@ -10,8 +10,8 @@ import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { LineOrderingNotice } from "@/components/commerce/LineOrderingNotice";
 
 export const metadata: Metadata = {
-  title: "All Products",
-  description: "Every product in the OKami24 catalog — pod systems, pod kits, disposables, pods, cartridges, coils, and more.",
+  title: "รวมพอต น้ำยา และ IQOS ของแท้ทุกรุ่น",
+  description: "สินค้าทั้งหมดในหน้าเดียว พอตทุกแบบ หัวพอต คอยล์ น้ำยา และ IQOS ของแท้ทุกชิ้น กรองตามแบรนด์หรือค้นด้วยชื่อรุ่นได้ สั่งซื้อและสอบถามทาง LINE @okm24",
   ...canonicalFor("/products"),
 };
 

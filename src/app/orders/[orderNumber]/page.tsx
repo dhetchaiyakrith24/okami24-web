@@ -7,8 +7,8 @@ import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 import { PAYMENT_ACCOUNT, promptpayQrPath, type PaymentAccountView } from "@/data/payment";
 
 export const metadata: Metadata = {
-  title: "Order status",
-  description: "Order status — OKami24.",
+  title: "สถานะคำสั่งซื้อ",
+  description: "สถานะคำสั่งซื้อ — OKami24",
   ...canonicalFor("/orders"),
   ...NOINDEX_FOLLOW,
 };

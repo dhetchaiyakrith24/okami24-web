@@ -5,8 +5,8 @@ import { FavoritesPageHeader } from "@/components/tools/FavoritesPageHeader";
 import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Favorites",
-  description: "Your saved products — stored locally in this browser only.",
+  title: "รายการโปรด",
+  description: "สินค้าที่คุณกดบันทึกไว้ เก็บในเบราว์เซอร์เครื่องนี้เท่านั้น ไม่ต้องสมัครสมาชิก",
   // noindex — localStorage-only; a crawler sees an always-empty, generic personalized shell.
   ...canonicalFor("/favorites"),
   ...NOINDEX_FOLLOW,
