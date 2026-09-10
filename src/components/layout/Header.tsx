@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { categories } from "@/data/categories";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { CategoryLabel } from "@/components/catalog/CategoryLabel";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 
 /** `orderingEnabled` comes from the root layout (src/lib/commerce/ordering-mode.ts — owner
@@ -68,7 +69,7 @@ export function Header({ orderingEnabled = true }: { orderingEnabled?: boolean }
               {dict.nav.products} <ChevronDown size={14} aria-hidden />
             </button>
             {productsOpen && (
-              <div className="absolute left-0 top-full w-72 rounded-xl border border-surface-border bg-surface-1 p-3 shadow-2xl">
+              <div className="absolute left-0 top-full w-88 rounded-xl border border-surface-border bg-surface-1 p-3 shadow-2xl">
                 <Link
                   href="/products"
                   className="block rounded-lg px-3 py-2 text-sm font-semibold text-foreground hover:bg-surface-2"
@@ -82,7 +83,7 @@ export function Header({ orderingEnabled = true }: { orderingEnabled?: boolean }
                     href={`/products/${c.slug}`}
                     className="block rounded-lg px-3 py-2 text-sm text-foreground-muted hover:bg-surface-2 hover:text-foreground"
                   >
-                    {categoryLabel(c)}
+                    <CategoryLabel label={categoryLabel(c)} />
                   </Link>
                 ))}
               </div>
@@ -155,7 +156,7 @@ export function Header({ orderingEnabled = true }: { orderingEnabled?: boolean }
           </Link>
           {categories.map((c) => (
             <Link key={c.id} href={`/products/${c.slug}`} className="rounded-lg px-3 py-3 text-base text-foreground-muted hover:bg-surface-2">
-              {categoryLabel(c)}
+              <CategoryLabel label={categoryLabel(c)} />
             </Link>
           ))}
           <div className="my-3 h-px bg-surface-border-soft" />
