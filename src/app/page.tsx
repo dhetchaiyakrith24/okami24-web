@@ -12,6 +12,7 @@ import { EditorialSplit } from "@/components/home/EditorialSplit";
 import { FlavorTeaser } from "@/components/home/FlavorTeaser";
 import { CompareCTA } from "@/components/home/CompareCTA";
 import { GuideTeaserGrid } from "@/components/home/GuideTeaserGrid";
+import { HomeText } from "@/components/home/HomeCopy";
 import { canonicalFor } from "@/lib/seo";
 
 // The homepage's own canonical — deliberately set HERE, not on the root layout, so it doesn't
@@ -61,43 +62,41 @@ export default function Home() {
       <BrandMarquee />
       <CategoryNav />
 
+      {/* Round 30.3ข (owner, 2026-09-11): the section copy moved into the dictionaries (`home`)
+          and is read through <HomeText> in the visitor's language — English used to be hardcoded
+          here, so the Thai homepage read Thai only down to the hero. The eyebrows stay English
+          on purpose (THAI_STYLE §5 group ก). */}
       <ProductRailSection
         eyebrow="Flagship Devices"
-        title="One flagship per brand, chosen for depth of documentation."
-        description="Every device in the catalog is real. These three get the full treatment — gallery-ready detail pages, anatomy callouts, and richer feature storytelling."
+        title={<HomeText k="flagshipTitle" />}
+        description={<HomeText k="flagshipDescription" />}
         viewAllHref="/products"
         products={flagships}
       />
 
       <EditorialSplit
         eyebrow="Technology · Control"
-        title="Fewer buttons, same control."
-        paragraphs={[
-          "UWELL's Smart Triple-Tap Control replaces a row of physical buttons with a tap gesture sensor — switching output modes without adding hardware that can wear out or let in moisture.",
-          "It's part of a broader shift across the catalog: gesture sensors, full touchscreens, and auto-adjusting chipsets are steadily replacing fixed button rows on compact pod devices.",
-        ]}
+        title={<HomeText k="controlTitle" />}
+        paragraphs={[<HomeText key="p1" k="controlP1" />, <HomeText key="p2" k="controlP2" />]}
         ctaHref="/technology/gesture-and-triple-tap-control"
-        ctaLabel="Read the technology story"
+        ctaLabel={<HomeText k="controlCta" />}
         product={flagship}
       />
 
       <ProductRailSection
         eyebrow="UWELL · Caliburn Family"
-        title="Open-System Pod Systems"
-        description="Ten generations deep, from the screen-free G4 Mini to the touchscreen-driven G4 Pro KOKO."
+        title={<HomeText k="caliburnTitle" />}
+        description={<HomeText k="caliburnDescription" />}
         viewAllHref="/products/pod-systems"
         products={caliburnFamily}
       />
 
       <EditorialSplit
         eyebrow="SALTHUB · M Bar"
-        title="A disposable built around mode control."
-        paragraphs={[
-          "The M Bar 10K trades the single fixed output of most disposables for three switchable power modes — Eco, Soft, and Boost — cycled with a double-click and shown through an RGB status indicator.",
-          "It's rechargeable over USB-C rather than single-use, positioning it between a traditional disposable and a reusable switch-style device.",
-        ]}
+        title={<HomeText k="mBarTitle" />}
+        paragraphs={[<HomeText key="p1" k="mBarP1" />, <HomeText key="p2" k="mBarP2" />]}
         ctaHref="/products/disposables"
-        ctaLabel="Browse disposables"
+        ctaLabel={<HomeText k="mBarCta" />}
         product={mBar10k}
         reverse
         tone="surface-1"
@@ -105,8 +104,8 @@ export default function Home() {
 
       <ProductRailSection
         eyebrow="VOOPOO"
-        title="Pod Kits & Pod Mods"
-        description="From the ultra-light VMATE i3 to the 220W DRAG 6 — ARGUS, DRAG, VINCI, and V series in one lineup."
+        title={<HomeText k="voopooTitle" />}
+        description={<HomeText k="voopooDescription" />}
         viewAllHref="/products/pod-kits"
         products={voopooProducts}
       />

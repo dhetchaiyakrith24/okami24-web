@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
 import { Container } from "@/components/ui/Container";
@@ -15,10 +16,11 @@ export function EditorialSplit({
   tone = "surface-0",
 }: {
   eyebrow: string;
-  title: string;
-  paragraphs: string[];
+  /** ReactNode since round 30.3ข so the page can pass <HomeText> (the visitor's language). */
+  title: ReactNode;
+  paragraphs: ReactNode[];
   ctaHref: string;
-  ctaLabel: string;
+  ctaLabel: ReactNode;
   product: Product;
   reverse?: boolean;
   tone?: "surface-0" | "surface-1";

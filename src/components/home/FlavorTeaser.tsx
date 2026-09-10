@@ -3,6 +3,7 @@ import { Citrus, Snowflake, Cookie, Coffee, Leaf } from "lucide-react";
 import { flavorFamilies } from "@/data/flavors";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { FlavorText, HomeText } from "@/components/home/HomeCopy";
 
 const ICONS = {
   fruit: Citrus,
@@ -16,11 +17,9 @@ export function FlavorTeaser() {
   return (
     <section className="border-b border-surface-border-soft bg-surface-1 py-14 lg:py-20">
       <Container className="flex flex-col gap-10">
-        <SectionHeading
-          eyebrow="E-Liquid"
-          title="Five flavor families, one editorial map."
-          description="Not a product catalog of bottled e-liquid — a character guide to what each flavor family actually tastes like, so you know what you're choosing before you buy."
-        />
+        {/* Round 30.3ข: heading, lede, family names and first notes read the visitor's language
+            (the same overlays the /e-liquid pages use); the eyebrow stays English (THAI_STYLE §5 ก). */}
+        <SectionHeading eyebrow="E-Liquid" title={<HomeText k="flavorTitle" />} description={<HomeText k="flavorDescription" />} />
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {flavorFamilies.map((family) => {
             const Icon = ICONS[family.slug];
@@ -32,8 +31,12 @@ export function FlavorTeaser() {
               >
                 <Icon size={22} className="text-steel group-hover:text-ember" aria-hidden />
                 <div>
-                  <p className="font-display text-lg font-semibold text-foreground">{family.name}</p>
-                  <p className="mt-1 line-clamp-2 text-xs text-foreground-muted">{family.characterNotes[0]}</p>
+                  <p className="font-display text-lg font-semibold text-foreground">
+                    <FlavorText id={family.id} field="name" en={family.name} />
+                  </p>
+                  <p className="mt-1 line-clamp-2 text-xs text-foreground-muted">
+                    <FlavorText id={family.id} field="firstNote" en={family.characterNotes[0]} />
+                  </p>
                 </div>
               </Link>
             );

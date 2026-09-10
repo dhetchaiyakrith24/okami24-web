@@ -54,6 +54,38 @@ export interface Dictionary {
     statFamilies: string;
     viewProduct: string;
   };
+  /** Round 30.3ข (owner, 2026-09-11): the homepage sections below the hero — every H2, the lede
+   *  under it, the two editorial paragraphs, and the section CTAs/labels — used to be English
+   *  props hardcoded in src/app/page.tsx and the home/* components, so the Thai homepage read
+   *  Thai only down to the hero. The brand/model names inside stay English (THAI_STYLE layer 1);
+   *  the uppercase eyebrows are NOT here — they stay English by owner ruling (THAI_STYLE §5 ก). */
+  home: {
+    flagshipTitle: string;
+    flagshipDescription: string;
+    controlTitle: string;
+    controlP1: string;
+    controlP2: string;
+    controlCta: string;
+    caliburnTitle: string;
+    caliburnDescription: string;
+    mBarTitle: string;
+    mBarP1: string;
+    mBarP2: string;
+    mBarCta: string;
+    voopooTitle: string;
+    voopooDescription: string;
+    flavorTitle: string;
+    flavorDescription: string;
+    compareTitle: string;
+    compareDescription: string;
+    compareCta: string;
+    guidesTitle: string;
+    guidesAll: string;
+    /** "{n} min read" on the three guide teaser cards — `{n}` is replaced with the minutes. */
+    guideReadingTime: string;
+    /** The "View all →" link beside every product rail heading. */
+    viewAll: string;
+  };
   search: {
     eyebrow: string;
     title: string;
@@ -426,5 +458,14 @@ export interface Dictionary {
   };
   languageSwitcher: {
     label: string;
+  };
+  /** Round 30.3ข: the 404 page (src/app/not-found.tsx) used to be English-only. Three ways out,
+   *  none of them the cart (ordering is on LINE — LAUNCH_AUDIT item 43). */
+  notFound: {
+    title: string;
+    body: string;
+    ctaProducts: string;
+    ctaLine: string;
+    ctaHome: string;
   };
 }

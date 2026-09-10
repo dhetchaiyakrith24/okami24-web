@@ -50,6 +50,39 @@ export const en: Dictionary = {
     statFamilies: "Families",
     viewProduct: "View →",
   },
+  // The English homepage copy exactly as it was hardcoded before round 30.3ข — moved, not rewritten.
+  home: {
+    flagshipTitle: "One flagship per brand, chosen for depth of documentation.",
+    flagshipDescription:
+      "Every device in the catalog is real. These three get the full treatment — gallery-ready detail pages, anatomy callouts, and richer feature storytelling.",
+    controlTitle: "Fewer buttons, same control.",
+    controlP1:
+      "UWELL's Smart Triple-Tap Control replaces a row of physical buttons with a tap gesture sensor — switching output modes without adding hardware that can wear out or let in moisture.",
+    controlP2:
+      "It's part of a broader shift across the catalog: gesture sensors, full touchscreens, and auto-adjusting chipsets are steadily replacing fixed button rows on compact pod devices.",
+    controlCta: "Read the technology story",
+    caliburnTitle: "Open-System Pod Systems",
+    caliburnDescription: "Ten generations deep, from the screen-free G4 Mini to the touchscreen-driven G4 Pro KOKO.",
+    mBarTitle: "A disposable built around mode control.",
+    mBarP1:
+      "The M Bar 10K trades the single fixed output of most disposables for three switchable power modes — Eco, Soft, and Boost — cycled with a double-click and shown through an RGB status indicator.",
+    mBarP2:
+      "It's rechargeable over USB-C rather than single-use, positioning it between a traditional disposable and a reusable switch-style device.",
+    mBarCta: "Browse disposables",
+    voopooTitle: "Pod Kits & Pod Mods",
+    voopooDescription: "From the ultra-light VMATE i3 to the 220W DRAG 6 — ARGUS, DRAG, VINCI, and V series in one lineup.",
+    flavorTitle: "Five flavor families, one editorial map.",
+    flavorDescription:
+      "Not a product catalog of bottled e-liquid — a character guide to what each flavor family actually tastes like, so you know what you're choosing before you buy.",
+    compareTitle: "Put up to four devices side by side.",
+    compareDescription:
+      "Only verified, shared attributes are compared — differences are highlighted, and every device gets a “best fit for” note instead of a declared winner.",
+    compareCta: "Compare devices side by side",
+    guidesTitle: "Buying guidance that isn't just marketing copy.",
+    guidesAll: "All guides →",
+    guideReadingTime: "{n} min read",
+    viewAll: "View all →",
+  },
   search: {
     eyebrow: "Search",
     title: "Find a product",
@@ -358,5 +391,12 @@ export const en: Dictionary = {
   },
   languageSwitcher: {
     label: "Language",
+  },
+  notFound: {
+    title: "Page not found",
+    body: "The page you're looking for doesn't exist, or the product may have been removed from the catalog. Browse all products, or message us on LINE if you can't find the model you want.",
+    ctaProducts: "Browse all products",
+    ctaLine: "Message @okm24 on LINE",
+    ctaHome: "Back home",
   },
 };

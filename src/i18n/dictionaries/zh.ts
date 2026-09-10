@@ -50,6 +50,33 @@ export const zh: Dictionary = {
     statFamilies: "产品系列",
     viewProduct: "查看 →",
   },
+  // Round 30.3ข: plain, meaning-for-meaning Chinese for the homepage sections (owner: en/zh only
+  // need to be accurate and non-empty). Brand and model names stay as in the English original.
+  home: {
+    flagshipTitle: "每个品牌一款旗舰，按资料完整度挑选。",
+    flagshipDescription: "目录里的每一款设备都是真实在售的。这几款做了最完整的产品页：图库、部件解析和更详细的功能介绍。",
+    controlTitle: "按键更少，控制不变。",
+    controlP1: "UWELL 的 Smart Triple-Tap Control 用轻触感应器取代了一排实体按键——切换输出模式时不用增加会磨损或进潮的硬件。",
+    controlP2: "这是整个目录的共同趋势：触控感应、全触摸屏和自动调节芯片正逐步取代小型烟弹设备上的固定按键。",
+    controlCta: "阅读这项技术的故事",
+    caliburnTitle: "开放式烟弹系统",
+    caliburnDescription: "十款同堂：从没有屏幕的 G4 Mini 到触摸屏操作的 G4 Pro KOKO。",
+    mBarTitle: "一款围绕模式切换设计的一次性烟具。",
+    mBarP1: "M Bar 10K 不像多数一次性烟具只有单一固定输出，而是提供 Eco、Soft、Boost 三种可切换的功率模式——双击切换，并通过 RGB 指示灯显示。",
+    mBarP2: "它支持 USB-C 充电而非用完即弃，介于传统一次性烟具与可重复使用的换弹式设备之间。",
+    mBarCta: "浏览一次性烟具",
+    voopooTitle: "Pod Kit 与 Pod Mod",
+    voopooDescription: "从超轻的 VMATE i3 到 220W 的 DRAG 6——ARGUS、DRAG、VINCI 与 V 系列尽在一处。",
+    flavorTitle: "五大口味家族，一份口味指南。",
+    flavorDescription: "这不是瓶装烟油的产品目录，而是一份口味指南：告诉你每个口味家族实际尝起来是什么样，让你在购买前就知道自己在选什么。",
+    compareTitle: "最多四款设备并排对比。",
+    compareDescription: "只对比经过核实且各款共有的参数——差异会高亮显示，每款设备都会给出“适合谁”的说明，而不是宣布谁胜出。",
+    compareCta: "并排对比设备",
+    guidesTitle: "不只是营销文案的选购指南。",
+    guidesAll: "全部指南 →",
+    guideReadingTime: "阅读约 {n} 分钟",
+    viewAll: "查看全部 →",
+  },
   search: {
     eyebrow: "搜索",
     title: "查找产品",
@@ -356,5 +383,12 @@ export const zh: Dictionary = {
   },
   languageSwitcher: {
     label: "语言",
+  },
+  notFound: {
+    title: "找不到此页面",
+    body: "你打开的页面不存在，或该产品已从网站下架。可以浏览全部产品；找不到想要的型号，也可以在 LINE 上问我们。",
+    ctaProducts: "浏览全部产品",
+    ctaLine: "LINE 联系 @okm24",
+    ctaHome: "返回首页",
   },
 };
