@@ -20,8 +20,12 @@ export function formatWattage(min?: number, max?: number): string {
   return min && min !== max ? `${min}–${max}W` : `${max}W`;
 }
 
-export function formatPuffs(count?: number): string {
-  return count ? `${count.toLocaleString()} puffs` : "—";
+// The unit is the caller's, from `dict.catalog.puffUnit` (round 30.2, docs/THAI_STYLE.md §3):
+// Thai copy says "พัฟ", English "puffs", Chinese "口". The English default only exists so a
+// caller with no dictionary in reach still renders something honest — see <PuffCount> for the
+// server-component case. The thousands separator stays: "10,000" reads better than "10000".
+export function formatPuffs(count?: number, unit = "puffs"): string {
+  return count ? `${count.toLocaleString()} ${unit}` : "—";
 }
 
 export function brandName(brandId: string): string {

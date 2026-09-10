@@ -95,7 +95,7 @@ export function ProductHero({
   const stats = [
     { label: dict.product.statBattery, value: formatBattery(product.attributes.batteryMah) },
     { label: dict.product.statOutput, value: formatWattage(product.attributes.wattageMin, product.attributes.wattageMax) },
-    product.attributes.puffCount ? { label: dict.product.statRatedPuffs, value: formatPuffs(product.attributes.puffCount) } : null,
+    product.attributes.puffCount ? { label: dict.product.statRatedPuffs, value: formatPuffs(product.attributes.puffCount, dict.catalog.puffUnit) } : null,
     product.attributes.capacityMl ? { label: dict.product.statCapacity, value: `${product.attributes.capacityMl}mL` } : null,
   ].filter((s): s is { label: string; value: string } => Boolean(s) && s!.value !== "—");
 

@@ -70,7 +70,7 @@ function classificationRows(items: CatalogItem[], dict: Dictionary): Row[] {
     { label: t.rowOptions, values: items.map((p) => (p.variantLabels.length > 0 ? p.variantLabels.join(", ") : EM_DASH)) },
     { label: t.rowBattery, values: items.map((p) => (p.attributes ? formatBattery(p.attributes.batteryMah) : EM_DASH)) },
     { label: t.rowOutput, values: items.map((p) => (p.attributes ? formatWattage(p.attributes.wattageMin, p.attributes.wattageMax) : EM_DASH)) },
-    { label: t.rowRatedPuffs, values: items.map((p) => (p.attributes ? formatPuffs(p.attributes.puffCount) : EM_DASH)) },
+    { label: t.rowRatedPuffs, values: items.map((p) => (p.attributes ? formatPuffs(p.attributes.puffCount, dict.catalog.puffUnit) : EM_DASH)) },
     { label: t.rowCapacity, values: items.map((p) => (p.attributes?.capacityMl ? `${p.attributes.capacityMl}mL` : EM_DASH)) },
     { label: t.rowScreen, values: items.map((p) => screenLabel(p, dict)) },
     { label: t.rowDrawStyle, values: items.map((p) => p.attributes?.drawStyle ?? EM_DASH) },
