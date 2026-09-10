@@ -458,8 +458,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // = coil vs "พอตเปล่า" = empty pod) on purpose: these are two genuinely different real products
   // that must never read as a duplicate listing. See TAXONOMY_MATCHES["Coil-55"] for the evidence.
   "Coil-55": {
-    tagline: "พอตเปล่า Caliburn G2 จากแบรนด์ UWELL",
-    shortDescription: "พอตเปล่ารุ่น Caliburn G2 (บรรจุ 2 ชิ้น) เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL แยกชิ้นจากคอยล์",
+    tagline: "หัวพอตเปล่า Caliburn G2 จากแบรนด์ UWELL",
+    shortDescription: "หัวพอตเปล่ารุ่น Caliburn G2 (บรรจุ 2 ชิ้น) เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL แยกชิ้นจากคอยล์",
   },
   // Phase 2.8 correction — was worded as a coil ("คอยล์"); official VOOPOO evidence (matching
   // active variant colors) identifies this as the PnP X cartridge, not a coil. See
@@ -472,14 +472,14 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // evidence describes the Caliburn X as a 3ml refillable pod. See
   // TAXONOMY_MATCHES["Coil-74"] for the evidence.
   "Coil-74": {
-    tagline: "พอต Caliburn X จากแบรนด์ UWELL",
-    shortDescription: "พอตรุ่น Caliburn X เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
+    tagline: "หัวพอตเปล่า Caliburn X จากแบรนด์ UWELL",
+    shortDescription: "หัวพอตเปล่ารุ่น Caliburn X เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
   },
   // Phase 2.8 correction — was worded as a coil; the Shipnity name itself says "Pod", and
   // VOOPOO documents TPP Pod separately from TPP coils. See TAXONOMY_MATCHES["Coil-87"].
   "Coil-87": {
-    tagline: "พอต Voopoo TPP Pod",
-    shortDescription: "พอตรุ่น TPP Pod จากแบรนด์ VOOPOO",
+    tagline: "หัวพอตเปล่า Voopoo TPP Pod",
+    shortDescription: "หัวพอตเปล่ารุ่น TPP Pod จากแบรนด์ VOOPOO",
   },
   "Coil-92": {
     tagline: "คอยล์ Voopoo PnP X",
@@ -502,12 +502,12 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "คอยล์รุ่น Argus Pod เป็นผลิตภัณฑ์ในกลุ่ม ARGUS จากแบรนด์ VOOPOO",
   },
   "Coil-72": {
-    tagline: "คอยล์ Vmate Infinity Edition จากแบรนด์ VOOPOO",
-    shortDescription: "คอยล์รุ่น Vmate Infinity Edition เป็นผลิตภัณฑ์ในกลุ่ม VMATE จากแบรนด์ VOOPOO",
+    tagline: "หัวพอต Vmate Infinity Edition จากแบรนด์ VOOPOO",
+    shortDescription: "หัวพอตรุ่น Vmate Infinity Edition จากแบรนด์ VOOPOO สำหรับเครื่อง VMATE คอยล์ในตัว มี 4 แบบ เติมข้าง 0.7 กับ 1.2 โอห์ม และเติมบน (Top Fill) 0.4 กับ 0.7 โอห์ม",
   },
   "Coil-83": {
-    tagline: "คอยล์ Argus P1 จากแบรนด์ VOOPOO",
-    shortDescription: "คอยล์รุ่น Argus P1 เป็นผลิตภัณฑ์ในกลุ่ม ARGUS จากแบรนด์ VOOPOO",
+    tagline: "หัวพอตเปล่า Argus P1 จากแบรนด์ VOOPOO",
+    shortDescription: "หัวพอตเปล่ารุ่น Argus P1 จากแบรนด์ VOOPOO ไม่มีคอยล์ในกล่อง ต้องใช้คู่กับคอยล์ ITO ใช้ได้กับ Argus Pod, Argus P1, Argus Z, Argus G และ Argus A",
   },
   // Correction (this session) — was worded as a bare coil ("คอยล์"); real Giant Vapes evidence
   // (exact 0.4Ω/0.6Ω/0.9Ω/1.2Ω match + retail box reading "INTEGRATED COIL CARTRIDGE") identifies
@@ -536,8 +536,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "คอยล์รุ่น Dotmod Aio V2 จากแบรนด์ DOTMOD",
   },
   "Coil-89": {
-    tagline: "คอยล์ Jellybox V จากแบรนด์ RINCOE",
-    shortDescription: "คอยล์รุ่น Jellybox V จากแบรนด์ RINCOE",
+    tagline: "หัวพอต Jellybox V จากแบรนด์ RINCOE",
+    shortDescription: "หัวพอตรุ่น Jellybox V จากแบรนด์ RINCOE คอยล์ในตัว มีให้เลือก 0.8 และ 1.0 โอห์ม ใช้ได้กับ Jellybox V1, V2 และ V3",
   },
   // Third Phase 3.5 wave — same template, extended with two more real, established Thai vape-
   // retail type-words: "ชุดอุปกรณ์" (device kit, for a pod-kit systemType) and "พอตใช้แล้วทิ้ง"
