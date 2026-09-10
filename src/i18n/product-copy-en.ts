@@ -10,17 +10,36 @@
  * Chinese too (there is no Chinese product copy anywhere on the site). A slug with no entry keeps
  * showing the Thai line — exactly what every visitor saw before this file existed.
  *
- * Deliberately empty at wiring time (owner decision 2026-09-10): the 18 English lines are writing
- * work and go to round 30.3 part ข with the rest of the title/meta copy, one owner-approval batch
- * at a time. Same rule as the Thai file when they land — translation of the existing line only,
- * no new claims, specs or numbers.
+ * Wired empty on 2026-09-10 (owner decision) and filled in round 30.3ข (owner-approved table,
+ * 2026-09-11): a straight translation of the Thai line only — no new claims, specs or numbers.
+ * "จากแบรนด์ X" → "by X" throughout; "หัวพอต" → "pod" (every one of these is a refillable pod, so
+ * none qualifies as "cartridge"); a model name that already contains "Pod" is not doubled.
  */
 
 export interface ProductCopyEn {
   tagline: string;
 }
 
-export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {};
+export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
+  "coil-1": { tagline: "Vinci coil by VOOPOO" },
+  "coil-38": { tagline: "TPP coil by VOOPOO" },
+  "coil-53": { tagline: "Caliburn G coil (1.0Ω) by UWELL, works with Caliburn G2" },
+  "coil-55": { tagline: "Caliburn G2 empty pod by UWELL" },
+  "coil-56": { tagline: "Voopoo PnP-X pod" },
+  "coil-68": { tagline: "ITO-X pod by VOOPOO" },
+  "coil-70": { tagline: "Dotmod Aio V2 coil by DOTMOD" },
+  "coil-72": { tagline: "Vmate Infinity Edition pod by VOOPOO" },
+  "coil-74": { tagline: "Caliburn X empty pod by UWELL" },
+  "coil-83": { tagline: "Argus P1 empty pod by VOOPOO" },
+  "coil-87": { tagline: "Voopoo TPP Pod (empty pod)" },
+  "coil-89": { tagline: "Jellybox V pod by RINCOE" },
+  "coil-94": { tagline: "Caliburn G4&G3 Series pod by UWELL" },
+  "iqosheet-16": { tagline: "IQOS ILUMA i PRIME heated tobacco device" },
+  "iqosheet-18": { tagline: "IQOS ILUMA i heated tobacco device" },
+  "pod-159": { tagline: "Esko Bar Switch 20k kit by ESKO BAR" },
+  "pod-180": { tagline: "Nexbar 18K disposable by WOTOFO" },
+  "coil-54": { tagline: "Feelin Mini pod by NEVOKS" },
+};
 
 /** The tagline a non-Thai visitor should read for a ProductMaster product: the English overlay
  *  when one exists, otherwise the Thai source line (never blank, never a machine translation). */
