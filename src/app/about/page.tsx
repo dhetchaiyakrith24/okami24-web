@@ -20,14 +20,14 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="ของแท้ ราคาตรง บริการจริง"
-        description="การบริการที่ดี คือสิ่งที่ OKami24 มีให้คุณ — ร้านอุปกรณ์พอดซิสเต็ม ดิสโพส และน้ำยา คัดสรรจากคนที่เข้าใจสินค้าจริง"
+        description="การบริการที่ดี คือสิ่งที่ OKami24 มีให้คุณ — ร้านอุปกรณ์พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา คัดสรรจากคนที่เข้าใจสินค้าจริง"
       />
       <Container className="max-w-2xl py-12 lg:py-16">
         <div className="flex flex-col gap-10">
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">OKami24 คือใคร</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              OKami24 (ชื่อย่อ OKM) คัดสรรอุปกรณ์พอดซิสเต็ม ดิสโพส และน้ำยาของแท้จากแบรนด์ที่เรามั่นใจ พร้อมตั้งราคาให้ตรงไปตรงมา
+              OKami24 (ชื่อย่อ OKM) คัดสรรอุปกรณ์พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยาของแท้จากแบรนด์ที่เรามั่นใจ พร้อมตั้งราคาให้ตรงไปตรงมา
               ไม่ปั่นราคา และดูแลลูกค้าด้วยบริการที่ตอบกลับจริง ไม่ใช่แค่ระบบอัตโนมัติ
             </p>
           </section>
@@ -35,7 +35,7 @@ export default function AboutPage() {
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">สินค้าที่เราคัดสรร</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              เว็บไซต์นี้รวบรวมอุปกรณ์พอดซิสเต็ม พอดคิท ดิสโพส และคาร์ทริดจ์จาก {brands.length} แบรนด์ที่เราคัดมา — UWELL, VOOPOO, SALTHUB และอื่น ๆ
+              เว็บไซต์นี้รวบรวมอุปกรณ์พอตซิสเต็ม พอตคิท พอตใช้แล้วทิ้ง และคาร์ทริดจ์จาก {brands.length} แบรนด์ที่เราคัดมา — UWELL, VOOPOO, SALTHUB และอื่น ๆ
               พร้อมเครื่องมือเปรียบเทียบและ Product Finder ที่ช่วยหาสินค้าที่เหมาะกับคุณ ทุกสเปกถูกวิจัยจากหน้าทางการของแบรนด์
               และติดป้าย <span className="text-verified">verified</span> หรือ{" "}
               <span className="text-unverified">unverified</span> กำกับไว้เสมอ — ข้อมูลที่ยืนยันไม่ได้จะถูกระบุไว้ตรงๆ

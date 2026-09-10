@@ -4,7 +4,8 @@ import { ProductMedia } from "@/components/visual/ProductMedia";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { OptionCountBadge } from "@/components/catalog/OptionCountBadge";
 import { Badge } from "@/components/ui/Badge";
-import { brandName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
+import { PuffCount } from "@/components/catalog/PuffCount";
+import { brandName, formatBattery, formatWattage } from "@/lib/utils";
 import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
 
 /**
@@ -18,8 +19,10 @@ import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approv
  * At `lg` and above every class that was here before is still here, untouched.
  */
 export function ProductCard({ product }: { product: Product }) {
+  // A puff count carries a translated unit, so it renders through the client-side <PuffCount>;
+  // battery is "1600mAh" in every language and stays a plain string (round 30.2).
   const primaryStat = product.attributes.puffCount
-    ? formatPuffs(product.attributes.puffCount)
+    ? <PuffCount count={product.attributes.puffCount} />
     : formatBattery(product.attributes.batteryMah);
   const secondaryStat = formatWattage(product.attributes.wattageMin, product.attributes.wattageMax);
   const sellingPrice = getLegacyApprovedPrice(product.slug);

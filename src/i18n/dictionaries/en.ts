@@ -31,7 +31,7 @@ export const en: Dictionary = {
     // translation of compliance copy without owner review isn't a "UI label" this phase is meant
     // to localize — see the Phase 3.2 report §TRANSLATED SURFACES.
     tagline:
-      "OKami24 — ของแท้ ราคาตรง บริการจริง อุปกรณ์พอด ดิสโพส และน้ำยา คัดสรรจากผู้ขายที่เข้าใจสินค้าจริง พร้อมบริการหลังการขายที่ดูแลคุณต่อ",
+      "OKami24 — ของแท้ ราคาตรง บริการจริง อุปกรณ์พอต ใช้แล้วทิ้ง และน้ำยา คัดสรรจากผู้ขายที่เข้าใจสินค้าจริง พร้อมบริการหลังการขายที่ดูแลคุณต่อ",
     shop: "Shop",
     learn: "Learn",
     tools: "Tools",
@@ -66,6 +66,7 @@ export const en: Dictionary = {
     eyebrow: "Catalog",
     lineOrderingNotice: "Ordering on LINE is faster right now — message @okm24.",
     lineOrderingCta: "Message @okm24",
+    puffUnit: "puffs",
     emptyStateNote: "No products are catalogued in this category yet — check back as the catalog grows.",
     searchLabel: "Search",
     searchPlaceholder: "Search this catalog…",
