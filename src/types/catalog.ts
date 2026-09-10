@@ -28,6 +28,10 @@ export interface Brand {
   fullName: string;
   tagline: string;
   description: string;
+  /** Round 30.3ข: Thai lede under the brand-page H1 and the meta description a crawler reads.
+   *  Only brands with a real product on the storefront carry one (the empty brand pages are
+   *  noindex); `description` stays the English fallback. `tagline` (the eyebrow) stays English. */
+  descriptionTh?: string;
   founded?: string;
   homeMarket?: string;
   referenceUrl: string;
@@ -39,6 +43,15 @@ export interface Category {
   name: string;
   shortName: string;
   description: string;
+  /** Round 30.3ข (THAI_STYLE §2 layer 2, owner 2026-09-11): the "English / ไทย" label a Thai
+   *  visitor sees as the category page H1, in the header's product menus, and as the page
+   *  <title>. `name` stays the English label for the other locales; `shortName` (footer, home
+   *  category grid, breadcrumbs, compare rows) stays English everywhere — owner ruling, the boxes
+   *  are too narrow for two languages and the footer sits on every desktop page. */
+  labelTh: string;
+  /** Thai lede under the H1 and the meta description a crawler reads — `description` stays the
+   *  English one for the other locales. */
+  descriptionTh: string;
   systemTypes: SystemType[];
 }
 

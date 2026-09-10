@@ -9,6 +9,8 @@ export const brands: Brand[] = [
     tagline: "Engineering flavor, one pod at a time.",
     description:
       "A device manufacturer best known for the Caliburn open-system pod family — compact, refillable pod devices built around interchangeable coil pods, adjustable airflow, and increasingly capable onboard displays across successive generations.",
+    descriptionTh:
+      "UWELL ผู้ผลิตพอตซิสเต็มตระกูล Caliburn ที่ร้านมีตั้งแต่ G3 Pro ถึง G5 พร้อมหัวพอตและคอยล์แท้ของ Caliburn สำหรับเปลี่ยน",
     referenceUrl: "https://www.myuwell.com/",
   },
   {
@@ -19,6 +21,8 @@ export const brands: Brand[] = [
     tagline: "Spark your life.",
     description:
       "A device manufacturer spanning four current product series — ARGUS, DRAG, VINCI, and V — ranging from compact beginner pod kits to high-output, chip-driven pod mods with GENE-series firmware and swappable resistance pod platforms.",
+    descriptionTh:
+      "VOOPOO ผู้ผลิตพอตคิทสาย ARGUS DRAG VINCI และ VMATE ตั้งแต่รุ่นเล็กสำหรับมือใหม่ไปจนถึง DRAG 6 ที่ให้ได้ถึง 220 วัตต์ ที่ร้านมีทั้งตัวเครื่อง หัวพอต และคอยล์แท้",
     referenceUrl: "https://www.voopoo.com/",
   },
   {
@@ -29,6 +33,8 @@ export const brands: Brand[] = [
     tagline: "The M Bar and M Switch ecosystem.",
     description:
       "A disposable- and switch-pod-focused brand built around the M Bar disposable line and the M Switch / Zero reusable cartridge platforms, emphasizing high puff counts, multi-mode airflow, and cartridge-based refill systems.",
+    descriptionTh:
+      "SALTHUB เจ้าของ M Bar พอตใช้แล้วทิ้งรุ่น 9K 10K และ 15K กับเครื่องระบบสวิตช์ M Switch และ Zero ที่เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา มีครบทั้งเครื่องและหัวพอต",
     referenceUrl: "https://www.salthub.com/",
   },
   {
@@ -39,6 +45,8 @@ export const brands: Brand[] = [
     tagline: "Pod systems and vape hardware.",
     description:
       "A vape hardware manufacturer best known for the Jellybox pod-system line, offering interchangeable mesh-coil pods across multiple device generations (Jellybox V, Jellybox Nano, and related kits).",
+    descriptionTh:
+      "RINCOE ผู้ผลิตพอตตระกูล Jellybox ที่ร้านตอนนี้มีหัวพอตแท้สำหรับ Jellybox V",
     referenceUrl: "https://rincoe-store.com/",
   },
   {
@@ -49,6 +57,8 @@ export const brands: Brand[] = [
     tagline: "Power Meets Portability.",
     description:
       "A vaping device manufacturer, active since 2013, known for the dotAIO all-in-one pod line and its dotCoils replacement-coil platform, alongside dotPod systems and both regulated and mechanical box mods.",
+    descriptionTh:
+      "DOTMOD ผู้ผลิต dotAIO และคอยล์ dotCoils ที่ร้านตอนนี้มีคอยล์แท้สำหรับ dotAIO V2",
     founded: "2013",
     referenceUrl: "https://dotmod.com/",
   },
@@ -60,6 +70,8 @@ export const brands: Brand[] = [
     tagline: "Enjoy the vibe.",
     description:
       "A disposable-vape brand offering both single-use ESKO BAR Disposable devices and the ESKO BAR SWITCH reusable pod system.",
+    descriptionTh:
+      "ESKO BAR แบรนด์พอตใช้แล้วทิ้งและเครื่องระบบสวิตช์ ที่ร้านมี Esko Bar Switch 20K เครื่องที่เปลี่ยนแค่หัวพอตบรรจุสำเร็จ ไม่ต้องเติมน้ำยา",
     referenceUrl: "https://eskobarvape.com/",
   },
   {
@@ -100,6 +112,8 @@ export const brands: Brand[] = [
     tagline: "Enjoy This Moment.",
     description:
       "A vaping device manufacturer known for the FEELIN pod-system series (Feelin Mini, Feelin C1, and related kits) alongside disposables and platform accessories.",
+    descriptionTh:
+      "NEVOKS ผู้ผลิตพอตซิสเต็มตระกูล FEELIN ที่ร้านตอนนี้มีหัวพอตเปล่าสำหรับ Feelin Mini",
     referenceUrl: "https://nevoks.com/",
   },
   {
@@ -120,6 +134,8 @@ export const brands: Brand[] = [
     tagline: "Made by Vapers.",
     description:
       "A vape hardware manufacturer known for its atomizer lineup (RDAs/RTAs/RDTAs) and, more recently, the nexBAR disposable-vape series spanning multiple puff-count tiers.",
+    descriptionTh:
+      "WOTOFO แบรนด์ฮาร์ดแวร์ที่ขยายมาทำพอตใช้แล้วทิ้งสาย nexBAR ที่ร้านมี nexBAR 18K",
     referenceUrl: "https://www.wotofo.com/",
   },
   // Deliberately NOT adding a "NEXT" Brand record for Pod-173 ("Next Pro 2 Beyond") — no official
@@ -138,6 +154,8 @@ export const brands: Brand[] = [
     tagline: "Heat-not-burn tobacco system.",
     description:
       "Philip Morris International's heated-tobacco device brand — the ILUMA device family (Prime/i/i ONE/ONE) paired with TEREA tobacco sticks, using induction heating instead of combustion.",
+    descriptionTh:
+      "IQOS ของ Philip Morris International เครื่องให้ความร้อนยาสูบโดยไม่เผาไหม้ ที่ร้านมี ILUMA i และ ILUMA i PRIME ใช้ได้กับแท่งยาสูบ TEREA เท่านั้น",
     referenceUrl: "https://www.iqos.com/",
   },
   // Tier-1 disposable growth mission (2026-09-03) — owner-named business-priority brands.
@@ -149,6 +167,8 @@ export const brands: Brand[] = [
     tagline: "A global closed-pod and disposable vape brand.",
     description:
       "A major international vape brand (relxnow.com, self-described \"RELX Global Official\") spanning a modular closed-pod system (RELX Creator Pro device + Creator Pod cartridges) alongside standalone high-puff disposables such as Smash GO.",
+    descriptionTh:
+      "RELX แบรนด์พอตรายใหญ่ระดับสากล ที่ร้านมี Smash Go 12K พอตใช้แล้วทิ้งจากไลน์อัพทางการ รองรับสูงสุด 12,000 พัฟ มีให้เลือก 10 รส",
     referenceUrl: "https://www.relxnow.com/",
   },
   {
@@ -159,6 +179,8 @@ export const brands: Brand[] = [
     tagline: "Disposable vapes and vaping accessories.",
     description:
       "A vape device manufacturer (myjoiway.com) selling disposables under an \"X Series\" naming pattern, including the F-series disposable line, alongside e-juice and accessories.",
+    descriptionTh:
+      "JOIWAY ผู้ผลิตพอตใช้แล้วทิ้ง ที่ร้านมี F3 รองรับสูงสุด 12,000 พัฟ และ F4 ที่สลับ 2 รสในเครื่องเดียว ซึ่ง OKami24 รีวิวใช้จริงไว้บน YouTube",
     referenceUrl: "https://myjoiway.com/",
   },
   {

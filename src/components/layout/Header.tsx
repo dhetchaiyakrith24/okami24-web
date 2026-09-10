@@ -16,7 +16,10 @@ import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 export function Header({ orderingEnabled = true }: { orderingEnabled?: boolean } = {}) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
+  // Round 30.3ข (THAI_STYLE §2 layer 2): the product menus show "English / ไทย" for a Thai visitor.
+  // Only these two menus and the category page H1 — the footer/home grid keep `shortName` (owner).
+  const categoryLabel = (c: (typeof categories)[number]) => (locale === "th" ? c.labelTh : c.name);
 
   const PRIMARY_LINKS = [
     { label: dict.nav.eliquid, href: "/e-liquid" },
@@ -79,7 +82,7 @@ export function Header({ orderingEnabled = true }: { orderingEnabled?: boolean }
                     href={`/products/${c.slug}`}
                     className="block rounded-lg px-3 py-2 text-sm text-foreground-muted hover:bg-surface-2 hover:text-foreground"
                   >
-                    {c.name}
+                    {categoryLabel(c)}
                   </Link>
                 ))}
               </div>
@@ -152,7 +155,7 @@ export function Header({ orderingEnabled = true }: { orderingEnabled?: boolean }
           </Link>
           {categories.map((c) => (
             <Link key={c.id} href={`/products/${c.slug}`} className="rounded-lg px-3 py-3 text-base text-foreground-muted hover:bg-surface-2">
-              {c.name}
+              {categoryLabel(c)}
             </Link>
           ))}
           <div className="my-3 h-px bg-surface-border-soft" />
