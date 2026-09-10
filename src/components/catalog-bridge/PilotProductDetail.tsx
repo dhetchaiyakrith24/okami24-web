@@ -14,6 +14,7 @@ import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-r
 import { SourceNote } from "@/components/product/SourceNote";
 import { ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { pilotTagline } from "@/i18n/product-copy-en";
 import { pilotAxisLabel } from "./axis-label";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
 import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
@@ -64,7 +65,7 @@ export function PilotProductDetail({
    *  See `src/lib/media-quality.ts`. */
   imageDisplayMap?: Record<string, ImageDisplayInfo>;
 }) {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
   const axisLabel = pilotAxisLabel(dict, product);
   const isPublished = product.publicationStatus === "published";
   const [selectedVariantId, setSelectedVariantId] = useState(product.variants[0]?.id ?? null);
@@ -119,7 +120,8 @@ export function PilotProductDetail({
       <PageHeader
         eyebrow={product.categoryName}
         title={product.displayName}
-        description={product.tagline}
+        // Round 30.3: same English-overlay lookup as PilotProductCard (Thai is the source line).
+        description={pilotTagline(product.slug, product.tagline, locale)}
         // M3 (2026-09-08): on phones the tagline sits below the fold anyway; hiding it here (CSS
         // only, still in the HTML) is what brings the chips and the price into the first screen
         // above the sticky bar — the M2 leftover on ProductMaster pages.

@@ -29,8 +29,8 @@ export const FINDER_COPY_TH: Record<string, FinderQuestionCopy> = {
   format: {
     title: "คุณกำลังมองหาอุปกรณ์แบบไหน",
     options: {
-      "open-pod": { label: "Open-system pod", description: "เติมน้ำยาเองและเปลี่ยนหัวคอยล์ pod ได้" },
-      "pod-kit": { label: "Pod kit / pod mod", description: "ต้องการวัตต์มากขึ้นและปรับค่าความต้านทานได้" },
+      "open-pod": { label: "Open-system pod", description: "เติมน้ำยาเองและเปลี่ยนหัวคอยล์ได้" },
+      "pod-kit": { label: "Pod kit / pod mod", description: "ต้องการวัตต์มากขึ้น ตัวเครื่องใช้ซ้ำได้ เปลี่ยนแค่หัวพอตหรือคอยล์" },
       disposable: { label: "Disposable", description: "มีน้ำยาในตัวแล้ว ไม่ต้องเติมหรือเปลี่ยนคอยล์" },
       "no-preference": { label: "ยังไม่แน่ใจ", description: "แนะนำสิ่งที่เหมาะที่สุด ไม่จำกัดฟอร์แมต" },
     },
@@ -57,14 +57,14 @@ export const FINDER_COPY_TH: Record<string, FinderQuestionCopy> = {
     options: {
       critical: { label: "สำคัญมาก", description: "ต้องการระยะเวลาระหว่างการชาร์จที่นานที่สุด" },
       somewhat: { label: "สำคัญพอสมควร", description: "ยังไงก็ต้องชาร์จเป็นประจำอยู่แล้ว" },
-      "not-priority": { label: "ไม่ใช่สิ่งสำคัญ", description: "ไม่รังเกียจที่จะชาร์จบ่อยๆ" },
+      "not-priority": { label: "ไม่ใช่สิ่งสำคัญ", description: "ไม่รังเกียจที่จะชาร์จบ่อย ๆ" },
     },
   },
   output: {
     title: "ชอบการสูบและวัตต์แบบไหน",
     options: {
       low: { label: "แน่น MTL วัตต์ต่ำ", description: "ใกล้เคียงการสูบบุหรี่มวน" },
-      flexible: { label: "ยืดหยุ่น / กลางๆ", description: "สลับไปมาระหว่างการสูบแน่นและโล่ง" },
+      flexible: { label: "ยืดหยุ่น / กลาง ๆ", description: "สลับไปมาระหว่างการสูบแน่นและโล่ง" },
       high: { label: "โล่ง DTL วัตต์สูง", description: "ต้องการพลังมากขึ้นและการสูบที่โล่งกว่า" },
     },
   },

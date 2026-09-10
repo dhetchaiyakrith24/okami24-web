@@ -7,6 +7,7 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { pilotTagline } from "@/i18n/product-copy-en";
 import { pilotAxisLabel } from "./axis-label";
 
 /**
@@ -27,7 +28,7 @@ import { pilotAxisLabel } from "./axis-label";
  * the same height. Tagline and the category/variant row are hidden by CSS below `lg`.
  */
 export function PilotProductCard({ product }: { product: StorefrontProductView }) {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
   const sellingPrice = product.publicationStatus === "published" ? product.sellingPrice : null;
   return (
     <Link
@@ -59,7 +60,9 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
       <div className="flex flex-1 flex-col gap-2 p-5 max-lg:gap-1 max-lg:p-3">
         <span className="label-mono text-[0.65rem] text-foreground-dim max-lg:text-[0.6rem]">{product.brandName}</span>
         <h3 className="font-display text-xl font-semibold leading-tight tracking-tight text-foreground max-lg:line-clamp-2 max-lg:min-h-[2.5em] max-lg:text-sm max-lg:leading-[1.25]">{product.displayName}</h3>
-        <p className="line-clamp-2 text-sm text-foreground-muted max-lg:hidden">{product.tagline}</p>
+        {/* Round 30.3: ProductMaster copy is written in Thai, so the English/Chinese storefront used to
+            show the Thai line here — pilotTagline() reads the English overlay when there is one. */}
+        <p className="line-clamp-2 text-sm text-foreground-muted max-lg:hidden">{pilotTagline(product.slug, product.tagline, locale)}</p>
         <p className="hidden min-h-[1.25rem] font-display text-[15px] font-bold leading-tight text-foreground max-lg:block">
           {sellingPrice !== null && sellingPrice !== undefined ? `฿${sellingPrice.toLocaleString("th-TH")}` : ""}
         </p>

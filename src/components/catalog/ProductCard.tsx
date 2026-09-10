@@ -5,8 +5,10 @@ import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { OptionCountBadge } from "@/components/catalog/OptionCountBadge";
 import { Badge } from "@/components/ui/Badge";
 import { PuffCount } from "@/components/catalog/PuffCount";
+import { ProductTagline } from "@/components/catalog/ProductTagline";
 import { brandName, formatBattery, formatWattage } from "@/lib/utils";
 import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
+import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 
 /**
  * Phone layout (mobile round A, M3 — MOBILE_SPEC 3.1/3.5, owner decisions E-ก and F-ก, 2026-09-08;
@@ -26,6 +28,9 @@ export function ProductCard({ product }: { product: Product }) {
     : formatBattery(product.attributes.batteryMah);
   const secondaryStat = formatWattage(product.attributes.wattageMin, product.attributes.wattageMax);
   const sellingPrice = getLegacyApprovedPrice(product.slug);
+  // The tagline switches language on the client (round 30.3, THAI_STYLE §6 item 1) — same reason
+  // as the puff count above. The Thai line is the same human-checked entry the product page shows.
+  const taglineTh = PRODUCT_COPY_TH[product.slug]?.tagline;
 
   return (
     <Link
@@ -59,7 +64,13 @@ export function ProductCard({ product }: { product: Product }) {
         <h3 className="font-display text-xl font-semibold leading-tight tracking-tight text-foreground max-lg:line-clamp-2 max-lg:min-h-[2.5em] max-lg:text-sm max-lg:leading-[1.25]">
           {product.name}
         </h3>
-        <p className="line-clamp-2 text-sm text-foreground-muted max-lg:hidden">{product.tagline}</p>
+        {/* lg:min-h-10 = two lines of text-sm. A Thai tagline is often one line where the English took
+            two, and in a horizontal rail (home page) each card is only as tall as its own content — so
+            without a floor the card would shrink 20px and its stats row would move (round 30.3 desktop
+            proof, 13,446 px outside the mask). Grid pages already stretch cards to the row height. */}
+        <p className="line-clamp-2 text-sm text-foreground-muted max-lg:hidden lg:min-h-10">
+          <ProductTagline en={product.tagline} th={taglineTh} />
+        </p>
         <p className="hidden min-h-[1.25rem] font-display text-[15px] font-bold leading-tight text-foreground max-lg:block">
           {sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : ""}
         </p>
