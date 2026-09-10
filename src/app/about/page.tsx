@@ -35,10 +35,10 @@ export default function AboutPage() {
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">สินค้าที่เราคัดสรร</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              เว็บไซต์นี้รวบรวมอุปกรณ์พอตซิสเต็ม พอตคิท พอตใช้แล้วทิ้ง และคาร์ทริดจ์จาก {brands.length} แบรนด์ที่เราคัดมา — UWELL, VOOPOO, SALTHUB และอื่น ๆ
+              เว็บไซต์นี้รวบรวมอุปกรณ์พอตซิสเต็ม พอตคิท พอตใช้แล้วทิ้ง และหัวพอตจาก {brands.length} แบรนด์ที่เราคัดมา — UWELL, VOOPOO, SALTHUB และอื่น ๆ
               พร้อมเครื่องมือเปรียบเทียบและ Product Finder ที่ช่วยหาสินค้าที่เหมาะกับคุณ ทุกสเปกถูกวิจัยจากหน้าทางการของแบรนด์
               และติดป้าย <span className="text-verified">verified</span> หรือ{" "}
-              <span className="text-unverified">unverified</span> กำกับไว้เสมอ — ข้อมูลที่ยืนยันไม่ได้จะถูกระบุไว้ตรงๆ
+              <span className="text-unverified">unverified</span> กำกับไว้เสมอ — ข้อมูลที่ยืนยันไม่ได้จะถูกระบุไว้ตรง ๆ
               แทนการเดา
             </p>
           </section>
@@ -80,7 +80,7 @@ export default function AboutPage() {
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">แนวทางการออกแบบ</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              ภาพประกอบสินค้าแต่ละชิ้นในเว็บไซต์นี้เป็นภาพเวกเตอร์ต้นฉบับที่สร้างจากข้อมูลสเปกจริงของสินค้านั้นๆ
+              ภาพประกอบสินค้าแต่ละชิ้นในเว็บไซต์นี้เป็นภาพเวกเตอร์ต้นฉบับที่สร้างจากข้อมูลสเปกจริงของสินค้านั้น ๆ
               (รูปทรง ประเภทหน้าจอ สถานะแฟล็กชิป) ใช้เป็นภาพสำรองเมื่อยังไม่มีภาพถ่ายทางการ ส่วนสินค้าแฟล็กชิปบางรายการ
               มีแกลเลอรีภาพถ่ายทางการประกอบ ระบุแหล่งที่มาไว้อย่างชัดเจน
             </p>

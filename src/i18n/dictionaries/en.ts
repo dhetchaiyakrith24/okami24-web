@@ -25,13 +25,11 @@ export const en: Dictionary = {
     warranty: "Warranty & claims",
   },
   footer: {
-    // Deliberately left in Thai even in the English dictionary: this is OKami24's real brand-
-    // voice tagline and the age/nicotine compliance notice, not a UI label. Their Thai wording is
-    // the actual source of truth (see docs/BUSINESS_SOURCE_OF_TRUTH.md); inventing an English
-    // translation of compliance copy without owner review isn't a "UI label" this phase is meant
-    // to localize — see the Phase 3.2 report §TRANSLATED SURFACES.
+    // Brand-voice tagline. Thai is the source of truth (docs/BUSINESS_SOURCE_OF_TRUTH.md); this
+    // English line is the owner-approved rendering of it (round 30.3, 2026-09-10 — THAI_STYLE §7),
+    // not a word-for-word translation. The age/nicotine notice below was translated in round 30.1.
     tagline:
-      "OKami24 — ของแท้ ราคาตรง บริการจริง อุปกรณ์พอต ใช้แล้วทิ้ง และน้ำยา คัดสรรจากผู้ขายที่เข้าใจสินค้าจริง พร้อมบริการหลังการขายที่ดูแลคุณต่อ",
+      "OKami24 — genuine products, honest prices, real service. Pod devices, disposables and e-liquid from a seller who knows the products and is still there for you after the sale.",
     shop: "Shop",
     learn: "Learn",
     tools: "Tools",

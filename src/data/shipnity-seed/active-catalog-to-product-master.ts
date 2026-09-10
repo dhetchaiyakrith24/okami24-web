@@ -465,8 +465,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // active variant colors) identifies this as the PnP X cartridge, not a coil. See
   // TAXONOMY_MATCHES["Coil-56"] for the evidence.
   "Coil-56": {
-    tagline: "คาร์ทริดจ์ Voopoo PnP-X",
-    shortDescription: "คาร์ทริดจ์รุ่น PnP-X จากแบรนด์ VOOPOO",
+    tagline: "หัวพอต Voopoo PnP-X",
+    shortDescription: "หัวพอตรุ่น PnP-X จากแบรนด์ VOOPOO",
   },
   // Phase 2.8 correction — was worded as a bare coil head ("หัวคอยล์เปล่า"); official UWELL
   // evidence describes the Caliburn X as a 3ml refillable pod. See
@@ -513,8 +513,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // (exact 0.4Ω/0.6Ω/0.9Ω/1.2Ω match + retail box reading "INTEGRATED COIL CARTRIDGE") identifies
   // this as the pod, not a bare coil. See TAXONOMY_MATCHES["Coil-94"] for the evidence.
   "Coil-94": {
-    tagline: "คาร์ทริดจ์ Caliburn G4&G3 Series จากแบรนด์ UWELL",
-    shortDescription: "คาร์ทริดจ์รุ่น Caliburn G4&G3 Series เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
+    tagline: "หัวพอต Caliburn G4&G3 Series จากแบรนด์ UWELL",
+    shortDescription: "หัวพอตรุ่น Caliburn G4&G3 Series เป็นผลิตภัณฑ์ในกลุ่ม Caliburn จากแบรนด์ UWELL",
   },
   // Phase 3.5 — second batch. No familyId on any of these (TPP/ITO-X/Jelly Nano/Jellybox
   // V/Dotmod Aio V2 are not committed ProductFamily records), so shortDescription omits the
@@ -528,8 +528,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "คอยล์รุ่น Jelly Nano จากแบรนด์ RINCOE",
   },
   "Coil-68": {
-    tagline: "คาร์ทริดจ์ ITO-X จากแบรนด์ VOOPOO",
-    shortDescription: "คาร์ทริดจ์รุ่น ITO-X จากแบรนด์ VOOPOO",
+    tagline: "หัวพอต ITO-X จากแบรนด์ VOOPOO",
+    shortDescription: "หัวพอตรุ่น ITO-X จากแบรนด์ VOOPOO",
   },
   "Coil-70": {
     tagline: "คอยล์ Dotmod Aio V2 จากแบรนด์ DOTMOD",
@@ -550,8 +550,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // comment. Copy that names "แบรนด์ SKE" would misattribute the product; MINIMUM_COPY never
   // fabricates a brand name that isn't independently supportable.
   "Pod-150": {
-    tagline: "คาร์ทริดจ์ KS Quikpro 15K จากแบรนด์ KS",
-    shortDescription: "คาร์ทริดจ์รุ่น KS Quikpro 15K จากแบรนด์ KS",
+    tagline: "หัวพอต KS Quikpro 15K จากแบรนด์ KS",
+    shortDescription: "หัวพอตรุ่น KS Quikpro 15K จากแบรนด์ KS",
   },
   "Disposable-34": {
     tagline: "พอตใช้แล้วทิ้ง Insta Bar PX 15000 Puffs จากแบรนด์ INSTABAR",
@@ -573,19 +573,20 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "น้ำยา Yogurt Salt Hub จากแบรนด์ SALTHUB",
     shortDescription: "น้ำยารุ่น Yogurt Salt Hub จากแบรนด์ SALTHUB",
   },
-  // Part B (device wave 2) — coil-54/coil-62 use "คาร์ทริดจ์" (cartridge), matching their real
-  // pod-cartridge reclassification above, not "คอยล์".
+  // Part B (device wave 2) — coil-54/coil-62 use "หัวพอต" (pod/cartridge head — THAI_STYLE §3
+  // word 8, round 30.3; was the Thai loan-word for cartridge), matching their real pod-cartridge reclassification
+  // above, not "คอยล์".
   "coil-54": {
-    tagline: "คาร์ทริดจ์ Feelin Mini จากแบรนด์ NEVOKS",
-    shortDescription: "คาร์ทริดจ์รุ่น Feelin Mini จากแบรนด์ NEVOKS",
+    tagline: "หัวพอต Feelin Mini จากแบรนด์ NEVOKS",
+    shortDescription: "หัวพอตรุ่น Feelin Mini จากแบรนด์ NEVOKS",
   },
   "coil-62": {
-    tagline: "คาร์ทริดจ์ Feelin C1 จากแบรนด์ NEVOKS",
-    shortDescription: "คาร์ทริดจ์รุ่น Feelin C1 จากแบรนด์ NEVOKS",
+    tagline: "หัวพอต Feelin C1 จากแบรนด์ NEVOKS",
+    shortDescription: "หัวพอตรุ่น Feelin C1 จากแบรนด์ NEVOKS",
   },
   "Pod-169": {
-    tagline: "คาร์ทริดจ์ infy 2.5 ml จากแบรนด์ INFY",
-    shortDescription: "คาร์ทริดจ์รุ่น infy 2.5 ml จากแบรนด์ INFY",
+    tagline: "หัวพอต infy 2.5 ml จากแบรนด์ INFY",
+    shortDescription: "หัวพอตรุ่น infy 2.5 ml จากแบรนด์ INFY",
   },
   // Heated-tobacco wave — factual, identity-level copy only, no health/reduced-harm claims
   // (heat-not-burn is not risk-free; this project makes no such claim anywhere).
