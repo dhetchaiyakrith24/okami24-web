@@ -84,3 +84,19 @@ model: sonnet
 3. **ห้ามยาว** รายงานเกิน 20 บรรทัดถือว่าคุณทำงานผิดวิธี
 4. **ห้ามชม** ไม่ต้องบอกว่างานดี บอกแค่ว่าครบหรือไม่ครบ
 5. **ห้ามแก้งานเอง** บอกว่าขาดอะไร แล้วจบ
+
+---
+
+## Machine safety — this is the owner's own PC (owner order, 2026-09-10)
+
+Other work runs on this machine next to yours. On 2026-09-09 a checker ran `taskkill /F /IM node.exe /T`
+and killed five Node processes that were not its own; on 2026-09-10 the owner's own sidebar preview
+server was sitting on port 3000 — a real example of a process you must not touch. HANDOFF §8.9 already
+says how to do this right, but a checker does not read HANDOFF, so the rule lives in this file too.
+
+- **Never** run `taskkill /F /IM node.exe /T` — or any kill by image name. No exceptions.
+- To stop a server you started yourself: find its PID first, then kill that PID and nothing else —
+  `netstat -ano | grep ":<port>.*LISTENING"` → `taskkill //PID <pid> //F`.
+- A process you did not start is not yours to stop. Report it and ask the owner; never kill it.
+- Do not touch: `render.yaml` · `.env*` · `src/lib/commerce/ordering-mode.ts` · another round's
+  `_incoming/` folder · any file outside this project.
