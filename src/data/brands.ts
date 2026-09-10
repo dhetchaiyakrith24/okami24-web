@@ -155,7 +155,7 @@ export const brands: Brand[] = [
     description:
       "Philip Morris International's heated-tobacco device brand — the ILUMA device family (Prime/i/i ONE/ONE) paired with TEREA tobacco sticks, using induction heating instead of combustion.",
     descriptionTh:
-      "IQOS ของ Philip Morris International เครื่องให้ความร้อนยาสูบโดยไม่เผาไหม้ ที่ร้านมี ILUMA i และ ILUMA i PRIME ใช้ได้กับแท่งยาสูบ TEREA เท่านั้น",
+      "IQOS ของ Philip Morris International เครื่องให้ความร้อนยาสูบโดยไม่เผาไหม้ ที่ร้านมี ILUMA i และ ILUMA i PRIME ใช้ได้กับก้าน TEREA เท่านั้น",
     referenceUrl: "https://www.iqos.com/",
   },
   // Tier-1 disposable growth mission (2026-09-03) — owner-named business-priority brands.

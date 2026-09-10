@@ -34,9 +34,12 @@ export const th: Dictionary = {
   },
   hero: {
     badgeSuffix: "· รุ่นเรือธงปัจจุบัน",
+    // Round 30.3ข (owner, 2026-09-11 — C1 option ข): the old "ที่ออกแบบ / อย่างชัดเจน" was a
+    // translation of the English hero ("engineered for clarity") with no word a customer
+    // searches for; "ข้อมูลจริง" is what this site does differently and echoes the lede below.
     headingLine1: "พอตไฟฟ้า",
-    headingLine2: "ที่ออกแบบ",
-    headingAccent: "อย่างชัดเจน",
+    headingLine2: "ของแท้",
+    headingAccent: "ข้อมูลจริง",
     description:
       "ครบทุกหมวดพอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา จัดหมวดหมู่ตามสเปกจริง ไม่ใช่คำโฆษณา ทุกเครื่องมีข้อมูลจริง เทียบกันได้ และช่วยให้เลือกได้ตรงกับสไตล์การสูบของคุณ",
     ctaPrimary: "ดูสินค้าทั้งหมด",

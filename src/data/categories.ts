@@ -92,7 +92,7 @@ export const categories: Category[] = [
     labelTh: "Heated Tobacco Devices / เครื่องอุ่นยาสูบ",
     description: "Heat-not-burn devices that heat tobacco sticks without combustion — official IQOS ILUMA devices and compatible third-party heaters.",
     descriptionTh:
-      "เครื่อง IQOS ILUMA ของแท้ ให้ความร้อนกับยาสูบโดยไม่เผาไหม้ ใช้ได้กับแท่งยาสูบ TEREA เท่านั้น ตอนนี้มี ILUMA i และ ILUMA i PRIME",
+      "เครื่อง IQOS ILUMA ของแท้ ให้ความร้อนกับยาสูบโดยไม่เผาไหม้ ใช้ได้กับก้าน TEREA เท่านั้น ตอนนี้มี ILUMA i และ ILUMA i PRIME",
     systemTypes: [],
   },
   {
@@ -100,10 +100,10 @@ export const categories: Category[] = [
     slug: "heated-tobacco-consumables",
     name: "Heated Tobacco Sticks",
     shortName: "HNB Sticks",
-    labelTh: "Heated Tobacco Sticks",
+    labelTh: "Heated Tobacco Sticks / ก้าน TEREA",
     description: "Tobacco sticks for heat-not-burn devices — the consumable side of the heated-tobacco ecosystem.",
     descriptionTh:
-      "แท่งยาสูบ TEREA สำหรับเครื่อง IQOS ILUMA ใส่กับ IQOS รุ่นก่อน ILUMA ไม่ได้ ไม่แน่ใจว่าเครื่องคุณใช้ได้ไหม ทักไลน์ @okm24 ถามก่อนได้",
+      "ก้าน TEREA สำหรับเครื่อง IQOS ILUMA ใส่กับ IQOS รุ่นก่อน ILUMA ไม่ได้ ไม่แน่ใจว่าเครื่องคุณใช้ได้ไหม ทักไลน์ @okm24 ถามก่อนได้",
     systemTypes: [],
   },
 ];
