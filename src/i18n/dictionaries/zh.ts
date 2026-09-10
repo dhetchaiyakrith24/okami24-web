@@ -64,6 +64,7 @@ export const zh: Dictionary = {
     eyebrow: "产品目录",
     lineOrderingNotice: "现在用 LINE 下单更快，加 @okm24 就好",
     lineOrderingCta: "联系 @okm24",
+    puffUnit: "口",
     emptyStateNote: "该分类下暂无产品——请稍后再来查看。",
     searchLabel: "搜索",
     searchPlaceholder: "在此分类中搜索…",

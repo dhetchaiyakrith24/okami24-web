@@ -71,6 +71,11 @@ export interface Dictionary {
      *  "closed". See LineOrderingNotice.tsx. */
     lineOrderingNotice: string;
     lineOrderingCta: string;
+    /** The word after a puff count — "10,000 พัฟ" / "10,000 puffs" / "10,000 口". Lives in the
+     *  dictionary since round 30.2 (docs/THAI_STYLE.md §3: Thai copy says พัฟ, never "puffs"),
+     *  and formatPuffs() takes it as an argument so the Thai word can never leak into the
+     *  English or Chinese page. */
+    puffUnit: string;
     emptyStateNote: string;
     searchLabel: string;
     searchPlaceholder: string;

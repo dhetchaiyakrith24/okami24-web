@@ -30,7 +30,7 @@ export const FINDER_COPY_TH: Record<string, FinderQuestionCopy> = {
     title: "คุณกำลังมองหาอุปกรณ์แบบไหน",
     options: {
       "open-pod": { label: "Open-system pod", description: "เติมน้ำยาเองและเปลี่ยนหัวคอยล์ pod ได้" },
-      "pod-kit": { label: "Pod kit / pod mod", description: "ต้องการกำลังไฟมากขึ้นและปรับค่าความต้านทานได้" },
+      "pod-kit": { label: "Pod kit / pod mod", description: "ต้องการวัตต์มากขึ้นและปรับค่าความต้านทานได้" },
       disposable: { label: "Disposable", description: "มีน้ำยาในตัวแล้ว ไม่ต้องเติมหรือเปลี่ยนคอยล์" },
       "no-preference": { label: "ยังไม่แน่ใจ", description: "แนะนำสิ่งที่เหมาะที่สุด ไม่จำกัดฟอร์แมต" },
     },
@@ -47,7 +47,7 @@ export const FINDER_COPY_TH: Record<string, FinderQuestionCopy> = {
     title: "ต้องการอินเทอร์เฟซแบบไหน",
     options: {
       none: { label: "ไม่มีจอ", description: "แค่ดูดหรือกดปุ่ม ไม่ต้องมีอะไรให้ดู" },
-      basic: { label: "จอแสดงผลแบบง่าย", description: "เห็นแบตเตอรี่ กำลังไฟ และโหมดได้ในทันที" },
+      basic: { label: "จอแสดงผลแบบง่าย", description: "เห็นแบตเตอรี่ วัตต์ และโหมดได้ในทันที" },
       full: { label: "จอทัชสกรีนเต็มรูปแบบ", description: "ควบคุมเมนูและโหมดได้แบบครบถ้วน" },
       "no-preference": { label: "ไม่มีข้อกำหนด", description: "จอไม่ใช่ปัจจัยตัดสินใจ" },
     },
@@ -61,11 +61,11 @@ export const FINDER_COPY_TH: Record<string, FinderQuestionCopy> = {
     },
   },
   output: {
-    title: "ชอบการสูบและกำลังไฟแบบไหน",
+    title: "ชอบการสูบและวัตต์แบบไหน",
     options: {
-      low: { label: "แน่น MTL กำลังไฟต่ำ", description: "ใกล้เคียงการสูบบุหรี่มวน" },
+      low: { label: "แน่น MTL วัตต์ต่ำ", description: "ใกล้เคียงการสูบบุหรี่มวน" },
       flexible: { label: "ยืดหยุ่น / กลางๆ", description: "สลับไปมาระหว่างการสูบแน่นและโล่ง" },
-      high: { label: "โล่ง DTL กำลังไฟสูง", description: "ต้องการพลังมากขึ้นและการสูบที่โล่งกว่า" },
+      high: { label: "โล่ง DTL วัตต์สูง", description: "ต้องการพลังมากขึ้นและการสูบที่โล่งกว่า" },
     },
   },
   experience: {
