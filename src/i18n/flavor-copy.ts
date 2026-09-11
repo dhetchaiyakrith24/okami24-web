@@ -16,7 +16,9 @@ export const FLAVOR_COPY_TH: Record<string, FlavorFamilyCopy> = {
     name: "ผลไม้",
     description:
       "กลุ่มรสชาติที่ใหญ่และหลากหลายที่สุด ตั้งแต่ผลไม้เดี่ยว ๆ ไปจนถึงผลไม้ผสมหลายชนิด และรสที่มีผลไม้เป็นตัวนำ เหมาะกับการสูบประจำวัน ทั้งพอตซิสเต็มและพอตใช้แล้วทิ้ง",
-    characterNotes: ["โปรไฟล์รสชาติสดใส หัวหอมชัดเจน", "มักผสมผลไม้ตั้งแต่สองชนิดขึ้นไป", "มีจำนวนรสชาติมากที่สุดในทุกกลุ่ม"],
+    // Round 30.4 batch 0 (owner, 2026-09-11 — option ข): the old first note translated "top note"
+    // into the Thai word for onion, on the homepage flavor card and /e-liquid/fruit. Shop voice now.
+    characterNotes: ["รสสดใส สูบแล้วได้รสผลไม้ชัดทันที", "มักผสมผลไม้ตั้งแต่สองชนิดขึ้นไป", "มีจำนวนรสชาติมากที่สุดในทุกกลุ่ม"],
   },
   "menthol-cooling": {
     name: "เมนทอลและความเย็น",
