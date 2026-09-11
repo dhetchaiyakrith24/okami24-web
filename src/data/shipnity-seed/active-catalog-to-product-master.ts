@@ -592,19 +592,19 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // (heat-not-burn is not risk-free; this project makes no such claim anywhere).
   "IQOSHEET-14": {
     tagline: "อุปกรณ์ให้ความร้อนยาสูบ LAMBDA i8 (ไม่ใช่ผลิตภัณฑ์ IQOS/PMI)",
-    shortDescription: "อุปกรณ์ heat-not-burn รุ่น i8 จากแบรนด์ LAMBDA ใช้ร่วมกับแท่งยาสูบ TEREA/SENTIA Smartcore",
+    shortDescription: "อุปกรณ์ heat-not-burn รุ่น i8 จากแบรนด์ LAMBDA ใช้ร่วมกับก้าน TEREA/SENTIA Smartcore",
   },
   "IQOSHEET-15": {
-    tagline: "แท่งยาสูบให้ความร้อน IQOS TEREA",
-    shortDescription: "แท่งยาสูบสำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International) ให้ความร้อนโดยไม่เผาไหม้",
+    tagline: "ก้าน TEREA สำหรับ IQOS ILUMA",
+    shortDescription: "ก้าน TEREA สำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International) ให้ความร้อนโดยไม่เผาไหม้",
   },
   "IQOSHEET-16": {
     tagline: "อุปกรณ์ให้ความร้อนยาสูบ IQOS ILUMA i PRIME",
-    shortDescription: "อุปกรณ์รุ่น ILUMA i PRIME จากแบรนด์ IQOS ใช้ร่วมกับแท่งยาสูบ TEREA เท่านั้น",
+    shortDescription: "อุปกรณ์รุ่น ILUMA i PRIME จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
   },
   "IQOSHEET-18": {
     tagline: "อุปกรณ์ให้ความร้อนยาสูบ IQOS ILUMA i",
-    shortDescription: "อุปกรณ์รุ่น ILUMA i (รุ่นกลาง) จากแบรนด์ IQOS ใช้ร่วมกับแท่งยาสูบ TEREA เท่านั้น",
+    shortDescription: "อุปกรณ์รุ่น ILUMA i (รุ่นกลาง) จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
   },
   "IQOSHEET-17": {
     tagline: "อุปกรณ์ให้ความร้อนยาสูบ IQOS ILUMA ONE",
@@ -1161,7 +1161,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "3200mAh", sourceStatus: "verified" },
       { key: "temperature", label: "อุณหภูมิ", value: "ปรับได้ 200-300°C", sourceStatus: "verified" },
-      { key: "compatible-sticks", label: "ใช้ได้กับแท่งยาสูบ", value: "TEREA, SENTIA Smartcore Sticks", sourceStatus: "verified" },
+      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA, SENTIA Smartcore Sticks", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html"],
   },
@@ -1176,13 +1176,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "2380mAh", sourceStatus: "verified" },
       { key: "charging", label: "การชาร์จ", value: "USB-C, ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified" },
-      { key: "sessions", label: "จำนวนแท่งต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 แท่ง", sourceStatus: "verified" },
-      { key: "compatible-sticks", label: "ใช้ได้กับแท่งยาสูบ", value: "TEREA เท่านั้น", sourceStatus: "verified" },
+      { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 ก้าน", sourceStatus: "verified" },
+      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html"],
   },
   "IQOSHEET-18": {
-    specifications: [{ key: "compatible-sticks", label: "ใช้ได้กับแท่งยาสูบ", value: "TEREA เท่านั้น", sourceStatus: "verified" }],
+    specifications: [{ key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified" }],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html"],
   },
 };
