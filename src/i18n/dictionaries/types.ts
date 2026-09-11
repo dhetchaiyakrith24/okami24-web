@@ -169,6 +169,15 @@ export interface Dictionary {
     featuresTitle: string;
     specsEyebrow: string;
     specsTitle: string;
+    /** SpecSheet lede when `{n}` of `{m}` specification rows are unverified (round 30.4 — was
+     *  hardcoded English in SpecSheet.tsx and showed on every Thai product page). */
+    specsUnverifiedNote: string;
+    /** SpecSheet lede when every row is verified. */
+    specsAllVerifiedNote: string;
+    /** The small badge on a spec chip whose value could not be confirmed (SpecChip.tsx). */
+    unverifiedBadge: string;
+    /** Hover text of that badge. */
+    unverifiedTooltip: string;
     compatibilityTitle: string;
     worksWithTitle: string;
     fitsDevicesTitle: string;

@@ -148,6 +148,11 @@ export const en: Dictionary = {
     featuresTitle: "What sets it apart.",
     specsEyebrow: "Specifications",
     specsTitle: "What's actually documented.",
+    // Round 30.4 batch 1 — moved out of SpecSheet.tsx / SpecChip.tsx (were hardcoded); wording unchanged.
+    specsUnverifiedNote: "{n} of {m} fields could not be independently confirmed and are labeled unverified rather than guessed.",
+    specsAllVerifiedNote: "Every field below was independently confirmed against an official or reliable source.",
+    unverifiedBadge: "unverified",
+    unverifiedTooltip: "Not independently confirmed against an official source",
     compatibilityTitle: "Compatibility",
     worksWithTitle: "Works with this device",
     fitsDevicesTitle: "Fits these devices",

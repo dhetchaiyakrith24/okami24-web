@@ -145,9 +145,18 @@ export const th: Dictionary = {
     anatomyEyebrow: "โครงสร้าง",
     anatomyTitle: "ส่วนประกอบจากภายนอกสู่ภายใน",
     featuresEyebrow: "จุดเด่น",
-    featuresTitle: "สิ่งที่ทำให้แตกต่าง",
+    // Round 30.4 batch 1 (owner, 2026-09-11): "สิ่งที่ทำให้แตกต่าง" was "What sets it apart" in
+    // Thai clothes; the new title pairs with "เหมาะกับใคร" below it.
+    featuresTitle: "รุ่นนี้เด่นตรงไหน",
     specsEyebrow: "สเปก",
     specsTitle: "ข้อมูลที่ยืนยันได้จริง",
+    // Round 30.4 batch 1: the SpecSheet lede and the spec-chip badge used to be hardcoded English
+    // in the components. The badge is Thai because it is a shop label, not a brand or model name
+    // (owner rule, 2026-09-11) — the lede names it in curly quotes so it reads as the badge text.
+    specsUnverifiedNote: "{n} ใน {m} รายการยังยืนยันจากแหล่งทางการไม่ได้ เราติดป้าย “ยังไม่ยืนยัน” ไว้ ไม่เดาตัวเลขให้",
+    specsAllVerifiedNote: "ทุกรายการด้านล่างเช็คกับเว็บทางการของแบรนด์หรือแหล่งที่เชื่อถือได้แล้ว",
+    unverifiedBadge: "ยังไม่ยืนยัน",
+    unverifiedTooltip: "ยังยืนยันกับแหล่งทางการไม่ได้",
     compatibilityTitle: "ความเข้ากันได้",
     worksWithTitle: "ใช้ร่วมกับเครื่องนี้ได้",
     fitsDevicesTitle: "ใช้ได้กับเครื่องเหล่านี้",
@@ -163,10 +172,10 @@ export const th: Dictionary = {
   },
   pilot: {
     unpublishedBadge: "ยังไม่เผยแพร่",
-    priceReferenceLabel: "ราคาอ้างอิงจากระบบปฏิบัติการ (Shipnity)",
+    priceReferenceLabel: "ราคาอ้างอิงจากระบบสต๊อกของร้าน (Shipnity)",
     priceUnavailable: "ไม่มีข้อมูล",
     priceSourcePrefix: "แหล่งที่มา:",
-    priceDisclaimer: "— ยังไม่ใช่ราคาขายสุดท้ายที่ owner อนุมัติ",
+    priceDisclaimer: "— ยังไม่ใช่ราคาขายจริง ราคาจริงถามทางไลน์ @okm24",
     variantFallback: "ตัวเลือก",
     sectionEyebrow: "Shipnity",
     sectionTitle: "สินค้าที่มีในสต๊อกตอนนี้",
