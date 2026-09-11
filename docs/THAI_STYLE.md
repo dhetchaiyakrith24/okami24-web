@@ -300,3 +300,20 @@ mesh coil · coil · MTL · DTL · RDL · Type-C · mAh · W (เมื่ออ
 | Coil-55 · Coil-74 · Coil-87 (กติกาเรียกหัวพอต) | พอตเปล่า Caliburn G2… · พอต Caliburn X… · พอต Voopoo TPP Pod | หัวพอตเปล่า Caliburn G2 จากแบรนด์ UWELL · หัวพอตเปล่า Caliburn X จากแบรนด์ UWELL (ชื่อ Shipnity "หัวเปล่า Caliburn X") · หัวพอตเปล่า Voopoo TPP Pod (สเปก: ไม่มีคอยล์ในกล่อง) + คำบรรยายแทนคำอย่างเดียว | ทำตามกติกาที่เคาะ — ตัดสินเอง แจ้งในรายงาน |
 
 **tagline อังกฤษ 18 ตัว** (`product-copy-en.ts` · writer แปลตรง · "จากแบรนด์ X" = "by X" · หัวพอต = pod): Vinci coil by VOOPOO · TPP coil by VOOPOO · Caliburn G coil (1.0Ω) by UWELL, works with Caliburn G2 · Caliburn G2 empty pod by UWELL · Voopoo PnP-X pod · ITO-X pod by VOOPOO · Dotmod Aio V2 coil by DOTMOD · Vmate Infinity Edition pod by VOOPOO · Caliburn X empty pod by UWELL · Argus P1 empty pod by VOOPOO · Voopoo TPP Pod (empty pod) · Jellybox V pod by RINCOE · Caliburn G4&G3 Series pod by UWELL · IQOS ILUMA i PRIME heated tobacco device · IQOS ILUMA i heated tobacco device · Esko Bar Switch 20k kit by ESKO BAR · Nexbar 18K disposable by WOTOFO · Feelin Mini pod by NEVOKS
+
+### รอบ 30.4 (2026-09-12 →) — สำนวนทั้งเว็บ (thai-copy เสนอ · เจ้าของเคาะทีละก้อน)
+
+หลักที่เจ้าของเคาะเพิ่ม 2026-09-11: ลูกค้าเลือกไทย = ไทยทั้งเว็บ ยกเว้นเฉพาะ ชื่อแบรนด์ · ชื่อรุ่น · ชื่ออะไหล่/อุปกรณ์ของแบรนด์นั้น (GPP · TEREA · ITO · PnP · TPP คงอังกฤษ) · ทับศัพท์ที่เป็นคำอธิบายทั่วไปให้เป็นไทย ("ท็อปฟิล" → "เติมด้านบน") · ที่ผสมไทย-อังกฤษอยู่แล้วและอ่านดี ปล่อยไว้ · "แถบความมั่นใจ · สเปกเด่นบนการ์ด · คำนำหมวด" = ของใหม่ รอบ 30.4ข ไม่ใช่ของเดิม
+
+**ก้อน 0 — แก้ผิดข้อเท็จจริง + ตามคำที่ 12 (เจ้าของเคาะ 2026-09-11 · commit แยกก่อนก้อนอื่น)**
+
+| ที่ | ก่อน | หลัง | เจ้าของเคาะว่า |
+|---|---|---|---|
+| กลุ่มรส "ผลไม้" ข้อแรก (`flavor-copy.ts` characterNotes[0] · โผล่บนการ์ดหน้าแรก + /e-liquid/fruit) | โปรไฟล์รสชาติสดใส หัวหอมชัดเจน | รสสดใส สูบแล้วได้รสผลไม้ชัดทันที | แบบ ข — ต้นฉบับ "Bright, high-top-note profiles" แปล top note เพี้ยนเป็น "หัวหอม" · ไม่เอา ก "หัวรสผลไม้ชัด" เพราะ "หัวรส" เป็นศัพท์น้ำหอม คือต้นเหตุเดียวกัน · ตัด "โปรไฟล์" เหมือน 30.3ข |
+| `MINIMUM_COPY` IQOSHEET-16 / -18 (ILUMA i PRIME / ILUMA i) shortDescription | ใช้ร่วมกับแท่งยาสูบ TEREA เท่านั้น | ใช้ร่วมกับก้าน TEREA เท่านั้น | ตามคำที่ 12 "ก้าน" (แทนคำอย่างเดียว) |
+| label สเปก IQOS/LAMBDA 3 จุด (`compatible-sticks`) | ใช้ได้กับแท่งยาสูบ | ใช้ได้กับก้าน | เดียวกัน · จุดเดียวที่ลูกค้าเห็นจริง (shortDescription ของ PM ไม่โชว์บนเว็บ — ตัวหลักตรวจ 2026-09-12) |
+| IQOSHEET-14 (LAMBDA · ไม่ขึ้นหน้าร้าน) shortDescription | ใช้ร่วมกับแท่งยาสูบ TEREA/SENTIA Smartcore | ใช้ร่วมกับก้าน TEREA/SENTIA Smartcore | แทนคำ |
+| สเปก ILUMA i (IQOSHEET-18) แถว `sessions` — designer ทักว่าห่างจาก "ก้าน" แค่ 1 แถว | จำนวนแท่งต่อการชาร์จ 1 ครั้ง / สูงสุด 20 แท่ง | จำนวนก้านต่อการชาร์จ 1 ครั้ง / สูงสุด 20 ก้าน | ตัวหลักตัดสินเอง (คำที่ 12 · แทนคำ · ย้อนง่าย) — เจ้าของแก้ได้ |
+| IQOSHEET-15 (TEREA · ถอนจากการเผยแพร่) tagline / shortDescription | แท่งยาสูบให้ความร้อน IQOS TEREA / แท่งยาสูบสำหรับอุปกรณ์ IQOS ILUMA… | ก้าน TEREA สำหรับ IQOS ILUMA / ก้าน TEREA สำหรับอุปกรณ์ IQOS ILUMA… | ตัวหลักตัดสินเอง (ไม่เผยแพร่ · แทนคำตรง ๆ แล้วอ่านไม่ได้ "ก้านให้ความร้อน") — เจ้าของแก้ได้ |
+
+**ยกไปรอบเล็กหลัง 30.4 (เจ้าของเคาะ 2026-09-11 · designer คุม):** คำไทยถูกตัดกลางคำตอนขึ้นบรรทัดใหม่ ("พอตใช้แล้วทิ้ง" · "ผลไม้" บนการ์ดหน้าแรก 390 หลังก้อน 0) — เป็นเรื่องการตัดบรรทัด (markup/CSS) ไม่ใช่สำนวน · ห้ามแก้ในรอบภาษา
