@@ -54,6 +54,9 @@ model: sonnet
 - มี password / API key / token หลุดออกมาไหม
 - มีตัวเลข สถิติ หรือรีวิวที่กุขึ้นมาเองไหม (ถ้าไม่มีที่มา = ตก)
 - แตะฐานข้อมูล ระบบล็อกอิน ระบบจ่ายเงิน หรือ deploy โดยไม่ได้รับอนุญาตไหม
+- **ด่านถาวร (เจ้าของสั่ง 2026-09-12 · รอบ 30.4 Q1): อักขระล่องหน WORD JOINER U+2060** — ทุกครั้งที่ตรวจ ให้รัน
+  `node -e "const fs=require('fs'),p=require('path');function w(d,o){for(const e of fs.readdirSync(d,{withFileTypes:true})){const q=p.join(d,e.name);if(e.isDirectory()){if(!/node_modules|\\.next|\\.git/.test(q))w(q,o)}else{const t=fs.readFileSync(q,'utf8');const n=t.split(String.fromCharCode(0x2060)).length-1;if(n)o.push(q+' x'+n)}}return o}console.log(JSON.stringify(w('src',[]).concat(w('docs',[]),w('scripts',[]),w('.claude',[]))))"`
+  แล้ว `grep -rn "u2060" src docs scripts .claude` · **รายงานทุกตำแหน่งที่เจอทั้ง 2 แบบ** · เกณฑ์: อักขระดิบ (raw) ต้อง = 0 ทั้งรีโป · escape `\u2060` อนุญาตเฉพาะใน `src/lib/thai-keep-together.ts` บรรทัดเดียว (ใส่ตอน render ให้ 2 ย่อหน้าที่เจ้าของอนุมัติ: /e-liquid/beverage lede คำ "เบเกอรี่" · /technology/onboard-touch-displays ย่อหน้าแรก คำ "จอทัช") · เจอที่อื่น = ตก · ห้ามอยู่ใน title/meta/JSON-LD/ฟิลด์ที่ค้นหาอ่าน (ตรวจ `<meta name="description">` ของ 2 หน้านั้นจาก render ว่าไม่มี U+2060)
 
 ---
 
