@@ -20,7 +20,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="ของแท้ ราคาตรง บริการจริง"
-        description="การบริการที่ดี คือสิ่งที่ OKami24 มีให้คุณ — ร้านอุปกรณ์พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา คัดสรรจากคนที่เข้าใจสินค้าจริง"
+        description="การบริการที่ดี คือสิ่งที่ OKami24 มีให้คุณ — ร้านพอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยาของแท้ จากคนขายที่รู้จักสินค้าจริง"
       />
       <Container className="max-w-2xl py-12 lg:py-16">
         <div className="flex flex-col gap-10">
@@ -35,19 +35,18 @@ export default function AboutPage() {
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">สินค้าที่เราคัดสรร</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              เว็บไซต์นี้รวบรวมอุปกรณ์พอตซิสเต็ม พอตคิท พอตใช้แล้วทิ้ง และหัวพอตจาก {brands.length} แบรนด์ที่เราคัดมา — UWELL, VOOPOO, SALTHUB และอื่น ๆ
-              พร้อมเครื่องมือเปรียบเทียบและ Product Finder ที่ช่วยหาสินค้าที่เหมาะกับคุณ ทุกสเปกถูกวิจัยจากหน้าทางการของแบรนด์
-              และติดป้าย <span className="text-verified">verified</span> หรือ{" "}
-              <span className="text-unverified">unverified</span> กำกับไว้เสมอ — ข้อมูลที่ยืนยันไม่ได้จะถูกระบุไว้ตรง ๆ
-              แทนการเดา
+              เว็บนี้รวมพอตซิสเต็ม พอตคิท พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS จาก {brands.length} แบรนด์ที่เราคัดมา เช่น UWELL VOOPOO SALTHUB
+              มีหน้าเปรียบเทียบและตัวช่วยเลือกสินค้าไว้ช่วยหารุ่นที่เหมาะกับคุณ สเปกอ้างอิงจากเว็บทางการของแบรนด์เป็นหลัก
+              รุ่นไหนเข้าหน้าทางการไม่ได้ ก็เช็คไขว้กับร้านค้าและรีวิวแทน ทุกค่าติดป้ายว่า <span className="text-verified">ยืนยันแล้ว</span> หรือ{" "}
+              <span className="text-unverified">ยังไม่ยืนยัน</span> กำกับไว้ ค่าที่ยืนยันไม่ได้เราบอกตรง ๆ ไม่เดา
             </p>
           </section>
 
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">บริการหลังการขาย</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              หากสินค้ามีปัญหา OKami24 เปิดให้เคลมได้ภายใน 7 วันหลังได้รับสินค้า โดยต้องมีคลิปวิดีโอตอนแกะกล่องเป็นหลักฐาน
-              ประกอบการพิจารณา
+              ของมีปัญหาเคลมได้ภายใน 7 วันนับจากวันที่ได้รับของ ต้องมีคลิปตอนแกะกล่อง ไม่มีคลิป พิจารณาให้ไม่ได้
+              เงื่อนไขทั้งหมดอยู่ที่หน้านโยบายเคลม
             </p>
           </section>
 
@@ -78,11 +77,9 @@ export default function AboutPage() {
           </section>
 
           <section>
-            <h2 className="font-display text-2xl font-semibold text-foreground">แนวทางการออกแบบ</h2>
+            <h2 className="font-display text-2xl font-semibold text-foreground">รูปสินค้า</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              ภาพประกอบสินค้าแต่ละชิ้นในเว็บไซต์นี้เป็นภาพเวกเตอร์ต้นฉบับที่สร้างจากข้อมูลสเปกจริงของสินค้านั้น ๆ
-              (รูปทรง ประเภทหน้าจอ สถานะแฟล็กชิป) ใช้เป็นภาพสำรองเมื่อยังไม่มีภาพถ่ายทางการ ส่วนสินค้าแฟล็กชิปบางรายการ
-              มีแกลเลอรีภาพถ่ายทางการประกอบ ระบุแหล่งที่มาไว้อย่างชัดเจน
+              รูปสินค้าในเว็บนี้เป็นรูปจริงของรุ่นนั้น รุ่นเรือธงบางรุ่นมีแกลเลอรีภาพจากแบรนด์เพิ่ม พร้อมระบุแหล่งที่มาไว้ใต้ภาพ
             </p>
           </section>
 

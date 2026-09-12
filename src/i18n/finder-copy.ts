@@ -32,32 +32,32 @@ export const FINDER_COPY_TH: Record<string, FinderQuestionCopy> = {
       "open-pod": { label: "Open-system pod", description: "เติมน้ำยาเองและเปลี่ยนหัวคอยล์ได้" },
       "pod-kit": { label: "Pod kit / pod mod", description: "ต้องการวัตต์มากขึ้น ตัวเครื่องใช้ซ้ำได้ เปลี่ยนแค่หัวพอตหรือคอยล์" },
       disposable: { label: "Disposable", description: "มีน้ำยาในตัวแล้ว ไม่ต้องเติมหรือเปลี่ยนคอยล์" },
-      "no-preference": { label: "ยังไม่แน่ใจ", description: "แนะนำสิ่งที่เหมาะที่สุด ไม่จำกัดฟอร์แมต" },
+      "no-preference": { label: "ยังไม่แน่ใจ", description: "แนะนำตัวที่เหมาะที่สุดมาเลย ไม่จำกัดแบบ" },
     },
   },
   portability: {
     title: "ขนาดที่กะทัดรัดสำคัญแค่ไหน",
     options: {
-      "ultra-compact": { label: "เล็กที่สุดเท่าที่จะเป็นไปได้", description: "ความพกพาสะดวกคือสิ่งสำคัญที่สุด" },
-      compact: { label: "กะทัดรัดพอประมาณก็โอเค", description: "ไม่จำเป็นต้องเป็นตัวเลือกที่เล็กที่สุด" },
-      "no-preference": { label: "ไม่สำคัญ", description: "ขนาดไม่ใช่ปัจจัยตัดสินใจสำหรับฉัน" },
+      "ultra-compact": { label: "ยิ่งเล็กยิ่งดี", description: "พกง่ายสำคัญที่สุด" },
+      compact: { label: "กะทัดรัดก็พอ", description: "ไม่ต้องเล็กที่สุดก็ได้" },
+      "no-preference": { label: "ไม่สำคัญ", description: "ขนาดไหนก็ได้" },
     },
   },
   screen: {
-    title: "ต้องการอินเทอร์เฟซแบบไหน",
+    title: "อยากได้จอแบบไหน",
     options: {
       none: { label: "ไม่มีจอ", description: "แค่ดูดหรือกดปุ่ม ไม่ต้องมีอะไรให้ดู" },
       basic: { label: "จอแสดงผลแบบง่าย", description: "เห็นแบตเตอรี่ วัตต์ และโหมดได้ในทันที" },
-      full: { label: "จอทัชสกรีนเต็มรูปแบบ", description: "ควบคุมเมนูและโหมดได้แบบครบถ้วน" },
-      "no-preference": { label: "ไม่มีข้อกำหนด", description: "จอไม่ใช่ปัจจัยตัดสินใจ" },
+      full: { label: "จอทัชเต็มจอ", description: "เข้าเมนูและสลับโหมดได้ครบบนจอ" },
+      "no-preference": { label: "แบบไหนก็ได้", description: "มีจอหรือไม่มีก็ได้" },
     },
   },
   battery: {
     title: "อายุแบตเตอรี่สำคัญแค่ไหน",
     options: {
-      critical: { label: "สำคัญมาก", description: "ต้องการระยะเวลาระหว่างการชาร์จที่นานที่สุด" },
+      critical: { label: "สำคัญมาก", description: "ชาร์จทีหนึ่ง อยากให้อยู่ได้นานที่สุด" },
       somewhat: { label: "สำคัญพอสมควร", description: "ยังไงก็ต้องชาร์จเป็นประจำอยู่แล้ว" },
-      "not-priority": { label: "ไม่ใช่สิ่งสำคัญ", description: "ไม่รังเกียจที่จะชาร์จบ่อย ๆ" },
+      "not-priority": { label: "ไม่ค่อยสำคัญ", description: "ชาร์จบ่อยหน่อยก็ไม่เป็นไร" },
     },
   },
   output: {
@@ -65,14 +65,14 @@ export const FINDER_COPY_TH: Record<string, FinderQuestionCopy> = {
     options: {
       low: { label: "แน่น MTL วัตต์ต่ำ", description: "ใกล้เคียงการสูบบุหรี่มวน" },
       flexible: { label: "ยืดหยุ่น / กลาง ๆ", description: "สลับไปมาระหว่างการสูบแน่นและโล่ง" },
-      high: { label: "โล่ง DTL วัตต์สูง", description: "ต้องการพลังมากขึ้นและการสูบที่โล่งกว่า" },
+      high: { label: "โล่ง DTL วัตต์สูง", description: "เอาแรงขึ้น สูบโล่งขึ้น" },
     },
   },
   experience: {
-    title: "คุณอธิบายประสบการณ์การสูบของตัวเองว่าอย่างไร",
+    title: "เคยใช้พอตมาก่อนไหม",
     options: {
-      beginner: { label: "เพิ่งเริ่มสูบไอ", description: "ต้องการอะไรที่ง่ายและให้อภัยได้" },
-      experienced: { label: "มีประสบการณ์แล้ว", description: "คุ้นเคยกับการควบคุมขั้นสูงกว่า" },
+      beginner: { label: "เพิ่งเริ่มสูบพอต", description: "ขอแบบง่าย ๆ ใช้ผิดนิดหน่อยก็ไม่เป็นไร" },
+      experienced: { label: "มีประสบการณ์แล้ว", description: "ปรับตั้งค่าเองได้สบาย" },
     },
   },
 };

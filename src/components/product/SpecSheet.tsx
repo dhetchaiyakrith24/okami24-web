@@ -16,15 +16,17 @@ export function SpecSheet({ product }: { product: Product }) {
         <SectionHeading
           eyebrow={dict.product.specsEyebrow}
           title={dict.product.specsTitle}
+          // Round 30.4 batch 1: both ledes were hardcoded English and showed on every Thai/Chinese
+          // product page — now dictionary strings (types.ts `product.specsUnverifiedNote` / `specsAllVerifiedNote`).
           description={
             unverifiedCount > 0
-              ? `${unverifiedCount} of ${product.specifications.length} fields could not be independently confirmed and are labeled unverified rather than guessed.`
-              : "Every field below was independently confirmed against an official or reliable source."
+              ? dict.product.specsUnverifiedNote.replace("{n}", String(unverifiedCount)).replace("{m}", String(product.specifications.length))
+              : dict.product.specsAllVerifiedNote
           }
         />
         <div className="grid grid-cols-1 gap-x-8 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
           {product.specifications.map((spec) => (
-            <SpecChip key={spec.key} spec={spec} />
+            <SpecChip key={spec.key} spec={spec} unverifiedLabel={dict.product.unverifiedBadge} unverifiedTitle={dict.product.unverifiedTooltip} />
           ))}
         </div>
       </Container>

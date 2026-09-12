@@ -451,8 +451,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // TAXONOMY_MATCHES["Coil-53"]. Worded to state the real product (Caliburn G, 1.0Ω) plus the
   // actual compatibility fact (G2), never a native-G2-coil claim.
   "Coil-53": {
-    tagline: "คอยล์ Caliburn G (1.0Ω) จากแบรนด์ UWELL ใช้ได้กับ Caliburn G2",
-    shortDescription: "คอยล์ Caliburn G ความต้านทาน 1.0Ω จากแบรนด์ UWELL ใช้ได้กับอุปกรณ์ Caliburn G และ Caliburn G2",
+    tagline: "คอยล์ Caliburn G 1.0 โอห์ม จากแบรนด์ UWELL ใช้ได้กับ Caliburn G2",
+    shortDescription: "คอยล์ Caliburn G 1.0 โอห์ม จากแบรนด์ UWELL ใช้ได้กับ Caliburn G และ Caliburn G2",
   },
   // New this session — resolves the Phase 3.4 deferral. Worded distinctly from Coil-53 ("คอยล์"
   // = coil vs "พอตเปล่า" = empty pod) on purpose: these are two genuinely different real products
@@ -498,7 +498,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "คอยล์รุ่น Vinci เป็นผลิตภัณฑ์ในกลุ่ม VINCI จากแบรนด์ VOOPOO",
   },
   "Coil-21": {
-    tagline: "คอยล์ Argus Pod จากแบรนด์ VOOPOO",
+    tagline: "หัวพอต Argus Pod จากแบรนด์ VOOPOO",
     shortDescription: "คอยล์รุ่น Argus Pod เป็นผลิตภัณฑ์ในกลุ่ม ARGUS จากแบรนด์ VOOPOO",
   },
   "Coil-72": {
@@ -591,7 +591,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // Heated-tobacco wave — factual, identity-level copy only, no health/reduced-harm claims
   // (heat-not-burn is not risk-free; this project makes no such claim anywhere).
   "IQOSHEET-14": {
-    tagline: "อุปกรณ์ให้ความร้อนยาสูบ LAMBDA i8 (ไม่ใช่ผลิตภัณฑ์ IQOS/PMI)",
+    tagline: "เครื่องอุ่นยาสูบ LAMBDA i8 (ไม่ใช่ผลิตภัณฑ์ IQOS/PMI)",
     shortDescription: "อุปกรณ์ heat-not-burn รุ่น i8 จากแบรนด์ LAMBDA ใช้ร่วมกับก้าน TEREA/SENTIA Smartcore",
   },
   "IQOSHEET-15": {
@@ -599,15 +599,15 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "ก้าน TEREA สำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International) ให้ความร้อนโดยไม่เผาไหม้",
   },
   "IQOSHEET-16": {
-    tagline: "อุปกรณ์ให้ความร้อนยาสูบ IQOS ILUMA i PRIME",
+    tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i PRIME",
     shortDescription: "อุปกรณ์รุ่น ILUMA i PRIME จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
   },
   "IQOSHEET-18": {
-    tagline: "อุปกรณ์ให้ความร้อนยาสูบ IQOS ILUMA i",
+    tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i",
     shortDescription: "อุปกรณ์รุ่น ILUMA i (รุ่นกลาง) จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
   },
   "IQOSHEET-17": {
-    tagline: "อุปกรณ์ให้ความร้อนยาสูบ IQOS ILUMA ONE",
+    tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA ONE",
     shortDescription: "อุปกรณ์รุ่น ILUMA ONE จากแบรนด์ IQOS — ข้อมูล Shipnity ปัจจุบันมี 2 รุ่นย่อยปนกัน (ตัวถังเดิมสีเทา และรุ่น i สีฟ้า) ยังไม่แยกชัดเจน",
   },
   "Pod-180": {

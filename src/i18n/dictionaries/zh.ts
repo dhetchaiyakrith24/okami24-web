@@ -142,6 +142,12 @@ export const zh: Dictionary = {
     featuresTitle: "它的独特之处。",
     specsEyebrow: "产品规格",
     specsTitle: "真实可查的参数。",
+    // Round 30.4 batch 1 — moved out of SpecSheet.tsx / SpecChip.tsx (were hardcoded English on the
+    // Chinese page too). Translated by the main agent, not owner-reviewed (Thai is the owner's language).
+    specsUnverifiedNote: "{m} 项参数中有 {n} 项暂未能从官方来源核实，我们标注为“未核实”，不做猜测。",
+    specsAllVerifiedNote: "以下每一项都已与官方或可靠来源核对。",
+    unverifiedBadge: "未核实",
+    unverifiedTooltip: "尚未与官方来源独立核实",
     compatibilityTitle: "兼容性",
     worksWithTitle: "可搭配本机使用",
     fitsDevicesTitle: "适配以下设备",

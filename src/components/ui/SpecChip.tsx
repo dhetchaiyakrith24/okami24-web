@@ -1,7 +1,20 @@
 import type { Specification } from "@/types/catalog";
 import { cn } from "@/lib/utils";
 
-export function SpecChip({ spec, className }: { spec: Specification; className?: string }) {
+// Round 30.4 batch 1: the badge word and its hover text come from the caller's dictionary
+// (SpecSheet passes `dict.product.unverifiedBadge` / `unverifiedTooltip`) — they were hardcoded
+// English here and showed on Thai pages. The English defaults keep any other caller unchanged.
+export function SpecChip({
+  spec,
+  className,
+  unverifiedLabel = "unverified",
+  unverifiedTitle = "Not independently confirmed against an official source",
+}: {
+  spec: Specification;
+  className?: string;
+  unverifiedLabel?: string;
+  unverifiedTitle?: string;
+}) {
   return (
     <div
       className={cn(
@@ -13,8 +26,8 @@ export function SpecChip({ spec, className }: { spec: Specification; className?:
       <div className="label-mono flex items-center gap-2 text-[0.65rem] text-foreground-dim">
         <span>{spec.label}</span>
         {spec.sourceStatus === "unverified" && (
-          <span className="text-unverified" title="Not independently confirmed against an official source">
-            unverified
+          <span className="text-unverified" title={unverifiedTitle}>
+            {unverifiedLabel}
           </span>
         )}
       </div>
