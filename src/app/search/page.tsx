@@ -6,7 +6,7 @@ import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "ค้นหาสินค้า",
-  description: "ค้นหาสินค้าทั้งหมดของร้านด้วยชื่อรุ่น แบรนด์ หรือคุณสมบัติ เช่น Caliburn, VOOPOO หรือหน้าจอสัมผัส",
+  description: "ค้นหาสินค้าทั้งหมดของร้านด้วยชื่อรุ่น แบรนด์ หรือตระกูล เช่น Caliburn, VOOPOO หรือ M Bar",
   // noindex — an internal search results page is an unbounded space of thin, query-driven
   // permutations with no unique landing-page value; canonical to the query-less base path is
   // kept as defense in depth, not the primary signal.
