@@ -153,6 +153,7 @@ export const en: Dictionary = {
     specsAllVerifiedNote: "Every field below was independently confirmed against an official or reliable source.",
     unverifiedBadge: "unverified",
     unverifiedTooltip: "Not independently confirmed against an official source",
+    flagshipBadge: "Flagship",
     compatibilityTitle: "Compatibility",
     worksWithTitle: "Works with this device",
     fitsDevicesTitle: "Fits these devices",

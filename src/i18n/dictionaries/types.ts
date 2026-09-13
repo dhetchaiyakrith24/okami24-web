@@ -178,6 +178,9 @@ export interface Dictionary {
     unverifiedBadge: string;
     /** Hover text of that badge. */
     unverifiedTooltip: string;
+    /** The hero/card badge for `editorialTag === "Flagship"` (round 30.4 ก8, EditorialTagBadge.tsx).
+     *  The other editorialTag values are internal curation notes and are not shown. */
+    flagshipBadge: string;
     compatibilityTitle: string;
     worksWithTitle: string;
     fitsDevicesTitle: string;

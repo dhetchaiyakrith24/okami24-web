@@ -148,6 +148,7 @@ export const zh: Dictionary = {
     specsAllVerifiedNote: "以下每一项都已与官方或可靠来源核对。",
     unverifiedBadge: "未核实",
     unverifiedTooltip: "尚未与官方来源独立核实",
+    flagshipBadge: "旗舰",
     compatibilityTitle: "兼容性",
     worksWithTitle: "可搭配本机使用",
     fitsDevicesTitle: "适配以下设备",

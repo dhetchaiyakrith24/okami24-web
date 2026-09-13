@@ -3,7 +3,7 @@ import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { OptionCountBadge } from "@/components/catalog/OptionCountBadge";
-import { Badge } from "@/components/ui/Badge";
+import { EditorialTagBadge } from "@/components/catalog/EditorialTagBadge";
 import { PuffCount } from "@/components/catalog/PuffCount";
 import { ProductTagline } from "@/components/catalog/ProductTagline";
 import { brandName, formatBattery, formatWattage } from "@/lib/utils";
@@ -43,12 +43,9 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="absolute left-3 top-3 flex flex-wrap gap-1.5 max-lg:left-2 max-lg:top-2 max-lg:z-10">
           {/* On a 169px phone card the editorial tag, the option count and the heart could not share
               the top edge (designer, 2026-09-08: "FLAGSHIP" / "RETAILER-CONFIRMED" clipped mid-word).
-              The tag hides below lg — CSS only, wording untouched; the option count stays. */}
-          {product.editorialTag && (
-            <Badge tone="ember" className="max-lg:hidden">
-              {product.editorialTag}
-            </Badge>
-          )}
+              The tag hides below lg — CSS only; the option count stays. Round 30.4 ก8: the wording
+              is EditorialTagBadge's — only "Flagship" shows, in the visitor's language. */}
+          <EditorialTagBadge tag={product.editorialTag} className="max-lg:hidden" />
           <OptionCountBadge product={product} />
         </div>
         <FavoriteButton slug={product.slug} className="absolute right-3 top-3 max-lg:right-2 max-lg:top-2" />

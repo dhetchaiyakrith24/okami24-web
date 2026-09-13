@@ -9,6 +9,7 @@ import { MobileVariantGallery, MOBILE_SLIDE_SIZES } from "@/components/product/M
 import { legacyVariantOptions } from "@/components/product/variant-options";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
+import { EditorialTagBadge } from "@/components/catalog/EditorialTagBadge";
 import { Button } from "@/components/ui/Button";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
@@ -167,7 +168,7 @@ export function ProductHero({
           <div className="flex flex-wrap items-center gap-2 max-lg:order-1">
             <Badge tone="steel">{brandName(product.brandId)}</Badge>
             <Badge tone="neutral">{familyName(product.familyId)}</Badge>
-            {product.editorialTag && <Badge tone="ember">{product.editorialTag}</Badge>}
+            <EditorialTagBadge tag={product.editorialTag} />
           </div>
           <h1 className="font-display text-[length:var(--text-h1)] font-bold leading-[0.95] tracking-tight text-foreground max-lg:order-2 max-lg:text-[1.75rem] max-lg:leading-[1.1]">
             {product.name}

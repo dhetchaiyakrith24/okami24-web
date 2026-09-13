@@ -157,6 +157,10 @@ export const th: Dictionary = {
     specsAllVerifiedNote: "ทุกรายการด้านล่างเช็คกับเว็บทางการของแบรนด์หรือแหล่งที่เชื่อถือได้แล้ว",
     unverifiedBadge: "ยังไม่ยืนยัน",
     unverifiedTooltip: "ยังยืนยันกับแหล่งทางการไม่ได้",
+    // Round 30.4 wiring ก8 (owner ruling 2026-09-12): the only editorialTag a customer sees is
+    // "Flagship", as a shop label in the visitor's language. The curation tags stay in the data
+    // (they drive the "recommended" card order) but are not displayed — EditorialTagBadge.tsx.
+    flagshipBadge: "รุ่นเรือธง",
     compatibilityTitle: "ความเข้ากันได้",
     worksWithTitle: "ใช้ร่วมกับเครื่องนี้ได้",
     fitsDevicesTitle: "ใช้ได้กับเครื่องเหล่านี้",
