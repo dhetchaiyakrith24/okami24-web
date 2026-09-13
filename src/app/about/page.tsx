@@ -99,7 +99,9 @@ export default function AboutPage() {
                   <Link href={`/brands/${b.slug}`} className="font-semibold text-foreground hover:text-ember">
                     {b.name}
                   </Link>
-                  <p className="mt-1 text-sm text-foreground-muted">{b.description}</p>
+                  {/* Round 30.4 wiring ข1: the Thai lede approved in 30.3ข (every brand on the storefront
+                      has one); `description` is the English fallback. This page is Thai prose throughout. */}
+                  <p className="mt-1 text-sm text-foreground-muted">{b.descriptionTh ?? b.description}</p>
                 </li>
               ))}
             </ul>

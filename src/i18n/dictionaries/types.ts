@@ -354,10 +354,14 @@ export interface Dictionary {
     pageDescriptionOne: string;
     pageDescriptionOther: string;
   };
-  /** `/favorites` — title reuses `nav.favorites`. */
+  /** `/favorites` — title reuses `nav.favorites`. The empty-state strings were hardcoded English
+   *  in FavoritesList.tsx until round 30.4 (wiring ข3). */
   favorites: {
     eyebrow: string;
     pageDescription: string;
+    emptyTitle: string;
+    emptyBody: string;
+    emptyCta: string;
   };
   /** Commerce foundation (2026-09-02) — `/cart`. Product names/variant labels themselves stay
    *  untranslated catalog content, same rule as everywhere else in this dictionary. */

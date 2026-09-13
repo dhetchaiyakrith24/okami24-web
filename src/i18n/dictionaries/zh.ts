@@ -294,6 +294,9 @@ export const zh: Dictionary = {
   favorites: {
     eyebrow: "已收藏",
     pageDescription: "仅保存在本浏览器中，不与账户关联。",
+    emptyTitle: "还没有收藏的商品",
+    emptyBody: "点击商品图片右上角的心形图标，收藏的型号会显示在这里。收藏仅保存在本浏览器中。",
+    emptyCta: "查看全部商品",
   },
   cart: {
     eyebrow: "您的订单",

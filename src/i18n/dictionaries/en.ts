@@ -301,6 +301,9 @@ export const en: Dictionary = {
   favorites: {
     eyebrow: "Saved",
     pageDescription: "Stored locally in this browser — not tied to an account.",
+    emptyTitle: "No favorites yet",
+    emptyBody: "Tap the heart icon on any product card to save it here. Favorites are stored only in this browser.",
+    emptyCta: "Browse the catalog",
   },
   cart: {
     eyebrow: "Your order",

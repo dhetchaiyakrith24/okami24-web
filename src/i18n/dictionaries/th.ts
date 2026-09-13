@@ -307,6 +307,11 @@ export const th: Dictionary = {
   favorites: {
     eyebrow: "บันทึกไว้",
     pageDescription: "จัดเก็บในเบราว์เซอร์นี้เท่านั้น ไม่ผูกกับบัญชีผู้ใช้",
+    // Round 30.4 wiring ข3 (owner ruling 2026-09-12): the empty state used to be hardcoded English
+    // in FavoritesList.tsx. Version ข — no second sentence about the browser; the lede above says it.
+    emptyTitle: "ยังไม่ได้บันทึกสินค้าไว้",
+    emptyBody: "กดหัวใจมุมขวาบนของรูปสินค้า รุ่นที่กดไว้จะมาอยู่ที่นี่",
+    emptyCta: "ดูสินค้าทั้งหมด",
   },
   cart: {
     eyebrow: "คำสั่งซื้อของคุณ",

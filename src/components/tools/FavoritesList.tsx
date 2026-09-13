@@ -1,6 +1,7 @@
 "use client";
 
 import { useFavorites } from "@/lib/favorites";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 import { getProduct } from "@/data/products";
 import { getPublishedProduct } from "@/data/shipnity-seed/storefront-bridge";
 import { ProductCard } from "@/components/catalog/ProductCard";
@@ -12,9 +13,13 @@ import { Button } from "@/components/ui/Button";
  * product — favoriting only worked for legacy before `PilotProductCard` gained its own
  * `FavoriteButton` (full-catalog-discovery-mission fix). Look up both, same "flat, mixed grid,
  * each item rendered by its own card component" pattern already used in `SearchTool.tsx`.
+ *
+ * Round 30.4 wiring ข3 (owner ruling 2026-09-12): the empty state reads `dict.favorites.*` — it was
+ * hardcoded English in every language.
  */
 export function FavoritesList() {
   const { favorites } = useFavorites();
+  const { dict } = useLocale();
   const legacyProducts = favorites.map((slug) => getProduct(slug)).filter((p): p is NonNullable<typeof p> => Boolean(p));
   const publishedProducts = favorites.map((slug) => getPublishedProduct(slug)).filter((p): p is NonNullable<typeof p> => Boolean(p));
   const totalCount = legacyProducts.length + publishedProducts.length;
@@ -22,11 +27,9 @@ export function FavoritesList() {
   if (totalCount === 0) {
     return (
       <div className="flex flex-col items-center gap-4 rounded-2xl border border-dashed border-surface-border py-20 text-center">
-        <p className="font-display text-xl font-semibold text-foreground">No favorites yet</p>
-        <p className="max-w-sm text-sm text-foreground-muted">
-          Tap the heart icon on any product card to save it here. Favorites are stored only in this browser.
-        </p>
-        <Button href="/products">Browse the catalog</Button>
+        <p className="font-display text-xl font-semibold text-foreground">{dict.favorites.emptyTitle}</p>
+        <p className="max-w-sm text-sm text-foreground-muted">{dict.favorites.emptyBody}</p>
+        <Button href="/products">{dict.favorites.emptyCta}</Button>
       </div>
     );
   }
