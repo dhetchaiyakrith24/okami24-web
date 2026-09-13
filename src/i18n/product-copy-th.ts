@@ -2,8 +2,9 @@
  * OKami24 — Phase 3.2.2: Thai translations of legacy product tagline/shortDescription.
  *
  * Presentation-layer only, keyed by `Product.slug` — src/data/products/*.ts stays the canonical
- * English source (untouched). Shown ADDITIONALLY under the English text on the product detail
- * page when locale is Thai (never replacing it) — see ProductHero.tsx. Model/brand/technical
+ * English source (untouched). Shown on the product card and the product page when the locale is
+ * Thai — since round 30.4 (wiring A, owner 2026-09-12) INSTEAD of the English pair, which used to
+ * stay above it; a slug without an entry keeps the English — see ProductHero.tsx. Model/brand/technical
  * terms (mAh, W, mL, GENE.AI, Pro-FOCS, TFT, RGB, Type-C, KOKO, product line names, etc.) are
  * kept as-is, matching how the rest of the site treats brand/model/spec vocabulary; only the
  * descriptive sentence structure is translated. Pure translation of the existing English

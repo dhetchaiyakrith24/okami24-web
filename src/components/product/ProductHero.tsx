@@ -65,10 +65,14 @@ export function ProductHero({
   imageDisplayMap?: Record<string, ImageDisplayInfo>;
 }) {
   const { locale, dict } = useLocale();
-  // Thai locale adds a translated tagline/description under the English original — never
-  // replacing it, and only for the 28 legacy products with a real (human-checked, not machine-
-  // guessed) Thai entry. See product-copy-th.ts header for why this stays presentation-only.
+  // Round 30.4 wiring A (owner ruling 2026-09-12): a Thai visitor reads the human-checked Thai
+  // tagline/description from product-copy-th.ts INSTEAD of the English pair. Until this round the
+  // English stayed above the Thai ("never replacing", Phase 3.2.2), which left two English lines in
+  // the hero of every legacy product page after the site went Thai-first. A slug without a Thai
+  // entry keeps the English lines, so nothing goes blank; en/zh visitors see exactly what they did.
   const copyTh = locale === "th" ? PRODUCT_COPY_TH[product.slug] : undefined;
+  const heroTagline = copyTh?.tagline ?? product.tagline;
+  const heroDescription = copyTh?.shortDescription ?? product.shortDescription;
   const [selectedColorId, setSelectedColorId] = useState<string | null>(firstSellable(product.colorVariants));
   const [selectedFlavorId, setSelectedFlavorId] = useState<string | null>(firstSellable(product.flavorVariants));
   // "All Colors" (owner mandate, 2026-09-03) is a third hero-image state, not a third variant list
@@ -169,12 +173,10 @@ export function ProductHero({
             {product.name}
           </h1>
           <div className="flex flex-col gap-1.5 max-lg:order-7">
-            <p className="max-w-lg text-lg leading-relaxed text-foreground-muted">{product.tagline}</p>
-            {copyTh && <p className="max-w-lg text-lg leading-relaxed text-foreground-muted/75">{copyTh.tagline}</p>}
+            <p className="max-w-lg text-lg leading-relaxed text-foreground-muted">{heroTagline}</p>
           </div>
           <div className="flex flex-col gap-1 max-lg:order-8">
-            <p className="max-w-lg text-sm leading-relaxed text-foreground-dim">{product.shortDescription}</p>
-            {copyTh && <p className="max-w-lg text-sm leading-relaxed text-foreground-dim/75">{copyTh.shortDescription}</p>}
+            <p className="max-w-lg text-sm leading-relaxed text-foreground-dim">{heroDescription}</p>
           </div>
 
           {sellingPrice !== null && (

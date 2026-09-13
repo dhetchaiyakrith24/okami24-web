@@ -10,8 +10,11 @@ import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { LineOrderingNotice } from "@/components/commerce/LineOrderingNotice";
 
 export const metadata: Metadata = {
-  title: "รวมพอต น้ำยา และ IQOS ของแท้ทุกรุ่น",
-  description: "สินค้าทั้งหมดในหน้าเดียว พอตทุกแบบ หัวพอต คอยล์ น้ำยา และ IQOS ของแท้ทุกชิ้น กรองตามแบรนด์หรือค้นด้วยชื่อรุ่นได้ สั่งซื้อและสอบถามทาง LINE @okm24",
+  // Round 30.4 (owner 2026-09-13, THAI_STYLE §6): no e-liquid is on the storefront today (legacy 0,
+  // the three Shipnity SKUs are not cleared), so the title and meta do not promise it. Put "น้ำยา"
+  // back in both the day the category has products.
+  title: "รวมพอต หัวพอต คอยล์ และ IQOS ของแท้ทุกรุ่น",
+  description: "สินค้าทั้งหมดในหน้าเดียว พอตทุกแบบ หัวพอต คอยล์ และ IQOS ของแท้ทุกชิ้น กรองตามแบรนด์หรือค้นด้วยชื่อรุ่นได้ สั่งซื้อและสอบถามทาง LINE @okm24",
   ...canonicalFor("/products"),
 };
 
