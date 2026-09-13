@@ -17,7 +17,6 @@ export const tfitProducts: Product[] = [
     shortDescription:
       "A 20,000-puff disposable OKami24 has genuinely reviewed on its own YouTube channels (real hands-on 30-day usage content). The brand name is confirmed as \"TFIT\" (not \"TFIF\") from those videos' own on-screen spelling, but the specs below come from a single retailer listing that does not match TFIT's own officially-indexed NOVA/NOVA MAX lineup. Deeper research (2026-09-03) found a real complication: \"M Power\" is not a TFIT-exclusive name — unrelated brands \"Mon\" (Mon M Power) and \"Mazaj\" (Mazaj M-Power 20000 Puffs) sell differently-specced devices under the same name, a known pattern for one Chinese OEM shell relabeled by multiple brands. Thinkvape (TFIT's parent) does manufacture 20K-class OEM disposables per its own B2B listings, so a genuine TFIT-branded regional SKU remains plausible — but the brand attribution on THIS specific unit is not yet independently confirmed.",
     isFlagship: false,
-    editorialTag: "Spec conflict — needs review",
     // Confirmed via YouTube oEmbed (2026-09-03): real video, owned by youtube.com/@OKM_24 — one
     // of OKami24's own three channels. A genuine 14-day hands-on review.
     reviewVideo: { videoId: "eOlSO97e9r0", title: "หลังใช้งาน 14 วัน TFIT M POWER 20K เล็ก แรง ซิ่ง!", channelName: "OKAMI" },

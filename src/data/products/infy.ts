@@ -17,7 +17,6 @@ export const infyProducts: Product[] = [
     shortDescription:
       "A 20,000-puff rechargeable disposable from INFY (infy.my / This Is Salts) — real, actively-sold (confirmed via a hands-on Thai review and retailer \"new arrival\" posts), but not on INFY's own officially-indexed disposable lineup, which currently tops out at 12K. Specs corroborated across 10+ independent Thai/Cambodian retailers, with minor variance between sources (600mAh/18mL vs 650mAh/20mL) not yet resolved against a physical unit.",
     isFlagship: false,
-    editorialTag: "Retailer-confirmed",
     attributes: {
       batteryMah: 600,
       puffCount: 20000,

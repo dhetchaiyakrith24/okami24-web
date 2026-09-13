@@ -157,6 +157,10 @@ export const th: Dictionary = {
     specsAllVerifiedNote: "ทุกรายการด้านล่างเช็คกับเว็บทางการของแบรนด์หรือแหล่งที่เชื่อถือได้แล้ว",
     unverifiedBadge: "ยังไม่ยืนยัน",
     unverifiedTooltip: "ยังยืนยันกับแหล่งทางการไม่ได้",
+    // Round 30.4 wiring ก8 (owner ruling 2026-09-12): the only editorialTag a customer sees is
+    // "Flagship", as a shop label in the visitor's language. The curation tags stay in the data
+    // (they drive the "recommended" card order) but are not displayed — EditorialTagBadge.tsx.
+    flagshipBadge: "รุ่นเรือธง",
     compatibilityTitle: "ความเข้ากันได้",
     worksWithTitle: "ใช้ร่วมกับเครื่องนี้ได้",
     fitsDevicesTitle: "ใช้ได้กับเครื่องเหล่านี้",
@@ -303,6 +307,11 @@ export const th: Dictionary = {
   favorites: {
     eyebrow: "บันทึกไว้",
     pageDescription: "จัดเก็บในเบราว์เซอร์นี้เท่านั้น ไม่ผูกกับบัญชีผู้ใช้",
+    // Round 30.4 wiring ข3 (owner ruling 2026-09-12): the empty state used to be hardcoded English
+    // in FavoritesList.tsx. Version ข — no second sentence about the browser; the lede above says it.
+    emptyTitle: "ยังไม่ได้บันทึกสินค้าไว้",
+    emptyBody: "กดหัวใจมุมขวาบนของรูปสินค้า รุ่นที่กดไว้จะมาอยู่ที่นี่",
+    emptyCta: "ดูสินค้าทั้งหมด",
   },
   cart: {
     eyebrow: "คำสั่งซื้อของคุณ",

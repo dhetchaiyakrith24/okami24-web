@@ -43,6 +43,7 @@ export const brands: Brand[] = [
     name: "RINCOE",
     fullName: "Rincoe",
     tagline: "Pod systems and vape hardware.",
+    taglineTh: "พอตซิสเต็มและอุปกรณ์พอต",
     description:
       "A vape hardware manufacturer best known for the Jellybox pod-system line, offering interchangeable mesh-coil pods across multiple device generations (Jellybox V, Jellybox Nano, and related kits).",
     descriptionTh:
@@ -152,6 +153,7 @@ export const brands: Brand[] = [
     name: "IQOS",
     fullName: "IQOS (Philip Morris International)",
     tagline: "Heat-not-burn tobacco system.",
+    taglineTh: "เครื่องอุ่นยาสูบ",
     description:
       "Philip Morris International's heated-tobacco device brand — the ILUMA device family (Prime/i/i ONE/ONE) paired with TEREA tobacco sticks, using induction heating instead of combustion.",
     descriptionTh:
@@ -165,6 +167,7 @@ export const brands: Brand[] = [
     name: "RELX",
     fullName: "RELX (Shenzhen RELX Technology Co., Ltd)",
     tagline: "A global closed-pod and disposable vape brand.",
+    taglineTh: "พอตใช้แล้วทิ้งและพอตระบบสวิตช์",
     description:
       "A major international vape brand (relxnow.com, self-described \"RELX Global Official\") spanning a modular closed-pod system (RELX Creator Pro device + Creator Pod cartridges) alongside standalone high-puff disposables such as Smash GO.",
     descriptionTh:
@@ -177,6 +180,7 @@ export const brands: Brand[] = [
     name: "JOIWAY",
     fullName: "Joiway",
     tagline: "Disposable vapes and vaping accessories.",
+    taglineTh: "พอตใช้แล้วทิ้งและอุปกรณ์เสริม",
     description:
       "A vape device manufacturer (myjoiway.com) selling disposables under an \"X Series\" naming pattern, including the F-series disposable line, alongside e-juice and accessories.",
     descriptionTh:

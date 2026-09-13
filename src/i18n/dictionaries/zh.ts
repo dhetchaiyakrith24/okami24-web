@@ -148,6 +148,7 @@ export const zh: Dictionary = {
     specsAllVerifiedNote: "以下每一项都已与官方或可靠来源核对。",
     unverifiedBadge: "未核实",
     unverifiedTooltip: "尚未与官方来源独立核实",
+    flagshipBadge: "旗舰",
     compatibilityTitle: "兼容性",
     worksWithTitle: "可搭配本机使用",
     fitsDevicesTitle: "适配以下设备",
@@ -293,6 +294,9 @@ export const zh: Dictionary = {
   favorites: {
     eyebrow: "已收藏",
     pageDescription: "仅保存在本浏览器中，不与账户关联。",
+    emptyTitle: "还没有收藏的商品",
+    emptyBody: "点击商品图片右上角的心形图标，收藏的型号会显示在这里。收藏仅保存在本浏览器中。",
+    emptyCta: "查看全部商品",
   },
   cart: {
     eyebrow: "您的订单",
