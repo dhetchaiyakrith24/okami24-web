@@ -716,8 +716,8 @@ export const uwellProducts: Product[] = [
     features: [
       {
         id: "shatterproof",
-        title: "2.51\" shatterproof touchscreen",
-        description: "One of the largest displays in the Caliburn line, built to withstand everyday-carry drops and knocks.",
+        title: "2.51\" touchscreen",
+        description: "One of the largest displays in the Caliburn line.",
       },
       {
         id: "stepless-airflow",
