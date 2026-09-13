@@ -30,8 +30,13 @@ export interface Brand {
   description: string;
   /** Round 30.3ข: Thai lede under the brand-page H1 and the meta description a crawler reads.
    *  Only brands with a real product on the storefront carry one (the empty brand pages are
-   *  noindex); `description` stays the English fallback. `tagline` (the eyebrow) stays English. */
+   *  noindex); `description` stays the English fallback. */
   descriptionTh?: string;
+  /** Round 30.4 wiring D (owner ruling 2026-09-12): Thai eyebrow on the brand page, only for the
+   *  four brands whose `tagline` is a plain description of what they make (rincoe · iqos · relx ·
+   *  joiway). The seven brands whose tagline is a slogan keep the English `tagline` in every
+   *  language — a slogan is brand copy, like a model name (THAI_STYLE layer 1). */
+  taglineTh?: string;
   founded?: string;
   homeMarket?: string;
   referenceUrl: string;
