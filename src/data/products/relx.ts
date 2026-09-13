@@ -94,7 +94,6 @@ export const relxProducts: Product[] = [
     shortDescription:
       "A real, RELX-manufactured high-puff disposable line sold in the Thai/regional market — genuinely NOT the same thing as RELX's official international \"Creator\" line (a refillable Creator Pro Device + Creator Pod cartridge system, ~5,000 puffs/pod). Deeper research (2026-09-03) found this is a real generational chain — 18K (original) → Clear Pod 18K → Boost 20K → 22K (current, \"รุ่นใหม่อัพเกรด\") — not a naming mix-up; OKami24's own two review videos map to two different real points in that same chain. What's still open: whether OKami24 currently stocks the 18K pod alongside the 22K device, or has moved on to 22K only.",
     isFlagship: false,
-    editorialTag: "Confirm current stock",
     // Confirmed via YouTube oEmbed (2026-09-03): real video, owned by
     // youtube.com/@PODSYSTEM-OKAMI-II — one of OKami24's own three channels.
     reviewVideo: { videoId: "HKwsShRoo78", title: "RELX CREATOR 22K รุ่นใหม่อัพเกรด ใหญ่ จุใจ!", channelName: "POD SYSTEM OKAMI II" },
