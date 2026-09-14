@@ -15,9 +15,13 @@ import { cn } from "@/lib/utils";
 // measurement stay exactly as before. The `!` matters: `.label-mono` lives in globals.css after
 // `@import "tailwindcss"`, so a plain `tracking-normal` would lose on source order. English and
 // Chinese visitors never set either prop, so nothing changes for them.
+//
+// Round 30.4ค batch 2 (owner 2026-09-15): same for the VALUE — `value` is the string to display
+// (the Thai overlay in product-copy-th.ts `specifications[key]`); the data value is the fallback.
 export function SpecChip({
   spec,
   label,
+  value,
   thaiLabel = false,
   className,
   unverifiedLabel = "unverified",
@@ -25,6 +29,7 @@ export function SpecChip({
 }: {
   spec: Specification;
   label?: string;
+  value?: string;
   thaiLabel?: boolean;
   className?: string;
   unverifiedLabel?: string;
@@ -46,7 +51,7 @@ export function SpecChip({
           </span>
         )}
       </div>
-      <div className="font-body text-sm text-foreground">{spec.value}</div>
+      <div className="font-body text-sm text-foreground">{value ?? spec.value}</div>
     </div>
   );
 }

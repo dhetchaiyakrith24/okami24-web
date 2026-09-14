@@ -6,6 +6,8 @@ import { ProductPicker } from "@/components/tools/ProductPicker";
 import { familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { specLabelTh } from "@/i18n/spec-labels-th";
+import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
+import type { Specification } from "@/types/catalog";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import type { Dictionary } from "@/i18n/dictionaries";
 
@@ -86,7 +88,7 @@ function classificationRows(items: CatalogItem[], dict: Dictionary): Row[] {
 /** Shared, independently-verified manufacturer facts. Both halves carry `specifications` with a
  *  real `sourceStatus`, so this works across the boundary unchanged — a spec row is shown only
  *  when EVERY selected product has that same label AND every one of them is `verified`. */
-function verifiedSpecRows(items: CatalogItem[]): Row[] {
+function verifiedSpecRows(items: CatalogItem[], valueOf: (slug: string, spec: Specification) => string = (_, spec) => spec.value): Row[] {
   if (items.length < 2) return [];
   const [first, ...rest] = items;
   const sharedLabels = first.specifications
@@ -98,7 +100,7 @@ function verifiedSpecRows(items: CatalogItem[]): Row[] {
       const entries = items.map((p) => p.specifications.find((s) => s.label === label)!);
       const allVerified = entries.every((e) => e.sourceStatus === "verified");
       if (!allVerified) return null;
-      return { label, values: entries.map((e) => e.value) };
+      return { label, values: entries.map((e, i) => valueOf(items[i].slug, e)) };
     })
     .filter((row): row is Row => Boolean(row));
 }
@@ -112,9 +114,13 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
   // Round 30.4ค batch 1 (owner 2026-09-15): the row header is the same Thai chip label the product
   // page shows (spec-labels-th.ts) so /compare and the PDP call one field one name. Rows are still
   // matched on the English data label above; only the displayed string changes, and only for Thai.
+  // Batch 2 (owner 2026-09-15): the cell VALUE likewise comes from that product's `specifications`
+  // overlay in product-copy-th.ts (keyed by spec key) when the locale is Thai — PM products, whose
+  // spec values are Thai in the data already, have no overlay and fall through unchanged.
   const specs = useMemo(() => {
-    const rows = verifiedSpecRows(items);
-    return locale === "th" ? rows.map((row) => ({ ...row, label: specLabelTh(row.label) })) : rows;
+    if (locale !== "th") return verifiedSpecRows(items);
+    const rows = verifiedSpecRows(items, (slug, spec) => PRODUCT_COPY_TH[slug]?.specifications?.[spec.key] ?? spec.value);
+    return rows.map((row) => ({ ...row, label: specLabelTh(row.label) }));
   }, [items, locale]);
   // Only worth explaining when the selection genuinely mixes a product that has the attribute
   // block with one that doesn't — not whenever a single cell happens to be empty.

@@ -6,10 +6,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SpecChip } from "@/components/ui/SpecChip";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { specLabelTh } from "@/i18n/spec-labels-th";
+import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 
 export function SpecSheet({ product }: { product: Product }) {
   const { dict, locale } = useLocale();
   const unverifiedCount = product.specifications.filter((s) => s.sourceStatus === "unverified").length;
+  // Round 30.4ค batch 2 (owner 2026-09-15): a Thai visitor reads each chip's VALUE from the product's
+  // `specifications` overlay in product-copy-th.ts (keyed by spec key); a key without an entry keeps
+  // the data value (numbers / units / model names need no translation).
+  const valuesTh = locale === "th" ? PRODUCT_COPY_TH[product.slug]?.specifications : undefined;
 
   return (
     <section id="specifications" className="scroll-mt-20 border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">
@@ -36,6 +41,7 @@ export function SpecSheet({ product }: { product: Product }) {
                 key={spec.key}
                 spec={spec}
                 label={labelTh}
+                value={valuesTh?.[spec.key]}
                 thaiLabel={labelTh !== undefined && labelTh !== spec.label}
                 unverifiedLabel={dict.product.unverifiedBadge}
                 unverifiedTitle={dict.product.unverifiedTooltip}

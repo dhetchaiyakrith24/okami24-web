@@ -25,10 +25,25 @@ export interface ProductCopyTh {
    *  itself coined — Smart Triple-Tap Control, Pro-FOCS — stays English by THAI_STYLE layer 1).
    *  Read by FeatureGrid.tsx when the locale is Thai. */
   features?: Record<string, { title?: string; description: string }>;
+  /** Round 30.4ค batch 2 (owner-approved value by value, 2026-09-15): the SpecSheet chip VALUES in
+   *  Thai, keyed by `Specification.key` (unique within one product). Only values that contain
+   *  words have an entry — a value that is just a number/unit/model name ("5–35W", "USB-C",
+   *  "GENE.TT 3.0") keeps the data string; "—" stands for a value the data records as "Not
+   *  independently confirmed" (the chip's "ยังไม่ยืนยัน" badge already says so). Numbers, units
+   *  and model names inside a Thai value are the data's, verbatim. Read by SpecSheet.tsx and
+   *  CompareTool.tsx when the locale is Thai; the label overlay is spec-labels-th.ts. */
+  specifications?: Record<string, string>;
 }
 
 export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   "caliburn-g5": {
+    specifications: {
+      battery: "1600mAh ในตัว",
+      screen: "จอสี 0.85 นิ้ว",
+      pod: "3mL เติมด้านบน ยึดด้วยแม่เหล็ก",
+      control: "Smart Triple-Tap Control (แตะเพื่อสลับโหมด)",
+      "pod-compat": "UWELL GPP",
+    },
     tagline: "ระบบ Smart Triple-Tap Control ปรับแต่งเพื่อทุกจังหวะการสูบ",
     shortDescription:
       "รุ่นเรือธงล่าสุดของตระกูล Caliburn: พอตซิสเต็มแบตเตอรี่ 1600mAh พร้อมจอสี 0.85 นิ้ว และระบบสั่งงานด้วยการแตะสามครั้งสำหรับสลับโหมดโดยไม่ต้องใช้ปุ่ม",
@@ -47,6 +62,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g5-lite": {
+    specifications: {
+      battery: "1600mAh",
+      "pod-compat": "UWELL GPP",
+      screen: "ไม่มีจอสี ใช้ไฟ LED บอกสถานะแทน",
+    },
     tagline: "แพลตฟอร์ม G5 ที่ปรับให้เรียบง่ายลง เหมาะกับการใช้งานประจำวันระยะยาว",
     shortDescription:
       "รุ่นที่ตัดทอนความซับซ้อนลงจาก G5 ยังคงแบตเตอรี่ 1600mAh และสูงสุด 35 วัตต์เท่าเดิม แต่ปรับระบบควบคุมให้เรียบง่ายขึ้นในราคาที่ย่อมเยากว่า",
@@ -58,6 +78,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g5-lite-se": {
+    specifications: {
+      battery: "1600mAh",
+      variant: "ชุดสีรุ่นพิเศษของ G5 Lite",
+    },
     tagline: "G5 Lite ตัวเครื่องเดิม ในชุดสีรุ่นพิเศษ",
     shortDescription: "ใช้แบตเตอรี่ 1600mAh และสูงสุด 35 วัตต์เท่ากับ G5 Lite ต่างกันที่ชุดสีรุ่นพิเศษ",
     features: {
@@ -68,9 +92,14 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g4-pro-koko": {
+    specifications: {
+      battery: "2000mAh ในตัว",
+      screen: "จอทัชสกรีน 2 นิ้ว",
+      "pod-compat": "UWELL GPP และ Caliburn G3",
+    },
     tagline: "จอทัชสกรีนรุ่นแรกในสาย KOKO",
     shortDescription:
-      "พอตแบตเตอรี่ 2000mAh 35 วัตต์ พร้อมจอทัชสกรีนสมาร์ท 2 นิ้ว และระบบปรับรสชาติ Pro-FOCS 4.0 สลับโหมดการสูบได้ระหว่าง Storm, Waves และ Custom",
+      "พอตแบตเตอรี่ 2000mAh 35 วัตต์ พร้อมจอทัชสกรีน 2 นิ้ว และระบบปรับรสชาติ Pro-FOCS 4.0 สลับโหมดการสูบได้ระหว่าง Storm, Waves และ Custom",
     features: {
       touchscreen: {
         title: "จอทัชสกรีน 2 นิ้ว",
@@ -86,9 +115,16 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g4-pro": {
+    specifications: {
+      battery: "1800mAh ในตัว",
+      screen: "จอทัชสกรีน 2.51 นิ้ว",
+      pod: "3mL ยึดด้วยแม่เหล็ก",
+      airflow: "ปรับได้แบบไม่มีขั้น",
+      "pod-compat": "UWELL GPP และ Caliburn G3",
+    },
     tagline: "จอทัชสกรีน 2.51 นิ้ว บนแพลตฟอร์ม G4",
     shortDescription:
-      "พอตแบตเตอรี่ 1800mAh 35 วัตต์ พร้อมจอทัชสกรีนขนาดใหญ่ ระบบเชื่อมต่อพอตแบบแม่เหล็ก และปรับช่องลมได้แบบไม่มีขั้น",
+      "พอตแบตเตอรี่ 1800mAh 35 วัตต์ พร้อมจอทัชสกรีนขนาดใหญ่ ระบบเชื่อมต่อหัวพอตแบบแม่เหล็ก และปรับช่องลมได้แบบไม่มีขั้น",
     features: {
       shatterproof: {
         title: "จอทัชสกรีน 2.51 นิ้ว",
@@ -101,9 +137,17 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g4": {
-    tagline: "จอสีพร้อมปุ่มกดยิงไอ บนตัวเครื่อง G4 มาตรฐาน",
+    specifications: {
+      battery: "1300mAh ในตัว",
+      "charge-time": "ประมาณ 30 นาที ด้วยไฟ 2A",
+      screen: "จอสี เลือกโหมดวัตต์ได้",
+      firing: "กดปุ่มยิง",
+      "pod-compat": "UWELL GPP (ในกล่องมี 0.4Ω / 0.9Ω ส่วน 0.6Ω / 1.2Ω ซื้อแยก)",
+      output: "—",
+    },
+    tagline: "จอสีพร้อมปุ่มยิง บนตัวเครื่อง G4 มาตรฐาน",
     shortDescription:
-      "G4 รุ่นมาตรฐาน: เครื่องแบตเตอรี่ 1300mAh พร้อมจอสี เลือกโหมดวัตต์ได้ และยิงไอด้วยปุ่มกด — จุดกึ่งกลางระหว่างรุ่น Mini ที่ไม่มีจอ กับรุ่น Pro ที่เป็นทัชสกรีน",
+      "G4 รุ่นมาตรฐาน: เครื่องแบตเตอรี่ 1300mAh พร้อมจอสี เลือกโหมดวัตต์ได้ และใช้ปุ่มยิง — จุดกึ่งกลางระหว่างรุ่น Mini ที่ไม่มีจอ กับรุ่น Pro ที่เป็นทัชสกรีน",
     features: {
       "power-modes": {
         title: "เลือกโหมดวัตต์ได้",
@@ -112,6 +156,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g4-mini": {
+    specifications: {
+      battery: "1100mAh ในตัว",
+      "charge-time": "ประมาณ 58 นาที ด้วยไฟ 2A",
+      screen: "ไม่มีจอ",
+      "pod-compat": "UWELL GPP (ในกล่องมี 0.4Ω / 0.9Ω ส่วน 0.6Ω / 1.2Ω ซื้อแยก)",
+    },
     tagline: "G4 เวอร์ชันย่อส่วน พกพาง่าย",
     shortDescription:
       "G4 รุ่นเล็ก เบากว่า ไม่มีจอ เน้นพกง่าย ใช้หัวพอต GPP ตัวเดียวกับ G4 แบตเตอรี่เล็กลงเป็น 1100mAh",
@@ -123,6 +173,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g4-classic": {
+    specifications: {
+      battery: "1300mAh เท่า G4 รุ่นมาตรฐาน",
+      variant: "ชุดสีรุ่น Classic ของ Caliburn G4",
+    },
     tagline: "G4 ตัวเครื่องเดิม ในชุดสีรุ่น Classic",
     shortDescription:
       "Caliburn G4 รุ่น Classic ตัวเครื่องเดียวกับ G4 รุ่นมาตรฐาน มี 4 สี ใช้หัวพอต GPP เหมือนกัน",
@@ -134,7 +188,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g3-pro": {
-    tagline: "จอแบบ full-wraparound รุ่นแรกในตระกูล Caliburn",
+    specifications: {
+      battery: "1000mAh ชาร์จ USB-C 2A",
+      screen: "จอ LCD โอบรอบด้านข้าง",
+      pod: "3mL (หัว 0.4Ω) / 2.5mL (หัว 0.9Ω) มีให้ทั้งสองหัวในกล่อง",
+      airflow: "ปรับได้ทุกระดับ",
+    },
+    tagline: "จอ LCD โอบรอบด้านข้าง รุ่นแรกในตระกูล Caliburn",
     shortDescription:
       "พอตแบตเตอรี่ 1000mAh สูงสุด 35 วัตต์ พร้อมจอ LCD ที่โอบรอบด้านข้างตัวเครื่อง ปรับช่องลมได้เต็มรูปแบบ และในกล่องมีหัวพอตให้ 2 ตัว คนละโอห์ม",
     features: {
@@ -149,6 +209,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g3-pro-koko": {
+    specifications: {
+      battery: "1000mAh เท่า G3 Pro รุ่นมาตรฐาน",
+      variant: "ชุดสีรุ่น KOKO ของ Caliburn G3 Pro",
+    },
     tagline: "G3 Pro ตัวเครื่องเดิม ในชุดสีรุ่น KOKO",
     shortDescription:
       "Caliburn G3 Pro รุ่น KOKO ตัวเครื่องเดียวกับ G3 Pro รุ่นมาตรฐาน มี 8 สี ใช้หัวพอต Caliburn G3 เหมือนกัน",
@@ -160,6 +224,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "argus-g4": {
+    specifications: {
+      battery: "1650mAh ในตัว",
+      screen: "จอ HD 0.85 นิ้ว แสดงแบต วัตต์ โอห์ม สถานะล็อก และจำนวนพัฟ",
+      charging: "USB-C 5V/2A ชาร์จเต็มประมาณ 45 นาที",
+      materials: "ซิงค์อัลลอย หนัง อะลูมิเนียมอัลลอย",
+      pod: "ARGUS แบบเติมด้านบน มีหลายโอห์มให้เลือก",
+    },
     tagline: "พอตคิทแบตอึดใช้ได้ 5 วัน พร้อมจอสถานะ HD 0.85 นิ้ว",
     shortDescription:
       "รุ่นเรือธงสายหลักของ ARGUS: แบตเตอรี่ 1650mAh 5–35 วัตต์ จอ HD 0.85 นิ้วแสดงระดับแบต วัตต์ โอห์ม สถานะล็อก และจำนวนพัฟ ชาร์จเร็วผ่าน Type-C เต็มใน 45 นาที",
@@ -179,6 +250,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "argus-g4-mini": {
+    specifications: {
+      battery: "1650mAh ในตัว",
+      pod: "ARGUS แบบเติมด้านบน",
+    },
     tagline: "แบตเตอรี่เท่า G4 วัตต์ลดลง ตัวเครื่องเล็กลง",
     shortDescription: "ใช้แบตเตอรี่ 1650mAh เดียวกับ ARGUS G4 แต่ในตัวเครื่องที่เล็กลง และปรับวัตต์สูงสุดลงเหลือ 30 วัตต์ จากเดิม 35 วัตต์",
     features: {
@@ -189,6 +264,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "argus-p3": {
+    specifications: {
+      battery: "1500mAh ในตัว",
+      screen: "จอทัชเต็มจอ TFT HD 2.01 นิ้ว",
+      pod: "ARGUS แบบเติมด้านบน",
+    },
     tagline: "จอทัชเต็มจอ TFT HD ขนาด 2.01 นิ้ว บนแพลตฟอร์ม ARGUS",
     shortDescription: "พอตคิทแบตเตอรี่ 1500mAh 5–30 วัตต์ จอทัช TFT HD 2.01 นิ้ว กดเลือกเมนูและโหมดบนจอได้เลย",
     features: {
@@ -199,9 +279,15 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "argus-g3-mini": {
+    specifications: {
+      battery: "1350mAh ในตัว",
+      output: "30W (เครื่องเลือกวัตต์ให้ตามหัวพอต ตั้งเองไม่ได้)",
+      pod: "ARGUS Top Fill Cartridge V2 0.7Ω 3mL (2mL ตามมาตรฐาน TPD)",
+      firing: "ไม่มีปุ่ม สูบได้เลย",
+    },
     tagline: "ไม่มีปุ่ม ไม่ต้องตั้งค่า ชิป GENE.AI ปรับวัตต์ให้เองตามหัวพอต",
     shortDescription:
-      "พอตคิทเหมาะมือใหม่ แบตเตอรี่ 1350mAh สูงสุด 30 วัตต์ ปรับวัตต์อัตโนมัติตามพอตที่ใส่ ทำงานด้วยชิป GENE.AI ของ VOOPOO และพอตกันรั่ว iCOSM CODE 2.0",
+      "พอตคิทเหมาะมือใหม่ แบตเตอรี่ 1350mAh สูงสุด 30 วัตต์ ปรับวัตต์อัตโนมัติตามหัวพอตที่ใส่ ทำงานด้วยชิป GENE.AI ของ VOOPOO และหัวพอตกันรั่ว iCOSM CODE 2.0",
     features: {
       "auto-draw": {
         title: "ไม่มีปุ่ม สูบได้เลย",
@@ -214,6 +300,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "drag-6": {
+    specifications: {
+      battery: "4400mAh ในตัว (ถ่าน 2200mAh สองก้อน)",
+      screen: "จอ TFT 1.66 นิ้ว แสดงวัตต์ แบต โอห์ม จำนวนพัฟ และโหมด",
+      modes: "SMART / RBA / TC-TCR",
+      control: "ล้อปรับวัตต์ละเอียด และเซ็นเซอร์แตะที่ปุ่มยิงไว้ปลดล็อก",
+      pod: "หัวพอตสาย DRAG (เปลี่ยนคอยล์ได้)",
+    },
     tagline: "220 วัตต์, GENE.TT 3.0 พร้อมล้อปรับวัตต์แบบละเอียด",
     shortDescription:
       "รุ่นเรือธงล่าสุดของสาย DRAG: แบตเตอรี่ในตัว 4400mAh (ถ่าน 2200mAh สองก้อน) สูงสุด 220 วัตต์ จอ TFT ขนาด 1.66 นิ้ว และปุ่มยิงมีเซ็นเซอร์แตะไว้ปลดล็อกเครื่อง",
@@ -229,6 +322,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "drag-s3": {
+    specifications: {
+      battery: "3000mAh ในตัว",
+      screen: "จอ TFT 0.96 นิ้ว",
+      materials: "ซิงค์อัลลอย หนัง",
+      charging: "USB-C 5V/2A",
+    },
     tagline: "แบตเตอรี่ในตัว 3000mAh สูงสุด 60 วัตต์",
     shortDescription: "DRAG รุ่นแบตเตอรี่ในตัว: 3000mAh 5–60 วัตต์ จอ TFT ขนาด 0.96 นิ้ว และชาร์จเร็วผ่าน Type-C",
     features: {
@@ -239,6 +338,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "drag-x3": {
+    specifications: {
+      battery: "ถ่าน 18650 หรือ 21700 ก้อนเดียว (ไม่รวมในกล่อง)",
+      screen: "จอทัชสกรีน 1.66 นิ้ว",
+      materials: "ซิงค์อัลลอย หนัง",
+    },
     tagline: "80 วัตต์ บนถ่านถอดเปลี่ยนได้ 18650/21700",
     shortDescription: "DRAG รุ่นใช้แบตเตอรี่ภายนอกก้อนเดียว (18650 หรือ 21700 ไม่รวมในกล่อง) สูงสุด 80 วัตต์ พร้อมจอทัชสกรีน 1.66 นิ้ว",
     features: {
@@ -253,6 +357,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "vinci-s": {
+    specifications: {
+      battery: "2000mAh ในตัว",
+      pod: "4.5mL (2mL ตามมาตรฐาน TPD)",
+      fill: "เติมด้านบน",
+      materials: "อะลูมิเนียมอัลลอยและ PC",
+    },
     tagline: "40 วัตต์ เติมน้ำยาด้านบนได้โดยไม่ต้องถอดหัวพอต",
     shortDescription: "พอตคิทแบตเตอรี่ 2000mAh 5–40 วัตต์ หัวพอตเติมด้านบนความจุ 4.5mL (2mL ตามมาตรฐาน TPD) ช่วง 0.3–3.0 โอห์ม",
     features: {
@@ -263,6 +373,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "vmate-i3": {
+    specifications: {
+      battery: "1500mAh ในตัว",
+      pod: "3mL VMATE Top Fill Cartridge (ใช้หัว V2 ได้ด้วย)",
+      charging: "USB-C 2A ชาร์จเร็ว",
+    },
     tagline: "พอตคิทน้ำหนักเบาพิเศษ ยาวเพียง 103mm",
     shortDescription: "พอตคิทที่เบาที่สุดในกลุ่มของ VOOPOO ขณะนี้: เครื่องอะลูมิเนียมอัลลอยบางเฉียบ แบตเตอรี่ 1500mAh 5–30 วัตต์ หัวพอตเติมด้านบน 3mL",
     features: {
@@ -273,6 +388,14 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-bar-10k": {
+    specifications: {
+      puffs: "สูงสุด 10,000",
+      battery: "600mAh ชาร์จซ้ำได้ผ่าน USB-C",
+      nicotine: "30mg salt nic",
+      coil: "cotton mesh",
+      modes: "Eco / Soft / Boost กดสองครั้งเพื่อสลับ",
+      indicator: "LED บอกระดับแบตเป็นขั้นละ 25% ส่วน RGB บอกโหมดที่ใช้อยู่",
+    },
     tagline: "3 โหมดวัตต์ วงแหวน RGB แสดงสถานะ รองรับ 10,000 พัฟ",
     shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์ให้สลับ พร้อมไฟ RGB แสดงโหมดที่ใช้งานอยู่",
     features: {
@@ -291,6 +414,14 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-bar-9k": {
+    specifications: {
+      puffs: "สูงสุด 9,000",
+      battery: "600mAh ชาร์จซ้ำได้ผ่าน USB-C",
+      capacity: "14mL บรรจุสำเร็จ",
+      nicotine: "3% (30mg) salt nic",
+      airflow: "ปรับได้ตั้งแต่ MTL แน่น ๆ ถึง DTL โล่ง ๆ",
+      coil: "mesh",
+    },
     tagline: "ปรับช่องลมได้ตั้งแต่ MTL ถึง DTL รองรับ 9,000 พัฟ",
     shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ บรรจุน้ำยาสำเร็จ 14mL ปรับช่องลมได้ตั้งแต่แบบ MTL แน่น ๆ ไปจนถึง DTL โปร่ง ๆ ใช้คอยล์ mesh รองรับสูงสุด 9,000 พัฟ",
     features: {
@@ -301,6 +432,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-bar-15k": {
+    specifications: {
+      puffs: "สูงสุด 15,000",
+      coil: "cotton mesh",
+      charging: "USB-C ชาร์จเร็ว",
+      battery: "—",
+      capacity: "—",
+    },
     tagline: "จำนวนพัฟที่ระบุสูงที่สุดในตระกูล M Bar",
     shortDescription:
       "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 15,000 พัฟ คอยล์ cotton mesh ชาร์จเร็วผ่าน Type-C มี 15 รส",
@@ -312,6 +450,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-switch-kit": {
+    specifications: {
+      "puffs-per-pod": "สูงสุด 15,000",
+      format: "ตัวเครื่องใช้ซ้ำได้ เปลี่ยนแค่หัวพอตบรรจุสำเร็จ",
+      battery: "—",
+    },
     tagline: "ตัวเครื่องใช้ซ้ำได้ หัวพอตบรรจุสำเร็จ ไม่ต้องเติมเอง",
     shortDescription:
       "ตัวเครื่องใช้ซ้ำได้ จับคู่กับหัวพอต M Switch Pod บรรจุสำเร็จ รองรับสูงสุด 15,000 พัฟต่อหัวพอต เก็บตัวเครื่องไว้ชาร์จใช้ต่อ แล้วเปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา",
@@ -323,14 +466,26 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-switch-pod": {
+    specifications: {
+      capacity: "2.2mL บรรจุน้ำยาสำเร็จ",
+    },
     tagline: "หัวพอตบรรจุสำเร็จสำหรับ M Switch Kit",
     shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 2.2mL ใช้กับตัวเครื่อง M Switch Kit",
   },
   "m-bar-pod": {
+    specifications: {
+      flavors: "กว่า 15 รส",
+      capacity: "—",
+    },
     tagline: "15+ รสชาติ ใช้หัวพอตตระกูลเดียวกัน",
     shortDescription: "หัวพอตสำหรับเปลี่ยน ใช้ได้กับเครื่องใช้ซ้ำของ SALTHUB ที่รองรับ M Bar มีให้เลือกกว่า 15 รส",
   },
   "zero-pro": {
+    specifications: {
+      "puffs-per-pod": "สูงสุด 5,000",
+      modes: "3 โหมด",
+      battery: "—",
+    },
     tagline: "3 โหมด ในตัวเครื่องระบบสวิตช์ใช้ซ้ำได้",
     shortDescription: "อุปกรณ์ระบบสวิตช์ใช้ซ้ำได้ 3 โหมด รองรับสูงสุด 5,000 พัฟต่อ Zero Cartridge หนึ่งอัน",
     features: {
@@ -341,6 +496,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "zero-nano": {
+    specifications: {
+      format: "ตัวเครื่องใช้ซ้ำได้ขนาดเล็ก ใช้ Zero Cartridge",
+    },
     tagline: "เครื่องที่เล็กที่สุดในสาย Zero",
     shortDescription: "อุปกรณ์ใช้ซ้ำได้ขนาดกะทัดรัดพิเศษ แบตเตอรี่ 500mAh ใช้ระบบหัวพอต Zero เดียวกัน",
     features: {
@@ -358,6 +516,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // caveats (unverified specs, naming ambiguity) are real facts and must carry over untranslated
   // in meaning, never smoothed into a more confident-sounding Thai sentence than the English.
   "relx-smash-go-12k": {
+    specifications: {
+      puffs: "สูงสุด 12,000",
+      battery: "400mAh ชาร์จซ้ำได้ผ่าน USB-C",
+      coil: "MEGA MESH 1.0Ω",
+      nicotine: "3% หรือ 5% salt nic",
+      capacity: "—",
+    },
     tagline: "พอตใช้แล้วทิ้งรุ่นทางการของ RELX คอยล์ MEGA MESH",
     shortDescription:
       "พอตใช้แล้วทิ้งชาร์จซ้ำได้จากไลน์อัพทางการของ RELX รองรับสูงสุด 12,000 พัฟ แบตเตอรี่ 400mAh คอยล์ MEGA MESH 1.0 โอห์ม มี 10 รส ยืนยันตรงจาก relxnow.com",
@@ -374,11 +539,26 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       "พอตใช้แล้วทิ้งสายพัฟเยอะของ RELX ที่ขายในตลาดไทย มีหลายรุ่นย่อย ทักไลน์ @okm24 ถามรุ่นปัจจุบันได้",
   },
   "joiway-f3": {
+    specifications: {
+      puffs: "สูงสุด 12,000",
+      battery: "650mAh ชาร์จซ้ำได้ผ่าน USB-C",
+      capacity: "14mL บรรจุสำเร็จ",
+      nicotine: "3% salt nic",
+      coil: "mesh 1.0Ω",
+    },
     tagline: "พอตใช้แล้วทิ้ง Joiway รุ่นจริง ยืนยันจากร้านค้าอิสระ",
     shortDescription:
       "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Joiway รองรับสูงสุด 12,000 พัฟ สเปกตรงกันจากร้านค้าอิสระกว่า 10 ร้าน แต่ยังไม่ได้ยืนยันจากเว็บทางการของ Joiway เอง",
   },
   "joiway-f4": {
+    specifications: {
+      puffs: "โหมด NOS ประมาณ 15,000 / โหมด TURBO ประมาณ 30,000",
+      battery: "650mAh ชาร์จซ้ำได้ผ่าน USB-C",
+      capacity: "20mL บรรจุสำเร็จ",
+      nicotine: "3% salt nic",
+      coil: "mesh",
+      "flavor-modes": "2 รสในเครื่องเดียว หมุนปากดูดเพื่อสลับ มีคู่รสให้เลือกสูงสุด 16 แบบ",
+    },
     tagline: "พอตใช้แล้วทิ้ง 2 รสในเครื่องเดียว",
     shortDescription:
       "พอตใช้แล้วทิ้ง 2 โหมด 2 รสในเครื่องเดียว โหมด NOS ประมาณ 15,000 พัฟ โหมด TURBO ประมาณ 30,000 พัฟ แบตเตอรี่ 650mAh OKami24 รีวิวใช้จริง 30 วันบน YouTube",
@@ -403,6 +583,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // products had no Thai line, so their cards fell back to English once ProductCard started reading
   // this file. Taglines shortened by the owner ("รองรับสูงสุด N พัฟ" says everything the English does).
   "mood-monster-14k": {
+    specifications: {
+      puffs: "สูงสุด 14,000",
+    },
     tagline: "พอตใช้แล้วทิ้ง รองรับสูงสุด 14,000 พัฟ",
     shortDescription: "พอตใช้แล้วทิ้งจาก MOOOD ซีรีส์ “Monster” รองรับสูงสุด 14,000 พัฟ ตอนนี้มีให้เลือก 10 รส",
   },
@@ -411,10 +594,17 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 3mL ของ Muro ตอนนี้มีให้เลือก 10 รส",
   },
   "muro-sc-8000": {
+    specifications: {
+      puffs: "สูงสุด 8,000",
+      battery: "600mAh ชาร์จซ้ำได้ผ่าน USB-C",
+    },
     tagline: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 8,000 พัฟ",
     shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Muro สาย “SC” แบตเตอรี่ 600mAh ชาร์จผ่าน USB-C รองรับสูงสุด 8,000 พัฟ ตอนนี้มีให้เลือก 8 รส",
   },
   "muro-connector-20k": {
+    specifications: {
+      puffs: "สูงสุด 20,000",
+    },
     tagline: "พอตใช้แล้วทิ้ง รองรับสูงสุด 20,000 พัฟ",
     shortDescription: "พอตใช้แล้วทิ้งจาก Muro สาย “Connector” รองรับสูงสุด 20,000 พัฟ ตอนนี้มีให้เลือก 20 รส — มากที่สุดในบรรดา Muro ทุกรุ่น",
   },
