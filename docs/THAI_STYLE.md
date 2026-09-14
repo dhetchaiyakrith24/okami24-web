@@ -51,7 +51,7 @@
 
 **คำร้านที่อนุมัติแบบมีเงื่อนไข [เจ้าของเคาะ 2026-09-11]** — **พัฟเยอะ** (= high-puff) ใช้ได้เฉพาะประโยคที่ไม่มีตัวเลขพัฟกำกับ (ถ้ามีตัวเลข ตัวเลขบอกอยู่แล้ว — เจ้าของตัดจาก tagline MOOOD ใน 30.3ก ด้วยเหตุนี้) · **เครื่องอุ่นยาสูบ** = heated tobacco device ในชื่อหมวด (ไม่ใช่ "เครื่อง IQOS" — ห้ามตั้งชื่อหมวดตามแบรนด์เดียว) · **อุปกรณ์เสริม** = accessories ในชื่อหมวด ("อุปกรณ์" เฉย ๆ บนเว็บแปลว่าตัวเครื่อง) · **ก้าน** (heated tobacco stick) = **คำที่ 12 [เจ้าของเคาะ 2026-09-11]** ใช้ในชื่อหมวด "Heated Tobacco Sticks / ก้าน TEREA" และเนื้อความ (ไม่ใช้ "แท่งยาสูบ") — ลูกค้าพูด "ก้าน" ค้น "terea"
 
-**คำที่ล็อกรอบ 30.4 [เจ้าของเคาะ 2026-09-12]** — **สูบพอต** (= vape/สูบไอ ในเนื้อความ · ข้อความกฎหมาย/คำเตือนนิโคติน = กลุ่ม ก ห้ามแตะ) · **สำลี** (= wicking material/วัสดุดูดซับ) · **แบบ** (= format/ฟอร์แมต — "เลือกแบบพอตก่อน") · **เสียงน้ำยาดังจ๊อก ๆ** (= gurgling) · **คอยล์พันเอง** (= rebuildable coil) · **สเปก** เป็นค่าตั้งต้นของ features/ฟีเจอร์ · ถ้าบริบทหมายถึงความสามารถไม่ใช่ตัวเลข ใช้ **ความสามารถ** · **ห้ามใช้ "ลูกเล่น"** (เสียงโฆษณา) · **เติมด้านบน** (= top-fill/ท็อปฟิล — เป็นวิธีเติม ไม่ใช่ชื่อเฉพาะ · "GPP" คงอังกฤษ) · **ยังไม่ยืนยัน** = ป้ายสเปกที่ยืนยันไม่ได้ (แทน unverified ทุกที่: SpecSheet · การ์ดสเปก · คู่มือ) · **เซ็นเซอร์** (สะกดนี้ ไม่ใช่ "เซนเซอร์") · **จอทัชเต็มจอ** (= full touchscreen/ฟูลทัช) · **ชุดสี** + **รุ่น Classic/KOKO** (= finish/edition/colourway) · **[เจ้าของเคาะ 2026-09-13 ก้อน 5]** **แหวนปรับลม** (= airflow ring) · **ธีมหน้าจอ** (= themed UI) · **โหมดที่ตั้งค่ามาให้** (= preset mode) · **จอทัชสกรีน** ในชื่อการ์ด/หัวข้อ และ **จอทัช** ในประโยค — ล็อกแบบนี้ ใช้ปนได้ตามตำแหน่ง · **[เจ้าของเคาะ 2026-09-14 ก้อน 6]** **ถ่าน** (= external cell 18650/21700 — แทน "เซลล์แบต") · **ปุ่มยิง** (= fire button) · **ซีล** (= seal) · **ไลน์อัพ** (= lineup) · **auto-draw → "ไม่มีปุ่ม สูบได้เลย"** · **หลัก "ที่สุด":** พูดได้เฉพาะเมื่อทุกรุ่นที่เทียบมีตัวเลขในสเปกครบ (M Bar 15K ผ่าน · ARGUS P3 / DRAG X3 / VMATE i3 / Zero Nano ไม่ผ่าน → ตัด) · **[เจ้าของเคาะ 2026-09-15 รอบ 30.4ค ก้อน 1 — label ตารางสเปก]** **ช่วงโอห์ม** (= resistance range) · **ระบบยิง** (= activation / firing — คู่กับ "ปุ่มยิง" · ไม่ใช้ "การสั่งงาน") · **หัวพอตที่ใช้ได้** (= pod platform บนหน้าเครื่อง — ด้านกลับของ "ใช้ได้กับ" บนหน้าหัวพอต) · **ไฟบอกสถานะ** (= status indicator) · **แรงดันไฟ** (= output voltage · ค่ามีหน่วย V อยู่แล้ว) · **ระบบปรับรสชาติ** (= flavor system) · **การควบคุม** (= control / control system) · **ประเภท** (= format ในตำแหน่ง label ตารางสเปก — "แบบ" ใช้ในประโยค ไม่บังคับ label) · label ครบ 41 → 35 คำดูตาราง §7 "รอบ 30.4ค ก้อน 1"
+**คำที่ล็อกรอบ 30.4 [เจ้าของเคาะ 2026-09-12]** — **สูบพอต** (= vape/สูบไอ ในเนื้อความ · ข้อความกฎหมาย/คำเตือนนิโคติน = กลุ่ม ก ห้ามแตะ) · **สำลี** (= wicking material/วัสดุดูดซับ) · **แบบ** (= format/ฟอร์แมต — "เลือกแบบพอตก่อน") · **เสียงน้ำยาดังจ๊อก ๆ** (= gurgling) · **คอยล์พันเอง** (= rebuildable coil) · **สเปก** เป็นค่าตั้งต้นของ features/ฟีเจอร์ · ถ้าบริบทหมายถึงความสามารถไม่ใช่ตัวเลข ใช้ **ความสามารถ** · **ห้ามใช้ "ลูกเล่น"** (เสียงโฆษณา) · **เติมด้านบน** (= top-fill/ท็อปฟิล — เป็นวิธีเติม ไม่ใช่ชื่อเฉพาะ · "GPP" คงอังกฤษ) · **ยังไม่ยืนยัน** = ป้ายสเปกที่ยืนยันไม่ได้ (แทน unverified ทุกที่: SpecSheet · การ์ดสเปก · คู่มือ) · **เซ็นเซอร์** (สะกดนี้ ไม่ใช่ "เซนเซอร์") · **จอทัชเต็มจอ** (= full touchscreen/ฟูลทัช) · **ชุดสี** + **รุ่น Classic/KOKO** (= finish/edition/colourway) · **[เจ้าของเคาะ 2026-09-13 ก้อน 5]** **แหวนปรับลม** (= airflow ring) · **ธีมหน้าจอ** (= themed UI) · **โหมดที่ตั้งค่ามาให้** (= preset mode) · **จอทัชสกรีน** ในชื่อการ์ด/หัวข้อ และ **จอทัช** ในประโยค — ล็อกแบบนี้ ใช้ปนได้ตามตำแหน่ง · **[เจ้าของเคาะ 2026-09-14 ก้อน 6]** **ถ่าน** (= external cell 18650/21700 — แทน "เซลล์แบต") · **ปุ่มยิง** (= fire button) · **ซีล** (= seal) · **ไลน์อัพ** (= lineup) · **auto-draw → "ไม่มีปุ่ม สูบได้เลย"** · **หลัก "ที่สุด":** พูดได้เฉพาะเมื่อทุกรุ่นที่เทียบมีตัวเลขในสเปกครบ (M Bar 15K ผ่าน · ARGUS P3 / DRAG X3 / VMATE i3 / Zero Nano ไม่ผ่าน → ตัด) · **[เจ้าของเคาะ 2026-09-15 รอบ 30.4ค ก้อน 1 — label ตารางสเปก]** **ช่วงโอห์ม** (= resistance range) · **ระบบยิง** (= activation / firing — คู่กับ "ปุ่มยิง" · ไม่ใช้ "การสั่งงาน") · **หัวพอตที่ใช้ได้** (= pod platform บนหน้าเครื่อง — ด้านกลับของ "ใช้ได้กับ" บนหน้าหัวพอต) · **ไฟบอกสถานะ** (= status indicator) · **แรงดันไฟ** (= output voltage · ค่ามีหน่วย V อยู่แล้ว) · **ระบบปรับรสชาติ** (= flavor system) · **การควบคุม** (= control / control system) · **ประเภท** (= format ในตำแหน่ง label ตารางสเปก — "แบบ" ใช้ในประโยค ไม่บังคับ label) · label ครบ 41 → 35 คำดูตาราง §7 "รอบ 30.4ค ก้อน 1" · **[เจ้าของเคาะ 2026-09-15 รอบ 30.4ค ก้อน 2 — value ตารางสเปก]** **salt nic** (= nicotine salt — คำโปรยหมวด E-Liquid ใช้แล้ว · คงอังกฤษชั้น 4 เหมือน mesh · ไม่ทับศัพท์ "ซอลต์นิค") · **ซิงค์อัลลอย** (= zinc alloy — ขนานกับ "อะลูมิเนียมอัลลอย" ที่เคาะในการ์ด VMATE i3) · **ปากดูด** (= mouthpiece) · แม่แบบค่า: **ในตัว** (= built-in) · **บรรจุสำเร็จ** (= prefilled) · **ชาร์จซ้ำได้ผ่าน USB-C** (= rechargeable, USB-C) · **สูงสุด {N}** (= Up to N) · **"—"** = ค่าที่ข้อมูลบันทึกว่ายังไม่ยืนยัน (ป้ายบอกแล้ว)
 
 **HNB / IQOS คงอังกฤษ [เจ้าของเคาะ 2026-09-11]** — IQOS เป็นชื่อแบรนด์ (ชั้น 1) · HNB (heat-not-burn) เป็นศัพท์เทคนิคที่ยังไม่มีคำไทยที่คนใช้จริง (ชั้น 4) → คงอังกฤษ + วงเล็บอธิบายไทยครั้งแรกในหน้านั้น · ชื่อหมวด 2 หมวด HNB ที่ต้องเติมไทย เจ้าของเคาะจากตัวเลือกของ thai-copy (ดูชั้น 2 และข้อ 7 รอบ 30.3ข)
 
@@ -138,6 +138,7 @@ mesh coil · coil · **คอยล์ mesh / คอยล์ cotton mesh** (ใ
 - **อักขระล่องหน WORD JOINER (U+2060) — มีอยู่ 2 จุดเท่านั้น (เจ้าของอนุมัติ 2026-09-12 · Q1 ค):** ไม่ได้อยู่ในสตริงข้อมูลเลย ใส่ตอน render ผ่าน `src/lib/thai-keep-together.ts` (1) `/e-liquid/beverage` คำโปรยใต้ H1 — คำ "เบเกอรี่" (flavor-copy.ts description ของกลุ่มเครื่องดื่ม · ผ่าน `ELiquidFamilyPageHeader`) (2) `/technology/onboard-touch-displays` ย่อหน้าแรกของหัวข้อแรก — คำ "จอทัช" ทุกครั้งในย่อหน้านั้น (technology-copy.ts · ผ่าน `ArticleBody` prop `keepTogetherSite`) · title/meta/JSON-LD/ค้นหา อ่านสตริงดิบ ไม่มีอักขระ · grep "เบเกอรี่"/"จอทัช" ในซอร์สยังเจอปกติ · **ห้ามใช้ที่อื่นจนกว่าจะถึงรอบตัดกลางคำ** · checker มีด่านถาวรสแกน U+2060 ทั้งรีโป (`.claude/agents/checker.md` ข้อ 5)
 - **title หน้า /products "รวมพอต น้ำยา และ IQOS ของแท้ทุกรุ่น" (เคาะ 30.3ข) สัญญาเกินจริง** — ตรวจ 2026-09-12: หมวด E-Liquid บนหน้าร้าน = **0 ชิ้น** (legacy 0 · Shipnity 3 SKU ติด NOT cleared · หน้าหมวดขึ้น "ยังไม่มีสินค้าในหมวดนี้") · เจ้าของสั่ง: 0 = ต้องแก้ในรอบนี้ · ยังไม่ได้แก้ (ประโยคใหม่ต้องเคาะ) — ข้อเสนอ: title "รวมพอต หัวพอต คอยล์ และ IQOS ของแท้ทุกรุ่น" · meta ตัดคำ "น้ำยา" · **ทำแล้ว 2026-09-13** — เจ้าของเคาะตามข้อเสนอ (commit `c47c94b` ร่วมกับ wiring A) · น้ำยาขึ้นหน้าร้านเมื่อไหร่ ใส่ "น้ำยา" กลับทั้ง title และ meta
 - **"ที่สุด" ที่ยังค้างนอกการ์ด (เจ้าของเคาะ 2026-09-14 = ข ยกไป 30.4ค กวาดทีเดียวไทย+อังกฤษด้วยหลัก §3):** `product-copy-th.ts` vmate-i3 shortDescription "พอตคิทที่เบาที่สุดในกลุ่มของ VOOPOO" · zero-nano tagline "เครื่องที่เล็กที่สุดในสาย Zero" · ฝั่งอังกฤษ `voopoo.ts` "lightest current pod kit" · whoIsThisFor G4 Pro "biggest screen in the Caliburn line"
+- **VINCI S · ARGUS G3 mini ความจุหัวพอต "(2mL ตามมาตรฐาน TPD)" (เจ้าของ 2026-09-15 รอบ 30.4ค ก้อน 2):** เจ้าของยังไม่ยืนยันว่าร้านขายรุ่น 4.5mL / 3mL หรือล็อต 2mL (TPD = กฎยุโรป) → **คงวงเล็บไว้ทั้ง 3 จุด** (ค่าสเปก VINCI S · ค่าสเปก "หัวพอตในกล่อง" ARGUS G3 mini · คำบรรยาย VINCI S `product-copy-th.ts`) แปลเป็นไทยตามปกติ · ยืนยันเมื่อไหร่ค่อยตัดวงเล็บทั้ง 3 จุดใน commit เดียว
 - **กฎ 2 ชั้น (เจ้าของ 2026-09-14):** งานข้อความล้วน = ไม่ถ่ายภาพ ไม่ต้อง designer ต่อก้อน · งานแตะโครง = เต็ม · ปิดรอบถ่ายทุกหน้าที่แตะ + designer 1 ครั้ง → รายการตัดกลางคำแก้ใน commit เดียว (ไม่ใช่รอบแยกอีกต่อไป) — รายละเอียด HANDOFF 8.0
 - **ค้นหาภาษาไทยไม่เจอ** — ระบบค้นอ่านฟิลด์อังกฤษ + tagline ไทย + label ตัวเลือกเท่านั้น (products/index.ts · storefront-bridge.ts) · รอบนี้แก้ข้อความที่สัญญาไว้ (search noResultsHint · placeholder · meta /search) · งานโค้ดให้ค้นไทยได้ = LAUNCH_AUDIT ข้อ 47
 
@@ -491,4 +492,130 @@ mesh coil · coil · **คอยล์ mesh / คอยล์ cotton mesh** (ใ
 
 - **ตามแก้ระดับคำในก้อนเดียวกัน (เจ้าของสั่ง 2026-09-15):** คำบรรยาย m-switch-kit "รองรับสูงสุด 15,000 พัฟต่อพอต" → "พัฟต่อหัวพอต" (ประโยคเคาะ 30.3ข ก่อนกติกาเรียกหัวพอต · ให้ตรง label #39)
 - **ยกไปก้อน 7 (เจ้าของเคาะ 2026-09-15):** label "ความต้านทาน" บนหน้าหัวพอต/คอยล์ PM 3 จุด (`active-catalog-to-product-master.ts`) + แกน Finder `pilot.axisResistance` — ฝาแฝดของคำห้าม "ค่าความต้านทาน" ไม่อยู่ในกลุ่ม ก · กวาดพร้อม "ที่สุด"
-- **ธงที่ thai-copy จดไว้ (ไม่ทำ):** คู่มืออ่านสเปกสอนลูกค้าด้วยคำ "ช่วงวัตต์" แต่ตารางจริงเขียน "กำลังไฟ" (กลุ่ม ก) · "ความเข้ม" (คู่มือ) vs "ความเข้มข้น" (FAQ · Finder) นิโคติน 2 รูป · สินค้าซ่อนมี label อีก 4 คำนอก 41 (Power levels · Pod connector · Nicotine type · Bottle size) ถ้าขึ้นหน้าร้านต้องมีคำ · "พอต" เดี่ยวเรียกหัวใน G4 Pro "ระบบเชื่อมต่อพอตแบบแม่เหล็ก" (`product-copy-th.ts`)
+- **ธงที่ thai-copy จดไว้ (ไม่ทำ):** คู่มืออ่านสเปกสอนลูกค้าด้วยคำ "ช่วงวัตต์" แต่ตารางจริงเขียน "กำลังไฟ" (กลุ่ม ก) · "ความเข้ม" (คู่มือ) vs "ความเข้มข้น" (FAQ · Finder) นิโคติน 2 รูป · สินค้าซ่อนมี label อีก 4 คำนอก 41 (Power levels · Pod connector · Nicotine type · Bottle size) ถ้าขึ้นหน้าร้านต้องมีคำ · "พอต" เดี่ยวเรียกหัวใน G4 Pro "ระบบเชื่อมต่อพอตแบบแม่เหล็ก" (`product-copy-th.ts`) — **แก้แล้วในก้อน 2**
+
+**ก้อน 2 — value ตารางสเปก 120 ช่องที่มีคำ → ค่าไทย 116 ช่อง · คงเดิม 4 (เจ้าของเคาะ 2026-09-15 · commit `8d96d84`)** — โครง: ฟิลด์ `specifications: { [spec.key]: "ค่าไทย" }` ต่อสินค้าใน `product-copy-th.ts` (key ไม่ซ้ำภายในสินค้าเดียว) · `SpecSheet` และ `/compare` อ่านเมื่อ th · ค่าที่เป็นตัวเลข/หน่วย/ชื่อรุ่นล้วน 32 ช่อง + ชื่อระบบ 4 ช่อง (USB-C · GENE.TT 3.0 · iCOSM CODE 2.0 · Storm / Waves / Custom) คงข้อมูลเดิม · ตัวเลข/หน่วย/ชื่อรุ่นในค่าไทยเป็นของข้อมูลทุกตัวอักษร (สคริปต์ตรวจก่อนเขียน) · en/zh เห็นข้อมูลเดิม
+
+กติกาที่เคาะพร้อมก้อนนี้: **ช่อง "Not independently confirmed" 7 ช่อง = "—"** (ป้าย "ยังไม่ยืนยัน" ข้าง label บอกอยู่แล้ว ไม่เขียนซ้ำ — ทางเลือก "ยังไม่มีข้อมูล" / "ยังไม่มีข้อมูลจากแหล่งทางการ" ไม่เอา) · **โน้ตวิจัยในค่า → ตัด** (G4 Classic / G3 Pro KOKO "Treated as equivalent…" → "1300mAh เท่า G4 รุ่นมาตรฐาน" · DRAG 6 "(specific cartridge naming not independently confirmed)" · G5 Lite SE "finish-specific deltas…" · Joiway F4 "(some retailers list a single flattened 20,000 figure)" — ตัวเลข 20,000 หายไปด้วย เจ้าของรับ) · **TPD คง** ดู §6 · **ชั้นที่ติดป้าย "ยังไม่ยืนยัน" คือที่เดียวที่พูดถึงค่าที่ยังไม่ยืนยันได้** → Joiway F4 การสลับรส แปลครบ "หมุนปากดูดเพื่อสลับ … 16 แบบ" (ต่างจาก tagline/การ์ดที่ตัด) · label มี "พัฟ"/"น้ำยา"/"คอยล์"/"ช่องลม" แล้ว ค่าไม่ซ้ำคำ ("สูงสุด 10,000" · "14mL บรรจุสำเร็จ" · "cotton mesh" · "ปรับได้แบบไม่มีขั้น") · แม่แบบ: `{N}mAh ในตัว` (built-in) · `{N}mAh ชาร์จซ้ำได้ผ่าน USB-C` · `สูงสุด {N}` · `{N}mL บรรจุสำเร็จ` · `{x}% salt nic` · เจ้าของแก้ 2 แถวจากที่ thai-copy เสนอ: DRAG 6 หัวพอตที่ใช้ได้ "ของสาย DRAG แบบเปลี่ยนคอยล์" → **"หัวพอตสาย DRAG (เปลี่ยนคอยล์ได้)"** (ของเดิมอ่านเป็นค่าไม่ได้) · G3 Pro ช่องลม "ปรับได้เต็มรูปแบบ" → **"ปรับได้ทุกระดับ"** ("เต็มรูปแบบ" = คำแปลแข็งที่ตัดไปแล้วที่ argus-g4) · ทางเลือก ข ทุกจุดไม่เอา (G5 Lite/SE ตัด "long-run" เหลือ "1600mAh" · G3 mini คง "ตั้งเองไม่ได้" · G4 "กดปุ่มยิง")
+
+| สินค้า | label | ก่อน | หลัง |
+|---|---|---|---|
+| caliburn-g5 | แบตเตอรี่ | 1600mAh built-in | 1600mAh ในตัว |
+| caliburn-g5 | หน้าจอ | 0.85" colour screen | จอสี 0.85 นิ้ว |
+| caliburn-g5 | ความจุหัวพอต | 3mL, top-fill, magnetic connection | 3mL เติมด้านบน ยึดด้วยแม่เหล็ก |
+| caliburn-g5 | การควบคุม | Smart Triple-Tap Control (gesture-based mode switching) | Smart Triple-Tap Control (แตะเพื่อสลับโหมด) |
+| caliburn-g5 | หัวพอตที่ใช้ได้ | UWELL GPP cartridge platform | UWELL GPP |
+| caliburn-g5-lite | แบตเตอรี่ | 1600mAh, long-run | 1600mAh |
+| caliburn-g5-lite | หัวพอตที่ใช้ได้ | UWELL GPP cartridge platform | UWELL GPP |
+| caliburn-g5-lite | หน้าจอ | LED status indicator (no colour screen) | ไม่มีจอสี ใช้ไฟ LED บอกสถานะแทน |
+| caliburn-g5-lite-se | แบตเตอรี่ | 1600mAh, long-run | 1600mAh |
+| caliburn-g5-lite-se | รุ่นย่อย | Special-edition finish of the G5 Lite; finish-specific deltas beyond core hardware not independently confirmed | ชุดสีรุ่นพิเศษของ G5 Lite |
+| caliburn-g4-pro-koko | แบตเตอรี่ | 2000mAh built-in | 2000mAh ในตัว |
+| caliburn-g4-pro-koko | หน้าจอ | 2" smart touchscreen | จอทัชสกรีน 2 นิ้ว |
+| caliburn-g4-pro-koko | หัวพอตที่ใช้ได้ | UWELL GPP and G3 pods | UWELL GPP และ Caliburn G3 |
+| caliburn-g4-pro | แบตเตอรี่ | 1800mAh built-in | 1800mAh ในตัว |
+| caliburn-g4-pro | หน้าจอ | 2.51" touchscreen | จอทัชสกรีน 2.51 นิ้ว |
+| caliburn-g4-pro | ความจุหัวพอต | 3mL, magnetic connection | 3mL ยึดด้วยแม่เหล็ก |
+| caliburn-g4-pro | ช่องลม | Stepless airflow control | ปรับได้แบบไม่มีขั้น |
+| caliburn-g4-pro | หัวพอตที่ใช้ได้ | UWELL GPP and G3 pods | UWELL GPP และ Caliburn G3 |
+| caliburn-g4 | แบตเตอรี่ | 1300mAh built-in | 1300mAh ในตัว |
+| caliburn-g4 | เวลาชาร์จ | ~30 minutes at 2A | ประมาณ 30 นาที ด้วยไฟ 2A |
+| caliburn-g4 | หน้าจอ | Colour screen with power-mode selection | จอสี เลือกโหมดวัตต์ได้ |
+| caliburn-g4 | ระบบยิง | Button-fired | กดปุ่มยิง |
+| caliburn-g4 | หัวพอตที่ใช้ได้ | UWELL GPP pods (0.4Ω / 0.9Ω included; 0.6Ω / 1.2Ω sold separately) | UWELL GPP (ในกล่องมี 0.4Ω / 0.9Ω ส่วน 0.6Ω / 1.2Ω ซื้อแยก) |
+| caliburn-g4 | กำลังไฟสูงสุด | Not independently confirmed for this exact model | — |
+| caliburn-g4-mini | แบตเตอรี่ | 1100mAh built-in | 1100mAh ในตัว |
+| caliburn-g4-mini | เวลาชาร์จ | ~58 minutes at 2A | ประมาณ 58 นาที ด้วยไฟ 2A |
+| caliburn-g4-mini | หน้าจอ | None — no onboard screen | ไม่มีจอ |
+| caliburn-g4-mini | หัวพอตที่ใช้ได้ | UWELL GPP pods (0.4Ω / 0.9Ω included; 0.6Ω / 1.2Ω sold separately) | UWELL GPP (ในกล่องมี 0.4Ω / 0.9Ω ส่วน 0.6Ω / 1.2Ω ซื้อแยก) |
+| caliburn-g4-classic | แบตเตอรี่ | Treated as equivalent to the standard G4 (1300mAh) — not independently confirmed for this specific edition | 1300mAh เท่า G4 รุ่นมาตรฐาน |
+| caliburn-g4-classic | รุ่นย่อย | Classic-finish edition of the Caliburn G4 | ชุดสีรุ่น Classic ของ Caliburn G4 |
+| caliburn-g3-pro | แบตเตอรี่ | 1000mAh, USB-C 2A charging | 1000mAh ชาร์จ USB-C 2A |
+| caliburn-g3-pro | หน้าจอ | Wraparound LCD screen | จอ LCD โอบรอบด้านข้าง |
+| caliburn-g3-pro | ความจุหัวพอต | 3mL (0.4Ω pod) / 2.5mL (0.9Ω pod), both included | 3mL (หัว 0.4Ω) / 2.5mL (หัว 0.9Ω) มีให้ทั้งสองหัวในกล่อง |
+| caliburn-g3-pro | ช่องลม | Fully adjustable | ปรับได้ทุกระดับ |
+| caliburn-g3-pro-koko | แบตเตอรี่ | Treated as equivalent to the G3 Pro (1000mAh) — not independently confirmed for this specific edition | 1000mAh เท่า G3 Pro รุ่นมาตรฐาน |
+| caliburn-g3-pro-koko | รุ่นย่อย | KOKO edition of the Caliburn G3 Pro | ชุดสีรุ่น KOKO ของ Caliburn G3 Pro |
+| argus-g4 | แบตเตอรี่ | 1650mAh built-in | 1650mAh ในตัว |
+| argus-g4 | หน้าจอ | 0.85" HD screen — battery, wattage, resistance, lock state, puff count | จอ HD 0.85 นิ้ว แสดงแบต วัตต์ โอห์ม สถานะล็อก และจำนวนพัฟ |
+| argus-g4 | การชาร์จ | USB-C, 5V/2A, ~45 minutes to full | USB-C 5V/2A ชาร์จเต็มประมาณ 45 นาที |
+| argus-g4 | วัสดุ | Zinc alloy, leather, aluminum alloy | ซิงค์อัลลอย หนัง อะลูมิเนียมอัลลอย |
+| argus-g4 | หัวพอตที่ใช้ได้ | ARGUS top-fill cartridge platform, multiple resistances | ARGUS แบบเติมด้านบน มีหลายโอห์มให้เลือก |
+| argus-g4-mini | แบตเตอรี่ | 1650mAh built-in | 1650mAh ในตัว |
+| argus-g4-mini | หัวพอตที่ใช้ได้ | ARGUS top-fill cartridge platform | ARGUS แบบเติมด้านบน |
+| argus-p3 | แบตเตอรี่ | 1500mAh built-in | 1500mAh ในตัว |
+| argus-p3 | หน้าจอ | 2.01" full-touch TFT HD | จอทัชเต็มจอ TFT HD 2.01 นิ้ว |
+| argus-p3 | หัวพอตที่ใช้ได้ | ARGUS top-fill cartridge platform | ARGUS แบบเติมด้านบน |
+| argus-g3-mini | แบตเตอรี่ | 1350mAh built-in | 1350mAh ในตัว |
+| argus-g3-mini | กำลังไฟสูงสุด | 30W (auto-adjusts to pod, fixed wattage) | 30W (เครื่องเลือกวัตต์ให้ตามหัวพอต ตั้งเองไม่ได้) |
+| argus-g3-mini | หัวพอตในกล่อง | ARGUS Top Fill Cartridge V2, 0.7Ω, 3mL (2mL in TPD regions) | ARGUS Top Fill Cartridge V2 0.7Ω 3mL (2mL ตามมาตรฐาน TPD) |
+| argus-g3-mini | ระบบยิง | Auto-draw activated | ไม่มีปุ่ม สูบได้เลย |
+| drag-6 | แบตเตอรี่ | 4400mAh built-in (two 2200mAh cells) | 4400mAh ในตัว (ถ่าน 2200mAh สองก้อน) |
+| drag-6 | หน้าจอ | 1.66" TFT — wattage, battery, resistance, puff count, mode | จอ TFT 1.66 นิ้ว แสดงวัตต์ แบต โอห์ม จำนวนพัฟ และโหมด |
+| drag-6 | โหมดการทำงาน | SMART, RBA, TC-TCR | SMART / RBA / TC-TCR |
+| drag-6 | การควบคุม | Precision adjustment wheel + capacitive unlock sensor on the fire button | ล้อปรับวัตต์ละเอียด และเซ็นเซอร์แตะที่ปุ่มยิงไว้ปลดล็อก |
+| drag-6 | หัวพอตที่ใช้ได้ | DRAG-series coil pod (specific cartridge naming not independently confirmed) | หัวพอตสาย DRAG (เปลี่ยนคอยล์ได้) |
+| drag-s3 | แบตเตอรี่ | 3000mAh built-in | 3000mAh ในตัว |
+| drag-s3 | หน้าจอ | 0.96" TFT screen | จอ TFT 0.96 นิ้ว |
+| drag-s3 | วัสดุ | Zinc alloy, leather | ซิงค์อัลลอย หนัง |
+| drag-s3 | การชาร์จ | USB-C, 5V/2A | USB-C 5V/2A |
+| drag-x3 | แบตเตอรี่ | Single external 18650 or 21700 cell (not included) | ถ่าน 18650 หรือ 21700 ก้อนเดียว (ไม่รวมในกล่อง) |
+| drag-x3 | หน้าจอ | 1.66" touchscreen | จอทัชสกรีน 1.66 นิ้ว |
+| drag-x3 | วัสดุ | Zinc alloy, leather | ซิงค์อัลลอย หนัง |
+| vinci-s | แบตเตอรี่ | 2000mAh built-in | 2000mAh ในตัว |
+| vinci-s | ความจุหัวพอต | 4.5mL (2mL in TPD regions) | 4.5mL (2mL ตามมาตรฐาน TPD) |
+| vinci-s | การเติมน้ำยา | Topside filling | เติมด้านบน |
+| vinci-s | วัสดุ | Aluminum alloy + PC | อะลูมิเนียมอัลลอยและ PC |
+| vmate-i3 | แบตเตอรี่ | 1500mAh built-in | 1500mAh ในตัว |
+| vmate-i3 | ความจุหัวพอต | 3mL, VMATE Top Fill Cartridge (V2 pod compatible) | 3mL VMATE Top Fill Cartridge (ใช้หัว V2 ได้ด้วย) |
+| vmate-i3 | การชาร์จ | USB-C, 2A fast charging | USB-C 2A ชาร์จเร็ว |
+| m-bar-10k | จำนวนพัฟที่ระบุ | Up to 10,000 | สูงสุด 10,000 |
+| m-bar-10k | แบตเตอรี่ | 600mAh rechargeable, USB-C | 600mAh ชาร์จซ้ำได้ผ่าน USB-C |
+| m-bar-10k | นิโคติน | 30mg nicotine salt | 30mg salt nic |
+| m-bar-10k | คอยล์ | Cotton mesh coil | cotton mesh |
+| m-bar-10k | โหมดวัตต์ | Eco / Soft / Boost, switched by double-click | Eco / Soft / Boost กดสองครั้งเพื่อสลับ |
+| m-bar-10k | ไฟบอกสถานะ | LED battery level in 25% increments; RGB shows active mode | LED บอกระดับแบตเป็นขั้นละ 25% ส่วน RGB บอกโหมดที่ใช้อยู่ |
+| m-bar-9k | จำนวนพัฟที่ระบุ | Up to 9,000 | สูงสุด 9,000 |
+| m-bar-9k | แบตเตอรี่ | 600mAh rechargeable, USB-C | 600mAh ชาร์จซ้ำได้ผ่าน USB-C |
+| m-bar-9k | ความจุน้ำยา | 14mL prefilled | 14mL บรรจุสำเร็จ |
+| m-bar-9k | นิโคติน | 3% (30mg) salt nicotine | 3% (30mg) salt nic |
+| m-bar-9k | ช่องลม | Adjustable, tight MTL to airier DTL | ปรับได้ตั้งแต่ MTL แน่น ๆ ถึง DTL โล่ง ๆ |
+| m-bar-9k | คอยล์ | Mesh coil | mesh |
+| m-bar-15k | จำนวนพัฟที่ระบุ | Up to 15,000 | สูงสุด 15,000 |
+| m-bar-15k | คอยล์ | Cotton mesh coil | cotton mesh |
+| m-bar-15k | การชาร์จ | USB-C fast charging | USB-C ชาร์จเร็ว |
+| m-bar-15k | แบตเตอรี่ | Not independently confirmed | — |
+| m-bar-15k | ความจุน้ำยา | Not independently confirmed | — |
+| m-switch-kit | พัฟต่อหัวพอต | Up to 15,000 | สูงสุด 15,000 |
+| m-switch-kit | ประเภท | Reusable device body + prefilled swap-in cartridges | ตัวเครื่องใช้ซ้ำได้ เปลี่ยนแค่หัวพอตบรรจุสำเร็จ |
+| m-switch-kit | แบตเตอรี่ | Not independently confirmed | — |
+| m-switch-pod | ความจุ | 2.2mL prefilled | 2.2mL บรรจุน้ำยาสำเร็จ |
+| m-bar-pod | รสชาติ | 15+ flavors | กว่า 15 รส |
+| m-bar-pod | ความจุ | Not independently confirmed | — |
+| zero-pro | พัฟต่อหัวพอต | Up to 5,000 | สูงสุด 5,000 |
+| zero-pro | โหมดวัตต์ | 3 modes | 3 โหมด |
+| zero-pro | แบตเตอรี่ | Not independently confirmed | — |
+| zero-nano | ประเภท | Ultra-compact reusable body, Zero Cartridge compatible | ตัวเครื่องใช้ซ้ำได้ขนาดเล็ก ใช้ Zero Cartridge |
+| relx-smash-go-12k | จำนวนพัฟที่ระบุ | Up to 12,000 | สูงสุด 12,000 |
+| relx-smash-go-12k | แบตเตอรี่ | 400mAh rechargeable, USB-C | 400mAh ชาร์จซ้ำได้ผ่าน USB-C |
+| relx-smash-go-12k | คอยล์ | MEGA MESH coil, 1.0Ω | MEGA MESH 1.0Ω |
+| relx-smash-go-12k | นิโคติน | 3% or 5% nicotine salt | 3% หรือ 5% salt nic |
+| relx-smash-go-12k | ความจุน้ำยา | Not independently confirmed (official page text was ambiguous between 18mL and 20mL) | — |
+| joiway-f3 | จำนวนพัฟที่ระบุ | Up to 12,000 | สูงสุด 12,000 |
+| joiway-f3 | แบตเตอรี่ | 650mAh rechargeable, USB-C | 650mAh ชาร์จซ้ำได้ผ่าน USB-C |
+| joiway-f3 | ความจุน้ำยา | 14mL prefilled | 14mL บรรจุสำเร็จ |
+| joiway-f3 | นิโคติน | 3% nicotine salt | 3% salt nic |
+| joiway-f3 | คอยล์ | Mesh coil, 1.0Ω | mesh 1.0Ω |
+| joiway-f4 | จำนวนพัฟที่ระบุ | NOS mode ~15,000 / TURBO mode ~30,000 (some retailers list a single flattened "20,000" figure) | โหมด NOS ประมาณ 15,000 / โหมด TURBO ประมาณ 30,000 |
+| joiway-f4 | แบตเตอรี่ | 650mAh rechargeable, USB-C | 650mAh ชาร์จซ้ำได้ผ่าน USB-C |
+| joiway-f4 | ความจุน้ำยา | 20mL prefilled | 20mL บรรจุสำเร็จ |
+| joiway-f4 | นิโคติน | 3% nicotine salt | 3% salt nic |
+| joiway-f4 | คอยล์ | Mesh coil | mesh |
+| joiway-f4 | การสลับรส | Dual-flavor, rotate mouthpiece to switch — up to 16 flavor combinations | 2 รสในเครื่องเดียว หมุนปากดูดเพื่อสลับ มีคู่รสให้เลือกสูงสุด 16 แบบ |
+| mood-monster-14k | จำนวนพัฟที่ระบุ | Up to 14,000 | สูงสุด 14,000 |
+| muro-sc-8000 | จำนวนพัฟที่ระบุ | Up to 8,000 | สูงสุด 8,000 |
+| muro-sc-8000 | แบตเตอรี่ | 600mAh rechargeable, USB-C | 600mAh ชาร์จซ้ำได้ผ่าน USB-C |
+| muro-connector-20k | จำนวนพัฟที่ระบุ | Up to 20,000 | สูงสุด 20,000 |
+
+- **ตามแก้ระดับคำ 6 จุดในก้อนเดียวกัน (เจ้าของสั่ง 2026-09-15 · คำล็อกที่มีแล้ว):** G4 tagline "จอสีพร้อมปุ่มกดยิงไอ" → "จอสีพร้อมปุ่มยิง" · G4 คำบรรยาย "และยิงไอด้วยปุ่มกด" → "และใช้ปุ่มยิง" (ตัวหลักเลือกรูปประโยค เจ้าของรับ) · G4 Pro "ระบบเชื่อมต่อพอตแบบแม่เหล็ก" → "ระบบเชื่อมต่อหัวพอตแบบแม่เหล็ก" · ARGUS G3 mini "ตามพอตที่ใส่" → "ตามหัวพอตที่ใส่" และ "พอตกันรั่ว" → "หัวพอตกันรั่ว" · G4 Pro KOKO "จอทัชสกรีนสมาร์ท 2 นิ้ว" → "จอทัชสกรีน 2 นิ้ว" · G3 Pro tagline "จอแบบ full-wraparound" → "จอ LCD โอบรอบด้านข้าง"
+- **ธงที่ thai-copy จดไว้ (ไม่ทำ):** สเปกไทยของสินค้า PM ใช้ลูกน้ำคั่น ("750mAh, ชาร์จ USB-C") และ "เติมน้ำยามาแล้ว" (prefilled) ขณะที่ legacy ใช้ "บรรจุสำเร็จ" — คนละไฟล์ (`active-catalog-to-product-master.ts`) รอรอบกวาด · m-bar-9k คำบรรยาย "DTL โปร่ง ๆ" vs การ์ด/ค่าใหม่ "โล่ง" (2 คำสำหรับ airy บนหน้าเดียว)
