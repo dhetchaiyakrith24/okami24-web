@@ -5,9 +5,10 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SpecChip } from "@/components/ui/SpecChip";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { specLabelTh } from "@/i18n/spec-labels-th";
 
 export function SpecSheet({ product }: { product: Product }) {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
   const unverifiedCount = product.specifications.filter((s) => s.sourceStatus === "unverified").length;
 
   return (
@@ -24,10 +25,22 @@ export function SpecSheet({ product }: { product: Product }) {
               : dict.product.specsAllVerifiedNote
           }
         />
+        {/* Round 30.4ค batch 1 (owner 2026-09-15): a Thai visitor reads each chip's label from the
+            spec-labels-th.ts overlay (keyed by the English data label); the value is the data string in
+            every locale. Markup is exactly what it was. */}
         <div className="grid grid-cols-1 gap-x-8 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
-          {product.specifications.map((spec) => (
-            <SpecChip key={spec.key} spec={spec} unverifiedLabel={dict.product.unverifiedBadge} unverifiedTitle={dict.product.unverifiedTooltip} />
-          ))}
+          {product.specifications.map((spec) => {
+            const labelTh = locale === "th" ? specLabelTh(spec.label) : undefined;
+            return (
+              <SpecChip
+                key={spec.key}
+                spec={spec}
+                label={labelTh}
+                unverifiedLabel={dict.product.unverifiedBadge}
+                unverifiedTitle={dict.product.unverifiedTooltip}
+              />
+            );
+          })}
         </div>
       </Container>
     </section>
