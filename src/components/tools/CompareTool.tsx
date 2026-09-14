@@ -5,6 +5,7 @@ import { getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { ProductPicker } from "@/components/tools/ProductPicker";
 import { familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { specLabelTh } from "@/i18n/spec-labels-th";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import type { Dictionary } from "@/i18n/dictionaries";
 
@@ -103,12 +104,18 @@ function verifiedSpecRows(items: CatalogItem[]): Row[] {
 }
 
 export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
   const [slugs, setSlugs] = useState<string[]>(initialSlugs);
   const items = useMemo(() => slugs.map((s) => getCatalogItem(s)).filter((p): p is CatalogItem => Boolean(p)), [slugs]);
 
   const classification = useMemo(() => classificationRows(items, dict), [items, dict]);
-  const specs = useMemo(() => verifiedSpecRows(items), [items]);
+  // Round 30.4ค batch 1 (owner 2026-09-15): the row header is the same Thai chip label the product
+  // page shows (spec-labels-th.ts) so /compare and the PDP call one field one name. Rows are still
+  // matched on the English data label above; only the displayed string changes, and only for Thai.
+  const specs = useMemo(() => {
+    const rows = verifiedSpecRows(items);
+    return locale === "th" ? rows.map((row) => ({ ...row, label: specLabelTh(row.label) })) : rows;
+  }, [items, locale]);
   // Only worth explaining when the selection genuinely mixes a product that has the attribute
   // block with one that doesn't — not whenever a single cell happens to be empty.
   const hasMixedAttributeCoverage = items.some((i) => i.attributes) && items.some((i) => !i.attributes);
