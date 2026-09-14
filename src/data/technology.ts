@@ -42,7 +42,7 @@ export const technologyEntries: TechnologyEntry[] = [
       {
         heading: "From status readout to full menu",
         paragraphs: [
-          "Early pod-device screens mostly just showed battery level. Current touchscreen-equipped pods — like the Caliburn G4 Pro's 2.51\" shatterproof touchscreen or the ARGUS P3's 2.01\" full-touch display — expose full menu navigation for switching modes and adjusting wattage without physical buttons.",
+          "Early pod-device screens mostly just showed battery level. Current touchscreen-equipped pods — like the Caliburn G4 Pro's 2.51\" touchscreen or the ARGUS P3's 2.01\" full-touch display — expose full menu navigation for switching modes and adjusting wattage without physical buttons.",
           "The added display and touch digitizer costs some battery efficiency and shell simplicity compared to a screen-free device, which is why simpler siblings in the same family (like the Caliburn G4 Mini) often skip the screen entirely to prioritize battery life and pocketability instead.",
         ],
       },

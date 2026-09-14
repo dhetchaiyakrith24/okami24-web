@@ -19,6 +19,12 @@
 export interface ProductCopyTh {
   tagline: string;
   shortDescription: string;
+  /** Round 30.4 batches 5/6 (owner-approved card by card): the "จุดเด่น" feature cards in Thai,
+   *  keyed by the feature's `id` in src/data/products/*.ts. A card without an entry keeps its
+   *  English text; an entry without `title` keeps the English title (a feature name the brand
+   *  itself coined — Smart Triple-Tap Control, Pro-FOCS — stays English by THAI_STYLE layer 1).
+   *  Read by FeatureGrid.tsx when the locale is Thai. */
+  features?: Record<string, { title?: string; description: string }>;
 }
 
 export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
@@ -26,50 +32,132 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "ระบบ Smart Triple-Tap Control ปรับแต่งเพื่อทุกจังหวะการสูบ",
     shortDescription:
       "รุ่นเรือธงล่าสุดของตระกูล Caliburn: พอตซิสเต็มแบตเตอรี่ 1600mAh พร้อมจอสี 0.85 นิ้ว และระบบสั่งงานด้วยการแตะสามครั้งสำหรับสลับโหมดโดยไม่ต้องใช้ปุ่ม",
+    features: {
+      "triple-tap": {
+        description: "ใช้เซ็นเซอร์จับการแตะแทนแถวปุ่มกด แตะเพื่อสลับโหมดวัตต์และเช็คสถานะเครื่อง ตัวเครื่องจึงเรียบ ไม่มีชิ้นส่วนเกิน",
+      },
+      "display-x-ui": {
+        title: "จอสีเข้าชุดกับตัวเครื่อง",
+        description: "จอสี 0.85 นิ้ว ธีมหน้าจอเข้ากับสีของตัวเครื่อง มองแวบเดียวก็เห็นแบต วัตต์ และโหมดที่ใช้อยู่",
+      },
+      "top-fill-gpp": {
+        title: "หัวพอตเติมด้านบน GPP",
+        description: "เติมน้ำยาจากด้านบนได้โดยไม่ต้องถอดหัวพอตออกจากเครื่อง ยึดด้วยแม่เหล็ก ใส่แล้วแน่น ไม่โยก",
+      },
+    },
   },
   "caliburn-g5-lite": {
     tagline: "แพลตฟอร์ม G5 ที่ปรับให้เรียบง่ายลง เหมาะกับการใช้งานประจำวันระยะยาว",
     shortDescription:
       "รุ่นที่ตัดทอนความซับซ้อนลงจาก G5 ยังคงแบตเตอรี่ 1600mAh และสูงสุด 35 วัตต์เท่าเดิม แต่ปรับระบบควบคุมให้เรียบง่ายขึ้นในราคาที่ย่อมเยากว่า",
+    features: {
+      "long-run-battery": {
+        title: "แบตเตอรี่ 1600mAh เท่า G5",
+        description: "ยกแบตเตอรี่ก้อนเต็มของ G5 มาใส่ในเครื่องที่เรียบง่ายกว่า ชาร์จครั้งเดียวใช้ได้นาน",
+      },
+    },
   },
   "caliburn-g5-lite-se": {
     tagline: "G5 Lite ตัวเครื่องเดิม ในชุดสีรุ่นพิเศษ",
     shortDescription: "ใช้แบตเตอรี่ 1600mAh และสูงสุด 35 วัตต์เท่ากับ G5 Lite ต่างกันที่ชุดสีรุ่นพิเศษ",
+    features: {
+      "se-finish": {
+        title: "ชุดสีรุ่นพิเศษ",
+        description: "ตัวเครื่องเดียวกับ G5 Lite ไม่ได้เปลี่ยนสเปกข้างใน ต่างกันแค่ชุดสีรุ่นพิเศษ มี 8 สี",
+      },
+    },
   },
   "caliburn-g4-pro-koko": {
     tagline: "จอทัชสกรีนรุ่นแรกในสาย KOKO",
     shortDescription:
       "พอตแบตเตอรี่ 2000mAh 35 วัตต์ พร้อมจอทัชสกรีนสมาร์ท 2 นิ้ว และระบบปรับรสชาติ Pro-FOCS 4.0 สลับโหมดการสูบได้ระหว่าง Storm, Waves และ Custom",
+    features: {
+      touchscreen: {
+        title: "จอทัชสกรีน 2 นิ้ว",
+        description: "ทัชสกรีนตัวแรกของสาย KOKO สลับโหมดและปรับวัตต์บนจอได้เลย ไม่ต้องใช้ปุ่มกด",
+      },
+      "pro-focs": {
+        description: "ระบบปรับรสชาติและปริมาณไอรุ่นปัจจุบันของ UWELL ใช้กับหัวพอต GPP",
+      },
+      modes: {
+        title: "โหมด Storm / Waves / Custom",
+        description: "มีโหมดที่ตั้งค่ามาให้ บวกโหมด Custom ที่ตั้งเอง ไล่ตั้งแต่สูบนุ่มเบาไปจนถึงแน่นและแรงขึ้น",
+      },
+    },
   },
   "caliburn-g4-pro": {
     tagline: "จอทัชสกรีน 2.51 นิ้ว บนแพลตฟอร์ม G4",
     shortDescription:
       "พอตแบตเตอรี่ 1800mAh 35 วัตต์ พร้อมจอทัชสกรีนขนาดใหญ่ ระบบเชื่อมต่อพอตแบบแม่เหล็ก และปรับช่องลมได้แบบไม่มีขั้น",
+    features: {
+      shatterproof: {
+        title: "จอทัชสกรีน 2.51 นิ้ว",
+        description: "จอทัชสกรีน 2.51 นิ้ว ใหญ่อันดับต้น ๆ ของตระกูล Caliburn",
+      },
+      "stepless-airflow": {
+        title: "ปรับช่องลมแบบไม่มีขั้น",
+        description: "แหวนปรับลมหมุนได้ต่อเนื่อง ไม่ล็อกเป็นขั้น ๆ จะเอาแน่นหรือโล่งแค่ไหนก็ปรับได้ละเอียด",
+      },
+    },
   },
   "caliburn-g4": {
     tagline: "จอสีพร้อมปุ่มกดยิงไอ บนตัวเครื่อง G4 มาตรฐาน",
     shortDescription:
       "G4 รุ่นมาตรฐาน: เครื่องแบตเตอรี่ 1300mAh พร้อมจอสี เลือกโหมดวัตต์ได้ และยิงไอด้วยปุ่มกด — จุดกึ่งกลางระหว่างรุ่น Mini ที่ไม่มีจอ กับรุ่น Pro ที่เป็นทัชสกรีน",
+    features: {
+      "power-modes": {
+        title: "เลือกโหมดวัตต์ได้",
+        description: "มีจอสีให้เลือกโหมดวัตต์ได้หลายระดับ ปรับได้มากกว่ารุ่น Mini ที่ไม่มีจอ",
+      },
+    },
   },
   "caliburn-g4-mini": {
     tagline: "G4 เวอร์ชันย่อส่วน พกพาง่าย",
     shortDescription:
       "G4 รุ่นเล็ก เบากว่า ไม่มีจอ เน้นพกง่าย ใช้หัวพอต GPP ตัวเดียวกับ G4 แบตเตอรี่เล็กลงเป็น 1100mAh",
+    features: {
+      pocketable: {
+        title: "เล็ก เบา พกง่าย",
+        description: "ตัดจอและความสามารถอื่นของ G4 ออก เหลือตัวเครื่องที่เล็กและเบากว่า G4",
+      },
+    },
   },
   "caliburn-g4-classic": {
     tagline: "G4 ตัวเครื่องเดิม ในชุดสีรุ่น Classic",
     shortDescription:
       "Caliburn G4 รุ่น Classic ตัวเครื่องเดียวกับ G4 รุ่นมาตรฐาน มี 4 สี ใช้หัวพอต GPP เหมือนกัน",
+    features: {
+      "classic-finish": {
+        title: "ชุดสีรุ่น Classic",
+        description: "ชุดสีอีกแบบบนตัวเครื่อง G4 เดิม ไม่ใช่รุ่นที่เปลี่ยนสเปกข้างใน มี 4 สี",
+      },
+    },
   },
   "caliburn-g3-pro": {
     tagline: "จอแบบ full-wraparound รุ่นแรกในตระกูล Caliburn",
     shortDescription:
-      "พอตแบตเตอรี่ 1000mAh สูงสุด 35 วัตต์ พร้อมจอ LCD ที่โอบรอบด้านข้างตัวเครื่อง ปรับช่องลมได้เต็มรูปแบบ และในกล่องมีพอตให้ 2 ตัว คนละโอห์ม",
+      "พอตแบตเตอรี่ 1000mAh สูงสุด 35 วัตต์ พร้อมจอ LCD ที่โอบรอบด้านข้างตัวเครื่อง ปรับช่องลมได้เต็มรูปแบบ และในกล่องมีหัวพอตให้ 2 ตัว คนละโอห์ม",
+    features: {
+      "wraparound-screen": {
+        title: "จอ LCD โอบรอบด้านข้าง",
+        description: "จอตัวแรกในตระกูล Caliburn ที่โอบไปทั้งด้านข้างของเครื่อง ไม่ใช่จอเล็ก ๆ ในช่องเดียว",
+      },
+      "dual-pod": {
+        title: "หัวพอต 2 ตัว คนละโอห์ม",
+        description: "ในกล่องมีหัวพอต 0.4 โอห์มสำหรับสูบโล่งแบบ RDL และ 0.9 โอห์มสำหรับสูบแน่นแบบ MTL แกะกล่องแล้วลองได้ทั้งสองแบบเลย",
+      },
+    },
   },
   "caliburn-g3-pro-koko": {
     tagline: "G3 Pro ตัวเครื่องเดิม ในชุดสีรุ่น KOKO",
     shortDescription:
       "Caliburn G3 Pro รุ่น KOKO ตัวเครื่องเดียวกับ G3 Pro รุ่นมาตรฐาน มี 8 สี ใช้หัวพอต Caliburn G3 เหมือนกัน",
+    features: {
+      "koko-finish": {
+        title: "ชุดสีรุ่น KOKO",
+        description: "ชุดสี KOKO บนตัวเครื่อง G3 Pro เดิม ไม่ใช่รุ่นที่เปลี่ยนสเปกข้างใน มี 8 สี",
+      },
+    },
   },
   "argus-g4": {
     tagline: "พอตคิทแบตอึดใช้ได้ 5 วัน พร้อมจอสถานะ HD เต็มรูปแบบ",

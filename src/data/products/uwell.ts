@@ -613,9 +613,9 @@ export const uwellProducts: Product[] = [
     systemType: "open-pod",
     name: "Caliburn G4 Pro",
     displayName: "UWELL CALIBURN G4 PRO",
-    tagline: "A 2.51\" shatterproof touchscreen on the G4 platform.",
+    tagline: "A 2.51\" touchscreen on the G4 platform.",
     shortDescription:
-      "An 1800mAh, 35W pod device with a large shatterproof touchscreen, magnetic pod connection, and stepless airflow control.",
+      "An 1800mAh, 35W pod device with a large touchscreen, magnetic pod connection, and stepless airflow control.",
     isFlagship: false,
     attributes: {
       batteryMah: 1800,
@@ -708,7 +708,7 @@ export const uwellProducts: Product[] = [
     specifications: [
       { key: "battery", label: "Battery", value: "1800mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "35W", sourceStatus: "verified" },
-      { key: "screen", label: "Display", value: "2.51\" shatterproof touchscreen", sourceStatus: "verified" },
+      { key: "screen", label: "Display", value: "2.51\" touchscreen", sourceStatus: "verified" },
       { key: "pod", label: "Pod capacity", value: "3mL, magnetic connection", sourceStatus: "verified" },
       { key: "airflow", label: "Airflow", value: "Stepless airflow control", sourceStatus: "verified" },
       { key: "pod-compat", label: "Pod platform", value: "UWELL GPP and G3 pods", sourceStatus: "verified" },
@@ -716,8 +716,8 @@ export const uwellProducts: Product[] = [
     features: [
       {
         id: "shatterproof",
-        title: "2.51\" shatterproof touchscreen",
-        description: "One of the largest displays in the Caliburn line, built to withstand everyday-carry drops and knocks.",
+        title: "2.51\" touchscreen",
+        description: "One of the largest displays in the Caliburn line.",
       },
       {
         id: "stepless-airflow",

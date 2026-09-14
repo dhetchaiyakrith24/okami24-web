@@ -16,7 +16,10 @@ export const relxProducts: Product[] = [
     shortDescription:
       "A 12,000-puff rechargeable disposable from RELX's own official global lineup — 400mAh battery, a 1.0Ω MEGA MESH coil, and a 10-flavor range confirmed directly on relxnow.com.",
     isFlagship: true,
-    editorialTag: "Tier-1 priority",
+    // Round 30.4 ก8 (owner 2026-09-13): was "Tier-1 priority" — an internal note. The home
+    // flagship rail shows this card next to three "รุ่นเรือธง" badges, and the data already says
+    // isFlagship, so the label follows. hasEditorialTag stays true → card order unchanged.
+    editorialTag: "Flagship",
     // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
     // youtube.com/@PODSYSTEM-OKAMI-II — one of OKami24's own three channels.
     reviewVideo: { videoId: "0b6Q9DzWrRQ", title: "RELX SMASH GO 12K ง่าย แต่ ดี!", channelName: "POD SYSTEM OKAMI II" },
