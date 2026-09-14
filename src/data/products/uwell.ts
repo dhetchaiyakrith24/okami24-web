@@ -708,7 +708,10 @@ export const uwellProducts: Product[] = [
     specifications: [
       { key: "battery", label: "Battery", value: "1800mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "35W", sourceStatus: "verified" },
-      { key: "screen", label: "Display", value: "2.51\" touchscreen", sourceStatus: "verified" },
+      // Owner 2026-09-14: was "2.51\" shatterproof touchscreen" marked verified, but UWELL's official
+      // page does not say shatterproof (researcher 2026-09-12); the adjective is gone and the flag
+      // follows the evidence. Put both back with a source (box / manual) if the owner has one.
+      { key: "screen", label: "Display", value: "2.51\" touchscreen", sourceStatus: "unverified" },
       { key: "pod", label: "Pod capacity", value: "3mL, magnetic connection", sourceStatus: "verified" },
       { key: "airflow", label: "Airflow", value: "Stepless airflow control", sourceStatus: "verified" },
       { key: "pod-compat", label: "Pod platform", value: "UWELL GPP and G3 pods", sourceStatus: "verified" },
