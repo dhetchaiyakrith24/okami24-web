@@ -26,8 +26,8 @@ export function SpecSheet({ product }: { product: Product }) {
           }
         />
         {/* Round 30.4ค batch 1 (owner 2026-09-15): a Thai visitor reads each chip's label from the
-            spec-labels-th.ts overlay (keyed by the English data label); the value is the data string in
-            every locale. Markup is exactly what it was. */}
+            spec-labels-th.ts overlay (keyed by the English data label) and the label row drops the mono
+            tracking; the value is the data string in every locale. Markup is exactly what it was. */}
         <div className="grid grid-cols-1 gap-x-8 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
           {product.specifications.map((spec) => {
             const labelTh = locale === "th" ? specLabelTh(spec.label) : undefined;
@@ -36,6 +36,7 @@ export function SpecSheet({ product }: { product: Product }) {
                 key={spec.key}
                 spec={spec}
                 label={labelTh}
+                thaiLabel={labelTh !== undefined && labelTh !== spec.label}
                 unverifiedLabel={dict.product.unverifiedBadge}
                 unverifiedTitle={dict.product.unverifiedTooltip}
               />

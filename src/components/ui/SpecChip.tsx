@@ -6,17 +6,26 @@ import { cn } from "@/lib/utils";
 // English here and showed on Thai pages. The English defaults keep any other caller unchanged.
 //
 // Round 30.4ค batch 1 (owner 2026-09-15): the caller may pass the label to DISPLAY (`label` — the
-// Thai overlay from spec-labels-th.ts; the data label is the fallback). English and Chinese
-// visitors never set it, so nothing changes for them.
+// Thai overlay from spec-labels-th.ts; the data label is the fallback) and, when that label is Thai,
+// `thaiLabel` — the label row then drops `.label-mono`'s mono face, 0.08em tracking and uppercase
+// (Thai does not letter-space, and the mono face has no Thai glyphs; same fix as
+// OptionCountBadge.tsx) and takes weight 500 + `text-foreground-muted` — designer option A, owner
+// 2026-09-15: without uppercase/tracking/mono the 0.65rem Thai label lost the mass the English one
+// had and read fainter than its value; the size stays so the row height (16px) and every layout
+// measurement stay exactly as before. The `!` matters: `.label-mono` lives in globals.css after
+// `@import "tailwindcss"`, so a plain `tracking-normal` would lose on source order. English and
+// Chinese visitors never set either prop, so nothing changes for them.
 export function SpecChip({
   spec,
   label,
+  thaiLabel = false,
   className,
   unverifiedLabel = "unverified",
   unverifiedTitle = "Not independently confirmed against an official source",
 }: {
   spec: Specification;
   label?: string;
+  thaiLabel?: boolean;
   className?: string;
   unverifiedLabel?: string;
   unverifiedTitle?: string;
@@ -29,7 +38,7 @@ export function SpecChip({
         className
       )}
     >
-      <div className="label-mono flex items-center gap-2 text-[0.65rem] text-foreground-dim">
+      <div className={cn("label-mono flex items-center gap-2 text-[0.65rem] text-foreground-dim", thaiLabel && "font-sans! font-medium tracking-normal! normal-case! text-foreground-muted")}>
         <span>{label ?? spec.label}</span>
         {spec.sourceStatus === "unverified" && (
           <span className="text-unverified" title={unverifiedTitle}>
