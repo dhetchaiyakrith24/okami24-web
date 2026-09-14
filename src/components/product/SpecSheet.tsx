@@ -5,10 +5,16 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SpecChip } from "@/components/ui/SpecChip";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { specLabelTh } from "@/i18n/spec-labels-th";
+import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 
 export function SpecSheet({ product }: { product: Product }) {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
   const unverifiedCount = product.specifications.filter((s) => s.sourceStatus === "unverified").length;
+  // Round 30.4ค batch 2 (owner 2026-09-15): a Thai visitor reads each chip's VALUE from the product's
+  // `specifications` overlay in product-copy-th.ts (keyed by spec key); a key without an entry keeps
+  // the data value (numbers / units / model names need no translation).
+  const valuesTh = locale === "th" ? PRODUCT_COPY_TH[product.slug]?.specifications : undefined;
 
   return (
     <section id="specifications" className="scroll-mt-20 border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">
@@ -24,10 +30,24 @@ export function SpecSheet({ product }: { product: Product }) {
               : dict.product.specsAllVerifiedNote
           }
         />
+        {/* Round 30.4ค batch 1 (owner 2026-09-15): a Thai visitor reads each chip's label from the
+            spec-labels-th.ts overlay (keyed by the English data label) and the label row drops the mono
+            tracking; the value is the data string in every locale. Markup is exactly what it was. */}
         <div className="grid grid-cols-1 gap-x-8 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
-          {product.specifications.map((spec) => (
-            <SpecChip key={spec.key} spec={spec} unverifiedLabel={dict.product.unverifiedBadge} unverifiedTitle={dict.product.unverifiedTooltip} />
-          ))}
+          {product.specifications.map((spec) => {
+            const labelTh = locale === "th" ? specLabelTh(spec.label) : undefined;
+            return (
+              <SpecChip
+                key={spec.key}
+                spec={spec}
+                label={labelTh}
+                value={valuesTh?.[spec.key]}
+                thaiLabel={labelTh !== undefined && labelTh !== spec.label}
+                unverifiedLabel={dict.product.unverifiedBadge}
+                unverifiedTitle={dict.product.unverifiedTooltip}
+              />
+            );
+          })}
         </div>
       </Container>
     </section>
