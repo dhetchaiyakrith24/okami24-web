@@ -27,7 +27,7 @@ export interface FinderQuestionCopy {
 
 export const FINDER_COPY_TH: Record<string, FinderQuestionCopy> = {
   format: {
-    title: "คุณกำลังมองหาอุปกรณ์แบบไหน",
+    title: "กำลังหาพอตแบบไหนอยู่",
     options: {
       "open-pod": { label: "Open-system pod", description: "เติมน้ำยาเองและเปลี่ยนหัวคอยล์ได้" },
       "pod-kit": { label: "Pod kit / pod mod", description: "ต้องการวัตต์มากขึ้น ตัวเครื่องใช้ซ้ำได้ เปลี่ยนแค่หัวพอตหรือคอยล์" },
@@ -47,7 +47,7 @@ export const FINDER_COPY_TH: Record<string, FinderQuestionCopy> = {
     title: "อยากได้จอแบบไหน",
     options: {
       none: { label: "ไม่มีจอ", description: "แค่ดูดหรือกดปุ่ม ไม่ต้องมีอะไรให้ดู" },
-      basic: { label: "จอแสดงผลแบบง่าย", description: "เห็นแบตเตอรี่ วัตต์ และโหมดได้ในทันที" },
+      basic: { label: "จอแสดงผลแบบง่าย", description: "เหลือบดูก็เห็นแบต วัตต์ และโหมด" },
       full: { label: "จอทัชเต็มจอ", description: "เข้าเมนูและสลับโหมดได้ครบบนจอ" },
       "no-preference": { label: "แบบไหนก็ได้", description: "มีจอหรือไม่มีก็ได้" },
     },

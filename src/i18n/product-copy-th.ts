@@ -72,7 +72,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       control: "Smart Triple-Tap Control (แตะเพื่อสลับโหมด)",
       "pod-compat": "UWELL GPP",
     },
-    tagline: "ระบบ Smart Triple-Tap Control ปรับแต่งเพื่อทุกจังหวะการสูบ",
+    tagline: "Smart Triple-Tap Control แตะสามครั้งสลับโหมดวัตต์ ไม่ต้องกดปุ่ม",
     shortDescription:
       "รุ่นเรือธงล่าสุดของตระกูล Caliburn: พอตซิสเต็มแบตเตอรี่ 1600mAh พร้อมจอสี 0.85 นิ้ว และระบบสั่งงานด้วยการแตะสามครั้งสำหรับสลับโหมดโดยไม่ต้องใช้ปุ่ม",
     features: {
@@ -150,7 +150,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "จอทัชสกรีนรุ่นแรกในสาย KOKO",
     shortDescription:
-      "พอตแบตเตอรี่ 2000mAh 35 วัตต์ พร้อมจอทัชสกรีน 2 นิ้ว และระบบปรับรสชาติ Pro-FOCS 4.0 สลับโหมดการสูบได้ระหว่าง Storm, Waves และ Custom",
+      "พอตแบตเตอรี่ 2000mAh 35 วัตต์ จอทัชสกรีน 2 นิ้ว ระบบปรับรสชาติ Pro-FOCS 4.0 สลับโหมดการสูบได้ทั้ง Storm / Waves / Custom",
     features: {
       touchscreen: {
         title: "จอทัชสกรีน 2 นิ้ว",
@@ -179,7 +179,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "จอทัชสกรีน 2.51 นิ้ว บนตัวเครื่องสาย G4",
     shortDescription:
-      "พอตแบตเตอรี่ 1800mAh 35 วัตต์ พร้อมจอทัชสกรีนขนาดใหญ่ ระบบเชื่อมต่อหัวพอตแบบแม่เหล็ก และปรับช่องลมได้แบบไม่มีขั้น",
+      "พอตแบตเตอรี่ 1800mAh 35 วัตต์ จอทัชสกรีน 2.51 นิ้ว หัวพอตยึดด้วยแม่เหล็ก ปรับช่องลมได้แบบไม่มีขั้น",
     features: {
       shatterproof: {
         title: "จอทัชสกรีน 2.51 นิ้ว",
@@ -345,7 +345,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       pod: "ARGUS แบบเติมด้านบน",
     },
     tagline: "แบตเตอรี่เท่า G4 วัตต์ลดลง ตัวเครื่องเล็กลง",
-    shortDescription: "ใช้แบตเตอรี่ 1650mAh เดียวกับ ARGUS G4 แต่ในตัวเครื่องที่เล็กลง และปรับวัตต์สูงสุดลงเหลือ 30 วัตต์ จากเดิม 35 วัตต์",
+    shortDescription: "ARGUS G4 ในตัวเครื่องที่เล็กลง แบตเตอรี่ 1650mAh เท่าเดิม วัตต์สูงสุดลดจาก 35 วัตต์ เหลือ 30 วัตต์",
     features: {
       "same-battery-smaller-shell": {
         title: "แบตก้อนเต็ม ในตัวเครื่องที่เล็กกว่า",
@@ -414,7 +414,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       control: "ล้อปรับวัตต์ละเอียด และเซ็นเซอร์แตะที่ปุ่มยิงไว้ปลดล็อก",
       pod: "หัวพอตสาย DRAG (เปลี่ยนคอยล์ได้)",
     },
-    tagline: "220 วัตต์, GENE.TT 3.0 พร้อมล้อปรับวัตต์แบบละเอียด",
+    tagline: "220 วัตต์ ชิป GENE.TT 3.0 และล้อปรับวัตต์ละเอียด",
     shortDescription:
       "รุ่นเรือธงล่าสุดของสาย DRAG: แบตเตอรี่ในตัว 4400mAh (ถ่าน 2200mAh สองก้อน) สูงสุด 220 วัตต์ จอ TFT ขนาด 1.66 นิ้ว และปุ่มยิงมีเซ็นเซอร์แตะไว้ปลดล็อกเครื่อง",
     features: {
@@ -586,7 +586,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "—",
       capacity: "—",
     },
-    tagline: "จำนวนพัฟที่ระบุสูงที่สุดในตระกูล M Bar",
+    tagline: "M Bar รุ่นพัฟเยอะสุดของตระกูล ชาร์จซ้ำได้",
     shortDescription:
       "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 15,000 พัฟ คอยล์ cotton mesh ชาร์จเร็วผ่าน USB-C มี 15 รส",
     features: {
@@ -639,7 +639,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       flavors: "กว่า 15 รส",
       capacity: "—",
     },
-    tagline: "15+ รสชาติ ใช้หัวพอตตระกูลเดียวกัน",
+    tagline: "กว่า 15 รส หัวพอตทรงเดียวกันทั้งตระกูล M Bar",
     shortDescription: "หัวพอตสำหรับเปลี่ยน ใช้ได้กับเครื่องใช้ซ้ำของ SALTHUB ที่รองรับ M Bar มีให้เลือกกว่า 15 รส",
   },
   "zero-pro": {
@@ -652,7 +652,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "—",
     },
     tagline: "3 โหมด ในตัวเครื่องระบบสวิตช์ใช้ซ้ำได้",
-    shortDescription: "อุปกรณ์ระบบสวิตช์ใช้ซ้ำได้ 3 โหมด รองรับสูงสุด 5,000 พัฟต่อ Zero Cartridge หนึ่งอัน",
+    shortDescription: "เครื่องระบบสวิตช์ใช้ซ้ำได้ มี 3 โหมดวัตต์ ใช้หัวพอต Zero Cartridge รองรับสูงสุด 5,000 พัฟต่อหัวพอต",
     features: {
       "3-mode": {
         title: "3 โหมดวัตต์",
@@ -680,8 +680,8 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     whoIsThisFor: {
       0: "ใช้ Zero Pro หรือ Zero Nano อยู่ แล้วหัวพอตหมดหรืออยากเปลี่ยนรส",
     },
-    tagline: "หัวพอตเปลี่ยนได้ ใช้ร่วมกับ Zero Pro และ Zero Nano",
-    shortDescription: "หัวพอตเปลี่ยนได้ความจุ 2.2mL ใช้ร่วมกันได้ทั้งกับตัวเครื่อง Zero Pro และ Zero Nano",
+    tagline: "หัวพอตสำหรับเปลี่ยน ใช้ได้ทั้ง Zero Pro และ Zero Nano",
+    shortDescription: "หัวพอตสำหรับเปลี่ยน ความจุ 2.2mL หัวเดียวกันใส่ได้ทั้ง Zero Pro และ Zero Nano",
   },
   // Tier-1 disposable growth mission (2026-09-03) — same translation-only rule as above: honesty
   // caveats (unverified specs, naming ambiguity) are real facts and must carry over untranslated
@@ -697,7 +697,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       nicotine: "3% หรือ 5% salt nic",
       capacity: "—",
     },
-    tagline: "พอตใช้แล้วทิ้งรุ่นทางการของ RELX คอยล์ MEGA MESH",
+    tagline: "พอตใช้แล้วทิ้งของ RELX มีอยู่ในเว็บทางการ คอยล์ MEGA MESH",
     shortDescription:
       "พอตใช้แล้วทิ้งชาร์จซ้ำได้จากไลน์อัพทางการของ RELX รองรับสูงสุด 12,000 พัฟ แบตเตอรี่ 400mAh คอยล์ MEGA MESH 1.0 โอห์ม มี 10 รส ยืนยันตรงจาก relxnow.com",
     features: {
