@@ -2,17 +2,15 @@
 
 import Link from "next/link";
 import { CONTACT } from "@/data/contact";
-import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { AgeNote, EmailLink, InfoCard, LineLink, SERVICE_PAGES_UPDATED, ServiceSection, UpdatedAt } from "@/components/content/ServicePage";
+import { AgeNote, EmailLink, InfoCard, LineLink, SERVICE_PAGES_UPDATED, ServiceSection, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
 import { CONTACT_PAGE } from "@/i18n/service-pages/contact";
 
 /** Body of /contact in the active language (copy: src/i18n/service-pages/contact.tsx). */
 export function ContactContent() {
-  const { locale } = useLocale();
-  const c = CONTACT_PAGE[locale];
+  const c = useServiceCopy(CONTACT_PAGE);
   return (
     <>
       <PageHeader

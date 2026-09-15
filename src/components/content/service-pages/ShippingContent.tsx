@@ -1,16 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
-import { AgeNote, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt } from "@/components/content/ServicePage";
+import { AgeNote, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
 import { SHIPPING } from "@/i18n/service-pages/shipping";
 
 /** Body of /shipping in the active language (copy: src/i18n/service-pages/shipping.tsx). */
 export function ShippingContent() {
-  const { locale } = useLocale();
-  const c = SHIPPING[locale];
+  const c = useServiceCopy(SHIPPING);
   const link = "text-foreground hover:text-red";
   return (
     <>

@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
-import { AgeNote, InfoCard, NumberedSteps, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt } from "@/components/content/ServicePage";
+import { AgeNote, InfoCard, NumberedSteps, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
 import { CLAIMS } from "@/i18n/service-pages/claims-policy";
 
 /**
@@ -13,8 +12,7 @@ import { CLAIMS } from "@/i18n/service-pages/claims-policy";
  * the "owner to confirm" box that lived here while it was a /preview draft are gone.
  */
 export function ClaimsPolicyContent() {
-  const { locale } = useLocale();
-  const c = CLAIMS[locale];
+  const c = useServiceCopy(CLAIMS);
   const link = "text-foreground hover:text-red";
   return (
     <>
