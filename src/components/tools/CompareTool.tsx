@@ -9,6 +9,7 @@ import { specLabelTh } from "@/i18n/spec-labels-th";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import type { Specification } from "@/types/catalog";
 import { categoryName as categoryNameOf } from "@/lib/utils";
+import { labelLang } from "@/lib/label-lang";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 /**
@@ -199,7 +200,7 @@ function ComparisonTable({ title, rows, emptyNote }: { title: string; rows: Row[
               const allSame = row.values.every((v) => v === row.values[0]);
               return (
                 <tr key={row.label} className="border-b border-surface-border-soft last:border-b-0">
-                  <th scope="row" className="label-mono w-40 shrink-0 bg-surface-1 p-3 text-left text-[0.65rem] font-medium text-foreground-dim">
+                  <th scope="row" className="label-mono w-40 shrink-0 bg-surface-1 p-3 text-left text-[0.65rem] font-medium text-foreground-dim" lang={labelLang(row.label)}>
                     {row.label}
                   </th>
                   {row.values.map((v, i) => (

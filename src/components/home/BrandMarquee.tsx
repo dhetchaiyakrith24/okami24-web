@@ -34,7 +34,7 @@ export function BrandMarquee() {
     >
       <div className="okami-brand-marquee-track flex w-max items-center gap-10 pl-10">
         {[...half, ...half].map((name, i) => (
-          <span key={`${name}-${i}`} className="label-mono text-sm text-foreground-dim">
+          <span key={`${name}-${i}`} className="label-mono text-sm text-foreground-dim" lang="en">
             {name}
           </span>
         ))}

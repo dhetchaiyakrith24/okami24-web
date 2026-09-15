@@ -25,7 +25,7 @@ export function FeatureGrid({ product }: { product: Product }) {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {product.features.map((feature, i) => (
             <div key={feature.id} className="flex flex-col gap-3 rounded-2xl border border-surface-border-soft bg-surface-0 p-6">
-              <span className="label-mono text-xs text-steel">{String(i + 1).padStart(2, "0")}</span>
+              <span className="label-mono text-xs text-steel" lang="en">{String(i + 1).padStart(2, "0")}</span>
               <h3 className="font-display text-lg font-semibold leading-tight text-foreground">{copyTh?.[feature.id]?.title ?? feature.title}</h3>
               <p className="text-sm leading-relaxed text-foreground-muted">{copyTh?.[feature.id]?.description ?? feature.description}</p>
             </div>

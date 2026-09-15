@@ -13,7 +13,7 @@ export function CategoryNav() {
               href={`/products/${category.slug}`}
               className="group flex flex-col gap-2 rounded-xl border border-surface-border-soft bg-surface-0 p-4 transition-colors hover:border-foreground-dim"
             >
-              <span className="label-mono text-[0.6rem] text-foreground-dim">Shop</span>
+              <span className="label-mono text-[0.6rem] text-foreground-dim" lang="en">Shop</span>
               <span className="font-display text-base font-semibold leading-tight text-foreground group-hover:text-ember">
                 {category.shortName}
               </span>

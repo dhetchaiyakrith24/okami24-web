@@ -7,6 +7,7 @@ import { EditorialTagBadge } from "@/components/catalog/EditorialTagBadge";
 import { PuffCount } from "@/components/catalog/PuffCount";
 import { ProductTagline } from "@/components/catalog/ProductTagline";
 import { brandName, formatBattery, formatWattage } from "@/lib/utils";
+import { labelLang } from "@/lib/label-lang";
 import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 
@@ -55,7 +56,8 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-5 max-lg:gap-1 max-lg:p-3">
-        <span className="label-mono text-[0.65rem] text-foreground-dim max-lg:text-[0.6rem]">
+        {/* Round 30.4ค batch 8: brand marks and Latin stats keep the mono look in Thai (label-lang.ts). */}
+        <span className="label-mono text-[0.65rem] text-foreground-dim max-lg:text-[0.6rem]" lang="en">
           {brandName(product.brandId)}
         </span>
         <h3 className="font-display text-xl font-semibold leading-tight tracking-tight text-foreground max-lg:line-clamp-2 max-lg:min-h-[2.5em] max-lg:text-sm max-lg:leading-[1.25]">
@@ -72,11 +74,12 @@ export function ProductCard({ product }: { product: Product }) {
           {sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : ""}
         </p>
         <div className="mt-auto flex items-center gap-3 pt-3 text-xs text-foreground-dim max-lg:hidden">
-          <span className="label-mono">{primaryStat}</span>
+          {/* <PuffCount> renders "10,000 พัฟ" in Thai, so only the battery string can opt out. */}
+          <span className="label-mono" lang={typeof primaryStat === "string" ? labelLang(primaryStat) : undefined}>{primaryStat}</span>
           {secondaryStat !== "—" && (
             <>
               <span aria-hidden>·</span>
-              <span className="label-mono">{secondaryStat}</span>
+              <span className="label-mono" lang={labelLang(secondaryStat)}>{secondaryStat}</span>
             </>
           )}
         </div>

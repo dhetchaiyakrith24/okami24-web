@@ -63,7 +63,7 @@ export function NumberedSteps({ steps, start = 1 }: { steps: Step[]; start?: num
     <ol className="flex flex-col gap-5">
       {steps.map((s, i) => (
         <li key={s.title} className="flex gap-4">
-          <span className="label-mono flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-ember/40 bg-ember-soft/30 text-xs text-ember">
+          <span className="label-mono flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-ember/40 bg-ember-soft/30 text-xs text-ember" lang="en">
             {start + i}
           </span>
           <div className="min-w-0">

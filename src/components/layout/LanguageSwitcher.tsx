@@ -42,7 +42,7 @@ export function LanguageSwitcher() {
         className="flex items-center gap-1 rounded-full border border-ember/40 bg-ember-soft/40 py-1.5 pl-2 pr-2.5 text-ember transition-colors hover:border-ember/70 hover:bg-ember-soft hover:text-ember-strong"
       >
         <Globe size={17} aria-hidden />
-        <span className="label-mono text-[0.7rem] font-semibold">{locale.toUpperCase()}</span>
+        <span className="label-mono text-[0.7rem] font-semibold" lang="en">{locale.toUpperCase()}</span>
       </button>
       {open && (
         <div className="absolute right-0 top-full w-36 rounded-xl border border-surface-border bg-surface-1 p-1.5 shadow-2xl">

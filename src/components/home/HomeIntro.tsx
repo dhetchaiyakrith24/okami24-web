@@ -49,8 +49,11 @@ export function HomeIntro() {
 
   if (!isDesktop) return null;
 
+  // Round 30.4ค batch 8 (LAUNCH_AUDIT 36): the intro's `.label-mono` marks are Latin brand marks
+  // (UWELL · VOOPOO · SALTHUB · OKAMI24 · SCROLL) with their own wide tracking; lang="en" keeps them
+  // out of the Thai `.label-mono` rule in globals.css without touching cinematic/ itself.
   return (
-    <div className="hidden lg:block">
+    <div className="hidden lg:block" lang="en">
       <CinematicIntro />
     </div>
   );

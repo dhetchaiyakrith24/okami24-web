@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
+import { labelLang } from "@/lib/label-lang";
 
 export function PageHeader({
   eyebrow,
@@ -20,7 +21,7 @@ export function PageHeader({
   return (
     <section className="border-b border-surface-border-soft bg-surface-1">
       <Container className="flex flex-col gap-4 py-12 lg:py-16">
-        {eyebrow && <span className="label-mono text-xs text-ember">{eyebrow}</span>}
+        {eyebrow && <span className="label-mono text-xs text-ember" lang={typeof eyebrow === "string" ? labelLang(eyebrow) : undefined}>{eyebrow}</span>}
         <h1 className="font-display text-[length:var(--text-h1)] font-bold leading-[0.95] tracking-tight text-foreground">
           {title}
         </h1>

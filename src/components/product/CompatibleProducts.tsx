@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Link2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { labelLang } from "@/lib/label-lang";
 import { compatEvidenceTh } from "@/i18n/compat-copy-th";
 import type { RelatedConsumable, RelatedDevice } from "@/data/catalog-relationships";
 
@@ -64,7 +65,7 @@ export function CompatibleProducts({
                   )}
                 </div>
                 <div className="flex min-w-0 flex-col gap-1">
-                  <span className="label-mono text-[0.6rem] text-foreground-dim">{item.ref.brandName}</span>
+                  <span className="label-mono text-[0.6rem] text-foreground-dim" lang={labelLang(item.ref.brandName)}>{item.ref.brandName}</span>
                   <span className="text-sm font-semibold leading-snug text-foreground group-hover:text-ember">{item.ref.name}</span>
                   {/* The cited fact itself, not a marketing line — see catalog-relationships.ts. */}
                   <span className="text-xs leading-relaxed text-foreground-muted">{th ? compatEvidenceTh(item.evidence) : item.evidence}</span>

@@ -9,6 +9,7 @@ import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotTagline } from "@/i18n/product-copy-en";
 import { pilotAxisLabel } from "./axis-label";
+import { labelLang } from "@/lib/label-lang";
 
 /**
  * Phase 3.0 — the storefront-native sibling of the isolated preview's `PreviewProductCard`.
@@ -58,7 +59,8 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-5 max-lg:gap-1 max-lg:p-3">
-        <span className="label-mono text-[0.65rem] text-foreground-dim max-lg:text-[0.6rem]">{product.brandName}</span>
+        {/* Round 30.4ค batch 8: brand mark and category name keep the mono look in Thai (label-lang.ts). */}
+        <span className="label-mono text-[0.65rem] text-foreground-dim max-lg:text-[0.6rem]" lang={labelLang(product.brandName)}>{product.brandName}</span>
         <h3 className="font-display text-xl font-semibold leading-tight tracking-tight text-foreground max-lg:line-clamp-2 max-lg:min-h-[2.5em] max-lg:text-sm max-lg:leading-[1.25]">{product.displayName}</h3>
         {/* Round 30.3: ProductMaster copy is written in Thai, so the English/Chinese storefront used to
             show the Thai line here — pilotTagline() reads the English overlay when there is one. */}
@@ -67,7 +69,7 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
           {sellingPrice !== null && sellingPrice !== undefined ? `฿${sellingPrice.toLocaleString("th-TH")}` : ""}
         </p>
         <div className="mt-auto flex items-center gap-3 pt-3 text-xs text-foreground-dim max-lg:hidden">
-          <span className="label-mono">{product.categoryName}</span>
+          <span className="label-mono" lang={labelLang(product.categoryName)}>{product.categoryName}</span>
           {product.variants.length > 0 && (
             <>
               <span aria-hidden>·</span>
