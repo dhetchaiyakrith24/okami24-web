@@ -40,10 +40,26 @@ export interface ProductCopyTh {
    *  translated into Thai. Read by CompatibilitySection.tsx and CompareTool.tsx when the locale
    *  is Thai; the compatibility block's own labels/notes are in compat-copy-th.ts. */
   whoIsThisFor?: Record<number, string>;
+  /** Round 30.4ค batch 5 (owner-approved pair by pair, 2026-09-15): the product page's own FAQ
+   *  (Product.faqs) in Thai, keyed by the FAQ item's `id` (unique across the catalog and disjoint
+   *  from faq-copy.ts's ids). Questions read the way a customer asks them, answers stay inside
+   *  what the spec sheet can back — a claim the data cannot confirm points to LINE instead. Read
+   *  by ProductFAQ.tsx when the locale is Thai. */
+  faqs?: Record<string, { question: string; answer: string }>;
 }
 
 export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   "caliburn-g5": {
+    faqs: {
+      "g5-pods": {
+        question: "Caliburn G5 ใช้หัวพอตรุ่นไหน",
+        answer: "ใช้หัวพอต UWELL GPP หัวเดียวกับที่ Caliburn รุ่นปัจจุบันส่วนใหญ่ใช้ เติมน้ำยาด้านบน ยึดด้วยแม่เหล็ก และมีหลายโอห์มให้เลือก",
+      },
+      "g5-battery-life": {
+        question: "แบตใช้ได้นานแค่ไหน",
+        answer: "แบต 1600mAh เป็นตัวเลขที่ UWELL ระบุ ส่วนจะใช้ได้กี่วันขึ้นอยู่กับว่าสูบกี่วัตต์ ช่องลมเปิดแค่ไหน และเปิดจอบ่อยแค่ไหน เลยบอกเป็นตัวเลขตายตัวไม่ได้",
+      },
+    },
     whoIsThisFor: {
       0: "อยากได้ Caliburn รุ่นปัจจุบัน แต่ยังไม่อยากขยับไปพอตคิทที่วัตต์สูงกว่านี้",
       1: "เคยใช้พอตที่มีแต่ปุ่ม อยากขยับมาเครื่องที่มีจอและสลับโหมดด้วยการแตะ",
@@ -74,6 +90,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g5-lite": {
+    faqs: {
+      "g5-lite-diff": {
+        question: "G5 Lite ต่างจาก G5 ตรงไหน",
+        answer: "แบตเตอรี่และวัตต์สูงสุดเท่า G5 ที่ต่างคือ Lite ไม่มีจอสีและระบบแตะสามครั้ง (Smart Triple-Tap Control) การใช้งานเลยง่ายกว่า",
+      },
+    },
     whoIsThisFor: {
       0: "อยากได้แบตอึดเท่า G5 แต่ไม่ได้ใช้จอสีกับระบบแตะ เลยไม่อยากจ่ายส่วนนั้น",
       1: "เพิ่งเริ่มใช้พอตซิสเต็ม อยากได้เครื่องแบบง่าย ๆ ไม่มีอะไรให้ตั้งค่าเยอะ",
@@ -111,6 +133,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g4-pro-koko": {
+    faqs: {
+      "g4-pro-koko-pods": {
+        question: "ใช้หัวพอต Caliburn รุ่นก่อนได้ไหม",
+        answer: "ได้ รุ่นนี้ใส่ได้ทั้งหัวพอต GPP รุ่นปัจจุบัน และหัวพอต Caliburn G3 ที่เป็นหัวรุ่นก่อน",
+      },
+    },
     whoIsThisFor: {
       0: "อยากได้ Caliburn ที่มีจอทัชและโหมดการสูบให้เลือก โดยไม่ต้องไปถึงพอตคิท",
       1: "บางวันสูบแน่นแบบ MTL บางวันอยากโล่งแบบ RDL รุ่นนี้เลือกโหมดจากจอได้เลย ไม่ต้องตั้งใหม่ทุกครั้ง",
@@ -268,6 +296,16 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "argus-g4": {
+    faqs: {
+      "argus-g4-life": {
+        question: "แบตอยู่ได้กี่วัน",
+        answer: "VOOPOO ระบุว่าประมาณ 5 วันเมื่อใช้งานปกติ ของจริงขึ้นอยู่กับว่าสูบกี่วัตต์ เปิดจอบ่อยแค่ไหน และสูบถี่แค่ไหน",
+      },
+      "argus-g4-pods": {
+        question: "เครื่องเดียวใช้หัวพอตคนละโอห์มได้ไหม",
+        answer: "ได้ หัวพอต ARGUS แบบเติมด้านบนเป็นทรงเดียวกันทุกหัว ต่างกันแค่โอห์มในช่วง 0.4–3.0 โอห์ม ใส่สลับกันบนเครื่องเดิมได้เลย",
+      },
+    },
     whoIsThisFor: {
       0: "ชอบเช็คสถานะเครื่องจากจอ ไม่ต้องเดาเอาเองว่าแบตใกล้หมดหรือยัง",
       1: "เน้นชาร์จเร็วและแบตอยู่ได้หลายวัน มากกว่าจะเอาวัตต์สูง ๆ",
@@ -359,6 +397,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "drag-6": {
+    faqs: {
+      "drag6-rebuildable": {
+        question: "DRAG 6 ใช้คอยล์พันเองได้ไหม",
+        answer: "ตามสเปกมีโหมด RBA (โหมดสำหรับคอยล์พันเอง) ให้เลือก คู่กับโหมด SMART และ TC-TCR ส่วนจะใช้กับหัวพอตพันคอยล์ตัวไหนได้ ทักไลน์ @okm24 ถามได้",
+      },
+    },
     whoIsThisFor: {
       0: "คนที่สูบวัตต์สูงและใช้ box mod มาก่อน อยากได้แบตในตัวก้อนใหญ่ มากกว่าเครื่องที่ต้องถอดเปลี่ยนถ่าน",
       1: "อยากมีโหมด RBA และ TC-TCR ติดเครื่องไว้ด้วย ไม่ใช่ปรับวัตต์ได้อย่างเดียว",
@@ -404,6 +448,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "drag-x3": {
+    faqs: {
+      "dragx3-battery": {
+        question: "ในกล่องมีถ่านมาให้ไหม",
+        answer: "ไม่มี DRAG X3 ใช้ถ่าน 18650 หรือ 21700 หนึ่งก้อน ต้องซื้อถ่านแยก",
+      },
+    },
     whoIsThisFor: {
       0: "ถนัดใช้ถ่านถอดเปลี่ยนมากกว่าแบตในตัว ถ่านเสื่อมก็เปลี่ยนก้อนใหม่ ไม่ต้องเปลี่ยนเครื่อง",
       1: "อยากได้เครื่องที่ไปถึง 80 วัตต์ และคุมทุกอย่างจากจอทัชได้",
@@ -465,6 +515,16 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-bar-10k": {
+    faqs: {
+      "m-bar-10k-modes": {
+        question: "สลับโหมดวัตต์ยังไง",
+        answer: "กดสองครั้งติดกัน โหมดจะวนสลับระหว่าง Eco Soft และ Boost ส่วนไฟ RGB จะเปลี่ยนสีบอกว่าตอนนี้อยู่โหมดไหน",
+      },
+      "m-bar-10k-recharge": {
+        question: "ชาร์จได้ไหม",
+        answer: "ได้ ชาร์จผ่าน USB-C แบตหมดก็ชาร์จแล้วใช้ต่อได้ ไม่ใช่แบบแบตหมดแล้วจบ",
+      },
+    },
     whoIsThisFor: {
       0: "อยากสลับโหมดวัตต์ได้ (Eco / Soft / Boost) แต่ยังไม่อยากขยับไปใช้พอตซิสเต็ม",
       1: "คนที่อยากได้พอตใช้แล้วทิ้งแบบชาร์จซ้ำได้ ไม่ใช่แบบแบตหมดแล้วจบ",
@@ -537,6 +597,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-switch-kit": {
+    faqs: {
+      "m-switch-vs-disposable": {
+        question: "ต่างจาก M Bar แบบใช้แล้วทิ้งตรงไหน",
+        answer: "M Bar ใช้จนหมดแล้วทิ้งทั้งเครื่อง ส่วน M Switch Kit ทิ้งแค่หัวพอต M Switch Pod ที่หมด ตัวเครื่องชาร์จซ้ำได้ เก็บไว้ใช้ต่อ",
+      },
+    },
     whoIsThisFor: {
       0: "ใช้พอตใช้แล้วทิ้งอยู่ แต่เสียดายที่ต้องทิ้งทั้งเครื่องทุกครั้ง อยากได้ตัวเครื่องที่ใช้ซ้ำได้",
     },

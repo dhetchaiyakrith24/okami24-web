@@ -250,7 +250,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           verified links, so an unlinked product's page is unchanged. */}
       <CompatibleProducts direction="works-with" items={getCompatibleConsumables(product.slug)} />
       <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
-      <ProductFAQ faqs={product.faqs} />
+      <ProductFAQ slug={product.slug} faqs={product.faqs} />
       <RelatedProducts products={related} />
       <SourceNote product={product} />
     </>
