@@ -26,7 +26,7 @@ export const technologyEntries: TechnologyEntry[] = [
       {
         heading: "One shape, several resistances",
         paragraphs: [
-          "Rather than shipping a separate pod shape for each draw style, several current platforms — like VOOPOO's ARGUS top-fill cartridge — keep one physical pod shape and vary only the coil resistance inside it, so switching from a tighter MTL draw to a looser RDL draw means swapping a coil, not the whole cartridge.",
+          "Rather than shipping a separate pod shape for each draw style, several current platforms — like VOOPOO's ARGUS top-fill cartridge — keep one physical pod shape and vary only the resistance of the coil built into it, so switching from a tighter MTL draw to a looser RDL draw means swapping in a pod of a different resistance, not changing devices.",
           "This matters most for devices with a wide advertised resistance range (like the ARGUS G4's 0.4–3.0Ω), since it signals the platform is built to support more than one draw style without buying an entirely different device.",
         ],
       },

@@ -15,7 +15,7 @@ export const voopooProducts: Product[] = [
     displayName: "VOOPOO ARGUS G4",
     tagline: "A 5-day-battery pod kit with a full HD status screen.",
     shortDescription:
-      "The current ARGUS mainstream flagship: 1650mAh, 5–35W, a 0.85\" HD screen showing battery, wattage, resistance, lock state and puff count, and a 45-minute Type-C fast charge.",
+      "The current ARGUS mainstream flagship: 1650mAh, 5–35W, a 0.85\" HD screen showing battery, wattage, resistance, lock state and puff count, and a 45-minute USB-C fast charge.",
     isFlagship: true,
     editorialTag: "Flagship",
     attributes: {
@@ -166,7 +166,7 @@ export const voopooProducts: Product[] = [
       {
         id: "fast-charge",
         title: "45-minute fast charge",
-        description: "Type-C 5V/2A charging brings the device from empty to full in about 45 minutes.",
+        description: "USB-C 5V/2A charging brings the device from empty to full in about 45 minutes.",
       },
       {
         id: "multi-resistance-pod",
@@ -365,7 +365,7 @@ export const voopooProducts: Product[] = [
       {
         id: "full-touch",
         title: "Full-touch TFT HD display",
-        description: "The largest touch interface in the ARGUS line, used for full menu navigation rather than a simple status readout.",
+        description: "A 2.01\" touchscreen used for full menu navigation rather than a simple status readout.",
       },
     ],
     compatibility: [{ type: "pod", label: "ARGUS top-fill cartridge platform" }, usbC2A],
@@ -618,7 +618,7 @@ export const voopooProducts: Product[] = [
     displayName: "VOOPOO DRAG S3",
     tagline: "A 3000mAh built-in cell, up to 60W.",
     shortDescription:
-      "A built-in-battery DRAG model: 3000mAh, 5–60W, a 0.96\" TFT screen, and Type-C fast charging.",
+      "A built-in-battery DRAG model: 3000mAh, 5–60W, a 0.96\" TFT screen, and USB-C fast charging.",
     isFlagship: false,
     attributes: {
       batteryMah: 3000,
@@ -777,7 +777,7 @@ export const voopooProducts: Product[] = [
       {
         id: "touchscreen-166",
         title: "1.66\" touchscreen",
-        description: "The largest control surface in the compact DRAG X/S line, used for full menu and mode navigation.",
+        description: "A 1.66\" touchscreen used for full menu and mode navigation.",
       },
     ],
     compatibility: [{ type: "pod", label: "DRAG-series coil pod", note: "0.1–3.0Ω resistance range." }, usbC2A],
@@ -876,7 +876,7 @@ export const voopooProducts: Product[] = [
     ],
     compatibility: [{ type: "pod", label: "VINCI cartridge platform", note: "0.3–3.0Ω resistance range." }, usbC1A],
     whoIsThisFor: [
-      "Vapers who want a mid-output pod kit with a larger tank than most compact pods.",
+      "Vapers who want a mid-output (5–40W) pod kit with a 2000mAh built-in battery and a wide 0.3–3.0Ω pod range.",
       "Anyone who wants topside filling without unseating the pod.",
     ],
     faqs: [],
@@ -894,7 +894,7 @@ export const voopooProducts: Product[] = [
     displayName: "VOOPOO VMATE i3",
     tagline: "An ultra-light pod kit at 103mm and a few dozen grams.",
     shortDescription:
-      "VOOPOO's lightest current pod kit: a 1500mAh, 5–30W slim aluminum-alloy device with a 3mL top-fill cartridge.",
+      "A slim VOOPOO pod kit: a 1500mAh, 5–30W aluminum-alloy device with a 3mL top-fill cartridge.",
     isFlagship: false,
     attributes: {
       batteryMah: 1500,
@@ -952,12 +952,12 @@ export const voopooProducts: Product[] = [
       {
         id: "slim-body",
         title: "Slim aluminum-alloy body",
-        description: "One of the thinnest current pod-kit shells in the VOOPOO lineup, at 15.1mm thick.",
+        description: "A 15.1mm-thick body that sits comfortably in a trouser pocket.",
       },
     ],
     compatibility: [{ type: "pod", label: "VMATE Top Fill Cartridge", note: "V2 pod compatible, 0.4–3.0Ω." }, usbC2A],
     whoIsThisFor: [
-      "Vapers who prioritize the slimmest, lightest possible pod kit for daily carry.",
+      "Vapers who carry a pod all day and want a slim device that slips in and out of a pocket easily.",
     ],
     faqs: [],
     relatedProductSlugs: ["argus-g3-mini", "vinci-s"],

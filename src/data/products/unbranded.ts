@@ -413,7 +413,7 @@ export const unbrandedProducts: Product[] = [
     displayName: "Muro Connector 20K",
     tagline: "A high-puff-count disposable rated for up to 20,000 puffs.",
     shortDescription:
-      "A disposable vape from the Muro \"Connector\" line, rated for up to 20,000 puffs, currently stocked in 20 flavors — the widest flavor lineup in the Muro range.",
+      "A disposable vape from the Muro \"Connector\" line, rated for up to 20,000 puffs, currently stocked in 20 flavors.",
     isFlagship: false,
     attributes: {
       puffCount: 20000,
