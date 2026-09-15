@@ -207,7 +207,7 @@ export const th: Dictionary = {
     sectionTitle: "สินค้าที่มีในสต๊อกตอนนี้",
     axisColor: "สี",
     axisFlavor: "รสชาติ",
-    axisResistance: "ความต้านทาน",
+    axisResistance: "ค่าโอห์ม",
     axisSize: "ขนาด",
     axisStrength: "ความเข้มข้น",
     specificationsTitle: "ข้อมูลจำเพาะ",
