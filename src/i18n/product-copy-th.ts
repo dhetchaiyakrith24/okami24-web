@@ -105,7 +105,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       "pod-compat": "UWELL GPP",
       screen: "ไม่มีจอสี ใช้ไฟ LED บอกสถานะแทน",
     },
-    tagline: "แพลตฟอร์ม G5 ที่ปรับให้เรียบง่ายลง เหมาะกับการใช้งานประจำวันระยะยาว",
+    tagline: "G5 แบบเรียบง่าย แบตอึด พกใช้ทุกวัน",
     shortDescription:
       "รุ่นที่ตัดทอนความซับซ้อนลงจาก G5 ยังคงแบตเตอรี่ 1600mAh และสูงสุด 35 วัตต์เท่าเดิม แต่ปรับระบบควบคุมให้เรียบง่ายขึ้นในราคาที่ย่อมเยากว่า",
     features: {
@@ -177,7 +177,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       airflow: "ปรับได้แบบไม่มีขั้น",
       "pod-compat": "UWELL GPP และ Caliburn G3",
     },
-    tagline: "จอทัชสกรีน 2.51 นิ้ว บนแพลตฟอร์ม G4",
+    tagline: "จอทัชสกรีน 2.51 นิ้ว บนตัวเครื่องสาย G4",
     shortDescription:
       "พอตแบตเตอรี่ 1800mAh 35 วัตต์ พร้อมจอทัชสกรีนขนาดใหญ่ ระบบเชื่อมต่อหัวพอตแบบแม่เหล็ก และปรับช่องลมได้แบบไม่มีขั้น",
     features: {
@@ -362,7 +362,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       screen: "จอทัชเต็มจอ TFT HD 2.01 นิ้ว",
       pod: "ARGUS แบบเติมด้านบน",
     },
-    tagline: "จอทัชเต็มจอ TFT HD ขนาด 2.01 นิ้ว บนแพลตฟอร์ม ARGUS",
+    tagline: "จอทัชเต็มจอ TFT HD 2.01 นิ้ว บนพอตคิทสาย ARGUS",
     shortDescription: "พอตคิทแบตเตอรี่ 1500mAh 5–30 วัตต์ จอทัช TFT HD 2.01 นิ้ว กดเลือกเมนูและโหมดบนจอได้เลย",
     features: {
       "full-touch": {
