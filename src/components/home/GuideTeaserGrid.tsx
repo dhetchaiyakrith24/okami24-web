@@ -25,7 +25,7 @@ export function GuideTeaserGrid({ guides }: { guides: Guide[] }) {
               className="group flex flex-col justify-between gap-6 rounded-2xl border border-surface-border-soft bg-surface-0 p-6 transition-colors hover:border-steel/40"
             >
               <div className="flex flex-col gap-3">
-                <span className="label-mono text-[0.65rem] text-steel">{String(i + 1).padStart(2, "0")} · {guide.category.replaceAll("-", " ")}</span>
+                <span className="label-mono text-[0.65rem] text-steel" lang="en">{String(i + 1).padStart(2, "0")} · {guide.category.replaceAll("-", " ")}</span>
                 <h3 className="font-display text-xl font-semibold leading-tight text-foreground group-hover:text-ember">
                   <GuideText id={guide.id} field="title" en={guide.title} />
                 </h3>

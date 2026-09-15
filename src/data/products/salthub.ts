@@ -239,7 +239,7 @@ export const salthubProducts: Product[] = [
     displayName: "SALTHUB M BAR 15K",
     tagline: "The highest-rated puff count in the M Bar line.",
     shortDescription:
-      "The newest and highest-capacity M Bar disposable, rated up to 15,000 puffs on a cotton mesh coil with Type-C fast charging; battery and e-liquid capacity were not independently confirmed.",
+      "An M Bar disposable rated up to 15,000 puffs on a cotton mesh coil with USB-C fast charging.",
     isFlagship: false,
     attributes: {
       puffCount: 15000,
@@ -614,7 +614,7 @@ export const salthubProducts: Product[] = [
       },
     ],
     compatibility: [{ type: "cartridge", label: "Zero Cartridge" }, typeC],
-    whoIsThisFor: ["Vapers who want mode selection on a reusable switch-style device smaller than the M Switch Kit."],
+    whoIsThisFor: ["Vapers who want a switch-style reusable device with selectable wattage modes rather than a single fixed output."],
     faqs: [],
     relatedProductSlugs: ["zero-nano", "zero-cartridge", "m-switch-kit"],
     sourceUrls: ["https://www.salthub.com/"],
@@ -628,8 +628,8 @@ export const salthubProducts: Product[] = [
     systemType: "pod-kit",
     name: "Zero Nano",
     displayName: "SALTHUB ZERO NANO",
-    tagline: "The smallest device in the Zero platform.",
-    shortDescription: "A 500mAh, ultra-compact reusable device on the Zero Cartridge platform.",
+    tagline: "A compact device in the Zero line.",
+    shortDescription: "A 500mAh compact reusable device on the Zero Cartridge platform.",
     isFlagship: false,
     attributes: {
       batteryMah: 500,
@@ -658,12 +658,12 @@ export const salthubProducts: Product[] = [
     features: [
       {
         id: "smallest-zero",
-        title: "Smallest Zero-platform device",
-        description: "The most compact reusable option on the Zero Cartridge platform.",
+        title: "Compact Zero device",
+        description: "A compact reusable body with a 500mAh battery, using the same Zero Cartridge as the Zero Pro.",
       },
     ],
     compatibility: [{ type: "cartridge", label: "Zero Cartridge" }, typeC],
-    whoIsThisFor: ["Vapers who want the smallest possible reusable body on the Zero platform."],
+    whoIsThisFor: ["Vapers who want a small Zero-platform switch-style device to carry around."],
     faqs: [],
     relatedProductSlugs: ["zero-pro", "zero-cartridge"],
     sourceUrls: ["https://www.salthub.com/"],

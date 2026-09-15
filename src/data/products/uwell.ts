@@ -211,7 +211,7 @@ export const uwellProducts: Product[] = [
     displayName: "UWELL CALIBURN G5 Lite",
     tagline: "The G5 platform, simplified for long-run everyday carry.",
     shortDescription:
-      "A pared-back sibling to the G5, keeping the same 1600mAh cell and 35W ceiling with a simpler control layout for a lower price point.",
+      "A pared-back sibling to the G5, keeping the same 1600mAh cell and 35W ceiling with a simpler control layout.",
     isFlagship: false,
     attributes: {
       batteryMah: 1600,
@@ -598,7 +598,7 @@ export const uwellProducts: Product[] = [
     ],
     compatibility: [gppCompatibility, g3PodCompatibility, usbCNoNote],
     whoIsThisFor: [
-      "Vapers who want the most screen and mode control in the Caliburn line short of a full pod mod.",
+      "Vapers who want a Caliburn with a touchscreen and selectable draw modes, without stepping up to a pod kit.",
       "Anyone who splits time between MTL and more open RDL draws and wants presets for both.",
     ],
     faqs: [
@@ -716,9 +716,10 @@ export const uwellProducts: Product[] = [
       { key: "battery", label: "Battery", value: "1800mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "35W", sourceStatus: "verified" },
       // Owner 2026-09-14: was "2.51\" shatterproof touchscreen" marked verified, but UWELL's official
-      // page does not say shatterproof (researcher 2026-09-12); the adjective is gone and the flag
-      // follows the evidence. Put both back with a source (box / manual) if the owner has one.
-      { key: "screen", label: "Display", value: "2.51\" touchscreen", sourceStatus: "unverified" },
+      // page does not say shatterproof (researcher 2026-09-12); the adjective is gone. Owner
+      // 2026-09-15 (round 30.4ค batch 7): the official page's meta description does say
+      // "2.51-inch touchscreen" (myuwell.com/caliburn/caliburn-g4-pro), so the size is verified again.
+      { key: "screen", label: "Display", value: "2.51\" touchscreen", sourceStatus: "verified" },
       { key: "pod", label: "Pod capacity", value: "3mL, magnetic connection", sourceStatus: "verified" },
       { key: "airflow", label: "Airflow", value: "Stepless airflow control", sourceStatus: "verified" },
       { key: "pod-compat", label: "Pod platform", value: "UWELL GPP and G3 pods", sourceStatus: "verified" },
@@ -727,7 +728,7 @@ export const uwellProducts: Product[] = [
       {
         id: "shatterproof",
         title: "2.51\" touchscreen",
-        description: "One of the largest displays in the Caliburn line.",
+        description: "A 2.51\" touchscreen for menus and stats.",
       },
       {
         id: "stepless-airflow",
@@ -737,7 +738,7 @@ export const uwellProducts: Product[] = [
     ],
     compatibility: [gppCompatibility, g3PodCompatibility, usbCNoNote],
     whoIsThisFor: [
-      "Vapers who want the biggest screen in the Caliburn line for full stat visibility.",
+      "Vapers who want a big touchscreen they can read and adjust at a glance.",
       "Anyone who wants precise, continuously-adjustable airflow rather than fixed steps.",
     ],
     faqs: [],
@@ -988,12 +989,12 @@ export const uwellProducts: Product[] = [
       {
         id: "pocketable",
         title: "Built for pocketable simplicity",
-        description: "Drops the screen and advanced features from the standard G4 for the smallest, lightest shell in the family.",
+        description: "Drops the screen and advanced features from the standard G4 for a smaller, lighter shell.",
       },
     ],
     compatibility: [gppCompatibility, usbC],
     whoIsThisFor: [
-      "Vapers who want the smallest, simplest device on the current GPP pod platform.",
+      "Vapers who want a small, simple device whose GPP pods still fit the G4 and G5.",
       "Anyone who doesn't want a screen or mode menu to think about.",
     ],
     faqs: [],

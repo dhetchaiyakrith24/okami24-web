@@ -4,6 +4,7 @@ import { ProductMedia } from "@/components/visual/ProductMedia";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { labelLang } from "@/lib/label-lang";
 
 export function EditorialSplit({
   eyebrow,
@@ -29,7 +30,7 @@ export function EditorialSplit({
     <section className={cn(tone === "surface-1" ? "bg-surface-1" : "bg-surface-0", "border-b border-surface-border-soft")}>
       <Container className="grid grid-cols-1 items-center gap-10 py-16 lg:grid-cols-2 lg:gap-16 lg:py-24">
         <div className={cn("flex flex-col gap-5", reverse && "lg:order-2")}>
-          <span className="label-mono text-xs text-steel">{eyebrow}</span>
+          <span className="label-mono text-xs text-steel" lang={typeof eyebrow === "string" ? labelLang(eyebrow) : undefined}>{eyebrow}</span>
           <h2 className="font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">
             {title}
           </h2>

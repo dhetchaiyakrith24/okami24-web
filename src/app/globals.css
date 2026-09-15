@@ -539,6 +539,21 @@ body {
   text-transform: uppercase;
 }
 
+/* Round 30.4ค batch 8 (LAUNCH_AUDIT 36, owner 2026-09-15): while the visitor reads Thai
+   (LocaleProvider mirrors the locale onto <html lang>), every `.label-mono` drops the mono face,
+   the 0.08em tracking and the uppercase — Thai does not letter-space, and the mono face carries no
+   Thai glyphs, so the text was falling back to another font mid-label. Weight 500 gives the Thai
+   label back the mass the uppercase mono had (designer option A, batch 1). This is the site-wide
+   form of the per-component fix in SpecChip / OptionCountBadge / ProductGallery. An element (or
+   ancestor) marked lang="en" keeps the original look — used on the deliberately English eyebrows
+   (THAI_STYLE §5 group ก). English and Chinese visitors are unaffected (<html lang> is not "th"). */
+html:lang(th) .label-mono:not(:lang(en)) {
+  font-family: var(--font-sans);
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: 500;
+}
+
 /* Thin scroll rails for horizontal product rails */
 .rail-scroll {
   scrollbar-width: thin;

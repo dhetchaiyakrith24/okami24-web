@@ -42,7 +42,7 @@ export const CAPTURE_DATE = "2026-08-31T00:00:00.000Z";
 const AXIS_LABEL_TH: Record<Exclude<OptionType, "unresolved">, string> = {
   color: "สี",
   flavor: "รสชาติ",
-  resistance: "ความต้านทาน",
+  resistance: "ค่าโอห์ม",
   size: "ขนาด",
   strength: "ความเข้มข้น",
 };
@@ -1034,11 +1034,11 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   // ---------------------------------------------------------------------------------
   "Coil-70": {
     specifications: [
-      { key: "resistance", label: "ความต้านทาน", value: "0.7Ω", sourceStatus: "verified" },
+      { key: "resistance", label: "ค่าโอห์ม", value: "0.7Ω", sourceStatus: "verified" },
       { key: "wattage", label: "กำลังไฟที่แนะนำ", value: "14-20W", sourceStatus: "verified" },
       { key: "pack-size", label: "จำนวนต่อกล่อง", value: "5 หัว (บรรจุแยกซองละหัว)", sourceStatus: "verified" },
-      { key: "construction", label: "โครงสร้าง", value: "ตัวเรือนทองเหลือง คอยล์เมชเดี่ยว", sourceStatus: "verified" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "dotAIO V2, dotAIO V2 Lite, dotStick Revo, dotPod Max, dotTank 25mm", sourceStatus: "verified" },
+      { key: "construction", label: "โครงสร้าง", value: "ตัวเรือนทองเหลือง คอยล์ mesh เดี่ยว", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "dotAIO V2 / dotAIO V2 Lite / dotStick Revo / dotPod Max / dotTank 25mm", sourceStatus: "verified" },
     ],
     // Wattage/resistance are read directly off the retail box in this record's own card photo;
     // pack size, brass construction and the device list are from dotmod's own dotCoils page.
@@ -1049,7 +1049,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "capacity", label: "ความจุ", value: "2.0 ml", sourceStatus: "verified" },
       { key: "pack-size", label: "จำนวนต่อกล่อง", value: "2 หัว", sourceStatus: "verified" },
       { key: "coil-included", label: "คอยล์ในกล่อง", value: "ไม่มี (เป็นหัวเปล่า ต้องซื้อคอยล์ ITO แยก)", sourceStatus: "verified" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Argus Pod, Argus P1, Argus Z, Argus G, Argus A", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Argus Pod / Argus P1 / Argus Z / Argus G / Argus A", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://www.healthcabin.net/voopoo-argus-pod-argus-p1-argus-z-argus-g-argus-a-empty-cartridge-p/28679.html"],
   },
@@ -1072,7 +1072,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "Pod-169": {
     specifications: [
       { key: "capacity", label: "ความจุ", value: "2.5 ml", sourceStatus: "verified" },
-      { key: "prefilled", label: "ชนิดหัวพอต", value: "หัวพอตแบบเติมน้ำยามาแล้ว พร้อมคอยล์ในตัว (ระบบปิด เติมน้ำยาเองไม่ได้)", sourceStatus: "verified" },
+      { key: "prefilled", label: "ชนิดหัวพอต", value: "หัวพอตบรรจุสำเร็จ คอยล์ในตัว (ระบบปิด ใช้หมดแล้วเปลี่ยนหัวใหม่)", sourceStatus: "verified" },
     ],
     // Capacity from infy.my's own 2.5ML Cartridge page (first-party) — it explicitly notes the
     // upgrade from the earlier 2ml cartridge. The prefilled/closed-system fact comes from a
@@ -1089,7 +1089,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "wattage-015", label: "กำลังไฟที่แนะนำ (0.15Ω, DTL)", value: "60-80W", sourceStatus: "verified" },
       { key: "wattage-06", label: "กำลังไฟที่แนะนำ (0.6Ω, PnP-M2)", value: "20-28W", sourceStatus: "verified" },
       { key: "wattage-12", label: "กำลังไฟที่แนะนำ (1.2Ω, PnP-C1, MTL)", value: "10-15W", sourceStatus: "verified" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "VINCI Pod, VINCI X Pod, DRAG Baby Trio", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "VINCI Pod / VINCI X Pod / DRAG Baby Trio", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://www.alivape.com/products/voopoo-vinci-replacement-pnp-coil", "https://www.blacknote.com/e-juice/voopoo-pnp-coils/"],
   },
@@ -1097,7 +1097,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "wattage-02", label: "กำลังไฟที่แนะนำ (TPP-DM2, 0.2Ω)", value: "40-60W", sourceStatus: "verified" },
       { key: "wattage-03", label: "กำลังไฟที่แนะนำ (TPP-DM4, 0.3Ω)", value: "32-40W", sourceStatus: "verified" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "TPP Pod, DRAG 3 Kit, DRAG X Plus Kit", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "TPP Pod / DRAG 3 Kit / DRAG X Plus Kit", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://shop.voopoo.com/products/tpp-coils"],
   },
@@ -1129,29 +1129,29 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   },
   "Coil-53": {
     specifications: [
-      { key: "resistance", label: "ความต้านทาน", value: "1.0Ω", sourceStatus: "verified" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Caliburn G, Caliburn G2", sourceStatus: "verified" },
+      { key: "resistance", label: "ค่าโอห์ม", value: "1.0Ω", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Caliburn G / Caliburn G2", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-g2", "https://giantvapes.com/products/uwell-caliburn-g-replacement-coils"],
   },
   "Coil-89": {
     specifications: [
-      { key: "capacity", label: "ความจุ", value: "3.0mL, เติมด้านข้าง", sourceStatus: "verified" },
-      { key: "wattage", label: "กำลังไฟที่แนะนำ", value: "10-16W (ปรับอัตโนมัติตามความต้านทาน)", sourceStatus: "verified" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Jellybox V1, V2, V3", sourceStatus: "verified" },
+      { key: "capacity", label: "ความจุ", value: "3.0mL เติมด้านข้าง", sourceStatus: "verified" },
+      { key: "wattage", label: "กำลังไฟที่แนะนำ", value: "10-16W (เครื่องปรับให้เองตามโอห์ม)", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Jellybox V1 / V2 / V3", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://thevapetown.com/products/rincoe-jellybox-v-pod-cartridge-0-8-ohm-1pc", "https://www.alivape.com/products/rincoe-jellybox-v-replacement-pods"],
   },
   "Coil-94": {
     specifications: [
-      { key: "resistance-range", label: "ความต้านทาน", value: "0.4Ω / 0.6Ω / 0.9Ω / 1.2Ω (Meshed)", sourceStatus: "verified" },
+      { key: "resistance-range", label: "ค่าโอห์ม", value: "0.4Ω / 0.6Ω / 0.9Ω / 1.2Ω (mesh)", sourceStatus: "verified" },
       { key: "capacity", label: "ความจุ", value: "2mL", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://giantvapes.com/products/uwell-caliburn-g3-replacement-pods"],
   },
   "Pod-180": {
     specifications: [
-      { key: "battery", label: "แบตเตอรี่", value: "750mAh, ชาร์จ USB-C", sourceStatus: "verified" },
+      { key: "battery", label: "แบตเตอรี่", value: "750mAh ชาร์จซ้ำได้ผ่าน USB-C", sourceStatus: "verified" },
       { key: "coil", label: "คอยล์", value: "Dual nexMESH coil 1.2Ω (ในตัว)", sourceStatus: "verified" },
       { key: "capacity", label: "ความจุน้ำยา", value: "~18 mL", sourceStatus: "verified" },
     ],
@@ -1161,7 +1161,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "3200mAh", sourceStatus: "verified" },
       { key: "temperature", label: "อุณหภูมิ", value: "ปรับได้ 200-300°C", sourceStatus: "verified" },
-      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA, SENTIA Smartcore Sticks", sourceStatus: "verified" },
+      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA / SENTIA Smartcore Sticks", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html"],
   },
@@ -1175,7 +1175,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "IQOSHEET-16": {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "2380mAh", sourceStatus: "verified" },
-      { key: "charging", label: "การชาร์จ", value: "USB-C, ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified" },
+      { key: "charging", label: "การชาร์จ", value: "USB-C ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified" },
       { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 ก้าน", sourceStatus: "verified" },
       { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified" },
     ],

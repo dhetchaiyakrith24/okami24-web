@@ -59,3 +59,39 @@ export function compatNoteTh(note: string | undefined): string | undefined {
   if (note === undefined) return undefined;
   return note in COMPAT_NOTES_TH ? COMPAT_NOTES_TH[note] : note;
 }
+
+/**
+ * Round 30.4ค batch 7 (owner-approved 2026-09-15): the cited fact under each card in the
+ * "ใช้ร่วมกับเครื่องนี้ได้" / "ใช้ได้กับเครื่องเหล่านี้" block (`DeviceConsumableEdge.evidence` in
+ * src/data/catalog-relationships.ts). Keyed by the full English evidence string; read by
+ * CompatibleProducts.tsx when the locale is Thai. The same string serves both directions of an
+ * edge, so each Thai note reads correctly on the device page and on the consumable page. The
+ * evidence tier stays as stated ("หน้าร้านค้าปลีก" is never promoted to "ทางการ"); numbers, brand
+ * system names and quoted alt text are kept character for character. Edges whose other endpoint
+ * is not yet published (IQOS / LAMBDA / PnP X / G2-generation pods) have no entry yet — they are
+ * not visible on the storefront.
+ */
+const GPP_MATCH_TH = "ตัวเลือกโอห์มของหัวพอตรุ่นนี้ที่ OKami24 ลงไว้ (0.4/0.6/0.9/1.2Ω mesh) ตรงกับที่ UWELL ระบุครบทั้ง 4 ค่า";
+const GPP_MATCH_EN = " The cartridge's four resistances (0.4/0.6/0.9/1.2Ω meshed) match this record's active options exactly.";
+
+export const COMPAT_EVIDENCE_TH: Record<string, string> = {
+  ["UWELL: its own official page states all G Pod Platform cartridges are compatible with CALIBURN GPP series devices, and the GPP cartridge ships in the kit." + GPP_MATCH_EN]:
+    "UWELL ระบุในหน้าเว็บทางการของ Caliburn G5 ว่าหัวพอต G Pod Platform ทุกตัวใช้กับเครื่องสาย CALIBURN GPP ได้ และในกล่องมีหัวพอต GPP มาให้ " + GPP_MATCH_TH,
+  ["UWELL: UWELL states all GPP cartridges are compatible with CALIBURN G5, G4 and G3 series devices." + GPP_MATCH_EN]:
+    "UWELL ระบุว่าหัวพอต GPP ทุกตัวใช้กับเครื่อง CALIBURN สาย G5 G4 และ G3 ได้ " + GPP_MATCH_TH,
+  ["UWELL: listed by name in UWELL's own G Pod Platform device enumeration." + GPP_MATCH_EN]:
+    "UWELL ระบุชื่อเครื่องรุ่นนี้ไว้ในรายชื่อเครื่องที่ใช้ G Pod Platform บนหน้าเว็บทางการ " + GPP_MATCH_TH,
+  ["UWELL: its own official page states the device is fully compatible with both the previous and upgraded CALIBURN GPP cartridges." + GPP_MATCH_EN]:
+    "UWELL ระบุในหน้าเว็บทางการของเครื่องรุ่นนี้ว่าใช้ได้ทั้งหัวพอต CALIBURN GPP รุ่นก่อนและรุ่นใหม่ " + GPP_MATCH_TH,
+  ["UWELL: listed by name in UWELL's own G Pod Platform device enumeration; UWELL states the upgraded cartridges are also compatible with the CALIBURN G3 series." + GPP_MATCH_EN]:
+    "UWELL ระบุชื่อเครื่องรุ่นนี้ไว้ในรายชื่อเครื่องที่ใช้ G Pod Platform บนหน้าเว็บทางการ และระบุว่าหัวพอตรุ่นใหม่ใช้กับเครื่อง CALIBURN สาย G3 ได้ด้วย " + GPP_MATCH_TH,
+  "Retailer listings state the VMATE i3 takes both the VMATE Top Fill cartridge (0.4/0.7/1.0Ω, 3ml) and the VMATE Cartridge V2, and the kit ships with a Top Fill 0.7Ω. An EU retailer states the Vmate V3 Top Fill 3ml is compatible with all kits in the Vmate and V.THRU range.":
+    "หน้าร้านค้าปลีกระบุว่า VMATE i3 ใส่ได้ทั้งหัวพอต VMATE Top Fill (0.4/0.7/1.0Ω 3ml) และ VMATE Cartridge V2 โดยในกล่องมีหัว Top Fill 0.7Ω มาให้ ร้านค้าปลีกในยุโรปรายหนึ่งระบุว่า Vmate V3 Top Fill 3ml ใช้ได้กับทุกรุ่นในสาย Vmate และ V.THRU",
+  'SALTHUB\'s own M Switch Kit page presents the M Switch Pod as its cartridge (product-image alt text: "M Switch Kit compatible cartridge"), and the two pages list an identical 16-flavour set.':
+    "หน้า M Switch Kit บนเว็บทางการของ SALTHUB แสดง M Switch Pod เป็นหัวพอตของเครื่องรุ่นนี้ (ข้อความกำกับรูปสินค้าเขียนว่า “M Switch Kit compatible cartridge”) และรายชื่อรส 16 รสของทั้งสองหน้าตรงกัน",
+};
+
+/** Thai evidence note for a compatibility card, or the data string when there is no entry. */
+export function compatEvidenceTh(evidence: string): string {
+  return COMPAT_EVIDENCE_TH[evidence] ?? evidence;
+}

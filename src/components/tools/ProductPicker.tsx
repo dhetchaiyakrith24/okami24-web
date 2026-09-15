@@ -5,6 +5,7 @@ import { Search, X } from "lucide-react";
 import { allCatalogItems, type CatalogItem } from "@/lib/catalog-index";
 import { CatalogItemMedia } from "@/components/visual/CatalogItemMedia";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { labelLang } from "@/lib/label-lang";
 
 /**
  * Searches the UNIFIED customer-visible catalog (legacy + published ProductMaster), not just the
@@ -53,7 +54,7 @@ export function ProductPicker({
               <CatalogItemMedia item={product} sizes="10vw" />
             </div>
             <p className="mt-2 text-xs font-semibold text-foreground">{product.name}</p>
-            <p className="label-mono text-[0.6rem] text-foreground-dim">{product.brandName}</p>
+            <p className="label-mono text-[0.6rem] text-foreground-dim" lang={labelLang(product.brandName)}>{product.brandName}</p>
           </div>
         ))}
         {selected.length < max &&
@@ -86,7 +87,7 @@ export function ProductPicker({
                   className="flex w-full items-center justify-between gap-3 px-4 py-2.5 text-left text-sm text-foreground hover:bg-surface-2"
                 >
                   <span>{p.name}</span>
-                  <span className="label-mono text-[0.6rem] text-foreground-dim">{p.brandName}</span>
+                  <span className="label-mono text-[0.6rem] text-foreground-dim" lang={labelLang(p.brandName)}>{p.brandName}</span>
                 </button>
               ))}
             </div>

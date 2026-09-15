@@ -4,6 +4,7 @@ import type { Product } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { ProductRail } from "@/components/catalog/ProductRail";
 import { HomeText } from "@/components/home/HomeCopy";
+import { labelLang } from "@/lib/label-lang";
 
 export function ProductRailSection({
   eyebrow,
@@ -24,7 +25,7 @@ export function ProductRailSection({
       <Container>
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div className="flex flex-col gap-3">
-            <span className="label-mono text-xs text-ember">{eyebrow}</span>
+            <span className="label-mono text-xs text-ember" lang={typeof eyebrow === "string" ? labelLang(eyebrow) : undefined}>{eyebrow}</span>
             <h2 className="font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">
               {title}
             </h2>

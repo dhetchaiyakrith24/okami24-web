@@ -107,7 +107,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "G5 แบบเรียบง่าย แบตอึด พกใช้ทุกวัน",
     shortDescription:
-      "รุ่นที่ตัดทอนความซับซ้อนลงจาก G5 ยังคงแบตเตอรี่ 1600mAh และสูงสุด 35 วัตต์เท่าเดิม แต่ปรับระบบควบคุมให้เรียบง่ายขึ้นในราคาที่ย่อมเยากว่า",
+      "รุ่นที่ตัดทอนความซับซ้อนลงจาก G5 ยังคงแบตเตอรี่ 1600mAh และสูงสุด 35 วัตต์เท่าเดิม แต่ปรับระบบควบคุมให้เรียบง่ายขึ้น",
     features: {
       "long-run-battery": {
         title: "แบตเตอรี่ 1600mAh เท่า G5",
@@ -183,7 +183,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     features: {
       shatterproof: {
         title: "จอทัชสกรีน 2.51 นิ้ว",
-        description: "จอทัชสกรีน 2.51 นิ้ว ใหญ่อันดับต้น ๆ ของตระกูล Caliburn",
+        description: "แตะปรับตั้งค่าบนจอได้เลย",
       },
       "stepless-airflow": {
         title: "ปรับช่องลมแบบไม่มีขั้น",
@@ -320,7 +320,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "พอตคิทแบตอึดใช้ได้ 5 วัน พร้อมจอสถานะ HD 0.85 นิ้ว",
     shortDescription:
-      "รุ่นเรือธงสายหลักของ ARGUS: แบตเตอรี่ 1650mAh 5–35 วัตต์ จอ HD 0.85 นิ้วแสดงระดับแบต วัตต์ โอห์ม สถานะล็อก และจำนวนพัฟ ชาร์จเร็วผ่าน Type-C เต็มใน 45 นาที",
+      "รุ่นเรือธงสายหลักของ ARGUS: แบตเตอรี่ 1650mAh 5–35 วัตต์ จอ HD 0.85 นิ้วแสดงระดับแบต วัตต์ โอห์ม สถานะล็อก และจำนวนพัฟ ชาร์จเร็วผ่าน USB-C เต็มใน 45 นาที",
     features: {
       "hd-screen": {
         title: "จอสถานะ HD 0.85 นิ้ว",
@@ -328,7 +328,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       },
       "fast-charge": {
         title: "ชาร์จเต็มใน 45 นาที",
-        description: "ชาร์จผ่าน Type-C 5V/2A จากแบตหมดจนเต็มใช้เวลาประมาณ 45 นาที",
+        description: "ชาร์จผ่าน USB-C 5V/2A จากแบตหมดจนเต็มใช้เวลาประมาณ 45 นาที",
       },
       "multi-resistance-pod": {
         title: "หัวพอตทรงเดียว รองรับหลายโอห์ม",
@@ -439,7 +439,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       charging: "USB-C 5V/2A",
     },
     tagline: "แบตเตอรี่ในตัว 3000mAh สูงสุด 60 วัตต์",
-    shortDescription: "DRAG รุ่นแบตเตอรี่ในตัว: 3000mAh 5–60 วัตต์ จอ TFT ขนาด 0.96 นิ้ว และชาร์จเร็วผ่าน Type-C",
+    shortDescription: "DRAG รุ่นแบตเตอรี่ในตัว: 3000mAh 5–60 วัตต์ จอ TFT ขนาด 0.96 นิ้ว และชาร์จเร็วผ่าน USB-C",
     features: {
       "built-in-3000": {
         title: "แบตในตัว ไม่ต้องซื้อถ่านแยก",
@@ -478,7 +478,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "vinci-s": {
     whoIsThisFor: {
-      0: "อยากได้พอตคิทวัตต์กลาง ๆ ที่หัวพอตจุเยอะ ไม่ต้องเติมน้ำยาบ่อย",
+      0: "อยากได้พอตคิทวัตต์กลาง ๆ 5–40 วัตต์ แบตเตอรี่ 2000mAh ในตัว ที่ใส่หัวพอตได้หลายโอห์ม",
       1: "เบื่อดึงหัวพอตออกมาเติมน้ำยาแล้วต้องเสียบกลับทุกที",
     },
     specifications: {
@@ -505,8 +505,8 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       pod: "3mL VMATE Top Fill Cartridge (ใช้หัว V2 ได้ด้วย)",
       charging: "USB-C 2A ชาร์จเร็ว",
     },
-    tagline: "พอตคิทน้ำหนักเบาพิเศษ ยาวเพียง 103mm",
-    shortDescription: "พอตคิทที่เบาที่สุดในกลุ่มของ VOOPOO ขณะนี้: เครื่องอะลูมิเนียมอัลลอยบางเฉียบ แบตเตอรี่ 1500mAh 5–30 วัตต์ หัวพอตเติมด้านบน 3mL",
+    tagline: "พอตคิทตัวบาง ยาว 103mm",
+    shortDescription: "พอตคิทสาย VMATE ของ VOOPOO: เครื่องอะลูมิเนียมอัลลอยบาง 15.1mm แบตเตอรี่ 1500mAh 5–30 วัตต์ หัวพอตเติมด้านบน 3mL",
     features: {
       "slim-body": {
         title: "ตัวเครื่องอะลูมิเนียมอัลลอย บาง 15.1mm",
@@ -567,7 +567,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       coil: "mesh",
     },
     tagline: "ปรับช่องลมได้ตั้งแต่ MTL ถึง DTL รองรับ 9,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ บรรจุน้ำยาสำเร็จ 14mL ปรับช่องลมได้ตั้งแต่แบบ MTL แน่น ๆ ไปจนถึง DTL โปร่ง ๆ ใช้คอยล์ mesh รองรับสูงสุด 9,000 พัฟ",
+    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ บรรจุน้ำยาสำเร็จ 14mL ปรับช่องลมได้ตั้งแต่แบบ MTL แน่น ๆ ไปจนถึง DTL โล่ง ๆ ใช้คอยล์ mesh รองรับสูงสุด 9,000 พัฟ",
     features: {
       "adjustable-airflow": {
         title: "ปรับช่องลมได้",
@@ -588,7 +588,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "จำนวนพัฟที่ระบุสูงที่สุดในตระกูล M Bar",
     shortDescription:
-      "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 15,000 พัฟ คอยล์ cotton mesh ชาร์จเร็วผ่าน Type-C มี 15 รส",
+      "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 15,000 พัฟ คอยล์ cotton mesh ชาร์จเร็วผ่าน USB-C มี 15 รส",
     features: {
       "highest-puff": {
         title: "15,000 พัฟ มากที่สุดในตระกูล M Bar",
@@ -667,8 +667,8 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       format: "ตัวเครื่องใช้ซ้ำได้ขนาดเล็ก ใช้ Zero Cartridge",
     },
-    tagline: "เครื่องที่เล็กที่สุดในสาย Zero",
-    shortDescription: "อุปกรณ์ใช้ซ้ำได้ขนาดกะทัดรัดพิเศษ แบตเตอรี่ 500mAh ใช้ระบบหัวพอต Zero เดียวกัน",
+    tagline: "เครื่องระบบสวิตช์สาย Zero ตัวเล็ก แบตเตอรี่ 500mAh",
+    shortDescription: "อุปกรณ์ใช้ซ้ำได้ตัวเล็ก แบตเตอรี่ 500mAh ใช้ระบบหัวพอต Zero เดียวกับ Zero Pro",
     features: {
       "smallest-zero": {
         title: "Zero รุ่นเล็ก",
@@ -798,6 +798,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       puffs: "สูงสุด 20,000",
     },
     tagline: "พอตใช้แล้วทิ้ง รองรับสูงสุด 20,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งจาก Muro สาย “Connector” รองรับสูงสุด 20,000 พัฟ ตอนนี้มีให้เลือก 20 รส — มากที่สุดในบรรดา Muro ทุกรุ่น",
+    shortDescription: "พอตใช้แล้วทิ้งจาก Muro สาย “Connector” รองรับสูงสุด 20,000 พัฟ ตอนนี้มีให้เลือก 20 รส",
   },
 };
