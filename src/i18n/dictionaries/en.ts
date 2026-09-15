@@ -166,6 +166,8 @@ export const en: Dictionary = {
     sourceNoteLabel: "Reference sources",
     officialSite: "Official site ↗",
     gallerySourceLinkLabel: "source",
+    // Round 30.4ค batch 5 — moved out of ProductGallery.tsx (was hardcoded); wording unchanged.
+    galleryNote: "Real photography from {brand}, used here for reference — not redistributed for commercial purposes.",
   },
   pilot: {
     unpublishedBadge: "Unpublished",

@@ -5,11 +5,15 @@ import type { Product } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { galleryCaptionTh } from "@/i18n/gallery-copy-th";
 
 export function ProductGallery({ product }: { product: Product }) {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
   const photos = product.assets.filter((a) => a.kind === "official-photo" && a.role === "detail");
   if (photos.length === 0) return null;
+  // Round 30.4ค batch 5 (owner 2026-09-15): a Thai visitor reads the caption from gallery-copy-th.ts
+  // (keyed by the English caption). English/Chinese unchanged.
+  const th = locale === "th";
 
   return (
     <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">
@@ -17,7 +21,7 @@ export function ProductGallery({ product }: { product: Product }) {
         <SectionHeading
           eyebrow={dict.product.galleryEyebrow}
           title={dict.product.galleryTitle}
-          description={`Real photography from ${photos[0].sourceName}, used here for reference — not redistributed for commercial purposes.`}
+          description={dict.product.galleryNote.replace("{brand}", photos[0].sourceName ?? "")}
         />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {photos.map((photo, i) => (
@@ -32,7 +36,7 @@ export function ProductGallery({ product }: { product: Product }) {
                 />
               </div>
               <figcaption className="label-mono flex items-center justify-between px-4 pb-3 text-[0.6rem] text-foreground-dim">
-                <span>{photo.angle}</span>
+                <span>{th && photo.angle ? galleryCaptionTh(photo.angle) : photo.angle}</span>
                 <span>
                   © {photo.sourceName}
                   {photo.sourceUrl && (

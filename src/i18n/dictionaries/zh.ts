@@ -161,6 +161,8 @@ export const zh: Dictionary = {
     sourceNoteLabel: "参考来源",
     officialSite: "官方网站 ↗",
     gallerySourceLinkLabel: "来源",
+    // Round 30.4ค batch 5 — moved out of ProductGallery.tsx (was hardcoded English on the Chinese page).
+    galleryNote: "图片来自 {brand} 官方，仅作参考展示，不作商业转载。",
   },
   pilot: {
     unpublishedBadge: "未发布",

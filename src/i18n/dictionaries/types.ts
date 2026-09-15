@@ -193,6 +193,8 @@ export interface Dictionary {
     sourceNoteLabel: string;
     officialSite: string;
     gallerySourceLinkLabel: string;
+    /** Lede under the gallery heading (ProductGallery.tsx) — `{brand}` is the photos' sourceName. Round 30.4ค batch 5: was hardcoded English. */
+    galleryNote: string;
   };
   /** ProductMaster pilot bridge (Phase 3.0/3.1) chrome — was hardcoded Thai regardless of locale
    *  before this fix; see the report for why that was a real bug, not a design choice. */
