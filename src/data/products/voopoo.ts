@@ -618,7 +618,7 @@ export const voopooProducts: Product[] = [
     displayName: "VOOPOO DRAG S3",
     tagline: "A 3000mAh built-in cell, up to 60W.",
     shortDescription:
-      "A built-in-battery DRAG model: 3000mAh, 5–60W, a 0.96\" TFT screen, and USB-C fast charging.",
+      "A built-in-battery DRAG model: 3000mAh, 5–60W, a 0.96\" TFT screen, and USB-C charging.",
     isFlagship: false,
     attributes: {
       batteryMah: 3000,
@@ -682,7 +682,7 @@ export const voopooProducts: Product[] = [
       {
         id: "built-in-3000",
         title: "3000mAh built-in cell",
-        description: "No cell swapping — a sealed, fast-charging built-in battery sized for all-day 60W use.",
+        description: "No cell swapping — a sealed built-in battery sized for all-day 60W use, charged over USB-C.",
       },
     ],
     compatibility: [{ type: "pod", label: "DRAG-series coil pod", note: "0.1–3.0Ω resistance range." }, usbC2A],

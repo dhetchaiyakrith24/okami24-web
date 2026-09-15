@@ -439,7 +439,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       charging: "USB-C 5V/2A",
     },
     tagline: "แบตเตอรี่ในตัว 3000mAh สูงสุด 60 วัตต์",
-    shortDescription: "DRAG รุ่นแบตเตอรี่ในตัว: 3000mAh 5–60 วัตต์ จอ TFT ขนาด 0.96 นิ้ว และชาร์จเร็วผ่าน USB-C",
+    shortDescription: "DRAG รุ่นแบตเตอรี่ในตัว: 3000mAh 5–60 วัตต์ จอ TFT ขนาด 0.96 นิ้ว และชาร์จผ่าน USB-C",
     features: {
       "built-in-3000": {
         title: "แบตในตัว ไม่ต้องซื้อถ่านแยก",
