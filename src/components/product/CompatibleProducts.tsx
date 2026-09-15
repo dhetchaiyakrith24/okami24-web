@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Link2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { compatEvidenceTh } from "@/i18n/compat-copy-th";
 import type { RelatedConsumable, RelatedDevice } from "@/data/catalog-relationships";
 
 /**
@@ -32,9 +33,12 @@ export function CompatibleProducts({
   direction: "works-with" | "fits-devices";
   items: (RelatedConsumable | RelatedDevice)[];
 }) {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
   if (items.length === 0) return null;
   const title = direction === "works-with" ? dict.product.worksWithTitle : dict.product.fitsDevicesTitle;
+  // Round 30.4ค batch 7 (owner 2026-09-15): a Thai visitor reads the cited fact from
+  // compat-copy-th.ts (keyed by the English evidence string); en/zh keep the data string.
+  const th = locale === "th";
 
   return (
     <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">
@@ -63,7 +67,7 @@ export function CompatibleProducts({
                   <span className="label-mono text-[0.6rem] text-foreground-dim">{item.ref.brandName}</span>
                   <span className="text-sm font-semibold leading-snug text-foreground group-hover:text-ember">{item.ref.name}</span>
                   {/* The cited fact itself, not a marketing line — see catalog-relationships.ts. */}
-                  <span className="text-xs leading-relaxed text-foreground-muted">{item.evidence}</span>
+                  <span className="text-xs leading-relaxed text-foreground-muted">{th ? compatEvidenceTh(item.evidence) : item.evidence}</span>
                 </div>
               </Link>
             </li>
