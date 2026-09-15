@@ -44,7 +44,9 @@ export const uwellProducts: Product[] = [
       drawStyle: "MTL/RDL",
       portability: "compact",
       beginnerFriendly: true,
-      chargingType: "USB-C, 5V/2A",
+      // Round 30.4ค batch 6 (owner 2026-09-15): the G5 spec sheet carries no charging figure, so the
+      // 5V/2A claim is dropped here too (same ruling as the compatibility note in batch 3).
+      chargingType: "USB-C",
     },
     assets: [
       {
