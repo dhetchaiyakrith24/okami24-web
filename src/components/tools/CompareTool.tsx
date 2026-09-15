@@ -165,7 +165,8 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
                 {bestFitItems.map((p) => (
                   <div key={p.slug} className="rounded-xl border border-surface-border-soft bg-surface-1 p-4">
                     <p className="text-sm font-semibold text-foreground">{p.name}</p>
-                    <p className="mt-2 text-xs leading-relaxed text-foreground-muted">{p.whoIsThisFor[0]}</p>
+                    {/* Round 30.4ค batch 4: the same Thai first bullet the product page shows (product-copy-th.ts). */}
+                    <p className="mt-2 text-xs leading-relaxed text-foreground-muted">{(locale === "th" ? PRODUCT_COPY_TH[p.slug]?.whoIsThisFor?.[0] : undefined) ?? p.whoIsThisFor[0]}</p>
                   </div>
                 ))}
               </div>

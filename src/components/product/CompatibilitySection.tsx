@@ -5,14 +5,17 @@ import { Plug, Users } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { compatLabelTh, compatNoteTh } from "@/i18n/compat-copy-th";
+import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 
 export function CompatibilitySection({ product }: { product: Product }) {
   const { dict, locale } = useLocale();
   if (product.compatibility.length === 0 && product.whoIsThisFor.length === 0) return null;
-  // Round 30.4ค batch 3 (owner 2026-09-15): a Thai visitor reads the compatibility labels/notes from
-  // compat-copy-th.ts (keyed by the English string; an overlay note of "" shows no note). Anything
-  // without an entry keeps its English text. Markup is exactly what it was.
+  // Round 30.4ค batches 3–4 (owner 2026-09-15): a Thai visitor reads the compatibility labels/notes
+  // from compat-copy-th.ts (keyed by the English string; an overlay note of "" shows no note) and the
+  // "เหมาะกับใคร" bullets from the product's `whoIsThisFor` overlay in product-copy-th.ts (keyed by
+  // index). Anything without an entry keeps its English text. Markup is exactly what it was.
   const th = locale === "th";
+  const whoTh = th ? PRODUCT_COPY_TH[product.slug]?.whoIsThisFor : undefined;
 
   return (
     <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">
@@ -48,7 +51,7 @@ export function CompatibilitySection({ product }: { product: Product }) {
               {product.whoIsThisFor.map((point, i) => (
                 <li key={i} className="flex gap-3 text-sm leading-relaxed text-foreground-muted">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" aria-hidden />
-                  {point}
+                  {whoTh?.[i] ?? point}
                 </li>
               ))}
             </ul>
