@@ -6,13 +6,17 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { galleryCaptionTh } from "@/i18n/gallery-copy-th";
+import { cn } from "@/lib/utils";
 
 export function ProductGallery({ product }: { product: Product }) {
   const { dict, locale } = useLocale();
   const photos = product.assets.filter((a) => a.kind === "official-photo" && a.role === "detail");
   if (photos.length === 0) return null;
   // Round 30.4ค batch 5 (owner 2026-09-15): a Thai visitor reads the caption from gallery-copy-th.ts
-  // (keyed by the English caption). English/Chinese unchanged.
+  // (keyed by the English caption) and the caption row drops `.label-mono`'s mono face, tracking and
+  // uppercase — the same treatment as the Thai spec-chip label row (SpecChip.tsx); the dictionary's
+  // own "แหล่งที่มา" sits in that row too and was letter-spaced until now. The Thai row is 0.65rem like
+  // the spec-chip label (designer option ข, owner 2026-09-15). English/Chinese unchanged.
   const th = locale === "th";
 
   return (
@@ -35,7 +39,7 @@ export function ProductGallery({ product }: { product: Product }) {
                   className="object-contain p-2"
                 />
               </div>
-              <figcaption className="label-mono flex items-center justify-between px-4 pb-3 text-[0.6rem] text-foreground-dim">
+              <figcaption className={cn("label-mono flex items-center justify-between px-4 pb-3 text-[0.6rem] text-foreground-dim", th && "font-sans! font-medium tracking-normal! normal-case! text-[0.65rem] text-foreground-muted")}>
                 <span>{th && photo.angle ? galleryCaptionTh(photo.angle) : photo.angle}</span>
                 <span>
                   © {photo.sourceName}
