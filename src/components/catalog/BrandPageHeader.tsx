@@ -2,6 +2,7 @@
 
 import { PageHeader } from "@/components/ui/PageHeader";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { thaiTypography } from "@/lib/thai-typography";
 import type { Brand } from "@/types/catalog";
 import type { ReactNode } from "react";
 
@@ -22,7 +23,7 @@ import type { ReactNode } from "react";
  */
 export function BrandPageHeader({ brand, meta }: { brand: Brand; meta?: ReactNode }) {
   const { locale } = useLocale();
-  const description = locale === "th" ? (brand.descriptionTh ?? brand.description) : brand.description;
+  const description = locale === "th" ? thaiTypography(brand.descriptionTh ?? brand.description) : brand.description;
   const eyebrow = locale === "th" ? (brand.taglineTh ?? brand.tagline) : brand.tagline;
   return <PageHeader eyebrow={eyebrow} title={brand.name} description={description} meta={meta} />;
 }

@@ -7,6 +7,8 @@
  * for `isFlagship` products only); a value without an entry keeps its English text. Wording matches
  * the spec chip values approved in batch 2 (docs/THAI_STYLE.md §7 "รอบ 30.4ค ก้อน 6").
  */
+import { thaiTypography } from "@/lib/thai-typography";
+
 export const CHARGING_TYPE_TH: Record<string, string> = {
   "USB-C, 5V/2A": "USB-C 5V/2A",
   "USB-C, 5V/2A (~45 min full charge)": "USB-C 5V/2A ชาร์จเต็มประมาณ 45 นาที",
@@ -14,5 +16,5 @@ export const CHARGING_TYPE_TH: Record<string, string> = {
 
 /** Thai for a charging-type data string, or the string itself when there is no entry. */
 export function chargingTypeTh(value: string): string {
-  return CHARGING_TYPE_TH[value] ?? value;
+  return thaiTypography(CHARGING_TYPE_TH[value] ?? value);
 }

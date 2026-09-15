@@ -14,6 +14,7 @@ import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-r
 import { SourceNote } from "@/components/product/SourceNote";
 import { ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { getDictionary } from "@/i18n/dictionaries";
 import { pilotTagline } from "@/i18n/product-copy-en";
 import { pilotAxisLabel } from "./axis-label";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
@@ -266,7 +267,9 @@ export function PilotProductDetail({
                 "@context": "https://schema.org",
                 "@type": "VideoObject",
                 name: product.reviewVideo.title,
-                description: `${product.reviewVideo.channelName} — ${dict.product.reviewVideoEyebrow}: ${product.displayName}`,
+                // JSON-LD stays plain: read the untransformed dictionary, not the context copy
+                // that carries the render-time Thai typography (thai-typography.ts).
+                description: `${product.reviewVideo.channelName} — ${getDictionary(locale).product.reviewVideoEyebrow}: ${product.displayName}`,
                 thumbnailUrl: [`https://i.ytimg.com/vi/${product.reviewVideo.videoId}/hqdefault.jpg`],
                 embedUrl: `https://www.youtube-nocookie.com/embed/${product.reviewVideo.videoId}`,
               }),

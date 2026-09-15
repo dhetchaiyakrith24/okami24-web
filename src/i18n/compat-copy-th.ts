@@ -18,6 +18,8 @@
  * its label. An EMPTY string means "show no note" (the DRAG 6 research note "Cartridge naming not
  * independently confirmed." — unverifiable = say nothing).
  */
+import { thaiTypography } from "@/lib/thai-typography";
+
 export const COMPAT_LABELS_TH: Record<string, string> = {
   "UWELL GPP cartridge platform": "หัวพอต UWELL GPP",
   "Caliburn G3 pod": "หัวพอต Caliburn G3",
@@ -50,14 +52,14 @@ export const COMPAT_NOTES_TH: Record<string, string> = {
 
 /** Thai label for a compatibility entry, or the data label when there is no entry. */
 export function compatLabelTh(label: string): string {
-  return COMPAT_LABELS_TH[label] ?? label;
+  return thaiTypography(COMPAT_LABELS_TH[label] ?? label);
 }
 
 /** Thai note for a compatibility entry: the overlay string (possibly "" = show nothing), or the
  *  data note when there is no entry. */
 export function compatNoteTh(note: string | undefined): string | undefined {
   if (note === undefined) return undefined;
-  return note in COMPAT_NOTES_TH ? COMPAT_NOTES_TH[note] : note;
+  return thaiTypography(note in COMPAT_NOTES_TH ? COMPAT_NOTES_TH[note] : note);
 }
 
 /**
@@ -93,5 +95,5 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
 
 /** Thai evidence note for a compatibility card, or the data string when there is no entry. */
 export function compatEvidenceTh(evidence: string): string {
-  return COMPAT_EVIDENCE_TH[evidence] ?? evidence;
+  return thaiTypography(COMPAT_EVIDENCE_TH[evidence] ?? evidence);
 }

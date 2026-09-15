@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { CheckCircle2 } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { FINDER_COPY_TH, FINDER_COPY_ZH } from "@/i18n/finder-copy";
+import { thaiTypography } from "@/lib/thai-typography";
 
 /**
  * Content-level i18n fix (owner quality review, 2026-09-02) — OVERRIDES the previous, deliberate
@@ -114,10 +115,11 @@ function localizeQuestion(question: Question<keyof FinderAnswers>, locale: strin
   if (!overlay) return question;
   return {
     ...question,
-    title: overlay.title ?? question.title,
+    title: locale === "th" && overlay.title ? thaiTypography(overlay.title) : (overlay.title ?? question.title),
     options: question.options.map((opt) => {
       const optOverlay = overlay.options[String(opt.value)];
-      return optOverlay ? { ...opt, label: optOverlay.label, description: optOverlay.description } : opt;
+      if (!optOverlay) return opt;
+      return locale === "th" ? { ...opt, label: thaiTypography(optOverlay.label), description: optOverlay.description ? thaiTypography(optOverlay.description) : optOverlay.description } : { ...opt, label: optOverlay.label, description: optOverlay.description };
     }),
   };
 }

@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { compatLabelTh, compatNoteTh } from "@/i18n/compat-copy-th";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
+import { thaiTypography } from "@/lib/thai-typography";
 
 export function CompatibilitySection({ product }: { product: Product }) {
   const { dict, locale } = useLocale();
@@ -51,7 +52,7 @@ export function CompatibilitySection({ product }: { product: Product }) {
               {product.whoIsThisFor.map((point, i) => (
                 <li key={i} className="flex gap-3 text-sm leading-relaxed text-foreground-muted">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-ember" aria-hidden />
-                  {whoTh?.[i] ?? point}
+                  {whoTh?.[i] ? thaiTypography(whoTh[i]) : point}
                 </li>
               ))}
             </ul>

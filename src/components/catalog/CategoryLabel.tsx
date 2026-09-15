@@ -15,7 +15,7 @@ import { Fragment } from "react";
  * phone "Heated Tobacco Devices /" ends 6px short of the edge, and a plain space there would let
  * the slash drop down to lead the Thai line. Same width as a space — nothing moves.
  */
-const NBSP = " ";
+const NBSP = String.fromCharCode(0x00a0); // written as a code point — the repo never holds the raw character (scripts/thai-raw-chars-check.js)
 
 export function CategoryLabel({ label }: { label: string }) {
   const at = label.indexOf(" / ");

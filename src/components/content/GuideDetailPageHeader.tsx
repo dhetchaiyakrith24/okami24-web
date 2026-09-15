@@ -3,6 +3,7 @@
 import { PageHeader } from "@/components/ui/PageHeader";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
+import { thaiTypography } from "@/lib/thai-typography";
 
 /**
  * Fixes a real regression found during the owner quality review (2026-09-02): `/guides/[slug]`
@@ -28,8 +29,8 @@ export function GuideDetailPageHeader({
   return (
     <PageHeader
       eyebrow={`${dict.guides.detailEyebrow} · ${readingTimeMin} ${dict.guides.readingTimeMinutes}`}
-      title={overlay?.title ?? title}
-      description={overlay?.dek ?? dek}
+      title={locale === "th" && overlay?.title ? thaiTypography(overlay.title) : (overlay?.title ?? title)}
+      description={locale === "th" && overlay?.dek ? thaiTypography(overlay.dek) : (overlay?.dek ?? dek)}
     />
   );
 }

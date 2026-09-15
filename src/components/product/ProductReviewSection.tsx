@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { getDictionary } from "@/i18n/dictionaries";
 
 /**
  * Wrapper around `ProductReviewVideo` for the Legacy Product Detail page — renders nothing when
@@ -15,7 +16,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
  * client components too) even though the player itself only loads client-side on click.
  */
 export function ProductReviewSection({ product }: { product: Product }) {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
   if (!product.reviewVideo) return null;
   const { videoId, title, channelName, publishedAt } = product.reviewVideo;
 
@@ -23,7 +24,8 @@ export function ProductReviewSection({ product }: { product: Product }) {
     "@context": "https://schema.org",
     "@type": "VideoObject",
     name: title,
-    description: `${channelName} — ${dict.product.reviewVideoEyebrow}: ${product.displayName}`,
+    // JSON-LD stays plain: the untransformed dictionary, not the context copy with render-time Thai typography.
+    description: `${channelName} — ${getDictionary(locale).product.reviewVideoEyebrow}: ${product.displayName}`,
     thumbnailUrl: [`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`],
     uploadDate: publishedAt,
     embedUrl: `https://www.youtube-nocookie.com/embed/${videoId}`,

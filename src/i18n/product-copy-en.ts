@@ -20,6 +20,8 @@ export interface ProductCopyEn {
   tagline: string;
 }
 
+import { thaiTypography } from "@/lib/thai-typography";
+
 export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "coil-1": { tagline: "Vinci coil by VOOPOO" },
   "coil-38": { tagline: "TPP coil by VOOPOO" },
@@ -44,6 +46,6 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
 /** The tagline a non-Thai visitor should read for a ProductMaster product: the English overlay
  *  when one exists, otherwise the Thai source line (never blank, never a machine translation). */
 export function pilotTagline(slug: string, thaiTagline: string, locale: string): string {
-  if (locale === "th") return thaiTagline;
+  if (locale === "th") return thaiTypography(thaiTagline);
   return PRODUCT_COPY_EN[slug]?.tagline ?? thaiTagline;
 }

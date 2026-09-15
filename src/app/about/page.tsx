@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { canonicalFor } from "@/lib/seo";
 import { brandsWithProducts } from "@/lib/brand-visibility";
+import { thaiTypography } from "@/lib/thai-typography";
 
 export const metadata: Metadata = {
   title: "เกี่ยวกับเรา",
@@ -86,8 +87,9 @@ export default function AboutPage() {
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">Compliance</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              เว็บไซต์นี้จัดทำขึ้นสำหรับผู้มีอายุครบ 21 ปีบริบูรณ์ขึ้นไปในเขตพื้นที่ที่การซื้อขายถูกกฎหมาย
-              ไม่มีการกล่าวอ้างด้านสุขภาพ ความปลอดภัย หรือการเลิกบุหรี่ใดๆ นิโคตินเป็นสารเสพติด
+              {/* THAI_STYLE §5 group ก text — wording untouchable; thaiTypography() only adds the owner's
+                  render-time joiner inside "กล่าวอ้าง" (round 30.4ค closing, 2026-09-16). */}
+              {thaiTypography("เว็บไซต์นี้จัดทำขึ้นสำหรับผู้มีอายุครบ 21 ปีบริบูรณ์ขึ้นไปในเขตพื้นที่ที่การซื้อขายถูกกฎหมาย ไม่มีการกล่าวอ้างด้านสุขภาพ ความปลอดภัย หรือการเลิกบุหรี่ใดๆ นิโคตินเป็นสารเสพติด")}
             </p>
           </section>
 
@@ -101,7 +103,7 @@ export default function AboutPage() {
                   </Link>
                   {/* Round 30.4 wiring ข1: the Thai lede approved in 30.3ข (every brand on the storefront
                       has one); `description` is the English fallback. This page is Thai prose throughout. */}
-                  <p className="mt-1 text-sm text-foreground-muted">{b.descriptionTh ?? b.description}</p>
+                  <p className="mt-1 text-sm text-foreground-muted">{thaiTypography(b.descriptionTh ?? b.description)}</p>
                 </li>
               ))}
             </ul>
