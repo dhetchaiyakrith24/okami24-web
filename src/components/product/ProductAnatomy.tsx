@@ -5,6 +5,8 @@ import { DeviceGlyph } from "@/components/visual/DeviceGlyph";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import type { Dictionary } from "@/i18n/dictionaries";
+import { chargingTypeTh } from "@/i18n/anatomy-copy-th";
 
 interface AnatomyPoint {
   x: number; // percent
@@ -13,32 +15,42 @@ interface AnatomyPoint {
   detail: string;
 }
 
-function getAnatomyPoints(product: Product): AnatomyPoint[] {
+// Round 30.4ค batch 6 (owner 2026-09-15): every label/detail comes from the dictionary (they were
+// hardcoded English and showed on Thai/Chinese pages); the charging-port detail is the product's
+// `attributes.chargingType`, shown through anatomy-copy-th.ts when the locale is Thai. The airflow
+// row is listed only when the product's spec sheet actually has an airflow row — the old code added
+// it to every non-disposable, including two whose data says nothing about airflow (unverifiable =
+// not shown). Markup below is unchanged.
+function getAnatomyPoints(product: Product, t: Dictionary["product"]["anatomy"], locale: string): AnatomyPoint[] {
   const hasScreen = product.attributes.screenType === "color-display" || product.attributes.screenType === "touchscreen";
+  const hasAirflowSpec = product.specifications.some((s) => s.key === "airflow");
+  const charging = product.attributes.chargingType ? (locale === "th" ? chargingTypeTh(product.attributes.chargingType) : product.attributes.chargingType) : "—";
+  // "0.85\"" in the data → Thai says นิ้ว, so the inch mark is dropped for Thai only.
+  const size = (product.attributes.screenSize ?? "").trim();
+  const sizeForTemplate = locale === "th" ? size.replace(/"/g, "").trim() : size;
+  const displayDetail = (product.attributes.screenType === "touchscreen" ? t.displayTouch : t.displayColour).replace("{size}", sizeForTemplate).replace(/\s+/g, " ").trim();
 
   if (product.systemType === "disposable") {
     return [
-      { x: 50, y: 6, label: "Mouthpiece", detail: "Fixed draw opening — no removable drip tip on this format." },
-      { x: 50, y: 45, label: "Label band", detail: "Flavor and nicotine-strength labeling." },
-      ...(product.attributes.screenType === "led-indicator"
-        ? [{ x: 50, y: 86, label: "Status LED", detail: "Battery level and active-mode indicator." }]
-        : []),
-      { x: 50, y: 95, label: "Charging port", detail: product.attributes.chargingType ?? "—" },
+      { x: 50, y: 6, label: t.mouthpiece, detail: t.mouthpieceDisposableDetail },
+      { x: 50, y: 45, label: t.labelBand, detail: t.labelBandDetail },
+      ...(product.attributes.screenType === "led-indicator" ? [{ x: 50, y: 86, label: t.statusLed, detail: t.statusLedDetail }] : []),
+      { x: 50, y: 95, label: t.chargingPort, detail: charging },
     ];
   }
 
   return [
-    { x: 50, y: 3, label: "Mouthpiece", detail: "Draw opening seated above the pod insert." },
-    { x: 50, y: 15, label: "Pod / cartridge", detail: "Removable coil pod — capacity and resistance vary by pod." },
-    ...(hasScreen ? [{ x: 50, y: 39, label: "Display", detail: `${product.attributes.screenSize ?? ""} ${product.attributes.screenType === "touchscreen" ? "touchscreen" : "colour display"}`.trim() }] : []),
-    { x: 22, y: 83, label: "Airflow control", detail: "Adjusts draw resistance." },
-    { x: 50, y: 97, label: "Charging port", detail: product.attributes.chargingType ?? "—" },
+    { x: 50, y: 3, label: t.mouthpiece, detail: t.mouthpiecePodDetail },
+    { x: 50, y: 15, label: t.pod, detail: t.podDetail },
+    ...(hasScreen ? [{ x: 50, y: 39, label: t.display, detail: displayDetail }] : []),
+    ...(hasAirflowSpec ? [{ x: 22, y: 83, label: t.airflow, detail: t.airflowDetail }] : []),
+    { x: 50, y: 97, label: t.chargingPort, detail: charging },
   ];
 }
 
 export function ProductAnatomy({ product }: { product: Product }) {
-  const { dict } = useLocale();
-  const points = getAnatomyPoints(product);
+  const { dict, locale } = useLocale();
+  const points = getAnatomyPoints(product, dict.product.anatomy, locale);
 
   return (
     <section className="border-b border-surface-border-soft bg-surface-1 py-14 lg:py-20">

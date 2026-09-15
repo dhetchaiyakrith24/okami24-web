@@ -165,6 +165,25 @@ export interface Dictionary {
     galleryTitle: string;
     anatomyEyebrow: string;
     anatomyTitle: string;
+    /** ProductAnatomy.tsx — labels/details were hardcoded English until round 30.4ค batch 6. Display
+     *  templates take `{size}` (the data's screenSize with its inch mark; Thai strips it and says นิ้ว). */
+    anatomy: {
+      mouthpiece: string;
+      mouthpiecePodDetail: string;
+      mouthpieceDisposableDetail: string;
+      pod: string;
+      podDetail: string;
+      display: string;
+      displayColour: string;
+      displayTouch: string;
+      airflow: string;
+      airflowDetail: string;
+      chargingPort: string;
+      labelBand: string;
+      labelBandDetail: string;
+      statusLed: string;
+      statusLedDetail: string;
+    };
     featuresEyebrow: string;
     featuresTitle: string;
     specsEyebrow: string;
@@ -193,6 +212,8 @@ export interface Dictionary {
     sourceNoteLabel: string;
     officialSite: string;
     gallerySourceLinkLabel: string;
+    /** Lede under the gallery heading (ProductGallery.tsx) — `{brand}` is the photos' sourceName. Round 30.4ค batch 5: was hardcoded English. */
+    galleryNote: string;
   };
   /** ProductMaster pilot bridge (Phase 3.0/3.1) chrome — was hardcoded Thai regardless of locale
    *  before this fix; see the report for why that was a real bug, not a design choice. */

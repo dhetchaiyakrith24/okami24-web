@@ -144,6 +144,25 @@ export const en: Dictionary = {
     galleryTitle: "Official campaign imagery.",
     anatomyEyebrow: "Anatomy",
     anatomyTitle: "Built from the outside in.",
+    // Round 30.4ค batch 6 — moved out of ProductAnatomy.tsx (were hardcoded). "capacity … vary by pod" was
+    // dropped from the pod detail: the G5 sheet lists one capacity and ARGUS G4 lists none (owner 2026-09-15).
+    anatomy: {
+      mouthpiece: "Mouthpiece",
+      mouthpiecePodDetail: "Draw opening seated above the pod insert.",
+      mouthpieceDisposableDetail: "Fixed draw opening — no removable drip tip on this format.",
+      pod: "Pod / cartridge",
+      podDetail: "Removable coil pod — resistance varies by pod.",
+      display: "Display",
+      displayColour: "{size} colour display",
+      displayTouch: "{size} touchscreen",
+      airflow: "Airflow control",
+      airflowDetail: "Adjusts draw resistance.",
+      chargingPort: "Charging port",
+      labelBand: "Label band",
+      labelBandDetail: "Flavor and nicotine-strength labeling.",
+      statusLed: "Status LED",
+      statusLedDetail: "Battery level and active-mode indicator.",
+    },
     featuresEyebrow: "Key Benefits",
     featuresTitle: "What sets it apart.",
     specsEyebrow: "Specifications",
@@ -166,6 +185,8 @@ export const en: Dictionary = {
     sourceNoteLabel: "Reference sources",
     officialSite: "Official site ↗",
     gallerySourceLinkLabel: "source",
+    // Round 30.4ค batch 5 — moved out of ProductGallery.tsx (was hardcoded); wording unchanged.
+    galleryNote: "Real photography from {brand}, used here for reference — not redistributed for commercial purposes.",
   },
   pilot: {
     unpublishedBadge: "Unpublished",
