@@ -13,6 +13,11 @@ const g3PodCompatibility = {
 };
 
 const usbC = { type: "charging" as const, label: "USB-C", note: "5V/2A charging on current-generation devices." };
+// Round 30.4ค batch 3 (owner 2026-09-15): the 5V/2A note stays only on the three devices whose spec
+// sheet carries a 2A charging figure (G4 · G4 Mini · G3 Pro). The other seven Caliburn devices have
+// no charging figure in their specifications, so the note — unverifiable for them — is dropped in
+// every language (same rule as the G4 Pro "shatterproof" cut: what cannot be confirmed is not said).
+const usbCNoNote = { type: "charging" as const, label: "USB-C" };
 
 export const uwellProducts: Product[] = [
   {
@@ -170,7 +175,7 @@ export const uwellProducts: Product[] = [
           "Pods fill from the top without removing them from the device, and connect magnetically for a snug, wobble-free seat.",
       },
     ],
-    compatibility: [gppCompatibility, usbC],
+    compatibility: [gppCompatibility, usbCNoNote],
     whoIsThisFor: [
       "Vapers who want the current Caliburn platform without stepping up to a higher-output pod mod.",
       "Anyone switching from a button-only pod device who wants an onboard screen without added bulk.",
@@ -303,7 +308,7 @@ export const uwellProducts: Product[] = [
         description: "Carries the G5's full-size battery into a simpler, screen-light shell for longer stretches between charges.",
       },
     ],
-    compatibility: [gppCompatibility, usbC],
+    compatibility: [gppCompatibility, usbCNoNote],
     whoIsThisFor: [
       "Vapers who want G5-level battery life without paying for the display and gesture control.",
       "First pod-system users who prefer a simpler, fewer-controls device.",
@@ -427,7 +432,7 @@ export const uwellProducts: Product[] = [
         description: "Positioned as a finish/colourway edition of the G5 Lite rather than a hardware revision.",
       },
     ],
-    compatibility: [gppCompatibility, usbC],
+    compatibility: [gppCompatibility, usbCNoNote],
     whoIsThisFor: [
       "G5 Lite buyers who want a distinct special-edition look on the same platform.",
     ],
@@ -589,7 +594,7 @@ export const uwellProducts: Product[] = [
         description: "Three preset draw characters plus a custom slot, tuning output from smooth and mild to a stronger, more robust hit.",
       },
     ],
-    compatibility: [gppCompatibility, g3PodCompatibility, usbC],
+    compatibility: [gppCompatibility, g3PodCompatibility, usbCNoNote],
     whoIsThisFor: [
       "Vapers who want the most screen and mode control in the Caliburn line short of a full pod mod.",
       "Anyone who splits time between MTL and more open RDL draws and wants presets for both.",
@@ -728,7 +733,7 @@ export const uwellProducts: Product[] = [
         description: "A continuously adjustable airflow ring rather than fixed notches, for fine-tuning draw resistance.",
       },
     ],
-    compatibility: [gppCompatibility, g3PodCompatibility, usbC],
+    compatibility: [gppCompatibility, g3PodCompatibility, usbCNoNote],
     whoIsThisFor: [
       "Vapers who want the biggest screen in the Caliburn line for full stat visibility.",
       "Anyone who wants precise, continuously-adjustable airflow rather than fixed steps.",
@@ -1073,7 +1078,7 @@ export const uwellProducts: Product[] = [
         description: "A distinct finish/colourway on the G4 shell rather than a separate hardware platform.",
       },
     ],
-    compatibility: [gppCompatibility, usbC],
+    compatibility: [gppCompatibility, usbCNoNote],
     whoIsThisFor: [
       "Vapers who want the G4's control layout in a classic-styled finish.",
     ],
@@ -1309,7 +1314,7 @@ export const uwellProducts: Product[] = [
         description: "A distinct KOKO-branded finish on the G3 Pro shell rather than a separate hardware platform.",
       },
     ],
-    compatibility: [g3PodCompatibility, usbC],
+    compatibility: [g3PodCompatibility, usbCNoNote],
     whoIsThisFor: [
       "G3 Pro fans who want the KOKO-edition styling.",
     ],
