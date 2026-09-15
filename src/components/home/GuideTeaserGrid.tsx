@@ -2,11 +2,12 @@ import Link from "next/link";
 import type { Guide } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { GuideText, HomeText } from "@/components/home/HomeCopy";
+import { GuideCategoryLabel, GuideText, HomeText } from "@/components/home/HomeCopy";
 
 // Round 30.3ข: the heading, "All guides" link, the three card titles/deks and the reading-time
 // label read the visitor's language (card copy through the same overlay the guide page uses); the
-// "Guides & Learn" eyebrow and the mono category label stay English (THAI_STYLE §5 group ก).
+// "Guides & Learn" eyebrow stays English (THAI_STYLE §5 group ก); the mono category label reads the
+// dictionary like /guides since the closing round of 30.4ค (owner 1.7g, 2026-09-16).
 export function GuideTeaserGrid({ guides }: { guides: Guide[] }) {
   return (
     <section className="bg-surface-1 py-14 lg:py-20">
@@ -25,7 +26,7 @@ export function GuideTeaserGrid({ guides }: { guides: Guide[] }) {
               className="group flex flex-col justify-between gap-6 rounded-2xl border border-surface-border-soft bg-surface-0 p-6 transition-colors hover:border-steel/40"
             >
               <div className="flex flex-col gap-3">
-                <span className="label-mono text-[0.65rem] text-steel" lang="en">{String(i + 1).padStart(2, "0")} · {guide.category.replaceAll("-", " ")}</span>
+                <GuideCategoryLabel index={i} category={guide.category} className="label-mono text-[0.65rem] text-steel" />
                 <h3 className="font-display text-xl font-semibold leading-tight text-foreground group-hover:text-ember">
                   <GuideText id={guide.id} field="title" en={guide.title} />
                 </h3>
