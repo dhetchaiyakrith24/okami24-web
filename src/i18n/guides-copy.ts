@@ -42,7 +42,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
     ],
   },
   "open-system-vs-disposable": {
-    title: "พอตซิสเต็มกับพอตใช้แล้วทิ้ง: แบบไหนเหมาะกับคุณ",
+    title: "เลือกพอตซิสเต็ม หรือพอตใช้แล้วทิ้ง",
     dek: "ไม่มีแบบไหนดีกว่ากันชัด ๆ อยู่ที่ว่าคุณอยากเลือกเองได้แค่ไหน และยอมดูแลเองแค่ไหน",
     body: [
       {
@@ -61,8 +61,8 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
     ],
   },
   "understanding-mtl-vs-dtl": {
-    title: "MTL กับ DTL: ทำความเข้าใจแนวการสูบ",
-    dek: "สูบแบบ MTL กับ DTL ให้ความรู้สึกคนละแบบเลย คู่มือนี้บอกว่าต่างกันตรงไหน",
+    title: "MTL กับ DTL ต่างกันตรงไหน",
+    dek: "สูบแบบ MTL กับ DTL ให้ความรู้สึกคนละแบบเลย",
     body: [
       {
         heading: "Mouth-to-lung (MTL)",
@@ -71,7 +71,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         ],
       },
       {
-        heading: "Direct-to-lung (DTL) และจุดกึ่งกลาง RDL",
+        heading: "Direct-to-lung (DTL) และ RDL ที่อยู่ตรงกลาง",
         paragraphs: [
           "สูบแบบ DTL คือดึงไอลงปอดเลย ส่วนใหญ่ต้องใช้ช่องลมที่โล่งกว่า โอห์มต่ำกว่า และวัตต์สูงกว่า พอตรุ่นปัจจุบันหลายตัวเล็งไปที่ตรงกลางที่เรียกกันว่า RDL (restricted direct-lung) โล่งกว่า MTL แต่ยังไม่โล่งเท่า DTL เต็ม ๆ",
         ],
@@ -116,7 +116,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
     ],
   },
   "battery-care-and-charging": {
-    title: "พื้นฐานการดูแลแบตเตอรี่และการชาร์จ",
+    title: "วิธีดูแลแบตเตอรี่และการชาร์จ",
     dek: "วิธีดูแลแบตพอต ทั้งแบบในตัวและแบบถอดเปลี่ยนได้",
     body: [
       {
