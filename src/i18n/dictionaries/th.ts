@@ -25,7 +25,7 @@ export const th: Dictionary = {
   },
   footer: {
     tagline:
-      "OKami24 — ของแท้ ราคาตรง บริการจริง อุปกรณ์พอต ใช้แล้วทิ้ง และน้ำยา คัดสรรจากผู้ขายที่เข้าใจสินค้าจริง พร้อมบริการหลังการขายที่ดูแลคุณต่อ",
+      "OKami24 — ของแท้ ราคาตรง บริการจริง พอตทุกแบบ และน้ำยา จากคนขายที่รู้จักสินค้าจริง ซื้อแล้วยังดูแลต่อ",
     shop: "เลือกซื้อ",
     learn: "เรียนรู้",
     tools: "เครื่องมือ",
@@ -41,7 +41,7 @@ export const th: Dictionary = {
     headingLine2: "ของแท้",
     headingAccent: "ข้อมูลจริง",
     description:
-      "ครบทุกหมวดพอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา จัดหมวดหมู่ตามสเปกจริง ไม่ใช่คำโฆษณา ทุกเครื่องมีข้อมูลจริง เทียบกันได้ และช่วยให้เลือกได้ตรงกับสไตล์การสูบของคุณ",
+      "พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา จัดหมวดตามสเปกจริง ไม่ใช่คำโฆษณา ทุกรุ่นมีข้อมูลจริง เทียบกันได้ เลือกให้ตรงกับแนวการสูบของตัวเอง",
     ctaPrimary: "ดูสินค้าทั้งหมด",
     ctaSecondary: "ใช้ตัวช่วยเลือกสินค้า",
     statProducts: "สินค้า",
@@ -87,8 +87,8 @@ export const th: Dictionary = {
     eyebrow: "ค้นหา",
     title: "ค้นหาสินค้า",
     placeholder: "ค้นหาสินค้า แบรนด์ หรือตระกูล…",
-    prompt: "พิมพ์เพื่อค้นหาในแคตตาล็อก",
-    noResultsTitle: "ไม่พบผลลัพธ์สำหรับ",
+    prompt: "พิมพ์ชื่อรุ่นหรือแบรนด์ได้เลย",
+    noResultsTitle: "ไม่เจอสินค้าที่ตรงกับ",
     noResultsHint: "ลองค้นด้วยชื่อแบรนด์ (UWELL VOOPOO SALTHUB) หรือชื่อตระกูล (Caliburn ARGUS M Bar)",
     resultCountOne: "ผลลัพธ์",
     resultCountOther: "ผลลัพธ์",
@@ -143,7 +143,7 @@ export const th: Dictionary = {
     galleryEyebrow: "แกลเลอรี",
     galleryTitle: "ภาพจากแคมเปญทางการ",
     anatomyEyebrow: "โครงสร้าง",
-    anatomyTitle: "ส่วนประกอบจากภายนอกสู่ภายใน",
+    anatomyTitle: "ไล่ดูทีละส่วน จากบนลงล่าง",
     // Round 30.4ค batch 6 (owner-approved 2026-09-15): the anatomy block on the flagship pages.
     anatomy: {
       mouthpiece: "ปากดูด",
@@ -179,10 +179,10 @@ export const th: Dictionary = {
     // "Flagship", as a shop label in the visitor's language. The curation tags stay in the data
     // (they drive the "recommended" card order) but are not displayed — EditorialTagBadge.tsx.
     flagshipBadge: "รุ่นเรือธง",
-    compatibilityTitle: "ความเข้ากันได้",
+    compatibilityTitle: "ใช้กับอะไรได้บ้าง",
     worksWithTitle: "ใช้ร่วมกับเครื่องนี้ได้",
     fitsDevicesTitle: "ใช้ได้กับเครื่องเหล่านี้",
-    verifiedCompatibilityNote: "ทุกรายการตรวจสอบกับแหล่งข้อมูลของผู้ผลิตหรือร้านค้าแล้ว",
+    verifiedCompatibilityNote: "ทุกรายการเช็คกับเว็บทางการของแบรนด์หรือหน้าร้านค้าปลีกแล้ว",
     whoIsThisForTitle: "เหมาะกับใคร",
     faqEyebrow: "คำถามที่พบบ่อย",
     faqTitle: "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้",
@@ -217,7 +217,7 @@ export const th: Dictionary = {
     metaTitle: "เปรียบเทียบสินค้า",
     metaDescription: "เปรียบเทียบพอตซิสเต็ม พอตคิท หรือพอตใช้แล้วทิ้งได้สูงสุด 4 รายการ — เฉพาะคุณสมบัติที่ยืนยันแล้วและมีร่วมกันเท่านั้น",
     pageTitle: "เปรียบเทียบอุปกรณ์",
-    pageDescription: "เลือก 2-4 สินค้า ระบบจะแสดงเฉพาะคุณสมบัติที่มีร่วมกันและยืนยันแล้วในทุกสินค้าที่เลือก พร้อมไฮไลต์ความแตกต่าง",
+    pageDescription: "เลือกมา 2-4 รุ่น ตารางจะโชว์เฉพาะสเปกที่ยืนยันแล้วและมีครบทุกรุ่นที่เลือก จุดที่ต่างจะไฮไลต์ให้",
     rowBrand: "แบรนด์",
     rowFamily: "ตระกูลสินค้า",
     rowCategory: "หมวดหมู่",
@@ -237,7 +237,7 @@ export const th: Dictionary = {
     yes: "ใช่",
     no: "ไม่",
     addAtLeastTwoTitle: "เพิ่มสินค้าอย่างน้อย 2 รายการ",
-    addAtLeastTwoHint: "ค้นหาด้านบนเพื่อเพิ่มอุปกรณ์ — เปรียบเทียบได้สูงสุด 4 รายการพร้อมกัน",
+    addAtLeastTwoHint: "พิมพ์ชื่อรุ่นในช่องค้นหาด้านบนเพื่อเพิ่ม เทียบพร้อมกันได้สูงสุด 4 รุ่น",
     classificationTitle: "การจัดหมวดหมู่",
     verifiedSpecsTitle: "สเปกที่ยืนยันแล้ว",
     verifiedSpecsEmptyNote: "ไม่มีสเปกที่ยืนยันแล้วและมีครบทุกรุ่นที่เลือก ส่วนนี้จึงไม่มีแถวให้แสดง",
@@ -246,7 +246,7 @@ export const th: Dictionary = {
     removeAriaPrefix: "นำออก",
     addPlaceholder: "เพิ่มสินค้าเพื่อเปรียบเทียบ",
     mixedCoverageNote:
-      "สินค้าบางรายการที่เลือกเป็นของสิ้นเปลือง (คอยล์ หัวพอต น้ำยา) ไม่ใช่ตัวเครื่อง จึงไม่มีคุณสมบัติระดับเครื่อง เช่น แบตเตอรี่หรือหน้าจอ และแสดงเป็น —",
+      "บางรุ่นที่เลือกเป็นของสิ้นเปลือง (คอยล์ หัวพอต น้ำยา) ไม่ใช่ตัวเครื่อง เลยไม่มีสเปกอย่างแบตเตอรี่หรือหน้าจอ ช่องนั้นจะขึ้นเป็น —",
     uncertainSpecsNote:
       "มีสินค้าที่เลือกอย่างน้อย 1 รุ่นที่ข้อมูลยังยืนยันไม่ครบ (ดูในหน้าสินค้ารุ่นนั้น) ค่าในตารางด้านบนของรุ่นนั้นให้ดูเป็นข้อมูลเบื้องต้นไปก่อน ยังไม่ใช่ค่าที่ยืนยันแล้ว",
   },
@@ -262,23 +262,23 @@ export const th: Dictionary = {
     startOver: "เริ่มใหม่",
     bestMatch: "เหมาะที่สุด",
     alternatives: "ตัวเลือกอื่นที่น่าสนใจ",
-    alternativesHint: "จากตระกูลสินค้าอื่น เผื่อกรณีที่ผลลัพธ์อันดับต้นยังไม่ตรงใจ",
+    alternativesHint: "จากตระกูลอื่น เผื่อรุ่นด้านบนยังไม่ถูกใจ",
     alsoInCatalogTitle: "มีในร้านด้วย แต่ไม่ได้จัดอันดับ",
     scopeNote:
       "ตัวช่วยเลือกสินค้าจัดอันดับเฉพาะตัวเครื่องที่มีข้อมูลสเปกครบ ส่วนของสิ้นเปลืองอย่างคอยล์ หัวพอต และน้ำยาไม่ได้ให้คะแนนตรงนี้ ดูได้จากหน้าหมวดหรือหน้าค้นหาแทน",
     reasons: {
-      formatMatch: "ตรงกับรูปแบบอุปกรณ์ที่คุณต้องการ",
+      formatMatch: "ตรงกับแบบพอตที่เลือกไว้",
       portabilityUltraCompact: "ขนาดเล็กพิเศษ ตามที่คุณเลือก",
       portabilityCompact: "ขนาดกะทัดรัด ตามที่คุณเลือก",
-      screenNone: "ไม่มีจอให้ต้องดู — ใช้งานง่ายด้วยปุ่มหรือการดูดเพียงอย่างเดียว",
+      screenNone: "ไม่มีจอให้ต้องดู แค่กดปุ่มหรือดูดก็ใช้ได้เลย",
       screenBasic: "มีจอแสดงผลสีในตัว",
       screenFull: "คุมทุกอย่างผ่านจอทัชเต็มจอ",
       battery: "แบตใหญ่หรือพัฟเยอะ ชาร์จทีหนึ่งอยู่ได้นานกว่า",
       outputLow: "ช่วงวัตต์ต่ำ เหมาะกับการสูบแบบ MTL ที่แน่น",
-      outputHigh: "วัตต์สูง รองรับการสูบแบบโล่งและทรงพลัง",
-      outputFlexible: "ปรับรูปแบบการสูบได้ยืดหยุ่น สลับไปมาระหว่างแน่นและโล่งได้สบาย",
+      outputHigh: "วัตต์สูง สูบโล่งแบบ DTL ได้เต็มที่",
+      outputFlexible: "ช่วงวัตต์กว้าง จะสูบแน่นหรือโล่งก็ปรับได้ในเครื่องเดียว",
       beginnerFriendly: "เราจัดให้เป็นรุ่นสำหรับมือใหม่",
-      advanced: "มีชุดควบคุมขั้นสูงกว่า เหมาะกับผู้มีประสบการณ์",
+      advanced: "ปรับตั้งค่าได้ละเอียดกว่า เหมาะกับคนที่เคยใช้พอตมาก่อน",
     },
   },
   faq: {
@@ -302,12 +302,12 @@ export const th: Dictionary = {
   },
   guides: {
     pageTitle: "คู่มือ",
-    pageDescription: "คำแนะนำการเลือกซื้อและคำอธิบายการทำงานที่ใช้ได้จริง ไม่ใช่เนื้อหาโฆษณา",
+    pageDescription: "เลือกพอตยังไง ดูแลยังไง ข้างในทำงานยังไง บอกตรง ๆ ไม่ใช่โฆษณา",
     categoryGettingStarted: "เริ่มต้นใช้งาน",
     categoryBuyingGuide: "คู่มือการเลือกซื้อ",
     categoryHowItWorks: "หลักการทำงาน",
     categoryMaintenance: "การดูแลรักษา",
-    readingTimeMinutes: "นาทีในการอ่าน",
+    readingTimeMinutes: "นาทีอ่านจบ",
     detailEyebrow: "คู่มือ",
   },
   eliquid: {
@@ -328,7 +328,7 @@ export const th: Dictionary = {
   },
   favorites: {
     eyebrow: "บันทึกไว้",
-    pageDescription: "จัดเก็บในเบราว์เซอร์นี้เท่านั้น ไม่ผูกกับบัญชีผู้ใช้",
+    pageDescription: "เก็บไว้ในเบราว์เซอร์เครื่องนี้เท่านั้น ไม่ต้องสมัครสมาชิก",
     // Round 30.4 wiring ข3 (owner ruling 2026-09-12): the empty state used to be hardcoded English
     // in FavoritesList.tsx. Version ข — no second sentence about the browser; the lede above says it.
     emptyTitle: "ยังไม่ได้บันทึกสินค้าไว้",

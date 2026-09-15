@@ -27,8 +27,8 @@ export default function AboutPage() {
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">OKami24 คือใคร</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              OKami24 (ชื่อย่อ OKM) คัดสรรอุปกรณ์พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยาของแท้จากแบรนด์ที่เรามั่นใจ พร้อมตั้งราคาให้ตรงไปตรงมา
-              ไม่ปั่นราคา และดูแลลูกค้าด้วยบริการที่ตอบกลับจริง ไม่ใช่แค่ระบบอัตโนมัติ
+              OKami24 (ย่อว่า OKM) ขายพอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยาของแท้จากแบรนด์ที่เรามั่นใจ ตั้งราคาตรง ๆ ไม่ปั่นราคา
+              ทักมาแล้วแอดมินตอบเอง ไม่ใช่บอท
             </p>
           </section>
 
