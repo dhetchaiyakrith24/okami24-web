@@ -19,7 +19,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        eyebrow="About"
+        eyebrow="เกี่ยวกับเรา"
         title="ของแท้ ราคาตรง บริการจริง"
         description="การบริการที่ดี คือสิ่งที่ OKami24 มีให้คุณ — ร้านพอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยาของแท้ จากคนขายที่รู้จักสินค้าจริง"
       />
