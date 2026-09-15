@@ -1048,7 +1048,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "capacity", label: "ความจุ", value: "2.0 ml", sourceStatus: "verified" },
       { key: "pack-size", label: "จำนวนต่อกล่อง", value: "2 หัว", sourceStatus: "verified" },
-      { key: "coil-included", label: "คอยล์ในกล่อง", value: "ไม่มี (เป็นหัวเปล่า ต้องซื้อคอยล์ ITO แยก)", sourceStatus: "verified" },
+      { key: "coil-included", label: "คอยล์ในกล่อง", value: "หัวพอตเปล่า ต้องซื้อคอยล์ ITO แยก", sourceStatus: "verified" },
       { key: "compatible-devices", label: "ใช้ได้กับ", value: "Argus Pod / Argus P1 / Argus Z / Argus G / Argus A", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://www.healthcabin.net/voopoo-argus-pod-argus-p1-argus-z-argus-g-argus-a-empty-cartridge-p/28679.html"],
@@ -1056,7 +1056,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "Coil-87": {
     specifications: [
       { key: "capacity", label: "ความจุ", value: "5.5 ml", sourceStatus: "verified" },
-      { key: "coil-included", label: "คอยล์ในกล่อง", value: "ไม่มี (เป็นหัวเปล่า ใช้ร่วมกับคอยล์ TPP)", sourceStatus: "verified" },
+      { key: "coil-included", label: "คอยล์ในกล่อง", value: "หัวพอตเปล่า ใช้กับคอยล์ TPP", sourceStatus: "verified" },
       { key: "coil-fit", label: "การติดตั้งคอยล์", value: "แบบกดล็อก (press-fit) รองรับคอยล์ตระกูล TPP", sourceStatus: "verified" },
       { key: "connection", label: "การเชื่อมต่อ", value: "แม่เหล็ก", sourceStatus: "verified" },
       // Storefront quality-correction pass — this pod HOUSES the TPP coils (see coil-38, the
@@ -1152,7 +1152,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "Pod-180": {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "750mAh ชาร์จซ้ำได้ผ่าน USB-C", sourceStatus: "verified" },
-      { key: "coil", label: "คอยล์", value: "Dual nexMESH coil 1.2Ω (ในตัว)", sourceStatus: "verified" },
+      { key: "coil", label: "คอยล์", value: "คอยล์ nexMESH คู่ 1.2Ω (ในตัว)", sourceStatus: "verified" },
       { key: "capacity", label: "ความจุน้ำยา", value: "~18 mL", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://www.wotofo.com/products/wotofo-nexbar-18k"],
