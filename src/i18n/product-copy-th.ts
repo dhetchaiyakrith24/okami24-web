@@ -33,10 +33,22 @@ export interface ProductCopyTh {
    *  and model names inside a Thai value are the data's, verbatim. Read by SpecSheet.tsx and
    *  CompareTool.tsx when the locale is Thai; the label overlay is spec-labels-th.ts. */
   specifications?: Record<string, string>;
+  /** Round 30.4ค batch 4 (owner-approved sentence by sentence, 2026-09-15): the "เหมาะกับใคร"
+   *  bullets in Thai, keyed by the bullet's index in `Product.whoIsThisFor` (the data has no id
+   *  for them). Written to stand on their own — index 0 is also the note /compare shows under a
+   *  product. A comparison the data cannot back ("smallest", "biggest screen in the line") is not
+   *  translated into Thai. Read by CompatibilitySection.tsx and CompareTool.tsx when the locale
+   *  is Thai; the compatibility block's own labels/notes are in compat-copy-th.ts. */
+  whoIsThisFor?: Record<number, string>;
 }
 
 export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   "caliburn-g5": {
+    whoIsThisFor: {
+      0: "อยากได้ Caliburn รุ่นปัจจุบัน แต่ยังไม่อยากขยับไปพอตคิทที่วัตต์สูงกว่านี้",
+      1: "เคยใช้พอตที่มีแต่ปุ่ม อยากขยับมาเครื่องที่มีจอและสลับโหมดด้วยการแตะ",
+      2: "ปกติสูบแน่นแบบ MTL แต่บางวันอยากโล่งขึ้นหน่อย เปลี่ยนแค่หัวพอต GPP คนละโอห์มก็ได้",
+    },
     specifications: {
       battery: "1600mAh ในตัว",
       screen: "จอสี 0.85 นิ้ว",
@@ -62,6 +74,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g5-lite": {
+    whoIsThisFor: {
+      0: "อยากได้แบตอึดเท่า G5 แต่ไม่ได้ใช้จอสีกับระบบแตะ เลยไม่อยากจ่ายส่วนนั้น",
+      1: "เพิ่งเริ่มใช้พอตซิสเต็ม อยากได้เครื่องแบบง่าย ๆ ไม่มีอะไรให้ตั้งค่าเยอะ",
+    },
     specifications: {
       battery: "1600mAh",
       "pod-compat": "UWELL GPP",
@@ -78,6 +94,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g5-lite-se": {
+    whoIsThisFor: {
+      0: "ชอบ G5 Lite อยู่แล้ว แค่อยากได้ชุดสีที่ต่างจากรุ่นมาตรฐาน",
+    },
     specifications: {
       battery: "1600mAh",
       variant: "ชุดสีรุ่นพิเศษของ G5 Lite",
@@ -92,6 +111,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g4-pro-koko": {
+    whoIsThisFor: {
+      0: "อยากได้ Caliburn ที่มีจอทัชและโหมดการสูบให้เลือก โดยไม่ต้องไปถึงพอตคิท",
+      1: "บางวันสูบแน่นแบบ MTL บางวันอยากโล่งแบบ RDL รุ่นนี้เลือกโหมดจากจอได้เลย ไม่ต้องตั้งใหม่ทุกครั้ง",
+    },
     specifications: {
       battery: "2000mAh ในตัว",
       screen: "จอทัชสกรีน 2 นิ้ว",
@@ -115,6 +138,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g4-pro": {
+    whoIsThisFor: {
+      0: "ชอบจอทัชใหญ่ ๆ กดปรับอะไรบนจอก็ง่าย ไม่ต้องเพ่ง",
+      1: "ละเอียดเรื่องช่องลม อยากหมุนหาจุดที่ใช่ของตัวเอง ไม่ใช่เลือกได้แค่ตามขั้นที่เครื่องกำหนด",
+    },
     specifications: {
       battery: "1800mAh ในตัว",
       screen: "จอทัชสกรีน 2.51 นิ้ว",
@@ -137,6 +164,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g4": {
+    whoIsThisFor: {
+      0: "อยากได้จอไว้เลือกโหมดวัตต์ แต่ไม่ได้ต้องการถึงจอทัชแบบรุ่น Pro",
+    },
     specifications: {
       battery: "1300mAh ในตัว",
       "charge-time": "ประมาณ 30 นาที ด้วยไฟ 2A",
@@ -156,6 +186,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g4-mini": {
+    whoIsThisFor: {
+      0: "อยากได้เครื่องเล็ก ๆ ไม่ซับซ้อน แต่หัวพอต GPP ยังใช้ร่วมกับ G4 และ G5 ได้",
+      1: "ไม่ชอบมีจอหรือเมนูให้ต้องคอยดู ขอแค่เครื่องที่หยิบมาใช้ได้ตรง ๆ",
+    },
     specifications: {
       battery: "1100mAh ในตัว",
       "charge-time": "ประมาณ 58 นาที ด้วยไฟ 2A",
@@ -173,6 +207,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g4-classic": {
+    whoIsThisFor: {
+      0: "ถูกใจการใช้งานของ G4 อยู่แล้ว แต่อยากได้ตัวเครื่องในชุดสีรุ่น Classic",
+    },
     specifications: {
       battery: "1300mAh เท่า G4 รุ่นมาตรฐาน",
       variant: "ชุดสีรุ่น Classic ของ Caliburn G4",
@@ -188,6 +225,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g3-pro": {
+    whoIsThisFor: {
+      0: "อยากได้พอตซิสเต็มที่มีจอให้ดู ไม่ใช่แค่ไฟ LED กะพริบบอกสถานะ",
+      1: "ยังไม่รู้ว่าชอบสูบแน่นแบบ MTL หรือโล่งแบบ RDL ในกล่องมีหัวพอตให้ลองทั้งสองแบบโดยไม่ต้องซื้อเพิ่ม",
+    },
     specifications: {
       battery: "1000mAh ชาร์จ USB-C 2A",
       screen: "จอ LCD โอบรอบด้านข้าง",
@@ -196,7 +237,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "จอ LCD โอบรอบด้านข้าง รุ่นแรกในตระกูล Caliburn",
     shortDescription:
-      "พอตแบตเตอรี่ 1000mAh สูงสุด 35 วัตต์ พร้อมจอ LCD ที่โอบรอบด้านข้างตัวเครื่อง ปรับช่องลมได้เต็มรูปแบบ และในกล่องมีหัวพอตให้ 2 ตัว คนละโอห์ม",
+      "พอตแบตเตอรี่ 1000mAh สูงสุด 35 วัตต์ พร้อมจอ LCD ที่โอบรอบด้านข้างตัวเครื่อง ปรับช่องลมได้ทุกระดับ และในกล่องมีหัวพอตให้ 2 ตัว คนละโอห์ม",
     features: {
       "wraparound-screen": {
         title: "จอ LCD โอบรอบด้านข้าง",
@@ -209,6 +250,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "caliburn-g3-pro-koko": {
+    whoIsThisFor: {
+      0: "ชอบสเปกของ G3 Pro แต่อยากได้ในชุดสีรุ่น KOKO",
+    },
     specifications: {
       battery: "1000mAh เท่า G3 Pro รุ่นมาตรฐาน",
       variant: "ชุดสีรุ่น KOKO ของ Caliburn G3 Pro",
@@ -224,6 +268,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "argus-g4": {
+    whoIsThisFor: {
+      0: "ชอบเช็คสถานะเครื่องจากจอ ไม่ต้องเดาเอาเองว่าแบตใกล้หมดหรือยัง",
+      1: "เน้นชาร์จเร็วและแบตอยู่ได้หลายวัน มากกว่าจะเอาวัตต์สูง ๆ",
+      2: "ย้ายมาจากเครื่องที่ไม่มีจอ อยากได้เครื่องที่บอกอะไรมากขึ้น แต่ยังไม่ถึงขั้นต้องไป box mod",
+    },
     specifications: {
       battery: "1650mAh ในตัว",
       screen: "จอ HD 0.85 นิ้ว แสดงแบต วัตต์ โอห์ม สถานะล็อก และจำนวนพัฟ",
@@ -250,6 +299,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "argus-g4-mini": {
+    whoIsThisFor: {
+      0: "ปกติสูบไม่ถึง 35 วัตต์อยู่แล้ว อยากได้ ARGUS G4 ที่ตัวเล็กกว่า รุ่น Mini ก็พอ",
+    },
     specifications: {
       battery: "1650mAh ในตัว",
       pod: "ARGUS แบบเติมด้านบน",
@@ -264,6 +316,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "argus-p3": {
+    whoIsThisFor: {
+      0: "อยากได้พอตคิทสาย ARGUS ที่เข้าเมนูและตั้งค่าทุกอย่างจากจอทัชได้เลย",
+    },
     specifications: {
       battery: "1500mAh ในตัว",
       screen: "จอทัชเต็มจอ TFT HD 2.01 นิ้ว",
@@ -279,6 +334,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "argus-g3-mini": {
+    whoIsThisFor: {
+      0: "เพิ่งเริ่มสูบพอต ไม่อยากยุ่งกับปุ่มหรือเมนูอะไรทั้งนั้น หยิบขึ้นมาดูดได้เลย",
+      1: "อยากได้เครื่องเบา ๆ แค่ 41 กรัม พกไว้ในกระเป๋ากางเกงแล้วแทบไม่รู้สึก",
+    },
     specifications: {
       battery: "1350mAh ในตัว",
       output: "30W (เครื่องเลือกวัตต์ให้ตามหัวพอต ตั้งเองไม่ได้)",
@@ -300,6 +359,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "drag-6": {
+    whoIsThisFor: {
+      0: "คนที่สูบวัตต์สูงและใช้ box mod มาก่อน อยากได้แบตในตัวก้อนใหญ่ มากกว่าเครื่องที่ต้องถอดเปลี่ยนถ่าน",
+      1: "อยากมีโหมด RBA และ TC-TCR ติดเครื่องไว้ด้วย ไม่ใช่ปรับวัตต์ได้อย่างเดียว",
+    },
     specifications: {
       battery: "4400mAh ในตัว (ถ่าน 2200mAh สองก้อน)",
       screen: "จอ TFT 1.66 นิ้ว แสดงวัตต์ แบต โอห์ม จำนวนพัฟ และโหมด",
@@ -322,6 +385,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "drag-s3": {
+    whoIsThisFor: {
+      0: "อยากได้วัตต์แบบสาย DRAG แต่ไม่อยากยุ่งกับถ่าน 18650/21700",
+    },
     specifications: {
       battery: "3000mAh ในตัว",
       screen: "จอ TFT 0.96 นิ้ว",
@@ -338,6 +404,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "drag-x3": {
+    whoIsThisFor: {
+      0: "ถนัดใช้ถ่านถอดเปลี่ยนมากกว่าแบตในตัว ถ่านเสื่อมก็เปลี่ยนก้อนใหม่ ไม่ต้องเปลี่ยนเครื่อง",
+      1: "อยากได้เครื่องที่ไปถึง 80 วัตต์ และคุมทุกอย่างจากจอทัชได้",
+    },
     specifications: {
       battery: "ถ่าน 18650 หรือ 21700 ก้อนเดียว (ไม่รวมในกล่อง)",
       screen: "จอทัชสกรีน 1.66 นิ้ว",
@@ -357,6 +427,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "vinci-s": {
+    whoIsThisFor: {
+      0: "อยากได้พอตคิทวัตต์กลาง ๆ ที่หัวพอตจุเยอะ ไม่ต้องเติมน้ำยาบ่อย",
+      1: "เบื่อดึงหัวพอตออกมาเติมน้ำยาแล้วต้องเสียบกลับทุกที",
+    },
     specifications: {
       battery: "2000mAh ในตัว",
       pod: "4.5mL (2mL ตามมาตรฐาน TPD)",
@@ -373,6 +447,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "vmate-i3": {
+    whoIsThisFor: {
+      0: "พกพอตติดตัวทั้งวัน อยากได้เครื่องบาง ๆ ที่หยิบเข้าหยิบออกกระเป๋าได้คล่อง",
+    },
     specifications: {
       battery: "1500mAh ในตัว",
       pod: "3mL VMATE Top Fill Cartridge (ใช้หัว V2 ได้ด้วย)",
@@ -388,6 +465,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-bar-10k": {
+    whoIsThisFor: {
+      0: "อยากสลับโหมดวัตต์ได้ (Eco / Soft / Boost) แต่ยังไม่อยากขยับไปใช้พอตซิสเต็ม",
+      1: "คนที่อยากได้พอตใช้แล้วทิ้งแบบชาร์จซ้ำได้ ไม่ใช่แบบแบตหมดแล้วจบ",
+    },
     specifications: {
       puffs: "สูงสุด 10,000",
       battery: "600mAh ชาร์จซ้ำได้ผ่าน USB-C",
@@ -414,6 +495,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-bar-9k": {
+    whoIsThisFor: {
+      0: "อยากได้พอตใช้แล้วทิ้งที่ปรับช่องลมเองได้ ไม่ใช่ล็อกมาให้สูบได้แบบเดียว",
+    },
     specifications: {
       puffs: "สูงสุด 9,000",
       battery: "600mAh ชาร์จซ้ำได้ผ่าน USB-C",
@@ -432,6 +516,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-bar-15k": {
+    whoIsThisFor: {
+      0: "ถ้าดูจำนวนพัฟก่อนอย่างอื่น รุ่นนี้คือตัวที่พัฟเยอะที่สุดในตระกูล M Bar",
+    },
     specifications: {
       puffs: "สูงสุด 15,000",
       coil: "cotton mesh",
@@ -450,6 +537,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-switch-kit": {
+    whoIsThisFor: {
+      0: "ใช้พอตใช้แล้วทิ้งอยู่ แต่เสียดายที่ต้องทิ้งทั้งเครื่องทุกครั้ง อยากได้ตัวเครื่องที่ใช้ซ้ำได้",
+    },
     specifications: {
       "puffs-per-pod": "สูงสุด 15,000",
       format: "ตัวเครื่องใช้ซ้ำได้ เปลี่ยนแค่หัวพอตบรรจุสำเร็จ",
@@ -466,6 +556,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-switch-pod": {
+    whoIsThisFor: {
+      0: "คนที่มีเครื่อง M Switch Kit อยู่แล้ว มาซื้อหัวพอตเพิ่มหรือเปลี่ยนรส",
+    },
     specifications: {
       capacity: "2.2mL บรรจุน้ำยาสำเร็จ",
     },
@@ -473,6 +566,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 2.2mL ใช้กับตัวเครื่อง M Switch Kit",
   },
   "m-bar-pod": {
+    whoIsThisFor: {
+      0: "คนที่มีเครื่องใช้ซ้ำที่รองรับ M Bar อยู่แล้ว มาซื้อหัวพอตเพิ่ม",
+    },
     specifications: {
       flavors: "กว่า 15 รส",
       capacity: "—",
@@ -481,6 +577,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription: "หัวพอตสำหรับเปลี่ยน ใช้ได้กับเครื่องใช้ซ้ำของ SALTHUB ที่รองรับ M Bar มีให้เลือกกว่า 15 รส",
   },
   "zero-pro": {
+    whoIsThisFor: {
+      0: "อยากได้เครื่องระบบสวิตช์ที่เลือกโหมดวัตต์ได้ ไม่ใช่วัตต์ค่าเดียว",
+    },
     specifications: {
       "puffs-per-pod": "สูงสุด 5,000",
       modes: "3 โหมด",
@@ -496,6 +595,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "zero-nano": {
+    whoIsThisFor: {
+      0: "อยากได้เครื่องระบบสวิตช์สาย Zero ตัวเล็ก ๆ ไว้พกติดตัว",
+    },
     specifications: {
       format: "ตัวเครื่องใช้ซ้ำได้ขนาดเล็ก ใช้ Zero Cartridge",
     },
@@ -509,6 +611,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "zero-cartridge": {
+    whoIsThisFor: {
+      0: "ใช้ Zero Pro หรือ Zero Nano อยู่ แล้วหัวพอตหมดหรืออยากเปลี่ยนรส",
+    },
     tagline: "หัวพอตเปลี่ยนได้ ใช้ร่วมกับ Zero Pro และ Zero Nano",
     shortDescription: "หัวพอตเปลี่ยนได้ความจุ 2.2mL ใช้ร่วมกันได้ทั้งกับตัวเครื่อง Zero Pro และ Zero Nano",
   },
@@ -516,6 +621,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // caveats (unverified specs, naming ambiguity) are real facts and must carry over untranslated
   // in meaning, never smoothed into a more confident-sounding Thai sentence than the English.
   "relx-smash-go-12k": {
+    whoIsThisFor: {
+      0: "อยากได้พอตใช้แล้วทิ้งจากแบรนด์ที่รุ่นและรสทั้งหมดเช็คได้บนเว็บทางการ",
+    },
     specifications: {
       puffs: "สูงสุด 12,000",
       battery: "400mAh ชาร์จซ้ำได้ผ่าน USB-C",
@@ -539,6 +647,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       "พอตใช้แล้วทิ้งสายพัฟเยอะของ RELX ที่ขายในตลาดไทย มีหลายรุ่นย่อย ทักไลน์ @okm24 ถามรุ่นปัจจุบันได้",
   },
   "joiway-f3": {
+    whoIsThisFor: {
+      0: "ลูกค้าที่ถามหา Joiway อยู่แล้ว รุ่นนี้เป็นตัวรสเดียว ส่วนแบบ 2 รสในเครื่องเดียวคือ F4",
+    },
     specifications: {
       puffs: "สูงสุด 12,000",
       battery: "650mAh ชาร์จซ้ำได้ผ่าน USB-C",
@@ -551,6 +662,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Joiway รองรับสูงสุด 12,000 พัฟ สเปกตรงกันจากร้านค้าอิสระกว่า 10 ร้าน แต่ยังไม่ได้ยืนยันจากเว็บทางการของ Joiway เอง",
   },
   "joiway-f4": {
+    whoIsThisFor: {
+      0: "คนที่เบื่อรสเดียวเร็ว อยากได้ 2 รสในเครื่องเดียว สลับไปมาได้โดยไม่ต้องพกสองเครื่อง",
+    },
     specifications: {
       puffs: "โหมด NOS ประมาณ 15,000 / โหมด TURBO ประมาณ 30,000",
       battery: "650mAh ชาร์จซ้ำได้ผ่าน USB-C",
@@ -583,6 +697,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // products had no Thai line, so their cards fell back to English once ProductCard started reading
   // this file. Taglines shortened by the owner ("รองรับสูงสุด N พัฟ" says everything the English does).
   "mood-monster-14k": {
+    whoIsThisFor: {
+      0: "อยากได้พอตใช้แล้วทิ้งสายพัฟเยอะ ที่มีรสให้เลือกหลายรส",
+    },
     specifications: {
       puffs: "สูงสุด 14,000",
     },
@@ -590,10 +707,16 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription: "พอตใช้แล้วทิ้งจาก MOOOD ซีรีส์ “Monster” รองรับสูงสุด 14,000 พัฟ ตอนนี้มีให้เลือก 10 รส",
   },
   "muro-3ml": {
+    whoIsThisFor: {
+      0: "มีเครื่องที่ใส่หัวพอต Muro 3ML ได้อยู่แล้ว ถ้าไม่แน่ใจว่าเครื่องตัวเองใช้ได้ไหม ทักไลน์ @okm24 ถามก่อนได้",
+    },
     tagline: "หัวพอตบรรจุน้ำยาสำเร็จ 3mL",
     shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 3mL ของ Muro ตอนนี้มีให้เลือก 10 รส",
   },
   "muro-sc-8000": {
+    whoIsThisFor: {
+      0: "คนที่อยากได้พอตใช้แล้วทิ้งแบบชาร์จซ้ำได้ ไม่ใช่แบบแบตหมดแล้วจบ",
+    },
     specifications: {
       puffs: "สูงสุด 8,000",
       battery: "600mAh ชาร์จซ้ำได้ผ่าน USB-C",
@@ -602,6 +725,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Muro สาย “SC” แบตเตอรี่ 600mAh ชาร์จผ่าน USB-C รองรับสูงสุด 8,000 พัฟ ตอนนี้มีให้เลือก 8 รส",
   },
   "muro-connector-20k": {
+    whoIsThisFor: {
+      0: "อยากได้พอตใช้แล้วทิ้งสายพัฟเยอะ และรสก็มีให้เลือกเยอะ",
+    },
     specifications: {
       puffs: "สูงสุด 20,000",
     },
