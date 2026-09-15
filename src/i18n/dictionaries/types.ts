@@ -165,6 +165,25 @@ export interface Dictionary {
     galleryTitle: string;
     anatomyEyebrow: string;
     anatomyTitle: string;
+    /** ProductAnatomy.tsx — labels/details were hardcoded English until round 30.4ค batch 6. Display
+     *  templates take `{size}` (the data's screenSize with its inch mark; Thai strips it and says นิ้ว). */
+    anatomy: {
+      mouthpiece: string;
+      mouthpiecePodDetail: string;
+      mouthpieceDisposableDetail: string;
+      pod: string;
+      podDetail: string;
+      display: string;
+      displayColour: string;
+      displayTouch: string;
+      airflow: string;
+      airflowDetail: string;
+      chargingPort: string;
+      labelBand: string;
+      labelBandDetail: string;
+      statusLed: string;
+      statusLedDetail: string;
+    };
     featuresEyebrow: string;
     featuresTitle: string;
     specsEyebrow: string;

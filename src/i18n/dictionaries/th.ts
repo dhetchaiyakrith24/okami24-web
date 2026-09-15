@@ -144,6 +144,24 @@ export const th: Dictionary = {
     galleryTitle: "ภาพจากแคมเปญทางการ",
     anatomyEyebrow: "โครงสร้าง",
     anatomyTitle: "ส่วนประกอบจากภายนอกสู่ภายใน",
+    // Round 30.4ค batch 6 (owner-approved 2026-09-15): the anatomy block on the flagship pages.
+    anatomy: {
+      mouthpiece: "ปากดูด",
+      mouthpiecePodDetail: "ส่วนบนของหัวพอตที่โผล่พ้นตัวเครื่อง",
+      mouthpieceDisposableDetail: "ติดมากับตัวเครื่อง ถอดเปลี่ยนไม่ได้",
+      pod: "หัวพอต",
+      podDetail: "ถอดเปลี่ยนได้ คอยล์ในตัว มีหลายโอห์มให้เลือก",
+      display: "หน้าจอ",
+      displayColour: "จอสี {size} นิ้ว",
+      displayTouch: "จอทัชสกรีน {size} นิ้ว",
+      airflow: "ช่องลม",
+      airflowDetail: "ปรับให้สูบแน่นหรือโล่งได้",
+      chargingPort: "ช่องชาร์จ",
+      labelBand: "ฉลาก",
+      labelBandDetail: "บอกว่ารสอะไร นิโคตินเท่าไหร่",
+      statusLed: "ไฟบอกสถานะ",
+      statusLedDetail: "แสดงระดับแบตและโหมดที่ใช้อยู่",
+    },
     featuresEyebrow: "จุดเด่น",
     // Round 30.4 batch 1 (owner, 2026-09-11): "สิ่งที่ทำให้แตกต่าง" was "What sets it apart" in
     // Thai clothes; the new title pairs with "เหมาะกับใคร" below it.
