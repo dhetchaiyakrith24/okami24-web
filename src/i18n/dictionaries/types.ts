@@ -87,7 +87,8 @@ export interface Dictionary {
     viewAll: string;
   };
   search: {
-    eyebrow: string;
+    /** No `eyebrow` here since round 30.4ข batch 4 (owner, 2026-09-17): the /search header reuses
+     *  `footer.tools` like /compare and /finder — the old "ค้นหา" eyebrow repeated the H1 "ค้นหาสินค้า". */
     title: string;
     placeholder: string;
     prompt: string;

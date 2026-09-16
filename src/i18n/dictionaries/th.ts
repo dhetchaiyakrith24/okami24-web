@@ -84,7 +84,6 @@ export const th: Dictionary = {
     viewAll: "ดูทั้งหมด →",
   },
   search: {
-    eyebrow: "ค้นหา",
     title: "ค้นหาสินค้า",
     placeholder: "ค้นหาสินค้า แบรนด์ หรือตระกูล…",
     prompt: "พิมพ์ชื่อรุ่นหรือแบรนด์ได้เลย",
@@ -188,7 +187,7 @@ export const th: Dictionary = {
     fitsDevicesTitle: "ใช้ได้กับเครื่องเหล่านี้",
     verifiedCompatibilityNote: "ทุกรายการเช็คกับเว็บทางการของแบรนด์หรือหน้าร้านค้าปลีกแล้ว",
     whoIsThisForTitle: "เหมาะกับใคร",
-    faqEyebrow: "คำถามที่พบบ่อย",
+    faqEyebrow: "ถาม-ตอบ",
     faqTitle: "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้",
     relatedEyebrow: "สินค้าใกล้เคียง",
     relatedTitle: "สินค้าที่คุณอาจสนใจ",
