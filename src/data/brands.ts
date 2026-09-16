@@ -10,7 +10,7 @@ export const brands: Brand[] = [
     description:
       "A device manufacturer best known for the Caliburn open-system pod family — compact, refillable pod devices built around interchangeable coil pods, adjustable airflow, and increasingly capable onboard displays across successive generations.",
     descriptionTh:
-      "UWELL ผู้ผลิตพอตซิสเต็มตระกูล Caliburn ที่ร้านมีตั้งแต่ G3 Pro ถึง G5 พร้อมหัวพอตและคอยล์แท้ของ Caliburn สำหรับเปลี่ยน",
+      "UWELL ผู้ผลิตพอตซิสเต็มตระกูล Caliburn ที่ร้านมีทั้งตัวเครื่อง พร้อมหัวพอตและคอยล์แท้ของ Caliburn สำหรับเปลี่ยน",
     referenceUrl: "https://www.myuwell.com/",
   },
   {
@@ -155,9 +155,9 @@ export const brands: Brand[] = [
     tagline: "Heat-not-burn tobacco system.",
     taglineTh: "เครื่องอุ่นยาสูบ",
     description:
-      "Philip Morris International's heated-tobacco device brand — the ILUMA device family (Prime/i/i ONE/ONE) paired with TEREA tobacco sticks, using induction heating instead of combustion.",
+      "Philip Morris International's heated-tobacco device brand — the ILUMA device family (Prime/i/i ONE/ONE) paired with TEREA tobacco sticks, using induction heating.",
     descriptionTh:
-      "IQOS ของ Philip Morris International เครื่องให้ความร้อนยาสูบโดยไม่เผาไหม้ ที่ร้านมี ILUMA i และ ILUMA i PRIME ใช้ได้กับก้าน TEREA เท่านั้น",
+      "IQOS ของ Philip Morris International เครื่องอุ่นยาสูบด้วยความร้อน ไม่ใช้น้ำยา ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมี ILUMA i และ ILUMA i PRIME",
     referenceUrl: "https://www.iqos.com/",
   },
   // Tier-1 disposable growth mission (2026-09-03) — owner-named business-priority brands.
@@ -184,7 +184,7 @@ export const brands: Brand[] = [
     description:
       "A vape device manufacturer (myjoiway.com) selling disposables under an \"X Series\" naming pattern, including the F-series disposable line, alongside e-juice and accessories.",
     descriptionTh:
-      "JOIWAY ผู้ผลิตพอตใช้แล้วทิ้ง ที่ร้านมี F3 รองรับสูงสุด 12,000 พัฟ และ F4 ที่สลับ 2 รสในเครื่องเดียว ซึ่ง OKami24 รีวิวใช้จริงไว้บน YouTube",
+      "JOIWAY ผู้ผลิตพอตใช้แล้วทิ้ง ที่ร้านมี F3 และ F4 ที่สลับ 2 รสในเครื่องเดียว ซึ่ง OKami24 รีวิวใช้จริงไว้บน YouTube",
     referenceUrl: "https://myjoiway.com/",
   },
   {

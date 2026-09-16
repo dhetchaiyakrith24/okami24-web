@@ -36,9 +36,12 @@ export const flavorFamilies: FlavorFamily[] = [
     id: "tobacco-style",
     slug: "tobacco-style",
     name: "Tobacco-Style",
+    // Round 30.4ข batch 3 (owner, 2026-09-17): the "switching from cigarettes" audience line was swept
+    // with the "ไม่เผาไหม้" set — it reads as a cessation claim the site cannot back. Same cut in
+    // flavor-copy.ts (th/zh); the family keeps two character notes in every language.
     description:
-      "Tobacco-inspired profiles for vapers transitioning away from combustible cigarettes or who simply prefer a tobacco-adjacent base note over fruit or dessert flavoring.",
-    characterNotes: ["Tobacco-adjacent base note", "Often chosen by vapers switching from cigarettes", "Ranges from plain to blended with caramel or menthol accents"],
+      "Tobacco-inspired profiles for vapers who prefer a tobacco-adjacent base note over fruit or dessert flavoring.",
+    characterNotes: ["Tobacco-adjacent base note", "Ranges from plain to blended with caramel or menthol accents"],
   },
 ];
 
