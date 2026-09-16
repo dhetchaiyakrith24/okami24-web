@@ -8,12 +8,17 @@ import { GuideCategoryLabel, GuideText, HomeText } from "@/components/home/HomeC
 // label read the visitor's language (card copy through the same overlay the guide page uses); the
 // "Guides & Learn" eyebrow stays English (THAI_STYLE §5 group ก); the mono category label reads the
 // dictionary like /guides since the closing round of 30.4ค (owner 1.7g, 2026-09-16).
+//
+// Round 30.4ข batch 1 (owner 2026-09-16, close-list D): the heading used to sit in a `max-w-xl`
+// box, so the Thai H2 wrapped at ~576px while the rest of the row was empty. Like the product
+// rails (ProductRailSection), the heading now takes the width the flex row gives it and only
+// wraps when it meets the "All guides" link.
 export function GuideTeaserGrid({ guides }: { guides: Guide[] }) {
   return (
     <section className="bg-surface-1 py-14 lg:py-20">
       <Container className="flex flex-col gap-10">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <SectionHeading eyebrow="Guides & Learn" title={<HomeText k="guidesTitle" />} className="max-w-xl" />
+          <SectionHeading eyebrow="Guides & Learn" title={<HomeText k="guidesTitle" />} />
           <Link href="/guides" className="label-mono shrink-0 text-xs text-foreground-muted hover:text-ember">
             <HomeText k="guidesAll" />
           </Link>
