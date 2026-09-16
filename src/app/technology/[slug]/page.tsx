@@ -40,7 +40,6 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
         <ArticleBody
           sections={entry.body}
           translated={{ th: TECHNOLOGY_COPY_TH[entry.id]?.body, zh: TECHNOLOGY_COPY_ZH[entry.id]?.body }}
-          keepTogetherSite={`technology:${entry.id}`}
         />
       </Container>
       <RelatedProducts products={related} />

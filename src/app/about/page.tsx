@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { canonicalFor } from "@/lib/seo";
 import { brandsWithProducts } from "@/lib/brand-visibility";
+import { ThaiText } from "@/components/i18n/ThaiText";
 
 export const metadata: Metadata = {
   title: "เกี่ยวกับเรา",
@@ -18,7 +19,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        eyebrow="About"
+        eyebrow="เกี่ยวกับเรา"
         title="ของแท้ ราคาตรง บริการจริง"
         description="การบริการที่ดี คือสิ่งที่ OKami24 มีให้คุณ — ร้านพอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยาของแท้ จากคนขายที่รู้จักสินค้าจริง"
       />
@@ -86,8 +87,9 @@ export default function AboutPage() {
           <section>
             <h2 className="font-display text-2xl font-semibold text-foreground">Compliance</h2>
             <p className="mt-3 text-base leading-relaxed text-foreground-muted">
-              เว็บไซต์นี้จัดทำขึ้นสำหรับผู้มีอายุครบ 21 ปีบริบูรณ์ขึ้นไปในเขตพื้นที่ที่การซื้อขายถูกกฎหมาย
-              ไม่มีการกล่าวอ้างด้านสุขภาพ ความปลอดภัย หรือการเลิกบุหรี่ใดๆ นิโคตินเป็นสารเสพติด
+              {/* THAI_STYLE §5 group ก text — wording untouchable; <ThaiText> only adds the owner's
+                  render-time joiners (round 30.4ค closing, 2026-09-16 — THAI_STYLE §5/§6), Thai locale only. */}
+              <ThaiText>เว็บไซต์นี้จัดทำขึ้นสำหรับผู้มีอายุครบ 21 ปีบริบูรณ์ขึ้นไปในเขตพื้นที่ที่การซื้อขายถูกกฎหมาย ไม่มีการกล่าวอ้างด้านสุขภาพ ความปลอดภัย หรือการเลิกบุหรี่ใดๆ นิโคตินเป็นสารเสพติด</ThaiText>
             </p>
           </section>
 
@@ -101,7 +103,7 @@ export default function AboutPage() {
                   </Link>
                   {/* Round 30.4 wiring ข1: the Thai lede approved in 30.3ข (every brand on the storefront
                       has one); `description` is the English fallback. This page is Thai prose throughout. */}
-                  <p className="mt-1 text-sm text-foreground-muted">{b.descriptionTh ?? b.description}</p>
+                  <p className="mt-1 text-sm text-foreground-muted"><ThaiText>{b.descriptionTh ?? b.description}</ThaiText></p>
                 </li>
               ))}
             </ul>

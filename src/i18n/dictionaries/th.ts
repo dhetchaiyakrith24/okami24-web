@@ -78,7 +78,7 @@ export const th: Dictionary = {
     compareDescription:
       "เทียบเฉพาะสเปกที่ยืนยันแล้วและมีเหมือนกันทุกรุ่น จุดที่ต่างจะไฮไลต์ให้ และแต่ละรุ่นมีโน้ต “เหมาะกับใคร” แทนการฟันธงว่ารุ่นไหนชนะ",
     compareCta: "เปรียบเทียบสินค้า",
-    guidesTitle: "คู่มือเลือกซื้อ บอกตรง ๆ ไม่ใช่โฆษณา",
+    guidesTitle: "คู่มือเลือกซื้อ บอกตรง ๆ",
     guidesAll: "คู่มือทั้งหมด →",
     guideReadingTime: "อ่าน {n} นาที",
     viewAll: "ดูทั้งหมด →",
@@ -328,7 +328,7 @@ export const th: Dictionary = {
   },
   favorites: {
     eyebrow: "บันทึกไว้",
-    pageDescription: "เก็บไว้ในเบราว์เซอร์เครื่องนี้เท่านั้น ไม่ต้องสมัครสมาชิก",
+    pageDescription: "ไม่ต้องสมัครสมาชิก รายการโปรดเก็บไว้ในเบราว์เซอร์เครื่องนี้",
     // Round 30.4 wiring ข3 (owner ruling 2026-09-12): the empty state used to be hardcoded English
     // in FavoritesList.tsx. Version ข — no second sentence about the browser; the lede above says it.
     emptyTitle: "ยังไม่ได้บันทึกสินค้าไว้",

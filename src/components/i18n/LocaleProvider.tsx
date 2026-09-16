@@ -4,6 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import { DEFAULT_LOCALE, type Locale } from "@/i18n/config";
 import { getDictionary, type Dictionary } from "@/i18n/dictionaries";
 import { readLocaleCookie, writeLocaleCookie } from "@/i18n/cookie";
+import { thaiTypographyDeep } from "@/lib/thai-typography";
 
 /**
  * OKami24 — Phase 3.2: client-side locale context.
@@ -49,7 +50,11 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
     setLocaleState(next);
   }, []);
 
-  const dict = useMemo(() => getDictionary(locale), [locale]);
+  // Round 30.4ค closing (owner 2026-09-16): the Thai dictionary the client components render gets
+  // the render-time typography (no-break spaces before ๆ, between a number and its unit and inside
+  // two-word model names; the owner's joiner exceptions). generateMetadata reads the plain
+  // dictionary directly, so <title>/meta/JSON-LD stay plain; en/zh are untouched.
+  const dict = useMemo(() => (locale === "th" ? thaiTypographyDeep(getDictionary(locale)) : getDictionary(locale)), [locale]);
   const value = useMemo(() => ({ locale, dict, setLocale }), [locale, dict, setLocale]);
 
   return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;

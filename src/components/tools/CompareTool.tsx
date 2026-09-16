@@ -10,6 +10,7 @@ import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import type { Specification } from "@/types/catalog";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { labelLang } from "@/lib/label-lang";
+import { thaiTypography } from "@/lib/thai-typography";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 /**
@@ -120,7 +121,7 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
   // spec values are Thai in the data already, have no overlay and fall through unchanged.
   const specs = useMemo(() => {
     if (locale !== "th") return verifiedSpecRows(items);
-    const rows = verifiedSpecRows(items, (slug, spec) => PRODUCT_COPY_TH[slug]?.specifications?.[spec.key] ?? spec.value);
+    const rows = verifiedSpecRows(items, (slug, spec) => { const v = PRODUCT_COPY_TH[slug]?.specifications?.[spec.key]; return v ? thaiTypography(v) : spec.value; });
     return rows.map((row) => ({ ...row, label: specLabelTh(row.label) }));
   }, [items, locale]);
   // Only worth explaining when the selection genuinely mixes a product that has the attribute
@@ -167,7 +168,7 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
                   <div key={p.slug} className="rounded-xl border border-surface-border-soft bg-surface-1 p-4">
                     <p className="text-sm font-semibold text-foreground">{p.name}</p>
                     {/* Round 30.4ค batch 4: the same Thai first bullet the product page shows (product-copy-th.ts). */}
-                    <p className="mt-2 text-xs leading-relaxed text-foreground-muted">{(locale === "th" ? PRODUCT_COPY_TH[p.slug]?.whoIsThisFor?.[0] : undefined) ?? p.whoIsThisFor[0]}</p>
+                    <p className="mt-2 text-xs leading-relaxed text-foreground-muted">{(() => { const w = locale === "th" ? PRODUCT_COPY_TH[p.slug]?.whoIsThisFor?.[0] : undefined; return w ? thaiTypography(w) : p.whoIsThisFor[0]; })()}</p>
                   </div>
                 ))}
               </div>

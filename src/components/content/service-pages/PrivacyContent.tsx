@@ -1,17 +1,15 @@
 "use client";
 
-import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
-import { AgeNote, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt } from "@/components/content/ServicePage";
+import { AgeNote, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
 import { PRIVACY } from "@/i18n/service-pages/privacy";
 
 const LIST = "flex flex-col gap-1.5 text-sm";
 
 /** Body of /privacy in the active language (copy: src/i18n/service-pages/privacy.tsx). */
 export function PrivacyContent() {
-  const { locale } = useLocale();
-  const c = PRIVACY[locale];
+  const c = useServiceCopy(PRIVACY);
   return (
     <>
       <PageHeader eyebrow={c.eyebrow} title={c.title} description={c.description} meta={<UpdatedAt date={SERVICE_PAGES_UPDATED} />} />

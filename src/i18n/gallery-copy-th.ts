@@ -10,6 +10,8 @@
  * already uses (หัวพอต GPP · หน้าจอ · ไฟบอกสถานะ · ชุดสี) rather than translating photographer's
  * terms like "hero" (docs/THAI_STYLE.md §3 · §7 "รอบ 30.4ค ก้อน 5").
  */
+import { thaiTypography } from "@/lib/thai-typography";
+
 export const GALLERY_CAPTIONS_TH: Record<string, string> = {
   "Campaign hero": "ภาพแคมเปญ",
   "Pod detail": "หัวพอต GPP",
@@ -22,5 +24,5 @@ export const GALLERY_CAPTIONS_TH: Record<string, string> = {
 
 /** Thai caption for a gallery photo, or the data caption when there is no entry. */
 export function galleryCaptionTh(angle: string): string {
-  return GALLERY_CAPTIONS_TH[angle] ?? angle;
+  return thaiTypography(GALLERY_CAPTIONS_TH[angle] ?? angle);
 }

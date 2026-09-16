@@ -2,18 +2,16 @@
 
 import Link from "next/link";
 import { CONTACT } from "@/data/contact";
-import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { AgeNote, NumberedSteps, PhaseLabel, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt } from "@/components/content/ServicePage";
+import { AgeNote, NumberedSteps, PhaseLabel, SERVICE_PAGES_UPDATED, ServiceSection, SummaryCards, UpdatedAt, useServiceCopy } from "@/components/content/ServicePage";
 import { HOW_TO_ORDER } from "@/i18n/service-pages/how-to-order";
 
 /** Body of /how-to-order in the active language (copy: src/i18n/service-pages/how-to-order.tsx).
  *  Layout unchanged from the Thai-only version (designer direction A, 2026-09-06). */
 export function HowToOrderContent({ orderingEnabled = true }: { orderingEnabled?: boolean } = {}) {
-  const { locale } = useLocale();
-  const c = HOW_TO_ORDER[locale];
+  const c = useServiceCopy(HOW_TO_ORDER);
   const link = "text-foreground hover:text-red";
   return (
     <>

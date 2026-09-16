@@ -15,11 +15,23 @@
 // Client module since 2026-09-06 (ง): the five service pages now render their body through a
 // locale-aware client component (src/components/content/service-pages/*), and AgeNote /
 // UpdatedAt read the active locale themselves. Nothing here needs server-only APIs.
+import { useMemo } from "react";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { CONTACT } from "@/data/contact";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { thaiTypographyDeep } from "@/lib/thai-typography";
+import type { ServiceCopy } from "@/i18n/service-pages/shared";
+
+/** The page's copy in the active language. Thai gets the render-time typography the rest of the
+ *  site has (src/lib/thai-typography.ts — closing round 30.4ค): the service pages were the one
+ *  surface still rendering "500 | บาท" / "3 | วัน" after the mechanism landed, because their copy
+ *  never passes through the dictionary. en/zh are returned as written. */
+export function useServiceCopy<T>(copy: ServiceCopy<T>): T {
+  const { locale } = useLocale();
+  return useMemo(() => (locale === "th" ? thaiTypographyDeep(copy.th) : copy[locale]), [copy, locale]);
+}
 
 export function ServiceSection({ title, children }: { title: string; children: ReactNode }) {
   return (

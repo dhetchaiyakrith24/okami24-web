@@ -7,6 +7,7 @@ import { SpecChip } from "@/components/ui/SpecChip";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { specLabelTh } from "@/i18n/spec-labels-th";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
+import { thaiTypography } from "@/lib/thai-typography";
 
 export function SpecSheet({ product }: { product: Product }) {
   const { dict, locale } = useLocale();
@@ -41,7 +42,7 @@ export function SpecSheet({ product }: { product: Product }) {
                 key={spec.key}
                 spec={spec}
                 label={labelTh}
-                value={valuesTh?.[spec.key]}
+                value={valuesTh?.[spec.key] ? thaiTypography(valuesTh[spec.key]) : undefined}
                 thaiLabel={labelTh !== undefined && labelTh !== spec.label}
                 unverifiedLabel={dict.product.unverifiedBadge}
                 unverifiedTitle={dict.product.unverifiedTooltip}

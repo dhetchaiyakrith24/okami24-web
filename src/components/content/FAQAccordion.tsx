@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { thaiTypography } from "@/lib/thai-typography";
 import { FAQ_COPY_TH, FAQ_COPY_ZH } from "@/i18n/faq-copy";
 import { ORDERING_FAQ_ID, ORDERING_ON_LINE_FAQ_ANSWER } from "@/data/faqs";
 import type { FAQAction } from "@/types/catalog";
@@ -51,11 +52,11 @@ export function FAQAccordion({ items, orderingEnabled = true }: { items: Item[];
   const overlay = locale === "th" ? FAQ_COPY_TH : locale === "zh" ? FAQ_COPY_ZH : undefined;
   const localizedItems = items.map((item) => ({
     ...item,
-    question: overlay?.[item.id]?.question ?? item.question,
+    question: locale === "th" ? thaiTypography(overlay?.[item.id]?.question ?? item.question) : (overlay?.[item.id]?.question ?? item.question),
     answer:
       !orderingEnabled && item.id === ORDERING_FAQ_ID
-        ? ORDERING_ON_LINE_FAQ_ANSWER[locale]
-        : (overlay?.[item.id]?.answer ?? item.answer),
+        ? (locale === "th" ? thaiTypography(ORDERING_ON_LINE_FAQ_ANSWER[locale]) : ORDERING_ON_LINE_FAQ_ANSWER[locale])
+        : (locale === "th" ? thaiTypography(overlay?.[item.id]?.answer ?? item.answer) : (overlay?.[item.id]?.answer ?? item.answer)),
   }));
 
   return (

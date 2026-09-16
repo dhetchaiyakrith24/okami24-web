@@ -114,7 +114,7 @@ export const brands: Brand[] = [
     description:
       "A vaping device manufacturer known for the FEELIN pod-system series (Feelin Mini, Feelin C1, and related kits) alongside disposables and platform accessories.",
     descriptionTh:
-      "NEVOKS ผู้ผลิตพอตซิสเต็มตระกูล FEELIN ที่ร้านตอนนี้มีหัวพอตเปล่าสำหรับ Feelin Mini",
+      "NEVOKS ผู้ผลิตพอตซิสเต็มตระกูล FEELIN ที่ร้านมีหัวพอตเปล่าสำหรับ Feelin Mini",
     referenceUrl: "https://nevoks.com/",
   },
   {

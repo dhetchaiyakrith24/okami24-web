@@ -2,8 +2,11 @@
 
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import type { Dictionary } from "@/i18n/dictionaries";
+import type { Guide } from "@/types/catalog";
 import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
 import { FLAVOR_COPY_TH, FLAVOR_COPY_ZH } from "@/i18n/flavor-copy";
+import { labelLang } from "@/lib/label-lang";
+import { thaiTypography } from "@/lib/thai-typography";
 
 /**
  * Round 30.3ข (owner, 2026-09-11) — the homepage sections are Server Components whose headings,
@@ -25,7 +28,27 @@ export function HomeText({ k, n }: { k: keyof Dictionary["home"]; n?: number }) 
 export function GuideText({ id, field, en }: { id: string; field: "title" | "dek"; en: string }) {
   const { locale } = useLocale();
   const overlay = locale === "th" ? GUIDES_COPY_TH[id] : locale === "zh" ? GUIDES_COPY_ZH[id] : undefined;
-  return <>{overlay?.[field] ?? en}</>;
+  return <>{locale === "th" && overlay?.[field] ? thaiTypography(overlay[field]) : (overlay?.[field] ?? en)}</>;
+}
+
+/** The teaser card's "01 · category" eyebrow — the same dictionary labels and lang switch
+ *  GuideCard uses on /guides, so the homepage card and the listing name the category alike
+ *  (closing round 30.4ค, owner 1.7g 2026-09-16: Thai, not the English slug). Renders the span
+ *  itself because its `lang` follows the label's script. */
+export function GuideCategoryLabel({ index, category, className }: { index: number; category: Guide["category"]; className: string }) {
+  const { dict } = useLocale();
+  const labels: Record<Guide["category"], string> = {
+    "getting-started": dict.guides.categoryGettingStarted,
+    "buying-guide": dict.guides.categoryBuyingGuide,
+    "how-it-works": dict.guides.categoryHowItWorks,
+    maintenance: dict.guides.categoryMaintenance,
+  };
+  const label = labels[category];
+  return (
+    <span className={className} lang={labelLang(label)}>
+      {String(index + 1).padStart(2, "0")} · {label}
+    </span>
+  );
 }
 
 /** A flavor family's name or first character note — the overlay ELiquidFamilyPageHeader uses. */
@@ -33,5 +56,6 @@ export function FlavorText({ id, field, en }: { id: string; field: "name" | "fir
   const { locale } = useLocale();
   const overlay = locale === "th" ? FLAVOR_COPY_TH[id] : locale === "zh" ? FLAVOR_COPY_ZH[id] : undefined;
   if (!overlay) return <>{en}</>;
-  return <>{field === "name" ? overlay.name : (overlay.characterNotes[0] ?? en)}</>;
+  const text = field === "name" ? overlay.name : (overlay.characterNotes[0] ?? en);
+  return <>{locale === "th" ? thaiTypography(text) : text}</>;
 }

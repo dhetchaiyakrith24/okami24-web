@@ -168,7 +168,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   "caliburn-g4-pro": {
     whoIsThisFor: {
       0: "ชอบจอทัชใหญ่ ๆ กดปรับอะไรบนจอก็ง่าย ไม่ต้องเพ่ง",
-      1: "ละเอียดเรื่องช่องลม อยากหมุนหาจุดที่ใช่ของตัวเอง ไม่ใช่เลือกได้แค่ตามขั้นที่เครื่องกำหนด",
+      1: "ละเอียดเรื่องช่องลม อยากหมุนหาจุดที่ใช่ของตัวเอง มากกว่าจะเลือกได้แค่ตามขั้นที่เครื่องกำหนด",
     },
     specifications: {
       battery: "1800mAh ในตัว",
@@ -263,7 +263,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       pod: "3mL (หัว 0.4Ω) / 2.5mL (หัว 0.9Ω) มีให้ทั้งสองหัวในกล่อง",
       airflow: "ปรับได้ทุกระดับ",
     },
-    tagline: "จอ LCD โอบรอบด้านข้าง รุ่นแรกในตระกูล Caliburn",
+    tagline: "Caliburn รุ่นแรกที่จอ LCD โอบรอบด้านข้าง",
     shortDescription:
       "พอตแบตเตอรี่ 1000mAh สูงสุด 35 วัตต์ พร้อมจอ LCD ที่โอบรอบด้านข้างตัวเครื่อง ปรับช่องลมได้ทุกระดับ และในกล่องมีหัวพอตให้ 2 ตัว คนละโอห์ม",
     features: {
@@ -302,7 +302,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
         answer: "VOOPOO ระบุว่าประมาณ 5 วันเมื่อใช้งานปกติ ของจริงขึ้นอยู่กับว่าสูบกี่วัตต์ เปิดจอบ่อยแค่ไหน และสูบถี่แค่ไหน",
       },
       "argus-g4-pods": {
-        question: "เครื่องเดียวใช้หัวพอตคนละโอห์มได้ไหม",
+        question: "สลับหัวพอตคนละโอห์มได้ไหม",
         answer: "ได้ หัวพอต ARGUS แบบเติมด้านบนเป็นทรงเดียวกันทุกหัว ต่างกันแค่โอห์มในช่วง 0.4–3.0 โอห์ม ใส่สลับกันบนเครื่องเดิมได้เลย",
       },
     },
@@ -344,7 +344,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "1650mAh ในตัว",
       pod: "ARGUS แบบเติมด้านบน",
     },
-    tagline: "แบตเตอรี่เท่า G4 วัตต์ลดลง ตัวเครื่องเล็กลง",
+    tagline: "แบตเตอรี่เท่า G4 ในตัวเครื่องที่เล็กลง วัตต์ลดเหลือ 30 วัตต์",
     shortDescription: "ARGUS G4 ในตัวเครื่องที่เล็กลง แบตเตอรี่ 1650mAh เท่าเดิม วัตต์สูงสุดลดจาก 35 วัตต์ เหลือ 30 วัตต์",
     features: {
       "same-battery-smaller-shell": {
@@ -362,7 +362,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       screen: "จอทัชเต็มจอ TFT HD 2.01 นิ้ว",
       pod: "ARGUS แบบเติมด้านบน",
     },
-    tagline: "จอทัชเต็มจอ TFT HD 2.01 นิ้ว บนพอตคิทสาย ARGUS",
+    tagline: "จอทัชเต็มจอ TFT HD 2.01 นิ้ว บนพอตคิทสาย ARGUS ของ VOOPOO",
     shortDescription: "พอตคิทแบตเตอรี่ 1500mAh 5–30 วัตต์ จอทัช TFT HD 2.01 นิ้ว กดเลือกเมนูและโหมดบนจอได้เลย",
     features: {
       "full-touch": {
@@ -405,7 +405,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     whoIsThisFor: {
       0: "คนที่สูบวัตต์สูงและใช้ box mod มาก่อน อยากได้แบตในตัวก้อนใหญ่ มากกว่าเครื่องที่ต้องถอดเปลี่ยนถ่าน",
-      1: "อยากมีโหมด RBA และ TC-TCR ติดเครื่องไว้ด้วย ไม่ใช่ปรับวัตต์ได้อย่างเดียว",
+      1: "อยากมีโหมด RBA และ TC-TCR ติดเครื่องไว้ด้วย มากกว่าแค่ปรับวัตต์อย่างเดียว",
     },
     specifications: {
       battery: "4400mAh ในตัว (ถ่าน 2200mAh สองก้อน)",
@@ -414,7 +414,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       control: "ล้อปรับวัตต์ละเอียด และเซ็นเซอร์แตะที่ปุ่มยิงไว้ปลดล็อก",
       pod: "หัวพอตสาย DRAG (เปลี่ยนคอยล์ได้)",
     },
-    tagline: "220 วัตต์ ชิป GENE.TT 3.0 และล้อปรับวัตต์ละเอียด",
+    tagline: "220 วัตต์ ชิป GENE.TT 3.0 ปรับวัตต์ละเอียดด้วยล้อหมุน",
     shortDescription:
       "รุ่นเรือธงล่าสุดของสาย DRAG: แบตเตอรี่ในตัว 4400mAh (ถ่าน 2200mAh สองก้อน) สูงสุด 220 วัตต์ จอ TFT ขนาด 1.66 นิ้ว และปุ่มยิงมีเซ็นเซอร์แตะไว้ปลดล็อกเครื่อง",
     features: {
@@ -439,11 +439,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       charging: "USB-C 5V/2A",
     },
     tagline: "แบตเตอรี่ในตัว 3000mAh สูงสุด 60 วัตต์",
-    shortDescription: "DRAG รุ่นแบตเตอรี่ในตัว: 3000mAh 5–60 วัตต์ จอ TFT ขนาด 0.96 นิ้ว และชาร์จเร็วผ่าน USB-C",
+    shortDescription: "DRAG รุ่นแบตเตอรี่ในตัว: 3000mAh 5–60 วัตต์ จอ TFT ขนาด 0.96 นิ้ว และชาร์จผ่าน USB-C",
     features: {
       "built-in-3000": {
         title: "แบตในตัว ไม่ต้องซื้อถ่านแยก",
-        description: "แบตเตอรี่ 3000mAh อยู่ในตัวเครื่อง ไม่ต้องถอดเปลี่ยนถ่าน ชาร์จเร็ว",
+        description: "แบตเตอรี่ 3000mAh อยู่ในตัวเครื่อง ชาร์จผ่าน USB-C ตัดเรื่องถอดเปลี่ยนถ่านไปเลย",
       },
     },
   },
@@ -456,7 +456,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     whoIsThisFor: {
       0: "ถนัดใช้ถ่านถอดเปลี่ยนมากกว่าแบตในตัว ถ่านเสื่อมก็เปลี่ยนก้อนใหม่ ไม่ต้องเปลี่ยนเครื่อง",
-      1: "อยากได้เครื่องที่ไปถึง 80 วัตต์ และคุมทุกอย่างจากจอทัชได้",
+      1: "อยากคุมทุกอย่างจากจอทัช ในเครื่องที่ไปถึง 80 วัตต์",
     },
     specifications: {
       battery: "ถ่าน 18650 หรือ 21700 ก้อนเดียว (ไม่รวมในกล่อง)",
@@ -464,7 +464,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       materials: "ซิงค์อัลลอย หนัง",
     },
     tagline: "80 วัตต์ บนถ่านถอดเปลี่ยนได้ 18650/21700",
-    shortDescription: "DRAG รุ่นใช้แบตเตอรี่ภายนอกก้อนเดียว (18650 หรือ 21700 ไม่รวมในกล่อง) สูงสุด 80 วัตต์ พร้อมจอทัชสกรีน 1.66 นิ้ว",
+    shortDescription: "DRAG รุ่นใช้ถ่านก้อนเดียว (18650 หรือ 21700 ซื้อแยก) สูงสุด 80 วัตต์ พร้อมจอทัชสกรีน 1.66 นิ้ว",
     features: {
       "external-cell": {
         title: "ถอดเปลี่ยนถ่าน 18650/21700 ได้",
@@ -487,12 +487,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       fill: "เติมด้านบน",
       materials: "อะลูมิเนียมอัลลอยและ PC",
     },
-    tagline: "40 วัตต์ เติมน้ำยาด้านบนได้โดยไม่ต้องถอดหัวพอต",
+    tagline: "40 วัตต์ หัวพอตเติมด้านบน",
     shortDescription: "พอตคิทแบตเตอรี่ 2000mAh 5–40 วัตต์ หัวพอตเติมด้านบนความจุ 4.5mL (2mL ตามมาตรฐาน TPD) ช่วง 0.3–3.0 โอห์ม",
     features: {
       "topside-fill": {
         title: "หัวพอตเติมด้านบน",
-        description: "เติมน้ำยาจากด้านบนของหัวพอตได้ทั้งที่ยังเสียบอยู่กับเครื่อง ไม่ต้องดึงออกทุกครั้งที่เติม",
+        description: "หัวพอตเสียบคาเครื่องอยู่ก็เติมน้ำยาจากด้านบนได้เลย",
       },
     },
   },
@@ -510,7 +510,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     features: {
       "slim-body": {
         title: "ตัวเครื่องอะลูมิเนียมอัลลอย บาง 15.1mm",
-        description: "15.1mm คือความหนาของตัวเครื่อง พกใส่กระเป๋ากางเกงสบาย ไม่เกะกะ",
+        description: "15.1mm คือความหนาของตัวเครื่อง พกใส่กระเป๋ากางเกงได้สบาย",
       },
     },
   },
@@ -526,7 +526,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       },
     },
     whoIsThisFor: {
-      0: "อยากสลับโหมดวัตต์ได้ (Eco / Soft / Boost) แต่ยังไม่อยากขยับไปใช้พอตซิสเต็ม",
+      0: "ยังสูบพอตใช้แล้วทิ้งอยู่ แต่อยากสลับโหมดวัตต์ได้ด้วย (Eco / Soft / Boost)",
       1: "คนที่อยากได้พอตใช้แล้วทิ้งแบบชาร์จซ้ำได้ ไม่ใช่แบบแบตหมดแล้วจบ",
     },
     specifications: {
@@ -542,7 +542,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     features: {
       "three-modes": {
         title: "สลับได้ 3 โหมดวัตต์",
-        description: "Eco Soft และ Boost กดสองครั้งเพื่อสลับโหมด ไม่ต้องเข้าเมนู ความแรงเปลี่ยนทันที",
+        description: "Eco Soft และ Boost กดสองครั้งติดกันก็สลับโหมดได้เลย ความแรงเปลี่ยนทันที",
       },
       "rgb-indicator": {
         title: "ไฟ RGB บอกโหมด",
@@ -586,13 +586,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "—",
       capacity: "—",
     },
-    tagline: "M Bar รุ่นพัฟเยอะสุดของตระกูล ชาร์จซ้ำได้",
+    tagline: "M Bar รุ่นพัฟเยอะสุดของตระกูล ชาร์จซ้ำได้ผ่าน USB-C",
     shortDescription:
       "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 15,000 พัฟ คอยล์ cotton mesh ชาร์จเร็วผ่าน USB-C มี 15 รส",
     features: {
       "highest-puff": {
         title: "15,000 พัฟ มากที่สุดในตระกูล M Bar",
-        description: "อยู่เหนือ M Bar 9K และ 10K ในสายเดียวกัน เป็นรุ่นที่ SALTHUB ระบุจำนวนพัฟไว้มากที่สุด จึงใช้ได้นานที่สุดในตระกูลนี้",
+        description: "อยู่เหนือ M Bar 9K และ 10K ในสายเดียวกัน ตามจำนวนพัฟที่ SALTHUB ระบุไว้",
       },
     },
   },
@@ -611,13 +611,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       format: "ตัวเครื่องใช้ซ้ำได้ เปลี่ยนแค่หัวพอตบรรจุสำเร็จ",
       battery: "—",
     },
-    tagline: "ตัวเครื่องใช้ซ้ำได้ หัวพอตบรรจุสำเร็จ ไม่ต้องเติมเอง",
+    tagline: "ตัวเครื่องใช้ซ้ำได้ หัวพอตบรรจุสำเร็จ",
     shortDescription:
       "ตัวเครื่องใช้ซ้ำได้ จับคู่กับหัวพอต M Switch Pod บรรจุสำเร็จ รองรับสูงสุด 15,000 พัฟต่อหัวพอต เก็บตัวเครื่องไว้ชาร์จใช้ต่อ แล้วเปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา",
     features: {
       "keep-the-body": {
         title: "เก็บเครื่องไว้ เปลี่ยนแค่หัวพอต",
-        description: "น้ำยาหมดแล้วไม่ต้องทิ้งทั้งเครื่องเหมือนพอตใช้แล้วทิ้ง ถอดหัวพอต M Switch Pod ที่หมดออก ใส่หัวใหม่ ตัวเครื่องชาร์จแล้วใช้ต่อได้",
+        description: "น้ำยาหมดก็ทิ้งแค่หัวพอต M Switch Pod ใส่หัวใหม่แล้วใช้ต่อได้เลย ตัวเครื่องเก็บไว้ชาร์จใช้ซ้ำ",
       },
     },
   },
@@ -633,7 +633,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "m-bar-pod": {
     whoIsThisFor: {
-      0: "คนที่มีเครื่องใช้ซ้ำที่รองรับ M Bar อยู่แล้ว มาซื้อหัวพอตเพิ่ม",
+      0: "คนที่มีเครื่องใช้ซ้ำที่รองรับ M Bar อยู่แล้ว มาซื้อหัวพอตเพิ่มหรือเปลี่ยนรส",
     },
     specifications: {
       flavors: "กว่า 15 รส",
@@ -644,7 +644,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "zero-pro": {
     whoIsThisFor: {
-      0: "อยากได้เครื่องระบบสวิตช์ที่เลือกโหมดวัตต์ได้ ไม่ใช่วัตต์ค่าเดียว",
+      0: "อยากได้เครื่องระบบสวิตช์ที่เลือกโหมดวัตต์ได้เอง แทนแบบที่ล็อกวัตต์ไว้ค่าเดียว",
     },
     specifications: {
       "puffs-per-pod": "สูงสุด 5,000",
@@ -667,7 +667,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       format: "ตัวเครื่องใช้ซ้ำได้ขนาดเล็ก ใช้ Zero Cartridge",
     },
-    tagline: "เครื่องระบบสวิตช์สาย Zero ตัวเล็ก แบตเตอรี่ 500mAh",
+    tagline: "เครื่องระบบสวิตช์สาย Zero ตัวเล็ก แบตเตอรี่ 500mAh ในตัว",
     shortDescription: "อุปกรณ์ใช้ซ้ำได้ตัวเล็ก แบตเตอรี่ 500mAh ใช้ระบบหัวพอต Zero เดียวกับ Zero Pro",
     features: {
       "smallest-zero": {
@@ -723,9 +723,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       nicotine: "3% salt nic",
       coil: "mesh 1.0Ω",
     },
-    tagline: "พอตใช้แล้วทิ้ง Joiway รุ่นจริง ยืนยันจากร้านค้าอิสระ",
+    tagline: "พอตใช้แล้วทิ้ง Joiway รุ่นจริง ร้านค้าอิสระยืนยันตรงกัน",
     shortDescription:
-      "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Joiway รองรับสูงสุด 12,000 พัฟ สเปกตรงกันจากร้านค้าอิสระกว่า 10 ร้าน แต่ยังไม่ได้ยืนยันจากเว็บทางการของ Joiway เอง",
+      "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Joiway รองรับสูงสุด 12,000 พัฟ สเปกตรงกันจากร้านค้าอิสระกว่า 10 ร้าน ส่วนเว็บทางการของ Joiway เรายังรอยืนยันอยู่",
   },
   "joiway-f4": {
     whoIsThisFor: {
@@ -745,7 +745,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     features: {
       "dual-flavor": {
         title: "สลับได้ 2 รส",
-        description: "น้ำยา 2 รสอยู่ในเครื่องเดียว สลับใช้ได้ทั้งสองรส ไม่ต้องเลือกรสเดียวต่อเครื่อง",
+        description: "น้ำยา 2 รสอยู่ในเครื่องเดียว สลับใช้ได้ทั้งสองรส เบื่อรสไหนก็สลับไปอีกรสได้ทันที",
       },
     },
   },
@@ -774,7 +774,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "muro-3ml": {
     whoIsThisFor: {
-      0: "มีเครื่องที่ใส่หัวพอต Muro 3ML ได้อยู่แล้ว ถ้าไม่แน่ใจว่าเครื่องตัวเองใช้ได้ไหม ทักไลน์ @okm24 ถามก่อนได้",
+      0: "มีเครื่องที่ใส่หัวพอต Muro 3ML ได้อยู่แล้ว ส่วนเครื่องตัวเองใช้ได้ไหม ถามก่อนได้ทางไลน์ @okm24",
     },
     tagline: "หัวพอตบรรจุน้ำยาสำเร็จ 3mL",
     shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 3mL ของ Muro ตอนนี้มีให้เลือก 10 รส",

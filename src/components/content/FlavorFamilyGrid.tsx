@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Citrus, Snowflake, Cookie, Coffee, Leaf } from "lucide-react";
 import type { FlavorFamily } from "@/types/catalog";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { thaiTypography } from "@/lib/thai-typography";
 import { FLAVOR_COPY_TH, FLAVOR_COPY_ZH } from "@/i18n/flavor-copy";
 
 const ICONS = {
@@ -35,8 +36,8 @@ export function FlavorFamilyGrid({ families }: { families: FlavorFamily[] }) {
           >
             <Icon size={24} className="text-steel group-hover:text-ember" aria-hidden />
             <div>
-              <h2 className="font-display text-xl font-semibold text-foreground">{overlay?.name ?? family.name}</h2>
-              <p className="mt-2 text-sm text-foreground-muted">{overlay?.description ?? family.description}</p>
+              <h2 className="font-display text-xl font-semibold text-foreground">{locale === "th" && overlay?.name ? thaiTypography(overlay.name) : (overlay?.name ?? family.name)}</h2>
+              <p className="mt-2 text-sm text-foreground-muted">{locale === "th" && overlay?.description ? thaiTypography(overlay.description) : (overlay?.description ?? family.description)}</p>
             </div>
           </Link>
         );

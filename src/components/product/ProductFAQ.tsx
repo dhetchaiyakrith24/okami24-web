@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FAQAccordion } from "@/components/content/FAQAccordion";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
+import { thaiTypography } from "@/lib/thai-typography";
 
 export function ProductFAQ({ slug, faqs }: { slug: string; faqs: FAQItem[] }) {
   const { dict, locale } = useLocale();
@@ -15,7 +16,7 @@ export function ProductFAQ({ slug, faqs }: { slug: string; faqs: FAQItem[] }) {
   // English text. FAQAccordion's site-FAQ overlay (faq-copy.ts) uses disjoint ids, so it leaves
   // these alone. Markup unchanged.
   const overlay = locale === "th" ? PRODUCT_COPY_TH[slug]?.faqs : undefined;
-  const items = overlay ? faqs.map((f) => ({ ...f, question: overlay[f.id]?.question ?? f.question, answer: overlay[f.id]?.answer ?? f.answer })) : faqs;
+  const items = overlay ? faqs.map((f) => ({ ...f, question: overlay[f.id]?.question ? thaiTypography(overlay[f.id].question) : f.question, answer: overlay[f.id]?.answer ? thaiTypography(overlay[f.id].answer) : f.answer })) : faqs;
 
   return (
     <section className="border-b border-surface-border-soft bg-surface-1 py-14 lg:py-20">
