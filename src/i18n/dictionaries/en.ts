@@ -84,7 +84,6 @@ export const en: Dictionary = {
     viewAll: "View all →",
   },
   search: {
-    eyebrow: "Search",
     title: "Find a product",
     placeholder: "Search products, brands, families, features…",
     prompt: "Start typing to search the catalog.",

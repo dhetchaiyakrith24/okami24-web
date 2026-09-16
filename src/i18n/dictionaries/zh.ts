@@ -78,7 +78,6 @@ export const zh: Dictionary = {
     viewAll: "查看全部 →",
   },
   search: {
-    eyebrow: "搜索",
     title: "查找产品",
     placeholder: "搜索产品、品牌、系列或功能…",
     prompt: "输入关键词以搜索产品目录。",
@@ -176,7 +175,7 @@ export const zh: Dictionary = {
     fitsDevicesTitle: "适配以下设备",
     verifiedCompatibilityNote: "以下每一条均已对照厂商或零售商来源核实。",
     whoIsThisForTitle: "适合谁使用？",
-    faqEyebrow: "常见问题",
+    faqEyebrow: "问答",
     faqTitle: "关于该设备的常见问题。",
     relatedEyebrow: "相关推荐",
     relatedTitle: "你可能还会喜欢。",
