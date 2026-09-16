@@ -2,7 +2,7 @@
 
 สร้างเมื่อ: 2026-09-16 · แก้ 2026-09-17 (**ฉบับที่ 25.1** — รอบ 30.4ข ก้อน 1–2 live · กติกา context ใหม่ · ก้อน 3 ตัดสินแล้ว = เกลาของเดิม · ฉบับก่อนเก็บที่ `docs/HANDOFF.2026-09-16-v24.md`)
 
-อ้างอิงจาก: branch `checkpoint/phase-3.3.3` HEAD **`7f47c52`** (+ไฟล์นี้) · `origin/main` **`4d6fc6d`** (PR #29 = ก้อน 2 · PR #28 = ก้อน 1) · branch นำหน้า main **1 commit** (`7f47c52` docs v25) · working tree: ว่าง (เหลือไฟล์นี้)
+อ้างอิงจาก: branch `checkpoint/phase-3.3.3` HEAD **`e014b8a`** (+docs ก้อน 3 = ไฟล์นี้ · THAI_STYLE · LAUNCH_AUDIT) · `origin/main` **`4d6fc6d`** (PR #29 = ก้อน 2 · PR #28 = ก้อน 1) · branch นำหน้า main = docs v25 `7f47c52` · docs v25.1 `b27933e` · **ก้อน 3: feat `f83b8f1` · copy `e014b8a` · docs** — push 2026-09-17 รอ Cowork merge · **§16 อัปเดตหลัง push ตามกติกา context ใหม่ (ส่วนอื่นของไฟล์ยังเป็นสถานะตอนเปิดก้อน 3 — ยึด §16 ก่อน)**
 
 **สิ่งที่ตรวจจริงตอนเขียน [ตรวจแล้วจริง]:** 2026-09-17 `git fetch` → `origin/main` = `4d6fc6d` (PR #29 merge แล้ว) · **[เจ้าของบอก]** Cowork ตรวจเว็บจริงหลัง PR #29: "1600mAh · สูงสุด 35 วัตต์" จอคอม + "แบต 2000mAh · สูงสุด 35 วัตต์" มือถือ ขึ้นครบ — ไม่ต้องยิงสคริปต์ตรวจซ้ำ · ของเดิม 2026-09-16: `git fetch` + `git status` + `git log` · เว็บจริงหลัง PR #28: `close-render-check.js --headings --base https://okami24.store` = 152/152 · คำห้าม 0/105 · `<title>` คู่มือ MTL/DTL = "MTL กับ DTL ต่างยังไง — OKami24" · build ท้ายสุด (`_incoming/30.4b/build-k2e.log`): tsc · eslint · i18n 16/16 · commerce 16/16 · 53/31 · verify:catalog --full 20/20 · raw-chars 0 · render 152/152 · typography 36/36 · head/JSON-LD 0 · en/zh หลัง hydration 0/0 ×8 · server 3412 ปิดแล้ว (netstat 0) · `_incoming/30.4b` 12 MB · `_incoming/30.4c` 265 MB · `.git` 32 MB
 
@@ -156,7 +156,7 @@ working tree ว่าง (เหลือไฟล์นี้) · main = `4d6f
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) แปลงจากเดโม NOVA VAPOR
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
-Branch: checkpoint/phase-3.3.3 HEAD 7f47c52 (+docs v25.1) · origin/main 4d6fc6d (PR #29 = 30.4ข ก้อน 2 live · PR #28 = ก้อน 1) · branch นำหน้า main = docs เท่านั้น
+Branch: checkpoint/phase-3.3.3 HEAD = docs ก้อน 3 (ต่อจาก e014b8a copy · f83b8f1 feat · b27933e docs v25.1 · 7f47c52 docs v25) · origin/main 4d6fc6d (PR #29 = 30.4ข ก้อน 2 live · PR #28 = ก้อน 1) · branch นำหน้า main = ก้อน 3 (feat + copy + docs ×3) push แล้ว 2026-09-17 รอ Cowork merge
   Cowork merge + deploy โดยไม่บอกในแชท → git fetch ก่อนสรุปสถานะเสมอ · ห้าม merge เอง
 อ่านก่อน (กฎ 13.9): ~/.claude/CLAUDE.md หมวด 13 → CLAUDE.md โปรเจกต์ → docs/HANDOFF.md ฉบับ 25.1 (ข้อขัดแย้ง 1–10 · 4 · 5.1 · 8.0)
   → docs/THAI_STYLE.md (§3 คำล็อก · §5 กลุ่ม ก · §6 typography · §7 ท้ายไฟล์ "รอบ 30.4ข ก้อน 1" + "ก้อน 2")
@@ -165,7 +165,9 @@ Branch: checkpoint/phase-3.3.3 HEAD 7f47c52 (+docs v25.1) · origin/main 4d6fc6d
 
 สถานะ: รอบ 30.4ข = เพิ่มของใหม่ลงหน้า + ของค้างปิดรอบ · ทุกก้อน ชั้น B
   ก้อน 1 live (หัวข้อ K1–K3 · H2 max-width · /compare ตัวบอกเลื่อน + หัวแถว 12px ≥lg) · ก้อน 2 live (บรรทัดสเปกจาก verified เท่านั้น 38/53 · "แบต 1600mAh · สูงสุด 35 วัตต์" · มือถือ ชื่อ→สเปก→ราคา · การ์ด PM ไม่มีชื่อหมวด · Cowork ตรวจเว็บจริงแล้ว)
-  กำลังทำ: ก้อน 3 คำนำหมวด = เกลาคำโปรยเดิม (เจ้าของตัดสิน 17/09 · ไม่เพิ่มย่อหน้า ไม่แตะโครง) — categories.ts descriptionTh (ใต้ H1 + meta description) · 2–3 ประโยค 120–160 ตัวอักษร · ข้ามน้ำยา · zh ใช้ en ตาม CategoryPageHeader เดิม · thai-copy ≤2 แบบ/หมวด → เจ้าของเคาะไทย → writer en → build → ถ่าย 390+1440 → designer → เจ้าของดูภาพ → checker → commit feat-intro → push
+  ก้อน 3 ตรวจผ่านตามเกณฑ์ + push แล้ว (รอ merge): เกลาคำโปรย 6 หมวด th+en (feat f83b8f1 · THAI_STYLE §7 "ก้อน 3") · กวาด "ไม่เผาไหม้"/"เปลี่ยนจากบุหรี่มวน" 3 ภาษา + brands.ts UWELL/JOIWAY/IQOS (copy e014b8a) · คำล็อกใหม่ "อุ่นยาสูบ" · ห้าม "ไม่เผาไหม้" ทุกภาษา · designer 10/10 หลังแก้ · checker รอบ 2 R1–R5 ผ่าน · verify:catalog 20/20 · ภาพ _incoming/30.4b/crops-k3 (sheet-390/1440.png) · เจ้าของเคาะทุกประโยคแล้ว 17/09
+  หลัง merge ยิงเว็บจริง: curl -s https://okami24.store/products/pod-systems | grep -c "เหมาะกับคนที่อยากเลือกน้ำยาเอง" (>0) · curl -s https://okami24.store/brands/iqos | grep -c "เผาไหม้" (0) · curl -s https://okami24.store/e-liquid/tobacco-style | grep -c "บุหรี่มวน" (0)
+  เครื่องมือก้อน 3 (_incoming/30.4b): k3-shots.js <before|after> [--only …] [--locale en|zh] (ครอปหัวหน้า + วัดบรรทัดจริง · ผลใน crops-k3/<tag>/index.md) · k3-variant.js <json> (ลองข้อความใหม่บนหน้าโดยไม่ build — ไทยต้องมาจากไฟล์ json ห้ามส่งทาง argv) · k3-sheets.js (ภาพรวม before/after) · k3-desc-len.ts · k3-category-facts.ts · brief: k3-thai-copy/writer/designer/checker-brief.md
   แล้ว: ก้อน 4 FAQ eyebrow ซ้ำ (ก "FAQ" / ข "ถาม-ตอบ") → ก้อน 5 แถบความมั่นใจ (designer 2 แบบ · เฉพาะที่จริงวันนี้ ห้ามส่งฟรี/รับประกัน/จ่ายผ่าน) → ก้อน 6 ข้อเสนอ designer 30.4ก → ปิดรอบ (sticky หัวแถว /compare เจ้าของสั่ง + wordbreak-scan หน้าที่แตะ + designer + commit เดียว)
   เจ้าของตัดสินแล้ว ห้ามถามซ้ำ: ตะกร้าปิด (ข้อ 43) → ไลน์ @okm24 · น้ำยา 0 ข้าม · หน้าบริการไม่แตะ (ข้อ 49) · งานรูปพัก · M1b ปิด · CategoryLabel NBSP en/zh คงไว้ · ยังไม่ผูก "พอตใช้แล้วทิ้ง/พอตซิสเต็ม" ใน thai-typography · 6 ตัวการ์ดแถวว่าง (สเปกไม่ verified) รับได้ → รอบข้อมูล · ภาพ _incoming/30.4c 265 MB ยังไม่ลบ · 2F 1600MAH mono ไม่แก้ · #31 #34 iPhone
   agent: thai-copy (ตาราง ก่อน→หลัง) · writer (en/zh) · checker 5 ช่อง · designer (ครอป+ตัวเลข ไม่มี Bash) · ใส่ข้อห้าม build/server/taskkill/Chrome/แก้ไฟล์ ในคำสั่งทุกตัว
@@ -193,5 +195,5 @@ Git: commit แยกชนิด (feat/fix/copy/data/docs) · git commit -F <�
 ## สิ่งแรกที่แชทใหม่ควรทำ
 
 1. **`git fetch` + `git status` + `git log -5 --oneline`** แล้วเทียบกับไฟล์นี้ — ถ้าไม่ตรงให้เชื่อ repo · ถ้า origin/checkpoint ยังไม่มี commit ล่าสุดของไฟล์นี้ = push ไม่สำเร็จ → push ก่อน
-2. ก้อน 3 ทำต่อจากจุดที่ §16 บรรทัด "กำลังทำ" บอก (ถ้า `categories.ts` ยังไม่เปลี่ยน = ยังไม่ผ่านเจ้าของเคาะไทย → dispatch thai-copy ใหม่)
+2. ก้อน 3 จบแล้ว (push 2026-09-17) → ถ้า main ขยับเกิน `4d6fc6d` = merge แล้ว → ยิงเว็บจริง 3 คำสั่งใน §16 → เปิดก้อน 4 (FAQ eyebrow ซ้ำ — นับจุดที่ eyebrow+H2 ซ้ำก่อน แล้วเสนอ ก "FAQ" / ข "ถาม-ตอบ")
 3. ทำตามลำดับ §5.1 ข้อ 3 · ถ่าย before ก่อน build · ห้ามถ่ายทั้งเว็บก่อนสแกน · ห้ามเพิ่ม joiner/NBSP นอกรายการ
