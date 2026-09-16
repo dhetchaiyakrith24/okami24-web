@@ -10,6 +10,8 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import { pilotTagline } from "@/i18n/product-copy-en";
 import { pilotAxisLabel } from "./axis-label";
 import { labelLang } from "@/lib/label-lang";
+import { CardHeadlineSpec } from "@/components/catalog/CardHeadlineSpec";
+import { headlineSpecsForPublished } from "@/lib/card-headline-spec";
 
 /**
  * Phase 3.0 — the storefront-native sibling of the isolated preview's `PreviewProductCard`.
@@ -31,6 +33,19 @@ import { labelLang } from "@/lib/label-lang";
 export function PilotProductCard({ product }: { product: StorefrontProductView }) {
   const { dict, locale } = useLocale();
   const sellingPrice = product.publicationStatus === "published" ? product.sellingPrice : null;
+  // Round 30.4ข batch 2 (owner 2026-09-16): the headline spec from VERIFIED spec rows (capacity /
+  // single resistance / battery by category — src/lib/card-headline-spec.ts) leads the bottom row;
+  // the option count stays ("4 ค่าโอห์ม" is itself the fact a coil buyer scans for). The category
+  // name that used to open this row is gone: on a category page it repeated the page title, the 35
+  // legacy cards never showed one, and "COILS & ACCESSORIES · 4 ค่าโอห์ม" wrapped to two lines
+  // beside one-line cards (designer ค, 2026-09-16; owner 2026-09-16). No spec and no options → the row stays empty
+  // at its height, like ProductCard.
+  const headline = headlineSpecsForPublished(product);
+  // "0.7 โอห์ม · 1 ค่าโอห์ม" says the same thing twice — a single-option resistance axis is
+  // already the headline, so the count is dropped only in that case.
+  const showOptionCount =
+    product.variants.length > 0 &&
+    !(product.variants.length === 1 && headline.some((s) => s.kind === "resistance"));
   return (
     <Link
       href={`/products/${product.slug}`}
@@ -65,14 +80,19 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
         {/* Round 30.3: ProductMaster copy is written in Thai, so the English/Chinese storefront used to
             show the Thai line here — pilotTagline() reads the English overlay when there is one. */}
         <p className="line-clamp-2 text-sm text-foreground-muted max-lg:hidden">{pilotTagline(product.slug, product.tagline, locale)}</p>
+        {/* Phone: the headline spec as one short line between the name and the price — same slot and
+            same order as ProductCard's (owner ข, 2026-09-16). */}
+        <p className="hidden min-h-[0.875rem] truncate text-[0.65rem] leading-[0.875rem] text-foreground-dim max-lg:block" data-card-spec-phone="published">
+          <CardHeadlineSpec specs={headline} compact />
+        </p>
         <p className="hidden min-h-[1.25rem] font-display text-[15px] font-bold leading-tight text-foreground max-lg:block">
           {sellingPrice !== null && sellingPrice !== undefined ? `฿${sellingPrice.toLocaleString("th-TH")}` : ""}
         </p>
-        <div className="mt-auto flex items-center gap-3 pt-3 text-xs text-foreground-dim max-lg:hidden">
-          <span className="label-mono" lang={labelLang(product.categoryName)}>{product.categoryName}</span>
-          {product.variants.length > 0 && (
+        <div className="mt-auto flex min-h-4 items-center gap-3 pt-3 text-xs text-foreground-dim max-lg:hidden" data-card-spec="published">
+          <CardHeadlineSpec specs={headline} />
+          {showOptionCount && (
             <>
-              <span aria-hidden>·</span>
+              {headline.length > 0 && <span aria-hidden>·</span>}
               <span className="label-mono">
                 {product.variants.length} {pilotAxisLabel(dict, product) ?? dict.pilot.variantFallback}
               </span>

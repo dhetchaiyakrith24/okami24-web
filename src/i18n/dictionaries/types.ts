@@ -108,6 +108,13 @@ export interface Dictionary {
      *  and formatPuffs() takes it as an argument so the Thai word can never leak into the
      *  English or Chinese page. */
     puffUnit: string;
+    /** Round 30.4ข batch 2 — the card's headline spec line (CardHeadlineSpec.tsx). Templates with
+     *  one placeholder each: {mah} = "1600mAh" · {w} = "35" · {ohm} = "0.7" · {ml} = "3mL". The
+     *  puff form reuses puffUnit through formatPuffs(). */
+    cardBattery: string;
+    cardMaxWatt: string;
+    cardResistance: string;
+    cardCapacity: string;
     emptyStateNote: string;
     searchLabel: string;
     searchPlaceholder: string;
