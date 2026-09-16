@@ -1,10 +1,10 @@
 # OKami24 — HANDOFF
 
-สร้างเมื่อ: 2026-09-16 (**ฉบับที่ 25** — รอบ 30.4ข ก้อน 1 live · ก้อน 2 ตรวจผ่านตามเกณฑ์ push แล้ว รอ Cowork merge · ฉบับก่อนเก็บที่ `docs/HANDOFF.2026-09-16-v24.md`)
+สร้างเมื่อ: 2026-09-16 · แก้ 2026-09-17 (**ฉบับที่ 25.1** — รอบ 30.4ข ก้อน 1–2 live · กติกา context ใหม่ · ก้อน 3 ตัดสินแล้ว = เกลาของเดิม · ฉบับก่อนเก็บที่ `docs/HANDOFF.2026-09-16-v24.md`)
 
-อ้างอิงจาก: branch `checkpoint/phase-3.3.3` HEAD **`e6bd374`** (+ไฟล์นี้) · `origin/main` **`de85914`** (PR #28 = ก้อน 1) · branch นำหน้า main **2 commit** (`dea2a1e` feat ก้อน 2 · `e6bd374` docs) · working tree: ว่าง (เหลือไฟล์นี้)
+อ้างอิงจาก: branch `checkpoint/phase-3.3.3` HEAD **`7f47c52`** (+ไฟล์นี้) · `origin/main` **`4d6fc6d`** (PR #29 = ก้อน 2 · PR #28 = ก้อน 1) · branch นำหน้า main **1 commit** (`7f47c52` docs v25) · working tree: ว่าง (เหลือไฟล์นี้)
 
-**สิ่งที่ตรวจจริงตอนเขียน [ตรวจแล้วจริง]:** `git fetch` + `git status` + `git log` · เว็บจริงหลัง PR #28: `close-render-check.js --headings --base https://okami24.store` = 152/152 · คำห้าม 0/105 · `<title>` คู่มือ MTL/DTL = "MTL กับ DTL ต่างยังไง — OKami24" · build ท้ายสุด (`_incoming/30.4b/build-k2e.log`): tsc · eslint · i18n 16/16 · commerce 16/16 · 53/31 · verify:catalog --full 20/20 · raw-chars 0 · render 152/152 · typography 36/36 · head/JSON-LD 0 · en/zh หลัง hydration 0/0 ×8 · server 3412 ปิดแล้ว (netstat 0) · `_incoming/30.4b` 12 MB · `_incoming/30.4c` 265 MB · `.git` 32 MB
+**สิ่งที่ตรวจจริงตอนเขียน [ตรวจแล้วจริง]:** 2026-09-17 `git fetch` → `origin/main` = `4d6fc6d` (PR #29 merge แล้ว) · **[เจ้าของบอก]** Cowork ตรวจเว็บจริงหลัง PR #29: "1600mAh · สูงสุด 35 วัตต์" จอคอม + "แบต 2000mAh · สูงสุด 35 วัตต์" มือถือ ขึ้นครบ — ไม่ต้องยิงสคริปต์ตรวจซ้ำ · ของเดิม 2026-09-16: `git fetch` + `git status` + `git log` · เว็บจริงหลัง PR #28: `close-render-check.js --headings --base https://okami24.store` = 152/152 · คำห้าม 0/105 · `<title>` คู่มือ MTL/DTL = "MTL กับ DTL ต่างยังไง — OKami24" · build ท้ายสุด (`_incoming/30.4b/build-k2e.log`): tsc · eslint · i18n 16/16 · commerce 16/16 · 53/31 · verify:catalog --full 20/20 · raw-chars 0 · render 152/152 · typography 36/36 · head/JSON-LD 0 · en/zh หลัง hydration 0/0 ×8 · server 3412 ปิดแล้ว (netstat 0) · `_incoming/30.4b` 12 MB · `_incoming/30.4c` 265 MB · `.git` 32 MB
 
 > **วิธีอ่าน:** ทุกข้อกำกับ **[ตรวจแล้วจริง]** / **[ผมเข้าใจว่า]** / **[เจ้าของบอก ยังไม่ได้ตรวจเอง]**
 > **"ตรวจผ่านตามเกณฑ์" ≠ "เจ้าของอนุมัติ"** — เขียนแยกเสมอ
@@ -36,10 +36,10 @@
 **[ตรวจแล้วจริง]**
 
 - **โปรเจกต์:** เว็บร้านพอต **OKami24** · Next.js 16 + TS + Tailwind v4 + SQLite · โฟลเดอร์ `C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3` · GitHub `github.com/dhetchaiyakrith24/okami24-web` (private)
-- **branch ทำงาน:** `checkpoint/phase-3.3.3` HEAD `e6bd374` (+ไฟล์นี้) · **live `main` = `de85914`** (PR #28 = 30.4ข ก้อน 1 · PR #27 = ปิดรอบ 30.4ค) · branch นำหน้า main 2 commit = **ก้อน 2 ตรวจผ่านตามเกณฑ์ (checker 5/5 + designer 1 รอบ) push แล้ว รอ Cowork merge**
-- **รอบ 30.4ข** (เพิ่มของใหม่ลงหน้า + ของค้างปิดรอบ): ก้อน 1 live · ก้อน 2 รอ merge · **ถัดไป ก้อน 3 คำนำหมวด** (§5.1) — 1 แชท 1 ก้อน
+- **branch ทำงาน:** `checkpoint/phase-3.3.3` HEAD `7f47c52` (+ไฟล์นี้) · **live `main` = `4d6fc6d`** (PR #29 = 30.4ข ก้อน 2 · PR #28 = ก้อน 1 · PR #27 = ปิดรอบ 30.4ค) · branch นำหน้า main 1 commit = docs v25 (จะตามไปกับ PR ถัดไป)
+- **รอบ 30.4ข** (เพิ่มของใหม่ลงหน้า + ของค้างปิดรอบ): ก้อน 1–2 live · **ถัดไป ก้อน 3 คำนำหมวด = เกลาคำโปรยเดิม** (§5.1 · เจ้าของตัดสิน 2026-09-17)
 - **การสั่งซื้อออนไลน์ปิดอยู่** (`OKAMI24_ORDERING=off` ข้อ 43) → ไลน์ `@okm24` · ห้ามเสนอเปิด · สินค้า 53 ซื้อได้ 31 · น้ำยา 0
-- **checkpoint/จุดกลับ:** ก่อน 30.4ข = `62ef152` (= main b273929 ก่อน PR #28) · จบก้อน 1 = `73d4f3b` (= main de85914) · **จบก้อน 2 = `dea2a1e` (โค้ด) / `e6bd374` (docs)**
+- **checkpoint/จุดกลับ:** ก่อน 30.4ข = `62ef152` (= main b273929 ก่อน PR #28) · จบก้อน 1 = `73d4f3b` (= main de85914) · **จบก้อน 2 = `dea2a1e` (โค้ด) / `e6bd374` (docs) (= main 4d6fc6d)**
 
 ---
 
@@ -48,7 +48,7 @@
 **[ตรวจแล้วจริง]** — ทั้งหมดใน v24 §2 (รอบ 30.4ค live ครบ) + รอบ 30.4ข:
 
 - **ก้อน 1 `6ded138` (live)** — 1.1 หัวข้อ 3 จุด: K1 "พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม" (H1 + title + การ์ดหน้าแรก/ /guides) · K2 "MTL กับ DTL ต่างยังไง" (H1 + title + การ์ด) · K3 "Direct-to-lung (DTL) และ RDL" (H2) — ไม่มีคำโดดที่ 390 แล้ว (วัดจุดตัดจริง `_incoming/30.4b/k1-heading-lines.txt`) · 1.2 `GuideTeaserGrid.tsx` ตัด `max-w-xl` · 1.3 `CompareTool.tsx` `ScrollHintFrame` — เงาจาง + ลูกศร › (lucide) โผล่เฉพาะตอนยังมีคอลัมน์ทางขวา (วัด scrollWidth) ตารางไม่แตะ · 1.4 หัวแถว /compare สี `text-foreground-muted` + `lg:text-xs` (12px จอ ≥lg · มือถือคง 0.65rem)
-- **ก้อน 2 `dea2a1e` (รอ merge)** — สเปกเด่น 1 บรรทัดบนการ์ดทุกที่ (rail หน้าแรก · หน้าหมวด/แบรนด์/ /products · สินค้าใกล้เคียง · ค้นหา · รายการโปรด · ตัวช่วยเลือก): `src/lib/card-headline-spec.ts` เลือกจากแถวสเปก **verified เท่านั้น** ตามกติกาต่อหมวด (THAI_STYLE §7 "ก้อน 2") · `CardHeadlineSpec.tsx` (client) ประกอบคำจาก dictionary `catalog.card*` 3 ภาษา · ไทยผ่าน `thaiTypography()` · จอคอม "แบต 1600mAh · สูงสุด 35 วัตต์" (แทน "1600MAH · 5–35W") · มือถือ "1600mAh · สูงสุด 35 วัตต์" ระหว่างชื่อกับราคา (ราคาปิดท้าย · 0.65rem · truncate · การ์ดสูงขึ้น 18px เท่ากันทุกใบ) · การ์ด PM ชื่อหมวดออกจากแถวล่าง เหลือ สเปก · N ตัวเลือก · 38/53 ตัวมีบรรทัด (`_incoming/30.4b/k2-headline-table.md`)
+- **ก้อน 2 `dea2a1e` (live · PR #29)** — สเปกเด่น 1 บรรทัดบนการ์ดทุกที่ (rail หน้าแรก · หน้าหมวด/แบรนด์/ /products · สินค้าใกล้เคียง · ค้นหา · รายการโปรด · ตัวช่วยเลือก): `src/lib/card-headline-spec.ts` เลือกจากแถวสเปก **verified เท่านั้น** ตามกติกาต่อหมวด (THAI_STYLE §7 "ก้อน 2") · `CardHeadlineSpec.tsx` (client) ประกอบคำจาก dictionary `catalog.card*` 3 ภาษา · ไทยผ่าน `thaiTypography()` · จอคอม "แบต 1600mAh · สูงสุด 35 วัตต์" (แทน "1600MAH · 5–35W") · มือถือ "1600mAh · สูงสุด 35 วัตต์" ระหว่างชื่อกับราคา (ราคาปิดท้าย · 0.65rem · truncate · การ์ดสูงขึ้น 18px เท่ากันทุกใบ) · การ์ด PM ชื่อหมวดออกจากแถวล่าง เหลือ สเปก · N ตัวเลือก · 38/53 ตัวมีบรรทัด (`_incoming/30.4b/k2-headline-table.md`)
 - **docs `73d4f3b` `e6bd374`** — THAI_STYLE §7 สองหัวข้อใหม่ · LAUNCH_AUDIT หัว · MOBILE_SPEC 3.6
 
 ---
@@ -58,10 +58,10 @@
 | ก้อน | commit | ผลตรวจ | สถานะ |
 |---|---|---|---|
 | 1 เก็บของค้าง | `6ded138` + docs `73d4f3b` | designer ก/ข/ข · checker 4/4 · render 152/152 · wordbreak 6 หน้า หาย 4 ใหม่ 0 · verify:catalog 20/20 | **live** (PR #28 · เว็บจริง 152/152) |
-| 2 สเปกเด่นการ์ด | `dea2a1e` + docs `e6bd374` | thai-copy + writer ตรวจคำ · designer 1 รอบ (จอคอม ก · มือถือ ข · PM ค → แก้) · checker 5/5 · render 152/152 · typography 36/36 · en/zh 0/0 ×8 · wordbreak 8 หน้า บรรทัดสเปกถูกธง 0 · overflow 0 ทุกการ์ด · verify:catalog 20/20 | push แล้ว **รอ Cowork merge** |
-| docs | ฉบับนี้ | — | — |
+| 2 สเปกเด่นการ์ด | `dea2a1e` + docs `e6bd374` | thai-copy + writer ตรวจคำ · designer 1 รอบ (จอคอม ก · มือถือ ข · PM ค → แก้) · checker 5/5 · render 152/152 · typography 36/36 · en/zh 0/0 ×8 · wordbreak 8 หน้า บรรทัดสเปกถูกธง 0 · overflow 0 ทุกการ์ด · verify:catalog 20/20 | **live** (PR #29 · Cowork ตรวจเว็บจริงแล้ว [เจ้าของบอก]) |
+| docs | `7f47c52` (v25) + ฉบับนี้ | — | — |
 
-**คำตัดสินเจ้าของในเซสชันนี้ [เจ้าของบอก]:** หัวข้อ K1 ก · K2 ข · K3 ก · 1.4 ข (12px ≥lg) · sticky หัวแถว /compare = **ทำตอนปิดรอบ 30.4ข** · ผูก "พอตใช้แล้วทิ้ง/พอตซิสเต็ม" ใน thai-typography = **ยังไม่** · ก้อน 2: กติกาตาราง = ใช่ · 6 ตัวแถวว่าง = ยอม · มือถือ ข ชื่อ→สเปก→ราคา · คำ ข "แบต" · ก้อน 3 ไปแชทใหม่
+**คำตัดสินเจ้าของในเซสชันนี้ [เจ้าของบอก]:** หัวข้อ K1 ก · K2 ข · K3 ก · 1.4 ข (12px ≥lg) · sticky หัวแถว /compare = **ทำตอนปิดรอบ 30.4ข** · ผูก "พอตใช้แล้วทิ้ง/พอตซิสเต็ม" ใน thai-typography = **ยังไม่** · ก้อน 2: กติกาตาราง = ใช่ · 6 ตัวแถวว่าง = ยอม · มือถือ ข ชื่อ→สเปก→ราคา · คำ ข "แบต" · ก้อน 3 ไปแชทใหม่ · **2026-09-17: ก้อน 3 = เกลาคำโปรยเดิม ไม่เพิ่มย่อหน้าใหม่** (เหตุผล: `descriptionTh` เป็น meta description ด้วย — เพิ่มย่อหน้าใหม่ใต้ของเดิมจะซ้ำซ้อนติดกัน · เกลาให้ได้ 2–3 ประโยค 120–160 ตัวอักษร ใช้เป็นทั้ง meta และข้อความบนหน้าเหมือนเดิม · ไม่แตะโครง · รอบ SEO ค่อยแยก meta ถ้าจำเป็น) · **กติกา context ใหม่** (ดู 8.0 ข้อ 5)
 
 ---
 
@@ -82,8 +82,8 @@
 
 ### 5.1 รอบ 30.4ข — ลำดับก้อนตามไฟล์เจ้าของ (2026-09-16) · ทุกก้อน = ชั้น B
 1. ~~ก้อน 1 เก็บของค้าง~~ live
-2. ~~ก้อน 2 สเปกเด่นบนการ์ด~~ รอ merge
-3. **ก้อน 3 คำนำหมวด** — หน้าหมวด พอตซิสเต็ม · พอตใช้แล้วทิ้ง · หัวพอต/คอยล์ · IQOS/HNB (**ข้ามน้ำยา**) · 2–3 ประโยคใต้ H1: หมวดนี้คืออะไร เหมาะกับใคร ในร้านมีแบรนด์อะไร (เฉพาะที่มีจริง) · ไม่มีตัวเลขยอดขาย/จำนวนรุ่นที่จะเก่า · thai-copy ≤2 แบบ/หมวด → เจ้าของเคาะไทย → writer แปล en/zh · คีย์เวิร์ดธรรมชาติ ไม่ยัด · ถ่าย 4 หน้า × 2 จอ → designer → เจ้าของเคาะข้อความ + ดูภาพ → commit feat-intro · **หมายเหตุจากก้อน 2:** หน้าหมวดมีคำโปรยใต้ H1 อยู่แล้ว (`categories.ts` ฟิลด์ `descriptionTh` ผ่าน `CategoryPageHeader` — ใช้เป็น meta description ด้วย · เช่น พอตซิสเต็ม "พอตซิสเต็มคือพอตที่เติมน้ำยาเอง เปลี่ยนหัวพอตได้…ตอนนี้มีตระกูล Caliburn ของ UWELL…") → **นับก่อนว่า "คำนำหมวด" ของเจ้าของคือของใหม่ที่เพิ่ม หรือคือการเกลาคำโปรยเดิมให้ครบ 4 หมวด** — ถามเจ้าของ 1 ครั้งก่อนเริ่ม (13.1)
+2. ~~ก้อน 2 สเปกเด่นบนการ์ด~~ live (PR #29)
+3. **ก้อน 3 คำนำหมวด = เกลาคำโปรยเดิม (เจ้าของตัดสิน 2026-09-17)** — หน้าหมวด พอตซิสเต็ม · พอตใช้แล้วทิ้ง · หัวพอต/คอยล์ · IQOS/HNB (**ข้ามน้ำยา**) · ของเดิม = `categories.ts` ฟิลด์ `descriptionTh` (แสดงใต้ H1 ผ่าน `CategoryPageHeader` และเป็น meta description ด้วย) → **เกลาให้ได้ 2–3 ประโยค ยาว 120–160 ตัวอักษร** ใช้เป็นทั้ง meta และข้อความบนหน้าเหมือนเดิม · **ไม่เพิ่มย่อหน้าใหม่ ไม่แตะโครง** (รอบ SEO ค่อยแยก meta ถ้าจำเป็น) · เนื้อหา: หมวดนี้คืออะไร เหมาะกับใคร ในร้านมีแบรนด์อะไร (เฉพาะที่มีจริง) · ไม่มีตัวเลขยอดขาย/จำนวนรุ่นที่จะเก่า · คีย์เวิร์ดธรรมชาติ ไม่ยัด · thai-copy ≤2 แบบ/หมวด → เจ้าของเคาะไทย → writer แปล en/zh (`description`/`descriptionZh` คู่กัน) → build → ถ่าย 4 หน้า × 2 จอ → designer → เจ้าของดูภาพ → checker → commit feat-intro → push
 4. **ก้อน 4 FAQ eyebrow ซ้ำ** — หน้าสินค้า eyebrow "คำถามที่พบบ่อย" + H2 "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" · เสนอ ก) eyebrow "FAQ" ข) "ถาม-ตอบ" · H2 คงเดิม · ทำทุกที่ที่ eyebrow+H2 ซ้ำ (นับก่อน) · commit copy-eyebrow
 5. **ก้อน 5 แถบความมั่นใจก่อน footer** — 3–4 ข้อ: ของแท้ · ราคาตรง · บริการจริง (ตอบเอง ไม่ใช่บอท) · ข้อมูลเช็คกับเว็บทางการ — เฉพาะที่จริงวันนี้ ห้าม "ส่งฟรี" "รับประกัน" "จ่ายผ่าน…" · designer 2 แบบ (แถวเดียว / การ์ด 4 ใบ) 390+1440 → เจ้าของเลือก → commit feat-trust · ไอคอนเฉพาะที่มีในระบบ (lucide)
 6. **ก้อน 6 ข้อเสนอ designer จาก 30.4ก ที่เหลือ** — ยกรายการจาก HANDOFF v21–v22 §4 "โครงหน้า จดไว้ 30.4ข" (FAQ eyebrow · anatomy "จากภายนอกสู่ภายใน" แต่ไล่บนลงล่าง · ลิงก์ "แหล่งที่มา" hover ฯลฯ) ให้เจ้าของเลือกทำ/ไม่ทำ · commit feat-designer
@@ -104,7 +104,7 @@
 
 | เรื่อง | รู้แล้ว | ยังไม่รู้ | ต้องตอบ |
 |---|---|---|---|
-| ก้อน 3 "คำนำหมวด" | หน้าหมวดมีคำโปรยใต้ H1 อยู่แล้ว (`CategoryPageHeader`) | เจ้าของหมายถึงเกลาของเดิม หรือเพิ่มย่อหน้าใหม่แยก | ก/ข — ถามครั้งเดียวตอนเปิดก้อน 3 |
+| ~~ก้อน 3 "คำนำหมวด"~~ | **ตอบแล้ว 2026-09-17: เกลาของเดิม** (2–3 ประโยค 120–160 ตัวอักษร · meta + หน้า · ไม่แตะโครง) | — | — |
 | ลบภาพ `_incoming/30.4c` 265 MB (shots/crops) | เจ้าของ 2026-09-16: ยังไม่ลบ | เมื่อไหร่ | — |
 | ยังรอเหมือน v24 | TPD VINCI S/G3 mini · #31/#34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 | | |
 
@@ -117,7 +117,7 @@
 2. **NBSP/U+2060 เฉพาะตอน render** (`thai-typography.ts` + CategoryLabel เดิม) · ด่าน `thai-raw-chars-check.js` 0 · title/meta/JSON-LD 0 · en/zh text node ไทย 0 (`typography-enzh-check.sh` — curl ใช้ไม่ได้ ข้อขัดแย้ง 9)
 3. **`thaiTypography()` ต้องมี locale guard** — `CardHeadlineSpec` ทำใน client ตาม locale · dictionary ผ่าน LocaleProvider · หน้าไทยล้วนใช้ `<ThaiText>`
 4. **Cowork merge โดยไม่บอก** → `git fetch` ก่อนสรุปสถานะ (เซสชันนี้ PR #28 ถูก merge ระหว่างทำก้อน 2) · ห้าม merge เอง · ห้าม force push
-5. **context:** Code แจ้ง "ขอจบก้อนนี้ก่อน" เมื่อครบ 3 ก้อน/แชท หรือก่อนงาน >30 นาที (เซสชันนี้ 2 ก้อน + handoff เพราะก้อน 3 ยาว)
+5. **context (เจ้าของแก้กฎ 2026-09-17):** Code ไม่ต้องนับก้อนเอง · ทำต่อเนื่องจนจบรอบ หรือจนเจ้าของพิมพ์ handoff · ทุกครั้งที่ push ให้อัปเดต HANDOFF §16 สั้น ๆ (10 บรรทัด) เพื่อให้ปิดแชทตอนไหนก็ไม่เสียงาน
 6. **หลัก "ที่สุด"/ยืนยันไม่ได้ = ไม่พูดทุกภาษา** · **overlay key / render-check / heredoc / CRLF / Git Bash `/`** เหมือน v23–v24 · `sed -i` → unix2dos ก่อน commit · ไฟล์ใหม่จาก Write tool = LF → unix2dos ก่อน `git add`
 7. **สคริปต์ที่ generate หลักฐานต้องจำลอง logic ของ component ครบ** (ข้อขัดแย้ง 7)
 
@@ -125,26 +125,26 @@
 เหมือน v24 + `src/lib/card-headline-spec.ts` กติกาต่อหมวด (คำตัดสินเจ้าของ 2026-09-16) · dictionary `catalog.cardBattery/cardMaxWatt/cardResistance/cardCapacity` 3 ภาษา ("แบต" = คำล็อกในตำแหน่งป้าย) · ลำดับการ์ดมือถือ ชื่อ→สเปก→ราคา (MOBILE_SPEC 3.6) · การ์ด PM ไม่มีชื่อหมวดในแถวล่าง · `ScrollHintFrame` /compare · หัวข้อ K1–K3 · `lg:text-xs` หัวแถว /compare · ทุกแถวใน THAI_STYLE §7 "รอบ 30.4ข ก้อน 1/2"
 
 ## 10. Git
-working tree ว่าง (เหลือไฟล์นี้ + rename v24 → `docs: HANDOFF v25`) · ก้อน 2 = 2 commit แยกชนิด (feat/docs) push แล้ว · ห้าม merge เอง · commit ถัดไปของรอบนี้: feat-intro (ก้อน 3) · copy-eyebrow · feat-trust · feat-designer · fix-close (sticky + wordbreak) · docs
+working tree ว่าง (เหลือไฟล์นี้) · main = `4d6fc6d` (PR #29 ก้อน 2 merge แล้ว) · branch นำหน้า main 1 commit docs v25 + ฉบับนี้ · ห้าม merge เอง · commit ถัดไปของรอบนี้: feat-intro (ก้อน 3) · copy-eyebrow · feat-trust · feat-designer · fix-close (sticky + wordbreak) · docs
 
 ## 11. ความพร้อมแต่ละระบบ
-เหมือน v22 · ภาษาไทยทั้งเว็บ: 30.4ค ปิดครบ · 30.4ข 2/6 ก้อน (ก้อน 1 live · ก้อน 2 รอ merge) · การ์ดสินค้า: บรรทัดสเปกเด่น 38/53 ตัว (verified เท่านั้น)
+เหมือน v22 · ภาษาไทยทั้งเว็บ: 30.4ค ปิดครบ · 30.4ข 2/6 ก้อน live · การ์ดสินค้า: บรรทัดสเปกเด่น 38/53 ตัว (verified เท่านั้น)
 
 ## 12. กำลังทำอะไรค้างอยู่ตอนปิดแชท
-- ไม่มีงานค้างกลางทาง · ก้อน 2 push แล้ว (`e6bd374`) รอ Cowork merge → หลัง merge ยิงเว็บจริง: `node _incoming/30.4c/typography-render-check.js https://okami24.store` (คาด 36/36 · head 0) + `curl -s https://okami24.store/products/pod-systems | grep -c "สูงสุด"` (คาด >0)
+- ไม่มีงานค้างกลางทาง · ก้อน 2 live แล้ว (PR #29 · Cowork ตรวจเว็บจริงแล้ว — ไม่ต้องยิงสคริปต์ซ้ำ) · ก้อน 3 เริ่ม 2026-09-17 (ดู §16 บรรทัด "ก้อน 3")
 - server 3412 ปิดแล้ว · ไม่มี process ค้าง
 - เครื่องมือก้อน 1–2 ใน `_incoming/30.4b/` (gitignored): `k1-crops.js` · `k1-heading-lines.js/.txt` · `k1-checker-brief.md` · `k2-spec-census.ts/.md` · `k2-headline-table.ts/.md` · `k2-rule-table.md` · `k2-shots.js` (`--only` `--spec-first` `--short-battery` `--hide-phone-line`) · `crops-k1/` `crops-k2/{before,after,after-draft,after-specfirst,after-shortbat}` · `wb-k1/` `wb-k2/` + `wb-diff-k1/k2.md` · `enzh-k1.log` `enzh-k2e.log` · `verify-catalog-k1/k2.log` · `build-*.log` · `commit-k1/k2-*.txt` · `thai-style-append-k1/k2.md`
 
 ## 13. แนะนำทำอะไรต่อ (เรียงลำดับ)
-1. วางบล็อก §16 → `git fetch` → ถ้า main ขยับเกิน `de85914` = ก้อน 2 merge แล้ว → ยิงเว็บจริง (§12) ก่อนเริ่ม
-2. **ก้อน 3 คำนำหมวด** — เปิดด้วยการนับ `CategoryPageHeader` + คำโปรย 4 หมวดที่มีอยู่ → ถามเจ้าของ 1 ครั้ง (ข้อ 7) → thai-copy 2 แบบ/หมวด → เคาะ → writer en/zh → build → ถ่าย 4 หน้า × 2 จอ → designer → เจ้าของดูภาพ → checker → commit feat-intro → push
-3. ก้อน 4–6 ตามลำดับ §5.1 · 1 แชท 1 ก้อน · ปิดรอบรวม sticky /compare
+1. วางบล็อก §16 → `git fetch` → เทียบ main กับ `4d6fc6d`
+2. **ก้อน 3 คำนำหมวด = เกลาของเดิม** — thai-copy ≤2 แบบ/หมวด (ของเดิมทุกหมวดยาว 122–158 ตัวอักษร อยู่ในเกณฑ์แล้ว · `npx tsx _incoming/30.4b/k3-desc-len.ts`) → เจ้าของเคาะไทย → writer en (zh ใช้ en ตาม `CategoryPageHeader` เดิม) → build → ถ่าย 390+1440 → designer → เจ้าของดูภาพ → checker → commit feat-intro → push
+3. ก้อน 4–6 ตามลำดับ §5.1 · ปิดรอบรวม sticky /compare
 
 ## 14. ควรหยุดทำ
 - ห้ามถ่ายทั้งเว็บก่อนสแกน · ห้ามเพิ่ม joiner/NBSP นอกรายการ (เจ้าของบอก "ยังไม่ผูก" พอตใช้แล้วทิ้ง/พอตซิสเต็ม) · ห้ามรัน Chrome 2 งานพร้อมกัน
 - ห้ามไล่แก้คำโดดระดับ B · ห้ามใส่ placeholder แทนแถวสเปกว่าง · ห้ามเปลี่ยน CategoryLabel/label-lang/lg:min-h-10
 - ห้ามแก้ `ProductHero.tsx` stats / ลบ `PuffCount.tsx` ในรอบนี้ — รอบเก็บบ้าน/ข้อมูล
-- ห้ามเดา "คำนำหมวด" ว่าเป็นของใหม่หรือเกลาของเดิม — ถามก่อน (ข้อ 7)
+- ก้อน 3: ห้ามเพิ่มย่อหน้าใหม่ใต้คำโปรย · ห้ามเพิ่มฟิลด์/แตะโครง `CategoryPageHeader` (เจ้าของตัดสิน 2026-09-17)
 
 ## 15. ปลายทางของโปรเจกต์
 เหมือน v21 §15
@@ -156,22 +156,21 @@ working tree ว่าง (เหลือไฟล์นี้ + rename v24 →
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) แปลงจากเดโม NOVA VAPOR
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
-Branch: checkpoint/phase-3.3.3 HEAD e6bd374 (+docs v25) · origin/main de85914 (PR #28 = 30.4ข ก้อน 1 live) · branch นำหน้า main 2 commit = ก้อน 2 สเปกเด่นการ์ด (dea2a1e feat · e6bd374 docs · checker 5/5 + designer) — push แล้ว รอ Cowork merge
+Branch: checkpoint/phase-3.3.3 HEAD 7f47c52 (+docs v25.1) · origin/main 4d6fc6d (PR #29 = 30.4ข ก้อน 2 live · PR #28 = ก้อน 1) · branch นำหน้า main = docs เท่านั้น
   Cowork merge + deploy โดยไม่บอกในแชท → git fetch ก่อนสรุปสถานะเสมอ · ห้าม merge เอง
-อ่านก่อน (กฎ 13.9): ~/.claude/CLAUDE.md หมวด 13 → CLAUDE.md โปรเจกต์ → docs/HANDOFF.md ฉบับ 25 (ข้อขัดแย้ง 1–10 · 4 · 5.1 · 7 · 8.0)
+อ่านก่อน (กฎ 13.9): ~/.claude/CLAUDE.md หมวด 13 → CLAUDE.md โปรเจกต์ → docs/HANDOFF.md ฉบับ 25.1 (ข้อขัดแย้ง 1–10 · 4 · 5.1 · 8.0)
   → docs/THAI_STYLE.md (§3 คำล็อก · §5 กลุ่ม ก · §6 typography · §7 ท้ายไฟล์ "รอบ 30.4ข ก้อน 1" + "ก้อน 2")
   → docs/LAUNCH_AUDIT.md เฉพาะหัว "สถานะปัจจุบัน" (ห้ามอ่านทั้งไฟล์) · docs/MOBILE_SPEC.md 3.6
   → ไฟล์คำสั่งรอบ 30.4ข ของเจ้าของ (ถ้าเจ้าของวางซ้ำ ให้ยึดไฟล์นั้น · สรุปอยู่ HANDOFF 5.1)
 
-สถานะ: รอบ 30.4ข = เพิ่มของใหม่ลงหน้า + ของค้างปิดรอบ · ทุกก้อน ชั้น B · 1 แชท 1 ก้อน
-  ก้อน 1 live (หัวข้อ K1–K3 · H2 max-width · /compare ตัวบอกเลื่อน + หัวแถว 12px ≥lg) · ก้อน 2 รอ merge (บรรทัดสเปกจาก verified เท่านั้น 38/53 · "แบต 1600mAh · สูงสุด 35 วัตต์" · มือถือ ชื่อ→สเปก→ราคา · การ์ด PM ไม่มีชื่อหมวด)
-  หลัง merge ยิงเว็บจริง: node _incoming/30.4c/typography-render-check.js https://okami24.store (36/36 · head 0) · curl -s https://okami24.store/products/pod-systems | grep -c "สูงสุด" (>0)
-  ถัดไป: ก้อน 3 คำนำหมวด (พอตซิสเต็ม · ใช้แล้วทิ้ง · หัวพอต/คอยล์ · HNB · ข้ามน้ำยา) — หน้าหมวดมีคำโปรยใต้ H1 อยู่แล้ว (categories.ts descriptionTh = meta description ด้วย) → ถามเจ้าของ 1 ครั้งก่อน: เกลาของเดิม หรือเพิ่มย่อหน้าใหม่ · thai-copy ≤2 แบบ/หมวด → เคาะ → writer en/zh → build → ถ่าย 4 หน้า × 2 จอ → designer → เจ้าของดูภาพ → checker → commit feat-intro → push
+สถานะ: รอบ 30.4ข = เพิ่มของใหม่ลงหน้า + ของค้างปิดรอบ · ทุกก้อน ชั้น B
+  ก้อน 1 live (หัวข้อ K1–K3 · H2 max-width · /compare ตัวบอกเลื่อน + หัวแถว 12px ≥lg) · ก้อน 2 live (บรรทัดสเปกจาก verified เท่านั้น 38/53 · "แบต 1600mAh · สูงสุด 35 วัตต์" · มือถือ ชื่อ→สเปก→ราคา · การ์ด PM ไม่มีชื่อหมวด · Cowork ตรวจเว็บจริงแล้ว)
+  กำลังทำ: ก้อน 3 คำนำหมวด = เกลาคำโปรยเดิม (เจ้าของตัดสิน 17/09 · ไม่เพิ่มย่อหน้า ไม่แตะโครง) — categories.ts descriptionTh (ใต้ H1 + meta description) · 2–3 ประโยค 120–160 ตัวอักษร · ข้ามน้ำยา · zh ใช้ en ตาม CategoryPageHeader เดิม · thai-copy ≤2 แบบ/หมวด → เจ้าของเคาะไทย → writer en → build → ถ่าย 390+1440 → designer → เจ้าของดูภาพ → checker → commit feat-intro → push
   แล้ว: ก้อน 4 FAQ eyebrow ซ้ำ (ก "FAQ" / ข "ถาม-ตอบ") → ก้อน 5 แถบความมั่นใจ (designer 2 แบบ · เฉพาะที่จริงวันนี้ ห้ามส่งฟรี/รับประกัน/จ่ายผ่าน) → ก้อน 6 ข้อเสนอ designer 30.4ก → ปิดรอบ (sticky หัวแถว /compare เจ้าของสั่ง + wordbreak-scan หน้าที่แตะ + designer + commit เดียว)
   เจ้าของตัดสินแล้ว ห้ามถามซ้ำ: ตะกร้าปิด (ข้อ 43) → ไลน์ @okm24 · น้ำยา 0 ข้าม · หน้าบริการไม่แตะ (ข้อ 49) · งานรูปพัก · M1b ปิด · CategoryLabel NBSP en/zh คงไว้ · ยังไม่ผูก "พอตใช้แล้วทิ้ง/พอตซิสเต็ม" ใน thai-typography · 6 ตัวการ์ดแถวว่าง (สเปกไม่ verified) รับได้ → รอบข้อมูล · ภาพ _incoming/30.4c 265 MB ยังไม่ลบ · 2F 1600MAH mono ไม่แก้ · #31 #34 iPhone
   agent: thai-copy (ตาราง ก่อน→หลัง) · writer (en/zh) · checker 5 ช่อง · designer (ครอป+ตัวเลข ไม่มี Bash) · ใส่ข้อห้าม build/server/taskkill/Chrome/แก้ไฟล์ ในคำสั่งทุกตัว
 
-กติกา context (เจ้าของ 2026-09-16): Code แจ้ง "ขอจบก้อนนี้ก่อน" แล้ว handoff เมื่อครบ 3 ก้อนในแชทเดียว หรือก่อนเริ่มงาน >30 นาที
+กติกา context (เจ้าของ 2026-09-17): Code ไม่ต้องนับก้อนเอง · ทำต่อเนื่องจนจบรอบ หรือจนเจ้าของพิมพ์ handoff · ทุกครั้งที่ push ให้อัปเดต HANDOFF §16 สั้น ๆ (10 บรรทัด) เพื่อให้ปิดแชทตอนไหนก็ไม่เสียงาน
 กฎ 2 ชั้น: ทุกก้อนรอบนี้ = ชั้น B → build → ถ่าย before ให้จบก่อน build ใหม่ → ถ่าย after 390+1440 → designer → เจ้าของเลือกภาพ → checker → commit · ข้อความใหม่ทุกประโยค = 3 ภาษา + เจ้าของเคาะไทย · ตัวเลขทุกตัวชี้แถวสเปก verified (แบบอย่าง src/lib/card-headline-spec.ts) · ห้าม U+2060/NBSP นอกกลไก · thaiTypography() ต้องมี locale guard · ผูกอะไรแล้วต้องดูรอยตัดใหม่ · หลักฐานที่ generate ต้องจำลอง logic ของ component ครบ
 ห้ามแตะ: layout นอกจุดที่ระบุ · รูป · motion · ordering-mode.ts · slug/URL/sitemap/structured data · หน้าบริการ · Hero.tsx · cinematic/ · กลุ่ม ก · labelTh/name/shortName · lg:min-h-10 · คำเตือนอายุ/นิโคติน · ชื่อสี/กลิ่น · thai-typography.ts รายการ · CategoryLabel.tsx · card-headline-spec.ts กติกา · dictionary catalog.card* · ProductHero stats / PuffCount (รอบเก็บบ้าน)
 กฎเหล็ก: ห้าม deploy/merge main เอง · revert ไม่ reset · ห้าม force push · ห้ามกุตัวเลข · ตัดสินเอง = ย้อนง่าย+ลูกค้าไม่เห็น แล้วเขียน "ตัดสินเอง: … เพราะ …" · ต้องถาม = ประโยคลูกค้าอ่าน/รสนิยม/คำนอกตาราง/layout รวมชุดเดียว · งานเกินคำสั่ง = commit แยก
@@ -186,13 +185,13 @@ Branch: checkpoint/phase-3.3.3 HEAD e6bd374 (+docs v25) · origin/main de85914 (
   · server ทดสอบ: SITE_URL=https://okami24.store npx next build แล้ว SITE_URL=https://okami24.store OKAMI24_DATA_DIR=<tmp> OKAMI24_BACKUP_DISABLED=1 OKAMI24_STARTUP_PROBE=0 npx next start -p 3412
 Verify: npx tsc --noEmit · npx eslint <ไฟล์> · npm run verify:commerce (16) · SITE_URL=… npm run verify:catalog -- --full (20 · ปิด server ก่อน) · npx tsx scripts/count-storefront.ts (53/31) · npx tsx src/i18n/i18n-contract-test.ts (16) · node scripts/thai-raw-chars-check.js (0)
 Git: commit แยกชนิด (feat/fix/copy/data/docs) · git commit -F <ไฟล์> · อังกฤษ · Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> · push ทุกก้อนหลัง checker ผ่าน (เจ้าของสั่งในไฟล์รอบ) · ห้าม merge เอง
-รอเจ้าของ: ก้อน 3 เกลาของเดิม/เพิ่มใหม่ · TPD · #31 #34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 · ลบภาพ 265 MB
+รอเจ้าของ: TPD · #31 #34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 · ลบภาพ 265 MB
 ```
 
 ---
 
 ## สิ่งแรกที่แชทใหม่ควรทำ
 
-1. **`git fetch` + `git status` + `git log -5 --oneline`** แล้วเทียบกับไฟล์นี้ — ถ้าไม่ตรงให้เชื่อ repo · ถ้า origin/main ขยับเกิน `de85914` = ก้อน 2 merge แล้ว → ยิงเว็บจริง 2 คำสั่งใน §12 · ถ้า origin/checkpoint ยังไม่มี `e6bd374` = push ไม่สำเร็จ → push ก่อน
-2. เปิดก้อน 3: นับคำโปรย `descriptionTh` 4 หมวดที่มีอยู่ใน `src/data/categories.ts` (= meta description ด้วย — เปลี่ยนแล้วกระทบ SEO) → ถามเจ้าของ 1 ครั้ง (§7 แถวแรก) ก่อน dispatch thai-copy
-3. ทำตามลำดับ §5.1 ข้อ 3 · ถ่าย before ก่อน build · 1 แชท 1 ก้อน · ห้ามถ่ายทั้งเว็บก่อนสแกน · ห้ามเพิ่ม joiner/NBSP นอกรายการ
+1. **`git fetch` + `git status` + `git log -5 --oneline`** แล้วเทียบกับไฟล์นี้ — ถ้าไม่ตรงให้เชื่อ repo · ถ้า origin/checkpoint ยังไม่มี commit ล่าสุดของไฟล์นี้ = push ไม่สำเร็จ → push ก่อน
+2. ก้อน 3 ทำต่อจากจุดที่ §16 บรรทัด "กำลังทำ" บอก (ถ้า `categories.ts` ยังไม่เปลี่ยน = ยังไม่ผ่านเจ้าของเคาะไทย → dispatch thai-copy ใหม่)
+3. ทำตามลำดับ §5.1 ข้อ 3 · ถ่าย before ก่อน build · ห้ามถ่ายทั้งเว็บก่อนสแกน · ห้ามเพิ่ม joiner/NBSP นอกรายการ
