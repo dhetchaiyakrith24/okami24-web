@@ -1,15 +1,16 @@
 # OKami24 — HANDOFF
 
-สร้างเมื่อ: 2026-09-16 (**ฉบับที่ 24** — รอบ 30.4ค **ปิดรอบเสร็จ** ตรวจผ่านตามเกณฑ์ · รอ push/merge · ฉบับก่อนเก็บที่ `docs/HANDOFF.2026-09-16-v23.md`)
+สร้างเมื่อ: 2026-09-16 · แก้ 2026-09-17 (**ฉบับที่ 25.1** — รอบ 30.4ข ก้อน 1–2 live · กติกา context ใหม่ · ก้อน 3 ตัดสินแล้ว = เกลาของเดิม · ฉบับก่อนเก็บที่ `docs/HANDOFF.2026-09-16-v24.md`)
 
-อ้างอิงจาก: branch `checkpoint/phase-3.3.3` HEAD **`4520498`** (docs ปิดรอบ) + docs ฉบับนี้ · `origin/main` **`f71b6a7`** (PR #26 = ก้อน 9) · branch นำหน้า main **10 commit** (`d0ccd49` WIP + docs v23 ×2 + ปิดรอบ 7 ก้อน) · working tree: ว่าง (เหลือไฟล์นี้)
+อ้างอิงจาก: branch `checkpoint/phase-3.3.3` HEAD **`e014b8a`** (+docs ก้อน 3 = ไฟล์นี้ · THAI_STYLE · LAUNCH_AUDIT) · `origin/main` **`4d6fc6d`** (PR #29 = ก้อน 2 · PR #28 = ก้อน 1) · branch นำหน้า main = docs v25 `7f47c52` · docs v25.1 `b27933e` · **ก้อน 3: feat `f83b8f1` · copy `e014b8a` · docs** — push 2026-09-17 รอ Cowork merge · **§16 อัปเดตหลัง push ตามกติกา context ใหม่ (ส่วนอื่นของไฟล์ยังเป็นสถานะตอนเปิดก้อน 3 — ยึด §16 ก่อน)**
 
-**สิ่งที่ตรวจจริงตอนเขียน [ตรวจแล้วจริง]:** `git fetch` + `git status` + `git log` · build ท้ายสุด (`4167b26` โค้ด): tsc · eslint · `node scripts/thai-raw-chars-check.js` = 0 · unit `typography-test.ts` ผ่าน · render: typography 36/36 spots · `<head>` 0 · JSON-LD 0 ทั้ง 105 หน้า · copy+headings 143/143 · คำห้าม 0/105 · en/zh หลัง hydration (text node ไทย) 0/0 ×4 หน้า · verify:catalog --full 20/20 · commerce 16/16 · i18n 16/16 · 53/31 · อังกฤษบนหน้าสินค้า 36 · server 3412 ปิดแล้ว (netstat 0) · `_incoming/` **1.6 GB** (30.4c 265 MB)
+**สิ่งที่ตรวจจริงตอนเขียน [ตรวจแล้วจริง]:** 2026-09-17 `git fetch` → `origin/main` = `4d6fc6d` (PR #29 merge แล้ว) · **[เจ้าของบอก]** Cowork ตรวจเว็บจริงหลัง PR #29: "1600mAh · สูงสุด 35 วัตต์" จอคอม + "แบต 2000mAh · สูงสุด 35 วัตต์" มือถือ ขึ้นครบ — ไม่ต้องยิงสคริปต์ตรวจซ้ำ · ของเดิม 2026-09-16: `git fetch` + `git status` + `git log` · เว็บจริงหลัง PR #28: `close-render-check.js --headings --base https://okami24.store` = 152/152 · คำห้าม 0/105 · `<title>` คู่มือ MTL/DTL = "MTL กับ DTL ต่างยังไง — OKami24" · build ท้ายสุด (`_incoming/30.4b/build-k2e.log`): tsc · eslint · i18n 16/16 · commerce 16/16 · 53/31 · verify:catalog --full 20/20 · raw-chars 0 · render 152/152 · typography 36/36 · head/JSON-LD 0 · en/zh หลัง hydration 0/0 ×8 · server 3412 ปิดแล้ว (netstat 0) · `_incoming/30.4b` 12 MB · `_incoming/30.4c` 265 MB · `.git` 32 MB
 
 > **วิธีอ่าน:** ทุกข้อกำกับ **[ตรวจแล้วจริง]** / **[ผมเข้าใจว่า]** / **[เจ้าของบอก ยังไม่ได้ตรวจเอง]**
 > **"ตรวจผ่านตามเกณฑ์" ≠ "เจ้าของอนุมัติ"** — เขียนแยกเสมอ
 > **รายการงานหลัก = `docs/LAUNCH_AUDIT.md`** — อ่านเฉพาะหัว "สถานะปัจจุบัน" + เลขข้อที่กำลังทำ **ห้ามอ่านทั้งไฟล์**
-> **ภาษาไทยบนเว็บ: `docs/THAI_STYLE.md` เป็นแหล่งความจริงเดียว** — §3 คำล็อก · §5 กลุ่ม ก (+แถวใหม่ /about joiner) · §6 typography · §7 "รอบ 30.4ค" รวม "ขั้นปิดรอบ"
+> **ภาษาไทยบนเว็บ: `docs/THAI_STYLE.md` เป็นแหล่งความจริงเดียว** — §3 คำล็อก · §5 กลุ่ม ก · §6 typography · §7 ท้ายไฟล์ "รอบ 30.4ข ก้อน 1" และ "ก้อน 2"
+> **ไฟล์คำสั่งรอบ 30.4ข ของเจ้าของ (2026-09-16) อยู่ในแชทที่เปิดรอบ ไม่ได้บันทึกเป็นไฟล์** — สรุปลำดับก้อนอยู่ที่ §5.1 ของไฟล์นี้ · ถ้าเจ้าของวางไฟล์นั้นซ้ำในแชทใหม่ ให้ยึดไฟล์ของเจ้าของ
 
 ---
 
@@ -17,14 +18,16 @@
 
 ทุกข้อ **[ตรวจแล้วจริง]**:
 
-1. **กติกา context ใหม่ (เจ้าของ 2026-09-16 · แทน "เจ้าของพิมพ์ handoff ที่ ~800K"):** Code เป็นคนแจ้ง "ขอจบก้อนนี้ก่อน" แล้ว handoff เมื่อ (ก) ครบ 3 ก้อนในแชทเดียว หรือ (ข) ก่อนเริ่มงานที่ยาวกว่า 30 นาที · เจ้าของพิมพ์ handoff แทรกได้ทุกเมื่อ · เซสชันนี้ = 3 ก้อน (typography · copy-close · headings) + docs → handoff ตามกติกา
-2. **v23 บอกว่า "en/zh หลัง hydration 0"** — จริงเฉพาะหน้าที่มีสตริง en/zh · หน้า `/about` (ไทยล้วนทุก locale) เรียก `thaiTypography()` ตรง ๆ จึงมี NBSP/WJ ใต้คุกกี้ en/zh (checker จับได้) → แก้เป็น `<ThaiText>` (client · ใส่เฉพาะ th) · และมี NBSP อีก 1 ตัวใน en/zh จาก `CategoryLabel.tsx` ("Disposable / Prefilled" — ของ 30.3ข `d8194a4` คนละกลไก ไม่แตะ) · เกณฑ์ที่ใช้จริงตอนนี้: **นับ NBSP/WJ เฉพาะ text node ที่มีอักษรไทย** (= ขอบเขตของ `thai-typography.ts` ที่ไม่แตะสตริงไม่มีไทย) — สคริปต์ `_incoming/30.4c/typography-enzh-check.sh` · checker รับเกณฑ์นี้แล้ว
-3. **joiner จุดเดียว "ย้าย" รอยตัด ไม่ได้ "ลบ"** — "กล่า | วอ้าง" กลายเป็น "ก | ล่าวอ้าง" (designer ค) → ผูกทั้งคำ (WJ หน้าทุกพยัญชนะ/สระหน้า `joinWord`) · แล้วรอยตัดไปตกที่ "ไม่มี | การกล่าวอ้าง" + "เลิกบุ | หรี่" → เจ้าของเคาะผูกทั้งวลี "ไม่มีการกล่าวอ้าง" + "บุหรี่" เฉพาะประโยคนี้ (THAI_STYLE §5 แถวใหม่) · บทเรียน: **ทุกครั้งที่ผูกอะไร ต้องดูว่ารอยตัดใหม่ไปตกตรงไหน** — สแกน DOM มองเห็นแค่ประเภทที่สอน (ขีดช่วงตัวเลข "5– | 35" ตัวตรวจไม่เห็น designer เห็น)
-4. **ผูกหน่วยแล้วเบราว์เซอร์หักหลังขีด** "5–35 วัตต์" → "5– | 35 วัตต์" → WJ หลังขีดในช่วงตัวเลข (`RANGE_DASH`) · แล้วย่อหน้า ARGUS G4 390 ยืดเป็น 4 บรรทัดจน "45 | นาที" → เจ้าของเคาะเพิ่มหน่วย นาที
-5. **หน้าบริการ 5 หน้าไม่เคยผ่านกลไก typography** (copy ไม่อยู่ใน dictionary — เป็น object ปน JSX) · v23 เข้าใจว่าแค่เพิ่มหน่วยก็พอ → จริงต้องต่อสาย `useServiceCopy` + `thaiTypographyDeep` เดินเข้า React element ได้
-6. **Write/Edit/sed กิน backslash ใน `\p{…}`/`\u…`** (ซ้ำ v23 ข้อ 4): regex ในไฟล์กลไกกลายเป็นอักขระไทยดิบ `[ก-ฮเ-ไ]` (ใช้ได้ ความหมายเท่ากัน — คงไว้แบบนั้น) · สคริปต์ .sh ที่มี `\p{Script=Thai}` ต้องเขียน backslash ผ่าน `String.fromCharCode(92)` · `node -e` กับข้อความไทย+backtick พังอีกครั้ง → ใช้ไฟล์สคริปต์ (`_incoming/30.4c/apply-*.js`) เท่านั้น
-7. **ตัวเลขสแกน 2 ชุดวัดคนละอย่าง ห้ามบวกกัน:** `wb-diff.md` = typography อย่างเดียว (wb ก่อน vs wb-typo-pre-copy · 98 คู่ · หาย 24 ใหม่ 6) · `wb-diff-copy.md` = copy+headings (wb-typo-pre-copy vs wb-typo · 210 คู่ · หาย 73 ใหม่ 12) · `wb-diff-total.md` = รวม (wb vs wb-typo · 98 คู่ · หาย 89 ใหม่ 13) · ตัวเลข "ก่อน 199 → หลัง 108 instance" มาจาก total
-8. **shot.js ช้ามากเมื่อรันคู่ขนานกับ wordbreak-scan** (1 ภาพ ~1–3 นาที) → รันงาน Chrome ทีละอย่างเสมอ · งานเกิน 10 นาทีต้อง `(cmd &)` แยก + เฝ้าไฟล์ log (ทำแล้ว `close-chain*.sh`)
+1. **คำสั่ง 1.4 ("หัวแถว /compare ~10px → ขยายให้เท่า label สเปก 0.65rem") ตั้งอยู่บนข้อมูลคลาด** — หัวแถวเป็น `text-[0.65rem]` (10.4px) มาตั้งแต่ก่อน = เท่า SpecChip อยู่แล้ว สิ่งที่ต่างคือสี (dim vs muted) · แก้สีแล้ว + เจ้าของเลือกเพิ่ม 12px เฉพาะจอ ≥lg ตาม designer
+2. **คำสั่ง 1.2 (H2 หน้าแรกห่อที่ ~620px) วันนี้ตาไม่เห็นผล** — หัวข้อ H9 สั้นลงจนอยู่บรรทัดเดียวที่ 1440 ตั้งแต่ปิดรอบ 30.4ค · ตัด `max-w-xl` แล้วเพื่อกันอนาคต
+3. **การ์ด legacy จอคอมมีแถวสเปกอยู่แล้ว** ("1600MAH · 5–35W" จาก `attributes` ไม่ดูว่า verified) — ไม่ใช่ "ของที่หน้ายังไม่มี" ตามชื่อรอบ · 6 ตัวเคยโชว์เลขที่หน้าสินค้าติดป้าย "ยังไม่ยืนยัน" (G4 Classic · G3 Pro KOKO · M Switch Kit · Zero Pro · Joiway F3 · F4) — ก้อน 2 ทำให้ว่างตามหลัก verified (เจ้าของรับ)
+4. **`ProductHero.tsx` หน้าสินค้าก็โชว์ stats จาก attributes โดยไม่เช็ค verified เหมือนกัน** (บรรทัด ~103) — นอกขอบเขตก้อน 2 ไม่แตะ · จดไว้ §4
+5. **"แบตเตอรี่ {mah}" ล้นการ์ดมือถือ** (วัดจริง 159px > 143px) — thai-copy ประมาณถูก · เจ้าของเคาะ "แบต" (คำล็อกใหม่ในตำแหน่งป้าย) จอคอม · มือถือ "{mah}" เฉย ๆ
+6. **ครอป "ก่อน" จอคอมของก้อน 2 ถ่ายผิด build** (สคริปต์ before รันซ้ำหลัง rebuild) → ลบทิ้ง ใช้ `_incoming/30.4c/shots-k8/after/products-1440.png` เป็น before แทน · บทเรียน: **ถ่าย before ให้จบก่อน build เสมอ** และห้ามต่อคิวคำสั่งข้าม build
+7. **สคริปต์ตาราง `k2-headline-table.ts` ไม่ได้จำลอง `showOptionCount`** → ตารางเคยพิมพ์ "1.0 โอห์ม · 1 ค่าโอห์ม" ทั้งที่หน้าเว็บตัดแล้ว (checker จับ) · แก้แล้ว — หลักฐานที่ generate ต้องจำลอง logic ของ component ให้ครบ
+8. **wb-diff ระหว่างสแกนคนละ build เห็น "ใหม่ 3" ที่เป็นคำโปรยเดิม** (/products@1440 — ข้อความคำโปรยใน wb-typo เก่ากว่าปัจจุบัน) · ต้องเช็คว่า element ที่ธงเป็นของก้อนไหนก่อนนับ (บรรทัดสเปกถูกธง 0)
+9. **`curl --cookie okami24_locale=en` ตรวจ en/zh ไม่ได้** — SSR เป็นไทยเสมอ (`LocaleProvider` เปลี่ยนภาษาหลัง hydrate) ใช้ `typography-enzh-check.sh` (Chrome) เท่านั้น
+10. **ลิมิต 5 ชม. ของแชทชนกลางก้อน 2** — งานไม่หาย เพราะทุกขั้นเขียนไฟล์ใน `_incoming/30.4b/` · เจ้าของแจ้งแล้วทำต่อได้
 
 ---
 
@@ -33,61 +36,63 @@
 **[ตรวจแล้วจริง]**
 
 - **โปรเจกต์:** เว็บร้านพอต **OKami24** · Next.js 16 + TS + Tailwind v4 + SQLite · โฟลเดอร์ `C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3` · GitHub `github.com/dhetchaiyakrith24/okami24-web` (private)
-- **branch ทำงาน:** `checkpoint/phase-3.3.3` HEAD `4520498` (+ไฟล์นี้) · **live `main` = `f71b6a7`** (PR #26 = ก้อน 9) · branch นำหน้า main 10 commit = **ขั้นปิดรอบ 30.4ค ทั้งหมด ตรวจผ่านตามเกณฑ์ (checker A–I + designer 2 รอบ) — push แล้ว/รอ Cowork merge (ดู §12)**
-- **รอบ 30.4ค: ปิดรอบเสร็จ** (ก้อน 1–9 live · ปิดรอบ 7 commit + docs) — ถัดไป **30.4ข** (§5.2)
-- **อังกฤษบนหน้าสินค้า (`_incoming/30.4c/english-fields-5.ts`): 36** = ค่าสเปกตัวเลข/หน่วย/ชื่อรุ่นล้วน คงตามกฎ · ชื่อสี 154/กลิ่น 191 ชั้น 1
+- **branch ทำงาน:** `checkpoint/phase-3.3.3` HEAD `7f47c52` (+ไฟล์นี้) · **live `main` = `4d6fc6d`** (PR #29 = 30.4ข ก้อน 2 · PR #28 = ก้อน 1 · PR #27 = ปิดรอบ 30.4ค) · branch นำหน้า main 1 commit = docs v25 (จะตามไปกับ PR ถัดไป)
+- **รอบ 30.4ข** (เพิ่มของใหม่ลงหน้า + ของค้างปิดรอบ): ก้อน 1–2 live · **ถัดไป ก้อน 3 คำนำหมวด = เกลาคำโปรยเดิม** (§5.1 · เจ้าของตัดสิน 2026-09-17)
 - **การสั่งซื้อออนไลน์ปิดอยู่** (`OKAMI24_ORDERING=off` ข้อ 43) → ไลน์ `@okm24` · ห้ามเสนอเปิด · สินค้า 53 ซื้อได้ 31 · น้ำยา 0
-- **checkpoint/จุดกลับ:** ก่อน 30.4ค = `ebd288b` · จบก้อน 9 = `98d8f5a` (= main f71b6a7) · WIP typography = `d0ccd49` · **จบปิดรอบ = `4167b26` (โค้ด) / `4520498` (docs)**
+- **checkpoint/จุดกลับ:** ก่อน 30.4ข = `62ef152` (= main b273929 ก่อน PR #28) · จบก้อน 1 = `73d4f3b` (= main de85914) · **จบก้อน 2 = `dea2a1e` (โค้ด) / `e6bd374` (docs) (= main 4d6fc6d)**
 
 ---
 
 ## 2. ทำเสร็จแล้ว (ใช้งานได้จริง ตรวจแล้ว)
 
-**[ตรวจแล้วจริง]** — ทั้งหมดใน v23 §2 (ก้อน 7·8·9 live) + ขั้นปิดรอบ:
+**[ตรวจแล้วจริง]** — ทั้งหมดใน v24 §2 (รอบ 30.4ค live ครบ) + รอบ 30.4ข:
 
-- **typography `3c060b8`** (แทน WIP d0ccd49 ที่ตรวจไม่ผ่านตอนนั้น): `src/lib/thai-typography.ts` — NBSP หน้า ๆ · NBSP เลข+หน่วย (วัตต์ โอห์ม พัฟ นิ้ว กรัม **บาท วัน รุ่น นาที** · mAh mL W) + WJ หลังขีดในช่วงตัวเลข · NBSP ชื่อรุ่น 2 คำ 6 ชื่อ · WJ **ทั้งคำ** 5 คำ + วลี "ไม่มีการกล่าวอ้าง"/"บุหรี่" (/about เท่านั้น) ผูกกับ `within` · `thaiTypographyDeep` เดินเข้า React element · **หน้าบริการ 5 หน้าต่อสาย `useServiceCopy`** (`ServicePage.tsx`) · `/about` ผ่าน `<ThaiText>` (th เท่านั้น) · ด่าน `scripts/thai-raw-chars-check.js` 0 · ตัวตรวจ `scripts/wordbreak-scan.js`
-- **copy-close `4ffb4cc`** 41 ประโยค (close-table-1 แถว 1–39 41 42 · ก ทั้งหมด · แถว 19 ไม่มี "ชาร์จเร็ว") + **data `1b171e6`** PM Coil-83/87 "หัวพอตเปล่า…" + Pod-180 "คอยล์ nexMESH คู่ 1.2Ω (ในตัว)" + **eyebrow `8348310`** การ์ดคู่มือหน้าแรก "01 · เริ่มต้นใช้งาน…" (`GuideCategoryLabel`)
-- **headings `1807a19`** 9 หัวข้อ (H5 = ข · title 4 หน้าเปลี่ยนตาม ≤60) · **DRAG S3 `4167b26`** "ชาร์จเร็ว/fast charging" ออกทุกภาษา (เจ้าของ 3ก)
-- **docs `4520498`** THAI_STYLE §5 แถวใหม่ · §6 · §7 "ขั้นปิดรอบ 30.4ค" (ตาราง 42+9 + คำตัดสิน) · LAUNCH_AUDIT หัว + ข้อ 30 (ปิด) + 36
+- **ก้อน 1 `6ded138` (live)** — 1.1 หัวข้อ 3 จุด: K1 "พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม" (H1 + title + การ์ดหน้าแรก/ /guides) · K2 "MTL กับ DTL ต่างยังไง" (H1 + title + การ์ด) · K3 "Direct-to-lung (DTL) และ RDL" (H2) — ไม่มีคำโดดที่ 390 แล้ว (วัดจุดตัดจริง `_incoming/30.4b/k1-heading-lines.txt`) · 1.2 `GuideTeaserGrid.tsx` ตัด `max-w-xl` · 1.3 `CompareTool.tsx` `ScrollHintFrame` — เงาจาง + ลูกศร › (lucide) โผล่เฉพาะตอนยังมีคอลัมน์ทางขวา (วัด scrollWidth) ตารางไม่แตะ · 1.4 หัวแถว /compare สี `text-foreground-muted` + `lg:text-xs` (12px จอ ≥lg · มือถือคง 0.65rem)
+- **ก้อน 2 `dea2a1e` (live · PR #29)** — สเปกเด่น 1 บรรทัดบนการ์ดทุกที่ (rail หน้าแรก · หน้าหมวด/แบรนด์/ /products · สินค้าใกล้เคียง · ค้นหา · รายการโปรด · ตัวช่วยเลือก): `src/lib/card-headline-spec.ts` เลือกจากแถวสเปก **verified เท่านั้น** ตามกติกาต่อหมวด (THAI_STYLE §7 "ก้อน 2") · `CardHeadlineSpec.tsx` (client) ประกอบคำจาก dictionary `catalog.card*` 3 ภาษา · ไทยผ่าน `thaiTypography()` · จอคอม "แบต 1600mAh · สูงสุด 35 วัตต์" (แทน "1600MAH · 5–35W") · มือถือ "1600mAh · สูงสุด 35 วัตต์" ระหว่างชื่อกับราคา (ราคาปิดท้าย · 0.65rem · truncate · การ์ดสูงขึ้น 18px เท่ากันทุกใบ) · การ์ด PM ชื่อหมวดออกจากแถวล่าง เหลือ สเปก · N ตัวเลือก · 38/53 ตัวมีบรรทัด (`_incoming/30.4b/k2-headline-table.md`)
+- **docs `73d4f3b` `e6bd374`** — THAI_STYLE §7 สองหัวข้อใหม่ · LAUNCH_AUDIT หัว · MOBILE_SPEC 3.6
 
 ---
 
-## 3. เพิ่งทำล่าสุด (เซสชันนี้ 2026-09-16 · 8 commit · main ยังไม่ขยับ)
+## 3. เพิ่งทำล่าสุด (เซสชันนี้ 2026-09-16 · 4 commit + docs · main ขยับ 1 ครั้ง = PR #28)
 
-| งาน | commit | ผลตรวจ |
-|---|---|---|
-| typography ชั้น B | `3c060b8` | designer รอบ 1: ก 17 ข 5 **ค 3** (ก\|ล่าวอ้าง · 5–\|35 · 0.3–\|3.0) → แก้กลไก 4 อย่าง (เจ้าของเคาะ 1ก 2ก) → designer รอบ 2: **ค 0** (ก 6 ข 4) · checker รอบ 1 ตีกลับ E (/about en/zh) → แก้ `<ThaiText>` → checker รอบ 2 ผ่าน · render 36/36 · head/JSON-LD 0 · en/zh ไทย 0/0 · overflow 0 |
-| copy-close 42 + data + eyebrow | `4ffb4cc` `1b171e6` `8348310` | render 106/106 → 143/143 รวม · สแกน 210 คู่ หาย 73 ใหม่ 12 (B) · checker C สุ่ม 24/42 ตรง |
-| headings 9 | `1807a19` | render (+title 4) ผ่าน · **ค้าง 390: 3 หัวข้อยังจบด้วยคำโดด** (§4) |
-| DRAG S3 3ก | `4167b26` | render 143/143 · grep fast = 0 ใน block |
-| docs | `4520498` + ฉบับนี้ | — |
+| ก้อน | commit | ผลตรวจ | สถานะ |
+|---|---|---|---|
+| 1 เก็บของค้าง | `6ded138` + docs `73d4f3b` | designer ก/ข/ข · checker 4/4 · render 152/152 · wordbreak 6 หน้า หาย 4 ใหม่ 0 · verify:catalog 20/20 | **live** (PR #28 · เว็บจริง 152/152) |
+| 2 สเปกเด่นการ์ด | `dea2a1e` + docs `e6bd374` | thai-copy + writer ตรวจคำ · designer 1 รอบ (จอคอม ก · มือถือ ข · PM ค → แก้) · checker 5/5 · render 152/152 · typography 36/36 · en/zh 0/0 ×8 · wordbreak 8 หน้า บรรทัดสเปกถูกธง 0 · overflow 0 ทุกการ์ด · verify:catalog 20/20 | **live** (PR #29 · Cowork ตรวจเว็บจริงแล้ว [เจ้าของบอก]) |
+| docs | `7f47c52` (v25) + ฉบับนี้ | — | — |
+
+**คำตัดสินเจ้าของในเซสชันนี้ [เจ้าของบอก]:** หัวข้อ K1 ก · K2 ข · K3 ก · 1.4 ข (12px ≥lg) · sticky หัวแถว /compare = **ทำตอนปิดรอบ 30.4ข** · ผูก "พอตใช้แล้วทิ้ง/พอตซิสเต็ม" ใน thai-typography = **ยังไม่** · ก้อน 2: กติกาตาราง = ใช่ · 6 ตัวแถวว่าง = ยอม · มือถือ ข ชื่อ→สเปก→ราคา · คำ ข "แบต" · ก้อน 3 ไปแชทใหม่ · **2026-09-17: ก้อน 3 = เกลาคำโปรยเดิม ไม่เพิ่มย่อหน้าใหม่** (เหตุผล: `descriptionTh` เป็น meta description ด้วย — เพิ่มย่อหน้าใหม่ใต้ของเดิมจะซ้ำซ้อนติดกัน · เกลาให้ได้ 2–3 ประโยค 120–160 ตัวอักษร ใช้เป็นทั้ง meta และข้อความบนหน้าเหมือนเดิม · ไม่แตะโครง · รอบ SEO ค่อยแยก meta ถ้าจำเป็น) · **กติกา context ใหม่** (ดู 8.0 ข้อ 5)
 
 ---
 
 ## 4. ยังไม่ได้แก้ (รู้ว่าขาด แต่ยังไม่ได้ทำ)
 
-- **[ตรวจแล้วจริง] หัวข้อ 3 จุดที่ 390 ยังจบด้วยคำโดด** (จอแคบ ~15 อักษร/บรรทัด): H2 "เลือกพอตซิสเต็ม หรือพอตใช้แล้ว | ทิ้ง" (หน้าแรก + /guides) · H1 "MTL กับ DTL ต่างกันตรง | ไหน" · H2 "…RDL ที่อยู่ตรง | กลาง" — เท่ากับก่อนแก้ที่ 390 (หัวข้อเดิมก็ตัดคำโดด) ดีขึ้นที่ 1440 · ปิดได้ถ้าเจ้าของอยากได้หัวข้อที่แต่ละท่อน ≤15 อักษร (thai-copy รอบใหม่) — **ยังไม่ได้ถาม**
-- **[ตรวจแล้วจริง] คำโดด/ขอบคำระดับ B ที่เกิดใหม่หลัง copy 12 จุด** (`wb-diff-copy.md` NEW: "…ARGUS ของ | VOOPOO" argus-p3 1440 · "…ได้ | เลย" vinci-s 390 · "…ให้เอง | อัตโนมัติ" ชิป 390 · "…บนจอ | โดยตรง" จอทัช 1440 · "Caliburn รุ่นแรกที่จอ LCD โอบรอบด้าน | ข้าง" rail หน้าแรก 1440 ฯลฯ) — designer ยังไม่ได้ดูครอปชุดนี้ (ชั้น A ตามกฎ 2 ชั้น) · ไม่มี "ไม่" ค้างท้ายบรรทัดใน 36 หน้าที่สแกนนอกจาก 4 จุดเดิมนอกขอบเขต (about "ไม่ใช่ | บอท" · about "ยังไม่ | ยืนยัน" ป้าย · /e-liquid "ไม่ใช่ | รายการน้ำยา" · MTL "แต่ยังไม่ | โล่งเท่า" — ช่อง 3/ข้อ 49)
-- **[ตรวจแล้วจริง] ครอป C–J ของ designer รอบ 2 มาจาก build กลางทาง** (`crops-typo2/3` = ก่อนวลี /about + นาที) — โค้ดจุดเหล่านั้นไม่เปลี่ยนหลังจากนั้น แต่ตามเกณฑ์ "ผลตรวจใช้กับ commit ที่ระบุ" ยังไม่มีครอปทั้ง 25 จุดจาก `4167b26` เดียวกัน · ถ้าเจ้าของต้องการ รัน `node _incoming/30.4c/typo-crops.js` บน build ใหม่ + designer 1 รอบ (~10 นาที + agent)
-- **[ตรวจแล้วจริง] checker ตรวจ close-table แบบสุ่ม 24/42** (ไม่ได้ไล่ทั้ง 42) · จอ 360/414 ไม่ได้ตรวจ (มีแต่ 390/1440) · en/zh ตรวจ 4 หน้า (/ /about /how-to-order /products/argus-p3) ไม่ใช่ทั้งเว็บ
-- **[ตรวจแล้วจริง] `CategoryLabel.tsx` ใส่ NBSP ใน en/zh 1 จุด** ("Disposable / Prefilled" — กลไกของ 30.3ข ไม่ใช่ thai-typography) · ไม่แตะ · ถ้าอยากให้ en/zh = 0 จริง ๆ ต้องให้ CategoryLabel ทำเฉพาะ label ที่ครึ่งหลังเป็นไทย (แก้ 1 บรรทัด — รอเจ้าของสั่ง)
-- **ข้อ 49 (30.4ข):** privacy OTP/ตะกร้า · FAQ ซ่อน · how-to-order 3 แถว · **2D** H2 หน้าแรก max-width · **2E** /compare 390 คอลัมน์ 3 ถูกตัด · **2F** ไม่แก้ (เจ้าของ) · #31 #34 → เจ้าของเช็ค iPhone
-- ของเดิม v22 §4: `priority` 2 จุด · taxonomy Coil-72/89 · `th.ts` dead strings · FAQ วิจัยซ่อน · คอมเมนต์ `relx.ts:19` · โครงหน้า "จดไว้ 30.4ข"
-
-### 4.1 รายการตัดกลางคำ — ปิดแล้ว
-`close-list.md` = รายการทั้งหมด · ช่อง 1 (ข้อความ) = แถว 1–42 ทำครบ · ช่อง 2 (กลไก) = `3c060b8` ครบ · ช่อง 3 = ไม่แก้ตามเหตุผลเดิม · เหลือเฉพาะ §4 ข้อ 1 (หัวข้อ 390) + ระดับ B
+- **[ตรวจแล้วจริง] sticky หัวแถว /compare** — เลื่อนสุดขวาแล้วคอลัมน์หัวแถวหลุดจอ อ่านค่าไม่รู้แถวไหน (designer ก้อน 1 · ของเก่า) → `sticky left-0` ที่ `<th>` (มี `bg-surface-1` แล้ว + เส้นขอบขวาบาง) · **เจ้าของสั่ง: ทำตอนปิดรอบ 30.4ข**
+- **[ตรวจแล้วจริง] 6 ตัวการ์ดแถวว่างเพราะสเปกไม่ verified** (G4 Classic แบต · G3 Pro KOKO แบต · M Switch Kit แบต · Zero Pro แบต · Joiway F3/F4 ทุกแถว) + PM ที่ไม่มีแถวเข้ากติกา 9 ตัว (coil-1/38/72 คอยล์หลายโอห์ม · coil-55/68/54 · iqosheet-18 · pod-159 · m-bar-pod) → **รอบข้อมูล** verify แถวสเปก · ห้ามใส่ placeholder แทน (designer)
+- **[ตรวจแล้วจริง] `ProductHero.tsx` stats หน้าสินค้ายังดึง attributes โดยไม่เช็ค verified** (แบต/วัตต์/พัฟ/ความจุ 4 ช่องใต้ปุ่ม) — Joiway F3 โชว์ "650mAh · 12,000 พัฟ" ทั้งที่แถวสเปก unverified · นอกขอบเขต 30.4ข → เสนอรอบข้อมูลหรือรอบเก็บบ้าน (ใช้ `card-headline-spec.ts` แบบเดียวกันได้)
+- **[ตรวจแล้วจริง] `src/components/catalog/PuffCount.tsx` ไม่มีใครเรียกแล้ว** (dead หลังก้อน 2) — ลบ = ถามเจ้าของ (13.4) → รอบเก็บบ้าน
+- **[ตรวจแล้วจริง] ธง designer ก้อน 2 (copy):** คำโปรย M Bar 10K "…รองรับ 10,000 พัฟ" ซ้ำกับบรรทัดสเปกใต้มัน · Muro 3ML ชื่อ/คำโปรย/สเปก พูด "3mL" 3 รอบ → รอบ copy/ปิดรอบ · มือถือ 10.4px อยู่ขอบล่างของที่อ่านออก (เสนอ 11px [เชื่อว่า] ยังไม่วัด)
+- **[ตรวจแล้วจริง] "1 สี / 1 ขนาด" บนการ์ด PM** (coil-56/74/87) เป็นของเดิม ไม่ใช่ข้อมูล — ไม่แตะ (thai-copy ธง)
+- **ระดับ B ที่เกิดใหม่หลัง copy 12 จุด** (v24 §4 ข้อ 2) — ยังไม่ได้ให้ designer ดูครอป · ห้ามไล่แก้ (§14)
+- **ข้อ 49 (หน้าบริการ · privacy OTP · FAQ ซ่อน · how-to-order)** = รอบตะกร้า · **#31 #34 → เจ้าของเช็ค iPhone** · ของเดิม v22 §4 (`priority` 2 จุด · taxonomy Coil-72/89 · `th.ts` dead strings · FAQ วิจัยซ่อน · คอมเมนต์ `relx.ts:19`)
 
 ---
 
 ## 5. รอสานต่อ (มีโครงแล้ว ต้องต่อยอด)
 
-### 5.1 ปิดรอบ 30.4ค — เหลือแค่ขั้นตอนหลัง push
-1. **push** `checkpoint/phase-3.3.3` (ทำในเซสชันนี้ — ดู §12) → **Cowork merge** (เจ้าของสั่ง) → ยิงเว็บจริง: `node _incoming/30.4c/typography-render-check.js https://okami24.store` (คาด 36/36 · head 0 · JSON-LD 0) + `node _incoming/30.4c/close-render-check.js --headings --base https://okami24.store` (คาด 143/143)
-2. ถามเจ้าของ: หัวข้อ 390 3 จุด (§4 ข้อ 1) เอาไหม · ลบภาพ `_incoming/30.4c/shots-*/crops-*` 1.6 GB (เจ้าของ 2026-09-16: **ยังไม่ลบ**)
-3. เครื่องมือปิดรอบใน `_incoming/30.4c/` (gitignored): `close-table-1.md` (ตารางที่เคาะ) · `apply-close-1/2/3.js` · `close-render-check.js` · `typography-render-check.js` · `typography-test.ts` · `typography-enzh-check.sh` · `typo-crops.js` (+`--only` `--out`) · `wb-diff.js` · `wb-diff*.md` · `wb-typo/` (สแกนล่าสุด 105 หน้า) · `wb-typo-pre-copy/` · `crops-typo*/` · `close-chain*.sh` · `commit-close-*.txt` · `close-designer-typo-brief.md`
+### 5.1 รอบ 30.4ข — ลำดับก้อนตามไฟล์เจ้าของ (2026-09-16) · ทุกก้อน = ชั้น B
+1. ~~ก้อน 1 เก็บของค้าง~~ live
+2. ~~ก้อน 2 สเปกเด่นบนการ์ด~~ live (PR #29)
+3. **ก้อน 3 คำนำหมวด = เกลาคำโปรยเดิม (เจ้าของตัดสิน 2026-09-17)** — หน้าหมวด พอตซิสเต็ม · พอตใช้แล้วทิ้ง · หัวพอต/คอยล์ · IQOS/HNB (**ข้ามน้ำยา**) · ของเดิม = `categories.ts` ฟิลด์ `descriptionTh` (แสดงใต้ H1 ผ่าน `CategoryPageHeader` และเป็น meta description ด้วย) → **เกลาให้ได้ 2–3 ประโยค ยาว 120–160 ตัวอักษร** ใช้เป็นทั้ง meta และข้อความบนหน้าเหมือนเดิม · **ไม่เพิ่มย่อหน้าใหม่ ไม่แตะโครง** (รอบ SEO ค่อยแยก meta ถ้าจำเป็น) · เนื้อหา: หมวดนี้คืออะไร เหมาะกับใคร ในร้านมีแบรนด์อะไร (เฉพาะที่มีจริง) · ไม่มีตัวเลขยอดขาย/จำนวนรุ่นที่จะเก่า · คีย์เวิร์ดธรรมชาติ ไม่ยัด · thai-copy ≤2 แบบ/หมวด → เจ้าของเคาะไทย → writer แปล en/zh (`description`/`descriptionZh` คู่กัน) → build → ถ่าย 4 หน้า × 2 จอ → designer → เจ้าของดูภาพ → checker → commit feat-intro → push
+4. **ก้อน 4 FAQ eyebrow ซ้ำ** — หน้าสินค้า eyebrow "คำถามที่พบบ่อย" + H2 "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" · เสนอ ก) eyebrow "FAQ" ข) "ถาม-ตอบ" · H2 คงเดิม · ทำทุกที่ที่ eyebrow+H2 ซ้ำ (นับก่อน) · commit copy-eyebrow
+5. **ก้อน 5 แถบความมั่นใจก่อน footer** — 3–4 ข้อ: ของแท้ · ราคาตรง · บริการจริง (ตอบเอง ไม่ใช่บอท) · ข้อมูลเช็คกับเว็บทางการ — เฉพาะที่จริงวันนี้ ห้าม "ส่งฟรี" "รับประกัน" "จ่ายผ่าน…" · designer 2 แบบ (แถวเดียว / การ์ด 4 ใบ) 390+1440 → เจ้าของเลือก → commit feat-trust · ไอคอนเฉพาะที่มีในระบบ (lucide)
+6. **ก้อน 6 ข้อเสนอ designer จาก 30.4ก ที่เหลือ** — ยกรายการจาก HANDOFF v21–v22 §4 "โครงหน้า จดไว้ 30.4ข" (FAQ eyebrow · anatomy "จากภายนอกสู่ภายใน" แต่ไล่บนลงล่าง · ลิงก์ "แหล่งที่มา" hover ฯลฯ) ให้เจ้าของเลือกทำ/ไม่ทำ · commit feat-designer
+7. **ปิดรอบ** — sticky หัวแถว /compare (เจ้าของสั่ง) · `scripts/wordbreak-scan.js` ทุกหน้าที่แตะ + designer ดูเฉพาะจุดที่ธง → แก้ commit เดียว · รายงานปิดรอบต้องมี: รายการของใหม่ทั้งหมด (หน้าไหน · key อะไร) · wordbreak ก่อน/หลัง · ขนาดรีโป
 
-### 5.2 หลัง 30.4ค (เหมือน v23)
-**30.4ข** (คำนำหมวด · สเปกเด่นบนการ์ด · แถบความมั่นใจ + ข้อ 49 + 2D/2E + "จดไว้ 30.4ข" ทุกข้อ + หัวข้อ 390 ถ้าเจ้าของเอา) → รอบ SEO → รอบบทความ → รอบเก็บบ้าน → รอบข้อมูล → ข้อ 45 → แอดมิน → QR → ข้อ 42 · ข้อ 47/48 → รอบการขาย · รอบ label (`compare.rowDrawStyle` · หัวแถว /compare 1440 ~10px) · รอบ meta (about meta)
+**หลักทั้งรอบ (จากไฟล์เจ้าของ):** ข้อความใหม่ 3 ภาษา (contract test บังคับ) · ตัวเลขจากแถว verified เท่านั้น · ห้าม "ที่สุด" / health / price claim / ตะกร้า / ส่งฟรี · น้ำยา 0 = ข้าม · ข้อความใหม่ผ่าน `<ThaiText>`/thaiTypography · ห้ามเพิ่มรายการ thai-typography.ts เอง · หน้าบริการไม่แตะ · ทุกก้อน: build → ถ่าย 390+1440 → ส่งภาพให้เจ้าของเลือก → ค่อย commit · commit แยกชนิด · push ทุกก้อน
+
+### 5.2 หลัง 30.4ข (เหมือน v24)
+รอบเก็บบ้าน (คำสั่ง/เอกสาร/agent/HANDOFF ให้สั้น · PuffCount dead · ProductHero verified) → รอบ SEO → รอบบทความ → รอบข้อมูล (verify สเปก 15 ตัว · TPD) → รอบตะกร้า (+ข้อ 49) → ข้อ 45 → แอดมิน → QR → ข้อ 42 · 47/48 → รอบการขาย · รอบ label (`compare.rowDrawStyle`) · รอบ meta
 
 ---
 
@@ -99,48 +104,47 @@
 
 | เรื่อง | รู้แล้ว | ยังไม่รู้ | ต้องตอบ |
 |---|---|---|---|
-| หัวข้อ 3 จุดที่ 390 (§4) | ดีขึ้นที่ 1440 · 390 เท่าเดิม | เจ้าของรับได้ไหม | เอา thai-copy เสนอหัวข้อสั้น ≤15/ท่อน หรือรับ |
-| ลบภาพ 1.6 GB | เจ้าของ 2026-09-16: ยังไม่ลบ | เมื่อไหร่ | — |
-| ครอป 25 จุดจาก build สุดท้าย + designer อีกรอบ | โค้ดจุดเหล่านั้นไม่เปลี่ยน | เจ้าของอยากได้หลักฐานตรง commit ไหม | ใช่/ไม่ |
-| CategoryLabel NBSP ใน en/zh 1 จุด | ของ 30.3ข ไม่ใช่กลไกนี้ | จะให้แก้ไหม | ใช่/ไม่ |
-| ยังรอเหมือน v23 | TPD VINCI S/G3 mini · #31/#34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 | | |
+| ~~ก้อน 3 "คำนำหมวด"~~ | **ตอบแล้ว 2026-09-17: เกลาของเดิม** (2–3 ประโยค 120–160 ตัวอักษร · meta + หน้า · ไม่แตะโครง) | — | — |
+| ลบภาพ `_incoming/30.4c` 265 MB (shots/crops) | เจ้าของ 2026-09-16: ยังไม่ลบ | เมื่อไหร่ | — |
+| ยังรอเหมือน v24 | TPD VINCI S/G3 mini · #31/#34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 | | |
 
 ## 8. ความเสี่ยงและจุดต้องระวัง
 
-### 8.0 กฎ 2 ชั้น — ถาวร + ที่ตกผลึกรอบนี้
-- **สแกนก่อนถ่าย** `scripts/wordbreak-scan.js` → ครอปเฉพาะที่ธง (`typo-crops.js`) → designer · **แต่ตัวตรวจไม่เห็นทุกชนิด** (ขีดช่วงตัวเลข · คำขาดที่ segmenter คิดว่าเป็นคำ) — designer ยังต้องดูจุดที่กลไกแตะ
-- **ผูกแล้วดูรอยตัดใหม่เสมอ** (ข้อขัดแย้ง 3–4)
-1. **NBSP/U+2060:** อยู่ได้เฉพาะตอน render ผ่าน `thai-typography.ts` (+`CategoryLabel.tsx` ของเดิม) · ด่าน `scripts/thai-raw-chars-check.js` = 0 · เพิ่มคำ/หน่วย/ชื่อรุ่น = เจ้าของเคาะ + จด THAI_STYLE §5/§6 · title/meta/JSON-LD 0 · en/zh: นับเฉพาะ text node ไทย = 0 (`typography-enzh-check.sh`)
-2. **ทุกที่ที่เรียก `thaiTypography()` ต้องมี locale guard** (dictionary ผ่าน LocaleProvider · overlay getters เช็ค locale · หน้าไทยล้วนใช้ `<ThaiText>`) — เรียกตรง ๆ ใน server component = รั่วไป en/zh
-3. **Cowork merge โดยไม่บอก** → `git fetch` ก่อนสรุปสถานะ · ห้าม merge เอง · ห้าม force push
-4. **context:** กติกาใหม่ ข้อขัดแย้ง 1 — Code แจ้งเอง 3 ก้อน/แชท หรือก่อนงาน >30 นาที
-5. **หลัก "ที่สุด"/ยืนยันไม่ได้ = ไม่พูดทุกภาษา** — ใช้กับ "ชาร์จเร็ว" แล้ว (แถวสเปก verified ต้องบอกความเร็วจริง เช่น ARGUS G4 "~45 นาที")
-6. **overlay key / render-check / agent / server / heredoc / CRLF / Git Bash `/`** เหมือน v22–v23 · เพิ่ม: ห้าม `node -e` กับข้อความไทย/backtick · sed กิน `\p` → ใส่ backslash ผ่านสคริปต์ · sed -i ทำไฟล์เป็น LF → unix2dos ก่อน commit
-7. **Chrome งานหนักทีละอย่าง** (ข้อขัดแย้ง 8)
+### 8.0 กฎ 2 ชั้น + ที่ตกผลึกรอบนี้
+- **ทุกก้อน 30.4ข = ชั้น B:** สแกน wordbreak หน้าที่แตะ (ไม่ต้องทั้งเว็บ) → ครอปจุดที่ธง → designer · ถ่าย **before ให้จบก่อน build** (ข้อขัดแย้ง 6) · Chrome ทีละงาน
+- **ของใหม่ทุกชิ้น เจ้าของต้องเห็นภาพก่อน commit** — แบบเสนอทำด้วย DOM override บน build เดียว (`k2-shots.js --spec-first --short-battery`) ถูกกว่า rebuild แต่ต้องถ่ายซ้ำบน build จริงก่อนปิด
+1. **ตัวเลขบนหน้าเว็บต้องชี้แถวสเปก verified ได้** — `card-headline-spec.ts` เป็นแบบอย่าง · `ProductHero.tsx` ยังไม่ทำ (§4)
+2. **NBSP/U+2060 เฉพาะตอน render** (`thai-typography.ts` + CategoryLabel เดิม) · ด่าน `thai-raw-chars-check.js` 0 · title/meta/JSON-LD 0 · en/zh text node ไทย 0 (`typography-enzh-check.sh` — curl ใช้ไม่ได้ ข้อขัดแย้ง 9)
+3. **`thaiTypography()` ต้องมี locale guard** — `CardHeadlineSpec` ทำใน client ตาม locale · dictionary ผ่าน LocaleProvider · หน้าไทยล้วนใช้ `<ThaiText>`
+4. **Cowork merge โดยไม่บอก** → `git fetch` ก่อนสรุปสถานะ (เซสชันนี้ PR #28 ถูก merge ระหว่างทำก้อน 2) · ห้าม merge เอง · ห้าม force push
+5. **context (เจ้าของแก้กฎ 2026-09-17):** Code ไม่ต้องนับก้อนเอง · ทำต่อเนื่องจนจบรอบ หรือจนเจ้าของพิมพ์ handoff · ทุกครั้งที่ push ให้อัปเดต HANDOFF §16 สั้น ๆ (10 บรรทัด) เพื่อให้ปิดแชทตอนไหนก็ไม่เสียงาน
+6. **หลัก "ที่สุด"/ยืนยันไม่ได้ = ไม่พูดทุกภาษา** · **overlay key / render-check / heredoc / CRLF / Git Bash `/`** เหมือน v23–v24 · `sed -i` → unix2dos ก่อน commit · ไฟล์ใหม่จาก Write tool = LF → unix2dos ก่อน `git add`
+7. **สคริปต์ที่ generate หลักฐานต้องจำลอง logic ของ component ครบ** (ข้อขัดแย้ง 7)
 
 ## 9. ห้ามรื้อ
-เหมือน v23 + `src/lib/thai-typography.ts` ทั้งไฟล์ (JOINED 6 รายการ · MODEL_NAMES 6 · หน่วย 9+3 · `joinWord` · `RANGE_DASH` — ทุกอย่างคือคำตัดสินเจ้าของ) · `useServiceCopy` · `<ThaiText>` · `GuideCategoryLabel` · ทุกประโยคใน THAI_STYLE §7 "ขั้นปิดรอบ 30.4ค" · THAI_STYLE §5 แถว /about joiner
+เหมือน v24 + `src/lib/card-headline-spec.ts` กติกาต่อหมวด (คำตัดสินเจ้าของ 2026-09-16) · dictionary `catalog.cardBattery/cardMaxWatt/cardResistance/cardCapacity` 3 ภาษา ("แบต" = คำล็อกในตำแหน่งป้าย) · ลำดับการ์ดมือถือ ชื่อ→สเปก→ราคา (MOBILE_SPEC 3.6) · การ์ด PM ไม่มีชื่อหมวดในแถวล่าง · `ScrollHintFrame` /compare · หัวข้อ K1–K3 · `lg:text-xs` หัวแถว /compare · ทุกแถวใน THAI_STYLE §7 "รอบ 30.4ข ก้อน 1/2"
 
 ## 10. Git
-working tree ว่าง (เหลือไฟล์นี้ → `docs: HANDOFF v24`) · commit ปิดรอบแยกชนิดแล้ว 7 ก้อน (copy/data/feat/copy/feat/copy/docs) · push ทั้ง branch (เจ้าของสั่ง "push" ในลำดับปิดรอบ) · ห้าม merge เอง
+working tree ว่าง (เหลือไฟล์นี้) · main = `4d6fc6d` (PR #29 ก้อน 2 merge แล้ว) · branch นำหน้า main 1 commit docs v25 + ฉบับนี้ · ห้าม merge เอง · commit ถัดไปของรอบนี้: feat-intro (ก้อน 3) · copy-eyebrow · feat-trust · feat-designer · fix-close (sticky + wordbreak) · docs
 
 ## 11. ความพร้อมแต่ละระบบ
-เหมือน v22 · ภาษาไทยทั้งเว็บ: รอบ 30.4ค ปิดครบ (ก้อน 1–9 + ปิดรอบ) — เหลือ 30.4ข
+เหมือน v22 · ภาษาไทยทั้งเว็บ: 30.4ค ปิดครบ · 30.4ข 2/6 ก้อน live · การ์ดสินค้า: บรรทัดสเปกเด่น 38/53 ตัว (verified เท่านั้น)
 
 ## 12. กำลังทำอะไรค้างอยู่ตอนปิดแชท
-- **push branch** — ทำหลังเขียนไฟล์นี้ (commit docs v24 → `git push origin checkpoint/phase-3.3.3`) · ถ้าเปิดแชทใหม่แล้วเห็น origin ยังไม่มี `4520498` = push ไม่สำเร็จ ให้ push ก่อน
-- รายงานปิดรอบส่งในแชทเดียวกัน (13.6) — เจ้าของยังไม่ได้ตอบคำถาม §7 ข้อ 1–4
-- server 3412 ปิดแล้ว · ไม่มี process ค้าง (ตรวจ netstat)
+- ไม่มีงานค้างกลางทาง · ก้อน 2 live แล้ว (PR #29 · Cowork ตรวจเว็บจริงแล้ว — ไม่ต้องยิงสคริปต์ซ้ำ) · ก้อน 3 เริ่ม 2026-09-17 (ดู §16 บรรทัด "ก้อน 3")
+- server 3412 ปิดแล้ว · ไม่มี process ค้าง
+- เครื่องมือก้อน 1–2 ใน `_incoming/30.4b/` (gitignored): `k1-crops.js` · `k1-heading-lines.js/.txt` · `k1-checker-brief.md` · `k2-spec-census.ts/.md` · `k2-headline-table.ts/.md` · `k2-rule-table.md` · `k2-shots.js` (`--only` `--spec-first` `--short-battery` `--hide-phone-line`) · `crops-k1/` `crops-k2/{before,after,after-draft,after-specfirst,after-shortbat}` · `wb-k1/` `wb-k2/` + `wb-diff-k1/k2.md` · `enzh-k1.log` `enzh-k2e.log` · `verify-catalog-k1/k2.log` · `build-*.log` · `commit-k1/k2-*.txt` · `thai-style-append-k1/k2.md`
 
 ## 13. แนะนำทำอะไรต่อ (เรียงลำดับ)
-1. วางบล็อก §16 → `git fetch` → ถ้า main ขยับ (Cowork merge) ยิงเว็บจริง 2 สคริปต์ใน 5.1 ข้อ 1
-2. รับคำตอบ §7 ข้อ 1–4 · ถ้าเจ้าของเอาหัวข้อ 390 → thai-copy 3 หัวข้อ ≤15 อักษร/ท่อน (ชั้น A + สแกน 3 หน้า)
-3. เริ่ม 30.4ข ตาม LAUNCH_AUDIT 49 + THAI_STYLE §6 รายการค้าง — เปิดแชทใหม่ 1 ก้อนต่อ 1 หัวข้อ
+1. วางบล็อก §16 → `git fetch` → เทียบ main กับ `4d6fc6d`
+2. **ก้อน 3 คำนำหมวด = เกลาของเดิม** — thai-copy ≤2 แบบ/หมวด (ของเดิมทุกหมวดยาว 122–158 ตัวอักษร อยู่ในเกณฑ์แล้ว · `npx tsx _incoming/30.4b/k3-desc-len.ts`) → เจ้าของเคาะไทย → writer en (zh ใช้ en ตาม `CategoryPageHeader` เดิม) → build → ถ่าย 390+1440 → designer → เจ้าของดูภาพ → checker → commit feat-intro → push
+3. ก้อน 4–6 ตามลำดับ §5.1 · ปิดรอบรวม sticky /compare
 
 ## 14. ควรหยุดทำ
-- ห้ามถ่าย 104 ภาพก่อนสแกน · ห้ามเพิ่ม joiner/NBSP นอกรายการ · ห้ามรันงาน Chrome 2 อย่างพร้อมกัน
-- ห้ามไล่แก้คำโดดระดับ B (ขอบคำประสม หัว|พอต ฯลฯ) — designer ตัดสินแล้วว่ารับได้ 66 ครอป การเขียนใหม่แค่ย้ายจุดตัด
-- ห้ามเปลี่ยน CategoryLabel/label-lang/lg:min-h-10 เพื่อไล่ตัวเลข "0" ให้สวย — ต้องเจ้าของสั่ง
+- ห้ามถ่ายทั้งเว็บก่อนสแกน · ห้ามเพิ่ม joiner/NBSP นอกรายการ (เจ้าของบอก "ยังไม่ผูก" พอตใช้แล้วทิ้ง/พอตซิสเต็ม) · ห้ามรัน Chrome 2 งานพร้อมกัน
+- ห้ามไล่แก้คำโดดระดับ B · ห้ามใส่ placeholder แทนแถวสเปกว่าง · ห้ามเปลี่ยน CategoryLabel/label-lang/lg:min-h-10
+- ห้ามแก้ `ProductHero.tsx` stats / ลบ `PuffCount.tsx` ในรอบนี้ — รอบเก็บบ้าน/ข้อมูล
+- ก้อน 3: ห้ามเพิ่มย่อหน้าใหม่ใต้คำโปรย · ห้ามเพิ่มฟิลด์/แตะโครง `CategoryPageHeader` (เจ้าของตัดสิน 2026-09-17)
 
 ## 15. ปลายทางของโปรเจกต์
 เหมือน v21 §15
@@ -152,42 +156,44 @@ working tree ว่าง (เหลือไฟล์นี้ → `docs: HANDO
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) แปลงจากเดโม NOVA VAPOR
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
-Branch: checkpoint/phase-3.3.3 HEAD 4520498 (+docs v24) · origin/main f71b6a7 (PR #26 = ก้อน 9 live) · branch นำหน้า main 10 commit = ขั้นปิดรอบ 30.4ค (ตรวจผ่านตามเกณฑ์ checker A–I + designer 2 รอบ) — push แล้ว รอ Cowork merge
+Branch: checkpoint/phase-3.3.3 HEAD = docs ก้อน 3 (ต่อจาก e014b8a copy · f83b8f1 feat · b27933e docs v25.1 · 7f47c52 docs v25) · origin/main 4d6fc6d (PR #29 = 30.4ข ก้อน 2 live · PR #28 = ก้อน 1) · branch นำหน้า main = ก้อน 3 (feat + copy + docs ×3) push แล้ว 2026-09-17 รอ Cowork merge
   Cowork merge + deploy โดยไม่บอกในแชท → git fetch ก่อนสรุปสถานะเสมอ · ห้าม merge เอง
-อ่านก่อน (กฎ 13.9): ~/.claude/CLAUDE.md หมวด 13 → CLAUDE.md โปรเจกต์ → docs/HANDOFF.md ฉบับ 24 (ข้อขัดแย้ง 1–8 · 4 · 5.1 · 7 · 8.0)
-  → docs/THAI_STYLE.md (§3 คำล็อก · §5 กลุ่ม ก รวมแถว /about joiner · §6 typography · §7 "รอบ 30.4ค" + "ขั้นปิดรอบ")
-  → docs/LAUNCH_AUDIT.md เฉพาะหัว "สถานะปัจจุบัน" + ข้อ 30 (ปิดแล้ว) 36 49 (ห้ามอ่านทั้งไฟล์)
-  → _incoming/30.4c/close-table-1.md (ตารางที่เคาะ) · close-list.md · batch-7-approved.md (คำตัดสินเจ้าของ)
+อ่านก่อน (กฎ 13.9): ~/.claude/CLAUDE.md หมวด 13 → CLAUDE.md โปรเจกต์ → docs/HANDOFF.md ฉบับ 25.1 (ข้อขัดแย้ง 1–10 · 4 · 5.1 · 8.0)
+  → docs/THAI_STYLE.md (§3 คำล็อก · §5 กลุ่ม ก · §6 typography · §7 ท้ายไฟล์ "รอบ 30.4ข ก้อน 1" + "ก้อน 2")
+  → docs/LAUNCH_AUDIT.md เฉพาะหัว "สถานะปัจจุบัน" (ห้ามอ่านทั้งไฟล์) · docs/MOBILE_SPEC.md 3.6
+  → ไฟล์คำสั่งรอบ 30.4ข ของเจ้าของ (ถ้าเจ้าของวางซ้ำ ให้ยึดไฟล์นั้น · สรุปอยู่ HANDOFF 5.1)
 
-สถานะ: รอบ 30.4ค ปิดรอบเสร็จ 2026-09-16 — 7 commit: copy 4ffb4cc · data 1b171e6 · eyebrow 8348310 · headings 1807a19 · typography 3c060b8 · DRAG S3 4167b26 · docs 4520498
-  ยิงเว็บจริงหลัง merge: node _incoming/30.4c/typography-render-check.js https://okami24.store (36/36 · head 0 · JSON-LD 0) · node _incoming/30.4c/close-render-check.js --headings --base https://okami24.store (143/143)
-  รอเจ้าของ (§7): หัวข้อ 3 จุดที่ 390 ยังจบคำโดด (เท่าเดิม) เอา thai-copy เสนอสั้น ≤15/ท่อนไหม · ครอป 25 จุดจาก build สุดท้าย+designer อีกรอบไหม · CategoryLabel NBSP en/zh 1 จุด (30.3ข) แก้ไหม · ลบภาพ 1.6 GB (ยังไม่ลบ)
-  ถัดไป: 30.4ข (LAUNCH_AUDIT 49 + THAI_STYLE §6 รายการค้าง + 2D/2E) — 1 แชท 1 ก้อน
-  ไม่แก้ (เจ้าของตัดสิน): 2F 1600MAH mono · #31 #34 iPhone · สั่งซื้อออนไลน์ปิด (ข้อ 43) → ไลน์ @okm24 · 53/31 · น้ำยา 0 · TPD VINCI S/G3 mini รอเช็คกล่อง
-  agent: thai-copy (opus · ตาราง ก่อน→หลัง) · checker sonnet 5 ช่อง · designer (ครอป+ตัวเลข ไม่มี Bash) · ใส่ข้อห้าม build/server/taskkill/แก้ไฟล์ ในคำสั่งทุกตัว
+สถานะ: รอบ 30.4ข = เพิ่มของใหม่ลงหน้า + ของค้างปิดรอบ · ทุกก้อน ชั้น B
+  ก้อน 1 live (หัวข้อ K1–K3 · H2 max-width · /compare ตัวบอกเลื่อน + หัวแถว 12px ≥lg) · ก้อน 2 live (บรรทัดสเปกจาก verified เท่านั้น 38/53 · "แบต 1600mAh · สูงสุด 35 วัตต์" · มือถือ ชื่อ→สเปก→ราคา · การ์ด PM ไม่มีชื่อหมวด · Cowork ตรวจเว็บจริงแล้ว)
+  ก้อน 3 ตรวจผ่านตามเกณฑ์ + push แล้ว (รอ merge): เกลาคำโปรย 6 หมวด th+en (feat f83b8f1 · THAI_STYLE §7 "ก้อน 3") · กวาด "ไม่เผาไหม้"/"เปลี่ยนจากบุหรี่มวน" 3 ภาษา + brands.ts UWELL/JOIWAY/IQOS (copy e014b8a) · คำล็อกใหม่ "อุ่นยาสูบ" · ห้าม "ไม่เผาไหม้" ทุกภาษา · designer 10/10 หลังแก้ · checker รอบ 2 R1–R5 ผ่าน · verify:catalog 20/20 · ภาพ _incoming/30.4b/crops-k3 (sheet-390/1440.png) · เจ้าของเคาะทุกประโยคแล้ว 17/09
+  หลัง merge ยิงเว็บจริง: curl -s https://okami24.store/products/pod-systems | grep -c "เหมาะกับคนที่อยากเลือกน้ำยาเอง" (>0) · curl -s https://okami24.store/brands/iqos | grep -c "เผาไหม้" (0) · curl -s https://okami24.store/e-liquid/tobacco-style | grep -c "บุหรี่มวน" (0)
+  เครื่องมือก้อน 3 (_incoming/30.4b): k3-shots.js <before|after> [--only …] [--locale en|zh] (ครอปหัวหน้า + วัดบรรทัดจริง · ผลใน crops-k3/<tag>/index.md) · k3-variant.js <json> (ลองข้อความใหม่บนหน้าโดยไม่ build — ไทยต้องมาจากไฟล์ json ห้ามส่งทาง argv) · k3-sheets.js (ภาพรวม before/after) · k3-desc-len.ts · k3-category-facts.ts · brief: k3-thai-copy/writer/designer/checker-brief.md
+  แล้ว: ก้อน 4 FAQ eyebrow ซ้ำ (ก "FAQ" / ข "ถาม-ตอบ") → ก้อน 5 แถบความมั่นใจ (designer 2 แบบ · เฉพาะที่จริงวันนี้ ห้ามส่งฟรี/รับประกัน/จ่ายผ่าน) → ก้อน 6 ข้อเสนอ designer 30.4ก → ปิดรอบ (sticky หัวแถว /compare เจ้าของสั่ง + wordbreak-scan หน้าที่แตะ + designer + commit เดียว)
+  เจ้าของตัดสินแล้ว ห้ามถามซ้ำ: ตะกร้าปิด (ข้อ 43) → ไลน์ @okm24 · น้ำยา 0 ข้าม · หน้าบริการไม่แตะ (ข้อ 49) · งานรูปพัก · M1b ปิด · CategoryLabel NBSP en/zh คงไว้ · ยังไม่ผูก "พอตใช้แล้วทิ้ง/พอตซิสเต็ม" ใน thai-typography · 6 ตัวการ์ดแถวว่าง (สเปกไม่ verified) รับได้ → รอบข้อมูล · ภาพ _incoming/30.4c 265 MB ยังไม่ลบ · 2F 1600MAH mono ไม่แก้ · #31 #34 iPhone
+  agent: thai-copy (ตาราง ก่อน→หลัง) · writer (en/zh) · checker 5 ช่อง · designer (ครอป+ตัวเลข ไม่มี Bash) · ใส่ข้อห้าม build/server/taskkill/Chrome/แก้ไฟล์ ในคำสั่งทุกตัว
 
-กติกา context (เจ้าของ 2026-09-16): Code แจ้ง "ขอจบก้อนนี้ก่อน" แล้ว handoff เมื่อครบ 3 ก้อนในแชทเดียว หรือก่อนเริ่มงาน >30 นาที · เจ้าของแทรก handoff ได้ทุกเมื่อ
-กฎ 2 ชั้น: ชั้น A ข้อความล้วน = build → render-check → checker → commit · ชั้น B แตะโครง/CSS/typography = สแกน wordbreak → ครอปจุดที่ธง → designer → checker · ประโยคใหม่ทุกประโยค = เจ้าของเคาะ · "ไม่" ห้ามอยู่ตำแหน่งเสี่ยง · ห้าม U+2060/NBSP นอกกลไก thai-typography.ts (เพิ่ม = เจ้าของเคาะ + จด §5/§6) · เรียก thaiTypography() ต้องมี locale guard (<ThaiText> สำหรับหน้าไทยล้วน) · ผูกอะไรแล้วต้องดูรอยตัดใหม่
-ห้ามแตะ: layout · รูป · motion · ordering-mode.ts · ข้อความข้อ 43 · slug/URL/sitemap/structured data · /warranty ข้อความ · หน้าบริการข้อความ (ข้อ 49) · Hero.tsx · cinematic/ · กลุ่ม ก · labelTh/name/shortName · lg:min-h-10 · คำเตือนอายุ/นิโคติน · ชื่อฟีเจอร์/สโลแกน · alt · title/meta 30.3ข นอกที่เคาะ · CategoryLabel.tsx · thai-typography.ts รายการ (คำตัดสินเจ้าของ)
-กฎเหล็ก: ห้าม deploy/merge main เอง · revert ไม่ reset · ห้าม force push · ห้ามกุตัวเลข · ตัดสินเอง = ย้อนง่าย+ลูกค้าไม่เห็น แล้วเขียน "ตัดสินเอง: … เพราะ …" · ต้องถาม = ประโยคลูกค้าอ่าน/รสนิยม/คำนอกตาราง/layout · งานเกินคำสั่ง = commit แยก
-  · checker 5 ช่อง + ด่าน: node scripts/thai-raw-chars-check.js = 0 · grep 8 คำห้าม (พอตี|แท่ง|หัวหอม|คาร์ทริดจ์|ตลับ|ดิสโพส|ลูกเล่น|เซลล์แบต) = 0 · head/JSON-LD 0 · en/zh text node ไทย 0 · ผู้แก้ไฟล์คนเดียวคือตัวหลัก
-  · ปิด server: netstat -ano | grep ":<port>.*LISTENING" → taskkill //PID <pid> //F · ห้าม /IM node.exe · พอร์ต 3000 = เจ้าของ · ห้าม build ขณะ server รัน · verify:catalog --full build เอง รันตอน server ปิด · Chrome งานหนักทีละอย่าง (shot.js + wordbreak-scan พร้อมกัน = ช้า 3 เท่า)
-  · สคริปต์เขียนด้วย Write tool เป็นไฟล์ (heredoc/node -e พังกับ backslash/regex/ไทย/backtick) · Write/Edit/sed กิน \uXXXX และ \p → String.fromCharCode / ยอมใช้อักขระไทยดิบใน regex · CRLF: sed -i ทำ LF → unix2dos ก่อน commit · ตรวจ git ls-files --eol · งาน >10 นาที = (bash script &) + until-loop เฝ้า log
-  · Git Bash แปลง arg ขึ้นต้น "/" เป็นพาธ → MSYS_NO_PATHCONV=1 node scripts/wordbreak-scan.js …
+กติกา context (เจ้าของ 2026-09-17): Code ไม่ต้องนับก้อนเอง · ทำต่อเนื่องจนจบรอบ หรือจนเจ้าของพิมพ์ handoff · ทุกครั้งที่ push ให้อัปเดต HANDOFF §16 สั้น ๆ (10 บรรทัด) เพื่อให้ปิดแชทตอนไหนก็ไม่เสียงาน
+กฎ 2 ชั้น: ทุกก้อนรอบนี้ = ชั้น B → build → ถ่าย before ให้จบก่อน build ใหม่ → ถ่าย after 390+1440 → designer → เจ้าของเลือกภาพ → checker → commit · ข้อความใหม่ทุกประโยค = 3 ภาษา + เจ้าของเคาะไทย · ตัวเลขทุกตัวชี้แถวสเปก verified (แบบอย่าง src/lib/card-headline-spec.ts) · ห้าม U+2060/NBSP นอกกลไก · thaiTypography() ต้องมี locale guard · ผูกอะไรแล้วต้องดูรอยตัดใหม่ · หลักฐานที่ generate ต้องจำลอง logic ของ component ครบ
+ห้ามแตะ: layout นอกจุดที่ระบุ · รูป · motion · ordering-mode.ts · slug/URL/sitemap/structured data · หน้าบริการ · Hero.tsx · cinematic/ · กลุ่ม ก · labelTh/name/shortName · lg:min-h-10 · คำเตือนอายุ/นิโคติน · ชื่อสี/กลิ่น · thai-typography.ts รายการ · CategoryLabel.tsx · card-headline-spec.ts กติกา · dictionary catalog.card* · ProductHero stats / PuffCount (รอบเก็บบ้าน)
+กฎเหล็ก: ห้าม deploy/merge main เอง · revert ไม่ reset · ห้าม force push · ห้ามกุตัวเลข · ตัดสินเอง = ย้อนง่าย+ลูกค้าไม่เห็น แล้วเขียน "ตัดสินเอง: … เพราะ …" · ต้องถาม = ประโยคลูกค้าอ่าน/รสนิยม/คำนอกตาราง/layout รวมชุดเดียว · งานเกินคำสั่ง = commit แยก
+  · checker 5 ช่อง + ด่าน: node scripts/thai-raw-chars-check.js = 0 · grep 8 คำห้าม (พอตี|แท่ง|หัวหอม|คาร์ทริดจ์|ตลับ|ดิสโพส|ลูกเล่น|เซลล์แบต) = 0 · head/JSON-LD 0 · en/zh text node ไทย 0 (curl ตรวจไม่ได้ — SSR ไทยเสมอ ใช้ typography-enzh-check.sh) · ผู้แก้ไฟล์คนเดียวคือตัวหลัก
+  · ปิด server: netstat -ano | grep ":3412.*LISTENING" → taskkill //PID <pid> //F · ห้าม /IM node.exe · พอร์ต 3000 = เจ้าของ · ห้าม build ขณะ server รัน · verify:catalog --full build เอง รันตอน server ปิด · Chrome ทีละงาน (shot/scan/enzh) · งาน >10 นาที = (cmd &) + เฝ้า log
+  · สคริปต์เขียนด้วย Write tool (heredoc/node -e/python พังกับ backslash/regex/ไทย · python ไม่มีในเครื่อง) · Write/Edit/sed กิน \uXXXX และ \p → String.fromCharCode · CRLF: sed -i และไฟล์ใหม่จาก Write = LF → unix2dos ก่อน git add · ตรวจ git ls-files --eol · Git Bash แปลง arg "/" → MSYS_NO_PATHCONV=1
 
-เครื่องมือ: Browser pane ใช้ไม่ได้ → node scripts/shot.js out.png <url> --width 390|1440 [--desktop] [--wait ms] [--cookie okami24_locale=en] [--eval "<js>"]
-  · สแกนจุดตัดบรรทัด: SITE_URL=https://okami24.store npx next build → start -p 3412 → MSYS_NO_PATHCONV=1 node scripts/wordbreak-scan.js --base http://localhost:3412 --widths 390,1440 --out _incoming/30.4c/wb-typo /path… (ทั้ง sitemap ~40–90 นาที) → node _incoming/30.4c/wb-diff.js <ก่อน> <หลัง> > diff.md
-  · ครอปให้ designer: node _incoming/30.4c/typo-crops.js "<build>" [--only 1,2] [--out dir] (รายการ SPOTS ในไฟล์) · ด่านอักขระ: node scripts/thai-raw-chars-check.js · render: node _incoming/30.4c/typography-render-check.js [base] · node _incoming/30.4c/close-render-check.js --headings [--base …] · en/zh: bash _incoming/30.4c/typography-enzh-check.sh · unit: npx tsx _incoming/30.4c/typography-test.ts
+เครื่องมือ: Browser pane ใช้ไม่ได้ → node scripts/shot.js out.png <url> --width 390|1440 [--desktop] [--wait ms] [--viewport] [--reduced-motion] [--cookie okami24_locale=en] [--eval "<js>"] · หน้าแรกจอคอมมี intro vh-sized → full-page y เพี้ยน ใช้ --viewport --reduced-motion + eval translateY (ดู _incoming/30.4b/k2-shots.js)
+  · ครอปการ์ด before/after: node _incoming/30.4b/k2-shots.js <before|after> [--only 390|ชื่อ] [--spec-first] [--short-battery] · ครอปหัวข้อ: node _incoming/30.4b/k1-crops.js · วัดจุดตัดหัวข้อ: node _incoming/30.4b/k1-heading-lines.js
+  · สแกนจุดตัดบรรทัด: MSYS_NO_PATHCONV=1 node scripts/wordbreak-scan.js --base http://localhost:3412 --widths 390,1440 --out _incoming/30.4b/wb-<ก้อน> /path… → node _incoming/30.4c/wb-diff.js _incoming/30.4c/wb-typo _incoming/30.4b/wb-<ก้อน> > diff.md (ข้อความคำโปรยใน wb-typo เก่ากว่าปัจจุบัน — เช็ค element ที่ธงว่าเป็นของก้อนไหน)
+  · render: node _incoming/30.4c/close-render-check.js --headings [--base …] (152) · node _incoming/30.4c/typography-render-check.js [base] (36 · head 0) · en/zh: bash _incoming/30.4c/typography-enzh-check.sh (~10 นาที) · ตารางสเปกการ์ด: npx tsx _incoming/30.4b/k2-headline-table.ts
   · server ทดสอบ: SITE_URL=https://okami24.store npx next build แล้ว SITE_URL=https://okami24.store OKAMI24_DATA_DIR=<tmp> OKAMI24_BACKUP_DISABLED=1 OKAMI24_STARTUP_PROBE=0 npx next start -p 3412
-Verify: npx tsc --noEmit · npx eslint <ไฟล์> · npm run verify:commerce (16) · SITE_URL=… npm run verify:catalog -- --full (20 · ปิด server ก่อน) · npx tsx scripts/count-storefront.ts (53/31) · npx tsx src/i18n/i18n-contract-test.ts (16) · npx tsx _incoming/30.4c/english-fields-5.ts (36) · node scripts/thai-raw-chars-check.js (0)
-Git: commit แยกชนิด (feat/fix/copy/data/docs) · git commit -F <ไฟล์> · อังกฤษ · Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> · push เมื่อเจ้าของสั่ง · ห้าม merge เอง
-รอเจ้าของ: §7 ข้อ 1–4 · TPD · #31 #34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189
+Verify: npx tsc --noEmit · npx eslint <ไฟล์> · npm run verify:commerce (16) · SITE_URL=… npm run verify:catalog -- --full (20 · ปิด server ก่อน) · npx tsx scripts/count-storefront.ts (53/31) · npx tsx src/i18n/i18n-contract-test.ts (16) · node scripts/thai-raw-chars-check.js (0)
+Git: commit แยกชนิด (feat/fix/copy/data/docs) · git commit -F <ไฟล์> · อังกฤษ · Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> · push ทุกก้อนหลัง checker ผ่าน (เจ้าของสั่งในไฟล์รอบ) · ห้าม merge เอง
+รอเจ้าของ: TPD · #31 #34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 · ลบภาพ 265 MB
 ```
 
 ---
 
 ## สิ่งแรกที่แชทใหม่ควรทำ
 
-1. **`git fetch` + `git status` + `git log -5 --oneline`** แล้วเทียบกับไฟล์นี้ — ถ้าไม่ตรงให้เชื่อ repo · ถ้า origin/main ขยับเกิน `f71b6a7` = Cowork merge ปิดรอบแล้ว → ยิงเว็บจริง 2 สคริปต์ (5.1 ข้อ 1) ทันที · ถ้า origin/checkpoint ยังไม่มี `4520498` = push ไม่สำเร็จ → push ก่อน
-2. อ่าน §4 + §7 → ถามเจ้าของ 4 ข้อรวมชุดเดียว (ตอบ ใช่/ไม่) ก่อนเริ่ม 30.4ข
-3. 30.4ข: เปิดที่ LAUNCH_AUDIT ข้อ 49 + THAI_STYLE §6 "รายการค้าง" · 1 แชท 1 ก้อน · ห้ามถ่ายภาพก่อนสแกน · ห้ามเพิ่ม joiner/NBSP นอกรายการ
+1. **`git fetch` + `git status` + `git log -5 --oneline`** แล้วเทียบกับไฟล์นี้ — ถ้าไม่ตรงให้เชื่อ repo · ถ้า origin/checkpoint ยังไม่มี commit ล่าสุดของไฟล์นี้ = push ไม่สำเร็จ → push ก่อน
+2. ก้อน 3 จบแล้ว (push 2026-09-17) → ถ้า main ขยับเกิน `4d6fc6d` = merge แล้ว → ยิงเว็บจริง 3 คำสั่งใน §16 → เปิดก้อน 4 (FAQ eyebrow ซ้ำ — นับจุดที่ eyebrow+H2 ซ้ำก่อน แล้วเสนอ ก "FAQ" / ข "ถาม-ตอบ")
+3. ทำตามลำดับ §5.1 ข้อ 3 · ถ่าย before ก่อน build · ห้ามถ่ายทั้งเว็บก่อนสแกน · ห้ามเพิ่ม joiner/NBSP นอกรายการ

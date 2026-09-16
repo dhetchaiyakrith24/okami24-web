@@ -8,9 +8,9 @@ export const categories: Category[] = [
     shortName: "Pod Systems",
     labelTh: "Pod System / พอตซิสเต็ม",
     description:
-      "Refillable pod devices built around interchangeable coil pods — fill your own e-liquid, swap resistances, and control airflow by hand.",
+      "Refillable pods: choose your own e-liquid, swap the pod, pick the ohms. Right now that's the UWELL Caliburn family, every model with real specs to compare.",
     descriptionTh:
-      "พอตซิสเต็มคือพอตที่เติมน้ำยาเอง เปลี่ยนหัวพอตได้ เลือกโอห์มได้ ตอนนี้มีตระกูล Caliburn ของ UWELL ตั้งแต่ G3 Pro ถึง G5 ทุกรุ่นดูสเปกจริงและเทียบกันได้",
+      "พอตซิสเต็มคือพอตที่เติมน้ำยาเอง เปลี่ยนหัวพอตได้ เลือกโอห์มได้ ตอนนี้มีตระกูล Caliburn ของ UWELL ทุกรุ่นดูสเปกจริงและเทียบกันได้ เหมาะกับคนที่อยากเลือกน้ำยาเอง",
     systemTypes: ["open-pod"],
   },
   {
@@ -20,9 +20,9 @@ export const categories: Category[] = [
     shortName: "Pod Kits",
     labelTh: "Pod Kit / พอตคิท",
     description:
-      "Higher-output pod devices with chip-driven firmware, adjustable wattage, and swappable resistance pod platforms — the step up from a simple open pod.",
+      "Reusable pods: you only swap the pod or coil. ARGUS and DRAG let you set the wattage; switch-style devices like M Switch keep it simple with prefilled pods.",
     descriptionTh:
-      "พอตคิทคือพอตที่ตัวเครื่องใช้ซ้ำได้ เปลี่ยนแค่หัวพอตหรือคอยล์ มีทั้งสายปรับวัตต์อย่าง ARGUS กับ DRAG และเครื่องระบบสวิตช์อย่าง M Switch ที่ใช้หัวพอตบรรจุสำเร็จ",
+      "พอตคิทคือพอตที่ใช้ซ้ำได้ เปลี่ยนแค่หัวพอตหรือคอยล์ อยากปรับวัตต์เองก็มีสาย ARGUS กับ DRAG อยากง่ายก็มีเครื่องระบบสวิตช์อย่าง M Switch ที่ใช้หัวพอตบรรจุสำเร็จ",
     systemTypes: ["pod-kit"],
   },
   {
@@ -32,9 +32,9 @@ export const categories: Category[] = [
     shortName: "Disposables",
     labelTh: "Disposable / พอตใช้แล้วทิ้ง",
     description:
-      "Prefilled, rechargeable, single-use-cartridge devices designed to run until the e-liquid is gone — no coils to swap, no e-liquid to fill. Models mainly differ by rated puff count and battery capacity, so the right pick usually comes down to how long you want one device to last between replacements.",
+      "Ready out of the box, nothing to fill; most can be recharged until the e-liquid runs out. M Bar, RELX and JOIWAY differ mainly in puff count and battery size.",
     descriptionTh:
-      "พอตใช้แล้วทิ้ง แกะกล่องใช้ได้เลย ไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์ ส่วนใหญ่ชาร์จซ้ำได้จนน้ำยาหมด แต่ละรุ่นต่างกันหลัก ๆ ที่จำนวนพัฟกับขนาดแบต",
+      "พอตใช้แล้วทิ้ง แกะกล่องใช้ได้เลย ไม่ต้องเติมน้ำยา ส่วนใหญ่ชาร์จซ้ำได้จนน้ำยาหมด ตอนนี้มีทั้ง M Bar RELX และ JOIWAY ต่างกันหลัก ๆ ที่จำนวนพัฟกับขนาดแบต",
     systemTypes: ["disposable"],
   },
   {
@@ -44,9 +44,9 @@ export const categories: Category[] = [
     shortName: "Pods",
     labelTh: "Pods & Cartridges / หัวพอต",
     description:
-      "Replacement pods and cartridges for open-system and switch-style devices — the consumable side of the ecosystem.",
+      "UWELL, VOOPOO and SALTHUB replacement pods, refillable, or prefilled for switch-style devices. Each fits its own device only; check the model before ordering.",
     descriptionTh:
-      "หัวพอตสำหรับเปลี่ยน ทั้งแบบเปล่าให้เติมน้ำยาเอง และแบบบรรจุน้ำยาสำเร็จของเครื่องระบบสวิตช์ แต่ละหัวใช้ได้เฉพาะเครื่องของมัน เช็คให้ตรงรุ่นก่อนสั่ง",
+      "หัวพอตสำหรับเปลี่ยน มีของ UWELL VOOPOO และ SALTHUB ทั้งแบบเติมเอง และแบบบรรจุสำเร็จของเครื่องระบบสวิตช์ แต่ละหัวใช้ได้เฉพาะเครื่องของมัน เช็คให้ตรงรุ่นก่อนสั่ง",
     systemTypes: ["pod-cartridge"],
   },
   {
@@ -56,7 +56,7 @@ export const categories: Category[] = [
     shortName: "Coils & Accessories",
     labelTh: "Coils & Accessories / คอยล์และอุปกรณ์เสริม",
     description:
-      "Replacement coil heads and the accessories that keep a device running — chargers, cases, drip tips, and cleaning kits.",
+      "Genuine replacement coils from UWELL, VOOPOO, RINCOE and DOTMOD. Match your device model, then pick ohms by how you vape: lower is airier, higher is tighter.",
     descriptionTh:
       "คอยล์แท้สำหรับเปลี่ยน ตอนนี้มีของ UWELL VOOPOO RINCOE และ DOTMOD เลือกให้ตรงรุ่นเครื่องก่อน แล้วค่อยเลือกโอห์มตามแนวการสูบ โอห์มต่ำสูบโล่ง โอห์มสูงสูบแน่น",
     systemTypes: ["coil", "accessory"],
@@ -90,9 +90,9 @@ export const categories: Category[] = [
     name: "Heated Tobacco Devices",
     shortName: "HNB Devices",
     labelTh: "Heated Tobacco Devices / เครื่องอุ่นยาสูบ",
-    description: "Heat-not-burn devices that heat tobacco sticks without combustion — official IQOS ILUMA devices and compatible third-party heaters.",
+    description: "Genuine IQOS ILUMA devices that heat tobacco sticks and use no e-liquid. They take TEREA sticks only. Right now that's ILUMA i and ILUMA i PRIME.",
     descriptionTh:
-      "เครื่อง IQOS ILUMA ของแท้ ให้ความร้อนกับยาสูบโดยไม่เผาไหม้ ใช้ได้กับก้าน TEREA เท่านั้น ตอนนี้มี ILUMA i และ ILUMA i PRIME",
+      "เครื่อง IQOS ILUMA ของแท้ อุ่นยาสูบด้วยความร้อน ไม่ใช้น้ำยา ใช้ได้กับก้าน TEREA เท่านั้น ตอนนี้มี ILUMA i และ ILUMA i PRIME",
     systemTypes: [],
   },
   {
