@@ -4,10 +4,10 @@ import { ProductMedia } from "@/components/visual/ProductMedia";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { OptionCountBadge } from "@/components/catalog/OptionCountBadge";
 import { EditorialTagBadge } from "@/components/catalog/EditorialTagBadge";
-import { PuffCount } from "@/components/catalog/PuffCount";
+import { CardHeadlineSpec } from "@/components/catalog/CardHeadlineSpec";
 import { ProductTagline } from "@/components/catalog/ProductTagline";
-import { brandName, formatBattery, formatWattage } from "@/lib/utils";
-import { labelLang } from "@/lib/label-lang";
+import { brandName } from "@/lib/utils";
+import { headlineSpecsForProduct } from "@/lib/card-headline-spec";
 import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 
@@ -22,12 +22,12 @@ import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
  * At `lg` and above every class that was here before is still here, untouched.
  */
 export function ProductCard({ product }: { product: Product }) {
-  // A puff count carries a translated unit, so it renders through the client-side <PuffCount>;
-  // battery is "1600mAh" in every language and stays a plain string (round 30.2).
-  const primaryStat = product.attributes.puffCount
-    ? <PuffCount count={product.attributes.puffCount} />
-    : formatBattery(product.attributes.batteryMah);
-  const secondaryStat = formatWattage(product.attributes.wattageMin, product.attributes.wattageMax);
+  // Round 30.4ข batch 2 (owner 2026-09-16): the stats row used to print `attributes` as bare
+  // values ("1600MAH · 5–35W", or "—" when there were none) regardless of whether the spec row
+  // behind them was verified. It is now the headline spec line — one or two facts picked per
+  // category from VERIFIED spec rows only, worded in the visitor's language by <CardHeadlineSpec>
+  // (the same reason <PuffCount> existed). No verified row → the row stays, empty, at its height.
+  const headline = headlineSpecsForProduct(product);
   const sellingPrice = getLegacyApprovedPrice(product.slug);
   // The tagline switches language on the client (round 30.3, THAI_STYLE §6 item 1) — same reason
   // as the puff count above. The Thai line is the same human-checked entry the product page shows.
@@ -70,18 +70,19 @@ export function ProductCard({ product }: { product: Product }) {
         <p className="line-clamp-2 text-sm text-foreground-muted max-lg:hidden lg:min-h-10">
           <ProductTagline en={product.tagline} th={taglineTh} />
         </p>
+        {/* Phone: the headline spec as one short line between the name and the price (the M3 phone
+            card never had a stats row — this is the one addition). The price stays last (owner ข,
+            2026-09-16, designer): name → spec → price reads like any shop listing, and a card with
+            no approved price then leaves its gap at the bottom edge instead of mid-card. Both lines
+            keep their height when empty so every card in a row still ends at the same edge. */}
+        <p className="hidden min-h-[0.875rem] truncate text-[0.65rem] leading-[0.875rem] text-foreground-dim max-lg:block" data-card-spec-phone="legacy">
+          <CardHeadlineSpec specs={headline} compact />
+        </p>
         <p className="hidden min-h-[1.25rem] font-display text-[15px] font-bold leading-tight text-foreground max-lg:block">
           {sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : ""}
         </p>
-        <div className="mt-auto flex items-center gap-3 pt-3 text-xs text-foreground-dim max-lg:hidden">
-          {/* <PuffCount> renders "10,000 พัฟ" in Thai, so only the battery string can opt out. */}
-          <span className="label-mono" lang={typeof primaryStat === "string" ? labelLang(primaryStat) : undefined}>{primaryStat}</span>
-          {secondaryStat !== "—" && (
-            <>
-              <span aria-hidden>·</span>
-              <span className="label-mono" lang={labelLang(secondaryStat)}>{secondaryStat}</span>
-            </>
-          )}
+        <div className="mt-auto flex min-h-4 items-center gap-3 pt-3 text-xs text-foreground-dim max-lg:hidden" data-card-spec="legacy">
+          <CardHeadlineSpec specs={headline} />
         </div>
       </div>
     </Link>
