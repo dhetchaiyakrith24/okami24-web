@@ -42,7 +42,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
     ],
   },
   "open-system-vs-disposable": {
-    title: "เลือกพอตซิสเต็ม หรือพอตใช้แล้วทิ้ง",
+    title: "พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม",
     dek: "ไม่มีแบบไหนดีกว่ากันชัด ๆ อยู่ที่ว่าคุณอยากเลือกเองได้แค่ไหน และยอมดูแลเองแค่ไหน",
     body: [
       {
@@ -61,7 +61,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
     ],
   },
   "understanding-mtl-vs-dtl": {
-    title: "MTL กับ DTL ต่างกันตรงไหน",
+    title: "MTL กับ DTL ต่างยังไง",
     dek: "สูบแบบ MTL กับ DTL ให้ความรู้สึกคนละแบบเลย",
     body: [
       {
@@ -71,7 +71,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         ],
       },
       {
-        heading: "Direct-to-lung (DTL) และ RDL ที่อยู่ตรงกลาง",
+        heading: "Direct-to-lung (DTL) และ RDL",
         paragraphs: [
           "สูบแบบ DTL คือดึงไอลงปอดเลย ส่วนใหญ่ต้องใช้ช่องลมที่โล่งกว่า โอห์มต่ำกว่า และวัตต์สูงกว่า พอตรุ่นปัจจุบันหลายตัวเล็งไปที่ตรงกลางที่เรียกกันว่า RDL (restricted direct-lung) โล่งกว่า MTL แต่ยังไม่โล่งเท่า DTL เต็ม ๆ",
         ],

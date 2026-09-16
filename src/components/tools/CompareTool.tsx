@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { ChevronRight } from "lucide-react";
 import { getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { ProductPicker } from "@/components/tools/ProductPicker";
 import { familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
@@ -194,14 +195,21 @@ function ComparisonTable({ title, rows, emptyNote }: { title: string; rows: Row[
   return (
     <div>
       <h2 className="mb-4 font-display text-xl font-semibold text-foreground">{title}</h2>
-      <div className="overflow-x-auto rounded-xl border border-surface-border-soft">
+      <ScrollHintFrame>
         <table className="w-full min-w-[500px] border-collapse text-sm">
           <tbody>
             {rows.map((row) => {
               const allSame = row.values.every((v) => v === row.values[0]);
               return (
                 <tr key={row.label} className="border-b border-surface-border-soft last:border-b-0">
-                  <th scope="row" className="label-mono w-40 shrink-0 bg-surface-1 p-3 text-left text-[0.65rem] font-medium text-foreground-dim" lang={labelLang(row.label)}>
+                  {/* Round 30.4ข batch 1 (owner 2026-09-16, 1.4): the row header takes the spec-chip
+                      label's Thai colour (`text-foreground-muted` — SpecChip `thaiLabel`; it was
+                      `text-foreground-dim`, the one thing that still differed once batch 8 gave it the
+                      sans face) and, from lg up, 0.75rem instead of 0.65rem: on a 1,300px-wide table the
+                      row header is the key the eye reads before sweeping 400px+ to a 14px value, and at
+                      10.4px it read like a footnote (designer, owner picked ข). Phones keep 0.65rem; the
+                      row height is unchanged either way (p-3 sets it). */}
+                  <th scope="row" className="label-mono w-40 shrink-0 bg-surface-1 p-3 text-left text-[0.65rem] font-medium text-foreground-muted lg:text-xs" lang={labelLang(row.label)}>
                     {row.label}
                   </th>
                   {row.values.map((v, i) => (
@@ -214,7 +222,50 @@ function ComparisonTable({ title, rows, emptyNote }: { title: string; rows: Row[
             })}
           </tbody>
         </table>
+      </ScrollHintFrame>
+    </div>
+  );
+}
+
+// Round 30.4ข batch 1 (owner 2026-09-16, close-list E): on a phone the 500px-minimum table runs
+// past the right edge and the third/fourth column was simply cut, with nothing saying it scrolls.
+// The border stays on the outer frame (so the corners and the edge stay crisp); the inner box is the
+// scroller. While there is still content to the right, a fade in the page colour plus a chevron sit
+// over the cut edge and disappear once the last column is fully in view — the same "more to the
+// right" cue the colour/flavour chip rows use (`.okami-chip-row`), only measured instead of static,
+// because on a tablet the table can fit without any scrolling and a static fade would dim the last
+// column for nothing. The table itself is untouched.
+function ScrollHintFrame({ children }: { children: ReactNode }) {
+  const scroller = useRef<HTMLDivElement>(null);
+  const [moreToRight, setMoreToRight] = useState(false);
+
+  useEffect(() => {
+    const el = scroller.current;
+    if (!el) return;
+    const update = () => setMoreToRight(el.scrollWidth - el.clientWidth - el.scrollLeft > 1);
+    update();
+    el.addEventListener("scroll", update, { passive: true });
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener("scroll", update);
+      ro.disconnect();
+    };
+  }, []);
+
+  return (
+    <div className="relative overflow-hidden rounded-xl border border-surface-border-soft">
+      <div ref={scroller} className="overflow-x-auto">
+        {children}
       </div>
+      {moreToRight && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 right-0 flex w-16 items-start justify-end bg-gradient-to-l from-surface-0 from-35% to-transparent pt-3 pr-2 text-foreground-muted"
+        >
+          <ChevronRight className="h-4 w-4" strokeWidth={1.75} />
+        </div>
+      )}
     </div>
   );
 }
