@@ -1,14 +1,14 @@
-# OKami24 — HANDOFF
+# OKami24 — HANDOFF · ฉบับ 27 · 2026-09-17
 
-สร้างเมื่อ: 2026-09-17 ค่ำ (**ฉบับที่ 26.1** — **รอบ 30.4ข ปิดแล้ว** ก้อน 1–5 + ปิดรอบ live (PR #33) · ก้อน A ชั้น A push แล้ว รอ Cowork merge · ฉบับก่อนเก็บที่ `docs/HANDOFF.2026-09-17-v25.md` และ `docs/HANDOFF.2026-09-16-v24.md`)
+สร้างเมื่อ: 2026-09-17 ดึก (**ฉบับที่ 27** — **รอบเก็บบ้าน ฉบับ 2 · แชท A จบ** · ก้อน A live แล้ว (PR #34) · ฉบับก่อนทุกฉบับ (v1–v26) อยู่ที่ `docs/archive/` ตั้งแต่ฉบับนี้)
 
-อ้างอิงจาก: branch `checkpoint/phase-3.3.3` HEAD = ก้อน A (copy + chore + docs ฉบับนี้) · `origin/main` **`998694e`** (PR #33 = ปิดรอบ · #32 = ก้อน 5 · #31 · #30 · #29 · #28) · branch นำหน้า main = ก้อน A · working tree: ว่าง (เหลือไฟล์นี้)
+อ้างอิงจาก: branch `checkpoint/phase-3.3.3` HEAD = รอบเก็บบ้าน แชท A (agents · docs-split · docs-archive · recovery · docs ฉบับนี้) · `origin/main` **`857745b`** (PR #34 = ก้อน A · #33 = ปิดรอบ 30.4ข) · branch นำหน้า main = แชท A ทั้งหมด · working tree: ว่าง (เหลือไฟล์นี้)
 
-**สิ่งที่ตรวจจริงตอนเขียน [ตรวจแล้วจริง]:** `git fetch` + `git log` · เว็บจริงหลัง PR #31: FAQ eyebrow "ถาม-ตอบ" · /search "เครื่องมือ" · **[เจ้าของบอก]** PR #32 แถบความมั่นใจขึ้นครบ 3 ภาษา · build ปิดรอบ `_incoming/30.4b/build-close.log`: tsc · eslint · i18n 16/16 · verify:catalog --full 20/20 (`verify-catalog-close.log`) · raw-chars 0 · wordbreak-scan 14 หน้า × 2 จอ (`wb-close.log` · diff `wb-diff-close.md`) · designer 1 รอบ ก/ก/(ข→variant) · checker ผ่าน · server 3412 ปิดแล้ว · `.git` 28 MB · `_incoming/30.4b` 30 MB · `_incoming/30.4c` 265 MB (เจ้าของยังไม่ให้ลบ)
+**สิ่งที่ตรวจจริงตอนเขียน [ตรวจแล้วจริง]:** `git fetch` + `git log` (main `857745b` = HEAD เดิม `e810142` merge แล้ว) · **[เจ้าของบอก]** Cowork ยิงเว็บจริงหลัง PR #34 scan 0/105 แล้ว · verify รอบนี้ (ไม่แตะ `src/` เลย — `git diff --stat src/` = 0 ไฟล์): tsc ผ่าน · verify:catalog --full 20/20 รวม eslint + next build (`_incoming/verify-catalog-housekeeping-A.log`) · verify:commerce 16/16 · i18n 16/16 · 53/31 · raw-chars 0 · ไม่มีไฟล์ใน git ถูกลบ (`git diff --cached --diff-filter=D` ว่าง) · จำนวนบรรทัด THAI_STYLE 1009 → 171 + 855 = 1026 (ทุกช่วงเดิม diff = 0) · archive 28 ไฟล์ 6,835 บรรทัด / 1,274,090 ไบต์ ก่อน = หลัง · `_incoming` 1,600 → 1,336 MB (ลบ `30.4c` 1,645 ไฟล์ 265 MB — เจ้าของสั่ง) · server 3412 ปิด
 
 > **วิธีอ่าน:** ทุกข้อกำกับ **[ตรวจแล้วจริง]** / **[ผมเข้าใจว่า]** / **[เจ้าของบอก ยังไม่ได้ตรวจเอง]** · **"ตรวจผ่านตามเกณฑ์" ≠ "เจ้าของอนุมัติ"**
 > **รายการงานหลัก = `docs/LAUNCH_AUDIT.md`** — อ่านเฉพาะหัว "สถานะปัจจุบัน" + เลขข้อที่กำลังทำ **ห้ามอ่านทั้งไฟล์**
-> **ภาษาไทยบนเว็บ: `docs/THAI_STYLE.md` เป็นแหล่งความจริงเดียว** — §3 คำล็อก · §5 กลุ่ม ก · §6 typography · §7 ท้ายไฟล์ "รอบ 30.4ข ก้อน 1–5" + "ปิดรอบ 30.4ข + ก้อน 6"
+> **ภาษาไทยบนเว็บ: `docs/THAI_STYLE.md` เป็นแหล่งความจริงเดียว** — §2 กฎ 4 ชั้น · §3 คำล็อก · §4 การพิมพ์ · §5 กลุ่ม ก/ข · §6 งานค้าง (171 บรรทัด อ่านทุกเซสชัน) · ตัวอย่างก่อน→หลังทุกรอบ + "พิจารณาแล้วไม่ทำ" อยู่ `docs/THAI_STYLE_LOG.md` §6–§7 (855 บรรทัด **เปิดเฉพาะตอนต้องอ้าง** — แยก 2026-09-17)
 > **กติกา context: ดู CLAUDE.md 13.6 (2026-09-17) · push ทุกครั้ง = อัปเดต §16**
 
 ---
@@ -33,10 +33,10 @@
 **[ตรวจแล้วจริง]**
 
 - **โปรเจกต์:** เว็บร้านพอต **OKami24** · Next.js 16 + TS + Tailwind v4 + SQLite · โฟลเดอร์ `C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3` · GitHub `github.com/dhetchaiyakrith24/okami24-web` (private)
-- **branch ทำงาน:** `checkpoint/phase-3.3.3` HEAD = ก้อน A (+ไฟล์นี้) · **live `main` = `998694e`** (PR #33 = ปิดรอบ) · นำหน้า main = ก้อน A (copy + chore + docs) push แล้ว รอ Cowork merge
-- **รอบ 30.4ข = จบ** (ก้อน 1–5 + ปิดรอบ live · ก้อน A ชั้น A รอ merge) · **ถัดไปตาม §5.2:** รอบเก็บบ้าน → SEO → บทความ → ข้อมูล → ตะกร้า
+- **branch ทำงาน:** `checkpoint/phase-3.3.3` HEAD = รอบเก็บบ้าน แชท A (+ไฟล์นี้) · **live `main` = `857745b`** (PR #34 = ก้อน A · tag `pre-housekeeping`) · นำหน้า main = แชท A (agents · docs · scripts/wb-diff.js) push แล้ว รอ Cowork merge — ไม่แตะ src/ ไม่ต้อง deploy
+- **รอบ 30.4ข = จบ live ทั้งหมด** (ก้อน A merge แล้ว PR #34) · **รอบเก็บบ้าน ฉบับ 2 = เปิดอยู่: แชท A จบ · แชท B ถัดไป (§5.1)** · หลังจากนั้นตาม §5.2: SEO → บทความ → ข้อมูล → ตะกร้า
 - **การสั่งซื้อออนไลน์ปิดอยู่** (`OKAMI24_ORDERING=off` ข้อ 43) → ไลน์ `@okm24` · ห้ามเสนอเปิด · สินค้า 53 ซื้อได้ 31 · น้ำยา 0
-- **checkpoint/จุดกลับ:** ก่อน 30.4ข = `62ef152` · จบก้อน 1 `73d4f3b` · ก้อน 2 `dea2a1e` · ก้อน 3 `e014b8a` · ก้อน 4 `1965393` · ก้อน 5 `1f55dee` · **ปิดรอบ `14dbbe5`**
+- **checkpoint/จุดกลับ:** tag `pre-housekeeping` = `857745b` (ก่อนรอบนี้) · `r30-4b-done` = `998694e` · `lang-done` = `b273929` · ตารางแปลชื่อ `docs/RECOVERY.md` §2 · รายรอบ 30.4ข: ก่อน = `62ef152` · ก้อน 1 `73d4f3b` · 2 `dea2a1e` · 3 `e014b8a` · 4 `1965393` · 5 `1f55dee` · ปิดรอบ `14dbbe5`
 
 ---
 
@@ -47,22 +47,25 @@
 - **ก้อน 3 `f83b8f1` + `e014b8a` (live)** คำโปรย 6 หมวด th+en (meta ด้วย) · กวาด "ไม่เผาไหม้"/"เปลี่ยนจากบุหรี่มวน" 3 ภาษา · brands UWELL/JOIWAY/IQOS · คำล็อก "อุ่นยาสูบ"
 - **ก้อน 4 `1965393` (live)** FAQ eyebrow "ถาม-ตอบ"/"问答" · /search eyebrow = footer.tools
 - **ก้อน 5 `1f55dee` (live)** `TrustBar.tsx` เหนือ footer ทุกหน้า · `trust.items[4]` 3 ภาษา · แบบแถว มือถือไอคอนบน
-- **ปิดรอบ + ก้อน 6 `14dbbe5` (รอ merge)** sticky หัวแถว /compare · ลิงก์ "แหล่งที่มา" hover สว่าง+ขีด · wordbreak-scan 14 หน้า (FIXED 1 · NEW 2)
+- **ปิดรอบ + ก้อน 6 `14dbbe5` (live PR #33) · ก้อน A `150609b` `0b7f695` (live PR #34)** sticky หัวแถว /compare · ลิงก์ "แหล่งที่มา" hover สว่าง+ขีด · wordbreak-scan 14 หน้า (FIXED 1 · NEW 2)
 - docs ทุกก้อน: THAI_STYLE §7 ตารางต่อก้อน · LAUNCH_AUDIT หัว + ข้อ 44 · HANDOFF §16 ทุก push
 
 ---
 
-## 3. เพิ่งทำล่าสุด (เซสชันนี้ 2026-09-17 · ก้อน 3 → ปิดรอบ · main ขยับ 3 ครั้ง = PR #30 #31 #32)
+## 3. เพิ่งทำล่าสุด (เซสชันนี้ 2026-09-17 ดึก · รอบเก็บบ้าน ฉบับ 2 · แชท A · ไม่แตะ `src/` เลย · ประวัติรอบ 30.4ข ทั้งหมดอยู่ `docs/archive/HANDOFF.2026-09-17-v26.md` §2–§3)
 
-| ก้อน | commit | ผลตรวจ | สถานะ |
+| ขั้น (ตามไฟล์คำสั่ง) | ทำอะไร | ตัวเลข/หลักฐาน | สถานะ |
 |---|---|---|---|
-| 3 คำนำหมวด | `f83b8f1` feat · `e014b8a` copy · `1463edb` docs | thai-copy 2 ชุด · writer en · designer 10/10 (หลังแก้ IQOS) · checker 8/8 + R1–R5 · verify:catalog 20/20 | **live** PR #30 |
-| 4 eyebrow ซ้ำ | `1965393` copy · `fa01d88` docs | นับ 50 คู่ ซ้ำ 4 แก้ 2 · designer 4/4 ก · checker ผ่าน | **live** PR #31 |
-| 5 แถบความมั่นใจ | `1f55dee` feat · `ca6287a` docs | thai-copy 2 ชุด · writer en/zh · designer 2 แบบ → แถว · มือถือรอบ 2 ก · checker ตีกลับ zh 保证 → ผ่าน · verify:catalog 20/20 | **live** PR #32 |
-| ปิดรอบ + ก้อน 6 | `14dbbe5` fix · docs ฉบับนี้ | designer ก/ก/(ข→variant) · checker ผ่าน · verify:catalog 20/20 · wordbreak 14 หน้า | push แล้ว **รอ merge** |
-| กฎ handoff ชุดเดียว | (นอกรีโป: `~/.claude/CLAUDE.md` 13.6/13.7 · §10 คงไว้) + ไฟล์นี้ | เจ้าของสั่ง | ทำแล้ว |
+| 4.1 agent 3 ตัว | `.claude/agents/rule-auditor.md` (opus · Read/Grep/Glob) · `scope-auditor.md` (sonnet · +WebFetch) · `doc-keeper.md` (sonnet · Read/Grep/Glob/Edit/Write · เขียนได้เฉพาะ `docs/`) — เงื่อนไขเรียกข้อเดียวอยู่บรรทัดแรกของ description + บรรทัดแรกของเนื้อหา · ภาษาอังกฤษ (13.11) | 3 ไฟล์ใหม่ · **มีผลเมื่อเปิดเซสชันใหม่** (HANDOFF 8.6) | ทำแล้วรอตรวจ |
+| 1 แยก THAI_STYLE | `docs/THAI_STYLE.md` 1009 บรรทัด / 357,843 ไบต์ → **171 บรรทัด / 68,526 ไบต์** (กฎล้วน) + `docs/THAI_STYLE_LOG.md` **855 บรรทัด / 292,354 ไบต์** (§7 ทุกรอบ + §6 "พิจารณาแล้วไม่ทำ") · เลข § คงเดิมทั้งสองไฟล์ · THAI_STYLE §7 เหลือ stub ชี้ LOG · โน้ต 1 บรรทัดที่หัวไฟล์ · thai-copy.md ชี้ LOG แล้ว | 171 + 855 = 1026 ≥ 1009 (เพิ่ม 17 บรรทัดหัว/stub) · ทุกช่วงบรรทัดเดิม `diff` = 0 | ทำแล้วรอตรวจ |
+| 2 HANDOFF §16 | วัดก่อน: §16 = 9,496 ไบต์ / 31 บรรทัด · ทั้งไฟล์ 32,661 (ไม่เกิน 15 KB) → เขียน §16 ใหม่เหลือ 5 อย่าง + ย้ายกติกา/เครื่องมือ/verify/git (13 บรรทัด ไม่ลบ) ไป **§17 ใหม่** · บรรทัด 1 มีเลขฉบับ+วันที่ · บล็อกเขียน "docs/HANDOFF.md §16" | วัดหลัง: ดู §16 | ทำแล้วรอตรวจ |
+| 3 archive | `docs/archive/` ← `git mv` HANDOFF v1–v25 (25) + STATUS_2026-09-06 + NIGHT_REPORT 09-05/09-06 = **28 ไฟล์** + สำเนา v26.1 ของฉบับนี้ · **ไม่ย้าย 3 ไฟล์เพราะยังถูกอ้าง:** PROJECT_HANDOFF.md (LAUNCH_AUDIT บรรทัด 76) · PAGE_COPY_2026-09-06.md (LAUNCH_AUDIT 47 + `src/` 3 ไฟล์) · IMAGE_AUDIT.md (IMAGE_SPEC 79 + `package.json` audit:gaps เขียนทับ) | 6,835 บรรทัด / 1,274,090 ไบต์ ก่อน = หลัง · git เห็นเป็น rename 28 · delete 0 | ทำแล้วรอตรวจ |
+| 10 ลบ `_incoming/30.4c` | ตรวจ `git ls-files _incoming/30.4c` = 0 · gitignored · ลบทั้งโฟลเดอร์ · **เก็บ `wb-diff.js` ไว้ที่ `scripts/wb-diff.js`** ก่อนลบ (เครื่องมือเดียวใน 30.4c ที่ §16 ยังใช้ · แก้ path ค่าเริ่มต้น 2 บรรทัด · eslint ผ่าน) · 30.4b / salthub / joiway / uwell ไม่แตะ | 1,645 ไฟล์ 265 MB · `_incoming` 1,600 → 1,336 MB | ทำแล้ว (เจ้าของสั่ง) |
+| 9.1 tag | `lang-done` → `b273929` · `r30-4b-done` → `998694e` · `pre-housekeeping` → `857745b` (annotated · ชื่ออังกฤษ · ข้อความไทย) · พบ tag เก่าในเครื่อง 3 ตัว (`pre-config-2026-09-09` `pre-30.1-2026-09-09` `pre-30.2-2026-09-10`) ยังไม่เคย push — remote มี 0 · **กติกาถาวรเพิ่มใน `~/.claude/CLAUDE.md` 13.7** (ไฟล์คำสั่ง 9.1 สั่งไว้ตรง ๆ · ไม่มีกฎ tag เดิมที่ไหนให้ลบ) | `git tag -n1` 6 ตัว · push ทั้ง 6 ตอน push | ทำแล้วรอตรวจ |
+| 9.2 backup หยุด 10/09 | ดู §5.3 | — | รายงานแล้ว |
+| 9.3 RECOVERY | `docs/RECOVERY.md` ไทย 1 หน้า 5 หัวข้อ (rollback Render · ตาราง tag · DB 3 ชั้น · ลิงก์ · ห้ามกด) | ยังไม่ซ้อมจริง (9.4 = Cowork+เจ้าของ) | ทำแล้วรอตรวจ |
 
-**คำตัดสินเจ้าของในเซสชันนี้ [เจ้าของบอก]:** ก้อน 3 เกลาของเดิม · ข ข ข ข ก ข · "อุ่นยาสูบ" ล็อก · ตัด "ไม่เผาไหม้" + "บุหรี่มวน" ทุกภาษา · brands 3 จุด · รส tobacco "ชอบโทนนี้" · Genuine ไม่ใช่ Official · ก้อน 4 ข "ถาม-ตอบ" · zh 问答 · /search เครื่องมือ · ก้อน 5 ชุด ก ข้อ 1 สั้น · แถว · มือถือไอคอนบน · padding 32/40 · tagline จดรอบหน้า · ไม่ใส่ข้อ 5 · ก้อน 6 รวมปิดรอบ · กฎ context/handoff ฉบับเดียว 13.6
+**ตัดสินเองในเซสชันนี้ (ย้อนง่าย ลูกค้าไม่เห็น):** §6 ของ THAI_STYLE ย้ายเฉพาะบล็อก "พิจารณาแล้วไม่ทำ" — รายการค้าง 30.3/30.3ข/30.4 ที่มีข้อยังไม่ทำปนอยู่คงไว้ทั้งบล็อก (ไม่ซอยทีละบรรทัด) · เหตุผลที่ฝังในตารางกฎ §3/§5 คงอยู่กับตาราง · ไม่แก้ไฟล์ใน archive แม้อ้างพาธเก่ากันเอง (เป็นประวัติ) · LAUNCH_AUDIT ที่อ้าง "THAI_STYLE §7 รอบ …" ไม่แก้ (stub §7 พาไป LOG ได้ · LAUNCH_AUDIT = ขั้น 6 แชท B) · wb-diff.js ย้ายเข้า scripts/ (งานเกินคำสั่ง commit แยก)
 
 ---
 
@@ -80,10 +83,20 @@
 
 ## 5. รอสานต่อ
 
-### 5.1 รอบ 30.4ข — ~~ก้อน 1–6 + ปิดรอบ~~ **จบ 2026-09-17** (รายละเอียดต่อก้อน: THAI_STYLE §7)
+### 5.1 รอบเก็บบ้าน ฉบับ 2 (เปิด 2026-09-17 · ไฟล์คำสั่ง `Desktop\Run prompt\New prompt on work\รอบเก็บบ้านคำสั่ง-ฉบับ2.txt` · 2 แชท)
+- **แชท A จบ (ฉบับนี้):** 4.1 · 1 · 2 · 3 · 10 · 9.1–9.3 → push → handoff — รายละเอียด §3
+- **แชท B (เปิดแชทใหม่ agent ถึงมีผล):** ขั้น 0 `rule-auditor` อ่านกฎทุกไฟล์ → `docs/RULES_INDEX.md` (1 กฎ 1 แถว · ขัดกัน/ตายแล้ว/ทับซ้อน/กำกวม) → **หยุดรายงาน ห้ามแก้กฎเอง** → 0.2 เคาะ (≤40 แถว/ครั้ง · ข้อใน `~/.claude/CLAUDE.md` เจ้าของเคาะทุกข้อ) → 0.3 แก้ตามที่เคาะ 1 commit/ไฟล์ → 4.2 ตัดบล็อก "มาตรฐานใช้กับทุกตำแหน่ง" ที่ซ้ำ 13.10 คำต่อคำใน planner/designer/researcher/writer (checkpoint ก่อน · ยิงงานเล็กทดสอบ) → 5 AI_TEAM_GUIDE (2 บรรทัดขัดกัน · model inherit · เพิ่ม thai-copy + 3 ตัวใหม่ + คอลัมน์ "เรียกเมื่อไหร่") → 6 LAUNCH_AUDIT ตรวจอย่างเดียว → 7 `docs/TEMPLATES.md` (แม่แบบคำสั่ง ≤200 บรรทัด + รายงาน 4 บรรทัด) → 8 `docs/ROUND_COST.md` (3 รอบย้อนหลัง + เพดาน) → push → ปิดรอบ = tag + push tag (13.7)
+- ของที่ควรเข้าทะเบียนกฎแน่ ๆ (เจอระหว่างแชท A · ให้ rule-auditor ยืนยันเอง ไม่ใช่ข้ามไปแก้): 13.5 "ผู้แก้ไฟล์คนเดียวคือตัวหลัก" vs doc-keeper เขียน `docs/` · `~/.claude/skills/handoff/SKILL.md` บรรทัด 71 "เปลี่ยนชื่อเดิมเป็น HANDOFF.<วันที่>.md" (ไม่ได้ชี้ `docs/archive/`) · HANDOFF 8.6 กับ AI_TEAM_GUIDE เรื่อง agent มีผลเมื่อเปิดเซสชันใหม่ · agent เก่า 5 ตัวเขียนไทยขณะ 13.11 บอกอังกฤษ (ทำก่อนกฎ · ไม่ย้อนแปล)
+- ~~รอบ 30.4ข~~ **จบ 2026-09-17** (ประวัติ: `docs/archive/HANDOFF.2026-09-17-v26.md` · ตารางประโยค: THAI_STYLE_LOG §7)
 
-### 5.2 ลำดับถัดไป (เจ้าของสั่งไว้ · ยังไม่เปิดรอบใหม่ — รอเจ้าของพิมพ์)
-รอบเก็บบ้าน (คำสั่ง/เอกสาร/agent/HANDOFF ให้สั้น · PuffCount dead · ProductHero verified · `_incoming/30.4c` 265 MB) → รอบ SEO (`03-รอบ SEO.txt` · JSON-LD description legacy 35 หน้ายังอังกฤษ · alt แกลเลอรี · แยก meta จากคำโปรยถ้าจำเป็น) → รอบบทความ → รอบข้อมูล (verify สเปก · taxonomy Coil-72/89 · TPD) → รอบตะกร้า (+ข้อ 49 · สถานะคำสั่งซื้อ eyebrow) → ข้อ 45 → แอดมิน → QR → ข้อ 42 · 47/48 → รอบการขาย · รอบ label (`compare.rowDrawStyle`) · รอบ meta/tagline
+### 5.2 ลำดับถัดไป (เจ้าของสั่งไว้)
+~~รอบเก็บบ้าน~~ (แชท A จบ · แชท B ถัดไป — PuffCount dead · ProductHero verified ยังอยู่ในรายการเก็บบ้าน ไม่ได้อยู่ในฉบับ 2 → ถามเจ้าของตอนปิดรอบ) → รอบ SEO (`03-รอบ SEO.txt` · JSON-LD description legacy 35 หน้ายังอังกฤษ · alt แกลเลอรี · แยก meta จากคำโปรยถ้าจำเป็น) → รอบบทความ → รอบข้อมูล (verify สเปก · taxonomy Coil-72/89 · TPD) → รอบตะกร้า (+ข้อ 49 · สถานะคำสั่งซื้อ eyebrow) → ข้อ 45 → แอดมิน → QR → ข้อ 42 · 47/48 → รอบการขาย · รอบ label (`compare.rowDrawStyle`) · รอบ meta/tagline
+
+### 5.3 ผลตรวจ 9.2 — สำรอง DB "หยุด" ตั้งแต่ 2026-09-10 18:32 [ตรวจแล้วจริง]
+- **ไม่มี scheduled task / npm script ที่ตั้งเวลา** — ตัวสำรองฝังอยู่ในเซิร์ฟเวอร์เว็บเอง: `src/instrumentation.ts` → `src/lib/backup/scheduler.ts` สำรอง 15 วินาทีหลังเปิด server แล้วทุก 360 นาที **ตราบที่ server เปิด** (`docs/BACKUP.md` "ทำงานอัตโนมัติยังไง")
+- **สาเหตุ:** ตั้งแต่ 10/09 ไม่มี server ในเครื่องนี้รันโดยเปิด backup — ทุก QC server ตั้งแต่รอบ 30.2 เปิดด้วย `OKAMI24_BACKUP_DISABLED=1` + `OKAMI24_DATA_DIR=<tmp>` **โดยตั้งใจ** (ไม่ให้ QC แตะ DB จริง — คำสั่งใน §17) และเจ้าของไม่ได้รัน `next dev` พอร์ต 3000 หลัง 10/09 18:32 · หลักฐาน: `.data/okami24.db-shm` mtime = 2026-09-10 18:32 ตรงกับ backup สุดท้าย · `backup.log` 30 แถว integrity=ok ทุกแถว ไม่มี FAILED = **ไม่ใช่ของพัง** ไม่มีอะไรให้เจ้าของกด
+- **สำเนาในเครื่องเป็น DB ทดสอบ** (orders=3 ตั้งแต่ 05/09 · `.data/okami24.db` 4 KB + WAL 1.3 MB) ไม่ใช่ DB ลูกค้า
+- **production:** `render.yaml` ตั้ง `OKAMI24_DATA_DIR=/var/data/app-data` + `OKAMI24_BACKUP_DIR=/var/data/backups` บนดิสก์ `okami24-data` (1 GB) · `npm start` รัน scheduler ตัวเดียวกัน → สำรองเองทุก 6 ชม. เก็บ 60 ชุด **บนดิสก์เดียวกับต้นฉบับ** (LAUNCH_AUDIT ข้อ 42 · เจ้าของรับ snapshot รายวันของ Render เป็น backup หลัก 2026-09-07) · **[ไม่ยืนยัน]** วันนี้รันจริงไหม — ต้องดู log Render บรรทัด `[backup]` หรือ `ls /var/data/backups` (Cowork) · ตะกร้าปิด ออเดอร์ไม่เข้า DB จึงยังไม่เสียหาย แต่ต้องยืนยันก่อนเปิดตะกร้า (ข้อ 44)
 
 ---
 
@@ -96,7 +109,10 @@
 |---|---|---|
 | ~~แถบข้อ 2~~ | ตอบแล้ว = ใช่ · ใส่แล้วก้อน A | — |
 | footer.tagline ตัด 3 คำซ้ำ | เสนอไว้ §4 | ใช่/ไม่ (รอบ tagline) |
-| ลบภาพ `_incoming/30.4c` 265 MB | เจ้าของ 2026-09-16: ยังไม่ลบ | เมื่อไหร่ |
+| ~~ลบภาพ `_incoming/30.4c` 265 MB~~ | เจ้าของสั่งลบ 2026-09-17 · ลบแล้ว (ขั้น 10) | — |
+| ย้าย PROJECT_HANDOFF.md · PAGE_COPY_2026-09-06.md · IMAGE_AUDIT.md เข้า `docs/archive/` | ยังถูกอ้าง (§3 ขั้น 3) จึงไม่ย้าย · IMAGE_AUDIT ยังถูก `npm run audit:gaps` เขียนทับ = ยังใช้งาน ไม่ควรย้าย | ย้าย 2 ไฟล์แรกไหม (แนะนำ: ย้ายในแชท B หลังแก้โน้ต LAUNCH_AUDIT 47/76 · IMAGE_AUDIT คงไว้) |
+| 13.5 "ผู้แก้ไฟล์คนเดียวคือตัวหลัก" กับ doc-keeper | ไฟล์คำสั่ง 4.1 ให้ doc-keeper เขียน `docs/` — ชนกับ 13.5 | เคาะข้อความ 13.5 (แนะนำ: เติม "ยกเว้น doc-keeper ใน docs/") |
+| `~/.claude/skills/handoff/SKILL.md` บรรทัด 71 | ยังสั่งเก็บฉบับเก่าเป็น `docs/HANDOFF.<วันที่>.md` ไม่ใช่ `docs/archive/` | แก้เป็น archive ไหม (แนะนำ: ใช่ · ไฟล์นอกรีโป ต้องเจ้าของเคาะ) |
 | ยังรอเหมือน v24 | TPD · #31/#34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 | |
 
 ## 8. ความเสี่ยงและจุดต้องระวัง
@@ -122,14 +138,14 @@ working tree ว่าง (เหลือไฟล์นี้) · main `325341
 เหมือน v22 · ภาษาไทยทั้งเว็บ: 30.4ค ปิดครบ · **30.4ข ปิดครบ** · การ์ดสินค้า: บรรทัดสเปกเด่น 38/53 · แถบความมั่นใจทุกหน้า 3 ภาษา
 
 ## 12. กำลังทำอะไรค้างอยู่ตอนปิดแชท
-- ไม่มีงานค้างกลางทาง · รอบ 30.4ข จบ · ปิดรอบ push แล้วรอ merge → หลัง merge ยิงเว็บจริง 2 คำสั่งใน §16
-- server 3412 ปิดแล้ว · ไม่มี process ค้าง
-- เครื่องมือรอบนี้ใน `_incoming/30.4b/` (gitignored): k3-shots/variant/sheets/desc-len/category-facts · k4-eyebrow-pairs/shots/sheets · k5-shots/sheets/sheet-desktop/short.json · k6-shots · wb-close/ + wb-diff-close.md · crops-k3..k6/ · build-*.log · verify-catalog-*.log · brief ทุก agent · commit-*.txt
+- ไม่มีงานค้างกลางทาง · รอบเก็บบ้าน แชท A จบ · push แล้วรอ Cowork merge (docs/agents/scripts เท่านั้น — ไม่ต้อง deploy ก็ได้ ไม่มีอะไรเปลี่ยนบนเว็บ)
+- server ไม่ได้เปิดเลยในแชทนี้ (verify:catalog --full build เอง) · ไม่มี process ค้าง
+- เครื่องมือรอบ 30.4ข ยังอยู่ `_incoming/30.4b/` (gitignored 31 MB · รายการดู archive v26 §12) · `_incoming/30.4c` ลบแล้ว
 
 ## 13. แนะนำทำอะไรต่อ (เรียงลำดับ)
-1. วางบล็อก §16 → `git fetch` → ถ้า main ขยับเกิน `3253419` = ปิดรอบ merge แล้ว → ยิงเว็บจริง 2 คำสั่ง §16
-2. ~~แถบข้อ 2~~ ทำแล้ว (ก้อน A) · ถ้า main ขยับเกิน `998694e` = ก้อน A merge แล้ว → ยิงเว็บจริง 3 คำสั่ง §16
-3. **รอเจ้าของเปิดรอบใหม่** (§5.2 — รอบเก็บบ้านก่อน) · ห้ามเริ่มเอง
+1. วางบล็อก §16 → `git fetch` → ถ้า main ขยับเกิน `857745b` = แชท A merge แล้ว (ไม่มีอะไรต้องยิงเว็บจริง)
+2. **เปิดแชท B ของรอบเก็บบ้าน** ตาม §5.1 — เริ่มที่ขั้น 0 `rule-auditor` (agent ใหม่ 3 ตัวมีผลแล้วเพราะเป็นเซสชันใหม่) · ก่อนเริ่ม ให้เจ้าของเคาะ 3 ข้อใน §7 (ย้าย 2 ไฟล์ · 13.5 · handoff skill บรรทัด 71) หรือปล่อยให้ rule-auditor ยกขึ้นมาเอง
+3. ปิดรอบ = tag + push tag (13.7 ใหม่) · แล้ว 9.4 ซ้อม Rollback (Cowork+เจ้าของ นอกเวลาขาย)
 
 ## 14. ควรหยุดทำ
 - ห้ามถ่ายทั้งเว็บก่อนสแกน · ห้ามเพิ่ม joiner/NBSP นอกรายการ · ห้ามรัน Chrome 2 งานพร้อมกัน · ห้ามไล่แก้คำโดดระดับ B · ห้ามใส่ placeholder แทนแถวสเปกว่าง · ห้ามเปลี่ยน CategoryLabel/label-lang/lg:min-h-10
@@ -140,22 +156,29 @@ working tree ว่าง (เหลือไฟล์นี้) · main `325341
 
 ---
 
-## 16. บล็อกสำหรับวางในแชทใหม่ (copy-paste)
+## 16. บล็อกสำหรับวางในแชทใหม่ (copy-paste) — เก็บแค่ 5 อย่าง: main · branch นำหน้าอะไร · รอบไหนค้างตรงไหน · รอเจ้าของ · คำถามค้าง (เพดาน 15 KB · กติกา/เครื่องมือ = §17)
 
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) แปลงจากเดโม NOVA VAPOR
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
-Branch: checkpoint/phase-3.3.3 HEAD = docs v26.1 (ต่อจาก copy + chore ก้อน A) · origin/main 998694e (PR #33 = ปิดรอบ 30.4ข live) · นำหน้า main = ก้อน A (copy แถบข้อ 2 + โน้ตความเข้ากันได้ 2 ข้อ · chore scripts/scan.js + checker.md · docs) push แล้ว 2026-09-17 ค่ำ รอ Cowork merge · git fetch ก่อนเชื่อ · ห้าม merge เอง
-อ่านก่อน (กฎ 13.9): ~/.claude/CLAUDE.md หมวด 13 → CLAUDE.md โปรเจกต์ → docs/HANDOFF.md ฉบับ 26 (ข้อขัดแย้ง 1–10 · 4 · 7 · 8.0) → docs/THAI_STYLE.md (§3 คำล็อก · §5 กลุ่ม ก · §7 ท้ายไฟล์ "รอบ 30.4ข ก้อน 1–5" + "ปิดรอบ") → docs/LAUNCH_AUDIT.md เฉพาะหัว "สถานะปัจจุบัน"
+อ่านก่อน (กฎ 13.9): ~/.claude/CLAUDE.md หมวด 13 → CLAUDE.md โปรเจกต์ → docs/HANDOFF.md §16 (บล็อกนี้) + §17 เฉพาะตอนต้องใช้กติกา/เครื่องมือ/verify → docs/THAI_STYLE.md (กฎล้วน 171 บรรทัด — ห้ามอ่าน docs/THAI_STYLE_LOG.md ถ้าไม่ต้องอ้างประโยคเก่า) → docs/LAUNCH_AUDIT.md เฉพาะหัว "สถานะปัจจุบัน"
 
-สถานะ: **รอบ 30.4ข จบแล้ว** (ก้อน 1–5 + ปิดรอบ live PR #28–#33) · **ก้อน A ชั้น A รอ merge:** แถบข้อ 2 "…ที่ขายจริง ไม่ปั่นราคา" (390 ไม่ตัด "ไม่" ค้างแล้ว) · โน้ตความเข้ากันได้ Caliburn G2/X ↔ คอยล์ 1.0Ω เป็นไทย (coil-53/55/74 · compat-copy-th.ts COMPAT_EVIDENCE_TH) · **ด่านถาวรใหม่ `node scripts/scan.js`** = ประโยคอังกฤษหลุดบนหน้าไทย ต้อง PASS 0/105 (ก่อนแก้ FAIL 3/105 = 2 โน้ตนั้นเท่านั้น) · เพิ่มใน checker.md แล้ว
-  หลัง merge ยิงเว็บจริง: curl -s https://okami24.store/ | grep -c "ราคาที่ขายจริง" (1) · curl -s https://okami24.store/products/coil-53 | grep -c "หน้าร้านค้าปลีกระบุว่าหัวพอต Caliburn X" (1) · node scripts/scan.js --base https://okami24.store (PASS 0/105)
-  รอเจ้าของ: footer.tagline ตัด 3 คำซ้ำกับแถบ (รอบ tagline) · zh โน้ตความเข้ากันได้ 2 ข้อยังอังกฤษ (รอบภาษาจีน — รายงานตามสั่ง ไม่แก้)
-  ถัดไป: รอเจ้าของเปิดรอบใหม่ตาม §5.2 (รอบเก็บบ้าน → SEO → บทความ → ข้อมูล → ตะกร้า) — ห้ามเริ่มเอง
-  เจ้าของตัดสินแล้ว ห้ามถามซ้ำ: ตะกร้าปิด (ข้อ 43) → ไลน์ @okm24 · น้ำยา 0 ข้าม · หน้าบริการไม่แตะ (ข้อ 49) · งานรูปพัก · ยังไม่ผูก NBSP นอกรายการ · 6 ตัวการ์ดแถวว่างรับได้ · ภาพ _incoming/30.4c 265 MB ยังไม่ลบ · #31 #34 iPhone · tagline/ตะกร้า/หน้าบริการ = รอบของมัน
-  agent: thai-copy (ตาราง ก่อน→หลัง) · writer (en/zh) · checker 5 ช่อง · designer (ครอป+ตัวเลข ไม่มี Bash) · ใส่ข้อห้าม build/server/taskkill/Chrome/แก้ไฟล์ ในคำสั่งทุกตัว · เขียน docs ให้นิ่งก่อนส่ง checker
+1 main: 857745b (PR #34 = ก้อน A live · Cowork ยิงเว็บจริง scan 0/105 แล้ว) · tag pre-housekeeping ชี้ที่นี่ · git fetch ก่อนเชื่อ · ห้าม merge เอง
+2 branch checkpoint/phase-3.3.3 นำหน้า main = รอบเก็บบ้าน แชท A (agents 3 ตัว · docs-split THAI_STYLE → +LOG · docs-archive 28+1 ไฟล์ · chore scripts/wb-diff.js · recovery · docs ฉบับ 27) push แล้ว รอ Cowork merge · ไม่แตะ src/ = ไม่ต้อง deploy · tag 6 ตัว push แล้ว
+3 รอบที่เปิด: รอบเก็บบ้าน ฉบับ 2 (ไฟล์คำสั่ง Desktop\Run prompt\New prompt on work\รอบเก็บบ้านคำสั่ง-ฉบับ2.txt) — แชท A จบ (ขั้น 4.1 · 1 · 2 · 3 · 10 · 9.1–9.3) · **แชท B = แชทนี้:** ขั้น 0 rule-auditor → docs/RULES_INDEX.md → หยุดรายงาน (ห้ามแก้กฎเอง) → 0.2 เคาะ → 0.3 แก้ 1 commit/ไฟล์ → 4.2 → 5 → 6 → 7 → 8 → push → ปิดรอบ = tag + push tag · รายละเอียดทุกขั้น HANDOFF §5.1 · ห้ามแตะ src/ · ห้ามลบไฟล์ใน git · ย้าย/แยกต้องนับบรรทัด
+4 รอเจ้าของ (ใหม่รอบนี้ — ตอบก่อนหรือให้ rule-auditor ยกขึ้นมา): ย้าย PROJECT_HANDOFF.md + PAGE_COPY_2026-09-06.md เข้า archive ไหม (ยังถูกอ้าง) · เคาะข้อความ 13.5 ให้ doc-keeper เขียน docs/ ได้ · ~/.claude/skills/handoff/SKILL.md บรรทัด 71 ชี้ docs/archive/ ไหม · 9.4 ซ้อม Rollback (Cowork+เจ้าของ) · PuffCount dead + ProductHero verified อยู่รอบไหน
+  เดิม (ไม่เปลี่ยน): footer.tagline ตัด 3 คำซ้ำ (รอบ tagline) · zh โน้ตความเข้ากันได้ 2 ข้อ (รอบภาษาจีน) · TPD · #31 #34 iPhone · ผลเฝ้า Render OOM · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189
+5 คำถามค้าง: production สำรอง DB เองทุก 6 ชม. ที่ /var/data/backups ตาม render.yaml — วันนี้รันจริงไหม [ไม่ยืนยัน] ให้ Cowork ดู log "[backup]" บน Render (HANDOFF §5.3) · backup ในเครื่องหยุด 10/09 = ไม่มี server รันโดยเปิด backup ไม่ใช่ของพัง
+  4b ไม่ต้องรอ — เจ้าของตัดสินแล้ว ห้ามถามซ้ำ: ตะกร้าปิด (ข้อ 43) → ไลน์ @okm24 · น้ำยา 0 ข้าม · หน้าบริการไม่แตะ (ข้อ 49) · งานรูปพัก · ยังไม่ผูก NBSP นอกรายการ · 6 ตัวการ์ดแถวว่างรับได้ · tagline/ตะกร้า/หน้าบริการ = รอบของมัน · CLAUDE.md แก้เฉพาะข้อที่เจ้าของเคาะ (ตรวจ/รายงานได้) · ใส่กฎใหม่ = ลบกฎเก่าเรื่องเดียวกันทุกที่ · 30.4c ลบแล้ว
+(กติกา context · agent มีผลเมื่อเปิดเซสชันใหม่ · เครื่องมือ · verify · git = §17 ของไฟล์นี้)
+```
 
-กติกา context: ดู CLAUDE.md 13.6 (2026-09-17) · push ทุกครั้ง = อัปเดต §16
+---
+
+## 17. กติกาและเครื่องมือประจำ (ย้ายออกจาก §16 2026-09-17 — ไม่ใช่สถานะ · เปิดเมื่อต้องใช้ · ย้ายทั้ง 13 บรรทัดไม่ตัด · แก้ path เดียว: wb-diff.js → scripts/)
+
+```
+กติกา context: ดู CLAUDE.md 13.6 (2026-09-17) · push ทุกครั้ง = อัปเดต §16 · agent ใหม่/แก้ agent มีผลเมื่อเปิดเซสชันใหม่ (8.6)
 กฎ 2 ชั้น: ชั้น B → build → ถ่าย before ให้จบก่อน build ใหม่ → ถ่าย after 390+1440 → designer → เจ้าของเลือกภาพ → checker → commit · ข้อความใหม่ทุกประโยค = 3 ภาษา + เจ้าของเคาะไทย · ตัวเลขทุกตัวชี้แถวสเปก verified · ห้าม U+2060/NBSP นอกกลไก · thaiTypography() ต้องมี locale guard · หลักฐานที่ generate ต้องจำลอง logic ของ component ครบ · ห้าม ส่งฟรี/รับประกัน/จ่ายผ่าน/ตะกร้า/"ที่สุด"/สุขภาพ · zh ระวัง 保证
 ห้ามแตะ: layout นอกจุดที่ระบุ · รูป · motion · ordering-mode.ts · slug/URL/sitemap/structured data · หน้าบริการ · Hero.tsx · cinematic/ · กลุ่ม ก · labelTh/name/shortName · lg:min-h-10 · คำเตือนอายุ/นิโคติน · ชื่อสี/กลิ่น · thai-typography.ts รายการ · CategoryLabel.tsx · card-headline-spec.ts กติกา · dictionary catalog.card* / trust.* · TrustBar แบบแถว · ProductHero stats / PuffCount (รอบเก็บบ้าน) · footer.tagline
 กฎเหล็ก: ห้าม deploy/merge main เอง · revert ไม่ reset · ห้าม force push · ห้ามกุตัวเลข · ตัดสินเอง = ย้อนง่าย+ลูกค้าไม่เห็น แล้วเขียน "ตัดสินเอง: … เพราะ …" · ต้องถาม = ประโยคลูกค้าอ่าน/รสนิยม/คำนอกตาราง/layout รวมชุดเดียว · งานเกินคำสั่ง = commit แยก
@@ -163,17 +186,19 @@ Branch: checkpoint/phase-3.3.3 HEAD = docs v26.1 (ต่อจาก copy + chor
   · ปิด server: netstat -ano | grep ":3412.*LISTENING" → taskkill //PID <pid> //F · ห้าม /IM node.exe · พอร์ต 3000 = เจ้าของ · ห้าม build ขณะ server รัน · verify:catalog --full build เอง รันตอน server ปิด · Chrome ทีละงาน · งาน >10 นาที = (cmd &) + เฝ้า log
   · สคริปต์เขียนด้วย Write tool · ข้อความไทยเข้าสคริปต์ทางไฟล์ json/txt เท่านั้น (argv mangled) · shot.js ห่อผล eval JSON 2 ชั้น (parse ซ้ำ) · CRLF: ไฟล์ใหม่จาก Write = LF → unix2dos ก่อน git add · ตรวจ git ls-files --eol · Git Bash แปลง arg "/" → MSYS_NO_PATHCONV=1
 
-เครื่องมือ (_incoming/30.4b): shot.js (scripts/) · k3-shots.js <before|after> [--only …] [--locale …] (ครอปหัวหน้า+วัดบรรทัด) · k3-variant.js <json> (ลองคำใหม่ไม่ต้อง build) · k4-eyebrow-pairs.ts · k4-shots.js <tag> [--faq-file f] [--search-file f] · k5-shots.js <tag> [--variant row|cards] [--short] [--only w] [--locale l] · k6-shots.js <tag> (sticky /compare + hover จำลอง) · k*-sheets.js (ภาพรวม before/after) · scripts/wordbreak-scan.js --base … --widths 390,1440 --out _incoming/30.4b/wb-<tag> /path… (MSYS_NO_PATHCONV=1) → node _incoming/30.4c/wb-diff.js <before> <after>
+เครื่องมือ (_incoming/30.4b): shot.js (scripts/) · k3-shots.js <before|after> [--only …] [--locale …] (ครอปหัวหน้า+วัดบรรทัด) · k3-variant.js <json> (ลองคำใหม่ไม่ต้อง build) · k4-eyebrow-pairs.ts · k4-shots.js <tag> [--faq-file f] [--search-file f] · k5-shots.js <tag> [--variant row|cards] [--short] [--only w] [--locale l] · k6-shots.js <tag> (sticky /compare + hover จำลอง) · k*-sheets.js (ภาพรวม before/after) · scripts/wordbreak-scan.js --base … --widths 390,1440 --out _incoming/30.4b/wb-<tag> /path… (MSYS_NO_PATHCONV=1) → node scripts/wb-diff.js <before> <after>
   · server ทดสอบ: SITE_URL=https://okami24.store npx next build แล้ว SITE_URL=https://okami24.store OKAMI24_DATA_DIR=<tmp> OKAMI24_BACKUP_DISABLED=1 OKAMI24_STARTUP_PROBE=0 npx next start -p 3412
 Verify: npx tsc --noEmit · npx eslint <ไฟล์> · npm run verify:commerce (16) · SITE_URL=… npm run verify:catalog -- --full (20 · ปิด server ก่อน) · npx tsx scripts/count-storefront.ts (53/31) · npx tsx src/i18n/i18n-contract-test.ts (16) · node scripts/thai-raw-chars-check.js (0)
 Git: commit แยกชนิด (feat/fix/copy/data/docs) · git commit -F <ไฟล์> · อังกฤษ · Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> · push ทุกก้อนหลัง checker ผ่าน · ห้าม merge เอง
 รอเจ้าของ: tagline · zh โน้ตความเข้ากันได้ · TPD · #31 #34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 · ลบภาพ 265 MB
+agent (เพิ่ม 2026-09-17): rule-auditor (opus · เรียกเมื่อเปิดรอบเก็บบ้าน/ก่อนเพิ่มกฎ · read-only) · scope-auditor (sonnet · เรียกเมื่อเปิดรอบ ครั้งเดียว · read-only) · doc-keeper (sonnet · เรียกเมื่อปิดก้อน · เขียนได้เฉพาะ docs/) — เงื่อนไขเรียกข้อเดียวอยู่บรรทัดแรกของแต่ละไฟล์ · ห้ามเรียกทุกหัวข้อย่อย
+tag (13.7): ปิดรอบ = git tag -a <ชื่ออังกฤษ> <commit> -F <ไฟล์ข้อความไทย> → git push origin --tags · ตารางแปลชื่อ docs/RECOVERY.md §2
 ```
 
 ---
 
 ## สิ่งแรกที่แชทใหม่ควรทำ
 
-1. **`git fetch` + `git status` + `git log -5 --oneline`** แล้วเทียบกับไฟล์นี้ — ถ้าไม่ตรงให้เชื่อ repo · ถ้า origin/checkpoint ยังไม่มี commit ล่าสุดของไฟล์นี้ = push ไม่สำเร็จ → push ก่อน
-2. ถ้า main ขยับเกิน `3253419` = ปิดรอบ merge แล้ว → ยิงเว็บจริง 2 คำสั่งใน §16
-3. **รอเจ้าของพิมพ์** ว่าจะเคาะ §7 แถวแรก และ/หรือเปิดรอบไหนใน §5.2 — ห้ามเริ่มรอบใหม่เอง
+1. **`git fetch` + `git status` + `git log -5 --oneline` + `git tag -n1`** แล้วเทียบกับ §16 — ถ้าไม่ตรงให้เชื่อ repo · ถ้า origin/checkpoint ยังไม่มี commit ล่าสุดของไฟล์นี้ = push ไม่สำเร็จ → push ก่อน
+2. ถ้า main ขยับเกิน `857745b` = แชท A merge แล้ว — ไม่มีอะไรต้องยิงเว็บจริง (ไม่แตะ src/)
+3. **แชท B เริ่มได้เลยตาม §5.1** (เจ้าของสั่งลำดับไว้แล้วในไฟล์คำสั่ง) — ขั้น 0 เรียก `rule-auditor` ก่อน ห้ามแก้กฎเองแม้แต่ข้อเดียวจนกว่าเจ้าของเคาะ
