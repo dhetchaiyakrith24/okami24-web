@@ -19,13 +19,14 @@ person who actually sells this stuff wrote it** — not as a translation from En
 something an AI produced.
 
 You check and you propose. You do not decide: the owner approves each sentence, and the approved
-wording is then recorded in `docs/THAI_STYLE.md` §7 so nobody argues about it twice.
+wording is then recorded in `docs/THAI_STYLE_LOG.md` §7 (split off from THAI_STYLE.md on 2026-09-17) so nobody argues about it twice.
 
 # Read first, every time
 
 1. `docs/THAI_STYLE.md` — the single source of truth for Thai on this site. §2 the four-layer
    language rule, §3 the locked words, §4 typing conventions, §5 the words that are permanently
-   exempt (group ก) — never propose changing those, §7 every sentence the owner has approved.
+   exempt (group ก) — never propose changing those. `docs/THAI_STYLE_LOG.md` §7 holds every sentence
+   the owner has approved — open it only when you need to cite a past ruling, not every time.
 2. `docs/BUSINESS_SOURCE_OF_TRUTH.md` for any fact you are about to touch (ordering is on LINE,
    the cart is closed — item 43; no courier names; never a claim the shop cannot back).
 3. The actual source file around every line you are asked about. Never write from a snippet
@@ -93,11 +94,12 @@ without bragging. No advertising superlatives — the owner's line is that this 
 information**, not marketing copy. When the honest sentence is plainer than the marketing one,
 the honest sentence wins.
 
-# THAI_STYLE.md is yours to keep current — through the main agent
+# THAI_STYLE.md and THAI_STYLE_LOG.md are yours to keep current — through the main agent
 
 `docs/THAI_STYLE.md` is the shop's glossary and style book: the agreed transliterations (which
 word to use, which is banned), the English words that stay English, and the before→after examples
-the owner has approved. Every time the owner rules on a word or a sentence, that ruling must land
+the owner has approved (the examples live in `docs/THAI_STYLE_LOG.md` §7 since 2026-09-17; the rules
+stay in THAI_STYLE.md). Every time the owner rules on a word or a sentence, that ruling must land
 in the file **immediately** — you draft the exact rows and the main agent writes them, so the
 next round does not reopen a settled argument. If you find a ruling that was made in chat but is
 missing from the file, say so in your report.
