@@ -208,8 +208,13 @@ function ComparisonTable({ title, rows, emptyNote }: { title: string; rows: Row[
                       sans face) and, from lg up, 0.75rem instead of 0.65rem: on a 1,300px-wide table the
                       row header is the key the eye reads before sweeping 400px+ to a 14px value, and at
                       10.4px it read like a footnote (designer, owner picked ข). Phones keep 0.65rem; the
-                      row height is unchanged either way (p-3 sets it). */}
-                  <th scope="row" className="label-mono w-40 shrink-0 bg-surface-1 p-3 text-left text-[0.65rem] font-medium text-foreground-muted lg:text-xs" lang={labelLang(row.label)}>
+                      row height is unchanged either way (p-3 sets it).
+                      Round 30.4ข close (owner): the row header is sticky on the left so the key stays
+                      readable once the table is scrolled sideways (phones, or a desktop window
+                      narrower than the table). It already had an opaque surface-1 background; the
+                      thin right edge is an inset shadow rather than a border because collapsed table
+                      borders do not travel with a sticky cell. */}
+                  <th scope="row" className="label-mono sticky left-0 z-10 w-40 shrink-0 bg-surface-1 p-3 text-left text-[0.65rem] font-medium text-foreground-muted shadow-[inset_-1px_0_0_var(--color-surface-border-soft)] lg:text-xs" lang={labelLang(row.label)}>
                     {row.label}
                   </th>
                   {row.values.map((v, i) => (
