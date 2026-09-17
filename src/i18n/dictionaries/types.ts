@@ -32,6 +32,13 @@ export interface Dictionary {
     /** /warranty — published 2026-09-06 once the owner approved the claim conditions (BSOT §12). */
     warranty: string;
   };
+  /** Round 30.4ข batch 5 (owner, 2026-09-17): the four-claim strip above the footer (TrustBar.tsx).
+   *  Exactly four items, in the owner's order — genuine · straight prices · real admin · specs
+   *  checked against the official site. Nothing here may promise shipping, warranty or payment. */
+  trust: {
+    ariaLabel: string;
+    items: Array<{ title: string; body: string }>;
+  };
   footer: {
     tagline: string;
     shop: string;

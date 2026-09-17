@@ -3,6 +3,7 @@ import { Barlow_Condensed, Inter, IBM_Plex_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { Footer } from "@/components/layout/Footer";
+import { TrustBar } from "@/components/layout/TrustBar";
 import { AgeGate } from "@/components/layout/AgeGate";
 import { LineContact } from "@/components/layout/LineContact";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
@@ -75,6 +76,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <AgeGate />
           <Header orderingEnabled={ORDERING_ENABLED} />
           <main className="flex-1">{children}</main>
+          {/* Round 30.4ข batch 5: the four-claim trust strip sits between the page and the footer on
+              every route (owner's placement "ก่อน footer"). */}
+          <TrustBar />
           <Footer />
           <LineContact />
         </LocaleProvider>
