@@ -1,8 +1,8 @@
 # OKami24 — HANDOFF
 
-สร้างเมื่อ: 2026-09-17 ค่ำ (**ฉบับที่ 26** — **รอบ 30.4ข ปิดแล้ว** ก้อน 1–5 live · ปิดรอบ + ก้อน 6 push แล้ว รอ Cowork merge · ฉบับก่อนเก็บที่ `docs/HANDOFF.2026-09-17-v25.md` และ `docs/HANDOFF.2026-09-16-v24.md`)
+สร้างเมื่อ: 2026-09-17 ค่ำ (**ฉบับที่ 26.1** — **รอบ 30.4ข ปิดแล้ว** ก้อน 1–5 + ปิดรอบ live (PR #33) · ก้อน A ชั้น A push แล้ว รอ Cowork merge · ฉบับก่อนเก็บที่ `docs/HANDOFF.2026-09-17-v25.md` และ `docs/HANDOFF.2026-09-16-v24.md`)
 
-อ้างอิงจาก: branch `checkpoint/phase-3.3.3` HEAD **`14dbbe5`** fix-close (+docs ฉบับนี้ · THAI_STYLE · LAUNCH_AUDIT) · `origin/main` **`3253419`** (PR #32 = ก้อน 5 · #31 = ก้อน 4 · #30 = ก้อน 3 · #29 = ก้อน 2 · #28 = ก้อน 1) · branch นำหน้า main = fix-close + docs · working tree: ว่าง (เหลือไฟล์นี้)
+อ้างอิงจาก: branch `checkpoint/phase-3.3.3` HEAD = ก้อน A (copy + chore + docs ฉบับนี้) · `origin/main` **`998694e`** (PR #33 = ปิดรอบ · #32 = ก้อน 5 · #31 · #30 · #29 · #28) · branch นำหน้า main = ก้อน A · working tree: ว่าง (เหลือไฟล์นี้)
 
 **สิ่งที่ตรวจจริงตอนเขียน [ตรวจแล้วจริง]:** `git fetch` + `git log` · เว็บจริงหลัง PR #31: FAQ eyebrow "ถาม-ตอบ" · /search "เครื่องมือ" · **[เจ้าของบอก]** PR #32 แถบความมั่นใจขึ้นครบ 3 ภาษา · build ปิดรอบ `_incoming/30.4b/build-close.log`: tsc · eslint · i18n 16/16 · verify:catalog --full 20/20 (`verify-catalog-close.log`) · raw-chars 0 · wordbreak-scan 14 หน้า × 2 จอ (`wb-close.log` · diff `wb-diff-close.md`) · designer 1 รอบ ก/ก/(ข→variant) · checker ผ่าน · server 3412 ปิดแล้ว · `.git` 28 MB · `_incoming/30.4b` 30 MB · `_incoming/30.4c` 265 MB (เจ้าของยังไม่ให้ลบ)
 
@@ -33,8 +33,8 @@
 **[ตรวจแล้วจริง]**
 
 - **โปรเจกต์:** เว็บร้านพอต **OKami24** · Next.js 16 + TS + Tailwind v4 + SQLite · โฟลเดอร์ `C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3` · GitHub `github.com/dhetchaiyakrith24/okami24-web` (private)
-- **branch ทำงาน:** `checkpoint/phase-3.3.3` HEAD `14dbbe5` (+ไฟล์นี้) · **live `main` = `3253419`** (PR #32) · นำหน้า main = ปิดรอบ (fix + docs) push แล้ว รอ Cowork merge
-- **รอบ 30.4ข = จบ** (ก้อน 1–5 live · ปิดรอบ+ก้อน 6 รอ merge) · **ถัดไปตาม §5.2:** รอบเก็บบ้าน → SEO → บทความ → ข้อมูล → ตะกร้า
+- **branch ทำงาน:** `checkpoint/phase-3.3.3` HEAD = ก้อน A (+ไฟล์นี้) · **live `main` = `998694e`** (PR #33 = ปิดรอบ) · นำหน้า main = ก้อน A (copy + chore + docs) push แล้ว รอ Cowork merge
+- **รอบ 30.4ข = จบ** (ก้อน 1–5 + ปิดรอบ live · ก้อน A ชั้น A รอ merge) · **ถัดไปตาม §5.2:** รอบเก็บบ้าน → SEO → บทความ → ข้อมูล → ตะกร้า
 - **การสั่งซื้อออนไลน์ปิดอยู่** (`OKAMI24_ORDERING=off` ข้อ 43) → ไลน์ `@okm24` · ห้ามเสนอเปิด · สินค้า 53 ซื้อได้ 31 · น้ำยา 0
 - **checkpoint/จุดกลับ:** ก่อน 30.4ข = `62ef152` · จบก้อน 1 `73d4f3b` · ก้อน 2 `dea2a1e` · ก้อน 3 `e014b8a` · ก้อน 4 `1965393` · ก้อน 5 `1f55dee` · **ปิดรอบ `14dbbe5`**
 
@@ -68,7 +68,7 @@
 
 ## 4. ยังไม่ได้แก้ (รู้ว่าขาด แต่ยังไม่ได้ทำ)
 
-- **[รอเจ้าของ] แถบความมั่นใจ ข้อ 2 ที่ 390 "ราคาที่ขาย ไม่ \| ปั่นราคา"** — variant "ราคาที่เห็นคือราคาที่ขายจริง ไม่ปั่นราคา" เรนเดอร์แล้วสะอาด (designer แนะนำ) → ถ้าเจ้าของเคาะ = แก้ `th.ts` trust.items[1].body 1 บรรทัด + THAI_STYLE แถว 2 (en/zh ไม่ต้องเปลี่ยน) · commit copy เดี่ยว
+- ~~แถบความมั่นใจ ข้อ 2~~ **เจ้าของเคาะ 2026-09-17 ค่ำ = "…ที่ขายจริง ไม่ปั่นราคา" ใส่แล้ว (ก้อน A)** · **[รายงาน ไม่แก้]** zh ของโน้ตความเข้ากันได้ 2 ข้อ (coil-53/55/74) ยังเป็นอังกฤษ — `CompatibleProducts` มี overlay ไทยเท่านั้น → รอบภาษาจีน
 - **[รอเจ้าของ] footer.tagline ซ้ำ 3 คำกับแถบ** — เสนอ "OKami24 — พอตทุกแบบ และน้ำยา จากคนขายที่รู้จักสินค้าจริง ซื้อแล้วยังดูแลต่อ" (+en/zh · zh tagline ยังใช้ 正品保证) — tagline เคาะแล้ว 30.3 E-2
 - **[ตรวจแล้วจริง] รอบข้อมูล:** Coil-72 Vmate Infinity + Coil-89 Jellybox V อยู่หมวดคอยล์แต่คำเรียก "หัวพอต" (LAUNCH_AUDIT 44) · 6 ตัวการ์ดแถวว่าง (สเปกไม่ verified) · `ProductHero.tsx` stats ไม่เช็ค verified · TPD VINCI S/G3 mini
 - **[ตรวจแล้วจริง] รอบเก็บบ้าน:** `PuffCount.tsx` dead · `search.eyebrow` ลบแล้ว (ก้อน 4) · คอมเมนต์ `categories.ts:83` "without combustion" (ไม่ใช่ข้อความเว็บ) · en ก้าน TEREA/น้ำยา ภาษานักพัฒนา (หน้า 0 สินค้า)
@@ -94,7 +94,7 @@
 
 | เรื่อง | รู้แล้ว | ต้องตอบ |
 |---|---|---|
-| แถบข้อ 2 "…ที่ขายจริง ไม่ปั่นราคา" | เรนเดอร์แล้วสะอาด 390 ทั้ง 3 หน้า (`_incoming/30.4b/crops-k5/sheet-variant-price.png`) · designer แนะนำ | ใช่/ไม่ |
+| ~~แถบข้อ 2~~ | ตอบแล้ว = ใช่ · ใส่แล้วก้อน A | — |
 | footer.tagline ตัด 3 คำซ้ำ | เสนอไว้ §4 | ใช่/ไม่ (รอบ tagline) |
 | ลบภาพ `_incoming/30.4c` 265 MB | เจ้าของ 2026-09-16: ยังไม่ลบ | เมื่อไหร่ |
 | ยังรอเหมือน v24 | TPD · #31/#34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 | |
@@ -128,7 +128,7 @@ working tree ว่าง (เหลือไฟล์นี้) · main `325341
 
 ## 13. แนะนำทำอะไรต่อ (เรียงลำดับ)
 1. วางบล็อก §16 → `git fetch` → ถ้า main ขยับเกิน `3253419` = ปิดรอบ merge แล้ว → ยิงเว็บจริง 2 คำสั่ง §16
-2. ถ้าเจ้าของเคาะ §7 แถวแรก → copy แถบข้อ 2 (1 บรรทัด th) → build → ถ่าย 390 3 หน้า → checker → push
+2. ~~แถบข้อ 2~~ ทำแล้ว (ก้อน A) · ถ้า main ขยับเกิน `998694e` = ก้อน A merge แล้ว → ยิงเว็บจริง 3 คำสั่ง §16
 3. **รอเจ้าของเปิดรอบใหม่** (§5.2 — รอบเก็บบ้านก่อน) · ห้ามเริ่มเอง
 
 ## 14. ควรหยุดทำ
@@ -145,12 +145,12 @@ working tree ว่าง (เหลือไฟล์นี้) · main `325341
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) แปลงจากเดโม NOVA VAPOR
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
-Branch: checkpoint/phase-3.3.3 HEAD = docs v26 (ต่อจาก 14dbbe5 fix-close) · origin/main 3253419 (PR #32 = 30.4ข ก้อน 5 live) · นำหน้า main = ปิดรอบ (fix + docs) push แล้ว 2026-09-17 รอ Cowork merge · git fetch ก่อนเชื่อ · ห้าม merge เอง
+Branch: checkpoint/phase-3.3.3 HEAD = docs v26.1 (ต่อจาก copy + chore ก้อน A) · origin/main 998694e (PR #33 = ปิดรอบ 30.4ข live) · นำหน้า main = ก้อน A (copy แถบข้อ 2 + โน้ตความเข้ากันได้ 2 ข้อ · chore scripts/scan.js + checker.md · docs) push แล้ว 2026-09-17 ค่ำ รอ Cowork merge · git fetch ก่อนเชื่อ · ห้าม merge เอง
 อ่านก่อน (กฎ 13.9): ~/.claude/CLAUDE.md หมวด 13 → CLAUDE.md โปรเจกต์ → docs/HANDOFF.md ฉบับ 26 (ข้อขัดแย้ง 1–10 · 4 · 7 · 8.0) → docs/THAI_STYLE.md (§3 คำล็อก · §5 กลุ่ม ก · §7 ท้ายไฟล์ "รอบ 30.4ข ก้อน 1–5" + "ปิดรอบ") → docs/LAUNCH_AUDIT.md เฉพาะหัว "สถานะปัจจุบัน"
 
-สถานะ: **รอบ 30.4ข จบแล้ว** (ก้อน 1–5 live · ปิดรอบ+ก้อน 6 = sticky หัวแถว /compare + ลิงก์แหล่งที่มา hover + wordbreak-scan 14 หน้า FIXED 1 NEW 2 — รอ merge)
-  หลัง merge ยิงเว็บจริง: curl -s "https://okami24.store/compare?slugs=m-bar-10k,m-bar-9k,m-bar-15k" | grep -c "sticky left-0" (≥1) · curl -s https://okami24.store/products/caliburn-g5 | grep -c "hover:text-foreground hover:underline" (≥1)
-  รอเจ้าของ (ตอบคำเดียว): แถบความมั่นใจ ข้อ 2 → "ราคาที่เห็นคือราคาที่ขายจริง ไม่ปั่นราคา" ใช่/ไม่ (แก้ 390 "ไม่ | ปั่นราคา" · เรนเดอร์แล้วสะอาด _incoming/30.4b/crops-k5/sheet-variant-price.png) · footer.tagline ตัด 3 คำซ้ำกับแถบ (รอบ tagline)
+สถานะ: **รอบ 30.4ข จบแล้ว** (ก้อน 1–5 + ปิดรอบ live PR #28–#33) · **ก้อน A ชั้น A รอ merge:** แถบข้อ 2 "…ที่ขายจริง ไม่ปั่นราคา" (390 ไม่ตัด "ไม่" ค้างแล้ว) · โน้ตความเข้ากันได้ Caliburn G2/X ↔ คอยล์ 1.0Ω เป็นไทย (coil-53/55/74 · compat-copy-th.ts COMPAT_EVIDENCE_TH) · **ด่านถาวรใหม่ `node scripts/scan.js`** = ประโยคอังกฤษหลุดบนหน้าไทย ต้อง PASS 0/105 (ก่อนแก้ FAIL 3/105 = 2 โน้ตนั้นเท่านั้น) · เพิ่มใน checker.md แล้ว
+  หลัง merge ยิงเว็บจริง: curl -s https://okami24.store/ | grep -c "ราคาที่ขายจริง" (1) · curl -s https://okami24.store/products/coil-53 | grep -c "หน้าร้านค้าปลีกระบุว่าหัวพอต Caliburn X" (1) · node scripts/scan.js --base https://okami24.store (PASS 0/105)
+  รอเจ้าของ: footer.tagline ตัด 3 คำซ้ำกับแถบ (รอบ tagline) · zh โน้ตความเข้ากันได้ 2 ข้อยังอังกฤษ (รอบภาษาจีน — รายงานตามสั่ง ไม่แก้)
   ถัดไป: รอเจ้าของเปิดรอบใหม่ตาม §5.2 (รอบเก็บบ้าน → SEO → บทความ → ข้อมูล → ตะกร้า) — ห้ามเริ่มเอง
   เจ้าของตัดสินแล้ว ห้ามถามซ้ำ: ตะกร้าปิด (ข้อ 43) → ไลน์ @okm24 · น้ำยา 0 ข้าม · หน้าบริการไม่แตะ (ข้อ 49) · งานรูปพัก · ยังไม่ผูก NBSP นอกรายการ · 6 ตัวการ์ดแถวว่างรับได้ · ภาพ _incoming/30.4c 265 MB ยังไม่ลบ · #31 #34 iPhone · tagline/ตะกร้า/หน้าบริการ = รอบของมัน
   agent: thai-copy (ตาราง ก่อน→หลัง) · writer (en/zh) · checker 5 ช่อง · designer (ครอป+ตัวเลข ไม่มี Bash) · ใส่ข้อห้าม build/server/taskkill/Chrome/แก้ไฟล์ ในคำสั่งทุกตัว · เขียน docs ให้นิ่งก่อนส่ง checker
@@ -167,7 +167,7 @@ Branch: checkpoint/phase-3.3.3 HEAD = docs v26 (ต่อจาก 14dbbe5 fix-c
   · server ทดสอบ: SITE_URL=https://okami24.store npx next build แล้ว SITE_URL=https://okami24.store OKAMI24_DATA_DIR=<tmp> OKAMI24_BACKUP_DISABLED=1 OKAMI24_STARTUP_PROBE=0 npx next start -p 3412
 Verify: npx tsc --noEmit · npx eslint <ไฟล์> · npm run verify:commerce (16) · SITE_URL=… npm run verify:catalog -- --full (20 · ปิด server ก่อน) · npx tsx scripts/count-storefront.ts (53/31) · npx tsx src/i18n/i18n-contract-test.ts (16) · node scripts/thai-raw-chars-check.js (0)
 Git: commit แยกชนิด (feat/fix/copy/data/docs) · git commit -F <ไฟล์> · อังกฤษ · Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> · push ทุกก้อนหลัง checker ผ่าน · ห้าม merge เอง
-รอเจ้าของ: แถบข้อ 2 ใช่/ไม่ · tagline · TPD · #31 #34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 · ลบภาพ 265 MB
+รอเจ้าของ: tagline · zh โน้ตความเข้ากันได้ · TPD · #31 #34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 · ลบภาพ 265 MB
 ```
 
 ---
