@@ -91,6 +91,19 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
     "หน้าร้านค้าปลีกระบุว่า VMATE i3 ใส่ได้ทั้งหัวพอต VMATE Top Fill (0.4/0.7/1.0Ω 3ml) และ VMATE Cartridge V2 โดยในกล่องมีหัว Top Fill 0.7Ω มาให้ ร้านค้าปลีกในยุโรปรายหนึ่งระบุว่า Vmate V3 Top Fill 3ml ใช้ได้กับทุกรุ่นในสาย Vmate และ V.THRU",
   'SALTHUB\'s own M Switch Kit page presents the M Switch Pod as its cartridge (product-image alt text: "M Switch Kit compatible cartridge"), and the two pages list an identical 16-flavour set.':
     "หน้า M Switch Kit บนเว็บทางการของ SALTHUB แสดง M Switch Pod เป็นหัวพอตของเครื่องรุ่นนี้ (ข้อความกำกับรูปสินค้าเขียนว่า “M Switch Kit compatible cartridge”) และรายชื่อรส 16 รสของทั้งสองหน้าตรงกัน",
+  // Round 30.4ข close (owner, 2026-09-17): the two G/G2-generation pod ↔ coil edges (coil-55 · coil-74
+  // ↔ coil-53) are published, so the coil and both pod pages showed these notes in English on the
+  // Thai site — the accessories pages sat outside the "53 product pages" scope of earlier rounds.
+  // Owner-supplied Thai; vocabulary checked by thai-copy against THAI_STYLE §3.
+  "The Caliburn G2 replacement pod is designed for UWELL's Caliburn G and G2 coils, which is the line this 1.0Ω coil belongs to. Note this generation is NOT interchangeable with the later GPP platform used by the G3/G4/G5 devices.":
+    // "ใช้กับระบบหัวพอต GPP ของเครื่อง…" (not the owner's first "ใช้ข้ามกับ…ที่อยู่ในเครื่อง"): at 390px
+    // the card's text-xs column broke the locked word "หัวพอต" in two ("ระบบหัว | พอต GPP"); this
+    // wording breaks before "GPP" instead (measured, _incoming/30.4b/k7-variants.json A3).
+    "หัวพอต Caliburn G2 ออกแบบมาสำหรับคอยล์ตระกูล Caliburn G และ G2 ซึ่งเป็นตระกูลเดียวกับคอยล์ 1.0 โอห์มตัวนี้ รุ่นนี้ใช้กับระบบหัวพอต GPP ของเครื่อง G3/G4/G5 ไม่ได้",
+  "The Caliburn X pod is stated to take Caliburn G or G2 coils (0.8/1.0/1.2Ω), which is the line this 1.0Ω coil belongs to. It is explicitly not for the A or original Caliburn series.":
+    // "หน้าร้านค้าปลีก", not "แบรนด์": the source is a retailer listing (tier "retailer") — the
+    // evidence tier is never promoted in translation (file header; thai-copy 2026-09-17).
+    "หน้าร้านค้าปลีกระบุว่าหัวพอต Caliburn X ใช้คอยล์ตระกูล Caliburn G หรือ G2 ได้ (0.8/1.0/1.2Ω) ซึ่งเป็นตระกูลเดียวกับคอยล์ 1.0 โอห์มตัวนี้ และระบุชัดว่าใช้กับตระกูล A หรือ Caliburn รุ่นแรกไม่ได้",
 };
 
 /** Thai evidence note for a compatibility card, or the data string when there is no entry. */
