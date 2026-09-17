@@ -22,10 +22,9 @@
 
 Not measurable from what is on disk: token usage per agent, designer re-runs without a brief, time spent reading files. Those need the owner's usage page, not the repo.
 
-## Proposed caps (8.3 — owner decides; nothing here is a rule until it lands in `~/.claude/CLAUDE.md`)
+## Caps (8.3 — owner ruled 2026-09-18)
 
-- **≤ 30 screenshots per round** — run `scripts/wordbreak-scan.js` / `scripts/scan.js` first and shoot only what the scan flags.
-- **1 round = 1 chat** where possible; handoff only by 13.6 (ก)–(ง).
-- **Documentation is written by `doc-keeper`, not the main agent** (13.5 exception already in force).
-- **Heavy rounds early in the week, light ones late** — the quota resets Sunday 22:00.
-- New per-round rule to keep this file honest: save every agent brief under `_incoming/<round>/` so the "agent calls" column can be counted next time.
+- **Installed as a rule — `~/.claude/CLAUDE.md` 13.10 #15:** work that needs screenshots runs the scan first (`scripts/wordbreak-scan.js` / `scripts/scan.js`) and shoots only what the scan flags; more than 30 shots in a round = tell the owner why first (not forbidden).
+- **Not installed, already covered elsewhere:** "1 round = 1 chat" → 13.6 (ก)–(ง) decides when a handoff happens · "docs written by doc-keeper" → 13.5 exception.
+- **Observation, not a rule (owner + Cowork plan this, Claude cannot act on it):** heavy rounds early in the week, light ones late — the quota resets Sunday 22:00.
+- Per-round housekeeping so this file stays countable: save every agent brief under `_incoming/<round>/` so the "agent calls" column can be counted next time.
