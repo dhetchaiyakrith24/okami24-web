@@ -24,6 +24,17 @@ export const en: Dictionary = {
     privacy: "Privacy",
     warranty: "Warranty & claims",
   },
+  // Round 30.4ข batch 5 — trust strip above the footer (TrustBar.tsx); Thai is the source, this is
+  // the writer's English of the owner-approved lines (THAI_STYLE §7 "รอบ 30.4ข ก้อน 5").
+  trust: {
+    ariaLabel: "Why buy from OKami24",
+    items: [
+      { title: "Genuine products", body: "From brands we trust." },
+      { title: "Honest prices", body: "The price you see is the price we charge — no games." },
+      { title: "Real service", body: "Message us on LINE — the admin replies, not a bot." },
+      { title: "Specs checked", body: "Specs we can't confirm, we tell you — no guessing." },
+    ],
+  },
   footer: {
     // Brand-voice tagline. Thai is the source of truth (docs/BUSINESS_SOURCE_OF_TRUTH.md); this
     // English line is the owner-approved rendering of it (round 30.3, 2026-09-10 — THAI_STYLE §7),

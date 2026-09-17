@@ -23,6 +23,17 @@ export const th: Dictionary = {
     privacy: "ความเป็นส่วนตัว",
     warranty: "นโยบายเคลม",
   },
+  // Round 30.4ข batch 5 — trust strip above the footer (TrustBar.tsx). Every line points at a
+  // sentence already approved on /about; see THAI_STYLE §7 "รอบ 30.4ข ก้อน 5".
+  trust: {
+    ariaLabel: "ทำไมต้องซื้อกับ OKami24",
+    items: [
+      { title: "ของแท้", body: "จากแบรนด์ที่เรามั่นใจ" },
+      { title: "ราคาตรง", body: "ราคาที่เห็นคือราคาที่ขาย ไม่ปั่นราคา" },
+      { title: "บริการจริง", body: "ทักไลน์มา แอดมินตอบเอง ไม่ใช่บอท" },
+      { title: "เช็คกับเว็บทางการ", body: "สเปกที่ยืนยันไม่ได้ เราบอกตรง ๆ ไม่เดา" },
+    ],
+  },
   footer: {
     tagline:
       "OKami24 — ของแท้ ราคาตรง บริการจริง พอตทุกแบบ และน้ำยา จากคนขายที่รู้จักสินค้าจริง ซื้อแล้วยังดูแลต่อ",

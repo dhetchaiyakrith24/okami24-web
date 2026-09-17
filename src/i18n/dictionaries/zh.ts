@@ -29,6 +29,16 @@ export const zh: Dictionary = {
     privacy: "隐私政策",
     warranty: "售后政策",
   },
+  // Round 30.4ข batch 5 — trust strip above the footer (TrustBar.tsx); Thai is the source.
+  trust: {
+    ariaLabel: "为什么选择 OKami24",
+    items: [
+      { title: "正品", body: "来自我们信得过的品牌。" },
+      { title: "价格透明", body: "页面标价就是售价，不炒价。" },
+      { title: "服务实在", body: "LINE 联系我们，真人回复，不是机器人。" },
+      { title: "官网核对", body: "无法确认的参数，我们直说，不乱猜。" },
+    ],
+  },
   footer: {
     tagline: "OKami24 — 正品保证，价格透明，服务实在。精选电子烟设备、一次性烟弹与烟油，售后服务持续跟进。",
     shop: "购买",
