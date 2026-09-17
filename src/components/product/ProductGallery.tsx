@@ -46,7 +46,10 @@ export function ProductGallery({ product }: { product: Product }) {
                   {photo.sourceUrl && (
                     <>
                       {" · "}
-                      <a href={photo.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="hover:text-foreground-muted">
+                      {/* Round 30.4ข close (designer, parked since 30.4ก): the Thai caption is already
+                          `text-foreground-muted`, so a muted hover did nothing there — the link now
+                          brightens to `text-foreground` and underlines in every language. */}
+                      <a href={photo.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="transition-colors hover:text-foreground hover:underline">
                         {dict.product.gallerySourceLinkLabel}
                       </a>
                     </>
