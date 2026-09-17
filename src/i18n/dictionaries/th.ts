@@ -29,7 +29,9 @@ export const th: Dictionary = {
     ariaLabel: "ทำไมต้องซื้อกับ OKami24",
     items: [
       { title: "ของแท้", body: "จากแบรนด์ที่เรามั่นใจ" },
-      { title: "ราคาตรง", body: "ราคาที่เห็นคือราคาที่ขาย ไม่ปั่นราคา" },
+      // Owner 2026-09-17 (round close): "…ที่ขายจริง" so the phone line breaks before "ไม่ปั่นราคา"
+      // instead of after "ไม่" (390px 2×2 grid); en/zh unchanged.
+      { title: "ราคาตรง", body: "ราคาที่เห็นคือราคาที่ขายจริง ไม่ปั่นราคา" },
       { title: "บริการจริง", body: "ทักไลน์มา แอดมินตอบเอง ไม่ใช่บอท" },
       { title: "เช็คกับเว็บทางการ", body: "สเปกที่ยืนยันไม่ได้ เราบอกตรง ๆ ไม่เดา" },
     ],
