@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · ฉบับ 27 · 2026-09-17
+# OKami24 — HANDOFF · ฉบับ 27.1 · 2026-09-17 (§16 อัปเดตหลังขั้น 0)
 
 สร้างเมื่อ: 2026-09-17 ดึก (**ฉบับที่ 27** — **รอบเก็บบ้าน ฉบับ 2 · แชท A จบ** · ก้อน A live แล้ว (PR #34) · ฉบับก่อนทุกฉบับ (v1–v26) อยู่ที่ `docs/archive/` ตั้งแต่ฉบับนี้)
 
@@ -163,13 +163,13 @@ working tree ว่าง (เหลือไฟล์นี้) · main `325341
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 อ่านก่อน (กฎ 13.9): ~/.claude/CLAUDE.md หมวด 13 → CLAUDE.md โปรเจกต์ → docs/HANDOFF.md §16 (บล็อกนี้) + §17 เฉพาะตอนต้องใช้กติกา/เครื่องมือ/verify → docs/THAI_STYLE.md (กฎล้วน 171 บรรทัด — ห้ามอ่าน docs/THAI_STYLE_LOG.md ถ้าไม่ต้องอ้างประโยคเก่า) → docs/LAUNCH_AUDIT.md เฉพาะหัว "สถานะปัจจุบัน"
 
-1 main: 857745b (PR #34 = ก้อน A live · Cowork ยิงเว็บจริง scan 0/105 แล้ว) · tag pre-housekeeping ชี้ที่นี่ · git fetch ก่อนเชื่อ · ห้าม merge เอง
-2 branch checkpoint/phase-3.3.3 นำหน้า main = รอบเก็บบ้าน แชท A (agents 3 ตัว · docs-split THAI_STYLE → +LOG · docs-archive 28+1 ไฟล์ · chore scripts/wb-diff.js · recovery · docs ฉบับ 27) push แล้ว รอ Cowork merge · ไม่แตะ src/ = ไม่ต้อง deploy · tag 6 ตัว push แล้ว
-3 รอบที่เปิด: รอบเก็บบ้าน ฉบับ 2 (ไฟล์คำสั่ง Desktop\Run prompt\New prompt on work\รอบเก็บบ้านคำสั่ง-ฉบับ2.txt) — แชท A จบ (ขั้น 4.1 · 1 · 2 · 3 · 10 · 9.1–9.3) · **แชท B = แชทนี้:** ขั้น 0 rule-auditor → docs/RULES_INDEX.md → หยุดรายงาน (ห้ามแก้กฎเอง) → 0.2 เคาะ → 0.3 แก้ 1 commit/ไฟล์ → 4.2 → 5 → 6 → 7 → 8 → push → ปิดรอบ = tag + push tag · รายละเอียดทุกขั้น HANDOFF §5.1 · ห้ามแตะ src/ · ห้ามลบไฟล์ใน git · ย้าย/แยกต้องนับบรรทัด
-4 รอเจ้าของ (ใหม่รอบนี้ — ตอบก่อนหรือให้ rule-auditor ยกขึ้นมา): ย้าย PROJECT_HANDOFF.md + PAGE_COPY_2026-09-06.md เข้า archive ไหม (ยังถูกอ้าง) · เคาะข้อความ 13.5 ให้ doc-keeper เขียน docs/ ได้ · ~/.claude/skills/handoff/SKILL.md บรรทัด 71 ชี้ docs/archive/ ไหม · 9.4 ซ้อม Rollback (Cowork+เจ้าของ) · PuffCount dead + ProductHero verified อยู่รอบไหน
+1 main: f2c60f7 (PR #35 = แชท A live · Cowork ตรวจเว็บจริงแล้วปกติ) · tag pre-housekeeping = 857745b · git fetch ก่อนเชื่อ · ห้าม merge เอง
+2 branch checkpoint/phase-3.3.3 นำหน้า main = แชท B ขั้น 0: 534b0ec doc-keeper เงื่อนไข 13.5 · 5cbdeae archive-claude-config (สำเนา ~/.claude/CLAUDE.md + handoff skill ใน docs/archive/claude-config-2026-09-17/ — เก็บอย่างเดียว ห้ามอ่านจากตรงนั้น) · rules-index (docs/RULES_INDEX.md) push แล้ว รอ Cowork merge · ไม่แตะ src/
+3 รอบที่เปิด: รอบเก็บบ้าน ฉบับ 2 — ทำต่อในแชทเดิม (agent ใหม่โหลดทันที ไม่ต้องเปิดแชทใหม่) · แชท A จบ · **ขั้น 0 จบ = docs/RULES_INDEX.md 73 แถว (ขัดกัน 24 · ตายแล้ว 20 · ทับซ้อน 19 · กำกวม 10) หยุดรอเคาะ** · ถัดไป: 0.2 Cowork เสนอ/เจ้าของเคาะทีละ ≤40 แถว (24 แถวใน ~/.claude/CLAUDE.md เจ้าของเคาะทุกข้อ) → 0.3 Code แก้เฉพาะแถวที่เคาะ 1 commit/ไฟล์ ชั้น 10 กางของเดิม/ใหม่/สิ่งที่หาย → 4.2 → 5 → 6 (+ หัว LAUNCH_AUDIT main → ปัจจุบัน · PROJECT_HANDOFF.md → archive หลังแก้โน้ต 76) → 7 → 8 → push → ปิดรอบ tag housekeeping-done
+4 รอเจ้าของ: เคาะ RULES_INDEX (ขัดกัน+ตายแล้ว แถว 1–44 ทีละข้อ · ทับซ้อน+กำกวม 45–73 Cowork ตัดสิน เจ้าของค้านได้) · 9.4 ซ้อม Rollback (Cowork+เจ้าของ) · ตอบแล้ว: PROJECT_HANDOFF → archive ขั้น 6 · PAGE_COPY + IMAGE_AUDIT คงไว้ · 13.5 แก้แล้ว · handoff skill :71 แก้แล้ว · PuffCount/ProductHero → รอบข้อมูล
   เดิม (ไม่เปลี่ยน): footer.tagline ตัด 3 คำซ้ำ (รอบ tagline) · zh โน้ตความเข้ากันได้ 2 ข้อ (รอบภาษาจีน) · TPD · #31 #34 iPhone · ผลเฝ้า Render OOM · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189
 5 คำถามค้าง: production สำรอง DB เองทุก 6 ชม. ที่ /var/data/backups ตาม render.yaml — วันนี้รันจริงไหม [ไม่ยืนยัน] ให้ Cowork ดู log "[backup]" บน Render (HANDOFF §5.3) · backup ในเครื่องหยุด 10/09 = ไม่มี server รันโดยเปิด backup ไม่ใช่ของพัง
-  4b ไม่ต้องรอ — เจ้าของตัดสินแล้ว ห้ามถามซ้ำ: ตะกร้าปิด (ข้อ 43) → ไลน์ @okm24 · น้ำยา 0 ข้าม · หน้าบริการไม่แตะ (ข้อ 49) · งานรูปพัก · ยังไม่ผูก NBSP นอกรายการ · 6 ตัวการ์ดแถวว่างรับได้ · tagline/ตะกร้า/หน้าบริการ = รอบของมัน · CLAUDE.md แก้เฉพาะข้อที่เจ้าของเคาะ (ตรวจ/รายงานได้) · ใส่กฎใหม่ = ลบกฎเก่าเรื่องเดียวกันทุกที่ · 30.4c ลบแล้ว
+  4b ไม่ต้องรอ — เจ้าของตัดสินแล้ว ห้ามถามซ้ำ: ตะกร้าปิด (ข้อ 43) → ไลน์ @okm24 · น้ำยา 0 ข้าม · หน้าบริการไม่แตะ (ข้อ 49) · งานรูปพัก · ยังไม่ผูก NBSP นอกรายการ · 6 ตัวการ์ดแถวว่างรับได้ · tagline/ตะกร้า/หน้าบริการ = รอบของมัน · CLAUDE.md แก้เฉพาะข้อที่เจ้าของเคาะ (ตรวจ/รายงานได้) · ใส่กฎใหม่ = ลบกฎเก่าเรื่องเดียวกันทุกที่ · ชั้น 9 ก๊อปไฟล์นอกรีโปก่อนแตะ (ทำแล้ว) · ชั้น 10 รวม/ลบกฎต้องกางเต็ม · 30.4c ลบแล้ว
 (กติกา context · agent มีผลเมื่อเปิดเซสชันใหม่ · เครื่องมือ · verify · git = §17 ของไฟล์นี้)
 ```
 
