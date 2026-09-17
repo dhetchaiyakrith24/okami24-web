@@ -54,30 +54,24 @@ model: sonnet
 - มี password / API key / token หลุดออกมาไหม
 - มีตัวเลข สถิติ หรือรีวิวที่กุขึ้นมาเองไหม (ถ้าไม่มีที่มา = ตก)
 - แตะฐานข้อมูล ระบบล็อกอิน ระบบจ่ายเงิน หรือ deploy โดยไม่ได้รับอนุญาตไหม
-- **ด่านถาวร (เจ้าของสั่ง 2026-09-12 · รอบ 30.4 Q1): อักขระล่องหน WORD JOINER U+2060** — ทุกครั้งที่ตรวจ ให้รัน
-  `node -e "const fs=require('fs'),p=require('path');function w(d,o){for(const e of fs.readdirSync(d,{withFileTypes:true})){const q=p.join(d,e.name);if(e.isDirectory()){if(!/node_modules|\\.next|\\.git/.test(q))w(q,o)}else{const t=fs.readFileSync(q,'utf8');const n=t.split(String.fromCharCode(0x2060)).length-1;if(n)o.push(q+' x'+n)}}return o}console.log(JSON.stringify(w('src',[]).concat(w('docs',[]),w('scripts',[]),w('.claude',[]))))"`
-  แล้ว `grep -rn "u2060" src docs scripts .claude` · **รายงานทุกตำแหน่งที่เจอทั้ง 2 แบบ** · เกณฑ์: อักขระดิบ (raw) ต้อง = 0 ทั้งรีโป · escape `\u2060` อนุญาตเฉพาะใน `src/lib/thai-keep-together.ts` บรรทัดเดียว (ใส่ตอน render ให้ 2 ย่อหน้าที่เจ้าของอนุมัติ: /e-liquid/beverage lede คำ "เบเกอรี่" · /technology/onboard-touch-displays ย่อหน้าแรก คำ "จอทัช") · เจอที่อื่น = ตก · ห้ามอยู่ใน title/meta/JSON-LD/ฟิลด์ที่ค้นหาอ่าน (ตรวจ `<meta name="description">` ของ 2 หน้านั้นจาก render ว่าไม่มี U+2060)
-- **ด่านถาวรฉบับปรับ (เจ้าของสั่ง 2026-09-16 · ขั้นปิดรอบ 30.4ค): NBSP U+00A0 + WORD JOINER U+2060 = กลไกเดียว `src/lib/thai-typography.ts`** — รัน `node scripts/thai-raw-chars-check.js` (สแกน src/ docs/ scripts/ · อักขระดิบทั้งสองตัวต้อง = 0 — ไฟล์กลไกสร้างจาก code point ไม่มี escape ให้ค้น) · รายการที่อนุญาต: NBSP หน้า ๆ / ระหว่างเลขกับหน่วย / ในชื่อรุ่น 2 คำ 6 ชื่อ · joiner 5 คำผูกประโยค (เบเกอรี่ · จอทัช · พอตคิท · รุ่นนี้ · กล่าวอ้าง — ดู THAI_STYLE §6) · เพิ่มรายการ = เจ้าของเคาะเท่านั้น · ตรวจ render: `<head>` (title/meta/og) และ JSON-LD ของทุกหน้าใน sitemap ต้องมี 0 ตัว · en/zh หลัง hydration ต้องมี 0 ตัว (ยิงด้วย cookie) · `src/lib/thai-keep-together.ts` ถูกลบแล้ว ถ้าโผล่กลับมา = ตก
+- **ด่านถาวรฉบับปรับ (เจ้าของสั่ง 2026-09-16 · ขั้นปิดรอบ 30.4ค): NBSP U+00A0 + WORD JOINER U+2060 = กลไกเดียว `src/lib/thai-typography.ts`** — รัน `node scripts/thai-raw-chars-check.js` (สแกน src/ docs/ scripts/ · อักขระดิบทั้งสองตัวต้อง = 0 — ไฟล์กลไกสร้างจาก code point ไม่มี escape ให้ค้น) · รายการที่อนุญาต: NBSP หน้า ๆ / ระหว่างเลขกับหน่วย / ในชื่อรุ่น 2 คำ 6 ชื่อ · joiner 5 คำผูกประโยค (เบเกอรี่ · จอทัช · พอตคิท · รุ่นนี้ · กล่าวอ้าง — ดู THAI_STYLE §5 "กลไก typography") · เพิ่มรายการ = เจ้าของเคาะเท่านั้น · ตรวจ render: `<head>` (title/meta/og) และ JSON-LD ของทุกหน้าใน sitemap ต้องมี 0 ตัว · en/zh หลัง hydration ต้องมี 0 ตัว (ยิงด้วย cookie) · `src/lib/thai-keep-together.ts` ถูกลบแล้ว ถ้าโผล่กลับมา = ตก
 - **ด่านถาวร (เจ้าของสั่ง 2026-09-17 · ปิดรอบ 30.4ข): ประโยคอังกฤษหลุดบนหน้าไทย** — ทุกรอบที่มี server ทดสอบเปิด (build ปัจจุบัน · พอร์ต 3412) รัน `node scripts/scan.js` (ไล่ทุกหน้าใน sitemap · ธงข้อความที่ไม่มีอักษรไทยเลย ยาว >35 ตัว ≥6 คำ และมีคำเชื่อมอังกฤษ is/are/the/for/which/that/designed/stated/with/from/your/our/can/will/has/not/when · ข้าม element ที่มี lang="en" และสโลแกนแบรนด์จาก brands.ts) · **เกณฑ์ผ่าน = `PASS 0/105`** (เลขหน้าตาม sitemap) · ถ้าธง = รายงานทุกข้อความ + หน้า ห้ามเดาว่าเป็นของตั้งใจ · ชื่อแบรนด์/ชื่อรุ่น/ชื่อหมวด/สโลแกนต้องไม่ติดธง — ถ้าติด = สคริปต์ผิด รายงานแยก
+- **ด่านถาวร: คำห้ามบนเว็บ (ย้ายมาจาก HANDOFF §17 2026-09-17 RULES_INDEX แถว 58)** — grep ซอร์ส (`src/` ทั้งหมด) ด้วยคำในคอลัมน์ **"ห้ามใช้" ของ THAI_STYLE §3 ทั้งตาราง** + คำสะกดผิด/หลุดที่เคยเจอ `พอตี|แท่ง|หัวหอม|คาร์ทริดจ์|ตลับ|ดิสโพส|ลูกเล่น|เซลล์แบต` ต้อง = 0 (ยกเว้นจุดที่ THAI_STYLE §5 กลุ่ม ก ยกเว้นไว้ชัด) · ใช้ Node code-point ไม่ใช้ `grep "[ก-๙]"` บน Git Bash (byte-range false positive)
 
 ---
 
-## รูปแบบการรายงาน — ห้ามเกินนี้
+## รูปแบบการรายงาน — 5 ช่องตาม ~/.claude/CLAUDE.md 13.5 (RULES_INDEX แถว 21) — ห้ามเกินนี้
 
 ```
-ผลตรวจ: ผ่าน / ไม่ผ่าน
-
-สั่งมา 4 ข้อ → ทำจริง 3
-
-[✓] 1. ...  (ตรวจจาก: ไฟล์/บรรทัดไหน)
-[✓] 2. ...  (ตรวจจาก: ...)
-[✗] 3. ...  ← ยังไม่ได้ทำ / อ้างว่าทำแต่หาหลักฐานไม่เจอ
-[✓] 4. ...  (ตรวจจาก: ...)
-
-ของเดิมพังไหม: ไม่พัง / พัง — <ไฟล์ไหน>
-
-ต้องทำเพิ่ม:
-- ...
+1. ตรวจอะไร — งาน/ก้อนไหน สั่งมากี่ข้อ
+2. ตรวจ commit/สถานะไหน — hash หรือ "index staged" · ผลใช้ได้กับสถานะนี้เท่านั้น
+3. พบอะไร — ผลตรวจ: ผ่าน / ไม่ผ่าน · สั่งมา N ข้อ → ทำจริง M
+   [✓] 1. ...  (ตรวจจาก: ไฟล์/บรรทัดไหน)
+   [✗] 2. ...  ← ยังไม่ได้ทำ / อ้างว่าทำแต่หาหลักฐานไม่เจอ
+   ของเดิมพังไหม: ไม่พัง / พัง — <ไฟล์ไหน>
+   ต้องทำเพิ่ม: - ...
+4. หลักฐานอยู่ไหน — คำสั่งที่รัน · ไฟล์/log ที่เปิด · ผลด่านทุกตำแหน่งแนบเป็นไฟล์ใน _incoming/ แล้วอ้าง path
+5. ยังไม่ได้ตรวจอะไร — รายการ (ห้ามเว้นว่าง — ถ้าไม่มีต้องเขียนว่า "ไม่มี")
 ```
 
 ---
@@ -86,7 +80,7 @@ model: sonnet
 
 1. **ตกก็คือตก** ขาดข้อเดียวก็ "ไม่ผ่าน" ห้ามให้ผ่านเพราะ "ขาดนิดเดียว"
 2. **ห้ามเดา** หาหลักฐานไม่เจอให้เขียนว่า "หาหลักฐานไม่เจอ" ไม่ใช่ "น่าจะโอเค"
-3. **ห้ามยาว** รายงานเกิน 20 บรรทัดถือว่าคุณทำงานผิดวิธี
+3. **ห้ามยาว** สรุป (ช่อง 1–3 + 5) ไม่เกิน 20 บรรทัด · ผลด่านทุกตำแหน่ง (U+2060 · คำห้าม · scan.js) แนบเป็นไฟล์ใน `_incoming/` แล้วอ้าง path ในช่อง 4 — ไม่วางรายการยาวในรายงาน (RULES_INDEX แถว 20)
 4. **ห้ามชม** ไม่ต้องบอกว่างานดี บอกแค่ว่าครบหรือไม่ครบ
 5. **ห้ามแก้งานเอง** บอกว่าขาดอะไร แล้วจบ
 
@@ -96,7 +90,7 @@ model: sonnet
 
 Other work runs on this machine next to yours. On 2026-09-09 a checker ran `taskkill /F /IM node.exe /T`
 and killed five Node processes that were not its own; on 2026-09-10 the owner's own sidebar preview
-server was sitting on port 3000 — a real example of a process you must not touch. HANDOFF §8.9 already
+server was sitting on port 3000 — a real example of a process you must not touch. HANDOFF §17 already
 says how to do this right, but a checker does not read HANDOFF, so the rule lives in this file too.
 
 - **Never** run `taskkill /F /IM node.exe /T` — or any kill by image name. No exceptions.

@@ -1,6 +1,10 @@
 @AGENTS.md
 
-กฎการทำงานของทีมอยู่ที่ `~/.claude/CLAUDE.md` หมวด 13 (ขั้นของงาน 5 ค่า · ใครตรวจรับ · ผู้แก้ไฟล์คนเดียว)
+กฎการทำงานของทีมอยู่ที่ `~/.claude/CLAUDE.md` หมวด 13
+
+`AGENTS.md` (imported on line 1, rewritten by `next dev`) binds only when code under `src/` is being changed; on a round that
+does not touch `src/` its Next.js reading list does not apply. If `next dev` rewrites `AGENTS.md`, commit that change as a
+separate `chore` commit, never inside a feature commit (RULES_INDEX row 69, 2026-09-17).
 
 # Business context
 
@@ -17,6 +21,8 @@ flavour the manufacturer offers, even ones the shop has no stock of**. Never dro
 because "we don't sell it" — stock, "Sold out" and greyed-out states are the cart/stock system's job
 later, not a reason to cut catalog truth. Image standards live in `docs/IMAGE_SPEC.md`.
 
-If instructions conflict, resolve in this order: (1) the current user's explicit
-instruction, (2) `docs/BUSINESS_SOURCE_OF_TRUTH.md`, (3) this file, (4) implementation
-assumptions. Never silently overwrite business rules in the source-of-truth doc.
+If instructions conflict, resolve in this order: (1) the current user's explicit instruction in chat,
+(2) `~/.claude/CLAUDE.md` (the team rules), (3) `docs/BUSINESS_SOURCE_OF_TRUTH.md` — a conflict with it is
+not resolved silently, it is a stop-and-ask case (13.4 #5), (4) `docs/THAI_STYLE.md` for anything about
+Thai wording on the site, (5) this file, (6) implementation assumptions. Never silently overwrite business
+rules in the source-of-truth doc. (RULES_INDEX row 15, owner ruling 2026-09-17)

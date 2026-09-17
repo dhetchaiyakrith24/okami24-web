@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · ฉบับ 27.1 · 2026-09-17 (§16 อัปเดตหลังขั้น 0)
+# OKami24 — HANDOFF · v27.2 · 2026-09-17 (§16 updated after steps 0.3–8)
 
 สร้างเมื่อ: 2026-09-17 ดึก (**ฉบับที่ 27** — **รอบเก็บบ้าน ฉบับ 2 · แชท A จบ** · ก้อน A live แล้ว (PR #34) · ฉบับก่อนทุกฉบับ (v1–v26) อยู่ที่ `docs/archive/` ตั้งแต่ฉบับนี้)
 
@@ -6,10 +6,9 @@
 
 **สิ่งที่ตรวจจริงตอนเขียน [ตรวจแล้วจริง]:** `git fetch` + `git log` (main `857745b` = HEAD เดิม `e810142` merge แล้ว) · **[เจ้าของบอก]** Cowork ยิงเว็บจริงหลัง PR #34 scan 0/105 แล้ว · verify รอบนี้ (ไม่แตะ `src/` เลย — `git diff --stat src/` = 0 ไฟล์): tsc ผ่าน · verify:catalog --full 20/20 รวม eslint + next build (`_incoming/verify-catalog-housekeeping-A.log`) · verify:commerce 16/16 · i18n 16/16 · 53/31 · raw-chars 0 · ไม่มีไฟล์ใน git ถูกลบ (`git diff --cached --diff-filter=D` ว่าง) · จำนวนบรรทัด THAI_STYLE 1009 → 171 + 855 = 1026 (ทุกช่วงเดิม diff = 0) · archive 28 ไฟล์ 6,835 บรรทัด / 1,274,090 ไบต์ ก่อน = หลัง · `_incoming` 1,600 → 1,336 MB (ลบ `30.4c` 1,645 ไฟล์ 265 MB — เจ้าของสั่ง) · server 3412 ปิด
 
-> **วิธีอ่าน:** ทุกข้อกำกับ **[ตรวจแล้วจริง]** / **[ผมเข้าใจว่า]** / **[เจ้าของบอก ยังไม่ได้ตรวจเอง]** · **"ตรวจผ่านตามเกณฑ์" ≠ "เจ้าของอนุมัติ"**
+> **How to read:** every statement carries one of the three tags of ~/.claude/CLAUDE.md 13.10 #9 — **[ตรวจแล้ว]** (seen in the file/commit) / **[เชื่อว่า]** (reported, not verified) / **[รอเจ้าของ]** (needs the owner) — the older set "ตรวจแล้วจริง / ผมเข้าใจว่า / เจ้าของบอก" is retired (RULES_INDEX row 48) · **"ตรวจผ่านตามเกณฑ์" ≠ "เจ้าของอนุมัติ"**
 > **รายการงานหลัก = `docs/LAUNCH_AUDIT.md`** — อ่านเฉพาะหัว "สถานะปัจจุบัน" + เลขข้อที่กำลังทำ **ห้ามอ่านทั้งไฟล์**
-> **ภาษาไทยบนเว็บ: `docs/THAI_STYLE.md` เป็นแหล่งความจริงเดียว** — §2 กฎ 4 ชั้น · §3 คำล็อก · §4 การพิมพ์ · §5 กลุ่ม ก/ข · §6 งานค้าง (171 บรรทัด อ่านทุกเซสชัน) · ตัวอย่างก่อน→หลังทุกรอบ + "พิจารณาแล้วไม่ทำ" อยู่ `docs/THAI_STYLE_LOG.md` §6–§7 (855 บรรทัด **เปิดเฉพาะตอนต้องอ้าง** — แยก 2026-09-17)
-> **กติกา context: ดู CLAUDE.md 13.6 (2026-09-17) · push ทุกครั้ง = อัปเดต §16**
+> **Thai on the site: `docs/THAI_STYLE.md` is the single source of truth** (rules only — §2 four layers · §3 locked words · §4 typing · §5 group ก/ข + typography mechanism · §6 open work). When to read it is decided in one place, `~/.claude/CLAUDE.md` 13.9: only on rounds that touch site copy. Before→after examples and "considered, not done" live in `docs/THAI_STYLE_LOG.md` §6–§7 — open it only to cite a past ruling. (RULES_INDEX row 10, 2026-09-17)
 
 ---
 
@@ -23,7 +22,7 @@
 6. **designer กับ checker เห็นต่างเรื่องตัดขอบคำ** (ก้อน 3 "ตอน \| นี้" · "บรรจุ \| สำเร็จ") → เจ้าของตัดสิน = แก้ทั้งคู่ด้วยการเรียงคำ ไม่ใช้ NBSP · หลัก: **ตัดกลางคำล็อก = แก้ · ตัดขอบคำ = รับได้**
 7. **"ไม่เผาไหม้" ไม่ได้อยู่ในตารางห้ามแยก แต่มีคำตัดสินเจ้าของ 2026-09-12 ใน THAI_STYLE** → เจ้าของสั่งกวาดทั้งเว็บ 3 ภาษา + "เปลี่ยนจากบุหรี่มวน" (คำอ้างเลิกบุหรี่) — ตอนนี้บันทึกเป็นข้อห้ามใน §3 แล้ว
 8. **zh "正品保证" มี 保证 (การันตี)** — checker จับ · แถบใช้ "正品" · tagline จีนที่เคาะแล้วยังใช้ 正品保证 (ไม่แตะ)
-9. **thai-typography `within` ของ /about ห้ามยกไปใช้ที่อื่น** (THAI_STYLE §5) — จุดตัด "ไม่ \| ปั่นราคา" ในแถบจึงต้องแก้ด้วยคำ ไม่ใช่ joiner → รอเจ้าของ
+9. **The `/about` `within` exception is not a template** — rule and gate live in THAI_STYLE §5 (group ก row) and checker.md item 5; the "ไม่ | ปั่นราคา" break in the trust strip therefore had to be fixed with wording, not a joiner → waiting on the owner (RULES_INDEX row 57: rule text removed here, pointer kept)
 10. **Cowork merge เร็ว** — PR #30/#31/#32 merge ระหว่างทำก้อนถัดไป · `git fetch` ก่อนสรุปทุกครั้ง
 
 ---
@@ -48,7 +47,7 @@
 - **ก้อน 4 `1965393` (live)** FAQ eyebrow "ถาม-ตอบ"/"问答" · /search eyebrow = footer.tools
 - **ก้อน 5 `1f55dee` (live)** `TrustBar.tsx` เหนือ footer ทุกหน้า · `trust.items[4]` 3 ภาษา · แบบแถว มือถือไอคอนบน
 - **ปิดรอบ + ก้อน 6 `14dbbe5` (live PR #33) · ก้อน A `150609b` `0b7f695` (live PR #34)** sticky หัวแถว /compare · ลิงก์ "แหล่งที่มา" hover สว่าง+ขีด · wordbreak-scan 14 หน้า (FIXED 1 · NEW 2)
-- docs ทุกก้อน: THAI_STYLE §7 ตารางต่อก้อน · LAUNCH_AUDIT หัว + ข้อ 44 · HANDOFF §16 ทุก push
+- docs ทุกก้อน: THAI_STYLE_LOG §7 ตารางต่อก้อน · LAUNCH_AUDIT หัว + ข้อ 44 · HANDOFF §16 ทุก push
 
 ---
 
@@ -56,7 +55,7 @@
 
 | ขั้น (ตามไฟล์คำสั่ง) | ทำอะไร | ตัวเลข/หลักฐาน | สถานะ |
 |---|---|---|---|
-| 4.1 agent 3 ตัว | `.claude/agents/rule-auditor.md` (opus · Read/Grep/Glob) · `scope-auditor.md` (sonnet · +WebFetch) · `doc-keeper.md` (sonnet · Read/Grep/Glob/Edit/Write · เขียนได้เฉพาะ `docs/`) — เงื่อนไขเรียกข้อเดียวอยู่บรรทัดแรกของ description + บรรทัดแรกของเนื้อหา · ภาษาอังกฤษ (13.11) | 3 ไฟล์ใหม่ · **มีผลเมื่อเปิดเซสชันใหม่** (HANDOFF 8.6) | ทำแล้วรอตรวจ |
+| 4.1 agent 3 ตัว | `.claude/agents/rule-auditor.md` (opus · Read/Grep/Glob) · `scope-auditor.md` (sonnet · +WebFetch) · `doc-keeper.md` (sonnet · Read/Grep/Glob/Edit/Write · เขียนได้เฉพาะ `docs/`) — เงื่อนไขเรียกข้อเดียวอยู่บรรทัดแรกของ description + บรรทัดแรกของเนื้อหา · ภาษาอังกฤษ (13.11) | 3 ไฟล์ใหม่ · **ใช้ได้ทันทีในแชทที่รันอยู่** (ตรวจแล้ว 2026-09-17 — RULES_INDEX แถว 25) | ทำแล้วรอตรวจ |
 | 1 แยก THAI_STYLE | `docs/THAI_STYLE.md` 1009 บรรทัด / 357,843 ไบต์ → **171 บรรทัด / 68,526 ไบต์** (กฎล้วน) + `docs/THAI_STYLE_LOG.md` **855 บรรทัด / 292,354 ไบต์** (§7 ทุกรอบ + §6 "พิจารณาแล้วไม่ทำ") · เลข § คงเดิมทั้งสองไฟล์ · THAI_STYLE §7 เหลือ stub ชี้ LOG · โน้ต 1 บรรทัดที่หัวไฟล์ · thai-copy.md ชี้ LOG แล้ว | 171 + 855 = 1026 ≥ 1009 (เพิ่ม 17 บรรทัดหัว/stub) · ทุกช่วงบรรทัดเดิม `diff` = 0 | ทำแล้วรอตรวจ |
 | 2 HANDOFF §16 | วัดก่อน: §16 = 9,496 ไบต์ / 31 บรรทัด · ทั้งไฟล์ 32,661 (ไม่เกิน 15 KB) → เขียน §16 ใหม่เหลือ 5 อย่าง + ย้ายกติกา/เครื่องมือ/verify/git (13 บรรทัด ไม่ลบ) ไป **§17 ใหม่** · บรรทัด 1 มีเลขฉบับ+วันที่ · บล็อกเขียน "docs/HANDOFF.md §16" | วัดหลัง: ดู §16 | ทำแล้วรอตรวจ |
 | 3 archive | `docs/archive/` ← `git mv` HANDOFF v1–v25 (25) + STATUS_2026-09-06 + NIGHT_REPORT 09-05/09-06 = **28 ไฟล์** + สำเนา v26.1 ของฉบับนี้ · **ไม่ย้าย 3 ไฟล์เพราะยังถูกอ้าง:** PROJECT_HANDOFF.md (LAUNCH_AUDIT บรรทัด 76) · PAGE_COPY_2026-09-06.md (LAUNCH_AUDIT 47 + `src/` 3 ไฟล์) · IMAGE_AUDIT.md (IMAGE_SPEC 79 + `package.json` audit:gaps เขียนทับ) | 6,835 บรรทัด / 1,274,090 ไบต์ ก่อน = หลัง · git เห็นเป็น rename 28 · delete 0 | ทำแล้วรอตรวจ |
@@ -64,6 +63,7 @@
 | 9.1 tag | `lang-done` → `b273929` · `r30-4b-done` → `998694e` · `pre-housekeeping` → `857745b` (annotated · ชื่ออังกฤษ · ข้อความไทย) · พบ tag เก่าในเครื่อง 3 ตัว (`pre-config-2026-09-09` `pre-30.1-2026-09-09` `pre-30.2-2026-09-10`) ยังไม่เคย push — remote มี 0 · **กติกาถาวรเพิ่มใน `~/.claude/CLAUDE.md` 13.7** (ไฟล์คำสั่ง 9.1 สั่งไว้ตรง ๆ · ไม่มีกฎ tag เดิมที่ไหนให้ลบ) | `git tag -n1` 6 ตัว · push ทั้ง 6 ตอน push | ทำแล้วรอตรวจ |
 | 9.2 backup หยุด 10/09 | ดู §5.3 | — | รายงานแล้ว |
 | 9.3 RECOVERY | `docs/RECOVERY.md` ไทย 1 หน้า 5 หัวข้อ (rollback Render · ตาราง tag · DB 3 ชั้น · ลิงก์ · ห้ามกด) | ยังไม่ซ้อมจริง (9.4 = Cowork+เจ้าของ) | ทำแล้วรอตรวจ |
+| 0.3 + 5–8 (chat B, same chat) | 26 commits 247ff1e → dbeb36d: global CLAUDE.md 13.2/13.3/13.4/13.5/13.6/13.7/13.9/13.10/13.11 + §8:99 · handoff skill (English template, 13.6 conditions, §16 spec) · repo CLAUDE.md · THAI_STYLE + LOG · checker/designer/planner/researcher/writer/thai-copy/doc-keeper/rule-auditor/scope-auditor · catalog-research skill · AI_TEAM_GUIDE (9-row table) · HANDOFF (this file: one do-not-touch list, two-tier rule in §17, English for new text) · LAUNCH_AUDIT head + PROJECT_HANDOFF → archive · TEMPLATES.md · ROUND_COST.md · RULES_INDEX rows marked done + chain-10 record | 72/73 rows · row 60 waits for the owner · checker 10/10 after one send-back (chain-10 for 2 moved lines) · doc-keeper smoke test OK · tsc · commerce 16/16 · i18n 16/16 · raw-chars 0 | ทำแล้วรอตรวจ → checker ผ่าน |
 
 **ตัดสินเองในเซสชันนี้ (ย้อนง่าย ลูกค้าไม่เห็น):** §6 ของ THAI_STYLE ย้ายเฉพาะบล็อก "พิจารณาแล้วไม่ทำ" — รายการค้าง 30.3/30.3ข/30.4 ที่มีข้อยังไม่ทำปนอยู่คงไว้ทั้งบล็อก (ไม่ซอยทีละบรรทัด) · เหตุผลที่ฝังในตารางกฎ §3/§5 คงอยู่กับตาราง · ไม่แก้ไฟล์ใน archive แม้อ้างพาธเก่ากันเอง (เป็นประวัติ) · LAUNCH_AUDIT ที่อ้าง "THAI_STYLE §7 รอบ …" ไม่แก้ (stub §7 พาไป LOG ได้ · LAUNCH_AUDIT = ขั้น 6 แชท B) · wb-diff.js ย้ายเข้า scripts/ (งานเกินคำสั่ง commit แยก)
 
@@ -85,8 +85,8 @@
 
 ### 5.1 รอบเก็บบ้าน ฉบับ 2 (เปิด 2026-09-17 · ไฟล์คำสั่ง `Desktop\Run prompt\New prompt on work\รอบเก็บบ้านคำสั่ง-ฉบับ2.txt` · 2 แชท)
 - **แชท A จบ (ฉบับนี้):** 4.1 · 1 · 2 · 3 · 10 · 9.1–9.3 → push → handoff — รายละเอียด §3
-- **แชท B (เปิดแชทใหม่ agent ถึงมีผล):** ขั้น 0 `rule-auditor` อ่านกฎทุกไฟล์ → `docs/RULES_INDEX.md` (1 กฎ 1 แถว · ขัดกัน/ตายแล้ว/ทับซ้อน/กำกวม) → **หยุดรายงาน ห้ามแก้กฎเอง** → 0.2 เคาะ (≤40 แถว/ครั้ง · ข้อใน `~/.claude/CLAUDE.md` เจ้าของเคาะทุกข้อ) → 0.3 แก้ตามที่เคาะ 1 commit/ไฟล์ → 4.2 ตัดบล็อก "มาตรฐานใช้กับทุกตำแหน่ง" ที่ซ้ำ 13.10 คำต่อคำใน planner/designer/researcher/writer (checkpoint ก่อน · ยิงงานเล็กทดสอบ) → 5 AI_TEAM_GUIDE (2 บรรทัดขัดกัน · model inherit · เพิ่ม thai-copy + 3 ตัวใหม่ + คอลัมน์ "เรียกเมื่อไหร่") → 6 LAUNCH_AUDIT ตรวจอย่างเดียว → 7 `docs/TEMPLATES.md` (แม่แบบคำสั่ง ≤200 บรรทัด + รายงาน 4 บรรทัด) → 8 `docs/ROUND_COST.md` (3 รอบย้อนหลัง + เพดาน) → push → ปิดรอบ = tag + push tag (13.7)
-- ของที่ควรเข้าทะเบียนกฎแน่ ๆ (เจอระหว่างแชท A · ให้ rule-auditor ยืนยันเอง ไม่ใช่ข้ามไปแก้): 13.5 "ผู้แก้ไฟล์คนเดียวคือตัวหลัก" vs doc-keeper เขียน `docs/` · `~/.claude/skills/handoff/SKILL.md` บรรทัด 71 "เปลี่ยนชื่อเดิมเป็น HANDOFF.<วันที่>.md" (ไม่ได้ชี้ `docs/archive/`) · HANDOFF 8.6 กับ AI_TEAM_GUIDE เรื่อง agent มีผลเมื่อเปิดเซสชันใหม่ · agent เก่า 5 ตัวเขียนไทยขณะ 13.11 บอกอังกฤษ (ทำก่อนกฎ · ไม่ย้อนแปล)
+- **แชท B (ทำต่อในแชทเดิมได้ — agent ใหม่ใช้ได้ทันที):** ขั้น 0 `rule-auditor` อ่านกฎทุกไฟล์ → `docs/RULES_INDEX.md` (1 กฎ 1 แถว · ขัดกัน/ตายแล้ว/ทับซ้อน/กำกวม) → **หยุดรายงาน ห้ามแก้กฎเอง** → 0.2 เคาะ (≤40 แถว/ครั้ง · ข้อใน `~/.claude/CLAUDE.md` เจ้าของเคาะทุกข้อ) → 0.3 แก้ตามที่เคาะ 1 commit/ไฟล์ → 4.2 ตัดบล็อก "มาตรฐานใช้กับทุกตำแหน่ง" ที่ซ้ำ 13.10 คำต่อคำใน planner/designer/researcher/writer (checkpoint ก่อน · ยิงงานเล็กทดสอบ) → 5 AI_TEAM_GUIDE (2 บรรทัดขัดกัน · model inherit · เพิ่ม thai-copy + 3 ตัวใหม่ + คอลัมน์ "เรียกเมื่อไหร่") → 6 LAUNCH_AUDIT ตรวจอย่างเดียว → 7 `docs/TEMPLATES.md` (แม่แบบคำสั่ง ≤200 บรรทัด + รายงาน 4 บรรทัด) → 8 `docs/ROUND_COST.md` (3 รอบย้อนหลัง + เพดาน) → push → ปิดรอบ = tag + push tag (13.7)
+- Candidates raised during chat A were all confirmed by rule-auditor and are in `docs/RULES_INDEX.md` (rows 1, 25, 27, 24) — 13.5 and the handoff skill's archive path were ruled by the owner on 2026-09-17 and are done; the "agent needs a new session" claim was dead (rows 26/27 closed here, RULES_INDEX is the single register).
 - ~~รอบ 30.4ข~~ **จบ 2026-09-17** (ประวัติ: `docs/archive/HANDOFF.2026-09-17-v26.md` · ตารางประโยค: THAI_STYLE_LOG §7)
 
 ### 5.2 ลำดับถัดไป (เจ้าของสั่งไว้)
@@ -101,7 +101,7 @@
 ---
 
 ## 6. จำเป็นแต่ยังไม่ได้ทำเลย
-เหมือน v22 §6 (ข้อ 44 · แอดมิน · QR · backup R2/B2 · Lighthouse · iPhone จริง)
+Same as `docs/archive/HANDOFF.2026-09-15-v22.md` §6 (ข้อ 44 · แอดมิน · QR · backup R2/B2 · Lighthouse · iPhone จริง)
 
 ## 7. คำถามที่เจ้าของต้องตอบ
 
@@ -111,31 +111,31 @@
 | footer.tagline ตัด 3 คำซ้ำ | เสนอไว้ §4 | ใช่/ไม่ (รอบ tagline) |
 | ~~ลบภาพ `_incoming/30.4c` 265 MB~~ | เจ้าของสั่งลบ 2026-09-17 · ลบแล้ว (ขั้น 10) | — |
 | ย้าย PROJECT_HANDOFF.md · PAGE_COPY_2026-09-06.md · IMAGE_AUDIT.md เข้า `docs/archive/` | ยังถูกอ้าง (§3 ขั้น 3) จึงไม่ย้าย · IMAGE_AUDIT ยังถูก `npm run audit:gaps` เขียนทับ = ยังใช้งาน ไม่ควรย้าย | ย้าย 2 ไฟล์แรกไหม (แนะนำ: ย้ายในแชท B หลังแก้โน้ต LAUNCH_AUDIT 47/76 · IMAGE_AUDIT คงไว้) |
-| 13.5 "ผู้แก้ไฟล์คนเดียวคือตัวหลัก" กับ doc-keeper | ไฟล์คำสั่ง 4.1 ให้ doc-keeper เขียน `docs/` — ชนกับ 13.5 | เคาะข้อความ 13.5 (แนะนำ: เติม "ยกเว้น doc-keeper ใน docs/") |
-| `~/.claude/skills/handoff/SKILL.md` บรรทัด 71 | ยังสั่งเก็บฉบับเก่าเป็น `docs/HANDOFF.<วันที่>.md` ไม่ใช่ `docs/archive/` | แก้เป็น archive ไหม (แนะนำ: ใช่ · ไฟล์นอกรีโป ต้องเจ้าของเคาะ) |
-| ยังรอเหมือน v24 | TPD · #31/#34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 | |
+| ~~13.5 "ผู้แก้ไฟล์คนเดียวคือตัวหลัก" กับ doc-keeper~~ | answered — owner amended 13.5 on 2026-09-17 (doc-keeper writes docs/, add-only; RULES_INDEX row 26) | — |
+| ~~`~/.claude/skills/handoff/SKILL.md` line 71~~ | answered — points at `docs/archive/` since 2026-09-17 (RULES_INDEX row 27) | — |
+| Still waiting, same as `docs/archive/HANDOFF.2026-09-16-v24.md` §7 | TPD · #31/#34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 | |
 
 ## 8. ความเสี่ยงและจุดต้องระวัง
 
 ### 8.0 กฎ 2 ชั้น + ที่ตกผลึกรอบนี้
-- **ชั้น A ข้อความล้วน / ชั้น B แตะโครง / ปิดรอบ** เหมือน v21 §8 · รอบ 30.4ข ทุกก้อน = ชั้น B (เจ้าของสั่ง) · ถ่าย **before ให้จบก่อน build** · Chrome ทีละงาน
-- **ของใหม่ทุกชิ้น เจ้าของต้องเห็นภาพก่อน commit** — แบบเสนอทำด้วย DOM override บน build เดียว (k3-variant · k4-shots --faq-file · k5-shots --variant/--short) ถูกกว่า rebuild แต่ต้องถ่ายซ้ำบน build จริงก่อนปิด
+- **Tier A (text only) / tier B (touches structure or screen) / round close** — the full definition is in §17 "Two-tier rule" (merged there 2026-09-17 from THAI_STYLE §6 and `docs/archive/HANDOFF.2026-09-15-v21.md` §8, RULES_INDEX rows 30/68) · every batch of round 30.4ข was tier B (owner order) · shoot **before** on the old build, finish it before rebuilding · one Chrome job at a time
+- **Tier B: the owner sees the screenshot before the commit · tier A: no screenshot needed** (13.7 (ข) — RULES_INDEX row 9) — proposals can be shown as DOM overrides on one build (k3-variant · k4-shots --faq-file · k5-shots --variant/--short), cheaper than a rebuild, but the final shots must be retaken on the real build before close
 1. **ตัวเลขบนหน้าเว็บต้องชี้แถวสเปก verified ได้** — `card-headline-spec.ts` แบบอย่าง · brands JOIWAY ตัดเลขพัฟเพราะ unverified · RELX คงเพราะ verified
-2. **NBSP/U+2060 เฉพาะตอน render** (`thai-typography.ts`) · ด่าน `thai-raw-chars-check.js` 0 · en/zh text node ไทย 0 (`shot.js --cookie okami24_locale` + eval — curl ใช้ไม่ได้ SSR ไทยเสมอ) · `within` ของ /about ห้ามยกไปใช้ที่อื่น
+2. **NBSP/U+2060 เฉพาะตอน render** (`thai-typography.ts`) · ด่าน `thai-raw-chars-check.js` 0 · en/zh text node ไทย 0 (`shot.js --cookie okami24_locale` + eval — curl ใช้ไม่ได้ SSR ไทยเสมอ) · the `/about` `within` exception: THAI_STYLE §5 + checker.md item 5 (RULES_INDEX row 57)
 3. **`thaiTypography()` ต้องมี locale guard** · dictionary ผ่าน LocaleProvider (TrustBar ได้อัตโนมัติ)
-4. **Cowork merge โดยไม่บอก** → `git fetch` ก่อนสรุป · ห้าม merge เอง · ห้าม force push
-5. **กติกา context:** ดู CLAUDE.md 13.6 (2026-09-17) · push ทุกครั้ง = อัปเดต §16
-6. **หลัก "ยืนยันไม่ได้ = ไม่พูดทุกภาษา"** · ห้าม ส่งฟรี/รับประกัน/จ่ายผ่าน/ตะกร้า/"ที่สุด"/สุขภาพ ในข้อความใหม่ · zh ระวังคำ 保证
+4. **Cowork merges without saying so** → `git fetch` before summarising (merge / deploy / force-push rules: `~/.claude/CLAUDE.md` §8 + 13.7 only — RULES_INDEX row 45)
+5. **Context rule:** stated once, in §17 (RULES_INDEX row 54)
+6. **"Unverifiable = unsaid, in every language" and the forbidden-claims list** now live in one place: THAI_STYLE §3 "คำ/ประโยคที่ห้ามในข้อความใหม่" (RULES_INDEX row 56)
 7. **สคริปต์ที่ generate หลักฐานต้องจำลอง logic ของ component ครบ** · ข้อความไทยส่งเข้าสคริปต์ทางไฟล์เท่านั้น
 
 ## 9. ห้ามรื้อ
-เหมือน v24 + ทุกแถวใน THAI_STYLE §7 "รอบ 30.4ข ก้อน 1–5" และ "ปิดรอบ" · `card-headline-spec.ts` กติกา · dictionary `catalog.card*` · `trust.*` (ชุด ก เจ้าของเคาะ) · `TrustBar.tsx` แบบแถว/ไอคอน 4 ตัว · sticky th /compare · `ScrollHintFrame` · หัวข้อ K1–K3 · คำล็อก "อุ่นยาสูบ" · ข้อห้าม "ไม่เผาไหม้" ทุกภาษา · FAQ eyebrow "ถาม-ตอบ" · /search eyebrow = footer.tools
+Do-not-touch list is kept in one place: §17 "Do not touch" (merged 2026-09-17, RULES_INDEX row 55) — it includes everything that used to be listed here (round 30.4ข deliverables: THAI_STYLE_LOG §7 "รอบ 30.4ข ก้อน 1–5" and "ปิดรอบ" rows · `card-headline-spec.ts` rules · dictionary `catalog.card*` · `trust.*` (set ก, owner-approved) · `TrustBar.tsx` row layout / 4 icons · sticky th on /compare · `ScrollHintFrame` · headings K1–K3 · locked word "อุ่นยาสูบ" · the ban on "ไม่เผาไหม้" in every language · FAQ eyebrow "ถาม-ตอบ" · /search eyebrow = footer.tools) plus what `docs/archive/HANDOFF.2026-09-16-v24.md` §9 listed
 
 ## 10. Git
-working tree ว่าง (เหลือไฟล์นี้) · main `3253419` · branch นำหน้า main = `14dbbe5` fix-close + docs ฉบับนี้ (push แล้ว) · ห้าม merge เอง · commit ถัดไป (ถ้าเจ้าของเคาะ §7): copy แถบข้อ 2 เดี่ยว
+See §16 items 1–2 for main / branch state (hashes are kept in one place — RULES_INDEX row 28) · never merge yourself
 
 ## 11. ความพร้อมแต่ละระบบ
-เหมือน v22 · ภาษาไทยทั้งเว็บ: 30.4ค ปิดครบ · **30.4ข ปิดครบ** · การ์ดสินค้า: บรรทัดสเปกเด่น 38/53 · แถบความมั่นใจทุกหน้า 3 ภาษา
+Same as `docs/archive/HANDOFF.2026-09-15-v22.md` §11 · ภาษาไทยทั้งเว็บ: 30.4ค ปิดครบ · **30.4ข ปิดครบ** · การ์ดสินค้า: บรรทัดสเปกเด่น 38/53 · แถบความมั่นใจทุกหน้า 3 ภาษา
 
 ## 12. กำลังทำอะไรค้างอยู่ตอนปิดแชท
 - ไม่มีงานค้างกลางทาง · รอบเก็บบ้าน แชท A จบ · push แล้วรอ Cowork merge (docs/agents/scripts เท่านั้น — ไม่ต้อง deploy ก็ได้ ไม่มีอะไรเปลี่ยนบนเว็บ)
@@ -144,15 +144,14 @@ working tree ว่าง (เหลือไฟล์นี้) · main `325341
 
 ## 13. แนะนำทำอะไรต่อ (เรียงลำดับ)
 1. วางบล็อก §16 → `git fetch` → ถ้า main ขยับเกิน `857745b` = แชท A merge แล้ว (ไม่มีอะไรต้องยิงเว็บจริง)
-2. **เปิดแชท B ของรอบเก็บบ้าน** ตาม §5.1 — เริ่มที่ขั้น 0 `rule-auditor` (agent ใหม่ 3 ตัวมีผลแล้วเพราะเป็นเซสชันใหม่) · ก่อนเริ่ม ให้เจ้าของเคาะ 3 ข้อใน §7 (ย้าย 2 ไฟล์ · 13.5 · handoff skill บรรทัด 71) หรือปล่อยให้ rule-auditor ยกขึ้นมาเอง
+2. **Chat B of the housekeeping round is running in this same chat** (new agents load immediately) — step 0 done, 0.3 in progress per §5.1; the three §7 questions were answered on 2026-09-17
 3. ปิดรอบ = tag + push tag (13.7 ใหม่) · แล้ว 9.4 ซ้อม Rollback (Cowork+เจ้าของ นอกเวลาขาย)
 
 ## 14. ควรหยุดทำ
-- ห้ามถ่ายทั้งเว็บก่อนสแกน · ห้ามเพิ่ม joiner/NBSP นอกรายการ · ห้ามรัน Chrome 2 งานพร้อมกัน · ห้ามไล่แก้คำโดดระดับ B · ห้ามใส่ placeholder แทนแถวสเปกว่าง · ห้ามเปลี่ยน CategoryLabel/label-lang/lg:min-h-10
-- ห้ามแก้ `ProductHero.tsx` stats / ลบ `PuffCount.tsx` / ย้ายหมวด Coil-72/89 นอกรอบเก็บบ้าน/ข้อมูล · ห้ามแตะ footer.tagline / หน้าบริการ / ระบบตะกร้า จนกว่าเจ้าของเปิดรอบนั้น
+- Everything not to do is listed once in §17 "Do not touch" (merged 2026-09-17, RULES_INDEX row 55) — the items that were here: no whole-site screenshots before a scan · no joiner/NBSP outside the list · no two Chrome jobs at once · no fixing tier-B orphan words one by one · no placeholder in an empty spec row · no change to CategoryLabel / label-lang / lg:min-h-10
 
 ## 15. ปลายทางของโปรเจกต์
-เหมือน v21 §15
+Same as `docs/archive/HANDOFF.2026-09-15-v21.md` §15
 
 ---
 
@@ -161,16 +160,16 @@ working tree ว่าง (เหลือไฟล์นี้) · main `325341
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) แปลงจากเดโม NOVA VAPOR
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
-อ่านก่อน (กฎ 13.9): ~/.claude/CLAUDE.md หมวด 13 → CLAUDE.md โปรเจกต์ → docs/HANDOFF.md §16 (บล็อกนี้) + §17 เฉพาะตอนต้องใช้กติกา/เครื่องมือ/verify → docs/THAI_STYLE.md (กฎล้วน 171 บรรทัด — ห้ามอ่าน docs/THAI_STYLE_LOG.md ถ้าไม่ต้องอ้างประโยคเก่า) → docs/LAUNCH_AUDIT.md เฉพาะหัว "สถานะปัจจุบัน"
+Read first: the single list in ~/.claude/CLAUDE.md 13.9 (HANDOFF §16 + LAUNCH_AUDIT head always · THAI_STYLE only on rounds that touch site copy · §17 of this file when a tool/verify command is needed)
 
-1 main: f2c60f7 (PR #35 = แชท A live · Cowork ตรวจเว็บจริงแล้วปกติ) · tag pre-housekeeping = 857745b · git fetch ก่อนเชื่อ · ห้าม merge เอง
-2 branch checkpoint/phase-3.3.3 นำหน้า main = แชท B ขั้น 0: 534b0ec doc-keeper เงื่อนไข 13.5 · 5cbdeae archive-claude-config (สำเนา ~/.claude/CLAUDE.md + handoff skill ใน docs/archive/claude-config-2026-09-17/ — เก็บอย่างเดียว ห้ามอ่านจากตรงนั้น) · rules-index (docs/RULES_INDEX.md) push แล้ว รอ Cowork merge · ไม่แตะ src/
-3 รอบที่เปิด: รอบเก็บบ้าน ฉบับ 2 — ทำต่อในแชทเดิม (agent ใหม่โหลดทันที ไม่ต้องเปิดแชทใหม่) · แชท A จบ · **ขั้น 0 จบ = docs/RULES_INDEX.md 73 แถว (ขัดกัน 24 · ตายแล้ว 20 · ทับซ้อน 19 · กำกวม 10) หยุดรอเคาะ** · ถัดไป: 0.2 Cowork เสนอ/เจ้าของเคาะทีละ ≤40 แถว (24 แถวใน ~/.claude/CLAUDE.md เจ้าของเคาะทุกข้อ) → 0.3 Code แก้เฉพาะแถวที่เคาะ 1 commit/ไฟล์ ชั้น 10 กางของเดิม/ใหม่/สิ่งที่หาย → 4.2 → 5 → 6 (+ หัว LAUNCH_AUDIT main → ปัจจุบัน · PROJECT_HANDOFF.md → archive หลังแก้โน้ต 76) → 7 → 8 → push → ปิดรอบ tag housekeeping-done
-4 รอเจ้าของ: เคาะ RULES_INDEX (ขัดกัน+ตายแล้ว แถว 1–44 ทีละข้อ · ทับซ้อน+กำกวม 45–73 Cowork ตัดสิน เจ้าของค้านได้) · 9.4 ซ้อม Rollback (Cowork+เจ้าของ) · ตอบแล้ว: PROJECT_HANDOFF → archive ขั้น 6 · PAGE_COPY + IMAGE_AUDIT คงไว้ · 13.5 แก้แล้ว · handoff skill :71 แก้แล้ว · PuffCount/ProductHero → รอบข้อมูล
-  เดิม (ไม่เปลี่ยน): footer.tagline ตัด 3 คำซ้ำ (รอบ tagline) · zh โน้ตความเข้ากันได้ 2 ข้อ (รอบภาษาจีน) · TPD · #31 #34 iPhone · ผลเฝ้า Render OOM · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189
-5 คำถามค้าง: production สำรอง DB เองทุก 6 ชม. ที่ /var/data/backups ตาม render.yaml — วันนี้รันจริงไหม [ไม่ยืนยัน] ให้ Cowork ดู log "[backup]" บน Render (HANDOFF §5.3) · backup ในเครื่องหยุด 10/09 = ไม่มี server รันโดยเปิด backup ไม่ใช่ของพัง
-  4b ไม่ต้องรอ — เจ้าของตัดสินแล้ว ห้ามถามซ้ำ: ตะกร้าปิด (ข้อ 43) → ไลน์ @okm24 · น้ำยา 0 ข้าม · หน้าบริการไม่แตะ (ข้อ 49) · งานรูปพัก · ยังไม่ผูก NBSP นอกรายการ · 6 ตัวการ์ดแถวว่างรับได้ · tagline/ตะกร้า/หน้าบริการ = รอบของมัน · CLAUDE.md แก้เฉพาะข้อที่เจ้าของเคาะ (ตรวจ/รายงานได้) · ใส่กฎใหม่ = ลบกฎเก่าเรื่องเดียวกันทุกที่ · ชั้น 9 ก๊อปไฟล์นอกรีโปก่อนแตะ (ทำแล้ว) · ชั้น 10 รวม/ลบกฎต้องกางเต็ม · 30.4c ลบแล้ว
-(กติกา context · agent มีผลเมื่อเปิดเซสชันใหม่ · เครื่องมือ · verify · git = §17 ของไฟล์นี้)
+1 main: 157d1a1 (PR #36 = RULES_INDEX merged) · tag pre-housekeeping = 857745b · git fetch before trusting this · never merge yourself
+2 branch checkpoint/phase-3.3.3 is ahead of main by step 0.3 + steps 5–8 (26 commits 247ff1e → HEAD: rules fixed per RULES_INDEX 72/73 rows · AI_TEAM_GUIDE rewritten · LAUNCH_AUDIT head + PROJECT_HANDOFF archived · TEMPLATES.md · ROUND_COST.md · RULES_INDEX marked done + chain-10 record) — pushed, waiting for Cowork to merge · src/ untouched, no deploy needed · out-of-repo files (~/.claude/CLAUDE.md, handoff skill) changed too, copies in docs/archive/claude-config-2026-09-17/
+3 open round: housekeeping v2 — chat A done · step 0 done · **step 0.3 done for 72 of 73 rows** · 4.2 = row 60 (the shared five-item block in designer/planner/researcher/writer) NOT cut — waits for the owner (chain 10: something would be lost) · steps 5, 6, 7, 8 done · **round close (tag housekeeping-done) is held until row 60 is ruled** · next after this round per §5.2: SEO → articles → data → cart
+4 waiting on the owner: (a) row 60 — pick 1/2/3 (see RULES_INDEX chain-10 record; recommended 2 = move items 1 and 5 into 13.10 as #14/#15, then cut the block) · (b) confirm "tag housekeeping-done" once (a) is done · (c) ROUND_COST caps (≤30 screenshots per round · 1 round = 1 chat · doc-keeper writes docs · heavy work early in the week) — rule only when written into ~/.claude/CLAUDE.md · (d) row 51: NIGHT_REPORT folded into handoff (option 2) — say so if a separate file is still wanted · (e) 9.4 rollback drill (Cowork + owner) · answered 2026-09-17: PROJECT_HANDOFF archived · PAGE_COPY + IMAGE_AUDIT stay · PuffCount/ProductHero → data round
+  unchanged (older): footer.tagline ตัด 3 คำซ้ำ (รอบ tagline) · zh โน้ตความเข้ากันได้ 2 ข้อ (รอบภาษาจีน) · TPD · #31 #34 iPhone · ผลเฝ้า Render OOM · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189
+5 open questions: does production really back up every 6 h to /var/data/backups today? [เชื่อว่า] per render.yaml — Cowork to check the Render log for "[backup]" (HANDOFF §5.3) · the memory files under ~/.claude/projects/.../memory/ were not audited (rule-auditor "not checked" #3) — a candidate for the next housekeeping round
+  4b ไม่ต้องรอ — เจ้าของตัดสินแล้ว ห้ามถามซ้ำ: ตะกร้าปิด (ข้อ 43) → ไลน์ @okm24 · น้ำยา 0 ข้าม · หน้าบริการไม่แตะ (ข้อ 49) · งานรูปพัก · ยังไม่ผูก NBSP นอกรายการ · 6 ตัวการ์ดแถวว่างรับได้ · tagline/ตะกร้า/หน้าบริการ = รอบของมัน · CLAUDE.md แก้เฉพาะข้อที่เจ้าของเคาะ (ตรวจ/รายงานได้) · ใส่กฎใหม่ = ลบกฎเก่าเรื่องเดียวกันทุกที่ (ยกเว้น ~/.claude/CLAUDE.md §1–§11 ที่ห้ามแก้ — ใช้ข้อยกเว้นใน 13.9 แทน · RULES_INDEX แถว 12) · ชั้น 9 ก๊อปไฟล์นอกรีโปก่อนแตะ (ทำแล้ว) · ชั้น 10 รวม/ลบกฎต้องกางเต็ม · 30.4c ลบแล้ว
+(context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
 
 ---
@@ -178,27 +177,26 @@ working tree ว่าง (เหลือไฟล์นี้) · main `325341
 ## 17. กติกาและเครื่องมือประจำ (ย้ายออกจาก §16 2026-09-17 — ไม่ใช่สถานะ · เปิดเมื่อต้องใช้ · ย้ายทั้ง 13 บรรทัดไม่ตัด · แก้ path เดียว: wb-diff.js → scripts/)
 
 ```
-กติกา context: ดู CLAUDE.md 13.6 (2026-09-17) · push ทุกครั้ง = อัปเดต §16 · agent ใหม่/แก้ agent มีผลเมื่อเปิดเซสชันใหม่ (8.6)
-กฎ 2 ชั้น: ชั้น B → build → ถ่าย before ให้จบก่อน build ใหม่ → ถ่าย after 390+1440 → designer → เจ้าของเลือกภาพ → checker → commit · ข้อความใหม่ทุกประโยค = 3 ภาษา + เจ้าของเคาะไทย · ตัวเลขทุกตัวชี้แถวสเปก verified · ห้าม U+2060/NBSP นอกกลไก · thaiTypography() ต้องมี locale guard · หลักฐานที่ generate ต้องจำลอง logic ของ component ครบ · ห้าม ส่งฟรี/รับประกัน/จ่ายผ่าน/ตะกร้า/"ที่สุด"/สุขภาพ · zh ระวัง 保证
-ห้ามแตะ: layout นอกจุดที่ระบุ · รูป · motion · ordering-mode.ts · slug/URL/sitemap/structured data · หน้าบริการ · Hero.tsx · cinematic/ · กลุ่ม ก · labelTh/name/shortName · lg:min-h-10 · คำเตือนอายุ/นิโคติน · ชื่อสี/กลิ่น · thai-typography.ts รายการ · CategoryLabel.tsx · card-headline-spec.ts กติกา · dictionary catalog.card* / trust.* · TrustBar แบบแถว · ProductHero stats / PuffCount (รอบเก็บบ้าน) · footer.tagline
-กฎเหล็ก: ห้าม deploy/merge main เอง · revert ไม่ reset · ห้าม force push · ห้ามกุตัวเลข · ตัดสินเอง = ย้อนง่าย+ลูกค้าไม่เห็น แล้วเขียน "ตัดสินเอง: … เพราะ …" · ต้องถาม = ประโยคลูกค้าอ่าน/รสนิยม/คำนอกตาราง/layout รวมชุดเดียว · งานเกินคำสั่ง = commit แยก
-  · checker 5 ช่อง + ด่าน: node scripts/thai-raw-chars-check.js = 0 · grep 8 คำห้าม (พอตี|แท่ง|หัวหอม|คาร์ทริดจ์|ตลับ|ดิสโพส|ลูกเล่น|เซลล์แบต) = 0 · head/JSON-LD 0 · en/zh text node ไทย 0 (shot.js --cookie okami24_locale=en/zh + eval — curl ไม่ได้) · grep "[ก-๙]" บน Git Bash = byte-range false positive ใช้ Node code-point แทน · ผู้แก้ไฟล์คนเดียวคือตัวหลัก
+Context rule: ~/.claude/CLAUDE.md 13.6 · every push = update §16 (spec in doc-keeper.md) · an agent added or edited under .claude/agents/ is usable at once in the running chat — no new session needed (verified 2026-09-17; the old "needs a new session / HANDOFF 8.6" claim is dead — RULES_INDEX row 25)
+Two-tier rule (owner 2026-09-14 — merged here from THAI_STYLE §6 on 2026-09-17, RULES_INDEX rows 50/68; screenshot rule 13.6 points here): tier A = text only → no screenshots, no designer per batch · tier B = touches structure/screen → full: build → shoot before (finish before rebuilding) → shoot after at 390 + 1440 → designer → owner picks → checker → commit · round close = shoot every touched page + designer once → the word-break fixes go in one commit (no separate round) · details of the original ruling: §8.0 · every new sentence = 3 languages + owner approves the Thai · every number points at a verified spec row · no U+2060/NBSP outside the mechanism · thaiTypography() must have a locale guard · generated evidence must mirror the component logic in full · forbidden claims: THAI_STYLE §3 "คำ/ประโยคที่ห้ามในข้อความใหม่" (one list)
+Do not touch (single list — merged 2026-09-17 from this line, §9 and §14, RULES_INDEX row 55): layout outside the named spot · images · motion · ordering-mode.ts · slug/URL/sitemap/structured data · service pages · Hero.tsx · cinematic/ · THAI_STYLE group ก · labelTh/name/shortName · lg:min-h-10 · age/nicotine warnings · colour/flavour names · thai-typography.ts list · CategoryLabel.tsx / label-lang · card-headline-spec.ts rules · dictionary catalog.card* / trust.* (set ก) · TrustBar row layout / 4 icons · sticky th on /compare · ScrollHintFrame · headings K1–K3 · locked word "อุ่นยาสูบ" · the ban on "ไม่เผาไหม้" in every language · FAQ eyebrow "ถาม-ตอบ" · /search eyebrow = footer.tools · every THAI_STYLE_LOG §7 row of round 30.4ข · ProductHero stats / PuffCount / Coil-72/89 category (data round) · footer.tagline / service pages / cart (their own rounds) — and never: whole-site screenshots before a scan · joiner/NBSP outside the list · two Chrome jobs at once · fixing tier-B orphan words one by one · placeholders in an empty spec row
+Hard rules: merge / deploy / force-push → ~/.claude/CLAUDE.md §8 + 13.7 (not restated here — RULES_INDEX row 45) · revert, never reset · never invent a number · deciding alone = easy to undo + invisible to customers, then write "ตัดสินเอง: … เพราะ …" · when to ask = 13.4 only (RULES_INDEX row 3) · work beyond the brief = its own commit
+  · checker reports in the five fields of 13.5 + gates as listed in .claude/agents/checker.md item 5 (raw NBSP/U+2060 = 0 · forbidden-word grep = 0 · scan.js 0/105 · head/JSON-LD 0 · en/zh Thai text nodes 0 via shot.js --cookie okami24_locale=en/zh + eval — curl cannot) · grep "[ก-๙]" on Git Bash is a byte-range false positive, use Node code points · who edits files = 13.5 (RULES_INDEX rows 13/52/58/59)
   · ปิด server: netstat -ano | grep ":3412.*LISTENING" → taskkill //PID <pid> //F · ห้าม /IM node.exe · พอร์ต 3000 = เจ้าของ · ห้าม build ขณะ server รัน · verify:catalog --full build เอง รันตอน server ปิด · Chrome ทีละงาน · งาน >10 นาที = (cmd &) + เฝ้า log
   · สคริปต์เขียนด้วย Write tool · ข้อความไทยเข้าสคริปต์ทางไฟล์ json/txt เท่านั้น (argv mangled) · shot.js ห่อผล eval JSON 2 ชั้น (parse ซ้ำ) · CRLF: ไฟล์ใหม่จาก Write = LF → unix2dos ก่อน git add · ตรวจ git ls-files --eol · Git Bash แปลง arg "/" → MSYS_NO_PATHCONV=1
 
 เครื่องมือ (_incoming/30.4b): shot.js (scripts/) · k3-shots.js <before|after> [--only …] [--locale …] (ครอปหัวหน้า+วัดบรรทัด) · k3-variant.js <json> (ลองคำใหม่ไม่ต้อง build) · k4-eyebrow-pairs.ts · k4-shots.js <tag> [--faq-file f] [--search-file f] · k5-shots.js <tag> [--variant row|cards] [--short] [--only w] [--locale l] · k6-shots.js <tag> (sticky /compare + hover จำลอง) · k*-sheets.js (ภาพรวม before/after) · scripts/wordbreak-scan.js --base … --widths 390,1440 --out _incoming/30.4b/wb-<tag> /path… (MSYS_NO_PATHCONV=1) → node scripts/wb-diff.js <before> <after>
-  · server ทดสอบ: SITE_URL=https://okami24.store npx next build แล้ว SITE_URL=https://okami24.store OKAMI24_DATA_DIR=<tmp> OKAMI24_BACKUP_DISABLED=1 OKAMI24_STARTUP_PROBE=0 npx next start -p 3412
+  · .claude/launch.json ("vapor-dev", port 3000) is the owner's own dev server — agents never start it (RULES_INDEX row 16) · test server: SITE_URL=https://okami24.store npx next build แล้ว SITE_URL=https://okami24.store OKAMI24_DATA_DIR=<tmp> OKAMI24_BACKUP_DISABLED=1 OKAMI24_STARTUP_PROBE=0 npx next start -p 3412
 Verify: npx tsc --noEmit · npx eslint <ไฟล์> · npm run verify:commerce (16) · SITE_URL=… npm run verify:catalog -- --full (20 · ปิด server ก่อน) · npx tsx scripts/count-storefront.ts (53/31) · npx tsx src/i18n/i18n-contract-test.ts (16) · node scripts/thai-raw-chars-check.js (0)
-Git: commit แยกชนิด (feat/fix/copy/data/docs) · git commit -F <ไฟล์> · อังกฤษ · Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> · push ทุกก้อนหลัง checker ผ่าน · ห้าม merge เอง
-รอเจ้าของ: tagline · zh โน้ตความเข้ากันได้ · TPD · #31 #34 iPhone · ผลเฝ้า Render · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189 · ลบภาพ 265 MB
+Git: commit split by type per 13.7 (English prefix feat/fix/copy/data/docs/chore/agents/rules) · git commit -F <file> · English · Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> · push/merge/deploy rules = 13.7 (RULES_INDEX rows 2/14/45)
 agent (เพิ่ม 2026-09-17): rule-auditor (opus · เรียกเมื่อเปิดรอบเก็บบ้าน/ก่อนเพิ่มกฎ · read-only) · scope-auditor (sonnet · เรียกเมื่อเปิดรอบ ครั้งเดียว · read-only) · doc-keeper (sonnet · เรียกเมื่อปิดก้อน · เขียนได้เฉพาะ docs/) — เงื่อนไขเรียกข้อเดียวอยู่บรรทัดแรกของแต่ละไฟล์ · ห้ามเรียกทุกหัวข้อย่อย
-tag (13.7): ปิดรอบ = git tag -a <ชื่ออังกฤษ> <commit> -F <ไฟล์ข้อความไทย> → git push origin --tags · ตารางแปลชื่อ docs/RECOVERY.md §2
+tag: git tag -a <english-name> <commit> -F <thai-message-file> → git push origin --tags (rule in 13.7; name table in docs/RECOVERY.md §2)
 ```
 
 ---
 
 ## สิ่งแรกที่แชทใหม่ควรทำ
 
-1. **`git fetch` + `git status` + `git log -5 --oneline` + `git tag -n1`** แล้วเทียบกับ §16 — ถ้าไม่ตรงให้เชื่อ repo · ถ้า origin/checkpoint ยังไม่มี commit ล่าสุดของไฟล์นี้ = push ไม่สำเร็จ → push ก่อน
+1. **`git fetch` + `git status` + `git log -5 --oneline` + `git tag -n1`** แล้วเทียบกับ §16 — ถ้าไม่ตรงให้เชื่อ repo · if origin/checkpoint lacks the last commit of this file, the push failed → push (a standing right after checker, 13.7)
 2. ถ้า main ขยับเกิน `857745b` = แชท A merge แล้ว — ไม่มีอะไรต้องยิงเว็บจริง (ไม่แตะ src/)
 3. **แชท B เริ่มได้เลยตาม §5.1** (เจ้าของสั่งลำดับไว้แล้วในไฟล์คำสั่ง) — ขั้น 0 เรียก `rule-auditor` ก่อน ห้ามแก้กฎเองแม้แต่ข้อเดียวจนกว่าเจ้าของเคาะ
