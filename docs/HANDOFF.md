@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v27.2 · 2026-09-17 (§16 updated after steps 0.3–8)
+# OKami24 — HANDOFF · v28 · 2026-09-18 (housekeeping round v2 closed)
 
 สร้างเมื่อ: 2026-09-17 ดึก (**ฉบับที่ 27** — **รอบเก็บบ้าน ฉบับ 2 · แชท A จบ** · ก้อน A live แล้ว (PR #34) · ฉบับก่อนทุกฉบับ (v1–v26) อยู่ที่ `docs/archive/` ตั้งแต่ฉบับนี้)
 
@@ -83,7 +83,7 @@
 
 ## 5. รอสานต่อ
 
-### 5.1 รอบเก็บบ้าน ฉบับ 2 (เปิด 2026-09-17 · ไฟล์คำสั่ง `Desktop\Run prompt\New prompt on work\รอบเก็บบ้านคำสั่ง-ฉบับ2.txt` · 2 แชท)
+### 5.1 **[closed 2026-09-18 — every step done, tag housekeeping-done; details in §3 and docs/RULES_INDEX.md]** รอบเก็บบ้าน ฉบับ 2 (เปิด 2026-09-17 · ไฟล์คำสั่ง `Desktop\Run prompt\New prompt on work\รอบเก็บบ้านคำสั่ง-ฉบับ2.txt` · 2 แชท)
 - **แชท A จบ (ฉบับนี้):** 4.1 · 1 · 2 · 3 · 10 · 9.1–9.3 → push → handoff — รายละเอียด §3
 - **แชท B (ทำต่อในแชทเดิมได้ — agent ใหม่ใช้ได้ทันที):** ขั้น 0 `rule-auditor` อ่านกฎทุกไฟล์ → `docs/RULES_INDEX.md` (1 กฎ 1 แถว · ขัดกัน/ตายแล้ว/ทับซ้อน/กำกวม) → **หยุดรายงาน ห้ามแก้กฎเอง** → 0.2 เคาะ (≤40 แถว/ครั้ง · ข้อใน `~/.claude/CLAUDE.md` เจ้าของเคาะทุกข้อ) → 0.3 แก้ตามที่เคาะ 1 commit/ไฟล์ → 4.2 ตัดบล็อก "มาตรฐานใช้กับทุกตำแหน่ง" ที่ซ้ำ 13.10 คำต่อคำใน planner/designer/researcher/writer (checkpoint ก่อน · ยิงงานเล็กทดสอบ) → 5 AI_TEAM_GUIDE (2 บรรทัดขัดกัน · model inherit · เพิ่ม thai-copy + 3 ตัวใหม่ + คอลัมน์ "เรียกเมื่อไหร่") → 6 LAUNCH_AUDIT ตรวจอย่างเดียว → 7 `docs/TEMPLATES.md` (แม่แบบคำสั่ง ≤200 บรรทัด + รายงาน 4 บรรทัด) → 8 `docs/ROUND_COST.md` (3 รอบย้อนหลัง + เพดาน) → push → ปิดรอบ = tag + push tag (13.7)
 - Candidates raised during chat A were all confirmed by rule-auditor and are in `docs/RULES_INDEX.md` (rows 1, 25, 27, 24) — 13.5 and the handoff skill's archive path were ruled by the owner on 2026-09-17 and are done; the "agent needs a new session" claim was dead (rows 26/27 closed here, RULES_INDEX is the single register).
@@ -143,9 +143,9 @@ Same as `docs/archive/HANDOFF.2026-09-15-v22.md` §11 · ภาษาไทย�
 - เครื่องมือรอบ 30.4ข ยังอยู่ `_incoming/30.4b/` (gitignored 31 MB · รายการดู archive v26 §12) · `_incoming/30.4c` ลบแล้ว
 
 ## 13. แนะนำทำอะไรต่อ (เรียงลำดับ)
-1. วางบล็อก §16 → `git fetch` → ถ้า main ขยับเกิน `857745b` = แชท A merge แล้ว (ไม่มีอะไรต้องยิงเว็บจริง)
-2. **Chat B of the housekeeping round is running in this same chat** (new agents load immediately) — step 0 done, 0.3 in progress per §5.1; the three §7 questions were answered on 2026-09-17
-3. ปิดรอบ = tag + push tag (13.7 ใหม่) · แล้ว 9.4 ซ้อม Rollback (Cowork+เจ้าของ นอกเวลาขาย)
+1. Paste the §16 block → `git fetch` → if main has moved past `f7600dd`, the round close (PR after #37) is merged; nothing to probe on the live site (src/ untouched)
+2. **The housekeeping round is closed.** Do not start the next round on your own — wait for the owner to open it (§5.2 says SEO is next); when it opens: scope-auditor once, instruction file from docs/TEMPLATES.md (ก), read-list per 13.9 (THAI_STYLE only because SEO touches copy)
+3. 9.4 rollback drill is the owner + Cowork's (docs/RECOVERY.md §1) — not Code's
 
 ## 14. ควรหยุดทำ
 - Everything not to do is listed once in §17 "Do not touch" (merged 2026-09-17, RULES_INDEX row 55) — the items that were here: no whole-site screenshots before a scan · no joiner/NBSP outside the list · no two Chrome jobs at once · no fixing tier-B orphan words one by one · no placeholder in an empty spec row · no change to CategoryLabel / label-lang / lg:min-h-10
@@ -162,12 +162,11 @@ Same as `docs/archive/HANDOFF.2026-09-15-v21.md` §15
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list in ~/.claude/CLAUDE.md 13.9 (HANDOFF §16 + LAUNCH_AUDIT head always · THAI_STYLE only on rounds that touch site copy · §17 of this file when a tool/verify command is needed)
 
-1 main: 157d1a1 (PR #36 = RULES_INDEX merged) · tag pre-housekeeping = 857745b · git fetch before trusting this · never merge yourself
-2 branch checkpoint/phase-3.3.3 is ahead of main by step 0.3 + steps 5–8 (26 commits 247ff1e → HEAD: rules fixed per RULES_INDEX 72/73 rows · AI_TEAM_GUIDE rewritten · LAUNCH_AUDIT head + PROJECT_HANDOFF archived · TEMPLATES.md · ROUND_COST.md · RULES_INDEX marked done + chain-10 record) — pushed, waiting for Cowork to merge · src/ untouched, no deploy needed · out-of-repo files (~/.claude/CLAUDE.md, handoff skill) changed too, copies in docs/archive/claude-config-2026-09-17/
-3 open round: housekeeping v2 — chat A done · step 0 done · **step 0.3 done for 72 of 73 rows** · 4.2 = row 60 (the shared five-item block in designer/planner/researcher/writer) NOT cut — waits for the owner (chain 10: something would be lost) · steps 5, 6, 7, 8 done · **round close (tag housekeeping-done) is held until row 60 is ruled** · next after this round per §5.2: SEO → articles → data → cart
-4 waiting on the owner: (a) row 60 — pick 1/2/3 (see RULES_INDEX chain-10 record; recommended 2 = move items 1 and 5 into 13.10 as #14/#15, then cut the block) · (b) confirm "tag housekeeping-done" once (a) is done · (c) ROUND_COST caps (≤30 screenshots per round · 1 round = 1 chat · doc-keeper writes docs · heavy work early in the week) — rule only when written into ~/.claude/CLAUDE.md · (d) row 51: NIGHT_REPORT folded into handoff (option 2) — say so if a separate file is still wanted · (e) 9.4 rollback drill (Cowork + owner) · answered 2026-09-17: PROJECT_HANDOFF archived · PAGE_COPY + IMAGE_AUDIT stay · PuffCount/ProductHero → data round
-  unchanged (older): footer.tagline ตัด 3 คำซ้ำ (รอบ tagline) · zh โน้ตความเข้ากันได้ 2 ข้อ (รอบภาษาจีน) · TPD · #31 #34 iPhone · ผลเฝ้า Render OOM · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189
-5 open questions: does production really back up every 6 h to /var/data/backups today? [เชื่อว่า] per render.yaml — Cowork to check the Render log for "[backup]" (HANDOFF §5.3) · the memory files under ~/.claude/projects/.../memory/ were not audited (rule-auditor "not checked" #3) — a candidate for the next housekeeping round
+1 main: f7600dd (PR #37 = steps 0.3–8 merged) · tags: pre-housekeeping = 857745b · housekeeping-done = the commit this file ships in (see git tag -n1) · git fetch before trusting this · never merge yourself
+2 branch checkpoint/phase-3.3.3 is ahead of main by the round close (owner rulings ก–ง of 2026-09-18: 13.10 #14/#15 + 13.4 #7 in the global CLAUDE.md, the five-item block cut from five agent files, HANDOFF §17 / ROUND_COST / RULES_INDEX updated, this HANDOFF v28) — pushed with the tag, waiting for Cowork to merge · src/ untouched since e810142, nothing to deploy
+3 open round: **none — housekeeping round v2 is closed** (RULES_INDEX 73/73 done · chain-10 record complete · all nine agents smoke-tested after their edits) · next per §5.2: **SEO round** (`03-รอบ SEO.txt` · JSON-LD description legacy 35 pages still English · gallery alt · split meta from blurb if needed · creates the `seo` agent) → articles → data (PuffCount dead · ProductHero verified · Coil-72/89 · TPD) → cart · a new round starts only when the owner opens it, with scope-auditor once at the start and the instruction file written from docs/TEMPLATES.md (ก)
+4 waiting on the owner: 9.4 rollback drill (Cowork + owner, off-hours) · which round to open next · older, unchanged: footer.tagline ตัด 3 คำซ้ำ (รอบ tagline) · zh โน้ตความเข้ากันได้ 2 ข้อ (รอบภาษาจีน) · TPD · #31 #34 iPhone · ผลเฝ้า Render OOM · priority 2 จุด · Lighthouse · ข้อ 10/13/16/37 · ชื่อบัญชี · รูปหัวพอตดำ 18 กลิ่น · R2/B2 · ไลบรารี QR · บัญชี 189
+5 open questions: does production really back up every 6 h to /var/data/backups today? [เชื่อว่า] per render.yaml — Cowork to check the Render log for "[backup]" (HANDOFF §5.3) · the memory files under ~/.claude/projects/.../memory/ were not audited by rule-auditor — candidate for the next housekeeping round · LAUNCH_AUDIT is 201 KB with 15/49 rows closed — a split (closed rows + "ประวัติรอบก่อน" → LAUNCH_AUDIT_DONE.md) is proposed, not done
   4b ไม่ต้องรอ — เจ้าของตัดสินแล้ว ห้ามถามซ้ำ: ตะกร้าปิด (ข้อ 43) → ไลน์ @okm24 · น้ำยา 0 ข้าม · หน้าบริการไม่แตะ (ข้อ 49) · งานรูปพัก · ยังไม่ผูก NBSP นอกรายการ · 6 ตัวการ์ดแถวว่างรับได้ · tagline/ตะกร้า/หน้าบริการ = รอบของมัน · CLAUDE.md แก้เฉพาะข้อที่เจ้าของเคาะ (ตรวจ/รายงานได้) · ใส่กฎใหม่ = ลบกฎเก่าเรื่องเดียวกันทุกที่ (ยกเว้น ~/.claude/CLAUDE.md §1–§11 ที่ห้ามแก้ — ใช้ข้อยกเว้นใน 13.9 แทน · RULES_INDEX แถว 12) · ชั้น 9 ก๊อปไฟล์นอกรีโปก่อนแตะ (ทำแล้ว) · ชั้น 10 รวม/ลบกฎต้องกางเต็ม · 30.4c ลบแล้ว
 (context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
