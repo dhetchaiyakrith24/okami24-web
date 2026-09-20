@@ -98,11 +98,29 @@ export function runCatalogResolverContractTests(): ResolverContractResult[] {
     );
   }
 
+  // Prices round (owner order, 2026-09-21): every legacy product now has an approved price, so
+  // the "unpriced legacy product" fixture is expected to be EMPTY from that date on. The branch
+  // still exists in resolveProductRef() (a future product added without an approval must stay
+  // browse-only) and is exercised below whenever the data offers such a product; when it does
+  // not, the origin-blind rejection is asserted with a slug that exists nowhere instead
+  // ("not-found" under both origin tags), and the not-purchasable path is covered by the
+  // "no approval = no price in the index" check of legacy-price-approvals-contract-test.ts.
   check(
-    "test fixture sanity: at least one legacy-catalog product WITHOUT an approved price exists to exercise the browse-only rejection branch",
-    legacySlug !== undefined,
-    `legacySlug=${legacySlug}`
+    "test fixture: an unpriced legacy product is either present (browse-only branch exercised below) or, since 2026-09-21, absent because every legacy product is priced (owner order)",
+    true,
+    legacySlug ? `legacySlug=${legacySlug}` : "none — all legacy products priced (prices round 2026-09-21); falling back to a nonexistent slug"
   );
+
+  if (!legacySlug) {
+    const ghost = "no-such-legacy-product";
+    const ghostLegacy = resolveProductRef({ origin: "legacy", slug: ghost, variantId: null });
+    const ghostMaster = resolveProductRef({ origin: "product-master", slug: ghost, variantId: null });
+    check(
+      `a slug that exists nowhere ("${ghost}") is rejected as not-found under BOTH origin tags — rejection is driven by the slug's data, not by \`ref.origin\``,
+      !ghostLegacy.ok && ghostLegacy.reason === "not-found" && !ghostMaster.ok && ghostMaster.reason === "not-found",
+      JSON.stringify({ legacy: ghostLegacy, master: ghostMaster })
+    );
+  }
 
   if (legacySlug) {
     // Architecture review (2026-09-02): resolveProductRef() no longer special-cases

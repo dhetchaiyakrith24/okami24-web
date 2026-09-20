@@ -35,11 +35,26 @@ export function runLegacyPricingContractTests(): LegacyPricingContractResult[] {
   const badDates = entries.filter(([, a]) => !/^\d{4}-\d{2}-\d{2}$/.test(a.lastPriceReview)).map(([slug]) => slug);
   check("every approval carries an ISO review date", badDates.length === 0, badDates.join(", ") || "ok");
 
-  const missingEvidence = entries.filter(([, a]) => !a.shipnityProductId || a.evidence.trim().length < 20).map(([slug]) => slug);
-  check("every approval cites its Shipnity parent code and a real evidence note", missingEvidence.length === 0, missingEvidence.join(", ") || "ok");
+  // Prices round 2026-09-21: two bases. A "shipnity" row must name its parent code; an
+  // "owner-estimate" row has no parent (null) and its evidence must open with the owner's tag so
+  // the placeholder is findable in one grep when the stock API brings the real price.
+  const badBasis = entries.filter(([, a]) => a.basis !== "shipnity" && a.basis !== "owner-estimate").map(([slug, a]) => `${slug}=${String(a.basis)}`);
+  check('every approval carries a valid basis ("shipnity" | "owner-estimate")', badBasis.length === 0, badBasis.join(", ") || `${entries.filter(([, a]) => a.basis === "shipnity").length} shipnity · ${entries.filter(([, a]) => a.basis === "owner-estimate").length} owner-estimate`);
+
+  const missingEvidence = entries
+    .filter(([, a]) => {
+      if (a.evidence.trim().length < 20) return true;
+      if (a.basis === "shipnity") return !a.shipnityProductId;
+      return a.shipnityProductId !== null || !a.evidence.startsWith("owner-estimate 2026-09-21:");
+    })
+    .map(([slug]) => slug);
+  check("every approval cites its Shipnity parent code and a real evidence note (owner-estimate: null parent + tagged evidence)", missingEvidence.length === 0, missingEvidence.join(", ") || "ok");
 
   const parentCounts = new Map<string, string[]>();
-  for (const [slug, a] of entries) parentCounts.set(a.shipnityProductId, [...(parentCounts.get(a.shipnityProductId) ?? []), slug]);
+  for (const [slug, a] of entries) {
+    if (a.shipnityProductId === null) continue; // owner-estimate rows have no parent to collide on
+    parentCounts.set(a.shipnityProductId, [...(parentCounts.get(a.shipnityProductId) ?? []), slug]);
+  }
   const dupes = [...parentCounts.entries()].filter(([, slugs]) => slugs.length > 1);
   check(
     "no Shipnity parent group is claimed by two different legacy products (one group = one product)",
