@@ -50,8 +50,9 @@ the checker quotes the printed totals in its report — this file never states t
   test server must be **stopped** first (how: HANDOFF §17 "ปิด server"); it includes eslint and
   `next build`
 - `npx tsx scripts/count-storefront.ts` — a census with no pass/fail of its own: the printed
-  counts must equal the ones recorded at the previous close (HANDOFF head "verify" line) unless
-  this round intentionally changed the catalog — then the new counts are written there
+  counts must equal the ones recorded at the previous close (HANDOFF §16 "verify baseline at
+  last close") unless this round intentionally changed the catalog — then the new counts are
+  written there
 - `npx tsx src/i18n/i18n-contract-test.ts`
 - `node scripts/thai-raw-chars-check.js`
 - `node scripts/scan.js` against the test server (every page in the sitemap; details of this gate

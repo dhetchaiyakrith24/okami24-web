@@ -28,7 +28,8 @@ else.
 
 Always:
 - `docs/HANDOFF.md` **§16** — the copy-paste block (main · what the branch is ahead by · which
-  round is open and where it stopped · what waits on the owner · open questions).
+  round is open and where it stopped · what waits on the owner · open questions · verify baseline
+  at the last close).
 - The head of `docs/LAUNCH_AUDIT.md`, the block titled **"สถานะปัจจุบัน"** — and nothing else of
   that file. **Never read LAUNCH_AUDIT in full**; open only the numbered item the round is working
   on.
