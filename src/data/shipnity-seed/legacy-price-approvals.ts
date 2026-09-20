@@ -64,8 +64,8 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     sellingPrice: 1190,
     lastPriceReview: "2026-09-05",
     basis: "shipnity",
-    shipnityProductId: "Pod-168",
-    evidence: 'exact-legacy-match: Shipnity "Caliburn G4 Pro" (Pod-168, 4 colours, ฿1190) — exactLegacyMatch in active-catalog-to-product-master.ts',
+    shipnityProductId: "Pod-181",
+    evidence: 'exact-legacy-match: Shipnity "Caliburn G4 Pro" (Pod-168, 4 colours, ฿1190) — exactLegacyMatch in active-catalog-to-product-master.ts; re-verified 2026-09-21: price unchanged ฿1,190; parent re-coded Pod-168 → Pod-181',
   },
   "argus-g4": {
     sellingPrice: 1090,
@@ -130,7 +130,7 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     lastPriceReview: "2026-09-05",
     basis: "shipnity",
     shipnityProductId: "Pod-120",
-    evidence: 'active-parent-name: Shipnity "Muro 3 ML" (Pod-120, 14 flavours, ฿99); 10 of 10 legacy flavours are in the Excel list',
+    evidence: 'active-parent-name: Shipnity "Muro 3 ML" (Pod-120, 14 flavours, ฿99); 10 of 10 legacy flavours are in the Excel list; re-verified 2026-09-21 against vapenow.shop (฿99); Shipnity parent Pod-120 not in the 21/09 listing',
   },
   "muro-sc-8000": {
     sellingPrice: 259,
