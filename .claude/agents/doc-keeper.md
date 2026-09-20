@@ -29,9 +29,12 @@ facts, in the format the files already use.
 
 # What you update
 
-1. **`docs/HANDOFF.md` §16** — the copy-paste block for a new chat. It holds **only** these five
+1. **`docs/HANDOFF.md` §16** — the copy-paste block for a new chat. It holds **only** these six
    things and nothing else: the current `main` commit · what the branch is ahead of `main` by ·
-   which round is open and where it stopped · what is waiting on the owner · open questions.
+   which round is open and where it stopped · what is waiting on the owner · open questions ·
+   **the verify baseline at the last close** (item 6, owner order 2026-09-21: the pass counts of
+   the full verify set as printed at the most recent round close — the only place those numbers
+   live; rewrite them only at a close whose scripts printed new totals, never estimate them).
    It is **not a work history** — history goes to §3 ("เพิ่งทำล่าสุด") and the round's own
    section. Keep §16 under **15 KB**; if a batch pushes it over, move the oldest non-current
    lines to §3 instead of deleting them. Also refresh the version + date on the first line of
