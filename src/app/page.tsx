@@ -13,7 +13,8 @@ import { FlavorTeaser } from "@/components/home/FlavorTeaser";
 import { CompareCTA } from "@/components/home/CompareCTA";
 import { GuideTeaserGrid } from "@/components/home/GuideTeaserGrid";
 import { HomeText } from "@/components/home/HomeCopy";
-import { canonicalFor } from "@/lib/seo";
+import { CONTACT } from "@/data/contact";
+import { canonicalFor, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
 // The homepage's own canonical — deliberately set HERE, not on the root layout, so it doesn't
 // leak as the default for every other page (see layout.tsx's metadata comment).
@@ -37,6 +38,11 @@ export default function Home() {
 
   return (
     <>
+      {/* Organization + WebSite structured data live on the homepage only — one entity node per
+          site, referenced by `@id` from every product page's `Offer.seller` (see seo.ts). Same
+          injection pattern as the product page's breadcrumb JSON-LD; nothing visible renders. */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd(CONTACT)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }} />
       {/* Mobile round C, MOBILE_SPEC [M1] "plays once, and not again on back". The phone's hero
           motion is pure CSS so that it starts in the first painted frame, before hydration —
           which means the "has this already played?" decision has to be made before that frame

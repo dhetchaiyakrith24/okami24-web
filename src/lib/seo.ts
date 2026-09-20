@@ -69,6 +69,64 @@ export function absoluteUrl(path: string): string {
 }
 
 /**
+ * Stable `@id` of the shop as a schema.org Organization — the one node every other JSON-LD block
+ * on the site points at (`WebSite.publisher`, every `Offer.seller`) so Google can tie the products
+ * to the store entity instead of seeing 53 unrelated offers. Anchored on the site origin because
+ * that is the only identifier that cannot drift between pages or deploys.
+ */
+export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+
+/** The reference form of the organization for use INSIDE other nodes (`seller`, `publisher`) —
+ *  a bare `@id` link, never a second copy of the full Organization. */
+export function organizationRef() {
+  return { "@type": "Organization", "@id": ORGANIZATION_ID };
+}
+
+/**
+ * `Organization` JSON-LD for the homepage (SEO round ก, 2026-09-21). `alternateName` carries the
+ * short brand words people actually search for — Search Console showed "okm" returning no result
+ * for this site at all while "okami24" / "okm pod" already rank — so this is the entity-level
+ * hint that the two spellings are the same shop. `sameAs` lists only the channels recorded in
+ * `src/data/contact.ts`; nothing here is invented, and the LINE handle is deliberately not a URL
+ * field of its own because schema.org has no property for it.
+ */
+export function organizationJsonLd(contact: { lineUrl: string; youtubeUrl: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": ORGANIZATION_ID,
+    name: "OKami24",
+    alternateName: ["OKM", "okm pod", "Okami vape", "okami24"],
+    url: SITE_URL,
+    logo: absoluteUrl("/brand/okami-logo-red.png"),
+    sameAs: [contact.lineUrl, contact.youtubeUrl],
+    areaServed: "TH",
+  };
+}
+
+/**
+ * `WebSite` JSON-LD for the homepage, published by the Organization above. The `SearchAction` is
+ * included because `/search` genuinely takes a `q` query parameter (see `src/app/search/page.tsx`)
+ * — it is a description of a real, working URL pattern, not a decoration.
+ */
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "OKami24",
+    alternateName: "OKM",
+    url: SITE_URL,
+    inLanguage: "th",
+    publisher: organizationRef(),
+    potentialAction: {
+      "@type": "SearchAction",
+      target: { "@type": "EntryPoint", urlTemplate: `${SITE_URL}/search?q={search_term_string}` },
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
+
+/**
  * `BreadcrumbList` JSON-LD for a page's real navigational path (owner mandate, 2026-09-03 —
  * "structured data... breadcrumbs" as part of the disposable-discovery SEO push). Real hierarchy
  * only — every trail passed in must reflect an actual, navigable ancestor path (Home → Category →

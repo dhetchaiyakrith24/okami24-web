@@ -36,8 +36,12 @@ import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
  *  through a channel other than online", which is what "order on LINE" is. With ordering on,
  *  nothing is added and the offers are exactly what they were. */
 const OFFER_AVAILABILITY = ORDERING_ENABLED ? {} : { availability: "https://schema.org/InStoreOnly" };
+/** Every Offer names the shop as `seller` by `@id` (SEO round ก, 2026-09-21) so Google ties the
+ *  53 product offers to the one Organization node on the homepage instead of treating them as
+ *  offers from nobody — GSC's "merchant listing" report was flagging exactly that gap. */
+const OFFER_SELLER = { seller: organizationRef() };
 import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
-import { absoluteUrl, breadcrumbJsonLd, canonicalFor, openGraphWithImage } from "@/lib/seo";
+import { absoluteUrl, breadcrumbJsonLd, canonicalFor, openGraphWithImage, organizationRef } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
@@ -177,7 +181,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         image: publishedProduct.image ? [absoluteUrl(publishedProduct.image.src)] : undefined,
         // Only a genuinely published product has an owner-approved price — never fabricated from
         // priceReference (see buildPublishedCatalog()'s own readiness gate).
-        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...OFFER_AVAILABILITY } : undefined,
+        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...OFFER_AVAILABILITY, ...OFFER_SELLER } : undefined,
       };
       const publishedImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(publishedProduct));
       const publishedTrail = [
@@ -225,7 +229,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     image: legacyCardImage ? [absoluteUrl(legacyCardImage.src)] : undefined,
     // `offers` only when an owner-approved price exists (legacy-price-approvals.ts) — the legacy
     // Product type itself still has no price field; never fabricated.
-    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...OFFER_AVAILABILITY } : undefined,
+    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...OFFER_AVAILABILITY, ...OFFER_SELLER } : undefined,
   };
   const legacyTrail = [
     { name: "Home", path: "/" },
