@@ -30,15 +30,30 @@
  * `resolveProductRef()` (the cart/checkout money boundary) checks — so adding an entry here is the
  * literal act of making a legacy product purchasable. Treat it with the same care as
  * `publication-approvals.ts` and `docs/BUSINESS_SOURCE_OF_TRUTH.md`.
+ *
+ * PRICES ROUND (owner order, 2026-09-21): every legacy product must show a real price, so the
+ * remaining 29 products got an entry. Two bases now exist, tagged per entry by `basis`:
+ *   - "shipnity": the price is the "ราคาขาย" of an identified Shipnity parent (the 16 entries of
+ *     2026-09-05 plus 9 read by Cowork from the Shipnity back-office screenshots of 2026-09-21).
+ *   - "owner-estimate": no Shipnity parent exists yet; the owner set the price on 2026-09-21 from
+ *     the rule "disposables: not below vapenow.shop, round numbers · pod systems: vapenow.shop
+ *     price when listed there, otherwise market price ±50–100". `shipnityProductId` is null and
+ *     `evidence` starts with "owner-estimate 2026-09-21:" followed by the owner's reasoning.
+ *     These are placeholders to be overwritten in one place when the stock API arrives.
+ * `basis` is an internal tag only — no component reads it and no customer ever sees it.
  */
 
+export type LegacyPriceBasis = "shipnity" | "owner-estimate";
+
 export interface LegacyPriceApproval {
-  /** THB, integer. The price a customer pays — verbatim "ราคาขาย" of the matched Shipnity parent. */
+  /** THB, integer. The price a customer pays — verbatim "ราคาขาย" of the matched Shipnity parent, or the owner's estimate. */
   sellingPrice: number;
   /** ISO date the price was reviewed/approved. */
   lastPriceReview: string;
-  /** Shipnity parent code in Data_31-08-2026.xlsx, e.g. "Pod-168". */
-  shipnityProductId: string;
+  /** Shipnity parent code, e.g. "Pod-168". `null` only when `basis` is "owner-estimate". */
+  shipnityProductId: string | null;
+  /** Where the number comes from — see the header ("shipnity" | "owner-estimate"). Internal only. */
+  basis: LegacyPriceBasis;
   /** How the legacy product was matched to that parent — see the header for the three tiers. */
   evidence: string;
 }
@@ -48,42 +63,49 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
   "caliburn-g4-pro": {
     sellingPrice: 1190,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-168",
     evidence: 'exact-legacy-match: Shipnity "Caliburn G4 Pro" (Pod-168, 4 colours, ฿1190) — exactLegacyMatch in active-catalog-to-product-master.ts',
   },
   "argus-g4": {
     sellingPrice: 1090,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-179",
     evidence: 'exact-legacy-match: Shipnity "Voopoo Argus G4" (Pod-179, 6 colours, ฿1090); 6 of 6 Excel colour names are in the legacy colour list',
   },
   "vmate-i3": {
     sellingPrice: 690,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-177",
     evidence: 'exact-legacy-match: Shipnity "Vmate i3" (Pod-177, 5 colours, ฿690); 5 of 5 Excel colour names are in the legacy colour list',
   },
   "zero-pro": {
     sellingPrice: 990,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-178",
     evidence: 'exact-legacy-match: Shipnity "Marbo Zero Pro" (Pod-178, 8 colours, ฿990) — pre-rebrand name of SALTHUB Zero Pro; 6 of 8 Excel colour names match',
   },
   "zero-cartridge": {
     sellingPrice: 129,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-85",
     evidence: 'exact-legacy-match: Shipnity "หัวพอต Marbo Zero" (Pod-85, 31 flavours, ฿129) — the Zero pod head; both legacy flavours are in the Excel list',
   },
   "m-bar-9k": {
     sellingPrice: 349,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Disposable-25",
     evidence: 'exact-legacy-match: Shipnity "Marbo Bar 9K" (Disposable-25, 23 flavours, ฿349); 21 of 22 legacy flavours are in the Excel list',
   },
   "m-switch-pod": {
     sellingPrice: 349,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-147",
     evidence: 'exact-legacy-match: Shipnity "M Switch 15k" (Pod-147, 17 flavours, ฿349) — the prefilled cartridge; 16 of 18 legacy flavours are in the Excel list',
   },
@@ -92,42 +114,49 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
   "mood-monster-14k": {
     sellingPrice: 350,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Disposable-37",
     evidence: 'active-parent-name: Shipnity "MOOOD Monster 14K Puffs" (Disposable-37, 23 flavours, ฿350); 10 of 10 legacy flavours are in the Excel list',
   },
   "muro-space-15k": {
     sellingPrice: 329,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Disposable-38",
     evidence: 'active-parent-name: Shipnity "Muro Space 15k" (Disposable-38, 15 flavours, ฿329); 5 of 5 legacy flavours are in the Excel list',
   },
   "muro-3ml": {
     sellingPrice: 99,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-120",
     evidence: 'active-parent-name: Shipnity "Muro 3 ML" (Pod-120, 14 flavours, ฿99); 10 of 10 legacy flavours are in the Excel list',
   },
   "muro-sc-8000": {
     sellingPrice: 259,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-166",
     evidence: 'active-parent-name: Shipnity "Muro SC 8000 Puffs" (Pod-166, 12 flavours, ฿259); 8 of 8 legacy flavours are in the Excel list',
   },
   "muro-connector-20k": {
     sellingPrice: 259,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-171",
     evidence: 'active-parent-name: Shipnity "Muro Connector 20k" (Pod-171, 33 flavours, ฿259); 20 of 20 legacy flavours are in the Excel list',
   },
   "vazer-one-pod": {
     sellingPrice: 59,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-115",
     evidence: 'active-parent-name: Shipnity "หัวพอต Vazer One" (Pod-115, 5 flavours, ฿59); 3 of 3 legacy flavours are in the Excel list',
   },
   "reswa-sportcan-12k": {
     sellingPrice: 229,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-142",
     evidence: 'active-parent-name: Shipnity "Reswa Sportcan 12k" (Pod-142, 5 flavours, ฿229); 3 of 3 legacy flavours are in the Excel list',
   },
@@ -138,14 +167,226 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
   "joiway-f3": {
     sellingPrice: 329,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-133",
     evidence: 'child-option-match: Pod-133 (20 flavours, ฿329, Excel remaining 0 on 31-08). 15 of the 16 original Joiway F3 flavours are in its list (only "Funta Grape" absent — Excel has "Funta Green", the known Grape/Green naming question); the other Excel-only name is "Vodka" vs legacy "Vodak". No other Excel group overlaps F3 by more than 6 names.',
   },
   "m-bar-10k": {
     sellingPrice: 379,
     lastPriceReview: "2026-09-05",
+    basis: "shipnity",
     shipnityProductId: "Pod-172",
     evidence: 'child-option-match: Pod-172 (12 flavours, ฿379). 11 of 12 Excel flavours are in the legacy M Bar 10K list (Excel-only: "Matcha Late"); the runner-up group (Pod-156, ฿550) overlaps only 6 of 12.',
+  },
+
+  // ---- Prices round 2026-09-21, basis "shipnity": 9 parents read by Cowork from the Shipnity ----
+  // ---- back-office screenshots of 2026-09-21 (9 pages; owner's instruction file, table ก) -------
+  "infy-20k": {
+    sellingPrice: 369,
+    lastPriceReview: "2026-09-21",
+    basis: "shipnity",
+    shipnityProductId: "Pod-170",
+    evidence: 'shipnity-backoffice: "Infy 20000" (Pod-170, ฿369) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+  },
+  "relx-smash-go-12k": {
+    sellingPrice: 299,
+    lastPriceReview: "2026-09-21",
+    basis: "shipnity",
+    shipnityProductId: "Disposable-39",
+    evidence: 'shipnity-backoffice: "RELX Smash GO 12K" (Disposable-39, ฿299) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+  },
+  "relx-creator": {
+    sellingPrice: 250,
+    lastPriceReview: "2026-09-21",
+    basis: "shipnity",
+    shipnityProductId: "Pod-138",
+    evidence: 'shipnity-backoffice: "Relx Creator (เครื่อง)" (Pod-138, ฿250) — the device; the legacy record is modelled as the 22K device generation, not the prefilled pod (Pod-137 "Relx Creator Pod 20K" ฿349) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+  },
+  "m-switch-kit": {
+    sellingPrice: 550,
+    lastPriceReview: "2026-09-21",
+    basis: "shipnity",
+    shipnityProductId: "Pod-156",
+    evidence: 'shipnity-backoffice: "ชุดเซ็ท M Switch 15k" (Pod-156, ฿550) — the device + pod set — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+  },
+  "tfit-m-power-20k": {
+    sellingPrice: 320,
+    lastPriceReview: "2026-09-21",
+    basis: "shipnity",
+    shipnityProductId: "Disposable-41",
+    evidence: 'shipnity-backoffice: "TFIT M Power 20000" (Disposable-41, ฿320) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+  },
+  "foli-bar-15k": {
+    sellingPrice: 349,
+    lastPriceReview: "2026-09-21",
+    basis: "shipnity",
+    shipnityProductId: "Disposable-42",
+    evidence: 'shipnity-backoffice: "Foli Bar 15k" (Disposable-42, ฿349) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+  },
+  "next-pro-2-beyond": {
+    sellingPrice: 790,
+    lastPriceReview: "2026-09-21",
+    basis: "shipnity",
+    shipnityProductId: "Pod-173",
+    evidence: 'shipnity-backoffice: "Next Pro 2 Beyond" (Pod-173, ฿790) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+  },
+  "muro-freebase": {
+    sellingPrice: 250,
+    lastPriceReview: "2026-09-21",
+    basis: "shipnity",
+    shipnityProductId: "Eliquid-169",
+    evidence: 'shipnity-backoffice: "Muro Freebase" (Eliquid-169, ฿250) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+  },
+  "muro-salt-nic": {
+    sellingPrice: 250,
+    lastPriceReview: "2026-09-21",
+    basis: "shipnity",
+    shipnityProductId: "eliquid-62",
+    evidence: 'shipnity-backoffice: "Muro Salt Nic" (eliquid-62, ฿250; the code is lower-case in Shipnity) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+  },
+
+  // ---- Prices round 2026-09-21, basis "owner-estimate": 20 products with no Shipnity parent ----
+  // ---- yet. Owner ruled the numbers on 2026-09-21 (instruction file, table ข); to be replaced ----
+  // ---- by the real price in this one place when the stock API arrives. -----------------------
+  "caliburn-g5": {
+    sellingPrice: 1190,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · G4 Pro 1,190 (vapenow) · US retail G5 ≈ G4 Pro",
+  },
+  "caliburn-g5-lite": {
+    sellingPrice: 890,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · Lite one step below the full model",
+  },
+  "caliburn-g5-lite-se": {
+    sellingPrice: 790,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · SE one step below Lite",
+  },
+  "caliburn-g4": {
+    sellingPrice: 1090,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · not below G3 1,090 (vapenow) · below G4 Pro",
+  },
+  "caliburn-g4-mini": {
+    sellingPrice: 690,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · US retail ≈ 40% of G4 Pro",
+  },
+  "caliburn-g4-classic": {
+    sellingPrice: 1090,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · in line with G4",
+  },
+  "caliburn-g4-pro-koko": {
+    sellingPrice: 1190,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · = G4 Pro (vapenow 1,190)",
+  },
+  "caliburn-g3-pro": {
+    sellingPrice: 1090,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · not below G3 1,090 (vapenow)",
+  },
+  "caliburn-g3-pro-koko": {
+    sellingPrice: 1090,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · = G3 Pro",
+  },
+  "argus-g4-mini": {
+    sellingPrice: 890,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · Argus G4 1,090 (vapenow) − 200",
+  },
+  "argus-p3": {
+    sellingPrice: 1090,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · Argus P2 990 (vapenow) + 100",
+  },
+  "argus-g3-mini": {
+    sellingPrice: 790,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · one step below G4 mini",
+  },
+  "drag-6": {
+    sellingPrice: 2490,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · market price of a top-tier mod",
+  },
+  "drag-s3": {
+    sellingPrice: 1490,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · market price",
+  },
+  "drag-x3": {
+    sellingPrice: 1590,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · market price · one step above S3",
+  },
+  "vinci-s": {
+    sellingPrice: 1290,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · = Argus Pro 2 1,290 (vapenow), same tier",
+  },
+  "joiway-f4": {
+    sellingPrice: 349,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · F3 329 (vapenow) + 20, round number",
+  },
+  "m-bar-15k": {
+    sellingPrice: 349,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · M Switch 15k 349 (vapenow), same family",
+  },
+  "m-bar-pod": {
+    sellingPrice: 129,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · Marbo Zero pod head 129 / Infy pod head 129 (Shipnity)",
+  },
+  "zero-nano": {
+    sellingPrice: 590,
+    lastPriceReview: "2026-09-21",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-21: not on vapenow · below Zero Pro 990 (Shipnity) by size",
   },
 };
 
