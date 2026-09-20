@@ -3,7 +3,7 @@ import { flavorFamilies } from "@/data/flavors";
 import { Container } from "@/components/ui/Container";
 import { ELiquidPageHeader, ELiquidDisclaimer } from "@/components/content/ELiquidPageHeader";
 import { FlavorFamilyGrid } from "@/components/content/FlavorFamilyGrid";
-import { canonicalFor } from "@/lib/seo";
+import { canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "น้ำยา: รู้จักกลุ่มรสชาติก่อนเลือก",
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function ELiquidPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/e-liquid")) }} />
       <ELiquidPageHeader />
       <Container className="py-12 lg:py-16">
         <FlavorFamilyGrid families={flavorFamilies} />

@@ -9,7 +9,7 @@ import { getPilotProductsByBrand, getPublishedProductsByBrand } from "@/data/shi
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { BrandPageMeta } from "@/components/catalog/BrandPageMeta";
 import { BrandPageHeader } from "@/components/catalog/BrandPageHeader";
-import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
+import { canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { brandTitleTh } from "@/i18n/search-titles";
 
 export function generateStaticParams() {
@@ -45,9 +45,17 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
   const products = getProductsByBrand(brand.id);
   const publishedProducts = getPublishedProductsByBrand(brand.id);
   const pilotProducts = getPilotProductsByBrand(brand.id);
+  // Batch 4: CollectionPage + Home → Brand trail, from the same title/description strings
+  // generateMetadata above returns (same isEmpty rule, so an empty brand's schema says what its
+  // <title> says). Nothing visible changes.
+  const isEmpty = products.length === 0 && publishedProducts.length === 0;
+  const brandPath = `/brands/${brandSlug}`;
+  const brandPageName = isEmpty ? brand.name : brandTitleTh(brand.name);
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: brandPageName, description: brand.descriptionTh ?? brand.description, path: brandPath })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(brandPageName, brandPath)) }} />
       <BrandPageHeader brand={brand} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
         <CatalogBrowser products={products} publishedProducts={publishedProducts} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} />

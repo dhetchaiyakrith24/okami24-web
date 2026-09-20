@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { canonicalFor } from "@/lib/seo";
+import { canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { ContactContent } from "@/components/content/service-pages/ContactContent";
 
 // Channels: BSOT §3 / src/data/contact.ts. Hours (24/7), email and "LINE = backup order channel"
@@ -13,5 +13,10 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <ContactContent />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/contact")) }} />
+      <ContactContent />
+    </>
+  );
 }

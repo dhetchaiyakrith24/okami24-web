@@ -40,8 +40,11 @@ const OFFER_AVAILABILITY = ORDERING_ENABLED ? {} : { availability: "https://sche
  *  53 product offers to the one Organization node on the homepage instead of treating them as
  *  offers from nobody — GSC's "merchant listing" report was flagging exactly that gap. */
 const OFFER_SELLER = { seller: organizationRef() };
+/** shippingDetails + hasMerchantReturnPolicy on every Offer (batch 4) — BSOT §10/§12 facts only,
+ *  built once in seo.ts so the two Product branches below cannot drift apart. */
+const OFFER_MERCHANT = offerMerchantFields();
 import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
-import { absoluteUrl, breadcrumbJsonLd, canonicalFor, openGraphWithImage, organizationRef } from "@/lib/seo";
+import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, offerMerchantFields, openGraphWithImage, organizationRef, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
@@ -150,8 +153,13 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     const publishedProducts = getPublishedProductsByCategory(category.id);
     const pilotProducts = getPilotProductsByCategory(category.id);
     const isEmptyCategory = products.length === 0 && publishedProducts.length === 0;
+    const categoryPath = `/products/${category.slug}`;
     return (
       <>
+        {/* Batch 4: the same Thai title/lede generateMetadata returns for this page, as schema —
+            CollectionPage + the Home → Category trail. No visible change. */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: category.labelTh, description: category.descriptionTh, path: categoryPath })) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(category.labelTh, categoryPath)) }} />
         <CategoryPageHeader category={category} />
         <Container className="flex flex-col gap-12 py-12 lg:py-16">
           {/* A genuinely published ProductMaster product is a real catalog product — it belongs in
@@ -181,7 +189,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         image: publishedProduct.image ? [absoluteUrl(publishedProduct.image.src)] : undefined,
         // Only a genuinely published product has an owner-approved price — never fabricated from
         // priceReference (see buildPublishedCatalog()'s own readiness gate).
-        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...OFFER_AVAILABILITY, ...OFFER_SELLER } : undefined,
+        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...OFFER_AVAILABILITY, ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
       };
       const publishedImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(publishedProduct));
       const publishedTrail = [
@@ -229,7 +237,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     image: legacyCardImage ? [absoluteUrl(legacyCardImage.src)] : undefined,
     // `offers` only when an owner-approved price exists (legacy-price-approvals.ts) — the legacy
     // Product type itself still has no price field; never fabricated.
-    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...OFFER_AVAILABILITY, ...OFFER_SELLER } : undefined,
+    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...OFFER_AVAILABILITY, ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
   };
   const legacyTrail = [
     { name: "Home", path: "/" },

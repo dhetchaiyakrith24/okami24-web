@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { FavoritesList } from "@/components/tools/FavoritesList";
 import { FavoritesPageHeader } from "@/components/tools/FavoritesPageHeader";
-import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
+import { NOINDEX_FOLLOW, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "รายการโปรด",
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default function FavoritesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/favorites")) }} />
       <FavoritesPageHeader />
       <Container className="py-12 lg:py-16">
         <FavoritesList />

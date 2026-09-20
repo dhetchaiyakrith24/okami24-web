@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CONTACT } from "@/data/contact";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
-import { canonicalFor } from "@/lib/seo";
+import { canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { brandsWithProducts } from "@/lib/brand-visibility";
 import { ThaiText } from "@/components/i18n/ThaiText";
 
@@ -18,6 +18,7 @@ export default function AboutPage() {
   const brands = brandsWithProducts();
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/about")) }} />
       <PageHeader
         eyebrow="เกี่ยวกับเรา"
         title="ของแท้ ราคาตรง บริการจริง"

@@ -7,7 +7,7 @@ import { ArticleBody } from "@/components/content/ArticleBody";
 import { TechnologyEntryPageHeader } from "@/components/content/TechnologyEntryPageHeader";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import type { Product } from "@/types/catalog";
-import { canonicalFor } from "@/lib/seo";
+import { articleJsonLd, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { TECHNOLOGY_COPY_TH, TECHNOLOGY_COPY_ZH } from "@/i18n/technology-copy";
 
 export function generateStaticParams() {
@@ -33,8 +33,15 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
     .map((s) => getProduct(s))
     .filter((p): p is Product => Boolean(p));
 
+  // Batch 4: Article + Home → Technology trail from the same Thai name/summary generateMetadata returns.
+  const th = TECHNOLOGY_COPY_TH[entry.id];
+  const entryPath = `/technology/${slug}`;
+  const entryTitle = th?.name ?? entry.name;
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: entryTitle, description: th?.summary ?? entry.summary, path: entryPath })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(entryTitle, entryPath)) }} />
       <TechnologyEntryPageHeader id={entry.id} title={entry.name} description={entry.summary} />
       <Container className="max-w-3xl py-12 lg:py-16">
         <ArticleBody

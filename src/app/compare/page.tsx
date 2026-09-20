@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { CompareTool } from "@/components/tools/CompareTool";
 import { ComparePageHeader } from "@/components/tools/ComparePageHeader";
 import { getCatalogItem } from "@/lib/catalog-index";
-import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
+import { NOINDEX_FOLLOW, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "เปรียบเทียบสินค้า",
@@ -27,6 +27,7 @@ export default async function ComparePage({ searchParams }: { searchParams: Prom
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/compare")) }} />
       <ComparePageHeader />
       <Container className="py-12 lg:py-16">
         <CompareTool initialSlugs={initialSlugs} />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FLAT_SHIPPING_FEE_THB } from "@/lib/commerce/pricing";
 
 /**
  * Single source of truth for the site origin — read from the `SITE_URL` environment variable so
@@ -142,6 +143,104 @@ export function breadcrumbJsonLd(trail: { name: string; path: string }[]) {
       name: item.name,
       item: absoluteUrl(item.path),
     })),
+  };
+}
+
+/** The two-step trail (Home → this page) for a top-level page that has no deeper real ancestor —
+ *  brand, guide, technology, flavour-family and the static pages. Same "Home" root the 53 product
+ *  trails already use, so every BreadcrumbList on the site names the root identically. */
+export function pageBreadcrumbJsonLd(name: string, path: string) {
+  return breadcrumbJsonLd([{ name: "Home", path: "/" }, { name, path }]);
+}
+
+/**
+ * `CollectionPage` for a category or brand listing (SEO round ก, batch 4). Name and description
+ * are the page's own Thai title/lede — the same strings its `generateMetadata` already returns —
+ * never a second wording written for the schema.
+ */
+export function collectionPageJsonLd(input: { name: string; description?: string; path: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: input.name,
+    description: input.description,
+    url: absoluteUrl(input.path),
+    inLanguage: "th",
+    isPartOf: { "@type": "WebSite", url: SITE_URL },
+  };
+}
+
+/**
+ * `FAQPage` from the questions and answers the /faq page renders — the Thai overlay where one
+ * exists, with the ordering answer already swapped for the LINE wording while ordering is off
+ * (the caller passes the final strings; this function never picks copy itself).
+ */
+export function faqPageJsonLd(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage: "th",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+}
+
+/**
+ * `Article` for a guide or technology page. The content records carry no publish date and no
+ * hero image, so neither is claimed here — a missing field is honest, an invented date is not.
+ * Author and publisher are the shop itself (the copy is written in-house, see guides.ts).
+ */
+export function articleJsonLd(input: { headline: string; description?: string; path: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: input.headline,
+    description: input.description,
+    inLanguage: "th",
+    mainEntityOfPage: absoluteUrl(input.path),
+    author: organizationRef(),
+    publisher: organizationRef(),
+  };
+}
+
+/**
+ * The merchant-listing fields Google's Search Console flagged as missing on every Offer
+ * (shippingDetails, hasMerchantReturnPolicy). Every value is a fact already written in
+ * `docs/BUSINESS_SOURCE_OF_TRUTH.md` §10 (shipping) and §12 (claims), read from the same
+ * constants the cart math uses where one exists:
+ * - flat 60 THB rate (`FLAT_SHIPPING_FEE_THB`), Thailand only, dispatch same/next working day
+ *   (handling 0–1 day), delivery 1–3 days after dispatch. Carrier names are deliberately absent
+ *   (owner 2026-09-07). The 500 THB free-shipping threshold is NOT expressed: schema.org puts
+ *   `freeShippingThreshold` on ShippingRateSettings, not on OfferShippingDetails, and Google's
+ *   merchant-listing parser does not read it there — stating it would need a second Offer or
+ *   prose, both outside this round.
+ * - 7-day claim window, item returned by post at the customer's cost, replacement only — never a
+ *   cash refund (`ExchangeRefund`).
+ */
+export function offerMerchantFields() {
+  return {
+    shippingDetails: {
+      "@type": "OfferShippingDetails",
+      shippingRate: { "@type": "MonetaryAmount", value: FLAT_SHIPPING_FEE_THB, currency: "THB" },
+      shippingDestination: { "@type": "DefinedRegion", addressCountry: "TH" },
+      deliveryTime: {
+        "@type": "ShippingDeliveryTime",
+        handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
+        transitTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 3, unitCode: "DAY" },
+      },
+    },
+    hasMerchantReturnPolicy: {
+      "@type": "MerchantReturnPolicy",
+      applicableCountry: "TH",
+      returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+      merchantReturnDays: 7,
+      returnMethod: "https://schema.org/ReturnByMail",
+      returnFees: "https://schema.org/ReturnShippingFees",
+      refundType: "https://schema.org/ExchangeRefund",
+    },
   };
 }
 

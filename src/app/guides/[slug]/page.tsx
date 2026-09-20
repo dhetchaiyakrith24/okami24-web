@@ -7,7 +7,7 @@ import { ArticleBody } from "@/components/content/ArticleBody";
 import { GuideDetailPageHeader } from "@/components/content/GuideDetailPageHeader";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import type { Product } from "@/types/catalog";
-import { canonicalFor } from "@/lib/seo";
+import { articleJsonLd, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
 
 export function generateStaticParams() {
@@ -32,9 +32,15 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
   if (!guide) notFound();
 
   const related = (guide.relatedProductSlugs ?? []).map((s) => getProduct(s)).filter((p): p is Product => Boolean(p));
+  // Batch 4: Article + Home → Guide trail from the same Thai title/dek generateMetadata returns.
+  const th = GUIDES_COPY_TH[guide.id];
+  const guidePath = `/guides/${slug}`;
+  const guideTitle = th?.title ?? guide.title;
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: guideTitle, description: th?.dek ?? guide.dek, path: guidePath })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(guideTitle, guidePath)) }} />
       <GuideDetailPageHeader id={guide.id} title={guide.title} dek={guide.dek} readingTimeMin={guide.readingTimeMin} />
       <Container className="max-w-3xl py-12 lg:py-16">
         <ArticleBody

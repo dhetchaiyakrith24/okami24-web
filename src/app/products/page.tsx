@@ -4,7 +4,7 @@ import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
 import { ProductsPageHeader } from "@/components/catalog/ProductsPageHeader";
-import { canonicalFor } from "@/lib/seo";
+import { canonicalFor, collectionPageJsonLd, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { Suspense } from "react";
 import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { LineOrderingNotice } from "@/components/commerce/LineOrderingNotice";
@@ -26,6 +26,8 @@ export default function ProductsPage() {
   const totalCount = allProducts.length + publishedProducts.length;
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: metadata.title as string, description: metadata.description as string, path: "/products" })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/products")) }} />
       <ProductsPageHeader totalCount={totalCount} />
       <Container className="py-12 lg:py-16">
         {/* Only while online ordering is off, and only visible when /cart or /checkout sent the

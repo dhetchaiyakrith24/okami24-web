@@ -8,7 +8,7 @@ import {
   ELiquidCharacterNotesList,
   ELiquidFamilyDisclaimer,
 } from "@/components/content/ELiquidFamilyPageHeader";
-import { canonicalFor } from "@/lib/seo";
+import { canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { FLAVOR_COPY_TH } from "@/i18n/flavor-copy";
 
 export function generateStaticParams() {
@@ -29,9 +29,13 @@ export default async function FlavorFamilyPage({ params }: { params: Promise<{ f
   const { family: familySlug } = await params;
   const family = getFlavorFamily(familySlug);
   if (!family) notFound();
+  // Batch 4: Home → Flavour-family trail from the same Thai name generateMetadata returns. The
+  // page lists no products (it explains a taste family), so no CollectionPage is claimed.
+  const familyPath = `/e-liquid/${familySlug}`;
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(FLAVOR_COPY_TH[family.id]?.name ?? family.name, familyPath)) }} />
       <ELiquidFamilyPageHeader id={family.id} title={family.name} description={family.description} />
       <Container className="max-w-2xl py-12 lg:py-16">
         <ELiquidCharacterNotesTitle />

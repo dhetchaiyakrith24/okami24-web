@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { FinderTool } from "@/components/tools/FinderTool";
 import { FinderPageHeader } from "@/components/tools/FinderPageHeader";
-import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
+import { NOINDEX_FOLLOW, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "ตัวช่วยเลือกสินค้า",
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 export default function FinderPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/finder")) }} />
       <FinderPageHeader />
       <Container className="py-12 lg:py-20">
         <FinderTool />
