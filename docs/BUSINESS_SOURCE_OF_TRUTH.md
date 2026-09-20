@@ -141,6 +141,20 @@ This must become the website's main commerce/catalog data layer for:
   said the old shop's prices "ไม่ได้อัพราคานานแล้ว". "Existing OKami24 pricing" stays a reference, but
   every one of the 22 legacy prices must be confirmed by the owner before online ordering is
   switched back on — this is criterion 1 of LAUNCH_AUDIT item 44 (the "ข้อมูลสินค้านิ่ง" gate).
+- **2026-09-21 — every legacy product now has an approved price, 45/45**
+  (`src/data/shipnity-seed/legacy-price-approvals.ts`): 25 basis `"shipnity"` (16 pre-existing rows +
+  9 new) and 20 basis `"owner-estimate"`, verified by
+  `npx tsx src/data/shipnity-seed/legacy-price-approvals-contract-test.ts` printing "25 shipnity · 20
+  owner-estimate". The 20 owner-estimate rows will be overwritten, in that one file, by the real
+  supplier price when the stock API arrives. This supersedes the "22 legacy prices must be
+  confirmed" bullet above for the 25 Shipnity-basis rows; for the remaining 20 it is partial —
+  each now has an owner-approved price, but an estimate, not a supplier-confirmed figure. The
+  bullet above is kept as written, not deleted, because it still states the underlying rule
+  (owner approval as the final gate).
+- **Owner's pricing rule for the 20 estimates (owner, prices round instruction file, quoted
+  exactly, 2026-09-21):** "พอตใช้แล้วทิ้งอ้าง vapenow.shop ไม่ต่ำกว่าราคาเขา เลขสวย · pod system ถ้า
+  vapenow มีใช้ตามนั้น ไม่มี = ราคาตลาด ±50–100" — the owner ruled the 20 estimates acceptable on
+  2026-09-21.
 
 ---
 
