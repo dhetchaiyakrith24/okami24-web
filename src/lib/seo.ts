@@ -76,6 +76,8 @@ export function absoluteUrl(path: string): string {
  * that is the only identifier that cannot drift between pages or deploys.
  */
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+/** The shop name as the Organization node spells it (organizationJsonLd below) — one literal, reused by Article.author. */
+export const SITE_NAME = "OKami24";
 
 /** The reference form of the organization for use INSIDE other nodes (`seller`, `publisher`) —
  *  a bare `@id` link, never a second copy of the full Organization. */
@@ -96,7 +98,7 @@ export function organizationJsonLd(contact: { lineUrl: string; youtubeUrl: strin
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": ORGANIZATION_ID,
-    name: "OKami24",
+    name: SITE_NAME,
     alternateName: ["OKM", "okm pod", "Okami vape", "okami24"],
     url: SITE_URL,
     logo: absoluteUrl("/brand/okami-logo-red.png"),
@@ -114,7 +116,7 @@ export function websiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "OKami24",
+    name: SITE_NAME,
     alternateName: "OKM",
     url: SITE_URL,
     inLanguage: "th",
@@ -189,11 +191,21 @@ export function faqPageJsonLd(items: { question: string; answer: string }[]) {
 }
 
 /**
- * `Article` for a guide or technology page. The content records carry no publish date and no
- * hero image, so neither is claimed here — a missing field is honest, an invented date is not.
- * Author and publisher are the shop itself (the copy is written in-house, see guides.ts).
+ * `Article` for a guide or technology page. The content records carry no hero image, so none is
+ * claimed. Dates come only from the record's `publishedAt` / `updatedAt` (round SEO ข batch 4,
+ * 2026-09-21 — `publishedAt` is read from git history, `updatedAt` is bumped with each copy
+ * change); a record without them emits no date — a missing field is honest, an invented date
+ * is not. Author and publisher are the shop itself (the copy is written in-house, see
+ * guides.ts); the author carries a `name` so a crawler that reads this page alone, without the
+ * homepage's Organization node, still sees who wrote it.
  */
-export function articleJsonLd(input: { headline: string; description?: string; path: string }) {
+export function articleJsonLd(input: {
+  headline: string;
+  description?: string;
+  path: string;
+  publishedAt?: string;
+  updatedAt?: string;
+}) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -201,7 +213,9 @@ export function articleJsonLd(input: { headline: string; description?: string; p
     description: input.description,
     inLanguage: "th",
     mainEntityOfPage: absoluteUrl(input.path),
-    author: organizationRef(),
+    ...(input.publishedAt ? { datePublished: input.publishedAt } : {}),
+    ...(input.updatedAt ? { dateModified: input.updatedAt } : {}),
+    author: { ...organizationRef(), name: SITE_NAME },
     publisher: organizationRef(),
   };
 }

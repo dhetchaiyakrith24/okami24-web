@@ -48,7 +48,7 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: guideTitle, description: GUIDE_DESCRIPTION_HEAD_TH[guide.id] ?? th?.dek ?? guide.dek, path: guidePath })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: guideTitle, description: GUIDE_DESCRIPTION_HEAD_TH[guide.id] ?? th?.dek ?? guide.dek, path: guidePath, publishedAt: guide.publishedAt, updatedAt: guide.updatedAt })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(guideTitle, guidePath)) }} />
       {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       {videoJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />}

@@ -14,7 +14,8 @@
  *         นาที proposed the same day after "เต็มใน 45 | นาที" appeared on the ARGUS G4 lede);
  *       · inside the two-word model names the owner listed.
  *   - WORD JOINER (U+2060) inside a word the segmenter breaks wrongly — ONLY the owner's listed
- *     exceptions, each scoped to the sentence it was seen in (THAI_STYLE §5 records the position).
+ *     exceptions, each scoped to the sentence it was seen in (THAI_STYLE §5 records the position),
+ *     plus the short NEVER_SPLIT list of locked compounds joined everywhere (owner, 2026-09-22).
  *
  * Conditions this module exists to enforce (owner):
  *   - applied at render only, Thai locale only — never stored in data/copy strings, so grep, the
@@ -63,10 +64,54 @@ const JOINED: ReadonlyArray<{ word: string; within: string; joined: string }> = 
   // 2026-09-16), so the negation is joined with its object and "บุหรี่" is kept whole in this sentence.
   { word: "ไม่มีการกล่าวอ้าง", within: "ไม่มีการกล่าวอ้างด้านสุขภาพ" },
   { word: "บุหรี่", within: "ไม่มีการกล่าวอ้างด้านสุขภาพ" },
+  // Round SEO ข close (owner ruling 2026-09-22, item ค): a negation that ended a line read as its
+  // opposite on the next line ("ยังไม่ | ใช่ข้อมูล"), so the negation is joined with the shortest
+  // object that fixes the meaning — never the whole phrase. One entry per sentence it was seen in.
+  { word: "ยังไม่ใช่ข้อมูล", within: "ตามรายการความเข้ากันได้ของร้านค้าปลีก ยังไม่ใช่ข้อมูล" },
+  { word: "ยังไม่โล่ง", within: "โล่งกว่า MTL แต่ยังไม่โล่ง" },
+  { word: "ยังไง", within: "โอห์มกับวัตต์ส่งผลต่อแนวการสูบยังไง" },
+  { word: "ไม่ได้", within: "ยังยืนยันจากแหล่งทางการไม่ได้" },
+  { word: "ไม่พอ", within: "แต่หลักฐานระดับนั้นไม่พอ" },
+  { word: "ไม่ได้", within: "ใช้แบตในตัว ถอดไม่ได้" },
+  { word: "ยังคุม", within: "นอกจากตัวเลขวัตต์ที่เห็น ชิปยังคุม" },
+  // Round SEO ข close (item ก, 6 compound words the segmenter split, each in the sentence seen):
+  { word: "โล่งแบบ", within: "สูบแน่นแบบ MTL (ดูดเข้าปากก่อน ใกล้เคียงบุหรี่)" },
+  { word: "แน่นแบบ", within: "เริ่มที่วัตต์กลาง ๆ ของช่วงที่เครื่องรองรับ" },
+  { word: "ค่าโอห์ม", within: "จอ HD 0.85 นิ้ว โชว์แบต วัตต์ ค่าโอห์ม" },
+  { word: "พอตซิสเต็ม", within: "คอยล์เป็นของสิ้นเปลืองในพอตซิสเต็ม" },
+  { word: "ให้เอง", within: "อ่านโอห์มของคอยล์แล้วปรับค่าให้เอง" },
+  { word: "ให้เอง", within: "วัตต์คงที่ ปรับให้เอง" },
+  { word: "เติมด้านบน", within: "จอสี 0.85 นิ้ว ชาร์จผ่าน USB-C หัวพอตเติมด้านบน" },
+  // Second scan after the entries above moved four breaks (same close, 2026-09-22):
+  { word: "ยังไง", within: "ให้ความรู้สึกต่างกันยังไง" },
+  { word: "ยังไม่มี", within: "แต่ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS" },
+  { word: "แนวการสูบ", within: "โอห์มกับวัตต์ส่งผลต่อแนวการสูบ" },
+  { word: "บรรจุสำเร็จ", within: "เปลี่ยนแค่หัวพอตบรรจุสำเร็จ" },
+  { word: "ไม่ต้อง", within: "แต่ไม่ต้องทิ้งทั้งเครื่อง" },
 ] as const).map((j) => ({ ...j, joined: joinWord(j.word) }));
 
-/** Two-word model / platform names the owner listed — kept on one line. */
-const MODEL_NAMES: ReadonlyArray<string> = ["Zero Nano", "Zero Cartridge", "M Switch", "M Bar", "Smash Go", "G Pod Platform"];
+/**
+ * Locked compounds that must never break inside, on EVERY Thai string (owner ruling 2026-09-22,
+ * round SEO ข close, item ก1). This list is NOT THAI_STYLE §3's "locked words" — §3 decides WHICH
+ * word to use, this list only says the word is never split across two lines. The owner's reason:
+ * these five appear on nearly every page and were being re-listed sentence by sentence every
+ * round ("หัว | พอต" on the H1 of guide 5, the summary of /technology/multi-resistance-cartridges,
+ * three spec-sheet paragraphs …). Adding a word here needs the owner's call, like JOINED. A word
+ * that makes a 390px page scroll sideways is withdrawn from this list and handled per sentence
+ * instead (the close gate: scrollWidth = clientWidth on every sitemap page at 390).
+ */
+const NEVER_SPLIT: ReadonlyArray<{ word: string; joined: string }> = ["หัวพอต", "ตัวเครื่อง", "ใช้แล้วทิ้ง", "ยังไม่ยืนยัน", "ชาร์จซ้ำ"].map(
+  (word) => ({ word, joined: joinWord(word) })
+);
+
+/** Multi-word model / platform / term names the owner listed — kept on one line. The 11 added at the
+ *  SEO ข close (owner 2026-09-22, item ข) are the ones the article scan saw split across lines;
+ *  longer names come first so "ARGUS G4 mini" is bound before "ARGUS G4" sees it. */
+const MODEL_NAMES: ReadonlyArray<string> = [
+  "Zero Nano", "Zero Cartridge", "M Switch", "M Bar", "Smash Go", "G Pod Platform",
+  "ARGUS Top Fill Cartridge V2", "Smart Triple-Tap Control", "iCOSM CODE 2.0", "Cotton mesh coil", "Mesh coil",
+  "ARGUS G4 mini", "ARGUS G3 mini", "ARGUS G4", "ARGUS P3", "salt nic", "box mod",
+];
 
 // a number (with , . – - inside) followed by ONE plain space and a unit. A Thai unit may run
 // straight into the next Thai word ("5,000 พัฟต่อหัวพอต"); a Latin unit must end there ("35 Watt"
@@ -86,6 +131,7 @@ export function thaiTypography(text: string): string {
   if (!text || !THAI.test(text)) return text;
   let out = text;
   for (const j of JOINED) if (out.includes(j.within)) out = out.split(j.word).join(j.joined);
+  for (const n of NEVER_SPLIT) out = out.split(n.word).join(n.joined);
   out = out.replace(REPEAT_MARK, `${NBSP}ๆ`);
   out = out.replace(NUMBER_UNIT_TH, bindUnit);
   out = out.replace(NUMBER_UNIT_EN, bindUnit);

@@ -294,6 +294,11 @@ export interface Guide {
   /** Round SEO ข (owner ruling 2026-09-21, Q3): one confirmed OKami24-channel clip per article, same
    *  contract as Product.reviewVideo (oEmbed-confirmed before it goes in — see the product records). */
   reviewVideo?: ArticleReviewVideo;
+  /** Round SEO ข batch 4 (2026-09-21): ISO dates for the Article JSON-LD. `publishedAt` = the day the
+   *  record first entered the repo, read from git history (never invented); `updatedAt` = the last day
+   *  the body changed — bump it in the same commit as any copy change. Both optional: absent = not claimed. */
+  publishedAt?: string;
+  updatedAt?: string;
 }
 
 export interface GuideSection {
@@ -329,6 +334,9 @@ export interface TechnologyEntry {
   relatedProductSlugs: string[];
   faq?: ArticleFAQItem[];
   reviewVideo?: ArticleReviewVideo;
+  /** Same contract as Guide.publishedAt / Guide.updatedAt. */
+  publishedAt?: string;
+  updatedAt?: string;
 }
 
 /**

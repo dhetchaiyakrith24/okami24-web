@@ -1,5 +1,8 @@
 import type { Guide } from "@/types/catalog";
 
+// Round SEO ข batch 4 (2026-09-21): publishedAt = the commit that first added all seven records
+// (f29d7fc, 2026-08-29, read from git log — never invented); updatedAt = the last day the body
+// changed (batch 3, c31ba63). Bump updatedAt with every copy change.
 export const guides: Guide[] = [
   {
     id: "choosing-your-first-pod-system",
@@ -8,6 +11,8 @@ export const guides: Guide[] = [
     dek: "A practical starting point for picking between open-system pods, pod kits, and disposables.",
     category: "getting-started",
     readingTimeMin: 6,
+    publishedAt: "2026-08-29",
+    updatedAt: "2026-09-21",
     body: [
       {
         heading: "Start with format, not features",
@@ -42,6 +47,7 @@ export const guides: Guide[] = [
         paragraphs: [
           "The [Caliburn G5](/products/caliburn-g5) is the current Caliburn flagship: a 1600mAh battery, 5–35W output, a 0.85-inch colour screen and a top-fill pod that connects magnetically.",
           "There is no row of buttons for switching modes — a Smart Triple-Tap gesture sensor handles mode switching and status readout instead.",
+          "How the tap control works, and why it needs a screen alongside it, is in [Gesture & Triple-Tap Control](/technology/gesture-and-triple-tap-control).",
         ],
         subsections: [
           {
@@ -103,6 +109,8 @@ export const guides: Guide[] = [
     dek: "Neither format is objectively better — the right one depends on how much control and maintenance you actually want.",
     category: "buying-guide",
     readingTimeMin: 5,
+    publishedAt: "2026-08-29",
+    updatedAt: "2026-09-21",
     body: [
       {
         heading: "What you're actually trading off",
@@ -160,6 +168,8 @@ export const guides: Guide[] = [
     dek: "Mouth-to-lung and direct-to-lung draws feel completely different — here's what actually changes.",
     category: "how-it-works",
     readingTimeMin: 4,
+    publishedAt: "2026-08-29",
+    updatedAt: "2026-09-21",
     body: [
       {
         heading: "Mouth-to-lung (MTL)",
@@ -181,6 +191,7 @@ export const guides: Guide[] = [
         paragraphs: [
           "The [Caliburn G4 Pro KOKO](/products/caliburn-g4-pro-koko) is a pod system with Storm / Waves / Custom (draw modes) selected on a 2\" touchscreen, with no physical buttons involved. Its verified spec lines: a 2000mAh built-in battery, 35W maximum output, and Pro-FOCS 4.0 flavor tuning.",
           "The modes are preset draw characters plus a Custom slot, running from a smooth, mild hit to a stronger, more robust one. It takes UWELL GPP pods and the older G3 pods.",
+          "What an onboard touchscreen can do, and what it costs, is in [Onboard Touch Displays](/technology/onboard-touch-displays).",
         ],
       },
       {
@@ -219,6 +230,8 @@ export const guides: Guide[] = [
     dek: "Battery mAh, wattage range, and resistance range — what each number actually tells you.",
     category: "buying-guide",
     readingTimeMin: 5,
+    publishedAt: "2026-08-29",
+    updatedAt: "2026-09-21",
     body: [
       {
         heading: "Battery capacity (mAh)",
@@ -256,6 +269,7 @@ export const guides: Guide[] = [
             heading: "Screen and pod",
             paragraphs: [
               "A 0.85\" HD screen showing battery, wattage, resistance, lock state and puff count. The body is zinc alloy, leather and aluminum alloy. The pod line reads: ARGUS top-fill cartridge platform, multiple resistances — and that line is the one to keep reading about in the last section.",
+              "What one pod shape in several resistances means is in [Multi-Resistance Cartridges](/technology/multi-resistance-cartridges).",
             ],
           },
         ],
@@ -265,6 +279,7 @@ export const guides: Guide[] = [
         paragraphs: [
           "Where an official spec couldn't be independently confirmed for a specific product page, it's labeled unverified rather than guessed — treat those fields as directional, not exact.",
           "A real case is the [DRAG 6](/products/drag-6) page. Its battery (4400mAh built-in, as two 2200mAh cells), 220W maximum output, GENE.TT 3.0 chip, SMART/RBA/TC-TCR (output modes) and 1.66\" TFT screen are all verified.",
+          "What the GENE.TT chip does in a high-output device is in [High-Output Chip Platforms](/technology/high-output-chip-platforms).",
           "The pod-platform line is marked unverified, because the exact name of the pod this device takes could not be confirmed from an official source — so the sheet only says it is a DRAG-series coil pod.",
           "What does exist is a retailer's compatibility list that names PnP X coils for the DRAG 6. That level of evidence is not enough for us to write it into the spec table as official, so the label stays as it is.",
         ],
@@ -303,6 +318,8 @@ export const guides: Guide[] = [
     dek: "Simple habits that keep flavor consistent and extend coil life on an open-system pod.",
     category: "maintenance",
     readingTimeMin: 4,
+    publishedAt: "2026-08-29",
+    updatedAt: "2026-09-21",
     body: [
       {
         heading: "Priming a new pod",
@@ -323,6 +340,7 @@ export const guides: Guide[] = [
         paragraphs: [
           "UWELL's GPP (G Pod Platform) pod is the top-fill pod shared across the current Caliburn line. According to UWELL's own pages it fits the Caliburn G5, G5 Lite, G5 Lite SE, G4 Pro, G4 Pro KOKO, G4, G4 Mini, G4 Classic, G3 Pro and G3 Pro KOKO.",
           "On our site that pod is the [GPP pod](/products/coil-94), in four resistances: 0.4, 0.6, 0.9 and 1.2Ω, mesh coils. The product name on the page reads “UWELL คอยล์ Caliburn G4&G3 Series”, but it fits the G5 line as well.",
+          "How a mesh coil differs from round wire is in [Mesh Coil Systems](/technology/mesh-coil-systems).",
           "One caution: the same Caliburn name does not mean the parts interchange. Caliburn G2-generation pods and GPP pods do not fit each other. If your device is a [Caliburn G5](/products/caliburn-g5), [Caliburn G3 Pro](/products/caliburn-g3-pro) or [Caliburn G4 Pro](/products/caliburn-g4-pro), GPP is the pod on the list above.",
         ],
       },
@@ -359,6 +377,8 @@ export const guides: Guide[] = [
     dek: "General care habits for built-in and external vape batteries.",
     category: "maintenance",
     readingTimeMin: 4,
+    publishedAt: "2026-08-29",
+    updatedAt: "2026-09-21",
     body: [
       {
         heading: "Built-in batteries",
@@ -402,6 +422,8 @@ export const guides: Guide[] = [
     dek: "How wattage and airflow interact to shape draw, flavor, and vapor volume.",
     category: "how-it-works",
     readingTimeMin: 5,
+    publishedAt: "2026-08-29",
+    updatedAt: "2026-09-21",
     body: [
       {
         heading: "They're not independent settings",
