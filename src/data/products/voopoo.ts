@@ -18,6 +18,10 @@ export const voopooProducts: Product[] = [
       "The current ARGUS mainstream flagship: 1650mAh, 5–35W, a 0.85\" HD screen showing battery, wattage, resistance, lock state and puff count, and a 45-minute USB-C fast charge.",
     isFlagship: true,
     editorialTag: "Flagship",
+    // Confirmed via YouTube oEmbed (2026-09-21, round SEO ข batch 2): real video, title names
+    // "VOOPOO ARGUS G4" exactly (not the G4 mini), owned by youtube.com/@OKM_24 — one of OKami24's
+    // own three channels. Owner bound it (Q4, 2026-09-21).
+    reviewVideo: { videoId: "eUdbZyvV4Y0", title: "หลังใช้งาน VOOPOO ARGUS G4 เปลี่ยนค่าโอห์มได้ในหัวเดียว!", channelName: "OKAMI", publishedAt: "2026-08-15" },
     attributes: {
       batteryMah: 1650,
       wattageMin: 5,

@@ -624,6 +624,10 @@ export const uwellProducts: Product[] = [
     shortDescription:
       "An 1800mAh, 35W pod device with a large touchscreen, magnetic pod connection, and stepless airflow control.",
     isFlagship: false,
+    // Confirmed via YouTube oEmbed (2026-09-21, round SEO ข batch 2): real video, title names
+    // "UWELL CALIBURN G4 PRO" exactly (not the KOKO), owned by youtube.com/@OKMYARZ — one of
+    // OKami24's own three channels. Owner bound it (Q4, 2026-09-21).
+    reviewVideo: { videoId: "Hpifl9weNTc", title: "หลังใช้งาน UWELL CALIBURN G4 PRO ตัวจบพร้อมระบบสัมผัส!", channelName: "OKM YARZ", publishedAt: "2026-08-14" },
     attributes: {
       batteryMah: 1800,
       wattageMax: 35,

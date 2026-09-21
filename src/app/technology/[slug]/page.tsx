@@ -8,6 +8,7 @@ import { TechnologyEntryPageHeader } from "@/components/content/TechnologyEntryP
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import type { Product } from "@/types/catalog";
 import { articleJsonLd, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
+import { articleFaqJsonLd, articleVideoJsonLd } from "@/lib/article-jsonld";
 import { TECHNOLOGY_COPY_TH, TECHNOLOGY_COPY_ZH } from "@/i18n/technology-copy";
 import { TECHNOLOGY_DESCRIPTION_HEAD_TH } from "@/i18n/search-head-copy";
 
@@ -40,16 +41,24 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
   const th = TECHNOLOGY_COPY_TH[entry.id];
   const entryPath = `/technology/${slug}`;
   const entryTitle = th?.name ?? entry.name;
+  // Round SEO ข: same optional FAQPage / VideoObject blocks as the guide page (see article-jsonld.ts).
+  const faqJsonLd = articleFaqJsonLd(th?.faq ?? entry.faq);
+  const videoJsonLd = articleVideoJsonLd(entry.reviewVideo, entryTitle);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: entryTitle, description: TECHNOLOGY_DESCRIPTION_HEAD_TH[entry.id] ?? th?.summary ?? entry.summary, path: entryPath })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(entryTitle, entryPath)) }} />
+      {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
+      {videoJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />}
       <TechnologyEntryPageHeader id={entry.id} title={entry.name} description={entry.summary} />
       <Container className="max-w-3xl py-12 lg:py-16">
         <ArticleBody
           sections={entry.body}
           translated={{ th: TECHNOLOGY_COPY_TH[entry.id]?.body, zh: TECHNOLOGY_COPY_ZH[entry.id]?.body }}
+          faq={entry.faq}
+          translatedFaq={{ th: TECHNOLOGY_COPY_TH[entry.id]?.faq, zh: TECHNOLOGY_COPY_ZH[entry.id]?.faq }}
+          video={entry.reviewVideo}
         />
       </Container>
       <RelatedProducts products={related} />

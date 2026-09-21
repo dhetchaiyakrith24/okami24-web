@@ -6,12 +6,14 @@
  * Since round 30.2 (docs/THAI_STYLE.md §3–§4, owner 2026-09-09) a resistance written into Thai
  * prose reads "0.4–3.0 โอห์ม", not "0.4–3.0Ω" — Ω stays only inside spec tables.
  */
-import type { GuideSection } from "@/types/catalog";
+import type { ArticleFAQItem, GuideSection } from "@/types/catalog";
 
 export interface TechnologyCopy {
   name: string;
   summary: string;
   body: GuideSection[];
+  /** Round SEO ข: per-locale Q/A — replaces the English `faq` of the record when present. */
+  faq?: ArticleFAQItem[];
 }
 
 export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
