@@ -53,6 +53,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         paragraphs: [
           "[Caliburn G5](/products/caliburn-g5) เป็นรุ่นเรือธงปัจจุบันของตระกูล Caliburn แบต 1600mAh จ่ายไฟ 5–35 วัตต์ มีจอสี 0.85 นิ้ว หัวพอตเติมด้านบน ยึดด้วยแม่เหล็ก",
           "ไม่มีปุ่มสลับโหมด ใช้ Smart Triple-Tap แตะสามครั้งสลับโหมดวัตต์และเช็คสถานะเครื่องแทน",
+          "ระบบแตะนี้ทำงานยังไง แล้วทำไมต้องมีจอคู่กัน อ่านที่ [ระบบแตะสามครั้ง](/technology/gesture-and-triple-tap-control)",
         ],
         subsections: [
           {
@@ -183,6 +184,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         paragraphs: [
           "[Caliburn G4 Pro KOKO](/products/caliburn-g4-pro-koko) เป็นพอตซิสเต็มที่มีโหมด Storm / Waves / Custom (โหมดแรงลม) ให้เลือกบนจอทัช 2 นิ้ว โดยไม่ต้องใช้ปุ่มกด สเปกที่ยืนยันแล้วคือแบตในตัว 2000mAh วัตต์สูงสุด 35 วัตต์ และระบบปรับรสชาติ Pro-FOCS 4.0",
           "ตัวโหมดเป็นโหมดที่ตั้งค่ามาให้ บวกช่อง Custom ให้ปรับเอง ไล่ตั้งแต่ไอนุ่มเบาไปจนถึงหนักและแน่นขึ้น หัวพอตที่ใช้ได้คือ UWELL GPP และหัวพอต G3 รุ่นก่อน",
+          "ส่วนจอทัชบนพอตทำอะไรได้บ้าง และแลกกับอะไร อ่านที่ [จอทัชสกรีนบนพอต](/technology/onboard-touch-displays)",
         ],
       },
       {
@@ -251,6 +253,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
             heading: "จอและหัวพอต",
             paragraphs: [
               "จอ HD 0.85 นิ้ว โชว์แบต วัตต์ ค่าโอห์ม สถานะล็อก และจำนวนพัฟ ตัวเครื่องเป็นซิงค์อัลลอย หนัง และอะลูมิเนียมอัลลอย ส่วนบรรทัดหัวพอตที่ใช้ได้เขียนว่าเป็นระบบหัวพอต ARGUS เติมด้านบน มีหลายค่าโอห์ม บรรทัดนี้แหละที่ต้องอ่านต่อในหัวข้อสุดท้าย",
+              "หัวพอตทรงเดียวแต่มีหลายโอห์ม หมายความว่ายังไง อ่านที่ [ระบบหัวพอตหลายโอห์ม](/technology/multi-resistance-cartridges)",
             ],
           },
         ],
@@ -260,6 +263,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         paragraphs: [
           "ถ้าสเปกทางการของรุ่นไหนยังยืนยันไม่ได้ เราติดป้าย “ยังไม่ยืนยัน” ไว้ ไม่เดาตัวเลขให้ ค่าพวกนั้นให้ดูเป็นแนวทาง ไม่ใช่ตัวเลขเป๊ะ",
           "ตัวอย่างจริงอยู่ที่หน้า [DRAG 6](/products/drag-6) แถวแบตในตัว 4400mAh (แบ่งเป็น 2 ก้อน ก้อนละ 2200mAh) วัตต์สูงสุด 220 วัตต์ ชิป GENE.TT 3.0 โหมด SMART/RBA/TC-TCR (โหมดจ่ายไฟ) และจอ TFT 1.66 นิ้ว ยืนยันแล้วทั้งหมด",
+          "ส่วนชิป GENE.TT ทำหน้าที่อะไร อ่านที่ [ชิปในเครื่องวัตต์สูง](/technology/high-output-chip-platforms)",
           "แต่แถว “หัวพอตที่ใช้ได้” ติดป้ายยังไม่ยืนยัน เพราะชื่อหัวพอตที่ใช้กับเครื่องนี้ยังยืนยันจากแหล่งทางการไม่ได้ เราเลยเขียนแค่ว่าเป็นหัวพอตคอยล์ตระกูล DRAG",
           "ที่มีอยู่คือรายการความเข้ากันได้ของร้านค้าปลีกที่ระบุว่า DRAG 6 ใช้คอยล์ PnP X แต่หลักฐานระดับนั้นไม่พอให้เราเขียนลงตารางสเปกว่าเป็นข้อมูลทางการ ป้ายจึงอยู่อย่างที่เห็น",
         ],
@@ -288,7 +292,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
     ],
   },
   "coil-and-pod-maintenance": {
-    title: "วิธีดูแลคอยล์และหัวพอต แล้ว GPP ใช้กับ Caliburn รุ่นไหน",
+    title: "วิธีดูแลคอยล์และหัวพอต GPP ใช้กับ Caliburn รุ่นไหน",
     dek: "คนใช้พอตซิสเต็มทำแค่ไม่กี่อย่าง รสก็คงที่ คอยล์ก็อยู่นานขึ้น",
     body: [
       {
@@ -310,6 +314,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         paragraphs: [
           "หัวพอต GPP (G Pod Platform) ของ UWELL เป็นหัวพอตเติมด้านบนที่ใช้ร่วมกันทั้งตระกูล Caliburn รุ่นปัจจุบัน ตามข้อมูลจาก UWELL เอง ใช้ได้กับ Caliburn G5, G5 Lite, G5 Lite SE, G4 Pro, G4 Pro KOKO, G4, G4 Mini, G4 Classic, G3 Pro และ G3 Pro KOKO",
           "ในร้านหัวพอตนี้คือ [หัวพอต GPP](/products/coil-94) มี 4 ค่าโอห์มคือ 0.4 / 0.6 / 0.9 / 1.2 โอห์ม เป็นคอยล์ mesh ชื่อสินค้าบนหน้าเว็บเขียนว่า “UWELL คอยล์ Caliburn G4&G3 Series” แต่ของจริงใช้กับสาย G5 ได้ด้วย",
+          "คอยล์ mesh ต่างจากคอยล์ลวดกลมตรงไหน อ่านที่ [ระบบคอยล์แบบ Mesh](/technology/mesh-coil-systems)",
           "ข้อควรระวัง ชื่อ Caliburn เหมือนกันไม่ได้แปลว่าใส่กันได้ หัวพอตรุ่น Caliburn G2 กับหัวพอต GPP ใส่แทนกันไม่ได้ ถ้าเครื่องคุณคือ [Caliburn G5](/products/caliburn-g5), [Caliburn G3 Pro](/products/caliburn-g3-pro) หรือ [Caliburn G4 Pro](/products/caliburn-g4-pro) หัวพอตที่ใช้คือ GPP ตามรายการข้างบน",
         ],
       },
@@ -458,6 +463,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
         paragraphs: [
           "[Caliburn G5](/products/caliburn-g5) 是 Caliburn 系列的现款旗舰：1600mAh 电池、5–35W 输出、0.85 英寸彩屏，以及顶部注油、磁吸连接的烟弹。",
           "它没有一排切换模式的按键，改由 Smart Triple-Tap 触控感应来切换输出模式和查看设备状态。",
+          "这套点击操控如何工作、为什么要搭配屏幕，见 [手势与三击操控](/technology/gesture-and-triple-tap-control)。",
         ],
         subsections: [
           {
@@ -560,6 +566,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
         paragraphs: [
           "[Caliburn G4 Pro KOKO](/products/caliburn-g4-pro-koko) 是一台开放式换弹设备，Storm / Waves / Custom（吸阻模式）在 2 英寸触摸屏上切换，不需要实体按键。已验证的规格：2000mAh 内置电池、最高 35W 输出，以及 Pro-FOCS 4.0 口感调校。",
           "这些模式是预设的吸感档位，外加一个可自定义的 Custom 档，从柔和轻盈到更强更扎实的击喉感。可用烟弹为 UWELL GPP 以及旧款 G3 烟弹。",
+          "机身触控屏能做什么、代价是什么，见 [机身触控屏](/technology/onboard-touch-displays)。",
         ],
       },
       {
@@ -602,7 +609,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
         subsections: [
           { heading: "电池与充电", paragraphs: ["1650mAh 内置电池，通过 USB-C 以 5V/2A 充电；规格表写明约 45 分钟充满。mAh 用来与其他设备比较——实际能用几小时取决于你设定的功率和抽吸频率。正确的充电方式见 [电池保养](/guides/battery-care-and-charging)。"] },
           { heading: "功率、电压与阻值", paragraphs: ["功率范围 5–35W，输出电压 3.2–4.2V，阻值范围 0.4–3.0Ω（阻值和功率如何影响吸法，见 [MTL 与 DTL](/guides/understanding-mtl-vs-dtl)）。在这个范围内把功率设在哪里，见 [如何选择功率与进气量](/guides/choosing-wattage-and-airflow)。"] },
-          { heading: "屏幕与烟弹", paragraphs: ["0.85 英寸 HD 屏幕，显示电量、功率、阻值、锁定状态和口数。机身为锌合金、皮革和铝合金。烟弹那一行写的是：ARGUS 顶部注油烟弹平台，多种阻值——这一行正是最后一节要继续说的。"] },
+          { heading: "屏幕与烟弹", paragraphs: ["0.85 英寸 HD 屏幕，显示电量、功率、阻值、锁定状态和口数。机身为锌合金、皮革和铝合金。烟弹那一行写的是：ARGUS 顶部注油烟弹平台，多种阻值——这一行正是最后一节要继续说的。", "同一外形却有多种阻值的烟弹意味着什么，见 [多阻值烟弹平台](/technology/multi-resistance-cartridges)。"] },
         ],
       },
       {
@@ -610,6 +617,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
         paragraphs: [
           "如果某个产品页面的官方规格无法独立确认，会标注为未验证，而不是凭空猜测——这些数值应作为方向性参考，而非精确数据。",
           "一个真实的例子是 [DRAG 6](/products/drag-6) 页面。它的电池（4400mAh 内置，由两颗 2200mAh 电芯组成）、220W 最高输出、GENE.TT 3.0 芯片、SMART/RBA/TC-TCR（输出模式）和 1.66 英寸 TFT 屏幕都已验证。",
+          "GENE.TT 芯片在高功率设备里究竟做什么，见 [高功率芯片平台](/technology/high-output-chip-platforms)。",
           "烟弹平台那一行标为未验证，因为这台设备所用烟弹的确切名称无法从官方来源确认——所以规格表只写它是 DRAG 系列雾化芯烟弹。",
           "现有的只是零售商的兼容列表，将 PnP X 雾化芯列为 DRAG 6 适用。这个证据级别不足以让我们把它作为官方信息写进规格表，所以标签保持原样。",
         ],
@@ -649,6 +657,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
         paragraphs: [
           "UWELL 的 GPP（G Pod Platform）烟弹是现款 Caliburn 系列共用的顶部注油烟弹。根据 UWELL 官方页面，它适配 Caliburn G5、G5 Lite、G5 Lite SE、G4 Pro、G4 Pro KOKO、G4、G4 Mini、G4 Classic、G3 Pro 和 G3 Pro KOKO。",
           "在本站，这款烟弹就是 [GPP 烟弹](/products/coil-94)，有四种阻值：0.4、0.6、0.9 和 1.2Ω，为网状芯。页面上的商品名写的是「UWELL คอยล์ Caliburn G4&G3 Series」，但它同样适配 G5 系列。",
+          "网状雾化芯与圆形绕线有何不同，见 [网状雾化芯系统](/technology/mesh-coil-systems)。",
           "提醒一点：同样叫 Caliburn，不代表零件可以互换。Caliburn G2 世代的烟弹与 GPP 烟弹互不兼容。如果你的设备是 [Caliburn G5](/products/caliburn-g5)、[Caliburn G3 Pro](/products/caliburn-g3-pro) 或 [Caliburn G4 Pro](/products/caliburn-g4-pro)，要用的就是上面列表中的 GPP。",
         ],
       },
