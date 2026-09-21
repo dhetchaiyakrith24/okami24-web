@@ -6,12 +6,14 @@
  * (docs/THAI_STYLE.md §3–§4, owner 2026-09-09) a wattage or resistance written into Thai prose
  * reads "35 วัตต์" / "0.8 โอห์ม"; W and Ω stay only inside spec tables.
  */
-import type { GuideSection } from "@/types/catalog";
+import type { ArticleFAQItem, GuideSection } from "@/types/catalog";
 
 export interface GuideCopy {
   title: string;
   dek: string;
   body: GuideSection[];
+  /** Round SEO ข: per-locale Q/A — replaces the English `faq` of the record when present. */
+  faq?: ArticleFAQItem[];
 }
 
 export const GUIDES_COPY_TH: Record<string, GuideCopy> = {

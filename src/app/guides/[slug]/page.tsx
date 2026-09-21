@@ -8,6 +8,7 @@ import { GuideDetailPageHeader } from "@/components/content/GuideDetailPageHeade
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import type { Product } from "@/types/catalog";
 import { articleJsonLd, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
+import { articleFaqJsonLd, articleVideoJsonLd } from "@/lib/article-jsonld";
 import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
 import { GUIDE_DESCRIPTION_HEAD_TH } from "@/i18n/search-head-copy";
 
@@ -39,16 +40,26 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
   const th = GUIDES_COPY_TH[guide.id];
   const guidePath = `/guides/${slug}`;
   const guideTitle = th?.title ?? guide.title;
+  // Round SEO ข: FAQPage from the Thai Q/A (falls back to English only when no Thai copy exists —
+  // same rule as the body) and VideoObject for the article's one confirmed clip. Both null when the
+  // record has no such field, so an article without them emits exactly the two blocks above.
+  const faqJsonLd = articleFaqJsonLd(th?.faq ?? guide.faq);
+  const videoJsonLd = articleVideoJsonLd(guide.reviewVideo, guideTitle);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: guideTitle, description: GUIDE_DESCRIPTION_HEAD_TH[guide.id] ?? th?.dek ?? guide.dek, path: guidePath })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(guideTitle, guidePath)) }} />
+      {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
+      {videoJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />}
       <GuideDetailPageHeader id={guide.id} title={guide.title} dek={guide.dek} readingTimeMin={guide.readingTimeMin} />
       <Container className="max-w-3xl py-12 lg:py-16">
         <ArticleBody
           sections={guide.body}
           translated={{ th: GUIDES_COPY_TH[guide.id]?.body, zh: GUIDES_COPY_ZH[guide.id]?.body }}
+          faq={guide.faq}
+          translatedFaq={{ th: GUIDES_COPY_TH[guide.id]?.faq, zh: GUIDES_COPY_ZH[guide.id]?.faq }}
+          video={guide.reviewVideo}
         />
       </Container>
       <RelatedProducts products={related} />

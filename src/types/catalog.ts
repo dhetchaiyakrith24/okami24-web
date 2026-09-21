@@ -288,12 +288,36 @@ export interface Guide {
   readingTimeMin: number;
   body: GuideSection[];
   relatedProductSlugs?: string[];
+  /** Round SEO ข (owner ruling 2026-09-21, Q1=ก): optional Q/A block at the end of the article, also
+   *  emitted as FAQPage JSON-LD from the Thai copy. Questions must not repeat /faq (owner rule). */
+  faq?: ArticleFAQItem[];
+  /** Round SEO ข (owner ruling 2026-09-21, Q3): one confirmed OKami24-channel clip per article, same
+   *  contract as Product.reviewVideo (oEmbed-confirmed before it goes in — see the product records). */
+  reviewVideo?: ArticleReviewVideo;
 }
 
 export interface GuideSection {
   heading: string;
+  /** Plain text. Since round SEO ข a paragraph may carry inline links written as `[text](href)` —
+   *  internal paths (`/products/…`, `/guides/…`) or a brand-site source URL (rendered nofollow, new
+   *  tab). Anything else in the string is literal. Rendered by ArticleBody only; JSON-LD, <title>
+   *  and the site search never see this syntax because they read title/dek, not body. */
+  paragraphs: string[];
+  /** Optional H3 blocks under this H2 (round SEO ข) — only when the H2 really has several points. */
+  subsections?: ArticleSubsection[];
+}
+
+export interface ArticleSubsection {
+  heading: string;
   paragraphs: string[];
 }
+
+export interface ArticleFAQItem {
+  question: string;
+  answer: string;
+}
+
+export type ArticleReviewVideo = NonNullable<Product["reviewVideo"]>;
 
 export interface TechnologyEntry {
   id: string;
@@ -303,6 +327,8 @@ export interface TechnologyEntry {
   summary: string;
   body: GuideSection[];
   relatedProductSlugs: string[];
+  faq?: ArticleFAQItem[];
+  reviewVideo?: ArticleReviewVideo;
 }
 
 /**
