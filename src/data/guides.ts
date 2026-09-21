@@ -1,8 +1,9 @@
 import type { Guide } from "@/types/catalog";
 
 // Round SEO ข batch 4 (2026-09-21): publishedAt = the commit that first added all seven records
-// (f29d7fc, 2026-08-29, read from git log — never invented); updatedAt = the last day the body
-// changed (batch 3, c31ba63). Bump updatedAt with every copy change.
+// (f29d7fc, 2026-08-29, read from git log — never invented). The modified date is no longer typed
+// here — since round search-price batch 3 (2026-09-22) it is the last git commit touching this
+// file / guides-copy.ts, read from src/data/content-dates.json (see src/lib/content-dates.ts).
 export const guides: Guide[] = [
   {
     id: "choosing-your-first-pod-system",
@@ -12,7 +13,6 @@ export const guides: Guide[] = [
     category: "getting-started",
     readingTimeMin: 6,
     publishedAt: "2026-08-29",
-    updatedAt: "2026-09-21",
     body: [
       {
         heading: "Start with format, not features",
@@ -110,7 +110,6 @@ export const guides: Guide[] = [
     category: "buying-guide",
     readingTimeMin: 5,
     publishedAt: "2026-08-29",
-    updatedAt: "2026-09-21",
     body: [
       {
         heading: "What you're actually trading off",
@@ -169,7 +168,6 @@ export const guides: Guide[] = [
     category: "how-it-works",
     readingTimeMin: 4,
     publishedAt: "2026-08-29",
-    updatedAt: "2026-09-21",
     body: [
       {
         heading: "Mouth-to-lung (MTL)",
@@ -231,7 +229,6 @@ export const guides: Guide[] = [
     category: "buying-guide",
     readingTimeMin: 5,
     publishedAt: "2026-08-29",
-    updatedAt: "2026-09-21",
     body: [
       {
         heading: "Battery capacity (mAh)",
@@ -319,7 +316,6 @@ export const guides: Guide[] = [
     category: "maintenance",
     readingTimeMin: 4,
     publishedAt: "2026-08-29",
-    updatedAt: "2026-09-21",
     body: [
       {
         heading: "Priming a new pod",
@@ -378,7 +374,6 @@ export const guides: Guide[] = [
     category: "maintenance",
     readingTimeMin: 4,
     publishedAt: "2026-08-29",
-    updatedAt: "2026-09-21",
     body: [
       {
         heading: "Built-in batteries",
@@ -423,7 +418,6 @@ export const guides: Guide[] = [
     category: "how-it-works",
     readingTimeMin: 5,
     publishedAt: "2026-08-29",
-    updatedAt: "2026-09-21",
     body: [
       {
         heading: "They're not independent settings",

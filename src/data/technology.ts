@@ -3,7 +3,8 @@ import type { TechnologyEntry } from "@/types/catalog";
 // Round SEO ข batch 4 (2026-09-21): every page grew from verified spec rows, catalog-relationships.ts
 // and the owner's rulings only — per-paragraph source map in _incoming/seo-b/writer-batch4-sources.md.
 // publishedAt = the commit that first added all five records (f29d7fc, 2026-08-29, read from git
-// log — never invented); updatedAt = the last day the body changed.
+// log — never invented). The modified date is the last git commit touching this file /
+// technology-copy.ts, via src/data/content-dates.json (round search-price batch 3, 2026-09-22).
 export const technologyEntries: TechnologyEntry[] = [
   {
     id: "mesh-coil-systems",
@@ -11,7 +12,6 @@ export const technologyEntries: TechnologyEntry[] = [
     name: "Mesh Coil Systems",
     summary: "A flattened, mesh-style heating element replaces traditional round wire coils across most current pod and disposable devices.",
     publishedAt: "2026-08-29",
-    updatedAt: "2026-09-21",
     body: [
       {
         heading: "Why mesh over round wire",
@@ -40,7 +40,6 @@ export const technologyEntries: TechnologyEntry[] = [
     name: "Multi-Resistance Cartridge Platforms",
     summary: "One pod shape, several coil resistances — how platforms like ARGUS's top-fill cartridge cover MTL and RDL from a single form factor.",
     publishedAt: "2026-08-29",
-    updatedAt: "2026-09-21",
     body: [
       {
         heading: "One shape, several resistances",
@@ -80,7 +79,6 @@ export const technologyEntries: TechnologyEntry[] = [
     name: "Onboard Touch Displays",
     summary: "Full touchscreen control is moving down from box mods into compact pod devices.",
     publishedAt: "2026-08-29",
-    updatedAt: "2026-09-21",
     body: [
       {
         heading: "From status readout to full menu",
@@ -124,7 +122,6 @@ export const technologyEntries: TechnologyEntry[] = [
     name: "High-Output Chip Platforms",
     summary: "Dedicated chipsets — like GENE.TT and GENE.AI — govern how a device regulates output, protects the battery, and adapts to different coil resistances.",
     publishedAt: "2026-08-29",
-    updatedAt: "2026-09-21",
     body: [
       {
         heading: "What the chip is actually doing",
@@ -169,7 +166,6 @@ export const technologyEntries: TechnologyEntry[] = [
     name: "Gesture & Triple-Tap Control",
     summary: "Tap-based gesture sensors are starting to replace physical button rows on compact pod devices.",
     publishedAt: "2026-08-29",
-    updatedAt: "2026-09-21",
     body: [
       {
         heading: "Fewer buttons, same control",

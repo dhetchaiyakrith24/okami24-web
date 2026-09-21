@@ -192,10 +192,10 @@ export function faqPageJsonLd(items: { question: string; answer: string }[]) {
 
 /**
  * `Article` for a guide or technology page. The content records carry no hero image, so none is
- * claimed. Dates come only from the record's `publishedAt` / `updatedAt` (round SEO ข batch 4,
- * 2026-09-21 — `publishedAt` is read from git history, `updatedAt` is bumped with each copy
- * change); a record without them emits no date — a missing field is honest, an invented date
- * is not. Author and publisher are the shop itself (the copy is written in-house, see
+ * claimed. `publishedAt` comes from the record (round SEO ข batch 4, 2026-09-21 — read from git
+ * history); `updatedAt` is the last git commit touching the article's source files
+ * (src/lib/content-dates.ts, round search-price batch 3). A record without a date emits none — a
+ * missing field is honest, an invented date is not. Author and publisher are the shop itself (the copy is written in-house, see
  * guides.ts); the author carries a `name` so a crawler that reads this page alone, without the
  * homepage's Organization node, still sees who wrote it.
  */
