@@ -54,6 +54,7 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import type { Product } from "@/types/catalog";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { productTitleTh } from "@/i18n/search-titles";
+import { PRODUCT_DESCRIPTION_HEAD_TH, withPriceSuffixTh } from "@/i18n/search-head-copy";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
  *  product-level card, the neutral variant fallback, and each variant's own photo. The variant
@@ -110,7 +111,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     // the meta description is the Thai shortDescription the page already shows under the English
     // one (ProductHero); English stays the fallback for a product with no Thai copy.
     const title = productTitleTh(product.displayName, product.categoryId);
-    const description = PRODUCT_COPY_TH[product.slug]?.shortDescription ?? product.shortDescription;
+    // SEO round ก (owner เคาะ 2026-09-21): a head-only override where the table gave one
+    // (search-head-copy.ts), then the B2 price line — price from the same approval the page
+    // shows, appended only when one exists, kept inside 160 characters (withPriceSuffixTh).
+    const baseDescription = PRODUCT_DESCRIPTION_HEAD_TH[product.slug] ?? PRODUCT_COPY_TH[product.slug]?.shortDescription ?? product.shortDescription;
+    const description = withPriceSuffixTh(baseDescription, getLegacyApprovedPrice(product.slug));
     return {
       title,
       description,
@@ -125,11 +130,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (publishedProduct) {
     // Same title template as the legacy branch; the tagline (the Thai source line) is the meta.
     const title = productTitleTh(publishedProduct.displayName, publishedProduct.categoryId);
+    // Same head-only override + B2 price line as the legacy branch above.
+    const baseDescription = PRODUCT_DESCRIPTION_HEAD_TH[publishedProduct.slug] ?? publishedProduct.tagline ?? undefined;
+    const description = baseDescription === undefined ? undefined : withPriceSuffixTh(baseDescription, publishedProduct.sellingPrice);
     return {
       title,
-      description: publishedProduct.tagline,
+      description,
       ...canonicalFor(path),
-      ...(publishedProduct.image ? openGraphWithImage({ title, description: publishedProduct.tagline ?? undefined, path, image: publishedProduct.image }) : {}),
+      ...(publishedProduct.image ? openGraphWithImage({ title, description, path, image: publishedProduct.image }) : {}),
     };
   }
   const pilotProduct = getPilotProduct(slug);

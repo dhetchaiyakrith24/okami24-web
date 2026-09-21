@@ -9,6 +9,7 @@ import { RelatedProducts } from "@/components/product/RelatedProducts";
 import type { Product } from "@/types/catalog";
 import { articleJsonLd, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { TECHNOLOGY_COPY_TH, TECHNOLOGY_COPY_ZH } from "@/i18n/technology-copy";
+import { TECHNOLOGY_DESCRIPTION_HEAD_TH } from "@/i18n/search-head-copy";
 
 export function generateStaticParams() {
   return technologyEntries.map((t) => ({ slug: t.slug }));
@@ -21,7 +22,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // Round 30.3ข: search-facing text is Thai (see guides/[slug]/page.tsx) — the same Thai name/
   // summary the page shows as its H1 and lede, English as the fallback.
   const th = TECHNOLOGY_COPY_TH[entry.id];
-  return { title: th?.name ?? entry.name, description: th?.summary ?? entry.summary, ...canonicalFor(`/technology/${slug}`) };
+  // SEO round ก row C19 (owner เคาะ 2026-09-21): head-only description override; the summary on
+  // the page is unchanged.
+  return { title: th?.name ?? entry.name, description: TECHNOLOGY_DESCRIPTION_HEAD_TH[entry.id] ?? th?.summary ?? entry.summary, ...canonicalFor(`/technology/${slug}`) };
 }
 
 export default async function TechnologyDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -40,7 +43,7 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: entryTitle, description: th?.summary ?? entry.summary, path: entryPath })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: entryTitle, description: TECHNOLOGY_DESCRIPTION_HEAD_TH[entry.id] ?? th?.summary ?? entry.summary, path: entryPath })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(entryTitle, entryPath)) }} />
       <TechnologyEntryPageHeader id={entry.id} title={entry.name} description={entry.summary} />
       <Container className="max-w-3xl py-12 lg:py-16">

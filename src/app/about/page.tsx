@@ -4,12 +4,14 @@ import { CONTACT } from "@/data/contact";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
+import { ABOUT_HEAD_TH } from "@/i18n/search-head-copy";
 import { brandsWithProducts } from "@/lib/brand-visibility";
 import { ThaiText } from "@/components/i18n/ThaiText";
 
+// SEO round ก rows A3/A4 (owner เคาะ 2026-09-21) — search-head-copy.ts holds the strings.
 export const metadata: Metadata = {
-  title: "เกี่ยวกับเรา",
-  description: "OKami24 คือใคร ทำไมของแท้ ราคาตรง และบริการจริงถึงเป็นหัวใจของร้าน พร้อมนโยบายเคลมสินค้าและช่องทางติดต่อ",
+  title: { absolute: ABOUT_HEAD_TH.title },
+  description: ABOUT_HEAD_TH.description,
   ...canonicalFor("/about"),
 };
 
@@ -18,7 +20,7 @@ export default function AboutPage() {
   const brands = brandsWithProducts();
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/about")) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(ABOUT_HEAD_TH.title, "/about")) }} />
       <PageHeader
         eyebrow="เกี่ยวกับเรา"
         title="ของแท้ ราคาตรง บริการจริง"
