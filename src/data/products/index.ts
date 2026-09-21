@@ -9,6 +9,11 @@ import { tfitProducts } from "./tfit";
 import { infyProducts } from "./infy";
 import { unbrandedProducts } from "./unbranded";
 import { applySoldOut } from "@/data/stock/apply-sold-out";
+import { getBrand } from "@/data/brands";
+import { getCategory } from "@/data/categories";
+import { getFamily } from "@/data/families";
+import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
+import { rankByQuery, searchText, type SearchText } from "@/lib/catalog-search";
 
 /**
  * EVERY legacy product record, including ones hidden from the storefront. Validation, duplicate
@@ -93,23 +98,56 @@ export function getRelatedProducts(product: Product): Product[] {
     .filter((p): p is Product => Boolean(p));
 }
 
+/** Round "search-price" (2026-09-22): the text a legacy product is searched by — what it IS, in
+ *  English and in the Thai a visitor reads on the site (category label, Thai tagline and spec
+ *  values from product-copy-th.ts). Built once per product at module load; the matching rules
+ *  (tokens, compact form, aliases, invisible characters) live in src/lib/catalog-search.ts.
+ *  `shortDescription` was in the old haystack and is left out on purpose — see that file. */
+const SEARCH_TEXT = new Map<string, SearchText>(
+  allProducts.map((p) => {
+    const copyTh = PRODUCT_COPY_TH[p.slug];
+    const brand = getBrand(p.brandId);
+    const family = getFamily(p.familyId);
+    const category = getCategory(p.categoryId);
+    return [
+      p.slug,
+      searchText({
+        slug: p.slug,
+        primary: [
+          p.name,
+          p.displayName,
+          p.brandId,
+          brand?.name,
+          brand?.fullName,
+          p.familyId,
+          family?.name,
+          p.categoryId,
+          category?.name,
+          category?.shortName,
+          category?.labelTh,
+          ...(p.colorVariants ?? []).map((v) => v.name),
+          ...(p.flavorVariants ?? []).map((v) => v.name),
+        ],
+        secondary: [
+          p.tagline,
+          copyTh?.tagline,
+          ...p.features.map((f) => f.title),
+          ...p.specifications.map((s) => `${s.label} ${s.value}`),
+          ...Object.values(copyTh?.specifications ?? {}),
+        ],
+      }),
+    ];
+  })
+);
+
+/** The search text of a storefront product — shared with the catalog grids (CatalogBrowser.tsx)
+ *  so /search and a category page's own search box give the same answer for the same word. */
+export function legacySearchText(product: Product): SearchText {
+  const text = SEARCH_TEXT.get(product.slug);
+  if (!text) throw new Error(`legacySearchText: "${product.slug}" is not a storefront product`);
+  return text;
+}
+
 export function searchProducts(query: string): Product[] {
-  const q = query.trim().toLowerCase();
-  if (!q) return [];
-  return allProducts.filter((p) => {
-    const haystack = [
-      p.name,
-      p.displayName,
-      p.brandId,
-      p.familyId,
-      p.categoryId,
-      p.tagline,
-      p.shortDescription,
-      ...p.features.map((f) => f.title),
-      ...p.specifications.map((s) => `${s.label} ${s.value}`),
-    ]
-      .join(" ")
-      .toLowerCase();
-    return haystack.includes(q);
-  });
+  return rankByQuery(query, allProducts, legacySearchText);
 }

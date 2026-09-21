@@ -4,6 +4,7 @@ import { categories, getCategory } from "@/data/categories";
 import { allProducts, getProduct, getProductsByCategory, getRelatedProducts } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
+import { catalogSearchTexts } from "@/lib/catalog-search-entries";
 import { ProductHero } from "@/components/product/ProductHero";
 import { ProductGallery } from "@/components/product/ProductGallery";
 import { ProductReviewSection } from "@/components/product/ProductReviewSection";
@@ -174,7 +175,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
               the SAME grid/filter/sort experience as a legacy one, not a separate "Now Available"
               block underneath (see CatalogBrowser's own doc comment). Still-unpublished DEV-preview
               data stays in its own, clearly-labeled section below — never mixed in. */}
-          <CatalogBrowser products={products} publishedProducts={publishedProducts} isEmptyCategory={isEmptyCategory} />
+          <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} isEmptyCategory={isEmptyCategory} />
           <PilotProductSection products={pilotProducts} />
         </Container>
       </>

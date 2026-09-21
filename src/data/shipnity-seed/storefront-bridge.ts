@@ -33,6 +33,9 @@ import {
   getPublishedProductBySlug,
   type StorefrontProductView,
 } from "./storefront-preview-read-model";
+import { getBrand } from "@/data/brands";
+import { getCategory } from "@/data/categories";
+import { rankByQuery, searchText, type SearchText } from "@/lib/catalog-search";
 
 function pilotBridgeEnabled(): boolean {
   return process.env.NODE_ENV !== "production";
@@ -117,12 +120,31 @@ export function getPublishedRelatedProducts(product: StorefrontProductView): Sto
   return getPublishedProducts().filter((p) => p.slug !== product.slug && p.categoryId === product.categoryId);
 }
 
-/** Same matching rule as `searchPilotProducts` — always on, no environment gate. */
-export function searchPublishedProducts(query: string): StorefrontProductView[] {
-  const q = query.trim().toLowerCase();
-  if (!q) return [];
-  return getPublishedProducts().filter((p) => {
-    const haystack = [p.displayName, p.brandName, p.categoryName, p.tagline, ...p.variants.map((v) => v.label)].join(" ").toLowerCase();
-    return haystack.includes(q);
+/** Round "search-price" (2026-09-22): the text a published product is searched by — the same
+ *  shape the legacy catalog uses in src/data/products/index.ts (names, brand, category in English
+ *  and the Thai label the site shows, tagline, spec values, variant labels), matched by the shared
+ *  rules in src/lib/catalog-search.ts. `searchPilotProducts` above keeps its DEV-only matcher. */
+export function publishedSearchText(p: StorefrontProductView): SearchText {
+  const brand = getBrand(p.brandId);
+  const category = getCategory(p.categoryId);
+  return searchText({
+    slug: p.slug,
+    primary: [
+      p.displayName,
+      p.brandId,
+      p.brandName,
+      brand?.fullName,
+      p.categoryId,
+      p.categoryName,
+      category?.name,
+      category?.shortName,
+      category?.labelTh,
+      ...p.variants.map((v) => v.label),
+    ],
+    secondary: [p.tagline, ...p.specifications.map((s) => s.value)],
   });
+}
+
+export function searchPublishedProducts(query: string): StorefrontProductView[] {
+  return rankByQuery(query, getPublishedProducts(), publishedSearchText);
 }
