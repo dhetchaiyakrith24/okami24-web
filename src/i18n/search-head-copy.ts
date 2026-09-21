@@ -166,8 +166,20 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "pod-180": "พอตใช้แล้วทิ้ง WOTOFO Nexbar 18K แบต 750mAh ชาร์จซ้ำได้ผ่าน USB-C คอยล์ nexMESH ในตัว น้ำยาประมาณ 18mL มี 10 รส",
 };
 
-/** Rows C17 / C18 — keyed by guide id. */
+/** Rows C17 / C18 — keyed by guide id. Round SEO ข (owner เคาะ 2026-09-21): five more head-only
+ *  descriptions for the guides grown that round; the dek each page shows is unchanged. No price
+ *  ever appears in this map (round-ก rule). */
 export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
+  "choosing-your-first-pod-system":
+    "Pod system ตัวไหนดี เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมีจริง Caliburn G5 · ARGUS G3 mini · M Bar 9K พร้อมวิธีเช็คของแท้",
+  "open-system-vs-disposable":
+    "เทียบพอตใช้แล้วทิ้งกับพอตซิสเต็ม ต่างกันตรงไหน ต้องดูแลแค่ไหน พร้อมตัวอย่างจริง M Bar 10K · M Switch Kit · Caliburn G5 Lite และวิธีเช็คของแท้จากกล่อง",
+  "reading-a-spec-sheet":
+    "อ่านสเปกพอตทีละบรรทัดจากตัวอย่างจริง ARGUS G4 แบต mAh ช่วงวัตต์ ช่วงโอห์ม แปลว่าอะไร ป้ายยังไม่ยืนยันคืออะไร และทำไมช่วงโอห์มกว้างไม่ได้แปลว่ามีหัวพอตขาย",
+  "coil-and-pod-maintenance":
+    "หัวพอตใหม่ต้องรอกี่นาที คอยล์ควรเปลี่ยนเมื่อไหร่ หัวพอต GPP ของ UWELL ใช้กับ Caliburn รุ่นไหนได้บ้าง และทำไมหัวพอตเป็นของที่ต้องซื้อซ้ำ",
+  "choosing-wattage-and-airflow":
+    "ตั้งกี่วัตต์ดี เปิดช่องลมแค่ไหน สองอย่างนี้ปรับไปด้วยกัน พร้อมตัวอย่างจริง Caliburn G3 Pro ที่ให้หัวพอต 2 ค่าโอห์มมาในกล่อง และ VINCI S ช่วงวัตต์ 5–40 วัตต์",
   "understanding-mtl-vs-dtl":
     "MTL กับ DTL ต่างกันยังไง MTL ดึงไอเข้าปากก่อนแล้วค่อยลงปอด ช่องลมแคบ โอห์มสูง วัตต์ต่ำ · DTL ดึงไอลงปอดเลย ช่องลมโล่ง โอห์มต่ำ วัตต์สูง · RDL อยู่ตรงกลาง",
   "battery-care-and-charging":
