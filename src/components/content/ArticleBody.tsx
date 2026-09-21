@@ -41,7 +41,9 @@ function renderInline(text: string, locale: string, keyPrefix: string): ReactNod
     const idx = m.index ?? 0;
     if (idx > last) out.push(t(text.slice(last, idx)));
     const [, label, href] = m;
-    const cls = "font-medium text-foreground underline decoration-foreground-dim underline-offset-4 transition-colors hover:text-ember hover:decoration-ember";
+    // whitespace-nowrap: a link label never wraps mid-word (owner condition, batch 3 — the scan
+    // caught "พอตใช้แล้ว|ทิ้ง" and "ช่อง|ลม" inside labels at 390); labels stay ≤ 4 words / ~30 chars.
+    const cls = "whitespace-nowrap font-medium text-foreground underline decoration-foreground-dim underline-offset-4 transition-colors hover:text-ember hover:decoration-ember";
     out.push(
       isInternal(href) ? (
         <Link key={`${keyPrefix}-l${n}`} href={href} className={cls}>
@@ -109,8 +111,11 @@ export function ArticleBody({
       {activeFaq && activeFaq.length > 0 && (
         <div className="flex flex-col gap-6">
           <SectionHeading eyebrow={dict.product.faqEyebrow} title={dict.faq.pageTitle} titleClassName="text-2xl" />
-          {/* ids are namespaced so FAQAccordion's /faq overlay lookup never matches — the text passed here is already the active locale's */}
-          <FAQAccordion items={activeFaq.map((item, i) => ({ id: `article-faq-${i}`, question: plainText(item.question), answer: plainText(item.answer) }))} />
+          {/* ids are namespaced so FAQAccordion's /faq overlay lookup never matches — the text passed here is already the active locale's.
+              border-b closes the accordion's last row (designer, batch 2.5) — article column only, /faq untouched */}
+          <div className="border-b border-surface-border-soft">
+            <FAQAccordion items={activeFaq.map((item, i) => ({ id: `article-faq-${i}`, question: plainText(item.question), answer: plainText(item.answer) }))} />
+          </div>
         </div>
       )}
     </div>
