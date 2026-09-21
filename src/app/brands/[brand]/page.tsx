@@ -9,8 +9,10 @@ import { getPilotProductsByBrand, getPublishedProductsByBrand } from "@/data/shi
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { BrandPageMeta } from "@/components/catalog/BrandPageMeta";
 import { BrandPageHeader } from "@/components/catalog/BrandPageHeader";
-import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
+import { canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { brandTitleTh } from "@/i18n/search-titles";
+import { BRAND_HEAD_TH, formatPriceTh } from "@/i18n/search-head-copy";
+import { getCatalogItem } from "@/lib/catalog-index";
 
 export function generateStaticParams() {
   return brands.map((b) => ({ brand: b.slug }));
@@ -25,6 +27,18 @@ export async function generateMetadata({ params }: { params: Promise<{ brand: st
   // primary navigation either — see brand-visibility.ts. Re-evaluates automatically as soon as the
   // brand gets a real product; never a permanent exclusion.
   const isEmpty = getProductsByBrand(brand.id).length === 0 && getPublishedProductsByBrand(brand.id).length === 0;
+  // SEO round ก rows A9–A16 (owner เคาะ 2026-09-21): four brand pages name the models people
+  // search for and their prices. The price is read from the catalog index here, at build, through
+  // the same source the product page shows — never typed into the copy (owner: 6 of the 8 prices
+  // are estimates the stock API will overwrite). No approved price → that fragment is dropped.
+  const headOverride = BRAND_HEAD_TH[brandSlug]?.(brandHeadPriceOf);
+  if (headOverride && !isEmpty) {
+    return {
+      title: { absolute: headOverride.title },
+      description: headOverride.description,
+      ...canonicalFor(`/brands/${brandSlug}`),
+    };
+  }
   // Round 30.3ข: search-facing text is Thai (see i18n/search-titles.ts). A brand with nothing on
   // the storefront keeps its plain English title/description — the page is noindex anyway and
   // "ของแท้ทุกรุ่นที่ร้านมี" would be an empty promise there.
@@ -36,6 +50,13 @@ export async function generateMetadata({ params }: { params: Promise<{ brand: st
   };
 }
 
+/** Catalog price for the brand-page head copy — the owner-approved selling price the product page
+ *  itself shows, formatted with the THAI_STYLE thousands comma; null when there is none. */
+function brandHeadPriceOf(slug: string): string | null {
+  const price = getCatalogItem(slug)?.sellingPrice ?? null;
+  return price === null ? null : formatPriceTh(price);
+}
+
 export default async function BrandPage({ params }: { params: Promise<{ brand: string }> }) {
   const { brand: brandSlug } = await params;
   const brand = getBrand(brandSlug);
@@ -45,9 +66,19 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
   const products = getProductsByBrand(brand.id);
   const publishedProducts = getPublishedProductsByBrand(brand.id);
   const pilotProducts = getPilotProductsByBrand(brand.id);
+  // Batch 4: CollectionPage + Home → Brand trail, from the same title/description strings
+  // generateMetadata above returns (same isEmpty rule, so an empty brand's schema says what its
+  // <title> says). Nothing visible changes.
+  const isEmpty = products.length === 0 && publishedProducts.length === 0;
+  const brandPath = `/brands/${brandSlug}`;
+  const headOverride = isEmpty ? undefined : BRAND_HEAD_TH[brandSlug]?.(brandHeadPriceOf);
+  const brandPageName = headOverride?.title ?? (isEmpty ? brand.name : brandTitleTh(brand.name));
+  const brandPageDescription = headOverride?.description ?? brand.descriptionTh ?? brand.description;
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: brandPageName, description: brandPageDescription, path: brandPath })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(brandPageName, brandPath)) }} />
       <BrandPageHeader brand={brand} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
         <CatalogBrowser products={products} publishedProducts={publishedProducts} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} />

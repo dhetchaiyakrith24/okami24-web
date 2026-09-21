@@ -8,6 +8,7 @@ import { AgeGate } from "@/components/layout/AgeGate";
 import { LineContact } from "@/components/layout/LineContact";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SITE_URL } from "@/lib/seo";
+import { HOME_HEAD_TH } from "@/i18n/search-head-copy";
 import "./globals.css";
 
 const displayFont = Barlow_Condensed({
@@ -35,12 +36,21 @@ const monoFont = IBM_Plex_Mono({
 // พอตใช้แล้วทิ้ง not ดิสโพส.
 const ORDER_CHANNEL_CLAUSE = ORDERING_ENABLED ? "สั่งซื้อบนเว็บได้เลย" : "ช่วงนี้สั่งซื้อผ่าน LINE @okm24";
 
+// SEO round ก (owner เคาะ 2026-09-21, rows A1/A2 of the batch-2 table): while ordering is off the
+// homepage title/description are the approved strings in search-head-copy.ts ("OKami24 (OKM)" so
+// the short brand word "okm" — no result for this site in Search Console — is tied to the shop; no
+// "น้ำยา" because that category has nothing on the storefront, same ruling as /products). The
+// ordering-on wording was never re-approved, so it is the pre-round string, untouched.
+const HOME_DESCRIPTION = ORDERING_ENABLED
+  ? `OKami24: พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา ของแท้ ราคาตรง ${ORDER_CHANNEL_CLAUSE} ส่งไว มีเลขติดตาม สอบถามหรือให้ช่วยเลือก ทัก LINE @okm24`
+  : HOME_HEAD_TH.description;
+
 export const metadata: Metadata = {
   title: {
-    default: "OKami24 — ของแท้ ราคาตรง บริการจริง",
+    default: HOME_HEAD_TH.title,
     template: "%s — OKami24",
   },
-  description: `OKami24: พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา ของแท้ ราคาตรง ${ORDER_CHANNEL_CLAUSE} ส่งไว มีเลขติดตาม สอบถามหรือให้ช่วยเลือก ทัก LINE @okm24`,
+  description: HOME_DESCRIPTION,
   // The real production domain is TBD (see docs/BUSINESS_SOURCE_OF_TRUTH.md §19) — never
   // hardcoded here. See src/lib/seo.ts's SITE_URL: reads `SITE_URL` from the environment, falls
   // back to localhost in dev, and refuses to build at all in production without it.
@@ -52,9 +62,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   openGraph: {
     title: "OKami24 — ของแท้ ราคาตรง บริการจริง",
+    // Owner 2026-09-21 (batch-2 table, extra row): the shared-link description is the same
+    // string as the meta description above, so a link preview never contradicts the search result.
     description: ORDERING_ENABLED
       ? "พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา ของแท้ ราคาตรง บริการจริง — สั่งซื้อบนเว็บได้เลย หรือทัก LINE @okm24"
-      : "พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา ของแท้ ราคาตรง บริการจริง — ช่วงนี้สั่งซื้อผ่าน LINE @okm24",
+      : HOME_HEAD_TH.description,
     siteName: "OKami24",
     type: "website",
   },

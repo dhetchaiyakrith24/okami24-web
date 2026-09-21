@@ -7,8 +7,9 @@ import { ArticleBody } from "@/components/content/ArticleBody";
 import { GuideDetailPageHeader } from "@/components/content/GuideDetailPageHeader";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import type { Product } from "@/types/catalog";
-import { canonicalFor } from "@/lib/seo";
+import { articleJsonLd, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
+import { GUIDE_DESCRIPTION_HEAD_TH } from "@/i18n/search-head-copy";
 
 export function generateStaticParams() {
   return guides.map((g) => ({ slug: g.slug }));
@@ -23,7 +24,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // page already shows as its H1 (GuideDetailPageHeader) is reused here; English stays the
   // fallback for a guide with no Thai copy.
   const th = GUIDES_COPY_TH[guide.id];
-  return { title: th?.title ?? guide.title, description: th?.dek ?? guide.dek, ...canonicalFor(`/guides/${slug}`) };
+  // SEO round ก rows C17/C18 (owner เคาะ 2026-09-21): a head-only description where the table
+  // gave one; the dek the page shows is unchanged.
+  return { title: th?.title ?? guide.title, description: GUIDE_DESCRIPTION_HEAD_TH[guide.id] ?? th?.dek ?? guide.dek, ...canonicalFor(`/guides/${slug}`) };
 }
 
 export default async function GuideDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -32,9 +35,15 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
   if (!guide) notFound();
 
   const related = (guide.relatedProductSlugs ?? []).map((s) => getProduct(s)).filter((p): p is Product => Boolean(p));
+  // Batch 4: Article + Home → Guide trail from the same Thai title/dek generateMetadata returns.
+  const th = GUIDES_COPY_TH[guide.id];
+  const guidePath = `/guides/${slug}`;
+  const guideTitle = th?.title ?? guide.title;
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: guideTitle, description: GUIDE_DESCRIPTION_HEAD_TH[guide.id] ?? th?.dek ?? guide.dek, path: guidePath })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(guideTitle, guidePath)) }} />
       <GuideDetailPageHeader id={guide.id} title={guide.title} dek={guide.dek} readingTimeMin={guide.readingTimeMin} />
       <Container className="max-w-3xl py-12 lg:py-16">
         <ArticleBody

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { SearchTool } from "@/components/tools/SearchTool";
 import { SearchPageHeader } from "@/components/tools/SearchPageHeader";
-import { canonicalFor, NOINDEX_FOLLOW } from "@/lib/seo";
+import { NOINDEX_FOLLOW, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "ค้นหาสินค้า",
@@ -18,6 +18,7 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
   const { q } = await searchParams;
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/search")) }} />
       <SearchPageHeader />
       <Container className="py-12 lg:py-16">
         <SearchTool initialQuery={q ?? ""} />

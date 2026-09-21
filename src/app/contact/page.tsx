@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { canonicalFor } from "@/lib/seo";
+import { canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
+import { CONTACT_HEAD_TH } from "@/i18n/search-head-copy";
 import { ContactContent } from "@/components/content/service-pages/ContactContent";
 
 // Channels: BSOT §3 / src/data/contact.ts. Hours (24/7), email and "LINE = backup order channel"
@@ -7,11 +8,17 @@ import { ContactContent } from "@/components/content/service-pages/ContactConten
 // Still open (BSOT §11): e-commerce registration and legally required seller details.
 // Body rendered in th/en/zh by ContactContent from src/i18n/service-pages/contact.tsx.
 export const metadata: Metadata = {
-  title: "ติดต่อเรา",
-  description: "ติดต่อ OKami24 — LINE @okm24 ทักได้ทุกวัน 24 ชั่วโมง แอดมินตอบเอง ไม่ใช่บอท · อีเมล okamisalt@gmail.com สำหรับเรื่องเอกสารและข้อมูลส่วนบุคคล",
+  // SEO round ก rows A5/A6 (owner เคาะ 2026-09-21) — search-head-copy.ts holds the strings.
+  title: { absolute: CONTACT_HEAD_TH.title },
+  description: CONTACT_HEAD_TH.description,
   ...canonicalFor("/contact"),
 };
 
 export default function ContactPage() {
-  return <ContactContent />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(CONTACT_HEAD_TH.title, "/contact")) }} />
+      <ContactContent />
+    </>
+  );
 }

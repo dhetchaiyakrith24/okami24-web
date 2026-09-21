@@ -3,7 +3,7 @@ import { technologyEntries } from "@/data/technology";
 import { Container } from "@/components/ui/Container";
 import { TechnologyPageHeader } from "@/components/content/TechnologyPageHeader";
 import { TechnologyEntryGrid } from "@/components/content/TechnologyEntryGrid";
-import { canonicalFor } from "@/lib/seo";
+import { canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "เทคโนโลยีพอต: คอยล์ mesh ชิป และจอทัชสกรีน",
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function TechnologyPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(metadata.title as string, "/technology")) }} />
       <TechnologyPageHeader />
       <Container className="py-12 lg:py-16">
         <TechnologyEntryGrid entries={technologyEntries} />
