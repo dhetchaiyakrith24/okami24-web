@@ -14,8 +14,8 @@
 import { brands } from "@/data/brands";
 import { categories } from "@/data/categories";
 import { families } from "@/data/families";
-import { allProducts, legacySearchText, searchProducts } from "@/data/products";
-import { TERM_SEARCH_ALIASES } from "@/data/search-aliases";
+import { allProducts, hiddenProducts, legacySearchText, searchProducts } from "@/data/products";
+import { DORMANT_ALIAS_TERMS, TERM_SEARCH_ALIASES } from "@/data/search-aliases";
 import { getPublishedProducts, publishedSearchText, searchPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { normalizeQuery, phraseMatches, queryScore, rankByQuery } from "@/lib/catalog-search";
 import { readFileSync, readdirSync, statSync } from "node:fs";
@@ -120,8 +120,32 @@ export function runCatalogSearchContractTests(): CatalogSearchContractResult[] {
   for (const [alias, terms] of Object.entries(TERM_SEARCH_ALIASES)) {
     const viaAlias = search(alias);
     const viaTerms = all.filter((e) => terms.some((t) => phraseMatches(t, e.text))).map((e) => e.hit.slug);
-    check(`alias "${alias}" = ${terms.join(" | ")} (${viaTerms.length})`, viaTerms.length > 0 && sameSet(viaAlias, viaTerms), viaTerms.length === 0 ? "the English term itself finds nothing — dead alias" : sameSet(viaAlias, viaTerms) ? "same set" : `alias: ${viaAlias.join(",")} · term: ${viaTerms.join(",")}`);
+    // Round "leftovers" (2026-09-22): an alias whose every term is declared dormant is held to
+    // the opposite bargain — see DORMANT_ALIAS_TERMS in search-aliases.ts for why, and for what
+    // has to happen on the day the brand's photo lands.
+    if (terms.every((t) => DORMANT_ALIAS_TERMS.includes(t))) {
+      const waiting = hiddenProducts.filter((p) => terms.includes(p.brandId));
+      const ok = viaTerms.length === 0 && viaAlias.length === 0 && waiting.length > 0;
+      check(
+        `dormant alias "${alias}" = ${terms.join(" | ")} — waiting for a storefront product`,
+        ok,
+        waiting.length === 0
+          ? `no hidden product has brandId ${terms.join("/")} — the term is misspelled, or the row in DORMANT_ALIAS_TERMS outlived its product`
+          : viaTerms.length > 0
+            ? `${terms.join("/")} now finds ${viaTerms.join(", ")} — the wait is over: delete "${terms.join('", "')}" from DORMANT_ALIAS_TERMS so this alias is checked like every other`
+            : `dormant, waiting on ${waiting.map((p) => `${p.slug} (${p.hiddenFromStorefront?.reason ?? "hidden"})`).join("; ")}`
+      );
+    } else {
+      check(`alias "${alias}" = ${terms.join(" | ")} (${viaTerms.length})`, viaTerms.length > 0 && sameSet(viaAlias, viaTerms), viaTerms.length === 0 ? "the English term itself finds nothing — dead alias" : sameSet(viaAlias, viaTerms) ? "same set" : `alias: ${viaAlias.join(",")} · term: ${viaTerms.join(",")}`);
+    }
     check(`alias key "${alias}" is stored normalised`, normalizeQuery(alias) === alias, "");
+  }
+  // A term may not sit in the dormant list without an alias that uses it — otherwise the list
+  // becomes a place where a deleted alias's excuse lives on.
+  {
+    const used = new Set(Object.values(TERM_SEARCH_ALIASES).flat());
+    const orphans = DORMANT_ALIAS_TERMS.filter((t) => !used.has(t));
+    check(`every dormant term is still used by an alias (${DORMANT_ALIAS_TERMS.length})`, orphans.length === 0, orphans.join(", ") || DORMANT_ALIAS_TERMS.join(", "));
   }
 
   // ---- 3b. Every brand with a product on the storefront has at least one Thai alias (owner,
