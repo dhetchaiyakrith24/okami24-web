@@ -109,5 +109,10 @@ drew after collecting samples over a full round:
 **Keep:**
 - the full before → after table, every row — that *is* the work, not overhead.
 
+Answer, in item 3, the question `docs/TEMPLATES.md` (ค)-8 makes the owner ask at every close:
+which parts of this round's instruction prescribed a method that was not needed, or stood in the
+way of a better one. Name the line and what it cost; "nothing" is a valid answer and takes one
+line.
+
 Attach the chain-10 record (old text in full / new text in full / what was lost) whenever a rule
 was merged or removed — the one exception to the length cap.
