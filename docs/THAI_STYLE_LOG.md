@@ -956,3 +956,125 @@ tagline 3 ตัว (ก ทั้งหมด): caliburn-g5-lite "แพลต�
 | "...ที่เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา **มีครบทั้งเครื่องและหัวพอต**" | "...ที่เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา **ที่ร้านมีทั้งตัวเครื่องและหัวพอต**" | ประโยคเดิมเข้าข่าย "ห้ามอ้างความครบของสต๊อก" (กติกา gate ล็อกไว้ที่รอบ SEO ข ก้อน 3–4 ด้านบน — "all/only/ทั้งหมด/ทุกรุ่น") เพราะ "ครบ" บอกว่าสต๊อกครบทุกอย่าง ทั้งที่ตรวจได้จริงแค่ว่าร้านมีสองหมวดสินค้านี้ (พอตคิท 3 รุ่น + หัวพอต/คาร์ทริดจ์ 3 รุ่น ใน `src/data/products/salthub.ts`) — ประโยคใหม่ระบุแค่สิ่งที่ catalog ยืนยันได้ และใส่ประธาน "ที่ร้าน" กลับเข้าไป (ประโยคเดิมไม่มีประธาน อ่านเหมือนบอกว่า Zero คือของที่ครบ ไม่ใช่ร้าน) — เจ้าของเลือกตัวเลือก ข-1 จาก 3 ทางที่ writer/thai-copy เสนอ, ไม่มีคำว่า "แท้" (ถ้าจะเติม "แท้" ทีหลังต้องเป็นการกวาดทั้ง 11 คำโปรยแบรนด์ ไม่ใช่จุดนี้จุดเดียว) |
 
 พิสูจน์: ประโยคเดิมหายจากทั้ง 18 หน้าที่ field นี้ไปถึงได้ (`/about` + `/brands/[slug]` ทั้ง 17 หน้า) เหลือ 0/18 · ประโยคใหม่ขึ้นเฉพาะ `/about` และ `/brands/salthub` (2/18) ตรงกับตำแหน่งเดิม · `/brands/salthub` ไม่เคยดึง `descriptionTh` เข้า head/JSON-LD อยู่แล้ว (มี `BRAND_HEAD_TH` override) — checker ตรวจซ้ำอิสระได้ผลตรงกันทั้งหมด (`_incoming/about3lang/b2-evidence.md`, `checker-b2-result/round2-brands-ts.txt`).
+
+---
+
+### รอบ 7 "SEO ค" ก้อน B2 (2026-09-23) — title 58 หน้า + description 11 หน้า ตาม key→page map (main agent ตัดสินเองตาม 13.10 #3 เพราะเจ้าของหลับตอนก้อนนี้ปิด · thai-copy ตรวจ 20 แถว `_incoming/seo-c/thai-copy-1-result.md` + seo-auditor ตรวจ `_incoming/seo-c/seo-auditor-1-result.md` · checker PASS 5/5 อิสระ `_incoming/seo-c/checker-b2-result/summary.md` บน HEAD `deebe5b` + diff md5 `3aa8423a969232bc7a038474602b2927` = ต้นไม้ที่กลายเป็น `ba32d04` — **แถวข้างล่างยังไม่ผ่านเจ้าของเคาะทีละแถว** ของที่เป็นรสนิยม/ลูกค้าเห็นชัดถูกพักไว้ที่ B5 owner set แทน ไม่ใช่ landed ในก้อนนี้)
+
+ที่มา (อ่านตรงจากไฟล์ ไม่พิมพ์จากความจำ ตามที่บรีฟสั่ง): ก่อน = `_incoming/seo-c/head-audit.tsv` (ของจริงบนเว็บก่อนแก้ ที่ `614980d`) · หลัง = `_incoming/seo-c/b2-after/head-audit.tsv` (build บนต้นไม้ที่กลายเป็น `ba32d04`) · รายชื่อหน้าที่เปลี่ยนมาจาก `_incoming/seo-c/checker-b2-result/title-changed-list.txt` (58 หน้า) และ `desc-changed-list.txt` (11 หน้า)
+
+**คำที่เข้า head copy ใหม่ตามเจ้าของเคาะ 2026-09-23 (ผ่าน Cowork) — head copy เท่านั้น ยังไม่ใช่แถวล็อกใน THAI_STYLE §3 แบบเดียวกับคำรอบ SEO ก (ดูแถวรอบ SEO ก ด้านบน):** "บุหรี่ไฟฟ้า" (เดิม title/H1 มีแค่ "พอตไฟฟ้า" คำเดียว) · "อุปกรณ์บุหรี่ไฟฟ้า" (คำใหม่ใน description หน้า `/products`)
+
+#### A. หน้าแรก + หน้ารวมสินค้า + หน้าน้ำยา
+
+| หน้า | ฟิลด์ | ก่อน | หลัง |
+|---|---|---|---|
+| `/` | title | OKami24 (OKM) — พอตของแท้ ราคาตรง บริการจริง | OKami24 (OKM) ร้านพอต บุหรี่ไฟฟ้า ของแท้ ราคาตรง บริการจริง |
+| `/` | description | OKami24 (OKM) ร้านพอตของแท้ ราคาตรง บริการจริง มีพอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต และคอยล์ บอกราคาทุกตัว สั่งทาง LINE @okm24 แอดมินตอบเอง ไม่ใช่บอท | OKami24 (OKM) ร้านพอตไฟฟ้าและบุหรี่ไฟฟ้า ของแท้ ราคาตรง มีพอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต และคอยล์ บอกราคาทุกตัว สั่งทาง LINE @okm24 แอดมินตอบเอง ไม่ใช่บอท |
+| `/products` | description | สินค้าทั้งหมด 53 รุ่นในหน้าเดียว พอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS ของแท้ บอกราคาทุกตัว ค้นด้วยชื่อรุ่นได้ สั่งทาง LINE @okm24 | อุปกรณ์บุหรี่ไฟฟ้าและพอตของแท้ 53 รุ่นในหน้าเดียว พอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS บอกราคาทุกตัว ค้นด้วยชื่อรุ่นได้ สั่งทาง LINE @okm24 |
+| `/e-liquid` | description | น้ำยาแบ่งเป็น 5 กลุ่มรสชาติ ผลไม้ เมนทอลและความเย็น ของหวาน เครื่องดื่ม และยาสูบ แต่ละกลุ่มให้รสแบบไหน เหมาะกับใคร ส่วนน้ำยาที่มีขายจริงดูในหมวด E-Liquid | น้ำยาแบ่งเป็น 5 กลุ่มรสชาติ ผลไม้ เมนทอลและความเย็น ของหวาน เครื่องดื่ม และยาสูบ แต่ละกลุ่มให้รสแบบไหน เหมาะกับใคร ยังไม่มีขายหน้าร้าน ถามทาง LINE @okm24 ได้ |
+
+เหตุผลกลุ่ม A: (1) หน้าแรก — เจ้าของเคาะ 2026-09-23 ให้ใส่ทั้ง "พอตไฟฟ้า" และ "บุหรี่ไฟฟ้า" (2) `/products` — thai-copy: "อุปกรณ์ pod" ไม่มีร้านไหนพูดแบบนั้นจริง เปลี่ยนเป็น "อุปกรณ์บุหรี่ไฟฟ้าและพอต" คำของเจ้าของยังอยู่ผ่าน "พอต" + "อุปกรณ์บุหรี่ไฟฟ้า" (3) `/e-liquid` — ประโยคเดิมชี้ลูกค้าไปหมวด E-Liquid ที่ซ่อนอยู่และว่างเปล่า (หลงทาง) ตัดออก ใส่ทางออกจริง (ทักไลน์)
+
+#### B. หมวดสินค้า 6 หมวด — title เติม "ของแท้ บอกราคาทุกรุ่น" (รูปสั้น "ของแท้" อย่างเดียวถ้ายาวเกิน 60 ตัว)
+
+| หน้า | ก่อน | หลัง |
+|---|---|---|
+| `/products/pod-systems` | Pod System / พอตซิสเต็ม — OKami24 | Pod System / พอตซิสเต็ม ของแท้ บอกราคาทุกรุ่น — OKami24 |
+| `/products/pod-kits` | Pod Kit / พอตคิท — OKami24 | Pod Kit / พอตคิท ของแท้ บอกราคาทุกรุ่น — OKami24 |
+| `/products/disposables` | Disposable / พอตใช้แล้วทิ้ง — OKami24 | Disposable / พอตใช้แล้วทิ้ง ของแท้ บอกราคาทุกรุ่น — OKami24 |
+| `/products/pods-cartridges` | Pods & Cartridges / หัวพอต — OKami24 | Pods & Cartridges / หัวพอต ของแท้ บอกราคาทุกรุ่น — OKami24 |
+| `/products/coils-accessories` | Coils & Accessories / คอยล์และอุปกรณ์เสริม — OKami24 | Coils & Accessories / คอยล์และอุปกรณ์เสริม ของแท้ — OKami24 |
+| `/products/heated-tobacco-devices` | Heated Tobacco Devices / เครื่องอุ่นยาสูบ — OKami24 | Heated Tobacco Devices / เครื่องอุ่นยาสูบ ของแท้ — OKami24 |
+
+(2 แถวสุดท้ายใช้รูปสั้นเพราะ label ยาวอยู่แล้ว ต่อ "ของแท้ บอกราคาทุกรุ่น" เต็มจะเกิน 60 ตัวอักษร)
+
+#### C. ราคาใน title สินค้า 26 หน้า (ไม่ใช่คอยล์/IQOS) — เติมเฉพาะราคา อ่านสดจาก catalog ไม่เคยพิมพ์เอง, og:title ไม่แตะ
+
+| หน้า | ก่อน | หลัง |
+|---|---|---|
+| `/products/caliburn-g4-pro` | UWELL CALIBURN G4 PRO พอตซิสเต็ม ของแท้ — OKami24 | UWELL CALIBURN G4 PRO พอตซิสเต็ม ของแท้ ฿1,190 — OKami24 |
+| `/products/caliburn-g4` | UWELL CALIBURN G4 พอตซิสเต็ม ของแท้ — OKami24 | UWELL CALIBURN G4 พอตซิสเต็ม ของแท้ ฿1,090 — OKami24 |
+| `/products/caliburn-g4-mini` | UWELL CALIBURN G4 MINI พอตซิสเต็ม ของแท้ — OKami24 | UWELL CALIBURN G4 MINI พอตซิสเต็ม ของแท้ ฿690 — OKami24 |
+| `/products/caliburn-g4-classic` | UWELL CALIBURN G4 CLASSIC พอตซิสเต็ม ของแท้ — OKami24 | UWELL CALIBURN G4 CLASSIC พอตซิสเต็ม ของแท้ ฿1,090 — OKami24 |
+| `/products/caliburn-g3-pro` | UWELL CALIBURN G3 PRO พอตซิสเต็ม ของแท้ — OKami24 | UWELL CALIBURN G3 PRO พอตซิสเต็ม ของแท้ ฿1,090 — OKami24 |
+| `/products/argus-g4-mini` | VOOPOO ARGUS G4 mini พอตคิท ของแท้ — OKami24 | VOOPOO ARGUS G4 mini พอตคิท ของแท้ ฿890 — OKami24 |
+| `/products/argus-p3` | VOOPOO ARGUS P3 พอตคิท ของแท้ — OKami24 | VOOPOO ARGUS P3 พอตคิท ของแท้ ฿1,090 — OKami24 |
+| `/products/argus-g3-mini` | VOOPOO ARGUS G3 mini พอตคิท ของแท้ — OKami24 | VOOPOO ARGUS G3 mini พอตคิท ของแท้ ฿790 — OKami24 |
+| `/products/drag-x3` | VOOPOO DRAG X3 พอตคิท ของแท้ — OKami24 | VOOPOO DRAG X3 พอตคิท ของแท้ ฿1,590 — OKami24 |
+| `/products/vinci-s` | VOOPOO VINCI S พอตคิท ของแท้ — OKami24 | VOOPOO VINCI S พอตคิท ของแท้ ฿1,290 — OKami24 |
+| `/products/vmate-i3` | VOOPOO VMATE i3 พอตคิท ของแท้ — OKami24 | VOOPOO VMATE i3 พอตคิท ของแท้ ฿690 — OKami24 |
+| `/products/m-bar-10k` | SALTHUB M BAR 10K พอตใช้แล้วทิ้ง ของแท้ — OKami24 | SALTHUB M BAR 10K (Marbo) ของแท้ ฿379 — OKami24 |
+| `/products/m-bar-9k` | SALTHUB M BAR 9K พอตใช้แล้วทิ้ง ของแท้ — OKami24 | SALTHUB M BAR 9K (Marbo) ของแท้ ฿349 — OKami24 |
+| `/products/m-switch-kit` | SALTHUB M SWITCH KIT พอตคิท ของแท้ — OKami24 | SALTHUB M SWITCH KIT พอตคิท ของแท้ ฿550 — OKami24 |
+| `/products/m-switch-pod` | SALTHUB M SWITCH POD ของแท้ — OKami24 | SALTHUB M SWITCH POD ของแท้ ฿349 — OKami24 |
+| `/products/m-bar-pod` | SALTHUB M BAR POD ของแท้ — OKami24 | SALTHUB M BAR POD (Marbo) หัวพอต ของแท้ ฿129 — OKami24 |
+| `/products/zero-pro` | SALTHUB ZERO PRO พอตคิท ของแท้ — OKami24 | SALTHUB ZERO PRO พอตคิท ของแท้ ฿990 — OKami24 |
+| `/products/zero-nano` | SALTHUB ZERO NANO พอตคิท ของแท้ — OKami24 | SALTHUB ZERO NANO พอตคิท ของแท้ ฿590 — OKami24 |
+| `/products/zero-cartridge` | SALTHUB ZERO CARTRIDGE หัวพอต ของแท้ — OKami24 | SALTHUB ZERO CARTRIDGE หัวพอต ของแท้ ฿129 — OKami24 |
+| `/products/relx-smash-go-12k` | RELX SMASH GO 12K พอตใช้แล้วทิ้ง ของแท้ — OKami24 | RELX SMASH GO 12K พอตใช้แล้วทิ้ง ของแท้ ฿299 — OKami24 |
+| `/products/joiway-f3` | JOIWAY F3 พอตใช้แล้วทิ้ง ของแท้ — OKami24 | JOIWAY F3 พอตใช้แล้วทิ้ง ของแท้ ฿329 — OKami24 |
+| `/products/joiway-f4` | JOIWAY F4 พอตใช้แล้วทิ้ง ของแท้ — OKami24 | JOIWAY F4 พอตใช้แล้วทิ้ง ของแท้ ฿349 — OKami24 |
+| `/products/mood-monster-14k` | MOOOD Monster 14K Puffs พอตใช้แล้วทิ้ง ของแท้ — OKami24 | MOOOD Monster 14K Puffs พอตใช้แล้วทิ้ง ของแท้ ฿350 — OKami24 |
+| `/products/muro-3ml` | Muro 3ML หัวพอต ของแท้ — OKami24 | Muro 3ML หัวพอต ของแท้ ฿99 — OKami24 |
+| `/products/muro-sc-8000` | Muro SC 8000 Puffs พอตใช้แล้วทิ้ง ของแท้ — OKami24 | Muro SC 8000 Puffs พอตใช้แล้วทิ้ง ของแท้ ฿259 — OKami24 |
+| `/products/muro-connector-20k` | Muro Connector 20K พอตใช้แล้วทิ้ง ของแท้ — OKami24 | Muro Connector 20K พอตใช้แล้วทิ้ง ของแท้ ฿259 — OKami24 |
+
+7 หน้าที่ "พัก" ราคาไว้จนถึง 2026-10-05 (`TITLE_PRICE_HOLD_UNTIL_2026_10_05` ใน `search-head-copy.ts`, title/og:title byte-identical ก่อน/หลัง — checker ยืนยัน): `drag-6` · `drag-s3` · `caliburn-g5-lite-se` · `m-bar-15k` · `caliburn-g5` · `caliburn-g5-lite` · `argus-g4` — ไม่อยู่ในตารางนี้เพราะไม่เปลี่ยน
+
+#### D. คอยล์ / หัวพอตเปล่า 14 หน้า — thai-copy เลือกคำสั้นกว่า (คำประเภทขึ้นก่อน, ตัด "คอยล์ในตัว" ออกจาก title — คำนี้เข้า description แทนตามกติกาชื่อหัวพอต) + ราคา
+
+| หน้า | ก่อน | หลัง |
+|---|---|---|
+| `/products/coil-1` | VOOPOO Coil Vinci ของแท้ — OKami24 | คอยล์ VOOPOO Vinci สำหรับ VINCI Pod ของแท้ ฿130 — OKami24 |
+| `/products/coil-38` | VOOPOO Coil TPP ของแท้ — OKami24 | คอยล์ VOOPOO TPP สำหรับ DRAG 3 ของแท้ ฿450 — OKami24 |
+| `/products/coil-53` | UWELL Coil Caliburn G2 ของแท้ — OKami24 | คอยล์ UWELL Caliburn G2 ของแท้ ฿550 — OKami24 |
+| `/products/coil-55` | UWELL หัวแทงค์ Caliburn G2 ของแท้ — OKami24 | หัวพอตเปล่า UWELL Caliburn G2 ของแท้ ฿299 — OKami24 |
+| `/products/coil-56` | หัวเปล่า Voopoo PnP-X ของแท้ — OKami24 | หัวพอตเปล่า VOOPOO PnP-X ของแท้ ฿300 — OKami24 |
+| `/products/coil-68` | VOOPOO หัวเปล่า ITO-X ของแท้ — OKami24 | หัวพอตเปล่า VOOPOO ITO-X ของแท้ ฿300 — OKami24 |
+| `/products/coil-70` | คอยล์ Dotmod Aio V2 ของแท้ — OKami24 | คอยล์ DOTMOD dotAIO V2 ของแท้ ฿390 — OKami24 |
+| `/products/coil-72` | VOOPOO คอยล์ Vmate Infinity Edition ของแท้ — OKami24 | หัวพอต VOOPOO Vmate Infinity Edition ของแท้ ฿350 — OKami24 |
+| `/products/coil-74` | UWELL หัวเปล่า Caliburn X ของแท้ — OKami24 | หัวพอตเปล่า UWELL Caliburn X ของแท้ ฿250 — OKami24 |
+| `/products/coil-83` | VOOPOO หัวเปล่า Argus P1 ของแท้ — OKami24 | หัวพอตเปล่า VOOPOO Argus P1 ของแท้ ฿250 — OKami24 |
+| `/products/coil-87` | Voopoo TPP Pod ของแท้ — OKami24 | หัวพอตเปล่า VOOPOO TPP Pod ของแท้ ฿250 — OKami24 |
+| `/products/coil-89` | RINCOE Coil Jellybox V ของแท้ — OKami24 | หัวพอต RINCOE Jellybox V ของแท้ ฿350 — OKami24 |
+| `/products/coil-94` | UWELL คอยล์ Caliburn G4&G3 Series ของแท้ — OKami24 | หัวพอต UWELL Caliburn G4 · G3 Series ของแท้ ฿450 — OKami24 |
+| `/products/coil-54` | NEVOKS หัวเปล่า Feelin Mini ของแท้ — OKami24 | หัวพอตเปล่า NEVOKS Feelin Mini ของแท้ ฿250 — OKami24 |
+
+#### E. IQOS / pod 4 หน้า — เติมราคาอย่างเดียว ชื่อรุ่นคงเดิม (thai-copy 3.4: `<title>` ต่างจาก Product.name/H1 ของหน้านี้อยู่แล้ว เป็นเรื่องรอบข้อมูล ไม่ใช่ head hack)
+
+| หน้า | ก่อน | หลัง |
+|---|---|---|
+| `/products/iqosheet-16` | IQOS iluma Prime ของแท้ — OKami24 | IQOS iluma Prime ของแท้ ฿4,900 — OKami24 |
+| `/products/iqosheet-18` | Iqos iluma Standard ของแท้ — OKami24 | Iqos iluma Standard ของแท้ ฿3,900 — OKami24 |
+| `/products/pod-159` | เครื่อง Esko Bar Switch 20k ของแท้ — OKami24 | เครื่อง Esko Bar Switch 20k ของแท้ ฿549 — OKami24 |
+| `/products/pod-180` | WOTOFO Nexbar Clear 18k พอตใช้แล้วทิ้ง ของแท้ — OKami24 | WOTOFO Nexbar Clear 18k พอตใช้แล้วทิ้ง ของแท้ ฿359 — OKami24 |
+
+#### F. แบรนด์ใหม่ 7 หน้า — title/description ชุดใหม่ทั้งหมด (เดิม title ซ้ำกับ title สินค้าตัวเดียวของแบรนด์นั้น — seo-auditor ชี้ให้แยกคำแบรนด์ออกจากคำรุ่น)
+
+| หน้า | ฟิลด์ | ก่อน | หลัง |
+|---|---|---|---|
+| `/brands/rincoe` | title | RINCOE ของแท้ทุกรุ่นที่ร้านมี — OKami24 | RINCOE หัวพอต ของแท้ ฿350 — OKami24 (OKM) |
+| `/brands/rincoe` | description | RINCOE ผู้ผลิตพอตตระกูล Jellybox ที่ร้านตอนนี้มีหัวพอตแท้สำหรับ Jellybox V | RINCOE ผู้ผลิตพอตตระกูล Jellybox ที่ร้านมีหัวพอตแท้สำหรับ Jellybox V คอยล์ในตัว ราคา ฿350 สั่งทาง LINE @okm24 |
+| `/brands/dotmod` | title | DOTMOD ของแท้ทุกรุ่นที่ร้านมี — OKami24 | DOTMOD คอยล์ ของแท้ ฿390 — OKami24 (OKM) |
+| `/brands/dotmod` | description | DOTMOD ผู้ผลิต dotAIO และคอยล์ dotCoils ที่ร้านตอนนี้มีคอยล์แท้สำหรับ dotAIO V2 | DOTMOD ผู้ผลิต dotAIO และคอยล์ dotCoils ที่ร้านมีคอยล์แท้สำหรับ dotAIO V2 ราคา ฿390 สั่งทาง LINE @okm24 |
+| `/brands/esko-bar` | title | ESKO BAR ของแท้ทุกรุ่นที่ร้านมี — OKami24 | ESKO BAR เครื่องระบบสวิตช์ ของแท้ ฿549 — OKami24 (OKM) |
+| `/brands/esko-bar` | description | ESKO BAR แบรนด์พอตใช้แล้วทิ้งและเครื่องระบบสวิตช์ ที่ร้านมี Esko Bar Switch 20K เครื่องที่เปลี่ยนแค่หัวพอตบรรจุสำเร็จ ไม่ต้องเติมน้ำยา | ESKO BAR แบรนด์พอตใช้แล้วทิ้งและเครื่องระบบสวิตช์ ที่ร้านมี Esko Bar Switch 20K เครื่องที่เปลี่ยนแค่หัวพอตบรรจุสำเร็จ ของแท้ ราคา ฿549 สั่งทาง LINE @okm24 |
+| `/brands/nevoks` | title | NEVOKS ของแท้ทุกรุ่นที่ร้านมี — OKami24 | NEVOKS หัวพอตเปล่า ของแท้ ฿250 — OKami24 (OKM) |
+| `/brands/nevoks` | description | NEVOKS ผู้ผลิตพอตซิสเต็มตระกูล FEELIN ที่ร้านมีหัวพอตเปล่าสำหรับ Feelin Mini | NEVOKS ผู้ผลิตพอตซิสเต็มตระกูล FEELIN ที่ร้านมีหัวพอตเปล่าสำหรับ Feelin Mini ของแท้ ราคา ฿250 สั่งทาง LINE @okm24 |
+| `/brands/wotofo` | title | WOTOFO ของแท้ทุกรุ่นที่ร้านมี — OKami24 | WOTOFO พอตใช้แล้วทิ้ง ของแท้ ฿359 — OKami24 (OKM) |
+| `/brands/wotofo` | description | WOTOFO แบรนด์ฮาร์ดแวร์ที่ขยายมาทำพอตใช้แล้วทิ้งสาย nexBAR ที่ร้านมี nexBAR 18K | WOTOFO เจ้าของพอตใช้แล้วทิ้งสาย nexBAR ที่ร้านมีรุ่น 18K ของแท้ ราคา ฿359 สั่งทาง LINE @okm24 |
+| `/brands/iqos` | title | IQOS ของแท้ทุกรุ่นที่ร้านมี — OKami24 | IQOS ของแท้ เครื่องอุ่นยาสูบ ILUMA — OKami24 (OKM) |
+| `/brands/iqos` | description | IQOS ของ Philip Morris International เครื่องอุ่นยาสูบด้วยความร้อน ไม่ใช้น้ำยา ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมี ILUMA i และ ILUMA i PRIME | IQOS ของ Philip Morris International เครื่องอุ่นยาสูบ ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมี ILUMA i ฿3,900 และ ILUMA i PRIME ฿4,900 สั่งทาง LINE @okm24 |
+| `/brands/joiway` | title | JOIWAY ของแท้ทุกรุ่นที่ร้านมี — OKami24 | JOIWAY พอตใช้แล้วทิ้ง F3 · F4 ของแท้ — OKami24 (OKM) |
+| `/brands/joiway` | description | JOIWAY ผู้ผลิตพอตใช้แล้วทิ้ง ที่ร้านมี F3 และ F4 ที่สลับ 2 รสในเครื่องเดียว ซึ่ง OKami24 รีวิวใช้จริงไว้บน YouTube | JOIWAY ผู้ผลิตพอตใช้แล้วทิ้ง ที่ร้านมี F3 ฿329 และ F4 ฿349 สลับ 2 รสในเครื่องเดียว OKami24 รีวิวใช้จริงไว้บน YouTube สั่งทาง LINE @okm24 |
+
+หมายเหตุกลุ่ม F: ทั้ง 7 หน้ายังไม่เคยมี `BRAND_HEAD_TH` override (ต่างจาก relx/salthub/uwell/voopoo ที่มีมาตั้งแต่รอบ SEO ก และ **ไม่แตะในก้อนนี้** — title/description byte-identical ก่อน/หลัง) · เอสโก 20k → 20K ในสตริง head/BSOT §15 เท่านั้น ฟิลด์ `name` (กลุ่ม ก) ไม่แตะ
+
+#### G. guide 1 หน้า — description เติม "ยี่ห้อไหนดี" ตาม key-map, อ่าน HANDOFF 4b "เว้นคำ น้ำยา ออกจาก head copy" ตามตัวอักษร (คำถามว่าตีความถูกไหมอยู่ใน B5 owner set)
+
+| หน้า | ก่อน | หลัง |
+|---|---|---|
+| `/guides/choosing-your-first-pod-system` | Pod system ตัวไหนดี เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมีจริง Caliburn G5 · ARGUS G3 mini · M Bar 9K พร้อมวิธีเช็คของแท้ | Pod system คือพอตที่เติมเองได้ เปลี่ยนหัวพอตได้ ยี่ห้อไหนดี เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมี Caliburn G5 · M Bar 9K |
+
+พิสูจน์ (checker อิสระ, ไม่อ่านจากที่ main agent เขียน): title เปลี่ยน 58 · description เปลี่ยน 11 · H1 เปลี่ยน 0 (นับเองจาก `head-audit.tsv` vs `after/head-audit.tsv` ตรงกับ `b2-final.md`) · title ยาวสุด 60 ตัว · description ยาวสุด 159 ตัว (เพดาน 160) · ราคาใน title/description ตรงกับ `offers.price` ใน JSON-LD 32 จุดสุ่มตรวจ 0 จุดผิด · U+2060/U+00A0 ใน `<head>` และทุกบล็อก JSON-LD ทั้ง 99 หน้า = 0/0 · og-gate 99/99 · jsonld-all 53/53 · scan.js 0/99 (`_incoming/seo-c/checker-b2-result/*.log`).
