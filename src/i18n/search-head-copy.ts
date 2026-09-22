@@ -95,6 +95,21 @@ export function productPriceSuffixTh(price: number): string {
   return `ของแท้ ราคา ${formatPriceTh(price)} สั่งทาง LINE @okm24`;
 }
 
+/**
+ * Round "backlink" batch 2 (owner, 2026-09-22): the share card of a product page carries the
+ * price, because the product link is what an admin sends a customer on LINE. The price already
+ * sat at the END of the 160-character description, where a preview cuts it off; here it joins
+ * the title line, exactly the way the owner-approved brand titles carry theirs
+ * (`BRAND_HEAD_TH` above: "… ของแท้ ฿349"). Same catalog number, no new words.
+ *
+ * og:title only — the `<title>` a search result shows is deliberately untouched, because those
+ * 53 strings were approved in round SEO ก and are being measured in Search Console until
+ * 2026-10-05; changing them would spoil the comparison.
+ */
+export function shareTitleWithPriceTh(title: string, price: number | null): string {
+  return price === null ? title : `${title} ${formatPriceTh(price)}`;
+}
+
 const META_DESCRIPTION_MAX = 160;
 
 /** Words a trimmed description must not end on — a connective, a bare number, or a phrase opener

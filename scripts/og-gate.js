@@ -72,8 +72,24 @@ async function getText(url) {
   // The <title> template adds the site name; a card that leaves it off still reflects its page.
   const withoutSiteName = (t) => (t === null ? null : t.replace(/\s+—\s+OKami24(\s+\(OKM\))?$/, "").trim());
 
+  // Round "backlink" (2026-09-22): a product card's title may add the catalog price that its own
+  // description already states — "… ของแท้ ฿2,490" — because a link preview cuts the description
+  // short and the price is why the admin sent the link. Nothing else may differ: the price has to
+  // be a ฿-number appended to the page's own title AND appear in that page's og:description, so a
+  // typed or stale number cannot slip through here.
+  const titleMatches = (r) => {
+    const bare = withoutSiteName(r.title);
+    if (r.ogTitle === r.title || r.ogTitle === bare) return true;
+    for (const base of [r.title, bare]) {
+      if (base === null || !r.ogTitle.startsWith(base + " ")) continue;
+      const tail = r.ogTitle.slice(base.length + 1).trim();
+      if (/^฿[\d,]+$/.test(tail) && (r.ogDesc ?? "").includes(tail)) return true;
+    }
+    return false;
+  };
+
   const missing = rows.filter((r) => !r.ogTitle || !r.ogDesc);
-  const mismatched = rows.filter((r) => r.ogTitle && r.title && r.ogTitle !== r.title && r.ogTitle !== withoutSiteName(r.title));
+  const mismatched = rows.filter((r) => r.ogTitle && r.title && !titleMatches(r));
   const descMismatched = rows.filter((r) => r.ogDesc && r.desc && r.ogDesc !== r.desc);
   const noImage = rows.filter((r) => !r.ogImage);
   const twMismatched = rows.filter((r) => r.twTitle && r.ogTitle && r.twTitle !== r.ogTitle);

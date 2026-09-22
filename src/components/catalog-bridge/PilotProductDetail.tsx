@@ -9,6 +9,8 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import { ProductMasterGlyph } from "./ProductMasterGlyph";
 import { ProductMasterVariantPicker } from "./ProductMasterVariantPicker";
 import { PilotRelatedProducts } from "./PilotRelatedProducts";
+import { RelatedArticles } from "@/components/product/RelatedArticles";
+import type { RelatedArticle } from "@/lib/article-relevance";
 import { CompatibleProducts } from "@/components/product/CompatibleProducts";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 import { SourceNote } from "@/components/product/SourceNote";
@@ -51,11 +53,15 @@ import { pilotVariantOptions } from "@/components/product/variant-options";
 export function PilotProductDetail({
   product,
   related,
+  relatedArticles,
   imageDisplayMap,
   orderingEnabled = true,
 }: {
   product: StorefrontProductView;
   related: StorefrontProductView[];
+  /** Round "backlink" (2026-09-22): articles this product's data ties it to — built by the
+   *  server page with `relatedArticlesForPublished`. Empty means the block does not render. */
+  relatedArticles?: RelatedArticle[];
   /** From the server page (src/lib/commerce/ordering-mode.ts — owner 2026-09-07). False = the
    *  cart form is replaced by OrderViaLineButton; the out-of-stock branch is unchanged.
    *  Defaults to true so every other caller renders exactly as before. */
@@ -287,6 +293,7 @@ export function PilotProductDetail({
       <CompatibleProducts direction="works-with" items={getCompatibleConsumables(product.slug)} />
       <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
       <PilotRelatedProducts products={related} />
+      <RelatedArticles articles={relatedArticles ?? []} />
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
       {showBuy && (
         <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant?.label ?? null}>

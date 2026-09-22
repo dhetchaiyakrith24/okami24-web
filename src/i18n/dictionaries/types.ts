@@ -224,6 +224,9 @@ export interface Dictionary {
     whoIsThisForTitle: string;
     faqEyebrow: string;
     faqTitle: string;
+    /** Round "backlink" (owner 2026-09-22): the one line above the article links on a product
+     *  page — the same words the article bodies use for an onward link. */
+    readMoreEyebrow: string;
     relatedEyebrow: string;
     relatedTitle: string;
     sourceNoteLabel: string;
