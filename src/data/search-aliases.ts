@@ -111,6 +111,23 @@ export const TERM_SEARCH_ALIASES: Record<string, string[]> = {
   "พอตเปลี่ยนหัว": ["พอตซิสเต็ม", "พอตคิท"],
   "หัวเปล่า": ["หัวพอต"],
   "แทงค์": ["หัวพอต"],
+  // ── round 7 "SEO ค" B4 (2026-09-23): spellings people actually typed into Google and reached
+  // the site with (Search Console export, _incoming/seo-c/gsc-2026-09-23.tsv) plus the owner's own
+  // "คอล์ย" / "พอด". Owner ruling that round: a misspelling lives here, hidden — never in a title,
+  // a description, visible copy or JSON-LD (THAI_STYLE layer 1 keeps brand/model names correct).
+  uotofo: ["wotofo"],
+  calibirn: ["caliburn"],
+  "คาริเบิน": ["caliburn"],
+  eskobar: ["esko bar"],
+  ekkobar: ["esko bar"],
+  ecobar: ["esko bar"],
+  catrit: ["cartridge"],
+  "เนวัก": ["nevoks"],
+  "คอล์ย": ["coil"],
+  "พอด": ["pod"],
+  // Not added (round 7 B4): saltnic / ซอลนิค / ซอลนิก / ฟรีเบส — no e-liquid on the storefront, and the
+  // dormant mechanism below is brand-based (a hidden product's brandId), so these would be dead
+  // aliases and fail the contract. Add them the day an e-liquid product is published.
 };
 
 /** Slug → extra terms that belong to one product only. Empty today: the brand/family-level

@@ -42,7 +42,9 @@ export const zh: Dictionary = {
     ],
   },
   footer: {
-    tagline: "OKami24 — 正品保证，价格透明，服务实在。精选电子烟设备、一次性烟弹与烟油，售后服务持续跟进。",
+    // Round 7 B4 (2026-09-23): the tagline's second word ("guarantee", zh) was cut — THAI_STYLE §3 bans the
+    // guarantee claim in every language, and th/en never carried one. Found at round 6 B2 close.
+    tagline: "OKami24 — 正品，价格透明，服务实在。精选电子烟设备、一次性烟弹与烟油，售后服务持续跟进。",
     shop: "购买",
     learn: "了解更多",
     tools: "工具",
