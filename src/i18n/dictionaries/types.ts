@@ -31,6 +31,14 @@ export interface Dictionary {
     privacy: string;
     /** /warranty — published 2026-09-06 once the owner approved the claim conditions (BSOT §12). */
     warranty: string;
+    /** Round "leftovers" (2026-09-22): the two site-wide contact affordances used to carry their
+     *  Thai straight in the JSX — the floating LINE button's label and aria-label
+     *  (LineContact.tsx) and the footer's two social icons (Footer.tsx) — so an English or Chinese
+     *  visitor read Thai on every page. Both strings are ones the site already shows elsewhere
+     *  (`faq.contactLineCta` / `checkout.contactLineCta`, and `product.watchOnYoutube`), repeated
+     *  here rather than reached across sections; no new wording was invented. */
+    contactLine: string;
+    youtubeChannel: string;
   };
   /** Round 30.4ข batch 5 (owner, 2026-09-17): the four-claim strip above the footer (TrustBar.tsx).
    *  Exactly four items, in the owner's order — genuine · straight prices · real admin · specs

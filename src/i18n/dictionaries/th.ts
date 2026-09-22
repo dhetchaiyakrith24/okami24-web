@@ -22,6 +22,8 @@ export const th: Dictionary = {
     contact: "ติดต่อเรา",
     privacy: "ความเป็นส่วนตัว",
     warranty: "นโยบายเคลม",
+    contactLine: "สอบถามทาง LINE",
+    youtubeChannel: "ดูบน YouTube",
   },
   // Round 30.4ข batch 5 — trust strip above the footer (TrustBar.tsx). Every line points at a
   // sentence already approved on /about; see THAI_STYLE §7 "รอบ 30.4ข ก้อน 5".

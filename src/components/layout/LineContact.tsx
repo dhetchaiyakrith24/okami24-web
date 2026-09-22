@@ -1,14 +1,24 @@
-import { CONTACT } from "@/data/contact";
+"use client";
 
-const ARIA_LABEL = "ติดต่อสอบถามสินค้าทาง LINE";
+import { CONTACT } from "@/data/contact";
+import { useLocale } from "@/components/i18n/LocaleProvider";
 
 /**
  * Global floating LINE contact affordance, present on every route. Sits at a lower
  * stacking order than AgeGate's full-screen overlay (z-[100]) and Header's mobile drawer
  * (z-40), so it's automatically covered — not just visually but for pointer/keyboard
  * reach — whenever either is open, without needing to track their state separately.
+ *
+ * Round "leftovers" (2026-09-22): the label and the aria-label were Thai string literals, so an
+ * English or Chinese visitor read Thai on every page of the site — the leak the owner found by
+ * switching language by hand. Both now come from `nav.contactLine`, the wording the FAQ and
+ * checkout pages already use. That makes this a Client Component; it renders no state of its own,
+ * so the only cost is that the label follows the locale cookie like every other translated string
+ * (see LocaleProvider.tsx). `scripts/thai-leak-scan.js` is the gate that now fails on this shape.
  */
 export function LineContact() {
+  const { dict } = useLocale();
+  const label = dict.nav.contactLine;
   return (
     <>
       {/* Desktop: compact icon pill, expands to show the label on hover AND keyboard focus.
@@ -19,7 +29,7 @@ export function LineContact() {
         href={CONTACT.lineUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={ARIA_LABEL}
+        aria-label={label}
         className="group fixed bottom-8 right-8 z-30 hidden items-center gap-2 overflow-hidden rounded-full border border-surface-border bg-surface-1/95 px-3.5 py-3.5 text-foreground shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-red/50 hover:px-5 focus-visible:border-red/50 focus-visible:px-5 focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-2 max-lg:bottom-[calc(2rem+var(--okami-fab-lift,0px))] sm:flex"
       >
         <LineIcon className="h-5 w-5 shrink-0 text-red" />
@@ -27,7 +37,7 @@ export function LineContact() {
           aria-hidden
           className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold opacity-0 transition-all duration-300 group-hover:max-w-[9rem] group-hover:opacity-100 group-focus-visible:max-w-[9rem] group-focus-visible:opacity-100"
         >
-          สอบถามสินค้า
+          {label}
         </span>
       </a>
 
@@ -36,7 +46,7 @@ export function LineContact() {
         href={CONTACT.lineUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={ARIA_LABEL}
+        aria-label={label}
         className="okami-line-fab fixed z-30 flex h-12 w-12 items-center justify-center rounded-full border border-surface-border bg-surface-1/95 text-red shadow-2xl backdrop-blur-md transition-colors focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-2 sm:hidden"
         style={{
           // + --okami-fab-lift: above the product page's sticky buy bar on phones (B-ก, 2026-09-08)

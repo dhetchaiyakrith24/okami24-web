@@ -23,6 +23,8 @@ export const en: Dictionary = {
     contact: "Contact",
     privacy: "Privacy",
     warranty: "Warranty & claims",
+    contactLine: "Ask on LINE",
+    youtubeChannel: "Watch on YouTube",
   },
   // Round 30.4ข batch 5 — trust strip above the footer (TrustBar.tsx); Thai is the source, this is
   // the writer's English of the owner-approved lines (THAI_STYLE §7 "รอบ 30.4ข ก้อน 5").
