@@ -57,6 +57,12 @@ the checker quotes the printed totals in its report — this file never states t
 - `node scripts/thai-raw-chars-check.js`
 - `node scripts/scan.js` against the test server (every page in the sitemap; details of this gate
   and of the other Thai-copy gates: skill `thai-check`)
+- `node scripts/og-gate.js --base <test server>` — the share card of every page in the sitemap
+  (added 2026-09-22, round "share-deadend": 52 pages had shipped one shared card for months and
+  no gate could see it, because the page itself looked right)
+- `npx tsx scripts/content-dates.ts` **after the last content commit**, then
+  `npx tsx scripts/content-dates.ts --check` — `verify:catalog` fails while the generated dates
+  are older than git (added 2026-09-22, round "search-price")
 
 Save every log under `_incoming/<round>/` and cite the paths in the report.
 
