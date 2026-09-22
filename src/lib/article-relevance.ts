@@ -111,10 +111,23 @@ function legacyRules(p: Product): RelatedArticle[] {
  *  axis, no typed attributes — see storefront-preview-read-model.ts). */
 function publishedRules(p: StorefrontProductView): RelatedArticle[] {
   const out: (RelatedArticle | null)[] = [];
+  // Round 7 "SEO ค" B3 (2026-09-23): the published DEVICE pages (a switch-style pod kit, a
+  // disposable, the two IQOS devices) had no rule at all — measured 0 article links on
+  // iqosheet-16 / iqosheet-18 / pod-159 (instruction, confirmed by scope-auditor). The same three
+  // format/battery rules the legacy branch applies, on the same evidence: the category the record
+  // is published under, and a VERIFIED battery row (an unverified row still sends nobody anywhere).
+  // Order matters: MAX_PER_PRODUCT keeps the first three, so the rules that name THIS product's
+  // own verified fact (mesh, resistance axis, maintenance) stay ahead of the format/battery
+  // rules — the designer's B3 pass caught pod-180 losing its mesh-coil link to three generic
+  // guides when the new rules ran first.
   if (POD_OR_COIL.has(p.categoryId)) out.push(article("guide", "coil-and-pod-maintenance", `category ${p.categoryId}`));
   if (p.optionAxisCode === "resistance" && p.variants.length > 1) out.push(article("technology", "multi-resistance-cartridges", `option axis "resistance" with ${p.variants.length} values`));
   const mesh = verifiedSpec(p.specifications, /mesh/i);
   if (mesh) out.push(article("technology", "mesh-coil-systems", mesh));
+  if (DEVICE_CATEGORIES.has(p.categoryId)) out.push(article("guide", "choosing-your-first-pod-system", `published device, category ${p.categoryId}`));
+  if (p.categoryId === "disposables" || p.categoryId === "pod-systems") out.push(article("guide", "open-system-vs-disposable", `category ${p.categoryId} is one of the two formats the article compares`));
+  const battery = verifiedSpec(p.specifications, /battery|แบต|mAh/i);
+  if (battery) out.push(article("guide", "battery-care-and-charging", battery));
   return out.filter((a): a is RelatedArticle => a !== null);
 }
 
