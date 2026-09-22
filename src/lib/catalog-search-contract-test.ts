@@ -11,12 +11,13 @@
  * themselves), never from a remembered count — the catalog grows and the test must grow with it.
  */
 
+import { brands } from "@/data/brands";
 import { categories } from "@/data/categories";
 import { families } from "@/data/families";
 import { allProducts, legacySearchText, searchProducts } from "@/data/products";
 import { TERM_SEARCH_ALIASES } from "@/data/search-aliases";
 import { getPublishedProducts, publishedSearchText, searchPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
-import { normalizeQuery, queryScore, rankByQuery } from "@/lib/catalog-search";
+import { normalizeQuery, phraseMatches, queryScore, rankByQuery } from "@/lib/catalog-search";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 
@@ -61,7 +62,7 @@ function sourceFilesUnder(dir: string): string[] {
   for (const entry of readdirSync(dir)) {
     const full = path.join(dir, entry);
     if (statSync(full).isDirectory()) out.push(...sourceFilesUnder(full));
-    else if (/\.tsx$/.test(entry)) out.push(full);
+    else if (/\.tsx?$/.test(entry)) out.push(full);
   }
   return out;
 }
@@ -114,13 +115,35 @@ export function runCatalogSearchContractTests(): CatalogSearchContractResult[] {
     check(`"น้ำยา" returns no device (pod system / pod kit / disposable / HNB device)`, wrong.length === 0, wrong.length ? `devices returned: ${wrong.join(", ")}` : `returned ${got.length}: ${got.map((h) => h.slug).join(", ") || "nothing"}`);
   }
 
-  // ---- 3. Every alias finds exactly what its English term finds, and finds something ----
+  // ---- 3. Every alias finds exactly what its English term finds as a phrase ("m bar" as one
+  //         unit, not m AND bar), and finds something ----
   for (const [alias, terms] of Object.entries(TERM_SEARCH_ALIASES)) {
     const viaAlias = search(alias);
-    const viaTerms = [...new Set(terms.flatMap((t) => search(t)))];
+    const viaTerms = all.filter((e) => terms.some((t) => phraseMatches(t, e.text))).map((e) => e.hit.slug);
     check(`alias "${alias}" = ${terms.join(" | ")} (${viaTerms.length})`, viaTerms.length > 0 && sameSet(viaAlias, viaTerms), viaTerms.length === 0 ? "the English term itself finds nothing — dead alias" : sameSet(viaAlias, viaTerms) ? "same set" : `alias: ${viaAlias.join(",")} · term: ${viaTerms.join(",")}`);
     check(`alias key "${alias}" is stored normalised`, normalizeQuery(alias) === alias, "");
   }
+
+  // ---- 3b. Every brand with a product on the storefront has at least one Thai alias (owner,
+  //          2026-09-22: a new brand admitted without one must turn this red) ----
+  {
+    const thai = /[\u0E00-\u0E7F]/;
+    const aliasTargets = new Set(
+      Object.entries(TERM_SEARCH_ALIASES)
+        .filter(([alias]) => thai.test(alias))
+        .flatMap(([, terms]) => terms.map((t) => normalizeQuery(t)))
+    );
+    const brandIdsWithProducts = new Set(all.map((e) => e.hit.brandId));
+    for (const b of brands) {
+      if (!brandIdsWithProducts.has(b.id)) continue;
+      const covered = aliasTargets.has(b.id.toLowerCase()) || aliasTargets.has(normalizeQuery(b.name));
+      check(`brand ${b.name} (${byBrand(b.id).length} products) has a Thai search alias`, covered, covered ? "" : `add a Thai spelling → "${b.name.toLowerCase()}" in src/data/search-aliases.ts`);
+    }
+  }
+  check(`no alias is rendered: PRODUCT/TERM aliases are imported only by the search matcher and this test`, (() => {
+    const users = sourceFilesUnder(path.join(process.cwd(), "src")).filter((f) => /from "@\/data\/search-aliases"/.test(readFileSync(f, "utf8")));
+    return users.every((f) => /catalog-search(-contract-test)?\.ts$/.test(f));
+  })(), "");
 
   // ---- 4. Spellings without spaces (what Search Console records) ----
   check(`"drag6" finds drag-6`, search("drag6").includes("drag-6"), search("drag6").join(","));

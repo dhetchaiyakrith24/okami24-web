@@ -77,6 +77,13 @@ export function searchText(input: { slug: string; primary: ReadonlyArray<Field>;
   };
 }
 
+/** True when `term` (an English alias target, possibly two words) occurs in either part of the
+ *  product text — exactly what an alias token matches through. Used by the contract test. */
+export function phraseMatches(term: string, text: SearchText): boolean {
+  const t = normalizeQuery(term);
+  return termIn(t, text.primary) || termIn(t, text.secondary);
+}
+
 function termIn(term: string, text: string): boolean {
   if (!term) return false;
   if (text.includes(term)) return true;
