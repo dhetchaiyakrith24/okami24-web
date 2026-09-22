@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useSyncExternalStore } from "react";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+import { AGE_GATE } from "@/i18n/age-gate-copy";
 
 const STORAGE_KEY = "okami24-age-verified";
 const EVENT = "okami24-age-gate-change";
@@ -29,6 +31,12 @@ function subscribe(callback: () => void) {
 }
 
 export function AgeGate() {
+  // Round 6 "about3lang" (owner 2026-09-23): the dialog reads the visitor's locale like the rest of
+  // the site. The copy comes from src/i18n/age-gate-copy.tsx WITHOUT the render-time Thai
+  // typography the dictionaries get — the Thai here is THAI_STYLE §5 group ก and must render byte
+  // for byte as it did before; that module's header carries the full reason.
+  const { locale } = useLocale();
+  const copy = AGE_GATE[locale];
   const verified = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const open = !verified;
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -85,16 +93,15 @@ export function AgeGate() {
       onKeyDown={handleKeyDown}
     >
       <div className="w-full max-w-md rounded-2xl border border-surface-border bg-surface-1 p-8 shadow-2xl">
-        <span className="label-mono text-xs text-ember">ประกาศเรื่องอายุ</span>
+        <span className="label-mono text-xs text-ember">{copy.eyebrow}</span>
         <h2 id="age-gate-title" className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
-          คุณอายุ 21 ปีขึ้นไปหรือไม่?
+          {copy.title}
         </h2>
         <p id="age-gate-desc" className="mt-4 text-sm leading-relaxed text-foreground-muted">
-          เว็บไซต์นี้นำเสนอสินค้าอุปกรณ์บุหรี่ไฟฟ้าและน้ำยา สำหรับผู้มีอายุครบ <strong className="text-foreground">21
-          ปีบริบูรณ์ขึ้นไปเท่านั้น</strong> ดูสินค้าและราคาได้ทั้งเว็บ ส่วนการสั่งซื้อหรือสอบถาม ทักไลน์ OA ของ OKami24 ได้เลย
+          {copy.body}
         </p>
         <p className="mt-3 text-xs leading-relaxed text-foreground-dim">
-          นิโคตินเป็นสารเสพติด เว็บไซต์นี้ไม่มีการกล่าวอ้างด้านสุขภาพ ความปลอดภัย หรือการเลิกบุหรี่ใดๆ เกี่ยวกับการสูบไอ
+          {copy.nicotine}
         </p>
         <div className="mt-7 flex flex-col gap-3 sm:flex-row">
           <button
@@ -102,13 +109,13 @@ export function AgeGate() {
             onClick={confirm}
             className="flex-1 rounded-full bg-ember px-6 py-3 text-sm font-semibold text-[#181008] transition-colors hover:bg-ember-strong focus-visible:outline-2 focus-visible:outline-ember"
           >
-            ใช่ ฉันอายุ 21 ปีขึ้นไป
+            {copy.confirm}
           </button>
           <button
             onClick={decline}
             className="flex-1 rounded-full border border-surface-border px-6 py-3 text-sm font-semibold text-foreground-muted transition-colors hover:border-foreground-dim hover:text-foreground focus-visible:outline-2 focus-visible:outline-ember"
           >
-            ไม่ใช่ ฉันอายุต่ำกว่า 21 ปี
+            {copy.decline}
           </button>
         </div>
       </div>
