@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Minus, Plus } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { categories } from "@/data/categories";
+import { categoriesWithProducts } from "@/lib/category-visibility";
 import { CONTACT } from "@/data/contact";
 import { brandsWithProducts } from "@/lib/brand-visibility";
 import { cn } from "@/lib/utils";
@@ -17,6 +17,9 @@ export function Footer() {
   // on real evidence but still fully media-blocked (see shipnity-seed/README.md) would otherwise
   // be a dead-end link from primary navigation. See brand-visibility.ts's own doc comment.
   const brands = brandsWithProducts();
+  // Same rule as the brand list (round "share-deadend", 2026-09-22): the footer lists the
+  // categories that have something in them; an empty one keeps its URL but is not offered.
+  const categories = categoriesWithProducts();
 
   const LEARN_LINKS = [
     { label: dict.nav.guides, href: "/guides" },

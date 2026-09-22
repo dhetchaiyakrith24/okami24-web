@@ -1,8 +1,12 @@
 import Link from "next/link";
-import { categories } from "@/data/categories";
+import { categoriesWithProducts } from "@/lib/category-visibility";
 import { Container } from "@/components/ui/Container";
 
+// Round "share-deadend" batch 2 (2026-09-22): the grid offers only the categories that have a
+// product today (src/lib/category-visibility.ts). A SHOP tile that led to an empty page was the
+// dead end the review round found; the tile comes back on its own when stock arrives.
 export function CategoryNav() {
+  const categories = categoriesWithProducts();
   return (
     <section className="border-b border-surface-border-soft bg-surface-1">
       <Container className="py-8">

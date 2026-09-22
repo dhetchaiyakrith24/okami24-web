@@ -45,7 +45,8 @@ const OFFER_SELLER = { seller: organizationRef() };
  *  built once in seo.ts so the two Product branches below cannot drift apart. */
 const OFFER_MERCHANT = offerMerchantFields();
 import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
-import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, offerMerchantFields, openGraphWithImage, organizationRef, pageBreadcrumbJsonLd } from "@/lib/seo";
+import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, offerMerchantFields, openGraphWithImage, organizationRef, pageBreadcrumbJsonLd } from "@/lib/seo";
+import { categoriesWithProducts, categoryIsEmpty } from "@/lib/category-visibility";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
@@ -102,7 +103,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const path = `/products/${slug}`;
   const category = getCategory(slug);
   // Round 30.3ข: the "English / ไทย" label and Thai lede the Thai page shows (CategoryPageHeader).
-  if (category) return { title: category.labelTh, description: category.descriptionTh, ...canonicalFor(path) };
+  // Round "share-deadend" batch 2 (2026-09-22): a category with nothing in it is the same thin,
+  // empty page an empty brand page is, and gets the same treatment — noindex, and out of the
+  // navigation and the sitemap (src/lib/category-visibility.ts). The page itself keeps working.
+  if (category) return { title: category.labelTh, description: category.descriptionTh, ...canonicalFor(path), ...(categoryIsEmpty(category.id) ? NOINDEX_FOLLOW : {}) };
 
   const product = getProduct(slug);
   if (product) {
@@ -175,7 +179,16 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
               the SAME grid/filter/sort experience as a legacy one, not a separate "Now Available"
               block underneath (see CatalogBrowser's own doc comment). Still-unpublished DEV-preview
               data stays in its own, clearly-labeled section below — never mixed in. */}
-          <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} isEmptyCategory={isEmptyCategory} />
+          <CatalogBrowser
+            products={products}
+            publishedProducts={publishedProducts}
+            searchTexts={catalogSearchTexts(products, publishedProducts)}
+            isEmptyCategory={isEmptyCategory}
+            // Round "share-deadend" batch 2 (2026-09-22): an empty category offers the ones that
+            // do have something instead of ending the visit. Read from the catalog, so it needs
+            // no upkeep and makes no promise about this category.
+            alternativeCategories={isEmptyCategory ? categoriesWithProducts() : []}
+          />
           <PilotProductSection products={pilotProducts} />
         </Container>
       </>
