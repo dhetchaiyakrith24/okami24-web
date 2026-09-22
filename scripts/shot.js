@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // Mobile-width full-page screenshots via Chrome DevTools Protocol (no puppeteer needed; Node 22+ has WebSocket).
 //
-//   node scripts/shot.js <out.png> <url> [--click "<css selector>"]... [--cookie name=value]... [--wait ms] [--width 375] [--reduced-motion]
+//   node scripts/shot.js <out.png> <url> [--click "<css selector>"]... [--key Tab]... [--cookie name=value]... [--wait ms] [--width 375] [--reduced-motion]
 //   e.g. node scripts/shot.js shot.png http://localhost:3000/products/zero-pro --wait 4000
 //
 // Why this exists: the Browser pane's screenshot can't be saved to a file, and plain headless
@@ -39,7 +39,16 @@ let anchor = null;
 // perfectly still"), which otherwise has no way to prove that path — the setting lives in the OS,
 // not in the page. Opt-in, so every existing call keeps answering "no-preference" as before.
 let reducedMotion = false;
+// --key "<Key>" (repeatable, runs before the --eval list): a REAL key press through CDP Input,
+// not a synthetic JS event. Added round "leftovers", 2026-09-22, for a shape --click and --eval
+// cannot reach: an affordance that only shows itself on `:focus-visible`. Chrome grants
+// focus-visible by input modality, so calling el.focus() from --eval leaves the element focused
+// but still collapsed — one real `--key Tab` first switches the modality to keyboard, and the
+// --eval focus() that follows then renders the way a keyboard visitor genuinely sees it. The
+// floating LINE button's label is the case that needed it.
+const keys = [];
 for (let i = 2; i < args.length; i++) {
+  if (args[i] === "--key") { keys.push(args[++i]); continue; }
   if (args[i] === "--viewport") { viewportOnly = true; continue; }
   if (args[i] === "--anchor") { anchor = args[++i]; viewportOnly = true; continue; } if (args[i] === "--reduced-motion") { reducedMotion = true; continue; } if (args[i] === "--click") clicks.push(args[++i]); else if (args[i] === "--wait") wait = +args[++i]; else if (args[i] === "--width") width = +args[++i]; else if (args[i] === "--cookie") cookies.push(args[++i]); else if (args[i] === "--desktop") desktop = true; else if (args[i] === "--eval") evals.push(args[++i]); }
 const port = 9333 + Math.floor(Math.random() * 500);
@@ -68,6 +77,15 @@ async function getJson(p) { return new Promise((res, rej) => http.get(`http://12
   if (cookies.length) await send("Page.addScriptToEvaluateOnNewDocument", { source: cookies.map((c) => `try{document.cookie=${JSON.stringify(`${c}; path=/`)}}catch(e){}`).join("") });
   await send("Page.navigate", { url }); await sleep(wait);
   for (const sel of clicks) { await send("Runtime.evaluate", { expression: `(()=>{const el=document.querySelector(${JSON.stringify(sel)});if(!el)return "missing";el.scrollIntoView({block:"center"});el.click();return "clicked"})()`, returnByValue: true }); await sleep(900); }
+  for (const key of keys) {
+    // windowsVirtualKeyCode is what makes Chrome treat this as a genuine physical key (and so
+    // switch the focus-visible modality to keyboard); Tab is the only one needed so far, other
+    // keys fall back to the character itself.
+    const code = key === "Tab" ? 9 : key === "Enter" ? 13 : key === "Escape" ? 27 : key.charCodeAt(0);
+    await send("Input.dispatchKeyEvent", { type: "rawKeyDown", key, code: key, windowsVirtualKeyCode: code, nativeVirtualKeyCode: code });
+    await send("Input.dispatchKeyEvent", { type: "keyUp", key, code: key, windowsVirtualKeyCode: code, nativeVirtualKeyCode: code });
+    await sleep(250);
+  }
   for (const js of evals) { const r = await send("Runtime.evaluate", { expression: js, returnByValue: true, awaitPromise: true }); const cdp = r.result ?? {}; console.log("eval →", JSON.stringify(cdp.exceptionDetails ? { error: cdp.exceptionDetails.text, detail: cdp.exceptionDetails.exception?.description } : cdp.result?.value ?? null)); await sleep(900); }
   const scrollExpr = anchor
     ? `(()=>{const el=document.querySelector(${JSON.stringify(anchor)});if(!el)return "anchor missing";const y=el.getBoundingClientRect().top+window.scrollY-120;window.scrollTo(0,y);return "anchored at "+Math.round(y);})()`

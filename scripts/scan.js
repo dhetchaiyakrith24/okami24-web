@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // English-sentence leak gate for the Thai site (owner, 2026-09-17 — round 30.4ข close).
 //
-// Walks every URL in <base>/sitemap.xml (105 pages today), fetches the server HTML (the default
+// Walks every URL in <base>/sitemap.xml (the count is whatever the catalog justifies — it was 105
+// when this was written, 103 after round "share-deadend" dropped the empty categories and 99 after
+// round "leftovers" dropped the four noindex tool pages; read it from the run, not from here),
+// fetches the server HTML (the default
 // locale is Thai), and flags any visible text run that has NO Thai script at all, is longer than
 // 35 characters, has 6 or more words, and contains an English function word — i.e. an English
 // sentence that a Thai visitor was never meant to see (a compatibility note, a spec value, a

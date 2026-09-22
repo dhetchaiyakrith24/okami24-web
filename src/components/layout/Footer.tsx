@@ -20,6 +20,9 @@ export function Footer() {
   // Same rule as the brand list (round "share-deadend", 2026-09-22): the footer lists the
   // categories that have something in them; an empty one keeps its URL but is not offered.
   const categories = categoriesWithProducts();
+  // Round "leftovers" (2026-09-22): the two social icons carried Thai aria-labels written straight
+  // into the JSX, so a screen reader on the English or Chinese site announced them in Thai on
+  // every page. They read the dictionary now, like every other string in this component.
 
   const LEARN_LINKS = [
     { label: dict.nav.guides, href: "/guides" },
@@ -62,7 +65,7 @@ export function Footer() {
               href={CONTACT.lineUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="ติดต่อ OKami24 ทาง LINE"
+              aria-label={dict.nav.contactLine}
               className="flex h-9 w-9 items-center justify-center rounded-full border border-surface-border text-foreground-muted transition-colors hover:border-red hover:text-red"
             >
               <LineIcon className="h-4 w-4" />
@@ -71,7 +74,7 @@ export function Footer() {
               href={CONTACT.youtubeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="ช่อง YouTube ของ OKami24"
+              aria-label={dict.nav.youtubeChannel}
               className="flex h-9 w-9 items-center justify-center rounded-full border border-surface-border text-foreground-muted transition-colors hover:border-red hover:text-red"
             >
               <YoutubeIcon className="h-4 w-4" />

@@ -28,6 +28,8 @@ export const zh: Dictionary = {
     contact: "联系我们",
     privacy: "隐私政策",
     warranty: "售后政策",
+    contactLine: "LINE 咨询",
+    youtubeChannel: "在 YouTube 上观看",
   },
   // Round 30.4ข batch 5 — trust strip above the footer (TrustBar.tsx); Thai is the source.
   trust: {

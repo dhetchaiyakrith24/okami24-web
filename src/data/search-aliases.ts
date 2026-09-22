@@ -46,9 +46,17 @@ export const TERM_SEARCH_ALIASES: Record<string, string[]> = {
   "ไอค๊อส": ["iqos"],
   "จอยเวย์": ["joiway"],
   "จอยเว": ["joiway"],
-  // TFIT (ทีฟิต/ทีฟิท) and INFY (อินฟี่/อินฟี) from the owner's list are NOT here yet: both
-  // products are hidden from the storefront (no card photo), so the aliases would find nothing
-  // and the dead-alias check would fail — add them the day the products go live.
+  // TFIT and INFY, from the owner's list (round "leftovers", 2026-09-22). Each brand's only
+  // product is still `hiddenFromStorefront` for want of a card photo, so these find nothing TODAY
+  // — they are dormant, not dead, and `DORMANT_ALIAS_TERMS` below is what tells the contract test
+  // the difference. The day a photo lands the product joins the storefront and these start
+  // working with no edit here; the test then demands the dormant row be removed.
+  "ทีฟิต": ["tfit"],
+  "ทีฟิท": ["tfit"],
+  "ทีฟิส": ["tfit"],
+  "อินฟี่": ["infy"],
+  "อินฟี": ["infy"],
+  "อินฟิ": ["infy"],
   // Brands the owner's list did not name but the storefront carries (the contract test demands
   // one Thai spelling per brand with a product) — Code's spellings, add more as customers show them:
   "รินโค": ["rincoe"],
@@ -109,3 +117,22 @@ export const TERM_SEARCH_ALIASES: Record<string, string[]> = {
  *  aliases above cover every case the round found. Add a row here when one product is known by
  *  a name no field carries (and say where the name comes from). */
 export const PRODUCT_SEARCH_ALIASES: Record<string, string[]> = {};
+
+/**
+ * English terms above that legitimately find nothing right now (round "leftovers", 2026-09-22).
+ *
+ * The contract test's rule is "an alias whose English term finds nothing is a dead alias" — a
+ * good rule, because a typo'd target is invisible otherwise. But it also blocked the honest case:
+ * a brand the shop really carries whose only product is `hiddenFromStorefront` for want of a card
+ * photo (docs/IMAGE_SPEC.md §4). Listing the term here says "this one is waiting for a photo, not
+ * misspelled", and the test then holds it to a stricter bargain than a normal alias:
+ *
+ *   - it must find nothing today, AND
+ *   - a hidden product of that brand must actually exist (so a typo can never hide in here), AND
+ *   - the moment the product goes live and the term starts finding something, the test FAILS
+ *     until the row is deleted — the list cannot quietly outlive its reason.
+ *
+ * Nothing is needed here on the day the photo lands except deleting the row: the aliases above
+ * are already wired and start working by themselves.
+ */
+export const DORMANT_ALIAS_TERMS: string[] = ["tfit", "infy"];

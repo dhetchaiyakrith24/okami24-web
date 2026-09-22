@@ -3,7 +3,8 @@
 //   node scripts/og-gate.js [--base http://localhost:3412] [--verbose]
 //
 // Why it exists: until this round the root layout's `openGraph.title`/`description` were
-// inherited by every page that did not set its own, so 52 of the 105 pages shared one share
+// inherited by every page that did not set its own, so 52 of the 105 pages in the sitemap AT THE
+// TIME (it is smaller now — the count is read from the run, never from this comment) shared one share
 // card. Nothing on the site could see that — the pages looked right, only the card was wrong.
 // This gate reads the real HTML of every URL in <base>/sitemap.xml and fails when:
 //
