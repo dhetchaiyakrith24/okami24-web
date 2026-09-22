@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X, Search, Heart, ShoppingCart, ChevronDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { categories } from "@/data/categories";
+import { categoriesWithProducts } from "@/lib/category-visibility";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { CategoryLabel } from "@/components/catalog/CategoryLabel";
@@ -18,6 +18,9 @@ export function Header({ orderingEnabled = true }: { orderingEnabled?: boolean }
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const { dict, locale } = useLocale();
+  // Round "share-deadend" batch 2 (2026-09-22): both menus list the categories that have a
+  // product today (src/lib/category-visibility.ts) — "น้ำยา" used to open an empty page.
+  const categories = categoriesWithProducts();
   // Round 30.3ข (THAI_STYLE §2 layer 2): the product menus show "English / ไทย" for a Thai visitor.
   // Only these two menus and the category page H1 — the footer/home grid keep `shortName` (owner).
   const categoryLabel = (c: (typeof categories)[number]) => (locale === "th" ? c.labelTh : c.name);

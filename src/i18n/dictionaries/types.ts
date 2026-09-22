@@ -123,7 +123,9 @@ export interface Dictionary {
     cardMaxWatt: string;
     cardResistance: string;
     cardCapacity: string;
+    emptyStateTitle: string;
     emptyStateNote: string;
+    emptyStateAlternatives: string;
     searchLabel: string;
     searchPlaceholder: string;
     sortLabel: string;

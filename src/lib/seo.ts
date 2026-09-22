@@ -290,6 +290,11 @@ export function openGraphWithImage(input: { title: string; description?: string;
       description: input.description,
       url: input.path,
       images: [{ url: absoluteUrl(input.image.src), alt: input.image.alt }],
+      // Setting `openGraph` replaces the root layout's object wholesale, so the two fields every
+      // page shares have to be repeated here or a product's share card loses them (it did, until
+      // round "share-deadend", 2026-09-22 — the live product pages had no og:site_name/og:type).
+      siteName: "OKami24",
+      type: "website",
     },
   };
 }

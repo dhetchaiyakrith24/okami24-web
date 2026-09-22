@@ -60,13 +60,19 @@ export const metadata: Metadata = {
   // (search/favorites/pilot products/etc. would all wrongly canonicalize to "/"). The homepage
   // sets its own canonical directly on `src/app/page.tsx` instead — see that file.
   metadataBase: new URL(SITE_URL),
+  // Round "share-deadend" batch 1 (2026-09-22): NO `title`/`description` here on purpose.
+  // Next.js inherits this whole object into every page that does not set its own `openGraph`,
+  // so the two strings that used to sit here became the share card of 52 of the 105 pages — an
+  // article, a brand page and the FAQ all shared one card reading "OKami24 — ของแท้ ราคาตรง
+  // บริการจริง". With both fields absent, Next fills og:title/og:description from each page's
+  // OWN resolved `title`/`description` (`inheritFromMetadata` in
+  // node_modules/next/dist/lib/metadata/resolve-metadata.js), which are the strings the owner
+  // already approved in the SEO ก/ข rounds — no new copy, and the homepage card stops showing
+  // the pre-SEO-ก wording. What stays here is what every page genuinely shares: the site name,
+  // the type, and (by file convention, src/app/opengraph-image.tsx) the default share image.
+  // The owner's 2026-09-21 ruling that the share description must equal the meta description is
+  // now structural rather than a copied string. Guard: src/lib/og-metadata-contract-test.ts.
   openGraph: {
-    title: "OKami24 — ของแท้ ราคาตรง บริการจริง",
-    // Owner 2026-09-21 (batch-2 table, extra row): the shared-link description is the same
-    // string as the meta description above, so a link preview never contradicts the search result.
-    description: ORDERING_ENABLED
-      ? "พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา ของแท้ ราคาตรง บริการจริง — สั่งซื้อบนเว็บได้เลย หรือทัก LINE @okm24"
-      : HOME_HEAD_TH.description,
     siteName: "OKami24",
     type: "website",
   },

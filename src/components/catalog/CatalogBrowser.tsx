@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
-import type { Product, ScreenType, Portability } from "@/types/catalog";
+import Link from "next/link";
+import type { Category, Product, ScreenType, Portability } from "@/types/catalog";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
@@ -108,14 +109,18 @@ export function CatalogBrowser({
   publishedProducts = [],
   searchTexts,
   isEmptyCategory,
+  alternativeCategories = [],
 }: {
   products: Product[];
   publishedProducts?: StorefrontProductView[];
   /** From `catalogSearchTexts()` (src/lib/catalog-search-entries.ts), built by the server page. */
   searchTexts: Record<string, SearchText>;
   isEmptyCategory?: boolean;
+  /** Categories that do have products today (`categoriesWithProducts()`), offered as the way out
+   *  of an empty category page. The server page passes it; nothing renders when it is empty. */
+  alternativeCategories?: Pick<Category, "slug" | "shortName" | "labelTh">[];
 }) {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
 
   const SCREEN_LABELS: Record<ScreenType, string> = {
     none: dict.catalog.screenNone,
@@ -220,7 +225,11 @@ export function CatalogBrowser({
   const countText = `${filtered.length} ${pluralCount(filtered.length, dict.catalog.productCountOne, dict.catalog.productCountOther)}`;
 
   return (
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[240px_1fr]">
+    <div className={cn("grid grid-cols-1 gap-8", !isEmptyCategory && "lg:grid-cols-[240px_1fr]")}>
+      {/* Owner, 2026-09-22: an empty category has nothing to filter or search within — the
+          sidebar, the phone filters button and this search box are all hidden there. The
+          header's own site-wide search is untouched. */}
+      {!isEmptyCategory && (
       <aside className="flex flex-col gap-8 max-lg:hidden">
         <div>
           <label htmlFor="catalog-search" className="label-mono mb-2 block text-xs text-foreground-dim">
@@ -289,10 +298,12 @@ export function CatalogBrowser({
           </button>
         )}
       </aside>
+      )}
 
       <div className="flex flex-col gap-6">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-surface-border-soft pb-4">
           {/* Phone/tablet only (M4): the one button that replaces the sidebar. */}
+          {!isEmptyCategory && (
           <button
             type="button"
             onClick={openSheet}
@@ -304,6 +315,7 @@ export function CatalogBrowser({
             {dict.catalog.filtersButton}
             {mobileActiveCount > 0 && ` (${mobileActiveCount})`}
           </button>
+          )}
           {/* Left exactly as it was — three JSX children, not one joined string. Joining them
               merges three DOM text nodes into one, which re-shapes the line and moved a handful of
               antialiased pixels at 1440 (proved by the masked compare). The joined `countText`
@@ -311,6 +323,8 @@ export function CatalogBrowser({
           <p className="label-mono text-xs text-foreground-dim max-lg:ml-auto">
             {filtered.length} {pluralCount(filtered.length, dict.catalog.productCountOne, dict.catalog.productCountOther)}
           </p>
+          {/* Sorting nothing is as dead a control as filtering nothing (owner, 2026-09-22). */}
+          {!isEmptyCategory && (
           <div className="flex items-center gap-2">
             {/* On phones the word "sort by" is read out but not drawn: the button, the count and
                 the select only fit on one bar (the owner asked for one bar) without it, and the
@@ -329,12 +343,38 @@ export function CatalogBrowser({
               <option value="family">{dict.catalog.sortFamily}</option>
             </select>
           </div>
+          )}
         </div>
 
         {filtered.length === 0 ? (
           <div className="flex flex-col items-center gap-2 rounded-2xl border border-dashed border-surface-border py-20 text-center">
-            <p className="font-display text-xl font-semibold text-foreground">{dict.catalog.noMatchTitle}</p>
+            {/* Owner, 2026-09-22: on an empty category the heading used to be "ไม่พบสินค้าที่
+                ตรงกัน" — the filter's words, which read as "you filtered something wrong" to
+                someone who filtered nothing. The empty-category pair is the already-approved
+                sentence split at its own dash: heading "ยังไม่มีสินค้าในหมวดนี้", line
+                "กลับมาดูใหม่เมื่อมีสินค้าเพิ่ม". The filter's own no-match wording is unchanged. */}
+            <p className="font-display text-xl font-semibold text-foreground">{isEmptyCategory ? dict.catalog.emptyStateTitle : dict.catalog.noMatchTitle}</p>
             <p className="max-w-sm text-sm text-foreground-muted">{isEmptyCategory ? dict.catalog.emptyStateNote : dict.catalog.noMatchHint}</p>
+            {/* Round "share-deadend" batch 2 (2026-09-22): a category with nothing in it used to
+                end here — an honest sentence and no way onward. It now points at the categories
+                that do have something today (the list comes from the server page, which reads it
+                from the catalog; no promise about when this one will fill). */}
+            {isEmptyCategory && alternativeCategories.length > 0 && (
+              <div className="mt-4 flex flex-col items-center gap-2">
+                <p className="label-mono text-[0.65rem] text-foreground-dim">{dict.catalog.emptyStateAlternatives}</p>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {alternativeCategories.map((c) => (
+                    <Link
+                      key={c.slug}
+                      href={`/products/${c.slug}`}
+                      className="rounded-full border border-surface-border px-4 py-2 text-sm text-foreground transition-colors hover:border-foreground-dim hover:text-ember"
+                    >
+                      {locale === "th" ? c.labelTh : c.shortName}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4">
