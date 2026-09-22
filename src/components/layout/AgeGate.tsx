@@ -84,7 +84,14 @@ export function AgeGate() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-surface-0/95 px-5 backdrop-blur-sm"
+      // overflow-y-auto + py-8 + the card's my-auto (batch B5, designer 2026-09-23): the overlay
+      // centred the card in a fixed, unscrollable box, so on a short viewport — a phone held
+      // sideways is ~360px tall against this card's ~477px in Thai — the top and bottom were cut
+      // off with no way to scroll to them, and `document.body.style.overflow = "hidden"` meant the
+      // page behind could not be scrolled either: the visitor could not reach either button, on
+      // every page of the site. Auto margins centre the card while it fits and let it scroll when
+      // it does not (plain `items-center` clips the top of an overflowing flex child instead).
+      className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-surface-0/95 px-5 py-8 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="age-gate-title"
@@ -92,7 +99,7 @@ export function AgeGate() {
       ref={dialogRef}
       onKeyDown={handleKeyDown}
     >
-      <div className="w-full max-w-md rounded-2xl border border-surface-border bg-surface-1 p-8 shadow-2xl">
+      <div className="my-auto w-full max-w-md rounded-2xl border border-surface-border bg-surface-1 p-8 shadow-2xl">
         <span className="label-mono text-xs text-ember">{copy.eyebrow}</span>
         <h2 id="age-gate-title" className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
           {copy.title}
@@ -103,17 +110,29 @@ export function AgeGate() {
         <p className="mt-3 text-xs leading-relaxed text-foreground-dim">
           {copy.nicotine}
         </p>
-        <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+        {/* Round 6 "about3lang" batch B5 (owner 2026-09-23, after the designer's close finding):
+            the two buttons used to sit side by side from 640px up, and there they are never wider
+            than ~218px each — the card is a fixed max-w-md (448px) at EVERY screen width, so a
+            wider window does not give the row more room and no breakpoint can. The Thai
+            "ไม่ใช่ ฉันอายุต่ำกว่า 21 ปี" does not fit that, wrapped to two lines, and left the two
+            buttons at different heights while en/zh stayed on one line. The Thai wording is group ก
+            and cannot be shortened, so the row is gone: both buttons are full width at every width,
+            which is what a phone already showed and what keeps them the same height in all three
+            languages. Reverting this one commit restores the old row without touching batch B1. */}
+        <div className="mt-7 flex flex-col gap-3">
           <button
             ref={confirmRef}
             onClick={confirm}
-            className="flex-1 rounded-full bg-ember px-6 py-3 text-sm font-semibold text-[#181008] transition-colors hover:bg-ember-strong focus-visible:outline-2 focus-visible:outline-ember"
+            // border-transparent: the decline button below carries a 1px border, so without a
+            // border of its own this one measured 44px against its 46px (batch B5, 2026-09-23).
+            // Stacked, nothing stretches them to a common height any more, so the box has to match.
+            className="rounded-full border border-transparent bg-ember px-6 py-3 text-sm font-semibold text-[#181008] transition-colors hover:bg-ember-strong focus-visible:outline-2 focus-visible:outline-ember"
           >
             {copy.confirm}
           </button>
           <button
             onClick={decline}
-            className="flex-1 rounded-full border border-surface-border px-6 py-3 text-sm font-semibold text-foreground-muted transition-colors hover:border-foreground-dim hover:text-foreground focus-visible:outline-2 focus-visible:outline-ember"
+            className="rounded-full border border-surface-border px-6 py-3 text-sm font-semibold text-foreground-muted transition-colors hover:border-foreground-dim hover:text-foreground focus-visible:outline-2 focus-visible:outline-ember"
           >
             {copy.decline}
           </button>
