@@ -5,6 +5,7 @@ import { familiesForBrand } from "@/data/families";
 import { getProductsByBrand } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { CatalogBrowser } from "@/components/catalog/CatalogBrowser";
+import { catalogSearchTexts } from "@/lib/catalog-search-entries";
 import { getPilotProductsByBrand, getPublishedProductsByBrand } from "@/data/shipnity-seed/storefront-bridge";
 import { PilotProductSection } from "@/components/catalog-bridge/PilotProductSection";
 import { BrandPageMeta } from "@/components/catalog/BrandPageMeta";
@@ -81,7 +82,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(brandPageName, brandPath)) }} />
       <BrandPageHeader brand={brand} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
-        <CatalogBrowser products={products} publishedProducts={publishedProducts} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} />
+        <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} />
         <PilotProductSection products={pilotProducts} />
       </Container>
     </>

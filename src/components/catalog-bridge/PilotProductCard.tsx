@@ -29,6 +29,9 @@ import { headlineSpecsForPublished } from "@/lib/card-headline-spec";
  * photo → brand → two-line name at a fixed height → price. The price is the product's own
  * owner-approved `sellingPrice` (only a published product has one); otherwise an empty line of
  * the same height. Tagline and the category/variant row are hidden by CSS below `lg`.
+ * Desktop (round "search-price" batch 2, owner 2026-09-22): the price line shows on every width,
+ * and the tagline gets the same two-line floor (`lg:min-h-10`) as ProductCard so the price sits
+ * at the same height on every card in a row.
  */
 export function PilotProductCard({ product }: { product: StorefrontProductView }) {
   const { dict, locale } = useLocale();
@@ -79,13 +82,13 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
         <h3 className="font-display text-xl font-semibold leading-tight tracking-tight text-foreground max-lg:line-clamp-2 max-lg:min-h-[2.5em] max-lg:text-sm max-lg:leading-[1.25]">{product.displayName}</h3>
         {/* Round 30.3: ProductMaster copy is written in Thai, so the English/Chinese storefront used to
             show the Thai line here — pilotTagline() reads the English overlay when there is one. */}
-        <p className="line-clamp-2 text-sm text-foreground-muted max-lg:hidden">{pilotTagline(product.slug, product.tagline, locale)}</p>
+        <p className="line-clamp-2 text-sm text-foreground-muted max-lg:hidden lg:min-h-10">{pilotTagline(product.slug, product.tagline, locale)}</p>
         {/* Phone: the headline spec as one short line between the name and the price — same slot and
             same order as ProductCard's (owner ข, 2026-09-16). */}
         <p className="hidden min-h-[0.875rem] truncate text-[0.65rem] leading-[0.875rem] text-foreground-dim max-lg:block" data-card-spec-phone="published">
           <CardHeadlineSpec specs={headline} compact />
         </p>
-        <p className="hidden min-h-[1.25rem] font-display text-[15px] font-bold leading-tight text-foreground max-lg:block">
+        <p className="min-h-[1.25rem] font-display text-[15px] font-bold leading-tight text-foreground lg:text-lg" data-card-price>
           {sellingPrice !== null && sellingPrice !== undefined ? `฿${sellingPrice.toLocaleString("th-TH")}` : ""}
         </p>
         <div className="mt-auto flex min-h-4 items-center gap-3 pt-3 text-xs text-foreground-dim max-lg:hidden" data-card-spec="published">

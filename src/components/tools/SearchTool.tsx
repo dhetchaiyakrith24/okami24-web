@@ -3,8 +3,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
-import { searchProducts } from "@/data/products";
-import { searchPilotProducts, searchPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
+import type { Product } from "@/types/catalog";
+import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
+import { allProducts, legacySearchText } from "@/data/products";
+import { getPublishedProducts, publishedSearchText, searchPilotProducts } from "@/data/shipnity-seed/storefront-bridge";
+import { rankByQuery, type SearchText } from "@/lib/catalog-search";
 import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -14,12 +17,21 @@ import { pluralCount } from "@/i18n/dictionaries";
  * One flat result grid mixing legacy `Product[]` and ProductMaster `StorefrontProductView[]`
  * (both published and DEV-preview), each rendered by its own card component (`ProductCard`
  * requires legacy `attributes.*`, `PilotProductCard` doesn't have it — see storefront-bridge.ts).
- * Order: legacy first, then real PUBLISHED ProductMaster results (also genuinely customer-facing,
- * same as legacy — `PilotProductCard` itself hides the "Unpublished" badge for these), then
- * DEV-preview-only results last (`searchPilotProducts` — never present in production). No
- * deduplication — none of the pilot products has a known `exactLegacyMatch`, so there is nothing
- * to merge.
+ * Order (round "search-price", 2026-09-22): legacy and real PUBLISHED ProductMaster results are
+ * ranked TOGETHER by src/lib/catalog-search.ts — a product matched by what it is (name, brand,
+ * category, "หัวพอต") comes before one matched only by a spec line that mentions the word — and
+ * ties keep the catalog order (legacy first, then published, as before). DEV-preview-only results
+ * stay last (`searchPilotProducts` — never present in production). No deduplication — none of
+ * the pilot products has a known `exactLegacyMatch`, so there is nothing to merge.
  */
+type SearchHit = { kind: "legacy"; product: Product } | { kind: "published"; product: StorefrontProductView };
+
+function storefrontSearchEntries(): { hit: SearchHit; text: SearchText }[] {
+  return [
+    ...allProducts.map((product) => ({ hit: { kind: "legacy" as const, product }, text: legacySearchText(product) })),
+    ...getPublishedProducts().map((product) => ({ hit: { kind: "published" as const, product }, text: publishedSearchText(product) })),
+  ];
+}
 export function SearchTool({ initialQuery = "" }: { initialQuery?: string }) {
   const { dict } = useLocale();
   const router = useRouter();
@@ -27,10 +39,10 @@ export function SearchTool({ initialQuery = "" }: { initialQuery?: string }) {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(initialQuery);
   const inputRef = useRef<HTMLInputElement>(null);
-  const legacyResults = useMemo(() => searchProducts(query), [query]);
-  const publishedResults = useMemo(() => searchPublishedProducts(query), [query]);
+  const entries = useMemo(() => storefrontSearchEntries(), []);
+  const results = useMemo(() => rankByQuery(query, entries, (e) => e.text).map((e) => e.hit), [query, entries]);
   const pilotResults = useMemo(() => searchPilotProducts(query), [query]);
-  const totalCount = legacyResults.length + publishedResults.length + pilotResults.length;
+  const totalCount = results.length + pilotResults.length;
 
   useEffect(() => {
     const trimmed = query.trim();
@@ -81,12 +93,9 @@ export function SearchTool({ initialQuery = "" }: { initialQuery?: string }) {
             {totalCount} {pluralCount(totalCount, dict.search.resultCountOne, dict.search.resultCountOther)}
           </p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4">
-            {legacyResults.map((p) => (
-              <ProductCard key={p.slug} product={p} />
-            ))}
-            {publishedResults.map((p) => (
-              <PilotProductCard key={p.slug} product={p} />
-            ))}
+            {results.map((r) =>
+              r.kind === "legacy" ? <ProductCard key={r.product.slug} product={r.product} /> : <PilotProductCard key={r.product.slug} product={r.product} />
+            )}
             {pilotResults.map((p) => (
               <PilotProductCard key={p.slug} product={p} />
             ))}

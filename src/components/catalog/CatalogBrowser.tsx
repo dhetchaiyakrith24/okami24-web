@@ -7,6 +7,7 @@ import { ProductCard } from "@/components/catalog/ProductCard";
 import { PilotProductCard } from "@/components/catalog-bridge/PilotProductCard";
 import { BottomSheet } from "@/components/ui/BottomSheet";
 import { brands } from "@/data/brands";
+import { queryMatches, type SearchText } from "@/lib/catalog-search";
 import { familyName } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 import { ChevronDown, SlidersHorizontal, X } from "lucide-react";
@@ -44,7 +45,9 @@ interface CatalogEntry {
   key: string;
   name: string;
   tagline: string;
-  searchText: string;
+  /** Round "search-price" (2026-09-22): the same search text /search uses (legacySearchText /
+   *  publishedSearchText), so "พอตซิสเต็ม" typed here finds what it finds there. */
+  searchText: SearchText;
   brandId: string;
   categoryId: string;
   isFlagship: boolean;
@@ -57,13 +60,13 @@ interface CatalogEntry {
   publishedProduct?: StorefrontProductView;
 }
 
-function toEntries(products: Product[], publishedProducts: StorefrontProductView[]): CatalogEntry[] {
+function toEntries(products: Product[], publishedProducts: StorefrontProductView[], searchTexts: Record<string, SearchText>): CatalogEntry[] {
   const legacyEntries: CatalogEntry[] = products.map((p) => ({
     kind: "legacy",
     key: `legacy:${p.slug}`,
     name: p.name,
     tagline: p.tagline,
-    searchText: `${p.name} ${p.tagline} ${p.shortDescription}`.toLowerCase(),
+    searchText: searchTexts[`legacy:${p.slug}`] ?? EMPTY_TEXT,
     brandId: p.brandId,
     categoryId: p.categoryId,
     isFlagship: p.isFlagship,
@@ -79,7 +82,7 @@ function toEntries(products: Product[], publishedProducts: StorefrontProductView
     key: `published:${p.slug}`,
     name: p.displayName,
     tagline: p.tagline,
-    searchText: `${p.displayName} ${p.tagline} ${p.brandName}`.toLowerCase(),
+    searchText: searchTexts[`published:${p.slug}`] ?? EMPTY_TEXT,
     brandId: p.brandId,
     categoryId: p.categoryId,
     isFlagship: p.isFlagship,
@@ -96,13 +99,20 @@ function toEntries(products: Product[], publishedProducts: StorefrontProductView
 /** The sheet's collapsible groups, keyed so the open/closed state survives re-renders. */
 type SheetGroupId = "brand" | "screen" | "portability" | "level";
 
+/** A product the page forgot to build search text for matches nothing rather than crashing —
+ *  and catalog-search-contract-test.ts checks every grid page passes a complete map. */
+const EMPTY_TEXT: SearchText = { primary: "", secondary: "" };
+
 export function CatalogBrowser({
   products,
   publishedProducts = [],
+  searchTexts,
   isEmptyCategory,
 }: {
   products: Product[];
   publishedProducts?: StorefrontProductView[];
+  /** From `catalogSearchTexts()` (src/lib/catalog-search-entries.ts), built by the server page. */
+  searchTexts: Record<string, SearchText>;
   isEmptyCategory?: boolean;
 }) {
   const { dict } = useLocale();
@@ -131,7 +141,7 @@ export function CatalogBrowser({
   const [sheetOpen, setSheetOpen] = useState(false);
   const [openGroups, setOpenGroups] = useState<Set<SheetGroupId>>(() => new Set<SheetGroupId>(["brand"]));
 
-  const entries = useMemo(() => toEntries(products, publishedProducts), [products, publishedProducts]);
+  const entries = useMemo(() => toEntries(products, publishedProducts, searchTexts), [products, publishedProducts, searchTexts]);
 
   const availableBrands = useMemo(() => {
     const ids = new Set(entries.map((e) => e.brandId));
@@ -155,7 +165,7 @@ export function CatalogBrowser({
     let list = entries;
     if (query.trim()) {
       const q = query.trim().toLowerCase();
-      list = list.filter((e) => e.searchText.includes(q));
+      list = list.filter((e) => queryMatches(q, e.searchText));
     }
     if (brandFilter.size > 0) list = list.filter((e) => brandFilter.has(e.brandId));
     if (screenFilter.size > 0) list = list.filter((e) => e.screenType !== null && screenFilter.has(e.screenType));

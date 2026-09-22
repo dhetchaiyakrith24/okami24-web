@@ -8,6 +8,7 @@ import { TechnologyEntryPageHeader } from "@/components/content/TechnologyEntryP
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import type { Product } from "@/types/catalog";
 import { articleJsonLd, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
+import { familyModifiedDate } from "@/lib/content-dates";
 import { articleFaqJsonLd, articleVideoJsonLd } from "@/lib/article-jsonld";
 import { TECHNOLOGY_COPY_TH, TECHNOLOGY_COPY_ZH } from "@/i18n/technology-copy";
 import { TECHNOLOGY_DESCRIPTION_HEAD_TH } from "@/i18n/search-head-copy";
@@ -47,7 +48,7 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: entryTitle, description: TECHNOLOGY_DESCRIPTION_HEAD_TH[entry.id] ?? th?.summary ?? entry.summary, path: entryPath, publishedAt: entry.publishedAt, updatedAt: entry.updatedAt })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: entryTitle, description: TECHNOLOGY_DESCRIPTION_HEAD_TH[entry.id] ?? th?.summary ?? entry.summary, path: entryPath, publishedAt: entry.publishedAt, updatedAt: familyModifiedDate("technology") })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(entryTitle, entryPath)) }} />
       {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       {videoJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />}
