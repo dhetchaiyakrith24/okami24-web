@@ -24,11 +24,15 @@ export function formatPriceTh(price: number): string {
   return `฿${price.toLocaleString("en-US")}`;
 }
 
-/** Row A1 / A2 — the homepage (root layout default title + description + og:description). */
+/** Row A1 / A2 — the homepage (root layout default title + description + og:description).
+ *  Round 7 "SEO ค" B2 (owner ruling 2026-09-23): both "พอตไฟฟ้า" and "บุหรี่ไฟฟ้า" are allowed in
+ *  head copy — before this round "บุหรี่ไฟฟ้า" appeared in no head on the site (0/99) while
+ *  Search Console showed "okami บุหรี่ไฟฟ้า" at 0/5. Wording = thai-copy's row A (title keeps the
+ *  BSOT §1 slogan whole; "พอตไฟฟ้า" stays in the visible H1, which is untouched — owner set, B5). */
 export const HOME_HEAD_TH = {
-  title: "OKami24 (OKM) — พอตของแท้ ราคาตรง บริการจริง",
+  title: "OKami24 (OKM) ร้านพอต บุหรี่ไฟฟ้า ของแท้ ราคาตรง บริการจริง",
   description:
-    "OKami24 (OKM) ร้านพอตของแท้ ราคาตรง บริการจริง มีพอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต และคอยล์ บอกราคาทุกตัว สั่งทาง LINE @okm24 แอดมินตอบเอง ไม่ใช่บอท",
+    "OKami24 (OKM) ร้านพอตไฟฟ้าและบุหรี่ไฟฟ้า ของแท้ ราคาตรง มีพอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต และคอยล์ บอกราคาทุกตัว สั่งทาง LINE @okm24 แอดมินตอบเอง ไม่ใช่บอท",
 } as const;
 
 /** Rows A3 / A4. */
@@ -49,7 +53,10 @@ export const CONTACT_HEAD_TH = {
 export function productsHeadTh(count: number) {
   return {
     title: `พอต หัวพอต คอยล์ ของแท้ ${count} รุ่น ราคาทุกตัว${OKM_TITLE_SUFFIX}`,
-    description: `สินค้าทั้งหมด ${count} รุ่นในหน้าเดียว พอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS ของแท้ บอกราคาทุกตัว ค้นด้วยชื่อรุ่นได้ สั่งทาง LINE @okm24`,
+    // Round 7 "SEO ค" B2: "อุปกรณ์บุหรี่ไฟฟ้า" (owner key, 0/99 heads before) opens the line; "อุปกรณ์" =
+    // the device, THAI_STYLE §3 word 11. thai-copy dropped the owner's "อุปกรณ์ pod" (keyword laid on
+    // top, not a seller's phrase) — "พอต" already covers it.
+    description: `อุปกรณ์บุหรี่ไฟฟ้าและพอตของแท้ ${count} รุ่นในหน้าเดียว พอตซิสเต็ม พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS บอกราคาทุกตัว ค้นด้วยชื่อรุ่นได้ สั่งทาง LINE @okm24`,
   };
 }
 
@@ -88,6 +95,62 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
       description: `พอตซิสเต็ม UWELL ที่ OKami24 (OKM) มี Caliburn G5${p("caliburn-g5")} · G4${p("caliburn-g4")} · G3 Pro${p("caliburn-g3-pro")} พร้อมหัวพอตและคอยล์แท้ของ Caliburn สั่งทาง LINE @okm24`,
     };
   },
+  // Round 7 "SEO ค" B2 — the seven brands that still read "X ของแท้ทุกรุ่นที่ร้านมี". Pattern agreed
+  // with seo-auditor #1 and thai-copy: the brand page's title = brand word + category word (the
+  // brand term), the product page's title = model + price (the model term) — a single-product
+  // brand must not carry the same title as its product, or Google keeps one of the two. Every
+  // non-price sentence below is the brand's own `descriptionTh` already on the page; prices
+  // come through `priceOf` like the four entries above. relx/salthub stay as approved in SEO ก
+  // (their Search Console lines are being measured until 2026-10-05).
+  iqos: (priceOf) => {
+    const p = (slug: string) => { const v = priceOf(slug); return v ? ` ${v}` : ""; };
+    return {
+      title: `IQOS ของแท้ เครื่องอุ่นยาสูบ ILUMA${OKM_TITLE_SUFFIX}`,
+      description: `IQOS ของ Philip Morris International เครื่องอุ่นยาสูบ ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมี ILUMA i${p("iqosheet-18")} และ ILUMA i PRIME${p("iqosheet-16")} สั่งทาง LINE @okm24`,
+    };
+  },
+  "esko-bar": (priceOf) => {
+    const p = priceOf("pod-159");
+    return {
+      title: `ESKO BAR เครื่องระบบสวิตช์ ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
+      description: `ESKO BAR แบรนด์พอตใช้แล้วทิ้งและเครื่องระบบสวิตช์ ที่ร้านมี Esko Bar Switch 20K เครื่องที่เปลี่ยนแค่หัวพอตบรรจุสำเร็จ ของแท้${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
+    };
+  },
+  wotofo: (priceOf) => {
+    const p = priceOf("pod-180");
+    return {
+      title: `WOTOFO พอตใช้แล้วทิ้ง ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
+      description: `WOTOFO เจ้าของพอตใช้แล้วทิ้งสาย nexBAR ที่ร้านมีรุ่น 18K ของแท้${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
+    };
+  },
+  nevoks: (priceOf) => {
+    const p = priceOf("coil-54");
+    return {
+      title: `NEVOKS หัวพอตเปล่า ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
+      description: `NEVOKS ผู้ผลิตพอตซิสเต็มตระกูล FEELIN ที่ร้านมีหัวพอตเปล่าสำหรับ Feelin Mini ของแท้${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
+    };
+  },
+  rincoe: (priceOf) => {
+    const p = priceOf("coil-89");
+    return {
+      title: `RINCOE หัวพอต ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
+      description: `RINCOE ผู้ผลิตพอตตระกูล Jellybox ที่ร้านมีหัวพอตแท้สำหรับ Jellybox V คอยล์ในตัว${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
+    };
+  },
+  dotmod: (priceOf) => {
+    const p = priceOf("coil-70");
+    return {
+      title: `DOTMOD คอยล์ ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
+      description: `DOTMOD ผู้ผลิต dotAIO และคอยล์ dotCoils ที่ร้านมีคอยล์แท้สำหรับ dotAIO V2${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
+    };
+  },
+  joiway: (priceOf) => {
+    const p = (slug: string) => { const v = priceOf(slug); return v ? ` ${v}` : ""; };
+    return {
+      title: `JOIWAY พอตใช้แล้วทิ้ง F3 · F4 ของแท้${OKM_TITLE_SUFFIX}`,
+      description: `JOIWAY ผู้ผลิตพอตใช้แล้วทิ้ง ที่ร้านมี F3${p("joiway-f3")} และ F4${p("joiway-f4")} สลับ 2 รสในเครื่องเดียว OKami24 รีวิวใช้จริงไว้บน YouTube สั่งทาง LINE @okm24`,
+    };
+  },
 };
 
 /** Row B2 — appended to every product description; the price is the catalog's, never typed. */
@@ -102,13 +165,83 @@ export function productPriceSuffixTh(price: number): string {
  * the title line, exactly the way the owner-approved brand titles carry theirs
  * (`BRAND_HEAD_TH` above: "… ของแท้ ฿349"). Same catalog number, no new words.
  *
- * og:title only — the `<title>` a search result shows is deliberately untouched, because those
- * 53 strings were approved in round SEO ก and are being measured in Search Console until
- * 2026-10-05; changing them would spoil the comparison.
+ * Round 7 "SEO ค" B2 (owner: "title ทำได้เลย", 2026-09-23): the `<title>` now carries the same
+ * price line on 46 of the 53 product pages — see `productTitleWithPriceTh` below for the seven
+ * pages held back until the 2026-10-05 re-measure and for the length guard.
  */
 export function shareTitleWithPriceTh(title: string, price: number | null): string {
   return price === null ? title : `${title} ${formatPriceTh(price)}`;
 }
+
+/** The root layout appends this to every title that does not end in "(OKM)". */
+const ROOT_TITLE_SUFFIX = " — OKami24";
+/** The owner's title ceiling (this file's header), measured including the root suffix. */
+const TITLE_MAX = 60;
+
+/**
+ * Round 7 "SEO ค" B2 — the seven product pages whose `<title>` stays exactly as approved in round
+ * SEO ก until the Search Console re-read on 2026-10-05: `docs/SEO_BASELINE.md` names them by page
+ * (drag-6, drag-s3, caliburn-g5-lite-se, m-bar-15k) or by query (caliburn g5, caliburn g5 lite,
+ * voopoo argus g4), and a title change before that date would make a CTR move unattributable
+ * between the title and the description line (seo-auditor #1, 2026-09-23). The other 46 gain the
+ * price now: the 33 pages Google has not indexed have no baseline line to lose, and the price plus
+ * the Thai type word is what tells the near-identical coil pages apart.
+ * Delete this set (and the branch that reads it) after the re-read.
+ */
+export const TITLE_PRICE_HOLD_UNTIL_2026_10_05 = new Set(["drag-6", "drag-s3", "caliburn-g5-lite-se", "m-bar-15k", "caliburn-g5", "caliburn-g5-lite", "argus-g4"]);
+
+/**
+ * `<title>` of a product page = the approved base title, plus the catalog price where one exists —
+ * unless the slug is on hold (above), or the price would push the title past the ceiling (a
+ * four-digit price can arrive from the stock API any day; the guard drops the fragment instead of
+ * letting a title silently grow past 60 — thai-copy's note 8). og:title keeps using
+ * `shareTitleWithPriceTh` unchanged, so the share-card gate's "title + price" rule still holds.
+ */
+export function productTitleWithPriceTh(slug: string, baseTitle: string, price: number | null): string {
+  if (price === null || TITLE_PRICE_HOLD_UNTIL_2026_10_05.has(slug)) return baseTitle;
+  const withPrice = shareTitleWithPriceTh(baseTitle, price);
+  return [...withPrice].length + ROOT_TITLE_SUFFIX.length <= TITLE_MAX ? withPrice : baseTitle;
+}
+
+/**
+ * Round 7 "SEO ค" B2 — category `<title>`: the locked ชั้น-2 label stays first and whole (it is also
+ * the H1 and the menu word), then " ของแท้ บอกราคาทุกรุ่น" where the whole title fits the ceiling,
+ * else the short " ของแท้" (the two long labels, Coils & Accessories / Heated Tobacco Devices).
+ * Descriptions are the visible category ledes and are not touched here.
+ */
+export function categoryTitleTh(labelTh: string): string {
+  const full = `${labelTh} ของแท้ บอกราคาทุกรุ่น`;
+  return [...full].length + ROOT_TITLE_SUFFIX.length <= TITLE_MAX ? full : `${labelTh} ของแท้`;
+}
+
+/**
+ * Round 7 "SEO ค" B2 — product `<title>` overrides (before the price fragment), keyed by slug.
+ * Wording = thai-copy's rows (2026-09-23). Coils and pods put the locked Thai type word first
+ * (คอยล์ / หัวพอต / หัวพอตเปล่า — THAI_STYLE "กติกาเรียกหัวพอต"); every "สำหรับ …" names one device
+ * already listed in that product's approved meta description. "(Marbo)" = the name the SALTHUB
+ * line is marketed under (same source as the m-bar-15k description). m-bar-15k itself is on the
+ * hold list above and keeps its SEO-ก title. Model names keep the catalog's spelling; the
+ * iqosheet / pod-159 pages keep their generated titles so `<title>`, Product.name and H1 agree.
+ */
+export const PRODUCT_TITLE_HEAD_TH: Record<string, string> = {
+  "m-bar-9k": "SALTHUB M BAR 9K (Marbo) ของแท้",
+  "m-bar-10k": "SALTHUB M BAR 10K (Marbo) ของแท้",
+  "m-bar-pod": "SALTHUB M BAR POD (Marbo) หัวพอต ของแท้",
+  "coil-1": "คอยล์ VOOPOO Vinci สำหรับ VINCI Pod ของแท้",
+  "coil-38": "คอยล์ VOOPOO TPP สำหรับ DRAG 3 ของแท้",
+  "coil-53": "คอยล์ UWELL Caliburn G2 ของแท้",
+  "coil-54": "หัวพอตเปล่า NEVOKS Feelin Mini ของแท้",
+  "coil-55": "หัวพอตเปล่า UWELL Caliburn G2 ของแท้",
+  "coil-56": "หัวพอตเปล่า VOOPOO PnP-X ของแท้",
+  "coil-68": "หัวพอตเปล่า VOOPOO ITO-X ของแท้",
+  "coil-70": "คอยล์ DOTMOD dotAIO V2 ของแท้",
+  "coil-72": "หัวพอต VOOPOO Vmate Infinity Edition ของแท้",
+  "coil-74": "หัวพอตเปล่า UWELL Caliburn X ของแท้",
+  "coil-83": "หัวพอตเปล่า VOOPOO Argus P1 ของแท้",
+  "coil-87": "หัวพอตเปล่า VOOPOO TPP Pod ของแท้",
+  "coil-89": "หัวพอต RINCOE Jellybox V ของแท้",
+  "coil-94": "หัวพอต UWELL Caliburn G4 · G3 Series ของแท้",
+};
 
 const META_DESCRIPTION_MAX = 160;
 
@@ -185,8 +318,11 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
  *  descriptions for the guides grown that round; the dek each page shows is unchanged. No price
  *  ever appears in this map (round-ก rule). */
 export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
+  // Round 7 "SEO ค" B2: "pod system คือ" (@60) and "ยี่ห้อไหนดี" (@57) joined the line — thai-copy row D ก;
+  // "ตัวไหนดี" already leads the title/H1. The definition paraphrases the pod-systems category lede
+  // without the word "น้ำยา" (HANDOFF §16 4b keeps it out of head copy until the category has stock).
   "choosing-your-first-pod-system":
-    "Pod system ตัวไหนดี เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมีจริง Caliburn G5 · ARGUS G3 mini · M Bar 9K พร้อมวิธีเช็คของแท้",
+    "Pod system คือพอตที่เติมเองได้ เปลี่ยนหัวพอตได้ ยี่ห้อไหนดี เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมี Caliburn G5 · M Bar 9K",
   "open-system-vs-disposable":
     "เทียบพอตใช้แล้วทิ้งกับพอตซิสเต็ม ต่างกันตรงไหน ต้องดูแลแค่ไหน พร้อมตัวอย่างจริง M Bar 10K · M Switch Kit · Caliburn G5 Lite และวิธีเช็คของแท้จากกล่อง",
   "reading-a-spec-sheet":

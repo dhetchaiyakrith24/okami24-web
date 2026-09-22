@@ -205,12 +205,17 @@ export function articleJsonLd(input: {
   path: string;
   publishedAt?: string;
   updatedAt?: string;
+  /** Round 7 "SEO ค" B2: site-relative path of the image the page ALREADY declares as its share
+   *  card (og:image) — the article records carry no hero image, so nothing new is claimed;
+   *  Search Console's "Article: missing image" note was 12/12 before this. */
+  image?: string;
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: input.headline,
     description: input.description,
+    ...(input.image ? { image: [absoluteUrl(input.image)] } : {}),
     inLanguage: "th",
     mainEntityOfPage: absoluteUrl(input.path),
     ...(input.publishedAt ? { datePublished: input.publishedAt } : {}),
