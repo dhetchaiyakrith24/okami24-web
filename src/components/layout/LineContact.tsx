@@ -33,11 +33,21 @@ export function LineContact() {
         className="group fixed bottom-8 right-8 z-30 hidden items-center gap-2 overflow-hidden rounded-full border border-surface-border bg-surface-1/95 px-3.5 py-3.5 text-foreground shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-red/50 hover:px-5 focus-visible:border-red/50 focus-visible:px-5 focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-2 max-lg:bottom-[calc(2rem+var(--okami-fab-lift,0px))] sm:flex"
       >
         <LineIcon className="h-5 w-5 shrink-0 text-red" />
+        {/* Round 6 "about3lang" item 3 (owner 2026-09-23): the reveal used to animate max-width
+            from 0 to a fixed 9rem, which is a guess about how wide the label is — a visitor whose
+            device falls back to a wider font than ours silently got a clipped label, and no cap we
+            could pick would be provably big enough. This animates a single grid column from 0fr to
+            1fr instead: 1fr on an auto-sized grid resolves to the label's own max-content width, so
+            the open pill is exactly as wide as its text in whatever font actually renders, in every
+            language, and there is no cap left to be wrong. The open state looks identical to today
+            (the text decided the width then too, 113px in Thai against the 144px cap); what changes
+            is that the 300ms reveal now runs its full length in all three languages instead of
+            stopping early at whatever fraction of 9rem the text happened to be. */}
         <span
           aria-hidden
-          className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold opacity-0 transition-all duration-300 group-hover:max-w-[9rem] group-hover:opacity-100 group-focus-visible:max-w-[9rem] group-focus-visible:opacity-100"
+          className="grid grid-cols-[0fr] opacity-0 transition-all duration-300 group-hover:grid-cols-[1fr] group-hover:opacity-100 group-focus-visible:grid-cols-[1fr] group-focus-visible:opacity-100"
         >
-          {label}
+          <span className="overflow-hidden whitespace-nowrap text-sm font-semibold">{label}</span>
         </span>
       </a>
 

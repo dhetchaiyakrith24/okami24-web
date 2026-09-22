@@ -34,7 +34,13 @@ export const brands: Brand[] = [
     description:
       "A disposable- and switch-pod-focused brand built around the M Bar disposable line and the M Switch / Zero reusable cartridge platforms, emphasizing high puff counts, multi-mode airflow, and cartridge-based refill systems.",
     descriptionTh:
-      "SALTHUB เจ้าของ M Bar พอตใช้แล้วทิ้งรุ่น 9K 10K และ 15K กับเครื่องระบบสวิตช์ M Switch และ Zero ที่เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา มีครบทั้งเครื่องและหัวพอต",
+      // Round 6 "about3lang" B2 (owner เคาะ 2026-09-23): the clause that used to end this lede,
+      // "มีครบทั้งเครื่องและหัวพอต", was a completeness claim about stock — banned by the SEO ข
+      // permanent rulings. "ที่ร้านมีทั้งตัวเครื่องและหัวพอต" states only what the catalog shows
+      // (3 pod-kits + 3 pods-cartridges in src/data/products/salthub.ts) and puts the subject back
+      // in: the old clause had none, so it read as if Zero, not the shop, was the complete thing.
+      // Wording by writer + thai-copy; option ข-1 of three.
+      "SALTHUB เจ้าของ M Bar พอตใช้แล้วทิ้งรุ่น 9K 10K และ 15K กับเครื่องระบบสวิตช์ M Switch และ Zero ที่เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา ที่ร้านมีทั้งตัวเครื่องและหัวพอต",
     referenceUrl: "https://www.salthub.com/",
   },
   {

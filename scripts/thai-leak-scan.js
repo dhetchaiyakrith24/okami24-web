@@ -50,16 +50,15 @@ const VISIBLE_ATTRS = ["aria-label", "aria-description", "aria-placeholder", "al
  * remove it from this list — an exception with no way out is how a gate rots.
  */
 const ALLOW = [
-  {
-    file: path.join("src", "components", "layout", "AgeGate.tsx"),
-    why: "Age/nicotine legal notice — THAI_STYLE §5 group ก, untouchable since round 30.1; translating it is new customer-facing legal copy, which is the owner's call (CLAUDE.md 13.4 #6).",
-    until: "the owner approves an en/zh wording for the age gate.",
-  },
-  {
-    file: path.join("src", "app", "about", "page.tsx"),
-    why: "The /about body is hardcoded Thai prose (a Server Component). It is a real leak, not a ruled exception — but every sentence is customer-facing copy that has no en/zh version anywhere, so writing one is the owner's call (CLAUDE.md 13.4 #6). Raised in round 'leftovers', 2026-09-22.",
-    until: "the owner rules on an en/zh /about (then this row goes away and the page moves into the dictionaries).",
-  },
+  // The AgeGate.tsx row is GONE (round 6 "about3lang", batch B1, 2026-09-23): the owner approved an
+  // en/zh wording, the dialog's copy moved to src/i18n/age-gate-copy.tsx (Thai byte for byte), and
+  // the component now holds no Thai literal at all. The gate below therefore enforces it — a Thai
+  // string put back into AgeGate.tsx fails this scan with nothing to excuse it.
+  // The about/page.tsx row is GONE too (round 6 "about3lang", batch B4, 2026-09-23): the owner
+  // ruled on an en/zh /about, the page body moved to src/components/content/AboutContent.tsx and
+  // its copy to src/i18n/about-copy.ts, and the route now holds no Thai literal at all. Both rows
+  // this round inherited are therefore gone, and the gate below enforces both pages by itself —
+  // Thai put back into either component fails this scan with nothing to excuse it.
   {
     dir: path.join("src", "app", "preview"),
     why: "DEV-only ProductMaster preview: robots index:false and a production notFound() gate (see preview-guard.ts). No customer ever reaches it, in any locale.",
