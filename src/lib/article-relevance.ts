@@ -1,0 +1,140 @@
+/**
+ * OKami24 — which article does THIS product's page send a reader to? (round "backlink",
+ * 2026-09-22)
+ *
+ * Measured before this round: 0 of the 53 product pages linked to a guide or a technology page,
+ * while the 12 articles carried 65 links the other way. So the articles were reachable from the
+ * index and from each other and nothing else — and a customer standing on a product page with a
+ * question had nowhere to go.
+ *
+ * Nothing here is a judgement call about "what feels related". A pairing exists only when the
+ * data already says so, in one of two ways:
+ *
+ *   1. AUTHORED — the article's own `relatedProductSlugs` (src/data/guides.ts,
+ *      src/data/technology.ts). Someone wrote that list while writing the article; reading it
+ *      backwards adds no new claim. These come first.
+ *   2. RULE — a fact on the product record, named per rule in `evidence` below, that the article
+ *      is about: a device with a verified battery spec → the battery article; a touchscreen
+ *      device → the touchscreen article; a pod or coil → the pod/coil maintenance article. Every
+ *      rule reads VERIFIED spec rows or a typed attribute, never a guess and never a spec row
+ *      whose own `sourceStatus` is "unverified". Draw style (MTL/DTL) is deliberately absent:
+ *      `attributes.drawStyle` is a Finder attribute with no verified spec row behind it
+ *      (standing ruling, HANDOFF §16), so the MTL/DTL article is only ever reached through an
+ *      authored link.
+ *
+ * A product that matches nothing gets no links — the round's rule, and the honest outcome for
+ * (say) a TEREA stick, which none of the twelve articles is about. The cap is three per page.
+ * Guarded by src/lib/article-relevance-contract-test.ts, which recomputes every rule's evidence
+ * from the data and fails on a link to an article or product that does not exist.
+ */
+import { guides } from "@/data/guides";
+import { technologyEntries } from "@/data/technology";
+import type { Product, Specification } from "@/types/catalog";
+import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
+
+export interface RelatedArticle {
+  /** "guide" | "technology" — the route family, and the label the card shows. */
+  kind: "guide" | "technology";
+  /** Record id, which is also the slug for every current record. */
+  id: string;
+  href: string;
+  /** English title/name; the component overlays the visitor's language the way /guides does. */
+  title: string;
+  /** Why this pairing exists — read by the contract test and by anyone auditing a page. */
+  why: string;
+}
+
+const MAX_PER_PRODUCT = 3;
+
+const GUIDE_BY_ID = new Map(guides.map((g) => [g.id, g]));
+const TECH_BY_ID = new Map(technologyEntries.map((t) => [t.id, t]));
+
+function article(kind: "guide" | "technology", id: string, why: string): RelatedArticle | null {
+  if (kind === "guide") {
+    const g = GUIDE_BY_ID.get(id);
+    return g ? { kind, id, href: `/guides/${g.slug}`, title: g.title, why } : null;
+  }
+  const t = TECH_BY_ID.get(id);
+  return t ? { kind, id, href: `/technology/${t.slug}`, title: t.name, why } : null;
+}
+
+/** article id → the products the article itself lists, read backwards. */
+const AUTHORED = (() => {
+  const map = new Map<string, { kind: "guide" | "technology"; id: string }[]>();
+  const add = (slug: string, kind: "guide" | "technology", id: string) => map.set(slug, [...(map.get(slug) ?? []), { kind, id }]);
+  for (const g of guides) for (const slug of g.relatedProductSlugs ?? []) add(slug, "guide", g.id);
+  for (const t of technologyEntries) for (const slug of t.relatedProductSlugs ?? []) add(slug, "technology", t.id);
+  return map;
+})();
+
+/** A verified spec row whose key or value carries `needle` (case-insensitive). Unverified rows
+ *  are ignored on purpose: a page may not send a reader somewhere on an unconfirmed fact. */
+function verifiedSpec(specs: ReadonlyArray<Pick<Specification, "key" | "value" | "sourceStatus">>, needle: RegExp): string | null {
+  const hit = specs.find((s) => s.sourceStatus === "verified" && (needle.test(s.key) || needle.test(s.value)));
+  return hit ? `${hit.key}: ${hit.value}` : null;
+}
+
+const POD_OR_COIL = new Set(["pods-cartridges", "coils-accessories"]);
+const DEVICE_CATEGORIES = new Set(["pod-systems", "pod-kits", "disposables"]);
+
+/** Rules for a legacy product record (the rich one: typed attributes + spec rows). */
+function legacyRules(p: Product): RelatedArticle[] {
+  const out: (RelatedArticle | null)[] = [];
+  const spec = (re: RegExp) => verifiedSpec(p.specifications, re);
+
+  // The two format articles: only for the formats they compare.
+  if (p.attributes.beginnerFriendly && DEVICE_CATEGORIES.has(p.categoryId)) out.push(article("guide", "choosing-your-first-pod-system", `attributes.beginnerFriendly = true, category ${p.categoryId}`));
+  if (p.categoryId === "disposables" || p.categoryId === "pod-systems") out.push(article("guide", "open-system-vs-disposable", `category ${p.categoryId} is one of the two formats the article compares`));
+
+  // Facts the product itself states.
+  if (p.attributes.batteryMah !== undefined || spec(/battery|แบต/i)) out.push(article("guide", "battery-care-and-charging", spec(/battery|แบต/i) ?? `attributes.batteryMah = ${p.attributes.batteryMah}`));
+  if (p.attributes.wattageMin !== undefined && p.attributes.wattageMax !== undefined) out.push(article("guide", "choosing-wattage-and-airflow", `attributes.wattageMin/Max = ${p.attributes.wattageMin}–${p.attributes.wattageMax}`));
+  if (p.attributes.screenType === "touchscreen") out.push(article("technology", "onboard-touch-displays", `attributes.screenType = touchscreen`));
+  if (POD_OR_COIL.has(p.categoryId)) out.push(article("guide", "coil-and-pod-maintenance", `category ${p.categoryId}`));
+
+  const mesh = spec(/mesh/i);
+  if (mesh) out.push(article("technology", "mesh-coil-systems", mesh));
+  const chip = spec(/chip|gene\.|ชิป/i);
+  if (chip) out.push(article("technology", "high-output-chip-platforms", chip));
+  const gesture = spec(/triple-tap|gesture|แตะ/i) ?? (p.features.some((f) => /triple-tap|gesture/i.test(f.title)) ? `feature: ${p.features.find((f) => /triple-tap|gesture/i.test(f.title))!.title}` : null);
+  if (gesture) out.push(article("technology", "gesture-and-triple-tap-control", gesture));
+  // "Several resistances on one cartridge" — true when the product's own pod/coil row says so.
+  const resistances = p.specifications.filter((s) => s.sourceStatus === "verified" && /resistance|โอห์ม|ohm/i.test(`${s.key} ${s.value}`));
+  if (resistances.length > 1 || resistances.some((s) => (s.value.match(/\d+(\.\d+)?\s*(Ω|โอห์ม|ohm)/gi) ?? []).length > 1)) {
+    out.push(article("technology", "multi-resistance-cartridges", `${resistances.length} verified resistance row(s): ${resistances.map((s) => s.value).join(" / ")}`));
+  }
+
+  return out.filter((a): a is RelatedArticle => a !== null);
+}
+
+/** Rules for a published ProductMaster product (pods and coils: a few verified rows, an option
+ *  axis, no typed attributes — see storefront-preview-read-model.ts). */
+function publishedRules(p: StorefrontProductView): RelatedArticle[] {
+  const out: (RelatedArticle | null)[] = [];
+  if (POD_OR_COIL.has(p.categoryId)) out.push(article("guide", "coil-and-pod-maintenance", `category ${p.categoryId}`));
+  if (p.optionAxisCode === "resistance" && p.variants.length > 1) out.push(article("technology", "multi-resistance-cartridges", `option axis "resistance" with ${p.variants.length} values`));
+  const mesh = verifiedSpec(p.specifications, /mesh/i);
+  if (mesh) out.push(article("technology", "mesh-coil-systems", mesh));
+  return out.filter((a): a is RelatedArticle => a !== null);
+}
+
+function withAuthoredFirst(slug: string, ruled: RelatedArticle[]): RelatedArticle[] {
+  const authored = (AUTHORED.get(slug) ?? []).map((a) => article(a.kind, a.id, `the article's own relatedProductSlugs lists ${slug}`)).filter((a): a is RelatedArticle => a !== null);
+  const seen = new Set<string>();
+  const out: RelatedArticle[] = [];
+  for (const a of [...authored, ...ruled]) {
+    if (seen.has(a.href)) continue;
+    seen.add(a.href);
+    out.push(a);
+    if (out.length === MAX_PER_PRODUCT) break;
+  }
+  return out;
+}
+
+export function relatedArticlesForLegacy(product: Product): RelatedArticle[] {
+  return withAuthoredFirst(product.slug, legacyRules(product));
+}
+
+export function relatedArticlesForPublished(product: StorefrontProductView): RelatedArticle[] {
+  return withAuthoredFirst(product.slug, publishedRules(product));
+}

@@ -189,6 +189,7 @@ export const zh: Dictionary = {
     whoIsThisForTitle: "适合谁使用？",
     faqEyebrow: "问答",
     faqTitle: "关于该设备的常见问题。",
+    readMoreEyebrow: "了解更多",
     relatedEyebrow: "相关推荐",
     relatedTitle: "你可能还会喜欢。",
     sourceNoteLabel: "参考来源",

@@ -204,6 +204,7 @@ export const th: Dictionary = {
     whoIsThisForTitle: "เหมาะกับใคร",
     faqEyebrow: "ถาม-ตอบ",
     faqTitle: "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้",
+    readMoreEyebrow: "อ่านต่อ",
     relatedEyebrow: "สินค้าใกล้เคียง",
     relatedTitle: "สินค้าที่คุณอาจสนใจ",
     sourceNoteLabel: "แหล่งอ้างอิง",

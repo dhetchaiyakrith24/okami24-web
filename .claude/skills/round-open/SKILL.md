@@ -18,7 +18,7 @@ The owner sends **a goal plus a pass criterion** in a round instruction file wri
 
 - The owner says "open round X" and attaches (or names) the round's instruction file.
 - A new chat starts on a round that is already open (continuation after a handoff) — run
-  Step 1 and Step 2, then skip to Step 6 and continue from the batch the handoff block names.
+  Step 1 and Step 2, then skip to Step 7 and continue from the batch the handoff block names.
 
 ## Step 1 — Read before anything else (the single "read first" list)
 
@@ -58,7 +58,29 @@ If the instruction file also names a tag, check the tag with `git tag -n1`; a ta
 a few commits before the merge commit is normal (the tag marks the round-close commit, the
 merge commit is Cowork's) — say so instead of treating it as a mismatch.
 
-## Step 3 — Scope: call `scope-auditor` once, and only once
+## Step 3 — Answer the instruction before touching anything
+
+Read the instruction file once more and reply with the objections only, in three groups. This
+step exists to stop work going the wrong way for an hour, not to review the owner's writing —
+the rules it judges the instruction against are `docs/TEMPLATES.md` (ค).
+
+- **ข้อห้ามจริง** — the bans and facts of this round, restated in one line each ONLY where
+  obeying them changes what gets built (a ban you would have honoured anyway is not worth a line).
+- **บอกวิธีทั้งที่ไม่จำเป็น** — where the instruction prescribes a method: say which way you will
+  take instead and why. This is the standing right of `~/.claude/CLAUDE.md` 13.10 #2 (argue back
+  with a reason, before starting) used here rather than halfway through. **Do not wait for an
+  answer** — 13.2 item 3 still applies: say it and start.
+- **กำกวม** — wording that reads two ways and would send the work in different directions. Only
+  these wait for a reply, and they count against the question limit of 13.1 (at most 3, asked once).
+
+**Cap: 5 items in total**, and only items that pass this test: *if I do not say this, the work
+comes out different.* Nothing to object to = one line, `คำสั่งชัด เริ่มได้เลย`, and continue.
+**Never restate the instruction back** (`~/.claude/CLAUDE.md` §10, and `round-close` step 7 bans
+the same thing in the report) — objections only, no summary, no padding.
+
+---
+
+## Step 4 — Scope: call `scope-auditor` once, and only once
 
 Before the first batch, call the `scope-auditor` agent **one time**. It walks the live sitemap
 and reports which pages this round really touches — **count from the sitemap, never trust a page
@@ -70,14 +92,14 @@ round.
 Do not call it again during the round; if the scope changes mid-round, that is a stop-and-ask
 case (`~/.claude/CLAUDE.md` 13.4).
 
-## Step 4 — Decide tier A or tier B for each batch
+## Step 5 — Decide tier A or tier B for each batch
 
 Apply the two-tier rule as written in `docs/HANDOFF.md` §17 ("Two-tier rule") — text only =
 tier A (no screenshots, no designer per batch); anything that touches structure or the screen =
 tier B (full proof: build → shoot before → shoot after → designer → owner picks → checker).
 **Not sure = tier B.** Write the tier next to each batch in the plan.
 
-## Step 5 — Split the round into batches
+## Step 6 — Split the round into batches
 
 Break the goal into checkable steps with a "how we know it is done" line each; the size cap and
 the planner rule live in `~/.claude/CLAUDE.md` 13.2 item 2 (one place) — a round that is big by
@@ -89,7 +111,7 @@ Every helper file created on the way (scripts, comparison images, logs, agent br
 `_incoming/<round>/` or `scripts/` — save each agent brief there so `docs/ROUND_COST.md` can
 count the calls at round close.
 
-## Step 6 — Write the round into the handoff block
+## Step 7 — Write the round into the handoff block
 
 Update `docs/HANDOFF.md` §16 item "open round" to say which round is open, its instruction
 file, the batch list with tiers, and where it stopped (the spec of §16 is in

@@ -196,6 +196,7 @@ export const en: Dictionary = {
     whoIsThisForTitle: "Who is this for?",
     faqEyebrow: "FAQ",
     faqTitle: "Common questions about this device.",
+    readMoreEyebrow: "Read more",
     relatedEyebrow: "Related",
     relatedTitle: "You might also consider.",
     sourceNoteLabel: "Reference sources",

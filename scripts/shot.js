@@ -29,13 +29,19 @@ const evals = [];
 // the page out at its whole height, which can move inner scroll containers; when the proof is
 // "what is on screen right after the interaction", this is the honest capture.
 let viewportOnly = false;
+// --anchor "<css selector>": capture the viewport with that element near the top, instead of the
+// page top. The full-page capture is capped at 4000px and every capture otherwise resets the
+// scroll to 0, so a section further down (e.g. a product page's related-articles block at ~5000px)
+// had no way to be photographed. Implies --viewport. Added round "backlink", 2026-09-22.
+let anchor = null;
 // --reduced-motion: answer `(prefers-reduced-motion: reduce)` the way a visitor who has switched
 // motion off in their OS does. Added for mobile round C (MOBILE_SPEC [M1] "reduced motion means
 // perfectly still"), which otherwise has no way to prove that path — the setting lives in the OS,
 // not in the page. Opt-in, so every existing call keeps answering "no-preference" as before.
 let reducedMotion = false;
 for (let i = 2; i < args.length; i++) {
-  if (args[i] === "--viewport") { viewportOnly = true; continue; } if (args[i] === "--reduced-motion") { reducedMotion = true; continue; } if (args[i] === "--click") clicks.push(args[++i]); else if (args[i] === "--wait") wait = +args[++i]; else if (args[i] === "--width") width = +args[++i]; else if (args[i] === "--cookie") cookies.push(args[++i]); else if (args[i] === "--desktop") desktop = true; else if (args[i] === "--eval") evals.push(args[++i]); }
+  if (args[i] === "--viewport") { viewportOnly = true; continue; }
+  if (args[i] === "--anchor") { anchor = args[++i]; viewportOnly = true; continue; } if (args[i] === "--reduced-motion") { reducedMotion = true; continue; } if (args[i] === "--click") clicks.push(args[++i]); else if (args[i] === "--wait") wait = +args[++i]; else if (args[i] === "--width") width = +args[++i]; else if (args[i] === "--cookie") cookies.push(args[++i]); else if (args[i] === "--desktop") desktop = true; else if (args[i] === "--eval") evals.push(args[++i]); }
 const port = 9333 + Math.floor(Math.random() * 500);
 // one throw-away profile per run — a shared profile is locked by any Chrome still alive from an
 // earlier run, and Chrome then exits silently (the DevTools endpoint never appears)
@@ -63,7 +69,12 @@ async function getJson(p) { return new Promise((res, rej) => http.get(`http://12
   await send("Page.navigate", { url }); await sleep(wait);
   for (const sel of clicks) { await send("Runtime.evaluate", { expression: `(()=>{const el=document.querySelector(${JSON.stringify(sel)});if(!el)return "missing";el.scrollIntoView({block:"center"});el.click();return "clicked"})()`, returnByValue: true }); await sleep(900); }
   for (const js of evals) { const r = await send("Runtime.evaluate", { expression: js, returnByValue: true, awaitPromise: true }); const cdp = r.result ?? {}; console.log("eval →", JSON.stringify(cdp.exceptionDetails ? { error: cdp.exceptionDetails.text, detail: cdp.exceptionDetails.exception?.description } : cdp.result?.value ?? null)); await sleep(900); }
-  await send("Runtime.evaluate", { expression: "window.scrollTo(0,0)" }); await sleep(300);
+  const scrollExpr = anchor
+    ? `(()=>{const el=document.querySelector(${JSON.stringify(anchor)});if(!el)return "anchor missing";const y=el.getBoundingClientRect().top+window.scrollY-120;window.scrollTo(0,y);return "anchored at "+Math.round(y);})()`
+    : "window.scrollTo(0,0)";
+  const scrolled = await send("Runtime.evaluate", { expression: scrollExpr, returnByValue: true });
+  if (anchor) console.log("anchor →", scrolled.result?.result?.value);
+  await sleep(anchor ? 800 : 300);
   const { result } = await send("Runtime.evaluate", { expression: "Math.min(document.documentElement.scrollHeight, 4000)", returnByValue: true });
   // Same emulation as the page was loaded with (desktop stays desktop — before 2026-09-08 this line
   // silently switched a --desktop run back to a 2x phone for the capture itself).

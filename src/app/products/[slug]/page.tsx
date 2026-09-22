@@ -15,6 +15,7 @@ import { CompatibilitySection } from "@/components/product/CompatibilitySection"
 import { CompatibleProducts } from "@/components/product/CompatibleProducts";
 import { ProductFAQ } from "@/components/product/ProductFAQ";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
+import { RelatedArticles } from "@/components/product/RelatedArticles";
 import { SourceNote } from "@/components/product/SourceNote";
 import { getBrand } from "@/data/brands";
 import {
@@ -47,6 +48,7 @@ const OFFER_MERCHANT = offerMerchantFields();
 import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
 import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, offerMerchantFields, openGraphWithImage, organizationRef, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { categoriesWithProducts, categoryIsEmpty } from "@/lib/category-visibility";
+import { relatedArticlesForLegacy, relatedArticlesForPublished } from "@/lib/article-relevance";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
@@ -56,7 +58,7 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import type { Product } from "@/types/catalog";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { productTitleTh } from "@/i18n/search-titles";
-import { PRODUCT_DESCRIPTION_HEAD_TH, withPriceSuffixTh } from "@/i18n/search-head-copy";
+import { PRODUCT_DESCRIPTION_HEAD_TH, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
  *  product-level card, the neutral variant fallback, and each variant's own photo. The variant
@@ -125,7 +127,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title,
       description,
       ...canonicalFor(path),
-      ...(cardImage ? openGraphWithImage({ title, description, path, image: cardImage }) : {}),
+      // Round "backlink" batch 2 (owner 2026-09-22): the card an admin sends on LINE carries the
+      // price on its title line, the way the brand cards do — same catalog number, <title> untouched.
+      ...(cardImage ? openGraphWithImage({ title: shareTitleWithPriceTh(title, getLegacyApprovedPrice(product.slug)), description, path, image: cardImage }) : {}),
     };
   }
 
@@ -142,7 +146,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title,
       description,
       ...canonicalFor(path),
-      ...(publishedProduct.image ? openGraphWithImage({ title, description, path, image: publishedProduct.image }) : {}),
+      ...(publishedProduct.image ? openGraphWithImage({ title: shareTitleWithPriceTh(title, publishedProduct.sellingPrice), description, path, image: publishedProduct.image }) : {}),
     };
   }
   const pilotProduct = getPilotProduct(slug);
@@ -224,14 +228,14 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedJsonLd) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(publishedTrail)) }} />
           <Breadcrumbs trail={publishedTrail} />
-          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />
+          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />
         </>
       );
     }
     const pilotProduct = getPilotProduct(slug);
     if (pilotProduct) {
       const pilotImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(pilotProduct));
-      return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} imageDisplayMap={pilotImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />;
+      return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} relatedArticles={relatedArticlesForPublished(pilotProduct)} imageDisplayMap={pilotImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />;
     }
     notFound();
   }
@@ -286,6 +290,9 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
       <ProductFAQ slug={product.slug} faqs={product.faqs} />
       <RelatedProducts products={related} />
+      {/* Round "backlink" (2026-09-22): the reading exit — articles this product's own data ties
+          it to (src/lib/article-relevance.ts), no new copy, nothing to buy. */}
+      <RelatedArticles articles={relatedArticlesForLegacy(product)} />
       <SourceNote product={product} />
     </>
   );
