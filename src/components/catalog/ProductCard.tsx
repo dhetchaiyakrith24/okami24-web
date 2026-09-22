@@ -19,7 +19,10 @@ import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
  * them). The price is the owner-approved legacy selling price already used on the product page
  * (F-ก: a number from existing data, never typed here); a product with no approved price keeps an
  * empty line of the same height so every card in a row ends at the same edge (3.5).
- * At `lg` and above every class that was here before is still here, untouched.
+ * At `lg` and above every class that was here before is still here; round "search-price" batch 2
+ * (owner 2026-09-22, "ราคาแสดงจริงทุกตัว" was never phone-only) made the price line show on every
+ * width — desktop reads brand → name → tagline → price → spec row (designer's pick B over a
+ * price-in-the-spec-row variant A, which truncated the spec on four-digit prices).
  */
 export function ProductCard({ product }: { product: Product }) {
   // Round 30.4ข batch 2 (owner 2026-09-16): the stats row used to print `attributes` as bare
@@ -74,11 +77,13 @@ export function ProductCard({ product }: { product: Product }) {
             card never had a stats row — this is the one addition). The price stays last (owner ข,
             2026-09-16, designer): name → spec → price reads like any shop listing, and a card with
             no approved price then leaves its gap at the bottom edge instead of mid-card. Both lines
-            keep their height when empty so every card in a row still ends at the same edge. */}
+            keep their height when empty so every card in a row still ends at the same edge.
+            Desktop (round search-price batch 2): the same price line, 18 px, between the two-line
+            tagline floor and the spec row, so prices align across a row. */}
         <p className="hidden min-h-[0.875rem] truncate text-[0.65rem] leading-[0.875rem] text-foreground-dim max-lg:block" data-card-spec-phone="legacy">
           <CardHeadlineSpec specs={headline} compact />
         </p>
-        <p className="hidden min-h-[1.25rem] font-display text-[15px] font-bold leading-tight text-foreground max-lg:block">
+        <p className="min-h-[1.25rem] font-display text-[15px] font-bold leading-tight text-foreground lg:text-lg" data-card-price>
           {sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : ""}
         </p>
         <div className="mt-auto flex min-h-4 items-center gap-3 pt-3 text-xs text-foreground-dim max-lg:hidden" data-card-spec="legacy">
