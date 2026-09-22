@@ -37,7 +37,12 @@ const LEGACY_PRODUCT_DATA = [...Object.values(LEGACY_PRODUCT_FILES), "unbranded.
 
 /** Source paths per page family, relative to the repo root. A directory means "any file in it".
  *  Files that shape EVERY page (layout, header, footer, dictionaries) are deliberately not listed:
- *  a design tweak is not a content change a crawler needs to revisit 105 pages for. */
+ *  a design tweak is not a content change a crawler needs to revisit every page for.
+ *
+ *  Round "leftovers" (2026-09-22): `compare`, `finder`, `search` and `favorites` are no longer
+ *  read by sitemap.ts — those four pages are noindex and left the sitemap. Their rows stay because
+ *  the pages still exist and the mapping stays true; if one is ever made indexable it goes back
+ *  into STATIC_ROUTES with its date already correct. */
 export const CONTENT_SOURCES = {
   home: ["src/app/page.tsx", "src/components/home", "src/i18n/search-head-copy.ts"],
   productsIndex: ["src/app/products/page.tsx", ...LEGACY_PRODUCT_DATA, "src/data/shipnity-seed/active-catalog-source.ts", "src/i18n/search-head-copy.ts"],
