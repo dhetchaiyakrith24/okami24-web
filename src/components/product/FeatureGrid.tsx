@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 
 /**
  * Round 30.4 batches 5/6 (owner, 2026-09-13): a Thai visitor reads the feature cards from the
@@ -27,8 +27,8 @@ export function FeatureGrid({ product }: { product: Product }) {
           {product.features.map((feature, i) => (
             <div key={feature.id} className="flex flex-col gap-3 rounded-2xl border border-surface-border-soft bg-surface-0 p-6">
               <span className="label-mono text-xs text-steel" lang="en">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="font-display text-lg font-semibold leading-tight text-foreground">{copyTh?.[feature.id]?.title ? thaiTypography(copyTh[feature.id].title!) : feature.title}</h3>
-              <p className="text-sm leading-relaxed text-foreground-muted">{copyTh?.[feature.id]?.description ? thaiTypography(copyTh[feature.id].description) : feature.description}</p>
+              <h3 className="font-display text-lg font-semibold leading-tight text-foreground">{copyTh?.[feature.id]?.title ? thaiTypographyNode(copyTh[feature.id].title!) : feature.title}</h3>
+              <p className="text-sm leading-relaxed text-foreground-muted">{copyTh?.[feature.id]?.description ? thaiTypographyNode(copyTh[feature.id].description) : feature.description}</p>
             </div>
           ))}
         </div>

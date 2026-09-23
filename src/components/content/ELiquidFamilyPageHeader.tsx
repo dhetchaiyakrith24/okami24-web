@@ -3,7 +3,7 @@
 import { PageHeader } from "@/components/ui/PageHeader";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { FLAVOR_COPY_TH, FLAVOR_COPY_ZH } from "@/i18n/flavor-copy";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 
 /**
  * Same pattern as ELiquidPageHeader.tsx for the eyebrow. Content-level i18n fix (owner quality
@@ -16,7 +16,7 @@ export function ELiquidFamilyPageHeader({ id, title, description }: { id: string
   const overlay = locale === "th" ? FLAVOR_COPY_TH[id] : locale === "zh" ? FLAVOR_COPY_ZH[id] : undefined;
   // Round 30.4 Q1: the beverage lede keeps "เบเกอรี่" on one line at render time only (see
   // src/lib/thai-typography.ts) — generateMetadata in the page reads the plain string.
-  return <PageHeader eyebrow={dict.eliquid.familyEyebrow} title={locale === "th" && overlay?.name ? thaiTypography(overlay.name) : (overlay?.name ?? title)} description={locale === "th" && overlay?.description ? thaiTypography(overlay.description) : (overlay?.description ?? description)} />;
+  return <PageHeader eyebrow={dict.eliquid.familyEyebrow} title={locale === "th" && overlay?.name ? thaiTypographyNode(overlay.name) : (overlay?.name ?? title)} description={locale === "th" && overlay?.description ? thaiTypographyNode(overlay.description) : (overlay?.description ?? description)} />;
 }
 
 export function ELiquidCharacterNotesTitle() {

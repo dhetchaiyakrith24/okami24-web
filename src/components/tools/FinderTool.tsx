@@ -9,6 +9,7 @@ import { getPublishedProduct } from "@/data/shipnity-seed/storefront-bridge";
 import { Button } from "@/components/ui/Button";
 import { CheckCircle2 } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { ThaiText } from "@/components/i18n/ThaiText";
 import { FINDER_COPY_TH, FINDER_COPY_ZH } from "@/i18n/finder-copy";
 import { thaiTypography } from "@/lib/thai-typography";
 
@@ -193,7 +194,7 @@ export function FinderTool() {
         {unranked.length > 0 && (
           <div>
             <h3 className="font-display text-lg font-semibold text-foreground">{dict.finder.alsoInCatalogTitle}</h3>
-            <p className="mt-1 max-w-xl text-sm text-foreground-muted">{dict.finder.scopeNote}</p>
+            <p className="mt-1 max-w-xl text-sm text-foreground-muted"><ThaiText>{dict.finder.scopeNote}</ThaiText></p>
             <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {unranked.map((item) => {
                 const published = getPublishedProduct(item.slug);
@@ -219,7 +220,7 @@ export function FinderTool() {
         <span className="label-mono text-xs text-foreground-dim">
           {dict.finder.questionProgressPrefix} {step + 1} {dict.finder.questionProgressMiddle} {QUESTIONS.length}
         </span>
-        <h2 className="mt-2 font-display text-2xl font-semibold text-foreground sm:text-3xl">{question.title}</h2>
+        <h2 className="mt-2 font-display text-2xl font-semibold text-foreground sm:text-3xl"><ThaiText>{question.title}</ThaiText></h2>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {question.options.map((option) => (
@@ -228,8 +229,8 @@ export function FinderTool() {
             onClick={() => selectAnswer(question.key, option.value)}
             className="flex flex-col gap-1.5 rounded-xl border border-surface-border bg-surface-1 p-5 text-left transition-colors hover:border-ember/50 hover:bg-surface-2"
           >
-            <span className="font-display text-lg font-semibold text-foreground">{option.label}</span>
-            <span className="text-sm text-foreground-muted">{option.description}</span>
+            <span className="font-display text-lg font-semibold text-foreground"><ThaiText>{option.label}</ThaiText></span>
+            <span className="text-sm text-foreground-muted">{option.description && <ThaiText>{option.description}</ThaiText>}</span>
           </button>
         ))}
       </div>

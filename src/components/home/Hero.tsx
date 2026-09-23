@@ -9,6 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { brandName, formatBattery, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { ThaiText } from "@/components/i18n/ThaiText";
 
 /** How long the phone's hero motion runs, end to end (see globals.css, `okami-hero-*`). The spec's
  *  ceiling is 0.8s; the last keyframe finishes at 0.78s and this leaves a small margin on top. */
@@ -159,7 +160,7 @@ export function Hero({
             <br />
             <span className="okami-hero-line-3 text-ember">{dict.hero.headingAccent}</span>
           </h1>
-          <p className="max-w-md text-base leading-relaxed text-foreground-muted sm:text-lg">{dict.hero.description}</p>
+          <p className="max-w-md text-base leading-relaxed text-foreground-muted sm:text-lg"><ThaiText>{dict.hero.description}</ThaiText></p>
           <div className="okami-hero-cta flex flex-wrap gap-3 pt-2">
             <Button href="/products">{dict.hero.ctaPrimary}</Button>
             <Button href="/finder" variant="secondary">

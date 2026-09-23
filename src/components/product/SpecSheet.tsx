@@ -7,7 +7,8 @@ import { SpecChip } from "@/components/ui/SpecChip";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { specLabelTh } from "@/i18n/spec-labels-th";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypographyNode } from "@/lib/thai-typography";
+import { ThaiText } from "@/components/i18n/ThaiText";
 
 export function SpecSheet({ product }: { product: Product }) {
   const { dict, locale } = useLocale();
@@ -27,7 +28,7 @@ export function SpecSheet({ product }: { product: Product }) {
           // product page — now dictionary strings (types.ts `product.specsUnverifiedNote` / `specsAllVerifiedNote`).
           description={
             unverifiedCount > 0
-              ? dict.product.specsUnverifiedNote.replace("{n}", String(unverifiedCount)).replace("{m}", String(product.specifications.length))
+              ? <ThaiText>{dict.product.specsUnverifiedNote.replace("{n}", String(unverifiedCount)).replace("{m}", String(product.specifications.length))}</ThaiText>
               : dict.product.specsAllVerifiedNote
           }
         />
@@ -42,9 +43,9 @@ export function SpecSheet({ product }: { product: Product }) {
                 key={spec.key}
                 spec={spec}
                 label={labelTh}
-                value={valuesTh?.[spec.key] ? thaiTypography(valuesTh[spec.key]) : undefined}
+                value={valuesTh?.[spec.key] ? thaiTypographyNode(valuesTh[spec.key]) : undefined}
                 thaiLabel={labelTh !== undefined && labelTh !== spec.label}
-                unverifiedLabel={dict.product.unverifiedBadge}
+                unverifiedLabel={<ThaiText>{dict.product.unverifiedBadge}</ThaiText>}
                 unverifiedTitle={dict.product.unverifiedTooltip}
               />
             );

@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 
 /**
  * A Thai-only prose string (a page with no en/zh version, e.g. /about) rendered with the
@@ -13,5 +13,5 @@ import { thaiTypography } from "@/lib/thai-typography";
  */
 export function ThaiText({ children }: { children: string }) {
   const { locale } = useLocale();
-  return <>{locale === "th" ? thaiTypography(children) : children}</>;
+  return <>{locale === "th" ? thaiTypographyNode(children) : children}</>;
 }

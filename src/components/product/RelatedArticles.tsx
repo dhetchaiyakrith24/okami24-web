@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
 import { TECHNOLOGY_COPY_TH, TECHNOLOGY_COPY_ZH } from "@/i18n/technology-copy";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { RelatedArticle } from "@/lib/article-relevance";
 
 /**
@@ -40,7 +40,7 @@ export function RelatedArticles({ articles }: { articles: RelatedArticle[] }) {
             ? TECHNOLOGY_COPY_ZH[a.id]?.name
             : undefined;
     const text = overlay ?? a.title;
-    return locale === "th" ? thaiTypography(text) : text;
+    return locale === "th" ? thaiTypographyNode(text) : text;
   };
 
   return (

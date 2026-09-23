@@ -14,20 +14,27 @@
  *         นาที proposed the same day after "เต็มใน 45 | นาที" appeared on the ARGUS G4 lede);
  *       · inside the two-word model names the owner listed;
  *       · before the LINE handle "@okm24" (round 8 close, 2026-09-23 — never alone on a line).
- *   - WORD JOINER (U+2060) inside a word the segmenter breaks wrongly — ONLY the owner's listed
+ *   - a joined run inside a word the segmenter breaks wrongly — ONLY the owner's listed
  *     exceptions, each scoped to the sentence it was seen in (THAI_STYLE §5 records the position),
  *     plus the short NEVER_SPLIT list of locked compounds joined everywhere (owner, 2026-09-22).
+ *     Until round 9 this was a WORD JOINER (U+2060) between the letters; since round 9 (owner,
+ *     2026-09-23) the page gets a `<span class="whitespace-nowrap" data-tj>` around the plain letters
+ *     instead (thaiTypographyNode), so search engines read the words, not letters split by joiners.
  *
  * Conditions this module exists to enforce (owner):
  *   - applied at render only, Thai locale only — never stored in data/copy strings, so grep, the
  *     site search, <title>, meta description, JSON-LD and the English/Chinese pages keep the
  *     plain text (generateMetadata never calls this);
+ *   - no rendered string carries U+2060 (round 9); NBSP stays — it is Unicode White_Space, a
+ *     tokenizer splits on it like on a space;
  *   - the escapes below are the only occurrences of both characters in the repo — the checker
  *     greps every source file for the raw characters and reports any other location;
  *   - adding a joiner word or a model name needs the owner's call (docs/THAI_STYLE.md §5/§6).
  */
-import { Children, cloneElement, isValidElement } from "react";
+import { Children, cloneElement, createElement, isValidElement } from "react";
 import type { ReactElement, ReactNode } from "react";
+// (Round 9, 2026-09-23: the U+2060 below is the binding PLAN's internal marker — see typeset(); no
+// rendered string carries it any more.)
 
 const NBSP = String.fromCharCode(0x00a0); // NO-BREAK SPACE (written as a code point so the repo never holds the raw character)
 const WJ = String.fromCharCode(0x2060); // WORD JOINER (same reason)
@@ -52,6 +59,10 @@ function joinWord(word: string): string {
 /** Owner-approved joiner exceptions: the word (joined whole at render) and a phrase that must be
  *  present in the text so the joiner never spreads beyond the sentence it was approved for. */
 const JOINED: ReadonlyArray<{ word: string; within: string; joined: string }> = ([
+  // Round 9 B2 (see the block further down): these two widen an older entry for the same sentence, so they
+  // must come FIRST — once the older entry has joined "พอตคิท"/"พอตซิสเต็ม", its sentence no longer matches.
+  { word: "บนพอตคิท", within: "บนพอตคิทสาย ARGUS" }, // ARGUS G4 tagline on home/products/brand/technology cards (1440)
+  { word: "ในพอตซิสเต็ม", within: "คอยล์เป็นของสิ้นเปลืองในพอตซิสเต็ม" }, // coil-and-pod-maintenance (390)
   // /e-liquid/beverage lede (round 30.4 Q1)
   { word: "เบเกอรี่", within: "ไม่ได้ตั้งต้นจากผลไม้หรือเบเกอรี่" },
   // /technology/onboard-touch-displays, first paragraph (round 30.4 Q1)
@@ -97,6 +108,17 @@ const JOINED: ReadonlyArray<{ word: string; within: string; joined: string }> = 
   { word: "บรรจุสำเร็จ", within: "เครื่องระบบสวิตช์ที่ใช้หัวพอตบรรจุสำเร็จ" }, // first-pod guide, "Pod System คืออะไร" p1
   { word: "ให้ถูกแบบ", within: "เลือกพอตเครื่องแรกให้ถูกแบบ" }, // that guide's title: «แบบ» stranded alone (round 7 carry)
   { word: "ส่วนพอตคิท", within: "ส่วนพอตคิทก็ใช้ซ้ำได้" }, // same paragraph: the segmenter does not know "คิท" (split at 1440 once the words above were bound); "ส่วน" joined too so the connective never ends a line (designer)
+  // Round 9 B2 (owner 2026-09-23 allowed touching this module so the page keeps its look after the
+  // joiners became nowrap spans): with U+2060 the segmenter kept the short word before a joined word
+  // on the next line; a span lets it end the upper line ("2.01 นิ้ว บน | พอตคิทสาย"). The designer
+  // (line-map crops, `_incoming/round9/moved-crops/`) asked for the old break back in these sentences
+  // only — "มีหัวพอต" site-wide would strand "เว็บเรายังไม่ | มีหัวพอต" elsewhere.
+  { word: "บนตัวเครื่องสาย", within: "2.51 นิ้ว บนตัวเครื่องสาย G4" }, // Caliburn G4 Pro tagline (1440)
+  { word: "มีหัวพอต", within: "ช่วงโอห์มกว้างไม่ได้แปลว่ามีหัวพอตขายเสมอ" }, // reading-a-spec-sheet heading (390)
+  { word: "มีหัวพอต", within: "และในกล่องมีหัวพอต GPP มาให้" }, // GPP compatibility note, caliburn-g5 / coil-94 (390)
+  // Round 8 carry, listed by the owner in the round-9 instruction ("เก็บตกจากรอบ 8"):
+  { word: "ข้อเดียว", within: "ตัดสินใจข้อนี้ข้อเดียว" }, // first-pod guide, 390 + 1440: "ข้อ | เดียว"
+  { word: "เหมาะกับคุณ", within: "หรือพอตซิสเต็ม แบบไหนเหมาะกับคุณ" }, // open-system guide title on read-more cards, 390: "เหมาะ | กับคุณ"
 ] as const).map((j) => ({ ...j, joined: joinWord(j.word) }));
 
 /**
@@ -139,10 +161,19 @@ const REPEAT_MARK = / ๆ/g;
 const LINE_HANDLE = / (@okm24)/g;
 const bindUnit = (m: string) => m.replace(RANGE_DASH, `$1${WJ}`).replace(" ", NBSP);
 
-/** Returns `text` with the render-time typography applied. Idempotent; safe on any string. */
-export function thaiTypography(text: string): string {
-  if (!text || !THAI.test(text)) return text;
-  let out = text;
+/**
+ * The binding plan: `text` with every no-break decision applied, joiners written as U+2060 — an
+ * INTERNAL marker only since round 9 (owner, 2026-09-23). The characters never reach the page:
+ * thaiTypography() strips them, thaiTypographyNode() turns each joined run into a nowrap <span>.
+ * Reason: a tokenizer that does not drop U+2060 reads "ขายพอตซิสเต็ม" with a joiner between every letter as one token and loses
+ * the keywords "พอต"/"พอตซิสเต็ม" (ICU Intl.Segmenter("th") does exactly that —
+ * _incoming/round9/b2-evidence-u2060.md), and nobody can prove Google drops it first.
+ * The plan is computed exactly as before round 9, so the set of joined runs cannot drift; a
+ * no-break space already in the input (a second pass over text the string API returned) is read
+ * back as a plain space first, so a `within` phrase holding "0.85 นิ้ว" still matches.
+ */
+function typeset(text: string): string {
+  let out = text.includes(NBSP) ? text.split(NBSP).join(" ") : text;
   for (const j of JOINED) if (out.includes(j.within)) out = out.split(j.word).join(j.joined);
   for (const n of NEVER_SPLIT) out = out.split(n.word).join(n.joined);
   out = out.replace(REPEAT_MARK, `${NBSP}ๆ`);
@@ -151,6 +182,66 @@ export function thaiTypography(text: string): string {
   out = out.replace(NUMBER_UNIT_EN, bindUnit);
   for (const name of MODEL_NAMES) out = out.split(name).join(name.split(" ").join(NBSP));
   return out;
+}
+
+/** Returns `text` with the render-time typography applied as a plain string: the no-break spaces
+ *  only, no joined runs (a string cannot carry them without U+2060). For attributes, data that
+ *  travels as a string, and the dictionary deep-map — a caller that renders text where a joined
+ *  run must hold uses thaiTypographyNode(). Idempotent; safe on any string. */
+export function thaiTypography(text: string): string {
+  if (!text || !THAI.test(text)) return text;
+  const out = typeset(text);
+  return out.includes(WJ) ? out.split(WJ).join("") : out;
+}
+
+// Thai marks that belong to the letter before them (above/below vowels, tone marks, thanthakhat …)
+// and the following vowels ะ า ำ ๅ — a run never ends in front of one of them.
+const TRAILING = /[ะ-ฺๅ็-๎]/u;
+const DIGIT = /[\d,.]/;
+
+/** thaiTypography() for text that is RENDERED: every run the plan joins becomes
+ *  `<span class="whitespace-nowrap" data-tj>` around the plain letters, so the line can still not
+ *  break inside it but the page text holds no U+2060. Returns the plain string when nothing is
+ *  joined. Pure and deterministic (no runtime segmenter), so server and client render the same
+ *  markup. Accepts raw text or thaiTypography() output. */
+export function thaiTypographyNode(text: string): ReactNode {
+  if (!text || !THAI.test(text)) return text;
+  const planned = typeset(text);
+  if (!planned.includes(WJ)) return planned;
+  // clean text + the boundaries that must not break (a boundary b sits between clean[b-1] and clean[b])
+  let clean = "";
+  const glued: number[] = [];
+  for (const ch of planned) {
+    if (ch === WJ) glued.push(clean.length);
+    else clean += ch;
+  }
+  // grow each glued boundary into a run [start, end) over whole letters, then merge touching runs
+  const runs: Array<[number, number]> = [];
+  for (const b of glued) {
+    let start = b - 1;
+    while (start > 0 && TRAILING.test(clean[start])) start--;
+    // a range's dash joined to its second number: the run takes the whole range ("5–35", not "5<–35>")
+    if (/[\d,.–-]/.test(clean[start])) while (start > 0 && DIGIT.test(clean[start - 1])) start--;
+    if (start > 0 && LEADING_VOWEL.test(clean[start - 1])) start--;
+    let end = b + 1;
+    while (end < clean.length && (TRAILING.test(clean[end]) || LEADING_VOWEL.test(clean[end - 1]) || (DIGIT.test(clean[end]) && DIGIT.test(clean[end - 1])))) end++;
+    // merge only overlapping runs: two joined words side by side keep the break between them
+    const last = runs[runs.length - 1];
+    if (last && start < last[1]) last[1] = Math.max(last[1], end);
+    else runs.push([start, end]);
+  }
+  const nodes: ReactNode[] = [];
+  let at = 0;
+  runs.forEach(([s, e], i) => {
+    if (s > at) nodes.push(clean.slice(at, s));
+    nodes.push(createElement("span", { key: i, className: "whitespace-nowrap", "data-tj": "" }, clean.slice(s, e)));
+    at = e;
+  });
+  if (at < clean.length) nodes.push(clean.slice(at));
+  // One inline wrapper around the whole string: inside a flex/grid parent (a CTA link, a list row with an
+  // icon) bare pieces would each become their own flex item and move apart — the wrapper keeps the text
+  // one item, exactly as the single text node was before (line-map scan, round 9).
+  return createElement("span", { "data-tjw": "" }, ...nodes);
 }
 
 /** Deep-maps every string in a dictionary/overlay object (used by LocaleProvider for the Thai

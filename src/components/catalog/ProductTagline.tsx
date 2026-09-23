@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 
 /**
  * The card's tagline in the visitor's language.
@@ -17,5 +17,5 @@ import { thaiTypography } from "@/lib/thai-typography";
 export function ProductTagline({ en, th }: { en: string; th?: string }) {
   const { locale } = useLocale();
   // Round 30.4ค closing: render-time Thai typography (thai-typography.ts) — the data string stays plain.
-  return <>{locale === "th" && th ? thaiTypography(th) : en}</>;
+  return <>{locale === "th" && th ? thaiTypographyNode(th) : en}</>;
 }

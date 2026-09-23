@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import type { ArticleFAQItem, ArticleReviewVideo, GuideSection } from "@/types/catalog";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 import { FAQAccordion } from "@/components/content/FAQAccordion";
 import { ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -33,7 +33,7 @@ function isInternal(href: string): boolean {
  *  link label, so the render-time NBSP/joiner rules keep working around a link (a link boundary is
  *  not a break opportunity in itself — the segmenter reads across inline elements). */
 function renderInline(text: string, locale: string, keyPrefix: string): ReactNode[] {
-  const t = (s: string) => (locale === "th" ? thaiTypography(s) : s);
+  const t = (s: string) => (locale === "th" ? thaiTypographyNode(s) : s);
   const out: ReactNode[] = [];
   let last = 0;
   let n = 0;
@@ -85,7 +85,7 @@ export function ArticleBody({
     <div className="flex flex-col gap-10">
       {activeSections.map((section, i) => (
         <div key={i} className="flex flex-col gap-3">
-          <h2 className="font-display text-2xl font-semibold text-foreground">{locale === "th" ? thaiTypography(section.heading) : section.heading}</h2>
+          <h2 className="font-display text-2xl font-semibold text-foreground">{locale === "th" ? thaiTypographyNode(section.heading) : section.heading}</h2>
           {section.paragraphs.map((p, pi) => (
             <p key={pi} className="text-base leading-relaxed text-foreground-muted">
               {renderInline(p, locale, `s${i}p${pi}`)}
@@ -93,7 +93,7 @@ export function ArticleBody({
           ))}
           {section.subsections?.map((sub, si) => (
             <div key={`sub${si}`} className="mt-3 flex flex-col gap-3">
-              <h3 className="font-display text-xl font-semibold text-foreground">{locale === "th" ? thaiTypography(sub.heading) : sub.heading}</h3>
+              <h3 className="font-display text-xl font-semibold text-foreground">{locale === "th" ? thaiTypographyNode(sub.heading) : sub.heading}</h3>
               {sub.paragraphs.map((p, pi) => (
                 <p key={pi} className="text-base leading-relaxed text-foreground-muted">
                   {renderInline(p, locale, `s${i}sub${si}p${pi}`)}

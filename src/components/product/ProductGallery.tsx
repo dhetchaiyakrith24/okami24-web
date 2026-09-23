@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { galleryCaptionTh } from "@/i18n/gallery-copy-th";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 import { cn } from "@/lib/utils";
 
 export function ProductGallery({ product }: { product: Product }) {
@@ -40,7 +41,7 @@ export function ProductGallery({ product }: { product: Product }) {
                 />
               </div>
               <figcaption className={cn("label-mono flex items-center justify-between px-4 pb-3 text-[0.6rem] text-foreground-dim", th && "font-sans! font-medium tracking-normal! normal-case! text-[0.65rem] text-foreground-muted")}>
-                <span>{th && photo.angle ? galleryCaptionTh(photo.angle) : photo.angle}</span>
+                <span>{th && photo.angle ? thaiTypographyNode(galleryCaptionTh(photo.angle)) : photo.angle}</span>
                 <span>
                   © {photo.sourceName}
                   {photo.sourceUrl && (

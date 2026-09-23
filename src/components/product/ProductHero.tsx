@@ -15,7 +15,7 @@ import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
 import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
@@ -74,8 +74,8 @@ export function ProductHero({
   // entry keeps the English lines, so nothing goes blank; en/zh visitors see exactly what they did.
   const copyTh = locale === "th" ? PRODUCT_COPY_TH[product.slug] : undefined;
   // Round 30.4ค closing: render-time Thai typography (thai-typography.ts) — data strings stay plain.
-  const heroTagline = copyTh?.tagline ? thaiTypography(copyTh.tagline) : product.tagline;
-  const heroDescription = copyTh?.shortDescription ? thaiTypography(copyTh.shortDescription) : product.shortDescription;
+  const heroTagline = copyTh?.tagline ? thaiTypographyNode(copyTh.tagline) : product.tagline;
+  const heroDescription = copyTh?.shortDescription ? thaiTypographyNode(copyTh.shortDescription) : product.shortDescription;
   const [selectedColorId, setSelectedColorId] = useState<string | null>(firstSellable(product.colorVariants));
   const [selectedFlavorId, setSelectedFlavorId] = useState<string | null>(firstSellable(product.flavorVariants));
   // "All Colors" (owner mandate, 2026-09-03) is a third hero-image state, not a third variant list

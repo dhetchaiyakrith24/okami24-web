@@ -2,7 +2,7 @@
 
 import { PageHeader } from "@/components/ui/PageHeader";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 import { CategoryLabel } from "@/components/catalog/CategoryLabel";
 import type { Category } from "@/types/catalog";
 
@@ -20,7 +20,7 @@ export function CategoryPageHeader({ category }: { category: Category }) {
     <PageHeader
       eyebrow={dict.catalog.eyebrow}
       title={th ? <CategoryLabel label={category.labelTh} /> : category.name}
-      description={th ? thaiTypography(category.descriptionTh) : category.description}
+      description={th ? thaiTypographyNode(category.descriptionTh) : category.description}
     />
   );
 }

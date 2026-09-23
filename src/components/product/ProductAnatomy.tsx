@@ -7,12 +7,16 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { chargingTypeTh } from "@/i18n/anatomy-copy-th";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 
 interface AnatomyPoint {
   x: number; // percent
   y: number; // percent
   label: string;
   detail: string;
+  /** round 9: the display line is built from a template after the dictionary pass and never went
+   *  through the typography — it stays plain so its line breaks do not move */
+  plainDetail?: boolean;
 }
 
 // Round 30.4ค batch 6 (owner 2026-09-15): every label/detail comes from the dictionary (they were
@@ -42,7 +46,7 @@ function getAnatomyPoints(product: Product, t: Dictionary["product"]["anatomy"],
   return [
     { x: 50, y: 3, label: t.mouthpiece, detail: t.mouthpiecePodDetail },
     { x: 50, y: 15, label: t.pod, detail: t.podDetail },
-    ...(hasScreen ? [{ x: 50, y: 39, label: t.display, detail: displayDetail }] : []),
+    ...(hasScreen ? [{ x: 50, y: 39, label: t.display, detail: displayDetail, plainDetail: true }] : []),
     ...(hasAirflowSpec ? [{ x: 22, y: 83, label: t.airflow, detail: t.airflowDetail }] : []),
     { x: 50, y: 97, label: t.chargingPort, detail: charging },
   ];
@@ -77,8 +81,8 @@ export function ProductAnatomy({ product }: { product: Product }) {
                   {i + 1}
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">{p.label}</p>
-                  <p className="text-sm text-foreground-muted">{p.detail}</p>
+                  <p className="text-sm font-semibold text-foreground">{locale === "th" ? thaiTypographyNode(p.label) : p.label}</p>
+                  <p className="text-sm text-foreground-muted">{locale === "th" && !p.plainDetail ? thaiTypographyNode(p.detail) : p.detail}</p>
                 </div>
               </li>
             ))}

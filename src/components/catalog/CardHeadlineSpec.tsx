@@ -2,7 +2,7 @@
 
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { formatPuffs } from "@/lib/utils";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 import { labelLang } from "@/lib/label-lang";
 import type { HeadlineSpec } from "@/lib/card-headline-spec";
 
@@ -42,7 +42,7 @@ export function CardHeadlineSpec({ specs, compact = false }: { specs: HeadlineSp
   return (
     <>
       {parts.map((p, i) => {
-        const text = locale === "th" ? thaiTypography(p) : p;
+        const text = locale === "th" ? thaiTypographyNode(p) : p;
         return (
           <span key={i} className="contents">
             {i > 0 && <span aria-hidden> · </span>}
