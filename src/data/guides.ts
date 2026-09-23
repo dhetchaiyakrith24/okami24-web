@@ -563,6 +563,72 @@ const allGuides: Guide[] = [
     // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @OKMYARZ.
     reviewVideo: { videoId: "QptFMwIXbJE", title: "M BAR 9K NEW FLAVOR 2 กลิ่นใหม่ ZAPPLE และ KYOHO GRAPE", channelName: "OKM YARZ", publishedAt: "2026-01-16" },
   },
+  {
+    // Round 10B T18 — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md.
+    // Owner ruling: no number of days anywhere, in any form. The "puffs not reached" complaint sits with the other two
+    // complaints, away from the "brands don't publish how puffs are counted" sentence, so it never reads as a cause.
+    id: "how-long-a-disposable-lasts",
+    slug: "how-long-a-disposable-lasts",
+    title: "พอตใช้แล้วทิ้ง ใช้ได้กี่วัน ทำไมแต่ละคนหมดไม่เท่ากัน",
+    dek: "ไม่มีจำนวนวันตายตัว แล้วแต่คน สูบจัดก็หมดไวหน่อย ส่วนตัวเลขบนกล่อง เช่น M Bar 9K (Marbo) สูงสุด 9,000 พัฟ เป็นจำนวนพัฟ แปลงเป็นวันไม่ได้",
+    category: "how-it-works",
+    readingTimeMin: 5,
+    publishedAt: "2026-09-24",
+    body: [
+      {
+        heading: "ใช้ได้กี่วัน ไม่มีตัวเลขตายตัว",
+        paragraphs: [
+          "พอตใช้แล้วทิ้ง 1 ตัวใช้ได้กี่วัน ตอบตรง ๆ คือไม่มีตัวเลขตายตัว แล้วแต่คน สูบจัดก็หมดไวหน่อย รุ่นเดียวกันแต่คนละคนใช้ ก็หมดไม่พร้อมกัน เราเลยไม่ใส่จำนวนวันในบทความนี้",
+          "ถามว่า “Marbo 9K ใช้ได้กี่วัน” ก็คำตอบเดียวกัน [M Bar 9K](/products/m-bar-9k) ที่หลายร้านในไทยเรียกว่า Marbo ระบุไว้สูงสุด 9,000 พัฟ ส่วน [M Bar 10K](/products/m-bar-10k) สูงสุด 10,000 พัฟ ตัวเลขนี้คือจำนวนพัฟ ไม่ใช่จำนวนวัน และเอาไปหารเป็นวันไม่ได้",
+        ],
+      },
+      {
+        heading: "ทำไมแต่ละคนหมดไม่เท่ากัน",
+        paragraphs: [
+          "ตัวแปรหลักคือวิธีสูบของแต่ละคน สูบถี่แค่ไหน และแต่ละพัฟดูดยาวแค่ไหน",
+          "อีกเรื่องคือบางรุ่นปรับได้ M Bar 9K ปรับช่องลมได้ ตั้งแต่แน่นแบบ MTL (สูบแบบดูดเข้าปากก่อน) ไปจนโล่งแบบ DTL (สูบแบบดูดลงปอดตรง ๆ) ส่วน M Bar 10K มี 3 โหมด Eco · Soft · Boost กดสองครั้งติดกันเพื่อสลับ",
+          "การตั้งค่าเปลี่ยนความรู้สึกตอนสูบ และแต่ละคนก็ตั้งไม่เหมือนกัน",
+        ],
+      },
+      {
+        heading: "ตัวเลขพัฟบนกล่อง อ่านยังไง",
+        paragraphs: [
+          "ตัวเลขบนกล่องคือจำนวนพัฟ “สูงสุด” ที่ผู้ผลิตระบุ ส่วนนับแบบไหน SALTHUB ที่ทำ M Bar กับ RELX และ Joiway ที่ทำ [RELX Smash Go 12K](/products/relx-smash-go-12k) กับ [Joiway F3](/products/joiway-f3) ไม่ได้บอกไว้ เราเลยบอกไม่ได้ว่าการสูบของคุณจะใกล้ตัวเลขนั้นแค่ไหน",
+        ],
+      },
+      {
+        heading: "แบตหมด หรือเริ่มไหม้ ทำยังไงต่อ",
+        paragraphs: [
+          "M Bar 9K กับ M Bar 10K ชาร์จซ้ำได้ผ่าน USB-C แบตหมดก็ชาร์จต่อ วิธีชาร์จให้ถูกอยู่ที่ [วิธีดูแลแบตเตอรี่และการชาร์จ](/guides/battery-care-and-charging)",
+          "เรื่องที่ลูกค้าบ่นกับร้านบ่อยมีสามเรื่อง แบต ไหม้ไว และได้จำนวนพัฟไม่ถึงที่กำหนด ถ้าเครื่องเริ่มมีกลิ่นไหม้ ดูดไม่ขึ้น หรือไฟกระพริบ ไล่เช็คได้ที่ [พอตดูดไม่ขึ้น ไฟกระพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
+        ],
+      },
+      {
+        heading: "จุดเด่นของพอตใช้แล้วทิ้ง",
+        paragraphs: [
+          "จากที่ร้านเห็น พอตใช้แล้วทิ้งเด่นที่ใช้ง่าย แกะแล้วใช้ได้เลย ไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์ ดูรุ่นทั้งหมดได้ที่ [พอตใช้แล้วทิ้ง](/products/disposables)",
+          "ถ้าอยากเก็บตัวเครื่องไว้ แล้วเปลี่ยนแค่หัวพอต อ่านต่อที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["m-bar-9k", "joiway-f3", "relx-smash-go-12k"],
+    faq: [
+      {
+        question: "Marbo 9K สูบได้กี่วัน",
+        answer: "ไม่มีจำนวนวันตายตัว แล้วแต่คน สูบจัดก็หมดไวหน่อย M Bar 9K (ที่หลายร้านเรียก Marbo 9K) ระบุไว้สูงสุด 9,000 พัฟ ตัวเลขนี้คือพัฟ ไม่ใช่วัน",
+      },
+      {
+        question: "9,000 พัฟ ใช้ได้กี่วัน",
+        answer: "คิดเป็นวันไม่ได้ SALTHUB ไม่ได้บอกว่านับพัฟแบบไหน และแต่ละคนสูบถี่ ดูดยาวไม่เท่ากัน เราเลยไม่แปลงตัวเลขพัฟเป็นจำนวนวันให้",
+      },
+      {
+        question: "พอตใช้แล้วทิ้งแบตหมด แต่น้ำยายังเหลือ ทำไง",
+        answer: "ถ้าเป็นรุ่นที่ชาร์จซ้ำได้อย่าง M Bar 9K กับ M Bar 10K ชาร์จผ่าน USB-C แล้วใช้ต่อได้ ไม่ต้องทิ้งทั้งที่น้ำยายังเหลือ",
+      },
+    ],
+    // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @OKMYARZ.
+    reviewVideo: { videoId: "rqT2MGZi8Tw", title: "พอตใช้แล้วทิ้ง 1 ตัวใช้ได้นานแค่ไหน?", channelName: "OKM YARZ", publishedAt: "2025-03-17" },
+  },
 ];
 
 /** The public articles — everything outside HELD_GUIDE_IDS. */
