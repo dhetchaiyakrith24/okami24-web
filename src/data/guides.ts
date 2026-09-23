@@ -14,7 +14,7 @@ import type { Guide } from "@/types/catalog";
  * sitemap and is linked from nowhere. To publish one: delete its id from this set — the one switch.
  * Guarded by src/lib/held-guides-contract-test.ts.
  */
-export const HELD_GUIDE_IDS: ReadonlySet<string> = new Set<string>(["comparing-caliburn-models"]);
+export const HELD_GUIDE_IDS: ReadonlySet<string> = new Set<string>(["comparing-caliburn-models", "argus-g4-vs-caliburn-g5"]);
 
 const allGuides: Guide[] = [
   {
@@ -966,6 +966,62 @@ const allGuides: Guide[] = [
       { question: "Caliburn G5 กับ G5 Lite แบตเท่ากันไหม", answer: "เท่ากัน 1600mAh วัตต์สูงสุด 35 วัตต์เท่ากัน ต่างกันที่จอสีกับระบบแตะสลับโหมดของ G5" },
       { question: "Caliburn G4 Pro ใช้หัว G3 ได้ไหม", answer: "ได้ สเปกที่ยืนยันแล้วระบุว่า G4 Pro ใช้ได้ทั้งหัวพอต GPP และหัวพอต G3" },
       { question: "Caliburn รุ่นไหนไม่มีจอ", answer: "ในรุ่นที่เทียบในบทความนี้ G4 Mini ไม่มีจอ ใช้ไฟ LED บอกสถานะ" },
+    ],
+  },
+  {
+    // Round 10B T07' — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md. HELD
+    // until after the 2026-10-05 SEO_BASELINE read (owner ruling D3). Pair = the only cross-brand model pair with
+    // autocomplete evidence ("argus g4 vs caliburn g5", researcher-B-result.md), the one Cowork proposed.
+    id: "argus-g4-vs-caliburn-g5",
+    slug: "argus-g4-vs-caliburn-g5",
+    title: "ARGUS G4 vs Caliburn G5 ต่างกันยังไง เทียบสเปกทีละเรื่อง",
+    dek: "ไม่มีคำตอบที่แน่นอนว่าตัวไหนดีกว่า แบตใกล้กัน วัตต์กับขนาดจอเท่ากัน ที่ต่างชัดคือระบบหัวพอต และ G5 สลับโหมดด้วยการแตะ",
+    category: "buying-guide",
+    readingTimeMin: 5,
+    publishedAt: "2026-09-24",
+    body: [
+      {
+        heading: "ตัวไหนดีกว่า: ไม่มีคำตอบที่แน่นอน",
+        paragraphs: [
+          "ARGUS G4 กับ Caliburn G5 ตัวไหนดีกว่า ไม่มีคำตอบที่แน่นอน ตัวเลขหลักใกล้กันมาก แบต 1650mAh กับ 1600mAh ปรับได้ 5–35 วัตต์เท่ากัน จอ 0.85 นิ้วเท่ากัน ที่ต่างชัดคือระบบหัวพอต และ G5 สลับโหมดด้วยการแตะ",
+          "เลยขอเทียบทีละเรื่องแทนการตัดสิน ตัวเลขทั้งหมดมาจากตารางสเปกที่ยืนยันแล้วบนหน้า [ARGUS G4](/products/argus-g4) กับ [Caliburn G5](/products/caliburn-g5) ส่วนที่มาจากคู่มือของ UWELL บอกไว้ตรงนั้น",
+        ],
+      },
+      {
+        heading: "จอกับการควบคุม",
+        paragraphs: [
+          "ARGUS G4 ใช้จอ HD 0.85 นิ้ว โชว์แบต วัตต์ ค่าโอห์ม สถานะล็อก และจำนวนพัฟ ส่วน G5 เป็นจอสี 0.85 นิ้ว",
+          "G5 สลับโหมดด้วยระบบ Smart Triple-Tap Control คือแตะตัวเครื่องสามครั้ง ตามคู่มือของ UWELL ไม่มีปุ่ม ส่วน ARGUS G4 เรายังไม่มีข้อมูลที่ยืนยันเรื่องระบบยิง เลยยังไม่เทียบเรื่องปุ่ม",
+        ],
+      },
+      {
+        heading: "ระบบหัวพอตและแนวการสูบ",
+        paragraphs: [
+          "ARGUS G4 ใช้ระบบหัวพอต ARGUS เติมด้านบน มีหลายค่าโอห์ม ตัวเครื่องรับช่วงโอห์ม 0.4–3.0 โอห์ม ส่วน G5 ใช้หัวพอต GPP ของ UWELL ความจุ 3mL เติมด้านบน ต่อกับตัวเครื่องด้วยแม่เหล็ก",
+          "หัว GPP มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม ช่วงที่ ARGUS G4 รับได้กว้างกว่า แต่ช่วงกว้างไม่ได้แปลว่ามีหัวพอตทุกค่าให้ซื้อ อ่านเรื่องนี้ที่ [วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet) ส่วนความจุหัวพอตของ ARGUS G4 เรายังยืนยันไม่ได้ เลยไม่เอามาเทียบ",
+          "ค่าโอห์มของหัวพอตที่ใส่มีผลกับแนวการสูบ ถ้ายังไม่แน่ใจว่าตัวเองสูบแนวไหน อ่าน [MTL กับ DTL](/guides/understanding-mtl-vs-dtl) ก่อน",
+        ],
+      },
+      {
+        heading: "แบตกับการชาร์จ",
+        paragraphs: [
+          "แบต ARGUS G4 1650mAh ส่วน G5 1600mAh ต่างกัน 50mAh ทั้งคู่ชาร์จผ่าน USB-C โดย ARGUS G4 สเปกระบุ 5V/2A ชาร์จเต็มในราว 45 นาที ส่วน G5 ไม่มีตัวเลขเวลาชาร์จในสเปกที่ยืนยัน",
+          "ชาร์จหนึ่งครั้งใช้ได้นานแค่ไหน ขึ้นกับวัตต์ที่ตั้งและสูบถี่แค่ไหน เราไม่ใส่ตัวเลขชั่วโมงให้",
+        ],
+      },
+      {
+        heading: "เหมาะกับใคร",
+        paragraphs: [
+          "อยากเห็นวัตต์ ค่าโอห์ม และจำนวนพัฟบนจอ และอยากได้ตัวเครื่องที่รับช่วงโอห์มกว้าง ดู ARGUS G4",
+          "อยากสลับโหมดด้วยการแตะแทนการกดปุ่ม และอยากใช้หัวพอต GPP ที่ใช้ร่วมกับ Caliburn รุ่นปัจจุบันหลายรุ่น ดู Caliburn G5 ถ้าจะเทียบ G5 กับ Caliburn รุ่นอื่นต่อ อ่าน [เทียบ Caliburn ทีละคู่](/guides/comparing-caliburn-models) หรือดูทั้งแบรนด์ที่ [VOOPOO](/brands/voopoo) กับ [UWELL](/brands/uwell)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["argus-g4", "caliburn-g5"],
+    faq: [
+      { question: "ARGUS G4 กับ Caliburn G5 แบตต่างกันเยอะไหม", answer: "ต่างกัน 50mAh คือ ARGUS G4 1650mAh ส่วน Caliburn G5 1600mAh ปรับได้ 5–35 วัตต์เท่ากัน" },
+      { question: "หัวพอต Caliburn ใส่ ARGUS G4 ได้ไหม", answer: "สองรุ่นนี้ใช้คนละระบบหัวพอต ARGUS G4 ใช้ระบบหัวพอต ARGUS ส่วน Caliburn G5 ใช้ GPP ของ UWELL สเปกของทั้งสองรุ่นไม่ได้ระบุว่าใช้แทนกันได้" },
+      { question: "VOOPOO กับ Caliburn ต่างกันยังไง", answer: "VOOPOO เป็นแบรนด์ ส่วน Caliburn เป็นตระกูลของ UWELL ถ้าเทียบรุ่นต่อรุ่น ARGUS G4 กับ Caliburn G5 แบตกับวัตต์ใกล้กัน ต่างกันที่ระบบหัวพอต และ G5 สลับโหมดด้วยการแตะ" },
     ],
   },
 ];
