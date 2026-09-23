@@ -116,6 +116,9 @@ const JOINED: ReadonlyArray<{ word: string; within: string; joined: string }> = 
   { word: "บนตัวเครื่องสาย", within: "2.51 นิ้ว บนตัวเครื่องสาย G4" }, // Caliburn G4 Pro tagline (1440)
   { word: "มีหัวพอต", within: "ช่วงโอห์มกว้างไม่ได้แปลว่ามีหัวพอตขายเสมอ" }, // reading-a-spec-sheet heading (390)
   { word: "มีหัวพอต", within: "และในกล่องมีหัวพอต GPP มาให้" }, // GPP compatibility note, caliburn-g5 / coil-94 (390)
+  // Round 8 carry, listed by the owner in the round-9 instruction ("เก็บตกจากรอบ 8"):
+  { word: "ข้อเดียว", within: "ตัดสินใจข้อนี้ข้อเดียว" }, // first-pod guide, 390 + 1440: "ข้อ | เดียว"
+  { word: "เหมาะกับคุณ", within: "หรือพอตซิสเต็ม แบบไหนเหมาะกับคุณ" }, // open-system guide title on read-more cards, 390: "เหมาะ | กับคุณ"
 ] as const).map((j) => ({ ...j, joined: joinWord(j.word) }));
 
 /**
