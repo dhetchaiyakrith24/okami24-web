@@ -704,6 +704,105 @@ const allGuides: Guide[] = [
     // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @OKM_24.
     reviewVideo: { videoId: "8_3DPJM4RFA", title: "M BAR 10K & M SWITCH 15K เล็กฟัดใหญ่!", channelName: "OKAMI", publishedAt: "2026-05-09" },
   },
+  {
+    // Round 10B T21 — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md. The
+    // UWELL manuals cited are © Shenzhen Uwell, read from copies hosted by retailer thebestvape.com (researcher-B-result.md)
+    // — named "คู่มือของ UWELL", never "เว็บทางการ". Caliburn G5 is named without a link: it is an SEO_BASELINE control page
+    // until 2026-10-05. "Change it" is the customer replacing the unit/pod — never a claim or warranty (owner, round 10B).
+    id: "fixing-no-draw-and-blinking-light",
+    slug: "fixing-no-draw-and-blinking-light",
+    title: "พอตดูดไม่ขึ้น ไฟกระพริบ แก้ยังไง เช็คอะไรก่อน",
+    dek: "เช็คก่อนว่าแกะพลาสติกที่ก้นพอตออกหรือยัง แล้วชาร์จแบต เสียบหัวพอตให้เข้าที่ และดูว่าไฟหรือจอบอกอะไร",
+    category: "maintenance",
+    readingTimeMin: 8,
+    publishedAt: "2026-09-24",
+    body: [
+      {
+        heading: "เช็คอย่างแรก: แกะพลาสติกที่ก้นพอตหรือยัง",
+        paragraphs: [
+          "พอตดูดไม่ขึ้น แก้ยังไง ที่ร้านเราให้เช็คอย่างแรกคือแกะพลาสติกที่ก้นพอตออกหรือยัง ถ้ายังไม่ได้แกะ แกะออกแล้วลองสูบใหม่",
+          "แกะแล้วยังดูดไม่ขึ้น ไล่ต่อตามหัวข้อถัดไป ข้อไหนมาจากคู่มือผู้ผลิต เราบอกไว้ว่ามาจากคู่มือของใคร",
+        ],
+      },
+      {
+        heading: "ไล่เช็คต่ออีก 4 ข้อ",
+        paragraphs: [],
+        subsections: [
+          {
+            heading: "ชาร์จแบตก่อน",
+            paragraphs: ["พอแบตต่ำ Caliburn จะขึ้นเตือนแล้วหยุดจ่ายไฟ ตามคู่มือของ UWELL ให้ชาร์จด้วยสาย USB-C กับหัวชาร์จ 5V/2A ส่วน [M Bar 9K](/products/m-bar-9k) [M Bar 10K](/products/m-bar-10k) และ [M Switch Kit](/products/m-switch-kit) ก็ชาร์จผ่าน USB-C เหมือนกัน"],
+          },
+          {
+            heading: "ถอดหัวพอตแล้วเสียบใหม่ให้เข้าที่",
+            paragraphs: ["ตามคู่มือของ UWELL ถ้าเครื่องไม่เจอหัวพอต Caliburn G4 จะขึ้น No Atomizer ส่วน G4 Mini จะกระพริบไฟน้ำเงิน 3 ครั้ง แปลว่าหัวพอตเสียบไม่เข้าที่ ถอดออกแล้วเสียบกลับให้แน่น เครื่องที่ใช้หัวพอตอย่าง M Switch ก็ลองแบบเดียวกันได้"],
+          },
+          {
+            heading: "อย่าดูดค้างนาน",
+            paragraphs: ["Caliburn ตัดไฟเองถ้าดูดค้างนานเกินไป ตามคู่มือของ UWELL G4 กับ G4 Mini ตัดเมื่อเกิน 8 วินาที ส่วน G5 เมื่อเกิน 6 วินาที หยุดดูดก่อนแล้วค่อยสูบใหม่"],
+          },
+          {
+            heading: "หัวพอตใหม่ ให้น้ำยาซึมก่อนสูบ",
+            paragraphs: ["ถ้าเป็นพอตซิสเต็มที่เพิ่งเติมน้ำยาลงหัวพอตใหม่ รีบสูบทันทีอาจได้รสไหม้ วิธีเตรียมหัวพอตใหม่อยู่ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)"],
+          },
+        ],
+      },
+      {
+        heading: "ไฟกระพริบแบบไหน แปลว่าอะไร (Caliburn)",
+        paragraphs: ["ไฟหรือข้อความบนจอของแต่ละรุ่นแปลไม่เหมือนกัน ที่เราหาคู่มือเจอและบอกไว้ชัดคือตระกูล Caliburn ข้างล่างนี้มาจากคู่มือของ UWELL ทั้งหมด"],
+        subsections: [
+          {
+            heading: "Caliburn G4 Mini ดูจากสีไฟ",
+            paragraphs: [
+              "[Caliburn G4 Mini](/products/caliburn-g4-mini) ไม่มีจอ บอกสถานะด้วยสีไฟกับจำนวนครั้งที่กระพริบ ไฟแดงกระพริบ 3 ครั้งตอนสูบ คือหัวพอตช็อต ไฟแดงกระพริบ 10 ครั้ง คือแบตต่ำ ไฟเขียวกระพริบ 5 ครั้ง คือดูดค้างเกิน 8 วินาที",
+              "ไฟน้ำเงินกระพริบ 3 ครั้ง คือวงจรไม่ครบ หัวพอตเสียบไม่เข้าที่ ไฟน้ำเงินกระพริบ 2 ครั้ง คือถอดหัวพอตออก ส่วนตอนชาร์จ ไฟเขียวคือแบตเกิน 60% น้ำเงินคือ 30–60% แดงคือต่ำกว่า 30%",
+            ],
+          },
+          {
+            heading: "Caliburn G4 · G4 Pro และ G5 ดูจากจอ",
+            paragraphs: [
+              "[Caliburn G4](/products/caliburn-g4) ขึ้นเป็นข้อความบนจอ 4 แบบ Atomizer short! (หัวพอตช็อต) · Battery Low! (แบตต่ำ) · Over 8s! (ดูดค้างเกิน 8 วินาที) · No Atomizer (เครื่องไม่เจอหัวพอต) ขึ้นข้อความพวกนี้เมื่อไหร่ เครื่องจะหยุดจ่ายไฟ",
+              "[Caliburn G4 Pro](/products/caliburn-g4-pro) ขึ้นเป็นไอคอน Atomizer Short · Battery Low · Over-puff · No Atomizer ส่วน Caliburn G5 ขึ้นข้อความ ATOMIZER SHORT · BATTERY LOW · OVER 6S (ดูดค้างเกิน 6 วินาที) · NO ATOMIZER",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "M Switch · M Bar และรุ่นอื่น ยังไม่มีตารางไฟจากผู้ผลิต",
+        paragraphs: [
+          "SALTHUB ไม่ได้ลงความหมายไฟกระพริบของ M Bar กับ M Switch ไว้บนเว็บทางการ ส่วน RELX Joiway และ ARGUS เรายังหาตารางแบบนี้จากผู้ผลิตไม่เจอ เลยไม่เดาว่าไฟแต่ละแบบแปลว่าอะไร",
+          "M Switch ดูดไม่ขึ้น ไฟกระพริบ ให้ไล่แบบเดียวกัน แกะพลาสติกที่ก้นพอต ชาร์จผ่าน USB-C ถอด [M Switch Pod](/products/m-switch-pod) แล้วเสียบกลับให้เข้าที่ และอย่าดูดค้างนาน",
+        ],
+      },
+      {
+        heading: "กลิ่นไหม้ รสไม่มา ไม่หอม ถึงเวลาเปลี่ยน",
+        paragraphs: [
+          "ถ้าดูดขึ้นแล้วแต่มีกลิ่นไหม้ รสไม่มา หรือไม่หอม จากที่ร้านเจอ อาการแบบนี้คือถึงเวลาเปลี่ยนแล้ว พอตใช้แล้วทิ้งก็เปลี่ยนเป็นตัวใหม่ เครื่องที่ใช้หัวพอตก็เปลี่ยนหัวพอตใหม่ วิธีดูแลหัวพอตอ่านต่อที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+          "เรื่องที่ลูกค้าบ่นกับร้านบ่อยคือแบต ไหม้ไว และพัฟไม่ถึง เรื่องชาร์จอ่านต่อที่ [วิธีดูแลแบตเตอรี่และการชาร์จ](/guides/battery-care-and-charging) ส่วนเรื่องพัฟกับระยะเวลาใช้งานอยู่ที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["m-switch-pod", "caliburn-g4-mini", "caliburn-g4"],
+    faq: [
+      {
+        question: "M Switch ดูดไม่ขึ้น ไฟกระพริบ ทำไง",
+        answer: "SALTHUB ไม่ได้ลงความหมายไฟกระพริบของ M Switch ไว้ ให้เช็คว่าแกะพลาสติกที่ก้นพอตแล้ว ชาร์จผ่าน USB-C แล้วถอดหัวพอตเสียบกลับให้เข้าที่ ถ้าดูดขึ้นแต่มีกลิ่นไหม้หรือรสไม่มา ก็ถึงเวลาเปลี่ยนหัวพอตใหม่",
+      },
+      {
+        question: "Caliburn ขึ้น No Atomizer แก้ยังไง",
+        answer: "ตามคู่มือของ UWELL แปลว่าเครื่องไม่เจอหัวพอต ถอดหัวพอตออกแล้วเสียบกลับให้เข้าที่",
+      },
+      {
+        question: "Caliburn G4 Mini ไฟแดงกระพริบ แปลว่าอะไร",
+        answer: "ตามคู่มือของ UWELL ถ้ากระพริบ 3 ครั้งตอนสูบ คือหัวพอตช็อต ถ้ากระพริบ 10 ครั้ง คือแบตต่ำ ให้ชาร์จก่อน",
+      },
+      {
+        question: "พอตใช้แล้วทิ้งดูดไม่ขึ้น ทำยังไง",
+        answer: "เช็คก่อนว่าแกะพลาสติกที่ก้นพอตออกแล้ว ถ้าเป็นรุ่นที่ชาร์จได้อย่าง M Bar 9K กับ M Bar 10K ลองชาร์จผ่าน USB-C ถ้าดูดขึ้นแต่มีกลิ่นไหม้หรือไม่หอมแล้ว ก็ถึงเวลาเปลี่ยนตัวใหม่",
+      },
+    ],
+    // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @PODSYSTEM-OKAMI-II.
+    reviewVideo: { videoId: "MlQjKTSls-0", title: "รวมปัญหาที่พบบ่อย สำหรับผู้ใช้งานพอต?", channelName: "POD SYSTEM OKAMI II", publishedAt: "2025-03-13" },
+  },
 ];
 
 /** The public articles — everything outside HELD_GUIDE_IDS. */
