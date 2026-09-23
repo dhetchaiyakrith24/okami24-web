@@ -78,3 +78,16 @@ title ที่เปลี่ยนวันที่ 2026-09-23 (รายล�
 - **พักไว้ถึงหลัง 2026-10-05 (ยังไม่ลง):** description หน้าแรกเติม "vape" · title หน้าแรกเติม "พอตไฟฟ้า" · title แบรนด์ salthub/relx/voopoo/uwell ที่ขึ้นต้นด้วยชื่อรุ่น (แย่งคีย์กับหน้าสินค้าที่พักไว้) · `alternateName: "Marbo"` ใน JSON-LD ของ /brands/salthub
 - **แก้ข้อความบรรทัดก่อนหน้า (ข้อ 7 หน้าพักราคา):** ที่พักไว้คือ `<title>` อย่างเดียว — og:title / twitter:title ของ 7 หน้านี้มีราคาตั้งแต่ 2026-09-22 (รอบ backlink ก้อน 2 · `src/app/products/[slug]/page.tsx:146`) seo-auditor วัดครบ 7 หน้า เช่น drag-6 og "… ฿2,490"
 - **ขอ Cowork ตอนอ่าน 10-05:** สถานะ index รายหน้า (Discovered หรือ Crawled – not indexed) · คำ "caliburn g5" / "m bar 15k" / "drag 6" ไปหน้าไหน · แถวคำ "marbo" · วันที่ Google เข้ามาเก็บ 7 หน้าที่พักไว้ครั้งล่าสุดหลัง deploy รอบนี้
+
+## รอบ 10B "เขียนบทความชุดแรก 7 เรื่อง" (2026-09-24) — ตัวแปรที่เพิ่มก่อนวันอ่าน 2026-10-05 (บันทึกโดยตัวหลัก ตามรายการของ seo-auditor `_incoming/round10b/seo-auditor-result.md` ข้อ 4)
+
+- **วันที่/commit ที่ขึ้นเว็บจริง:** [ยังไม่มีข้อมูล — Cowork เติมตอน merge+deploy]
+- **บทความใหม่ขึ้นเว็บ 5 เรื่อง** (sitemap 99 → 104): `/guides/choosing-a-marbo-flavor` · `how-long-a-disposable-lasts` · `disposable-vs-switch-pod` · `fixing-no-draw-and-blinking-light` · `esko-bar-switch-vs-m-switch` · **พักไว้ 2 เรื่อง (404 ไม่อยู่ใน sitemap)** `comparing-caliburn-models` · `argus-g4-vs-caliburn-g5` — ปล่อยหลังอ่านค่า 10-05 เสร็จ แล้วนับเป็นตัวแปรของรอบวัดถัดไป (seo-auditor: T05' แย่งคำกับ caliburn-g5 ระดับกลาง–สูง · T07' ระดับกลางกับ argus-g4/caliburn-g5)
+- **หน้าควบคุม 7 หน้า: ลิงก์ขาเข้าเพิ่ม 0** (ไม่มีบทความใหม่ลิงก์ไป m-bar-15k · caliburn-g5 · g5-lite · g5-lite-se · argus-g4 · drag-6 · drag-s3)
+- **ลิงก์ขาเข้าที่เปลี่ยน (กล่อง "อ่านต่อ" มีได้ 3 ลิงก์ บทความใหม่มาก่อนจึงเบียดของเดิม):**
+  - คู่มือเลือกพอตเครื่องแรก (`choosing-your-first-pod-system` — กลุ่มที่กำลังวัด) **เสีย 1 ลิงก์** จากกล่องบน m-bar-10k · เหลือลิงก์ขาเข้าใน `<main>` 32 หน้า
+  - battery-care-and-charging เสียกล่องบน caliburn-g4 · caliburn-g4-mini · joiway-f3 · relx-smash-go-12k · ได้ลิงก์ในเนื้อจากบทความใหม่ 3 เรื่อง
+  - open-system-vs-disposable เสียกล่องบน m-bar-9k · ได้ลิงก์ในเนื้อจาก T19 · mesh-coil-systems เสียกล่องบน m-bar-9k · coil-and-pod-maintenance เสียกล่องบน m-switch-pod ได้ลิงก์ในเนื้อ 2
+  - **`/brands/salthub` ได้ลิงก์เพิ่ม 2** (จาก T03' และ T11) — หน้านี้อยู่ในรายการอ่าน CTR 10-05 · /faq +1 · /brands/esko-bar +1 · /products/pod-159 +1 · /products/disposables +2
+- **วันที่ของคู่มือเดิมทั้ง 7 เรื่องขยับเป็น 2026-09-24** (Article dateModified + sitemap lastmod) ทั้งที่เนื้อหาไม่เปลี่ยน ยกเว้น open-system-vs-disposable — เพราะวันที่นับทั้งกลุ่มจาก `content-dates` · รวมคู่มือเลือกพอตเครื่องแรกที่กำลังวัด
+- **ขอ Cowork ตอนอ่าน 10-05 (เพิ่ม):** คำ "marbo" · "esko bar switch 20k" · "พอตเปลี่ยนหัว" ไปลงหน้าไหน · สถานะ index ของบทความใหม่ 5 เรื่อง · ตาราง URL + คำค้นที่ต้องดู = `docs/ARTICLES_10A.md` §4 (slug ตรงตามที่ขึ้นจริงทุกแถว ยกเว้น T07 → `/guides/argus-g4-vs-caliburn-g5` คำค้น "argus g4 vs caliburn g5")
