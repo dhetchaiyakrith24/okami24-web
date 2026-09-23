@@ -14,7 +14,7 @@ import type { Guide } from "@/types/catalog";
  * sitemap and is linked from nowhere. To publish one: delete its id from this set — the one switch.
  * Guarded by src/lib/held-guides-contract-test.ts.
  */
-export const HELD_GUIDE_IDS: ReadonlySet<string> = new Set<string>([]);
+export const HELD_GUIDE_IDS: ReadonlySet<string> = new Set<string>(["comparing-caliburn-models"]);
 
 const allGuides: Guide[] = [
   {
@@ -874,6 +874,99 @@ const allGuides: Guide[] = [
     // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @OKMYARZ — names the
     // Switch model explicitly (the OKAMI comparison clip only says "ESKO BAR 20K", which may be the non-Switch model).
     reviewVideo: { videoId: "iDoW0BuyWog", title: "ESKO BAR SWITCH 20000 มันจะขนาดนั้นเลยหรอเนี้ยย?", channelName: "OKM YARZ", publishedAt: "2025-12-20" },
+  },
+  {
+    // Round 10B T05' — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md. HELD
+    // until after the 2026-10-05 SEO_BASELINE read (owner ruling D3) — spec-only by the owner's instruction, no shop
+    // experience. Before release: re-read the G4 manual for "auto-draw" (from researcher-B's summary, not re-read).
+    id: "comparing-caliburn-models",
+    slug: "comparing-caliburn-models",
+    title: "Caliburn G5 vs G4 ต่างกันยังไง เทียบ Caliburn ทีละคู่",
+    dek: "G5 แบต 1600mAh สลับโหมดด้วยการแตะ G4 แบต 1300mAh มีปุ่มยิง G4 Pro แบต 1800mAh จอทัช เทียบสเปกทีละคู่ ไม่ตัดสินแทนคุณ",
+    category: "buying-guide",
+    readingTimeMin: 7,
+    publishedAt: "2026-09-24",
+    body: [
+      {
+        heading: "สรุปก่อน: ต่างกันตรงไหน",
+        paragraphs: [
+          "Caliburn G5 กับ G4 ต่างกันยังไง ตอบสั้น ๆ คือ G5 แบตมากกว่า (1600mAh กับ 1300mAh) และสลับโหมดด้วยการแตะ ไม่มีปุ่ม ส่วน G4 มีปุ่มยิง ทั้งคู่ใช้หัวพอต GPP ระบบเดียวกัน",
+          "Caliburn 8 รุ่นในบทความนี้ (G5 · G5 Lite · G5 Lite SE · G4 Pro · G4 · G4 Mini · G4 Classic · G3 Pro) ต่างกันอยู่ 4 เรื่อง คือจอกับการควบคุม ขนาดแบต การปรับช่องลม และระบบหัวพอต ส่วนวัตต์สูงสุด ทุกรุ่นที่มีตัวเลขอยู่ที่ 35 วัตต์เท่ากัน",
+          "ตัวเลขทั้งหมดมาจากตารางสเปกที่ยืนยันแล้วบนหน้าสินค้า ถ้ามาจากคู่มือของ UWELL เราบอกไว้ตรงนั้น ส่วน [Caliburn G4 Classic](/products/caliburn-g4-classic) สเปกของรุ่นนี้ยังยืนยันไม่ได้ เราเลยไม่เอาตัวเลขมาเทียบ",
+        ],
+      },
+      {
+        heading: "จัดกลุ่มตามสเปก",
+        paragraphs: [],
+        subsections: [
+          {
+            heading: "จอและการควบคุม",
+            paragraphs: [
+              "[Caliburn G5](/products/caliburn-g5) จอสี 0.85 นิ้ว สลับโหมดด้วยระบบ Smart Triple-Tap Control คือแตะตัวเครื่องสามครั้ง ตามคู่มือของ UWELL ไม่มีปุ่ม ส่วน [Caliburn G4](/products/caliburn-g4) จอสี เลือกโหมดวัตต์บนจอได้ มีปุ่มยิง และตามคู่มือของ UWELL สูบได้เลยโดยไม่ต้องกดปุ่มก็ได้",
+              "[Caliburn G4 Pro](/products/caliburn-g4-pro) จอทัช 2.51 นิ้ว [Caliburn G3 Pro](/products/caliburn-g3-pro) จอ LCD โอบด้านข้างเครื่อง ส่วน [Caliburn G4 Mini](/products/caliburn-g4-mini) ไม่มีจอ ตามคู่มือของ UWELL ใช้ปุ่มกับไฟ LED บอกสถานะ",
+              "[Caliburn G5 Lite](/products/caliburn-g5-lite) ข้อมูลในหน้าสินค้าบอกว่าตัดจอสีกับระบบแตะของ G5 ออก แต่แถวจอในตารางสเปกของ Lite ยังติดป้าย “ยังไม่ยืนยัน”",
+            ],
+          },
+          {
+            heading: "แบต",
+            paragraphs: [
+              "G4 Pro 1800mAh · G5 G5 Lite และ G5 Lite SE 1600mAh · G4 1300mAh · G4 Mini 1100mAh · G3 Pro 1000mAh ใช้ mAh เทียบกันระหว่างรุ่นได้ แต่อย่าแปลงเป็นชั่วโมง วิธีอ่านอยู่ที่ [วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet)",
+              "เวลาชาร์จมีตัวเลขยืนยันแค่ 2 รุ่น G4 ราว 30 นาทีที่ 2A และ G4 Mini ราว 58 นาทีที่ 2A",
+            ],
+          },
+          {
+            heading: "ช่องลม",
+            paragraphs: ["G4 Pro ปรับช่องลมได้ละเอียดแบบไม่มีขั้น G3 Pro ปรับได้เต็มช่วง G4 Mini ตามคู่มือของ UWELL มีวาล์วปรับลม ส่วน G5 กับ G4 เรายังไม่มีข้อมูลช่องลมที่ยืนยันได้"],
+          },
+          {
+            heading: "ระบบหัวพอต",
+            paragraphs: [
+              "G5 · G5 Lite · G5 Lite SE · G4 · G4 Mini และ G4 Classic ใช้หัวพอต GPP (G Pod Platform) ของ UWELL ส่วน G4 Pro ใช้ได้ทั้ง GPP และหัวพอต G3 สำหรับ G3 Pro หน้าสินค้าระบุหัวพอต G3 มาในกล่อง 2 หัว คือ 0.4 โอห์ม (3mL) กับ 0.9 โอห์ม (2.5mL)",
+              "หัว GPP ที่มากับ G4 และ G4 Mini คือ 0.4 โอห์มกับ 0.9 โอห์ม ส่วน 0.6 โอห์มกับ 1.2 โอห์มซื้อแยก เรื่องดูแลหัวพอตอยู่ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Caliburn G5 vs G4",
+        paragraphs: [
+          "G5 แบต 1600mAh มากกว่า G4 ที่ 1300mAh ทั้งคู่มีจอสี G5 จอ 0.85 นิ้ว สลับโหมดด้วยการแตะ ไม่มีปุ่ม ส่วน G4 มีปุ่มยิง เลือกโหมดวัตต์บนจอ",
+          "วัตต์ของ G5 อยู่ที่ 5–35 วัตต์ ส่วน G4 คู่มือของ UWELL ระบุ 35 วัตต์ (แถวนี้ในหน้าสินค้าเรายังไม่ยืนยัน) ตามคู่มือ G5 หนัก 65 กรัม ส่วน G4 หนัก 54.7 กรัม หัวพอตเป็น GPP ทั้งคู่ ใช้หัวเดียวกันได้",
+          "ชอบแตะสลับโหมดและอยากได้แบตมากกว่า ดู G5 ชอบเครื่องที่มีปุ่มและเบากว่า ดู G4",
+        ],
+      },
+      {
+        heading: "Caliburn G5 vs G5 Lite",
+        paragraphs: [
+          "แบต 1600mAh กับวัตต์สูงสุด 35 วัตต์เท่ากัน ใช้หัวพอต GPP เหมือนกัน ที่ต่างคือ G5 มีจอสี 0.85 นิ้วกับระบบ Smart Triple-Tap Control ส่วน Lite ตามข้อมูลในหน้าสินค้าตัดสองอย่างนี้ออก (แถวจอของ Lite ยังไม่ยืนยัน)",
+          "[Caliburn G5 Lite SE](/products/caliburn-g5-lite-se) แบตกับวัตต์เท่า Lite ชุดสีทั้ง 8 สีเป็นหนัง นอกจากนี้ต่างจาก Lite ตรงไหนอีก เรายังยืนยันไม่ได้",
+          "อยากได้จอสีกับการแตะสลับโหมด ดู G5 ไม่ต้องการจอสีแต่อยากได้แบตเท่ากัน ดู G5 Lite ถ้าชอบชุดสีหนัง ดู G5 Lite SE",
+        ],
+      },
+      {
+        heading: "Caliburn G4 vs G4 Pro",
+        paragraphs: [
+          "G4 Pro แบต 1800mAh มากกว่า G4 ที่ 1300mAh จอทัช 2.51 นิ้ว ปรับช่องลมได้แบบไม่มีขั้น และใช้หัวพอตได้ทั้ง GPP กับหัวพอต G3 ส่วน G4 ใช้ GPP",
+          "ที่ต้องแลกคือน้ำหนัก ตามคู่มือของ UWELL G4 Pro หนัก 78 กรัม G4 หนัก 54.7 กรัม ส่วนวัตต์สูงสุด 35 วัตต์กับหัวพอต 3mL เท่ากันทั้งคู่ (ตัวเลขวัตต์และความจุของ G4 มาจากคู่มือ)",
+          "อยากได้จอใหญ่ ปรับช่องลมละเอียด และใช้หัวพอตได้สองแบบ ดู G4 Pro อยากได้เครื่องที่เบากว่า ดู G4",
+        ],
+      },
+      {
+        heading: "Caliburn G4 vs G3 Pro",
+        paragraphs: [
+          "G4 แบต 1300mAh มากกว่า G3 Pro ที่ 1000mAh ทั้งคู่มีจอ G4 เป็นจอสี ส่วน G3 Pro เป็นจอ LCD โอบด้านข้าง ปรับได้ 5–35 วัตต์ และปรับช่องลมได้เต็มช่วง ทั้งคู่ชาร์จผ่าน USB-C ที่ 2A",
+          "ต่างกันชัดที่หัวพอต G4 ใช้ GPP มาในกล่อง 0.4 โอห์มกับ 0.9 โอห์ม ส่วน G3 Pro ใช้หัวพอต G3 มาในกล่อง 2 หัว 0.4 โอห์ม (3mL) กับ 0.9 โอห์ม (2.5mL) จะซื้อหัวพอตเพิ่ม ดูให้ตรงกับระบบของเครื่อง",
+          "อยากได้แบตมากกว่า ดู G4 อยากปรับวัตต์และช่องลมเองได้เต็มช่วง ดู G3 Pro ค่าโอห์มกับช่องลมส่งผลกับแนวการสูบยังไง อ่าน [MTL กับ DTL](/guides/understanding-mtl-vs-dtl) หรือดู Caliburn ทั้งหมดที่ [UWELL](/brands/uwell)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["caliburn-g5", "caliburn-g4", "caliburn-g4-pro"],
+    faq: [
+      { question: "หัวพอต Caliburn G4 ใส่ G5 ได้ไหม", answer: "ได้ ทั้งสองรุ่นใช้หัวพอต GPP ของ UWELL ระบบเดียวกัน" },
+      { question: "Caliburn G5 กับ G5 Lite แบตเท่ากันไหม", answer: "เท่ากัน 1600mAh วัตต์สูงสุด 35 วัตต์เท่ากัน ต่างกันที่จอสีกับระบบแตะสลับโหมดของ G5" },
+      { question: "Caliburn G4 Pro ใช้หัว G3 ได้ไหม", answer: "ได้ สเปกที่ยืนยันแล้วระบุว่า G4 Pro ใช้ได้ทั้งหัวพอต GPP และหัวพอต G3" },
+      { question: "Caliburn รุ่นไหนไม่มีจอ", answer: "ในรุ่นที่เทียบในบทความนี้ G4 Mini ไม่มีจอ ใช้ไฟ LED บอกสถานะ" },
+    ],
   },
 ];
 
