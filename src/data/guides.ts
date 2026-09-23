@@ -476,6 +476,93 @@ const allGuides: Guide[] = [
     // resistance changes the draw, owned by youtube.com/@OKMYARZ. Owner bound it (Q3, 2026-09-21).
     reviewVideo: { videoId: "cPYybXJ4zzA", title: "ค่าโอห์มต่างกัน ฟีลต่างกันยังไง?", channelName: "OKM YARZ", publishedAt: "2026-08-17" },
   },
+  {
+    // Round 10B T03' — writer draft 1 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-1-result.md.
+    id: "choosing-a-marbo-flavor",
+    slug: "choosing-a-marbo-flavor",
+    title: "Marbo กลิ่นไหนดี เลือกกลิ่น M Bar 9K 10K และ M Switch",
+    dek: "ไม่มีคำตอบเดียว เริ่มจากสายที่ชอบ เย็น องุ่น ผลไม้ หรือแนวอื่น แล้วดูว่ารุ่นไหนมีกลิ่นนั้น รวมรายชื่อกลิ่น M Bar 9K 10K และ M Switch Pod",
+    category: "buying-guide",
+    readingTimeMin: 6,
+    publishedAt: "2026-09-24",
+    body: [
+      {
+        heading: "เลือกสายที่ชอบก่อน แล้วค่อยดูรุ่น",
+        paragraphs: [
+          "Marbo กลิ่นไหนดี ไม่มีคำตอบเดียว อยู่ที่ว่าชอบแนวไหน เริ่มจากเลือกสายก่อน เย็น องุ่น ผลไม้ หรือแนวอื่น แล้วค่อยดูว่ารุ่นที่ใช้อยู่มีกลิ่นไหนในสายนั้น ที่ร้านเองก็มีหลายกลิ่นที่ลูกค้าชอบ",
+          "กลุ่มในบทความนี้เราแบ่งจากคำในชื่อกลิ่นเท่านั้น เพราะ SALTHUB ไม่ได้บอกระดับความเย็นหรือจัดกลุ่มรสไว้ ชื่อที่มี Ice · Mint · Menthol · Blast หรือ Freeze อยู่สายเย็น ชื่อที่มี Grape อยู่สายองุ่น ชื่อผลไม้อื่น ๆ อยู่สายผลไม้ ที่เหลือเป็นแนวอื่น",
+          "Marbo คือชื่อที่หลายร้านในไทยใช้เรียก M Bar กับ M Switch ของ SALTHUB เรื่องชื่อนี้อ่านต่อได้ที่ [Marbo กับ M Bar ต่างกันไหม](/faq) ส่วนบนเว็บเรา [M Bar 9K](/products/m-bar-9k) มี 22 กลิ่น [M Bar 10K](/products/m-bar-10k) มี 12 กลิ่น และหัวพอต [M Switch Pod](/products/m-switch-pod) มี 18 กลิ่น กลิ่นไหนมีของตอนนี้ ทักไลน์ @okm24 ถามได้",
+          "ถ้าใช้ M Switch กลิ่นอยู่ที่หัวพอต ส่วนตัวเครื่อง [M Switch Kit](/products/m-switch-kit) ใช้ตัวเดิม อยากเปลี่ยนกลิ่นก็เปลี่ยนแค่หัว",
+        ],
+      },
+      {
+        heading: "สายเย็น: ชื่อที่มี Ice · Mint · Menthol · Blast · Freeze",
+        paragraphs: [
+          "ลูกค้าที่ร้านถามถึงกลิ่น “เย็น” กับ “เย็นมาก” บ่อย ตอบตรง ๆ คือ SALTHUB ไม่ได้บอกว่ากลิ่นไหนเย็นระดับไหน เราบอกได้แค่ว่าชื่อไหนมีคำที่สื่อถึงความเย็น ไม่ได้เรียงว่ากลิ่นไหนเย็นกว่ากัน",
+          "ชื่อที่มีทั้งผลไม้และคำที่สื่อถึงความเย็น เช่น Watermelon Mint เราจัดไว้สายนี้",
+          "M Bar 9K (3 กลิ่น): Blue Ice · Doublemint · Menthol Freeze",
+          "M Bar 10K (4 กลิ่น): Blue Ice · Menthol Blast · Watermelon Mint · Yellow Mint",
+          "M Switch Pod (3 กลิ่น): Blue Ice · Cool Mint · Doublemint",
+        ],
+      },
+      {
+        heading: "สายองุ่น: ชื่อที่มี Grape",
+        paragraphs: [
+          "องุ่นเป็นอีกกลิ่นที่ลูกค้าที่ร้านถามถึงบ่อย ทั้งสามรุ่นมีกลิ่นองุ่นมากกว่าหนึ่งแบบ ชื่อที่มี Grape คู่กับอย่างอื่น เช่น Grape Aloe หรือ Grape Lychee เราจัดไว้สายนี้",
+          "M Bar 9K (4 กลิ่น): Grape · Grape Aloe · Grape Lychee · Kyoho Grape",
+          "M Bar 10K (2 กลิ่น): Grape · Kyoho Grape",
+          "M Switch Pod (4 กลิ่น): Grape · Grape Aloe · Grape Lychee · Kyoho Grape",
+        ],
+      },
+      {
+        heading: "สายผลไม้",
+        paragraphs: [
+          "ชื่อที่เป็นผลไม้ และไม่มีคำที่สื่อถึงความเย็นหรือ Grape อยู่ในกลุ่มนี้ รวมถึงชื่อที่มีผลไม้คู่กับขนมหรือเครื่องดื่ม อย่าง Watermelon Bubblegum กับ Strawberry Milkshake",
+          "M Bar 9K (11 กลิ่น): Apple Aloe · Mixberry · Orange Sour · Peach · Peach Strawberry · Pink Berry · Sparkling Lemon · Strawberry · Strawberry Milkshake · Watermelon · Watermelon Bubblegum",
+          "M Bar 10K (4 กลิ่น): All Berry · Pink Berry · Strawberry Kiwi · Watermelon",
+          "M Switch Pod (10 กลิ่น): Apple Aloe · Black Berry · Mango Passion · Mixberry · Peach Strawberry · Pink Berry · Strawberry · Strawberry Watermelon · Watermelon · Watermelon Bubblegum",
+        ],
+      },
+      {
+        heading: "แนวอื่น",
+        paragraphs: [
+          "ชื่อที่ไม่ได้บอกผลไม้หรือความเย็นตรง ๆ เช่น Cola · Matcha Latte · Rainbow Candy ส่วน Zapple ชื่อไม่ได้บอกว่ารสอะไร เราจึงจัดไว้ตรงนี้",
+          "M Bar 9K (4 กลิ่น): Cola · Rainbow Candy · Sour Gummy · Zapple",
+          "M Bar 10K (2 กลิ่น): Cola · Matcha Latte",
+          "M Switch Pod (1 กลิ่น): Cola",
+        ],
+      },
+      {
+        heading: "กลิ่นที่คนค้นหา และกลิ่นใหม่ของ M Bar 9K",
+        paragraphs: [
+          "เวลาพิมพ์ “marbo กลิ่น” ใน Google คำที่ขึ้นมาให้เลือกมี Zapple · แตงโม (Watermelon) · แอปเปิ้ล (Apple Aloe) · Blue Ice · องุ่น (Grape) และส้ม (Orange Sour) แตงโม Blue Ice และองุ่นมีทั้งสามรุ่น Apple Aloe มีใน M Bar 9K กับ M Switch Pod ส่วน Zapple กับส้มมีเฉพาะ M Bar 9K",
+          "Zapple กับ Kyoho Grape เป็นสองกลิ่นที่ SALTHUB ติดป้ายว่าใหม่บนโปสเตอร์ของ M Bar 9K",
+          "ยังไม่ได้เลือกว่าจะเอาพอตใช้แล้วทิ้งหรือ M Switch อ่าน [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) อยากรู้ว่าหนึ่งเครื่องใช้ได้นานแค่ไหน อ่าน [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts) ส่วนรุ่นอื่นของแบรนด์อยู่ที่ [หน้าแบรนด์ SALTHUB](/brands/salthub)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["m-bar-9k", "m-switch-pod"],
+    faq: [
+      {
+        question: "marbo กลิ่นไหนเย็น",
+        answer: "SALTHUB ไม่ได้บอกระดับความเย็น เราบอกได้แค่ว่าชื่อไหนมีคำที่สื่อถึงความเย็น M Bar 9K มี Blue Ice · Doublemint · Menthol Freeze ส่วน M Bar 10K มี Blue Ice · Menthol Blast · Watermelon Mint · Yellow Mint และ M Switch Pod มี Blue Ice · Cool Mint · Doublemint",
+      },
+      {
+        question: "marbo กลิ่นองุ่นมีแบบไหนบ้าง",
+        answer: "M Bar 9K มี Grape · Grape Aloe · Grape Lychee · Kyoho Grape ส่วน M Bar 10K มี Grape · Kyoho Grape และ M Switch Pod มี Grape · Grape Aloe · Grape Lychee · Kyoho Grape",
+      },
+      {
+        question: "marbo กลิ่นส้มมีไหม",
+        answer: "มี Orange Sour ใน M Bar 9K ส่วน M Bar 10K กับ M Switch Pod ไม่มีกลิ่นที่ชื่อเป็นส้ม",
+      },
+      {
+        question: "หัว M Switch กับ M Bar กลิ่นเหมือนกันไหม",
+        answer: "ชื่อซ้ำกันหลายกลิ่น เช่น Blue Ice · Cola · Grape · Kyoho Grape · Watermelon แต่เราเทียบได้แค่ชื่อ ไม่ได้เทียบรส บางกลิ่นมีเฉพาะหัว M Switch เช่น Black Berry · Cool Mint · Mango Passion · Strawberry Watermelon",
+      },
+    ],
+    // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @OKMYARZ.
+    reviewVideo: { videoId: "QptFMwIXbJE", title: "M BAR 9K NEW FLAVOR 2 กลิ่นใหม่ ZAPPLE และ KYOHO GRAPE", channelName: "OKM YARZ", publishedAt: "2026-01-16" },
+  },
 ];
 
 /** The public articles — everything outside HELD_GUIDE_IDS. */
