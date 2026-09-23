@@ -35,8 +35,9 @@ export const brands: Brand[] = [
       "A disposable- and switch-pod-focused brand built around the M Bar disposable line and the M Switch / Zero reusable cartridge platforms, emphasizing high puff counts, multi-mode airflow, and cartridge-based refill systems. If you have seen the name Marbo at other shops, this is the same line — salthub.com's own footer carries the Marbo logo too.",
     descriptionTh:
       // Round 6 "about3lang" B2 (owner เคาะ 2026-09-23): the clause that used to end this lede,
-      // "มีครบทั้งเครื่องและหัวพอต", was a completeness claim about stock — banned by the SEO ข
-      // permanent rulings. "ที่ร้านมีทั้งตัวเครื่องและหัวพอต" states only what the catalog shows
+      // "มีครบทั้งเครื่องและหัวพอต", read as a stock-completeness claim wider than the catalog shows
+      // (the rule on "ทุก/ครบ" wording = docs/THAI_STYLE.md §3, owner 2026-09-23 round 9; option ข-1
+      // itself is permanent). "ที่ร้านมีทั้งตัวเครื่องและหัวพอต" states only what the catalog shows
       // (3 pod-kits + 3 pods-cartridges in src/data/products/salthub.ts) and puts the subject back
       // in: the old clause had none, so it read as if Zero, not the shop, was the complete thing.
       // Wording by writer + thai-copy; option ข-1 of three.
