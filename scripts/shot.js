@@ -47,7 +47,13 @@ let reducedMotion = false;
 // --eval focus() that follows then renders the way a keyboard visitor genuinely sees it. The
 // floating LINE button's label is the case that needed it.
 const keys = [];
+// --max-height N / --dpr N: a whole long article in one image (round 10B, 2026-09-24). The 4000px cap and the phone's
+// 2x density stay the defaults; an article page runs past 4000px at 390, and 2x of a ~10000px page is past Chrome's
+// capture limit, so the article previews use e.g. --max-height 15000 --dpr 1. Opt-in: existing calls are unchanged.
+let maxHeight = 4000, dpr = 2;
 for (let i = 2; i < args.length; i++) {
+  if (args[i] === "--max-height") { maxHeight = +args[++i]; continue; }
+  if (args[i] === "--dpr") { dpr = +args[++i]; continue; }
   if (args[i] === "--key") { keys.push(args[++i]); continue; }
   if (args[i] === "--viewport") { viewportOnly = true; continue; }
   if (args[i] === "--anchor") { anchor = args[++i]; viewportOnly = true; continue; } if (args[i] === "--reduced-motion") { reducedMotion = true; continue; } if (args[i] === "--click") clicks.push(args[++i]); else if (args[i] === "--wait") wait = +args[++i]; else if (args[i] === "--width") width = +args[++i]; else if (args[i] === "--cookie") cookies.push(args[++i]); else if (args[i] === "--desktop") desktop = true; else if (args[i] === "--eval") evals.push(args[++i]); }
@@ -70,7 +76,7 @@ async function getJson(p) { return new Promise((res, rej) => http.get(`http://12
   const send = (method, params = {}) => new Promise((r, rej) => { const i = ++id; pending.set(i, r); ws.send(JSON.stringify({ id: i, method, params }));
     setTimeout(() => { if (pending.has(i)) { pending.delete(i); rej(new Error(`${method} did not answer within ${CDP_TIMEOUT_MS / 1000}s — is the dev server at ${url} alive? (curl it first)`)); } }, CDP_TIMEOUT_MS); });
   await send("Page.enable"); await send("Runtime.enable");
-  await send("Emulation.setDeviceMetricsOverride", desktop ? { width, height: 900, deviceScaleFactor: 1, mobile: false } : { width, height: 800, deviceScaleFactor: 2, mobile: true });
+  await send("Emulation.setDeviceMetricsOverride", desktop ? { width, height: 900, deviceScaleFactor: 1, mobile: false } : { width, height: 800, deviceScaleFactor: dpr, mobile: true });
   await send("Emulation.setUserAgentOverride", { userAgent: desktop ? "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36" : "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Mobile Safari/537.36" });
   if (reducedMotion) await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
   await send("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem(${JSON.stringify(AGE_KEY)},"true")}catch(e){}` });
@@ -93,12 +99,12 @@ async function getJson(p) { return new Promise((res, rej) => http.get(`http://12
   const scrolled = await send("Runtime.evaluate", { expression: scrollExpr, returnByValue: true });
   if (anchor) console.log("anchor →", scrolled.result?.result?.value);
   await sleep(anchor ? 800 : 300);
-  const { result } = await send("Runtime.evaluate", { expression: "Math.min(document.documentElement.scrollHeight, 4000)", returnByValue: true });
+  const { result } = await send("Runtime.evaluate", { expression: `Math.min(document.documentElement.scrollHeight, ${maxHeight})`, returnByValue: true });
   // Same emulation as the page was loaded with (desktop stays desktop — before 2026-09-08 this line
   // silently switched a --desktop run back to a 2x phone for the capture itself).
-  const h = viewportOnly ? (desktop ? 900 : 844) : result.result.value; await send("Emulation.setDeviceMetricsOverride", desktop ? { width, height: h, deviceScaleFactor: 1, mobile: false } : { width, height: h, deviceScaleFactor: 2, mobile: true }); await sleep(600);
+  const h = viewportOnly ? (desktop ? 900 : 844) : result.result.value; await send("Emulation.setDeviceMetricsOverride", desktop ? { width, height: h, deviceScaleFactor: 1, mobile: false } : { width, height: h, deviceScaleFactor: dpr, mobile: true }); await sleep(600);
   const shot = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: !viewportOnly });
-  fs.writeFileSync(out, Buffer.from(shot.result.data, "base64")); console.log("saved", out, `${width}x${h}@2x`);
+  fs.writeFileSync(out, Buffer.from(shot.result.data, "base64")); console.log("saved", out, `${width}x${h}@${desktop ? 1 : dpr}x`);
   ws.close(); chrome.kill(); cleanup();
 })().catch((e) => { console.error(e.message || e); chrome.kill(); cleanup(); process.exit(1); });
 function cleanup() { if (!process.env.CHROME_PROFILE) setTimeout(() => { try { fs.rmSync(profile, { recursive: true, force: true }); } catch {} }, 500); }
