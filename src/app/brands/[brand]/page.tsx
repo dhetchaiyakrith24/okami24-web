@@ -79,7 +79,10 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: brandPageName, description: brandPageDescription, path: brandPath })) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(brandPageName, brandPath)) }} />
+      {/* Round 7 "SEO ค" B2: the trail names the brand the way a visible breadcrumb would ("Home →
+          SALTHUB"), not the whole <title> with its "— OKami24 (OKM)" suffix — 4 brand pages carried
+          the full title here (_incoming/seo-c/keymap.md §3). CollectionPage above keeps the title. */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(brand.name, brandPath)) }} />
       <BrandPageHeader brand={brand} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
         <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} />

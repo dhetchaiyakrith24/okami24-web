@@ -48,7 +48,7 @@ export default async function TechnologyDetailPage({ params }: { params: Promise
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: entryTitle, description: TECHNOLOGY_DESCRIPTION_HEAD_TH[entry.id] ?? th?.summary ?? entry.summary, path: entryPath, publishedAt: entry.publishedAt, updatedAt: familyModifiedDate("technology") })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: entryTitle, description: TECHNOLOGY_DESCRIPTION_HEAD_TH[entry.id] ?? th?.summary ?? entry.summary, path: entryPath, publishedAt: entry.publishedAt, updatedAt: familyModifiedDate("technology"), image: "/opengraph-image" })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(entryTitle, entryPath)) }} />
       {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       {videoJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />}

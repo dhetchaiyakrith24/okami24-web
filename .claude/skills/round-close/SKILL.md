@@ -107,7 +107,10 @@ drew after collecting samples over a full round:
 - reasons scattered through the body — move every reason into the single reason slot (item 3).
 
 **Keep:**
-- the full before → after table, every row — that *is* the work, not overhead.
+- the before → after table — but within the length rule of `docs/TEMPLATES.md` (ข) (owner,
+  2026-09-23: at most 10 rows in the report, one row per key cluster; the full table lives in
+  `_incoming/<round>/` and the report cites the path). The earlier wording "every row" is retired
+  (RULES_INDEX row 84).
 
 Answer, in item 3, the question `docs/TEMPLATES.md` (ค)-8 makes the owner ask at every close:
 which parts of this round's instruction prescribed a method that was not needed, or stood in the

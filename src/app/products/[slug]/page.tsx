@@ -45,6 +45,13 @@ const OFFER_SELLER = { seller: organizationRef() };
 /** shippingDetails + hasMerchantReturnPolicy on every Offer (batch 4) — BSOT §10/§12 facts only,
  *  built once in seo.ts so the two Product branches below cannot drift apart. */
 const OFFER_MERCHANT = offerMerchantFields();
+
+/** The Thai description line of a legacy product — head-only override (SEO round ก) → Thai copy
+ *  overlay (round 30.3ข) → English source as the last fallback. One chain for the meta
+ *  description AND the Product JSON-LD so the two never disagree (round 7 "SEO ค" B2). */
+function legacyBaseDescriptionTh(product: Product): string {
+  return PRODUCT_DESCRIPTION_HEAD_TH[product.slug] ?? PRODUCT_COPY_TH[product.slug]?.shortDescription ?? product.shortDescription;
+}
 import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
 import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, offerMerchantFields, openGraphWithImage, organizationRef, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { categoriesWithProducts, categoryIsEmpty } from "@/lib/category-visibility";
@@ -58,7 +65,7 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import type { Product } from "@/types/catalog";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { productTitleTh } from "@/i18n/search-titles";
-import { PRODUCT_DESCRIPTION_HEAD_TH, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
+import { categoryTitleTh, PRODUCT_DESCRIPTION_HEAD_TH, PRODUCT_TITLE_HEAD_TH, productTitleWithPriceTh, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
  *  product-level card, the neutral variant fallback, and each variant's own photo. The variant
@@ -108,7 +115,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // Round "share-deadend" batch 2 (2026-09-22): a category with nothing in it is the same thin,
   // empty page an empty brand page is, and gets the same treatment — noindex, and out of the
   // navigation and the sitemap (src/lib/category-visibility.ts). The page itself keeps working.
-  if (category) return { title: category.labelTh, description: category.descriptionTh, ...canonicalFor(path), ...(categoryIsEmpty(category.id) ? NOINDEX_FOLLOW : {}) };
+  // Round 7 "SEO ค" B2: the <title> gains " ของแท้ บอกราคาทุกรุ่น" after the locked label (categoryTitleTh);
+  // the lede/description and the H1 are unchanged.
+  if (category) return { title: categoryTitleTh(category.labelTh), description: category.descriptionTh, ...canonicalFor(path), ...(categoryIsEmpty(category.id) ? NOINDEX_FOLLOW : {}) };
 
   const product = getProduct(slug);
   if (product) {
@@ -117,11 +126,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     // (English, THAI_STYLE layer 1) plus the locked category word — i18n/search-titles.ts — and
     // the meta description is the Thai shortDescription the page already shows under the English
     // one (ProductHero); English stays the fallback for a product with no Thai copy.
-    const title = productTitleTh(product.displayName, product.categoryId);
+    // Round 7 "SEO ค" B2: a per-slug title override where thai-copy's table gave one, then the
+    // catalog price on the title line for the pages not on the 2026-10-05 hold list
+    // (productTitleWithPriceTh); og:title keeps its own price rule below.
+    const legacyPrice = getLegacyApprovedPrice(product.slug);
+    const baseTitle = PRODUCT_TITLE_HEAD_TH[product.slug] ?? productTitleTh(product.displayName, product.categoryId);
+    const title = productTitleWithPriceTh(product.slug, baseTitle, legacyPrice);
     // SEO round ก (owner เคาะ 2026-09-21): a head-only override where the table gave one
     // (search-head-copy.ts), then the B2 price line — price from the same approval the page
     // shows, appended only when one exists, kept inside 160 characters (withPriceSuffixTh).
-    const baseDescription = PRODUCT_DESCRIPTION_HEAD_TH[product.slug] ?? PRODUCT_COPY_TH[product.slug]?.shortDescription ?? product.shortDescription;
+    const baseDescription = legacyBaseDescriptionTh(product);
     const description = withPriceSuffixTh(baseDescription, getLegacyApprovedPrice(product.slug));
     return {
       title,
@@ -129,7 +143,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       ...canonicalFor(path),
       // Round "backlink" batch 2 (owner 2026-09-22): the card an admin sends on LINE carries the
       // price on its title line, the way the brand cards do — same catalog number, <title> untouched.
-      ...(cardImage ? openGraphWithImage({ title: shareTitleWithPriceTh(title, getLegacyApprovedPrice(product.slug)), description, path, image: cardImage }) : {}),
+      ...(cardImage ? openGraphWithImage({ title: shareTitleWithPriceTh(baseTitle, legacyPrice), description, path, image: cardImage }) : {}),
     };
   }
 
@@ -138,7 +152,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const publishedProduct = getPublishedProduct(slug);
   if (publishedProduct) {
     // Same title template as the legacy branch; the tagline (the Thai source line) is the meta.
-    const title = productTitleTh(publishedProduct.displayName, publishedProduct.categoryId);
+    const baseTitle = PRODUCT_TITLE_HEAD_TH[publishedProduct.slug] ?? productTitleTh(publishedProduct.displayName, publishedProduct.categoryId);
+    const title = productTitleWithPriceTh(publishedProduct.slug, baseTitle, publishedProduct.sellingPrice);
     // Same head-only override + B2 price line as the legacy branch above.
     const baseDescription = PRODUCT_DESCRIPTION_HEAD_TH[publishedProduct.slug] ?? publishedProduct.tagline ?? undefined;
     const description = baseDescription === undefined ? undefined : withPriceSuffixTh(baseDescription, publishedProduct.sellingPrice);
@@ -146,7 +161,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title,
       description,
       ...canonicalFor(path),
-      ...(publishedProduct.image ? openGraphWithImage({ title: shareTitleWithPriceTh(title, publishedProduct.sellingPrice), description, path, image: publishedProduct.image }) : {}),
+      ...(publishedProduct.image ? openGraphWithImage({ title: shareTitleWithPriceTh(baseTitle, publishedProduct.sellingPrice), description, path, image: publishedProduct.image }) : {}),
     };
   }
   const pilotProduct = getPilotProduct(slug);
@@ -257,7 +272,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.displayName,
-    description: product.shortDescription,
+    // Round 7 "SEO ค" B2: the same Thai line the meta description already carries (round 30.3ข),
+    // not the English source field — 35 of 53 Product nodes were English while the page's own
+    // meta was Thai (_incoming/seo-c/keymap.md §3). No price suffix here: the price is in `offers`.
+    description: legacyBaseDescriptionTh(product),
     brand: brand ? { "@type": "Brand", name: brand.name } : undefined,
     category: categoryNameOf(product.categoryId),
     image: legacyCardImage ? [absoluteUrl(legacyCardImage.src)] : undefined,
