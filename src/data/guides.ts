@@ -803,6 +803,78 @@ const allGuides: Guide[] = [
     // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @PODSYSTEM-OKAMI-II.
     reviewVideo: { videoId: "MlQjKTSls-0", title: "รวมปัญหาที่พบบ่อย สำหรับผู้ใช้งานพอต?", channelName: "POD SYSTEM OKAMI II", publishedAt: "2025-03-13" },
   },
+  {
+    // Round 10B T11 — writer draft 1 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-1-result.md.
+    // M Switch battery (600mAh on salthub.com/m-switch/) is deliberately NOT stated: the m-switch-kit spec row is still
+    // unverified and the live guide open-system-vs-disposable says so — one site, one answer until the data round decides.
+    id: "esko-bar-switch-vs-m-switch",
+    slug: "esko-bar-switch-vs-m-switch",
+    title: "Esko Bar Switch 20K กับ M Switch (Marbo) ต่างกันยังไง",
+    dek: "ทั้งคู่เก็บตัวเครื่องไว้ เปลี่ยนแค่หัวพอต ตามสเปกผู้ผลิต Esko Bar Switch 20K หัวละ 20,000 พัฟ ส่วน M Switch หัวละ 15,000 พัฟ ที่เหลือเทียบทีละข้อ",
+    category: "buying-guide",
+    readingTimeMin: 6,
+    publishedAt: "2026-09-24",
+    body: [
+      {
+        heading: "Esko Bar Switch 20K กับ M Switch ต่างกันยังไง",
+        paragraphs: [
+          "ทั้งสองรุ่นเป็นเครื่องระบบสวิตช์ เก็บตัวเครื่องไว้ชาร์จใช้ต่อ เปลี่ยนแค่หัวพอต ที่ต่างคือตัวเลข ตามเว็บผู้ผลิต Esko Bar Switch 20K หัวละ 20,000 พัฟ แบต 850mAh มีโหมด High กับ Low และปรับช่องลมได้ 3 ระดับ ส่วน M Switch หัวละ 15,000 พัฟ",
+          "M Switch เป็นของ SALTHUB ตระกูลเดียวกับที่หลายร้านเรียกว่า Marbo ส่วน Esko Bar เป็นอีกแบรนด์หนึ่ง",
+          "ตัวเลขในบทความนี้มาจาก [เว็บ Esko Bar](https://eskobarvape.com/product/pod-system/) กับ [เว็บ SALTHUB](https://www.salthub.com/m-switch/) ยกเว้นความจุหัว M Switch Pod ที่มาจากสเปกที่ยืนยันแล้วบนเว็บเรา ข้อไหนผู้ผลิตไม่ได้เขียนไว้ เราก็บอกว่าไม่ได้เขียน ไม่เติมตัวเลขเอง",
+        ],
+      },
+      {
+        heading: "Esko Bar Switch 20K เปลี่ยนหัวได้ไหม",
+        paragraphs: [
+          "ได้ ผู้ผลิตเขียนไว้ว่าเป็นหัวพอตแบบถอดเปลี่ยนได้ (Replaceable Pod) ตัวแบตกับถังน้ำยาแยกจากกัน เปลี่ยนกลิ่นได้โดยไม่ต้องเปลี่ยนทั้งเครื่อง",
+          "หลักเดียวกับ [M Switch Kit](/products/m-switch-kit) ที่ทิ้งแค่หัวพอต [M Switch Pod](/products/m-switch-pod) ตัวเครื่องเก็บไว้ ส่วนหน้าสินค้าของ Esko อยู่ที่ [Esko Bar Switch 20K](/products/pod-159)",
+        ],
+      },
+      {
+        heading: "เทียบสเปกทีละข้อ",
+        paragraphs: [],
+        subsections: [
+          { heading: "จำนวนพัฟต่อหัว", paragraphs: ["Esko Bar Switch 20K หัวละ 20,000 พัฟ M Switch หัวละ 15,000 พัฟ"] },
+          { heading: "ความจุน้ำยา", paragraphs: ["Esko เขียนว่าความจุ 18mL ส่วนหน้า M Switch ของ SALTHUB ไม่ได้เขียนตัวเลขนี้ สเปกที่ยืนยันแล้วบนเว็บเราระบุว่าหัว M Switch Pod บรรจุสำเร็จ 2.2mL"] },
+          { heading: "ความเข้มข้นนิโคติน", paragraphs: ["M Switch ระบุ 30mg แบบ salt nic ส่วนเว็บ Esko Bar ไม่ได้เขียนความเข้มข้นไว้ เราเลยไม่ใส่ตัวเลข"] },
+          { heading: "แบตและการชาร์จ", paragraphs: ["Esko Bar Switch 20K แบต 850mAh ชาร์จที่ 5V 0.85A ส่วนความจุแบตของ M Switch หน้าสินค้าบนเว็บเรายังไม่ยืนยัน เลยไม่เอาตัวเลขมาเทียบ ทั้งคู่ชาร์จผ่าน USB-C"] },
+          { heading: "คอยล์", paragraphs: ["Esko เขียนว่าเป็นระบบ Dual Coil (คอยล์สองตัว) M Switch ใช้คอยล์ cotton mesh 1.0 โอห์ม"] },
+          { heading: "โหมดและช่องลม", paragraphs: ["Esko มีโหมด High กับ Low และปรับช่องลมได้ 3 ระดับ หน้า M Switch ของ SALTHUB ไม่ได้เขียนเรื่องโหมดหรือช่องลมไว้"] },
+        ],
+      },
+      {
+        heading: "เลือกตามอะไร",
+        paragraphs: [
+          "ไม่มีรุ่นไหนชนะขาด ดูว่าอะไรสำคัญกับคุณ อยากได้พัฟต่อหัวที่มากกว่า ตามสเปกผู้ผลิต Esko Bar Switch 20K ตัวเลขสูงกว่า อยากปรับโหมดหรือปรับช่องลมเอง Esko เขียนไว้ว่ามี ส่วนหน้า M Switch ไม่ได้เขียนเรื่องนี้",
+          "ถ้าต้องรู้ความเข้มข้นนิโคตินก่อนเลือก ฝั่ง M Switch เขียนไว้ 30mg ส่วน Esko ไม่ได้บอก ถ้าใช้ M Bar อยู่แล้ว M Switch เป็นของ SALTHUB เจ้าเดียวกัน",
+          "ที่ร้าน ลูกค้าที่ลังเลระหว่างสองรุ่นนี้ สุดท้ายเลือกพอ ๆ กัน แต่เอนไปทาง M Switch เรื่องนี้บอกแค่ว่าคนเลือกอะไร ไม่ได้บอกว่ารุ่นไหนดีกว่า",
+          "ยังไม่แน่ใจว่าจะเอาเครื่องระบบสวิตช์หรือพอตใช้แล้วทิ้ง อ่าน [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) รุ่นอื่นของสองแบรนด์อยู่ที่ [Esko Bar](/brands/esko-bar) กับ [SALTHUB](/brands/salthub)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["pod-159", "m-switch-pod"],
+    faq: [
+      {
+        question: "esko bar switch 20k เปลี่ยนหัวได้ไหม",
+        answer: "ได้ ผู้ผลิตระบุว่าเป็นหัวพอตแบบถอดเปลี่ยนได้ ตัวแบตกับถังน้ำยาแยกจากกัน เปลี่ยนกลิ่นได้โดยไม่ต้องเปลี่ยนทั้งเครื่อง",
+      },
+      {
+        question: "esko bar switch 20k นิโคตินกี่ mg",
+        answer: "เว็บ Esko Bar ไม่ได้เขียนความเข้มข้นไว้ เราเลยไม่ใส่ตัวเลข ถ้าจะเทียบ M Switch ระบุไว้ 30mg แบบ salt nic",
+      },
+      {
+        question: "esko bar กับ marbo ต่างกันไหม",
+        answer: "เป็นคนละแบรนด์ Marbo คือชื่อที่หลายร้านใช้เรียกของ SALTHUB อย่าง M Bar กับ M Switch ถ้าเทียบรุ่นเปลี่ยนหัวด้วยกัน คู่ที่ใกล้กันคือ Esko Bar Switch 20K กับ M Switch",
+      },
+      {
+        question: "esko bar switch 20k ชาร์จยังไง",
+        answer: "ชาร์จผ่าน USB-C ผู้ผลิตระบุการชาร์จที่ 5V 0.85A แบตในตัว 850mAh",
+      },
+    ],
+    // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @OKMYARZ — names the
+    // Switch model explicitly (the OKAMI comparison clip only says "ESKO BAR 20K", which may be the non-Switch model).
+    reviewVideo: { videoId: "iDoW0BuyWog", title: "ESKO BAR SWITCH 20000 มันจะขนาดนั้นเลยหรอเนี้ยย?", channelName: "OKM YARZ", publishedAt: "2025-12-20" },
+  },
 ];
 
 /** The public articles — everything outside HELD_GUIDE_IDS. */
