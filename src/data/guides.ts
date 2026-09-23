@@ -569,7 +569,7 @@ const allGuides: Guide[] = [
     // complaints, away from the "brands don't publish how puffs are counted" sentence, so it never reads as a cause.
     id: "how-long-a-disposable-lasts",
     slug: "how-long-a-disposable-lasts",
-    title: "พอตใช้แล้วทิ้ง ใช้ได้กี่วัน ทำไมแต่ละคนหมดไม่เท่ากัน",
+    title: "พอตใช้แล้วทิ้ง 1 ตัว ใช้ได้กี่วัน",
     dek: "ไม่มีจำนวนวันตายตัว แล้วแต่คน สูบจัดก็หมดไวหน่อย ส่วนตัวเลขบนกล่อง เช่น M Bar 9K (Marbo) สูงสุด 9,000 พัฟ เป็นจำนวนพัฟ แปลงเป็นวันไม่ได้",
     category: "how-it-works",
     readingTimeMin: 5,
@@ -673,7 +673,7 @@ const allGuides: Guide[] = [
         heading: "เรื่องที่ลูกค้าที่ร้านบ่นบ่อย",
         paragraphs: [
           "มีสามเรื่อง แบต ไหม้ไว และจำนวนพัฟไม่ถึงที่กำหนด",
-          "เรื่องแบต ดูก่อนว่าเครื่องชาร์จซ้ำได้ไหม M Bar 9K M Bar 10K และตัวเครื่อง M Switch ชาร์จผ่าน USB-C ได้ทั้งสามตัว วิธีชาร์จให้ถูกอยู่ที่ [วิธีดูแลแบตเตอรี่และการชาร์จ](/guides/battery-care-and-charging)",
+          "เรื่องแบต ดูก่อนว่าเครื่องชาร์จซ้ำได้ไหม M Bar 9K · M Bar 10K และตัวเครื่อง M Switch ชาร์จผ่าน USB-C ได้ทั้งสามตัว วิธีชาร์จให้ถูกอยู่ที่ [วิธีดูแลแบตเตอรี่และการชาร์จ](/guides/battery-care-and-charging)",
           "เรื่องพัฟไม่ถึงกับไหม้ไว เรายังหาคู่มือของผู้ผลิตรุ่นเหล่านี้ที่อธิบายเรื่องนี้ไม่เจอ เลยไม่เดาสาเหตุให้",
         ],
       },
@@ -711,8 +711,8 @@ const allGuides: Guide[] = [
     // until 2026-10-05. "Change it" is the customer replacing the unit/pod — never a claim or warranty (owner, round 10B).
     id: "fixing-no-draw-and-blinking-light",
     slug: "fixing-no-draw-and-blinking-light",
-    title: "พอตดูดไม่ขึ้น ไฟกระพริบ แก้ยังไง เช็คอะไรก่อน",
-    dek: "เช็คก่อนว่าแกะพลาสติกที่ก้นพอตออกหรือยัง แล้วชาร์จแบต เสียบหัวพอตให้เข้าที่ และดูว่าไฟหรือจอบอกอะไร",
+    title: "พอตดูดไม่ขึ้น ไฟกระพริบ แก้ยังไง",
+    dek: "เช็คก่อนว่าแกะพลาสติกที่ก้นพอตออกหรือยัง แล้วชาร์จแบต เสียบหัวพอตให้เข้าที่ และดูว่าไฟหรือข้อความบนจอแปลว่าอะไร",
     category: "maintenance",
     readingTimeMin: 8,
     publishedAt: "2026-09-24",
@@ -730,11 +730,11 @@ const allGuides: Guide[] = [
         subsections: [
           {
             heading: "ชาร์จแบตก่อน",
-            paragraphs: ["พอแบตต่ำ Caliburn จะขึ้นเตือนแล้วหยุดจ่ายไฟ ตามคู่มือของ UWELL ให้ชาร์จด้วยสาย USB-C กับหัวชาร์จ 5V/2A ส่วน [M Bar 9K](/products/m-bar-9k) [M Bar 10K](/products/m-bar-10k) และ [M Switch Kit](/products/m-switch-kit) ก็ชาร์จผ่าน USB-C เหมือนกัน"],
+            paragraphs: ["พอแบตต่ำ Caliburn จะขึ้นเตือนแล้วหยุดจ่ายไฟ ตามคู่มือของ UWELL ให้ชาร์จด้วยสาย USB-C กับหัวชาร์จ 5V/2A ส่วน [M Bar 9K](/products/m-bar-9k) · [M Bar 10K](/products/m-bar-10k) และ [M Switch Kit](/products/m-switch-kit) ก็ชาร์จผ่าน USB-C เหมือนกัน"],
           },
           {
             heading: "ถอดหัวพอตแล้วเสียบใหม่ให้เข้าที่",
-            paragraphs: ["ตามคู่มือของ UWELL ถ้าเครื่องไม่เจอหัวพอต Caliburn G4 จะขึ้น No Atomizer ส่วน G4 Mini จะกระพริบไฟน้ำเงิน 3 ครั้ง แปลว่าหัวพอตเสียบไม่เข้าที่ ถอดออกแล้วเสียบกลับให้แน่น เครื่องที่ใช้หัวพอตอย่าง M Switch ก็ลองแบบเดียวกันได้"],
+            paragraphs: ["ตามคู่มือของ UWELL ถ้าเครื่องไม่เจอหัวพอต Caliburn G4 จะขึ้น No Atomizer ส่วน G4 Mini จะกระพริบไฟน้ำเงิน 3 ครั้ง แปลว่าหัวพอตเสียบไม่เข้าที่ ถอดออกแล้วเสียบกลับให้แน่น เครื่องที่ใช้หัวพอต เช่น M Switch ก็ลองแบบเดียวกันได้"],
           },
           {
             heading: "อย่าดูดค้างนาน",
@@ -754,13 +754,13 @@ const allGuides: Guide[] = [
             heading: "Caliburn G4 Mini ดูจากสีไฟ",
             paragraphs: [
               "[Caliburn G4 Mini](/products/caliburn-g4-mini) ไม่มีจอ บอกสถานะด้วยสีไฟกับจำนวนครั้งที่กระพริบ ไฟแดงกระพริบ 3 ครั้งตอนสูบ คือหัวพอตช็อต ไฟแดงกระพริบ 10 ครั้ง คือแบตต่ำ ไฟเขียวกระพริบ 5 ครั้ง คือดูดค้างเกิน 8 วินาที",
-              "ไฟน้ำเงินกระพริบ 3 ครั้ง คือวงจรไม่ครบ หัวพอตเสียบไม่เข้าที่ ไฟน้ำเงินกระพริบ 2 ครั้ง คือถอดหัวพอตออก ส่วนตอนชาร์จ ไฟเขียวคือแบตเกิน 60% น้ำเงินคือ 30–60% แดงคือต่ำกว่า 30%",
+              "ไฟน้ำเงินกระพริบ 3 ครั้ง คือวงจรไม่ครบ หัวพอตเสียบไม่เข้าที่ ไฟน้ำเงินกระพริบ 2 ครั้ง คือหัวพอตถูกถอด ส่วนตอนชาร์จ ไฟเขียวคือแบตเกิน 60% น้ำเงินคือ 30–60% แดงคือต่ำกว่า 30%",
             ],
           },
           {
             heading: "Caliburn G4 · G4 Pro และ G5 ดูจากจอ",
             paragraphs: [
-              "[Caliburn G4](/products/caliburn-g4) ขึ้นเป็นข้อความบนจอ 4 แบบ Atomizer short! (หัวพอตช็อต) · Battery Low! (แบตต่ำ) · Over 8s! (ดูดค้างเกิน 8 วินาที) · No Atomizer (เครื่องไม่เจอหัวพอต) ขึ้นข้อความพวกนี้เมื่อไหร่ เครื่องจะหยุดจ่ายไฟ",
+              "[Caliburn G4](/products/caliburn-g4) ขึ้นเป็นข้อความบนจอ 4 แบบ Atomizer short! (หัวพอตช็อต) · Battery Low! (แบตเตอรี่ต่ำ) · Over 8s! (ดูดค้างเกิน 8 วินาที) · No Atomizer (เครื่องไม่เจอหัวพอต) ขึ้นข้อความพวกนี้เมื่อไหร่ เครื่องจะหยุดจ่ายไฟ",
               "[Caliburn G4 Pro](/products/caliburn-g4-pro) ขึ้นเป็นไอคอน Atomizer Short · Battery Low · Over-puff · No Atomizer ส่วน Caliburn G5 ขึ้นข้อความ ATOMIZER SHORT · BATTERY LOW · OVER 6S (ดูดค้างเกิน 6 วินาที) · NO ATOMIZER",
             ],
           },
@@ -769,7 +769,7 @@ const allGuides: Guide[] = [
       {
         heading: "M Switch · M Bar และรุ่นอื่น ยังไม่มีตารางไฟจากผู้ผลิต",
         paragraphs: [
-          "SALTHUB ไม่ได้ลงความหมายไฟกระพริบของ M Bar กับ M Switch ไว้บนเว็บทางการ ส่วน RELX Joiway และ ARGUS เรายังหาตารางแบบนี้จากผู้ผลิตไม่เจอ เลยไม่เดาว่าไฟแต่ละแบบแปลว่าอะไร",
+          "SALTHUB ไม่ได้ลงความหมายไฟกระพริบของ M Bar กับ M Switch ไว้บนเว็บทางการ ส่วน RELX · Joiway และ ARGUS เรายังหาตารางแบบนี้จากผู้ผลิตไม่เจอ เลยไม่เดาว่าไฟแต่ละแบบแปลว่าอะไร",
           "M Switch ดูดไม่ขึ้น ไฟกระพริบ ให้ไล่แบบเดียวกัน แกะพลาสติกที่ก้นพอต ชาร์จผ่าน USB-C ถอด [M Switch Pod](/products/m-switch-pod) แล้วเสียบกลับให้เข้าที่ และอย่าดูดค้างนาน",
         ],
       },
@@ -834,11 +834,11 @@ const allGuides: Guide[] = [
         heading: "เทียบสเปกทีละข้อ",
         paragraphs: [],
         subsections: [
-          { heading: "จำนวนพัฟต่อหัว", paragraphs: ["Esko Bar Switch 20K หัวละ 20,000 พัฟ M Switch หัวละ 15,000 พัฟ"] },
+          { heading: "จำนวนพัฟต่อหัว", paragraphs: ["Esko Bar Switch 20K หัวละ 20,000 พัฟ ส่วน M Switch หัวละ 15,000 พัฟ"] },
           { heading: "ความจุน้ำยา", paragraphs: ["Esko เขียนว่าความจุ 18mL ส่วนหน้า M Switch ของ SALTHUB ไม่ได้เขียนตัวเลขนี้ สเปกที่ยืนยันแล้วบนเว็บเราระบุว่าหัว M Switch Pod บรรจุสำเร็จ 2.2mL"] },
           { heading: "ความเข้มข้นนิโคติน", paragraphs: ["M Switch ระบุ 30mg แบบ salt nic ส่วนเว็บ Esko Bar ไม่ได้เขียนความเข้มข้นไว้ เราเลยไม่ใส่ตัวเลข"] },
           { heading: "แบตและการชาร์จ", paragraphs: ["Esko Bar Switch 20K แบต 850mAh ชาร์จที่ 5V 0.85A ส่วนความจุแบตของ M Switch หน้าสินค้าบนเว็บเรายังไม่ยืนยัน เลยไม่เอาตัวเลขมาเทียบ ทั้งคู่ชาร์จผ่าน USB-C"] },
-          { heading: "คอยล์", paragraphs: ["Esko เขียนว่าเป็นระบบ Dual Coil (คอยล์สองตัว) M Switch ใช้คอยล์ cotton mesh 1.0 โอห์ม"] },
+          { heading: "คอยล์", paragraphs: ["Esko เขียนว่าเป็นระบบ Dual Coil (คอยล์สองตัว) ส่วน M Switch ใช้คอยล์ cotton mesh 1.0 โอห์ม"] },
           { heading: "โหมดและช่องลม", paragraphs: ["Esko มีโหมด High กับ Low และปรับช่องลมได้ 3 ระดับ หน้า M Switch ของ SALTHUB ไม่ได้เขียนเรื่องโหมดหรือช่องลมไว้"] },
         ],
       },
@@ -881,8 +881,8 @@ const allGuides: Guide[] = [
     // experience. Before release: re-read the G4 manual for "auto-draw" (from researcher-B's summary, not re-read).
     id: "comparing-caliburn-models",
     slug: "comparing-caliburn-models",
-    title: "Caliburn G5 vs G4 ต่างกันยังไง เทียบ Caliburn ทีละคู่",
-    dek: "G5 แบต 1600mAh สลับโหมดด้วยการแตะ G4 แบต 1300mAh มีปุ่มยิง G4 Pro แบต 1800mAh จอทัช เทียบสเปกทีละคู่ ไม่ตัดสินแทนคุณ",
+    title: "Caliburn G5 vs G4 ต่างกันยังไง เทียบ Caliburn 8 รุ่น",
+    dek: "G5 แบต 1600mAh สลับโหมดด้วยการแตะ G4 แบต 1300mAh มีปุ่มยิง G4 Pro แบต 1800mAh จอทัช เทียบสเปกทีละคู่",
     category: "buying-guide",
     readingTimeMin: 7,
     publishedAt: "2026-09-24",
@@ -903,14 +903,14 @@ const allGuides: Guide[] = [
             heading: "จอและการควบคุม",
             paragraphs: [
               "[Caliburn G5](/products/caliburn-g5) จอสี 0.85 นิ้ว สลับโหมดด้วยระบบ Smart Triple-Tap Control คือแตะตัวเครื่องสามครั้ง ตามคู่มือของ UWELL ไม่มีปุ่ม ส่วน [Caliburn G4](/products/caliburn-g4) จอสี เลือกโหมดวัตต์บนจอได้ มีปุ่มยิง และตามคู่มือของ UWELL สูบได้เลยโดยไม่ต้องกดปุ่มก็ได้",
-              "[Caliburn G4 Pro](/products/caliburn-g4-pro) จอทัช 2.51 นิ้ว [Caliburn G3 Pro](/products/caliburn-g3-pro) จอ LCD โอบด้านข้างเครื่อง ส่วน [Caliburn G4 Mini](/products/caliburn-g4-mini) ไม่มีจอ ตามคู่มือของ UWELL ใช้ปุ่มกับไฟ LED บอกสถานะ",
+              "[Caliburn G4 Pro](/products/caliburn-g4-pro) จอทัช 2.51 นิ้ว · [Caliburn G3 Pro](/products/caliburn-g3-pro) จอ LCD โอบด้านข้างเครื่อง ส่วน [Caliburn G4 Mini](/products/caliburn-g4-mini) ไม่มีจอ ตามคู่มือของ UWELL ใช้ปุ่มกับไฟ LED บอกสถานะ",
               "[Caliburn G5 Lite](/products/caliburn-g5-lite) ข้อมูลในหน้าสินค้าบอกว่าตัดจอสีกับระบบแตะของ G5 ออก แต่แถวจอในตารางสเปกของ Lite ยังติดป้าย “ยังไม่ยืนยัน”",
             ],
           },
           {
             heading: "แบต",
             paragraphs: [
-              "G4 Pro 1800mAh · G5 G5 Lite และ G5 Lite SE 1600mAh · G4 1300mAh · G4 Mini 1100mAh · G3 Pro 1000mAh ใช้ mAh เทียบกันระหว่างรุ่นได้ แต่อย่าแปลงเป็นชั่วโมง วิธีอ่านอยู่ที่ [วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet)",
+              "G4 Pro 1800mAh · G5 · G5 Lite และ G5 Lite SE 1600mAh · G4 1300mAh · G4 Mini 1100mAh · G3 Pro 1000mAh ใช้ mAh เทียบกันระหว่างรุ่นได้ แต่อย่าแปลงเป็นชั่วโมง วิธีอ่านอยู่ที่ [วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet)",
               "เวลาชาร์จมีตัวเลขยืนยันแค่ 2 รุ่น G4 ราว 30 นาทีที่ 2A และ G4 Mini ราว 58 นาทีที่ 2A",
             ],
           },
@@ -974,7 +974,7 @@ const allGuides: Guide[] = [
     // autocomplete evidence ("argus g4 vs caliburn g5", researcher-B-result.md), the one Cowork proposed.
     id: "argus-g4-vs-caliburn-g5",
     slug: "argus-g4-vs-caliburn-g5",
-    title: "ARGUS G4 vs Caliburn G5 ต่างกันยังไง เทียบสเปกทีละเรื่อง",
+    title: "ARGUS G4 vs Caliburn G5 ต่างกันยังไง",
     dek: "ไม่มีคำตอบที่แน่นอนว่าตัวไหนดีกว่า แบตใกล้กัน วัตต์กับขนาดจอเท่ากัน ที่ต่างชัดคือระบบหัวพอต และ G5 สลับโหมดด้วยการแตะ",
     category: "buying-guide",
     readingTimeMin: 5,
