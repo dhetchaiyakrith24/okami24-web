@@ -52,9 +52,11 @@ export const CONTACT_HEAD_TH = {
 /** Rows A7 (option ก) / A8 — `count` = products shown on /products, counted by the page. */
 export function productsHeadTh(count: number) {
   // Round 9 B4 (thai-copy row 3, seo-auditor #1 "land now"): the all-products page leads with the
-  // collective owner key "อุปกรณ์บุหรี่ไฟฟ้า" (0 titles before); "หัวพอต"/"คอยล์" stay with their own
-  // category titles. 60 characters at 53 products — past the ceiling (100+ products) the old title returns.
-  const title = `อุปกรณ์บุหรี่ไฟฟ้า ของแท้ ${count} รุ่น ราคาทุกตัว${OKM_TITLE_SUFFIX}`;
+  // collective owner key "อุปกรณ์บุหรี่ไฟฟ้า" (0 titles before). Owner's answer 2026-09-23: "พอต" and
+  // "คอยล์" go back in — seo-auditor #2 option A (59 characters at 53 products, 60 at 100+): keeps the
+  // live title's "พอต"/"คอยล์" and "(OKM)", leaves "หัวพอต" to Pods & Cartridges; the price promise stays in
+  // the description. Past the ceiling the pre-round-9 title returns.
+  const title = `อุปกรณ์บุหรี่ไฟฟ้า พอต คอยล์ ของแท้ ${count} รุ่น${OKM_TITLE_SUFFIX}`;
   return {
     title: [...title].length <= TITLE_MAX ? title : `พอต หัวพอต คอยล์ ของแท้ ${count} รุ่น ราคาทุกตัว${OKM_TITLE_SUFFIX}`,
     // Round 7 "SEO ค" B2: "อุปกรณ์บุหรี่ไฟฟ้า" (owner key, 0/99 heads before) opens the line; "อุปกรณ์" =
