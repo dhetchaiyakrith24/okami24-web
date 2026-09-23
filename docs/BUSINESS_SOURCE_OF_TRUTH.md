@@ -592,6 +592,18 @@ depend on the visitor again.
 
 ## 21. Product / Flavour Decisions (owner, 2026-09-06)
 
+### SALTHUB เป็นเจ้าของ Marbo / M Bar — เจ้าของยืนยัน 2026-09-23 (ปิดรอบ 8)
+- **คำตัดสินเจ้าของ:** SALTHUB เป็นเจ้าของแบรนด์ Marbo / M Bar (ตระกูลเดียวกับ M Switch และ Zero) — ประโยคบนเว็บ
+  "SALTHUB เจ้าของ M Bar …" (`src/data/brands.ts` คำโปรยแบรนด์) **คงไว้** และ `brandId` ของทั้งตระกูลคือ `salthub` ถาวร
+  (คอมเมนต์เก่าใน `src/data/products/salthub.ts` ที่ว่า "brandId stays salthub until the owner confirms" = ยืนยันแล้ว)
+- **ที่มา:** (1) เจ้าของเอง ซึ่งอยู่ในวงการขายพอต (2) โลโก้ Marbo ที่ท้ายเว็บทางการ salthub.com และหน้า salthub.com/m-bar-10k/
+  (researcher รอบ 8 เปิดดูเอง 2026-09-23 · `_incoming/round8/researcher-1-result.md` แถว 1)
+- **สิ่งที่ยังไม่มีแหล่งภายนอกยืนยัน:** researcher ไม่พบหน้าเว็บใดเขียนตรง ๆ ว่า "ผู้ผลิต/ตัวแทนจำหน่าย" (แถว 3c) — ข้อความบนเว็บ
+  จึงพูดเท่าที่พิสูจน์ได้ ("หลายร้านเรียก M Bar ว่า Marbo" · "salthub.com มีโลโก้ Marbo") ถ้าจะเขียนคำว่า "ผู้ผลิต" บนเว็บ ให้อ้างคำตัดสินนี้
+  และถามเจ้าของก่อน (13.4 #6 ประโยคที่ลูกค้าอ่าน)
+- **โรงงาน "MARBOVAPE" (marbovapor.com)** เป็นชื่อพ้อง เชื่อมกับ SALTHUB ไม่ได้ — ห้ามอ้างเป็นผู้ผลิต · โดเมนสะกดคล้าย salthub.com
+  (salthab / salthvb / sallthub) ห้ามใช้เป็นแหล่งอ้างอิง
+
 Answers given while the image work was being planned. **Nothing has been built from these yet** —
 they are the brief for the image batches in `docs/LAUNCH_AUDIT.md`.
 
