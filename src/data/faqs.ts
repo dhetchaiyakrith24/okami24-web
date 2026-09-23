@@ -1,4 +1,5 @@
 import type { SiteFAQ } from "@/types/catalog";
+import { CONTACT } from "@/data/contact";
 
 // Owner review (2026-09-03) — "FAQ must become actionable": each `action` below is added only
 // where the question naturally leads somewhere useful (judgment call per item, not a blanket
@@ -29,6 +30,16 @@ export const siteFaqs: SiteFAQ[] = [
     // to the catalog instead of LINE. LINE stays the fallback inside the answer text itself.
     action: { href: "/products", labelKey: "browseProductsCta" },
   },
+  // Round 8 B2 (owner ruling 2026-09-23, round-7 close item 5): wholesale = "contact us on LINE",
+  // no minimum, no discount, no price — the business source of truth has no wholesale section.
+  {
+    id: "wholesale-orders",
+    category: "ordering",
+    question: "How do I order a case or a large quantity?",
+    answer:
+      "Message @okm24 on LINE and tell us the model and the quantity you want — the admin checks stock and replies in the chat. The line is open every day, 24 hours.",
+    action: { href: CONTACT.lineUrl, labelKey: "contactLineCta" },
+  },
   {
     id: "where-specs-come-from",
     category: "devices",
@@ -50,6 +61,18 @@ export const siteFaqs: SiteFAQ[] = [
     answer:
       "An open-system pod is refilled with e-liquid you buy separately and uses replaceable coil pods; a disposable arrives prefilled and is used until the puff count or e-liquid runs out. See the Open-System vs. Disposable guide for a full breakdown.",
     action: { href: "/guides/open-system-vs-disposable", labelKey: "viewGuideCta" },
+  },
+  // Round 8 B2 (owner ruling 2026-09-23 "both Marbo and M Bar must rank"): only the two facts a
+  // source supports — other shops use the name Marbo for this line, and salthub.com's own footer
+  // shows the Marbo logo (_incoming/round8/researcher-1-result.md rows 1, 2, 3a). Who makes or
+  // distributes what is NOT stated: no source found (row 3c).
+  {
+    id: "marbo-vs-m-bar",
+    category: "devices",
+    question: "Is Marbo the same thing as M Bar?",
+    answer:
+      "They are two names for one line: many Thai shops list the M Bar, M Switch and Zero devices under the name Marbo. Salthub's own site carries the Marbo logo in its footer. For what is in stock right now, ask on LINE @okm24.",
+    action: { href: CONTACT.lineUrl, labelKey: "contactLineCta" },
   },
   {
     id: "nicotine-strength-meaning",
