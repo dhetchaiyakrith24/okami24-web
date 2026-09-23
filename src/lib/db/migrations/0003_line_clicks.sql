@@ -1,7 +1,7 @@
 -- Round 8 (owner ruling 2026-09-23, option ก of _incoming/seo-c/b4-plan.md §5): count clicks on the
 -- site's LINE links in-site. A row is "one click, on this page, from this spot, at this time" and
 -- nothing else — no cookie is set, and no IP address, user agent, session or identifier of any kind
--- is stored, so the table holds counts, never people. Read-out: scripts/line-clicks.ts against the
+-- is stored, so the table holds counts, never people. Read-out: scripts/line-clicks.js (plain node) against the
 -- database file, or the token-gated GET on /api/metrics/line-click (see that route's comment).
 CREATE TABLE IF NOT EXISTS line_clicks (
   id INTEGER PRIMARY KEY AUTOINCREMENT,

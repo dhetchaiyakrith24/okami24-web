@@ -327,7 +327,7 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // "ตัวไหนดี" already leads the title/H1. The definition paraphrases the pod-systems category lede
   // without the word "น้ำยา" (HANDOFF §16 4b keeps it out of head copy until the category has stock).
   "choosing-your-first-pod-system":
-    "Pod system คือพอตที่เติมเองได้ เปลี่ยนหัวพอตได้ ยี่ห้อไหนดี เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมี Caliburn G5 · M Bar 9K",
+    "Pod System คือพอตที่เติมเองได้ เปลี่ยนหัวพอตได้ ยี่ห้อไหนดี เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมี Caliburn G5 · M Bar 9K",
   "open-system-vs-disposable":
     "เทียบพอตใช้แล้วทิ้งกับพอตซิสเต็ม ต่างกันตรงไหน ต้องดูแลแค่ไหน พร้อมตัวอย่างจริง M Bar 10K · M Switch Kit · Caliburn G5 Lite และวิธีเช็คของแท้จากกล่อง",
   "reading-a-spec-sheet":

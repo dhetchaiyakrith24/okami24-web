@@ -1,7 +1,7 @@
 /**
- * LINE-click counter — the read side, shared by the route handler's GET and `scripts/line-clicks.ts`.
- * No `server-only` here for the same reason as line-click-input.ts: the script runs under plain
- * `tsx` with its own read-only database handle, the route passes the app's singleton.
+ * LINE-click counter — the read side, used by the route handler's GET and the contract test (scripts/line-clicks.js runs the same queries in plain node for the Render shell, where tsx is not installed).
+ * No `server-only` here for the same reason as line-click-input.ts: the contract test runs under
+ * plain `tsx` with its own throwaway database, the route passes the app's singleton.
  */
 import type Database from "better-sqlite3";
 import { bangkokDayWindowStart } from "./line-click-input";

@@ -18,19 +18,19 @@ export interface GuideCopy {
 
 export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
   "choosing-your-first-pod-system": {
-    title: "Pod system ตัวไหนดี เลือกพอตเครื่องแรกให้ถูกแบบ",
+    title: "Pod System ตัวไหนดี เลือกพอตเครื่องแรกให้ถูกแบบ",
     dek: "ยังไม่รู้จะเอาพอตซิสเต็ม พอตคิท หรือพอตใช้แล้วทิ้ง เริ่มจากตรงนี้",
     body: [
-      // Round 8 B3 (owner ruling 2026-09-23, round-7 close item 2): "Pod system คืออะไร" opener and
+      // Round 8 B3 (owner ruling 2026-09-23, round-7 close item 2): "Pod System คืออะไร" opener and
       // the "ยี่ห้อไหนดี" section below, Thai only — Google reads the Thai page; en/zh bodies are
       // separate arrays and stay as they were. Definitions come from the category ledes
       // (src/data/categories.ts descriptionTh), nothing new is claimed. Wording: writer #2
       // (_incoming/round8/writer-2-result.md). The first sentence of the next section lost its
       // own three-way definition so the two do not say the same thing twice.
       {
-        heading: "Pod system คืออะไร ต่างกับพอตคิทและพอตใช้แล้วทิ้งยังไง",
+        heading: "Pod System คืออะไร ต่างกับพอตคิทและพอตใช้แล้วทิ้งยังไง",
         paragraphs: [
-          "Pod system หรือพอตซิสเต็ม คือพอตที่เติมน้ำยาเอง เปลี่ยนหัวพอตได้ เลือกโอห์มได้เอง ส่วนพอตคิทก็ใช้ซ้ำได้ แต่เปลี่ยนแค่หัวพอตหรือคอยล์ บางรุ่นตั้งวัตต์เองได้ บางรุ่นเป็นเครื่องระบบสวิตช์ที่ใช้หัวพอตบรรจุสำเร็จมาให้เลย",
+          "Pod System หรือพอตซิสเต็ม คือพอตที่เติมน้ำยาเอง เปลี่ยนหัวพอตได้ เลือกโอห์มได้เอง ส่วนพอตคิทก็ใช้ซ้ำได้ แต่เปลี่ยนแค่หัวพอตหรือคอยล์ บางรุ่นตั้งวัตต์เองได้ บางรุ่นเป็นเครื่องระบบสวิตช์ที่ใช้หัวพอตบรรจุสำเร็จมาให้เลย",
           "พอตใช้แล้วทิ้ง แกะกล่องแล้วสูบได้เลย ไม่ต้องเติมน้ำยา ส่วนใหญ่ชาร์จซ้ำได้จนน้ำยาหมด สามแบบนี้คือทางแยกแรกตอนเลือกพอตเครื่องแรก",
         ],
       },
@@ -107,7 +107,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       {
         heading: "ใช้ตัวช่วยเลือกสินค้าแทนการเดา",
         paragraphs: [
-          "ไม่ต้องไล่เทียบสเปกทีละรุ่นเอง ตัวช่วยเลือกสินค้าจะถามสั้น ๆ ว่าชอบแบบไหน แล้วจับคู่กับข้อมูลเครื่องในร้าน พร้อมบอกว่าทำไมรุ่นนั้นถึงเหมาะ อ่านมาถึงตรงนี้แล้วยังตอบตัวเองไม่ได้ว่า pod system ตัวไหนดี ลองให้ [ตัวช่วยเลือกสินค้า](/finder) ช่วยตอบ",
+          "ไม่ต้องไล่เทียบสเปกทีละรุ่นเอง ตัวช่วยเลือกสินค้าจะถามสั้น ๆ ว่าชอบแบบไหน แล้วจับคู่กับข้อมูลเครื่องในร้าน พร้อมบอกว่าทำไมรุ่นนั้นถึงเหมาะ อ่านมาถึงตรงนี้แล้วยังตอบตัวเองไม่ได้ว่า Pod System ตัวไหนดี ลองให้ [ตัวช่วยเลือกสินค้า](/finder) ช่วยตอบ",
         ],
       },
     ],
