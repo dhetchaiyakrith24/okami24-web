@@ -296,6 +296,11 @@ const CONNECTIVE_PREFIX = /^(และ|แล้ว|ส่วน|กับ|ซ�
  *  <head> only. Keyed by product slug. Rows C3–C6 are deliberately short (no spec to draw on). */
 export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "m-bar-15k": "M Bar 15K (Marbo 15K) ที่ OKami24 (OKM) พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 15,000 พัฟ คอยล์ cotton mesh มี 15 รส",
+  // Round 8 B2 (seo-auditor #1, finding 6a): the Marbo sentence appended to this product's
+  // shortDescription pushed the base past the cut, and `withPriceSuffixTh` would have left
+  // "…เรียกตระกูล M Bar ว่า ของแท้ ราคา ฿129…" in <head>. This row pins the description to the
+  // pre-round-8 text — head unchanged, body carries the sentence — so the 2026-10-05 read is clean.
+  "m-bar-pod": "หัวพอตสำหรับเปลี่ยน ใช้ได้กับเครื่องใช้ซ้ำของ SALTHUB ที่รองรับ M Bar มีให้เลือกกว่า 15 รส",
   "coil-1": "คอยล์ VOOPOO Vinci มี 0.15 · 0.6 · 1.2 โอห์ม ทั้งแบบ MTL และ DTL ใช้ได้กับ VINCI Pod · VINCI X Pod · DRAG Baby Trio",
   "coil-38": "คอยล์ VOOPOO TPP มี TPP-DM2 0.2 โอห์ม 40–60 วัตต์ · TPP-DM4 0.3 โอห์ม 32–40 วัตต์ ใช้ได้กับ TPP Pod · DRAG 3 · DRAG X Plus",
   "coil-54": "หัวพอตเปล่า Feelin Mini จากแบรนด์ NEVOKS สำหรับเครื่อง Feelin Mini ไม่มีคอยล์มาในกล่อง ต้องซื้อคอยล์แยก",
@@ -322,7 +327,7 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // "ตัวไหนดี" already leads the title/H1. The definition paraphrases the pod-systems category lede
   // without the word "น้ำยา" (HANDOFF §16 4b keeps it out of head copy until the category has stock).
   "choosing-your-first-pod-system":
-    "Pod system คือพอตที่เติมเองได้ เปลี่ยนหัวพอตได้ ยี่ห้อไหนดี เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมี Caliburn G5 · M Bar 9K",
+    "Pod System คือพอตที่เติมเองได้ เปลี่ยนหัวพอตได้ ยี่ห้อไหนดี เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมี Caliburn G5 · M Bar 9K",
   "open-system-vs-disposable":
     "เทียบพอตใช้แล้วทิ้งกับพอตซิสเต็ม ต่างกันตรงไหน ต้องดูแลแค่ไหน พร้อมตัวอย่างจริง M Bar 10K · M Switch Kit · Caliburn G5 Lite และวิธีเช็คของแท้จากกล่อง",
   "reading-a-spec-sheet":

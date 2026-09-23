@@ -148,7 +148,12 @@ export function Hero({
                 promote them to inline-block — so the desktop line boxes are byte-for-byte what
                 they were. The text nodes and the <br /> between them are untouched on purpose
                 (a reshaped text node has moved desktop type by 30px on this site before). */}
-            <span className="okami-hero-line-1">{dict.hero.headingLine1}</span>
+            {/* Round 8 B1 (designer #1, 2026-09-23): line 1 is Latin now ("Pod System"), and at the
+                h1's 0.92 leading its "y" descender sat on the Thai tone marks of line 2. A larger
+                line-height on this span alone grows its line box on desktop (inline) and phone
+                (inline-block) alike — ~0.1em of air under "Pod System" — while the Thai-on-Thai
+                gap between lines 2 and 3, which was always fine, does not move. */}
+            <span className="okami-hero-line-1 leading-[1.12]">{dict.hero.headingLine1}</span>
             <br />
             <span className="okami-hero-line-2">{dict.hero.headingLine2}</span>
             <br />

@@ -14,7 +14,7 @@ export const salthubProducts: Product[] = [
     displayName: "SALTHUB M BAR 10K",
     tagline: "Three power modes, an RGB status ring, 10,000 puffs rated.",
     shortDescription:
-      "A rechargeable disposable rated for up to 10,000 puffs, with a cotton mesh coil, three switchable power modes, and an RGB indicator that shows the active mode.",
+      "A rechargeable disposable rated for up to 10,000 puffs, with a cotton mesh coil, three switchable power modes, and an RGB indicator that shows the active mode. Many Thai shops list the M Bar line under the name Marbo — the same line.",
     isFlagship: true,
     editorialTag: "Flagship",
     // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
@@ -143,7 +143,7 @@ export const salthubProducts: Product[] = [
     displayName: "SALTHUB M BAR 9K",
     tagline: "Adjustable airflow between MTL and DTL, 9,000 puffs.",
     shortDescription:
-      "A rechargeable disposable with 14mL of prefilled e-liquid, adjustable airflow spanning tight MTL to airier DTL draws, and a mesh coil rated up to 9,000 puffs.",
+      "A rechargeable disposable with 14mL of prefilled e-liquid, adjustable airflow spanning tight MTL to airier DTL draws, and a mesh coil rated up to 9,000 puffs. Many Thai shops list the M Bar line under the name Marbo — the same line.",
     isFlagship: false,
     // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
     // youtube.com/@OKM_24 — one of OKami24's own three channels.
@@ -495,7 +495,7 @@ export const salthubProducts: Product[] = [
     name: "M Bar Pod",
     displayName: "SALTHUB M BAR POD",
     tagline: "15+ flavors, one compatible cartridge line.",
-    shortDescription: "A replacement pod line compatible across SALTHUB's M Bar-compatible reusable devices, offered in 15+ flavors.",
+    shortDescription: "A replacement pod line compatible across SALTHUB's M Bar-compatible reusable devices, offered in 15+ flavors. Many Thai shops list the M Bar family under the name Marbo — the same line.",
     isFlagship: false,
     attributes: {
       screenType: "none",

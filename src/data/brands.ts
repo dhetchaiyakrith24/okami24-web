@@ -32,7 +32,7 @@ export const brands: Brand[] = [
     fullName: "Salt Hub / M Bar",
     tagline: "The M Bar and M Switch ecosystem.",
     description:
-      "A disposable- and switch-pod-focused brand built around the M Bar disposable line and the M Switch / Zero reusable cartridge platforms, emphasizing high puff counts, multi-mode airflow, and cartridge-based refill systems.",
+      "A disposable- and switch-pod-focused brand built around the M Bar disposable line and the M Switch / Zero reusable cartridge platforms, emphasizing high puff counts, multi-mode airflow, and cartridge-based refill systems. If you have seen the name Marbo at other shops, this is the same line — salthub.com's own footer carries the Marbo logo too.",
     descriptionTh:
       // Round 6 "about3lang" B2 (owner เคาะ 2026-09-23): the clause that used to end this lede,
       // "มีครบทั้งเครื่องและหัวพอต", was a completeness claim about stock — banned by the SEO ข
@@ -40,7 +40,11 @@ export const brands: Brand[] = [
       // (3 pod-kits + 3 pods-cartridges in src/data/products/salthub.ts) and puts the subject back
       // in: the old clause had none, so it read as if Zero, not the shop, was the complete thing.
       // Wording by writer + thai-copy; option ข-1 of three.
-      "SALTHUB เจ้าของ M Bar พอตใช้แล้วทิ้งรุ่น 9K 10K และ 15K กับเครื่องระบบสวิตช์ M Switch และ Zero ที่เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา ที่ร้านมีทั้งตัวเครื่องและหัวพอต",
+      // Round 8 B2 (owner ruling 2026-09-23 "both Marbo and M Bar must rank"): the closing
+      // sentence says only what the evidence supports — other shops use the name Marbo, and
+      // salthub.com's footer shows the Marbo logo (_incoming/round8/researcher-1-result.md rows
+      // 1 and 3a). It never says who makes or distributes what: no source for that (row 3c).
+      "SALTHUB เจ้าของ M Bar พอตใช้แล้วทิ้งรุ่น 9K 10K และ 15K กับเครื่องระบบสวิตช์ M Switch และ Zero ที่เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา ที่ร้านมีทั้งตัวเครื่องและหัวพอต ถ้าเคยเห็นชื่อ Marbo ตามร้านอื่น คือของตระกูลเดียวกันนี้ เว็บทางการ salthub.com เองก็มีโลโก้ Marbo อยู่ที่ท้ายเว็บ",
     referenceUrl: "https://www.salthub.com/",
   },
   {
@@ -53,7 +57,7 @@ export const brands: Brand[] = [
     description:
       "A vape hardware manufacturer best known for the Jellybox pod-system line, offering interchangeable mesh-coil pods across multiple device generations (Jellybox V, Jellybox Nano, and related kits).",
     descriptionTh:
-      "RINCOE ผู้ผลิตพอตตระกูล Jellybox ที่ร้านตอนนี้มีหัวพอตแท้สำหรับ Jellybox V",
+      "RINCOE ผู้ผลิตพอตตระกูล Jellybox ที่ร้านมีหัวพอตแท้สำหรับ Jellybox V",
     referenceUrl: "https://rincoe-store.com/",
   },
   {
@@ -65,7 +69,7 @@ export const brands: Brand[] = [
     description:
       "A vaping device manufacturer, active since 2013, known for the dotAIO all-in-one pod line and its dotCoils replacement-coil platform, alongside dotPod systems and both regulated and mechanical box mods.",
     descriptionTh:
-      "DOTMOD ผู้ผลิต dotAIO และคอยล์ dotCoils ที่ร้านตอนนี้มีคอยล์แท้สำหรับ dotAIO V2",
+      "DOTMOD ผู้ผลิต dotAIO และคอยล์ dotCoils ที่ร้านมีคอยล์แท้สำหรับ dotAIO V2",
     founded: "2013",
     referenceUrl: "https://dotmod.com/",
   },

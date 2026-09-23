@@ -52,11 +52,17 @@ export const th: Dictionary = {
     // Round 30.3ข (owner, 2026-09-11 — C1 option ข): the old "ที่ออกแบบ / อย่างชัดเจน" was a
     // translation of the English hero ("engineered for clarity") with no word a customer
     // searches for; "ข้อมูลจริง" is what this site does differently and echoes the lede below.
-    headingLine1: "พอตไฟฟ้า",
+    // Round 8 B1 (owner ruling 2026-09-23): "Pod System" is the home page's top word and
+    // "บุหรี่ไฟฟ้า" the second — variant ก puts the second word in the H1 itself. "และน้ำยา" left
+    // the lede: no e-liquid is sold on the storefront. Wording by writer (_incoming/round8/writer-1-result.md).
+    // Variant ข landed (writer, thai-copy and the designer brief all lean this way): the H1 keeps
+    // the shop's own three words and "บุหรี่ไฟฟ้า" opens the lede as the sentence a pod seller
+    // actually says. Variant ก (line 2 = "บุหรี่ไฟฟ้า") is in _incoming/round8/b1a/shots for the owner.
+    headingLine1: "Pod System",
     headingLine2: "ของแท้",
     headingAccent: "ข้อมูลจริง",
     description:
-      "พอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยา จัดหมวดตามสเปกจริง ไม่ใช่คำโฆษณา ทุกรุ่นมีข้อมูลจริง เทียบกันได้ เลือกให้ตรงกับแนวการสูบของตัวเอง",
+      "หลายคนเรียกบุหรี่ไฟฟ้า เราเรียกพอต ที่นี่มีทั้งพอตซิสเต็ม พอตคิท พอตใช้แล้วทิ้ง บอกสเปกจริง เทียบกันได้ก่อนตัดสินใจ ถามหรือสั่งทางไลน์ @okm24",
     ctaPrimary: "ดูสินค้าทั้งหมด",
     ctaSecondary: "ใช้ตัวช่วยเลือกสินค้า",
     statProducts: "สินค้า",
@@ -76,7 +82,9 @@ export const th: Dictionary = {
     controlP2:
       "เป็นแนวโน้มที่เห็นทั้งแคตตาล็อก เซ็นเซอร์แตะ จอทัชเต็มจอ และชิปที่ปรับค่าเอง กำลังเข้ามาแทนแถวปุ่มกดบนพอตตัวเล็ก",
     controlCta: "อ่านเรื่องเทคโนโลยีนี้ต่อ",
-    caliburnTitle: "Pod System / พอตซิสเต็ม",
+    // Round 8 B1: the hero's first line is now "Pod System", so this rail title stopped repeating
+    // it one screen below (writer's note, thai-copy to confirm). "สาย X" is already site wording.
+    caliburnTitle: "พอตซิสเต็มสาย Caliburn",
     caliburnDescription: "สิบรุ่นในตระกูลเดียว ตั้งแต่ G4 Mini ที่ไม่มีจอ ไปจนถึง G4 Pro KOKO ที่เป็นจอทัช",
     mBarTitle: "พอตใช้แล้วทิ้งที่สลับโหมดได้",
     mBarP1:
@@ -97,6 +105,12 @@ export const th: Dictionary = {
     guidesAll: "คู่มือทั้งหมด →",
     guideReadingTime: "อ่าน {n} นาที",
     viewAll: "ดูทั้งหมด →",
+    // Round 8 B1 (owner 2026-09-23): the all-products text index. Variant ข of two
+    // (_incoming/round8/writer-1-result.md §2, thai-copy's pick; description tail per thai-copy) —
+    // variant ก ("ทุกรุ่นในเว็บนี้ รวมไว้ที่เดียว") is in the ก screenshots for the owner.
+    indexTitle: "เลือกจากทุกรุ่น แยกตามหมวดให้แล้ว",
+    indexDescription: "แถวด้านบนคัดมาบางรุ่น ตรงนี้คือรายการเต็ม เรียงตามหมวด กดเข้าไปดูสเปกได้ทุกรุ่น",
+    indexViewAll: "เปิดหน้ารวมสินค้า →",
   },
   search: {
     title: "ค้นหาสินค้า",
@@ -340,6 +354,20 @@ export const th: Dictionary = {
       "หมวดนี้ไม่มีการกล่าวอ้างด้านสุขภาพ ความปลอดภัย หรือการเปรียบเทียบเกี่ยวกับการสูบไอ และไม่ได้ระบุแยกว่ารายการใดมีนิโคตินหรือไม่มีนิโคตินในทุกรายการ ความเข้มข้นของนิโคตินแตกต่างกันไปตามสินค้าแต่ละชิ้น กรุณาตรวจสอบหน้าสินค้าหรือสอบถามทาง LINE OA",
     familyEyebrow: "น้ำยา · กลุ่มรสชาติ",
     characterNotesTitle: "ลักษณะเด่นของรสชาติ",
+    // Round 8 B4 (owner 2026-09-23, round-7 close item 3): salt nic vs freebase — from the verified
+    // nicotine-type rows in unbranded.ts and the MTL sentence of the first-pod guide; no strength,
+    // no PG/VG, no health wording. Wording: writer #2 (_incoming/round8/writer-2-result.md).
+    nicTitle: "salt nic กับ freebase ต่างกันยังไง",
+    // thai-copy #1 pass applied (_incoming/round8/thai-copy-1-result.md): nicP4 no longer says
+    // "พอตซิสเต็ม" — on this site that means the Caliburn family, a low-watt MTL pod, which the
+    // sentence above pairs with salt nic; the split is by wattage instead, nothing new claimed.
+    nicP1: "salt nic กับ freebase คือนิโคตินคนละแบบในน้ำยา ไม่ใช่ยี่ห้อ และไม่ใช่กลุ่มรสชาติ",
+    nicP2: "น้ำยาขวดหนึ่งจะเป็นแบบใดแบบหนึ่ง ดูได้จากสเปกว่าขวดนั้นเป็น salt nic หรือ freebase",
+    nicP3: "salt nic เป็นแบบที่ใช้กับพอตตัวเล็ก วัตต์ต่ำ สูบแบบ MTL (ดูดเข้าปากก่อน)",
+    nicP4: "ส่วน freebase เป็นแบบที่ใช้กับเครื่องเติมน้ำยาเองที่ตั้งวัตต์ได้สูงกว่า",
+    nicP5: "เครื่องกลุ่มนั้นช่องลมเปิดกว้างกว่า เลยเป็นคนละแนวการสูบกับพอตตัวเล็ก",
+    nicNotSold: "ตอนนี้หน้าร้านเรายังไม่มีน้ำยาขาย หน้านี้เขียนไว้ให้รู้จักก่อนเท่านั้น",
+    nicCta: "ไม่แน่ใจว่าเครื่องตัวเองต้องใช้แบบไหน ทักไลน์ @okm24 ถามได้",
     familyDisclaimer:
       "ที่เขียนไว้ในหน้านี้คือลักษณะของกลุ่มรส ไม่ใช่รายการน้ำยาแบบขวดของแบรนด์ไหน น้ำยาแต่ละขวดในกลุ่มนี้เรายังไม่มีข้อมูลที่ยืนยันได้ จึงไม่ใส่ไว้",
   },

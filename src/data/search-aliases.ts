@@ -4,8 +4,9 @@
  *
  * What a visitor TYPES into the search box, mapped to the English term the catalog stores. One
  * direction only: typed word → product. These strings are NEVER rendered anywhere on the site —
- * THAI_STYLE §2 layer 1 (brand and model names stay English on the site, never transliterated)
- * and the ban on "บุหรี่ไฟฟ้า" are rules for what the site WRITES to a customer; this file only
+ * THAI_STYLE §2 layer 1 (brand and model names stay English on the site, never transliterated —
+ * "Marbo" included, round-8 lock 2026-09-23) is a rule for what the site WRITES to a customer
+ * ("บุหรี่ไฟฟ้า" was once banned there too; allowed since round 7, locked in round 8); this file only
  * listens to what the customer writes to us. The owner's ruling (2026-09-22): a Thai customer
  * spells a brand many ways and still says "บุหรี่ไฟฟ้า" — refusing those words means an empty
  * results page, so several spellings per brand are welcome and Code may add or drop entries as

@@ -12,7 +12,8 @@
  *         units บาท วัน รุ่น added at the owner's call 2026-09-16 after the post-typography scan
  *         still showed "500 | บาท", "3 | วัน", "4 | รุ่น" on /how-to-order /warranty /compare;
  *         นาที proposed the same day after "เต็มใน 45 | นาที" appeared on the ARGUS G4 lede);
- *       · inside the two-word model names the owner listed.
+ *       · inside the two-word model names the owner listed;
+ *       · before the LINE handle "@okm24" (round 8 close, 2026-09-23 — never alone on a line).
  *   - WORD JOINER (U+2060) inside a word the segmenter breaks wrongly — ONLY the owner's listed
  *     exceptions, each scoped to the sentence it was seen in (THAI_STYLE §5 records the position),
  *     plus the short NEVER_SPLIT list of locked compounds joined everywhere (owner, 2026-09-22).
@@ -88,6 +89,14 @@ const JOINED: ReadonlyArray<{ word: string; within: string; joined: string }> = 
   { word: "แนวการสูบ", within: "โอห์มกับวัตต์ส่งผลต่อแนวการสูบ" },
   { word: "บรรจุสำเร็จ", within: "เปลี่ยนแค่หัวพอตบรรจุสำเร็จ" },
   { word: "ไม่ต้อง", within: "แต่ไม่ต้องทิ้งทั้งเครื่อง" },
+  // Round 8 close (owner ruling 2026-09-23, report item 8 ก — owner allowed touching this list):
+  // the 390px scan still split these after one rewording each.
+  { word: "พอตซิสเต็ม", within: "หลายคนเรียกบุหรี่ไฟฟ้า เราเรียกพอต" }, // home hero lede, first phone screen
+  { word: "ตัดสินใจ", within: "หลายคนเรียกบุหรี่ไฟฟ้า เราเรียกพอต" }, // same lede at 1440: "ตัดสิน | ใจ" on the first desktop screen (designer round 2 — the scan cannot see a split whose last line holds several words)
+  { word: "ทางไลน์", within: "หลายคนเรียกบุหรี่ไฟฟ้า เราเรียกพอต" }, // same lede: last line reads "ทางไลน์ @okm24", not "สั่งทาง | ไลน์" (designer)
+  { word: "บรรจุสำเร็จ", within: "เครื่องระบบสวิตช์ที่ใช้หัวพอตบรรจุสำเร็จ" }, // first-pod guide, "Pod System คืออะไร" p1
+  { word: "ให้ถูกแบบ", within: "เลือกพอตเครื่องแรกให้ถูกแบบ" }, // that guide's title: «แบบ» stranded alone (round 7 carry)
+  { word: "ส่วนพอตคิท", within: "ส่วนพอตคิทก็ใช้ซ้ำได้" }, // same paragraph: the segmenter does not know "คิท" (split at 1440 once the words above were bound); "ส่วน" joined too so the connective never ends a line (designer)
 ] as const).map((j) => ({ ...j, joined: joinWord(j.word) }));
 
 /**
@@ -124,6 +133,10 @@ const NUMBER_UNIT_EN = new RegExp(`${NUMBER} (?:mAh|mL|W)(?![A-Za-z])`, "g");
 const RANGE_DASH = /([–-])(?=\d)/g;
 const THAI = /\p{Script=Thai}/u;
 const REPEAT_MARK = / ๆ/g;
+// Round 8 close (owner allowed touching this module, 2026-09-23): the shop's LINE handle never
+// sits alone on a line — binding the home lede's "พอตซิสเต็ม" moved its last break to "… ไลน์ |
+// @okm24" at 390. The handle is bound to the word before it, like a unit to its number.
+const LINE_HANDLE = / (@okm24)/g;
 const bindUnit = (m: string) => m.replace(RANGE_DASH, `$1${WJ}`).replace(" ", NBSP);
 
 /** Returns `text` with the render-time typography applied. Idempotent; safe on any string. */
@@ -133,6 +146,7 @@ export function thaiTypography(text: string): string {
   for (const j of JOINED) if (out.includes(j.within)) out = out.split(j.word).join(j.joined);
   for (const n of NEVER_SPLIT) out = out.split(n.word).join(n.joined);
   out = out.replace(REPEAT_MARK, `${NBSP}ๆ`);
+  out = out.replace(LINE_HANDLE, `${NBSP}$1`);
   out = out.replace(NUMBER_UNIT_TH, bindUnit);
   out = out.replace(NUMBER_UNIT_EN, bindUnit);
   for (const name of MODEL_NAMES) out = out.split(name).join(name.split(" ").join(NBSP));

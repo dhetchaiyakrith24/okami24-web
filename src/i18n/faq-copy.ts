@@ -27,6 +27,12 @@ export const FAQ_COPY_TH: Record<string, FAQCopy> = {
     answer:
       "กดเพิ่มสินค้าลงตะกร้า ยืนยันเบอร์โทรด้วยรหัส OTP กรอกที่อยู่จัดส่ง แล้วยืนยันคำสั่งซื้อ จากนั้นโอนเงินหรือสแกน QR ตามยอดที่แจ้ง แอดมินตรวจยอดโอนก่อน แล้วจึงอนุมัติและจัดส่ง พร้อมเลขพัสดุให้ติดตาม ค่าส่ง 60 บาท ยอด 500 บาทขึ้นไปส่งฟรี ถ้าสินค้าตัวไหนยังไม่เปิดให้กดซื้อ หรืออยากให้ช่วยเลือกรุ่น ทักไลน์ @okm24 ได้เลย",
   },
+  // Round 8 B2 — wholesale (owner's own phrase "ติดต่อหลังไมค์ทางไลน์"; the rest is the round-7 draft the owner approved).
+  "wholesale-orders": {
+    question: "ซื้อยกลังหรือซื้อจำนวนมาก ทำยังไง",
+    answer:
+      "ติดต่อหลังไมค์ทางไลน์ @okm24 บอกรุ่นกับจำนวนที่ต้องการ แอดมินเช็คของให้แล้วตอบกลับในแชท ทักได้ทุกวัน ตลอด 24 ชั่วโมง",
+  },
   "where-specs-come-from": {
     question: "ข้อมูลสเปกสินค้ามาจากไหน",
     answer:
@@ -41,6 +47,12 @@ export const FAQ_COPY_TH: Record<string, FAQCopy> = {
     question: "พอตซิสเต็มกับพอตใช้แล้วทิ้ง ต่างกันตรงไหน",
     answer:
       "พอตซิสเต็มคือพอตที่เติมน้ำยาเองและเปลี่ยนหัวคอยล์ได้ ส่วนพอตใช้แล้วทิ้งคือเครื่องที่มาพร้อมน้ำยาในตัว ใช้จนหมดจำนวนพัฟหรือน้ำยาหมดแล้วทิ้ง ดูรายละเอียดเพิ่มเติมได้ในคู่มือ “พอตซิสเต็มกับพอตใช้แล้วทิ้ง”",
+  },
+  // Round 8 B2 — Marbo / M Bar: two traceable facts only (researcher-1 rows 1, 2, 3a); no maker claim.
+  "marbo-vs-m-bar": {
+    question: "Marbo กับ M Bar ต่างกันไหม",
+    answer:
+      "เป็นของตระกูลเดียวกัน หลายร้านในไทยเรียก M Bar M Switch และ Zero ว่า Marbo เว็บทางการ salthub.com เองก็มีโลโก้ Marbo อยู่ที่ท้ายเว็บ รุ่นไหนมีของตอนนี้ ทักไลน์ @okm24 ถามได้",
   },
   "nicotine-strength-meaning": {
     question: "นิโคติน “30mg” หมายถึงอะไร",
@@ -80,6 +92,10 @@ export const FAQ_COPY_ZH: Record<string, FAQCopy> = {
     answer:
       "把想要的商品加入购物车，用 OTP 验证码验证手机号码，填写收货地址后确认订单。付款方式为银行转账或扫描 QR 码，客服核对到账后才会安排出货，并提供物流单号查询。运费 60 泰铢，满 500 泰铢免运费。若某件商品暂时无法在网站上直接下单，或想让客服帮忙挑选型号，欢迎联系 LINE @okm24。",
   },
+  "wholesale-orders": {
+    question: "想整箱或大量订购，要怎么做？",
+    answer: "请直接用 LINE @okm24 私讯，告诉店主想要的型号和数量，店主查好货后会在聊天里回复。每天 24 小时都可以私讯。",
+  },
   "where-specs-come-from": {
     question: "产品规格数据来自哪里？",
     answer:
@@ -94,6 +110,10 @@ export const FAQ_COPY_ZH: Record<string, FAQCopy> = {
     question: "开放式换弹烟弹和一次性电子烟到底有什么区别？",
     answer:
       "开放式换弹烟弹需要自行购买烟油填充，并更换烟弹芯；一次性电子烟则出厂已预填烟油，用到抽吸次数用尽或烟油耗尽即丢弃。完整对比请参见《开放式 vs. 一次性：如何选择》指南。",
+  },
+  "marbo-vs-m-bar": {
+    question: "Marbo 和 M Bar 是同一个东西吗？",
+    answer: "是同一个产品线的两种叫法：泰国不少店家把 M Bar、M Switch 和 Zero 直接标成 Marbo。Salthub 官网 salthub.com 页脚也放着 Marbo 的标志。现在哪一款有货，请用 LINE @okm24 询问。",
   },
   "nicotine-strength-meaning": {
     question: "「30mg」这样的尼古丁浓度代表什么？",

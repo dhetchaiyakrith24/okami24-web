@@ -31,6 +31,8 @@ const EXPECTED_TABLES = [
   "order_payment_submissions",
   "shipnity_sync_log",
   "idempotency_keys",
+  // Round 8 (2026-09-23): the LINE-click counter — src/lib/db/migrations/0003_line_clicks.sql.
+  "line_clicks",
 ];
 
 function runMigrations(db: Database.Database): string[] {

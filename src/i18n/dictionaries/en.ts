@@ -51,11 +51,13 @@ export const en: Dictionary = {
   },
   hero: {
     badgeSuffix: "· Current Flagship",
-    headingLine1: "Vaping,",
-    headingLine2: "engineered",
-    headingAccent: "for clarity.",
+    // Round 8 B1 (owner 2026-09-23): follows the Thai hero — "Pod System" first; e-liquid left the
+    // lede because none is sold on the storefront. Variant ก (writer, _incoming/round8/writer-1-result.md).
+    headingLine1: "Pod System",
+    headingLine2: "Genuine.",
+    headingAccent: "Documented.",
     description:
-      "A complete ecosystem of pod systems, disposables, and e-liquid — organized by real specifications, not marketing noise. Every device documented, compared, and matched to how you actually vape.",
+      "Most people call it an e-cigarette; we call it a pod. Pod systems, pod kits and disposables — real specs on every model, so you can compare before you decide. Ask or order on LINE @okm24.",
     ctaPrimary: "Explore the catalog",
     ctaSecondary: "Take the Finder",
     statProducts: "Products",
@@ -74,7 +76,7 @@ export const en: Dictionary = {
     controlP2:
       "It's part of a broader shift across the catalog: gesture sensors, full touchscreens, and auto-adjusting chipsets are steadily replacing fixed button rows on compact pod devices.",
     controlCta: "Read the technology story",
-    caliburnTitle: "Open-System Pod Systems",
+    caliburnTitle: "The Caliburn family",
     caliburnDescription: "Ten generations deep, from the screen-free G4 Mini to the touchscreen-driven G4 Pro KOKO.",
     mBarTitle: "A disposable built around mode control.",
     mBarP1:
@@ -95,6 +97,10 @@ export const en: Dictionary = {
     guidesAll: "All guides →",
     guideReadingTime: "{n} min read",
     viewAll: "View all →",
+    // Round 8 B1: the all-products text index (variant ก, see th.ts).
+    indexTitle: "Pick from every model — grouped by category.",
+    indexDescription: "The rails above are a selection; this is the full list, grouped by category — every page one tap away.",
+    indexViewAll: "Open the full catalog →",
   },
   search: {
     title: "Find a product",
@@ -331,6 +337,15 @@ export const en: Dictionary = {
       "This section makes no health, safety, or comparative claims about vaping, and does not distinguish nicotine-free from nicotine-containing products for every listing here. Nicotine strength always varies by product — check the product page or ask via LINE OA.",
     familyEyebrow: "E-Liquid · Flavor Family",
     characterNotesTitle: "Character notes",
+    // Round 8 B4: salt nic vs freebase (see th.ts).
+    nicTitle: "What's the difference between salt nic and freebase?",
+    nicP1: "Salt nic and freebase are two different nicotine types in e-liquid — not brands, and not flavor families.",
+    nicP2: "A bottle is one or the other, and the spec line says which.",
+    nicP3: "Salt nic is the one used in pod devices, which usually run at lower wattage and suit a tighter MTL draw.",
+    nicP4: "Freebase is the one used in refillable devices that run at higher wattage.",
+    nicP5: "Those devices have more open airflow, so they are a different draw style from a small pod.",
+    nicNotSold: "We don't sell e-liquid on the site yet — this page is here to explain the difference, nothing more.",
+    nicCta: "Not sure which one your device takes? Ask on LINE @okm24.",
     familyDisclaimer:
       "This is an editorial flavor-family description, not a listing of specific branded e-liquid products — we don't have verified sourcing for individual SKUs in this category.",
   },

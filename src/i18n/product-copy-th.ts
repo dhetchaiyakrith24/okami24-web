@@ -538,7 +538,8 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       indicator: "LED บอกระดับแบตเป็นขั้นละ 25% ส่วน RGB บอกโหมดที่ใช้อยู่",
     },
     tagline: "3 โหมดวัตต์ วงแหวน RGB แสดงสถานะ รองรับ 10,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์ให้สลับ พร้อมไฟ RGB แสดงโหมดที่ใช้งานอยู่",
+    // Round 8 B2: "Marbo" sentence — many shops use that name for M Bar (researcher-1 row 3a). No maker claim.
+    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์ให้สลับ พร้อมไฟ RGB แสดงโหมดที่ใช้งานอยู่ หลายร้านเรียก M Bar ว่า Marbo เป็นรุ่นเดียวกันนี้แหละ",
     features: {
       "three-modes": {
         title: "สลับได้ 3 โหมดวัตต์",
@@ -567,7 +568,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       coil: "mesh",
     },
     tagline: "ปรับช่องลมได้ตั้งแต่ MTL ถึง DTL รองรับ 9,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ บรรจุน้ำยาสำเร็จ 14mL ปรับช่องลมได้ตั้งแต่แบบ MTL แน่น ๆ ไปจนถึง DTL โล่ง ๆ ใช้คอยล์ mesh รองรับสูงสุด 9,000 พัฟ",
+    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ บรรจุน้ำยาสำเร็จ 14mL ปรับช่องลมได้ตั้งแต่แบบ MTL แน่น ๆ ไปจนถึง DTL โล่ง ๆ ใช้คอยล์ mesh รองรับสูงสุด 9,000 พัฟ หลายร้านเรียก M Bar ว่า Marbo เป็นรุ่นเดียวกันนี้แหละ",
     features: {
       "adjustable-airflow": {
         title: "ปรับช่องลมได้",
@@ -640,7 +641,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       capacity: "—",
     },
     tagline: "กว่า 15 รส หัวพอตทรงเดียวกันทั้งตระกูล M Bar",
-    shortDescription: "หัวพอตสำหรับเปลี่ยน ใช้ได้กับเครื่องใช้ซ้ำของ SALTHUB ที่รองรับ M Bar มีให้เลือกกว่า 15 รส",
+    shortDescription: "หัวพอตสำหรับเปลี่ยน ใช้ได้กับเครื่องใช้ซ้ำของ SALTHUB ที่รองรับ M Bar มีให้เลือกกว่า 15 รส หลายร้านเรียกตระกูล M Bar ว่า Marbo เป็นของเดียวกัน",
   },
   "zero-pro": {
     whoIsThisFor: {
