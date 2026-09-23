@@ -117,7 +117,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // navigation and the sitemap (src/lib/category-visibility.ts). The page itself keeps working.
   // Round 7 "SEO ค" B2: the <title> gains " ของแท้ บอกราคาทุกรุ่น" after the locked label (categoryTitleTh);
   // the lede/description and the H1 are unchanged.
-  if (category) return { title: categoryTitleTh(category.labelTh), description: category.descriptionTh, ...canonicalFor(path), ...(categoryIsEmpty(category.id) ? NOINDEX_FOLLOW : {}) };
+  if (category) return { title: categoryTitleTh(category.labelTh, category.id), description: category.descriptionTh, ...canonicalFor(path), ...(categoryIsEmpty(category.id) ? NOINDEX_FOLLOW : {}) };
 
   const product = getProduct(slug);
   if (product) {

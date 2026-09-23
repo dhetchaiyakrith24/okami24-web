@@ -6,7 +6,10 @@ import { FlavorFamilyGrid } from "@/components/content/FlavorFamilyGrid";
 import { canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "น้ำยา: รู้จักกลุ่มรสชาติก่อนเลือก",
+  // Round 9 B4 (thai-copy row 2, seo-auditor #1 "land now"): three owner keys that had no title on the
+  // site — "น้ำยาบุหรี่ไฟฟ้า" (0/99 pages), "salt nic", "freebase" — in the question a seller asks
+  // ("เอารสไหน salt nic หรือ freebase"). The "น้ำยา" head-copy exception for this page = round 7 close.
+  title: "น้ำยาบุหรี่ไฟฟ้า รสแบบไหน salt nic หรือ freebase",
   // Round 7 "SEO ค" B2: the old tail pointed at the E-Liquid category, which the share-deadend round
   // hid because it is empty — a search snippet must not send people to a listing that does not
   // exist. Wording = thai-copy row E (2026-09-23).

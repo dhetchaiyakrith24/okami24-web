@@ -51,8 +51,12 @@ export const CONTACT_HEAD_TH = {
 
 /** Rows A7 (option ก) / A8 — `count` = products shown on /products, counted by the page. */
 export function productsHeadTh(count: number) {
+  // Round 9 B4 (thai-copy row 3, seo-auditor #1 "land now"): the all-products page leads with the
+  // collective owner key "อุปกรณ์บุหรี่ไฟฟ้า" (0 titles before); "หัวพอต"/"คอยล์" stay with their own
+  // category titles. 60 characters at 53 products — past the ceiling (100+ products) the old title returns.
+  const title = `อุปกรณ์บุหรี่ไฟฟ้า ของแท้ ${count} รุ่น ราคาทุกตัว${OKM_TITLE_SUFFIX}`;
   return {
-    title: `พอต หัวพอต คอยล์ ของแท้ ${count} รุ่น ราคาทุกตัว${OKM_TITLE_SUFFIX}`,
+    title: [...title].length <= TITLE_MAX ? title : `พอต หัวพอต คอยล์ ของแท้ ${count} รุ่น ราคาทุกตัว${OKM_TITLE_SUFFIX}`,
     // Round 7 "SEO ค" B2: "อุปกรณ์บุหรี่ไฟฟ้า" (owner key, 0/99 heads before) opens the line; "อุปกรณ์" =
     // the device, THAI_STYLE §3 word 11. thai-copy dropped the owner's "อุปกรณ์ pod" (keyword laid on
     // top, not a seller's phrase) — "พอต" already covers it.
@@ -208,8 +212,17 @@ export function productTitleWithPriceTh(slug: string, baseTitle: string, price: 
  * the H1 and the menu word), then " ของแท้ บอกราคาทุกรุ่น" where the whole title fits the ceiling,
  * else the short " ของแท้" (the two long labels, Coils & Accessories / Heated Tobacco Devices).
  * Descriptions are the visible category ledes and are not touched here.
+ * Round 9 B4 (owner's key list 2026-09-23 "เอาหมด ทำหมดทุกคีย์"): a category whose owner key is missing
+ * from its label gets a head-only title in CATEGORY_TITLE_HEAD_TH — the label itself (H1, menu, `labelTh`)
+ * is unchanged. "disposable pod" was on 0 of 99 pages; thai-copy row 1, seo-auditor #1 "land now".
  */
-export function categoryTitleTh(labelTh: string): string {
+const CATEGORY_TITLE_HEAD_TH: Record<string, string> = {
+  disposables: "Disposable Pod / พอตใช้แล้วทิ้ง ของแท้ ราคาทุกรุ่น",
+};
+
+export function categoryTitleTh(labelTh: string, categoryId?: string): string {
+  const head = categoryId ? CATEGORY_TITLE_HEAD_TH[categoryId] : undefined;
+  if (head && [...head].length + ROOT_TITLE_SUFFIX.length <= TITLE_MAX) return head;
   const full = `${labelTh} ของแท้ บอกราคาทุกรุ่น`;
   return [...full].length + ROOT_TITLE_SUFFIX.length <= TITLE_MAX ? full : `${labelTh} ของแท้`;
 }
