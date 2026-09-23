@@ -4,7 +4,19 @@ import type { Guide } from "@/types/catalog";
 // (f29d7fc, 2026-08-29, read from git log — never invented). The modified date is no longer typed
 // here — since round search-price batch 3 (2026-09-22) it is the last git commit touching this
 // file / guides-copy.ts, read from src/data/content-dates.json (see src/lib/content-dates.ts).
-export const guides: Guide[] = [
+
+/**
+ * Round 10B (2026-09-24): articles that are written and checked but NOT public yet — the owner's
+ * ruling D3 holds the UWELL/VOOPOO comparisons until the SEO_BASELINE read of 2026-10-05, because
+ * their control pages are being measured. A held id is filtered out of `guides` below, and every
+ * reader goes through `guides` / `getGuide` (the route's generateStaticParams, sitemap.ts, /guides,
+ * the home teaser grid, article-relevance.ts' "อ่านต่อ" box), so a held article 404s, is not in the
+ * sitemap and is linked from nowhere. To publish one: delete its id from this set — the one switch.
+ * Guarded by src/lib/held-guides-contract-test.ts.
+ */
+export const HELD_GUIDE_IDS: ReadonlySet<string> = new Set<string>([]);
+
+const allGuides: Guide[] = [
   {
     id: "choosing-your-first-pod-system",
     slug: "choosing-your-first-pod-system",
@@ -465,6 +477,12 @@ export const guides: Guide[] = [
     reviewVideo: { videoId: "cPYybXJ4zzA", title: "ค่าโอห์มต่างกัน ฟีลต่างกันยังไง?", channelName: "OKM YARZ", publishedAt: "2026-08-17" },
   },
 ];
+
+/** The public articles — everything outside HELD_GUIDE_IDS. */
+export const guides: Guide[] = allGuides.filter((g) => !HELD_GUIDE_IDS.has(g.id));
+
+/** Held articles, for the contract test only — never render or link from this list. */
+export const heldGuides: Guide[] = allGuides.filter((g) => HELD_GUIDE_IDS.has(g.id));
 
 export function getGuide(slug: string): Guide | undefined {
   return guides.find((g) => g.slug === slug);
