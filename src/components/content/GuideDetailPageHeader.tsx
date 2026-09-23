@@ -26,11 +26,16 @@ export function GuideDetailPageHeader({
 }) {
   const { dict, locale } = useLocale();
   const overlay = locale === "th" ? GUIDES_COPY_TH[id] : locale === "zh" ? GUIDES_COPY_ZH[id] : undefined;
+  // Round 10B (designer, 2026-09-24): the typography used to run only when a TH overlay existed, but the round-10B
+  // articles are Thai-only and keep their Thai in the record itself — their H1/dek skipped it ("M | Switch" at 390).
+  // On the Thai page it now runs on whichever string is shown; English/Chinese pages are unchanged.
+  const shownTitle = overlay?.title ?? title;
+  const shownDek = overlay?.dek ?? dek;
   return (
     <PageHeader
       eyebrow={`${dict.guides.detailEyebrow} · ${readingTimeMin} ${dict.guides.readingTimeMinutes}`}
-      title={locale === "th" && overlay?.title ? thaiTypographyNode(overlay.title) : (overlay?.title ?? title)}
-      description={locale === "th" && overlay?.dek ? thaiTypographyNode(overlay.dek) : (overlay?.dek ?? dek)}
+      title={locale === "th" ? thaiTypographyNode(shownTitle) : shownTitle}
+      description={locale === "th" ? thaiTypographyNode(shownDek) : shownDek}
     />
   );
 }

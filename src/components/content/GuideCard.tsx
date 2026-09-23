@@ -33,9 +33,11 @@ export function GuideCard({ guide, index }: { guide: Guide; index: number }) {
           {String(index + 1).padStart(2, "0")} · {categoryLabels[guide.category]}
         </span>
         <h2 className="font-display text-xl font-semibold leading-tight text-foreground group-hover:text-ember">
-          {locale === "th" && overlay?.title ? thaiTypographyNode(overlay.title) : (overlay?.title ?? guide.title)}
+          {/* Round 10B: typography on the Thai page whether or not a TH overlay exists — the round-10B articles are
+              Thai-only records (same fix as GuideDetailPageHeader). English/Chinese pages unchanged. */}
+          {locale === "th" ? thaiTypographyNode(overlay?.title ?? guide.title) : (overlay?.title ?? guide.title)}
         </h2>
-        <p className="text-sm text-foreground-muted">{locale === "th" && overlay?.dek ? thaiTypographyNode(overlay.dek) : (overlay?.dek ?? guide.dek)}</p>
+        <p className="text-sm text-foreground-muted">{locale === "th" ? thaiTypographyNode(overlay?.dek ?? guide.dek) : (overlay?.dek ?? guide.dek)}</p>
       </div>
       <span className="label-mono text-[0.65rem] text-foreground-dim">
         {guide.readingTimeMin} {dict.guides.readingTimeMinutes}
