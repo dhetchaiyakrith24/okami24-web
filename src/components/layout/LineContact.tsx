@@ -30,6 +30,7 @@ export function LineContact() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={label}
+        data-line-spot="pill"
         className="group fixed bottom-8 right-8 z-30 hidden items-center gap-2 overflow-hidden rounded-full border border-surface-border bg-surface-1/95 px-3.5 py-3.5 text-foreground shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-red/50 hover:px-5 focus-visible:border-red/50 focus-visible:px-5 focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-2 max-lg:bottom-[calc(2rem+var(--okami-fab-lift,0px))] sm:flex"
       >
         <LineIcon className="h-5 w-5 shrink-0 text-red" />
@@ -57,6 +58,7 @@ export function LineContact() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={label}
+        data-line-spot="pill"
         className="okami-line-fab fixed z-30 flex h-12 w-12 items-center justify-center rounded-full border border-surface-border bg-surface-1/95 text-red shadow-2xl backdrop-blur-md transition-colors focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-2 sm:hidden"
         style={{
           // + --okami-fab-lift: above the product page's sticky buy bar on phones (B-ก, 2026-09-08)

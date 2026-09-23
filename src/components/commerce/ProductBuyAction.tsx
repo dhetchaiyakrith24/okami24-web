@@ -63,6 +63,7 @@ export function ProductBuyAction({
           href={CONTACT.lineUrl}
           target="_blank"
           rel="noopener noreferrer"
+          data-line-spot="buy"
           className={cn(
             "inline-flex items-center justify-center gap-2 rounded-full border border-surface-border text-sm font-semibold tracking-tight text-foreground transition-colors duration-200 hover:border-foreground-dim hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-ember",
             compact ? "min-h-11 px-5 py-2.5" : "px-6 py-3"
@@ -87,7 +88,7 @@ export function ProductBuyAction({
       <Button type="submit">{dict.productActions.addToCartCta}</Button>
       {/* LINE = backup order channel (owner 2026-09-06, BSOT §8): one small line, cart button stays primary */}
       {!compact && (
-        <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className={noteClassName}>
+        <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" data-line-spot="buy-note" className={noteClassName}>
           {dict.productActions.orderOnLineNote}
         </a>
       )}

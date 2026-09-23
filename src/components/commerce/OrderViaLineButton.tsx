@@ -63,7 +63,7 @@ export function OrderViaLineButton({
 
   if (hideHint) {
     return (
-      <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" onClick={copyProductDetails} className={cn(buttonClasses, className)}>
+      <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" onClick={copyProductDetails} data-line-spot="buy" className={cn(buttonClasses, className)}>
         {dict.productActions.orderOnLineCta}
       </a>
     );
@@ -71,7 +71,7 @@ export function OrderViaLineButton({
 
   return (
     <div className={cn("flex flex-col items-start gap-2", className)}>
-      <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" onClick={copyProductDetails} className={buttonClasses}>
+      <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" onClick={copyProductDetails} data-line-spot="buy" className={buttonClasses}>
         {dict.productActions.orderOnLineCta}
       </a>
       <span className="text-xs text-foreground-muted" aria-live="polite">
