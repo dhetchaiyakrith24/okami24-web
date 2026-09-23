@@ -12,6 +12,7 @@ import { EditorialSplit } from "@/components/home/EditorialSplit";
 import { FlavorTeaser } from "@/components/home/FlavorTeaser";
 import { CompareCTA } from "@/components/home/CompareCTA";
 import { GuideTeaserGrid } from "@/components/home/GuideTeaserGrid";
+import { HomeProductIndex } from "@/components/home/HomeProductIndex";
 import { HomeText } from "@/components/home/HomeCopy";
 import { CONTACT } from "@/data/contact";
 import { canonicalFor, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
@@ -119,6 +120,13 @@ export default function Home() {
       <FlavorTeaser />
 
       <CompareCTA products={flagships} />
+
+      {/* Round 8 B1 (owner 2026-09-23): every product page, as text links grouped by category —
+          the rails above are curated and left 32 of 53 product pages with no link from here.
+          Placed after the compare CTA (designer #1): it is a reference list for people who know
+          the model name, not a story beat, and at 390 it is ~2.5 screens tall — between the rails
+          it pushed the flavour teaser, compare CTA and guides that far down. */}
+      <HomeProductIndex eyebrow="Catalog Index" />
 
       <GuideTeaserGrid guides={guides.slice(0, 3)} />
     </>

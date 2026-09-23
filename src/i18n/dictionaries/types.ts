@@ -100,6 +100,11 @@ export interface Dictionary {
     guideReadingTime: string;
     /** The "View all →" link beside every product rail heading. */
     viewAll: string;
+    /** Round 8 B1 (owner 2026-09-23): the text index of every product page, grouped by category,
+     *  that closes the "no link from the home page" gap for 32 of 53 product pages. */
+    indexTitle: string;
+    indexDescription: string;
+    indexViewAll: string;
   };
   search: {
     /** No `eyebrow` here since round 30.4ข batch 4 (owner, 2026-09-17): the /search header reuses
@@ -395,6 +400,16 @@ export interface Dictionary {
     familyEyebrow: string;
     characterNotesTitle: string;
     familyDisclaimer: string;
+    /** Round 8 B4 (owner 2026-09-23): the "salt nic กับ freebase" section on /e-liquid — five
+     *  sentences, the "not sold on the storefront yet" line, and the LINE line. */
+    nicTitle: string;
+    nicP1: string;
+    nicP2: string;
+    nicP3: string;
+    nicP4: string;
+    nicP5: string;
+    nicNotSold: string;
+    nicCta: string;
   };
   /** The main `/products` (all-products) page — category subpages already localized correctly
    *  via CategoryPageHeader/`catalog.eyebrow`; this page's own header simply never got the same

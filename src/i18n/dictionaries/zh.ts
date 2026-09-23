@@ -53,10 +53,12 @@ export const zh: Dictionary = {
   },
   hero: {
     badgeSuffix: "· 当前旗舰产品",
-    headingLine1: "电子烟，",
-    headingLine2: "工程化设计",
-    headingAccent: "清晰明了。",
-    description: "完整的烟弹系统、一次性烟具与烟油生态——按真实规格分类，而非营销话术。每款设备都有据可查、可供对比，帮助你找到最适合自己的使用方式。",
+    // Round 8 B1 (owner 2026-09-23): follows the Thai hero — "Pod System" first; e-liquid left the
+    // lede because none is sold on the storefront. Variant ก (writer, _incoming/round8/writer-1-result.md).
+    headingLine1: "Pod System",
+    headingLine2: "正品",
+    headingAccent: "真实参数",
+    description: "很多人叫它电子烟，我们叫它 pod。这里有烟弹系统、烟弹套装和一次性烟具，每一款都写明真实参数，可以对比完再决定。想问或想下单，加 LINE @okm24。",
     ctaPrimary: "浏览全部产品",
     ctaSecondary: "使用选购助手",
     statProducts: "产品数量",
@@ -73,7 +75,7 @@ export const zh: Dictionary = {
     controlP1: "UWELL 的 Smart Triple-Tap Control 用轻触感应器取代了一排实体按键——切换输出模式时不用增加会磨损或进潮的硬件。",
     controlP2: "这是整个目录的共同趋势：触控感应、全触摸屏和自动调节芯片正逐步取代小型烟弹设备上的固定按键。",
     controlCta: "阅读这项技术的故事",
-    caliburnTitle: "开放式烟弹系统",
+    caliburnTitle: "Caliburn 系列烟弹系统",
     caliburnDescription: "十款同堂：从没有屏幕的 G4 Mini 到触摸屏操作的 G4 Pro KOKO。",
     mBarTitle: "一款围绕模式切换设计的一次性烟具。",
     mBarP1: "M Bar 10K 不像多数一次性烟具只有单一固定输出，而是提供 Eco、Soft、Boost 三种可切换的功率模式——双击切换，并通过 RGB 指示灯显示。",
@@ -90,6 +92,10 @@ export const zh: Dictionary = {
     guidesAll: "全部指南 →",
     guideReadingTime: "阅读约 {n} 分钟",
     viewAll: "查看全部 →",
+    // Round 8 B1: the all-products text index (variant ก, see th.ts).
+    indexTitle: "从所有机型里挑，已按分类整理好。",
+    indexDescription: "上面几排是精选，这里是完整清单，按分类排好，每一页都点得到。",
+    indexViewAll: "打开产品总览 →",
   },
   search: {
     title: "查找产品",
@@ -326,6 +332,15 @@ export const zh: Dictionary = {
     familyEyebrow: "烟油 · 风味系列",
     characterNotesTitle: "风味特点",
     familyDisclaimer: "本内容是该风味系列的编辑说明，并非某一品牌具体烟油产品的清单——本分类下的单品尚无经核实的信息来源。",
+    // Round 8 B4: salt nic vs freebase (see th.ts).
+    nicTitle: "salt nic 和 freebase 有什么不同",
+    nicP1: "salt nic 和 freebase 是烟油里两种不同的尼古丁类型，不是品牌，也不是风味系列。",
+    nicP2: "一瓶烟油只会是其中一种，规格栏会写明是哪一种。",
+    nicP3: "salt nic 用在换弹式小烟上，这类机器功率较低，多半是 MTL（先吸入口腔）的抽法。",
+    nicP4: "freebase 用在功率更高、自己注油的机器上。",
+    nicP5: "这类机器进气更开，抽法和小烟不同。",
+    nicNotSold: "目前本站还没有开卖烟油，这一页只是先把区别说清楚。",
+    nicCta: "不确定自己的机器该用哪一种，可以用 LINE @okm24 问。",
   },
   products: {
     pageDescriptionOne: "件 OKami24 目录产品——按品牌、屏幕和便携性筛选，或按名称搜索。",
