@@ -6,7 +6,7 @@ import type { Guide } from "@/types/catalog";
 import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
 import { FLAVOR_COPY_TH, FLAVOR_COPY_ZH } from "@/i18n/flavor-copy";
 import { labelLang } from "@/lib/label-lang";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 
 /**
  * Round 30.3ข (owner, 2026-09-11) — the homepage sections are Server Components whose headings,
@@ -18,9 +18,11 @@ import { thaiTypography } from "@/lib/thai-typography";
 
 /** One string from `dict.home` (see dictionaries/types.ts). `n` fills a `{n}` placeholder. */
 export function HomeText({ k, n }: { k: keyof Dictionary["home"]; n?: number }) {
-  const { dict } = useLocale();
-  const text = dict.home[k];
-  return <>{n === undefined ? text : text.replace("{n}", String(n))}</>;
+  const { dict, locale } = useLocale();
+  const raw = dict.home[k];
+  const text = n === undefined ? raw : raw.replace("{n}", String(n));
+  // round 9: the dictionary deep-map returns plain strings, so the joined runs are laid here
+  return <>{locale === "th" ? thaiTypographyNode(text) : text}</>;
 }
 
 /** A guide's title or dek in the visitor's language — the same overlay GuideDetailPageHeader uses
@@ -28,7 +30,7 @@ export function HomeText({ k, n }: { k: keyof Dictionary["home"]; n?: number }) 
 export function GuideText({ id, field, en }: { id: string; field: "title" | "dek"; en: string }) {
   const { locale } = useLocale();
   const overlay = locale === "th" ? GUIDES_COPY_TH[id] : locale === "zh" ? GUIDES_COPY_ZH[id] : undefined;
-  return <>{locale === "th" && overlay?.[field] ? thaiTypography(overlay[field]) : (overlay?.[field] ?? en)}</>;
+  return <>{locale === "th" && overlay?.[field] ? thaiTypographyNode(overlay[field]) : (overlay?.[field] ?? en)}</>;
 }
 
 /** The teaser card's "01 · category" eyebrow — the same dictionary labels and lang switch
@@ -57,5 +59,5 @@ export function FlavorText({ id, field, en }: { id: string; field: "name" | "fir
   const overlay = locale === "th" ? FLAVOR_COPY_TH[id] : locale === "zh" ? FLAVOR_COPY_ZH[id] : undefined;
   if (!overlay) return <>{en}</>;
   const text = field === "name" ? overlay.name : (overlay.characterNotes[0] ?? en);
-  return <>{locale === "th" ? thaiTypography(text) : text}</>;
+  return <>{locale === "th" ? thaiTypographyNode(text) : text}</>;
 }

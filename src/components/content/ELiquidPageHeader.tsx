@@ -2,6 +2,7 @@
 
 import { PageHeader } from "@/components/ui/PageHeader";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { ThaiText } from "@/components/i18n/ThaiText";
 import { CONTACT } from "@/data/contact";
 
 /** Same pattern as ComparePageHeader.tsx / FAQPageHeader.tsx. */
@@ -49,7 +50,7 @@ export function ELiquidDisclaimer() {
   const { dict } = useLocale();
   return (
     <div className="mt-14 rounded-2xl border border-surface-border-soft bg-surface-1 p-6">
-      <p className="text-sm leading-relaxed text-foreground-muted">{dict.eliquid.disclaimer}</p>
+      <p className="text-sm leading-relaxed text-foreground-muted"><ThaiText>{dict.eliquid.disclaimer}</ThaiText></p>
     </div>
   );
 }

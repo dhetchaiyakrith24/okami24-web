@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypography, thaiTypographyNode } from "@/lib/thai-typography";
 import { FAQ_COPY_TH, FAQ_COPY_ZH } from "@/i18n/faq-copy";
 import { ORDERING_FAQ_ID, ORDERING_ON_LINE_FAQ_ANSWER } from "@/data/faqs";
 import type { FAQAction } from "@/types/catalog";
@@ -71,12 +71,12 @@ export function FAQAccordion({ items, orderingEnabled = true }: { items: Item[];
               aria-expanded={open}
               className="flex w-full items-center justify-between gap-4 py-5 text-left"
             >
-              <span className="font-display text-lg font-semibold text-foreground">{item.question}</span>
+              <span className="font-display text-lg font-semibold text-foreground">{locale === "th" ? thaiTypographyNode(item.question) : item.question}</span>
               <ChevronDown size={18} className={`shrink-0 text-foreground-dim transition-transform ${open ? "rotate-180" : ""}`} aria-hidden />
             </button>
             {open && (
               <div className="flex max-w-2xl flex-col items-start gap-3 pb-5">
-                <p className="text-sm leading-relaxed text-foreground-muted">{item.answer}</p>
+                <p className="text-sm leading-relaxed text-foreground-muted">{locale === "th" ? thaiTypographyNode(item.answer) : item.answer}</p>
                 {item.action &&
                   (isExternal ? (
                     <a

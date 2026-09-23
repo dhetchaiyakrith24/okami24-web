@@ -6,12 +6,13 @@ import { getCatalogItem, type CatalogItem } from "@/lib/catalog-index";
 import { ProductPicker } from "@/components/tools/ProductPicker";
 import { familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import { ThaiText } from "@/components/i18n/ThaiText";
 import { specLabelTh } from "@/i18n/spec-labels-th";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import type { Specification } from "@/types/catalog";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { labelLang } from "@/lib/label-lang";
-import { thaiTypography } from "@/lib/thai-typography";
+import { thaiTypography, thaiTypographyNode } from "@/lib/thai-typography";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 /**
@@ -158,8 +159,8 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
         <div className="flex flex-col gap-10">
           <ComparisonTable title={dict.compare.classificationTitle} rows={classification} />
           {hasUncertainItems && <p className="-mt-6 text-xs leading-relaxed text-ember">{dict.compare.uncertainSpecsNote}</p>}
-          {hasMixedAttributeCoverage && <p className="-mt-6 text-xs leading-relaxed text-foreground-dim">{dict.compare.mixedCoverageNote}</p>}
-          <ComparisonTable title={dict.compare.verifiedSpecsTitle} rows={specs} emptyNote={dict.compare.verifiedSpecsEmptyNote} />
+          {hasMixedAttributeCoverage && <p className="-mt-6 text-xs leading-relaxed text-foreground-dim"><ThaiText>{dict.compare.mixedCoverageNote}</ThaiText></p>}
+          <ComparisonTable title={dict.compare.verifiedSpecsTitle} rows={specs} emptyNote={dict.compare.verifiedSpecsEmptyNote} typeset />
 
           {bestFitItems.length > 0 && (
             <div>
@@ -169,7 +170,7 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
                   <div key={p.slug} className="rounded-xl border border-surface-border-soft bg-surface-1 p-4">
                     <p className="text-sm font-semibold text-foreground">{p.name}</p>
                     {/* Round 30.4ค batch 4: the same Thai first bullet the product page shows (product-copy-th.ts). */}
-                    <p className="mt-2 text-xs leading-relaxed text-foreground-muted">{(() => { const w = locale === "th" ? PRODUCT_COPY_TH[p.slug]?.whoIsThisFor?.[0] : undefined; return w ? thaiTypography(w) : p.whoIsThisFor[0]; })()}</p>
+                    <p className="mt-2 text-xs leading-relaxed text-foreground-muted">{(() => { const w = locale === "th" ? PRODUCT_COPY_TH[p.slug]?.whoIsThisFor?.[0] : undefined; return w ? thaiTypographyNode(w) : p.whoIsThisFor[0]; })()}</p>
                   </div>
                 ))}
               </div>
@@ -182,7 +183,7 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
   );
 }
 
-function ComparisonTable({ title, rows, emptyNote }: { title: string; rows: Row[]; emptyNote?: string }) {
+function ComparisonTable({ title, rows, emptyNote, typeset }: { title: string; rows: Row[]; emptyNote?: string; typeset?: boolean }) {
   if (rows.length === 0) {
     return (
       <div>
@@ -219,7 +220,7 @@ function ComparisonTable({ title, rows, emptyNote }: { title: string; rows: Row[
                   </th>
                   {row.values.map((v, i) => (
                     <td key={i} className={`p-3 text-foreground ${!allSame ? "bg-steel-soft/40" : ""}`}>
-                      {v || EM_DASH}
+                      {typeset && v ? thaiTypographyNode(v) : (v || EM_DASH)}
                     </td>
                   ))}
                 </tr>

@@ -18,6 +18,7 @@ import { ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pilotTagline } from "@/i18n/product-copy-en";
+import { thaiTypographyNode } from "@/lib/thai-typography";
 import { pilotAxisLabel } from "./axis-label";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
 import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
@@ -128,7 +129,7 @@ export function PilotProductDetail({
         eyebrow={product.categoryName}
         title={product.displayName}
         // Round 30.3: same English-overlay lookup as PilotProductCard (Thai is the source line).
-        description={pilotTagline(product.slug, product.tagline, locale)}
+        description={locale === "th" ? thaiTypographyNode(pilotTagline(product.slug, product.tagline, locale)) : pilotTagline(product.slug, product.tagline, locale)}
         // M3 (2026-09-08): on phones the tagline sits below the fold anyway; hiding it here (CSS
         // only, still in the HTML) is what brings the chips and the price into the first screen
         // above the sticky bar — the M2 leftover on ProductMaster pages.

@@ -12,7 +12,7 @@ export function PageHeader({
 }: {
   eyebrow?: string;
   title: ReactNode;
-  description?: string;
+  description?: ReactNode;
   meta?: ReactNode;
   /** Extra classes on the description line — added 2026-09-08 (mobile round, M3) so a caller can
    *  hide it below `lg` with CSS while the text stays in the HTML. Omitted = unchanged. */

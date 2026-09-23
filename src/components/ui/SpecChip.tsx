@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { Specification } from "@/types/catalog";
 import { cn } from "@/lib/utils";
 
@@ -29,10 +30,10 @@ export function SpecChip({
 }: {
   spec: Specification;
   label?: string;
-  value?: string;
+  value?: ReactNode;
   thaiLabel?: boolean;
   className?: string;
-  unverifiedLabel?: string;
+  unverifiedLabel?: ReactNode;
   unverifiedTitle?: string;
 }) {
   return (
