@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { ArticleBody } from "@/components/content/ArticleBody";
 import { GuideDetailPageHeader } from "@/components/content/GuideDetailPageHeader";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
+import { ThaiOnlyGuideGate } from "@/components/content/ThaiOnlyGuideGate";
 import type { Product } from "@/types/catalog";
 import { articleJsonLd, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { familyModifiedDate } from "@/lib/content-dates";
@@ -53,17 +54,20 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(guideTitle, guidePath)) }} />
       {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       {videoJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />}
-      <GuideDetailPageHeader id={guide.id} title={guide.title} dek={guide.dek} readingTimeMin={guide.readingTimeMin} />
-      <Container className="max-w-3xl py-12 lg:py-16">
-        <ArticleBody
-          sections={guide.body}
-          translated={{ th: GUIDES_COPY_TH[guide.id]?.body, zh: GUIDES_COPY_ZH[guide.id]?.body }}
-          faq={guide.faq}
-          translatedFaq={{ th: GUIDES_COPY_TH[guide.id]?.faq, zh: GUIDES_COPY_ZH[guide.id]?.faq }}
-          video={guide.reviewVideo}
-        />
-      </Container>
-      <RelatedProducts products={related} />
+      {/* Round 10B: a Thai-only guide shows only a one-line notice on en/zh (ThaiOnlyGuideGate). */}
+      <ThaiOnlyGuideGate thaiOnly={guide.thaiOnly}>
+        <GuideDetailPageHeader id={guide.id} title={guide.title} dek={guide.dek} readingTimeMin={guide.readingTimeMin} />
+        <Container className="max-w-3xl py-12 lg:py-16">
+          <ArticleBody
+            sections={guide.body}
+            translated={{ th: GUIDES_COPY_TH[guide.id]?.body, zh: GUIDES_COPY_ZH[guide.id]?.body }}
+            faq={guide.faq}
+            translatedFaq={{ th: GUIDES_COPY_TH[guide.id]?.faq, zh: GUIDES_COPY_ZH[guide.id]?.faq }}
+            video={guide.reviewVideo}
+          />
+        </Container>
+        <RelatedProducts products={related} />
+      </ThaiOnlyGuideGate>
     </>
   );
 }

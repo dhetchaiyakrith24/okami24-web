@@ -44,6 +44,13 @@ export interface RelatedArticle {
   why: string;
 }
 
+/** Round 10B (owner ruling 2026-09-24): a Thai-only guide (Guide.thaiOnly) is never offered on an English or Chinese
+ *  page. `skipThaiOnly` builds that page's list — the same order and cap, so the slot a Thai-only article took on the
+ *  Thai page goes back to the next related article instead of leaving the box short. */
+export interface RelatedArticleOptions {
+  skipThaiOnly?: boolean;
+}
+
 const MAX_PER_PRODUCT = 3;
 
 const GUIDE_BY_ID = new Map(guides.map((g) => [g.id, g]));
@@ -131,12 +138,13 @@ function publishedRules(p: StorefrontProductView): RelatedArticle[] {
   return out.filter((a): a is RelatedArticle => a !== null);
 }
 
-function withAuthoredFirst(slug: string, ruled: RelatedArticle[]): RelatedArticle[] {
+function withAuthoredFirst(slug: string, ruled: RelatedArticle[], opts: RelatedArticleOptions = {}): RelatedArticle[] {
   const authored = (AUTHORED.get(slug) ?? []).map((a) => article(a.kind, a.id, `the article's own relatedProductSlugs lists ${slug}`)).filter((a): a is RelatedArticle => a !== null);
   const seen = new Set<string>();
   const out: RelatedArticle[] = [];
   for (const a of [...authored, ...ruled]) {
     if (seen.has(a.href)) continue;
+    if (opts.skipThaiOnly && a.kind === "guide" && GUIDE_BY_ID.get(a.id)?.thaiOnly) continue;
     seen.add(a.href);
     out.push(a);
     if (out.length === MAX_PER_PRODUCT) break;
@@ -144,10 +152,10 @@ function withAuthoredFirst(slug: string, ruled: RelatedArticle[]): RelatedArticl
   return out;
 }
 
-export function relatedArticlesForLegacy(product: Product): RelatedArticle[] {
-  return withAuthoredFirst(product.slug, legacyRules(product));
+export function relatedArticlesForLegacy(product: Product, opts?: RelatedArticleOptions): RelatedArticle[] {
+  return withAuthoredFirst(product.slug, legacyRules(product), opts);
 }
 
-export function relatedArticlesForPublished(product: StorefrontProductView): RelatedArticle[] {
-  return withAuthoredFirst(product.slug, publishedRules(product));
+export function relatedArticlesForPublished(product: StorefrontProductView, opts?: RelatedArticleOptions): RelatedArticle[] {
+  return withAuthoredFirst(product.slug, publishedRules(product), opts);
 }

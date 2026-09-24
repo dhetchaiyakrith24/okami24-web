@@ -19,11 +19,17 @@ export function ProductReviewVideo({
   video,
   eyebrow,
   watchOnYoutubeLabel,
+  hideTitle = false,
 }: {
   video: { videoId: string; title: string; channelName: string };
   eyebrow: string;
   watchOnYoutubeLabel: string;
+  /** Round 10B (owner ruling 2026-09-24: 0 Thai on the en/zh guide pages): the clip's own YouTube title is Thai for
+   *  the shop's channels, so an English/Chinese guide page drops the title line and names the channel instead in the
+   *  image's alt/label. Opt-in — every other caller renders exactly as before. */
+  hideTitle?: boolean;
 }) {
+  const accessibleName = hideTitle ? video.channelName : video.title;
   return (
     <div className="flex flex-col gap-3">
       <span className="label-mono text-xs text-foreground-dim">{eyebrow}</span>
@@ -31,12 +37,12 @@ export function ProductReviewVideo({
         href={`https://www.youtube.com/watch?v=${video.videoId}`}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`${watchOnYoutubeLabel}: ${video.title}`}
+        aria-label={`${watchOnYoutubeLabel}: ${accessibleName}`}
         className="group relative block aspect-video w-full overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1"
       >
         <Image
           src={`https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`}
-          alt={video.title}
+          alt={accessibleName}
           fill
           sizes="(min-width: 1024px) 42vw, 90vw"
           className="object-cover"
@@ -52,7 +58,7 @@ export function ProductReviewVideo({
         </span>
       </a>
       <div className="flex flex-col gap-0.5">
-        <p className="text-sm font-medium text-foreground">{video.title}</p>
+        {!hideTitle && <p className="text-sm font-medium text-foreground">{video.title}</p>}
         <p className="text-xs text-foreground-dim">{video.channelName}</p>
       </div>
     </div>

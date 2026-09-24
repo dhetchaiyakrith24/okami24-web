@@ -55,6 +55,7 @@ export function PilotProductDetail({
   product,
   related,
   relatedArticles,
+  relatedArticlesOtherLocales,
   imageDisplayMap,
   orderingEnabled = true,
 }: {
@@ -63,6 +64,8 @@ export function PilotProductDetail({
   /** Round "backlink" (2026-09-22): articles this product's data ties it to — built by the
    *  server page with `relatedArticlesForPublished`. Empty means the block does not render. */
   relatedArticles?: RelatedArticle[];
+  /** Round 10B: the same list without Thai-only guides, shown on en/zh (`skipThaiOnly`). */
+  relatedArticlesOtherLocales?: RelatedArticle[];
   /** From the server page (src/lib/commerce/ordering-mode.ts — owner 2026-09-07). False = the
    *  cart form is replaced by OrderViaLineButton; the out-of-stock branch is unchanged.
    *  Defaults to true so every other caller renders exactly as before. */
@@ -294,7 +297,7 @@ export function PilotProductDetail({
       <CompatibleProducts direction="works-with" items={getCompatibleConsumables(product.slug)} />
       <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
       <PilotRelatedProducts products={related} />
-      <RelatedArticles articles={relatedArticles ?? []} />
+      <RelatedArticles articles={relatedArticles ?? []} otherLocaleArticles={relatedArticlesOtherLocales} />
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
       {showBuy && (
         <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant?.label ?? null}>

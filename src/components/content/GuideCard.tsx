@@ -22,6 +22,8 @@ export function GuideCard({ guide, index }: { guide: Guide; index: number }) {
     "how-it-works": dict.guides.categoryHowItWorks,
     maintenance: dict.guides.categoryMaintenance,
   };
+  // Round 10B (owner ruling 2026-09-24): a Thai-only guide is not listed on an English or Chinese page.
+  if (guide.thaiOnly && locale !== "th") return null;
   const overlay = locale === "th" ? GUIDES_COPY_TH[guide.id] : locale === "zh" ? GUIDES_COPY_ZH[guide.id] : undefined;
   return (
     <Link
