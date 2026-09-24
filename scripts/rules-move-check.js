@@ -137,7 +137,7 @@ for (const p of scan) {
   rd(p).split('\n').forEach((l, i) => {
     if (allowed(f, l)) return;
     if (ptr.test(l)) { bump('pointer'); fail('pointers', `${f}:${i + 1} still points section 13 at ~/.claude/CLAUDE.md`); }
-    if (skillPtr.test(l) && !/ย้ายจาก|moved|archive|skills\/handoff\/SKILL\.md` เข้ารีโป/.test(l)) { bump('pointer'); fail('pointers', `${f}:${i + 1} points at ~/.claude/skills/handoff`); }
+    if (skillPtr.test(l) && !/ย้ายจาก `?~\/\.claude\/skills\/handoff|ย้าย `?~\/\.claude\/skills\/handoff`? ออก|move `?~\/\.claude\/skills\/handoff`? out|→ `?\.claude\/skills\/okami24-handoff/.test(l)) { bump('pointer'); fail('pointers', `${f}:${i + 1} points at ~/.claude/skills/handoff`); }
   });
 }
 
