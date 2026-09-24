@@ -478,6 +478,8 @@ const allGuides: Guide[] = [
   },
   {
     // Round 10B T03' — writer draft 1 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-1-result.md.
+    // "NEW" on Zapple + Kyoho Grape: SALTHUB's own M Bar 9K poster https://www.salthub.com/wp-content/uploads/2025/08/m_bar_9k_06.webp
+    // (re-checked in a real browser 2026-09-24, owner fix C).
     id: "choosing-a-marbo-flavor",
     slug: "choosing-a-marbo-flavor",
     title: "Marbo กลิ่นไหนดี เลือกกลิ่น M Bar 9K 10K และ M Switch",
@@ -568,6 +570,10 @@ const allGuides: Guide[] = [
     // Round 10B T18 — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md.
     // Owner ruling: no number of days anywhere, in any form. The "puffs not reached" complaint sits with the other two
     // complaints, away from the "brands don't publish how puffs are counted" sentence, so it never reads as a cause.
+    // Owner fix C (2026-09-24, real browser): M Bar 10K Eco/Soft/Boost + double click = SALTHUB posters
+    // https://img.salthub.com/mbar10k/MBar10K_03.webp and MBar10K_04.webp ("DOUBLE CLICK BOTTOM BUTTON, SWITCH 3 MODES
+    // (ECO/SOFT/BOOST)"). M Bar 9K airflow: salthub.com home says only "Adjustable Airflow" — the "MTL to DTL" range had
+    // no SALTHUB source (reseller pages only) and was cut.
     id: "how-long-a-disposable-lasts",
     slug: "how-long-a-disposable-lasts",
     title: "พอตใช้แล้วทิ้ง 1 ตัว ใช้ได้กี่วัน",
@@ -588,7 +594,7 @@ const allGuides: Guide[] = [
         heading: "ทำไมแต่ละคนหมดไม่เท่ากัน",
         paragraphs: [
           "ตัวแปรหลักคือวิธีสูบของแต่ละคน สูบถี่แค่ไหน และแต่ละพัฟดูดยาวแค่ไหน",
-          "อีกเรื่องคือบางรุ่นปรับได้ M Bar 9K ปรับช่องลมได้ ตั้งแต่แน่นแบบ MTL (สูบแบบดูดเข้าปากก่อน) ไปจนโล่งแบบ DTL (สูบแบบดูดลงปอดตรง ๆ) ส่วน M Bar 10K มี 3 โหมด Eco · Soft · Boost กดสองครั้งติดกันเพื่อสลับ",
+          "อีกเรื่องคือบางรุ่นตั้งค่าได้ M Bar 9K ปรับช่องลมได้ ส่วน M Bar 10K มี 3 โหมด Eco · Soft · Boost กดสองครั้งติดกันเพื่อสลับ",
           "การตั้งค่าเปลี่ยนความรู้สึกตอนสูบ และแต่ละคนก็ตั้งไม่เหมือนกัน",
         ],
       },
@@ -633,6 +639,9 @@ const allGuides: Guide[] = [
   },
   {
     // Round 10B T19 — writer draft 1 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-1-result.md.
+    // Owner fix A (2026-09-24): no M Switch Pod capacity — salthub.com states "E-liquid Capacity: 2.2mL" only under M BAR POD
+    // and ZERO CARTRIDGE (_incoming/round10b/salthub-mswitch-check.md). 600mAh: M Bar 9K = salthub.com home "Battery
+    // Capacity: 600mAh"; M Bar 10K = SALTHUB poster https://img.salthub.com/mbar10k/MBar10K_01.webp ("600 MAH").
     id: "disposable-vs-switch-pod",
     slug: "disposable-vs-switch-pod",
     title: "พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว เลือกแบบไหนดี",
@@ -684,7 +693,7 @@ const allGuides: Guide[] = [
         heading: "Marbo M Switch ดีไหม",
         paragraphs: [
           "ดีไหมอยู่ที่ว่าอยากได้อะไรจากพอตเปลี่ยนหัว M Switch เป็นของ SALTHUB ตระกูลเดียวกับ M Bar ที่หลายร้านเรียกรวมกันว่า Marbo ใช้ง่ายเท่าพอตใช้แล้วทิ้ง ไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์",
-          "หัว M Switch Pod บรรจุสำเร็จ 2.2mL หัวหนึ่งสูงสุด 15,000 พัฟ ส่วน M Bar 10K สูงสุด 10,000 พัฟ และ M Bar 9K สูงสุด 9,000 พัฟต่อเครื่อง",
+          "M Switch Pod หัวละสูงสุด 15,000 พัฟ ส่วน M Bar 10K สูงสุด 10,000 พัฟ และ M Bar 9K สูงสุด 9,000 พัฟต่อเครื่อง",
           "ถ้ากำลังเทียบ M Switch กับเครื่องระบบสวิตช์ยี่ห้ออื่น อ่าน [Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch) ดูพอตใช้แล้วทิ้งรุ่นอื่นบนเว็บได้ที่ [หมวดพอตใช้แล้วทิ้ง](/products/disposables)",
         ],
       },
@@ -693,7 +702,7 @@ const allGuides: Guide[] = [
     faq: [
       {
         question: "พอตเปลี่ยนหัว ต้องเติมน้ำยาเองไหม",
-        answer: "ไม่ต้อง หัวพอตอย่าง M Switch Pod บรรจุสำเร็จ 2.2mL หมดก็ถอดเปลี่ยนหัวใหม่ ตัวเครื่องใช้ตัวเดิม",
+        answer: "ไม่ต้อง หัวพอตอย่าง M Switch Pod บรรจุสำเร็จ หมดก็ถอดเปลี่ยนหัวใหม่ ตัวเครื่องใช้ตัวเดิม",
       },
       {
         question: "หัว M Switch ใช้กับเครื่องไหนได้บ้าง",
@@ -712,6 +721,10 @@ const allGuides: Guide[] = [
     // UWELL manuals cited are © Shenzhen Uwell, read from copies hosted by retailer thebestvape.com (researcher-B-result.md)
     // — named "คู่มือของ UWELL", never "เว็บทางการ". Caliburn G5 is named without a link: it is an SEO_BASELINE control page
     // until 2026-10-05. "Change it" is the customer replacing the unit/pod — never a claim or warranty (owner, round 10B).
+    // Owner fixes B + C (2026-09-24): G4 Mini lights = UWELL manual copy https://manuals.plus/caliburn/kpn025-g4-mini-kit-manual
+    // ("During vaping … green … above 60%" / charging: flashing red/blue/green = low/medium/sufficient, green stays on when
+    // full). Caliburn G4 Pro icon list cut: its only source was a retailer-hosted PDF, and the manuals.plus manual found is
+    // for the G4 Pro KOKO — a separate product on this site, with different screen text.
     id: "fixing-no-draw-and-blinking-light",
     slug: "fixing-no-draw-and-blinking-light",
     title: "พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง",
@@ -758,14 +771,15 @@ const allGuides: Guide[] = [
             heading: "Caliburn G4 Mini ดูจากสีไฟ",
             paragraphs: [
               "[Caliburn G4 Mini](/products/caliburn-g4-mini) ไม่มีจอ บอกสถานะด้วยสีไฟกับจำนวนครั้งที่กะพริบ ไฟแดงกะพริบ 3 ครั้งตอนสูบ คือหัวพอตช็อต ไฟแดงกะพริบ 10 ครั้ง คือแบตต่ำ ไฟเขียวกะพริบ 5 ครั้ง คือดูดค้างเกิน 8 วินาที",
-              "ไฟน้ำเงินกะพริบ 3 ครั้ง คือวงจรไม่ครบ หัวพอตเสียบไม่เข้าที่ ไฟน้ำเงินกะพริบ 2 ครั้ง คือหัวพอตถูกถอด ส่วนตอนชาร์จ ไฟเขียวคือแบตเกิน 60% น้ำเงินคือ 30–60% แดงคือต่ำกว่า 30%",
+              "ไฟน้ำเงินกะพริบ 3 ครั้ง คือวงจรไม่ครบ หัวพอตเสียบไม่เข้าที่ ไฟน้ำเงินกะพริบ 2 ครั้ง คือหัวพอตถูกถอด",
+              "ตอนสูบ สีไฟบอกระดับแบต เขียวคือเกิน 60% น้ำเงินคือ 30–60% แดงคือต่ำกว่า 30% ส่วนตอนชาร์จ ไฟจะกะพริบ แดงคือต่ำ น้ำเงินคือกลาง เขียวคือเพียงพอ ชาร์จเต็มแล้วไฟเขียวจะติดค้าง",
             ],
           },
           {
-            heading: "Caliburn G4 · G4 Pro และ G5 ดูจากจอ",
+            heading: "Caliburn G4 และ G5 ดูจากจอ",
             paragraphs: [
               "[Caliburn G4](/products/caliburn-g4) ขึ้นเป็นข้อความบนจอ 4 แบบ Atomizer short! (หัวพอตช็อต) · Battery Low! (แบตเตอรี่ต่ำ) · Over 8s! (ดูดค้างเกิน 8 วินาที) · No Atomizer (เครื่องไม่เจอหัวพอต) ขึ้นข้อความพวกนี้เมื่อไหร่ เครื่องจะหยุดจ่ายไฟ",
-              "[Caliburn G4 Pro](/products/caliburn-g4-pro) ขึ้นเป็นไอคอน Atomizer Short · Battery Low · Over-puff · No Atomizer ส่วน Caliburn G5 ขึ้นข้อความ ATOMIZER SHORT · BATTERY LOW · OVER 6S (ดูดค้างเกิน 6 วินาที) · NO ATOMIZER",
+              "ส่วน Caliburn G5 ขึ้นข้อความ ATOMIZER SHORT · BATTERY LOW · OVER 6S (ดูดค้างเกิน 6 วินาที) · NO ATOMIZER",
             ],
           },
         ],
@@ -811,6 +825,7 @@ const allGuides: Guide[] = [
     // Round 10B T11 — writer draft 1 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-1-result.md.
     // M Switch battery (600mAh on salthub.com — /m-switch/ now redirects to the home page) is deliberately NOT stated: the m-switch-kit spec row is still
     // unverified and the live guide open-system-vs-disposable says so — one site, one answer until the data round decides.
+    // Owner fix A (2026-09-24): M Switch Pod capacity removed too — SALTHUB does not state it (salthub-mswitch-check.md).
     id: "esko-bar-switch-vs-m-switch",
     slug: "esko-bar-switch-vs-m-switch",
     title: "Esko Bar Switch 20K กับ M Switch (Marbo) ต่างกันยังไง",
@@ -825,7 +840,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "ทั้งสองรุ่นเป็นเครื่องระบบสวิตช์ เก็บตัวเครื่องไว้ชาร์จใช้ต่อ เปลี่ยนแค่หัวพอต ที่ต่างคือตัวเลข ตามเว็บผู้ผลิต Esko Bar Switch 20K หัวละ 20,000 พัฟ แบต 850mAh มีโหมด High กับ Low และปรับช่องลมได้ 3 ระดับ ส่วน M Switch หัวละ 15,000 พัฟ",
           "M Switch เป็นของ SALTHUB ตระกูลเดียวกับที่หลายร้านเรียกว่า Marbo ส่วน Esko Bar เป็นอีกแบรนด์หนึ่ง",
-          "ตัวเลขในบทความนี้มาจาก [เว็บ Esko Bar](https://eskobarvape.com/product/pod-system/) กับ [เว็บ SALTHUB](https://www.salthub.com/) ยกเว้นความจุหัว M Switch Pod ที่มาจากสเปกที่ยืนยันแล้วบนเว็บเรา ข้อไหนผู้ผลิตไม่ได้เขียนไว้ เราก็บอกว่าไม่ได้เขียน ไม่เติมตัวเลขเอง",
+          "ตัวเลขในบทความนี้มาจาก [เว็บ Esko Bar](https://eskobarvape.com/product/pod-system/) กับ [เว็บ SALTHUB](https://www.salthub.com/) ข้อไหนผู้ผลิตไม่ได้เขียนไว้ เราก็บอกว่าไม่ได้เขียน ไม่เติมตัวเลขเอง",
         ],
       },
       {
@@ -840,7 +855,7 @@ const allGuides: Guide[] = [
         paragraphs: [],
         subsections: [
           { heading: "จำนวนพัฟต่อหัว", paragraphs: ["Esko Bar Switch 20K หัวละ 20,000 พัฟ ส่วน M Switch หัวละ 15,000 พัฟ"] },
-          { heading: "ความจุน้ำยา", paragraphs: ["Esko เขียนว่าความจุ 18mL ส่วนเว็บ SALTHUB ไม่ได้เขียนความจุของหัว M Switch Pod สเปกที่ยืนยันแล้วบนเว็บเราระบุว่าหัว M Switch Pod บรรจุสำเร็จ 2.2mL"] },
+          { heading: "ความจุน้ำยา", paragraphs: ["Esko เขียนว่าความจุ 18mL ส่วนเว็บ SALTHUB ไม่ได้เขียนความจุของหัว M Switch Pod เราเลยไม่ใส่ตัวเลข"] },
           { heading: "ความเข้มข้นนิโคติน", paragraphs: ["M Switch ระบุ 30mg แบบ salt nic ส่วนเว็บ Esko Bar ไม่ได้เขียนความเข้มข้นไว้ เราเลยไม่ใส่ตัวเลข"] },
           { heading: "แบตและการชาร์จ", paragraphs: ["Esko Bar Switch 20K แบต 850mAh ชาร์จที่ 5V 0.85A ส่วนความจุแบตของ M Switch หน้าสินค้าบนเว็บเรายังไม่ยืนยัน เลยไม่เอาตัวเลขมาเทียบ ทั้งคู่ชาร์จผ่าน USB-C"] },
           { heading: "คอยล์", paragraphs: ["Esko เขียนว่าเป็นระบบ Dual Coil (คอยล์สองตัว) ส่วน M Switch ใช้คอยล์ cotton mesh 1.0 โอห์ม"] },
