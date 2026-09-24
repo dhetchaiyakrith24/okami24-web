@@ -1155,6 +1155,21 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://www.myuwell.com/g-pod-platform"],
   },
+  // Data round (2026-09-24, chat 2, real browser): ESKO's own SWITCH page — "Specifications" block (18ml CARTRIDGE
+  // CAPACITY · 850MAH BATTERY CAPACITY · 5V 0.85A CHARGING CURRENT) and the feature text ("20,000 puffs", "three distinct
+  // airflow settings", "High (H) mode … Low (L) mode", "simultaneous dual-coil heating"). Nothing else is claimed.
+  "Pod-159": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 20,000", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+      { key: "battery", label: "แบตเตอรี่", value: "850mAh", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+      { key: "capacity", label: "ความจุหัวพอต", value: "18mL", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+      { key: "charging", label: "การชาร์จ", value: "5V 0.85A", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+      { key: "airflow", label: "ช่องลม", value: "ปรับได้ 3 ระดับ หมุนที่ก้นพอต", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+      { key: "modes", label: "โหมดการทำงาน", value: "High กับ Low กดปุ่มเดียวสลับได้", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+      { key: "coil", label: "คอยล์", value: "คอยล์คู่ ทำงานพร้อมกัน", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    ],
+    sourceUrls: ["https://eskobarvape.com/product/pod-system/"],
+  },
   "Pod-180": {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "750mAh ชาร์จซ้ำได้ผ่าน USB-C", sourceStatus: "verified" },
@@ -1352,16 +1367,22 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
   // photographed flavor range for this exact device. Adding the others as catalog truth,
   // explicitly non-purchasable (availability "unknown", never "in-stock") until Shipnity actually
   // stocks them — never silently omitted, never fabricated as available.
-  // CORRECTION 2026-09-06 (owner decision, LAUNCH_AUDIT item 6): 5 of the originally-added 18
-  // (Blueberry Jam, Chocolate Mint, Coconut, Extra Menthol, Mango) matched the Excel export's
-  // Pod-160 (a different parent) exactly and were not Pod-159 flavors — removed. Pod-159 now
-  // lists 2 active + 13 additional = 15 flavors, the same count the Excel export has for Pod-159.
+  // Owner ruling 2026-09-24 (data round, replaces the 2026-09-06 cut of LAUNCH_AUDIT item 6): the
+  // list follows the manufacturer page, which names 20 flavors (re-read in a real browser the same
+  // day) — 2 active + these 18. Blueberry Jam, Chocolate Mint, Coconut, Extra Menthol and Mango are
+  // back with the same non-purchasable status as the other flavors the shop does not stock.
+  // None of the 20 has a per-flavor photo here yet (card image only) — listed for round 11A.
   "Pod-159": [
     { code: "apple-aloe", label: "Apple Aloe", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "blueberry", label: "Blueberry", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    { code: "blueberry-jam", label: "Blueberry Jam", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    { code: "chocolate-mint", label: "Chocolate Mint", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    { code: "coconut", label: "Coconut", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    { code: "extra-menthol", label: "Extra Menthol", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "grape", label: "Grape", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "honeydew", label: "Honeydew", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "lychee", label: "Lychee", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    { code: "mango", label: "Mango", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "mix-berry", label: "Mix Berry", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "pineapple", label: "Pineapple", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "pink-guava", label: "Pink Guava", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
