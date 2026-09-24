@@ -154,6 +154,8 @@ const MODEL_NAMES: ReadonlyArray<string> = [
   "ARGUS G4 mini", "ARGUS G3 mini", "ARGUS G4", "ARGUS P3", "salt nic", "box mod",
   // Round 10B (owner ruling 2026-09-24, designer extras): a split product name / screen message reads wrong.
   "Esko Bar Switch", "No Atomizer",
+  // Data round (owner instruction 2026-09-24, batch 4): the G5 line's upper-case message, same rule.
+  "NO ATOMIZER",
 ];
 
 // a number (with , . – - inside) followed by ONE plain space and a unit. A Thai unit may run

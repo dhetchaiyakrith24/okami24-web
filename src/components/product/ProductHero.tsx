@@ -19,6 +19,7 @@ import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
 import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
+import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -99,11 +100,14 @@ export function ProductHero({
   const cartVariantId = selectedColor?.id ?? selectedFlavor?.id ?? null;
   const selectedOutOfStock = (selectedColor?.availability ?? selectedFlavor?.availability) === "out-of-stock";
   const canAddToCart = sellingPrice !== null && !selectedOutOfStock && (!hasOptions || cartVariantId !== null);
+  // Data round (owner 2026-09-24): a stat shows only when a verified spec row states the same number.
+  const facts = verifiedAttributes(product);
+  const hasVerifiedSpecs = verifiedRows(product.specifications).length > 0;
   const stats = [
-    { label: dict.product.statBattery, value: formatBattery(product.attributes.batteryMah) },
-    { label: dict.product.statOutput, value: formatWattage(product.attributes.wattageMin, product.attributes.wattageMax) },
-    product.attributes.puffCount ? { label: dict.product.statRatedPuffs, value: formatPuffs(product.attributes.puffCount, dict.catalog.puffUnit) } : null,
-    product.attributes.capacityMl ? { label: dict.product.statCapacity, value: `${product.attributes.capacityMl}mL` } : null,
+    { label: dict.product.statBattery, value: formatBattery(facts.batteryMah) },
+    { label: dict.product.statOutput, value: formatWattage(facts.wattageMin, facts.wattageMax) },
+    facts.puffCount ? { label: dict.product.statRatedPuffs, value: formatPuffs(facts.puffCount, dict.catalog.puffUnit) } : null,
+    facts.capacityMl ? { label: dict.product.statCapacity, value: `${facts.capacityMl}mL` } : null,
   ].filter((s): s is { label: string; value: string } => Boolean(s) && s!.value !== "—");
 
   // Phone gallery (M2.2/M2.3): one slide per option, each showing that option's own photo or —
@@ -245,9 +249,11 @@ export function ProductHero({
             <Button href={`/compare?slugs=${product.slug}`} variant={sellingPrice !== null ? "secondary" : "primary"}>
               {dict.product.addToComparison}
             </Button>
-            <Button href="#specifications" variant="secondary">
-              {dict.product.viewSpecifications}
-            </Button>
+            {hasVerifiedSpecs && (
+              <Button href="#specifications" variant="secondary">
+                {dict.product.viewSpecifications}
+              </Button>
+            )}
           </div>
 
           {stats.length > 0 && (

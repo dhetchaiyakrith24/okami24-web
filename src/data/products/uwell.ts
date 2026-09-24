@@ -152,7 +152,9 @@ export const uwellProducts: Product[] = [
       { key: "battery", label: "Battery", value: "1600mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–35W", sourceStatus: "verified" },
       { key: "screen", label: "Display", value: "0.85\" colour screen", sourceStatus: "verified" },
-      { key: "pod", label: "Pod capacity", value: "3mL, top-fill, magnetic connection", sourceStatus: "verified" },
+      // Data round (2026-09-24, batch 5): the G5 manual (manuals.plus copy) states "Capacity 3.0ml / 2.0ml" (by market
+      // version) and the product page "Top Refill"; "magnetic connection" is not in either → dropped.
+      { key: "pod", label: "Pod capacity", value: "3.0mL (2.0mL in TPD markets), top refill", sourceStatus: "verified", sourceUrl: "https://manuals.plus/m/5709a095303c89dbb3fe992bd7b3cf31ba928aba1ad3f284fbfdc84d4b5fc06d" },
       { key: "control", label: "Control system", value: "Smart Triple-Tap Control (gesture-based mode switching)", sourceStatus: "verified" },
       { key: "charging", label: "Charging", value: "USB-C", sourceStatus: "verified" },
       { key: "pod-compat", label: "Pod platform", value: "UWELL GPP cartridge platform", sourceStatus: "verified" },
@@ -174,7 +176,7 @@ export const uwellProducts: Product[] = [
         id: "top-fill-gpp",
         title: "Top-fill GPP pods",
         description:
-          "Pods fill from the top without removing them from the device, and connect magnetically for a snug, wobble-free seat.",
+          "Pods fill from the top without removing them from the device.",
       },
     ],
     compatibility: [gppCompatibility, usbCNoNote],
@@ -188,7 +190,7 @@ export const uwellProducts: Product[] = [
         id: "g5-pods",
         question: "What pods does the Caliburn G5 use?",
         answer:
-          "It uses UWELL's GPP cartridge platform — the same top-fill, magnetic-connection pod family used across most current Caliburn devices, available in multiple coil resistances.",
+          "It uses UWELL's GPP cartridge platform — the same top-fill pod family used across most current Caliburn devices, available in multiple coil resistances.",
       },
       {
         id: "g5-battery-life",
@@ -622,7 +624,7 @@ export const uwellProducts: Product[] = [
     displayName: "UWELL CALIBURN G4 PRO",
     tagline: "A 2.51\" touchscreen on the G4 platform.",
     shortDescription:
-      "An 1800mAh, 35W pod device with a large touchscreen, magnetic pod connection, and stepless airflow control.",
+      "An 1800mAh, 35W pod device with a large touchscreen and stepless airflow control.",
     isFlagship: false,
     // Confirmed via YouTube oEmbed (2026-09-21, round SEO ข batch 2): real video, title names
     // "UWELL CALIBURN G4 PRO" exactly (not the KOKO), owned by youtube.com/@OKMYARZ — one of
@@ -724,7 +726,9 @@ export const uwellProducts: Product[] = [
       // 2026-09-15 (round 30.4ค batch 7): the official page's meta description does say
       // "2.51-inch touchscreen" (myuwell.com/caliburn/caliburn-g4-pro), so the size is verified again.
       { key: "screen", label: "Display", value: "2.51\" touchscreen", sourceStatus: "verified" },
-      { key: "pod", label: "Pod capacity", value: "3mL, magnetic connection", sourceStatus: "verified" },
+      // Data round (2026-09-24, chat 2): "magnet" is on neither myuwell.com/caliburn/caliburn-g4-pro nor the GPP page
+      // (page text searched in a real browser) → "magnetic connection" dropped; the capacity stays as it was.
+      { key: "pod", label: "Pod capacity", value: "3mL", sourceStatus: "verified" },
       { key: "airflow", label: "Airflow", value: "Stepless airflow control", sourceStatus: "verified" },
       { key: "pod-compat", label: "Pod platform", value: "UWELL GPP and G3 pods", sourceStatus: "verified" },
     ],
@@ -845,12 +849,15 @@ export const uwellProducts: Product[] = [
       },
     ],
     specifications: [
-      { key: "battery", label: "Battery", value: "1300mAh built-in", sourceStatus: "verified" },
-      { key: "charge-time", label: "Charge time", value: "~30 minutes at 2A", sourceStatus: "verified" },
-      { key: "screen", label: "Display", value: "Colour screen with power-mode selection", sourceStatus: "verified" },
-      { key: "firing", label: "Firing", value: "Button-fired", sourceStatus: "verified" },
-      { key: "pod-compat", label: "Pod platform", value: "UWELL GPP pods (0.4Ω / 0.9Ω included; 0.6Ω / 1.2Ω sold separately)", sourceStatus: "verified" },
-      { key: "output", label: "Max output", value: "Not independently confirmed for this exact model", sourceStatus: "unverified" },
+      // Data round (2026-09-24, real browser): UWELL's G4 spec image + product page + the G4 manual copy on manuals.plus.
+      // "~30 minutes" is on none of them (the page says "5V/2A fast charging"); the manual says the device fires on a draw
+      // OR the button (auto mode), not "button-fired"; "0.6Ω / 1.2Ω sold separately" is not UWELL's wording.
+      { key: "battery", label: "Battery", value: "1300mAh built-in", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4/pc/specifications.webp" },
+      { key: "charge-time", label: "Charging", value: "USB-C, 5V/2A fast charging", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4" },
+      { key: "screen", label: "Display", value: "0.85\" colour screen, Storm and Waves modes", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4" },
+      { key: "firing", label: "Firing", value: "Draw or button (auto mode)", sourceStatus: "verified", sourceUrl: "https://manuals.plus/m/50a2d62de82f0d181197e7dbdeac724ade1b398ab848d04aaa7b7cec543ee424" },
+      { key: "pod-compat", label: "Pod platform", value: "UWELL GPP pods (FeCrAl meshed 0.4Ω and 0.9Ω in the box)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4/pc/specifications.webp" },
+      { key: "output", label: "Max output", value: "35W", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4/pc/specifications.webp" },
     ],
     features: [
       {
@@ -984,10 +991,13 @@ export const uwellProducts: Product[] = [
       },
     ],
     specifications: [
-      { key: "battery", label: "Battery", value: "1100mAh built-in", sourceStatus: "verified" },
-      { key: "charge-time", label: "Charge time", value: "~58 minutes at 2A", sourceStatus: "verified" },
-      { key: "screen", label: "Display", value: "None — no onboard screen", sourceStatus: "verified" },
-      { key: "pod-compat", label: "Pod platform", value: "UWELL GPP pods (0.4Ω / 0.9Ω included; 0.6Ω / 1.2Ω sold separately)", sourceStatus: "verified" },
+      // Data round (2026-09-24, real browser): UWELL's G4 Mini spec image says the box holds ONE FeCrAl meshed 0.6Ω
+      // cartridge — the old row ("0.4Ω / 0.9Ω included") was wrong. "~58 minutes" is on no UWELL page → unverified.
+      // "No screen": the manual's product overview lists an LED light and no display.
+      { key: "battery", label: "Battery", value: "1100mAh built-in", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4-mini/pc/specifications.webp" },
+      { key: "charge-time", label: "Charge time", value: "~58 minutes at 2A", sourceStatus: "unverified" },
+      { key: "screen", label: "Display", value: "None — no onboard screen", sourceStatus: "verified", sourceUrl: "https://manuals.plus/caliburn/kpn025-g4-mini-kit-manual" },
+      { key: "pod-compat", label: "Pod platform", value: "UWELL GPP pods (FeCrAl meshed 0.6Ω in the box)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4-mini/pc/specifications.webp" },
     ],
     features: [
       {

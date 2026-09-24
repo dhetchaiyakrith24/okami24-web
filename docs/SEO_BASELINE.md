@@ -91,3 +91,22 @@ title ที่เปลี่ยนวันที่ 2026-09-23 (รายล�
   - **`/brands/salthub` ได้ลิงก์เพิ่ม 2** (จาก T03' และ T11) — หน้านี้อยู่ในรายการอ่าน CTR 10-05 · /faq +1 · /brands/esko-bar +1 · /products/pod-159 +1 · /products/disposables +2
 - **วันที่ของคู่มือเดิมทั้ง 7 เรื่องขยับเป็น 2026-09-24** (Article dateModified + sitemap lastmod) ทั้งที่เนื้อหาไม่เปลี่ยน ยกเว้น open-system-vs-disposable — เพราะวันที่นับทั้งกลุ่มจาก `content-dates` · รวมคู่มือเลือกพอตเครื่องแรกที่กำลังวัด
 - **ขอ Cowork ตอนอ่าน 10-05 (เพิ่ม):** คำ "marbo" · "esko bar switch 20k" · "พอตเปลี่ยนหัว" ไปลงหน้าไหน · สถานะ index ของบทความใหม่ 5 เรื่อง · ตาราง URL + คำค้นที่ต้องดู = `docs/ARTICLES_10A.md` §4 (slug ตรงตามที่ขึ้นจริงทุกแถว ยกเว้น T07 → `/guides/argus-g4-vs-caliburn-g5` คำค้น "argus g4 vs caliburn g5")
+
+## รอบข้อมูล "spec facts: every number has a manufacturer source" ก้อน 1 (2026-09-24) — เนื้อหาเปลี่ยนบนหน้าที่พักไว้ถึง 05/10 + ลิงก์ภายในที่ย้าย + ชื่อหน้าที่เปลี่ยน (บันทึกโดย doc-keeper ตามบรีฟ `_incoming/round-data/briefs/doc-keeper-1.md` — ก้อนกลางรอบ chat 1 เท่านั้น ยังไม่ปิดรอบ ไม่มี tag ไม่ merge)
+
+> ต่อท้ายเท่านั้น ไม่แก้ตัวเลข GSC เดิมด้านบน
+
+- **เนื้อหาเปลี่ยนบน 7 หน้าที่พักราคาใน `<title>` ไว้ถึง 05/10 (ไม่มีการเปลี่ยน `<title>` เอง — อ่านผลราคาใน title วันที่ 05/10 ได้ตามเดิม ไม่กระทบตัวแปรที่กำลังวัด):** `caliburn-g5` แถวหัวพอต (pod row) เปลี่ยนข้อความเป็น "3.0mL (2.0mL ในตลาด TPD), top refill" ตัดคำ "แม่เหล็ก"/magnetic ที่ยังหาแหล่งยืนยันไม่ได้ · `caliburn-g5-lite` และ `caliburn-g5-lite-se` ตัวเลขความจุใน ProductHero หายไป (แถวสเปกยังไม่ยืนยัน) · `drag-6` และ `m-bar-15k` แถวสเปกที่ยังไม่ยืนยันไม่แสดงอีกต่อไป
+- **ลิงก์ภายในที่ย้าย:** Coil-72 และ Coil-89 ย้ายจากหมวด `/products/coils-accessories` ไปอยู่ใต้หมวด `/products/pods-cartridges` (URL ของสินค้าเองไม่เปลี่ยน)
+- **ชื่อหน้าที่เปลี่ยน (ตาราง `<title>` ก่อน→หลังเต็ม ๆ อยู่ `_incoming/round-data/owner-table.md` แบตช์ 3):** `/products/pod-159` · `/products/iqosheet-16` · `/products/iqosheet-18`
+- **อ่านคู่กับตัวเลข 05/10 อย่างไร:** ถ้า CTR/อันดับของ 7 หน้าเปลี่ยนไป ให้แยกว่าเป็นผลจากราคาใน title (ตัวแปรเดิมที่กำลังวัดอยู่แล้ว ไม่เปลี่ยนรอบนี้) หรือจากเนื้อหน้าที่เปลี่ยนรอบนี้ — โดยเฉพาะ caliburn-g5 / -lite / -lite-se ที่ตัวเลขสเปกบางส่วนหายไปจากหน้า
+
+## Data round chat 2 (2026-09-24) — content changes on held pages (append only; written by the main agent)
+
+- `caliburn-g5` (held until 05/10, `<title>` untouched): the "magnetic" claim is cut from the feature card "Top-fill GPP pods"
+  and the FAQ "What pods does the Caliburn G5 use?" (en + th) — on neither myuwell.com's G5 page nor the G5 manual.
+- Other held pages: no change this chat. Pages outside the held 7 whose body text changed: `caliburn-g4-pro` (short
+  description, pod row "3mL" — "magnetic" cut, en + th), guides `choosing-your-first-pod-system` (G5 line, 3 languages),
+  technology `onboard-touch-displays` + `gesture-and-triple-tap-control` (3 languages), `pod-159` (20 flavours, 7 spec rows),
+  `m-switch-pod` (+ resistance row), `m-bar-pod` (+ capacity row, card line "2.2mL"), `joiway-f3` / `joiway-f4` (short
+  description = also their meta description), `coil-94` (meta description: "ความจุ 2mL" cut).

@@ -7,6 +7,7 @@ const specificationSchema = z.object({
   label: z.string().min(1),
   value: z.string().min(1),
   sourceStatus,
+  sourceUrl: z.string().url().optional(),
 });
 
 const featureSchema = z.object({

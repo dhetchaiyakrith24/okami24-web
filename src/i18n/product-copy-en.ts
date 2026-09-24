@@ -38,7 +38,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "coil-94": { tagline: "Caliburn G4&G3 Series pod by UWELL" },
   "iqosheet-16": { tagline: "IQOS ILUMA i PRIME heated tobacco device" },
   "iqosheet-18": { tagline: "IQOS ILUMA i heated tobacco device" },
-  "pod-159": { tagline: "Esko Bar Switch 20k kit by ESKO BAR" },
+  "pod-159": { tagline: "Esko Bar Switch 20K kit by ESKO BAR" },
   "pod-180": { tagline: "Nexbar 18K disposable by WOTOFO" },
   "coil-54": { tagline: "Feelin Mini pod by NEVOKS" },
 };

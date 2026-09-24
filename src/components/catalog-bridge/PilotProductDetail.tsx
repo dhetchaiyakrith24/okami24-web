@@ -25,6 +25,7 @@ import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 import { MobileVariantGallery, MOBILE_SLIDE_SIZES } from "@/components/product/MobileVariantGallery";
 import { pilotVariantOptions } from "@/components/product/variant-options";
+import { verifiedRows } from "@/lib/verified-specs";
 
 /**
  * Storefront-native product detail body for a ProductMaster product, rendered from the real
@@ -195,11 +196,12 @@ export function PilotProductDetail({
             </div>
           )}
 
-          {product.specifications.length > 0 && (
+          {/* Data round (owner 2026-09-24): verified rows only — every published row is verified today, this keeps it so. */}
+          {verifiedRows(product.specifications).length > 0 && (
             <div className="flex flex-col gap-2 max-lg:order-4">
               <span className="label-mono text-xs text-foreground-dim">{dict.pilot.specificationsTitle}</span>
               <dl className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
-                {product.specifications.map((spec) => (
+                {verifiedRows(product.specifications).map((spec) => (
                   <div key={spec.key} className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
                     <dt className="text-foreground-muted">{spec.label}</dt>
                     <dd className="text-right font-medium text-foreground">{spec.value}</dd>

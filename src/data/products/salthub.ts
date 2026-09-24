@@ -88,12 +88,14 @@ export const salthubProducts: Product[] = [
       { id: "yellow-mint", name: "Yellow Mint", swatchHex: "#d9d13a", availability: "unknown" },
     ],
     specifications: [
-      { key: "puffs", label: "Rated puffs", value: "Up to 10,000", sourceStatus: "verified" },
-      { key: "battery", label: "Battery", value: "600mAh rechargeable, USB-C", sourceStatus: "verified" },
-      { key: "nicotine", label: "Nicotine strength", value: "30mg nicotine salt", sourceStatus: "verified" },
-      { key: "coil", label: "Coil", value: "Cotton mesh coil", sourceStatus: "verified" },
-      { key: "modes", label: "Power modes", value: "Eco / Soft / Boost, switched by double-click", sourceStatus: "verified" },
-      { key: "indicator", label: "Status indicator", value: "LED battery level in 25% increments; RGB shows active mode", sourceStatus: "verified" },
+      // Data round (2026-09-24): every row re-checked on SALTHUB's own M Bar 10K posters in a real browser. 30mg is on
+      // none of them (MBar10K_01–07) → unverified, not shown.
+      { key: "puffs", label: "Rated puffs", value: "Up to 10,000", sourceStatus: "verified", sourceUrl: "https://img.salthub.com/mbar10k/MBar10K_05.webp" },
+      { key: "battery", label: "Battery", value: "600mAh rechargeable, USB-C", sourceStatus: "verified", sourceUrl: "https://img.salthub.com/mbar10k/MBar10K_01.webp" },
+      { key: "nicotine", label: "Nicotine strength", value: "30mg nicotine salt", sourceStatus: "unverified" },
+      { key: "coil", label: "Coil", value: "Cotton mesh coil", sourceStatus: "verified", sourceUrl: "https://img.salthub.com/mbar10k/MBar10K_01.webp" },
+      { key: "modes", label: "Power modes", value: "Eco / Soft / Boost, switched by double-click", sourceStatus: "verified", sourceUrl: "https://img.salthub.com/mbar10k/MBar10K_04.webp" },
+      { key: "indicator", label: "Status indicator", value: "LED battery level in 25% increments; RGB shows active mode", sourceStatus: "verified", sourceUrl: "https://img.salthub.com/mbar10k/MBar10K_03.webp" },
     ],
     features: [
       {
@@ -141,9 +143,9 @@ export const salthubProducts: Product[] = [
     systemType: "disposable",
     name: "M Bar 9K",
     displayName: "SALTHUB M BAR 9K",
-    tagline: "Adjustable airflow between MTL and DTL, 9,000 puffs.",
+    tagline: "Adjustable airflow, 9,000 puffs.",
     shortDescription:
-      "A rechargeable disposable with 14mL of prefilled e-liquid, adjustable airflow spanning tight MTL to airier DTL draws, and a mesh coil rated up to 9,000 puffs. Many Thai shops list the M Bar line under the name Marbo — the same line.",
+      "A rechargeable disposable with adjustable airflow, rated up to 9,000 puffs. Many Thai shops list the M Bar line under the name Marbo — the same line.",
     isFlagship: false,
     // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
     // youtube.com/@OKM_24 — one of OKami24's own three channels.
@@ -206,18 +208,22 @@ export const salthubProducts: Product[] = [
       { id: "zapple", name: "Zapple", swatchHex: "#8bc34a", availability: "unknown" },
     ],
     specifications: [
-      { key: "puffs", label: "Rated puffs", value: "Up to 9,000", sourceStatus: "verified" },
-      { key: "battery", label: "Battery", value: "600mAh rechargeable, USB-C", sourceStatus: "verified" },
-      { key: "capacity", label: "E-liquid capacity", value: "14mL prefilled", sourceStatus: "verified" },
-      { key: "nicotine", label: "Nicotine strength", value: "3% (30mg) salt nicotine", sourceStatus: "verified" },
-      { key: "airflow", label: "Airflow", value: "Adjustable, tight MTL to airier DTL", sourceStatus: "verified" },
-      { key: "coil", label: "Coil", value: "Mesh coil", sourceStatus: "verified" },
+      // Data round (2026-09-24, real browser): salthub.com states for M BAR 9K "9000 puffs · Battery Capacity: 600mAh ·
+      // Adjustable Airflow" (product box) and "Nicotine Salt 30mg · Resistance 1.0 Ω · Type-C" (THE BENEFITS block).
+      // 14mL, "mesh", "3%" and the MTL-to-DTL range appear nowhere on salthub.com → unverified, not shown.
+      { key: "puffs", label: "Rated puffs", value: "Up to 9,000", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      { key: "battery", label: "Battery", value: "600mAh rechargeable, USB-C", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      { key: "capacity", label: "E-liquid capacity", value: "14mL prefilled", sourceStatus: "unverified" },
+      { key: "nicotine", label: "Nicotine strength", value: "30mg nicotine salt", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      { key: "airflow", label: "Airflow", value: "Adjustable", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      { key: "resistance", label: "Resistance", value: "1.0Ω", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      { key: "coil", label: "Coil", value: "Mesh coil", sourceStatus: "unverified" },
     ],
     features: [
       {
         id: "adjustable-airflow",
         title: "Adjustable airflow",
-        description: "A single device that can be tuned from a tight MTL draw to a more open DTL pull.",
+        description: "The airflow can be adjusted on the device itself.",
       },
     ],
     compatibility: [typeC],
@@ -382,8 +388,12 @@ export const salthubProducts: Product[] = [
       { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
     ],
     specifications: [
-      { key: "puffs-per-pod", label: "Puffs per pod", value: "Up to 15,000", sourceStatus: "verified" },
-      { key: "format", label: "Format", value: "Reusable device body + prefilled swap-in cartridges", sourceStatus: "verified" },
+      // Data round (2026-09-24, real browser): salthub.com product box "M SWITCH KIT · 15000 Puffs · Cotton Mesh Coil ·
+      // Type-C Fast Charging"; the M SWITCH POD box "Compatible with Switch Cartridge". SALTHUB lists the 600mAh battery
+      // under the heading "M SWITCH POD", not under the kit — so the kit's battery row stays unverified (owner's rule:
+      // the number goes only on the product the manufacturer names).
+      { key: "puffs-per-pod", label: "Puffs per pod", value: "Up to 15,000", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      { key: "format", label: "Format", value: "Reusable device body + prefilled swap-in cartridges", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
       { key: "battery", label: "Battery capacity", value: "Not independently confirmed", sourceStatus: "unverified" },
     ],
     features: [
@@ -418,7 +428,7 @@ export const salthubProducts: Product[] = [
     name: "M Switch Pod",
     displayName: "SALTHUB M SWITCH POD",
     tagline: "The prefilled cartridge for the M Switch Kit.",
-    shortDescription: "A 2.2mL prefilled replacement cartridge for the M Switch Kit device body.",
+    shortDescription: "A prefilled replacement cartridge for the M Switch Kit device body.",
     isFlagship: false,
     attributes: {
       capacityMl: 2.2,
@@ -475,8 +485,14 @@ export const salthubProducts: Product[] = [
       { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e0669a", availability: "unknown" },
     ],
     specifications: [
-      { key: "capacity", label: "Capacity", value: "2.2mL prefilled", sourceStatus: "verified" },
-      { key: "compat", label: "Compatible device", value: "M Switch Kit", sourceStatus: "verified" },
+      // Data round (owner 2026-09-24, 10B fix A): salthub.com states "E-liquid Capacity: 2.2mL" only under M BAR POD and
+      // ZERO CARTRIDGE, never under M SWITCH POD → unverified, not shown. The battery row is SALTHUB's own "THE BENEFITS —
+      // M SWITCH POD" block (Battery 600mAh), placed on the product SALTHUB names (owner rule 2026-09-24).
+      { key: "capacity", label: "Capacity", value: "2.2mL prefilled", sourceStatus: "unverified" },
+      { key: "battery", label: "Battery", value: "600mAh", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      { key: "compat", label: "Compatible device", value: "M Switch Kit", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      // Data round chat 2 (real browser, 2026-09-24): the same "THE BENEFITS — M SWITCH POD" block states "Resistance 1.0 Ω".
+      { key: "resistance", label: "Resistance", value: "1.0Ω", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
     ],
     features: [],
     compatibility: [{ type: "cartridge", label: "M Switch Kit device body" }],
@@ -517,8 +533,10 @@ export const salthubProducts: Product[] = [
       },
     ],
     specifications: [
-      { key: "flavors", label: "Flavor range", value: "15+ flavors", sourceStatus: "verified" },
-      { key: "capacity", label: "Capacity", value: "Not independently confirmed", sourceStatus: "unverified" },
+      // Data round chat 2 (real browser, 2026-09-24): salthub.com's product box "M BAR POD — Compatible for Switch Series ·
+      // E-liquid Capacity: 2.2mL · 15+ Flavors". The capacity was held back before only because nobody had read it there.
+      { key: "flavors", label: "Flavor range", value: "15+ flavors", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      { key: "capacity", label: "Capacity", value: "2.2mL", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
     ],
     features: [],
     compatibility: [{ type: "cartridge", label: "M Bar-compatible reusable devices" }],

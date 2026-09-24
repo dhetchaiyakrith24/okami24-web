@@ -1,6 +1,7 @@
 import type { Product } from "@/types/catalog";
 import { allProducts } from "@/data/products";
 import { allCatalogItems, type CatalogItem } from "@/lib/catalog-index";
+import { verifiedAttributes } from "@/lib/verified-specs";
 
 export interface FinderAnswers {
   format: "open-pod" | "pod-kit" | "disposable" | "no-preference";
@@ -47,7 +48,12 @@ function screenMatches(preference: FinderAnswers["screen"], product: Product) {
 export function scoreProduct(product: Product, answers: FinderAnswers): { score: number; reasons: FinderReasonKey[] } {
   let score = 0;
   const reasons: FinderReasonKey[] = [];
+  // Data round (2026-09-24, owner ruling chat 2): the RANKING stays on the catalog's own attributes so the list a
+  // customer gets is the one it was before the round (the same internal use as drawStyle) — but a REASON the customer
+  // reads ("long battery", "low wattage", "high wattage") is shown only when a verified spec row states the number.
+  // _incoming/round-data/finder-before.txt / finder-after.txt prove the lists match for all 864 answer sets.
   const a = product.attributes;
+  const shown = verifiedAttributes(product);
 
   if (answers.format !== "no-preference") {
     if (product.systemType === answers.format) {
@@ -75,7 +81,7 @@ export function scoreProduct(product: Product, answers: FinderAnswers): { score:
   if (answers.battery === "critical") {
     if ((a.batteryMah && a.batteryMah >= 1800) || (a.puffCount && a.puffCount >= 10000)) {
       score += 2;
-      reasons.push({ key: "battery" });
+      if ((shown.batteryMah && shown.batteryMah >= 1800) || (shown.puffCount && shown.puffCount >= 10000)) reasons.push({ key: "battery" });
     } else if (a.batteryMah && a.batteryMah >= 1300) {
       score += 1;
     }
@@ -84,12 +90,12 @@ export function scoreProduct(product: Product, answers: FinderAnswers): { score:
   if (answers.output === "low") {
     if (a.drawStyle === "MTL" || (a.wattageMax && a.wattageMax <= 35)) {
       score += 1.5;
-      reasons.push({ key: "output-low" });
+      if (shown.drawStyle === "MTL" || (shown.wattageMax && shown.wattageMax <= 35)) reasons.push({ key: "output-low" });
     }
   } else if (answers.output === "high") {
     if (a.wattageMax && a.wattageMax >= 60) {
       score += 1.5;
-      reasons.push({ key: "output-high" });
+      if (shown.wattageMax && shown.wattageMax >= 60) reasons.push({ key: "output-high" });
     }
     if (a.drawStyle === "DTL") score += 1;
   } else if (answers.output === "flexible") {

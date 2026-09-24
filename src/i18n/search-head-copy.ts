@@ -328,7 +328,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "coil-83": "หัวพอตเปล่า VOOPOO Argus P1 ความจุ 2mL มี 2 หัวต่อกล่อง ต้องซื้อคอยล์ ITO แยก ใช้ได้กับ Argus Pod · P1 · Z · G · A",
   "coil-87": "หัวพอตเปล่า VOOPOO TPP Pod ความจุ 5.5mL ใช้กับคอยล์ TPP ยึดด้วยแม่เหล็ก ใช้ได้กับ DRAG 3 Kit และ DRAG X Plus Kit",
   "coil-89": "หัวพอต RINCOE Jellybox V คอยล์ในตัว มี 0.8 และ 1.0 โอห์ม ความจุ 3mL เติมด้านข้าง ใช้ได้กับ Jellybox V1 · V2 · V3",
-  "coil-94": "หัวพอต Caliburn G4&G3 Series จากแบรนด์ UWELL คอยล์ mesh ในตัว มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม ความจุ 2mL",
+  "coil-94": "หัวพอต Caliburn G4&G3 Series จากแบรนด์ UWELL คอยล์ mesh ในตัว มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม",
   "iqosheet-16": "เครื่องอุ่นยาสูบ IQOS ILUMA i PRIME แบต 2380mAh ชาร์จผ่าน USB-C เต็มแล้วใช้ได้สูงสุด 20 ก้าน ใช้กับก้าน TEREA เท่านั้น",
   "iqosheet-18": "เครื่องอุ่นยาสูบ IQOS ILUMA i ใช้ได้กับก้าน TEREA เท่านั้น มี 2 สี Midnight Black และ Breeze Blue",
   "pod-180": "พอตใช้แล้วทิ้ง WOTOFO Nexbar 18K แบต 750mAh ชาร์จซ้ำได้ผ่าน USB-C คอยล์ nexMESH ในตัว น้ำยาประมาณ 18mL มี 10 รส",

@@ -75,6 +75,10 @@ export interface Specification {
   label: string;
   value: string;
   sourceStatus: SourceStatus;
+  /** The manufacturer page, poster image or manual (a manuals.plus copy counts) that states this value — data round,
+   *  owner 2026-09-24. Required on a verified row of a product in `SOURCED_ROW_PRODUCTS`
+   *  (src/lib/verified-specs-contract-test.ts); older verified rows are grandfathered until they are re-checked. */
+  sourceUrl?: string;
 }
 
 export interface Feature {

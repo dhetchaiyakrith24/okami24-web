@@ -30,6 +30,8 @@ export const SPEC_LABELS_TH: Record<string, string> = {
   "Rated puffs": "จำนวนพัฟที่ระบุ",
   Coil: "คอยล์",
   "Resistance range": "ช่วงโอห์ม",
+  // Data round 2026-09-24 (M Bar 9K, SALTHUB "Resistance 1.0 Ω"): the locked label word for a single Ω value (THAI_STYLE §3).
+  Resistance: "ค่าโอห์ม",
   Charging: "การชาร์จ",
   "E-liquid capacity": "ความจุน้ำยา",
   "Nicotine strength": "นิโคติน",

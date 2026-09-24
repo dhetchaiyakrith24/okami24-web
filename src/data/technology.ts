@@ -22,12 +22,13 @@ export const technologyEntries: TechnologyEntry[] = [
         ],
       },
       {
-        heading: "Real examples confirmed by the spec sheet: the mesh coils in the M Bar 9K and M Bar 10K",
+        heading: "A real example confirmed by the spec sheet: the mesh coil in the M Bar 10K",
         paragraphs: [
-          "The [M Bar 9K](/products/m-bar-9k) coil row reads “Mesh coil”. Verified on the same page: rated up to 9,000 puffs, 14mL prefilled, 3% (30mg) salt nicotine, a 600mAh battery that recharges over USB-C, and airflow adjustable from a tight MTL draw to an airier DTL pull.",
-          "The [M Bar 10K](/products/m-bar-10k) coil row reads “Cotton mesh coil”. Verified alongside it: rated up to 10,000 puffs, a 600mAh USB-C rechargeable battery, 30mg nicotine salt, and three power modes — Eco / Soft / Boost — switched by a double-click.",
-          "The two rows are not worded the same: the 10K says “Cotton mesh coil”, the 9K only “Mesh coil”. This article writes them as they stand and adds no detail the sheet does not give.",
-          "Both are disposables, so the coil is never replaced — when the e-liquid runs out the device is finished. To compare with the side where you change the coil yourself, see [Open-system vs. disposable](/guides/open-system-vs-disposable).",
+          // Data round (2026-09-24): the M Bar 9K paragraph and the 9K-vs-10K wording note are cut — SALTHUB's own site
+          // names no coil type for the 9K (only "Resistance 1.0 Ω"), so its "Mesh coil" row is unverified now. 10K's
+          // "30mg" is on none of SALTHUB's 10K posters and is cut too.
+          "The [M Bar 10K](/products/m-bar-10k) coil row reads “Cotton mesh coil”. Verified alongside it: rated up to 10,000 puffs, a 600mAh USB-C rechargeable battery, and three power modes — Eco / Soft / Boost — switched by a double-click.",
+          "It is a disposable, so the coil is never replaced — when the e-liquid runs out the device is finished. To compare with the side where you change the coil yourself, see [Open-system vs. disposable](/guides/open-system-vs-disposable).",
         ],
       },
     ],
@@ -91,7 +92,7 @@ export const technologyEntries: TechnologyEntry[] = [
       {
         heading: "Real example: the Caliburn G4 Pro's 2.51\" screen next to the G4 Pro KOKO's 2\" screen",
         paragraphs: [
-          "The [Caliburn G4 Pro](/products/caliburn-g4-pro): a 2.51\" touchscreen, an 1800mAh built-in battery, 35W maximum, stepless airflow control, a magnetic pod connection, and UWELL GPP pods plus the older G3 pods.",
+          "The [Caliburn G4 Pro](/products/caliburn-g4-pro): a 2.51\" touchscreen, an 1800mAh built-in battery, 35W maximum, stepless airflow control, and UWELL GPP pods plus the older G3 pods.",
           "The [Caliburn G4 Pro KOKO](/products/caliburn-g4-pro-koko): a 2\" touchscreen, a 2000mAh built-in battery, 35W maximum, Storm / Waves / Custom (draw modes) chosen on the screen, Pro-FOCS 4.0 flavor tuning, and the same GPP and G3 pods.",
           "Compared on verified rows only: the larger screen is on the G4 Pro (2.51\"), the larger battery on the KOKO (2000mAh), the wattage ceiling is the same, and both take the same pods. What Storm / Waves / Custom actually do is explained in [MTL vs. DTL](/guides/understanding-mtl-vs-dtl).",
         ],
@@ -177,7 +178,7 @@ export const technologyEntries: TechnologyEntry[] = [
       {
         heading: "Real example: the Caliburn G5's actual numbers, with Smart Triple-Tap",
         paragraphs: [
-          "The [Caliburn G5](/products/caliburn-g5): a 1600mAh built-in battery, 5–35W output, a 0.85\" colour screen, USB-C charging, and a top-fill pod that connects magnetically. Control is Smart Triple-Tap Control — modes are switched by tapping.",
+          "The [Caliburn G5](/products/caliburn-g5): a 1600mAh built-in battery, 5–35W output, a 0.85\" colour screen, USB-C charging, and a top-fill pod. Control is Smart Triple-Tap Control — modes are switched by tapping.",
           "The 0.85\" colour screen is what makes tap control usable: after a tap it shows which mode you are in, the wattage, and the battery level.",
           "Not chosen a device yet? The G5 is the main example in [Choosing your first pod](/guides/choosing-your-first-pod-system).",
         ],
