@@ -347,7 +347,7 @@ const allGuides: Guide[] = [
         heading: "Which devices take the GPP pod",
         paragraphs: [
           "UWELL's GPP (G Pod Platform) pod is the top-fill pod shared across the current Caliburn line. According to UWELL's own pages it fits the Caliburn G5, G5 Lite, G5 Lite SE, G4 Pro, G4 Pro KOKO, G4, G4 Mini, G4 Classic, G3 Pro and G3 Pro KOKO.",
-          "On our site that pod is the [GPP pod](/products/coil-94), in four resistances: 0.4, 0.6, 0.9 and 1.2Ω, mesh coils. The product name on the page reads “UWELL คอยล์ Caliburn G4&G3 Series”, but it fits the G5 line as well.",
+          "On our site that pod is the [GPP pod](/products/coil-94), in four resistances: 0.4, 0.6, 0.9 and 1.2Ω, mesh coils. The product name on the page reads “UWELL Coil Caliburn G4&G3 Series” (written in Thai there), but it fits the G5 line as well.",
           "How a mesh coil differs from round wire is in [Mesh Coil Systems](/technology/mesh-coil-systems).",
           "One caution: the same Caliburn name does not mean the parts interchange. Caliburn G2-generation pods and GPP pods do not fit each other. If your device is a [Caliburn G5](/products/caliburn-g5), [Caliburn G3 Pro](/products/caliburn-g3-pro) or [Caliburn G4 Pro](/products/caliburn-g4-pro), GPP is the pod on the list above.",
         ],
@@ -485,6 +485,7 @@ const allGuides: Guide[] = [
     category: "buying-guide",
     readingTimeMin: 6,
     publishedAt: "2026-09-24",
+    thaiOnly: true,
     body: [
       {
         heading: "เลือกสายที่ชอบก่อน แล้วค่อยดูรุ่น",
@@ -544,15 +545,15 @@ const allGuides: Guide[] = [
     relatedProductSlugs: ["m-bar-9k", "m-switch-pod"],
     faq: [
       {
-        question: "marbo กลิ่นไหนเย็น",
+        question: "Marbo กลิ่นไหนเย็น",
         answer: "SALTHUB ไม่ได้บอกระดับความเย็น เราบอกได้แค่ว่าชื่อไหนมีคำที่สื่อถึงความเย็น M Bar 9K มี Blue Ice · Doublemint · Menthol Freeze ส่วน M Bar 10K มี Blue Ice · Menthol Blast · Watermelon Mint · Yellow Mint และ M Switch Pod มี Blue Ice · Cool Mint · Doublemint",
       },
       {
-        question: "marbo กลิ่นองุ่นมีแบบไหนบ้าง",
+        question: "Marbo กลิ่นองุ่นมีแบบไหนบ้าง",
         answer: "M Bar 9K มี Grape · Grape Aloe · Grape Lychee · Kyoho Grape ส่วน M Bar 10K มี Grape · Kyoho Grape และ M Switch Pod มี Grape · Grape Aloe · Grape Lychee · Kyoho Grape",
       },
       {
-        question: "marbo กลิ่นส้มมีไหม",
+        question: "Marbo กลิ่นส้มมีไหม",
         answer: "มี Orange Sour ใน M Bar 9K ส่วน M Bar 10K กับ M Switch Pod ไม่มีกลิ่นที่ชื่อเป็นส้ม",
       },
       {
@@ -574,6 +575,7 @@ const allGuides: Guide[] = [
     category: "how-it-works",
     readingTimeMin: 5,
     publishedAt: "2026-09-24",
+    thaiOnly: true,
     body: [
       {
         heading: "ใช้ได้กี่วัน ไม่มีตัวเลขตายตัว",
@@ -600,7 +602,7 @@ const allGuides: Guide[] = [
         heading: "แบตหมด หรือเริ่มไหม้ ทำยังไงต่อ",
         paragraphs: [
           "M Bar 9K กับ M Bar 10K ชาร์จซ้ำได้ผ่าน USB-C แบตหมดก็ชาร์จต่อ วิธีชาร์จให้ถูกอยู่ที่ [วิธีดูแลแบตเตอรี่และการชาร์จ](/guides/battery-care-and-charging)",
-          "เรื่องที่ลูกค้าบ่นกับร้านบ่อยมีสามเรื่อง แบต ไหม้ไว และได้จำนวนพัฟไม่ถึงที่กำหนด ถ้าเครื่องเริ่มมีกลิ่นไหม้ ดูดไม่ขึ้น หรือไฟกระพริบ ไล่เช็คได้ที่ [พอตดูดไม่ขึ้น ไฟกระพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
+          "เรื่องที่ลูกค้าบ่นกับร้านบ่อยมีสามเรื่อง แบต ไหม้ไว และได้จำนวนพัฟไม่ถึงที่กำหนด ถ้าเครื่องเริ่มมีกลิ่นไหม้ ดูดไม่ขึ้น หรือไฟกะพริบ ไล่เช็คได้ที่ [พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
         ],
       },
       {
@@ -638,6 +640,7 @@ const allGuides: Guide[] = [
     category: "buying-guide",
     readingTimeMin: 6,
     publishedAt: "2026-09-24",
+    thaiOnly: true,
     body: [
       {
         heading: "พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว เลือกยังไง",
@@ -711,11 +714,12 @@ const allGuides: Guide[] = [
     // until 2026-10-05. "Change it" is the customer replacing the unit/pod — never a claim or warranty (owner, round 10B).
     id: "fixing-no-draw-and-blinking-light",
     slug: "fixing-no-draw-and-blinking-light",
-    title: "พอตดูดไม่ขึ้น ไฟกระพริบ แก้ยังไง",
+    title: "พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง",
     dek: "เช็คก่อนว่าแกะพลาสติกที่ก้นพอตออกหรือยัง แล้วชาร์จแบต เสียบหัวพอตให้เข้าที่ และดูว่าไฟหรือข้อความบนจอแปลว่าอะไร",
     category: "maintenance",
     readingTimeMin: 8,
     publishedAt: "2026-09-24",
+    thaiOnly: true,
     body: [
       {
         heading: "เช็คอย่างแรก: แกะพลาสติกที่ก้นพอตหรือยัง",
@@ -734,7 +738,7 @@ const allGuides: Guide[] = [
           },
           {
             heading: "ถอดหัวพอตแล้วเสียบใหม่ให้เข้าที่",
-            paragraphs: ["ตามคู่มือของ UWELL ถ้าเครื่องไม่เจอหัวพอต Caliburn G4 จะขึ้น No Atomizer ส่วน G4 Mini จะกระพริบไฟน้ำเงิน 3 ครั้ง แปลว่าหัวพอตเสียบไม่เข้าที่ ถอดออกแล้วเสียบกลับให้แน่น เครื่องที่ใช้หัวพอต เช่น M Switch ก็ลองแบบเดียวกันได้"],
+            paragraphs: ["ตามคู่มือของ UWELL ถ้าเครื่องไม่เจอหัวพอต Caliburn G4 จะขึ้น No Atomizer ส่วน G4 Mini จะกะพริบไฟน้ำเงิน 3 ครั้ง แปลว่าหัวพอตเสียบไม่เข้าที่ ถอดออกแล้วเสียบกลับให้แน่น เครื่องที่ใช้หัวพอต เช่น M Switch ก็ลองแบบเดียวกันได้"],
           },
           {
             heading: "อย่าดูดค้างนาน",
@@ -747,14 +751,14 @@ const allGuides: Guide[] = [
         ],
       },
       {
-        heading: "ไฟกระพริบแบบไหน แปลว่าอะไร (Caliburn)",
+        heading: "ไฟกะพริบแบบไหน แปลว่าอะไร (Caliburn)",
         paragraphs: ["ไฟหรือข้อความบนจอของแต่ละรุ่นแปลไม่เหมือนกัน ที่เราหาคู่มือเจอและบอกไว้ชัดคือตระกูล Caliburn ข้างล่างนี้มาจากคู่มือของ UWELL ทั้งหมด"],
         subsections: [
           {
             heading: "Caliburn G4 Mini ดูจากสีไฟ",
             paragraphs: [
-              "[Caliburn G4 Mini](/products/caliburn-g4-mini) ไม่มีจอ บอกสถานะด้วยสีไฟกับจำนวนครั้งที่กระพริบ ไฟแดงกระพริบ 3 ครั้งตอนสูบ คือหัวพอตช็อต ไฟแดงกระพริบ 10 ครั้ง คือแบตต่ำ ไฟเขียวกระพริบ 5 ครั้ง คือดูดค้างเกิน 8 วินาที",
-              "ไฟน้ำเงินกระพริบ 3 ครั้ง คือวงจรไม่ครบ หัวพอตเสียบไม่เข้าที่ ไฟน้ำเงินกระพริบ 2 ครั้ง คือหัวพอตถูกถอด ส่วนตอนชาร์จ ไฟเขียวคือแบตเกิน 60% น้ำเงินคือ 30–60% แดงคือต่ำกว่า 30%",
+              "[Caliburn G4 Mini](/products/caliburn-g4-mini) ไม่มีจอ บอกสถานะด้วยสีไฟกับจำนวนครั้งที่กะพริบ ไฟแดงกะพริบ 3 ครั้งตอนสูบ คือหัวพอตช็อต ไฟแดงกะพริบ 10 ครั้ง คือแบตต่ำ ไฟเขียวกะพริบ 5 ครั้ง คือดูดค้างเกิน 8 วินาที",
+              "ไฟน้ำเงินกะพริบ 3 ครั้ง คือวงจรไม่ครบ หัวพอตเสียบไม่เข้าที่ ไฟน้ำเงินกะพริบ 2 ครั้ง คือหัวพอตถูกถอด ส่วนตอนชาร์จ ไฟเขียวคือแบตเกิน 60% น้ำเงินคือ 30–60% แดงคือต่ำกว่า 30%",
             ],
           },
           {
@@ -769,8 +773,8 @@ const allGuides: Guide[] = [
       {
         heading: "M Switch · M Bar และรุ่นอื่น ยังไม่มีตารางไฟจากผู้ผลิต",
         paragraphs: [
-          "SALTHUB ไม่ได้ลงความหมายไฟกระพริบของ M Bar กับ M Switch ไว้บนเว็บทางการ ส่วน RELX · Joiway และ ARGUS เรายังหาตารางแบบนี้จากผู้ผลิตไม่เจอ เลยไม่เดาว่าไฟแต่ละแบบแปลว่าอะไร",
-          "M Switch ดูดไม่ขึ้น ไฟกระพริบ ให้ไล่แบบเดียวกัน แกะพลาสติกที่ก้นพอต ชาร์จผ่าน USB-C ถอด [M Switch Pod](/products/m-switch-pod) แล้วเสียบกลับให้เข้าที่ และอย่าดูดค้างนาน",
+          "SALTHUB ไม่ได้ลงความหมายไฟกะพริบของ M Bar กับ M Switch ไว้บนเว็บทางการ ส่วน RELX · Joiway และ ARGUS เรายังหาตารางแบบนี้จากผู้ผลิตไม่เจอ เลยไม่เดาว่าไฟแต่ละแบบแปลว่าอะไร",
+          "M Switch ดูดไม่ขึ้น ไฟกะพริบ ให้ไล่แบบเดียวกัน แกะพลาสติกที่ก้นพอต ชาร์จผ่าน USB-C ถอด [M Switch Pod](/products/m-switch-pod) แล้วเสียบกลับให้เข้าที่ และอย่าดูดค้างนาน",
         ],
       },
       {
@@ -784,16 +788,16 @@ const allGuides: Guide[] = [
     relatedProductSlugs: ["m-switch-pod", "caliburn-g4-mini", "caliburn-g4"],
     faq: [
       {
-        question: "M Switch ดูดไม่ขึ้น ไฟกระพริบ ทำไง",
-        answer: "SALTHUB ไม่ได้ลงความหมายไฟกระพริบของ M Switch ไว้ ให้เช็คว่าแกะพลาสติกที่ก้นพอตแล้ว ชาร์จผ่าน USB-C แล้วถอดหัวพอตเสียบกลับให้เข้าที่ ถ้าดูดขึ้นแต่มีกลิ่นไหม้หรือรสไม่มา ก็ถึงเวลาเปลี่ยนหัวพอตใหม่",
+        question: "M Switch ดูดไม่ขึ้น ไฟกะพริบ ทำไง",
+        answer: "SALTHUB ไม่ได้ลงความหมายไฟกะพริบของ M Switch ไว้ ให้เช็คว่าแกะพลาสติกที่ก้นพอตแล้ว ชาร์จผ่าน USB-C แล้วถอดหัวพอตเสียบกลับให้เข้าที่ ถ้าดูดขึ้นแต่มีกลิ่นไหม้หรือรสไม่มา ก็ถึงเวลาเปลี่ยนหัวพอตใหม่",
       },
       {
         question: "Caliburn ขึ้น No Atomizer แก้ยังไง",
         answer: "ตามคู่มือของ UWELL แปลว่าเครื่องไม่เจอหัวพอต ถอดหัวพอตออกแล้วเสียบกลับให้เข้าที่",
       },
       {
-        question: "Caliburn G4 Mini ไฟแดงกระพริบ แปลว่าอะไร",
-        answer: "ตามคู่มือของ UWELL ถ้ากระพริบ 3 ครั้งตอนสูบ คือหัวพอตช็อต ถ้ากระพริบ 10 ครั้ง คือแบตต่ำ ให้ชาร์จก่อน",
+        question: "Caliburn G4 Mini ไฟแดงกะพริบ แปลว่าอะไร",
+        answer: "ตามคู่มือของ UWELL ถ้ากะพริบ 3 ครั้งตอนสูบ คือหัวพอตช็อต ถ้ากะพริบ 10 ครั้ง คือแบตต่ำ ให้ชาร์จก่อน",
       },
       {
         question: "พอตใช้แล้วทิ้งดูดไม่ขึ้น ทำยังไง",
@@ -805,7 +809,7 @@ const allGuides: Guide[] = [
   },
   {
     // Round 10B T11 — writer draft 1 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-1-result.md.
-    // M Switch battery (600mAh on salthub.com/m-switch/) is deliberately NOT stated: the m-switch-kit spec row is still
+    // M Switch battery (600mAh on salthub.com — /m-switch/ now redirects to the home page) is deliberately NOT stated: the m-switch-kit spec row is still
     // unverified and the live guide open-system-vs-disposable says so — one site, one answer until the data round decides.
     id: "esko-bar-switch-vs-m-switch",
     slug: "esko-bar-switch-vs-m-switch",
@@ -814,13 +818,14 @@ const allGuides: Guide[] = [
     category: "buying-guide",
     readingTimeMin: 6,
     publishedAt: "2026-09-24",
+    thaiOnly: true,
     body: [
       {
         heading: "Esko Bar Switch 20K กับ M Switch ต่างกันยังไง",
         paragraphs: [
           "ทั้งสองรุ่นเป็นเครื่องระบบสวิตช์ เก็บตัวเครื่องไว้ชาร์จใช้ต่อ เปลี่ยนแค่หัวพอต ที่ต่างคือตัวเลข ตามเว็บผู้ผลิต Esko Bar Switch 20K หัวละ 20,000 พัฟ แบต 850mAh มีโหมด High กับ Low และปรับช่องลมได้ 3 ระดับ ส่วน M Switch หัวละ 15,000 พัฟ",
           "M Switch เป็นของ SALTHUB ตระกูลเดียวกับที่หลายร้านเรียกว่า Marbo ส่วน Esko Bar เป็นอีกแบรนด์หนึ่ง",
-          "ตัวเลขในบทความนี้มาจาก [เว็บ Esko Bar](https://eskobarvape.com/product/pod-system/) กับ [เว็บ SALTHUB](https://www.salthub.com/m-switch/) ยกเว้นความจุหัว M Switch Pod ที่มาจากสเปกที่ยืนยันแล้วบนเว็บเรา ข้อไหนผู้ผลิตไม่ได้เขียนไว้ เราก็บอกว่าไม่ได้เขียน ไม่เติมตัวเลขเอง",
+          "ตัวเลขในบทความนี้มาจาก [เว็บ Esko Bar](https://eskobarvape.com/product/pod-system/) กับ [เว็บ SALTHUB](https://www.salthub.com/) ยกเว้นความจุหัว M Switch Pod ที่มาจากสเปกที่ยืนยันแล้วบนเว็บเรา ข้อไหนผู้ผลิตไม่ได้เขียนไว้ เราก็บอกว่าไม่ได้เขียน ไม่เติมตัวเลขเอง",
         ],
       },
       {
@@ -835,17 +840,17 @@ const allGuides: Guide[] = [
         paragraphs: [],
         subsections: [
           { heading: "จำนวนพัฟต่อหัว", paragraphs: ["Esko Bar Switch 20K หัวละ 20,000 พัฟ ส่วน M Switch หัวละ 15,000 พัฟ"] },
-          { heading: "ความจุน้ำยา", paragraphs: ["Esko เขียนว่าความจุ 18mL ส่วนหน้า M Switch ของ SALTHUB ไม่ได้เขียนตัวเลขนี้ สเปกที่ยืนยันแล้วบนเว็บเราระบุว่าหัว M Switch Pod บรรจุสำเร็จ 2.2mL"] },
+          { heading: "ความจุน้ำยา", paragraphs: ["Esko เขียนว่าความจุ 18mL ส่วนเว็บ SALTHUB ไม่ได้เขียนความจุของหัว M Switch Pod สเปกที่ยืนยันแล้วบนเว็บเราระบุว่าหัว M Switch Pod บรรจุสำเร็จ 2.2mL"] },
           { heading: "ความเข้มข้นนิโคติน", paragraphs: ["M Switch ระบุ 30mg แบบ salt nic ส่วนเว็บ Esko Bar ไม่ได้เขียนความเข้มข้นไว้ เราเลยไม่ใส่ตัวเลข"] },
           { heading: "แบตและการชาร์จ", paragraphs: ["Esko Bar Switch 20K แบต 850mAh ชาร์จที่ 5V 0.85A ส่วนความจุแบตของ M Switch หน้าสินค้าบนเว็บเรายังไม่ยืนยัน เลยไม่เอาตัวเลขมาเทียบ ทั้งคู่ชาร์จผ่าน USB-C"] },
           { heading: "คอยล์", paragraphs: ["Esko เขียนว่าเป็นระบบ Dual Coil (คอยล์สองตัว) ส่วน M Switch ใช้คอยล์ cotton mesh 1.0 โอห์ม"] },
-          { heading: "โหมดและช่องลม", paragraphs: ["Esko มีโหมด High กับ Low และปรับช่องลมได้ 3 ระดับ หน้า M Switch ของ SALTHUB ไม่ได้เขียนเรื่องโหมดหรือช่องลมไว้"] },
+          { heading: "โหมดและช่องลม", paragraphs: ["Esko มีโหมด High กับ Low และปรับช่องลมได้ 3 ระดับ เว็บ SALTHUB ไม่ได้เขียนเรื่องโหมดหรือช่องลมของ M Switch ไว้"] },
         ],
       },
       {
         heading: "เลือกตามอะไร",
         paragraphs: [
-          "ไม่มีรุ่นไหนชนะขาด ดูว่าอะไรสำคัญกับคุณ อยากได้พัฟต่อหัวที่มากกว่า ตามสเปกผู้ผลิต Esko Bar Switch 20K ตัวเลขสูงกว่า อยากปรับโหมดหรือปรับช่องลมเอง Esko เขียนไว้ว่ามี ส่วนหน้า M Switch ไม่ได้เขียนเรื่องนี้",
+          "ไม่มีรุ่นไหนชนะขาด ดูว่าอะไรสำคัญกับคุณ อยากได้พัฟต่อหัวที่มากกว่า ตามสเปกผู้ผลิต Esko Bar Switch 20K ตัวเลขสูงกว่า อยากปรับโหมดหรือปรับช่องลมเอง Esko เขียนไว้ว่ามี ส่วนเว็บ SALTHUB ไม่ได้เขียนเรื่องนี้ของ M Switch",
           "ถ้าต้องรู้ความเข้มข้นนิโคตินก่อนเลือก ฝั่ง M Switch เขียนไว้ 30mg ส่วน Esko ไม่ได้บอก ถ้าใช้ M Bar อยู่แล้ว M Switch เป็นของ SALTHUB เจ้าเดียวกัน",
           "ที่ร้าน ลูกค้าที่ลังเลระหว่างสองรุ่นนี้ สุดท้ายเลือกพอ ๆ กัน แต่เอนไปทาง M Switch เรื่องนี้บอกแค่ว่าคนเลือกอะไร ไม่ได้บอกว่ารุ่นไหนดีกว่า",
           "ยังไม่แน่ใจว่าจะเอาเครื่องระบบสวิตช์หรือพอตใช้แล้วทิ้ง อ่าน [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) รุ่นอื่นของสองแบรนด์อยู่ที่ [Esko Bar](/brands/esko-bar) กับ [SALTHUB](/brands/salthub)",
@@ -855,19 +860,19 @@ const allGuides: Guide[] = [
     relatedProductSlugs: ["pod-159", "m-switch-pod"],
     faq: [
       {
-        question: "esko bar switch 20k เปลี่ยนหัวได้ไหม",
+        question: "Esko Bar Switch 20K เปลี่ยนหัวได้ไหม",
         answer: "ได้ ผู้ผลิตระบุว่าเป็นหัวพอตแบบถอดเปลี่ยนได้ ตัวแบตกับถังน้ำยาแยกจากกัน เปลี่ยนกลิ่นได้โดยไม่ต้องเปลี่ยนทั้งเครื่อง",
       },
       {
-        question: "esko bar switch 20k นิโคตินกี่ mg",
+        question: "Esko Bar Switch 20K นิโคตินกี่ mg",
         answer: "เว็บ Esko Bar ไม่ได้เขียนความเข้มข้นไว้ เราเลยไม่ใส่ตัวเลข ถ้าจะเทียบ M Switch ระบุไว้ 30mg แบบ salt nic",
       },
       {
-        question: "esko bar กับ marbo ต่างกันไหม",
+        question: "Esko Bar กับ Marbo ต่างกันไหม",
         answer: "เป็นคนละแบรนด์ Marbo คือชื่อที่หลายร้านใช้เรียกของ SALTHUB อย่าง M Bar กับ M Switch ถ้าเทียบรุ่นเปลี่ยนหัวด้วยกัน คู่ที่ใกล้กันคือ Esko Bar Switch 20K กับ M Switch",
       },
       {
-        question: "esko bar switch 20k ชาร์จยังไง",
+        question: "Esko Bar Switch 20K ชาร์จยังไง",
         answer: "ชาร์จผ่าน USB-C ผู้ผลิตระบุการชาร์จที่ 5V 0.85A แบตในตัว 850mAh",
       },
     ],
@@ -886,6 +891,7 @@ const allGuides: Guide[] = [
     category: "buying-guide",
     readingTimeMin: 7,
     publishedAt: "2026-09-24",
+    thaiOnly: true,
     body: [
       {
         heading: "สรุปก่อน: ต่างกันตรงไหน",
@@ -979,6 +985,7 @@ const allGuides: Guide[] = [
     category: "buying-guide",
     readingTimeMin: 5,
     publishedAt: "2026-09-24",
+    thaiOnly: true,
     body: [
       {
         heading: "ตัวไหนดีกว่า: ไม่มีคำตอบที่แน่นอน",
