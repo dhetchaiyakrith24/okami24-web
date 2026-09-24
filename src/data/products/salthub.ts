@@ -491,6 +491,8 @@ export const salthubProducts: Product[] = [
       { key: "capacity", label: "Capacity", value: "2.2mL prefilled", sourceStatus: "unverified" },
       { key: "battery", label: "Battery", value: "600mAh", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
       { key: "compat", label: "Compatible device", value: "M Switch Kit", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      // Data round chat 2 (real browser, 2026-09-24): the same "THE BENEFITS — M SWITCH POD" block states "Resistance 1.0 Ω".
+      { key: "resistance", label: "Resistance", value: "1.0Ω", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
     ],
     features: [],
     compatibility: [{ type: "cartridge", label: "M Switch Kit device body" }],
@@ -531,8 +533,10 @@ export const salthubProducts: Product[] = [
       },
     ],
     specifications: [
-      { key: "flavors", label: "Flavor range", value: "15+ flavors", sourceStatus: "verified" },
-      { key: "capacity", label: "Capacity", value: "Not independently confirmed", sourceStatus: "unverified" },
+      // Data round chat 2 (real browser, 2026-09-24): salthub.com's product box "M BAR POD — Compatible for Switch Series ·
+      // E-liquid Capacity: 2.2mL · 15+ Flavors". The capacity was held back before only because nobody had read it there.
+      { key: "flavors", label: "Flavor range", value: "15+ flavors", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      { key: "capacity", label: "Capacity", value: "2.2mL", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
     ],
     features: [],
     compatibility: [{ type: "cartridge", label: "M Bar-compatible reusable devices" }],
