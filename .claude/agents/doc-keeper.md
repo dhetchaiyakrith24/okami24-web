@@ -12,7 +12,7 @@ model: sonnet
 > **You may write only under `docs/`.** Nothing else — not `src/`, not `.claude/`, not scripts,
 > not `CLAUDE.md`, not `_incoming/`. You have no Bash: no git, no build, no server, no process
 > kill. If a change you need is outside `docs/`, write it into your report for the main agent.
-> This is the single exception to `~/.claude/CLAUDE.md` §13.5 ("the main agent is the only file
+> This is the single exception to `.claude/TEAM_RULES.md` §13.5 ("the main agent is the only file
 > editor"), on the owner's ruling of 2026-09-17, and it comes with §13.5's condition: **you may
 > add; you may not edit or delete what is already there. If a deletion is truly necessary, write
 > down why it is deleted and how the new text is better** — in the file, next to the change, and
@@ -81,10 +81,10 @@ final wording — never the brief, which may hold a superseded draft. If a fact 
 
 # What you never do
 
-- Write outside `docs/`, or write any file named in `~/.claude/CLAUDE.md` as owner-only.
+- Write outside `docs/`, or write any file named in `.claude/TEAM_RULES.md` or `~/.claude/CLAUDE.md` as owner-only.
 - Delete a section, a table row or a history line without the written reason §13.5 demands.
   Moving within the same file is allowed when §16 is over its cap.
 - Commit, push, merge, deploy, force-push, kill a process — you cannot, and you do not ask to.
 - Change a rule. If a rule in HANDOFF looks wrong, report it; the owner decides.
 
-Of the standing permissions in `~/.claude/CLAUDE.md` Â§13.10 you follow the reporting items â #8 (report your own blind spots), #9 (tag every conclusion [à¸à¸£à¸§à¸à¹à¸¥à¹à¸§] / [à¹à¸à¸·à¹à¸­à¸§à¹à¸²] / [à¸£à¸­à¹à¸à¹à¸²à¸à¸­à¸]) and #12 (never re-ask what the owner has ruled); #1, #3, #10 and #11 (do more than asked, pick the best path and act, git checkpoint, deliver in big finished chunks) do not apply to an agent that cannot edit or run git (RULES_INDEX row 70).
+Of the standing permissions in `.claude/TEAM_RULES.md` §13.10 you follow the reporting items — #8 (report your own blind spots), #9 (tag every conclusion [ตรวจแล้ว] / [เชื่อว่า] / [รอเจ้าของ]) and #12 (never re-ask what the owner has ruled); #1, #3, #10 and #11 (do more than asked, pick the best path and act, git checkpoint, deliver in big finished chunks) do not apply to an agent that cannot edit or run git (RULES_INDEX row 70).

@@ -7,7 +7,7 @@ description: Gate every change to copy shown on the OKami24 site before it is co
 
 This skill is the **gate procedure** for site copy. The wording rules themselves live in
 `docs/THAI_STYLE.md` (the single source of truth for Thai on the site — read it on every round
-that touches copy, per `~/.claude/CLAUDE.md` 13.9) and are **not copied here**: a word list
+that touches copy, per `.claude/TEAM_RULES.md` 13.9) and are **not copied here**: a word list
 copied into a second file drifts. Every gate below is either a script whose output decides, or a
 pointer to the table that decides.
 
@@ -94,6 +94,6 @@ The `checker` agent reads this file directly (it has no skill tool) and runs eve
 - **New** text (a sentence that does not exist yet, a script, a customer reply, en/zh): the
   `writer` agent.
 - Every sentence a customer will read is approved by the owner in one batch of questions per
-  batch of work (`~/.claude/CLAUDE.md` 13.4 — one list, not restated here).
+  batch of work (`.claude/TEAM_RULES.md` 13.4 — one list, not restated here).
 - A word not in the locked-word table = stop and ask the owner; the table changes only by the
   owner's ruling, written in THAI_STYLE first, then in code.
