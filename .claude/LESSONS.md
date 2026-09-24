@@ -2,9 +2,9 @@
 
 > Moved word for word from this project's memory file `lessons-what-worked.md` on 2026-09-25 ("rules move" round,
 > owner ruling 25/09 #5) so cloud sessions see it; frontmatter dropped, body unchanged. Pointer: `.claude/TEAM_RULES.md`,
-> block "ย้ายมาจาก memory 25/09". Not auto-loaded — open before deciding "the order is fine, but there is a better way".
-> The memory file still exists (no memory file is deleted this round). Which of the two is "the one place" for new
-> lessons (the body below says "ที่เดียว") is waiting on the owner — listed in the rules-move round report.
+> block "ย้ายมาจาก memory 25/09". Not auto-loaded — read at round open (skill `round-open` step 1) and before deciding
+> "the order is fine, but there is a better way". **This file is the one place for new lessons** (owner ruling
+> 2026-09-25) — "ที่เดียว" in the body below now means this file; the memory copy is removed once the rules-move tests pass (owner ruling ง).
 
 ---
 ที่เดียวสำหรับบทเรียน **ฝั่งที่ได้ผล** ของตัวเอง — เจ้าของสั่งไว้ 2026-09-23: ไม่ใช่จดแค่ตอนพลาด
@@ -51,7 +51,7 @@ checker ไปแกะ AST เทียบทีละฟิลด์เอง�
 
 `thaiTypography` แทรก WORD JOINER กลางคำตอน render → `grep "หัวพอต"` ใน HTML ที่เสิร์ฟจริง
 ได้ 0 ทั้งที่คำอยู่บนหน้า · ครั้งแรกที่เจอเกือบสรุปผิดว่าประโยคไม่ได้ขึ้นหน้าแบรนด์
-**สูตร:** `html.replace(/[⁠ ]/g,"")` ก่อน match เสมอ · ใช้ตอนพิสูจน์ว่าคำเก่าหายครบ
+**สูตร:** `html.replace(/[\u2060\u00A0]/g,"")` ก่อน match เสมอ · ใช้ตอนพิสูจน์ว่าคำเก่าหายครบ
 ทุกหน้า/คำใหม่ขึ้นเฉพาะหน้าที่ควรขึ้น (B2 กวาด 18 หน้า: เก่า 0/18 · ใหม่เฉพาะ 2 หน้า)
 
 ## 2. ถามว่า "ข้อความจะไหลผ่านกลไกไหนบ้าง" ก่อนเลือกที่เก็บข้อความ
