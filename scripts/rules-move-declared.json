@@ -1,0 +1,41 @@
+{
+  "_about": "Declared changes of the 'rules move' round (2026-09-25). centralEdits = the only lines of ~/.claude/CLAUDE.md §1–11 that change (owner ruling 25/09 #2: §3 'หน้าตาเว็บ', §6 browser + desktop/mobile lines, §8 RULES_INDEX parenthesis). Each 'before' line must reappear verbatim in .claude/TEAM_RULES.md. Read by scripts/rules-move-check.js.",
+  "backup": "docs/archive/claude-config-2026-09-25/CLAUDE.md",
+  "allowLines": [
+    {
+      "file": "docs/HANDOFF.md",
+      "contains": "This is a full rewrite (skill `handoff`, owner typed `/handoff`",
+      "why": "history: the v55 handoff of 2026-09-22 was written with the skill as it was named then"
+    }
+  ],
+  "centralEdits": [
+    {
+      "line": 39,
+      "section": "§3",
+      "before": "ใช้กับงานที่กระทบหลายไฟล์ เปลี่ยนโครงสร้าง หรือเปลี่ยนหน้าตาเว็บอย่างมีนัยสำคัญ",
+      "after": "ใช้กับงานที่กระทบหลายไฟล์ เปลี่ยนโครงสร้าง หรือเปลี่ยนหน้าตาของงานอย่างมีนัยสำคัญ",
+      "why": "'เว็บ' is web-specific; the central file is shared with non-web projects"
+    },
+    {
+      "line": 75,
+      "section": "§6",
+      "before": "* ทำเสร็จต้องเปิดดูผลจริงในเบราว์เซอร์ + แคปหน้าจอมาให้ดู **ห้ามส่งแค่โค้ด**",
+      "after": "* ทำเสร็จต้องเปิดดูผลจริง + แคปหน้าจอหรือส่งภาพผลจริงมาให้ดู **ห้ามส่งแค่โค้ด**",
+      "why": "'ในเบราว์เซอร์' is web-specific"
+    },
+    {
+      "line": 76,
+      "section": "§6",
+      "before": "* เช็คทั้งจอคอมและจอมือถือ",
+      "after": "* เช็คทุกขนาดจอหรือทุกที่ที่งานนั้นจะไปแสดง",
+      "why": "desktop + mobile screens is web-specific"
+    },
+    {
+      "line": 99,
+      "section": "§8",
+      "before": "* **ห้ามกุตัวเลข สถิติ รีวิว หรือผลลัพธ์ลูกค้าขึ้นมาเอง** ไม่มีข้อมูลจริงให้ใส่ `[ยังไม่มีข้อมูล]` (ป้ายเดียวกันทุก agent รวม researcher — RULES_INDEX แถว 64 · 2026-09-17)",
+      "after": "* **ห้ามกุตัวเลข สถิติ รีวิว หรือผลลัพธ์ลูกค้าขึ้นมาเอง** ไม่มีข้อมูลจริงให้ใส่ `[ยังไม่มีข้อมูล]`",
+      "why": "the parenthesis points at this repo's docs/RULES_INDEX.md"
+    }
+  ]
+}

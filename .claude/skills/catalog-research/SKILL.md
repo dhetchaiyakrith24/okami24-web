@@ -108,7 +108,7 @@ produced this Skill ran research as read-only subagents, then applied their find
 ## Scaffolding a research subagent (for parallel/batch work)
 
 When researching several products at once, dispatch parallel background `researcher` agents (the
-read-only research role in `~/.claude/CLAUDE.md` 13.3 — never `general-purpose`; RULES_INDEX row 11)
+read-only research role in `.claude/TEAM_RULES.md` 13.3 — never `general-purpose`; RULES_INDEX row 11)
 rather than doing it serially. Each agent's prompt should be self-contained and include:
 
 1. The exact Shipnity id(s), names, prices, and active children (copy straight from

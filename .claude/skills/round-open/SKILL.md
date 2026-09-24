@@ -6,7 +6,7 @@ description: Open a work round for the OKami24 site — any round, whatever its 
 # Round open
 
 This skill is the **procedure** for starting a round. It holds no rule of its own — every
-rule stays where it lives (`~/.claude/CLAUDE.md` section 13, `docs/HANDOFF.md`, `docs/THAI_STYLE.md`)
+rule stays where it lives (`.claude/TEAM_RULES.md` section 13, `docs/HANDOFF.md`, `docs/THAI_STYLE.md`)
 and this file only says in what order to pick them up. Never copy a number, a file name, a page
 count, a commit hash or a section number from one of those files into this one: things that
 change are read from their source at the moment they are needed.
@@ -22,7 +22,7 @@ The owner sends **a goal plus a pass criterion** in a round instruction file wri
 
 ## Step 1 — Read before anything else (the single "read first" list)
 
-This is the one and only "read before starting" list of the team — `~/.claude/CLAUDE.md` 13.2
+This is the one and only "read before starting" list of the team — `.claude/TEAM_RULES.md` 13.2
 item 1 and 13.9 point here, and so does the head of `docs/HANDOFF.md`. Do not restate it anywhere
 else.
 
@@ -67,7 +67,7 @@ the rules it judges the instruction against are `docs/TEMPLATES.md` (ค).
 - **ข้อห้ามจริง** — the bans and facts of this round, restated in one line each ONLY where
   obeying them changes what gets built (a ban you would have honoured anyway is not worth a line).
 - **บอกวิธีทั้งที่ไม่จำเป็น** — where the instruction prescribes a method: say which way you will
-  take instead and why. This is the standing right of `~/.claude/CLAUDE.md` 13.10 #2 (argue back
+  take instead and why. This is the standing right of `.claude/TEAM_RULES.md` 13.10 #2 (argue back
   with a reason, before starting) used here rather than halfway through. **Do not wait for an
   answer** — 13.2 item 3 still applies: say it and start.
 - **กำกวม** — wording that reads two ways and would send the work in different directions. Only
@@ -90,7 +90,7 @@ gates for a week). The list it returns becomes the checker's page list for every
 round.
 
 Do not call it again during the round; if the scope changes mid-round, that is a stop-and-ask
-case (`~/.claude/CLAUDE.md` 13.4).
+case (`.claude/TEAM_RULES.md` 13.4).
 
 ## Step 5 — Decide tier A or tier B for each batch
 
@@ -102,8 +102,8 @@ tier B (full proof: build → shoot before → shoot after → designer → owne
 ## Step 6 — Split the round into batches
 
 Break the goal into checkable steps with a "how we know it is done" line each; the size cap and
-the planner rule live in `~/.claude/CLAUDE.md` 13.2 item 2 (one place) — a round that is big by
-the criteria of section 3 there goes to the `planner` agent, a small one is split by the main
+the planner rule live in `.claude/TEAM_RULES.md` 13.2 item 2 (one place) — a round that is big by
+the criteria of section 3 (`~/.claude/CLAUDE.md` §3, read with the web block at the end of TEAM_RULES) goes to the `planner` agent, a small one is split by the main
 agent. Then tell the owner in 3–5 lines what will be done in what order and **start** — no
 approval wait, unless a 13.4 case is already visible.
 
@@ -120,6 +120,6 @@ writes the opening line). This is what lets a chat close at any moment without l
 
 ## When to stop and ask the owner
 
-The single list is `~/.claude/CLAUDE.md` **13.4** — do not restate it here. Everything outside
+The single list is `.claude/TEAM_RULES.md` **13.4** — do not restate it here. Everything outside
 that list: decide, do it, and write the decision in item 3 of the report
 (`docs/TEMPLATES.md` template (ข)).

@@ -88,7 +88,7 @@ tools; when a number is not on a page you fetched, write `[ยังไม่ม
   lands). `researcher` answers fact questions from any source; you capture this site's rendered
   head / JSON-LD / links before an edit and at close — if both could serve, the main agent picks.
 
-Of the standing permissions in `~/.claude/CLAUDE.md` §13.10 you follow the reporting items — #8
+Of the standing permissions in `.claude/TEAM_RULES.md` §13.10 you follow the reporting items — #8
 (report your own blind spots), #9 (tag every conclusion [ตรวจแล้ว] / [เชื่อว่า] / [รอเจ้าของ]) and #12
 (never re-ask what the owner has ruled); #1, #3, #10 and #11 do not apply: you produce no commit
 and write no file (RULES_INDEX row 70).

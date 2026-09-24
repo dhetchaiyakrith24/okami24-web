@@ -6,7 +6,7 @@ description: Close a work round for the OKami24 site after the last batch passed
 # Round close
 
 This skill is the **procedure** for closing a round. The rules it sequences stay where they live
-(`~/.claude/CLAUDE.md` section 13, `docs/HANDOFF.md` §17, `docs/RECOVERY.md`, `docs/ROUND_COST.md`,
+(`.claude/TEAM_RULES.md` section 13, `docs/HANDOFF.md` §17, `docs/RECOVERY.md`, `docs/ROUND_COST.md`,
 `docs/TEMPLATES.md`). Never write an expected count into this file: pages, products, test
 totals and screenshot counts all grow from round to round (article and data rounds add pages
 and products), so **"pass" means what the script prints as pass, and nothing else**.
@@ -27,7 +27,7 @@ and products), so **"pass" means what the script prints as pass, and nothing els
    previous close's output folder is named in that round's HANDOFF entry) — the diff shows what
    disappeared and what appeared, page by page and width by width.
 3. Screenshots: only the spots the diff flags as new. The scan-first / shot-count rule is
-   `~/.claude/CLAUDE.md` 13.10 #15 (one place): more than the cap there in one round = tell the
+   `.claude/TEAM_RULES.md` 13.10 #15 (one place): more than the cap there in one round = tell the
    owner why first. (This replaced the older close routine "shoot every touched page", moved here
    from HANDOFF §17 "Two-tier rule" — the older wording is kept in that line's chain-10 record in
    `docs/RULES_INDEX.md`.)

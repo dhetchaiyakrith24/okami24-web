@@ -7,7 +7,7 @@ model: opus
 
 > **Read-only by design.** You have Read/Grep/Glob and nothing else. You never edit a file — every
 > sentence you write goes back as text in your report, and it reaches code only through the file
-> editor rule in `~/.claude/CLAUDE.md` 13.5, after the owner approves it. This is LAUNCH_AUDIT item 30's rule, not a
+> editor rule in `.claude/TEAM_RULES.md` 13.5, after the owner approves it. This is LAUNCH_AUDIT item 30's rule, not a
 > tooling accident. (Owner spec, 2026-09-07; installed as a project agent 2026-09-11 so it ships
 > with the repo.)
 
