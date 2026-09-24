@@ -845,12 +845,15 @@ export const uwellProducts: Product[] = [
       },
     ],
     specifications: [
-      { key: "battery", label: "Battery", value: "1300mAh built-in", sourceStatus: "verified" },
-      { key: "charge-time", label: "Charge time", value: "~30 minutes at 2A", sourceStatus: "verified" },
-      { key: "screen", label: "Display", value: "Colour screen with power-mode selection", sourceStatus: "verified" },
-      { key: "firing", label: "Firing", value: "Button-fired", sourceStatus: "verified" },
-      { key: "pod-compat", label: "Pod platform", value: "UWELL GPP pods (0.4Ω / 0.9Ω included; 0.6Ω / 1.2Ω sold separately)", sourceStatus: "verified" },
-      { key: "output", label: "Max output", value: "Not independently confirmed for this exact model", sourceStatus: "unverified" },
+      // Data round (2026-09-24, real browser): UWELL's G4 spec image + product page + the G4 manual copy on manuals.plus.
+      // "~30 minutes" is on none of them (the page says "5V/2A fast charging"); the manual says the device fires on a draw
+      // OR the button (auto mode), not "button-fired"; "0.6Ω / 1.2Ω sold separately" is not UWELL's wording.
+      { key: "battery", label: "Battery", value: "1300mAh built-in", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4/pc/specifications.webp" },
+      { key: "charge-time", label: "Charging", value: "USB-C, 5V/2A fast charging", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4" },
+      { key: "screen", label: "Display", value: "0.85\" colour screen, Storm and Waves modes", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4" },
+      { key: "firing", label: "Firing", value: "Draw or button (auto mode)", sourceStatus: "verified", sourceUrl: "https://manuals.plus/m/50a2d62de82f0d181197e7dbdeac724ade1b398ab848d04aaa7b7cec543ee424" },
+      { key: "pod-compat", label: "Pod platform", value: "UWELL GPP pods (FeCrAl meshed 0.4Ω and 0.9Ω in the box)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4/pc/specifications.webp" },
+      { key: "output", label: "Max output", value: "35W", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4/pc/specifications.webp" },
     ],
     features: [
       {
@@ -984,10 +987,13 @@ export const uwellProducts: Product[] = [
       },
     ],
     specifications: [
-      { key: "battery", label: "Battery", value: "1100mAh built-in", sourceStatus: "verified" },
-      { key: "charge-time", label: "Charge time", value: "~58 minutes at 2A", sourceStatus: "verified" },
-      { key: "screen", label: "Display", value: "None — no onboard screen", sourceStatus: "verified" },
-      { key: "pod-compat", label: "Pod platform", value: "UWELL GPP pods (0.4Ω / 0.9Ω included; 0.6Ω / 1.2Ω sold separately)", sourceStatus: "verified" },
+      // Data round (2026-09-24, real browser): UWELL's G4 Mini spec image says the box holds ONE FeCrAl meshed 0.6Ω
+      // cartridge — the old row ("0.4Ω / 0.9Ω included") was wrong. "~58 minutes" is on no UWELL page → unverified.
+      // "No screen": the manual's product overview lists an LED light and no display.
+      { key: "battery", label: "Battery", value: "1100mAh built-in", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4-mini/pc/specifications.webp" },
+      { key: "charge-time", label: "Charge time", value: "~58 minutes at 2A", sourceStatus: "unverified" },
+      { key: "screen", label: "Display", value: "None — no onboard screen", sourceStatus: "verified", sourceUrl: "https://manuals.plus/caliburn/kpn025-g4-mini-kit-manual" },
+      { key: "pod-compat", label: "Pod platform", value: "UWELL GPP pods (FeCrAl meshed 0.6Ω in the box)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4-mini/pc/specifications.webp" },
     ],
     features: [
       {

@@ -14,7 +14,7 @@ export const relxProducts: Product[] = [
     displayName: "RELX SMASH GO 12K",
     tagline: "RELX's official high-puff disposable, MEGA MESH coil.",
     shortDescription:
-      "A 12,000-puff rechargeable disposable from RELX's own official global lineup — 400mAh battery, a 1.0Ω MEGA MESH coil, and a 10-flavor range confirmed directly on relxnow.com.",
+      "A 12,000-puff rechargeable disposable from RELX's own official global lineup — 400mAh battery, a MEGA MESH coil, and a 10-flavor range confirmed directly on relxnow.com.",
     isFlagship: true,
     // Round 30.4 ก8 (owner 2026-09-13): was "Tier-1 priority" — an internal note. The home
     // flagship rail shows this card next to three "รุ่นเรือธง" badges, and the data already says
@@ -64,11 +64,14 @@ export const relxProducts: Product[] = [
       { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon.webp", alt: "RELX Smash Go 12K, Watermelon" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
     ],
     specifications: [
-      { key: "puffs", label: "Rated puffs", value: "Up to 12,000", sourceStatus: "verified" },
-      { key: "battery", label: "Battery", value: "400mAh rechargeable, USB-C", sourceStatus: "verified" },
-      { key: "coil", label: "Coil", value: "MEGA MESH coil, 1.0Ω", sourceStatus: "verified" },
-      { key: "nicotine", label: "Nicotine strength", value: "3% or 5% nicotine salt", sourceStatus: "verified" },
-      { key: "capacity", label: "E-liquid capacity", value: "Not independently confirmed (official page text was ambiguous between 18mL and 20mL)", sourceStatus: "unverified" },
+      // Data round (2026-09-24, real browser): relxnow.com "Specifications" — Battery 400mAh · Size 20ml · Charging Port
+      // Type-C · Puffs 12000 · Nicotine 3% / 5% · "Upgraded Mega MESH". It states no resistance, so "1.0Ω" is dropped;
+      // "Size 20ml" now settles the capacity row that was left unverified as 18-vs-20mL.
+      { key: "puffs", label: "Rated puffs", value: "Up to 12,000", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
+      { key: "battery", label: "Battery", value: "400mAh rechargeable, USB-C", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
+      { key: "coil", label: "Coil", value: "MEGA MESH coil", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
+      { key: "nicotine", label: "Nicotine strength", value: "3% or 5% nicotine salt", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
+      { key: "capacity", label: "E-liquid capacity", value: "20mL", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k" },
     ],
     features: [
       {

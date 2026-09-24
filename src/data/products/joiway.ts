@@ -16,9 +16,9 @@ export const joiwayProducts: Product[] = [
     systemType: "disposable",
     name: "Joiway F3",
     displayName: "JOIWAY F3",
-    tagline: "A real Joiway disposable, confirmed via retailer convergence.",
+    tagline: "The single-flavor Joiway disposable.",
     shortDescription:
-      "A 12,000-puff rechargeable disposable from Joiway (myjoiway.com), a real device manufacturer. Specs below are corroborated across 10+ independent Thai/SEA retailers, but Joiway's own official site could not be directly verified this pass (bot-blocked to automated fetch, not evidence against the product) — see the sourcing note. NOTE: OKami24's own YouTube review content covers the newer Joiway F4 (a genuinely different, dual-flavor device), not F3 — see joiway-f4 for that model. F3 and F4 are confirmed real, separate, currently-sold devices, not inconsistent naming of the same one.",
+      "A disposable from Joiway — the single-flavor model. We could not find the F3 specifications on Joiway's own site, so this page lists no figures yet. OKami24's own YouTube review covers the newer dual-flavor F4 — see that page.",
     isFlagship: false,
     editorialTag: "Retailer-confirmed",
     attributes: {
@@ -113,7 +113,7 @@ export const joiwayProducts: Product[] = [
     displayName: "JOIWAY F4",
     tagline: "The newer, dual-flavor Joiway — matches OKami24's own review.",
     shortDescription:
-      "A dual-flavor, dual-mode disposable (rotate the mouthpiece to switch flavors) — NOS mode rated ~15,000 puffs, TURBO mode ~30,000 puffs (some retailers flatten this to a single \"20,000\" figure). 650mAh, Type-C, mesh coil, 3% nicotine, 20mL, up to 16 flavor combinations. This is the exact model OKami24's own YouTube channel has a real 30-day hands-on review of (\"ประสบการณ์ 30 วัน JOIWAY F4 NOS\") — confirmed via an independent video with an almost-verbatim matching title, so \"F4 NOS\" refers to this device's NOS mode, not a third, separate model.",
+      "A dual-flavor, dual-mode disposable (rotate the mouthpiece to switch flavors). We could not find the F4 specifications on Joiway's own site, so this page lists no figures yet. This is the exact model OKami24's own YouTube channel reviewed over 30 days (\"ประสบการณ์ 30 วัน JOIWAY F4 NOS\").",
     isFlagship: false,
     editorialTag: "Retailer-confirmed",
     // Confirmed via YouTube oEmbed (2026-09-03): real video, owned by youtube.com/@OKMYARZ — one
