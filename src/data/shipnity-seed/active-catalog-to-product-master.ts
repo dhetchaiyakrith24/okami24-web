@@ -546,8 +546,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // retail type-words: "ชุดอุปกรณ์" (device kit, for a pod-kit systemType) and "พอตใช้แล้วทิ้ง"
   // (disposable pod, for a disposable systemType) — factual category words, not marketing copy.
   "Pod-159": {
-    tagline: "เครื่องระบบสวิตช์ Esko Bar Switch 20k จากแบรนด์ ESKO BAR",
-    shortDescription: "เครื่องระบบสวิตช์รุ่น Esko Bar Switch 20k จากแบรนด์ ESKO BAR",
+    tagline: "เครื่องระบบสวิตช์ Esko Bar Switch 20K จากแบรนด์ ESKO BAR",
+    shortDescription: "เครื่องระบบสวิตช์รุ่น Esko Bar Switch 20K จากแบรนด์ ESKO BAR",
   },
   // "Pod-149" copy removed alongside its brand-claim withdrawal above — see TAXONOMY_MATCHES's
   // comment. Copy that names "แบรนด์ SKE" would misattribute the product; MINIMUM_COPY never
