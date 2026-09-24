@@ -18,6 +18,8 @@ import path from "node:path";
 import { allProducts, getFlagshipProducts } from "@/data/products";
 import { allCatalogItems } from "@/lib/catalog-index";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
+import { PRODUCT_DESCRIPTION_HEAD_TH } from "@/i18n/search-head-copy";
+import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 import type { Product } from "@/types/catalog";
 
@@ -31,6 +33,8 @@ export interface VerifiedSpecsContractResult {
 export const SOURCED_ROW_PRODUCTS = [
   // linked by the five live round-10B guides (batch 2 sample check, re-read in a real browser 2026-09-24)
   "m-bar-9k", "m-bar-10k", "m-switch-kit", "m-switch-pod", "relx-smash-go-12k", "caliburn-g4-mini", "caliburn-g4",
+  // rows touched in chat 2 (capacity + flavour range read on salthub.com in a real browser)
+  "m-bar-pod",
 ] as const;
 
 /** Manufacturer domains (and the manual mirror the owner allowed). A reseller domain is never added here. */
@@ -160,6 +164,42 @@ export function runVerifiedSpecsContractTests(): VerifiedSpecsContractResult[] {
   // ---- 6. Product prose states no number its verified rows do not ----
   const prose = allProducts.flatMap(unbackedProseNumbers);
   check(`product copy (en + th) states only numbers its verified rows state (${allProducts.length} products)`, prose.length === 0, prose.join("; ") || "none");
+
+  // ---- 7. Head descriptions + published (Shipnity) product copy (data round chat 2) ----
+  // The meta description is a place a customer reads specs too (Google shows it). A number with a unit there — and in a
+  // published product's tagline (the one line of its own copy a page shows) — must appear, as written, in that product's verified rows or be
+  // one of its option labels ("0.8Ω" is a real option). "2mL" is not backed by "2.0–3.0 mL": the spelling must match.
+  const exact = (s: string) => new Set([...s.matchAll(/\d[\d,.]*/g)].map((m) => m[0].replace(/,/g, "").replace(/\.$/, "")));
+  const published = getPublishedProducts();
+  const headMisses: string[] = [];
+  const scanExact = (slug: string, where: string, text: string, backing: string) => {
+    const ok = exact(backing);
+    for (const m of text.matchAll(UNIT)) {
+      const parts = m[1].replace(/,/g, "").split(/[–-]/).map((x) => x.trim());
+      if (!parts.every((x) => ok.has(x))) headMisses.push(`${slug} ${where}: "${m[0]}"`);
+    }
+  };
+  const catalog = allCatalogItems();
+  for (const [slug, text] of Object.entries(PRODUCT_DESCRIPTION_HEAD_TH)) {
+    const item = catalog.find((i) => i.slug === slug);
+    if (!item) { headMisses.push(`${slug}: head description for a product not on the storefront`); continue; }
+    const options = published.find((p) => p.slug === slug)?.variants.map((v) => v.label).join(" ") ?? "";
+    scanExact(slug, "head", text, `${verifiedRows(item.specifications).map((r) => r.value).join(" | ")} ${options}`);
+  }
+  for (const p of published) {
+    const backing = `${verifiedRows(p.specifications).map((r) => r.value).join(" | ")} ${p.variants.map((v) => v.label).join(" ")}`;
+    scanExact(p.slug, "tagline", p.tagline, backing);
+  }
+  const publishedBadHost = published.flatMap((p) =>
+    p.specifications.flatMap((r) => {
+      const url = (r as { sourceUrl?: string }).sourceUrl;
+      if (!url) return [];
+      const host = new URL(url).hostname.replace(/^www\./, "");
+      return MANUFACTURER_HOSTS.includes(host) ? [] : [`${p.slug}:${r.key} → ${host}`];
+    })
+  );
+  check("every published product row that names a source URL names a manufacturer domain", publishedBadHost.length === 0, publishedBadHost.join(", ") || "none");
+  check(`head descriptions (${Object.keys(PRODUCT_DESCRIPTION_HEAD_TH).length}) and published product copy (${published.length}) state only numbers their verified rows or options state`, headMisses.length === 0, headMisses.join("; ") || "none");
 
   return results;
 }
