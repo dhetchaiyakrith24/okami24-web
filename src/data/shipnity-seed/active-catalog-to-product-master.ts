@@ -113,7 +113,10 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // coil" pattern already found for Coil-56/68/74/87/coil-54/coil-62 — now resolved for Coil-55
   // specifically, not assumed from the pattern alone.
   "Coil-55": { brandId: "uwell", familyId: "caliburn", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name contains "Caliburn" (UWELL CALIBURN family); "หัวแทงค์" + 2-piece box child matches the official Caliburn G2 empty replacement pod (2mL, top-fill, houses the coil), not the coil itself — genuinely distinct from Coil-53' },
-  "Coil-72": { brandId: "voopoo", familyId: "vmate", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Vmate" (VOOPOO VMATE family) + Shipnity "Coil-" prefix' },
+  // Data round (2026-09-24, batch 5): Coil-72 and Coil-89 are pods with a built-in coil (their own copy says "หัวพอต …
+  // คอยล์ในตัว"; VOOPOO's shop page calls the VMATE Cartridge V2 a cartridge with a built-in coil) — moved to
+  // pods-cartridges like Coil-94/74/56/68/83 before them. Slug/URL unchanged (the slug is the product id).
+  "Coil-72": { brandId: "voopoo", familyId: "vmate", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name contains "Vmate" (VOOPOO VMATE family) + Shipnity "Coil-" prefix' },
   // Phase 2.8 correction — official UWELL evidence (myuwell.com/caliburn/caliburn-x) describes
   // the Caliburn X as having a 3 ml REFILLABLE POD with separately replaceable coils. This
   // record's own child ("3ml. / 1 กล่อง 2 หัว" — a 3ml capacity, a pod-level spec, not a coil
@@ -200,7 +203,7 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "Coil-68": { brandId: "voopoo", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัวเปล่า ITO-X" + single color child ("Black") matches official VOOPOO "ITO-X Pod Cartridge 3.5mL" (Black/Silver), not the separate ITO resistance-variant coil line' },
   "Coil-70": { brandId: "dotmod", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "คอยล์ Dotmod Aio V2" states the brand explicitly ("Dotmod"); child "0.7Ω" matches dotmod.com\'s official dotCoils lineup for the dotAIO V2 (0.3Ω/0.7Ω/0.9Ω)' },
   "Coil-63": { brandId: "rincoe", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "Coil Jelly Nano" + child "0.5Ω" matches RINCOE\'s official Jellybox Nano replacement coil (0.5Ω RDL / 1.0Ω MTL mesh options)' },
-  "Coil-89": { brandId: "rincoe", categoryId: "coils-accessories", systemType: "coil", evidence: 'name "Coil Jellybox V" + children "0.8Ω"/"1.0Ω" match RINCOE\'s official Jellybox V replacement pod/coil options (0.8Ω and 1.0Ω mesh) exactly' },
+  "Coil-89": { brandId: "rincoe", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "Coil Jellybox V" + children "0.8Ω"/"1.0Ω" match RINCOE\'s official Jellybox V replacement pod/coil options (0.8Ω and 1.0Ω mesh) exactly' },
 
   // Third Phase 3.5 wave — disposables/cartridges, verified against each brand's official
   // first-party site (WebFetch, not a retailer or reseller). Every one of these has flavor-shaped
@@ -1144,10 +1147,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   },
   "Coil-94": {
     specifications: [
+      // Data round (2026-09-24, batch 5, real browser): UWELL's own GPP page lists these four resistances and a capacity
+      // that depends on the cartridge type — side refill 3.0mL (MTL 0.6–1.2Ω: 2.5mL), top refill RDL 3.0mL / MTL 2.0mL.
+      // The old flat "2mL" came from a shop page (giantvapes.com) and read as if it contradicted the G5's 3mL.
       { key: "resistance-range", label: "ค่าโอห์ม", value: "0.4Ω / 0.6Ω / 0.9Ω / 1.2Ω (mesh)", sourceStatus: "verified" },
-      { key: "capacity", label: "ความจุ", value: "2mL", sourceStatus: "verified" },
+      { key: "capacity-by-type", label: "ความจุ", value: "2.0–3.0 mL แล้วแต่ชนิดหัว GPP (เติมข้าง/เติมบน · RDL/MTL)", sourceStatus: "verified" },
     ],
-    sourceUrls: ["https://giantvapes.com/products/uwell-caliburn-g3-replacement-pods"],
+    sourceUrls: ["https://www.myuwell.com/g-pod-platform"],
   },
   "Pod-180": {
     specifications: [
@@ -1533,8 +1539,22 @@ function attachVariantMedia(shipnityProductId: string, variants: ProductMasterIn
  * `displayName` changes, so H1/cards/metadata/structured-data/search — everything that reads
  * `displayName` from this one place — pick up the fix automatically and stay consistent with each
  * other, and internal SKU identity is untouched.
+ *
+ * Data round (owner instruction 2026-09-24, batch 3): three raw Shipnity names are not the manufacturer's model name —
+ * a Thai operational string ("เครื่อง Esko Bar Switch 20k", which also showed on English/Chinese cards) and two IQOS
+ * names whose casing/generation differ from the photos and copy on the same page. The manufacturer's own name wins,
+ * here, once — so <title>, Product.name and H1 keep reading the same string, as the HANDOFF note asked ("a data-round
+ * fix, not a head hack"). Sources: the product pages the card photos were taken from.
  */
-function deriveDisplayName(rawName: string, brandId: string | null): string {
+const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: string }> = {
+  "Pod-159": { name: "ESKO BAR SWITCH 20K", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+  "IQOSHEET-16": { name: "IQOS ILUMA i PRIME", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
+  "IQOSHEET-18": { name: "IQOS ILUMA i", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+};
+
+function deriveDisplayName(rawName: string, brandId: string | null, shipnityId?: string): string {
+  const override = shipnityId ? MANUFACTURER_DISPLAY_NAMES[shipnityId] : undefined;
+  if (override) return override.name;
   if (!brandId) return rawName;
   const brand = getBrand(brandId);
   if (!brand) return rawName;
@@ -1569,7 +1589,7 @@ function buildDraftCandidate(
     systemType: match?.systemType === "e-liquid" ? null : match?.systemType ?? null,
 
     name: parent.name,
-    displayName: deriveDisplayName(parent.name, match?.brandId ?? null), // see deriveDisplayName's own comment
+    displayName: deriveDisplayName(parent.name, match?.brandId ?? null, parent.shipnityProductId), // see deriveDisplayName's own comment
     tagline: copy?.tagline ?? null, // Phase 2.7 minimum copy — see MINIMUM_COPY, never fabricated
     shortDescription: copy?.shortDescription ?? null,
     attributes: null, // no manufacturer spec evidence

@@ -152,7 +152,9 @@ export const uwellProducts: Product[] = [
       { key: "battery", label: "Battery", value: "1600mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–35W", sourceStatus: "verified" },
       { key: "screen", label: "Display", value: "0.85\" colour screen", sourceStatus: "verified" },
-      { key: "pod", label: "Pod capacity", value: "3mL, top-fill, magnetic connection", sourceStatus: "verified" },
+      // Data round (2026-09-24, batch 5): the G5 manual (manuals.plus copy) states "Capacity 3.0ml / 2.0ml" (by market
+      // version) and the product page "Top Refill"; "magnetic connection" is not in either → dropped.
+      { key: "pod", label: "Pod capacity", value: "3.0mL (2.0mL in TPD markets), top refill", sourceStatus: "verified", sourceUrl: "https://manuals.plus/m/5709a095303c89dbb3fe992bd7b3cf31ba928aba1ad3f284fbfdc84d4b5fc06d" },
       { key: "control", label: "Control system", value: "Smart Triple-Tap Control (gesture-based mode switching)", sourceStatus: "verified" },
       { key: "charging", label: "Charging", value: "USB-C", sourceStatus: "verified" },
       { key: "pod-compat", label: "Pod platform", value: "UWELL GPP cartridge platform", sourceStatus: "verified" },

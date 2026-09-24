@@ -68,7 +68,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       battery: "1600mAh ในตัว",
       screen: "จอสี 0.85 นิ้ว",
-      pod: "3mL เติมด้านบน ยึดด้วยแม่เหล็ก",
+      pod: "3.0mL (รุ่น TPD 2.0mL) เติมด้านบน",
       control: "Smart Triple-Tap Control (แตะเพื่อสลับโหมด)",
       "pod-compat": "UWELL GPP",
     },
