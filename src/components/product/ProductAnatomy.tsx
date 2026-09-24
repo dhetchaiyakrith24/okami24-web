@@ -8,6 +8,7 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { chargingTypeTh } from "@/i18n/anatomy-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
+import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 
 interface AnatomyPoint {
   x: number; // percent
@@ -27,10 +28,12 @@ interface AnatomyPoint {
 // not shown). Markup below is unchanged.
 function getAnatomyPoints(product: Product, t: Dictionary["product"]["anatomy"], locale: string): AnatomyPoint[] {
   const hasScreen = product.attributes.screenType === "color-display" || product.attributes.screenType === "touchscreen";
-  const hasAirflowSpec = product.specifications.some((s) => s.key === "airflow");
-  const charging = product.attributes.chargingType ? (locale === "th" ? chargingTypeTh(product.attributes.chargingType) : product.attributes.chargingType) : "—";
+  // Data round (owner 2026-09-24): the airflow row, charging port and screen size come from verified rows only.
+  const facts = verifiedAttributes(product);
+  const hasAirflowSpec = verifiedRows(product.specifications).some((s) => s.key === "airflow");
+  const charging = facts.chargingType ? (locale === "th" ? chargingTypeTh(facts.chargingType) : facts.chargingType) : "—";
   // "0.85\"" in the data → Thai says นิ้ว, so the inch mark is dropped for Thai only.
-  const size = (product.attributes.screenSize ?? "").trim();
+  const size = (facts.screenSize ?? "").trim();
   const sizeForTemplate = locale === "th" ? size.replace(/"/g, "").trim() : size;
   const displayDetail = (product.attributes.screenType === "touchscreen" ? t.displayTouch : t.displayColour).replace("{size}", sizeForTemplate).replace(/\s+/g, " ").trim();
 

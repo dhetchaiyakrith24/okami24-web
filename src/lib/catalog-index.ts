@@ -30,6 +30,7 @@ import { allProducts } from "@/data/products";
 import { getBrand } from "@/data/brands";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
+import { verifiedAttributes } from "@/lib/verified-specs";
 
 /** A resolved, render-ready reference to a real, customer-visible catalog product. */
 export interface CatalogRef {
@@ -86,7 +87,8 @@ function legacyToItem(p: Product): CatalogItem {
     image: card ? { src: card.src, alt: card.alt } : null,
     origin: "legacy",
     specifications: p.specifications,
-    attributes: p.attributes,
+    // Data round (2026-09-24): only the numbers a verified spec row backs — /compare's classification rows read these.
+    attributes: verifiedAttributes(p),
     whoIsThisFor: p.whoIsThisFor,
     sellingPrice: getLegacyApprovedPrice(p.slug),
     variantLabels: [],

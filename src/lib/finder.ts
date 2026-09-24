@@ -1,6 +1,7 @@
 import type { Product } from "@/types/catalog";
 import { allProducts } from "@/data/products";
 import { allCatalogItems, type CatalogItem } from "@/lib/catalog-index";
+import { verifiedAttributes } from "@/lib/verified-specs";
 
 export interface FinderAnswers {
   format: "open-pod" | "pod-kit" | "disposable" | "no-preference";
@@ -47,7 +48,8 @@ function screenMatches(preference: FinderAnswers["screen"], product: Product) {
 export function scoreProduct(product: Product, answers: FinderAnswers): { score: number; reasons: FinderReasonKey[] } {
   let score = 0;
   const reasons: FinderReasonKey[] = [];
-  const a = product.attributes;
+  // Data round (2026-09-24): a "long battery" / output reason may rest only on a number a verified spec row states.
+  const a = verifiedAttributes(product);
 
   if (answers.format !== "no-preference") {
     if (product.systemType === answers.format) {
