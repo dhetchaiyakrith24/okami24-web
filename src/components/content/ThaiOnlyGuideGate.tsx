@@ -17,7 +17,10 @@ export function ThaiOnlyGuideGate({ thaiOnly, children }: { thaiOnly?: boolean; 
   return (
     <Container className="max-w-3xl py-16 lg:py-24">
       <div className="flex flex-col gap-4" data-thai-only-notice>
-        <p className="text-lg text-foreground">{dict.guides.thaiOnlyNotice}</p>
+        {/* <h1>, not <p> (designer, owner left it to the main agent 2026-09-24): on en/zh this line replaces the whole
+            article, its Thai <h1> included — without it the page has no heading for screen readers. Tailwind's reset
+            gives h1 no size or weight of its own, so it looks exactly like the old <p>. */}
+        <h1 className="text-lg text-foreground">{dict.guides.thaiOnlyNotice}</h1>
         <Link href="/guides" className="inline-flex items-baseline gap-2 text-base text-foreground-muted transition-colors hover:text-ember">
           <span aria-hidden className="text-foreground-dim">
             ←
