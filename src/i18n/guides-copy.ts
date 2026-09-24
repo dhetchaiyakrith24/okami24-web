@@ -76,7 +76,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       {
         heading: "ตัวอย่างจริง: พอตซิสเต็มอย่าง Caliburn G5",
         paragraphs: [
-          "[Caliburn G5](/products/caliburn-g5) เป็นรุ่นเรือธงปัจจุบันของตระกูล Caliburn แบต 1600mAh จ่ายไฟ 5–35 วัตต์ มีจอสี 0.85 นิ้ว หัวพอตเติมด้านบน ยึดด้วยแม่เหล็ก",
+          "[Caliburn G5](/products/caliburn-g5) เป็นรุ่นเรือธงปัจจุบันของตระกูล Caliburn แบต 1600mAh จ่ายไฟ 5–35 วัตต์ มีจอสี 0.85 นิ้ว หัวพอตเติมด้านบน",
           "ไม่มีปุ่มสลับโหมด ใช้ Smart Triple-Tap แตะสามครั้งสลับโหมดวัตต์และเช็คสถานะเครื่องแทน",
           "ระบบแตะนี้ทำงานยังไง แล้วทำไมต้องมีจอคู่กัน อ่านที่ [ระบบแตะสามครั้ง](/technology/gesture-and-triple-tap-control)",
         ],
@@ -486,7 +486,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
       {
         heading: "实例：Caliburn G5 这样的开放式换弹设备",
         paragraphs: [
-          "[Caliburn G5](/products/caliburn-g5) 是 Caliburn 系列的现款旗舰：1600mAh 电池、5–35W 输出、0.85 英寸彩屏，以及顶部注油、磁吸连接的烟弹。",
+          "[Caliburn G5](/products/caliburn-g5) 是 Caliburn 系列的现款旗舰：1600mAh 电池、5–35W 输出、0.85 英寸彩屏，以及顶部注油的烟弹。",
           "它没有一排切换模式的按键，改由 Smart Triple-Tap 触控感应来切换输出模式和查看设备状态。",
           "这套点击操控如何工作、为什么要搭配屏幕，见 [手势与三击操控](/technology/gesture-and-triple-tap-control)。",
         ],

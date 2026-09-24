@@ -89,7 +89,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
       {
         heading: "ตัวอย่างจริง: จอ 2.51 นิ้วของ Caliburn G4 Pro เทียบกับจอ 2 นิ้วของ G4 Pro KOKO",
         paragraphs: [
-          "[Caliburn G4 Pro](/products/caliburn-g4-pro) จอทัช 2.51 นิ้ว แบตในตัว 1800mAh วัตต์สูงสุด 35 วัตต์ ปรับช่องลมได้แบบไม่มีขั้น หัวพอตยึดด้วยแม่เหล็ก ใช้หัวพอต UWELL GPP และหัวพอต G3 รุ่นก่อน",
+          "[Caliburn G4 Pro](/products/caliburn-g4-pro) จอทัช 2.51 นิ้ว แบตในตัว 1800mAh วัตต์สูงสุด 35 วัตต์ ปรับช่องลมได้แบบไม่มีขั้น ใช้หัวพอต UWELL GPP และหัวพอต G3 รุ่นก่อน",
           "[Caliburn G4 Pro KOKO](/products/caliburn-g4-pro-koko) จอทัช 2 นิ้ว แบตในตัว 2000mAh วัตต์สูงสุด 35 วัตต์ เลือกโหมด Storm / Waves / Custom (โหมดแรงลม) ได้บนจอ มีระบบปรับรสชาติ Pro-FOCS 4.0 หัวพอตใช้ GPP และ G3 รุ่นก่อนเหมือนกัน",
           "เทียบจากสเปกที่ยืนยันแล้ว G4 Pro จอใหญ่กว่า (2.51 นิ้ว) KOKO แบตใหญ่กว่า (2000mAh) วัตต์สูงสุดเท่ากัน ใช้หัวพอตชุดเดียวกัน โหมด Storm / Waves / Custom ทำอะไรบ้าง อ่านที่ [MTL กับ DTL](/guides/understanding-mtl-vs-dtl)",
         ],
@@ -167,7 +167,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
       {
         heading: "ตัวอย่างจริง: สเปก Caliburn G5 ที่มาพร้อม Smart Triple-Tap",
         paragraphs: [
-          "[Caliburn G5](/products/caliburn-g5) แบตในตัว 1600mAh จ่ายไฟ 5–35 วัตต์ จอสี 0.85 นิ้ว ชาร์จผ่าน USB-C หัวพอตเติมด้านบน ยึดด้วยแม่เหล็ก ส่วนการควบคุมคือ Smart Triple-Tap Control สลับโหมดด้วยการแตะ",
+          "[Caliburn G5](/products/caliburn-g5) แบตในตัว 1600mAh จ่ายไฟ 5–35 วัตต์ จอสี 0.85 นิ้ว ชาร์จผ่าน USB-C หัวพอตเติมด้านบน ส่วนการควบคุมคือ Smart Triple-Tap Control สลับโหมดด้วยการแตะ",
           "จอสี 0.85 นิ้วคือส่วนที่ทำให้ระบบแตะใช้งานได้จริง แตะแล้วดูบนจอได้เลยว่าอยู่โหมดไหน วัตต์เท่าไหร่ แบตเหลือแค่ไหน",
           "ถ้ายังเลือกเครื่องไม่ถูก อ่านที่ [เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system) บทนั้นใช้ G5 เป็นตัวอย่างหลัก",
         ],
@@ -255,7 +255,7 @@ export const TECHNOLOGY_COPY_ZH: Record<string, TechnologyCopy> = {
       {
         heading: "实例：Caliburn G4 Pro 的 2.51 英寸屏对比 G4 Pro KOKO 的 2 英寸屏",
         paragraphs: [
-          "[Caliburn G4 Pro](/products/caliburn-g4-pro)：2.51 英寸触控屏、1800mAh 内置电池、最高 35W、无级气流调节、磁吸烟弹，使用 UWELL GPP 烟弹和上一代 G3 烟弹。",
+          "[Caliburn G4 Pro](/products/caliburn-g4-pro)：2.51 英寸触控屏、1800mAh 内置电池、最高 35W、无级气流调节，使用 UWELL GPP 烟弹和上一代 G3 烟弹。",
           "[Caliburn G4 Pro KOKO](/products/caliburn-g4-pro-koko)：2 英寸触控屏、2000mAh 内置电池、最高 35W，在屏幕上选择 Storm / Waves / Custom（吸阻模式），配 Pro-FOCS 4.0 口感调校，烟弹同样是 GPP 和上一代 G3。",
           "只按已验证规格比较：屏幕更大的是 G4 Pro（2.51 英寸），电池更大的是 KOKO（2000mAh），最高功率相同，烟弹也是同一套。Storm / Waves / Custom 模式的说明见 [MTL 与 DTL](/guides/understanding-mtl-vs-dtl)。",
         ],
@@ -321,7 +321,7 @@ export const TECHNOLOGY_COPY_ZH: Record<string, TechnologyCopy> = {
       {
         heading: "实例：配备 Smart Triple-Tap 的 Caliburn G5 实际数据",
         paragraphs: [
-          "[Caliburn G5](/products/caliburn-g5)：1600mAh 内置电池、5–35W 输出、0.85 英寸彩屏、USB-C 充电，烟弹顶部注油、磁吸连接；操控方式是 Smart Triple-Tap Control，以点击切换模式。",
+          "[Caliburn G5](/products/caliburn-g5)：1600mAh 内置电池、5–35W 输出、0.85 英寸彩屏、USB-C 充电，烟弹顶部注油；操控方式是 Smart Triple-Tap Control，以点击切换模式。",
           "0.85 英寸彩屏正是让点击操控真正可用的部分：点击之后，当前模式、功率和剩余电量直接显示在屏幕上。",
           "还没选好设备？G5 是 [选择你的第一款设备](/guides/choosing-your-first-pod-system) 里的主要例子。",
         ],

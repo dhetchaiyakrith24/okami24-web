@@ -92,7 +92,7 @@ export const technologyEntries: TechnologyEntry[] = [
       {
         heading: "Real example: the Caliburn G4 Pro's 2.51\" screen next to the G4 Pro KOKO's 2\" screen",
         paragraphs: [
-          "The [Caliburn G4 Pro](/products/caliburn-g4-pro): a 2.51\" touchscreen, an 1800mAh built-in battery, 35W maximum, stepless airflow control, a magnetic pod connection, and UWELL GPP pods plus the older G3 pods.",
+          "The [Caliburn G4 Pro](/products/caliburn-g4-pro): a 2.51\" touchscreen, an 1800mAh built-in battery, 35W maximum, stepless airflow control, and UWELL GPP pods plus the older G3 pods.",
           "The [Caliburn G4 Pro KOKO](/products/caliburn-g4-pro-koko): a 2\" touchscreen, a 2000mAh built-in battery, 35W maximum, Storm / Waves / Custom (draw modes) chosen on the screen, Pro-FOCS 4.0 flavor tuning, and the same GPP and G3 pods.",
           "Compared on verified rows only: the larger screen is on the G4 Pro (2.51\"), the larger battery on the KOKO (2000mAh), the wattage ceiling is the same, and both take the same pods. What Storm / Waves / Custom actually do is explained in [MTL vs. DTL](/guides/understanding-mtl-vs-dtl).",
         ],
@@ -178,7 +178,7 @@ export const technologyEntries: TechnologyEntry[] = [
       {
         heading: "Real example: the Caliburn G5's actual numbers, with Smart Triple-Tap",
         paragraphs: [
-          "The [Caliburn G5](/products/caliburn-g5): a 1600mAh built-in battery, 5–35W output, a 0.85\" colour screen, USB-C charging, and a top-fill pod that connects magnetically. Control is Smart Triple-Tap Control — modes are switched by tapping.",
+          "The [Caliburn G5](/products/caliburn-g5): a 1600mAh built-in battery, 5–35W output, a 0.85\" colour screen, USB-C charging, and a top-fill pod. Control is Smart Triple-Tap Control — modes are switched by tapping.",
           "The 0.85\" colour screen is what makes tap control usable: after a tap it shows which mode you are in, the wattage, and the battery level.",
           "Not chosen a device yet? The G5 is the main example in [Choosing your first pod](/guides/choosing-your-first-pod-system).",
         ],

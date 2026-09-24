@@ -53,7 +53,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     faqs: {
       "g5-pods": {
         question: "Caliburn G5 ใช้หัวพอตรุ่นไหน",
-        answer: "ใช้หัวพอต UWELL GPP หัวเดียวกับที่ Caliburn รุ่นปัจจุบันส่วนใหญ่ใช้ เติมน้ำยาด้านบน ยึดด้วยแม่เหล็ก และมีหลายโอห์มให้เลือก",
+        answer: "ใช้หัวพอต UWELL GPP หัวเดียวกับที่ Caliburn รุ่นปัจจุบันส่วนใหญ่ใช้ เติมน้ำยาด้านบน และมีหลายโอห์มให้เลือก",
       },
       "g5-battery-life": {
         question: "แบตใช้ได้นานแค่ไหน",
@@ -85,7 +85,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       },
       "top-fill-gpp": {
         title: "หัวพอตเติมด้านบน GPP",
-        description: "เติมน้ำยาจากด้านบนได้โดยไม่ต้องถอดหัวพอตออกจากเครื่อง ยึดด้วยแม่เหล็ก ใส่แล้วแน่น ไม่โยก",
+        description: "เติมน้ำยาจากด้านบนได้โดยไม่ต้องถอดหัวพอตออกจากเครื่อง",
       },
     },
   },
@@ -103,7 +103,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       battery: "1600mAh",
       "pod-compat": "UWELL GPP",
-      screen: "ไม่มีจอสี ใช้ไฟ LED บอกสถานะแทน",
     },
     tagline: "G5 แบบเรียบง่าย แบตอึด พกใช้ทุกวัน",
     shortDescription:
@@ -121,7 +120,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       battery: "1600mAh",
-      variant: "ชุดสีรุ่นพิเศษของ G5 Lite",
     },
     tagline: "G5 Lite ตัวเครื่องเดิม ในชุดสีรุ่นพิเศษ",
     shortDescription: "ใช้แบตเตอรี่ 1600mAh และสูงสุด 35 วัตต์เท่ากับ G5 Lite ต่างกันที่ชุดสีรุ่นพิเศษ",
@@ -173,13 +171,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       battery: "1800mAh ในตัว",
       screen: "จอทัชสกรีน 2.51 นิ้ว",
-      pod: "3mL ยึดด้วยแม่เหล็ก",
+      pod: "3mL",
       airflow: "ปรับได้แบบไม่มีขั้น",
       "pod-compat": "UWELL GPP และ Caliburn G3",
     },
     tagline: "จอทัชสกรีน 2.51 นิ้ว บนตัวเครื่องสาย G4",
     shortDescription:
-      "พอตแบตเตอรี่ 1800mAh 35 วัตต์ จอทัชสกรีน 2.51 นิ้ว หัวพอตยึดด้วยแม่เหล็ก ปรับช่องลมได้แบบไม่มีขั้น",
+      "พอตแบตเตอรี่ 1800mAh 35 วัตต์ จอทัชสกรีน 2.51 นิ้ว ปรับช่องลมได้แบบไม่มีขั้น",
     features: {
       shatterproof: {
         title: "จอทัชสกรีน 2.51 นิ้ว",
@@ -220,7 +218,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       battery: "1100mAh ในตัว",
-      "charge-time": "ประมาณ 58 นาที ด้วยไฟ 2A",
       screen: "ไม่มีจอ",
       "pod-compat": "UWELL GPP (ในกล่องมีหัว mesh 0.6Ω)",
     },
@@ -237,10 +234,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   "caliburn-g4-classic": {
     whoIsThisFor: {
       0: "ถูกใจการใช้งานของ G4 อยู่แล้ว แต่อยากได้ตัวเครื่องในชุดสีรุ่น Classic",
-    },
-    specifications: {
-      battery: "1300mAh เท่า G4 รุ่นมาตรฐาน",
-      variant: "ชุดสีรุ่น Classic ของ Caliburn G4",
     },
     tagline: "G4 ตัวเครื่องเดิม ในชุดสีรุ่น Classic",
     shortDescription:
@@ -280,10 +273,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   "caliburn-g3-pro-koko": {
     whoIsThisFor: {
       0: "ชอบสเปกของ G3 Pro แต่อยากได้ในชุดสีรุ่น KOKO",
-    },
-    specifications: {
-      battery: "1000mAh เท่า G3 Pro รุ่นมาตรฐาน",
-      variant: "ชุดสีรุ่น KOKO ของ Caliburn G3 Pro",
     },
     tagline: "G3 Pro ตัวเครื่องเดิม ในชุดสีรุ่น KOKO",
     shortDescription:
@@ -412,7 +401,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       screen: "จอ TFT 1.66 นิ้ว แสดงวัตต์ แบต โอห์ม จำนวนพัฟ และโหมด",
       modes: "SMART / RBA / TC-TCR",
       control: "ล้อปรับวัตต์ละเอียด และเซ็นเซอร์แตะที่ปุ่มยิงไว้ปลดล็อก",
-      pod: "หัวพอตสาย DRAG (เปลี่ยนคอยล์ได้)",
     },
     tagline: "220 วัตต์ ชิป GENE.TT 3.0 ปรับวัตต์ละเอียดด้วยล้อหมุน",
     shortDescription:
@@ -532,7 +520,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       puffs: "สูงสุด 10,000",
       battery: "600mAh ชาร์จซ้ำได้ผ่าน USB-C",
-      nicotine: "30mg salt nic",
       coil: "cotton mesh",
       modes: "Eco / Soft / Boost กดสองครั้งเพื่อสลับ",
       indicator: "LED บอกระดับแบตเป็นขั้นละ 25% ส่วน RGB บอกโหมดที่ใช้อยู่",
@@ -562,11 +549,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       puffs: "สูงสุด 9,000",
       battery: "600mAh ชาร์จซ้ำได้ผ่าน USB-C",
-      capacity: "14mL บรรจุสำเร็จ",
       nicotine: "30mg salt nic",
       airflow: "ปรับได้",
       resistance: "1.0Ω",
-      coil: "mesh",
     },
     tagline: "ปรับช่องลมได้ รองรับ 9,000 พัฟ",
     shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ ปรับช่องลมได้ รองรับสูงสุด 9,000 พัฟ หลายร้านเรียก M Bar ว่า Marbo เป็นรุ่นเดียวกันนี้แหละ",
@@ -585,8 +570,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       puffs: "สูงสุด 15,000",
       coil: "cotton mesh",
       charging: "USB-C ชาร์จเร็ว",
-      battery: "—",
-      capacity: "—",
     },
     tagline: "M Bar รุ่นพัฟเยอะสุดของตระกูล ชาร์จซ้ำได้ผ่าน USB-C",
     shortDescription:
@@ -611,7 +594,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       "puffs-per-pod": "สูงสุด 15,000",
       format: "ตัวเครื่องใช้ซ้ำได้ เปลี่ยนแค่หัวพอตบรรจุสำเร็จ",
-      battery: "—",
     },
     tagline: "ตัวเครื่องใช้ซ้ำได้ หัวพอตบรรจุสำเร็จ",
     shortDescription:
@@ -628,7 +610,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       0: "คนที่มีเครื่อง M Switch Kit อยู่แล้ว มาซื้อหัวพอตเพิ่มหรือเปลี่ยนรส",
     },
     specifications: {
-      capacity: "2.2mL บรรจุน้ำยาสำเร็จ",
       battery: "600mAh",
     },
     tagline: "หัวพอตบรรจุสำเร็จสำหรับ M Switch Kit",
@@ -640,7 +621,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       flavors: "กว่า 15 รส",
-      capacity: "—",
     },
     tagline: "กว่า 15 รส หัวพอตทรงเดียวกันทั้งตระกูล M Bar",
     shortDescription: "หัวพอตสำหรับเปลี่ยน ใช้ได้กับเครื่องใช้ซ้ำของ SALTHUB ที่รองรับ M Bar มีให้เลือกกว่า 15 รส หลายร้านเรียกตระกูล M Bar ว่า Marbo เป็นของเดียวกัน",
@@ -652,7 +632,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       "puffs-per-pod": "สูงสุด 5,000",
       modes: "3 โหมด",
-      battery: "—",
     },
     tagline: "3 โหมด ในตัวเครื่องระบบสวิตช์ใช้ซ้ำได้",
     shortDescription: "เครื่องระบบสวิตช์ใช้ซ้ำได้ มี 3 โหมดวัตต์ ใช้หัวพอต Zero Cartridge รองรับสูงสุด 5,000 พัฟต่อหัวพอต",
@@ -719,32 +698,17 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     whoIsThisFor: {
       0: "ลูกค้าที่ถามหา Joiway อยู่แล้ว รุ่นนี้เป็นตัวรสเดียว ส่วนแบบ 2 รสในเครื่องเดียวคือ F4",
     },
-    specifications: {
-      puffs: "สูงสุด 12,000",
-      battery: "650mAh ชาร์จซ้ำได้ผ่าน USB-C",
-      capacity: "14mL บรรจุสำเร็จ",
-      nicotine: "3% salt nic",
-      coil: "mesh 1.0Ω",
-    },
     tagline: "พอตใช้แล้วทิ้งจาก Joiway รุ่นรสเดียว",
     shortDescription:
-      "พอตใช้แล้วทิ้งจาก Joiway รุ่นรสเดียว เรายังหาสเปกของรุ่นนี้บนเว็บ Joiway ไม่เจอ เลยยังไม่ใส่ตัวเลข",
+      "พอตใช้แล้วทิ้งจาก Joiway รุ่นรสเดียว ถ้าอยากได้ 2 รสในเครื่องเดียว ดูรุ่น F4",
   },
   "joiway-f4": {
     whoIsThisFor: {
       0: "คนที่เบื่อรสเดียวเร็ว อยากได้ 2 รสในเครื่องเดียว สลับไปมาได้โดยไม่ต้องพกสองเครื่อง",
     },
-    specifications: {
-      puffs: "โหมด NOS ประมาณ 15,000 / โหมด TURBO ประมาณ 30,000",
-      battery: "650mAh ชาร์จซ้ำได้ผ่าน USB-C",
-      capacity: "20mL บรรจุสำเร็จ",
-      nicotine: "3% salt nic",
-      coil: "mesh",
-      "flavor-modes": "2 รสในเครื่องเดียว หมุนปากดูดเพื่อสลับ มีคู่รสให้เลือกสูงสุด 16 แบบ",
-    },
     tagline: "พอตใช้แล้วทิ้ง 2 รสในเครื่องเดียว",
     shortDescription:
-      "พอตใช้แล้วทิ้ง 2 โหมด 2 รสในเครื่องเดียว เรายังหาสเปกของรุ่นนี้บนเว็บ Joiway ไม่เจอ เลยยังไม่ใส่ตัวเลข ส่วนตัวนี้แหละที่ OKami24 รีวิวใช้จริง 30 วันบน YouTube",
+      "พอตใช้แล้วทิ้งจาก Joiway 2 โหมด 2 รสในเครื่องเดียว OKami24 รีวิวใช้จริง 30 วันไว้บน YouTube",
     features: {
       "dual-flavor": {
         title: "สลับได้ 2 รส",

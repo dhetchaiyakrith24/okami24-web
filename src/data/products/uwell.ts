@@ -176,7 +176,7 @@ export const uwellProducts: Product[] = [
         id: "top-fill-gpp",
         title: "Top-fill GPP pods",
         description:
-          "Pods fill from the top without removing them from the device, and connect magnetically for a snug, wobble-free seat.",
+          "Pods fill from the top without removing them from the device.",
       },
     ],
     compatibility: [gppCompatibility, usbCNoNote],
@@ -190,7 +190,7 @@ export const uwellProducts: Product[] = [
         id: "g5-pods",
         question: "What pods does the Caliburn G5 use?",
         answer:
-          "It uses UWELL's GPP cartridge platform — the same top-fill, magnetic-connection pod family used across most current Caliburn devices, available in multiple coil resistances.",
+          "It uses UWELL's GPP cartridge platform — the same top-fill pod family used across most current Caliburn devices, available in multiple coil resistances.",
       },
       {
         id: "g5-battery-life",
@@ -624,7 +624,7 @@ export const uwellProducts: Product[] = [
     displayName: "UWELL CALIBURN G4 PRO",
     tagline: "A 2.51\" touchscreen on the G4 platform.",
     shortDescription:
-      "An 1800mAh, 35W pod device with a large touchscreen, magnetic pod connection, and stepless airflow control.",
+      "An 1800mAh, 35W pod device with a large touchscreen and stepless airflow control.",
     isFlagship: false,
     // Confirmed via YouTube oEmbed (2026-09-21, round SEO ข batch 2): real video, title names
     // "UWELL CALIBURN G4 PRO" exactly (not the KOKO), owned by youtube.com/@OKMYARZ — one of
@@ -726,7 +726,9 @@ export const uwellProducts: Product[] = [
       // 2026-09-15 (round 30.4ค batch 7): the official page's meta description does say
       // "2.51-inch touchscreen" (myuwell.com/caliburn/caliburn-g4-pro), so the size is verified again.
       { key: "screen", label: "Display", value: "2.51\" touchscreen", sourceStatus: "verified" },
-      { key: "pod", label: "Pod capacity", value: "3mL, magnetic connection", sourceStatus: "verified" },
+      // Data round (2026-09-24, chat 2): "magnet" is on neither myuwell.com/caliburn/caliburn-g4-pro nor the GPP page
+      // (page text searched in a real browser) → "magnetic connection" dropped; the capacity stays as it was.
+      { key: "pod", label: "Pod capacity", value: "3mL", sourceStatus: "verified" },
       { key: "airflow", label: "Airflow", value: "Stepless airflow control", sourceStatus: "verified" },
       { key: "pod-compat", label: "Pod platform", value: "UWELL GPP and G3 pods", sourceStatus: "verified" },
     ],

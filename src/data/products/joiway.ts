@@ -18,7 +18,7 @@ export const joiwayProducts: Product[] = [
     displayName: "JOIWAY F3",
     tagline: "The single-flavor Joiway disposable.",
     shortDescription:
-      "A disposable from Joiway — the single-flavor model. We could not find the F3 specifications on Joiway's own site, so this page lists no figures yet. OKami24's own YouTube review covers the newer dual-flavor F4 — see that page.",
+      "A disposable from Joiway — the single-flavor model. OKami24's own YouTube review covers the newer dual-flavor F4 — see that page.",
     isFlagship: false,
     editorialTag: "Retailer-confirmed",
     attributes: {
@@ -113,7 +113,7 @@ export const joiwayProducts: Product[] = [
     displayName: "JOIWAY F4",
     tagline: "The newer, dual-flavor Joiway — matches OKami24's own review.",
     shortDescription:
-      "A dual-flavor, dual-mode disposable (rotate the mouthpiece to switch flavors). We could not find the F4 specifications on Joiway's own site, so this page lists no figures yet. This is the exact model OKami24's own YouTube channel reviewed over 30 days (\"ประสบการณ์ 30 วัน JOIWAY F4 NOS\").",
+      "A dual-flavor, dual-mode disposable from Joiway. This is the exact model OKami24's own YouTube channel reviewed over 30 days (\"ประสบการณ์ 30 วัน JOIWAY F4 NOS\").",
     isFlagship: false,
     editorialTag: "Retailer-confirmed",
     // Confirmed via YouTube oEmbed (2026-09-03): real video, owned by youtube.com/@OKMYARZ — one
