@@ -14,6 +14,7 @@ import { getCategory } from "@/data/categories";
 import { getFamily } from "@/data/families";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { rankByQuery, searchText, type SearchText } from "@/lib/catalog-search";
+import { verifiedRows } from "@/lib/verified-specs";
 
 /**
  * EVERY legacy product record, including ones hidden from the storefront. Validation, duplicate
@@ -132,8 +133,9 @@ const SEARCH_TEXT = new Map<string, SearchText>(
           p.tagline,
           copyTh?.tagline,
           ...p.features.map((f) => f.title),
-          ...p.specifications.map((s) => `${s.label} ${s.value}`),
-          ...Object.values(copyTh?.specifications ?? {}),
+          // Data round (2026-09-24): only verified rows are searchable — a held-back value ("14mL" on the M Bar 9K) must
+          // not bring a product up as if it were a fact.
+          ...verifiedRows(p.specifications).flatMap((s) => [`${s.label} ${s.value}`, copyTh?.specifications?.[s.key] ?? ""]),
         ],
       }),
     ];
