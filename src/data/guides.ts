@@ -82,7 +82,7 @@ const allGuides: Guide[] = [
         heading: "Real example: a disposable with adjustable airflow (M Bar 9K)",
         paragraphs: [
           "The [M Bar 9K](/products/m-bar-9k) is a disposable with adjustable airflow, tunable from a tight MTL draw to a more open DTL pull on one device — so you don't have to settle your draw style before buying.",
-          "It comes prefilled with 14mL of 3% (30mg) salt nicotine e-liquid on a mesh coil, rated up to 9,000 puffs, with a 600mAh battery that recharges over USB-C. No filling, no coil changes.",
+          "It comes prefilled with 30mg nicotine-salt e-liquid, rated up to 9,000 puffs, with a 600mAh battery that recharges over USB-C. No filling, no coil changes.",
         ],
       },
       {
@@ -136,7 +136,7 @@ const allGuides: Guide[] = [
       {
         heading: "Real example: a rechargeable disposable (M Bar 10K)",
         paragraphs: [
-          "The [M Bar 10K](/products/m-bar-10k) is a disposable that recharges over USB-C: a 600mAh battery, rated up to 10,000 puffs, 30mg nicotine salt on a cotton mesh coil. When the battery runs down you charge it rather than discarding it with e-liquid still inside.",
+          "The [M Bar 10K](/products/m-bar-10k) is a disposable that recharges over USB-C: a 600mAh battery, rated up to 10,000 puffs, on a cotton mesh coil. When the battery runs down you charge it rather than discarding it with e-liquid still inside.",
           "It has three power modes — Eco, Soft and Boost — cycled with a double-click, and an RGB indicator that changes colour to show which mode is active, plus a battery LED in 25% steps. No menu involved.",
           "The trade-off is the one above: flavor and nicotine strength are whatever came prefilled, and once the e-liquid is gone the whole device is discarded.",
         ],
@@ -151,7 +151,7 @@ const allGuides: Guide[] = [
         heading: "Real example: M Switch Kit with prefilled M Switch Pod cartridges",
         paragraphs: [
           "The [M Switch Kit](/products/m-switch-kit) is a device body you keep and recharge over USB-C; the e-liquid comes in prefilled swap-in cartridges rated up to 15,000 puffs each. No bottled e-liquid, no filling. Its battery capacity is not independently confirmed, so no figure is given here.",
-          "The cartridge is the [M Switch Pod](/products/m-switch-pod): 2.2mL prefilled, made for the M Switch Kit. When it runs out you swap in a new pod and the body stays.",
+          "The cartridge is the [M Switch Pod](/products/m-switch-pod): prefilled, made for the M Switch Kit. When it runs out you swap in a new pod and the body stays.",
           "Compared with an M Bar 10K, where the whole device is discarded, an M Switch discards only the pod — the same simplicity (no filling, no coil changes) with less waste per swap. Still undecided on the format? Start again from [Choosing your first pod](/guides/choosing-your-first-pod-system).",
         ],
       },
@@ -164,7 +164,7 @@ const allGuides: Guide[] = [
       },
       {
         question: "What pod does the M Switch Kit use?",
-        answer: "The M Switch Pod, a 2.2mL prefilled cartridge that swaps straight in — no filling.",
+        answer: "The M Switch Pod, a prefilled cartridge that swaps straight in — no filling.",
       },
       {
         question: "How do I check a product is genuine?",
@@ -725,6 +725,10 @@ const allGuides: Guide[] = [
     // ("During vaping … green … above 60%" / charging: flashing red/blue/green = low/medium/sufficient, green stays on when
     // full). Caliburn G4 Pro icon list cut: its only source was a retailer-hosted PDF, and the manuals.plus manual found is
     // for the G4 Pro KOKO — a separate product on this site, with different screen text.
+    // Data round (2026-09-24, real browser — _incoming/round-data/sources-verified.md): G4 facts = manuals.plus
+    // /m/50a2d62de82f0d181197e7dbdeac724ade1b398ab848d04aaa7b7cec543ee424 (screen messages, "Over 8s!", 5V/2A) · G5 =
+    // /m/5709a095303c89dbb3fe992bd7b3cf31ba928aba1ad3f284fbfdc84d4b5fc06d ("OVER 6S", 5V/2A). Cut: "5V/2A" as a rule for
+    // every Caliburn (the G4 Mini manual says 5V/1A) and "8 seconds" for the G4 Mini (its manual copy is garbled there).
     id: "fixing-no-draw-and-blinking-light",
     slug: "fixing-no-draw-and-blinking-light",
     title: "พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง",
@@ -747,7 +751,7 @@ const allGuides: Guide[] = [
         subsections: [
           {
             heading: "ชาร์จแบตก่อน",
-            paragraphs: ["พอแบตต่ำ Caliburn จะขึ้นเตือนแล้วหยุดจ่ายไฟ ตามคู่มือของ UWELL ให้ชาร์จด้วยสาย USB-C กับหัวชาร์จ 5V/2A ส่วน [M Bar 9K](/products/m-bar-9k) · [M Bar 10K](/products/m-bar-10k) และ [M Switch Kit](/products/m-switch-kit) ก็ชาร์จผ่าน USB-C เหมือนกัน"],
+            paragraphs: ["พอแบตต่ำ Caliburn จะขึ้นเตือนแล้วหยุดจ่ายไฟ ตามคู่มือของ UWELL ให้ชาร์จด้วยสาย USB-C ส่วน [M Bar 9K](/products/m-bar-9k) · [M Bar 10K](/products/m-bar-10k) และ [M Switch Kit](/products/m-switch-kit) ก็ชาร์จผ่าน USB-C เหมือนกัน"],
           },
           {
             heading: "ถอดหัวพอตแล้วเสียบใหม่ให้เข้าที่",
@@ -755,7 +759,7 @@ const allGuides: Guide[] = [
           },
           {
             heading: "อย่าดูดค้างนาน",
-            paragraphs: ["Caliburn ตัดไฟเองถ้าดูดค้างนานเกินไป ตามคู่มือของ UWELL G4 กับ G4 Mini ตัดเมื่อเกิน 8 วินาที ส่วน G5 เมื่อเกิน 6 วินาที หยุดดูดก่อนแล้วค่อยสูบใหม่"],
+            paragraphs: ["Caliburn ตัดไฟเองถ้าดูดค้างนานเกินไป ตามคู่มือของ UWELL G4 ตัดเมื่อเกิน 8 วินาที ส่วน G5 เมื่อเกิน 6 วินาที หยุดดูดก่อนแล้วค่อยสูบใหม่"],
           },
           {
             heading: "หัวพอตใหม่ ให้น้ำยาซึมก่อนสูบ",
@@ -770,7 +774,7 @@ const allGuides: Guide[] = [
           {
             heading: "Caliburn G4 Mini ดูจากสีไฟ",
             paragraphs: [
-              "[Caliburn G4 Mini](/products/caliburn-g4-mini) ไม่มีจอ บอกสถานะด้วยสีไฟกับจำนวนครั้งที่กะพริบ ไฟแดงกะพริบ 3 ครั้งตอนสูบ คือหัวพอตช็อต ไฟแดงกะพริบ 10 ครั้ง คือแบตต่ำ ไฟเขียวกะพริบ 5 ครั้ง คือดูดค้างเกิน 8 วินาที",
+              "[Caliburn G4 Mini](/products/caliburn-g4-mini) ไม่มีจอ บอกสถานะด้วยสีไฟกับจำนวนครั้งที่กะพริบ ไฟแดงกะพริบ 3 ครั้งตอนสูบ คือหัวพอตช็อต ไฟแดงกะพริบ 10 ครั้ง คือแบตต่ำ ไฟเขียวกะพริบ 5 ครั้ง คือดูดค้างนานเกินไป",
               "ไฟน้ำเงินกะพริบ 3 ครั้ง คือวงจรไม่ครบ หัวพอตเสียบไม่เข้าที่ ไฟน้ำเงินกะพริบ 2 ครั้ง คือหัวพอตถูกถอด",
               "ตอนสูบ สีไฟบอกระดับแบต เขียวคือเกิน 60% น้ำเงินคือ 30–60% แดงคือต่ำกว่า 30% ส่วนตอนชาร์จ ไฟจะกะพริบ แดงคือต่ำ น้ำเงินคือกลาง เขียวคือเพียงพอ ชาร์จเต็มแล้วไฟเขียวจะติดค้าง",
             ],
@@ -932,7 +936,8 @@ const allGuides: Guide[] = [
             heading: "แบต",
             paragraphs: [
               "G4 Pro 1800mAh · G5 · G5 Lite และ G5 Lite SE 1600mAh · G4 1300mAh · G4 Mini 1100mAh · G3 Pro 1000mAh ใช้ mAh เทียบกันระหว่างรุ่นได้ แต่อย่าแปลงเป็นชั่วโมง วิธีอ่านอยู่ที่ [วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet)",
-              "เวลาชาร์จมีตัวเลขยืนยันแค่ 2 รุ่น G4 ราว 30 นาทีที่ 2A และ G4 Mini ราว 58 นาทีที่ 2A",
+              // Data round (2026-09-24): the charge-time line ("G4 ~30 min, G4 Mini ~58 min at 2A") is cut — neither figure is
+              // on a UWELL page or manual (held article, fixed in the file only; it stays held).
             ],
           },
           {

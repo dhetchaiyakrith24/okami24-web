@@ -22,12 +22,13 @@ export const technologyEntries: TechnologyEntry[] = [
         ],
       },
       {
-        heading: "Real examples confirmed by the spec sheet: the mesh coils in the M Bar 9K and M Bar 10K",
+        heading: "A real example confirmed by the spec sheet: the mesh coil in the M Bar 10K",
         paragraphs: [
-          "The [M Bar 9K](/products/m-bar-9k) coil row reads “Mesh coil”. Verified on the same page: rated up to 9,000 puffs, 14mL prefilled, 3% (30mg) salt nicotine, a 600mAh battery that recharges over USB-C, and airflow adjustable from a tight MTL draw to an airier DTL pull.",
-          "The [M Bar 10K](/products/m-bar-10k) coil row reads “Cotton mesh coil”. Verified alongside it: rated up to 10,000 puffs, a 600mAh USB-C rechargeable battery, 30mg nicotine salt, and three power modes — Eco / Soft / Boost — switched by a double-click.",
-          "The two rows are not worded the same: the 10K says “Cotton mesh coil”, the 9K only “Mesh coil”. This article writes them as they stand and adds no detail the sheet does not give.",
-          "Both are disposables, so the coil is never replaced — when the e-liquid runs out the device is finished. To compare with the side where you change the coil yourself, see [Open-system vs. disposable](/guides/open-system-vs-disposable).",
+          // Data round (2026-09-24): the M Bar 9K paragraph and the 9K-vs-10K wording note are cut — SALTHUB's own site
+          // names no coil type for the 9K (only "Resistance 1.0 Ω"), so its "Mesh coil" row is unverified now. 10K's
+          // "30mg" is on none of SALTHUB's 10K posters and is cut too.
+          "The [M Bar 10K](/products/m-bar-10k) coil row reads “Cotton mesh coil”. Verified alongside it: rated up to 10,000 puffs, a 600mAh USB-C rechargeable battery, and three power modes — Eco / Soft / Boost — switched by a double-click.",
+          "It is a disposable, so the coil is never replaced — when the e-liquid runs out the device is finished. To compare with the side where you change the coil yourself, see [Open-system vs. disposable](/guides/open-system-vs-disposable).",
         ],
       },
     ],

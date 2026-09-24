@@ -197,11 +197,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       battery: "1300mAh ในตัว",
-      "charge-time": "ประมาณ 30 นาที ด้วยไฟ 2A",
-      screen: "จอสี เลือกโหมดวัตต์ได้",
-      firing: "กดปุ่มยิง",
-      "pod-compat": "UWELL GPP (ในกล่องมี 0.4Ω / 0.9Ω ส่วน 0.6Ω / 1.2Ω ซื้อแยก)",
-      output: "—",
+      "charge-time": "USB-C ชาร์จเร็ว 5V/2A",
+      screen: "จอสี 0.85 นิ้ว มีโหมด Storm กับ Waves",
+      firing: "ดูดหรือกดปุ่มก็ได้ (โหมด auto)",
+      "pod-compat": "UWELL GPP (ในกล่องมีหัว mesh 0.4Ω กับ 0.9Ω)",
+      output: "35W",
     },
     tagline: "จอสีพร้อมปุ่มยิง บนตัวเครื่อง G4 มาตรฐาน",
     shortDescription:
@@ -222,7 +222,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "1100mAh ในตัว",
       "charge-time": "ประมาณ 58 นาที ด้วยไฟ 2A",
       screen: "ไม่มีจอ",
-      "pod-compat": "UWELL GPP (ในกล่องมี 0.4Ω / 0.9Ω ส่วน 0.6Ω / 1.2Ω ซื้อแยก)",
+      "pod-compat": "UWELL GPP (ในกล่องมีหัว mesh 0.6Ω)",
     },
     tagline: "G4 เวอร์ชันย่อส่วน พกพาง่าย",
     shortDescription:
@@ -563,16 +563,17 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       puffs: "สูงสุด 9,000",
       battery: "600mAh ชาร์จซ้ำได้ผ่าน USB-C",
       capacity: "14mL บรรจุสำเร็จ",
-      nicotine: "3% (30mg) salt nic",
-      airflow: "ปรับได้ตั้งแต่ MTL แน่น ๆ ถึง DTL โล่ง ๆ",
+      nicotine: "30mg salt nic",
+      airflow: "ปรับได้",
+      resistance: "1.0Ω",
       coil: "mesh",
     },
-    tagline: "ปรับช่องลมได้ตั้งแต่ MTL ถึง DTL รองรับ 9,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ บรรจุน้ำยาสำเร็จ 14mL ปรับช่องลมได้ตั้งแต่แบบ MTL แน่น ๆ ไปจนถึง DTL โล่ง ๆ ใช้คอยล์ mesh รองรับสูงสุด 9,000 พัฟ หลายร้านเรียก M Bar ว่า Marbo เป็นรุ่นเดียวกันนี้แหละ",
+    tagline: "ปรับช่องลมได้ รองรับ 9,000 พัฟ",
+    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ ปรับช่องลมได้ รองรับสูงสุด 9,000 พัฟ หลายร้านเรียก M Bar ว่า Marbo เป็นรุ่นเดียวกันนี้แหละ",
     features: {
       "adjustable-airflow": {
         title: "ปรับช่องลมได้",
-        description: "เครื่องเดียวปรับได้ตั้งแต่สูบแน่นแบบ MTL ไปจนถึงสูบโล่งแบบ DTL ไม่ต้องตัดสินใจแนวการสูบตั้งแต่ตอนซื้อ",
+        description: "ปรับช่องลมได้ที่ตัวเครื่องเอง",
       },
     },
   },
@@ -628,9 +629,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       capacity: "2.2mL บรรจุน้ำยาสำเร็จ",
+      battery: "600mAh",
     },
     tagline: "หัวพอตบรรจุสำเร็จสำหรับ M Switch Kit",
-    shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 2.2mL ใช้กับตัวเครื่อง M Switch Kit",
+    shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ ใช้กับตัวเครื่อง M Switch Kit",
   },
   "m-bar-pod": {
     whoIsThisFor: {
@@ -694,13 +696,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       puffs: "สูงสุด 12,000",
       battery: "400mAh ชาร์จซ้ำได้ผ่าน USB-C",
-      coil: "MEGA MESH 1.0Ω",
+      coil: "MEGA MESH",
       nicotine: "3% หรือ 5% salt nic",
-      capacity: "—",
+      capacity: "20mL",
     },
     tagline: "พอตใช้แล้วทิ้งของ RELX มีอยู่ในเว็บทางการ คอยล์ MEGA MESH",
     shortDescription:
-      "พอตใช้แล้วทิ้งชาร์จซ้ำได้จากไลน์อัพทางการของ RELX รองรับสูงสุด 12,000 พัฟ แบตเตอรี่ 400mAh คอยล์ MEGA MESH 1.0 โอห์ม มี 10 รส ยืนยันตรงจาก relxnow.com",
+      "พอตใช้แล้วทิ้งชาร์จซ้ำได้จากไลน์อัพทางการของ RELX รองรับสูงสุด 12,000 พัฟ แบตเตอรี่ 400mAh คอยล์ MEGA MESH มี 10 รส ยืนยันตรงจาก relxnow.com",
     features: {
       "official-lineup": {
         title: "อยู่ในไลน์อัพทางการของ RELX",
@@ -724,9 +726,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       nicotine: "3% salt nic",
       coil: "mesh 1.0Ω",
     },
-    tagline: "พอตใช้แล้วทิ้ง Joiway รุ่นจริง ร้านค้าอิสระยืนยันตรงกัน",
+    tagline: "พอตใช้แล้วทิ้งจาก Joiway รุ่นรสเดียว",
     shortDescription:
-      "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Joiway รองรับสูงสุด 12,000 พัฟ สเปกตรงกันจากร้านค้าอิสระกว่า 10 ร้าน ส่วนเว็บทางการของ Joiway เรายังรอยืนยันอยู่",
+      "พอตใช้แล้วทิ้งจาก Joiway รุ่นรสเดียว เรายังหาสเปกของรุ่นนี้บนเว็บ Joiway ไม่เจอ เลยยังไม่ใส่ตัวเลข",
   },
   "joiway-f4": {
     whoIsThisFor: {
@@ -742,7 +744,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "พอตใช้แล้วทิ้ง 2 รสในเครื่องเดียว",
     shortDescription:
-      "พอตใช้แล้วทิ้ง 2 โหมด 2 รสในเครื่องเดียว โหมด NOS ประมาณ 15,000 พัฟ โหมด TURBO ประมาณ 30,000 พัฟ แบตเตอรี่ 650mAh OKami24 รีวิวใช้จริง 30 วันบน YouTube",
+      "พอตใช้แล้วทิ้ง 2 โหมด 2 รสในเครื่องเดียว เรายังหาสเปกของรุ่นนี้บนเว็บ Joiway ไม่เจอ เลยยังไม่ใส่ตัวเลข OKami24 รีวิวใช้จริง 30 วันบน YouTube",
     features: {
       "dual-flavor": {
         title: "สลับได้ 2 รส",

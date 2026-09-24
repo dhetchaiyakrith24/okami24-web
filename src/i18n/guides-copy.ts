@@ -101,7 +101,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         heading: "ตัวอย่างจริง: พอตใช้แล้วทิ้งปรับช่องลมได้ (M Bar 9K)",
         paragraphs: [
           "[M Bar 9K](/products/m-bar-9k) เป็นพอตใช้แล้วทิ้งที่ปรับช่องลมได้ ตั้งแต่แน่นแบบ MTL ไปจนโล่งแบบ DTL ในเครื่องเดียว เลยไม่ต้องเลือกแนวการสูบให้ขาดตั้งแต่ก่อนซื้อ",
-          "น้ำยาบรรจุสำเร็จ 14mL เป็น salt nic 3% (30mg) ใช้คอยล์ mesh สูงสุด 9,000 พัฟ แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C ไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์",
+          "น้ำยาบรรจุสำเร็จเป็น salt nic 30mg สูงสุด 9,000 พัฟ แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C ไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์",
         ],
       },
       {
@@ -150,7 +150,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       {
         heading: "ตัวอย่างจริง: พอตใช้แล้วทิ้งชาร์จซ้ำได้ (M Bar 10K)",
         paragraphs: [
-          "[M Bar 10K](/products/m-bar-10k) เป็นพอตใช้แล้วทิ้งที่ชาร์จซ้ำได้ผ่าน USB-C แบต 600mAh สูงสุด 10,000 พัฟ น้ำยา salt nic 30mg คอยล์ cotton mesh พอแบตหมดก็ชาร์จต่อ ไม่ต้องทิ้งทั้งที่น้ำยายังเหลือ",
+          "[M Bar 10K](/products/m-bar-10k) เป็นพอตใช้แล้วทิ้งที่ชาร์จซ้ำได้ผ่าน USB-C แบต 600mAh สูงสุด 10,000 พัฟ คอยล์ cotton mesh พอแบตหมดก็ชาร์จต่อ ไม่ต้องทิ้งทั้งที่น้ำยายังเหลือ",
           "มี 3 โหมดวัตต์ Eco · Soft · Boost กดสองครั้งติดกันเพื่อสลับ ไฟ RGB เปลี่ยนสีบอกว่าอยู่โหมดไหน ส่วนไฟบอกแบตแสดงทีละ 25% ไม่ต้องเข้าเมนูอะไรเลย",
           "ส่วนที่ต้องแลกก็ตามหัวข้อแรก รสชาติกับความเข้มข้นนิโคตินได้ตามที่บรรจุมา เลือกเองไม่ได้ และพอน้ำยาหมดก็ทิ้งทั้งเครื่อง",
         ],
@@ -165,7 +165,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         heading: "ตัวอย่างจริง: M Switch Kit กับหัวพอต M Switch Pod",
         paragraphs: [
           "[M Switch Kit](/products/m-switch-kit) คือตัวเครื่องที่เก็บไว้ใช้ซ้ำ ชาร์จได้ผ่าน USB-C ส่วนน้ำยามากับหัวพอตบรรจุสำเร็จที่เสียบเปลี่ยนได้ หัวหนึ่งสูงสุด 15,000 พัฟ ไม่ต้องซื้อน้ำยาขวด ไม่ต้องเติมเอง ความจุแบตของรุ่นนี้ยังไม่ยืนยัน เราเลยไม่ใส่ตัวเลข",
-          "หัวพอตที่ใช้คือ [M Switch Pod](/products/m-switch-pod) บรรจุน้ำยาสำเร็จ 2.2mL ทำมาสำหรับ M Switch Kit น้ำยาหมดก็ถอดเปลี่ยนหัวใหม่ ตัวเครื่องใช้ตัวเดิม",
+          "หัวพอตที่ใช้คือ [M Switch Pod](/products/m-switch-pod) บรรจุน้ำยาสำเร็จ ทำมาสำหรับ M Switch Kit น้ำยาหมดก็ถอดเปลี่ยนหัวใหม่ ตัวเครื่องใช้ตัวเดิม",
           "เทียบกับ M Bar 10K ที่ทิ้งทั้งเครื่อง M Switch ทิ้งแค่หัวพอต ใช้ง่ายเท่ากัน คือไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์ ต่างกันที่ขยะต่อครั้งน้อยกว่า เทียบสองแบบนี้ละเอียดอ่านต่อที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) ถ้ายังตัดสินใจไม่ได้ว่าจะเอาแบบไหน กลับไปเริ่มที่ [เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system)",
         ],
       },
@@ -177,7 +177,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       },
       {
         question: "M Switch Kit ใช้หัวพอตอะไร",
-        answer: "ใช้ M Switch Pod หัวพอตบรรจุน้ำยาสำเร็จ 2.2mL เสียบเปลี่ยนได้เลย ไม่ต้องเติมน้ำยา",
+        answer: "ใช้ M Switch Pod หัวพอตบรรจุน้ำยาสำเร็จ เสียบเปลี่ยนได้เลย ไม่ต้องเติมน้ำยา",
       },
       {
         question: "เช็คของแท้ยังไง",
@@ -511,7 +511,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
         heading: "实例：可调气流的一次性设备（M Bar 9K）",
         paragraphs: [
           "[M Bar 9K](/products/m-bar-9k) 是一款可调气流的一次性设备，同一台设备可以从紧口 MTL 调到更松的 DTL，不必在购买前就把吸法定死。",
-          "预填 14mL 烟油、3%（30mg）尼古丁盐，网状雾化芯，额定最多 9,000 口，600mAh 电池可通过 USB-C 充电。不用注油，也不用换雾化芯。",
+          "预填 30mg 尼古丁盐烟油，额定最多 9,000 口，600mAh 电池可通过 USB-C 充电。不用注油，也不用换雾化芯。",
         ],
       },
       {
@@ -543,7 +543,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
       {
         heading: "实例：可充电的一次性设备（M Bar 10K）",
         paragraphs: [
-          "[M Bar 10K](/products/m-bar-10k) 是一款可通过 USB-C 充电的一次性设备：600mAh 电池，额定最多 10,000 口，30mg 尼古丁盐，棉网雾化芯。电量用完时充电即可，不必在烟油还有剩余时就丢掉。",
+          "[M Bar 10K](/products/m-bar-10k) 是一款可通过 USB-C 充电的一次性设备：600mAh 电池，额定最多 10,000 口，棉网雾化芯。电量用完时充电即可，不必在烟油还有剩余时就丢掉。",
           "它有 Eco、Soft、Boost 三种功率模式，双击切换；RGB 指示灯会变色显示当前模式，另有按 25% 递减的电量 LED。全程不需要进入菜单。",
           "代价就是上面说的那一条：口味和尼古丁浓度只能是预填的那一种，烟油用完后整台设备就丢弃。",
         ],
@@ -558,14 +558,14 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
         heading: "实例：M Switch Kit 与预填烟弹 M Switch Pod",
         paragraphs: [
           "[M Switch Kit](/products/m-switch-kit) 是一台留着反复用、通过 USB-C 充电的机身；烟油装在可直接插换的预填烟弹里，每颗额定最多 15,000 口。不用买瓶装烟油，也不用注油。其电池容量尚未独立确认，因此这里不给出数字。",
-          "配套烟弹是 [M Switch Pod](/products/m-switch-pod)：2.2mL 预填，专为 M Switch Kit 制作。用完换一颗新烟弹，机身留着。",
+          "配套烟弹是 [M Switch Pod](/products/m-switch-pod)：预填烟弹，专为 M Switch Kit 制作。用完换一颗新烟弹，机身留着。",
           "与整台丢弃的 M Bar 10K 相比，M Switch 只丢弃烟弹——同样简单（不注油、不换雾化芯），每次更换产生的废弃物更少。还没决定要哪种形态？回到 [选择你的第一款设备](/guides/choosing-your-first-pod-system) 从头开始。",
         ],
       },
     ],
     faq: [
       { question: "M Bar 10K 和 M Switch 有什么区别？", answer: "M Bar 10K 是整台一次性设备，额定最多 10,000 口，600mAh 可充电电池。M Switch Kit 保留机身，只更换 M Switch Pod 烟弹，每颗额定最多 15,000 口。" },
-      { question: "M Switch Kit 使用哪种烟弹？", answer: "M Switch Pod，2.2mL 预填烟弹，直接插换，无需注油。" },
+      { question: "M Switch Kit 使用哪种烟弹？", answer: "M Switch Pod，预填烟弹，直接插换，无需注油。" },
       { question: "怎么辨别正品？", answer: "Salthub 产品（如 M Bar、M Switch）包装盒上有 QR 码和序列号，可在 Salthub 官网 salthub.com/authenticate 自行查验。Uwell 产品（如 Caliburn）包装盒上有刮开涂层，下面是 QR 码和数字码，可在 myuwell.com/verify 查验。若产品有问题，请在 7 天内提出并提供开箱视频；本店更换同款商品，或换成同价位的其他型号，不退现金，并在 3 个工作日内回复。" },
     ],
   },

@@ -32,12 +32,10 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
         ],
       },
       {
-        heading: "ตัวอย่างจริง: คอยล์ mesh ใน M Bar 9K และ M Bar 10K",
+        heading: "ตัวอย่างจริง: คอยล์ mesh ใน M Bar 10K",
         paragraphs: [
-          "[M Bar 9K](/products/m-bar-9k) แถวคอยล์ในสเปกเขียนว่า “Mesh coil” ส่วนตัวเลขอื่นที่ยืนยันแล้วในหน้าเดียวกัน คือ สูงสุด 9,000 พัฟ น้ำยาบรรจุสำเร็จ 14mL salt nic 3% (30mg) แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C และปรับช่องลมได้ตั้งแต่แน่นแบบ MTL ถึงโล่งแบบ DTL",
-          "[M Bar 10K](/products/m-bar-10k) แถวคอยล์เขียนว่า “Cotton mesh coil” ส่วนที่ยืนยันแล้วเหมือนกัน คือ สูงสุด 10,000 พัฟ แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C น้ำยา salt nic 30mg และ 3 โหมดวัตต์ Eco / Soft / Boost กดสองครั้งติดกันเพื่อสลับ",
-          "สองแถวนี้เขียนไม่เหมือนกัน 10K ระบุ “Cotton mesh coil” ส่วน 9K ระบุแค่ “Mesh coil” เราเลยเขียนตามนั้น ไม่เติมคำที่สเปกไม่ได้บอก",
-          "ทั้งสองรุ่นเป็นพอตใช้แล้วทิ้ง คอยล์เลยไม่ต้องเปลี่ยน ใช้จนน้ำยาหมดก็จบ ถ้าอยากเทียบกับฝั่งที่เปลี่ยนคอยล์เองได้ อ่านที่ [พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม](/guides/open-system-vs-disposable)",
+          "[M Bar 10K](/products/m-bar-10k) แถวคอยล์เขียนว่า “Cotton mesh coil” ส่วนที่ยืนยันแล้วเหมือนกัน คือ สูงสุด 10,000 พัฟ แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C และ 3 โหมดวัตต์ Eco / Soft / Boost กดสองครั้งติดกันเพื่อสลับ",
+          "รุ่นนี้เป็นพอตใช้แล้วทิ้ง คอยล์เลยไม่ต้องเปลี่ยน ใช้จนน้ำยาหมดก็จบ ถ้าอยากเทียบกับฝั่งที่เปลี่ยนคอยล์เองได้ อ่านที่ [พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม](/guides/open-system-vs-disposable)",
         ],
       },
     ],
@@ -206,12 +204,10 @@ export const TECHNOLOGY_COPY_ZH: Record<string, TechnologyCopy> = {
         ],
       },
       {
-        heading: "规格表证实的实例：M Bar 9K 和 M Bar 10K 的网状雾化芯",
+        heading: "规格表证实的实例：M Bar 10K 的网状雾化芯",
         paragraphs: [
-          "[M Bar 9K](/products/m-bar-9k) 规格表的雾化芯一行写的是「Mesh coil」。同一页已验证的其他数据：额定最多 9,000 口、预填 14mL 烟油、3%（30mg）尼古丁盐、600mAh 电池可通过 USB-C 充电，气流可从紧口 MTL 调到更松的 DTL。",
-          "[M Bar 10K](/products/m-bar-10k) 的那一行写的是「Cotton mesh coil」。一并验证的还有：最多 10,000 口、600mAh USB-C 可充电电池、30mg 尼古丁盐，以及 Eco / Soft / Boost 三种功率模式，双击切换。",
-          "两行写法并不相同：10K 标明「Cotton mesh coil」，9K 只写「Mesh coil」。本文照原样写，不补充规格表没有给出的细节。",
-          "两款都是一次性设备，所以雾化芯不用更换——烟油用完，设备就用完了。想比较可以自己换雾化芯的那一边，见 [开放式换弹 vs. 一次性](/guides/open-system-vs-disposable)。",
+          "[M Bar 10K](/products/m-bar-10k) 规格表的雾化芯一行写的是「Cotton mesh coil」。一并验证的还有：最多 10,000 口、600mAh USB-C 可充电电池，以及 Eco / Soft / Boost 三种功率模式，双击切换。",
+          "这是一次性设备，所以雾化芯不用更换——烟油用完，设备就用完了。想比较可以自己换雾化芯的那一边，见 [开放式换弹 vs. 一次性](/guides/open-system-vs-disposable)。",
         ],
       },
     ],
