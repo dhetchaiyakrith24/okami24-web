@@ -40,8 +40,16 @@ export const SOURCED_ROW_PRODUCTS = [
 /** Manufacturer domains (and the manual mirror the owner allowed). A reseller domain is never added here. */
 const MANUFACTURER_HOSTS = [
   "salthub.com", "img.salthub.com", "relxnow.com", "myuwell.com", "files.myuwell.com", "manuals.plus", "eskobarvape.com",
-  "voopoo.com", "shop.voopoo.com",
+  "voopoo.com", "shop.voopoo.com", "iqos.com", "nevoks.com",
 ];
+
+/** Published (Shipnity) products whose verified rows must each name a manufacturer `sourceUrl` — the same rule (a) as
+ *  SOURCED_ROW_PRODUCTS, for the storefront-bridge pool: every product whose rows were written or rewritten in the data
+ *  rounds. Keyed by storefront slug. */
+export const SOURCED_PUBLISHED_ROW_PRODUCTS = [
+  "pod-159", // data round chat 2 (eskobarvape.com)
+  "coil-55", "coil-68", "coil-54", "iqosheet-16", "iqosheet-18", // round data 2
+] as const;
 
 /** A number in one product's copy that is another product's verified fact, named as such in the sentence. */
 const CROSS_PRODUCT_MENTIONS: Record<string, string[]> = {
@@ -199,6 +207,14 @@ export function runVerifiedSpecsContractTests(): VerifiedSpecsContractResult[] {
     })
   );
   check("every published product row that names a source URL names a manufacturer domain", publishedBadHost.length === 0, publishedBadHost.join(", ") || "none");
+  const publishedMissing = SOURCED_PUBLISHED_ROW_PRODUCTS.flatMap((slug) => {
+    const p = published.find((x) => x.slug === slug);
+    if (!p) return [`unknown slug ${slug}`];
+    const rows = verifiedRows(p.specifications);
+    if (rows.length === 0) return [`${slug}: no verified row`];
+    return rows.filter((r) => !(r as { sourceUrl?: string }).sourceUrl).map((r) => `${slug}:${r.key}`);
+  });
+  check(`every verified row of the ${SOURCED_PUBLISHED_ROW_PRODUCTS.length} sourced published products names its manufacturer URL`, publishedMissing.length === 0, publishedMissing.join(", ") || "none");
   check(`head descriptions (${Object.keys(PRODUCT_DESCRIPTION_HEAD_TH).length}) and published product copy (${published.length}) state only numbers their verified rows or options state`, headMisses.length === 0, headMisses.join("; ") || "none");
 
   return results;

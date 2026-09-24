@@ -1061,7 +1061,9 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "capacity", label: "ความจุ", value: "5.5 ml", sourceStatus: "verified" },
       { key: "coil-included", label: "คอยล์ในกล่อง", value: "หัวพอตเปล่า ใช้กับคอยล์ TPP", sourceStatus: "verified" },
       { key: "coil-fit", label: "การติดตั้งคอยล์", value: "แบบกดล็อก (press-fit) รองรับคอยล์ตระกูล TPP", sourceStatus: "verified" },
-      { key: "connection", label: "การเชื่อมต่อ", value: "แม่เหล็ก", sourceStatus: "verified" },
+      // Round data 2 (owner 2026-09-25, Q1): the "connection: magnetic" row is cut — no VOOPOO page could be reached to
+      // back it (voopoo.com does not resolve; shop.voopoo.com lists no TPP Pod), and a magnetic claim stands only with a
+      // maker source.
       // Storefront quality-correction pass — this pod HOUSES the TPP coils (see coil-38, the
       // same platform), so it needs the same host devices as those coils. No structured link is
       // added (neither DRAG 3 nor DRAG X Plus exists in this catalog — see catalog-relationships
@@ -1155,6 +1157,34 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://www.myuwell.com/g-pod-platform"],
   },
+  // Round data 2 (2026-09-25, real browser) — the three empty pods whose card line was blank. Each row is read on the
+  // maker's own page; nothing else is claimed.
+  //   Coil-55: myuwell.com Caliburn G2 "SPECIFICATIONS … E-liquid Capacity： 2 ml" (the G2 pod is what this empty cartridge is).
+  //   Coil-68: shop.voopoo.com ITO-X Pod "Capacity: 3.5ml (standard version) · Filling Type: Top filling", "compatible with Drag
+  //            Q Pod Kit and ITO coils", "Package: 1* ITO-X Pod 3.5ml 1* Drip Tip" (no coil in the box).
+  //   coil-54: nevoks.com Feelin Mini — its spec image "Cartridge Parameters · Capacity 2ml" + packing list "Feelin Mini Empty
+  //            Cartridge(2ml)", and the page text "Compatible with the SPL10 series of coil".
+  "Coil-55": {
+    specifications: [
+      { key: "capacity", label: "ความจุ", value: "2mL", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g2" },
+    ],
+    sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-g2"],
+  },
+  "Coil-68": {
+    specifications: [
+      { key: "capacity", label: "ความจุ", value: "3.5mL (รุ่นมาตรฐาน) เติมด้านบน", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/ito-x-pod-cartridge" },
+      { key: "coil-included", label: "คอยล์ในกล่อง", value: "หัวพอตเปล่า ใช้กับคอยล์ ITO", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/ito-x-pod-cartridge" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "DRAG Q Pod Kit", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/ito-x-pod-cartridge" },
+    ],
+    sourceUrls: ["https://shop.voopoo.com/products/ito-x-pod-cartridge"],
+  },
+  "coil-54": {
+    specifications: [
+      { key: "capacity", label: "ความจุ", value: "2mL", sourceStatus: "verified", sourceUrl: "https://nevoks.com/products/nevoks-feelin-mini-pod-kit" },
+      { key: "coil-included", label: "คอยล์ในกล่อง", value: "หัวพอตเปล่า ใช้กับคอยล์ SPL10", sourceStatus: "verified", sourceUrl: "https://nevoks.com/products/nevoks-feelin-mini-pod-kit" },
+    ],
+    sourceUrls: ["https://nevoks.com/products/nevoks-feelin-mini-pod-kit"],
+  },
   // Data round (2026-09-24, chat 2, real browser): ESKO's own SWITCH page — "Specifications" block (18ml CARTRIDGE
   // CAPACITY · 850MAH BATTERY CAPACITY · 5V 0.85A CHARGING CURRENT) and the feature text ("20,000 puffs", "three distinct
   // airflow settings", "High (H) mode … Low (L) mode", "simultaneous dual-coil heating"). Nothing else is claimed.
@@ -1193,17 +1223,28 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       "https://www.iqos.com/gb/en/blog/difference-between-iqos-iluma-and-iqos-3-duo.html",
     ],
   },
+  // Round data 2 (2026-09-25, real browser): the single "2380mAh" row is gone — iqos.com/ph no longer prints 2380 anywhere
+  // on the PRIME page (HTML searched), and that page's own spec text names two batteries: "Pocket Charger: 2,700 mAh; 2 hours
+  // 15 minutes to fully charge · Holder: 300 mAh; Approx. 12 minutes to fully charge". Its "Compare the models" table gives
+  // ILUMA i and ILUMA i PRIME the same "300 mAh Holder / 2700 mAh Charger", so iqosheet-16 and iqosheet-18 carry the same two
+  // rows. Keys are "battery-charger" / "battery-holder", never "battery": the card line (card-headline-spec.ts) shows a lone
+  // "2700mAh" for a "battery" row, which a buyer reads as the device's one battery — the part name must travel with the number.
   "IQOSHEET-16": {
     specifications: [
-      { key: "battery", label: "แบตเตอรี่", value: "2380mAh", sourceStatus: "verified" },
-      { key: "charging", label: "การชาร์จ", value: "USB-C ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified" },
-      { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 ก้าน", sourceStatus: "verified" },
-      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified" },
+      { key: "battery-charger", label: "แบตเตอรี่กล่องชาร์จ (Pocket Charger)", value: "2700mAh ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
+      { key: "battery-holder", label: "แบตเตอรี่ตัวสูบ (Holder)", value: "300mAh", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
+      { key: "charging", label: "การชาร์จ", value: "ผ่านสาย USB-C (มีในกล่อง)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
+      { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 ก้าน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
     ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html"],
   },
   "IQOSHEET-18": {
-    specifications: [{ key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified" }],
+    specifications: [
+      { key: "battery-charger", label: "แบตเตอรี่กล่องชาร์จ (Pocket Charger)", value: "2700mAh ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+      { key: "battery-holder", label: "แบตเตอรี่ตัวสูบ (Holder)", value: "300mAh", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+    ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html"],
   },
 };

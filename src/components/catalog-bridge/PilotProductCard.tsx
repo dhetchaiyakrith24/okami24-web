@@ -50,6 +50,12 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
   const showOptionCount =
     product.variants.length > 0 &&
     !(product.variants.length === 1 && headline.some((s) => s.kind === "resistance"));
+  const optionCount = `${product.variants.length} ${pilotAxisLabel(dict, product) ?? dict.pilot.variantFallback}`;
+  // Round data 2 (owner ก, 2026-09-25): a phone card with no headline spec was an empty line while
+  // the desktop row beside it read "4 ค่าโอห์ม". The phone slot now shows that same count — only when
+  // there is no spec (every card that has one is unchanged) and only from 2 options up ("1 แบบ" says
+  // nothing a buyer scans for).
+  const phoneOptionCount = headline.length === 0 && product.variants.length >= 2;
   return (
     <Link
       href={`/products/${product.slug}`}
@@ -88,6 +94,7 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
             same order as ProductCard's (owner ข, 2026-09-16). */}
         <p className="hidden min-h-[0.875rem] truncate text-[0.65rem] leading-[0.875rem] text-foreground-dim max-lg:block" data-card-spec-phone="published">
           <CardHeadlineSpec specs={headline} compact />
+          {phoneOptionCount && <span className="label-mono">{optionCount}</span>}
         </p>
         <p className="min-h-[1.25rem] font-display text-[15px] font-bold leading-tight text-foreground lg:text-lg" data-card-price>
           {sellingPrice !== null && sellingPrice !== undefined ? `฿${sellingPrice.toLocaleString("th-TH")}` : ""}
@@ -97,9 +104,7 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
           {showOptionCount && (
             <>
               {headline.length > 0 && <span aria-hidden>·</span>}
-              <span className="label-mono">
-                {product.variants.length} {pilotAxisLabel(dict, product) ?? dict.pilot.variantFallback}
-              </span>
+              <span className="label-mono">{optionCount}</span>
             </>
           )}
         </div>
