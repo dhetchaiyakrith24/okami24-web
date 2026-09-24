@@ -120,6 +120,9 @@ const JOINED: ReadonlyArray<{ word: string; within: string; joined: string }> = 
   // Round 8 carry, listed by the owner in the round-9 instruction ("เก็บตกจากรอบ 8"):
   { word: "ข้อเดียว", within: "ตัดสินใจข้อนี้ข้อเดียว" }, // first-pod guide, 390 + 1440: "ข้อ | เดียว"
   { word: "เหมาะกับคุณ", within: "หรือพอตซิสเต็ม แบบไหนเหมาะกับคุณ" }, // open-system guide title on read-more cards, 390: "เหมาะ | กับคุณ"
+  // Round 10B owner-fix close (negation rule of the SEO ข close, one entry per sentence seen): the reworded Esko capacity
+  // line broke "SALTHUB ไม่ | ได้เขียนความจุ…" at 390 — the second line alone reads as the opposite.
+  { word: "ไม่ได้", within: "ส่วนเว็บ SALTHUB ไม่ได้เขียนความจุของหัว M Switch Pod" },
 ] as const).map((j) => ({ ...j, joined: joinWord(j.word) }));
 
 /**
@@ -149,6 +152,8 @@ const MODEL_NAMES: ReadonlyArray<string> = [
   "Zero Nano", "Zero Cartridge", "M Switch", "M Bar", "Smash Go", "G Pod Platform",
   "ARGUS Top Fill Cartridge V2", "Smart Triple-Tap Control", "iCOSM CODE 2.0", "Cotton mesh coil", "Mesh coil",
   "ARGUS G4 mini", "ARGUS G3 mini", "ARGUS G4", "ARGUS P3", "salt nic", "box mod",
+  // Round 10B (owner ruling 2026-09-24, designer extras): a split product name / screen message reads wrong.
+  "Esko Bar Switch", "No Atomizer",
 ];
 
 // a number (with , . – - inside) followed by ONE plain space and a unit. A Thai unit may run
