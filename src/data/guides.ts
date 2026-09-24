@@ -4,7 +4,19 @@ import type { Guide } from "@/types/catalog";
 // (f29d7fc, 2026-08-29, read from git log — never invented). The modified date is no longer typed
 // here — since round search-price batch 3 (2026-09-22) it is the last git commit touching this
 // file / guides-copy.ts, read from src/data/content-dates.json (see src/lib/content-dates.ts).
-export const guides: Guide[] = [
+
+/**
+ * Round 10B (2026-09-24): articles that are written and checked but NOT public yet — the owner's
+ * ruling D3 holds the UWELL/VOOPOO comparisons until the SEO_BASELINE read of 2026-10-05, because
+ * their control pages are being measured. A held id is filtered out of `guides` below, and every
+ * reader goes through `guides` / `getGuide` (the route's generateStaticParams, sitemap.ts, /guides,
+ * the home teaser grid, article-relevance.ts' "อ่านต่อ" box), so a held article 404s, is not in the
+ * sitemap and is linked from nowhere. To publish one: delete its id from this set — the one switch.
+ * Guarded by src/lib/held-guides-contract-test.ts.
+ */
+export const HELD_GUIDE_IDS: ReadonlySet<string> = new Set<string>(["comparing-caliburn-models", "argus-g4-vs-caliburn-g5"]);
+
+const allGuides: Guide[] = [
   {
     id: "choosing-your-first-pod-system",
     slug: "choosing-your-first-pod-system",
@@ -335,7 +347,7 @@ export const guides: Guide[] = [
         heading: "Which devices take the GPP pod",
         paragraphs: [
           "UWELL's GPP (G Pod Platform) pod is the top-fill pod shared across the current Caliburn line. According to UWELL's own pages it fits the Caliburn G5, G5 Lite, G5 Lite SE, G4 Pro, G4 Pro KOKO, G4, G4 Mini, G4 Classic, G3 Pro and G3 Pro KOKO.",
-          "On our site that pod is the [GPP pod](/products/coil-94), in four resistances: 0.4, 0.6, 0.9 and 1.2Ω, mesh coils. The product name on the page reads “UWELL คอยล์ Caliburn G4&G3 Series”, but it fits the G5 line as well.",
+          "On our site that pod is the [GPP pod](/products/coil-94), in four resistances: 0.4, 0.6, 0.9 and 1.2Ω, mesh coils. The product name on the page reads “UWELL Coil Caliburn G4&G3 Series” (written in Thai there), but it fits the G5 line as well.",
           "How a mesh coil differs from round wire is in [Mesh Coil Systems](/technology/mesh-coil-systems).",
           "One caution: the same Caliburn name does not mean the parts interchange. Caliburn G2-generation pods and GPP pods do not fit each other. If your device is a [Caliburn G5](/products/caliburn-g5), [Caliburn G3 Pro](/products/caliburn-g3-pro) or [Caliburn G4 Pro](/products/caliburn-g4-pro), GPP is the pod on the list above.",
         ],
@@ -464,7 +476,583 @@ export const guides: Guide[] = [
     // resistance changes the draw, owned by youtube.com/@OKMYARZ. Owner bound it (Q3, 2026-09-21).
     reviewVideo: { videoId: "cPYybXJ4zzA", title: "ค่าโอห์มต่างกัน ฟีลต่างกันยังไง?", channelName: "OKM YARZ", publishedAt: "2026-08-17" },
   },
+  {
+    // Round 10B T03' — writer draft 1 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-1-result.md.
+    // "NEW" on Zapple + Kyoho Grape: SALTHUB's own M Bar 9K poster https://www.salthub.com/wp-content/uploads/2025/08/m_bar_9k_06.webp
+    // (re-checked in a real browser 2026-09-24, owner fix C).
+    id: "choosing-a-marbo-flavor",
+    slug: "choosing-a-marbo-flavor",
+    title: "Marbo กลิ่นไหนดี เลือกกลิ่น M Bar 9K 10K และ M Switch",
+    dek: "ไม่มีคำตอบเดียว เริ่มจากสายที่ชอบ เย็น องุ่น ผลไม้ หรือแนวอื่น แล้วดูว่ารุ่นไหนมีกลิ่นนั้น รวมรายชื่อกลิ่น M Bar 9K 10K และ M Switch Pod",
+    category: "buying-guide",
+    readingTimeMin: 6,
+    publishedAt: "2026-09-24",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "เลือกสายที่ชอบก่อน แล้วค่อยดูรุ่น",
+        paragraphs: [
+          "Marbo กลิ่นไหนดี ไม่มีคำตอบเดียว อยู่ที่ว่าชอบแนวไหน เริ่มจากเลือกสายก่อน เย็น องุ่น ผลไม้ หรือแนวอื่น แล้วค่อยดูว่ารุ่นที่ใช้อยู่มีกลิ่นไหนในสายนั้น ที่ร้านเองก็มีหลายกลิ่นที่ลูกค้าชอบ",
+          "กลุ่มในบทความนี้เราแบ่งจากคำในชื่อกลิ่นเท่านั้น เพราะ SALTHUB ไม่ได้บอกระดับความเย็นหรือจัดกลุ่มรสไว้ ชื่อที่มี Ice · Mint · Menthol · Blast หรือ Freeze อยู่สายเย็น ชื่อที่มี Grape อยู่สายองุ่น ชื่อผลไม้อื่น ๆ อยู่สายผลไม้ ที่เหลือเป็นแนวอื่น",
+          "Marbo คือชื่อที่หลายร้านในไทยใช้เรียก M Bar กับ M Switch ของ SALTHUB เรื่องชื่อนี้อ่านต่อได้ที่ [Marbo กับ M Bar ต่างกันไหม](/faq) ส่วนบนเว็บเรา [M Bar 9K](/products/m-bar-9k) มี 22 กลิ่น [M Bar 10K](/products/m-bar-10k) มี 12 กลิ่น และหัวพอต [M Switch Pod](/products/m-switch-pod) มี 18 กลิ่น กลิ่นไหนมีของตอนนี้ ทักไลน์ @okm24 ถามได้",
+          "ถ้าใช้ M Switch กลิ่นอยู่ที่หัวพอต ส่วนตัวเครื่อง [M Switch Kit](/products/m-switch-kit) ใช้ตัวเดิม อยากเปลี่ยนกลิ่นก็เปลี่ยนแค่หัว",
+        ],
+      },
+      {
+        heading: "สายเย็น: ชื่อที่มี Ice · Mint · Menthol · Blast · Freeze",
+        paragraphs: [
+          "ลูกค้าที่ร้านถามถึงกลิ่น “เย็น” กับ “เย็นมาก” บ่อย ตอบตรง ๆ คือ SALTHUB ไม่ได้บอกว่ากลิ่นไหนเย็นระดับไหน เราบอกได้แค่ว่าชื่อไหนมีคำที่สื่อถึงความเย็น ไม่ได้เรียงว่ากลิ่นไหนเย็นกว่ากัน",
+          "ชื่อที่มีทั้งผลไม้และคำที่สื่อถึงความเย็น เช่น Watermelon Mint เราจัดไว้สายนี้",
+          "M Bar 9K (3 กลิ่น): Blue Ice · Doublemint · Menthol Freeze",
+          "M Bar 10K (4 กลิ่น): Blue Ice · Menthol Blast · Watermelon Mint · Yellow Mint",
+          "M Switch Pod (3 กลิ่น): Blue Ice · Cool Mint · Doublemint",
+        ],
+      },
+      {
+        heading: "สายองุ่น: ชื่อที่มี Grape",
+        paragraphs: [
+          "องุ่นเป็นอีกกลิ่นที่ลูกค้าที่ร้านถามถึงบ่อย ทั้งสามรุ่นมีกลิ่นองุ่นมากกว่าหนึ่งแบบ ชื่อที่มี Grape คู่กับอย่างอื่น เช่น Grape Aloe หรือ Grape Lychee เราจัดไว้สายนี้",
+          "M Bar 9K (4 กลิ่น): Grape · Grape Aloe · Grape Lychee · Kyoho Grape",
+          "M Bar 10K (2 กลิ่น): Grape · Kyoho Grape",
+          "M Switch Pod (4 กลิ่น): Grape · Grape Aloe · Grape Lychee · Kyoho Grape",
+        ],
+      },
+      {
+        heading: "สายผลไม้",
+        paragraphs: [
+          "ชื่อที่เป็นผลไม้ และไม่มีคำที่สื่อถึงความเย็นหรือ Grape อยู่ในกลุ่มนี้ รวมถึงชื่อที่มีผลไม้คู่กับขนมหรือเครื่องดื่ม อย่าง Watermelon Bubblegum กับ Strawberry Milkshake",
+          "M Bar 9K (11 กลิ่น): Apple Aloe · Mixberry · Orange Sour · Peach · Peach Strawberry · Pink Berry · Sparkling Lemon · Strawberry · Strawberry Milkshake · Watermelon · Watermelon Bubblegum",
+          "M Bar 10K (4 กลิ่น): All Berry · Pink Berry · Strawberry Kiwi · Watermelon",
+          "M Switch Pod (10 กลิ่น): Apple Aloe · Black Berry · Mango Passion · Mixberry · Peach Strawberry · Pink Berry · Strawberry · Strawberry Watermelon · Watermelon · Watermelon Bubblegum",
+        ],
+      },
+      {
+        heading: "แนวอื่น",
+        paragraphs: [
+          "ชื่อที่ไม่ได้บอกผลไม้หรือความเย็นตรง ๆ เช่น Cola · Matcha Latte · Rainbow Candy ส่วน Zapple ชื่อไม่ได้บอกว่ารสอะไร เราจึงจัดไว้ตรงนี้",
+          "M Bar 9K (4 กลิ่น): Cola · Rainbow Candy · Sour Gummy · Zapple",
+          "M Bar 10K (2 กลิ่น): Cola · Matcha Latte",
+          "M Switch Pod (1 กลิ่น): Cola",
+        ],
+      },
+      {
+        heading: "กลิ่นที่คนค้นหา และกลิ่นใหม่ของ M Bar 9K",
+        paragraphs: [
+          "เวลาพิมพ์ “marbo กลิ่น” ใน Google คำที่ขึ้นมาให้เลือกมี Zapple · แตงโม (Watermelon) · แอปเปิ้ล (Apple Aloe) · Blue Ice · องุ่น (Grape) และส้ม (Orange Sour) แตงโม Blue Ice และองุ่นมีทั้งสามรุ่น Apple Aloe มีใน M Bar 9K กับ M Switch Pod ส่วน Zapple กับส้มมีเฉพาะ M Bar 9K",
+          "Zapple กับ Kyoho Grape เป็นสองกลิ่นที่ SALTHUB ติดป้ายว่าใหม่บนโปสเตอร์ของ M Bar 9K",
+          "ยังไม่ได้เลือกว่าจะเอาพอตใช้แล้วทิ้งหรือ M Switch อ่าน [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) อยากรู้ว่าหนึ่งเครื่องใช้ได้นานแค่ไหน อ่าน [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts) ส่วนรุ่นอื่นของแบรนด์อยู่ที่ [หน้าแบรนด์ SALTHUB](/brands/salthub)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["m-bar-9k", "m-switch-pod"],
+    faq: [
+      {
+        question: "Marbo กลิ่นไหนเย็น",
+        answer: "SALTHUB ไม่ได้บอกระดับความเย็น เราบอกได้แค่ว่าชื่อไหนมีคำที่สื่อถึงความเย็น M Bar 9K มี Blue Ice · Doublemint · Menthol Freeze ส่วน M Bar 10K มี Blue Ice · Menthol Blast · Watermelon Mint · Yellow Mint และ M Switch Pod มี Blue Ice · Cool Mint · Doublemint",
+      },
+      {
+        question: "Marbo กลิ่นองุ่นมีแบบไหนบ้าง",
+        answer: "M Bar 9K มี Grape · Grape Aloe · Grape Lychee · Kyoho Grape ส่วน M Bar 10K มี Grape · Kyoho Grape และ M Switch Pod มี Grape · Grape Aloe · Grape Lychee · Kyoho Grape",
+      },
+      {
+        question: "Marbo กลิ่นส้มมีไหม",
+        answer: "มี Orange Sour ใน M Bar 9K ส่วน M Bar 10K กับ M Switch Pod ไม่มีกลิ่นที่ชื่อเป็นส้ม",
+      },
+      {
+        question: "หัว M Switch กับ M Bar กลิ่นเหมือนกันไหม",
+        answer: "ชื่อซ้ำกันหลายกลิ่น เช่น Blue Ice · Cola · Grape · Kyoho Grape · Watermelon แต่เราเทียบได้แค่ชื่อ ไม่ได้เทียบรส บางกลิ่นมีเฉพาะหัว M Switch เช่น Black Berry · Cool Mint · Mango Passion · Strawberry Watermelon",
+      },
+    ],
+    // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @OKMYARZ.
+    reviewVideo: { videoId: "QptFMwIXbJE", title: "M BAR 9K NEW FLAVOR 2 กลิ่นใหม่ ZAPPLE และ KYOHO GRAPE", channelName: "OKM YARZ", publishedAt: "2026-01-16" },
+  },
+  {
+    // Round 10B T18 — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md.
+    // Owner ruling: no number of days anywhere, in any form. The "puffs not reached" complaint sits with the other two
+    // complaints, away from the "brands don't publish how puffs are counted" sentence, so it never reads as a cause.
+    // Owner fix C (2026-09-24, real browser): M Bar 10K Eco/Soft/Boost + double click = SALTHUB posters
+    // https://img.salthub.com/mbar10k/MBar10K_03.webp and MBar10K_04.webp ("DOUBLE CLICK BOTTOM BUTTON, SWITCH 3 MODES
+    // (ECO/SOFT/BOOST)"). M Bar 9K airflow: salthub.com home says only "Adjustable Airflow" — the "MTL to DTL" range had
+    // no SALTHUB source (reseller pages only) and was cut.
+    id: "how-long-a-disposable-lasts",
+    slug: "how-long-a-disposable-lasts",
+    title: "พอตใช้แล้วทิ้ง 1 ตัว ใช้ได้กี่วัน",
+    dek: "ไม่มีจำนวนวันตายตัว แล้วแต่คน สูบจัดก็หมดไวหน่อย ส่วนตัวเลขบนกล่อง เช่น M Bar 9K (Marbo) สูงสุด 9,000 พัฟ เป็นจำนวนพัฟ แปลงเป็นวันไม่ได้",
+    category: "how-it-works",
+    readingTimeMin: 5,
+    publishedAt: "2026-09-24",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "ใช้ได้กี่วัน ไม่มีตัวเลขตายตัว",
+        paragraphs: [
+          "พอตใช้แล้วทิ้ง 1 ตัวใช้ได้กี่วัน ตอบตรง ๆ คือไม่มีตัวเลขตายตัว แล้วแต่คน สูบจัดก็หมดไวหน่อย รุ่นเดียวกันแต่คนละคนใช้ ก็หมดไม่พร้อมกัน เราเลยไม่ใส่จำนวนวันในบทความนี้",
+          "ถามว่า “Marbo 9K ใช้ได้กี่วัน” ก็คำตอบเดียวกัน [M Bar 9K](/products/m-bar-9k) ที่หลายร้านในไทยเรียกว่า Marbo ระบุไว้สูงสุด 9,000 พัฟ ส่วน [M Bar 10K](/products/m-bar-10k) สูงสุด 10,000 พัฟ ตัวเลขนี้คือจำนวนพัฟ ไม่ใช่จำนวนวัน และเอาไปหารเป็นวันไม่ได้",
+        ],
+      },
+      {
+        heading: "ทำไมแต่ละคนหมดไม่เท่ากัน",
+        paragraphs: [
+          "ตัวแปรหลักคือวิธีสูบของแต่ละคน สูบถี่แค่ไหน และแต่ละพัฟดูดยาวแค่ไหน",
+          "อีกเรื่องคือบางรุ่นตั้งค่าได้ M Bar 9K ปรับช่องลมได้ ส่วน M Bar 10K มี 3 โหมด Eco · Soft · Boost กดสองครั้งติดกันเพื่อสลับ",
+          "การตั้งค่าเปลี่ยนความรู้สึกตอนสูบ และแต่ละคนก็ตั้งไม่เหมือนกัน",
+        ],
+      },
+      {
+        heading: "ตัวเลขพัฟบนกล่อง อ่านยังไง",
+        paragraphs: [
+          "ตัวเลขบนกล่องคือจำนวนพัฟ “สูงสุด” ที่ผู้ผลิตระบุ ส่วนนับแบบไหน SALTHUB ที่ทำ M Bar กับ RELX และ Joiway ที่ทำ [RELX Smash Go 12K](/products/relx-smash-go-12k) กับ [Joiway F3](/products/joiway-f3) ไม่ได้บอกไว้ เราเลยบอกไม่ได้ว่าการสูบของคุณจะใกล้ตัวเลขนั้นแค่ไหน",
+        ],
+      },
+      {
+        heading: "แบตหมด หรือเริ่มไหม้ ทำยังไงต่อ",
+        paragraphs: [
+          "M Bar 9K กับ M Bar 10K ชาร์จซ้ำได้ผ่าน USB-C แบตหมดก็ชาร์จต่อ วิธีชาร์จให้ถูกอยู่ที่ [วิธีดูแลแบตเตอรี่และการชาร์จ](/guides/battery-care-and-charging)",
+          "เรื่องที่ลูกค้าบ่นกับร้านบ่อยมีสามเรื่อง แบต ไหม้ไว และได้จำนวนพัฟไม่ถึงที่กำหนด ถ้าเครื่องเริ่มมีกลิ่นไหม้ ดูดไม่ขึ้น หรือไฟกะพริบ ไล่เช็คได้ที่ [พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
+        ],
+      },
+      {
+        heading: "จุดเด่นของพอตใช้แล้วทิ้ง",
+        paragraphs: [
+          "จากที่ร้านเห็น พอตใช้แล้วทิ้งเด่นที่ใช้ง่าย แกะแล้วใช้ได้เลย ไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์ ดูรุ่นทั้งหมดได้ที่ [พอตใช้แล้วทิ้ง](/products/disposables)",
+          "ถ้าอยากเก็บตัวเครื่องไว้ แล้วเปลี่ยนแค่หัวพอต อ่านต่อที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["m-bar-9k", "joiway-f3", "relx-smash-go-12k"],
+    faq: [
+      {
+        question: "Marbo 9K สูบได้กี่วัน",
+        answer: "ไม่มีจำนวนวันตายตัว แล้วแต่คน สูบจัดก็หมดไวหน่อย M Bar 9K (ที่หลายร้านเรียก Marbo 9K) ระบุไว้สูงสุด 9,000 พัฟ ตัวเลขนี้คือพัฟ ไม่ใช่วัน",
+      },
+      {
+        question: "9,000 พัฟ ใช้ได้กี่วัน",
+        answer: "คิดเป็นวันไม่ได้ SALTHUB ไม่ได้บอกว่านับพัฟแบบไหน และแต่ละคนสูบถี่ ดูดยาวไม่เท่ากัน เราเลยไม่แปลงตัวเลขพัฟเป็นจำนวนวันให้",
+      },
+      {
+        question: "พอตใช้แล้วทิ้งแบตหมด แต่น้ำยายังเหลือ ทำไง",
+        answer: "ถ้าเป็นรุ่นที่ชาร์จซ้ำได้อย่าง M Bar 9K กับ M Bar 10K ชาร์จผ่าน USB-C แล้วใช้ต่อได้ ไม่ต้องทิ้งทั้งที่น้ำยายังเหลือ",
+      },
+    ],
+    // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @OKMYARZ.
+    reviewVideo: { videoId: "rqT2MGZi8Tw", title: "พอตใช้แล้วทิ้ง 1 ตัวใช้ได้นานแค่ไหน?", channelName: "OKM YARZ", publishedAt: "2025-03-17" },
+  },
+  {
+    // Round 10B T19 — writer draft 1 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-1-result.md.
+    // Owner fix A (2026-09-24): no M Switch Pod capacity — salthub.com states "E-liquid Capacity: 2.2mL" only under M BAR POD
+    // and ZERO CARTRIDGE (_incoming/round10b/salthub-mswitch-check.md). 600mAh: M Bar 9K = salthub.com home "Battery
+    // Capacity: 600mAh"; M Bar 10K = SALTHUB poster https://img.salthub.com/mbar10k/MBar10K_01.webp ("600 MAH").
+    id: "disposable-vs-switch-pod",
+    slug: "disposable-vs-switch-pod",
+    title: "พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว เลือกแบบไหนดี",
+    dek: "ไม่มีกฎตายตัว แล้วแต่ความชอบ อยากแกะแล้วใช้ได้เลย หมดแล้วทิ้ง หรืออยากเก็บตัวเครื่องไว้ เปลี่ยนแค่หัวพอต เลือกตามวิธีใช้ของคุณ",
+    category: "buying-guide",
+    readingTimeMin: 6,
+    publishedAt: "2026-09-24",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว เลือกยังไง",
+        paragraphs: [
+          "ไม่มีกฎตายตัว แล้วแต่ความชอบ ที่ร้านมีลูกค้าเลือกทั้งสองแบบ ถ้าอยากแกะแล้วใช้ได้เลย หมดแล้วทิ้ง ไปทางพอตใช้แล้วทิ้ง ถ้าอยากเก็บตัวเครื่องไว้ชาร์จใช้ต่อ เปลี่ยนแค่หัวพอต ไปทางพอตเปลี่ยนหัว",
+          "พอตเปลี่ยนหัวคือพอตที่เก็บตัวเครื่องไว้ใช้ซ้ำ แล้วเสียบหัวพอตบรรจุสำเร็จ หมดก็ถอดเปลี่ยนหัวใหม่ บนเว็บเราเรียกแบบนี้ว่าเครื่องระบบสวิตช์ ตัวอย่างคือ [M Switch Kit](/products/m-switch-kit) กับหัวพอต [M Switch Pod](/products/m-switch-pod)",
+          "สองแบบนี้ไม่ต้องเติมน้ำยาเองทั้งคู่ ถ้ากำลังชั่งระหว่างพอตใช้แล้วทิ้งกับพอตที่เติมน้ำยาเอง อ่าน [พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม](/guides/open-system-vs-disposable)",
+        ],
+      },
+      {
+        heading: "“คุ้ม” ขึ้นกับอะไร",
+        paragraphs: ["เราไม่คิดความคุ้มเป็นตัวเลขให้ เพราะขึ้นกับวิธีใช้ ลองดูสี่เรื่องนี้ว่าตรงกับตัวเองแค่ไหน"],
+        subsections: [
+          {
+            heading: "ใช้ต่อเนื่อง หรือแค่อยากลอง",
+            paragraphs: ["แค่อยากลอง พอตใช้แล้วทิ้งไม่ต้องมีอะไรก่อน แกะแล้วใช้ได้เลย หมดแล้วทิ้ง ถ้าจะใช้ต่อเนื่อง พอตเปลี่ยนหัวต้องมีตัวเครื่อง M Switch Kit ก่อน จากนั้นใช้แค่หัว M Switch Pod ไปเรื่อย ๆ ตัวเครื่องใช้ตัวเดิม"],
+          },
+          {
+            heading: "เปลี่ยนกลิ่นบ่อยแค่ไหน",
+            paragraphs: ["พอตใช้แล้วทิ้งหนึ่งเครื่องคือหนึ่งกลิ่น พอตเปลี่ยนหัวหนึ่งหัวคือหนึ่งกลิ่น เปลี่ยนหัวก็เปลี่ยนกลิ่น ไม่ต้องเปลี่ยนทั้งเครื่อง กลิ่นของแต่ละรุ่นดูได้ที่ [Marbo กลิ่นไหนดี](/guides/choosing-a-marbo-flavor)"],
+          },
+          {
+            heading: "ทิ้งทั้งเครื่อง หรือทิ้งแค่หัว",
+            paragraphs: ["พอตใช้แล้วทิ้งอย่าง [M Bar 9K](/products/m-bar-9k) กับ [M Bar 10K](/products/m-bar-10k) พอน้ำยาหมดก็ทิ้งทั้งเครื่อง พอตเปลี่ยนหัวทิ้งแค่หัว ขยะต่อครั้งจึงน้อยกว่า"],
+          },
+          {
+            heading: "แบตหมดไม่ได้แปลว่าต้องทิ้ง",
+            paragraphs: ["M Bar 9K กับ M Bar 10K แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C แบตหมดก็ชาร์จต่อ ไม่ต้องทิ้งทั้งที่น้ำยายังเหลือ เรื่องชาร์จเลยไม่ใช่จุดที่ต่าง จุดที่ต่างคือตอนน้ำยาหมด พอตใช้แล้วทิ้งต้องทิ้งทั้งเครื่อง ส่วนพอตเปลี่ยนหัวเก็บตัวเครื่องไว้ใช้ต่อ"],
+          },
+        ],
+      },
+      {
+        heading: "เรื่องที่ลูกค้าที่ร้านบ่นบ่อย",
+        paragraphs: [
+          "มีสามเรื่อง แบต ไหม้ไว และจำนวนพัฟไม่ถึงที่กำหนด",
+          "เรื่องแบต ดูก่อนว่าเครื่องชาร์จซ้ำได้ไหม M Bar 9K · M Bar 10K และตัวเครื่อง M Switch ชาร์จผ่าน USB-C ได้ทั้งสามตัว วิธีชาร์จให้ถูกอยู่ที่ [วิธีดูแลแบตเตอรี่และการชาร์จ](/guides/battery-care-and-charging)",
+          "เรื่องพัฟไม่ถึงกับไหม้ไว เรายังหาคู่มือของผู้ผลิตรุ่นเหล่านี้ที่อธิบายเรื่องนี้ไม่เจอ เลยไม่เดาสาเหตุให้",
+        ],
+      },
+      {
+        heading: "Marbo M Switch ดีไหม",
+        paragraphs: [
+          "ดีไหมอยู่ที่ว่าอยากได้อะไรจากพอตเปลี่ยนหัว M Switch เป็นของ SALTHUB ตระกูลเดียวกับ M Bar ที่หลายร้านเรียกรวมกันว่า Marbo ใช้ง่ายเท่าพอตใช้แล้วทิ้ง ไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์",
+          "M Switch Pod หัวละสูงสุด 15,000 พัฟ ส่วน M Bar 10K สูงสุด 10,000 พัฟ และ M Bar 9K สูงสุด 9,000 พัฟต่อเครื่อง",
+          "ถ้ากำลังเทียบ M Switch กับเครื่องระบบสวิตช์ยี่ห้ออื่น อ่าน [Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch) ดูพอตใช้แล้วทิ้งรุ่นอื่นบนเว็บได้ที่ [หมวดพอตใช้แล้วทิ้ง](/products/disposables)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["m-bar-10k", "m-switch-kit"],
+    faq: [
+      {
+        question: "พอตเปลี่ยนหัว ต้องเติมน้ำยาเองไหม",
+        answer: "ไม่ต้อง หัวพอตอย่าง M Switch Pod บรรจุสำเร็จ หมดก็ถอดเปลี่ยนหัวใหม่ ตัวเครื่องใช้ตัวเดิม",
+      },
+      {
+        question: "หัว M Switch ใช้กับเครื่องไหนได้บ้าง",
+        answer: "ตามสเปกที่ยืนยันแล้ว ใช้กับ M Switch Kit ส่วนเครื่องอื่นเรายังไม่มีข้อมูลยืนยัน",
+      },
+      {
+        question: "พอตใช้แล้วทิ้งชาร์จได้ไหม",
+        answer: "แล้วแต่รุ่น M Bar 9K กับ M Bar 10K แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C รุ่นอื่นดูได้ในตารางสเปกของรุ่นนั้น",
+      },
+    ],
+    // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @OKM_24.
+    reviewVideo: { videoId: "8_3DPJM4RFA", title: "M BAR 10K & M SWITCH 15K เล็กฟัดใหญ่!", channelName: "OKAMI", publishedAt: "2026-05-09" },
+  },
+  {
+    // Round 10B T21 — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md. The
+    // UWELL manuals cited are © Shenzhen Uwell, read from copies hosted by retailer thebestvape.com (researcher-B-result.md)
+    // — named "คู่มือของ UWELL", never "เว็บทางการ". Caliburn G5 is named without a link: it is an SEO_BASELINE control page
+    // until 2026-10-05. "Change it" is the customer replacing the unit/pod — never a claim or warranty (owner, round 10B).
+    // Owner fixes B + C (2026-09-24): G4 Mini lights = UWELL manual copy https://manuals.plus/caliburn/kpn025-g4-mini-kit-manual
+    // ("During vaping … green … above 60%" / charging: flashing red/blue/green = low/medium/sufficient, green stays on when
+    // full). Caliburn G4 Pro icon list cut: its only source was a retailer-hosted PDF, and the manuals.plus manual found is
+    // for the G4 Pro KOKO — a separate product on this site, with different screen text.
+    id: "fixing-no-draw-and-blinking-light",
+    slug: "fixing-no-draw-and-blinking-light",
+    title: "พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง",
+    dek: "เช็คก่อนว่าแกะพลาสติกที่ก้นพอตออกหรือยัง แล้วชาร์จแบต เสียบหัวพอตให้เข้าที่ และดูว่าไฟหรือข้อความบนจอแปลว่าอะไร",
+    category: "maintenance",
+    readingTimeMin: 8,
+    publishedAt: "2026-09-24",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "เช็คอย่างแรก: แกะพลาสติกที่ก้นพอตหรือยัง",
+        paragraphs: [
+          "พอตดูดไม่ขึ้น แก้ยังไง ที่ร้านเราให้เช็คอย่างแรกคือแกะพลาสติกที่ก้นพอตออกหรือยัง ถ้ายังไม่ได้แกะ แกะออกแล้วลองสูบใหม่",
+          "แกะแล้วยังดูดไม่ขึ้น ไล่ต่อตามหัวข้อถัดไป ข้อไหนมาจากคู่มือผู้ผลิต เราบอกไว้ว่ามาจากคู่มือของใคร",
+        ],
+      },
+      {
+        heading: "ไล่เช็คต่ออีก 4 ข้อ",
+        paragraphs: [],
+        subsections: [
+          {
+            heading: "ชาร์จแบตก่อน",
+            paragraphs: ["พอแบตต่ำ Caliburn จะขึ้นเตือนแล้วหยุดจ่ายไฟ ตามคู่มือของ UWELL ให้ชาร์จด้วยสาย USB-C กับหัวชาร์จ 5V/2A ส่วน [M Bar 9K](/products/m-bar-9k) · [M Bar 10K](/products/m-bar-10k) และ [M Switch Kit](/products/m-switch-kit) ก็ชาร์จผ่าน USB-C เหมือนกัน"],
+          },
+          {
+            heading: "ถอดหัวพอตแล้วเสียบใหม่ให้เข้าที่",
+            paragraphs: ["ตามคู่มือของ UWELL ถ้าเครื่องไม่เจอหัวพอต Caliburn G4 จะขึ้น No Atomizer ส่วน G4 Mini จะกะพริบไฟน้ำเงิน 3 ครั้ง แปลว่าหัวพอตเสียบไม่เข้าที่ ถอดออกแล้วเสียบกลับให้แน่น เครื่องที่ใช้หัวพอต เช่น M Switch ก็ลองแบบเดียวกันได้"],
+          },
+          {
+            heading: "อย่าดูดค้างนาน",
+            paragraphs: ["Caliburn ตัดไฟเองถ้าดูดค้างนานเกินไป ตามคู่มือของ UWELL G4 กับ G4 Mini ตัดเมื่อเกิน 8 วินาที ส่วน G5 เมื่อเกิน 6 วินาที หยุดดูดก่อนแล้วค่อยสูบใหม่"],
+          },
+          {
+            heading: "หัวพอตใหม่ ให้น้ำยาซึมก่อนสูบ",
+            paragraphs: ["ถ้าเป็นพอตซิสเต็มที่เพิ่งเติมน้ำยาลงหัวพอตใหม่ รีบสูบทันทีอาจได้รสไหม้ วิธีเตรียมหัวพอตใหม่อยู่ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)"],
+          },
+        ],
+      },
+      {
+        heading: "ไฟกะพริบแบบไหน แปลว่าอะไร (Caliburn)",
+        paragraphs: ["ไฟหรือข้อความบนจอของแต่ละรุ่นแปลไม่เหมือนกัน ที่เราหาคู่มือเจอและบอกไว้ชัดคือตระกูล Caliburn ข้างล่างนี้มาจากคู่มือของ UWELL ทั้งหมด"],
+        subsections: [
+          {
+            heading: "Caliburn G4 Mini ดูจากสีไฟ",
+            paragraphs: [
+              "[Caliburn G4 Mini](/products/caliburn-g4-mini) ไม่มีจอ บอกสถานะด้วยสีไฟกับจำนวนครั้งที่กะพริบ ไฟแดงกะพริบ 3 ครั้งตอนสูบ คือหัวพอตช็อต ไฟแดงกะพริบ 10 ครั้ง คือแบตต่ำ ไฟเขียวกะพริบ 5 ครั้ง คือดูดค้างเกิน 8 วินาที",
+              "ไฟน้ำเงินกะพริบ 3 ครั้ง คือวงจรไม่ครบ หัวพอตเสียบไม่เข้าที่ ไฟน้ำเงินกะพริบ 2 ครั้ง คือหัวพอตถูกถอด",
+              "ตอนสูบ สีไฟบอกระดับแบต เขียวคือเกิน 60% น้ำเงินคือ 30–60% แดงคือต่ำกว่า 30% ส่วนตอนชาร์จ ไฟจะกะพริบ แดงคือต่ำ น้ำเงินคือกลาง เขียวคือเพียงพอ ชาร์จเต็มแล้วไฟเขียวจะติดค้าง",
+            ],
+          },
+          {
+            heading: "Caliburn G4 และ G5 ดูจากจอ",
+            paragraphs: [
+              "[Caliburn G4](/products/caliburn-g4) ขึ้นเป็นข้อความบนจอ 4 แบบ Atomizer short! (หัวพอตช็อต) · Battery Low! (แบตเตอรี่ต่ำ) · Over 8s! (ดูดค้างเกิน 8 วินาที) · No Atomizer (เครื่องไม่เจอหัวพอต) ขึ้นข้อความพวกนี้เมื่อไหร่ เครื่องจะหยุดจ่ายไฟ",
+              "ส่วน Caliburn G5 ขึ้นข้อความ ATOMIZER SHORT · BATTERY LOW · OVER 6S (ดูดค้างเกิน 6 วินาที) · NO ATOMIZER",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "M Switch · M Bar และรุ่นอื่น ยังไม่มีตารางไฟจากผู้ผลิต",
+        paragraphs: [
+          "SALTHUB ไม่ได้ลงความหมายไฟกะพริบของ M Bar กับ M Switch ไว้บนเว็บทางการ ส่วน RELX · Joiway และ ARGUS เรายังหาตารางแบบนี้จากผู้ผลิตไม่เจอ เลยไม่เดาว่าไฟแต่ละแบบแปลว่าอะไร",
+          "M Switch ดูดไม่ขึ้น ไฟกะพริบ ให้ไล่แบบเดียวกัน แกะพลาสติกที่ก้นพอต ชาร์จผ่าน USB-C ถอด [M Switch Pod](/products/m-switch-pod) แล้วเสียบกลับให้เข้าที่ และอย่าดูดค้างนาน",
+        ],
+      },
+      {
+        heading: "กลิ่นไหม้ รสไม่มา ไม่หอม ถึงเวลาเปลี่ยน",
+        paragraphs: [
+          "ถ้าดูดขึ้นแล้วแต่มีกลิ่นไหม้ รสไม่มา หรือไม่หอม จากที่ร้านเจอ อาการแบบนี้คือถึงเวลาเปลี่ยนแล้ว พอตใช้แล้วทิ้งก็เปลี่ยนเป็นตัวใหม่ เครื่องที่ใช้หัวพอตก็เปลี่ยนหัวพอตใหม่ วิธีดูแลหัวพอตอ่านต่อที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+          "เรื่องที่ลูกค้าบ่นกับร้านบ่อยคือแบต ไหม้ไว และพัฟไม่ถึง เรื่องชาร์จอ่านต่อที่ [วิธีดูแลแบตเตอรี่และการชาร์จ](/guides/battery-care-and-charging) ส่วนเรื่องพัฟกับระยะเวลาใช้งานอยู่ที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["m-switch-pod", "caliburn-g4-mini", "caliburn-g4"],
+    faq: [
+      {
+        question: "M Switch ดูดไม่ขึ้น ไฟกะพริบ ทำไง",
+        answer: "SALTHUB ไม่ได้ลงความหมายไฟกะพริบของ M Switch ไว้ ให้เช็คว่าแกะพลาสติกที่ก้นพอตแล้ว ชาร์จผ่าน USB-C แล้วถอดหัวพอตเสียบกลับให้เข้าที่ ถ้าดูดขึ้นแต่มีกลิ่นไหม้หรือรสไม่มา ก็ถึงเวลาเปลี่ยนหัวพอตใหม่",
+      },
+      {
+        question: "Caliburn ขึ้น No Atomizer แก้ยังไง",
+        answer: "ตามคู่มือของ UWELL แปลว่าเครื่องไม่เจอหัวพอต ถอดหัวพอตออกแล้วเสียบกลับให้เข้าที่",
+      },
+      {
+        question: "Caliburn G4 Mini ไฟแดงกะพริบ แปลว่าอะไร",
+        answer: "ตามคู่มือของ UWELL ถ้ากะพริบ 3 ครั้งตอนสูบ คือหัวพอตช็อต ถ้ากะพริบ 10 ครั้ง คือแบตต่ำ ให้ชาร์จก่อน",
+      },
+      {
+        question: "พอตใช้แล้วทิ้งดูดไม่ขึ้น ทำยังไง",
+        answer: "เช็คก่อนว่าแกะพลาสติกที่ก้นพอตออกแล้ว ถ้าเป็นรุ่นที่ชาร์จได้อย่าง M Bar 9K กับ M Bar 10K ลองชาร์จผ่าน USB-C ถ้าดูดขึ้นแต่มีกลิ่นไหม้หรือไม่หอมแล้ว ก็ถึงเวลาเปลี่ยนตัวใหม่",
+      },
+    ],
+    // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @PODSYSTEM-OKAMI-II.
+    reviewVideo: { videoId: "MlQjKTSls-0", title: "รวมปัญหาที่พบบ่อย สำหรับผู้ใช้งานพอต?", channelName: "POD SYSTEM OKAMI II", publishedAt: "2025-03-13" },
+  },
+  {
+    // Round 10B T11 — writer draft 1 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-1-result.md.
+    // M Switch battery (600mAh on salthub.com — /m-switch/ now redirects to the home page) is deliberately NOT stated: the m-switch-kit spec row is still
+    // unverified and the live guide open-system-vs-disposable says so — one site, one answer until the data round decides.
+    // Owner fix A (2026-09-24): M Switch Pod capacity removed too — SALTHUB does not state it (salthub-mswitch-check.md).
+    id: "esko-bar-switch-vs-m-switch",
+    slug: "esko-bar-switch-vs-m-switch",
+    title: "Esko Bar Switch 20K กับ M Switch (Marbo) ต่างกันยังไง",
+    dek: "ทั้งคู่เก็บตัวเครื่องไว้ เปลี่ยนแค่หัวพอต ตามสเปกผู้ผลิต Esko Bar Switch 20K หัวละ 20,000 พัฟ ส่วน M Switch หัวละ 15,000 พัฟ ที่เหลือเทียบทีละข้อ",
+    category: "buying-guide",
+    readingTimeMin: 6,
+    publishedAt: "2026-09-24",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "Esko Bar Switch 20K กับ M Switch ต่างกันยังไง",
+        paragraphs: [
+          "ทั้งสองรุ่นเป็นเครื่องระบบสวิตช์ เก็บตัวเครื่องไว้ชาร์จใช้ต่อ เปลี่ยนแค่หัวพอต ที่ต่างคือตัวเลข ตามเว็บผู้ผลิต Esko Bar Switch 20K หัวละ 20,000 พัฟ แบต 850mAh มีโหมด High กับ Low และปรับช่องลมได้ 3 ระดับ ส่วน M Switch หัวละ 15,000 พัฟ",
+          "M Switch เป็นของ SALTHUB ตระกูลเดียวกับที่หลายร้านเรียกว่า Marbo ส่วน Esko Bar เป็นอีกแบรนด์หนึ่ง",
+          "ตัวเลขในบทความนี้มาจาก [เว็บ Esko Bar](https://eskobarvape.com/product/pod-system/) กับ [เว็บ SALTHUB](https://www.salthub.com/) ข้อไหนผู้ผลิตไม่ได้เขียนไว้ เราก็บอกว่าไม่ได้เขียน ไม่เติมตัวเลขเอง",
+        ],
+      },
+      {
+        heading: "Esko Bar Switch 20K เปลี่ยนหัวได้ไหม",
+        paragraphs: [
+          "ได้ ผู้ผลิตเขียนไว้ว่าเป็นหัวพอตแบบถอดเปลี่ยนได้ (Replaceable Pod) ตัวแบตกับถังน้ำยาแยกจากกัน เปลี่ยนกลิ่นได้โดยไม่ต้องเปลี่ยนทั้งเครื่อง",
+          "หลักเดียวกับ [M Switch Kit](/products/m-switch-kit) ที่ทิ้งแค่หัวพอต [M Switch Pod](/products/m-switch-pod) ตัวเครื่องเก็บไว้ ส่วนหน้าสินค้าของ Esko อยู่ที่ [Esko Bar Switch 20K](/products/pod-159)",
+        ],
+      },
+      {
+        heading: "เทียบสเปกทีละข้อ",
+        paragraphs: [],
+        subsections: [
+          { heading: "จำนวนพัฟต่อหัว", paragraphs: ["Esko Bar Switch 20K หัวละ 20,000 พัฟ ส่วน M Switch หัวละ 15,000 พัฟ"] },
+          { heading: "ความจุน้ำยา", paragraphs: ["Esko เขียนว่าความจุ 18mL ส่วนเว็บ SALTHUB ไม่ได้เขียนความจุของหัว M Switch Pod เราเลยไม่ใส่ตัวเลข"] },
+          { heading: "ความเข้มข้นนิโคติน", paragraphs: ["M Switch ระบุ 30mg แบบ salt nic ส่วนเว็บ Esko Bar ไม่ได้เขียนความเข้มข้นไว้ เราเลยไม่ใส่ตัวเลข"] },
+          { heading: "แบตและการชาร์จ", paragraphs: ["Esko Bar Switch 20K แบต 850mAh ชาร์จที่ 5V 0.85A ส่วนความจุแบตของ M Switch หน้าสินค้าบนเว็บเรายังไม่ยืนยัน เลยไม่เอาตัวเลขมาเทียบ ทั้งคู่ชาร์จผ่าน USB-C"] },
+          { heading: "คอยล์", paragraphs: ["Esko เขียนว่าเป็นระบบ Dual Coil (คอยล์สองตัว) ส่วน M Switch ใช้คอยล์ cotton mesh 1.0 โอห์ม"] },
+          { heading: "โหมดและช่องลม", paragraphs: ["Esko มีโหมด High กับ Low และปรับช่องลมได้ 3 ระดับ เว็บ SALTHUB ไม่ได้เขียนเรื่องโหมดหรือช่องลมของ M Switch ไว้"] },
+        ],
+      },
+      {
+        heading: "เลือกตามอะไร",
+        paragraphs: [
+          "ไม่มีรุ่นไหนชนะขาด ดูว่าอะไรสำคัญกับคุณ อยากได้พัฟต่อหัวที่มากกว่า ตามสเปกผู้ผลิต Esko Bar Switch 20K ตัวเลขสูงกว่า อยากปรับโหมดหรือปรับช่องลมเอง Esko เขียนไว้ว่ามี ส่วนเว็บ SALTHUB ไม่ได้เขียนเรื่องนี้ของ M Switch",
+          "ถ้าต้องรู้ความเข้มข้นนิโคตินก่อนเลือก ฝั่ง M Switch เขียนไว้ 30mg ส่วน Esko ไม่ได้บอก ถ้าใช้ M Bar อยู่แล้ว M Switch เป็นของ SALTHUB เจ้าเดียวกัน",
+          "ที่ร้าน ลูกค้าที่ลังเลระหว่างสองรุ่นนี้ สุดท้ายเลือกพอ ๆ กัน แต่เอนไปทาง M Switch เรื่องนี้บอกแค่ว่าคนเลือกอะไร ไม่ได้บอกว่ารุ่นไหนดีกว่า",
+          "ยังไม่แน่ใจว่าจะเอาเครื่องระบบสวิตช์หรือพอตใช้แล้วทิ้ง อ่าน [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) รุ่นอื่นของสองแบรนด์อยู่ที่ [Esko Bar](/brands/esko-bar) กับ [SALTHUB](/brands/salthub)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["pod-159", "m-switch-pod"],
+    faq: [
+      {
+        question: "Esko Bar Switch 20K เปลี่ยนหัวได้ไหม",
+        answer: "ได้ ผู้ผลิตระบุว่าเป็นหัวพอตแบบถอดเปลี่ยนได้ ตัวแบตกับถังน้ำยาแยกจากกัน เปลี่ยนกลิ่นได้โดยไม่ต้องเปลี่ยนทั้งเครื่อง",
+      },
+      {
+        question: "Esko Bar Switch 20K นิโคตินกี่ mg",
+        answer: "เว็บ Esko Bar ไม่ได้เขียนความเข้มข้นไว้ เราเลยไม่ใส่ตัวเลข ถ้าจะเทียบ M Switch ระบุไว้ 30mg แบบ salt nic",
+      },
+      {
+        question: "Esko Bar กับ Marbo ต่างกันไหม",
+        answer: "เป็นคนละแบรนด์ Marbo คือชื่อที่หลายร้านใช้เรียกของ SALTHUB อย่าง M Bar กับ M Switch ถ้าเทียบรุ่นเปลี่ยนหัวด้วยกัน คู่ที่ใกล้กันคือ Esko Bar Switch 20K กับ M Switch",
+      },
+      {
+        question: "Esko Bar Switch 20K ชาร์จยังไง",
+        answer: "ชาร์จผ่าน USB-C ผู้ผลิตระบุการชาร์จที่ 5V 0.85A แบตในตัว 850mAh",
+      },
+    ],
+    // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @OKMYARZ — names the
+    // Switch model explicitly (the OKAMI comparison clip only says "ESKO BAR 20K", which may be the non-Switch model).
+    reviewVideo: { videoId: "iDoW0BuyWog", title: "ESKO BAR SWITCH 20000 มันจะขนาดนั้นเลยหรอเนี้ยย?", channelName: "OKM YARZ", publishedAt: "2025-12-20" },
+  },
+  {
+    // Round 10B T05' — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md. HELD
+    // until after the 2026-10-05 SEO_BASELINE read (owner ruling D3) — spec-only by the owner's instruction, no shop
+    // experience. Before release: re-read the G4 manual for "auto-draw" (from researcher-B's summary, not re-read).
+    id: "comparing-caliburn-models",
+    slug: "comparing-caliburn-models",
+    title: "Caliburn G5 vs G4 ต่างกันยังไง เทียบ Caliburn 8 รุ่น",
+    dek: "G5 แบต 1600mAh สลับโหมดด้วยการแตะ G4 แบต 1300mAh มีปุ่มยิง G4 Pro แบต 1800mAh จอทัช เทียบสเปกทีละคู่",
+    category: "buying-guide",
+    readingTimeMin: 7,
+    publishedAt: "2026-09-24",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "สรุปก่อน: ต่างกันตรงไหน",
+        paragraphs: [
+          "Caliburn G5 กับ G4 ต่างกันยังไง ตอบสั้น ๆ คือ G5 แบตมากกว่า (1600mAh กับ 1300mAh) และสลับโหมดด้วยการแตะ ไม่มีปุ่ม ส่วน G4 มีปุ่มยิง ทั้งคู่ใช้หัวพอต GPP ระบบเดียวกัน",
+          "Caliburn 8 รุ่นในบทความนี้ (G5 · G5 Lite · G5 Lite SE · G4 Pro · G4 · G4 Mini · G4 Classic · G3 Pro) ต่างกันอยู่ 4 เรื่อง คือจอกับการควบคุม ขนาดแบต การปรับช่องลม และระบบหัวพอต ส่วนวัตต์สูงสุด ทุกรุ่นที่มีตัวเลขอยู่ที่ 35 วัตต์เท่ากัน",
+          "ตัวเลขทั้งหมดมาจากตารางสเปกที่ยืนยันแล้วบนหน้าสินค้า ถ้ามาจากคู่มือของ UWELL เราบอกไว้ตรงนั้น ส่วน [Caliburn G4 Classic](/products/caliburn-g4-classic) สเปกของรุ่นนี้ยังยืนยันไม่ได้ เราเลยไม่เอาตัวเลขมาเทียบ",
+        ],
+      },
+      {
+        heading: "จัดกลุ่มตามสเปก",
+        paragraphs: [],
+        subsections: [
+          {
+            heading: "จอและการควบคุม",
+            paragraphs: [
+              "[Caliburn G5](/products/caliburn-g5) จอสี 0.85 นิ้ว สลับโหมดด้วยระบบ Smart Triple-Tap Control คือแตะตัวเครื่องสามครั้ง ตามคู่มือของ UWELL ไม่มีปุ่ม ส่วน [Caliburn G4](/products/caliburn-g4) จอสี เลือกโหมดวัตต์บนจอได้ มีปุ่มยิง และตามคู่มือของ UWELL สูบได้เลยโดยไม่ต้องกดปุ่มก็ได้",
+              "[Caliburn G4 Pro](/products/caliburn-g4-pro) จอทัช 2.51 นิ้ว · [Caliburn G3 Pro](/products/caliburn-g3-pro) จอ LCD โอบด้านข้างเครื่อง ส่วน [Caliburn G4 Mini](/products/caliburn-g4-mini) ไม่มีจอ ตามคู่มือของ UWELL ใช้ปุ่มกับไฟ LED บอกสถานะ",
+              "[Caliburn G5 Lite](/products/caliburn-g5-lite) ข้อมูลในหน้าสินค้าบอกว่าตัดจอสีกับระบบแตะของ G5 ออก แต่แถวจอในตารางสเปกของ Lite ยังติดป้าย “ยังไม่ยืนยัน”",
+            ],
+          },
+          {
+            heading: "แบต",
+            paragraphs: [
+              "G4 Pro 1800mAh · G5 · G5 Lite และ G5 Lite SE 1600mAh · G4 1300mAh · G4 Mini 1100mAh · G3 Pro 1000mAh ใช้ mAh เทียบกันระหว่างรุ่นได้ แต่อย่าแปลงเป็นชั่วโมง วิธีอ่านอยู่ที่ [วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet)",
+              "เวลาชาร์จมีตัวเลขยืนยันแค่ 2 รุ่น G4 ราว 30 นาทีที่ 2A และ G4 Mini ราว 58 นาทีที่ 2A",
+            ],
+          },
+          {
+            heading: "ช่องลม",
+            paragraphs: ["G4 Pro ปรับช่องลมได้ละเอียดแบบไม่มีขั้น G3 Pro ปรับได้เต็มช่วง G4 Mini ตามคู่มือของ UWELL มีวาล์วปรับลม ส่วน G5 กับ G4 เรายังไม่มีข้อมูลช่องลมที่ยืนยันได้"],
+          },
+          {
+            heading: "ระบบหัวพอต",
+            paragraphs: [
+              "G5 · G5 Lite · G5 Lite SE · G4 · G4 Mini และ G4 Classic ใช้หัวพอต GPP (G Pod Platform) ของ UWELL ส่วน G4 Pro ใช้ได้ทั้ง GPP และหัวพอต G3 สำหรับ G3 Pro หน้าสินค้าระบุหัวพอต G3 มาในกล่อง 2 หัว คือ 0.4 โอห์ม (3mL) กับ 0.9 โอห์ม (2.5mL)",
+              "หัว GPP ที่มากับ G4 และ G4 Mini คือ 0.4 โอห์มกับ 0.9 โอห์ม ส่วน 0.6 โอห์มกับ 1.2 โอห์มซื้อแยก เรื่องดูแลหัวพอตอยู่ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Caliburn G5 vs G4",
+        paragraphs: [
+          "G5 แบต 1600mAh มากกว่า G4 ที่ 1300mAh ทั้งคู่มีจอสี G5 จอ 0.85 นิ้ว สลับโหมดด้วยการแตะ ไม่มีปุ่ม ส่วน G4 มีปุ่มยิง เลือกโหมดวัตต์บนจอ",
+          "วัตต์ของ G5 อยู่ที่ 5–35 วัตต์ ส่วน G4 คู่มือของ UWELL ระบุ 35 วัตต์ (แถวนี้ในหน้าสินค้าเรายังไม่ยืนยัน) ตามคู่มือ G5 หนัก 65 กรัม ส่วน G4 หนัก 54.7 กรัม หัวพอตเป็น GPP ทั้งคู่ ใช้หัวเดียวกันได้",
+          "ชอบแตะสลับโหมดและอยากได้แบตมากกว่า ดู G5 ชอบเครื่องที่มีปุ่มและเบากว่า ดู G4",
+        ],
+      },
+      {
+        heading: "Caliburn G5 vs G5 Lite",
+        paragraphs: [
+          "แบต 1600mAh กับวัตต์สูงสุด 35 วัตต์เท่ากัน ใช้หัวพอต GPP เหมือนกัน ที่ต่างคือ G5 มีจอสี 0.85 นิ้วกับระบบ Smart Triple-Tap Control ส่วน Lite ตามข้อมูลในหน้าสินค้าตัดสองอย่างนี้ออก (แถวจอของ Lite ยังไม่ยืนยัน)",
+          "[Caliburn G5 Lite SE](/products/caliburn-g5-lite-se) แบตกับวัตต์เท่า Lite ชุดสีทั้ง 8 สีเป็นหนัง นอกจากนี้ต่างจาก Lite ตรงไหนอีก เรายังยืนยันไม่ได้",
+          "อยากได้จอสีกับการแตะสลับโหมด ดู G5 ไม่ต้องการจอสีแต่อยากได้แบตเท่ากัน ดู G5 Lite ถ้าชอบชุดสีหนัง ดู G5 Lite SE",
+        ],
+      },
+      {
+        heading: "Caliburn G4 vs G4 Pro",
+        paragraphs: [
+          "G4 Pro แบต 1800mAh มากกว่า G4 ที่ 1300mAh จอทัช 2.51 นิ้ว ปรับช่องลมได้แบบไม่มีขั้น และใช้หัวพอตได้ทั้ง GPP กับหัวพอต G3 ส่วน G4 ใช้ GPP",
+          "ที่ต้องแลกคือน้ำหนัก ตามคู่มือของ UWELL G4 Pro หนัก 78 กรัม G4 หนัก 54.7 กรัม ส่วนวัตต์สูงสุด 35 วัตต์กับหัวพอต 3mL เท่ากันทั้งคู่ (ตัวเลขวัตต์และความจุของ G4 มาจากคู่มือ)",
+          "อยากได้จอใหญ่ ปรับช่องลมละเอียด และใช้หัวพอตได้สองแบบ ดู G4 Pro อยากได้เครื่องที่เบากว่า ดู G4",
+        ],
+      },
+      {
+        heading: "Caliburn G4 vs G3 Pro",
+        paragraphs: [
+          "G4 แบต 1300mAh มากกว่า G3 Pro ที่ 1000mAh ทั้งคู่มีจอ G4 เป็นจอสี ส่วน G3 Pro เป็นจอ LCD โอบด้านข้าง ปรับได้ 5–35 วัตต์ และปรับช่องลมได้เต็มช่วง ทั้งคู่ชาร์จผ่าน USB-C ที่ 2A",
+          "ต่างกันชัดที่หัวพอต G4 ใช้ GPP มาในกล่อง 0.4 โอห์มกับ 0.9 โอห์ม ส่วน G3 Pro ใช้หัวพอต G3 มาในกล่อง 2 หัว 0.4 โอห์ม (3mL) กับ 0.9 โอห์ม (2.5mL) จะซื้อหัวพอตเพิ่ม ดูให้ตรงกับระบบของเครื่อง",
+          "อยากได้แบตมากกว่า ดู G4 อยากปรับวัตต์และช่องลมเองได้เต็มช่วง ดู G3 Pro ค่าโอห์มกับช่องลมส่งผลกับแนวการสูบยังไง อ่าน [MTL กับ DTL](/guides/understanding-mtl-vs-dtl) หรือดู Caliburn ทั้งหมดที่ [UWELL](/brands/uwell)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["caliburn-g5", "caliburn-g4", "caliburn-g4-pro"],
+    faq: [
+      { question: "หัวพอต Caliburn G4 ใส่ G5 ได้ไหม", answer: "ได้ ทั้งสองรุ่นใช้หัวพอต GPP ของ UWELL ระบบเดียวกัน" },
+      { question: "Caliburn G5 กับ G5 Lite แบตเท่ากันไหม", answer: "เท่ากัน 1600mAh วัตต์สูงสุด 35 วัตต์เท่ากัน ต่างกันที่จอสีกับระบบแตะสลับโหมดของ G5" },
+      { question: "Caliburn G4 Pro ใช้หัว G3 ได้ไหม", answer: "ได้ สเปกที่ยืนยันแล้วระบุว่า G4 Pro ใช้ได้ทั้งหัวพอต GPP และหัวพอต G3" },
+      { question: "Caliburn รุ่นไหนไม่มีจอ", answer: "ในรุ่นที่เทียบในบทความนี้ G4 Mini ไม่มีจอ ใช้ไฟ LED บอกสถานะ" },
+    ],
+  },
+  {
+    // Round 10B T07' — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md. HELD
+    // until after the 2026-10-05 SEO_BASELINE read (owner ruling D3). Pair = the only cross-brand model pair with
+    // autocomplete evidence ("argus g4 vs caliburn g5", researcher-B-result.md), the one Cowork proposed.
+    id: "argus-g4-vs-caliburn-g5",
+    slug: "argus-g4-vs-caliburn-g5",
+    title: "ARGUS G4 vs Caliburn G5 ต่างกันยังไง",
+    dek: "ไม่มีคำตอบที่แน่นอนว่าตัวไหนดีกว่า แบตใกล้กัน วัตต์กับขนาดจอเท่ากัน ที่ต่างชัดคือระบบหัวพอต และ G5 สลับโหมดด้วยการแตะ",
+    category: "buying-guide",
+    readingTimeMin: 5,
+    publishedAt: "2026-09-24",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "ตัวไหนดีกว่า: ไม่มีคำตอบที่แน่นอน",
+        paragraphs: [
+          "ARGUS G4 กับ Caliburn G5 ตัวไหนดีกว่า ไม่มีคำตอบที่แน่นอน ตัวเลขหลักใกล้กันมาก แบต 1650mAh กับ 1600mAh ปรับได้ 5–35 วัตต์เท่ากัน จอ 0.85 นิ้วเท่ากัน ที่ต่างชัดคือระบบหัวพอต และ G5 สลับโหมดด้วยการแตะ",
+          "เลยขอเทียบทีละเรื่องแทนการตัดสิน ตัวเลขทั้งหมดมาจากตารางสเปกที่ยืนยันแล้วบนหน้า [ARGUS G4](/products/argus-g4) กับ [Caliburn G5](/products/caliburn-g5) ส่วนที่มาจากคู่มือของ UWELL บอกไว้ตรงนั้น",
+        ],
+      },
+      {
+        heading: "จอกับการควบคุม",
+        paragraphs: [
+          "ARGUS G4 ใช้จอ HD 0.85 นิ้ว โชว์แบต วัตต์ ค่าโอห์ม สถานะล็อก และจำนวนพัฟ ส่วน G5 เป็นจอสี 0.85 นิ้ว",
+          "G5 สลับโหมดด้วยระบบ Smart Triple-Tap Control คือแตะตัวเครื่องสามครั้ง ตามคู่มือของ UWELL ไม่มีปุ่ม ส่วน ARGUS G4 เรายังไม่มีข้อมูลที่ยืนยันเรื่องระบบยิง เลยยังไม่เทียบเรื่องปุ่ม",
+        ],
+      },
+      {
+        heading: "ระบบหัวพอตและแนวการสูบ",
+        paragraphs: [
+          "ARGUS G4 ใช้ระบบหัวพอต ARGUS เติมด้านบน มีหลายค่าโอห์ม ตัวเครื่องรับช่วงโอห์ม 0.4–3.0 โอห์ม ส่วน G5 ใช้หัวพอต GPP ของ UWELL ความจุ 3mL เติมด้านบน ต่อกับตัวเครื่องด้วยแม่เหล็ก",
+          "หัว GPP มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม ช่วงที่ ARGUS G4 รับได้กว้างกว่า แต่ช่วงกว้างไม่ได้แปลว่ามีหัวพอตทุกค่าให้ซื้อ อ่านเรื่องนี้ที่ [วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet) ส่วนความจุหัวพอตของ ARGUS G4 เรายังยืนยันไม่ได้ เลยไม่เอามาเทียบ",
+          "ค่าโอห์มของหัวพอตที่ใส่มีผลกับแนวการสูบ ถ้ายังไม่แน่ใจว่าตัวเองสูบแนวไหน อ่าน [MTL กับ DTL](/guides/understanding-mtl-vs-dtl) ก่อน",
+        ],
+      },
+      {
+        heading: "แบตกับการชาร์จ",
+        paragraphs: [
+          "แบต ARGUS G4 1650mAh ส่วน G5 1600mAh ต่างกัน 50mAh ทั้งคู่ชาร์จผ่าน USB-C โดย ARGUS G4 สเปกระบุ 5V/2A ชาร์จเต็มในราว 45 นาที ส่วน G5 ไม่มีตัวเลขเวลาชาร์จในสเปกที่ยืนยัน",
+          "ชาร์จหนึ่งครั้งใช้ได้นานแค่ไหน ขึ้นกับวัตต์ที่ตั้งและสูบถี่แค่ไหน เราไม่ใส่ตัวเลขชั่วโมงให้",
+        ],
+      },
+      {
+        heading: "เหมาะกับใคร",
+        paragraphs: [
+          "อยากเห็นวัตต์ ค่าโอห์ม และจำนวนพัฟบนจอ และอยากได้ตัวเครื่องที่รับช่วงโอห์มกว้าง ดู ARGUS G4",
+          "อยากสลับโหมดด้วยการแตะแทนการกดปุ่ม และอยากใช้หัวพอต GPP ที่ใช้ร่วมกับ Caliburn รุ่นปัจจุบันหลายรุ่น ดู Caliburn G5 ถ้าจะเทียบ G5 กับ Caliburn รุ่นอื่นต่อ อ่าน [เทียบ Caliburn ทีละคู่](/guides/comparing-caliburn-models) หรือดูทั้งแบรนด์ที่ [VOOPOO](/brands/voopoo) กับ [UWELL](/brands/uwell)",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["argus-g4", "caliburn-g5"],
+    faq: [
+      { question: "ARGUS G4 กับ Caliburn G5 แบตต่างกันเยอะไหม", answer: "ต่างกัน 50mAh คือ ARGUS G4 1650mAh ส่วน Caliburn G5 1600mAh ปรับได้ 5–35 วัตต์เท่ากัน" },
+      { question: "หัวพอต Caliburn ใส่ ARGUS G4 ได้ไหม", answer: "สองรุ่นนี้ใช้คนละระบบหัวพอต ARGUS G4 ใช้ระบบหัวพอต ARGUS ส่วน Caliburn G5 ใช้ GPP ของ UWELL สเปกของทั้งสองรุ่นไม่ได้ระบุว่าใช้แทนกันได้" },
+      { question: "VOOPOO กับ Caliburn ต่างกันยังไง", answer: "VOOPOO เป็นแบรนด์ ส่วน Caliburn เป็นตระกูลของ UWELL ถ้าเทียบรุ่นต่อรุ่น ARGUS G4 กับ Caliburn G5 แบตกับวัตต์ใกล้กัน ต่างกันที่ระบบหัวพอต และ G5 สลับโหมดด้วยการแตะ" },
+    ],
+  },
 ];
+
+/** The public articles — everything outside HELD_GUIDE_IDS. */
+export const guides: Guide[] = allGuides.filter((g) => !HELD_GUIDE_IDS.has(g.id));
+
+/** Held articles, for the contract test only — never render or link from this list. */
+export const heldGuides: Guide[] = allGuides.filter((g) => HELD_GUIDE_IDS.has(g.id));
 
 export function getGuide(slug: string): Guide | undefined {
   return guides.find((g) => g.slug === slug);

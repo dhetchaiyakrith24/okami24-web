@@ -327,6 +327,7 @@ export const en: Dictionary = {
     categoryMaintenance: "Maintenance",
     readingTimeMinutes: "min read",
     detailEyebrow: "Guide",
+    thaiOnlyNotice: "This guide is available in Thai only.",
   },
   eliquid: {
     eyebrow: "E-Liquid",

@@ -344,6 +344,8 @@ export const th: Dictionary = {
     categoryMaintenance: "การดูแลรักษา",
     readingTimeMinutes: "นาทีอ่านจบ",
     detailEyebrow: "คู่มือ",
+    // Never rendered: the Thai page shows the article itself (Guide.thaiOnly, round 10B). Kept for the dictionary shape.
+    thaiOnlyNotice: "บทความนี้มีเฉพาะภาษาไทย",
   },
   eliquid: {
     eyebrow: "น้ำยา",

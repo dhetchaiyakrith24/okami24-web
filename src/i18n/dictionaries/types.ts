@@ -389,6 +389,9 @@ export interface Dictionary {
     /** Singular "Guide" eyebrow on a guide's own detail page (`/guides/[slug]`) — distinct from
      *  `pageTitle` ("Guides", plural, the listing page). */
     detailEyebrow: string;
+    /** Round 10B (owner ruling 2026-09-24, en/zh wording given by the owner): the one line an English or Chinese visitor
+     *  sees on a Thai-only guide's URL (Guide.thaiOnly), above a link back to /guides. The Thai page never shows it. */
+    thaiOnlyNotice: string;
   };
   eliquid: {
     eyebrow: string;

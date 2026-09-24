@@ -321,6 +321,7 @@ export const zh: Dictionary = {
     categoryMaintenance: "保养维护",
     readingTimeMinutes: "分钟阅读",
     detailEyebrow: "指南",
+    thaiOnlyNotice: "本文仅提供泰语版本。",
   },
   eliquid: {
     eyebrow: "烟油",

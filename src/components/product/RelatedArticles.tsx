@@ -22,8 +22,11 @@ import type { RelatedArticle } from "@/lib/article-relevance";
  * genuinely related article renders nothing at all.
  * Nothing in this block sells: no price, no cart, no "buy" — it is the reading exit.
  */
-export function RelatedArticles({ articles }: { articles: RelatedArticle[] }) {
+export function RelatedArticles({ articles: thaiArticles, otherLocaleArticles }: { articles: RelatedArticle[]; otherLocaleArticles?: RelatedArticle[] }) {
   const { dict, locale } = useLocale();
+  // Round 10B: en/zh get the list built without Thai-only guides (article-relevance `skipThaiOnly`), so an English or
+  // Chinese visitor is never sent to a page that only says "available in Thai only".
+  const articles = locale === "th" ? thaiArticles : (otherLocaleArticles ?? thaiArticles);
   if (articles.length === 0) return null;
 
   const label = (a: RelatedArticle) => {

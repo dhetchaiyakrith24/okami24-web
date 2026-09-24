@@ -298,6 +298,11 @@ export interface Guide {
    *  entered the repo, read from git history (never invented). Optional: absent = not claimed. The
    *  modified date is not a record field: src/lib/content-dates.ts derives it from git. */
   publishedAt?: string;
+  /** Round 10B (owner ruling 2026-09-24): the record's own title/dek/body are Thai and there is no en/zh version.
+   *  On an English or Chinese page such a guide is left out of /guides and the "อ่านต่อ" boxes, and its own URL shows
+   *  only `dict.guides.thaiOnlyNotice` + a link back to /guides — never Thai text (docs/THAI_STYLE.md §2, standing
+   *  rule). Guarded by src/lib/guide-locale-contract-test.ts and scripts/locale-hydration-scan.js. */
+  thaiOnly?: boolean;
 }
 
 export interface GuideSection {

@@ -166,7 +166,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         paragraphs: [
           "[M Switch Kit](/products/m-switch-kit) คือตัวเครื่องที่เก็บไว้ใช้ซ้ำ ชาร์จได้ผ่าน USB-C ส่วนน้ำยามากับหัวพอตบรรจุสำเร็จที่เสียบเปลี่ยนได้ หัวหนึ่งสูงสุด 15,000 พัฟ ไม่ต้องซื้อน้ำยาขวด ไม่ต้องเติมเอง ความจุแบตของรุ่นนี้ยังไม่ยืนยัน เราเลยไม่ใส่ตัวเลข",
           "หัวพอตที่ใช้คือ [M Switch Pod](/products/m-switch-pod) บรรจุน้ำยาสำเร็จ 2.2mL ทำมาสำหรับ M Switch Kit น้ำยาหมดก็ถอดเปลี่ยนหัวใหม่ ตัวเครื่องใช้ตัวเดิม",
-          "เทียบกับ M Bar 10K ที่ทิ้งทั้งเครื่อง M Switch ทิ้งแค่หัวพอต ใช้ง่ายเท่ากัน คือไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์ ต่างกันที่ขยะต่อครั้งน้อยกว่า ถ้ายังตัดสินใจไม่ได้ว่าจะเอาแบบไหน กลับไปเริ่มที่ [เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system)",
+          "เทียบกับ M Bar 10K ที่ทิ้งทั้งเครื่อง M Switch ทิ้งแค่หัวพอต ใช้ง่ายเท่ากัน คือไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์ ต่างกันที่ขยะต่อครั้งน้อยกว่า เทียบสองแบบนี้ละเอียดอ่านต่อที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) ถ้ายังตัดสินใจไม่ได้ว่าจะเอาแบบไหน กลับไปเริ่มที่ [เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system)",
         ],
       },
     ],
@@ -681,7 +681,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
         heading: "GPP 烟弹适配哪些设备",
         paragraphs: [
           "UWELL 的 GPP（G Pod Platform）烟弹是现款 Caliburn 系列共用的顶部注油烟弹。根据 UWELL 官方页面，它适配 Caliburn G5、G5 Lite、G5 Lite SE、G4 Pro、G4 Pro KOKO、G4、G4 Mini、G4 Classic、G3 Pro 和 G3 Pro KOKO。",
-          "在本站，这款烟弹就是 [GPP 烟弹](/products/coil-94)，有四种阻值：0.4、0.6、0.9 和 1.2Ω，为网状芯。页面上的商品名写的是「UWELL คอยล์ Caliburn G4&G3 Series」，但它同样适配 G5 系列。",
+          "在本站，这款烟弹就是 [GPP 烟弹](/products/coil-94)，有四种阻值：0.4、0.6、0.9 和 1.2Ω，为网状芯。页面上的商品名写的是「UWELL Coil Caliburn G4&G3 Series」（页面上以泰文显示），但它同样适配 G5 系列。",
           "网状雾化芯与圆形绕线有何不同，见 [网状雾化芯系统](/technology/mesh-coil-systems)。",
           "提醒一点：同样叫 Caliburn，不代表零件可以互换。Caliburn G2 世代的烟弹与 GPP 烟弹互不兼容。如果你的设备是 [Caliburn G5](/products/caliburn-g5)、[Caliburn G3 Pro](/products/caliburn-g3-pro) 或 [Caliburn G4 Pro](/products/caliburn-g4-pro)，要用的就是上面列表中的 GPP。",
         ],

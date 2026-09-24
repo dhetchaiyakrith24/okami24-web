@@ -106,7 +106,8 @@ export function ArticleBody({
       {video && (
         // ProductReviewVideo already carries its own eyebrow, title and channel line — no
         // SectionHeading on top (the demo render showed the pair doubled).
-        <ProductReviewVideo video={video} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} />
+        // Round 10B: on en/zh a Thai clip title is not shown (0 Thai text on the en/zh guide pages, owner 2026-09-24).
+        <ProductReviewVideo video={video} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hideTitle={locale !== "th" && /[ก-ฺเ-๛]/.test(video.title)} />
       )}
       {activeFaq && activeFaq.length > 0 && (
         <div className="flex flex-col gap-6">
