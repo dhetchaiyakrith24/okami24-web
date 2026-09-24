@@ -34,7 +34,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
       {
         heading: "ตัวอย่างจริง: คอยล์ mesh ใน M Bar 10K",
         paragraphs: [
-          "[M Bar 10K](/products/m-bar-10k) แถวคอยล์เขียนว่า “Cotton mesh coil” ส่วนที่ยืนยันแล้วเหมือนกัน คือ สูงสุด 10,000 พัฟ แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C และ 3 โหมดวัตต์ Eco / Soft / Boost กดสองครั้งติดกันเพื่อสลับ",
+          "[M Bar 10K](/products/m-bar-10k) ใช้คอยล์ cotton mesh ตามที่ SALTHUB ระบุ รุ่นนี้สูงสุด 10,000 พัฟ แบต 600mAh ชาร์จซ้ำได้ผ่าน USB-C และมี 3 โหมดวัตต์ Eco / Soft / Boost กดสองครั้งติดกันเพื่อสลับ",
           "รุ่นนี้เป็นพอตใช้แล้วทิ้ง คอยล์เลยไม่ต้องเปลี่ยน ใช้จนน้ำยาหมดก็จบ ถ้าอยากเทียบกับฝั่งที่เปลี่ยนคอยล์เองได้ อ่านที่ [พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม](/guides/open-system-vs-disposable)",
         ],
       },

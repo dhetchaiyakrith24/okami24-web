@@ -68,7 +68,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       battery: "1600mAh ในตัว",
       screen: "จอสี 0.85 นิ้ว",
-      pod: "3.0mL (รุ่น TPD 2.0mL) เติมด้านบน",
+      pod: "3.0mL (2.0mL ตามมาตรฐาน TPD) เติมด้านบน",
       control: "Smart Triple-Tap Control (แตะเพื่อสลับโหมด)",
       "pod-compat": "UWELL GPP",
     },
@@ -199,7 +199,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "1300mAh ในตัว",
       "charge-time": "USB-C ชาร์จเร็ว 5V/2A",
       screen: "จอสี 0.85 นิ้ว มีโหมด Storm กับ Waves",
-      firing: "ดูดหรือกดปุ่มก็ได้ (โหมด auto)",
+      firing: "สูบได้เลย หรือกดปุ่มก็ได้",
       "pod-compat": "UWELL GPP (ในกล่องมีหัว mesh 0.4Ω กับ 0.9Ω)",
       output: "35W",
     },
@@ -744,7 +744,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "พอตใช้แล้วทิ้ง 2 รสในเครื่องเดียว",
     shortDescription:
-      "พอตใช้แล้วทิ้ง 2 โหมด 2 รสในเครื่องเดียว เรายังหาสเปกของรุ่นนี้บนเว็บ Joiway ไม่เจอ เลยยังไม่ใส่ตัวเลข OKami24 รีวิวใช้จริง 30 วันบน YouTube",
+      "พอตใช้แล้วทิ้ง 2 โหมด 2 รสในเครื่องเดียว เรายังหาสเปกของรุ่นนี้บนเว็บ Joiway ไม่เจอ เลยยังไม่ใส่ตัวเลข ส่วนตัวนี้แหละที่ OKami24 รีวิวใช้จริง 30 วันบน YouTube",
     features: {
       "dual-flavor": {
         title: "สลับได้ 2 รส",

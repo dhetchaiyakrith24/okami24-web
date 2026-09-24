@@ -81,7 +81,7 @@ const allGuides: Guide[] = [
       {
         heading: "Real example: a disposable with adjustable airflow (M Bar 9K)",
         paragraphs: [
-          "The [M Bar 9K](/products/m-bar-9k) is a disposable with adjustable airflow, tunable from a tight MTL draw to a more open DTL pull on one device — so you don't have to settle your draw style before buying.",
+          "The [M Bar 9K](/products/m-bar-9k) is a disposable with adjustable airflow — so you don't have to settle your draw style before buying.",
           "It comes prefilled with 30mg nicotine-salt e-liquid, rated up to 9,000 puffs, with a 600mAh battery that recharges over USB-C. No filling, no coil changes.",
         ],
       },
@@ -759,7 +759,7 @@ const allGuides: Guide[] = [
           },
           {
             heading: "อย่าดูดค้างนาน",
-            paragraphs: ["Caliburn ตัดไฟเองถ้าดูดค้างนานเกินไป ตามคู่มือของ UWELL G4 ตัดเมื่อเกิน 8 วินาที ส่วน G5 เมื่อเกิน 6 วินาที หยุดดูดก่อนแล้วค่อยสูบใหม่"],
+            paragraphs: ["Caliburn ตัดไฟเองถ้าดูดค้างนานเกินไป คู่มือของ UWELL บอกว่า G4 ตัดเมื่อเกิน 8 วินาที ส่วน G5 เมื่อเกิน 6 วินาที หยุดดูดก่อนแล้วค่อยสูบใหม่"],
           },
           {
             heading: "หัวพอตใหม่ ให้น้ำยาซึมก่อนสูบ",
