@@ -33,6 +33,7 @@
  */
 import { Children, cloneElement, createElement, isValidElement } from "react";
 import type { ReactElement, ReactNode } from "react";
+import { MULTI_WORD_FLAVOR_NAMES } from "@/lib/flavor-names";
 // (Round 9, 2026-09-23: the U+2060 below is the binding PLAN's internal marker — see typeset(); no
 // rendered string carries it any more.)
 
@@ -131,9 +132,15 @@ const JOINED: ReadonlyArray<{ word: string; within: string; joined: string }> = 
  * that makes a 390px page scroll sideways is withdrawn from this list and handled per sentence
  * instead (the close gate: scrollWidth = clientWidth on every sitemap page at 390).
  */
-const NEVER_SPLIT: ReadonlyArray<{ word: string; joined: string }> = ["หัวพอต", "ตัวเครื่อง", "ใช้แล้วทิ้ง", "ยังไม่ยืนยัน", "ชาร์จซ้ำ"].map(
+// Round 10B (owner ruling 2026-09-24, question 3 ก): "กะพริบ" "ผู้ผลิต" "จอทัช" "กี่วัน" added — the round-10B article
+// scan split each of them ("ไฟกะ | พริบ", "ผู้ | ผลิต", "จอ | ทัช", "กี่ | วัน"). "จอทัช" keeps its older JOINED entry too
+// (harmless: that sentence is joined first, then this entry finds nothing left to join there).
+const NEVER_SPLIT: ReadonlyArray<{ word: string; joined: string }> = ["หัวพอต", "ตัวเครื่อง", "ใช้แล้วทิ้ง", "ยังไม่ยืนยัน", "ชาร์จซ้ำ", "กะพริบ", "ผู้ผลิต", "จอทัช", "กี่วัน"].map(
   (word) => ({ word, joined: joinWord(word) })
 );
+// Round 10B (same ruling): "USB-C" broke after its hyphen ("USB- | C", 390). The joiner after the hyphen becomes a
+// nowrap run over "-C"; a line never breaks before a hyphen, so the whole name stays on one line.
+const USB_C = "USB-C";
 
 /** Multi-word model / platform / term names the owner listed — kept on one line. The 11 added at the
  *  SEO ข close (owner 2026-09-22, item ข) are the ones the article scan saw split across lines;
@@ -181,6 +188,10 @@ function typeset(text: string): string {
   out = out.replace(NUMBER_UNIT_TH, bindUnit);
   out = out.replace(NUMBER_UNIT_EN, bindUnit);
   for (const name of MODEL_NAMES) out = out.split(name).join(name.split(" ").join(NBSP));
+  // Round 10B (owner ruling 2026-09-24): every multi-word flavour name on one line — "Peach | Strawberry" at 390 read
+  // as two flavours. The list is src/lib/flavor-names.ts, kept complete by its contract test.
+  for (const name of MULTI_WORD_FLAVOR_NAMES) out = out.split(name).join(name.split(" ").join(NBSP));
+  out = out.split(USB_C).join(`USB-${WJ}C`);
   return out;
 }
 
