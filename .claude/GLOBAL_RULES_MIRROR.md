@@ -1,9 +1,11 @@
 <!--
-  MIRROR — NOT LOADED. Byte copy of ~/.claude/CLAUDE.md (sections 1–12; §12 "ทำงานกับเจ้าของ" added by the owner
-  2026-09-25). Kept for cloud sessions, which cannot see ~/.claude/. Owner ruling 25/09 #4: do NOT import this file
-  from CLAUDE.md yet (a local session would load the central rules twice); it is switched on in the "move to cloud" round.
-  Sync check: node scripts/owner-rules-check.js (compares everything below the marker line with the central file).
-  The live file is ~/.claude/CLAUDE.md — edit there first, then re-copy here.
+  MIRROR — NOT LOADED. Was a byte copy of ~/.claude/CLAUDE.md (sections 1–12; §12 "ทำงานกับเจ้าของ" added by the owner
+  2026-09-25), kept for cloud sessions, which cannot see ~/.claude/. Owner ruling 25/09 #4: not imported from CLAUDE.md
+  (a local session would load the central rules twice). Never switched on — superseded, see below.
+  Sync check: node scripts/owner-rules-check.js (compares everything below the marker line with the central text).
+  SUPERSEDED (round "central-rules", 2026-09-26): the real text is CLAUDE.md in GitHub repo smogz-rules, loaded here as
+  .claude/rules/central-rules.md (synced, never hand-edited). Do not update this mirror by hand; it is kept only until
+  the cloud test passes, then it may be retired (owner ruling: not deleted before that).
 -->
 <!-- MIRROR-BEGIN -->
 # กฎการทำงานของ SMOGZ
