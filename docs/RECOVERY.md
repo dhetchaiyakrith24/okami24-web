@@ -83,8 +83,8 @@ git ไม่ยอมเปิดด่าน (hook) ให้เองหล�
 ## 2ง. กฎกลางที่เดียว (รอบ central-rules 2026-09-26) — สถานะ + ถอย
 
 สถานะตอนนี้ (อัปเดตทุกครั้งที่ขยับ):
-- รีโป `smogz-rules` บน GitHub: **ยังไม่สร้าง** (จุดหยุด 1 รอพี่)
-- สำเนา `.claude\rules\central-rules.md` ในรีโปเว็บ: **ยังไม่มี**
+- รีโป `smogz-rules` บน GitHub: **สร้างแล้ว (private) · main ล็อกแล้ว** (PR เท่านั้น · ด่าน `guard` ต้องผ่าน · ใช้กับเจ้าของด้วย · 2026-09-26) · กุญแจ 2 ดอกหมดอายุ **2027-09-26**
+- สำเนา `.claude\rules\central-rules.md` ในรีโปเว็บ: **อยู่บน branch รอบนี้แล้ว** (มาจากตัวส่ง PR #64) · เข้า main เมื่อ Javis merge รอบนี้
 - ล็อก main ของรีโปเว็บ (ด่าน `central-rules-copy` ต้องผ่าน): **ยังไม่ตั้ง** — ตั้งหลัง Javis merge รอบนี้
 - ไฟล์กลางบนคอม `C:\Users\dhetc\.claude\CLAUDE.md`: **ยังเป็นฉบับเต็ม** (เช็คเอง: PowerShell `Get-FileHash C:\Users\dhetc\.claude\CLAUDE.md` → Hash ขึ้นต้น `9605F29A79D2`)
 
