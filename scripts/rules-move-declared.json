@@ -8,6 +8,20 @@
       "why": "history: the v55 handoff of 2026-09-22 was written with the skill as it was named then"
     }
   ],
+  "teamRulesEdits": [
+    {
+      "section": "13.6",
+      "date": "2026-09-25",
+      "zoneEndPrefix": "  **ทุกครั้งที่ push ให้อัปเดต HANDOFF §16**",
+      "why": "owner order in the rules-move chat: move the chat at 700k context (get_usage makes the number visible), check context on command, announce before moving; owner allowed replacing overlapping old rule text. rule-auditor audited the block first (11 rows, all resolved in this edit).",
+      "before": [
+        "* **กติกา context (เจ้าของสั่ง 2026-09-17 — ฉบับใช้จริง แทนทุกเวอร์ชันก่อน):**",
+        "  Code ไม่ต้องนับก้อน ไม่ต้องดูตัวเลขใด ๆ · ทำต่อเนื่องจนจบรอบ",
+        "  **handoff เมื่อเกิดข้อใดข้อหนึ่ง:**",
+        "  (ก) จบรอบ  (ข) เจ้าของพิมพ์ handoff  (ค) ก่อนเริ่มงานที่จะใช้เวลานาน"
+      ]
+    }
+  ],
   "centralEdits": [
     {
       "line": 39,

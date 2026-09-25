@@ -47,7 +47,7 @@ Read whole files. Do not sample. A rule hidden at the bottom of a file is still 
 | Kind | Definition |
 |---|---|
 | **ขัดกัน** (conflict) | Two rules order different things that cannot both be followed at once. |
-| **ตายแล้ว** (dead) | The rule refers to something that no longer exists (a file, a section, a script, a state), or its condition has expired. **Also dead: any rule whose follower cannot see the data the rule depends on** — e.g. a rule that tells the agent to act on a token count, a context percentage or a quota, which the agent cannot observe. This has bitten the project three times. |
+| **ตายแล้ว** (dead) | The rule refers to something that no longer exists (a file, a section, a script, a state), or its condition has expired. **Also dead: any rule whose follower cannot see the data the rule depends on** — e.g. a rule that tells the agent to act on a token count, a context percentage or a quota, which the agent cannot observe — unless the rule names a tool that returns it (e.g. `get_usage` gives the main agent its own chat's context size, desktop app only, since 2026-09-25; per-agent tokens are still invisible). This has bitten the project three times. |
 | **ทับซ้อน** (overlap) | The same subject is ruled on in two or more places, even if the wording differs and even if the rulings agree today. |
 | **กำกวม** (ambiguous) | The rule can be read two ways, or there is no way to measure whether it has been followed. |
 

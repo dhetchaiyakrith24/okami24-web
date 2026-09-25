@@ -34,6 +34,9 @@ Always:
   that file. **Never read LAUNCH_AUDIT in full**; open only the numbered item the round is working
   on.
 - The round instruction file the owner attached.
+- `.claude/LESSONS.md` — the "what worked" lessons (the one place for them, owner ruling 2026-09-25). Not
+  imported into `CLAUDE.md` on purpose (too large to load every chat) — read it here, at round open, and
+  again before deciding "the order given is fine, but there is a better way". New lessons are written there.
 
 Only on rounds that touch copy shown on the site (SEO · articles · language rounds = read;
 housekeeping · data · code-only rounds = do not read):
@@ -51,7 +54,8 @@ Then `git status` — know where the tree is before moving.
 2. Compare `origin/main` with the commit the instruction file names as main. **Not equal =
    stop and report before doing anything** — do not start the round on a different base.
 3. Confirm the working branch contains `origin/main` (fast-forward if it is merely behind);
-   confirm the tree is clean.
+   confirm the tree is clean. On a continuation, the tree may hold only the uncommitted files that HANDOFF
+   §16 names as left on purpose (chat moved mid-batch, 13.6 (จ)) — any other change = stop and report.
 4. Report the numbers seen (hash of main, branch, tags) — never the numbers the file expected.
 
 If the instruction file also names a tag, check the tag with `git tag -n1`; a tag that points

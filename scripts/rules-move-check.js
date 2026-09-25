@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // Rules-move check (round "rules move", 2026-09-25) — criterion (ก) of the round file, re-runnable.
 //
 // Proves that moving section 13 of ~/.claude/CLAUDE.md into .claude/TEAM_RULES.md lost nothing:
@@ -76,6 +77,8 @@ const tSet = inSet(teamRules);
 const region11 = new Set(backup.slice(0, s13).filter((l) => l.trim()));
 const region13 = new Set(backup.slice(s13).filter((l) => l.trim()));
 const befores = new Set(decl.centralEdits.map((d) => d.before));
+// section-13 lines replaced after the move by a declared owner-ordered edit (e.g. 13.6 context rule, 2026-09-25)
+const replaced13 = new Set((decl.teamRulesEdits || []).flatMap((e) => e.before));
 let nonEmpty = 0;
 backup.forEach((l, i) => {
   if (!l.trim()) return;
@@ -87,17 +90,43 @@ backup.forEach((l, i) => {
     if (inC) { bump('dup'); fail('coverage', `declared line ${i + 1} still in the central text`); }
     return;
   }
+  if (replaced13.has(l)) {
+    if (inT) { bump('dup'); fail('coverage', `line ${i + 1} is declared replaced but still in TEAM_RULES`); }
+    return;
+  }
   if (!inC && !inT) { bump('lost'); fail('coverage', `backup line ${i + 1} lost: ${l.slice(0, 80)}`); return; }
   if (isStructural(l) || (region11.has(l) && region13.has(l))) return; // separators / lines that were in both halves
   if (inC && inT) { bump('dup'); fail('coverage', `backup line ${i + 1} in both files: ${l.slice(0, 80)}`); }
   if (i >= s13 && inC && !region11.has(l)) { bump('dup'); fail('coverage', `section-13 line ${i + 1} still in the central text`); }
 });
 decl.centralEdits.forEach((d) => { if (!cSet.has(d.after)) fail('coverage', `declared replacement for line ${d.line} not in the central text`); });
-// section 13 must sit in TEAM_RULES as one unbroken block, in order
+// section 13 must sit in TEAM_RULES verbatim and in order; only declared replacements may be missing, and only
+// at the place they were (new lines may appear between kept lines there)
 const sec13 = backup.slice(s13);
 while (sec13.length && sec13[sec13.length - 1] === '') sec13.pop();
-const start = teamRules.indexOf(sec13[0]);
-if (start < 0 || sec13.some((l, k) => teamRules[start + k] !== l)) fail('coverage', 'section 13 is not verbatim and contiguous in TEAM_RULES');
+// zones: from the line before a declared edit's first replaced line up to its zoneEnd line (inclusive start,
+// exclusive end) — only there may new lines sit between kept lines
+const zones = (decl.teamRulesEdits || []).map((e) => {
+  const idx = e.before.map((b) => sec13.indexOf(b));
+  if (idx.some((x) => x < 0)) fail('declared', `teamRulesEdits ${e.section}: a "before" line is not in backup section 13`);
+  const end = sec13.findIndex((l) => l.startsWith(e.zoneEndPrefix || '\u0000'));
+  if (end < 0) fail('declared', `teamRulesEdits ${e.section}: zoneEndPrefix not found in backup section 13`);
+  return [Math.min(...idx) - 1, end];
+});
+const inZone = (i) => zones.some(([a, b]) => i >= a && i < b);
+const keptIdx = sec13.map((l, i) => i).filter((i) => sec13[i].trim() && !replaced13.has(sec13[i]));
+let pos = teamRules.indexOf(sec13[keptIdx[0]]);
+let inOrder = pos >= 0;
+for (let k = 1; inOrder && k < keptIdx.length; k++) {
+  const l = sec13[keptIdx[k]];
+  let next = pos + 1;
+  while (next < teamRules.length && !teamRules[next].trim()) next++; // blank lines are not compared
+  if (teamRules[next] === l) { pos = next; continue; }
+  const found = teamRules.indexOf(l, pos + 1);
+  if (found < 0 || !inZone(keptIdx[k - 1])) { inOrder = false; fail('coverage', `section 13 not verbatim/in order in TEAM_RULES near backup line ${s13 + keptIdx[k] + 1}: ${l.slice(0, 60)}`); break; }
+  pos = found;
+}
+bump('replaced13', replaced13.size);
 // the central text may differ from backup §1–11 only at the declared lines
 if (centralLines.length !== expectedCentral.length || centralLines.some((l, k) => l !== expectedCentral[k])) {
   bump('undeclared'); fail('coverage', 'central text has changes that are not in rules-move-declared.json');
@@ -137,7 +166,7 @@ for (const p of scan) {
   rd(p).split('\n').forEach((l, i) => {
     if (allowed(f, l)) return;
     if (ptr.test(l)) { bump('pointer'); fail('pointers', `${f}:${i + 1} still points section 13 at ~/.claude/CLAUDE.md`); }
-    if (skillPtr.test(l) && !/ย้ายจาก `?~\/\.claude\/skills\/handoff|ย้าย `?~\/\.claude\/skills\/handoff`? ออก|move `?~\/\.claude\/skills\/handoff`? out|→ `?\.claude\/skills\/okami24-handoff/.test(l)) { bump('pointer'); fail('pointers', `${f}:${i + 1} points at ~/.claude/skills/handoff`); }
+    if (skillPtr.test(l) && !/ย้ายจาก `?~\/\.claude\/skills\/handoff|ย้าย `?~\/\.claude\/skills\/handoff`? ออก|move `?~\/\.claude\/skills\/handoff`? out|~\/\.claude\/skills\/handoff`? moved out|→ `?\.claude\/skills\/okami24-handoff/.test(l)) { bump('pointer'); fail('pointers', `${f}:${i + 1} points at ~/.claude/skills/handoff`); }
   });
 }
 
@@ -173,7 +202,7 @@ for (const p of scan) {
 }
 
 // ---------- report
-console.log(`mode: ${mode} · backup non-empty lines: ${nonEmpty} · §13 lines: ${sec13.length} · declared edits: ${decl.centralEdits.length}`);
+console.log(`mode: ${mode} · backup non-empty lines: ${nonEmpty} · §13 lines: ${sec13.length} · declared edits: central ${decl.centralEdits.length} · §13 lines replaced ${counts.replaced13 || 0}`);
 console.log(`lost: ${counts.lost || 0} · duplicated: ${counts.dup || 0} · undeclared changes: ${counts.undeclared || 0} · pointers left: ${counts.pointer || 0}`);
 console.log(`13.x cited: ${counts.cited13 || 0} (missing: ${counts.bad13 || 0}) · skill refs: ${counts.skillRefs || 0} (missing: ${counts.badSkill || 0}) · 13.x headings: ${[...heads].join(' ')}`);
 if (fails.length) { console.log(`\nFAIL (${fails.length})`); fails.forEach((m) => console.log(' ' + m)); process.exit(1); }
