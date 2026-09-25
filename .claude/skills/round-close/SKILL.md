@@ -31,6 +31,8 @@ and products), so **"pass" means what the script prints as pass, and nothing els
    owner why first. (This replaced the older close routine "shoot every touched page", moved here
    from HANDOFF §17 "Two-tier rule" — the older wording is kept in that line's chain-10 record in
    `docs/RULES_INDEX.md`.)
+4. Tier-B rounds: WHAT a visitor reads that changed (whole sitemap, three languages, both widths) and the shots of
+   those spots only = skill `tier-b-proof`; the word-break scan above stays for WHERE Thai text wraps.
 
 ## Step 2 — Designer once (tier B rounds only)
 
