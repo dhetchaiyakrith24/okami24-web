@@ -87,6 +87,13 @@ async function waitForServer(url: string, timeoutMs: number): Promise<boolean> {
  *  every publish/media change. Reads ground truth from the actual data modules, never a
  *  hardcoded slug list, so it stays correct as the catalog grows. */
 async function runFullLeakageCheck(): Promise<boolean> {
+  // A build under the running test server (3412) breaks it — refuse, same guard as scripts/test-server.js build.
+  const guard = spawnSync("node", [path.join(process.cwd(), "scripts", "test-server.js"), "guard"], { stdio: "pipe", encoding: "utf-8" });
+  if (guard.status !== 0) {
+    results.push({ name: "next build", ok: false, durationMs: 0, output: guard.stderr || guard.stdout });
+    console.log(`  REFUSED — ${(guard.stderr || guard.stdout).trim()}`);
+    return false;
+  }
   console.log("\n→ next build ...");
   const buildStart = Date.now();
   const build = spawnSync("npx", ["next", "build"], {
