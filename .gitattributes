@@ -4,3 +4,5 @@
 * text=auto
 # Git hooks run under sh, which breaks on CR — they stay LF on every machine (the gate exempts eol=lf files).
 .githooks/** text eol=lf
+# The central-rules copy is compared byte for byte with its source (LF) — never converted, on any machine.
+.claude/rules/** text eol=lf

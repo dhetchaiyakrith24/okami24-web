@@ -3,12 +3,20 @@
 > Web-only rules, loaded by the repo `CLAUDE.md`. Numbering is fixed — every "13.x" / "#n" pointer in this repo resolves
 > here. Where each rule came from (dates, owner rulings, RULES_INDEX rows) and the history of this file: `docs/TEAM_RULES_SOURCES.md`.
 >
-> **Sections 1–12 live in `~/.claude/CLAUDE.md`** (the machine-wide file; §12 = working with the owner, all projects).
-> Wherever the text below says "หมวด 1–11", "11 หมวดเดิม", "หมวดเก่า" or "§1…§11", it means that file. What is
+> **Sections 1–12 = the central rules** (§12 = working with the owner, all projects). **"ไฟล์กลาง" / "central file" /
+> `~/.claude/CLAUDE.md`, wherever this repo cites a section or item of them (หมวด / ข้อ / §), mean these rules — one
+> definition, here (round "central-rules", 2026-09-26); a line about the file itself (back up · restore · pointer line)
+> means the physical file on the owner's computer:** the one real text is `CLAUDE.md` in the private GitHub repo `dhetchaiyakrith24/smogz-rules`; this repo
+> loads a byte copy, `.claude/rules/central-rules.md`, that the rules repo's sync workflow sends as a PR — the same on the
+> computer and in the cloud. Never edit the copy (the `central-rules-copy` check fails it; a required check on main
+> keeps it out — whether that lock is set: `docs/RECOVERY.md`); changing the central rules = ask the owner first with
+> the reason, then a PR in `smogz-rules` (its README). Where `~/.claude/CLAUDE.md` on the owner's computer holds only a
+> pointer line, that line points here; where it still holds the full text, it must equal the copy.
+> Wherever the text below says "หมวด 1–11", "11 หมวดเดิม", "หมวดเก่า" or "§1…§11", it means those rules. What is
 > written below adds web-specific detail and may not contradict §1–12 unless it names the exception explicitly — **the one
 > list of exceptions = every line below that names the central section or item it replaces** (the §3/§6/§8 block ·
-> 13.2 #3 · 13.4 #2 · 13.10 #1 (ง) when ideas are ruled · 13.11 narration; central §12 header) — priority order: repo `CLAUDE.md`. A not-loaded
-> copy of the central file for cloud sessions: `.claude/GLOBAL_RULES_MIRROR.md`.
+> 13.2 #3 · 13.4 #2 · 13.10 #1 (ง) when ideas are ruled · 13.11 narration; central §12 header) — priority order: repo `CLAUDE.md`. The older not-loaded
+> copy `.claude/GLOBAL_RULES_MIRROR.md` is superseded by `.claude/rules/central-rules.md`; kept until the cloud test passes.
 >
 > Only the main agent edits this file (13.5). It is outside `docs/` on purpose, so doc-keeper cannot write it.
 
@@ -16,7 +24,7 @@
 
 ## 13\. ขั้นตอนมาตรฐาน: รับเป้าหมาย → ส่งงานเสร็จ
 
-> การแก้ไฟล์กลางต่อจากนี้ = ไฟล์กลาง หมวด 12 ข้อ 28 · ข้อยกเว้นของไฟล์กลาง = รายการเดียวที่หัวไฟล์นี้
+> แก้เนื้อกฎกลาง = หัวไฟล์นี้ (ขอเจ้าของก่อนพร้อมเหตุผล → PR ใน `smogz-rules`) · แก้ไฟล์กฎในรีโปนี้ = ไฟล์กลาง หมวด 12 ข้อ 28 · ข้อยกเว้นของไฟล์กลาง = รายการเดียวที่หัวไฟล์นี้
 > หมวดนี้เปลี่ยนบทบาทของตัวหลัก จาก "มือทำตามคำสั่ง" เป็น "หัวหน้าทีม" ที่รับเป้าหมายแล้วพาทีมไปให้ถึงเอง
 
 ### 13.1 เจ้าของส่งอะไรมา
