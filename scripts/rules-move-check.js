@@ -33,8 +33,12 @@ const bump = (k, n = 1) => { counts[k] = (counts[k] || 0) + n; };
 
 // ---------- inputs
 const backup = rd(path.join(repo, decl.backup)).split('\n');
-const teamRules = rd(path.join(repo, '.claude', 'TEAM_RULES.md')).split('\n');
-const mirrorRaw = rd(path.join(repo, '.claude', 'GLOBAL_RULES_MIRROR.md'));
+// "frozen": the move round's coverage is checked against the state at its own close (the owner-rules round later
+// rewrote TEAM_RULES and the central file on purpose — that change is proven by scripts/owner-rules-check.js)
+const frozen = decl.frozen || null;
+const gitShow = (ref, p) => require('child_process').execSync(`git show ${ref}:${p}`, { cwd: repo, encoding: 'utf8' }).replace(/\r\n/g, '\n');
+const teamRules = (frozen ? gitShow(frozen.teamRef, '.claude/TEAM_RULES.md') : rd(path.join(repo, '.claude', 'TEAM_RULES.md'))).split('\n');
+const mirrorRaw = frozen ? gitShow(frozen.teamRef, '.claude/GLOBAL_RULES_MIRROR.md') : rd(path.join(repo, '.claude', 'GLOBAL_RULES_MIRROR.md'));
 const marker = '<!-- MIRROR-BEGIN -->\n';
 const at = (re) => backup.findIndex((l) => re.test(l));
 const s13 = at(/^## 13\\\. /);
@@ -54,7 +58,8 @@ const expectedCentralText = expectedCentral.join('\n') + '\n';
 // ---------- 3. central file (read first: decides the mode)
 const centralPath = path.join(os.homedir(), '.claude', 'CLAUDE.md');
 let central = null;
-try { central = rd(centralPath); } catch { /* cloud / other machine */ }
+try { central = rd(frozen ? path.join(repo, frozen.central) : centralPath); } catch { /* cloud / other machine */ }
+if (frozen) console.log(`frozen at ${frozen.teamRef}: TEAM_RULES + mirror from git, central from ${frozen.central}`);
 let mode = modeArg;
 if (mode === 'auto') mode = central && !/^## 13\\\. /m.test(central) ? 'post' : 'pre';
 if (central === null) {

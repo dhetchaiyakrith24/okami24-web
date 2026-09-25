@@ -1,6 +1,6 @@
 ---
 name: round-close
-description: Close a work round for the OKami24 site after the last batch passed the checker. Use it for every round close, whatever the round's name. It sequences the word-break scan and diff on the touched pages, the single designer pass (tier B only), the full verify set, the one-commit fix of what the close found, the annotated tag + tag push, the handoff-block and round-cost updates, and the 4-line report with its length rule. It names the checks but never their expected numbers — the pass criterion is always what each script itself defines.
+description: Close a work round for the OKami24 site after the last batch passed the checker. Use it for every round close, whatever the round's name. It sequences the word-break scan and diff on the touched pages, the single designer pass (tier B only), the full verify set, the one-commit fix of what the close found, the annotated tag + tag push, the handoff-block and round-cost updates, and the 4-part report with its length rule. It names the checks but never their expected numbers — the pass criterion is always what each script itself defines.
 ---
 
 # Round close
@@ -95,7 +95,7 @@ send-back cap and re-check rule: 13.5.
   (the file's own header says how each column is counted).
 - Round-specific entries in `docs/THAI_STYLE_LOG.md` §7 if the round touched site copy (doc-keeper).
 
-## Step 7 — The 4-line report (Thai, template (ข) in `docs/TEMPLATES.md`)
+## Step 7 — The 4-part report (Thai, template (ข) in `docs/TEMPLATES.md`)
 
 Four items, each within the cap the template states. Report length — the conclusion the owner
 drew after collecting samples over a full round:
@@ -107,15 +107,13 @@ drew after collecting samples over a full round:
 - reasons scattered through the body — move every reason into the single reason slot (item 3).
 
 **Keep:**
-- the before → after table — but within the length rule of `docs/TEMPLATES.md` (ข) (owner,
-  2026-09-23: at most 10 rows in the report, one row per key cluster; the full table lives in
-  `_incoming/<round>/` and the report cites the path). The earlier wording "every row" is retired
-  (RULES_INDEX row 84).
+- the before → after table — it lives in `_incoming/<round>/`; the report gives the path only
+  (central §12 item 10, owner 2026-09-25 — replaces the 2026-09-23 "at most 10 rows in the report").
 
 Answer, in item 3, the question `docs/TEMPLATES.md` (ค)-8 makes the owner ask at every close:
 which parts of this round's instruction prescribed a method that was not needed, or stood in the
 way of a better one. Name the line and what it cost; "nothing" is a valid answer and takes one
 line.
 
-Attach the chain-10 record (old text in full / new text in full / what was lost) whenever a rule
-was merged or removed — the one exception to the length cap.
+Write the chain-10 record (old text in full / new text in full / what was lost) whenever a rule
+was merged or removed — in a file under `_incoming/<round>/`, the report gives its path (13.6).

@@ -83,7 +83,7 @@ final wording — never the brief, which may hold a superseded draft. If a fact 
 
 # What you never do
 
-- Write outside `docs/`, or write any file named in `.claude/TEAM_RULES.md` or `~/.claude/CLAUDE.md` as owner-only.
+- Write outside `docs/` — rule files (`.claude/TEAM_RULES.md`, `~/.claude/CLAUDE.md`, agents, skills) all sit outside it on purpose (13.5).
 - Delete a section, a table row or a history line without the written reason §13.5 demands.
   Moving within the same file is allowed when §16 is over its cap.
 - Commit, push, merge, deploy, force-push, kill a process — you cannot, and you do not ask to.
