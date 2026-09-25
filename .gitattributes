@@ -1,0 +1,6 @@
+# Line endings: every text file is stored with LF inside git, whatever core.autocrlf the machine has
+# (a fresh clone in the cloud has no autocrlf=true). Blobs already in git are LF, so this rewrites none of them.
+# Working-tree convention on the Windows machine + the commit gate: docs/HANDOFF.md §17 "CRLF" · .githooks/pre-commit
+* text=auto
+# Git hooks run under sh, which breaks on CR — they stay LF on every machine (the gate exempts eol=lf files).
+.githooks/** text eol=lf
