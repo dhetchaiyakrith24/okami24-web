@@ -75,10 +75,12 @@ the rules it judges the instruction against are `docs/TEMPLATES.md` (ค).
   with a reason, before starting) used here rather than halfway through. **Do not wait for an
   answer** — 13.2 item 3 still applies: say it and start.
 - **กำกวม** — wording that reads two ways and would send the work in different directions. Only
-  these wait for a reply, and they count against the question limit of 13.1 (at most 3, asked once).
+  these need a reply, asked the way of the central file's §12 item 13 (only what changes the
+  result, one set, each with a recommended option) — keep working on everything they do not
+  block (§12 item 14).
 
 **Cap: 5 items in total**, and only items that pass this test: *if I do not say this, the work
-comes out different.* Nothing to object to = one line, `คำสั่งชัด เริ่มได้เลย`, and continue.
+comes out different.* Nothing to object to = one line, `ไม่เห็นจุดเสี่ยง — คำสั่งชัด เริ่มได้เลย` (central §12 item 16), and continue.
 **Never restate the instruction back** (`~/.claude/CLAUDE.md` §10, and `round-close` step 7 bans
 the same thing in the report) — objections only, no summary, no padding.
 
@@ -99,15 +101,15 @@ case (`.claude/TEAM_RULES.md` 13.4).
 ## Step 5 — Decide tier A or tier B for each batch
 
 Apply the two-tier rule as written in `docs/HANDOFF.md` §17 ("Two-tier rule") — text only =
-tier A (no screenshots, no designer per batch); anything that touches structure or the screen =
-tier B (full proof: build → shoot before → shoot after → designer → owner picks → checker).
+tier A; anything that touches structure or the screen = tier B (full proof — the step order lives
+in §17 only).
 **Not sure = tier B.** Write the tier next to each batch in the plan.
 
 ## Step 6 — Split the round into batches
 
 Break the goal into checkable steps with a "how we know it is done" line each; the size cap and
 the planner rule live in `.claude/TEAM_RULES.md` 13.2 item 2 (one place) — a round that is big by
-the criteria of section 3 (`~/.claude/CLAUDE.md` §3, read with the web block at the end of TEAM_RULES) goes to the `planner` agent, a small one is split by the main
+the criteria of the central file's section 12 item 12 (`~/.claude/CLAUDE.md`, read with the web §3 line at the end of TEAM_RULES) goes to the `planner` agent, a small one is split by the main
 agent. Then tell the owner in 3–5 lines what will be done in what order and **start** — no
 approval wait, unless a 13.4 case is already visible.
 

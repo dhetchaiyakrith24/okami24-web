@@ -1,6 +1,11 @@
 {
   "_about": "Declared changes of the 'rules move' round (2026-09-25). centralEdits = the only lines of ~/.claude/CLAUDE.md §1–11 that change (owner ruling 25/09 #2: §3 'หน้าตาเว็บ', §6 browser + desktop/mobile lines, §8 RULES_INDEX parenthesis). Each 'before' line must reappear verbatim in .claude/TEAM_RULES.md. Read by scripts/rules-move-check.js.",
   "backup": "docs/archive/claude-config-2026-09-25/CLAUDE.md",
+  "frozen": {
+    "teamRef": "rules-move-done",
+    "central": "docs/archive/claude-config-2026-09-25-owner/CLAUDE.md",
+    "why": "the owner-rules round (same day) rewrote TEAM_RULES and the central file on purpose; this check proves the move round at its own close, scripts/owner-rules-check.js proves the rewrite"
+  },
   "allowLines": [
     {
       "file": "docs/HANDOFF.md",

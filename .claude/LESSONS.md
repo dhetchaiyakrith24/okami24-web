@@ -6,6 +6,11 @@
 > "the order is fine, but there is a better way". **This file is the one place for new lessons** (owner ruling
 > 2026-09-25) — "ที่เดียว" in the body below now means this file; the memory copy is removed once the rules-move tests pass (owner ruling ง).
 
+> **Scope widened 2026-09-25 (owner-rules round, central `~/.claude/CLAUDE.md` §12 item 27):** this file takes all three
+> kinds — what worked (criterion below, unchanged) · what went wrong · what the owner likes or dislikes (said by the owner =
+> write now · noticed by the assistant = propose to the owner first). Sections for the two new kinds are added when the
+> first entry of that kind is written.
+
 ---
 ที่เดียวสำหรับบทเรียน **ฝั่งที่ได้ผล** ของตัวเอง — เจ้าของสั่งไว้ 2026-09-23: ไม่ใช่จดแค่ตอนพลาด
 เข้าเกณฑ์จดเมื่อ **ทำเกินหรือต่างจากที่มอบหมาย + มีผู้ตรวจอิสระ/ด่าน/ตัวเลขยืนยันว่าถูกและดี**
