@@ -213,11 +213,15 @@ function diff(beforeDir, afterDir, outDir) {
   const depth = +(opt("--cluster-depth", "3") || 3);
   const cmd = (file, base, c) =>
     `node scripts/shot.js ${outDir}/${file} ${base}${c.page} --width ${c.width}${c.width >= 768 ? " --desktop" : ""} --cookie okami24_locale=${c.locale} --anchor ${JSON.stringify(selectorOf(c.path))}`;
-  const before = [], after = [], plan = [];
+  const before = [], after = [], plan = [], shotGroups = new Set();
   let n = 0;
-  for (const loc of shotLocales) {
+  // a page+width whose changes exist only in another language (e.g. an English-only fix) is shot in that language
+  const shotPairs = new Set(changes.filter((c) => shotLocales.includes(c.locale)).map((c) => `${c.page}|${c.width}`));
+  const otherLocales = [...new Set(changes.map((c) => c.locale))].filter((l) => !shotLocales.includes(l));
+  for (const loc of [...shotLocales, ...otherLocales]) {
+    const own = shotLocales.includes(loc);
     for (const w of [...new Set(changes.map((c) => c.width))].sort((a, b) => a - b)) {
-      const mine = changes.filter((c) => c.locale === loc && c.width === w);
+      const mine = changes.filter((c) => c.locale === loc && c.width === w && (own || !shotPairs.has(`${c.page}|${c.width}`)));
       const byPage = new Map();
       for (const c of mine) { if (!byPage.has(c.page)) byPage.set(c.page, []); byPage.get(c.page).push(c); }
       const left = new Set(mine.map((c) => c.group));
@@ -234,6 +238,7 @@ function diff(beforeDir, afterDir, outDir) {
         for (const cs of clusters.values()) {
           const id = `s${String(++n).padStart(3, "0")}-${loc}-${w}`;
           const groups = [...new Set(cs.map((c) => c.group))];
+          groups.forEach((g) => shotGroups.add(g));
           const afterAnchor = cs.find((c) => c.kind !== "removed");
           const beforeAnchor = cs.find((c) => c.kind !== "added");
           if (afterAnchor) after.push(cmd(`${id}-after.png`, afterBase, afterAnchor));
@@ -247,7 +252,7 @@ function diff(beforeDir, afterDir, outDir) {
   const lines = (xs) => xs.join("\n") + (xs.length ? "\n" : "");
   fs.writeFileSync(path.join(outDir, "shots-before.txt"), lines(before));
   fs.writeFileSync(path.join(outDir, "shots-after.txt"), lines(after));
-  const textOnly = G.filter((g) => !shotLocales.includes(g.rep.locale)).map((g) => g.id);
+  const textOnly = G.filter((g) => !shotGroups.has(g.id)).map((g) => g.id);
   fs.writeFileSync(
     path.join(outDir, "shots.md"),
     [

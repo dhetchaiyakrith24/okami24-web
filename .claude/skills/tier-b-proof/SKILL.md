@@ -61,7 +61,8 @@ A `FAIL` line = that page was not measured; re-run it, never diff over a gap.
 
 Run `shots-before.txt` while the before server answers, `shots-after.txt` while the after server
 answers. The plan (`shots.md`) covers every distinct change once in the shot language (Thai unless
-`--shot-locales` says otherwise — the other languages are proven word for word by `changes.md`): fewest
+`--shot-locales` says otherwise — the other languages are proven word for word by `changes.md`, except a
+page+width whose changes exist only in another language, which is shot in that language): fewest
 pages that show all changes, one image per page section, anchored on the first change in it, a "before"
 image only where something was removed or changed. `shots.md` ties each image to its change groups.
 Shot count: `.claude/TEAM_RULES.md` 13.10 #15 (the one place). Open every image
