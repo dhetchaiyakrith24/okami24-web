@@ -4,6 +4,8 @@
 > that used to sit inside its lines live here, one block per item, copied verbatim (round "rules trim", 2026-09-25,
 > owner order via Cowork). Proof that nothing else left a line: `node scripts/owner-rules-check.js --map=scripts/rules-trim-map.json`.
 > Old full file: git tag `pre-rules-trim`. New sources for a rule changed later: add a line under its item here.
+> Names: in text written before 2026-09-25, "Javis" = Claude Code (the main agent). Since the "friday persona" round
+> (central §12 "ชื่อและบุคลิก"): Claude Code = **Friday**, Cowork = **Javis**. Quoted history below is left as written.
 
 ## header — old line 3–9
 
