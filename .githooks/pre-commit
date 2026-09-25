@@ -1,0 +1,4 @@
+#!/bin/sh
+# Line-ending gate for every commit made in this clone (any agent). Setup after clone: git config core.hooksPath .githooks
+# Rule: docs/HANDOFF.md §17 "CRLF" · checker: scripts/eol-check.js
+exec node scripts/eol-check.js --staged

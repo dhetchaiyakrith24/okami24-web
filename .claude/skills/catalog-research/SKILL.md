@@ -59,6 +59,35 @@ compatible devices) — never copy manufacturer marketing paragraphs wholesale. 
 its own `sourceUrl`. If a spec can't be confirmed, leave it absent — "unknown" beats a guess,
 every time.
 
+## Getting a maker fact onto the site (a fact a customer will read)
+
+The order below is the one that produced facts that passed the checker in the data rounds. What counts as an
+acceptable source for a customer-read fact is NOT decided here: the owner's data-round rulings live in
+`docs/HANDOFF.md` §3 (the data rounds' "full detail" blocks; §16 item 4b lists them as permanent) and the code gate
+is `src/lib/verified-specs.ts` + `src/lib/verified-specs-contract-test.ts` (a row is shown only when it is
+`sourceStatus: "verified"`). Wording rules for the sentence that carries the fact: skill `thai-check`.
+
+1. **The main agent opens the maker's page in the in-app browser itself** and reads the text (page text / page HTML)
+   or the maker's own spec image — the case `.claude/TEAM_RULES.md` 13.3 allows when an agent cannot do the job (the
+   researcher and checker have no browser); say so in one line of report item 3. Their job here is to propose URLs
+   and to re-read what the main agent quotes.
+2. **The researcher proposes links** (maker product page, maker spec image, maker manual) — read-only, in its own
+   report format (`.claude/agents/researcher.md`). A retailer or review link is a lead to find the maker's page.
+3. **A manual hosted by a third party:** record which model it shows (title, model name/number, picture) next to
+   the quote. Whether such a copy may back a customer-read fact is not decided here — HANDOFF §3 rulings /
+   `docs/THAI_STYLE.md` §5.
+4. **The maker contradicts itself, or several parts carry numbers:**
+   - search the whole page HTML for the number and record the hit count (a number the site shows that the maker page
+     no longer carries = a "0 hits" finding, which is evidence too);
+   - prefer the product's own spec block over a shared/marketing block that repeats another model's text; say so;
+   - a product made of parts (charger + holder, kit + pod) → every number names its part; never a bare number that
+     reads as the whole device's;
+   - no usable maker source, or two answers left → what happens is in the HANDOFF §3 rulings; when to stop and ask
+     is `.claude/TEAM_RULES.md` 13.4 — this skill adds neither.
+5. **Write the evidence down before touching data:** `_incoming/<round>/sources-verified.md` — per product: the URL,
+   the exact quote, where on the page it sits, the negative findings ("no X anywhere on …"), and which row it backs.
+   The data change then carries the row's `sourceUrl` and `sourceStatus`, and the contract test must pass.
+
 ## Step 4 — Media sourcing and rejection checklist
 
 Source real photos, then reject anything that fails ANY of:

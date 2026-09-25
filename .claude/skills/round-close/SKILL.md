@@ -31,6 +31,8 @@ and products), so **"pass" means what the script prints as pass, and nothing els
    owner why first. (This replaced the older close routine "shoot every touched page", moved here
    from HANDOFF §17 "Two-tier rule" — the older wording is kept in that line's chain-10 record in
    `docs/RULES_INDEX.md`.)
+4. Tier-B rounds: WHAT a visitor reads that changed (whole sitemap, three languages, both widths) and the shots of
+   those spots only = skill `tier-b-proof`; the word-break scan above stays for WHERE Thai text wraps.
 
 ## Step 2 — Designer once (tier B rounds only)
 
@@ -66,6 +68,22 @@ the checker quotes the printed totals in its report — this file never states t
 
 Save every log under `_incoming/<round>/` and cite the paths in the report.
 
+## When the round added a gate — break it red before trusting it (ทำลายด่านใหม่ให้แดงก่อนเชื่อ)
+
+Applies when the round added or changed anything with a pass/fail that runs by itself: a script gate, a git hook, a
+contract test. A gate nobody has seen fail is not yet proof. **When:** in the batch that adds the gate, before that
+batch's checker; at the round close only check that each such gate has its log.
+
+1. **The main agent does it** — the checker cannot edit files (13.5); the checker re-reads the logs and creates no
+   probe of its own.
+2. **Only on uncommitted changes:** make the smallest edit that produces exactly the fault the gate exists to catch
+   (one per failure mode the gate claims) → run the gate → it must fail, and its message must name that fault (red).
+3. **Undo the fault** (restore the file / delete the probe / unstage it) → run the gate again → it must pass (green).
+   `git status` shows no probe left and `git log -1` is unchanged.
+4. **Log both runs** — command, output, exit code — in `_incoming/<round>/break-<gate>.log`; the report and the
+   checker brief cite the path.
+5. A gate that cannot be made to fail is reported as "not a gate yet", never counted as proof.
+
 ## Step 4 — Fix what the close found, in one commit
 
 Word-break fixes and anything the verify set or the designer flagged go into **one commit**, not
@@ -94,6 +112,8 @@ send-back cap and re-check rule: 13.5.
   `git log`; a number that was not counted is written as `[ยังไม่มีข้อมูล]` with the reason
   (the file's own header says how each column is counted).
 - Round-specific entries in `docs/THAI_STYLE_LOG.md` §7 if the round touched site copy (doc-keeper).
+- The pre-merge pack `_incoming/<round>/owner-table.md` = skill `merge-pack` (after the tag push, before the report);
+  its path goes into §16 "waiting on the owner" and into the report.
 
 ## Step 7 — The 4-part report (Thai, template (ข) in `docs/TEMPLATES.md`)
 

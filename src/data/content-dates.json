@@ -34,7 +34,7 @@
     "src/data/products/unbranded.ts": "2026-09-15T20:19:58+07:00",
     "src/data/products/uwell.ts": "2026-09-25T00:04:57+07:00",
     "src/data/products/voopoo.ts": "2026-09-21T21:17:58+07:00",
-    "src/data/search-aliases.ts": "2026-09-23T16:02:37+07:00",
+    "src/data/search-aliases.ts": "2026-09-25T23:08:23+07:00",
     "src/data/shipnity-seed/active-catalog-source.ts": "2026-08-31T04:43:02+07:00",
     "src/data/shipnity-seed/active-catalog-to-product-master.ts": "2026-09-25T02:33:22+07:00",
     "src/data/shipnity-seed/legacy-price-approvals.ts": "2026-09-21T04:39:10+07:00",
