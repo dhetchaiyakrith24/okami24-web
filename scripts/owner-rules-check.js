@@ -7,7 +7,8 @@
 //   2. no map entry points at a line that did not disappear (stale = 0)
 //   3. central §12 has exactly the declared number of items, numbered 1..N
 //   4. every "หมวด 12 ข้อ N" pointer in TEAM_RULES / agents / skills / docs names an existing item
-//   5. .claude/GLOBAL_RULES_MIRROR.md (below its marker) == ~/.claude/CLAUDE.md (skipped when unreadable)
+//   5. .claude/GLOBAL_RULES_MIRROR.md (below its marker) == the central text: .claude/rules/central-rules.md (the
+//      synced copy, round "central-rules") or, before the first sync, ~/.claude/CLAUDE.md (skipped when neither)
 // Usage: node scripts/owner-rules-check.js [--map=scripts/<map>.json]   · exit 0 = PASS. Line endings ignored.
 //   default map = scripts/owner-rules-map.json (round "owner rules", frozen at its close tag)
 //   scripts/rules-trim-map.json = round "rules trim" (TEAM_RULES shortened, provenance moved to a log file)
@@ -46,16 +47,25 @@ const oldCentral = (decl.oldCentralRef ? body(gitShow(decl.oldCentralRef, '.clau
 const oldTeam = gitShow(decl.oldTeamRef, '.claude/TEAM_RULES.md').split('\n');
 const team = frozen ? gitShow(frozen.teamRef, '.claude/TEAM_RULES.md') : rd(path.join(repo, '.claude', 'TEAM_RULES.md'));
 const mirror = body(rd(path.join(repo, '.claude', 'GLOBAL_RULES_MIRROR.md')), 'working tree');
+// the live central text (round "central-rules", 2026-09-26): the synced copy .claude/rules/central-rules.md (same in
+// the cloud); before the first sync, ~/.claude/CLAUDE.md, which then still holds the full text
+const copyPath = path.join(repo, '.claude', 'rules', 'central-rules.md');
 let central = null;
-try { central = rd(path.join(os.homedir(), '.claude', 'CLAUDE.md')); } catch { /* cloud */ }
+let centralFrom = '.claude/rules/central-rules.md';
+if (fs.existsSync(copyPath)) central = rd(copyPath);
+else { centralFrom = '~/.claude/CLAUDE.md'; try { central = rd(path.join(os.homedir(), '.claude', 'CLAUDE.md')); } catch { /* cloud */ } }
 const liveCentral = central === null ? mirror : central; // the mirror stands in when the real file is not readable
 const centralText = frozen ? body(gitShow(frozen.teamRef, '.claude/GLOBAL_RULES_MIRROR.md'), frozen.teamRef) : liveCentral;
 const log = decl.logFile ? rd(path.join(repo, decl.logFile)) : '';
 if (frozen) console.log(`frozen at ${frozen.teamRef}: TEAM_RULES + central from git (live mirror sync still checked)`);
 
 // 5. mirror
-if (central === null) console.log('central: ~/.claude/CLAUDE.md not readable here — mirror used as the central text; mirror sync SKIPPED');
-else if (mirror !== central) fail('mirror: GLOBAL_RULES_MIRROR.md differs from ~/.claude/CLAUDE.md');
+if (central === null) console.log('central: no .claude/rules/central-rules.md and ~/.claude/CLAUDE.md not readable — mirror used as the central text; mirror sync SKIPPED');
+// once the synced copy exists the mirror is superseded (kept only until the cloud test): a later central change makes
+// it stale on purpose — reported, not failed. Before the first sync it still has to match ~/.claude/CLAUDE.md.
+else if (mirror !== central && centralFrom === '.claude/rules/central-rules.md') console.log('note: GLOBAL_RULES_MIRROR.md differs from the synced copy — superseded mirror, retire it after the cloud test (not a failure)');
+else if (mirror !== central) fail(`mirror: GLOBAL_RULES_MIRROR.md differs from ${centralFrom}`);
+else console.log(`mirror = ${centralFrom}`);
 
 // 1–2. removed lines vs map
 const texts = { central: centralText, team, log };

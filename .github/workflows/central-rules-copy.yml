@@ -1,0 +1,30 @@
+# Required check on main: .claude/rules/central-rules.md is an untouched copy of the shared rules (smogz-rules) —
+# a copy edited by hand fails here on GitHub, whether the edit came from this computer or a cloud session.
+# Gate logic + usage: scripts/central-rules-copy-check.js. No path filter on purpose: a required check that a filter
+# skips leaves every other PR waiting forever. Weekly run = the read key still works and is not about to expire.
+name: central-rules-copy
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 1 * * 1"   # Mondays 01:00 UTC = 08:00 Bangkok
+permissions:
+  contents: read
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch the base branch (the copy may not disappear)
+        env:
+          BASE: ${{ github.base_ref || github.event.repository.default_branch }}
+        run: git fetch --no-tags --depth 1 origin "$BASE"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Compare the copy with the shared rules
+        env:
+          RULES_READ_TOKEN: ${{ secrets.RULES_READ_TOKEN }}
+          BASE_REF: origin/${{ github.base_ref || github.event.repository.default_branch }}
+        run: node scripts/central-rules-copy-check.js

@@ -4,6 +4,7 @@
   "oldTeamRef": "pre-rules-trim",
   "logFile": "docs/TEAM_RULES_SOURCES.md",
   "sectionItems": 31,
+  "frozen": { "teamRef": "rules-trim-done", "why": "round 'central-rules' (2026-09-26) reworded the TEAM_RULES head and its line 25 pointer on purpose; this map proves the rules-trim round at its own close" },
   "map": [
     { "file": "team", "lines": [3, 9], "kind": "moved", "item": "header" },
     { "file": "team", "lines": [24, 24], "kind": "trim", "item": "13 (intro)", "removed": ["ติดตั้ง 2026-09-07 ต่อท้าย 11 หมวดเดิม (ต้นฉบับ `Claude outputs/CLAUDE-md-หมวด13.md` 2026-09-05 + ข้อ 13.9–13.11 ที่เจ้าของสั่งเพิ่ม 2026-09-07) (2026-09-25: เจ้าของแก้หมวด 1–11 และเพิ่มหมวด 12 ในไฟล์กลางเองแล้ว · ", ")"] },
