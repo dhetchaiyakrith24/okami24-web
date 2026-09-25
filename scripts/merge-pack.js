@@ -30,7 +30,7 @@ if (!out) {
 const cell = (t) => (t == null || t === "" ? "—" : String(t).length > 160 ? String(t).slice(0, 157) + "…" : String(t)).replace(/\|/g, "\\|").replace(/\r?\n/g, " ");
 const md = [];
 md.push(`# ${round} — ชุดก่อน merge (owner-table)`, "");
-md.push("อ่านคู่กับรายงาน 4 หัวข้อ (`docs/TEMPLATES.md` (ข)) · ★ = ลูกค้าเห็นแล้วเปลี่ยน → เจ้าของเคาะตอน merge (`.claude/TEAM_RULES.md` 13.4 #2 #6) · งานนอกคำสั่ง = เคาะ เก็บ/ถอย (13.10 #1)", "");
+md.push("อ่านคู่กับรายงาน 4 หัวข้อ (`docs/TEMPLATES.md` (ข)) · ★ = ลูกค้าเห็นแล้วเปลี่ยน · ใครเคาะอะไร เมื่อไหร่ = `.claude/TEAM_RULES.md` 13.4 · งานนอกคำสั่ง = 13.10 #1", "");
 
 // ---- ★ visible changes ----------------------------------------------------------------------------------------
 let starRows = 0;
@@ -52,8 +52,9 @@ if (visible) {
   }
   const loc = (r, l) => (r.byLoc[l] ? `${cell(r.byLoc[l].before)} → ${cell(r.byLoc[l].after)}` : "(ไม่เปลี่ยน)");
   md.push(`## ★ ข้อความที่ลูกค้าเห็นเปลี่ยน — ${rows.size} แถว`, "");
-  md.push(`หลักฐาน: \`${path.join(visible, "changes.md")}\` (ทุกจุด ทุกหน้า) · ภาพคู่ก่อน/หลัง = ไฟล์ g###-*.png ในโฟลเดอร์เดียวกัน`, "");
-  md.push("| ★ | หน้า | กว้าง | ไทย ก่อน → หลัง | EN ก่อน → หลัง | ZH ก่อน → หลัง | เคาะ |", "|---|---|---|---|---|---|---|");
+  md.push(`หลักฐาน: \`${path.join(visible, "changes.md")}\` (ทุกจุด ทุกหน้า) · ภาพ = ไฟล์ s###-*.png ในโฟลเดอร์เดียวกัน (รายการใน shots.md)`, "");
+  if (rows.size) md.push("| ★ | หน้า | กว้าง | ไทย ก่อน → หลัง | EN ก่อน → หลัง | ZH ก่อน → หลัง | เคาะ |", "|---|---|---|---|---|---|---|");
+  else md.push(`ไม่มี — ${data.pagesCompared} ไฟล์ (หน้า × ภาษา × ความกว้าง) เทียบแล้ว ข้อความที่ลูกค้าเห็นไม่เปลี่ยนเลย`);
   let n = 0;
   for (const r of rows.values()) {
     const pages = [...r.pages];
@@ -115,10 +116,15 @@ const verify = opt("--verify");
 md.push("## ผล verify ชุดเต็ม (ชุด = skill round-close ขั้น 3) — Cowork อ่านก่อน merge", "");
 if (verify && fs.existsSync(verify)) {
   const logs = fs.readdirSync(verify).filter((f) => f.endsWith(".log")).sort();
-  md.push("| log | บรรทัดท้าย |", "|---|---|");
+  // exit codes, when the run recorded them as "<log name> exit=<n>" lines in exit-codes.txt (a silent tool = empty log)
+  const exits = new Map();
+  const exitFile = path.join(verify, "exit-codes.txt");
+  if (fs.existsSync(exitFile))
+    for (const l of fs.readFileSync(exitFile, "utf8").split(/\r?\n/)) { const m = l.match(/^(\S+) exit=(\d+)/); if (m) exits.set(m[1], m[2]); }
+  md.push("| log | exit | บรรทัดท้าย |", "|---|---|---|");
   for (const f of logs) {
-    const last = fs.readFileSync(path.join(verify, f), "utf8").split(/\r?\n/).map((s) => s.trim()).filter(Boolean).pop() || "(ว่าง)";
-    md.push(`| \`${path.join(verify, f)}\` | ${cell(last)} |`);
+    const last = fs.readFileSync(path.join(verify, f), "utf8").split(/\r?\n/).map((s) => s.trim()).filter(Boolean).pop() || "(log ว่าง — ดูช่อง exit)";
+    md.push(`| \`${path.join(verify, f)}\` | ${exits.get(f.replace(/\.log$/, "")) ?? "—"} | ${cell(last)} |`);
   }
   if (!logs.length) md.push("| — | ไม่พบ log ในโฟลเดอร์นี้ |");
 } else md.push("**[ยังไม่มีข้อมูล]** — ยังไม่ได้แนบโฟลเดอร์ log");
