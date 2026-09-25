@@ -3,6 +3,7 @@
   "oldCentral": "docs/archive/claude-config-2026-09-25-owner/CLAUDE.md",
   "oldTeamRef": "pre-owner-rules",
   "sectionItems": 31,
+  "frozen": { "teamRef": "owner-rules-done", "why": "round 'rules trim' (2026-09-25) shortened TEAM_RULES on purpose; this map proves the owner-rules round at its own close, scripts/rules-trim-map.json proves the trim" },
   "map": [
     { "file": "central", "lines": [9, 9], "in": "central", "to": "5. ส่งถึงเจ้าของ (รายงาน คำถาม ขออนุญาต สถานะ) = **ภาษาไทย**" },
     { "file": "central", "lines": [10, 10], "in": "central", "to": "6. บรรทัดแรก = คำตอบหรือผลลัพธ์" },

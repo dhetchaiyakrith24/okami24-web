@@ -8,7 +8,16 @@
 //   3. central §12 has exactly the declared number of items, numbered 1..N
 //   4. every "หมวด 12 ข้อ N" pointer in TEAM_RULES / agents / skills / docs names an existing item
 //   5. .claude/GLOBAL_RULES_MIRROR.md (below its marker) == ~/.claude/CLAUDE.md (skipped when unreadable)
-// Usage: node scripts/owner-rules-check.js   · exit 0 = PASS. Line endings ignored.
+// Usage: node scripts/owner-rules-check.js [--map=scripts/<map>.json]   · exit 0 = PASS. Line endings ignored.
+//   default map = scripts/owner-rules-map.json (round "owner rules", frozen at its close tag)
+//   scripts/rules-trim-map.json = round "rules trim" (TEAM_RULES shortened, provenance moved to a log file)
+// Map options: "frozen": {"teamRef"} reads TEAM_RULES + mirror from that git tag instead of the working tree (the live
+// mirror == central check still runs) · "oldCentralRef" reads the old central text from the mirror at that tag ·
+// "logFile" adds a third target "log". Entry kinds (default = anchor: "to" found in "in"):
+//   "trim"  — every "removed" piece is verbatim in the old line AND in the log, and the old line with those pieces cut
+//             (spaces collapsed) is a line of the new file — proof that only those pieces left the line
+//   "moved" — the whole old line is verbatim in the log
+//   "reword"— "removed" pieces verbatim in old line + log, and "to" found in "in" (wording change: checker reads it)
 'use strict';
 const fs = require('fs');
 const os = require('os');
@@ -18,39 +27,65 @@ const { execSync } = require('child_process');
 const repo = path.resolve(__dirname, '..');
 const norm = (s) => s.replace(/\r\n/g, '\n');
 const rd = (p) => norm(fs.readFileSync(p, 'utf8'));
-const decl = JSON.parse(rd(path.join(repo, 'scripts', 'owner-rules-map.json')));
+const mapArg = (process.argv.find((a) => a.startsWith('--map=')) || '').slice(6) || path.join('scripts', 'owner-rules-map.json');
+const decl = JSON.parse(rd(path.join(repo, mapArg)));
 const fails = [];
 const fail = (m) => fails.push(m);
+const gitShow = (ref, p) => norm(execSync(`git show ${ref}:${p}`, { cwd: repo, encoding: 'utf8' }));
+const marker = '<!-- MIRROR-BEGIN -->\n';
+const body = (raw, what) => {
+  const i = raw.indexOf(marker);
+  if (i < 0) { fail(`mirror: marker line missing (${what})`); return ''; }
+  return raw.slice(i + marker.length);
+};
+const squash = (s) => s.replace(/ {2,}/g, ' ').trim();
 
 // inputs
-const oldCentral = rd(path.join(repo, decl.oldCentral)).split('\n');
-const oldTeam = norm(execSync(`git show ${decl.oldTeamRef}:.claude/TEAM_RULES.md`, { cwd: repo, encoding: 'utf8' })).split('\n');
-const team = rd(path.join(repo, '.claude', 'TEAM_RULES.md'));
-const mirrorRaw = rd(path.join(repo, '.claude', 'GLOBAL_RULES_MIRROR.md'));
-const marker = '<!-- MIRROR-BEGIN -->\n';
-const mi = mirrorRaw.indexOf(marker);
-if (mi < 0) fail('mirror: marker line missing');
-const mirror = mi < 0 ? '' : mirrorRaw.slice(mi + marker.length);
+const frozen = decl.frozen || null;
+const oldCentral = (decl.oldCentralRef ? body(gitShow(decl.oldCentralRef, '.claude/GLOBAL_RULES_MIRROR.md'), decl.oldCentralRef) : rd(path.join(repo, decl.oldCentral))).split('\n');
+const oldTeam = gitShow(decl.oldTeamRef, '.claude/TEAM_RULES.md').split('\n');
+const team = frozen ? gitShow(frozen.teamRef, '.claude/TEAM_RULES.md') : rd(path.join(repo, '.claude', 'TEAM_RULES.md'));
+const mirror = body(rd(path.join(repo, '.claude', 'GLOBAL_RULES_MIRROR.md')), 'working tree');
 let central = null;
 try { central = rd(path.join(os.homedir(), '.claude', 'CLAUDE.md')); } catch { /* cloud */ }
-const centralText = central === null ? mirror : central; // the mirror stands in when the real file is not readable
+const liveCentral = central === null ? mirror : central; // the mirror stands in when the real file is not readable
+const centralText = frozen ? body(gitShow(frozen.teamRef, '.claude/GLOBAL_RULES_MIRROR.md'), frozen.teamRef) : liveCentral;
+const log = decl.logFile ? rd(path.join(repo, decl.logFile)) : '';
+if (frozen) console.log(`frozen at ${frozen.teamRef}: TEAM_RULES + central from git (live mirror sync still checked)`);
 
 // 5. mirror
 if (central === null) console.log('central: ~/.claude/CLAUDE.md not readable here — mirror used as the central text; mirror sync SKIPPED');
 else if (mirror !== central) fail('mirror: GLOBAL_RULES_MIRROR.md differs from ~/.claude/CLAUDE.md');
 
 // 1–2. removed lines vs map
-const texts = { central: centralText, team };
+const texts = { central: centralText, team, log };
 const newLines = { central: new Set(centralText.split('\n')), team: new Set(team.split('\n')) };
+const squashedNew = { central: new Set(centralText.split('\n').map(squash)), team: new Set(team.split('\n').map(squash)) };
 const oldLines = { central: oldCentral, team: oldTeam };
-let removed = 0; let lost = 0; let stale = 0;
+let removed = 0; let lost = 0; let stale = 0; const kinds = {};
 for (const k of ['central', 'team']) {
   oldLines[k].forEach((l, i) => {
     if (!l.trim() || newLines[k].has(l)) return;
     removed++;
+    const at = `${k} line ${i + 1}`;
     const m = decl.map.find((e) => e.file === k && i + 1 >= e.lines[0] && i + 1 <= e.lines[1]);
-    if (!m) { lost++; fail(`lost: ${k} line ${i + 1} gone and not mapped: ${l.slice(0, 70)}`); return; }
-    if (!texts[m.in].includes(m.to)) { lost++; fail(`lost: ${k} line ${i + 1} mapped to "${m.to.slice(0, 50)}" — not found in ${m.in}`); }
+    if (!m) { lost++; fail(`lost: ${at} gone and not mapped: ${l.slice(0, 70)}`); return; }
+    const kind = m.kind || 'anchor';
+    kinds[kind] = (kinds[kind] || 0) + 1;
+    const bad = (msg) => { lost++; fail(`lost: ${at} (${kind}) ${msg}`); };
+    if (kind === 'moved') { if (!log.includes(l.trim())) bad('whole line not found verbatim in the log'); return; }
+    for (const p of m.removed || []) {
+      if (!l.includes(p)) bad(`piece not in the old line: "${p.slice(0, 50)}"`);
+      const core = p.replace(/^[\s·—(]+|[\s·—):]+$/g, ''); // separators around a cut piece are not provenance
+      if (core && !log.includes(core)) bad(`piece not in the log: "${core.slice(0, 50)}"`);
+    }
+    if (kind === 'trim') {
+      let rest = l;
+      for (const p of m.removed || []) rest = rest.replace(p, '');
+      if (!squashedNew[k].has(squash(rest))) bad(`old line minus the pieces is not a line of the new file: "${squash(rest).slice(0, 70)}"`);
+      return;
+    }
+    if (!texts[m.in].includes(m.to)) bad(`mapped to "${m.to.slice(0, 50)}" — not found in ${m.in}`);
   });
 }
 for (const m of decl.map) {
@@ -101,6 +136,6 @@ centralText.split('\n').forEach((l, i) => {
   }
 })(repo);
 
-console.log(`removed lines: ${removed} · lost: ${lost} · stale map entries: ${stale} · §12 items: ${items.length} · pointers into §12: ${ptrs}`);
+console.log(`map: ${mapArg} · removed lines: ${removed} (${Object.entries(kinds).map(([k, n]) => `${k} ${n}`).join(' · ') || 'none'}) · lost: ${lost} · stale map entries: ${stale} · §12 items: ${items.length} · pointers into §12: ${ptrs}`);
 if (fails.length) { console.log(`\nFAIL (${fails.length})`); fails.forEach((m) => console.log(' ' + m)); process.exit(1); }
 console.log('\nPASS');
