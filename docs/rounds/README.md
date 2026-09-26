@@ -11,3 +11,8 @@ Secret scan before commit: e-mail / token / password value / phone / bank-accoun
 
 New instruction files for the cloud: Javis puts them on the branch `inbox` (folder `rounds/`) through the GitHub web
 page — steps: `docs/CLOUD.md`.
+
+Owner ruling 2026-09-26 (question 5 = A): the master stays the OneDrive file · `inbox` = the delivery route to a cloud
+chat · this folder = a read-only copy: Friday on the computer copies the round's file here again at round open
+(skill round-open step 1); a cloud chat reads `inbox` instead. When the owner moves to working from the phone, the
+owner will say when Javis should send instructions in the chat (owner's words, answer 5).

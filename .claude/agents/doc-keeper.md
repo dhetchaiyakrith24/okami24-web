@@ -39,7 +39,7 @@ facts, in the format the files already use.
 1. **`docs/HANDOFF.md` §16** — the copy-paste block for a new chat. It holds **only** these six
    things and nothing else: the current `main` commit · what the branch is ahead of `main` by ·
    which round is open and where it stopped (incl. the first next step, and — when a chat moves mid-batch per
-   `.claude/TEAM_RULES.md` 13.6 (จ) — the uncommitted files left on purpose and any background job still running)
+   `.claude/TEAM_RULES.md` 13.6 "ย้ายแชทในเว็บ" — the `wip/…` branch holding the unfinished files, their names, and any background job still running)
    · what is waiting on the owner · open questions ·
    **the verify baseline at the last close** (item 6, owner order 2026-09-21: the pass counts of
    the full verify set as printed at the most recent round close — the only place those numbers
