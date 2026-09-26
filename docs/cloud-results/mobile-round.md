@@ -92,3 +92,25 @@ sides" · 573 changes in 189 groups · one-side files 0.
 All 9 answer-set slugs found, 0 missed, 0 false changes. The other groups (the same capacity/resistance rows on
 `/products`, category and brand listings, and in related-product cards on sibling coil pages) are the same card changes
 seen where those cards are listed.
+
+## Round close — full verify set in the cloud (round-close step 3, HEAD before this docs commit = `1829e26`)
+
+| Check | Exit | Time | Last line |
+|---|---|---|---|
+| `tsc` | 0 | 3s | (no output = no type error) |
+| `eslint` (11 scripts touched) | 0 | 5s | (no output = 0 problems) |
+| `verify-commerce` | 0 | 3s | All 17 checks passed. |
+| `verify-catalog-full` | 0 | 76s | All 30 step(s) passed. |
+| `count-storefront` | 0 | 1s | STOREFRONT buyable: 53 |
+| `i18n` | 0 | 1s | All 16 checks passed. |
+| `raw-chars` | 0 | 0s | raw NBSP/U+2060 in source: 0 |
+| `content-dates-check` | 0 | 1s | content-dates.json is current (55 paths) |
+| `eol-check` | 0 | 1s | eol-check: OK |
+| `rules-move-check` | 0 | 0s | PASS |
+| `central-rules-copy` | 0 | 0s | PASS (local checks only — remote comparison SKIPPED) |
+| `owner-rules-check` | 0 | 0s | PASS |
+| `scan` | 0 | 1s | PASS 0/104 |
+| `og-gate` | 0 | 1s | PASS share-card gate: 104/104 pages carry their own card |
+| `font-check` | 0 | 6s | font-check: PASS 3/3 · machine cloud-linux-chromium · Chrome/141.0.7390.37 · expected Thai font "Noto Sans  |
+
+Test server: started from the snapshot for `scan` / `og-gate` / `font-check`, then `test-server: stopped PID 3265 on 3412`. Secret scan of `git diff f1eefd6..HEAD` (16 files at that point; patterns: GitHub/Slack/AWS tokens, private-key headers, Render deploy-hook URLs, password/token assignments, Bearer values) = **0 hits** — run after the first pushes, not before (the instruction asked for before; reported). `git diff --stat f1eefd6..HEAD -- src public` = **empty**.
