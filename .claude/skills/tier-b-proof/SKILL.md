@@ -22,6 +22,13 @@ file — they come from the run.
 
 ## Step 1 — Pick "before" and "after"
 
+- **One kind of machine for both sides** (round "mobile", 2026-09-26): Windows Chrome and the cloud's Linux Chromium
+  draw fonts and break lines differently, so "before" and "after" — scans and shots — come from the same kind of
+  machine, and every record names it (`machine` in `_meta.json`, `scripts/lib/chrome.js`; `diff` refuses a pair from
+  two machines). A scan or a round-close result from the other kind of machine never stands in for "before". In the
+  cloud, run `node scripts/font-check.js --base <origin>` once on the side you scan first: not PASS = the machine's
+  fonts are not the expected ones and the scan is not proof.
+
 - **First ask whether a scan is needed at all** = round-close step 1 item 0 (the one place of that rule).
 - **Reuse an earlier scan as the "before" scan — no scan of the before side** — when all three hold: (1) the `commit` in that
   folder's `_meta.json` IS the base commit (no `commit` recorded = no reuse; step 2 says when to record it); (2) the new "after" scan's `diff` prints
