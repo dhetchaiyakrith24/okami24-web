@@ -389,3 +389,20 @@
 - สิ่งที่หายไป = ข้อห้าม "all / only / ทั้งหมด / ทุกรุ่น" แบบเหมารวม (ตั้งใจ — เจ้าของเปิดให้ใช้) · "only / เท่านั้น" ไม่มีข้อห้ามแยกแล้ว ให้หลัก "ยืนยันไม่ได้ = ไม่พูด" ดูแล
 - ตัดสินเอง (ตัวหลัก ตามตัวอักษรคำเจ้าของ "ไม่อ้างเกินถึงของที่ร้านไม่เคยขาย"): ห้ามระดับสี/รส (เว็บโชว์ทุกสี/รสของผู้ผลิตตามกฎ catalog completeness แม้ร้านไม่มี) · หมวด 0 ชิ้นห้าม · "ทั้งหมด" = เท่ากับ "ทุก" · ใช้ทุกภาษา (en "every/all" · zh) · "ครบ" ที่แปลว่ามีของครบยังห้าม (ข-1 ถาวร ห้ามเสนอกลับ)
 - ไม่แตะ (ประวัติ): THAI_STYLE_LOG :26 · :952 · :956 · HANDOFF :1/:142/:152 · คอมเมนต์ที่ตรงกฎใหม่อยู่แล้ว `src/i18n/search-titles.ts` :40-41 · `src/app/brands/[brand]/page.tsx` :44-45
+
+## รอบ cloud — ความเร็ว + ยกขึ้นคลาวด์ (แถว 87–90 · เจ้าของเคาะ 2026-09-26 "เอาทั้งคู่" = ข้อเสนอ 1–5 ของ `_incoming/speed-consult/RESULTS.md` §4 · `rule-auditor` 24 แถว: ขัดกัน 7 · ตายแล้ว 4 · ทับซ้อน 5 · กำกวม 8 — `_incoming/cloud-round/rule-auditor-1.md`)
+
+> สกิลห้ามเขียนวันที่/ชื่อรอบ (AI_TEAM_GUIDE §7) → ที่มาของบรรทัดใหม่ในสกิลรอบนี้อยู่ที่นี่
+
+| # | กฎ | ไฟล์:บรรทัด | ผล | ประเภท |
+|---|---|---|---|---|
+| 87 | พิสูจน์ให้พอดีกับสิ่งที่เปลี่ยน: `self-merge-check.js --base <base>` = PASS → ผลนั้นคือหลักฐาน ไม่สแกน/ไม่ถ่าย (verify ชุดเต็มยังรัน) | `.claude/skills/round-close/SKILL.md` ขั้น 1 ข้อ 0 (ที่เดียว) · tier-b-proof ขั้น 1 · merge-pack ขั้น 1 ชี้มา | ใหม่ (ข้อเสนอ 2) | เพิ่ม |
+| 88 | ใช้ผลสแกนเก่าเป็นฝั่ง "ก่อน" ได้ 3 เงื่อนไข (โค้ดเท่ากัน · browser+ฟอนต์เดียวกัน `_meta.json` · log ไม่มี FAIL) | `.claude/skills/tier-b-proof/SKILL.md` ขั้น 1 · `scripts/visible-text.js` (`_meta.json` · `--commit`) | ใหม่ (ข้อเสนอ 3) | เพิ่ม |
+| 89 | doc-keeper เริ่มพร้อม checker · ช่องผล checker = token รอเติม · ด่าน `scripts/pending-check.js` (pre-push + merge-pack) · checker ปิดรอบไม่ตรวจไฟล์ที่ doc-keeper เขียนพร้อมกัน | `.claude/agents/doc-keeper.md` หัว + "Where the facts come from" · round-close ขั้น 5 ข้อ 1 · `.githooks/pre-push` | แทนลำดับเดิม "doc-keeper หลัง checker" (ข้อเสนอ 4) | แทน |
+| 90 | แถว ROUND_COST สั้น = ตัวเลข + พาธ 1 อัน · doc-keeper เขียนแถวตอนปิดรอบ · HANDOFF บรรทัด 1 = หัว + ตัวชี้ 1 ประโยค · ไม่มีบรรทัดเกิน 2,000 ตัวอักษร | หัว `docs/ROUND_COST.md` (ที่เดียว) · doc-keeper.md ข้อ 1/4 · `docs/archive/HANDOFF-headers.md` | ใหม่ (ข้อเสนอ 4 + ก้อน 4) | เพิ่ม |
+
+### รอบ cloud — บันทึกชั้น 10 (ลบกฎ กางเต็ม)
+
+- ลบ: `.claude/skills/catalog-research/SKILL.md` บรรทัดท้าย (ข้อความเต็มเดิม): "Avoid the Browser pane MCP tools in a research subagent if the orchestrating session is also using it for other work — prefer `WebSearch`/`WebFetch`/`curl` instead."
+- ของใหม่: ไม่มี — บรรทัดตาย: ไฟล์เดียวกันเขียนไว้แล้วว่า researcher และ checker ไม่มีเบราว์เซอร์ (rule-auditor รอบเครื่องมือแถว 12 + รอบ cloud แถว D2)
+- สิ่งที่หายไป: ไม่มีพฤติกรรมไหนเปลี่ยน · ข้อเสนอ "ห้ามเปิด PDF/ไฟล์ในเครื่องผ่านเบราว์เซอร์" เป็นเรื่องอื่น รอเจ้าของเคาะ (`_incoming/cloud-round/owner-questions.md` ข้อ 9)

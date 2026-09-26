@@ -1,8 +1,12 @@
 # OKami24 — Round cost log (ROUND_COST)
 
 > Created 2026-09-17 (housekeeping round v2, step 8 — owner order 2026-09-16: "I don't know what the model quota is spent on").
-> Claude sees only its own chat's context size (app tool `get_usage`, since 2026-09-25 — desktop app only); it cannot see per-agent token usage, so each row records **countable proxies**. One row per round, filled in at round close by the main agent (doc-keeper may fill it from the same sources). Never estimate a number that was not counted — write `[ยังไม่มีข้อมูล]` and say why.
+> Claude sees only its own chat's context size (app tool `get_usage`, since 2026-09-25 — desktop app only); it cannot see per-agent token usage, so each row records **countable proxies**. One row per round, filled in at round close by doc-keeper (the main agent when doc-keeper is not called). Never estimate a number that was not counted — write `[ยังไม่มีข้อมูล]`; the reason goes in the file the last column points to (rows from 2026-09-26) or in the cell itself (older rows).
 > Sources for a row: screenshots = image files under `_incoming/<round>/` · builds = `build*.log` there (+ verify logs) · agent calls = brief files saved there (a lower bound — re-runs without a brief are not counted) · checker send-backs = "ตีกลับ" notes in that round's HANDOFF / THAI_STYLE_LOG entries · chats = HANDOFF versions written during the round · commits = `git log --oneline | grep <round tag>`.
+
+> **Row shape from 2026-09-26 (round "cloud", owner ruling on the speed proposals) — the one place of this rule:** each
+> cell = a number plus at most one evidence path, no prose; the last column "Source / caveat" = one path only — a row is read, not studied, and writing the long rows cost the close 10–20 minutes
+> (`_incoming/speed-consult/RESULTS.md` ④). Rows written before that date are left as they are.
 
 ## Table
 
