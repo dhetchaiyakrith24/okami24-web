@@ -38,6 +38,10 @@ GitHub tool, under 13.7's conditions (checker PASS · merge gate PASS · every G
 | same + a `.github/workflows/` commit | `SKIP - this merge changes the deploy pipeline (.github/workflows/probe.yml) - never deploys itself …` |
 | docs-only | `SKIP - nothing on the site changed` |
 | bad range | `could not read the changed files: …` · exit 2 (workflow gets `deploy=false`) |
+| Push of `.github/workflows/deploy.yml` from the cloud | **works** (wip branch `wip/roundA-pipes-b123-1`, then the work branch) — no workflow-scope refusal |
+| **GitHub run on PR #73** (run 36268535436, head `7532f49`, dry run) | `decide` success — notice `SKIP deploy — this merge changes the deploy pipeline (.github/workflows/deploy.yml) - never deploys itself …` · `checks` success, 2 min 0 s: `npm ci` · `next typegen` · `verify:commerce` · `verify:catalog --full` **All 31 step(s) passed** (incl. `next start on 3411 stopped`) · `deploy` **skipped** · `copy` success ×2 |
+| Proved only when Javis merges PR #73 | the push-to-main run: `decide` must print the same SKIP (pipeline rule), `checks` runs, `deploy` skipped — with or without the secret. The DEPLOY path (hook call, deploy id in the summary) is first exercised by the first site-touching merge after the owner sets the key [ยังไม่ได้ลอง] |
+| GitHub Actions time | ~2 min per run that touches the site or the workflow; off-site merges ~10 s (decide only). [เชื่อว่า well inside the private-repo free minutes; the account's quota page was not read] |
 
 ## Batch 3 — small items
 
@@ -87,3 +91,15 @@ Kept on purpose: row 13 (13.7 names agents twice) — the owner asked on 27/09 t
 | `docs/DEPLOY-RENDER.md:89` | `node scripts/line-clicks.js` is run by hand in the Render Shell against the live DB — the merge gate counts it off-site | **owner rules**: do scripts run in the Render Shell count as "the site"? (if yes: add to `site-paths.js`) |
 | `_incoming/<round>/` files the merge needs (extras.md · break logs · owner-table) | die with a cloud container like the verify logs | **owner rules**: copy/summarise every `_incoming` file a report cites into `docs/cloud-results/<round>.md` |
 | Render "deploy when checks pass" (`autoDeployTrigger: checksPass` + `buildFilter`) | a native alternative to the workflow (no secret) — needs `render.yaml`, forbidden this round | consider only if the workflow proves awkward |
+
+## Checker and agent record (this file is the record — the reports lived in the chat)
+
+| Call | On | Verdict |
+|---|---|---|
+| scope-auditor | round open | 0 of 104 sitemap pages touched |
+| checker | PR #72, commit `10a322a` | PASS 5/5 |
+| rule-auditor | 13.7 · round-close · RECOVERY · CLOUD · the 3 scripts · deploy.yml | 26 rows (conflict 4 · dead 6 · duplicate 4 · ambiguous 12) → in-scope fixed, rest = "For round B" above |
+| checker | batches 1-3, HEAD `f3405c2` + working tree | 6/7 — 1 send-back: `docs/CLOUD.md` deploy row claimed a GitHub run that had not happened yet → label changed to "not yet tried" |
+| checker (re-check of that row only) | same | PASS on the row; the "only this label changed" part confirmed by the main agent against the checked snapshot (`git diff` vs `wip/roundA-pipes-b123-1`: 1 line) |
+| doc-keeper | round close | HANDOFF v74 §16 · ROUND_COST row |
+| checker | close docs | 8/9 — 1 send-back: §16 cited this file for the 6/7 result, which was not written here yet → this table added |
