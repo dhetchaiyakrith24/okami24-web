@@ -109,11 +109,11 @@ async function withChrome(fn) {
     let id = 0; const pending = new Map(); const consoleErrors = [];
     ws.onmessage = (e) => {
       const m = JSON.parse(e.data);
-      if (m.id && pending.has(m.id)) { pending.get(m.id)(m); pending.delete(m.id); return; }
+      if (m.id && pending.has(m.id)) { const p = pending.get(m.id); clearTimeout(p.timer); pending.delete(m.id); p.r(m); return; }
       if (m.method === "Runtime.consoleAPICalled" && m.params.type === "error") consoleErrors.push(m.params.args.map((a) => a.value ?? a.description ?? "").join(" ").slice(0, 300));
       if (m.method === "Runtime.exceptionThrown") consoleErrors.push((m.params.exceptionDetails.exception?.description || m.params.exceptionDetails.text || "").slice(0, 300));
     };
-    const send = (method, params = {}) => new Promise((r, rej) => { const i = ++id; pending.set(i, r); ws.send(JSON.stringify({ id: i, method, params })); setTimeout(() => { if (pending.has(i)) { pending.delete(i); rej(new Error(`${method} timed out`)); } }, 90000); });
+    const send = (method, params = {}) => new Promise((r, rej) => { const i = ++id; const timer = setTimeout(() => { if (pending.has(i)) { pending.delete(i); rej(new Error(`${method} timed out`)); } }, 90000); pending.set(i, { r, timer }); ws.send(JSON.stringify({ id: i, method, params })); });
     await send("Page.enable"); await send("Runtime.enable"); await send("Network.enable");
     await send("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem(${JSON.stringify(AGE_KEY)},"true")}catch(e){}` });
     return await fn(send, consoleErrors);
@@ -128,7 +128,10 @@ async function scan() {
   const widths = opt("--widths", "390,1440").split(",").map(Number);
   const locale = opt("--locale", "th");
   const outDir = opt("--out", "_incoming/round9/linemap");
-  const wait = +opt("--wait", "2500");
+  // --wait <ms> = the old fixed sleep (was 2500 by default). Not given = wait until ready (scripts/page-ready.js,
+  // round "cloud" 2026-09-26 — proved against a fixed-wait control run, _incoming/cloud-round/)
+  const wait = opt("--wait", null) == null ? null : +opt("--wait");
+  const { waitReady, docStamp } = require("./page-ready");
   const shots = args.includes("--shots");
   let urls = args.slice(1).filter((a, i) => a.startsWith("/") && !FLAGS_WITH_VALUE.includes(args[i]));
   if (urls.length === 0) {
@@ -145,8 +148,9 @@ async function scan() {
         const name = `${u.replace(/^\//, "").replace(/[/?=,&]+/g, "_") || "home"}-${w}`;
         consoleErrors.length = 0;
         try {
+          const stamp = await docStamp(send);
           await send("Page.navigate", { url: base + u });
-          await sleep(wait);
+          if (wait != null) await sleep(wait); else { const rd = await waitReady(send, stamp); if (rd.how !== "ready") process.stderr.write(`page-ready ${u} @${w}: ${rd.how} after ${rd.total} ms\n`); }
           await send("Runtime.evaluate", { expression: "document.fonts ? document.fonts.ready.then(() => true) : true", awaitPromise: true, returnByValue: true });
           const r = await send("Runtime.evaluate", { expression: EVAL, returnByValue: true });
           if (r.result?.exceptionDetails) throw new Error(r.result.exceptionDetails.text);

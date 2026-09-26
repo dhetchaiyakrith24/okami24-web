@@ -21,6 +21,10 @@ const opt = (name, def) => { const i = args.indexOf(name); return i >= 0 ? args[
 const base = opt("--base", "http://localhost:3412");
 const widths = opt("--widths", "390,1440").split(",").map(Number);
 const outDir = opt("--out", "_incoming/wordbreak");
+// --wait <ms> = the old fixed sleep after navigation (was always 8000). Not given = wait until the page is ready
+// (scripts/page-ready.js, round "cloud" 2026-09-26 — proved against a fixed-wait control run, _incoming/cloud-round/).
+const fixedWait = opt("--wait", null) == null ? null : +opt("--wait");
+const { waitReady, docStamp } = require("./page-ready");
 const paths = args.filter((a, i) => a.startsWith("/") && !args[i - 1]?.startsWith("--"));
 const CHROME = process.env.CHROME_PATH || "C:/Program Files/Google/Chrome/Application/chrome.exe";
 const AGE_KEY = process.env.AGE_KEY || "okami24-age-verified";
@@ -76,12 +80,14 @@ async function measure(url, width) {
     const ws = new WebSocket(target.webSocketDebuggerUrl);
     await new Promise((r) => (ws.onopen = r));
     let id = 0; const pending = new Map();
-    ws.onmessage = (e) => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { pending.get(m.id)(m); pending.delete(m.id); } };
-    const send = (method, params = {}) => new Promise((r, rej) => { const i = ++id; pending.set(i, r); ws.send(JSON.stringify({ id: i, method, params })); setTimeout(() => { if (pending.has(i)) { pending.delete(i); rej(new Error(`${method} timed out`)); } }, 60000); });
+    ws.onmessage = (e) => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { const p = pending.get(m.id); clearTimeout(p.timer); pending.delete(m.id); p.r(m); } };
+    const send = (method, params = {}) => new Promise((r, rej) => { const i = ++id; const timer = setTimeout(() => { if (pending.has(i)) { pending.delete(i); rej(new Error(`${method} timed out`)); } }, 60000); pending.set(i, { r, timer }); ws.send(JSON.stringify({ id: i, method, params })); });
     await send("Page.enable"); await send("Runtime.enable");
     await send("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: width < 768 });
     await send("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem(${JSON.stringify(AGE_KEY)},"true")}catch(e){}` });
-    await send("Page.navigate", { url }); await sleep(8000);
+    const stamp = await docStamp(send);
+    await send("Page.navigate", { url });
+    if (fixedWait != null) await sleep(fixedWait); else { const rd = await waitReady(send, stamp); if (rd.how !== "ready") process.stderr.write(`page-ready ${url} @${width}: ${rd.how} after ${rd.total} ms\n`); }
     await send("Runtime.evaluate", { expression: "window.scrollTo(0,0)" }); await sleep(300);
     const { result } = await send("Runtime.evaluate", { expression: "Math.min(document.documentElement.scrollHeight, 4000)", returnByValue: true });
     await send("Emulation.setDeviceMetricsOverride", { width, height: result.result.value, deviceScaleFactor: 1, mobile: width < 768 });
