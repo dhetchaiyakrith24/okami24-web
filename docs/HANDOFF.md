@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v71 · 2026-09-26 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v72 · 2026-09-26 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -507,65 +507,47 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-1 main: **origin/main = `135078b`**, unchanged since round "central-rules" closed [ตรวจแล้ว at that close, not re-fetched this write] — Javis merged PR #65; `smogz-rules` PR #4 + #5 merged; cartoon repo PR #1 merged. Web `main` is LOCKED (required check `copy`) — every change goes through a PR whose `central-rules-copy / copy` check is green.
+1 main: **origin/main = `3463d91`**, unchanged since PR #68 merged rounds "central-rules" + "cloud" [ตรวจแล้ว,
+  `git log` — same hash as recent-commits HEAD]. Web `main` is LOCKED (required check `copy`). Sync **PR #69**
+  "rules: central rules copy @d5ff55b" is open (`smogz-rules` PR #6 "keep projects apart", central §12 item 32,
+  merged there to `d5ff55b`) — waiting for Javis to merge; until then `.claude/rules/central-rules.md` here still
+  lacks item 32 [เชื่อว่า, reported by the main agent].
   Pre-merge batch-by-batch history: round "central-rules" → §3 "Round 'central-rules' — full detail" · round
-  "cloud" → §3 "Round 'cloud' — full detail" (new this close).
-2 ahead of main: **9 commits already made** over `135078b` [ตรวจแล้ว, `git log`]. Round "central-rules" batch 3
-  close: `9a502f0`(rules: self-merge) · `fae4676`(docs: central-rules batch 3) · `fdb89f4`(docs: RECOVERY 2ง + §16
-  NOW lines) · `6dd3004`(docs: HANDOFF v69 + ROUND_COST row, tag `central-rules-done`).
-  Round "cloud" batches 1–4 + T4 push: `9eb6002`(feat: scans wait for page-ready) · `b881b7f`(feat: no push while a
-  checker slot is pending) · `5b40e34`(rules: speed method + Friday memory in the repo) · `6dc7bd4`(docs: cloud
-  table + routes, HANDOFF reshaped, v70) · `26f4fab`(test: T4 cloud capability results).
-  **Plus this close's uncommitted edits** at this write — per `git status`: `.claude/LESSONS.md` ·
-  `.claude/TEAM_RULES.md` · `.claude/agents/doc-keeper.md` · `.claude/skills/round-open/SKILL.md` ·
-  `.claude/skills/thai-check/SKILL.md` · `docs/AI_TEAM_GUIDE.md` · `docs/CLOUD.md` · `docs/RULES_INDEX.md` ·
-  `docs/THAI_STYLE.md` · `docs/rounds/README.md` · this HANDOFF write · `docs/ROUND_COST.md` — to be split into
-  commits by type, tagged `cloud-round-done`, then pushed. **Merge/deploy = TEAM_RULES 13.7** — the combined PR
-  (rounds "central-rules" + "cloud") is excluded from Friday's self-merge allowance (it touches
-  `.claude/TEAM_RULES.md` itself) → **Javis merges it.**
-3 round: **CLOSED — round "cloud", tag `cloud-round-done`** (hash lands on the close commit — not yet made at this
-  write; see the close report for it). Batches 1–4 done at stop point 1 — checker **25/25 PASS** [ตรวจแล้ว,
-  `_incoming/cloud-round/checker-result.md`] (first pass 23/25, 2 fails fixed). Full batch-by-batch detail: §3
-  "Round 'cloud' — full detail" (new this close).
-  After stop point 1: T4 results filled into `docs/CLOUD.md` §1/§4 [ตรวจแล้ว, `docs/cloud-results/T4.md`] · T5
-  (route B, a follow-up message into a running cloud chat) **FAILED** — `claude -p --cloud` "Session not found"
-  [ตรวจแล้ว, `_incoming/cloud-round/t5-send.log`]; a send through the app reached a different project's chat by
-  mistake and was refused there, nothing touched [ตรวจแล้ว, `.claude/LESSONS.md` §"พ2"]. Route A (link + `inbox`
-  branch) works [ตรวจแล้ว, `docs/CLOUD.md` §2].
-  Owner answers applied: 2A · 3A · 4 · 5A · 10B (+ `docs/RULES_INDEX.md` rows 91–95). **NOT applied** — the app's
-  own permission system refused edits to files that grant Friday's own permissions: 1A · 6A+7A · 9A · 8A (branch
-  delete) → full texts in `_incoming/cloud-round/pending-rule-edits.md` (also holds 1 new owner question, item 4(e)
-  below). Tag `archive/phase-3.3.1` pushed to origin, points at `22e5109` — keeps that commit reachable once its
-  branch is deleted.
-  New central rule "keep projects apart" (owner ruled in chat, chose option A): PR
-  https://github.com/dhetchaiyakrith24/smogz-rules/pull/6, guard green, Javis merges — the sync PR that follows
-  then brings the copy here as its own commit.
-  checker (this close): report sent, `_incoming/cloud-round/checker-brief-close.md` · verdict **PASS**
-  4/4 on pass 2 (pass 1 = 9 of 11, sent back once) · report path `_incoming/cloud-round/checker-result-close.md`.
-  **First next step:** once Javis merges the combined PR (this close) and `smogz-rules` PR #6, and the owner
-  answers item 4(e), open the owner's proposed next round — cloud screenshots (`shot.js` Chrome path/`--no-sandbox`,
-  `test-server.js stop` fix on the cloud, network allowlist for `okami24.store`) — not started this round.
-  Previous rounds, all CLOSED + MERGED, full detail at §3 (unchanged this write): "central-rules" tag `central-rules-done`
-  · "tools round" tag `tools-round-done` · "friday persona" tag `friday-persona-done` · "rules trim" tag `rules-trim-done`
-  · "owner rules" tag `owner-rules-done` · "rules move" tag `rules-move-done` · round 10C tag `seo-landscape-10c-done`
-  · round data 2 tag `data-facts-2-done`.
+  "cloud" → §3 "Round 'cloud' — full detail" (unchanged this write).
+2 ahead of main: **0 commits, 3 files modified, not yet committed** [ตรวจแล้ว, `git status` on branch
+  `rules/owner-answers-1a-6a-7a-9a`, branched from `3463d91`]: `.claude/TEAM_RULES.md` (13.4 #6 · 13.7
+  Friday-merge line — confirmed changed in the working tree [ตรวจแล้ว]) · `.claude/skills/catalog-research/SKILL.md`
+  (retailer-tier rule, confirmed changed [ตรวจแล้ว]) · `docs/RULES_INDEX.md` (rows 96–99, confirmed present
+  [ตรวจแล้ว], content change not diffed by doc-keeper [เชื่อว่า]). Applies owner answers **1A · 6A · 7A · 9A**
+  (confirmed in chat via Javis) + the catalog-research retailer-tier question = **A**, the recommended option — no,
+  retailer evidence stays identity/photo-only, never the source of a site fact [ตรวจแล้ว, `catalog-research/SKILL.md`
+  "owner ruling 2026-09-26"]. To be committed (split by type) + pushed + a PR opened; **Javis merges it** — this PR
+  edits the 13.7 self-merge line itself, so Friday's self-merge allowance excludes it.
+3 round: **no round open.** This is a batch close of a small follow-up after round "cloud" closed (tag
+  `cloud-round-done`). checker: verdict **PASS** · **8/8** · report `_incoming/cloud-round/followup/checker-result.md`
+  (this write started together with the checker; tokens filled by the main agent when it returned).
+  **First next step:** once this batch is committed + pushed + a PR opened, checker passes, and Javis merges both
+  this PR and sync PR #69, open the owner's proposed next round — cloud screenshots (`shot.js` Chrome
+  path/`--no-sandbox`, `test-server.js stop` fix on the cloud, network allowlist for `okami24.store`) — not
+  started yet.
+  Previous rounds, all CLOSED + MERGED, full detail at §3 (unchanged this write): "cloud" tag `cloud-round-done`
+  · "central-rules" tag `central-rules-done` · "tools round" tag `tools-round-done` · "friday persona" tag
+  `friday-persona-done` · "rules trim" tag `rules-trim-done` · "owner rules" tag `owner-rules-done` · "rules move"
+  tag `rules-move-done` · round 10C tag `seo-landscape-10c-done` · round data 2 tag `data-facts-2-done`.
 4 waiting on owner / Javis —
-  (a) Javis: merge the combined PR for rounds "central-rules" + "cloud" (excluded from Friday's self-merge, 13.7).
-  (b) Javis: merge `smogz-rules` PR #6 ("keep projects apart" central rule) once guard is green — its sync PR then
-  needs an ordinary merge here too, once it opens.
-  (c) owner, in chat: confirm `_incoming/cloud-round/pending-rule-edits.md`'s 4 texts (1A · 6A+7A · 9A · 8A) —
-  typing "ยืนยัน 1A 6A 7A 9A ลงได้" lets Friday retry the edit; if the app still refuses, the owner or Javis edits
-  those files by hand from the exact text already written there.
-  (d) owner or Javis: delete 3 stale branches on GitHub — `claude/t4-delete-probe` · `rules-sync/97a58b0` ·
-  `checkpoint/phase-3.3.1` (steps in `pending-rule-edits.md` §"8A"; the one commit unique to the third stays at
-  tag `archive/phase-3.3.1`).
-  (e) owner: answer 1 new question in `pending-rule-edits.md` — does the "manufacturer source only" rule (2A)
-  reach `catalog-research`'s retailer-tier evidence for model/colour identity and photo sourcing? A ★ recommended
-  (no, retailer stays identity/photo evidence only) or B (yes, cut the retailer tier from catalog-research).
+  (a) Javis: merge web PR #69 (sync of `smogz-rules` PR #6, central item 32) once green.
+  (b) Javis: merge this batch's PR (`rules/owner-answers-1a-6a-7a-9a`) once pushed + checker passes — excluded
+  from Friday's self-merge because it edits the 13.7 self-merge line itself.
+  (c) owner or Javis: delete GitHub branches — `claude/t4-delete-probe` · `rules-sync/97a58b0` ·
+  `checkpoint/phase-3.3.1` (unique commit kept at tag `archive/phase-3.3.1`) · now also `checkpoint/phase-3.3.3`,
+  merged via PR #68 — owner's call whether/when to delete it too.
 4b (permanent, 13.10 #12, do not re-ask; older rounds → §3): owner ruled 26/09 "เอาทั้งคู่" — all 5 speed-consult
   proposals (`_incoming/speed-consult/RESULTS.md` §4, items 1–5) adopted into round "cloud"; items 3–4 touch a
   skill/rule and count as already-permitted within that item's scope, no separate ask needed [ตรวจแล้ว,
   `docs/rounds/รอบยกขึ้นคลาวด์-Friday-เร็วขึ้น-เก็บบ้าน.txt`:16] — this replaces the old "4 open decisions" wording.
+  This batch: owner answers **1A · 6A · 7A · 9A** (chat, via Javis) + catalog-research retailer-tier question = A
+  are now applied — see item 2. Owner answers **8 = A** and **11 = A** stand: keep the memory pointer files on the
+  owner's computer until a cloud round passes — permanent, do not re-ask.
   Round 9 + round 10B decision 1 + the data round's rulings (gate scope, hide-unverified, empty-cards-get-a-proposal,
   Esko 20 flavours, cut the "could not find specs" filler, Joiway F4 exception, magnetic-claims-need-a-source) — full
   text §3. Do not raise Thailand's legal status in owner-facing reports (round 10C ruling; fuller text also lives in
@@ -578,9 +560,10 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
   (`npm run build`/`npx next build` direct still unblocked) · the "ร้านพอต" SEO block's shipping numbers = BSOT §10
   (15:00 cut-off, same-day dispatch, 1–3 days), not Cowork's relayed note · "เซฟ ๆ ให้ด้วย" (owner, chat 2026-09-25)
   = be careful, recorded in `.claude/LESSONS.md`.
-5 open, none started this close: 1 new owner question — see item 4(e). This round's carried rule questions (1A ·
-  6A+7A · 9A · 8A) → see item 4(c) and 4(d) — supersedes the round's own 11-question set in
-  `_incoming/cloud-round/owner-questions.md`, now resolved except the 5 stuck on the app's own permission system.
+5 open, none new this batch. Round "cloud"'s carried rule questions (1A · 6A+7A · 9A) + the catalog-research
+  retailer-tier question — all answered this batch, see items 2 and 4b. The old 11-question set in
+  `_incoming/cloud-round/owner-questions.md` is now fully resolved [ตรวจแล้ว at round "cloud" close for the first
+  6 · เชื่อว่า for the 4 applied this batch, per the main agent's report].
   Carried, unchanged — content/SEO backlog, full text §3: `_incoming/round10c/extras.md`'s 6 site-touching proposals
   · ask Cowork on 05/10: index status of the 5 new guides + which page GSC credits for "caliburn g5"/"m bar"/"uwell"
   · round data 2 leftovers (iqosheet-18 charging row · Holder ~12-min charge time · EN/zh "4 RESISTANCE" singular ·
@@ -588,8 +571,13 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
   Thai on en/zh · round 11A pod-159 photos · B5 rest · B6 (own round, 13.10 #6).
   Tools round, found, not fixed (site untouchable that round): 10 Thai strings shown to en/zh visitors on
   coil-54/55/68 + iqosheet-16/18 [ตรวจแล้ว, `_incoming/tools-round/b3/data2-evidence.md`].
-6 verify baseline — **refreshed this close, round "cloud" close** (`_incoming/cloud-round/verify-close/exit-codes.txt`,
-  read directly by doc-keeper): `tsc` · `eslint` · `verify:commerce` · `content-dates --check` · `verify:catalog
+6 verify baseline — **unchanged from round "cloud" close** (same counts as below; this batch touched only
+  rules/skill/docs-index text, no code/content, so the full set was not re-run). Follow-up gate check for this
+  batch: `owner-rules-check` · `owner-rules-check --map scripts/rules-trim...` (rules-trim) · `rules-move-check` ·
+  `eol-check` · `central-rules-copy-check.js` (base `origin/main`) — **all exit 0** [ตรวจแล้ว,
+  `_incoming/cloud-round/followup/*.log`, 5 log files read directly by doc-keeper].
+  Round "cloud" close counts, carried (`_incoming/cloud-round/verify-close/exit-codes.txt`, read directly by
+  doc-keeper at that close): `tsc` · `eslint` · `verify:commerce` · `content-dates --check` · `verify:catalog
   --full` **30/30** (72 s, incl. `next build` PASS) · `count-storefront` **53/53** · `i18n` **16/16** · `raw-chars`
   **0** · `eol-check` · `rules-move-check` · `central-rules-copy-check.js` **PASS local** (remote comparison
   SKIPPED, `RULES_READ_TOKEN` not set) · `test-server` build/start/stop · `scan.js` **0/104** · `og-gate`
