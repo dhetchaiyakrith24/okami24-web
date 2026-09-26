@@ -9,7 +9,7 @@
 //        [--extras <extras.md>]                        work beyond the brief (13.10 #1) — copied as is, keep/undo per row
 //        [--confirm <file.md>]                         claims the round instruction says to have confirmed
 //        [--verify <dir>]                              every *.log in it: path + its last non-empty line
-//        [--no-site-change]                            the round changed nothing under src/ public/ (git diff empty) — said instead of the two ★ scans
+//        [--no-site-change]                            nothing a customer sees changed (`self-merge-check.js --base <round base>` = PASS, round-close step 1 item 0) — said instead of the two ★ scans
 //
 // ★ table: one row per distinct visible change. The three languages of the same block (same page, width, DOM path)
 // sit on one row; rows with identical text on several pages or at both widths are merged, pages listed.
@@ -26,6 +26,18 @@ const round = opt("--round") || "(round)";
 if (!out) {
   console.error("usage: node scripts/merge-pack.js --out <owner-table.md> --round <name> [--visible dir] [--head before after] [--extras f] [--confirm f] [--verify dir]");
   process.exit(2);
+}
+// No pack while a checker result is still a placeholder (doc-keeper may start with the checker — scripts/pending-check.js)
+{
+  const extra = [opt("--extras"), opt("--confirm")].filter(Boolean);
+  try {
+    const cp = require("child_process"), root = path.join(__dirname, "..");
+    cp.execFileSync("node", [path.join(__dirname, "pending-check.js")], { cwd: root, stdio: "inherit" }); // doc-keeper's files
+    if (extra.length) cp.execFileSync("node", [path.join(__dirname, "pending-check.js"), ...extra], { cwd: root, stdio: "inherit" });
+  } catch {
+    console.error("merge-pack: refused — a checker slot is still pending (see above)");
+    process.exit(1);
+  }
 }
 const cell = (t) => (t == null || t === "" ? "—" : String(t).length > 160 ? String(t).slice(0, 157) + "…" : String(t)).replace(/\|/g, "\\|").replace(/\r?\n/g, " ");
 const md = [];
@@ -92,7 +104,7 @@ if (hi >= 0) {
 // an input left out is said out loud, never silently dropped
 if (!visible || hi < 0) {
   const why = args.includes("--no-site-change")
-    ? "รอบนี้ไม่แตะ `src/` `public/` (git diff ว่าง) → ข้อความและหัวหน้าเว็บเปลี่ยนไม่ได้"
+    ? "รอบนี้ไม่แตะของที่ลูกค้าเห็น (`node scripts/self-merge-check.js --base <ฐานรอบ>` = PASS · round-close ขั้น 1 ข้อ 0) → ข้อความและหัวหน้าเว็บเปลี่ยนไม่ได้"
     : "**[ยังไม่มีข้อมูล]** — ไม่ได้แนบผลสแกน";
   if (!visible) md.push("## ★ ข้อความที่ลูกค้าเห็นเปลี่ยน", "", why, "");
   if (hi < 0) md.push("## ★ หัวหน้าเว็บ (title · description · H1 · og:title) เปลี่ยน", "", why, "");

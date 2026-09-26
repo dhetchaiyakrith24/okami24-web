@@ -3,7 +3,8 @@
 // (Thai, English, Chinese), not only Thai like scripts/linemap-scan.js. Used to prove "what changed on screen"
 // between two builds (skill .claude/skills/tier-b-proof), then shoot only those spots.
 //
-//   node scripts/visible-text.js scan --base <origin> --out <dir> [--locales th,en,zh] [--widths 390,1440] [--wait 2500] [/path ...]
+//   node scripts/visible-text.js scan --base <origin> --out <dir> [--locales th,en,zh] [--widths 390,1440] [--wait <ms> = fixed sleep; default = until ready] [--commit <sha of the build>] [/path ...]
+//        also writes <out>/_meta.json (commit · browser · font fingerprint) — diff says whether two scans ran on the same browser + fonts
 //        no paths → every URL in <base>/sitemap.xml (origins rebased to --base) · one JSON per page/locale/width
 //   node scripts/visible-text.js diff <beforeDir> <afterDir> <outDir> [--before-base <origin>] [--after-base <origin>]
 //        [--shot-locales th] [--cluster-depth 3]
@@ -31,7 +32,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // Git Bash rewrites a leading "/" into its install folder ("/contact" → "C:/Program Files/Git/contact") unless
 // MSYS_NO_PATHCONV=1 is set — which would silently turn a page list into a whole-sitemap scan. Undo it here.
 const args = process.argv.slice(2).map((a) => a.replace(/^[A-Za-z]:[/\\]Program Files[/\\]Git(?=[/\\]|$)/, "").replace(/\\/g, "/") || "/");
-const FLAGS_WITH_VALUE = ["--base", "--widths", "--locales", "--out", "--wait", "--before-base", "--after-base", "--shot-locales", "--cluster-depth"];
+const FLAGS_WITH_VALUE = ["--base", "--widths", "--locales", "--out", "--wait", "--commit", "--before-base", "--after-base", "--shot-locales", "--cluster-depth"];
 const opt = (name, def) => {
   const i = args.indexOf(name);
   return i >= 0 ? args[i + 1] : def;
@@ -81,8 +82,8 @@ async function withChrome(fn) {
     await new Promise((r) => (ws.onopen = r));
     let id = 0;
     const pending = new Map();
-    ws.onmessage = (e) => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { pending.get(m.id)(m); pending.delete(m.id); } };
-    const send = (method, params = {}) => new Promise((r, rej) => { const i = ++id; pending.set(i, r); ws.send(JSON.stringify({ id: i, method, params })); setTimeout(() => { if (pending.has(i)) { pending.delete(i); rej(new Error(`${method} timed out`)); } }, 90000); });
+    ws.onmessage = (e) => { const m = JSON.parse(e.data); if (m.id && pending.has(m.id)) { const p = pending.get(m.id); clearTimeout(p.timer); pending.delete(m.id); p.r(m); } };
+    const send = (method, params = {}) => new Promise((r, rej) => { const i = ++id; const timer = setTimeout(() => { if (pending.has(i)) { pending.delete(i); rej(new Error(`${method} timed out`)); } }, 90000); pending.set(i, { r, timer }); ws.send(JSON.stringify({ id: i, method, params })); });
     await send("Page.enable"); await send("Runtime.enable"); await send("Network.enable");
     await send("Page.addScriptToEvaluateOnNewDocument", { source: `try{localStorage.setItem(${JSON.stringify(AGE_KEY)},"true")}catch(e){}` });
     return await fn(send);
@@ -100,7 +101,11 @@ async function scan() {
   if (!base || !outDir) { console.error("scan needs --base <origin> --out <dir>"); process.exit(2); }
   const locales = opt("--locales", "th,en,zh").split(",");
   const widths = opt("--widths", "390,1440").split(",").map(Number);
-  const wait = +opt("--wait", "2500");
+  // --wait <ms> = the old fixed sleep (was 2500 by default). Not given = wait until ready (scripts/page-ready.js,
+  // round "cloud" 2026-09-26 — proved against a fixed-wait control run and the round-data-2 answer set, _incoming/cloud-round/)
+  const wait = opt("--wait", null) == null ? null : +opt("--wait");
+  const { waitReady, docStamp } = require("./page-ready");
+  let capped = 0;
   let urls = args.slice(1).filter((a, i) => a.startsWith("/") && !FLAGS_WITH_VALUE.includes(args[i]));
   if (urls.length === 0) {
     const sm = await (await fetch(`${base}/sitemap.xml`)).text();
@@ -110,14 +115,28 @@ async function scan() {
   const host = new URL(base).hostname;
   let fails = 0;
   await withChrome(async (send) => {
+    // _meta.json = what this scan ran on, so a later round may reuse it as its "before" (skill tier-b-proof step 1):
+    // the build commit (--commit, optional) + the browser + a font fingerprint (widths of Thai/Latin/CJK text in the
+    // site's own body font — a different font or fallback on this machine changes them and would fake "changes").
+    const ver = await send("Browser.getVersion");
+    let fontProbe = null;
+    try {
+      const st0 = await docStamp(send);
+      await send("Page.navigate", { url: base + urls[0] });
+      await waitReady(send, st0);
+      const fp = await send("Runtime.evaluate", { returnByValue: true, expression: `(() => { const c = document.createElement("canvas").getContext("2d"); const f = getComputedStyle(document.body).font; c.font = f; return { font: f, widths: ["กขคงจฉชซ ภาษาไทย ๑๒๓", "The quick brown fox 0123456789", "电子烟 说明书 规格"].map((s) => Math.round(c.measureText(s).width * 100) / 100), loaded: [...document.fonts].filter((x) => x.status === "loaded").map((x) => x.family + " " + x.weight).sort() }; })()` });
+      fontProbe = fp.result?.result?.value ?? null;
+    } catch { /* recorded as null = cannot be reused */ }
+    fs.writeFileSync(path.join(outDir, "_meta.json"), JSON.stringify({ base, commit: opt("--commit") || null, chrome: ver.result?.product || null, fontProbe, locales, widths, wait: wait == null ? "ready" : wait, date: new Date().toISOString() }, null, 1));
     for (const loc of locales) {
       await send("Network.setCookie", { name: "okami24_locale", value: loc, domain: host, path: "/" });
       for (const w of widths) {
         await send("Emulation.setDeviceMetricsOverride", { width: w, height: 900, deviceScaleFactor: 1, mobile: w < 768 });
         for (const u of urls) {
           try {
+            const stamp = await docStamp(send);
             await send("Page.navigate", { url: base + u });
-            await sleep(wait);
+            if (wait != null) await sleep(wait); else { const rd = await waitReady(send, stamp); if (rd.how !== "ready") { capped++; process.stderr.write(`page-ready ${loc} ${w} ${u}: ${rd.how} after ${rd.total} ms\n`); } }
             await send("Runtime.evaluate", { expression: "document.fonts ? document.fonts.ready.then(() => true) : true", awaitPromise: true, returnByValue: true });
             const r = await send("Runtime.evaluate", { expression: EVAL, returnByValue: true });
             if (r.result?.exceptionDetails) throw new Error(r.result.exceptionDetails.text);
@@ -132,7 +151,7 @@ async function scan() {
       }
     }
   });
-  console.log(`scan done: ${urls.length} pages × ${locales.length} locales × ${widths.length} widths → ${outDir} · failures ${fails}`);
+  console.log(`scan done: ${urls.length} pages × ${locales.length} locales × ${widths.length} widths → ${outDir} · failures ${fails}${wait == null ? ` · wait=ready (not quiet within the cap: ${capped})` : ` · wait=fixed ${wait} ms`}`);
   if (fails) process.exit(1);
 }
 
@@ -145,8 +164,13 @@ const norm = (t) => t.replace(/\[email(?:\u00a0| )protected\]/g, "<email>").repl
 const selectorOf = (p) => "body > " + p.split("/").map((s) => { const [t, i] = s.split(":"); return `${t}:nth-child(${i})`; }).join(" > ");
 
 function diff(beforeDir, afterDir, outDir) {
-  const list = (d) => new Set(fs.readdirSync(d).filter((f) => f.endsWith(".json")));
+  const list = (d) => new Set(fs.readdirSync(d).filter((f) => f.endsWith(".json") && f !== "_meta.json"));
   const A = list(beforeDir), B = list(afterDir);
+  // A "before" reused from an earlier close is only valid on the same browser + fonts (skill tier-b-proof step 1)
+  const meta = (d) => { try { return JSON.parse(fs.readFileSync(path.join(d, "_meta.json"), "utf8")); } catch { return null; } };
+  const ma = meta(beforeDir), mb = meta(afterDir);
+  const envSame = !!(ma && mb && ma.chrome === mb.chrome && JSON.stringify(ma.fontProbe) === JSON.stringify(mb.fontProbe) && ma.fontProbe);
+  console.log(envSame ? "environment: same browser + font fingerprint on both sides" : `environment: NOT proven the same (before ${ma ? ma.chrome : "no _meta.json"} · after ${mb ? mb.chrome : "no _meta.json"}${ma && mb && JSON.stringify(ma.fontProbe) !== JSON.stringify(mb.fontProbe) ? " · font fingerprint differs" : ""}) — a reused "before" is not valid; re-scan the before side`);
   const changes = [];
   const onlyOne = [];
   for (const f of [...new Set([...A, ...B])].sort()) {

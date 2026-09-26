@@ -33,7 +33,8 @@ Always:
 - The head of `docs/LAUNCH_AUDIT.md`, the block titled **"สถานะปัจจุบัน"** — and nothing else of
   that file. **Never read LAUNCH_AUDIT in full**; open only the numbered item the round is working
   on.
-- The round instruction file the owner attached.
+- The round instruction file the owner attached. On the computer, copy it into `docs/rounds/` (read-only copy,
+  `docs/rounds/README.md`) so a later cloud chat can read it; in the cloud, it comes from the `inbox` branch.
 - `.claude/LESSONS.md` — the "what worked" lessons (the one place for them, owner ruling 2026-09-25). Not
   imported into `CLAUDE.md` on purpose (too large to load every chat) — read it here, at round open, and
   again before deciding "the order given is fine, but there is a better way". New lessons are written there.
@@ -54,13 +55,18 @@ Then `git status` — know where the tree is before moving.
 2. Compare `origin/main` with the commit the instruction file names as main. **Not equal =
    stop and report before doing anything** — do not start the round on a different base.
 3. Confirm the working branch contains `origin/main` (fast-forward if it is merely behind);
-   confirm the tree is clean. On a continuation, the tree may hold only the uncommitted files that HANDOFF
-   §16 names as left on purpose (chat moved mid-batch, 13.6 (จ)) — any other change = stop and report.
+   confirm the tree is clean. On a continuation after a mid-batch move (13.6 "ย้ายแชทในเว็บ"), the unfinished files
+   sit on the `wip/…` branch HANDOFF §16 names — fetch it by name (a cloud clone fetches only its own branch:
+   `git fetch origin <wip>:refs/remotes/origin/<wip>`), bring the files into the working tree uncommitted
+   (`git checkout origin/<wip> -- <files>`, then `git reset -q` so they stay unstaged) and check that the list
+   matches §16; any other change = stop and report.
+   `git config core.hooksPath` must answer `.githooks` (a fresh clone — every cloud chat — does not set it: run
+   `git config core.hooksPath .githooks`, `docs/RECOVERY.md` 2ค); without it the commit and push gates do not run.
 4. Report the numbers seen (hash of main, branch, tags) — never the numbers the file expected.
 
 If the instruction file also names a tag, check the tag with `git tag -n1`; a tag that points
 a few commits before the merge commit is normal (the tag marks the round-close commit, the
-merge commit is Cowork's) — say so instead of treating it as a mismatch.
+merge commit is made at merge, 13.7) — say so instead of treating it as a mismatch.
 
 ## Step 3 — Answer the instruction before touching anything
 

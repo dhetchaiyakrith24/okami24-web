@@ -1,6 +1,6 @@
 ---
 name: thai-check
-description: Gate every change to copy shown on the OKami24 site before it is committed — Thai, English or Chinese, in dictionaries, product data, page components, head/meta or JSON-LD. Use it on every batch that touches site text, and when the checker needs the Thai-copy gates (the checker reads this file directly). It runs the English-leak scan across the sitemap, the raw-invisible-character scan, the forbidden-word grep, the head/JSON-LD and en/zh checks, and applies the copy principles (unverifiable = unsaid, no health/price/guarantee claims, numbers need a verified spec row, no negation left where a line break flips the meaning, evidence tier never promoted). It points at the locked-word and permanent-exception tables in THAI_STYLE instead of copying them.
+description: Gate every change to copy shown on the OKami24 site before it is committed — Thai, English or Chinese, in dictionaries, product data, page components, head/meta or JSON-LD. Use it on every batch that touches site text, and when the checker needs the Thai-copy gates (the checker reads this file directly). It runs the English-leak scan across the sitemap, the raw-invisible-character scan, the forbidden-word grep, the head/JSON-LD and en/zh checks, and applies the copy principles (unverifiable = unsaid, no health/price/guarantee claims, numbers need a verified spec row, no negation left where a line break flips the meaning, product facts from the manufacturer only). It points at the locked-word and permanent-exception tables in THAI_STYLE instead of copying them.
 ---
 
 # Thai copy check
@@ -80,9 +80,11 @@ The `checker` agent reads this file directly (it has no skill tool) and runs eve
   end and flip the meaning — put it at the start of the string or rewrite positively; the
   sentence ends on a phrase of two or more words, or on a number + unit / an English name the
   mechanism glues (the rule thai-copy applied row by row in THAI_STYLE_LOG's round tables).
-- **Evidence tier never moves up.** "The brand states" may only be written when the source is
-  the brand; a retailer page stays "retailer page states" — the wording follows the tier that
-  `catalog-research` assigned, and the Thai, English and Chinese sentences carry the same tier.
+- **Manufacturer source only.** A product fact on the site — compatibility notes included — comes
+  from the manufacturer (its site, poster or manual); a retailer page is not a source, and a new
+  sentence citing one ("retailer page states") fails this gate. The rule and its only named
+  exceptions: THAI_STYLE §5 "ขยายเป็นทุกที่บนเว็บ" (owner ruling, round "cloud", replaces the old
+  retailer-page allowance). The Thai, English and Chinese sentences cite the same source.
 - **Numbers and model names stay exactly as in the source**; brand and model names are English
   always (THAI_STYLE layer rule); a Thai word glued to an English one gets a space (THAI_STYLE
   typing rules).

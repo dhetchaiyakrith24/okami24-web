@@ -151,5 +151,3 @@ rather than doing it serially. Each agent's prompt should be self-contained and 
 6. A response length cap (this project's research passes capped individual reports at
    1200-1800 words to keep synthesis practical).
 
-Avoid the Browser pane MCP tools in a research subagent if the orchestrating session is also using
-it for other work — prefer `WebSearch`/`WebFetch`/`curl` instead.

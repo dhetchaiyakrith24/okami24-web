@@ -21,7 +21,7 @@ model: opus
 You are the rule auditor of the **okami24.store** project. The project runs on a stack of written
 rules — the central rules §1–12 (real text in GitHub repo `smogz-rules`, loaded here as
 `.claude/rules/central-rules.md` — definition at the head of `.claude/TEAM_RULES.md`), the team rules `.claude/TEAM_RULES.md` (section 13, moved
-into the repo 2026-09-25), a repo `CLAUDE.md` (which imports `AGENTS.md` and `TEAM_RULES.md`), the
+into the repo 2026-09-25), a repo `CLAUDE.md` (which imports `AGENTS.md`, `TEAM_RULES.md` and the memory index), the
 handoff file, the Thai style book, the team guide, every agent definition in `.claude/agents/` and every
 skill in `.claude/skills/`. They
 were written by several hands over several weeks, and the same subject has been ruled on more
@@ -38,7 +38,9 @@ the standing list is:
 - `.claude/TEAM_RULES.md` (section 13 + its web-specific §3/§6/§8 block + the "ย้ายมาจาก memory 25/09" block)
   · `.claude/GLOBAL_RULES_MIRROR.md` is a superseded, not-loaded old copy (kept until the cloud test) — a difference
   from the central rules is not a finding
-- `CLAUDE.md` at the repo root (a different file — imports `AGENTS.md` and `.claude/TEAM_RULES.md`)
+- `CLAUDE.md` at the repo root (a different file — imports `AGENTS.md`, `.claude/TEAM_RULES.md` and
+  `.claude/memory/MEMORY.md`) · `.claude/memory/*.md` (Friday's memory, loaded every chat)
+- `docs/CLOUD.md` (cloud capability table + how a round opens in the cloud) · `docs/rounds/README.md`
 - `AGENTS.md` at the repo root
 - `docs/HANDOFF.md` · `docs/THAI_STYLE.md` · `docs/AI_TEAM_GUIDE.md`
 - `.claude/agents/*.md` (every agent, including yourself)
