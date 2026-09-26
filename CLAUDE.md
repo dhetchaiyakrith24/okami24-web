@@ -2,6 +2,8 @@
 
 @.claude/TEAM_RULES.md
 
+@.claude/memory/MEMORY.md
+
 กฎการทำงานของทีม = หมวด 13 ที่ `.claude/TEAM_RULES.md` (ดึงเข้ามาที่บรรทัดบน · ย้ายจาก `~/.claude/CLAUDE.md` 2026-09-25) ·
 หมวด 1–12 = กฎกลาง ฉบับจริงอยู่ GitHub `smogz-rules` · รีโปนี้โหลดสำเนา `.claude/rules/central-rules.md` ห้ามแก้ด้วยมือ (นิยามเดียวที่หัว TEAM_RULES · รอบกฎกลางที่เดียว 2026-09-26) (หมวด 12 "ทำงานกับเจ้าของ" = ทุกโปรเจกต์ · เพิ่ม 2026-09-25) · handoff ในรีโปนี้ = สกิล `okami24-handoff` เท่านั้น
 

@@ -20,6 +20,12 @@ and products), so **"pass" means what the script prints as pass, and nothing els
 
 ## Step 1 — Scan first, shoot only what the scan flags
 
+0. **Proof sized to what changed (the one place of this rule — a batch or a round close; origin: `docs/RULES_INDEX.md`):**
+   when `node scripts/self-merge-check.js --base <base>` ends in `PASS` — the same allow-list that decides "nothing a
+   customer sees" in 13.7 (so `src/`, `public/`, product data, root config such as `next.config.ts`, and anything the
+   build or the server runs all count as touched) — that output, pasted in the report with its command, IS the proof:
+   skip the word-break scan, the shots and `tier-b-proof`. Step 3 still runs in full, including the gates that need the
+   test server. `BLOCKED` = run the steps below as written.
 1. `node scripts/wordbreak-scan.js` on **the pages this round touched** (the list from
    `scope-auditor` at round open), at the two widths the two-tier rule names, output under
    `_incoming/<round>/`.
@@ -92,7 +98,14 @@ send-back cap and re-check rule: 13.5.
 
 ## Step 5 — Checker, then tag, then push
 
-1. `checker` passes the close (five fields, per 13.5).
+1. `checker` passes the close (five fields, per 13.5). **Start `doc-keeper` (step 6) in the same message as the
+   checker** — it writes the pending token where the checker's verdict goes (`.claude/agents/doc-keeper.md`); when
+   the checker returns, put its real result in each token's place yourself (a send-back = fix, re-check, then fill).
+   The checker's brief says so and scopes the close check to everything EXCEPT the files doc-keeper is writing at
+   the same time (`docs/HANDOFF.md` · `docs/THAI_STYLE_LOG.md` · `docs/ROUND_COST.md` · `docs/LAUNCH_AUDIT.md`) — 13.5
+   "a result covers only the state it checked" holds, because those files are not in that state. After the tokens are
+   filled, the checker re-checks those files only (13.5: a re-check covers only what changed) before the push.
+   `scripts/pending-check.js` (pre-push hook + merge-pack) refuses the push and the pack while a token is left.
 2. Commit split by type (13.7) — docs+scripts / images / code / data, never one `add -A`.
 3. **Annotated tag on the round-close commit, before the push:**
    `git tag -a <english-name> <commit> -F <thai-message-file>` — the tag name is English only,
@@ -109,10 +122,8 @@ send-back cap and re-check rule: 13.5.
 - `docs/HANDOFF.md` §16: the "open round" item becomes "none — <round> closed" with the tag name;
   main / branch-ahead / waiting-on-owner / open-questions refreshed (spec: `.claude/agents/doc-keeper.md`;
   the handoff conditions: 13.6).
-- `docs/ROUND_COST.md`: **add one row** for the round — screenshots · builds · agent calls ·
-  checker send-backs · chats · commits — counted from `_incoming/<round>/`, the logs and
-  `git log`; a number that was not counted is written as `[ยังไม่มีข้อมูล]` with the reason
-  (the file's own header says how each column is counted).
+- `docs/ROUND_COST.md`: **add one row** for the round (doc-keeper) — its shape and how each column is counted = the
+  file's own header, the one place.
 - Round-specific entries in `docs/THAI_STYLE_LOG.md` §7 if the round touched site copy (doc-keeper).
 - The pre-merge pack `_incoming/<round>/owner-table.md` = skill `merge-pack` (after the tag push, before the report);
   its path goes into §16 "waiting on the owner" and into the report.

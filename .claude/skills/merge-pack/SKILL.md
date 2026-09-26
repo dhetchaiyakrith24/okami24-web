@@ -21,8 +21,8 @@ name into this file.
 
 ## Step 1 — Gather the evidence the round already made
 
-1. **What a visitor reads.** If `git diff --stat <round base> <tagged commit> -- src public` is empty, no visible
-   change is possible — say so and skip the scan. Otherwise a `scripts/visible-text.js diff` folder: before = the
+1. **What a visitor reads.** No scan when round-close step 1 item 0 says so (the one place of that rule) — paste its
+   output instead. Otherwise a `scripts/visible-text.js diff` folder: before = the
    round's base commit, after = a build of the tagged commit (skill `tier-b-proof` steps 1–3; a tier-B round reuses
    the folder it already made at close, if that build was the tagged commit).
 2. **Head / meta:** `scripts/head-audit.js` on the same two sides — title · description · H1 · og:title are not
@@ -37,7 +37,7 @@ name into this file.
 
 `node scripts/merge-pack.js --out _incoming/<round>/owner-table.md --round "<round>" --visible <diff dir>
 --head <head before dir> <head after dir> --extras _incoming/<round>/extras.md --confirm _incoming/<round>/confirm.md
---verify <log dir>` — leave out an input the round does not have; an input left out is printed as
+--verify <log dir>` — add `--no-site-change` when round-close step 1 item 0 passed (no scan was made); leave out an input the round does not have; an input left out is printed as
 `[ยังไม่มีข้อมูล]` / "ไม่มี", never silently dropped.
 
 ## Step 3 — Read it before anyone else does

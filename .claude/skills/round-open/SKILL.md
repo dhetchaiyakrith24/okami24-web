@@ -56,6 +56,8 @@ Then `git status` — know where the tree is before moving.
 3. Confirm the working branch contains `origin/main` (fast-forward if it is merely behind);
    confirm the tree is clean. On a continuation, the tree may hold only the uncommitted files that HANDOFF
    §16 names as left on purpose (chat moved mid-batch, 13.6 (จ)) — any other change = stop and report.
+   `git config core.hooksPath` must answer `.githooks` (a fresh clone — every cloud chat — does not set it: run
+   `git config core.hooksPath .githooks`, `docs/RECOVERY.md` 2ค); without it the commit and push gates do not run.
 4. Report the numbers seen (hash of main, branch, tags) — never the numbers the file expected.
 
 If the instruction file also names a tag, check the tag with `git tag -n1`; a tag that points

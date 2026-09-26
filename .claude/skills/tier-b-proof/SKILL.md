@@ -22,6 +22,14 @@ file — they come from the run.
 
 ## Step 1 — Pick "before" and "after"
 
+- **First ask whether a scan is needed at all** = round-close step 1 item 0 (the one place of that rule).
+- **Reuse an earlier scan as the "before" scan — no scan of the before side** — when all three hold: (1) the `commit` in that
+  folder's `_meta.json` IS the base commit (no `commit` recorded = no reuse; step 2 says when to record it); (2) the new "after" scan's `diff` prints
+  `environment: same browser + font fingerprint` — anything else voids the reuse: scan the before side as below (a
+  Chrome or font update makes a whole site of fake changes; it does not hide a real one, it drowns it); (3) that
+  folder's `scan.log` has no `FAIL` line. Say in the report which folder was reused. Reuse skips the before SCAN only:
+  "before" shots (step 4) come from the live site when live = base (below), otherwise build the base only when
+  `shots-before.txt` is not empty.
 - **Before** = the round's base commit (the commit its `pre-…` tag names), or the batch's base for a
   batch proof — not "whatever is live": if earlier rounds are still unmerged, live is not the base and
   their work would show up as unexplained changes.
@@ -37,8 +45,10 @@ file — they come from the run.
 
 ## Step 2 — Scan both sides
 
-`node scripts/visible-text.js scan --base <origin> --out _incoming/<round>/<name>-before` (then
-`-after`). No page list = every URL of that side's sitemap; default languages and widths = the ones
+`node scripts/visible-text.js scan --base <origin> --out _incoming/<round>/<name>-before --commit <sha>
+2> _incoming/<round>/<name>-before/scan.log` — `--commit` only when that side was built from a clean tree at that
+commit (a worktree of a commit, or `git status --porcelain` empty); a build with uncommitted changes gets no `--commit` (make the folder first; then `-after`; a later round may reuse the folder only with both — step 1).
+No page list = every URL of that side's sitemap; default languages and widths = the ones
 the two-tier rule names (check the script header — change them only if the rule changed). One Chrome
 job at a time: never run two scans, a scan and a shot, or a scan and `linemap`/`wordbreak` together.
 A `FAIL` line = that page was not measured; re-run it, never diff over a gap.
