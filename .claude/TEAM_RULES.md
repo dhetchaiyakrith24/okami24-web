@@ -11,7 +11,7 @@
 > computer and in the cloud. Never edit the copy (the `central-rules-copy` check fails it; a required check on main
 > keeps it out — whether that lock is set: `docs/RECOVERY.md`); changing the central rules = ask the owner first with
 > the reason, then a PR in `smogz-rules` (its README). Where `~/.claude/CLAUDE.md` on the owner's computer holds only a
-> pointer line, that line points here; where it still holds the full text, it must equal the copy.
+> pointer (the GitHub address + each project's copy path — cut to that 2026-09-26), rule text comes from the copy; where it still holds the full text, it must equal the copy.
 > Wherever the text below says "หมวด 1–11", "11 หมวดเดิม", "หมวดเก่า" or "§1…§11", it means those rules. What is
 > written below adds web-specific detail and may not contradict §1–12 unless it names the exception explicitly — **the one
 > list of exceptions = every line below that names the central section or item it replaces** (the §3/§6/§8 block ·
@@ -61,7 +61,7 @@
 ### 13.4 หยุดถามเจ้าของ — รายการเดียว (ที่อื่นชี้มาที่นี่ ห้ามเขียนเกณฑ์ "ต้องถาม" ซ้ำ)
 
 1. จะ**ลบ**ไฟล์/ข้อมูล นอกเหนือจากที่สั่งไว้ชัด
-2. จะ **merge / deploy** (push ไม่ต้องถาม — ดู 13.7) · ของที่ลูกค้าเห็นซึ่งอยู่ในเป้าของรอบ = ทำแบบถอยได้แล้วให้เจ้าของเคาะตอน merge จากรายการในรายงาน ไม่หยุดถามก่อนทำ (13.10 #1 · ข้อยกเว้นของไฟล์กลาง หมวด 12 ข้อ 13 "คนดูหรือลูกค้าเห็น" — ยกเว้นของที่เจ้าของพอใจ/อนุมัติแล้ว ดู #8)
+2. จะ **merge / deploy** (push ไม่ต้องถาม · merge ที่ Friday ทำเองได้ = 13.7 ข้อเดียว) · ของที่ลูกค้าเห็นซึ่งอยู่ในเป้าของรอบ = ทำแบบถอยได้แล้วให้เจ้าของเคาะตอน merge จากรายการในรายงาน ไม่หยุดถามก่อนทำ (13.10 #1 · ข้อยกเว้นของไฟล์กลาง หมวด 12 ข้อ 13 "คนดูหรือลูกค้าเห็น" — ยกเว้นของที่เจ้าของพอใจ/อนุมัติแล้ว ดู #8)
 3. verify ไม่ผ่านและแก้ไม่ได้ใน 3 รอบ (เกณฑ์ 3 รอบอยู่ที่ 13.5)
 4. ต้องใช้ **เงิน บัญชี รหัสผ่าน หรือสมัครบริการ**
 5. ขัดกับ `docs/BUSINESS_SOURCE_OF_TRUTH.md`
@@ -104,7 +104,8 @@
 
 * **commit** เมื่อ checker ผ่าน และ (ก) เจ้าของสั่ง หรือ (ข) เจ้าของบอกล่วงหน้าว่า "ทำยาว commit ได้"
 * แยกก้อนตามชนิดเสมอ: docs+scripts / รูป / โค้ด / ข้อมูล — ห้าม `add -A` ก้อนเดียว · ไอเดียนอกคำสั่ง (13.10 #1) = commit ของตัวเอง แยกจากงานหลัก (แยกชนิดก่อน แล้วแยกทีละไอเดีย ให้ถอยเดี่ยวได้)
-* **push ได้เลยหลัง checker ผ่าน = สิทธิ์ถาวร** · **ห้าม force push** ตลอดไป · **merge / deploy = งานของ Cowork เท่านั้น** Code ไม่ทำเอง
+* **push ได้เลยหลัง checker ผ่าน = สิทธิ์ถาวร** · **ห้าม force push** ตลอดไป · **merge / deploy = งานของ Cowork** ยกเว้นข้อถัดไปข้อเดียว · deploy = Cowork เท่านั้นเสมอ
+* **Friday merge เองได้ (เจ้าของเคาะ 2026-09-26) — PR ในรีโปเว็บนี้เท่านั้น** (PR ใน `smogz-rules` = Javis เสมอ): PR ที่ไม่แตะของที่ลูกค้าเห็น (ไม่แตะ `src/` `public/` ข้อมูลสินค้า หรือสิ่งที่ build หรือ server ของ Render รัน — เหลือแค่เอกสาร กฎ สกิล สคริปต์) → merge เองได้เมื่อ checker ผ่าน + ด่านบน GitHub เขียวทุกตัว แล้วรายงาน · ตัดสินด้วย `node scripts/self-merge-check.js --pr <เลข PR>` บรรทัดท้าย `PASS` เท่านั้น (ไม่อยู่ในรายการอนุญาตของสคริปต์ = ถือว่าแตะ — "ไม่แน่ใจว่าแตะ = ถือว่าแตะ" · สคริปต์กันตัวเอง สำเนา/สำรองกฎกลาง และกันเมื่อ `render.yaml` ไม่มี `autoDeploy: false` เพราะ merge จะกลายเป็น deploy) · merge ด้วย `gh pr merge <เลข> --merge` (ไม่ squash · ไม่ admin override) · รอบที่มีไอเดียนอกคำสั่ง (`extras.md` ไม่ว่าง — 13.10 #1 (ง) ให้เจ้าของเคาะตอน merge) = Javis merge · PR ที่แตะของที่ลูกค้าเห็น = Javis merge + deploy เหมือนเดิม · ห้ามใช้ข้อนี้กับ PR ที่ตั้งข้อนี้เอง
 * **ปิดรอบทุกครั้ง = ติด annotated tag ก่อน push แล้ว push tag ด้วย — ขั้นตอนเต็มอยู่ในสกิล `round-close`** (ชื่อ tag อังกฤษล้วน · ข้อความไทย · ตารางแปลชื่อ tag อยู่ที่ `docs/RECOVERY.md`)
 * **handoff:** ดูกติกา 13.6 + ไฟล์กลาง หมวด 12 ข้อ 29 — ห้ามเขียนเกณฑ์ context ซ้ำที่นี่
 

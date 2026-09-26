@@ -16,7 +16,7 @@ name into this file.
 
 - Every round close — after `round-close` step 5 (tag pushed), before its step 7 (the report).
 - Cowork asks what a merge changes for customers.
-- Merge and deploy stay Cowork's (13.7); this pack is what Cowork reads first, so it carries the full verify set with
+- Merge and deploy: 13.7 (Cowork, but for the one self-merge case named there); this pack is what whoever merges reads first, so it carries the full verify set with
   log paths, not only the checker's verdict.
 
 ## Step 1 — Gather the evidence the round already made

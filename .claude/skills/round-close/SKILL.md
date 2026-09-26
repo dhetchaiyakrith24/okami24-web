@@ -100,7 +100,9 @@ send-back cap and re-check rule: 13.5.
    can read. Then `git push` and `git push origin --tags`. The tag rule lives in 13.7; the
    name-to-meaning table the owner reads is `docs/RECOVERY.md` "อยากกลับไป ก่อนรอบไหน" — add the
    new tag's row there (name · meaning · hash · date).
-4. Merge and deploy are Cowork's job only (13.7) — never merge yourself.
+4. Merge and deploy are Cowork's job (13.7) — the one exception, a PR that touches nothing a customer
+   sees, is decided by `node scripts/self-merge-check.js --pr <n>` and its conditions live in 13.7 only.
+   Deploy is never yours.
 
 ## Step 6 — Documents that close the round
 

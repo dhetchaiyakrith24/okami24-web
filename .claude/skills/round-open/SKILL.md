@@ -60,7 +60,7 @@ Then `git status` — know where the tree is before moving.
 
 If the instruction file also names a tag, check the tag with `git tag -n1`; a tag that points
 a few commits before the merge commit is normal (the tag marks the round-close commit, the
-merge commit is Cowork's) — say so instead of treating it as a mismatch.
+merge commit is made at merge, 13.7) — say so instead of treating it as a mismatch.
 
 ## Step 3 — Answer the instruction before touching anything
 
