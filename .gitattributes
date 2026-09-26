@@ -6,3 +6,5 @@
 .githooks/** text eol=lf
 # The central-rules copy is compared byte for byte with its source (LF) — never converted, on any machine.
 .claude/rules/** text eol=lf
+# Restore copies of the central rules file are checked by sha256 (docs/RECOVERY.md) — kept byte-exact (LF) on disk.
+docs/archive/claude-config-*/CLAUDE.md text eol=lf
