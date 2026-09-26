@@ -60,7 +60,7 @@ Then `git status` — know where the tree is before moving.
    `git fetch origin <wip>:refs/remotes/origin/<wip>`), bring the files into the working tree uncommitted
    (`git checkout origin/<wip> -- <files>`, then `git reset -q` so they stay unstaged) and check that the list
    matches §16; any other change = stop and report.
-   **Machine ready:** `node scripts/prepare-clone.js` must end `prepare-clone: READY` — one command, safe to repeat,
+   **Machine ready** (round "mobile" instruction, batch 1): `node scripts/prepare-clone.js` must end `prepare-clone: READY` — one command, safe to repeat,
    what it does is in its head (git hooks — without them the commit and push gates do not run, `docs/RECOVERY.md` 2ค ·
    full git history · packages · Next types · browser · Thai font). A cloud chat runs it by itself at session start
    (`.claude/settings.json` SessionStart hook) — read its lines in the session's first context; not there or not

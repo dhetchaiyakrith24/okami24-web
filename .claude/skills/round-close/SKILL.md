@@ -30,7 +30,8 @@ and products), so **"pass" means what the script prints as pass, and nothing els
    `scope-auditor` at round open), at the two widths the two-tier rule names, output under
    `_incoming/<round>/`.
 2. `node scripts/wb-diff.js <before> <after>` against the scan of the previous close (the
-   previous close's output folder is named in that round's HANDOFF entry) — the diff shows what
+   previous close's output folder is named in that round's HANDOFF entry; usable only when it was made on the same
+   kind of machine — skill `tier-b-proof` step 1, the one place of that rule) — the diff shows what
    disappeared and what appeared, page by page and width by width.
 3. Screenshots: only the spots the diff flags as new. The scan-first / shot-count rule is
    `.claude/TEAM_RULES.md` 13.10 #15 (one place): more than the cap there in one round = tell the
