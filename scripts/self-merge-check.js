@@ -10,7 +10,7 @@
 // Usage:
 //   node scripts/self-merge-check.js                 # diff origin/main...HEAD (local branch)
 //   node scripts/self-merge-check.js --pr 68         # the files of GitHub PR #68 (needs gh)
-//   node scripts/self-merge-check.js --base <ref>    # diff <ref>...HEAD
+//   node scripts/self-merge-check.js --base <ref>    # every change since <ref>, committed or not + untracked (proof sizing)
 //   node scripts/self-merge-check.js --files a,b     # dry run on a list (tests of the gate)
 // Last line: PASS (Friday may merge after checker + green checks) or BLOCKED (Javis merges). Exit 0 / 1.
 "use strict";
@@ -90,7 +90,8 @@ function repoProblems() {
 }
 
 function git(args) {
-  return execFileSync("git", args, { cwd: ROOT, encoding: "utf8" });
+  // core.quotePath=false: otherwise git prints a Thai file name as "docs/\340\270..." and it fails the allow-list
+  return execFileSync("git", ["-c", "core.quotePath=false", ...args], { cwd: ROOT, encoding: "utf8" });
 }
 
 function changedFiles(argv) {
@@ -103,8 +104,14 @@ function changedFiles(argv) {
     return execFileSync("gh", ["pr", "diff", n, "--name-only"], { cwd: ROOT, encoding: "utf8" });
   }
   const b = argv.indexOf("--base");
-  const base = b !== -1 ? argv[b + 1] : "origin/main";
-  return git(["diff", "--name-only", `${base}...HEAD`]);
+  if (b !== -1) {
+    // --base <ref> = proof sizing (round-close step 1 item 0): everything since <ref> INCLUDING uncommitted and
+    // untracked files, because a batch is checked before it is committed
+    const tracked = git(["diff", "--name-only", argv[b + 1]]);
+    const untracked = git(["ls-files", "--others", "--exclude-standard"]);
+    return tracked + "\n" + untracked;
+  }
+  return git(["diff", "--name-only", "origin/main...HEAD"]);
 }
 
 function main() {
