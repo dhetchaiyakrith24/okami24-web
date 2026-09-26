@@ -10,7 +10,7 @@
 // before any page script runs, so screenshots show the page, not the 21+ modal.
 // Env: CHROME_PATH (default: the standard Chrome install), CHROME_PROFILE, AGE_KEY.
 const { spawn } = require("child_process"); const http = require("http"); const fs = require("fs");
-const CHROME = process.env.CHROME_PATH || "C:/Program Files/Google/Chrome/Application/chrome.exe";
+const { CHROME, FLAGS, TMP } = require("./lib/chrome"); // Windows: same Chrome as before · cloud: Chromium, found by search
 const args = process.argv.slice(2); const out = args[0], url = args[1];
 // --wait <ms>: fixed sleep after navigation (default 2500, unchanged). --ready: wait until the page is ready instead
 // (scripts/page-ready.js). The ~65 s per shot was a 60 s timer left running after every CDP call, fixed below (round
@@ -67,8 +67,8 @@ for (let i = 2; i < args.length; i++) {
 const port = 9333 + Math.floor(Math.random() * 500);
 // one throw-away profile per run — a shared profile is locked by any Chrome still alive from an
 // earlier run, and Chrome then exits silently (the DevTools endpoint never appears)
-const profile = process.env.CHROME_PROFILE || `${process.env.TEMP}/okami-shot-profile-${process.pid}`;
-const chrome = spawn(CHROME, [`--remote-debugging-port=${port}`, "--headless=new", "--disable-gpu", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1200,900", "about:blank"], { stdio: "ignore" });
+const profile = process.env.CHROME_PROFILE || `${TMP}/okami-shot-profile-${process.pid}`;
+const chrome = spawn(CHROME, [...FLAGS, `--remote-debugging-port=${port}`, "--headless=new", "--disable-gpu", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1200,900", "about:blank"], { stdio: "ignore" });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function getJson(p) { return new Promise((res, rej) => http.get(`http://127.0.0.1:${port}${p}`, (r) => { let b = ""; r.on("data", (c) => (b += c)); r.on("end", () => res(JSON.parse(b))); }).on("error", rej)); }
 (async () => {
@@ -115,7 +115,10 @@ async function getJson(p) { return new Promise((res, rej) => http.get(`http://12
   // Same emulation as the page was loaded with (desktop stays desktop — before 2026-09-08 this line
   // silently switched a --desktop run back to a 2x phone for the capture itself).
   const h = viewportOnly ? (desktop ? 900 : 844) : result.result.value; await send("Emulation.setDeviceMetricsOverride", desktop ? { width, height: h, deviceScaleFactor: 1, mobile: false } : { width, height: h, deviceScaleFactor: dpr, mobile: true }); await sleep(600);
-  const shot = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: !viewportOnly });
+  // Off Windows (cloud Chromium) captureBeyondViewport ignores the emulated height and returns the whole page, past
+  // --max-height — an explicit clip keeps the cap (round "mobile" 2026-09-26). Windows call left exactly as it was.
+  const clip = process.platform === "win32" || viewportOnly ? {} : { clip: { x: 0, y: 0, width, height: h, scale: 1 } };
+  const shot = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: !viewportOnly, ...clip });
   fs.writeFileSync(out, Buffer.from(shot.result.data, "base64")); console.log("saved", out, `${width}x${h}@${desktop ? 1 : dpr}x`);
   ws.close(); chrome.kill(); cleanup();
 })().catch((e) => { console.error(e.message || e); chrome.kill(); cleanup(); process.exit(1); });

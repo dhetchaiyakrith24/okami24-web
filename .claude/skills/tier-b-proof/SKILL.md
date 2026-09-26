@@ -22,10 +22,21 @@ file — they come from the run.
 
 ## Step 1 — Pick "before" and "after"
 
+- **One kind of machine for both sides** (round "mobile" instruction, batch 2, 2026-09-26 — the one place of this
+  rule; round-close step 1 points here): Windows Chrome and the cloud's Linux Chromium draw fonts and break lines
+  differently, so "before" and "after" — scans and shots — come from the same kind of machine. A scan, shot or
+  round-close result from the other kind of machine never stands in for "before" (re-scan the before side on this
+  machine; a chat moved between computer and cloud mid-batch re-scans too — `_incoming/` does not travel). Which
+  machine: `visible-text.js` writes `machine` into `_meta.json` (`scripts/lib/chrome.js`) and its `diff` prints
+  `environment: NOT proven the same` for a mixed pair = the pair is invalid; `wordbreak-scan.js`, `linemap-scan.js` and
+  `shot.js` do not record it — write the machine next to their output in the report. In the cloud, run
+  `node scripts/font-check.js --base <origin>` once on the side you scan first: not PASS = the machine's fonts are not
+  the expected ones and the scan is not proof.
+
 - **First ask whether a scan is needed at all** = round-close step 1 item 0 (the one place of that rule).
 - **Reuse an earlier scan as the "before" scan — no scan of the before side** — when all three hold: (1) the `commit` in that
-  folder's `_meta.json` IS the base commit (no `commit` recorded = no reuse; step 2 says when to record it); (2) the new "after" scan's `diff` prints
-  `environment: same browser + font fingerprint` — anything else voids the reuse: scan the before side as below (a
+  folder's `_meta.json` IS the base commit (no `commit` recorded = no reuse; step 2 says when to record it); (2) the new "after" scan's `diff` prints a line starting
+  `environment: same machine` — anything else voids the reuse: scan the before side as below (a
   Chrome or font update makes a whole site of fake changes; it does not hide a real one, it drowns it); (3) that
   folder's `scan.log` has no `FAIL` line. Say in the report which folder was reused. Reuse skips the before SCAN only:
   "before" shots (step 4) come from the live site when live = base (below), otherwise build the base only when
@@ -34,7 +45,8 @@ file — they come from the run.
   batch proof — not "whatever is live": if earlier rounds are still unmerged, live is not the base and
   their work would show up as unexplained changes.
   - The live origin may stand in for the base only when they are the same code: `git diff --stat
-    <live commit> <base> -- src public` is empty (`.claude/LESSONS.md` #5) — then no build.
+    <live commit> <base> -- src public` is empty (`.claude/LESSONS.md` #5) — then no build. (Cloud: not yet — its
+    Chromium cannot open the live site, `docs/CLOUD.md` §1; build the base instead.)
   - Otherwise build the base commit in a worktree under `_incoming/<round>/`: `git worktree add
     --detach <dir> <commit>`, then copy `node_modules` into it (a junction/link breaks the Turbopack
     build: "points out of the filesystem root"), copy `scripts/test-server.js` into its `scripts/`

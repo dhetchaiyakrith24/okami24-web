@@ -9,18 +9,18 @@
 //   no paths → every URL in <base>/sitemap.xml · prints one line per page and a PASS/FAIL total.
 // Env: CHROME_PATH (default: the standard Chrome install), AGE_KEY — same as scripts/shot.js.
 const { spawn } = require("child_process"); const http = require("http"); const fs = require("fs");
-const CHROME = process.env.CHROME_PATH || "C:/Program Files/Google/Chrome/Application/chrome.exe";
+const { CHROME, FLAGS, TMP } = require("./lib/chrome"); // Windows: same Chrome as before · cloud: Chromium, found by search
 const AGE_KEY = process.env.AGE_KEY || "okami24-age-verified";
 const args = process.argv.slice(2); const opt = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : d; };
 const base = opt("--base", "http://localhost:3412").replace(/\/$/, ""); const width = +opt("--width", "390"); const wait = +opt("--wait", "1500");
 const paths = args.filter((a, i) => a.startsWith("/") && !["--base", "--width", "--wait"].includes(args[i - 1]));
 const port = 9333 + Math.floor(Math.random() * 500);
-const profile = `${process.env.TEMP}/okami-overflow-profile-${process.pid}`;
+const profile = `${TMP}/okami-overflow-profile-${process.pid}`;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function getText(url) { return new Promise((res, rej) => http.get(url, (r) => { let b = ""; r.on("data", (c) => (b += c)); r.on("end", () => res(b)); }).on("error", rej)); }
 (async () => {
   const urls = paths.length ? paths.map((p) => base + p) : [...(await getText(`${base}/sitemap.xml`)).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(/^https?:\/\/[^/]+/, base));
-  const chrome = spawn(CHROME, [`--remote-debugging-port=${port}`, "--headless=new", "--disable-gpu", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1200,900", "about:blank"], { stdio: "ignore" });
+  const chrome = spawn(CHROME, [...FLAGS, `--remote-debugging-port=${port}`, "--headless=new", "--disable-gpu", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1200,900", "about:blank"], { stdio: "ignore" });
   const cleanup = () => { try { chrome.kill(); } catch {} setTimeout(() => { try { fs.rmSync(profile, { recursive: true, force: true }); } catch {} }, 500); };
   try {
     let targets; for (let i = 0; i < 40; i++) { try { targets = JSON.parse(await getText(`http://127.0.0.1:${port}/json`)); break; } catch { await sleep(250); } }
