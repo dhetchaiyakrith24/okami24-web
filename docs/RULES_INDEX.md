@@ -424,3 +424,13 @@
 - **อัปเดต 2026-09-26 หลัง merge PR #68:** เจ้าของยืนยันในแชท (ผ่าน Javis) → 1A · 6A + 7A · 9A **ลงแล้ว** (แถว 96–99 ข้างล่าง) · คำถาม catalog-research = A · 8A ลบ branch = ยังรอเจ้าของ
 - (บันทึกเดิม) ข้อ 1A (13.4 #6) · 6A + 7A (13.7 บรรทัด Friday merge) · 9A (catalog-research) — **ยังไม่ได้เขียน**: ระบบกันสิทธิ์ของแอปปฏิเสธการแก้ 3 จุดนี้ รอเจ้าของยืนยันในแชท (ข้อความที่จะใส่: `_incoming/cloud-round/pending-rule-edits.md`) · 8A ลบ branch เก่า = ถูกปฏิเสธเหมือนกัน (เก็บ tag `archive/phase-3.3.1` ไว้แล้ว) · 11A = เก็บตัวชี้ความจำบนคอมไว้ ไม่มีอะไรต้องแก้ · 10B ลงครบแล้ว (13.6 + ข้อยกเว้นใน 13.7 บรรทัด commit)
 - rule-auditor หลังจุดหยุด 1: 15 แถว → แก้ 13 · เหลือ 1 คำถามเจ้าของ (ข้อ 2A ครอบ catalog-research ระดับร้านค้าปลีกสำหรับตัวตน/รูปไหม — ไฟล์เดียวกัน) · 1 แถว (T5) ปิดด้วยผลจริง
+
+### รอบ A "ต่อท่อ" — 2026-09-27 (ไฟล์คำสั่ง `origin/inbox:rounds/roundA-pipes.txt` + คำเคาะเพิ่มของเจ้าของในแชท 27/09)
+
+| # | กฎ | ไฟล์:บรรทัด | ผล | ประเภท |
+|---|---|---|---|---|
+| 100 | Friday merge เองได้ทั้งบนคอมและบนคลาวด์ (ไม่ผูกชื่อเครื่องมือ · merge commit · ตรึง commit หัวที่ด่านตรวจ) · ข้อยกเว้น → Javis: ไฟล์ที่สั่งให้ Friday ทำเองอัตโนมัติ (`.claude/settings*` · hook รวม `.githooks/` + สคริปต์ที่ hook เรียก) และ `.github/` · สกิล/agent/กฎเว็บใน `.claude/` ยัง merge เองได้ (26/09 คงไว้) | `.claude/TEAM_RULES.md` 13.7 บรรทัด Friday merge · `scripts/lib/site-paths.js` | แทน "บนคลาวด์ไม่มี `gh` = ใช้ข้อนี้ไม่ได้ ให้ Javis merge" (ลบตามคำสั่งรอบ) | แก้ |
+| 101 | รายการ "แตะเว็บ" มีชุดเดียว = `scripts/lib/site-paths.js` — ด่าน merge (`self-merge-check.js`) กับตัวตัดสิน deploy (`deploy-decision.js`) อ่านรายการเดียวกัน · ไม่อยู่ในรายการ = ถือว่าแตะ | `scripts/lib/site-paths.js` หัวไฟล์ · 13.7 | ใหม่ (รายการเดิมอยู่ใน `self-merge-check.js` ย้ายออกมา ไม่เก็บคู่) | ย้าย |
+| 102 | deploy: Friday ไม่ deploy เอง · merge เข้า main ที่แตะเว็บ → ด่านบน GitHub ผ่านครบ → เว็บขึ้นเอง (`.github/workflows/deploy.yml`) · ไม่แตะเว็บ / แก้ตัว workflow เอง / ไม่มีกุญแจ = ข้ามพร้อมข้อความ · deploy ด้วยมือ/Rollback = Cowork | `.claude/TEAM_RULES.md` 13.7 บรรทัด push · `docs/RECOVERY.md` 1ก · `docs/CLOUD.md` ข้อ 7 | แทน "merge / deploy = งานของ Cowork … deploy = Cowork เท่านั้นเสมอ" | แก้ |
+| 103 | รอบบนคลาวด์ไม่ใช้ tag (push tag = `HTTP 403`) — จุดถอย/จุดปิด = commit ในรายงาน + `docs/cloud-results/<รอบ>.md` + แถว RECOVERY | 13.7 บรรทัดปิดรอบ · `round-close` ขั้น 5 ข้อ 3 · `docs/RECOVERY.md` ข้อ 2 | ข้อยกเว้นของ "ปิดรอบทุกครั้ง = ติด tag" (เรื่อง 5 ของรอบมือถือ) | เพิ่ม |
+| 104 | รอบบนคลาวด์เขียนสรุปหลักฐานลง `docs/cloud-results/<รอบ>.md` ทุกรอบ (คำสั่ง + ตัวเลข + error ตรงตัว) · ภาพ = หน้า Artifact ส่วนตัว ไม่ขึ้น git | `round-close` ขั้น 3 ท้าย · `docs/CLOUD.md` ข้อ 6 | ใหม่ (เรื่อง 7 · 8 ของรอบมือถือ) | เพิ่ม |

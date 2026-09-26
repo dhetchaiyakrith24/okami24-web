@@ -15,15 +15,17 @@
 | hook ของ git (ด่าน CRLF / ด่านผล checker ว่าง) + เตรียมเครื่อง | เปิดแล้ว | **เปิดเอง** — แชทคลาวด์รัน `node scripts/prepare-clone.js` เองตอนเริ่ม (hook เริ่มแชทใน `.claude/settings.json`) เห็น `prepare-clone: READY` · รอบมือถือ 26/09 [ลองแล้ว `docs/cloud-results/mobile-round.md` ก้อน 1] | ไม่เห็น READY → สั่ง `node scripts/prepare-clone.js` เอง (round-open ขั้น 2) |
 | git push branch ของงาน | ได้ | **ได้** 2 วิ (T4 ข้อ 16a + ข้อ 18 push ขึ้น `checkpoint/phase-3.3.3`) [ลองแล้ว] | — |
 | **ลบ branch บน GitHub** | ได้ [ลองแล้ว] | **ไม่ได้** — ตัวกลาง GitHub ตอบ `HTTP 403` ทั้งที่ push ได้ (T4 ข้อ 16b · Javis 26/09 ครั้งแรกก็ล้ม) [ลองแล้ว] | ลบจากคอม หรือ Javis กดถังขยะที่หน้า GitHub → Branches · branch `wip/<รอบ>` (13.6) จึงต้องลบจากคอม/หน้าเว็บเสมอ |
-| `gh` (เปิด PR / merge ด้วยคำสั่ง) | ได้ [ลองแล้ว] | **ไม่มี** (T4 ข้อ 5) [ลองแล้ว] · แต่แชทคลาวด์มีเครื่องมือ GitHub ของระบบ (เปิด PR · merge PR) [เชื่อว่า — เห็นเครื่องมือในแชทรอบมือถือ ยังไม่ได้ลอง merge] · ปุ่ม **Create PR** ในหน้าแชท [เอกสาร] | merge = Javis บนหน้า GitHub จนกว่าเจ้าของเคาะทางใหม่ (ชุดคำถามรอบมือถือ) |
+| `gh` (เปิด PR / merge ด้วยคำสั่ง) | ได้ [ลองแล้ว] | **ไม่มี `gh`** (T4 ข้อ 5) — แต่ **merge ได้ด้วยเครื่องมือ GitHub ในแชท** (เปิด PR · อ่านไฟล์/ด่านของ PR · merge แบบ merge commit ตรึง commit หัว) [ลองแล้ว รอบ A `docs/cloud-results/roundA-pipes.md` ก้อน 1] · ด่าน merge `node scripts/self-merge-check.js` รันบน branch ของ PR ได้ (ไม่ต้องใช้ `gh`) | Friday merge เองได้ตามเงื่อนไข 13.7 · ที่เหลือ = Javis บนหน้า GitHub (มือถือได้ — แอป GitHub ปุ่ม Merge) |
 | `tsc` (ตรวจชนิดโค้ด) | ได้ | **ได้** หลังเตรียมเครื่อง (`next typegen`) [ลองแล้ว `docs/cloud-results/mobile-round.md` ก้อน 1] | — |
 | `verify:commerce` | ได้ | **ได้** 17/17 · 4 วิ (T4 ข้อ 11) [ลองแล้ว] | — |
 | build + `verify:catalog --full` | ได้ 84 วิ 30/30 | **ได้ 30/30** 91 วิ ใน clone ใหม่หลังเตรียมเครื่อง [ลองแล้ว `docs/cloud-results/mobile-round.md` ก้อน 1] | — |
 | test server (พอร์ต 3412) | ได้ | **ได้ครบ** — start · start ซ้ำ = ปฏิเสธ · stop ปิดจริง พอร์ตว่าง [ลองแล้ว `docs/cloud-results/mobile-round.md` ก้อน 1] | — |
 | ถ่ายภาพ / สแกนทั้งเว็บ (ต้องใช้ Chrome) | ได้ · ภาพละ ~5 วิ | **ได้** — Chromium ของเครื่องคลาวด์ ภาพละ 3.5–4.8 วิ · สแกน 51 หน้า × 2 จอ 105 วิ รัน 2 ครั้งผลตรงกันทุกไฟล์ · ตัวไทย = Noto Sans Thai (แบบมือถือ Android) ตรวจด้วย `scripts/font-check.js` · designer เปิดภาพได้ [ลองแล้ว `docs/cloud-results/mobile-round.md` ก้อน 2] · ภาพ/สแกน "ก่อน" กับ "หลัง" ต้องมาจากเครื่องชนิดเดียวกัน (สกิล tier-b-proof) | หน้าแรกจอคอมเต็มหน้าค้าง → ใช้ `--max-height 2000` หรือ `--reduced-motion` |
 | เปิดเว็บจริง okami24.store | ได้ | **ครึ่งเดียว** — curl อ่านได้ 200 (หลัง Javis เพิ่มโดเมน 26/09) · Chromium เปิดไม่ได้ ("Your connection is not private" — คลังใบรับรองของเบราว์เซอร์ในเครื่องคลาวด์ว่าง) → ถ่ายภาพเว็บจริง/ตรวจหน้าอังกฤษด้วยคุกกี้ยังไม่ได้ [ลองแล้ว `docs/cloud-results/mobile-round.md` ก้อน 3] | ตรวจเว็บจริงบนคอม หรือรอแก้ใบรับรอง (ชุดคำถามรอบมือถือ) |
-| โดเมนคลิป YouTube (รอบฝังคลิป) | ได้ | **ถูกบล็อก** `403` — www.youtube.com · www.youtube-nocookie.com · i.ytimg.com · img.youtube.com · s.ytimg.com · yt3.ggpht.com · googlevideo.com · www.google.com [ลองแล้ว 26/09 17:22 UTC `docs/cloud-results/mobile-round.md` ก้อน 3] | เจ้าของ/Javis เพิ่มโดเมนในเครือข่ายของ environment (ชุดคำถามรอบมือถือ) |
-| push tag | ได้ | **ไม่ได้** — `HTTP 403` (push branch ได้) [ลองแล้ว `docs/cloud-results/mobile-round.md` ก้อน 1] | tag ปิดรอบ: Javis สร้างที่หน้า GitHub หรือบนคอม · จุดถอยของรอบ = commit ของ main ที่ระบุในรายงาน |
+| โดเมนคลิป YouTube (รอบฝังคลิป) | ได้ | **เปิดแล้ว** (Javis เพิ่ม 6 รายการ) — `www.youtube.com` 200 · `www.youtube-nocookie.com/embed/<id>` 200 · `i.ytimg.com/vi/<id>/hqdefault.jpg` 200 · `s.ytimg.com` · `yt3.ggpht.com` ตอบจากปลายทาง (404/400 = ผ่านเครือข่ายแล้ว) · `*.googlevideo.com` ผ่านเครือข่าย (ชื่อเครื่องที่ลองไม่มีจริง ได้ 502) · `www.google.com` 200 · **ยังบล็อก 403:** `img.youtube.com` · `googlevideo.com` (ตัวเปล่า) [ลองแล้ว 27/09 19:48 UTC รอบ A] | รูปปกคลิปใช้ `i.ytimg.com` (ไม่ใช่ `img.youtube.com`) · ต้องใช้ `img.youtube.com` จริง = เพิ่มโดเมนใน environment |
+| push tag | ได้ | **ไม่ได้** — `HTTP 403` (push branch ได้) [ลองแล้ว `docs/cloud-results/mobile-round.md` ก้อน 1] | ไม่ใช้ tag — ใช้ commit แทน (13.7 · ขั้นตอน = สกิล round-close ขั้น 5) |
+| **merge แล้วเว็บขึ้นเอง** (deploy) | เหมือนคลาวด์ (merge จากที่ไหนก็ขึ้นเหมือนกัน) | **ตั้งแล้ว รอกุญแจ** — `.github/workflows/deploy.yml`: merge เข้า main ที่แตะเว็บ → ด่านบน GitHub → ผ่านครบ → เรียก deploy hook · ไม่แตะเว็บ = ข้าม · ยังไม่มีกุญแจ = ข้ามพร้อมข้อความ [ยังไม่ได้ลองบน GitHub — ผลรันบน PR ของรอบ A เติมหลังเปิด PR · ครั้งแรกบน main = ตอน Javis merge PR รอบ A] | กฎ = 13.7 · กรณีข้าม/ปิด = `docs/RECOVERY.md` 1ก · วางกุญแจ = ข้อ 7 |
+| หน้าภาพหลักฐานเปิดจากมือถือ (Artifact) | — | **ทำได้** — แชทคลาวด์สร้างหน้าส่วนตัวบน claude.ai ฝังภาพในหน้าได้ ได้ลิงก์ทันที [ลองแล้ว รอบ A ก้อน 3] · เปิดบนมือถือ [ยังไม่ได้ลองบนมือถือ] | วิธีทำ = ข้อ 6 |
 | submodule / ไฟล์ใหญ่ (LFS) | ไม่ได้ใช้ | ไม่เกี่ยว — รีโปไม่มีทั้งคู่ [ลองแล้ว] | — |
 | เครื่อง | — | 4 CPU · RAM 16 GB · ดิสก์ว่าง 30 GB · node 22 (T4 ข้อ 4) [ลองแล้ว] | — |
 | โควตา | ใช้โควตาแผน Max ร่วมกัน | **ใช้ร่วมกับบนคอม** · รันหลายแชทพร้อมกัน = กินโควตาเร็วขึ้น [เอกสาร] | — |
@@ -68,11 +70,28 @@
 - ทำได้ตอนนี้ [ลองแล้ว]: `curl -sS -o /dev/null -w "%{http_code}" https://okami24.store/<หน้า>` = หน้าตอบไหม · `curl -s https://okami24.store/<หน้า>` แล้วค้นคำใน HTML (HTML ดิบมีทุกภาษาปนกัน ใช้ยืนยันได้แค่ว่ามีคำนั้นในหน้า — ตัด U+2060/NBSP ก่อนค้น `.claude/LESSONS.md` 1ข) · `node scripts/head-audit.js https://okami24.store <โฟลเดอร์>` (title/meta/H1 จากเว็บจริง — node ดึงเว็บจริงได้ 200 [ลองแล้ว] · สคริปต์ทั้งตัวยังไม่ได้รันบนคลาวด์)
 - ยังทำไม่ได้: ถ่ายภาพเว็บจริง และอ่านข้อความที่ลูกค้าอังกฤษเห็นจริงด้วยคุกกี้ `okami24_locale=en` — ต้องใช้ Chromium ซึ่งยังไม่เชื่อใบรับรองของเครือข่ายคลาวด์ (ตารางข้อ 1) · เมื่อแก้แล้ว วิธีคือ `node scripts/shot.js <ไฟล์.png> https://okami24.store/<หน้า> --ready --cookie okami24_locale=en` และ `node scripts/visible-text.js scan --base https://okami24.store --out <โฟลเดอร์> --locales en <หน้า>` แล้วตั้งกลับ `th` (คุกกี้อยู่ในโปรไฟล์ชั่วคราวของสคริปต์ ปิดแล้วหายเอง)
 
-## 6. ภาพหลักฐานที่ Javis/เจ้าของต้องดูก่อน merge — เปิดจากมือถือ (ข้อเสนอ ยังไม่ได้ลอง)
+## 6. ภาพหลักฐานที่ Javis/เจ้าของต้องดูก่อน merge — เปิดจากมือถือ (รอบ A 27/09)
 
-- ภาพอยู่ใน `_incoming/<รอบ>/` ซึ่งไม่ขึ้น git และหายเมื่อเครื่องคลาวด์ปิด → ต้องมีที่เก็บนอกเครื่อง
-- **แนะนำ: หน้า Artifact ส่วนตัวบน claude.ai** — Friday รวมภาพก่อน/หลังเป็นหน้าเดียว ส่งลิงก์ในรายงาน · เปิดในแอป Claude บนมือถือได้ · เป็นส่วนตัวจนกว่าเจ้าของจะแชร์ · เพดาน 16 MB ต่อหน้า (ภาพ crop ที่ tier-b-proof ถ่าย ~150–400 KB ต่อภาพ → ~40 ภาพต่อหน้า) · ไม่แตะ git เลย [เอกสาร — คำอธิบายเครื่องมือ Artifact ในแชท]
-- ทางรอง: branch `evidence/<รอบ>` บน GitHub (เปิดดูภาพในแอป GitHub ได้) — แต่ภาพค้างในประวัติ git จนกว่าจะลบ branch และลบ branch จากคลาวด์ไม่ได้ → ไม่แนะนำ
+- ภาพอยู่ใน `_incoming/<รอบ>/` ซึ่งไม่ขึ้น git และหายเมื่อเครื่องคลาวด์ปิด → ใช้ **หน้า Artifact ส่วนตัวบน claude.ai**
+- **ลองแล้วได้** [ลองแล้ว รอบ A ก้อน 3]: แชทคลาวด์เขียนหน้า HTML ที่ฝังภาพเป็นข้อมูลในหน้า (data URI) → เครื่องมือ Artifact ส่งขึ้น → ได้ลิงก์ `https://claude.ai/artifact/…` ทันที · หน้าเป็นส่วนตัว (เปิดได้เฉพาะบัญชีเจ้าของ และคนที่เจ้าของกด Share ให้) · ไม่แตะ git เลย · เปิดในแอป Claude บนมือถือ [ยังไม่ได้ลองบนมือถือ — เจ้าของเปิดลิงก์ในรายงานรอบ A แล้วดูว่าเห็นภาพ 2 ภาพ]
+- **วิธีทำ (Friday):** รวมภาพ crop ก่อน/หลังเป็นหน้าเดียว (หัวข้อ = จุดที่เปลี่ยน · ใต้ภาพ = หน้า/จอ/ภาษา) → ส่งขึ้นด้วยเครื่องมือ Artifact → ใส่ลิงก์ในรายงานข้อ 2 และใน `docs/cloud-results/<รอบ>.md` · เพดาน 16 MB ต่อหน้า (ภาพ crop ~150–400 KB → ~40 ภาพต่อหน้า · เกินนั้นแยกหน้า) · อัปเดตหน้าเดิมได้ ลิงก์ไม่เปลี่ยน
+- ทางรองที่ไม่แนะนำ: branch `evidence/<รอบ>` บน GitHub — ภาพค้างในประวัติ git และลบ branch จากคลาวด์ไม่ได้
+
+## 7. วางกุญแจให้เว็บขึ้นเอง — เจ้าของทำครั้งเดียว จากมือถือ [ยังไม่ได้ลองบนมือถือ]
+
+**ทำหลัง Javis merge PR ของรอบ A และเห็นผล "SKIP deploy" แล้วเท่านั้น** (GitHub → Actions → deploy → แถวบนสุด → Summary)
+Friday ไม่เห็น ไม่ถือ ไม่พิมพ์กุญแจนี้ — **ห้ามวางกุญแจในแชท**
+
+1. **Render (เอากุญแจ):** เปิดเบราว์เซอร์มือถือ → https://dashboard.render.com → เข้าบริการ **okami24** → **Settings** → เลื่อนหา **Deploy Hook** → กดไอคอนคัดลอก (ข้อความขึ้นต้น `https://api.render.com/deploy/…`) — ห้ามกด "Regenerate" ถ้าไม่ได้ตั้งใจเปลี่ยนกุญแจ
+2. **GitHub (วางกุญแจ):** เปิด https://github.com/dhetchaiyakrith24/okami24-web/settings/secrets/actions (ในแอป GitHub เมนูนี้อาจไม่มี ให้ใช้เบราว์เซอร์ แตะ "Desktop site" ถ้าหน้าไม่ขึ้น) → **New repository secret** → Name: `RENDER_DEPLOY_HOOK_URL` → Secret: วางที่คัดลอกมา → **Add secret**
+3. **สำเร็จ** = เห็นชื่อ `RENDER_DEPLOY_HOOK_URL` ในรายการ (ค่าจะไม่แสดงอีก — ปกติ)
+4. จากนี้: merge งานที่แตะเว็บ → รอราว 5–8 นาที → Actions → deploy → Summary บอก "DEPLOY started — commit xxxxxxx" → Render → Events เห็น deploy ใหม่ขึ้น **Live** = เว็บขึ้นแล้ว
+5. อยากสั่งขึ้นเว็บเองโดยไม่ merge อะไร: Actions → deploy → **Run workflow** → branch `main` → ติ๊ก **deploy** → Run (ด่านยังรันก่อนเสมอ)
+- พัง / ปิด / ถอดกุญแจ = `docs/RECOVERY.md` 1ก · เวลาของ GitHub Actions: รันเต็มครั้งละราว 4–6 นาที เฉพาะ merge ที่แตะเว็บ + PR [เชื่อว่า ยังไม่ได้เห็นยอดโควตาของบัญชี]
+
+## 8. ตรวจเว็บจริงหลัง deploy จากคลาวด์
+
+- ตอนนี้ = **curl อย่างเดียว** (ข้อ 5) · ภาพเว็บจริงจากคลาวด์ = ยังไม่ได้ (Chromium ไม่เชื่อใบรับรองของเครือข่ายคลาวด์ — ตารางข้อ 1) · ภาพเว็บจริง = คอม
 
 ## ที่มา (เอกสารทางการ อ่านเมื่อ 2026-09-26)
 - https://code.claude.com/docs/en/claude-code-on-the-web.md (ตัวกลาง GitHub · `--cloud` · `-p --cloud <id>` · โควตาร่วม · แชทหมดอายุ)
