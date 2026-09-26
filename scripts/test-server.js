@@ -30,17 +30,40 @@ function listeners(port) {
     }
     return [...pids];
   }
-  try {
-    out = execFileSync("lsof", ["-nP", `-iTCP:${port}`, "-sTCP:LISTEN", "-t"], { encoding: "utf8" });
-  } catch {
-    return [];
+  // lsof first; the cloud container (claude.ai/code) hides next-server's listener from lsof, so fuser is the fallback
+  // (docs/cloud-results/T4.md step 13 · round "mobile").
+  for (const [cmd, args] of [
+    ["lsof", ["-nP", `-iTCP:${port}`, "-sTCP:LISTEN", "-t"]],
+    ["fuser", ["-n", "tcp", String(port)]],
+  ]) {
+    const r = spawnSync(cmd, args, { encoding: "utf8" });
+    const pids = [...new Set((r.stdout || "").split(/\s+/).filter((s) => /^\d+$/.test(s)))];
+    if (pids.length) return pids;
   }
-  return [...new Set(out.split(/\s+/).filter(Boolean))];
+  return [];
+}
+
+// Last line of defence when no tool names the owner of the port: does anything answer on it at all?
+// Windows keeps its netstat answer only (unchanged there).
+function portAnswers(port) {
+  if (process.platform === "win32") return false;
+  const r = spawnSync(process.execPath, ["-e", `require("net").connect(${port},"127.0.0.1").on("connect",()=>process.exit(0)).on("error",()=>process.exit(1))`], { timeout: 5000 });
+  return r.status === 0;
 }
 
 function killTree(pid) {
-  if (process.platform === "win32") spawnSync("taskkill", ["/PID", String(pid), "/T", "/F"], { stdio: "ignore" });
-  else spawnSync("kill", ["-9", String(pid)], { stdio: "ignore" });
+  if (process.platform === "win32") return spawnSync("taskkill", ["/PID", String(pid), "/T", "/F"], { stdio: "ignore" });
+  // `start` spawns detached, so the npm → sh → next-server chain shares one process group: kill the whole group,
+  // never our own.
+  const pgid = Number(spawnSync("ps", ["-o", "pgid=", "-p", String(pid)], { encoding: "utf8" }).stdout.trim());
+  let ownPgid = 0;
+  try {
+    ownPgid = Number(spawnSync("ps", ["-o", "pgid=", "-p", String(process.pid)], { encoding: "utf8" }).stdout.trim());
+  } catch {
+    /* keep 0 */
+  }
+  if (pgid > 1 && pgid !== ownPgid) spawnSync("kill", ["-9", `-${pgid}`], { stdio: "ignore" });
+  spawnSync("kill", ["-9", String(pid)], { stdio: "ignore" });
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -114,8 +137,8 @@ async function waitUp(ms) {
 
 function refuseIfUp(what) {
   const pids = listeners(PORT);
-  if (pids.length) {
-    console.error(`test-server: port ${PORT} is up (PID ${pids.join(", ")}) — refusing to ${what}. Run: node scripts/test-server.js stop`);
+  if (pids.length || portAnswers(PORT)) {
+    console.error(`test-server: port ${PORT} is up (PID ${pids.join(", ") || "unknown"}) — refusing to ${what}. Run: node scripts/test-server.js stop`);
     process.exit(1);
   }
 }
@@ -127,8 +150,9 @@ async function main() {
 
   if (cmd === "status") {
     const pids = listeners(PORT);
-    console.log(pids.length ? `test-server: UP on ${PORT} (PID ${pids.join(", ")})` : `test-server: DOWN (nothing listens on ${PORT})`);
-    process.exit(pids.length ? 0 : 3);
+    const up = pids.length > 0 || portAnswers(PORT);
+    console.log(up ? `test-server: UP on ${PORT} (PID ${pids.join(", ") || "unknown"})` : `test-server: DOWN (nothing listens on ${PORT})`);
+    process.exit(up ? 0 : 3);
   }
   if (cmd === "guard") {
     refuseIfUp("build");
@@ -137,12 +161,16 @@ async function main() {
   }
   if (cmd === "stop") {
     const pids = listeners(PORT);
-    if (!pids.length) return console.log(`test-server: nothing listens on ${PORT}`);
+    if (!pids.length) {
+      if (!portAnswers(PORT)) return console.log(`test-server: nothing listens on ${PORT}`);
+      console.error(`test-server: ${PORT} answers but no tool (lsof/fuser) names its process — stop it by hand`);
+      process.exit(1);
+    }
     for (const pid of pids) killTree(pid);
     await sleep(1500);
     const left = listeners(PORT);
-    if (left.length) {
-      console.error(`test-server: still listening after stop (PID ${left.join(", ")})`);
+    if (left.length || portAnswers(PORT)) {
+      console.error(`test-server: still listening after stop (PID ${left.join(", ") || "unknown"})`);
       process.exit(1);
     }
     return console.log(`test-server: stopped PID ${pids.join(", ")} on ${PORT}`);

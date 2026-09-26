@@ -13,7 +13,7 @@
 // (e.g. "[data-related-articles]" on product pages). Pass = "0 Thai text node(s)" on every page × locale; exit 1 otherwise.
 // Same CDP approach as scripts/shot.js (Node 22+ WebSocket, the age gate pre-accepted through localStorage).
 const { spawn } = require("child_process"); const http = require("http"); const fs = require("fs");
-const CHROME = process.env.CHROME_PATH || "C:/Program Files/Google/Chrome/Application/chrome.exe";
+const { CHROME, FLAGS, TMP } = require("./lib/chrome"); // Windows: same Chrome as before · cloud: Chromium, found by search
 const AGE_KEY = process.env.AGE_KEY || "okami24-age-verified";
 const args = process.argv.slice(2);
 const opt = (name, def) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : def; };
@@ -32,8 +32,8 @@ async function guidePaths() {
 async function main() {
   const list = paths.length ? paths : await guidePaths();
   const port = 9333 + Math.floor(Math.random() * 500);
-  const profile = `${process.env.TEMP}/okami-locale-scan-${process.pid}`;
-  const chrome = spawn(CHROME, [`--remote-debugging-port=${port}`, "--headless=new", "--disable-gpu", "--no-first-run", `--user-data-dir=${profile}`, "about:blank"], { stdio: "ignore" });
+  const profile = `${TMP}/okami-locale-scan-${process.pid}`;
+  const chrome = spawn(CHROME, [...FLAGS, `--remote-debugging-port=${port}`, "--headless=new", "--disable-gpu", "--no-first-run", `--user-data-dir=${profile}`, "about:blank"], { stdio: "ignore" });
   const getJson = (p) => new Promise((res, rej) => http.get(`http://127.0.0.1:${port}${p}`, (r) => { let b = ""; r.on("data", (c) => (b += c)); r.on("end", () => res(JSON.parse(b))); }).on("error", rej));
   let targets; for (let i = 0; i < 40 && !targets; i++) { try { targets = await getJson("/json"); } catch { await sleep(250); } }
   if (!targets) throw new Error("Chrome did not expose DevTools");

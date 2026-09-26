@@ -21,7 +21,7 @@ const args = process.argv.slice(2);
 const mode = args[0];
 const opt = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : d; };
 const FLAGS_WITH_VALUE = ["--base", "--widths", "--locale", "--out", "--wait"];
-const CHROME = process.env.CHROME_PATH || "C:/Program Files/Google/Chrome/Application/chrome.exe";
+const { CHROME, FLAGS, TMP } = require("./lib/chrome"); // Windows: same Chrome as before · cloud: Chromium, found by search
 const AGE_KEY = process.env.AGE_KEY || "okami24-age-verified";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -97,8 +97,8 @@ const EVAL = String.raw`(() => {
 
 async function withChrome(fn) {
   const port = 9333 + Math.floor(Math.random() * 500);
-  const profile = `${process.env.TEMP || "/tmp"}/okami-linemap-${process.pid}-${port}`;
-  const chrome = spawn(CHROME, [`--remote-debugging-port=${port}`, "--headless=new", "--disable-gpu", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1200,900", "about:blank"], { stdio: "ignore" });
+  const profile = `${TMP}/okami-linemap-${process.pid}-${port}`;
+  const chrome = spawn(CHROME, [...FLAGS, `--remote-debugging-port=${port}`, "--headless=new", "--disable-gpu", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1200,900", "about:blank"], { stdio: "ignore" });
   const getJson = (p) => new Promise((res, rej) => http.get(`http://127.0.0.1:${port}${p}`, (r) => { let b = ""; r.on("data", (c) => (b += c)); r.on("end", () => res(JSON.parse(b))); }).on("error", rej));
   try {
     let target = null;

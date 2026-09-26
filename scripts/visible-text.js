@@ -26,7 +26,7 @@ const path = require("path");
 const http = require("http");
 const { spawn } = require("child_process");
 
-const CHROME = process.env.CHROME_PATH || "C:/Program Files/Google/Chrome/Application/chrome.exe";
+const { CHROME, FLAGS, TMP, MACHINE } = require("./lib/chrome"); // Windows: same Chrome as before · cloud: Chromium, found by search
 const AGE_KEY = process.env.AGE_KEY || "okami24-age-verified";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // Git Bash rewrites a leading "/" into its install folder ("/contact" → "C:/Program Files/Git/contact") unless
@@ -68,8 +68,8 @@ const EVAL = String.raw`(() => {
 
 async function withChrome(fn) {
   const port = 9333 + Math.floor(Math.random() * 500);
-  const profile = `${process.env.TEMP || "/tmp"}/okami-vtext-${process.pid}-${port}`;
-  const chrome = spawn(CHROME, [`--remote-debugging-port=${port}`, "--headless=new", "--disable-gpu", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1200,900", "about:blank"], { stdio: "ignore" });
+  const profile = `${TMP}/okami-vtext-${process.pid}-${port}`;
+  const chrome = spawn(CHROME, [...FLAGS, `--remote-debugging-port=${port}`, "--headless=new", "--disable-gpu", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1200,900", "about:blank"], { stdio: "ignore" });
   const getJson = (p) => new Promise((res, rej) => http.get(`http://127.0.0.1:${port}${p}`, (r) => { let b = ""; r.on("data", (c) => (b += c)); r.on("end", () => res(JSON.parse(b))); }).on("error", rej));
   try {
     let target = null;
@@ -127,7 +127,7 @@ async function scan() {
       const fp = await send("Runtime.evaluate", { returnByValue: true, expression: `(() => { const c = document.createElement("canvas").getContext("2d"); const f = getComputedStyle(document.body).font; c.font = f; return { font: f, widths: ["กขคงจฉชซ ภาษาไทย ๑๒๓", "The quick brown fox 0123456789", "电子烟 说明书 规格"].map((s) => Math.round(c.measureText(s).width * 100) / 100), loaded: [...document.fonts].filter((x) => x.status === "loaded").map((x) => x.family + " " + x.weight).sort() }; })()` });
       fontProbe = fp.result?.result?.value ?? null;
     } catch { /* recorded as null = cannot be reused */ }
-    fs.writeFileSync(path.join(outDir, "_meta.json"), JSON.stringify({ base, commit: opt("--commit") || null, chrome: ver.result?.product || null, fontProbe, locales, widths, wait: wait == null ? "ready" : wait, date: new Date().toISOString() }, null, 1));
+    fs.writeFileSync(path.join(outDir, "_meta.json"), JSON.stringify({ base, commit: opt("--commit") || null, machine: MACHINE, chrome: ver.result?.product || null, fontProbe, locales, widths, wait: wait == null ? "ready" : wait, date: new Date().toISOString() }, null, 1));
     for (const loc of locales) {
       await send("Network.setCookie", { name: "okami24_locale", value: loc, domain: host, path: "/" });
       for (const w of widths) {
@@ -169,8 +169,9 @@ function diff(beforeDir, afterDir, outDir) {
   // A "before" reused from an earlier close is only valid on the same browser + fonts (skill tier-b-proof step 1)
   const meta = (d) => { try { return JSON.parse(fs.readFileSync(path.join(d, "_meta.json"), "utf8")); } catch { return null; } };
   const ma = meta(beforeDir), mb = meta(afterDir);
-  const envSame = !!(ma && mb && ma.chrome === mb.chrome && JSON.stringify(ma.fontProbe) === JSON.stringify(mb.fontProbe) && ma.fontProbe);
-  console.log(envSame ? "environment: same browser + font fingerprint on both sides" : `environment: NOT proven the same (before ${ma ? ma.chrome : "no _meta.json"} · after ${mb ? mb.chrome : "no _meta.json"}${ma && mb && JSON.stringify(ma.fontProbe) !== JSON.stringify(mb.fontProbe) ? " · font fingerprint differs" : ""}) — a reused "before" is not valid; re-scan the before side`);
+  // machine (round "mobile"): Windows Chrome and cloud Chromium break lines differently — never compare across them
+  const envSame = !!(ma && mb && ma.machine === mb.machine && ma.chrome === mb.chrome && JSON.stringify(ma.fontProbe) === JSON.stringify(mb.fontProbe) && ma.fontProbe);
+  console.log(envSame ? `environment: same machine (${ma.machine || "not recorded"}) + browser + font fingerprint on both sides` : `environment: NOT proven the same (before ${ma ? `${ma.machine || "machine not recorded"} ${ma.chrome}` : "no _meta.json"} · after ${mb ? `${mb.machine || "machine not recorded"} ${mb.chrome}` : "no _meta.json"}${ma && mb && JSON.stringify(ma.fontProbe) !== JSON.stringify(mb.fontProbe) ? " · font fingerprint differs" : ""}) — a reused "before" is not valid; re-scan the before side`);
   const changes = [];
   const onlyOne = [];
   for (const f of [...new Set([...A, ...B])].sort()) {

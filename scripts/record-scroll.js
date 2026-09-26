@@ -2,11 +2,11 @@
 // Scroll-through recorder: real wheel events, frames as JPEG + timestamps.
 // node record.js <outdir> <url> <width> <height> <totalScrollPx> <frames> [wheelDelta]
 const { spawn } = require("child_process"); const http = require("http"); const fs = require("fs"); const path = require("path");
-const CHROME = "C:/Program Files/Google/Chrome/Application/chrome.exe";
+const { CHROME, FLAGS, TMP } = require("./lib/chrome"); // Windows: same Chrome as before · cloud: Chromium, found by search
 const [outdir, url, w, h, total, nframes] = process.argv.slice(2); const width = +w, height = +h, TOTAL = +total, N = +nframes;
 fs.mkdirSync(outdir, { recursive: true });
-const port = 9333 + Math.floor(Math.random() * 500); const profile = `${process.env.TEMP}/okami-rec-profile-${process.pid}`;
-const chrome = spawn(CHROME, [`--remote-debugging-port=${port}`, "--headless=new", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1600,1000", "about:blank"], { stdio: "ignore" });
+const port = 9333 + Math.floor(Math.random() * 500); const profile = `${TMP}/okami-rec-profile-${process.pid}`;
+const chrome = spawn(CHROME, [...FLAGS, `--remote-debugging-port=${port}`, "--headless=new", "--no-first-run", "--hide-scrollbars", `--user-data-dir=${profile}`, "--window-size=1600,1000", "about:blank"], { stdio: "ignore" });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const getJson = (p) => new Promise((res, rej) => http.get(`http://127.0.0.1:${port}${p}`, (r) => { let b = ""; r.on("data", (c) => (b += c)); r.on("end", () => res(JSON.parse(b))); }).on("error", rej));
 (async () => {
