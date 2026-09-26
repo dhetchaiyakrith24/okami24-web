@@ -1,0 +1,128 @@
+# Deploy to Render after the checks pass — only when a merge to main changes something the site runs.
+# Round A "pipes" (2026-09-27, owner ruling: route A of docs/cloud-results/mobile-round-questions.md topic 1).
+#
+#   push to main  → decide (scripts/deploy-decision.js — the same path list as the merge gate, scripts/lib/site-paths.js)
+#                 → nothing on the site changed = SKIP (no checks, no deploy)
+#                 → this push edits .github/workflows/ = SKIP deploy (checks still run) — so the merge that brings this
+#                   file to main never deploys, even with the secret already set
+#                 → otherwise: checks (verify:commerce + verify:catalog --full = tsc · eslint · contract tests · next
+#                   build · next start leak check) → all green → call the Render deploy hook
+#   pull_request  → decide + checks as a dry run; the deploy job never runs for a PR
+#   Run workflow  → (Actions tab, also from the GitHub phone app) checks on the chosen branch; deploy=true on main
+#                   deploys main after the checks pass, whatever changed
+#
+# The hook URL lives only in the repository secret RENDER_DEPLOY_HOOK_URL (the owner pastes it; GitHub masks it in logs).
+# No secret = the deploy job says so in its summary and ends green — nothing is deployed, nothing fails silently.
+# render.yaml keeps `autoDeploy: false`: Render never deploys on its own; this workflow is the only automatic route.
+# Stop it: Actions → "deploy" → ⋯ → Disable workflow. Undo a bad deploy: Render → Rollback (docs/RECOVERY.md).
+name: deploy
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: "Deploy main after the checks pass (only on main)"
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  decide:
+    runs-on: ubuntu-latest
+    outputs:
+      deploy: ${{ steps.d.outputs.deploy }}
+      checks: ${{ steps.d.outputs.deploy == 'true' || steps.d.outputs.pipeline == 'true' || github.event_name == 'workflow_dispatch' }}
+      reason: ${{ steps.d.outputs.reason }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Does this change reach the site?
+        id: d
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          FORCE: ${{ github.event_name == 'workflow_dispatch' && inputs.deploy && github.ref == 'refs/heads/main' }}
+        run: |
+          case "$EVENT" in
+            push)              node scripts/deploy-decision.js --range "$BEFORE..$AFTER" ;;
+            pull_request)      node scripts/deploy-decision.js --range "$PR_BASE...$PR_HEAD" ;;
+            workflow_dispatch) if [ "$FORCE" = "true" ]; then node scripts/deploy-decision.js --force --files ""
+                               else node scripts/deploy-decision.js --files ""; fi ;;
+          esac
+      - name: Summary
+        env:
+          DEPLOY: ${{ steps.d.outputs.deploy }}
+          REASON: ${{ steps.d.outputs.reason }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then what="dry run on a PR — never deploys"; else what="commit ${GITHUB_SHA:0:7} on ${GITHUB_REF_NAME}"; fi
+          if [ "$DEPLOY" = "true" ]; then verdict="DEPLOY after the checks pass"; else verdict="SKIP deploy"; fi
+          echo "### ${verdict}" >> "$GITHUB_STEP_SUMMARY"
+          echo "${what} · ${REASON}" >> "$GITHUB_STEP_SUMMARY"
+          echo "::notice title=deploy decision::${verdict} — ${REASON}"
+
+  checks:
+    needs: decide
+    if: needs.decide.outputs.checks == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      SITE_URL: https://okami24.store
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history: the content-dates contract test compares dates with git (a shallow clone fails it)
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Next types (tsc needs them before the first build)
+        run: npx next typegen
+      - name: verify:commerce
+        run: npm run verify:commerce
+      - name: verify:catalog --full (tsc · eslint · contract tests · next build · leak check)
+        run: npm run verify:catalog -- --full
+
+  deploy:
+    needs: [decide, checks]
+    if: >-
+      github.event_name != 'pull_request' && github.ref == 'refs/heads/main' &&
+      needs.decide.outputs.deploy == 'true' && needs.checks.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Call the Render deploy hook
+        env:
+          HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          short="${GITHUB_SHA:0:7}"
+          if [ -z "$HOOK" ]; then
+            echo "### SKIP deploy — secret RENDER_DEPLOY_HOOK_URL is not set" >> "$GITHUB_STEP_SUMMARY"
+            echo "Checks passed on ${short}; deploy it by hand in Render, or set the secret (docs/CLOUD.md) and run this workflow with deploy=true." >> "$GITHUB_STEP_SUMMARY"
+            echo "::warning title=not deployed::secret RENDER_DEPLOY_HOOK_URL is not set — ${short} was checked but not deployed"
+            exit 0
+          fi
+          # The hook deploys the newest commit of main. If main moved on while the checks ran, the newer run deploys.
+          now="$(git ls-remote origin refs/heads/main | cut -f1)"
+          if [ "$now" != "$GITHUB_SHA" ]; then
+            echo "### SKIP deploy — main moved on to ${now:0:7}; its own run deploys it" >> "$GITHUB_STEP_SUMMARY"
+            echo "::notice title=not deployed::main moved on to ${now:0:7} while ${short} was checked"
+            exit 0
+          fi
+          resp="$(curl -fsS -X POST "$HOOK")" || { echo "::error title=deploy hook failed::the Render deploy hook call failed for ${short}"; exit 1; }
+          id="$(printf '%s' "$resp" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{console.log(JSON.parse(s).deploy.id||"")}catch{console.log("")}})')"
+          echo "### DEPLOY started — commit ${short}" >> "$GITHUB_STEP_SUMMARY"
+          echo "Render deploy id: ${id:-not returned}. Whether it went live: Render → okami24 → Events (same deploy id)." >> "$GITHUB_STEP_SUMMARY"
+          echo "::notice title=deploy started::commit ${short} · Render deploy ${id:-id not returned}"
