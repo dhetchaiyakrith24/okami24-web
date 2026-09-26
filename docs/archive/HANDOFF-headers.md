@@ -24,3 +24,7 @@
 ## Line 1 at v71, final short form before v72 (2026-09-26, batch close of a small follow-up after round "cloud"), verbatim
 
 # OKami24 — HANDOFF · v71 · 2026-09-26 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+
+## Line 1 at v72, final short form before v73 (2026-09-27, round "mobile" cloud close), verbatim
+
+# OKami24 — HANDOFF · v72 · 2026-09-26 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
