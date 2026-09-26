@@ -44,6 +44,10 @@ new research — don't re-derive identity for something already resolved.
    exists, but NOT sufficient alone to fabricate a `Brand` record's tagline/description/
    referenceUrl. Report as "real, brand identity still unresolved," don't force it.
 
+Tiers 3–4 may corroborate identity, variants and image provenance only — they are never the source of a
+sentence shown on the site; a product fact on the site comes from the manufacturer (owner ruling 2026-09-26,
+round "cloud" — the rule and its named exceptions: `docs/THAI_STYLE.md` §5 "ขยายเป็นทุกที่บนเว็บ").
+
 Watch for the "หัว(เปล่า) doesn't reliably mean bare coil" pattern (see the README section) —
 check what the *children* actually differentiate by (resistance = likely a coil; color/flavor =
 likely a pod/cartridge/prefilled product) rather than trusting the Shipnity name or id prefix.
@@ -150,4 +154,7 @@ rather than doing it serially. Each agent's prompt should be self-contained and 
 5. The exact report shape from Step 5.
 6. A response length cap (this project's research passes capped individual reports at
    1200-1800 words to keep synthesis practical).
+7. "Never open a PDF or a local file through a browser window — if it cannot be read another way,
+   write `[ยังไม่มีข้อมูล]` for that item and move on" (owner ruling 2026-09-26, round "cloud": a
+   browser-opened PDF once stalled a round for 146 minutes). This binds the main agent too.
 
