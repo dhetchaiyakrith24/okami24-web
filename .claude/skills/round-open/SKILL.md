@@ -60,8 +60,11 @@ Then `git status` — know where the tree is before moving.
    `git fetch origin <wip>:refs/remotes/origin/<wip>`), bring the files into the working tree uncommitted
    (`git checkout origin/<wip> -- <files>`, then `git reset -q` so they stay unstaged) and check that the list
    matches §16; any other change = stop and report.
-   `git config core.hooksPath` must answer `.githooks` (a fresh clone — every cloud chat — does not set it: run
-   `git config core.hooksPath .githooks`, `docs/RECOVERY.md` 2ค); without it the commit and push gates do not run.
+   **Machine ready:** `node scripts/prepare-clone.js` must end `prepare-clone: READY` — one command, safe to repeat,
+   what it does is in its head (git hooks — without them the commit and push gates do not run, `docs/RECOVERY.md` 2ค ·
+   full git history · packages · Next types · browser · Thai font). A cloud chat runs it by itself at session start
+   (`.claude/settings.json` SessionStart hook) — read its lines in the session's first context; not there or not
+   READY = run it now.
 4. Report the numbers seen (hash of main, branch, tags) — never the numbers the file expected.
 
 If the instruction file also names a tag, check the tag with `git tag -n1`; a tag that points
