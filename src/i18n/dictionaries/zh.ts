@@ -153,6 +153,7 @@ export const zh: Dictionary = {
     outOfStockChip: "缺货",
     reviewVideoEyebrow: "OKami24 评测",
     watchOnYoutube: "在 YouTube 上观看",
+    reviewVideoHiddenTitle: "真机试用（泰语讲解）",
     statBattery: "电池容量",
     statOutput: "功率输出",
     statRatedPuffs: "标称烟弹口数",

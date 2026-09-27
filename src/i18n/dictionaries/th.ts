@@ -168,6 +168,7 @@ export const th: Dictionary = {
     outOfStockChip: "สินค้าหมด",
     reviewVideoEyebrow: "รีวิวจาก OKami24",
     watchOnYoutube: "ดูบน YouTube",
+    reviewVideoHiddenTitle: "ลองใช้งานจริง",
     statBattery: "แบตเตอรี่",
     statOutput: "กำลังไฟ",
     statRatedPuffs: "จำนวนพัฟที่ระบุ",

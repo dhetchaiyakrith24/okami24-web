@@ -185,6 +185,9 @@ export interface Dictionary {
     outOfStockChip: string;
     reviewVideoEyebrow: string;
     watchOnYoutube: string;
+    /** Round "clip" (owner 2026-09-27): the line under a clip card whose Thai YouTube title is hidden on en/zh. The
+     *  Thai page shows the clip's own title instead, so the th value is never on screen. */
+    reviewVideoHiddenTitle: string;
     statBattery: string;
     statOutput: string;
     statRatedPuffs: string;
