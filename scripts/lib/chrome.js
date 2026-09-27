@@ -6,7 +6,8 @@
 //              Found by searching, never by a fixed folder or version number (both change when the cloud image updates).
 //   FLAGS      extra command-line flags to put before the script's own: none on Windows (Windows argv unchanged) ·
 //              Linux: --no-sandbox (the cloud runs as root, where Chrome refuses its sandbox and never opens DevTools —
-//              docs/cloud-results/T4.md step 14) + --disable-dev-shm-usage (small /dev/shm in containers).
+//              docs/cloud-results/T4.md step 14) + --disable-dev-shm-usage (small /dev/shm in containers) · cloud:
+//              + --ignore-certificate-errors-spki-list=<the cloud network's CA> once prepare-clone learned it.
 //   TMP        where throwaway Chrome profiles go: TEMP if set (Windows always sets it), else the OS temp dir (the cloud
 //              has no TEMP — profiles went to "undefined/…" before).
 //   MACHINE    one word naming the rendering machine, written into every scan/shot record so "before" and "after"
@@ -58,6 +59,12 @@ function findChrome() {
 const found = findChrome();
 const CHROME = found ? found.path : WIN_DEFAULT;
 const FLAGS = found && found.linux ? ["--no-sandbox", "--disable-dev-shm-usage"] : [];
+// Cloud only: trust the one CA the machine already trusts for the live site (scripts/lib/cloud-ca.js · round C) —
+// without it every https page through the cloud's egress proxy is "Your connection is not private".
+if (process.env.CLAUDE_CODE_REMOTE === "true") {
+  const ca = require("./cloud-ca").cached();
+  if (ca && ca.spki) FLAGS.push(`--ignore-certificate-errors-spki-list=${ca.spki}`);
+}
 const TMP = process.env.TEMP || os.tmpdir();
 const MACHINE = WIN ? "windows-chrome" : process.env.CLAUDE_CODE_REMOTE === "true" ? "cloud-linux-chromium" : `${process.platform}-chrome`;
 
