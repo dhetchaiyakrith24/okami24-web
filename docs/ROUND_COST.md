@@ -1,7 +1,7 @@
 # OKami24 — Round cost log (ROUND_COST)
 
 > Created 2026-09-17 (housekeeping round v2, step 8 — owner order 2026-09-16: "I don't know what the model quota is spent on").
-> Claude sees only its own chat's context size (app tool `get_usage`, since 2026-09-25 — desktop app only); it cannot see per-agent token usage, so each row records **countable proxies**. One row per round, filled in at round close by doc-keeper (the main agent when doc-keeper is not called). Never estimate a number that was not counted — write `[ยังไม่มีข้อมูล]`; the reason goes in the file the last column points to (rows from 2026-09-26) or in the cell itself (older rows).
+> Claude sees only its own chat's context size (app tool `get_usage`, since 2026-09-25 — desktop app only); it cannot see per-agent token usage, so each row records **countable proxies**. One row per qualifying round (which rounds = the block above the table, `.claude/TEAM_RULES.md` 13.12 #7), filled in at its close by doc-keeper (the main agent when doc-keeper is not called). Never estimate a number that was not counted — write `[ยังไม่มีข้อมูล]`; the reason goes in the file the last column points to (rows from 2026-09-26) or in the cell itself (older rows).
 > Sources for a row: screenshots = image files under `_incoming/<round>/` · builds = `build*.log` there (+ verify logs) · agent calls = brief files saved there (a lower bound — re-runs without a brief are not counted) · checker send-backs = "ตีกลับ" notes in that round's HANDOFF / THAI_STYLE_LOG entries · chats = HANDOFF versions written during the round · commits = `git log --oneline | grep <round tag>`.
 
 > **Row shape from 2026-09-26 (round "cloud", owner ruling on the speed proposals) — the one place of this rule:** each
@@ -9,7 +9,7 @@
 > (`_incoming/speed-consult/RESULTS.md` ④). Rows written before that date are left as they are.
 
 > **Which rounds get a row, from 2026-09-27 (owner, after round "ฝังคลิป"; the one place = `.claude/TEAM_RULES.md` 13.12 #7):**
-> big rounds and long projects only — a small round adds no row and times no step. Rows already written stay.
+> rounds that ran over several days or chats only — any other round adds no row and times no step. Rows already written stay.
 
 ## Table
 

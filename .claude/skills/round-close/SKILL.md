@@ -1,6 +1,6 @@
 ---
 name: round-close
-description: Close a work round for the OKami24 site after the last batch passed the checker. Use it for every round close, whatever the round's name. It sequences the word-break scan and diff on the touched pages, the single designer pass (tier B only), the full verify set, the one-commit fix of what the close found, the annotated tag + tag push (a cloud round: the close commit instead), the handoff-block and round-cost updates, and the 4-part report with its length rule. It names the checks but never their expected numbers — the pass criterion is always what each script itself defines.
+description: Close a work round for the OKami24 site after the last batch passed the checker. Use it for every round close, whatever the round's name. It sequences the word-break scan and diff on the touched pages, the designer pass when 13.12 #4 calls for it, the verify set 13.12 names (light or full), the one-commit fix of what the close found, the annotated tag + tag push (a cloud round: the close commit instead), the handoff-block update (and the round-cost row on long rounds, 13.12 #7), and the 4-part report with its length rule. It names the checks but never their expected numbers — the pass criterion is always what each script itself defines.
 ---
 
 # Round close
@@ -20,7 +20,7 @@ and products), so **"pass" means what the script prints as pass, and nothing els
 
 ## Step 1 — Scan first, shoot only what the scan flags
 
-0. **Proof sized to what changed (the one place of this rule — a batch or a round close; origin: `docs/RULES_INDEX.md`):**
+0. **Proof sized to what changed (how much to check overall = `.claude/TEAM_RULES.md` 13.12, the one place; this item is its "nothing on the site changed" case — origin: `docs/RULES_INDEX.md`):**
    when `node scripts/self-merge-check.js --base <base>` ends in `PASS` — the same allow-list that decides "nothing a
    customer sees" in 13.7 (so `src/`, `public/`, product data, root config such as `next.config.ts`, and anything the
    build or the server runs all count as touched) — that output, pasted in the report with its command, IS the proof:
@@ -38,7 +38,7 @@ and products), so **"pass" means what the script prints as pass, and nothing els
    owner why first. (This replaced the older close routine "shoot every touched page", moved here
    from HANDOFF §17 "Two-tier rule" — the older wording is kept in that line's chain-10 record in
    `docs/RULES_INDEX.md`.)
-4. Tier-B rounds: WHAT a visitor reads that changed (whole sitemap, three languages, both widths) and the shots of
+4. Tier-B rounds: WHAT a visitor reads that changed (the pages 13.12 #1 (ค) / #3 name, three languages, both widths) and the shots of
    those spots only = skill `tier-b-proof`; the word-break scan above stays for WHERE Thai text wraps.
 
 ## Step 2 — Designer once (tier B rounds only)
@@ -127,8 +127,8 @@ send-back cap and re-check rule: 13.5.
    **In the cloud: no tag** (a tag push is refused, `HTTP 403`; 13.7) — the close point is the round-close commit.
    Name the base commit (rollback point) and the close commit in the report and in `docs/cloud-results/<round>.md`,
    and write the RECOVERY row with the round's name in the tag column and the close commit's hash.
-4. Merge is Cowork's job (13.7) — the one exception, a PR Friday may merge herself, is decided by
-   `node scripts/self-merge-check.js` on the PR's head commit and its conditions live in 13.7 only.
+4. Friday merges (13.7 — small = merge then report, big = tell the owner first): `node scripts/self-merge-check.js`
+   on the PR's head commit decides small/big; its conditions live in 13.7 only.
    Deploy is never yours (a merge to main that touches the site deploys itself after the GitHub checks — 13.7).
 
 ## Step 6 — Documents that close the round
@@ -136,14 +136,14 @@ send-back cap and re-check rule: 13.5.
 - `docs/HANDOFF.md` §16: the "open round" item becomes "none — <round> closed" with the tag name (a cloud round: the close commit);
   main / branch-ahead / waiting-on-owner / open-questions refreshed (spec: `.claude/agents/doc-keeper.md`;
   the handoff conditions: 13.6).
-- `docs/ROUND_COST.md`: **big rounds and long projects only** (`.claude/TEAM_RULES.md` 13.12 #7) — add one row for the
+- `docs/ROUND_COST.md`: **rounds that ran over several days or chats only** (`.claude/TEAM_RULES.md` 13.12 #7) — add one row for the
   round (doc-keeper); its shape and how each column is counted = the file's own header, the one place.
 - Round-specific entries in `docs/THAI_STYLE_LOG.md` §7 if the round touched site copy (doc-keeper).
 - The round instruction file (owner rulings Q1 + Q2, round B 2026-09-27 — git is the master of round files): the file
   that ran is in `docs/rounds/` (round-open step 1 put it there; re-copy if the owner or Javis edited it during the
   round) → then delete its copy under `rounds/` on the branch `inbox`, if there is one (a commit on `inbox` that only
   removes that file; the branch itself stays).
-- The pre-merge pack `_incoming/<round>/owner-table.md` = skill `merge-pack` (after the push — and the tag push on a computer round — before the report);
+- The pre-merge pack `_incoming/<round>/owner-table.md` = skill `merge-pack`, only for full-set work or when title/meta/H1 may move (13.12 #1 (ฉ) · #6) (after the push — and the tag push on a computer round — before the report);
   its path goes into §16 "waiting on the owner" and into the report.
 
 ## Step 7 — The 4-part report (Thai, template (ข) in `docs/TEMPLATES.md`)
