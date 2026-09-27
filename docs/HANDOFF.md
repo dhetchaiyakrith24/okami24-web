@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v79 · 2026-09-27 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v80 · 2026-09-27 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -847,122 +847,40 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-1 main: `git fetch && git log -1 --oneline origin/main` → `4de0814` (after PR #86, round C's close PR
-  merged) [เชื่อว่า, `_incoming/clip-round/brief-dockeeper-close.md` — not independently re-run by doc-keeper
-  this batch]. Rollback point for this round: local tag `pre-clip-round` → `4de0814` [เชื่อว่า, brief-
-  dockeeper-close.md]. Cloud round → no tag at close (13.7); close point = the close commit on branch
-  `claude/embed-shop-clips-video-data-zp715x` (named in `docs/cloud-results/clip-round.md`). Branch commits
-  so far: `1e46911` fix (VideoObject builder + clip slots) · `63cad87` data (dates + new clips) · `29de1a8`
-  content-dates · `8a1a5c2` docs — this §16 edit rides the next commit (the close commit, still to come).
-  Checker: **PASS 10/10** (first pass, wip `@1d7bb34`) + re-check of the designer fixes **PASS 5/5** (wip
-  `@0478ab1`) [เชื่อว่า, brief-dockeeper-close.md]; branch code = `0478ab1` + content-dates + docs. PR **#87**
-  is open from this branch (its first CI run went red on the content-dates contract test in CI only — diagnosed
-  after this commit); `self-merge-check` verdict: **BIG** → Friday tells the owner before merging,
-  merges after the reply (13.7). First merge that self-deploys via GitHub Actions — after merge, check for
-  "DEPLOY started" + confirm the live site.
-2 ahead of main: `git log --oneline origin/main..claude/embed-shop-clips-video-data-zp715x` — one branch,
-  this round's 4 commits above + the close commit still to come [เชื่อว่า, brief-dockeeper-close.md]. Also a
-  helper branch `wip/clip-round-b1-1` (unchecked mid-batch copy, superseded) — delete after merge: Friday on
-  the computer or Javis on the GitHub page (the cloud cannot delete branches).
-3 update (Friday, after the owner's answers 2026-09-27): PR #87 **merged** (`989071b`) and **self-deployed** (Actions
-  "DEPLOY started", live at 18:32 UTC, live VideoObject 14/14 valid). PR 2 on the same branch: marbo guide = 54K clip only ·
-  en/zh line "Hands-on review (in Thai)" / "真机试用（泰语讲解）" · disposables clip not placed (models unconfirmable) —
-  checker PASS 6/6, owner pre-approved the merge on green CI. Branches `wip/clip-round-b1-1` + `-b2-1` to delete (cloud
-  delete failed). Detail: `docs/cloud-results/clip-round.md` last section.
-3 round: round "ฝังคลิป" (shop clips on the pages of their search term + valid VideoObject JSON-LD; cloud,
-  tier B, one batch) — **done, closing now**. Full round record: `docs/cloud-results/clip-round.md`
-  (root-cause, clip table, en/zh notes, proof — read it). 4 clips placed: choosing-a-marbo-flavor (2nd clip,
-  next to the existing one) · coil-and-pod-maintenance · /brands/salthub · muro-connector-20k. 2 candidate
-  clips not placed — /products/disposables (uQnQwH5_0qg) and choosing-your-first-pod-system (MmesPKLafqA) —
-  the model shown could not be confirmed from the cloud; code is ready (one line each), owner confirmation
-  needed (item 5). GSC's "วิดีโอ: ตรวจพบรายการที่ไม่ถูกต้อง" on 7 product pages fixed at the mechanism (one
-  builder `src/lib/video-jsonld.ts`, `publishedAt` required by type, new gate `review-video-contract-test`
-  in `verify:catalog`) — not per page. Designer: pass, 3 fixes applied before the check (single eyebrow over
-  the 2-clip grid · smaller play button · aria/alt carries the model name on en/zh) + 2 open owner questions
-  (item 5). Checker PASS 10/10 + PASS 5/5 re-check (item 1). Speed: Lighthouse mobile median moved by ≤3
-  points per page (salthub 80.5→79.5), LCP within run-to-run spread — no iframe on any page. Screenshots:
-  cloud Chromium cannot load `i.ytimg.com` (cert chain not trusted) — cards show alt text, not the picture,
-  in every cloud shot; curl confirms HTTP 200 for all 21 thumbnails (item 4). **First next step:** get PR #87
-  green, tell the owner before merging (BIG, item 4), merge after the reply, then confirm
-  self-deploy + run Javis's post-deploy checks (item 4).
-  Previous round: **round C "คอมตรงGit-กฎกลางที่เดียว-merge-ภาพ-GSC" (computer) — CLOSED + MERGED** (PR #86),
-  full record `docs/cloud-results/roundC.md` (unchanged from v78, moved to §3 at this close).
-  Previous rounds before that, all CLOSED + MERGED, full detail at §3 (unchanged): round B "housekeeping" ·
-  round A "pipes" · "mobile" · "cloud" tag `cloud-round-done` · "central-rules" tag `central-rules-done` ·
-  "tools round" tag `tools-round-done` · "friday persona" tag `friday-persona-done` · "rules trim" tag
-  `rules-trim-done` · "owner rules" tag `owner-rules-done` · "rules move" tag `rules-move-done` · round 10C
-  tag `seo-landscape-10c-done` · round data 2 tag `data-facts-2-done`.
+(v80 — written by the main agent on a mid-round push, 13.6; replaces v79, which predated PRs #88–#90)
+1 main: `origin/main` = `360dd12` (PR #90 merged) [ตรวจแล้ว, `git log -1 origin/main` 2026-09-27]. This round's
+  merges, all by Friday: #87 `989071b` (clips + VideoObject fix; self-deployed, "DEPLOY started", live 18:32 UTC) ·
+  #88 (marbo guide = 54K clip only · en/zh line "Hands-on review (in Thai)" / "真机试用（泰语讲解）") · #89 `50e007f`
+  (disposables clip uQnQwH5_0qg, owner confirmed all 5 models sold; live 19:30 UTC) · #90 `360dd12` (rules:
+  `.claude/TEAM_RULES.md` 13.12 light check set + alignment across skills/agents/guides; no site files → no deploy).
+  Cloud round → no tags; rollback = revert the merge commit. Branches `wip/clip-round-b1-1` / `-b2-1` deleted by Javis.
+2 ahead of main: branch `claude/embed-shop-clips-video-data-zp715x` — `44f6935` fix(seo): VideoObject `uploadDate`
+  carries a time zone (`YYYY-MM-DDT00:00:00+07:00`, owner request from GSC data 26/09 "uploadDate ไม่ได้ระบุเขตเวลา";
+  argus-g4 keeps the date-only value until 05/10 — SEO baseline frozen) + this docs commit. PR + checker pending
+  at this push; owner pre-approved merge once checker passes and CI is green.
+3 round: round "ฝังคลิป" (cloud) — main work merged (#87–#89); follow-ups on the same branch: the uploadDate time zone
+  fix (item 2). Full record: `docs/cloud-results/clip-round.md`. Also asked by the owner 27/09: a review of Friday's own
+  rules for ones that are stricter than the work needs — **proposal only, owner decides before any edit**.
+  Previous round: round C (computer) — CLOSED + MERGED (PR #86), record `docs/cloud-results/roundC.md`; older rounds §3.
 4 waiting on owner / Javis:
-  (a) merge OK for the PR from branch `claude/embed-shop-clips-video-data-zp715x` (BIG per
-  `self-merge-check` — 13.7).
-  (b) after merge: Javis confirms self-deploy ("DEPLOY started" + the live site), then runs Google Rich
-  Results Test + GSC "ตรวจสอบการแก้ไข" on the 7 video pages + requests indexing of the changed pages (list
-  in `docs/cloud-results/clip-round.md`) [เชื่อว่า, brief-dockeeper-close.md].
-  (c) delete helper branch `wip/clip-round-b1-1` after merge — Friday on the computer or Javis on the
-  GitHub page (item 2).
-  (d) a tool-side fix so cloud Chromium can load `i.ytimg.com` thumbnails in screenshots (cert chain) needs
-  the owner's OK first — not pursued this round [เชื่อว่า, brief-dockeeper-close.md].
-  (e) GSC is connected since 27/09 — reports on branch `gsc-data`, folder `gsc/latest`, pulled every morning
-  06:30; `docs/GSC_SETUP.md`'s steps are no longer needed [เชื่อว่า, brief-dockeeper-close.md]. **Dropped at
-  this close** (superseded by this fact): the old item 4(b) "owner does GSC_SETUP".
-  (f) a note file exists only on the owner's computer (`_incoming/next-round-notes.md`) — its main content
-  is the GSC line above; move it into git in a round that runs on the computer [เชื่อว่า, brief-dockeeper-
-  close.md].
-  (g) delete `_incoming/zz-to-delete-roundB/` — owner's call, unchanged from v78; untracked files there
-  cannot be recovered once actually deleted.
-  (h) round B stop-2 items 8-12, Friday untouched by design, full text `docs/cloud-results/
-  roundB-stop2-owner.md` §ข: 8 Render Blueprint Auto Sync (recommend → No) · 9 split the shared "Smog.z"
-  cloud environment (web vs cartoon) · 10 OneDrive vs `inbox` copy of the mobile round file differ · 11
-  cartoon's own merged branch `rules-sync/d5ff55b` · 12 three central-rules proposals for `smogz-rules`
-  (unchanged from v78).
-  (i) carried from round A "pipes": owner opens the Artifact test link
-  `https://claude.ai/artifact/TuQkJ54AAMknjaj7co1ys9` on the phone [รอเจ้าของ].
-  (j) round C's B3 "central rules from one place" — **ON HOLD**, pick up only when the owner says so
-  (unchanged from v78).
-4b (permanent, 13.10 #12, do not re-ask; round B's own rulings, owner "ไป" 2026-09-27, full text
-  `docs/cloud-results/roundB-stop2-owner.md` §ก + `roundB-housekeeping.md` "Stop point 2"): tier-B owner
-  approval = one question set per batch, work does not wait (13.4 #6) + final keep/undo at merge (#2) ·
-  "round end = handoff" means **§16 only** (doc-keeper); the full §1-§15 rewrite is only for the owner
-  typing "handoff" or a chat move — §1-§15 labelled "history up to v34" · a push that is not a batch close
-  = the main agent writes §16, not doc-keeper · `.claude/GLOBAL_RULES_MIRROR.md` **retired** — the gates
-  that read it now read the live copy `.claude/rules/central-rules.md`; the file itself was removed by
-  Javis PR #76 (branch `roundB-javis-2`), now merged into main [ตรวจแล้ว at v76/v77] · checkpoint (13.10
-  #10) = a tag or branch at a checked point, never a commit of unchecked work · TEMPLATES report-line
-  dropped "≤20 คำ", kept "1 ประโยค ต่อบรรทัด" only.
-4c (permanent, 13.10 #12, do not re-ask; carried, unchanged, full text §3): round A "pipes" — 13.7
-  self-merge scope now covers Friday's PRs touching skills/agents/web rules from the cloud, not only docs
-  (exceptions unchanged: `.claude/settings*`/hooks/`.github/` still go to Javis) · a cloud round's close
-  names a commit, never a tag · cloud rounds write their full record to `docs/cloud-results/<round>.md` ·
-  deploy route A (GitHub Actions gate) chosen. Earlier rounds' rulings (cloud round, mobile round, and
-  before): 5 speed-consult proposals adopted whole · rule answers 1A/6A/7A/9A + 8=A + 11=A · Friday/Javis
-  persona · round 9/10B/data-round rulings · never raise Thailand's legal status in owner-facing reports ·
-  build guard = option A · the "ร้านพอต" SEO block's shipping numbers = BSOT §10 · "เซฟ ๆ ให้ด้วย" = be
-  careful, in `.claude/LESSONS.md`.
-5 open questions for the owner (this round's batch — put by `_incoming/clip-round/brief-dockeeper-close.md`):
-  (1) the 2 clips not placed (item 3): owner confirms the models shown in uQnQwH5_0qg (disposables) and
-  MmesPKLafqA (choosing-your-first-pod-system) are still sold → one data line each if yes.
-  (2) the marbo flavour guide now has 2 clips, while round SEO ข ruled "one clip per article" — keep both /
-  keep only the new 54K one / keep only the old one.
-  (3) an en/zh line under a clip whose Thai YouTube title is hidden (e.g. "Hands-on review (in Thai)") — add
-  such a line, or keep the channel name only.
-  (4) salthub desktop clip-card width — keep as-is (= product-page width) or change.
-  Plus (tool question, item 4(d)): cloud Chromium cannot load `i.ytimg.com` thumbnails in screenshots
-  (cert-chain trust) — a tool-side fix needs the owner's OK before anyone tries it.
-  Older backlog carried, unchanged, full text §3: round-B rule-audit questions (A1 A2 A3 D6 G3 G4 G5 G1, B3)
-  resolved via stop point 2 ("ไป") · round "mobile" topics 3/6/9/10/11 · topic 4 working note (clip embeds
-  use `i.ytimg.com` not `img.youtube.com`) — acted on this round · `_incoming/round10c/extras.md`'s 6
-  site-touching proposals · ask Cowork on 05/10: index status of the 5 new guides + which page GSC credits
-  for "caliburn g5"/"m bar"/"uwell" · round data 2 leftovers · hydration/bundle scrub · `/compare` "Charging"
-  "—" ×19 · Shipnity Thai on en/zh · round 11A pod-159 photos · B5 rest · B6 · round item ฉ (article H1
-  two-line leading at 390 · G4 black button · related-products card at 390) — not done this round, each is
-  a shared component touching pages outside this batch, its own tier-B pass · tools-round's 10 Thai strings
-  shown to en/zh on coil-54/55/68 + iqosheet-16/18 [ตรวจแล้ว, `_incoming/tools-round/b3/data2-evidence.md`].
-6 verify baseline — **this close ran and refreshed the whole set** (logs `_incoming/clip-round/verify/`)
-  [เชื่อว่า, brief-dockeeper-close.md — doc-keeper has no Bash tool to re-open these logs itself]: `tsc
-  --noEmit` **0** · `verify:commerce` **All 17 checks passed** · `verify:catalog --full` **All 32 step(s)
-  passed** (31 → 32: new gate `review-video-contract-test` **7/7** over 23 clips) · `count-storefront` **53
-  shown / 53 buyable** · `i18n` **16/16** · `thai-raw-chars` **0** · `scan.js` **PASS 0/104** · `og-gate`
-  **104/104** · `content-dates --check` **current, 55 paths**.
+  (a) Javis in GSC: "ตรวจสอบการแก้ไข" on the 7 video pages + request indexing of the pages with new clips
+  (/brands/salthub · /guides/coil-and-pod-maintenance · /guides/choosing-a-marbo-flavor · /products/muro-connector-20k
+  · /products/disposables); after the time-zone PR deploys, re-validate the "valid with warnings" video items.
+  (b) owner rules on the rules-review table (item 3).
+  (c) cloud Chromium cannot load `i.ytimg.com` thumbnails in screenshots (cert chain) — a tool-side fix needs the
+  owner's OK first.
+  (d) carried unchanged from v79 item 4 (e)–(j): GSC reports on branch `gsc-data` · `_incoming/next-round-notes.md`
+  on the owner's computer · `_incoming/zz-to-delete-roundB/` · round B stop-2 items 8–12 · Artifact test link
+  `https://claude.ai/artifact/TuQkJ54AAMknjaj7co1ys9` [รอเจ้าของ] · round C's B3 ON HOLD.
+4b/4c permanent rulings: unchanged from v79 (see `docs/archive/` or git history of this file) + 27/09: light check set
+  13.12 (5 items + timing only on big rounds/long projects) · disposables clip placed · MmesPKLafqA not placed ·
+  marbo guide one clip (54K) · salthub card width kept.
+5 open questions: none new beyond item 4(b)/(c). Older backlog carried unchanged (v79 item 5 "Older backlog", full
+  text §3): round item ฉ (article H1 leading at 390 · G4 black button · related-products card at 390) — each its own
+  tier-B pass · `/compare` "Charging" "—" ×19 · Shipnity Thai on en/zh · tools-round's 10 Thai strings on en/zh.
+6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`): tsc 0 · verify:commerce
+  17/17 · verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 ·
+  og-gate 104/104. Since then: review-video contract 8/8 (new time-zone check) [ตรวจแล้ว 44f6935].
 (context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
 
