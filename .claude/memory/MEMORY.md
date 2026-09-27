@@ -9,4 +9,5 @@
 - บอกพาธเต็มของไฟล์เสมอ — เป็นกฎกลางแล้ว หมวด 12 ข้อ 7 (ความจำเดิม 2026-09-07 เรื่องเดียวกัน · รวมเข้ากฎ ไม่เก็บซ้ำ 2026-09-26)
 - [CRLF บนเครื่องนี้](project-crlf-tooling.md) — ประวัติว่าทำไม · กติกาที่ใช้จริง = `docs/HANDOFF.md` §17 บรรทัด "CRLF" ที่เดียว (บนคลาวด์ไม่มี autocrlf — ด่าน eol-check ข้ามกฎข้อ 2 เอง)
 - [heredoc/node -e ห้ามใช้กับ backslash/regex/ไทย](project-crlf-tooling.md) — บั๊ก /s+/g 2026-09-15 · ใช้ Edit/Write tool เท่านั้น
+- [บรรทัด session-sync ตอนเปิดแชท](project-session-sync.md) — STOP SIGN = บอกเจ้าของก่อน · RE-READ NOW = อ่านไฟล์กฎใหม่ · PROBE = hook มาก่อน/หลังโหลดกฎ (รอบ C 2026-09-27)
 - กฎทีม + บทเรียนของเว็บอยู่ในรีโปแล้ว (2026-09-25 รอบย้ายกฎ) — `.claude/TEAM_RULES.md` (หมวด 13 · กฎเรื่องกฎหมาย · 13.6 ย้ายแชทที่ 700k + เปิด Remote Control ต้นทุกแชท) · `.claude/LESSONS.md` (บทเรียนฝั่งได้ผล ที่เดียว) · memory 5 ไฟล์เดิม (ask-level · two-tier-proof · context-batches · legal-status · lessons) ย้ายออกแล้ว สำเนา `docs/archive/claude-config-2026-09-25/memory/`
