@@ -1,4 +1,6 @@
 #!/bin/sh
-# Line-ending gate for every commit made in this clone (any agent). Setup after clone: git config core.hooksPath .githooks
-# Rule: docs/HANDOFF.md §17 "CRLF" · checker: scripts/eol-check.js
-exec node scripts/eol-check.js --staged
+# Commit gates for every commit made in this clone (any agent). Setup after clone: git config core.hooksPath .githooks
+# 1. line endings — rule: docs/HANDOFF.md §17 "CRLF" · checker: scripts/eol-check.js
+# 2. no video/audio and no file over the cap — scripts/large-file-check.js (round B, owner ruling Q7 ③)
+node scripts/eol-check.js --staged || exit 1
+exec node scripts/large-file-check.js --staged
