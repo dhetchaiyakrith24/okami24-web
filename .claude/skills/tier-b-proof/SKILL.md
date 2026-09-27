@@ -1,6 +1,6 @@
 ---
 name: tier-b-proof
-description: Prove what changed on screen between two builds of the OKami24 site — every sitemap page, all three languages, both widths of the two-tier rule — then shoot only the spots that changed and hand the designer a ready brief. Use it for every tier-B batch or round close that needs before/after proof, and to prove "nothing a visitor sees changed" on a round that must leave the site alone. It reads the text a visitor actually sees after hydration (not the raw HTML, which carries every language), so English and Chinese pages are covered.
+description: Prove what changed on screen between two builds of the OKami24 site — the touched pages + control pages (the whole sitemap only per `.claude/TEAM_RULES.md` 13.12 item 3), all three languages, both widths of the two-tier rule — then shoot only the spots that changed and hand the designer a ready brief. Use it for every tier-B batch or round close that needs before/after proof, and to prove "nothing a visitor sees changed" on a round that must leave the site alone. It reads the text a visitor actually sees after hydration (not the raw HTML, which carries every language), so English and Chinese pages are covered.
 ---
 
 # Tier-B proof
@@ -14,7 +14,10 @@ file — they come from the run.
 
 ## When this applies
 
-- A tier-B batch (or a round close with any tier-B batch) needs its before → after shots.
+- A tier-B batch (or a round close with any tier-B batch) needs its before → after shots. **How big:** the whole
+  sitemap only when `.claude/TEAM_RULES.md` 13.12 #3 says so (a part every page shares, or a "nothing changed" proof);
+  otherwise pass the touched pages + a few control pages as `/path` arguments (13.12 #1 (ค)) — the steps below are the
+  same, only the page list is shorter.
 - A round that must not change the site needs proof that it did not ("0 changes" is the pass).
 - Not for line-break quality inside a Thai block — that is `scripts/wordbreak-scan.js` +
   `scripts/wb-diff.js` (round-close step 1); this skill finds WHAT text changed, those find WHERE
@@ -101,8 +104,8 @@ Write `_incoming/<round>/brief-designer-<batch>.md` with:
 4. what is NOT covered (groups not shot and why; pages that failed to scan);
 5. the report shape: the five fields of 13.5.
 
-When the designer is called: per tier-B batch in the order of HANDOFF §17 "Two-tier rule", and once at
-the round close (round-close step 2) — with these crops only, never the whole site.
+When the designer is called: only per `.claude/TEAM_RULES.md` 13.12 #4 (a new look, slot or component), for a batch
+or at the round close (round-close step 2) — with these crops only, never the whole site.
 
 ## Evidence to keep
 

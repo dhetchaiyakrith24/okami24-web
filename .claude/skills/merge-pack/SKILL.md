@@ -1,6 +1,6 @@
 ---
 name: merge-pack
-description: Build the pre-merge pack for an OKami24 round — `_incoming/<round>/owner-table.md`, the same shape every round — so Cowork and the owner decide the merge from one file: every change a customer sees (before → after, three languages, evidence), every head/meta change, the work done beyond the brief with keep/undo and how to undo, claims the round was told to have confirmed, and the full verify set with log paths. Use it at every round close, after the close point is pushed (a tag on the computer, the close commit in the cloud — round-close step 5) and before the 4-part report; also when Cowork asks "what does this merge change for customers".
+description: Build the pre-merge pack for an OKami24 round — `_incoming/<round>/owner-table.md`, the same shape every round — so Cowork and the owner decide the merge from one file: every change a customer sees (before → after, three languages, evidence), every head/meta change, the work done beyond the brief with keep/undo and how to undo, claims the round was told to have confirmed, and the full verify set with log paths. Use it at the close of full-set work or when title/meta/H1 may move (`.claude/TEAM_RULES.md` 13.12), after the close point is pushed (a tag on the computer, the close commit in the cloud — round-close step 5) and before the 4-part report; also when Cowork asks "what does this merge change for customers".
 ---
 
 # Merge pack
@@ -14,7 +14,8 @@ name into this file.
 
 ## When this applies
 
-- Every round close — after `round-close` step 5 (close point pushed), before its step 7 (the report).
+- A round close of full-set work (`.claude/TEAM_RULES.md` 13.12 #6), or one where title/meta/H1 may move (13.12 #1 (ฉ))
+  — after `round-close` step 5 (close point pushed), before its step 7 (the report). Light-set work skips it.
 - Cowork asks what a merge changes for customers.
 - Who merges = 13.7; deploy = 13.7 too (a merge that touches the site goes live by itself after the GitHub checks —
   nobody deploys by hand). This pack is what whoever merges reads first, so it carries the full verify set with

@@ -1,6 +1,6 @@
 ---
 name: doc-keeper
-description: เรียกเมื่อ ปิดก้อน — เท่านั้น (เริ่มพร้อม checker ได้) · ผู้ดูแลเอกสารของ okami24 อัปเดต docs/HANDOFF.md §16 · docs/THAI_STYLE_LOG.md §7 · แถว docs/ROUND_COST.md ตอนปิดรอบ ตามที่ก้อนนั้นทำจริง (จาก hash · รายงาน checker 5 ช่องถ้ามาแล้ว · file:line ที่ตัวหลักส่งให้ — แล้วอ่านไฟล์จริงเอง) เขียนได้เฉพาะไฟล์ใน docs/ ห้ามแตะโค้ด ห้าม git
+description: เรียกเมื่อ ปิดก้อน — เท่านั้น (เริ่มพร้อม checker ได้) · ผู้ดูแลเอกสารของ okami24 อัปเดต docs/HANDOFF.md §16 · docs/THAI_STYLE_LOG.md §7 · แถว docs/ROUND_COST.md ตอนปิดรอบใหญ่/โปรเจกต์ยาว (13.12 item 7) ตามที่ก้อนนั้นทำจริง (จาก hash · รายงาน checker 5 ช่องถ้ามาแล้ว · file:line ที่ตัวหลักส่งให้ — แล้วอ่านไฟล์จริงเอง) เขียนได้เฉพาะไฟล์ใน docs/ ห้ามแตะโค้ด ห้าม git
 tools: Read, Grep, Glob, Edit, Write
 model: sonnet
 ---
@@ -42,10 +42,10 @@ facts, in the format the files already use.
    `git log --oneline origin/main..<branch>` — plus only what git cannot tell: the round's rollback point, the open PR
    number and who merges it; never a commit list, never a list of old tags — `git tag -n1` / `docs/RECOVERY.md` §2 hold those) ·
    which round is open and where it stopped (incl. the first next step, and — when a chat moves mid-batch per
-   `.claude/TEAM_RULES.md` 13.6 "ย้ายแชทในเว็บ" — the `wip/…` branch holding the unfinished files, their names, and any background job still running)
+   `.claude/TEAM_RULES.md` 13.6 "ย้ายแชทในเว็บ" — which commits on the work branch are not yet checked (13.12 #5; no `wip/…` branch since 2026-09-27), and any background job still running)
    · what is waiting on the owner · open questions ·
    **the verify baseline at the last close** (item 6, owner order 2026-09-21: the pass counts of
-   the full verify set as printed at the most recent round close — the only place those numbers
+   the full verify set as printed at the most recent close that ran the full set (name that round — a light-set close, `.claude/TEAM_RULES.md` 13.12, leaves item 6 as it was) — the only place those numbers
    live; rewrite them only at a close whose scripts printed new totals, never estimate them).
    It is **not a work history** — history goes to §3 ("เพิ่งทำล่าสุด") and the round's own
    section. Keep §16 under **15 KB**; if a batch pushes it over, move the oldest non-current
@@ -66,8 +66,9 @@ facts, in the format the files already use.
    reasons, the style book is for rules.
 3. **`docs/LAUNCH_AUDIT.md`** only if the main agent names the item number; touch that row and
    the "สถานะปัจจุบัน" head only. Never read the whole file.
-4. **`docs/ROUND_COST.md`** — at a round close only: add the round's one row (shape and columns = that file's
-   header). Never edit an older row.
+4. **`docs/ROUND_COST.md`** — at the close of a big round or a long project only (`.claude/TEAM_RULES.md` 13.12 #7 —
+   the main agent says so in the brief): add the round's one row (shape and columns = that file's header). Never edit
+   an older row.
 
 # Where the facts come from
 
