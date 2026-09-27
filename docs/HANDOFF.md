@@ -847,6 +847,12 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
+(v82 opening line — main agent, round open 28/09; items 1–6 below are still v81 — main has since moved to `093b07a` (PRs #92–#94 merged))
+OPEN ROUND: "รอบรูป" (image audit, computer) · instruction `docs/rounds/รอบรูป-ตรวจทั้งร้าน.txt` · branch `image-audit` ·
+  batches: B1 measure every image + standard from the G5 set (tier A, no site change) · B2 manufacturer lists + gap
+  sources (researchers) · B3 parts-section 3-way comparison · B4 report page + fix plan (owner picks) — this round does
+  not change the site. Tool: `scripts/image-quality-audit.ts`; round files `_incoming/image-round/` (computer only).
+
 (v81 — written by the main agent at the rules-table batch close, 13.6)
 1 main: `origin/main` = `666aa4f` (PR #91 merged: VideoObject `uploadDate` with +07:00, live 20:12 UTC; argus-g4 keeps
   date-only until 05/10) [ตรวจแล้ว]. Earlier this round: #87 `989071b` · #88 · #89 `50e007f` · #90 `360dd12`. Cloud
