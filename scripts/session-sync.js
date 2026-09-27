@@ -8,12 +8,11 @@
 //   2 update     on a clean branch that is only BEHIND its upstream → `git merge --ff-only` (never a merge commit, never
 //                a reset, never touches uncommitted work). Dirty · ahead · diverged · detached = warning, nothing moved.
 //   3 re-read    the update changed a file Claude Code loads at chat open (CLAUDE.md · AGENTS.md · TEAM_RULES · memory ·
-//                .claude/rules/) → the context lists them: the copy loaded may be the old one, re-read before working.
+//                .claude/rules/) → the context lists them: the copy loaded IS the old one — Claude Code reads the rules
+//                before this hook runs (measured on the computer 2026-09-27, docs/cloud-results/roundC.md) — re-read before working.
 //   4 drafts     computer only: each round file in the OneDrive draft folder that also exists in git (docs/rounds/ on
 //                this checkout, or rounds/ on origin/inbox) must be the same text — a difference = warning.
-//   5 probe      writes a fresh nonce to _incoming/session-probe.md, which CLAUDE.md imports — tells whether this hook
-//                runs before or after Claude Code reads the rules (not documented; see the block below)
-//   6 cloud      CLAUDE_CODE_REMOTE=true → then runs `prepare-clone.js --session-start` (after the fetch, never beside it:
+//   5 cloud      CLAUDE_CODE_REMOTE=true → then runs `prepare-clone.js --session-start` (after the fetch, never beside it:
 //                two git fetches at once fight over the ref lock).
 // Output = the hook JSON: `systemMessage` = one Thai line the owner sees · `additionalContext` = the English lines for
 // Friday. Always exits 0 (a SessionStart hook cannot stop a chat; the warning is the stop sign — central §1).
@@ -147,28 +146,7 @@ if (!CLOUD && fs.existsSync(DRAFTS)) {
   );
 }
 
-// 5 probe — does this hook run BEFORE Claude Code reads CLAUDE.md and its imports? (not documented; round C test)
-// The repo CLAUDE.md imports _incoming/session-probe.md (_incoming/ is gitignored). This run writes a fresh nonce
-// there; the chat compares the probe line it was given at load with the nonce below: same = the hook ran first and the
-// chat already saw the updated rule files (RE-READ lines are then only a safety net) · older or none = rules load first.
-if (!DRY) {
-  const nonce = require("crypto").randomBytes(4).toString("hex");
-  try {
-    fs.mkdirSync(path.join(ROOT, "_incoming"), { recursive: true });
-    fs.writeFileSync(
-      path.join(ROOT, "_incoming", "session-probe.md"),
-      `session-probe: ${nonce} (written by scripts/session-sync.js at ${new Date().toISOString()})\n`,
-    );
-    ctx.push(
-      `PROBE: this run wrote session-probe ${nonce}. The session-probe line loaded with CLAUDE.md shows ${nonce} = ` +
-        `the hook ran before the rules were read; another value or none = the rules were read first.`,
-    );
-  } catch (e) {
-    ctx.push(`PROBE: could not write _incoming/session-probe.md (${e.message})`);
-  }
-}
-
-// 6 cloud
+// 5 cloud
 if (CLOUD && !DRY) {
   const p = spawnSync(process.execPath, [path.join(__dirname, "prepare-clone.js"), "--session-start"], {
     cwd: ROOT,
