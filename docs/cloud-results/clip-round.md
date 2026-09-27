@@ -79,3 +79,23 @@ node en/zh; remaining Thai nodes are pre-existing (pod-159/180 spec rows, a rela
 Article H1 two-line leading at 390: the fix is in the guide header shared by all 12 guides (not only the touched ones)
 and the note was "not colliding yet" → its own tier-B pass. G4 black button: which G4 page is not named; argus-g4 is a
 baseline page (forbidden). Related-products card at 390: the component sits on every product and guide page → same.
+
+## After PR #87 — merge, deploy, PR 2 (owner's answers, 2026-09-27)
+
+- PR #87 merged by Friday (owner "merge #87 เลย") → merge commit `989071b`. GitHub Actions run 36340746729: checks passed,
+  job `deploy` → notice "deploy started · commit 989071b · Render deploy dep-dasm1h8u01pc73ci6c8g" (step summary
+  "### DEPLOY started — commit 989071b"). Live site served the new clips at 18:32:45 UTC (curl on /brands/salthub, ~2 min
+  after the hook). Live VideoObject check: 14 blocks on the 13 clip pages, 0 missing a required field; argus-g4 block
+  byte-identical to the base build.
+- Deleting branch `wip/clip-round-b1-1` from the cloud failed: `send-pack: unexpected disconnect while reading sideband
+  packet` / `fatal: the remote end hung up unexpectedly` — stopped there (13.4 #9); `wip/clip-round-b2-1` also to delete.
+- PR 2 (owner rulings): marbo guide keeps the 54K clip only (QptFMwIXbJE removed, the two-clip mechanism of PR #87
+  removed again) · en/zh line under a clip whose Thai title is hidden: en "Hands-on review (in Thai)", zh "真机试用（泰语讲解）"
+  (writer's alternative, chosen over "上手实测（泰语）" to avoid reading as a measured test) · disposables clip
+  uQnQwH5_0qg **not placed**: of its 5 models only M Switch (sold) and "Insta Bar" (no product on the site) are readable
+  in the frames, 3 unreadable — the owner's condition "only if the models are still sold" cannot be confirmed ·
+  MmesPKLafqA not placed (owner).
+- PR 2 proof: visible text 20 pages × th/en/zh × 390/1440 = 8 groups (the new line on 12 pages en/zh, the old marbo clip
+  gone th); server HTML identical 6/8 (the 2 guide diffs = Article dateModified from PR #87's content-dates, already on
+  main); VideoObject 20 blocks / 0 failing; scan.js 0/104; locale-hydration 0 Thai nodes on 16 page×locale; tsc 0;
+  i18n 16/16; review-video contract 7/7. Designer pass (no fix). Checker PASS 6/6.
