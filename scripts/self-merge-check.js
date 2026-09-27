@@ -54,6 +54,23 @@ function git(args) {
   return execFileSync("git", ["-c", "core.quotePath=false", ...args], { cwd: ROOT, encoding: "utf8" });
 }
 
+// A git C-quoted path ("…" with \ooo octal bytes and \" \\ \t \n escapes) → the real UTF-8 path; anything else as is.
+function unquoteGitPath(line) {
+  const s = line.trim();
+  if (!(s.length >= 2 && s.startsWith('"') && s.endsWith('"'))) return line;
+  const bytes = [];
+  const body = s.slice(1, -1);
+  for (let i = 0; i < body.length; i++) {
+    const c = body[i];
+    if (c !== "\\") { bytes.push(...Buffer.from(c, "utf8")); continue; }
+    const nxt = body[i + 1];
+    if (/[0-7]/.test(nxt)) { bytes.push(parseInt(body.slice(i + 1, i + 4), 8)); i += 3; continue; }
+    bytes.push(({ n: 10, t: 9, '"': 34, "\\": 92 })[nxt] ?? nxt.charCodeAt(0));
+    i += 1;
+  }
+  return Buffer.from(bytes).toString("utf8");
+}
+
 function changedFiles(argv) {
   const fl = argv.indexOf("--files"); // dry run on a given list (comma-separated) - for testing the gate itself
   if (fl !== -1) return (argv[fl + 1] || "").split(",").join("\n");
@@ -62,7 +79,10 @@ function changedFiles(argv) {
     const n = argv[pr + 1];
     if (!/^\d+$/.test(n || "")) throw new Error("--pr needs a PR number");
     try {
-      return execFileSync("gh", ["pr", "diff", n, "--name-only"], { cwd: ROOT, encoding: "utf8" });
+      // `gh pr diff --name-only` prints a Thai (non-ASCII) path git-quoted: "docs/rounds/\340\270\243…txt" — which then
+      // fails the allow-list (round B 2026-09-27: 49 Thai-named docs/rounds files BLOCKED PR #74). Unquote it back.
+      const out = execFileSync("gh", ["pr", "diff", n, "--name-only"], { cwd: ROOT, encoding: "utf8" });
+      return out.split("\n").map(unquoteGitPath).join("\n");
     } catch (e) {
       if (e.code !== "ENOENT") throw e;
       console.log("no `gh` here (the cloud) - check out the PR branch and run without --pr");
