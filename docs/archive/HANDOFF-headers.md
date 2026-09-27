@@ -54,3 +54,7 @@ gap doc-keeper cannot fill without inventing text (reported to the main agent, n
 ## Line 1 at v79, before v80 (2026-09-27, round "ฝังคลิป" follow-up push), verbatim
 
 # OKami24 — HANDOFF · v79 · 2026-09-27 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+
+## Line 1 at v80, before v81 (2026-09-28, rules-table batch close), verbatim
+
+# OKami24 — HANDOFF · v80 · 2026-09-27 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)

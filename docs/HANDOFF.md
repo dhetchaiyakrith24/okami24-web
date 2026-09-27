@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v80 · 2026-09-27 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v81 · 2026-09-28 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -847,32 +847,30 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-(v80 — written by the main agent on a mid-round push, 13.6; replaces v79, which predated PRs #88–#90)
-1 main: `origin/main` = `360dd12` (PR #90 merged) [ตรวจแล้ว, `git log -1 origin/main` 2026-09-27]. This round's
-  merges, all by Friday: #87 `989071b` (clips + VideoObject fix; self-deployed, "DEPLOY started", live 18:32 UTC) ·
-  #88 (marbo guide = 54K clip only · en/zh line "Hands-on review (in Thai)" / "真机试用（泰语讲解）") · #89 `50e007f`
-  (disposables clip uQnQwH5_0qg, owner confirmed all 5 models sold; live 19:30 UTC) · #90 `360dd12` (rules:
-  `.claude/TEAM_RULES.md` 13.12 light check set + alignment across skills/agents/guides; no site files → no deploy).
-  Cloud round → no tags; rollback = revert the merge commit. Branches `wip/clip-round-b1-1` / `-b2-1` deleted by Javis.
-2 ahead of main: branch `claude/embed-shop-clips-video-data-zp715x` — `44f6935` fix(seo): VideoObject `uploadDate`
-  carries a time zone (`YYYY-MM-DDT00:00:00+07:00`, owner request from GSC data 26/09 "uploadDate ไม่ได้ระบุเขตเวลา";
-  argus-g4 keeps the date-only value until 05/10 — SEO baseline frozen) + this docs commit. PR + checker pending
-  at this push; owner pre-approved merge once checker passes and CI is green.
-3 round: round "ฝังคลิป" (cloud) — main work merged (#87–#89); follow-ups on the same branch: the uploadDate time zone
-  fix (item 2). Full record: `docs/cloud-results/clip-round.md`. Also asked by the owner 27/09: a review of Friday's own
-  rules for ones that are stricter than the work needs — **proposal only, owner decides before any edit**.
+(v81 — written by the main agent at the rules-table batch close, 13.6)
+1 main: `origin/main` = `666aa4f` (PR #91 merged: VideoObject `uploadDate` with +07:00, live 20:12 UTC; argus-g4 keeps
+  date-only until 05/10) [ตรวจแล้ว]. Earlier this round: #87 `989071b` · #88 · #89 `50e007f` · #90 `360dd12`. Cloud
+  round → no tags; rollback = revert the merge commit.
+2 ahead of main: branch `claude/embed-shop-clips-video-data-zp715x` — owner's 12-item rules table (ruled 28/09):
+  `35720a9` rules text (TEAM_RULES 13.3/13.6/13.7/13.10 #1/13.12 · checker · designer · doc-keeper · thai-copy ·
+  rule-/scope-auditor · skills round-open/round-close/okami24-handoff/thai-check/merge-pack · TEMPLATES ·
+  AI_TEAM_GUIDE · RECOVERY · HANDOFF §17) · `582c0f2` pre-push token hook stays dormant · `14c62b9` self-merge-check
+  SITE line text · this §16 commit. PR BIG (edits 13.7 + a gate script) — owner answered before merge in the ruling.
+3 round: round "ฝังคลิป" (cloud) — clips + VideoObject work merged (#87–#91); the rules table rides the same branch.
+  Record: `docs/cloud-results/clip-round.md`. Central rules: Javis opens the `smogz-rules` PR for 4 points (item 20
+  "123 = direction" · item 23 proof by risk · §6 reference image non-blocking · Javis role) — the web copy
+  `.claude/rules/central-rules.md` arrives as a sync PR afterwards (BIG list item (1)).
   Previous round: round C (computer) — CLOSED + MERGED (PR #86), record `docs/cloud-results/roundC.md`; older rounds §3.
 4 waiting on owner / Javis:
-  (a) Javis in GSC: "ตรวจสอบการแก้ไข" on the 7 video pages + request indexing of the pages with new clips
-  (/brands/salthub · /guides/coil-and-pod-maintenance · /guides/choosing-a-marbo-flavor · /products/muro-connector-20k
-  · /products/disposables); after the time-zone PR deploys, re-validate the "valid with warnings" video items.
-  (b) owner rules on the rules-review table (item 3).
+  (a) GSC "ตรวจสอบการแก้ไข" done by Javis 28/09 — nothing more to do.
+  (b) removing the dormant pre-push token hook (`.githooks/pre-push` + `scripts/pending-check.js`) — refused by the
+  cloud safety check 28/09; owner/Javis may remove it from the computer, or keep it (harmless: nothing writes the token).
   (c) cloud Chromium cannot load `i.ytimg.com` thumbnails in screenshots (cert chain) — a tool-side fix needs the
   owner's OK first.
   (d) carried unchanged from v79 item 4 (e)–(j): GSC reports on branch `gsc-data` · `_incoming/next-round-notes.md`
   on the owner's computer · `_incoming/zz-to-delete-roundB/` · round B stop-2 items 8–12 · Artifact test link
   `https://claude.ai/artifact/TuQkJ54AAMknjaj7co1ys9` [รอเจ้าของ] · round C's B3 ON HOLD.
-4b/4c permanent rulings: unchanged from v79 (see `docs/archive/` or git history of this file) + 27/09: light check set
+4b/4c permanent rulings: unchanged from v79 (git history of this file) + 28/09: owner's 12-item rules table (TEAM_RULES) + 27/09: light check set
   13.12 (5 items + timing only on big rounds/long projects) · disposables clip placed · MmesPKLafqA not placed ·
   marbo guide one clip (54K) · salthub card width kept.
 5 open questions: none new beyond item 4(b)/(c). Older backlog carried unchanged (v79 item 5 "Older backlog", full
