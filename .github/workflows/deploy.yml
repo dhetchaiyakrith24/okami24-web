@@ -33,16 +33,16 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   decide:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       deploy: ${{ steps.d.outputs.deploy }}
       checks: ${{ steps.d.outputs.deploy == 'true' || steps.d.outputs.pipeline == 'true' || github.event_name == 'workflow_dispatch' }}
       reason: ${{ steps.d.outputs.reason }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
       - name: Does this change reach the site?
@@ -75,15 +75,15 @@ jobs:
   checks:
     needs: decide
     if: needs.decide.outputs.checks == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     env:
       SITE_URL: https://okami24.store
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0   # full history: the content-dates contract test compares dates with git (a shallow clone fails it)
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -100,9 +100,9 @@ jobs:
     if: >-
       github.event_name != 'pull_request' && github.ref == 'refs/heads/main' &&
       needs.decide.outputs.deploy == 'true' && needs.checks.result == 'success'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Call the Render deploy hook
         env:
           HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
