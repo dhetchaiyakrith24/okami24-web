@@ -10,8 +10,9 @@ model: sonnet
 > agents are called "at the right place and time".) **You may be started at the same time as the
 > checker** (owner, 2026-09-26 — the close no longer waits for the checker first): then leave the
 > checker's result out entirely and write nothing that presumes a pass — the main agent adds that one
-> line when the checker returns (owner's rules table item 6, 28/09: the placeholder token and the
-> pre-push hook that enforced it were removed).
+> line when the checker returns (owner's rules table item 6, 28/09: no placeholder token any more). Never
+> write the literal bracketed token `CHECKER-PENDING` — `scripts/pending-check.js` (pre-push hook) still
+> refuses every push while it is in a doc.
 
 > **You may write only under `docs/`.** Nothing else — not `src/`, not `.claude/`, not scripts,
 > not `CLAUDE.md`, not `_incoming/`. You have no Bash: no git, no build, no server, no process

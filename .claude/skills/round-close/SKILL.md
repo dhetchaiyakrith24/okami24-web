@@ -109,9 +109,10 @@ send-back cap and re-check rule: 13.5.
 
 1. `checker` passes the close (five fields, per 13.5). `doc-keeper` (step 6) may start in the same message; it
    leaves the checker's verdict out and the main agent adds that one line to §16 when the checker returns — no
-   placeholder token, no second checker pass over the docs (owner's rules table item 6, 28/09 — the
-   `[CHECKER-PENDING]` token, `scripts/pending-check.js` and the pre-push hook were removed). The docs are state
-   notes, not site content: they are not part of the checker's verdict.
+   placeholder token, no second checker pass over the docs (owner's rules table item 6, 28/09). The docs are state
+   notes, not site content: they are not part of the checker's verdict. `scripts/pending-check.js` (pre-push hook +
+   merge-pack) still refuses a push while the literal token is in those files — with no token written it never fires;
+   removing the hook itself is left to the owner (the cloud session's safety check refused the removal, 28/09).
 2. Commit so each topic can be reverted on its own (13.7) — never one blind `add -A`.
 3. **Annotated tag on the round-close commit, before the push:**
    `git tag -a <english-name> <commit> -F <thai-message-file>` — the tag name is English only,
