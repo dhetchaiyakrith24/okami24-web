@@ -36,8 +36,7 @@ the standing list is:
 - `.claude/rules/central-rules.md` (central rules, §1–§12 — the synced copy; never skip it). Not in the repo yet
   (before the first sync) = read `~/.claude/CLAUDE.md` instead; neither readable = say so in the report.
 - `.claude/TEAM_RULES.md` (section 13 + its web-specific §3/§6/§8 block + the "ย้ายมาจาก memory 25/09" block)
-  · `.claude/GLOBAL_RULES_MIRROR.md` = retired old copy (round B 2026-09-27; may still exist until the Javis PR removes
-  it) — a difference from the central rules is not a finding · skip `.claude/worktrees/` (other checkouts, not this repo)
+  · skip `.claude/worktrees/` (other checkouts, not this repo)
 - `CLAUDE.md` at the repo root (a different file — imports `AGENTS.md`, `.claude/TEAM_RULES.md` and
   `.claude/memory/MEMORY.md`) · `.claude/memory/*.md` (Friday's memory, loaded every chat)
 - `docs/CLOUD.md` (cloud capability table + how a round opens in the cloud) · `docs/rounds/README.md`
