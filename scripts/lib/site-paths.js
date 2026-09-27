@@ -84,9 +84,14 @@ function hookScripts() {
   return out;
 }
 
+// Scripts run by hand in the Render Shell against the live database — they count as the site (owner ruling Q3,
+// round B "housekeeping" 2026-09-27): a change must reach Render (deploy) before the Shell runs it, and Friday does
+// not merge it herself. Named in docs/DEPLOY-RENDER.md; add a line here when a doc tells the owner to run another.
+const RENDER_SHELL = ["scripts/line-clicks.js"];
+
 // Scripts under scripts/ that the Render build or the live server runs — they ARE the site.
 function buildScripts() {
-  const out = new Set(["scripts/native-probe.js"]); // run by src/lib/db/startup-check.ts at every server start
+  const out = new Set(["scripts/native-probe.js", ...RENDER_SHELL]); // native-probe: run by src/lib/db/startup-check.ts at every server start
   try {
     const y = fs.readFileSync(path.join(ROOT, "render.yaml"), "utf8");
     for (const m of y.matchAll(/scripts\/[\w.\-\/]+/g)) out.add(m[0]);
@@ -123,6 +128,7 @@ function walk(dir) {
 
 // → "" when the file never reaches the site, else the reason it does.
 function siteReason(file, build = buildScripts()) {
+  if (RENDER_SHELL.includes(file)) return "run by hand in the Render Shell against the live database";
   if (build.has(file)) return "run by the Render build or the live server";
   if (!OFF_SITE.some((re) => re.test(file))) return "not on the off-site list (src/ public/ data package config … or unknown)";
   return "";
@@ -132,4 +138,4 @@ function javisOnly(file, hooks = hookScripts()) {
   return hooks.has(file) || JAVIS_ONLY.some((re) => re.test(file));
 }
 
-module.exports = { OFF_SITE, JAVIS_ONLY, buildScripts, hookScripts, siteReason, javisOnly, ROOT };
+module.exports = { OFF_SITE, JAVIS_ONLY, RENDER_SHELL, buildScripts, hookScripts, siteReason, javisOnly, ROOT };
