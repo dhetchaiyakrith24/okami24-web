@@ -44,6 +44,7 @@
 | Round A "pipes" (cloud, GitHub Actions deploy gate + self-merge scope + Friday's first cloud self-merge) | 2026-09-27 | 0 | 1 | 6 | 1 | 1 | 7 (+ this close commit) | `docs/cloud-results/roundA-pipes.md` |
 | Round B "housekeeping" (computer — rules + docs + branch/file cleanup, no site change) | 2026-09-27 | 0 | 0 | 16 `_incoming/roundB/` | 3 | 1 | `[ยังไม่มีข้อมูล]` (see git log after round close) | `docs/cloud-results/roundB-housekeeping.md` |
 | Round C "คอมตรงGit-กฎกลางที่เดียว-merge-ภาพ-GSC" (computer — session-sync hook + new merge rule + cloud CA + GSC export, no site change) | 2026-09-27 | 0 | 0 | 11 [เชื่อว่า, brief-close.md] | 1 (the close: "probe" wording left in 2 comments) | [ยังไม่มีข้อมูล] | 8 (+ this close commit) | `docs/cloud-results/roundC.md` |
+| Round "ฝังคลิป" (cloud — shop clips on their search-term pages + valid VideoObject JSON-LD, tier B, one batch) | 2026-09-27 | 19 | 4 | 5 | 0 | [ยังไม่มีข้อมูล] | 4 (+ this close commit) | `docs/cloud-results/clip-round.md` |
 
 ## What cost the most (8.4 — from the numbers above, [ตรวจแล้ว] unless tagged)
 
