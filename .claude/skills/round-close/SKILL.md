@@ -1,6 +1,6 @@
 ---
 name: round-close
-description: Close a work round for the OKami24 site after the last batch passed the checker. Use it for every round close, whatever the round's name. It sequences the word-break scan and diff on the touched pages, the single designer pass (tier B only), the full verify set, the one-commit fix of what the close found, the annotated tag + tag push, the handoff-block and round-cost updates, and the 4-part report with its length rule. It names the checks but never their expected numbers — the pass criterion is always what each script itself defines.
+description: Close a work round for the OKami24 site after the last batch passed the checker. Use it for every round close, whatever the round's name. It sequences the word-break scan and diff on the touched pages, the single designer pass (tier B only), the full verify set, the one-commit fix of what the close found, the annotated tag + tag push (a cloud round: the close commit instead), the handoff-block and round-cost updates, and the 4-part report with its length rule. It names the checks but never their expected numbers — the pass criterion is always what each script itself defines.
 ---
 
 # Round close
@@ -73,7 +73,10 @@ the checker quotes the printed totals in its report — this file never states t
   `npx tsx scripts/content-dates.ts --check` — `verify:catalog` fails while the generated dates
   are older than git (added 2026-09-22, round "search-price")
 
-Save every log under `_incoming/<round>/` and cite the paths in the report.
+Save every log under `_incoming/<round>/` and cite the paths in the report. **In the cloud** `_incoming/` dies with
+the container and nobody else can open it: also write the round's evidence summary to `docs/cloud-results/<round>.md`
+(one file per round, committed with the docs batch) — every command, its printed totals, and any error text quoted
+exactly; screenshots go to a private Artifact page instead (`docs/CLOUD.md`), never into git.
 
 ## When the round added a gate — break it red before trusting it (ทำลายด่านใหม่ให้แดงก่อนเชื่อ)
 
@@ -114,19 +117,22 @@ send-back cap and re-check rule: 13.5.
    can read. Then `git push` and `git push origin --tags`. The tag rule lives in 13.7; the
    name-to-meaning table the owner reads is `docs/RECOVERY.md` "อยากกลับไป ก่อนรอบไหน" — add the
    new tag's row there (name · meaning · hash · date).
-4. Merge and deploy are Cowork's job (13.7) — the one exception, a PR that touches nothing a customer
-   sees, is decided by `node scripts/self-merge-check.js --pr <n>` and its conditions live in 13.7 only.
-   Deploy is never yours.
+   **In the cloud: no tag** (a tag push is refused, `HTTP 403`; 13.7) — the close point is the round-close commit.
+   Name the base commit (rollback point) and the close commit in the report and in `docs/cloud-results/<round>.md`,
+   and write the RECOVERY row with the round's name in the tag column and the close commit's hash.
+4. Merge is Cowork's job (13.7) — the one exception, a PR Friday may merge herself, is decided by
+   `node scripts/self-merge-check.js` on the PR's head commit and its conditions live in 13.7 only.
+   Deploy is never yours (a merge to main that touches the site deploys itself after the GitHub checks — 13.7).
 
 ## Step 6 — Documents that close the round
 
-- `docs/HANDOFF.md` §16: the "open round" item becomes "none — <round> closed" with the tag name;
+- `docs/HANDOFF.md` §16: the "open round" item becomes "none — <round> closed" with the tag name (a cloud round: the close commit);
   main / branch-ahead / waiting-on-owner / open-questions refreshed (spec: `.claude/agents/doc-keeper.md`;
   the handoff conditions: 13.6).
 - `docs/ROUND_COST.md`: **add one row** for the round (doc-keeper) — its shape and how each column is counted = the
   file's own header, the one place.
 - Round-specific entries in `docs/THAI_STYLE_LOG.md` §7 if the round touched site copy (doc-keeper).
-- The pre-merge pack `_incoming/<round>/owner-table.md` = skill `merge-pack` (after the tag push, before the report);
+- The pre-merge pack `_incoming/<round>/owner-table.md` = skill `merge-pack` (after the push — and the tag push on a computer round — before the report);
   its path goes into §16 "waiting on the owner" and into the report.
 
 ## Step 7 — The 4-part report (Thai, template (ข) in `docs/TEMPLATES.md`)

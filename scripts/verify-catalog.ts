@@ -132,6 +132,8 @@ async function runFullLeakageCheck(): Promise<boolean> {
   const { spawn } = await import("node:child_process");
   const child = spawn("npx", ["next", "start", "-p", String(port)], {
     shell: process.platform === "win32",
+    // Linux/macOS: its own process group, so the finally block can stop npx AND the next-server under it (round A "pipes")
+    detached: process.platform !== "win32",
     env: { ...process.env, SITE_URL: process.env.SITE_URL ?? "https://okami24.store" },
     stdio: "ignore",
   });
@@ -169,9 +171,35 @@ async function runFullLeakageCheck(): Promise<boolean> {
     // port after a plain `child.kill()`). `taskkill /T` kills the whole process tree instead.
     if (process.platform === "win32" && child.pid) {
       spawnSync("taskkill", ["/pid", String(child.pid), "/T", "/F"], { stdio: "ignore" });
-    } else {
-      child.kill();
+    } else if (child.pid) {
+      // Linux had the same orphan: `child.kill()` stopped npx and left next-server serving 3411 (round "mobile" topic 12).
+      // The child leads its own process group (detached above) — signal the whole group, then prove the port is free.
+      for (const sig of ["SIGTERM", "SIGKILL"] as const) {
+        try {
+          process.kill(-child.pid, sig);
+        } catch {
+          /* group already gone */
+        }
+        if (await portFreed(port, 5000)) break;
+      }
+      const freed = await portFreed(port, 0);
+      results.push({ name: `next start on ${port} stopped (no server left behind)`, ok: freed, durationMs: 0, output: freed ? undefined : `port ${port} still answers after SIGTERM + SIGKILL of the process group` });
+      if (!freed) console.log(`  LEFT BEHIND: a server still answers on ${port}`);
     }
+  }
+}
+
+async function portFreed(port: number, withinMs: number): Promise<boolean> {
+  const deadline = Date.now() + withinMs;
+  for (;;) {
+    try {
+      await fetch(`http://localhost:${port}/`, { signal: AbortSignal.timeout(1000) });
+    } catch (e) {
+      // refused = nothing listens; a timeout means something still holds the port
+      if ((e as { cause?: { code?: string } }).cause?.code === "ECONNREFUSED") return true;
+    }
+    if (Date.now() >= deadline) return false;
+    await new Promise((r) => setTimeout(r, 250));
   }
 }
 

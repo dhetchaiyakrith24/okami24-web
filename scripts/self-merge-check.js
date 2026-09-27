@@ -1,18 +1,25 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
-// self-merge-check.js — may Friday (the main agent) merge this PR herself? (TEAM_RULES 13.7, owner ruling 2026-09-26)
+// self-merge-check.js — may Friday (the main agent) merge this PR herself? (TEAM_RULES 13.7 — owner rulings 2026-09-26,
+// widened to the cloud in round A "pipes" 2026-09-27, with the owner's two exceptions of 27/09)
 //
-// Rule: a PR that touches nothing a customer can see (no src/, no public/, no product data, nothing the
-// Render build runs) may be merged by Friday once the checker passed and every GitHub check is green.
-// Anything else = Javis merges + deploys. "Not sure it touches = it touches" -> this is an ALLOW-list:
-// a path that matches no allowed pattern is BLOCKED, so a new top-level folder is blocked until listed here.
+// Rule: a PR whose files all stay off the live site (the one list: scripts/lib/site-paths.js, shared with the deploy
+// gate) and touch nothing Javis-only (what runs by itself: .claude/settings* · hooks · .githooks/ · scripts a hook runs ·
+// .github/ · plus the central-rules copies and the gate files) may be merged by Friday — on the computer or in the
+// cloud — once the checker passed and every GitHub check is green. Skills · agents · web rules in .claude/ = hers.
+// Anything else = Javis merges. "Not sure it touches = it touches": the list is an ALLOW-list.
 //
 // Usage:
-//   node scripts/self-merge-check.js                 # diff origin/main...HEAD (local branch)
-//   node scripts/self-merge-check.js --pr 68         # the files of GitHub PR #68 (needs gh)
-//   node scripts/self-merge-check.js --base <ref>    # every change since <ref>, committed or not + untracked (proof sizing)
-//   node scripts/self-merge-check.js --files a,b     # dry run on a list (tests of the gate)
-// Last line: PASS (Friday may merge after checker + green checks) or BLOCKED (Javis merges). Exit 0 / 1.
+//   node scripts/self-merge-check.js                 # diff origin/main...HEAD — the PR's files when HEAD = the PR head
+//                                                    #   (works anywhere; `git fetch origin main` first)
+//   node scripts/self-merge-check.js --pr 68         # the files of GitHub PR #68 via `gh` (computer only) — run it on the
+//                                                    #   PR's branch: a local HEAD other than the PR head is BLOCKED
+//   node scripts/self-merge-check.js --files a,b     # a given list — gate tests only, NOT a merge verdict (no head pinned)
+//   node scripts/self-merge-check.js --base <ref>    # PROOF SIZING, not a merge verdict: every change since <ref>,
+//                                                    #   committed or not + untracked; judges "site touched?" only
+// Last line: PASS or BLOCKED. Exit 0 / 1. Also prints `HEAD <sha>` — merge exactly that commit (pin it in the merge call).
+// PASS is necessary, not sufficient: 13.7's other conditions (checker PASS · GitHub checks · no extras.md · not a PR
+// that edits 13.7's own merge line) are Friday's to check and report.
 "use strict";
 const { execFileSync } = require("child_process");
 const fs = require("fs");
@@ -20,54 +27,7 @@ const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
 
-// Allowed = docs, rules, skills, agents, helper scripts, repo notes. Order does not matter.
-const ALLOW = [
-  /^docs\//,
-  /^\.claude\/(?!rules\/|rules-source\.json$|settings|launch\.json$|GLOBAL_RULES_MIRROR\.md$)/, // rules copy = sync bot + Javis only; settings can change tool permissions; launch.json = the owner's dev server
-  /^scripts\//,
-  /^\.githooks\//,
-  /^(CLAUDE|AGENTS|README|ASSET_MANIFEST)\.md$/,
-];
-
-// Allowed by the patterns above but still blocked: this gate itself (a PR could widen its own allow-list),
-// and the restore copies of the central rules (touching them = touching the central rules).
-const DENY = [/^scripts\/self-merge-check\.js$/, /^docs\/archive\/claude-config-[^/]+\//];
-
-// Scripts the Render build or the live server runs are customer-facing even though they live under scripts/.
-function buildScripts() {
-  const out = new Set(["scripts/native-probe.js"]); // run by src/lib/db/startup-check.ts at every server start
-  try {
-    const y = fs.readFileSync(path.join(ROOT, "render.yaml"), "utf8");
-    for (const m of y.matchAll(/scripts\/[\w.\-\/]+/g)) out.add(m[0]);
-  } catch {
-    /* no render.yaml -> nothing extra blocked */
-  }
-  // path.join(..., "scripts", "<file>") in server code = a script the running site executes
-  for (const f of walk(path.join(ROOT, "src"))) {
-    const t = fs.readFileSync(f, "utf8");
-    for (const m of t.matchAll(/["']scripts["']\s*,\s*["']([\w.\-]+)["']/g)) out.add(`scripts/${m[1]}`);
-  }
-  try {
-    const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, "package.json"), "utf8"));
-    for (const k of ["build", "prebuild", "postbuild", "start", "prestart", "postinstall", "preinstall", "install"]) {
-      const v = (pkg.scripts || {})[k] || "";
-      for (const m of v.matchAll(/scripts\/[\w.\-\/]+/g)) out.add(m[0]);
-    }
-  } catch {
-    /* unreadable package.json -> caught by the allow-list anyway (package.json is not allowed) */
-  }
-  return out;
-}
-
-function walk(dir) {
-  const out = [];
-  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
-    const p = path.join(dir, e.name);
-    if (e.isDirectory()) out.push(...walk(p));
-    else if (/\.(ts|tsx|js|mjs|cjs)$/.test(e.name)) out.push(p);
-  }
-  return out;
-}
+const { siteReason, javisOnly, buildScripts, hookScripts } = require("./lib/site-paths");
 
 // Repo-level conditions: the rule is for this web repo only, and a merge must never become a deploy.
 function repoProblems() {
@@ -101,7 +61,14 @@ function changedFiles(argv) {
   if (pr !== -1) {
     const n = argv[pr + 1];
     if (!/^\d+$/.test(n || "")) throw new Error("--pr needs a PR number");
-    return execFileSync("gh", ["pr", "diff", n, "--name-only"], { cwd: ROOT, encoding: "utf8" });
+    try {
+      return execFileSync("gh", ["pr", "diff", n, "--name-only"], { cwd: ROOT, encoding: "utf8" });
+    } catch (e) {
+      if (e.code !== "ENOENT") throw e;
+      console.log("no `gh` here (the cloud) - check out the PR branch and run without --pr");
+      console.log("BLOCKED (could not read the PR's files)");
+      process.exit(1);
+    }
   }
   const b = argv.indexOf("--base");
   if (b !== -1) {
@@ -115,7 +82,9 @@ function changedFiles(argv) {
 }
 
 function main() {
-  const files = changedFiles(process.argv.slice(2))
+  const argv = process.argv.slice(2);
+  const sizing = argv.includes("--base");
+  const files = changedFiles(argv)
     .split(/\r?\n/)
     .map((s) => s.trim())
     .filter(Boolean);
@@ -125,21 +94,42 @@ function main() {
     process.exit(1);
   }
   const build = buildScripts();
+  const hooks = hookScripts();
   let blocked = 0;
-  for (const p of repoProblems()) {
-    blocked++;
-    console.log(`BLOCKED  (repo) ${p}`);
+  if (!sizing) {
+    for (const p of repoProblems()) {
+      blocked++;
+      console.log(`BLOCKED  (repo) ${p}`);
+    }
   }
   for (const f of files) {
-    let why = "";
-    if (build.has(f)) why = "run by the Render build or the live server";
-    else if (DENY.some((re) => re.test(f))) why = "gate itself / central-rules restore copy";
-    else if (!ALLOW.some((re) => re.test(f))) why = "not on the allow-list";
+    let why = siteReason(f, build);
+    if (!why && !sizing && javisOnly(f, hooks)) why = "Javis-only: runs by itself (settings · hooks · a script a hook runs) · .github/ · central-rules copy · gate file";
     if (why) blocked++;
     console.log(`${why ? "BLOCKED" : "ok     "}  ${f}${why ? `  (${why})` : ""}`);
   }
   console.log(`${files.length} files · ${blocked} blocked`);
-  console.log(blocked ? "BLOCKED - Javis merges this PR (TEAM_RULES 13.7)" : "PASS - Friday may merge after checker PASS + all GitHub checks green");
+  if (!argv.includes("--files")) {
+    let head = "";
+    try {
+      head = git(["rev-parse", "HEAD"]).trim();
+    } catch {
+      /* not a git checkout */
+    }
+    const pr = argv.indexOf("--pr");
+    if (pr !== -1 && !sizing) {
+      // the build/hook lists are read from the local tree, and the pin must be the PR's own head
+      const prHead = execFileSync("gh", ["pr", "view", argv[pr + 1], "--json", "headRefOid", "-q", ".headRefOid"], { cwd: ROOT, encoding: "utf8" }).trim();
+      if (prHead !== head) {
+        blocked++;
+        console.log(`BLOCKED  (repo) local HEAD ${head.slice(0, 7)} is not the PR head ${prHead.slice(0, 7)} - check out the PR branch first`);
+      }
+    }
+    if (head) console.log(`HEAD ${head}`);
+  }
+  if (sizing) console.log(blocked ? "BLOCKED - something on the site changed since the base" : "PASS - nothing on the site changed since the base (proof sizing only - not a merge verdict)");
+  else if (argv.includes("--files")) console.log(blocked ? "BLOCKED - list check (gate test, not a merge verdict)" : "PASS - list check (gate test, not a merge verdict: no head commit pinned)");
+  else console.log(blocked ? "BLOCKED - Javis merges this PR (TEAM_RULES 13.7)" : "PASS - Friday may merge after checker PASS + all GitHub checks green");
   process.exit(blocked ? 1 : 0);
 }
 
