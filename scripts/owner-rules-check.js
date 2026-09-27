@@ -46,7 +46,10 @@ const frozen = decl.frozen || null;
 const oldCentral = (decl.oldCentralRef ? body(gitShow(decl.oldCentralRef, '.claude/GLOBAL_RULES_MIRROR.md'), decl.oldCentralRef) : rd(path.join(repo, decl.oldCentral))).split('\n');
 const oldTeam = gitShow(decl.oldTeamRef, '.claude/TEAM_RULES.md').split('\n');
 const team = frozen ? gitShow(frozen.teamRef, '.claude/TEAM_RULES.md') : rd(path.join(repo, '.claude', 'TEAM_RULES.md'));
-const mirror = body(rd(path.join(repo, '.claude', 'GLOBAL_RULES_MIRROR.md')), 'working tree');
+// the mirror is retired (round B 2026-09-27, owner ruling item 4): once the file is gone, the history checks read it
+// from the git tags ("frozen" / "oldCentralRef") and the live check below is skipped
+const mirrorPath = path.join(repo, '.claude', 'GLOBAL_RULES_MIRROR.md');
+const mirror = fs.existsSync(mirrorPath) ? body(rd(mirrorPath), 'working tree') : null;
 // the live central text (round "central-rules", 2026-09-26): the synced copy .claude/rules/central-rules.md (same in
 // the cloud); before the first sync, ~/.claude/CLAUDE.md, which then still holds the full text
 const copyPath = path.join(repo, '.claude', 'rules', 'central-rules.md');
@@ -60,7 +63,9 @@ const log = decl.logFile ? rd(path.join(repo, decl.logFile)) : '';
 if (frozen) console.log(`frozen at ${frozen.teamRef}: TEAM_RULES + central from git (live mirror sync still checked)`);
 
 // 5. mirror
-if (central === null) console.log('central: no .claude/rules/central-rules.md and ~/.claude/CLAUDE.md not readable — mirror used as the central text; mirror sync SKIPPED');
+if (central === null && mirror === null) fail('central: no .claude/rules/central-rules.md, ~/.claude/CLAUDE.md not readable and no mirror — nothing to check against');
+else if (mirror === null) console.log('mirror: retired (round B) — live central text = .claude/rules/central-rules.md');
+else if (central === null) console.log('central: no .claude/rules/central-rules.md and ~/.claude/CLAUDE.md not readable — mirror used as the central text; mirror sync SKIPPED');
 // once the synced copy exists the mirror is superseded (kept only until the cloud test): a later central change makes
 // it stale on purpose — reported, not failed. Before the first sync it still has to match ~/.claude/CLAUDE.md.
 else if (mirror !== central && centralFrom === '.claude/rules/central-rules.md') console.log('note: GLOBAL_RULES_MIRROR.md differs from the synced copy — superseded mirror, retire it after the cloud test (not a failure)');
@@ -114,8 +119,15 @@ const items = s12 < 0 ? [] : c.slice(s12).map((l) => (l.match(/^(\d+)\. /) || []
 if (s12 < 0) fail('§12: heading "## 12\\." not found in the central text');
 else if (items.length !== decl.sectionItems || items.some((n, i) => n !== i + 1)) fail(`§12: items ${items.join(',')} — expected 1..${decl.sectionItems}`);
 
-// 4. pointers into §12
-const skip = new Set(['node_modules', '.git', '.next', '_incoming', 'archive']);
+// 4. pointers into §12 — a live pointer must name an item of the LIVE central text (round B 2026-09-27: the frozen
+// map's count stopped at 31 while the synced copy grew to 32, so a correct pointer to item 32 failed)
+const liveItemsOf = (text) => {
+  const L = text.split('\n');
+  const h = L.findIndex((l) => /^## 12\\\. /.test(l));
+  return h < 0 ? 0 : L.slice(h).map((l) => (l.match(/^(\d+)\. /) || [])[1]).filter(Boolean).length;
+};
+const liveItems = liveCentral === null ? decl.sectionItems : liveItemsOf(liveCentral);
+const skip = new Set(['node_modules', '.git', '.next', '_incoming', 'archive', 'worktrees']);
 let ptrs = 0;
 // the central file points into its own §12 from §1–11 — check those too
 centralText.split('\n').forEach((l, i) => {
@@ -138,7 +150,7 @@ centralText.split('\n').forEach((l, i) => {
           const [a, b] = part.trim().split('–').map(Number);
           for (let n = a; n <= (b || a); n++) {
             ptrs++;
-            if (n < 1 || n > decl.sectionItems) fail(`pointer: ${path.relative(repo, p)}:${i + 1} names หมวด 12 ข้อ ${n}`);
+            if (n < 1 || n > liveItems) fail(`pointer: ${path.relative(repo, p)}:${i + 1} names หมวด 12 ข้อ ${n}`);
           }
         }
       }
@@ -146,6 +158,6 @@ centralText.split('\n').forEach((l, i) => {
   }
 })(repo);
 
-console.log(`map: ${mapArg} · removed lines: ${removed} (${Object.entries(kinds).map(([k, n]) => `${k} ${n}`).join(' · ') || 'none'}) · lost: ${lost} · stale map entries: ${stale} · §12 items: ${items.length} · pointers into §12: ${ptrs}`);
+console.log(`map: ${mapArg} · removed lines: ${removed} (${Object.entries(kinds).map(([k, n]) => `${k} ${n}`).join(' · ') || 'none'}) · lost: ${lost} · stale map entries: ${stale} · §12 items: ${items.length} (frozen) / ${liveItems} (live) · pointers into §12: ${ptrs}`);
 if (fails.length) { console.log(`\nFAIL (${fails.length})`); fails.forEach((m) => console.log(' ' + m)); process.exit(1); }
 console.log('\nPASS');
