@@ -1,6 +1,6 @@
 ---
 name: round-open
-description: Open a work round for the OKami24 site — any round, whatever its name (SEO, articles, data, cart, housekeeping, or one that does not exist yet). Use it every time the owner opens a round by attaching a round instruction file, before touching any file. It sequences what to read, how to confirm the repo state against the instruction file, the single scope-auditor call, the tier A/B decision, splitting the round into batches, and writing the "round open" state into the handoff block. Also use it when a new chat continues an already-open round (skip the scope-auditor call in that case).
+description: Open a work round for the OKami24 site — any round, whatever its name (SEO, articles, data, cart, housekeeping, or one that does not exist yet). Use it every time the owner opens a round by attaching a round instruction file, before touching any file. It sequences what to read, how to confirm the repo state against the instruction file, the scope-auditor call (rounds that touch the site; again only if the scope grows), the tier A/B decision, splitting the round into batches, and writing the "round open" state into the handoff block. Also use it when a new chat continues an already-open round (skip the scope-auditor call in that case).
 ---
 
 # Round open
@@ -101,23 +101,25 @@ the same thing in the report) — objections only, no summary, no padding.
 
 ---
 
-## Step 4 — Scope: call `scope-auditor` once, and only once
+## Step 4 — Scope: call `scope-auditor` when the round touches the site
 
-Before the first batch, call the `scope-auditor` agent **one time**. It walks the live sitemap
+Before the first batch of a round that touches the site, call the `scope-auditor` agent. A round that touches
+nothing a visitor gets (docs, rules, skills, agents — `node scripts/self-merge-check.js` would print `SMALL`) skips
+it (owner's rules table item 10, 28/09). It walks the live sitemap
 and reports which pages this round really touches — **count from the sitemap, never trust a page
 count written in the instruction file or remembered from an earlier round** (the reason this
 rule exists: a remembered "product page" count once left a whole category of pages outside the
 gates for a week). The list it returns becomes the checker's page list for every batch of the
 round.
 
-Do not call it again during the round; if the scope changes mid-round, that is a stop-and-ask
-case (`.claude/TEAM_RULES.md` 13.4).
+If the scope grows mid-round (the goal needs pages outside its list), call it again for the new part and carry
+on — no stop to ask, unless the growth is a change of direction (13.4 #7).
 
 ## Step 5 — Decide tier A or tier B for each batch
 
 Apply the two-tier rule as written in `docs/HANDOFF.md` §17 ("Two-tier rule") — text only =
-tier A; anything that touches structure or the screen = tier B (proof size — light or full set = `.claude/TEAM_RULES.md` 13.12; the step order lives
-in §17 only).
+tier A; anything that touches structure or the screen = tier B (proof size — light or full set = `.claude/TEAM_RULES.md` 13.12; what
+must exist before merge = §17 — the order is yours).
 **Not sure = tier B.** Write the tier next to each batch in the plan.
 
 ## Step 6 — Split the round into batches
@@ -129,8 +131,8 @@ agent. Then tell the owner in 3–5 lines what will be done in what order and **
 approval wait, unless a 13.4 case is already visible.
 
 Every helper file created on the way (scripts, comparison images, logs, agent briefs) goes under
-`_incoming/<round>/` or `scripts/` — save each agent brief there (the checker and the next chat read them; on a big round or a long
-project `docs/ROUND_COST.md` also counts them — `.claude/TEAM_RULES.md` 13.12 #7).
+`_incoming/<round>/` or `scripts/` — agent briefs need not be saved, except on a big round or a long project where
+`docs/ROUND_COST.md` counts them (`.claude/TEAM_RULES.md` 13.12 #7 · owner's rules table item 12, 28/09).
 
 ## Step 7 — Write the round into the handoff block
 

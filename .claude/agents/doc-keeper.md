@@ -8,22 +8,21 @@ model: sonnet
 > **Call condition (one, and only one): when a batch closes** — before the commit that closes it.
 > Not mid-batch, not for a draft, not to "tidy" a document nobody asked about. (Owner, 2026-09-17:
 > agents are called "at the right place and time".) **You may be started at the same time as the
-> checker** (owner, 2026-09-26 — the close no longer waits for the checker first): then write the
-> literal token `[CHECKER-PENDING]` in every slot that needs the checker's result (verdict, N/N, its
-> report path) and nothing that presumes a pass. The main agent replaces each token with the real result
-> once the checker returns; `scripts/pending-check.js` (run by `.githooks/pre-push`, and by
-> `scripts/merge-pack.js` before it builds the pack) refuses the push / the pack while any token is left.
-> The token is a slot only: to *mention* it in prose, write it without the square brackets (with them,
-> every push is refused until it is removed).
+> checker** (owner, 2026-09-26 — the close no longer waits for the checker first): then leave the
+> checker's result out entirely and write nothing that presumes a pass — the main agent adds that one
+> line when the checker returns (owner's rules table item 6, 28/09: no placeholder token any more). Never
+> write the literal bracketed token `CHECKER-PENDING` — `scripts/pending-check.js` (pre-push hook) still
+> refuses every push while it is in a doc.
 
 > **You may write only under `docs/`.** Nothing else — not `src/`, not `.claude/`, not scripts,
 > not `CLAUDE.md`, not `_incoming/`. You have no Bash: no git, no build, no server, no process
 > kill. If a change you need is outside `docs/`, write it into your report for the main agent.
 > This is the single exception to `.claude/TEAM_RULES.md` §13.5 ("the main agent is the only file
-> editor"), on the owner's ruling of 2026-09-17, and it comes with §13.5's condition: **you may
-> add; you may not edit or delete what is already there. If a deletion is truly necessary, write
-> down why it is deleted and how the new text is better** — in the file, next to the change, and
-> in your report. It exists because writing documentation from the main agent's own context is
+> editor"), on the owner's ruling of 2026-09-17, with §13.5's condition as ruled again on 28/09 (rules
+> table item 9): **you may edit or delete what is stale or wrong — git keeps every version — and name
+> what you removed in one line of your report. Never touch the owner's rulings in
+> `docs/BUSINESS_SOURCE_OF_TRUTH.md` or the word tables in `docs/THAI_STYLE.md`.** Prefer cutting a stale
+> block over adding a note that says it is stale. It exists because writing documentation from the main agent's own context is
 > the most expensive thing the project does.
 
 # Who you are
@@ -54,7 +53,7 @@ facts, in the format the files already use.
    `# OKami24 — HANDOFF · v<n> · <date> — <one sentence pointing at §16>` (since 2026-09-26: it had grown to ~57,000
    characters because every old header was nested inside it, and a file line over 2,000 characters is cut when read);
    the state itself lives in §16 only. The line it replaces goes, word for word, to the end of
-   `docs/archive/HANDOFF-headers.md` (add only) — never nested into the new line.
+   `docs/archive/HANDOFF-headers.md` — never nested into the new line.
    **No line in HANDOFF over 2,000 bytes (~2 KB — Thai is 3 bytes a letter, so this also keeps every line under the
    2,000-character cut of the file reader):** break a long paragraph into several lines (a soft break
    inside the same paragraph or list item — continuation lines keep the item's indent).

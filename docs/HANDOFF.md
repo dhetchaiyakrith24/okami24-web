@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v80 · 2026-09-27 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v81 · 2026-09-28 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -847,32 +847,30 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-(v80 — written by the main agent on a mid-round push, 13.6; replaces v79, which predated PRs #88–#90)
-1 main: `origin/main` = `360dd12` (PR #90 merged) [ตรวจแล้ว, `git log -1 origin/main` 2026-09-27]. This round's
-  merges, all by Friday: #87 `989071b` (clips + VideoObject fix; self-deployed, "DEPLOY started", live 18:32 UTC) ·
-  #88 (marbo guide = 54K clip only · en/zh line "Hands-on review (in Thai)" / "真机试用（泰语讲解）") · #89 `50e007f`
-  (disposables clip uQnQwH5_0qg, owner confirmed all 5 models sold; live 19:30 UTC) · #90 `360dd12` (rules:
-  `.claude/TEAM_RULES.md` 13.12 light check set + alignment across skills/agents/guides; no site files → no deploy).
-  Cloud round → no tags; rollback = revert the merge commit. Branches `wip/clip-round-b1-1` / `-b2-1` deleted by Javis.
-2 ahead of main: branch `claude/embed-shop-clips-video-data-zp715x` — `44f6935` fix(seo): VideoObject `uploadDate`
-  carries a time zone (`YYYY-MM-DDT00:00:00+07:00`, owner request from GSC data 26/09 "uploadDate ไม่ได้ระบุเขตเวลา";
-  argus-g4 keeps the date-only value until 05/10 — SEO baseline frozen) + this docs commit. PR + checker pending
-  at this push; owner pre-approved merge once checker passes and CI is green.
-3 round: round "ฝังคลิป" (cloud) — main work merged (#87–#89); follow-ups on the same branch: the uploadDate time zone
-  fix (item 2). Full record: `docs/cloud-results/clip-round.md`. Also asked by the owner 27/09: a review of Friday's own
-  rules for ones that are stricter than the work needs — **proposal only, owner decides before any edit**.
+(v81 — written by the main agent at the rules-table batch close, 13.6)
+1 main: `origin/main` = `666aa4f` (PR #91 merged: VideoObject `uploadDate` with +07:00, live 20:12 UTC; argus-g4 keeps
+  date-only until 05/10) [ตรวจแล้ว]. Earlier this round: #87 `989071b` · #88 · #89 `50e007f` · #90 `360dd12`. Cloud
+  round → no tags; rollback = revert the merge commit.
+2 ahead of main: branch `claude/embed-shop-clips-video-data-zp715x` — owner's 12-item rules table (ruled 28/09):
+  `35720a9` rules text (TEAM_RULES 13.3/13.6/13.7/13.10 #1/13.12 · checker · designer · doc-keeper · thai-copy ·
+  rule-/scope-auditor · skills round-open/round-close/okami24-handoff/thai-check/merge-pack · TEMPLATES ·
+  AI_TEAM_GUIDE · RECOVERY · HANDOFF §17) · `582c0f2` pre-push token hook stays dormant · `14c62b9` self-merge-check
+  SITE line text · this §16 commit. PR BIG (edits 13.7 + a gate script) — owner answered before merge in the ruling.
+3 round: round "ฝังคลิป" (cloud) — clips + VideoObject work merged (#87–#91); the rules table rides the same branch.
+  Record: `docs/cloud-results/clip-round.md`. Central rules: Javis opens the `smogz-rules` PR for 4 points (item 20
+  "123 = direction" · item 23 proof by risk · §6 reference image non-blocking · Javis role) — the web copy
+  `.claude/rules/central-rules.md` arrives as a sync PR afterwards (BIG list item (1)).
   Previous round: round C (computer) — CLOSED + MERGED (PR #86), record `docs/cloud-results/roundC.md`; older rounds §3.
 4 waiting on owner / Javis:
-  (a) Javis in GSC: "ตรวจสอบการแก้ไข" on the 7 video pages + request indexing of the pages with new clips
-  (/brands/salthub · /guides/coil-and-pod-maintenance · /guides/choosing-a-marbo-flavor · /products/muro-connector-20k
-  · /products/disposables); after the time-zone PR deploys, re-validate the "valid with warnings" video items.
-  (b) owner rules on the rules-review table (item 3).
+  (a) GSC "ตรวจสอบการแก้ไข" done by Javis 28/09 — nothing more to do.
+  (b) removing the dormant pre-push token hook (`.githooks/pre-push` + `scripts/pending-check.js`) — refused by the
+  cloud safety check 28/09; owner/Javis may remove it from the computer, or keep it (harmless: nothing writes the token).
   (c) cloud Chromium cannot load `i.ytimg.com` thumbnails in screenshots (cert chain) — a tool-side fix needs the
   owner's OK first.
   (d) carried unchanged from v79 item 4 (e)–(j): GSC reports on branch `gsc-data` · `_incoming/next-round-notes.md`
   on the owner's computer · `_incoming/zz-to-delete-roundB/` · round B stop-2 items 8–12 · Artifact test link
   `https://claude.ai/artifact/TuQkJ54AAMknjaj7co1ys9` [รอเจ้าของ] · round C's B3 ON HOLD.
-4b/4c permanent rulings: unchanged from v79 (see `docs/archive/` or git history of this file) + 27/09: light check set
+4b/4c permanent rulings: unchanged from v79 (git history of this file) + 28/09: owner's 12-item rules table (TEAM_RULES) + 27/09: light check set
   13.12 (5 items + timing only on big rounds/long projects) · disposables clip placed · MmesPKLafqA not placed ·
   marbo guide one clip (54K) · salthub card width kept.
 5 open questions: none new beyond item 4(b)/(c). Older backlog carried unchanged (v79 item 5 "Older backlog", full
@@ -891,8 +889,8 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
 > Carried over verbatim from `docs/archive/HANDOFF.2026-09-21-v34.md` §17 — this is rules/tools, not round state, and this round did not touch it. · 2026-09-25 "rules move" round (main agent): only the section-13 pointers below were repointed from `~/.claude/CLAUDE.md` to `.claude/TEAM_RULES.md` (§8 stays in the central file) — no rule changed.
 
 ```
-Context rule: .claude/TEAM_RULES.md 13.6 · every push = update §16 (spec in doc-keeper.md) · an agent added or edited under .claude/agents/ is usable at once in the running chat — no new session needed (verified 2026-09-17; the old "needs a new session / HANDOFF 8.6" claim is dead — RULES_INDEX row 25)
-Two-tier rule (owner 2026-09-14 — merged here from THAI_STYLE §6 on 2026-09-17, RULES_INDEX rows 50/68; screenshot rule 13.6 points here; how big each step is — light set vs full set, when designer, when a whole-site scan, when Lighthouse = `.claude/TEAM_RULES.md` 13.12, owner 2026-09-27): tier A = text only → no screenshots, no designer per batch · tier B = touches structure/screen (not sure = tier B) → full: build → shoot before (finish before rebuilding) → draft to owner (show, do not wait — central §12 item 22) → shoot after at 390 + 1440 → designer (only per 13.12 #4) → checker (commit/push may come first — 13.12 #5) → merge (the owner's taste questions = one set per batch, the work does not wait — 13.4 #6; the final keep/undo = at merge — 13.4 #2; owner ruling item 1, round B 2026-09-27) · round close = skill `round-close` (scan first, designer once, word-break fixes in one commit — moved there 2026-09-20, RULES_INDEX row 76) · details of the original ruling: `docs/RULES_INDEX.md` rows 50/68 · every new sentence = 3 languages + the owner rules the Thai (same timing: 13.4 #6 / #2) · every number points at a verified spec row · no U+2060/NBSP outside the mechanism · thaiTypography() must have a locale guard · generated evidence must mirror the component logic in full · forbidden claims: THAI_STYLE §3 "คำ/ประโยคที่ห้ามในข้อความใหม่" (one list)
+Context rule: .claude/TEAM_RULES.md 13.6 · §16 is updated at a batch close and at a chat move, not on every push (spec in doc-keeper.md · owner rules table item 5, 28/09) · an agent added or edited under .claude/agents/ is usable at once in the running chat — no new session needed (verified 2026-09-17; the old "needs a new session / HANDOFF 8.6" claim is dead — RULES_INDEX row 25)
+Two-tier rule (owner 2026-09-14 — merged here from THAI_STYLE §6 on 2026-09-17, RULES_INDEX rows 50/68; screenshot rule 13.6 points here; how big each step is — light set vs full set, when designer, when a whole-site scan, when Lighthouse = `.claude/TEAM_RULES.md` 13.12, owner 2026-09-27): tier A = text only → no screenshots, no designer per batch · tier B = touches structure/screen (not sure = tier B) → what must exist before merge, in any order Friday chooses (owner rules table item 8, 28/09 — replaces the fixed build → shoot → draft → shoot → designer → checker sequence): before/after shots of the changed spots at 390 + 1440 from the same kind of machine (skill `tier-b-proof`) · designer only per 13.12 #4 · checker before merge · tier B merges as small and the shots go to the owner in the report (13.7, owner 28/09) · the owner's taste questions = one set per batch, the work does not wait (13.4 #6) · round close = skill `round-close` (scan first, designer once, word-break fixes in one commit — moved there 2026-09-20, RULES_INDEX row 76) · details of the original ruling: `docs/RULES_INDEX.md` rows 50/68 · every new sentence = 3 languages + the owner rules the Thai (same timing: 13.4 #6 / #2) · every number points at a verified spec row · no U+2060/NBSP outside the mechanism · thaiTypography() must have a locale guard · generated evidence must mirror the component logic in full · forbidden claims: THAI_STYLE §3 "คำ/ประโยคที่ห้ามในข้อความใหม่" (one list)
 Do not touch (single list — merged 2026-09-17 from this line, §9 and §14, RULES_INDEX row 55): layout outside the named spot · images · motion · ordering-mode.ts · slug/URL/sitemap/structured data · service pages · Hero.tsx · cinematic/ · THAI_STYLE group ก · labelTh/name/shortName · lg:min-h-10 · age/nicotine warnings · colour/flavour names · thai-typography.ts list · CategoryLabel.tsx / label-lang · card-headline-spec.ts rules · dictionary catalog.card* / trust.* (set ก) · TrustBar row layout / 4 icons · sticky th on /compare · ScrollHintFrame · headings K1–K3 · locked word "อุ่นยาสูบ" · the ban on "ไม่เผาไหม้" in every language · FAQ eyebrow "ถาม-ตอบ" · /search eyebrow = footer.tools · every THAI_STYLE_LOG §7 row of round 30.4ข · ProductHero stats / PuffCount / Coil-72/89 category (data round) · footer.tagline / service pages / cart (their own rounds) — and never: joiner/NBSP outside the list · two Chrome jobs at once · fixing tier-B orphan words one by one · placeholders in an empty spec row · screenshots without a scan first — the scan-first / ≤30-shots-or-explain rule lives in .claude/TEAM_RULES.md 13.10 #15 (owner ruling 2026-09-18), not here
 Hard rules: merge / deploy / force-push → ~/.claude/CLAUDE.md §8 + .claude/TEAM_RULES.md 13.7 (not restated here — RULES_INDEX row 45) · revert, never reset · never invent a number · deciding alone = easy to undo (customer-visible in-scope items: 13.4 #2), then write "ตัดสินเอง: … เพราะ …" · when to ask = 13.4 only (RULES_INDEX row 3) · work beyond the brief = .claude/TEAM_RULES.md 13.10 #1 (its own commit, same gates, listed in the report — RULES_INDEX row 85)
   · checker reports in the five fields of 13.5 + the Thai-copy gates = skill `thai-check` (checker.md item 5 points there; the checker reads the SKILL.md file — moved 2026-09-20, RULES_INDEX row 77) · who edits files = 13.5 (RULES_INDEX rows 13/52/58/59)
@@ -908,15 +906,3 @@ Git: commit split by type per 13.7 (English prefix feat/fix/copy/data/docs/chore
 agent: who does what = `.claude/TEAM_RULES.md` 13.3 · when to call each one = the `description` line of its own file in `.claude/agents/` (one place — round B 2026-09-27 cut the copy that stood here) · never call one per sub-item
 tag: command and sequence = skill `round-close` step 5 (rule in 13.7; name table in docs/RECOVERY.md §2 — moved 2026-09-20, RULES_INDEX row 75)
 ```
-
----
-
-## First things the next chat should do
-
-> **Note added 2026-09-25 (doc-keeper, round "rules move" stop point 1 close):** the three numbered lines below date from HANDOFF v34 / 2026-09-22 (SEO ก round close, local HEAD `9bcb3df`) and are stale — 8+ rounds have opened and closed since, `origin/main` has moved to `e6cd7d4`, and a round is currently open. Per doc-keeper's write permission (`.claude/TEAM_RULES.md` 13.5: overwrite only HANDOFF §16 + line 1, add elsewhere, never edit/delete what is already there), the stale lines below are left in place rather than rewritten — **read §16 above instead, it is the current state.** This note is itself the addition; nothing below it was touched.
->
-> **Second note, added 2026-09-25 (doc-keeper, round "rules move" close, same day):** the situation above is unchanged in kind, only more stale — `origin/main` has moved again (now `15a1360`, §16 item 1) and round "rules move" itself has now opened AND closed since the first note was written. **For this close: no round is open. The next chat's first action is to read §16 above (item 1–6), not the three numbered lines below** — they still describe SEO ก's 2026-09-22 state and should not be followed literally (there is no "the three owner decisions in §7/§16 item 4" to probe — §7 does not exist in this file version, and §16 item 4 today lists different, current waits). This is the second such addition; the numbered list below is still left untouched per the same write-permission rule.
-
-1. **`git fetch` + `git status` + `git log -5 --oneline` + `git tag -n1`**, then compare with §16 above — if they differ, trust the repo. In particular, confirm `origin/main` really contains local HEAD `9bcb3df` as an ancestor (via `git log origin/main..HEAD` printing nothing): this file's writer (doc-keeper) could read the raw ref hash but had no tool to walk commit ancestry or decode the merge commit's message.
-2. If `origin/main` matches §16 item 1, there is nothing left to probe from this round except Cowork's post-deploy GSC steps (§4, §13) — the only open work otherwise is the three owner decisions in §7/§16 item 4.
-3. **No round is open.** Do not start the next one on your own — wait for the owner to pick articles vs "SEO ข" (§7(ค)) and attach an instruction file → skill `round-open`. When it opens, run `scope-auditor` once and read `docs/THAI_STYLE.md` only if the round touches site copy.

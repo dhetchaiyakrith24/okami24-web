@@ -30,7 +30,8 @@ name into this file.
    the folder it already made at close, if that build was the close commit).
 2. **Head / meta:** `scripts/head-audit.js` on the same two sides — title · description · H1 · og:title are not
    visible text, and a body edit can move them (`.claude/LESSONS.md` #8). Same skip rule as item 1.
-3. **Work beyond the brief:** `_incoming/<round>/extras.md` (its format: 13.10 #1 (ง)).
+3. **Work beyond the brief (456):** the report's item-3 lines (13.10 #1 (ง)) — copy them into a small file and pass
+   it with `--extras` (no standing `extras.md` since 28/09).
 4. **Claims the round instruction says to have confirmed** (e.g. a ruling relayed by Cowork that has no other
    evidence in the repo): a markdown table in `_incoming/<round>/confirm.md` — the claim · where it was written ·
    what is to be confirmed.
@@ -39,13 +40,13 @@ name into this file.
 ## Step 2 — Build the table
 
 `node scripts/merge-pack.js --out _incoming/<round>/owner-table.md --round "<round>" --visible <diff dir>
---head <head before dir> <head after dir> --extras _incoming/<round>/extras.md --confirm _incoming/<round>/confirm.md
+--head <head before dir> <head after dir> --extras <file of item 3> --confirm _incoming/<round>/confirm.md
 --verify <log dir>` — add `--no-site-change` when round-close step 1 item 0 passed (no scan was made); leave out an input the round does not have; an input left out is printed as
 `[ยังไม่มีข้อมูล]` / "ไม่มี", never silently dropped.
 
 ## Step 3 — Read it before anyone else does
 
-- Every ★ row must trace to the round's goal or to `extras.md`; the rule for a change nobody asked for is
+- Every ★ row must trace to the round's goal or to a work-beyond line (item 3); the rule for a change nobody asked for is
   `tier-b-proof` step 3.
 - Under the table, per ★ row that needs it, add what the script cannot know: the maker source (`sources-verified.md`
   line), the thai-copy wording options (live choice marked), why a value was cut.
