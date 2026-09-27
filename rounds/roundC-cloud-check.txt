@@ -1,0 +1,17 @@
+รอบ C — แชทคลาวด์ลองของจริง (อ่านอย่างเดียว) · Friday บนคอมเขียน 2026-09-27
+
+【ใช้ได้เมื่อ】 `origin/main` มี `scripts/session-sync.js` และ `scripts/lib/cloud-ca.js` แล้ว (PR รอบ C merge แล้ว)
+ไม่มีไฟล์ใดไฟล์หนึ่ง = หยุด ตอบว่า "PR รอบ C ยังไม่ merge" ไม่ต้องทำต่อ
+
+【ทำอะไร】 ตอบเป็นตาราง: ข้อ · ✅/❌ · หลักฐาน 1 บรรทัด (ข้อความตรงตัวที่เห็น หรือ error ตรงตัว)
+1. บรรทัด `session-sync (…)` อยู่ใน context ตอนเปิดแชทไหม · มีบรรทัด `STOP SIGN` ไหม (มี = ก๊อปมาทั้งบรรทัด)
+2. บรรทัด `PROBE: this run wrote session-probe <รหัส>` กับบรรทัด `session-probe: <รหัส>` ที่โหลดมากับ CLAUDE.md — รหัสตรงกันไหม (ตอบ ตรง / ไม่ตรง / ไม่มีบรรทัด probe)
+3. บรรทัด `prepare-clone:` ขั้น "browser trusts the cloud network" ขึ้น OK หรือ FAIL (ก๊อปบรรทัดนั้น)
+4. `node scripts/shot.js /tmp/roundC-home.png https://okami24.store/` แล้วเปิดดูภาพ: เห็นหน้าเว็บร้าน หรือ "Your connection is not private"
+5. `node scripts/shot.js /tmp/roundC-bad.png https://expired.badssl.com/` แล้วเปิดดูภาพ: ต้องยังเห็น "Your connection is not private" (ตัวกันยังทำงาน) — เปิดไม่ได้เพราะเครือข่ายบล็อก = เขียนว่า "บล็อก"
+6. `git fetch origin gsc-data` ได้ไหม (ยังไม่มี branch = ปกติ ถ้าเจ้าของยังไม่ได้ทำขั้น GSC)
+
+【ห้าม】 ห้ามแก้ไฟล์ ห้าม commit ห้าม push ห้ามลบ branch · ห้ามเปิดรอบใหม่ · ไม่ต้องใช้สกิล round-open · ห้ามพิมพ์ค่าตัวแปรลับใด ๆ
+
+【ส่งผล】 ตารางในแชท + บรรทัดสรุป "ครบ" หรือ "ขาด: …" · Javis ส่งผลต่อให้ Friday บนคอม
+ลองซ้ำอีก 1 แชทใหม่ (รวม 2 ครั้ง) เพื่อดูว่าข้อ 2 ได้ผลเหมือนกัน
