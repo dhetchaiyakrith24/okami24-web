@@ -10,7 +10,7 @@ import { ThaiOnlyGuideGate } from "@/components/content/ThaiOnlyGuideGate";
 import type { Product } from "@/types/catalog";
 import { articleJsonLd, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { familyModifiedDate } from "@/lib/content-dates";
-import { articleFaqJsonLd, articleVideosJsonLd } from "@/lib/article-jsonld";
+import { articleFaqJsonLd, articleVideoJsonLd } from "@/lib/article-jsonld";
 import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
 import { GUIDE_DESCRIPTION_HEAD_TH } from "@/i18n/search-head-copy";
 
@@ -46,15 +46,14 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
   // same rule as the body) and VideoObject for the article's one confirmed clip. Both null when the
   // record has no such field, so an article without them emits exactly the two blocks above.
   const faqJsonLd = articleFaqJsonLd(th?.faq ?? guide.faq);
-  // Round "clip": one block per clip shown (reviewVideo, then moreVideos).
-  const videoJsonLds = articleVideosJsonLd([guide.reviewVideo, ...(guide.moreVideos ?? [])], guideTitle);
+  const videoJsonLd = articleVideoJsonLd(guide.reviewVideo, guideTitle);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd({ headline: guideTitle, description: GUIDE_DESCRIPTION_HEAD_TH[guide.id] ?? th?.dek ?? guide.dek, path: guidePath, publishedAt: guide.publishedAt, updatedAt: familyModifiedDate("guides"), image: "/opengraph-image" })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(guideTitle, guidePath)) }} />
       {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
-      {videoJsonLds.map((v, i) => <script key={`video-ld-${i}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(v) }} />)}
+      {videoJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />}
       {/* Round 10B: a Thai-only guide shows only a one-line notice on en/zh (ThaiOnlyGuideGate). */}
       <ThaiOnlyGuideGate thaiOnly={guide.thaiOnly}>
         <GuideDetailPageHeader id={guide.id} title={guide.title} dek={guide.dek} readingTimeMin={guide.readingTimeMin} />
@@ -65,7 +64,6 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
             faq={guide.faq}
             translatedFaq={{ th: GUIDES_COPY_TH[guide.id]?.faq, zh: GUIDES_COPY_ZH[guide.id]?.faq }}
             video={guide.reviewVideo}
-            moreVideos={guide.moreVideos}
           />
         </Container>
         <RelatedProducts products={related} />

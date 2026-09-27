@@ -38,7 +38,7 @@ export function ProductReviewSection({ product, frozen = false }: {
       <Container className="flex flex-col gap-8">
         <SectionHeading eyebrow={dict.product.reviewVideoEyebrow} title={product.displayName} />
         <div className="max-w-2xl">
-          <ProductReviewVideo video={{ videoId, title, channelName }} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hideTitle={hideTitle} contextName={product.displayName} />
+          <ProductReviewVideo video={{ videoId, title, channelName }} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hiddenTitleLabel={dict.product.reviewVideoHiddenTitle} hideTitle={hideTitle} contextName={product.displayName} />
         </div>
       </Container>
     </section>

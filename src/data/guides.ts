@@ -566,12 +566,10 @@ const allGuides: Guide[] = [
         answer: "ชื่อซ้ำกันหลายกลิ่น เช่น Blue Ice · Cola · Grape · Kyoho Grape · Watermelon แต่เราเทียบได้แค่ชื่อ ไม่ได้เทียบรส บางกลิ่นมีเฉพาะหัว M Switch เช่น Black Berry · Cool Mint · Mango Passion · Strawberry Watermelon",
       },
     ],
-    // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @OKMYARZ.
-    reviewVideo: { videoId: "QptFMwIXbJE", title: "M BAR 9K NEW FLAVOR 2 กลิ่นใหม่ ZAPPLE และ KYOHO GRAPE", channelName: "OKM YARZ", publishedAt: "2026-01-16" },
-    // Round "clip" (2026-09-27): the shop's most-watched clip (54K views, @PODSYSTEM-OKAMI-II) — the top 5 M BAR 9K
-    // flavors, paired with "marbo กลิ่นไหนดี" by the round instruction (docs/SEO_LANDSCAPE.md §4 item 1). Title and
-    // upload date read from YouTube's own video data (_incoming/clip-round/clips.md). Model: M BAR 9K (m-bar-9k).
-    moreVideos: [{ videoId: "-DMIKvoQPw8", title: "TOP 5 กลิ่นยอดนิยม ฮิตที่สุดของ MARBO BAR 9K DISPOSABLE POD", channelName: "POD SYSTEM OKAMI II", publishedAt: "2025-01-31" }],
+    // Round "clip" (2026-09-27, owner: this clip only — it replaces QptFMwIXbJE "M BAR 9K NEW FLAVOR 2" of round 10B):
+    // the shop's most-watched clip (54K views, @PODSYSTEM-OKAMI-II), the top 5 M BAR 9K flavors, paired with "marbo
+    // กลิ่นไหนดี" (docs/SEO_LANDSCAPE.md §4 item 1). Title and upload date read from YouTube's own video data.
+    reviewVideo: { videoId: "-DMIKvoQPw8", title: "TOP 5 กลิ่นยอดนิยม ฮิตที่สุดของ MARBO BAR 9K DISPOSABLE POD", channelName: "POD SYSTEM OKAMI II", publishedAt: "2025-01-31" },
   },
   {
     // Round 10B T18 — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md.

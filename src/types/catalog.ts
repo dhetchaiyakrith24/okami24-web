@@ -299,9 +299,6 @@ export interface Guide {
   /** Round SEO ข (owner ruling 2026-09-21, Q3): one confirmed OKami24-channel clip per article, same
    *  contract as Product.reviewVideo (oEmbed-confirmed before it goes in — see the product records). */
   reviewVideo?: ArticleReviewVideo;
-  /** Round "clip" (2026-09-27): further clips shown next to `reviewVideo`, each with its own VideoObject —
-   *  used only where the round instruction pairs a second shop clip with the article's search term. */
-  moreVideos?: ArticleReviewVideo[];
   /** Round SEO ข batch 4 (2026-09-21): ISO date for the Article JSON-LD — the day the record first
    *  entered the repo, read from git history (never invented). Optional: absent = not claimed. The
    *  modified date is not a record field: src/lib/content-dates.ts derives it from git. */

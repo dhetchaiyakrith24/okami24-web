@@ -158,6 +158,7 @@ export const en: Dictionary = {
     outOfStockChip: "Out of stock",
     reviewVideoEyebrow: "OKami24 Review",
     watchOnYoutube: "Watch on YouTube",
+    reviewVideoHiddenTitle: "Hands-on review (in Thai)",
     statBattery: "Battery",
     statOutput: "Output",
     statRatedPuffs: "Rated puffs",

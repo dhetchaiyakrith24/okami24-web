@@ -23,8 +23,3 @@ export function articleVideoJsonLd(video: ArticleReviewVideo | undefined, articl
   // Plain dictionary string (no render-time Thai typography), like the product page's block.
   return videoObjectJsonLd(video, `${video.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${articleTitle}`);
 }
-
-/** Round "clip": one VideoObject per clip the article shows (`reviewVideo` first, then `moreVideos`). */
-export function articleVideosJsonLd(videos: (ArticleReviewVideo | undefined)[], articleTitle: string) {
-  return videos.map((v) => articleVideoJsonLd(v, articleTitle)).filter((b) => b !== null);
-}

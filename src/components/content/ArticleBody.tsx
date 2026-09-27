@@ -69,7 +69,6 @@ export function ArticleBody({
   faq,
   translatedFaq,
   video,
-  moreVideos,
 }: {
   sections: GuideSection[];
   translated?: Partial<Record<"th" | "zh", GuideSection[]>>;
@@ -77,7 +76,6 @@ export function ArticleBody({
   faq?: ArticleFAQItem[];
   translatedFaq?: Partial<Record<"th" | "zh", ArticleFAQItem[]>>;
   video?: ArticleReviewVideo;
-  moreVideos?: ArticleReviewVideo[];
 }) {
   const { locale, dict } = useLocale();
   const activeSections = (locale === "th" || locale === "zh" ? translated?.[locale] : undefined) ?? sections;
@@ -105,23 +103,11 @@ export function ArticleBody({
           ))}
         </div>
       ))}
-      {video && !moreVideos?.length && (
+      {video && (
         // ProductReviewVideo already carries its own eyebrow, title and channel line — no
         // SectionHeading on top (the demo render showed the pair doubled).
         // Round 10B: on en/zh a Thai clip title is not shown (0 Thai text on the en/zh guide pages, owner 2026-09-24).
-        <ProductReviewVideo video={video} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hideTitle={hideThaiClipTitle(locale, video.title)} />
-      )}
-      {video && moreVideos && moreVideos.length > 0 && (
-        // Round "clip": an article with a second shop clip shows the cards side by side from sm up, stacked on a phone,
-        // under one eyebrow (designer: a second eyebrow read as a new section).
-        <div className="flex flex-col gap-3">
-          <span className="label-mono text-xs text-foreground-dim">{dict.product.reviewVideoEyebrow}</span>
-          <div className="grid gap-8 sm:grid-cols-2 sm:gap-6">
-            {[video, ...moreVideos].map((v) => (
-              <ProductReviewVideo key={v.videoId} video={v} watchOnYoutubeLabel={dict.product.watchOnYoutube} hideTitle={hideThaiClipTitle(locale, v.title)} compact />
-            ))}
-          </div>
-        </div>
+        <ProductReviewVideo video={video} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hiddenTitleLabel={dict.product.reviewVideoHiddenTitle} hideTitle={hideThaiClipTitle(locale, video.title)} />
       )}
       {activeFaq && activeFaq.length > 0 && (
         <div className="flex flex-col gap-6">

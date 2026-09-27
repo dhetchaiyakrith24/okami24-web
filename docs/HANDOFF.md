@@ -864,6 +864,11 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
   this round's 4 commits above + the close commit still to come [เชื่อว่า, brief-dockeeper-close.md]. Also a
   helper branch `wip/clip-round-b1-1` (unchecked mid-batch copy, superseded) — delete after merge: Friday on
   the computer or Javis on the GitHub page (the cloud cannot delete branches).
+3 update (Friday, after the owner's answers 2026-09-27): PR #87 **merged** (`989071b`) and **self-deployed** (Actions
+  "DEPLOY started", live at 18:32 UTC, live VideoObject 14/14 valid). PR 2 on the same branch: marbo guide = 54K clip only ·
+  en/zh line "Hands-on review (in Thai)" / "真机试用（泰语讲解）" · disposables clip not placed (models unconfirmable) —
+  checker PASS 6/6, owner pre-approved the merge on green CI. Branches `wip/clip-round-b1-1` + `-b2-1` to delete (cloud
+  delete failed). Detail: `docs/cloud-results/clip-round.md` last section.
 3 round: round "ฝังคลิป" (shop clips on the pages of their search term + valid VideoObject JSON-LD; cloud,
   tier B, one batch) — **done, closing now**. Full round record: `docs/cloud-results/clip-round.md`
   (root-cause, clip table, en/zh notes, proof — read it). 4 clips placed: choosing-a-marbo-flavor (2nd clip,
