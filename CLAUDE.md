@@ -4,6 +4,12 @@
 
 @.claude/memory/MEMORY.md
 
+@_incoming/session-probe.md
+
+The line above loads a one-line probe that the SessionStart hook `scripts/session-sync.js` rewrites at every chat open
+(round C): compare it with the `PROBE:` line of the hook's `session-sync` context — same nonce = the hook ran before this
+file was read. Not there = no hook has run on this checkout yet.
+
 กฎการทำงานของทีม = หมวด 13 ที่ `.claude/TEAM_RULES.md` (ดึงเข้ามาที่บรรทัดบน · ย้ายจาก `~/.claude/CLAUDE.md` 2026-09-25) ·
 หมวด 1–12 = กฎกลาง ฉบับจริงอยู่ GitHub `smogz-rules` · รีโปนี้โหลดสำเนา `.claude/rules/central-rules.md` ห้ามแก้ด้วยมือ (นิยามเดียวที่หัว TEAM_RULES · รอบกฎกลางที่เดียว 2026-09-26) (หมวด 12 "ทำงานกับเจ้าของ" = ทุกโปรเจกต์ · เพิ่ม 2026-09-25) · handoff ในรีโปนี้ = สกิล `okami24-handoff` เท่านั้น
 

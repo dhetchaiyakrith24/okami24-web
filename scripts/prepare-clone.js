@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper */
 // Make a clone ready for the full verify set — one command, safe to run again (round "mobile", 2026-09-26).
 //   node scripts/prepare-clone.js                  run every step, print one line each, exit 1 if a step failed
-//   node scripts/prepare-clone.js --session-start  same, but only in a claude.ai/code cloud session
+//   node scripts/prepare-clone.js --session-start  same, but only in a claude.ai/code cloud session (started by
+//                                                  scripts/session-sync.js, the SessionStart hook, after its fetch)
 //                                                  (CLAUDE_CODE_REMOTE=true); anywhere else it exits 0 at once
 // Steps (each skipped when already done):
 //   1 git hooks      core.hooksPath = .githooks (a fresh clone does not set it — commit/push gates would not run)
