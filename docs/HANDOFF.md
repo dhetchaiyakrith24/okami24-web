@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v74 · 2026-09-27 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v76 · 2026-09-27 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -13,6 +13,10 @@ Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f
 The archived `HANDOFF.2026-09-21-v34.md` was written at the moment the SEO ก round closed, **before** merge/deploy — its §16 said the round was "not yet merged / Cowork's job" and its body sections 1–15 had not been refreshed past the prices-round summary (only the title line and §16 carried SEO-round facts). The repo now shows the round merged (`origin/main` = `6f38745`, PR #41) and the main agent reports it live on the production site. This file rewrites all of §1–§16 on that fact; nothing else in v34 is contradicted by anything doc-keeper could check. [ตรวจแล้ว] for the hash change, [เชื่อว่า] for "PR #41" and "live" specifically (see header).
 
 ---
+
+> **§1–§15 = history up to v34 (2026-09-22), not the current state** (note added round B 2026-09-27, owner ruling
+> item 2): since then only §16 (current state), §17 (standing rules and tools) and the relocated blocks in §3 have been
+> kept up to date. A round close updates §16 only; the whole file is rewritten only on a handoff under 13.6 (ข)–(จ).
 
 ## 1. Current state
 
@@ -592,130 +596,12 @@ round A "pipes" marked as such rather than repeated.
 
 ---
 
-## 4. Known broken / missing, not fixed yet
+### §16 lines relocated at round B "housekeeping" close (2026-09-27 — word for word, 15 KB cap)
 
-- **[ตรวจแล้ว] og:title of the homepage is still the pre-round string** ("OKami24 — ของแท้ ราคาตรง บริการจริง") — the owner's approved table covered `<title>`/description/og:description only; og:title was never in scope this round. Confirmed absent from `_incoming/seo-a/table-final-for-owner.md` and from THAI_STYLE_LOG's own round entry, which notes it explicitly [ตรวจแล้ว, `docs/THAI_STYLE_LOG.md` line 905].
-- **[ตรวจแล้ว] THAI_STYLE.md §3 has no rows for the round's 4 new head-copy words** ("ร้านพอต", "บอกราคาทุกตัว", "Marbo", "ไม่มีคอยล์มาในกล่อง/ต้องซื้อคอยล์แยก") — confirmed by grep, they exist only in `THAI_STYLE_LOG.md` §7's round table, not as locked-word rows in `THAI_STYLE.md` §3. This is a deliberate omission per the brief (head copy only, judge after 14 days), not an oversight — see §7 question (ก).
-- **[ตรวจแล้ว] Resolver test coverage gap (carried from the prices round, untouched this round):** no test calls `resolveProductRef()` with a real, catalogued, unpriced legacy slug, because all 45 legacy products are now priced. Accepted by Cowork until the cart round.
-- **[เชื่อว่า] freeShippingThreshold (500 THB) not expressed in structured data** — deliberate: schema.org places that field on `ShippingRateSettings`, not `OfferShippingDetails`, and Google's merchant parser does not read it there. Per the round's own commit-message reasoning, not independently re-derived by doc-keeper against schema.org's spec text.
-- **[รอเจ้าของ/Cowork] Rich Results Test, GSC "validate fix", and index requests for the 45 currently un-indexed URLs are Cowork's post-deploy steps** — named in `docs/SEO_BASELINE.md`, not yet confirmed done by anyone in this chat.
-- 4 service pages carry no JSON-LD by owner ruling — not a bug, listed here only so it is not mistaken for one.
-- **12 product descriptions are trimmed versions** of their base spec sentence, cut to fit the 160-character description limit after the price line was appended — actual close-time count is **28**, not 12 (the checker's mid-round count of 12 was taken before batch 5's extra overrides were added; both numbers are real, from different points in the round) [ตรวจแล้ว, `_incoming/seo-a/close-desc-price-gate.log`]. List of all 28 is in that file.
-- Everything `docs/archive/HANDOFF.2026-09-21-v34.md` §4 listed and did not resolve is still open: caliburn-g4-pro Shipnity code (resolved: Pod-181, per commit `6873f03` — no longer open, listed here only to close the loop) · muro-3ml Shipnity-table absence (resolved: kept ฿99) · footer.tagline 3-word repeat · zh compatibility-note strings (2 spots) · Coil-72/89 category-label mismatch · 6 cards with an empty spec row · `ProductHero.tsx` stats not checking `verified` · TPD labelling on VINCI S/G3 mini · `PuffCount.tsx` dead code · `/favorites` and order-status zh eyebrow⊂H1 duplication · a Tier-B backlog of ~30 word-break items the owner declined to chase one by one · #31/#34 iPhone check · 2 `priority` spots · `th.ts` dead strings · hidden FAQ research · a stray dev-language comment in `relx.ts:19`.
-
----
-
-## 5. In progress (scaffolded, needs continuation)
-
-None. [ตรวจแล้ว] The SEO ก round closed cleanly, merged (per the main agent's report), and this handoff is the closing action. No branch work is mid-flight. The next round (articles, or SEO ข if the owner opens it instead — §7(ค)) has not been opened.
-
----
-
-## 6. Needed, not started
-
-Same long list as `docs/archive/HANDOFF.2026-09-21-v34.md` §6 (next rounds per LAUNCH_AUDIT: articles · data round — Coil-72/89 taxonomy, TPD, ProductHero verified-gate, PuffCount removal · cart round + item 49 + order-status eyebrow · item 45 security review · admin page (item 1, parked) · QR library (items 40/41) · item 42 path-2 offsite backup (R2/B2) · sales/label/meta rounds) — plus:
-
-- **SEO ข (tier B — internal links/rails)**, named as a possible follow-up inside the SEO ก round file but never opened; needs the owner to choose it or articles first (§7(ค)).
-- When the stock API lands, overwrite the 20 `basis: "owner-estimate"` rows in `src/data/shipnity-seed/legacy-price-approvals.ts` with real supplier prices, in that one file only [ตรวจแล้ว, `docs/BUSINESS_SOURCE_OF_TRUTH.md` §5].
-
----
-
-## 7. Questions for the owner
-
-| Topic | Known | Unknown | What to answer |
-|---|---|---|---|
-| Add the round's 4 new words to THAI_STYLE §3 as locked words | Currently only logged in THAI_STYLE_LOG §7, used in head copy only | Whether they should become site-wide locked vocabulary now or after they prove out | Recommended: not yet — head copy only, judge after 14 days (2026-10-05, alongside the GSC re-read) |
-| og:title of the homepage still reads the pre-round string | Approved table never covered og:title | Whether the owner wants it to match the new `<title>` (A1: "OKami24 (OKM) — พอตของแท้ ราคาตรง บริการจริง") | Recommended: yes, fold into the next copy round — not urgent enough for its own round |
-| Which round opens next: articles (LAUNCH_AUDIT's stated order) or SEO ข (tier B, named but not opened) | Both are legitimate "next" candidates; LAUNCH_AUDIT's written order says articles, the SEO round file suggested SEO ข as a possible follow-up | Owner's priority | No recommendation — this is a priority call, not a technical one |
-| Everything else | Unchanged since `docs/archive/HANDOFF.2026-09-21-v34.md` §7 / §16 item 4 — see that list (9.4 rollback drill · footer.tagline · zh notes · TPD · #31/#34 iPhone · Render OOM watch · priority spots · Lighthouse · items 10/13/16/37 · account name · black-pod photos · R2/B2 · QR library · account 189) | — | Not repeated here to keep this table short |
-
----
-
-## 8. Risks and things to watch (most dangerous first)
-
-1. **[ตรวจแล้ว] 20 legacy prices are owner estimates — now also shown in Google snippets** via the price line and brand-page titles. When the stock API overwrites `legacy-price-approvals.ts`, the head copy follows automatically (price is never typed, always read live) — but Google's own cached snippet will lag behind the real change until it recrawls.
-2. **[รอเจ้าของ] GSC numbers must be re-read 2026-10-05** against `docs/SEO_BASELINE.md` before anyone judges whether this round worked — reading them earlier will show noise, not signal.
-3. **[เชื่อว่า] Production DB backup cadence unverified today** — `render.yaml` declares a 6-hourly backup; nobody has checked the Render log for a `[backup]` line since the SEO round closed. Low current risk (cart is off).
-4. **Cowork merges and deploys without announcing it in chat** — `git fetch` before trusting any "main is at X" claim; this file's own `origin/main` value is [ตรวจแล้ว] against the local ref file only, not against GitHub itself.
-5. Resolver test coverage gap (§4) — carried risk, unchanged this round.
-6. **Session/tool findings worth carrying forward** (session-specific, not project bugs): none new this session worth recording — no tool failures reported for the SEO round's chat.
-7. The two-tier rule (tier A/B), NBSP/word-joiner mechanism, and the full do-not-touch list are unchanged and live in §17 below — read there, not restated here.
-
----
-
-## 9. Do not tear down (owner-approved or working as intended)
-
-Everything in `docs/archive/HANDOFF.2026-09-21-v34.md` §9 / §17 "Do not touch" (the single list — layout, images, motion, ordering-mode.ts, slugs/URLs, service pages, Hero.tsx, THAI_STYLE group ก words, card-headline-spec.ts, TrustBar, sticky /compare header, every locked THAI_STYLE_LOG §7 row, the `basis` field and 20 owner-estimate price rows, the three project skills, HANDOFF §16 item 6 as the single home of verify counts, etc. — not restated here) **plus, added this round:**
-
-- The 4 service pages' "no JSON-LD" state — owner ruling, deliberate, not a gap to close later.
-- The trim rule in the SEO round's head-copy code (owner: cut at a sentence/phrase boundary, never mid-word, never a dangling connective, never a bare floating number, never a stranded clause-opener) — described in full in `docs/THAI_STYLE_LOG.md` §7 row 6 of the round's table.
-- Prices are never typed into head copy — always read live from `priceOf`/`getCatalogItem`.
-- "น้ำยา" stays out of head copy until the e-liquid category has real stock on the storefront (re-confirmed this round, not a new rule — original ruling 2026-09-13).
-
----
-
-## 10. Git — how mixed working-tree changes should be split into commits
-
-**[ตรวจแล้ว]** Working tree is clean as of local HEAD `9bcb3df` except this docs edit (this file itself) and the gitignored `_incoming/seo-a/` briefs folder. The archive copy `docs/archive/HANDOFF.2026-09-21-v34.md` (untracked per the git-status snapshot at session start) belongs in the same docs commit that lands this file. Nothing else is uncommitted, so there is nothing to split this round. Branch `checkpoint/phase-3.3.3` is reported fully contained in `origin/main` [เชื่อว่า] — never merge yourself; that is Cowork's job.
-
----
-
-## 11. Readiness per system
-
-| System | Status | One-line reason |
-|---|---|---|
-| Catalog browse / search / compare | Ready, live | Unchanged this round |
-| Pricing (53 storefront products) | Ready, live | 53/53 buyable, 0 unpriced — unchanged this round |
-| SEO structured data | Live | 101/105 pages carry JSON-LD; 53/53 Product offers have price/seller/shippingDetails/hasMerchantReturnPolicy [ตรวจแล้ว, `close-jsonld-all.log`] |
-| SEO head copy (title/description) | Live | 9 pages re-titled, 53/53 product descriptions carry a price line [ตรวจแล้ว, `close-desc-price-gate.log`] |
-| GSC validation (Rich Results, indexing requests) | Pending | Cowork's post-deploy step, not yet confirmed done [รอเจ้าของ/Cowork] |
-| Online ordering (cart/checkout) | Off on purpose | `OKAMI24_ORDERING=off`; item 44 at 1/7 criteria |
-| LINE ordering path | Ready, live | `/cart` and `/checkout` redirect to `?order=line`; unchanged |
-| Admin page | Parked, not started | Owner order — do not build without being asked |
-| Production DB backup | Configured, unverified today | `render.yaml` declares 6-hourly; no fresh Render-log check this round [รอเจ้าของ] |
-
----
-
-## 12. What was mid-flight when the chat closed
-
-Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per the main agent's report) merged and deployed before this handoff was written. What is genuinely open is not "mid-flight work" but **decisions waiting on the owner** — three new questions in §7, plus the carried-forward older list.
-
----
-
-## 13. Recommended next steps (ordered, with reasons)
-
-1. Paste the §16 block into a new chat, then run `git fetch` + `git status` + `git log -5 --oneline` + `git tag -n1` and compare with what §16 says — if they differ, trust the repo (also "First things" item 1 below).
-2. **Do not open the next round without the owner.** Route the three questions in §7 to the owner as one batch (13.4 #6) — which round is next (articles vs SEO ข) is itself one of those questions.
-3. When the owner opens the next round, run `scope-auditor` once and build the round's instruction file from `docs/TEMPLATES.md` (ก).
-4. On or after 2026-10-05, read `docs/SEO_BASELINE.md` and ask Cowork for the new GSC numbers before judging whether the SEO ก round worked.
-5. 9.4 (rollback drill) stays with the owner + Cowork, off-hours, per `docs/RECOVERY.md` §1.
-
----
-
-## 14. Stop doing (things that waste time or add risk)
-
-- **Typing prices or counts into copy** — every number in head copy now comes live from the catalog; typing one defeats the point of this round.
-- **Re-asking the rulings in §16 item 4b** — settled, do not re-litigate.
-- **Running screenshot passes on tier-A (head-copy/data-only) rounds** — the SEO ก round needed zero screenshots.
-- **Reading `docs/LAUNCH_AUDIT.md` in full** — read the head + the one item number in play, per its own house rule.
-- **Judging the SEO round's success before 2026-10-05** — GSC data before then is noise, not signal.
-
----
-
-## 15. Project end state — full flow, marking which steps already work
-
-**Search → product page with price and structured data → LINE `@okm24`** — works today, live, and is now more discoverable (SEO ก round). [ตรวจแล้ว, LAUNCH_AUDIT §1 head + this round's close-verify set]
-**Cart / checkout** — scaffolded but switched off; waits on the stock API landing and on LAUNCH_AUDIT item 44's remaining 6 criteria. Full step-by-step flow (browse → colour/flavour pick → stock check → payment → confirmation → order status) is unchanged from `docs/archive/HANDOFF.2026-09-15-v21.md` §15 — read there for the complete diagram; nothing about the cart itself moved this round.
-
----
-
-## 16. Paste block for the next chat (copy-paste) — keeps only 6 things: main · what the branch is ahead by · open round and where it stopped · waiting on the owner · open questions · verify baseline at the last close (cap 15 KB · rules/tools = §17)
+Relocated from §16 at this close so §16 can hold round B's own current state (CLOSED, stop point before PR
+#74 merges) — relocation, not deletion (doc-keeper spec). Verbatim from HANDOFF v75 §16:
 
 ```
-โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) แปลงจากเดโม NOVA VAPOR
-โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
-Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
-
 1 main: **origin/main = `f3405c2`** (merge commit, parents `51af909` + `10a322a` — PR #72, the "one list" file,
   merged by Friday from the cloud with the chat's own GitHub tool: Friday's first cloud self-merge)
   [ตรวจแล้ว, `docs/cloud-results/roundA-pipes.md`, batch 1 row "Merge from the cloud"]. `51af909` is this
@@ -725,7 +611,18 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
   this close]. **PR #73 open** (adds `.github/workflows/deploy.yml` and changes 13.7's own merge-rights text)
   — **Javis merges**: `.github/` is outside the self-merge script's allow-list on purpose, and a PR that edits
   13.7 itself is not a self-merge case either way.
-3 round: **round A "pipes" (cloud) — CLOSED.** Stop point = before PR #73 merges.
+3 round: **OPEN — round B "housekeeping" (computer, opened 2026-09-27 by the main agent)** · instruction
+  `docs/rounds/รอบB-เก็บบ้านใหญ่-กฎ-เอกสาร-คำสั่ง.txt` · base `origin/main` = `76703c9` (PR #73 merged) · rollback tag
+  `pre-roundB` (pushed) · branch `roundB-housekeeping` + a separate Javis-only branch `roundB-javis` (site-paths ·
+  workflows · large-file hook) · all batches tier A, 0 of 115 sitemap pages touched · owner answered step 0 "ไป" (every
+  Q recommendation) · order 0 → 2+5 → 6 → 3 → 4 → stop point 2 → 1 → merge → 7 · stopped at: **stop point 2** —
+  batches 0/2/3/4/5/6 done, checker PASS after 2 send-backs (record wording only), committed + pushed on both branches,
+  PRs open, nothing merged; the owner's question set = `docs/cloud-results/roundB-stop2-owner.md` (answer "ไป" or per
+  item). **First next step after the answer:** batch 1 (delete the 6+3 old branches and the 4 `inbox` copies, the
+  `_incoming` pile ③ if not objected) → the answered rule items → checker → merge (main PR = Friday per 13.7 if
+  `self-merge-check.js` PASS; `roundB-javis` = Javis) → batch 7 (checklist + cloud check file). Full record
+  `docs/cloud-results/roundB-housekeeping.md`.
+  Previous round: **round A "pipes" (cloud) — CLOSED**, PR #73 merged by Javis → `76703c9`.
   checker: PR #72 (commit `10a322a`) **PASS 5/5**; batches 1-3 **PASS 6/7 → 1 send-back → fixed → re-check
   PASS** (the send-back: `docs/CLOUD.md`'s deploy row claimed a GitHub Actions run that had not happened yet
   — reworded, re-checked) [ตรวจแล้ว, `docs/cloud-results/roundA-pipes.md`]. rule-auditor: 26 rows, the
@@ -814,6 +711,248 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
   ran `self-merge-check.js --base 51af909` = **PASS, 11 files**.
   Superseded (this is now the current baseline): round "mobile" close counts, carried at v73 §16 item 6, full
   text §3 "§16 lines relocated at round A 'pipes' close".
+```
+
+The permanent rulings from that block (item 4b) are NOT lost — condensed into v76 §16 item 4c; the open-items
+list (item 5) is carried forward into v76 §16 item 5, with round-B's own questions marked resolved via stop
+point 2 rather than repeated; item 4's (a)-(f) waiting list is superseded by round B's own item 4 (PR #73 is
+now merged, `76703c9`) except (b)/(c)/(f), carried forward unconfirmed at v76 §16 item 4(f).
+
+---
+
+## 4. Known broken / missing, not fixed yet
+
+- **[ตรวจแล้ว] og:title of the homepage is still the pre-round string** ("OKami24 — ของแท้ ราคาตรง บริการจริง") — the owner's approved table covered `<title>`/description/og:description only; og:title was never in scope this round. Confirmed absent from `_incoming/seo-a/table-final-for-owner.md` and from THAI_STYLE_LOG's own round entry, which notes it explicitly [ตรวจแล้ว, `docs/THAI_STYLE_LOG.md` line 905].
+- **[ตรวจแล้ว] THAI_STYLE.md §3 has no rows for the round's 4 new head-copy words** ("ร้านพอต", "บอกราคาทุกตัว", "Marbo", "ไม่มีคอยล์มาในกล่อง/ต้องซื้อคอยล์แยก") — confirmed by grep, they exist only in `THAI_STYLE_LOG.md` §7's round table, not as locked-word rows in `THAI_STYLE.md` §3. This is a deliberate omission per the brief (head copy only, judge after 14 days), not an oversight — see §7 question (ก).
+- **[ตรวจแล้ว] Resolver test coverage gap (carried from the prices round, untouched this round):** no test calls `resolveProductRef()` with a real, catalogued, unpriced legacy slug, because all 45 legacy products are now priced. Accepted by Cowork until the cart round.
+- **[เชื่อว่า] freeShippingThreshold (500 THB) not expressed in structured data** — deliberate: schema.org places that field on `ShippingRateSettings`, not `OfferShippingDetails`, and Google's merchant parser does not read it there. Per the round's own commit-message reasoning, not independently re-derived by doc-keeper against schema.org's spec text.
+- **[รอเจ้าของ/Cowork] Rich Results Test, GSC "validate fix", and index requests for the 45 currently un-indexed URLs are Cowork's post-deploy steps** — named in `docs/SEO_BASELINE.md`, not yet confirmed done by anyone in this chat.
+- 4 service pages carry no JSON-LD by owner ruling — not a bug, listed here only so it is not mistaken for one.
+- **12 product descriptions are trimmed versions** of their base spec sentence, cut to fit the 160-character description limit after the price line was appended — actual close-time count is **28**, not 12 (the checker's mid-round count of 12 was taken before batch 5's extra overrides were added; both numbers are real, from different points in the round) [ตรวจแล้ว, `_incoming/seo-a/close-desc-price-gate.log`]. List of all 28 is in that file.
+- Everything `docs/archive/HANDOFF.2026-09-21-v34.md` §4 listed and did not resolve is still open: caliburn-g4-pro Shipnity code (resolved: Pod-181, per commit `6873f03` — no longer open, listed here only to close the loop) · muro-3ml Shipnity-table absence (resolved: kept ฿99) · footer.tagline 3-word repeat · zh compatibility-note strings (2 spots) · Coil-72/89 category-label mismatch · 6 cards with an empty spec row · `ProductHero.tsx` stats not checking `verified` · TPD labelling on VINCI S/G3 mini · `PuffCount.tsx` dead code · `/favorites` and order-status zh eyebrow⊂H1 duplication · a Tier-B backlog of ~30 word-break items the owner declined to chase one by one · #31/#34 iPhone check · 2 `priority` spots · `th.ts` dead strings · hidden FAQ research · a stray dev-language comment in `relx.ts:19`.
+
+---
+
+## 5. In progress (scaffolded, needs continuation)
+
+None. [ตรวจแล้ว] The SEO ก round closed cleanly, merged (per the main agent's report), and this handoff is the closing action. No branch work is mid-flight. The next round (articles, or SEO ข if the owner opens it instead — §7(ค)) has not been opened.
+
+---
+
+## 6. Needed, not started
+
+Same long list as `docs/archive/HANDOFF.2026-09-21-v34.md` §6 (next rounds per LAUNCH_AUDIT: articles · data round — Coil-72/89 taxonomy, TPD, ProductHero verified-gate, PuffCount removal · cart round + item 49 + order-status eyebrow · item 45 security review · admin page (item 1, parked) · QR library (items 40/41) · item 42 path-2 offsite backup (R2/B2) · sales/label/meta rounds) — plus:
+
+- **SEO ข (tier B — internal links/rails)**, named as a possible follow-up inside the SEO ก round file but never opened; needs the owner to choose it or articles first (§7(ค)).
+- When the stock API lands, overwrite the 20 `basis: "owner-estimate"` rows in `src/data/shipnity-seed/legacy-price-approvals.ts` with real supplier prices, in that one file only [ตรวจแล้ว, `docs/BUSINESS_SOURCE_OF_TRUTH.md` §5].
+
+---
+
+## 7. Questions for the owner
+
+| Topic | Known | Unknown | What to answer |
+|---|---|---|---|
+| Add the round's 4 new words to THAI_STYLE §3 as locked words | Currently only logged in THAI_STYLE_LOG §7, used in head copy only | Whether they should become site-wide locked vocabulary now or after they prove out | Recommended: not yet — head copy only, judge after 14 days (2026-10-05, alongside the GSC re-read) |
+| og:title of the homepage still reads the pre-round string | Approved table never covered og:title | Whether the owner wants it to match the new `<title>` (A1: "OKami24 (OKM) — พอตของแท้ ราคาตรง บริการจริง") | Recommended: yes, fold into the next copy round — not urgent enough for its own round |
+| Which round opens next: articles (LAUNCH_AUDIT's stated order) or SEO ข (tier B, named but not opened) | Both are legitimate "next" candidates; LAUNCH_AUDIT's written order says articles, the SEO round file suggested SEO ข as a possible follow-up | Owner's priority | No recommendation — this is a priority call, not a technical one |
+| Everything else | Unchanged since `docs/archive/HANDOFF.2026-09-21-v34.md` §7 / §16 item 4 — see that list (9.4 rollback drill · footer.tagline · zh notes · TPD · #31/#34 iPhone · Render OOM watch · priority spots · Lighthouse · items 10/13/16/37 · account name · black-pod photos · R2/B2 · QR library · account 189) | — | Not repeated here to keep this table short |
+
+---
+
+## 8. Risks and things to watch (most dangerous first)
+
+1. **[ตรวจแล้ว] 20 legacy prices are owner estimates — now also shown in Google snippets** via the price line and brand-page titles. When the stock API overwrites `legacy-price-approvals.ts`, the head copy follows automatically (price is never typed, always read live) — but Google's own cached snippet will lag behind the real change until it recrawls.
+2. **[รอเจ้าของ] GSC numbers must be re-read 2026-10-05** against `docs/SEO_BASELINE.md` before anyone judges whether this round worked — reading them earlier will show noise, not signal.
+3. **[เชื่อว่า] Production DB backup cadence unverified today** — `render.yaml` declares a 6-hourly backup; nobody has checked the Render log for a `[backup]` line since the SEO round closed. Low current risk (cart is off).
+4. **Cowork merges and deploys without announcing it in chat** — `git fetch` before trusting any "main is at X" claim; this file's own `origin/main` value is [ตรวจแล้ว] against the local ref file only, not against GitHub itself.
+   > **Superseded 2026-09-27 (round B, main agent — note added, old line kept):** who merges and how the site goes live = `.claude/TEAM_RULES.md` 13.7 (Friday merges off-site PRs herself; a merge that touches the site deploys itself after the GitHub checks). The `git fetch` advice still holds.
+5. Resolver test coverage gap (§4) — carried risk, unchanged this round.
+6. **Session/tool findings worth carrying forward** (session-specific, not project bugs): none new this session worth recording — no tool failures reported for the SEO round's chat.
+7. The two-tier rule (tier A/B), NBSP/word-joiner mechanism, and the full do-not-touch list are unchanged and live in §17 below — read there, not restated here.
+
+---
+
+## 9. Do not tear down (owner-approved or working as intended)
+
+Everything in `docs/archive/HANDOFF.2026-09-21-v34.md` §9 / §17 "Do not touch" (the single list — layout, images, motion, ordering-mode.ts, slugs/URLs, service pages, Hero.tsx, THAI_STYLE group ก words, card-headline-spec.ts, TrustBar, sticky /compare header, every locked THAI_STYLE_LOG §7 row, the `basis` field and 20 owner-estimate price rows, the three project skills, HANDOFF §16 item 6 as the single home of verify counts, etc. — not restated here) **plus, added this round:**
+
+- The 4 service pages' "no JSON-LD" state — owner ruling, deliberate, not a gap to close later.
+- The trim rule in the SEO round's head-copy code (owner: cut at a sentence/phrase boundary, never mid-word, never a dangling connective, never a bare floating number, never a stranded clause-opener) — described in full in `docs/THAI_STYLE_LOG.md` §7 row 6 of the round's table.
+- Prices are never typed into head copy — always read live from `priceOf`/`getCatalogItem`.
+- "น้ำยา" stays out of head copy until the e-liquid category has real stock on the storefront (re-confirmed this round, not a new rule — original ruling 2026-09-13).
+
+---
+
+## 10. Git — how mixed working-tree changes should be split into commits
+
+**[ตรวจแล้ว]** Working tree is clean as of local HEAD `9bcb3df` except this docs edit (this file itself) and the gitignored `_incoming/seo-a/` briefs folder. The archive copy `docs/archive/HANDOFF.2026-09-21-v34.md` (untracked per the git-status snapshot at session start) belongs in the same docs commit that lands this file. Nothing else is uncommitted, so there is nothing to split this round. Branch `checkpoint/phase-3.3.3` is reported fully contained in `origin/main` [เชื่อว่า] — never merge yourself; that is Cowork's job.
+
+> **Superseded 2026-09-27 (round B, main agent — note added, old line kept):** "never merge yourself" no longer holds — merge rights = `.claude/TEAM_RULES.md` 13.7 (the self-merge case + the Javis-only exceptions). This section is a 2026-09-22 snapshot.
+
+---
+
+## 11. Readiness per system
+
+| System | Status | One-line reason |
+|---|---|---|
+| Catalog browse / search / compare | Ready, live | Unchanged this round |
+| Pricing (53 storefront products) | Ready, live | 53/53 buyable, 0 unpriced — unchanged this round |
+| SEO structured data | Live | 101/105 pages carry JSON-LD; 53/53 Product offers have price/seller/shippingDetails/hasMerchantReturnPolicy [ตรวจแล้ว, `close-jsonld-all.log`] |
+| SEO head copy (title/description) | Live | 9 pages re-titled, 53/53 product descriptions carry a price line [ตรวจแล้ว, `close-desc-price-gate.log`] |
+| GSC validation (Rich Results, indexing requests) | Pending | Cowork's post-deploy step, not yet confirmed done [รอเจ้าของ/Cowork] |
+| Online ordering (cart/checkout) | Off on purpose | `OKAMI24_ORDERING=off`; item 44 at 1/7 criteria |
+| LINE ordering path | Ready, live | `/cart` and `/checkout` redirect to `?order=line`; unchanged |
+| Admin page | Parked, not started | Owner order — do not build without being asked |
+| Production DB backup | Configured, unverified today | `render.yaml` declares 6-hourly; no fresh Render-log check this round [รอเจ้าของ] |
+
+---
+
+## 12. What was mid-flight when the chat closed
+
+Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per the main agent's report) merged and deployed before this handoff was written. What is genuinely open is not "mid-flight work" but **decisions waiting on the owner** — three new questions in §7, plus the carried-forward older list.
+
+---
+
+## 13. Recommended next steps (ordered, with reasons)
+
+1. Paste the §16 block into a new chat, then run `git fetch` + `git status` + `git log -5 --oneline` + `git tag -n1` and compare with what §16 says — if they differ, trust the repo (also "First things" item 1 below).
+2. **Do not open the next round without the owner.** Route the three questions in §7 to the owner as one batch (13.4 #6) — which round is next (articles vs SEO ข) is itself one of those questions.
+3. When the owner opens the next round, run `scope-auditor` once and build the round's instruction file from `docs/TEMPLATES.md` (ก).
+4. On or after 2026-10-05, read `docs/SEO_BASELINE.md` and ask Cowork for the new GSC numbers before judging whether the SEO ก round worked.
+5. 9.4 (rollback drill) stays with the owner + Cowork, off-hours, per `docs/RECOVERY.md` §1.
+
+---
+
+## 14. Stop doing (things that waste time or add risk)
+
+- **Typing prices or counts into copy** — every number in head copy now comes live from the catalog; typing one defeats the point of this round.
+- **Re-asking the rulings in §16 item 4b** — settled, do not re-litigate. (Round B 2026-09-27: the permanent rulings now sit in §16 items 4b–4c + §3 "Permanent owner rulings".)
+- **Running screenshot passes on tier-A (head-copy/data-only) rounds** — the SEO ก round needed zero screenshots.
+- **Reading `docs/LAUNCH_AUDIT.md` in full** — read the head + the one item number in play, per its own house rule.
+- **Judging the SEO round's success before 2026-10-05** — GSC data before then is noise, not signal.
+
+---
+
+## 15. Project end state — full flow, marking which steps already work
+
+**Search → product page with price and structured data → LINE `@okm24`** — works today, live, and is now more discoverable (SEO ก round). [ตรวจแล้ว, LAUNCH_AUDIT §1 head + this round's close-verify set]
+**Cart / checkout** — scaffolded but switched off; waits on the stock API landing and on LAUNCH_AUDIT item 44's remaining 6 criteria. Full step-by-step flow (browse → colour/flavour pick → stock check → payment → confirmation → order status) is unchanged from `docs/archive/HANDOFF.2026-09-15-v21.md` §15 — read there for the complete diagram; nothing about the cart itself moved this round.
+
+---
+
+## 16. Paste block for the next chat (copy-paste) — keeps only 6 things: main · what the branch is ahead by · open round and where it stopped · waiting on the owner · open questions · verify baseline at the last close (cap 15 KB · rules/tools = §17)
+
+```
+โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) แปลงจากเดโม NOVA VAPOR
+โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
+Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
+
+1 main: run `git fetch && git log -1 --oneline origin/main` for the current commit. Rollback point for
+  round B = tag `pre-roundB` (pushed, made from `origin/main` before the round opened). Open PR **#74**
+  (`roundB-housekeeping` → main, off-site) — **Javis merges** (not Friday): `self-merge-check.js --pr 74` said
+  BLOCKED on 49 Thai-named `docs/rounds` files — a gate bug (`gh` quotes Thai paths), fix = PR **#77** (Javis) ·
+  13.4 #9: a failing merge gate = stop, no workaround [ตรวจแล้ว, `_incoming/roundB/break-self-merge-pr-mode.log`].
+2 ahead of main: run `git log --oneline origin/main..roundB-housekeeping` for the full commit list (also
+  the Javis-only branches). PR **#75** (`roundB-javis`: large-file hook · site-paths Render Shell · Actions
+  v7) was **merged by Javis before #74** → main `ce99c99` (its push run: "SKIP deploy" — pipeline rule)
+  [ตรวจแล้ว, `gh run view 36294316930`]. The mirror removal (commit `34508c1`, made after #75 was pushed)
+  rides on its own branch **`roundB-javis-2`** → a new Javis PR, merged **after** #74 (the old
+  `owner-rules-check` on main still reads the mirror).
+3 round: **CLOSED — round B "housekeeping" (computer, opened + closed 2026-09-27)** · instruction
+  `docs/rounds/รอบB-เก็บบ้านใหญ่-กฎ-เอกสาร-คำสั่ง.txt` (v2) · full record `docs/cloud-results/
+  roundB-housekeeping.md` (every number, English) + owner-facing Thai summary `docs/cloud-results/
+  roundB-stop2-owner.md`. Stop point = **before PR #74 merges** — every batch done and pushed on both
+  branches, nothing merged yet. scope-auditor: sitemap 115 pages, **0 touched** (every change off the
+  build/server path). checker: batches 0-6 **5/7 → 2 send-backs (record wording) → re-check → 1 more
+  send-back (one row) → PASS** [ตรวจแล้ว, `docs/cloud-results/roundB-housekeeping.md`]; this close batch
+  (owner answers 1-7 · owner-rules-check fix · CLOUD_CHECKLIST · docs/RULES_INDEX/ROUND_COST, this push) = **4/7 → 3 send-backs (PR #75 facts after Javis merged it early · the mirror commit not pushed yet · 2 record explanations) → re-check 1 more send-back (RULES_INDEX row 110) → PASS**. rule-auditor: 44 rows (conflict 6 ·
+  dead 7 · stale after the cloud move 13 · duplicate 8 · ambiguous 7 · cross-project 3), all dispositioned
+  or carried to item 4 below. Owner answered stop point 2 with "ไป" on 2026-09-27 = every recommendation
+  accepted [ตรวจแล้ว, `docs/cloud-results/roundB-stop2-owner.md`]. Close tag
+  **`roundB-housekeeping-done`** — made on the close commit (computer round → tag, per round-close), once
+  this docs push lands.
+  **First next step:** Javis merges PR #74 → then PR #76 (mirror removal, after #74) and PR #77 (gate fix, any
+  order) → a Friday chat moves `220567d` (drops the 4 copied round files from `inbox`; local worktree
+  `.claude/worktrees/roundB-inbox` branch `roundB-inbox-local`) onto the current `inbox` and pushes it, only after
+  #74 → Javis runs the batch 7 cloud check (`rounds/roundB-cloud-check.txt` is already on `inbox`).
+  Previous round: **round A "pipes" (cloud) — CLOSED + MERGED**, PR #73 merged by Javis → `76703c9` (this
+  round's base); full batch detail relocated to §3 "§16 lines relocated at round B 'housekeeping' close"
+  below.
+  Previous rounds before that, all CLOSED + MERGED, full detail at §3 (unchanged): round "mobile" ·
+  "cloud" tag `cloud-round-done` · "central-rules" tag `central-rules-done` · "tools round" tag
+  `tools-round-done` · "friday persona" tag `friday-persona-done` · "rules trim" tag `rules-trim-done` ·
+  "owner rules" tag `owner-rules-done` · "rules move" tag `rules-move-done` · round 10C tag
+  `seo-landscape-10c-done` · round data 2 tag `data-facts-2-done`.
+4 waiting on owner / Javis:
+  (a) delete the 6 GitHub branches (`claude/mobile-full-round-vc6o2b` · `rules/owner-answers-1a-6a-7a-9a` ·
+  `rules-sync/d5ff55b` · `rules-sync/97a58b0` · `claude/t4-delete-probe` · `checkpoint/phase-3.3.1`) + 3
+  computer branches — the session's permission guard refused `git push --delete` / `git branch -D`
+  ("Git Destructive") this round, not retried by any other route; full list + "safe to delete" proof =
+  `docs/cloud-results/roundB-housekeeping.md` batch 1 table.
+  (b) delete `_incoming/zz-to-delete-roundB/` (this round moved, not deleted, its pile ③ there — untracked
+  files cannot be recovered once actually deleted) — owner's call.
+  (c) merge PR **#74** (Javis — see item 1), then PR **#76** (`roundB-javis-2`, mirror removal, after #74) and PR
+  **#77** (`roundB-javis-3`, merge-gate Thai path fix). #75 is already merged.
+  (d) run the batch 7 cloud check — `rounds/roundB-cloud-check.txt` is on `inbox` (it stops by itself if #74 is
+  not merged yet) — Javis opens it in a cloud chat after #74.
+  (e) stop-2 items 8-12, Friday untouched by design, full text `docs/cloud-results/roundB-stop2-owner.md`
+  §ข: 8 Render Blueprint **Auto Sync** — docs say default on, a push that edits `render.yaml` may deploy
+  outside the GitHub-checks gate [ยืนยันจากเอกสาร render.com/docs/infrastructure-as-code]; recommendation
+  Render → Blueprints → okami24 → Auto Sync → **No** · 9 split the shared "Smog.z" cloud environment (web
+  vs cartoon) · 10 the OneDrive "รอบมือถือเต็มตัว" file differs from the `inbox` copy the cloud chat
+  actually ran — Javis checks what the OneDrive copy adds after the run · 11 cartoon's own merged branch
+  `rules-sync/d5ff55b` — cartoon Friday deletes when the owner says · 12 three central-rules proposals for
+  `smogz-rules` (Javis PRs there, not this repo).
+  (f) carried from round A "pipes": owner opens the Artifact test link
+  `https://claude.ai/artifact/TuQkJ54AAMknjaj7co1ys9` on the phone (2 images = topic 7 of the mobile round's
+  questions file done) [รอเจ้าของ]. The other round-A items are done [ตรวจแล้ว by the main agent 2026-09-27]:
+  `RENDER_DEPLOY_HOOK_URL` is in the repo's secret list (name only, set 01:35 UTC) · `wip/roundA-pipes-b123-1`
+  and `claude/round-a-pipes-setup-3hjydq` no longer exist on GitHub (`git ls-remote --heads origin`).
+4b (permanent, 13.10 #12, do not re-ask; this round's own rulings, owner "ไป" 2026-09-27, full text
+  `docs/cloud-results/roundB-stop2-owner.md` §ก + `roundB-housekeeping.md` "Stop point 2"): tier-B owner
+  approval = one question set per batch, work does not wait (13.4 #6) + final keep/undo at merge (#2) ·
+  "round end = handoff" means **§16 only** (doc-keeper); the full §1-§15 rewrite is only for the owner
+  typing "handoff" or a chat move — §1-§15 labelled "history up to v34" · a push that is not a batch close
+  = the main agent writes §16, not doc-keeper · `.claude/GLOBAL_RULES_MIRROR.md` **retired** — the 2 gates
+  that read it now read the live copy `.claude/rules/central-rules.md` instead, mirror optional; the file
+  itself + its `JAVIS_ONLY` entry are removed by the follow-up Javis PR (branch `roundB-javis-2`) · checkpoint (13.10 #10) = a tag or branch at a
+  checked point, never a commit of unchecked work · TEMPLATES report-line dropped "≤20 คำ", kept "1
+  ประโยค ต่อบรรทัด" only.
+4c (permanent, 13.10 #12, do not re-ask; carried, unchanged, full text §3): round A "pipes" — 13.7
+  self-merge scope now covers Friday's PRs touching skills/agents/web rules from the cloud, not only docs
+  (exceptions unchanged: `.claude/settings*`/hooks/`.github/` still go to Javis) · a cloud round's close
+  names a commit, never a tag · cloud rounds write their full record to `docs/cloud-results/<round>.md` ·
+  deploy route A (GitHub Actions gate) chosen. Earlier rounds' rulings (cloud round, mobile round, and
+  before): 5 speed-consult proposals adopted whole · rule answers 1A/6A/7A/9A + 8=A + 11=A · Friday/Javis
+  persona · round 9/10B/data-round rulings · never raise Thailand's legal status in owner-facing reports ·
+  build guard = option A · the "ร้านพอต" SEO block's shipping numbers = BSOT §10 · "เซฟ ๆ ให้ด้วย" = be
+  careful, in `.claude/LESSONS.md`.
+5 open — round-B rule-audit questions (A1 A2 A3 D6 G3 G4 G5 G1, B3) = **resolved** this round via stop
+  point 2 ("ไป", item 4b above); the only round-B items still open are stop-2 items 8-12 (item 4(e) above).
+  Carried from round "mobile" (unchanged, full text §3): topic 3 — this cloud's Chromium trusts no CA,
+  live-site screenshots stay a computer job · topic 6 — does Google Fonts count as an "agreed source" for
+  this cloud machine's Thai font, and should the site load its own Thai font · topic 9 — no extra
+  environment-setup script needed, the repo's own SessionStart hook covers it · topic 10 — propose-only, a
+  script to check `docs/rounds/` copies against the OneDrive master · topic 11 — 3 small layout notes the
+  designer saw in passing, folded into the next tier-B site round · topic 4 (carried as a working note, not
+  a question) — the clip-embed round should use `i.ytimg.com`, not `img.youtube.com` (403 from this
+  cloud), per round A's own probe.
+  Older backlog carried, full text §3: `_incoming/round10c/extras.md`'s 6 site-touching proposals · ask
+  Cowork on 05/10: index status of the 5 new guides + which page GSC credits for "caliburn g5"/"m bar"/
+  "uwell" · round data 2 leftovers · hydration/bundle scrub · `/compare` "Charging" "—" ×19 · Shipnity Thai
+  on en/zh · round 11A pod-159 photos · B5 rest · B6. Tools round, found, not fixed (site untouchable that
+  round): 10 Thai strings shown to en/zh visitors on coil-54/55/68 + iqosheet-16/18 [ตรวจแล้ว,
+  `_incoming/tools-round/b3/data2-evidence.md`].
+6 verify baseline — **unchanged from round A "pipes" close, cloud session, HEAD `7532f49`** — round B ran
+  only the rule gates, not the full verify set (its own instruction file: no big verify needed, nothing it
+  checks was touched; proof = `self-merge-check.js` + the gates below) [ตรวจแล้ว, `_incoming/roundB/
+  brief-doc-keeper-close.md`]: this round's own gates — `owner-rules-check` **PASS** · `rules-move-check`
+  **PASS** · `central-rules-copy-check` **PASS local** · `eol-check` **OK** · `eslint` on the 4 scripts
+  round B touched **0**. Full verify-set numbers still stand from round A's close, not re-run this round:
+  `tsc` **0** · `eslint` (4 scripts touched that round) **0** · `verify:commerce` **All 17 checks passed**
+  · `verify:catalog --full` **All 31 step(s) passed** · `count-storefront` buyable **53** · `i18n`
+  **16/16** · `raw-chars` **0** · `content-dates` current, **55 paths** · secret scan of that round's diff
+  **0 hits** [ตรวจแล้ว, `docs/cloud-results/roundA-pipes.md`, carried at v75 §16 item 6].
 (context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
 
@@ -825,18 +964,20 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
 
 ```
 Context rule: .claude/TEAM_RULES.md 13.6 · every push = update §16 (spec in doc-keeper.md) · an agent added or edited under .claude/agents/ is usable at once in the running chat — no new session needed (verified 2026-09-17; the old "needs a new session / HANDOFF 8.6" claim is dead — RULES_INDEX row 25)
-Two-tier rule (owner 2026-09-14 — merged here from THAI_STYLE §6 on 2026-09-17, RULES_INDEX rows 50/68; screenshot rule 13.6 points here): tier A = text only → no screenshots, no designer per batch · tier B = touches structure/screen (not sure = tier B) → full: build → shoot before (finish before rebuilding) → draft to owner (show, do not wait — central §12 item 22) → shoot after at 390 + 1440 → designer → owner picks → checker → commit · round close = skill `round-close` (scan first, designer once, word-break fixes in one commit — moved there 2026-09-20, RULES_INDEX row 76) · details of the original ruling: §8.0 · every new sentence = 3 languages + owner approves the Thai · every number points at a verified spec row · no U+2060/NBSP outside the mechanism · thaiTypography() must have a locale guard · generated evidence must mirror the component logic in full · forbidden claims: THAI_STYLE §3 "คำ/ประโยคที่ห้ามในข้อความใหม่" (one list)
+Two-tier rule (owner 2026-09-14 — merged here from THAI_STYLE §6 on 2026-09-17, RULES_INDEX rows 50/68; screenshot rule 13.6 points here): tier A = text only → no screenshots, no designer per batch · tier B = touches structure/screen (not sure = tier B) → full: build → shoot before (finish before rebuilding) → draft to owner (show, do not wait — central §12 item 22) → shoot after at 390 + 1440 → designer → checker → commit (the owner's taste questions = one set per batch, the work does not wait — 13.4 #6; the final keep/undo = at merge — 13.4 #2; owner ruling item 1, round B 2026-09-27) · round close = skill `round-close` (scan first, designer once, word-break fixes in one commit — moved there 2026-09-20, RULES_INDEX row 76) · details of the original ruling: `docs/RULES_INDEX.md` rows 50/68 · every new sentence = 3 languages + the owner rules the Thai (same timing: 13.4 #6 / #2) · every number points at a verified spec row · no U+2060/NBSP outside the mechanism · thaiTypography() must have a locale guard · generated evidence must mirror the component logic in full · forbidden claims: THAI_STYLE §3 "คำ/ประโยคที่ห้ามในข้อความใหม่" (one list)
 Do not touch (single list — merged 2026-09-17 from this line, §9 and §14, RULES_INDEX row 55): layout outside the named spot · images · motion · ordering-mode.ts · slug/URL/sitemap/structured data · service pages · Hero.tsx · cinematic/ · THAI_STYLE group ก · labelTh/name/shortName · lg:min-h-10 · age/nicotine warnings · colour/flavour names · thai-typography.ts list · CategoryLabel.tsx / label-lang · card-headline-spec.ts rules · dictionary catalog.card* / trust.* (set ก) · TrustBar row layout / 4 icons · sticky th on /compare · ScrollHintFrame · headings K1–K3 · locked word "อุ่นยาสูบ" · the ban on "ไม่เผาไหม้" in every language · FAQ eyebrow "ถาม-ตอบ" · /search eyebrow = footer.tools · every THAI_STYLE_LOG §7 row of round 30.4ข · ProductHero stats / PuffCount / Coil-72/89 category (data round) · footer.tagline / service pages / cart (their own rounds) — and never: joiner/NBSP outside the list · two Chrome jobs at once · fixing tier-B orphan words one by one · placeholders in an empty spec row · screenshots without a scan first — the scan-first / ≤30-shots-or-explain rule lives in .claude/TEAM_RULES.md 13.10 #15 (owner ruling 2026-09-18), not here
 Hard rules: merge / deploy / force-push → ~/.claude/CLAUDE.md §8 + .claude/TEAM_RULES.md 13.7 (not restated here — RULES_INDEX row 45) · revert, never reset · never invent a number · deciding alone = easy to undo (customer-visible in-scope items: 13.4 #2), then write "ตัดสินเอง: … เพราะ …" · when to ask = 13.4 only (RULES_INDEX row 3) · work beyond the brief = .claude/TEAM_RULES.md 13.10 #1 (its own commit, same gates, listed in the report — RULES_INDEX row 85)
   · checker reports in the five fields of 13.5 + the Thai-copy gates = skill `thai-check` (checker.md item 5 points there; the checker reads the SKILL.md file — moved 2026-09-20, RULES_INDEX row 77) · who edits files = 13.5 (RULES_INDEX rows 13/52/58/59)
+  · (the next two lines: Windows computer only unless a line says otherwise — the cloud is Linux, has no autocrlf, and `node scripts/test-server.js stop` works on both)
   · ปิด server: `node scripts/test-server.js stop` (ฆ่าเฉพาะตัวที่ฟังพอร์ต 3412 ตาม PID · `status` = ดูว่ารันอยู่ไหม) · ห้าม /IM node.exe · พอร์ต 3000 = เจ้าของ · ห้าม build ขณะ server รัน — `test-server.js build` และ `verify:catalog --full` ปฏิเสธเองเมื่อ 3412 รัน · `npm run build` / `npx next build` ตรง ๆ ไม่มีด่าน (กันได้เฉพาะใน next.config/package.json — คำถามเจ้าของค้าง "ด่าน build แบบ B" §16) แต่ทำ server พังไม่ได้ เพราะ server รันจากสำเนา build ของตัวเอง · verify:catalog --full build เอง รันตอน server ปิด · Chrome ทีละงาน · งาน >10 นาที = (cmd &) + เฝ้า log
   · สคริปต์เขียนด้วย Write tool · ข้อความไทยเข้าสคริปต์ทางไฟล์ json/txt เท่านั้น (argv mangled) · shot.js ห่อผล eval JSON 2 ชั้น (parse ซ้ำ) · CRLF: ไฟล์ใหม่จาก Write = LF → unix2dos ก่อน git add · ตรวจ git ls-files --eol · ด่านก่อน commit `scripts/eol-check.js --staged` (.githooks/pre-commit · เปิดหลัง clone = RECOVERY §2ค) + `.gitattributes` เก็บ LF ใน git ทุกเครื่อง · ไฟล์ใน .githooks/ = LF เสมอ · Git Bash แปลง arg "/" → MSYS_NO_PATHCONV=1
 
-เครื่องมือ — ใน git (scripts/): shot.js · card-lines.js + card-lines-diff.js (บรรทัดสเปกการ์ด ก่อน/หลัง 3 ภาษา) · empty-cards.ts · finder-dump.ts (ผล Finder ทุกคำตอบ) · head-audit.js (head/ลิงก์ทุกหน้าใน sitemap) — วิธีใช้อยู่หัวไฟล์ · ประวัติ นอก git (_incoming/30.4b ของรอบ 30.4ข — หายเมื่อยกขึ้นคลาวด์): k3-shots.js <before|after> [--only …] [--locale …] (ครอปหัวหน้า+วัดบรรทัด) · k3-variant.js <json> (ลองคำใหม่ไม่ต้อง build) · k4-eyebrow-pairs.ts · k4-shots.js <tag> [--faq-file f] [--search-file f] · k5-shots.js <tag> [--variant row|cards] [--short] [--only w] [--locale l] · k6-shots.js <tag> (sticky /compare + hover จำลอง) · k*-sheets.js (ภาพรวม before/after) · (กลับมาใน git:) scripts/wordbreak-scan.js --base … --widths 390,1440 --out _incoming/30.4b/wb-<tag> /path… (MSYS_NO_PATHCONV=1) → node scripts/wb-diff.js <before> <after>
+เครื่องมือ — ใน git (scripts/): shot.js · card-lines.js + card-lines-diff.js (บรรทัดสเปกการ์ด ก่อน/หลัง 3 ภาษา) · empty-cards.ts · finder-dump.ts (ผล Finder ทุกคำตอบ) · head-audit.js (head/ลิงก์ทุกหน้าใน sitemap) — วิธีใช้อยู่หัวไฟล์ · also in git, found unlisted by round B (2026-09-27), usage in each file's head: site-audit.js (whole-site SEO re-audit) · overflow-390.js (sideways-scroll gate, every sitemap page) · html-diff.js (two HTML dumps, build ids normalised) · measure-articles.ts (article length/links/keywords) · related-boxes.ts (every product's "อ่านต่อ" box as JSON) · guide-reading-rate.ts (Thai chars per reading minute) · record-scroll.js + frames-to-gif.js (scroll recording → GIF) · ประวัติ นอก git (_incoming/30.4b ของรอบ 30.4ข — หายเมื่อยกขึ้นคลาวด์): k3-shots.js <before|after> [--only …] [--locale …] (ครอปหัวหน้า+วัดบรรทัด) · k3-variant.js <json> (ลองคำใหม่ไม่ต้อง build) · k4-eyebrow-pairs.ts · k4-shots.js <tag> [--faq-file f] [--search-file f] · k5-shots.js <tag> [--variant row|cards] [--short] [--only w] [--locale l] · k6-shots.js <tag> (sticky /compare + hover จำลอง) · k*-sheets.js (ภาพรวม before/after) · (กลับมาใน git:) scripts/wordbreak-scan.js --base … --widths 390,1440 --out _incoming/30.4b/wb-<tag> /path… (MSYS_NO_PATHCONV=1) → node scripts/wb-diff.js <before> <after>
   · .claude/launch.json ("vapor-dev", port 3000) is the owner's own dev server — agents never start it (RULES_INDEX row 16) · test server: `node scripts/test-server.js build` แล้ว `node scripts/test-server.js start` (ค่าเดิมอยู่ในสคริปต์: SITE_URL=https://okami24.store · OKAMI24_DATA_DIR=<tmp> · OKAMI24_BACKUP_DISABLED=1 · OKAMI24_STARTUP_PROBE=0 · พอร์ต 3412 · log `_incoming/test-server-3412.log`) · build ใหม่แล้วต้อง stop → start ถึงจะเสิร์ฟ build ใหม่
+src files the skills use (the one list — skills may not name a file under src/, `.claude/TEAM_RULES.md` 13.3 "สกิลเขียนอะไรได้", owner ruling item 5 round B 2026-09-27; fix a renamed file here): [i18n-test] `npx tsx src/i18n/i18n-contract-test.ts` · [catalog-method] `src/data/shipnity-seed/README.md` section "Catalog reconciliation methodology" · [legacy-products] `src/data/products/*.ts` · [taxonomy] `src/data/shipnity-seed/active-catalog-to-product-master.ts` (`TAXONOMY_MATCHES`) · [spec-gate] `src/lib/verified-specs.ts` + `src/lib/verified-specs-contract-test.ts`
 Verify: the full set with its commands = skill `round-close` step 3 (a batch runs the subset its checker gate needs) · pass = what each script prints · the counts last seen at a close = §16 item 6 "verify baseline at last close", not a rule text (moved 2026-09-20, RULES_INDEX row 78)
 Git: commit split by type per 13.7 (English prefix feat/fix/copy/data/docs/chore/agents/rules) · git commit -F <file> · English · Co-Authored-By: Claude Opus 5 <noreply@anthropic.com> · push/merge/deploy rules = 13.7 (RULES_INDEX rows 2/14/45)
-agent (เพิ่ม 2026-09-17): rule-auditor (opus · เรียกเมื่อเปิดรอบเก็บบ้าน/ก่อนเพิ่มกฎ · read-only) · scope-auditor (sonnet · เรียกเมื่อเปิดรอบ ครั้งเดียว · read-only) · doc-keeper (sonnet · เรียกเมื่อปิดก้อน · เขียนได้เฉพาะ docs/) · seo-auditor (opus · เพิ่ม 2026-09-23 รอบ 7 เจ้าของเคาะ · เรียกเฉพาะรอบ SEO 3 จุด: เปิดรอบหลัง scope-auditor · ครั้งเดียวก่อนก้อน head ก้อนแรก · ปิดรอบ + วันวัดผลใน SEO_BASELINE · read-only ไม่เขียนไฟล์) — เงื่อนไขเรียกข้อเดียวอยู่บรรทัดแรกของแต่ละไฟล์ · ห้ามเรียกทุกหัวข้อย่อย
+agent: who does what = `.claude/TEAM_RULES.md` 13.3 · when to call each one = the `description` line of its own file in `.claude/agents/` (one place — round B 2026-09-27 cut the copy that stood here) · never call one per sub-item
 tag: command and sequence = skill `round-close` step 5 (rule in 13.7; name table in docs/RECOVERY.md §2 — moved 2026-09-20, RULES_INDEX row 75)
 ```
 

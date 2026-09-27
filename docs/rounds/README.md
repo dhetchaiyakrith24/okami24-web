@@ -1,18 +1,23 @@
-# Round instruction files (copies in git)
+# Round instruction files — the master copies
 
-Copies of the round instruction files the owner and Javis keep in
-`C:\Users\dhetc\OneDrive\Desktop\Run prompt\New prompt WEB\` — copied here 2026-09-26 (round "cloud") so a cloud chat,
-which cannot see the owner's computer, can read them. **The OneDrive folder stays the source** (Friday never moves,
-edits or deletes it); a file edited there must be copied here again. Text is unchanged (line endings set to CRLF on disk like every file here; git stores LF); two names were made safe:
-`B New admin .txt` → `B-New-admin.txt` · `C Qr.txt` → `C-Qr.txt`.
+**Git is the master of round instruction files** (owner ruling Q1, round B "housekeeping" 2026-09-27 — replaces the
+ruling of 2026-09-26 question 5 = A, "the OneDrive file stays the master"):
 
-Secret scan before commit: e-mail / token / password value / phone / bank-account-number patterns = 0 values found
-(the admin and QR files only name "password" and "PromptPay" as features — no value is written in them).
+- **A round not yet run** = branch `inbox`, folder `rounds/` (Javis puts it there through the GitHub web page or the
+  phone — steps: `docs/CLOUD.md`). A cloud chat reads it there.
+- **A round that ran (or is running)** = this folder. Friday copies the file here at round open (skill `round-open`
+  step 1) and deletes the `inbox` copy at round close (skill `round-close` step 6, owner ruling Q2).
+- **OneDrive** `C:\Users\dhetc\OneDrive\Desktop\Run prompt\New prompt WEB\` = Javis's drafting place, not a master.
+  Friday never moves, edits or deletes files there.
+- **Two copies differ** (OneDrive vs here, or `inbox` vs here) = the copy that ran is the record; Friday says in the
+  report which copy ran and names the difference — never picks one silently.
 
-New instruction files for the cloud: Javis puts them on the branch `inbox` (folder `rounds/`) through the GitHub web
-page — steps: `docs/CLOUD.md`.
+History of this folder: first copies made 2026-09-26 (round "cloud"); round B (2026-09-27) added the 45 finished web
+rounds from OneDrive `Run prompt\Sucsess\` (the one file there titled "not for Code" was not opened or copied), the
+3 files missing from the OneDrive `New prompt WEB` set, and the `inbox` copies of the rounds already run. The
+`รอบมือถือเต็มตัว…` file here is the `inbox` copy the cloud chat ran; the OneDrive copy of the same name differs from it.
+Names were made safe the same way as before: spaces → `-` (`B New admin .txt` → `B-New-admin.txt`).
 
-Owner ruling 2026-09-26 (question 5 = A): the master stays the OneDrive file · `inbox` = the delivery route to a cloud
-chat · this folder = a read-only copy: Friday on the computer copies the round's file here again at round open
-(skill round-open step 1); a cloud chat reads `inbox` instead. When the owner moves to working from the phone, the
-owner will say when Javis should send instructions in the chat (owner's words, answer 5).
+Secret scan before every commit into this folder: e-mail / token / password value / phone / bank-account-number
+patterns — round B's scan (`_incoming/roundB/copy-pile1.js`): 0 values found (one Thai sentence containing the word
+"secret" was read and is prose, not a value).

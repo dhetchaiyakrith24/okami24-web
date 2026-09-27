@@ -42,6 +42,7 @@
 | Round "cloud" (speed scripts + Friday memory into the repo + first real cloud test T4/T5 + central-rules follow-up) — closed, tag `cloud-round-done` | 2026-09-26 | 44 | 5 | 10 | 1 | 3 | 5 (+ close, pending) | `_incoming/cloud-round/` |
 | Round "mobile" (cloud, full-mobile round — machine prep, screenshots/scans/fonts, live-site + clip-round domain probe, tier-b-proof rehearsal) | 2026-09-26 → 09-27 | 18 | 5 | 6 | 0 | 1 | 11 (+ this close commit) | `docs/cloud-results/mobile-round.md` |
 | Round A "pipes" (cloud, GitHub Actions deploy gate + self-merge scope + Friday's first cloud self-merge) | 2026-09-27 | 0 | 1 | 6 | 1 | 1 | 7 (+ this close commit) | `docs/cloud-results/roundA-pipes.md` |
+| Round B "housekeeping" (computer — rules + docs + branch/file cleanup, no site change) | 2026-09-27 | 0 | 0 | 16 `_incoming/roundB/` | 3 | 1 | `[ยังไม่มีข้อมูล]` (see git log after round close) | `docs/cloud-results/roundB-housekeeping.md` |
 
 ## What cost the most (8.4 — from the numbers above, [ตรวจแล้ว] unless tagged)
 

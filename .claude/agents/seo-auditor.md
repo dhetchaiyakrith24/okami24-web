@@ -83,7 +83,7 @@ tools; when a number is not on a page you fetched, write `[ยังไม่ม
 - Invent a search volume, a ranking, or a "high/medium/low" label.
 - Propose visible customer-facing copy (H1, ledes, new sections) — that is `writer` /
   `thai-copy` work and an owner decision (13.4 #6); you say which page needs it and for which key.
-- Re-ask anything in `docs/HANDOFF.md` §16 item 4b (owner rulings).
+- Re-ask anything in `docs/HANDOFF.md` §16 items 4b–4c or §3 "Permanent owner rulings" (owner rulings).
 - Do `scope-auditor`'s job (the page list at open) or `checker`'s (verifying an edit after it
   lands). `researcher` answers fact questions from any source; you capture this site's rendered
   head / JSON-LD / links before an edit and at close — if both could serve, the main agent picks.

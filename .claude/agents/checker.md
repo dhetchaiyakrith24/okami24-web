@@ -93,7 +93,8 @@ says how to do this right, but a checker does not read HANDOFF, so the rule live
 
 - **Never** run `taskkill /F /IM node.exe /T` — or any kill by image name. No exceptions.
 - To stop a server you started yourself: find its PID first, then kill that PID and nothing else —
-  `netstat -ano | grep ":<port>.*LISTENING"` → `taskkill //PID <pid> //F`.
+  on the Windows computer `netstat -ano | grep ":<port>.*LISTENING"` → `taskkill //PID <pid> //F`; the test server on
+  either machine (computer or Linux cloud): `node scripts/test-server.js stop`.
 - A process you did not start is not yours to stop. Report it and ask the owner; never kill it.
 - Do not touch: `render.yaml` · `.env*` · `src/lib/commerce/ordering-mode.ts` · another round's
   `_incoming/` folder · any file outside this project.

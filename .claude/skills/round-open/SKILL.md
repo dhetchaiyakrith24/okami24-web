@@ -7,9 +7,9 @@ description: Open a work round for the OKami24 site — any round, whatever its 
 
 This skill is the **procedure** for starting a round. It holds no rule of its own — every
 rule stays where it lives (`.claude/TEAM_RULES.md` section 13, `docs/HANDOFF.md`, `docs/THAI_STYLE.md`)
-and this file only says in what order to pick them up. Never copy a number, a file name, a page
-count, a commit hash or a section number from one of those files into this one: things that
-change are read from their source at the moment they are needed.
+and this file only says in what order to pick them up. What a skill may and may not name =
+`.claude/TEAM_RULES.md` 13.3 "สกิลเขียนอะไรได้" (the one place): an expected count, a page count, a commit hash or a
+file under `src/` is never written here — things that change are read from their source at the moment they are needed.
 
 The owner sends **a goal plus a pass criterion** in a round instruction file written from
 `docs/TEMPLATES.md` template (ก). This skill turns that file into a running round.
@@ -33,8 +33,9 @@ Always:
 - The head of `docs/LAUNCH_AUDIT.md`, the block titled **"สถานะปัจจุบัน"** — and nothing else of
   that file. **Never read LAUNCH_AUDIT in full**; open only the numbered item the round is working
   on.
-- The round instruction file the owner attached. On the computer, copy it into `docs/rounds/` (read-only copy,
-  `docs/rounds/README.md`) so a later cloud chat can read it; in the cloud, it comes from the `inbox` branch.
+- The round instruction file the owner attached. Git is its master (`docs/rounds/README.md`, owner ruling Q1 2026-09-27):
+  copy it into `docs/rounds/` at open — on the computer from the file attached, in the cloud from the `inbox` branch —
+  and commit it with the round's first docs commit; a copy that differs from the one attached = say so (README).
 - `.claude/LESSONS.md` — the "what worked" lessons (the one place for them, owner ruling 2026-09-25). Not
   imported into `CLAUDE.md` on purpose (too large to load every chat) — read it here, at round open, and
   again before deciding "the order given is fine, but there is a better way". New lessons are written there.
@@ -51,9 +52,12 @@ Then `git status` — know where the tree is before moving.
 
 ## Step 2 — Confirm the repo matches the instruction file
 
-1. `git fetch origin`.
-2. Compare `origin/main` with the commit the instruction file names as main. **Not equal =
-   stop and report before doing anything** — do not start the round on a different base.
+1. `git fetch origin` — always first, computer or cloud (owner ruling Q7 ①, round B 2026-09-27): the round starts
+   from the latest `origin/main`, never from a stale local copy.
+2. Compare `origin/main` with the commit the instruction file names as main. Equal = go on. **Main has moved on**
+   (the file was written before a later merge) = report it in one line with `git log --oneline <named>..origin/main`
+   and start from the latest main; **stop and report only when** one of those newer commits touches a file this round
+   is about to change, or the named commit is not an ancestor of `origin/main` at all.
 3. Confirm the working branch contains `origin/main` (fast-forward if it is merely behind);
    confirm the tree is clean. On a continuation after a mid-batch move (13.6 "ย้ายแชทในเว็บ"), the unfinished files
    sit on the `wip/…` branch HANDOFF §16 names — fetch it by name (a cloud clone fetches only its own branch:
@@ -67,9 +71,10 @@ Then `git status` — know where the tree is before moving.
    READY = run it now.
 4. Report the numbers seen (hash of main, branch, tags) — never the numbers the file expected.
 
-If the instruction file also names a tag, check the tag with `git tag -n1`; a tag that points
-a few commits before the merge commit is normal (the tag marks the round-close commit, the
-merge commit is made at merge, 13.7) — say so instead of treating it as a mismatch.
+If the instruction file also names a close point — a tag on a computer round, the close commit on a cloud round
+(skill `round-close` step 5) — check it with `git tag -n1` / `git log -1 <commit>`; a close point a few commits before
+the merge commit is normal (it marks the round-close commit, the merge commit is made at merge, 13.7) — say so
+instead of treating it as a mismatch.
 
 ## Step 3 — Answer the instruction before touching anything
 

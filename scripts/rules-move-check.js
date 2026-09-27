@@ -144,7 +144,9 @@ if (mirrorBody === null) fail('mirror', 'marker line missing');
 else if (mirrorBody !== (mode === 'post' && central !== null ? central : expectedCentralText)) fail('mirror', 'GLOBAL_RULES_MIRROR.md differs from the central §1–11 text');
 
 // ---------- files to scan for 4/5/6
-const skipDirs = new Set(['node_modules', '.git', '.next', '_incoming', 'archive', 'Claude outputs']);
+// 'worktrees' = .claude/worktrees/ (git worktrees the desktop app or a round makes — whole copies of the repo, ignored
+// by git via .git/info/exclude; scanning them reports another checkout's files · round B 2026-09-27)
+const skipDirs = new Set(['node_modules', '.git', '.next', '_incoming', 'archive', 'Claude outputs', 'worktrees']);
 const exts = new Set(['.md', '.js', '.ts', '.tsx', '.json']);
 const scan = [];
 (function walk(dir) {

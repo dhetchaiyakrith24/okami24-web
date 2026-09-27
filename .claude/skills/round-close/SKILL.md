@@ -62,7 +62,7 @@ the checker quotes the printed totals in its report — this file never states t
   counts must equal the ones recorded at the previous close (HANDOFF §16 "verify baseline at
   last close") unless this round intentionally changed the catalog — then the new counts are
   written there
-- `npx tsx src/i18n/i18n-contract-test.ts`
+- the i18n contract test — command = HANDOFF §17 "src files the skills use" [i18n-test]
 - `node scripts/thai-raw-chars-check.js`
 - `node scripts/scan.js` against the test server (every page in the sitemap; details of this gate
   and of the other Thai-copy gates: skill `thai-check`)
@@ -73,10 +73,13 @@ the checker quotes the printed totals in its report — this file never states t
   `npx tsx scripts/content-dates.ts --check` — `verify:catalog` fails while the generated dates
   are older than git (added 2026-09-22, round "search-price")
 
-Save every log under `_incoming/<round>/` and cite the paths in the report. **In the cloud** `_incoming/` dies with
-the container and nobody else can open it: also write the round's evidence summary to `docs/cloud-results/<round>.md`
-(one file per round, committed with the docs batch) — every command, its printed totals, and any error text quoted
-exactly; screenshots go to a private Artifact page instead (`docs/CLOUD.md`), never into git.
+Save every log under `_incoming/<round>/` and cite the paths in the report. `_incoming/` is not in git: a cloud
+container loses it, and a cloud chat or Javis can never open the computer's copy. So **every round, computer or cloud**
+(owner ruling Q5, round B 2026-09-27), writes its evidence summary to `docs/cloud-results/<round>.md` (one file per
+round, committed with the docs batch) — every command, its printed totals, any error text quoted exactly, and a
+summary of every `_incoming/` file the report or the merge pack cites (`extras.md` · `owner-table.md` · break logs);
+a cited file that is short text may be copied whole under `docs/cloud-results/incoming/<round>/` instead (secret scan
+first). Screenshots go to a private Artifact page instead (`docs/CLOUD.md`), never into git.
 
 ## When the round added a gate — break it red before trusting it (ทำลายด่านใหม่ให้แดงก่อนเชื่อ)
 
@@ -132,6 +135,10 @@ send-back cap and re-check rule: 13.5.
 - `docs/ROUND_COST.md`: **add one row** for the round (doc-keeper) — its shape and how each column is counted = the
   file's own header, the one place.
 - Round-specific entries in `docs/THAI_STYLE_LOG.md` §7 if the round touched site copy (doc-keeper).
+- The round instruction file (owner rulings Q1 + Q2, round B 2026-09-27 — git is the master of round files): the file
+  that ran is in `docs/rounds/` (round-open step 1 put it there; re-copy if the owner or Javis edited it during the
+  round) → then delete its copy under `rounds/` on the branch `inbox`, if there is one (a commit on `inbox` that only
+  removes that file; the branch itself stays).
 - The pre-merge pack `_incoming/<round>/owner-table.md` = skill `merge-pack` (after the push — and the tag push on a computer round — before the report);
   its path goes into §16 "waiting on the owner" and into the report.
 
