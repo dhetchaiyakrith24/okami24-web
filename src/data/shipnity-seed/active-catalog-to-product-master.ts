@@ -1438,9 +1438,10 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
 // Tier-1 disposable growth mission (2026-09-03) — real OKami24-channel review videos, each
 // confirmed via YouTube's own oEmbed endpoint (title + `author_url` match one of OKami24's three
 // channels) before being added here, not just found in a search result.
-export const VERIFIED_REVIEW_VIDEOS: Record<string, { videoId: string; title: string; channelName: string }> = {
-  "Pod-159": { videoId: "kJd5rnEtg_Y", title: "ESKO BAR 20K และ ESKO BAR SWITCH 20K เล็กเจอใหญ่", channelName: "OKM YARZ" },
-  "Pod-180": { videoId: "YhtKKjRwF3Q", title: "WOTOFO NEXBAR 18K ชื่อนี้ไม่ต้องลุ้น!", channelName: "POD SYSTEM OKAMI II" },
+export const VERIFIED_REVIEW_VIDEOS: Record<string, { videoId: string; title: string; channelName: string; publishedAt: string }> = {
+  // publishedAt = the clip's YouTube upload date (round "clip" 2026-09-27, read from YouTube's own video data).
+  "Pod-159": { videoId: "kJd5rnEtg_Y", title: "ESKO BAR 20K และ ESKO BAR SWITCH 20K เล็กเจอใหญ่", channelName: "OKM YARZ", publishedAt: "2026-01-27" },
+  "Pod-180": { videoId: "YhtKKjRwF3Q", title: "WOTOFO NEXBAR 18K ชื่อนี้ไม่ต้องลุ้น!", channelName: "POD SYSTEM OKAMI II", publishedAt: "2026-04-20" },
 };
 
 export function buildVariantStructure(

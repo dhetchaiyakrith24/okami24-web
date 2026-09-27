@@ -328,6 +328,9 @@ const allGuides: Guide[] = [
     category: "maintenance",
     readingTimeMin: 4,
     publishedAt: "2026-08-29",
+    // Round "clip" (2026-09-27): ranks #4 on page 1 for "คอยล์พอต" (docs/SEO_LANDSCAPE.md §4), @OKMYARZ. A general
+    // coil-care clip (no model named in its title or description). Title and upload date read from YouTube's own data.
+    reviewVideo: { videoId: "f86AJRNHX4U", title: "ทำไมคอยล์พอตถึงพังไว? แล้วทำยังไงให้ใช้ได้นาน", channelName: "OKM YARZ", publishedAt: "2025-03-03" },
     body: [
       {
         heading: "Priming a new pod",
@@ -565,6 +568,10 @@ const allGuides: Guide[] = [
     ],
     // Confirmed via YouTube oEmbed 2026-09-24 (_incoming/round10b/clips.md), owner's own channel @OKMYARZ.
     reviewVideo: { videoId: "QptFMwIXbJE", title: "M BAR 9K NEW FLAVOR 2 กลิ่นใหม่ ZAPPLE และ KYOHO GRAPE", channelName: "OKM YARZ", publishedAt: "2026-01-16" },
+    // Round "clip" (2026-09-27): the shop's most-watched clip (54K views, @PODSYSTEM-OKAMI-II) — the top 5 M BAR 9K
+    // flavors, paired with "marbo กลิ่นไหนดี" by the round instruction (docs/SEO_LANDSCAPE.md §4 item 1). Title and
+    // upload date read from YouTube's own video data (_incoming/clip-round/clips.md). Model: M BAR 9K (m-bar-9k).
+    moreVideos: [{ videoId: "-DMIKvoQPw8", title: "TOP 5 กลิ่นยอดนิยม ฮิตที่สุดของ MARBO BAR 9K DISPOSABLE POD", channelName: "POD SYSTEM OKAMI II", publishedAt: "2025-01-31" }],
   },
   {
     // Round 10B T18 — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md.
