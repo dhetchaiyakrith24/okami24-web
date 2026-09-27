@@ -8,7 +8,8 @@
 //   2 git history    unshallow + tags (a shallow clone gives content-dates the clone boundary as every file's date)
 //   3 packages       npm ci when node_modules is missing or older than package-lock.json
 //   4 Next types     `next typegen` (tsc needs LayoutProps & co. before the first build — docs/cloud-results/T4.md 10)
-//   5 browser        the Chrome/Chromium the screenshot and scan scripts will use (scripts/lib/chrome.js)
+//   5 browser        the Chrome/Chromium the screenshot and scan scripts will use (scripts/lib/chrome.js) · in the cloud,
+//                    it is also told to trust the cloud network's CA (scripts/lib/cloud-ca.js, round C)
 //   6 Thai font      Linux only: Noto Sans Thai (what Android visitors see) as the system Thai font. The site ships
 //                    no Thai font (next/font loads Latin only), so the machine's Thai font draws every Thai glyph of
 //                    a screenshot or a line-break scan — the cloud image's own Loma matches no visitor's phone.
@@ -80,6 +81,14 @@ step("browser", () => {
   const c = findChrome();
   if (!c) throw new Error("no Chrome/Chromium found — set CHROME_PATH (screenshots and scans will not run)");
   return `${c.path}${c.linux ? " (Linux: runs with --no-sandbox)" : ""}`;
+});
+
+step("browser trusts the cloud network", () => {
+  // round C topic 4: Chromium trusts the one CA the machine already trusts for the live site (scripts/lib/cloud-ca.js)
+  if (process.env.CLAUDE_CODE_REMOTE !== "true") return "not the cloud — nothing to do";
+  const r = run(process.execPath, [path.join(__dirname, "lib", "cloud-ca.js"), "--learn"]);
+  if (!r.ok) throw new Error(`${r.out} — live-site screenshots stay a computer job`);
+  return r.out;
 });
 
 step("Thai font", () => {
