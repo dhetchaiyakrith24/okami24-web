@@ -7,9 +7,9 @@ description: Open a work round for the OKami24 site — any round, whatever its 
 
 This skill is the **procedure** for starting a round. It holds no rule of its own — every
 rule stays where it lives (`.claude/TEAM_RULES.md` section 13, `docs/HANDOFF.md`, `docs/THAI_STYLE.md`)
-and this file only says in what order to pick them up. Never copy a number, a file name, a page
-count, a commit hash or a section number from one of those files into this one: things that
-change are read from their source at the moment they are needed.
+and this file only says in what order to pick them up. What a skill may and may not name =
+`.claude/TEAM_RULES.md` 13.3 "สกิลเขียนอะไรได้" (the one place): an expected count, a page count, a commit hash or a
+file under `src/` is never written here — things that change are read from their source at the moment they are needed.
 
 The owner sends **a goal plus a pass criterion** in a round instruction file written from
 `docs/TEMPLATES.md` template (ก). This skill turns that file into a running round.

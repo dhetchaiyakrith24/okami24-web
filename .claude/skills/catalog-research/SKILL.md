@@ -9,7 +9,7 @@ Operationalizes the identity/media research workflow this project's catalog work
 is a **procedure**, not a source of business truth — for business rules read
 `docs/BUSINESS_SOURCE_OF_TRUTH.md`; for the durable *why* behind each rule below (real examples,
 prior mistakes, the exact patterns that motivated them) read
-`src/data/shipnity-seed/README.md`'s "Catalog reconciliation methodology" section. Follow that
+the catalog-method file (path: HANDOFF §17 "src files the skills use" [catalog-method]). Follow that
 doc's evidence-tier and rejection rules exactly — this Skill just sequences the steps and gives a
 consistent output format so research doesn't have to be re-derived from scratch each time.
 
@@ -25,11 +25,10 @@ consistent output format so research doesn't have to be re-derived from scratch 
 
 Cheapest, highest-value check, always do it before spending research effort:
 
-```
-grep -rn "id: \"<likely-slug>\|<family>-" src/data/products/*.ts
-```
+grep the legacy product files (path: HANDOFF §17 "src files the skills use" [legacy-products]) for
+`id: "<likely-slug>` and `<family>-`.
 
-Also check `TAXONOMY_MATCHES` in `src/data/shipnity-seed/active-catalog-to-product-master.ts` for
+Also check `TAXONOMY_MATCHES` in the taxonomy file (HANDOFF §17 [taxonomy]) for
 an existing `exactLegacyMatch` or prior resolution for this exact id. A real product that already
 exists under the legacy catalog or an existing `ProductMaster` record is a dedup/merge case, not
 new research — don't re-derive identity for something already resolved.
@@ -68,7 +67,7 @@ every time.
 The order below is the one that produced facts that passed the checker in the data rounds. What counts as an
 acceptable source for a customer-read fact is NOT decided here: the owner's data-round rulings live in
 `docs/HANDOFF.md` §3 (the data rounds' "full detail" blocks; §16 items 4b–4c + §3 "Permanent owner rulings" list them as permanent) and the code gate
-is `src/lib/verified-specs.ts` + `src/lib/verified-specs-contract-test.ts` (a row is shown only when it is
+is the spec-row gate (files: HANDOFF §17 "src files the skills use" [spec-gate]) (a row is shown only when it is
 `sourceStatus: "verified"`). Wording rules for the sentence that carries the fact: skill `thai-check`.
 
 1. **The main agent opens the maker's page in the in-app browser itself** and reads the text (page text / page HTML)

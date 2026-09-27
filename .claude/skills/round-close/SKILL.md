@@ -62,7 +62,7 @@ the checker quotes the printed totals in its report — this file never states t
   counts must equal the ones recorded at the previous close (HANDOFF §16 "verify baseline at
   last close") unless this round intentionally changed the catalog — then the new counts are
   written there
-- `npx tsx src/i18n/i18n-contract-test.ts`
+- the i18n contract test — command = HANDOFF §17 "src files the skills use" [i18n-test]
 - `node scripts/thai-raw-chars-check.js`
 - `node scripts/scan.js` against the test server (every page in the sitemap; details of this gate
   and of the other Thai-copy gates: skill `thai-check`)

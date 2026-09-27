@@ -96,6 +96,7 @@ The `checker` agent reads this file directly (it has no skill tool) and runs eve
 - **New** text (a sentence that does not exist yet, a script, a customer reply, en/zh): the
   `writer` agent.
 - Every sentence a customer will read is approved by the owner in one batch of questions per
-  batch of work (`.claude/TEAM_RULES.md` 13.4 — one list, not restated here).
+  batch of work, and the work does not wait; the final keep/undo is at merge (`.claude/TEAM_RULES.md` 13.4 #6 · #2
+  — one list, not restated here · owner ruling item 1, round B 2026-09-27).
 - A word not in the locked-word table = stop and ask the owner; the table changes only by the
   owner's ruling, written in THAI_STYLE first, then in code.
