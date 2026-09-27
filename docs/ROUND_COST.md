@@ -8,6 +8,9 @@
 > cell = a number plus at most one evidence path, no prose; the last column "Source / caveat" = one path only — a row is read, not studied, and writing the long rows cost the close 10–20 minutes
 > (`_incoming/speed-consult/RESULTS.md` ④). Rows written before that date are left as they are.
 
+> **Which rounds get a row, from 2026-09-27 (owner, after round "ฝังคลิป"; the one place = `.claude/TEAM_RULES.md` 13.12 #7):**
+> big rounds and long projects only — a small round adds no row and times no step. Rows already written stay.
+
 ## Table
 
 | Round | Dates | Screenshots taken | Builds | Agent calls | Checker send-backs | Chats used | Commits | Source / caveat |

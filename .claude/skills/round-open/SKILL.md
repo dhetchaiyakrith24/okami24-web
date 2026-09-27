@@ -129,8 +129,8 @@ agent. Then tell the owner in 3–5 lines what will be done in what order and **
 approval wait, unless a 13.4 case is already visible.
 
 Every helper file created on the way (scripts, comparison images, logs, agent briefs) goes under
-`_incoming/<round>/` or `scripts/` — save each agent brief there so `docs/ROUND_COST.md` can
-count the calls at round close.
+`_incoming/<round>/` or `scripts/` — save each agent brief there (the checker and the next chat read them; on a big
+round `docs/ROUND_COST.md` also counts them — `.claude/TEAM_RULES.md` 13.12 #7).
 
 ## Step 7 — Write the round into the handoff block
 

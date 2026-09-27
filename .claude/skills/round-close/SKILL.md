@@ -136,8 +136,8 @@ send-back cap and re-check rule: 13.5.
 - `docs/HANDOFF.md` §16: the "open round" item becomes "none — <round> closed" with the tag name (a cloud round: the close commit);
   main / branch-ahead / waiting-on-owner / open-questions refreshed (spec: `.claude/agents/doc-keeper.md`;
   the handoff conditions: 13.6).
-- `docs/ROUND_COST.md`: **add one row** for the round (doc-keeper) — its shape and how each column is counted = the
-  file's own header, the one place.
+- `docs/ROUND_COST.md`: **big rounds and long projects only** (`.claude/TEAM_RULES.md` 13.12 #7) — add one row for the
+  round (doc-keeper); its shape and how each column is counted = the file's own header, the one place.
 - Round-specific entries in `docs/THAI_STYLE_LOG.md` §7 if the round touched site copy (doc-keeper).
 - The round instruction file (owner rulings Q1 + Q2, round B 2026-09-27 — git is the master of round files): the file
   that ran is in `docs/rounds/` (round-open step 1 put it there; re-copy if the owner or Javis edited it during the

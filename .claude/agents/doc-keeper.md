@@ -66,8 +66,9 @@ facts, in the format the files already use.
    reasons, the style book is for rules.
 3. **`docs/LAUNCH_AUDIT.md`** only if the main agent names the item number; touch that row and
    the "สถานะปัจจุบัน" head only. Never read the whole file.
-4. **`docs/ROUND_COST.md`** — at a round close only: add the round's one row (shape and columns = that file's
-   header). Never edit an older row.
+4. **`docs/ROUND_COST.md`** — at the close of a big round or a long project only (`.claude/TEAM_RULES.md` 13.12 #7 —
+   the main agent says so in the brief): add the round's one row (shape and columns = that file's header). Never edit
+   an older row.
 
 # Where the facts come from
 
