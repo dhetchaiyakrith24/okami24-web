@@ -61,7 +61,8 @@ function hookScripts() {
       /* no such file */
     }
   }
-  // …and every local module those scripts require, transitively (prepare-clone.js → lib/chrome.js runs too)
+  // …and every local module those scripts require or start, transitively (prepare-clone.js → lib/chrome.js runs too ·
+  // session-sync.js starts prepare-clone.js through path.join(__dirname, "prepare-clone.js"), round C)
   const todo = [...out];
   while (todo.length) {
     const f = todo.pop();
@@ -71,8 +72,12 @@ function hookScripts() {
     } catch {
       continue;
     }
-    for (const m of t.matchAll(/require\(\s*["'](\.{1,2}\/[^"']+)["']\s*\)/g)) {
-      let dep = path.posix.normalize(path.posix.join(path.posix.dirname(f), m[1]));
+    const deps = [
+      ...[...t.matchAll(/require\(\s*["'](\.{1,2}\/[^"']+)["']\s*\)/g)].map((m) => m[1]),
+      ...[...t.matchAll(/path\.join\(\s*__dirname\s*,\s*["']([^"']+\.js)["']\s*\)/g)].map((m) => `./${m[1]}`),
+    ];
+    for (const rel of deps) {
+      let dep = path.posix.normalize(path.posix.join(path.posix.dirname(f), rel));
       if (!/\.(c|m)?js$/.test(dep)) dep += ".js";
       if (!out.has(dep)) {
         out.add(dep);

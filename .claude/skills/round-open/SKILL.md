@@ -53,7 +53,10 @@ Then `git status` — know where the tree is before moving.
 ## Step 2 — Confirm the repo matches the instruction file
 
 1. `git fetch origin` — always first, computer or cloud (owner ruling Q7 ①, round B 2026-09-27): the round starts
-   from the latest `origin/main`, never from a stale local copy.
+   from the latest `origin/main`, never from a stale local copy. At every chat open the SessionStart hook
+   `scripts/session-sync.js` has already fetched and fast-forwarded a clean branch (round C) — read its
+   `session-sync` lines in the first context: a `STOP SIGN` line = tell the owner before anything else · a `RE-READ NOW`
+   line = re-read those rule files first · no `session-sync` lines at all = the hook did not run, say so and fetch by hand.
 2. Compare `origin/main` with the commit the instruction file names as main. Equal = go on. **Main has moved on**
    (the file was written before a later merge) = report it in one line with `git log --oneline <named>..origin/main`
    and start from the latest main; **stop and report only when** one of those newer commits touches a file this round
@@ -67,7 +70,7 @@ Then `git status` — know where the tree is before moving.
    **Machine ready** (round "mobile" instruction, batch 1): `node scripts/prepare-clone.js` must end `prepare-clone: READY` — one command, safe to repeat,
    what it does is in its head (git hooks — without them the commit and push gates do not run, `docs/RECOVERY.md` 2ค ·
    full git history · packages · Next types · browser · Thai font). A cloud chat runs it by itself at session start
-   (`.claude/settings.json` SessionStart hook) — read its lines in the session's first context; not there or not
+   (`scripts/session-sync.js`, the SessionStart hook, starts it after its fetch) — read its lines in the session's first context; not there or not
    READY = run it now.
 4. Report the numbers seen (hash of main, branch, tags) — never the numbers the file expected.
 

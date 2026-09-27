@@ -5,8 +5,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$CLAUDE_PROJECT_DIR/scripts/prepare-clone.js\" --session-start",
-            "timeout": 300
+            "command": "node \"$CLAUDE_PROJECT_DIR/scripts/session-sync.js\"",
+            "timeout": 330
           }
         ]
       }
