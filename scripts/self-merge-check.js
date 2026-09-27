@@ -1,13 +1,18 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
-// self-merge-check.js — may Friday (the main agent) merge this PR herself? (TEAM_RULES 13.7 — owner rulings 2026-09-26,
-// widened to the cloud in round A "pipes" 2026-09-27, with the owner's two exceptions of 27/09)
+// self-merge-check.js — is this PR small or big? (TEAM_RULES 13.7 — merge rule of round C, owner 2026-09-27: Friday
+// merges every PR of this repo · small = merge, then report · big = tell the owner briefly first · Javis merges only
+// when the owner says so)
 //
-// Rule: a PR whose files all stay off the live site (the one list: scripts/lib/site-paths.js, shared with the deploy
-// gate) and touch nothing Javis-only (what runs by itself: .claude/settings* · hooks · .githooks/ · scripts a hook runs ·
-// .github/ · plus the central-rules copies and the gate files) may be merged by Friday — on the computer or in the
-// cloud — once the checker passed and every GitHub check is green. Skills · agents · web rules in .claude/ = hers.
-// Anything else = Javis merges. "Not sure it touches = it touches": the list is an ALLOW-list.
+// Per file (the one list: scripts/lib/site-paths.js, shared with the deploy gate):
+//   BIG   runs by itself or decides merges/deploys (settings · hooks · scripts a hook runs · .github/ · rules copy ·
+//         gate files) · orders/money/stock/what is for sale · build/server config · Render build/Shell scripts
+//   SITE  anything else a visitor gets (src/ public/ …) — small only when the batch is tier A (text only, HANDOFF §17);
+//         tier B or not sure = big. The script cannot see the tier: Friday states it in the merge report.
+//   ok    off the site (docs · skills · agents · rules text · ordinary scripts)
+// Also BIG: a PR that edits 13.7 itself (its merge rule). Not visible here and still Friday's to check: checker PASS ·
+// every GitHub check green · the round's extras.md not empty (= big, 13.10 #1 (ง)).
+// "Not sure = big": the off-site list is an ALLOW-list.
 //
 // Usage:
 //   node scripts/self-merge-check.js                 # diff origin/main...HEAD — the PR's files when HEAD = the PR head
@@ -17,9 +22,10 @@
 //   node scripts/self-merge-check.js --files a,b     # a given list — gate tests only, NOT a merge verdict (no head pinned)
 //   node scripts/self-merge-check.js --base <ref>    # PROOF SIZING, not a merge verdict: every change since <ref>,
 //                                                    #   committed or not + untracked; judges "site touched?" only
-// Last line: PASS or BLOCKED. Exit 0 / 1. Also prints `HEAD <sha>` — merge exactly that commit (pin it in the merge call).
-// PASS is necessary, not sufficient: 13.7's other conditions (checker PASS · GitHub checks · no extras.md · not a PR
-// that edits 13.7's own merge line) are Friday's to check and report.
+// Last line (merge verdict): SMALL · SITE · BIG — or BLOCKED when it cannot judge (not this repo · render.yaml would
+// deploy on merge · local HEAD is not the PR head · empty diff). Exit 0 for SMALL/SITE/BIG, 1 for BLOCKED.
+// Also prints `HEAD <sha>` — merge exactly that commit (pin it in the merge call).
+// --base and --files keep their old PASS/BLOCKED lines ("site touched?" / list test) — round-close and merge-pack read them.
 "use strict";
 const { execFileSync } = require("child_process");
 const fs = require("fs");
@@ -27,7 +33,32 @@ const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
 
-const { siteReason, javisOnly, buildScripts, hookScripts } = require("./lib/site-paths");
+const { siteReason, bigReason, buildScripts, hookScripts } = require("./lib/site-paths");
+
+// Does the diff origin/main...HEAD change a line inside "### 13.7" of TEAM_RULES? (a PR editing its own merge rule = big)
+function edits137(files) {
+  if (!files.includes(".claude/TEAM_RULES.md")) return false;
+  let text = "";
+  let diff = "";
+  try {
+    text = fs.readFileSync(path.join(ROOT, ".claude", "TEAM_RULES.md"), "utf8");
+    diff = git(["diff", "-U0", "origin/main...HEAD", "--", ".claude/TEAM_RULES.md"]);
+  } catch {
+    return true; // cannot tell = big
+  }
+  const lines = text.split(/\r?\n/);
+  const start = lines.findIndex((l) => l.startsWith("### 13.7"));
+  const end = lines.findIndex((l, i) => i > start && l.startsWith("### "));
+  if (start === -1) return true;
+  for (const m of diff.matchAll(/^@@ -(\d+)(?:,(\d+))? \+(\d+)(?:,(\d+))? @@/gm)) {
+    const a = Number(m[3]);
+    const n = m[4] === undefined ? 1 : Number(m[4]);
+    const lo = a;
+    const hi = n === 0 ? a : a + n - 1; // n = 0: a pure deletion after line a
+    if (hi >= start + 1 && lo <= (end === -1 ? lines.length : end)) return true;
+  }
+  return false;
+}
 
 // Repo-level conditions: the rule is for this web repo only, and a merge must never become a deploy.
 function repoProblems() {
@@ -115,7 +146,11 @@ function main() {
   }
   const build = buildScripts();
   const hooks = hookScripts();
-  let blocked = 0;
+  const list = argv.includes("--files");
+  const verdictMode = !sizing && !list; // a real PR: SMALL / SITE / BIG
+  let blocked = 0; // --base / --files: files on the site · verdict mode: repo problems only
+  let big = 0;
+  let site = 0;
   if (!sizing) {
     for (const p of repoProblems()) {
       blocked++;
@@ -123,12 +158,25 @@ function main() {
     }
   }
   for (const f of files) {
-    let why = siteReason(f, build);
-    if (!why && !sizing && javisOnly(f, hooks)) why = "Javis-only: runs by itself (settings · hooks · a script a hook runs) · .github/ · central-rules copy · gate file";
-    if (why) blocked++;
-    console.log(`${why ? "BLOCKED" : "ok     "}  ${f}${why ? `  (${why})` : ""}`);
+    if (sizing) {
+      const why = siteReason(f, build);
+      if (why) blocked++;
+      console.log(`${why ? "BLOCKED" : "ok     "}  ${f}${why ? `  (${why})` : ""}`);
+      continue;
+    }
+    const bigWhy = bigReason(f, hooks, build);
+    const siteWhy = bigWhy ? "" : siteReason(f, build);
+    if (bigWhy) big++;
+    else if (siteWhy) site++;
+    if (list && (bigWhy || siteWhy)) blocked++;
+    const tag = bigWhy ? "BIG    " : siteWhy ? "SITE   " : "ok     ";
+    console.log(`${tag}  ${f}${bigWhy || siteWhy ? `  (${bigWhy || siteWhy})` : ""}`);
   }
-  console.log(`${files.length} files · ${blocked} blocked`);
+  if (verdictMode && edits137(files)) {
+    big++;
+    console.log("BIG      .claude/TEAM_RULES.md  (edits 13.7 — the merge rule itself)");
+  }
+  console.log(sizing ? `${files.length} files · ${blocked} on the site` : `${files.length} files · ${big} big · ${site} site`);
   if (!argv.includes("--files")) {
     let head = "";
     try {
@@ -148,8 +196,11 @@ function main() {
     if (head) console.log(`HEAD ${head}`);
   }
   if (sizing) console.log(blocked ? "BLOCKED - something on the site changed since the base" : "PASS - nothing on the site changed since the base (proof sizing only - not a merge verdict)");
-  else if (argv.includes("--files")) console.log(blocked ? "BLOCKED - list check (gate test, not a merge verdict)" : "PASS - list check (gate test, not a merge verdict: no head commit pinned)");
-  else console.log(blocked ? "BLOCKED - Javis merges this PR (TEAM_RULES 13.7)" : "PASS - Friday may merge after checker PASS + all GitHub checks green");
+  else if (list) console.log(blocked ? `BLOCKED - list check: ${big} big · ${site} site (gate test, not a merge verdict)` : "PASS - list check: all off the site, none big (gate test, not a merge verdict: no head commit pinned)");
+  else if (blocked) console.log("BLOCKED - cannot judge this PR (see the (repo) lines) - do not merge");
+  else if (big) console.log("BIG - tell the owner briefly before merging, merge after the reply (TEAM_RULES 13.7)");
+  else if (site) console.log("SITE - small only if this batch is tier A (text only); tier B or not sure = BIG (TEAM_RULES 13.7)");
+  else console.log("SMALL - merge after checker PASS + all GitHub checks green, then report (TEAM_RULES 13.7)");
   process.exit(blocked ? 1 : 0);
 }
 

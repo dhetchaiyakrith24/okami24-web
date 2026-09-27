@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node helper, CommonJS on purpose */
-// site-paths.js — THE one list of paths that never reach the live site (TEAM_RULES 13.7, round A "pipes" 2026-09-27).
+// site-paths.js — THE one list of paths that never reach the live site (TEAM_RULES 13.7, round A "pipes" 2026-09-27),
+// plus the lists that make a PR "big" under the merge rule of round C (owner 2026-09-27).
 //
 // Two gates read this list and nothing else, so they can never disagree:
-//   scripts/self-merge-check.js  — may Friday merge this PR herself?        (every file must be off-site, and none Javis-only)
+//   scripts/self-merge-check.js  — small or big? (small = Friday merges, then reports · big = tell the owner first)
 //   scripts/deploy-decision.js   — does this merge to main need a deploy?  (any file NOT off-site = deploy)
 // It is an ALLOW-list on purpose: "not sure it touches the site = it touches" — a path no pattern matches (a new
 // top-level folder, package.json, render.yaml, next.config.*, src/, public/, product data …) counts as the site.
@@ -22,14 +23,14 @@ const OFF_SITE = [
   /^(CLAUDE|AGENTS|README|ASSET_MANIFEST)\.md$/,
 ];
 
-// Off-site, but Friday still never merges them herself — Javis merges (Javis asks the owner first). Owner rulings
-// 2026-09-26 (Friday's own skills · agents · web rules in .claude/ = hers to merge) + 27/09 (round A "pipes"), two kinds:
+// Off-site, but always BIG — Friday tells the owner before merging (round C; before that = Javis-only, rulings
+// 2026-09-26 + 27/09). Two kinds:
 //   (1) what makes Friday act on her own automatically: .claude/settings* (hooks, tool permissions) · .claude/hooks/ ·
 //       .githooks/ (the commit/push gates) · every script those hooks run (hookScripts() below)
 //   (2) what makes the site go live by itself: .github/ (the deploy workflow + the required check)
-// plus, from 26/09: the central-rules copy and its source pin (sync bot + Javis) · the central-rules restore copies ·
-// launch.json (the owner's dev server) · and the gate files themselves (a PR could widen its own list).
-const JAVIS_ONLY = [
+// plus: the central-rules copy and its source pin (sync bot) · the central-rules restore copies · launch.json (the
+// owner's dev server) · and the gate files themselves (a PR could widen its own list).
+const ALWAYS_BIG = [
   /^\.claude\/settings/,
   /^\.claude\/hooks\//,
   /^\.githooks\//,
@@ -83,6 +84,21 @@ function hookScripts() {
   return out;
 }
 
+// On the site AND always BIG, whatever the batch's tier (round C): what money, orders, stock and "what is for sale"
+// run on, and what the build and the server are made of — a mistake here sells wrong or takes the site down.
+const CORE_SITE = [
+  /^render\.yaml$/,
+  /^package(-lock)?\.json$/,
+  /^(next|postcss)\.config\.[cm]?[jt]s$/,
+  /^tsconfig\.json$/,
+  /^\.env/,
+  /^src\/app\/(api|cart|checkout|orders)\//,
+  /^src\/lib\/(backup|commerce|db|otp|shipnity)\//,
+  /^src\/lib\/promptpay/,
+  /^src\/data\/(products|shipnity-seed|stock)\//,
+  /^src\/data\/payment\.ts$/,
+];
+
 // Scripts run by hand in the Render Shell against the live database — they count as the site (owner ruling Q3,
 // round B "housekeeping" 2026-09-27): a change must reach Render (deploy) before the Shell runs it, and Friday does
 // not merge it herself. Named in docs/DEPLOY-RENDER.md; add a line here when a doc tells the owner to run another.
@@ -133,8 +149,15 @@ function siteReason(file, build = buildScripts()) {
   return "";
 }
 
-function javisOnly(file, hooks = hookScripts()) {
-  return hooks.has(file) || JAVIS_ONLY.some((re) => re.test(file));
+// → "" when the file alone does not make a PR big, else why it does (a site file not listed here is "site" — big or
+// small by the batch's tier, TEAM_RULES 13.7).
+function bigReason(file, hooks = hookScripts(), build = buildScripts()) {
+  if (hooks.has(file)) return "a script a hook runs by itself";
+  if (ALWAYS_BIG.some((re) => re.test(file))) return "runs by itself or decides merges/deploys (settings · hooks · .github/ · rules copy · gate file)";
+  if (RENDER_SHELL.includes(file)) return "run by hand in the Render Shell against the live database";
+  if (build.has(file)) return "run by the Render build or the live server";
+  if (CORE_SITE.some((re) => re.test(file))) return "orders · money · stock · what is for sale · build/server config";
+  return "";
 }
 
-module.exports = { OFF_SITE, JAVIS_ONLY, RENDER_SHELL, buildScripts, hookScripts, siteReason, javisOnly, ROOT };
+module.exports = { OFF_SITE, ALWAYS_BIG, CORE_SITE, RENDER_SHELL, buildScripts, hookScripts, siteReason, bigReason, ROOT };
