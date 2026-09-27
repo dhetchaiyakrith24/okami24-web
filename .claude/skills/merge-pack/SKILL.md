@@ -1,6 +1,6 @@
 ---
 name: merge-pack
-description: Build the pre-merge pack for an OKami24 round — `_incoming/<round>/owner-table.md`, the same shape every round — so Cowork and the owner decide the merge from one file: every change a customer sees (before → after, three languages, evidence), every head/meta change, the work done beyond the brief with keep/undo and how to undo, claims the round was told to have confirmed, and the full verify set with log paths. Use it at every round close, after the tag is pushed and before the 4-part report; also when Cowork asks "what does this merge change for customers".
+description: Build the pre-merge pack for an OKami24 round — `_incoming/<round>/owner-table.md`, the same shape every round — so Cowork and the owner decide the merge from one file: every change a customer sees (before → after, three languages, evidence), every head/meta change, the work done beyond the brief with keep/undo and how to undo, claims the round was told to have confirmed, and the full verify set with log paths. Use it at every round close, after the close point is pushed (a tag on the computer, the close commit in the cloud — round-close step 5) and before the 4-part report; also when Cowork asks "what does this merge change for customers".
 ---
 
 # Merge pack
@@ -14,17 +14,19 @@ name into this file.
 
 ## When this applies
 
-- Every round close — after `round-close` step 5 (tag pushed), before its step 7 (the report).
+- Every round close — after `round-close` step 5 (close point pushed), before its step 7 (the report).
 - Cowork asks what a merge changes for customers.
-- Merge and deploy: 13.7 (Cowork, but for the one self-merge case named there); this pack is what whoever merges reads first, so it carries the full verify set with
-  log paths, not only the checker's verdict.
+- Who merges = 13.7; deploy = 13.7 too (a merge that touches the site goes live by itself after the GitHub checks —
+  nobody deploys by hand). This pack is what whoever merges reads first, so it carries the full verify set with
+  log paths, not only the checker's verdict. `_incoming/` is not in git: the pack's content also goes into
+  `docs/cloud-results/<round>.md` (round-close step 3) so a cloud chat or Javis can read it.
 
 ## Step 1 — Gather the evidence the round already made
 
 1. **What a visitor reads.** No scan when round-close step 1 item 0 says so (the one place of that rule) — paste its
    output instead. Otherwise a `scripts/visible-text.js diff` folder: before = the
-   round's base commit, after = a build of the tagged commit (skill `tier-b-proof` steps 1–3; a tier-B round reuses
-   the folder it already made at close, if that build was the tagged commit).
+   round's base commit, after = a build of the close commit (skill `tier-b-proof` steps 1–3; a tier-B round reuses
+   the folder it already made at close, if that build was the close commit).
 2. **Head / meta:** `scripts/head-audit.js` on the same two sides — title · description · H1 · og:title are not
    visible text, and a body edit can move them (`.claude/LESSONS.md` #8). Same skip rule as item 1.
 3. **Work beyond the brief:** `_incoming/<round>/extras.md` (its format: 13.10 #1 (ง)).

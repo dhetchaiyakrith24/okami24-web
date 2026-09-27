@@ -7,7 +7,7 @@ description: Gate every change to copy shown on the OKami24 site before it is co
 
 This skill is the **gate procedure** for site copy. The wording rules themselves live in
 `docs/THAI_STYLE.md` (the single source of truth for Thai on the site — read it on every round
-that touches copy, per `.claude/TEAM_RULES.md` 13.9) and are **not copied here**: a word list
+that touches copy, per the read-first list in skill `round-open` step 1) and are **not copied here**: a word list
 copied into a second file drifts. Every gate below is either a script whose output decides, or a
 pointer to the table that decides.
 

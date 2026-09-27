@@ -37,7 +37,10 @@ facts, in the format the files already use.
 # What you update
 
 1. **`docs/HANDOFF.md` §16** — the copy-paste block for a new chat. It holds **only** these six
-   things and nothing else: the current `main` commit · what the branch is ahead of `main` by ·
+   things and nothing else: the current `main` commit · what the branch is ahead of `main` by (round B 2026-09-27:
+   for these two, write the git command that shows them — `git fetch && git log -1 --oneline origin/main` ·
+   `git log --oneline origin/main..<branch>` — plus only what git cannot tell: the round's rollback point, the open PR
+   number and who merges it; never a commit list, never a list of old tags — `git tag -n1` / `docs/RECOVERY.md` §2 hold those) ·
    which round is open and where it stopped (incl. the first next step, and — when a chat moves mid-batch per
    `.claude/TEAM_RULES.md` 13.6 "ย้ายแชทในเว็บ" — the `wip/…` branch holding the unfinished files, their names, and any background job still running)
    · what is waiting on the owner · open questions ·

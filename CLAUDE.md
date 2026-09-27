@@ -9,7 +9,8 @@
 
 `AGENTS.md` (imported on line 1, rewritten by `next dev`) binds only when code under `src/` is being changed; on a round that
 does not touch `src/` its Next.js reading list does not apply. If `next dev` rewrites `AGENTS.md`, commit that change as a
-separate `chore` commit, never inside a feature commit (RULES_INDEX row 69, 2026-09-17).
+separate `chore` commit, never inside a feature commit (RULES_INDEX row 69, 2026-09-17) — this line wins over the
+last sentence of that block in `AGENTS.md` ("committing it with your work…"), which `next dev` rewrites and cannot be edited.
 
 # Business context
 
@@ -19,7 +20,9 @@ model, pricing, stock, checkout flow, customer accounts, etc.), read
 [docs/BUSINESS_SOURCE_OF_TRUTH.md](docs/BUSINESS_SOURCE_OF_TRUTH.md) — it is the
 authoritative source for brand, product-source-of-truth, pricing authority, stock policy,
 payment model, and known TBDs. Do not infer or invent business rules; if something isn't
-covered there, treat it as unresolved rather than guessing.
+covered there, treat it as unresolved rather than guessing. That file has been in git for a long time and stays
+there; the ban "BSOT ห้ามขึ้น git" in round files means **never add another copy of it (or of the owner's backups that
+hold customer data) to git** (owner ruling Q9, round B 2026-09-27 — removing it from history would need a force push).
 
 **Catalog completeness rule (owner, 2026-09-06):** every product must show **every colour and every
 flavour the manufacturer offers, even ones the shop has no stock of**. Never drop a colour/flavour/image
