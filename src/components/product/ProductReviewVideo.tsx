@@ -28,11 +28,10 @@ export function ProductReviewVideo({
   watchOnYoutubeLabel,
   hideTitle = false,
   contextName,
-  compact = false,
+  hiddenTitleLabel,
 }: {
   video: { videoId: string; title: string; channelName: string };
-  /** Omitted when the caller shows one eyebrow above several cards (round "clip": the article's two-clip grid). */
-  eyebrow?: string;
+  eyebrow: string;
   watchOnYoutubeLabel: string;
   /** Round 10B (owner ruling 2026-09-24: 0 Thai on the en/zh guide pages): the clip's own YouTube title is Thai for
    *  the shop's channels, so an English/Chinese guide page drops the title line and names the channel instead in the
@@ -41,13 +40,14 @@ export function ProductReviewVideo({
   /** Round "clip" (designer): with the title hidden, the channel alone does not say what the clip is about — the
    *  page's own name (a model name, a brand) is added to the alt/label, in the page's language. */
   contextName?: string;
-  /** Round "clip" (designer): a smaller play button from `sm` up, for the narrower cards of a two-column grid. */
-  compact?: boolean;
+  /** Round "clip" (owner 2026-09-27): with the Thai title hidden, this line (page language, e.g. "Hands-on review
+   *  (in Thai)") takes the title's place, so the card still says what the clip is. */
+  hiddenTitleLabel?: string;
 }) {
   const accessibleName = hideTitle ? (contextName ? `${video.channelName} · ${contextName}` : video.channelName) : video.title;
   return (
     <div className="flex flex-col gap-3">
-      {eyebrow && <span className="label-mono text-xs text-foreground-dim">{eyebrow}</span>}
+      <span className="label-mono text-xs text-foreground-dim">{eyebrow}</span>
       <a
         href={`https://www.youtube.com/watch?v=${video.videoId}`}
         target="_blank"
@@ -65,8 +65,8 @@ export function ProductReviewVideo({
         />
         <span className="absolute inset-0 bg-black/25 transition-colors duration-200 group-hover:bg-black/35" aria-hidden />
         <span className="absolute inset-0 flex items-center justify-center">
-          <span className={`flex h-16 w-16 items-center justify-center rounded-full bg-ember/90 shadow-lg transition-transform duration-200 group-hover:scale-110${compact ? " sm:h-12 sm:w-12" : ""}`}>
-            <svg viewBox="0 0 24 24" className={`ml-1 h-7 w-7 fill-white${compact ? " sm:h-5 sm:w-5" : ""}`} aria-hidden>
+          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-ember/90 shadow-lg transition-transform duration-200 group-hover:scale-110">
+            <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 fill-white" aria-hidden>
               <path d="M8 5v14l11-7z" />
             </svg>
           </span>
@@ -74,6 +74,7 @@ export function ProductReviewVideo({
       </a>
       <div className="flex flex-col gap-0.5">
         {!hideTitle && <p className="text-sm font-medium text-foreground">{video.title}</p>}
+        {hideTitle && hiddenTitleLabel && <p className="text-sm font-medium text-foreground">{hiddenTitleLabel}</p>}
         <p className="text-xs text-foreground-dim">{video.channelName}</p>
       </div>
     </div>

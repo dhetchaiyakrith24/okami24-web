@@ -44,7 +44,6 @@ export function runReviewVideoContractTests(): ReviewVideoContractResult[] {
   for (const [id, v] of Object.entries(VERIFIED_REVIEW_VIDEOS)) clips.push({ where: `ProductMaster ${id}`, v });
   for (const g of [...guides, ...heldGuides]) {
     if (g.reviewVideo) clips.push({ where: `/guides/${g.slug}`, v: g.reviewVideo });
-    for (const v of g.moreVideos ?? []) clips.push({ where: `/guides/${g.slug} (more)`, v });
   }
   for (const t of technologyEntries) if (t.reviewVideo) clips.push({ where: `/technology/${t.slug}`, v: t.reviewVideo });
   for (const [path, v] of Object.entries(COLLECTION_VIDEOS)) clips.push({ where: path, v });
@@ -74,7 +73,7 @@ export function runReviewVideoContractTests(): ReviewVideoContractResult[] {
   // A page shows a clip once: the same id twice on one page would be two identical VideoObjects.
   const perPage = new Map<string, string[]>();
   for (const { where, v } of clips) {
-    const page = where.replace(/ \((more|hidden)\)$/, "");
+    const page = where.replace(/ \(hidden\)$/, "");
     perPage.set(page, [...(perPage.get(page) ?? []), v.videoId]);
   }
   const dupes = [...perPage.entries()].filter(([, ids]) => new Set(ids).size !== ids.length).map(([p]) => p);

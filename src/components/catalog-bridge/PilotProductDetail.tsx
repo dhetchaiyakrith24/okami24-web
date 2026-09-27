@@ -286,7 +286,7 @@ export function PilotProductDetail({
           />
           <span className="label-mono text-xs text-foreground-dim">{dict.product.reviewVideoEyebrow}</span>
           <div className="max-w-2xl">
-            <ProductReviewVideo video={product.reviewVideo} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hideTitle={hideThaiClipTitle(locale, product.reviewVideo.title)} contextName={product.displayName} />
+            <ProductReviewVideo video={product.reviewVideo} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hiddenTitleLabel={dict.product.reviewVideoHiddenTitle} hideTitle={hideThaiClipTitle(locale, product.reviewVideo.title)} contextName={product.displayName} />
           </div>
         </Container>
       )}

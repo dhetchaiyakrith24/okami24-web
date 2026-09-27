@@ -15,7 +15,7 @@ export function CollectionReviewVideo({ video, contextName }: { video: ReviewVid
   if (!video) return null;
   return (
     <div className="max-w-2xl">
-      <ProductReviewVideo video={video} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hideTitle={hideThaiClipTitle(locale, video.title)} contextName={contextName} />
+      <ProductReviewVideo video={video} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hiddenTitleLabel={dict.product.reviewVideoHiddenTitle} hideTitle={hideThaiClipTitle(locale, video.title)} contextName={contextName} />
     </div>
   );
 }
