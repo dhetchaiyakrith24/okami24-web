@@ -24,8 +24,9 @@ and products), so **"pass" means what the script prints as pass, and nothing els
    when `node scripts/self-merge-check.js --base <base>` ends in `PASS` — the same allow-list that decides "nothing a
    customer sees" in 13.7 (so `src/`, `public/`, product data, root config such as `next.config.ts`, and anything the
    build or the server runs all count as touched) — that output, pasted in the report with its command, IS the proof:
-   skip the word-break scan, the shots and `tier-b-proof`. Step 3 still runs in full, including the gates that need the
-   test server. `BLOCKED` = run the steps below as written.
+   skip the word-break scan, the shots, `tier-b-proof` and the server gates of step 3 — nothing a visitor gets changed,
+   so only the fast checks of 13.12 #1 (ก) for the files touched apply (owner's rules table item 4, 28/09 — replaces
+   "step 3 still runs in full"). `BLOCKED` = run the steps below as written.
 1. `node scripts/wordbreak-scan.js` on **the pages this round touched** (the list from
    `scope-auditor` at round open), at the two widths the two-tier rule names, output under
    `_incoming/<round>/`.
@@ -35,9 +36,7 @@ and products), so **"pass" means what the script prints as pass, and nothing els
    disappeared and what appeared, page by page and width by width.
 3. Screenshots: only the spots the diff flags as new. The scan-first / shot-count rule is
    `.claude/TEAM_RULES.md` 13.10 #15 (one place): more than the cap there in one round = tell the
-   owner why first. (This replaced the older close routine "shoot every touched page", moved here
-   from HANDOFF §17 "Two-tier rule" — the older wording is kept in that line's chain-10 record in
-   `docs/RULES_INDEX.md`.)
+   owner why first.
 4. Tier-B rounds: WHAT a visitor reads that changed (the pages 13.12 #1 (ค) / #3 name, three languages, both widths) and the shots of
    those spots only = skill `tier-b-proof`; the word-break scan above stays for WHERE Thai text wraps.
 
@@ -77,19 +76,18 @@ the checker quotes the printed totals in its report — this file never states t
   `npx tsx scripts/content-dates.ts --check` — `verify:catalog` fails while the generated dates
   are older than git (added 2026-09-22, round "search-price")
 
-Save every log under `_incoming/<round>/` and cite the paths in the report. `_incoming/` is not in git: a cloud
-container loses it, and a cloud chat or Javis can never open the computer's copy. So **every round, computer or cloud**
-(owner ruling Q5, round B 2026-09-27), writes its evidence summary to `docs/cloud-results/<round>.md` (one file per
-round, committed with the docs batch) — every command, its printed totals, any error text quoted exactly, and a
-summary of every `_incoming/` file the report or the merge pack cites (`extras.md` · `owner-table.md` · break logs);
-a cited file that is short text may be copied whole under `docs/cloud-results/incoming/<round>/` instead (secret scan
-first). Screenshots go to a private Artifact page instead (`docs/CLOUD.md`), never into git.
+Save long logs under `_incoming/<round>/` and cite the paths in the report. `_incoming/` is not in git: a cloud
+container loses it. So **a cloud round** (owner ruling Q5, round B 2026-09-27) writes its evidence summary to
+`docs/cloud-results/<round>.md` (one file per round, committed with the docs batch) — the commands, their printed
+totals, any error text quoted exactly, and what the report cites from `_incoming/`. A computer round writes that
+file only when Javis or a cloud chat will need the evidence (owner's rules table item 12, 28/09). Secret scan before
+copying any text file into git. Screenshots go to a private Artifact page instead (`docs/CLOUD.md`), never into git.
 
 ## When the round added a gate — break it red before trusting it (ทำลายด่านใหม่ให้แดงก่อนเชื่อ)
 
 Applies when the round added or changed anything with a pass/fail that runs by itself: a script gate, a git hook, a
 contract test. A gate nobody has seen fail is not yet proof. **When:** in the batch that adds the gate, before that
-batch's checker; at the round close only check that each such gate has its log.
+batch's checker; at the round close only check that each such gate was seen red once.
 
 1. **The main agent does it** — the checker cannot edit files (13.5); the checker re-reads the logs and creates no
    probe of its own.
@@ -97,8 +95,8 @@ batch's checker; at the round close only check that each such gate has its log.
    (one per failure mode the gate claims) → run the gate → it must fail, and its message must name that fault (red).
 3. **Undo the fault** (restore the file / delete the probe / unstage it) → run the gate again → it must pass (green).
    `git status` shows no probe left and `git log -1` is unchanged.
-4. **Log both runs** — command, output, exit code — in `_incoming/<round>/break-<gate>.log`; the report and the
-   checker brief cite the path.
+4. **Note both runs** — the fault made, the red message, the green run — one line each in the report or the
+   checker brief (a log file only when the output is long; owner's rules table item 12, 28/09).
 5. A gate that cannot be made to fail is reported as "not a gate yet", never counted as proof.
 
 ## Step 4 — Fix what the close found, in one commit
@@ -109,24 +107,19 @@ send-back cap and re-check rule: 13.5.
 
 ## Step 5 — Checker, then tag, then push
 
-1. `checker` passes the close (five fields, per 13.5). **Start `doc-keeper` (step 6) in the same message as the
-   checker** — it writes the pending token where the checker's verdict goes (`.claude/agents/doc-keeper.md`); when
-   the checker returns, put its real result in each token's place yourself (a send-back = fix, re-check, then fill).
-   The checker's brief says so and scopes the close check to everything EXCEPT the files doc-keeper is writing at
-   the same time (`docs/HANDOFF.md` · `docs/THAI_STYLE_LOG.md` · `docs/ROUND_COST.md` · `docs/LAUNCH_AUDIT.md`) — 13.5
-   "a result covers only the state it checked" holds, because those files are not in that state. After the tokens are
-   filled, the checker re-checks those files only (13.5: a re-check covers only what changed) before the push.
-   `scripts/pending-check.js` (pre-push hook + merge-pack) refuses the push and the pack while a token is left.
-2. Commit split by type (13.7) — docs+scripts / images / code / data, never one `add -A`.
+1. `checker` passes the close (five fields, per 13.5). `doc-keeper` (step 6) may start in the same message; it
+   leaves the checker's verdict out and the main agent adds that one line to §16 when the checker returns — no
+   placeholder token, no second checker pass over the docs (owner's rules table item 6, 28/09 — the
+   `[CHECKER-PENDING]` token, `scripts/pending-check.js` and the pre-push hook were removed). The docs are state
+   notes, not site content: they are not part of the checker's verdict.
+2. Commit so each topic can be reverted on its own (13.7) — never one blind `add -A`.
 3. **Annotated tag on the round-close commit, before the push:**
    `git tag -a <english-name> <commit> -F <thai-message-file>` — the tag name is English only,
    no spaces (pattern of the existing names: `git tag -n1`); the message inside is Thai the owner
-   can read. Then `git push` and `git push origin --tags`. The tag rule lives in 13.7; the
-   name-to-meaning table the owner reads is `docs/RECOVERY.md` "อยากกลับไป ก่อนรอบไหน" — add the
-   new tag's row there (name · meaning · hash · date).
+   can read. Then `git push` and `git push origin --tags`. The tag rule lives in 13.7; the tag's Thai message is
+   the owner's list (`git tag -n1`) — no extra row in `docs/RECOVERY.md` (owner's rules table item 12, 28/09).
    **In the cloud: no tag** (a tag push is refused, `HTTP 403`; 13.7) — the close point is the round-close commit.
-   Name the base commit (rollback point) and the close commit in the report and in `docs/cloud-results/<round>.md`,
-   and write the RECOVERY row with the round's name in the tag column and the close commit's hash.
+   Name the base commit (rollback point) and the close commit in the report and in `docs/cloud-results/<round>.md`.
 4. Friday merges (13.7 — small = merge then report, big = tell the owner first): `node scripts/self-merge-check.js`
    on the PR's head commit decides small/big; its conditions live in 13.7 only.
    Deploy is never yours (a merge to main that touches the site deploys itself after the GitHub checks — 13.7).
@@ -165,6 +158,3 @@ Answer, in item 3, the question `docs/TEMPLATES.md` (ค)-8 makes the owner ask 
 which parts of this round's instruction prescribed a method that was not needed, or stood in the
 way of a better one. Name the line and what it cost; "nothing" is a valid answer and takes one
 line.
-
-Write the chain-10 record (old text in full / new text in full / what was lost) whenever a rule
-was merged or removed — in a file under `_incoming/<round>/`, the report gives its path (13.6).

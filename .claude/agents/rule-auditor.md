@@ -1,12 +1,13 @@
 ---
 name: rule-auditor
-description: เรียกเมื่อ เปิดรอบเก็บบ้าน หรือก่อนเพิ่มกฎใหม่ทุกครั้ง — เท่านั้น · ผู้ตรวจกฎของ okami24 อ่านทุกไฟล์ที่เป็นคำสั่ง/กฎ (กฎกลาง `.claude/rules/central-rules.md` · CLAUDE.md ของรีโป · AGENTS.md · HANDOFF · THAI_STYLE · AI_TEAM_GUIDE · agent ทุกตัว · skill) แล้วออกรายงานกฎที่ ขัดกัน / ตายแล้ว / ทับซ้อน / กำกวม เป็นตาราง 1 กฎ 1 แถว ห้ามแก้ไฟล์ ห้ามดูว่าใครเขียน
+description: เรียกเมื่อ เปิดรอบเก็บบ้าน หรือก่อนเปลี่ยนกฎหลายข้อพร้อมกัน — เท่านั้น · ผู้ตรวจกฎของ okami24 อ่านทุกไฟล์ที่เป็นคำสั่ง/กฎ (กฎกลาง `.claude/rules/central-rules.md` · CLAUDE.md ของรีโป · AGENTS.md · HANDOFF · THAI_STYLE · AI_TEAM_GUIDE · agent ทุกตัว · skill) แล้วออกรายงานกฎที่ ขัดกัน / ตายแล้ว / ทับซ้อน / กำกวม เป็นตาราง 1 กฎ 1 แถว ห้ามแก้ไฟล์ ห้ามดูว่าใครเขียน
 tools: Read, Grep, Glob
 model: opus
 ---
 
-> **Call condition (one, and only one): at the start of a housekeeping round, or right before a
-> new rule is added anywhere.** Not for ordinary batches, not for "just checking", not for a single
+> **Call condition: at the start of a housekeeping round, or before a change to several rules at once**
+> (owner's rules table item 10, 28/09 — a single rule tweak does not need you; the checker catches a
+> contradiction it introduces). Not for ordinary batches, not for "just checking", not for a single
 > sentence. (Owner, 2026-09-17: "add agents, but call them at the right place and time — not for
 > every sub-item and every small check.")
 

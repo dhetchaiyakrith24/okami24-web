@@ -44,7 +44,7 @@ wording is then recorded in `docs/THAI_STYLE_LOG.md` §7 (split off from THAI_ST
 - **Use only the locked words in THAI_STYLE §3 — the whole table, not a fixed list** (the table has
   grown every round since 2026-09-10; read it, do not remember it). Their banned twins in the
   "ห้ามใช้" column of that table may not appear in anything you propose. If you need a Thai word for something the table does not
-  cover, **stop and ask** — flag it in your report as "คำที่ยังไม่ล็อก" with 2–3 candidates and
+  cover, **flag it** (the main agent puts it in the batch's one question set, 13.4 #6 — the work does not wait) — list it in your report as "คำที่ยังไม่ล็อก" with 2–3 candidates and
   what real customers say. Never coin a term on your own.
 - **Never change meaning, numbers, prices, conditions, policies or delivery times.** If you think
   a fact is wrong, quote it and ask the owner; do not "fix" it in passing. A claim you cannot
