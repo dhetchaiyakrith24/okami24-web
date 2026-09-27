@@ -1,0 +1,65 @@
+# Google Search Console → branch gsc-data, read-only, so chats that cannot log in to Google can read GSC (round C topic 5,
+# owner 2026-09-27: the cloud reads GSC · Friday never holds or sees the key).
+#
+#   daily 23:30 UTC (06:30 Bangkok) + "Run workflow" (Actions tab, also the GitHub phone app) on main
+#   → scripts/gsc-export.js with the key from the GitHub environment "gsc" (secret GSC_SERVICE_ACCOUNT_JSON + variable
+#     GSC_SITE — the environment is limited to main, so a workflow on any other branch cannot read the secret)
+#   → the data files (no key) are committed to branch gsc-data: gsc/latest/*.json + gsc/<date>/*.json
+# Read it from any chat: `git fetch origin gsc-data` then `git show origin/gsc-data:gsc/latest/meta.json`.
+# Setup (owner, once, Thai step by step): docs/GSC_SETUP.md. No key yet = the job says so and ends green.
+# Stop it: Actions → "gsc-export" → ⋯ → Disable workflow. Remove access: GSC → Settings → Users → remove the account.
+name: gsc-export
+on:
+  schedule:
+    - cron: "30 23 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: gsc-export
+  cancel-in-progress: false
+jobs:
+  export:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    environment: gsc
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Export (read-only)
+        id: x
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          GSC_SITE: ${{ vars.GSC_SITE }}
+        run: |
+          if [ -z "$GSC_SERVICE_ACCOUNT_JSON" ] || [ -z "$GSC_SITE" ]; then
+            echo "No key or site in the GitHub environment \"gsc\" yet — nothing exported (docs/GSC_SETUP.md)." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "ran=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          node scripts/gsc-export.js "$RUNNER_TEMP/gsc-out" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "ran=true" >> "$GITHUB_OUTPUT"
+      - name: Commit the data to gsc-data
+        if: steps.x.outputs.ran == 'true'
+        run: |
+          git config user.name "gsc-export bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin gsc-data >/dev/null; then
+            git fetch --depth 1 origin gsc-data
+            git worktree add "$RUNNER_TEMP/data" FETCH_HEAD
+            git -C "$RUNNER_TEMP/data" switch -c gsc-data
+          else
+            git worktree add --detach "$RUNNER_TEMP/data"
+            git -C "$RUNNER_TEMP/data" switch --orphan gsc-data
+          fi
+          day=$(date -u +%F)
+          mkdir -p "$RUNNER_TEMP/data/gsc/latest" "$RUNNER_TEMP/data/gsc/$day"
+          cp "$RUNNER_TEMP"/gsc-out/*.json "$RUNNER_TEMP/data/gsc/latest/"
+          cp "$RUNNER_TEMP"/gsc-out/*.json "$RUNNER_TEMP/data/gsc/$day/"
+          cd "$RUNNER_TEMP/data"
+          git add gsc
+          git commit -q -m "gsc: export $day" || { echo "no change"; exit 0; }
+          git push origin gsc-data
+          echo "Committed gsc/$day to gsc-data." >> "$GITHUB_STEP_SUMMARY"
