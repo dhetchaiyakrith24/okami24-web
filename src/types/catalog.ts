@@ -254,11 +254,12 @@ export interface Product {
    * "map existing review videos to the correct product identities"). Absent unless a specific
    * video was found AND confirmed to genuinely review this exact model — never a loosely-related
    * video attached just to have "content." `channelName` is shown to the customer so they know
-   * which of OKami24's channels it's from; `publishedAt` (ISO date, optional) powers `VideoObject`
-   * JSON-LD `uploadDate` when present. See `ProductReviewVideo` component for the lightweight,
-   * click-to-load embed contract (no iframe loads until the customer clicks).
+   * which of OKami24's channels it's from; `publishedAt` (the clip's YouTube upload date,
+   * YYYY-MM-DD) is required — it is the `VideoObject` JSON-LD `uploadDate`, a field Google requires
+   * (round "clip" 2026-09-27: 7 product pages were flagged "invalid video item" because it was
+   * optional and absent). See `ProductReviewVideo` for the link-out thumbnail card.
    */
-  reviewVideo?: { videoId: string; title: string; channelName: string; publishedAt?: string };
+  reviewVideo?: ReviewVideo;
   specifications: Specification[];
   features: Feature[];
   compatibility: Compatibility[];
@@ -298,6 +299,9 @@ export interface Guide {
   /** Round SEO ข (owner ruling 2026-09-21, Q3): one confirmed OKami24-channel clip per article, same
    *  contract as Product.reviewVideo (oEmbed-confirmed before it goes in — see the product records). */
   reviewVideo?: ArticleReviewVideo;
+  /** Round "clip" (2026-09-27): further clips shown next to `reviewVideo`, each with its own VideoObject —
+   *  used only where the round instruction pairs a second shop clip with the article's search term. */
+  moreVideos?: ArticleReviewVideo[];
   /** Round SEO ข batch 4 (2026-09-21): ISO date for the Article JSON-LD — the day the record first
    *  entered the repo, read from git history (never invented). Optional: absent = not claimed. The
    *  modified date is not a record field: src/lib/content-dates.ts derives it from git. */
@@ -330,7 +334,17 @@ export interface ArticleFAQItem {
   answer: string;
 }
 
-export type ArticleReviewVideo = NonNullable<Product["reviewVideo"]>;
+/** One confirmed OKami24-channel YouTube clip — the one shape every page that shows a clip uses
+ *  (product, article, brand/category page). `publishedAt` = the upload date shown on the clip's
+ *  YouTube page, YYYY-MM-DD, read from YouTube (never invented); it feeds VideoObject `uploadDate`. */
+export interface ReviewVideo {
+  videoId: string;
+  title: string;
+  channelName: string;
+  publishedAt: string;
+}
+
+export type ArticleReviewVideo = ReviewVideo;
 
 export interface TechnologyEntry {
   id: string;

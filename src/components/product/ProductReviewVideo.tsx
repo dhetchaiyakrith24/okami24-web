@@ -15,24 +15,39 @@ import Image from "next/image";
  * reliably works for this content category — the thumbnail (a plain `i.ytimg.com` image request,
  * no tracking) still gives the visual preview without that risk.
  */
+/** Round 10B rule, one place since round "clip" (2026-09-27): on an English/Chinese page a clip whose YouTube title
+ *  is Thai shows no title line and is named by its channel instead (alt + screen-reader label), so the text the site
+ *  writes around a clip is always in the page's language. */
+export function hideThaiClipTitle(locale: string, title: string): boolean {
+  return locale !== "th" && /[ก-ฺเ-๛]/.test(title);
+}
+
 export function ProductReviewVideo({
   video,
   eyebrow,
   watchOnYoutubeLabel,
   hideTitle = false,
+  contextName,
+  compact = false,
 }: {
   video: { videoId: string; title: string; channelName: string };
-  eyebrow: string;
+  /** Omitted when the caller shows one eyebrow above several cards (round "clip": the article's two-clip grid). */
+  eyebrow?: string;
   watchOnYoutubeLabel: string;
   /** Round 10B (owner ruling 2026-09-24: 0 Thai on the en/zh guide pages): the clip's own YouTube title is Thai for
    *  the shop's channels, so an English/Chinese guide page drops the title line and names the channel instead in the
    *  image's alt/label. Opt-in — every other caller renders exactly as before. */
   hideTitle?: boolean;
+  /** Round "clip" (designer): with the title hidden, the channel alone does not say what the clip is about — the
+   *  page's own name (a model name, a brand) is added to the alt/label, in the page's language. */
+  contextName?: string;
+  /** Round "clip" (designer): a smaller play button from `sm` up, for the narrower cards of a two-column grid. */
+  compact?: boolean;
 }) {
-  const accessibleName = hideTitle ? video.channelName : video.title;
+  const accessibleName = hideTitle ? (contextName ? `${video.channelName} · ${contextName}` : video.channelName) : video.title;
   return (
     <div className="flex flex-col gap-3">
-      <span className="label-mono text-xs text-foreground-dim">{eyebrow}</span>
+      {eyebrow && <span className="label-mono text-xs text-foreground-dim">{eyebrow}</span>}
       <a
         href={`https://www.youtube.com/watch?v=${video.videoId}`}
         target="_blank"
@@ -50,8 +65,8 @@ export function ProductReviewVideo({
         />
         <span className="absolute inset-0 bg-black/25 transition-colors duration-200 group-hover:bg-black/35" aria-hidden />
         <span className="absolute inset-0 flex items-center justify-center">
-          <span className="flex h-16 w-16 items-center justify-center rounded-full bg-ember/90 shadow-lg transition-transform duration-200 group-hover:scale-110">
-            <svg viewBox="0 0 24 24" className="ml-1 h-7 w-7 fill-white" aria-hidden>
+          <span className={`flex h-16 w-16 items-center justify-center rounded-full bg-ember/90 shadow-lg transition-transform duration-200 group-hover:scale-110${compact ? " sm:h-12 sm:w-12" : ""}`}>
+            <svg viewBox="0 0 24 24" className={`ml-1 h-7 w-7 fill-white${compact ? " sm:h-5 sm:w-5" : ""}`} aria-hidden>
               <path d="M8 5v14l11-7z" />
             </svg>
           </span>

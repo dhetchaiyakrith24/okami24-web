@@ -397,7 +397,7 @@ export interface ProductMaster {
    *  `catalog.ts` for the full rationale (identical contract, kept as a separate optional field
    *  here rather than a shared type import, matching this file's existing "extend, don't couple"
    *  convention for fields shared in spirit with the Legacy schema). */
-  reviewVideo?: { videoId: string; title: string; channelName: string; publishedAt?: string };
+  reviewVideo?: { videoId: string; title: string; channelName: string; publishedAt: string };
 
   // ---- Editorial flags (unchanged from catalog.ts) ----
   isFlagship: boolean;

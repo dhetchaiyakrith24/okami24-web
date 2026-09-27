@@ -8,6 +8,7 @@
 import { faqPageJsonLd } from "@/lib/seo";
 import { plainText } from "@/lib/article-text";
 import { getDictionary } from "@/i18n/dictionaries";
+import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import type { ArticleFAQItem, ArticleReviewVideo } from "@/types/catalog";
 
 // FAQ text is plain: if a `[text](href)` ever lands in a Q/A string, only its label survives
@@ -19,14 +20,11 @@ export function articleFaqJsonLd(items: ArticleFAQItem[] | undefined) {
 
 export function articleVideoJsonLd(video: ArticleReviewVideo | undefined, articleTitle: string) {
   if (!video) return null;
-  return {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    name: video.title,
-    // Plain dictionary string (no render-time Thai typography), like the product page's block.
-    description: `${video.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${articleTitle}`,
-    thumbnailUrl: [`https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`],
-    uploadDate: video.publishedAt,
-    embedUrl: `https://www.youtube-nocookie.com/embed/${video.videoId}`,
-  };
+  // Plain dictionary string (no render-time Thai typography), like the product page's block.
+  return videoObjectJsonLd(video, `${video.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${articleTitle}`);
+}
+
+/** Round "clip": one VideoObject per clip the article shows (`reviewVideo` first, then `moreVideos`). */
+export function articleVideosJsonLd(videos: (ArticleReviewVideo | undefined)[], articleTitle: string) {
+  return videos.map((v) => articleVideoJsonLd(v, articleTitle)).filter((b) => b !== null);
 }

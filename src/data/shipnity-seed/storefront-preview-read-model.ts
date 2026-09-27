@@ -195,7 +195,7 @@ export interface StorefrontProductView {
   sourceUrls: string[];
   /** A real OKami24-channel review video — see `Product.reviewVideo` in `catalog.ts` for the full
    *  rationale. Absent unless one was specifically confirmed for this exact product. */
-  reviewVideo?: { videoId: string; title: string; channelName: string };
+  reviewVideo?: { videoId: string; title: string; channelName: string; publishedAt: string };
 }
 
 function toView(product: ProductMasterInput): StorefrontProductView | null {

@@ -14,7 +14,8 @@ import type { RelatedArticle } from "@/lib/article-relevance";
 import { CompatibleProducts } from "@/components/product/CompatibleProducts";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 import { SourceNote } from "@/components/product/SourceNote";
-import { ProductReviewVideo } from "@/components/product/ProductReviewVideo";
+import { hideThaiClipTitle, ProductReviewVideo } from "@/components/product/ProductReviewVideo";
+import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { getDictionary } from "@/i18n/dictionaries";
 import { pilotTagline } from "@/i18n/product-copy-en";
@@ -275,21 +276,17 @@ export function PilotProductDetail({
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "VideoObject",
-                name: product.reviewVideo.title,
-                // JSON-LD stays plain: read the untransformed dictionary, not the context copy
-                // that carries the render-time Thai typography (thai-typography.ts).
-                description: `${product.reviewVideo.channelName} — ${getDictionary(locale).product.reviewVideoEyebrow}: ${product.displayName}`,
-                thumbnailUrl: [`https://i.ytimg.com/vi/${product.reviewVideo.videoId}/hqdefault.jpg`],
-                embedUrl: `https://www.youtube-nocookie.com/embed/${product.reviewVideo.videoId}`,
-              }),
+              // JSON-LD stays plain: read the untransformed dictionary, not the context copy
+              // that carries the render-time Thai typography (thai-typography.ts). Round "clip":
+              // the shared builder — this block had no uploadDate at all (GSC "invalid video item").
+              __html: JSON.stringify(
+                videoObjectJsonLd(product.reviewVideo, `${product.reviewVideo.channelName} — ${getDictionary(locale).product.reviewVideoEyebrow}: ${product.displayName}`)
+              ),
             }}
           />
           <span className="label-mono text-xs text-foreground-dim">{dict.product.reviewVideoEyebrow}</span>
           <div className="max-w-2xl">
-            <ProductReviewVideo video={product.reviewVideo} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} />
+            <ProductReviewVideo video={product.reviewVideo} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hideTitle={hideThaiClipTitle(locale, product.reviewVideo.title)} contextName={product.displayName} />
           </div>
         </Container>
       )}
