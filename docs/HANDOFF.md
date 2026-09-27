@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v76 · 2026-09-27 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v77 · 2026-09-27 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -847,77 +847,78 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-1 main: run `git fetch && git log -1 --oneline origin/main` for the current commit. Rollback point for
-  round B = tag `pre-roundB` (pushed, made from `origin/main` before the round opened). Open PR **#74**
-  (`roundB-housekeeping` → main, off-site) — **Javis merges** (not Friday): `self-merge-check.js --pr 74` said
-  BLOCKED on 49 Thai-named `docs/rounds` files — a gate bug (`gh` quotes Thai paths), fix = PR **#77** (Javis) ·
-  13.4 #9: a failing merge gate = stop, no workaround [ตรวจแล้ว, `_incoming/roundB/break-self-merge-pr-mode.log`].
-2 ahead of main: run `git log --oneline origin/main..roundB-housekeeping` for the full commit list (also
-  the Javis-only branches). PR **#75** (`roundB-javis`: large-file hook · site-paths Render Shell · Actions
-  v7) was **merged by Javis before #74** → main `ce99c99` (its push run: "SKIP deploy" — pipeline rule)
-  [ตรวจแล้ว, `gh run view 36294316930`]. The mirror removal (commit `34508c1`, made after #75 was pushed)
-  rides on its own branch **`roundB-javis-2`** → a new Javis PR, merged **after** #74 (the old
-  `owner-rules-check` on main still reads the mirror).
-3 round: **CLOSED — round B "housekeeping" (computer, opened + closed 2026-09-27)** · instruction
-  `docs/rounds/รอบB-เก็บบ้านใหญ่-กฎ-เอกสาร-คำสั่ง.txt` (v2) · full record `docs/cloud-results/
-  roundB-housekeeping.md` (every number, English) + owner-facing Thai summary `docs/cloud-results/
-  roundB-stop2-owner.md`. Stop point = **before PR #74 merges** — every batch done and pushed on both
-  branches, nothing merged yet. scope-auditor: sitemap 115 pages, **0 touched** (every change off the
-  build/server path). checker: batches 0-6 **5/7 → 2 send-backs (record wording) → re-check → 1 more
-  send-back (one row) → PASS** [ตรวจแล้ว, `docs/cloud-results/roundB-housekeeping.md`]; this close batch
-  (owner answers 1-7 · owner-rules-check fix · CLOUD_CHECKLIST · docs/RULES_INDEX/ROUND_COST, this push) = **4/7 → 3 send-backs (PR #75 facts after Javis merged it early · the mirror commit not pushed yet · 2 record explanations) → re-check 1 more send-back (RULES_INDEX row 110) → PASS**. rule-auditor: 44 rows (conflict 6 ·
-  dead 7 · stale after the cloud move 13 · duplicate 8 · ambiguous 7 · cross-project 3), all dispositioned
-  or carried to item 4 below. Owner answered stop point 2 with "ไป" on 2026-09-27 = every recommendation
-  accepted [ตรวจแล้ว, `docs/cloud-results/roundB-stop2-owner.md`]. Close tag
-  **`roundB-housekeeping-done`** — made on the close commit (computer round → tag, per round-close), once
-  this docs push lands.
-  **First next step:** Javis merges PR #74 → then PR #76 (mirror removal, after #74) and PR #77 (gate fix, any
-  order) → a Friday chat moves `220567d` (drops the 4 copied round files from `inbox`; local worktree
-  `.claude/worktrees/roundB-inbox` branch `roundB-inbox-local`) onto the current `inbox` and pushes it, only after
-  #74 → Javis runs the batch 7 cloud check (`rounds/roundB-cloud-check.txt` is already on `inbox`).
-  Previous round: **round A "pipes" (cloud) — CLOSED + MERGED**, PR #73 merged by Javis → `76703c9` (this
-  round's base); full batch detail relocated to §3 "§16 lines relocated at round B 'housekeeping' close"
-  below.
-  Previous rounds before that, all CLOSED + MERGED, full detail at §3 (unchanged): round "mobile" ·
-  "cloud" tag `cloud-round-done` · "central-rules" tag `central-rules-done` · "tools round" tag
+1 main: `git fetch && git log -1 --oneline origin/main`. Rollback point for round C = tag `pre-roundC`
+  (pushed, made from `origin/main` before the round opened) [ตรวจแล้ว]. Open PR for this batch (B1, branch
+  `roundC-housekeeping`): none yet as of this write — the branch had uncommitted changes, no PR opened
+  [ตรวจแล้ว, `git status` at write time]. Once pushed: touches only `docs/rounds/` and
+  `.claude/agents/rule-auditor.md`, no site-visible path → Friday self-merges per 13.7 once checker PASS +
+  GitHub gates green.
+2 ahead of main: `git log --oneline origin/main..roundC-housekeeping`. This batch's changes, not yet
+  committed at write time (see `git status`): `docs/rounds/README.md` (+2 lines) ·
+  `docs/rounds/roundB-cloud-check.txt` (new) · `docs/rounds/รอบC-คอมตรงGit-กฎกลางที่เดียว-merge-ภาพ-GSC.txt`
+  (new) · `.claude/agents/rule-auditor.md` (dropped the retired-mirror sentence, old line 39) [เชื่อว่า,
+  reported by the main agent].
+3 round: OPEN — round C "คอมตรงGit-กฎกลางที่เดียว-merge-ภาพ-GSC" (computer, opened 2026-09-27) ·
+  instruction `docs/rounds/รอบC-คอมตรงGit-กฎกลางที่เดียว-merge-ภาพ-GSC.txt` · owner already said "ไป"
+  (instruction line 35), planner not called · batch plan (tiers, merge class) = `_incoming/roundC/plan.md`.
+  All 6 batches tier A — no page a visitor sees changes, scope-auditor confirms [เชื่อว่า, plan.md]:
+  B1 leftovers of round B (§16 to reality · inbox cloud-check file → docs/rounds · rule-auditor.md line 39 ·
+  local branches whose work is already in main, for the owner to delete) — branch `roundC-housekeeping`,
+  merge class **small**.
+  B2 topic 1: computer = GitHub at every chat open (SessionStart `scripts/session-sync.js`: fetch ·
+  fast-forward main when clean · loud warning otherwise · rule files changed → re-read list · OneDrive round
+  files vs git) — branch `roundC-session-sync`, merge class big (hook).
+  B3 topic 2 (central rules from one place) — **ON HOLD, owner in chat 2026-09-27**: the central rules
+  already match everywhere and load once (checked from the cartoon side); the one uncommitted script this
+  chat had written was removed, nothing else was done — pick it up again only when the owner says so.
+  B4 topic 3: new merge rule in 13.7 + `site-paths.js` + `self-merge-check.js` small/big classes — branch
+  `roundC-merge-rule`, merge class big (edits 13.7).
+  B5 topic 4: cloud Chromium trusts the cloud network CA (prepare-clone step) — branch `roundC-cloud-ca`,
+  merge class big (hook script).
+  B6 topic 5: GSC read-only for the cloud — GitHub Actions job holds the key (environment secret, main
+  only), writes to branch `gsc-data`; owner steps in Thai — branch `roundC-gsc`, merge class big (.github).
+  **Stop point now = B1 done (this push), B2 next.**
+  **First next step:** commit + push this batch on `roundC-housekeeping` → open its PR → checker PASS →
+  self-merge (item 1) → open batch B2 (`roundC-session-sync`) via skill `round-open` "continuing".
+  Previous round: **round B "housekeeping" (computer) — CLOSED + MERGED** — PR #74, #76, #77 all merged by
+  Javis; tag `roundB-housekeeping-done` [ตรวจแล้ว] · full record `docs/cloud-results/
+  roundB-housekeeping.md` + Thai summary `docs/cloud-results/roundB-stop2-owner.md`.
+  Previous rounds before that, all CLOSED + MERGED, full detail at §3 (unchanged): round A "pipes" · round
+  "mobile" · "cloud" tag `cloud-round-done` · "central-rules" tag `central-rules-done` · "tools round" tag
   `tools-round-done` · "friday persona" tag `friday-persona-done` · "rules trim" tag `rules-trim-done` ·
   "owner rules" tag `owner-rules-done` · "rules move" tag `rules-move-done` · round 10C tag
   `seo-landscape-10c-done` · round data 2 tag `data-facts-2-done`.
 4 waiting on owner / Javis:
-  (a) delete the 6 GitHub branches (`claude/mobile-full-round-vc6o2b` · `rules/owner-answers-1a-6a-7a-9a` ·
-  `rules-sync/d5ff55b` · `rules-sync/97a58b0` · `claude/t4-delete-probe` · `checkpoint/phase-3.3.1`) + 3
-  computer branches — the session's permission guard refused `git push --delete` / `git branch -D`
-  ("Git Destructive") this round, not retried by any other route; full list + "safe to delete" proof =
-  `docs/cloud-results/roundB-housekeeping.md` batch 1 table.
-  (b) delete `_incoming/zz-to-delete-roundB/` (this round moved, not deleted, its pile ③ there — untracked
-  files cannot be recovered once actually deleted) — owner's call.
-  (c) merge PR **#74** (Javis — see item 1), then PR **#76** (`roundB-javis-2`, mirror removal, after #74) and PR
-  **#77** (`roundB-javis-3`, merge-gate Thai path fix). #75 is already merged.
-  (d) run the batch 7 cloud check — `rounds/roundB-cloud-check.txt` is on `inbox` (it stops by itself if #74 is
-  not merged yet) — Javis opens it in a cloud chat after #74.
-  (e) stop-2 items 8-12, Friday untouched by design, full text `docs/cloud-results/roundB-stop2-owner.md`
-  §ข: 8 Render Blueprint **Auto Sync** — docs say default on, a push that edits `render.yaml` may deploy
-  outside the GitHub-checks gate [ยืนยันจากเอกสาร render.com/docs/infrastructure-as-code]; recommendation
-  Render → Blueprints → okami24 → Auto Sync → **No** · 9 split the shared "Smog.z" cloud environment (web
-  vs cartoon) · 10 the OneDrive "รอบมือถือเต็มตัว" file differs from the `inbox` copy the cloud chat
-  actually ran — Javis checks what the OneDrive copy adds after the run · 11 cartoon's own merged branch
-  `rules-sync/d5ff55b` — cartoon Friday deletes when the owner says · 12 three central-rules proposals for
-  `smogz-rules` (Javis PRs there, not this repo).
-  (f) carried from round A "pipes": owner opens the Artifact test link
-  `https://claude.ai/artifact/TuQkJ54AAMknjaj7co1ys9` on the phone (2 images = topic 7 of the mobile round's
-  questions file done) [รอเจ้าของ]. The other round-A items are done [ตรวจแล้ว by the main agent 2026-09-27]:
-  `RENDER_DEPLOY_HOOK_URL` is in the repo's secret list (name only, set 01:35 UTC) · `wip/roundA-pipes-b123-1`
-  and `claude/round-a-pipes-setup-3hjydq` no longer exist on GitHub (`git ls-remote --heads origin`).
-4b (permanent, 13.10 #12, do not re-ask; this round's own rulings, owner "ไป" 2026-09-27, full text
+  (a) delete the local computer branches whose work is already in main — the owner allowed it (round C
+  instruction line 31), but this session's permission guard refused `git worktree remove` + `git branch -d`
+  again in round C ("Irreversible Local Destruction"), not retried by any other route [ตรวจแล้ว]:
+  `checkpoint/phase-3.3.3` · `claude/handoff-section-16-cbe555` · `roundB-housekeeping` · `roundB-javis` ·
+  `roundB-javis-2` · `roundB-javis-3` · `rules/owner-answers-1a-6a-7a-9a` (+ their clean worktrees under
+  `.claude/worktrees/`: `handoff-section-16-cbe555` · `roundB-javis` · `roundB-javis-3`). The matching GitHub (remote) branches are already gone — `git ls-remote
+  --heads origin` shows only `main` and `inbox` [ตรวจแล้ว]. Not part of this delete list, kept on purpose:
+  `checkpoint/phase-3.3.1` (1 commit) · `roundB-inbox-add` · `roundB-inbox-local` (last two on `inbox`, not
+  main) [ตรวจแล้ว].
+  (b) delete `_incoming/zz-to-delete-roundB/` — owner's call, unchanged; untracked files there cannot be
+  recovered once actually deleted.
+  (c) whether Javis ran the round B batch 7 cloud check is not known to this chat [ยังไม่มีข้อมูล] — the
+  check file is now `docs/rounds/roundB-cloud-check.txt` (copied from `inbox` this batch); its `inbox` copy
+  is deleted only after this PR merges (`docs/rounds/README.md` line 20).
+  (d) round B stop-2 items 8-12, Friday untouched by design, full text `docs/cloud-results/
+  roundB-stop2-owner.md` §ข: 8 Render Blueprint Auto Sync (recommend → No) · 9 split the shared "Smog.z"
+  cloud environment (web vs cartoon) · 10 OneDrive vs `inbox` copy of the mobile round file differ · 11
+  cartoon's own merged branch `rules-sync/d5ff55b` · 12 three central-rules proposals for `smogz-rules`.
+  (e) carried from round A "pipes": owner opens the Artifact test link
+  `https://claude.ai/artifact/TuQkJ54AAMknjaj7co1ys9` on the phone [รอเจ้าของ].
+4b (permanent, 13.10 #12, do not re-ask; round B's own rulings, owner "ไป" 2026-09-27, full text
   `docs/cloud-results/roundB-stop2-owner.md` §ก + `roundB-housekeeping.md` "Stop point 2"): tier-B owner
   approval = one question set per batch, work does not wait (13.4 #6) + final keep/undo at merge (#2) ·
   "round end = handoff" means **§16 only** (doc-keeper); the full §1-§15 rewrite is only for the owner
   typing "handoff" or a chat move — §1-§15 labelled "history up to v34" · a push that is not a batch close
-  = the main agent writes §16, not doc-keeper · `.claude/GLOBAL_RULES_MIRROR.md` **retired** — the 2 gates
-  that read it now read the live copy `.claude/rules/central-rules.md` instead, mirror optional; the file
-  itself + its `JAVIS_ONLY` entry are removed by the follow-up Javis PR (branch `roundB-javis-2`) · checkpoint (13.10 #10) = a tag or branch at a
-  checked point, never a commit of unchecked work · TEMPLATES report-line dropped "≤20 คำ", kept "1
-  ประโยค ต่อบรรทัด" only.
+  = the main agent writes §16, not doc-keeper · `.claude/GLOBAL_RULES_MIRROR.md` **retired** — the gates
+  that read it now read the live copy `.claude/rules/central-rules.md`; the file itself was removed by
+  Javis PR #76 (branch `roundB-javis-2`), now merged into main [ตรวจแล้ว, the file no longer exists on
+  `main` — confirmed this batch] · checkpoint (13.10 #10) = a tag or branch at a checked point, never a
+  commit of unchecked work · TEMPLATES report-line dropped "≤20 คำ", kept "1 ประโยค ต่อบรรทัด" only.
 4c (permanent, 13.10 #12, do not re-ask; carried, unchanged, full text §3): round A "pipes" — 13.7
   self-merge scope now covers Friday's PRs touching skills/agents/web rules from the cloud, not only docs
   (exceptions unchanged: `.claude/settings*`/hooks/`.github/` still go to Javis) · a cloud round's close
@@ -927,32 +928,28 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
   persona · round 9/10B/data-round rulings · never raise Thailand's legal status in owner-facing reports ·
   build guard = option A · the "ร้านพอต" SEO block's shipping numbers = BSOT §10 · "เซฟ ๆ ให้ด้วย" = be
   careful, in `.claude/LESSONS.md`.
-5 open — round-B rule-audit questions (A1 A2 A3 D6 G3 G4 G5 G1, B3) = **resolved** this round via stop
-  point 2 ("ไป", item 4b above); the only round-B items still open are stop-2 items 8-12 (item 4(e) above).
-  Carried from round "mobile" (unchanged, full text §3): topic 3 — this cloud's Chromium trusts no CA,
-  live-site screenshots stay a computer job · topic 6 — does Google Fonts count as an "agreed source" for
-  this cloud machine's Thai font, and should the site load its own Thai font · topic 9 — no extra
-  environment-setup script needed, the repo's own SessionStart hook covers it · topic 10 — propose-only, a
-  script to check `docs/rounds/` copies against the OneDrive master · topic 11 — 3 small layout notes the
-  designer saw in passing, folded into the next tier-B site round · topic 4 (carried as a working note, not
-  a question) — the clip-embed round should use `i.ytimg.com`, not `img.youtube.com` (403 from this
-  cloud), per round A's own probe.
+5 open — unchanged from the last close (round B, v76 item 5): round-B rule-audit questions (A1 A2 A3 D6 G3
+  G4 G5 G1, B3) resolved via stop point 2 ("ไป") · carried from round "mobile" (unchanged, full text §3):
+  topic 3 — live-site screenshots stay a computer job · topic 6 — does Google Fonts count as an "agreed
+  source" for this cloud machine's Thai font, and should the site load its own Thai font · topic 9 — no
+  extra environment-setup script needed · topic 10 — propose-only script, OneDrive vs `docs/rounds/` copies
+  · topic 11 — 3 small layout notes, folded into the next tier-B site round · topic 4 working note — clip
+  embeds should use `i.ytimg.com`, not `img.youtube.com` (403 from the cloud).
   Older backlog carried, full text §3: `_incoming/round10c/extras.md`'s 6 site-touching proposals · ask
   Cowork on 05/10: index status of the 5 new guides + which page GSC credits for "caliburn g5"/"m bar"/
   "uwell" · round data 2 leftovers · hydration/bundle scrub · `/compare` "Charging" "—" ×19 · Shipnity Thai
   on en/zh · round 11A pod-159 photos · B5 rest · B6. Tools round, found, not fixed (site untouchable that
   round): 10 Thai strings shown to en/zh visitors on coil-54/55/68 + iqosheet-16/18 [ตรวจแล้ว,
   `_incoming/tools-round/b3/data2-evidence.md`].
-6 verify baseline — **unchanged from round A "pipes" close, cloud session, HEAD `7532f49`** — round B ran
-  only the rule gates, not the full verify set (its own instruction file: no big verify needed, nothing it
-  checks was touched; proof = `self-merge-check.js` + the gates below) [ตรวจแล้ว, `_incoming/roundB/
-  brief-doc-keeper-close.md`]: this round's own gates — `owner-rules-check` **PASS** · `rules-move-check`
-  **PASS** · `central-rules-copy-check` **PASS local** · `eol-check` **OK** · `eslint` on the 4 scripts
-  round B touched **0**. Full verify-set numbers still stand from round A's close, not re-run this round:
+6 verify baseline — **unchanged since round A "pipes" close, cloud session, HEAD `7532f49`**; round B ran
+  only its own rule gates, not the full verify set, and this batch (B1, docs only) ran neither [เชื่อว่า,
+  `_incoming/roundC/plan.md`: "no page a visitor sees changes"]. Round B's own gates: `owner-rules-check`
+  **PASS** · `rules-move-check` **PASS** · `central-rules-copy-check` **PASS local** · `eol-check` **OK** ·
+  `eslint` on the 4 scripts round B touched **0**. Full verify-set numbers still stand from round A's close:
   `tsc` **0** · `eslint` (4 scripts touched that round) **0** · `verify:commerce` **All 17 checks passed**
   · `verify:catalog --full` **All 31 step(s) passed** · `count-storefront` buyable **53** · `i18n`
   **16/16** · `raw-chars` **0** · `content-dates` current, **55 paths** · secret scan of that round's diff
-  **0 hits** [ตรวจแล้ว, `docs/cloud-results/roundA-pipes.md`, carried at v75 §16 item 6].
+  **0 hits** [ตรวจแล้ว, `docs/cloud-results/roundA-pipes.md`, carried at v76-v77 §16 item 6].
 (context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
 

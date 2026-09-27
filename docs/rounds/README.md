@@ -16,6 +16,8 @@ History of this folder: first copies made 2026-09-26 (round "cloud"); round B (2
 rounds from OneDrive `Run prompt\Sucsess\` (the one file there titled "not for Code" was not opened or copied), the
 3 files missing from the OneDrive `New prompt WEB` set, and the `inbox` copies of the rounds already run. The
 `รอบมือถือเต็มตัว…` file here is the `inbox` copy the cloud chat ran; the OneDrive copy of the same name differs from it.
+Round C (2026-09-27) added its own instruction file (OneDrive copy, byte for byte) and `roundB-cloud-check.txt` (the
+round B batch 7 cloud check, from `inbox` `rounds/` — the `inbox` copy is deleted once this copy is on `main`).
 Names were made safe the same way as before: spaces → `-` (`B New admin .txt` → `B-New-admin.txt`).
 
 Secret scan before every commit into this folder: e-mail / token / password value / phone / bank-account-number
