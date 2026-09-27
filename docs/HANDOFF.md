@@ -847,15 +847,15 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-1 main: `git fetch && git log -1 --oneline origin/main` (at this write `a581c40` = PR #78, round C B1, merged by
-  Friday under the old 13.7 self-merge rule, off-site docs) [ตรวจแล้ว]. Rollback point for round C = tag
-  `pre-roundC` → `93e467b` (pushed) [ตรวจแล้ว]. Open PRs, all checker PASS, all "big" (hooks / `.github/`) — under
-  the CURRENT 13.7 they are Javis-merge (the new merge rule, B4, is not in effect): **#79** B2 session-sync ·
-  **#80** B5 cloud Chromium CA · **#81** B6 GSC export [ตรวจแล้ว]. `inbox` = `31ca895`: `roundB-cloud-check.txt`
-  removed (now `docs/rounds/`), `rounds/roundC-cloud-check.txt` added (run after #79/#80 merge) [ตรวจแล้ว].
-2 ahead of main: branches `roundC-session-sync` (#79) · `roundC-cloud-ca` (#80) · `roundC-gsc` (#81) · this
-  docs branch `roundC-stop`. Not pushed, uncommitted, not in effect: B4 draft in worktree
-  `.claude/worktrees/roundC-merge` (branch `roundC-merge-rule`) — see item 3.
+1 main: `git fetch && git log -1 --oneline origin/main` (at this write `b924513` = PR #83 new merge rule; before it
+  `e84289b` = PR #79 session-sync — both merged by Friday with the owner's approval in chat 2026-09-27; #78 B1 and
+  #82 §16 merged by Friday as small) [ตรวจแล้ว]. **The new 13.7 is in effect**: Friday merges every PR · small =
+  merge then report · big = tell the owner, merge after the reply. Rollback point for round C = tag `pre-roundC` →
+  `93e467b` [ตรวจแล้ว]. Open PRs, checker PASS, both **big** → waiting for the owner's reply: **#80** B5 cloud
+  Chromium CA · **#81** B6 GSC export [ตรวจแล้ว]. `inbox` = `31ca895` (`rounds/roundC-cloud-check.txt`, run after
+  #80 merges) [ตรวจแล้ว].
+2 ahead of main: branches `roundC-cloud-ca` (#80) · `roundC-gsc` (#81) · this docs branch `roundC-stop2`. The owner's
+  computer checkout is on `main` BEHIND origin on purpose — the next chat there is session-sync's first real run.
 3 round: OPEN — round C "คอมตรงGit-กฎกลางที่เดียว-merge-ภาพ-GSC" (computer, opened 2026-09-27) ·
   instruction `docs/rounds/รอบC-คอมตรงGit-กฎกลางที่เดียว-merge-ภาพ-GSC.txt` · owner already said "ไป"
   (instruction line 35), planner not called · batch plan (tiers, merge class) = `_incoming/roundC/plan.md`.
@@ -869,21 +869,20 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
   B3 topic 2 (central rules from one place) — **ON HOLD, owner in chat 2026-09-27**: the central rules
   already match everywhere and load once (checked from the cartoon side); the one uncommitted script this
   chat had written was removed, nothing else was done — pick it up again only when the owner says so.
-  B4 topic 3: new merge rule in 13.7 + `site-paths.js` + `self-merge-check.js` SMALL/SITE/BIG — **STOPPED**:
-  the session's permission guard refused the 13.7 merge bullet + 13.4 #2 edits as "Self-Modification", not
-  retried by any route; proposal + the refused text = `_incoming/roundC/b4-merge-rule-draft.md`; owner told,
-  options: Javis edits 13.7 (recommended) · owner edits on GitHub · owner widens permissions [รอเจ้าของ].
+  B4 topic 3: new merge rule in 13.7 + `site-paths.js` + `self-merge-check.js` SMALL/SITE/BIG — **MERGED #83**.
+  First try refused by the session's permission guard ("Self-Modification"); the owner then allowed the edit in
+  chat (quoted in `_incoming/roundC/brief-checker-b4.md`), one retry went through; checker PASS 6/6.
   B5 topic 4: cloud Chromium trusts the cloud network CA (prepare-clone step) — branch `roundC-cloud-ca`,
   merge class big (hook script).
   B6 topic 5: GSC read-only for the cloud — GitHub Actions job holds the key (environment secret, main
   only), writes to branch `gsc-data`; owner steps in Thai — branch `roundC-gsc`, merge class big (.github).
-  B1 merged (#78) · B2/B5/B6 checker PASS, PRs open (item 1) · evidence `_incoming/roundC/b2-evidence.md`,
-  `b5-evidence.md` (both summarised in the PR bodies; cloud proof pending).
-  **Stop point now = every batch done except B4 (stopped) and B3 (on hold); nothing big merged.**
-  **First next step:** owner/Javis decide B4 (item 3 B4) and merge #79 #80 #81 → the owner opens a new chat in
-  this folder (the first real run of session-sync: its `PROBE` line answers "hook before or after rules") →
-  Javis runs `rounds/roundC-cloud-check.txt` twice in the cloud → owner does `docs/GSC_SETUP.md` → round close
-  (tag `roundC-done`, `docs/cloud-results/roundC.md`, ROUND_COST row) — not done yet.
+  B1 merged (#78) · B2 merged (#79) · B4 merged (#83) · B5/B6 checker PASS, PRs open (#80 #81) · evidence
+  `_incoming/roundC/b2-evidence.md`, `b5-evidence.md` (summarised in the PR bodies; cloud proof pending).
+  **Stop point now = every batch done (B3 on hold); #80 #81 wait for the owner's "merge" reply (big).**
+  **First next step:** owner answers #80/#81 → Friday merges → the owner opens a new chat in this folder (the
+  first real run of session-sync: it must fast-forward main, and its `PROBE` line answers "hook before or after
+  rules") → Javis runs `rounds/roundC-cloud-check.txt` twice in the cloud → owner does `docs/GSC_SETUP.md` →
+  round close (tag `roundC-done`, `docs/cloud-results/roundC.md`, ROUND_COST row) — not done yet.
   Previous round: **round B "housekeeping" (computer) — CLOSED + MERGED** — PR #74, #76, #77 all merged by
   Javis; tag `roundB-housekeeping-done` [ตรวจแล้ว] · full record `docs/cloud-results/
   roundB-housekeeping.md` + Thai summary `docs/cloud-results/roundB-stop2-owner.md`.
