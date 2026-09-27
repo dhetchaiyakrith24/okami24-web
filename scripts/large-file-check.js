@@ -5,7 +5,7 @@
 //   node scripts/large-file-check.js --staged        (run by .githooks/pre-commit)
 // Cap: 2 MB — the largest file in git on 2026-09-27 is 0.4 MB (docs/THAI_STYLE_LOG.md; product photos ≤ 0.3 MB).
 // A file that truly must go in anyway: ask the owner, then commit with the hook skipped for that one commit is NOT
-// allowed (no --no-verify) — raise the cap here in its own PR instead (Javis merges: a script a hook runs).
+// allowed (no --no-verify) — raise the cap here in its own PR instead (a big PR, TEAM_RULES 13.7: a script a hook runs).
 "use strict";
 const { execFileSync } = require("child_process");
 
