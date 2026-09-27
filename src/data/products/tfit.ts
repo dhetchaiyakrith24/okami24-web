@@ -19,7 +19,7 @@ export const tfitProducts: Product[] = [
     isFlagship: false,
     // Confirmed via YouTube oEmbed (2026-09-03): real video, owned by youtube.com/@OKM_24 — one
     // of OKami24's own three channels. A genuine 14-day hands-on review.
-    reviewVideo: { videoId: "eOlSO97e9r0", title: "หลังใช้งาน 14 วัน TFIT M POWER 20K เล็ก แรง ซิ่ง!", channelName: "OKAMI" },
+    reviewVideo: { videoId: "eOlSO97e9r0", title: "หลังใช้งาน 14 วัน TFIT M POWER 20K เล็ก แรง ซิ่ง!", channelName: "OKAMI", publishedAt: "2026-06-10" },
     attributes: {
       batteryMah: 600,
       puffCount: 20000,

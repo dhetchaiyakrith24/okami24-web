@@ -415,6 +415,10 @@ export const unbrandedProducts: Product[] = [
     shortDescription:
       "A disposable vape from the Muro \"Connector\" line, rated for up to 20,000 puffs, currently stocked in 20 flavors.",
     isFlagship: false,
+    // Round "clip" (2026-09-27): the "RELX Creator pod" clip of docs/SEO_LANDSCAPE.md §4 item 6, from @OKM_24 (the main
+    // channel of the two that cover this pod). "LEGO" in its title is the same honeycomb-shell nickname as this record's
+    // photo file ("muro-lego-20k"). Title and upload date read from YouTube's own video data (_incoming/clip-round/clips.md).
+    reviewVideo: { videoId: "Mp0QbGUX3gU", title: "MURO CONNECTOR 20000 หัวใช้แล้วทิ้ง LEGO สำหรับ RELX CREATOR!", channelName: "OKAMI", publishedAt: "2026-05-27" },
     attributes: {
       puffCount: 20000,
       screenType: "none",

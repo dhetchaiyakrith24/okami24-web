@@ -22,7 +22,7 @@ export const relxProducts: Product[] = [
     editorialTag: "Flagship",
     // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
     // youtube.com/@PODSYSTEM-OKAMI-II — one of OKami24's own three channels.
-    reviewVideo: { videoId: "0b6Q9DzWrRQ", title: "RELX SMASH GO 12K ง่าย แต่ ดี!", channelName: "POD SYSTEM OKAMI II" },
+    reviewVideo: { videoId: "0b6Q9DzWrRQ", title: "RELX SMASH GO 12K ง่าย แต่ ดี!", channelName: "POD SYSTEM OKAMI II", publishedAt: "2026-04-02" },
     attributes: {
       batteryMah: 400,
       puffCount: 12000,
@@ -102,7 +102,7 @@ export const relxProducts: Product[] = [
     isFlagship: false,
     // Confirmed via YouTube oEmbed (2026-09-03): real video, owned by
     // youtube.com/@PODSYSTEM-OKAMI-II — one of OKami24's own three channels.
-    reviewVideo: { videoId: "HKwsShRoo78", title: "RELX CREATOR 22K รุ่นใหม่อัพเกรด ใหญ่ จุใจ!", channelName: "POD SYSTEM OKAMI II" },
+    reviewVideo: { videoId: "HKwsShRoo78", title: "RELX CREATOR 22K รุ่นใหม่อัพเกรด ใหญ่ จุใจ!", channelName: "POD SYSTEM OKAMI II", publishedAt: "2026-04-02" },
     attributes: {
       batteryMah: 800,
       puffCount: 22000,

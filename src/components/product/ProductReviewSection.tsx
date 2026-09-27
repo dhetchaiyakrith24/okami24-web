@@ -3,7 +3,8 @@
 import type { Product } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ProductReviewVideo } from "@/components/product/ProductReviewVideo";
+import { hideThaiClipTitle, ProductReviewVideo } from "@/components/product/ProductReviewVideo";
+import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { getDictionary } from "@/i18n/dictionaries";
 
@@ -15,21 +16,21 @@ import { getDictionary } from "@/i18n/dictionaries";
  * (see https://schema.org/VideoObject) — this still lands in the server-rendered HTML (Next SSRs
  * client components too) even though the player itself only loads client-side on click.
  */
-export function ProductReviewSection({ product }: { product: Product }) {
+export function ProductReviewSection({ product, frozen = false }: {
+  product: Product;
+  /** Round "clip": true on the pages frozen for the SEO baseline until 05/10 (the page passes it from
+   *  TITLE_PRICE_HOLD_UNTIL_2026_10_05, server side) — they keep rendering exactly as before. */
+  frozen?: boolean;
+}) {
   const { dict, locale } = useLocale();
   if (!product.reviewVideo) return null;
-  const { videoId, title, channelName, publishedAt } = product.reviewVideo;
+  const { videoId, title, channelName } = product.reviewVideo;
 
-  const videoJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    name: title,
-    // JSON-LD stays plain: the untransformed dictionary, not the context copy with render-time Thai typography.
-    description: `${channelName} — ${getDictionary(locale).product.reviewVideoEyebrow}: ${product.displayName}`,
-    thumbnailUrl: [`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`],
-    uploadDate: publishedAt,
-    embedUrl: `https://www.youtube-nocookie.com/embed/${videoId}`,
-  };
+  // JSON-LD stays plain: the untransformed dictionary, not the context copy with render-time Thai typography.
+  const videoJsonLd = videoObjectJsonLd(product.reviewVideo, `${channelName} — ${getDictionary(locale).product.reviewVideoEyebrow}: ${product.displayName}`);
+  // Round "clip": the en/zh title rule of the articles (hideThaiClipTitle) — except on the pages frozen for the SEO
+  // baseline until 05/10, which must not change at all (round instruction item 2).
+  const hideTitle = !frozen && hideThaiClipTitle(locale, title);
 
   return (
     <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">
@@ -37,7 +38,7 @@ export function ProductReviewSection({ product }: { product: Product }) {
       <Container className="flex flex-col gap-8">
         <SectionHeading eyebrow={dict.product.reviewVideoEyebrow} title={product.displayName} />
         <div className="max-w-2xl">
-          <ProductReviewVideo video={{ videoId, title, channelName }} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} />
+          <ProductReviewVideo video={{ videoId, title, channelName }} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hideTitle={hideTitle} contextName={product.displayName} />
         </div>
       </Container>
     </section>

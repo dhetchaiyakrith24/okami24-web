@@ -28,7 +28,8 @@ const ROOT = process.cwd();
 const ISO = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$/;
 
 function gitDate(relPath: string): string {
-  return execFileSync("git", ["log", "-1", "--format=%cI", "--", relPath], { cwd: ROOT, encoding: "utf8" }).trim();
+  // Same spelling as scripts/content-dates.ts: newer git prints a UTC date as "…Z", older git as "…+00:00".
+  return execFileSync("git", ["log", "-1", "--format=%cI", "--", relPath], { cwd: ROOT, encoding: "utf8" }).trim().replace(/Z$/, "+00:00");
 }
 
 export function runContentDatesContractTests(): ContentDatesContractResult[] {

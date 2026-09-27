@@ -119,7 +119,7 @@ export const joiwayProducts: Product[] = [
     // Confirmed via YouTube oEmbed (2026-09-03): real video, owned by youtube.com/@OKMYARZ — one
     // of OKami24's own three channels. A genuine 30-day hands-on review, the strongest kind of
     // review evidence found this mission.
-    reviewVideo: { videoId: "oHR-MAacTz0", title: "ประสบการณ์ 30 วัน JOIWAY F4 NOS นานขนาดนั้นเลยหรือ?", channelName: "OKM YARZ" },
+    reviewVideo: { videoId: "oHR-MAacTz0", title: "ประสบการณ์ 30 วัน JOIWAY F4 NOS นานขนาดนั้นเลยหรือ?", channelName: "OKM YARZ", publishedAt: "2025-12-01" },
     attributes: {
       batteryMah: 650,
       puffCount: 30000,

@@ -19,7 +19,7 @@ export const salthubProducts: Product[] = [
     editorialTag: "Flagship",
     // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
     // youtube.com/@OKM_24 — one of OKami24's own three channels.
-    reviewVideo: { videoId: "yrVZ-QpHqNs", title: "M BAR 10K กลิ่นสายขนม \"MATCHA LATTE\"", channelName: "OKAMI" },
+    reviewVideo: { videoId: "yrVZ-QpHqNs", title: "M BAR 10K กลิ่นสายขนม \"MATCHA LATTE\"", channelName: "OKAMI", publishedAt: "2026-08-29" },
     attributes: {
       batteryMah: 600,
       puffCount: 10000,
@@ -149,7 +149,7 @@ export const salthubProducts: Product[] = [
     isFlagship: false,
     // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
     // youtube.com/@OKM_24 — one of OKami24's own three channels.
-    reviewVideo: { videoId: "SijUuq9qRpE", title: "M BAR 9K รวมกลิ่นสายขนม มีรสอะไรบ้าง? 2026", channelName: "OKAMI" },
+    reviewVideo: { videoId: "SijUuq9qRpE", title: "M BAR 9K รวมกลิ่นสายขนม มีรสอะไรบ้าง? 2026", channelName: "OKAMI", publishedAt: "2026-08-19" },
     attributes: {
       batteryMah: 600,
       puffCount: 9000,
@@ -340,7 +340,7 @@ export const salthubProducts: Product[] = [
     // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
     // youtube.com/@PODSYSTEM-OKAMI-II — one of OKami24's own three channels. A dedicated 30-day
     // usage review, the strongest kind of review evidence found this mission.
-    reviewVideo: { videoId: "DaJHk4e6_Y8", title: "30 วันกับ M SWITCH 15K เป็นยังไงบ้าง? (หัวรุ่นแรก)", channelName: "POD SYSTEM OKAMI II" },
+    reviewVideo: { videoId: "DaJHk4e6_Y8", title: "30 วันกับ M SWITCH 15K เป็นยังไงบ้าง? (หัวรุ่นแรก)", channelName: "POD SYSTEM OKAMI II", publishedAt: "2026-04-12" },
     attributes: {
       puffCount: 15000,
       screenType: "led-indicator",

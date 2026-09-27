@@ -262,7 +262,8 @@ export const productMasterSchema = z.object({
       videoId: z.string().min(1),
       title: z.string().min(1),
       channelName: z.string().min(1),
-      publishedAt: z.string().optional(),
+      // Round "clip": required — it is VideoObject `uploadDate`, a field Google requires.
+      publishedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     })
     .optional(),
 });

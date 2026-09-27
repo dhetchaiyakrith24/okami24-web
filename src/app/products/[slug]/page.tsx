@@ -53,6 +53,10 @@ function legacyBaseDescriptionTh(product: Product): string {
   return PRODUCT_DESCRIPTION_HEAD_TH[product.slug] ?? PRODUCT_COPY_TH[product.slug]?.shortDescription ?? product.shortDescription;
 }
 import { CategoryPageHeader } from "@/components/catalog/CategoryPageHeader";
+import { COLLECTION_VIDEOS } from "@/data/collection-videos";
+import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
+import { videoObjectJsonLd } from "@/lib/video-jsonld";
+import { getDictionary } from "@/i18n/dictionaries";
 import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, offerMerchantFields, openGraphWithImage, organizationRef, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { categoriesWithProducts, categoryIsEmpty } from "@/lib/category-visibility";
 import { relatedArticlesForLegacy, relatedArticlesForPublished } from "@/lib/article-relevance";
@@ -65,7 +69,7 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import type { Product } from "@/types/catalog";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { productTitleTh } from "@/i18n/search-titles";
-import { categoryTitleTh, PRODUCT_DESCRIPTION_HEAD_TH, PRODUCT_TITLE_HEAD_TH, productTitleWithPriceTh, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
+import { categoryTitleTh, PRODUCT_DESCRIPTION_HEAD_TH, TITLE_PRICE_HOLD_UNTIL_2026_10_05, PRODUCT_TITLE_HEAD_TH, productTitleWithPriceTh, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
  *  product-level card, the neutral variant fallback, and each variant's own photo. The variant
@@ -186,12 +190,15 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     const pilotProducts = getPilotProductsByCategory(category.id);
     const isEmptyCategory = products.length === 0 && publishedProducts.length === 0;
     const categoryPath = `/products/${category.slug}`;
+    // Round "clip": the page's shop clip (if any) + its VideoObject (src/data/collection-videos.ts).
+    const clip = isEmptyCategory ? undefined : COLLECTION_VIDEOS[categoryPath];
     return (
       <>
         {/* Batch 4: the same Thai title/lede generateMetadata returns for this page, as schema —
             CollectionPage + the Home → Category trail. No visible change. */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd({ name: category.labelTh, description: category.descriptionTh, path: categoryPath })) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(category.labelTh, categoryPath)) }} />
+        {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${category.labelTh}`)) }} />}
         <CategoryPageHeader category={category} />
         <Container className="flex flex-col gap-12 py-12 lg:py-16">
           {/* A genuinely published ProductMaster product is a real catalog product — it belongs in
@@ -209,6 +216,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
             alternativeCategories={isEmptyCategory ? categoriesWithProducts() : []}
           />
           <PilotProductSection products={pilotProducts} />
+          <CollectionReviewVideo video={clip} contextName={category.name} />
         </Container>
       </>
     );
@@ -295,7 +303,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(legacyTrail)) }} />
       <Breadcrumbs trail={legacyTrail} />
       <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />
-      <ProductReviewSection product={product} />
+      <ProductReviewSection product={product} frozen={TITLE_PRICE_HOLD_UNTIL_2026_10_05.has(product.slug)} />
       <ProductGallery product={product} />
       {product.isFlagship && <ProductAnatomy product={product} />}
       <FeatureGrid product={product} />

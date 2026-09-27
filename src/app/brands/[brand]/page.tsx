@@ -14,6 +14,10 @@ import { canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, pageBreadcrumbJsonL
 import { brandTitleTh } from "@/i18n/search-titles";
 import { BRAND_HEAD_TH, formatPriceTh } from "@/i18n/search-head-copy";
 import { getCatalogItem } from "@/lib/catalog-index";
+import { COLLECTION_VIDEOS } from "@/data/collection-videos";
+import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
+import { videoObjectJsonLd } from "@/lib/video-jsonld";
+import { getDictionary } from "@/i18n/dictionaries";
 
 export function generateStaticParams() {
   return brands.map((b) => ({ brand: b.slug }));
@@ -75,6 +79,8 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
   const headOverride = isEmpty ? undefined : BRAND_HEAD_TH[brandSlug]?.(brandHeadPriceOf);
   const brandPageName = headOverride?.title ?? (isEmpty ? brand.name : brandTitleTh(brand.name));
   const brandPageDescription = headOverride?.description ?? brand.descriptionTh ?? brand.description;
+  // Round "clip": the page's shop clip (if any) + its VideoObject, described from the Thai dictionary like the product page's.
+  const clip = isEmpty ? undefined : COLLECTION_VIDEOS[brandPath];
 
   return (
     <>
@@ -83,10 +89,12 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
           SALTHUB"), not the whole <title> with its "— OKami24 (OKM)" suffix — 4 brand pages carried
           the full title here (_incoming/seo-c/keymap.md §3). CollectionPage above keeps the title. */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(brand.name, brandPath)) }} />
+      {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${brand.name}`)) }} />}
       <BrandPageHeader brand={brand} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
         <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} />
         <PilotProductSection products={pilotProducts} />
+        <CollectionReviewVideo video={clip} contextName={brand.name} />
       </Container>
     </>
   );
