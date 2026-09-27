@@ -32,3 +32,9 @@
 ## Line 1 at v73, final short form before v74 (2026-09-27, round A "pipes" cloud close), verbatim
 
 # OKami24 — HANDOFF · v73 · 2026-09-27 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+
+## Line 1 at v75, final short form before v76 (2026-09-27, round B "housekeeping" close), verbatim — note
+by doc-keeper: v74's own header is not in this file; whoever bumped v74 to v75 did not append it here, a
+gap doc-keeper cannot fill without inventing text (reported to the main agent, not fixed here)
+
+# OKami24 — HANDOFF · v75 · 2026-09-27 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)

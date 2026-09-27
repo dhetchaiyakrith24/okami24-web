@@ -28,7 +28,7 @@ MB / newest / how many tracked files cite it), `_incoming/roundB/cited-paths.txt
 |---|---|---|---|---|
 | `_incoming/` — 11 small text files that live docs cite as **data for work still ahead** (SEO read on 05/10 · carried backlog) | 11 files, < 60 KB | seo-auditor on 05/10 · the next site rounds | ① | copied word for word to `docs/cloud-results/incoming/<round>/<file>` (list below) |
 | `_incoming/<round>/` evidence of closed rounds (logs · JSON · screenshots) | ~45 folders, most of 2.1 GB | nobody for work; docs cite them as proof | ② | history only — every number a report used is already written in HANDOFF / ROUND_COST / cloud-results; too big for git (PNG/JSON by the thousand) |
-| source photos of shipped products (`argus-g4` `joiway` `relx-smash-go-12k` `salthub` `ueeshop` `uwell`) | ~120 MB | image rounds | ② | originals are large binaries; provenance is in git already (`scripts/process-images.map.json`, product data comments) — image work = computer |
+| source photos of shipped products (`argus-g4` `joiway` `relx-smash-go-12k` `salthub` `salthub-2026-09-06` `ueeshop` `uwell`) — `salthub-2026-09-06/` (2 product `.webp`, 0 citations) is kept here too: pile ③ takes loose logs and scratch files, never source images | ~120 MB | image rounds | ② | originals are large binaries; provenance is in git already (`scripts/process-images.map.json`, product data comments) — image work = computer |
 | `_incoming/restore-test/` (copies of the live database) | 0.6 MB | restore test | ② **never git** | customer/order data |
 | `_incoming/qr-upload/` (PromptPay QR) | tiny | owner's upload step, `docs/DEPLOY-RENDER.md` | ② **never git** | payment identity |
 | `.data/` (local SQLite + `private/`) | 1.3 MB | dev server | ② **never git** | order data; already git-ignored |
@@ -110,6 +110,28 @@ render.com/docs/infrastructure-as-code]. Whether the service's `autoDeploy: fals
 [ยังไม่มีข้อมูล]. So a merge that edits `render.yaml` may go live through Render itself, without the GitHub checks.
 `autoDeployTrigger: checksPass` exists and replaces `autoDeploy` [ยืนยันจากเอกสาร render.com/docs/blueprint-spec].
 → stop point 2 (Javis/owner look at Render → Blueprints → Auto Sync).
+
+## Stop point 2 — owner answered "ไป" (2026-09-27): every recommendation in `roundB-stop2-owner.md` taken
+
+| Item | Done |
+|---|---|
+| 1 (A1) tier-B owner approval | one question set per batch, work does not wait (13.4 #6) + final keep/undo at merge (#2): HANDOFF §17 two-tier line · TEMPLATES note · thai-check |
+| 2 (A2) round end | 13.6 (ก) = update §16 only; full handoff only for (ข)–(จ): TEAM_RULES 13.6 · okami24-handoff description + step 3 · HANDOFF note above §1 "§1–§15 = history up to v34" |
+| 3 (A3) who writes §16 | batch-close push = doc-keeper, any other push = the main agent: 13.6 · okami24-handoff · TEMPLATES |
+| 4 (D6) retire the mirror | `scripts/owner-rules-check.js`: live pointers checked against the live copy's item count (was the frozen 31), mirror optional, `worktrees/` skipped — red/green log `_incoming/roundB/break-owner-rules.log` (item 33 caught, 32 accepted; PASS with and without the mirror) · TEAM_RULES head + rule-auditor.md say "retired" · the file itself and its `JAVIS_ONLY` line are removed by commit `34508c1` on branch `roundB-javis-2` → its own Javis PR, **merged after #74** (PR #75 had already been merged by Javis without it → main `ce99c99`) · `rules-move-check.js` reads the mirror only from its frozen tag (no change needed) |
+| 5 (G3) what skills may name | TEAM_RULES 13.3 "สกิลเขียนอะไรได้" (one place) · AI_TEAM_GUIDE §7 + round-open head point there · the `src/` file names in round-close and catalog-research moved to one list, HANDOFF §17 "src files the skills use" (tags [i18n-test] [catalog-method] [legacy-products] [taxonomy] [spec-gate]) — 0 `src/…` file paths left in any SKILL.md |
+| 6 (G4) checkpoint | 13.10 #10: tag or branch at a checked point, never a commit of unchecked work |
+| 7 (G5) "≤20 คำ" | removed from TEMPLATES (b) length rule |
+| 8–12 | Javis / owner (Render Auto Sync · separate cloud environments · the mobile round file diff · the cartoon branch · central-rules proposals) — nothing for Friday |
+
+Batch 1 as executed:
+- **GitHub + computer branch deletion: blocked** — the session's permission guard refused `git push --delete` / `git branch -D`
+  ("Git Destructive"). Not retried by any other route. The 6 GitHub branches and 3 computer branches stay for the owner
+  or Javis (list and "safe to delete" proof in the batch 1 table above).
+- `_incoming/` pile ③ (21 loose files + empty `payment/`) **moved, not deleted**, to `_incoming/zz-to-delete-roundB/`
+  (untracked files cannot be recovered once deleted; the owner deletes the folder when happy).
+- `inbox`: commit `220567d` removes the 4 round files — 3 are byte-equal (after line endings) to their `docs/rounds/` copies; the 4th, `roundB-housekeeping.txt`, is the **cancelled v1** of this round, which the round file itself (line 3) says may be deleted and whose one useful part (the cloud Friday's Q recommendations) v2 already carries in its Q block; it also stays in `inbox`'s git history (local worktree `.claude/worktrees/roundB-inbox`); pushed
+  only after PR #74 merges, so the files are never missing from both places.
 
 ## Batch 4 — agents and skills load on the computer [ลองแล้ว 2026-09-27]
 
