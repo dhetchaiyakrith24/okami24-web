@@ -9,7 +9,7 @@
 > (`_incoming/speed-consult/RESULTS.md` ④). Rows written before that date are left as they are.
 
 > **Which rounds get a row, from 2026-09-27 (owner, after round "ฝังคลิป"; the one place = `.claude/TEAM_RULES.md` 13.12 #7):**
-> rounds that ran over several days or chats only — any other round adds no row and times no step. Rows already written stay.
+> big rounds (13.2 item 2) and long projects (several days or chats) only — any other round adds no row and times no step. Rows already written stay.
 
 ## Table
 

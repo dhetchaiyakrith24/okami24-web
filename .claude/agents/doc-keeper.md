@@ -1,6 +1,6 @@
 ---
 name: doc-keeper
-description: เรียกเมื่อ ปิดก้อน — เท่านั้น (เริ่มพร้อม checker ได้) · ผู้ดูแลเอกสารของ okami24 อัปเดต docs/HANDOFF.md §16 · docs/THAI_STYLE_LOG.md §7 · แถว docs/ROUND_COST.md ตอนปิดรอบที่ยาวหลายวัน/หลายแชท (13.12 item 7) ตามที่ก้อนนั้นทำจริง (จาก hash · รายงาน checker 5 ช่องถ้ามาแล้ว · file:line ที่ตัวหลักส่งให้ — แล้วอ่านไฟล์จริงเอง) เขียนได้เฉพาะไฟล์ใน docs/ ห้ามแตะโค้ด ห้าม git
+description: เรียกเมื่อ ปิดก้อน — เท่านั้น (เริ่มพร้อม checker ได้) · ผู้ดูแลเอกสารของ okami24 อัปเดต docs/HANDOFF.md §16 · docs/THAI_STYLE_LOG.md §7 · แถว docs/ROUND_COST.md ตอนปิดรอบใหญ่/โปรเจกต์ยาว (13.12 item 7) ตามที่ก้อนนั้นทำจริง (จาก hash · รายงาน checker 5 ช่องถ้ามาแล้ว · file:line ที่ตัวหลักส่งให้ — แล้วอ่านไฟล์จริงเอง) เขียนได้เฉพาะไฟล์ใน docs/ ห้ามแตะโค้ด ห้าม git
 tools: Read, Grep, Glob, Edit, Write
 model: sonnet
 ---
@@ -66,7 +66,7 @@ facts, in the format the files already use.
    reasons, the style book is for rules.
 3. **`docs/LAUNCH_AUDIT.md`** only if the main agent names the item number; touch that row and
    the "สถานะปัจจุบัน" head only. Never read the whole file.
-4. **`docs/ROUND_COST.md`** — at the close of a round that ran over several days or chats only (`.claude/TEAM_RULES.md` 13.12 #7 —
+4. **`docs/ROUND_COST.md`** — at the close of a big round or a long project only (`.claude/TEAM_RULES.md` 13.12 #7 —
    the main agent says so in the brief): add the round's one row (shape and columns = that file's header). Never edit
    an older row.
 

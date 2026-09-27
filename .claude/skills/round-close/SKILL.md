@@ -1,6 +1,6 @@
 ---
 name: round-close
-description: Close a work round for the OKami24 site after the last batch passed the checker. Use it for every round close, whatever the round's name. It sequences the word-break scan and diff on the touched pages, the designer pass when 13.12 item 4 calls for it, the verify set 13.12 names (light or full), the one-commit fix of what the close found, the annotated tag + tag push (a cloud round: the close commit instead), the handoff-block update (and the round-cost row on long rounds, 13.12 item 7), and the 4-part report with its length rule. It names the checks but never their expected numbers — the pass criterion is always what each script itself defines.
+description: Close a work round for the OKami24 site after the last batch passed the checker. Use it for every round close, whatever the round's name. It sequences the word-break scan and diff on the touched pages, the designer pass when 13.12 item 4 calls for it, the verify set 13.12 names (light or full), the one-commit fix of what the close found, the annotated tag + tag push (a cloud round: the close commit instead), the handoff-block update (and the round-cost row on big or long rounds, 13.12 item 7), and the 4-part report with its length rule. It names the checks but never their expected numbers — the pass criterion is always what each script itself defines.
 ---
 
 # Round close
@@ -136,7 +136,7 @@ send-back cap and re-check rule: 13.5.
 - `docs/HANDOFF.md` §16: the "open round" item becomes "none — <round> closed" with the tag name (a cloud round: the close commit);
   main / branch-ahead / waiting-on-owner / open-questions refreshed (spec: `.claude/agents/doc-keeper.md`;
   the handoff conditions: 13.6).
-- `docs/ROUND_COST.md`: **rounds that ran over several days or chats only** (`.claude/TEAM_RULES.md` 13.12 #7) — add one row for the
+- `docs/ROUND_COST.md`: **big rounds and long projects only** (`.claude/TEAM_RULES.md` 13.12 #7) — add one row for the
   round (doc-keeper); its shape and how each column is counted = the file's own header, the one place.
 - Round-specific entries in `docs/THAI_STYLE_LOG.md` §7 if the round touched site copy (doc-keeper).
 - The round instruction file (owner rulings Q1 + Q2, round B 2026-09-27 — git is the master of round files): the file
