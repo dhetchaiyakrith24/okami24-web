@@ -1,0 +1,105 @@
+รอบ SEO ก — คำแบรนด์ + คำรุ่น + เทคนิค · ฉบับ 1 · เขียน 2026-09-21
+main ควรอยู่ที่ `d9d318a` (PR #40 · tag `prices-complete`) · git fetch ก่อนเริ่ม · ถ้าไม่ตรง หยุด รายงานก่อน ห้ามเริ่ม
+
+⚠️ ไฟล์ `03-รอบ SEO.txt` (10/09) ยกเลิกทั้งฉบับ — ใช้ไฟล์นี้แทน · เปิดรอบ `/round-open` ปิดรอบ `/round-close` · แตะข้อความ = `thai-check`
+⚠️ ชั้น A ทั้งรอบ — แตะ metadata · JSON-LD · description เท่านั้น **ห้ามแตะ component ที่ลูกค้ามองเห็น ห้ามเพิ่มบล็อกใหม่บนหน้า** (ลิงก์ภายใน/rail ใหม่ = รอบ ข ชั้น B)
+⚠️ merge + deploy = Cowork
+
+【รอบนี้ทำเพื่ออะไร】
+ เจ้าของสั่ง 21/09: ดัน SEO เต็มที่ · เว็บเก่า .net ปล่อยผ่าน · เป้า = ค้นเจอ → เห็นสินค้า → เห็นราคา → แอดไลน์
+ ข้อมูลจริงจาก Search Console 21/09 (Cowork อ่านเอง · สรุปอยู่ท้ายไฟล์): คำแบรนด์ทุกคำติดหน้า 1 แล้ว **ยกเว้น "okm" ที่เว็บไม่ขึ้นเลย** · คำรุ่นติดหน้า 1 ที่อันดับ 6–9 ·
+ หน้าแบรนด์ relx/salthub แสดงรวม 116 ครั้ง ได้ 4 คลิก · ริชรีซัลต์ "ขาด offers" 7 รายการแก้แล้วด้วยรอบราคา รอ validate
+ เกณฑ์ผ่านทั้งรอบ: (1) หน้าแรกมี Organization JSON-LD ที่ alternateName มี "OKM" (2) title/description ชุดใหม่ขึ้นเว็บครบตามที่เจ้าของเคาะ (3) หน้าสินค้า 53 หน้า description มีราคา (4) verify ครบชุดผ่าน · scan.js 0 · Rich Results Test ผ่านหน้าแรก + หน้าสินค้า 1 หน้า
+
+【🔴 เงื่อนไขหยุด — เขียนไว้ที่นี่เพราะ 2 รอบก่อน Code ข้ามคำสั่งหยุดในแชท】
+ · **ก้อน 2 จบที่ "ส่งตาราง ก่อน→หลัง" เท่านั้น ห้าม commit ข้อความใด ๆ ที่ลูกค้าเห็น (title · description · og) ก่อนมีคำว่า "เคาะ" ในแชทจากเจ้าของหรือ Cowork** — ไม่มีคำนั้น = ยังไม่ได้เคาะ ไม่ว่าจะมั่นใจแค่ไหน
+ · ทางเลือกที่ Cowork/เจ้าของสั่งเรียงลำดับไว้ ให้ทำตามลำดับ ถ้าทำไม่ได้ทุกทาง = หยุด รายงาน **ห้ามคิดทางที่ 4 เอง**
+ · เจอ "ของที่ต้องยืนยันแต่ยืนยันไม่ได้" (ตัวเลข ค่าส่ง เงื่อนไข) = ตัดออก ไม่ใช่เดา (13.4 · THAI_STYLE)
+
+【ห้ามแตะ】
+ · หน้าบริการ /warranty /shipping /how-to-order /privacy — **ทั้งข้อความและ title/description** (คำตัดสินถาวร: ไม่แตะจนเปิดตะกร้า)
+ · H1 ทุกหน้า (หน้าแรก "พอตไฟฟ้าของแท้ข้อมูลจริง" เคาะแล้ว 30.3ข) · กลุ่ม ก · AgeGate · โฟลเดอร์รูป · `src/components/` `src/app/**/page.tsx` ส่วน JSX (แตะได้เฉพาะ `metadata`/`generateMetadata` และ script JSON-LD)
+ · ชื่อขนส่ง (EMS/ไปรษณีย์/Flash) ห้ามโผล่ทุกที่รวม JSON-LD (BSOT §10) · ที่อยู่ส่งคืนห้ามโผล่ (BSOT §12)
+ · ห้ามเขียน "บุหรี่ไฟฟ้า" ถ้า THAI_STYLE ไม่มีคำนี้ในตารางคำล็อก — ใช้ "พอต" ตามที่เว็บใช้อยู่ · คำใหม่ = เจ้าของเคาะ
+ · ห้ามคำอ้าง ถูกสุด/ดีที่สุด/ส่งฟรี(ถ้าไม่ตรงเงื่อนไข)/รับประกัน — ตาม thai-check ข้อ 5
+
+【ก้อน 0】ค้างจากรอบราคา — ชั้น A · 1 commit เล็ก ทำก่อนอย่างอื่น
+ ทำ: `legacy-price-approvals.ts` แก้ evidence 2 แถว ห้ามแตะราคา:
+     caliburn-g4-pro → `shipnityProductId: "Pod-181"` + ต่อท้าย evidence `re-verified 2026-09-21: price unchanged ฿1,190; parent re-coded Pod-168 → Pod-181`
+     muro-3ml → ต่อท้าย evidence `re-verified 2026-09-21 against vapenow.shop (฿99); Shipnity parent Pod-120 not in the 21/09 listing`
+ รู้ได้ยังไงว่าเสร็จ: contract test ราคาผ่าน · `git diff --stat` = 1 ไฟล์
+
+【ก้อน 1】Organization + WebSite JSON-LD หน้าแรก — ชั้น A (ไม่มีข้อความที่ลูกค้าเห็น commit ได้เลยหลัง checker)
+ ทำ: เพิ่มใน `src/lib/seo.ts` ฟังก์ชัน `organizationJsonLd()` + `websiteJsonLd()` แล้วฉีดที่หน้าแรก (แบบเดียวกับ breadcrumbJsonLd)
+     Organization: `@id` = SITE_URL#organization · name "OKami24" · **alternateName ["OKM", "okm pod", "Okami vape", "okami24"]** · url · logo (ไฟล์ที่มีอยู่ใน public/ — อ่านชื่อจริง) · sameAs = LINE official URL + YouTube (เอาจาก `src/data/contact.ts` เท่านั้น ไม่มี = ไม่ใส่) · areaServed "TH"
+     WebSite: name "OKami24" · alternateName "OKM" · url · inLanguage "th" · publisher → @id องค์กร · **ไม่ใส่ SearchAction** ถ้า /search ไม่รับ query param แบบที่ schema ต้องการ (เช็คก่อน)
+     Product JSON-LD ทุกหน้า: `brand` คงเดิม · เพิ่ม `offers.seller` → @id องค์กร (ให้ Google ผูกสินค้ากับร้าน)
+ agent: ไม่ต้อง · checker ก่อน commit
+ รู้ได้ยังไงว่าเสร็จ: curl / มี 2 script ld+json ใหม่ · JSON parse ได้ · `alternateName` มี "OKM" · Rich Results Test ไม่มี error (Cowork ยิงให้ตอนปิดรอบ)
+
+【ก้อน 2】title + description ชุดใหม่ 9 หน้า — ชั้น A · **จบที่ตาราง ห้าม commit** (เงื่อนไขหยุดข้างบน)
+ ทำ: writer ร่าง title ≤60 ตัว · description 120–160 ตัว · thai-copy ขัดเกลา · ส่งตาราง หน้า | ของเดิม | ใหม่ | เหตุผล (คำค้นที่ตอบ) แล้ว **หยุดรอ "เคาะ"**
+     ร่างตั้งต้นจาก Cowork (ให้ writer เอาไปปรับ ไม่ต้องใช้ตามนี้เป๊ะ):
+     / — title `OKami24 (OKM) — พอตของแท้ ราคาตรง บริการจริง` · desc ใส่ OKM + "โชว์ราคาทุกตัว" + สั่งทาง LINE @okm24
+     /about — `OKami24 (OKM) คือใคร — ร้านพอตของแท้ ราคาตรง บริการจริง` (หน้านี้คลิกอันดับ 3 ของเว็บ = คนอยากรู้ว่าร้านคือใคร)
+     /contact — `ติดต่อ OKami24 (OKM) — LINE @okm24 ตอบเองทุกวัน`
+     /products — ใส่ "ราคาทุกตัว" + จำนวนรุ่น (นับจริงจาก catalog ตอน build ห้ามพิมพ์เลขตาย)
+     /brands/relx — บอกรุ่นที่มีจริง (Smash Go 12K · Creator · Essential 2 · Infinity 2 Plus — เช็คจาก catalog ว่ารุ่นไหนโชว์อยู่) + "ราคาตรง" · desc ตอบคำค้น "ขาย pod relx"
+     /brands/salthub — ต้องมี **M Bar** และ **Marbo** (คนค้น "mbar 15k" / "m bar" ที่อันดับ 3–5 แต่ 0 คลิก) + M Switch + Zero
+     /brands/voopoo — DRAG 6 · DRAG S3 · ARGUS G4 (คำที่ทำคลิกมากสุดของเว็บ) · /brands/uwell — Caliburn G5 · G4 · G3
+     /products/m-bar-15k — desc ใหม่ ≥120 ตัว มี "Marbo 15K" + ราคา + 15 รส (ของเดิม 96 ตัว ไม่มีราคา)
+ agent: writer → thai-copy → ส่งตาราง (checker ยังไม่ต้อง — ยังไม่มีอะไร commit)
+ รู้ได้ยังไงว่าเสร็จ: ตารางส่งแล้ว + ได้คำว่า "เคาะ" → ค่อยเข้าก้อน 3
+
+【ก้อน 3】ลงข้อความที่เคาะแล้ว + ราคาใน description สินค้าทุกหน้า — ชั้น A
+ ทำ: ลง 9 หน้าตามตารางที่เคาะ (แก้ตรงที่ตาราง ห้ามแก้เพิ่ม) ·
+     หน้าสินค้า: `generateMetadata` ต่อท้าย description ด้วย ` ราคา ฿{sellingPrice} ของแท้ สั่งทาง LINE @okm24` **อ่านราคาจาก catalog-index (แหล่งเดียวกับที่หน้าโชว์) ไม่ก๊อปเลข** · ถ้าเกิน 160 ตัวให้ตัดท้ายประโยคเดิมที่ขอบเขตประโยค ไม่ตัดกลางคำ · สินค้าไม่มีราคา (ไม่ควรมีแล้ว) = ไม่ต่อท้าย
+     คำว่า "ราคา ฿…" นี้ต้องอยู่ในตารางก้อน 2 ให้เจ้าของเคาะด้วย 1 แถว (เป็นข้อความที่ลูกค้าเห็นใน Google)
+ agent: thai-check ทุกก้อน · checker ก่อน commit
+ รู้ได้ยังไงว่าเสร็จ: curl 3 หน้าสินค้าสุ่ม description มี "฿" ตรงกับราคาบนหน้า · scan.js 0 · i18n ผ่าน (en/zh description ไม่ต้องแตะรอบนี้ — ถ้า generateMetadata แชร์กัน ให้ต่อท้ายเฉพาะ locale th)
+
+【ก้อน 4】JSON-LD ที่ยังขาด + offers ให้ครบช่องผู้ขาย — ชั้น A
+ ทำ: BreadcrumbList ทุกหน้าที่ยังไม่มี (ใช้ breadcrumbJsonLd เดิม) · CollectionPage หน้าหมวด+แบรนด์ · FAQPage /faq (จาก faqs.ts) · Article หน้าคู่มือ (guides.ts) · ทั้งหมดอ่านจากข้อมูลที่มีอยู่ ไม่พิมพ์ข้อความใหม่
+     offers ทุกสินค้าเพิ่ม (ข้อเท็จจริงจาก BSOT §10/§12 เท่านั้น):
+       shippingDetails: OfferShippingDetails · shippingRate 60 THB · **freeShippingThreshold 500 THB ใส่ได้เฉพาะถ้า schema รองรับแบบไม่ต้องเขียนข้อความ** · deliveryTime transitTime 1–3 วัน · shippingDestination TH · **ห้ามใส่ชื่อขนส่ง**
+       hasMerchantReturnPolicy: merchantReturnDays 7 · returnPolicyCategory MerchantReturnFiniteReturnWindow · returnMethod ReturnByMail · returnFees ReturnShippingFees · refundType ExchangeRefund (ไม่มีคืนเงิน) · applicableCountry TH
+     ช่องไหน BSOT ไม่มีข้อเท็จจริง = ไม่ใส่ ไม่เดา
+ agent: checker
+ รู้ได้ยังไงว่าเสร็จ: ทุก URL ใน sitemap มี ld+json ≥1 (สคริปต์นับ) · Rich Results Test หน้าสินค้า 1 หน้า: Product ผ่าน ไม่มี error · warning ผู้ขายหายจาก 2 → 0 (Cowork ดูใน GSC หลัง deploy)
+
+【ก้อน 5】ของค้างจาก baseline 16/09 — ชั้น A · เข้าก้อน 2 ด้วย (ข้อความที่ลูกค้าเห็น)
+ ทำ: meta description สั้น <50: coil-1 · coil-38 · coil-54 · coil-55 · coil-56 · coil-68 · coil-70 · coil-72 · coil-74 · coil-83 · coil-87 · coil-89 · coil-94 · iqosheet-16 · iqosheet-18 · pod-180 · /guides/understanding-mtl-vs-dtl · /guides/battery-care-and-charging · /technology/gesture-and-triple-tap-control
+     title สั้น: /e-liquid/fruit · /e-liquid/dessert (ข้าม /shipping /contact — contact อยู่ก้อน 2 แล้ว, shipping ห้ามแตะ)
+     title หน้า 404 ให้บอกว่าไม่พบหน้า
+     → ร่างรวมในตารางก้อน 2 (ตารางเดียว เคาะครั้งเดียว)
+ รู้ได้ยังไงว่าเสร็จ: ยิง sitemap ซ้ำแบบ baseline: description <50 = 0 หน้า (ยกเว้นหน้าบริการ) · title <20 = 0
+
+【ก้อน 6】เอกสาร — doc-keeper
+ ทำ: HANDOFF §16 · ROUND_COST แถวใหม่ · RECOVERY แถว tag · LAUNCH_AUDIT ข้อที่เกี่ยวกับ SEO/JSON-LD อัปเดตสถานะ · เพิ่มใน docs/ ไฟล์ `SEO_BASELINE.md` สั้น ๆ: ตัวเลข GSC 21/09 จากท้ายไฟล์นี้ (ไว้เทียบอีก 14 วัน)
+
+【ตรวจ】
+ · scope-auditor ตอนเปิดรอบ 1 ครั้ง — รอบนี้แตะ head ของทุกหน้าใน sitemap = ทุกหน้าคือขอบเขต
+ · thai-check ทุกก้อนที่มีข้อความ · scan.js 0 จากทุกหน้า · raw-chars 0 · head/JSON-LD 0 อักขระล่องหน (thai-check ข้อ 3)
+ · verify ครบชุดตาม round-close ขั้น 3 · count-storefront เท่าเดิม 53/53 (รอบนี้ไม่แตะ catalog)
+ · **JSON ทุกก้อน parse ได้** — สคริปต์เล็กไล่ทุกหน้า: ld+json ทุกก้อน JSON.parse ผ่าน · Product มี offers.price ครบ 53 · Organization alternateName มี OKM
+ · checker เช็คเพิ่ม: ไม่มีชื่อขนส่ง · ไม่มีที่อยู่ส่งคืน · ไม่มีคำอ้างต้องห้าม ในทุก description/JSON-LD ใหม่
+
+【ส่งมอบ】
+ · commit แยก: data (ก้อน 0) · seo-schema (ก้อน 1+4) · seo-copy (ก้อน 3+5 หลังเคาะ) · docs (ก้อน 6) · push หลัง checker ผ่าน · doc-keeper อัปเดต §16 ทุก push
+ · ปิดรอบ = tag `seo-a-done` + push tag · รายงาน 4 บรรทัดตาม (ข)
+ · **รอบนี้ deploy** — Cowork merge → deploy → ตรวจเว็บจริง → กด validate fix ใน GSC → ขอ index หน้าที่ยังไม่ถูกเก็บ
+
+【ถ้าติด】
+ · ไม่รู้ว่า THAI_STYLE อนุญาตคำไหน → ใช้คำที่มีบนเว็บอยู่แล้วเท่านั้น คำใหม่ใส่ในตารางก้อน 2 ให้เจ้าของเคาะ
+ · schema field ไหนไม่แน่ใจว่า Google รองรับ → ไม่ใส่ แล้วจดในรายงานข้อ 3
+ · โควตาใกล้หมด: ก้อน 0+1 ต้อง commit+push ก่อน · ก้อน 2 ส่งตารางให้ได้ · ก้อน 3–5 ยกไปแชทหน้าได้ (แชทหน้าเริ่มจากตารางที่เคาะแล้ว)
+
+━━━ ข้อมูล Search Console 21/09 (ช่วง 6–18 ก.ย. · Cowork อ่านจาก GSC จริง) ━━━
+ รวม: คลิก 139 · แสดง 563 · CTR 24.7% · อันดับเฉลี่ย 8.8 · คำค้นมีข้อมูล 80 · Google เก็บแล้ว 56/105 หน้า (ยังไม่เก็บ 45 · noindex 3 · redirect 3 · crawl แล้วไม่เก็บ 2)
+ คำแบรนด์: okami24 อันดับ 2.6 (12/16) · okm pod 2.9 (6/7) · okami vape 7.0 (1/1) · okami บุหรี่ไฟฟ้า 7.8 (0/5) · okami พอต 8.0 (0/2) · **okm = ไม่มีข้อมูลเลย**
+ คำรุ่น: caliburn g5 ราคา 3.0 (2/3) · caliburn g5 6.1 (2/9) · drag s3 6.5 (2/4) · drag 6 7.1 (3/15) · drag6 6.3 (0/9) · voopoo drag 6 7.5 (11/47) · voopoo argus g4 8.8 (2/8) · m bar 3.5 (0/4) · mbar 15k 5.2 (0/4) · m bar 15k 3.5 (0/2) · caliburn g5 lite 8.3 (0/6) · salthub 13.8 (1/21) · uwell 7.2 (1/4)
+ คำทั่วไป (ยังไม่ติด): pod system แนะนำ 82 · pod system ตัวไหนดี 57 · pod system คือ 60 · pod system pantip 58 · บุหรี่ไฟฟ้า drag 111
+ หน้า: /products/drag-6 34/109 อันดับ 7.4 · / 32/47 อันดับ 2.5 · /about 19/62 · /products/drag-s3 9/24 · caliburn-g5-lite-se 5/27 · /contact 4/34 · /brands/voopoo 4/12 · **/brands/relx 2/70 CTR 2.9%** · **/brands/salthub 2/46 CTR 4.3%** · /products 0/35 · /how-to-order 1/29 · m-bar-15k 2/25 CTR 8%
+ ริชรีซัลต์: ตัวอย่างข้อมูลสินค้า ผิด 7 ("ต้องระบุ offers") — แก้แล้วรอบราคา รอ validate · ข้อมูลผู้ขาย ถูกต้อง 1 · warning ขาด shippingDetails 1 · hasMerchantReturnPolicy 1
+ ยังไม่ถูกเก็บ (เห็น 10 จาก 45): /brands/iqos · /finder · argus-g4-mini · argus-p3 · caliburn-g3-pro · caliburn-g4 · caliburn-g4-classic · caliburn-g4-mini · caliburn-g4-pro · caliburn-g4-pro-koko
+ title/desc ปัจจุบัน: / "OKami24 — ของแท้ ราคาตรง บริการจริง" (35) · /about "เกี่ยวกับเรา — OKami24" (22) · /contact 19 · /brands/relx "RELX ของแท้ทุกรุ่นที่ร้านมี — OKami24" · /brands/salthub "SALTHUB ของแท้ทุกรุ่นที่ร้านมี — OKami24" · m-bar-15k desc 96 ตัว ไม่มีราคา · หน้าแรก JSON-LD = ไม่มี
