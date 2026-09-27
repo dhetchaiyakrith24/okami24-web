@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v81 · 2026-09-28 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v82 · 2026-09-28 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -847,44 +847,53 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-(v82 opening line — main agent, round open 28/09; items 1–6 below are still v81 — main has since moved to `093b07a` (PRs #92–#94 merged))
-OPEN ROUND: "รอบรูป" (image audit, computer) · instruction `docs/rounds/รอบรูป-ตรวจทั้งร้าน.txt` · branch `image-audit` ·
-  batches: B1 measure every image + standard from the G5 set (tier A, no site change) · B2 manufacturer lists + gap
-  sources (researchers) · B3 parts-section 3-way comparison · B4 report page + fix plan (owner picks) — this round does
-  not change the site. Tool: `scripts/image-quality-audit.ts`; round files `_incoming/image-round/` (computer only).
-
-(v81 — written by the main agent at the rules-table batch close, 13.6)
-1 main: `origin/main` = `666aa4f` (PR #91 merged: VideoObject `uploadDate` with +07:00, live 20:12 UTC; argus-g4 keeps
-  date-only until 05/10) [ตรวจแล้ว]. Earlier this round: #87 `989071b` · #88 · #89 `50e007f` · #90 `360dd12`. Cloud
-  round → no tags; rollback = revert the merge commit.
-2 ahead of main: branch `claude/embed-shop-clips-video-data-zp715x` — owner's 12-item rules table (ruled 28/09):
-  `35720a9` rules text (TEAM_RULES 13.3/13.6/13.7/13.10 #1/13.12 · checker · designer · doc-keeper · thai-copy ·
-  rule-/scope-auditor · skills round-open/round-close/okami24-handoff/thai-check/merge-pack · TEMPLATES ·
-  AI_TEAM_GUIDE · RECOVERY · HANDOFF §17) · `582c0f2` pre-push token hook stays dormant · `14c62b9` self-merge-check
-  SITE line text · this §16 commit. PR BIG (edits 13.7 + a gate script) — owner answered before merge in the ruling.
-3 round: round "ฝังคลิป" (cloud) — clips + VideoObject work merged (#87–#91); the rules table rides the same branch.
-  Record: `docs/cloud-results/clip-round.md`. Central rules: Javis opens the `smogz-rules` PR for 4 points (item 20
-  "123 = direction" · item 23 proof by risk · §6 reference image non-blocking · Javis role) — the web copy
-  `.claude/rules/central-rules.md` arrives as a sync PR afterwards (BIG list item (1)).
-  Previous round: round C (computer) — CLOSED + MERGED (PR #86), record `docs/cloud-results/roundC.md`; older rounds §3.
+(v82 — written by doc-keeper at the image-round close, 13.6 · checker PASS 6/6 on `94f1321` (no site change, script
+  lint/tsc, headline counts re-run independently, 4 fact spot-checks, report page, no hidden/asset change) — main agent)
+1 main: `git fetch && git log -1 --oneline origin/main` → `093b07a` [ตรวจแล้ว — main agent, git fetch 28/09]
+  (PR #94 merged the rules-table branch `claude/embed-shop-clips-video-data-zp715x`; PR #93 = central-rules sync
+  `smogz-rules@81ac71b`). The v81 item 2 branch is merged — no longer ahead. No tag on that close (cloud round);
+  rollback = revert the merge commit.
+2 ahead of main: `git log --oneline origin/main..image-audit` → 3 commits on branch `image-audit`: `6392cbd` round
+  instruction file (Javis draft 28/09) · `e1cb308` `scripts/image-quality-audit.ts` · `94f1321` record
+  `docs/cloud-results/image-round.md` + the round-open line in this §16. Docs + one script only — no site file
+  touched (`node scripts/self-merge-check.js --base origin/main` → PASS) [ตรวจแล้ว, from the record file].
+  Rollback point: tag `image-audit-close` (computer round — the main agent adds this tag before push, per round-close).
+  No PR opened yet; when opened it is SMALL (docs/script only) — Friday merges per 13.7.
+3 round: "รอบรูป" (image audit, computer round) — CLOSED (audit + proposal only, the site was not changed).
+  Instruction: `docs/rounds/รอบรูป-ตรวจทั้งร้าน.txt`. Record: `docs/cloud-results/image-round.md`. Owner report
+  (Artifact, phone-readable): https://claude.ai/artifact/Ar8nigdAmyi7svhFSKvuRp.
+  First next step: owner picks from the 5 choices in item 4(a) below; a fix round (cloud or Javis-planned) then
+  uses the standard + gap sources already written in the record. No background job left running.
+  Previous round: "ฝังคลิป" (cloud) — CLOSED + MERGED (PR #87–#91), record `docs/cloud-results/clip-round.md`;
+  older rounds §3.
 4 waiting on owner / Javis:
-  (a) GSC "ตรวจสอบการแก้ไข" done by Javis 28/09 — nothing more to do.
-  (b) removing the dormant pre-push token hook (`.githooks/pre-push` + `scripts/pending-check.js`) — refused by the
-  cloud safety check 28/09; owner/Javis may remove it from the computer, or keep it (harmless: nothing writes the token).
-  (c) cloud Chromium cannot load `i.ytimg.com` thumbnails in screenshots (cert chain) — a tool-side fix needs the
-  owner's OK first.
+  (a) รอบรูป — 5 choices in `docs/cloud-results/image-round.md` ("Open for the owner"):
+      1. Marbo poster images: use as-is / cut box+device out / not yet.
+      2. Parts section: official photo+numbers / manual line drawing / Higgsfield AI.
+      3. Retailer copies of maker renders when the maker itself has none.
+      4. Cool Mint / Golden Carbon real stock? Drag 6 Gold after 05/10?
+      5. Start the fix round with batch 1 (Marbo)?
+  (b) removing the dormant pre-push token hook (`.githooks/pre-push` + `scripts/pending-check.js`) — carried from
+  v81 item 4(b), still unresolved.
+  (c) cloud Chromium cannot load `i.ytimg.com` thumbnails in screenshots (cert chain) — carried from v81 item 4(c),
+  still unresolved.
   (d) carried unchanged from v79 item 4 (e)–(j): GSC reports on branch `gsc-data` · `_incoming/next-round-notes.md`
   on the owner's computer · `_incoming/zz-to-delete-roundB/` · round B stop-2 items 8–12 · Artifact test link
   `https://claude.ai/artifact/TuQkJ54AAMknjaj7co1ys9` [รอเจ้าของ] · round C's B3 ON HOLD.
+  (v81 item 4(a) — GSC "ตรวจสอบการแก้ไข" — done by Javis 28/09, dropped here as resolved.)
 4b/4c permanent rulings: unchanged from v79 (git history of this file) + 28/09: owner's 12-item rules table (TEAM_RULES) + 27/09: light check set
   13.12 (5 items + timing only on big rounds/long projects) · disposables clip placed · MmesPKLafqA not placed ·
   marbo guide one clip (54K) · salthub card width kept.
-5 open questions: none new beyond item 4(b)/(c). Older backlog carried unchanged (v79 item 5 "Older backlog", full
-  text §3): round item ฉ (article H1 leading at 390 · G4 black button · related-products card at 390) — each its own
-  tier-B pass · `/compare` "Charging" "—" ×19 · Shipnity Thai on en/zh · tools-round's 10 Thai strings on en/zh.
+5 open questions: none new beyond the 5 choices in item 4(a). Older backlog carried unchanged (v79 item 5 "Older
+  backlog", full text §3): round item ฉ (article H1 leading at 390 · G4 black button · related-products card at
+  390) — each its own tier-B pass · `/compare` "Charging" "—" ×19 · Shipnity Thai on en/zh · tools-round's 10 Thai
+  strings on en/zh.
 6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`): tsc 0 · verify:commerce
   17/17 · verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 ·
-  og-gate 104/104. Since then: review-video contract 8/8 (new time-zone check) [ตรวจแล้ว 44f6935].
+  og-gate 104/104. Since then: review-video contract 8/8 (new time-zone check) [ตรวจแล้ว 44f6935]. The image round
+  (28/09) ran only the light set (eslint + tsc on the new script) — light-set close, baseline unchanged [ตรวจแล้ว].
+  count-storefront today, for context only, not a new baseline: legacy 45 (10 hidden) + ProductMaster 18 = 53 shown
+  [ตรวจแล้ว, from the record file].
 (context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
 
