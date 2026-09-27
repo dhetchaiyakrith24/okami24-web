@@ -14,7 +14,8 @@ name into this file.
 
 ## When this applies
 
-- Every round close — after `round-close` step 5 (close point pushed), before its step 7 (the report).
+- A round close of full-set work (`.claude/TEAM_RULES.md` 13.12 #6), or one where title/meta/H1 may move (13.12 #1 (ฉ))
+  — after `round-close` step 5 (close point pushed), before its step 7 (the report). Light-set work skips it.
 - Cowork asks what a merge changes for customers.
 - Who merges = 13.7; deploy = 13.7 too (a merge that touches the site goes live by itself after the GitHub checks —
   nobody deploys by hand). This pack is what whoever merges reads first, so it carries the full verify set with

@@ -62,11 +62,9 @@ Then `git status` — know where the tree is before moving.
    and start from the latest main; **stop and report only when** one of those newer commits touches a file this round
    is about to change, or the named commit is not an ancestor of `origin/main` at all.
 3. Confirm the working branch contains `origin/main` (fast-forward if it is merely behind);
-   confirm the tree is clean. On a continuation after a mid-batch move (13.6 "ย้ายแชทในเว็บ"), the unfinished files
-   sit on the `wip/…` branch HANDOFF §16 names — fetch it by name (a cloud clone fetches only its own branch:
-   `git fetch origin <wip>:refs/remotes/origin/<wip>`), bring the files into the working tree uncommitted
-   (`git checkout origin/<wip> -- <files>`, then `git reset -q` so they stay unstaged) and check that the list
-   matches §16; any other change = stop and report.
+   confirm the tree is clean. On a continuation after a mid-batch move (13.6 "ย้ายแชทในเว็บ"), the unfinished work is
+   already committed on the work branch (13.12 #5 — no `wip/…` branch since 2026-09-27): pull it and check that the
+   commits §16 marks as not yet checked are the ones there; any other change = stop and report.
    **Machine ready** (round "mobile" instruction, batch 1): `node scripts/prepare-clone.js` must end `prepare-clone: READY` — one command, safe to repeat,
    what it does is in its head (git hooks — without them the commit and push gates do not run, `docs/RECOVERY.md` 2ค ·
    full git history · packages · Next types · browser · Thai font). A cloud chat runs it by itself at session start
@@ -118,7 +116,7 @@ case (`.claude/TEAM_RULES.md` 13.4).
 ## Step 5 — Decide tier A or tier B for each batch
 
 Apply the two-tier rule as written in `docs/HANDOFF.md` §17 ("Two-tier rule") — text only =
-tier A; anything that touches structure or the screen = tier B (full proof — the step order lives
+tier A; anything that touches structure or the screen = tier B (proof size — light or full set = `.claude/TEAM_RULES.md` 13.12; the step order lives
 in §17 only).
 **Not sure = tier B.** Write the tier next to each batch in the plan.
 

@@ -42,7 +42,7 @@ facts, in the format the files already use.
    `git log --oneline origin/main..<branch>` — plus only what git cannot tell: the round's rollback point, the open PR
    number and who merges it; never a commit list, never a list of old tags — `git tag -n1` / `docs/RECOVERY.md` §2 hold those) ·
    which round is open and where it stopped (incl. the first next step, and — when a chat moves mid-batch per
-   `.claude/TEAM_RULES.md` 13.6 "ย้ายแชทในเว็บ" — the `wip/…` branch holding the unfinished files, their names, and any background job still running)
+   `.claude/TEAM_RULES.md` 13.6 "ย้ายแชทในเว็บ" — which commits on the work branch are not yet checked (13.12 #5; no `wip/…` branch since 2026-09-27), and any background job still running)
    · what is waiting on the owner · open questions ·
    **the verify baseline at the last close** (item 6, owner order 2026-09-21: the pass counts of
    the full verify set as printed at the most recent round close — the only place those numbers

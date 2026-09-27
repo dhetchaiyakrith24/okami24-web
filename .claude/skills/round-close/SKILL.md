@@ -43,11 +43,15 @@ and products), so **"pass" means what the script prints as pass, and nothing els
 
 ## Step 2 — Designer once (tier B rounds only)
 
-If any batch of the round was tier B, call the `designer` agent **one time** for the close,
-with the flagged crops only — not the whole site. Tier A rounds (text only) skip this step
-(the two-tier rule: HANDOFF §17). The designer reports in the five fields of 13.5.
+If any batch of the round added a new look, slot or component (`.claude/TEAM_RULES.md` 13.12 #4 — the one place of
+"when designer"), call the `designer` agent **one time** for the close, with the flagged crops only — not the whole
+site. Otherwise (text only, data swaps, reuse of a look the designer already passed) skip this step. The designer
+reports in the five fields of 13.5.
 
 ## Step 3 — Full verify set (names only — pass = what each script defines)
+
+Which set: full-set work (`.claude/TEAM_RULES.md` 13.12 #6) runs the list below in full; light-set work runs 13.12 #1
+instead (the GitHub checks run `verify:catalog --full` on every PR), plus the Thai-copy gates on the touched pages.
 
 Run every one of these; the pass criterion is the script's own PASS/OK output or exit code, and
 the checker quotes the printed totals in its report — this file never states them:

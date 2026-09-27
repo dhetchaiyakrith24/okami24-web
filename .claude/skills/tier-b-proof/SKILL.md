@@ -14,7 +14,10 @@ file — they come from the run.
 
 ## When this applies
 
-- A tier-B batch (or a round close with any tier-B batch) needs its before → after shots.
+- A tier-B batch (or a round close with any tier-B batch) needs its before → after shots. **How big:** the whole
+  sitemap only when `.claude/TEAM_RULES.md` 13.12 #3 says so (a part every page shares, or a "nothing changed" proof);
+  otherwise pass the touched pages + a few control pages as `/path` arguments (13.12 #1 (ค)) — the steps below are the
+  same, only the page list is shorter.
 - A round that must not change the site needs proof that it did not ("0 changes" is the pass).
 - Not for line-break quality inside a Thai block — that is `scripts/wordbreak-scan.js` +
   `scripts/wb-diff.js` (round-close step 1); this skill finds WHAT text changed, those find WHERE
