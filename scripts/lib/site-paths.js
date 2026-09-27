@@ -36,7 +36,6 @@ const JAVIS_ONLY = [
   /^\.github\//,
   /^\.claude\/rules\//,
   /^\.claude\/rules-source\.json$/,
-  /^\.claude\/GLOBAL_RULES_MIRROR\.md$/,
   /^\.claude\/launch\.json$/,
   /^docs\/archive\/claude-config-[^/]+\//,
   /^scripts\/self-merge-check\.js$/,
