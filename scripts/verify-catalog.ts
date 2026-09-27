@@ -45,6 +45,11 @@ function runStep(name: string, cmd: string, args: string[]): boolean {
   results.push({ name, ok, durationMs, output: ok ? undefined : `${res.stdout ?? ""}\n${res.stderr ?? ""}` });
   console.log(ok ? `  OK (${durationMs}ms)` : `  FAILED (${durationMs}ms)`);
   if (!ok) {
+    // The FAIL lines (and the detail line under each) first: the tail below can start after them on a long test
+    // output, which left a CI failure unreadable (round "clip", PR #87).
+    const lines = (res.stdout ?? "").split("\n");
+    const failed = lines.flatMap((l, i) => (l.startsWith("FAIL") ? [l, lines[i + 1] ?? ""] : []));
+    if (failed.length) console.log(`  failing checks:\n${failed.join("\n")}\n  --- output tail ---`);
     console.log((res.stdout ?? "").slice(-4000));
     console.log((res.stderr ?? "").slice(-4000));
   }
