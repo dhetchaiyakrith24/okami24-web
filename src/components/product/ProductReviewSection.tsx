@@ -27,7 +27,7 @@ export function ProductReviewSection({ product, frozen = false }: {
   const { videoId, title, channelName } = product.reviewVideo;
 
   // JSON-LD stays plain: the untransformed dictionary, not the context copy with render-time Thai typography.
-  const videoJsonLd = videoObjectJsonLd(product.reviewVideo, `${channelName} — ${getDictionary(locale).product.reviewVideoEyebrow}: ${product.displayName}`);
+  const videoJsonLd = videoObjectJsonLd(product.reviewVideo, `${channelName} — ${getDictionary(locale).product.reviewVideoEyebrow}: ${product.displayName}`, { frozen });
   // Round "clip": the en/zh title rule of the articles (hideThaiClipTitle) — except on the pages frozen for the SEO
   // baseline until 05/10, which must not change at all (round instruction item 2).
   const hideTitle = !frozen && hideThaiClipTitle(locale, title);

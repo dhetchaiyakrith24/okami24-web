@@ -70,6 +70,14 @@ export function runReviewVideoContractTests(): ReviewVideoContractResult[] {
   });
   check("the shared builder fills name · thumbnailUrl · uploadDate · embedUrl for every clip", missing.length === 0, missing.map((c) => c.where).join("; ") || "none");
 
+  // GSC 2026-09-26 warned "uploadDate has no time zone": the value must be an ISO 8601 date-time with an offset
+  // that parses and keeps the clip's own day.
+  const noZone = clips.filter(({ v }) => {
+    const u = videoObjectJsonLd(v, "x").uploadDate;
+    return !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(Z|[+-]\d{2}:\d{2})$/.test(u) || Number.isNaN(Date.parse(u)) || !u.startsWith(v.publishedAt);
+  });
+  check("uploadDate is an ISO 8601 date-time with a time zone (GSC warning)", noZone.length === 0, noZone.map((c) => c.where).join("; ") || "none");
+
   // A page shows a clip once: the same id twice on one page would be two identical VideoObjects.
   const perPage = new Map<string, string[]>();
   for (const { where, v } of clips) {
