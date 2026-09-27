@@ -172,3 +172,11 @@ folders, counted by how many other tracked files name it) → 9 files with 0 liv
 Q8 facts [ตรวจแล้ว, `gh api` 2026-09-27]: latest `actions/checkout` = v7.0.1 · `actions/setup-node` = v7.0.0 · runner
 images list `ubuntu-latest` = Ubuntu 24.04 today and also offer `ubuntu-26.04`; both web workflows use `@v4` +
 `ubuntu-latest`.
+
+## Close and merge (2026-09-27)
+
+- Close tag `roundB-housekeeping-done` = `e5d263a` (pushed; RECOVERY row in `a4e950a`) · `origin/main` had moved to `ce99c99` (PR #75, merged by Javis before #74 — its push run said `SKIP deploy`); merged into the branch without conflicts.
+- **PR #74 not self-merged.** `node scripts/self-merge-check.js --pr 74` → `BLOCKED - Javis merges this PR` on 49 Thai-named `docs/rounds/*.txt` files: `gh pr diff --name-only` git-quotes non-ASCII paths and the `--pr` mode did not unquote them (the git mode did). 13.4 #9 → stop, no workaround: **Javis merges #74**. Fix = PR #77 (`roundB-javis-3`, `0f53413`), probe: fixed 0 blocked / original BLOCKED — `_incoming/roundB/break-self-merge-pr-mode.log`; checker PASS 4/4.
+- Javis PRs: #76 (`roundB-javis-2`, mirror removal — after #74) · #77 (gate fix).
+- `inbox`: `rounds/roundB-cloud-check.txt` pushed (stops by itself before #74 merges); the removal of the 4 copied files (`220567d`) waits for #74 and has to be moved onto the new `inbox` head first.
+- Checker record for the close: 4/7 → 3 send-backs → re-check → 1 send-back (RULES_INDEX row 110) → PASS · final delta (merge commit + RECOVERY row) PASS except the gate verdict above.

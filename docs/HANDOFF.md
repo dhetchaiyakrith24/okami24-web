@@ -849,8 +849,9 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
 
 1 main: run `git fetch && git log -1 --oneline origin/main` for the current commit. Rollback point for
   round B = tag `pre-roundB` (pushed, made from `origin/main` before the round opened). Open PR **#74**
-  (`roundB-housekeeping` → main, off-site) — Friday self-merges per 13.7 after
-  `node scripts/self-merge-check.js` PASS + GitHub checks green.
+  (`roundB-housekeeping` → main, off-site) — **Javis merges** (not Friday): `self-merge-check.js --pr 74` said
+  BLOCKED on 49 Thai-named `docs/rounds` files — a gate bug (`gh` quotes Thai paths), fix = PR **#77** (Javis) ·
+  13.4 #9: a failing merge gate = stop, no workaround [ตรวจแล้ว, `_incoming/roundB/break-self-merge-pr-mode.log`].
 2 ahead of main: run `git log --oneline origin/main..roundB-housekeeping` for the full commit list (also
   the Javis-only branches). PR **#75** (`roundB-javis`: large-file hook · site-paths Render Shell · Actions
   v7) was **merged by Javis before #74** → main `ce99c99` (its push run: "SKIP deploy" — pipeline rule)
@@ -870,9 +871,10 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
   accepted [ตรวจแล้ว, `docs/cloud-results/roundB-stop2-owner.md`]. Close tag
   **`roundB-housekeeping-done`** — made on the close commit (computer round → tag, per round-close), once
   this docs push lands.
-  **First next step:** Friday merges PR #74 → Javis merges the `roundB-javis-2` PR (after #74) → push `inbox` commit
-  `220567d` (drops the 4 copied round files, only after #74, so the files are never missing from both
-  places) → add `rounds/roundB-cloud-check.txt` to `inbox` for Javis to run in a cloud chat (batch 7).
+  **First next step:** Javis merges PR #74 → then PR #76 (mirror removal, after #74) and PR #77 (gate fix, any
+  order) → a Friday chat moves `220567d` (drops the 4 copied round files from `inbox`; local worktree
+  `.claude/worktrees/roundB-inbox` branch `roundB-inbox-local`) onto the current `inbox` and pushes it, only after
+  #74 → Javis runs the batch 7 cloud check (`rounds/roundB-cloud-check.txt` is already on `inbox`).
   Previous round: **round A "pipes" (cloud) — CLOSED + MERGED**, PR #73 merged by Javis → `76703c9` (this
   round's base); full batch detail relocated to §3 "§16 lines relocated at round B 'housekeeping' close"
   below.
@@ -889,9 +891,10 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
   `docs/cloud-results/roundB-housekeeping.md` batch 1 table.
   (b) delete `_incoming/zz-to-delete-roundB/` (this round moved, not deleted, its pile ③ there — untracked
   files cannot be recovered once actually deleted) — owner's call.
-  (c) merge the `roundB-javis-2` PR (mirror removal) — Javis, after #74. (#75 is already merged.)
-  (d) run the batch 7 cloud check — `rounds/roundB-cloud-check.txt`, added to `inbox` after #74 merges, for
-  Javis to open in a cloud chat.
+  (c) merge PR **#74** (Javis — see item 1), then PR **#76** (`roundB-javis-2`, mirror removal, after #74) and PR
+  **#77** (`roundB-javis-3`, merge-gate Thai path fix). #75 is already merged.
+  (d) run the batch 7 cloud check — `rounds/roundB-cloud-check.txt` is on `inbox` (it stops by itself if #74 is
+  not merged yet) — Javis opens it in a cloud chat after #74.
   (e) stop-2 items 8-12, Friday untouched by design, full text `docs/cloud-results/roundB-stop2-owner.md`
   §ข: 8 Render Blueprint **Auto Sync** — docs say default on, a push that edits `render.yaml` may deploy
   outside the GitHub-checks gate [ยืนยันจากเอกสาร render.com/docs/infrastructure-as-code]; recommendation
