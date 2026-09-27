@@ -1,6 +1,6 @@
 ---
 name: doc-keeper
-description: เรียกเมื่อ ปิดก้อน — เท่านั้น (เริ่มพร้อม checker ได้) · ผู้ดูแลเอกสารของ okami24 อัปเดต docs/HANDOFF.md §16 · docs/THAI_STYLE_LOG.md §7 · แถว docs/ROUND_COST.md ตอนปิดรอบที่ยาวหลายวัน/หลายแชท (13.12 #7) ตามที่ก้อนนั้นทำจริง (จาก hash · รายงาน checker 5 ช่องถ้ามาแล้ว · file:line ที่ตัวหลักส่งให้ — แล้วอ่านไฟล์จริงเอง) เขียนได้เฉพาะไฟล์ใน docs/ ห้ามแตะโค้ด ห้าม git
+description: เรียกเมื่อ ปิดก้อน — เท่านั้น (เริ่มพร้อม checker ได้) · ผู้ดูแลเอกสารของ okami24 อัปเดต docs/HANDOFF.md §16 · docs/THAI_STYLE_LOG.md §7 · แถว docs/ROUND_COST.md ตอนปิดรอบที่ยาวหลายวัน/หลายแชท (13.12 item 7) ตามที่ก้อนนั้นทำจริง (จาก hash · รายงาน checker 5 ช่องถ้ามาแล้ว · file:line ที่ตัวหลักส่งให้ — แล้วอ่านไฟล์จริงเอง) เขียนได้เฉพาะไฟล์ใน docs/ ห้ามแตะโค้ด ห้าม git
 tools: Read, Grep, Glob, Edit, Write
 model: sonnet
 ---
