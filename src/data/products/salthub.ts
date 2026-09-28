@@ -74,7 +74,7 @@ export const salthubProducts: Product[] = [
     // swatches until SALTHUB's own per-flavour originals arrive (list sent to the owner). 2026-09-29: flavours get an
     // OKami24 Higgsfield remake of the maker's own flavour photo (docs/IMAGE_SPEC.md §0 item 7; source + fidelity check
     // per file in scripts/process-images.map.json `aiRender`) — Grape passed by the owner, then the rest on the same
-    // template (8 of 12 on 2026-09-29; Blue Ice, Kyoho Grape, Menthol Blast, Strawberry Kiwi failed 3 tries — swatches).
+    // template (7 of 12 on 2026-09-29; Blue Ice, Kyoho Grape, Menthol Blast, Strawberry Kiwi failed 3 tries, Yellow Mint the sharpness gate — swatches).
     // `availability: "unknown"` — no live Shipnity stock signal for this Legacy record.
     // The flavour photos are box + device; the card (device alone) stays the first photo (owner 29/09).
     openOnCardPhoto: true,
@@ -90,7 +90,7 @@ export const salthubProducts: Product[] = [
       { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#c9405f", availability: "unknown" },
       { id: "watermelon-mint", name: "Watermelon Mint", swatchHex: "#4ec9a0", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon-mint.webp", alt: "SALTHUB M Bar 10K, Watermelon Mint — box and device" } },
       { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon.webp", alt: "SALTHUB M Bar 10K, Watermelon — box and device" } },
-      { id: "yellow-mint", name: "Yellow Mint", swatchHex: "#d9d13a", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-yellow-mint.webp", alt: "SALTHUB M Bar 10K, Yellow Mint — box and device" } },
+      { id: "yellow-mint", name: "Yellow Mint", swatchHex: "#d9d13a", availability: "unknown" },
     ],
     specifications: [
       // Data round (2026-09-24): every row re-checked on SALTHUB's own M Bar 10K posters in a real browser. 30mg is on
