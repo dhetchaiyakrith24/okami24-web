@@ -853,7 +853,7 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
   to its pre-round photos + M Bar 10K/9K flavour photos withdrawn) · #102 (IMAGE_SPEC §0 item 7 — the one AI-image rule +
   scripts/ai-fidelity-sheet.js) · #103 (owner 29/09 ruling written into §0 item 7 + M Bar 10K GRAPE Higgsfield photo — live,
   curl-checked). No tag yet (round not closed). Rollback = revert the merge commit of the PR in question.
-2 ahead of main: branch `image-fix-gen2` = PR #104 (OPEN, not merged): `git log --oneline origin/main..image-fix-gen2` → 4 commits
+2 ahead of main: branch `image-fix-gen2` = PR #104 (OPEN, not merged): `git log --oneline origin/main..image-fix-gen2` → 4 work commits + this handoff (docs only, not checked)
   (85c0625 map paths → _incoming/web-product-images · 5b18247 fix: PilotProductDetail opens on the product card under the
   option-photo rule · 2d1f9e7 ESKO BAR SWITCH 20K 20 flavour pod photos · facb55c content-dates). Checker 5/5 on facb55c [ตรวจแล้ว];
   GitHub checks not looked at yet. BIG (product data + component) — owner has the 3x/1440 preview and was asked "merge ได้ไหม";
