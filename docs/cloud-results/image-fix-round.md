@@ -112,6 +112,35 @@ with the cartoon project). Nano Banana Pro at 2K = 2 credits per image, backgrou
   is the model the shop SELLS (the name printed on the device = the product name), not just that the render matches the
   reference. The product page itself (brand, spec, flavours, card) is a data fix of its own.
 
+## Third chat (29/09 night) — owner answers relayed by Javis, then Muro Connector + M Bar 10K
+
+Owner answers: (1) PR #104 + the remaining image work — Friday merges after her own gates and reports with the
+comparison (written into IMAGE_SPEC §7 / TEAM_RULES 13.7 by PR #105; still asks first for a new kind of image or an
+unclear reference model). (2) Nexbar Clear 18K: remove only what came from the WOTOFO model; no brand; "18K" = 18,000
+puffs; keep the WOTOFO brand (footer untouched); list 1–2 real WOTOFO products from wotofo.com — which models/flavours the
+owner will say. (3) Image-theft protection A+B+C = its own round after this one (A = "OKami24" + okami24.store).
+Merged: #104 (Esko, live, curl 20/20) · #105 (rule) · #106 (Muro Connector, live, curl 20/20) · #107 (M Bar 10K).
+Higgsfield: 525.1 → 451.1 credits (74 used; 2 of them a stray job Friday started by mistake).
+- **Muro Connector 20K (#106), 20/20 flavours.** Device + label from OKAMI's own clip thumbnail
+  (i.ytimg.com/vi/Mp0QbGUX3gU — Mineral Water + Banana Strawberry pods, side with the sockets and the print). The
+  vapemun.com posters reuse one device per colour (Cola's poster device reads WATERMELON), so they only give the body
+  colour per flavour: navy 4 · red 3 · purple 3 · yellow 8 · pink 2 [เชื่อว่า — from the posters; Mineral Water and
+  Banana Strawberry confirmed by the clip]. Five NB Pro masters (the first red/yellow/purple tries changed the socket
+  layout → re-made with the navy render as reference 1, "change only the colours"), every name typeset in Lato Bold
+  (`_incoming/web-product-images/muro-connector-20k/label.js`, ±1 px vs the render). Mix Berries prints the product's
+  own name (the poster says MIXBERRY). Card NOT replaced: two 3/4 remakes failed the colour check (ΔE max 8.3, 20.9).
+  New `Product.openOnCardPhoto` keeps the card as the first photo when option photos show another view.
+  Sharpness 5.4–10.2 vs card 2.34. 22 credits.
+- **M Bar 10K (#107), 6 more flavours** on the owner-passed Grape template: All Berry, Cola, Matcha Latte, Pink Berry,
+  Watermelon, Watermelon Mint (IoU 0.979–0.98, ΔE max ≤ 3.3). Not done after 3 tries: Blue Ice, Menthol Blast (the mint
+  leaf of the maker's photo keeps coming back), Kyoho Grape (a grape keeps peeking behind the box), Strawberry Kiwi
+  (product redesigned / colour). Yellow Mint: passed by eye but 8.28 < 90% of the card on the sharpness gate; a 4K retry
+  changed the proportions. `openOnCardPhoto` on M Bar 10K too (the round instruction: standard photo first — since #103
+  the page had opened on Grape). m-bar-15k (baseline, same data file) HTML identical before/after
+  (`_incoming/web-product-images/m-bar-10k/htmlproof/`). 52 credits (incl. the stray 2).
+- Next idea for the 5 left: clean the maker's photo first (cut the leaf/grape out of the reference) and give the
+  passed Grape render as reference 3 — the extra reference fixed All Berry on try 3.
+
 ## Step 3 — Higgsfield trial kit (not run: Friday cannot log in)
 
 `_incoming/image-fix/higgsfield/m-bar-10k/` — `refs/` (the live card as device truth + 12 flavour cut-outs on flat grey),
