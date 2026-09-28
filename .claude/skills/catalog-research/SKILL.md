@@ -97,11 +97,13 @@ is the spec-row gate (files: HANDOFF §17 "src files the skills use" [spec-gate]
 
 Source real photos, then reject anything that fails ANY of:
 
-- [ ] Is this AI-generated? Check embedded XMP/metadata for AI-generation tags before trusting an
-      official-looking CDN image.
+- [ ] Is this someone else's AI-generated image? Check embedded XMP/metadata for AI-generation tags before
+      trusting an official-looking CDN image — reject it. (OKami24's own AI remake of a real photo, when no
+      usable real photo exists, is a separate route with its own checks: `docs/IMAGE_SPEC.md` §0 item 7, the
+      one place for AI images — owner 2026-09-28.)
 - [ ] Is this watermarked? If yes: is there a watermark-free region of the SAME real photo to
-      crop to (`extractThenTrim()` in `scripts/product-image.ts`)? If not, reject — never
-      generate a replacement.
+      crop to (`extractThenTrim()` in `scripts/product-image.ts`)? If not, reject it as a source —
+      a remake only through IMAGE_SPEC §0 item 7.
 - [ ] Does it show the EXACT variant (resistance/color/flavor) being verified, not a generic
       group shot or a different variant of the same product line?
 - [ ] Is it a genuine product photo, not a marketing banner/lifestyle scene with decorative text
