@@ -90,8 +90,10 @@ export function ProductHero({
   // Round 30.4ค closing: render-time Thai typography (thai-typography.ts) — data strings stay plain.
   const heroTagline = copyTh?.tagline ? thaiTypographyNode(copyTh.tagline) : product.tagline;
   const heroDescription = copyTh?.shortDescription ? thaiTypographyNode(copyTh.shortDescription) : product.shortDescription;
-  const [selectedColorId, setSelectedColorId] = useState<string | null>(initialOption(product.colorVariants));
-  const [selectedFlavorId, setSelectedFlavorId] = useState<string | null>(initialOption(product.flavorVariants));
+  // `openOnCardPhoto` (see its doc in types/catalog.ts): open on the card with nothing picked.
+  const openOnCard = product.openOnCardPhoto === true;
+  const [selectedColorId, setSelectedColorId] = useState<string | null>(openOnCard ? null : initialOption(product.colorVariants));
+  const [selectedFlavorId, setSelectedFlavorId] = useState<string | null>(openOnCard ? null : initialOption(product.flavorVariants));
   // "All Colors" (owner mandate, 2026-09-03) is a third hero-image state, not a third variant list
   // — it only exists when a real lineup shot does. Starts unselected (an individual color/default
   // photo is still the strongest first impression); the customer opts INTO the lineup view.
@@ -145,13 +147,13 @@ export function ProductHero({
   const hasColorAxis = (product.colorVariants?.length ?? 0) > 0;
   const selectedOptionId = hasColorAxis ? selectedColorId : selectedFlavorId;
   const selectOption = (slideId: string) => {
-    // the leading "default" slide (product photo, only on products where no option has a photo) = no option
+    // the leading "default" slide (product photo — products where no option has a photo, or openOnCardPhoto) = no option
     const id = slideId === "default" ? null : slideId;
     if (hasColorAxis) setSelectedColorId(id);
     else setSelectedFlavorId(id);
     setShowAllColors(false);
   };
-  const noOptionHasPhoto = optionRecords.length >= 2 && optionRecords.every((o) => !o.image);
+  const leadWithCard = openOnCard || (optionRecords.length >= 2 && optionRecords.every((o) => !o.image));
   const optionSlides = options.map((o) => {
     const record = optionRecords.find((r) => r.id === o.id);
     return lacksOwnPhoto(record)
@@ -161,7 +163,7 @@ export function ProductHero({
   const slides =
     options.length > 0
       ? [
-          ...(noOptionHasPhoto ? [{ id: "default", node: <div className="h-full w-full p-2"><ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayInfo} loading="eager" fetchPriority="high" /></div> }] : []),
+          ...(leadWithCard ? [{ id: "default", node: <div className="h-full w-full p-2"><ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayInfo} loading="eager" fetchPriority="high" /></div> }] : []),
           ...options.map((o, i) => optionSlides[i] ?? {
           id: o.id,
           node: (
