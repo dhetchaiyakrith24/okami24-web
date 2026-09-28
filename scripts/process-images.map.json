@@ -978,5 +978,658 @@
   "id": "watermelon-bubblegum",
   "minLong": 470,
   "canvas": 580
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_01.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "grape-aloe",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  },
+  "note": "image-fix round 2026-09-28 (owner answer 1: box + device only) — salthub.com/wp-content/uploads/2025/08/m_switch_kit_flavor_NN.webp, maker render, 1100x1479, transparent; flavour = maker alt text \"m switch with <flavour> flavored e-liquid\" + the name printed on the box; crop drops the caption pill under the product (pill starts at y>=1173, product ends <=1117)"
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_02.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "watermelon",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_03.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "doublemint",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_04.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "blue-ice",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_05.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "strawberry",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_06.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "watermelon-bubblegum",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_07.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "strawberry-watermelon",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_08.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "grape-lychee",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_09.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "black-berry",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_10.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "mixberry",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_11.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "cola",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_12.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "grape",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_13.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "peach-strawberry",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_14.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "mango-passion",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_15.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "pink-berry",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mswkit/m_switch_kit_flavor_16.webp",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "apple-aloe",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.777
+  }
+ },
+ {
+  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_all_berry.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "all-berry",
+  "minLong": 520,
+  "canvas": 625,
+  "note": "image-fix round 2026-09-28 (owner answer 1 \"B\": cut box + device out of the maker poster) — salthub.com/wp-content/uploads/2026/02/mbar10k_<flavour>.webp 800x800, cut by scripts/poster-cutout.js set mbar10k (one hand-traced mask, all 12 posters share the template); product 525px long = the largest original that exists (IMAGE_SPEC section 0), canvas 625 keeps it at 84% instead of upscaling. Blue Ice / Menthol Blast / Kyoho Grape left out: leaves / a grape sit in front of the box in those posters"
+ },
+ {
+  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_cola.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "cola",
+  "minLong": 520,
+  "canvas": 625
+ },
+ {
+  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_grape.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "grape",
+  "minLong": 520,
+  "canvas": 625
+ },
+ {
+  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_matcha_latte.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "matcha-latte",
+  "minLong": 520,
+  "canvas": 625
+ },
+ {
+  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_pink_berry.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "pink-berry",
+  "minLong": 520,
+  "canvas": 625
+ },
+ {
+  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_strawberry_kiwi.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "strawberry-kiwi",
+  "minLong": 520,
+  "canvas": 625
+ },
+ {
+  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_watermelon.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "watermelon",
+  "minLong": 520,
+  "canvas": 625
+ },
+ {
+  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_watermelon_mint.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "watermelon-mint",
+  "minLong": 520,
+  "canvas": 625
+ },
+ {
+  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_yellow_mint.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "yellow-mint",
+  "minLong": 520,
+  "canvas": 625
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/caliburn-g4/2.webp",
+  "slug": "caliburn-g4",
+  "role": "variant",
+  "id": "seashell-white",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.4819,
+   "y1": 0.94
+  },
+  "note": "image-fix round 2026-09-28 — UWELL official render files.myuwell.com/uwell/product/caliburn-g4/pc/<2-9>.webp (579x1418, transparent, front + back of one colour, the maker caption under it names the colour: 2 Seashell White · 3 Glacier Blue · 4 Karst Grey · 5 Flamingo Red · 6 Twilight Silver · 7 Gunmetal Grey · 8 Sahara Gold · 9 Polar Black). Variant = the front device only (crop x<279 — gap between the two devices is x 278-298), caption cut off (y<0.94)"
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/caliburn-g4/3.webp",
+  "slug": "caliburn-g4",
+  "role": "variant",
+  "id": "glacier-blue",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.4819,
+   "y1": 0.94
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/caliburn-g4/4.webp",
+  "slug": "caliburn-g4",
+  "role": "variant",
+  "id": "karst-grey",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.4819,
+   "y1": 0.94
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/caliburn-g4/5.webp",
+  "slug": "caliburn-g4",
+  "role": "variant",
+  "id": "flamingo-red",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.4819,
+   "y1": 0.94
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/caliburn-g4/6.webp",
+  "slug": "caliburn-g4",
+  "role": "variant",
+  "id": "twilight-silver",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.4819,
+   "y1": 0.94
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/caliburn-g4/7.webp",
+  "slug": "caliburn-g4",
+  "role": "variant",
+  "id": "gunmetal-grey",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.4819,
+   "y1": 0.94
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/caliburn-g4/8.webp",
+  "slug": "caliburn-g4",
+  "role": "variant",
+  "id": "sahara-gold",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.4819,
+   "y1": 0.94
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/caliburn-g4/9.webp",
+  "slug": "caliburn-g4",
+  "role": "variant",
+  "id": "polar-black",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.4819,
+   "y1": 0.94
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_1.webp",
+  "slug": "caliburn-g4-mini",
+  "role": "variant",
+  "id": "slate-grey",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.5,
+   "y1": 1
+  },
+  "note": "image-fix round 2026-09-28 — UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<1-12>.webp (523x1123, transparent, front + back). The maker page names no colours on these files; order = its colour-button list (hex #9096a0 · #2d2c2c · #c9c9c9 · #eacbcd · #3c9dc9 · #7fb75b · #ddd4b6/#2d708d · #8ee3d5/#95a7e4 · #afb7bc/#2a3849 · #a0da9b/#2c583a · #c0a0cd/#5c3f70 · #e2decf/#b1a676), matched one by one to the retailer-named photos already on the site. Variant = front device (crop x<0.5, gap x 235-288)"
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_2.webp",
+  "slug": "caliburn-g4-mini",
+  "role": "variant",
+  "id": "night-black",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.5,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_3.webp",
+  "slug": "caliburn-g4-mini",
+  "role": "variant",
+  "id": "light-silver",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.5,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_4.webp",
+  "slug": "caliburn-g4-mini",
+  "role": "variant",
+  "id": "bright-pink",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.5,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_5.webp",
+  "slug": "caliburn-g4-mini",
+  "role": "variant",
+  "id": "lake-blue",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.5,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_6.webp",
+  "slug": "caliburn-g4-mini",
+  "role": "variant",
+  "id": "grass-green",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.5,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_7.webp",
+  "slug": "caliburn-g4-mini",
+  "role": "variant",
+  "id": "coast-gold",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.5,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_8.webp",
+  "slug": "caliburn-g4-mini",
+  "role": "variant",
+  "id": "peafowl-emerald",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.5,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_9.webp",
+  "slug": "caliburn-g4-mini",
+  "role": "variant",
+  "id": "dusty-indigo",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.5,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_10.webp",
+  "slug": "caliburn-g4-mini",
+  "role": "variant",
+  "id": "paddy-green",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.5,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_11.webp",
+  "slug": "caliburn-g4-mini",
+  "role": "variant",
+  "id": "phoenix-purple",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.5,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_12.webp",
+  "slug": "caliburn-g4-mini",
+  "role": "variant",
+  "id": "champagne-gold",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 0.5,
+   "y1": 1
+  }
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/GRAPEALOE.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "grape-aloe",
+  "minLong": 470,
+  "canvas": 570,
+  "note": "image-fix round 2026-09-28 — the maker (salthub.com) has only 5-up flavour strips for M Bar 9K (m_bar_9k_02-05.webp, ~225px per device), so tier 3 per owner answer 3: Vapeauras retail CDN ueeshop.ly200-cdn.com/u_file/UPBF/UPBF436/2507/05/products/MarboBar9K<FLAVOUR>-<hash>.png (page vapeauras.com/products/maebo-bar-9k-disposable-vape), 600x600, transparent, no watermark — the same CDN and size class as the M Bar 15K set already on the site. Flavour = the retailer file name, cross-checked one by one against the logo colour of the same flavour on the maker strips. Device 480px long: canvas 570 keeps it at 84% instead of upscaling. No file for Strawberry Milkshake, Menthol Freeze, Kyoho Grape, Zapple"
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/WATERMELON.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "watermelon",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/DOUBLEMINT.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "doublemint",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/BLUEICE.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "blue-ice",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/STRAWBERRY.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "strawberry",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/PEACH.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "peach",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/RAINBOWCANDY.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "rainbow-candy",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/GRAPELYCHEE.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "grape-lychee",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/APPLEALOE.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "apple-aloe",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/MIXBERRY.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "mixberry",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/COLA.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "cola",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/GRAPE.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "grape",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/ORANGESOUR.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "orange-sour",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/SPARKLINGLEMON.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "sparkling-lemon",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/SOURGUMMY.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "sour-gummy",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/WATERMELONBUBBLEGUM.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "watermelon-bubblegum",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/PINKBERRY.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "pink-berry",
+  "minLong": 470,
+  "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/src/mbar9k/PEACHSTRAWBERRY.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "peach-strawberry",
+  "minLong": 470,
+  "canvas": 570
  }
 ]

@@ -787,16 +787,14 @@ export const uwellProducts: Product[] = [
       },
     ],
     // Real UWELL color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
-    // photo-confirmed: vapesourcing.com + elementvape.com). "Seashell White" reuses this
-    // product's own existing card photo, an exact match.
-    // "All Colors" lineup (owner mandate, 2026-09-03 — global rollout pass). OKami24 composite
-    // from these same 8 individually-verified photos; Seashell White's own card asset is a
-    // front+back 2-panel shot, so only the front panel was cropped out for scale consistency
-    // with its 7 siblings — no image content invented.
+    // photo-confirmed: vapesourcing.com + elementvape.com). Image-fix round 2026-09-28: every colour photo is now
+    // UWELL's own render (myuwell.com caliburn-g4 pc/2–9, the maker's caption names each colour), front device only —
+    // map entries in scripts/process-images.map.json. The lineup is rebuilt from those 8 files
+    // (scripts/build-lineup-grid.js --cols 4) — no image content invented.
     lineupImage: {
       src: "/assets/products/caliburn-g4/lineup.webp",
       alt: "UWELL Caliburn G4, all 8 colors",
-      sourceName: "OKami24 composite (from individually-verified retailer photos)",
+      sourceName: "OKami24 composite (from UWELL's official colour renders)",
     },
     colorVariants: [
       {
@@ -839,7 +837,7 @@ export const uwellProducts: Product[] = [
         id: "seashell-white",
         name: "Seashell White",
         swatchHex: "#ede7de",
-        image: { src: "/assets/products/caliburn-g4/card.webp", alt: "UWELL Caliburn G4, Seashell White" },
+        image: { src: "/assets/products/caliburn-g4/variant-seashell-white.webp", alt: "UWELL Caliburn G4, Seashell White" },
       },
       {
         id: "twilight-silver",
@@ -909,12 +907,14 @@ export const uwellProducts: Product[] = [
     ],
     // Real UWELL color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
     // photo-confirmed: vapesourcing.com + elementvape.com, 12 finishes, all now with real photos).
-    // "All Colors" lineup (owner mandate, 2026-09-03 — global rollout pass) — an OKami24
-    // composite built from these same 12 individually-verified photos.
+    // Image-fix round 2026-09-28: every colour photo is now UWELL's own render (myuwell.com caliburn-g4-mini
+    // pc/1–12, front device only), each matched to the retailer-named photo it replaces — the maker's files carry no
+    // colour names (order + hex in scripts/process-images.map.json). Lineup rebuilt from those 12 files
+    // (scripts/build-lineup-grid.js --cols 6).
     lineupImage: {
       src: "/assets/products/caliburn-g4-mini/lineup.webp",
       alt: "UWELL Caliburn G4 Mini, all 12 colors",
-      sourceName: "OKami24 composite (from individually-verified retailer photos)",
+      sourceName: "OKami24 composite (from UWELL's official colour renders)",
     },
     colorVariants: [
       {
