@@ -904,8 +904,9 @@ round "รอบรูป-แก้" (still OPEN). Fourth computer-round chat st
       chat: Cloudflare flips WebP/JPEG on the same URL because it caches without `Accept`) — owner's Cloudflare
       dashboard, not code
 5 open questions: item 4(2) above (Muro Connector category) · item 4(5) above (worth a Cloudflare Accept-header
-  cache rule, or leave as-is) · whether the other 96 of the 97 audited product images (only M Bar 10K was found
-  stale this time, `scripts/stale-image-audit.js`) need the same check again after future photo swaps.
+  cache rule, or leave as-is) · whether to re-run `scripts/stale-image-audit.js` after future photo swaps (this
+  time: M Bar 10K proven stale by probe.log; G3 Pro KOKO Emerald Green + G4 Glacier Blue differ only at the raw
+  /assets URL, the copies the page loads match the repo — nothing visible).
 6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`, unchanged since v85 —
   this batch and the one before it both ran the light set only, per 13.12): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate
