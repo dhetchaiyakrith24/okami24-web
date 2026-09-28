@@ -368,12 +368,10 @@ export const salthubProducts: Product[] = [
     // salthub.com's own m-switch-kit/ page (18 per-flavor official product photos, same list as
     // the standalone M Switch Pod cartridge below). `availability: "unknown"` — no live Shipnity
     // stock signal for this Legacy record. Images (image-fix round 2026-09-28): the maker's own transparent
-    // kit renders m_switch_kit_flavor_01…16 (starter box + device); the maker has none for Kyoho Grape or Cool Mint.
+    // kit renders m_switch_kit_flavor_01…16 (starter box + device); the maker has none for Kyoho Grape.
     flavorVariants: [
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
-      // Cool Mint is not on salthub.com's own list (17 flavours) and no reseller checked on 2026-09-06 had it;
-      // the owner confirms it is genuinely sold and it stays. BSOT §21 — do not remove on the maker's say-so.
-      { id: "cool-mint", name: "Cool Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      // Cool Mint removed 2026-09-28: the owner confirms it does not exist (reverses the 2026-09-06 "keep it" ruling, BSOT §21).
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-apple-aloe.webp", alt: "SALTHUB M Switch Kit, Apple Aloe — box and device" } },
       { id: "black-berry", name: "Black Berry", swatchHex: "#3a2a4e", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-black-berry.webp", alt: "SALTHUB M Switch Kit, Black Berry — box and device" } },
       { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-blue-ice.webp", alt: "SALTHUB M Switch Kit, Blue Ice — box and device" } },
@@ -464,14 +462,12 @@ export const salthubProducts: Product[] = [
     // competing visual style to this catalog's clean-isolated-photo standard) — the NAMES are
     // trustworthy (read directly off each flavor's own labeled box). Image-fix round 2026-09-28 (owner: box + pod
     // only): 12 flavours cut out of those posters (method + source in scripts/process-images.map.json); Grape
-    // Lychee, Strawberry, Cola, Black Berry (fruit in front of the box), Kyoho Grape and Cool Mint stay swatch-only. `availability: "unknown"` for the
+    // Lychee, Strawberry, Cola, Black Berry (fruit in front of the box) and Kyoho Grape stay swatch-only. `availability: "unknown"` for the
     // same reason as M Bar 9K — no Shipnity/stock integration exists for Legacy SALTHUB products,
     // and this page has no purchase action to gate.
     flavorVariants: [
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
-      // Cool Mint is not on salthub.com's own list (17 flavours) and no reseller checked on 2026-09-06 had it;
-      // the owner confirms it is genuinely sold and it stays. BSOT §21 — do not remove on the maker's say-so.
-      { id: "cool-mint", name: "Cool Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      // Cool Mint removed 2026-09-28: the owner confirms it does not exist (reverses the 2026-09-06 "keep it" ruling, BSOT §21).
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7cb342", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-apple-aloe.webp", alt: "SALTHUB M Switch Pod, Apple Aloe — box and pod" } },
       { id: "black-berry", name: "Black Berry", swatchHex: "#3a2340", availability: "unknown" },
       { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-blue-ice.webp", alt: "SALTHUB M Switch Pod, Blue Ice — box and pod" } },
