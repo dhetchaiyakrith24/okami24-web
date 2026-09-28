@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
+import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
 import { ColorVariantRail } from "@/components/product/ColorVariantRail";
 import { FlavorVariantGrid } from "@/components/product/FlavorVariantGrid";
 import { MobileVariantGallery, MOBILE_SLIDE_SIZES } from "@/components/product/MobileVariantGallery";
@@ -27,6 +28,18 @@ import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 function firstSellable<T extends { id: string; availability?: string }>(options: T[] | undefined): string | null {
   if (!options || options.length === 0) return null;
   return (options.find((o) => o.availability !== "out-of-stock") ?? options[0]).id;
+}
+
+/** Image-fix round 2026-09-28 (owner: an option without its own photo must never show another option's photo):
+ *  open on an option that HAS its own photo, so the first picture always matches the name beside it. With every
+ *  option photographed this is exactly `firstSellable`. With 2+ options and none photographed nothing is
+ *  pre-selected — the page opens on the product photo, which then claims no particular option. */
+function initialOption<T extends { id: string; availability?: string; image?: unknown }>(options: T[] | undefined): string | null {
+  if (!options || options.length === 0) return null;
+  const sellable = options.filter((o) => o.availability !== "out-of-stock");
+  const withPhoto = (sellable.length > 0 ? sellable : options).find((o) => o.image);
+  if (withPhoto) return withPhoto.id;
+  return options.length >= 2 ? null : firstSellable(options);
 }
 
 /** `imageDisplayInfo` — the storefront quality-correction pass's fill-vs-intrinsic sizing switch,
@@ -77,14 +90,22 @@ export function ProductHero({
   // Round 30.4ค closing: render-time Thai typography (thai-typography.ts) — data strings stay plain.
   const heroTagline = copyTh?.tagline ? thaiTypographyNode(copyTh.tagline) : product.tagline;
   const heroDescription = copyTh?.shortDescription ? thaiTypographyNode(copyTh.shortDescription) : product.shortDescription;
-  const [selectedColorId, setSelectedColorId] = useState<string | null>(firstSellable(product.colorVariants));
-  const [selectedFlavorId, setSelectedFlavorId] = useState<string | null>(firstSellable(product.flavorVariants));
+  const [selectedColorId, setSelectedColorId] = useState<string | null>(initialOption(product.colorVariants));
+  const [selectedFlavorId, setSelectedFlavorId] = useState<string | null>(initialOption(product.flavorVariants));
   // "All Colors" (owner mandate, 2026-09-03) is a third hero-image state, not a third variant list
   // — it only exists when a real lineup shot does. Starts unselected (an individual color/default
   // photo is still the strongest first impression); the customer opts INTO the lineup view.
   const [showAllColors, setShowAllColors] = useState(false);
   const selectedColor = product.colorVariants?.find((c) => c.id === selectedColorId);
   const selectedFlavor = product.flavorVariants?.find((f) => f.id === selectedFlavorId);
+  // The option list this product picks from (legacy products carry colours OR flavours, never both). An option
+  // with no photo of its own gets the NoOptionPhoto panel instead of the product card — the card is often one
+  // specific option (image-fix round 2026-09-28). A single-option product keeps the card: the card IS that option.
+  const optionRecords = (product.colorVariants?.length ? product.colorVariants : product.flavorVariants) ?? [];
+  const noPhotoNote = (product.colorVariants?.length ?? 0) > 0 ? dict.product.noPhotoColor : dict.product.noPhotoFlavor;
+  const lacksOwnPhoto = (o: { image?: unknown } | undefined) => optionRecords.length >= 2 && !!o && !o.image;
+  const selectedRecord = selectedColor ?? selectedFlavor;
+  const showNoPhoto = !showAllColors && lacksOwnPhoto(selectedRecord);
   const heroOverrideImage = showAllColors ? product.lineupImage ?? null : selectedColor?.image ?? selectedFlavor?.image ?? null;
   // The display-info entry for whichever image is ACTUALLY shown right now, not just the card's —
   // see this component's own prop doc comment for the bug this fixes.
@@ -111,21 +132,33 @@ export function ProductHero({
   ].filter((s): s is { label: string; value: string } => Boolean(s) && s!.value !== "—");
 
   // Phone gallery (M2.2/M2.3): one slide per option, each showing that option's own photo or —
-  // when it has none yet — the product's default photo with only the name changing. Swiping IS
+  // when it has none yet — the NoOptionPhoto panel (image-fix round 2026-09-28; before that, the product's
+  // default photo with only the name changing, which showed one option's photo under another's name). Swiping IS
   // selecting: it sets the same state the chips set, including onto a sold-out option (owner
   // decision A-ข: the customer may look at it; the page then shows the sold-out state and the
   // chip stays disabled). "All Colors" is not a slide — while it is on, the lineup photo shows.
   const options = legacyVariantOptions(product);
   const hasColorAxis = (product.colorVariants?.length ?? 0) > 0;
   const selectedOptionId = hasColorAxis ? selectedColorId : selectedFlavorId;
-  const selectOption = (id: string) => {
+  const selectOption = (slideId: string) => {
+    // the leading "default" slide (product photo, only on products where no option has a photo) = no option
+    const id = slideId === "default" ? null : slideId;
     if (hasColorAxis) setSelectedColorId(id);
     else setSelectedFlavorId(id);
     setShowAllColors(false);
   };
+  const noOptionHasPhoto = optionRecords.length >= 2 && optionRecords.every((o) => !o.image);
+  const optionSlides = options.map((o) => {
+    const record = optionRecords.find((r) => r.id === o.id);
+    return lacksOwnPhoto(record)
+      ? { id: o.id, node: <div className="h-full w-full p-2"><NoOptionPhoto name={o.name} swatchHex={record?.swatchHex} note={noPhotoNote} /></div> }
+      : null;
+  });
   const slides =
     options.length > 0
-      ? options.map((o) => ({
+      ? [
+          ...(noOptionHasPhoto ? [{ id: "default", node: <div className="h-full w-full p-2"><ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayInfo} loading="eager" fetchPriority="high" /></div> }] : []),
+          ...options.map((o, i) => optionSlides[i] ?? {
           id: o.id,
           node: (
             <div className="h-full w-full p-2">
@@ -145,7 +178,8 @@ export function ProductHero({
               />
             </div>
           ),
-        }))
+          }),
+        ]
       : [
           {
             id: "default",
@@ -281,12 +315,16 @@ export function ProductHero({
           />
           <FavoriteButton slug={product.slug} className="absolute right-2 top-2 z-10" />
           <div className="relative h-full w-full p-8 max-lg:hidden lg:p-12">
-            <ProductMedia
-              product={product}
-              sizes="(min-width: 1024px) 42vw, 85vw"
-              qualityAware={currentImageDisplayInfo}
-              overrideImage={heroOverrideImage}
-            />
+            {showNoPhoto && selectedRecord ? (
+              <NoOptionPhoto name={selectedRecord.name} swatchHex={selectedRecord.swatchHex} note={noPhotoNote} />
+            ) : (
+              <ProductMedia
+                product={product}
+                sizes="(min-width: 1024px) 42vw, 85vw"
+                qualityAware={currentImageDisplayInfo}
+                overrideImage={heroOverrideImage}
+              />
+            )}
           </div>
           <div
             className="pointer-events-none absolute inset-x-16 bottom-6 h-10 rounded-full opacity-70 max-lg:hidden"

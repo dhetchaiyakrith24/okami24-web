@@ -165,6 +165,8 @@ export const th: Dictionary = {
     colorLabel: "สี",
     flavorLabel: "รสชาติ",
     allVariantsLabel: "ทั้งหมด",
+    noPhotoFlavor: "ยังไม่มีรูปของกลิ่นนี้",
+    noPhotoColor: "ยังไม่มีรูปของสีนี้",
     outOfStockChip: "สินค้าหมด",
     reviewVideoEyebrow: "รีวิวจาก OKami24",
     watchOnYoutube: "ดูบน YouTube",
