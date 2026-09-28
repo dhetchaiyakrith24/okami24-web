@@ -1631,5 +1631,110 @@
   "id": "peach-strawberry",
   "minLong": 470,
   "canvas": 570
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/apple_aloe.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "apple-aloe",
+  "minLong": 470,
+  "note": "image-fix round 2026-09-28 (owner answer 1: box + pod only) — maker posters salthub.com/wp-content/uploads/2025/08/<flavour>.webp (800x800; grape aloe = m_switch_grape_aloe.webp). The box sits on the same pixels in every poster, the pod moves a few px: box = one hand-traced polygon; pod = a cut-out-only AI matte (@imgly/background-removal-node, run in _incoming, it decides transparency and never paints pixels) limited to a pod template agreed by 75% of the aligned mattes, and saturated pixels in its outer band dropped (background rim). Scripts: _incoming/image-fix/podfinal2.js (not in git: needs the 130 MB model). Flavour = the name printed on the pod label + maker alt text. Left out: Grape Lychee (pod rotated, rim remains), Strawberry and Cola (fruit / ice in front of the pod), Kyoho Grape (different poster), Cool Mint (owner stock check)",
+  "canvas": 600
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/black_berry.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "black-berry",
+  "minLong": 470,
+  "canvas": 600
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/blue_ice.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "blue-ice",
+  "minLong": 470,
+  "canvas": 600
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/doublemint.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "doublemint",
+  "minLong": 470,
+  "canvas": 600
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/grape.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "grape",
+  "minLong": 470,
+  "canvas": 600
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/m_switch_grape_aloe.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "grape-aloe",
+  "minLong": 470,
+  "canvas": 600
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/mango_passion.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "mango-passion",
+  "minLong": 470,
+  "canvas": 600
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/mixberry.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "mixberry",
+  "minLong": 470,
+  "canvas": 600
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/peach_strawberry.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "peach-strawberry",
+  "minLong": 470,
+  "canvas": 600
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/pink_berry.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "pink-berry",
+  "minLong": 470,
+  "canvas": 600
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/strawberry_watermelon.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "strawberry-watermelon",
+  "minLong": 470,
+  "canvas": 600
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/watermelon.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "watermelon",
+  "minLong": 470,
+  "canvas": 600
+ },
+ {
+  "source": "_incoming/image-fix/podfinal/watermelon_bubblegum.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "watermelon-bubblegum",
+  "minLong": 470,
+  "canvas": 600
  }
 ]
