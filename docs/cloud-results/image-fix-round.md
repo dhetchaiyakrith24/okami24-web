@@ -76,15 +76,15 @@ Result: **0 options gained a photo that meets the bar** (sharp at 3x, no waterma
 at least one real reference except Nexbar Clear 18K and Muro 3ml. Hidden products (infy-20k, tfit-m-power-20k,
 foli-bar-15k, next-pro-2-beyond, muro-salt-nic, muro-freebase) were not searched this time.
 
-### Owner 28/09 night: shop / group photos may be remake references — the evidence rule Friday applies
+### Owner 29/09: every option without a standard photo gets a remake (rule = IMAGE_SPEC §0 item 7)
 
-A flavour gets an AI remake only when a real photo shows THAT flavour on THE model the shop ships (flavour name
-readable, or a caption naming it). No such photo = the no-photo panel stays; the AI never invents a flavour's look.
-- Nexbar Clear 18K (Pod-180): the only per-flavour photos found (siam-pod.com NexBar 12000, sudjudpod.net NexBar 20K,
-  8 of 10 flavours) show a carbon-black shell — a sibling model, not the clear-shell 18K the shop sells → not used;
-  Strawberry Custard not found anywhere. All 10 stay on the no-photo panel.
-- Muro 3ml: the 6 flavours with box photos keep them; Muro Grape, Honey Lemon, Very Strawberry, Double Shisha — no
-  photo of any of them anywhere reachable → no-photo panel.
+Friday's first reading (28/09 night) kept Nexbar and 4 Muro 3ml flavours on the no-photo panel; the owner overruled it
+29/09: sibling-model / shop / watermarked photos are references, "หาโหลดไม่ได้ = สร้าง". References found:
+- Nexbar Clear 18K (Pod-180): body = our card (clear shell); flavour = siam-pod.com NexBar 12000 (Grape Ice, Mixberry,
+  Watermelon Ice, Mint, Strawberry Watermelon, White Slush) · sudjudpod.net NexBar 20K (Grape Lychee, Strawberry Kiwi)
+  · Watermelon Bubblegum only a generic 16K shot · Strawberry Custard none (name only).
+- Muro 3ml: Muro Grape, Honey Lemon, Very Strawberry, Double Shisha — no photo anywhere reachable → body + box design
+  from the 6 existing flavour boxes, name from the data; owner told which have no colour reference.
 - Muro Connector 20K: shop pages and OKAMI's own clip say it fits the RELX **Creator**; the site still files it as a
   disposable — a data fix for its own round (not this one), flagged to the owner.
 
