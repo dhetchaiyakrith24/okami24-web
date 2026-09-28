@@ -463,8 +463,8 @@ export const salthubProducts: Product[] = [
     // Every source photo is a busy marketing composite (real fruit/liquid-splash imagery, a
     // competing visual style to this catalog's clean-isolated-photo standard) — the NAMES are
     // trustworthy (read directly off each flavor's own labeled box). Image-fix round 2026-09-28 (owner: box + pod
-    // only): 13 flavours cut out of those posters (method + source in scripts/process-images.map.json); Grape
-    // Lychee, Strawberry, Cola, Kyoho Grape and Cool Mint stay swatch-only. `availability: "unknown"` for the
+    // only): 12 flavours cut out of those posters (method + source in scripts/process-images.map.json); Grape
+    // Lychee, Strawberry, Cola, Black Berry (fruit in front of the box), Kyoho Grape and Cool Mint stay swatch-only. `availability: "unknown"` for the
     // same reason as M Bar 9K — no Shipnity/stock integration exists for Legacy SALTHUB products,
     // and this page has no purchase action to gate.
     flavorVariants: [
@@ -473,7 +473,7 @@ export const salthubProducts: Product[] = [
       // the owner confirms it is genuinely sold and it stays. BSOT §21 — do not remove on the maker's say-so.
       { id: "cool-mint", name: "Cool Mint", swatchHex: "#3ea88a", availability: "unknown" },
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7cb342", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-apple-aloe.webp", alt: "SALTHUB M Switch Pod, Apple Aloe — box and pod" } },
-      { id: "black-berry", name: "Black Berry", swatchHex: "#3a2340", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-black-berry.webp", alt: "SALTHUB M Switch Pod, Black Berry — box and pod" } },
+      { id: "black-berry", name: "Black Berry", swatchHex: "#3a2340", availability: "unknown" },
       { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-blue-ice.webp", alt: "SALTHUB M Switch Pod, Blue Ice — box and pod" } },
       { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown" },
       { id: "doublemint", name: "Doublemint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-doublemint.webp", alt: "SALTHUB M Switch Pod, Doublemint — box and pod" } },
