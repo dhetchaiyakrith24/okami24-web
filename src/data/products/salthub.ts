@@ -365,8 +365,8 @@ export const salthubProducts: Product[] = [
       },
     ],
     // Real flavor lineup for the included starter cartridge — tier-1, verified against
-    // salthub.com's own m-switch-kit/ page (18 per-flavor official product photos, same list as
-    // the standalone M Switch Pod cartridge below). `availability: "unknown"` — no live Shipnity
+    // salthub.com's own m-switch-kit/ page (per-flavor official product photos, same list as
+    // the standalone M Switch Pod cartridge below — 17 since Cool Mint was removed 2026-09-28). `availability: "unknown"` — no live Shipnity
     // stock signal for this Legacy record. Images (image-fix round 2026-09-28): the maker's own transparent
     // kit renders m_switch_kit_flavor_01…16 (starter box + device); the maker has none for Kyoho Grape.
     flavorVariants: [
@@ -452,10 +452,10 @@ export const salthubProducts: Product[] = [
         sourceUrl: "https://www.salthub.com/",
       },
     ],
-    // Real flavor lineup — Tier-1 disposable growth mission (2026-09-03), extended to 18
-    // (2026-09-04): re-fetched salthub.com's own m-switch-pod/ page directly and found 4 more
-    // official per-flavor photos beyond the original 14 (Kyoho Grape, Cool Mint, Grape Aloe,
-    // Grape Lychee) — same "M SWITCH Pod #1" retail-box photography, same evidence tier. This
+    // Real flavor lineup — Tier-1 disposable growth mission (2026-09-03), extended (2026-09-04):
+    // re-fetched salthub.com's own m-switch-pod/ page directly and found more official per-flavor
+    // photos beyond the original 14 (Kyoho Grape, Grape Aloe, Grape Lychee — 17 in all since the
+    // owner removed Cool Mint on 2026-09-28) — same "M SWITCH Pod #1" retail-box photography, same evidence tier. This
     // record's own real Shipnity children (Pod-147: Grape Aloe, Strawberry Watermelon, Apple
     // Aloe) are a subset of this full 18, confirming the list is accurate, not just plausible.
     // Every source photo is a busy marketing composite (real fruit/liquid-splash imagery, a
