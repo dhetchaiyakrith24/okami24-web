@@ -980,79 +980,6 @@
   "canvas": 580
  },
  {
-  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_all_berry.png",
-  "slug": "m-bar-10k",
-  "role": "variant",
-  "id": "all-berry",
-  "minLong": 520,
-  "canvas": 625,
-  "note": "image-fix round 2026-09-28 (owner answer 1 \"B\": cut box + device out of the maker poster) — salthub.com/wp-content/uploads/2026/02/mbar10k_<flavour>.webp 800x800, cut by scripts/poster-cutout.js set mbar10k (one hand-traced mask, all 12 posters share the template); product 525px long = the largest original that exists (IMAGE_SPEC section 0), canvas 625 keeps it at 84% instead of upscaling. Blue Ice / Menthol Blast / Kyoho Grape left out: leaves / a grape sit in front of the box in those posters"
- },
- {
-  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_cola.png",
-  "slug": "m-bar-10k",
-  "role": "variant",
-  "id": "cola",
-  "minLong": 520,
-  "canvas": 625
- },
- {
-  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_grape.png",
-  "slug": "m-bar-10k",
-  "role": "variant",
-  "id": "grape",
-  "minLong": 520,
-  "canvas": 625
- },
- {
-  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_matcha_latte.png",
-  "slug": "m-bar-10k",
-  "role": "variant",
-  "id": "matcha-latte",
-  "minLong": 520,
-  "canvas": 625
- },
- {
-  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_pink_berry.png",
-  "slug": "m-bar-10k",
-  "role": "variant",
-  "id": "pink-berry",
-  "minLong": 520,
-  "canvas": 625
- },
- {
-  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_strawberry_kiwi.png",
-  "slug": "m-bar-10k",
-  "role": "variant",
-  "id": "strawberry-kiwi",
-  "minLong": 520,
-  "canvas": 625
- },
- {
-  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_watermelon.png",
-  "slug": "m-bar-10k",
-  "role": "variant",
-  "id": "watermelon",
-  "minLong": 520,
-  "canvas": 625
- },
- {
-  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_watermelon_mint.png",
-  "slug": "m-bar-10k",
-  "role": "variant",
-  "id": "watermelon-mint",
-  "minLong": 520,
-  "canvas": 625
- },
- {
-  "source": "_incoming/image-fix/cut/mbar10k/mbar10k_yellow_mint.png",
-  "slug": "m-bar-10k",
-  "role": "variant",
-  "id": "yellow-mint",
-  "minLong": 520,
-  "canvas": 625
- },
- {
   "source": "_incoming/image-fix/src/uwell/caliburn-g4/2.webp",
   "slug": "caliburn-g4",
   "role": "variant",
@@ -1295,213 +1222,60 @@
   }
  },
  {
-  "source": "_incoming/image-fix/src/mbar9k/GRAPEALOE.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "grape-aloe",
-  "minLong": 470,
-  "canvas": 570,
-  "note": "image-fix round 2026-09-28 — the maker (salthub.com) has only 5-up flavour strips for M Bar 9K (m_bar_9k_02-05.webp, ~225px per device), so tier 3 per owner answer 3: Vapeauras retail CDN ueeshop.ly200-cdn.com/u_file/UPBF/UPBF436/2507/05/products/MarboBar9K<FLAVOUR>-<hash>.png (page vapeauras.com/products/maebo-bar-9k-disposable-vape), 600x600, transparent, no watermark — the same CDN and size class as the M Bar 15K set already on the site. Flavour = the retailer file name, cross-checked one by one against the logo colour of the same flavour on the maker strips. Device 480px long: canvas 570 keeps it at 84% instead of upscaling. No file for Strawberry Milkshake, Menthol Freeze, Kyoho Grape, Zapple"
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/WATERMELON.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "watermelon",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/DOUBLEMINT.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "doublemint",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/BLUEICE.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "blue-ice",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/STRAWBERRY.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "strawberry",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/PEACH.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "peach",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/RAINBOWCANDY.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "rainbow-candy",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/GRAPELYCHEE.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "grape-lychee",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/APPLEALOE.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "apple-aloe",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/MIXBERRY.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "mixberry",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/COLA.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "cola",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/GRAPE.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "grape",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/ORANGESOUR.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "orange-sour",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/SPARKLINGLEMON.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "sparkling-lemon",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/SOURGUMMY.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "sour-gummy",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/WATERMELONBUBBLEGUM.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "watermelon-bubblegum",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/PINKBERRY.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "pink-berry",
-  "minLong": 470,
-  "canvas": 570
- },
- {
-  "source": "_incoming/image-fix/src/mbar9k/PEACHSTRAWBERRY.png",
-  "slug": "m-bar-9k",
-  "role": "variant",
-  "id": "peach-strawberry",
-  "minLong": 470,
-  "canvas": 570
- },
- {
   "source": "_incoming/image-fix/g3cut/koko-Emerald-Green.rgba.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "emerald-green",
   "minLong": 500,
-  "canvas": 625,
-  "note": "image-fix round 2026-09-28 — UWELL official promotional pack (files.myuwell.com/uwell/ow-product-material/Promotional%20Materials-20240930164558208.zip, linked from myuwell.com caliburn-g3-pro-koko Download), folder 1. HD Transparent Photo/Kit/FDA&INT/1. Square Shape Pics/<Colour>.jpg (1000x1000, white background, UWELL caption naming the colour = our variant names 1:1). Cropped to the product band (y 120-680), cut with a cut-out-only matte (@imgly/background-removal-node in _incoming — decides transparency, never paints pixels), alpha<24 dropped, stray specks removed. Replaces the old retailer cut-outs whose glass-pod outline was broken (image round 28/09)."
+  "note": "image-fix round 2026-09-28 — UWELL official promotional pack (files.myuwell.com/uwell/ow-product-material/Promotional%20Materials-20240930164558208.zip, linked from myuwell.com caliburn-g3-pro-koko Download), folder 1. HD Transparent Photo/Kit/FDA&INT/1. Square Shape Pics/<Colour>.jpg (1000x1000, white background, UWELL caption naming the colour = our variant names 1:1). Cropped to the product band (y 120-680), cut with a cut-out-only matte (@imgly/background-removal-node in _incoming — decides transparency, never paints pixels), alpha<24 dropped, stray specks removed. Replaces the old retailer cut-outs whose glass-pod outline was broken (image round 28/09). · 2026-09-28 owner: re-placed at real size on the standard 1000 canvas (no stretch) — the 625 canvas made phones draw it 1.7x enlarged."
  },
  {
   "source": "_incoming/image-fix/g3cut/koko-Light-Silver.rgba.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "light-silver",
-  "minLong": 500,
-  "canvas": 625
+  "minLong": 500
  },
  {
   "source": "_incoming/image-fix/g3cut/koko-Lilac-Purple.rgba.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "lilac-purple",
-  "minLong": 500,
-  "canvas": 625
+  "minLong": 500
  },
  {
   "source": "_incoming/image-fix/g3cut/koko-Luxury-Gold.rgba.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "luxury-gold",
-  "minLong": 500,
-  "canvas": 625
+  "minLong": 500
  },
  {
   "source": "_incoming/image-fix/g3cut/koko-Midnight-Black.rgba.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "midnight-black",
-  "minLong": 500,
-  "canvas": 625
+  "minLong": 500
  },
  {
   "source": "_incoming/image-fix/g3cut/koko-Rose-Pink.rgba.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "rose-pink",
-  "minLong": 500,
-  "canvas": 625
+  "minLong": 500
  },
  {
   "source": "_incoming/image-fix/g3cut/koko-Sky-Blue.rgba.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "sky-blue",
-  "minLong": 500,
-  "canvas": 625
+  "minLong": 500
  },
  {
   "source": "_incoming/image-fix/g3cut/koko-Space-Gray.rgba.png",
   "slug": "caliburn-g3-pro-koko",
   "role": "variant",
   "id": "space-gray",
-  "minLong": 500,
-  "canvas": 625
+  "minLong": 500
  }
 ]
