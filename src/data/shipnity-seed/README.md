@@ -144,8 +144,10 @@ photography.
 
 **Watermark handling:** if a real, correctly-identified source photo carries a retailer watermark
 baked into one corner of the frame, the correct fix is cropping to the watermark-free region of
-the SAME real photo — never discard a genuine source over a watermark, and never generate a
-replacement. Use `extractThenTrim()` from `scripts/product-image.ts` for this.
+the SAME real photo — never discard a genuine source over a watermark. (An AI remake is not a
+watermark fix; when no usable real photo exists at all, the one AI route is `docs/IMAGE_SPEC.md` §0
+item 7 — owner 2026-09-28 — and the "Never: AI-generated imagery" line above still means other
+people's AI images.) Use `extractThenTrim()` from `scripts/product-image.ts` for this.
 
 **Multi-variant products, one static card image:** when a product has more real variants than can
 be honestly shown in one photo, prefer, in order: (1) a real per-variant photo for each variant

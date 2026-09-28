@@ -20,7 +20,8 @@
  * 3. Several real source photos carried a retailer watermark baked into one corner of the frame.
  *    The correct fix is cropping to the watermark-free region of the SAME real photo — never
  *    discarding a genuine, correctly-identified source, and never generating a replacement.
- *    Nothing here does or enables generative image alteration — every function operates only on
+ *    Nothing here does or enables generative image alteration (the one AI route is an outside tool under
+ *    docs/IMAGE_SPEC.md §0 item 7, owner 2026-09-28) — every function operates only on
  *    real, already-downloaded source bytes (crop / trim / resize / composite / re-encode).
  *
  * Usage as a library (from an ad hoc processing script):

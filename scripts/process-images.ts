@@ -66,6 +66,10 @@ interface MapEntry {
   /** owner-approved exception to MIN_SOURCE_LONG for this one file (e.g. 796 — "รับขนาด 796–800px", 2026-09-04).
    *  Must be written in the map on purpose; there is no global override. */
   minLong?: number;
+  /** OKami24's own AI remake of a real photo (IMAGE_SPEC §0 item 7, owner 2026-09-28): the tool, the real
+   *  reference file it was made from, and the fidelity sheet that passed (scripts/ai-fidelity-sheet.js). Only
+   *  an entry carrying all three skips the AIGC-marker reject — a third-party AI image found online stays rejected. */
+  aiRender?: { tool: string; reference: string; fidelitySheet: string };
   /** RETIRED 2026-09-28 (owner, image-fix round). It used to shrink the output canvas so a small product
    *  still filled 84% of it — the storefront then stretched that small file to fill the hero, and a 3x phone
    *  drew it 1.7–1.9x enlarged (soft). Every card/variant is now written on the standard canvas; a small product
@@ -189,7 +193,8 @@ async function processEntry(e: MapEntry): Promise<Decision> {
   const dest = destFor(e); const d: Decision = { source: e.source, slug: e.slug, role: e.role, id: e.id, dest: rel(dest), action: "skipped", canvas: CANVAS[e.role] };
   const src = path.join(ROOT, e.source);
   if (!existsSync(src)) return { ...d, reason: "source file not found" };
-  if (isAiGenerated(src)) return { ...d, reason: "REJECTED: AI-generated marker (AIGC) found in file" };
+  const ownRender = e.aiRender && e.aiRender.tool && e.aiRender.reference && e.aiRender.fidelitySheet;
+  if (!ownRender && isAiGenerated(src)) return { ...d, reason: "REJECTED: AI-generated marker (AIGC) found in file — only an OKami24 remake with an aiRender block passes (IMAGE_SPEC §0 item 7)" };
 
   let raw = await toRaw(src);
   if (e.crop) { const c = e.crop; raw = await toRaw(await fromRaw(raw).extract({ left: Math.floor(c.x0 * raw.width), top: Math.floor(c.y0 * raw.height), width: Math.ceil((c.x1 - c.x0) * raw.width), height: Math.ceil((c.y1 - c.y0) * raw.height) }).png().toBuffer()); }
