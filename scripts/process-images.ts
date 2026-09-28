@@ -76,6 +76,11 @@ interface MapEntry {
    *  sits there at its real size (it looks smaller, stays sharp). An entry that still carries `canvas` is
    *  skipped with a reason, so old entries are never re-written on a smaller canvas; their existing files stay. */
   canvas?: number;
+  /** Output file name inside public/assets/products/<slug>/ instead of card.webp / variant-<id>.webp (e.g.
+   *  "card-v2.webp"). Use it whenever a photo REPLACES one that was already live: /assets/* is served with a 30-day
+   *  max-age and Cloudflare keeps it (next.config.ts headers), so a new file under the old name reaches visitors
+   *  only after a month. A new name is fetched at once (image-fix round 2026-09-29). Plain name, no folders. */
+  fileName?: string;
   note?: string;
 }
 
@@ -181,7 +186,8 @@ async function encodeWithin(canvas: Sharp, maxBytes: number): Promise<{ buf: Buf
 }
 
 function destFor(e: MapEntry): string {
-  const name = e.role === "card" ? "card.webp" : e.role === "variant" ? `variant-${e.id}.webp` : `detail-${e.id}.webp`;
+  if (e.fileName && !/^[a-z0-9][a-z0-9.-]*\.webp$/.test(e.fileName)) throw new Error(`fileName must be a plain lowercase .webp name: ${e.fileName}`);
+  const name = e.fileName ?? (e.role === "card" ? "card.webp" : e.role === "variant" ? `variant-${e.id}.webp` : `detail-${e.id}.webp`);
   return path.join(PUBLIC_PRODUCTS, e.slug, name);
 }
 const rel = (p: string) => path.relative(ROOT, p).replace(/\\/g, "/");
