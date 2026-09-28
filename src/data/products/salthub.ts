@@ -71,13 +71,15 @@ export const salthubProducts: Product[] = [
     // Real flavor lineup — verified directly against salthub.com's own mbar-10k/ page (11 named
     // per-flavor photos, e.g. alt="MBar 10K fresh flavor kyoho grape"). Those photos are posters. Image-fix round 2026-09-28: box + device cut from them went
     // live and were withdrawn the same day — even at real size (no stretch) the 800-px poster stays soft on a phone;
-    // swatches until SALTHUB's own per-flavour originals arrive (list sent to the owner).
+    // swatches until SALTHUB's own per-flavour originals arrive (list sent to the owner). 2026-09-29: flavours get an
+    // OKami24 Higgsfield remake of the maker's own flavour photo (docs/IMAGE_SPEC.md §0 item 7; source + fidelity check
+    // per file in scripts/process-images.map.json `aiRender`) — Grape first, the owner reviews before the rest.
     // `availability: "unknown"` — no live Shipnity stock signal for this Legacy record.
     flavorVariants: [
       { id: "all-berry", name: "All Berry", swatchHex: "#8e3a6b", availability: "unknown" },
       { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
       { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown" },
-      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-grape.webp", alt: "SALTHUB M Bar 10K, Grape — box and device" } },
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
       { id: "matcha-latte", name: "Matcha Latte", swatchHex: "#7a9a4a", availability: "unknown" },
       { id: "menthol-blast", name: "Menthol Blast", swatchHex: "#3ab5c6", availability: "unknown" },

@@ -1265,6 +1265,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
 // ===================================================================================
 
 const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
+  // Image-fix round 2026-09-29 (owner ruling, docs/IMAGE_SPEC.md §0 item 7): no photo of the clear-shell nexBAR 18K
+  // exists per flavour, so each flavour is an OKami24 Higgsfield remake — body from the shop's own clip of the real
+  // 18K, flavour name from a sibling-model (NexBar 12000) photo. Sources + fidelity check per file in
+  // scripts/process-images.map.json `aiRender`. Grape Ice first; the owner reviews before the other flavours.
+  "Pod-180": {
+    "Pod-180-1": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-grape-ice.webp", alt: "WOTOFO nexBAR 18K, Grape Ice, isolated product shot", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own nexBAR 18K clip + a WOTOFO NexBar 12000 Grape Ice photo", sourceUrl: "https://www.youtube.com/watch?v=YhtKKjRwF3Q" },
+  },
   "Coil-1": {
     "Coil-1-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variants/Coil-1-1.webp", alt: "VOOPOO PnP-TW15 coil, 0.15Ω, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/voopoo-pnp-coils/" },
     "Coil-1-14": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variants/Coil-1-14.webp", alt: "VOOPOO PnP-DW60 coil, 0.6Ω, retail box", transparentBackground: false, sourceName: "Turn It Up Vape (US vape retailer)", sourceUrl: "https://www.turnitupvape.com/product-page/voopoo-pnp-dw60-coils-0-6-ohm-5-per-pack" },

@@ -1220,5 +1220,29 @@
    "x1": 0.5,
    "y1": 1
   }
+ },
+ {
+  "source": "_incoming/image-fix/higgsfield/m-bar-10k/out/grape-2.cut.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, 2 credits (job in _incoming/image-fix/higgsfield/m-bar-10k/out/job-grape-2.json)",
+   "reference": "_incoming/image-fix/cut/mbar10k/mbar10k_grape.png (SALTHUB salthub.com/wp-content/uploads/2026/02/mbar10k_grape.webp, box + device) + public/assets/products/m-bar-10k/card.webp (device)",
+   "fidelitySheet": "_incoming/image-fix/fid/mbar10k-grape.png — IoU 0.995, deltaE max 1.8; box labels 3 MODE / ECO / SOFT / BOOST / GRAPE read by eye"
+  },
+  "note": "image-fix round 2026-09-29 — OKami24 Higgsfield remake of the maker's own Grape photo (owner ruling IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed off with _incoming/image-fix/flatcut.js (border flood, t0 6 / t1 42, colour un-mixing)"
+ },
+ {
+  "source": "_incoming/image-fix/higgsfield/nexbar-18k/out/grape-ice-1.bgr.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "grape-ice",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k (2 credits) + image_background_remover (1 credit); jobs in _incoming/image-fix/higgsfield/nexbar-18k/out/",
+   "reference": "body = the shop's own clip thumbnail i.ytimg.com/vi/YhtKKjRwF3Q (real nexBAR 18K Grape Ice, clear shell) + public/assets/products/nexbar-clear-18k/card.webp (shell detail); flavour = siam-pod.com NexBar 12000 Grape Ice (sibling, name only)",
+   "fidelitySheet": "_incoming/image-fix/fid/nexbar-grape-ice-vs-clip.png — two-layer reference, checked by eye (GRAPE ICE · NEX white / BAR blue · WOTOFO · clear shell over carbon)"
+  },
+  "note": "image-fix round 2026-09-29 — two-layer reference per IMAGE_SPEC §0 item 7 (body from the model the shop ships, flavour from the sibling-model photo)"
  }
 ]
