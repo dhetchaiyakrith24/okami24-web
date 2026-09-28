@@ -1483,7 +1483,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Blue-Ice-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-blue-ice-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/double-mint.png",
@@ -1495,7 +1496,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-DoubleMint-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-double-mint-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/mineral-water.png",
@@ -1507,7 +1509,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-MineralWater-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-mineral-water-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/cool-mint.png",
@@ -1519,7 +1522,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Cool-mint-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-cool-mint-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/apple-baraku.png",
@@ -1531,7 +1535,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Apple-baraku-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-apple-baraku-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/cola.png",
@@ -1543,7 +1548,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Cola-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-cola-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/watermelon.png",
@@ -1555,7 +1561,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Watermelon-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-watermelon-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/grape.png",
@@ -1567,7 +1574,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Grape-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-grape-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/mix-berries.png",
@@ -1579,7 +1587,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Mixberry-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-mix-berries-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/kyoho-grape.png",
@@ -1591,7 +1600,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Kyoho-Grape-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-kyoho-grape-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/banana-strawberry.png",
@@ -1603,7 +1613,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Banana-Strawberry-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-banana-strawberry-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/honey-lemon.png",
@@ -1615,7 +1626,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Honey-Lemon-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-honey-lemon-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/pineapple.png",
@@ -1627,7 +1639,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Pineapple-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-pineapple-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/yakult.png",
@@ -1639,7 +1652,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Yakult-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-yakult-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/green-tea.png",
@@ -1651,7 +1665,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Green-Tea-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-green-tea-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/lemon-jeez.png",
@@ -1663,7 +1678,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Lemon-Jeez-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-lemon-jeez-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/taro-ice-cream.png",
@@ -1675,7 +1691,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Taro-Ice-Cream-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-taro-ice-cream-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/vanilla-ice-cream.png",
@@ -1687,7 +1704,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Vanilla-Ice-Cream-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-vanilla-ice-cream-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/pink-berry.png",
@@ -1699,7 +1717,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Pink-Berry-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-pink-berry-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/muro-connector-20k/out/cut/strawberry-peach.png",
@@ -1711,7 +1730,8 @@
    "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Strawberry-Peach-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
-  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js",
+  "fileName": "variant-strawberry-peach-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/m-bar-10k/out/cut/all_berry-3.png",
@@ -1723,7 +1743,8 @@
    "reference": "_incoming/web-product-images/m-bar-10k/refs/all_berry.png (SALTHUB maker photo, box + device) + _incoming/web-product-images/m-bar-10k/refs/00-device-sharp.png (device) + _incoming/web-product-images/m-bar-10k/out/grape-2.png (the owner-passed Grape render, style)",
    "fidelitySheet": "_incoming/web-product-images/m-bar-10k/fid/all_berry-3.png — IoU 0.979, deltaE max 1.8; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
   },
-  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js · 2026-09-29 re-cut: despeckled (stray alpha specks had shrunk the product 17–35%), new name because /assets is cached 30 days",
+  "fileName": "variant-all-berry-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/m-bar-10k/out/cut/cola.png",
@@ -1735,7 +1756,8 @@
    "reference": "_incoming/web-product-images/m-bar-10k/refs/cola.png (SALTHUB maker photo, box + device) + _incoming/web-product-images/m-bar-10k/refs/00-device-sharp.png (device)",
    "fidelitySheet": "_incoming/web-product-images/m-bar-10k/fid/cola.png — IoU 0.979, deltaE max 3.3; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
   },
-  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js · 2026-09-29 re-cut: despeckled (stray alpha specks had shrunk the product 17–35%), new name because /assets is cached 30 days",
+  "fileName": "variant-cola-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/m-bar-10k/out/cut/matcha_latte.png",
@@ -1747,7 +1769,8 @@
    "reference": "_incoming/web-product-images/m-bar-10k/refs/matcha_latte.png (SALTHUB maker photo, box + device) + _incoming/web-product-images/m-bar-10k/refs/00-device-sharp.png (device)",
    "fidelitySheet": "_incoming/web-product-images/m-bar-10k/fid/matcha_latte.png — IoU 0.98, deltaE max 1.9; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
   },
-  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js · 2026-09-29 re-cut: despeckled (stray alpha specks had shrunk the product 17–35%), new name because /assets is cached 30 days",
+  "fileName": "variant-matcha-latte-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/m-bar-10k/out/cut/pink_berry.png",
@@ -1759,7 +1782,8 @@
    "reference": "_incoming/web-product-images/m-bar-10k/refs/pink_berry.png (SALTHUB maker photo, box + device) + _incoming/web-product-images/m-bar-10k/refs/00-device-sharp.png (device)",
    "fidelitySheet": "_incoming/web-product-images/m-bar-10k/fid/pink_berry.png — IoU 0.98, deltaE max 2.6; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
   },
-  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js · 2026-09-29 re-cut: despeckled (stray alpha specks had shrunk the product 17–35%), new name because /assets is cached 30 days",
+  "fileName": "variant-pink-berry-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/m-bar-10k/out/cut/watermelon.png",
@@ -1771,7 +1795,8 @@
    "reference": "_incoming/web-product-images/m-bar-10k/refs/watermelon.png (SALTHUB maker photo, box + device) + _incoming/web-product-images/m-bar-10k/refs/00-device-sharp.png (device)",
    "fidelitySheet": "_incoming/web-product-images/m-bar-10k/fid/watermelon.png — IoU 0.98, deltaE max 2.5; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
   },
-  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js · 2026-09-29 re-cut: despeckled (stray alpha specks had shrunk the product 17–35%), new name because /assets is cached 30 days",
+  "fileName": "variant-watermelon-v2.webp"
  },
  {
   "source": "_incoming/web-product-images/m-bar-10k/out/cut/watermelon_mint.png",
@@ -1783,6 +1808,20 @@
    "reference": "_incoming/web-product-images/m-bar-10k/refs/watermelon_mint.png (SALTHUB maker photo, box + device) + _incoming/web-product-images/m-bar-10k/refs/00-device-sharp.png (device)",
    "fidelitySheet": "_incoming/web-product-images/m-bar-10k/fid/watermelon_mint.png — IoU 0.979, deltaE max 2.7; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
   },
-  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js · 2026-09-29 re-cut: despeckled (stray alpha specks had shrunk the product 17–35%), new name because /assets is cached 30 days",
+  "fileName": "variant-watermelon-mint-v2.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/_card.png",
+  "slug": "muro-connector-20k",
+  "role": "card",
+  "replaces": "/assets/products/muro-connector-20k/card.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, 2 credits (_incoming/web-product-images/muro-connector-20k/out/job-card-1.json)",
+   "reference": "the previous card (vapemun.com retailer photo, 179x414) _incoming/web-product-images/muro-connector-20k/refs/r-card-3q.png + OKAMI clip thumbnail _incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png + the navy side render",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/fid-card.png — IoU 0.989, deltaE max 8.3 (> 6: the honeycomb cells land differently) — used on the owner's explicit OK 29/09 (\"Muro ok ครับ เห็นแล้วสวยคม\")"
+  },
+  "note": "image-fix round 2026-09-29 — sharp 3/4 remake of the 179-px card; background keyed with _incoming/image-fix/flatcut.js (despeckled)",
+  "fileName": "card-v2.webp"
  }
 ]

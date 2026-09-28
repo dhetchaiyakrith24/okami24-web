@@ -79,17 +79,17 @@ export const salthubProducts: Product[] = [
     // The flavour photos are box + device; the card (device alone) stays the first photo (owner 29/09).
     openOnCardPhoto: true,
     flavorVariants: [
-      { id: "all-berry", name: "All Berry", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-all-berry.webp", alt: "SALTHUB M Bar 10K, All Berry — box and device" } },
+      { id: "all-berry", name: "All Berry", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-all-berry-v2.webp", alt: "SALTHUB M Bar 10K, All Berry — box and device" } },
       { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
-      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-cola.webp", alt: "SALTHUB M Bar 10K, Cola — box and device" } },
+      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-cola-v2.webp", alt: "SALTHUB M Bar 10K, Cola — box and device" } },
       { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-grape.webp", alt: "SALTHUB M Bar 10K, Grape — box and device" } },
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
-      { id: "matcha-latte", name: "Matcha Latte", swatchHex: "#7a9a4a", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-matcha-latte.webp", alt: "SALTHUB M Bar 10K, Matcha Latte — box and device" } },
+      { id: "matcha-latte", name: "Matcha Latte", swatchHex: "#7a9a4a", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-matcha-latte-v2.webp", alt: "SALTHUB M Bar 10K, Matcha Latte — box and device" } },
       { id: "menthol-blast", name: "Menthol Blast", swatchHex: "#3ab5c6", availability: "unknown" },
-      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-pink-berry.webp", alt: "SALTHUB M Bar 10K, Pink Berry — box and device" } },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-pink-berry-v2.webp", alt: "SALTHUB M Bar 10K, Pink Berry — box and device" } },
       { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#c9405f", availability: "unknown" },
-      { id: "watermelon-mint", name: "Watermelon Mint", swatchHex: "#4ec9a0", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon-mint.webp", alt: "SALTHUB M Bar 10K, Watermelon Mint — box and device" } },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon.webp", alt: "SALTHUB M Bar 10K, Watermelon — box and device" } },
+      { id: "watermelon-mint", name: "Watermelon Mint", swatchHex: "#4ec9a0", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon-mint-v2.webp", alt: "SALTHUB M Bar 10K, Watermelon Mint — box and device" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon-v2.webp", alt: "SALTHUB M Bar 10K, Watermelon — box and device" } },
       { id: "yellow-mint", name: "Yellow Mint", swatchHex: "#d9d13a", availability: "unknown" },
     ],
     specifications: [
