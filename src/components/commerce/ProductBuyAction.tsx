@@ -42,6 +42,7 @@ export function ProductBuyAction({
   formClassName = "flex flex-col items-start gap-2",
   noteClassName = "text-xs text-foreground-muted hover:text-foreground",
   compact = false,
+  choiceMissingLabel = null,
 }: {
   available: boolean;
   orderingEnabled: boolean;
@@ -52,6 +53,10 @@ export function ProductBuyAction({
   formClassName?: string;
   noteClassName?: string;
   compact?: boolean;
+  /** Image-fix round 2026-09-28: set when the product has options and none is picked yet (a product whose options
+   *  have no photos opens with nothing pre-selected). Not a stock state — "out of stock" must never show for it.
+   *  Cart mode shows a disabled button with this label; LINE mode orders as usual (the chat asks the option). */
+  choiceMissingLabel?: string | null;
 }) {
   const { dict } = useLocale();
 
@@ -71,6 +76,14 @@ export function ProductBuyAction({
         >
           {dict.productActions.outOfStockCta}
         </a>
+      </div>
+    );
+  }
+
+  if (choiceMissingLabel && orderingEnabled) {
+    return (
+      <div className={compact ? "flex" : formClassName}>
+        <span aria-disabled="true" className={cn("inline-flex items-center justify-center rounded-full border border-surface-border text-sm font-semibold tracking-tight text-foreground-muted", compact ? "min-h-11 px-5 py-2.5" : "px-6 py-3")}>{choiceMissingLabel}</span>
       </div>
     );
   }

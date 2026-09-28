@@ -157,6 +157,8 @@ export const en: Dictionary = {
     allVariantsLabel: "All",
     noPhotoFlavor: "No photo of this flavor yet",
     noPhotoColor: "No photo of this color yet",
+    chooseFlavorFirst: "Choose a flavor first",
+    chooseColorFirst: "Choose a color first",
     outOfStockChip: "Out of stock",
     reviewVideoEyebrow: "OKami24 Review",
     watchOnYoutube: "Watch on YouTube",

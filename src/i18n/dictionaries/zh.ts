@@ -152,6 +152,8 @@ export const zh: Dictionary = {
     allVariantsLabel: "全部",
     noPhotoFlavor: "暂无该口味的图片",
     noPhotoColor: "暂无该颜色的图片",
+    chooseFlavorFirst: "请先选择口味",
+    chooseColorFirst: "请先选择颜色",
     outOfStockChip: "缺货",
     reviewVideoEyebrow: "OKami24 评测",
     watchOnYoutube: "在 YouTube 上观看",

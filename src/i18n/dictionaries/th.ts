@@ -167,6 +167,8 @@ export const th: Dictionary = {
     allVariantsLabel: "ทั้งหมด",
     noPhotoFlavor: "ยังไม่มีรูปของกลิ่นนี้",
     noPhotoColor: "ยังไม่มีรูปของสีนี้",
+    chooseFlavorFirst: "เลือกกลิ่นก่อน",
+    chooseColorFirst: "เลือกสีก่อน",
     outOfStockChip: "สินค้าหมด",
     reviewVideoEyebrow: "รีวิวจาก OKami24",
     watchOnYoutube: "ดูบน YouTube",

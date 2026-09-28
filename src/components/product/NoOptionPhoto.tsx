@@ -7,12 +7,16 @@
  */
 export function NoOptionPhoto({ name, swatchHex, note }: { name: string; swatchHex?: string; note: string }) {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-surface-border bg-surface-1/60 p-6 text-center">
+    <div className="flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl p-6 text-center lg:gap-5">
       {swatchHex && (
-        <span aria-hidden className="h-14 w-14 rounded-full border border-surface-border" style={{ backgroundColor: swatchHex }} />
+        <span
+          aria-hidden
+          className="h-16 w-16 rounded-full border border-surface-border lg:h-28 lg:w-28"
+          style={{ backgroundColor: swatchHex, boxShadow: `0 0 80px 10px ${swatchHex}40` }}
+        />
       )}
-      <p className="font-display text-lg font-semibold text-foreground">{name}</p>
-      <p className="text-sm text-foreground-muted">{note}</p>
+      <p className="font-display text-xl font-semibold text-foreground lg:text-3xl">{name}</p>
+      <p className="text-sm text-foreground-muted lg:text-base">{note}</p>
     </div>
   );
 }

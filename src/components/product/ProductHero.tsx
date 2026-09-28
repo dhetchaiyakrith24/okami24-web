@@ -120,7 +120,11 @@ export function ProductHero({
   const hasOptions = (product.colorVariants?.length ?? 0) + (product.flavorVariants?.length ?? 0) > 0;
   const cartVariantId = selectedColor?.id ?? selectedFlavor?.id ?? null;
   const selectedOutOfStock = (selectedColor?.availability ?? selectedFlavor?.availability) === "out-of-stock";
-  const canAddToCart = sellingPrice !== null && !selectedOutOfStock && (!hasOptions || cartVariantId !== null);
+  // "Nothing picked yet" (only on products whose options have no photos — see initialOption) is not "out of stock":
+  // it no longer blocks the buy action; ProductBuyAction gets choiceMissingLabel instead (designer 2026-09-28).
+  const choiceMissing = hasOptions && cartVariantId === null;
+  const choiceMissingLabel = choiceMissing ? ((product.colorVariants?.length ?? 0) > 0 ? dict.product.chooseColorFirst : dict.product.chooseFlavorFirst) : null;
+  const canAddToCart = sellingPrice !== null && !selectedOutOfStock;
   // Data round (owner 2026-09-24): a stat shows only when a verified spec row states the same number.
   const facts = verifiedAttributes(product);
   const hasVerifiedSpecs = verifiedRows(product.specifications).length > 0;
@@ -268,6 +272,7 @@ export function ProductHero({
                   are passed in so this renders exactly as it did when the branch lived here. */}
               <ProductBuyAction
                 available={canAddToCart}
+                choiceMissingLabel={choiceMissingLabel}
                 orderingEnabled={orderingEnabled}
                 slug={product.slug}
                 variantId={cartVariantId}
@@ -354,6 +359,7 @@ export function ProductHero({
       <MobileBuyBar priceText={priceText} optionLabel={selectedOptionLabel}>
         <ProductBuyAction
           available={canAddToCart}
+                choiceMissingLabel={choiceMissingLabel}
           orderingEnabled={orderingEnabled}
           slug={product.slug}
           variantId={cartVariantId}

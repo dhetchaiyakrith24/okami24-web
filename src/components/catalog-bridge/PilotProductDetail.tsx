@@ -92,6 +92,7 @@ export function PilotProductDetail({
   const noPhotoNote = product.optionAxisCode === "color" ? dict.product.noPhotoColor : dict.product.noPhotoFlavor;
   const [selectedVariantId, setSelectedVariantId] = useState(initialVariantId);
   const selectedVariant = product.variants.find((v) => v.id === selectedVariantId);
+  const choiceMissingLabel = photoRule && selectedVariantId === null ? (product.optionAxisCode === "color" ? dict.product.chooseColorFirst : dict.product.chooseFlavorFirst) : null;
   // A selected variant with no photo of its own prefers the neutral fallback (when the product
   // has one — see `variantFallbackImage`'s own doc comment) over the generic product-level card,
   // so an unrelated named variant's photo never reads as "this is what you picked." Products
@@ -211,6 +212,7 @@ export function PilotProductDetail({
                 variantId={selectedVariantId}
                 productName={product.displayName}
                 variantLabel={selectedVariant?.label ?? null}
+                choiceMissingLabel={choiceMissingLabel}
               />
             </div>
           )}
@@ -322,7 +324,7 @@ export function PilotProductDetail({
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
       {showBuy && (
         <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant?.label ?? null}>
-          <ProductBuyAction available={available} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} compact />
+          <ProductBuyAction available={available} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} choiceMissingLabel={choiceMissingLabel} compact />
         </MobileBuyBar>
       )}
     </>

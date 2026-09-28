@@ -185,6 +185,9 @@ export interface Dictionary {
     /** Image-fix round 2026-09-28: the picture slot of a flavour / colour that has no photo of its own (NoOptionPhoto). */
     noPhotoFlavor: string;
     noPhotoColor: string;
+    /** Cart mode only: the buy button while nothing is picked on a product that opens with no option pre-selected. */
+    chooseFlavorFirst: string;
+    chooseColorFirst: string;
     outOfStockChip: string;
     reviewVideoEyebrow: string;
     watchOnYoutube: string;
