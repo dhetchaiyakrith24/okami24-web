@@ -664,6 +664,13 @@ image** and to say "there are many" in words instead:
   supplier directly.** Nobody else should go looking again; when the files arrive they go through
   `scripts/process-images.ts` like any other set.
 
+#### Answered 2026-09-28 — Cool Mint does not exist; removed (replaces the 2026-09-06 answer below)
+- Owner in chat, image-fix round: "M switch กลิ่น cool mint ไม่มีจริงครับ". `cool-mint` is removed from
+  `m-switch-pod` and `m-switch-kit`, and from the Marbo flavour guide lists. The 2026-09-06 entry below is
+  kept as history only.
+- Same message: **Caliburn G4 Pro KOKO "Golden Carbon" is real** ("G4 pro koko สี Golden cabon มีจริง") —
+  it stays in the catalogue although no public source lists it; it still needs a photo.
+
 #### Answered 2026-09-06 — Cool Mint is a real M Switch Pod flavour; keep it
 - Research flagged that salthub.com lists 17 flavours without Cool Mint, and no reseller checked
   carried it either. **The owner confirms Cool Mint is genuinely sold and stays in the catalogue**

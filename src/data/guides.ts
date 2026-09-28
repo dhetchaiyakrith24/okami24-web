@@ -508,7 +508,7 @@ const allGuides: Guide[] = [
           "ชื่อที่มีทั้งผลไม้และคำที่สื่อถึงความเย็น เช่น Watermelon Mint เราจัดไว้สายนี้",
           "M Bar 9K (3 กลิ่น): Blue Ice · Doublemint · Menthol Freeze",
           "M Bar 10K (4 กลิ่น): Blue Ice · Menthol Blast · Watermelon Mint · Yellow Mint",
-          "M Switch Pod (3 กลิ่น): Blue Ice · Cool Mint · Doublemint",
+          "M Switch Pod (2 กลิ่น): Blue Ice · Doublemint",
         ],
       },
       {
@@ -551,7 +551,7 @@ const allGuides: Guide[] = [
     faq: [
       {
         question: "Marbo กลิ่นไหนเย็น",
-        answer: "SALTHUB ไม่ได้บอกระดับความเย็น เราบอกได้แค่ว่าชื่อไหนมีคำที่สื่อถึงความเย็น M Bar 9K มี Blue Ice · Doublemint · Menthol Freeze ส่วน M Bar 10K มี Blue Ice · Menthol Blast · Watermelon Mint · Yellow Mint และ M Switch Pod มี Blue Ice · Cool Mint · Doublemint",
+        answer: "SALTHUB ไม่ได้บอกระดับความเย็น เราบอกได้แค่ว่าชื่อไหนมีคำที่สื่อถึงความเย็น M Bar 9K มี Blue Ice · Doublemint · Menthol Freeze ส่วน M Bar 10K มี Blue Ice · Menthol Blast · Watermelon Mint · Yellow Mint และ M Switch Pod มี Blue Ice · Doublemint",
       },
       {
         question: "Marbo กลิ่นองุ่นมีแบบไหนบ้าง",
@@ -563,7 +563,7 @@ const allGuides: Guide[] = [
       },
       {
         question: "หัว M Switch กับ M Bar กลิ่นเหมือนกันไหม",
-        answer: "ชื่อซ้ำกันหลายกลิ่น เช่น Blue Ice · Cola · Grape · Kyoho Grape · Watermelon แต่เราเทียบได้แค่ชื่อ ไม่ได้เทียบรส บางกลิ่นมีเฉพาะหัว M Switch เช่น Black Berry · Cool Mint · Mango Passion · Strawberry Watermelon",
+        answer: "ชื่อซ้ำกันหลายกลิ่น เช่น Blue Ice · Cola · Grape · Kyoho Grape · Watermelon แต่เราเทียบได้แค่ชื่อ ไม่ได้เทียบรส บางกลิ่นมีเฉพาะหัว M Switch เช่น Black Berry · Mango Passion · Strawberry Watermelon",
       },
     ],
     // Round "clip" (2026-09-27, owner: this clip only — it replaces QptFMwIXbJE "M BAR 9K NEW FLAVOR 2" of round 10B):
