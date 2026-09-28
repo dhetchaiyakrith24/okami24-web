@@ -443,6 +443,8 @@ export const unbrandedProducts: Product[] = [
         sourceUrl: "https://vapemun.com/product/muro-connector-20k/",
       },
     ],
+    // Flavour photos show the printed-label side only; the card (front, honeycomb face) stays the first photo.
+    openOnCardPhoto: true,
     flavorVariants: [
       { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-grape.webp", alt: "Muro Connector 20K, Grape" } },
       { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/muro-connector-20k/variant-watermelon.webp", alt: "Muro Connector 20K, Watermelon" } },

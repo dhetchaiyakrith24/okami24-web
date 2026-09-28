@@ -250,6 +250,13 @@ export interface Product {
    */
   lineupImage?: { src: string; alt: string; sourceName: string };
   /**
+   * Image-fix round 2026-09-29 (owner: the standard product photo comes first): the product page opens on the card
+   * photo with no option picked, and the card stays the first gallery slide, even though the options have photos.
+   * For products whose option photos show another view of the device (e.g. only the printed-label side), so the
+   * card would otherwise vanish from the page. Absent = the page opens on the first option with a photo, as before.
+   */
+  openOnCardPhoto?: boolean;
+  /**
    * A real OKami24-channel review video for this exact product (owner mandate, 2026-09-03 —
    * "map existing review videos to the correct product identities"). Absent unless a specific
    * video was found AND confirmed to genuinely review this exact model — never a loosely-related
