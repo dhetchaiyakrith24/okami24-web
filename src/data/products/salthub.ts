@@ -457,7 +457,7 @@ export const salthubProducts: Product[] = [
     // photos beyond the original 14 (Kyoho Grape, Grape Aloe, Grape Lychee — 17 in all since the
     // owner removed Cool Mint on 2026-09-28) — same "M SWITCH Pod #1" retail-box photography, same evidence tier. This
     // record's own real Shipnity children (Pod-147: Grape Aloe, Strawberry Watermelon, Apple
-    // Aloe) are a subset of this full 18, confirming the list is accurate, not just plausible.
+    // Aloe) are a subset of this full list, confirming the list is accurate, not just plausible.
     // Every source photo is a busy marketing composite (real fruit/liquid-splash imagery, a
     // competing visual style to this catalog's clean-isolated-photo standard) — the NAMES are
     // trustworthy (read directly off each flavor's own labeled box). Image-fix round 2026-09-28 (owner: box + pod
