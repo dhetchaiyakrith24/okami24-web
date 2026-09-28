@@ -1222,12 +1222,12 @@
   }
  },
  {
-  "source": "_incoming/image-fix/higgsfield/m-bar-10k/out/grape-2.cut.png",
+  "source": "_incoming/web-product-images/m-bar-10k/out/grape-2.cut.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "grape",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k, 2 credits (job in _incoming/image-fix/higgsfield/m-bar-10k/out/job-grape-2.json)",
+   "tool": "Higgsfield nano_banana_pro 2k, 2 credits (job in _incoming/web-product-images/m-bar-10k/out/job-grape-2.json)",
    "reference": "_incoming/image-fix/cut/mbar10k/mbar10k_grape.png (SALTHUB salthub.com/wp-content/uploads/2026/02/mbar10k_grape.webp, box + device) + public/assets/products/m-bar-10k/card.webp (device)",
    "fidelitySheet": "_incoming/image-fix/fid/mbar10k-grape.png — IoU 0.995, deltaE max 1.8; box labels 3 MODE / ECO / SOFT / BOOST / GRAPE read by eye"
   },
