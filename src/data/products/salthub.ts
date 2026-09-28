@@ -367,27 +367,28 @@ export const salthubProducts: Product[] = [
     // Real flavor lineup for the included starter cartridge — tier-1, verified against
     // salthub.com's own m-switch-kit/ page (per-flavor official product photos, same list as
     // the standalone M Switch Pod cartridge below — 17 since Cool Mint was removed 2026-09-28). `availability: "unknown"` — no live Shipnity
-    // stock signal for this Legacy record. Images (image-fix round 2026-09-28): the maker's own transparent
-    // kit renders m_switch_kit_flavor_01…16 (starter box + device); the maker has none for Kyoho Grape.
+    // stock signal for this Legacy record. Image-fix round 2026-09-28: the maker's kit renders
+    // (m_switch_kit_flavor_01…16) went live and were withdrawn the same day — they show the newer black COTTON MESH
+    // pod, while the shop's own M SWITCH 15K clips show clear pods on the device; not proven to match stock.
     flavorVariants: [
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
       // Cool Mint removed 2026-09-28: the owner confirms it does not exist (reverses the 2026-09-06 "keep it" ruling, BSOT §21).
-      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-apple-aloe.webp", alt: "SALTHUB M Switch Kit, Apple Aloe — box and device" } },
-      { id: "black-berry", name: "Black Berry", swatchHex: "#3a2a4e", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-black-berry.webp", alt: "SALTHUB M Switch Kit, Black Berry — box and device" } },
-      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-blue-ice.webp", alt: "SALTHUB M Switch Kit, Blue Ice — box and device" } },
-      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-cola.webp", alt: "SALTHUB M Switch Kit, Cola — box and device" } },
-      { id: "doublemint", name: "Doublemint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-doublemint.webp", alt: "SALTHUB M Switch Kit, Doublemint — box and device" } },
-      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#7a5a9e", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-grape-aloe.webp", alt: "SALTHUB M Switch Kit, Grape Aloe — box and device" } },
-      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-grape.webp", alt: "SALTHUB M Switch Kit, Grape — box and device" } },
-      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9a6ab0", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-grape-lychee.webp", alt: "SALTHUB M Switch Kit, Grape Lychee — box and device" } },
-      { id: "mango-passion", name: "Mango Passion", swatchHex: "#e0a03a", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-mango-passion.webp", alt: "SALTHUB M Switch Kit, Mango Passion — box and device" } },
-      { id: "mixberry", name: "Mixberry", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-mixberry.webp", alt: "SALTHUB M Switch Kit, Mixberry — box and device" } },
-      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e08a7a", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-peach-strawberry.webp", alt: "SALTHUB M Switch Kit, Peach Strawberry — box and device" } },
-      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-pink-berry.webp", alt: "SALTHUB M Switch Kit, Pink Berry — box and device" } },
-      { id: "strawberry", name: "Strawberry", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-strawberry.webp", alt: "SALTHUB M Switch Kit, Strawberry — box and device" } },
-      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#d9607a", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-strawberry-watermelon.webp", alt: "SALTHUB M Switch Kit, Strawberry Watermelon — box and device" } },
-      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e0709a", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-watermelon-bubblegum.webp", alt: "SALTHUB M Switch Kit, Watermelon Bubblegum — box and device" } },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-watermelon.webp", alt: "SALTHUB M Switch Kit, Watermelon — box and device" } },
+      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown" },
+      { id: "black-berry", name: "Black Berry", swatchHex: "#3a2a4e", availability: "unknown" },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
+      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown" },
+      { id: "doublemint", name: "Doublemint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#7a5a9e", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown" },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9a6ab0", availability: "unknown" },
+      { id: "mango-passion", name: "Mango Passion", swatchHex: "#e0a03a", availability: "unknown" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#8e3a6b", availability: "unknown" },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e08a7a", availability: "unknown" },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#c9405f", availability: "unknown" },
+      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#d9607a", availability: "unknown" },
+      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e0709a", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
     ],
     specifications: [
       // Data round (2026-09-24, real browser): salthub.com product box "M SWITCH KIT · 15000 Puffs · Cotton Mesh Coil ·
