@@ -1232,17 +1232,5 @@
    "fidelitySheet": "_incoming/image-fix/fid/mbar10k-grape.png — IoU 0.995, deltaE max 1.8; box labels 3 MODE / ECO / SOFT / BOOST / GRAPE read by eye"
   },
   "note": "image-fix round 2026-09-29 — OKami24 Higgsfield remake of the maker's own Grape photo (owner ruling IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed off with _incoming/image-fix/flatcut.js (border flood, t0 6 / t1 42, colour un-mixing)"
- },
- {
-  "source": "_incoming/image-fix/higgsfield/nexbar-18k/out/grape-ice-1.bgr.png",
-  "slug": "nexbar-clear-18k",
-  "role": "variant",
-  "id": "grape-ice",
-  "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k (2 credits) + image_background_remover (1 credit); jobs in _incoming/image-fix/higgsfield/nexbar-18k/out/",
-   "reference": "body = the shop's own clip thumbnail i.ytimg.com/vi/YhtKKjRwF3Q (real nexBAR 18K Grape Ice, clear shell) + public/assets/products/nexbar-clear-18k/card.webp (shell detail); flavour = siam-pod.com NexBar 12000 Grape Ice (sibling, name only)",
-   "fidelitySheet": "_incoming/image-fix/fid/nexbar-grape-ice-vs-clip.png — checked by eye against the shop's clip (GRAPE ICE · NEX white / BAR blue · WOTOFO · clear shell over carbon). Numbers vs our card FAIL (_incoming/image-fix/fid/nexbar-grape-ice.json: IoU 0.757, deltaE max 62.6) and are not usable: the card is another design (\"Lemon Lime\" striped wrap, 3/4 angle, side screen) with a broken cut-out; the clip frame (dark stage, green glow) cannot be cut for an IoU — two-layer case of IMAGE_SPEC §7."
-  },
-  "note": "image-fix round 2026-09-29 — two-layer reference per IMAGE_SPEC §0 item 7 (body from the model the shop ships, flavour from the sibling-model photo)"
  }
 ]

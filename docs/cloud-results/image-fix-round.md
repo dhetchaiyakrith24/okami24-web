@@ -103,6 +103,14 @@ with the cartoon project). Nano Banana Pro at 2K = 2 credits per image, backgrou
 - Sharpness gate PASS (Grape 10.83 vs card 10.86; Grape Ice 9.6 vs card 7.6). 7 credits used, 30.1 left.
 - The Nexbar page now opens on Grape Ice (existing rule in the product page: open on the first flavour with its own
   photo) and no longer shows the "Lemon Lime" card slide.
+- **Owner 29/09: M Bar 10K Grape passes ("สวยเหมือนของแบรนด์จริง"); Nexbar Grape Ice = WRONG PRODUCT, withdrawn before
+  merge.** The shop sells the **Nexbar CLEAR 18K** (rounded clear body, clear tank on top, black band at the bottom
+  printed "nexBar CLEAR 18K" + flavour; 18 mL · 650 mAh · dual Nex Mesh coil · adjustable airflow · Type-C · 2 modes
+  Normal/Turbo · 15 flavours incl. Strawberry Custard — owner's photos in
+  `_incoming/image-fix/higgsfield/nexbar-clear-18k-owner/`). The carbon "NEX BAR / WOTOFO" device on our card, in the
+  shop's clip and in the render is WOTOFO nexBAR 18K, another product with a similar name. Lesson: check the reference
+  is the model the shop SELLS (the name printed on the device = the product name), not just that the render matches the
+  reference. The product page itself (brand, spec, flavours, card) is a data fix of its own.
 
 ## Step 3 — Higgsfield trial kit (not run: Friday cannot log in)
 
