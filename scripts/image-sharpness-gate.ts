@@ -13,6 +13,8 @@
  *                 crisper. A modified file must reach >= 90% of the file it replaces; an added variant file must
  *                 reach >= 90% of the product's own card (what the customer saw before the new photo). Lineups: canvas
  *                 check only (a strip → grid layout change moves the number without any blur).
+ *   restored    — a modified file byte-identical to an earlier version of the same path on <base> passes as
+ *                 "restored" (putting back photos the site already showed, owner 28/09).
  * Prints one line per file and ends with PASS or FAIL. It judges pixels, not taste — the owner still sees the 3x /
  * 1440 before/after before the merge (IMAGE_SPEC §7).
  */
@@ -61,6 +63,18 @@ async function phoneSharp(buf: Buffer): Promise<{ canvas: number; sharp: number;
   return { canvas: Math.max(W, H), sharp: n ? Math.round((lap / n) * 100) / 100 : 0, productLong: Math.max(pw, ph) };
 }
 
+// A modified file that is byte-identical to an earlier version of the same path in <base>'s history is a restore of
+// a file the site already showed (owner 28/09: "back to the pre-round photos") — the gate compares new pixels
+// against old ones, it is not a reason to refuse putting the old ones back. Returns that earlier commit, or null.
+function restoredFrom(f: string): string | null {
+  const blob = git(["hash-object", "--", f]).toString().trim();
+  const commits = git(["rev-list", base, "--", f]).toString().trim().split(/\r?\n/).filter(Boolean);
+  for (const c of commits.slice(1)) {
+    try { if (git(["rev-parse", `${c}:${f}`]).toString().trim() === blob) return c; } catch { /* path absent there */ }
+  }
+  return null;
+}
+
 function cardOf(dir: string): string | null {
   for (const n of ["card.webp", "card.png", "card.jpg"]) {
     try { git(["cat-file", "-e", `${base}:${dir}/${n}`]); return `${dir}/${n}`; } catch { /* next */ }
@@ -76,6 +90,8 @@ function cardOf(dir: string): string | null {
   for (const [st, f] of rows) {
     const name = path.basename(f);
     const isDetail = /^(angle|detail)-/.test(name);
+    const restored = st === "M" ? restoredFrom(f) : null;
+    if (restored) { console.log(`ok    ${f}  restored — byte-identical to ${restored.slice(0, 7)} (${base} history)`); continue; }
     const now = await phoneSharp(readFileSync(path.join(ROOT, f)));
     const problems: string[] = [];
     if (!isDetail && now.canvas < MIN_CANVAS) problems.push(`canvas ${now.canvas} < ${MIN_CANVAS}`);
