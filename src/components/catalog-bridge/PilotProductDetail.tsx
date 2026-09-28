@@ -84,11 +84,14 @@ export function PilotProductDetail({
   const isPublished = product.publicationStatus === "published";
   // Image-fix round 2026-09-28 (owner: a colour/flavour without its own photo must never show another option's
   // photo): on a colour/flavour axis with 2+ options and no neutral fallback, an option without a photo gets the
-  // NoOptionPhoto panel instead of the product card, and the page opens on an option that has a photo — or, when
-  // none has one, on the product photo with nothing pre-selected. Every other product renders exactly as before.
+  // NoOptionPhoto panel instead of the product card, and the page opens on the product photo with nothing
+  // pre-selected (see initialVariantId). Every other product renders exactly as before.
   const photoRule = product.variants.length >= 2 && !product.variantFallbackImage && (product.optionAxisCode === "color" || product.optionAxisCode === "flavor");
   const lacksOwnPhoto = (v: { image?: unknown } | undefined) => photoRule && !!v && !v.image;
-  const initialVariantId = photoRule ? (product.variants.find((v) => v.image)?.id ?? null) : (product.variants[0]?.id ?? null);
+  // 2026-09-29 (owner: the standard product photo comes first): under the photo rule the page always opens on the
+  // product card with nothing picked — even when options have photos — so a device whose flavour photos show only its
+  // pods (ESKO BAR SWITCH) never loses its device photo from the gallery.
+  const initialVariantId = photoRule ? null : (product.variants[0]?.id ?? null);
   const noPhotoNote = product.optionAxisCode === "color" ? dict.product.noPhotoColor : dict.product.noPhotoFlavor;
   const [selectedVariantId, setSelectedVariantId] = useState(initialVariantId);
   const selectedVariant = product.variants.find((v) => v.id === selectedVariantId);
