@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v85 · 2026-09-29 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v86 · 2026-09-29 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -847,58 +847,72 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-(v85 — written by doc-keeper at a batch close, round "รอบรูป-แก้" (still OPEN), third computer-round chat, 29/09.
-Context at this close: 432k/1M [เชื่อว่า — reported by the main agent].)
-1 main: `git fetch && git log -1 --oneline origin/main` → `e02cb59` (merge PR #107) [ตรวจแล้ว 29/09].
-  This round merged (all live): #104 (Esko, `c724130`) · #105 (rule: image PRs merged by Friday after her own gates,
-  comparison in the report; exceptions = a new kind of image or an unclear reference model — IMAGE_SPEC §7,
-  .claude/TEAM_RULES.md 13.7) · #106 (Muro Connector 20K 20/20 flavour photos + `Product.openOnCardPhoto`) · #107
-  (M Bar 10K 6 more flavours + `openOnCardPhoto`) [เชื่อว่า — reported by the main agent] — all live except #107's
-  deploy, in progress. No tag yet (round not closed). Rollback = revert the merge commit of the PR in question.
-2 ahead of main: branch `image-fix-docs` = `git log --oneline origin/main..image-fix-docs` → this docs commit
-  `4ad8375` (round record + lesson 12) [ตรวจแล้ว — `git status`] + this §16 edit; neither checked by checker yet.
-  No PR opened for this branch yet [ยังไม่มีข้อมูล] — docs-only = small under 13.7, Friday merges once checker
-  passes, no owner wait needed.
-3 round: "รอบรูป-แก้" (image fix, computer round) — OPEN, batch closed this chat (third computer-round chat, 29/09
-  night). Instruction files: `docs/rounds/รอบรูป-แก้-คำตัดสิน-28-09.txt` (start here) +
-  `docs/rounds/รอบรูป-แก้ก้อน1-2.txt`. Full record with every number: `docs/cloud-results/image-fix-round.md`
-  section "Third chat (29/09 night)".
-  Owner answers this chat (relayed by Javis) settle v84 items 4(a)-4(d): (a) PR #104 merged, live; (b) keep the
-  WOTOFO brand and its footer link untouched, list 1-2 real WOTOFO models/flavours from wotofo.com (owner names
-  them, do not guess) — Nexbar (Pod-180) itself gets NO brand, needs brandless-brand support in code, and must ship
-  together with the WOTOFO products so `/brands/wotofo` is never left empty; (c) the printed "18K" = 18,000 puffs;
-  (d) image-theft protection A+B+C = its own round after this one (A = "OKami24" + okami24.store watermark/metadata).
-  NEXBAR CLEAR 18K (Pod-180) plan — updated 29/09, replaces the v84 line "delete the WOTOFO brand" [เชื่อว่า —
-  reported plan, not yet built]: brand → none for Nexbar, like the legacy Muro products; needs brandless-brand
-  support in roughly 10 files (`active-catalog-to-product-master.ts` TaxonomyMatch type + Pod-180 entry,
-  `product-master-schema.ts:393` published-null rule, `storefront-preview-read-model.ts` toView/brandName,
-  `products/[slug]/page.tsx` JSON-LD brand guard, HomeProductIndex, PilotProductDetail badge, PilotProductCard,
-  catalog-index/CompareTool/ProductPicker types, storefront-bridge search, contract tests); must ship together with
-  the WOTOFO products in the same PR.
-  First next step: M Bar 10K, 5 flavours left (Blue Ice, Kyoho Grape, Menthol Blast, Strawberry Kiwi, Yellow Mint)
-  — idea: cut the prop (leaf/grape) out of the maker's reference photo first, then add the passed Grape render as
-  reference 3. Then: M Switch 15K kit + pod, M Bar 9K 22, Muro SC 8000 8, Mood Monster 6, Muro 3ml 4, G4 Pro KOKO 2,
-  zero-cartridge 2, hidden products. Higgsfield credits 451.1 left (owner's Ultra plan, shared with the cartoon
-  project). No background job reported running at this close.
+(v86 — written by doc-keeper at a batch close + chat move (context ~580k before the move, next work long),
+round "รอบรูป-แก้" (still OPEN). Fourth computer-round chat starts from this block, 29/09 night.)
+1 main: `git fetch && git log -1 --oneline origin/main` → `6486ef1` (merge PR #109) [ตรวจแล้ว — seen in the git
+  status snapshot at this chat's start]. Since v85's `e02cb59`: #108 merged (`d1b3418` — docs: round record, lesson 12,
+  HANDOFF §16 v85) then #109 merged (`6486ef1` — M Bar 10K stale-cache fix + despeckle → replaced
+  photos ship as `*-v2.webp`; Muro Connector card-v2; new `scripts/flatcut.js` + `scripts/stale-image-audit.js`;
+  `process-images` gained a `fileName` field) [เชื่อว่า — "live" verified by the main agent's curl, not
+  independently re-checked here]. No tag yet (round not closed). Rollback = revert the merge commit of the PR in
+  question (#108 or #109).
+2 ahead of main: branch `image-fix-docs2` = 1 docs commit (round record "Third chat, second part", lesson พ6, this
+  §16 v86) — pushed; PR opened by the main agent at the move; checker + merge = first step of the next chat if the
+  move happens before they finish (`gh pr list --head image-fix-docs2`).
+3 round: "รอบรูป-แก้" (image fix) — OPEN. This close = batch close + chat move, not a round close. Full record:
+  `docs/cloud-results/image-fix-round.md` section "Third chat, second part (29/09 night)". No background job
+  running at this close.
+  Owner's second set of answers (via Javis) closed v85's waiting items 4(1)-4(3): WOTOFO — Friday picks 1-2
+  models with full official data from wotofo.com, only so the brand page is not empty (SEO reason); Nexbar Clear
+  18K — Friday finds photos/spec herself, the owner's own photos in
+  `_incoming/image-fix/higgsfield/nexbar-clear-18k-owner/` plus the older refs in
+  `_incoming/web-product-images/nexbar-clear-18k/refs/` win on any conflict, remake with Higgsfield when the
+  product is not a standard shape; Muro Connector card-v2 = use it (done, shipped live in #109).
+  Next step, in this order (owner-set, this chat):
+  (1) Nexbar Clear 18K + WOTOFO in ONE PR — brandless-brand support, roughly 10 files, v85's file list still
+      applies (`active-catalog-to-product-master.ts` TaxonomyMatch + Pod-180 entry, `product-master-schema.ts:393`
+      published-null rule, `storefront-preview-read-model.ts` toView/brandName, `products/[slug]/page.tsx`
+      JSON-LD brand guard, HomeProductIndex, PilotProductDetail badge, PilotProductCard, catalog-index /
+      CompareTool / ProductPicker types, storefront-bridge search, contract tests) + the WOTOFO product(s); 18K =
+      18,000 puffs, spec from the owner's poster. BIG PR (13.7) — tell the owner briefly before merge.
+  (2) (D) out-of-stock flavours keep their photo + add a "suggestion" (another in-stock flavour/model, or LINE) —
+      known case: Esko 18/20 out of stock. New UI piece → designer first (13.12 #4).
+  (3) M Bar 10K, 5 flavours left (Blue Ice, Kyoho Grape, Menthol Blast, Strawberry Kiwi, Yellow Mint) — clean the
+      maker's-photo prop (leaf/grape) out of the reference first, then add the passed Grape render as reference 3
+      (lesson 12).
+  (4) (C) card sweep, every visible product's card — Javis's live list: cards under 800 px (e.g. Caliburn G5 /
+      G5 Lite / G5 Lite SE / G3 Pro / G4 Classic, Argus G3 Mini, Drag, Muro SC / 3ML); Coil cards on white
+      background; 7 products with no card at all (argus-g4-mini, argus-p3, vinci-s, vmate-i3, drag-s3, drag-x3,
+      muro-3ml). Baseline pages under `TITLE_PRICE_HOLD_UNTIL_2026_10_05` (drag-6, drag-s3, caliburn-g5-lite-se,
+      m-bar-15k, caliburn-g5, caliburn-g5-lite, argus-g4) — do NOT touch until 06/10.
+  (5) (B) prefer angled / three-quarter views going forward (the Muro card is the style the owner likes).
+  Standing rule from this chat: every replaced photo ships under a new file name (`fileName` … `-v2`, lesson พ6)
+  — never reuse an old name; after-shots come from the LIVE site after merge, not the dev server (lesson พ6 —
+  Friday's own before/after this chat missed the stale-cache bug because it was shot from dev).
+  Higgsfield credits: 451.1 left, unchanged this part — warn the owner before a shop-wide image job would cross
+  it.
 4 waiting on owner:
-  (1) which WOTOFO models/flavours to list on the site (from wotofo.com, official) — do not guess
-  (2) owner's own Nexbar Clear 18K photos + spec (2 refs already in
-      `_incoming/web-product-images/nexbar-clear-18k/refs/`)
-  (3) Muro Connector card remake `_incoming/web-product-images/muro-connector-20k/out/card-1.png` — failed the
-      colour check (ΔE max 8.3) — use it or keep the current card
-  (4) carried from v84: 4(e) Muro Connector's category — owner says it is a third-party pod for "Relx Connect";
-      Friday's evidence (shops + OKAMI's own clip) says RELX **Creator** [รอเจ้าของ] · 4(f) SALTHUB per-flavour
-      file request `_incoming/image-fix/ขอไฟล์รูป-SALTHUB.txt`, no-photo panel wording A/B/C, M Switch card shows
-      the black pod, v81/v79 items
-  (5) stray worktrees `_incoming/wt-main`, `_incoming/checker-wt` — remove once the owner agrees
-5 open questions: items 4(1)-4(4) above (item 4(5) is a removal, not a question) · whether the Muro Connector card
-  remake in 4(3) ships once a colour check passes, or the current card stays permanently either way.
-6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`, unchanged this close —
-  this batch ran the light set only, per 13.12): tsc 0 · verify:commerce 17/17 · verify:catalog --full 32/32 ·
-  count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  This chat (light set, not a full close) [เชื่อว่า — reported by the main agent]: tsc 0 · verify:catalog (fast)
-  29/29 · sharpness gate PASS on #106 (20/20) and #107 (6/6) · checker #105 4/4, #106 6/6 + re-check 3/3, #107 5/5 ·
-  m-bar-15k HTML identical before/after (html-diff).
+  (1) image-theft protection A+B+C — its own round, after this one (A = "OKami24" + okami24.store
+      watermark/metadata) — carried from v84/v85, not started
+  (2) Muro Connector's category — owner says third-party pod for "Relx Connect"; Friday's evidence (shops +
+      OKAMI's own clip) says RELX **Creator** [รอเจ้าของ] — carried from v84/v85, unresolved
+  (3) SALTHUB per-flavour file request `_incoming/image-fix/ขอไฟล์รูป-SALTHUB.txt`, no-photo panel wording
+      A/B/C, M Switch card shows the black pod, v81/v79 items — carried, unresolved
+  (4) stray worktrees `_incoming/wt-main`, `_incoming/checker-wt` — remove once the owner agrees — carried,
+      unresolved
+  (5) new this close: Cloudflare cache purge, or a cache rule that respects the `Accept` header (found this
+      chat: Cloudflare flips WebP/JPEG on the same URL because it caches without `Accept`) — owner's Cloudflare
+      dashboard, not code
+5 open questions: item 4(2) above (Muro Connector category) · item 4(5) above (worth a Cloudflare Accept-header
+  cache rule, or leave as-is) · whether the other 96 of the 97 audited product images (only M Bar 10K was found
+  stale this time, `scripts/stale-image-audit.js`) need the same check again after future photo swaps.
+6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`, unchanged since v85 —
+  this batch and the one before it both ran the light set only, per 13.12): tsc 0 · verify:commerce 17/17 ·
+  verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate
+  104/104.
+  This chat (light set, not a full close) [เชื่อว่า — reported by the main agent]: checker on PR #109 5/6 → one
+  description line fixed → re-check pass · sharpness gate 27/27 · tsc 0 · verify:catalog (fast) 29/29 ·
+  stale-image audit 97 product images checked, only M Bar 10K found affected.
 (context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
 

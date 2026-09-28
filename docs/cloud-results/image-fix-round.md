@@ -141,6 +141,26 @@ Higgsfield: 525.1 → 451.1 credits (74 used; 2 of them a stray job Friday start
 - Next idea for the 5 left: clean the maker's photo first (cut the leaf/grape out of the reference) and give the
   passed Grape render as reference 3 — the extra reference fixed All Berry on try 3.
 
+## Third chat, second part (29/09 night) — owner's second set of answers, M Bar sharpness (PR #109)
+
+Owner answers (via Javis): WOTOFO — Friday picks 1–2 models with full official data (wotofo.com), only so the brand page
+is not empty (SEO); Nexbar Clear 18K — Friday finds photos/spec herself (owner photos in
+`_incoming/image-fix/higgsfield/nexbar-clear-18k-owner/` win on conflict), remake when not standard; Muro card-1 = use;
+new: (A) M Bar flavour photos not sharp on the live site · (B) try three-quarter/angled views (the Muro card is the style
+the owner likes) · (C) check every card (not hidden products): official source first, else Higgsfield · (D) out-of-stock
+flavours (Esko 18/20) keep their photo and need a "suggestion" (other flavour / LINE).
+- **(A) cause, measured:** Cloudflare served the withdrawn 28/09 soft photos (625-px canvas) for the same file names —
+  `/_next/image?…variant-pink-berry.webp&w=1080` returned 625×625 in 5 of 9 requests (`_incoming/web-product-images/
+  m-bar-10k/sharp/probe.log`; checker reproduced 7/9). Second, smaller cause: stray specks in the cut-outs put the product
+  at 697–820 px instead of 840. Fix (#109): `scripts/flatcut.js` despeckles; replaced photos ship as `*-v2.webp`
+  (`process-images` `fileName`). Live after deploy: M Bar Pink Berry at real phone pixels 2.9× more edge detail (Laplacian
+  404 vs 139). Audit of all 97 product images replaced in 30 days (`scripts/stale-image-audit.js`,
+  `_incoming/cache-audit/report.md`): no other product served stale. Cloudflare also flips WebP/JPEG for the same URL
+  (it caches without the Accept header) — a Cloudflare setting, owner's dashboard.
+- Muro Connector card-v2 live (3/4 view, 840 px). Credits unchanged this part (451.1).
+- Not started (next chat): Nexbar + WOTOFO (one PR), (D) out-of-stock suggestion, (B) angled views, (C) card sweep —
+  from the live audit Javis listed (cards < 800 px, white-background Coil cards, 7 products with no card).
+
 ## Step 3 — Higgsfield trial kit (not run: Friday cannot log in)
 
 `_incoming/image-fix/higgsfield/m-bar-10k/` — `refs/` (the live card as device truth + 12 flavour cut-outs on flat grey),
