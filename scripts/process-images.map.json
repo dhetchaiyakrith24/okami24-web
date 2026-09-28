@@ -1712,5 +1712,77 @@
    "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
   },
   "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/m-bar-10k/out/cut/all_berry-3.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "all-berry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, attempt 3 (6 credits in total for this flavour; job _incoming/web-product-images/m-bar-10k/out/job-all_berry-3.json)",
+   "reference": "_incoming/web-product-images/m-bar-10k/refs/all_berry.png (SALTHUB maker photo, box + device) + _incoming/web-product-images/m-bar-10k/refs/00-device-sharp.png (device) + _incoming/web-product-images/m-bar-10k/out/grape-2.png (the owner-passed Grape render, style)",
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/fid/all_berry-3.png — IoU 0.979, deltaE max 1.8; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
+  },
+  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/m-bar-10k/out/cut/cola.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "cola",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, attempt 1 (2 credits in total for this flavour; job _incoming/web-product-images/m-bar-10k/out/job-cola-1.json)",
+   "reference": "_incoming/web-product-images/m-bar-10k/refs/cola.png (SALTHUB maker photo, box + device) + _incoming/web-product-images/m-bar-10k/refs/00-device-sharp.png (device)",
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/fid/cola.png — IoU 0.979, deltaE max 3.3; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
+  },
+  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/m-bar-10k/out/cut/matcha_latte.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "matcha-latte",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, attempt 1 (2 credits in total for this flavour; job _incoming/web-product-images/m-bar-10k/out/job-matcha_latte-1.json)",
+   "reference": "_incoming/web-product-images/m-bar-10k/refs/matcha_latte.png (SALTHUB maker photo, box + device) + _incoming/web-product-images/m-bar-10k/refs/00-device-sharp.png (device)",
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/fid/matcha_latte.png — IoU 0.98, deltaE max 1.9; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
+  },
+  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/m-bar-10k/out/cut/pink_berry.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "pink-berry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, attempt 2 (4 credits in total for this flavour; job _incoming/web-product-images/m-bar-10k/out/job-pink_berry-2.json)",
+   "reference": "_incoming/web-product-images/m-bar-10k/refs/pink_berry.png (SALTHUB maker photo, box + device) + _incoming/web-product-images/m-bar-10k/refs/00-device-sharp.png (device)",
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/fid/pink_berry.png — IoU 0.98, deltaE max 2.6; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
+  },
+  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/m-bar-10k/out/cut/watermelon.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "watermelon",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, attempt 2 (4 credits in total for this flavour; job _incoming/web-product-images/m-bar-10k/out/job-watermelon-2.json)",
+   "reference": "_incoming/web-product-images/m-bar-10k/refs/watermelon.png (SALTHUB maker photo, box + device) + _incoming/web-product-images/m-bar-10k/refs/00-device-sharp.png (device)",
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/fid/watermelon.png — IoU 0.98, deltaE max 2.5; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
+  },
+  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/m-bar-10k/out/cut/watermelon_mint.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "watermelon-mint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, attempt 1 (2 credits in total for this flavour; job _incoming/web-product-images/m-bar-10k/out/job-watermelon_mint-1.json)",
+   "reference": "_incoming/web-product-images/m-bar-10k/refs/watermelon_mint.png (SALTHUB maker photo, box + device) + _incoming/web-product-images/m-bar-10k/refs/00-device-sharp.png (device)",
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/fid/watermelon_mint.png — IoU 0.979, deltaE max 2.7; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
+  },
+  "note": "image-fix round 2026-09-29 — same template as the owner-passed Grape (IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
  }
 ]
