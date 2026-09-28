@@ -1472,5 +1472,245 @@
    "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
   },
   "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/blue-ice.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "blue-ice",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (navy: black body, navy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-mineral-water-1.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Blue-Ice-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/double-mint.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "double-mint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (navy: black body, navy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-mineral-water-1.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-DoubleMint-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/mineral-water.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "mineral-water",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (navy: black body, navy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-mineral-water-1.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-MineralWater-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/cool-mint.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "cool-mint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (navy: black body, navy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-mineral-water-1.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Cool-mint-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/apple-baraku.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "apple-baraku",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (red: black body, burgundy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-red.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Apple-baraku-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/cola.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "cola",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (red: black body, burgundy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-red.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Cola-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/watermelon.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "watermelon",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (red: black body, burgundy mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-red.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Watermelon-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/grape.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (purple: black body, dark purple mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-purple.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Grape-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/mix-berries.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "mix-berries",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (purple: black body, dark purple mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-purple.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Mixberry-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/kyoho-grape.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "kyoho-grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (purple: black body, dark purple mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-purple.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Kyoho-Grape-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/banana-strawberry.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "banana-strawberry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Banana-Strawberry-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/honey-lemon.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "honey-lemon",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Honey-Lemon-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/pineapple.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "pineapple",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Pineapple-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/yakult.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "yakult",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Connector-Yakult-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/green-tea.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "green-tea",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Green-Tea-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/lemon-jeez.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "lemon-jeez",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Lemon-Jeez-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/taro-ice-cream.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "taro-ice-cream",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Taro-Ice-Cream-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/vanilla-ice-cream.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "vanilla-ice-cream",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (yellow: yellow body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-rc-yellow.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Vanilla-Ice-Cream-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/pink-berry.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "pink-berry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (pink: pink body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-master-pink.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Pink-Berry-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/muro-connector-20k/out/cut/strawberry-peach.png",
+  "slug": "muro-connector-20k",
+  "role": "variant",
+  "id": "strawberry-peach",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — one master per body colour (pink: pink body and mouthpiece, 2 credits, _incoming/web-product-images/muro-connector-20k/out/job-master-pink.json); the printed flavour name re-typeset in Lato Bold by _incoming/web-product-images/muro-connector-20k/label.js, no AI redraw",
+   "reference": "device + label layout: OKAMI's own clip thumbnail i.ytimg.com/vi/Mp0QbGUX3gU (_incoming/web-product-images/muro-connector-20k/refs/r-clip-labels.png, Mineral Water + Banana Strawberry pods) · body colour: vapemun.com flavour poster _incoming/web-product-images/muro-connector-20k/refs/conn-Muro-Strawberry-Peach-20000-Puffs-Vapemun.webp (reference only — the posters reuse one device per colour, so the name comes from the product data)",
+   "fidelitySheet": "_incoming/web-product-images/muro-connector-20k/labels-sheet.png + out/calib.png (typeset vs render, ±1 px) — every letter read by eye; side view checked by eye against the clip (a dark-stage photo, cannot be keyed for the IoU number)"
+  },
+  "note": "image-fix round 2026-09-29 — IMAGE_SPEC §0 item 7, two-layer references; flat #E9E9EC background keyed with _incoming/image-fix/flatcut.js"
  }
 ]
