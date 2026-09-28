@@ -1232,5 +1232,245 @@
    "fidelitySheet": "_incoming/image-fix/fid/mbar10k-grape.png — IoU 0.995, deltaE max 1.8; box labels 3 MODE / ECO / SOFT / BOOST / GRAPE read by eye"
   },
   "note": "image-fix round 2026-09-29 — OKami24 Higgsfield remake of the maker's own Grape photo (owner ruling IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed off with _incoming/image-fix/flatcut.js (border flood, t0 6 / t1 42, colour un-mixing)"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/apple-aloe.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "apple-aloe",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-apple-aloe.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/apple-aloe.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/blueberry-jam.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "blueberry-jam",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-blueberry-jam.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/blueberry-jam.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/blueberry.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "blueberry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-blueberry.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/blueberry.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/chocolate-mint.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "chocolate-mint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-chocolate-mint.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/chocolate-mint.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/coconut.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "coconut",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-coconut.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/coconut.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/cola.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "cola",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-cola.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/cola.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/cool-mint.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "cool-mint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-cool-mint.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/cool-mint.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/extra-menthol.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "extra-menthol",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-extra-menthol.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/extra-menthol.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/grape.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-grape.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/grape.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/honeydew.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "honeydew",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-honeydew.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/honeydew.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/lychee.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "lychee",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-lychee.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/lychee.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/mango.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "mango",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-mango.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/mango.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/mix-berry.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "mix-berry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-mix-berry.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/mix-berry.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/pineapple.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "pineapple",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-pineapple.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/pineapple.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/pink-guava.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "pink-guava",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-pink-guava.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/pink-guava.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/strawberry-banana.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "strawberry-banana",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-strawberry-banana.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/strawberry-banana.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/strawberry.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "strawberry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-strawberry.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/strawberry.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/watermelon-ice.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "watermelon-ice",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-watermelon-ice.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/watermelon-ice.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/watermelon-lime.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "watermelon-lime",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-watermelon-lime.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/watermelon-lime.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/yogurt.png",
+  "slug": "pod-159",
+  "role": "variant",
+  "id": "yogurt",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-yogurt.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/yogurt.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "image-fix round 2026-09-29 — owner Q3: same body for every flavour → one master + exact text; background keyed with _incoming/image-fix/flatcut.js"
  }
 ]
