@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v82 · 2026-09-28 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v83 · 2026-09-28 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -847,53 +847,60 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-(v82 — written by doc-keeper at the image-round close, 13.6 · checker PASS 6/6 on `94f1321` (no site change, script
-  lint/tsc, headline counts re-run independently, 4 fact spot-checks, report page, no hidden/asset change) — main agent)
-1 main: `git fetch && git log -1 --oneline origin/main` → `093b07a` [ตรวจแล้ว — main agent, git fetch 28/09]
-  (PR #94 merged the rules-table branch `claude/embed-shop-clips-video-data-zp715x`; PR #93 = central-rules sync
-  `smogz-rules@81ac71b`). The v81 item 2 branch is merged — no longer ahead. No tag on that close (cloud round);
-  rollback = revert the merge commit.
-2 ahead of main: `git log --oneline origin/main..image-audit` → 3 commits on branch `image-audit`: `6392cbd` round
-  instruction file (Javis draft 28/09) · `e1cb308` `scripts/image-quality-audit.ts` · `94f1321` record
-  `docs/cloud-results/image-round.md` + the round-open line in this §16. Docs + one script only — no site file
-  touched (`node scripts/self-merge-check.js --base origin/main` → PASS) [ตรวจแล้ว, from the record file].
-  Rollback point: tag `image-audit-close` (computer round — the main agent adds this tag before push, per round-close).
-  No PR opened yet; when opened it is SMALL (docs/script only) — Friday merges per 13.7.
-3 round: "รอบรูป" (image audit, computer round) — CLOSED (audit + proposal only, the site was not changed).
-  Instruction: `docs/rounds/รอบรูป-ตรวจทั้งร้าน.txt`. Record: `docs/cloud-results/image-round.md`. Owner report
-  (Artifact, phone-readable): https://claude.ai/artifact/Ar8nigdAmyi7svhFSKvuRp.
-  First next step: owner picks from the 5 choices in item 4(a) below; a fix round (cloud or Javis-planned) then
-  uses the standard + gap sources already written in the record. No background job left running.
-  Previous round: "ฝังคลิป" (cloud) — CLOSED + MERGED (PR #87–#91), record `docs/cloud-results/clip-round.md`;
-  older rounds §3.
+(v83 — written by the main agent at a MID-ROUND chat move, 13.6 (จ): context 717k > 700k. Not a batch close.)
+1 main: `git fetch && git log -1 --oneline origin/main` → `464a0b6` (PR #100 merged) [ตรวจแล้ว 28/09].
+  This round merged PR #96 (Marbo + G4/G4 Mini photos) · #97 (M Switch Pod poster photos) · #98 (G3 Pro KOKO photos +
+  Cool Mint removed) · #99 (revert of #97) · #100 (no-photo panel + M Switch Kit renders withdrawn) — all live.
+  No tag yet (round not closed). Rollback = revert the merge commit of the PR in question.
+2 ahead of main: branch `image-fix-rules` = PR #101 (OPEN, not merged): `git log --oneline origin/main..image-fix-rules`
+  → image rules (standard 1000 canvas only · new `scripts/image-sharpness-gate.ts` · IMAGE_SPEC §7-§8 · TEAM_RULES 13.7
+  image-merge exception) + withdraw M Bar 9K (18) / 10K (9) flavour photos + content-dates.
+  Checker on 479fc8d: 4/5 — the 5th (tsc) failed only because the checker's worktree had no `.next` types; main tree
+  29/29 and GitHub checks green [ตรวจแล้ว]. PR is BIG (product data + rules) → Friday merges after the owner's
+  "merge ได้" + (new rule) owner has seen the 3x/1440 preview. Owner has NOT said merge ได้ for #101 yet.
+  Branch `image-fix-g3kk` (G3 Pro KOKO at real size, option A) = REJECTED by the owner 28/09 — no PR, do not merge.
+  Stray: `_incoming/wt-main` (a git worktree of origin/main Friday made for a check) — remove with
+  `git worktree remove _incoming/wt-main --force` once the owner agrees; `_incoming/checker-wt` likewise (checker's).
+3 round: "รอบรูป-แก้" (image fix, computer round) — OPEN, mid-way. Instruction files: `docs/rounds/รอบรูป-แก้ก้อน1-2.txt`
+  (original) + `docs/rounds/รอบรูป-แก้-คำตัดสิน-28-09.txt` (owner's latest ruling, word for word — START HERE).
+  Record: `docs/cloud-results/image-fix-round.md` (why photos were soft, what is live, owner rulings).
+  First next steps (owner order):
+  (1) restore the pre-round look: M Bar 10K / 9K / G3 Pro KOKO back to their pre-round photos (standard photo first).
+      10K/9K = merge #101 (already withdraws them). G3 Pro KOKO = new commit restoring the 8 variant files + lineup +
+      uwell.ts card-asset source/comment from `e8fa0ef` (main before #98); keep #98's Cool Mint removal; drop the
+      G3 KOKO entries (`g3cut`) from scripts/process-images.map.json. Send the owner 3x-phone + 1440 before/after
+      BEFORE merging (IMAGE_SPEC §7, new rule). Owner did not name G4 / G4 Mini (sharper than before, still live) —
+      ask in the report whether "รูปรอบนี้ไม่ผ่านทั้งหมด" includes them [รอเจ้าของ].
+  (2) find more standard photos (maker / official pack → big retailer; sharp, no watermark, source noted) for every
+      flavour/colour still without a photo — list in the record.
+  (3) none found → Higgsfield (owner allowed 28/09): try ONE product first (owner suggests M Bar 10K), owner reviews,
+      then the set; state expected credits before the full set; Friday cannot log in to Higgsfield — prepare
+      reference images + prompts for the owner/Javis to run. Rewrite the "no AI / official photos only" rules
+      everywhere (IMAGE_SPEC §0/§2, process-images AIGC reject, skill catalog-research, BSOT if any) to match the
+      ruling, one set only.
+  Hard lines: 7 SEO-baseline pages untouched until 05/10 · process-images only with `--only <slug>` (a full run
+  would rewrite ~69 files incl. baseline argus-g4 — pre-existing bug, fix proposed for a later round) · nothing
+  image-related goes live before the owner has seen the preview.
+  Previous round: "รอบรูป" (audit) — CLOSED, record `docs/cloud-results/image-round.md`.
 4 waiting on owner / Javis:
-  (a) รอบรูป — 5 choices in `docs/cloud-results/image-round.md` ("Open for the owner"):
-      1. Marbo poster images: use as-is / cut box+device out / not yet.
-      2. Parts section: official photo+numbers / manual line drawing / Higgsfield AI.
-      3. Retailer copies of maker renders when the maker itself has none.
-      4. Cool Mint / Golden Carbon real stock? Drag 6 Gold after 05/10?
-      5. Start the fix round with batch 1 (Marbo)?
-  (b) removing the dormant pre-push token hook (`.githooks/pre-push` + `scripts/pending-check.js`) — carried from
-  v81 item 4(b), still unresolved.
-  (c) cloud Chromium cannot load `i.ytimg.com` thumbnails in screenshots (cert chain) — carried from v81 item 4(c),
-  still unresolved.
-  (d) carried unchanged from v79 item 4 (e)–(j): GSC reports on branch `gsc-data` · `_incoming/next-round-notes.md`
-  on the owner's computer · `_incoming/zz-to-delete-roundB/` · round B stop-2 items 8–12 · Artifact test link
-  `https://claude.ai/artifact/TuQkJ54AAMknjaj7co1ys9` [รอเจ้าของ] · round C's B3 ON HOLD.
-  (v81 item 4(a) — GSC "ตรวจสอบการแก้ไข" — done by Javis 28/09, dropped here as resolved.)
-4b/4c permanent rulings: unchanged from v79 (git history of this file) + 28/09: owner's 12-item rules table (TEAM_RULES) + 27/09: light check set
-  13.12 (5 items + timing only on big rounds/long projects) · disposables clip placed · MmesPKLafqA not placed ·
-  marbo guide one clip (54K) · salthub card width kept.
-5 open questions: none new beyond the 5 choices in item 4(a). Older backlog carried unchanged (v79 item 5 "Older
-  backlog", full text §3): round item ฉ (article H1 leading at 390 · G4 black button · related-products card at
-  390) — each its own tier-B pass · `/compare` "Charging" "—" ×19 · Shipnity Thai on en/zh · tools-round's 10 Thai
-  strings on en/zh.
+  (a) "merge ได้" for PR #101.
+  (b) do G4 (8) / G4 Mini (12) photos from #96 stay (measured sharper than the old ones) or go back too?
+  (c) send `_incoming/image-fix/ขอไฟล์รูป-SALTHUB.txt` (per-flavour originals for M Bar 10K/9K, M Switch Pod/Kit) to
+      the team; its question "does the shop ship the CLEAR or the BLACK (COTTON MESH) M Switch pod?" decides whether
+      SALTHUB's black-pod renders may ever be used (#97/#100 withdrew them: the shop's own clips show clear pods).
+  (d) no-photo panel wording: A "ยังไม่มีรูปของกลิ่นนี้" (live) / B "ยังไม่มีรูปกลิ่นนี้" / C "…· ทักไลน์ขอดูรูปจริงได้".
+  (e) M Switch Pod / Kit CARD photos show the black pod (pre-existing) — keep until clear-pod files arrive (recommended)?
+  (f) carried: dormant pre-push token hook removal (v81 4(b)) · cloud Chromium vs i.ytimg.com (v81 4(c)) · v79 4(e)–(j).
+4b/4c permanent rulings added this round (28/09, all in git): Cool Mint does not exist (removed; BSOT §21) · Golden Carbon
+  (G4 Pro KOKO) is real · a flavour/colour without its own photo shows the no-photo panel, never another option's photo ·
+  image batches: standard 1000 canvas, sharpness gate, owner sees 3x/1440 before merge (in #101) · Higgsfield allowed
+  under the fidelity rule in the ruling file · photo must match what the customer receives (pod colour) else withdraw.
+5 open questions: 4(b) · 4(d) · 4(e). Follow-up chip offered: Thai spec text on en/zh pod-159 / pod-180 / g4-pro-koko
+  related rail (pre-existing on the live site). Older backlog unchanged (v79 item 5, §3).
 6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`): tsc 0 · verify:commerce
   17/17 · verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 ·
-  og-gate 104/104. Since then: review-video contract 8/8 (new time-zone check) [ตรวจแล้ว 44f6935]. The image round
-  (28/09) ran only the light set (eslint + tsc on the new script) — light-set close, baseline unchanged [ตรวจแล้ว].
-  count-storefront today, for context only, not a new baseline: legacy 45 (10 hidden) + ProductMaster 18 = 53 shown
-  [ตรวจแล้ว, from the record file].
+  og-gate 104/104. This round (light set, not a close): verify:catalog (fast) 29/29 · scan.js 0/104 · i18n 16/16 ·
+  html-diff of the 7 baseline pages vs live 7/7 identical (#100) [ตรวจแล้ว].
 (context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
 

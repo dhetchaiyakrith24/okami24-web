@@ -1248,17 +1248,16 @@ export const uwellProducts: Product[] = [
         alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green, isolated product shot",
         angle: "Front, isolated",
         transparentBackground: true,
-        sourceName: "UWELL",
-        sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko",
+        sourceName: "UWELL (retailer-redistributed studio photo, vapesourcing.com — matches myuwell.com's own render, tier-2)",
+        sourceUrl: "https://vapesourcing.com/uwell-caliburn-g3-pro-koko.html",
       },
     ],
-    // Image-fix round 2026-09-28: all 8 colour photos (and so the card) are now UWELL's own promotional-pack
-    // renders, named by UWELL's caption 1:1 — the old retailer cut-outs had a broken glass-pod outline. Source and
-    // cut method in scripts/process-images.map.json. Lineup rebuilt from them (scripts/build-lineup-grid.js --cols 4).
+    // "All Colors" lineup (2026-09-04) — OKami24 composite built from the 8 individually-verified
+    // photos below now that every color has one; no fallback/generic image involved.
     lineupImage: {
       src: "/assets/products/caliburn-g3-pro-koko/lineup.webp",
       alt: "UWELL Caliburn G3 Pro KOKO, all 8 colors",
-      sourceName: "OKami24 composite (from UWELL's official colour renders)",
+      sourceName: "OKami24 composite (from individually-verified retailer photos)",
     },
     // Real UWELL color/finish lineup — "KOKO" is UWELL's touchscreen-edition naming convention
     // (see caliburn-g4-pro-koko's own comment) — same G3 Pro pod platform, not a separate system.
