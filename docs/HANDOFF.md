@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v83 · 2026-09-28 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v84 · 2026-09-29 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -847,60 +847,68 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-(v83 — written by the main agent at a MID-ROUND chat move, 13.6 (จ): context 717k > 700k. Not a batch close.)
-1 main: `git fetch && git log -1 --oneline origin/main` → `464a0b6` (PR #100 merged) [ตรวจแล้ว 28/09].
-  This round merged PR #96 (Marbo + G4/G4 Mini photos) · #97 (M Switch Pod poster photos) · #98 (G3 Pro KOKO photos +
-  Cool Mint removed) · #99 (revert of #97) · #100 (no-photo panel + M Switch Kit renders withdrawn) — all live.
-  No tag yet (round not closed). Rollback = revert the merge commit of the PR in question.
-2 ahead of main: branch `image-fix-rules` = PR #101 (OPEN, not merged): `git log --oneline origin/main..image-fix-rules`
-  → image rules (standard 1000 canvas only · new `scripts/image-sharpness-gate.ts` · IMAGE_SPEC §7-§8 · TEAM_RULES 13.7
-  image-merge exception) + withdraw M Bar 9K (18) / 10K (9) flavour photos + content-dates.
-  Checker on 479fc8d: 4/5 — the 5th (tsc) failed only because the checker's worktree had no `.next` types; main tree
-  29/29 and GitHub checks green [ตรวจแล้ว]. PR is BIG (product data + rules) → Friday merges after the owner's
-  "merge ได้" + (new rule) owner has seen the 3x/1440 preview. Owner has NOT said merge ได้ for #101 yet.
-  Branch `image-fix-g3kk` (G3 Pro KOKO at real size, option A) = REJECTED by the owner 28/09 — no PR, do not merge.
-  Stray: `_incoming/wt-main` (a git worktree of origin/main Friday made for a check) — remove with
-  `git worktree remove _incoming/wt-main --force` once the owner agrees; `_incoming/checker-wt` likewise (checker's).
-3 round: "รอบรูป-แก้" (image fix, computer round) — OPEN, mid-way. Instruction files: `docs/rounds/รอบรูป-แก้ก้อน1-2.txt`
-  (original) + `docs/rounds/รอบรูป-แก้-คำตัดสิน-28-09.txt` (owner's latest ruling, word for word — START HERE).
-  Record: `docs/cloud-results/image-fix-round.md` (why photos were soft, what is live, owner rulings).
-  First next steps (owner order):
-  (1) restore the pre-round look: M Bar 10K / 9K / G3 Pro KOKO back to their pre-round photos (standard photo first).
-      10K/9K = merge #101 (already withdraws them). G3 Pro KOKO = new commit restoring the 8 variant files + lineup +
-      uwell.ts card-asset source/comment from `e8fa0ef` (main before #98); keep #98's Cool Mint removal; drop the
-      G3 KOKO entries (`g3cut`) from scripts/process-images.map.json. Send the owner 3x-phone + 1440 before/after
-      BEFORE merging (IMAGE_SPEC §7, new rule). Owner did not name G4 / G4 Mini (sharper than before, still live) —
-      ask in the report whether "รูปรอบนี้ไม่ผ่านทั้งหมด" includes them [รอเจ้าของ].
-  (2) find more standard photos (maker / official pack → big retailer; sharp, no watermark, source noted) for every
-      flavour/colour still without a photo — list in the record.
-  (3) none found → Higgsfield (owner allowed 28/09): try ONE product first (owner suggests M Bar 10K), owner reviews,
-      then the set; state expected credits before the full set; Friday cannot log in to Higgsfield — prepare
-      reference images + prompts for the owner/Javis to run. Rewrite the "no AI / official photos only" rules
-      everywhere (IMAGE_SPEC §0/§2, process-images AIGC reject, skill catalog-research, BSOT if any) to match the
-      ruling, one set only.
-  Hard lines: 7 SEO-baseline pages untouched until 05/10 · process-images only with `--only <slug>` (a full run
-  would rewrite ~69 files incl. baseline argus-g4 — pre-existing bug, fix proposed for a later round) · nothing
-  image-related goes live before the owner has seen the preview.
-  Previous round: "รอบรูป" (audit) — CLOSED, record `docs/cloud-results/image-round.md`.
-4 waiting on owner / Javis:
-  (a) "merge ได้" for PR #101.
-  (b) do G4 (8) / G4 Mini (12) photos from #96 stay (measured sharper than the old ones) or go back too?
-  (c) send `_incoming/image-fix/ขอไฟล์รูป-SALTHUB.txt` (per-flavour originals for M Bar 10K/9K, M Switch Pod/Kit) to
-      the team; its question "does the shop ship the CLEAR or the BLACK (COTTON MESH) M Switch pod?" decides whether
-      SALTHUB's black-pod renders may ever be used (#97/#100 withdrew them: the shop's own clips show clear pods).
-  (d) no-photo panel wording: A "ยังไม่มีรูปของกลิ่นนี้" (live) / B "ยังไม่มีรูปกลิ่นนี้" / C "…· ทักไลน์ขอดูรูปจริงได้".
-  (e) M Switch Pod / Kit CARD photos show the black pod (pre-existing) — keep until clear-pod files arrive (recommended)?
-  (f) carried: dormant pre-push token hook removal (v81 4(b)) · cloud Chromium vs i.ytimg.com (v81 4(c)) · v79 4(e)–(j).
-4b/4c permanent rulings added this round (28/09, all in git): Cool Mint does not exist (removed; BSOT §21) · Golden Carbon
-  (G4 Pro KOKO) is real · a flavour/colour without its own photo shows the no-photo panel, never another option's photo ·
-  image batches: standard 1000 canvas, sharpness gate, owner sees 3x/1440 before merge (in #101) · Higgsfield allowed
-  under the fidelity rule in the ruling file · photo must match what the customer receives (pod colour) else withdraw.
-5 open questions: 4(b) · 4(d) · 4(e). Follow-up chip offered: Thai spec text on en/zh pod-159 / pod-180 / g4-pro-koko
-  related rail (pre-existing on the live site). Older backlog unchanged (v79 item 5, §3).
-6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`): tsc 0 · verify:commerce
-  17/17 · verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 ·
-  og-gate 104/104. This round (light set, not a close): verify:catalog (fast) 29/29 · scan.js 0/104 · i18n 16/16 ·
-  html-diff of the 7 baseline pages vs live 7/7 identical (#100) [ตรวจแล้ว].
+(v84 — written by the main agent at a MID-ROUND chat move, 13.6 (ค): context 674k > 600k and the next work is long. Not a batch close. Friday missed the 600k check at the two batch closes before this — owner caught it at 670k.)
+1 main: `git fetch && git log -1 --oneline origin/main` → `f191741` (PR #103 merged) [ตรวจแล้ว 29/09].
+  This round merged (all live): #96 · #97 · #98 · #99 · #100 (28/09, see v83 in git history) · #101 (image rules + G3 Pro KOKO back
+  to its pre-round photos + M Bar 10K/9K flavour photos withdrawn) · #102 (IMAGE_SPEC §0 item 7 — the one AI-image rule +
+  scripts/ai-fidelity-sheet.js) · #103 (owner 29/09 ruling written into §0 item 7 + M Bar 10K GRAPE Higgsfield photo — live,
+  curl-checked). No tag yet (round not closed). Rollback = revert the merge commit of the PR in question.
+2 ahead of main: branch `image-fix-gen2` = PR #104 (OPEN, not merged): `git log --oneline origin/main..image-fix-gen2` → 4 commits
+  (85c0625 map paths → _incoming/web-product-images · 5b18247 fix: PilotProductDetail opens on the product card under the
+  option-photo rule · 2d1f9e7 ESKO BAR SWITCH 20K 20 flavour pod photos · facb55c content-dates). Checker 5/5 on facb55c [ตรวจแล้ว];
+  GitHub checks not looked at yet. BIG (product data + component) — owner has the 3x/1440 preview and was asked "merge ได้ไหม";
+  NO answer yet → do not merge before the owner answers (IMAGE_SPEC §7). Side effect named to the owner: iqosheet-16/18 also
+  open on the product photo now. Test server 3412 is serving this branch's build.
+  Stray worktrees (not ours to keep): `_incoming/wt-main`, `_incoming/checker-wt` — remove once the owner agrees.
+3 round: "รอบรูป-แก้" (image fix, computer round) — OPEN. Instruction files: `docs/rounds/รอบรูป-แก้-คำตัดสิน-28-09.txt` (start
+  here) + `docs/rounds/รอบรูป-แก้ก้อน1-2.txt`. Owner rulings of 29/09 (in chat, relayed by Javis) are written into
+  `docs/IMAGE_SPEC.md` §0 item 7 (every option without a standard photo gets a Higgsfield remake; any photo is a reference;
+  two-layer references; first batch reviewed, then the same rule for all without asking) — read §0 item 7 + §7 first.
+  Record with every number: `docs/cloud-results/image-fix-round.md`.
+  HIGGSFIELD: Friday uses Higgsfield's own CLI (`higgsfield`, installed globally; owner signed in on this computer — a new chat on
+  this computer can use it directly; check `higgsfield account status`). Account = owner's Ultra, shared with the cartoon
+  project; 525.1 credits at 29/09 after the owner's top-up. Report credits used per batch. Cheapest route that met the bar:
+  Seedream 5.0 Flash 0.5 cr (still one wrong icon glyph on M Bar Cola → NOT passed; owner: every small letter must be exact),
+  Nano Banana Pro 2k 2 cr (passed). Products whose flavours share one body: ONE master + exact typeset label (Esko: 2 cr for
+  20). Grid-of-4 and "edit the approved image" both failed (garbled small text). Tools: `_incoming/image-fix/hf-gen.sh`,
+  `_incoming/image-fix/flatcut.js` (flat-grey key), `_incoming/web-product-images/pod-159-esko-bar-switch-20k/label.js`.
+  All web Higgsfield work lives in `_incoming/web-product-images/<product>/` (refs · out · prompts · job ids; README in Thai).
+  NEXT, in owner order (best sellers first): (a) Muro Connector 20K — 20 flavours, refs = vapemun.com 600-px shop posters
+  (`_incoming/image-fix/src/cand/conn-*.webp`, other shop's logo on them — reference only); body colour differs per flavour
+  → per-flavour generation, NB Pro with every letter checked. (b) M Switch 15K kit + pod 17 (the shop ships the CLEAR pod —
+  goatvapethai posters show it; SALTHUB renders show a black pod → body from the clear-pod posters). (c) Nexbar Clear 18K —
+  data fix + card + 15 flavours, see item 4. (d) M Bar 10K (11 left, template `_incoming/web-product-images/m-bar-10k/
+  prompt-template.txt`, NB Pro) · M Bar 9K 22 · Muro SC 8000 8 · Mood Monster 6 · Muro 3ml 4 · G4 Pro KOKO Coral Pink /
+  Golden Carbon (maker renders `_incoming/image-fix/src/cand/koko-color-1/9.webp`, 2855x1441) · zero-cartridge 2 · then the
+  hidden products. Before EVERY product: the reference must be the model the shop SELLS (name printed on the device = product
+  name) — the WOTOFO/Nexbar mistake of 29/09.
+  NEXBAR CLEAR 18K (Pod-180) plan (planner, 29/09 — one PR, BIG): brand → none like the legacy Muro products (needs
+  storefront-preview-read-model.ts ~204-207/220 + product-master-schema.ts:333 to accept it, else the page silently 404s);
+  spec from the owner's poster (`_incoming/web-product-images/nexbar-clear-18k/refs/`: Dual Nex Mesh · 18 mL · 650 mAh ·
+  airflow · USB-C · visible e-liquid · Normal/Turbo) as `verified` without sourceUrl + named THAI_STYLE §5 exception; 15
+  flavours = 10 Shipnity + 5 via VERIFIED_ADDITIONAL_VARIANTS (Blueberry, Lychee, Honeydew Melon, Strawberry Banana, Peach
+  Strawberry); remove WOTOFO clip (reviewVideo Pod-180), wotofo.com sources, en tagline, search-head-copy.ts:125-131/334;
+  delete the WOTOFO brand → /brands/wotofo 404s by the existing code (brands/[brand]/page.tsx:68), drops from sitemap and
+  footer; point search aliases โวโตโฟ/วอโตโฟ/uotofo at nexbar (catalog-search contract test); new card by Higgsfield (not a
+  temporary cut — owner's poster is only ~330 px). Carbon "NEX BAR / WOTOFO" images/clip are the OTHER product — never use.
+4 waiting on owner / Javis (asked 29/09, no answer yet):
+  (a) merge PR #104? (recommended yes)
+  (b) Nexbar: the WOTOFO footer link disappears from all pages incl. the 7 SEO-baseline pages before 05/10 — A do it now
+      (recommended; titles/prices untouched) / B brand part on 06/10.
+  (c) Nexbar: does the printed "18K" mean 18,000 puffs? (until answered: no puff figure — §8)
+  (d) image-theft protection as its own round: A invisible owner metadata in every file · B invisible watermark on our
+      Higgsfield images · C monthly reverse-image check (recommended A+B+C; no visible watermark on product photos).
+  (e) Muro Connector 20K is filed as a disposable; owner says it is a third-party pod for "Relx Connect" — Friday answered
+      with evidence that shops and OKAMI's own clip say RELX **Creator**; category/data fix = its own round [รอเจ้าของ].
+  (f) carried from v83: SALTHUB per-flavour file request `_incoming/image-fix/ขอไฟล์รูป-SALTHUB.txt` · no-photo panel wording
+      A/B/C · M Switch card shows the black pod · v81/v79 items.
+5 open questions: 4(b) · 4(c) · 4(e). Owner already answered this round: Nexbar brand = none ("แหล่งอ้างอิง แบรนด์ ออฟฟิเชียล
+  ไม่ต้องใส่"); WOTOFO brand page — Friday decides, no empty page for customers; credits topped up by the owner; Seedream-first
+  allowed only if every small letter is exact.
+6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`): tsc 0 · verify:commerce 17/17 ·
+  verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
+  This round (light set, not a close): verify:catalog (fast) 29/29 · sharpness gate PASS on every image PR · checker on #101
+  6/6, #102 6/6, #103 5/5, #104 5/5 [ตรวจแล้ว].
 (context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
 
