@@ -11,7 +11,7 @@
  * Pipeline per map entry (see `MapEntry`): AI-image check → optional erase/crop → background removal
  * (only when the file is opaque AND the background is flat) → trim → measure the product's real long
  * side (must be ≥ MIN_SOURCE_LONG) → scale to the 84% box (upscale capped at +5%, the owner's
- * tolerance) → centre on a transparent square canvas → WebP q82 (a floor — never lowered to fit the
+ * tolerance — a smaller product keeps its real size, owner 2026-09-28) → centre on a transparent square canvas → WebP q82 (a floor — never lowered to fit the
  * size cap) → size-cap check → write.
  * Idempotent: an existing destination is only replaced when the new product pixels are LARGER than
  * the product pixels in the file it replaces (IMAGE_SPEC §6). Every decision is printed and written
@@ -33,7 +33,7 @@ const BOX_RATIO = 0.84; // 8% margin each side
 const MIN_SOURCE_LONG = 800;
 const MAX_UPSCALE = 1.05;
 /** Owner rule 2026-09-06 (IMAGE_SPEC §1–§2): 82 is the FLOOR, not a starting point. The size cap is
- *  never a reason to encode below it — when a file will not fit at q82 the answer is a smaller canvas
+ *  never a reason to encode below it — when a file will not fit at q82 the answer is a better source (a smaller canvas is retired, 2026-09-28)
  *  (`canvas` in the map) or a better source, decided by a human. There is no quality fallback ladder. */
 const WEBP_QUALITY = 82;
 
@@ -66,10 +66,11 @@ interface MapEntry {
   /** owner-approved exception to MIN_SOURCE_LONG for this one file (e.g. 796 — "รับขนาด 796–800px", 2026-09-04).
    *  Must be written in the map on purpose; there is no global override. */
   minLong?: number;
-  /** smaller output canvas for this file (px, ≤ the role default). Owner rule 2026-09-06: when the
-   *  largest real original is below the 800 floor, keep the product at the standard 84% of the
-   *  canvas by shrinking the canvas instead of upscaling the pixels (e.g. 722px device → 860 canvas).
-   *  The storefront fits images to their box, so the card renders the same size as every other. */
+  /** RETIRED 2026-09-28 (owner, image-fix round). It used to shrink the output canvas so a small product
+   *  still filled 84% of it — the storefront then stretched that small file to fill the hero, and a 3x phone
+   *  drew it 1.7–1.9x enlarged (soft). Every card/variant is now written on the standard canvas; a small product
+   *  sits there at its real size (it looks smaller, stays sharp). An entry that still carries `canvas` is
+   *  skipped with a reason, so old entries are never re-written on a smaller canvas; their existing files stay. */
   canvas?: number;
   note?: string;
 }
@@ -218,7 +219,8 @@ async function processEntry(e: MapEntry): Promise<Decision> {
     if (!FORCE && existingLong !== null && sourceLong <= existingLong) return { ...d, action: "kept-existing", reason: `existing ${rel(compareFile)} has product long side ${existingLong}px ≥ new ${sourceLong}px` };
     if (FORCE && existingLong !== null && sourceLong <= existingLong) d.reason = `--force: re-processed over existing ${existingLong}px`; }
 
-  const canvasSize = e.canvas ? Math.min(e.canvas, CANVAS[e.role]) : CANVAS[e.role]; d.canvas = canvasSize; const boxPx = Math.round(canvasSize * BOX_RATIO);
+  if (e.canvas && e.canvas < CANVAS[e.role]) return { ...d, reason: `map "canvas": ${e.canvas} is retired (owner 2026-09-28 — standard canvas only, a small product keeps its real size; IMAGE_SPEC §8). Remove "canvas" from the entry to re-process it.` };
+  const canvasSize = CANVAS[e.role]; d.canvas = canvasSize; const boxPx = Math.round(canvasSize * BOX_RATIO);
   const scale = Math.min(boxPx / sourceLong, MAX_UPSCALE); d.scale = Math.round(scale * 1000) / 1000;
   const cropped = await fromRaw(raw).extract(box).png().toBuffer();
   const w = Math.max(1, Math.round(box.width * scale)), h = Math.max(1, Math.round(box.height * scale));
@@ -226,7 +228,7 @@ async function processEntry(e: MapEntry): Promise<Decision> {
   const canvas = sharp({ create: { width: canvasSize, height: canvasSize, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
     .composite([{ input: resized, left: Math.round((canvasSize - w) / 2), top: Math.round((canvasSize - h) / 2) }]);
   const { buf, quality, overCap } = await encodeWithin(canvas, MAX_BYTES[e.role]); d.bytes = buf.length; d.quality = quality; d.overCap = overCap;
-  if (overCap) d.reason = `WARNING: ${Math.round(buf.length / 1024)}KB over the ${Math.round(MAX_BYTES[e.role] / 1024)}KB cap at q${WEBP_QUALITY} — quality is NOT lowered (IMAGE_SPEC §1–§2). Fix by adding "canvas": <px> to the map entry, or use a better source.`;
+  if (overCap) d.reason = `WARNING: ${Math.round(buf.length / 1024)}KB over the ${Math.round(MAX_BYTES[e.role] / 1024)}KB cap at q${WEBP_QUALITY} — quality is NOT lowered (IMAGE_SPEC §1–§2). Use a better source.`;
   if (DRY) return { ...d, action: "would-write" };
   mkdirSync(path.dirname(dest), { recursive: true }); await writeWithRetry(dest, buf); return { ...d, action: "written" };
 }
@@ -278,11 +280,11 @@ async function fixOpaque(): Promise<Decision[]> {
   const sum = decisions.reduce((a, d) => ((a[d.action] = (a[d.action] ?? 0) + 1), a), {} as Record<string, number>);
   console.log(`\n${DRY ? "[dry-run] " : ""}${JSON.stringify(sum)}`);
   // Quality floor is q82 (IMAGE_SPEC §1–§2). Over-cap files are written at q82 and listed here so the
-  // size cap is a human decision (smaller canvas / better source), never a silent quality drop.
+  // size cap is a human decision (a better source), never a silent quality drop.
   const overCap = decisions.filter((d) => d.overCap);
   if (overCap.length) {
     console.log(`\n!! ${overCap.length} file(s) exceed the size cap at q${WEBP_QUALITY} — quality was NOT lowered:`);
-    for (const d of overCap) console.log(`   ${d.dest}  ${Math.round((d.bytes ?? 0) / 1024)}KB  (fix: add "canvas": <px> to the map entry, or use a better source)`);
+    for (const d of overCap) console.log(`   ${d.dest}  ${Math.round((d.bytes ?? 0) / 1024)}KB  (fix: use a better source)`);
   }
   const reportPath = path.join(ROOT, "_incoming", `process-images${FIX_OPAQUE ? ".fix-opaque" : ""}${DRY ? ".dry-run" : ""}.report.json`);
   mkdirSync(path.dirname(reportPath), { recursive: true }); writeFileSync(reportPath, JSON.stringify({ generatedAt: new Date().toISOString(), dryRun: DRY, decisions }, null, 1));
