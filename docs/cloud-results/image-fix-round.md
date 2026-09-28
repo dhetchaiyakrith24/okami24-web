@@ -88,6 +88,22 @@ Friday's first reading (28/09 night) kept Nexbar and 4 Muro 3ml flavours on the 
 - Muro Connector 20K: shop pages and OKAMI's own clip say it fits the RELX **Creator**; the site still files it as a
   disposable — a data fix for its own round (not this one), flagged to the owner.
 
+## First Higgsfield batch (29/09, branch `image-fix-gen`) — waiting for the owner's look
+
+Friday connected through Higgsfield's own CLI (`npm i -g @higgsfield/cli`, owner signed in; Higgsfield's help page says
+Claude Code uses the CLI, the MCP address is for the Claude app). Account: Ultra plan, 37.1 credits at start (shared
+with the cartoon project). Nano Banana Pro at 2K = 2 credits per image, background remover = 1.
+- M Bar 10K Grape: 2 attempts (the first misspelled the box's mode labels) → IoU 0.995, deltaE max 1.8 vs the maker's
+  Grape photo; every box label read by eye. 4 credits.
+- Nexbar Clear 18K Grape Ice: body from the shop's own clip thumbnail (i.ytimg.com/vi/YhtKKjRwF3Q — the real 18K: clear
+  shell over carbon, flavour name top-left, NEX white / BAR in the flavour colour), name from a NexBar 12000 photo.
+  1 attempt + background remover = 3 credits. **Numbers vs our card FAIL (IoU 0.757, deltaE max 62.6) and are not
+  usable:** the card is another design ("Lemon Lime" striped wrap — not one of our 10 flavours — 3/4 angle, side
+  screen) with a broken cut-out, and the clip frame cannot be cut for an IoU; checked by eye against the clip instead.
+- Sharpness gate PASS (Grape 10.83 vs card 10.86; Grape Ice 9.6 vs card 7.6). 7 credits used, 30.1 left.
+- The Nexbar page now opens on Grape Ice (existing rule in the product page: open on the first flavour with its own
+  photo) and no longer shows the "Lemon Lime" card slide.
+
 ## Step 3 — Higgsfield trial kit (not run: Friday cannot log in)
 
 `_incoming/image-fix/higgsfield/m-bar-10k/` — `refs/` (the live card as device truth + 12 flavour cut-outs on flat grey),
