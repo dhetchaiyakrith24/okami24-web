@@ -155,7 +155,7 @@ flavours (Esko 18/20) keep their photo and need a "suggestion" (other flavour / 
   at 697–820 px instead of 840. Fix (#109): `scripts/flatcut.js` despeckles; replaced photos ship as `*-v2.webp`
   (`process-images` `fileName`). Live after deploy: M Bar Pink Berry at real phone pixels 2.9× more edge detail (Laplacian
   404 vs 139). Audit of all 97 product images replaced in 30 days (`scripts/stale-image-audit.js`,
-  `_incoming/cache-audit/report.md`): no other product served stale. Cloudflare also flips WebP/JPEG for the same URL
+  `_incoming/cache-audit/report.md`): 2 other files differ at their raw /assets URL — caliburn-g3-pro-koko variant-emerald-green and caliburn-g4 variant-glacier-blue — but the /_next/image copies the product page loads match the repo file (thumbnail diff 0.2–0.3, same size), so nothing visible; M Bar 10K could not be in that table (its old names were already gone from the branch) and was proven by probe.log. Cloudflare also flips WebP/JPEG for the same URL
   (it caches without the Accept header) — a Cloudflare setting, owner's dashboard.
 - Muro Connector card-v2 live (3/4 view, 840 px). Credits unchanged this part (451.1).
 - Not started (next chat): Nexbar + WOTOFO (one PR), (D) out-of-stock suggestion, (B) angled views, (C) card sweep —

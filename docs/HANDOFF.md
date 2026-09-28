@@ -912,7 +912,8 @@ round "รอบรูป-แก้" (still OPEN). Fourth computer-round chat st
   104/104.
   This chat (light set, not a full close) [เชื่อว่า — reported by the main agent]: checker on PR #109 5/6 → one
   description line fixed → re-check pass · sharpness gate 27/27 · tsc 0 · verify:catalog (fast) 29/29 ·
-  stale-image audit 97 product images checked, only M Bar 10K found affected.
+  stale-image audit 97 product images checked: 2 raw-URL byte differences (G3 Pro KOKO Emerald Green, G4 Glacier
+  Blue), page copies match — nothing visible; M Bar 10K proven stale separately (probe.log).
 (context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
 
