@@ -1220,5 +1220,17 @@
    "x1": 0.5,
    "y1": 1
   }
+ },
+ {
+  "source": "_incoming/image-fix/higgsfield/m-bar-10k/out/grape-2.cut.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, 2 credits (job in _incoming/image-fix/higgsfield/m-bar-10k/out/job-grape-2.json)",
+   "reference": "_incoming/image-fix/cut/mbar10k/mbar10k_grape.png (SALTHUB salthub.com/wp-content/uploads/2026/02/mbar10k_grape.webp, box + device) + public/assets/products/m-bar-10k/card.webp (device)",
+   "fidelitySheet": "_incoming/image-fix/fid/mbar10k-grape.png — IoU 0.995, deltaE max 1.8; box labels 3 MODE / ECO / SOFT / BOOST / GRAPE read by eye"
+  },
+  "note": "image-fix round 2026-09-29 — OKami24 Higgsfield remake of the maker's own Grape photo (owner ruling IMAGE_SPEC §0 item 7); flat #E9E9EC background keyed off with _incoming/image-fix/flatcut.js (border flood, t0 6 / t1 42, colour un-mixing)"
  }
 ]

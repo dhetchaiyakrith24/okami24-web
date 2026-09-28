@@ -76,6 +76,42 @@ Result: **0 options gained a photo that meets the bar** (sharp at 3x, no waterma
 at least one real reference except Nexbar Clear 18K and Muro 3ml. Hidden products (infy-20k, tfit-m-power-20k,
 foli-bar-15k, next-pro-2-beyond, muro-salt-nic, muro-freebase) were not searched this time.
 
+### Owner 29/09: every option without a standard photo gets a remake (rule = IMAGE_SPEC §0 item 7)
+
+Friday's first reading (28/09 night) kept Nexbar and 4 Muro 3ml flavours on the no-photo panel; the owner overruled it
+29/09: sibling-model / shop / watermarked photos are references, "หาโหลดไม่ได้ = สร้าง". References found:
+- Nexbar Clear 18K (Pod-180): body = our card (clear shell); flavour = siam-pod.com NexBar 12000 (Grape Ice, Mixberry,
+  Watermelon Ice, Mint, Strawberry Watermelon, White Slush) · sudjudpod.net NexBar 20K (Grape Lychee, Strawberry Kiwi)
+  · Watermelon Bubblegum only a generic 16K shot · Strawberry Custard none (name only).
+- Muro 3ml: Muro Grape, Honey Lemon, Very Strawberry, Double Shisha — no photo anywhere reachable → body + box design
+  from the 6 existing flavour boxes, name from the data; owner told which have no colour reference.
+- Muro Connector 20K: shop pages and OKAMI's own clip say it fits the RELX **Creator**; the site still files it as a
+  disposable — a data fix for its own round (not this one), flagged to the owner.
+
+## First Higgsfield batch (29/09, branch `image-fix-gen`) — waiting for the owner's look
+
+Friday connected through Higgsfield's own CLI (`npm i -g @higgsfield/cli`, owner signed in; Higgsfield's help page says
+Claude Code uses the CLI, the MCP address is for the Claude app). Account: Ultra plan, 37.1 credits at start (shared
+with the cartoon project). Nano Banana Pro at 2K = 2 credits per image, background remover = 1.
+- M Bar 10K Grape: 2 attempts (the first misspelled the box's mode labels) → IoU 0.995, deltaE max 1.8 vs the maker's
+  Grape photo; every box label read by eye. 4 credits.
+- Nexbar Clear 18K Grape Ice: body from the shop's own clip thumbnail (i.ytimg.com/vi/YhtKKjRwF3Q — the real 18K: clear
+  shell over carbon, flavour name top-left, NEX white / BAR in the flavour colour), name from a NexBar 12000 photo.
+  1 attempt + background remover = 3 credits. **Numbers vs our card FAIL (IoU 0.757, deltaE max 62.6) and are not
+  usable:** the card is another design ("Lemon Lime" striped wrap — not one of our 10 flavours — 3/4 angle, side
+  screen) with a broken cut-out, and the clip frame cannot be cut for an IoU; checked by eye against the clip instead.
+- Sharpness gate PASS (Grape 10.83 vs card 10.86; Grape Ice 9.6 vs card 7.6). 7 credits used, 30.1 left.
+- The Nexbar page now opens on Grape Ice (existing rule in the product page: open on the first flavour with its own
+  photo) and no longer shows the "Lemon Lime" card slide.
+- **Owner 29/09: M Bar 10K Grape passes ("สวยเหมือนของแบรนด์จริง"); Nexbar Grape Ice = WRONG PRODUCT, withdrawn before
+  merge.** The shop sells the **Nexbar CLEAR 18K** (rounded clear body, clear tank on top, black band at the bottom
+  printed "nexBar CLEAR 18K" + flavour; 18 mL · 650 mAh · dual Nex Mesh coil · adjustable airflow · Type-C · 2 modes
+  Normal/Turbo · 15 flavours incl. Strawberry Custard — owner's photos in
+  `_incoming/image-fix/higgsfield/nexbar-clear-18k-owner/`). The carbon "NEX BAR / WOTOFO" device on our card, in the
+  shop's clip and in the render is WOTOFO nexBAR 18K, another product with a similar name. Lesson: check the reference
+  is the model the shop SELLS (the name printed on the device = the product name), not just that the render matches the
+  reference. The product page itself (brand, spec, flavours, card) is a data fix of its own.
+
 ## Step 3 — Higgsfield trial kit (not run: Friday cannot log in)
 
 `_incoming/image-fix/higgsfield/m-bar-10k/` — `refs/` (the live card as device truth + 12 flavour cut-outs on flat grey),
