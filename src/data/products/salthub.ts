@@ -82,8 +82,10 @@ export const salthubProducts: Product[] = [
     // from its passed box+device render (source + check per file in the map); `boxImage` = that passed box+device photo,
     // now in the "more details" flavour grid. The page opens on the lineup (`lineupFirst`), built from these 12 files.
     lineupImage: {
-      src: "/assets/products/m-bar-10k/lineup.webp",
-      alt: "SALTHUB M Bar 10K, all 12 flavours side by side — device only",
+      // v2 (owner 30/09 "ใส่กลิ่นลงไปด้วย"): each device named underneath, typeset in the site's Barlow Condensed from
+      // these same names — never drawn by AI (builder: _incoming/pilot-mbar10k/lineup-named.js).
+      src: "/assets/products/m-bar-10k/lineup-v2.webp",
+      alt: "SALTHUB M Bar 10K, all 12 flavours side by side with their names — device only",
       sourceName: "OKami24 composite",
     },
     lineupFirst: true,
