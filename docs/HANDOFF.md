@@ -856,8 +856,10 @@ batch close, more since], next work long), round "รอบรูป-แก้"
   M Bar 10K card-v2) · #114 `3cdb4cc` (docs, §16 v87, lesson 13) · #115 `dcdfad0` (M Bar 10K Strawberry Kiwi v3 —
   device base now the maker's muted magenta, ΔE max 3.9; the old v2 file stays in public/, unreferenced).
   DEPLOY OF #115 FAILED [ตรวจแล้ว — deploy run 36558180500]: 31/32 steps passed, only "next start on 3411 stopped (no
-  server left behind)" failed — the same step that failed #113's first deploy run today (2 of the last 6 deploy runs;
-  the step lives around `scripts/verify-catalog.ts:180`). So Strawberry Kiwi v3 is NOT live yet (live page still
+  server left behind)" failed — the same step failed attempt 1 of #113's deploy run 36550934105 today [ตรวจแล้ว — `gh
+  run view 36550934105 --attempt 1` = failure; the owner's re-run, attempt 2, succeeded, so run lists show it green];
+  2 failures of this step today, cause not investigated [เชื่อว่า — timing, not code]; the step is around
+  `scripts/verify-catalog.ts:191`. So Strawberry Kiwi v3 is NOT live yet (live page still
   loads -v2); card-v2 and the rest are live. Friday never re-runs a deploy (13.7) → owner re-runs, or the next
   site-touching merge carries it. Fixing the flaky step = a gate script = BIG (13.7 (1)) — propose it, do not slip it
   in. No tag yet
@@ -916,7 +918,8 @@ batch close, more since], next work long), round "รอบรูป-แก้"
   (6) WOTOFO photo choice: remade (recommended) vs official cut-out at real size — asked, not answered yet
   (7) leftover unreferenced photo files (4 found by an ad-hoc scan of public/assets/products vs src/ in the fourth
       chat, no saved log [เชื่อว่า]: argus-g4 orange, caliburn-g4-pro-koko coral-pink, caliburn-g5-lite coral-orange,
-      caliburn-g5-lite-se purple-leather — three are baseline products; + m-bar-10k strawberry-kiwi-v2) — delete at
+      caliburn-g5-lite-se purple-leather — three are baseline products; the checker's re-scan found a 5th,
+      argus-g3-mini/variants/sky-blue.webp; + m-bar-10k strawberry-kiwi-v2 = 6 in all) — delete at
       round close with the owner's OK (13.4 #1)
   (8) re-run the failed deploy of #115 (item 1) — asked in the move message
 5 open questions — ask as ONE set at the start of the next chat (13.4 #6), with a recommendation each:
