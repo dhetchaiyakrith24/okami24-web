@@ -122,13 +122,12 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
       description: `ESKO BAR แบรนด์พอตใช้แล้วทิ้งและเครื่องระบบสวิตช์ ที่ร้านมี Esko Bar Switch 20K เครื่องที่เปลี่ยนแค่หัวพอตบรรจุสำเร็จ ของแท้${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
     };
   },
-  wotofo: (priceOf) => {
-    const p = priceOf("pod-180");
-    return {
-      title: `WOTOFO พอตใช้แล้วทิ้ง ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
-      description: `WOTOFO เจ้าของพอตใช้แล้วทิ้งสาย nexBAR ที่ร้านมีรุ่น 18K ของแท้${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
-    };
-  },
+  // Image-fix round 2026-09-30: Pod-180 is nexBar CLEAR 18K (no brand); the WOTOFO page lists WOTOFO nexBAR 18K, sold
+  // out — so no price and no stock claim here (owner "ตามแนะนำ").
+  wotofo: () => ({
+    title: `WOTOFO พอตใช้แล้วทิ้งตระกูล nexBAR${OKM_TITLE_SUFFIX}`,
+    description: "WOTOFO พอตใช้แล้วทิ้งตระกูล nexBAR ดูสเปกเต็มของ nexBAR 18K สูงสุด 18,000 พัฟ น้ำยา 21mL แบตเตอรี่ 750mAh 2 โหมด NORM กับ TURBO พร้อมรายชื่อกลิ่นจากผู้ผลิต",
+  }),
   nevoks: (priceOf) => {
     const p = priceOf("coil-54");
     return {
@@ -331,7 +330,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "coil-94": "หัวพอต Caliburn G4&G3 Series จากแบรนด์ UWELL คอยล์ mesh ในตัว มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม",
   "iqosheet-16": "เครื่องอุ่นยาสูบ IQOS ILUMA i PRIME ชาร์จผ่าน USB-C เต็มแล้วใช้ได้สูงสุด 20 ก้าน ใช้กับก้าน TEREA เท่านั้น",
   "iqosheet-18": "เครื่องอุ่นยาสูบ IQOS ILUMA i ใช้ได้กับก้าน TEREA เท่านั้น มี 2 สี Midnight Black และ Breeze Blue",
-  "pod-180": "พอตใช้แล้วทิ้ง WOTOFO Nexbar 18K แบต 750mAh ชาร์จซ้ำได้ผ่าน USB-C คอยล์ nexMESH ในตัว น้ำยาประมาณ 18mL มี 10 รส",
+  "pod-180": "พอตใช้แล้วทิ้ง nexBar CLEAR 18K ตัวใส สูงสุด 18,000 พัฟ น้ำยา 18mL แบต 650mAh ชาร์จผ่าน USB-C มี 2 โหมด Normal กับ Turbo",
 };
 
 /** Rows C17 / C18 — keyed by guide id. Round SEO ข (owner เคาะ 2026-09-21): five more head-only

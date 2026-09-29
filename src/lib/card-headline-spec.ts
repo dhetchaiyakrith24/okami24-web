@@ -98,7 +98,7 @@ function pick(
     case "pod-kits":
       return nonEmpty([battery(rows, attrs.batteryMah), maxWatt(rows, attrs.wattageMax)]);
     case "disposables":
-      // A disposable with no verified puff figure but a verified battery (WOTOFO Pod-180) shows that.
+      // A disposable with no verified puff figure but a verified battery shows that.
       return nonEmpty([puffs(rows, attrs.puffCount) ?? battery(rows, attrs.batteryMah)]);
     case "pods-cartridges":
       return nonEmpty([capacity(rows, attrs.capacityMl) ?? resistance(rows)]);

@@ -80,10 +80,7 @@ export const PREVIEW_SHIPNITY_IDS = [
   "Pod-159", "Pod-149", "Pod-150", "Disposable-34",
   "ELIQUID-1", "Eliquid-109", "eliquid-133",
   "coil-54", "coil-62", "Pod-169",
-  // Full-catalog mission — Nexbar (Pod-180) resolved to WOTOFO with real official specs; stays
-  // media-blocked (no confidently variant-matching isolated product image found — see
-  // TAXONOMY_MATCHES["Pod-180"]'s comment), same "resolved identity, no VERIFIED_MEDIA entry yet"
-  // pattern as several other pilot entries above.
+  // Pod-180 = nexBar CLEAR 18K, brandless (owner ruling 2026-09-29) — see TAXONOMY_MATCHES["Pod-180"].
   "Pod-180",
   // Heated-tobacco wave — full identity/taxonomy/media/spec/price treatment (owner has settled
   // the business/legal-scope question for this category). IQOSHEET-17 included for DEV-review

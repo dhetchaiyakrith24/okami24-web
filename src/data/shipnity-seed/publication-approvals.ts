@@ -164,7 +164,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // there.
   "IQOSHEET-16": { sellingPrice: 4900, lastPriceReview: "2026-09-02" },
   "IQOSHEET-18": { sellingPrice: 3900, lastPriceReview: "2026-09-02" },
-  // Tier-1 disposable growth mission (2026-09-03): Pod-180 (Nexbar Clear 18k, WOTOFO) was the last
+  // Tier-1 disposable growth mission (2026-09-03): Pod-180 (nexBar CLEAR 18K — no brand since 2026-09-30) was the last
   // media-blocked candidate from a real Shipnity price+flavor set — see VERIFIED_MEDIA["Pod-180"]
   // for the sourcing. Same pricing rule as every entry above: single, unambiguous
   // operationalSellingPrice, no conflicting price found anywhere else in the project.
