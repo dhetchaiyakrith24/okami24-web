@@ -57,7 +57,7 @@ export interface AnatomySheet {
   parts: SheetPart[];
   assembled: SheetImage;
   /** base face call-outs, placed on the drawn bottom view (x/y = % of the drawing) */
-  base: (SheetCallout & { x: number; y: number })[];
+  base: (SheetCallout & { x: number; y: number; to: [number, number] })[];
   zooms: { id: string; code: string; name: SheetText; image: SheetImage; leds?: boolean }[];
   facts: { specKey: string; text: SheetText }[];
   note: SheetText;
@@ -124,8 +124,9 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
       {
         n: 6,
         code: "CHARGING PORT",
-        x: 80,
-        y: 20,
+        x: 86,
+        y: 16,
+        to: [66, 25],
         name: { th: "ช่องชาร์จ USB-C", en: "USB-C charging port", zh: "USB-C 充电口" },
         detail: { th: "แบต 600mAh ชาร์จซ้ำได้", en: "Rechargeable 600mAh battery", zh: "600mAh 电池，可重复充电" },
         specKey: "battery",
@@ -133,8 +134,9 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
       {
         n: 7,
         code: "BOTTOM BUTTON",
-        x: 64,
-        y: 39,
+        x: 70,
+        y: 34,
+        to: [57, 44],
         name: { th: "ปุ่มก้นพอต", en: "Bottom button", zh: "底部按键" },
         // "Eco/Soft/Boost" without spaces, as poster 04 prints it — one word, so "/ Boost" cannot drop to a line alone
         detail: { th: "กดสองครั้งติดกันเพื่อสลับ 3 โหมด Eco/Soft/Boost", en: "Double-click to switch between 3 modes: Eco/Soft/Boost", zh: "连按两下切换 3 种模式：Eco/Soft/Boost" },
@@ -143,18 +145,19 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
       {
         n: 8,
         code: "AIRFLOW ADJUSTER",
-        x: 74,
+        x: 86,
         y: 84,
+        to: [70, 72],
         name: { th: "ช่องปรับลม", en: "Airflow adjuster", zh: "气流调节槽" },
       },
     ],
     zooms: [
       { id: "base", code: "BASE DETAIL", name: { th: "ก้นพอต", en: "Base", zh: "底部" }, image: { src: `${A}/zoom-base-v1.webp`, width: 1200, height: 1200, alt: { th: "ก้นพอต M Bar 10K ระยะใกล้ ช่องชาร์จ ปุ่ม และช่องปรับลม", en: "M Bar 10K base close-up: charging port, button and airflow slot", zh: "M Bar 10K 底部特写：充电口、按键与气流调节槽" } } },
-      { id: "display", code: "DISPLAY DETAIL", name: { th: "ไฟบอกสถานะ", en: "Mini display", zh: "迷你显示屏" }, leds: true, image: { src: `${A}/zoom-display-v1.webp`, width: 1200, height: 1200, alt: { th: "ไฟบอกสถานะของ M Bar 10K ระยะใกล้", en: "M Bar 10K mini display close-up", zh: "M Bar 10K 迷你显示屏特写" } } },
+      { id: "display", code: "DISPLAY DETAIL", name: { th: "ไฟบอกสถานะ", en: "Mini display", zh: "迷你显示屏" }, leds: true, image: { src: `${A}/zoom-display-v1.webp`, width: 900, height: 900, alt: { th: "ไฟบอกสถานะของ M Bar 10K ระยะใกล้", en: "M Bar 10K mini display close-up", zh: "M Bar 10K 迷你显示屏特写" } } },
       { id: "collar", code: "COLLAR DETAIL", name: { th: "ปลอกลายร่อง", en: "Ribbed collar", zh: "纹理套环" }, image: { src: `${A}/zoom-collar-v1.webp`, width: 1200, height: 1200, alt: { th: "ปลอกลายร่องและปากดูดของ M Bar 10K ระยะใกล้", en: "M Bar 10K ribbed collar and mouthpiece close-up", zh: "M Bar 10K 纹理套环与吸嘴特写" } } },
     ],
     facts: [
-      { specKey: "puffs", text: { th: "10,000 พัฟ", en: "10,000 puffs", zh: "10,000 口" } },
+      { specKey: "puffs", text: { th: "สูงสุด 10,000 พัฟ", en: "Up to 10,000 puffs", zh: "最多 10,000 口" } },
       { specKey: "battery", text: { th: "แบต 600mAh", en: "600mAh battery", zh: "600mAh 电池" } },
       { specKey: "coil", text: { th: "คอยล์ cotton mesh", en: "Cotton mesh coil", zh: "Cotton mesh 线圈" } },
       { specKey: "modes", text: { th: "3 โหมด", en: "3 modes", zh: "3 种模式" } },

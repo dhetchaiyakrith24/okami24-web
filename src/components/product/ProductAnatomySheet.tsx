@@ -182,6 +182,12 @@ function BottomView({ sheet, text, verified }: { sheet: AnatomySheet; text: (t: 
           <circle cx="134" cy="143" r="6.5" fill="currentColor" />
           <line x1="0" y1="100" x2="10" y2="100" stroke={RULE} vectorEffect="non-scaling-stroke" />
           <line x1="190" y1="100" x2="200" y2="100" stroke={RULE} vectorEffect="non-scaling-stroke" />
+          {sheet.base.map((c) => (
+            <g key={c.n}>
+              <line x1={c.x * 2} y1={c.y * 2} x2={c.to[0] * 2} y2={c.to[1] * 2} stroke={LEADER} strokeWidth={1} strokeDasharray="3 3" vectorEffect="non-scaling-stroke" />
+              <circle cx={c.to[0] * 2} cy={c.to[1] * 2} r={2.2} fill={EMBER} stroke="none" />
+            </g>
+          ))}
         </svg>
         {sheet.base.map((c) => (
           <span
@@ -313,8 +319,8 @@ export function ProductAnatomySheet({ product }: { product: Product }) {
             </ul>
           </div>
 
-          {facts.length > 0 && (
-            <div className="flex flex-col gap-3 border-t pt-5 sm:flex-row sm:items-center sm:justify-between" style={{ borderColor: RULE }}>
+          <div className="flex flex-col gap-3 border-t pt-5 sm:flex-row sm:items-center sm:justify-between" style={{ borderColor: RULE }}>
+            {facts.length > 0 && (
               <ul className="flex flex-wrap gap-2">
                 {facts.map((f) => (
                   <li key={f.specKey} className="rounded-full border px-3 py-1 text-xs font-medium" style={{ borderColor: RULE, color: INK }}>
@@ -322,11 +328,11 @@ export function ProductAnatomySheet({ product }: { product: Product }) {
                   </li>
                 ))}
               </ul>
-              <p className="text-[0.7rem]" style={{ color: INK_SOFT }}>
-                {text(sheet.note)}
-              </p>
-            </div>
-          )}
+            )}
+            <p className="text-[0.7rem]" style={{ color: INK_SOFT }}>
+              {text(sheet.note)}
+            </p>
+          </div>
         </div>
       </div>
     </section>
