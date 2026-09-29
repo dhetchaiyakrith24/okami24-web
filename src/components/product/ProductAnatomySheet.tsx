@@ -11,8 +11,9 @@ import { verifiedRows } from "@/lib/verified-specs";
 import { cn } from "@/lib/utils";
 
 /**
- * "ไล่ดูทีละส่วน" as a cream blueprint sheet — round "M Bar 10K exploded view" (owner 2026-09-30; designer direction A:
- * a design-office drawing laid on the dark page, the only light block in the section). Data and copy:
+ * "ไล่ดูทีละส่วน" as a dark blueprint sheet — round "M Bar 10K exploded view" (owner 2026-09-30; designer direction A:
+ * a design-office drawing; owner 2026-09-30 after the first draft: in the site's own dark theme, not cream — a faint
+ * steel grid, steel leaders and a rim light keep the black device readable on the dark sheet). Data and copy:
  * `src/i18n/anatomy-sheet-copy.ts`; rendered by ProductMoreDetails for the slugs listed there, so the older generic
  * ProductAnatomy on every other page is untouched.
  *
@@ -22,11 +23,17 @@ import { cn } from "@/lib/utils";
  * labels simply stack beside the parts without leaders.
  */
 
-const INK = "#3A3833";
-const INK_SOFT = "#5B574F";
-const RULE = "#B9B2A3";
-const LEADER = "#8A8375";
-const EMBER = "#ff6a2c";
+// site tokens (globals.css) + the steel accent for the drawing lines
+const SHEET = "#17181b"; // --surface-1
+const INK = "var(--foreground)";
+const INK_SOFT = "var(--foreground-muted)";
+const RULE = "rgba(111,184,216,0.22)"; // --accent-steel, faint
+const LEADER = "rgba(111,184,216,0.6)";
+const EMBER = "#ff6a2c"; // --accent-ember
+const EMBER_INK = EMBER;
+const CODE = "#8f8e93"; // between --foreground-dim and -muted: small caps codes stay readable (~5:1 on SHEET)
+/** rim light + depth so a matte black part does not sink into the dark sheet */
+const PART_LIGHT = "drop-shadow-[0_0_1px_rgba(255,255,255,0.45)] drop-shadow-[0_0_18px_rgba(111,184,216,0.16)] drop-shadow-[0_18px_24px_rgba(0,0,0,0.55)]";
 
 function useText(locale: Locale) {
   return useCallback((t: SheetText): ReactNode => (locale === "th" ? thaiTypographyNode(t.th) : t[locale]), [locale]);
@@ -34,7 +41,7 @@ function useText(locale: Locale) {
 
 function Num({ n, className }: { n: number; className?: string }) {
   return (
-    <span className={cn("label-mono inline-block w-7 shrink-0 text-[0.7rem] font-semibold tabular-nums", className)} style={{ color: EMBER }} lang="en">
+    <span className={cn("label-mono inline-block w-7 shrink-0 text-[0.7rem] font-semibold tabular-nums", className)} style={{ color: EMBER_INK }} lang="en">
       {String(n).padStart(2, "0")}
     </span>
   );
@@ -46,7 +53,7 @@ function CalloutText({ c, text, showDetail }: { c: SheetCallout; text: (t: Sheet
       <p className="text-sm font-semibold leading-snug lg:text-[0.95rem]" style={{ color: INK }}>
         {text(c.name)}
       </p>
-      <p className="label-mono text-[0.6rem] leading-tight" style={{ color: LEADER, letterSpacing: "0.14em" }} lang="en">
+      <p className="label-mono text-[0.65rem] leading-tight" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
         {c.code}
       </p>
       {showDetail && c.detail && (
@@ -67,6 +74,7 @@ function ExplodedStack({ parts, text, verified, alt }: { parts: SheetPart[]; tex
   const [tops, setTops] = useState<number[] | null>(null);
   const [leaders, setLeaders] = useState<Leader[]>([]);
   const [height, setHeight] = useState<number | null>(null);
+  const [partsHeight, setPartsHeight] = useState<number | null>(null);
   const callouts = parts.flatMap((p, pi) => p.callouts.map((c) => ({ ...c, pi })));
   const widest = Math.max(...parts.map((p) => p.image.width));
 
@@ -74,11 +82,13 @@ function ExplodedStack({ parts, text, verified, alt }: { parts: SheetPart[]; tex
     const root = box.current;
     if (!root) return;
     const r = root.getBoundingClientRect();
+    // not laid out yet (0-size parts) = keep the plain stacked labels; the observers below call again once it is
+    if (r.width === 0 || partEls.current.some((el) => !el || el.getBoundingClientRect().height === 0)) return;
     const anchors = callouts.map((c) => {
       const el = partEls.current[c.pi];
       if (!el) return { x: 0, y: 0 };
       const b = el.getBoundingClientRect();
-      return { x: b.right - r.left - b.width * 0.1, y: b.top - r.top + (b.height * c.y) / 100 };
+      return { x: b.left - r.left + (b.width * (c.x ?? 90)) / 100, y: b.top - r.top + (b.height * c.y) / 100 };
     });
     // labels: as close to their anchor as the label above allows, never overlapping (8px gap)
     const next: number[] = [];
@@ -93,7 +103,9 @@ function ExplodedStack({ parts, text, verified, alt }: { parts: SheetPart[]; tex
     const first = labelEls.current[0];
     const labelLeft = (first ? first.getBoundingClientRect().left - r.left : 0) - 6;
     setTops(next);
-    setHeight(Math.max(floor, ...partEls.current.map((el) => (el ? el.offsetTop + el.offsetHeight : 0))));
+    const partsBottom = Math.max(...partEls.current.map((el) => (el ? el.getBoundingClientRect().bottom - r.top : 0)));
+    setPartsHeight(partsBottom);
+    setHeight(Math.max(floor, partsBottom));
     setLeaders(
       anchors.map((a, i) => {
         const ly = next[i] + 10;
@@ -107,19 +119,21 @@ function ExplodedStack({ parts, text, verified, alt }: { parts: SheetPart[]; tex
 
   useLayoutEffect(() => {
     measure();
+    // the box alone is not enough: once its height is set from state, parts that finish laying out later (images,
+    // fonts, the locale switch after hydration) no longer change its size — watch every part and label too
     const ro = new ResizeObserver(() => measure());
-    if (box.current) ro.observe(box.current);
+    for (const el of [box.current, ...partEls.current, ...labelEls.current]) if (el) ro.observe(el);
     return () => ro.disconnect();
   }, [measure]);
 
   return (
     <div ref={box} className="relative" style={height ? { height } : undefined}>
       {/* centre axis through the parts */}
-      <div className="absolute inset-y-0 left-[19%] w-px lg:left-[21%]" style={{ backgroundImage: `repeating-linear-gradient(to bottom, ${RULE} 0 6px, transparent 6px 12px)` }} aria-hidden />
+      <div className="absolute left-[19%] top-0 w-px lg:left-[21%]" style={{ height: partsHeight ?? "100%", backgroundImage: `repeating-linear-gradient(to bottom, ${RULE} 0 6px, transparent 6px 12px)` }} aria-hidden />
       <div className="relative flex w-[38%] flex-col items-center gap-6 lg:w-[42%] lg:gap-8">
         {parts.map((p, i) => (
           <div key={p.id} ref={(el) => { partEls.current[i] = el; }} style={{ width: `${(p.image.width / widest) * 100}%` }} className="relative">
-            <Image src={p.image.src} alt={alt(p.image.alt)} width={p.image.width} height={p.image.height} sizes="(min-width: 1024px) 220px, 40vw" className="block h-auto w-full drop-shadow-[0_18px_22px_rgba(58,56,51,0.28)]" />
+            <Image src={p.image.src} alt={alt(p.image.alt)} width={p.image.width} height={p.image.height} sizes="(min-width: 1024px) 220px, 40vw" className={cn("block h-auto w-full", PART_LIGHT)} onLoad={measure} />
           </div>
         ))}
       </div>
@@ -164,7 +178,7 @@ function BottomView({ sheet, text, verified }: { sheet: AnatomySheet; text: (t: 
           <ellipse cx="58" cy="100" rx="5" ry="3.6" vectorEffect="non-scaling-stroke" />
           <ellipse cx="142" cy="100" rx="5" ry="3.6" vectorEffect="non-scaling-stroke" />
           <path d="M63 141 Q100 158 137 141" strokeWidth={7} strokeLinecap="round" strokeOpacity={0.9} />
-          <path d="M63 141 Q100 158 137 141" stroke="#ECE6D9" strokeWidth={4.6} strokeLinecap="round" />
+          <path d="M63 141 Q100 158 137 141" stroke={SHEET} strokeWidth={4.6} strokeLinecap="round" />
           <circle cx="134" cy="143" r="6.5" fill="currentColor" />
           <line x1="0" y1="100" x2="10" y2="100" stroke={RULE} vectorEffect="non-scaling-stroke" />
           <line x1="190" y1="100" x2="200" y2="100" stroke={RULE} vectorEffect="non-scaling-stroke" />
@@ -172,8 +186,8 @@ function BottomView({ sheet, text, verified }: { sheet: AnatomySheet; text: (t: 
         {sheet.base.map((c) => (
           <span
             key={c.n}
-            className="label-mono absolute flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border bg-[#ECE6D9] text-[0.6rem] font-semibold tabular-nums"
-            style={{ left: `${c.x}%`, top: `${c.y}%`, color: EMBER, borderColor: EMBER }}
+            className="label-mono absolute flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border bg-[#17181b] text-[0.65rem] font-semibold tabular-nums"
+            style={{ left: `${c.x}%`, top: `${c.y}%`, color: EMBER_INK, borderColor: EMBER_INK }}
             lang="en"
             aria-hidden
           >
@@ -181,7 +195,7 @@ function BottomView({ sheet, text, verified }: { sheet: AnatomySheet; text: (t: 
           </span>
         ))}
       </div>
-      <p className="label-mono text-center text-[0.6rem]" style={{ color: LEADER, letterSpacing: "0.14em" }} lang="en">
+      <p className="label-mono text-center text-[0.65rem]" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
         BOTTOM VIEW
       </p>
       <ol className="flex flex-col gap-3">
@@ -215,9 +229,19 @@ export function ProductAnatomySheet({ product }: { product: Product }) {
         </h3>
       </div>
 
-      <div className="relative mt-6 overflow-hidden rounded-2xl p-4 shadow-[0_30px_80px_rgba(0,0,0,0.5)] sm:p-6 lg:mt-8 lg:p-10" style={{ backgroundColor: "#ECE6D9", color: INK }}>
+      <div
+        className="relative mt-6 overflow-hidden rounded-2xl border border-surface-border p-6 shadow-[0_30px_80px_rgba(0,0,0,0.5)] sm:p-7 lg:mt-8 lg:p-10"
+        style={{
+          color: INK,
+          backgroundColor: SHEET,
+          // blueprint grid (24px, faint steel) under a soft light where the parts stand
+          backgroundImage:
+            "radial-gradient(ellipse 60% 55% at 45% 38%, rgba(111,184,216,0.10), transparent 70%), linear-gradient(rgba(111,184,216,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(111,184,216,0.05) 1px, transparent 1px)",
+          backgroundSize: "100% 100%, 24px 24px, 24px 24px",
+        }}
+      >
         {/* drawing frame + corner ticks */}
-        <div className="pointer-events-none absolute inset-3 rounded-lg border lg:inset-4" style={{ borderColor: "#CFC7B6" }} aria-hidden />
+        <div className="pointer-events-none absolute inset-3 rounded-lg border lg:inset-4" style={{ borderColor: RULE }} aria-hidden />
         {["left-3 top-3 lg:left-4 lg:top-4", "right-3 top-3 lg:right-4 lg:top-4", "bottom-3 left-3 lg:bottom-4 lg:left-4", "bottom-3 right-3 lg:bottom-4 lg:right-4"].map((pos) => (
           <span key={pos} className={cn("pointer-events-none absolute h-3 w-3", pos)} aria-hidden>
             <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2" style={{ background: RULE }} />
@@ -232,8 +256,9 @@ export function ProductAnatomySheet({ product }: { product: Product }) {
               {product.displayName}
             </p>
             <p className="text-xs font-medium" style={{ color: INK_SOFT }}>
-              {text(sheet.sheetTitle)}
-              <span className="label-mono ml-2 text-[0.6rem]" style={{ color: LEADER, letterSpacing: "0.14em" }} lang="en">
+              {/* English readers get the blueprint code alone — "Exploded view EXPLODED VIEW" says it twice */}
+              {locale !== "en" && text(sheet.sheetTitle)}
+              <span className="label-mono ml-2 text-[0.65rem]" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
                 EXPLODED VIEW
               </span>
             </p>
@@ -247,25 +272,25 @@ export function ProductAnatomySheet({ product }: { product: Product }) {
                 width={sheet.assembled.width}
                 height={sheet.assembled.height}
                 sizes="260px"
-                className="h-auto max-h-[32rem] w-auto drop-shadow-[0_24px_30px_rgba(58,56,51,0.3)]"
+                className={cn("h-auto max-h-[32rem] w-auto", PART_LIGHT)}
               />
-              <figcaption className="label-mono text-[0.6rem]" style={{ color: LEADER, letterSpacing: "0.14em" }} lang="en">
+              <figcaption className="label-mono text-[0.65rem]" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
                 3/4 VIEW
               </figcaption>
             </figure>
             <div className="lg:col-span-5">
               <ExplodedStack parts={sheet.parts} text={text} verified={verified} alt={alt} />
             </div>
-            <div className="border-t pt-8 lg:col-span-4 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0" style={{ borderColor: RULE }}>
+            <div className="border-t pt-8 lg:col-span-4 lg:flex lg:flex-col lg:justify-center lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0" style={{ borderColor: RULE }}>
               <BottomView sheet={sheet} text={text} verified={verified} />
             </div>
           </div>
 
           <div className="border-t pt-8" style={{ borderColor: RULE }}>
-            <ul className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-8">
+            <ul className="grid grid-cols-3 gap-2 sm:gap-4 lg:mx-auto lg:max-w-[46rem] lg:gap-6">
               {sheet.zooms.map((z) => (
                 <li key={z.id} className="flex flex-col gap-2">
-                  <div className="relative aspect-square overflow-hidden rounded-md border" style={{ borderColor: "#CFC7B6" }}>
+                  <div className="relative aspect-square overflow-hidden rounded-md border" style={{ borderColor: RULE, background: "radial-gradient(circle at 50% 40%, #2a2c32, #16171a 75%)" }}>
                     <Image src={z.image.src} alt={alt(z.image.alt)} fill sizes="(min-width: 1024px) 260px, 30vw" className="object-cover" />
                     {z.leds &&
                       [28, 42, 56, 70].map((x) => (
@@ -280,7 +305,7 @@ export function ProductAnatomySheet({ product }: { product: Product }) {
                   <p className="text-xs font-semibold leading-snug" style={{ color: INK }}>
                     {text(z.name)}
                   </p>
-                  <p className="label-mono -mt-1.5 text-[0.55rem] leading-tight" style={{ color: LEADER, letterSpacing: "0.14em" }} lang="en">
+                  <p className="label-mono -mt-1.5 text-[0.65rem] leading-tight" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
                     {z.code}
                   </p>
                 </li>

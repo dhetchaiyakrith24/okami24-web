@@ -46,7 +46,7 @@ export interface SheetCallout {
 export interface SheetPart {
   id: string;
   image: SheetImage;
-  callouts: (SheetCallout & { y: number })[];
+  callouts: (SheetCallout & { y: number; x?: number })[];
 }
 
 export interface AnatomySheet {
@@ -95,6 +95,7 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
             n: 4,
             code: "MINI DISPLAY",
             y: 77,
+            x: 66,
             name: { th: "ไฟบอกสถานะ", en: "Mini display", zh: "迷你显示屏" },
             detail: {
               th: "ไฟ 4 ดวงบอกแบตที่เหลือ ดวงละ 25% ส่วนไฟ RGB เปลี่ยนสีตามโหมด เขียว Eco น้ำเงิน Soft ชมพูอมม่วง Boost",
@@ -123,8 +124,8 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
       {
         n: 6,
         code: "CHARGING PORT",
-        x: 78,
-        y: 25,
+        x: 80,
+        y: 20,
         name: { th: "ช่องชาร์จ USB-C", en: "USB-C charging port", zh: "USB-C 充电口" },
         detail: { th: "แบต 600mAh ชาร์จซ้ำได้", en: "Rechargeable 600mAh battery", zh: "600mAh 电池，可重复充电" },
         specKey: "battery",
@@ -135,14 +136,15 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
         x: 64,
         y: 39,
         name: { th: "ปุ่มก้นพอต", en: "Bottom button", zh: "底部按键" },
-        detail: { th: "กดสองครั้งติดกันเพื่อสลับ 3 โหมด Eco / Soft / Boost", en: "Double-click to switch between 3 modes: Eco / Soft / Boost", zh: "连按两下切换 3 种模式：Eco / Soft / Boost" },
+        // "Eco/Soft/Boost" without spaces, as poster 04 prints it — one word, so "/ Boost" cannot drop to a line alone
+        detail: { th: "กดสองครั้งติดกันเพื่อสลับ 3 โหมด Eco/Soft/Boost", en: "Double-click to switch between 3 modes: Eco/Soft/Boost", zh: "连按两下切换 3 种模式：Eco/Soft/Boost" },
         specKey: "modes",
       },
       {
         n: 8,
         code: "AIRFLOW ADJUSTER",
-        x: 80,
-        y: 69,
+        x: 74,
+        y: 84,
         name: { th: "ช่องปรับลม", en: "Airflow adjuster", zh: "气流调节槽" },
       },
     ],
