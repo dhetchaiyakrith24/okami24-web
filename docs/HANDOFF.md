@@ -1113,6 +1113,8 @@ the owner's Run prompt folder: `C:\Users\dhetc\OneDrive\Desktop\Run prompt\New p
   `docs-close-mbar10k-anatomy` [main agent]: site fix `c827ba1` (round-close designer findings: English shows each part name
   once, close-up codes BASE/DISPLAY/COLLAR, RGB mode colours moved from 04 to 07 gated by modes+indicator, close-up row
   58rem) + the owner's note rewording (below) + these docs; small (SITE, 13.7), checker, the main agent merges.
+  Checker close verdict [main agent]: PR #136 PASS 3/3 at `66e392e` + re-check PASS 2/2 at `b1bcb32` (note rewording + docs);
+  7 baseline pages not reached (no shared file touched).
 3 round "ไล่ดูทีละส่วน M Bar 10K (exploded view)" — CLOSED at this close (opened and closed 30/09 in the eighth chat). Round
   file in git: `docs/rounds/รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt`. Working files `_incoming/mbar10k-anatomy/`
   (facts.md, decisions.md, work/export.js, work/gen.js, verify/, shots/; not in git). Batches 1 (directions + draft) and 2 (the
