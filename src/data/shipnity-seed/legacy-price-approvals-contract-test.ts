@@ -45,7 +45,8 @@ export function runLegacyPricingContractTests(): LegacyPricingContractResult[] {
     .filter(([, a]) => {
       if (a.evidence.trim().length < 20) return true;
       if (a.basis === "shipnity") return !a.shipnityProductId;
-      return a.shipnityProductId !== null || !a.evidence.startsWith("owner-estimate 2026-09-21:");
+      // Tag = "owner-estimate <ISO date of the owner's ruling>:" — 2026-09-21 for the prices round, later dates since.
+      return a.shipnityProductId !== null || !/^owner-estimate \d{4}-\d{2}-\d{2}:/.test(a.evidence);
     })
     .map(([slug]) => slug);
   check("every approval cites its Shipnity parent code and a real evidence note (owner-estimate: null parent + tagged evidence)", missingEvidence.length === 0, missingEvidence.join(", ") || "ok");

@@ -277,6 +277,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   const heroImageDisplayInfo = legacyCardImage ? heroImageDisplayMap[legacyCardImage.src] ?? null : null;
   // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
   const legacySellingPrice = getLegacyApprovedPrice(product.slug);
+  // Every option on the owner's sold-out list (e.g. WOTOFO nexBAR 18K, 2026-09-30) → the Offer says OutOfStock, not
+  // InStoreOnly. A product with any option in stock keeps OFFER_AVAILABILITY unchanged.
+  const legacyOptions = [...(product.flavorVariants ?? []), ...(product.colorVariants ?? [])];
+  const legacyAllSoldOut = legacyOptions.length > 0 && legacyOptions.every((o) => o.availability === "out-of-stock");
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -290,7 +294,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     image: legacyCardImage ? [absoluteUrl(legacyCardImage.src)] : undefined,
     // `offers` only when an owner-approved price exists (legacy-price-approvals.ts) — the legacy
     // Product type itself still has no price field; never fabricated.
-    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...OFFER_AVAILABILITY, ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
+    offers: legacySellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: legacySellingPrice, ...OFFER_AVAILABILITY, ...(legacyAllSoldOut ? { availability: "https://schema.org/OutOfStock" } : {}), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
   };
   const legacyTrail = [
     { name: "Home", path: "/" },

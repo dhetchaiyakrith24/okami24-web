@@ -52,4 +52,37 @@ joiway-f4 | Cool Mint Ice + Strawberry Ice
 
 # ---- UWELL Caliburn G4 Pro KOKO — สีที่เพิ่ม 2026-09-06 ยังไม่มีของ ----
 caliburn-g4-pro-koko | Golden Carbon
+
+# ---- WOTOFO nexBAR 18K — ร้านไม่มีของ ลงไว้ครบทุกกลิ่นของผู้ผลิต ขึ้นว่าหมดทุกกลิ่น (พี่สั่ง 2026-09-30) ----
+wotofo-nexbar-18k | Blueberry Raspberry
+wotofo-nexbar-18k | Blue Razz Ice
+wotofo-nexbar-18k | Grape Ice
+wotofo-nexbar-18k | Watermelon Ice
+wotofo-nexbar-18k | Watermelon Bubblegum
+wotofo-nexbar-18k | Strawberry Kiwi
+wotofo-nexbar-18k | Pina Colada
+wotofo-nexbar-18k | Guava Kiwi Passion Fruit
+wotofo-nexbar-18k | Blackberry Ice
+wotofo-nexbar-18k | Lemon Lime
+wotofo-nexbar-18k | Mint
+wotofo-nexbar-18k | Energy Ice
+wotofo-nexbar-18k | Double Apple
+wotofo-nexbar-18k | Caramel Tobacco
+wotofo-nexbar-18k | Peach Mango Watermelon
+wotofo-nexbar-18k | Strawberry Banana
+wotofo-nexbar-18k | Raspberry Cherry
+wotofo-nexbar-18k | Mango Ice
+wotofo-nexbar-18k | Peach Ice
+wotofo-nexbar-18k | Mixed Berries
+wotofo-nexbar-18k | Cherry Ice
+wotofo-nexbar-18k | Forest Berries
+wotofo-nexbar-18k | Hawaiian Shore Ice
+wotofo-nexbar-18k | Melon Kiwi Banana
+wotofo-nexbar-18k | Pomegranate Ice
+wotofo-nexbar-18k | Strawberry Ice
+wotofo-nexbar-18k | Three Melons
+wotofo-nexbar-18k | Cherry Dragon Fruit
+wotofo-nexbar-18k | Melon Blast
+wotofo-nexbar-18k | Pineapple Ice
+wotofo-nexbar-18k | Watermelon Dragon Fruit
 `;

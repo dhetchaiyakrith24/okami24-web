@@ -16,8 +16,8 @@ export const wotofoProducts: Product[] = [
   {
     // Image-fix round (owner 2026-09-29/30): the shop sells nexBar CLEAR 18K (Shipnity Pod-180), not this model —
     // the old Pod-180 page showed this WOTOFO device by mistake. The owner keeps the WOTOFO brand on the site with
-    // a real WOTOFO product carrying full official data. It is NOT sold here: no price row in
-    // legacy-price-approvals.ts = browse-only (no price, no order or LINE button), by design.
+    // a real WOTOFO product carrying full official data. The shop has no stock: owner 2026-09-30 — a normal product with
+    // a price (legacy-price-approvals.ts) and every flavour on the sold-out list (src/data/stock/sold-out.ts).
     id: "wotofo-nexbar-18k",
     slug: "wotofo-nexbar-18k",
     brandId: "wotofo",
@@ -38,7 +38,7 @@ export const wotofoProducts: Product[] = [
       capacityMl: 21,
       screenType: "led-indicator",
       portability: "compact",
-      // Not a maker fact — the shop's own beginner filter; this page is browse-only, so it stays out of that filter.
+      // Not a maker fact — the shop's own beginner filter; no flavour is in stock, so it stays out of that filter.
       beginnerFriendly: false,
       chargingType: "USB-C",
     },
