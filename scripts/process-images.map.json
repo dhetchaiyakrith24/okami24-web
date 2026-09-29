@@ -2164,5 +2164,149 @@
    "fidelitySheet": "_incoming/wotofo/fid/watermelon_ice-b.png — IoU 0.997, deltaE max 0.9 (checker re-measured, PR #121); flavour label read by eye"
   },
   "note": "image-fix round 2026-09-30 — OKami24 Higgsfield remake of WOTOFO's own photo; flat #E9E9EC background keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/lemon_lime.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "lemon-lime",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k 1:1 (jobs _incoming/wotofo/out/job-bgr-01.json, job-lemon_lime-a.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k img-01 (order of product.json images), background removed → _incoming/wotofo/out/bgr-01.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/lemon_lime.png — IoU 0.993, deltaE max 3.5; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/blue_razz_ice.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "blue-razz-ice",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k 1:1 (jobs _incoming/wotofo/out/job-bgr-05.json, job-blue_razz_ice-a.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k img-05 (order of product.json images), background removed → _incoming/wotofo/out/bgr-05.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/blue_razz_ice.png — IoU 0.995, deltaE max 3.7; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/raspberry_cherry.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "raspberry-cherry",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k 1:1 (jobs _incoming/wotofo/out/job-bgr-07.json, job-raspberry_cherry-a.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k img-07 (order of product.json images), background removed → _incoming/wotofo/out/bgr-07.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/raspberry_cherry.png — IoU 0.983, deltaE max 3.5; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/caramel_tobacco.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "caramel-tobacco",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k 1:1 (jobs _incoming/wotofo/out/job-bgr-12.json, job-caramel_tobacco-a.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k img-12 (order of product.json images), background removed → _incoming/wotofo/out/bgr-12.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/caramel_tobacco.png — IoU 0.994, deltaE max 3.7; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/double_apple.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "double-apple",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k 1:1 (jobs _incoming/wotofo/out/job-bgr-13.json, job-double_apple-a.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k img-13 (order of product.json images), background removed → _incoming/wotofo/out/bgr-13.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/double_apple.png — IoU 0.993, deltaE max 4.2; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/blueberry_raspberry.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "blueberry-raspberry",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k 1:1 (jobs _incoming/wotofo/out/job-bgr-14.json, job-blueberry_raspberry-a.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k img-14 (order of product.json images), background removed → _incoming/wotofo/out/bgr-14.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/blueberry_raspberry.png — IoU 0.992, deltaE max 2.5; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/watermelon_bubblegum.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "watermelon-bubblegum",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k 1:1 (jobs _incoming/wotofo/out/job-bgr-15.json, job-watermelon_bubblegum-a.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k img-15 (order of product.json images), background removed → _incoming/wotofo/out/bgr-15.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/watermelon_bubblegum.png — IoU 0.992, deltaE max 2.4; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/pina_colada.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "pina-colada",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k 1:1 (jobs _incoming/wotofo/out/job-bgr-16.json, job-pina_colada-a.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k img-16 (order of product.json images), background removed → _incoming/wotofo/out/bgr-16.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/pina_colada.png — IoU 0.994, deltaE max 2.1; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/mint.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "mint",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k 1:1 (jobs _incoming/wotofo/out/job-bgr-18.json, job-mint-a.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k img-18 (order of product.json images), background removed → _incoming/wotofo/out/bgr-18.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/mint.png — IoU 0.994, deltaE max 2.6; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/energy_ice.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "energy-ice",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k 1:1 (jobs _incoming/wotofo/out/job-bgr-20.json, job-energy_ice-a.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k img-20 (order of product.json images), background removed → _incoming/wotofo/out/bgr-20.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/energy_ice.png — IoU 0.995, deltaE max 4.3; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/blackberry_ice.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "blackberry-ice",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k 1:1 (jobs _incoming/wotofo/out/job-bgr-22.json, job-blackberry_ice-a.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k img-22 (order of product.json images), background removed → _incoming/wotofo/out/bgr-22.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/blackberry_ice.png — IoU 0.996, deltaE max 3; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/grape_ice.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "grape-ice",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k 1:1 (jobs _incoming/wotofo/out/job-bgr-23.json, job-grape_ice-a.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k img-23 (order of product.json images), background removed → _incoming/wotofo/out/bgr-23.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/grape_ice.png — IoU 0.994, deltaE max 2.5; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
  }
 ]
