@@ -213,8 +213,10 @@ export const zh: Dictionary = {
     sourceNoteLabel: "参考来源",
     officialSite: "官方网站 ↗",
     gallerySourceLinkLabel: "来源",
-    // Round 30.4ค batch 5 — moved out of ProductGallery.tsx (was hardcoded English on the Chinese page).
-    galleryNote: "图片来自 {brand} 官方，仅作参考展示，不作商业转载。",
+    // Owner 2026-09-30: the "not for commercial reuse" clause goes (the shop sells); the credit stays.
+    galleryNote: "图片来自 {brand} 官方。",
+    // The old line, held on the 7 SEO-baseline pages until 2026-10-05 (types.ts) — delete after.
+    galleryNoteHeld: "图片来自 {brand} 官方，仅作参考展示，不作商业转载。",
   },
   pilot: {
     unpublishedBadge: "未发布",
