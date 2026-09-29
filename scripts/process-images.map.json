@@ -2057,5 +2057,112 @@
   },
   "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-yellow-mint-v3.webp"
+ },
+ {
+  "source": "_incoming/wotofo/cut/card.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 4k 4:5 (job _incoming/wotofo/out/job-watermelon_ice-card.json)",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k-21.jpg (Watermelon Ice, 1080 JPG on black), background removed → _incoming/wotofo/out/bgr-21.png",
+   "fidelitySheet": "_incoming/wotofo/fid/card.png — IoU 0.996, deltaE max 6.6; NEX BAR / WOTOFO / WATERMELON ICE / NORM / TURBO read by eye"
+  },
+  "note": "image-fix round 2026-09-30 — OKami24 Higgsfield remake of WOTOFO's own photo (owner chose remade photos 30/09, IMAGE_SPEC §0 item 7)"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/strawberry_banana.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "strawberry-banana",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/wotofo/out/job-strawberry_banana-a.json)",
+   "reference": "wotofo.com official gallery photo, background removed (Higgsfield image_background_remover) → _incoming/wotofo/out/bgr-06.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/strawberry_banana.png (+ .json) — numbers PASS; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30 — OKami24 Higgsfield remake of WOTOFO's own photo; flat #E9E9EC background keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/mango_ice.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "mango-ice",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/wotofo/out/job-mango_ice-a.json)",
+   "reference": "wotofo.com official gallery photo, background removed (Higgsfield image_background_remover) → _incoming/wotofo/out/bgr-08.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/mango_ice.png (+ .json) — numbers PASS; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30 — OKami24 Higgsfield remake of WOTOFO's own photo; flat #E9E9EC background keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/peach_ice.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "peach-ice",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/wotofo/out/job-peach_ice-a.json)",
+   "reference": "wotofo.com official gallery photo, background removed (Higgsfield image_background_remover) → _incoming/wotofo/out/bgr-09.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/peach_ice.png (+ .json) — numbers PASS; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30 — OKami24 Higgsfield remake of WOTOFO's own photo; flat #E9E9EC background keyed with scripts/flatcut.js (t0 4 / t1 24 — the default key ate the right-edge highlight)"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/mixed_berries.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "mixed-berries",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/wotofo/out/job-mixed_berries-a.json)",
+   "reference": "wotofo.com official gallery photo, background removed (Higgsfield image_background_remover) → _incoming/wotofo/out/bgr-10.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/mixed_berries.png (+ .json) — numbers PASS; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30 — OKami24 Higgsfield remake of WOTOFO's own photo; flat #E9E9EC background keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/peach_mango_watermelon.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "peach-mango-watermelon",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/wotofo/out/job-peach_mango_watermelon-a.json)",
+   "reference": "wotofo.com official gallery photo, background removed (Higgsfield image_background_remover) → _incoming/wotofo/out/bgr-11.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/peach_mango_watermelon.png (+ .json) — numbers PASS; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30 — OKami24 Higgsfield remake of WOTOFO's own photo; flat #E9E9EC background keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/strawberry_kiwi.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "strawberry-kiwi",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/wotofo/out/job-strawberry_kiwi-a.json)",
+   "reference": "wotofo.com official gallery photo, background removed (Higgsfield image_background_remover) → _incoming/wotofo/out/bgr-17.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/strawberry_kiwi.png (+ .json) — numbers PASS; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30 — OKami24 Higgsfield remake of WOTOFO's own photo; flat #E9E9EC background keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/review/cut/guava_kiwi_passion_fruit.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "guava-kiwi-passion-fruit",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/wotofo/out/job-guava_kiwi_passion_fruit-a.json)",
+   "reference": "wotofo.com official gallery photo, background removed (Higgsfield image_background_remover) → _incoming/wotofo/out/bgr-19.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/guava_kiwi_passion_fruit.png (+ .json) — numbers PASS; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30 — OKami24 Higgsfield remake of WOTOFO's own photo; flat #E9E9EC background keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/wotofo/cut/wm-ice-final.png",
+  "slug": "wotofo-nexbar-18k",
+  "role": "variant",
+  "id": "watermelon-ice",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k (job _incoming/wotofo/out/job-watermelon_ice-b.json)",
+   "reference": "wotofo.com official gallery photo, background removed (Higgsfield image_background_remover) → _incoming/wotofo/out/bgr-21.png",
+   "fidelitySheet": "_incoming/wotofo/review/fid/watermelon_ice.png (+ .json) — numbers PASS; flavour label read by eye"
+  },
+  "note": "image-fix round 2026-09-30 — OKami24 Higgsfield remake of WOTOFO's own photo; flat #E9E9EC background keyed with scripts/flatcut.js"
  }
 ]
