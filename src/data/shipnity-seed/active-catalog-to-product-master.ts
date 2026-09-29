@@ -67,7 +67,9 @@ function slugifyValue(text: string): string {
 // ===================================================================================
 
 interface TaxonomyMatch {
-  brandId: string;
+  /** null only together with `brandless: true` (owner ruling: the product carries no brand on the site). */
+  brandId: string | null;
+  brandless?: true;
   /** Absent when the brand is explicit in the text but no matching family/product-line record
    *  exists yet (e.g. "Voopoo PnP-X" — brand=voopoo confirmed, but no "PnP" family is committed). */
   familyId?: string;
@@ -360,7 +362,10 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // source found (Wotofo's own list, and two different Thai retailers' stock, are each a
   // different 10) — the flavors here are plausibly a genuine Thai-market lineup but that has not
   // been independently corroborated; publish, if ever, as retailer-supplied and uncorroborated.
-  "Pod-180": { brandId: "wotofo", categoryId: "disposables", systemType: "disposable", evidence: 'name "Nexbar Clear 18k" — wotofo.com\'s own official nexBAR 18K product/collection pages confirm a real, matching product (18,000 puffs, 750mAh, dual nexMESH coils, 20 flavors); the "Clear" edition-name qualifier itself is carried from the Shipnity label, not independently confirmed against an official edition name' },
+  // Image-fix round (owner 2026-09-29): the shop sells nexBar CLEAR 18K (clear body, "nexBar CLEAR 18K" printed on the
+  // device — owner's photos), NOT WOTOFO's carbon-look nexBAR 18K the earlier match assumed from the name. Owner ruling:
+  // no brand on the site. WOTOFO keeps its own real product (src/data/products/wotofo.ts).
+  "Pod-180": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'owner ruling 2026-09-29 (image-fix round): Shipnity "Nexbar Clear 18k" = nexBar CLEAR 18K, sold without a brand on the site; the earlier WOTOFO match was a name look-alike (WOTOFO nexBAR 18K is a different device)' },
 
   // ===================================================================================
   // Heated-tobacco wave — owner has settled the business/legal-scope question for this category;
@@ -1669,6 +1674,7 @@ function buildDraftCandidate(
     lifecycleStatus: "active", // genuinely active per Shipnity's own "have stock" view
     publicationStatus: approval ? "published" : "unpublished",
     brandId: match?.brandId ?? null,
+    ...(match?.brandless ? { brandless: true as const } : {}),
     familyId: match?.familyId ?? null,
     categoryId: match?.categoryId ?? null,
     // ProductMaster's own SystemType is device-only by design (see product-master-schema.ts's own
@@ -1725,7 +1731,7 @@ function buildDraftCandidate(
   // comment. Kept in sync manually since this is a UI/reporting convenience flag, not itself a
   // validation gate (the registry validator is the single source of truth for readiness).
   const isDraft =
-    product.brandId === null ||
+    (product.brandId === null && product.brandless !== true) ||
     product.categoryId === null ||
     product.tagline === null ||
     product.shortDescription === null;
