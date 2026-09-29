@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v92 · 2026-09-30 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v93 · 2026-09-30 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -855,6 +855,121 @@ v92 §16 lines relocated at the seventh chat's move (main agent, 30/09, word for
   36633396707, 0.01-0.27 s after the kill; likely cause = fetch reusing a keep-alive socket).
 ```
 
+### §16 lines relocated at the eighth computer-round chat's close (round "ไล่ดูทีละส่วน M Bar 10K", 2026-09-30, v93 — word for word, replaced by v93 text)
+
+Header + copy-paste line of v92:
+```
+(v92 — written by doc-keeper at the second batch close of the seventh computer-round chat (30/09), round
+"รอบรูป-แก้" (still OPEN). Eighth chat starts from this block. Chat-move edits by the main agent after #133 (30/09):
+main line, #132/#133, DESIGN FACTS "12 flavours" line, item 5, NEXT WORK (1) — marked [chat-move].)
+Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + round file
+`C:\Users\dhetc\OneDrive\Desktop\Run prompt\New prompt WEB\รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt` [chat-move]
+```
+
+v92 item 1 (main + PRs of the seventh chat's second batch):
+```
+1 main [chat-move]: `3f39e87` (merge PR #133) [ตรวจแล้ว — main agent's git]. After the batch below: #132 `8d93f23` docs
+  (§16 v92) · #133 `3f39e87` the M Bar 10K "รุ่นนี้มี 12 กลิ่น" box+device grid is BACK (owner 30/09: only the wide
+  banner was the duplicate) — checker PASS, checks green, deploy success, live curl shows the grid [ตรวจแล้ว].
+  Batch before (v92 text): `d866032` (PR #130's merge commit [เชื่อว่า — main agent]) [ตรวจแล้ว —
+  the hash read from .git/refs/remotes/origin/main at this close; no git/gh in doc-keeper, so PR numbers and hashes
+  below are the main agent's report [เชื่อว่า]]. No tag (round not closed). Rollback = revert the merge commit of the
+  PR in question. Merged in this batch, each checker PASS + GitHub checks green; LIVE (deploy of d866032 =
+  decide/checks/deploy success; main agent's curl: live /products/m-bar-10k has no story-lineup and shows "ภาพจริงจาก
+  SALTHUB"; live /products/argus-g4 still shows the old held line, as intended — item 3):
+  #129 `d569aab` docs close (§16 v91 + LESSONS 16 — the docs PR of the previous close, now merged).
+  #131 `8396b0f` fix(gates) verify-catalog port check — detail relocated to §3 at the chat move [chat-move].
+  #130 `d866032` (owner chat 30/09): (a) M Bar 10K — the bottom "รุ่นนี้มี 12 กลิ่น" section is left out on lineupFirst
+  pages (`ProductMoreDetails`), `storyLineup` removed from type/component/data; (b) gallery lede th/en/zh = credit
+  only ("ภาพจริงจาก {brand}") — the owner cut "ใช้เป็นภาพประกอบเท่านั้น และไม่นำไปเผยแพร่ต่อเพื่อการค้า" ("เรากำลังทำ
+  เพื่อการค้า"); the 7 SEO-baseline slugs keep the old line (item 3); (c) M Bar 10K swatch dots Pink Berry #6a3fc0,
+  Strawberry Kiwi #b0409a, Watermelon Mint #c93a45 = the device base colour on SALTHUB's own photos (the old dots
+  were guessed). Proof: scan.js 0/105, raw chars 0, visible-text only m-bar-10k changed, html-diff 7/7 twice, shots
+  `_incoming/trim-credit/shots/`.
+  The first batch of this chat (#126-#128: phone gallery, premium lineup) and the earlier PRs: relocated word for
+  word to §3, "§16 lines relocated at the seventh computer-round chat's second batch close" (and the sixth chat's
+  to the block before it).
+2 ahead of main: nothing open [เชื่อว่า — main agent]. This close's own docs PR: `git log --oneline
+  origin/main..<its branch>` · `gh pr list` — branch and PR number [ยังไม่มีข้อมูล — not known to doc-keeper]; docs =
+  small (13.7), checker, the main agent merges.
+```
+
+v92 item 3, the "round OPENED" lines (round opened by the main agent, eighth chat):
+```
+3 round OPENED 30/09 (eighth chat, main agent): "ไล่ดูทีละส่วน M Bar 10K (exploded view)" — round file
+  `docs/rounds/รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt`, work branch `mbar10k-anatomy` from main `e6463da`.
+  Batches: 1 directions + draft (tier B) · 2 section on /products/m-bar-10k th/en/zh (tier B) · 3 extras 360/X-ray if 2
+  passes the owner (tier B). Method: all text on the sheet = page text (HTML/SVG, 3 languages), AI renders only the
+  device/parts. Stopped at: batch 1 — designer + scope-auditor running. Owner asked: base arc slot = airflow? (no
+  label until answered) · re-attach the cream phone blueprint ref.
+```
+
+v92 NEXT WORK (0):
+```
+  (0) [chat-move] FIRST NEXT STEP (owner 30/09 "อยากให้ทำรอบนี้ก่อน"): "ไล่ดูทีละส่วน" for M Bar 10K — a premium
+      exploded view (owner's pick; 360 view / X-ray = extras), designer designs, Friday/Higgsfield draws, manufacturer
+      facts only — round file `รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt` (owner's Run prompt folder). Ready:
+      `_incoming/mbar10k-anatomy/facts.md` (researcher, SALTHUB-only facts + drawing notes; internals never shown by
+      the maker) and `_incoming/mbar10k-anatomy/owner-refs/` (4 of the owner's 5 reference images; the cream blueprint
+      sheet was not saved — ask the owner to attach it again). ProductAnatomy has no per-product data today and is
+      hidden on storyDetails pages → needs a new field or component.
+```
+
+v92 Higgsfield line (the "~1,960" figure was stale — main agent, eighth chat: balance at open 1521.1):
+```
+  Higgsfield credits: ~1,960 [เชื่อว่า — main agent's figure: 2043.1 at the start of the batch minus ~85 used; the
+  owner approved using them and topped up]; warn the owner before a shop-wide image job would cross the balance.
+```
+
+v92 items 4(6), "Removed since v91", 5, 6-tail:
+```
+  (6) the two open questions of item 5 (credit line · phone-swipe check) [รอเจ้าของ] — the old TASTE list (names,
+      banner, colour mismatch) is answered, see item 3 and §3
+  Removed since v91: all relocated word for word to §3, "second batch close" block.
+5 open questions [chat-move]: none open — owner 30/09 answered both: (a) phone swipe after #127 = "ลื่นแล้ว" (smooth);
+  (b) the credit line "ภาพจริงจาก {brand}" = keep.
+  Seventh chat, second batch [เชื่อว่า — main agent's report, checker PASS each]: #130 = scan.js 0/105 · raw chars 0
+  · visible-text: only m-bar-10k changed · html-diff 7/7 twice; #131 = the step's Linux runs, 3 passing (item 3).
+  Not a new baseline (light-set round; the full-set numbers above stay as printed at the clip round). The first batch's
+  and the sixth chat's per-PR proof lines: §3 second-batch-close block.
+```
+
+Eighth chat's own proof of round "ไล่ดูทีละส่วน M Bar 10K" (PR #135, light set) [เชื่อว่า — main agent's report; doc-keeper ran none of it]: checker PASS 6/6 at `d305e9d` + re-check PASS 4/4 at `46f2d1d`; tsc 0 · eslint 0 · thai-raw-chars 0 · forbidden words 0 · scan.js 0/105 · locale-hydration en/zh 0 · visible-text: 291 added, all on m-bar-10k, control pages unchanged · wordbreak NEW 0 · verify:catalog (fast) 29/29 · content-dates current (56 paths) · fidelity: front IoU 0.996 ΔE≤1.8, base eye-checked against poster 04 (its numbers fail only from the poster's background). PR #135 commits: `63bf953` docs open round · `7ecef04` images · `7863173` feat · `1ba08c5` dark theme + review fixes · `d305e9d` LESSONS (new section "สิ่งที่เจ้าของชอบ / ไม่ชอบ") · `46f2d1d` checker notes a–d. Merge `fd4a6ba`; deploy run 36645201270 success; live curl shows the section.
+
+Also relocated from v92 §16 at the same close (space — §16 cap 15 KB; word for word):
+
+DESIGN FACTS of the M Bar 10K pilot + owner-answers pointer:
+```
+  DESIGN FACTS of the M Bar 10K pilot, current after #130 [เชื่อว่า — main agent's report; the older wording is in §3]:
+  two per-product flags — `lineupFirst` (page opens on `lineupImage`, "ทั้งหมด" chip, lineup = first phone slide,
+  swatch-colour glow behind a picked device) and `storyDetails` (`ProductMoreDetails.tsx` replaces gallery + anatomy
+  + feature cards: `storyCover` poster, 4 poster highlight blocks shown whole, then the "12 flavours" box+device
+  grid (`boxImage`), then the spec sheet). [chat-move: #130 hid that grid on lineupFirst pages; #133 brought it back.]
+  `Product.storyLineup` (the wide banner) is gone for good. Device-only flavour photos = ONE Higgsfield nano_banana_pro 4K
+  master render + a per-flavour recolour script (`_incoming/pilot-mbar10k/recolour.js`). `lineup-v3.webp` stays the
+  first image. #119 `.github/workflows/deploy.yml`: when main moved on, the deploy job deploys if deploy-decision.js
+  says 0 newer files reach the site.
+  OWNER ANSWERS 30/09: relocated to §3 at the chat move [chat-move].
+```
+
+Leftovers of the sixth chat, and the long form of item 4 (5):
+```
+  Leftovers of the sixth chat [เชื่อว่า — main agent's report]: stale comment above `VERIFIED_MEDIA["Pod-180"]`
+  (~lines 974-984 of `active-catalog-to-product-master.ts`, comment only) · old unreferenced
+  `public/assets/products/nexbar-clear-18k/card.webp` (a WOTOFO image; delete only with the owner's OK, 13.4 #1) ·
+  worktree `_incoming/wt-prb` contains junctions `node_modules` and `_incoming/nexbar-clear` — remove the junctions
+  with `(Get-Item <path>).Delete()` BEFORE `git worktree remove`, never recurse into them · the ProductMaster spec
+  tables stay Thai on en/zh pages (pre-existing on pod-159 / iqosheet-16; spawned as its own task).
+  (5) leftover unreferenced photo files, 9 as of v92 [เชื่อว่า — the 6 of v88 (argus-g4 orange, caliburn-g4-pro-koko
+      coral-pink, caliburn-g5-lite coral-orange, caliburn-g5-lite-se purple-leather — three are baseline products —
+      argus-g3-mini/variants/sky-blue.webp, m-bar-10k strawberry-kiwi-v2) + `m-bar-10k/lineup.webp` (v1)], plus
+      `nexbar-clear-18k/card.webp` (leftovers above), plus `m-bar-10k/lineup-v2.webp` (unreferenced since #128), plus
+      NEW `m-bar-10k/story-lineup.webp` (unreferenced since #130); the count is not a fresh scan — re-scan
+      public/assets/products vs src/ at round close, delete with the owner's OK (13.4 #1) · the m-bar-10k `boxImage`
+      fields stay in data, not shown (not counted as leftovers)
+```
+[Note by doc-keeper at v93: the round's own new images `m-bar-10k/anatomy/*-v1.webp` are referenced, not leftovers; the count of 9 was not re-scanned at this close.]
+
 ---
 
 ## 4. Known broken / missing, not fixed yet
@@ -984,74 +1099,59 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-(v92 — written by doc-keeper at the second batch close of the seventh computer-round chat (30/09), round
-"รอบรูป-แก้" (still OPEN). Eighth chat starts from this block. Chat-move edits by the main agent after #133 (30/09):
-main line, #132/#133, DESIGN FACTS "12 flavours" line, item 5, NEXT WORK (1) — marked [chat-move].)
-Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + round file
-`C:\Users\dhetc\OneDrive\Desktop\Run prompt\New prompt WEB\รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt` [chat-move]
-1 main [chat-move]: `3f39e87` (merge PR #133) [ตรวจแล้ว — main agent's git]. After the batch below: #132 `8d93f23` docs
-  (§16 v92) · #133 `3f39e87` the M Bar 10K "รุ่นนี้มี 12 กลิ่น" box+device grid is BACK (owner 30/09: only the wide
-  banner was the duplicate) — checker PASS, checks green, deploy success, live curl shows the grid [ตรวจแล้ว].
-  Batch before (v92 text): `d866032` (PR #130's merge commit [เชื่อว่า — main agent]) [ตรวจแล้ว —
-  the hash read from .git/refs/remotes/origin/main at this close; no git/gh in doc-keeper, so PR numbers and hashes
-  below are the main agent's report [เชื่อว่า]]. No tag (round not closed). Rollback = revert the merge commit of the
-  PR in question. Merged in this batch, each checker PASS + GitHub checks green; LIVE (deploy of d866032 =
-  decide/checks/deploy success; main agent's curl: live /products/m-bar-10k has no story-lineup and shows "ภาพจริงจาก
-  SALTHUB"; live /products/argus-g4 still shows the old held line, as intended — item 3):
-  #129 `d569aab` docs close (§16 v91 + LESSONS 16 — the docs PR of the previous close, now merged).
-  #131 `8396b0f` fix(gates) verify-catalog port check — detail relocated to §3 at the chat move [chat-move].
-  #130 `d866032` (owner chat 30/09): (a) M Bar 10K — the bottom "รุ่นนี้มี 12 กลิ่น" section is left out on lineupFirst
-  pages (`ProductMoreDetails`), `storyLineup` removed from type/component/data; (b) gallery lede th/en/zh = credit
-  only ("ภาพจริงจาก {brand}") — the owner cut "ใช้เป็นภาพประกอบเท่านั้น และไม่นำไปเผยแพร่ต่อเพื่อการค้า" ("เรากำลังทำ
-  เพื่อการค้า"); the 7 SEO-baseline slugs keep the old line (item 3); (c) M Bar 10K swatch dots Pink Berry #6a3fc0,
-  Strawberry Kiwi #b0409a, Watermelon Mint #c93a45 = the device base colour on SALTHUB's own photos (the old dots
-  were guessed). Proof: scan.js 0/105, raw chars 0, visible-text only m-bar-10k changed, html-diff 7/7 twice, shots
-  `_incoming/trim-credit/shots/`.
-  The first batch of this chat (#126-#128: phone gallery, premium lineup) and the earlier PRs: relocated word for
-  word to §3, "§16 lines relocated at the seventh computer-round chat's second batch close" (and the sixth chat's
-  to the block before it).
-2 ahead of main: nothing open [เชื่อว่า — main agent]. This close's own docs PR: `git log --oneline
-  origin/main..<its branch>` · `gh pr list` — branch and PR number [ยังไม่มีข้อมูล — not known to doc-keeper]; docs =
-  small (13.7), checker, the main agent merges.
-3 round OPENED 30/09 (eighth chat, main agent): "ไล่ดูทีละส่วน M Bar 10K (exploded view)" — round file
-  `docs/rounds/รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt`, work branch `mbar10k-anatomy` from main `e6463da`.
-  Batches: 1 directions + draft (tier B) · 2 section on /products/m-bar-10k th/en/zh (tier B) · 3 extras 360/X-ray if 2
-  passes the owner (tier B). Method: all text on the sheet = page text (HTML/SVG, 3 languages), AI renders only the
-  device/parts. Stopped at: batch 1 — designer + scope-auditor running. Owner asked: base arc slot = airflow? (no
-  label until answered) · re-attach the cream phone blueprint ref.
-  Previous round "รอบรูป-แก้" (image fix) — still OPEN (not closed; this round was put first by the owner 30/09). Background jobs: none known [เชื่อว่า]. A test server on 3412
-  (`scripts/test-server.js`, build of `cbbb0b7`) may still be up — `node scripts/test-server.js stop` or reuse it.
-  DESIGN FACTS of the M Bar 10K pilot, current after #130 [เชื่อว่า — main agent's report; the older wording is in §3]:
-  two per-product flags — `lineupFirst` (page opens on `lineupImage`, "ทั้งหมด" chip, lineup = first phone slide,
-  swatch-colour glow behind a picked device) and `storyDetails` (`ProductMoreDetails.tsx` replaces gallery + anatomy
-  + feature cards: `storyCover` poster, 4 poster highlight blocks shown whole, then the "12 flavours" box+device
-  grid (`boxImage`), then the spec sheet). [chat-move: #130 hid that grid on lineupFirst pages; #133 brought it back.]
-  `Product.storyLineup` (the wide banner) is gone for good. Device-only flavour photos = ONE Higgsfield nano_banana_pro 4K
-  master render + a per-flavour recolour script (`_incoming/pilot-mbar10k/recolour.js`). `lineup-v3.webp` stays the
-  first image. #119 `.github/workflows/deploy.yml`: when main moved on, the deploy job deploys if deploy-decision.js
-  says 0 newer files reach the site.
+(v93 — written by doc-keeper at the close of round "ไล่ดูทีละส่วน M Bar 10K (exploded view)" (eighth computer-round
+chat, 30/09). Ninth chat starts from this block. The v92 text that this replaced: §3 "§16 lines relocated at the
+eighth computer-round chat's close".)
+Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + the next round's file (the whole-site image round) in
+the owner's Run prompt folder: `C:\Users\dhetc\OneDrive\Desktop\Run prompt\New prompt WEB\รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
+[เชื่อว่า — main agent's report; doc-keeper cannot see that folder]
+1 main: `git fetch && git log -1 --oneline origin/main` — at this close `fd4a6ba` = merge of PR #135 (branch
+  `mbar10k-anatomy`) [ตรวจแล้ว — .git/refs/remotes/origin/main of this working tree; the PR number is the main agent's
+  report, [เชื่อว่า]]. Round rollback point = `e6463da` (main before #135, PR #134 §16 chat-move docs); to undo the round =
+  revert the merge commit `fd4a6ba`. Tag `mbar10k-anatomy-done` goes on this docs close commit (the main agent tags it).
+2 ahead of main: `git log --oneline origin/main..<branch>` — nothing open but this close's PR #136, branch
+  `docs-close-mbar10k-anatomy` [main agent]: site fix `c827ba1` (round-close designer findings: English shows each part name
+  once, close-up codes BASE/DISPLAY/COLLAR, RGB mode colours moved from 04 to 07 gated by modes+indicator, close-up row
+  58rem) + the owner's note rewording (below) + these docs; small (SITE, 13.7), checker, the main agent merges.
+  Checker close verdict [main agent]: PR #136 PASS 3/3 at `66e392e` + re-check PASS 2/2 at `b1bcb32` (note rewording + docs);
+  7 baseline pages not reached (no shared file touched).
+3 round "ไล่ดูทีละส่วน M Bar 10K (exploded view)" — CLOSED at this close (opened and closed 30/09 in the eighth chat). Round
+  file in git: `docs/rounds/รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt`. Working files `_incoming/mbar10k-anatomy/`
+  (facts.md, decisions.md, work/export.js, work/gen.js, verify/, shots/; not in git). Batches 1 (directions + draft) and 2 (the
+  section, th/en/zh) done and merged in PR #135 (checker PASS 6/6 at `d305e9d` + re-check PASS 4/4 at `46f2d1d`, GitHub checks
+  green, deploy run 36645201270 success [เชื่อว่า — main agent]; live curl by the main agent shows the section: `anatomy-sheet-title`,
+  "ภาพแยกชิ้น", "ช่องปรับลม", "ไม่ใช่ภาพถอดเครื่องจริง" (that note reworded at the close, owner 30/09: "ภาพแยกชิ้นช่วยให้เห็นว่า
+  แต่ละส่วนอยู่ตรงไหนและทำหน้าที่อะไร" — the photos are the real device); control pages caliburn-g5 / m-bar-9k / relx-smash-go-12k have none). Batch 3
+  (360 view / X-ray extras) NOT done — offered to the owner (item 4 (9)); X-ray may show only the outer shell, internals never.
+  WHAT SHIPPED: /products/m-bar-10k "ไล่ดูทีละส่วน" dark blueprint sheet inside "more details" after the cover: 3/4 view, exploded
+  mouthpiece/collar/body with measured leaders 01–05, drawn bottom view 06–08 (USB-C, ปุ่มก้นพอต, ช่องปรับลม — the owner confirmed
+  the arc slot = airflow 30/09), 3 close-ups, verified-spec chips, a note. Files: `src/components/product/ProductAnatomySheet.tsx`,
+  `src/i18n/anatomy-sheet-copy.ts` (data + th/en/zh copy per slug — THE TEMPLATE for other products: add a slug entry + images),
+  hook in `ProductMoreDetails.tsx`, `public/assets/products/m-bar-10k/anatomy/*-v1.webp`. `page.tsx`, dictionaries, product data,
+  `ProductAnatomy` untouched → the 7 baseline pages and content-dates did not move. Method: all text on the sheet = page text
+  (HTML/SVG, 3 languages), AI renders only the device/parts. Proof + the round's commit list: §3 (same relocation block).
+  Higgsfield: 8 credits used (2 × nano_banana_pro 4K); balance at open 1521.1 → ~1,513 now [เชื่อว่า — main agent's figure less its 8;
+  the ~1,960 of v92 was stale]; warn the owner before a shop-wide image job would cross the balance.
+  Previous round "รอบรูป-แก้" (image fix) — still OPEN (unchanged; the eighth chat put this round first by the owner's order 30/09). Background jobs: none known [เชื่อว่า]. A test server on 3412
+  (`scripts/test-server.js`, build of this close's branch — the note rewording on top of `c827ba1`) may still be up — `node scripts/test-server.js stop` or reuse it.
+  DESIGN FACTS of the M Bar 10K pilot (flags `lineupFirst` + `storyDetails`, `storyLineup` gone, recolour script) [เชื่อว่า
+  — main agent's report]: full wording relocated to §3 at the eighth chat's close; the anatomy sheet now sits inside `storyDetails`.
   GALLERY LEDE (#130): th/en/zh = "ภาพจริงจาก {brand}" (credit only). The 7 SEO-baseline slugs keep the old line via
   `dict.product.galleryNoteHeld` + the `ProductGallery` prop `heldNote`, passed from `page.tsx`.
   DATED TO-DO, after 05/10 (the baseline hold `TITLE_PRICE_HOLD_UNTIL_2026_10_05` ends): delete `galleryNoteHeld` and
   the `heldNote` prop (with the `page.tsx` pass-through) so the 7 pages show the credit-only lede too [เชื่อว่า —
   main agent's instruction; the "so that" is doc-keeper's reading].
-  OWNER ANSWERS 30/09: relocated to §3 at the chat move [chat-move].
   OWNER'S NEW DIRECTION 30/09: (i) the "more details" section of EVERY product gets an SEO article — its own later
   round; (ii) the M Bar 10K treatment (more images + more details) goes to the WHOLE site. Friday wrote two round
   files into the owner's drafting folder — NOT in git (OneDrive `Run prompt\New prompt WEB\`):
   `รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt` and `รอบบทความ-รายละเอียดเพิ่มเติม-ทุกสินค้า-30-09.txt` [เชื่อว่า — main
   agent's report; doc-keeper cannot see that folder].
   NEXT WORK, in the owner's order (big → planner first for anything not already planned, 13.2 #2):
-  (0) [chat-move] FIRST NEXT STEP (owner 30/09 "อยากให้ทำรอบนี้ก่อน"): "ไล่ดูทีละส่วน" for M Bar 10K — a premium
-      exploded view (owner's pick; 360 view / X-ray = extras), designer designs, Friday/Higgsfield draws, manufacturer
-      facts only — round file `รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt` (owner's Run prompt folder). Ready:
-      `_incoming/mbar10k-anatomy/facts.md` (researcher, SALTHUB-only facts + drawing notes; internals never shown by
-      the maker) and `_incoming/mbar10k-anatomy/owner-refs/` (4 of the owner's 5 reference images; the cream blueprint
-      sheet was not saved — ask the owner to attach it again). ProductAnatomy has no per-product data today and is
-      hidden on storyDetails pages → needs a new field or component.
-  (1) THEN: the WHOLE-SITE IMAGE ROUND in the M Bar 10K treatment (device-only flavour photos + lineupFirst
-      + storyDetails + `lineup-v3` first; no bottom lineup banner any more), starting with M Bar 9K — round file
-      `รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`. It continues the best-seller list below, OWNER'S
+  (1) FIRST NEXT STEP (owner 30/09 "หากทำเสร็จแล้ว ไปต่อเรื่องรูปสินค้าตัวอื่นๆได้เลย" — the anatomy round is done): the
+      WHOLE-SITE IMAGE ROUND in the M Bar 10K treatment (device-only flavour photos + lineupFirst + storyDetails + `lineup-v3`
+      first; no bottom lineup banner any more; the anatomy sheet becomes part of the treatment per product where manufacturer
+      facts allow — add a slug entry to `anatomy-sheet-copy.ts` + images), starting with M Bar 9K, best sellers first — round file
+      `รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`. Big → planner first (13.2 #2). It continues the best-seller list below, OWNER'S
       LIST 30/09 in this order (unchanged): M Bar 9K · Marbo M Switch 15K Pod Device · M Switch 15K pod (head only, 15,000 puffs) ·
       VOOPOO Argus G4 pod kit 35W · VOOPOO Argus Multi-Ohm Pod Cartridges (3 pcs) · MURO SC 8000 puff · RELX Creator
       BATTERY Black · INFY 20K disposable (Nic 3%, Smart LED, adjustable airflow) — map each to its slug first; shop-wide facts for planning [ตรวจแล้ว — `_incoming/mbar10k-full/count-variants.ts`,
@@ -1062,18 +1162,13 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
       card first) — both carried; the new direction may fold them in.
   (4) the ARTICLE round — an SEO article in the "more details" section of every product, round file
       `รอบบทความ-รายละเอียดเพิ่มเติม-ทุกสินค้า-30-09.txt` — after or alongside (1); big → planner first (13.2 #2).
-  Leftovers of the sixth chat [เชื่อว่า — main agent's report]: stale comment above `VERIFIED_MEDIA["Pod-180"]`
-  (~lines 974-984 of `active-catalog-to-product-master.ts`, comment only) · old unreferenced
-  `public/assets/products/nexbar-clear-18k/card.webp` (a WOTOFO image; delete only with the owner's OK, 13.4 #1) ·
-  worktree `_incoming/wt-prb` contains junctions `node_modules` and `_incoming/nexbar-clear` — remove the junctions
-  with `(Get-Item <path>).Delete()` BEFORE `git worktree remove`, never recurse into them · the ProductMaster spec
-  tables stay Thai on en/zh pages (pre-existing on pod-159 / iqosheet-16; spawned as its own task).
+  Leftovers of the sixth chat (stale comment above `VERIFIED_MEDIA["Pod-180"]` · ProductMaster spec tables Thai on en/zh
+  pages): full wording in §3 (eighth chat's close block).
   Standing rules: every replaced photo ships under a new file name (`-v2`/`-v3`, lesson พ6); after-shots from the LIVE
   site; `process-images --only <slug>` re-writes every entry of that slug — restore the untouched files with
   `git checkout -- public/assets/products/<slug>/` right after; run `npx tsx scripts/content-dates.ts` after
   committing a product-data file, then commit the json (checker caught it).
-  Higgsfield credits: ~1,960 [เชื่อว่า — main agent's figure: 2043.1 at the start of the batch minus ~85 used; the
-  owner approved using them and topped up]; warn the owner before a shop-wide image job would cross the balance.
+  Higgsfield credits: item 3.
   Known leftovers (not blockers): 2 word-break flags in the existing "ไฟ RGB บอกโหมด" sentence (ตอน|นี้ at 390,
   Eco|Soft) — fix after 06/10 (the typography mechanism touches baseline pages) · the flaky deploy step "next start
   on 3411 stopped" — fixed by #131, WATCH it: Linux proof so far = 3 passing runs of that step (PR #130's checks
@@ -1091,31 +1186,31 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   (1) image-theft protection A+B+C — its own round after this one — carried, not started
   (2) Muro Connector's category (owner: "Relx Connect"; Friday's evidence: RELX Creator) [รอเจ้าของ] — carried
   (3) SALTHUB per-flavour file request, no-photo panel wording A/B/C, M Switch card black pod — carried
-  (4) stray worktrees `_incoming/wt-main`, `_incoming/checker-wt`, and now `_incoming/wt-prb` (remove the junctions
-      inside it first — see the leftovers above) — remove once the owner agrees — carried
-  (5) leftover unreferenced photo files, 9 as of v92 [เชื่อว่า — the 6 of v88 (argus-g4 orange, caliburn-g4-pro-koko
-      coral-pink, caliburn-g5-lite coral-orange, caliburn-g5-lite-se purple-leather — three are baseline products —
-      argus-g3-mini/variants/sky-blue.webp, m-bar-10k strawberry-kiwi-v2) + `m-bar-10k/lineup.webp` (v1)], plus
-      `nexbar-clear-18k/card.webp` (leftovers above), plus `m-bar-10k/lineup-v2.webp` (unreferenced since #128), plus
-      NEW `m-bar-10k/story-lineup.webp` (unreferenced since #130); the count is not a fresh scan — re-scan
-      public/assets/products vs src/ at round close, delete with the owner's OK (13.4 #1) · the m-bar-10k `boxImage`
-      fields stay in data, not shown (not counted as leftovers)
-  (6) the two open questions of item 5 (credit line · phone-swipe check) [รอเจ้าของ] — the old TASTE list (names,
-      banner, colour mismatch) is answered, see item 3 and §3
+  (4) stray worktrees `_incoming/wt-main`, `_incoming/checker-wt`, `_incoming/wt-prb` — wt-prb contains junctions
+      `node_modules` and `_incoming/nexbar-clear`: remove the junctions with `(Get-Item <path>).Delete()` BEFORE
+      `git worktree remove`, never recurse into them — remove once the owner agrees — carried
+  (5) leftover unreferenced photo files, 9 as of v92 [เชื่อว่า — not a fresh scan; the list (v88's 6 + `m-bar-10k/lineup.webp`,
+      `nexbar-clear-18k/card.webp`, `m-bar-10k/lineup-v2.webp`, `m-bar-10k/story-lineup.webp`) is in §3, eighth chat's close
+      block] — re-scan public/assets/products vs src/ at the next round close; delete with the owner's OK (13.4 #1)
+  (6) the owner's OK on the LIVE dark "ไล่ดูทีละส่วน" sheet on /products/m-bar-10k = the round's pass criterion [รอเจ้าของ]
+      ("ตรวจผ่านตามเกณฑ์" ≠ "เจ้าของอนุมัติ") — new (the old (6), the credit line + phone swipe, is answered: §3)
   (7) the owner asked 30/09 "which steps slow us down — cut what drags"; Friday proposed cuts in the chat
       (checker on docs-only PRs · content-dates.json chore commits · full set on baseline pages after 05/10 ·
       doc-keeper for §16 · rule-text sprawl) — the owner picks; then write them (central §12 item 28) [รอเจ้าของ]
       — still open
-  Removed since v91: all relocated word for word to §3, "second batch close" block.
-5 open questions [chat-move]: none open — owner 30/09 answered both: (a) phone swipe after #127 = "ลื่นแล้ว" (smooth);
-  (b) the credit line "ภาพจริงจาก {brand}" = keep.
+  (8) NEW Thai terms not in the THAI_STYLE tables, used on the page: ปลอกลายร่อง · ฐานไล่สี · ช่องปรับลม · ภาพแยกชิ้น —
+      thai-copy recommended each; the owner rules, then a THAI_STYLE §3 row [รอเจ้าของ]
+  (9) batch 3 extras (360 view / X-ray, outer shell only) yes or no [รอเจ้าของ]
+5 open questions (round "ไล่ดูทีละส่วน", found by thai-copy, pre-existing, NOT fixed — out of scope) [รอเจ้าของ]:
+  (a) the M Bar 10K Thai tagline "วงแหวน RGB" (`product-copy-th.ts` ~line 527) and the English tagline "RGB status ring"
+  claim a ring shape the maker never shows (facts row 11: position unknown) — keep or reword? · (b) `dict.product.anatomyTitle`
+  en/zh "from the outside in" promises internals (shared dictionary; the new sheet uses its own heading) · (c) no airflow spec
+  row for M Bar 10K yet — adding one to `salthub.ts` moves 27 lastmod dates incl. baseline m-bar-15k → after 05/10.
 6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`, unchanged since v85 — the
   batches since ran the light set only, per 13.12): tsc 0 · verify:commerce 17/17 · verify:catalog --full 32/32 ·
   count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Seventh chat, second batch [เชื่อว่า — main agent's report, checker PASS each]: #130 = scan.js 0/105 · raw chars 0
-  · visible-text: only m-bar-10k changed · html-diff 7/7 twice; #131 = the step's Linux runs, 3 passing (item 3).
-  Not a new baseline (light-set round; the full-set numbers above stay as printed at the clip round). The first batch's
-  and the sixth chat's per-PR proof lines: §3 second-batch-close block.
+  Not a new baseline: the batches since ran the light set only (13.12) — the full-set numbers above stay as printed at
+  the clip round. Per-PR proof lines of the seventh and eighth chats: §3 (eighth chat's close block + the second-batch-close block).
 (context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
 
