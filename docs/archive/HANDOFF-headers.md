@@ -86,3 +86,7 @@ gap doc-keeper cannot fill without inventing text (reported to the main agent, n
 ## Line 1 at v87, before v88 (2026-09-29, image-fix round chat move, fourth chat, main agent), verbatim
 
 # OKami24 — HANDOFF · v87 · 2026-09-29 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+
+## Line 1 at v88, before v89 (2026-09-30, image-fix round batch close + chat move, fifth chat, doc-keeper), verbatim
+
+# OKami24 — HANDOFF · v88 · 2026-09-29 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
