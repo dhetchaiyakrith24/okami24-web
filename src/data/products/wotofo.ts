@@ -16,8 +16,8 @@ export const wotofoProducts: Product[] = [
   {
     // Image-fix round (owner 2026-09-29/30): the shop sells nexBar CLEAR 18K (Shipnity Pod-180), not this model —
     // the old Pod-180 page showed this WOTOFO device by mistake. The owner keeps the WOTOFO brand on the site with
-    // a real WOTOFO product carrying full official data. It is NOT sold here: no price row in
-    // legacy-price-approvals.ts = browse-only (no price, no order or LINE button), by design.
+    // a real WOTOFO product carrying full official data. The shop has no stock: owner 2026-09-30 — a normal product with
+    // a price (legacy-price-approvals.ts) and every flavour on the sold-out list (src/data/stock/sold-out.ts).
     id: "wotofo-nexbar-18k",
     slug: "wotofo-nexbar-18k",
     brandId: "wotofo",
@@ -38,7 +38,8 @@ export const wotofoProducts: Product[] = [
       capacityMl: 21,
       screenType: "led-indicator",
       portability: "compact",
-      beginnerFriendly: true,
+      // Not a maker fact — the shop's own beginner filter; no flavour is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
       chargingType: "USB-C",
     },
     assets: [
@@ -98,11 +99,11 @@ export const wotofoProducts: Product[] = [
       { key: "battery", label: "Battery", value: "750mAh rechargeable, Type-C", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
       { key: "capacity", label: "E-liquid capacity", value: "21mL", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
       { key: "coil", label: "Coil", value: "Dual nexMESH coils, 1.2Ω each", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
-      { key: "modes", label: "Vaping modes", value: "NORM 16W / TURBO 19W", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
+      { key: "modes", label: "Output modes", value: "NORM 16W / TURBO 19W", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
       { key: "airflow", label: "Airflow", value: "2-level adjustable", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
-      { key: "screen", label: "Screen", value: "Smart LED screen: battery, e-liquid level, mode", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
+      { key: "screen", label: "Display", value: "Smart LED screen: battery, e-liquid level, mode", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
       { key: "nicotine", label: "Nicotine strength", value: "20mg or 50mg", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
-      { key: "size", label: "Size", value: "101 × 44 × 26.7 mm", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
+      { key: "size", label: "Dimensions", value: "101 × 44 × 26.7 mm", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
     ],
     features: [],
     compatibility: [typeC],

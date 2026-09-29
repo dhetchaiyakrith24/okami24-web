@@ -388,6 +388,16 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     shipnityProductId: null,
     evidence: "owner-estimate 2026-09-21: not on vapenow · below Zero Pro 990 (Shipnity) by size",
   },
+
+  // ---- Image-fix round 2026-09-30: owner in chat — "ทำราคาได้เลย ทำทุกอย่างให้เป็นสินค้าตัวนึงละขึ้นว่าหมด" (set a
+  // ---- price, make it a normal product, show it sold out). Every flavour is on the sold-out list, so nothing is orderable.
+  "wotofo-nexbar-18k": {
+    sellingPrice: 359,
+    lastPriceReview: "2026-09-30",
+    basis: "owner-estimate",
+    shipnityProductId: null,
+    evidence: "owner-estimate 2026-09-30: owner delegated the number to Friday · same 18K disposable class as nexBar CLEAR 18K (Pod-180, ฿359 in Shipnity)",
+  },
 };
 
 /** Convenience accessor — `null` when a legacy product has no approved price (browse-only). */

@@ -2059,15 +2059,15 @@
   "fileName": "variant-yellow-mint-v3.webp"
  },
  {
-  "source": "_incoming/wotofo/cut/card.png",
+  "source": "_incoming/wotofo/cut/wm-ice-final.png",
   "slug": "wotofo-nexbar-18k",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 4k 4:5 (job _incoming/wotofo/out/job-watermelon_ice-card.json)",
-   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k-21.jpg (Watermelon Ice, 1080 JPG on black), background removed → _incoming/wotofo/out/bgr-21.png",
-   "fidelitySheet": "_incoming/wotofo/fid/card.png — IoU 0.996, deltaE max 6.6; NEX BAR / WOTOFO / WATERMELON ICE / NORM / TURBO read by eye"
+   "tool": "Higgsfield image_background_remover (1 credit) + nano_banana_pro 2k (job _incoming/wotofo/out/job-watermelon_ice-b.json) — the same file as variant watermelon-ice",
+   "reference": "wotofo.com official gallery photo wotofo-nexbar-18k-21.jpg (Watermelon Ice), background removed → _incoming/wotofo/out/bgr-21.png",
+   "fidelitySheet": "_incoming/wotofo/fid/watermelon_ice-b.png — IoU 0.997, deltaE max 0.9 (checker re-measured on the shipped file, PR #121); WATERMELON ICE / NEX BAR / WOTOFO read by eye"
   },
-  "note": "image-fix round 2026-09-30 — OKami24 Higgsfield remake of WOTOFO's own photo (owner chose remade photos 30/09, IMAGE_SPEC §0 item 7)"
+  "note": "image-fix round 2026-09-30 — the 4K 4:5 remake (_incoming/wotofo/cut/card.png) failed the colour gate on the shipped file (deltaE max 6.5 > 6, checker PR #121), so the card uses the passed Watermelon Ice remake on the 4:5 card canvas"
  },
  {
   "source": "_incoming/wotofo/review/cut/strawberry_banana.png",
@@ -2161,7 +2161,7 @@
   "aiRender": {
    "tool": "Higgsfield nano_banana_pro 2k (job _incoming/wotofo/out/job-watermelon_ice-b.json)",
    "reference": "wotofo.com official gallery photo, background removed (Higgsfield image_background_remover) → _incoming/wotofo/out/bgr-21.png",
-   "fidelitySheet": "_incoming/wotofo/review/fid/watermelon_ice.png (+ .json) — numbers PASS; flavour label read by eye"
+   "fidelitySheet": "_incoming/wotofo/fid/watermelon_ice-b.png — IoU 0.997, deltaE max 0.9 (checker re-measured, PR #121); flavour label read by eye"
   },
   "note": "image-fix round 2026-09-30 — OKami24 Higgsfield remake of WOTOFO's own photo; flat #E9E9EC background keyed with scripts/flatcut.js"
  }

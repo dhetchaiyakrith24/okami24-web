@@ -703,8 +703,8 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "พอตใช้แล้วทิ้งสายพัฟเยอะของ RELX ที่ขายในตลาดไทย มีหลายรุ่นย่อย ทักไลน์ @okm24 ถามรุ่นปัจจุบันได้",
   },
-  // Image-fix round 2026-09-30 (writer draft, owner rules the Thai before merge — 13.4 #6). Browse-only page: no
-  // price, no LINE line — the shop sells nexBar CLEAR 18K (Pod-180), not this model.
+  // Image-fix round 2026-09-30 (writer draft, owner approved 2026-09-30). The shop has no stock of this model — every
+  // flavour is sold out; the shop sells nexBar CLEAR 18K (Pod-180).
   "wotofo-nexbar-18k": {
     whoIsThisFor: {
       0: "คนที่ดูคลิปรีวิว WOTOFO nexBAR 18K ของ OKami24 แล้ว อยากดูสเปกเต็มกับรายชื่อกลิ่นจากผู้ผลิต",
@@ -723,7 +723,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "พอตใช้แล้วทิ้ง 18,000 พัฟของ WOTOFO คอยล์ nexMESH สองตัว มีจอ LED",
     shortDescription:
-      "พอตใช้แล้วทิ้งของ WOTOFO สูงสุด 18,000 พัฟ น้ำยา 21mL แบตเตอรี่ 750mAh ชาร์จผ่าน USB-C คอยล์ nexMESH สองตัว มี 2 โหมด NORM 16 วัตต์ กับ TURBO 19 วัตต์ ปรับลมได้ 2 ระดับ สเปกและรายชื่อ 31 กลิ่นเช็คตรงจาก wotofo.com",
+      "พอตใช้แล้วทิ้งของ WOTOFO สูงสุด 18,000 พัฟ น้ำยา 21mL แบตเตอรี่ 750mAh ชาร์จผ่าน USB-C คอยล์ nexMESH สองตัว มี 2 โหมด NORM 16 วัตต์ กับ TURBO 19 วัตต์ ปรับลมได้ 2 ระดับ สเปกและรายชื่อกลิ่นเช็คตรงจาก wotofo.com",
   },
   "joiway-f3": {
     whoIsThisFor: {
