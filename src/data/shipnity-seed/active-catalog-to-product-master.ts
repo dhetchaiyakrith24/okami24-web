@@ -1210,15 +1210,16 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   },
   // Image-fix round 2026-09-30: nexBar CLEAR 18K. No maker site exists (researcher 29-30/09); the facts are the maker's
   // own poster, which the owner supplied and which https://ihavevape.net/product/nexbar-clear-18k-puffs/ and https://pod789.com/product/nexbar-18k-2/ carry verbatim.
+  // Rows name no sourceUrl: a row URL must be a maker domain (verified-specs test), and none exists for this device.
   "Pod-180": {
     specifications: [
-      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 18,000", sourceStatus: "verified", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
-      { key: "battery", label: "แบตเตอรี่", value: "650mAh", sourceStatus: "verified", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
-      { key: "charging", label: "การชาร์จ", value: "ชาร์จซ้ำได้ผ่าน USB-C", sourceStatus: "verified", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
-      { key: "capacity", label: "ความจุน้ำยา", value: "18mL", sourceStatus: "verified", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
-      { key: "coil", label: "คอยล์", value: "Dual Nex Mesh (mesh สองตัว)", sourceStatus: "verified", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
-      { key: "airflow", label: "ช่องลม", value: "ปรับได้", sourceStatus: "verified", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
-      { key: "modes", label: "โหมดการทำงาน", value: "Normal สูบนุ่ม ใช้ได้นานขึ้น / Turbo รสเต็ม ไอหนา", sourceStatus: "verified", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 18,000", sourceStatus: "verified" },
+      { key: "battery", label: "แบตเตอรี่", value: "650mAh", sourceStatus: "verified" },
+      { key: "charging", label: "การชาร์จ", value: "ชาร์จซ้ำได้ผ่าน USB-C", sourceStatus: "verified" },
+      { key: "capacity", label: "ความจุน้ำยา", value: "18mL", sourceStatus: "verified" },
+      { key: "coil", label: "คอยล์", value: "Dual Nex Mesh (mesh สองตัว)", sourceStatus: "verified" },
+      { key: "airflow", label: "ช่องลม", value: "ปรับได้", sourceStatus: "verified" },
+      { key: "modes", label: "โหมดการทำงาน", value: "Normal สูบนุ่ม ใช้ได้นานขึ้น / Turbo รสเต็ม ไอหนา", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://ihavevape.net/product/nexbar-clear-18k-puffs/", "https://pod789.com/product/nexbar-18k-2/"],
   },
