@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // self-merge-check.js — is this PR small or big? (TEAM_RULES 13.7 — merge rule of round C, owner 2026-09-27: Friday
-// merges every PR of this repo · small = merge, then report · big = tell the owner briefly first · Javis merges only
+// merges every PR of this repo · small and big = merge after checker + green checks, then report (big on its own line — owner 30/09) · Javis merges only
 // when the owner says so)
 //
 // Per file (the one list: scripts/lib/site-paths.js, shared with the deploy gate):

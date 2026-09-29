@@ -870,7 +870,7 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   site; rows carry no URL because a row URL must be a maker domain), 15 flavours (5 via
   `VERIFIED_ADDITIONAL_VARIANTS`), card-v2 + 15 flavour photos (method = LESSONS 15), clip moved to WOTOFO, WOTOFO
   brand head without a price, SEO_BASELINE note added. Blueberry: the device prints "BLUEBERRY ICE", the maker's
-  list says "Blueberry" — both kept (alt/comment say so); owner 30/09: keep it so.
+  list says "Blueberry" — both kept (alt/comment say so); owner 30/09 answered "ตามนั้นเลย" to keep it [ตรวจแล้ว — owner's chat message].
   Manual deploy (Run workflow, 29/09 evening, run 36592249340) was started by Friday on the owner's chat
   permission; its result was never read (the app's auto-mode safety check blocked deploy-status reads) — moot,
   everything is live via #121-#124. Record of the fifth chat's PRs (#117 M Bar 10K pilot, #118 lineup-v2, #119
@@ -932,7 +932,7 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   prominent as the card photo; box photos and details go to a lower "more details" part, like
   marbobkk.com/product/marbo-bar-10k-disposable/ · (d) apply to the whole website, best sellers first. IMAGE_SPEC §0
   item 5 already asks for the lineup as the first card. New page section / lineup-first behaviour = new UI →
-  designer (13.12 #4); owner sees it before merge (IMAGE_SPEC §7).
+  designer (13.12 #4); owner sees it in report item 4, merge does not wait (IMAGE_SPEC §7, owner 30/09).
 4 waiting on owner:
   (1) image-theft protection A+B+C — its own round after this one — carried, not started
   (2) Muro Connector's category (owner: "Relx Connect"; Friday's evidence: RELX Creator) [รอเจ้าของ] — carried

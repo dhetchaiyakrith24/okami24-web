@@ -3,7 +3,7 @@
 // plus the lists that make a PR "big" under the merge rule of round C (owner 2026-09-27).
 //
 // Two gates read this list and nothing else, so they can never disagree:
-//   scripts/self-merge-check.js  — small or big? (small = Friday merges, then reports · big = tell the owner first)
+//   scripts/self-merge-check.js  — small or big? (both merge after checker + green checks, then Friday reports; big = its own report line + the full check set — owner 30/09)
 //   scripts/deploy-decision.js   — does this merge to main need a deploy?  (any file NOT off-site = deploy)
 // It is an ALLOW-list on purpose: "not sure it touches the site = it touches" — a path no pattern matches (a new
 // top-level folder, package.json, render.yaml, next.config.*, src/, public/, product data …) counts as the site.
@@ -23,7 +23,7 @@ const OFF_SITE = [
   /^(CLAUDE|AGENTS|README|ASSET_MANIFEST)\.md$/,
 ];
 
-// Off-site, but always BIG — Friday tells the owner before merging (round C; before that = Javis-only, rulings
+// Off-site, but always BIG — merged after checker + green checks and reported on its own line (owner 30/09; round C: before that = Javis-only, rulings
 // 2026-09-26 + 27/09). Two kinds:
 //   (1) what makes Friday act on her own automatically: .claude/settings* (hooks, tool permissions) · .claude/hooks/ ·
 //       .githooks/ (the commit/push gates) · every script those hooks run (hookScripts() below)
