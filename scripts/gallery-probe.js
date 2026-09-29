@@ -7,8 +7,8 @@
 //   --sitemap <base>: every /products/<slug> page in <base>/sitemap.xml, one Chrome; pages without a gallery are skipped
 //
 // Loads <url> as a touch phone (CDP emulation, touch on, age gate pre-accepted), then runs each step with REAL input
-// (Input.dispatchTouchEvent for a chip tap, Input.synthesizeScrollGesture for a finger swipe on the gallery, fling
-// included) and records, on every animation frame, which gallery slide fills the frame and which chip is pressed.
+// (Input.dispatchTouchEvent for a chip tap and for a finger swipe on the gallery — down, 12 moves, up — so the
+// browser flings and snaps as for a real finger) and records, on every animation frame, which gallery slide fills the frame and which chip is pressed.
 //   tap:N       tap the N-th option chip (0-based, in page order; -1 = the last chip)
 //   swipe:left  swipe the gallery one slide forward · swipe:right one slide back
 // After each step it prints the slides seen in order (runs collapsed) and judges:
