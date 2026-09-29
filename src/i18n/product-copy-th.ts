@@ -703,8 +703,8 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "พอตใช้แล้วทิ้งสายพัฟเยอะของ RELX ที่ขายในตลาดไทย มีหลายรุ่นย่อย ทักไลน์ @okm24 ถามรุ่นปัจจุบันได้",
   },
-  // Image-fix round 2026-09-30 (writer draft, owner rules the Thai before merge — 13.4 #6). Browse-only page: no
-  // price, no LINE line — the shop sells nexBar CLEAR 18K (Pod-180), not this model.
+  // Image-fix round 2026-09-30 (writer draft, owner approved 2026-09-30). The shop has no stock of this model — every
+  // flavour is sold out; the shop sells nexBar CLEAR 18K (Pod-180).
   "wotofo-nexbar-18k": {
     whoIsThisFor: {
       0: "คนที่ดูคลิปรีวิว WOTOFO nexBAR 18K ของ OKami24 แล้ว อยากดูสเปกเต็มกับรายชื่อกลิ่นจากผู้ผลิต",
