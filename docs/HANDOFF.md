@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v91 · 2026-09-30 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v92 · 2026-09-30 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -772,6 +772,79 @@ spec). v90 item 1 (the sixth chat's merged PRs), item 3's owner answers and the 
 
 ---
 
+### §16 lines relocated at the seventh computer-round chat's second batch close (2026-09-30, v92 — word for word, 15 KB cap)
+
+Relocated from HANDOFF v91 §16 so §16 can hold the second batch's own state — relocation, not deletion (doc-keeper
+spec). v91 item 1 (the first batch's merged PRs) and item 2, the DESIGN FACTS paragraph of item 3 (superseded in part by
+#130), the flaky-deploy-step leftover and item 4(6) TASTE (answered 30/09; the banner it asked about no longer exists),
+verbatim:
+
+```
+1 main: `git fetch && git log -1 --oneline origin/main` → `b80dd0d` (merge PR #128) [ตรวจแล้ว — read from
+  .git/refs/remotes/origin/main at this close; no git/gh in doc-keeper, so PR numbers/hashes below are the main
+  agent's report [เชื่อว่า]]. No tag (round not closed). Rollback = revert the merge commit of the PR in question.
+  Merged in the seventh chat, each checker PASS + GitHub checks green, all LIVE (deploy run after #128 =
+  decide/checks/deploy success; main agent's curl: live /products/m-bar-10k serves lineup-v3 + story-lineup; live
+  probe pod-180 6/6 steps OK — `_incoming/flavour-bug/live-after-pod180-6steps.txt`; live sweep 43 pages PASS —
+  `_incoming/flavour-bug/live-after-chrome.txt`):
+  #126 `259810f` rules-merge-no-ask (merged by the sixth chat; v90 item 2 is done).
+  #127 `c5bb521` fix(mobile) phone gallery (`src/components/product/MobileVariantGallery.tsx`, used by ProductHero +
+  PilotProductDetail). Owner's bugs 30/09: (1) chip tap lit the chip but the photo stayed on the cover [Javis], (2) a
+  swipe flashed the previous flavour [owner]. Causes (LESSONS 16): (2) `scrollend` AND a 120 ms timer both settled
+  one swipe, the second with a stale closure; (1) smooth scroll only advances on painted frames. Fix: latest-props
+  ref · one settle signal · no settle mid-touch · instant jump. New tool `scripts/gallery-probe.js` (real CDP touch,
+  per-frame; FLASH/STUCK/SKIP; `--sitemap`; `--no-scrollend`). Proof: live before, 127/215 steps FLASH on all 43
+  gallery pages; fixed build 0/215 (and 0 without scrollend); html-diff 7/7 identical; evidence
+  `_incoming/flavour-bug/`. The deploy run of #127 alone FAILED at the known flaky step "next start on 3411 stopped
+  (no server left behind)" (`scripts/verify-catalog.ts` ~line 191, portFreed) — #127 went live only with #128's
+  deploy. Seen twice now, not investigated (a gate file = big, its own PR) — see the leftovers in item 3.
+  #128 `b80dd0d` M Bar 10K premium lineup A "stage arc" (NEXT WORK 1 of v90 — DONE): `lineup-v3.webp` (1600², 133
+  KB, names typeset under the visible part of each device, 2 rows, ≥56 px apart) + `story-lineup.webp` (2400×1000,
+  158 KB, no names) shown above the all-flavours grid via the new optional `Product.storyLineup`
+  (`src/types/catalog.ts`, `ProductMoreDetails.tsx`); ProductHero hides the single-device floor shadow while a
+  lineup shows. Builder `_incoming/pilot-mbar10k/premium-arc.js` (not in git). Designer PASS (3 rounds), checker PASS
+  8/8 at `594f190`; later fixes (name gap, shadow) went in under 13.12 #1(จ) + a designer spot-check PASS + the main
+  agent's own shadow count (lineup 0 / picked 1 / caliburn-g5 1); html-diff 7/7 again. Live after-shots
+  `_incoming/pilot-mbar10k/live-after/`.
+  The sixth chat's PRs (#121-#124, WOTOFO nexBAR 18K + Pod-180 brandless), owner answers 30/09 and the finished
+  premium-lineup order: relocated word for word to §3, "§16 lines relocated at the seventh computer-round chat's
+  batch close".
+2 ahead of main: nothing open — `git log --oneline origin/main..origin/docs-close-30-09b` shows this chat's docs PR
+  (§16 v91 + LESSONS 16 + the headers archive line) if it is not merged yet: `gh pr list --head docs-close-30-09b`,
+  checker, merge (docs = small, 13.7; the main agent merges).
+  DESIGN FACTS of the M Bar 10K pilot (#117-#119, fifth chat; live) [เชื่อว่า — main agent's report]: two
+  per-product flags — `lineupFirst` (page opens on `lineupImage`, "ทั้งหมด" chip, lineup = first phone slide,
+  swatch-colour glow behind a picked device) and `storyDetails` (`src/components/product/ProductMoreDetails.tsx`
+  replaces gallery + anatomy + feature cards: `storyCover` poster, 4 poster highlight blocks shown whole, "รุ่นนี้มี
+  12 กลิ่น" grid of old box + device photos via `FlavorVariant.boxImage`, then the spec sheet). Device-only flavour
+  photos = ONE Higgsfield nano_banana_pro 4K master render + a per-flavour recolour script
+  (`_incoming/pilot-mbar10k/recolour.js`). #118 lineup-v2 has flavour names under each device
+  (`lineup-named.js`). #119 `.github/workflows/deploy.yml`: when main moved on, the deploy job deploys if
+  deploy-decision.js says 0 newer files reach the site.
+  (done in the seventh chat: the phone-gallery bug — the owner said fix it BEFORE the next product's images — #127,
+  and the M Bar 10K premium lineup A — #128; details in item 1)
+  the flaky deploy step "next start
+  on 3411 stopped (no server left behind)" (`scripts/verify-catalog.ts` ~line 191, portFreed) failed the deploy run
+  of #127 — now seen TWICE, never investigated (#119 fixed the #115 gap only); a gate file = big, so its own PR;
+  a failed deploy run does not lose the code — the next merge's deploy carries it (as #128 carried #127)
+  (6) TASTE — the M Bar 10K premium lineup, as merged (#128), for the owner to see live at /products/m-bar-10k
+      [รอเจ้าของ]: (a) names are ~7 css px tall on a 390 phone (designer's option 1 of 2; option 2 = three rows, ~9
+      px, busier); (b) the banner is large at 1440 (~500 px tall; option: cap ~960 px); (c) checker's note: in the
+      existing flavour photos Watermelon Mint's device is red though its swatch is teal, and Pink Berry's is
+      blue-violet though its swatch is pink — the lineup puts them side by side (pre-existing photo/swatch
+      mismatch; not fixed) [เชื่อว่า — checker report]
+  (item 6, the proof lines of the seventh chat's first batch and of the sixth chat:)
+  Seventh chat [เชื่อว่า — main agent's report, checker PASS each]: the light set per PR (#127, #128) + html-diff
+  7/7 baseline pages identical twice + `gallery-probe` sweeps (live before 127/215 FLASH; fixed 0/215). Sixth chat,
+  per PR #121-#124: html-diff 7/7 · verify:catalog 29/29 · scan.js 0/105 (unchanged from v90).
+```
+
+[Note added by doc-keeper at v92, not v91 text: the block above is the v91 wording, copied line by line; where the
+v91 block ran items together (item 3 pieces, the leftover bullet, item 4(6)) each piece sits on its own lines here.
+What replaced them: v92 §16 items 1-6. The owner's 30/09 answers to (6) and the banner's removal: v92 §16 item 3.]
+
+---
+
 ## 4. Known broken / missing, not fixed yet
 
 - **[ตรวจแล้ว] og:title of the homepage is still the pre-round string** ("OKami24 — ของแท้ ราคาตรง บริการจริง") — the owner's approved table covered `<title>`/description/og:description only; og:title was never in scope this round. Confirmed absent from `_incoming/seo-a/table-final-for-owner.md` and from THAI_STYLE_LOG's own round entry, which notes it explicitly [ตรวจแล้ว, `docs/THAI_STYLE_LOG.md` line 905].
@@ -899,59 +972,63 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-(v91 — written by doc-keeper at the batch close + chat move of the seventh computer-round chat (30/09), round
+(v92 — written by doc-keeper at the second batch close of the seventh computer-round chat (30/09), round
 "รอบรูป-แก้" (still OPEN). Eighth chat starts from this block.)
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + round file
-`docs/rounds/รอบรูป-แก้-คำตัดสิน-28-09.txt`
-1 main: `git fetch && git log -1 --oneline origin/main` → `b80dd0d` (merge PR #128) [ตรวจแล้ว — read from
-  .git/refs/remotes/origin/main at this close; no git/gh in doc-keeper, so PR numbers/hashes below are the main
-  agent's report [เชื่อว่า]]. No tag (round not closed). Rollback = revert the merge commit of the PR in question.
-  Merged in the seventh chat, each checker PASS + GitHub checks green, all LIVE (deploy run after #128 =
-  decide/checks/deploy success; main agent's curl: live /products/m-bar-10k serves lineup-v3 + story-lineup; live
-  probe pod-180 6/6 steps OK — `_incoming/flavour-bug/live-after-pod180-6steps.txt`; live sweep 43 pages PASS —
-  `_incoming/flavour-bug/live-after-chrome.txt`):
-  #126 `259810f` rules-merge-no-ask (merged by the sixth chat; v90 item 2 is done).
-  #127 `c5bb521` fix(mobile) phone gallery (`src/components/product/MobileVariantGallery.tsx`, used by ProductHero +
-  PilotProductDetail). Owner's bugs 30/09: (1) chip tap lit the chip but the photo stayed on the cover [Javis], (2) a
-  swipe flashed the previous flavour [owner]. Causes (LESSONS 16): (2) `scrollend` AND a 120 ms timer both settled
-  one swipe, the second with a stale closure; (1) smooth scroll only advances on painted frames. Fix: latest-props
-  ref · one settle signal · no settle mid-touch · instant jump. New tool `scripts/gallery-probe.js` (real CDP touch,
-  per-frame; FLASH/STUCK/SKIP; `--sitemap`; `--no-scrollend`). Proof: live before, 127/215 steps FLASH on all 43
-  gallery pages; fixed build 0/215 (and 0 without scrollend); html-diff 7/7 identical; evidence
-  `_incoming/flavour-bug/`. The deploy run of #127 alone FAILED at the known flaky step "next start on 3411 stopped
-  (no server left behind)" (`scripts/verify-catalog.ts` ~line 191, portFreed) — #127 went live only with #128's
-  deploy. Seen twice now, not investigated (a gate file = big, its own PR) — see the leftovers in item 3.
-  #128 `b80dd0d` M Bar 10K premium lineup A "stage arc" (NEXT WORK 1 of v90 — DONE): `lineup-v3.webp` (1600², 133
-  KB, names typeset under the visible part of each device, 2 rows, ≥56 px apart) + `story-lineup.webp` (2400×1000,
-  158 KB, no names) shown above the all-flavours grid via the new optional `Product.storyLineup`
-  (`src/types/catalog.ts`, `ProductMoreDetails.tsx`); ProductHero hides the single-device floor shadow while a
-  lineup shows. Builder `_incoming/pilot-mbar10k/premium-arc.js` (not in git). Designer PASS (3 rounds), checker PASS
-  8/8 at `594f190`; later fixes (name gap, shadow) went in under 13.12 #1(จ) + a designer spot-check PASS + the main
-  agent's own shadow count (lineup 0 / picked 1 / caliburn-g5 1); html-diff 7/7 again. Live after-shots
-  `_incoming/pilot-mbar10k/live-after/`.
-  The sixth chat's PRs (#121-#124, WOTOFO nexBAR 18K + Pod-180 brandless), owner answers 30/09 and the finished
-  premium-lineup order: relocated word for word to §3, "§16 lines relocated at the seventh computer-round chat's
-  batch close".
-2 ahead of main: nothing open — `git log --oneline origin/main..origin/docs-close-30-09b` shows this chat's docs PR
-  (§16 v91 + LESSONS 16 + the headers archive line) if it is not merged yet: `gh pr list --head docs-close-30-09b`,
-  checker, merge (docs = small, 13.7; the main agent merges).
+`docs/rounds/รอบรูป-แก้-คำตัดสิน-28-09.txt` + the two new round files of item 3 (not in git — owner's drafting folder)
+1 main: `git fetch && git log -1 --oneline origin/main` → `d866032` (PR #130's merge commit [เชื่อว่า — main agent]) [ตรวจแล้ว —
+  the hash read from .git/refs/remotes/origin/main at this close; no git/gh in doc-keeper, so PR numbers and hashes
+  below are the main agent's report [เชื่อว่า]]. No tag (round not closed). Rollback = revert the merge commit of the
+  PR in question. Merged in this batch, each checker PASS + GitHub checks green; LIVE (deploy of d866032 =
+  decide/checks/deploy success; main agent's curl: live /products/m-bar-10k has no story-lineup and shows "ภาพจริงจาก
+  SALTHUB"; live /products/argus-g4 still shows the old held line, as intended — item 3):
+  #129 `d569aab` docs close (§16 v91 + LESSONS 16 — the docs PR of the previous close, now merged).
+  #131 `8396b0f` fix(gates) `scripts/verify-catalog.ts`: the flaky step "next start on 3411 stopped" now probes with
+  fresh TCP connections on 127.0.0.1 + ::1 and gives the final check 2 s (it failed 29/09 in runs 36625888711 and
+  36633396707, 0.01-0.27 s after the kill; likely cause = fetch reusing a keep-alive socket).
+  #130 `d866032` (owner chat 30/09): (a) M Bar 10K — the bottom "รุ่นนี้มี 12 กลิ่น" section is left out on lineupFirst
+  pages (`ProductMoreDetails`), `storyLineup` removed from type/component/data; (b) gallery lede th/en/zh = credit
+  only ("ภาพจริงจาก {brand}") — the owner cut "ใช้เป็นภาพประกอบเท่านั้น และไม่นำไปเผยแพร่ต่อเพื่อการค้า" ("เรากำลังทำ
+  เพื่อการค้า"); the 7 SEO-baseline slugs keep the old line (item 3); (c) M Bar 10K swatch dots Pink Berry #6a3fc0,
+  Strawberry Kiwi #b0409a, Watermelon Mint #c93a45 = the device base colour on SALTHUB's own photos (the old dots
+  were guessed). Proof: scan.js 0/105, raw chars 0, visible-text only m-bar-10k changed, html-diff 7/7 twice, shots
+  `_incoming/trim-credit/shots/`.
+  The first batch of this chat (#126-#128: phone gallery, premium lineup) and the earlier PRs: relocated word for
+  word to §3, "§16 lines relocated at the seventh computer-round chat's second batch close" (and the sixth chat's
+  to the block before it).
+2 ahead of main: nothing open [เชื่อว่า — main agent]. This close's own docs PR: `git log --oneline
+  origin/main..<its branch>` · `gh pr list` — branch and PR number [ยังไม่มีข้อมูล — not known to doc-keeper]; docs =
+  small (13.7), checker, the main agent merges.
 3 round: "รอบรูป-แก้" (image fix) — OPEN. Background jobs: none known [เชื่อว่า]. A test server on 3412
-  (`scripts/test-server.js`, build of `6b0d3c8`) may still be up — `node scripts/test-server.js stop` or reuse it.
-  DESIGN FACTS of the M Bar 10K pilot (#117-#119, fifth chat; live) [เชื่อว่า — main agent's report]: two
-  per-product flags — `lineupFirst` (page opens on `lineupImage`, "ทั้งหมด" chip, lineup = first phone slide,
-  swatch-colour glow behind a picked device) and `storyDetails` (`src/components/product/ProductMoreDetails.tsx`
-  replaces gallery + anatomy + feature cards: `storyCover` poster, 4 poster highlight blocks shown whole, "รุ่นนี้มี
-  12 กลิ่น" grid of old box + device photos via `FlavorVariant.boxImage`, then the spec sheet). Device-only flavour
-  photos = ONE Higgsfield nano_banana_pro 4K master render + a per-flavour recolour script
-  (`_incoming/pilot-mbar10k/recolour.js`). #118 lineup-v2 has flavour names under each device
-  (`lineup-named.js`). #119 `.github/workflows/deploy.yml`: when main moved on, the deploy job deploys if
-  deploy-decision.js says 0 newer files reach the site.
+  (`scripts/test-server.js`, build of `cbbb0b7`) may still be up — `node scripts/test-server.js stop` or reuse it.
+  DESIGN FACTS of the M Bar 10K pilot, current after #130 [เชื่อว่า — main agent's report; the older wording is in §3]:
+  two per-product flags — `lineupFirst` (page opens on `lineupImage`, "ทั้งหมด" chip, lineup = first phone slide,
+  swatch-colour glow behind a picked device) and `storyDetails` (`ProductMoreDetails.tsx` replaces gallery + anatomy
+  + feature cards: `storyCover` poster, 4 poster highlight blocks shown whole, then the spec sheet). On lineupFirst
+  pages the bottom "12 flavours" section is NOT shown any more and `Product.storyLineup` is gone; the m-bar-10k
+  `boxImage` fields stay in data but are not shown. Device-only flavour photos = ONE Higgsfield nano_banana_pro 4K
+  master render + a per-flavour recolour script (`_incoming/pilot-mbar10k/recolour.js`). `lineup-v3.webp` stays the
+  first image. #119 `.github/workflows/deploy.yml`: when main moved on, the deploy job deploys if deploy-decision.js
+  says 0 newer files reach the site.
+  GALLERY LEDE (#130): th/en/zh = "ภาพจริงจาก {brand}" (credit only). The 7 SEO-baseline slugs keep the old line via
+  `dict.product.galleryNoteHeld` + the `ProductGallery` prop `heldNote`, passed from `page.tsx`.
+  DATED TO-DO, after 05/10 (the baseline hold `TITLE_PRICE_HOLD_UNTIL_2026_10_05` ends): delete `galleryNoteHeld` and
+  the `heldNote` prop (with the `page.tsx` pass-through) so the 7 pages show the credit-only lede too [เชื่อว่า —
+  main agent's instruction; the "so that" is doc-keeper's reading].
+  OWNER ANSWERS 30/09 (chat) [เชื่อว่า — main agent's report]: (1) keep the flavour names in 2 rows · (2) banner size
+  OK — then the owner removed the bottom section anyway, so the banner is gone · (3) chase the colours — done in #130
+  · (4) the deploy fix as its own PR — done, #131. The phone-swipe check is still unanswered: item 5.
+  OWNER'S NEW DIRECTION 30/09: (i) the "more details" section of EVERY product gets an SEO article — its own later
+  round; (ii) the M Bar 10K treatment (more images + more details) goes to the WHOLE site. Friday wrote two round
+  files into the owner's drafting folder — NOT in git (OneDrive `Run prompt\New prompt WEB\`):
+  `รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt` and `รอบบทความ-รายละเอียดเพิ่มเติม-ทุกสินค้า-30-09.txt` [เชื่อว่า — main
+  agent's report; doc-keeper cannot see that folder].
   NEXT WORK, in the owner's order (big → planner first for anything not already planned, 13.2 #2):
-  (done in the seventh chat: the phone-gallery bug — the owner said fix it BEFORE the next product's images — #127,
-  and the M Bar 10K premium lineup A — #128; details in item 1)
-  (1) FIRST NEXT STEP: the next best-sellers in the M Bar style (device-only flavour photos + lineupFirst +
-      storyDetails + now the premium lineup: `lineup-v3` + `storyLineup`, builder pattern
-      `_incoming/pilot-mbar10k/premium-arc.js`, not in git), OWNER'S
+  (done in the seventh chat: the phone-gallery bug #127 · the M Bar 10K premium lineup #128 · the trim-and-credit
+  edits #130 — details in item 1 and §3)
+  (1) FIRST NEXT STEP: the WHOLE-SITE IMAGE ROUND in the M Bar 10K treatment (device-only flavour photos + lineupFirst
+      + storyDetails + `lineup-v3` first; no bottom lineup banner any more), starting with M Bar 9K — round file
+      `รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`. It continues the best-seller list below, OWNER'S
       LIST 30/09 in this order (unchanged): M Bar 9K · Marbo M Switch 15K Pod Device · M Switch 15K pod (head only, 15,000 puffs) ·
       VOOPOO Argus G4 pod kit 35W · VOOPOO Argus Multi-Ohm Pod Cartridges (3 pcs) · MURO SC 8000 puff · RELX Creator
       BATTERY Black · INFY 20K disposable (Nic 3%, Smart LED, adjustable airflow) — map each to its slug first; shop-wide facts for planning [ตรวจแล้ว — `_incoming/mbar10k-full/count-variants.ts`,
@@ -960,6 +1037,8 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
       smaller than 394 — count per product before quoting credits. Baseline pages untouched until 06/10.
   (2) (D) out-of-stock suggestion (Esko 18/20) — designer first · (3) (C)/(B) card sweep on the 4:5 standard (Muro
       card first) — both carried; the new direction may fold them in.
+  (4) the ARTICLE round — an SEO article in the "more details" section of every product, round file
+      `รอบบทความ-รายละเอียดเพิ่มเติม-ทุกสินค้า-30-09.txt` — after or alongside (1); big → planner first (13.2 #2).
   Leftovers of the sixth chat [เชื่อว่า — main agent's report]: stale comment above `VERIFIED_MEDIA["Pod-180"]`
   (~lines 974-984 of `active-catalog-to-product-master.ts`, comment only) · old unreferenced
   `public/assets/products/nexbar-clear-18k/card.webp` (a WOTOFO image; delete only with the owner's OK, 13.4 #1) ·
@@ -974,10 +1053,10 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   owner approved using them and topped up]; warn the owner before a shop-wide image job would cross the balance.
   Known leftovers (not blockers): 2 word-break flags in the existing "ไฟ RGB บอกโหมด" sentence (ตอน|นี้ at 390,
   Eco|Soft) — fix after 06/10 (the typography mechanism touches baseline pages) · the flaky deploy step "next start
-  on 3411 stopped (no server left behind)" (`scripts/verify-catalog.ts` ~line 191, portFreed) failed the deploy run
-  of #127 — now seen TWICE, never investigated (#119 fixed the #115 gap only); a gate file = big, so its own PR;
-  a failed deploy run does not lose the code — the next merge's deploy carries it (as #128 carried #127) ·
-  Lighthouse not installed (not run).
+  on 3411 stopped" — fixed by #131, WATCH it: Linux proof so far = 3 passing runs of that step (PR #130's checks
+  twice, the main deploy of d866032) — a sample, not proof the flake is gone; the old wording is in §3 ·
+  locale note (pre-existing, not from these PRs): /products/argus-g4 en/zh show 1 Thai text node (the review video
+  title, `voopoo.ts:24`) [เชื่อว่า — main agent] · Lighthouse not installed (not run).
   STANDING OWNER DIRECTION (29/09; the M Bar 10K pilot is its first delivery) [ตรวจแล้ว — carried from v88]: (a) the
   card = the angled device alone, no box · (b) EVERY product with several flavours/colours gets ONE lineup image of
   all options shown FIRST on its page (picking one shows that one) · (c) flavour/colour photos = the device alone, as
@@ -991,34 +1070,33 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   (3) SALTHUB per-flavour file request, no-photo panel wording A/B/C, M Switch card black pod — carried
   (4) stray worktrees `_incoming/wt-main`, `_incoming/checker-wt`, and now `_incoming/wt-prb` (remove the junctions
       inside it first — see the leftovers above) — remove once the owner agrees — carried
-  (5) leftover unreferenced photo files, 8 as of v91 [เชื่อว่า — the 6 of v88 (argus-g4 orange, caliburn-g4-pro-koko
+  (5) leftover unreferenced photo files, 9 as of v92 [เชื่อว่า — the 6 of v88 (argus-g4 orange, caliburn-g4-pro-koko
       coral-pink, caliburn-g5-lite coral-orange, caliburn-g5-lite-se purple-leather — three are baseline products —
       argus-g3-mini/variants/sky-blue.webp, m-bar-10k strawberry-kiwi-v2) + `m-bar-10k/lineup.webp` (v1)], plus
-      `nexbar-clear-18k/card.webp` (leftovers above), plus NEW `m-bar-10k/lineup-v2.webp` (unreferenced since #128);
-      the count is not a fresh scan — re-scan public/assets/products vs src/ at round close, delete with the
-      owner's OK (13.4 #1)
-  (6) TASTE — the M Bar 10K premium lineup, as merged (#128), for the owner to see live at /products/m-bar-10k
-      [รอเจ้าของ]: (a) names are ~7 css px tall on a 390 phone (designer's option 1 of 2; option 2 = three rows, ~9
-      px, busier); (b) the banner is large at 1440 (~500 px tall; option: cap ~960 px); (c) checker's note: in the
-      existing flavour photos Watermelon Mint's device is red though its swatch is teal, and Pink Berry's is
-      blue-violet though its swatch is pink — the lineup puts them side by side (pre-existing photo/swatch
-      mismatch; not fixed) [เชื่อว่า — checker report]
+      `nexbar-clear-18k/card.webp` (leftovers above), plus `m-bar-10k/lineup-v2.webp` (unreferenced since #128), plus
+      NEW `m-bar-10k/story-lineup.webp` (unreferenced since #130); the count is not a fresh scan — re-scan
+      public/assets/products vs src/ at round close, delete with the owner's OK (13.4 #1) · the m-bar-10k `boxImage`
+      fields stay in data, not shown (not counted as leftovers)
+  (6) the two open questions of item 5 (credit line · phone-swipe check) [รอเจ้าของ] — the old TASTE list (names,
+      banner, colour mismatch) is answered, see item 3 and §3
   (7) the owner asked 30/09 "which steps slow us down — cut what drags"; Friday proposed cuts in the chat
       (checker on docs-only PRs · content-dates.json chore commits · full set on baseline pages after 05/10 ·
       doc-keeper for §16 · rule-text sprawl) — the owner picks; then write them (central §12 item 28) [รอเจ้าของ]
       — still open
-  Removed since v90: #121-#126 detail, owner answers 30/09 and the premium-lineup order (all relocated to §3, see
-  item 1) · the old (6) "premium lineup drafts" (now the merged look, (6) above).
-5 open questions — ask as ONE set at the start of the next chat (13.4 #6), with a recommendation each:
-  none open — the owner's best-seller list (NEXT WORK 1) is answered; the taste points are in item 4(6), and the work
-  does not wait for them (13.4 #6).
+  Removed since v91: all relocated word for word to §3, "second batch close" block.
+5 open questions — ask as ONE set at the start of the next chat (13.4 #6), with a recommendation each; the work does
+  not wait for them:
+  (a) the phone-swipe check on the live gallery (after #127): the owner pasted the options without choosing
+      "ลื่น / ยังกระตุก" — ask again [รอเจ้าของ]
+  (b) keep the credit line "ภาพจริงจาก SALTHUB" on the gallery? A keep (recommended) · B remove. Friday's answer in the
+      report: no measurable SEO effect; keep it as a credit [เชื่อว่า — main agent's report] [รอเจ้าของ]
 6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`, unchanged since v85 — the
   batches since ran the light set only, per 13.12): tsc 0 · verify:commerce 17/17 · verify:catalog --full 32/32 ·
   count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Seventh chat [เชื่อว่า — main agent's report, checker PASS each]: the light set per PR (#127, #128) + html-diff
-  7/7 baseline pages identical twice + `gallery-probe` sweeps (live before 127/215 FLASH; fixed 0/215). Sixth chat,
-  per PR #121-#124: html-diff 7/7 · verify:catalog 29/29 · scan.js 0/105 (unchanged from v90). Not a new
-  baseline (light-set round; the full-set numbers above stay as printed at the clip round).
+  Seventh chat, second batch [เชื่อว่า — main agent's report, checker PASS each]: #130 = scan.js 0/105 · raw chars 0
+  · visible-text: only m-bar-10k changed · html-diff 7/7 twice; #131 = the step's Linux runs, 3 passing (item 3).
+  Not a new baseline (light-set round; the full-set numbers above stay as printed at the clip round). The first batch's
+  and the sixth chat's per-PR proof lines: §3 second-batch-close block.
 (context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
 
