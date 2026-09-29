@@ -103,6 +103,11 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
       - name: Call the Render deploy hook
         env:
           HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
@@ -114,12 +119,23 @@ jobs:
             echo "::warning title=not deployed::secret RENDER_DEPLOY_HOOK_URL is not set — ${short} was checked but not deployed"
             exit 0
           fi
-          # The hook deploys the newest commit of main. If main moved on while the checks ran, the newer run deploys.
+          # The hook deploys the newest commit of main. If main moved on while the checks ran (or before a re-run),
+          # the newer run deploys it — but only when a newer commit reaches the site: a docs-only merge after a failed
+          # deploy has a run that SKIPs, so skipping here too left the site change undeployed (#115, 29/09 — its
+          # re-run said "main moved on", the docs merge said "nothing on the site changed"). When no newer file reaches
+          # the site, the newest main serves exactly the site files checked here, so this run deploys it.
           now="$(git ls-remote origin refs/heads/main | cut -f1)"
           if [ "$now" != "$GITHUB_SHA" ]; then
-            echo "### SKIP deploy — main moved on to ${now:0:7}; its own run deploys it" >> "$GITHUB_STEP_SUMMARY"
-            echo "::notice title=not deployed::main moved on to ${now:0:7} while ${short} was checked"
-            exit 0
+            git fetch -q origin main
+            newer="$(GITHUB_OUTPUT= node scripts/deploy-decision.js --range "$GITHUB_SHA..$now" 2>&1 || true)"
+            if printf '%s\n' "$newer" | grep -qE '^[0-9]+ files · 0 reach the site$'; then
+              echo "### main moved on to ${now:0:7}, but nothing newer reaches the site — deploying it (same site files as ${short})" >> "$GITHUB_STEP_SUMMARY"
+              echo "::notice title=main moved on::${now:0:7} changes nothing on the site — deploying for ${short}"
+            else
+              echo "### SKIP deploy — main moved on to ${now:0:7} with site changes; its own run deploys it" >> "$GITHUB_STEP_SUMMARY"
+              echo "::notice title=not deployed::main moved on to ${now:0:7} while ${short} was checked"
+              exit 0
+            fi
           fi
           resp="$(curl -fsS -X POST "$HOOK")" || { echo "::error title=deploy hook failed::the Render deploy hook call failed for ${short}"; exit 1; }
           id="$(printf '%s' "$resp" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{console.log(JSON.parse(s).deploy.id||"")}catch{console.log("")}})')"
