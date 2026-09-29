@@ -66,13 +66,20 @@ export function runI18nContractTests(): I18nContractResult[] {
     .filter((file) => GEO_CODE.some((re) => re.test(readFileSync(file, "utf-8"))))
     .map((file) => path.relative(process.cwd(), file));
   // src/proxy.ts used to be the locale-guessing proxy, so its mere existence failed this check. Since the image-fix
-  // round (2026-09-30) a proxy exists for one job only — force WebP on /_next/image (src/proxy.ts head). It may
-  // stay only while it can never see a page request and reads nothing a language could be guessed from.
+  // round (2026-09-30) a proxy exists for one job only — force WebP on /_next/image (src/proxy.ts head). Its CODE is
+  // pinned here token for token (block comments and whitespace ignored): any change to what it matches or reads —
+  // a wider matcher, another header, the URL, cookies, the client IP — fails this check until someone rewrites the
+  // pin on purpose. (A pattern-based check was tried first; the checker bypassed it four ways, PR #113.)
+  const PROXY_PIN =
+    'import { NextResponse } from "next/server"; import type { NextRequest } from "next/server"; ' +
+    'export function proxy(request: NextRequest) { const accept = request.headers.get("accept") ?? ""; ' +
+    'if (accept.includes("image/webp")) return NextResponse.next(); const headers = new Headers(request.headers); ' +
+    'headers.set("accept", accept ? `image/webp,${accept}` : "image/webp,*/*"); return NextResponse.next({ request: { headers } }); } ' +
+    'export const config = { matcher: "/_next/image", };';
+  const pinText = (src: string) => src.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\s+/g, " ").trim();
   const proxyPath = path.join(process.cwd(), "src", "proxy.ts");
   const proxySrc = fs.existsSync(proxyPath) ? readFileSync(proxyPath, "utf-8") : null;
-  const proxyImageOnly =
-    proxySrc === null ||
-    (/matcher:\s*["'`]\/_next\/image["'`]/.test(proxySrc) && !/accept-language|country|locale|cookies|geo/i.test(proxySrc.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, "")));
+  const proxyImageOnly = proxySrc === null || pinText(proxySrc) === pinText(PROXY_PIN);
   check(
     "no country/geo detection anywhere in src — Thai is not conditional on where a visitor is",
     proxyImageOnly &&
