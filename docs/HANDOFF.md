@@ -843,6 +843,18 @@ verbatim:
 v91 block ran items together (item 3 pieces, the leftover bullet, item 4(6)) each piece sits on its own lines here.
 What replaced them: v92 §16 items 1-6. The owner's 30/09 answers to (6) and the banner's removal: v92 §16 item 3.]
 
+v92 §16 lines relocated at the seventh chat's move (main agent, 30/09, word for word):
+```
+  OWNER ANSWERS 30/09 (chat) [เชื่อว่า — main agent's report]: (1) keep the flavour names in 2 rows · (2) banner size
+  OK — then the owner removed the bottom section anyway, so the banner is gone · (3) chase the colours — done in #130
+  · (4) the deploy fix as its own PR — done, #131. The phone-swipe check is still unanswered: item 5.
+  (done in the seventh chat: the phone-gallery bug #127 · the M Bar 10K premium lineup #128 · the trim-and-credit
+  edits #130 — details in item 1 and §3)
+  #131 `8396b0f` fix(gates) `scripts/verify-catalog.ts`: the flaky step "next start on 3411 stopped" now probes with
+  fresh TCP connections on 127.0.0.1 + ::1 and gives the final check 2 s (it failed 29/09 in runs 36625888711 and
+  36633396707, 0.01-0.27 s after the kill; likely cause = fetch reusing a keep-alive socket).
+```
+
 ---
 
 ## 4. Known broken / missing, not fixed yet
@@ -987,9 +999,7 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   decide/checks/deploy success; main agent's curl: live /products/m-bar-10k has no story-lineup and shows "ภาพจริงจาก
   SALTHUB"; live /products/argus-g4 still shows the old held line, as intended — item 3):
   #129 `d569aab` docs close (§16 v91 + LESSONS 16 — the docs PR of the previous close, now merged).
-  #131 `8396b0f` fix(gates) `scripts/verify-catalog.ts`: the flaky step "next start on 3411 stopped" now probes with
-  fresh TCP connections on 127.0.0.1 + ::1 and gives the final check 2 s (it failed 29/09 in runs 36625888711 and
-  36633396707, 0.01-0.27 s after the kill; likely cause = fetch reusing a keep-alive socket).
+  #131 `8396b0f` fix(gates) verify-catalog port check — detail relocated to §3 at the chat move [chat-move].
   #130 `d866032` (owner chat 30/09): (a) M Bar 10K — the bottom "รุ่นนี้มี 12 กลิ่น" section is left out on lineupFirst
   pages (`ProductMoreDetails`), `storyLineup` removed from type/component/data; (b) gallery lede th/en/zh = credit
   only ("ภาพจริงจาก {brand}") — the owner cut "ใช้เป็นภาพประกอบเท่านั้น และไม่นำไปเผยแพร่ต่อเพื่อการค้า" ("เรากำลังทำ
@@ -1019,17 +1029,13 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   DATED TO-DO, after 05/10 (the baseline hold `TITLE_PRICE_HOLD_UNTIL_2026_10_05` ends): delete `galleryNoteHeld` and
   the `heldNote` prop (with the `page.tsx` pass-through) so the 7 pages show the credit-only lede too [เชื่อว่า —
   main agent's instruction; the "so that" is doc-keeper's reading].
-  OWNER ANSWERS 30/09 (chat) [เชื่อว่า — main agent's report]: (1) keep the flavour names in 2 rows · (2) banner size
-  OK — then the owner removed the bottom section anyway, so the banner is gone · (3) chase the colours — done in #130
-  · (4) the deploy fix as its own PR — done, #131. The phone-swipe check is still unanswered: item 5.
+  OWNER ANSWERS 30/09: relocated to §3 at the chat move [chat-move].
   OWNER'S NEW DIRECTION 30/09: (i) the "more details" section of EVERY product gets an SEO article — its own later
   round; (ii) the M Bar 10K treatment (more images + more details) goes to the WHOLE site. Friday wrote two round
   files into the owner's drafting folder — NOT in git (OneDrive `Run prompt\New prompt WEB\`):
   `รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt` and `รอบบทความ-รายละเอียดเพิ่มเติม-ทุกสินค้า-30-09.txt` [เชื่อว่า — main
   agent's report; doc-keeper cannot see that folder].
   NEXT WORK, in the owner's order (big → planner first for anything not already planned, 13.2 #2):
-  (done in the seventh chat: the phone-gallery bug #127 · the M Bar 10K premium lineup #128 · the trim-and-credit
-  edits #130 — details in item 1 and §3)
   (0) [chat-move] FIRST NEXT STEP (owner 30/09 "อยากให้ทำรอบนี้ก่อน"): "ไล่ดูทีละส่วน" for M Bar 10K — a premium
       exploded view (owner's pick; 360 view / X-ray = extras), designer designs, Friday/Higgsfield draws, manufacturer
       facts only — round file `รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt` (owner's Run prompt folder). Ready:
