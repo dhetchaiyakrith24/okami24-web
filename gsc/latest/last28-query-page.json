@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-08-30",
-  "endDate": "2026-09-26",
+  "startDate": "2026-08-31",
+  "endDate": "2026-09-27",
   "dimensions": [
    "query",
    "page"
@@ -13,9 +13,9 @@
     "okami24",
     "https://okami24.store/"
    ],
-   "clicks": 14,
-   "impressions": 18,
-   "ctr": 0.7777777777777778,
+   "clicks": 16,
+   "impressions": 20,
+   "ctr": 0.8,
    "position": 1
   },
   {
@@ -90,6 +90,26 @@
   },
   {
    "keys": [
+    "nexbar clear 18k",
+    "https://okami24.store/products/pod-180"
+   ],
+   "clicks": 2,
+   "impressions": 7,
+   "ctr": 0.2857142857142857,
+   "position": 14.571428571428571
+  },
+  {
+   "keys": [
+    "okami บุหรี่ไฟฟ้า",
+    "https://okami24.store/"
+   ],
+   "clicks": 2,
+   "impressions": 6,
+   "ctr": 0.3333333333333333,
+   "position": 6.833333333333333
+  },
+  {
+   "keys": [
     "voopoo argus g3 mini",
     "https://okami24.store/products/argus-g3-mini"
    ],
@@ -130,13 +150,43 @@
   },
   {
    "keys": [
+    "drag 6 ราคา",
+    "https://okami24.store/products/drag-6"
+   ],
+   "clicks": 1,
+   "impressions": 1,
+   "ctr": 1,
+   "position": 5
+  },
+  {
+   "keys": [
+    "iqos",
+    "https://okami24.store/brands/iqos"
+   ],
+   "clicks": 1,
+   "impressions": 2,
+   "ctr": 0.5,
+   "position": 3.5
+  },
+  {
+   "keys": [
     "monster 14k",
+    "https://okami24.store/products/mood-monster-14k"
+   ],
+   "clicks": 1,
+   "impressions": 2,
+   "ctr": 0.5,
+   "position": 13
+  },
+  {
+   "keys": [
+    "mood monster",
     "https://okami24.store/products/mood-monster-14k"
    ],
    "clicks": 1,
    "impressions": 1,
    "ctr": 1,
-   "position": 25
+   "position": 22
   },
   {
    "keys": [
@@ -170,16 +220,6 @@
   },
   {
    "keys": [
-    "okami บุหรี่ไฟฟ้า",
-    "https://okami24.store/"
-   ],
-   "clicks": 1,
-   "impressions": 5,
-   "ctr": 0.2,
-   "position": 7.4
-  },
-  {
-   "keys": [
     "okami24",
     "http://okami24.store/"
    ],
@@ -204,9 +244,9 @@
     "https://okami24.store/products"
    ],
    "clicks": 1,
-   "impressions": 16,
-   "ctr": 0.0625,
-   "position": 9.125
+   "impressions": 18,
+   "ctr": 0.05555555555555555,
+   "position": 8.222222222222221
   },
   {
    "keys": [
@@ -247,6 +287,16 @@
    "impressions": 9,
    "ctr": 0.1111111111111111,
    "position": 22.666666666666668
+  },
+  {
+   "keys": [
+    "voopoo drag 6 ราคา",
+    "https://okami24.store/products/drag-6"
+   ],
+   "clicks": 1,
+   "impressions": 1,
+   "ctr": 1,
+   "position": 3
   },
   {
    "keys": [
@@ -320,6 +370,16 @@
   },
   {
    "keys": [
+    "caliburn g",
+    "https://okami24.store/products/caliburn-g4"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 67
+  },
+  {
+   "keys": [
     "caliburn g2",
     "https://okami24.store/products/coil-53"
    ],
@@ -374,9 +434,9 @@
     "https://okami24.store/products/caliburn-g5-lite"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
-   "position": 4
+   "position": 4.333333333333334
   },
   {
    "keys": [
@@ -410,13 +470,23 @@
   },
   {
    "keys": [
+    "darg 6",
+    "https://okami24.store/products/drag-6"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
     "disposable",
     "https://okami24.store/products/disposables"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
-   "position": 75
+   "position": 44
   },
   {
    "keys": [
@@ -740,16 +810,6 @@
   },
   {
    "keys": [
-    "nexbar clear 18k",
-    "https://okami24.store/products/pod-180"
-   ],
-   "clicks": 0,
-   "impressions": 4,
-   "ctr": 0,
-   "position": 16
-  },
-  {
-   "keys": [
     "ngovoks",
     "https://okami24.store/brands/nevoks"
    ],
@@ -854,9 +914,9 @@
     "https://okami24.store/how-to-order"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 7,
    "ctr": 0,
-   "position": 6.4
+   "position": 4.857142857142858
   },
   {
    "keys": [
@@ -884,9 +944,9 @@
     "https://okami24.store/products/caliburn-g5-lite"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 5,
    "ctr": 0,
-   "position": 8
+   "position": 7.6
   },
   {
    "keys": [
@@ -1417,6 +1477,16 @@
    "impressions": 1,
    "ctr": 0,
    "position": 5
+  },
+  {
+   "keys": [
+    "ราคาไทย",
+    "https://okami24.store/products/iqosheet-18"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
   },
   {
    "keys": [

@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-08-30",
-  "endDate": "2026-09-26",
+  "startDate": "2026-08-31",
+  "endDate": "2026-09-27",
   "dimensions": [
    "query"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "okami24"
    ],
-   "clicks": 16,
-   "impressions": 20,
-   "ctr": 0.8,
-   "position": 2.25
+   "clicks": 18,
+   "impressions": 22,
+   "ctr": 0.8181818181818182,
+   "position": 2.1363636363636367
   },
   {
    "keys": [
@@ -81,12 +81,30 @@
   },
   {
    "keys": [
+    "nexbar clear 18k"
+   ],
+   "clicks": 2,
+   "impressions": 7,
+   "ctr": 0.2857142857142857,
+   "position": 14.571428571428571
+  },
+  {
+   "keys": [
     "okami pod"
    ],
    "clicks": 2,
    "impressions": 7,
    "ctr": 0.2857142857142857,
    "position": 7.857142857142857
+  },
+  {
+   "keys": [
+    "okami บุหรี่ไฟฟ้า"
+   ],
+   "clicks": 2,
+   "impressions": 7,
+   "ctr": 0.2857142857142857,
+   "position": 6.857142857142857
   },
   {
    "keys": [
@@ -126,12 +144,39 @@
   },
   {
    "keys": [
-    "monster 14k"
+    "drag 6 ราคา"
    ],
    "clicks": 1,
    "impressions": 1,
    "ctr": 1,
-   "position": 25
+   "position": 5
+  },
+  {
+   "keys": [
+    "iqos"
+   ],
+   "clicks": 1,
+   "impressions": 2,
+   "ctr": 0.5,
+   "position": 3.5
+  },
+  {
+   "keys": [
+    "monster 14k"
+   ],
+   "clicks": 1,
+   "impressions": 2,
+   "ctr": 0.5,
+   "position": 13
+  },
+  {
+   "keys": [
+    "mood monster"
+   ],
+   "clicks": 1,
+   "impressions": 1,
+   "ctr": 1,
+   "position": 22
   },
   {
    "keys": [
@@ -141,15 +186,6 @@
    "impressions": 1,
    "ctr": 1,
    "position": 7
-  },
-  {
-   "keys": [
-    "okami บุหรี่ไฟฟ้า"
-   ],
-   "clicks": 1,
-   "impressions": 6,
-   "ctr": 0.16666666666666666,
-   "position": 7.333333333333333
   },
   {
    "keys": [
@@ -186,6 +222,15 @@
    "impressions": 9,
    "ctr": 0.1111111111111111,
    "position": 22.666666666666668
+  },
+  {
+   "keys": [
+    "voopoo drag 6 ราคา"
+   ],
+   "clicks": 1,
+   "impressions": 1,
+   "ctr": 1,
+   "position": 3
   },
   {
    "keys": [
@@ -252,6 +297,15 @@
   },
   {
    "keys": [
+    "caliburn g"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 67
+  },
+  {
+   "keys": [
     "caliburn g2"
    ],
    "clicks": 0,
@@ -273,9 +327,9 @@
     "caliburn g5 lite"
    ],
    "clicks": 0,
-   "impressions": 8,
+   "impressions": 9,
    "ctr": 0,
-   "position": 7.25
+   "position": 7
   },
   {
    "keys": [
@@ -297,12 +351,21 @@
   },
   {
    "keys": [
+    "darg 6"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
     "disposable"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
-   "position": 75
+   "position": 44
   },
   {
    "keys": [
@@ -564,15 +627,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 6
-  },
-  {
-   "keys": [
-    "nexbar clear 18k"
-   ],
-   "clicks": 0,
-   "impressions": 4,
-   "ctr": 0,
-   "position": 16
   },
   {
    "keys": [
@@ -951,6 +1005,15 @@
    "impressions": 1,
    "ctr": 0,
    "position": 5
+  },
+  {
+   "keys": [
+    "ราคาไทย"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
   },
   {
    "keys": [

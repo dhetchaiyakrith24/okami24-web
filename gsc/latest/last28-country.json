@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-08-30",
-  "endDate": "2026-09-26",
+  "startDate": "2026-08-31",
+  "endDate": "2026-09-27",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 214,
-   "impressions": 743,
-   "ctr": 0.288021534320323,
-   "position": 9.962314939434725
+   "clicks": 230,
+   "impressions": 777,
+   "ctr": 0.296010296010296,
+   "position": 9.933075933075934
   },
   {
    "keys": [
