@@ -166,3 +166,55 @@ flavours (Esko 18/20) keep their photo and need a "suggestion" (other flavour / 
 `_incoming/image-fix/higgsfield/m-bar-10k/` — `refs/` (the live card as device truth + 12 flavour cut-outs on flat grey),
 `prompt.txt` (Grape first), `วิธีทำ-Higgsfield.txt` (owner/Javis steps). Results go to `out/`; Friday checks them with
 `scripts/ai-fidelity-sheet.js` and sends the 3x/1440 preview before anything goes live.
+
+## Fourth chat (29/09) — M Bar 10K complete, WebP fix, card standard
+
+Three PRs merged (merge commits; each checker-passed and GitHub checks green; figures below are the main agent's report
+[เชื่อว่า], merge hashes `5731113` and `257b6ef` seen in the git log).
+- **#111 → `f3aad9f` — M Bar 10K, last 5 flavours (12/12 now):** Blue Ice, Kyoho Grape, Menthol Blast, Strawberry Kiwi,
+  Yellow Mint. Method: Higgsfield recolour of the owner-passed Grape render (reference 1 = template) with the maker photo
+  cropped to box front + device (reference 2), so the mint leaf / grape props never reach the AI. 5/5 on the first try
+  except Kyoho and Menthol, redone once for a too-bright device base (an explicit colour note fixed it). IoU 0.978–0.985,
+  colour median ΔE 1.5–2.1, sharpness gate 5/5. Live-verified (after shots `_incoming/mbar10k-full/after/`, sheets
+  `flavours-before-after-390.png` / `-1440.png`). 14 credits. Checker caught a missing `content-dates.json` update
+  (fixed, re-check pass).
+- **#113 → `5731113` — black-square fix:** `src/proxy.ts` (matcher `/_next/image` only) adds `image/webp` to `Accept`, so
+  the optimizer never falls back to JPEG. JPEG has no alpha: transparent photos came out on a BLACK square and Cloudflare
+  served that to visitors (evidence `_incoming/mbar10k-full/pb.jpg`, 1000×1000 JPEG, corner pixel 0,0,0). The
+  `i18n-contract-test` geo guard used to fail on the mere existence of `src/proxy.ts`; it now pins the proxy's code token
+  for token (the checker bypassed a pattern-based version 4 ways). Baseline 7 pages HTML identical to live (html-diff 7/7).
+  The first deploy run failed on a flaky "next start on 3411 stopped" step (31/32 passed); the owner pressed Re-run →
+  success. Live: `Accept: */*` → image/webp, 3/3. Old JPEG copies may stay in Cloudflare up to 30 days unless the owner
+  presses Purge Everything (asked, not confirmed done).
+- **#112 → `257b6ef` — shop-wide card standard:** `scripts/process-images.ts` writes role "card" on a 1000×1250 (4:5)
+  canvas with the product at 94% — the listing card frame is 4:5, and square cards showed the product at ~67% of the
+  frame (e.g. Muro), portrait ones ~99% (e.g. Nexbar). IMAGE_SPEC §1/§3/§8 updated. M Bar 10K `card-v2.webp` = Higgsfield
+  nano_banana_pro 4K remake of the 463×925 maker card, same 3/4 tilt, IoU 0.993, ΔE max 3.0. It reaches baseline page
+  `/products/m-bar-15k` (related box) — only the image URL changed there (html-diff proves it); owner approved merging now.
+  The home page cinematic scene still uses the old `m-bar-10k/card.webp` (`cinematic/` is on the Do-not-touch list) — old
+  file kept. 6 credits.
+- **Credits:** Higgsfield 361.1 at chat start (not 451.1 — 84 went to Seedance video jobs, not web work), 309.1 now.
+- **Verify (light set):** checker #111 5/5 after one fix · #113 pass + guard redone · #112 5/5; tsc 0; `verify:catalog`
+  29/29; sharpness gate PASS on each; GitHub `verify:catalog --full` 32/32 on each merged head.
+
+### Nexbar Clear 18K + WOTOFO — planner's plan and trial (not merged; waiting on the owner's photo choice)
+- **Two PRs, both BIG (13.7).** PR-A first: add the WOTOFO product(s), so WOTOFO never becomes an empty brand
+  (`brandsWithProducts()` would drop it from the footer of every page, incl. the 7 baseline pages). PR-B: Pod-180
+  brandless — a new `brandless` flag in the product-master schema (not a pseudo-brand); display name "nexBar CLEAR 18K";
+  15 flavours per the owner's poster, 5 of them not in Shipnity → shown via `VERIFIED_ADDITIONAL_VARIANTS`; spec 650 mAh ·
+  18 mL · Dual Nex Mesh · 18,000 puffs · Type-C · airflow · Normal/Turbo; price ฿359 untouched; clip YhtKKjRwF3Q + the old
+  card move to the WOTOFO product; ~15 files.
+- **WOTOFO product:** Wotofo nexBAR 18K (wotofo.com/products/wotofo-nexbar-18k) — 15 variants on the maker's store though
+  its copy says "20 flavors"; the gallery shows ~21 flavour names. Our current Pod-180 card = the official Lemon Lime image
+  of this exact model.
+- **Trial:** official photos are 1080 JPG on pure black, product ~650 px → background removed with Higgsfield
+  `image_background_remover` (1 credit each, clean), then `nano_banana_pro` remake on flat grey with an explicit
+  instruction for the tiny NORM/TURBO screen labels. Card (4K 4:5) IoU 0.996, ΔE max 6.6. 7 flavour remakes (Strawberry
+  Banana, Mango Ice, Peach Ice, Mixed Berries, Peach Mango Watermelon, Strawberry Kiwi, Guava Kiwi Passion Fruit) +
+  Watermelon Ice = 8 of 15 with an official reference; 7 have none (Cherry Ice, Forest Berries, Hawaiian Shore Ice, Melon
+  Kiwi Banana, Pomegranate Ice, Strawberry Ice, Three Melons). Files `_incoming/wotofo/`. The bytedance upscaler was tried
+  and dropped (garbles tiny text, noisy background). WOTOFO trial spend so far: 32 credits.
+- **Waiting on owner:** remade photos (recommended) vs the official photos cut out at real size (smaller).
+- **Next, in order:** (1) Nexbar + WOTOFO as above · (2) (D) out-of-stock suggestion (Esko) — designer first · (3) (C)/(B)
+  card sweep on the new 4:5 standard, Muro card first, best sellers first, not hidden products. Baseline pages untouched
+  until 06/10.
