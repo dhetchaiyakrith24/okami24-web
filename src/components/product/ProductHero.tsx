@@ -362,11 +362,15 @@ export function ProductHero({
               />
             )}
           </div>
-          <div
-            className="pointer-events-none absolute inset-x-16 bottom-6 h-10 rounded-full opacity-70 max-lg:hidden"
-            style={{ background: "radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 75%)", filter: "blur(10px)" }}
-            aria-hidden
-          />
+          {/* The floor shadow under a single device; a lineup carries its own stage floor, and this one sat as a second
+              floor under its names (designer 2026-09-30). */}
+          {!(showAllColors && product.lineupImage) && (
+            <div
+              className="pointer-events-none absolute inset-x-16 bottom-6 h-10 rounded-full opacity-70 max-lg:hidden"
+              style={{ background: "radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 75%)", filter: "blur(10px)" }}
+              aria-hidden
+            />
+          )}
           {/* Phone gallery — hidden at lg+, where the still image above is the hero. */}
           <div className="absolute inset-0 lg:hidden">
             {showAllColors && product.lineupImage && !lineupFirst ? (
