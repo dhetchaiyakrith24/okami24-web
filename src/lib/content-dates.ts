@@ -29,6 +29,7 @@ const LEGACY_PRODUCT_FILES: Record<string, string> = {
   voopoo: "voopoo.ts",
   salthub: "salthub.ts",
   relx: "relx.ts",
+  wotofo: "wotofo.ts",
   joiway: "joiway.ts",
   tfit: "tfit.ts",
   infy: "infy.ts",

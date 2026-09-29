@@ -40,7 +40,7 @@ export const SOURCED_ROW_PRODUCTS = [
 /** Manufacturer domains (and the manual mirror the owner allowed). A reseller domain is never added here. */
 const MANUFACTURER_HOSTS = [
   "salthub.com", "img.salthub.com", "relxnow.com", "myuwell.com", "files.myuwell.com", "manuals.plus", "eskobarvape.com",
-  "voopoo.com", "shop.voopoo.com", "iqos.com", "nevoks.com",
+  "voopoo.com", "shop.voopoo.com", "iqos.com", "nevoks.com", "wotofo.com",
 ];
 
 /** Published (Shipnity) products whose verified rows must each name a manufacturer `sourceUrl` — the same rule (a) as
