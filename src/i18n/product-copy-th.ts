@@ -528,6 +528,15 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     // Round 8 B2: "Marbo" sentence — many shops use that name for M Bar (researcher-1 row 3a). No maker claim.
     shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์ให้สลับ พร้อมไฟ RGB แสดงโหมดที่ใช้งานอยู่ หลายร้านเรียก M Bar ว่า Marbo เป็นรุ่นเดียวกันนี้แหละ",
     features: {
+      // 2026-09-30 "more details" story blocks (writer): posters 02 and 05.
+      "bottle-shape": {
+        title: "ทรงขวดน้ำยา ฐานไล่สี",
+        description: "ทรงเหมือนขวดน้ำยา ตรงฐานไล่สีต่างกันไปตามกลิ่น",
+      },
+      "ten-k-puffs": {
+        title: "สูงสุด 10,000 พัฟ",
+        description: "รองรับสูงสุด 10,000 พัฟ แบต 600mAh หมดก็ชาร์จผ่าน USB-C แล้วสูบต่อได้",
+      },
       "three-modes": {
         title: "สลับได้ 3 โหมดวัตต์",
         description: "Eco Soft และ Boost กดสองครั้งติดกันก็สลับโหมดได้เลย ความแรงเปลี่ยนทันที",

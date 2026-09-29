@@ -10,6 +10,7 @@ import { ProductGallery } from "@/components/product/ProductGallery";
 import { ProductReviewSection } from "@/components/product/ProductReviewSection";
 import { ProductAnatomy } from "@/components/product/ProductAnatomy";
 import { FeatureGrid } from "@/components/product/FeatureGrid";
+import { ProductMoreDetails } from "@/components/product/ProductMoreDetails";
 import { SpecSheet } from "@/components/product/SpecSheet";
 import { CompatibilitySection } from "@/components/product/CompatibilitySection";
 import { CompatibleProducts } from "@/components/product/CompatibleProducts";
@@ -304,9 +305,16 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <Breadcrumbs trail={legacyTrail} />
       <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />
       <ProductReviewSection product={product} frozen={TITLE_PRICE_HOLD_UNTIL_2026_10_05.has(product.slug)} />
-      <ProductGallery product={product} />
-      {product.isFlagship && <ProductAnatomy product={product} />}
-      <FeatureGrid product={product} />
+      {/* `storyDetails` (image-fix round 2026-09-30): one "more details" story in place of the three sections below. */}
+      {product.storyDetails ? (
+        <ProductMoreDetails product={product} />
+      ) : (
+        <>
+          <ProductGallery product={product} />
+          {product.isFlagship && <ProductAnatomy product={product} />}
+          <FeatureGrid product={product} />
+        </>
+      )}
       <SpecSheet product={product} />
       <CompatibilitySection product={product} />
       {/* Structured, clickable compatibility — real catalog products verified to fit, on top of

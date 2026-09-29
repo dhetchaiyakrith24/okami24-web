@@ -188,6 +188,9 @@ export const zh: Dictionary = {
     },
     featuresEyebrow: "核心亮点",
     featuresTitle: "它的独特之处。",
+    moreDetailsTitle: "更多详情",
+    moreDetailsAllFlavours: "本款有 {count} 种口味",
+    moreDetailsAllColours: "本款有 {count} 种颜色",
     specsEyebrow: "产品规格",
     specsTitle: "真实可查的参数。",
     // Round 30.4 batch 1 — moved out of SpecSheet.tsx / SpecChip.tsx (were hardcoded English on the

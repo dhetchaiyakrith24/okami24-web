@@ -194,6 +194,9 @@ export const en: Dictionary = {
     },
     featuresEyebrow: "Key Benefits",
     featuresTitle: "What sets it apart.",
+    moreDetailsTitle: "More details",
+    moreDetailsAllFlavours: "Comes in {count} flavours",
+    moreDetailsAllColours: "Comes in {count} colours",
     specsEyebrow: "Specifications",
     specsTitle: "What's actually documented.",
     // Round 30.4 batch 1 — moved out of SpecSheet.tsx / SpecChip.tsx (were hardcoded); wording unchanged.
