@@ -13,7 +13,8 @@
 //   swipe:left  swipe the gallery one slide forward · swipe:right one slide back
 // After each step it prints the slides seen in order (runs collapsed) and judges:
 //   FLASH   the visible slide went back to one it had already left (A→B→A…), i.e. the "flash" the owner saw
-//   STUCK   after the step settles, the slide on screen is not the pressed chip's slide
+//   STUCK   after the step settles, the slide on screen is not the pressed chip's slide, or a tapped chip is not pressed
+//   SKIP    a tap on a disabled chip (not counted either way)
 //   OK      otherwise
 // --no-scrollend: pretend the browser has no `scrollend` event (Safari before it shipped it) — the page's timer
 //   fallback path. --frames <dir>: also save a screencast frame strip per step (<dir>/step-N.png) for the report.
@@ -107,8 +108,12 @@ const RECORDER = `(() => {
     const t0 = await evaluate("performance.now()");
     if (framesDir) { frames.length = 0; await send("Page.startScreencast", { format: "jpeg", quality: 70, maxWidth: width, maxHeight: 844, everyNthFrame: 1 }); }
     const [kind, arg] = step.split(":");
+    let tapped = null;
     if (kind === "tap") {
-      const box = await evaluate(`(() => { const b = [...document.querySelectorAll('button[data-option-id]')].filter((b) => b.offsetParent)[${chipAt(arg)}]; if (!b) return null; b.scrollIntoView({ block: "nearest", inline: "center" }); const r = b.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; })()`);
+      const box = await evaluate(`(() => { const b = [...document.querySelectorAll('button[data-option-id]')].filter((b) => b.offsetParent)[${chipAt(arg)}]; if (!b) return null; b.scrollIntoView({ block: "nearest", inline: "center" }); const r = b.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2, disabled: b.disabled, id: b.dataset.optionId }; })()`);
+      // a disabled chip (every option sold out) cannot be tapped — say so instead of calling the no-op an OK (checker #127)
+      if (box && box.disabled) { console.log(`  step ${n} ${step.padEnd(12)} chip ${box.id} is disabled — SKIP`); continue; }
+      tapped = box ? box.id : null;
       if (!box) { console.log(`  step ${n} ${step}: no chip ${arg}`); bad++; continue; }
       await sleep(400);
       const b2 = await evaluate(`(() => { const b = [...document.querySelectorAll('button[data-option-id]')].filter((b) => b.offsetParent)[${chipAt(arg)}]; const r = b.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; })()`);
@@ -139,7 +144,8 @@ const RECORDER = `(() => {
     // slides = [a leading "all"/"default" slide when there is one] + one per option, in chip order
     const offset = slideIds.length - chips.length;
     const expected = pressed === null ? 0 : chips.indexOf(pressed) + offset;
-    const stuck = finalSlide !== expected;
+    // a tap must also have pressed the chip that was tapped (a tap that does nothing is not OK)
+    const stuck = finalSlide !== expected || (tapped !== null && pressed !== tapped);
     const verdict = flash ? "FLASH" : stuck ? "STUCK" : "OK";
     if (verdict !== "OK") { bad++; failed.push(`${u.replace(/^https?:\/\/[^/]+/, "")} ${step} ${verdict}`); }
     console.log(`  step ${n} ${step.padEnd(12)} slides seen ${seen.join("→") || "(none at rest)"} · on screen: ${slideLabel} · chip: ${pressed} → ${verdict}`);
