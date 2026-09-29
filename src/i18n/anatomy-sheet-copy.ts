@@ -38,8 +38,8 @@ export interface SheetCallout {
   code: string;
   name: SheetText;
   detail?: SheetText;
-  /** the detail is shown only while this spec row is `verified` in the product data */
-  specKey?: string;
+  /** the detail is shown only while this spec row (every row, when a list) is `verified` in the product data */
+  specKey?: string | string[];
 }
 
 /** One separated part of the exploded column; `callouts[].y` = where the leader meets the part, % of its height. */
@@ -98,9 +98,9 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
             x: 66,
             name: { th: "ไฟบอกสถานะ", en: "Mini display", zh: "迷你显示屏" },
             detail: {
-              th: "ไฟ 4 ดวงบอกแบตที่เหลือ ดวงละ 25% ส่วนไฟ RGB เปลี่ยนสีตามโหมด เขียว Eco น้ำเงิน Soft ชมพูอมม่วง Boost",
-              en: "4 LEDs show the remaining battery, 25% each; the RGB light shows the mode: green Eco, blue Soft, magenta Boost",
-              zh: "4 颗 LED 显示剩余电量，每颗 25%；RGB 灯显示当前模式：绿色 Eco、蓝色 Soft、粉紫色 Boost",
+              th: "ไฟ 4 ดวงบอกแบตที่เหลือ ดวงละ 25%",
+              en: "4 LEDs show the remaining battery, 25% each",
+              zh: "4 颗 LED 显示剩余电量，每颗 25%",
             },
             specKey: "indicator",
           },
@@ -139,8 +139,12 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
         to: [57, 44],
         name: { th: "ปุ่มก้นพอต", en: "Bottom button", zh: "底部按键" },
         // "Eco/Soft/Boost" without spaces, as poster 04 prints it — one word, so "/ Boost" cannot drop to a line alone
-        detail: { th: "กดสองครั้งติดกันเพื่อสลับ 3 โหมด Eco/Soft/Boost", en: "Double-click to switch between 3 modes: Eco/Soft/Boost", zh: "连按两下切换 3 种模式：Eco/Soft/Boost" },
-        specKey: "modes",
+        detail: {
+          th: "กดสองครั้งติดกันเพื่อสลับ 3 โหมด Eco/Soft/Boost ไฟ RGB เปลี่ยนสีตามโหมด เขียว Eco น้ำเงิน Soft ชมพูอมม่วง Boost",
+          en: "Double-click to switch between 3 modes: Eco/Soft/Boost; the RGB light shows the mode: green Eco, blue Soft, magenta Boost",
+          zh: "连按两下切换 3 种模式：Eco/Soft/Boost；RGB 灯显示当前模式：绿色 Eco、蓝色 Soft、粉紫色 Boost",
+        },
+        specKey: ["modes", "indicator"],
       },
       {
         n: 8,
@@ -152,9 +156,9 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
       },
     ],
     zooms: [
-      { id: "base", code: "BASE DETAIL", name: { th: "ก้นพอต", en: "Base", zh: "底部" }, image: { src: `${A}/zoom-base-v1.webp`, width: 1200, height: 1200, alt: { th: "ก้นพอต M Bar 10K ระยะใกล้ ช่องชาร์จ ปุ่ม และช่องปรับลม", en: "M Bar 10K base close-up: charging port, button and airflow slot", zh: "M Bar 10K 底部特写：充电口、按键与气流调节槽" } } },
-      { id: "display", code: "DISPLAY DETAIL", name: { th: "ไฟบอกสถานะ", en: "Mini display", zh: "迷你显示屏" }, leds: true, image: { src: `${A}/zoom-display-v1.webp`, width: 900, height: 900, alt: { th: "ไฟบอกสถานะของ M Bar 10K ระยะใกล้", en: "M Bar 10K mini display close-up", zh: "M Bar 10K 迷你显示屏特写" } } },
-      { id: "collar", code: "COLLAR DETAIL", name: { th: "ปลอกลายร่อง", en: "Ribbed collar", zh: "纹理套环" }, image: { src: `${A}/zoom-collar-v1.webp`, width: 1200, height: 1200, alt: { th: "ปลอกลายร่องและปากดูดของ M Bar 10K ระยะใกล้", en: "M Bar 10K ribbed collar and mouthpiece close-up", zh: "M Bar 10K 纹理套环与吸嘴特写" } } },
+      { id: "base", code: "BASE", name: { th: "ก้นพอต", en: "Base", zh: "底部" }, image: { src: `${A}/zoom-base-v1.webp`, width: 1200, height: 1200, alt: { th: "ก้นพอต M Bar 10K ระยะใกล้ ช่องชาร์จ ปุ่ม และช่องปรับลม", en: "M Bar 10K base close-up: charging port, button and airflow slot", zh: "M Bar 10K 底部特写：充电口、按键与气流调节槽" } } },
+      { id: "display", code: "DISPLAY", name: { th: "ไฟบอกสถานะ", en: "Mini display", zh: "迷你显示屏" }, leds: true, image: { src: `${A}/zoom-display-v1.webp`, width: 900, height: 900, alt: { th: "ไฟบอกสถานะของ M Bar 10K ระยะใกล้", en: "M Bar 10K mini display close-up", zh: "M Bar 10K 迷你显示屏特写" } } },
+      { id: "collar", code: "COLLAR", name: { th: "ปลอกลายร่อง", en: "Ribbed collar", zh: "纹理套环" }, image: { src: `${A}/zoom-collar-v1.webp`, width: 1200, height: 1200, alt: { th: "ปลอกลายร่องและปากดูดของ M Bar 10K ระยะใกล้", en: "M Bar 10K ribbed collar and mouthpiece close-up", zh: "M Bar 10K 纹理套环与吸嘴特写" } } },
     ],
     facts: [
       { specKey: "puffs", text: { th: "สูงสุด 10,000 พัฟ", en: "Up to 10,000 puffs", zh: "最多 10,000 口" } },

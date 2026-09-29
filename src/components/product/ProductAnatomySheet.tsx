@@ -47,15 +47,17 @@ function Num({ n, className }: { n: number; className?: string }) {
   );
 }
 
-function CalloutText({ c, text, showDetail }: { c: SheetCallout; text: (t: SheetText) => ReactNode; showDetail: boolean }) {
+function CalloutText({ c, text, showDetail, showCode }: { c: SheetCallout; text: (t: SheetText) => ReactNode; showDetail: boolean; showCode: boolean }) {
   return (
     <div className="min-w-0">
       <p className="text-sm font-semibold leading-snug lg:text-[0.95rem]" style={{ color: INK }}>
         {text(c.name)}
       </p>
-      <p className="label-mono text-[0.65rem] leading-tight" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
-        {c.code}
-      </p>
+      {showCode && (
+        <p className="label-mono text-[0.65rem] leading-tight" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
+          {c.code}
+        </p>
+      )}
       {showDetail && c.detail && (
         <p className="mt-1 text-[0.8rem] leading-relaxed text-pretty lg:text-[0.85rem]" style={{ color: INK_SOFT }}>
           {text(c.detail)}
@@ -67,7 +69,7 @@ function CalloutText({ c, text, showDetail }: { c: SheetCallout; text: (t: Sheet
 
 type Leader = { d: string; ax: number; ay: number };
 
-function ExplodedStack({ parts, text, verified, alt }: { parts: SheetPart[]; text: (t: SheetText) => ReactNode; verified: (k?: string) => boolean; alt: (t: SheetText) => string }) {
+function ExplodedStack({ parts, text, verified, alt, showCode }: { parts: SheetPart[]; text: (t: SheetText) => ReactNode; verified: (k?: string | string[]) => boolean; alt: (t: SheetText) => string; showCode: boolean }) {
   const box = useRef<HTMLDivElement>(null);
   const partEls = useRef<(HTMLDivElement | null)[]>([]);
   const labelEls = useRef<(HTMLLIElement | null)[]>([]);
@@ -155,7 +157,7 @@ function ExplodedStack({ parts, text, verified, alt }: { parts: SheetPart[]; tex
             style={tops ? { top: tops[i] } : undefined}
           >
             <Num n={c.n} className="pt-[0.2em]" />
-            <CalloutText c={c} text={text} showDetail={!c.specKey || verified(c.specKey)} />
+            <CalloutText c={c} text={text} showDetail={verified(c.specKey)} showCode={showCode} />
           </li>
         ))}
       </ol>
@@ -163,7 +165,7 @@ function ExplodedStack({ parts, text, verified, alt }: { parts: SheetPart[]; tex
   );
 }
 
-function BottomView({ sheet, text, verified }: { sheet: AnatomySheet; text: (t: SheetText) => ReactNode; verified: (k?: string) => boolean }) {
+function BottomView({ sheet, text, verified, showCode }: { sheet: AnatomySheet; text: (t: SheetText) => ReactNode; verified: (k?: string | string[]) => boolean; showCode: boolean }) {
   // Drawn from the maker's poster 04 (outline only): rim, recessed face, USB-C slot, centre button with two dimples,
   // arc slot with its small knob.
   return (
@@ -208,7 +210,7 @@ function BottomView({ sheet, text, verified }: { sheet: AnatomySheet; text: (t: 
         {sheet.base.map((c) => (
           <li key={c.n} className="flex gap-1">
             <Num n={c.n} className="pt-[0.2em]" />
-            <CalloutText c={c} text={text} showDetail={!c.specKey || verified(c.specKey)} />
+            <CalloutText c={c} text={text} showDetail={verified(c.specKey)} showCode={showCode} />
           </li>
         ))}
       </ol>
@@ -222,7 +224,8 @@ export function ProductAnatomySheet({ product }: { product: Product }) {
   const sheet = ANATOMY_SHEETS[product.slug];
   if (!sheet) return null;
   const rows = verifiedRows(product.specifications);
-  const verified = (k?: string) => !k || rows.some((r) => r.key === k);
+  const verified = (k?: string | string[]) => ([] as string[]).concat(k ?? []).every((key) => rows.some((r) => r.key === key));
+  const showCode = locale !== "en";
   const alt = (t: SheetText) => t[locale];
   const facts = sheet.facts.filter((f) => verified(f.specKey));
 
@@ -285,15 +288,15 @@ export function ProductAnatomySheet({ product }: { product: Product }) {
               </figcaption>
             </figure>
             <div className="lg:col-span-5">
-              <ExplodedStack parts={sheet.parts} text={text} verified={verified} alt={alt} />
+              <ExplodedStack parts={sheet.parts} text={text} verified={verified} alt={alt} showCode={showCode} />
             </div>
             <div className="border-t pt-8 lg:col-span-4 lg:flex lg:flex-col lg:justify-center lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0" style={{ borderColor: RULE }}>
-              <BottomView sheet={sheet} text={text} verified={verified} />
+              <BottomView sheet={sheet} text={text} verified={verified} showCode={showCode} />
             </div>
           </div>
 
           <div className="border-t pt-8" style={{ borderColor: RULE }}>
-            <ul className="grid grid-cols-3 gap-2 sm:gap-4 lg:mx-auto lg:max-w-[46rem] lg:gap-6">
+            <ul className="grid grid-cols-3 gap-2 sm:gap-4 lg:mx-auto lg:max-w-[58rem] lg:gap-6">
               {sheet.zooms.map((z) => (
                 <li key={z.id} className="flex flex-col gap-2">
                   <div className="relative aspect-square overflow-hidden rounded-md border" style={{ borderColor: RULE, background: "radial-gradient(circle at 50% 40%, #2a2c32, #16171a 75%)" }}>
@@ -311,9 +314,11 @@ export function ProductAnatomySheet({ product }: { product: Product }) {
                   <p className="text-xs font-semibold leading-snug" style={{ color: INK }}>
                     {text(z.name)}
                   </p>
-                  <p className="label-mono -mt-1.5 text-[0.65rem] leading-tight" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
-                    {z.code}
-                  </p>
+                  {showCode && (
+                    <p className="label-mono -mt-1.5 text-[0.65rem] leading-tight" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
+                      {z.code}
+                    </p>
+                  )}
                 </li>
               ))}
             </ul>
