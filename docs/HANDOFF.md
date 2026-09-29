@@ -752,10 +752,14 @@ spec). v90 item 1 (the sixth chat's merged PRs), item 3's owner answers and the 
   owner then said "บันทึกได้เลย" → written as a rule (13.7: every PR, small or big, merges after checker + green
   checks, report after; new-look images go in report item 4) — branch rules-merge-no-ask; (b) keep WOTOFO on /about; (c) Higgsfield
   use approved, credits now ~1,960 [เชื่อว่า — 2043.1 at the start of the batch minus ~85 used].
-  NEXT WORK (1) PREMIUM LINEUP A for M Bar 10K [owner order 30/09] — DONE in the seventh chat as PR #128: the owner said the lineup feels flat ("ดูเฉย ๆ ไม่รู้สึก
-  อะไร") and, of Friday's 3 drafts (A stage arc · B lit shelf · C tilted cascade;
-  `_incoming/pilot-mbar10k/premium-sheet.png`, builder `premium.js`), CHOSE A stage arc, mood "เรียบหรู เงียบ ๆ",
-  placement = the top square hero image + a wide full-width banner in the "more details" section.
+  (1) PREMIUM LINEUP A for M Bar 10K [owner order 30/09]: the owner said the lineup feels flat ("ดูเฉย ๆ ไม่รู้สึก
+      อะไร") and, of Friday's 3 drafts (A stage arc · B lit shelf · C tilted cascade;
+      `_incoming/pilot-mbar10k/premium-sheet.png`, builder `premium.js`), CHOSE A stage arc, mood "เรียบหรู เงียบ ๆ",
+      placement = the top square hero image + a wide full-width banner in the "more details" section. A is a ROUGH
+      DRAFT (edges clipped, empty space above, names as a colour-dot legend) — refine, designer (new look, 13.12 #4),
+      new look → show the drafts in report item 4 (merge does not wait, owner 30/09).
+  (v90 item 2 also said: "(#125 = §16 v90 + LESSONS 15, merged 7cc2b4e.)")
+  [Seventh chat note, not v90 text: NEXT WORK (1) above is DONE as PR #128.]
   Leftovers of the sixth chat [เชื่อว่า — main agent's report]: stale comment above `VERIFIED_MEDIA["Pod-180"]`
   (~lines 974-984 of `active-catalog-to-product-master.ts`, comment only) · old unreferenced
   `public/assets/products/nexbar-clear-18k/card.webp` (a WOTOFO image; delete only with the owner's OK, 13.4 #1) ·
@@ -904,7 +908,8 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   agent's report [เชื่อว่า]]. No tag (round not closed). Rollback = revert the merge commit of the PR in question.
   Merged in the seventh chat, each checker PASS + GitHub checks green, all LIVE (deploy run after #128 =
   decide/checks/deploy success; main agent's curl: live /products/m-bar-10k serves lineup-v3 + story-lineup; live
-  probe pod-180 6/6 OK):
+  probe pod-180 6/6 steps OK — `_incoming/flavour-bug/live-after-pod180-6steps.txt`; live sweep 43 pages PASS —
+  `_incoming/flavour-bug/live-after-chrome.txt`):
   #126 `259810f` rules-merge-no-ask (merged by the sixth chat; v90 item 2 is done).
   #127 `c5bb521` fix(mobile) phone gallery (`src/components/product/MobileVariantGallery.tsx`, used by ProductHero +
   PilotProductDetail). Owner's bugs 30/09: (1) chip tap lit the chip but the photo stayed on the cover [Javis], (2) a
