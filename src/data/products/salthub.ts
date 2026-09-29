@@ -80,8 +80,8 @@ export const salthubProducts: Product[] = [
     // 2026-09-30 (owner: device alone for every flavour, one lineup of all of them first, box photos lower down): `image` =
     // the device alone — ONE Higgsfield master render from the passed card, each flavour's base colour moved over by script
     // from its passed box+device render (source + check per file in the map); `boxImage` = that passed box+device photo,
-    // kept in the data but not shown since 2026-09-30 (owner: the lineup at the top already shows every flavour, so the
-    // "more details" flavour grid is left out on lineupFirst pages). The page opens on the lineup, built from these 12 files.
+    // in the "more details" flavour grid ("รุ่นนี้มี 12 กลิ่น" — owner 2026-09-30: keep it; only the wide lineup banner was
+    // the duplicate). The page opens on the lineup, built from these 12 files.
     lineupImage: {
       // v3 (owner 30/09 chose the premium "stage arc", mood "เรียบหรู เงียบ ๆ"): the same 12 device files on an arc,
       // centre forward, each flavour's own colour glowing on the floor, every name under its own device (two caption
