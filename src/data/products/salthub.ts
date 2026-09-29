@@ -33,11 +33,12 @@ export const salthubProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/m-bar-10k/card.webp",
+        src: "/assets/products/m-bar-10k/card-v2.webp",
         alt: "SALTHUB M Bar 10K, black-to-blue gradient, isolated product shot",
         angle: "3/4, isolated",
-        transparentBackground: false,
-        sourceName: "SALTHUB",
+        transparentBackground: true,
+        // Image-fix round 2026-09-30: sharp 4K remake of the 463x925 maker card, same view; source + check in the map.
+        sourceName: "OKami24 render (Higgsfield) from the SALTHUB card photo",
         sourceUrl: "https://www.salthub.com/mbar-10k/",
       },
       {
