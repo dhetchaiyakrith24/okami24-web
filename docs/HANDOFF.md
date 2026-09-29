@@ -870,21 +870,21 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   site; rows carry no URL because a row URL must be a maker domain), 15 flavours (5 via
   `VERIFIED_ADDITIONAL_VARIANTS`), card-v2 + 15 flavour photos (method = LESSONS 15), clip moved to WOTOFO, WOTOFO
   brand head without a price, SEO_BASELINE note added. Blueberry: the device prints "BLUEBERRY ICE", the maker's
-  list says "Blueberry" — both kept (alt/comment say so) [รอเจ้าของ: the owner may prefer a rename].
+  list says "Blueberry" — both kept (alt/comment say so); owner 30/09 answered "ตามนั้นเลย" to keep it [ตรวจแล้ว — owner's chat message].
   Manual deploy (Run workflow, 29/09 evening, run 36592249340) was started by Friday on the owner's chat
   permission; its result was never read (the app's auto-mode safety check blocked deploy-status reads) — moot,
   everything is live via #121-#124. Record of the fifth chat's PRs (#117 M Bar 10K pilot, #118 lineup-v2, #119
   deploy fix): their code is in main; facts are in git history and LESSONS 14/15; there is NO record file for the
   fifth or sixth chat — this block holds the facts.
-2 ahead of main: `git log --oneline origin/main..image-fix-close-30-09` — branch `image-fix-close-30-09` = this
-  §16 v90 + LESSONS lesson 15 (main agent's report [เชื่อว่า]) — docs PR to open, checker, merge (first step of
-  the seventh chat: `gh pr list --head image-fix-close-30-09`). v89's docs branch `image-fix-handoff-2` is not the
-  open one any more.
+2 ahead of main: `git log --oneline origin/main..rules-merge-no-ask` — branch `rules-merge-no-ask` = the owner's
+  "merge without asking" rule (TEAM_RULES 13.4 #2 + 13.7, IMAGE_SPEC §7, self-merge-check message) + these §16 edits
+  — PR opened and merged by the sixth chat if its checker passed; if still open: `gh pr list --head rules-merge-no-ask`,
+  checker, merge. (#125 = §16 v90 + LESSONS 15, merged 7cc2b4e.)
 3 round: "รอบรูป-แก้" (image fix) — OPEN. Background jobs: none known [เชื่อว่า]. A test server on 3412
   (`scripts/test-server.js`) may still be up — stop it or reuse it.
   OWNER ANSWERS 30/09 [เชื่อว่า — main agent's report]: (a) "ทุกครั้งที่ทำเสร็จไม่ต้องถามแล้ว Merge ได้เลย" —
-  Friday merged the BIG PRs without asking in this chat; making it a standing rule needs the owner's OK on a rules
-  table (central §12 item 28) — proposed in the report, not written yet; (b) keep WOTOFO on /about; (c) Higgsfield
+  owner then said "บันทึกได้เลย" → written as a rule (13.7: every PR, small or big, merges after checker + green
+  checks, report after; new-look images go in report item 4) — branch rules-merge-no-ask; (b) keep WOTOFO on /about; (c) Higgsfield
   use approved, credits now ~1,960 [เชื่อว่า — 2043.1 at the start of the batch minus ~85 used].
   DESIGN FACTS of the M Bar 10K pilot (#117-#119, fifth chat; live) [เชื่อว่า — main agent's report]: two
   per-product flags — `lineupFirst` (page opens on `lineupImage`, "ทั้งหมด" chip, lineup = first phone slide,
@@ -901,9 +901,11 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
       `_incoming/pilot-mbar10k/premium-sheet.png`, builder `premium.js`), CHOSE A stage arc, mood "เรียบหรู เงียบ ๆ",
       placement = the top square hero image + a wide full-width banner in the "more details" section. A is a ROUGH
       DRAFT (edges clipped, empty space above, names as a colour-dot legend) — refine, designer (new look, 13.12 #4),
-      the owner sees the drafts before merge (IMAGE_SPEC §7).
-  (2) the next best-seller in the M Bar style (device-only flavour photos + lineupFirst + storyDetails) — which
-      product = Q1 in item 5; shop-wide facts for planning [ตรวจแล้ว — `_incoming/mbar10k-full/count-variants.ts`,
+      new look → show the drafts in report item 4 (merge does not wait, owner 30/09).
+  (2) the next best-sellers in the M Bar style (device-only flavour photos + lineupFirst + storyDetails), OWNER'S
+      LIST 30/09 in this order: M Bar 9K · Marbo M Switch 15K Pod Device · M Switch 15K pod (head only, 15,000 puffs) ·
+      VOOPOO Argus G4 pod kit 35W · VOOPOO Argus Multi-Ohm Pod Cartridges (3 pcs) · MURO SC 8000 puff · RELX Creator
+      BATTERY Black · INFY 20K disposable (Nic 3%, Smart LED, adjustable airflow) — map each to its slug first; shop-wide facts for planning [ตรวจแล้ว — `_incoming/mbar10k-full/count-variants.ts`,
       as of the fourth chat]: visible legacy products with ≥2 options = 33 (343 options); published ProductMaster
       products with ≥2 options = 9 (51 options); box+device photos are mainly SALTHUB/Marbo, so the AI-render load is
       smaller than 394 — count per product before quoting credits. Baseline pages untouched until 06/10.
@@ -930,7 +932,7 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   prominent as the card photo; box photos and details go to a lower "more details" part, like
   marbobkk.com/product/marbo-bar-10k-disposable/ · (d) apply to the whole website, best sellers first. IMAGE_SPEC §0
   item 5 already asks for the lineup as the first card. New page section / lineup-first behaviour = new UI →
-  designer (13.12 #4); owner sees it before merge (IMAGE_SPEC §7).
+  designer (13.12 #4); owner sees it in report item 4, merge does not wait (IMAGE_SPEC §7, owner 30/09).
 4 waiting on owner:
   (1) image-theft protection A+B+C — its own round after this one — carried, not started
   (2) Muro Connector's category (owner: "Relx Connect"; Friday's evidence: RELX Creator) [รอเจ้าของ] — carried
@@ -942,18 +944,15 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
       argus-g3-mini/variants/sky-blue.webp, m-bar-10k strawberry-kiwi-v2) + `m-bar-10k/lineup.webp` (v1)], plus
       `nexbar-clear-18k/card.webp` (leftovers above); the count is not a fresh scan — re-scan
       public/assets/products vs src/ at round close, delete with the owner's OK (13.4 #1)
-  (6) the premium lineup drafts (NEXT WORK 1) — owner sees the refined A before merge
-  (7) NEW: a rules table for "merge without asking" (owner 30/09 "ทุกครั้งที่ทำเสร็จไม่ต้องถามแล้ว Merge ได้เลย" —
-      central §12 item 28: changing the merge rule needs the owner's OK on a table; proposed in the report, not written)
-  (8) NEW: Blueberry naming on the nexBar CLEAR 18K page (device "BLUEBERRY ICE" vs maker's list "Blueberry"; both
-      kept for now) [รอเจ้าของ]
+  (6) the premium lineup drafts (NEXT WORK 1) — owner sees the refined A in the report
+  (7) NEW: the owner asked 30/09 "which steps slow us down — cut what drags"; Friday proposed cuts in the chat
+      (checker on docs-only PRs · content-dates.json chore commits · full set on baseline pages after 05/10 ·
+      doc-keeper for §16 · rule-text sprawl) — the owner picks; then write them (central §12 item 28) [รอเจ้าของ]
   Removed since v89: #118 not-live note (live since) · WOTOFO/Nexbar work (done, #121-#124) · Q2 credits (owner
   topped up) · v89's docs-branch step.
 5 open questions — ask as ONE set at the start of the next chat (13.4 #6), with a recommendation each:
-  Q1 which product is "the next best-seller" to do in the M Bar style (NEXT WORK 2)? [ยังไม่มีข้อมูล — no sales
-     ranking in the repo; ask the owner or read the sales data]
-  (Q2 credits resolved 30/09 — the owner approved Higgsfield use and topped up; dropped. Blueberry naming and the
-  "merge without asking" table are in item 4, not questions.)
+  none open — Q1 answered 30/09 (owner's best-seller list, item 3 NEXT WORK 2) · Blueberry answered (keep) · the
+  merge rule answered (written) · Q2 credits resolved (topped up).
 6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`, unchanged since v85 — the
   batches since ran the light set only, per 13.12): tsc 0 · verify:commerce 17/17 · verify:catalog --full 32/32 ·
   count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
