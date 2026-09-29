@@ -1864,17 +1864,17 @@
   "fileName": "variant-menthol-blast-v2.webp"
  },
  {
-  "source": "_incoming/web-product-images/m-bar-10k/out/recolour/final-strawberry_kiwi.png",
+  "source": "_incoming/web-product-images/m-bar-10k/out/recolour/final-strawberry_kiwi-c.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "strawberry-kiwi",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 2k, attempt a (2 credits in total for this flavour this chat; job _incoming/web-product-images/m-bar-10k/out/recolour/job-strawberry_kiwi-a.json)",
+   "tool": "Higgsfield nano_banana_pro 2k, attempt c (6 credits in total for this flavour; jobs _incoming/web-product-images/m-bar-10k/out/recolour/job-strawberry_kiwi-{a,b,c}.json)",
    "reference": "_incoming/web-product-images/m-bar-10k/out/grape-2.png (the owner-passed Grape render = template, reference 1) + _incoming/web-product-images/m-bar-10k/out/recolour/refs-clean/strawberry_kiwi.png (SALTHUB maker photo of this flavour cropped to the box front + device, props cut out = colours and label, reference 2)",
-   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/out/recolour/strawberry_kiwi.png — IoU 0.978, deltaE median 1.5 / max 13.3 (bottom row = device base, magenta read by eye as the maker photo); box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/out/recolour/strawberry_kiwi-c.png — IoU 0.979, deltaE median 1.8 / max 3.9 (every cell under 6); box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / STRAWBERRY KIWI read by eye; no props"
   },
-  "note": "image-fix round 2026-09-30 — recolour of the owner-passed Grape render (lesson 12: passed render as template + change only the colours; props cut out of the maker photo first); flat #E9E9EC background keyed with scripts/flatcut.js; -v2 name because a soft 28/09 photo once lived at variant-strawberry-kiwi.webp",
-  "fileName": "variant-strawberry-kiwi-v2.webp"
+  "note": "image-fix round 2026-09-30 — recolour of the owner-passed Grape render (lesson 12: passed render as template + change only the colours; props cut out of the maker photo first); flat #E9E9EC background keyed with scripts/flatcut.js; -v2 name because a soft 28/09 photo once lived at variant-strawberry-kiwi.webp · 2026-09-29 (checker PR #114): attempt a had a hot-pink device base (max dE 13.3), b too dark; c = base colours sampled from the maker photo (#97458B → #A63A97) written into the prompt; new name -v3",
+  "fileName": "variant-strawberry-kiwi-v3.webp"
  },
  {
   "source": "_incoming/web-product-images/m-bar-10k/out/recolour/final-yellow_mint.png",
