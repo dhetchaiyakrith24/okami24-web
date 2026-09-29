@@ -847,13 +847,20 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-(v88 — written by the main agent at a chat move between batches (context ~500k, next work long), round "รอบรูป-แก้"
+(v88 — written by the main agent at a chat move between batches (context ~500k [ตรวจแล้ว — get_usage 476k at the
+batch close, more since], next work long), round "รอบรูป-แก้"
 (still OPEN). Fifth computer-round chat starts from this block, 29/09.)
 1 main: `git fetch && git log -1 --oneline origin/main` → `dcdfad0` (merge PR #115) [ตรวจแล้ว — git log at this move].
   Merged in the fourth chat, each checker-passed + GitHub checks green: #111 `f3aad9f` (M Bar 10K last 5 flavours) ·
   #113 `5731113` (`src/proxy.ts` WebP fix — live, Accept `*/*` → image/webp) · #112 `257b6ef` (4:5 card standard +
   M Bar 10K card-v2) · #114 `3cdb4cc` (docs, §16 v87, lesson 13) · #115 `dcdfad0` (M Bar 10K Strawberry Kiwi v3 —
-  device base now the maker's muted magenta, ΔE max 3.9; the old v2 file stays in public/, unreferenced). No tag yet
+  device base now the maker's muted magenta, ΔE max 3.9; the old v2 file stays in public/, unreferenced).
+  DEPLOY OF #115 FAILED [ตรวจแล้ว — deploy run 36558180500]: 31/32 steps passed, only "next start on 3411 stopped (no
+  server left behind)" failed — the same step that failed #113's first deploy run today (2 of the last 6 deploy runs;
+  the step lives around `scripts/verify-catalog.ts:180`). So Strawberry Kiwi v3 is NOT live yet (live page still
+  loads -v2); card-v2 and the rest are live. Friday never re-runs a deploy (13.7) → owner re-runs, or the next
+  site-touching merge carries it. Fixing the flaky step = a gate script = BIG (13.7 (1)) — propose it, do not slip it
+  in. No tag yet
   (round not closed). Rollback = revert the merge commit of the PR in question. Full record of the chat:
   `docs/cloud-results/image-fix-round.md` "Fourth chat (29/09)" (Strawberry Kiwi v3 is not in it — this line is).
 2 ahead of main: branch `image-fix-handoff` = this §16 v88 only (docs) — pushed at the move; PR + checker + merge =
@@ -888,7 +895,8 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
       old card (= official WOTOFO Lemon Lime image [ตรวจแล้ว]) move to the WOTOFO product; ~15 files (planner's table
       is in the fourth-chat record). WOTOFO photos made, not shipped: official 1080 JPG on black → Higgsfield
       image_background_remover (1 credit) → nano_banana_pro remake on grey with the NORM/TURBO screen labels named in
-      the prompt: card 4K 4:5 (IoU 0.996, ΔE max 6.6) + 7 flavours made, NOT yet cut/checked (`_incoming/wotofo/out/`
+      the prompt: card 4K 4:5 (IoU 0.996, ΔE max 6.6; its cut doubles as the Watermelon Ice flavour = 8th of the 8
+      with an official photo) + 7 more flavours made, NOT yet cut/checked (`_incoming/wotofo/out/`
       *-a.png; prompt/runner `_incoming/wotofo/prompt.txt`, `run-remake.js`); 7 of 15 flavours have no official photo.
       Under the new direction these device-only photos fit (c) as they are.
   (2) (D) out-of-stock suggestion (Esko 18/20) — designer first.
@@ -906,8 +914,11 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
   (4) stray worktrees `_incoming/wt-main`, `_incoming/checker-wt` — remove once the owner agrees — carried
   (5) Cloudflare "Purge Everything" (old black-square JPEG copies) — asked twice, not confirmed [รอเจ้าของ]
   (6) WOTOFO photo choice: remade (recommended) vs official cut-out at real size — asked, not answered yet
-  (7) leftover unreferenced photo files (4 at the count + m-bar-10k strawberry-kiwi-v2) — delete at round close with
-      the owner's OK (13.4 #1)
+  (7) leftover unreferenced photo files (4 found by an ad-hoc scan of public/assets/products vs src/ in the fourth
+      chat, no saved log [เชื่อว่า]: argus-g4 orange, caliburn-g4-pro-koko coral-pink, caliburn-g5-lite coral-orange,
+      caliburn-g5-lite-se purple-leather — three are baseline products; + m-bar-10k strawberry-kiwi-v2) — delete at
+      round close with the owner's OK (13.4 #1)
+  (8) re-run the failed deploy of #115 (item 1) — asked in the move message
 5 open questions — ask as ONE set at the start of the next chat (13.4 #6), with a recommendation each:
   Q1 flavour/colour device-only photos: same tilted angle as the card for every option (recommended — owner: "เด่น
      เหมือนภาพปก") or straight front?
