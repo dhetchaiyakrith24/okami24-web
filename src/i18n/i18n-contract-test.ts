@@ -65,12 +65,20 @@ export function runI18nContractTests(): I18nContractResult[] {
     .filter((file) => !file.endsWith("i18n-contract-test.ts"))
     .filter((file) => GEO_CODE.some((re) => re.test(readFileSync(file, "utf-8"))))
     .map((file) => path.relative(process.cwd(), file));
+  // src/proxy.ts used to be the locale-guessing proxy, so its mere existence failed this check. Since the image-fix
+  // round (2026-09-30) a proxy exists for one job only — force WebP on /_next/image (src/proxy.ts head). It may
+  // stay only while it can never see a page request and reads nothing a language could be guessed from.
+  const proxyPath = path.join(process.cwd(), "src", "proxy.ts");
+  const proxySrc = fs.existsSync(proxyPath) ? readFileSync(proxyPath, "utf-8") : null;
+  const proxyImageOnly =
+    proxySrc === null ||
+    (/matcher:\s*["'`]\/_next\/image["'`]/.test(proxySrc) && !/accept-language|country|locale|cookies|geo/i.test(proxySrc.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, "")));
   check(
     "no country/geo detection anywhere in src — Thai is not conditional on where a visitor is",
-    !fs.existsSync(path.join(process.cwd(), "src", "proxy.ts")) &&
+    proxyImageOnly &&
       !fs.existsSync(path.join(process.cwd(), "src", "i18n", "detect-locale.ts")) &&
       geoOffenders.length === 0,
-    JSON.stringify(geoOffenders)
+    JSON.stringify({ geoOffenders, proxy: proxySrc === null ? "none" : proxyImageOnly ? "image-only" : "NOT image-only" })
   );
 
   // --- the visitor's own choice is remembered (the only thing that changes the language) ---
