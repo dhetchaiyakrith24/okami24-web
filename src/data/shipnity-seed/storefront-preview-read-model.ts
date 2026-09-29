@@ -55,7 +55,8 @@ import { projectActiveCatalog, getNeutralVariantFallback } from "./active-catalo
  *  verifiable official first-party source for a real Brand record — see the Phase 3.5 report (and
  *  this session's report for a fresh, still-negative re-check of Muro/Vape Maker, Foli Bar,
  *  Reswa, and Nexbar specifically — Nexbar in particular has a real naming-collision risk with
- *  Wotofo's own, unrelated "nexBar" product, so leave it deferred rather than guess). Also
+ *  Wotofo's own, unrelated "nexBar" product, so leave it deferred rather than guess). (Superseded 2026-09-29:
+ *  Pod-180 = nexBar CLEAR 18K, published without a brand — owner ruling.) Also
  *  investigated and correctly NOT added: Pod-168/Pod-177/Pod-179 (Caliburn G4 Pro / Vmate i3 /
  *  Argus G4) — real, well-known flagship devices, but each already exists in the legacy catalog
  *  (`caliburn-g4-pro`/`vmate-i3`/`argus-g4`); `projectActiveCatalog()`'s own dedup check already

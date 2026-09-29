@@ -339,29 +339,7 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // as a real current product line — an exact size match, not a coincidence.
   "Pod-169": { brandId: "infy", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัว infy 2.5 ml" states the brand explicitly; infy.my (official) lists "2.5ML Cartridge" as a real INFY product line — an exact size match' },
 
-  // Full-catalog mission — Nexbar resolved to WOTOFO (an established international hardware
-  // brand with a real official site), settling the earlier "collision risk with Wotofo's own
-  // nexBAR" deferral in its favor rather than against it: wotofo.com/collections/nexbar-series
-  // and wotofo.com/products/wotofo-nexbar-18k directly confirm a real "nexBAR 18K" product
-  // (750mAh, USB-C, up to 18,000 puffs, dual nexMESH coils 1.2Ω, 20 flavor options) — an exact
-  // puff-count and price-tier match to this Shipnity parent. The Shipnity name's "Clear" qualifier
-  // could not be independently confirmed against a distinctly-named official edition (Wotofo's own
-  // site shows "Standard"/"Vivid Edition" naming, no edition explicitly called "Clear"/
-  // "Transparent") — carried forward as-is from the source, not asserted as verified.
-  // Catalog-intelligence mission (2026-09-02) — attempted to close the media gap this session.
-  // Downloaded and visually inspected wotofo.com's own two official nexBAR 18K product renders
-  // (Shopify CDN, cdn.shopify.com/.../wotofo-nexbar-18k-{1,26}.jpg — both tier-1, first-party).
-  // REJECTED both: the retail-box shot legibly prints "DOUBLE APPLE" and the device-only shot
-  // prints "LEMON LIME" directly on the unit — neither flavor is in this record's active
-  // 10-flavor Thai lineup, and Wotofo's variant data has no image_id per flavor to select from
-  // (every official shot is a fixed flavor, not swappable). Using either would show a customer a
-  // real Wotofo product printed with a flavor OKami24 doesn't stock. STILL UNPUBLISHED (media) —
-  // no clean alternative found; a retailer's per-flavor set exists but is a heavy marketing
-  // composite with no watermark-free crop (see also the Thai-flavor-lineup mismatch flag below).
-  // ALSO FLAGGED: this record's own 10-flavor lineup matches NO single official or retailer
-  // source found (Wotofo's own list, and two different Thai retailers' stock, are each a
-  // different 10) — the flavors here are plausibly a genuine Thai-market lineup but that has not
-  // been independently corroborated; publish, if ever, as retailer-supplied and uncorroborated.
+  // Nexbar history (WOTOFO match 2026-09-02/03, media hunt) superseded by the owner ruling below — see git history.
   // Image-fix round (owner 2026-09-29): the shop sells nexBar CLEAR 18K (clear body, "nexBar CLEAR 18K" printed on the
   // device — owner's photos), NOT WOTOFO's carbon-look nexBAR 18K the earlier match assumed from the name. Owner ruling:
   // no brand on the site. WOTOFO keeps its own real product (src/data/products/wotofo.ts).
@@ -1293,7 +1271,9 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Pod-180-11": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-watermelon-bubblegum.webp", alt: "nexBar CLEAR 18K, Watermelon Bubblegum", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
     "Pod-180-12": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-white-slush.webp", alt: "nexBar CLEAR 18K, White Slush", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
     "Pod-180-13": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-strawberry-kiwi.webp", alt: "nexBar CLEAR 18K, Strawberry Kiwi", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
-    "pod-180-verified-blueberry": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-blueberry.webp", alt: "nexBar CLEAR 18K, Blueberry", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    // The maker contradicts itself: its 15-flavour list (owner poster, both shops) says "Blueberry", its own Blueberry
+    // poster shows the device printed "BLUEBERRY ICE". The name follows the list, the photo shows the real print.
+    "pod-180-verified-blueberry": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-blueberry.webp", alt: "nexBar CLEAR 18K, Blueberry (the device prints BLUEBERRY ICE; the maker's 15-flavour list says Blueberry)", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
     "pod-180-verified-lychee": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-lychee.webp", alt: "nexBar CLEAR 18K, Lychee", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
     "pod-180-verified-honeydew-melon": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-honeydew-melon.webp", alt: "nexBar CLEAR 18K, Honeydew Melon", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
     "pod-180-verified-strawberry-banana": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-strawberry-banana.webp", alt: "nexBar CLEAR 18K, Strawberry Banana", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
