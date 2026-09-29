@@ -19,6 +19,7 @@
 
 import { spawnSync } from "node:child_process";
 import { readdirSync, statSync } from "node:fs";
+import net from "node:net";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
@@ -187,22 +188,37 @@ async function runFullLeakageCheck(): Promise<boolean> {
         }
         if (await portFreed(port, 5000)) break;
       }
-      const freed = await portFreed(port, 0);
+      const freed = await portFreed(port, 2000);
       results.push({ name: `next start on ${port} stopped (no server left behind)`, ok: freed, durationMs: 0, output: freed ? undefined : `port ${port} still answers after SIGTERM + SIGKILL of the process group` });
       if (!freed) console.log(`  LEFT BEHIND: a server still answers on ${port}`);
     }
   }
 }
 
+// A fresh TCP connection to one host: "refused" = nothing listens there; "open" / anything else = not proven free.
+function probe(host: string, port: number): Promise<"refused" | "open" | "other"> {
+  return new Promise((resolve) => {
+    const socket = net.connect({ host, port });
+    const done = (state: "refused" | "open" | "other") => {
+      socket.destroy();
+      resolve(state);
+    };
+    socket.setTimeout(1000, () => done("other"));
+    socket.once("connect", () => done("open"));
+    socket.once("error", (e: NodeJS.ErrnoException) => done(e.code === "ECONNREFUSED" ? "refused" : "other"));
+  });
+}
+
+// Free = a NEW connection is refused on both loopback families. The step failed twice on 2026-09-29 (runs 20:24 and
+// 21:29) 0.01–0.27 s after the kill — too fast for the 5 s loops, so the first check HAD seen the port refused and
+// the last one (exactly one attempt) failed. Likely cause: it used `fetch`, which can reuse the keep-alive socket the
+// leakage check had opened and then fails "socket closed" instead of "refused". Fresh TCP probes + 2 s remove both.
 async function portFreed(port: number, withinMs: number): Promise<boolean> {
   const deadline = Date.now() + withinMs;
   for (;;) {
-    try {
-      await fetch(`http://localhost:${port}/`, { signal: AbortSignal.timeout(1000) });
-    } catch (e) {
-      // refused = nothing listens; a timeout means something still holds the port
-      if ((e as { cause?: { code?: string } }).cause?.code === "ECONNREFUSED") return true;
-    }
+    const [v4, v6] = await Promise.all([probe("127.0.0.1", port), probe("::1", port)]);
+    // ::1 can be absent on a runner ("other": EADDRNOTAVAIL etc.) — then IPv4 alone decides, as long as ::1 is not open
+    if (v4 === "refused" && v6 !== "open") return true;
     if (Date.now() >= deadline) return false;
     await new Promise((r) => setTimeout(r, 250));
   }
