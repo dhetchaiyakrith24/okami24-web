@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { Product, StoryImage } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ProductAnatomySheet } from "@/components/product/ProductAnatomySheet";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
@@ -15,7 +16,8 @@ import { cn } from "@/lib/utils";
  * Rendered only for products with `storyDetails`, in place of ProductGallery + ProductAnatomy + FeatureGrid (page.tsx);
  * the spec sheet that follows on the page closes it, so it is not repeated here.
  *
- *  0. `storyCover` — the maker's campaign poster, full container width under the heading.
+ *  0. `storyCover` — the maker's campaign poster, full container width under the heading; then the "ไล่ดูทีละส่วน"
+ *     exploded-view sheet for the slugs listed in anatomy-sheet-copy.ts (round "M Bar 10K exploded view", 2026-09-30).
  *  1. one block per `features[]` entry that has an `image` (the maker's own poster): image 7/12 + text 5/12 on
  *     desktop, alternating sides and backgrounds; on phones the poster sits above its text. Every poster is shown
  *     whole at its own proportions — its headline is printed in it, a crop cuts words (designer 2026-09-30).
@@ -77,6 +79,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
             <Credit img={cover} linkLabel={dict.product.gallerySourceLinkLabel} />
           </div>
         )}
+        <ProductAnatomySheet product={product} />
       </Container>
 
       <div className="mt-10 flex flex-col lg:mt-14">
