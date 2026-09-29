@@ -122,7 +122,7 @@ export const salthubProducts: Product[] = [
       {
         id: "bottle-shape",
         title: "E-liquid bottle shape",
-        description: "Matte black, shaped like a classic e-liquid bottle, with a colour gradient at the base that changes with each flavour.",
+        description: "Shaped like a classic e-liquid bottle, with a colour gradient at the base that differs from flavour to flavour.",
         image: { src: "/assets/products/m-bar-10k/angle-02.webp", alt: "Official SALTHUB M Bar 10K poster, \"Understated luxury radiates from within\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1085 },
       },
       {

@@ -531,7 +531,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       // 2026-09-30 "more details" story blocks (writer): posters 02 and 05.
       "bottle-shape": {
         title: "ทรงขวดน้ำยา ฐานไล่สี",
-        description: "ตัวเครื่องสีดำด้าน ทรงเหมือนขวดน้ำยา ตรงฐานไล่สีต่างกันไปตามกลิ่น",
+        description: "ทรงเหมือนขวดน้ำยา ตรงฐานไล่สีต่างกันไปตามกลิ่น",
       },
       "ten-k-puffs": {
         title: "สูงสุด 10,000 พัฟ",
