@@ -1013,7 +1013,13 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
 2 ahead of main: nothing open [เชื่อว่า — main agent]. This close's own docs PR: `git log --oneline
   origin/main..<its branch>` · `gh pr list` — branch and PR number [ยังไม่มีข้อมูล — not known to doc-keeper]; docs =
   small (13.7), checker, the main agent merges.
-3 round: "รอบรูป-แก้" (image fix) — OPEN. Background jobs: none known [เชื่อว่า]. A test server on 3412
+3 round OPENED 30/09 (eighth chat, main agent): "ไล่ดูทีละส่วน M Bar 10K (exploded view)" — round file
+  `docs/rounds/รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt`, work branch `mbar10k-anatomy` from main `e6463da`.
+  Batches: 1 directions + draft (tier B) · 2 section on /products/m-bar-10k th/en/zh (tier B) · 3 extras 360/X-ray if 2
+  passes the owner (tier B). Method: all text on the sheet = page text (HTML/SVG, 3 languages), AI renders only the
+  device/parts. Stopped at: batch 1 — designer + scope-auditor running. Owner asked: base arc slot = airflow? (no
+  label until answered) · re-attach the cream phone blueprint ref.
+  Previous round "รอบรูป-แก้" (image fix) — still OPEN (not closed; this round was put first by the owner 30/09). Background jobs: none known [เชื่อว่า]. A test server on 3412
   (`scripts/test-server.js`, build of `cbbb0b7`) may still be up — `node scripts/test-server.js stop` or reuse it.
   DESIGN FACTS of the M Bar 10K pilot, current after #130 [เชื่อว่า — main agent's report; the older wording is in §3]:
   two per-product flags — `lineupFirst` (page opens on `lineupImage`, "ทั้งหมด" chip, lineup = first phone slide,
