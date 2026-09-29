@@ -7,6 +7,7 @@ import { relxProducts } from "./relx";
 import { joiwayProducts } from "./joiway";
 import { tfitProducts } from "./tfit";
 import { infyProducts } from "./infy";
+import { wotofoProducts } from "./wotofo";
 import { unbrandedProducts } from "./unbranded";
 import { applySoldOut } from "@/data/stock/apply-sold-out";
 import { getBrand } from "@/data/brands";
@@ -33,6 +34,7 @@ export const catalogIncludingHidden: Product[] = applySoldOut([
   ...joiwayProducts,
   ...tfitProducts,
   ...infyProducts,
+  ...wotofoProducts,
   ...unbrandedProducts,
 ]);
 

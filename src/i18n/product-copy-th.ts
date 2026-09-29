@@ -703,6 +703,27 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "พอตใช้แล้วทิ้งสายพัฟเยอะของ RELX ที่ขายในตลาดไทย มีหลายรุ่นย่อย ทักไลน์ @okm24 ถามรุ่นปัจจุบันได้",
   },
+  // Image-fix round 2026-09-30 (writer draft, owner rules the Thai before merge — 13.4 #6). Browse-only page: no
+  // price, no LINE line — the shop sells nexBar CLEAR 18K (Pod-180), not this model.
+  "wotofo-nexbar-18k": {
+    whoIsThisFor: {
+      0: "คนที่ดูคลิปรีวิว WOTOFO nexBAR 18K ของ OKami24 แล้ว อยากดูสเปกเต็มกับรายชื่อกลิ่นจากผู้ผลิต",
+    },
+    specifications: {
+      puffs: "สูงสุด 18,000",
+      battery: "750mAh ชาร์จซ้ำได้ผ่าน USB-C",
+      capacity: "21mL",
+      coil: "nexMESH สองตัว ตัวละ 1.2Ω",
+      modes: "NORM 16W / TURBO 19W",
+      airflow: "ปรับได้ 2 ระดับ",
+      screen: "จอ LED แสดงแบต ระดับน้ำยา และโหมด",
+      nicotine: "20mg หรือ 50mg",
+      size: "101 × 44 × 26.7 mm",
+    },
+    tagline: "พอตใช้แล้วทิ้ง 18,000 พัฟของ WOTOFO คอยล์ nexMESH สองตัว มีจอ LED",
+    shortDescription:
+      "พอตใช้แล้วทิ้งของ WOTOFO สูงสุด 18,000 พัฟ น้ำยา 21mL แบตเตอรี่ 750mAh ชาร์จผ่าน USB-C คอยล์ nexMESH สองตัว มี 2 โหมด NORM 16 วัตต์ กับ TURBO 19 วัตต์ ปรับลมได้ 2 ระดับ สเปกและรายชื่อ 31 กลิ่นเช็คตรงจาก wotofo.com",
+  },
   "joiway-f3": {
     whoIsThisFor: {
       0: "ลูกค้าที่ถามหา Joiway อยู่แล้ว รุ่นนี้เป็นตัวรสเดียว ส่วนแบบ 2 รสในเครื่องเดียวคือ F4",

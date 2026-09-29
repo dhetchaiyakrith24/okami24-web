@@ -129,6 +129,15 @@ export const families: ProductFamily[] = [
     tagline: "TFIT's high-puff disposable line.",
     description: "TFIT's higher-puff-count disposable model line, sold alongside the brand's NOVA series.",
   },
+  {
+    id: "wotofo-nexbar",
+    slug: "wotofo-nexbar",
+    brandId: "wotofo",
+    categoryId: "disposables",
+    name: "WOTOFO nexBAR",
+    tagline: "WOTOFO's disposable line.",
+    description: "WOTOFO's nexBAR disposable series, sold in several puff-count tiers (10K and 18K among them).",
+  },
 ];
 
 export function getFamily(id: string): ProductFamily | undefined {
