@@ -30,7 +30,7 @@ export interface CatalogSearchContractResult {
 interface Hit {
   slug: string;
   categoryId: string;
-  brandId: string;
+  brandId: string | null;
   familyId: string | null;
   name: string;
 }

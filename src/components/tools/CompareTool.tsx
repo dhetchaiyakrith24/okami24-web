@@ -65,7 +65,7 @@ function titleCase(s: string) {
 function classificationRows(items: CatalogItem[], dict: Dictionary): Row[] {
   const t = dict.compare;
   return [
-    { label: t.rowBrand, values: items.map((p) => p.brandName) },
+    { label: t.rowBrand, values: items.map((p) => p.brandName ?? EM_DASH) },
     // ProductMaster records deliberately carry no familyId (no family record exists for most of
     // them) — "—" is the honest value, not a fabricated family name.
     { label: t.rowFamily, values: items.map((p) => (p.familyId ? familyName(p.familyId) : EM_DASH)) },

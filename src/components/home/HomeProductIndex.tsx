@@ -33,8 +33,10 @@ interface IndexEntry {
 
 /** The brand prefix is dropped when the name already carries it anywhere (ProductMaster display
  *  names do — "SALTHUB M BAR 10K", or with a Thai type word first: "เครื่อง Esko Bar Switch 20k") or
- *  when the product has no real brand ("Unbranded" is a data id, not a word a customer should read). */
-function withBrand(name: string, brandId: string): IndexEntry["brand"] {
+ *  when the product has no real brand ("Unbranded" is a data id, not a word a customer should read; a brandless
+ *  ProductMaster product has brandId null). */
+function withBrand(name: string, brandId: string | null): IndexEntry["brand"] {
+  if (brandId === null) return "";
   const brand = brandName(brandId);
   if (brandId.toLowerCase() === "unbranded" || name.toLowerCase().includes(brand.toLowerCase())) return "";
   return brand;

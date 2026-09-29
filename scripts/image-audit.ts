@@ -108,7 +108,7 @@ async function main() {
 
   // ---------- PRODUCT MASTER (published only) ----------
   for (const v of getPublishedProducts()) {
-    const b = { brandId: v.brandId, brandName: v.brandName };
+    const b = { brandId: v.brandId ?? "", brandName: v.brandName ?? "" };
     await push({ slug: v.slug, ...b, source: "product-master", layer: "card", item: "card", src: v.image?.src ?? null, note: v.image ? undefined : "ไม่มีรูปการ์ด" });
     const axis = v.optionAxisCode;
     const variants = v.variants ?? [];

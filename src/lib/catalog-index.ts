@@ -37,7 +37,8 @@ export interface CatalogRef {
   slug: string;
   href: string;
   name: string;
-  brandName: string;
+  /** null = a brandless ProductMaster product (owner ruling) — show nothing where a brand would be. */
+  brandName: string | null;
   categoryId: string;
   image: { src: string; alt: string } | null;
   /** Internal provenance only — never rendered as a customer-facing label. */
@@ -49,7 +50,7 @@ export interface CatalogRef {
  * genuinely has, each nullable so absence stays visible instead of being papered over.
  */
 export interface CatalogItem extends CatalogRef {
-  brandId: string;
+  brandId: string | null;
   /** Legacy always has one; a ProductMaster record often has none (no family record exists). */
   familyId: string | null;
   /** `null` on every ProductMaster record whose taxonomy could not determine one (e-liquid,

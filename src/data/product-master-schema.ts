@@ -165,6 +165,9 @@ export const productMasterSchema = z.object({
   // taxonomy evidence. Publication readiness (brandId/categoryId non-null; familyId excused —
   // see type-level doc comment) is enforced in validateProductMasterRegistry, not here.
   brandId: z.string().min(1).nullable(),
+  // Owner ruling (image-fix round 2026-09-29): a product the owner says carries NO brand (Pod-180, nexBar CLEAR 18K)
+  // publishes with brandId null — an explicit flag, so a merely unresolved brand still fails readiness below.
+  brandless: z.literal(true).optional(),
   familyId: z.string().min(1).nullable(),
   categoryId: z.string().min(1).nullable(),
   // Nullable (Phase 2.6, discovered empirically) — see type-level doc comment.
@@ -390,7 +393,8 @@ export function validateProductMasterRegistry({
     // specific readiness for these two fields is a deferred future phase, not implemented here.
     if (p.publicationStatus === "published") {
       const missingForReadiness: string[] = [];
-      if (p.brandId === null) missingForReadiness.push("brandId");
+      if (p.brandId === null && p.brandless !== true) missingForReadiness.push("brandId");
+      if (p.brandId !== null && p.brandless === true) missingForReadiness.push("brandId (brandless product names a brand)");
       if (p.categoryId === null) missingForReadiness.push("categoryId");
       if (p.tagline === null) missingForReadiness.push("tagline");
       if (p.shortDescription === null) missingForReadiness.push("shortDescription");

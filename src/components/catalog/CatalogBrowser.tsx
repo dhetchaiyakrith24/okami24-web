@@ -49,7 +49,8 @@ interface CatalogEntry {
   /** Round "search-price" (2026-09-22): the same search text /search uses (legacySearchText /
    *  publishedSearchText), so "พอตซิสเต็ม" typed here finds what it finds there. */
   searchText: SearchText;
-  brandId: string;
+  /** null = a brandless product: never a brand chip, never matched by a brand filter. */
+  brandId: string | null;
   categoryId: string;
   isFlagship: boolean;
   hasEditorialTag: boolean;
@@ -172,7 +173,7 @@ export function CatalogBrowser({
       const q = query.trim().toLowerCase();
       list = list.filter((e) => queryMatches(q, e.searchText));
     }
-    if (brandFilter.size > 0) list = list.filter((e) => brandFilter.has(e.brandId));
+    if (brandFilter.size > 0) list = list.filter((e) => e.brandId !== null && brandFilter.has(e.brandId));
     if (screenFilter.size > 0) list = list.filter((e) => e.screenType !== null && screenFilter.has(e.screenType));
     if (portabilityFilter.size > 0) list = list.filter((e) => e.portability !== null && portabilityFilter.has(e.portability));
     if (beginnerOnly) list = list.filter((e) => e.beginnerFriendly === true);

@@ -33,7 +33,7 @@ export function ProductPicker({
     if (!query.trim()) return [];
     const q = query.trim().toLowerCase();
     return allCatalogItems()
-      .filter((p) => !selectedSlugs.has(p.slug) && `${p.name} ${p.brandName} ${p.brandId}`.toLowerCase().includes(q))
+      .filter((p) => !selectedSlugs.has(p.slug) && `${p.name} ${p.brandName ?? ""} ${p.brandId ?? ""}`.toLowerCase().includes(q))
       .slice(0, 8);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query, selected]);

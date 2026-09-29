@@ -125,7 +125,7 @@ export function getPublishedRelatedProducts(product: StorefrontProductView): Sto
  *  and the Thai label the site shows, tagline, spec values, variant labels), matched by the shared
  *  rules in src/lib/catalog-search.ts. `searchPilotProducts` above keeps its DEV-only matcher. */
 export function publishedSearchText(p: StorefrontProductView): SearchText {
-  const brand = getBrand(p.brandId);
+  const brand = p.brandId ? getBrand(p.brandId) : undefined;
   const category = getCategory(p.categoryId);
   return searchText({
     slug: p.slug,

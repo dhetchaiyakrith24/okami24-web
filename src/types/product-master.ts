@@ -261,6 +261,9 @@ export interface ProductMaster {
    * product's own page).
    */
   brandId: string | null;
+  /** Owner ruling (image-fix round 2026-09-29): this product carries NO brand on the site (Pod-180, nexBar CLEAR 18K).
+   *  The only way a published product may have `brandId: null` — an unresolved brand still fails readiness. */
+  brandless?: true;
   /**
    * Convenience taxonomy only — confirmed by evidence (Phase 2.6 field-requiredness audit):
    * every real usage in the frontend is a display badge or a sort/filter key (ProductHero,

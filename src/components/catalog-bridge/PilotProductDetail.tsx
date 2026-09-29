@@ -163,7 +163,7 @@ export function PilotProductDetail({
         descriptionClassName="max-lg:hidden"
         meta={
           <div className="flex flex-wrap items-center gap-2">
-            <Badge tone="steel">{product.brandName}</Badge>
+            {product.brandName && <Badge tone="steel">{product.brandName}</Badge>}
             {!isPublished && <Badge tone="unverified">{dict.pilot.unpublishedBadge}</Badge>}
           </div>
         }

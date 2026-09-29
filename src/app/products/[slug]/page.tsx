@@ -234,7 +234,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         "@type": "Product",
         name: publishedProduct.displayName,
         description: publishedProduct.tagline,
-        brand: { "@type": "Brand", name: publishedProduct.brandName },
+        // A brandless product (owner ruling, Pod-180) names no Brand — never an invented one.
+        brand: publishedProduct.brandName ? { "@type": "Brand", name: publishedProduct.brandName } : undefined,
         category: categoryNameOf(publishedProduct.categoryId),
         image: publishedProduct.image ? [absoluteUrl(publishedProduct.image.src)] : undefined,
         // Only a genuinely published product has an owner-approved price — never fabricated from
