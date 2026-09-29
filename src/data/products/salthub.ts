@@ -80,7 +80,8 @@ export const salthubProducts: Product[] = [
     // 2026-09-30 (owner: device alone for every flavour, one lineup of all of them first, box photos lower down): `image` =
     // the device alone — ONE Higgsfield master render from the passed card, each flavour's base colour moved over by script
     // from its passed box+device render (source + check per file in the map); `boxImage` = that passed box+device photo,
-    // now in the "more details" flavour grid. The page opens on the lineup (`lineupFirst`), built from these 12 files.
+    // kept in the data but not shown since 2026-09-30 (owner: the lineup at the top already shows every flavour, so the
+    // "more details" flavour grid is left out on lineupFirst pages). The page opens on the lineup, built from these 12 files.
     lineupImage: {
       // v3 (owner 30/09 chose the premium "stage arc", mood "เรียบหรู เงียบ ๆ"): the same 12 device files on an arc,
       // centre forward, each flavour's own colour glowing on the floor, every name under its own device (two caption
@@ -92,8 +93,8 @@ export const salthubProducts: Product[] = [
     },
     lineupFirst: true,
     storyDetails: true,
-    // The same arc, wide and without names (the named flavour grid follows right under it) — same builder.
-    storyLineup: { src: "/assets/products/m-bar-10k/story-lineup.webp", alt: "SALTHUB M Bar 10K, all 12 flavours on a curved stage — device only", sourceName: "OKami24 composite", width: 2400, height: 1000 },
+    // swatchHex of Pink Berry / Strawberry Kiwi / Watermelon Mint corrected 2026-09-30 to the device base colour on
+    // SALTHUB's own flavour photos (violet · magenta · red — the old dots were guessed from the flavour names).
     // Opens the story (designer 30/09: a campaign image, not a coil fact — it no longer sits beside the coil text;
     // cotton mesh stays in the spec sheet).
     storyCover: { src: "/assets/products/m-bar-10k/angle-01.webp", alt: "Official SALTHUB M Bar 10K campaign image, \"Timeless Elegance\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1229 },
@@ -105,9 +106,9 @@ export const salthubProducts: Product[] = [
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-kyoho-grape-v3.webp", alt: "SALTHUB M Bar 10K, Kyoho Grape — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-kyoho-grape-v2.webp", alt: "SALTHUB M Bar 10K, Kyoho Grape — box and device" } },
       { id: "matcha-latte", name: "Matcha Latte", swatchHex: "#7a9a4a", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-matcha-latte-v3.webp", alt: "SALTHUB M Bar 10K, Matcha Latte — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-matcha-latte-v2.webp", alt: "SALTHUB M Bar 10K, Matcha Latte — box and device" } },
       { id: "menthol-blast", name: "Menthol Blast", swatchHex: "#3ab5c6", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-menthol-blast-v3.webp", alt: "SALTHUB M Bar 10K, Menthol Blast — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-menthol-blast-v2.webp", alt: "SALTHUB M Bar 10K, Menthol Blast — box and device" } },
-      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-pink-berry-v3.webp", alt: "SALTHUB M Bar 10K, Pink Berry — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-pink-berry-v2.webp", alt: "SALTHUB M Bar 10K, Pink Berry — box and device" } },
-      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-strawberry-kiwi-v4.webp", alt: "SALTHUB M Bar 10K, Strawberry Kiwi — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-strawberry-kiwi-v3.webp", alt: "SALTHUB M Bar 10K, Strawberry Kiwi — box and device" } },
-      { id: "watermelon-mint", name: "Watermelon Mint", swatchHex: "#4ec9a0", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon-mint-v3.webp", alt: "SALTHUB M Bar 10K, Watermelon Mint — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-watermelon-mint-v2.webp", alt: "SALTHUB M Bar 10K, Watermelon Mint — box and device" } },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#6a3fc0", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-pink-berry-v3.webp", alt: "SALTHUB M Bar 10K, Pink Berry — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-pink-berry-v2.webp", alt: "SALTHUB M Bar 10K, Pink Berry — box and device" } },
+      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#b0409a", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-strawberry-kiwi-v4.webp", alt: "SALTHUB M Bar 10K, Strawberry Kiwi — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-strawberry-kiwi-v3.webp", alt: "SALTHUB M Bar 10K, Strawberry Kiwi — box and device" } },
+      { id: "watermelon-mint", name: "Watermelon Mint", swatchHex: "#c93a45", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon-mint-v3.webp", alt: "SALTHUB M Bar 10K, Watermelon Mint — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-watermelon-mint-v2.webp", alt: "SALTHUB M Bar 10K, Watermelon Mint — box and device" } },
       { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon-v3.webp", alt: "SALTHUB M Bar 10K, Watermelon — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-watermelon-v2.webp", alt: "SALTHUB M Bar 10K, Watermelon — box and device" } },
       { id: "yellow-mint", name: "Yellow Mint", swatchHex: "#d9d13a", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-yellow-mint-v3.webp", alt: "SALTHUB M Bar 10K, Yellow Mint — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-yellow-mint-v2.webp", alt: "SALTHUB M Bar 10K, Yellow Mint — box and device" } },
     ],

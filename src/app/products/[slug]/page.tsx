@@ -315,7 +315,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         <ProductMoreDetails product={product} />
       ) : (
         <>
-          <ProductGallery product={product} />
+          <ProductGallery product={product} heldNote={TITLE_PRICE_HOLD_UNTIL_2026_10_05.has(product.slug)} />
           {product.isFlagship && <ProductAnatomy product={product} />}
           <FeatureGrid product={product} />
         </>

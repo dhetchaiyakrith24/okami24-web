@@ -20,8 +20,10 @@ import { cn } from "@/lib/utils";
  *     desktop, alternating sides and backgrounds; on phones the poster sits above its text. Every poster is shown
  *     whole at its own proportions — its headline is printed in it, a crop cuts words (designer 2026-09-30).
  *     Thai text = the same `features` overlay FeatureGrid reads (product-copy-th.ts), English otherwise.
- *  2. every flavour/colour together — `storyLineup` (the wide lineup banner) when there is one, then the box + device photo (`boxImage`, else `image`) with its name as page text,
- *     so the names are always spelled right and readable on a phone.
+ *  2. every flavour/colour together — the box + device photo (`boxImage`, else `image`) with its name as page text,
+ *     so the names are always spelled right and readable on a phone. Left out when the page already OPENS on the
+ *     lineup of every option (`lineupFirst`): owner 2026-09-30 "มีรูปรวมแล้วในช่วงแรก … ไม่ต้องใส่แล้ว" — the same
+ *     all-options view twice on one page (the wide lineup banner of PR #128 lived here and went with it).
  */
 function Poster({ img, sizes, className }: { img: StoryImage; sizes: string; className?: string }) {
   return (
@@ -57,7 +59,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
   const options: Tile[] = isColour
     ? (product.colorVariants ?? []).map((o) => ({ id: o.id, name: o.name, swatchHex: o.swatchHex, photo: o.image }))
     : (product.flavorVariants ?? []).map((o) => ({ id: o.id, name: o.name, swatchHex: o.swatchHex, photo: o.boxImage ?? o.image }));
-  const tiles = options.filter((t) => t.photo);
+  const tiles = product.lineupFirst && product.lineupImage ? [] : options.filter((t) => t.photo);
   if (!cover && highlights.length === 0 && tiles.length === 0) return null;
   const sourceName = cover?.sourceName ?? highlights[0]?.image?.sourceName;
 
@@ -105,16 +107,6 @@ export function ProductMoreDetails({ product }: { product: Product }) {
           <h3 className="font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">
             {(isColour ? dict.product.moreDetailsAllColours : dict.product.moreDetailsAllFlavours).replace("{count}", String(options.length))}
           </h3>
-          {product.storyLineup && (
-            <Image
-              src={product.storyLineup.src}
-              alt={product.storyLineup.alt}
-              width={product.storyLineup.width}
-              height={product.storyLineup.height}
-              sizes="(min-width: 1280px) 1200px, 100vw"
-              className="block h-auto w-full"
-            />
-          )}
           <ul className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6 lg:gap-4">
             {tiles.map((t) => (
               <li key={t.id} className="flex flex-col overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">

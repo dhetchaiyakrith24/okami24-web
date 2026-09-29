@@ -292,13 +292,6 @@ export interface Product {
   /** The maker's campaign poster that opens the "more details" story, full width under its heading (`storyDetails`). */
   storyCover?: StoryImage;
   /**
-   * Image-fix round 2026-09-30 (owner chose the premium "stage arc" lineup, placement: the top image AND a wide banner
-   * in "more details"): a wide OKami24 composite of every flavour/colour, shown whole across the container at the head
-   * of the all-options grid (`storyDetails`). Transparent, so the page shows through; no credit line — it is our own
-   * image made from the option photos on this page. Absent = the grid opens on its heading, as before.
-   */
-  storyLineup?: StoryImage;
-  /**
    * A real OKami24-channel review video for this exact product (owner mandate, 2026-09-03 —
    * "map existing review videos to the correct product identities"). Absent unless a specific
    * video was found AND confirmed to genuinely review this exact model — never a loosely-related
