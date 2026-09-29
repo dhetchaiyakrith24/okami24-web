@@ -209,10 +209,10 @@ function probe(host: string, port: number): Promise<"refused" | "open" | "other"
   });
 }
 
-// Free = a NEW connection is refused on both loopback families. It used to `fetch` localhost: fetch reuses the
-// keep-alive socket the leakage check had just opened, so right after the kill one probe failed with "socket closed"
-// (not "refused") — and the last check made exactly one attempt, so the step failed 0.27 s after a clean stop
-// (deploy runs of 2026-09-29 20:24 and 21:29, "LEFT BEHIND" with the port already free).
+// Free = a NEW connection is refused on both loopback families. The step failed twice on 2026-09-29 (runs 20:24 and
+// 21:29) 0.01–0.27 s after the kill — too fast for the 5 s loops, so the first check HAD seen the port refused and
+// the last one (exactly one attempt) failed. Likely cause: it used `fetch`, which can reuse the keep-alive socket the
+// leakage check had opened and then fails "socket closed" instead of "refused". Fresh TCP probes + 2 s remove both.
 async function portFreed(port: number, withinMs: number): Promise<boolean> {
   const deadline = Date.now() + withinMs;
   for (;;) {
