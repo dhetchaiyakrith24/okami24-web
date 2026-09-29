@@ -167,9 +167,10 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
       { specKey: "modes", text: { th: "3 โหมด", en: "3 modes", zh: "3 种模式" } },
     ],
     note: {
-      th: "ภาพนี้แยกชิ้นให้ดูแต่ละส่วน ไม่ใช่ภาพถอดเครื่องจริง",
-      en: "Parts are drawn apart for illustration; this is not a teardown of the device.",
-      zh: "分解图仅用于展示各个部分，并非实机拆解。",
+      // owner 2026-09-30: say why the parts are shown apart; no "not the real device" — the photos ARE the real device
+      th: "ภาพแยกชิ้นช่วยให้เห็นว่าแต่ละส่วนอยู่ตรงไหนและทำหน้าที่อะไร",
+      en: "Shown part by part so you can see where each piece sits and what it does.",
+      zh: "分解图让您看清每个部件的位置和作用。",
     },
   },
 };
