@@ -340,6 +340,15 @@ export function ProductHero({
             style={{ background: "radial-gradient(ellipse 58% 54% at 50% 40%, var(--color-steel-soft) 0%, transparent 72%)" }}
             aria-hidden
           />
+          {/* lineupFirst only (designer 2026-09-30): the upright black device sank into the dark frame — a soft glow in
+              the picked option's own colour sits behind it, around where its coloured base is. */}
+          {lineupFirst && !showAllColors && selectedRecord && (
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{ background: `radial-gradient(ellipse 40% 46% at 50% 64%, ${selectedRecord.swatchHex}40 0%, transparent 70%)` }}
+              aria-hidden
+            />
+          )}
           <FavoriteButton slug={product.slug} className="absolute right-2 top-2 z-10" />
           <div className="relative h-full w-full p-8 max-lg:hidden lg:p-12">
             {showNoPhoto && selectedRecord ? (

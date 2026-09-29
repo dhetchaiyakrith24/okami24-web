@@ -87,9 +87,20 @@ export interface Feature {
   description: string;
   /** Image-fix round 2026-09-30 (owner: "more details" told one highlight at a time, big image + short headline, the
    *  way UWELL's product pages do): the maker's own poster for this highlight. Read only by `ProductMoreDetails`
-   *  (products with `storyDetails`); the card grid (`FeatureGrid`) ignores it. `focusX` = horizontal focal point
-   *  (0–100 %) for the phone crop, where the poster is shown taller than it is. */
-  image?: { src: string; alt: string; sourceName: string; sourceUrl?: string; focusX?: number };
+   *  (products with `storyDetails`); the card grid (`FeatureGrid`) ignores it. Shown whole at its own proportions on
+   *  every width (`width`/`height` = the file's pixels) — the maker's headline is printed in the poster, so any crop
+   *  cuts words (designer 2026-09-30). */
+  image?: StoryImage;
+}
+
+/** A maker poster shown whole in `ProductMoreDetails` (see `Feature.image`, `Product.storyCover`). */
+export interface StoryImage {
+  src: string;
+  alt: string;
+  sourceName: string;
+  sourceUrl?: string;
+  width: number;
+  height: number;
 }
 
 export interface Compatibility {
@@ -278,6 +289,8 @@ export interface Product {
    * gallery, the anatomy block and the feature cards. Absent = those three sections, unchanged.
    */
   storyDetails?: boolean;
+  /** The maker's campaign poster that opens the "more details" story, full width under its heading (`storyDetails`). */
+  storyCover?: StoryImage;
   /**
    * A real OKami24-channel review video for this exact product (owner mandate, 2026-09-03 —
    * "map existing review videos to the correct product identities"). Absent unless a specific

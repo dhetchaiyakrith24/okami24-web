@@ -88,6 +88,9 @@ export const salthubProducts: Product[] = [
     },
     lineupFirst: true,
     storyDetails: true,
+    // Opens the story (designer 30/09: a campaign image, not a coil fact — it no longer sits beside the coil text;
+    // cotton mesh stays in the spec sheet).
+    storyCover: { src: "/assets/products/m-bar-10k/angle-01.webp", alt: "Official SALTHUB M Bar 10K campaign image, \"Timeless Elegance\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1229 },
     flavorVariants: [
       { id: "all-berry", name: "All Berry", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-all-berry-v3.webp", alt: "SALTHUB M Bar 10K, All Berry — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-all-berry-v2.webp", alt: "SALTHUB M Bar 10K, All Berry — box and device" } },
       { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-blue-ice-v3.webp", alt: "SALTHUB M Bar 10K, Blue Ice — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-blue-ice-v2.webp", alt: "SALTHUB M Bar 10K, Blue Ice — box and device" } },
@@ -113,37 +116,37 @@ export const salthubProducts: Product[] = [
       { key: "indicator", label: "Status indicator", value: "LED battery level in 25% increments; RGB shows active mode", sourceStatus: "verified", sourceUrl: "https://img.salthub.com/mbar10k/MBar10K_03.webp" },
     ],
     // 2026-09-30: `image` = the maker's own poster for each highlight, told one per block in "more details"
-    // (`storyDetails`). bottle-shape / ten-k-puffs were added for posters 02 / 05 (writer, verified spec rows only).
+    // (`storyDetails`); mesh-coil has none, so it is not a block there (spec sheet row stays). bottle-shape /
+    // ten-k-puffs were added for posters 02 / 05 (writer, verified spec rows only).
     features: [
       {
         id: "bottle-shape",
         title: "E-liquid bottle shape",
         description: "Matte black, shaped like a classic e-liquid bottle, with a colour gradient at the base that changes with each flavour.",
-        image: { src: "/assets/products/m-bar-10k/angle-02.webp", alt: "Official SALTHUB M Bar 10K poster, \"Understated luxury radiates from within\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", focusX: 50 },
+        image: { src: "/assets/products/m-bar-10k/angle-02.webp", alt: "Official SALTHUB M Bar 10K poster, \"Understated luxury radiates from within\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1085 },
       },
       {
         id: "three-modes",
         title: "Three power modes",
         description: "Eco, Soft, and Boost modes are cycled with a double-click, changing output character without any menu.",
-        image: { src: "/assets/products/m-bar-10k/story-04.webp", alt: "Official SALTHUB M Bar 10K poster, \"Your tempo, your call\" — double-click the bottom button to switch Eco / Soft / Boost", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", focusX: 50 },
+        image: { src: "/assets/products/m-bar-10k/story-04.webp", alt: "Official SALTHUB M Bar 10K poster, \"Your tempo, your call\" — double-click the bottom button to switch Eco / Soft / Boost", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1600, height: 898 },
       },
       {
         id: "rgb-indicator",
         title: "RGB mode indicator",
         description: "A colour-coded LED shows which of the three power modes is currently active at a glance.",
-        image: { src: "/assets/products/m-bar-10k/angle-03.webp", alt: "SALTHUB M Bar 10K mini display, 4-LED battery indicator and Eco/Soft/Boost RGB status indicator", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", focusX: 20 },
+        image: { src: "/assets/products/m-bar-10k/angle-03.webp", alt: "SALTHUB M Bar 10K mini display, 4-LED battery indicator and Eco/Soft/Boost RGB status indicator", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1096 },
       },
       {
         id: "ten-k-puffs",
         title: "Up to 10,000 puffs",
         description: "Rated for up to 10,000 puffs, with a 600mAh battery you recharge over USB-C when it runs low.",
-        image: { src: "/assets/products/m-bar-10k/story-05.webp", alt: "Official SALTHUB M Bar 10K poster, \"Built for nonstop performance\" — up to 10,000 puffs", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", focusX: 72 },
+        image: { src: "/assets/products/m-bar-10k/story-05.webp", alt: "Official SALTHUB M Bar 10K poster, \"Built for nonstop performance\" — up to 10,000 puffs", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1600, height: 899 },
       },
       {
         id: "mesh-coil",
         title: "Cotton mesh coil",
         description: "A mesh coil design intended to keep flavor consistent across the device's rated puff count.",
-        image: { src: "/assets/products/m-bar-10k/angle-01.webp", alt: "Official SALTHUB M Bar 10K campaign image, \"Timeless Elegance\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/", focusX: 72 },
       },
     ],
     compatibility: [typeC],
