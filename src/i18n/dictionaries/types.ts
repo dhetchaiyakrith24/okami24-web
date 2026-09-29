@@ -225,6 +225,10 @@ export interface Dictionary {
     };
     featuresEyebrow: string;
     featuresTitle: string;
+    /** ProductMoreDetails (products with `storyDetails`) — section title, then the all-options grid heading ({count}). */
+    moreDetailsTitle: string;
+    moreDetailsAllFlavours: string;
+    moreDetailsAllColours: string;
     specsEyebrow: string;
     specsTitle: string;
     /** SpecSheet lede when `{n}` of `{m}` specification rows are unverified (round 30.4 — was

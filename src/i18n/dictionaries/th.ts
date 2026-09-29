@@ -205,6 +205,11 @@ export const th: Dictionary = {
     // Round 30.4 batch 1 (owner, 2026-09-11): "สิ่งที่ทำให้แตกต่าง" was "What sets it apart" in
     // Thai clothes; the new title pairs with "เหมาะกับใคร" below it.
     featuresTitle: "รุ่นนี้เด่นตรงไหน",
+    // Image-fix round 2026-09-30: the owner's own words for the lower-page section. The grid heading says what the
+    // maker makes ("รุ่นนี้มี"), never "ครบ/ทั้งหมด" — that reads as a stock claim (THAI_STYLE §3, ruling 2026-09-23).
+    moreDetailsTitle: "รายละเอียดเพิ่มเติม",
+    moreDetailsAllFlavours: "รุ่นนี้มี {count} กลิ่น",
+    moreDetailsAllColours: "รุ่นนี้มี {count} สี",
     specsEyebrow: "สเปก",
     specsTitle: "ข้อมูลที่ยืนยันได้จริง",
     // Round 30.4 batch 1: the SpecSheet lede and the spec-chip badge used to be hardcoded English

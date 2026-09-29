@@ -92,14 +92,26 @@ export function ProductHero({
   const heroDescription = copyTh?.shortDescription ? thaiTypographyNode(copyTh.shortDescription) : product.shortDescription;
   // `openOnCardPhoto` (see its doc in types/catalog.ts): open on the card with nothing picked.
   const openOnCard = product.openOnCardPhoto === true;
-  const [selectedColorId, setSelectedColorId] = useState<string | null>(openOnCard ? null : initialOption(product.colorVariants));
-  const [selectedFlavorId, setSelectedFlavorId] = useState<string | null>(openOnCard ? null : initialOption(product.flavorVariants));
+  // `lineupFirst` (see its doc in types/catalog.ts): open on the lineup of every option, "all" selected, nothing picked.
+  const lineupFirst = product.lineupFirst === true && !!product.lineupImage;
+  const startUnpicked = openOnCard || lineupFirst;
+  const [selectedColorId, setSelectedColorId] = useState<string | null>(startUnpicked ? null : initialOption(product.colorVariants));
+  const [selectedFlavorId, setSelectedFlavorId] = useState<string | null>(startUnpicked ? null : initialOption(product.flavorVariants));
   // "All Colors" (owner mandate, 2026-09-03) is a third hero-image state, not a third variant list
   // — it only exists when a real lineup shot does. Starts unselected (an individual color/default
   // photo is still the strongest first impression); the customer opts INTO the lineup view.
-  const [showAllColors, setShowAllColors] = useState(false);
+  const [showAllColors, setShowAllColors] = useState(lineupFirst);
   const selectedColor = product.colorVariants?.find((c) => c.id === selectedColorId);
   const selectedFlavor = product.flavorVariants?.find((f) => f.id === selectedFlavorId);
+  // "all": the lineup photo. On a lineupFirst product it is also the unpicked start state, so it clears the pick
+  // (the photo then claims no option, and the buy action asks for one); elsewhere it keeps the pick, as before.
+  function selectAll() {
+    if (lineupFirst) {
+      setSelectedColorId(null);
+      setSelectedFlavorId(null);
+    }
+    setShowAllColors(true);
+  }
   // The option list this product picks from (legacy products carry colours OR flavours, never both). An option
   // with no photo of its own gets the NoOptionPhoto panel instead of the product card — the card is often one
   // specific option (image-fix round 2026-09-28). A single-option product keeps the card: the card IS that option.
@@ -147,13 +159,19 @@ export function ProductHero({
   const hasColorAxis = (product.colorVariants?.length ?? 0) > 0;
   const selectedOptionId = hasColorAxis ? selectedColorId : selectedFlavorId;
   const selectOption = (slideId: string) => {
+    // the leading "all" slide (lineupFirst products) = the lineup, nothing picked
+    if (slideId === "all") return selectAll();
     // the leading "default" slide (product photo — products where no option has a photo, or openOnCardPhoto) = no option
     const id = slideId === "default" ? null : slideId;
     if (hasColorAxis) setSelectedColorId(id);
     else setSelectedFlavorId(id);
     setShowAllColors(false);
   };
-  const leadWithCard = openOnCard || (optionRecords.length >= 2 && optionRecords.every((o) => !o.image));
+  // A lineupFirst product leads with the lineup instead: every option is in it, the card shows only one.
+  const leadWithCard = !lineupFirst && (openOnCard || (optionRecords.length >= 2 && optionRecords.every((o) => !o.image)));
+  const lineupSlide = lineupFirst && product.lineupImage
+    ? [{ id: "all", node: <div className="h-full w-full p-2"><ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayMap?.[product.lineupImage.src] ?? null} overrideImage={product.lineupImage} loading={showAllColors ? "eager" : "lazy"} fetchPriority={showAllColors ? "high" : "auto"} /></div> }]
+    : [];
   const optionSlides = options.map((o) => {
     const record = optionRecords.find((r) => r.id === o.id);
     return lacksOwnPhoto(record)
@@ -163,6 +181,7 @@ export function ProductHero({
   const slides =
     options.length > 0
       ? [
+          ...lineupSlide,
           ...(leadWithCard ? [{ id: "default", node: <div className="h-full w-full p-2"><ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayInfo} loading="eager" fetchPriority="high" /></div> }] : []),
           ...options.map((o, i) => optionSlides[i] ?? {
           id: o.id,
@@ -196,7 +215,8 @@ export function ProductHero({
             ),
           },
         ];
-  const selectedOptionLabel = showAllColors ? (product.lineupImage ? dict.product.allVariantsLabel : null) : selectedColor?.name ?? selectedFlavor?.name ?? null;
+  // On a lineupFirst product "all" is where the page starts, not an option — the buy bar then asks for a pick.
+  const selectedOptionLabel = showAllColors ? (product.lineupImage && !lineupFirst ? dict.product.allVariantsLabel : null) : selectedColor?.name ?? selectedFlavor?.name ?? null;
   const priceText = sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : null;
 
   return (
@@ -244,7 +264,7 @@ export function ProductHero({
               label={dict.product.colorLabel}
               allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
               isAllSelected={showAllColors}
-              onSelectAll={product.lineupImage ? () => setShowAllColors(true) : undefined}
+              onSelectAll={product.lineupImage ? selectAll : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
               className="max-lg:order-4"
             />
@@ -261,7 +281,7 @@ export function ProductHero({
               label={dict.product.flavorLabel}
               allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
               isAllSelected={showAllColors}
-              onSelectAll={product.lineupImage ? () => setShowAllColors(true) : undefined}
+              onSelectAll={product.lineupImage ? selectAll : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
               className="max-lg:order-4"
             />
@@ -340,14 +360,14 @@ export function ProductHero({
           />
           {/* Phone gallery — hidden at lg+, where the still image above is the hero. */}
           <div className="absolute inset-0 lg:hidden">
-            {showAllColors && product.lineupImage ? (
+            {showAllColors && product.lineupImage && !lineupFirst ? (
               <div className="relative h-full w-full p-2">
                 <ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayMap?.[product.lineupImage.src] ?? null} overrideImage={product.lineupImage} />
               </div>
             ) : (
               <MobileVariantGallery
                 slides={slides}
-                selectedId={selectedOptionId ?? "default"}
+                selectedId={lineupFirst && showAllColors ? "all" : selectedOptionId ?? "default"}
                 onSelect={selectOption}
                 className="h-full"
                 ariaLabel={hasColorAxis ? dict.product.colorLabel : dict.product.flavorLabel}

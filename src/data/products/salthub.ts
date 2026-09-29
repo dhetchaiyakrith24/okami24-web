@@ -77,21 +77,30 @@ export const salthubProducts: Product[] = [
     // per file in scripts/process-images.map.json `aiRender`) — Grape passed by the owner, then the rest on the same
     // template (7 of 12 on 2026-09-29; the last 5 on 2026-09-30 as recolours of the passed Grape render with the maker photo cropped free of props — 12 of 12).
     // `availability: "unknown"` — no live Shipnity stock signal for this Legacy record.
-    // The flavour photos are box + device; the card (device alone) stays the first photo (owner 29/09).
-    openOnCardPhoto: true,
+    // 2026-09-30 (owner: device alone for every flavour, one lineup of all of them first, box photos lower down): `image` =
+    // the device alone — ONE Higgsfield master render from the passed card, each flavour's base colour moved over by script
+    // from its passed box+device render (source + check per file in the map); `boxImage` = that passed box+device photo,
+    // now in the "more details" flavour grid. The page opens on the lineup (`lineupFirst`), built from these 12 files.
+    lineupImage: {
+      src: "/assets/products/m-bar-10k/lineup.webp",
+      alt: "SALTHUB M Bar 10K, all 12 flavours side by side — device only",
+      sourceName: "OKami24 composite",
+    },
+    lineupFirst: true,
+    storyDetails: true,
     flavorVariants: [
-      { id: "all-berry", name: "All Berry", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-all-berry-v2.webp", alt: "SALTHUB M Bar 10K, All Berry — box and device" } },
-      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-blue-ice-v2.webp", alt: "SALTHUB M Bar 10K, Blue Ice — box and device" } },
-      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-cola-v2.webp", alt: "SALTHUB M Bar 10K, Cola — box and device" } },
-      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-grape.webp", alt: "SALTHUB M Bar 10K, Grape — box and device" } },
-      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-kyoho-grape-v2.webp", alt: "SALTHUB M Bar 10K, Kyoho Grape — box and device" } },
-      { id: "matcha-latte", name: "Matcha Latte", swatchHex: "#7a9a4a", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-matcha-latte-v2.webp", alt: "SALTHUB M Bar 10K, Matcha Latte — box and device" } },
-      { id: "menthol-blast", name: "Menthol Blast", swatchHex: "#3ab5c6", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-menthol-blast-v2.webp", alt: "SALTHUB M Bar 10K, Menthol Blast — box and device" } },
-      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-pink-berry-v2.webp", alt: "SALTHUB M Bar 10K, Pink Berry — box and device" } },
-      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-strawberry-kiwi-v3.webp", alt: "SALTHUB M Bar 10K, Strawberry Kiwi — box and device" } },
-      { id: "watermelon-mint", name: "Watermelon Mint", swatchHex: "#4ec9a0", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon-mint-v2.webp", alt: "SALTHUB M Bar 10K, Watermelon Mint — box and device" } },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon-v2.webp", alt: "SALTHUB M Bar 10K, Watermelon — box and device" } },
-      { id: "yellow-mint", name: "Yellow Mint", swatchHex: "#d9d13a", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-yellow-mint-v2.webp", alt: "SALTHUB M Bar 10K, Yellow Mint — box and device" } },
+      { id: "all-berry", name: "All Berry", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-all-berry-v3.webp", alt: "SALTHUB M Bar 10K, All Berry — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-all-berry-v2.webp", alt: "SALTHUB M Bar 10K, All Berry — box and device" } },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-blue-ice-v3.webp", alt: "SALTHUB M Bar 10K, Blue Ice — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-blue-ice-v2.webp", alt: "SALTHUB M Bar 10K, Blue Ice — box and device" } },
+      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-cola-v3.webp", alt: "SALTHUB M Bar 10K, Cola — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-cola-v2.webp", alt: "SALTHUB M Bar 10K, Cola — box and device" } },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-grape-v2.webp", alt: "SALTHUB M Bar 10K, Grape — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-grape.webp", alt: "SALTHUB M Bar 10K, Grape — box and device" } },
+      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-kyoho-grape-v3.webp", alt: "SALTHUB M Bar 10K, Kyoho Grape — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-kyoho-grape-v2.webp", alt: "SALTHUB M Bar 10K, Kyoho Grape — box and device" } },
+      { id: "matcha-latte", name: "Matcha Latte", swatchHex: "#7a9a4a", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-matcha-latte-v3.webp", alt: "SALTHUB M Bar 10K, Matcha Latte — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-matcha-latte-v2.webp", alt: "SALTHUB M Bar 10K, Matcha Latte — box and device" } },
+      { id: "menthol-blast", name: "Menthol Blast", swatchHex: "#3ab5c6", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-menthol-blast-v3.webp", alt: "SALTHUB M Bar 10K, Menthol Blast — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-menthol-blast-v2.webp", alt: "SALTHUB M Bar 10K, Menthol Blast — box and device" } },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-pink-berry-v3.webp", alt: "SALTHUB M Bar 10K, Pink Berry — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-pink-berry-v2.webp", alt: "SALTHUB M Bar 10K, Pink Berry — box and device" } },
+      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-strawberry-kiwi-v4.webp", alt: "SALTHUB M Bar 10K, Strawberry Kiwi — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-strawberry-kiwi-v3.webp", alt: "SALTHUB M Bar 10K, Strawberry Kiwi — box and device" } },
+      { id: "watermelon-mint", name: "Watermelon Mint", swatchHex: "#4ec9a0", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon-mint-v3.webp", alt: "SALTHUB M Bar 10K, Watermelon Mint — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-watermelon-mint-v2.webp", alt: "SALTHUB M Bar 10K, Watermelon Mint — box and device" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-watermelon-v3.webp", alt: "SALTHUB M Bar 10K, Watermelon — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-watermelon-v2.webp", alt: "SALTHUB M Bar 10K, Watermelon — box and device" } },
+      { id: "yellow-mint", name: "Yellow Mint", swatchHex: "#d9d13a", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-yellow-mint-v3.webp", alt: "SALTHUB M Bar 10K, Yellow Mint — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-yellow-mint-v2.webp", alt: "SALTHUB M Bar 10K, Yellow Mint — box and device" } },
     ],
     specifications: [
       // Data round (2026-09-24): every row re-checked on SALTHUB's own M Bar 10K posters in a real browser. 30mg is on
@@ -103,21 +112,38 @@ export const salthubProducts: Product[] = [
       { key: "modes", label: "Power modes", value: "Eco / Soft / Boost, switched by double-click", sourceStatus: "verified", sourceUrl: "https://img.salthub.com/mbar10k/MBar10K_04.webp" },
       { key: "indicator", label: "Status indicator", value: "LED battery level in 25% increments; RGB shows active mode", sourceStatus: "verified", sourceUrl: "https://img.salthub.com/mbar10k/MBar10K_03.webp" },
     ],
+    // 2026-09-30: `image` = the maker's own poster for each highlight, told one per block in "more details"
+    // (`storyDetails`). bottle-shape / ten-k-puffs were added for posters 02 / 05 (writer, verified spec rows only).
     features: [
+      {
+        id: "bottle-shape",
+        title: "E-liquid bottle shape",
+        description: "Matte black, shaped like a classic e-liquid bottle, with a colour gradient at the base that changes with each flavour.",
+        image: { src: "/assets/products/m-bar-10k/angle-02.webp", alt: "Official SALTHUB M Bar 10K poster, \"Understated luxury radiates from within\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", focusX: 50 },
+      },
       {
         id: "three-modes",
         title: "Three power modes",
         description: "Eco, Soft, and Boost modes are cycled with a double-click, changing output character without any menu.",
+        image: { src: "/assets/products/m-bar-10k/story-04.webp", alt: "Official SALTHUB M Bar 10K poster, \"Your tempo, your call\" — double-click the bottom button to switch Eco / Soft / Boost", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", focusX: 50 },
       },
       {
         id: "rgb-indicator",
         title: "RGB mode indicator",
         description: "A colour-coded LED shows which of the three power modes is currently active at a glance.",
+        image: { src: "/assets/products/m-bar-10k/angle-03.webp", alt: "SALTHUB M Bar 10K mini display, 4-LED battery indicator and Eco/Soft/Boost RGB status indicator", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", focusX: 20 },
+      },
+      {
+        id: "ten-k-puffs",
+        title: "Up to 10,000 puffs",
+        description: "Rated for up to 10,000 puffs, with a 600mAh battery you recharge over USB-C when it runs low.",
+        image: { src: "/assets/products/m-bar-10k/story-05.webp", alt: "Official SALTHUB M Bar 10K poster, \"Built for nonstop performance\" — up to 10,000 puffs", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", focusX: 72 },
       },
       {
         id: "mesh-coil",
         title: "Cotton mesh coil",
         description: "A mesh coil design intended to keep flavor consistent across the device's rated puff count.",
+        image: { src: "/assets/products/m-bar-10k/angle-01.webp", alt: "Official SALTHUB M Bar 10K campaign image, \"Timeless Elegance\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/", focusX: 72 },
       },
     ],
     compatibility: [typeC],

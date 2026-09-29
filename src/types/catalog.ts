@@ -85,6 +85,11 @@ export interface Feature {
   id: string;
   title: string;
   description: string;
+  /** Image-fix round 2026-09-30 (owner: "more details" told one highlight at a time, big image + short headline, the
+   *  way UWELL's product pages do): the maker's own poster for this highlight. Read only by `ProductMoreDetails`
+   *  (products with `storyDetails`); the card grid (`FeatureGrid`) ignores it. `focusX` = horizontal focal point
+   *  (0–100 %) for the phone crop, where the poster is shown taller than it is. */
+  image?: { src: string; alt: string; sourceName: string; sourceUrl?: string; focusX?: number };
 }
 
 export interface Compatibility {
@@ -178,6 +183,10 @@ export interface FlavorVariant {
    *  physical device usually looks identical across flavors, so this is optional richness, not a
    *  completeness requirement. */
   image?: { src: string; alt: string };
+  /** Image-fix round 2026-09-30 (owner: flavour photos show the device alone; box photos move to the lower
+   *  "more details" part of the page): the box + device photo of this flavour, shown in `ProductMoreDetails`'
+   *  flavour grid. Same sourcing rule as `image`. */
+  boxImage?: { src: string; alt: string };
   /** Catalog truth vs. operational stock truth — see `VariantAvailability`'s own doc comment. */
   availability: VariantAvailability;
   sourceUrl?: string;
@@ -256,6 +265,19 @@ export interface Product {
    * card would otherwise vanish from the page. Absent = the page opens on the first option with a photo, as before.
    */
   openOnCardPhoto?: boolean;
+  /**
+   * Image-fix round 2026-09-30 (owner: a product with several flavours/colours shows ONE image of all of them first;
+   * picking one then shows that one): the page opens on `lineupImage` with the "all" chip selected and nothing picked,
+   * and on phones the lineup is the first gallery slide. Needs `lineupImage`; ignored without it. Absent = unchanged
+   * (the lineup stays behind the "all" chip). Per product while the new look is piloted (M Bar 10K first).
+   */
+  lineupFirst?: boolean;
+  /**
+   * Image-fix round 2026-09-30: the lower page tells the product as a story (`ProductMoreDetails` — one highlight per
+   * block with the maker's poster from `features[].image`, then the flavour/colour grid) in place of the detail-photo
+   * gallery, the anatomy block and the feature cards. Absent = those three sections, unchanged.
+   */
+  storyDetails?: boolean;
   /**
    * A real OKami24-channel review video for this exact product (owner mandate, 2026-09-03 —
    * "map existing review videos to the correct product identities"). Absent unless a specific
