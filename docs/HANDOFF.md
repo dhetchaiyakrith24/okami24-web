@@ -973,10 +973,14 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
 (v92 — written by doc-keeper at the second batch close of the seventh computer-round chat (30/09), round
-"รอบรูป-แก้" (still OPEN). Eighth chat starts from this block.)
+"รอบรูป-แก้" (still OPEN). Eighth chat starts from this block. Chat-move edits by the main agent after #133 (30/09):
+main line, #132/#133, DESIGN FACTS "12 flavours" line, item 5, NEXT WORK (1) — marked [chat-move].)
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + round file
-`docs/rounds/รอบรูป-แก้-คำตัดสิน-28-09.txt` + the two new round files of item 3 (not in git — owner's drafting folder)
-1 main: `git fetch && git log -1 --oneline origin/main` → `d866032` (PR #130's merge commit [เชื่อว่า — main agent]) [ตรวจแล้ว —
+`C:\Users\dhetc\OneDrive\Desktop\Run prompt\New prompt WEB\รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt` [chat-move]
+1 main [chat-move]: `3f39e87` (merge PR #133) [ตรวจแล้ว — main agent's git]. After the batch below: #132 `8d93f23` docs
+  (§16 v92) · #133 `3f39e87` the M Bar 10K "รุ่นนี้มี 12 กลิ่น" box+device grid is BACK (owner 30/09: only the wide
+  banner was the duplicate) — checker PASS, checks green, deploy success, live curl shows the grid [ตรวจแล้ว].
+  Batch before (v92 text): `d866032` (PR #130's merge commit [เชื่อว่า — main agent]) [ตรวจแล้ว —
   the hash read from .git/refs/remotes/origin/main at this close; no git/gh in doc-keeper, so PR numbers and hashes
   below are the main agent's report [เชื่อว่า]]. No tag (round not closed). Rollback = revert the merge commit of the
   PR in question. Merged in this batch, each checker PASS + GitHub checks green; LIVE (deploy of d866032 =
@@ -1004,9 +1008,9 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   DESIGN FACTS of the M Bar 10K pilot, current after #130 [เชื่อว่า — main agent's report; the older wording is in §3]:
   two per-product flags — `lineupFirst` (page opens on `lineupImage`, "ทั้งหมด" chip, lineup = first phone slide,
   swatch-colour glow behind a picked device) and `storyDetails` (`ProductMoreDetails.tsx` replaces gallery + anatomy
-  + feature cards: `storyCover` poster, 4 poster highlight blocks shown whole, then the spec sheet). On lineupFirst
-  pages the bottom "12 flavours" section is NOT shown any more and `Product.storyLineup` is gone; the m-bar-10k
-  `boxImage` fields stay in data but are not shown. Device-only flavour photos = ONE Higgsfield nano_banana_pro 4K
+  + feature cards: `storyCover` poster, 4 poster highlight blocks shown whole, then the "12 flavours" box+device
+  grid (`boxImage`), then the spec sheet). [chat-move: #130 hid that grid on lineupFirst pages; #133 brought it back.]
+  `Product.storyLineup` (the wide banner) is gone for good. Device-only flavour photos = ONE Higgsfield nano_banana_pro 4K
   master render + a per-flavour recolour script (`_incoming/pilot-mbar10k/recolour.js`). `lineup-v3.webp` stays the
   first image. #119 `.github/workflows/deploy.yml`: when main moved on, the deploy job deploys if deploy-decision.js
   says 0 newer files reach the site.
@@ -1026,7 +1030,14 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   NEXT WORK, in the owner's order (big → planner first for anything not already planned, 13.2 #2):
   (done in the seventh chat: the phone-gallery bug #127 · the M Bar 10K premium lineup #128 · the trim-and-credit
   edits #130 — details in item 1 and §3)
-  (1) FIRST NEXT STEP: the WHOLE-SITE IMAGE ROUND in the M Bar 10K treatment (device-only flavour photos + lineupFirst
+  (0) [chat-move] FIRST NEXT STEP (owner 30/09 "อยากให้ทำรอบนี้ก่อน"): "ไล่ดูทีละส่วน" for M Bar 10K — a premium
+      exploded view (owner's pick; 360 view / X-ray = extras), designer designs, Friday/Higgsfield draws, manufacturer
+      facts only — round file `รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt` (owner's Run prompt folder). Ready:
+      `_incoming/mbar10k-anatomy/facts.md` (researcher, SALTHUB-only facts + drawing notes; internals never shown by
+      the maker) and `_incoming/mbar10k-anatomy/owner-refs/` (4 of the owner's 5 reference images; the cream blueprint
+      sheet was not saved — ask the owner to attach it again). ProductAnatomy has no per-product data today and is
+      hidden on storyDetails pages → needs a new field or component.
+  (1) THEN: the WHOLE-SITE IMAGE ROUND in the M Bar 10K treatment (device-only flavour photos + lineupFirst
       + storyDetails + `lineup-v3` first; no bottom lineup banner any more), starting with M Bar 9K — round file
       `รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`. It continues the best-seller list below, OWNER'S
       LIST 30/09 in this order (unchanged): M Bar 9K · Marbo M Switch 15K Pod Device · M Switch 15K pod (head only, 15,000 puffs) ·
@@ -1084,12 +1095,8 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
       doc-keeper for §16 · rule-text sprawl) — the owner picks; then write them (central §12 item 28) [รอเจ้าของ]
       — still open
   Removed since v91: all relocated word for word to §3, "second batch close" block.
-5 open questions — ask as ONE set at the start of the next chat (13.4 #6), with a recommendation each; the work does
-  not wait for them:
-  (a) the phone-swipe check on the live gallery (after #127): the owner pasted the options without choosing
-      "ลื่น / ยังกระตุก" — ask again [รอเจ้าของ]
-  (b) keep the credit line "ภาพจริงจาก SALTHUB" on the gallery? A keep (recommended) · B remove. Friday's answer in the
-      report: no measurable SEO effect; keep it as a credit [เชื่อว่า — main agent's report] [รอเจ้าของ]
+5 open questions [chat-move]: none open — owner 30/09 answered both: (a) phone swipe after #127 = "ลื่นแล้ว" (smooth);
+  (b) the credit line "ภาพจริงจาก {brand}" = keep.
 6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`, unchanged since v85 — the
   batches since ran the light set only, per 13.12): tsc 0 · verify:commerce 17/17 · verify:catalog --full 32/32 ·
   count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
