@@ -1109,15 +1109,17 @@ the owner's Run prompt folder: `C:\Users\dhetc\OneDrive\Desktop\Run prompt\New p
   `mbar10k-anatomy`) [ตรวจแล้ว — .git/refs/remotes/origin/main of this working tree; the PR number is the main agent's
   report, [เชื่อว่า]]. Round rollback point = `e6463da` (main before #135, PR #134 §16 chat-move docs); to undo the round =
   revert the merge commit `fd4a6ba`. Tag `mbar10k-anatomy-done` goes on this docs close commit (the main agent tags it).
-2 ahead of main: `git log --oneline origin/main..<branch>` — nothing open but this close's own docs PR [เชื่อว่า — main
-  agent]; its branch and PR number [ยังไม่มีข้อมูล — not known to doc-keeper]; docs = small (13.7), checker, the main
-  agent merges.
+2 ahead of main: `git log --oneline origin/main..<branch>` — nothing open but this close's PR #136, branch
+  `docs-close-mbar10k-anatomy` [main agent]: site fix `c827ba1` (round-close designer findings: English shows each part name
+  once, close-up codes BASE/DISPLAY/COLLAR, RGB mode colours moved from 04 to 07 gated by modes+indicator, close-up row
+  58rem) + the owner's note rewording (below) + these docs; small (SITE, 13.7), checker, the main agent merges.
 3 round "ไล่ดูทีละส่วน M Bar 10K (exploded view)" — CLOSED at this close (opened and closed 30/09 in the eighth chat). Round
   file in git: `docs/rounds/รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt`. Working files `_incoming/mbar10k-anatomy/`
   (facts.md, decisions.md, work/export.js, work/gen.js, verify/, shots/; not in git). Batches 1 (directions + draft) and 2 (the
   section, th/en/zh) done and merged in PR #135 (checker PASS 6/6 at `d305e9d` + re-check PASS 4/4 at `46f2d1d`, GitHub checks
   green, deploy run 36645201270 success [เชื่อว่า — main agent]; live curl by the main agent shows the section: `anatomy-sheet-title`,
-  "ภาพแยกชิ้น", "ช่องปรับลม", "ไม่ใช่ภาพถอดเครื่องจริง"; control pages caliburn-g5 / m-bar-9k / relx-smash-go-12k have none). Batch 3
+  "ภาพแยกชิ้น", "ช่องปรับลม", "ไม่ใช่ภาพถอดเครื่องจริง" (that note reworded at the close, owner 30/09: "ภาพแยกชิ้นช่วยให้เห็นว่า
+  แต่ละส่วนอยู่ตรงไหนและทำหน้าที่อะไร" — the photos are the real device); control pages caliburn-g5 / m-bar-9k / relx-smash-go-12k have none). Batch 3
   (360 view / X-ray extras) NOT done — offered to the owner (item 4 (9)); X-ray may show only the outer shell, internals never.
   WHAT SHIPPED: /products/m-bar-10k "ไล่ดูทีละส่วน" dark blueprint sheet inside "more details" after the cover: 3/4 view, exploded
   mouthpiece/collar/body with measured leaders 01–05, drawn bottom view 06–08 (USB-C, ปุ่มก้นพอต, ช่องปรับลม — the owner confirmed
@@ -1129,7 +1131,7 @@ the owner's Run prompt folder: `C:\Users\dhetc\OneDrive\Desktop\Run prompt\New p
   Higgsfield: 8 credits used (2 × nano_banana_pro 4K); balance at open 1521.1 → ~1,513 now [เชื่อว่า — main agent's figure less its 8;
   the ~1,960 of v92 was stale]; warn the owner before a shop-wide image job would cross the balance.
   Previous round "รอบรูป-แก้" (image fix) — still OPEN (unchanged; the eighth chat put this round first by the owner's order 30/09). Background jobs: none known [เชื่อว่า]. A test server on 3412
-  (`scripts/test-server.js`, build of `cbbb0b7`) may still be up — `node scripts/test-server.js stop` or reuse it.
+  (`scripts/test-server.js`, build of this close's branch — the note rewording on top of `c827ba1`) may still be up — `node scripts/test-server.js stop` or reuse it.
   DESIGN FACTS of the M Bar 10K pilot (flags `lineupFirst` + `storyDetails`, `storyLineup` gone, recolour script) [เชื่อว่า
   — main agent's report]: full wording relocated to §3 at the eighth chat's close; the anatomy sheet now sits inside `storyDetails`.
   GALLERY LEDE (#130): th/en/zh = "ภาพจริงจาก {brand}" (credit only). The 7 SEO-baseline slugs keep the old line via
