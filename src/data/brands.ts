@@ -147,7 +147,7 @@ export const brands: Brand[] = [
     description:
       "A vape hardware manufacturer known for its atomizer lineup (RDAs/RTAs/RDTAs) and, more recently, the nexBAR disposable-vape series spanning multiple puff-count tiers.",
     descriptionTh:
-      "WOTOFO แบรนด์ฮาร์ดแวร์ที่ขยายมาทำพอตใช้แล้วทิ้งสาย nexBAR ที่ร้านมี nexBAR 18K",
+      "WOTOFO แบรนด์ฮาร์ดแวร์ที่ขยายมาทำพอตใช้แล้วทิ้งตระกูล nexBAR",
     referenceUrl: "https://www.wotofo.com/",
   },
   // Deliberately NOT adding a "NEXT" Brand record for Pod-173 ("Next Pro 2 Beyond") — no official

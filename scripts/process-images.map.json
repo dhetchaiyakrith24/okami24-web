@@ -2308,5 +2308,212 @@
    "fidelitySheet": "_incoming/wotofo/review/fid/grape_ice.png — IoU 0.994, deltaE max 2.5; flavour label read by eye"
   },
   "note": "image-fix round 2026-09-30, batch 2 — OKami24 Higgsfield remake of WOTOFO's own photo (_incoming/wotofo/run-batch2.js); flat #E9E9EC keyed with scripts/flatcut.js"
+ },
+ {
+  "source": "_incoming/nexbar-clear/out/card-front-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "card",
+  "fileName": "card-v2.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k 4:5 (job _incoming/nexbar-clear/out/job-card-front.json)",
+   "reference": "the device on the maker's own poster (owner-supplied: _incoming/image-fix/higgsfield/nexbar-clear-18k-owner/owner-spec-15-flavors.webp), text painted out → _incoming/nexbar-clear/refs/poster-device-ref.png",
+   "fidelitySheet": "_incoming/nexbar-clear/out/fid-card-front.png — IoU 0.948 (the reference device is only 154 px wide, so the outline is resolution-limited; aspect 0.467 = 0.467), deltaE max 2.7; nexBar / CLEAR / 18K read by eye"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K card (the old card.webp showed WOTOFO nexBAR 18K, another device)"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/grape-ice-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "grape-ice",
+  "fileName": "variant-grape-ice.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-grape-ice.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-grape-ice.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-grape-ice.png — shape IoU 0.983 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/grape-lychee-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "grape-lychee",
+  "fileName": "variant-grape-lychee.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-grape-lychee.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-grape-lychee.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-grape-lychee.png — shape IoU 0.965 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/mint-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "mint",
+  "fileName": "variant-mint.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-mint.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-mint.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-mint.png — shape IoU 0.981 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/mixberry-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "mixberry",
+  "fileName": "variant-mixberry.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-mixberry.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-mixberry.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-mixberry.png — shape IoU 0.968 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/strawberry-custard-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "strawberry-custard",
+  "fileName": "variant-strawberry-custard.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-strawberry-custard.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-strawberry-custard.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-strawberry-custard.png — shape IoU 0.961 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/strawberry-watermelon-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "strawberry-watermelon",
+  "fileName": "variant-strawberry-watermelon.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-strawberry-watermelon.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-strawberry-watermelon.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-strawberry-watermelon.png — shape IoU 0.962 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/watermelon-ice-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "watermelon-ice",
+  "fileName": "variant-watermelon-ice.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-watermelon-ice.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-watermelon-ice.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-watermelon-ice.png — shape IoU 0.974 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/lychee-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "lychee",
+  "fileName": "variant-lychee.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-lychee.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-lychee.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-lychee.png — shape IoU 0.978 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/peach-straw-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "peach-strawberry",
+  "fileName": "variant-peach-strawberry.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-peach-straw.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-peach-straw.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-peach-straw.png — shape IoU 0.969 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/strawberry-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "strawberry-kiwi",
+  "fileName": "variant-strawberry-kiwi.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-strawberry.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-strawberry.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-strawberry.png — shape IoU 0.96 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/water-bbg-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "watermelon-bubblegum",
+  "fileName": "variant-watermelon-bubblegum.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-water-bbg.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-water-bbg.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-water-bbg.png — shape IoU 0.963 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/blueberry-ice-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "blueberry",
+  "fileName": "variant-blueberry.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-blueberry-ice.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-blueberry-ice.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-blueberry-ice.png — shape IoU 0.966 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/white-slush-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "white-slush",
+  "fileName": "variant-white-slush.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-white-slush.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-white-slush.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-white-slush.png — shape IoU 0.97 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/straw-banana-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "strawberry-banana",
+  "fileName": "variant-strawberry-banana.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-straw-banana.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-straw-banana.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-straw-banana.png — shape IoU 0.972 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/nexbar-clear/flav-out/honeydew-melon-cut.png",
+  "slug": "nexbar-clear-18k",
+  "role": "variant",
+  "id": "honeydew-melon",
+  "fileName": "variant-honeydew-melon.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k 1:1 (job _incoming/nexbar-clear/flav-out/job-honeydew-melon.json; prompt beside it)",
+   "reference": "1 = our passed card render _incoming/nexbar-clear/out/card-front.png (shape) · 2 = the maker's flavour poster https://pod789.com/wp-content/uploads/2026/08/nexbar-16k-honeydew-melon.jpg (liquid colour + printed label)",
+   "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-honeydew-melon.png — shape IoU 0.982 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
+  },
+  "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
  }
 ]

@@ -110,3 +110,10 @@ title ที่เปลี่ยนวันที่ 2026-09-23 (รายล�
   technology `onboard-touch-displays` + `gesture-and-triple-tap-control` (3 languages), `pod-159` (20 flavours, 7 spec rows),
   `m-switch-pod` (+ resistance row), `m-bar-pod` (+ capacity row, card line "2.2mL"), `joiway-f3` / `joiway-f4` (short
   description = also their meta description), `coil-94` (meta description: "ความจุ 2mL" cut).
+
+## Image-fix round, Nexbar / WOTOFO (2026-09-30) - variables added before the 2026-10-05 read (main agent)
+
+- New page `/products/wotofo-nexbar-18k` (PR #121, sitemap +1, product count 53 -> 54 on the home page and the `/products` head); priced 359 and sold out in every flavour (#122) - its Offer and joiway-f4's say OutOfStock since #122 (every option sold out).
+- `/products/pod-180` (control group: one of the 46 pages with the price in the title): now nexBar CLEAR 18K with no brand - H1/title name "nexBar CLEAR 18K" (was "WOTOFO Nexbar Clear 18k"), new meta description, JSON-LD without Brand, new card photo, 15 flavours (was 10), new spec rows, review clip moved to the WOTOFO page. Read this page apart from the rest of the control group.
+- `/brands/wotofo`: title/description without a price (was the price of pod-180); lists only WOTOFO nexBAR 18K.
+- The 7 held pages: HTML identical to live before each merge (html-diff 8/8 incl. pod-180 before PR-B); sitemap lastmod of legacy products moved (product-copy-th.ts date).

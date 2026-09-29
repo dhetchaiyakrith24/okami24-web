@@ -262,6 +262,28 @@ const CASES: ContractCase[] = (() => {
       }),
     },
     {
+      // Image-fix round 2026-09-29: the owner ruled Pod-180 carries no brand — the explicit flag is the only way in.
+      name: "published record: null brandId + brandless — accepted (owner-ruled brandless product)",
+      expectRejection: false,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-brandless",
+        slug: "synthetic-published-brandless",
+        publicationStatus: "published",
+        brandId: null,
+        brandless: true,
+      }),
+    },
+    {
+      name: "published record: a brand AND brandless — rejected (the two contradict)",
+      expectRejection: true,
+      product: baseSyntheticProduct({
+        internalId: "synthetic-published-brand-and-brandless",
+        slug: "synthetic-published-brand-and-brandless",
+        publicationStatus: "published",
+        brandless: true,
+      }),
+    },
+    {
       name: "published record: null categoryId — rejected by publication readiness (registry)",
       expectRejection: true,
       product: baseSyntheticProduct({

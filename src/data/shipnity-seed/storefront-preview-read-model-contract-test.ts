@@ -31,7 +31,8 @@ const candidateById = new Map(
 );
 const EXPECTED_RENDERABLE_IDS = EXPECTED_IDS.filter((id) => {
   const c = candidateById.get(id);
-  return Boolean(c?.brandId && c?.categoryId && c?.tagline);
+  // A brandless product (owner ruling, `brandless: true`) renders without a brand — same rule as toView().
+  return Boolean((c?.brandId || c?.brandless) && c?.categoryId && c?.tagline);
 });
 
 export function runStorefrontReadModelContractTests(): ReadModelContractResult[] {
@@ -60,7 +61,7 @@ export function runStorefrontReadModelContractTests(): ReadModelContractResult[]
 
   check(
     "every view has a real, non-empty brand/category/tagline (no fabricated fallback text)",
-    views.every((v) => v.brandName.length > 0 && v.categoryName.length > 0 && v.tagline.length > 0),
+    views.every((v) => (v.brandName === null ? v.brandId === null : v.brandName.length > 0) && v.categoryName.length > 0 && v.tagline.length > 0),
     JSON.stringify(views)
   );
 

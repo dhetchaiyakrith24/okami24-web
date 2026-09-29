@@ -67,7 +67,9 @@ function slugifyValue(text: string): string {
 // ===================================================================================
 
 interface TaxonomyMatch {
-  brandId: string;
+  /** null only together with `brandless: true` (owner ruling: the product carries no brand on the site). */
+  brandId: string | null;
+  brandless?: true;
   /** Absent when the brand is explicit in the text but no matching family/product-line record
    *  exists yet (e.g. "Voopoo PnP-X" — brand=voopoo confirmed, but no "PnP" family is committed). */
   familyId?: string;
@@ -337,30 +339,11 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // as a real current product line — an exact size match, not a coincidence.
   "Pod-169": { brandId: "infy", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "หัว infy 2.5 ml" states the brand explicitly; infy.my (official) lists "2.5ML Cartridge" as a real INFY product line — an exact size match' },
 
-  // Full-catalog mission — Nexbar resolved to WOTOFO (an established international hardware
-  // brand with a real official site), settling the earlier "collision risk with Wotofo's own
-  // nexBAR" deferral in its favor rather than against it: wotofo.com/collections/nexbar-series
-  // and wotofo.com/products/wotofo-nexbar-18k directly confirm a real "nexBAR 18K" product
-  // (750mAh, USB-C, up to 18,000 puffs, dual nexMESH coils 1.2Ω, 20 flavor options) — an exact
-  // puff-count and price-tier match to this Shipnity parent. The Shipnity name's "Clear" qualifier
-  // could not be independently confirmed against a distinctly-named official edition (Wotofo's own
-  // site shows "Standard"/"Vivid Edition" naming, no edition explicitly called "Clear"/
-  // "Transparent") — carried forward as-is from the source, not asserted as verified.
-  // Catalog-intelligence mission (2026-09-02) — attempted to close the media gap this session.
-  // Downloaded and visually inspected wotofo.com's own two official nexBAR 18K product renders
-  // (Shopify CDN, cdn.shopify.com/.../wotofo-nexbar-18k-{1,26}.jpg — both tier-1, first-party).
-  // REJECTED both: the retail-box shot legibly prints "DOUBLE APPLE" and the device-only shot
-  // prints "LEMON LIME" directly on the unit — neither flavor is in this record's active
-  // 10-flavor Thai lineup, and Wotofo's variant data has no image_id per flavor to select from
-  // (every official shot is a fixed flavor, not swappable). Using either would show a customer a
-  // real Wotofo product printed with a flavor OKami24 doesn't stock. STILL UNPUBLISHED (media) —
-  // no clean alternative found; a retailer's per-flavor set exists but is a heavy marketing
-  // composite with no watermark-free crop (see also the Thai-flavor-lineup mismatch flag below).
-  // ALSO FLAGGED: this record's own 10-flavor lineup matches NO single official or retailer
-  // source found (Wotofo's own list, and two different Thai retailers' stock, are each a
-  // different 10) — the flavors here are plausibly a genuine Thai-market lineup but that has not
-  // been independently corroborated; publish, if ever, as retailer-supplied and uncorroborated.
-  "Pod-180": { brandId: "wotofo", categoryId: "disposables", systemType: "disposable", evidence: 'name "Nexbar Clear 18k" — wotofo.com\'s own official nexBAR 18K product/collection pages confirm a real, matching product (18,000 puffs, 750mAh, dual nexMESH coils, 20 flavors); the "Clear" edition-name qualifier itself is carried from the Shipnity label, not independently confirmed against an official edition name' },
+  // Nexbar history (WOTOFO match 2026-09-02/03, media hunt) superseded by the owner ruling below — see git history.
+  // Image-fix round (owner 2026-09-29): the shop sells nexBar CLEAR 18K (clear body, "nexBar CLEAR 18K" printed on the
+  // device — owner's photos), NOT WOTOFO's carbon-look nexBAR 18K the earlier match assumed from the name. Owner ruling:
+  // no brand on the site. WOTOFO keeps its own real product (src/data/products/wotofo.ts).
+  "Pod-180": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'owner ruling 2026-09-29 (image-fix round): Shipnity "Nexbar Clear 18k" = nexBar CLEAR 18K, sold without a brand on the site; the earlier WOTOFO match was a name look-alike (WOTOFO nexBAR 18K is a different device)' },
 
   // ===================================================================================
   // Heated-tobacco wave — owner has settled the business/legal-scope question for this category;
@@ -613,9 +596,10 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA ONE",
     shortDescription: "อุปกรณ์รุ่น ILUMA ONE จากแบรนด์ IQOS — ข้อมูล Shipnity ปัจจุบันมี 2 รุ่นย่อยปนกัน (ตัวถังเดิมสีเทา และรุ่น i สีฟ้า) ยังไม่แยกชัดเจน",
   },
+  // Image-fix round 2026-09-30: nexBar CLEAR 18K, no brand (owner ruling) — writer draft A, owner "ตามแนะนำ".
   "Pod-180": {
-    tagline: "พอตใช้แล้วทิ้ง Nexbar 18K จากแบรนด์ WOTOFO",
-    shortDescription: "พอตใช้แล้วทิ้งรุ่น nexBAR 18K จากแบรนด์ WOTOFO",
+    tagline: "พอตใช้แล้วทิ้งตัวใส 18,000 พัฟ คอยล์ mesh สองตัว มี 2 โหมด Normal กับ Turbo",
+    shortDescription: "พอตใช้แล้วทิ้งสูงสุด 18,000 พัฟ น้ำยา 18mL ในถังใส เห็นว่าเหลือเท่าไหร่ แบตเตอรี่ 650mAh ชาร์จผ่าน USB-C คอยล์ mesh สองตัว ปรับลมได้ มี 2 โหมด Normal สูบนุ่ม น้ำยาหมดช้าลง กับ Turbo รสเต็ม ไอหนา ผู้ผลิตทำมา 15 กลิ่น",
   },
 };
 
@@ -998,16 +982,18 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
   // stocked for the Thai market (see this record's real `variants` in the ProductMaster candidate
   // below) — a common real pattern for a global brand's region-specific flavor releases. The card
   // photo is the same physical hardware in both markets; the flavor list is Thailand's own.
+  // Image-fix round 2026-09-30: the old card was WOTOFO's nexBAR 18K (another device — it moved to src/data/products/wotofo.ts).
+  // New card = OKami24 Higgsfield remake of the device on the maker's own poster (owner-supplied); scripts/process-images.map.json.
   "Pod-180": [
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/nexbar-clear-18k/card.webp",
-      alt: "WOTOFO nexBAR 18K disposable, isolated product shot",
-      angle: "Front, isolated. Owner-reported correction (2026-09-04): the prior flat black-background crop is replaced with a genuinely alpha-keyed version of the SAME source photo. The device's own black plastic body is pixel-identical to the black studio backdrop in places (confirmed by direct pixel sampling), so a plain color-distance key alone punches a hole through the device — fixed with a two-pass approach: key the background at a tight tolerance (most of the device survives since it isn't perfectly pure black), then restore full opacity to any transparent pixel NOT connected to the image's outer border (i.e. an interior \"hole\" surrounded by real device pixels, not actual background) using its own original color. This is wotofo.com's own default/featured product image, shared across every one of ITS listed flavor variants on the official site — used here as a general device-identity shot, not a claim about representing any one specific Thai-market flavor.",
+      src: "/assets/products/nexbar-clear-18k/card-v2.webp",
+      alt: "nexBar CLEAR 18K disposable, clear body, front view",
+      angle: "Front, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) of the device on the maker's own poster (owner-supplied, also on https://ihavevape.net/product/nexbar-clear-18k-puffs/).",
       transparentBackground: true,
-      sourceName: "WOTOFO (official brand site, wotofo.com)",
-      sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k",
+      sourceName: "OKami24 render (Higgsfield) from the maker's poster",
+      sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/",
     },
   ],
 };
@@ -1200,13 +1186,20 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://eskobarvape.com/product/pod-system/"],
   },
+  // Image-fix round 2026-09-30: nexBar CLEAR 18K. No maker site exists (researcher 29-30/09); the facts are the maker's
+  // own poster, which the owner supplied and which https://ihavevape.net/product/nexbar-clear-18k-puffs/ and https://pod789.com/product/nexbar-18k-2/ carry verbatim.
+  // Rows name no sourceUrl: a row URL must be a maker domain (verified-specs test), and none exists for this device.
   "Pod-180": {
     specifications: [
-      { key: "battery", label: "แบตเตอรี่", value: "750mAh ชาร์จซ้ำได้ผ่าน USB-C", sourceStatus: "verified" },
-      { key: "coil", label: "คอยล์", value: "คอยล์ nexMESH คู่ 1.2Ω (ในตัว)", sourceStatus: "verified" },
-      { key: "capacity", label: "ความจุน้ำยา", value: "~18 mL", sourceStatus: "verified" },
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 18,000", sourceStatus: "verified" },
+      { key: "battery", label: "แบตเตอรี่", value: "650mAh", sourceStatus: "verified" },
+      { key: "charging", label: "การชาร์จ", value: "ชาร์จซ้ำได้ผ่าน USB-C", sourceStatus: "verified" },
+      { key: "capacity", label: "ความจุน้ำยา", value: "18mL", sourceStatus: "verified" },
+      { key: "coil", label: "คอยล์", value: "Dual Nex Mesh (mesh สองตัว)", sourceStatus: "verified" },
+      { key: "airflow", label: "ช่องลม", value: "ปรับได้", sourceStatus: "verified" },
+      { key: "modes", label: "โหมดการทำงาน", value: "Normal สูบนุ่ม ใช้ได้นานขึ้น / Turbo รสเต็ม ไอหนา", sourceStatus: "verified" },
     ],
-    sourceUrls: ["https://www.wotofo.com/products/wotofo-nexbar-18k"],
+    sourceUrls: ["https://ihavevape.net/product/nexbar-clear-18k-puffs/", "https://pod789.com/product/nexbar-18k-2/"],
   },
   "IQOSHEET-14": {
     specifications: [
@@ -1265,6 +1258,27 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
 // ===================================================================================
 
 const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
+  // Image-fix round 2026-09-30: nexBar CLEAR 18K — every flavour is the same clear device; our passed front card is the
+  // template and each maker flavour poster (https://pod789.com/product/nexbar-18k-2/) gives the e-liquid colour and the printed flavour label.
+  "Pod-180": {
+    "Pod-180-1": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-grape-ice.webp", alt: "nexBar CLEAR 18K, Grape Ice", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "Pod-180-2": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-grape-lychee.webp", alt: "nexBar CLEAR 18K, Grape Lychee", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "Pod-180-3": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-mint.webp", alt: "nexBar CLEAR 18K, Mint", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "Pod-180-4": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-watermelon-ice.webp", alt: "nexBar CLEAR 18K, Watermelon Ice", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "Pod-180-5": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-mixberry.webp", alt: "nexBar CLEAR 18K, Mixberry", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "Pod-180-7": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-strawberry-watermelon.webp", alt: "nexBar CLEAR 18K, Strawberry Watermelon", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "Pod-180-8": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-strawberry-custard.webp", alt: "nexBar CLEAR 18K, Strawberry Custard", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "Pod-180-11": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-watermelon-bubblegum.webp", alt: "nexBar CLEAR 18K, Watermelon Bubblegum", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "Pod-180-12": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-white-slush.webp", alt: "nexBar CLEAR 18K, White Slush", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "Pod-180-13": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-strawberry-kiwi.webp", alt: "nexBar CLEAR 18K, Strawberry Kiwi", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    // The maker contradicts itself: its 15-flavour list (owner poster, both shops) says "Blueberry", its own Blueberry
+    // poster shows the device printed "BLUEBERRY ICE". The name follows the list, the photo shows the real print.
+    "pod-180-verified-blueberry": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-blueberry.webp", alt: "nexBar CLEAR 18K, Blueberry (the device prints BLUEBERRY ICE; the maker's 15-flavour list says Blueberry)", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "pod-180-verified-lychee": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-lychee.webp", alt: "nexBar CLEAR 18K, Lychee", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "pod-180-verified-honeydew-melon": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-honeydew-melon.webp", alt: "nexBar CLEAR 18K, Honeydew Melon", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "pod-180-verified-strawberry-banana": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-strawberry-banana.webp", alt: "nexBar CLEAR 18K, Strawberry Banana", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+    "pod-180-verified-peach-strawberry": { kind: "official-photo", role: "detail", src: "/assets/products/nexbar-clear-18k/variant-peach-strawberry.webp", alt: "nexBar CLEAR 18K, Peach Strawberry", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the maker's flavour poster", sourceUrl: "https://pod789.com/product/nexbar-18k-2/" },
+  },
   // Image-fix round 2026-09-29 (owner rulings, docs/IMAGE_SPEC.md §0 item 7): every ESKO BAR SWITCH pod is the same
   // black pod — only the printed flavour differs — so ONE Higgsfield master of the maker's own pod photo was made and each
   // flavour's name (and Extra Menthol's 5% strength line) re-typeset exactly as on the maker's pod (no AI redraw).
@@ -1428,6 +1442,14 @@ export interface VerifiedAdditionalOptionValue {
 }
 
 export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOptionValue[]> = {
+  // Image-fix round 2026-09-30: nexBar CLEAR 18K — the maker's poster lists 15 flavours; these 5 are not in Shipnity.
+  "Pod-180": [
+    { code: "blueberry", label: "Blueberry", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
+    { code: "lychee", label: "Lychee", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
+    { code: "honeydew-melon", label: "Honeydew Melon", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
+    { code: "strawberry-banana", label: "Strawberry Banana", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
+    { code: "peach-strawberry", label: "Peach Strawberry", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
+  ],
   // Tier-1 disposable growth mission (2026-09-03). Pod-159's active (have_stock=true) children are
   // only the 2 flavors currently bundled in stock (Cool Mint, Cola) — but eskobarvape.com's own
   // official SWITCH product page (https://eskobarvape.com/product/pod-system/) shows a real,
@@ -1467,7 +1489,6 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
 export const VERIFIED_REVIEW_VIDEOS: Record<string, { videoId: string; title: string; channelName: string; publishedAt: string }> = {
   // publishedAt = the clip's YouTube upload date (round "clip" 2026-09-27, read from YouTube's own video data).
   "Pod-159": { videoId: "kJd5rnEtg_Y", title: "ESKO BAR 20K และ ESKO BAR SWITCH 20K เล็กเจอใหญ่", channelName: "OKM YARZ", publishedAt: "2026-01-27" },
-  "Pod-180": { videoId: "YhtKKjRwF3Q", title: "WOTOFO NEXBAR 18K ชื่อนี้ไม่ต้องลุ้น!", channelName: "POD SYSTEM OKAMI II", publishedAt: "2026-04-20" },
 };
 
 export function buildVariantStructure(
@@ -1637,6 +1658,7 @@ function attachVariantMedia(shipnityProductId: string, variants: ProductMasterIn
  */
 const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: string }> = {
   "Pod-159": { name: "ESKO BAR SWITCH 20K", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+  "Pod-180": { name: "nexBar CLEAR 18K", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
   "IQOSHEET-16": { name: "IQOS ILUMA i PRIME", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
   "IQOSHEET-18": { name: "IQOS ILUMA i", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
 };
@@ -1669,6 +1691,7 @@ function buildDraftCandidate(
     lifecycleStatus: "active", // genuinely active per Shipnity's own "have stock" view
     publicationStatus: approval ? "published" : "unpublished",
     brandId: match?.brandId ?? null,
+    ...(match?.brandless ? { brandless: true as const } : {}),
     familyId: match?.familyId ?? null,
     categoryId: match?.categoryId ?? null,
     // ProductMaster's own SystemType is device-only by design (see product-master-schema.ts's own
@@ -1725,7 +1748,7 @@ function buildDraftCandidate(
   // comment. Kept in sync manually since this is a UI/reporting convenience flag, not itself a
   // validation gate (the registry validator is the single source of truth for readiness).
   const isDraft =
-    product.brandId === null ||
+    (product.brandId === null && product.brandless !== true) ||
     product.categoryId === null ||
     product.tagline === null ||
     product.shortDescription === null;

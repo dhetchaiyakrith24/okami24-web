@@ -54,6 +54,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Watermelon Ice",
   "Blackberry Ice",
   "Forest Berries",
+  "Honeydew Melon",
   "Berries Party",
   "Blueberry Ice",
   "Blueberry Jam",

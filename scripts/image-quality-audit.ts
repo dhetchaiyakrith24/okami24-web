@@ -323,13 +323,13 @@ async function main() {
   }
 
   for (const v of getPublishedProducts()) {
-    if (v.image) await add({ slug: v.slug, brand: v.brandName, source: "product-master", role: "pm-card", option: null, src: v.image.src });
-    if (v.variantFallbackImage) await add({ slug: v.slug, brand: v.brandName, source: "product-master", role: "pm-fallback", option: null, src: v.variantFallbackImage.src });
-    for (const va of v.variants) if (va.image) await add({ slug: v.slug, brand: v.brandName, source: "product-master", role: "pm-variant", option: va.label, src: va.image.src });
+    if (v.image) await add({ slug: v.slug, brand: v.brandName ?? "", source: "product-master", role: "pm-card", option: null, src: v.image.src });
+    if (v.variantFallbackImage) await add({ slug: v.slug, brand: v.brandName ?? "", source: "product-master", role: "pm-fallback", option: null, src: v.variantFallbackImage.src });
+    for (const va of v.variants) if (va.image) await add({ slug: v.slug, brand: v.brandName ?? "", source: "product-master", role: "pm-variant", option: va.label, src: va.image.src });
     const axis = v.optionAxisCode ?? "none";
     const opts = v.variants.map((va) => ({ name: va.label, image: va.image?.src ?? null }));
     products.push({
-      slug: v.slug, brand: v.brandName, source: "product-master", name: v.displayName, systemType: v.systemType,
+      slug: v.slug, brand: v.brandName ?? "", source: "product-master", name: v.displayName, systemType: v.systemType,
       hidden: null, isFlagship: v.isFlagship, shipnityProductId: v.shipnityProductId,
       card: v.image?.src ?? null, lineup: null, details: 0,
       colors: axis === "color" ? opts : [], flavors: axis === "flavor" ? opts : [],

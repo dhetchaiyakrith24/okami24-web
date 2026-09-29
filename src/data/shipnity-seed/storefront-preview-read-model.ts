@@ -55,7 +55,8 @@ import { projectActiveCatalog, getNeutralVariantFallback } from "./active-catalo
  *  verifiable official first-party source for a real Brand record — see the Phase 3.5 report (and
  *  this session's report for a fresh, still-negative re-check of Muro/Vape Maker, Foli Bar,
  *  Reswa, and Nexbar specifically — Nexbar in particular has a real naming-collision risk with
- *  Wotofo's own, unrelated "nexBar" product, so leave it deferred rather than guess). Also
+ *  Wotofo's own, unrelated "nexBar" product, so leave it deferred rather than guess). (Superseded 2026-09-29:
+ *  Pod-180 = nexBar CLEAR 18K, published without a brand — owner ruling.) Also
  *  investigated and correctly NOT added: Pod-168/Pod-177/Pod-179 (Caliburn G4 Pro / Vmate i3 /
  *  Argus G4) — real, well-known flagship devices, but each already exists in the legacy catalog
  *  (`caliburn-g4-pro`/`vmate-i3`/`argus-g4`); `projectActiveCatalog()`'s own dedup check already
@@ -80,10 +81,7 @@ export const PREVIEW_SHIPNITY_IDS = [
   "Pod-159", "Pod-149", "Pod-150", "Disposable-34",
   "ELIQUID-1", "Eliquid-109", "eliquid-133",
   "coil-54", "coil-62", "Pod-169",
-  // Full-catalog mission — Nexbar (Pod-180) resolved to WOTOFO with real official specs; stays
-  // media-blocked (no confidently variant-matching isolated product image found — see
-  // TAXONOMY_MATCHES["Pod-180"]'s comment), same "resolved identity, no VERIFIED_MEDIA entry yet"
-  // pattern as several other pilot entries above.
+  // Pod-180 = nexBar CLEAR 18K, brandless (owner ruling 2026-09-29) — see TAXONOMY_MATCHES["Pod-180"].
   "Pod-180",
   // Heated-tobacco wave — full identity/taxonomy/media/spec/price treatment (owner has settled
   // the business/legal-scope question for this category). IQOSHEET-17 included for DEV-review
@@ -143,8 +141,9 @@ export interface StorefrontProductView {
   /** Real ProductMaster brandId/categoryId (e.g. "voopoo", "pods-cartridges") — kept alongside
    *  the display names so Phase 3.0's storefront bridge can filter by category/brand the same
    *  way the legacy catalog does, without re-deriving them from the display strings. */
-  brandId: string;
-  brandName: string;
+  /** null = a brandless product (owner ruling, `ProductMasterInput.brandless`) — nothing is shown where a brand would be. */
+  brandId: string | null;
+  brandName: string | null;
   categoryId: string;
   categoryName: string;
   systemType: string | null;
@@ -201,10 +200,10 @@ export interface StorefrontProductView {
 function toView(product: ProductMasterInput): StorefrontProductView | null {
   // Only render what readiness actually guaranteed non-null — never substitute a placeholder
   // string for a field that's genuinely absent on this record.
-  if (!product.brandId || !product.categoryId || !product.tagline) return null;
-  const brand = getBrand(product.brandId);
+  if (!(product.brandId || product.brandless) || !product.categoryId || !product.tagline) return null;
+  const brand = product.brandId ? getBrand(product.brandId) : null;
   const category = getCategory(product.categoryId);
-  if (!brand || !category) return null; // a dangling FK here would mean a real upstream bug
+  if ((product.brandId && !brand) || !category) return null; // a dangling FK here would mean a real upstream bug
 
   const axis = product.optionDefinitions[0];
   const valueLabelByCode = new Map(axis?.allowedValues.map((v) => [v.code, v.label] as const) ?? []);
@@ -217,7 +216,7 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
     displayName: product.displayName,
     tagline: product.tagline,
     brandId: product.brandId,
-    brandName: brand.name,
+    brandName: brand?.name ?? null,
     categoryId: product.categoryId,
     categoryName: category.name,
     systemType: product.systemType,

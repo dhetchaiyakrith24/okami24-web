@@ -85,7 +85,12 @@ export function PilotProductCard({ product }: { product: StorefrontProductView }
 
       <div className="flex flex-1 flex-col gap-2 p-5 max-lg:gap-1 max-lg:p-3">
         {/* Round 30.4ค batch 8: brand mark and category name keep the mono look in Thai (label-lang.ts). */}
-        <span className="label-mono text-[0.65rem] text-foreground-dim max-lg:text-[0.6rem]" lang={labelLang(product.brandName)}>{product.brandName}</span>
+        {/* A brandless product (owner ruling, Pod-180) shows no brand; the empty line keeps the card rows aligned. */}
+        {product.brandName ? (
+          <span className="label-mono text-[0.65rem] text-foreground-dim max-lg:text-[0.6rem]" lang={labelLang(product.brandName)}>{product.brandName}</span>
+        ) : (
+          <span aria-hidden="true" className="label-mono min-h-[1lh] text-[0.65rem] max-lg:text-[0.6rem]" />
+        )}
         <h3 className="font-display text-xl font-semibold leading-tight tracking-tight text-foreground max-lg:line-clamp-2 max-lg:min-h-[2.5em] max-lg:text-sm max-lg:leading-[1.25]">{product.displayName}</h3>
         {/* Round 30.3: ProductMaster copy is written in Thai, so the English/Chinese storefront used to
             show the Thai line here — pilotTagline() reads the English overlay when there is one. */}
