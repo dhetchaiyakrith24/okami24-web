@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -10,9 +10,9 @@ import { cn } from "@/lib/utils";
  * slide that is in view IS the selected option — swiping is a real selection, the same one the
  * chips make, not a preview (spec 2.2). Both directions stay in sync:
  *   - swipe → the parent's `onSelect(id)` fires once the scroll settles on a slide;
- *   - chip tap → `selectedId` changes → the gallery scrolls to that slide.
- * A flag remembers a scroll the gallery started itself, so that scroll does not bounce back as
- * a "user picked this" event; any touch clears the flag because the customer has taken over.
+ *   - chip tap → `selectedId` changes → the gallery jumps to that slide (no animation, 2026-09-30).
+ * A scroll only becomes a selection after a real gesture (touch, pointer, wheel); a scroll the
+ * gallery or the browser made is lined back up with the selection instead.
  *
  * Gesture: a native horizontal scroll-snap track, nothing custom. The browser decides from the
  * first movement whether a drag is horizontal (slides) or vertical (page), so the gallery never
@@ -22,8 +22,8 @@ import { cn } from "@/lib/utils";
  *
  * Owner decision A-ข (2026-09-08): an option that is sold out is still a slide — the customer
  * can swipe onto it and see it (catalogue completeness), the page then shows its sold-out
- * state; the chips for such options stay disabled exactly as before. Reduced motion: the
- * programmatic scroll jumps instead of animating. The frame has a fixed aspect ratio, so no
+ * state; the chips for such options stay disabled exactly as before. A selection from outside
+ * the gallery never animates, so reduced motion needs nothing extra. The frame has a fixed aspect ratio, so no
  * layout shift while images load.
  *
  * This component owns no selection state (P1: the state stays in the page, where M5 will read
@@ -45,6 +45,23 @@ export interface GallerySlide {
  */
 export const MOBILE_SLIDE_SIZES = "(min-width: 1024px) 1px, 90vw";
 
+// Slide `i`'s exact left edge inside the track (slides can be fractional pixels wide, so never
+// `i * clientWidth`, which drifts by the rounding once per slide).
+function slideLeft(el: HTMLDivElement, i: number) {
+  const child = el.children[i] as HTMLElement | undefined;
+  return child ? child.getBoundingClientRect().left - el.getBoundingClientRect().left + el.scrollLeft : 0;
+}
+function slideOnScreen(el: HTMLDivElement) {
+  return el.clientWidth ? Math.round(el.scrollLeft / el.clientWidth) : 0;
+}
+// Put slide `i` on screen in one step. No smooth scroll (owner's bugs 2026-09-30): an animated scroll from a chip
+// tap slid through every flavour in between (Grape Ice, Grape Lychee… on the way to Mint), and it only moves on
+// painted frames — in a browser that is not painting it never left the cover photo ("tapped Mint, the photo stayed").
+function alignTo(el: HTMLDivElement, i: number) {
+  if (slideOnScreen(el) === i) return;
+  el.scrollTo({ left: slideLeft(el, i), behavior: "auto" });
+}
+
 export function MobileVariantGallery({
   slides,
   selectedId,
@@ -64,38 +81,37 @@ export function MobileVariantGallery({
   ariaLabel?: string;
 }) {
   const track = useRef<HTMLDivElement>(null);
-  const programmatic = useRef<string | null>(null);
   const settleTimer = useRef<number | null>(null);
-  const mounted = useRef(false);
   // Only a real gesture (touch, pointer, wheel) may turn a scroll into a selection. Browsers also
   // move scroll containers on their own — a re-layout after a viewport change can reset
   // scrollLeft to 0 — and that must never read as "the customer swiped back to the first
   // option" (seen 2026-09-08). Without a gesture the track is re-aligned to the selection.
   const userGesture = useRef(false);
+  // A finger is on the track: never settle mid-drag (the Safari timer path below could fire while a finger rests).
+  const touching = useRef(false);
   const index = Math.max(0, slides.findIndex((s) => s.id === selectedId));
+  // The settle handlers run from scroll events and timers created during an EARLIER render. Reading
+  // `slides`/`selectedId`/`index` from their closures is what made a swipe flash (owner, 2026-09-30):
+  // `scrollend` and the 120 ms timer BOTH settled one swipe A→B; the first selected B, the second still
+  // believed A was selected, took B for "the browser moved the track" and scrolled back to A — then the
+  // selection effect scrolled to B again (A→B→A→B, measured with scripts/gallery-probe.js). They read
+  // the latest render through this ref instead, and only one of the two events settles (see below).
+  const latest = useRef({ slides, selectedId, onSelect, index });
+  useLayoutEffect(() => {
+    latest.current = { slides, selectedId, onSelect, index };
+  });
 
-  // Selection (chips, initial state) → scroll the matching slide into view.
+  // Selection (chips, initial state) → the matching slide on screen.
   useEffect(() => {
     const el = track.current;
-    if (!el) return;
-    const width = el.clientWidth;
-    if (!width) return;
-    const target = index * width;
-    if (Math.abs(el.scrollLeft - target) < 2) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    programmatic.current = slides[index]?.id ?? null;
-    el.scrollTo({ left: target, behavior: reduce || !mounted.current ? "auto" : "smooth" });
-  }, [index, slides]);
-
-  useEffect(() => {
-    mounted.current = true;
-  }, []);
+    if (el && el.clientWidth) alignTo(el, index);
+  }, [index]);
 
   // The selection, not the scroll offset, is the source of truth. When the track's width changes
   // (rotation, the browser chrome collapsing, a viewport resize) browsers may reset or rescale
   // scrollLeft; without this the settle logic would read the reset offset as a swipe back to the
   // first option (seen 2026-09-08 in the screenshot tool, which resizes the viewport after the
-  // interaction). Re-align the track to the selected slide instead, without animation.
+  // interaction). Re-align the track to the selected slide instead.
   useEffect(() => {
     const el = track.current;
     if (!el || typeof ResizeObserver === "undefined") return;
@@ -104,53 +120,63 @@ export function MobileVariantGallery({
       const width = el.clientWidth;
       if (!width || width === lastWidth) return;
       lastWidth = width;
-      programmatic.current = slides[index]?.id ?? null;
-      el.scrollTo({ left: index * width, behavior: "auto" });
+      el.scrollTo({ left: slideLeft(el, latest.current.index), behavior: "auto" });
     });
     ro.observe(el);
     return () => ro.disconnect();
-  }, [index, slides]);
+  }, []);
 
-  // Scroll → selection, once the track has settled on a slide.
+  // Scroll → selection, once the track has come to rest on a slide.
   const settle = () => {
     const el = track.current;
-    if (!el) return;
-    const width = el.clientWidth;
-    if (!width) return;
-    const slide = slides[Math.round(el.scrollLeft / width)];
+    if (!el || !el.clientWidth || touching.current) return;
+    const { slides: now, selectedId: picked, onSelect: select, index: at } = latest.current;
+    const slide = now[slideOnScreen(el)];
     if (!slide) return;
-    if (programmatic.current) {
-      if (slide.id === programmatic.current) programmatic.current = null;
+    if (slide.id === picked) {
+      userGesture.current = false;
       return;
     }
-    if (slide.id === selectedId) return;
     if (userGesture.current) {
       userGesture.current = false;
-      onSelect(slide.id);
+      select(slide.id);
       return;
     }
     // Not the customer: the browser moved the track. Put it back on the selected slide.
-    programmatic.current = slides[index]?.id ?? null;
-    el.scrollTo({ left: index * width, behavior: "auto" });
+    alignTo(el, at);
   };
 
+  // One settle signal per scroll: `scrollend` where the browser has it, else a short timer after the last
+  // scroll event (Safari before `scrollend`) — never both.
+  const hasScrollEnd = typeof window !== "undefined" && "onscrollend" in window;
   useEffect(() => {
     const el = track.current;
-    if (!el) return;
+    if (!el || !hasScrollEnd) return;
     const onScrollEnd = () => settle();
     el.addEventListener("scrollend", onScrollEnd);
     return () => el.removeEventListener("scrollend", onScrollEnd);
-  });
+    // `settle` reads everything it needs through refs, so the listener never goes stale.
+  }, [hasScrollEnd]);
 
-  const onScroll = () => {
-    // Fallback for browsers without `scrollend` (Safari): settle shortly after the last scroll event.
+  const scheduleSettle = () => {
     if (settleTimer.current) window.clearTimeout(settleTimer.current);
     settleTimer.current = window.setTimeout(settle, 120);
   };
+  const onScroll = () => {
+    if (!hasScrollEnd) scheduleSettle();
+  };
 
   const takeOver = () => {
-    programmatic.current = null;
     userGesture.current = true;
+  };
+  const touchStart = () => {
+    touching.current = true;
+    takeOver();
+  };
+  const touchEnd = () => {
+    touching.current = false;
+    // A finger lifted after the scroll already stopped gets no further scroll event on the timer path.
+    if (!hasScrollEnd) scheduleSettle();
   };
 
   const many = slides.length > 24;
@@ -160,7 +186,9 @@ export function MobileVariantGallery({
       <div
         ref={track}
         onScroll={onScroll}
-        onTouchStart={takeOver}
+        onTouchStart={touchStart}
+        onTouchEnd={touchEnd}
+        onTouchCancel={touchEnd}
         onPointerDown={takeOver}
         onWheel={takeOver}
         role="group"
