@@ -1903,7 +1903,7 @@
   "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/pilot-mbar10k/out/cut/all-berry.png",
+  "source": "_incoming/pilot-mbar10k/out/final/all-berry.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "all-berry",
@@ -1912,11 +1912,11 @@
    "reference": "master: public/assets/products/m-bar-10k/card-v2.webp (the owner-passed card, source _incoming/mbar10k-full/card/nb-4k.png) + its lettering close-up _incoming/pilot-mbar10k/card-letters.png; base colour: the device in this flavour's owner-passed box+device render (_incoming/pilot-mbar10k/refs-device/all-berry.png)",
    "fidelitySheet": "_incoming/pilot-mbar10k/fid/all-berry.png — base-strip deltaE max 6.6, mean 0.7 vs the passed render; M logo, BAR 10K lettering, clear cap checked by eye against the card (_incoming/pilot-mbar10k/logo-cmp.png, letters-cmp.png)"
   },
-  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48",
+  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-all-berry-v3.webp"
  },
  {
-  "source": "_incoming/pilot-mbar10k/out/cut/blue-ice.png",
+  "source": "_incoming/pilot-mbar10k/out/final/blue-ice.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "blue-ice",
@@ -1925,11 +1925,11 @@
    "reference": "master: public/assets/products/m-bar-10k/card-v2.webp (the owner-passed card, source _incoming/mbar10k-full/card/nb-4k.png) + its lettering close-up _incoming/pilot-mbar10k/card-letters.png; base colour: the device in this flavour's owner-passed box+device render (_incoming/pilot-mbar10k/refs-device/blue-ice.png)",
    "fidelitySheet": "_incoming/pilot-mbar10k/fid/blue-ice.png — base-strip deltaE max 2.2, mean 0.6 vs the passed render; M logo, BAR 10K lettering, clear cap checked by eye against the card (_incoming/pilot-mbar10k/logo-cmp.png, letters-cmp.png)"
   },
-  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48",
+  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-blue-ice-v3.webp"
  },
  {
-  "source": "_incoming/pilot-mbar10k/out/cut/cola.png",
+  "source": "_incoming/pilot-mbar10k/out/final/cola.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "cola",
@@ -1938,11 +1938,11 @@
    "reference": "master: public/assets/products/m-bar-10k/card-v2.webp (the owner-passed card, source _incoming/mbar10k-full/card/nb-4k.png) + its lettering close-up _incoming/pilot-mbar10k/card-letters.png; base colour: the device in this flavour's owner-passed box+device render (_incoming/pilot-mbar10k/refs-device/cola.png)",
    "fidelitySheet": "_incoming/pilot-mbar10k/fid/cola.png — base-strip deltaE max 1.9, mean 0.6 vs the passed render; M logo, BAR 10K lettering, clear cap checked by eye against the card (_incoming/pilot-mbar10k/logo-cmp.png, letters-cmp.png)"
   },
-  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48",
+  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-cola-v3.webp"
  },
  {
-  "source": "_incoming/pilot-mbar10k/out/cut/grape.png",
+  "source": "_incoming/pilot-mbar10k/out/final/grape.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "grape",
@@ -1951,11 +1951,11 @@
    "reference": "master: public/assets/products/m-bar-10k/card-v2.webp (the owner-passed card, source _incoming/mbar10k-full/card/nb-4k.png) + its lettering close-up _incoming/pilot-mbar10k/card-letters.png; base colour: the device in this flavour's owner-passed box+device render (_incoming/pilot-mbar10k/refs-device/grape.png)",
    "fidelitySheet": "_incoming/pilot-mbar10k/fid/grape.png — base-strip deltaE max 2.4, mean 0.6 vs the passed render; M logo, BAR 10K lettering, clear cap checked by eye against the card (_incoming/pilot-mbar10k/logo-cmp.png, letters-cmp.png)"
   },
-  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48",
+  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-grape-v2.webp"
  },
  {
-  "source": "_incoming/pilot-mbar10k/out/cut/kyoho-grape.png",
+  "source": "_incoming/pilot-mbar10k/out/final/kyoho-grape.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "kyoho-grape",
@@ -1964,11 +1964,11 @@
    "reference": "master: public/assets/products/m-bar-10k/card-v2.webp (the owner-passed card, source _incoming/mbar10k-full/card/nb-4k.png) + its lettering close-up _incoming/pilot-mbar10k/card-letters.png; base colour: the device in this flavour's owner-passed box+device render (_incoming/pilot-mbar10k/refs-device/kyoho-grape.png)",
    "fidelitySheet": "_incoming/pilot-mbar10k/fid/kyoho-grape.png — base-strip deltaE max 2, mean 0.7 vs the passed render; M logo, BAR 10K lettering, clear cap checked by eye against the card (_incoming/pilot-mbar10k/logo-cmp.png, letters-cmp.png)"
   },
-  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48",
+  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-kyoho-grape-v3.webp"
  },
  {
-  "source": "_incoming/pilot-mbar10k/out/cut/matcha-latte.png",
+  "source": "_incoming/pilot-mbar10k/out/final/matcha-latte.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "matcha-latte",
@@ -1977,11 +1977,11 @@
    "reference": "master: public/assets/products/m-bar-10k/card-v2.webp (the owner-passed card, source _incoming/mbar10k-full/card/nb-4k.png) + its lettering close-up _incoming/pilot-mbar10k/card-letters.png; base colour: the device in this flavour's owner-passed box+device render (_incoming/pilot-mbar10k/refs-device/matcha-latte.png)",
    "fidelitySheet": "_incoming/pilot-mbar10k/fid/matcha-latte.png — base-strip deltaE max 1.6, mean 0.5 vs the passed render; M logo, BAR 10K lettering, clear cap checked by eye against the card (_incoming/pilot-mbar10k/logo-cmp.png, letters-cmp.png)"
   },
-  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48",
+  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-matcha-latte-v3.webp"
  },
  {
-  "source": "_incoming/pilot-mbar10k/out/cut/menthol-blast.png",
+  "source": "_incoming/pilot-mbar10k/out/final/menthol-blast.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "menthol-blast",
@@ -1990,11 +1990,11 @@
    "reference": "master: public/assets/products/m-bar-10k/card-v2.webp (the owner-passed card, source _incoming/mbar10k-full/card/nb-4k.png) + its lettering close-up _incoming/pilot-mbar10k/card-letters.png; base colour: the device in this flavour's owner-passed box+device render (_incoming/pilot-mbar10k/refs-device/menthol-blast.png)",
    "fidelitySheet": "_incoming/pilot-mbar10k/fid/menthol-blast.png — base-strip deltaE max 1.3, mean 0.5 vs the passed render; M logo, BAR 10K lettering, clear cap checked by eye against the card (_incoming/pilot-mbar10k/logo-cmp.png, letters-cmp.png)"
   },
-  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48",
+  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-menthol-blast-v3.webp"
  },
  {
-  "source": "_incoming/pilot-mbar10k/out/cut/pink-berry.png",
+  "source": "_incoming/pilot-mbar10k/out/final/pink-berry.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "pink-berry",
@@ -2003,11 +2003,11 @@
    "reference": "master: public/assets/products/m-bar-10k/card-v2.webp (the owner-passed card, source _incoming/mbar10k-full/card/nb-4k.png) + its lettering close-up _incoming/pilot-mbar10k/card-letters.png; base colour: the device in this flavour's owner-passed box+device render (_incoming/pilot-mbar10k/refs-device/pink-berry.png)",
    "fidelitySheet": "_incoming/pilot-mbar10k/fid/pink-berry.png — base-strip deltaE max 4.6, mean 0.7 vs the passed render; M logo, BAR 10K lettering, clear cap checked by eye against the card (_incoming/pilot-mbar10k/logo-cmp.png, letters-cmp.png)"
   },
-  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48",
+  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-pink-berry-v3.webp"
  },
  {
-  "source": "_incoming/pilot-mbar10k/out/cut/strawberry-kiwi.png",
+  "source": "_incoming/pilot-mbar10k/out/final/strawberry-kiwi.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "strawberry-kiwi",
@@ -2016,11 +2016,11 @@
    "reference": "master: public/assets/products/m-bar-10k/card-v2.webp (the owner-passed card, source _incoming/mbar10k-full/card/nb-4k.png) + its lettering close-up _incoming/pilot-mbar10k/card-letters.png; base colour: the device in this flavour's owner-passed box+device render (_incoming/pilot-mbar10k/refs-device/strawberry-kiwi.png)",
    "fidelitySheet": "_incoming/pilot-mbar10k/fid/strawberry-kiwi.png — base-strip deltaE max 1.7, mean 0.7 vs the passed render; M logo, BAR 10K lettering, clear cap checked by eye against the card (_incoming/pilot-mbar10k/logo-cmp.png, letters-cmp.png)"
   },
-  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48",
+  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-strawberry-kiwi-v4.webp"
  },
  {
-  "source": "_incoming/pilot-mbar10k/out/cut/watermelon.png",
+  "source": "_incoming/pilot-mbar10k/out/final/watermelon.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "watermelon",
@@ -2029,11 +2029,11 @@
    "reference": "master: public/assets/products/m-bar-10k/card-v2.webp (the owner-passed card, source _incoming/mbar10k-full/card/nb-4k.png) + its lettering close-up _incoming/pilot-mbar10k/card-letters.png; base colour: the device in this flavour's owner-passed box+device render (_incoming/pilot-mbar10k/refs-device/watermelon.png)",
    "fidelitySheet": "_incoming/pilot-mbar10k/fid/watermelon.png — base-strip deltaE max 6.2, mean 0.8 vs the passed render; M logo, BAR 10K lettering, clear cap checked by eye against the card (_incoming/pilot-mbar10k/logo-cmp.png, letters-cmp.png)"
   },
-  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48",
+  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-watermelon-v3.webp"
  },
  {
-  "source": "_incoming/pilot-mbar10k/out/cut/watermelon-mint.png",
+  "source": "_incoming/pilot-mbar10k/out/final/watermelon-mint.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "watermelon-mint",
@@ -2042,11 +2042,11 @@
    "reference": "master: public/assets/products/m-bar-10k/card-v2.webp (the owner-passed card, source _incoming/mbar10k-full/card/nb-4k.png) + its lettering close-up _incoming/pilot-mbar10k/card-letters.png; base colour: the device in this flavour's owner-passed box+device render (_incoming/pilot-mbar10k/refs-device/watermelon-mint.png)",
    "fidelitySheet": "_incoming/pilot-mbar10k/fid/watermelon-mint.png — base-strip deltaE max 7.4, mean 0.7 vs the passed render; M logo, BAR 10K lettering, clear cap checked by eye against the card (_incoming/pilot-mbar10k/logo-cmp.png, letters-cmp.png)"
   },
-  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48",
+  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-watermelon-mint-v3.webp"
  },
  {
-  "source": "_incoming/pilot-mbar10k/out/cut/yellow-mint.png",
+  "source": "_incoming/pilot-mbar10k/out/final/yellow-mint.png",
   "slug": "m-bar-10k",
   "role": "variant",
   "id": "yellow-mint",
@@ -2055,7 +2055,7 @@
    "reference": "master: public/assets/products/m-bar-10k/card-v2.webp (the owner-passed card, source _incoming/mbar10k-full/card/nb-4k.png) + its lettering close-up _incoming/pilot-mbar10k/card-letters.png; base colour: the device in this flavour's owner-passed box+device render (_incoming/pilot-mbar10k/refs-device/yellow-mint.png)",
    "fidelitySheet": "_incoming/pilot-mbar10k/fid/yellow-mint.png — base-strip deltaE max 2.2, mean 0.5 vs the passed render; M logo, BAR 10K lettering, clear cap checked by eye against the card (_incoming/pilot-mbar10k/logo-cmp.png, letters-cmp.png)"
   },
-  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48",
+  "note": "image-fix round 2026-09-30 — owner: flavour photos show the device alone, no box (the box + device photo moves to the page's 'more details' grid as boxImage). Upright front view, the same master for every flavour so only the base colour changes when a customer swipes; flat #E9E9EC keyed with _incoming/image-fix/flatcut.js 14/48 · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5, the standard step after a 4x downscale — the unsharpened file measured phoneSharp 7.9 vs the card's 10.2 (a smooth upright matte body has fewer edges than the angled card); 0.5 = 10.9 with no visible halo, 0.8 already crunched the knurled collar (_incoming/pilot-mbar10k/sharp-cmp.png)",
   "fileName": "variant-yellow-mint-v3.webp"
  }
 ]
