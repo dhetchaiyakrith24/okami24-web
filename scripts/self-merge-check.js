@@ -199,7 +199,7 @@ function main() {
   if (sizing) console.log(blocked ? "BLOCKED - something on the site changed since the base" : "PASS - nothing on the site changed since the base (proof sizing only - not a merge verdict)");
   else if (list) console.log(blocked ? `BLOCKED - list check: ${big} big · ${site} site (gate test, not a merge verdict)` : "PASS - list check: all off the site, none big (gate test, not a merge verdict: no head commit pinned)");
   else if (blocked) console.log("BLOCKED - cannot judge this PR (see the (repo) lines) - do not merge");
-  else if (big) console.log("BIG - tell the owner briefly before merging, merge after the reply (TEAM_RULES 13.7)");
+  else if (big) console.log("BIG - merge after checker + green checks, then report it on its own line (TEAM_RULES 13.7, owner 30/09)");
   else if (site) console.log("SITE - small (tier A or B; tier B = before/after shots in the report) unless it reaches the 7 SEO-baseline pages until 05/10 = BIG (TEAM_RULES 13.7)");
   else console.log("SMALL - merge after checker PASS + all GitHub checks green, then report (TEAM_RULES 13.7)");
   process.exit(blocked ? 1 : 0);
