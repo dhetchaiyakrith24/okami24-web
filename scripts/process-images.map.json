@@ -1823,5 +1823,70 @@
   },
   "note": "image-fix round 2026-09-29 — sharp 3/4 remake of the 179-px card; background keyed with _incoming/image-fix/flatcut.js (despeckled)",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/m-bar-10k/out/recolour/final-blue_ice.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "blue-ice",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, attempt a (2 credits in total for this flavour this chat; job _incoming/web-product-images/m-bar-10k/out/recolour/job-blue_ice-a.json)",
+   "reference": "_incoming/web-product-images/m-bar-10k/out/grape-2.png (the owner-passed Grape render = template, reference 1) + _incoming/web-product-images/m-bar-10k/out/recolour/refs-clean/blue_ice.png (SALTHUB maker photo of this flavour cropped to the box front + device, props cut out = colours and label, reference 2)",
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/out/recolour/blue_ice.png — IoU 0.978, deltaE median 2.0 / max 21.1 (one cell = the mint leaf in the maker photo, bottom-left of the box); box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
+  },
+  "note": "image-fix round 2026-09-30 — recolour of the owner-passed Grape render (lesson 12: passed render as template + change only the colours; props cut out of the maker photo first); flat #E9E9EC background keyed with scripts/flatcut.js; -v2 name because a soft 28/09 photo once lived at variant-blue-ice.webp",
+  "fileName": "variant-blue-ice-v2.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/m-bar-10k/out/recolour/final-kyoho_grape.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "kyoho-grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, attempt b (4 credits in total for this flavour this chat; job _incoming/web-product-images/m-bar-10k/out/recolour/job-kyoho_grape-b.json)",
+   "reference": "_incoming/web-product-images/m-bar-10k/out/grape-2.png (the owner-passed Grape render = template, reference 1) + _incoming/web-product-images/m-bar-10k/out/recolour/refs-clean/kyoho_grape.png (SALTHUB maker photo of this flavour cropped to the box front + device, props cut out = colours and label, reference 2)",
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/out/recolour/kyoho_grape-b.png — IoU 0.979, deltaE median 1.6 / max 2.8; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
+  },
+  "note": "image-fix round 2026-09-30 — recolour of the owner-passed Grape render (lesson 12: passed render as template + change only the colours; props cut out of the maker photo first); flat #E9E9EC background keyed with scripts/flatcut.js; -v2 name because a soft 28/09 photo once lived at variant-kyoho-grape.webp",
+  "fileName": "variant-kyoho-grape-v2.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/m-bar-10k/out/recolour/final-menthol_blast.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "menthol-blast",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, attempt b (4 credits in total for this flavour this chat; job _incoming/web-product-images/m-bar-10k/out/recolour/job-menthol_blast-b.json)",
+   "reference": "_incoming/web-product-images/m-bar-10k/out/grape-2.png (the owner-passed Grape render = template, reference 1) + _incoming/web-product-images/m-bar-10k/out/recolour/refs-clean/menthol_blast.png (SALTHUB maker photo of this flavour cropped to the box front + device, props cut out = colours and label, reference 2)",
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/out/recolour/menthol_blast-b.png — IoU 0.98, deltaE median 2.1 / max 19.3 (one cell = the mint leaf in the maker photo, bottom-left of the box); box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
+  },
+  "note": "image-fix round 2026-09-30 — recolour of the owner-passed Grape render (lesson 12: passed render as template + change only the colours; props cut out of the maker photo first); flat #E9E9EC background keyed with scripts/flatcut.js; -v2 name because a soft 28/09 photo once lived at variant-menthol-blast.webp",
+  "fileName": "variant-menthol-blast-v2.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/m-bar-10k/out/recolour/final-strawberry_kiwi.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "strawberry-kiwi",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, attempt a (2 credits in total for this flavour this chat; job _incoming/web-product-images/m-bar-10k/out/recolour/job-strawberry_kiwi-a.json)",
+   "reference": "_incoming/web-product-images/m-bar-10k/out/grape-2.png (the owner-passed Grape render = template, reference 1) + _incoming/web-product-images/m-bar-10k/out/recolour/refs-clean/strawberry_kiwi.png (SALTHUB maker photo of this flavour cropped to the box front + device, props cut out = colours and label, reference 2)",
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/out/recolour/strawberry_kiwi.png — IoU 0.978, deltaE median 1.5 / max 13.3 (bottom row = device base, magenta read by eye as the maker photo); box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
+  },
+  "note": "image-fix round 2026-09-30 — recolour of the owner-passed Grape render (lesson 12: passed render as template + change only the colours; props cut out of the maker photo first); flat #E9E9EC background keyed with scripts/flatcut.js; -v2 name because a soft 28/09 photo once lived at variant-strawberry-kiwi.webp",
+  "fileName": "variant-strawberry-kiwi-v2.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/m-bar-10k/out/recolour/final-yellow_mint.png",
+  "slug": "m-bar-10k",
+  "role": "variant",
+  "id": "yellow-mint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k, attempt a (2 credits in total for this flavour this chat; job _incoming/web-product-images/m-bar-10k/out/recolour/job-yellow_mint-a.json)",
+   "reference": "_incoming/web-product-images/m-bar-10k/out/grape-2.png (the owner-passed Grape render = template, reference 1) + _incoming/web-product-images/m-bar-10k/out/recolour/refs-clean/yellow_mint.png (SALTHUB maker photo of this flavour cropped to the box front + device, props cut out = colours and label, reference 2)",
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/out/recolour/yellow_mint.png — IoU 0.985, deltaE median 1.5 / max 2.6; box labels 10000 PUFFS / 3 MODE / ECO / SOFT / BOOST / BAR 10K / flavour read by eye; no props"
+  },
+  "note": "image-fix round 2026-09-30 — recolour of the owner-passed Grape render (lesson 12: passed render as template + change only the colours; props cut out of the maker photo first); flat #E9E9EC background keyed with scripts/flatcut.js; -v2 name because a soft 28/09 photo once lived at variant-yellow-mint.webp",
+  "fileName": "variant-yellow-mint-v2.webp"
  }
 ]
