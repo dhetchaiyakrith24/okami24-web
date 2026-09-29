@@ -856,14 +856,16 @@ Read first: the single list is step 1 of skill round-open (.claude/skills/round-
   `257b6ef` (4:5 card standard + M Bar 10K card-v2). No tag yet (round not closed). Rollback = revert the merge
   commit of the PR in question.
 2 ahead of main: `git log --oneline origin/main..image-fix-docs3` — branch `image-fix-docs3` = docs only (round
-  record "Fourth chat (29/09)" + this §16 v87). PR number: [ยังไม่มีข้อมูล — not opened yet at this close]; checker +
+  record "Fourth chat (29/09)" + this §16 v87). PR #114; checker +
   merge by Friday (small PR — docs).
 3 round: "รอบรูป-แก้" (image fix) — OPEN. Full record: `docs/cloud-results/image-fix-round.md` section "Fourth chat
   (29/09) — M Bar 10K complete, WebP fix, card standard". No background job running at this close.
   Done this chat [เชื่อว่า — main agent's report; merges seen as above]:
   - M Bar 10K = 12/12 flavours (#111). Higgsfield recolour of the passed Grape render (ref 1) with the maker photo
     cropped to box front + device (ref 2) so the leaf/grape props never reach the AI; IoU 0.978-0.985, colour
-    median ΔE 1.5-2.1; sharpness gate 5/5. Live-verified.
+    median ΔE 1.5-2.1; max ΔE over 6 on 3 files (Blue Ice 21.1, Menthol Blast 19.3 = the mint leaf in the maker
+    photo; Strawberry Kiwi 13.3 = device base, magenta checked by eye against the maker photo); sharpness gate 5/5.
+    Live-verified.
   - Black-square bug (#113): the optimizer fell back to JPEG (no alpha) → transparent photos came out on black and
     Cloudflare served that. `src/proxy.ts` (matcher `/_next/image` only) adds `image/webp` to Accept. Live: Accept
     `*/*` → image/webp 3/3; baseline 7 pages HTML identical (html-diff 7/7). i18n-contract-test geo guard now pins

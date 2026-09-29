@@ -175,7 +175,9 @@ Three PRs merged (merge commits; each checker-passed and GitHub checks green; fi
   Yellow Mint. Method: Higgsfield recolour of the owner-passed Grape render (reference 1 = template) with the maker photo
   cropped to box front + device (reference 2), so the mint leaf / grape props never reach the AI. 5/5 on the first try
   except Kyoho and Menthol, redone once for a too-bright device base (an explicit colour note fixed it). IoU 0.978–0.985,
-  colour median ΔE 1.5–2.1, sharpness gate 5/5. Live-verified (after shots `_incoming/mbar10k-full/after/`, sheets
+  colour median ΔE 1.5–2.1; max ΔE over the 6 threshold on 3 files — Blue Ice 21.1 and Menthol Blast 19.3 (the cell
+  where the maker photo shows the mint leaf), Strawberry Kiwi 13.3 (device base; magenta checked by eye against the maker
+  photo) — so the numbers read FAIL there and the human pass decided (IMAGE_SPEC §7); sharpness gate 5/5. Live-verified (after shots `_incoming/mbar10k-full/after/`, sheets
   `flavours-before-after-390.png` / `-1440.png`). 14 credits. Checker caught a missing `content-dates.json` update
   (fixed, re-check pass).
 - **#113 → `5731113` — black-square fix:** `src/proxy.ts` (matcher `/_next/image` only) adds `image/webp` to `Accept`, so
