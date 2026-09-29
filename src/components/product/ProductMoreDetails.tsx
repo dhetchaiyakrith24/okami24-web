@@ -68,7 +68,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
                 <div className={cn("flex flex-col gap-3 lg:col-span-5", flip && "lg:order-1")}>
                   <span className="label-mono text-xs text-steel" lang="en">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="font-display text-2xl font-semibold leading-tight tracking-tight text-foreground lg:text-[2rem]">{title}</h3>
-                  <p className="max-w-md text-base leading-relaxed text-foreground-muted">{body}</p>
+                  <p className="max-w-md text-base leading-relaxed text-pretty text-foreground-muted">{body}</p>
                   <p className="label-mono text-[0.6rem] text-foreground-dim" lang="en">
                     © {img.sourceName}
                     {img.sourceUrl && (
