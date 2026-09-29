@@ -11,7 +11,8 @@
  * Pipeline per map entry (see `MapEntry`): AI-image check → optional erase/crop → background removal
  * (only when the file is opaque AND the background is flat) → trim → measure the product's real long
  * side (must be ≥ MIN_SOURCE_LONG) → scale to the 84% box (upscale capped at +5%, the owner's
- * tolerance — a smaller product keeps its real size, owner 2026-09-28) → centre on a transparent square canvas → WebP q82 (a floor — never lowered to fit the
+ * tolerance — a smaller product keeps its real size, owner 2026-09-28) → centre on a transparent canvas (square; a card is
+ * 4:5 at 94%, owner 2026-09-30) → WebP q82 (a floor — never lowered to fit the
  * size cap) → size-cap check → write.
  * Idempotent: an existing destination is only replaced when the new product pixels are LARGER than
  * the product pixels in the file it replaces (IMAGE_SPEC §6). Every decision is printed and written
@@ -30,6 +31,13 @@ import path from "node:path";
 const CANVAS = { card: 1000, variant: 1000, detail: 1600 } as const;
 const MAX_BYTES = { card: 150 * 1024, variant: 150 * 1024, detail: 400 * 1024 } as const;
 const BOX_RATIO = 0.84; // 8% margin each side
+/** Card standard (owner 2026-09-30, image-fix round: "every card the same size in the listing"). The listing card
+ *  frame is 4:5 portrait (object-contain), so a square card left a tall product at ~67% of the frame height while a
+ *  portrait file filled ~99% (Muro vs Nexbar, measured by Javis). Cards are written on a 4:5 canvas with a 3% margin
+ *  each side: a tall product fills 94% of the frame height, a wide one 94% of its width. The square product hero
+ *  shows the same file height-bound, so it grows there too. Variants / details keep the square canvas. */
+const CARD_CANVAS = { width: 1000, height: 1250 } as const;
+const CARD_BOX_RATIO = 0.94;
 const MIN_SOURCE_LONG = 800;
 const MAX_UPSCALE = 1.05;
 /** Owner rule 2026-09-06 (IMAGE_SPEC §1–§2): 82 is the FLOOR, not a starting point. The size cap is
@@ -231,13 +239,14 @@ async function processEntry(e: MapEntry): Promise<Decision> {
     if (FORCE && existingLong !== null && sourceLong <= existingLong) d.reason = `--force: re-processed over existing ${existingLong}px`; }
 
   if (e.canvas && e.canvas < CANVAS[e.role]) return { ...d, reason: `map "canvas": ${e.canvas} is retired (owner 2026-09-28 — standard canvas only, a small product keeps its real size; IMAGE_SPEC §8). Remove "canvas" from the entry to re-process it.` };
-  const canvasSize = CANVAS[e.role]; d.canvas = canvasSize; const boxPx = Math.round(canvasSize * BOX_RATIO);
-  const scale = Math.min(boxPx / sourceLong, MAX_UPSCALE); d.scale = Math.round(scale * 1000) / 1000;
+  const cw = e.role === "card" ? CARD_CANVAS.width : CANVAS[e.role], ch = e.role === "card" ? CARD_CANVAS.height : CANVAS[e.role];
+  const ratio = e.role === "card" ? CARD_BOX_RATIO : BOX_RATIO; d.canvas = Math.max(cw, ch);
+  const scale = Math.min((cw * ratio) / box.width, (ch * ratio) / box.height, MAX_UPSCALE); d.scale = Math.round(scale * 1000) / 1000;
   const cropped = await fromRaw(raw).extract(box).png().toBuffer();
   const w = Math.max(1, Math.round(box.width * scale)), h = Math.max(1, Math.round(box.height * scale));
   const resized = await sharp(cropped).resize({ width: w, height: h, fit: "fill", kernel: "lanczos3" }).png().toBuffer();
-  const canvas = sharp({ create: { width: canvasSize, height: canvasSize, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
-    .composite([{ input: resized, left: Math.round((canvasSize - w) / 2), top: Math.round((canvasSize - h) / 2) }]);
+  const canvas = sharp({ create: { width: cw, height: ch, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
+    .composite([{ input: resized, left: Math.round((cw - w) / 2), top: Math.round((ch - h) / 2) }]);
   const { buf, quality, overCap } = await encodeWithin(canvas, MAX_BYTES[e.role]); d.bytes = buf.length; d.quality = quality; d.overCap = overCap;
   if (overCap) d.reason = `WARNING: ${Math.round(buf.length / 1024)}KB over the ${Math.round(MAX_BYTES[e.role] / 1024)}KB cap at q${WEBP_QUALITY} — quality is NOT lowered (IMAGE_SPEC §1–§2). Use a better source.`;
   if (DRY) return { ...d, action: "would-write" };
