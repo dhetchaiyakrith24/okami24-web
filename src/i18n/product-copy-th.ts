@@ -716,7 +716,8 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       coil: "nexMESH สองตัว ตัวละ 1.2Ω",
       modes: "NORM 16W / TURBO 19W",
       airflow: "ปรับได้ 2 ระดับ",
-      screen: "จอ LED แสดงแบต ระดับน้ำยา และโหมด",
+      // Spec values are search text: "น้ำยา" here made this device answer a search for e-liquid (catalog-search test).
+      screen: "จอ LED แสดงแบตกับโหมด",
       nicotine: "20mg หรือ 50mg",
       size: "101 × 44 × 26.7 mm",
     },
