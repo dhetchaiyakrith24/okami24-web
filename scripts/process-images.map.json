@@ -1888,5 +1888,18 @@
   },
   "note": "image-fix round 2026-09-30 — recolour of the owner-passed Grape render (lesson 12: passed render as template + change only the colours; props cut out of the maker photo first); flat #E9E9EC background keyed with scripts/flatcut.js; -v2 name because a soft 28/09 photo once lived at variant-yellow-mint.webp",
   "fileName": "variant-yellow-mint-v2.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/m-bar-10k/out/card/nb-4k-cut.png",
+  "slug": "m-bar-10k",
+  "role": "card",
+  "replaces": "/assets/products/m-bar-10k/card.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, aspect 4:5, 4 credits (job _incoming/web-product-images/m-bar-10k/out/card/job-nb-4k.json)",
+   "reference": "_incoming/web-product-images/m-bar-10k/out/card/card-ref-grey.png = the previous card public/assets/products/m-bar-10k/card.webp (SALTHUB salthub.com/mbar-10k/, 463x925) on flat grey",
+   "fidelitySheet": "_incoming/web-product-images/m-bar-10k/out/card/fid-nb-4k.png — IoU 0.993, deltaE median 2.7 max 3.0; M logo, BAR 10K lettering, knurled collar, clear cap, oval window read by eye"
+  },
+  "note": "image-fix round 2026-09-30 — sharp 4K remake of the 463x925 card, same 3/4 tilt; first card on the 4:5 card canvas (94%); flat background keyed with scripts/flatcut.js; a bytedance 4k upscale of the same card was tried (2 credits) and dropped (black border, no clean cut)",
+  "fileName": "card-v2.webp"
  }
 ]
