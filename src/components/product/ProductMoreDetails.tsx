@@ -21,9 +21,9 @@ import { cn } from "@/lib/utils";
  *     whole at its own proportions — its headline is printed in it, a crop cuts words (designer 2026-09-30).
  *     Thai text = the same `features` overlay FeatureGrid reads (product-copy-th.ts), English otherwise.
  *  2. every flavour/colour together — the box + device photo (`boxImage`, else `image`) with its name as page text,
- *     so the names are always spelled right and readable on a phone. Left out when the page already OPENS on the
- *     lineup of every option (`lineupFirst`): owner 2026-09-30 "มีรูปรวมแล้วในช่วงแรก … ไม่ต้องใส่แล้ว" — the same
- *     all-options view twice on one page (the wide lineup banner of PR #128 lived here and went with it).
+ *     so the names are always spelled right and readable on a phone. Owner 2026-09-30: this grid of box + device
+ *     photos stays even when the page opens on the lineup; only the wide lineup banner of PR #128 (the same
+ *     all-devices picture as the top image) was the duplicate, and it is gone (#130).
  */
 function Poster({ img, sizes, className }: { img: StoryImage; sizes: string; className?: string }) {
   return (
@@ -59,7 +59,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
   const options: Tile[] = isColour
     ? (product.colorVariants ?? []).map((o) => ({ id: o.id, name: o.name, swatchHex: o.swatchHex, photo: o.image }))
     : (product.flavorVariants ?? []).map((o) => ({ id: o.id, name: o.name, swatchHex: o.swatchHex, photo: o.boxImage ?? o.image }));
-  const tiles = product.lineupFirst && product.lineupImage ? [] : options.filter((t) => t.photo);
+  const tiles = options.filter((t) => t.photo);
   if (!cover && highlights.length === 0 && tiles.length === 0) return null;
   const sourceName = cover?.sourceName ?? highlights[0]?.image?.sourceName;
 
