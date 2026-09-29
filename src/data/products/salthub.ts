@@ -82,14 +82,18 @@ export const salthubProducts: Product[] = [
     // from its passed box+device render (source + check per file in the map); `boxImage` = that passed box+device photo,
     // now in the "more details" flavour grid. The page opens on the lineup (`lineupFirst`), built from these 12 files.
     lineupImage: {
-      // v2 (owner 30/09 "ใส่กลิ่นลงไปด้วย"): each device named underneath, typeset in the site's Barlow Condensed from
-      // these same names — never drawn by AI (builder: _incoming/pilot-mbar10k/lineup-named.js).
-      src: "/assets/products/m-bar-10k/lineup-v2.webp",
-      alt: "SALTHUB M Bar 10K, all 12 flavours side by side with their names — device only",
+      // v3 (owner 30/09 chose the premium "stage arc", mood "เรียบหรู เงียบ ๆ"): the same 12 device files on an arc,
+      // centre forward, each flavour's own colour glowing on the floor, every name under its own device (two caption
+      // rows), typeset in the site's Barlow Condensed from these same names — never drawn by AI (v2 asked for the
+      // names; builder: _incoming/pilot-mbar10k/premium-arc.js).
+      src: "/assets/products/m-bar-10k/lineup-v3.webp",
+      alt: "SALTHUB M Bar 10K, all 12 flavours on a curved stage with their names — device only",
       sourceName: "OKami24 composite",
     },
     lineupFirst: true,
     storyDetails: true,
+    // The same arc, wide and without names (the named flavour grid follows right under it) — same builder.
+    storyLineup: { src: "/assets/products/m-bar-10k/story-lineup.webp", alt: "SALTHUB M Bar 10K, all 12 flavours on a curved stage — device only", sourceName: "OKami24 composite", width: 2400, height: 1000 },
     // Opens the story (designer 30/09: a campaign image, not a coil fact — it no longer sits beside the coil text;
     // cotton mesh stays in the spec sheet).
     storyCover: { src: "/assets/products/m-bar-10k/angle-01.webp", alt: "Official SALTHUB M Bar 10K campaign image, \"Timeless Elegance\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1229 },
