@@ -1218,6 +1218,13 @@ v97 item 4's answered/done lines (10)-(17) — moved with their wording; (7) and
 
 ---
 
+Also relocated (rewritten in place in v98 — checker PR #149; old wording, word for word):
+  (5) leftover unreferenced photo files, 11 [เชื่อว่า — not a fresh scan; 9 as of v92 (v88's 6 + `m-bar-10k/lineup.webp`,
+      `nexbar-clear-18k/card.webp`, `m-bar-10k/lineup-v2.webp`, `m-bar-10k/story-lineup.webp`; list in §3, eighth chat's close
+      block) + `m-bar-9k/lineup.webp` and `m-bar-9k/lineup-v2.webp` since #142; the old m-switch-kit / m-switch-pod photos
+      replaced by #143 were not checked] — re-scan public/assets/products vs src/ at the next round close; delete with the owner's OK (13.4 #1)
+  Per-PR proof lines: batch 2's = item 3 above; the seventh and eighth chats' = §3 (eighth chat's close block + the second-batch-close block).
+
 ## 4. Known broken / missing, not fixed yet
 
 - **[ตรวจแล้ว] og:title of the homepage is still the pre-round string** ("OKami24 — ของแท้ ราคาตรง บริการจริง") — the owner's approved table covered `<title>`/description/og:description only; og:title was never in scope this round. Confirmed absent from `_incoming/seo-a/table-final-for-owner.md` and from THAI_STYLE_LOG's own round entry, which notes it explicitly [ตรวจแล้ว, `docs/THAI_STYLE_LOG.md` line 905].
