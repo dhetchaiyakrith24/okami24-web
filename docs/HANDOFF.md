@@ -1246,8 +1246,8 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
 1 main: `git fetch && git log -1 --oneline origin/main` — at this close `14437a1` = merge of PR #143 (batch 2) [ตรวจแล้ว —
   origin/main reflog: 243dc56 → 14437a1]; before it #142 `243dc56` (M Bar 9K lineup-v3). Batch 2 rollback point = `243dc56`;
   undo one step = revert that PR's merge commit. No tag (round not closed).
-2 ahead of main: only this close's docs PR, branch `docs-close-b2` (HANDOFF + the LESSONS 18 edit in `.claude/LESSONS.md`;
-  PR number [ยังไม่มีข้อมูล]; docs = small, checker, main agent merges).
+2 ahead of main: only this close's docs PR #144, branch `docs-close-b2` (HANDOFF + archive/HANDOFF-headers + IMAGE_SPEC §0
+  item 5 + the LESSONS 18 edit in `.claude/LESSONS.md`; docs = small, checker, main agent merges).
 3 OPEN (tenth chat 30/09): round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" — round file above · working files `_incoming/image-sitewide/`
   (scope.md = scope-auditor result; lineup-research.md; batch2-sources.md; m9k/ scripts; verify/ verify-b2/; shots/ incl. live/
   b2/; not in git). Previous round "รอบรูป-แก้" — still OPEN (unchanged). Background jobs: none [เชื่อว่า — main agent].
@@ -1314,7 +1314,7 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   STANDING OWNER DIRECTION (29/09, first-image part changed 30/09 — see item 3) [ตรวจแล้ว — carried from v88; long form in §3,
   v94 block]: card = the angled device alone · first image of a multi-option product = a group of 5 representative options
   (30/09; was "ONE lineup of ALL options") · flavour/colour photos = device alone · box photos + details in a lower "more
-  details" part · whole site, best sellers first (IMAGE_SPEC §0 item 5, §7 — not yet edited for the 30/09 change).
+  details" part · whole site, best sellers first (IMAGE_SPEC §0 item 5 — the 30/09 change written there in #144; §7 unchanged).
 4 waiting on owner:
   (1) image-theft protection A+B+C — its own round after this one — carried, not started
   (2) Muro Connector's category (owner: "Relx Connect"; Friday's evidence: RELX Creator) [รอเจ้าของ] — carried
