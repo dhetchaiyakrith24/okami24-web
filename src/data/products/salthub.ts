@@ -81,7 +81,8 @@ export const salthubProducts: Product[] = [
     // the device alone — ONE Higgsfield master render from the passed card, each flavour's base colour moved over by script
     // from its passed box+device render (source + check per file in the map); `boxImage` = that passed box+device photo,
     // in the "more details" flavour grid ("รุ่นนี้มี 12 กลิ่น" — owner 2026-09-30: keep it; only the wide lineup banner was
-    // the duplicate). The page opens on the lineup, built from these 12 files.
+    // the duplicate). 2026-10-01 (owner, HANDOFF item (25) "ใช่"): like 9K / Kit / Pod the page opens on the card —
+    // flavours by swipe or chip; the stage-arc lineup stays behind the "all" chip (`openOnCardPhoto`, not `lineupFirst`).
     lineupImage: {
       // v3 (owner 30/09 chose the premium "stage arc", mood "เรียบหรู เงียบ ๆ"): the same 12 device files on an arc,
       // centre forward, each flavour's own colour glowing on the floor, every name under its own device (two caption
@@ -91,7 +92,7 @@ export const salthubProducts: Product[] = [
       alt: "SALTHUB M Bar 10K, all 12 flavours on a curved stage with their names — device only",
       sourceName: "OKami24 composite",
     },
-    lineupFirst: true,
+    openOnCardPhoto: true,
     storyDetails: true,
     // swatchHex of Pink Berry / Strawberry Kiwi / Watermelon Mint corrected 2026-09-30 to the device base colour on
     // SALTHUB's own flavour photos (violet · magenta · red — the old dots were guessed from the flavour names).
