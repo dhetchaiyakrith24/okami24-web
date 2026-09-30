@@ -1260,16 +1260,11 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   OWNER DIRECTION 30/09 (replaces the 29/09 "one lineup of ALL options first"): the first image of a multi-option product =
   an Apple-style group of 5 representative options (fallback = one sharp device); the chips + the more-details grid carry all.
   BATCH 2 (M Switch 15K kit `m-switch-kit` + pod `m-switch-pod`) — MERGED as PR #143 `14437a1`, live after a deploy re-run (below)
-  [เชื่อว่า — main agent's report]: checker FAIL at `e7db3f1` (Black Berry tag read "LACK BERRY"; no 390/1440 shots) → fixed at `f75200f` →
-  checker re-check PASS 4/4; designer: pod 0.56→0.66 of the device in the kit photos (SALTHUB's own poster ratio), device
-  closer to the fan, pod fan 92% wide — applied. SHIPPED: both pages `lineupFirst` + `lineup.webp` (pod: 5 pods fanned; kit:
-  device + the same 5 pods); 17 `variant-<id>-v2.webp` per page (pod page = pod alone at the maker's angle; kit page = device
-  + that flavour's pod); `swatchHex` = M/tag colour (Pink Berry + Mixberry = purple M while their tag is pink — owner decides);
-  kit `storyDetails` + `storyCover` (SALTHUB poster `story-cover.webp`) + poster `story-03.webp` on the existing keep-the-body
-  feature (no new copy) + 16 `pack-<id>.webp` starter-kit renders (Kyoho Grape has none). Method: Higgsfield nano_banana_pro
-  "cut out, keep angle/print" per flavour + GPT Image 2.5 transparent cut (LESSONS 18). Higgsfield ~110 credits this chat
-  (balance 1503.1 at chat start) [เชื่อว่า]. BSOT §21 "Answered 2026-09-30" added in #143 (opaque black pod = what the shop
-  sells; per-flavour photos OK; sold as a starter kit, body not sold alone) [ตรวจแล้ว — entry exists, BSOT line 667].
+  [เชื่อว่า — main agent]: checker FAIL at `e7db3f1` → fixed → re-check PASS 4/4; designer fixes applied. SHIPPED (photos since
+  replaced by #145 below): both pages `lineupFirst` (pod: 5 pods fanned; kit: device + 5 pods); a photo per flavour (pod
+  page = pod alone; kit page = device + that pod); kit `storyDetails` + `storyCover` `story-cover.webp` + `story-03.webp` on
+  the keep-the-body feature (no new copy) + 16 `pack-<id>.webp` starter-kit renders (Kyoho Grape has none). Method: LESSONS
+  18. BSOT §21 "Answered 2026-09-30" (opaque black pod = what the shop sells; sold as a starter kit) [ตรวจแล้ว — BSOT line 667].
   PROOF (light set, 13.12; not a new baseline) [เชื่อว่า — main agent]: tsc 0 · eslint 0 · verify:catalog 29/29 · sharpness gate
   54 files 0 fail · gallery-probe m-switch-pod / m-switch-kit / m-bar-9k both modes PASS · locale-hydration 26/26 · scan.js
   0/105 (logs `_incoming/image-sitewide/verify-b2/`); local shots `_incoming/image-sitewide/shots/b2/`.
