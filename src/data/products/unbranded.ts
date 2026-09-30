@@ -353,7 +353,7 @@ export const unbrandedProducts: Product[] = [
     displayName: "Muro SC 8000 Puffs",
     tagline: "A rechargeable disposable rated for up to 8,000 puffs.",
     shortDescription:
-      "A rechargeable disposable from the Muro \"SC\" line, with a 600mAh battery and USB-C charging, rated for up to 8,000 puffs and currently stocked in 8 flavors.",
+      "A rechargeable disposable from the Muro \"SC\" line, with a 600mAh battery and USB-C charging, rated for up to 8,000 puffs and currently stocked in 12 flavors.",
     isFlagship: false,
     attributes: {
       batteryMah: 600,
@@ -364,31 +364,51 @@ export const unbrandedProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    // Real, watermark-free retailer photo (vapemun.com's own general/flavor-neutral device
-    // shot for this exact SKU — grey colourway, "MURO SC" printed on the device itself), found
-    // and cleaned this pass (2026-09-04) now that Google/general-web sourcing is approved for
-    // this "no confirmable brand" cluster. Not tied to any one specific stocked flavor.
+    // Round "image-sitewide" batch 4 (2026-09-30, the M Bar 10K treatment; owner 30/09: the flavour photo = the device +
+    // that flavour's pouch). No maker site exists (the device reads "MURO — AWAKE YOUR NOSE."), so the reference is the
+    // retailer art (vapemun.com — per-flavour posters, device + pouch). Every flavour is the same grey device in the same
+    // black pouch; only the pouch's label bar (colour + name) differs. Card = a Higgsfield remake of the device from
+    // vapemun's clean two-device shot, tilted; flavour photos = one Higgsfield pouch master + one upright device master,
+    // the label bar recoloured to each flavour's label colour read off its poster and the name printed with a real font
+    // (_incoming/image-sitewide/muro/compose.js · label-colours.js · labels.json; `aiRender` in scripts/process-images.map.json).
+    // Watermelon: both retailers' Watermelon art (vapemun, pod789) reuse the Apple Shisha pouch, so there is no label
+    // source; its label colour = pod789's own Watermelon caption bar [unverified]. `swatchHex` = the label colour.
+    // card-v2: card.webp was the retailer shot, already live (Cloudflare keeps /assets 30 days, lesson พ6).
+    // No maker posters → no story blocks; with `lineupFirst` and no `boxImage` the more-details section does not render.
     assets: [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/muro-sc-8000/card.webp",
-        alt: "Muro SC 8000 Puffs, isolated product shot",
-        angle: "Front, isolated",
+        src: "/assets/products/muro-sc-8000/card-v2.webp",
+        alt: "Muro SC 8000 Puffs, grey device, three-quarter view",
+        angle: "3/4, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) of the retailer's device shot",
         transparentBackground: true,
-        sourceName: "Retailer photo (vapemun.com) — not a manufacturer-official site, see file header",
+        sourceName: "OKami24 render (Higgsfield) from retailer art",
         sourceUrl: "https://vapemun.com/product/muro-sc-8k/",
       },
     ],
+    lineupImage: {
+      src: "/assets/products/muro-sc-8000/lineup.webp",
+      alt: "Muro SC 8000 Puffs, the device in front of five flavour pouches",
+      sourceName: "OKami24 composite",
+    },
+    lineupFirst: true,
+    storyDetails: true,
+    // 12 flavours = the retailer lists (pod789.com and vapemun.com list the same 12; the 8 first stocked + Grape, Watermelon,
+    // Double Mint, Mix Berries — the name printed on the pouch). Catalog completeness rule (owner 2026-09-06 / 30/09).
     flavorVariants: [
-      { id: "extreme-menthol", name: "Extreme Menthol", swatchHex: "#3ab5c6", availability: "unknown" },
-      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown" },
-      { id: "strawberry", name: "Strawberry", swatchHex: "#c9405f", availability: "unknown" },
-      { id: "honey-lemon", name: "Honey Lemon", swatchHex: "#d9b23a", availability: "unknown" },
-      { id: "apple-shisha", name: "Apple Shisha", swatchHex: "#8a9a4a", availability: "unknown" },
-      { id: "mineral-water", name: "Mineral Water", swatchHex: "#cfe8ee", availability: "unknown" },
-      { id: "yakult", name: "Yakult", swatchHex: "#f0e4c0", availability: "unknown" },
-      { id: "banana-strawberry", name: "Banana Strawberry", swatchHex: "#e0a05a", availability: "unknown" },
+      { id: "extreme-menthol", name: "Extreme Menthol", swatchHex: "#0d0e22", availability: "unknown", image: { src: "/assets/products/muro-sc-8000/variant-extreme-menthol.webp", alt: "Muro SC 8000 Puffs, Extreme Menthol — device with its pouch" } },
+      { id: "cola", name: "Cola", swatchHex: "#6b1c0f", availability: "unknown", image: { src: "/assets/products/muro-sc-8000/variant-cola.webp", alt: "Muro SC 8000 Puffs, Cola — device with its pouch" } },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#a9201e", availability: "unknown", image: { src: "/assets/products/muro-sc-8000/variant-strawberry.webp", alt: "Muro SC 8000 Puffs, Strawberry — device with its pouch" } },
+      { id: "honey-lemon", name: "Honey Lemon", swatchHex: "#d0bf1e", availability: "unknown", image: { src: "/assets/products/muro-sc-8000/variant-honey-lemon.webp", alt: "Muro SC 8000 Puffs, Honey Lemon — device with its pouch" } },
+      { id: "apple-shisha", name: "Apple Shisha", swatchHex: "#6f0e18", availability: "unknown", image: { src: "/assets/products/muro-sc-8000/variant-apple-shisha.webp", alt: "Muro SC 8000 Puffs, Apple Shisha — device with its pouch" } },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#96b8bf", availability: "unknown", image: { src: "/assets/products/muro-sc-8000/variant-mineral-water.webp", alt: "Muro SC 8000 Puffs, Mineral Water — device with its pouch" } },
+      { id: "yakult", name: "Yakult", swatchHex: "#d3bea8", availability: "unknown", image: { src: "/assets/products/muro-sc-8000/variant-yakult.webp", alt: "Muro SC 8000 Puffs, Yakult — device with its pouch" } },
+      { id: "banana-strawberry", name: "Banana Strawberry", swatchHex: "#c48592", availability: "unknown", image: { src: "/assets/products/muro-sc-8000/variant-banana-strawberry.webp", alt: "Muro SC 8000 Puffs, Banana Strawberry — device with its pouch" } },
+      { id: "grape", name: "Grape", swatchHex: "#5a1a6b", availability: "unknown", image: { src: "/assets/products/muro-sc-8000/variant-grape.webp", alt: "Muro SC 8000 Puffs, Grape — device with its pouch" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#e60435", availability: "unknown", image: { src: "/assets/products/muro-sc-8000/variant-watermelon.webp", alt: "Muro SC 8000 Puffs, Watermelon — device with its pouch" } },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#56a4ad", availability: "unknown", image: { src: "/assets/products/muro-sc-8000/variant-double-mint.webp", alt: "Muro SC 8000 Puffs, Double Mint — device with its pouch" } },
+      { id: "mix-berries", name: "Mix Berries", swatchHex: "#6b0f2e", availability: "unknown", image: { src: "/assets/products/muro-sc-8000/variant-mix-berries.webp", alt: "Muro SC 8000 Puffs, Mix Berries — device with its pouch" } },
     ],
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 8,000", sourceStatus: "verified" },
@@ -400,7 +420,7 @@ export const unbrandedProducts: Product[] = [
     faqs: [],
     relatedProductSlugs: ["muro-space-15k", "muro-3ml", "muro-connector-20k", "muro-freebase", "muro-salt-nic"],
     // Exact confirmed product path (this session's research fetched this page directly).
-    sourceUrls: ["https://vapemun.com/product/muro-sc-8k/"],
+    sourceUrls: ["https://vapemun.com/product/muro-sc-8k/", "https://pod789.com/product/muro-sc-8k/"],
   },
   {
     id: "muro-connector-20k",
