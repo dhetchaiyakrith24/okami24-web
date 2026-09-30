@@ -224,7 +224,9 @@ export const salthubProducts: Product[] = [
     // check per file in scripts/process-images.map.json `aiRender`); `swatchHex` = that print colour (the BAR9K lettering;
     // the M logo where the lettering is near white) — the body is black on all 22. No `boxImage`: SALTHUB's packs exist only
     // at 380 px on its chart, under the 1000-px canvas rule (owner to decide). The page opens on the lineup built from the 22
-    // device files (two stage-arc tiers of 11; names typeset from these names — builder _incoming/image-sitewide/m9k/lineup.js).
+    // device files (two stage-arc tiers of 11 in this order; names typeset from these names — builder
+    // _incoming/image-sitewide/m9k/lineup.js). No `storyDetails` yet: SALTHUB publishes no highlight posters for the 9K
+    // (only the flavour chart), and a lone logo banner said nothing (designer 30/09) — the feature card below stays.
     // The card photo stays until 06/10: m-bar-15k (SEO baseline until 05/10) shows it as a related card.
     lineupImage: {
       src: "/assets/products/m-bar-9k/lineup.webp",
@@ -232,11 +234,8 @@ export const salthubProducts: Product[] = [
       sourceName: "OKami24 composite",
     },
     lineupFirst: true,
-    storyDetails: true,
-    // Opens the story: the title art of SALTHUB's own M Bar 9K flavour chart (salthub.com/m-bar-9k/, m_bar_9k_01.webp as served).
-    storyCover: { src: "/assets/products/m-bar-9k/story-cover.webp", alt: "SALTHUB M Bar 9K flavour chart title art", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-bar-9k/", width: 1125, height: 465 },
     flavorVariants: [
-{ id: "grape-aloe", name: "Grape Aloe", swatchHex: "#9c5fe3", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-grape-aloe-v2.webp", alt: "SALTHUB M Bar 9K, Grape Aloe — device" } },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#9c5fe3", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-grape-aloe-v2.webp", alt: "SALTHUB M Bar 9K, Grape Aloe — device" } },
       { id: "watermelon", name: "Watermelon", swatchHex: "#ce3130", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-watermelon-v2.webp", alt: "SALTHUB M Bar 9K, Watermelon — device" } },
       { id: "doublemint", name: "Doublemint", swatchHex: "#ffffff", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-doublemint-v2.webp", alt: "SALTHUB M Bar 9K, Doublemint — device" } },
       { id: "blue-ice", name: "Blue Ice", swatchHex: "#3357b5", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-blue-ice-v2.webp", alt: "SALTHUB M Bar 9K, Blue Ice — device" } },
