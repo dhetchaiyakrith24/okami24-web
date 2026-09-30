@@ -150,17 +150,18 @@ export const relxProducts: Product[] = [
       { key: "compat", label: "Pod platform", value: "RELX Creator 20K pods, Muro Connector pods (shop-confirmed)", sourceStatus: "verified" },
     ],
     features: [],
+    // The pod rows are the owner's word (shop stock, 30/09); the spec row and the FAQ say "shop-confirmed".
     compatibility: [
-      { type: "pod", label: "RELX Creator 20K pod", note: "Shop-confirmed from its own stock (owner, 2026-09-30)." },
-      { type: "pod", label: "Muro Connector pod", note: "Shop-confirmed from its own stock (owner, 2026-09-30)." },
+      { type: "pod", label: "RELX Creator 20K pod" },
+      { type: "pod", label: "Muro Connector pod" },
       typeC,
     ],
     whoIsThisFor: ["Vapers who want a device they keep, with prefilled pods they swap instead of filling e-liquid."],
     faqs: [
       {
         id: "relx-creator-pods",
-        question: "RELX Creator ใช้กับหัวพอตรุ่นไหนได้บ้าง",
-        answer: "ใช้ได้กับหัวพอต RELX Creator 20K และหัวพอต Muro Connector ข้อนี้ร้านยืนยันจากของที่มีในร้าน ถ้าจะใช้กับหัวพอตรุ่นอื่น ทักไลน์ @okm24 มาถามก่อนได้",
+        question: "Which pods fit the RELX Creator?",
+        answer: "RELX Creator 20K pods and Muro Connector pods — the shop confirmed both from its own stock. For any other pod, ask on LINE @okm24 first.",
       },
     ],
     relatedProductSlugs: ["muro-connector-20k", "relx-smash-go-12k"],

@@ -111,9 +111,9 @@ export const infyProducts: Product[] = [
     faqs: [
       {
         id: "infy-20k-spec-variance",
-        question: "สเปกในหน้านี้มาจากไหน",
+        question: "Where do the specs on this page come from?",
         answer:
-          "INFY ยังไม่ลงรุ่น 20K ในเว็บของตัวเอง ตัวเลขในหน้านี้เป็นตัวเลขที่ร้านค้าไทยหลายร้านระบุตรงกัน จึงติดป้ายว่ายังไม่ยืนยันไว้ อยากเช็คกับของจริงทักไลน์ @okm24 ได้",
+          "INFY does not list the 20K on its own sites yet. The figures here are the ones several Thai shops state alike, so they are marked unconfirmed. To check against the real unit, ask on LINE @okm24.",
       },
     ],
     relatedProductSlugs: [],

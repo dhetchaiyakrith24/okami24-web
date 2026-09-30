@@ -703,6 +703,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     whoIsThisFor: {
       0: "อยากได้ตัวเครื่องที่ใช้ซ้ำได้ แต่ไม่อยากเติมน้ำยาเอง",
     },
+    faqs: {
+      "relx-creator-pods": {
+        question: "RELX Creator ใช้กับหัวพอตรุ่นไหนได้บ้าง",
+        answer: "ใช้ได้กับหัวพอต RELX Creator 20K และหัวพอต Muro Connector ข้อนี้ร้านยืนยันจากของที่มีในร้าน ถ้าจะใช้กับหัวพอตรุ่นอื่น ทักไลน์ @okm24 มาถามก่อนได้",
+      },
+    },
     specifications: {
       format: "ตัวเครื่องอย่างเดียว หัวพอตบรรจุสำเร็จขายแยก",
       battery: "800mAh ชาร์จซ้ำได้ผ่าน USB-C",
@@ -765,6 +771,17 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       "พอตใช้แล้วทิ้งสายพัฟเยอะของ TFIT ที่ขายในตลาดไทย OKami24 รีวิวใช้จริงบน YouTube ทักไลน์ @okm24 ถามรุ่นและรสที่มีตอนนี้ได้",
   },
   "infy-20k": {
+    // 2026-09-30: the page went live — the who-for line and the FAQ (Thai text moved here from infy.ts, unchanged).
+    whoIsThisFor: {
+      0: "คนที่ถามหา INFY รุ่นพัฟเยอะอยู่แล้ว",
+    },
+    faqs: {
+      "infy-20k-spec-variance": {
+        question: "สเปกในหน้านี้มาจากไหน",
+        answer:
+          "INFY ยังไม่ลงรุ่น 20K ในเว็บของตัวเอง ตัวเลขในหน้านี้เป็นตัวเลขที่ร้านค้าไทยหลายร้านระบุตรงกัน จึงติดป้ายว่ายังไม่ยืนยันไว้ อยากเช็คกับของจริงทักไลน์ @okm24 ได้",
+      },
+    },
     tagline: "พอตใช้แล้วทิ้งของ INFY ที่มีขายในตลาดไทย",
     shortDescription:
       "พอตใช้แล้วทิ้งสายพัฟเยอะของ INFY ที่ขายในตลาดไทย ทักไลน์ @okm24 ถามรุ่นและรสที่มีตอนนี้ได้",
