@@ -1115,7 +1115,9 @@ the owner's Run prompt folder: `C:\Users\dhetc\OneDrive\Desktop\Run prompt\New p
   58rem) + the owner's note rewording (below) + these docs; small (SITE, 13.7), checker, the main agent merges.
   Checker close verdict [main agent]: PR #136 PASS 3/3 at `66e392e` + re-check PASS 2/2 at `b1bcb32` (note rewording + docs);
   7 baseline pages not reached (no shared file touched).
-3 round "ไล่ดูทีละส่วน M Bar 10K (exploded view)" — CLOSED at this close (opened and closed 30/09 in the eighth chat). Round
+3 OPEN (ninth chat 30/09): round file `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt` · branch `image-sitewide-mbar9k` · files
+  `_incoming/image-sitewide/` · batch 1 (M Bar 9K) started. Its card stays until 06/10 (related card on baseline m-bar-15k).
+  Round "ไล่ดูทีละส่วน M Bar 10K (exploded view)" — CLOSED at this close (opened and closed 30/09 in the eighth chat). Round
   file in git: `docs/rounds/รอบไล่ดูทีละส่วน-MBar10K-exploded-view-30-09.txt`. Working files `_incoming/mbar10k-anatomy/`
   (facts.md, decisions.md, work/export.js, work/gen.js, verify/, shots/; not in git). Batches 1 (directions + draft) and 2 (the
   section, th/en/zh) done and merged in PR #135 (checker PASS 6/6 at `d305e9d` + re-check PASS 4/4 at `46f2d1d`, GitHub checks
@@ -1132,8 +1134,7 @@ the owner's Run prompt folder: `C:\Users\dhetc\OneDrive\Desktop\Run prompt\New p
   (HTML/SVG, 3 languages), AI renders only the device/parts. Proof + the round's commit list: §3 (same relocation block).
   Higgsfield: 8 credits used (2 × nano_banana_pro 4K); balance at open 1521.1 → ~1,513 now [เชื่อว่า — main agent's figure less its 8;
   the ~1,960 of v92 was stale]; warn the owner before a shop-wide image job would cross the balance.
-  Previous round "รอบรูป-แก้" (image fix) — still OPEN (unchanged; the eighth chat put this round first by the owner's order 30/09). Background jobs: none known [เชื่อว่า]. A test server on 3412
-  (`scripts/test-server.js`, build of this close's branch — the note rewording on top of `c827ba1`) may still be up — `node scripts/test-server.js stop` or reuse it.
+  Previous round "รอบรูป-แก้" (image fix) — still OPEN (unchanged; the eighth chat put this round first by the owner's order 30/09). Background jobs: none; test server 3412 DOWN (checked 30/09, ninth chat).
   DESIGN FACTS of the M Bar 10K pilot (flags `lineupFirst` + `storyDetails`, `storyLineup` gone, recolour script) [เชื่อว่า
   — main agent's report]: full wording relocated to §3 at the eighth chat's close; the anatomy sheet now sits inside `storyDetails`.
   GALLERY LEDE (#130): th/en/zh = "ภาพจริงจาก {brand}" (credit only). The 7 SEO-baseline slugs keep the old line via
@@ -1192,18 +1193,20 @@ the owner's Run prompt folder: `C:\Users\dhetc\OneDrive\Desktop\Run prompt\New p
   (5) leftover unreferenced photo files, 9 as of v92 [เชื่อว่า — not a fresh scan; the list (v88's 6 + `m-bar-10k/lineup.webp`,
       `nexbar-clear-18k/card.webp`, `m-bar-10k/lineup-v2.webp`, `m-bar-10k/story-lineup.webp`) is in §3, eighth chat's close
       block] — re-scan public/assets/products vs src/ at the next round close; delete with the owner's OK (13.4 #1)
-  (6) the owner's OK on the LIVE dark "ไล่ดูทีละส่วน" sheet on /products/m-bar-10k = the round's pass criterion [รอเจ้าของ]
-      ("ตรวจผ่านตามเกณฑ์" ≠ "เจ้าของอนุมัติ") — new (the old (6), the credit line + phone swipe, is answered: §3)
+  OWNER ANSWERS 30/09 after the close [chat-move, main agent]: (6) the live sheet = OK (round passed) BUT "the whole thing
+      looks a bit big in the product section" → polish its size later, images first; (8) the new terms read oddly
+      ("ปลอกลายร่อง") → reword for easy understanding even if not literal — in the LANGUAGE round (owner: site-wide
+      language is not complete yet, a language round comes later, not now); (9) batch 3 = parked; (a) of item 5 = reword
+      "วงแหวน RGB" → "ไฟ RGB" (EN "RGB status ring" likewise) — `product-copy-th.ts` is shared by the 7 baseline pages →
+      do it after 05/10 or in the language round. Lesson written: `.claude/LESSONS.md` ช2.
   (7) the owner asked 30/09 "which steps slow us down — cut what drags"; Friday proposed cuts in the chat
       (checker on docs-only PRs · content-dates.json chore commits · full set on baseline pages after 05/10 ·
       doc-keeper for §16 · rule-text sprawl) — the owner picks; then write them (central §12 item 28) [รอเจ้าของ]
       — still open
-  (8) NEW Thai terms not in the THAI_STYLE tables, used on the page: ปลอกลายร่อง · ฐานไล่สี · ช่องปรับลม · ภาพแยกชิ้น —
-      thai-copy recommended each; the owner rules, then a THAI_STYLE §3 row [รอเจ้าของ]
-  (9) batch 3 extras (360 view / X-ray, outer shell only) yes or no [รอเจ้าของ]
-5 open questions (round "ไล่ดูทีละส่วน", found by thai-copy, pre-existing, NOT fixed — out of scope) [รอเจ้าของ]:
-  (a) the M Bar 10K Thai tagline "วงแหวน RGB" (`product-copy-th.ts` ~line 527) and the English tagline "RGB status ring"
-  claim a ring shape the maker never shows (facts row 11: position unknown) — keep or reword? · (b) `dict.product.anatomyTitle`
+  (8) the sheet's part names (ปลอกลายร่อง · ฐานไล่สี · ช่องปรับลม · ภาพแยกชิ้น) — answered above: reword in the language round
+  (9) batch 3 extras — answered above: parked
+5 open questions (round "ไล่ดูทีละส่วน", found by thai-copy, pre-existing, NOT fixed — out of scope):
+  (a) answered above ("ไฟ RGB", after 05/10 or language round) · (b) `dict.product.anatomyTitle`
   en/zh "from the outside in" promises internals (shared dictionary; the new sheet uses its own heading) · (c) no airflow spec
   row for M Bar 10K yet — adding one to `salthub.ts` moves 27 lastmod dates incl. baseline m-bar-15k → after 05/10.
 6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`, unchanged since v85 — the
