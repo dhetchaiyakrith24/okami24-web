@@ -698,10 +698,22 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       },
     },
   },
+  // Round "image-sitewide" 2026-09-30 (writer draft A): re-published as a device + prefilled pods, not a disposable.
   "relx-creator": {
-    tagline: "พอตใช้แล้วทิ้งของ RELX ที่มีขายในตลาดไทย",
+    whoIsThisFor: {
+      0: "อยากได้ตัวเครื่องที่ใช้ซ้ำได้ แต่ไม่อยากเติมน้ำยาเอง",
+    },
+    specifications: {
+      format: "ตัวเครื่องอย่างเดียว หัวพอตบรรจุสำเร็จขายแยก",
+      battery: "800mAh ชาร์จซ้ำได้ผ่าน USB-C",
+      modes: "15W Normal / 25W Boost กดสองครั้งเพื่อสลับ",
+      screen: "จอพิกเซล โชว์หน้าอีโมจิ กดปุ่มครั้งเดียวดูแบต",
+      airflow: "ปรับได้",
+      compat: "RELX Creator 20K และ Muro Connector (ร้านยืนยันจากของในร้าน)",
+    },
+    tagline: "ตัวเครื่องใช้ซ้ำได้ของ RELX เปลี่ยนแค่หัวพอต",
     shortDescription:
-      "พอตใช้แล้วทิ้งสายพัฟเยอะของ RELX ที่ขายในตลาดไทย มีหลายรุ่นย่อย ทักไลน์ @okm24 ถามรุ่นปัจจุบันได้",
+      "ขายเฉพาะตัวเครื่อง หัวพอตซื้อแยก RELX Creator ใส่หัวพอตบรรจุสำเร็จ หมดแล้วเปลี่ยนแค่หัว ตัวเครื่องชาร์จใช้ต่อ มีจอพิกเซลโชว์หน้าอีโมจิ กดสองครั้งติดกันสลับ 15 กับ 25 วัตต์",
   },
   // Image-fix round 2026-09-30 (writer draft, owner approved 2026-09-30). The shop has no stock of this model — every
   // flavour is sold out; the shop sells nexBar CLEAR 18K (Pod-180).

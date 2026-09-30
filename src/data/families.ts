@@ -100,7 +100,18 @@ export const families: ProductFamily[] = [
     name: "RELX Disposables",
     tagline: "High-puff-count disposables from a global closed-pod brand.",
     description:
-      "RELX's standalone disposable line (distinct from the refillable Creator Pro/Pod cartridge system), spanning Smash Go and Creator-branded high-puff single-use devices.",
+      "RELX's standalone disposable line, distinct from the Creator closed pod system.",
+  },
+  {
+    // 2026-09-30 (round "image-sitewide"): the RELX Creator is a device + prefilled pods, not a disposable (owner 30/09).
+    id: "relx-creator",
+    slug: "relx-creator",
+    brandId: "relx",
+    categoryId: "pod-kits",
+    name: "RELX Creator",
+    tagline: "A device you keep, prefilled pods you swap.",
+    description:
+      "RELX's closed pod system: the Creator Pro device (800mAh, pixel smart screen) takes prefilled pods that are swapped when they run out.",
   },
   {
     id: "joiway-f-series",
