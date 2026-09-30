@@ -6,6 +6,11 @@ export const infyProducts: Product[] = [
   {
     id: "infy-20k",
     slug: "infy-20k",
+    // Round "image-sitewide" batch 4 (2026-09-30): photos, lineup, flavours and specs below are ready, but opening the page
+    // adds "INFY" to the footer brand list of EVERY page, the 7 SEO-baseline pages included (html-diff, _incoming/
+    // image-sitewide/verify-b4/) — they may not change until 05/10. Delete this line on 06/10 (with batch 3), then drop
+    // "infy" from DORMANT_ALIAS_TERMS in src/data/search-aliases.ts (the contract test demands it).
+    hiddenFromStorefront: { since: "2026-09-30", reason: "ready; held until 06/10 — opening it adds INFY to the footer brand list of the 7 SEO-baseline pages" },
     brandId: "infy",
     familyId: "infy-disposables",
     categoryId: "disposables",

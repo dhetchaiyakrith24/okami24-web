@@ -153,4 +153,4 @@ export const PRODUCT_SEARCH_ALIASES: Record<string, string[]> = {};
  * Nothing is needed here on the day the photo lands except deleting the row: the aliases above
  * are already wired and start working by themselves.
  */
-export const DORMANT_ALIAS_TERMS: string[] = ["tfit"];
+export const DORMANT_ALIAS_TERMS: string[] = ["tfit", "infy"];
