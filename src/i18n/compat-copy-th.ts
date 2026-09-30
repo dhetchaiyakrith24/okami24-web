@@ -29,6 +29,8 @@ export const COMPAT_LABELS_TH: Record<string, string> = {
   "M Switch Pod cartridge": "หัวพอต M Switch Pod",
   "M Switch Kit device body": "ตัวเครื่อง M Switch Kit",
   "M Bar-compatible reusable devices": "เครื่องใช้ซ้ำที่รองรับ M Bar",
+  "RELX Creator 20K pod": "หัวพอต RELX Creator 20K",
+  "Muro Connector pod": "หัวพอต Muro Connector",
 };
 
 export const COMPAT_NOTES_TH: Record<string, string> = {
