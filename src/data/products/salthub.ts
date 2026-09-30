@@ -417,31 +417,42 @@ export const salthubProducts: Product[] = [
         sourceUrl: "https://www.salthub.com/",
       },
     ],
-    // Real flavor lineup for the included starter cartridge — tier-1, verified against
-    // salthub.com's own m-switch-kit/ page (per-flavor official product photos, same list as
-    // the standalone M Switch Pod cartridge below — 17 since Cool Mint was removed 2026-09-28). `availability: "unknown"` — no live Shipnity
-    // stock signal for this Legacy record. Image-fix round 2026-09-28: the maker's kit renders
-    // (m_switch_kit_flavor_01…16) went live and were withdrawn the same day — they show the newer black COTTON MESH
-    // pod, while the shop's own M SWITCH 15K clips show clear pods on the device; not proven to match stock.
+    // Real flavor lineup for the included starter cartridge — tier-1, verified against salthub.com's own m-switch-kit/ page
+    // (per-flavour kit renders) and m-switch-pod/ page — 17 since Cool Mint was removed 2026-09-28. `availability: "unknown"` —
+    // no live Shipnity stock signal for this Legacy record.
+    // 2026-09-30 (round "image-sitewide" batch 2): sold as a starter kit — the device + one pod (owner 30/09; the body is not sold
+    // alone). The body is the same for every flavour, so `image` = the device + that flavour's pod beside it (the pod photo
+    // of m-switch-pod below; the black glossy-top pod the shop stocks — owner's photo of real stock 30/09); `boxImage` =
+    // SALTHUB's own starter-kit render of that flavour (box + device) in the "more details" grid — Kyoho Grape has no kit
+    // render on salthub.com, so no tile. `swatchHex` = the colour of that flavour's M logo / tag. Source + check per file
+    // in scripts/process-images.map.json `aiRender`. The page opens on the lineup: the device + 5 pods fanned.
+    lineupImage: {
+      src: "/assets/products/m-switch-kit/lineup.webp",
+      alt: "SALTHUB M Switch Kit device with five of its 17 flavour pods fanned beside it",
+      sourceName: "OKami24 composite",
+    },
+    lineupFirst: true,
+    storyDetails: true,
+    // Opens the story: SALTHUB's own M Switch campaign poster (salthub.com/m-switch-kit/, switch_pod_kit_01.webp as served).
+    storyCover: { src: "/assets/products/m-switch-kit/story-cover.webp", alt: "Official SALTHUB M Switch campaign poster — 15K puffs, cotton mesh, Type-C, lanyard", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1920, height: 1186 },
     flavorVariants: [
-      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
-      // Cool Mint removed 2026-09-28: the owner confirms it does not exist (reverses the 2026-09-06 "keep it" ruling, BSOT §21).
-      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown" },
-      { id: "black-berry", name: "Black Berry", swatchHex: "#3a2a4e", availability: "unknown" },
-      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
-      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown" },
-      { id: "doublemint", name: "Doublemint", swatchHex: "#3ea88a", availability: "unknown" },
-      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#7a5a9e", availability: "unknown" },
-      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown" },
-      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9a6ab0", availability: "unknown" },
-      { id: "mango-passion", name: "Mango Passion", swatchHex: "#e0a03a", availability: "unknown" },
-      { id: "mixberry", name: "Mixberry", swatchHex: "#8e3a6b", availability: "unknown" },
-      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e08a7a", availability: "unknown" },
-      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d94f8e", availability: "unknown" },
-      { id: "strawberry", name: "Strawberry", swatchHex: "#c9405f", availability: "unknown" },
-      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#d9607a", availability: "unknown" },
-      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e0709a", availability: "unknown" },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
+      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#ab8cf0", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-kyoho-grape-v2.webp", alt: "SALTHUB M Switch Kit, Kyoho Grape — device and pod" } },
+      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#ffffff", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-apple-aloe-v2.webp", alt: "SALTHUB M Switch Kit, Apple Aloe — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-apple-aloe.webp", alt: "SALTHUB M Switch starter kit, Apple Aloe — box and device, SALTHUB render" } },
+      { id: "black-berry", name: "Black Berry", swatchHex: "#5f3ac8", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-black-berry-v2.webp", alt: "SALTHUB M Switch Kit, Black Berry — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-black-berry.webp", alt: "SALTHUB M Switch starter kit, Black Berry — box and device, SALTHUB render" } },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#76eefb", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-blue-ice-v2.webp", alt: "SALTHUB M Switch Kit, Blue Ice — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-blue-ice.webp", alt: "SALTHUB M Switch starter kit, Blue Ice — box and device, SALTHUB render" } },
+      { id: "cola", name: "Cola", swatchHex: "#fc3b42", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-cola-v2.webp", alt: "SALTHUB M Switch Kit, Cola — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-cola.webp", alt: "SALTHUB M Switch starter kit, Cola — box and device, SALTHUB render" } },
+      { id: "doublemint", name: "Doublemint", swatchHex: "#affafb", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-doublemint-v2.webp", alt: "SALTHUB M Switch Kit, Doublemint — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-doublemint.webp", alt: "SALTHUB M Switch starter kit, Doublemint — box and device, SALTHUB render" } },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#906cfb", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-grape-aloe-v2.webp", alt: "SALTHUB M Switch Kit, Grape Aloe — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-grape-aloe.webp", alt: "SALTHUB M Switch starter kit, Grape Aloe — box and device, SALTHUB render" } },
+      { id: "grape", name: "Grape", swatchHex: "#6533f6", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-grape-v2.webp", alt: "SALTHUB M Switch Kit, Grape — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-grape.webp", alt: "SALTHUB M Switch starter kit, Grape — box and device, SALTHUB render" } },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#fa5cd0", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-grape-lychee-v2.webp", alt: "SALTHUB M Switch Kit, Grape Lychee — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-grape-lychee.webp", alt: "SALTHUB M Switch starter kit, Grape Lychee — box and device, SALTHUB render" } },
+      { id: "mango-passion", name: "Mango Passion", swatchHex: "#fdfa03", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-mango-passion-v2.webp", alt: "SALTHUB M Switch Kit, Mango Passion — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-mango-passion.webp", alt: "SALTHUB M Switch starter kit, Mango Passion — box and device, SALTHUB render" } },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#ae30f1", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-mixberry-v2.webp", alt: "SALTHUB M Switch Kit, Mixberry — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-mixberry.webp", alt: "SALTHUB M Switch starter kit, Mixberry — box and device, SALTHUB render" } },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#fa76ba", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-peach-strawberry-v2.webp", alt: "SALTHUB M Switch Kit, Peach Strawberry — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-peach-strawberry.webp", alt: "SALTHUB M Switch starter kit, Peach Strawberry — box and device, SALTHUB render" } },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#9a49f2", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-pink-berry-v2.webp", alt: "SALTHUB M Switch Kit, Pink Berry — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-pink-berry.webp", alt: "SALTHUB M Switch starter kit, Pink Berry — box and device, SALTHUB render" } },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#fb5c83", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-strawberry-v2.webp", alt: "SALTHUB M Switch Kit, Strawberry — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-strawberry.webp", alt: "SALTHUB M Switch starter kit, Strawberry — box and device, SALTHUB render" } },
+      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#81f334", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-strawberry-watermelon-v2.webp", alt: "SALTHUB M Switch Kit, Strawberry Watermelon — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-strawberry-watermelon.webp", alt: "SALTHUB M Switch starter kit, Strawberry Watermelon — box and device, SALTHUB render" } },
+      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#fb5866", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-watermelon-bubblegum-v2.webp", alt: "SALTHUB M Switch Kit, Watermelon Bubblegum — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-watermelon-bubblegum.webp", alt: "SALTHUB M Switch starter kit, Watermelon Bubblegum — box and device, SALTHUB render" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#fb7a78", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-watermelon-v2.webp", alt: "SALTHUB M Switch Kit, Watermelon — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-watermelon.webp", alt: "SALTHUB M Switch starter kit, Watermelon — box and device, SALTHUB render" } },
     ],
     specifications: [
       // Data round (2026-09-24, real browser): salthub.com product box "M SWITCH KIT · 15000 Puffs · Cotton Mesh Coil ·
@@ -457,6 +468,8 @@ export const salthubProducts: Product[] = [
         id: "keep-the-body",
         title: "Keep the device, swap the pod",
         description: "Unlike a fully disposable device, only the M Switch Pod cartridge is replaced — the device body is recharged and reused.",
+        // 2026-09-30: SALTHUB's own poster for this highlight, told as a block in "more details" (`storyDetails`).
+        image: { src: "/assets/products/m-switch-kit/story-03.webp", alt: "Official SALTHUB M Switch poster, \"Combination device and cartridge\" — put the flavour cartridge into the device", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1920, height: 1186 },
       },
     ],
     compatibility: [{ type: "pod", label: "M Switch Pod cartridge" }, typeC],
@@ -506,39 +519,39 @@ export const salthubProducts: Product[] = [
         sourceUrl: "https://www.salthub.com/",
       },
     ],
-    // Real flavor lineup — Tier-1 disposable growth mission (2026-09-03), extended (2026-09-04):
-    // re-fetched salthub.com's own m-switch-pod/ page directly and found more official per-flavor
-    // photos beyond the original 14 (Kyoho Grape, Grape Aloe, Grape Lychee — 17 in all since the
-    // owner removed Cool Mint on 2026-09-28) — same "M SWITCH Pod #1" retail-box photography, same evidence tier. This
-    // record's own real Shipnity children (Pod-147: Grape Aloe, Strawberry Watermelon, Apple
-    // Aloe) are a subset of this full list, confirming the list is accurate, not just plausible.
-    // Every source photo is a busy marketing composite (real fruit/liquid-splash imagery, a
-    // competing visual style to this catalog's clean-isolated-photo standard) — the NAMES are
-    // trustworthy (read directly off each flavor's own labeled box), the PHOTOS are not, so this
-    // stays swatch-only. Image-fix round 2026-09-28: 12 photos cut from these posters went live (PR #97) and were
-    // reverted the same day — the shop's own "M SWITCH 15K" review clip shows clear first-generation pods, so the
-    // black poster pod could not be proven to be what a customer receives (BSOT §21, 2026-09-06 ruling stands). `availability: "unknown"` for the
-    // same reason as M Bar 9K — no Shipnity/stock integration exists for Legacy SALTHUB products,
-    // and this page has no purchase action to gate.
+    // Real flavor lineup — Tier-1 disposable growth mission (2026-09-03), extended (2026-09-04): re-fetched salthub.com's own
+    // m-switch-pod/ page — 17 flavours since the owner removed Cool Mint on 2026-09-28. This record's own real Shipnity children
+    // (Pod-147: Grape Aloe, Strawberry Watermelon, Apple Aloe) are a subset of this list. `availability: "unknown"` — no
+    // Shipnity/stock integration for Legacy SALTHUB products.
+    // 2026-09-30 (round "image-sitewide" batch 2): the owner confirmed the pod the shop sells with a photo of real stock —
+    // black, glossy mouthpiece and collar, matte body, the flavour's coloured M + name tag (the 28/09 revert doubted the
+    // black poster pod; BSOT §21). `image` = the pod alone, cut out of SALTHUB's own per-flavour photo at its own angle and
+    // re-rendered sharp (source + check per file in scripts/process-images.map.json `aiRender`); `swatchHex` = its M / tag
+    // colour. The page opens on the lineup: 5 pods fanned (owner's "พัดกลิ่น" 30/09).
+    lineupImage: {
+      src: "/assets/products/m-switch-pod/lineup.webp",
+      alt: "SALTHUB M Switch Pod, five of its 17 flavours fanned, Doublemint in front",
+      sourceName: "OKami24 composite",
+    },
+    lineupFirst: true,
     flavorVariants: [
-      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#5a3570", availability: "unknown" },
-      // Cool Mint removed 2026-09-28: the owner confirms it does not exist (reverses the 2026-09-06 "keep it" ruling, BSOT §21).
-      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7cb342", availability: "unknown" },
-      { id: "black-berry", name: "Black Berry", swatchHex: "#3a2340", availability: "unknown" },
-      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
-      { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown" },
-      { id: "doublemint", name: "Doublemint", swatchHex: "#3ea88a", availability: "unknown" },
-      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#7a5a9e", availability: "unknown" },
-      { id: "grape", name: "Grape", swatchHex: "#6a4c93", availability: "unknown" },
-      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9a6ab0", availability: "unknown" },
-      { id: "mango-passion", name: "Mango Passion", swatchHex: "#e0a83e", availability: "unknown" },
-      { id: "mixberry", name: "Mixberry", swatchHex: "#6b3a5e", availability: "unknown" },
-      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e07a6b", availability: "unknown" },
-      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d9527a", availability: "unknown" },
-      { id: "strawberry", name: "Strawberry", swatchHex: "#c23a4e", availability: "unknown" },
-      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#d9647a", availability: "unknown" },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
-      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e0669a", availability: "unknown" },
+      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#ab8cf0", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-kyoho-grape-v2.webp", alt: "SALTHUB M Switch Pod, Kyoho Grape — pod" } },
+      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#ffffff", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-apple-aloe-v2.webp", alt: "SALTHUB M Switch Pod, Apple Aloe — pod" } },
+      { id: "black-berry", name: "Black Berry", swatchHex: "#5f3ac8", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-black-berry-v2.webp", alt: "SALTHUB M Switch Pod, Black Berry — pod" } },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#76eefb", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-blue-ice-v2.webp", alt: "SALTHUB M Switch Pod, Blue Ice — pod" } },
+      { id: "cola", name: "Cola", swatchHex: "#fc3b42", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-cola-v2.webp", alt: "SALTHUB M Switch Pod, Cola — pod" } },
+      { id: "doublemint", name: "Doublemint", swatchHex: "#affafb", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-doublemint-v2.webp", alt: "SALTHUB M Switch Pod, Doublemint — pod" } },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#906cfb", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-grape-aloe-v2.webp", alt: "SALTHUB M Switch Pod, Grape Aloe — pod" } },
+      { id: "grape", name: "Grape", swatchHex: "#6533f6", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-grape-v2.webp", alt: "SALTHUB M Switch Pod, Grape — pod" } },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#fa5cd0", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-grape-lychee-v2.webp", alt: "SALTHUB M Switch Pod, Grape Lychee — pod" } },
+      { id: "mango-passion", name: "Mango Passion", swatchHex: "#fdfa03", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-mango-passion-v2.webp", alt: "SALTHUB M Switch Pod, Mango Passion — pod" } },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#ae30f1", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-mixberry-v2.webp", alt: "SALTHUB M Switch Pod, Mixberry — pod" } },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#fa76ba", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-peach-strawberry-v2.webp", alt: "SALTHUB M Switch Pod, Peach Strawberry — pod" } },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#9a49f2", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-pink-berry-v2.webp", alt: "SALTHUB M Switch Pod, Pink Berry — pod" } },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#fb5c83", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-strawberry-v2.webp", alt: "SALTHUB M Switch Pod, Strawberry — pod" } },
+      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#81f334", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-strawberry-watermelon-v2.webp", alt: "SALTHUB M Switch Pod, Strawberry Watermelon — pod" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#fb7a78", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-watermelon-v2.webp", alt: "SALTHUB M Switch Pod, Watermelon — pod" } },
+      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#fb5866", availability: "unknown", image: { src: "/assets/products/m-switch-pod/variant-watermelon-bubblegum-v2.webp", alt: "SALTHUB M Switch Pod, Watermelon Bubblegum — pod" } },
     ],
     specifications: [
       // Data round (owner 2026-09-24, 10B fix A): salthub.com states "E-liquid Capacity: 2.2mL" only under M BAR POD and
