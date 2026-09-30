@@ -1241,6 +1241,17 @@ Also relocated (rewritten in place in v98 — checker PR #149; old wording, word
 
 ---
 
+### §16 line replaced by the owner ruling (20)+(21) (eleventh chat, 2026-09-30 — word for word)
+
+  (20) ANSWERED 30/09: the owner sent 3 photos (_incoming/image-sitewide/relx/owner/ — 1.png = black "Relx Creator Device" (RPODS
+       Dubai, watermarked); 2.webp + 3.jpg = grey/yellow renders) → the shop's black battery looks identical to RELX's own "Creator Pro Device"
+       [เชื่อว่า — by eye]; use relxnow.com's official renders (-black/-white/-green/-yellow, batch4-research.md §2), all 4 colours (catalog
+       completeness), not the watermarked file. Which pods it is sold with: still [รอเจ้าของ] (not blocking the device page)
+  (6)(8)(9) ANSWERED 30/09 (full text: §3, v94 block): anatomy sheet size polish later · odd part names + "วงแหวน RGB" →
+      "ไฟ RGB" in the LANGUAGE round / after 05/10 · batch 3 extras parked
+
+---
+
 ## 4. Known broken / missing, not fixed yet
 
 - **[ตรวจแล้ว] og:title of the homepage is still the pre-round string** ("OKami24 — ของแท้ ราคาตรง บริการจริง") — the owner's approved table covered `<title>`/description/og:description only; og:title was never in scope this round. Confirmed absent from `_incoming/seo-a/table-final-for-owner.md` and from THAI_STYLE_LOG's own round entry, which notes it explicitly [ตรวจแล้ว, `docs/THAI_STYLE_LOG.md` line 905].
@@ -1445,10 +1456,12 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
        LIFTED [เชื่อว่า — Friday's reading of "ทำเลย"] for photos, the footer brand list and page body: open INFY, fix M Bar 15K / argus-g4 photos. Friday's caveat, told
        to the owner: keep the <title>/meta description/H1/price of the 7 pages unchanged until 05/10 (that is what the 05/10 read measures;
        TITLE_PRICE_HOLD_UNTIL_2026_10_05) [รอเจ้าของ — the caveat is not yet confirmed] — check with scripts/head-audit.js
-  (20) ANSWERED 30/09: the owner sent 3 photos (_incoming/image-sitewide/relx/owner/ — 1.png = black "Relx Creator Device" (RPODS
-       Dubai, watermarked); 2.webp + 3.jpg = grey/yellow renders) → the shop's black battery looks identical to RELX's own "Creator Pro Device"
-       [เชื่อว่า — by eye]; use relxnow.com's official renders (-black/-white/-green/-yellow, batch4-research.md §2), all 4 colours (catalog
-       completeness), not the watermarked file. Which pods it is sold with: still [รอเจ้าของ] (not blocking the device page)
+  (20)+(21) OWNER RULING 30/09 (chat — wins over the lines it contradicts): INFY 20K = the round model with a lanyard ·
+       NO battery size (no real source) · show capacity 20mL + adjustable airflow · every flavour found (he counted 22; the data has 24 —
+       + Milk Tea Cha, Matcha found later on 3 shops: keep, tell him). RELX Creator = CLOSED pod system, device and pods sold apart · the
+       device with the screen = RELX's Creator Pro → RELX official photos OK · 2 colours, both still sold: grey-yellow (first) + black
+       (later) · fits RELX Creator 20K pods AND Muro Connector pods. Owner photos: _incoming/image-sitewide/relx/owner/. Open question:
+       relxnow.com lists 4 colours (Black/White/Green/Yellow) — show 4 (catalog completeness) or his 2? Friday recommends 4 [รอเจ้าของ]
   (7) the owner asked 30/09 "which steps slow us down — cut what drags"; Friday proposed cuts in the chat (checker on docs-only
       PRs · content-dates.json chore commits · full set on baseline pages after 05/10 · doc-keeper for §16 · rule-text sprawl) —
       the owner picks; then write them (central §12 item 28) [รอเจ้าของ] — still open
@@ -1466,8 +1479,6 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
       `muro-connector-20k/card-v2.webp`; + the -v2 files and `lineup.webp` of m-switch-kit / m-switch-pod replaced by #145 (loosely
       counted); `m-bar-pod` photos are KEPT on purpose (hidden product)] — re-scan public/assets/products vs src/ at the next
       round close; delete with the owner's OK (13.4 #1)
-  (6)(8)(9) ANSWERED 30/09 (full text: §3, v94 block): anatomy sheet size polish later · odd part names + "วงแหวน RGB" →
-      "ไฟ RGB" in the LANGUAGE round / after 05/10 · batch 3 extras parked
 5 open questions (round "ไล่ดูทีละส่วน", found by thai-copy, pre-existing, NOT fixed — out of scope):
   (a) answered (item 4 (6)(8)(9)) · (b) `dict.product.anatomyTitle`
   en/zh "from the outside in" promises internals (shared dictionary; the new sheet uses its own heading) · (c) no airflow spec
