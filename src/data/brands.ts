@@ -135,7 +135,10 @@ export const brands: Brand[] = [
     fullName: "INFY",
     tagline: "Vape pod systems, cartridges, and disposables.",
     description:
-      "A regional vape brand operating across Southeast Asian markets (including Thailand) offering closed-pod devices, prefilled cartridges (a 2.5mL line), and high-puff disposables — the brand's own official site indexes disposables only up to 12K, so higher-puff models sold regionally (e.g. 20K) are confirmed via retailer convergence rather than the brand's own site.",
+      "A vape brand (This Is Salts) whose INFY 20K disposable is sold on the Thai market; INFY's own sites do not list the 20K yet.",
+    // 2026-09-30 (round "image-sitewide"): the brand went live with INFY 20K — its line shows on /about and /brands/infy.
+    descriptionTh:
+      "INFY แบรนด์พอตใช้แล้วทิ้งที่ร้านมีรุ่น INFY 20K",
     referenceUrl: "https://www.infy.my/",
   },
   {

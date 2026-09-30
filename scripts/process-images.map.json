@@ -3688,5 +3688,521 @@
   },
   "note": "image-sitewide round 2026-09-30 batch 4 (owner 30/09: the card \"ไม่สวย ไม่คม ขนาดดูไม่สมมาตร\") — 4K remake on the 4:5 card standard; card-v2 was on the old square canvas",
   "fileName": "card-v3.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/cards/m9k-card-src.png",
+  "slug": "m-bar-9k",
+  "role": "card",
+  "replaces": "/assets/products/m-bar-9k/card.webp",
+  "aiRender": {
+   "tool": "no new render: the Higgsfield nano_banana_pro 4k master of batch 1 (_incoming/image-sitewide/m9k/out/master-1-cut.png — the same file every flavour photo is recoloured from, SALTHUB's own print colours) rotated -12 degrees (top leans left, like the INFY and old SALTHUB cards) in 2D by _incoming/image-sitewide/tilt-card.js",
+   "reference": "SALTHUB's own M Bar 9K card (the old card.webp) — the master was checked against it in batch 1 (m9k/out/master-1-zoom.png)",
+   "fidelitySheet": "_incoming/image-sitewide/cards/cards-a-sheet.png — old card | new card"
+  },
+  "note": "image-sitewide round, owner 30/09 rule (a) \"เอาแบบ Caliburn คม ชัด จัดวางสวย แต่รูปเดียวเด่น ๆ\" (§16 item 4 (18) answered \"ใช่\") — the page opens on this card (openOnCardPhoto) instead of the 5-flavour fan",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/cards/msk-card-src.png",
+  "slug": "m-switch-kit",
+  "role": "card",
+  "replaces": "/assets/products/m-switch-kit/card.webp",
+  "aiRender": {
+   "tool": "no new render: the batch-2 device cut-out (GPT Image 2.5 high 2k transparent cut of SALTHUB's kit render, _incoming/image-sitewide/msw/out/device-a.png — the same device every kit flavour photo shows, black body, the black pod the shop stocks on top) rotated -12 degrees (top leans left, like the INFY and old SALTHUB cards) in 2D by _incoming/image-sitewide/tilt-card.js",
+   "reference": "SALTHUB's own starter-kit render (salthub.com/m-switch-kit/) — batch 2",
+   "fidelitySheet": "_incoming/image-sitewide/cards/cards-a-sheet.png — old card | new card"
+  },
+  "note": "image-sitewide round, owner 30/09 rule (a) — the page opens on this card (openOnCardPhoto) instead of the device + 5-pod fan; replaces the navy SALTHUB card (the shop sells the black body, owner's photo of real stock 30/09)",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/relx/gen/card-src.png",
+  "slug": "relx-creator",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (job 71fecf67-0dfc-44cf-80b7-08bd7a5f5ed9) = the owner's grey-and-yellow photo re-rendered sharp in the same pose → background cut by GPT Image 2.5 high 2k transparent (job a4ed9608-627d-4f88-9123-bfd6da11a52e; the light grey body keys badly with scripts/flatcut.js) → faint glow alpha<60 dropped by _incoming/image-sitewide/relx/dehalo.js → tilted -10 degrees in 2D by _incoming/image-sitewide/tilt-card.js",
+   "reference": "the owner's photo of the grey-and-yellow device (chat 30/09, _incoming/image-sitewide/relx/owner/3.jpg = refs/owner-greyyellow-34.png)",
+   "fidelitySheet": "_incoming/image-sitewide/relx/gy-compare.png (owner photo | render: body, RELX logo, four studs with the amber one, yellow base, pixel smiley) + relx/final-sheet.png"
+  },
+  "note": "image-sitewide round 2026-09-30 — RELX Creator re-published as the Creator Pro device (owner ruling §16 item 4 (20)+(21)); the page was hidden for want of a card photo"
+ },
+ {
+  "source": "_incoming/image-sitewide/relx/gen/gy-final.png",
+  "slug": "relx-creator",
+  "role": "variant",
+  "id": "grey-yellow",
+  "aiRender": {
+   "tool": "as the card above, untilted",
+   "reference": "the owner's photo _incoming/image-sitewide/relx/owner/3.jpg",
+   "fidelitySheet": "_incoming/image-sitewide/relx/gy-compare.png"
+  },
+  "note": "image-sitewide round 2026-09-30 — the colour the shop sold first (owner 30/09)"
+ },
+ {
+  "source": "_incoming/image-sitewide/relx/gen/bk-final.png",
+  "slug": "relx-creator",
+  "role": "variant",
+  "id": "black",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k: job 777a264c (grey-yellow render as pose + RELX's black render for colours) came back with two red studs; job f2348bba repeated it; GPT Image 2.5 edit f6e0470e fixed the studs at 1024 px; job 6b562d53-9cb5-4b17-9913-3029c1196cf6 re-made that at 4K in the grey-yellow pose (three dark grey studs + one red, as the grey-yellow has three silver + one amber) → cut with scripts/flatcut.js",
+   "reference": "RELX's own black Creator Pro render https://cdn.shopify.com/s/files/1/0041/5914/4047/files/relx-creator-pro-vape-device-black.jpg (device crop _incoming/image-sitewide/relx/refs/official-black.png) + the owner's black photo relx/owner/1.png",
+   "fidelitySheet": "_incoming/image-sitewide/relx/bk4-sheet.png (grey-yellow | black | stud close-up)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the black the shop sells (owner 30/09; RELX's official photos OK'd by the owner)"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/apple-aloe.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "apple-aloe",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/apple-aloe.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-apple-aloe-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/apple-aloe.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "apple-aloe",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-apple-aloe-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/black-berry.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "black-berry",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/black-berry.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-black-berry-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/black-berry.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "black-berry",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-black-berry-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/blue-ice.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "blue-ice",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/blue-ice.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-blue-ice-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/blue-ice.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "blue-ice",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-blue-ice-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/cola.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "cola",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/cola.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-cola-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/cola.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "cola",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-cola-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/doublemint.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "doublemint",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/doublemint.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-doublemint-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/doublemint.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "doublemint",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-doublemint-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/grape-aloe.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "grape-aloe",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/grape-aloe.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-grape-aloe-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/grape-aloe.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "grape-aloe",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-grape-aloe-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/grape-lychee.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "grape-lychee",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/grape-lychee.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-grape-lychee-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/grape-lychee.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "grape-lychee",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-grape-lychee-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/grape.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/grape.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-grape-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/grape.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-grape-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/kyoho-grape.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "kyoho-grape",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/kyoho-grape.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-kyoho-grape-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/kyoho-grape.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "kyoho-grape",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-kyoho-grape-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/mango-passion.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "mango-passion",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/mango-passion.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-mango-passion-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/mango-passion.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "mango-passion",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-mango-passion-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/mixberry.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "mixberry",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/mixberry.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-mixberry-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/mixberry.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "mixberry",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-mixberry-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/peach-strawberry.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "peach-strawberry",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/peach-strawberry.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-peach-strawberry-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/peach-strawberry.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "peach-strawberry",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-peach-strawberry-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/pink-berry.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "pink-berry",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/pink-berry.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-pink-berry-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/pink-berry.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "pink-berry",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-pink-berry-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/strawberry-watermelon.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "strawberry-watermelon",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/strawberry-watermelon.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-strawberry-watermelon-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/strawberry-watermelon.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "strawberry-watermelon",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-strawberry-watermelon-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/strawberry.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "strawberry",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/strawberry.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-strawberry-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/strawberry.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "strawberry",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-strawberry-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/watermelon-bubblegum.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "watermelon-bubblegum",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/watermelon-bubblegum.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-watermelon-bubblegum-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/watermelon-bubblegum.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "watermelon-bubblegum",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-watermelon-bubblegum-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/final/watermelon.png",
+  "slug": "m-switch-pod",
+  "role": "variant",
+  "id": "watermelon",
+  "aiRender": {
+   "tool": "no new AI step: one master pod for every flavour (up/doublemint.png — the batch-2 GPT Image upright re-pose of SALTHUB's Doublemint photo) + this flavour's own printed label (M logo + name tag) lifted off its batch-2 pod up/<id>.png, scaled to the same M height and placed at the same spot — _incoming/image-sitewide/msw/v4.js",
+   "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/watermelon.png) — the label pixels are SALTHUB's",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/zl-sheet.png — every label read by eye: name = the flavour, 17/17; _incoming/image-sitewide/msw/v4/final-sheet.png — one shape"
+  },
+  "note": "image-sitewide round, owner 30/09 on v3 \"บางตัวปากกว้าง บางตัวเบี้ยว\" — v4 = one master pod, only the label changes",
+  "fileName": "variant-watermelon-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/kit/watermelon.png",
+  "slug": "m-switch-kit",
+  "role": "variant",
+  "id": "watermelon",
+  "aiRender": {
+   "tool": "composite by _incoming/image-sitewide/msw/compose-v4.js (compose.js re-pointed at the v4 pods): the batch-2 device cut-out (out/device-a.png) + this flavour's v4 pod beside it",
+   "reference": "as the m-switch-pod v4 entry of this flavour",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/compose-view.png"
+  },
+  "note": "image-sitewide round — the kit photos follow the pod's v4 (same pod shape on both pages)",
+  "fileName": "variant-watermelon-v4.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/msw/v4/card-src.png",
+  "slug": "m-switch-pod",
+  "role": "card",
+  "replaces": "/assets/products/m-switch-pod/card.webp",
+  "aiRender": {
+   "tool": "the v4 Doublemint pod (the master itself, its own label) tilted -12 degrees in 2D by _incoming/image-sitewide/tilt-card.js — no new render",
+   "reference": "SALTHUB's own Doublemint pod photo",
+   "fidelitySheet": "_incoming/image-sitewide/msw/v4/final-sheet.png"
+  },
+  "note": "image-sitewide round, owner rule (a) 30/09 — the page opens on one sharp pod (openOnCardPhoto); replaces the 437-px Grape Aloe card",
+  "fileName": "card-v2.webp"
  }
 ]
