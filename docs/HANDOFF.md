@@ -72,7 +72,7 @@ Site copy (every round): every new sentence = 3 languages and the owner rules th
   never typed — always read live from the catalog (`priceOf` / `getCatalogItem`)
 Test server: `node scripts/test-server.js build` then `start` (port 3412 · SITE_URL=https://okami24.store ·
   OKAMI24_DATA_DIR=<tmp> · backup and startup probe off · log `_incoming/test-server-3412.log`) · a new build needs
-  stop → start · stop = `node scripts/test-server.js stop` (kills only the PID on 3412 · `status`) · never /IM node.exe ·
+  stop → start · stop = `node scripts/test-server.js stop` (kills only the PID on 3412 · `status`) ·
   port 3000 + `.claude/launch.json` "vapor-dev" = the owner's own dev server, agents never start it · never build while
   the server runs (`test-server.js build` and `verify:catalog --full` refuse; a bare `next build` has no gate) ·
   Chrome one job at a time · a job over 10 minutes = background + watch the log

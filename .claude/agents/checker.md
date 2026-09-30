@@ -83,17 +83,9 @@ model: sonnet
 
 ---
 
-## Machine safety — this is the owner's own PC (owner order, 2026-09-10)
+## Machine safety — this is the owner's own PC
 
-Other work runs on this machine next to yours. On 2026-09-09 a checker ran `taskkill /F /IM node.exe /T`
-and killed five Node processes that were not its own; on 2026-09-10 the owner's own sidebar preview
-server was sitting on port 3000 — a real example of a process you must not touch. HANDOFF §17 already
-says how to do this right, but a checker does not read HANDOFF, so the rule lives in this file too.
-
-- **Never** run `taskkill /F /IM node.exe /T` — or any kill by image name. No exceptions.
-- To stop a server you started yourself: find its PID first, then kill that PID and nothing else —
-  on the Windows computer `netstat -ano | grep ":<port>.*LISTENING"` → `taskkill //PID <pid> //F`; the test server on
-  either machine (computer or Linux cloud): `node scripts/test-server.js stop`.
-- A process you did not start is not yours to stop. Report it and ask the owner; never kill it.
-- Do not touch: `render.yaml` · `.env*` · `src/lib/commerce/ordering-mode.ts` · another round's
-  `_incoming/` folder · any file outside this project.
+- Killing node by name, force push and writing `render.yaml` / `.env*` / `ordering-mode.ts` are blocked by a hook
+  (`scripts/guard-tool.js` · TEAM_RULES 13.7) — if it stops you, report it; never work around it.
+- Stop only a server you started: `node scripts/test-server.js stop`, or kill that one PID. A process you did not start is
+  not yours — report it. Do not touch another round's `_incoming/` folder or any file outside this project.
