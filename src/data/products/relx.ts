@@ -89,62 +89,83 @@ export const relxProducts: Product[] = [
   {
     id: "relx-creator",
     slug: "relx-creator",
-    hiddenFromStorefront: { since: "2026-09-06", reason: "no card photo (IMAGE_SPEC §4); also which RELX Creator generation is stocked is still unconfirmed" },
+    // Re-published 2026-09-30 (round "image-sitewide", owner ruling §16 item 4 (20)+(21) and chat answer 30/09): NOT a
+    // disposable — the device of a CLOSED pod system, sold alone (Shipnity Pod-138 "Relx Creator (เครื่อง)"); the device
+    // with the screen = RELX's own "Creator Pro Device" (relxnow.com), so RELX's official specs apply; it takes RELX
+    // Creator 20K pods and Muro Connector pods (owner, from the shop's stock). The owner shows the 2 colours the shop sells
+    // (grey with a yellow base, first; black, later) — RELX's global store lists Black / White / Green / Yellow; the
+    // grey-and-yellow edition is not on that list (a regional edition — owner's photo).
     brandId: "relx",
-    familyId: "relx-disposables",
-    categoryId: "disposables",
-    systemType: "disposable",
+    familyId: "relx-creator",
+    categoryId: "pod-kits",
+    systemType: "pod-kit",
     name: "RELX Creator",
     displayName: "RELX CREATOR",
-    tagline: "A real RELX generational line — current stock needs an owner check.",
+    tagline: "RELX's Creator Pro device — pods sold separately.",
     shortDescription:
-      "A real, RELX-manufactured high-puff disposable line sold in the Thai/regional market — genuinely NOT the same thing as RELX's official international \"Creator\" line (a refillable Creator Pro Device + Creator Pod cartridge system, ~5,000 puffs/pod). Deeper research (2026-09-03) found this is a real generational chain — 18K (original) → Clear Pod 18K → Boost 20K → 22K (current, \"รุ่นใหม่อัพเกรด\") — not a naming mix-up; OKami24's own two review videos map to two different real points in that same chain. What's still open: whether OKami24 currently stocks the 18K pod alongside the 22K device, or has moved on to 22K only.",
+      "The RELX Creator Pro device on its own: an 800mAh USB-C battery with a pixel smart screen, 15W / 25W at a double click and adjustable airflow. A closed pod system — fit a prefilled pod, swap the pod when it runs out and keep the device. Takes RELX Creator 20K pods and Muro Connector pods.",
     isFlagship: false,
     // Confirmed via YouTube oEmbed (2026-09-03): real video, owned by
     // youtube.com/@PODSYSTEM-OKAMI-II — one of OKami24's own three channels.
     reviewVideo: { videoId: "HKwsShRoo78", title: "RELX CREATOR 22K รุ่นใหม่อัพเกรด ใหญ่ จุใจ!", channelName: "POD SYSTEM OKAMI II", publishedAt: "2026-04-02" },
     attributes: {
       batteryMah: 800,
-      puffCount: 22000,
-      screenType: "none",
+      wattageMax: 25,
+      screenType: "led-indicator",
       drawStyle: "MTL",
       portability: "ultra-compact",
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    // NO card asset yet, deliberately. RELX's OFFICIAL "Creator" product photography (relxnow.com/
-    // collections/relx-creator) shows the Creator Pro Device + Pod SYSTEM, a physically different
-    // product from the "18000 puffs" single-use disposable sold under this name in Thailand — using
-    // that photo here would misrepresent this record's actual hardware. No confidently-matching
-    // exact photo of the Thai-market "18000 puffs" unit was found from a source strong enough to
-    // pass this catalog's identity-confidence bar. Falls back to the illustrated glyph honestly.
-    assets: [],
-    // Real generational chain confirmed (2026-09-03, second research pass): 18K (original, Mega
-    // Mesh) → "Creator Pod Clear 18K" (dual mesh, clear body, Freshness Lock) → "Creator Boost
-    // 20K" (adjustable power modes) → "Creator 22K" (dual mesh, 5 power modes 12-22W, 800mAh,
-    // ~17mL) — corroborated across 10+ China-domestic/Thai/SG resellers, tier-4 confidence (no
-    // official RELX Thai/SEA site exists to reach tier-1: relxthailand.com is parked, relx.co.th
-    // not found). Modeled here as the 22K generation since that is the current top model per
-    // OKami24's own "รุ่นใหม่อัพเกรด" (new upgraded model) review video. The 18K generation is
-    // NOT a separate catalog entry — owner should confirm whether it's still separately stocked.
-    specifications: [
-      { key: "puffs", label: "Rated puffs", value: "22,000 (current generation per retailer convergence + OKami24's own \"รุ่นใหม่อัพเกรด\" review)", sourceStatus: "unverified" },
-      { key: "battery", label: "Battery", value: "~800mAh rechargeable, USB-C", sourceStatus: "unverified" },
-      { key: "capacity", label: "E-liquid capacity", value: "~17mL (retailer figures vary)", sourceStatus: "unverified" },
-      { key: "coil", label: "Coil", value: "Dual mesh coil, 5 power modes (12-22W)", sourceStatus: "unverified" },
-      { key: "modes", label: "Power modes", value: "5 selectable output modes (retailer-stated)", sourceStatus: "unverified" },
-    ],
-    features: [],
-    compatibility: [typeC],
-    whoIsThisFor: ["Existing RELX Creator customers looking for real specs and flavor confirmation while OKami24 finishes verifying this listing."],
-    faqs: [
+    // Photos (2026-09-30): the grey-and-yellow device = a Higgsfield 4K remake of the owner's own photo (3/4 view); black =
+    // the same pose with RELX's official black render for the colours (the owner OK'd RELX's photos); the card = the
+    // grey-and-yellow one tilted. Source + check per file in scripts/process-images.map.json `aiRender`.
+    assets: [
       {
-        id: "relx-creator-naming",
-        question: "RELX Creator ที่ร้านมีรุ่นไหน",
-        answer: "RELX Creator ที่ขายในไทยมีหลายรุ่นย่อย รุ่นที่ร้านมีตอนนี้ทักไลน์ @okm24 ถามได้เลย",
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-creator/card.webp",
+        alt: "RELX Creator Pro device, grey body with a yellow base and pixel smiley screen, tilted",
+        angle: "3/4, tilted",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from the owner's photo",
+        sourceUrl: "https://relxnow.com/products/relx-creator-pro-device",
       },
     ],
-    relatedProductSlugs: ["relx-smash-go-12k"],
-    sourceUrls: ["https://www.relxnow.com/collections/relx-creator"],
+    openOnCardPhoto: true,
+    colorVariants: [
+      { id: "grey-yellow", name: "Grey Yellow", swatchHex: "#c9c9cb", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-grey-yellow.webp", alt: "RELX Creator Pro device, grey with a yellow base" } },
+      { id: "black", name: "Black", swatchHex: "#2b2b2d", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-black.webp", alt: "RELX Creator Pro device, black" }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+    ],
+    // RELX's own Creator Pro Device page (relxnow.com, read 2026-09-30): 800mAh, Type-C fast charging, one button — one
+    // click = battery, double click = 15W Normal / 25W Boost, a smart screen with 100+ emojis, full-range adjustable
+    // airflow. Pods: RELX says "RELX Creator Pods"; the owner (30/09, the shop's own stock) says it takes RELX Creator 20K
+    // pods and Muro Connector pods — the owner's word, a named exception to THAI_STYLE §5 "manufacturer only".
+    specifications: [
+      { key: "format", label: "Format", value: "Device only — prefilled pods sold separately", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { key: "battery", label: "Battery", value: "800mAh rechargeable, USB-C", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { key: "modes", label: "Power modes", value: "15W Normal / 25W Boost, double click to switch", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { key: "screen", label: "Display", value: "Pixel smart screen with emoji faces; one click shows the battery", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { key: "airflow", label: "Airflow", value: "Adjustable", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      // No URL on purpose: the owner's word from the shop's stock (30/09) — the named exception in THAI_STYLE §5.
+      { key: "compat", label: "Pod platform", value: "RELX Creator 20K pods, Muro Connector pods (shop-confirmed)", sourceStatus: "verified" },
+    ],
+    features: [],
+    // The pod rows are the owner's word (shop stock, 30/09); the spec row and the FAQ say "shop-confirmed".
+    compatibility: [
+      { type: "pod", label: "RELX Creator 20K pod" },
+      { type: "pod", label: "Muro Connector pod" },
+      typeC,
+    ],
+    whoIsThisFor: ["Vapers who want a device they keep, with prefilled pods they swap instead of filling e-liquid."],
+    faqs: [
+      {
+        id: "relx-creator-pods",
+        question: "Which pods fit the RELX Creator?",
+        answer: "RELX Creator 20K pods and Muro Connector pods — the shop confirmed both from its own stock. For any other pod, ask on LINE @okm24 first.",
+      },
+    ],
+    relatedProductSlugs: ["muro-connector-20k", "relx-smash-go-12k"],
+    sourceUrls: ["https://relxnow.com/products/relx-creator-pro-device"],
   },
 ];
