@@ -36,7 +36,7 @@ the standing list is:
 
 - `.claude/rules/central-rules.md` (central rules, §1–§12 — the synced copy; never skip it). Not in the repo yet
   (before the first sync) = read `~/.claude/CLAUDE.md` instead; neither readable = say so in the report.
-- `.claude/TEAM_RULES.md` (section 13 + its web-specific §3/§6/§8 block + the "ย้ายมาจาก memory 25/09" block)
+- `.claude/TEAM_RULES.md` (section 13 + the house map at its head + the legal-status block)
   · skip `.claude/worktrees/` (other checkouts, not this repo)
 - `CLAUDE.md` at the repo root (a different file — imports `AGENTS.md`, `.claude/TEAM_RULES.md` and
   `.claude/memory/MEMORY.md`) · `.claude/memory/*.md` (Friday's memory, loaded every chat)
