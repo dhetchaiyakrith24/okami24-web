@@ -33,8 +33,6 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   file references — use `npx tsx scripts/asset-refs.ts` (reads the catalog, incl. names built at
   runtime such as wotofo `variant-${id}`); a plain name search flags false positives — delete only what that proves unused.
 4 waiting on owner:
-  (28) NEW — `_incoming/` folders nobody references (list: `node scripts/house-check.js`) — delete? (not in git ·
-       `.test-server-3412` = the test server's own build, not clutter — kept)
   (25) M Bar 10K: open on the single card like 9K / Kit / Pod (Friday recommends) or keep the approved lineup pilot
   (24) Thai wording: RELX Creator tagline/description/FAQ/who-for, INFY brand line/who-for/FAQ; words not in THAI_STYLE:
        "จอพิกเซล", "หน้าอีโมจิ"
@@ -46,6 +44,9 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
     use the light set — delete `galleryNoteHeld` + the `heldNote` prop; M Bar 10K airflow row (moves 27 lastmod dates);
     then drop the "ถึง 05/10" clauses of TEAM_RULES 13.5 #3 / 13.7 / 13.8.
   - `dict.product.anatomyTitle` en/zh "from the outside in" (pre-existing, out of scope so far).
+  - 01/10 owner: 23 unreferenced `_incoming/` folders (4,837 files · 453.4 MB · old rounds 30.1–tools-round) MOVED, not
+    deleted, to `C:UsersdhetcOKami24-เก็บincoming-01-10` (outside the repo). Kept in place: `.test-server-3412` · image-round
+    work of 28–30/09 (accept-webp · cache-audit · flavour-bug · grid-back · trim-credit · image-sitewide) · smogz-rules · checker-h4.
   - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook; the
     pre-push gate still stops force push / push to main.
   - Carried ideas: out-of-stock suggestion (Esko 18/20) · card sweep on 4:5 · ARTICLE round (every product gets an SEO
