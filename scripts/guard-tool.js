@@ -18,8 +18,24 @@ const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
 const LOCKED = [/(^|[\\/])render\.yaml$/i, /(^|[\\/])\.env[^\\/]*$/i, /(^|[\\/])ordering-mode\.ts$/i];
-const LOCKED_IN_TEXT = /render\.yaml|\.env\b|\.env\.[\w.-]+|ordering-mode\.ts/i;
-const WRITES_IN_SHELL = /(^|[^<>])>{1,2}(?!&)|\bsed\s+-i|\bperl\s+-[a-z]*i|\b(tee|cp|mv|rm|truncate|unix2dos|dos2unix)\b|Set-Content|Add-Content|Out-File|Copy-Item|Move-Item|Remove-Item|WriteAllText|writeFileSync/i;
+// C in a shell command: the locked file must be the TARGET of a write (owner 01/10: a commit message that merely
+// mentions render.yaml must not trip it). Text is judged after heredoc bodies and quoted strings holding spaces
+// (messages) are blanked; a quoted path without spaces stays.
+const NAME = String.raw`[^\s;|&<>"']*(?:render\.yaml|\.env(?:\.[\w.-]+)?|ordering-mode\.ts)\b`;
+const WRITE_TARGETS = [
+  new RegExp(String.raw`>{1,2}\s*["']?` + NAME, "i"), // > file · >> file
+  new RegExp(String.raw`\b(sed|perl)\s+(-\w+\s+)*-\w*i\b[^;|&]*\s["']?` + NAME, "i"), // sed -i / perl -i … file
+  new RegExp(String.raw`\b(tee|cp|mv|rm|truncate|unix2dos|dos2unix)\b[^;|&]*\s["']?` + NAME, "i"),
+  new RegExp(String.raw`\b(Set-Content|Add-Content|Out-File|Copy-Item|Move-Item|Remove-Item|Clear-Content)\b[^;|]*\s["']?` + NAME, "i"),
+  new RegExp(String.raw`(WriteAllText|WriteAllLines|AppendAllText|writeFileSync|appendFileSync)\s*\(\s*["'\x60]?` + NAME, "i"),
+];
+function blankText(cmd) {
+  return cmd
+    .replace(/<<-?\s*["']?(\w+)["']?[\s\S]*?\n\1\b/g, "<<HEREDOC") // heredoc bodies
+    .replace(/"(?:[^"\\]|\\.)*\s(?:[^"\\]|\\.)*"/g, '""') // double-quoted text with a space
+    .replace(/'[^']*\s[^']*'/g, "''") // single-quoted text with a space
+    .replace(/@'[\s\S]*?'@|@"[\s\S]*?"@/g, "''"); // PowerShell here-strings
+}
 
 function decide(decision, reason) {
   process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: "PreToolUse", permissionDecision: decision, permissionDecisionReason: reason } }));
@@ -48,7 +64,7 @@ function lockedDecision(what) {
 }
 
 function checkShell(cmd) {
-  const c = cmd.replace(/\s+/g, " ");
+  const c = blankText(cmd).replace(/\s+/g, " "); // quoted text / heredocs (messages) never trip A, B or C
   // A
   if (/taskkill\b[^;&|]*\/im\s+"?node(\.exe)?\b/i.test(c) || /Stop-Process\b[^;&|]*-(Name|ProcessName)\s+"?node\b/i.test(c) || /\b(pkill|killall)\b[^;&|]*\bnode\b/i.test(c) || /Get-Process\s+-?(Name\s+)?"?node"?\s*\|\s*Stop-Process/i.test(c)) {
     decide("deny", "Killing node by name also kills the owner's dev server (port 3000). Stop the test server with `node scripts/test-server.js stop` (TEAM_RULES 13.7 · owner 01/10).");
@@ -68,8 +84,10 @@ function checkShell(cmd) {
       decide("deny", "No push straight to main — the way into main is a merged PR (TEAM_RULES 13.7). Push the work branch instead.");
     }
   }
-  // C — a shell command that writes one of the locked files
-  if (LOCKED_IN_TEXT.test(c) && WRITES_IN_SHELL.test(c)) lockedDecision(c);
+  // C — a shell command whose write TARGET is one of the locked files
+  const plain = blankText(cmd);
+  const hit = WRITE_TARGETS.map((re) => plain.match(re)).find(Boolean);
+  if (hit) lockedDecision(hit[0]);
 }
 
 let raw = "";

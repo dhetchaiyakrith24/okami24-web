@@ -113,10 +113,9 @@
 
 * **commit + push ลง branch งานได้ทุกเมื่อ** รวมงานที่ยังไม่ตรวจ (= "ได้รับอนุญาต" ตามกฎกลาง §8) · commit ที่ยังไม่ตรวจไม่นับว่าผ่าน และไม่ใช่จุดถอย
 * แบ่ง commit ให้ถอยทีละเรื่องได้ (วิธีแบ่งเลือกเอง) · ห้าม `add -A` โดยไม่ดูว่ามีอะไรติดไป · ไอเดียนอกคำสั่งที่ลูกค้าเห็น = commit ของตัวเอง
-* **ตัวล็อกจริง (เจ้าของ 01/10 — ล็อกแทนข้อความ):** ห้าม force push ตลอดไป · ไม่ push ขึ้น main ตรง (ทางเข้า main = merge) — `scripts/push-guard.js`
-  (git pre-push) + `scripts/guard-tool.js` (hook ของ Claude Code) · ห้ามปิด node ทั้งเครื่อง (ใช้ `node scripts/test-server.js stop`) ·
-  `render.yaml` / `.env*` / สวิตช์ตะกร้า `ordering-mode.ts` แก้ได้เมื่อไฟล์คำสั่งของรอบที่เปิดอยู่มีบรรทัด【แตะได้】ที่ระบุชื่อไฟล์นั้น (แผน = อนุญาต
-  ไม่มีตั๋ว) · ไม่มี = เด้งถามเจ้าของ · ไฟล์ใหญ่ วิดีโอ เสียง ไม่เข้า git (`scripts/large-file-check.js`)
+* **ตัวล็อก (เจ้าของ 01/10 · `scripts/guard-tool.js` + `scripts/push-guard.js`):** ห้าม force push · ห้าม push ขึ้น main ตรง ·
+  ห้ามปิด node ทั้งเครื่อง (`node scripts/test-server.js stop`) · เขียน `render.yaml` / `.env*` / `ordering-mode.ts` = ไฟล์คำสั่งรอบต้องมีบรรทัด【แตะได้】
+  ชื่อไฟล์นั้น ไม่มี = เด้งถามเจ้าของ · ไฟล์ใหญ่ วิดีโอ เสียง ไม่เข้า git (`scripts/large-file-check.js`)
 * **merge — Friday merge ทุก PR ของรีโปนี้เอง** (บนคอมและคลาวด์ · Javis merge เฉพาะเมื่อเจ้าของสั่ง) · **ไม่หยุดถามก่อน merge** — merge แล้วรายงาน
   · ก่อน merge ทุก PR: checker ผ่าน + ด่าน GitHub เขียวทุกตัว (ถูกข้าม = ไม่นับ · แดงหรือยังรัน = ยังไม่ผ่าน)
   · **PR เอกสารล้วน** (ทุกไฟล์ใน `docs/` และ `self-merge-check` ขึ้น `SMALL`) ไม่ต้องส่ง checker — ตัวหลักอ่าน diff เองแล้วเขียนในรายงานว่าข้าม checker ตามข้อนี้
