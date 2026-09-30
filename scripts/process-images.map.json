@@ -2515,5 +2515,291 @@
    "fidelitySheet": "_incoming/nexbar-clear/flav-out/fid-honeydew-melon.png — shape IoU 0.982 vs the card (colour differs by design: the card tank is empty); label and liquid colour checked by eye against the poster (_incoming/nexbar-clear/flav-out/sheet.jpg)"
   },
   "note": "image-fix round 2026-09-30 — nexBar CLEAR 18K flavour photo"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/grape-aloe.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "grape-aloe",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-grape-aloe-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/watermelon.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "watermelon",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-watermelon-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/doublemint.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "doublemint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-doublemint-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/blue-ice.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "blue-ice",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-blue-ice-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/strawberry.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "strawberry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-strawberry-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/peach.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "peach",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-peach-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/rainbow-candy.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "rainbow-candy",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-rainbow-candy-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/grape-lychee.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "grape-lychee",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-grape-lychee-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/apple-aloe.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "apple-aloe",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-apple-aloe-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/mixberry.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "mixberry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-mixberry-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/cola.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "cola",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-cola-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/grape.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-grape-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/orange-sour.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "orange-sour",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-orange-sour-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/sparkling-lemon.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "sparkling-lemon",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-sparkling-lemon-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/sour-gummy.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "sour-gummy",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-sour-gummy-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/watermelon-bubblegum.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "watermelon-bubblegum",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-watermelon-bubblegum-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/pink-berry.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "pink-berry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-pink-berry-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/peach-strawberry.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "peach-strawberry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-peach-strawberry-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/strawberry-milkshake.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "strawberry-milkshake",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-strawberry-milkshake-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/menthol-freeze.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "menthol-freeze",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-menthol-freeze-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/kyoho-grape.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "kyoho-grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-kyoho-grape-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/m9k/final/zapple.png",
+  "slug": "m-bar-9k",
+  "role": "variant",
+  "id": "zapple",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, 1 master render for all 22 flavours (job _incoming/image-sitewide/m9k/out/job-master-1.json, 4 credits) + per-flavour print recolour by script (_incoming/image-sitewide/m9k/recolour.js — geometry copied pixel for pixel, only the Salthub / BAR9K / M print colour moved)",
+   "reference": "master: SALTHUB's own card photo salthub.com/wp-content/uploads/2025/05/m_bar_9k.webp (_incoming/image-sitewide/m9k/refs/ref1-card.png) + its lettering close-up (refs/ref2-letters.png) + the front view on SALTHUB's flavour chart (refs/ref3-front-blueice.png); print colour: this flavour's device on SALTHUB's own M Bar 9K flavour chart salthub.com/m-bar-9k/ (m_bar_9k_02–06.webp), 8 bands top to bottom (_incoming/image-sitewide/m9k/colours.json, sample.js)",
+   "fidelitySheet": "_incoming/image-sitewide/m9k/compare.png — maker chart crop | our photo per flavour, checked by eye 22/22 (shape, Salthub logo, BAR9K, M logo, print colour order top to bottom)"
+  },
+  "note": "image-sitewide round 2026-09-30 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print colour changes when a customer swipes (every M Bar 9K flavour is the same black device; SALTHUB's chart tells flavours apart by the print colour only); flat #E9E9EC keyed with scripts/flatcut.js 14/48 · body toned gamma 1.06 to SALTHUB's own card (neutral median 68 -> 63) · pre-sized to the 840-px product box (lanczos3) + output sharpening sigma 0.5 (the M Bar 10K standard step). New file names (-v2): variant-<id>.webp was used by the withdrawn 28/09 retailer files (Cloudflare keeps 30 days, lesson พ6)",
+  "fileName": "variant-zapple-v2.webp"
  }
 ]
