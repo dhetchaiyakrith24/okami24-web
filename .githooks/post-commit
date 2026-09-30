@@ -1,0 +1,4 @@
+#!/bin/sh
+# After every commit: fold the refreshed content dates into the commit itself (owner 30/09 rules item 7B — no separate
+# chore(dates) commit) — scripts/content-dates-amend.js (skips itself on its own amend, rebases and merges)
+exec node scripts/content-dates-amend.js

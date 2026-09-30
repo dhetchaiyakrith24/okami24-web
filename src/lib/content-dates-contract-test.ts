@@ -28,8 +28,9 @@ const ROOT = process.cwd();
 const ISO = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}[+-]\d{2}:\d{2}$/;
 
 function gitDate(relPath: string): string {
-  // Same spelling as scripts/content-dates.ts: newer git prints a UTC date as "…Z", older git as "…+00:00".
-  return execFileSync("git", ["log", "-1", "--format=%cI", "--", relPath], { cwd: ROOT, encoding: "utf8" }).trim().replace(/Z$/, "+00:00");
+  // Same as scripts/content-dates.ts: the AUTHOR date (kept by the post-commit amend, owner 30/09); newer git prints a
+  // UTC date as "…Z", older git as "…+00:00".
+  return execFileSync("git", ["log", "-1", "--format=%aI", "--", relPath], { cwd: ROOT, encoding: "utf8" }).trim().replace(/Z$/, "+00:00");
 }
 
 export function runContentDatesContractTests(): ContentDatesContractResult[] {
@@ -48,9 +49,9 @@ export function runContentDatesContractTests(): ContentDatesContractResult[] {
   const extra = Object.keys(recorded).filter((p) => !expected.includes(p));
   check(`content-dates.json lists no path the mapping no longer names`, extra.length === 0, extra.join(", ") || "none");
 
-  // ---- 2. Every recorded date is a git committer date, and it is git's CURRENT answer ----
+  // ---- 2. Every recorded date is a git author date, and it is git's CURRENT answer ----
   const badFormat = Object.entries(recorded).filter(([, d]) => !ISO.test(d)).map(([p]) => p);
-  check(`every recorded date is an ISO-8601 committer date`, badFormat.length === 0, badFormat.join(", ") || "all well-formed");
+  check(`every recorded date is an ISO-8601 author date`, badFormat.length === 0, badFormat.join(", ") || "all well-formed");
   const stale = Object.entries(recorded)
     .map(([p, d]) => ({ p, recorded: d, git: gitDate(p) }))
     .filter((r) => r.git && r.git !== r.recorded);

@@ -72,9 +72,11 @@ the checker quotes the printed totals in its report — this file never states t
 - `node scripts/og-gate.js --base <test server>` — the share card of every page in the sitemap
   (added 2026-09-22, round "share-deadend": 52 pages had shipped one shared card for months and
   no gate could see it, because the page itself looked right)
-- `npx tsx scripts/content-dates.ts` **after the last content commit**, then
-  `npx tsx scripts/content-dates.ts --check` — `verify:catalog` fails while the generated dates
-  are older than git (added 2026-09-22, round "search-price")
+- `npx tsx scripts/content-dates.ts --check` — `verify:catalog` fails while the generated dates
+  are older than git (added 2026-09-22, round "search-price"). The post-commit hook
+  (`scripts/content-dates-amend.js`) folds the refreshed dates into every commit, so there is no separate
+  `chore(dates)` commit any more (owner 30/09 rules item 7B); `--check` failing = the hook did not run
+  (hooks off in this clone — `docs/RECOVERY.md` 2ค) → run `npx tsx scripts/content-dates.ts` and commit
 
 Save long logs under `_incoming/<round>/` and cite the paths in the report. `_incoming/` is not in git: a cloud
 container loses it. So **a cloud round** (owner ruling Q5, round B 2026-09-27) writes its evidence summary to
@@ -107,8 +109,8 @@ send-back cap and re-check rule: 13.5.
 
 ## Step 5 — Checker, then tag, then push
 
-1. `checker` passes the close (five fields, per 13.5). `doc-keeper` (step 6) may start in the same message; it
-   leaves the checker's verdict out and the main agent adds that one line to §16 when the checker returns — no
+1. `checker` passes the close (five fields, per 13.5). The main agent writes §16 itself (step 6 · owner 30/09 rules
+   item 7D — no doc-keeper call for §16) and adds the checker's verdict line when the checker returns — no
    placeholder token, no second checker pass over the docs (owner's rules table item 6, 28/09). The docs are state
    notes, not site content: they are not part of the checker's verdict. `scripts/pending-check.js` (pre-push hook +
    merge-pack) still refuses a push while the literal token is in those files — with no token written it never fires;
@@ -121,15 +123,16 @@ send-back cap and re-check rule: 13.5.
    the owner's list (`git tag -n1`) — no extra row in `docs/RECOVERY.md` (owner's rules table item 12, 28/09).
    **In the cloud: no tag** (a tag push is refused, `HTTP 403`; 13.7) — the close point is the round-close commit.
    Name the base commit (rollback point) and the close commit in the report and in `docs/cloud-results/<round>.md`.
-4. Friday merges (13.7 — small and big both merge after checker + green checks, then report; a big PR gets its own report line — owner 30/09): `node scripts/self-merge-check.js`
+4. Friday merges (13.7 — small and big both merge after checker + green checks, then report; a docs-only PR skips
+   the checker per 13.7 (owner 30/09 item 7A); a big PR gets its own report line — owner 30/09): `node scripts/self-merge-check.js`
    on the PR's head commit decides small/big; its conditions live in 13.7 only.
    Deploy is never yours (a merge to main that touches the site deploys itself after the GitHub checks — 13.7).
 
 ## Step 6 — Documents that close the round
 
 - `docs/HANDOFF.md` §16: the "open round" item becomes "none — <round> closed" with the tag name (a cloud round: the close commit);
-  main / branch-ahead / waiting-on-owner / open-questions refreshed (spec: `.claude/agents/doc-keeper.md`;
-  the handoff conditions: 13.6).
+  main / branch-ahead / waiting-on-owner / open-questions refreshed — the main agent writes it (spec:
+  `.claude/agents/doc-keeper.md`; the handoff conditions: 13.6).
 - `docs/ROUND_COST.md`: **big rounds and long projects only** (`.claude/TEAM_RULES.md` 13.12 #7) — add one row for the
   round (doc-keeper); its shape and how each column is counted = the file's own header, the one place.
 - Round-specific entries in `docs/THAI_STYLE_LOG.md` §7 if the round touched site copy (doc-keeper).

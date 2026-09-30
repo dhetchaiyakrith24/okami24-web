@@ -7,7 +7,9 @@
  *                                             # contract test does; use it in a pre-push habit)
  *
  * Run it before every round close (skill round-close) — verify:catalog fails while it is stale.
- * Dates are the committer date (%cI) of the newest commit touching the path; a path with no
+ * Dates are the AUTHOR date (%aI) of the newest commit touching the path — an amend keeps it, so the post-commit
+ * hook (scripts/content-dates-amend.js, owner 30/09: no separate dates commit) can fold the JSON into the very
+ * commit it describes; before 30/09 this was the committer date (%cI). A path with no
  * commit yet (a file created and not committed) keeps the previous JSON value, so a work-in-
  * progress tree never writes a fake date.
  */
@@ -21,8 +23,8 @@ const OUT = path.join(ROOT, "src", "data", "content-dates.json");
 const CHECK = process.argv.includes("--check");
 
 export function gitLastCommitDate(relPath: string): string | null {
-  const out = execFileSync("git", ["log", "-1", "--format=%cI", "--", relPath], { cwd: ROOT, encoding: "utf8" }).trim();
-  // Newer git (2.55 on the GitHub runner) prints a UTC committer date as "…Z", older git (2.43 in the cloud chat) as
+  const out = execFileSync("git", ["log", "-1", "--format=%aI", "--", relPath], { cwd: ROOT, encoding: "utf8" }).trim();
+  // Newer git (2.55 on the GitHub runner) prints a UTC date as "…Z", older git (2.43 in the cloud chat) as
   // "…+00:00" — one spelling, so the JSON and the contract test agree on every machine (round "clip", PR #87).
   return out ? out.replace(/Z$/, "+00:00") : null;
 }
