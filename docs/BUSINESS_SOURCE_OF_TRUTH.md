@@ -664,6 +664,13 @@ image** and to say "there are many" in words instead:
   supplier directly.** Nobody else should go looking again; when the files arrive they go through
   `scripts/process-images.ts` like any other set.
 
+#### Answered 2026-09-30 — หัว M Switch ที่ร้านขาย = หัวดำทึบ ใส่รูปรายกลิ่นได้ (แทนข้อ 2026-09-06 ข้างบน และข้อสงสัยของรอบ 28/09)
+- เจ้าของในแชท รอบรูปทั้งเว็บ ก้อน 2: เว็บ SALTHUB ยังมีรูปหัวใสรุ่นแรก (รุ่นที่มีปัญหา) แต่ของที่ขายตอนนี้เปลี่ยนเป็น**หัวดำทึบ**แล้ว
+  — เจ้าของส่งรูปของจริงมาให้ดู: ปากดูดกับวงแหวนดำเงา ตัวฐานดำด้าน ตัว M กับป้ายชื่อกลิ่นเป็นสีตามกลิ่น
+  และบอกว่ารูปหัวที่ทำจากรูปรายกลิ่นของ SALTHUB "ถูก ใกล้เคียงแล้ว"
+- ผล: `m-switch-pod` และ `m-switch-kit` มีรูปรายกลิ่นแล้ว (ที่มาและการตรวจของแต่ละไฟล์ = `scripts/process-images.map.json` ช่อง `aiRender`)
+- เจ้าของบอกด้วยว่า M Switch 15K ขายเป็น **Starter Kit** (ตัวเครื่อง + หัว) ตัวเครื่องเปล่าไม่มีขายแยก หัวน้ำยามีขายแยก
+
 #### Answered 2026-09-28 — Cool Mint does not exist; removed (replaces the 2026-09-06 answer below)
 - Owner in chat, image-fix round: "M switch กลิ่น cool mint ไม่มีจริงครับ". `cool-mint` is removed from
   `m-switch-pod` and `m-switch-kit`, and from the Marbo flavour guide lists. The 2026-09-06 entry below is
