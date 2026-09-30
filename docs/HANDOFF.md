@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v97 · 2026-09-30 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v98 · 2026-09-30 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -1111,7 +1111,119 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   superseded 30/09 by the owner choosing lineup-v3 = the flavour fan; see v96 item 3.)
 ```
 
+### §16 lines relocated at batch 4's close + the chat move of round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (eleventh computer-round chat, 2026-09-30, v98 — word for word, replaced by v98 text)
+
+v97 §16 text, header + items 1-3 (the batch 1 and batch 2 detail, the PR #145 follow-up, the old next-work list); items 4-6 that stay live were re-carried in v98, so only what changed is here:
+```
+(v97 — main agent, chat move after the owner's batch-2 follow-ups (#145) in the tenth chat, 30/09; v96 = doc-keeper at batch 2's
+close. The round stays OPEN; the ELEVENTH chat starts BATCH 4 from this block. The v95 text: §3, v96 relocation block.)
+Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + the round file `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
+1 main: `git fetch && git log -1 --oneline origin/main` — at this move `51c7f18` = merge of PR #145 (M Switch upright v3)
+  [ตรวจแล้ว]; before it #144 `67837b9` (docs close b2), #143 `14437a1` (batch 2), #142 `243dc56` (M Bar 9K lineup-v3). Batch 2
+  rollback point = `243dc56`; undo one step = revert that PR's merge commit. No tag (round not closed).
+2 ahead of main: only this move's docs PR, branch `docs-chat-move-b2` (HANDOFF + archive/HANDOFF-headers; docs = small,
+  checker, main agent merges).
+3 OPEN (tenth chat 30/09): round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" — round file above · working files `_incoming/image-sitewide/`
+  (scope.md = scope-auditor result; lineup-research.md; batch2-sources.md; m9k/ scripts; verify/ verify-b2/; shots/ incl. live/
+  b2/; not in git). Previous round "รอบรูป-แก้" — still OPEN (unchanged). Background jobs: none [เชื่อว่า — main agent].
+  BATCH 1 (M Bar 9K) — DONE, live; its full detail: §3, v96 relocation block. Since then: PR #142 `243dc56` (checker PASS 6/6
+  at `5c47b16`; after it `a76799c` = side devices less dimmed, image only, GitHub checks green, 13.12 #1 (จ)) — the M Bar 9K
+  first image is now `lineup-v3.webp` = the flavour fan: 5 flavours side by side (Doublemint front; Blue Ice, Watermelon,
+  Sparkling Lemon, Grape), the owner's choice 30/09 "ใช้พัดกลิ่น" = option 2 of `_incoming/image-sitewide/lineup-research.md`
+  [เชื่อว่า — main agent]. Live curl: /products/m-bar-9k references `lineup-v3.webp`; live shots
+  `_incoming/image-sitewide/shots/live/m9k-v3-390.png` + `-1440.png`. `m-bar-9k/lineup-v2.webp` + `lineup.webp` now unreferenced.
+  OWNER DIRECTION 30/09 (replaces the 29/09 "one lineup of ALL options first"): the first image of a multi-option product =
+  an Apple-style group of 5 representative options (fallback = one sharp device); the chips + the more-details grid carry all.
+  BATCH 2 (M Switch 15K kit `m-switch-kit` + pod `m-switch-pod`) — MERGED as PR #143 `14437a1`, live after a deploy re-run (below)
+  [เชื่อว่า — main agent]: checker FAIL at `e7db3f1` → fixed → re-check PASS 4/4; designer fixes applied. SHIPPED (photos since
+  replaced by #145 below): both pages `lineupFirst` (pod: 5 pods fanned; kit: device + 5 pods); a photo per flavour (pod
+  page = pod alone; kit page = device + that pod); kit `storyDetails` + `storyCover` `story-cover.webp` + `story-03.webp` on
+  the keep-the-body feature (no new copy) + 16 `pack-<id>.webp` starter-kit renders (Kyoho Grape has none). Method: LESSONS
+  18. BSOT §21 "Answered 2026-09-30" (opaque black pod = what the shop sells; sold as a starter kit) [ตรวจแล้ว — BSOT line 667].
+  PROOF (light set, 13.12; not a new baseline) [เชื่อว่า — main agent]: tsc 0 · eslint 0 · verify:catalog 29/29 · sharpness gate
+  54 files 0 fail · gallery-probe m-switch-pod / m-switch-kit / m-bar-9k both modes PASS · locale-hydration 26/26 · scan.js
+  0/105 (logs `_incoming/image-sitewide/verify-b2/`); local shots `_incoming/image-sitewide/shots/b2/`.
+  #143's main deploy failed on a Google-font fetch in `next build` (run 36711069655); the owner OK'd a re-run in chat ("ได้"),
+  Friday re-ran it → green, live. The same flake failed PR #145's checks once (run 36714213862, re-run green) → a task chip
+  "Self-host Google fonts to stop flaky builds" was offered to the owner (touches the shared layout → after 05/10 or full set).
+  FOLLOW-UP #145 `51c7f18` (owner 30/09 on the live #143 set: the tilted pod "ขอบหนาตรงฐาน ดูไม่สวย" = its base face showed;
+  swatch option 2 = pink) [ตรวจแล้ว — checker PASS 5/5 at `d054710` + re-check PASS at `749c645`; live curl: m-switch-pod 17
+  `variant-*-v3.webp`, m-switch-kit 36 new files]: the 17 pods re-posed upright by GPT Image 2.5 (base hidden) →
+  `m-switch-pod/variant-<id>-v3.webp`, `m-switch-kit/variant-<id>-v3.webp` (device + that pod, pod 0.62 of the device),
+  `lineup-v2.webp` on both (fan spaced so every label reads; kit device clear of the pods); swatch pink-berry `#e34bef`,
+  mixberry `#f844bf` (tag pink). The -v2 files + `lineup.webp` of both slugs are now unreferenced (add to item 4 (5)).
+  Live shots `_incoming/image-sitewide/shots/live/m-switch-{pod,kit}-v3-{390,1440}.png`. Higgsfield: balance 1503.1 at chat
+  start; ~130 credits used in all this chat [เชื่อว่า — main agent's estimate; the GPT Image jobs cost ~1 each].
+  NEXT = BATCH 4 (FIRST NEXT STEP of the eleventh chat): MURO SC 8000 · RELX Creator BATTERY Black · INFY 20K (owner: open/
+  restore the last two pages) + the Argus Multi-Ohm cartridge page (owner: an accessory under VOOPOO; a new page, not a
+  baseline page — but `voopoo.ts` lastmod reaches argus-g4/drag-6/drag-s3: check html-diff). Researcher notes, read FIRST:
+  `_incoming/image-sitewide/batch4-research.md` — no official images for Muro / INFY / the Argus pod (retailer files only);
+  RELX Creator is a battery + pods, NOT a disposable (`relx.ts:92` wrong); Muro has 12 flavours (repo 8); INFY spec conflict
+  (650 mAh/20 mL/airflow vs 600/18). Start with ONE owner question set (INFY box spec · a Muro pouch photo · the RELX Creator
+  black battery + which pod he sells). Batch 3 (argus-g4 itself) waits for 06/10. Run `npx tsx scripts/content-dates.ts`
+  after committing a product-data file. Context at this move ~600k of 1M [เชื่อว่า — main agent].
+  DESIGN FACTS of the M Bar 10K pilot (flags `lineupFirst` + `storyDetails`, recolour script): §3, eighth chat's close block.
+  GALLERY LEDE (#130): th/en/zh = "ภาพจริงจาก {brand}" (credit only). The 7 SEO-baseline slugs keep the old line via
+  `dict.product.galleryNoteHeld` + the `ProductGallery` prop `heldNote`, passed from `page.tsx`.
+  DATED TO-DO, after 05/10 (the baseline hold `TITLE_PRICE_HOLD_UNTIL_2026_10_05` ends): delete `galleryNoteHeld` and
+  the `heldNote` prop (with the `page.tsx` pass-through) so the 7 pages show the credit-only lede too [เชื่อว่า —
+  main agent's instruction; the "so that" is doc-keeper's reading].
+  OWNER'S DIRECTION 30/09: (i) the "more details" section of EVERY product gets an SEO article — its own later round,
+  file `รอบบทความ-รายละเอียดเพิ่มเติม-ทุกสินค้า-30-09.txt` in the owner's drafting folder, NOT in git (OneDrive
+  `Run prompt\New prompt WEB\`) [เชื่อว่า — main agent's report; doc-keeper cannot see that folder]; (ii) the M Bar 10K
+  treatment (more images + more details) goes to the WHOLE site = this round.
+  NEXT WORK, in the owner's order (big → planner first for anything not already planned, 13.2 #2):
+  (1) THE WHOLE-SITE IMAGE ROUND continues. OWNER'S LIST 30/09 (order): M Bar 9K [DONE b1] · M Switch kit + pod [DONE b2,
+      deploy pending] · VOOPOO Argus G4 pod kit 35W [b3, baseline page] · Argus Multi-Ohm Pod Cartridges (3 pcs) [b3] · MURO SC
+      8000 · RELX Creator BATTERY Black · INFY 20K [b4] — slug map: `_incoming/image-sitewide/scope.md`. The shop-wide counts
+      for quoting credits (33 legacy products with ≥2 options = 343 options; 9 ProductMaster = 51) are in §3, v96 relocation
+      block. Baseline pages untouched until 06/10.
+  (2) (D) out-of-stock suggestion (Esko 18/20) — designer first · (3) (C)/(B) card sweep on the 4:5 standard (Muro
+  card first) — both carried; the new direction may fold them in.
+  (4) the ARTICLE round (above) — after or alongside (1); big → planner first (13.2 #2).
+  Standing rules: every replaced photo ships under a new file name (`-v2`/`-v3`, lesson พ6); after-shots from the LIVE
+  site; `process-images --only <slug>` re-writes every entry of that slug — restore the untouched files with
+  `git checkout -- public/assets/products/<slug>/` right after; run `npx tsx scripts/content-dates.ts` after
+  committing a product-data file, then commit the json (checker caught it).
+  Known leftovers (not blockers): 2 word-break flags in the existing "ไฟ RGB บอกโหมด" sentence (ตอน|นี้ at 390,
+  Eco|Soft) — fix after 06/10 (the typography mechanism touches baseline pages) · the flaky deploy step "next start
+  on 3411 stopped" — fixed by #131, WATCH it: Linux proof so far = 3 passing runs of that step (PR #130's checks
+  twice, the main deploy of d866032) — a sample, not proof the flake is gone; the old wording is in §3 ·
+  locale note (pre-existing, not from these PRs): /products/argus-g4 en/zh show 1 Thai text node (the review video
+  title, `voopoo.ts:24`) [เชื่อว่า — main agent] · Lighthouse not installed (not run).
+  STANDING OWNER DIRECTION (29/09, first-image part changed 30/09 — see item 3) [ตรวจแล้ว — carried from v88; long form in §3,
+  v94 block]: card = the angled device alone · first image of a multi-option product = a group of 5 representative options
+  (30/09; was "ONE lineup of ALL options") · flavour/colour photos = device alone · box photos + details in a lower "more
+  details" part · whole site, best sellers first (IMAGE_SPEC §0 item 5 — the 30/09 change written there in #144; §7 unchanged).
+```
+
+v97 item 4's answered/done lines (10)-(17) — moved with their wording; (7) and (14) are still open and are re-carried in v98 item 4:
+```
+  (7) the owner asked 30/09 "which steps slow us down — cut what drags"; Friday proposed cuts in the chat
+      (checker on docs-only PRs · content-dates.json chore commits · full set on baseline pages after 05/10 ·
+      doc-keeper for §16 · rule-text sprawl) — the owner picks; then write them (central §12 item 28) [รอเจ้าของ]
+      — still open
+  OWNER ANSWERS 30/09 to batch 1's report [owner, chat]: (10) packs = "ได้" → done #139 · (11) batch 4 products not on the site
+      (RELX Creator BATTERY Black, INFY 20K, Argus Multi-Ohm Cartridges) = "ทำได้เลย" — open/restore their pages in batch 4;
+      "Argus Multi-Ohm Cartridges 3 อัน = อุปกรณ์เสริมของ Argus อยู่ในหมวด VOOPOO" (an accessory under VOOPOO) · (12) lineup
+      v2 (A/A2/B) — closed: the owner picked the flavour fan for M Bar 9K, "ใช้พัดกลิ่น" (lineup-v3, #142) [เชื่อว่า — main agent].
+  OWNER ANSWERS 30/09 to batch 2's report [owner, chat]: (13) deploy re-run — "ได้" → done (item 3) · (14) CATEGORY STRUCTURE
+       (Pod System · "หัวพอตและคอยล์ (Pod System)" · พอตใช้แล้วทิ้ง = non-replaceable only · NEW "พอตเปลี่ยนหัว (Closed System)"
+       = starter kits + prefilled pods; Friday's proposal) = "ทำรอบแยก แต่เดี๋ยววางแพลนให้ชัดกว่านี้" — its own round, the
+       OWNER will plan it first [รอเจ้าของ] · (15) "ขอบหนาตรงฐานของหัวพอต ดูไม่สวย" → upright pods, #145 · (16) swatch = 2 pink → #145.
+  (17) DONE: the owner's "เขียนเลย" 30/09 → TEAM_RULES 13.7 deploy line: Friday may re-run a failed run ONCE when its log
+       shows a network / external-fetch failure (e.g. Google Fonts in `next build`), PR checks or the main deploy run; fails
+       again = stop and report (13.4 #9).
+```
+
 ---
+
+Also relocated (rewritten in place in v98 — checker PR #149; old wording, word for word):
+  (5) leftover unreferenced photo files, 11 [เชื่อว่า — not a fresh scan; 9 as of v92 (v88's 6 + `m-bar-10k/lineup.webp`,
+      `nexbar-clear-18k/card.webp`, `m-bar-10k/lineup-v2.webp`, `m-bar-10k/story-lineup.webp`; list in §3, eighth chat's close
+      block) + `m-bar-9k/lineup.webp` and `m-bar-9k/lineup-v2.webp` since #142; the old m-switch-kit / m-switch-pod photos
+      replaced by #143 were not checked] — re-scan public/assets/products vs src/ at the next round close; delete with the owner's OK (13.4 #1)
+  Per-PR proof lines: batch 2's = item 3 above; the seventh and eighth chats' = §3 (eighth chat's close block + the second-batch-close block).
 
 ## 4. Known broken / missing, not fixed yet
 
@@ -1240,56 +1352,65 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-(v97 — main agent, chat move after the owner's batch-2 follow-ups (#145) in the tenth chat, 30/09; v96 = doc-keeper at batch 2's
-close. The round stays OPEN; the ELEVENTH chat starts BATCH 4 from this block. The v95 text: §3, v96 relocation block.)
+(v98 — doc-keeper at batch 4's close, written together with the chat move (the eleventh chat, 30/09, context ~600k, next work
+long). The round stays OPEN; the TWELFTH chat starts from this block. The v97 text (batch 1/2 detail): §3, v98 relocation block.)
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + the round file `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
-1 main: `git fetch && git log -1 --oneline origin/main` — at this move `51c7f18` = merge of PR #145 (M Switch upright v3)
-  [ตรวจแล้ว]; before it #144 `67837b9` (docs close b2), #143 `14437a1` (batch 2), #142 `243dc56` (M Bar 9K lineup-v3). Batch 2
-  rollback point = `243dc56`; undo one step = revert that PR's merge commit. No tag (round not closed).
-2 ahead of main: only this move's docs PR, branch `docs-chat-move-b2` (HANDOFF + archive/HANDOFF-headers; docs = small,
-  checker, main agent merges).
-3 OPEN (tenth chat 30/09): round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" — round file above · working files `_incoming/image-sitewide/`
-  (scope.md = scope-auditor result; lineup-research.md; batch2-sources.md; m9k/ scripts; verify/ verify-b2/; shots/ incl. live/
-  b2/; not in git). Previous round "รอบรูป-แก้" — still OPEN (unchanged). Background jobs: none [เชื่อว่า — main agent].
-  BATCH 1 (M Bar 9K) — DONE, live; its full detail: §3, v96 relocation block. Since then: PR #142 `243dc56` (checker PASS 6/6
-  at `5c47b16`; after it `a76799c` = side devices less dimmed, image only, GitHub checks green, 13.12 #1 (จ)) — the M Bar 9K
-  first image is now `lineup-v3.webp` = the flavour fan: 5 flavours side by side (Doublemint front; Blue Ice, Watermelon,
-  Sparkling Lemon, Grape), the owner's choice 30/09 "ใช้พัดกลิ่น" = option 2 of `_incoming/image-sitewide/lineup-research.md`
-  [เชื่อว่า — main agent]. Live curl: /products/m-bar-9k references `lineup-v3.webp`; live shots
-  `_incoming/image-sitewide/shots/live/m9k-v3-390.png` + `-1440.png`. `m-bar-9k/lineup-v2.webp` + `lineup.webp` now unreferenced.
-  OWNER DIRECTION 30/09 (replaces the 29/09 "one lineup of ALL options first"): the first image of a multi-option product =
-  an Apple-style group of 5 representative options (fallback = one sharp device); the chips + the more-details grid carry all.
-  BATCH 2 (M Switch 15K kit `m-switch-kit` + pod `m-switch-pod`) — MERGED as PR #143 `14437a1`, live after a deploy re-run (below)
-  [เชื่อว่า — main agent]: checker FAIL at `e7db3f1` → fixed → re-check PASS 4/4; designer fixes applied. SHIPPED (photos since
-  replaced by #145 below): both pages `lineupFirst` (pod: 5 pods fanned; kit: device + 5 pods); a photo per flavour (pod
-  page = pod alone; kit page = device + that pod); kit `storyDetails` + `storyCover` `story-cover.webp` + `story-03.webp` on
-  the keep-the-body feature (no new copy) + 16 `pack-<id>.webp` starter-kit renders (Kyoho Grape has none). Method: LESSONS
-  18. BSOT §21 "Answered 2026-09-30" (opaque black pod = what the shop sells; sold as a starter kit) [ตรวจแล้ว — BSOT line 667].
-  PROOF (light set, 13.12; not a new baseline) [เชื่อว่า — main agent]: tsc 0 · eslint 0 · verify:catalog 29/29 · sharpness gate
-  54 files 0 fail · gallery-probe m-switch-pod / m-switch-kit / m-bar-9k both modes PASS · locale-hydration 26/26 · scan.js
-  0/105 (logs `_incoming/image-sitewide/verify-b2/`); local shots `_incoming/image-sitewide/shots/b2/`.
-  #143's main deploy failed on a Google-font fetch in `next build` (run 36711069655); the owner OK'd a re-run in chat ("ได้"),
-  Friday re-ran it → green, live. The same flake failed PR #145's checks once (run 36714213862, re-run green) → a task chip
-  "Self-host Google fonts to stop flaky builds" was offered to the owner (touches the shared layout → after 05/10 or full set).
-  FOLLOW-UP #145 `51c7f18` (owner 30/09 on the live #143 set: the tilted pod "ขอบหนาตรงฐาน ดูไม่สวย" = its base face showed;
-  swatch option 2 = pink) [ตรวจแล้ว — checker PASS 5/5 at `d054710` + re-check PASS at `749c645`; live curl: m-switch-pod 17
-  `variant-*-v3.webp`, m-switch-kit 36 new files]: the 17 pods re-posed upright by GPT Image 2.5 (base hidden) →
-  `m-switch-pod/variant-<id>-v3.webp`, `m-switch-kit/variant-<id>-v3.webp` (device + that pod, pod 0.62 of the device),
-  `lineup-v2.webp` on both (fan spaced so every label reads; kit device clear of the pods); swatch pink-berry `#e34bef`,
-  mixberry `#f844bf` (tag pink). The -v2 files + `lineup.webp` of both slugs are now unreferenced (add to item 4 (5)).
-  Live shots `_incoming/image-sitewide/shots/live/m-switch-{pod,kit}-v3-{390,1440}.png`. Higgsfield: balance 1503.1 at chat
-  start; ~130 credits used in all this chat [เชื่อว่า — main agent's estimate; the GPT Image jobs cost ~1 each].
-  NEXT = BATCH 4 (FIRST NEXT STEP of the eleventh chat): MURO SC 8000 · RELX Creator BATTERY Black · INFY 20K (owner: open/
-  restore the last two pages) + the Argus Multi-Ohm cartridge page (owner: an accessory under VOOPOO; a new page, not a
-  baseline page — but `voopoo.ts` lastmod reaches argus-g4/drag-6/drag-s3: check html-diff). Researcher notes, read FIRST:
-  `_incoming/image-sitewide/batch4-research.md` — no official images for Muro / INFY / the Argus pod (retailer files only);
-  RELX Creator is a battery + pods, NOT a disposable (`relx.ts:92` wrong); Muro has 12 flavours (repo 8); INFY spec conflict
-  (650 mAh/20 mL/airflow vs 600/18). Start with ONE owner question set (INFY box spec · a Muro pouch photo · the RELX Creator
-  black battery + which pod he sells). Batch 3 (argus-g4 itself) waits for 06/10. Run `npx tsx scripts/content-dates.ts`
-  after committing a product-data file. Context at this move ~600k of 1M [เชื่อว่า — main agent].
-  DESIGN FACTS of the M Bar 10K pilot (flags `lineupFirst` + `storyDetails`, recolour script): §3, eighth chat's close block.
-  GALLERY LEDE (#130): th/en/zh = "ภาพจริงจาก {brand}" (credit only). The 7 SEO-baseline slugs keep the old line via
-  `dict.product.galleryNoteHeld` + the `ProductGallery` prop `heldNote`, passed from `page.tsx`.
+1 main: `git fetch && git log -1 --oneline origin/main` — at this close `05f3b63` = merge of PR #148 (batch 4), branch
+  `image-sitewide-b4` head `b25c8d9` [เชื่อว่า — main agent's report; doc-keeper cannot run git]. Batch 4 rollback point =
+  `9543978`; undo the batch = revert the merge commit `05f3b63`. Batches 1-2: rollback `881d966` / `243dc56`, PRs #137-#145 (§3,
+  v98 block). No tag (round not closed). Main deploy run 36738799200 green; live curl [ตรวจแล้ว — main agent]: muro-sc-8000 200 with
+  `card-v2.webp` + 12 variant files + "12 รส" · muro-connector-20k `card-v3.webp` · m-bar-pod 404 · infy-20k 404; live shots `_incoming/image-sitewide/shots/live/b4-*`.
+2 ahead of main: only this close's docs PR — HANDOFF + archive/HANDOFF-headers + IMAGE_SPEC §0 item 5 (the rule (a) text; it was
+  uncommitted at batch close [ตรวจแล้ว — git status]) — branch `docs-close-b4`; docs = small, checker, main agent merges.
+  The work branch `image-sitewide-b4` is merged; nothing on it is unchecked.
+3 OPEN (eleventh chat 30/09): round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" — round file above · working files `_incoming/image-sitewide/`
+  (scope.md; batch4-research.md; infy/recolour.js, muro/compose.js + lineup.js, b4-add-map.js; verify-b4/; shots/b4/; check-b4/;
+  not in git). Previous round "รอบรูป-แก้" — still OPEN (unchanged). Background jobs: the deploy run above only [เชื่อว่า].
+  DONE so far: batch 1 M Bar 9K (#137-#140, #142) · batch 2 M Switch kit + pod (#143, #145) — detail: §3, v96 + v98 blocks ·
+  batch 4 (below). The M Bar 9K / M Switch first image is still the 5-option fan; owner direction (a) below would replace it.
+  BATCH 4 — MERGED as PR #148 `05f3b63` (PARTIAL: RELX Creator not done, Argus Multi-Ohm moved to batch 3) [เชื่อว่า — main
+  agent's report]: checker PASS 6/6 at `2371e44` + GitHub checks green; after the checker: `7dbe3cc` image-only name-contrast fix
+  (INFY dark flavour names lifted toward white, MURO Banana Strawberry label name printed dark) + `bceeb27`/`b25c8d9` comment +
+  content-dates — 13.12 #1 (จ), GitHub checks decided. The first PR check run 36737851162 failed on `content-dates` (a file
+  changed then reverted = identical to main, but the last-commit date on the merge ref differs); fixed by a real comment change
+  in `search-aliases.ts`, re-run green.
+  SHIPPED: MURO SC 8000 — 12 flavours (+Grape, Watermelon, Double Mint, Mix Berries), each photo = device + that flavour's pouch
+  (owner), `card-v2.webp`, `lineup.webp` behind the "all" chip, page opens on the card (`openOnCardPhoto`), "12 รส";
+  Watermelon's pouch-label colour has no source (both retailers reuse the Apple Shisha pouch) → pod789's caption colour
+  [unverified]. Muro Connector 20K `card-v3.webp` (owner: old card "ไม่สวย ไม่คม ไม่สมมาตร"). M Bar Pod (`m-bar-pod`) HIDDEN from the
+  storefront (owner "ลบออกได้เลย" — the shop sells black pods; record + photos kept; its 2 search-head-copy rows + its verified-specs
+  test entry removed). 8 INFY flavour names added to `src/lib/flavor-names.ts`. Lessons 19 / พ7 / ช4 in `.claude/LESSONS.md`.
+  INFY 20K (`infy-20k`): everything READY (card, 22 device photos + 2 flavours without photo = 24, lineup, specs 650 mAh / 20 mL /
+  dual mesh 0.9 Ω, airflow unverified, Thai FAQ rewritten) but HELD HIDDEN until 06/10 — un-hiding adds "INFY" to the footer brand
+  list of every page incl. the 7 SEO-baseline pages (html-diff proved that was the only change). ON 06/10: delete the
+  `hiddenFromStorefront` line in `infy.ts`; drop "infy" from `DORMANT_ALIAS_TERMS` (`search-aliases.ts`); recheck the English
+  `shortDescription` "20,000-puff" against the unverified puffs row (checker note); html-diff not needed after 05/10.
+  RELX Creator: NOT done — waits for the owner's photo of the black battery he sells + which pods (question asked in chat). Planned
+  data fix: `categoryId` pod-kits / `systemType` pod-kit (like m-switch-kit). Argus Multi-Ohm cartridge page: moved to batch 3.
+  PROOF (light set, 13.12; not a new baseline) [เชื่อว่า — main agent; logs `_incoming/image-sitewide/verify-b4/`, checker's
+  `check-b4/`]: tsc 0 · eslint 0 · verify:catalog 29/29 · sharpness gate 39 files 0 fail · html-diff 7 baseline pages 7/7 identical ·
+  scan.js 0/104 · gallery-probe 43 pages both modes 0 FLASH/STUCK · locale-hydration: 34 Thai nodes on /products +
+  /products/pods-cartridges en/zh = the same on live (pre-existing coil names, out of scope). Shots `_incoming/image-sitewide/shots/b4/`.
+  Higgsfield: balance 1296.85 at this chat's start, ~14 credits used in it [เชื่อว่า — main agent]; warn before a shop-wide job.
+  OWNER DIRECTIONS 30/09 (eleventh chat) [เชื่อว่า — main agent's report; (a) is also written in IMAGE_SPEC §0 item 5, line 13 — ตรวจแล้ว]:
+  (a) the first image of a multi-option product = ONE sharp angled device like the Caliburn pages ("เอาแบบ Caliburn คม ชัด
+      จัดวางสวย แต่รูปเดียวเด่น ๆ"); the other options by swipe / chips (data: `openOnCardPhoto`, not `lineupFirst`). This REPLACES
+      the 5-option fan.
+  (b) M Bar 15K (a BASELINE page, disposables) shows clear pod heads as its flavour photos and its 15-pod grid lineup failed →
+      needs a device photo per flavour + rule (a). NOTE: its SALTHUB sources (`_incoming/salthub/m-bar-15k`) are M SWITCH
+      clear-cartridge art (device = battery + clear pod, the card shows the pod through a window) — CONFIRM the product's identity
+      before rendering anything.
+  (c) M Switch Pod flavour photos are inconsistent ("บางตัวปากกว้าง บางตัวเบี้ยว") → rebuild from ONE master pod + recolour the M
+      logo / tag + the printed name (lesson 19), NOT per-flavour AI re-poses.
+  NEXT WORK (twelfth chat), the owner's order; FIRST STEP after the deploy check: M Switch Pod rebuild (c) — not a baseline page —
+  and M Bar 15K prep (b) (ship 06/10 unless the owner lifts the hold — item 4 (19)); then BATCH 3 on 06/10 (argus-g4 + Argus
+  Multi-Ohm + INFY open + M Bar 15K ship); then BATCH 5 = the rest of the site (planner first, 13.2 #2; the M Bar 10K treatment
+  per rule (a)). The fan lineups already live (M Bar 9K · M Switch kit · M Switch pod) wait on item 4 (18). Also carried: (D)
+  out-of-stock suggestion (Esko 18/20) — designer first · (C)/(B) card sweep on the 4:5 standard · the ARTICLE round (below) ·
+  the category-structure round (item 4 (14)). Shop-wide counts for quoting credits: 33 legacy products with ≥2 options = 343
+  options; 9 ProductMaster = 51 (§3, v96 block). Batch 3's Argus pages: `voopoo.ts` lastmod reaches argus-g4/drag-6/drag-s3 → html-diff.
+  Context at this move ~600k of 1M [เชื่อว่า — main agent]. Design facts of the M Bar 10K pilot (§3, eighth chat's close block) and
+  the gallery-lede facts (#130; the v97 wording: §3, v98 block) are not repeated here.
   DATED TO-DO, after 05/10 (the baseline hold `TITLE_PRICE_HOLD_UNTIL_2026_10_05` ends): delete `galleryNoteHeld` and
   the `heldNote` prop (with the `page.tsx` pass-through) so the 7 pages show the credit-only lede too [เชื่อว่า —
   main agent's instruction; the "so that" is doc-keeper's reading].
@@ -1297,57 +1418,44 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   file `รอบบทความ-รายละเอียดเพิ่มเติม-ทุกสินค้า-30-09.txt` in the owner's drafting folder, NOT in git (OneDrive
   `Run prompt\New prompt WEB\`) [เชื่อว่า — main agent's report; doc-keeper cannot see that folder]; (ii) the M Bar 10K
   treatment (more images + more details) goes to the WHOLE site = this round.
-  NEXT WORK, in the owner's order (big → planner first for anything not already planned, 13.2 #2):
-  (1) THE WHOLE-SITE IMAGE ROUND continues. OWNER'S LIST 30/09 (order): M Bar 9K [DONE b1] · M Switch kit + pod [DONE b2,
-      deploy pending] · VOOPOO Argus G4 pod kit 35W [b3, baseline page] · Argus Multi-Ohm Pod Cartridges (3 pcs) [b3] · MURO SC
-      8000 · RELX Creator BATTERY Black · INFY 20K [b4] — slug map: `_incoming/image-sitewide/scope.md`. The shop-wide counts
-      for quoting credits (33 legacy products with ≥2 options = 343 options; 9 ProductMaster = 51) are in §3, v96 relocation
-      block. Baseline pages untouched until 06/10.
-  (2) (D) out-of-stock suggestion (Esko 18/20) — designer first · (3) (C)/(B) card sweep on the 4:5 standard (Muro
-      card first) — both carried; the new direction may fold them in.
-  (4) the ARTICLE round (above) — after or alongside (1); big → planner first (13.2 #2).
   Standing rules: every replaced photo ships under a new file name (`-v2`/`-v3`, lesson พ6); after-shots from the LIVE
   site; `process-images --only <slug>` re-writes every entry of that slug — restore the untouched files with
   `git checkout -- public/assets/products/<slug>/` right after; run `npx tsx scripts/content-dates.ts` after
-  committing a product-data file, then commit the json (checker caught it).
+  committing a product-data file, then commit the json (checker caught it). A file changed and then reverted can still fail the
+  `content-dates` check on the merge ref (PR #148, run 36737851162) — make a real change, or re-run once per 13.7.
   Known leftovers (not blockers): 2 word-break flags in the existing "ไฟ RGB บอกโหมด" sentence (ตอน|นี้ at 390,
   Eco|Soft) — fix after 06/10 (the typography mechanism touches baseline pages) · the flaky deploy step "next start
   on 3411 stopped" — fixed by #131, WATCH it: Linux proof so far = 3 passing runs of that step (PR #130's checks
   twice, the main deploy of d866032) — a sample, not proof the flake is gone; the old wording is in §3 ·
   locale note (pre-existing, not from these PRs): /products/argus-g4 en/zh show 1 Thai text node (the review video
   title, `voopoo.ts:24`) [เชื่อว่า — main agent] · Lighthouse not installed (not run).
-  STANDING OWNER DIRECTION (29/09, first-image part changed 30/09 — see item 3) [ตรวจแล้ว — carried from v88; long form in §3,
-  v94 block]: card = the angled device alone · first image of a multi-option product = a group of 5 representative options
-  (30/09; was "ONE lineup of ALL options") · flavour/colour photos = device alone · box photos + details in a lower "more
-  details" part · whole site, best sellers first (IMAGE_SPEC §0 item 5 — the 30/09 change written there in #144; §7 unchanged).
+  STANDING OWNER DIRECTION (29/09; first-image part changed twice on 30/09 — (a) above wins) [ตรวจแล้ว — IMAGE_SPEC §0 item 5,
+  lines 12-13; long form §3, v94 block]: card = angled device alone · flavour/colour photos = device alone · box photos + details
+  in a lower "more details" part · whole site, best sellers first.
 4 waiting on owner:
+  (18) NEW: convert the already-live fan lineups (M Bar 9K, M Switch kit, M Switch pod) to rule (a) — Friday recommends yes [รอเจ้าของ]
+  (19) NEW: "เรื่อง SEO ไม่ต้องสนใจ" — does it lift the 7-page baseline hold before 05/10 (would let INFY open and M Bar 15K be fixed
+       now)? Friday recommends keeping the hold 5 more days [รอเจ้าของ]
+  (20) NEW: RELX Creator — the photo of the black battery the owner sells + which pods [รอเจ้าของ]
+  (7) the owner asked 30/09 "which steps slow us down — cut what drags"; Friday proposed cuts in the chat (checker on docs-only
+      PRs · content-dates.json chore commits · full set on baseline pages after 05/10 · doc-keeper for §16 · rule-text sprawl) —
+      the owner picks; then write them (central §12 item 28) [รอเจ้าของ] — still open
+  (14) CATEGORY STRUCTURE (Pod System · "หัวพอตและคอยล์ (Pod System)" · พอตใช้แล้วทิ้ง = non-replaceable only · NEW "พอตเปลี่ยนหัว
+      (Closed System)" = starter kits + prefilled pods; Friday's proposal) = the owner said "ทำรอบแยก แต่เดี๋ยววางแพลนให้ชัดกว่านี้" —
+      its own round, the OWNER will plan it first [รอเจ้าของ] — re-carried from v97 (the answered lines (10)-(17): §3, v98 block)
   (1) image-theft protection A+B+C — its own round after this one — carried, not started
   (2) Muro Connector's category (owner: "Relx Connect"; Friday's evidence: RELX Creator) [รอเจ้าของ] — carried
   (3) SALTHUB per-flavour file request, no-photo panel wording A/B/C, M Switch card black pod — carried
   (4) stray worktrees `_incoming/wt-main`, `_incoming/checker-wt`, `_incoming/wt-prb` — wt-prb contains junctions
       `node_modules` and `_incoming/nexbar-clear`: remove the junctions with `(Get-Item <path>).Delete()` BEFORE
       `git worktree remove`, never recurse into them — remove once the owner agrees — carried
-  (5) leftover unreferenced photo files, 11 [เชื่อว่า — not a fresh scan; 9 as of v92 (v88's 6 + `m-bar-10k/lineup.webp`,
-      `nexbar-clear-18k/card.webp`, `m-bar-10k/lineup-v2.webp`, `m-bar-10k/story-lineup.webp`; list in §3, eighth chat's close
-      block) + `m-bar-9k/lineup.webp` and `m-bar-9k/lineup-v2.webp` since #142; the old m-switch-kit / m-switch-pod photos
-      replaced by #143 were not checked] — re-scan public/assets/products vs src/ at the next round close; delete with the owner's OK (13.4 #1)
+  (5) leftover unreferenced photo files, ~17 [เชื่อว่า — not a fresh scan; 11 as of v97 (list: §3, eighth chat's close block; +
+      `m-bar-9k/lineup.webp` + `lineup-v2.webp` since #142) + since batch 4 `muro-sc-8000/card.webp` and
+      `muro-connector-20k/card-v2.webp`; + the -v2 files and `lineup.webp` of m-switch-kit / m-switch-pod replaced by #145 (loosely
+      counted); `m-bar-pod` photos are KEPT on purpose (hidden product)] — re-scan public/assets/products vs src/ at the next
+      round close; delete with the owner's OK (13.4 #1)
   (6)(8)(9) ANSWERED 30/09 (full text: §3, v94 block): anatomy sheet size polish later · odd part names + "วงแหวน RGB" →
       "ไฟ RGB" in the LANGUAGE round / after 05/10 · batch 3 extras parked
-  (7) the owner asked 30/09 "which steps slow us down — cut what drags"; Friday proposed cuts in the chat
-      (checker on docs-only PRs · content-dates.json chore commits · full set on baseline pages after 05/10 ·
-      doc-keeper for §16 · rule-text sprawl) — the owner picks; then write them (central §12 item 28) [รอเจ้าของ]
-      — still open
-  OWNER ANSWERS 30/09 to batch 1's report [owner, chat]: (10) packs = "ได้" → done #139 · (11) batch 4 products not on the site
-      (RELX Creator BATTERY Black, INFY 20K, Argus Multi-Ohm Cartridges) = "ทำได้เลย" — open/restore their pages in batch 4;
-      "Argus Multi-Ohm Cartridges 3 อัน = อุปกรณ์เสริมของ Argus อยู่ในหมวด VOOPOO" (an accessory under VOOPOO) · (12) lineup
-      v2 (A/A2/B) — closed: the owner picked the flavour fan for M Bar 9K, "ใช้พัดกลิ่น" (lineup-v3, #142) [เชื่อว่า — main agent].
-  OWNER ANSWERS 30/09 to batch 2's report [owner, chat]: (13) deploy re-run — "ได้" → done (item 3) · (14) CATEGORY STRUCTURE
-       (Pod System · "หัวพอตและคอยล์ (Pod System)" · พอตใช้แล้วทิ้ง = non-replaceable only · NEW "พอตเปลี่ยนหัว (Closed System)"
-       = starter kits + prefilled pods; Friday's proposal) = "ทำรอบแยก แต่เดี๋ยววางแพลนให้ชัดกว่านี้" — its own round, the
-       OWNER will plan it first [รอเจ้าของ] · (15) "ขอบหนาตรงฐานของหัวพอต ดูไม่สวย" → upright pods, #145 · (16) swatch = 2 pink → #145.
-  (17) DONE: the owner's "เขียนเลย" 30/09 → TEAM_RULES 13.7 deploy line: Friday may re-run a failed run ONCE when its log
-       shows a network / external-fetch failure (e.g. Google Fonts in `next build`), PR checks or the main deploy run; fails
-       again = stop and report (13.4 #9).
 5 open questions (round "ไล่ดูทีละส่วน", found by thai-copy, pre-existing, NOT fixed — out of scope):
   (a) answered (item 4 (6)(8)(9)) · (b) `dict.product.anatomyTitle`
   en/zh "from the outside in" promises internals (shared dictionary; the new sheet uses its own heading) · (c) no airflow spec
@@ -1355,7 +1463,7 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
 6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`, unchanged since v85 — the
   batches since ran the light set only, per 13.12): tsc 0 · verify:commerce 17/17 · verify:catalog --full 32/32 ·
   count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Per-PR proof lines: batch 2's = item 3 above; the seventh and eighth chats' = §3 (eighth chat's close block + the second-batch-close block).
+  Per-PR proof lines: batch 4's = item 3 above; batch 2's = §3, v98 block; the seventh and eighth chats' = §3 (eighth chat's close block + the second-batch-close block).
 (context rule · agents load immediately · tools · verify · git = §17 of this file)
 ```
 
