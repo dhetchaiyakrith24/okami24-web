@@ -45,7 +45,7 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
     then drop the "ถึง 05/10" clauses of TEAM_RULES 13.5 #3 / 13.7 / 13.8.
   - `dict.product.anatomyTitle` en/zh "from the outside in" (pre-existing, out of scope so far).
   - 01/10 owner: 23 unreferenced `_incoming/` folders (4,837 files · 453.4 MB · old rounds 30.1–tools-round) MOVED, not
-    deleted, to `C:UsersdhetcOKami24-เก็บincoming-01-10` (outside the repo). Kept in place: `.test-server-3412` · image-round
+    deleted, to `C:\Users\dhetc\OKami24-เก็บ\incoming-01-10\` (outside the repo). Kept in place: `.test-server-3412` · image-round
     work of 28–30/09 (accept-webp · cache-audit · flavour-bug · grid-back · trim-credit · image-sitewide) · smogz-rules · checker-h4.
   - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook; the
     pre-push gate still stops force push / push to main.
