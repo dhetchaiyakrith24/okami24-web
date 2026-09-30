@@ -10,48 +10,47 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบเก็บบ้าน-Friday-ถามพี่ก่อน-01-10.txt`
+Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
 
-1 main: `git fetch && git log -1 --oneline origin/main` — at round open `aa21cbb` (PR #156 merge) [ตรวจแล้ว].
-  Rollback point of this round = `aa21cbb`. Last image deploy: PR #152 (`05ff9c3`) live and checked 30/09 [ตรวจแล้ว].
-2 ahead of main: `git log --oneline origin/main..housekeeping-01-10` — H3-1 (rules + docs rewrite) on the branch,
-  NOT yet through the checker.
-3 OPEN (thirteenth chat 01/10): HOUSEKEEPING round — file `docs/rounds/รอบเก็บบ้าน-Friday-ถามพี่ก่อน-01-10.txt`,
-  branch `housekeeping-01-10`, working files `_incoming/housekeeping-01-10/` (audit report in Thai, rule-audit.md = the
-  work list with file:line, inventory.js/.txt, unused-assets.js, repoint.js = the old→new 13.x map).
-  Owner answers 01/10: renumber TEAM_RULES (send the old→new list) · HANDOFF/LAUNCH_AUDIT = Friday decides, clear what
-  nobody uses · locks A+B+C (no node-wide kill · no force push / push to main · render.yaml/.env*/cart switch only when
-  the open round file names them) · Javis keeps its own rules (no link to central) · go on now with few agents ·
-  nothing extra off-limits · owner worries: full use of Friday's/Javis's thinking; files that grow until notes confuse
-  and lead to guessing — "ไม่ต้องการให้เดา ต้องการให้คิด".
-  Batches: H1 questions ✓ · H2 audit ✓ · H3-1 rules + docs rewrite (tier A · PR is BIG because 13.7 changed) ·
-  H3-2 locks (hooks — BIG, full set) · H3-3 clutter (worktrees · 29 unused photos after a whole-site image crawl ·
-  closed-PR check folders in _incoming) · H3-4 central-rules PR in smogz-rules (item 25 widened = approved; §1–11 cut
-  and §8 "per project" = asked 01/10, not yet answered) · H4 /เก็บบ้าน skill, shown to the owner before saving.
-  Fence (owner): the site a visitor sees stays the same — a batch that changes the sitemap or a page = stop, revert, report.
-  Stopped at: H3-1 written on the branch, next = checker → merge → H3-2.
-3b PAUSED (not closed): round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`) —
-  resumes after housekeeping: M Bar 15K duplicate record (= M Switch Kit split into device + pod; m-bar-15k is a
-  baseline page until 05/10) · remake INFY 20K photos (card + 22 flavours, owner: "ดูกราฟิก ๆ แปลก ๆ") · BATCH 3 (06/10:
-  argus-g4 + Argus Multi-Ohm) · BATCH 5 (rest of the site, planner first, rule (a) everywhere). Working files
-  `_incoming/image-sitewide/`.
+1 main: `git fetch && git log -1 --oneline origin/main` — housekeeping merged: PR #157 (`32af0cd` rules/agents/skills/docs) ·
+  PR #158 (`6ec4483` locks) · central-rules copy PR #159 · skill PR (house-clean) [ตรวจแล้ว — gh]. Undo = revert the merge
+  commit of that PR. Rollback point before the round = `aa21cbb` (tag `pre-housekeeping-01-10`). Last site deploy: PR #152.
+2 ahead of main: nothing unchecked. smogz-rules: PR #8 merged (`89b4746` — item 25 widened · §2/3/4/11 folded · §8 per
+  project · README: Friday merges).
+3 OPEN: none — HOUSEKEEPING round closed 01/10 (tag `housekeeping-01-10-done`; file
+  `docs/rounds/รอบเก็บบ้าน-Friday-ถามพี่ก่อน-01-10.txt`; working files `_incoming/housekeeping-01-10/`).
+  What changed for the next chat: TEAM_RULES renumbered (old→new map = `git log --grep "เลขเก่า → เลขใหม่"`) with a
+  house map at its head · rules loaded every chat 48,218 → ~32,000 chars · HANDOFF = §16/§17/§18 only · agents 8
+  (thai-copy writes + edits; doc-keeper, writer gone) · skills: round-open/close slimmed, merge-pack gone, new /เก็บบ้าน
+  (`house-clean` + `scripts/house-check.js`) · locks: `scripts/guard-tool.js` (hook) + `scripts/push-guard.js` (pre-push) —
+  a locked file (render.yaml · .env* · ordering-mode.ts) is editable only when the open round file has a line starting
+  【แตะได้】 that names it · deploy + rollback = Friday (13.7).
+3b NEXT: resume round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
+  `_incoming/image-sitewide/`): M Bar 15K duplicate record (= M Switch Kit split into device + pod; m-bar-15k is a baseline
+  page until 05/10) · remake INFY 20K photos (card + 22 flavours, owner: "ดูกราฟิก ๆ แปลก ๆ") · BATCH 3 (06/10: argus-g4 +
+  Argus Multi-Ohm) · BATCH 5 (rest of the site, planner first, rule (a) everywhere) · at its close: product photos no
+  file references — use `npx tsx scripts/asset-refs.ts` (reads the catalog, incl. names built at
+  runtime such as wotofo `variant-${id}`); a plain name search flags false positives — delete only what that proves unused.
 4 waiting on owner:
+  (28) NEW — 30 `_incoming/` folders nobody references (list: `node scripts/house-check.js`) — delete? (not in git)
   (25) M Bar 10K: open on the single card like 9K / Kit / Pod (Friday recommends) or keep the approved lineup pilot
   (24) Thai wording: RELX Creator tagline/description/FAQ/who-for, INFY brand line/who-for/FAQ; words not in THAI_STYLE:
        "จอพิกเซล", "หน้าอีโมจิ"
   (14) category structure — its own round, the owner plans it first
   (1) image-theft protection A+B+C — its own round · (2) Muro Connector category · (3) SALTHUB per-flavour file request,
       no-photo panel wording A/B/C
-  (27) central rules §1–11 pointer sections cut + §8 → "per project rules" (asked 01/10)
 5 open / dated:
   - 05/10: re-read GSC against `docs/SEO_BASELINE.md` (Cowork supplies the numbers); after 05/10 the 7 baseline pages
-    use the light set — delete `galleryNoteHeld` + the `heldNote` prop; M Bar 10K airflow row (moves 27 lastmod dates).
+    use the light set — delete `galleryNoteHeld` + the `heldNote` prop; M Bar 10K airflow row (moves 27 lastmod dates);
+    then drop the "ถึง 05/10" clauses of TEAM_RULES 13.5 #3 / 13.7 / 13.8.
   - `dict.product.anatomyTitle` en/zh "from the outside in" (pre-existing, out of scope so far).
+  - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook; the
+    pre-push gate still stops force push / push to main.
   - Carried ideas: out-of-stock suggestion (Esko 18/20) · card sweep on 4:5 · ARTICLE round (every product gets an SEO
     article in "more details") · category-structure round.
 6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Light-set runs since: scan.js 0/107 · verify:catalog 29/29 (PR #152).
+  Light-set runs since: scan.js 0/107 · verify:catalog 29/29 (PR #152). Housekeeping touched no site file.
 ```
 
 ## 17. Tools and standing technical rules (not state — open when needed)
