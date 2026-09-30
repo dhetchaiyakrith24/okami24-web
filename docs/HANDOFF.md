@@ -1547,7 +1547,8 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   (25) NEW 01/10 — M Bar 10K: switch it to open on the single card too (like 9K / Kit / Pod; "ทั้งหมด" + the lineup
        stay behind the chip) — Friday recommends (rule (a), IMAGE_SPEC §0 item 5) · or keep the owner-approved pilot
        opening on its lineup [รอเจ้าของ — the 10K is owner-approved, 13.4 #8]
-  (26) NEW 01/10 — what comes next: the housekeeping round first, or BATCH 3 (06/10) / BATCH 5 first [รอเจ้าของ]
+  (26) ANSWERED 01/10 — owner: "2 ครับ ขะเก็บบ้านก่อน" = the HOUSEKEEPING round comes next, before BATCH 3 / BATCH 5;
+       the image round stays open (paused). The housekeeping round needs its own round file (owner / Javis).
   (22) ANSWERED 01/10 — M Bar 15K = the M Switch Kit split into device + pod, a duplicate record → after housekeeping (item 3)
   (23) ANSWERED 01/10 — widen central §12 item 25 in the housekeeping round, Friday edits (item 3)
   (24) NEW — Thai wording (13.4 #6): RELX Creator tagline/description/FAQ/who-for, INFY brand line/who-for/FAQ;
