@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v99 · 2026-10-01 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v100 · 2026-10-01 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -1525,22 +1525,31 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   merged in the same shell line as `self-merge-check --pr 153`, which printed BLOCKED only because the local checkout
   was not the PR head (the checker's run at the PR head = BIG, criteria met) — run the gate alone, at the pinned head,
   and merge only on a non-BLOCKED last line.
-  NEXT (owner's order): M Bar 15K — WAITS on the owner's answer (item 4 (22)); then BATCH 3 on 06/10 (argus-g4 +
-  Argus Multi-Ohm; the INFY part is done); then BATCH 5 = the rest of the site (planner first; rule (a) everywhere).
-  Then the housekeeping round (owner: "ให้จบเรื่องรูปชุดนี้ก่อนจะขึ้น Product ตัวใหม่").
+  OWNER ANSWERS 01/10 (after the v99 report, word for word where quoted):
+  - "M Bar 15K ก็คือ M Switch Kit แต่แยกตัวเครื่อง แยกหัวพอต · ตอนนี้บนเว็บยังโชว์อีก 1 ที่ในหมวดพอตใช้แล้วทิ้ง
+    (okami24.store/products/m-bar-15k) พี่เดาว่าข้อมูลซ้อน" → a DUPLICATE record of the M Switch set (not a disposable);
+    fix = AFTER the housekeeping round ("หลังรอบเก็บบ้านค่อยมาทำ"). Mind: m-bar-15k is a baseline page until 05/10.
+  - "รูป INFY 20K ดูกราฟิก ๆ แปลก ๆ" → remake the INFY photos (card + 22 flavour photos) — AFTER the housekeeping round.
+  - widen central §12 item 25 = in the housekeeping round, in one go · "คนแก้ไฟล์คนเดียวคือ Friday" (Friday edits the
+    files, incl. the smogz-rules change [เชื่อว่า — Friday's reading; the rules repo's own flow names Javis for its PRs,
+    so confirm the path at the housekeeping round's open])
+  - spec-table header ("ข้อมูลที่ยืนยันได้จริง … เช็คกับเว็บทางการ…") on INFY / RELX: "ไม่ต้องติดป้าย" → leave as is.
+  - "M Bar 9K · M Bar 10K · M Switch Kit · M Switch Pod: เปิดมาเจอรูปเดี่ยวแล้ว หัวข้อ "ทั้งหมด" กับรูปรวมยังอยู่" —
+    [รอเจ้าของ] item 4 (25): M Bar 10K still opens on its lineup (`lineupFirst`, the owner-approved pilot) — Friday asked.
+  NEXT: the housekeeping round (owner: "ให้จบเรื่องรูปชุดนี้ก่อนจะขึ้น Product ตัวใหม่"; M Bar 15K + INFY photos after it)
+  — its order against BATCH 3 (06/10: argus-g4 + Argus Multi-Ohm) and BATCH 5 (rest of the site, planner first, rule (a)
+  everywhere) = item 4 (26) [รอเจ้าของ].
   Carried: (D) out-of-stock suggestion (Esko 18/20) · (C)/(B) card sweep on 4:5 · the ARTICLE round · the
   category-structure round (item 4 (14)). DATED TO-DO after 05/10: delete `galleryNoteHeld` + the `heldNote` prop.
   Standing owner directions: IMAGE_SPEC §0 item 5 (rule (a) wins over the fan) · every product gets an SEO article
   in "more details" = its own later round.
 4 waiting on owner:
-  (22) NEW — M Bar 15K identity: SALTHUB's own "M Bar 15K" page shows a SWITCH battery + CLEAR pod (box printed
-       "SWITCH"), not a stand-alone disposable; no Shipnity item (price 349 = owner estimate). 1 = it is the
-       first-gen clear-pod M Switch set → photos = battery + clear pod per flavour (Friday recommends, if sold) ·
-       2 = the shop no longer sells it → hide (a baseline page: hiding before 05/10 changes the SEO read) ·
-       3 = send a photo of the real one [รอเจ้าของ]
-  (23) NEW — rule "new thing on the same subject = overwrite/rewrite, never keep both" (owner 30/09 item 6): central
-       §12 item 25 says it for rules only, LESSONS for lessons; Friday proposed widening central item 25 to rules,
-       manuals, HANDOFF and working files (central → Javis PR in smogz-rules after the owner's OK) [รอเจ้าของ]
+  (25) NEW 01/10 — M Bar 10K: switch it to open on the single card too (like 9K / Kit / Pod; "ทั้งหมด" + the lineup
+       stay behind the chip) — Friday recommends (rule (a), IMAGE_SPEC §0 item 5) · or keep the owner-approved pilot
+       opening on its lineup [รอเจ้าของ — the 10K is owner-approved, 13.4 #8]
+  (26) NEW 01/10 — what comes next: the housekeeping round first, or BATCH 3 (06/10) / BATCH 5 first [รอเจ้าของ]
+  (22) ANSWERED 01/10 — M Bar 15K = the M Switch Kit split into device + pod, a duplicate record → after housekeeping (item 3)
+  (23) ANSWERED 01/10 — widen central §12 item 25 in the housekeeping round, Friday edits (item 3)
   (24) NEW — Thai wording (13.4 #6): RELX Creator tagline/description/FAQ/who-for, INFY brand line/who-for/FAQ;
        words not in THAI_STYLE: "จอพิกเซล", "หน้าอีโมจิ" [รอเจ้าของ]
   (19)(20)(21)(18)(7) ANSWERED 30/09 — done in PR #152/#153 (above)

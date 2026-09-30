@@ -127,3 +127,4 @@ gap doc-keeper cannot fill without inventing text (reported to the main agent, n
 
 # OKami24 — HANDOFF · v97 · 2026-09-30 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 # OKami24 — HANDOFF · v98 · 2026-09-30 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v99 · 2026-10-01 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
