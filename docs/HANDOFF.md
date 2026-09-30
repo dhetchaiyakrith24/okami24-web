@@ -1503,7 +1503,15 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
 2 ahead of main: only this close's docs PR (HANDOFF §16 + §3 relocation) — docs-only → no checker (rule 7A), Friday merges.
   Work branches `image-sitewide-b5a`, `rules-owner-cuts-30-09` are merged; nothing on them is unchecked.
   Worktree `_incoming/wt-rules` = the rules branch; remove it with `git worktree remove _incoming/wt-rules` (no junctions).
-3 OPEN (twelfth chat 30/09–01/10): round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" — working files `_incoming/image-sitewide/` (not in git).
+3 OPEN NOW (thirteenth chat 01/10): HOUSEKEEPING round — file `docs/rounds/รอบเก็บบ้าน-Friday-ถามพี่ก่อน-01-10.txt`
+  (byte-equal to the OneDrive draft), branch `housekeeping-01-10`, working files `_incoming/housekeeping-01-10/`.
+  Batches (the file's own order): H1 questions to the owner [sent 01/10, waiting] · H2 audit, nothing edited (rule-auditor
+  + inventory) → report to the owner, WAIT for the owner's ruling · H3 do what the owner rules (docs/rules = tier A;
+  hooks/settings = 13.7 "big", full set) · H4 a re-callable /เก็บบ้าน skill, shown to the owner before saving.
+  Fence (owner): the site a visitor sees stays the same — a batch that changes the sitemap or a page = stop, revert, report.
+  No scope-auditor (touches nothing a visitor gets). Stopped at: H1 sent, H2 running.
+  PAUSED (not closed): round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" — detail below.
+3b PAUSED (twelfth chat 30/09–01/10): round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" — working files `_incoming/image-sitewide/` (not in git).
   DONE this chat (PR #152, merged after checker PASS + green checks):
   - INFY 20K OPEN (owner lifted the hold for photos/footer/body, item (19)); battery size removed; 20mL + adjustable
     airflow SHOWN as verified rows, the owner's ruling as source (named exception THAI_STYLE §5); INFY in the footer
