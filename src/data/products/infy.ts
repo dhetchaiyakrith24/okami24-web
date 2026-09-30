@@ -17,7 +17,7 @@ export const infyProducts: Product[] = [
     displayName: "INFY 20K",
     tagline: "A 20,000-puff rechargeable disposable.",
     shortDescription:
-      "A 20,000-puff rechargeable disposable from INFY (This Is Salts), sold on the Thai market. INFY does not list the 20K on its own sites yet, so the specs on this page are the figures several Thai shops agree on.",
+      "A 20,000-puff rechargeable disposable from INFY (This Is Salts), sold on the Thai market. INFY does not list the 20K on its own sites yet; the shop confirms its 20mL capacity and adjustable airflow.",
     isFlagship: false,
     attributes: {
       puffCount: 20000,
@@ -99,10 +99,12 @@ export const infyProducts: Product[] = [
       // marked unverified. Battery indicator + breathing light + Type-C = printed on the device art every shop uses.
       // Owner 30/09 (§16 item 4 (20)): no battery size — no real source for it (the shops' 650mAh is dropped, the
       // `batteryMah` attribute with it); show the 20mL and the adjustable airflow. USB-C charging stays (compatibility).
-      { key: "capacity", label: "E-liquid capacity", value: "20mL prefilled", sourceStatus: "unverified" },
+      // Those two rows are `verified` with no URL on purpose: the page shows verified rows only, and the owner's ruling
+      // is the source — a named exception in THAI_STYLE §5 (manufacturer-only rule). The other rows stay unverified.
+      { key: "capacity", label: "E-liquid capacity", value: "20mL prefilled", sourceStatus: "verified" },
       { key: "nicotine", label: "Nicotine strength", value: "3% (30mg) nicotine salt", sourceStatus: "unverified" },
       { key: "coil", label: "Coil", value: "Dual mesh coil, 0.9Ω", sourceStatus: "unverified" },
-      { key: "airflow", label: "Airflow", value: "Adjustable", sourceStatus: "unverified" },
+      { key: "airflow", label: "Airflow", value: "Adjustable", sourceStatus: "verified" },
       { key: "indicator", label: "Status indicator", value: "Battery indicator + breathing light", sourceStatus: "unverified" },
     ],
     features: [],
@@ -113,7 +115,7 @@ export const infyProducts: Product[] = [
         id: "infy-20k-spec-variance",
         question: "Where do the specs on this page come from?",
         answer:
-          "INFY does not list the 20K on its own sites yet. The figures here are the ones several Thai shops state alike, so they are marked unconfirmed. To check against the real unit, ask on LINE @okm24.",
+          "INFY does not list the 20K on its own sites yet. The 20mL capacity and the adjustable airflow on this page are confirmed by the shop; other figures Thai shops quote are not shown. To check against the real unit, ask on LINE @okm24.",
       },
     ],
     relatedProductSlugs: [],

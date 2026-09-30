@@ -409,7 +409,7 @@ export const salthubProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         src: "/assets/products/m-switch-kit/card-v2.webp",
-        alt: "SALTHUB M Switch Kit, black body with digital battery display and the black pod fitted, tilted",
+        alt: "SALTHUB M Switch Kit, black body with digital battery display, tilted",
         angle: "upright cut-out tilted in 2D — the same device every kit flavour photo shows",
         transparentBackground: true,
         sourceName: "OKami24 cut-out (GPT Image) of SALTHUB's starter-kit render",
@@ -424,7 +424,7 @@ export const salthubProducts: Product[] = [
     // of m-switch-pod below; the black glossy-top pod the shop stocks — owner's photo of real stock 30/09); `boxImage` =
     // SALTHUB's own starter-kit render of that flavour (box + device) in the "more details" grid — Kyoho Grape has no kit
     // render on salthub.com, so no tile. `swatchHex` = as on m-switch-pod below; the pod stands upright (v3; v4 = the one-master pods of m-switch-pod below). Source + check per file
-    // in scripts/process-images.map.json `aiRender`. The device + 5 pods fanned (lineup-v2) stays behind the "all" chip;
+    // in scripts/process-images.map.json `aiRender`. The device + 5 pods fanned (lineup-v3, rebuilt from the v4 pods) stays behind the "all" chip;
     // owner 30/09 rule (a) (§16 item 4 (18) "ใช่"): the page opens on the card — card-v2 = that same device, tilted (the
     // navy SALTHUB card went: the shop sells the black body) — `openOnCardPhoto`, not `lineupFirst`.
     lineupImage: {

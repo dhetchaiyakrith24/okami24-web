@@ -96,7 +96,7 @@ export const relxProducts: Product[] = [
     // (grey with a yellow base, first; black, later) — RELX's global store lists Black / White / Green / Yellow; the
     // grey-and-yellow edition is not on that list (a regional edition — owner's photo).
     brandId: "relx",
-    familyId: "relx-disposables",
+    familyId: "relx-creator",
     categoryId: "pod-kits",
     systemType: "pod-kit",
     name: "RELX Creator",
@@ -147,6 +147,7 @@ export const relxProducts: Product[] = [
       { key: "modes", label: "Power modes", value: "15W Normal / 25W Boost, double click to switch", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
       { key: "screen", label: "Display", value: "Pixel smart screen with emoji faces; one click shows the battery", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
       { key: "airflow", label: "Airflow", value: "Adjustable", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      // No URL on purpose: the owner's word from the shop's stock (30/09) — the named exception in THAI_STYLE §5.
       { key: "compat", label: "Pod platform", value: "RELX Creator 20K pods, Muro Connector pods (shop-confirmed)", sourceStatus: "verified" },
     ],
     features: [],
