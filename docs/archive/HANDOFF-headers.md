@@ -122,3 +122,7 @@ gap doc-keeper cannot fill without inventing text (reported to the main agent, n
 ## Line 1 at v96, before v97 (2026-09-30, round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" chat move after #145, tenth chat, main agent), verbatim
 
 # OKami24 — HANDOFF · v96 · 2026-09-30 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+
+## Line 1 at v97, before v98 (2026-09-30, round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" batch 4 close + chat move, eleventh chat, doc-keeper), verbatim
+
+# OKami24 — HANDOFF · v97 · 2026-09-30 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
