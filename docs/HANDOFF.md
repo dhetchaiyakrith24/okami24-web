@@ -1345,9 +1345,9 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
        (Pod System · "หัวพอตและคอยล์ (Pod System)" · พอตใช้แล้วทิ้ง = non-replaceable only · NEW "พอตเปลี่ยนหัว (Closed System)"
        = starter kits + prefilled pods; Friday's proposal) = "ทำรอบแยก แต่เดี๋ยววางแพลนให้ชัดกว่านี้" — its own round, the
        OWNER will plan it first [รอเจ้าของ] · (15) "ขอบหนาตรงฐานของหัวพอต ดูไม่สวย" → upright pods, #145 · (16) swatch = 2 pink → #145.
-  (17) NEW RULE to write (central §12 item 28 — table first, then the owner's OK) [รอเจ้าของ]: Friday may re-run a GitHub
-       run that failed ONLY on a network fetch (e.g. Google Fonts in `next build`), once, incl. the main deploy run — the owner
-       said "ได้" to the idea 30/09; the rule text is not written yet (13.7 still says Friday never triggers a deploy).
+  (17) DONE: the owner's "เขียนเลย" 30/09 → TEAM_RULES 13.7 deploy line: Friday may re-run a failed run ONCE when its log
+       shows a network / external-fetch failure (e.g. Google Fonts in `next build`), PR checks or the main deploy run; fails
+       again = stop and report (13.4 #9).
 5 open questions (round "ไล่ดูทีละส่วน", found by thai-copy, pre-existing, NOT fixed — out of scope):
   (a) answered (item 4 (6)(8)(9)) · (b) `dict.product.anatomyTitle`
   en/zh "from the outside in" promises internals (shared dictionary; the new sheet uses its own heading) · (c) no airflow spec
