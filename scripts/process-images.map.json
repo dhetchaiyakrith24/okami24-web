@@ -2808,12 +2808,12 @@
   "role": "variant",
   "id": "apple-aloe",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/apple-aloe.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-apple-aloe-v2.webp"
+  "fileName": "variant-apple-aloe-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/apple-aloe.png",
@@ -2821,12 +2821,12 @@
   "role": "variant",
   "id": "apple-aloe",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/apple-aloe.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-apple-aloe-v2.webp"
+  "fileName": "variant-apple-aloe-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/black-berry.png",
@@ -2834,12 +2834,12 @@
   "role": "variant",
   "id": "black-berry",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/black-berry.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-black-berry-v2.webp"
+  "fileName": "variant-black-berry-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/black-berry.png",
@@ -2847,12 +2847,12 @@
   "role": "variant",
   "id": "black-berry",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/black-berry.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-black-berry-v2.webp"
+  "fileName": "variant-black-berry-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/blue-ice.png",
@@ -2860,12 +2860,12 @@
   "role": "variant",
   "id": "blue-ice",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/blue-ice.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-blue-ice-v2.webp"
+  "fileName": "variant-blue-ice-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/blue-ice.png",
@@ -2873,12 +2873,12 @@
   "role": "variant",
   "id": "blue-ice",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/blue-ice.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-blue-ice-v2.webp"
+  "fileName": "variant-blue-ice-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/cola.png",
@@ -2886,12 +2886,12 @@
   "role": "variant",
   "id": "cola",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/cola.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-cola-v2.webp"
+  "fileName": "variant-cola-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/cola.png",
@@ -2899,12 +2899,12 @@
   "role": "variant",
   "id": "cola",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/cola.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-cola-v2.webp"
+  "fileName": "variant-cola-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/doublemint.png",
@@ -2912,12 +2912,12 @@
   "role": "variant",
   "id": "doublemint",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/doublemint.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-doublemint-v2.webp"
+  "fileName": "variant-doublemint-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/doublemint.png",
@@ -2925,12 +2925,12 @@
   "role": "variant",
   "id": "doublemint",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/doublemint.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-doublemint-v2.webp"
+  "fileName": "variant-doublemint-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/grape.png",
@@ -2938,12 +2938,12 @@
   "role": "variant",
   "id": "grape",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/grape.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-grape-v2.webp"
+  "fileName": "variant-grape-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/grape.png",
@@ -2951,12 +2951,12 @@
   "role": "variant",
   "id": "grape",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/grape.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-grape-v2.webp"
+  "fileName": "variant-grape-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/grape-aloe.png",
@@ -2964,12 +2964,12 @@
   "role": "variant",
   "id": "grape-aloe",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/grape-aloe.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-grape-aloe-v2.webp"
+  "fileName": "variant-grape-aloe-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/grape-aloe.png",
@@ -2977,12 +2977,12 @@
   "role": "variant",
   "id": "grape-aloe",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/grape-aloe.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-grape-aloe-v2.webp"
+  "fileName": "variant-grape-aloe-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/grape-lychee.png",
@@ -2990,12 +2990,12 @@
   "role": "variant",
   "id": "grape-lychee",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/grape-lychee.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-grape-lychee-v2.webp"
+  "fileName": "variant-grape-lychee-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/grape-lychee.png",
@@ -3003,12 +3003,12 @@
   "role": "variant",
   "id": "grape-lychee",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/grape-lychee.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-grape-lychee-v2.webp"
+  "fileName": "variant-grape-lychee-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/kyoho-grape.png",
@@ -3016,12 +3016,12 @@
   "role": "variant",
   "id": "kyoho-grape",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/kyoho-grape.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-kyoho-grape-v2.webp"
+  "fileName": "variant-kyoho-grape-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/kyoho-grape.png",
@@ -3029,12 +3029,12 @@
   "role": "variant",
   "id": "kyoho-grape",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/kyoho-grape.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-kyoho-grape-v2.webp"
+  "fileName": "variant-kyoho-grape-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/mango-passion.png",
@@ -3042,12 +3042,12 @@
   "role": "variant",
   "id": "mango-passion",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/mango-passion.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-mango-passion-v2.webp"
+  "fileName": "variant-mango-passion-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/mango-passion.png",
@@ -3055,12 +3055,12 @@
   "role": "variant",
   "id": "mango-passion",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/mango-passion.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-mango-passion-v2.webp"
+  "fileName": "variant-mango-passion-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/mixberry.png",
@@ -3068,12 +3068,12 @@
   "role": "variant",
   "id": "mixberry",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/mixberry.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-mixberry-v2.webp"
+  "fileName": "variant-mixberry-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/mixberry.png",
@@ -3081,12 +3081,12 @@
   "role": "variant",
   "id": "mixberry",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/mixberry.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-mixberry-v2.webp"
+  "fileName": "variant-mixberry-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/peach-strawberry.png",
@@ -3094,12 +3094,12 @@
   "role": "variant",
   "id": "peach-strawberry",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/peach-strawberry.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-peach-strawberry-v2.webp"
+  "fileName": "variant-peach-strawberry-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/peach-strawberry.png",
@@ -3107,12 +3107,12 @@
   "role": "variant",
   "id": "peach-strawberry",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/peach-strawberry.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-peach-strawberry-v2.webp"
+  "fileName": "variant-peach-strawberry-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/pink-berry.png",
@@ -3120,12 +3120,12 @@
   "role": "variant",
   "id": "pink-berry",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/pink-berry.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-pink-berry-v2.webp"
+  "fileName": "variant-pink-berry-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/pink-berry.png",
@@ -3133,12 +3133,12 @@
   "role": "variant",
   "id": "pink-berry",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/pink-berry.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-pink-berry-v2.webp"
+  "fileName": "variant-pink-berry-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/strawberry.png",
@@ -3146,12 +3146,12 @@
   "role": "variant",
   "id": "strawberry",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/strawberry.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-strawberry-v2.webp"
+  "fileName": "variant-strawberry-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/strawberry.png",
@@ -3159,12 +3159,12 @@
   "role": "variant",
   "id": "strawberry",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/strawberry.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-strawberry-v2.webp"
+  "fileName": "variant-strawberry-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/strawberry-watermelon.png",
@@ -3172,12 +3172,12 @@
   "role": "variant",
   "id": "strawberry-watermelon",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/strawberry-watermelon.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-strawberry-watermelon-v2.webp"
+  "fileName": "variant-strawberry-watermelon-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/strawberry-watermelon.png",
@@ -3185,12 +3185,12 @@
   "role": "variant",
   "id": "strawberry-watermelon",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/strawberry-watermelon.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-strawberry-watermelon-v2.webp"
+  "fileName": "variant-strawberry-watermelon-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/watermelon.png",
@@ -3198,12 +3198,12 @@
   "role": "variant",
   "id": "watermelon",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/watermelon.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-watermelon-v2.webp"
+  "fileName": "variant-watermelon-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/watermelon.png",
@@ -3211,12 +3211,12 @@
   "role": "variant",
   "id": "watermelon",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/watermelon.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-watermelon-v2.webp"
+  "fileName": "variant-watermelon-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/final/watermelon-bubblegum.png",
@@ -3224,12 +3224,12 @@
   "role": "variant",
   "id": "watermelon-bubblegum",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js",
+   "tool": "Higgsfield nano_banana_pro 4k \"cut out only the pod, keep angle / shape / print\" re-render of each flavour's own SALTHUB photo (1 job per flavour, 4 credits), then GPT Image 2.5 high 2k transparent-background cut of that render (Blue Ice / Mango Passion / Peach Strawberry / Pink Berry / Grape Lychee / Watermelon cut straight from the maker crop — their re-render doubled the pod or kept a clear mouthpiece); halo clean-up + 840-px pre-size by _incoming/image-sitewide/msw/finish.js · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/watermelon-bubblegum.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/final-sheet.png + out/final-light.png — every pod checked by eye 17/17 (one pod, label text = the flavour name, M + tag colours as on the maker photo)"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Bar 10K treatment for the pod page: the pod alone, the maker's own 3/4 angle kept, so only the label (M logo + name tag) changes when a customer swipes",
-  "fileName": "variant-watermelon-bubblegum-v2.webp"
+  "fileName": "variant-watermelon-bubblegum-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/msw/kit/watermelon-bubblegum.png",
@@ -3237,11 +3237,11 @@
   "role": "variant",
   "id": "watermelon-bubblegum",
   "aiRender": {
-   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it",
+   "tool": "composite by _incoming/image-sitewide/msw/compose.js, no AI step of its own: the device = GPT Image 2.5 high 2k transparent cut of SALTHUB's own M Switch kit render (out/device-a.png, the same for every flavour) + this flavour's M Switch Pod photo (the m-switch-pod entry above) beside it · v3 (owner 30/09: the tilted pod showed its thick base): GPT Image 2.5 high 2k transparent re-pose of that cut — same pod and print, stood upright, camera slightly above, base face hidden; 17/17 checked by eye (label = flavour name, one pod, black glossy mouthpiece) in _incoming/image-sitewide/msw/out/up-sheet.png",
    "reference": "device: salthub.com/m-switch-kit/ m_switch_kit_flavor_07.webp (_incoming/image-sitewide/msw/refs/kit-device.png); pod: SALTHUB's own per-flavour pod photo on salthub.com/m-switch-pod/ (_incoming/image-sitewide/msw/refs/pods/watermelon-bubblegum.png = the pod crop of it); materials per the owner's photo of real stock 30/09 (glossy black mouthpiece / collar, matte black body)",
    "fidelitySheet": "_incoming/image-sitewide/msw/out/compose-view.png — device lettering (SWITCH, M, 100 display) checked against the maker render; pod label = the flavour name 17/17"
   },
   "note": "image-sitewide round 2026-09-30 batch 2 — the M Switch Kit is sold as a starter kit (device + one pod, owner 30/09): each flavour = the device + that flavour's pod",
-  "fileName": "variant-watermelon-bubblegum-v2.webp"
+  "fileName": "variant-watermelon-bubblegum-v3.webp"
  }
 ]
