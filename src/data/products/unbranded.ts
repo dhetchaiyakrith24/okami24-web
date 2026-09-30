@@ -457,11 +457,13 @@ export const unbrandedProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/muro-connector-20k/card-v2.webp",
+        src: "/assets/products/muro-connector-20k/card-v3.webp",
         alt: "Muro Connector 20K, Mineral Water, three-quarter view",
         angle: "Three-quarter, isolated",
         transparentBackground: true,
         // Image-fix round 2026-09-29: sharp remake of the 179-px retailer card (owner OK); source + check in the map.
+        // Round "image-sitewide" 2026-09-30 (owner: "ไม่สวย ไม่คม ขนาดดูไม่สมมาตร"): card-v3 = a 4K remake, tilted, on the
+        // 4:5 card standard (card-v2 was on the old square canvas); new name, lesson พ6.
         sourceName: "OKami24 render (Higgsfield) from the vapemun.com retailer photo + OKAMI's own clip",
         sourceUrl: "https://vapemun.com/product/muro-connector-20k/",
       },

@@ -3675,5 +3675,18 @@
    "fidelitySheet": "_incoming/image-sitewide/muro/compare.png — retailer poster | our photo per flavour, checked by eye 12/12 (pouch, label colour, name, device)"
   },
   "note": "image-sitewide round 2026-09-30 batch 4 — owner 30/09: the flavour photo = the device + that flavour's pouch; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5"
+ },
+ {
+  "source": "_incoming/image-sitewide/gen/mc-card-A-cut.png",
+  "slug": "muro-connector-20k",
+  "role": "card",
+  "replaces": "/assets/products/muro-connector-20k/card-v2.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (job 936e030e-e6a6-45e5-ac48-7883ed95d85b), the same device tilted ~10 degrees, flat #E9E9EC keyed with scripts/flatcut.js",
+   "reference": "the owner-approved card-v2 (29/09) source _incoming/web-product-images/muro-connector-20k/out/cut/_card.png (_incoming/image-sitewide/muro/refs/mc-ref1-card.png) + the Mineral Water side print variant-mineral-water-v2.webp (refs/mc-ref2-front.png)",
+   "fidelitySheet": "_incoming/image-sitewide/mc-A.png — old card | new card: shape, studs, mouthpiece, MURO / AMAZE YOUR NOSE / MINERAL WATER / CE print checked by eye (honeycomb cells land differently, as on card-v2)"
+  },
+  "note": "image-sitewide round 2026-09-30 batch 4 (owner 30/09: the card \"ไม่สวย ไม่คม ขนาดดูไม่สมมาตร\") — 4K remake on the 4:5 card standard; card-v2 was on the old square canvas",
+  "fileName": "card-v3.webp"
  }
 ]
