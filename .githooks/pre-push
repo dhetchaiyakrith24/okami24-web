@@ -1,4 +1,4 @@
 #!/bin/sh
-# No push while a checker result is still a placeholder (doc-keeper may start with the checker at a close).
-# Rule: .claude/agents/doc-keeper.md call condition · checker: scripts/pending-check.js · setup after clone: git config core.hooksPath .githooks
-exec node scripts/pending-check.js
+# No force push, no push straight to main (owner 01/10 · .claude/TEAM_RULES.md 13.7) — scripts/push-guard.js
+# Setup after clone: node scripts/prepare-clone.js (sets core.hooksPath .githooks)
+exec node scripts/push-guard.js

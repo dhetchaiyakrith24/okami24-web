@@ -26,7 +26,7 @@
 // Last line (merge verdict): SMALL · SITE · BIG — or BLOCKED when it cannot judge (not this repo · render.yaml would
 // deploy on merge · local HEAD is not the PR head · empty diff). Exit 0 for SMALL/SITE/BIG, 1 for BLOCKED.
 // Also prints `HEAD <sha>` — merge exactly that commit (pin it in the merge call).
-// --base and --files keep their old PASS/BLOCKED lines ("site touched?" / list test) — round-close and merge-pack read them.
+// --base and --files keep their old PASS/BLOCKED lines ("site touched?" / list test) — skill round-close reads them.
 "use strict";
 const { execFileSync } = require("child_process");
 const fs = require("fs");
