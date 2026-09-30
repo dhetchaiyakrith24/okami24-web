@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-08-31",
-  "endDate": "2026-09-27",
+  "startDate": "2026-09-01",
+  "endDate": "2026-09-28",
   "dimensions": [
    "query"
   ]
@@ -39,9 +39,9 @@
     "drag 6"
    ],
    "clicks": 6,
-   "impressions": 23,
-   "ctr": 0.2608695652173913,
-   "position": 8.478260869565219
+   "impressions": 24,
+   "ctr": 0.25,
+   "position": 8.166666666666668
   },
   {
    "keys": [
@@ -72,6 +72,24 @@
   },
   {
    "keys": [
+    "okami pod"
+   ],
+   "clicks": 3,
+   "impressions": 8,
+   "ctr": 0.375,
+   "position": 7.875
+  },
+  {
+   "keys": [
+    "voopoo drag 6 ราคา"
+   ],
+   "clicks": 3,
+   "impressions": 3,
+   "ctr": 1,
+   "position": 3.3333333333333335
+  },
+  {
+   "keys": [
     "caliburn g5 ราคา"
    ],
    "clicks": 2,
@@ -87,15 +105,6 @@
    "impressions": 7,
    "ctr": 0.2857142857142857,
    "position": 14.571428571428571
-  },
-  {
-   "keys": [
-    "okami pod"
-   ],
-   "clicks": 2,
-   "impressions": 7,
-   "ctr": 0.2857142857142857,
-   "position": 7.857142857142857
   },
   {
    "keys": [
@@ -201,9 +210,9 @@
     "salthub"
    ],
    "clicks": 1,
-   "impressions": 23,
-   "ctr": 0.043478260869565216,
-   "position": 16.869565217391305
+   "impressions": 24,
+   "ctr": 0.041666666666666664,
+   "position": 16.291666666666664
   },
   {
    "keys": [
@@ -225,12 +234,12 @@
   },
   {
    "keys": [
-    "voopoo drag 6 ราคา"
+    "voopoo argus g4 ราคา"
    ],
    "clicks": 1,
    "impressions": 1,
    "ctr": 1,
-   "position": 3
+   "position": 2
   },
   {
    "keys": [
@@ -306,6 +315,15 @@
   },
   {
    "keys": [
+    "caliburn g 5 lite"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 9
+  },
+  {
+   "keys": [
     "caliburn g2"
    ],
    "clicks": 0,
@@ -324,12 +342,21 @@
   },
   {
    "keys": [
+    "caliburn g3 pro"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 19
+  },
+  {
+   "keys": [
     "caliburn g5 lite"
    ],
    "clicks": 0,
-   "impressions": 9,
+   "impressions": 10,
    "ctr": 0,
-   "position": 7
+   "position": 6.6
   },
   {
    "keys": [
@@ -546,6 +573,15 @@
    "impressions": 2,
    "ctr": 0,
    "position": 3.5
+  },
+  {
+   "keys": [
+    "marbo pod"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 6
   },
   {
    "keys": [
@@ -963,6 +999,15 @@
   },
   {
    "keys": [
+    "ผลิตปี"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 11
+  },
+  {
+   "keys": [
     "พอตของแท้"
    ],
    "clicks": 0,
@@ -993,9 +1038,9 @@
     "ราคา"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 6,
    "ctr": 0,
-   "position": 13.5
+   "position": 10.333333333333334
   },
   {
    "keys": [
