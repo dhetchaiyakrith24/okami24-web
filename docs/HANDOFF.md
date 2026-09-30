@@ -12,45 +12,52 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
 
-1 main: `git fetch && git log -1 --oneline origin/main` — merged [ตรวจแล้ว — gh]: PR #157 (`32af0cd` rules/agents/skills/docs) ·
-  PR #158 (`6ec4483` locks) · PR #159 (`ef185ca` central-rules copy). PR #160 (this file, /เก็บบ้าน skill) = the round's
-  last merge; the close tag `housekeeping-01-10-done` goes on its merge commit. Undo = revert the merge commit of that PR.
-  Rollback point before the round = `aa21cbb` (tag `pre-housekeeping-01-10`). Last site deploy: PR #152.
-2 ahead of main: nothing unchecked. smogz-rules: PR #8 merged (`89b4746` — item 25 widened · §2/3/4/11 folded · §8 per
-  project · README: Friday merges).
-3 OPEN: none — HOUSEKEEPING round closes 01/10 with PR #160 (tag `housekeeping-01-10-done`; file
-  `docs/rounds/รอบเก็บบ้าน-Friday-ถามพี่ก่อน-01-10.txt`; working files `_incoming/housekeeping-01-10/`).
-  What changed for the next chat: TEAM_RULES renumbered (old→new map = `git log --grep "เลขเก่า → เลขใหม่"`) with a
-  house map at its head · rules loaded every chat 47,937 → 31,995 chars (line ends not counted) · HANDOFF = §16/§17/§18 only · agents 8
-  (thai-copy writes + edits; doc-keeper, writer gone) · skills: round-open/close slimmed, merge-pack gone, new /เก็บบ้าน
-  (`house-clean` + `scripts/house-check.js`) · locks: `scripts/guard-tool.js` (hook) + `scripts/push-guard.js` (pre-push) —
-  a locked file (render.yaml · .env* · ordering-mode.ts) is editable only when the open round file has a line starting
-  【แตะได้】 that names it · deploy + rollback = Friday (13.7).
-3b NEXT: resume round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
-  `_incoming/image-sitewide/`): M Bar 15K duplicate record (= M Switch Kit split into device + pod; m-bar-15k is a baseline
-  page until 05/10) · remake INFY 20K photos (card + 22 flavours, owner: "ดูกราฟิก ๆ แปลก ๆ") · BATCH 3 (06/10: argus-g4 +
-  Argus Multi-Ohm) · BATCH 5 (rest of the site, planner first, rule (a) everywhere) · at its close: product photos no
-  file references — use `npx tsx scripts/asset-refs.ts` (reads the catalog, incl. names built at
-  runtime such as wotofo `variant-${id}`); a plain name search flags false positives — delete only what that proves unused.
+1 main: `git fetch && git log -1 --oneline origin/main` — image round batch 6 = PR #162 MERGED `1d74ed8` [ตรวจแล้ว — gh] (checker PASS 4/4 on df08aa9; +16fd3d7 map text only):
+  INFY 20K v2 photos · M Bar 10K opens on the card · Thai copy RELX Creator/INFY + THAI_STYLE words. Undo = revert its
+  merge commit (4 commits, each revertable). Housekeeping round closed at PR #160/#161 (tag `housekeeping-01-10-done`).
+2 ahead of main: nothing unchecked. smogz-rules: nothing open.
+3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
+  `_incoming/image-sitewide/`). Batch 6 (01/10, tier B) = PR #162 — gates: tsc 0 · eslint 0 · verify:catalog 29/29 ·
+  scan.js 0/107 · locale 0 · wordbreak 0 · visible-text 26 groups all explained (`verify-b6/vt-diff/changes.md`) ·
+  shots `verify-b6/shots/` · gallery-probe PASS 45 pages both modes, 0 FLASH/STUCK · self-merge-check BIG · checker PASS.
+  INFY v2 method (works): master from the maker's REAL photos, not retailer renders — `infy2/recolour2.js`, lesson 22.
+  NIGHT RENDERS 01/10 (owner: use the credits before the 06:00 reset; stored, NOT on the site, NOT checked one by one):
+  230 Higgsfield 4K images in `Higgs Okm/` (repo root, excluded from git via .git/info/exclude; README inside; credits used to 3.6 before the 06:00 reset) — incl. ~110 from UWELL's official images (owner 01/10 "อ้างอิงเว็บหลักได้เลย"): G4 Pro KOKO (front + tilted, every colour, UWELL look = clear marble pod), G3 Pro KOKO, G3 Pro (front + tilted) — G3 sets look clean; 2 failures seen (a slim wrong-shape Coral Pink, a dark floor on one G3 Pro KOKO card) — ids +
+  references `_incoming/image-sitewide/night/jobs.tsv`. Two lessons: พ9 (cards made for products whose official photos
+  were already sharp — Caliburn G5/G5 Lite/G4 Pro = the owner's sharpness standard; not to be used) and 22 (AI copies
+  the source's patched/jagged edges even when told not to — fix the source first).
+  Sharpness scan of every product photo: `_incoming/image-sitewide/night/sharp-scan.tsv` (below the standard: G4 Pro
+  KOKO, G3 Pro KOKO, G4 Classic, Argus G3 mini, Argus P3, Drag 6, Zero Nano, several coils). `edge-scan.ts` = metric
+  does NOT work (flags the clean G4 Pro) — do not trust it.
+3b NEXT (owner's order): (a) Esko pod-159: owner 01/10 "โชว์ทุกกลิ่นว่ามีของไปก่อน ไม่ขึ้นป้ายหมด" — the 18 manufacturer
+  flavours now show "หมด" because their Shipnity status is `unknown` (PilotProductDetail / ProductMasterVariantPicker /
+  catalog-resolver treat non-"in-stock" as out) — a stock/cart change = 13.7 big (2), full set, own PR; record the owner
+  ruling in BSOT §6 next to the pod-159 block. NOT done yet. (b) photos below the standard: get clean official originals
+  first (researcher; myuwell.com product pages load their colour images by script) — then Higgsfield. (c) BATCH 3 on
+  06/10 (argus-g4 + Argus Multi-Ohm) + M Bar 15K duplicate record (= M Switch Kit; baseline page until 05/10).
+  (d) BATCH 5 rest of the site (planner first). TFIT M Power (hidden): owner "ตัดสินใจได้เลย" → queued in batch 5 after a
+  researcher confirms the model (not rendered 01/10: source unclear).
+  At the round close: `npx tsx scripts/asset-refs.ts` for unreferenced product photos (INFY v1 files are now unused).
 4 waiting on owner:
-  (25) M Bar 10K: open on the single card like 9K / Kit / Pod (Friday recommends) or keep the approved lineup pilot
-  (24) Thai wording: RELX Creator tagline/description/FAQ/who-for, INFY brand line/who-for/FAQ; words not in THAI_STYLE:
-       "จอพิกเซล", "หน้าอีโมจิ"
-  (14) category structure — its own round, the owner plans it first
-  (1) image-theft protection A+B+C — its own round · (2) Muro Connector category · (3) SALTHUB per-flavour file request,
-      no-photo panel wording A/B/C
+  (27) ANSWERED 01/10 "UWELL G4 Pro KOKO อ้างอิงเว็บหลักได้เลย" — the site's KOKO photos (black mouthpiece, "G4 PRO" frame) differ
+       from UWELL's own KOKO (clear marble pod): NEXT = pick the best official-based renders per colour (Higgs Okm, prefix
+       officialonly* / tilt*), owner sees a first sheet, then replace the page photos (new names) · same for G3 Pro KOKO / G3 Pro
+  (28) Thai copy flags from thai-copy (not changed): INFY `descriptionTh` says disposable-only brand (its English line says
+       pod systems + cartridges too) · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" / "สินค้าที่คุณอาจสนใจ" stiff
+       site-wide · RELX Creator = "เครื่องระบบสวิตช์" (locked word) or keep "เครื่องใช้ซ้ำ"
+  (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB
+       per-flavour file request
+  ANSWERED 01/10: (25) M Bar 10K → card (done PR #162) · (24) จอพิกเซล / หน้าอีโมจิ approved (THAI_STYLE) + rewrite the
+  stiff copy (done PR #162) · Esko → show every flavour as available (3b a) · TFIT → Friday decides (3b d).
 5 open / dated:
   - 05/10: re-read GSC against `docs/SEO_BASELINE.md` (Cowork supplies the numbers); after 05/10 the 7 baseline pages
-    use the light set — delete `galleryNoteHeld` + the `heldNote` prop; M Bar 10K airflow row (moves 27 lastmod dates);
+    use the light set — delete `galleryNoteHeld` + the `heldNote` prop; M Bar 10K airflow row;
     then drop the "ถึง 05/10" clauses of TEAM_RULES 13.5 #3 / 13.7 / 13.8.
+  - `lineupFirst` has no product left (M Bar 10K moved to `openOnCardPhoto`) — the mechanism can go in a cleanup.
   - `dict.product.anatomyTitle` en/zh "from the outside in" (pre-existing, out of scope so far).
-  - 01/10 owner: 23 unreferenced `_incoming/` folders (4,837 files · 453.4 MB · old rounds 30.1–tools-round) MOVED, not
-    deleted, to `C:\Users\dhetc\OKami24-เก็บ\incoming-01-10\` (outside the repo). Kept in place: `.test-server-3412` · image-round
-    work of 28–30/09 (accept-webp · cache-audit · flavour-bug · grid-back · trim-credit · image-sitewide) · smogz-rules · checker-h4.
-  - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook; the
-    pre-push gate still stops force push / push to main.
-  - Carried ideas: out-of-stock suggestion (Esko 18/20) · card sweep on 4:5 · ARTICLE round (every product gets an SEO
-    article in "more details") · category-structure round.
+  - `_incoming/` folders moved out 01/10 to `C:\Users\dhetc\OKami24-เก็บ\incoming-01-10\` (not deleted).
+  - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
+  - Carried ideas: card sweep on 4:5 · ARTICLE round · category-structure round.
 6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
   Light-set runs since: scan.js 0/107 · verify:catalog 29/29 (PR #152). Housekeeping touched no site file.
