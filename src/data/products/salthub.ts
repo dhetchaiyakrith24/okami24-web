@@ -206,11 +206,11 @@ export const salthubProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/m-bar-9k/card.webp",
-        alt: "SALTHUB M Bar 9K, black colourway, isolated product shot",
-        angle: "3/4, isolated",
-        transparentBackground: false,
-        sourceName: "SALTHUB",
+        src: "/assets/products/m-bar-9k/card-v2.webp",
+        alt: "SALTHUB M Bar 9K, black body with SALTHUB's orange-to-yellow print, tilted",
+        angle: "upright master tilted in 2D — the same render every flavour photo is recoloured from",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from SALTHUB's card",
         sourceUrl: "https://www.salthub.com/",
       },
     ],
@@ -224,20 +224,19 @@ export const salthubProducts: Product[] = [
     // check per file in scripts/process-images.map.json `aiRender`); `swatchHex` = that print colour (the BAR9K lettering;
     // the M logo where the lettering is near white) — the body is black on all 22. `boxImage` = the flavour's own pack cut
     // from SALTHUB's chart at its own size (168x380 — owner 30/09 accepted it for the more-details grid, IMAGE_SPEC §4
-    // exceptions). The page opens on the lineup (v3, owner 30/09 "ใช้พัดกลิ่น": no premium shop puts 20+ options in the
-    // first image — researcher, _incoming/image-sitewide/lineup-research.md — so it shows 5 representative flavours with
-    // distinct print colours side by side, Doublemint in front, our exact device renders, no AI, no text; the flavour chips
-    // under it carry all 22 names and the more-details grid shows every pack; builder _incoming/image-sitewide/m9k/fan-v3.js
-    // "stagger"). v2 (one device + a ring of 22 print-colour discs) was the first answer to the turned-down two-tier arc.
+    // exceptions). The 5-flavour fan (lineup-v3, builder _incoming/image-sitewide/m9k/fan-v3.js "stagger") stays behind
+    // the "all" chip. Owner 30/09 (later the same day, §16 item 4 (18) "ใช่"): the first image is ONE sharp device, like
+    // the Caliburn pages — the page opens on the card (card-v2 = the flavour photos' own master, tilted; no new render),
+    // flavours by swipe or chip (`openOnCardPhoto`, not `lineupFirst`); the chips carry all 22 names and the more-details
+    // grid shows every pack.
     // `storyDetails` = the more-details section with only the all-flavours grid: SALTHUB publishes no highlight posters for
     // the 9K (only the flavour chart); a lone logo banner said nothing (designer 30/09), so there is no cover.
-    // The card photo stays until 06/10: m-bar-15k (SEO baseline until 05/10) shows it as a related card.
     lineupImage: {
       src: "/assets/products/m-bar-9k/lineup-v3.webp",
       alt: "SALTHUB M Bar 9K, five of its 22 flavours side by side, Doublemint in front",
       sourceName: "OKami24 composite",
     },
-    lineupFirst: true,
+    openOnCardPhoto: true,
     storyDetails: true,
     flavorVariants: [
       { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#9c5fe3", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-grape-aloe-v2.webp", alt: "SALTHUB M Bar 9K, Grape Aloe — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-grape-aloe.webp", alt: "SALTHUB M Bar 9K, Grape Aloe — pack, from SALTHUB's flavour chart" } },
@@ -409,12 +408,12 @@ export const salthubProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/m-switch-kit/card.webp",
-        alt: "SALTHUB M Switch Kit, navy body with digital battery display, isolated product shot",
-        angle: "3/4, isolated",
-        transparentBackground: false,
-        sourceName: "SALTHUB",
-        sourceUrl: "https://www.salthub.com/",
+        src: "/assets/products/m-switch-kit/card-v2.webp",
+        alt: "SALTHUB M Switch Kit, black body with digital battery display and the black pod fitted, tilted",
+        angle: "upright cut-out tilted in 2D — the same device every kit flavour photo shows",
+        transparentBackground: true,
+        sourceName: "OKami24 cut-out (GPT Image) of SALTHUB's starter-kit render",
+        sourceUrl: "https://www.salthub.com/m-switch-kit/",
       },
     ],
     // Real flavor lineup for the included starter cartridge — tier-1, verified against salthub.com's own m-switch-kit/ page
@@ -425,13 +424,15 @@ export const salthubProducts: Product[] = [
     // of m-switch-pod below; the black glossy-top pod the shop stocks — owner's photo of real stock 30/09); `boxImage` =
     // SALTHUB's own starter-kit render of that flavour (box + device) in the "more details" grid — Kyoho Grape has no kit
     // render on salthub.com, so no tile. `swatchHex` = as on m-switch-pod below; the pod stands upright (v3). Source + check per file
-    // in scripts/process-images.map.json `aiRender`. The page opens on the lineup: the device + 5 pods fanned.
+    // in scripts/process-images.map.json `aiRender`. The device + 5 pods fanned (lineup-v2) stays behind the "all" chip;
+    // owner 30/09 rule (a) (§16 item 4 (18) "ใช่"): the page opens on the card — card-v2 = that same device, tilted (the
+    // navy SALTHUB card went: the shop sells the black body) — `openOnCardPhoto`, not `lineupFirst`.
     lineupImage: {
       src: "/assets/products/m-switch-kit/lineup-v2.webp",
       alt: "SALTHUB M Switch Kit device with five of its 17 flavour pods fanned beside it",
       sourceName: "OKami24 composite",
     },
-    lineupFirst: true,
+    openOnCardPhoto: true,
     storyDetails: true,
     // Opens the story: SALTHUB's own M Switch campaign poster (salthub.com/m-switch-kit/, switch_pod_kit_01.webp as served).
     storyCover: { src: "/assets/products/m-switch-kit/story-cover.webp", alt: "Official SALTHUB M Switch campaign poster — 15K puffs, cotton mesh, Type-C, lanyard", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1920, height: 1186 },

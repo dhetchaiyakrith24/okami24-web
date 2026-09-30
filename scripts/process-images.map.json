@@ -3688,5 +3688,31 @@
   },
   "note": "image-sitewide round 2026-09-30 batch 4 (owner 30/09: the card \"ไม่สวย ไม่คม ขนาดดูไม่สมมาตร\") — 4K remake on the 4:5 card standard; card-v2 was on the old square canvas",
   "fileName": "card-v3.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/cards/m9k-card-src.png",
+  "slug": "m-bar-9k",
+  "role": "card",
+  "replaces": "/assets/products/m-bar-9k/card.webp",
+  "aiRender": {
+   "tool": "no new render: the Higgsfield nano_banana_pro 4k master of batch 1 (_incoming/image-sitewide/m9k/out/master-1-cut.png — the same file every flavour photo is recoloured from, SALTHUB's own print colours) rotated -12 degrees (top leans left, like the INFY and old SALTHUB cards) in 2D by _incoming/image-sitewide/tilt-card.js",
+   "reference": "SALTHUB's own M Bar 9K card (the old card.webp) — the master was checked against it in batch 1 (m9k/out/master-1-zoom.png)",
+   "fidelitySheet": "_incoming/image-sitewide/cards/cards-a-sheet.png — old card | new card"
+  },
+  "note": "image-sitewide round, owner 30/09 rule (a) \"เอาแบบ Caliburn คม ชัด จัดวางสวย แต่รูปเดียวเด่น ๆ\" (§16 item 4 (18) answered \"ใช่\") — the page opens on this card (openOnCardPhoto) instead of the 5-flavour fan",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/cards/msk-card-src.png",
+  "slug": "m-switch-kit",
+  "role": "card",
+  "replaces": "/assets/products/m-switch-kit/card.webp",
+  "aiRender": {
+   "tool": "no new render: the batch-2 device cut-out (GPT Image 2.5 high 2k transparent cut of SALTHUB's kit render, _incoming/image-sitewide/msw/out/device-a.png — the same device every kit flavour photo shows, black body, the black pod the shop stocks on top) rotated -12 degrees (top leans left, like the INFY and old SALTHUB cards) in 2D by _incoming/image-sitewide/tilt-card.js",
+   "reference": "SALTHUB's own starter-kit render (salthub.com/m-switch-kit/) — batch 2",
+   "fidelitySheet": "_incoming/image-sitewide/cards/cards-a-sheet.png — old card | new card"
+  },
+  "note": "image-sitewide round, owner 30/09 rule (a) — the page opens on this card (openOnCardPhoto) instead of the device + 5-pod fan; replaces the navy SALTHUB card (the shop sells the black body, owner's photo of real stock 30/09)",
+  "fileName": "card-v2.webp"
  }
 ]
