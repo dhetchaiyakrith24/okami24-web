@@ -117,3 +117,10 @@ title ที่เปลี่ยนวันที่ 2026-09-23 (รายล�
 - `/products/pod-180` (control group: one of the 46 pages with the price in the title): now nexBar CLEAR 18K with no brand - H1/title name "nexBar CLEAR 18K" (was "WOTOFO Nexbar Clear 18k"), new meta description, JSON-LD without Brand, new card photo, 15 flavours (was 10), new spec rows, review clip moved to the WOTOFO page. Read this page apart from the rest of the control group.
 - `/brands/wotofo`: title/description without a price (was the price of pod-180); lists only WOTOFO nexBAR 18K.
 - The 7 held pages: HTML identical to live before each merge (html-diff 8/8 incl. pod-180 before PR-B); sitemap lastmod of legacy products moved (product-copy-th.ts date).
+
+## Round "image-sitewide" batch 1, M Bar 9K (2026-09-30, PR #137, merge 28278a1) - variables added before the 2026-10-05 read (main agent)
+
+- `/products/m-bar-9k` (not held): opens on a 22-flavour lineup image, 22 device-only flavour photos (was swatch only), the
+  22 "no photo of this flavour yet" panels gone, "All" chip added; title/meta/H1/JSON-LD text unchanged.
+- Held page `m-bar-15k`: rendered HTML identical to live (html-diff 7/7, the 9K related card still `card.webp`); its hidden
+  RSC data carries the 9K's new image paths (1 -> 24 references) and its sitemap lastmod moved (salthub.ts date).
