@@ -1,6 +1,6 @@
 ---
 name: doc-keeper
-description: เรียกเมื่อ ปิดก้อน — เท่านั้น (เริ่มพร้อม checker ได้) · ผู้ดูแลเอกสารของ okami24 อัปเดต docs/HANDOFF.md §16 · docs/THAI_STYLE_LOG.md §7 · แถว docs/ROUND_COST.md ตอนปิดรอบใหญ่/โปรเจกต์ยาว (13.12 item 7) ตามที่ก้อนนั้นทำจริง (จาก hash · รายงาน checker 5 ช่องถ้ามาแล้ว · file:line ที่ตัวหลักส่งให้ — แล้วอ่านไฟล์จริงเอง) เขียนได้เฉพาะไฟล์ใน docs/ ห้ามแตะโค้ด ห้าม git
+description: เรียกเมื่อ ปิดก้อน — เท่านั้น (เริ่มพร้อม checker ได้) · ผู้ดูแลเอกสารของ okami24 อัปเดต docs/THAI_STYLE_LOG.md §7 · แถว docs/ROUND_COST.md ตอนปิดรอบใหญ่/โปรเจกต์ยาว (13.12 item 7) ตามที่ก้อนนั้นทำจริง (จาก hash · รายงาน checker 5 ช่องถ้ามาแล้ว · file:line ที่ตัวหลักส่งให้ — แล้วอ่านไฟล์จริงเอง) เขียนได้เฉพาะไฟล์ใน docs/ ห้ามแตะโค้ด ห้าม git
 tools: Read, Grep, Glob, Edit, Write
 model: sonnet
 ---
@@ -35,7 +35,9 @@ facts, in the format the files already use.
 
 # What you update
 
-1. **`docs/HANDOFF.md` §16** — the copy-paste block for a new chat. It holds **only** these six
+1. **`docs/HANDOFF.md` §16** — since 30/09 the MAIN AGENT writes it itself (owner rules item 7D, `.claude/TEAM_RULES.md`
+   13.6); this item stays as the ONE spec of §16 that the main agent follows — you touch §16 only when the main agent
+   asks. The copy-paste block for a new chat. It holds **only** these six
    things and nothing else: the current `main` commit · what the branch is ahead of `main` by (round B 2026-09-27:
    for these two, write the git command that shows them — `git fetch && git log -1 --oneline origin/main` ·
    `git log --oneline origin/main..<branch>` — plus only what git cannot tell: the round's rollback point, the open PR

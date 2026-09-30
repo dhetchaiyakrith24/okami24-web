@@ -16,7 +16,7 @@
  *   restored    — a modified file byte-identical to an earlier version of the same path on <base> passes as
  *                 "restored" (putting back photos the site already showed, owner 28/09).
  * Prints one line per file and ends with PASS or FAIL. It judges pixels, not taste — the owner still sees the 3x /
- * 1440 before/after before the merge (IMAGE_SPEC §7).
+ * 1440 before/after in the report after the merge (IMAGE_SPEC §7, owner 30/09).
  */
 import sharp from "sharp";
 import { execFileSync } from "node:child_process";

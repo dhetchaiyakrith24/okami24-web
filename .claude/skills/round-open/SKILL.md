@@ -138,8 +138,8 @@ Every helper file created on the way (scripts, comparison images, logs, agent br
 
 Update `docs/HANDOFF.md` §16 item "open round" to say which round is open, its instruction
 file, the batch list with tiers, and where it stopped (the spec of §16 is in
-`.claude/agents/doc-keeper.md`; `doc-keeper` writes it at every batch close, the main agent
-writes the opening line). This is what lets a chat close at any moment without losing the round.
+`.claude/agents/doc-keeper.md`; the main agent writes it — the opening line and every batch close, owner 30/09
+rules item 7D). This is what lets a chat close at any moment without losing the round.
 
 ## When to stop and ask the owner
 
