@@ -1225,6 +1225,22 @@ Also relocated (rewritten in place in v98 — checker PR #149; old wording, word
       replaced by #143 were not checked] — re-scan public/assets/products vs src/ at the next round close; delete with the owner's OK (13.4 #1)
   Per-PR proof lines: batch 2's = item 3 above; the seventh and eighth chats' = §3 (eighth chat's close block + the second-batch-close block).
 
+### §16 lines relocated at the owner-answers docs PR (eleventh chat, 2026-09-30, v98 — word for word; §16 was over 15 KB)
+
+  Standing rules: every replaced photo ships under a new file name (`-v2`/`-v3`, lesson พ6); after-shots from the LIVE
+  site; `process-images --only <slug>` re-writes every entry of that slug — restore the untouched files with
+  `git checkout -- public/assets/products/<slug>/` right after; run `npx tsx scripts/content-dates.ts` after
+  committing a product-data file, then commit the json (checker caught it). A file changed and then reverted can still fail the
+  `content-dates` check on the merge ref (PR #148, run 36737851162) — make a real change, or re-run once per 13.7.
+  Known leftovers (not blockers): 2 word-break flags in the existing "ไฟ RGB บอกโหมด" sentence (ตอน|นี้ at 390,
+  Eco|Soft) — fix after 06/10 (the typography mechanism touches baseline pages) · the flaky deploy step "next start
+  on 3411 stopped" — fixed by #131, WATCH it: Linux proof so far = 3 passing runs of that step (PR #130's checks
+  twice, the main deploy of d866032) — a sample, not proof the flake is gone; the old wording is in §3 ·
+  locale note (pre-existing, not from these PRs): /products/argus-g4 en/zh show 1 Thai text node (the review video
+  title, `voopoo.ts:24`) [เชื่อว่า — main agent] · Lighthouse not installed (not run).
+
+---
+
 ## 4. Known broken / missing, not fixed yet
 
 - **[ตรวจแล้ว] og:title of the homepage is still the pre-round string** ("OKami24 — ของแท้ ราคาตรง บริการจริง") — the owner's approved table covered `<title>`/description/og:description only; og:title was never in scope this round. Confirmed absent from `_incoming/seo-a/table-final-for-owner.md` and from THAI_STYLE_LOG's own round entry, which notes it explicitly [ตรวจแล้ว, `docs/THAI_STYLE_LOG.md` line 905].
@@ -1418,25 +1434,21 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   file `รอบบทความ-รายละเอียดเพิ่มเติม-ทุกสินค้า-30-09.txt` in the owner's drafting folder, NOT in git (OneDrive
   `Run prompt\New prompt WEB\`) [เชื่อว่า — main agent's report; doc-keeper cannot see that folder]; (ii) the M Bar 10K
   treatment (more images + more details) goes to the WHOLE site = this round.
-  Standing rules: every replaced photo ships under a new file name (`-v2`/`-v3`, lesson พ6); after-shots from the LIVE
-  site; `process-images --only <slug>` re-writes every entry of that slug — restore the untouched files with
-  `git checkout -- public/assets/products/<slug>/` right after; run `npx tsx scripts/content-dates.ts` after
-  committing a product-data file, then commit the json (checker caught it). A file changed and then reverted can still fail the
-  `content-dates` check on the merge ref (PR #148, run 36737851162) — make a real change, or re-run once per 13.7.
-  Known leftovers (not blockers): 2 word-break flags in the existing "ไฟ RGB บอกโหมด" sentence (ตอน|นี้ at 390,
-  Eco|Soft) — fix after 06/10 (the typography mechanism touches baseline pages) · the flaky deploy step "next start
-  on 3411 stopped" — fixed by #131, WATCH it: Linux proof so far = 3 passing runs of that step (PR #130's checks
-  twice, the main deploy of d866032) — a sample, not proof the flake is gone; the old wording is in §3 ·
-  locale note (pre-existing, not from these PRs): /products/argus-g4 en/zh show 1 Thai text node (the review video
-  title, `voopoo.ts:24`) [เชื่อว่า — main agent] · Lighthouse not installed (not run).
+  Round standing rules + known leftovers: §3, block "§16 lines relocated at the owner-answers docs PR".
   STANDING OWNER DIRECTION (29/09; first-image part changed twice on 30/09 — (a) above wins) [ตรวจแล้ว — IMAGE_SPEC §0 item 5,
   lines 12-13; long form §3, v94 block]: card = angled device alone · flavour/colour photos = device alone · box photos + details
   in a lower "more details" part · whole site, best sellers first.
 4 waiting on owner:
-  (18) NEW: convert the already-live fan lineups (M Bar 9K, M Switch kit, M Switch pod) to rule (a) — Friday recommends yes [รอเจ้าของ]
+  (18) ANSWERED 30/09 "ใช่": convert the live fan lineups (M Bar 9K, M Switch kit, M Switch pod) to rule (a) — openOnCardPhoto + a sharp angled card
   (19) NEW: "เรื่อง SEO ไม่ต้องสนใจ" — does it lift the 7-page baseline hold before 05/10 (would let INFY open and M Bar 15K be fixed
-       now)? Friday recommends keeping the hold 5 more days [รอเจ้าของ]
-  (20) NEW: RELX Creator — the photo of the black battery the owner sells + which pods [รอเจ้าของ]
+       now)? ANSWERED 30/09: owner "ทำเลยเพราะสุดท้ายก็ต้องยืนขอใหม่ อยู่ดีเพราะมีการเปลี่ยนแปลงข้อมูล นั้นนี้ พี่เข้าใจตามนี้ถูกมั้ย แย้งได้" → the hold is
+       LIFTED [เชื่อว่า — Friday's reading of "ทำเลย"] for photos, the footer brand list and page body: open INFY, fix M Bar 15K / argus-g4 photos. Friday's caveat, told
+       to the owner: keep the <title>/meta description/H1/price of the 7 pages unchanged until 05/10 (that is what the 05/10 read measures;
+       TITLE_PRICE_HOLD_UNTIL_2026_10_05) [รอเจ้าของ — the caveat is not yet confirmed] — check with scripts/head-audit.js
+  (20) ANSWERED 30/09: the owner sent 3 photos (_incoming/image-sitewide/relx/owner/ — 1.png = black "Relx Creator Device" (RPODS
+       Dubai, watermarked); 2.webp + 3.jpg = grey/yellow renders) → the shop's black battery looks identical to RELX's own "Creator Pro Device"
+       [เชื่อว่า — by eye]; use relxnow.com's official renders (-black/-white/-green/-yellow, batch4-research.md §2), all 4 colours (catalog
+       completeness), not the watermarked file. Which pods it is sold with: still [รอเจ้าของ] (not blocking the device page)
   (7) the owner asked 30/09 "which steps slow us down — cut what drags"; Friday proposed cuts in the chat (checker on docs-only
       PRs · content-dates.json chore commits · full set on baseline pages after 05/10 · doc-keeper for §16 · rule-text sprawl) —
       the owner picks; then write them (central §12 item 28) [รอเจ้าของ] — still open
