@@ -25,7 +25,9 @@ import { cn } from "@/lib/utils";
  *  2. every flavour/colour together — the box + device photo (`boxImage`, else `image`) with its name as page text,
  *     so the names are always spelled right and readable on a phone. Owner 2026-09-30: this grid of box + device
  *     photos stays even when the page opens on the lineup; only the wide lineup banner of PR #128 (the same
- *     all-devices picture as the top image) was the duplicate, and it is gone (#130).
+ *     all-devices picture as the top image) was the duplicate, and it is gone (#130). On a `lineupFirst` product a
+ *     flavour with no `boxImage` gets no tile: its device photo is already one swipe away in the gallery above, so a
+ *     grid of the same device photos would be that duplicate again (round "image-sitewide" 2026-09-30, M Bar 9K).
  */
 function Poster({ img, sizes, className }: { img: StoryImage; sizes: string; className?: string }) {
   return (
@@ -60,7 +62,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
   type Tile = { id: string; name: string; swatchHex: string; photo?: { src: string; alt: string } };
   const options: Tile[] = isColour
     ? (product.colorVariants ?? []).map((o) => ({ id: o.id, name: o.name, swatchHex: o.swatchHex, photo: o.image }))
-    : (product.flavorVariants ?? []).map((o) => ({ id: o.id, name: o.name, swatchHex: o.swatchHex, photo: o.boxImage ?? o.image }));
+    : (product.flavorVariants ?? []).map((o) => ({ id: o.id, name: o.name, swatchHex: o.swatchHex, photo: o.boxImage ?? (product.lineupFirst ? undefined : o.image) }));
   const tiles = options.filter((t) => t.photo);
   if (!cover && highlights.length === 0 && tiles.length === 0) return null;
   const sourceName = cover?.sourceName ?? highlights[0]?.image?.sourceName;
