@@ -224,16 +224,17 @@ export const salthubProducts: Product[] = [
     // check per file in scripts/process-images.map.json `aiRender`); `swatchHex` = that print colour (the BAR9K lettering;
     // the M logo where the lettering is near white) — the body is black on all 22. `boxImage` = the flavour's own pack cut
     // from SALTHUB's chart at its own size (168x380 — owner 30/09 accepted it for the more-details grid, IMAGE_SPEC §4
-    // exceptions). The page opens on the lineup (v2, owner 30/09 turned down the 22-bottle two-tier arc as small, busy and
-    // not premium; designer direction A): one large Doublemint device + a ring of 22 discs, each that flavour's print colours
-    // top to bottom, in colour order, no text — the flavour chips under it carry the names (builder
-    // _incoming/image-sitewide/m9k/lineup-v2.js; drafts A2 "M-logo ring" and B "print book" offered to the owner).
+    // exceptions). The page opens on the lineup (v3, owner 30/09 "ใช้พัดกลิ่น": no premium shop puts 20+ options in the
+    // first image — researcher, _incoming/image-sitewide/lineup-research.md — so it shows 5 representative flavours with
+    // distinct print colours side by side, Doublemint in front, our exact device renders, no AI, no text; the flavour chips
+    // under it carry all 22 names and the more-details grid shows every pack; builder _incoming/image-sitewide/m9k/fan-v3.js
+    // "stagger"). v2 (one device + a ring of 22 print-colour discs) was the first answer to the turned-down two-tier arc.
     // `storyDetails` = the more-details section with only the all-flavours grid: SALTHUB publishes no highlight posters for
     // the 9K (only the flavour chart); a lone logo banner said nothing (designer 30/09), so there is no cover.
     // The card photo stays until 06/10: m-bar-15k (SEO baseline until 05/10) shows it as a related card.
     lineupImage: {
-      src: "/assets/products/m-bar-9k/lineup-v2.webp",
-      alt: "SALTHUB M Bar 9K device with a ring of its 22 flavour print colours",
+      src: "/assets/products/m-bar-9k/lineup-v3.webp",
+      alt: "SALTHUB M Bar 9K, five of its 22 flavours side by side, Doublemint in front",
       sourceName: "OKami24 composite",
     },
     lineupFirst: true,
