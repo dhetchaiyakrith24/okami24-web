@@ -224,13 +224,16 @@ export const salthubProducts: Product[] = [
     // check per file in scripts/process-images.map.json `aiRender`); `swatchHex` = that print colour (the BAR9K lettering;
     // the M logo where the lettering is near white) — the body is black on all 22. `boxImage` = the flavour's own pack cut
     // from SALTHUB's chart at its own size (168x380 — owner 30/09 accepted it for the more-details grid, IMAGE_SPEC §4
-    // exceptions). The page opens on the lineup built from the 22 device files (builder _incoming/image-sitewide/m9k/).
+    // exceptions). The page opens on the lineup (v2, owner 30/09 turned down the 22-bottle two-tier arc as small, busy and
+    // not premium; designer direction A): one large Doublemint device + a ring of 22 discs, each that flavour's print colours
+    // top to bottom, in colour order, no text — the flavour chips under it carry the names (builder
+    // _incoming/image-sitewide/m9k/lineup-v2.js; drafts A2 "M-logo ring" and B "print book" offered to the owner).
     // `storyDetails` = the more-details section with only the all-flavours grid: SALTHUB publishes no highlight posters for
     // the 9K (only the flavour chart); a lone logo banner said nothing (designer 30/09), so there is no cover.
     // The card photo stays until 06/10: m-bar-15k (SEO baseline until 05/10) shows it as a related card.
     lineupImage: {
-      src: "/assets/products/m-bar-9k/lineup.webp",
-      alt: "SALTHUB M Bar 9K, all 22 flavours on a two-tier stage with their names — device only",
+      src: "/assets/products/m-bar-9k/lineup-v2.webp",
+      alt: "SALTHUB M Bar 9K device with a ring of its 22 flavour print colours",
       sourceName: "OKami24 composite",
     },
     lineupFirst: true,
