@@ -123,7 +123,8 @@ send-back cap and re-check rule: 13.5.
    the owner's list (`git tag -n1`) — no extra row in `docs/RECOVERY.md` (owner's rules table item 12, 28/09).
    **In the cloud: no tag** (a tag push is refused, `HTTP 403`; 13.7) — the close point is the round-close commit.
    Name the base commit (rollback point) and the close commit in the report and in `docs/cloud-results/<round>.md`.
-4. Friday merges (13.7 — small and big both merge after checker + green checks, then report; a big PR gets its own report line — owner 30/09): `node scripts/self-merge-check.js`
+4. Friday merges (13.7 — small and big both merge after checker + green checks, then report; a docs-only PR skips
+   the checker per 13.7 (owner 30/09 item 7A); a big PR gets its own report line — owner 30/09): `node scripts/self-merge-check.js`
    on the PR's head commit decides small/big; its conditions live in 13.7 only.
    Deploy is never yours (a merge to main that touches the site deploys itself after the GitHub checks — 13.7).
 

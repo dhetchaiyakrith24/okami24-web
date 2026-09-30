@@ -22,7 +22,10 @@ for (const f of ["rebase-merge", "rebase-apply", "CHERRY_PICK_HEAD", "MERGE_HEAD
 const dirty = execFileSync("git", ["status", "--porcelain", "--", JSON_PATH], { cwd: ROOT, encoding: "utf8" }).trim();
 if (dirty) { console.log(`content-dates-amend: ${JSON_PATH} already has uncommitted changes — skipped`); process.exit(0); }
 
-const run = spawnSync(process.platform === "win32" ? "npx.cmd" : "npx", ["tsx", "scripts/content-dates.ts"], { cwd: ROOT, encoding: "utf8", shell: process.platform === "win32" });
+// Windows: npx is a .cmd — run it through cmd.exe explicitly (no `shell: true`, which prints Node's DEP0190 warning)
+const run = process.platform === "win32"
+  ? spawnSync("cmd.exe", ["/d", "/s", "/c", "npx tsx scripts/content-dates.ts"], { cwd: ROOT, encoding: "utf8" })
+  : spawnSync("npx", ["tsx", "scripts/content-dates.ts"], { cwd: ROOT, encoding: "utf8" });
 if (run.status !== 0) {
   console.log(`content-dates-amend: content-dates.ts failed — run \`npx tsx scripts/content-dates.ts\` and commit ${JSON_PATH}\n${run.stderr || run.stdout}`);
   process.exit(0);
@@ -30,6 +33,8 @@ if (run.status !== 0) {
 const changed = execFileSync("git", ["status", "--porcelain", "--", JSON_PATH], { cwd: ROOT, encoding: "utf8" }).trim();
 if (!changed) process.exit(0);
 execFileSync("git", ["add", "--", JSON_PATH], { cwd: ROOT });
+// "modified" can be line endings only (autocrlf on a fresh checkout) — nothing staged = no empty amend (checker PR #153)
+if (spawnSync("git", ["diff", "--cached", "--quiet", "--", JSON_PATH], { cwd: ROOT }).status === 0) process.exit(0);
 const amend = spawnSync("git", ["commit", "--amend", "--no-edit", "-q"], { cwd: ROOT, encoding: "utf8", env: { ...process.env, OKAMI24_DATES_AMEND: "1" } });
 if (amend.status !== 0) {
   console.log(`content-dates-amend: the amend failed — ${JSON_PATH} is staged; commit it by hand\n${amend.stderr || amend.stdout}`);

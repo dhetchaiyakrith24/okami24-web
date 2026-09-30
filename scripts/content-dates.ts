@@ -24,7 +24,7 @@ const CHECK = process.argv.includes("--check");
 
 export function gitLastCommitDate(relPath: string): string | null {
   const out = execFileSync("git", ["log", "-1", "--format=%aI", "--", relPath], { cwd: ROOT, encoding: "utf8" }).trim();
-  // Newer git (2.55 on the GitHub runner) prints a UTC committer date as "…Z", older git (2.43 in the cloud chat) as
+  // Newer git (2.55 on the GitHub runner) prints a UTC date as "…Z", older git (2.43 in the cloud chat) as
   // "…+00:00" — one spelling, so the JSON and the contract test agree on every machine (round "clip", PR #87).
   return out ? out.replace(/Z$/, "+00:00") : null;
 }
