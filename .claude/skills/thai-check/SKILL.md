@@ -14,7 +14,7 @@ pointer to the table that decides.
 The `checker` agent reads this file directly (it has no skill tool). **Source gates (2 · 4 · 5)
 run on every batch that touched anything under `src/`** — they read the repo, need no server and
 take seconds. **Page gates (1 · 3) run when copy a visitor can see changed** — page text, head/meta,
-Open Graph or JSON-LD (`.claude/TEAM_RULES.md` 13.12 #1 (ข), owner 2026-09-27/28). Long results go to
+Open Graph or JSON-LD (`.claude/TEAM_RULES.md` 13.5 #2 (ข), owner 2026-09-27/28). Long results go to
 a file under `_incoming/<round>/` and the path is cited in field 4 of its report.
 
 ## When this applies
@@ -93,13 +93,11 @@ a file under `_incoming/<round>/` and the path is cited in field 4 of its report
 
 ## Who does the wording
 
-- Text that **already exists on the site** and needs to read like a Thai pod seller wrote it:
-  call the `thai-copy` agent — it returns a before → after table only and edits nothing.
-- **New** text (a sentence that does not exist yet, a script, a customer reply, en/zh): the
-  `writer` agent.
+- Text that **already exists on the site**, or **new** text (a sentence that does not exist yet, a script, a
+  customer reply, en/zh): the `thai-copy` agent (edit mode / write mode) — it returns text only and edits nothing.
 - Every sentence a customer will read is approved by the owner in one batch of questions per
-  batch of work, and the work does not wait; the final keep/undo is at merge (`.claude/TEAM_RULES.md` 13.4 #6 · #2
+  batch of work, and the work does not wait; the final keep/undo is at merge (`.claude/TEAM_RULES.md` 13.3 (ถามรวมชุดเดียว) · #2
   — one list, not restated here · owner ruling item 1, round B 2026-09-27).
 - A word not in the locked-word table = put it in the batch's one question set for the owner
-  (`.claude/TEAM_RULES.md` 13.4 #6) and keep working — the work does not wait; the table changes
+  (`.claude/TEAM_RULES.md` 13.3 (ถามรวมชุดเดียว)) and keep working — the work does not wait; the table changes
   only by the owner's ruling, written in THAI_STYLE first, then in code.

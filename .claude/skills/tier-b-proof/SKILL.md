@@ -1,13 +1,13 @@
 ---
 name: tier-b-proof
-description: Prove what changed on screen between two builds of the OKami24 site — the touched pages + control pages (the whole sitemap only per `.claude/TEAM_RULES.md` 13.12 item 3), all three languages, both widths of the two-tier rule — then shoot only the spots that changed and hand the designer a ready brief. Use it for every tier-B batch or round close that needs before/after proof, and to prove "nothing a visitor sees changed" on a round that must leave the site alone. It reads the text a visitor actually sees after hydration (not the raw HTML, which carries every language), so English and Chinese pages are covered.
+description: Prove what changed on screen between two builds of the OKami24 site — the touched pages + control pages (the whole sitemap only per `.claude/TEAM_RULES.md` 13.5 #5), all three languages, both widths of the two-tier rule — then shoot only the spots that changed and hand the designer a ready brief. Use it for every tier-B batch or round close that needs before/after proof, and to prove "nothing a visitor sees changed" on a round that must leave the site alone. It reads the text a visitor actually sees after hydration (not the raw HTML, which carries every language), so English and Chinese pages are covered.
 ---
 
 # Tier-B proof
 
 This skill is the **procedure** for before/after proof. The rules it follows stay where they live:
 what tier B is and its step order = `docs/HANDOFF.md` §17 "Two-tier rule"; the screenshot cap and the
-scan-first rule = `.claude/TEAM_RULES.md` 13.10 #15; one Chrome job at a time, the test server and
+scan-first rule = `.claude/TEAM_RULES.md` 13.5 #7; one Chrome job at a time, the test server and
 how to stop it = HANDOFF §17 ("test server" · "ปิด server"); what the designer judges =
 `.claude/agents/designer.md`. Never write a page count, a change count or a screenshot count into this
 file — they come from the run.
@@ -15,8 +15,8 @@ file — they come from the run.
 ## When this applies
 
 - A tier-B batch (or a round close with any tier-B batch) needs its before → after shots. **How big:** the whole
-  sitemap only when `.claude/TEAM_RULES.md` 13.12 #3 says so (a part every page shares, or a "nothing changed" proof);
-  otherwise pass the touched pages + a few control pages as `/path` arguments (13.12 #1 (ค)) — the steps below are the
+  sitemap only when `.claude/TEAM_RULES.md` 13.5 #5 says so (a part every page shares, or a "nothing changed" proof);
+  otherwise pass the touched pages + a few control pages as `/path` arguments (13.5 #2 (ค)) — the steps below are the
   same, only the page list is shorter.
 - A round that must not change the site needs proof that it did not ("0 changes" is the pass).
 - Not for line-break quality inside a Thai block — that is `scripts/wordbreak-scan.js` +
@@ -91,7 +91,7 @@ answers. The plan (`shots.md`) covers every distinct change once in the shot lan
 page+width whose changes exist only in another language, which is shot in that language): fewest
 pages that show all changes, one image per page section, anchored on the first change in it, a "before"
 image only where something was removed or changed. `shots.md` ties each image to its change groups.
-Shot count: `.claude/TEAM_RULES.md` 13.10 #15 (the one place). Open every image
+Shot count: `.claude/TEAM_RULES.md` 13.5 #7 (the one place). Open every image
 once yourself: an anchor that missed (`anchor missing` in the shot log, or the block not in frame)
 = re-shoot with a parent block's selector, never send a frame without the change in it.
 
@@ -102,9 +102,9 @@ Write `_incoming/<round>/brief-designer-<batch>.md` with:
 2. the path of `changes.md` (every change, three languages) and of `shots.md`;
 3. the images, by the `shots.md` id (`s###-<locale>-<width>-before/after.png`) with the change groups each shows;
 4. what is NOT covered (groups not shot and why; pages that failed to scan);
-5. the report shape: the five fields of 13.5.
+5. the report shape: the five fields of 13.4.
 
-When the designer is called: only per `.claude/TEAM_RULES.md` 13.12 #4 (a new look, slot or component), for a batch
+When the designer is called: only per `.claude/TEAM_RULES.md` 13.5 #6 (a new look, slot or component), for a batch
 or at the round close (round-close step 2) — with these crops only, never the whole site.
 
 ## Evidence to keep

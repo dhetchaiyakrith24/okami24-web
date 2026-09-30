@@ -1,148 +1,67 @@
 ---
 name: round-open
-description: Open a work round for the OKami24 site — any round, whatever its name (SEO, articles, data, cart, housekeeping, or one that does not exist yet). Use it every time the owner opens a round by attaching a round instruction file, before touching any file. It sequences what to read, how to confirm the repo state against the instruction file, the scope-auditor call (rounds that touch the site; again only if the scope grows), the tier A/B decision, splitting the round into batches, and writing the "round open" state into the handoff block. Also use it when a new chat continues an already-open round (skip the scope-auditor call in that case).
+description: Open a work round for the OKami24 site — any round, whatever its name (SEO, articles, data, cart, housekeeping, or one that does not exist yet). Use it every time the owner opens a round by attaching a round instruction file, before touching any file. It sequences what to read, how to confirm the repo state against the instruction file, the scope-auditor call (rounds that touch the site; again only if the scope grows), splitting the round into batches with their tier A/B, and writing the "round open" state into the handoff block. Also use it when a new chat continues an already-open round (skip the scope-auditor call in that case).
 ---
 
 # Round open
 
-This skill is the **procedure** for starting a round. It holds no rule of its own — every
-rule stays where it lives (`.claude/TEAM_RULES.md` section 13, `docs/HANDOFF.md`, `docs/THAI_STYLE.md`)
-and this file only says in what order to pick them up. What a skill may and may not name =
-`.claude/TEAM_RULES.md` 13.3 "สกิลเขียนอะไรได้" (the one place): an expected count, a page count, a commit hash or a
-file under `src/` is never written here — things that change are read from their source at the moment they are needed.
+The **procedure** for starting a round — no rule of its own (rules: `.claude/TEAM_RULES.md`; where each kind of thing
+lives: the "แผนที่บ้าน" table at its head). What a skill may name = 13.2 "สกิลเขียนอะไรได้".
 
-The owner sends **a goal plus a pass criterion** in a round instruction file written from
-`docs/TEMPLATES.md` template (ก). This skill turns that file into a running round.
+The owner sends **a goal plus a pass criterion** in a round instruction file (`docs/TEMPLATES.md` (ก)). A new chat on
+a round already open = Step 1 + Step 2, then Step 5, continuing from the batch §16 names.
 
-## When this applies
-
-- The owner says "open round X" and attaches (or names) the round's instruction file.
-- A new chat starts on a round that is already open (continuation after a handoff) — run
-  Step 1 and Step 2, then skip to Step 7 and continue from the batch the handoff block names.
-
-## Step 1 — Read before anything else (the single "read first" list)
-
-This is the one and only "read before starting" list of the team — `.claude/TEAM_RULES.md` 13.2
-item 1 and 13.9 point here, and so does the head of `docs/HANDOFF.md`. Do not restate it anywhere
-else.
+## Step 1 — Read first (the one "read first" list)
 
 Always:
-- `docs/HANDOFF.md` **§16** — the copy-paste block (main · what the branch is ahead by · which
-  round is open and where it stopped · what waits on the owner · open questions · verify baseline
-  at the last close).
-- The head of `docs/LAUNCH_AUDIT.md`, the block titled **"สถานะปัจจุบัน"** — and nothing else of
-  that file. **Never read LAUNCH_AUDIT in full**; open only the numbered item the round is working
-  on.
-- The round instruction file the owner attached. Git is its master (`docs/rounds/README.md`, owner ruling Q1 2026-09-27):
-  copy it into `docs/rounds/` at open — on the computer from the file attached, in the cloud from the `inbox` branch —
-  and commit it with the round's first docs commit; a copy that differs from the one attached = say so (README).
-- `.claude/LESSONS.md` — the "what worked" lessons (the one place for them, owner ruling 2026-09-25). Not
-  imported into `CLAUDE.md` on purpose (too large to load every chat) — read it here, at round open, and
-  again before deciding "the order given is fine, but there is a better way". New lessons are written there.
+- `docs/HANDOFF.md` **§16** (state) — and §18 (permanent owner rulings) only when a decision touches one.
+- The round instruction file. Git is its master (`docs/rounds/README.md`): copy it into `docs/rounds/` at open (computer:
+  the attached file · cloud: branch `inbox`) and commit it with the round's first docs commit; a copy that differs from
+  the one attached = say so.
+- `.claude/LESSONS.md` — **headings only** (`grep -n "^## " .claude/LESSONS.md`), then open the lessons whose heading
+  matches the round's work. Open it again before deciding "the order given is fine, but there is a better way".
 
-Only on rounds that touch copy shown on the site (SEO · articles · language rounds = read;
-housekeeping · data · code-only rounds = do not read):
-- `docs/THAI_STYLE.md` (rules only).
-- `docs/THAI_STYLE_LOG.md` — open it only when an old sentence or ruling must be cited, never
-  as a whole.
+Only on rounds that change copy shown on the site: `docs/THAI_STYLE.md` (rules) · `docs/THAI_STYLE_LOG.md` only to
+cite an old ruling. Tools and verify commands: `docs/HANDOFF.md` §17, when needed.
 
-When a tool or a verify command is needed: `docs/HANDOFF.md` **§17** (rules and tools), not before.
+## Step 2 — Confirm the repo
 
-Then `git status` — know where the tree is before moving.
-
-## Step 2 — Confirm the repo matches the instruction file
-
-1. `git fetch origin` — always first, computer or cloud (owner ruling Q7 ①, round B 2026-09-27): the round starts
-   from the latest `origin/main`, never from a stale local copy. At every chat open the SessionStart hook
-   `scripts/session-sync.js` has already fetched and fast-forwarded a clean branch (round C) — read its
-   `session-sync` lines in the first context: a `STOP SIGN` line = tell the owner before anything else · a `RE-READ NOW`
-   line = re-read those rule files first · no `session-sync` lines at all = the hook did not run, say so and fetch by hand.
-2. Compare `origin/main` with the commit the instruction file names as main. Equal = go on. **Main has moved on**
-   (the file was written before a later merge) = report it in one line with `git log --oneline <named>..origin/main`
-   and start from the latest main; **stop and report only when** one of those newer commits touches a file this round
-   is about to change, or the named commit is not an ancestor of `origin/main` at all.
-3. Confirm the working branch contains `origin/main` (fast-forward if it is merely behind);
-   confirm the tree is clean. On a continuation after a mid-batch move (13.6 "ย้ายแชทในเว็บ"), the unfinished work is
-   already committed on the work branch (13.12 #5 — no `wip/…` branch since 2026-09-27): pull it and check that the
-   commits §16 marks as not yet checked are the ones there; any other change = stop and report.
-   **Machine ready** (round "mobile" instruction, batch 1): `node scripts/prepare-clone.js` must end `prepare-clone: READY` — one command, safe to repeat,
-   what it does is in its head (git hooks — without them the commit and push gates do not run, `docs/RECOVERY.md` 2ค ·
-   full git history · packages · Next types · browser · Thai font). A cloud chat runs it by itself at session start
-   (`scripts/session-sync.js`, the SessionStart hook, starts it after its fetch) — read its lines in the session's first context; not there or not
-   READY = run it now.
-4. Report the numbers seen (hash of main, branch, tags) — never the numbers the file expected.
-
-If the instruction file also names a close point — a tag on a computer round, the close commit on a cloud round
-(skill `round-close` step 5) — check it with `git tag -n1` / `git log -1 <commit>`; a close point a few commits before
-the merge commit is normal (it marks the round-close commit, the merge commit is made at merge, 13.7) — say so
-instead of treating it as a mismatch.
+1. Read the `session-sync` lines in the chat's first context (the SessionStart hook fetched and fast-forwarded a
+   clean branch): `STOP SIGN` = tell the owner first · `RE-READ NOW` = re-read those rule files first · no
+   `session-sync` line at all = the hook did not run: say so, `git fetch origin` by hand, and run
+   `node scripts/prepare-clone.js` (must end `prepare-clone: READY`).
+2. `origin/main` vs the commit the instruction names: equal = go on · main moved on = one line
+   (`git log --oneline <named>..origin/main`) and start from the latest main · stop only when a newer commit touches a
+   file this round will change, or the named commit is not an ancestor of `origin/main`.
+3. Working branch contains `origin/main` · tree clean · continuation after a chat move: the commits §16 marks as not
+   yet checked are the ones on the branch; anything else = stop and report.
+4. Report the numbers seen (main hash · branch) — never the numbers the file expected.
 
 ## Step 3 — Answer the instruction before touching anything
 
-Read the instruction file once more and reply with the objections only, in three groups. This
-step exists to stop work going the wrong way for an hour, not to review the owner's writing —
-the rules it judges the instruction against are `docs/TEMPLATES.md` (ค).
+Objections only, max 5 items, each passing the test *if I do not say this, the work comes out different*:
+- **real bans** of this round, one line each, only where obeying them changes what gets built;
+- **method prescribed without need** — say the way you will take and why (central §12 item 16), then start without
+  waiting (13.1 #4);
+- **ambiguous wording** that sends the work two ways — ask as one set with a recommendation (central §12 item 13), keep
+  working on what it does not block.
+Nothing to object to = `ไม่เห็นจุดเสี่ยง — คำสั่งชัด เริ่มได้เลย`. Never restate the instruction.
 
-- **ข้อห้ามจริง** — the bans and facts of this round, restated in one line each ONLY where
-  obeying them changes what gets built (a ban you would have honoured anyway is not worth a line).
-- **บอกวิธีทั้งที่ไม่จำเป็น** — where the instruction prescribes a method: say which way you will
-  take instead and why. This is the standing right of `.claude/TEAM_RULES.md` 13.10 #2 (argue back
-  with a reason, before starting) used here rather than halfway through. **Do not wait for an
-  answer** — 13.2 item 3 still applies: say it and start.
-- **กำกวม** — wording that reads two ways and would send the work in different directions. Only
-  these need a reply, asked the way of the central file's §12 item 13 (only what changes the
-  result, one set, each with a recommended option) — keep working on everything they do not
-  block (§12 item 14).
+## Step 4 — Scope: `scope-auditor` when the round touches the site
 
-**Cap: 5 items in total**, and only items that pass this test: *if I do not say this, the work
-comes out different.* Nothing to object to = one line, `ไม่เห็นจุดเสี่ยง — คำสั่งชัด เริ่มได้เลย` (central §12 item 16), and continue.
-**Never restate the instruction back** (`~/.claude/CLAUDE.md` §10, and `round-close` step 7 bans
-the same thing in the report) — objections only, no summary, no padding.
+Before the first batch of a round that touches what a visitor gets (skip for docs/rules/skills/agents —
+`self-merge-check` would print `SMALL`). It counts from the live sitemap; its page list becomes the checker's page list
+for every batch. Scope grows mid-round = call it again for the new part (a change of direction = 13.3 #4).
 
----
+## Step 5 — Batches, then start
 
-## Step 4 — Scope: call `scope-auditor` when the round touches the site
+Split the goal into checkable batches, each with "how we know it is done" and its tier (A = text only · B = structure
+or screen · not sure = B — 13.5). Big by central §12 item 12 = plan first (`planner` optional, 13.1 #3). Tell the owner
+3–5 lines of what in what order and **start**. Helper files → `_incoming/<round>/` or `scripts/`.
 
-Before the first batch of a round that touches the site, call the `scope-auditor` agent. A round that touches
-nothing a visitor gets (docs, rules, skills, agents — `node scripts/self-merge-check.js` would print `SMALL`) skips
-it (owner's rules table item 10, 28/09). It walks the live sitemap
-and reports which pages this round really touches — **count from the sitemap, never trust a page
-count written in the instruction file or remembered from an earlier round** (the reason this
-rule exists: a remembered "product page" count once left a whole category of pages outside the
-gates for a week). The list it returns becomes the checker's page list for every batch of the
-round.
+Write the round into `docs/HANDOFF.md` §16 item 3 (instruction file · batches with tiers · where it stopped — spec:
+skill `okami24-handoff`), and keep it current at every batch close.
 
-If the scope grows mid-round (the goal needs pages outside its list), call it again for the new part and carry
-on — no stop to ask, unless the growth is a change of direction (13.4 #7).
+## When to stop and ask
 
-## Step 5 — Decide tier A or tier B for each batch
-
-Apply the two-tier rule as written in `docs/HANDOFF.md` §17 ("Two-tier rule") — text only =
-tier A; anything that touches structure or the screen = tier B (proof size — light or full set = `.claude/TEAM_RULES.md` 13.12; what
-must exist before merge = §17 — the order is yours).
-**Not sure = tier B.** Write the tier next to each batch in the plan.
-
-## Step 6 — Split the round into batches
-
-Break the goal into checkable steps with a "how we know it is done" line each; the size cap and
-the planner rule live in `.claude/TEAM_RULES.md` 13.2 item 2 (one place) — a round that is big by
-the criteria of the central file's section 12 item 12 (`~/.claude/CLAUDE.md`, read with the web §3 line at the end of TEAM_RULES) goes to the `planner` agent, a small one is split by the main
-agent. Then tell the owner in 3–5 lines what will be done in what order and **start** — no
-approval wait, unless a 13.4 case is already visible.
-
-Every helper file created on the way (scripts, comparison images, logs, agent briefs) goes under
-`_incoming/<round>/` or `scripts/` — agent briefs need not be saved, except on a big round or a long project where
-`docs/ROUND_COST.md` counts them (`.claude/TEAM_RULES.md` 13.12 #7 · owner's rules table item 12, 28/09).
-
-## Step 7 — Write the round into the handoff block
-
-Update `docs/HANDOFF.md` §16 item "open round" to say which round is open, its instruction
-file, the batch list with tiers, and where it stopped (the spec of §16 is in
-`.claude/agents/doc-keeper.md`; the main agent writes it — the opening line and every batch close, owner 30/09
-rules item 7D). This is what lets a chat close at any moment without losing the round.
-
-## When to stop and ask the owner
-
-The single list is `.claude/TEAM_RULES.md` **13.4** — do not restate it here. Everything outside
-that list: decide, do it, and write the decision in item 3 of the report
-(`docs/TEMPLATES.md` template (ข)).
+`.claude/TEAM_RULES.md` 13.3 only. Everything else: decide, do it, write it in report item 3.
