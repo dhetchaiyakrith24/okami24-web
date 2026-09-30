@@ -6,11 +6,9 @@ export const infyProducts: Product[] = [
   {
     id: "infy-20k",
     slug: "infy-20k",
-    // Round "image-sitewide" batch 4 (2026-09-30): photos, lineup, flavours and specs below are ready, but opening the page
-    // adds "INFY" to the footer brand list of EVERY page, the 7 SEO-baseline pages included (html-diff, _incoming/
-    // image-sitewide/verify-b4/) — they may not change until 05/10. Delete this line on 06/10 (with batch 3), then drop
-    // "infy" from DORMANT_ALIAS_TERMS in src/data/search-aliases.ts (the contract test demands it).
-    hiddenFromStorefront: { since: "2026-09-30", reason: "ready; held until 06/10 — opening it adds INFY to the footer brand list of the 7 SEO-baseline pages" },
+    // Opened 2026-09-30 (owner, §16 item 4 (19): the baseline hold is lifted for photos, the footer brand list and page
+    // body — opening this page adds "INFY" to the footer of every page; titles / meta / H1 / prices of the 7 baseline
+    // pages stay as they are until 05/10). Batch 4 had held it hidden for that footer line alone.
     brandId: "infy",
     familyId: "infy-disposables",
     categoryId: "disposables",
@@ -22,7 +20,6 @@ export const infyProducts: Product[] = [
       "A 20,000-puff rechargeable disposable from INFY (This Is Salts), sold on the Thai market. INFY does not list the 20K on its own sites yet, so the specs on this page are the figures several Thai shops agree on.",
     isFlagship: false,
     attributes: {
-      batteryMah: 650,
       puffCount: 20000,
       capacityMl: 20,
       screenType: "led-indicator",
@@ -100,7 +97,8 @@ export const infyProducts: Product[] = [
       // for this round-bottle model — 650mAh, 20mL, dual mesh 0.9Ω, adjustable airflow. The 600mAh / 18mL this record had
       // are the bar-shaped INFY BAR PRO 20K's figures (maneevp.com). Owner 30/09: show what several shops agree on,
       // marked unverified. Battery indicator + breathing light + Type-C = printed on the device art every shop uses.
-      { key: "battery", label: "Battery", value: "650mAh rechargeable, USB-C", sourceStatus: "unverified" },
+      // Owner 30/09 (§16 item 4 (20)): no battery size — no real source for it (the shops' 650mAh is dropped, the
+      // `batteryMah` attribute with it); show the 20mL and the adjustable airflow. USB-C charging stays (compatibility).
       { key: "capacity", label: "E-liquid capacity", value: "20mL prefilled", sourceStatus: "unverified" },
       { key: "nicotine", label: "Nicotine strength", value: "3% (30mg) nicotine salt", sourceStatus: "unverified" },
       { key: "coil", label: "Coil", value: "Dual mesh coil, 0.9Ω", sourceStatus: "unverified" },
