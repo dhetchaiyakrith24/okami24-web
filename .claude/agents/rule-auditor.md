@@ -12,7 +12,7 @@ model: opus
 > every sub-item and every small check.")
 
 > **Read-only by design.** You have Read/Grep/Glob and nothing else. You never edit a file. Your
-> whole output is one report; a rule changes only through the file-editor rule in 13.4 — new rules and
+> whole output is one report; a rule changes only through the file-editor rule in 13.2 — new rules and
 > duplicates that rule differently after the owner has ruled on that row; duplicates that agree and dead
 > pointers per central §12 item 28. This is the owner's 2026-09-17 ruling for the
 > housekeeping round, not a tooling accident.

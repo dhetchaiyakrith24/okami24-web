@@ -7,10 +7,8 @@
 Rules: web team rules = `.claude/TEAM_RULES.md` (imported above — its head also maps where every kind of thing lives) ·
 central rules §1–12 = the copy `.claude/rules/central-rules.md` (auto-loaded; never edit it by hand).
 
-`AGENTS.md` (imported on line 1, rewritten by `next dev`) binds only when code under `src/` is being changed; on a round that
-does not touch `src/` its Next.js reading list does not apply. If `next dev` rewrites `AGENTS.md`, commit that change as a
-separate `chore` commit, never inside a feature commit — this line wins over the last sentence of that block in `AGENTS.md`
-("committing it with your work…"), which `next dev` rewrites and cannot be edited.
+`AGENTS.md` (line 1, rewritten by `next dev`) binds only when code under `src/` changes. If `next dev` rewrites it, commit that
+as its own `chore` commit, never inside a feature commit (this wins over its last sentence, which cannot be edited).
 
 # Business context
 
