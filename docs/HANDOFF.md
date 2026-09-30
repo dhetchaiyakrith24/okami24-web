@@ -34,8 +34,9 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   the owner's standard; not to be used) and 22 (AI copies the source's patched edges — fix the source first).
   Sharpness scan: `_incoming/image-sitewide/night/sharp-scan.tsv` (product long side in px + a detail score). The detail
   score depends on the finish (matte vs gloss), so "below the standard" was judged by eye on the photos + a long side under
-  ~650 px: G4 Pro KOKO, G3 Pro KOKO, G4 Classic, Argus G3 mini, Argus P3, Drag 6, Zero Nano, several coils (joiway-f4 /
-  relx-creator score low but are flat prints / owner-passed). `edge-scan.ts` = metric does NOT work — do not trust it.
+  ~650 px: G4 Pro KOKO, G3 Pro KOKO, G4 Classic, Argus G3 mini, Argus P3, Drag 6, Zero Nano, several coils; not listed:
+  muro-3ml (490 px — model source unclear, skipped) · m-bar-15k (duplicate record, 3b c) · joiway-f4 / relx-creator (low
+  detail score, sizes fine) [เชื่อว่า — by eye]. `edge-scan.ts` = metric does NOT work — do not trust it.
 3b NEXT (owner's order): (a) Esko pod-159: the 18 manufacturer flavours show "หมด" because their Shipnity status is
   `unknown` (PilotProductDetail / ProductMasterVariantPicker / catalog-resolver treat non-"in-stock" as out) — owner
   ruling §18: show them as available — a stock/cart change = 13.7 big (2), full set, own PR; also record the ruling in
@@ -43,7 +44,7 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   official-based renders per colour (`Higgs Okm/2026-10-01 night - from UWELL official/`, prefixes officialonly* / tilt* /
   official*), send the owner a first sheet, then replace the page photos (new names, IMAGE_SPEC §0 item 7 map entries).
   Other photos below the standard: clean official originals first (researcher; myuwell.com loads colour images by script;
-  shop.voopoo.com answers 403) — then Higgsfield. (c) BATCH 3 on 06/10 (argus-g4 + Argus Multi-Ohm) + M Bar 15K duplicate
+  shop.voopoo.com answered 403 [ตรวจแล้ว — curl 01/10]) — then Higgsfield. (c) BATCH 3 on 06/10 (argus-g4 + Argus Multi-Ohm) + M Bar 15K duplicate
   record (= M Switch Kit; baseline page until 05/10). (d) BATCH 5 rest of the site (planner first). TFIT M Power (hidden):
   owner "ตัดสินใจได้เลย" → queued in batch 5 after a researcher confirms the model (not rendered 01/10: source unclear).
   At the round close: `npx tsx scripts/asset-refs.ts` for unreferenced product photos (INFY v1 files are now unused).
