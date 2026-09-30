@@ -706,20 +706,20 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     faqs: {
       "relx-creator-pods": {
         question: "RELX Creator ใช้กับหัวพอตรุ่นไหนได้บ้าง",
-        answer: "ใช้ได้กับหัวพอต RELX Creator 20K และหัวพอต Muro Connector ข้อนี้ร้านยืนยันจากของที่มีในร้าน ถ้าจะใช้กับหัวพอตรุ่นอื่น ทักไลน์ @okm24 มาถามก่อนได้",
+        answer: "ใส่ได้ทั้งหัวพอต RELX Creator 20K และหัวพอต Muro Connector สองรุ่นนี้ร้านยืนยันจากของจริงที่มีอยู่ ถ้าจะใช้กับหัวพอตรุ่นอื่น ทักไลน์ @okm24 ถามก่อนได้เลย",
       },
     },
     specifications: {
       format: "ตัวเครื่องอย่างเดียว หัวพอตบรรจุสำเร็จขายแยก",
       battery: "800mAh ชาร์จซ้ำได้ผ่าน USB-C",
-      modes: "15W Normal / 25W Boost กดสองครั้งเพื่อสลับ",
+      modes: "15W Normal / 25W Boost กดสองครั้งสลับโหมด",
       screen: "จอพิกเซล โชว์หน้าอีโมจิ กดปุ่มครั้งเดียวดูแบต",
       airflow: "ปรับได้",
-      compat: "RELX Creator 20K และ Muro Connector (ร้านยืนยันจากของในร้าน)",
+      compat: "RELX Creator 20K และ Muro Connector (ร้านยืนยันจากของจริง)",
     },
-    tagline: "ตัวเครื่องใช้ซ้ำได้ของ RELX เปลี่ยนแค่หัวพอต",
+    tagline: "เครื่องใช้ซ้ำของ RELX ใส่หัวพอตบรรจุสำเร็จ หมดก็เปลี่ยนแค่หัว",
     shortDescription:
-      "ขายเฉพาะตัวเครื่อง หัวพอตซื้อแยก RELX Creator ใส่หัวพอตบรรจุสำเร็จ หมดแล้วเปลี่ยนแค่หัว ตัวเครื่องชาร์จใช้ต่อ มีจอพิกเซลโชว์หน้าอีโมจิ กดสองครั้งติดกันสลับ 15 กับ 25 วัตต์",
+      "ขายเฉพาะตัวเครื่อง หัวพอตบรรจุสำเร็จซื้อแยก หัวหมดก็เปลี่ยนแค่หัว ตัวเครื่องชาร์จแล้วใช้ต่อได้ มีจอพิกเซลโชว์หน้าอีโมจิ กดสองครั้งติดกันสลับ 15 กับ 25 วัตต์",
   },
   // Image-fix round 2026-09-30 (writer draft, owner approved 2026-09-30). The shop has no stock of this model — every
   // flavour is sold out; the shop sells nexBar CLEAR 18K (Pod-180).
@@ -773,22 +773,22 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   "infy-20k": {
     // 2026-09-30: the page went live — the who-for line and the FAQ (Thai text moved here from infy.ts, unchanged).
     whoIsThisFor: {
-      0: "คนที่ถามหา INFY รุ่นพัฟเยอะอยู่แล้ว",
+      0: "คนที่ตั้งใจมาหา INFY รุ่นพัฟเยอะ",
     },
     faqs: {
       "infy-20k-spec-variance": {
         question: "สเปกในหน้านี้มาจากไหน",
         answer:
-          "INFY ยังไม่ลงรุ่น 20K ในเว็บของตัวเอง ความจุ 20mL กับช่องลมปรับได้ในหน้านี้ร้านยืนยันแล้ว ตัวเลขอื่นที่ร้านค้าไทยบอกกันไม่ได้ใส่ไว้ อยากเช็คกับของจริงทักไลน์ @okm24 ได้",
+          "INFY ยังไม่ลงรุ่น 20K ในเว็บของตัวเอง สเปกที่ร้านเรายืนยันแล้วคือน้ำยา 20mL กับช่องลมปรับได้ ตัวเลขอื่นที่ร้านอื่นในไทยบอกกันมา เราไม่ได้ใส่ไว้ อยากให้เช็คจากตัวจริง ทักไลน์ @okm24 ได้เลย",
       },
     },
     specifications: {
       capacity: "20mL",
       airflow: "ปรับได้",
     },
-    tagline: "พอตใช้แล้วทิ้งของ INFY ที่มีขายในตลาดไทย",
+    tagline: "พอตใช้แล้วทิ้งรุ่นพัฟเยอะของ INFY",
     shortDescription:
-      "พอตใช้แล้วทิ้งสายพัฟเยอะของ INFY ที่ขายในตลาดไทย ทักไลน์ @okm24 ถามรุ่นและรสที่มีตอนนี้ได้",
+      "พอตใช้แล้วทิ้งพัฟเยอะจาก INFY ตัวที่ขายกันในไทย ตอนนี้มีกลิ่นไหนบ้าง ทักไลน์ @okm24 ถามได้เลย",
   },
   // Round 30.3 (2026-09-10) — MOOOD / Muro entries, same translation-only rule as above; these four
   // products had no Thai line, so their cards fell back to English once ProductCard started reading

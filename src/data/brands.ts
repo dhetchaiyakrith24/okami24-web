@@ -138,7 +138,7 @@ export const brands: Brand[] = [
       "A vape brand (This Is Salts) whose INFY 20K disposable is sold on the Thai market; INFY's own sites do not list the 20K yet.",
     // 2026-09-30 (round "image-sitewide"): the brand went live with INFY 20K — its line shows on /about and /brands/infy.
     descriptionTh:
-      "INFY แบรนด์พอตใช้แล้วทิ้งที่ร้านมีรุ่น INFY 20K",
+      "INFY แบรนด์พอตใช้แล้วทิ้ง ที่ร้านมีรุ่น 20K",
     referenceUrl: "https://www.infy.my/",
   },
   {
