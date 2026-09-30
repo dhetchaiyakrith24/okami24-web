@@ -717,9 +717,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       airflow: "ปรับได้",
       compat: "RELX Creator 20K และ Muro Connector (ร้านยืนยันจากของจริง)",
     },
-    tagline: "เครื่องใช้ซ้ำของ RELX ไม่ต้องเติมน้ำยา เปลี่ยนแค่หัวพอต",
+    tagline: "เครื่องใช้ซ้ำของ RELX ใส่หัวพอตบรรจุสำเร็จ หมดก็เปลี่ยนแค่หัว",
     shortDescription:
-      "ขายเฉพาะตัวเครื่อง หัวพอตบรรจุสำเร็จซื้อแยก น้ำยาหมดก็เปลี่ยนแค่หัว ตัวเครื่องชาร์จแล้วใช้ต่อได้ มีจอพิกเซลโชว์หน้าอีโมจิ กดสองครั้งติดกันสลับ 15 กับ 25 วัตต์",
+      "ขายเฉพาะตัวเครื่อง หัวพอตบรรจุสำเร็จซื้อแยก หัวหมดก็เปลี่ยนแค่หัว ตัวเครื่องชาร์จแล้วใช้ต่อได้ มีจอพิกเซลโชว์หน้าอีโมจิ กดสองครั้งติดกันสลับ 15 กับ 25 วัตต์",
   },
   // Image-fix round 2026-09-30 (writer draft, owner approved 2026-09-30). The shop has no stock of this model — every
   // flavour is sold out; the shop sells nexBar CLEAR 18K (Pod-180).
