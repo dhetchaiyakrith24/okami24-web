@@ -1,4 +1,4 @@
-# OKami24 — HANDOFF · v94 · 2026-09-30 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
+# OKami24 — HANDOFF · v95 · 2026-09-30 — current state = §16 (older first lines, word for word: `docs/archive/HANDOFF-headers.md`)
 
 Written: 2026-09-22 · Based on: local HEAD `9bcb3df` (full `9bcb3dfff89eaae274f55075c7e2cfb0cb7f8891`, branch `checkpoint/phase-3.3.3`), read directly from `.git/logs/HEAD` [ตรวจแล้ว] · `origin/main` = `b1b319d` (full `b1b319db37ba650d5c2c8279a9daf8df69bd7ba9`, PR #44 merge — updated 2026-09-22 after merge, `git rev-parse origin/main`), read directly from `.git/refs/remotes/origin/main` [ตรวจแล้ว] — this is a stronger check than v34 had (doc-keeper could read the ref file itself this time). What is still **not** independently checked by doc-keeper: the commit message text ("Merge pull request #41…") and the three live-site probes (homepage `<title>`, Organization `alternateName`, `/products/m-bar-15k` description) — those stay [เชื่อว่า], reported by the main agent's `git fetch` + `curl` just before this handoff, no git-log-walk or curl tool available here. This is a full rewrite (skill `handoff`, owner typed `/handoff`, condition (ข)) — the previous file is archived at `docs/archive/HANDOFF.2026-09-21-v34.md`, untouched.
 
@@ -1172,17 +1172,14 @@ Nothing. [ตรวจแล้ว] The SEO ก round closed, tagged, and (per t
 โฟลเดอร์: C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3 · GitHub github.com/dhetchaiyakrith24/okami24-web (private)
 Read first: the single list is step 1 of skill round-open (.claude/skills/round-open/SKILL.md — 13.9 points there; opening a round = that skill, closing = round-close, touching site copy = thai-check)
 
-(v94 — doc-keeper, close of batch 1 (M Bar 9K) of round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (ninth computer-round chat,
-30/09); the round stays OPEN; batch 2 starts from this block. The v93 text: §3, v94 relocation block.)
+(v95 — main agent, chat move after batch 1's owner follow-ups (#139, #140) in the ninth chat, 30/09; v94 = doc-keeper at
+batch 1's close. The round stays OPEN; the TENTH chat starts batch 2 from this block. The v93 text: §3, v94 relocation block.)
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + the round file, now in git:
 `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt` [ตรวจแล้ว — file exists in docs/rounds/]
-1 main: `git fetch && git log -1 --oneline origin/main` — at this close `28278a1` = merge of PR #137 (branch
-  `image-sitewide-mbar9k`, head `625a4bb`) [ตรวจแล้ว — .git/refs/remotes/origin/main of this working tree; PR number and
-  head are the main agent's report, [เชื่อว่า]]. Batch 1 rollback point = `881d966` (main before #137 [เชื่อว่า — main
-  agent]); to undo batch 1 = revert the merge commit `28278a1`. No tag (round not closed).
-2 ahead of main: `git log --oneline origin/main..<branch>` — nothing open but this close's docs PR, branch
-  `docs-close-b1-mbar9k` [ตรวจแล้ว — the branch of this working tree]; PR number [ยังไม่มีข้อมูล — the main agent opens it];
-  docs = small (13.7), checker, the main agent merges. Nothing unchecked on any work branch.
+1 main: `git fetch && git log -1 --oneline origin/main` — at this move `ac046eb` = merge of PR #140 [ตรวจแล้ว]; before it
+  #139 `2c62b3f`, #138 `7e6d143` (batch 1 close docs), #137 `28278a1` (batch 1). Batch 1 rollback point = `881d966`; undo
+  one step = revert that PR's merge commit. No tag (round not closed).
+2 ahead of main: nothing open but this move's docs PR, branch `docs-chat-move-b1` (docs = small, checker, main agent merges).
 3 OPEN (ninth chat 30/09): round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" — round file above · working files `_incoming/image-sitewide/`
   (scope.md = scope-auditor result; batch2-sources.md; m9k/ scripts refs.js sample.js recolour.js lineup.js packs.js
   add-map.js apply-data.js; verify/; shots/ incl. live/ and owner-*.png; not in git). Round "ไล่ดูทีละส่วน M Bar 10K" is
@@ -1203,6 +1200,14 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   banner said nothing; the old "adjustable airflow" feature card stays). `ProductMoreDetails.tsx`: on a `lineupFirst`
   product a flavour without `boxImage` gets no tile (no device-photo duplicate grid).
   DATED TO-DO, after 05/10 (baseline hold ends): sharp 4:5 card remake for m-bar-9k (then swap `card.webp`).
+  FOLLOW-UPS after the owner's answers 30/09 (all merged + live, checker PASS each): #139 `2c62b3f` — the 22 SALTHUB packs
+  `pack-<id>.webp` (168x380) as `boxImage` + `storyDetails` = more details holds only the "รุ่นนี้มี 22 กลิ่น" grid (owner "ได้";
+  IMAGE_SPEC §4 exception — the sharpness gate FAILs exactly those 22 files, expected) · lineup v2 `lineup-v2.webp` = one
+  Doublemint device + a ring of 22 print-colour discs, no text (owner turned down the two-tier arc: "ไม่คม ไม่พรีเมียม รก";
+  designer direction A; drafts A2 "M-logo ring" / B "print book" in `_incoming/image-sitewide/m9k/out/owner-lineup-options.png`,
+  builder `lineup-v2.js`) · #140 `ac046eb` — the coloured glow behind a picked flavour on lineupFirst pages (9K + 10K) removed
+  (owner: glow not smooth; the Caliburn pages — no glow, sharp, well placed, right size — are the look). `m-bar-9k/lineup.webp`
+  is now unreferenced (add to item 4 (5)). Lessons: LESSONS 17 (print recolour) · ช3 (owner: many-option lineup = crop to what differs).
   PROOF (light set, 13.12; not a new baseline) [เชื่อว่า — main agent]: tsc 0 · eslint 0 · verify:catalog 29/29 ·
   image-sharpness-gate PASS · html-diff 7 baseline pages 7/7 identical to live (m-bar-15k hidden RSC data grew — noted in
   `docs/SEO_BASELINE.md`, which the main agent appended) · gallery-probe sitemap both modes PASS 43 pages 0 FLASH/STUCK
@@ -1271,17 +1276,10 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
       (checker on docs-only PRs · content-dates.json chore commits · full set on baseline pages after 05/10 ·
       doc-keeper for §16 · rule-text sprawl) — the owner picks; then write them (central §12 item 28) [รอเจ้าของ]
       — still open
-  NEW at batch 1's close (30/09) [เชื่อว่า — main agent's report; drafts/files are in `_incoming/`, not in git]:
-  (10) M Bar 9K "รุ่นนี้มี 22 กลิ่น" grid with SALTHUB's own pack art — the packs exist only at 380 px on the maker's chart,
-      under the 1000-px canvas rule; they are never enlarged in the small grid tile (max ~342 device px). Allow as an
-      exception, yes/no? [รอเจ้าของ] (draft `_incoming/image-sitewide/shots/owner-q-packs-1440.png`; files
-      `_incoming/image-sitewide/m9k/packs/`)
-  (11) batch 4 products not on the site [รอเจ้าของ]: RELX Creator BATTERY Black (no page; `relx-creator` is hidden and is a
-      disposable) · INFY 20K (`infy-20k` hidden, no card; INFY BAR PRO 20000 is a different product) · VOOPOO Argus
-      Multi-Ohm Pod Cartridges 3 pcs (no page; nearest `coil-83` / unpublished Coil-21) — which product does the owner mean,
-      open new pages?
-  (12) the new look of the 22-flavour two-tier lineup on /products/m-bar-9k (IMAGE_SPEC §7 "new pattern → report item 4")
-      — taste, merge did not wait [รอเจ้าของ]
+  OWNER ANSWERS 30/09 to batch 1's report [owner, chat]: (10) packs = "ได้" → done #139 · (11) batch 4 products not on the site
+      (RELX Creator BATTERY Black, INFY 20K, Argus Multi-Ohm Cartridges) = "ทำได้เลย" — open/restore their pages in batch 4;
+      "Argus Multi-Ohm Cartridges 3 อัน = อุปกรณ์เสริมของ Argus อยู่ในหมวด VOOPOO" (an accessory under VOOPOO) · (12) two-tier
+      lineup rejected → lineup v2 shipped #139 [รอเจ้าของ: A (live) / A2 / B — or "none"] · batch 2 = the NEXT chat.
 5 open questions (round "ไล่ดูทีละส่วน", found by thai-copy, pre-existing, NOT fixed — out of scope):
   (a) answered (item 4 (6)(8)(9)) · (b) `dict.product.anatomyTitle`
   en/zh "from the outside in" promises internals (shared dictionary; the new sheet uses its own heading) · (c) no airflow spec
