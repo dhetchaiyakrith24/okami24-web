@@ -36,22 +36,27 @@ export const infyProducts: Product[] = [
     // colour read off that flavour's art, and its name printed with a real font (scripts/process-images.map.json
     // `aiRender`; _incoming/image-sitewide/infy/recolour.js). Four art renders show the body grey (screen off); a real
     // photo of Strawberry Banana (dood-d.com) shows the same black body, so every flavour is black here.
-    // The card = the same master tilted (a second Higgsfield render). No maker posters exist → no `storyCover` / feature
-    // images; the more-details section is the all-flavours grid of the device photos.
+    // No maker posters exist → no `storyCover` / feature images; the more-details section is the all-flavours grid of the
+    // device photos.
+    // v2 01/10 (owner: v1 "ดูกราฟิก ๆ แปลก ๆ" — the akvapes render it copied has neon-glow letters and a blue base glow):
+    // a new master from the maker's REAL photos (dood-d.com Peach / Strawberry Banana: matte soft-touch black, printed
+    // letters, no glow; screen = droplet + bolt tiles in a white frame), same recolour method
+    // (_incoming/image-sitewide/infy2/recolour2.js); Peach's outline re-read from that real Peach photo. The card = the
+    // v2 master tilted in 2D (no second render). New file names (-v2), lesson พ6.
     assets: [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/infy-20k/card.webp",
+        src: "/assets/products/infy-20k/card-v2.webp",
         alt: "INFY 20K disposable, Blueberry, black body, three-quarter view",
-        angle: "3/4, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) of the device art Thai shops use for this model",
+        angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from the maker's real photos of this model",
         transparentBackground: true,
-        sourceName: "OKami24 render (Higgsfield) from retailer art",
-        sourceUrl: "https://akvapes.com/",
+        sourceName: "OKami24 render (Higgsfield) from the maker's photos",
+        sourceUrl: "https://dood-d.com/",
       },
     ],
     lineupImage: {
-      src: "/assets/products/infy-20k/lineup.webp",
+      src: "/assets/products/infy-20k/lineup-v2.webp",
       alt: "INFY 20K, five of its 24 flavours side by side, Blueberry in front",
       sourceName: "OKami24 composite",
     },
@@ -65,28 +70,28 @@ export const infyProducts: Product[] = [
     // list (catalog completeness rule: every flavour the market shows). The INFY BAR PRO list is a different product.
     // `swatchHex` = the outline colour on the photo (for the two without art: the flavour's tone, FlavorVariant doc).
     flavorVariants: [
-      { id: "cola", name: "Cola", swatchHex: "#bc5338", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-cola.webp", alt: "INFY 20K, Cola — device" } },
-      { id: "grape-apple", name: "Grape Apple", swatchHex: "#5ebb71", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-grape-apple.webp", alt: "INFY 20K, Grape Apple — device" } },
-      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#97c3b8", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-grape-lychee.webp", alt: "INFY 20K, Grape Lychee — device" } },
-      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#55438c", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-kyoho-grape.webp", alt: "INFY 20K, Kyoho Grape — device" } },
-      { id: "lychee", name: "Lychee", swatchHex: "#dd8db8", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-lychee.webp", alt: "INFY 20K, Lychee — device" } },
-      { id: "mint", name: "Mint", swatchHex: "#6dd2dc", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-mint.webp", alt: "INFY 20K, Mint — device" } },
-      { id: "mixberry", name: "Mixberry", swatchHex: "#3d539b", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-mixberry.webp", alt: "INFY 20K, Mixberry — device" } },
-      { id: "peach", name: "Peach", swatchHex: "#d1cc93", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-peach.webp", alt: "INFY 20K, Peach — device" } },
-      { id: "sparkling-lemon", name: "Sparkling Lemon", swatchHex: "#c8b254", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-sparkling-lemon.webp", alt: "INFY 20K, Sparkling Lemon — device" } },
-      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#c43e95", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-strawberry-watermelon.webp", alt: "INFY 20K, Strawberry Watermelon — device" } },
-      { id: "watermelon-lychee", name: "Watermelon Lychee", swatchHex: "#bc3743", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-watermelon-lychee.webp", alt: "INFY 20K, Watermelon Lychee — device" } },
-      { id: "apple-aloevera", name: "Apple Aloevera", swatchHex: "#8fa450", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-apple-aloevera.webp", alt: "INFY 20K, Apple Aloevera — device" } },
-      { id: "blueberry", name: "Blueberry", swatchHex: "#2ae3f9", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-blueberry.webp", alt: "INFY 20K, Blueberry — device" } },
-      { id: "grape-aloevera", name: "Grape Aloevera", swatchHex: "#3b3e93", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-grape-aloevera.webp", alt: "INFY 20K, Grape Aloevera — device" } },
-      { id: "mineral-water", name: "Mineral Water", swatchHex: "#bad0dd", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-mineral-water.webp", alt: "INFY 20K, Mineral Water — device" } },
-      { id: "strawberry-banana", name: "Strawberry Banana", swatchHex: "#eccbdd", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-strawberry-banana.webp", alt: "INFY 20K, Strawberry Banana — device" } },
-      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#dced6f", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-strawberry-kiwi.webp", alt: "INFY 20K, Strawberry Kiwi — device" } },
-      { id: "yoyo-grape", name: "Yoyo Grape", swatchHex: "#ae4b94", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-yoyo-grape.webp", alt: "INFY 20K, Yoyo Grape — device" } },
-      { id: "menthol-freeze", name: "Menthol Freeze", swatchHex: "#6fd1c4", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-menthol-freeze.webp", alt: "INFY 20K, Menthol Freeze — device" } },
-      { id: "grape-bubblegum", name: "Grape Bubblegum", swatchHex: "#7b6bba", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-grape-bubblegum.webp", alt: "INFY 20K, Grape Bubblegum — device" } },
-      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#c96839", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-watermelon-bubblegum.webp", alt: "INFY 20K, Watermelon Bubblegum — device" } },
-      { id: "strawberry-ice-cream", name: "Strawberry Ice Cream", swatchHex: "#be6d8e", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-strawberry-ice-cream.webp", alt: "INFY 20K, Strawberry Ice Cream — device" } },
+      { id: "cola", name: "Cola", swatchHex: "#bc5338", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-cola-v2.webp", alt: "INFY 20K, Cola — device" } },
+      { id: "grape-apple", name: "Grape Apple", swatchHex: "#5ebb71", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-grape-apple-v2.webp", alt: "INFY 20K, Grape Apple — device" } },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#97c3b8", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-grape-lychee-v2.webp", alt: "INFY 20K, Grape Lychee — device" } },
+      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#55438c", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-kyoho-grape-v2.webp", alt: "INFY 20K, Kyoho Grape — device" } },
+      { id: "lychee", name: "Lychee", swatchHex: "#dd8db8", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-lychee-v2.webp", alt: "INFY 20K, Lychee — device" } },
+      { id: "mint", name: "Mint", swatchHex: "#6dd2dc", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-mint-v2.webp", alt: "INFY 20K, Mint — device" } },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#3d539b", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-mixberry-v2.webp", alt: "INFY 20K, Mixberry — device" } },
+      { id: "peach", name: "Peach", swatchHex: "#d6ac7e", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-peach-v2.webp", alt: "INFY 20K, Peach — device" } },
+      { id: "sparkling-lemon", name: "Sparkling Lemon", swatchHex: "#c8b254", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-sparkling-lemon-v2.webp", alt: "INFY 20K, Sparkling Lemon — device" } },
+      { id: "strawberry-watermelon", name: "Strawberry Watermelon", swatchHex: "#c43e95", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-strawberry-watermelon-v2.webp", alt: "INFY 20K, Strawberry Watermelon — device" } },
+      { id: "watermelon-lychee", name: "Watermelon Lychee", swatchHex: "#bc3743", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-watermelon-lychee-v2.webp", alt: "INFY 20K, Watermelon Lychee — device" } },
+      { id: "apple-aloevera", name: "Apple Aloevera", swatchHex: "#8fa450", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-apple-aloevera-v2.webp", alt: "INFY 20K, Apple Aloevera — device" } },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#2ae3f9", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-blueberry-v2.webp", alt: "INFY 20K, Blueberry — device" } },
+      { id: "grape-aloevera", name: "Grape Aloevera", swatchHex: "#3b3e93", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-grape-aloevera-v2.webp", alt: "INFY 20K, Grape Aloevera — device" } },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#bad0dd", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-mineral-water-v2.webp", alt: "INFY 20K, Mineral Water — device" } },
+      { id: "strawberry-banana", name: "Strawberry Banana", swatchHex: "#eccbdd", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-strawberry-banana-v2.webp", alt: "INFY 20K, Strawberry Banana — device" } },
+      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#dced6f", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-strawberry-kiwi-v2.webp", alt: "INFY 20K, Strawberry Kiwi — device" } },
+      { id: "yoyo-grape", name: "Yoyo Grape", swatchHex: "#ae4b94", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-yoyo-grape-v2.webp", alt: "INFY 20K, Yoyo Grape — device" } },
+      { id: "menthol-freeze", name: "Menthol Freeze", swatchHex: "#6fd1c4", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-menthol-freeze-v2.webp", alt: "INFY 20K, Menthol Freeze — device" } },
+      { id: "grape-bubblegum", name: "Grape Bubblegum", swatchHex: "#7b6bba", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-grape-bubblegum-v2.webp", alt: "INFY 20K, Grape Bubblegum — device" } },
+      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#c96839", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-watermelon-bubblegum-v2.webp", alt: "INFY 20K, Watermelon Bubblegum — device" } },
+      { id: "strawberry-ice-cream", name: "Strawberry Ice Cream", swatchHex: "#be6d8e", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-strawberry-ice-cream-v2.webp", alt: "INFY 20K, Strawberry Ice Cream — device" } },
       { id: "milk-tea-cha", name: "Milk Tea Cha", swatchHex: "#c9a27e", availability: "unknown", sourceUrl: "https://www.vapedumpthailand.store/products/infy-20k-disposable-pod-20000-puffs" },
       { id: "matcha", name: "Matcha", swatchHex: "#7ea35a", availability: "unknown", sourceUrl: "https://www.vapedumpthailand.store/products/infy-20k-disposable-pod-20000-puffs" },
     ],

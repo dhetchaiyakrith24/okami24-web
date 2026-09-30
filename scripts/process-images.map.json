@@ -3245,279 +3245,302 @@
   "fileName": "variant-watermelon-bubblegum-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/gen/infy-card-1-cut.png",
+  "source": "_incoming/image-sitewide/infy2/card-src.png",
   "slug": "infy-20k",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k (job 24bfaab1-4172-4c33-9197-1dc2fc6dd4c3), the same device tilted, flat #E9E9EC keyed with scripts/flatcut.js",
-   "reference": "akvapes.com's clean INFY 20K Blueberry device render https://akvapes.com/wp-content/uploads/2026/06/infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png) + its print close-up (refs/ref2-print.png)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/../gen-cut-dark.png + _incoming/image-sitewide/infy/../gen-zoom.png — shape, cap, screen icons, INFY letters and BLUEBERRY checked by eye against the reference"
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut; the card = that master tilted -12° in 2D (_incoming/image-sitewide/tilt-card.js, the M Bar 9K method, no second render)",
+   "reference": "master: v1 master (_incoming/image-sitewide/infy2/refs/old-master.jpg) for shape + the maker's own photos dood-d Peach / Strawberry Banana (_incoming/image-sitewide/infy2/refs/real-peach.png, real-sb.png) for material and screen",
+   "fidelitySheet": "_incoming/image-sitewide/infy2/cmp-m2.png + zoom-a.png + zoom-screen.png + scr-a-fix.png — shape, cap, letters, screen icons checked by eye against the real photos"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the card standard (angled device alone, no box); the page was hidden for want of a card photo (IMAGE_SPEC §4)"
+  "note": "image-sitewide round 01/10 — INFY v2 (card)",
+  "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/cola.png",
+  "source": "_incoming/image-sitewide/infy2/final/cola.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "cola",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-cola.webp (_incoming/image-sitewide/infy/src3/cola.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-cola-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/grape-apple.png",
+  "source": "_incoming/image-sitewide/infy2/final/grape-apple.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "grape-apple",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-grape-apple.webp (_incoming/image-sitewide/infy/src3/grape-apple.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-grape-apple-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/grape-lychee.png",
+  "source": "_incoming/image-sitewide/infy2/final/grape-lychee.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "grape-lychee",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-grape-lychee.webp (_incoming/image-sitewide/infy/src3/grape-lychee.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-grape-lychee-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/kyoho-grape.png",
+  "source": "_incoming/image-sitewide/infy2/final/kyoho-grape.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "kyoho-grape",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-kyoho-grape.webp (_incoming/image-sitewide/infy/src3/kyoho-grape.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-kyoho-grape-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/lychee.png",
+  "source": "_incoming/image-sitewide/infy2/final/lychee.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "lychee",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-lychee.webp (_incoming/image-sitewide/infy/src3/lychee.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-lychee-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/mint.png",
+  "source": "_incoming/image-sitewide/infy2/final/mint.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "mint",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-mint.webp (_incoming/image-sitewide/infy/src3/mint.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-mint-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/mixberry.png",
+  "source": "_incoming/image-sitewide/infy2/final/mixberry.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "mixberry",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-mixberry.webp (_incoming/image-sitewide/infy/src3/mixberry.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-mixberry-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/peach.png",
+  "source": "_incoming/image-sitewide/infy2/final/peach.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "peach",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-peach.webp (_incoming/image-sitewide/infy/src3/peach.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-peach-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/sparkling-lemon.png",
+  "source": "_incoming/image-sitewide/infy2/final/sparkling-lemon.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "sparkling-lemon",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-sparkling-lemon.webp (_incoming/image-sitewide/infy/src3/sparkling-lemon.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-sparkling-lemon-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/strawberry-watermelon.png",
+  "source": "_incoming/image-sitewide/infy2/final/strawberry-watermelon.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "strawberry-watermelon",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-strawberry-watermelon.webp (_incoming/image-sitewide/infy/src3/strawberry-watermelon.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-strawberry-watermelon-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/watermelon-lychee.png",
+  "source": "_incoming/image-sitewide/infy2/final/watermelon-lychee.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "watermelon-lychee",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-watermelon-lychee.webp (_incoming/image-sitewide/infy/src3/watermelon-lychee.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-watermelon-lychee-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/apple-aloevera.png",
+  "source": "_incoming/image-sitewide/infy2/final/apple-aloevera.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "apple-aloevera",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-apple-aloevera.webp (_incoming/image-sitewide/infy/src3/apple-aloevera.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-apple-aloevera-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/blueberry.png",
+  "source": "_incoming/image-sitewide/infy2/final/blueberry.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "blueberry",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-blueberry.webp (_incoming/image-sitewide/infy/src3/blueberry.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-blueberry-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/grape-aloevera.png",
+  "source": "_incoming/image-sitewide/infy2/final/grape-aloevera.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "grape-aloevera",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-grape-aloevera.webp (_incoming/image-sitewide/infy/src3/grape-aloevera.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-grape-aloevera-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/mineral-water.png",
+  "source": "_incoming/image-sitewide/infy2/final/mineral-water.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "mineral-water",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-mineral-water.webp (_incoming/image-sitewide/infy/src3/mineral-water.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-mineral-water-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/strawberry-banana.png",
+  "source": "_incoming/image-sitewide/infy2/final/strawberry-banana.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "strawberry-banana",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art dood-d.com (Strawberry-Banana.jpg (_incoming/image-sitewide/infy/src4/Strawberry-Banana.jpg; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-strawberry-banana-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/strawberry-kiwi.png",
+  "source": "_incoming/image-sitewide/infy2/final/strawberry-kiwi.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "strawberry-kiwi",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-strawberry-kiwi.webp (_incoming/image-sitewide/infy/src3/strawberry-kiwi.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-strawberry-kiwi-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/yoyo-grape.png",
+  "source": "_incoming/image-sitewide/infy2/final/yoyo-grape.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "yoyo-grape",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-yoyo-grape.webp (_incoming/image-sitewide/infy/src3/yoyo-grape.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-yoyo-grape-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/menthol-freeze.png",
+  "source": "_incoming/image-sitewide/infy2/final/menthol-freeze.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "menthol-freeze",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-menthol-freeze.webp (_incoming/image-sitewide/infy/src3/menthol-freeze.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-menthol-freeze-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/grape-bubblegum.png",
+  "source": "_incoming/image-sitewide/infy2/final/grape-bubblegum.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "grape-bubblegum",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-grape-bubblegum.webp (_incoming/image-sitewide/infy/src3/grape-bubblegum.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-grape-bubblegum-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/watermelon-bubblegum.png",
+  "source": "_incoming/image-sitewide/infy2/final/watermelon-bubblegum.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "watermelon-bubblegum",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art relxth.co/wp-content/uploads/2026/01/infy-20k-watermelon-bubblegum.webp (_incoming/image-sitewide/infy/src3/watermelon-bubblegum.webp; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-watermelon-bubblegum-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/infy/final/strawberry-ice-cream.png",
+  "source": "_incoming/image-sitewide/infy2/final/strawberry-ice-cream.png",
   "slug": "infy-20k",
   "role": "variant",
   "id": "strawberry-ice-cream",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 40e57c3e-cd6d-4aa8-b4dd-84672d0ce09c, _incoming/image-sitewide/infy/../gen/infy-master-1.png) for all 22 flavours + per-flavour recolour by script (_incoming/image-sitewide/infy/recolour.js — geometry copied pixel for pixel; only the outline colour of the white INFY letters moves, and the small flavour name is refilled with the body and printed in Montserrat Bold at the master's cap height)",
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; Peach outline from the maker's real Peach photo #d6ac7e)",
    "reference": "master: akvapes.com's device render infy20k.png (_incoming/image-sitewide/infy/refs/ref1-device.png, ref2-print.png); outline colour + name: this flavour's device art dood-d.com (INFY-20K-PUFFS-Strawberry-Ice-Cream.jpg (_incoming/image-sitewide/infy/src2/INFY-20K-PUFFS-Strawberry-Ice-Cream.jpg; colours.json / flavours.json, sample.js)",
-   "fidelitySheet": "_incoming/image-sitewide/infy/compare.png — retailer art | our photo per flavour, checked by eye 22/22 (shape, letters, outline colour, name)"
+   "fidelitySheet": "_incoming/image-sitewide/infy2/final-sheet.png + zoom-flav.png (Peach / Strawberry Banana vs the maker's real photos) — 22/22 checked by eye (letters, outline colour, name)"
   },
-  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)"
+  "note": "image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-strawberry-ice-cream-v2.webp"
  },
  {
   "source": "_incoming/image-sitewide/gen/muro-card-1-cut.png",
