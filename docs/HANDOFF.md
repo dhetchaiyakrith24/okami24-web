@@ -12,15 +12,16 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
 
-1 main: `git fetch && git log -1 --oneline origin/main` — housekeeping merged: PR #157 (`32af0cd` rules/agents/skills/docs) ·
-  PR #158 (`6ec4483` locks) · central-rules copy PR #159 · skill PR (house-clean) [ตรวจแล้ว — gh]. Undo = revert the merge
-  commit of that PR. Rollback point before the round = `aa21cbb` (tag `pre-housekeeping-01-10`). Last site deploy: PR #152.
+1 main: `git fetch && git log -1 --oneline origin/main` — merged [ตรวจแล้ว — gh]: PR #157 (`32af0cd` rules/agents/skills/docs) ·
+  PR #158 (`6ec4483` locks) · PR #159 (`ef185ca` central-rules copy). PR #160 (this file, /เก็บบ้าน skill) = the round's
+  last merge; the close tag `housekeeping-01-10-done` goes on its merge commit. Undo = revert the merge commit of that PR.
+  Rollback point before the round = `aa21cbb` (tag `pre-housekeeping-01-10`). Last site deploy: PR #152.
 2 ahead of main: nothing unchecked. smogz-rules: PR #8 merged (`89b4746` — item 25 widened · §2/3/4/11 folded · §8 per
   project · README: Friday merges).
-3 OPEN: none — HOUSEKEEPING round closed 01/10 (tag `housekeeping-01-10-done`; file
+3 OPEN: none — HOUSEKEEPING round closes 01/10 with PR #160 (tag `housekeeping-01-10-done`; file
   `docs/rounds/รอบเก็บบ้าน-Friday-ถามพี่ก่อน-01-10.txt`; working files `_incoming/housekeeping-01-10/`).
   What changed for the next chat: TEAM_RULES renumbered (old→new map = `git log --grep "เลขเก่า → เลขใหม่"`) with a
-  house map at its head · rules loaded every chat 48,218 → ~32,000 chars · HANDOFF = §16/§17/§18 only · agents 8
+  house map at its head · rules loaded every chat 47,937 → 31,995 chars (line ends not counted) · HANDOFF = §16/§17/§18 only · agents 8
   (thai-copy writes + edits; doc-keeper, writer gone) · skills: round-open/close slimmed, merge-pack gone, new /เก็บบ้าน
   (`house-clean` + `scripts/house-check.js`) · locks: `scripts/guard-tool.js` (hook) + `scripts/push-guard.js` (pre-push) —
   a locked file (render.yaml · .env* · ordering-mode.ts) is editable only when the open round file has a line starting
@@ -32,7 +33,8 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   file references — use `npx tsx scripts/asset-refs.ts` (reads the catalog, incl. names built at
   runtime such as wotofo `variant-${id}`); a plain name search flags false positives — delete only what that proves unused.
 4 waiting on owner:
-  (28) NEW — 30 `_incoming/` folders nobody references (list: `node scripts/house-check.js`) — delete? (not in git)
+  (28) NEW — `_incoming/` folders nobody references (list: `node scripts/house-check.js`) — delete? (not in git ·
+       `.test-server-3412` = the test server's own build, not clutter — kept)
   (25) M Bar 10K: open on the single card like 9K / Kit / Pod (Friday recommends) or keep the approved lineup pilot
   (24) Thai wording: RELX Creator tagline/description/FAQ/who-for, INFY brand line/who-for/FAQ; words not in THAI_STYLE:
        "จอพิกเซล", "หน้าอีโมจิ"

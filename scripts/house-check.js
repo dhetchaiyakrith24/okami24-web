@@ -99,4 +99,4 @@ console.log(`\n## git worktrees (${wts.length})`);
 for (const w of wts) console.log(`  ${w}`);
 
 fs.mkdirSync("_incoming", { recursive: true });
-fs.writeFileSync(lastFile, JSON.stringify({ date: new Date().toISOString().slice(0, 10), values: now }, null, 1));
+fs.writeFileSync(lastFile, JSON.stringify({ date: new Date().toLocaleDateString("sv-SE"), values: now }, null, 1));
