@@ -33,8 +33,7 @@ export interface VerifiedSpecsContractResult {
 export const SOURCED_ROW_PRODUCTS = [
   // linked by the five live round-10B guides (batch 2 sample check, re-read in a real browser 2026-09-24)
   "m-bar-9k", "m-bar-10k", "m-switch-kit", "m-switch-pod", "relx-smash-go-12k", "caliburn-g4-mini", "caliburn-g4",
-  // rows touched in chat 2 (capacity + flavour range read on salthub.com in a real browser)
-  "m-bar-pod",
+  // (m-bar-pod left this list 2026-09-30: the owner took it off the storefront — the test only knows storefront slugs)
 ] as const;
 
 /** Manufacturer domains (and the manual mirror the owner allowed). A reseller domain is never added here. */

@@ -574,6 +574,9 @@ export const salthubProducts: Product[] = [
   {
     id: "m-bar-pod",
     slug: "m-bar-pod",
+    // Owner 2026-09-30 (chat, round "image-sitewide"): "หัวใส M bar 15k ลบออกได้เลย ในหน้า หัวพอต" — taken off the
+    // storefront (not deleted: the record, photos and price stay; delete this line to bring it back).
+    hiddenFromStorefront: { since: "2026-09-30", reason: "owner 30/09: remove the clear M Bar pod from the pods page" },
     brandId: "salthub",
     familyId: "m-bar",
     categoryId: "pods-cartridges",

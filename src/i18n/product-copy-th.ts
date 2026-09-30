@@ -786,7 +786,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "600mAh ชาร์จซ้ำได้ผ่าน USB-C",
     },
     tagline: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 8,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Muro สาย “SC” แบตเตอรี่ 600mAh ชาร์จผ่าน USB-C รองรับสูงสุด 8,000 พัฟ ตอนนี้มีให้เลือก 8 รส",
+    shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้จาก Muro สาย “SC” แบตเตอรี่ 600mAh ชาร์จผ่าน USB-C รองรับสูงสุด 8,000 พัฟ ตอนนี้มีให้เลือก 12 รส",
   },
   "muro-connector-20k": {
     whoIsThisFor: {

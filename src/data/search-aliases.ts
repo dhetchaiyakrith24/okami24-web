@@ -152,5 +152,7 @@ export const PRODUCT_SEARCH_ALIASES: Record<string, string[]> = {};
  *
  * Nothing is needed here on the day the photo lands except deleting the row: the aliases above
  * are already wired and start working by themselves.
+ *
+ * "infy": the INFY 20K page is ready but held until 06/10 (src/data/products/infy.ts) — drop the term the day it opens.
  */
 export const DORMANT_ALIAS_TERMS: string[] = ["tfit", "infy"];
