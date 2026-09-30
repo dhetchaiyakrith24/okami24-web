@@ -1509,7 +1509,10 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   + inventory) → report to the owner, WAIT for the owner's ruling · H3 do what the owner rules (docs/rules = tier A;
   hooks/settings = 13.7 "big", full set) · H4 a re-callable /เก็บบ้าน skill, shown to the owner before saving.
   Fence (owner): the site a visitor sees stays the same — a batch that changes the sitemap or a page = stop, revert, report.
-  No scope-auditor (touches nothing a visitor gets). Stopped at: H1 sent, H2 running.
+  No scope-auditor (touches nothing a visitor gets). Stopped at: H1 questions (6) + H2 report sent 01/10 — WAITING
+  for the owner's answers; nothing edited yet. H2 files (not in git): `_incoming/housekeeping-01-10/รายงานข้อ2-ตรวจก่อนแก้.md`
+  (Thai, for the owner: 15 proposals, targets, risks, H3 order) · `rule-audit.md` (rule-auditor's table with file:line —
+  the H3 work list) · `inventory.txt` / `inventory.js` (refs per script/doc/agent/skill) · `unused-assets.js` (29 candidates).
   PAUSED (not closed): round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" — detail below.
 3b PAUSED (twelfth chat 30/09–01/10): round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" — working files `_incoming/image-sitewide/` (not in git).
   DONE this chat (PR #152, merged after checker PASS + green checks):
