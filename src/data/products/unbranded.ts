@@ -374,7 +374,7 @@ export const unbrandedProducts: Product[] = [
     // Watermelon: both retailers' Watermelon art (vapemun, pod789) reuse the Apple Shisha pouch, so there is no label
     // source; its label colour = pod789's own Watermelon caption bar [unverified]. `swatchHex` = the label colour.
     // card-v2: card.webp was the retailer shot, already live (Cloudflare keeps /assets 30 days, lesson พ6).
-    // No maker posters → no story blocks; with `lineupFirst` and no `boxImage` the more-details section does not render.
+    // No maker posters → no story blocks; the more-details section is the all-flavours grid (device + pouch photos).
     assets: [
       {
         kind: "official-photo",
@@ -392,7 +392,9 @@ export const unbrandedProducts: Product[] = [
       alt: "Muro SC 8000 Puffs, the device in front of five flavour pouches",
       sourceName: "OKami24 composite",
     },
-    lineupFirst: true,
+    // Owner 30/09 (later the same day): the first image is ONE sharp device, like the Caliburn pages — the page opens on
+    // the card photo, flavours by swipe or chip; the lineup stays behind the "all" chip (`openOnCardPhoto`, not `lineupFirst`).
+    openOnCardPhoto: true,
     storyDetails: true,
     // 12 flavours = the retailer lists (pod789.com and vapemun.com list the same 12; the 8 first stocked + Grape, Watermelon,
     // Double Mint, Mix Berries — the name printed on the pouch). Catalog completeness rule (owner 2026-09-06 / 30/09).

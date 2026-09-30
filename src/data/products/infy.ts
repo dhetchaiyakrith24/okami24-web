@@ -40,7 +40,7 @@ export const infyProducts: Product[] = [
     // `aiRender`; _incoming/image-sitewide/infy/recolour.js). Four art renders show the body grey (screen off); a real
     // photo of Strawberry Banana (dood-d.com) shows the same black body, so every flavour is black here.
     // The card = the same master tilted (a second Higgsfield render). No maker posters exist → no `storyCover` / feature
-    // images; with `lineupFirst` and no `boxImage` the more-details grid has no tiles, so that section does not render.
+    // images; the more-details section is the all-flavours grid of the device photos.
     assets: [
       {
         kind: "official-photo",
@@ -58,7 +58,9 @@ export const infyProducts: Product[] = [
       alt: "INFY 20K, five of its 24 flavours side by side, Blueberry in front",
       sourceName: "OKami24 composite",
     },
-    lineupFirst: true,
+    // Owner 30/09 (later the same day): the first image is ONE sharp device, like the Caliburn pages — the page opens on
+    // the card photo, flavours by swipe or chip; the lineup stays behind the "all" chip (`openOnCardPhoto`, not `lineupFirst`).
+    openOnCardPhoto: true,
     storyDetails: true,
     // Flavours: the 18 every rich Thai shop list agrees on (akvapes.com), + Menthol Freeze, Grape Bubblegum, Watermelon
     // Bubblegum (relxth.co, dood-d.com) and Strawberry Ice Cream (dood-d.com) with device art, + Milk Tea Cha and Matcha
