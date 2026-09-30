@@ -214,41 +214,50 @@ export const salthubProducts: Product[] = [
         sourceUrl: "https://www.salthub.com/",
       },
     ],
-    // Real flavor lineup — Tier-1 disposable growth mission (2026-09-03). All 22 names verified
-    // directly against salthub.com's own official M Bar 9K flavor-card gallery (5 grid images,
-    // each device card explicitly printed "BAR9K"/"9000 PUFF" — genuine own-product evidence, not
-    // inferred from a generic site listing). Media note: the official cards themselves are clean,
-    // unwatermarked brand artwork, but cropping one flavor out of each 5-up grid image could not
-    // be done precisely enough to pass this catalog's photo standard (neighboring-card bleed,
-    // clipped name text) — so no crop of those. Image-fix round 2026-09-28: 18 retailer (Vapeauras) device files went live and were
-    // withdrawn the same day — the source is soft (600 px) and the phone hero drew it 1.85x enlarged; the owner
-    // chose swatches until SALTHUB's own per-flavour originals arrive. `availability: "unknown"` for
-    // all of them, honestly: Legacy SALTHUB products are not Shipnity-integrated (no live
-    // per-flavor stock signal exists to check against), and Legacy Product Detail has no
-    // cart/purchase action to gate in the first place — this is catalog truth only.
+    // Real flavor lineup — Tier-1 disposable growth mission (2026-09-03). All 22 names verified directly against salthub.com's
+    // own M Bar 9K flavour chart (salthub.com/m-bar-9k/, 5 poster rows, every card printed "BAR9K"/"9000 PUFF"). Retailer
+    // (Vapeauras) photos went live 2026-09-28 and were withdrawn the same day (600 px, soft) — their file names are not reused.
+    // `availability: "unknown"` — Legacy SALTHUB products have no live Shipnity stock signal; catalog truth only.
+    // 2026-09-30 (round "image-sitewide", the M Bar 10K treatment): every flavour is the same black device, told apart on
+    // SALTHUB's chart only by the colour of its print (Salthub logo, BAR9K, M) — `image` = the device alone from ONE
+    // Higgsfield master of SALTHUB's own card, the print recoloured by script to each flavour's chart colours (source +
+    // check per file in scripts/process-images.map.json `aiRender`); `swatchHex` = that print colour (the BAR9K lettering;
+    // the M logo where the lettering is near white) — the body is black on all 22; `boxImage` = the flavour's own pack cut
+    // from SALTHUB's chart at its own size, in the "more details" grid. The page opens on the lineup built from the 22
+    // device files (two stage-arc tiers of 11; names typeset from these names — builder _incoming/image-sitewide/m9k/lineup.js).
+    // The card photo stays until 06/10: m-bar-15k (SEO baseline until 05/10) shows it as a related card.
+    lineupImage: {
+      src: "/assets/products/m-bar-9k/lineup.webp",
+      alt: "SALTHUB M Bar 9K, all 22 flavours on a two-tier stage with their names — device only",
+      sourceName: "OKami24 composite",
+    },
+    lineupFirst: true,
+    storyDetails: true,
+    // Opens the story: the title art of SALTHUB's own M Bar 9K flavour chart (salthub.com/m-bar-9k/, m_bar_9k_01.webp as served).
+    storyCover: { src: "/assets/products/m-bar-9k/story-cover.webp", alt: "SALTHUB M Bar 9K flavour chart title art", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-bar-9k/", width: 1125, height: 465 },
     flavorVariants: [
-      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#6b4a8e", availability: "unknown" },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
-      { id: "doublemint", name: "Doublemint", swatchHex: "#3ea88a", availability: "unknown" },
-      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
-      { id: "strawberry", name: "Strawberry", swatchHex: "#c23a4e", availability: "unknown" },
-      { id: "peach", name: "Peach", swatchHex: "#e8a06b", availability: "unknown" },
-      { id: "rainbow-candy", name: "Rainbow Candy", swatchHex: "#d1479c", availability: "unknown" },
-      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#9b5fa8", availability: "unknown" },
-      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7cb342", availability: "unknown" },
-      { id: "mixberry", name: "Mixberry", swatchHex: "#6b3a5e", availability: "unknown" },
-      { id: "cola", name: "Cola", swatchHex: "#6b4423", availability: "unknown" },
-      { id: "grape", name: "Grape", swatchHex: "#6a4c93", availability: "unknown" },
-      { id: "orange-sour", name: "Orange Sour", swatchHex: "#e07b39", availability: "unknown" },
-      { id: "sparkling-lemon", name: "Sparkling Lemon", swatchHex: "#d9c93e", availability: "unknown" },
-      { id: "sour-gummy", name: "Sour Gummy", swatchHex: "#9ccc4f", availability: "unknown" },
-      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#e0669a", availability: "unknown" },
-      { id: "pink-berry", name: "Pink Berry", swatchHex: "#d9527a", availability: "unknown" },
-      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e07a6b", availability: "unknown" },
-      { id: "strawberry-milkshake", name: "Strawberry Milkshake", swatchHex: "#eb9fb0", availability: "unknown" },
-      { id: "menthol-freeze", name: "Menthol Freeze", swatchHex: "#7fd4e0", availability: "unknown" },
-      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#4a2c5e", availability: "unknown" },
-      { id: "zapple", name: "Zapple", swatchHex: "#8bc34a", availability: "unknown" },
+{ id: "grape-aloe", name: "Grape Aloe", swatchHex: "#9c5fe3", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-grape-aloe-v2.webp", alt: "SALTHUB M Bar 9K, Grape Aloe — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-grape-aloe.webp", alt: "SALTHUB M Bar 9K, Grape Aloe — pack, from SALTHUB's flavour chart" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#ce3130", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-watermelon-v2.webp", alt: "SALTHUB M Bar 9K, Watermelon — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-watermelon.webp", alt: "SALTHUB M Bar 9K, Watermelon — pack, from SALTHUB's flavour chart" } },
+      { id: "doublemint", name: "Doublemint", swatchHex: "#ffffff", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-doublemint-v2.webp", alt: "SALTHUB M Bar 9K, Doublemint — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-doublemint.webp", alt: "SALTHUB M Bar 9K, Doublemint — pack, from SALTHUB's flavour chart" } },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#3357b5", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-blue-ice-v2.webp", alt: "SALTHUB M Bar 9K, Blue Ice — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-blue-ice.webp", alt: "SALTHUB M Bar 9K, Blue Ice — pack, from SALTHUB's flavour chart" } },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#e746a9", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-strawberry-v2.webp", alt: "SALTHUB M Bar 9K, Strawberry — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-strawberry.webp", alt: "SALTHUB M Bar 9K, Strawberry — pack, from SALTHUB's flavour chart" } },
+      { id: "peach", name: "Peach", swatchHex: "#eb8b53", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-peach-v2.webp", alt: "SALTHUB M Bar 9K, Peach — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-peach.webp", alt: "SALTHUB M Bar 9K, Peach — pack, from SALTHUB's flavour chart" } },
+      { id: "rainbow-candy", name: "Rainbow Candy", swatchHex: "#f9ec5b", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-rainbow-candy-v2.webp", alt: "SALTHUB M Bar 9K, Rainbow Candy — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-rainbow-candy.webp", alt: "SALTHUB M Bar 9K, Rainbow Candy — pack, from SALTHUB's flavour chart" } },
+      { id: "grape-lychee", name: "Grape Lychee", swatchHex: "#ac28dc", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-grape-lychee-v2.webp", alt: "SALTHUB M Bar 9K, Grape Lychee — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-grape-lychee.webp", alt: "SALTHUB M Bar 9K, Grape Lychee — pack, from SALTHUB's flavour chart" } },
+      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#adf28d", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-apple-aloe-v2.webp", alt: "SALTHUB M Bar 9K, Apple Aloe — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-apple-aloe.webp", alt: "SALTHUB M Bar 9K, Apple Aloe — pack, from SALTHUB's flavour chart" } },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#6a6ced", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-mixberry-v2.webp", alt: "SALTHUB M Bar 9K, Mixberry — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-mixberry.webp", alt: "SALTHUB M Bar 9K, Mixberry — pack, from SALTHUB's flavour chart" } },
+      { id: "cola", name: "Cola", swatchHex: "#bc8273", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-cola-v2.webp", alt: "SALTHUB M Bar 9K, Cola — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-cola.webp", alt: "SALTHUB M Bar 9K, Cola — pack, from SALTHUB's flavour chart" } },
+      { id: "grape", name: "Grape", swatchHex: "#c479ed", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-grape-v2.webp", alt: "SALTHUB M Bar 9K, Grape — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-grape.webp", alt: "SALTHUB M Bar 9K, Grape — pack, from SALTHUB's flavour chart" } },
+      { id: "orange-sour", name: "Orange Sour", swatchHex: "#e68a26", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-orange-sour-v2.webp", alt: "SALTHUB M Bar 9K, Orange Sour — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-orange-sour.webp", alt: "SALTHUB M Bar 9K, Orange Sour — pack, from SALTHUB's flavour chart" } },
+      { id: "sparkling-lemon", name: "Sparkling Lemon", swatchHex: "#faf73a", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-sparkling-lemon-v2.webp", alt: "SALTHUB M Bar 9K, Sparkling Lemon — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-sparkling-lemon.webp", alt: "SALTHUB M Bar 9K, Sparkling Lemon — pack, from SALTHUB's flavour chart" } },
+      { id: "sour-gummy", name: "Sour Gummy", swatchHex: "#9bf1aa", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-sour-gummy-v2.webp", alt: "SALTHUB M Bar 9K, Sour Gummy — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-sour-gummy.webp", alt: "SALTHUB M Bar 9K, Sour Gummy — pack, from SALTHUB's flavour chart" } },
+      { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#a7e5d3", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-watermelon-bubblegum-v2.webp", alt: "SALTHUB M Bar 9K, Watermelon Bubblegum — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-watermelon-bubblegum.webp", alt: "SALTHUB M Bar 9K, Watermelon Bubblegum — pack, from SALTHUB's flavour chart" } },
+      { id: "pink-berry", name: "Pink Berry", swatchHex: "#9c66a7", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-pink-berry-v2.webp", alt: "SALTHUB M Bar 9K, Pink Berry — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-pink-berry.webp", alt: "SALTHUB M Bar 9K, Pink Berry — pack, from SALTHUB's flavour chart" } },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#d16464", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-peach-strawberry-v2.webp", alt: "SALTHUB M Bar 9K, Peach Strawberry — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-peach-strawberry.webp", alt: "SALTHUB M Bar 9K, Peach Strawberry — pack, from SALTHUB's flavour chart" } },
+      { id: "strawberry-milkshake", name: "Strawberry Milkshake", swatchHex: "#e5a5c2", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-strawberry-milkshake-v2.webp", alt: "SALTHUB M Bar 9K, Strawberry Milkshake — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-strawberry-milkshake.webp", alt: "SALTHUB M Bar 9K, Strawberry Milkshake — pack, from SALTHUB's flavour chart" } },
+      { id: "menthol-freeze", name: "Menthol Freeze", swatchHex: "#7dc7ea", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-menthol-freeze-v2.webp", alt: "SALTHUB M Bar 9K, Menthol Freeze — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-menthol-freeze.webp", alt: "SALTHUB M Bar 9K, Menthol Freeze — pack, from SALTHUB's flavour chart" } },
+      { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#6d649d", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-kyoho-grape-v2.webp", alt: "SALTHUB M Bar 9K, Kyoho Grape — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-kyoho-grape.webp", alt: "SALTHUB M Bar 9K, Kyoho Grape — pack, from SALTHUB's flavour chart" } },
+      { id: "zapple", name: "Zapple", swatchHex: "#82b890", availability: "unknown", image: { src: "/assets/products/m-bar-9k/variant-zapple-v2.webp", alt: "SALTHUB M Bar 9K, Zapple — device" }, boxImage: { src: "/assets/products/m-bar-9k/pack-zapple.webp", alt: "SALTHUB M Bar 9K, Zapple — pack, from SALTHUB's flavour chart" } },
     ],
     specifications: [
       // Data round (2026-09-24, real browser): salthub.com states for M BAR 9K "9000 puffs · Battery Capacity: 600mAh ·
