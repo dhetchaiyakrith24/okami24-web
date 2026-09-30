@@ -6,7 +6,7 @@ description: Prove what changed on screen between two builds of the OKami24 site
 # Tier-B proof
 
 This skill is the **procedure** for before/after proof. The rules it follows stay where they live:
-what tier B is and its step order = `docs/HANDOFF.md` §17 "Two-tier rule"; the screenshot cap and the
+what tier B is = `.claude/TEAM_RULES.md` 13.5 (head: tier A/B); the screenshot cap and the
 scan-first rule = `.claude/TEAM_RULES.md` 13.5 #7; one Chrome job at a time, the test server and
 how to stop it = HANDOFF §17 ("test server" · "ปิด server"); what the designer judges =
 `.claude/agents/designer.md`. Never write a page count, a change count or a screenshot count into this
