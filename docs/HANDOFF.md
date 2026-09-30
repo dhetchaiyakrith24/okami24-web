@@ -1456,11 +1456,11 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
        LIFTED [เชื่อว่า — Friday's reading of "ทำเลย"] for photos, the footer brand list and page body: open INFY, fix M Bar 15K / argus-g4 photos. Friday's caveat, told
        to the owner: keep the <title>/meta description/H1/price of the 7 pages unchanged until 05/10 (that is what the 05/10 read measures;
        TITLE_PRICE_HOLD_UNTIL_2026_10_05) [รอเจ้าของ — the caveat is not yet confirmed] — check with scripts/head-audit.js
-  (20)+(21) OWNER RULING 30/09 (chat — wins over the lines it contradicts): INFY 20K = the round model with a lanyard ·
-       NO battery size (no real source) · show capacity 20mL + adjustable airflow · every flavour found (he counted 22; the data has 24 —
-       + Milk Tea Cha, Matcha found later on 3 shops: keep, tell him). RELX Creator = CLOSED pod system, device and pods sold apart · the
+  (20)+(21) OWNER RULING 30/09 (his chat summary): INFY 20K = the round model with a lanyard ·
+       NO battery size (no real source) · show capacity 20mL + adjustable airflow · every flavour found (he counted 22) [Friday: data has 24 —
+       + Milk Tea Cha, Matcha, 3 shops — keep them]. RELX Creator = CLOSED pod system, device and pods sold apart · the
        device with the screen = RELX's Creator Pro → RELX official photos OK · 2 colours, both still sold: grey-yellow (first) + black
-       (later) · fits RELX Creator 20K pods AND Muro Connector pods. Owner photos: _incoming/image-sitewide/relx/owner/. Open question:
+       (later) · fits RELX Creator 20K pods AND Muro Connector pods. Owner photos: _incoming/image-sitewide/relx/owner/. Friday's question:
        relxnow.com lists 4 colours (Black/White/Green/Yellow) — show 4 (catalog completeness) or his 2? Friday recommends 4 [รอเจ้าของ]
   (7) the owner asked 30/09 "which steps slow us down — cut what drags"; Friday proposed cuts in the chat (checker on docs-only
       PRs · content-dates.json chore commits · full set on baseline pages after 05/10 · doc-keeper for §16 · rule-text sprawl) —
