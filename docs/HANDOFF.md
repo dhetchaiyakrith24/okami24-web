@@ -16,9 +16,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   [ตรวจแล้ว — curl]; then this docs PR (no site change after #171). Each = revert its merge commit.
   Owner 01/10 evening [ตรวจแล้ว — chat]: G4 Classic stays as remade ("ไม่แก้ตามนั้น") · P3 Blue Leather graffiti OK · the
   new photos of #169-#171 "ผ่าน" · Higgsfield credits topped up (201.6 [ตรวจแล้ว — balance tool]).
-2 ahead of main: nothing besides this docs PR [ตรวจแล้ว — git] · test server stopped · a background visual edge audit may
-  have finished after this was written → `_incoming/image-sitewide/edge-audit/visual-audit.md` (read it first; absent =
-  rerun it, prompt idea in item 3b (1)).
+2 ahead of main: nothing besides this docs PR [ตรวจแล้ว — git] · test server stopped.
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; UWELL scripts `b-uwell/`, VOOPOO/SALTHUB scripts `b-voopoo/`, coils `b-coils/`).
   OWNER 01/10 evening — changes to the round file: (a) the 7 SEO baseline pages MAY get image work now ("ทำได้เลยไม่ต้องรอ
@@ -44,14 +42,19 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   from 29/08–04/09, never remade [ตรวจแล้ว — git]; the sharp-scan missed them (lesson พ10); numeric edge metrics do not
   separate them from the good G5 pages (`edge-audit/image-quality-scan.ts`, kept only as a finder) → judge by eye with
   `_incoming/image-sitewide/edge-audit/sheet.js <out.png> <files…>` (whole + 3x edge zoom on dark and magenta);
-  `edge-audit/visual-audit.md` = the per-product verdicts (agent, 01/10). Remake every product with a defect — never
+  `edge-audit/visual-audit.md` = per-product verdicts by eye (agent 01/10, 44 products, sheets in `edge-audit/sheets/`)
+  [เชื่อว่า — agent's eye; Friday spot-checked only the 3 the owner named]: CLEAR (16) argus-g4-mini · caliburn-g3-pro ·
+  drag-6 · drag-x3 (tank cropped) · vinci-s · vmate-i3 · zero-pro (options) · m-bar-15k (options soft) · muro-3ml (posters)
+  · coil-1/38/53/54/56/74/94 · BORDERLINE (4) argus-p3 card · drag-s3 · coil-89 · zero-cartridge · WHITE BOX not cut (6)
+  coil-55/70/72 (options)/83/87 · mood-monster-14k · coil-68 judged OK. Remake every product with a defect — never
   from the old cut-out (lesson 22). Night renders that already exist [ตรวจแล้ว — jobs.tsv]: caliburn-g3-pro 6 colours
   (sets colour / official / official2 / tilt / tilt2 — "official" ones are from UWELL's images) · drag-6 7 colours +
   card a/b · argus-g4-mini card a/b only · argus-g4 card a/b · drag-s3 / drag-x3 / vinci-s colours — the "colours"
   set was made from retailer cut-outs, so zoom its edges before use (`Higgs Okm/README.txt`).
   (2) all-colours image for pod systems — drafts first (central §6 / §12 item 22): G3 mini (9) + G4 Classic (4), then the
   other pod systems as their colour sets get remade.
-  (3) coils — 8 cards (coil-54/74/56/55/89/68/87/83): references found, checked and partly uploaded, nothing generated:
+  (3) coils — the 8 of the old list (coil-54/74/56/55/89/68/87/83; 68 judged OK by the audit) + the audit's coil-1/38/53/
+  70/72/94: references for the first 8 found, checked and partly uploaded, nothing generated:
   `_incoming/image-sitewide/b-coils/README.txt` (per coil: reference, media_id, source, identity notes).
   (4) argus-g4 + Argus Multi-Ohm + ARGUS P3 card-v2 + openOnCardPhoto (now allowed, (a) above) + M Bar 15K duplicate
   record (= M Switch Kit).
