@@ -37,7 +37,8 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   ~650 px: G4 Pro KOKO, G3 Pro KOKO, G4 Classic, Argus G3 mini, Argus P3, Drag 6, Zero Nano, several coils; not listed:
   muro-3ml (490 px — model source unclear, skipped) · m-bar-15k (duplicate record, 3b c) · joiway-f4 / relx-creator (low
   detail score, sizes fine) [เชื่อว่า — by eye]. `edge-scan.ts` = metric does NOT work — do not trust it.
-3b NEXT (owner's order): (a) Esko pod-159: the 18 manufacturer flavours show "หมด" because their Shipnity status is
+3b NEXT — ORDER (owner 01/10 "ทำตัวอื่นที่ยังไม่ใช่ Esko จากนั้นเมื่อเสร็จแล้วค่อย Esko ต่อ"): (b) first, then (c) (d) when
+  their dates allow, Esko (a) LAST. Owner OK'd (b)'s plan (first sheet before any page photo changes). (a) Esko pod-159: the 18 manufacturer flavours show "หมด" because their Shipnity status is
   `unknown` (PilotProductDetail / ProductMasterVariantPicker / catalog-resolver treat non-"in-stock" as out) — owner
   ruling §18: show them as available — a stock/cart change = 13.7 big (2), full set, own PR; also record the ruling in
   BSOT §21 (the pod-159 block, ~line 610). NOT done yet. (b) G4 Pro KOKO / G3 Pro KOKO / G3 Pro: pick the best
