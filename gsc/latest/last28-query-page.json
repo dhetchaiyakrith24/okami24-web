@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-01",
-  "endDate": "2026-09-28",
+  "startDate": "2026-09-02",
+  "endDate": "2026-09-29",
   "dimensions": [
    "query",
    "page"
@@ -74,9 +74,19 @@
     "https://okami24.store/products/drag-s3"
    ],
    "clicks": 3,
-   "impressions": 5,
-   "ctr": 0.6,
-   "position": 6.4
+   "impressions": 7,
+   "ctr": 0.42857142857142855,
+   "position": 7
+  },
+  {
+   "keys": [
+    "okami pod",
+    "https://okami24.store/products/pod-systems"
+   ],
+   "clicks": 3,
+   "impressions": 6,
+   "ctr": 0.5,
+   "position": 7.666666666666667
   },
   {
    "keys": [
@@ -107,16 +117,6 @@
    "impressions": 7,
    "ctr": 0.2857142857142857,
    "position": 14.571428571428571
-  },
-  {
-   "keys": [
-    "okami pod",
-    "https://okami24.store/products/pod-systems"
-   ],
-   "clicks": 2,
-   "impressions": 5,
-   "ctr": 0.4,
-   "position": 8.4
   },
   {
    "keys": [
@@ -180,6 +180,16 @@
   },
   {
    "keys": [
+    "drag6",
+    "https://okami24.store/products/drag-6"
+   ],
+   "clicks": 1,
+   "impressions": 10,
+   "ctr": 0.1,
+   "position": 6.9
+  },
+  {
+   "keys": [
     "iqos",
     "https://okami24.store/brands/iqos"
    ],
@@ -204,9 +214,9 @@
     "https://okami24.store/products/mood-monster-14k"
    ],
    "clicks": 1,
-   "impressions": 1,
-   "ctr": 1,
-   "position": 22
+   "impressions": 2,
+   "ctr": 0.5,
+   "position": 21
   },
   {
    "keys": [
@@ -214,8 +224,8 @@
     "https://okami24.store/"
    ],
    "clicks": 1,
-   "impressions": 4,
-   "ctr": 0.25,
+   "impressions": 5,
+   "ctr": 0.2,
    "position": 9
   },
   {
@@ -274,9 +284,9 @@
     "https://okami24.store/brands/salthub"
    ],
    "clicks": 1,
-   "impressions": 22,
-   "ctr": 0.045454545454545456,
-   "position": 15.136363636363637
+   "impressions": 23,
+   "ctr": 0.043478260869565216,
+   "position": 15.434782608695652
   },
   {
    "keys": [
@@ -304,8 +314,8 @@
     "https://okami24.store/products/argus-g4"
    ],
    "clicks": 1,
-   "impressions": 1,
-   "ctr": 1,
+   "impressions": 3,
+   "ctr": 0.3333333333333333,
    "position": 2
   },
   {
@@ -317,6 +327,16 @@
    "impressions": 2,
    "ctr": 0.5,
    "position": 19
+  },
+  {
+   "keys": [
+    "voopoo ทุกรุ่น",
+    "https://okami24.store/brands/voopoo"
+   ],
+   "clicks": 1,
+   "impressions": 1,
+   "ctr": 1,
+   "position": 15
   },
   {
    "keys": [
@@ -380,6 +400,16 @@
   },
   {
    "keys": [
+    "caliburn",
+    "https://okami24.store/products/caliburn-g4"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 98
+  },
+  {
+   "keys": [
     "caliburn g",
     "https://okami24.store/products/caliburn-g4"
    ],
@@ -394,7 +424,7 @@
     "https://okami24.store/products/caliburn-g5-lite"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
    "position": 9
   },
@@ -404,9 +434,9 @@
     "https://okami24.store/products/coil-53"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
-   "position": 35
+   "position": 55
   },
   {
    "keys": [
@@ -414,9 +444,9 @@
     "https://okami24.store/products/coil-55"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
-   "position": 31
+   "position": 48
   },
   {
    "keys": [
@@ -444,9 +474,9 @@
     "https://okami24.store/products/caliburn-g3-pro-koko"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
-   "position": 19
+   "position": 11
   },
   {
    "keys": [
@@ -534,7 +564,7 @@
     "https://okami24.store/brands/dotmod"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
    "position": 54
   },
@@ -564,19 +594,19 @@
     "https://okami24.store/products/drag-s3"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 6,
    "ctr": 0,
-   "position": 62.6
+   "position": 63
   },
   {
    "keys": [
-    "drag6",
-    "https://okami24.store/products/drag-6"
+    "drag x 3",
+    "https://okami24.store/products/drag-x3"
    ],
    "clicks": 0,
-   "impressions": 9,
+   "impressions": 1,
    "ctr": 0,
-   "position": 6.333333333333333
+   "position": 14
   },
   {
    "keys": [
@@ -604,9 +634,9 @@
     "https://okami24.store/brands/esko-bar"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 4,
    "ctr": 0,
-   "position": 55
+   "position": 62.75
   },
   {
    "keys": [
@@ -614,9 +644,9 @@
     "https://okami24.store/brands/esko-bar"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
-   "position": 9
+   "position": 8
   },
   {
    "keys": [
@@ -630,6 +660,16 @@
   },
   {
    "keys": [
+    "esko bar switch 20k",
+    "https://okami24.store/products/pod-159"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
     "eskobar",
     "https://okami24.store/brands/esko-bar"
    ],
@@ -637,6 +677,16 @@
    "impressions": 1,
    "ctr": 0,
    "position": 80
+  },
+  {
+   "keys": [
+    "g5 lite pod",
+    "https://okami24.store/products/caliburn-g5-lite"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
   },
   {
    "keys": [
@@ -787,6 +837,16 @@
    "impressions": 2,
    "ctr": 0,
    "position": 1
+  },
+  {
+   "keys": [
+    "mbar 15k",
+    "https://okami24.store/brands/salthub"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 10
   },
   {
    "keys": [
@@ -1104,9 +1164,9 @@
     "https://okami24.store/guides/choosing-your-first-pod-system"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
-   "position": 67
+   "position": 69.66666666666667
   },
   {
    "keys": [
@@ -1114,9 +1174,9 @@
     "https://okami24.store/guides/choosing-your-first-pod-system"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
-   "position": 57
+   "position": 62.5
   },
   {
    "keys": [
@@ -1124,9 +1184,9 @@
     "https://okami24.store/guides/choosing-your-first-pod-system"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 3,
    "ctr": 0,
-   "position": 57
+   "position": 64.66666666666666
   },
   {
    "keys": [
@@ -1134,9 +1194,9 @@
     "https://okami24.store/guides/choosing-your-first-pod-system"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
-   "position": 77
+   "position": 80.66666666666667
   },
   {
    "keys": [
@@ -1214,9 +1274,19 @@
     "https://okami24.store/products/m-bar-10k"
    ],
    "clicks": 0,
+   "impressions": 3,
+   "ctr": 0,
+   "position": 57.666666666666664
+  },
+  {
+   "keys": [
+    "salthub",
+    "https://okami24.store/products/m-bar-pod"
+   ],
+   "clicks": 0,
    "impressions": 1,
    "ctr": 0,
-   "position": 80
+   "position": 46
   },
   {
    "keys": [
@@ -1274,9 +1344,19 @@
     "https://okami24.store/brands/uwell"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
-   "position": 59
+   "position": 56.333333333333336
+  },
+  {
+   "keys": [
+    "uwell caliburn g",
+    "https://okami24.store/products/caliburn-g4"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 67
   },
   {
    "keys": [
@@ -1307,6 +1387,16 @@
    "impressions": 1,
    "ctr": 0,
    "position": 8
+  },
+  {
+   "keys": [
+    "vinci s",
+    "https://okami24.store/products/vinci-s"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
   },
   {
    "keys": [
@@ -1470,6 +1560,16 @@
   },
   {
    "keys": [
+    "น้ำยาบุหรี่ไฟฟ้า",
+    "https://okami24.store/e-liquid"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 62.5
+  },
+  {
+   "keys": [
     "บุหรี่ไฟฟ้า drag",
     "https://okami24.store/products/drag-6"
    ],
@@ -1531,12 +1631,22 @@
   {
    "keys": [
     "ราคา",
-    "https://okami24.store/products/mood-monster-14k"
+    "https://okami24.store/products/m-switch-pod"
    ],
    "clicks": 0,
    "impressions": 1,
    "ctr": 0,
-   "position": 2
+   "position": 1
+  },
+  {
+   "keys": [
+    "ราคา",
+    "https://okami24.store/products/mood-monster-14k"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 1.5
   },
   {
    "keys": [

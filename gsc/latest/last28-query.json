@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-01",
-  "endDate": "2026-09-28",
+  "startDate": "2026-09-02",
+  "endDate": "2026-09-29",
   "dimensions": [
    "query"
   ]
@@ -63,21 +63,21 @@
   },
   {
    "keys": [
-    "drag s3"
+    "okami pod"
    ],
-   "clicks": 3,
-   "impressions": 5,
-   "ctr": 0.6,
-   "position": 6.4
+   "clicks": 4,
+   "impressions": 9,
+   "ctr": 0.4444444444444444,
+   "position": 7.444444444444445
   },
   {
    "keys": [
-    "okami pod"
+    "drag s3"
    ],
    "clicks": 3,
-   "impressions": 8,
-   "ctr": 0.375,
-   "position": 7.875
+   "impressions": 7,
+   "ctr": 0.42857142857142855,
+   "position": 7
   },
   {
    "keys": [
@@ -162,6 +162,15 @@
   },
   {
    "keys": [
+    "drag6"
+   ],
+   "clicks": 1,
+   "impressions": 10,
+   "ctr": 0.1,
+   "position": 6.9
+  },
+  {
+   "keys": [
     "iqos"
    ],
    "clicks": 1,
@@ -183,9 +192,9 @@
     "mood monster"
    ],
    "clicks": 1,
-   "impressions": 1,
-   "ctr": 1,
-   "position": 22
+   "impressions": 2,
+   "ctr": 0.5,
+   "position": 21
   },
   {
    "keys": [
@@ -210,9 +219,9 @@
     "salthub"
    ],
    "clicks": 1,
-   "impressions": 24,
-   "ctr": 0.041666666666666664,
-   "position": 16.291666666666664
+   "impressions": 28,
+   "ctr": 0.03571428571428571,
+   "position": 19.714285714285715
   },
   {
    "keys": [
@@ -237,8 +246,8 @@
     "voopoo argus g4 ราคา"
    ],
    "clicks": 1,
-   "impressions": 1,
-   "ctr": 1,
+   "impressions": 3,
+   "ctr": 0.3333333333333333,
    "position": 2
   },
   {
@@ -249,6 +258,15 @@
    "impressions": 2,
    "ctr": 0.5,
    "position": 19
+  },
+  {
+   "keys": [
+    "voopoo ทุกรุ่น"
+   ],
+   "clicks": 1,
+   "impressions": 1,
+   "ctr": 1,
+   "position": 15
   },
   {
    "keys": [
@@ -306,6 +324,15 @@
   },
   {
    "keys": [
+    "caliburn"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 98
+  },
+  {
+   "keys": [
     "caliburn g"
    ],
    "clicks": 0,
@@ -318,7 +345,7 @@
     "caliburn g 5 lite"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
    "position": 9
   },
@@ -327,9 +354,9 @@
     "caliburn g2"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 3,
    "ctr": 0,
-   "position": 31
+   "position": 57
   },
   {
    "keys": [
@@ -345,9 +372,9 @@
     "caliburn g3 pro"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
-   "position": 19
+   "position": 11
   },
   {
    "keys": [
@@ -399,7 +426,7 @@
     "dotmod"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
    "position": 54
   },
@@ -426,18 +453,18 @@
     "drag 3"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 6,
    "ctr": 0,
-   "position": 62.6
+   "position": 63
   },
   {
    "keys": [
-    "drag6"
+    "drag x 3"
    ],
    "clicks": 0,
-   "impressions": 9,
+   "impressions": 1,
    "ctr": 0,
-   "position": 6.333333333333333
+   "position": 14
   },
   {
    "keys": [
@@ -462,18 +489,18 @@
     "esko"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 4,
    "ctr": 0,
-   "position": 55
+   "position": 62.75
   },
   {
    "keys": [
     "esko bar"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
-   "position": 9
+   "position": 8
   },
   {
    "keys": [
@@ -486,12 +513,30 @@
   },
   {
    "keys": [
+    "esko bar switch 20k"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 10
+  },
+  {
+   "keys": [
     "eskobar"
    ],
    "clicks": 0,
    "impressions": 1,
    "ctr": 0,
    "position": 80
+  },
+  {
+   "keys": [
+    "g5 lite pod"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
   },
   {
    "keys": [
@@ -606,9 +651,9 @@
     "mbar 15k"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 5,
    "ctr": 0,
-   "position": 5.25
+   "position": 6.2
   },
   {
    "keys": [
@@ -714,36 +759,36 @@
     "pod system คือ"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
-   "position": 67
+   "position": 69.66666666666667
   },
   {
    "keys": [
     "pod system ตัวไหนดี"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
-   "position": 57
+   "position": 62.5
   },
   {
    "keys": [
     "pod system ยี่ห้อไหนดี"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 3,
    "ctr": 0,
-   "position": 57
+   "position": 64.66666666666666
   },
   {
    "keys": [
     "pod system แนะนํา"
    ],
    "clicks": 0,
-   "impressions": 4,
+   "impressions": 5,
    "ctr": 0,
-   "position": 87.25
+   "position": 87.4
   },
   {
    "keys": [
@@ -831,7 +876,7 @@
     "uwell caliburn g"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 4,
    "ctr": 0,
    "position": 59
   },
@@ -852,6 +897,15 @@
    "impressions": 4,
    "ctr": 0,
    "position": 5.75
+  },
+  {
+   "keys": [
+    "vinci s"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 5
   },
   {
    "keys": [
@@ -990,6 +1044,15 @@
   },
   {
    "keys": [
+    "น้ำยาบุหรี่ไฟฟ้า"
+   ],
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 62.5
+  },
+  {
+   "keys": [
     "บุหรี่ไฟฟ้า drag"
    ],
    "clicks": 0,
@@ -1038,9 +1101,9 @@
     "ราคา"
    ],
    "clicks": 0,
-   "impressions": 6,
+   "impressions": 8,
    "ctr": 0,
-   "position": 10.333333333333334
+   "position": 8
   },
   {
    "keys": [
