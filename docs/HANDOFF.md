@@ -11,86 +11,89 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — the 01/10 night chat merged #174 `6e34e43` ARGUS G4 mini 8 colours +
-  Drag 6 7 colours + both cards (checker 7/8 → Cyan/Orange swatch fixed `f6885eb` → re-check PASS · GitHub checks green ·
-  self-merge-check BIG) [ตรวจแล้ว]; deploy run 36875290545, live [ตรวจแล้ว — curl: both pages serve card-v2 + every -v2 colour, files 200]; then this docs PR. Revert = its merge.
-  New photos of #174 have NOT been seen by the owner yet [รอเจ้าของ].
-2 ahead of main: `git log --oneline origin/main..<branch>` — nothing besides this docs PR [ตรวจแล้ว — git] · test server on 3412
-  may still be up: `node scripts/test-server.js status` / `stop`.
+1 main: `git fetch && git log -1 --oneline origin/main` — the 01/10–02/10 chat merged #176 `32324a5` Caliburn G3 Pro 16 UWELL colours
+  (was 6) + card-v2, old 6-colour lineup removed (checker 7/7 · GitHub checks green · self-merge-check BIG) [ตรวจแล้ว]; deploy
+  36887311640, live [ตรวจแล้ว — curl: 16/16 colour files 200, page serves card-v2, no old lineup] · owner: "ผ่านครับ" (01/10).
+  Then #177 `d8bf903` Drag 6 all-colours lineup-v2.webp (owner's pick "VMATE MAX") + home Scene3Voopoo = home-brown-v2.webp
+  (owner approved touching cinematic/ for this one swap) (checker 6/6 · checks green · BIG · head-check 7/7 baseline pages
+  head/H1/JSON-LD same) [ตรวจแล้ว]; deploy 36895480132, live [ตรวจแล้ว — curl: lineup-v2 200, home-brown-v2 200]. Revert = its merge.
+  The Drag 6 lineup ON THE SITE has not been seen by the owner yet (only the draft) [รอเจ้าของ].
+2 ahead of main: `git log --oneline origin/main..<branch>` — only the docs PR of this handoff (IMAGE_SPEC §0 item 5 layout rule +
+  LESSONS ช7 + this §16) [ตรวจแล้ว — git]. Test server on 3412 may still be up (build of 7de0bd4): `node scripts/test-server.js status` / `stop`.
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
   VOOPOO `b-voopoo/`, coils `b-coils/`).
   OWNER 01/10 evening [ตรวจแล้ว — chat], overriding the round file (its 【ห้ามแตะ】 line on the 7 baseline pages still reads
   "until 05/10" — the file is the owner's, not edited): (a) the 7 SEO baseline pages MAY get image work now; [Friday's
-  condition — เชื่อว่า]: images only, title/meta/H1/JSON-LD untouched — #174 proved it with `b-edge/head-check.js` (7/7 head
-  same; drag-6 also lost the pre-selected "Silver" label = openOnCardPhoto) · (b) all-options image for pod systems =
-  `docs/IMAGE_SPEC.md` §0 item 5 · (c) "finish the image work".
+  condition — เชื่อว่า]: images only, title/meta/H1/JSON-LD untouched — prove it with `b-edge/head-check.js` (live vs local
+  HTML of the 7 pages) · (b) all-options image for pod systems = `docs/IMAGE_SPEC.md` §0 item 5 · (c) "finish the image work".
+  ALL-COLOURS LAYOUT (owner 01/10 — rule in IMAGE_SPEC §0 item 5 "การจัดวาง"): few colours = UWELL float/tilt/layers · many =
+  OKami's own poster layouts, every device whole, gaps, one hero. Composer `b-edge/d6-poster.js` (VMATE · V THRU · RELX · VEUZ fan;
+  canvas sized from bounds) — copy it per product; G3 Pro drafts `b-edge/g3p-lineup.js`. Rejected (do not retry): stagger/arc/fan
+  of round 1, UWELL tilt-cascade of 7 ("แข็งๆ"), depth-cue cascade / V-wings (lesson ช7).
   THE METHODS THAT WORK: (a) one model, colours differ only in colour = ONE master + recolour by script — silver master:
-  `b-uwell/recolour-g4c.js`; coloured master: `b-voopoo/recolour-g3m.js` (lesson 23); GRADIENT colours (cyan/orange/pink-green…)
-  = targets per height band: `b-edge/recolour-g4m.js` (body) and `b-edge/recolour-g3p.js` (frame round a screen, masks
-  `b-uwell/masks.js`); colour targets from the MAKER's own photo/chart, swatch = whole-body median of it · (b) each colour its
-  own print/texture = the night render of each colour (Drag 6, ARGUS P3 `b-voopoo/p3tone.js`) · (c) single option = night card
-  render. CUT-OUT (lesson พ11): Higgsfield remover → `b-edge/choke.js` (pulls the matte in 5 px — the remover leaves a grey rim
-  the owner saw) · device clearly unlike the studio grey → `scripts/flatcut.js` (no rim, 0 credits) · ALWAYS zoom 4x on dark +
-  magenta (`b-edge/edgezoom.js`) before use. Then presize + map entries (`b-edge/presize-edge.js` pattern) + `npx tsx
-  scripts/process-images.ts --only <slug>` (new file names, lesson พ6). Check every render for MIRRORING. Edits to CRLF files =
-  a .js edit script (`b-edge/edit-voopoo.js` pattern) — sed/Edit strip CR (memory project-crlf-tooling).
-  Done this round: G4 Pro KOKO, G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano, ARGUS G4 mini, Drag 6.
+  `b-uwell/recolour-g4c.js`; coloured master: `b-voopoo/recolour-g3m.js` (lesson 23); GRADIENT colours = targets per height band:
+  `b-edge/recolour-g4m.js` (body) and `b-edge/recolour-g3p.js` (frame round a screen, masks `b-uwell/masks.js`); colour targets
+  from the MAKER's own photo/chart; swatch = median of the maker's photo (G3 Pro: the BACK panel; multi-tone = the more
+  colourful half — `b-edge/presize-g3p.js`) · (b) each colour its own print/texture = the night render of each colour (Drag 6,
+  ARGUS P3 `b-voopoo/p3tone.js`) · (c) single option = night card render · card from a set = tilt one colour 12°
+  (`_incoming/image-sitewide/tilt-card.js`). CUT-OUT (lesson พ11): Higgsfield remover → `b-edge/choke.js` · device clearly unlike
+  the studio grey → `scripts/flatcut.js` · ALWAYS zoom 4x on dark + magenta (`b-edge/edgezoom.js`) before use. Then presize + map
+  entries (`b-edge/presize-g3p.js` pattern) + `npx tsx scripts/process-images.ts --only <slug>` (new file names, lesson พ6). Check
+  every render for MIRRORING. Edits to CRLF files = a .js edit script (`b-edge/edit-g3p-data.js` pattern) — sed/Edit strip CR.
+  Done this round: G4 Pro KOKO, G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano, ARGUS G4 mini, Drag 6 (colours
+  + lineup + home card), Caliburn G3 Pro (16 colours + card).
 3b NEXT — ORDER (owner 01/10: Esko LAST):
-  (1) EDGE DEFECTS — CALIBURN G3 PRO first, waiting on owner item (32): UWELL makes 16 colours (pack1.webp chart), the site
-  shows 6 → catalog-completeness rule = add the 10 (Pink Green · Frozen Aurora · Frozen Green · Golden Purple · Golden Leopard
-  · Green Camo · Black Carbon · Brown Wood · Black Leather · Brown Leather) = product data, BIG [ตรวจแล้ว — chart]. FRONTS DONE
-  locally, not committed: `b-edge/g3p/front/g3p-front-<id>.png` (16, one master = night official2 Stone Gray render, flatcut,
-  colours from UWELL chart crops `b-edge/ref-g3p/uw-<id>.png`; sheet sent to owner `b-edge/g3p-owner-draft.png`). Five colours
-  look alike from the front (Black Carbon/Leather, Green Camo, Midnight Black, Space Gray) — their difference is the BACK.
-  Back attempt: one 4K back master (job b4be8e65, `b-edge/g3p/back-master.png`) INVENTED a symmetric pattern ≠ UWELL's
-  diagonal stone-gray back → not usable; back references are small (UWELL chart crops; 900 px retailer pairs
-  `ref-g3p/s9-*.jpg` for 9 new colours, black CRC pod; no Golden Leopard large file). Then the rest of the defect list
-  (`edge-audit/visual-audit.md`, agent's eye): vinci-s · vmate-i3 · drag-x3 · zero-pro · m-bar-15k (options soft) · muro-3ml ·
-  coil-1/38/53/54/56/74/94 · borderline argus-p3 card · drag-s3 · coil-89 · zero-cartridge · white boxes coil-55/70/72/83/87 ·
-  mood-monster-14k. Night renders that exist: drag-s3 / drag-x3 / vinci-s colours (from retailer cut-outs — choke + zoom) ·
-  argus-g4 card a/b. Remake from the maker's photos, never from the old cut-out (lesson 22).
-  (2) all-colours image for pod systems — drafts first: G3 mini (9) + G4 Classic (4) + now G4 mini (8); old lineup.webp of
-  G4 mini / Drag 6 kept on purpose until then.
-  (3) coils — `b-coils/README.txt` (references found for the first 8, nothing generated).
-  (4) argus-g4 + Argus Multi-Ohm + ARGUS P3 card-v2 + openOnCardPhoto for P3 (baseline lift = now allowed) + M Bar 15K duplicate record (= M Switch Kit).
-  (5) BATCH 5 rest of the site (planner first; joiway-f4 · relx-creator · relx-smash-go-12k …; TFIT M Power after a researcher) · (6) Esko pod-159 LAST (stock/cart = 13.7 big
-  (2), full set, own PR, + BSOT §21).
-  Higgsfield: 182.6 credits 01/10 night [ตรวจแล้ว — balance]; 4K = 4, nano 2K = 2, remover = 1 · tell the owner the credits for
-  a whole set before starting it (IMAGE_SPEC §0 item 7). Remover jobs can sit "queued" ~5 min; a job-id cut that errors 3x
-  works after uploading the file (`media_upload`, PUT with header If-None-Match: *).
+  (1) Caliburn G3 Pro all-colours image: drafts sent `b-edge/g3p-lineup/sheet.png` (1 = VEUZ fan, Pacific Blue front —
+  Friday recommends · 2 = two rows 8+8) — waiting on owner item (35); publish as lineup-v2.webp like #177 (page has no lineup now).
+  (2) rest of the edge-defect list (`edge-audit/visual-audit.md`, agent's eye): vinci-s · vmate-i3 · drag-x3 · zero-pro ·
+  m-bar-15k (options soft) · muro-3ml · coil-1/38/53/54/56/74/94 · borderline argus-p3 card · drag-s3 · coil-89 · zero-cartridge ·
+  white boxes coil-55/70/72/83/87 · mood-monster-14k. Night renders that exist: drag-s3 / drag-x3 / vinci-s colours (from retailer
+  cut-outs — choke + zoom) · argus-g4 card a/b. Remake from the maker's photos, never from the old cut-out (lesson 22).
+  (3) all-colours image (poster layouts) for the other pod systems — G3 mini (9) · G4 Classic (4) · G4 mini (8, old lineup.webp still
+  used) · ARGUS P3 · then the rest that have colour variants.
+  (4) coils — `b-coils/README.txt` (references found for the first 8, nothing generated).
+  (5) argus-g4 + Argus Multi-Ohm + ARGUS P3 card-v2 + openOnCardPhoto for P3 + M Bar 15K duplicate record (= M Switch Kit).
+  (6) BATCH 5 rest of the site (planner first; joiway-f4 · relx-creator · relx-smash-go-12k …; TFIT M Power after a researcher) ·
+  (7) Esko pod-159 LAST (stock/cart = 13.7 big (2), full set, own PR, + BSOT §21).
+  Higgsfield: 182.6 credits on 01/10 night, none used since [เชื่อว่า — not re-checked]; 4K = 4, nano 2K = 2, remover = 1 · tell the
+  owner the credits for a whole set before starting it (IMAGE_SPEC §0 item 7). Remover jobs can sit "queued" ~5 min; a job-id cut that
+  errors 3x works after uploading the file (`media_upload`, PUT with header If-None-Match: *).
   At the round close: `npx tsx scripts/asset-refs.ts` for unreferenced product photos (list in item 5).
-  Account weekly usage 97% on 01/10 night (resets 04/10 22:00 ICT) [ตรวจแล้ว — get_usage]; extra usage is on.
+  Account weekly usage 98% on 01/10 (resets 04/10 22:00 ICT) [ตรวจแล้ว — get_usage]; owner OK'd extra usage 01/10 ("ใช่ครับต่อเลย").
 4 waiting on owner:
-  (32) Caliburn G3 Pro: front + back pairs like UWELL's chart (Friday recommends; ~60–80 credits, several tries, back
-       references small) or front only (done, 0 credits, 5 colours look alike) — asked 01/10 night with the draft sheet.
-  (33) home page Scene3Voopoo (cinematic/ = HANDOFF §17 do-not-touch) still shows the old rimmed `drag-6/card.png` — swap to
-       card-v2? [checker PR #174]
-  (34) the new photos of #174 (G4 mini 8 colours + card, Drag 6 7 colours + card) — owner's eye.
-  (31) all-colours image drafts (item 3b (2)) — when made.
+  (35) Caliburn G3 Pro all-colours layout: 1 fan (recommended) or 2 rows — `b-edge/g3p-lineup/sheet.png`, sent 01/10.
+  (36) the Drag 6 lineup as it looks on the live page (390 + 1440: `b-edge/shots-d6/cmp-all-390.png`, `cmp-all-1440.png`) —
+       checker note: the row fills 1400×767 of the 1600² frame, so it shows smaller than a single device; a wider crop = taste.
   (28) Thai copy flags from thai-copy (not changed): INFY `descriptionTh` says disposable-only brand · shared strings
        "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" / "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ"
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour
        file request
 5 open / dated:
   - Drag 6 tank: retailers name it UFORCE-X Tank II, the data has a "gene-tt-3" highlight — data check in a data round [เชื่อว่า].
+  - coil-94's Shipnity name "UWELL คอยล์ Caliburn G4&G3 Series" shows in Thai on en/zh pages that link it (locale-hydration-scan
+    FAIL on /products/caliburn-g3-pro en+zh — same on live before #176, not from it) [ตรวจแล้ว] — data round.
   - 05/10: re-read GSC against `docs/SEO_BASELINE.md`; after 05/10 the 7 baseline pages use the light set — delete
     `galleryNoteHeld` + `heldNote`; M Bar 10K airflow row; then drop the "ถึง 05/10" clauses of TEAM_RULES 13.5 #3 / 13.7 / 13.8.
   - `lineupFirst` has no product left — the mechanism can go in a cleanup.
   - `dict.product.anatomyTitle` en/zh "from the outside in" (pre-existing).
   - `_incoming/` folders moved out 01/10 to `C:\Users\dhetc\OKami24-เก็บ\incoming-01-10\` (not deleted).
   - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
+  - visible-text.js printed "font fingerprint differs" for a fresh live-vs-local pair on 01/10 (vt-d6) while the 01/10 vt-g3p pair
+    was "same machine" — 0 changes either way; watch whether it repeats (session limit or a real font difference) [เชื่อว่า].
   - Carried ideas: card sweep on 4:5 · ARTICLE round · category-structure round.
   - Unreferenced (sweep at the round close): the six round lineups, G3 Pro KOKO lineup.webp + old variant files, G4 Pro KOKO old
     variant files (card.png stays — home Scene2), G4 Classic card.png / lineup.webp / old variants + variant-alpine-green-v2.webp,
     argus-g3-mini card.webp / lineup.webp / variants/*, argus-p3 lineup.webp + variants/* EXCEPT variants/blue-leather.webp,
-    zero-nano card.webp, argus-g4-mini variants/* (lineup.webp still used), drag-6 variants/* (card.png still used by home
-    Scene3Voopoo, lineup.webp still used) [เชื่อว่า — grep; asset-refs.ts not run].
+    zero-nano card.webp, argus-g4-mini variants/* (lineup.webp still used), drag-6 variants/* + card.png + lineup.webp,
+    caliburn-g3-pro card.webp + lineup.webp + variant-{emerald-green,midnight-black,rose-gold,space-gray,stone-gray}.webp
+    [เชื่อว่า — grep; asset-refs.ts not run].
 6 verify baseline at the last full close (clip round; numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Latest light set [ตรวจแล้ว — run this chat]: PR #174 — tsc 0 · verify:catalog 29/29 · gallery-probe `--sitemap` 45/61 pages
-  with a gallery PASS in both modes, 0 FLASH/STUCK · head-check live vs local 7/7 baseline pages head/H1/JSON-LD same
-  (`_incoming/image-sitewide/b-edge/html/`) · before/after 390+1440 `b-edge/shots/cmp-390.png`, `cmp-1440.png`.
+  Latest light set [ตรวจแล้ว — run this chat]: PR #176 — tsc 0 · verify:catalog 29/29 · scan.js 0/107 · gallery-probe `--sitemap`
+  45/61 pages PASS both modes, 0 FLASH/STUCK · visible-text 27 changes / 21 groups all explained (`b-edge/vt-g3p-diff/`) ·
+  PR #177 — tsc 0 · verify:catalog 29/29 · gallery-probe both modes PASS · visible-text 0 changes (`b-edge/vt-d6-diff/`) ·
+  head-check 7/7 (`b-edge/html-d6/`).
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
 ```
 
