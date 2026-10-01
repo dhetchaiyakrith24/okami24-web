@@ -1110,63 +1110,40 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g3-pro/card.webp",
-        alt: "UWELL Caliburn G3 Pro, Pacific Blue colourway, screen-on isolated studio product shot",
-        angle: "THIRD owner quality-review correction pass (2026-09-03) — REPLACES the Element Vape source entirely, not another patch. That source was rejected twice (a stale \"watermark-free\" claim, then a real watermark genuinely overlapping the device bezel that needed clone-patch repair) and the owner explicitly ruled out tweaking the same weak asset again. Watermark reconstruction is a repair-of-last-resort, not a workflow to keep leaning on — the right fix was a cleaner source, not a better patch. Vapesourcing's own per-color product photography (found at vapesourcing.com/uwell-caliburn-g3-pro-kit.html) has NO watermark at all on this exact color, full device top to bottom, screen powered on showing the real full-screen UI (this device's headline feature, per myuwell.com: \"first ever full-screen vape pod\") — genuinely stronger presentation than the previous source ever offered, not merely watermark-free by luck. FOURTH pass (2026-09-03, same day) — the owner's screenshot review flagged this narrow, tall device as still reading as a \"white box\" against the dark theme: the source photo's white background was already trimmed as tight as possible, but a plain rectangular white canvas around a narrow object still shows a lot of dead white space on both sides no matter how tight the crop. Fixed at the pixel level, not by cropping further — converted to a real alpha-transparent background (distance-from-white per pixel, feathered near the edge) so the dark card background shows through directly instead of white. Checked for a white edge-fringe around the glass tank's highlights specifically (the hardest case, since glossy glass reads close to white) — none found at both zoom and real display size.",
+        src: "/assets/products/caliburn-g3-pro/card-v2.webp",
+        alt: "UWELL Caliburn G3 Pro, Pacific Blue, three-quarter view",
+        angle: "tilted 12° in 2D, isolated — the Pacific Blue front of the OKami24 16-colour set (IMAGE_SPEC §0 item 7), no new render",
         transparentBackground: true,
-        sourceName: "Vapesourcing (vape retailer; own product photography — NOT UWELL's own site)",
-        sourceUrl: "https://vapesourcing.com/uwell-caliburn-g3-pro-kit.html",
+        sourceName: "OKami24 render (Higgsfield) from UWELL's images",
+        sourceUrl: "https://www.myuwell.com/",
       },
     ],
-    // Real UWELL color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
-    // photo-confirmed: vapesourcing.com + elementvape.com, both agreeing on this 6-color list).
-    // OWNER REVIEW (2026-09-03): all 6 colors now have a real, clean, watermark-free photo from
-    // vapesourcing.com's own per-color product photography (screen powered on, showing this
-    // device's real full-screen UI) — genuine 6/6 coverage, not just the one flagship example.
-    // "All Colors" lineup (owner mandate, 2026-09-03 — global rollout pass) — an OKami24
-    // composite from these same 6 individually-verified photos.
-    lineupImage: {
-      src: "/assets/products/caliburn-g3-pro/lineup.webp",
-      alt: "UWELL Caliburn G3 Pro, all 6 colors",
-      sourceName: "OKami24 composite (from individually-verified retailer photos)",
-    },
+    // UWELL makes 16 colours (UWELL's own chart, files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, in its order);
+    // the site showed the 6 a retailer listed — catalog-completeness rule (owner 2026-09-06): every maker colour shows.
+    // Image-sitewide round 3b (1), 01/10: every colour = the front of ONE 4K Higgsfield master (UWELL's Stone Gray front)
+    // with the frame round the screen moved to UWELL's chart colour (_incoming/image-sitewide/b-edge/recolour-g3p.js,
+    // flatcut — no rim). Front only (owner 01/10, item 32): Black Carbon / Black Leather / Green Camo / Midnight Black /
+    // Space Gray differ on the BACK, so their swatches = the median colour of UWELL's back panel for that colour
+    // (multi-tone finishes: the more colourful half — presize-g3p.js). The 6-colour lineup was removed: it said "all"
+    // over 6 of 16; the new all-colours image (IMAGE_SPEC §0 item 5) comes with the pod-system layout.
+    openOnCardPhoto: true,
     colorVariants: [
-      {
-        id: "emerald-green",
-        name: "Emerald Green",
-        swatchHex: "#1f7a5c",
-        image: { src: "/assets/products/caliburn-g3-pro/variant-emerald-green.webp", alt: "UWELL Caliburn G3 Pro, Emerald Green" },
-      },
-      {
-        id: "midnight-black",
-        name: "Midnight Black",
-        swatchHex: "#1a1a1a",
-        image: { src: "/assets/products/caliburn-g3-pro/variant-midnight-black.webp", alt: "UWELL Caliburn G3 Pro, Midnight Black" },
-      },
-      {
-        id: "pacific-blue",
-        name: "Pacific Blue",
-        swatchHex: "#2a6fbd",
-        image: { src: "/assets/products/caliburn-g3-pro/card.webp", alt: "UWELL Caliburn G3 Pro, Pacific Blue" },
-      },
-      {
-        id: "rose-gold",
-        name: "Rose Gold",
-        swatchHex: "#d9a1a0",
-        image: { src: "/assets/products/caliburn-g3-pro/variant-rose-gold.webp", alt: "UWELL Caliburn G3 Pro, Rose Gold" },
-      },
-      {
-        id: "space-gray",
-        name: "Space Gray",
-        swatchHex: "#54565a",
-        image: { src: "/assets/products/caliburn-g3-pro/variant-space-gray.webp", alt: "UWELL Caliburn G3 Pro, Space Gray" },
-      },
-      {
-        id: "stone-gray",
-        name: "Stone Gray",
-        swatchHex: "#8c8f93",
-        image: { src: "/assets/products/caliburn-g3-pro/variant-stone-gray.webp", alt: "UWELL Caliburn G3 Pro, Stone Gray" },
-      },
+      { id: "pink-green", name: "Pink Green", swatchHex: "#986371", image: { src: "/assets/products/caliburn-g3-pro/variant-pink-green-v2.webp", alt: "UWELL Caliburn G3 Pro, Pink Green" } },
+      { id: "frozen-aurora", name: "Frozen Aurora", swatchHex: "#c098a6", image: { src: "/assets/products/caliburn-g3-pro/variant-frozen-aurora-v2.webp", alt: "UWELL Caliburn G3 Pro, Frozen Aurora" } },
+      { id: "frozen-green", name: "Frozen Green", swatchHex: "#7eb9a7", image: { src: "/assets/products/caliburn-g3-pro/variant-frozen-green-v2.webp", alt: "UWELL Caliburn G3 Pro, Frozen Green" } },
+      { id: "golden-purple", name: "Golden Purple", swatchHex: "#736ca3", image: { src: "/assets/products/caliburn-g3-pro/variant-golden-purple-v2.webp", alt: "UWELL Caliburn G3 Pro, Golden Purple" } },
+      { id: "golden-leopard", name: "Golden Leopard", swatchHex: "#948f84", image: { src: "/assets/products/caliburn-g3-pro/variant-golden-leopard-v2.webp", alt: "UWELL Caliburn G3 Pro, Golden Leopard" } },
+      { id: "green-camo", name: "Green Camo", swatchHex: "#4e504c", image: { src: "/assets/products/caliburn-g3-pro/variant-green-camo-v2.webp", alt: "UWELL Caliburn G3 Pro, Green Camo" } },
+      { id: "black-carbon", name: "Black Carbon", swatchHex: "#2b2a2f", image: { src: "/assets/products/caliburn-g3-pro/variant-black-carbon-v2.webp", alt: "UWELL Caliburn G3 Pro, Black Carbon" } },
+      { id: "brown-wood", name: "Brown Wood", swatchHex: "#6f5850", image: { src: "/assets/products/caliburn-g3-pro/variant-brown-wood-v2.webp", alt: "UWELL Caliburn G3 Pro, Brown Wood" } },
+      { id: "black-leather", name: "Black Leather", swatchHex: "#212026", image: { src: "/assets/products/caliburn-g3-pro/variant-black-leather-v2.webp", alt: "UWELL Caliburn G3 Pro, Black Leather" } },
+      { id: "brown-leather", name: "Brown Leather", swatchHex: "#7d483e", image: { src: "/assets/products/caliburn-g3-pro/variant-brown-leather-v2.webp", alt: "UWELL Caliburn G3 Pro, Brown Leather" } },
+      { id: "midnight-black", name: "Midnight Black", swatchHex: "#2e2e36", image: { src: "/assets/products/caliburn-g3-pro/variant-midnight-black-v2.webp", alt: "UWELL Caliburn G3 Pro, Midnight Black" } },
+      { id: "space-gray", name: "Space Gray", swatchHex: "#767581", image: { src: "/assets/products/caliburn-g3-pro/variant-space-gray-v2.webp", alt: "UWELL Caliburn G3 Pro, Space Gray" } },
+      { id: "stone-gray", name: "Stone Gray", swatchHex: "#9e9c9c", image: { src: "/assets/products/caliburn-g3-pro/variant-stone-gray-v2.webp", alt: "UWELL Caliburn G3 Pro, Stone Gray" } },
+      { id: "pacific-blue", name: "Pacific Blue", swatchHex: "#46a7cd", image: { src: "/assets/products/caliburn-g3-pro/variant-pacific-blue-v2.webp", alt: "UWELL Caliburn G3 Pro, Pacific Blue" } },
+      { id: "rose-gold", name: "Rose Gold", swatchHex: "#d4beba", image: { src: "/assets/products/caliburn-g3-pro/variant-rose-gold-v2.webp", alt: "UWELL Caliburn G3 Pro, Rose Gold" } },
+      { id: "emerald-green", name: "Emerald Green", swatchHex: "#9dcdaf", image: { src: "/assets/products/caliburn-g3-pro/variant-emerald-green-v2.webp", alt: "UWELL Caliburn G3 Pro, Emerald Green" } },
     ],
     specifications: [
       { key: "battery", label: "Battery", value: "1000mAh, USB-C 2A charging", sourceStatus: "verified" },
