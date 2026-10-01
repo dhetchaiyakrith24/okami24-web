@@ -1019,48 +1019,48 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g4-classic/card.png",
-        alt: "UWELL Caliburn G4 Classic, classic silver colourway, isolated product shot",
-        angle: "Front, isolated",
+        src: "/assets/products/caliburn-g4-classic/card-v2.webp",
+        alt: "UWELL Caliburn G4 Classic, Classic Silver, three-quarter view",
+        angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from UWELL's own front photo of this model",
         transparentBackground: true,
-        sourceName: "UWELL",
+        sourceName: "OKami24 render (Higgsfield) from UWELL's images",
         sourceUrl: "https://www.myuwell.com/products/caliburn",
       },
     ],
     // Real UWELL color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
     // photo-confirmed: vapesourcing.com + elementvape.com). "Classic Silver" reuses this
     // product's own existing card photo, an exact match.
-    // "All Colors" lineup (owner mandate, 2026-09-03 — global rollout pass) — an OKami24
-    // composite from these same 4 individually-verified photos.
-    lineupImage: {
-      src: "/assets/products/caliburn-g4-classic/lineup.webp",
-      alt: "UWELL Caliburn G4 Classic, all 4 colors",
-      sourceName: "OKami24 composite (from individually-verified retailer photos)",
-    },
+    // Image-sitewide round 01/10 (owner "เดินงานแก้รูปสินค้าให้เสร็จ"): the KOKO method — ONE master (the night Classic Silver
+    // render, same orientation as UWELL's front photo, cut out by Higgsfield) with the body colour moved to each colour of
+    // the shop's old per-colour photos (182x404, too small; their colour matches UWELL's collage mo/spe9.webp). The night
+    // renders of the other colours were not used (Abyss Blue came out light blue; Alpine Green grew a "G" logo). Card-v2 =
+    // the silver photo tilted in 2D. No "ทั้งหมด" image (owner 01/10). Swatches of Abyss Blue / Alpine Green = the body
+    // colour on these photos (the old navy / dark green were off). Scripts: _incoming/image-sitewide/b-uwell/recolour-g4c.js.
+    openOnCardPhoto: true,
     colorVariants: [
       {
         id: "abyss-blue",
         name: "Abyss Blue",
-        swatchHex: "#1e3a5c",
-        image: { src: "/assets/products/caliburn-g4-classic/variant-abyss-blue.webp", alt: "UWELL Caliburn G4 Classic, Abyss Blue" },
+        swatchHex: "#4d636d",
+        image: { src: "/assets/products/caliburn-g4-classic/variant-abyss-blue-v2.webp", alt: "UWELL Caliburn G4 Classic, Abyss Blue" },
       },
       {
         id: "alpine-green",
         name: "Alpine Green",
-        swatchHex: "#3a6b4a",
-        image: { src: "/assets/products/caliburn-g4-classic/variant-alpine-green.webp", alt: "UWELL Caliburn G4 Classic, Alpine Green" },
+        swatchHex: "#678967",
+        image: { src: "/assets/products/caliburn-g4-classic/variant-alpine-green-v2.webp", alt: "UWELL Caliburn G4 Classic, Alpine Green" },
       },
       {
         id: "classic-black",
         name: "Classic Black",
         swatchHex: "#1a1a1a",
-        image: { src: "/assets/products/caliburn-g4-classic/variant-classic-black.webp", alt: "UWELL Caliburn G4 Classic, Classic Black" },
+        image: { src: "/assets/products/caliburn-g4-classic/variant-classic-black-v2.webp", alt: "UWELL Caliburn G4 Classic, Classic Black" },
       },
       {
         id: "classic-silver",
         name: "Classic Silver",
         swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/caliburn-g4-classic/card.png", alt: "UWELL Caliburn G4 Classic, Classic Silver" },
+        image: { src: "/assets/products/caliburn-g4-classic/variant-classic-silver-v2.webp", alt: "UWELL Caliburn G4 Classic, Classic Silver" },
       },
     ],
     specifications: [
