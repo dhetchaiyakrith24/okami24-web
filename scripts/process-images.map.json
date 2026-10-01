@@ -4773,5 +4773,226 @@
   },
   "note": "image-sitewide round 3b (2) 01/10 — the old card is 443x567 (sharpness 1.6, below standard)",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g4m-black.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "black",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Silver front, job 2b9aaf55, from VOOPOO's own Silver render 1254 px) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind) + _incoming/image-sitewide/b-edge/recolour-g4m.js moves the body colour (CIELAB, per height band for the cyan / green / orange gradients) to VOOPOO's render of this colour; LED bars, clear pod untouched; engraved marks take a lighter tone of the body; pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "body colour: VOOPOO's own render of this colour (thevrepublic.com/cdn/shop/files/VOOPOO_ARGUS_G4_MINI_BLACK.png = the shop.voopoo.com photo the old 204 px file came from, at 1254 px); geometry: VOOPOO's Silver render",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g4m-vs-ref.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-black-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g4m-blue.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "blue",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Silver front, job 2b9aaf55, from VOOPOO's own Silver render 1254 px) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind) + _incoming/image-sitewide/b-edge/recolour-g4m.js moves the body colour (CIELAB, per height band for the cyan / green / orange gradients) to VOOPOO's render of this colour; LED bars, clear pod untouched; engraved marks take a lighter tone of the body; pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "body colour: VOOPOO's own render of this colour (thevrepublic.com/cdn/shop/files/VOOPOO_ARGUS_G4_MINI_BLUE.png = the shop.voopoo.com photo the old 204 px file came from, at 1254 px); geometry: VOOPOO's Silver render",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g4m-vs-ref.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-blue-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g4m-cyan.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "cyan",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Silver front, job 2b9aaf55, from VOOPOO's own Silver render 1254 px) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind) + _incoming/image-sitewide/b-edge/recolour-g4m.js moves the body colour (CIELAB, per height band for the cyan / green / orange gradients) to VOOPOO's render of this colour; LED bars, clear pod untouched; engraved marks take a lighter tone of the body; pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "body colour: VOOPOO's own render of this colour (thevrepublic.com/cdn/shop/files/VOOPOO_ARGUS_G4_MINI_CYAN.png = the shop.voopoo.com photo the old 204 px file came from, at 1254 px); geometry: VOOPOO's Silver render",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g4m-vs-ref.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-cyan-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g4m-green.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "green",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Silver front, job 2b9aaf55, from VOOPOO's own Silver render 1254 px) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind) + _incoming/image-sitewide/b-edge/recolour-g4m.js moves the body colour (CIELAB, per height band for the cyan / green / orange gradients) to VOOPOO's render of this colour; LED bars, clear pod untouched; engraved marks take a lighter tone of the body; pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "body colour: VOOPOO's own render of this colour (thevrepublic.com/cdn/shop/files/VOOPOO_ARGUS_G4_MINI_GREEN.png = the shop.voopoo.com photo the old 204 px file came from, at 1254 px); geometry: VOOPOO's Silver render",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g4m-vs-ref.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-green-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g4m-orange.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "orange",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Silver front, job 2b9aaf55, from VOOPOO's own Silver render 1254 px) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind) + _incoming/image-sitewide/b-edge/recolour-g4m.js moves the body colour (CIELAB, per height band for the cyan / green / orange gradients) to VOOPOO's render of this colour; LED bars, clear pod untouched; engraved marks take a lighter tone of the body; pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "body colour: VOOPOO's own render of this colour (thevrepublic.com/cdn/shop/files/VOOPOO_ARGUS_G4_MINI_ORANGE.png = the shop.voopoo.com photo the old 204 px file came from, at 1254 px); geometry: VOOPOO's Silver render",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g4m-vs-ref.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-orange-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g4m-purple.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "purple",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Silver front, job 2b9aaf55, from VOOPOO's own Silver render 1254 px) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind) + _incoming/image-sitewide/b-edge/recolour-g4m.js moves the body colour (CIELAB, per height band for the cyan / green / orange gradients) to VOOPOO's render of this colour; LED bars, clear pod untouched; engraved marks take a lighter tone of the body; pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "body colour: VOOPOO's own render of this colour (thevrepublic.com/cdn/shop/files/VOOPOO_ARGUS_G4_MINI_PURPLE.png = the shop.voopoo.com photo the old 204 px file came from, at 1254 px); geometry: VOOPOO's Silver render",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g4m-vs-ref.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-purple-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g4m-silver.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "silver",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Silver front, job 2b9aaf55, from VOOPOO's own Silver render 1254 px) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind) + _incoming/image-sitewide/b-edge/recolour-g4m.js moves the body colour (CIELAB, per height band for the cyan / green / orange gradients) to VOOPOO's render of this colour; LED bars, clear pod untouched; engraved marks take a lighter tone of the body; pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "body colour: VOOPOO's own render of this colour (thevrepublic.com/cdn/shop/files/VOOPOO_ARGUS_G4_MINI_SILVER.png = the shop.voopoo.com photo the old 204 px file came from, at 1254 px); geometry: VOOPOO's Silver render",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g4m-vs-ref.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-silver-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g4m-tarnish.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "tarnish",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Silver front, job 2b9aaf55, from VOOPOO's own Silver render 1254 px) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind) + _incoming/image-sitewide/b-edge/recolour-g4m.js moves the body colour (CIELAB, per height band for the cyan / green / orange gradients) to VOOPOO's render of this colour; LED bars, clear pod untouched; engraved marks take a lighter tone of the body; pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "body colour: VOOPOO's own render of this colour (thevrepublic.com/cdn/shop/files/VOOPOO_ARGUS_G4_MINI_TARNISH.png = the shop.voopoo.com photo the old 204 px file came from, at 1254 px); geometry: VOOPOO's Silver render",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g4m-vs-ref.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-tarnish-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/card-g4m.png",
+  "slug": "argus-g4-mini",
+  "role": "card",
+  "replaces": "/assets/products/argus-g4-mini/variants/black.webp",
+  "aiRender": {
+   "tool": "the black photo of this set tilted 12 degrees in 2D (_incoming/image-sitewide/tilt-card.js) — no new render; background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind)",
+   "reference": "body colour: VOOPOO's own render of this colour (thevrepublic.com/cdn/shop/files/VOOPOO_ARGUS_G4_MINI_BLACK.png = the shop.voopoo.com photo the old 204 px file came from, at 1254 px); geometry: VOOPOO's Silver render",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g4m-vs-ref.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10); the page opens on one sharp tilted device (openOnCardPhoto)",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/d6-silver.png",
+  "slug": "drag-6",
+  "role": "variant",
+  "id": "silver",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-drag-6-silver.png — each colour has its own side panel, so one render per colour) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind); pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/drag-6/variants/silver.webp, shop.voopoo.com variant-data binding)",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/d6-new.png + _incoming/image-sitewide/b-edge/drag6-pairs.png (VOOPOO / new)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-silver-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/d6-blue.png",
+  "slug": "drag-6",
+  "role": "variant",
+  "id": "blue",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-drag-6-blue.png — each colour has its own side panel, so one render per colour) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind); pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/drag-6/variants/blue.webp, shop.voopoo.com variant-data binding)",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/d6-new.png + _incoming/image-sitewide/b-edge/drag6-pairs.png (VOOPOO / new)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-blue-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/d6-black.png",
+  "slug": "drag-6",
+  "role": "variant",
+  "id": "black",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-drag-6-black.png — each colour has its own side panel, so one render per colour) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind); pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/drag-6/variants/black.webp, shop.voopoo.com variant-data binding)",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/d6-new.png + _incoming/image-sitewide/b-edge/drag6-pairs.png (VOOPOO / new)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-black-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/d6-brown.png",
+  "slug": "drag-6",
+  "role": "variant",
+  "id": "brown",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-drag-6-brown.png — each colour has its own side panel, so one render per colour) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind); pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/drag-6/card.png, shop.voopoo.com variant-data binding)",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/d6-new.png + _incoming/image-sitewide/b-edge/drag6-pairs.png (VOOPOO / new)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-brown-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/d6-red.png",
+  "slug": "drag-6",
+  "role": "variant",
+  "id": "red",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-drag-6-red.png — each colour has its own side panel, so one render per colour) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind); pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/drag-6/variants/red.webp, shop.voopoo.com variant-data binding)",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/d6-new.png + _incoming/image-sitewide/b-edge/drag6-pairs.png (VOOPOO / new)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-red-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/d6-green.png",
+  "slug": "drag-6",
+  "role": "variant",
+  "id": "green",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-drag-6-green.png — each colour has its own side panel, so one render per colour) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind); pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/drag-6/variants/green.webp, shop.voopoo.com variant-data binding)",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/d6-new.png + _incoming/image-sitewide/b-edge/drag6-pairs.png (VOOPOO / new)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-green-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/d6-metal-gray.png",
+  "slug": "drag-6",
+  "role": "variant",
+  "id": "metal-gray",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-drag-6-metal-gray.png — each colour has its own side panel, so one render per colour) + background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind); pre-sized by _incoming/image-sitewide/b-edge/presize-edge.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/drag-6/variants/metal-gray.webp, shop.voopoo.com variant-data binding)",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/d6-new.png + _incoming/image-sitewide/b-edge/drag6-pairs.png (VOOPOO / new)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10)",
+  "fileName": "variant-metal-gray-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/card-d6.png",
+  "slug": "drag-6",
+  "role": "card",
+  "replaces": "/assets/products/drag-6/card.png",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k night 01/10 card render a (Higgs Okm/2026-10-01 night - cards/card-drag-6-a.png, job d4b23c56), Brown, three-quarter view; background: Higgsfield image_background_remover, then _incoming/image-sitewide/b-edge/choke.js (the remover leaves a 5-7 px band of the studio grey round the device = a white rim on the dark site; the matte is pulled in 5 px, colour-blind)",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/drag-6/card.png, shop.voopoo.com variant-data binding)",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/d6-new.png + _incoming/image-sitewide/b-edge/drag6-pairs.png (VOOPOO / new)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10); the page opens on one sharp tilted device (openOnCardPhoto)",
+  "fileName": "card-v2.webp"
  }
 ]

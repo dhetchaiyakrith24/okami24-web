@@ -231,11 +231,11 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/argus-g4-mini/variants/black.webp",
-        alt: "VOOPOO ARGUS G4 mini, Black, isolated product shot",
-        angle: "Front, isolated",
+        src: "/assets/products/argus-g4-mini/card-v2.webp",
+        alt: "VOOPOO ARGUS G4 mini, Black, three-quarter view",
+        angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from VOOPOO's own photos of this model",
         transparentBackground: true,
-        sourceName: "VOOPOO (shop.voopoo.com)",
+        sourceName: "OKami24 render (Higgsfield) from VOOPOO's images",
         sourceUrl: "https://shop.voopoo.com/products/argus-g4-mini",
       },
     ],
@@ -245,15 +245,22 @@ export const voopooProducts: Product[] = [
     // that list. "Tarnish" confirmed correct against a JSON typo ("Tamish") by the box art itself,
     // which reads "Tarnish." Card switched from the old "lilac" photo (never a confirmed match to
     // any of these 8 real names) to "Black."
+    // Image-sitewide round 3b (1) edge defects, 01/10 (owner: white rim on the old 204 px cut-outs): the KOKO method — ONE
+    // master (a 4K Silver render from VOOPOO's own 1254 px Silver render) with the body colour moved to VOOPOO's render of
+    // each colour, per height band for the Cyan / Green / Orange gradients, so a swipe changes only the colour. Card-v2 =
+    // the Black photo tilted in 2D. Swatches = the body colour on VOOPOO's renders. Scripts: _incoming/image-sitewide/b-edge/
+    // (recolour-g4m.js, choke.js, presize-edge.js). The old all-colours lineup stays until the new pod-system all-colours
+    // image (IMAGE_SPEC §0 item 5, owner 01/10 evening) is drafted.
+    openOnCardPhoto: true,
     colorVariants: [
-      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/argus-g4-mini/variants/black.webp", alt: "VOOPOO ARGUS G4 mini, Black" } },
-      { id: "green", name: "Green", swatchHex: "#4a8a5c", image: { src: "/assets/products/argus-g4-mini/variants/green.webp", alt: "VOOPOO ARGUS G4 mini, Green" } },
-      { id: "orange", name: "Orange", swatchHex: "#d4692a", image: { src: "/assets/products/argus-g4-mini/variants/orange.webp", alt: "VOOPOO ARGUS G4 mini, Orange" } },
-      { id: "purple", name: "Purple", swatchHex: "#6b4a8e", image: { src: "/assets/products/argus-g4-mini/variants/purple.webp", alt: "VOOPOO ARGUS G4 mini, Purple" } },
-      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/argus-g4-mini/variants/silver.webp", alt: "VOOPOO ARGUS G4 mini, Silver" } },
-      { id: "tarnish", name: "Tarnish", swatchHex: "#8a7a5c", image: { src: "/assets/products/argus-g4-mini/variants/tarnish.webp", alt: "VOOPOO ARGUS G4 mini, Tarnish" } },
-      { id: "cyan", name: "Cyan", swatchHex: "#3ab5c6", image: { src: "/assets/products/argus-g4-mini/variants/cyan.webp", alt: "VOOPOO ARGUS G4 mini, Cyan" } },
-      { id: "blue", name: "Blue", swatchHex: "#2a6fbd", image: { src: "/assets/products/argus-g4-mini/variants/blue.webp", alt: "VOOPOO ARGUS G4 mini, Blue" } },
+      { id: "black", name: "Black", swatchHex: "#333435", image: { src: "/assets/products/argus-g4-mini/variant-black-v2.webp", alt: "VOOPOO ARGUS G4 mini, Black" } },
+      { id: "green", name: "Green", swatchHex: "#8cd5c6", image: { src: "/assets/products/argus-g4-mini/variant-green-v2.webp", alt: "VOOPOO ARGUS G4 mini, Green" } },
+      { id: "orange", name: "Orange", swatchHex: "#e78b5a", image: { src: "/assets/products/argus-g4-mini/variant-orange-v2.webp", alt: "VOOPOO ARGUS G4 mini, Orange" } },
+      { id: "purple", name: "Purple", swatchHex: "#b7b2d6", image: { src: "/assets/products/argus-g4-mini/variant-purple-v2.webp", alt: "VOOPOO ARGUS G4 mini, Purple" } },
+      { id: "silver", name: "Silver", swatchHex: "#c4c4c4", image: { src: "/assets/products/argus-g4-mini/variant-silver-v2.webp", alt: "VOOPOO ARGUS G4 mini, Silver" } },
+      { id: "tarnish", name: "Tarnish", swatchHex: "#898a8f", image: { src: "/assets/products/argus-g4-mini/variant-tarnish-v2.webp", alt: "VOOPOO ARGUS G4 mini, Tarnish" } },
+      { id: "cyan", name: "Cyan", swatchHex: "#37bde4", image: { src: "/assets/products/argus-g4-mini/variant-cyan-v2.webp", alt: "VOOPOO ARGUS G4 mini, Cyan" } },
+      { id: "blue", name: "Blue", swatchHex: "#bac9e6", image: { src: "/assets/products/argus-g4-mini/variant-blue-v2.webp", alt: "VOOPOO ARGUS G4 mini, Blue" } },
     ],
     // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 8
     // individually-verified shop.voopoo.com photos above.
@@ -535,11 +542,11 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-6/card.png",
-        alt: "VOOPOO DRAG 6, brown colourway, isolated product shot",
-        angle: "Front, isolated (cropped to remove third-party review-site award badges)",
-        transparentBackground: false,
-        sourceName: "VOOPOO",
+        src: "/assets/products/drag-6/card-v2.webp",
+        alt: "VOOPOO DRAG 6, Brown, three-quarter view",
+        angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from VOOPOO's own photos of this model",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from VOOPOO's images",
         sourceUrl: "https://www.voopoo.com/drag-series/drag-6",
       },
     ],
@@ -548,19 +555,26 @@ export const voopooProducts: Product[] = [
     // binding each color option to its own `featured_media_id` — the same official color→photo
     // mapping the live page itself uses to swap images on click, not a guess. Tier-1. Each photo
     // was a real box+device studio pair; cropped to the device half, background removed.
+    // Image-sitewide round 3b (1) edge defects, 01/10 (owner: white rim / pixelated 160 px card): every colour = a 4K
+    // Higgsfield render of that colour (each has its own side panel — carbon, camo, denim, chevron — so no recolour),
+    // cut out and its matte pulled in 5 px (the remover leaves a grey rim); card-v2 = a three-quarter Brown render.
+    // Swatches of Blue / Red / Green = the frame colour on VOOPOO's photos (the old deep blue was off: the body is pale
+    // blue). Scripts: _incoming/image-sitewide/b-edge/ (choke.js, presize-edge.js). The old all-colours lineup stays
+    // until the new all-colours image (IMAGE_SPEC §0 item 5) is drafted.
+    openOnCardPhoto: true,
     colorVariants: [
-      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variants/silver.webp", alt: "VOOPOO DRAG 6, Silver" } },
-      { id: "blue", name: "Blue", swatchHex: "#2a6fbd", image: { src: "/assets/products/drag-6/variants/blue.webp", alt: "VOOPOO DRAG 6, Blue" } },
-      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/drag-6/variants/black.webp", alt: "VOOPOO DRAG 6, Black" } },
+      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variant-silver-v2.webp", alt: "VOOPOO DRAG 6, Silver" } },
+      { id: "blue", name: "Blue", swatchHex: "#ccd6dc", image: { src: "/assets/products/drag-6/variant-blue-v2.webp", alt: "VOOPOO DRAG 6, Blue" } },
+      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/drag-6/variant-black-v2.webp", alt: "VOOPOO DRAG 6, Black" } },
       {
         id: "brown",
         name: "Brown",
         swatchHex: "#5c4433",
-        image: { src: "/assets/products/drag-6/card.png", alt: "VOOPOO DRAG 6, Brown" },
+        image: { src: "/assets/products/drag-6/variant-brown-v2.webp", alt: "VOOPOO DRAG 6, Brown" },
       },
-      { id: "red", name: "Red", swatchHex: "#b83a3a", image: { src: "/assets/products/drag-6/variants/red.webp", alt: "VOOPOO DRAG 6, Red" } },
-      { id: "green", name: "Green", swatchHex: "#4a8a5c", image: { src: "/assets/products/drag-6/variants/green.webp", alt: "VOOPOO DRAG 6, Green" } },
-      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variants/metal-gray.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
+      { id: "red", name: "Red", swatchHex: "#d64a4e", image: { src: "/assets/products/drag-6/variant-red-v2.webp", alt: "VOOPOO DRAG 6, Red" } },
+      { id: "green", name: "Green", swatchHex: "#77b190", image: { src: "/assets/products/drag-6/variant-green-v2.webp", alt: "VOOPOO DRAG 6, Green" } },
+      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variant-metal-gray-v2.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
     ],
     // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
     // individually-verified shop.voopoo.com photos above.
