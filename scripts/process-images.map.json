@@ -4760,5 +4760,18 @@
   },
   "note": "image-sitewide round 3b (1) 01/10 — VOOPOO's photos are ~300x520 (blurry at hero size); one sharp render per finish",
   "fileName": "variant-black-metal-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/card-zero-nano.png",
+  "slug": "zero-nano",
+  "role": "card",
+  "replaces": "/assets/products/zero-nano/card.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 card render \"a\" (Higgs Okm/2026-10-01 night - cards/card-zero-nano-a.png, job b1778b67-3332-4755-99d7-e96a64d2c2c9) — same 3/4 pose as SALTHUB's photo, M-bolt logo the right way round; cut by scripts/flatcut.js, strays cleared and teal moved to SALTHUB's photo by _incoming/image-sitewide/b-voopoo/zero-nano.js",
+   "reference": "SALTHUB's own photo (/assets/products/zero-nano/card.webp, 443x567)",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/zn-cmp.png (SALTHUB / new on dark / new on magenta)"
+  },
+  "note": "image-sitewide round 3b (2) 01/10 — the old card is 443x567 (sharpness 1.6, below standard)",
+  "fileName": "card-v2.webp"
  }
 ]
