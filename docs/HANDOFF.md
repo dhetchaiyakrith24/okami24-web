@@ -17,13 +17,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   GitHub checks green · self-merge-check BIG) [ตรวจแล้ว]; deploy 36935743985, live [ตรวจแล้ว — curl: 9/9 new files 200, page
   serves them]. Then #186 `629f612` (the 7-baseline-page hold lifted — TEAM_RULES 13.5/13.7/13.8 + §18; checker PASS after 1
   fix round · BIG) [ตรวจแล้ว].
-2 OPEN PR #187 `img-g5-card-upright` (`git log --oneline origin/main..origin/img-g5-card-upright`, 3 commits): (a) owner 02/10
-  "การ์ดเอาแบบตรงเหมือนเดิมดีกว่า" → card-v3.webp = the upright UWELL render, 4:5 + `openOnCardPhoto: true` (the page opens on
-  it; colours stay tilted) · (b) set 1: lineup-v2.webp for G4 / G5 Lite / G5 Lite SE in the G5 layout (`_incoming/image-sitewide/
-  set1/` crop.js + poster.js). Proof in `set1/proof/`: head-check 7/7 same · visible-text 9 changes, all = G5 label loses "Mystic
-  Forest" (opens with no colour picked) · shots `shots/cmp-390.png` / `cmp-1440.png`. AT HANDOFF: gallery-probe both modes and
-  the checker were still running [ตรวจแล้ว] — next chat: read the PR (checker result in this chat if it finished; else run checker
-  with `set1/checker-brief.md`), all green → merge (13.7), curl the live files, send the owner the shots. Test server may be UP.
+  Then #187 `37deacf` (owner "การ์ดเอาแบบตรงเหมือนเดิมดีกว่า": G5 card-v3 = the upright UWELL render + `openOnCardPhoto`; set 1
+  lineup-v2 for G4 / G5 Lite / G5 Lite SE in the G5 layout) (checker PASS 4/4 · gallery-probe both modes 45/61, 0 FLASH/STUCK ·
+  BIG) [ตรวจแล้ว]; deploy 36942605379, live [ตรวจแล้ว — curl: card-v3 + 3 lineups 200, pages serve them].
+  CHECKPOINT tag `checkpoint-g5-0210` → 37deacf (owner 02/10: guard against the chat compacting). DELETE IT when this chat's
+  image work ends — remind the owner (`git tag -d checkpoint-g5-0210 && git push origin :refs/tags/checkpoint-g5-0210`).
+  TEMPORARY RULINGS — THIS CHAT ONLY, end when it ends (owner 02/10 late, 13.6): Higgsfield credits without asking · no chat move
+  at 700k, no self-compact unless it makes the work more accurate · new layouts go live reversibly, the owner reviews next day ·
+  baseline pages: images only (title/meta/H1/JSON-LD wait for the SEO round).
+2 ahead of main: `git log --oneline origin/main..<branch>` — only open PRs of this chat, if any [ตรวจแล้ว — git].
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
   VOOPOO `b-voopoo/`, coils `b-coils/`).
@@ -74,7 +76,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   — set 2 is now lineups only, no re-tilt): (0) Caliburn G5 done (card upright PR). NEXT = set 1 UWELL: G5 Lite (8) · G5 Lite SE
   (8) · G4 Pro (8) · G4 (8) · G4 mini (12) from UWELL's own per-colour files (`g5/maker-renders.md`) — card upright, colours
   tilted, lineup poster (a layout per brand); then sets 2–6. The old list below = the items those sets absorb.
-  Set 1 status: G4 / G5 Lite / G5 Lite SE lineups = #187. LEFT: G4 Pro (UWELL files = front+back PAIRS `color-1..8`, no lineup
+  Set 1 status: G4 / G5 Lite / G5 Lite SE lineups live (#187). LEFT: G4 Pro (UWELL files = front+back PAIRS `color-1..8`, no lineup
   today — a pair-per-colour poster or the screen-front device only; decide by draft) · G4 mini (12 singles `pc/1..12`, side view;
   12 is many — two groups like G3 Pro, or one). Sources downloaded: `set1/src/`. Colour images of set 1 are UWELL renders
   already = not re-tilted (owner "เอาไว้ก่อน").
