@@ -12,11 +12,13 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
 
-1 main: `git fetch && git log -1 --oneline origin/main` — image round batch 6 = PR #162 MERGED `1d74ed8` [ตรวจแล้ว — gh],
-  deploy run 36784807028 success [ตรวจแล้ว — gh]; live: INFY 22 v2 flavour files + M Bar 10K card-v2 [ตรวจแล้ว — curl].
-  INFY 20K v2 photos · M Bar 10K opens on the card · Thai copy RELX Creator/INFY + THAI_STYLE words. Undo = revert its
-  merge commit (5 commits, each revertable). Housekeeping round closed at PR #160/#161 (tag `housekeeping-01-10-done`).
-2 ahead of main: nothing unchecked. smogz-rules: nothing open.
+1 main: `git fetch && git log -1 --oneline origin/main` — 3b (b) = PR #165 MERGED `818249e` [ตรวจแล้ว — gh], checker PASS
+  9/9 on 47e623d, deploy run 36842705881 success, live serves the -v2 sets of both pages + G4 Pro KOKO card-v2 on the
+  caliburn-g5 related box [ตรวจแล้ว — curl 16:31]. Caliburn G4 Pro KOKO 9 colours + G3 Pro KOKO 8 colours from ONE master
+  each (the night G4 render was a MIRROR image — flopped, screen + logo mirrored back; `_incoming/image-sitewide/b-uwell/`
+  recolour-g4k.js / recolour-g3k.js / masks.js), open on a tilted card, no "ทั้งหมด". Undo = revert its merge commit.
+2 ahead of main: PR #166 (branch img-no-allcolours) — lineupImage removed from the six round pages (owner "1 ตอนนี้เอาออก
+  ก่อน") + this docs commit; checker not yet run at the time of writing. smogz-rules: nothing open.
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`). Batch 6 (01/10, tier B) = PR #162 — gates [ตรวจแล้ว — logs `verify-b6/`]: tsc 0 · eslint 0 ·
   verify:catalog 29/29 · scan.js 0/107 · locale 0 · wordbreak 0 · visible-text 26 groups all explained
@@ -38,14 +40,17 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   muro-3ml (490 px — model source unclear, skipped) · m-bar-15k (duplicate record, 3b c) · joiway-f4 / relx-creator (low
   detail score, sizes fine) [เชื่อว่า — by eye]. `edge-scan.ts` = metric does NOT work — do not trust it.
 3b NEXT — ORDER (owner 01/10 "ทำตัวอื่นที่ยังไม่ใช่ Esko จากนั้นเมื่อเสร็จแล้วค่อย Esko ต่อ"): (b) first, then (c) (d) when
-  their dates allow, Esko (a) LAST. Owner OK'd (b)'s plan (first sheet before any page photo changes). (a) Esko pod-159: the 18 manufacturer flavours show "หมด" because their Shipnity status is
+  their dates allow, Esko (a) LAST. (b) DONE (PR #165). Back views of G4 Pro KOKO Desert Gold / Golden Carbon (GPT Image,
+  880x1168, "a" files = CALIBURN placed as on UWELL's banner) stored in `Higgs Okm/2026-10-01 G4 Pro KOKO back views/`, NOT
+  on the site (no slot for a second view per colour yet). Higgsfield balance 2.6 credits [ตรวจแล้ว — balance tool]; 4K =
+  4 credits, nano 2K = 2, gpt_image_2_5 = 0.25. Next photos (owner "เดินงานแก้รูปสินค้าให้เสร็จ"): G4 Classic · Argus G3
+  mini · Argus P3 · Zero Nano · coils — the KOKO method (one master + recolour from the maker's per-colour images, 0
+  credits); G4 Classic night renders have the wrong Abyss Blue (light blue vs the site's grey-teal) = find the maker's
+  colour first. (a) Esko pod-159: the 18 manufacturer flavours show "หมด" because their Shipnity status is
   `unknown` (PilotProductDetail / ProductMasterVariantPicker / catalog-resolver treat non-"in-stock" as out) — owner
   ruling §18: show them as available — a stock/cart change = 13.7 big (2), full set, own PR; also record the ruling in
-  BSOT §21 (the pod-159 block, ~line 610). NOT done yet. (b) G4 Pro KOKO / G3 Pro KOKO / G3 Pro: pick the best
-  official-based renders per colour (`Higgs Okm/2026-10-01 night - from UWELL official/`, prefixes officialonly* / tilt* /
-  official*), send the owner a first sheet, then replace the page photos (new names, IMAGE_SPEC §0 item 7 map entries).
-  Other photos below the standard: clean official originals first (researcher; myuwell.com loads colour images by script;
-  shop.voopoo.com answered 403 [ตรวจแล้ว — curl 01/10]) — then Higgsfield. (c) BATCH 3 on 06/10 (argus-g4 + Argus Multi-Ohm) + M Bar 15K duplicate
+  BSOT §21 (the pod-159 block, ~line 610). NOT done yet. UWELL per-colour files: files.myuwell.com/uwell/product/<slug>/pc/
+  color-N.webp (G4 Pro KOKO has 1–9; G3 Pro KOKO / G3 Pro 404) · shop.voopoo.com answered 403 [ตรวจแล้ว — curl 01/10]. (c) BATCH 3 on 06/10 (argus-g4 + Argus Multi-Ohm) + M Bar 15K duplicate
   record (= M Switch Kit; baseline page until 05/10). (d) BATCH 5 rest of the site (planner first). TFIT M Power (hidden):
   owner "ตัดสินใจได้เลย" → queued in batch 5 after a researcher confirms the model (not rendered 01/10: source unclear).
   At the round close: `npx tsx scripts/asset-refs.ts` for unreferenced product photos (INFY v1 files are now unused).
@@ -64,9 +69,13 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   - `_incoming/` folders moved out 01/10 to `C:\Users\dhetc\OKami24-เก็บ\incoming-01-10\` (not deleted).
   - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
   - Carried ideas: card sweep on 4:5 · ARTICLE round · category-structure round.
+  - The all-options image ("ทั้งหมด") comes back later in a new form — the OWNER reopens it (01/10); until then none is made.
+  - Unreferenced since 01/10 (sweep at the round close): the six round lineups, G3 Pro KOKO lineup.webp + old variant files,
+    G4 Pro KOKO old variant files (card.png stays — the home Scene2 uses it).
 6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Latest light set: PR #162 — scan.js 0/107 · verify:catalog 29/29 · gallery-probe 45/45 both modes.
+  Latest light set: PR #165 — scan.js 0/107 · verify:catalog 29/29 · sharpness gate 19/19 · html-diff live vs local 93/107
+  identical (rest explained) · gallery-probe normal mode whole sitemap 0 FLASH/STUCK, both modes on the 2 pages.
 ```
 
 ## 17. Tools and standing technical rules (not state — open when needed)
@@ -151,8 +160,11 @@ Creator 20K + Muro Connector ("ร้านยืนยัน") · Esko Bar Swit
 
 **01/10 (owner, chat):** Esko pod-159 — show every flavour as available for now, no "หมด" badge ("โชว์ทุกกลิ่นว่ามีของไปก่อน") ·
 UWELL G4 Pro KOKO — UWELL's own site is the reference for its look ("อ้างอิงเว็บหลักได้เลย") · M Bar 10K opens on the card ·
-จอพิกเซล / หน้าอีโมจิ approved (THAI_STYLE §3).
+จอพิกเซล / หน้าอีโมจิ approved (THAI_STYLE §3) · later the same day: the KOKO sheet "ทำเลย" · the G4 Pro KOKO card may change
+the caliburn-g5 baseline page's related box ("ไม่รอผล ทำเลย") · Desert Gold / Golden Carbon back views via Higgsfield (stored,
+not on the site) · leftover credits = next in the queue, unclear source = skip.
 
 **Images:** the first photo of a multi-option product = one sharp single device, Caliburn style; other colours/flavours
-by swipe (IMAGE_SPEC §0 item 5 — products already on a fan: ask before changing) · every product gets an SEO article in
-"more details" = its own later round.
+by swipe (IMAGE_SPEC §0 item 5) · NO all-options image / "ทั้งหมด" chip on pages that got the new sets — the round's
+stage-arc / fan lineups were removed 01/10 ("1 ตอนนี้เอาออกก่อน … จะกลับมาทำใหม่ภายหลัง" — the owner reopens it, not us) ·
+every product gets an SEO article in "more details" = its own later round.
