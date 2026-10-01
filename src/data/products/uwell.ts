@@ -99,6 +99,11 @@ export const uwellProducts: Product[] = [
     // pattern attempts during the QC recovery pass) — built as an OKami24 composite instead, from
     // these same 7 individually-verified real photos (Mystic Forest re-trimmed for scale
     // consistency; the other 6 were already tightly trimmed). Real photos only, nothing invented.
+    // Image-sitewide round 3b (0), 02/10 (owner: "Focus Caliburn 5 ทุกสี ทุกรูป รูปรวม"): all seven colours now use
+    // UWELL's own per-colour renders from the G5 page ("Pick Your Vibe",
+    // files.myuwell.com/uwell/product/caliburn-g5/pc/pic9-<n>-product.webp) — the gascityvapes cut-outs above had broken
+    // pod edges and patch marks. Mystic Forest = the same render as card.png (which stays the card), at full size so
+    // every colour swipes at one scale. Mapping in scripts/process-images.map.json (*-v2.webp, lesson พ6).
     lineupImage: {
       src: "/assets/products/caliburn-g5/lineup.webp",
       alt: "UWELL Caliburn G5, all 7 colors",
@@ -109,43 +114,43 @@ export const uwellProducts: Product[] = [
         id: "mystic-forest",
         name: "Mystic Forest",
         swatchHex: "#2d5240",
-        image: { src: "/assets/products/caliburn-g5/card.png", alt: "UWELL Caliburn G5, Mystic Forest" },
+        image: { src: "/assets/products/caliburn-g5/variant-mystic-forest-v2.webp", alt: "UWELL Caliburn G5, Mystic Forest" },
       },
       {
         id: "black-carbon",
         name: "Black Carbon",
         swatchHex: "#1a1a1a",
-        image: { src: "/assets/products/caliburn-g5/variant-black-carbon.webp", alt: "UWELL Caliburn G5, Black Carbon" },
+        image: { src: "/assets/products/caliburn-g5/variant-black-carbon-v2.webp", alt: "UWELL Caliburn G5, Black Carbon" },
       },
       {
         id: "navy-ripples",
         name: "Navy Ripples",
         swatchHex: "#1b2a4a",
-        image: { src: "/assets/products/caliburn-g5/variant-navy-ripples.webp", alt: "UWELL Caliburn G5, Navy Ripples" },
+        image: { src: "/assets/products/caliburn-g5/variant-navy-ripples-v2.webp", alt: "UWELL Caliburn G5, Navy Ripples" },
       },
       {
         id: "orange-feathers",
         name: "Orange Feathers",
         swatchHex: "#d4692a",
-        image: { src: "/assets/products/caliburn-g5/variant-orange-feathers.webp", alt: "UWELL Caliburn G5, Orange Feathers" },
+        image: { src: "/assets/products/caliburn-g5/variant-orange-feathers-v2.webp", alt: "UWELL Caliburn G5, Orange Feathers" },
       },
       {
         id: "black-gold",
         name: "Black Gold",
         swatchHex: "#3d3320",
-        image: { src: "/assets/products/caliburn-g5/variant-black-gold.webp", alt: "UWELL Caliburn G5, Black Gold" },
+        image: { src: "/assets/products/caliburn-g5/variant-black-gold-v2.webp", alt: "UWELL Caliburn G5, Black Gold" },
       },
       {
         id: "aurora-feathers",
         name: "Aurora Feathers",
         swatchHex: "#7a5c9e",
-        image: { src: "/assets/products/caliburn-g5/variant-aurora-feathers.webp", alt: "UWELL Caliburn G5, Aurora Feathers" },
+        image: { src: "/assets/products/caliburn-g5/variant-aurora-feathers-v2.webp", alt: "UWELL Caliburn G5, Aurora Feathers" },
       },
       {
         id: "silver-marble",
         name: "Silver Marble",
         swatchHex: "#b8bcc0",
-        image: { src: "/assets/products/caliburn-g5/variant-silver-marble.webp", alt: "UWELL Caliburn G5, Silver Marble" },
+        image: { src: "/assets/products/caliburn-g5/variant-silver-marble-v2.webp", alt: "UWELL Caliburn G5, Silver Marble" },
       },
     ],
     specifications: [

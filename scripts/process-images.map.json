@@ -5215,5 +5215,68 @@
   },
   "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32); replaces the retailer Pacific Blue cut-out (edge defect, lesson พ10)",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/g5/official/mystic-forest.webp",
+  "slug": "caliburn-g5",
+  "role": "variant",
+  "id": "mystic-forest",
+  "replaces": "/assets/products/caliburn-g5/card.png",
+  "note": "image-sitewide round 3b (0) 02/10 — UWELL official render files.myuwell.com/uwell/product/caliburn-g5/pc/pic9-1-product.webp (the same render as card.png, which stays the card — full size so every colour swipes at one scale)",
+  "fileName": "variant-mystic-forest-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/g5/official/black-carbon.webp",
+  "slug": "caliburn-g5",
+  "role": "variant",
+  "id": "black-carbon",
+  "replaces": "/assets/products/caliburn-g5/variant-black-carbon.webp",
+  "note": "image-sitewide round 3b (0) 02/10 — UWELL official render files.myuwell.com/uwell/product/caliburn-g5/pc/pic9-2-product.webp (replaces the gascityvapes cut-out: broken pod edges)",
+  "fileName": "variant-black-carbon-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/g5/official/navy-ripples.webp",
+  "slug": "caliburn-g5",
+  "role": "variant",
+  "id": "navy-ripples",
+  "replaces": "/assets/products/caliburn-g5/variant-navy-ripples.webp",
+  "note": "image-sitewide round 3b (0) 02/10 — UWELL official render files.myuwell.com/uwell/product/caliburn-g5/pc/pic9-3-product.webp (replaces the gascityvapes cut-out: broken pod edges)",
+  "fileName": "variant-navy-ripples-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/g5/official/orange-feathers.webp",
+  "slug": "caliburn-g5",
+  "role": "variant",
+  "id": "orange-feathers",
+  "replaces": "/assets/products/caliburn-g5/variant-orange-feathers.webp",
+  "note": "image-sitewide round 3b (0) 02/10 — UWELL official render files.myuwell.com/uwell/product/caliburn-g5/pc/pic9-4-product.webp (replaces the gascityvapes cut-out: broken pod edges)",
+  "fileName": "variant-orange-feathers-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/g5/official/black-gold.webp",
+  "slug": "caliburn-g5",
+  "role": "variant",
+  "id": "black-gold",
+  "replaces": "/assets/products/caliburn-g5/variant-black-gold.webp",
+  "note": "image-sitewide round 3b (0) 02/10 — UWELL official render files.myuwell.com/uwell/product/caliburn-g5/pc/pic9-5-product.webp (replaces the gascityvapes cut-out: broken pod edges)",
+  "fileName": "variant-black-gold-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/g5/official/aurora-feathers.webp",
+  "slug": "caliburn-g5",
+  "role": "variant",
+  "id": "aurora-feathers",
+  "replaces": "/assets/products/caliburn-g5/variant-aurora-feathers.webp",
+  "note": "image-sitewide round 3b (0) 02/10 — UWELL official render files.myuwell.com/uwell/product/caliburn-g5/pc/pic9-6-product.webp (replaces the gascityvapes cut-out: broken pod edges)",
+  "fileName": "variant-aurora-feathers-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/g5/official/silver-marble.webp",
+  "slug": "caliburn-g5",
+  "role": "variant",
+  "id": "silver-marble",
+  "replaces": "/assets/products/caliburn-g5/variant-silver-marble.webp",
+  "note": "image-sitewide round 3b (0) 02/10 — UWELL official render files.myuwell.com/uwell/product/caliburn-g5/pc/pic9-7-product.webp (replaces the gascityvapes cut-out: broken pod edges)",
+  "fileName": "variant-silver-marble-v2.webp"
  }
 ]
