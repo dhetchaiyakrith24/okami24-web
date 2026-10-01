@@ -4539,5 +4539,135 @@
   },
   "note": "image-sitewide round 3b (b) 01/10 — the page opens on one sharp tilted device (openOnCardPhoto)",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/g3m-sky-blue.png",
+  "slug": "argus-g3-mini",
+  "role": "variant",
+  "id": "sky-blue",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Sky Blue render, Higgs Okm/2026-10-01 night - colours/colour-argus-g3-mini-sky-blue.png — same orientation as VOOPOO's photos) cut by scripts/flatcut.js + _incoming/image-sitewide/b-voopoo/recolour-g3m.js moves the body colour (CIELAB) to this colour; clear pod, side buttons and the white LED slit untouched; pre-sized by _incoming/image-sitewide/b-voopoo/presize-g3m.js",
+   "reference": "body colour: VOOPOO's own photo of this colour (/assets/products/argus-g3-mini/variants/sky-blue.webp, shop.voopoo.com); geometry: the same photo",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/g3m-fid-1.png + _incoming/image-sitewide/b-voopoo/g3m-fid-2.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — one master for every colour so only the body colour changes when a customer swipes; replaces VOOPOO's 250x500 per-colour photo",
+  "fileName": "variant-sky-blue-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/g3m-grass-green.png",
+  "slug": "argus-g3-mini",
+  "role": "variant",
+  "id": "grass-green",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Sky Blue render, Higgs Okm/2026-10-01 night - colours/colour-argus-g3-mini-sky-blue.png — same orientation as VOOPOO's photos) cut by scripts/flatcut.js + _incoming/image-sitewide/b-voopoo/recolour-g3m.js moves the body colour (CIELAB) to this colour; clear pod, side buttons and the white LED slit untouched; pre-sized by _incoming/image-sitewide/b-voopoo/presize-g3m.js",
+   "reference": "body colour: VOOPOO's own photo of this colour (/assets/products/argus-g3-mini/variants/grass-green.webp, shop.voopoo.com); geometry: the same photo",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/g3m-fid-1.png + _incoming/image-sitewide/b-voopoo/g3m-fid-2.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — one master for every colour so only the body colour changes when a customer swipes; replaces VOOPOO's 250x500 per-colour photo",
+  "fileName": "variant-grass-green-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/g3m-midnight-black.png",
+  "slug": "argus-g3-mini",
+  "role": "variant",
+  "id": "midnight-black",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Sky Blue render, Higgs Okm/2026-10-01 night - colours/colour-argus-g3-mini-sky-blue.png — same orientation as VOOPOO's photos) cut by scripts/flatcut.js + _incoming/image-sitewide/b-voopoo/recolour-g3m.js moves the body colour (CIELAB) to this colour; clear pod, side buttons and the white LED slit untouched; pre-sized by _incoming/image-sitewide/b-voopoo/presize-g3m.js",
+   "reference": "body colour: VOOPOO's own photo of this colour (/assets/products/argus-g3-mini/variants/midnight-black.webp, shop.voopoo.com); geometry: the same photo",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/g3m-fid-1.png + _incoming/image-sitewide/b-voopoo/g3m-fid-2.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — one master for every colour so only the body colour changes when a customer swipes; replaces VOOPOO's 250x500 per-colour photo",
+  "fileName": "variant-midnight-black-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/g3m-space-gray.png",
+  "slug": "argus-g3-mini",
+  "role": "variant",
+  "id": "space-gray",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Sky Blue render, Higgs Okm/2026-10-01 night - colours/colour-argus-g3-mini-sky-blue.png — same orientation as VOOPOO's photos) cut by scripts/flatcut.js + _incoming/image-sitewide/b-voopoo/recolour-g3m.js moves the body colour (CIELAB) to this colour; clear pod, side buttons and the white LED slit untouched; pre-sized by _incoming/image-sitewide/b-voopoo/presize-g3m.js",
+   "reference": "body colour: VOOPOO's own photo of this colour (/assets/products/argus-g3-mini/variants/space-gray.webp, shop.voopoo.com); geometry: the same photo",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/g3m-fid-1.png + _incoming/image-sitewide/b-voopoo/g3m-fid-2.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — one master for every colour so only the body colour changes when a customer swipes; replaces VOOPOO's 250x500 per-colour photo",
+  "fileName": "variant-space-gray-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/g3m-moonlight-silver.png",
+  "slug": "argus-g3-mini",
+  "role": "variant",
+  "id": "moonlight-silver",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Sky Blue render, Higgs Okm/2026-10-01 night - colours/colour-argus-g3-mini-sky-blue.png — same orientation as VOOPOO's photos) cut by scripts/flatcut.js + _incoming/image-sitewide/b-voopoo/recolour-g3m.js moves the body colour (CIELAB) to this colour; clear pod, side buttons and the white LED slit untouched; pre-sized by _incoming/image-sitewide/b-voopoo/presize-g3m.js",
+   "reference": "body colour: VOOPOO's own photo of this colour (/assets/products/argus-g3-mini/variants/moonlight-silver.webp, shop.voopoo.com); geometry: the same photo",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/g3m-fid-1.png + _incoming/image-sitewide/b-voopoo/g3m-fid-2.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — one master for every colour so only the body colour changes when a customer swipes; replaces VOOPOO's 250x500 per-colour photo",
+  "fileName": "variant-moonlight-silver-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/g3m-scarlet-red.png",
+  "slug": "argus-g3-mini",
+  "role": "variant",
+  "id": "scarlet-red",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Sky Blue render, Higgs Okm/2026-10-01 night - colours/colour-argus-g3-mini-sky-blue.png — same orientation as VOOPOO's photos) cut by scripts/flatcut.js + _incoming/image-sitewide/b-voopoo/recolour-g3m.js moves the body colour (CIELAB) to this colour; clear pod, side buttons and the white LED slit untouched; pre-sized by _incoming/image-sitewide/b-voopoo/presize-g3m.js",
+   "reference": "body colour: VOOPOO's own photo of this colour (/assets/products/argus-g3-mini/variants/scarlet-red.webp, shop.voopoo.com); geometry: the same photo",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/g3m-fid-1.png + _incoming/image-sitewide/b-voopoo/g3m-fid-2.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — one master for every colour so only the body colour changes when a customer swipes; replaces VOOPOO's 250x500 per-colour photo",
+  "fileName": "variant-scarlet-red-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/g3m-rose-gold.png",
+  "slug": "argus-g3-mini",
+  "role": "variant",
+  "id": "rose-gold",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Sky Blue render, Higgs Okm/2026-10-01 night - colours/colour-argus-g3-mini-sky-blue.png — same orientation as VOOPOO's photos) cut by scripts/flatcut.js + _incoming/image-sitewide/b-voopoo/recolour-g3m.js moves the body colour (CIELAB) to this colour; clear pod, side buttons and the white LED slit untouched; pre-sized by _incoming/image-sitewide/b-voopoo/presize-g3m.js",
+   "reference": "body colour: VOOPOO's own photo of this colour (/assets/products/argus-g3-mini/variants/rose-gold.webp, shop.voopoo.com); geometry: the same photo",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/g3m-fid-1.png + _incoming/image-sitewide/b-voopoo/g3m-fid-2.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — one master for every colour so only the body colour changes when a customer swipes; replaces VOOPOO's 250x500 per-colour photo",
+  "fileName": "variant-rose-gold-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/g3m-lilac-purple.png",
+  "slug": "argus-g3-mini",
+  "role": "variant",
+  "id": "lilac-purple",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Sky Blue render, Higgs Okm/2026-10-01 night - colours/colour-argus-g3-mini-sky-blue.png — same orientation as VOOPOO's photos) cut by scripts/flatcut.js + _incoming/image-sitewide/b-voopoo/recolour-g3m.js moves the body colour (CIELAB) to this colour; clear pod, side buttons and the white LED slit untouched; pre-sized by _incoming/image-sitewide/b-voopoo/presize-g3m.js",
+   "reference": "body colour: VOOPOO's own photo of this colour (/assets/products/argus-g3-mini/variants/lilac-purple.webp, shop.voopoo.com); geometry: the same photo",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/g3m-fid-1.png + _incoming/image-sitewide/b-voopoo/g3m-fid-2.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — one master for every colour so only the body colour changes when a customer swipes; replaces VOOPOO's 250x500 per-colour photo",
+  "fileName": "variant-lilac-purple-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/g3m-hot-pink.png",
+  "slug": "argus-g3-mini",
+  "role": "variant",
+  "id": "hot-pink",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Sky Blue render, Higgs Okm/2026-10-01 night - colours/colour-argus-g3-mini-sky-blue.png — same orientation as VOOPOO's photos) cut by scripts/flatcut.js + _incoming/image-sitewide/b-voopoo/recolour-g3m.js moves the body colour (CIELAB) to this colour; clear pod, side buttons and the white LED slit untouched; pre-sized by _incoming/image-sitewide/b-voopoo/presize-g3m.js",
+   "reference": "body colour: VOOPOO's own photo of this colour (/assets/products/argus-g3-mini/variants/hot-pink.webp, shop.voopoo.com); geometry: the same photo",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/g3m-fid-1.png + _incoming/image-sitewide/b-voopoo/g3m-fid-2.png (VOOPOO / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — one master for every colour so only the body colour changes when a customer swipes; replaces VOOPOO's 250x500 per-colour photo",
+  "fileName": "variant-hot-pink-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/card-g3m.png",
+  "slug": "argus-g3-mini",
+  "role": "card",
+  "replaces": "/assets/products/argus-g3-mini/card.webp",
+  "aiRender": {
+   "tool": "the sky-blue photo of this set tilted 12 degrees in 2D (_incoming/image-sitewide/tilt-card.js) — no new render; Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Sky Blue render, Higgs Okm/2026-10-01 night - colours/colour-argus-g3-mini-sky-blue.png — same orientation as VOOPOO's photos) cut by scripts/flatcut.js + _incoming/image-sitewide/b-voopoo/recolour-g3m.js moves the body colour (CIELAB) to this colour; clear pod, side buttons and the white LED slit untouched; pre-sized by _incoming/image-sitewide/b-voopoo/presize-g3m.js",
+   "reference": "VOOPOO's Sky Blue photo (/assets/products/argus-g3-mini/variants/sky-blue.webp)",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/g3m-fid-1.png"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — the page opens on one sharp tilted device (openOnCardPhoto)",
+  "fileName": "card-v2.webp"
  }
 ]
