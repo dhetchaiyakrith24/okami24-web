@@ -15,11 +15,9 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
 1 main: `git fetch && git log -1 --oneline origin/main` — this chat (01/10 afternoon) merged 3 PRs [ตรวจแล้ว — gh]:
   #165 `818249e` G4 Pro KOKO 9 + G3 Pro KOKO 8 colours (checker 9/9, live 16:31) · #166 `e143cdd` no "ทั้งหมด" on M Bar
   10K / 9K / Switch Kit / Switch Pod / INFY 20K / MURO + docs (checker 9/9, live 17:00 — all six chips gone [ตรวจแล้ว —
-  curl]) · #167 `3a0e44a` G4 Classic 4 colours (checker 8/8; live check = see item 2). Each = revert its merge commit.
+  curl]) · #167 `3a0e44a` G4 Classic 4 colours (checker 8/8, live 17:12 [ตรวจแล้ว — curl]). Each = revert its merge commit.
   Live answered 502 on ~9 pages for about a minute right after #166's deploy, then 200 everywhere [ตรวจแล้ว — curl].
-2 ahead of main: branch docs-handoff-01-10b = this §16 only (docs-only PR, no checker by 13.7). #167's live check was still
-  running when this was written — first thing next chat: `curl -s https://okami24.store/products/caliburn-g4-classic |
-  grep -c variant-abyss-blue-v2` must print ≥1. No other branch with work; test server stopped. smogz-rules: nothing open.
+2 ahead of main: nothing (this §16 = PR #168, docs-only, merged by Friday). Test server stopped. smogz-rules: nothing open.
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; this chat's scripts + sheets in `_incoming/image-sitewide/b-uwell/`).
   THE METHOD THAT WORKS (#165 #167): ONE master device per model + recolour by script, so a swipe changes only the colour —
