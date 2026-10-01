@@ -5280,11 +5280,11 @@
   "fileName": "variant-silver-marble-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/g5/tilt/mystic-forest.png",
+  "source": "_incoming/image-sitewide/g5/official/mystic-forest.webp",
   "slug": "caliburn-g5",
   "role": "card",
-  "replaces": "/assets/products/caliburn-g5/card.png",
-  "note": "image-sitewide round 3b (0) 02/10 — owner picked card B + \"เอียงทุกสีเลย\": UWELL's own render, turned 12° in 2D (_incoming/image-sitewide/tilt-card.js), no AI — source files.myuwell.com/uwell/product/caliburn-g5/pc/pic9-1-product.webp, the same render as card.png (kept for the home Scene2Uwell)",
-  "fileName": "card-v2.webp"
+  "replaces": "/assets/products/caliburn-g5/card-v2.webp",
+  "note": "image-sitewide round 3b (0) 02/10 — owner: \"G5 การ์ดเอาแบบตรงเหมือนเดิมดีกว่า\": UWELL's own upright Mystic Forest render (files.myuwell.com/uwell/product/caliburn-g5/pc/pic9-1-product.webp, the same render as card.png), 4:5, no AI",
+  "fileName": "card-v3.webp"
  }
 ]
