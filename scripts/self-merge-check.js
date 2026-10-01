@@ -8,8 +8,8 @@
 //   BIG   runs by itself or decides merges/deploys (settings · hooks · scripts a hook runs · .github/ · rules copy ·
 //         gate files) · orders/money/stock/what is for sale · build/server config · Render build/Shell scripts
 //   SITE  anything else a visitor gets (src/ public/ …) — small, tier A and tier B alike (owner 28/09: tier B merges,
-//         then the before/after shots go to the owner) — unless the work reaches the 7 SEO-baseline pages until 05/10
-//         (13.7 item (3)), which the script cannot see: Friday states it in the merge report.
+//         then the before/after shots go to the owner). (The 7 SEO-baseline-page hold, 13.7 item (3), was lifted by
+//         the owner 02/10.)
 //   ok    off the site (docs · skills · agents · rules text · ordinary scripts)
 // Also BIG: a PR that edits 13.7 itself (its merge rule). Not visible here and still Friday's to check: checker PASS ·
 // every GitHub check green · the 7 SEO-baseline pages untouched (else big, 13.7 item (3)).
@@ -200,7 +200,7 @@ function main() {
   else if (list) console.log(blocked ? `BLOCKED - list check: ${big} big · ${site} site (gate test, not a merge verdict)` : "PASS - list check: all off the site, none big (gate test, not a merge verdict: no head commit pinned)");
   else if (blocked) console.log("BLOCKED - cannot judge this PR (see the (repo) lines) - do not merge");
   else if (big) console.log("BIG - merge after checker + green checks, then report it on its own line (TEAM_RULES 13.7, owner 30/09)");
-  else if (site) console.log("SITE - small (tier A or B; tier B = before/after shots in the report) unless it reaches the 7 SEO-baseline pages until 05/10 = BIG (TEAM_RULES 13.7)");
+  else if (site) console.log("SITE - small (tier A or B; tier B = before/after shots in the report) (TEAM_RULES 13.7)");
   else console.log("SMALL - merge after checker PASS + all GitHub checks green, then report (TEAM_RULES 13.7)");
   process.exit(blocked ? 1 : 0);
 }
