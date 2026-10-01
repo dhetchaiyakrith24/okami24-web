@@ -65,7 +65,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   for SEO. Today only 5 products have the "รายละเอียดเพิ่มเติม" story (`storyDetails: true`: m-bar-10k · m-bar-9k · m-switch-kit ·
   infy-20k · muro-sc-8000; no UWELL product) [ตรวจแล้ว — grep]; it is part of THIS round's goal (round file: maker posters) but was
   pushed back by the edge-defect fixes. Article TEXT for it = the separate round "รอบบทความ-รายละเอียดเพิ่มเติม" (round file
-  【ห้ามแตะ】) — not opened yet. Friday's plan [เชื่อว่า — told the owner 02/10]: Caliburn G5 template = every colour + card + all-colours
+  【ห้ามแตะ】) — instruction file waiting in branch `inbox` `rounds/รอบบทความ-รายละเอียดเพิ่มเติม.txt` (Friday 02/10, 7 batches). Friday's plan [เชื่อว่า — told the owner 02/10]: Caliburn G5 template = every colour + card + all-colours
   image to IMAGE_SPEC §0 item 8 + its "รายละเอียดเพิ่มเติม" story from UWELL's own posters; then roll the template out; the article
   round opens after this round, G5 first (one chat = one round, central §12 item 30).
 3b NEXT — ORDER (owner 02/10: Caliburn G5 colours FIRST; owner 01/10: Esko LAST):
@@ -107,8 +107,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - `dict.product.anatomyTitle` en/zh "from the outside in" (pre-existing).
   - `_incoming/` folders moved out 01/10 to `C:\Users\dhetc\OKami24-เก็บ\incoming-01-10\` (not deleted).
   - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
-  - visible-text.js printed "font fingerprint differs" for a fresh live-vs-local pair on 01/10 (vt-d6) while the 01/10 vt-g3p pair
-    was "same machine" — 0 changes either way; watch whether it repeats (session limit or a real font difference) [เชื่อว่า].
+  - visible-text.js: "font fingerprint differs" on the 01/10 vt-d6 pair (vt-g3p was "same machine") — watch if it repeats [เชื่อว่า].
   - Carried ideas: card sweep on 4:5 · ARTICLE round · category-structure round.
   - Unreferenced (sweep at the round close): the six round lineups, G3 Pro KOKO lineup.webp + old variant files, G4 Pro KOKO old
     variant files (card.png stays — home Scene2), G4 Classic card.png / lineup.webp / old variants + variant-alpine-green-v2.webp,
