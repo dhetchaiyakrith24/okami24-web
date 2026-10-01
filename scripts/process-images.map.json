@@ -4495,11 +4495,11 @@
   "id": "alpine-green",
   "aiRender": {
    "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Classic Silver render, Higgs Okm/2026-10-01 night - colours/colour-caliburn-g4-classic-classic-silver.png, same orientation as UWELL's front photo) cut out by Higgsfield image_background_remover (job b0d87918-7990-4be3-a6f4-9782735b55ab, 1 credit) + _incoming/image-sitewide/b-uwell/recolour-g4c.js moves the body colour (CIELAB), Classic Silver lifted to UWELL's near-white satin by _incoming/image-sitewide/b-uwell/silver-g4c.js; button and clear pod untouched; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
-   "reference": "body colour: the shop's photo of this colour (/assets/products/caliburn-g4-classic/variant-alpine-green.webp), matching UWELL's colour collage files.myuwell.com/uwell/product/caliburn-g4-classic/mo/spe9.webp",
-   "fidelitySheet": "_incoming/image-sitewide/b-uwell/g4c-sheet.png"
+   "reference": "body colour: measured on UWELL's own colour collage files.myuwell.com/uwell/product/caliburn-g4-classic/mo/spe9.webp (soft-lit group shots: deep forest green, CIELAB L 24-28 a -9..-12 b 1-3) -> target L 30 a -12.5 b 2.5 (recolour-g4c.js OVERRIDE)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/g4c-green/cmp.png"
   },
-  "note": "image-sitewide round, owner 01/10 'เดินงานแก้รูปสินค้าให้เสร็จ' — the KOKO method on G4 Classic (old colour photos 182x404)",
-  "fileName": "variant-alpine-green-v2.webp"
+  "note": "image-sitewide round, owner 01/10 'ปรับให้เข้มตาม UWELL' — v2 followed the shop's retailer photo (lighter, olive); v3 follows UWELL's own photos",
+  "fileName": "variant-alpine-green-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/b-uwell/site/g4c-classic-black.png",
