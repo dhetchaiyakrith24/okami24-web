@@ -57,7 +57,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (6) BATCH 5 rest of the site (planner first; joiway-f4 · relx-creator · relx-smash-go-12k …; TFIT M Power after a researcher) ·
   (7) Esko pod-159 LAST (stock/cart = 13.7 big (2), full set, own PR, + BSOT §21).
   Higgsfield: 182.6 credits on 01/10 night, none used since [เชื่อว่า — not re-checked]; 4K = 4, nano 2K = 2, remover = 1 · tell the
-  owner the credits for a whole set before starting it (IMAGE_SPEC §0 item 7).
+  owner the credits for a whole set before starting it (IMAGE_SPEC §0 item 7). Remover jobs can sit "queued" ~5 min; a job-id cut that
+  errors 3x works after uploading the file (`media_upload`, PUT with header If-None-Match: *).
   At the round close: `npx tsx scripts/asset-refs.ts` for unreferenced product photos (list in item 5).
   Account weekly usage 98% on 01/10 (resets 04/10 22:00 ICT) [ตรวจแล้ว — get_usage]; owner OK'd extra usage 01/10 ("ใช่ครับต่อเลย").
 4 waiting on owner:
