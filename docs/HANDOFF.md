@@ -11,16 +11,12 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — the 01/10–02/10 chat merged #176 `32324a5` Caliburn G3 Pro 16 UWELL colours
-  (was 6) + card-v2, old 6-colour lineup removed (checker 7/7 · GitHub checks green · self-merge-check BIG) [ตรวจแล้ว]; deploy
-  36887311640, live [ตรวจแล้ว — curl: 16/16 colour files 200, page serves card-v2, no old lineup] · owner: "ผ่านครับ" (01/10).
-  Then #177 `d8bf903` Drag 6 all-colours lineup-v2.webp (owner's pick "VMATE MAX") + home Scene3Voopoo = home-brown-v2.webp
-  (owner approved touching cinematic/ for this one swap) (checker 6/6 · checks green · BIG · head-check 7/7 baseline pages
-  head/H1/JSON-LD same) [ตรวจแล้ว]; deploy 36895480132, live [ตรวจแล้ว — curl: lineup-v2 200, home-brown-v2 200]. Revert = its merge.
-  Owner on the live Drag 6 lineup (01/10 late): "ยังดูเล็กไปหน่อย" + it looks like a graphic, not a studio photo (no studio light,
-  no shading on the body, no cast/floor shadow, too much white on the body) → redo (item 3b (1)).
-2 ahead of main: `git log --oneline origin/main..<branch>` — only the docs PR of this §16 (#178 = IMAGE_SPEC layout rule + LESSONS ช7 merged
-  09c7551) [ตรวจแล้ว — git]. Test server on 3412 may still be up (build of 7de0bd4): `node scripts/test-server.js status` / `stop`.
+1 main: `git fetch && git log -1 --oneline origin/main` — the 02/10 chat merged #183 `81c5dc0` (rules: temporary rulings carry an
+  end date, TEAM_RULES 13.6 + round-close step 6; checker PASS · SMALL) and #184 `1107f0d` Caliburn G5: all 7 colours = UWELL's
+  own per-colour renders tilted 12°, card-v2.webp (Mystic Forest tilted, 4:5), lineup-v2.webp (owner pick 3) (checker PASS 5/5 ·
+  GitHub checks green · self-merge-check BIG) [ตรวจแล้ว]; deploy 36935743985, live [ตรวจแล้ว — curl: 9/9 new files 200, page
+  serves them, home flagship card = card-v2] · owner approval of the live page: [รอเจ้าของ]. Revert = the #184 merge.
+2 ahead of main: `git log --oneline origin/main..<branch>` — only the docs PR of this §16 [ตรวจแล้ว — git]. Test server stopped.
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
   VOOPOO `b-voopoo/`, coils `b-coils/`).
@@ -36,9 +32,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   "แต่ไม่อยากให้แบบตายตัว อยากให้มีการจัดวาง หลายหลายแบบในแต่ละแบรน" = vary the layout per brand (not one layout site-wide);
   (b) G3 Pro = two groups of 8 → TWO "ทั้งหมด" chips/images ("ทำเป็นหัวข้อ ทั้งหมด 2 ชิ้น", or a better idea) — needs a code change
   (`lineupImage` is one image today; ProductHero / ColorVariantRail) = tier B; (c) try B (AI relight) — done, see below.
-  RELX composer with studio floor + highlight roll-off: `b-edge/relx-studio.js d6 | g3p-a | g3p-b` → `b-edge/relx/<key>.png`
-  (drafts sent: `b-edge/relx/sheet.png`). B test (4 credits, job 55c8aa47, nano_banana_pro 4K, reference = relx/d6-page.png, prompt
-  in jobs.tsv row B1 / this chat): `b-edge/relx/d6-B1.png` — light, shading, glossy floor = clearly more photographic, BUT AI changed
+  RELX composer with studio floor + highlight roll-off: `b-edge/relx-studio.js d6 | g3p-a | g3p-b` → `b-edge/relx/<key>.png`.
+  B test (4 credits, job 55c8aa47, nano_banana_pro 4K, reference = relx/d6-page.png): `b-edge/relx/d6-B1.png` — light, shading, glossy floor = clearly more photographic, BUT AI changed
   details (EVEREST LAB badge → scribble, screen text garbled, "VOOPOO" on the black tank → "17BECO", gold wheel → flat window —
   `relx/d6-AB-zoom.png`) → NOT publishable as is (IMAGE_SPEC §0 item 7). Friday's proposal [รอเจ้าของ (37)]: HYBRID = keep the
   script image's devices (100% true) and transfer only B's low-frequency light (blur(B)/blur(A) luminance ratio, large sigma) + B's
@@ -54,23 +49,28 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   entries (`b-edge/presize-g3p.js` pattern) + `npx tsx scripts/process-images.ts --only <slug>` (new file names, lesson พ6). Check
   every render for MIRRORING. Edits to CRLF files = a .js edit script (`b-edge/edit-g3p-data.js` pattern) — sed/Edit strip CR.
   Done this round: G4 Pro KOKO, G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano, ARGUS G4 mini, Drag 6 (colours
-  + lineup + home card), Caliburn G3 Pro (16 colours + card).
+  + lineup + home card), Caliburn G3 Pro (16 colours + card), Caliburn G5 (7 colours + card + lineup, #184).
   OWNER 02/10 (question cards) [ตรวจแล้ว — chat]: image standard = UWELL's official Caliburn G5 renders (balanced light, no blown
   white, real reflection lines; shadow placement = designer's call) for EVERY image below standard — rule IMAGE_SPEC §0 item 8 ·
   background = transparent + soft shadow/reflection as semi-transparent pixels (no dark box) · wants to SEE one lifestyle sample
   like UWELL's real-shot.webp (owner item 38) · Drag 6: prefers the photographic look of B (`relx/d6-B1.png`) but asked whether it
   fits the site — answer given: B's light + the true devices (hybrid), transparent, shown on the local test server page first.
-  OWNER 02/10 later [ตรวจแล้ว — chat]: "หยุดงานรูปทุกอย่างและ Focus Caliburn 5 ทุกสี ทุกรูป รูปรวม ให้เสร็จก่อนจะได้เป็นแบบให้ทั้งเว็บ"
-  → nothing else in 3b until Caliburn G5 is done. Owner also wants EVERY product like M Bar 10K's lower page + extra article text
-  for SEO. Today only 5 products have the "รายละเอียดเพิ่มเติม" story (`storyDetails: true`: m-bar-10k · m-bar-9k · m-switch-kit ·
-  infy-20k · muro-sc-8000; no UWELL product) [ตรวจแล้ว — grep]; it is part of THIS round's goal (round file: maker posters) but was
-  pushed back by the edge-defect fixes. Article TEXT for it = the separate round "รอบบทความ-รายละเอียดเพิ่มเติม" (round file
-  【ห้ามแตะ】) — instruction file waiting in branch `inbox` `rounds/รอบบทความ-รายละเอียดเพิ่มเติม.txt` (Friday 02/10, 7 batches). Friday's plan [เชื่อว่า — told the owner 02/10]: Caliburn G5 template = every colour + card + all-colours
-  image to IMAGE_SPEC §0 item 8 + its "รายละเอียดเพิ่มเติม" story from UWELL's own posters; then roll the template out; the article
-  round opens after this round, G5 first (one chat = one round, central §12 item 30).
-3b NEXT — ORDER (owner 02/10: Caliburn G5 colours FIRST; owner 01/10: Esko LAST):
-  (0) Caliburn G5 — every colour except Mystic Forest (owner: broken edges, patch marks); standard = UWELL's own renders
-  (files.myuwell.com/uwell/product/caliburn-g5/…); caliburn-g5 is an SEO baseline page → images only + head-check 7/7.
+  OWNER 02/10 later [ตรวจแล้ว — chat]: "หยุดงานรูปทุกอย่างและ Focus Caliburn 5 ทุกสี ทุกรูป รูปรวม ให้เสร็จก่อนจะได้เป็นแบบให้ทั้งเว็บ".
+  Owner also wants EVERY product like M Bar 10K's lower page ("รายละเอียดเพิ่มเติม" story, `storyDetails: true` — today m-bar-10k ·
+  m-bar-9k · m-switch-kit · infy-20k · muro-sc-8000) + extra article text for SEO = the separate round
+  "รอบบทความ-รายละเอียดเพิ่มเติม" (this round's 【ห้ามแตะ】; its file waits in branch `inbox`, Friday 02/10, 7 batches).
+  G5 TEMPLATE (owner picks 02/10, this chat) [ตรวจแล้ว — chat]: card = the maker's own render tilted 12°, 4:5 · "เอียงทุกสีเลย" =
+  every colour image tilted the same way · all-colours image = pick 3 "group": the hero big in front on the left, the other
+  six in two upright tiers behind, soft contact shadow + faint reflection as semi-transparent pixels (`_incoming/image-sitewide/
+  g5/poster.js`; drafts `g5/owner-lineup-1-2-3.png`). Sources: myuwell G5 page pic9-<n>-product.webp (`g5/official/`), tilt =
+  `g5/tilt-all.js` (map entries + card), data edit `g5/edit-data2.js`. 0 credits, no AI.
+  G5 story ("รายละเอียดเพิ่มเติม") NOT done: it replaces the gallery + anatomy + feature cards of a baseline page (structure +
+  text, not images) → Friday holds it until 06/10 unless the owner says otherwise [รอเจ้าของ (40)]; UWELL posters downloaded
+  (`g5/src/`, 58 files: pic1 hero, pic3 tiles, pic5–pic10, specifi, pack-1..4, real-shot). Feature text for new blocks = article round.
+  OWNER 02/10 (credits + agents) [ตรวจแล้ว — chat]: quota reset, agents as the work needs (rule merged #183); the owner will top up
+  Higgsfield — a way that gets a clearly better result may use credits, say the estimate first.
+3b NEXT — ORDER: waits for the owner's answer on the site-wide plan (item 4 (39)); until then the old order below stands
+  (owner 01/10: Esko LAST). (0) Caliburn G5 = done except the story (above).
   (1) Drag 6 lineup redo = RELX layout (`relx-studio.js d6`) + HYBRID light (owner 02/10: the photographic look), bigger in
   the frame; show it on the local page (390 + 1440) to the owner before publishing; publish as lineup-v3.webp (new name, lesson พ6) with the same proof as #177 (head-check 7/7, visible-text, gallery-probe).
   Then Caliburn G3 Pro: two "ทั้งหมด" (g3p-a / g3p-b, 8 each, UWELL order) — code change for two lineups + the two images; a
@@ -85,10 +85,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (5) argus-g4 + Argus Multi-Ohm + ARGUS P3 card-v2 + openOnCardPhoto for P3 + M Bar 15K duplicate record (= M Switch Kit).
   (6) BATCH 5 rest of the site (planner first; joiway-f4 · relx-creator · relx-smash-go-12k …; TFIT M Power after a researcher) ·
   (7) Esko pod-159 LAST (stock/cart = 13.7 big (2), full set, own PR, + BSOT §21).
-  Higgsfield: 178.6 credits after the B test 01/10 late [ตรวจแล้ว — balance 182.6 before − 4]; 4K = 4, nano 2K = 2, remover = 1 · tell the
+  Higgsfield: 178.6 credits after the B test 01/10 late [ตรวจแล้ว — balance 182.6 before − 4; 0 used 02/10 — เชื่อว่า, not re-read]; 4K = 4, nano 2K = 2, remover = 1 · tell the
   owner the credits for a whole set before starting it (IMAGE_SPEC §0 item 7).
-  At the round close: `npx tsx scripts/asset-refs.ts` for unreferenced product photos (list in item 5).
+  Round close: `npx tsx scripts/asset-refs.ts` for unreferenced photos (list in item 5).
 4 waiting on owner:
+  (39) site-wide plan after G5 (owner asked 02/10: order · two chats? · quota/credits) — Friday's draft
+       `_incoming/image-sitewide/g5/rollout-plan.md` (+ maker-render survey `g5/maker-renders.md`, inventory `g5/inventory.tsv`):
+       6 sets UWELL → UWELL re-tilt → VOOPOO → other pod kits → disposables/pods → coils + Esko; ~50–110 credits [เชื่อว่า];
+       two chats = images (computer) + article round (cloud), not two image chats (one test server / Chrome on this machine).
+  (40) G5 story before 06/10 (it changes the structure of a baseline page) or after (Friday's default).
+  (41) already-approved UPRIGHT option images (M Bar 10K/9K, INFY, M Switch …): tilt them too, or tilt only new work?
   (38) one lifestyle sample like UWELL's real-shot.webp (scene + props) — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags from thai-copy (not changed): INFY `descriptionTh` says disposable-only brand · shared strings
        "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" / "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ"
@@ -104,20 +110,22 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - `dict.product.anatomyTitle` en/zh "from the outside in" (pre-existing).
   - `_incoming/` folders moved out 01/10 to `C:\Users\dhetc\OKami24-เก็บ\incoming-01-10\` (not deleted).
   - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
-  - visible-text.js: "font fingerprint differs" on the 01/10 vt-d6 pair (vt-g3p was "same machine") — watch if it repeats [เชื่อว่า].
+  - visible-text.js: "font fingerprint differs" on live-vs-local pairs (01/10 vt-d6, 02/10 vt-g5; same Chrome 154 both sides) —
+    repeated, so it is the live/local font serving, not two machines [เชื่อว่า]; diffs were 0 changes both times.
   - Carried ideas: card sweep on 4:5 · ARTICLE round · category-structure round.
   - Unreferenced (sweep at the round close): the six round lineups, G3 Pro KOKO lineup.webp + old variant files, G4 Pro KOKO old
     variant files (card.png stays — home Scene2), G4 Classic card.png / lineup.webp / old variants + variant-alpine-green-v2.webp,
     argus-g3-mini card.webp / lineup.webp / variants/*, argus-p3 lineup.webp + variants/* EXCEPT variants/blue-leather.webp,
     zero-nano card.webp, argus-g4-mini variants/* (lineup.webp still used), drag-6 variants/* + card.png + lineup.webp,
-    caliburn-g3-pro card.webp + lineup.webp + variant-{emerald-green,midnight-black,rose-gold,space-gray,stone-gray}.webp
+    caliburn-g3-pro card.webp + lineup.webp + variant-{emerald-green,midnight-black,rose-gold,space-gray,stone-gray}.webp,
+    caliburn-g5 lineup.webp + variant-{black-carbon,navy-ripples,orange-feathers,black-gold,aurora-feathers,silver-marble}.webp
+    (card.png stays — home Scene2Uwell)
     [เชื่อว่า — grep; asset-refs.ts not run].
 6 verify baseline at the last full close (clip round; numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Latest light set [ตรวจแล้ว — run this chat]: PR #176 — tsc 0 · verify:catalog 29/29 · scan.js 0/107 · gallery-probe `--sitemap`
-  45/61 pages PASS both modes, 0 FLASH/STUCK · visible-text 27 changes / 21 groups all explained (`b-edge/vt-g3p-diff/`) ·
-  PR #177 — tsc 0 · verify:catalog 29/29 · gallery-probe both modes PASS · visible-text 0 changes (`b-edge/vt-d6-diff/`) ·
-  head-check 7/7 (`b-edge/html-d6/`).
+  Latest light set [ตรวจแล้ว — run 02/10]: PR #184 — tsc 0 · eslint uwell.ts 0 · verify:catalog 29/29 · gallery-probe `--sitemap`
+  45/61 pages PASS both modes, 0 FLASH/STUCK · visible-text 0 changes (6 pages × 3 locales × 2 widths, `g5/proof/vt-diff/`) ·
+  head-check 7/7 head/H1/JSON-LD same, non-image HTML identical with build hashes normalised (`g5/proof/html/`).
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
 ```
 
