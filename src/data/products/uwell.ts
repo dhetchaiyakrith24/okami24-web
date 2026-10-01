@@ -1047,8 +1047,8 @@ export const uwellProducts: Product[] = [
       {
         id: "alpine-green",
         name: "Alpine Green",
-        swatchHex: "#678967",
-        image: { src: "/assets/products/caliburn-g4-classic/variant-alpine-green-v2.webp", alt: "UWELL Caliburn G4 Classic, Alpine Green" },
+        swatchHex: "#324c42",
+        image: { src: "/assets/products/caliburn-g4-classic/variant-alpine-green-v3.webp", alt: "UWELL Caliburn G4 Classic, Alpine Green" },
       },
       {
         id: "classic-black",
