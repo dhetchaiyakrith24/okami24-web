@@ -53,8 +53,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (2) all-colours image for pod systems — drafts first: G3 mini (9) + G4 Classic (4) + now G4 mini (8); old lineup.webp of
   G4 mini / Drag 6 kept on purpose until then.
   (3) coils — `b-coils/README.txt` (references found for the first 8, nothing generated).
-  (4) argus-g4 + Argus Multi-Ohm + ARGUS P3 card-v2 + M Bar 15K duplicate record (= M Switch Kit).
-  (5) BATCH 5 rest of the site (planner first; TFIT M Power after a researcher) · (6) Esko pod-159 LAST (stock/cart = 13.7 big
+  (4) argus-g4 + Argus Multi-Ohm + ARGUS P3 card-v2 + openOnCardPhoto for P3 (baseline lift = now allowed) + M Bar 15K duplicate record (= M Switch Kit).
+  (5) BATCH 5 rest of the site (planner first; joiway-f4 · relx-creator · relx-smash-go-12k …; TFIT M Power after a researcher) · (6) Esko pod-159 LAST (stock/cart = 13.7 big
   (2), full set, own PR, + BSOT §21).
   Higgsfield: 182.6 credits 01/10 night [ตรวจแล้ว — balance]; 4K = 4, nano 2K = 2, remover = 1 · tell the owner the credits for
   a whole set before starting it (IMAGE_SPEC §0 item 7). Remover jobs can sit "queued" ~5 min; a job-id cut that errors 3x
