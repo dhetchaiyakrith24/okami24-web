@@ -15,9 +15,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   end date, TEAM_RULES 13.6 + round-close step 6; checker PASS · SMALL) and #184 `1107f0d` Caliburn G5: all 7 colours = UWELL's
   own per-colour renders tilted 12°, card-v2.webp (Mystic Forest tilted, 4:5), lineup-v2.webp (owner pick 3) (checker PASS 5/5 ·
   GitHub checks green · self-merge-check BIG) [ตรวจแล้ว]; deploy 36935743985, live [ตรวจแล้ว — curl: 9/9 new files 200, page
-  serves them] · owner 02/10 on the live page: "การ์ดเอาแบบตรงเหมือนเดิมดีกว่า" → PR `img-g5-card-upright` (card-v3.webp = the
-  upright render, 4:5; colours stay tilted) + PR `rules-baseline-off` (the 05/10 hold lifted, TEAM_RULES + §18) — see `git log`.
-2 ahead of main: `git log --oneline origin/main..<branch>` for each branch named in item 1 (open PRs) [ตรวจแล้ว — git].
+  serves them]. Then #186 `629f612` (the 7-baseline-page hold lifted — TEAM_RULES 13.5/13.7/13.8 + §18; checker PASS after 1
+  fix round · BIG) [ตรวจแล้ว].
+2 OPEN PR #187 `img-g5-card-upright` (`git log --oneline origin/main..origin/img-g5-card-upright`, 3 commits): (a) owner 02/10
+  "การ์ดเอาแบบตรงเหมือนเดิมดีกว่า" → card-v3.webp = the upright UWELL render, 4:5 + `openOnCardPhoto: true` (the page opens on
+  it; colours stay tilted) · (b) set 1: lineup-v2.webp for G4 / G5 Lite / G5 Lite SE in the G5 layout (`_incoming/image-sitewide/
+  set1/` crop.js + poster.js). Proof in `set1/proof/`: head-check 7/7 same · visible-text 9 changes, all = G5 label loses "Mystic
+  Forest" (opens with no colour picked) · shots `shots/cmp-390.png` / `cmp-1440.png`. AT HANDOFF: gallery-probe both modes and
+  the checker were still running [ตรวจแล้ว] — next chat: read the PR (checker result in this chat if it finished; else run checker
+  with `set1/checker-brief.md`), all green → merge (13.7), curl the live files, send the owner the shots. Test server may be UP.
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
   VOOPOO `b-voopoo/`, coils `b-coils/`).
@@ -48,11 +54,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   every render for MIRRORING. Edits to CRLF files = a .js edit script (`b-edge/edit-g3p-data.js` pattern) — sed/Edit strip CR.
   Done this round: G4 Pro KOKO, G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano, ARGUS G4 mini, Drag 6 (colours
   + lineup + home card), Caliburn G3 Pro (16 colours + card), Caliburn G5 (7 colours + card + lineup, #184).
-  OWNER 02/10 (question cards) [ตรวจแล้ว — chat]: image standard = UWELL's official Caliburn G5 renders (balanced light, no blown
-  white, real reflection lines; shadow placement = designer's call) for EVERY image below standard — rule IMAGE_SPEC §0 item 8 ·
-  background = transparent + soft shadow/reflection as semi-transparent pixels (no dark box) · wants to SEE one lifestyle sample
-  like UWELL's real-shot.webp (owner item 38) · Drag 6: prefers the photographic look of B (`relx/d6-B1.png`) but asked whether it
-  fits the site — answer given: B's light + the true devices (hybrid), transparent, shown on the local test server page first.
+  OWNER 02/10: image standard = IMAGE_SPEC §0 item 8 · Drag 6 = B's light + the true devices (hybrid), shown on the test server first.
   OWNER 02/10 later [ตรวจแล้ว — chat]: "หยุดงานรูปทุกอย่างและ Focus Caliburn 5 ทุกสี ทุกรูป รูปรวม ให้เสร็จก่อนจะได้เป็นแบบให้ทั้งเว็บ".
   Owner also wants EVERY product like M Bar 10K's lower page ("รายละเอียดเพิ่มเติม" story, `storyDetails: true` — today m-bar-10k ·
   m-bar-9k · m-switch-kit · infy-20k · muro-sc-8000) + extra article text for SEO = the separate round
@@ -60,9 +62,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   G5 TEMPLATE (owner 02/10) [ตรวจแล้ว — chat]: card = the maker's own render UPRIGHT, 4:5 ("การ์ดเอาแบบตรงเหมือนเดิม") · colour
   images = the maker's render tilted 12° ("เอียงทุกสี") — new work only; approved upright images stay ("เอาไว้ก่อน") ·
   all-colours image = pick 3 "group": the hero big in front on the left, the other six in two upright tiers behind, soft
-  contact shadow + faint reflection as semi-transparent pixels (`_incoming/image-sitewide/g5/poster.js`). Sources: myuwell G5
-  page pic9-<n>-product.webp (`g5/official/`), tilt =
-  `g5/tilt-all.js` (map entries + card), data edit `g5/edit-data2.js`. 0 credits, no AI.
+  contact shadow + faint reflection as semi-transparent pixels (`_incoming/image-sitewide/g5/` poster.js · tilt-all.js). 0 credits.
   G5 story ("รายละเอียดเพิ่มเติม") = batch 1 of the ARTICLE round, which runs NOW in a CLOUD chat beside this round (owner 02/10:
   two chats). Its file = branch `inbox` `rounds/รอบบทความ-รายละเอียดเพิ่มเติม.txt` version 3 — section 【แบ่งงานกับรอบรูป】: this
   round owns card/colour/flavour images, `lineupImage`, `scripts/process-images.map.json`; the article round owns `storyDetails`,
@@ -74,6 +74,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   — set 2 is now lineups only, no re-tilt): (0) Caliburn G5 done (card upright PR). NEXT = set 1 UWELL: G5 Lite (8) · G5 Lite SE
   (8) · G4 Pro (8) · G4 (8) · G4 mini (12) from UWELL's own per-colour files (`g5/maker-renders.md`) — card upright, colours
   tilted, lineup poster (a layout per brand); then sets 2–6. The old list below = the items those sets absorb.
+  Set 1 status: G4 / G5 Lite / G5 Lite SE lineups = #187. LEFT: G4 Pro (UWELL files = front+back PAIRS `color-1..8`, no lineup
+  today — a pair-per-colour poster or the screen-front device only; decide by draft) · G4 mini (12 singles `pc/1..12`, side view;
+  12 is many — two groups like G3 Pro, or one). Sources downloaded: `set1/src/`. Colour images of set 1 are UWELL renders
+  already = not re-tilted (owner "เอาไว้ก่อน").
   (1) Drag 6 lineup redo = RELX layout (`relx-studio.js d6`) + HYBRID light (owner 02/10: the photographic look), bigger in
   the frame; show it on the local page (390 + 1440) to the owner before publishing; publish as lineup-v3.webp (new name, lesson พ6) with the same proof as #177 (head-check 7/7, visible-text, gallery-probe).
   Then Caliburn G3 Pro: two "ทั้งหมด" (g3p-a / g3p-b, 8 each, UWELL order) — code change for two lineups + the two images; a
@@ -110,14 +114,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - visible-text.js: "font fingerprint differs" on live-vs-local pairs (01/10 vt-d6, 02/10 vt-g5; same Chrome 154 both sides) —
     repeated, so it is the live/local font serving, not two machines [เชื่อว่า]; diffs were 0 changes both times.
   - Carried ideas: card sweep on 4:5 · ARTICLE round · category-structure round.
-  - Unreferenced (sweep at the round close): the six round lineups, G3 Pro KOKO lineup.webp + old variant files, G4 Pro KOKO old
-    variant files (card.png stays — home Scene2), G4 Classic card.png / lineup.webp / old variants + variant-alpine-green-v2.webp,
-    argus-g3-mini card.webp / lineup.webp / variants/*, argus-p3 lineup.webp + variants/* EXCEPT variants/blue-leather.webp,
-    zero-nano card.webp, argus-g4-mini variants/* (lineup.webp still used), drag-6 variants/* + card.png + lineup.webp,
-    caliburn-g3-pro card.webp + lineup.webp + variant-{emerald-green,midnight-black,rose-gold,space-gray,stone-gray}.webp,
-    caliburn-g5 lineup.webp + variant-{black-carbon,navy-ripples,orange-feathers,black-gold,aurora-feathers,silver-marble}.webp
-    (card.png stays — home Scene2Uwell)
-    [เชื่อว่า — grep; asset-refs.ts not run].
+  - Unreferenced old photos (G3 Pro/KOKO, G4 Pro KOKO, G4 Classic, ARGUS, Zero Nano, Drag 6, G5 old variants + lineup.webp …):
+    sweep at the round close with `npx tsx scripts/asset-refs.ts` (card.png of G5 / G4 Pro KOKO stay — home cinematic scenes).
 6 verify baseline at the last full close (clip round; numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
   Latest light set [ตรวจแล้ว — run 02/10]: PR #184 — tsc 0 · eslint uwell.ts 0 · verify:catalog 29/29 · gallery-probe `--sitemap`
