@@ -32,7 +32,7 @@ function isInternal(href: string): boolean {
 /** Splits one paragraph into text runs and links. Thai typography is applied per text run and per
  *  link label, so the render-time NBSP/joiner rules keep working around a link (a link boundary is
  *  not a break opportunity in itself — the segmenter reads across inline elements). */
-function renderInline(text: string, locale: string, keyPrefix: string): ReactNode[] {
+export function renderInline(text: string, locale: string, keyPrefix: string): ReactNode[] {
   const t = (s: string) => (locale === "th" ? thaiTypographyNode(s) : s);
   const out: ReactNode[] = [];
   let last = 0;

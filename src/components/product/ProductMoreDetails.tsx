@@ -5,6 +5,8 @@ import type { Product, StoryImage } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductAnatomySheet } from "@/components/product/ProductAnatomySheet";
+import { ProductArticleBody, ProductArticleLede } from "@/components/product/ProductArticle";
+import { productArticle } from "@/data/product-articles";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
@@ -28,6 +30,8 @@ import { cn } from "@/lib/utils";
  *     all-devices picture as the top image) was the duplicate, and it is gone (#130). On a `lineupFirst` product a
  *     flavour with no `boxImage` gets no tile: its device photo is already one swipe away in the gallery above, so a
  *     grid of the same device photos would be that duplicate again (round "image-sitewide" 2026-09-30, M Bar 9K).
+ *  Article round (02/10, designer option A): the product's article (src/data/product-articles.ts) — its lede under the
+ *  heading, its buyer-question blocks after the grid. A product with no article renders exactly as before.
  */
 function Poster({ img, sizes, className }: { img: StoryImage; sizes: string; className?: string }) {
   return (
@@ -64,7 +68,8 @@ export function ProductMoreDetails({ product }: { product: Product }) {
     ? (product.colorVariants ?? []).map((o) => ({ id: o.id, name: o.name, swatchHex: o.swatchHex, photo: o.image }))
     : (product.flavorVariants ?? []).map((o) => ({ id: o.id, name: o.name, swatchHex: o.swatchHex, photo: o.boxImage ?? (product.lineupFirst ? undefined : o.image) }));
   const tiles = options.filter((t) => t.photo);
-  if (!cover && highlights.length === 0 && tiles.length === 0) return null;
+  const hasArticle = productArticle(product.slug, locale) !== undefined;
+  if (!cover && highlights.length === 0 && tiles.length === 0 && !hasArticle) return null;
   const sourceName = cover?.sourceName ?? highlights[0]?.image?.sourceName;
 
   return (
@@ -75,6 +80,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
           title={<span id="more-details-title">{dict.product.moreDetailsTitle}</span>}
           description={sourceName ? dict.product.galleryNote.replace("{brand}", sourceName) : undefined}
         />
+        <ProductArticleLede slug={product.slug} />
         {cover && (
           <div className="mt-8 flex flex-col gap-2 lg:mt-10">
             <Poster img={cover} sizes="(min-width: 1280px) 1200px, 100vw" />
@@ -125,6 +131,11 @@ export function ProductMoreDetails({ product }: { product: Product }) {
               </li>
             ))}
           </ul>
+        </Container>
+      )}
+      {hasArticle && (
+        <Container className="pb-14 lg:pb-20">
+          <ProductArticleBody slug={product.slug} />
         </Container>
       )}
     </section>

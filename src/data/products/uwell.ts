@@ -113,6 +113,10 @@ export const uwellProducts: Product[] = [
       alt: "UWELL Caliburn G5, all 7 colours",
       sourceName: "OKami24 composite (from UWELL's own per-colour renders)",
     },
+    // Article round batch 1 (02/10, owner: every product like M Bar 10K's lower page + an article): the "more details"
+    // story (src/data/product-articles.ts holds the article). Cover = UWELL's own G5 campaign image already on the page.
+    storyDetails: true,
+    storyCover: { src: "/assets/products/caliburn-g5/hero.webp", alt: "Official UWELL Caliburn G5 campaign image, \"Simple Tap. Supreme Taste.\"", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/", width: 3840, height: 1620 },
     colorVariants: [
       {
         id: "mystic-forest",
