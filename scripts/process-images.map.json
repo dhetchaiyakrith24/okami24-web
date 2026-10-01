@@ -4994,5 +4994,226 @@
   },
   "note": "image-sitewide round 3b (1) edge defects 01/10 — replaces the old 29/08-04/09 cut-out (white rim / broken edge, lesson พ10); the page opens on one sharp tilted device (openOnCardPhoto)",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-emerald-green.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "emerald-green",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-emerald-green.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-emerald-green-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-midnight-black.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "midnight-black",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-midnight-black.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-midnight-black-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-pacific-blue.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "pacific-blue",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-pacific-blue.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-pacific-blue-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-rose-gold.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "rose-gold",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-rose-gold.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-rose-gold-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-space-gray.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "space-gray",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-space-gray.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-space-gray-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-stone-gray.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "stone-gray",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-stone-gray.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-stone-gray-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-pink-green.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "pink-green",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-pink-green.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-pink-green-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-frozen-aurora.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "frozen-aurora",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-frozen-aurora.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-frozen-aurora-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-frozen-green.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "frozen-green",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-frozen-green.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-frozen-green-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-golden-purple.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "golden-purple",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-golden-purple.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-golden-purple-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-golden-leopard.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "golden-leopard",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-golden-leopard.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-golden-leopard-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-green-camo.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "green-camo",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-green-camo.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-green-camo-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-black-carbon.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "black-carbon",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-black-carbon.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-black-carbon-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-brown-wood.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "brown-wood",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-brown-wood.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-brown-wood-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-black-leather.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "black-leather",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-black-leather.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-black-leather-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-brown-leather.png",
+  "slug": "caliburn-g3-pro",
+  "role": "variant",
+  "id": "brown-leather",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart (files.myuwell.com/uwell/product/caliburnG3Pro/pack1-4.webp, crop _incoming/image-sitewide/b-edge/ref-g3p/uw-brown-leather.png); geometry: the Stone Gray master",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png (UWELL chart / new, every colour)"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32)",
+  "fileName": "variant-brown-leather-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-edge/site/g3p-card.png",
+  "slug": "caliburn-g3-pro",
+  "role": "card",
+  "replaces": "/assets/products/caliburn-g3-pro/card.webp",
+  "aiRender": {
+   "tool": "the Pacific Blue front of this set tilted 12 degrees in 2D (_incoming/image-sitewide/tilt-card.js) — no new render; Higgsfield nano_banana_pro 4k, ONE master (Higgs Okm/2026-10-01 night - from UWELL official/official2-caliburn-g3-pro-stone-gray.png, the Stone Gray front whose UI matches UWELL's hero g3pro.jpg) + scripts/flatcut.js (no rim) + _incoming/image-sitewide/b-edge/recolour-g3p.js moves the frame colour round the screen to UWELL's chart crop of this colour (per height band for the gradient colours; masks ../b-uwell/masks.js); screen untouched; pre-sized by _incoming/image-sitewide/b-edge/presize-g3p.js",
+   "reference": "frame colour: UWELL's own chart crop _incoming/image-sitewide/b-edge/ref-g3p/uw-pacific-blue.png",
+   "fidelitySheet": "_incoming/image-sitewide/b-edge/g3p-owner-draft.png"
+  },
+  "note": "image-sitewide round 3b (1) edge defects 01/10 — Caliburn G3 Pro 16 maker colours (was 6 retailer cut-outs); front only (owner 01/10, item 32); replaces the retailer Pacific Blue cut-out (edge defect, lesson พ10)",
+  "fileName": "card-v2.webp"
  }
 ]
