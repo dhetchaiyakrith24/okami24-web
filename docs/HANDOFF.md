@@ -17,7 +17,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   GitHub checks green · self-merge-check BIG) [ตรวจแล้ว]; deploy 36935743985, live [ตรวจแล้ว — curl: 9/9 new files 200, page
   serves them] · owner 02/10 on the live page: "การ์ดเอาแบบตรงเหมือนเดิมดีกว่า" → PR `img-g5-card-upright` (card-v3.webp = the
   upright render, 4:5; colours stay tilted) + PR `rules-baseline-off` (the 05/10 hold lifted, TEAM_RULES + §18) — see `git log`.
-2 ahead of main: `git log --oneline origin/main..<branch>` — the two PRs named in item 1 until merged [ตรวจแล้ว — git].
+2 ahead of main: `git log --oneline origin/main..<branch>` for each branch named in item 1 (open PRs) [ตรวจแล้ว — git].
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
   VOOPOO `b-voopoo/`, coils `b-coils/`).
@@ -31,9 +31,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   "แต่ไม่อยากให้แบบตายตัว อยากให้มีการจัดวาง หลายหลายแบบในแต่ละแบรน" = vary the layout per brand (not one layout site-wide);
   (b) G3 Pro = two groups of 8 → TWO "ทั้งหมด" chips/images ("ทำเป็นหัวข้อ ทั้งหมด 2 ชิ้น", or a better idea) — needs a code change
   (`lineupImage` is one image today; ProductHero / ColorVariantRail) = tier B; (c) try B (AI relight) — done, see below.
-  RELX composer with studio floor + highlight roll-off: `b-edge/relx-studio.js d6 | g3p-a | g3p-b` → `b-edge/relx/<key>.png`.
-  B test (4 credits, job 55c8aa47, nano_banana_pro 4K, reference = relx/d6-page.png): `b-edge/relx/d6-B1.png` — light, shading, glossy floor = clearly more photographic, BUT AI changed
-  details (EVEREST LAB badge → scribble, screen text garbled, "VOOPOO" on the black tank → "17BECO", gold wheel → flat window —
+  RELX composer (studio floor + highlight roll-off): `b-edge/relx-studio.js d6 | g3p-a | g3p-b`. B test (4 credits, job
+  55c8aa47): `b-edge/relx/d6-B1.png` — more photographic, BUT AI changed details (badge, screen text, "VOOPOO" → "17BECO" —
   `relx/d6-AB-zoom.png`) → NOT publishable as is (IMAGE_SPEC §0 item 7). Friday's proposal [รอเจ้าของ (37)]: HYBRID = keep the
   script image's devices (100% true) and transfer only B's low-frequency light (blur(B)/blur(A) luminance ratio, large sigma) + B's
   floor reflections/shadows below the feet; 0 extra credits; the background stays transparent (IMAGE_SPEC §0 item 6).

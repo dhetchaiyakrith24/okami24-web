@@ -12,7 +12,7 @@
 //         the owner 02/10.)
 //   ok    off the site (docs · skills · agents · rules text · ordinary scripts)
 // Also BIG: a PR that edits 13.7 itself (its merge rule). Not visible here and still Friday's to check: checker PASS ·
-// every GitHub check green · the 7 SEO-baseline pages untouched (else big, 13.7 item (3)).
+// every GitHub check green.
 // "Not sure = big": the off-site list is an ALLOW-list.
 //
 // Usage:
