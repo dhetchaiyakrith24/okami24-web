@@ -60,6 +60,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   background = transparent + soft shadow/reflection as semi-transparent pixels (no dark box) · wants to SEE one lifestyle sample
   like UWELL's real-shot.webp (owner item 38) · Drag 6: prefers the photographic look of B (`relx/d6-B1.png`) but asked whether it
   fits the site — answer given: B's light + the true devices (hybrid), transparent, shown on the local test server page first.
+  OWNER 02/10 later [ตรวจแล้ว — chat]: "หยุดงานรูปทุกอย่างและ Focus Caliburn 5 ทุกสี ทุกรูป รูปรวม ให้เสร็จก่อนจะได้เป็นแบบให้ทั้งเว็บ"
+  → nothing else in 3b until Caliburn G5 is done. Owner also wants EVERY product like M Bar 10K's lower page + extra article text
+  for SEO. Today only 5 products have the "รายละเอียดเพิ่มเติม" story (`storyDetails: true`: m-bar-10k · m-bar-9k · m-switch-kit ·
+  infy-20k · muro-sc-8000; no UWELL product) [ตรวจแล้ว — grep]; it is part of THIS round's goal (round file: maker posters) but was
+  pushed back by the edge-defect fixes. Article TEXT for it = the separate round "รอบบทความ-รายละเอียดเพิ่มเติม" (round file
+  【ห้ามแตะ】) — not opened yet. Friday's plan [เชื่อว่า — told the owner 02/10]: Caliburn G5 template = every colour + card + all-colours
+  image to IMAGE_SPEC §0 item 8 + its "รายละเอียดเพิ่มเติม" story from UWELL's own posters; then roll the template out; the article
+  round opens after this round, G5 first (one chat = one round, central §12 item 30).
 3b NEXT — ORDER (owner 02/10: Caliburn G5 colours FIRST; owner 01/10: Esko LAST):
   (0) Caliburn G5 — every colour except Mystic Forest (owner: broken edges, patch marks); standard = UWELL's own renders
   (files.myuwell.com/uwell/product/caliburn-g5/…); caliburn-g5 is an SEO baseline page → images only + head-check 7/7.
