@@ -39,7 +39,7 @@ export function Scene3Voopoo({ progress }: { progress: MotionValue<number> }) {
         />
         <HeroProduct
           progress={progress}
-          src="/assets/products/drag-6/card.png"
+          src="/assets/products/drag-6/home-brown-v2.webp"
           alt="VOOPOO DRAG 6"
           sizeClass="h-[44vh] w-[26vh] sm:h-[56vh] sm:w-[33vh]"
           glow="rgba(255,106,44,0.4)"
