@@ -113,6 +113,8 @@ export const uwellProducts: Product[] = [
       alt: "UWELL Caliburn G5, all 7 colours",
       sourceName: "OKami24 composite (from UWELL's own per-colour renders)",
     },
+    // Owner 02/10 ("การ์ดเอาแบบตรงเหมือนเดิมดีกว่า"): the page opens on the upright card again, the tilted colours follow on swipe.
+    openOnCardPhoto: true,
     colorVariants: [
       {
         id: "mystic-forest",
