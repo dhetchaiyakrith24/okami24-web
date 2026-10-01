@@ -4227,5 +4227,252 @@
   },
   "note": "image-sitewide round, owner rule (a) 30/09 — the page opens on one sharp pod (openOnCardPhoto); replaces the 437-px Grape Aloe card",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g4k-desert-gold.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "desert-gold",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Cosmic Gray front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g4-pro-koko-cosmic-gray.png) — that render is a MIRROR image of the real device (G4 logo top-right; UWELL's front photo has it top-left), so _incoming/image-sitewide/b-uwell/recolour-g4k.js flops it, mirrors the screen UI and the engraved G4 PRO logo back so they read, then moves the frame colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "frame colour + model: UWELL's own colour banner files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-8.webp (_incoming/image-sitewide/b-uwell/official/); front geometry: UWELL's front photo (/assets/products/caliburn-g4-pro-koko/card.png)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-desert-gold-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g4k-waves-black.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "waves-black",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Cosmic Gray front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g4-pro-koko-cosmic-gray.png) — that render is a MIRROR image of the real device (G4 logo top-right; UWELL's front photo has it top-left), so _incoming/image-sitewide/b-uwell/recolour-g4k.js flops it, mirrors the screen UI and the engraved G4 PRO logo back so they read, then moves the frame colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "frame colour + model: UWELL's own colour banner files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-7.webp (_incoming/image-sitewide/b-uwell/official/); front geometry: UWELL's front photo (/assets/products/caliburn-g4-pro-koko/card.png)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-waves-black-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g4k-cosmic-gray.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "cosmic-gray",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Cosmic Gray front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g4-pro-koko-cosmic-gray.png) — that render is a MIRROR image of the real device (G4 logo top-right; UWELL's front photo has it top-left), so _incoming/image-sitewide/b-uwell/recolour-g4k.js flops it, mirrors the screen UI and the engraved G4 PRO logo back so they read, then moves the frame colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "frame colour + model: UWELL's own colour banner files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-4.webp (_incoming/image-sitewide/b-uwell/official/); front geometry: UWELL's front photo (/assets/products/caliburn-g4-pro-koko/card.png)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-cosmic-gray-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g4k-mirror-silver.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "mirror-silver",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Cosmic Gray front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g4-pro-koko-cosmic-gray.png) — that render is a MIRROR image of the real device (G4 logo top-right; UWELL's front photo has it top-left), so _incoming/image-sitewide/b-uwell/recolour-g4k.js flops it, mirrors the screen UI and the engraved G4 PRO logo back so they read, then moves the frame colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "frame colour + model: UWELL's own colour banner files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-6.webp (_incoming/image-sitewide/b-uwell/official/); front geometry: UWELL's front photo (/assets/products/caliburn-g4-pro-koko/card.png)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-mirror-silver-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g4k-crystal-white.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "crystal-white",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Cosmic Gray front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g4-pro-koko-cosmic-gray.png) — that render is a MIRROR image of the real device (G4 logo top-right; UWELL's front photo has it top-left), so _incoming/image-sitewide/b-uwell/recolour-g4k.js flops it, mirrors the screen UI and the engraved G4 PRO logo back so they read, then moves the frame colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "frame colour + model: UWELL's own colour banner files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-5.webp (_incoming/image-sitewide/b-uwell/official/); front geometry: UWELL's front photo (/assets/products/caliburn-g4-pro-koko/card.png)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-crystal-white-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g4k-light-green.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "light-green",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Cosmic Gray front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g4-pro-koko-cosmic-gray.png) — that render is a MIRROR image of the real device (G4 logo top-right; UWELL's front photo has it top-left), so _incoming/image-sitewide/b-uwell/recolour-g4k.js flops it, mirrors the screen UI and the engraved G4 PRO logo back so they read, then moves the frame colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "frame colour + model: UWELL's own colour banner files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-2.webp (_incoming/image-sitewide/b-uwell/official/); front geometry: UWELL's front photo (/assets/products/caliburn-g4-pro-koko/card.png)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-light-green-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g4k-glass-blue.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "glass-blue",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Cosmic Gray front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g4-pro-koko-cosmic-gray.png) — that render is a MIRROR image of the real device (G4 logo top-right; UWELL's front photo has it top-left), so _incoming/image-sitewide/b-uwell/recolour-g4k.js flops it, mirrors the screen UI and the engraved G4 PRO logo back so they read, then moves the frame colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "frame colour + model: UWELL's own colour banner files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-3.webp (_incoming/image-sitewide/b-uwell/official/); front geometry: UWELL's front photo (/assets/products/caliburn-g4-pro-koko/card.png)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-glass-blue-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g4k-coral-pink.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "coral-pink",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Cosmic Gray front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g4-pro-koko-cosmic-gray.png) — that render is a MIRROR image of the real device (G4 logo top-right; UWELL's front photo has it top-left), so _incoming/image-sitewide/b-uwell/recolour-g4k.js flops it, mirrors the screen UI and the engraved G4 PRO logo back so they read, then moves the frame colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "frame colour + model: UWELL's own colour banner files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-1.webp (_incoming/image-sitewide/b-uwell/official/); front geometry: UWELL's front photo (/assets/products/caliburn-g4-pro-koko/card.png)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-coral-pink-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g4k-golden-carbon.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "golden-carbon",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Cosmic Gray front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g4-pro-koko-cosmic-gray.png) — that render is a MIRROR image of the real device (G4 logo top-right; UWELL's front photo has it top-left), so _incoming/image-sitewide/b-uwell/recolour-g4k.js flops it, mirrors the screen UI and the engraved G4 PRO logo back so they read, then moves the frame colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "frame colour + model: UWELL's own colour banner files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-9.webp (_incoming/image-sitewide/b-uwell/official/); front geometry: UWELL's front photo (/assets/products/caliburn-g4-pro-koko/card.png)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-golden-carbon-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/card-g4k.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "card",
+  "replaces": "/assets/products/caliburn-g4-pro-koko/card.png",
+  "aiRender": {
+   "tool": "the cosmic-gray photo of this set tilted 12 degrees in 2D (_incoming/image-sitewide/tilt-card.js) — no new render; Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Cosmic Gray front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g4-pro-koko-cosmic-gray.png) — that render is a MIRROR image of the real device (G4 logo top-right; UWELL's front photo has it top-left), so _incoming/image-sitewide/b-uwell/recolour-g4k.js flops it, mirrors the screen UI and the engraved G4 PRO logo back so they read, then moves the frame colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "frame colour + model: UWELL's own colour banner files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-4.webp (_incoming/image-sitewide/b-uwell/official/); front geometry: UWELL's front photo (/assets/products/caliburn-g4-pro-koko/card.png)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png"
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — the page opens on one sharp tilted device (openOnCardPhoto)",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g3k-emerald-green.png",
+  "slug": "caliburn-g3-pro-koko",
+  "role": "variant",
+  "id": "emerald-green",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Light Silver front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g3-pro-koko-light-silver.png, made from UWELL's images) + _incoming/image-sitewide/b-uwell/recolour-g3k.js moves the metal colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-emerald-green.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-emerald-green-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g3k-light-silver.png",
+  "slug": "caliburn-g3-pro-koko",
+  "role": "variant",
+  "id": "light-silver",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Light Silver front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g3-pro-koko-light-silver.png, made from UWELL's images) + _incoming/image-sitewide/b-uwell/recolour-g3k.js moves the metal colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-light-silver.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-light-silver-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g3k-lilac-purple.png",
+  "slug": "caliburn-g3-pro-koko",
+  "role": "variant",
+  "id": "lilac-purple",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Light Silver front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g3-pro-koko-light-silver.png, made from UWELL's images) + _incoming/image-sitewide/b-uwell/recolour-g3k.js moves the metal colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-lilac-purple.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-lilac-purple-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g3k-luxury-gold.png",
+  "slug": "caliburn-g3-pro-koko",
+  "role": "variant",
+  "id": "luxury-gold",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Light Silver front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g3-pro-koko-light-silver.png, made from UWELL's images) + _incoming/image-sitewide/b-uwell/recolour-g3k.js moves the metal colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-luxury-gold.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-luxury-gold-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g3k-midnight-black.png",
+  "slug": "caliburn-g3-pro-koko",
+  "role": "variant",
+  "id": "midnight-black",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Light Silver front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g3-pro-koko-light-silver.png, made from UWELL's images) + _incoming/image-sitewide/b-uwell/recolour-g3k.js moves the metal colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-midnight-black.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-midnight-black-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g3k-rose-pink.png",
+  "slug": "caliburn-g3-pro-koko",
+  "role": "variant",
+  "id": "rose-pink",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Light Silver front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g3-pro-koko-light-silver.png, made from UWELL's images) + _incoming/image-sitewide/b-uwell/recolour-g3k.js moves the metal colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-rose-pink.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-rose-pink-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g3k-sky-blue.png",
+  "slug": "caliburn-g3-pro-koko",
+  "role": "variant",
+  "id": "sky-blue",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Light Silver front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g3-pro-koko-light-silver.png, made from UWELL's images) + _incoming/image-sitewide/b-uwell/recolour-g3k.js moves the metal colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-sky-blue.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-sky-blue-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/g3k-space-gray.png",
+  "slug": "caliburn-g3-pro-koko",
+  "role": "variant",
+  "id": "space-gray",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Light Silver front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g3-pro-koko-light-silver.png, made from UWELL's images) + _incoming/image-sitewide/b-uwell/recolour-g3k.js moves the metal colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-space-gray.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png (UWELL / site now / new, every colour) — owner 01/10 \"ทำเลย\""
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — one master for every colour so only the frame colour changes when a customer swipes; replaces the small retailer cut-out",
+  "fileName": "variant-space-gray-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-uwell/site/card-g3k.png",
+  "slug": "caliburn-g3-pro-koko",
+  "role": "card",
+  "replaces": "/assets/products/caliburn-g3-pro-koko/variant-emerald-green.webp",
+  "aiRender": {
+   "tool": "the emerald-green photo of this set tilted 12 degrees in 2D (_incoming/image-sitewide/tilt-card.js) — no new render; Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 \"official\" Light Silver front render, Higgs Okm/2026-10-01 night - from UWELL official/official-caliburn-g3-pro-koko-light-silver.png, made from UWELL's images) + _incoming/image-sitewide/b-uwell/recolour-g3k.js moves the metal colour (CIELAB) to this colour; screen and clear pod untouched; scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
+   "reference": "metal colour: the shop's own photo of this colour (/assets/products/caliburn-g3-pro-koko/variant-emerald-green.webp — vapesourcing redistribution of UWELL's render; gold/black clipped there, see recolour-g3k.js OVERRIDE)",
+   "fidelitySheet": "_incoming/image-sitewide/b-uwell/owner-sheet-1.png"
+  },
+  "note": "image-sitewide round 3b (b) 01/10 — the page opens on one sharp tilted device (openOnCardPhoto)",
+  "fileName": "card-v2.webp"
  }
 ]
