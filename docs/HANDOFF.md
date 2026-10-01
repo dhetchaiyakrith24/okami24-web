@@ -11,16 +11,21 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — this chat (01/10 evening) merged 3 PRs + this docs PR [ตรวจแล้ว — gh]:
-  #169 `d8b9761` G4 Classic Alpine Green darkened to UWELL's forest green (owner chose "เข้มตาม UWELL"; checker 6/6; live
-  [ตรวจแล้ว — curl: variant-alpine-green-v3 + swatch #324c42]) · #170 `9a5124b` ARGUS G3 mini 9 colours + card (checker
-  6/7 → slot fix → re-check 4/4; live [ตรวจแล้ว — curl: card-v2 + variant-*-v2]) · #171 `97e39b1` ARGUS P3 7 colour
-  photos + Zero Nano card (checker 6/6; live [ตรวจแล้ว — curl: argus-p3 7 variant-*-v2 · zero-nano card-v2]).
-  Each = revert its merge commit (#171 = also one commit per product: 39ea538 P3 · 0eec50e Zero Nano).
-2 ahead of main: nothing (this §16 = docs PR, merged by Friday) [ตรวจแล้ว — git] · test server stopped [ตรวจแล้ว —
-  test-server.js status] · smogz-rules: nothing open [เชื่อว่า — not re-checked this chat].
+1 main: `git fetch && git log -1 --oneline origin/main` — the 01/10 evening chat merged #169 `d8b9761` G4 Classic Alpine Green ·
+  #170 `9a5124b` ARGUS G3 mini 9 colours + card · #171 `97e39b1` ARGUS P3 7 colours + Zero Nano card · #172 docs, all live
+  [ตรวจแล้ว — curl]; then this docs PR (no site change after #171). Each = revert its merge commit.
+  Owner 01/10 evening [ตรวจแล้ว — chat; "G4 Classic stays" = Friday's reading of "ไม่แก้ตามนั้น", answering "revert?"
+  — เชื่อว่า]: G4 Classic stays as remade · P3 Blue Leather graffiti OK · the
+  new photos of #169-#171 "ผ่าน" · Higgsfield credits topped up (201.6 [ตรวจแล้ว — balance tool]).
+2 ahead of main: `git log --oneline origin/main..<branch>` — nothing besides this docs PR [ตรวจแล้ว — git] · test server
+  stopped [ตรวจแล้ว].
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
-  `_incoming/image-sitewide/`; UWELL scripts `b-uwell/`, VOOPOO/SALTHUB scripts `b-voopoo/`).
+  `_incoming/image-sitewide/`; UWELL scripts `b-uwell/`, VOOPOO/SALTHUB scripts `b-voopoo/`, coils `b-coils/`).
+  OWNER 01/10 evening [ตรวจแล้ว — chat], overriding the round file (its 【ห้ามแตะ】 line on the 7 baseline pages still reads
+  "until 05/10" — the file is the owner's, not edited): (a) the 7 SEO baseline pages MAY get image work now ("ทำได้เลยไม่ต้อง
+  รอ 06/10 … รอบนี้ทำงานรูปทำให้จบ"); [Friday's condition — เชื่อว่า]: images only, title/meta/H1/JSON-LD untouched,
+  html-diff will show their image paths change (expected) · (b) all-options image for pod systems = `docs/IMAGE_SPEC.md`
+  §0 item 5 (owner's words + Friday's own calls labelled there) · (c) "finish the image work".
   THE METHODS THAT WORK: (a) one model, colours differ only in colour = ONE master + recolour by script so a swipe changes
   only the colour — silver master: `b-uwell/recolour-g4c.js` (G4 Classic; OVERRIDE target per colour when the maker's
   photo disagrees with the shop's) · coloured master: `b-voopoo/recolour-g3m.js` (hue wobble scaled by target chroma,
@@ -32,30 +37,40 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   new file name, lesson พ6). Check every night render for MIRRORING against the maker's front photo before using it.
   NIGHT RENDERS 01/10: 222 jobs, `_incoming/image-sitewide/night/jobs.tsv` → `Higgs Okm/` (git-excluded). Many are
   unusable as-is [ตรวจแล้ว — by eye, per product] — use them as a master for the methods above.
-  Done this round (below-standard photos, sharp-scan `_incoming/image-sitewide/night/sharp-scan.tsv`): G4 Pro KOKO,
-  G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano [ตรวจแล้ว — merged + checker each]. G3 Pro (plain) kept — sharp (lesson พ9).
-3b NEXT — ORDER (owner 01/10: Esko LAST; "เดินงานแก้รูปสินค้าให้เสร็จ"):
-  (1) coils — 8 coil/cartridge cards below standard (sharp-scan: coil-54 1.1 · coil-74 2.6 · coil-56 3.2 · coil-55 3.3
-  · coil-89 3.6 · coil-68 4.1 · coil-87 5.3 · coil-83 6.2 — cardDetail): retailer photos with the retail box on white,
-  274–700 px; NO night renders exist for them → new renders need credits = waiting on owner (item 4 (30)).
-  (2) batch 3 on 06/10 (after the baseline freeze): argus-g4 + Argus Multi-Ohm + ARGUS P3 card-v2 + openOnCardPhoto
-  (P3's card renders on argus-g4 via relatedProductSlugs, so it stayed `variants/blue-leather.webp`; P3 page now opens
-  on the first colour) + M Bar 15K duplicate record (= M Switch Kit).
-  (3) BATCH 5 rest of the site (planner first; TFIT M Power after a researcher confirms the model); next in sharp-scan
-  order: joiway-f4 (1.9, 16 opts) · relx-creator (2.8) · argus-g4-mini (4.2) · relx-smash-go-12k (4.9).
-  (4) Esko pod-159 LAST: the 18 maker flavours show "หมด" (Shipnity status `unknown`; PilotProductDetail /
-  ProductMasterVariantPicker / catalog-resolver treat non-"in-stock" as out) — owner §18: show as available —
-  stock/cart change = 13.7 big (2), full set, own PR, + BSOT §21 (pod-159 block).
-  Higgsfield balance 1.6 credits [ตรวจแล้ว 01/10 afternoon — not used this chat]; 4K = 4, nano 2K = 2,
-  gpt_image_2_5 = 0.25, image_background_remover = 1. Back views G4 Pro KOKO Desert Gold / Golden Carbon in
-  `Higgs Okm/2026-10-01 G4 Pro KOKO back views/` — NOT on the site (no slot for a second view per colour).
+  Done this round: G4 Pro KOKO, G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano [ตรวจแล้ว — merged +
+  checker each; owner "ผ่าน" 01/10 evening for #169-#171].
+3b NEXT — ORDER (owner 01/10: Esko LAST):
+  (1) EDGE DEFECTS (owner 01/10: "เส้นขอบโผล่ · หัวพอตแตก" on ARGUS G4 mini, Caliburn G3 Pro, Drag 6 card): old cut-outs
+  from 29/08–04/09, never remade [ตรวจแล้ว — git]; the sharp-scan missed them (lesson พ10); numeric edge metrics do not
+  separate them from the good G5 pages (`edge-audit/image-quality-scan.ts`, kept only as a finder) → judge by eye with
+  `_incoming/image-sitewide/edge-audit/sheet.js <out.png> <files…>` (whole + 3x edge zoom on dark and magenta);
+  `edge-audit/visual-audit.md` = per-product verdicts by eye (agent 01/10, 44 products, sheets in `edge-audit/sheets/`)
+  [เชื่อว่า — agent's eye; Friday spot-checked only the 3 the owner named]: DEFECT (16) argus-g4-mini · caliburn-g3-pro ·
+  drag-6 · drag-x3 (tank cropped) · vinci-s · vmate-i3 · zero-pro (options) · m-bar-15k (options soft) · muro-3ml (posters)
+  · coil-1/38/53/54/56/74/94 · BORDERLINE (4) argus-p3 card · drag-s3 · coil-89 · zero-cartridge · WHITE BOX not cut (6)
+  coil-55/70/72 (options)/83/87 · mood-monster-14k · coil-68 judged OK. Remake every product with a defect — never
+  from the old cut-out (lesson 22). Night renders that already exist [ตรวจแล้ว — jobs.tsv]: caliburn-g3-pro 6 colours
+  (sets colour / official / official2 / tilt / tilt2 — "official" ones are from UWELL's images) · drag-6 7 colours +
+  card a/b · argus-g4-mini card a/b only · argus-g4 card a/b · drag-s3 / drag-x3 / vinci-s colours — the "colours"
+  set was made from retailer cut-outs, so zoom its edges before use (`Higgs Okm/README.txt`).
+  (2) all-colours image for pod systems — drafts first (central §6 / §12 item 22): G3 mini (9) + G4 Classic (4), then the
+  other pod systems as their colour sets get remade.
+  (3) coils — the 8 of the old list (coil-54/74/56/55/89/68/87/83; 68 judged OK by the audit) + the audit's coil-1/38/53/
+  70/72/94: references for the first 8 found, checked and partly uploaded, nothing generated:
+  `_incoming/image-sitewide/b-coils/README.txt` (per coil: reference, media_id, source, identity notes).
+  (4) argus-g4 + Argus Multi-Ohm + ARGUS P3 card-v2 + openOnCardPhoto (now allowed, (a) above) + M Bar 15K duplicate
+  record (= M Switch Kit).
+  (5) BATCH 5 rest of the site (planner first; TFIT M Power after a researcher confirms the model): joiway-f4 · relx-creator ·
+  relx-smash-go-12k … (6) Esko pod-159 LAST: the 18 maker flavours show "หมด" (Shipnity status `unknown`;
+  PilotProductDetail / ProductMasterVariantPicker / catalog-resolver treat non-"in-stock" as out) — owner §18: show as
+  available — stock/cart change = 13.7 big (2), full set, own PR, + BSOT §21 (pod-159 block).
+  Higgsfield: 201.6 credits 01/10 evening; 4K = 4, nano 2K = 2, gpt_image_2_5 = 0.25, image_background_remover = 1 ·
+  IMAGE_SPEC §0 item 7: tell the owner the credits for a whole set before starting it. Back views G4 Pro KOKO Desert
+  Gold / Golden Carbon in `Higgs Okm/2026-10-01 G4 Pro KOKO back views/` — NOT on the site.
   At the round close: `npx tsx scripts/asset-refs.ts` for unreferenced product photos (list in item 5).
+  Account weekly usage was 95% on 01/10 evening (resets 04/10) [ตรวจแล้ว — get_usage] — big batches may stop midway.
 4 waiting on owner:
-  (30) coil photos: OK to spend credits? ~2 per coil with nano 2K (8 coils ≈ 16) or ~0.25 per coil with GPT Image
-       (lower detail) — balance 1.6. Recommendation: nano 2K for the 4 worst (coil-54/74/56/55) first.
-  (29) new photos not yet seen by the owner [ตรวจผ่านตามเกณฑ์ ≠ เจ้าของอนุมัติ]: G4 Classic Alpine Green · ARGUS G3
-       mini 9 · ARGUS P3 7 (Blue Leather graffiti = AI redraw: letters "ARG/MS", "P3", "voopoo" sit slightly
-       elsewhere than on VOOPOO's print) · Zero Nano card. Before/after: `_incoming/image-sitewide/b-voopoo/shots/`.
+  (31) all-colours image drafts (item 3b (2)) — when made.
   (28) Thai copy flags from thai-copy (not changed): INFY `descriptionTh` says disposable-only brand (its English line says
        pod systems + cartridges too) · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" / "สินค้าที่คุณอาจสนใจ" stiff
        site-wide · RELX Creator = "เครื่องระบบสวิตช์" (locked word) or keep "เครื่องใช้ซ้ำ"
@@ -65,7 +80,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - 05/10: re-read GSC against `docs/SEO_BASELINE.md` (Cowork supplies the numbers); after 05/10 the 7 baseline pages
     use the light set — delete `galleryNoteHeld` + the `heldNote` prop; M Bar 10K airflow row;
     then drop the "ถึง 05/10" clauses of TEAM_RULES 13.5 #3 / 13.7 / 13.8.
-  - A product's CARD renders on the baseline pages that list it in relatedProductSlugs (argus-g4 → argus-g4-mini,
+  - (owner lifted this for image work 01/10 evening — item 3) A product's CARD renders on the baseline pages that list it in relatedProductSlugs (argus-g4 → argus-g4-mini,
     argus-p3, vinci-s; caliburn-g5 → caliburn-g5-lite, caliburn-g4-pro-koko, caliburn-g4-pro) [ตรวจแล้ว — data] — until 05/10 change only colour photos
     there. html-diff strips <script>: argus-g4's RSC payload now names P3's v2 colour files (DOM, head, JSON-LD identical)
     [ตรวจแล้ว — checker PR #171]; Friday judged that "unchanged" (13.5 #3 proof = html-diff) — owner may rule otherwise.
@@ -74,7 +89,6 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - `_incoming/` folders moved out 01/10 to `C:\Users\dhetc\OKami24-เก็บ\incoming-01-10\` (not deleted).
   - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
   - Carried ideas: card sweep on 4:5 · ARTICLE round · category-structure round.
-  - The all-options image ("ทั้งหมด") comes back later in a new form — the OWNER reopens it (01/10); until then none is made.
   - Unreferenced since 01/10 [ตรวจแล้ว — checker PR #172 ran asset-refs.ts] (sweep at the round close): the six round lineups, G3 Pro KOKO lineup.webp + old variant files,
     G4 Pro KOKO old variant files (card.png stays — the home Scene2 uses it), G4 Classic card.png / lineup.webp / old variants
     + variant-alpine-green-v2.webp, argus-g3-mini card.webp / lineup.webp / variants/*, argus-p3 lineup.webp + variants/*
@@ -174,6 +188,6 @@ the caliburn-g5 baseline page's related box ("ไม่รอผล ทำเล
 not on the site) · leftover credits = next in the queue, unclear source = skip.
 
 **Images:** the first photo of a multi-option product = one sharp single device, Caliburn style; other colours/flavours
-by swipe (IMAGE_SPEC §0 item 5) · NO all-options image / "ทั้งหมด" chip on pages that got the new sets — the round's
-stage-arc / fan lineups were removed 01/10 ("1 ตอนนี้เอาออกก่อน … จะกลับมาทำใหม่ภายหลัง" — the owner reopens it, not us) ·
+by swipe (IMAGE_SPEC §0 item 5) · all-options image ("ทั้งหมด"): pod systems get a NEW one (owner 01/10 evening, design left
+to Friday: plain, luxurious, premium, depth); disposables / pod-replacement products get none (IMAGE_SPEC §0 item 5) ·
 every product gets an SEO article in "more details" = its own later round.
