@@ -251,9 +251,11 @@ export const uwellProducts: Product[] = [
     // lineup shot. Real, alpha-transparent, high-resolution source — no OKami24 compositing
     // needed for this product.
     lineupImage: {
-      src: "/assets/products/caliburn-g5-lite/lineup.webp",
-      alt: "UWELL Caliburn G5 Lite, full official 8-color lineup",
-      sourceName: "UWELL (official brand site, myuwell.com)",
+      // Image-sitewide round, set 1 (02/10): the G5 layout the owner picked (the card colour big in front, the other
+      // 7 behind in two upright tiers, soft shadow + faint reflection) from UWELL's own fronts — _incoming/image-sitewide/set1/.
+      src: "/assets/products/caliburn-g5-lite/lineup-v2.webp",
+      alt: "UWELL Caliburn G5 Lite, all 8 colours",
+      sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
     // Real UWELL color/finish lineup — ALL 8 now have a real, OFFICIAL photo (owner quality
     // review, 2026-09-03, THIRD pass — see the card asset's angle note for the sourcing story).
@@ -375,9 +377,11 @@ export const uwellProducts: Product[] = [
     // "All Colors" lineup (owner mandate, 2026-09-03) — the exact same official myuwell.com strip
     // every per-color crop below came from, used here whole/uncropped.
     lineupImage: {
-      src: "/assets/products/caliburn-g5-lite-se/lineup.webp",
-      alt: "UWELL Caliburn G5 Lite SE, full official 8-color lineup",
-      sourceName: "UWELL (official brand site, myuwell.com)",
+      // Image-sitewide round, set 1 (02/10): the G5 layout the owner picked (the card colour big in front, the other
+      // 7 behind in two upright tiers, soft shadow + faint reflection) from UWELL's own fronts — _incoming/image-sitewide/set1/.
+      src: "/assets/products/caliburn-g5-lite-se/lineup-v2.webp",
+      alt: "UWELL Caliburn G5 Lite SE, all 8 colours",
+      sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
     // Real UWELL color/finish lineup — ALL 8 now have a real, OFFICIAL photo (owner quality
     // review, 2026-09-03, THIRD pass — see the card asset's angle note). All 8 finishes are
@@ -780,9 +784,11 @@ export const uwellProducts: Product[] = [
     // map entries in scripts/process-images.map.json. The lineup is rebuilt from those 8 files
     // (scripts/build-lineup-grid.js --cols 4) — no image content invented.
     lineupImage: {
-      src: "/assets/products/caliburn-g4/lineup.webp",
-      alt: "UWELL Caliburn G4, all 8 colors",
-      sourceName: "OKami24 composite (from UWELL's official colour renders)",
+      // Image-sitewide round, set 1 (02/10): the G5 layout the owner picked (the card colour big in front, the other
+      // 7 behind in two upright tiers, soft shadow + faint reflection) from UWELL's own fronts — _incoming/image-sitewide/set1/.
+      src: "/assets/products/caliburn-g4/lineup-v2.webp",
+      alt: "UWELL Caliburn G4, all 8 colours",
+      sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
     colorVariants: [
       {
