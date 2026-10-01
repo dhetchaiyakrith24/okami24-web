@@ -17,9 +17,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Then #177 `d8bf903` Drag 6 all-colours lineup-v2.webp (owner's pick "VMATE MAX") + home Scene3Voopoo = home-brown-v2.webp
   (owner approved touching cinematic/ for this one swap) (checker 6/6 · checks green · BIG · head-check 7/7 baseline pages
   head/H1/JSON-LD same) [ตรวจแล้ว]; deploy 36895480132, live [ตรวจแล้ว — curl: lineup-v2 200, home-brown-v2 200]. Revert = its merge.
-  The Drag 6 lineup ON THE SITE has not been seen by the owner yet (only the draft) [รอเจ้าของ].
-2 ahead of main: `git log --oneline origin/main..<branch>` — only the docs PR of this handoff (IMAGE_SPEC §0 item 5 layout rule +
-  LESSONS ช7 + this §16) [ตรวจแล้ว — git]. Test server on 3412 may still be up (build of 7de0bd4): `node scripts/test-server.js status` / `stop`.
+  Owner on the live Drag 6 lineup (01/10 late): "ยังดูเล็กไปหน่อย" + it looks like a graphic, not a studio photo (no studio light,
+  no shading on the body, no cast/floor shadow, too much white on the body) → redo (item 3b (1)).
+2 ahead of main: `git log --oneline origin/main..<branch>` — only the docs PR of this §16 (#178 = IMAGE_SPEC layout rule + LESSONS ช7 merged
+  09c7551) [ตรวจแล้ว — git]. Test server on 3412 may still be up (build of 7de0bd4): `node scripts/test-server.js status` / `stop`.
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
   VOOPOO `b-voopoo/`, coils `b-coils/`).
@@ -29,8 +30,19 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   HTML of the 7 pages) · (b) all-options image for pod systems = `docs/IMAGE_SPEC.md` §0 item 5 · (c) "finish the image work".
   ALL-COLOURS LAYOUT (owner 01/10 — rule in IMAGE_SPEC §0 item 5 "การจัดวาง"): few colours = UWELL float/tilt/layers · many =
   OKami's own poster layouts, every device whole, gaps, one hero. Composer `b-edge/d6-poster.js` (VMATE · V THRU · RELX · VEUZ fan;
-  canvas sized from bounds) — copy it per product; G3 Pro drafts `b-edge/g3p-lineup.js`. Rejected (do not retry): stagger/arc/fan
-  of round 1, UWELL tilt-cascade of 7 ("แข็งๆ"), depth-cue cascade / V-wings (lesson ช7).
+  canvas sized from bounds) — copy it per product. Rejected (do not retry): stagger/arc/fan of round 1, UWELL tilt-cascade of 7
+  ("แข็งๆ"), depth-cue cascade / V-wings (lesson ช7), G3 Pro fan + two rows of 16 ("ไม่ผ่านเลย").
+  OWNER 01/10 late [ตรวจแล้ว — chat]: (a) the RELX Phantom poster layout (one tilt, zigzag high/low, every device whole) is OK
+  "แต่ไม่อยากให้แบบตายตัว อยากให้มีการจัดวาง หลายหลายแบบในแต่ละแบรน" = vary the layout per brand (not one layout site-wide);
+  (b) G3 Pro = two groups of 8 → TWO "ทั้งหมด" chips/images ("ทำเป็นหัวข้อ ทั้งหมด 2 ชิ้น", or a better idea) — needs a code change
+  (`lineupImage` is one image today; ProductHero / ColorVariantRail) = tier B; (c) try B (AI relight) — done, see below.
+  RELX composer with studio floor + highlight roll-off: `b-edge/relx-studio.js d6 | g3p-a | g3p-b` → `b-edge/relx/<key>.png`
+  (drafts sent: `b-edge/relx/sheet.png`). B test (4 credits, job 55c8aa47, nano_banana_pro 4K, reference = relx/d6-page.png, prompt
+  in jobs.tsv row B1 / this chat): `b-edge/relx/d6-B1.png` — light, shading, glossy floor = clearly more photographic, BUT AI changed
+  details (EVEREST LAB badge → scribble, screen text garbled, "VOOPOO" on the black tank → "17BECO", gold wheel → flat window —
+  `relx/d6-AB-zoom.png`) → NOT publishable as is (IMAGE_SPEC §0 item 7). Friday's proposal [รอเจ้าของ (37)]: HYBRID = keep the
+  script image's devices (100% true) and transfer only B's low-frequency light (blur(B)/blur(A) luminance ratio, large sigma) + B's
+  floor reflections/shadows below the feet; 0 extra credits; the background stays transparent (IMAGE_SPEC §0 item 6).
   THE METHODS THAT WORK: (a) one model, colours differ only in colour = ONE master + recolour by script — silver master:
   `b-uwell/recolour-g4c.js`; coloured master: `b-voopoo/recolour-g3m.js` (lesson 23); GRADIENT colours = targets per height band:
   `b-edge/recolour-g4m.js` (body) and `b-edge/recolour-g3p.js` (frame round a screen, masks `b-uwell/masks.js`); colour targets
@@ -44,8 +56,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Done this round: G4 Pro KOKO, G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano, ARGUS G4 mini, Drag 6 (colours
   + lineup + home card), Caliburn G3 Pro (16 colours + card).
 3b NEXT — ORDER (owner 01/10: Esko LAST):
-  (1) Caliburn G3 Pro all-colours image: drafts sent `b-edge/g3p-lineup/sheet.png` (1 = VEUZ fan, Pacific Blue front —
-  Friday recommends · 2 = two rows 8+8) — waiting on owner item (35); publish as lineup-v2.webp like #177 (page has no lineup now).
+  (1) Drag 6 lineup redo = RELX layout (`relx-studio.js d6`) + the light owner item (37) decides (hybrid or script-only), bigger in
+  the frame; publish as lineup-v3.webp (new name, lesson พ6) with the same proof as #177 (head-check 7/7, visible-text, gallery-probe).
+  Then Caliburn G3 Pro: two "ทั้งหมด" (g3p-a / g3p-b, 8 each, UWELL order) — code change for two lineups + the two images; a
+  DIFFERENT layout from Drag 6 per the owner's "vary per brand" (VOOPOO = RELX zigzag → UWELL e.g. V THRU or VMATE).
   (2) rest of the edge-defect list (`edge-audit/visual-audit.md`, agent's eye): vinci-s · vmate-i3 · drag-x3 · zero-pro ·
   m-bar-15k (options soft) · muro-3ml · coil-1/38/53/54/56/74/94 · borderline argus-p3 card · drag-s3 · coil-89 · zero-cartridge ·
   white boxes coil-55/70/72/83/87 · mood-monster-14k. Night renders that exist: drag-s3 / drag-x3 / vinci-s colours (from retailer
@@ -56,15 +70,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (5) argus-g4 + Argus Multi-Ohm + ARGUS P3 card-v2 + openOnCardPhoto for P3 + M Bar 15K duplicate record (= M Switch Kit).
   (6) BATCH 5 rest of the site (planner first; joiway-f4 · relx-creator · relx-smash-go-12k …; TFIT M Power after a researcher) ·
   (7) Esko pod-159 LAST (stock/cart = 13.7 big (2), full set, own PR, + BSOT §21).
-  Higgsfield: 182.6 credits on 01/10 night, none used since [เชื่อว่า — not re-checked]; 4K = 4, nano 2K = 2, remover = 1 · tell the
-  owner the credits for a whole set before starting it (IMAGE_SPEC §0 item 7). Remover jobs can sit "queued" ~5 min; a job-id cut that
-  errors 3x works after uploading the file (`media_upload`, PUT with header If-None-Match: *).
+  Higgsfield: 178.6 credits after the B test 01/10 late [ตรวจแล้ว — balance 182.6 before − 4]; 4K = 4, nano 2K = 2, remover = 1 · tell the
+  owner the credits for a whole set before starting it (IMAGE_SPEC §0 item 7).
   At the round close: `npx tsx scripts/asset-refs.ts` for unreferenced product photos (list in item 5).
-  Account weekly usage 98% on 01/10 (resets 04/10 22:00 ICT) [ตรวจแล้ว — get_usage]; owner OK'd extra usage 01/10 ("ใช่ครับต่อเลย").
+  Account weekly usage 99% on 01/10 late (resets 04/10 22:00 ICT) [ตรวจแล้ว — get_usage]; owner OK'd extra usage 01/10 ("ใช่ครับต่อเลย")
+  and asked whether $20 of extra usage finishes the round — Friday: probably not (several chats left) [เชื่อว่า]; measure the spend
+  after the first chat that actually uses extra usage (`get_usage` extraUsage.spent was $0.00 at 01/10 late) and tell the owner.
 4 waiting on owner:
-  (35) Caliburn G3 Pro all-colours layout: 1 fan (recommended) or 2 rows — `b-edge/g3p-lineup/sheet.png`, sent 01/10.
-  (36) the Drag 6 lineup as it looks on the live page (390 + 1440: `b-edge/shots-d6/cmp-all-390.png`, `cmp-all-1440.png`) —
-       checker note: the row fills 1400×767 of the 1600² frame, so it shows smaller than a single device; a wider crop = taste.
+  (37) Drag 6 light: HYBRID (script devices + B's light, 0 credits — Friday recommends) or script-only — files sent 01/10 late:
+       `b-edge/relx/d6-AB.png` (A script / B AI) + `d6-AB-zoom.png` (B's wrong details).
   (28) Thai copy flags from thai-copy (not changed): INFY `descriptionTh` says disposable-only brand · shared strings
        "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" / "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ"
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour
