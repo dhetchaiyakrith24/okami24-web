@@ -10,41 +10,52 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
 
-1 main: `git fetch && git log -1 --oneline origin/main` — this chat (01/10 afternoon) merged 3 PRs [ตรวจแล้ว — gh]:
-  #165 `818249e` G4 Pro KOKO 9 + G3 Pro KOKO 8 colours (checker 9/9, live 16:31) · #166 `e143cdd` no "ทั้งหมด" on M Bar
-  10K / 9K / Switch Kit / Switch Pod / INFY 20K / MURO + docs (checker 9/9, live 17:00 — all six chips gone [ตรวจแล้ว —
-  curl]) · #167 `3a0e44a` G4 Classic 4 colours (checker 8/8, live 17:12 [ตรวจแล้ว — curl]). Each = revert its merge commit.
-  Live answered 502 on ~9 pages for about a minute right after #166's deploy, then 200 everywhere [ตรวจแล้ว — curl].
-2 ahead of main: nothing (this §16 = PR #168, docs-only, merged by Friday). Test server stopped. smogz-rules: nothing open.
+1 main: `git fetch && git log -1 --oneline origin/main` — this chat (01/10 evening) merged 3 PRs + this docs PR [ตรวจแล้ว — gh]:
+  #169 `d8b9761` G4 Classic Alpine Green darkened to UWELL's forest green (owner chose "เข้มตาม UWELL"; checker 6/6; live
+  [ตรวจแล้ว — curl: variant-alpine-green-v3 + swatch #324c42]) · #170 `9a5124b` ARGUS G3 mini 9 colours + card (checker
+  6/7 → slot fix → re-check 4/4; live [ตรวจแล้ว — curl: card-v2 + variant-*-v2]) · #171 `97e39b1` ARGUS P3 7 colour
+  photos + Zero Nano card (checker 6/6; live [ตรวจแล้ว — curl: argus-p3 7 variant-*-v2 · zero-nano card-v2]).
+  Each = revert its merge commit (#171 = also one commit per product: 39ea538 P3 · 0eec50e Zero Nano).
+2 ahead of main: nothing (this §16 = docs PR, merged by Friday) [ตรวจแล้ว — git] · test server stopped [ตรวจแล้ว —
+  test-server.js status] · smogz-rules: nothing open [เชื่อว่า — not re-checked this chat].
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
-  `_incoming/image-sitewide/`; this chat's scripts + sheets in `_incoming/image-sitewide/b-uwell/`).
-  THE METHOD THAT WORKS (#165 #167): ONE master device per model + recolour by script, so a swipe changes only the colour —
-  masks.js (background / screen-or-button / frame), recolour-g4k.js (flop + screen/logo un-mirror + frame colour from the
-  maker's banners), recolour-g3k.js, recolour-g4c.js (alpha master), presize.js (840 box + sharpen 0.5 + map entries with
-  aiRender; `node presize.js <pfx>` = one set), arc.js (stage-arc lineup — NOT used now, owner). Check every night render
-  for MIRRORING against the maker's front photo before using it (the G4 Pro KOKO "official" set was mirrored).
-  NIGHT RENDERS 01/10: 222 jobs, `_incoming/image-sitewide/night/jobs.tsv` (id + kind + product + colour) → `Higgs Okm/`
-  (git-excluded, README inside). Many are unusable as-is (shape/screen differ per colour; G4 Classic Abyss Blue light blue,
-  Alpine Green with an invented "G" logo) — use them only as a master for the method above.
-  Below-standard photos still to do (sharp-scan `_incoming/image-sitewide/night/sharp-scan.tsv`, judged by eye): Argus G3
-  mini · Argus P3 · Zero Nano · several coils · Drag 6 (baseline page — after 05/10). Done: G4 Pro KOKO, G3 Pro KOKO,
-  G4 Classic. G3 Pro (plain) kept — its photos are sharp (lesson พ9).
-3b NEXT — ORDER (owner 01/10: Esko LAST; "เดินงานแก้รูปสินค้าให้เสร็จ"): (1) Argus G3 mini + Argus P3 with the method
-  (VOOPOO: shop.voopoo.com answered 403 — maker colours via the in-app browser's network list, as done for myuwell.com
-  G4 Classic: `performance.getEntriesByType('resource')`); (2) Zero Nano; (3) coils; (c) BATCH 3 on 06/10 (argus-g4 +
-  Argus Multi-Ohm) + M Bar 15K duplicate record (= M Switch Kit; baseline until 05/10); (d) BATCH 5 rest of the site
-  (planner first; TFIT M Power after a researcher confirms the model); (a) Esko pod-159 LAST: the 18 maker flavours show
-  "หมด" (Shipnity status `unknown`; PilotProductDetail / ProductMasterVariantPicker / catalog-resolver treat non-"in-stock"
-  as out) — owner §18: show as available — stock/cart change = 13.7 big (2), full set, own PR, + BSOT §21 (pod-159 block).
-  Higgsfield balance 1.6 credits [ตรวจแล้ว — balance tool 01/10 after the G4 Classic background cut]; 4K = 4, nano 2K = 2,
-  gpt_image_2_5 = 0.25, image_background_remover = 1. UWELL colour files: files.myuwell.com/uwell/product/<slug>/pc/
-  color-N.webp exists only for G4 Pro KOKO (1–9); G4 Classic colours = collage mo/spe9.webp. Back views G4 Pro KOKO
-  Desert Gold / Golden Carbon (GPT Image 880x1168, "a" files) in `Higgs Okm/2026-10-01 G4 Pro KOKO back views/` — NOT on
-  the site (no slot for a second view per colour).
+  `_incoming/image-sitewide/`; UWELL scripts `b-uwell/`, VOOPOO/SALTHUB scripts `b-voopoo/`).
+  THE METHODS THAT WORK: (a) one model, colours differ only in colour = ONE master + recolour by script so a swipe changes
+  only the colour — silver master: `b-uwell/recolour-g4c.js` (G4 Classic; OVERRIDE target per colour when the maker's
+  photo disagrees with the shop's) · coloured master: `b-voopoo/recolour-g3m.js` (hue wobble scaled by target chroma,
+  dark pixels + rim glow turned to the target hue — lesson 23); (b) each colour its own print/texture (ARGUS P3) = the
+  night render of each colour, flat-cut, toned to the maker's photo (`b-voopoo/p3tone.js`); (c) single-option product
+  = the night card render in the maker's pose (`b-voopoo/zero-nano.js`). Then presize (840 box / card 940x1175,
+  sharpen 0.5) + map entries with aiRender (`b-uwell/presize.js`, `b-voopoo/presize-g3m.js`, `presize-p3.js`) +
+  `npx tsx scripts/process-images.ts --only <slug>` (it never overwrites a same-size file: change of a LIVE photo =
+  new file name, lesson พ6). Check every night render for MIRRORING against the maker's front photo before using it.
+  NIGHT RENDERS 01/10: 222 jobs, `_incoming/image-sitewide/night/jobs.tsv` → `Higgs Okm/` (git-excluded). Many are
+  unusable as-is [ตรวจแล้ว — by eye, per product] — use them as a master for the methods above.
+  Done this round (below-standard photos, sharp-scan `_incoming/image-sitewide/night/sharp-scan.tsv`): G4 Pro KOKO,
+  G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano [ตรวจแล้ว — merged + checker each]. G3 Pro (plain) kept — sharp (lesson พ9).
+3b NEXT — ORDER (owner 01/10: Esko LAST; "เดินงานแก้รูปสินค้าให้เสร็จ"):
+  (1) coils — 8 coil/cartridge cards below standard (sharp-scan: coil-54 1.1 · coil-74 2.6 · coil-56 3.2 · coil-55 3.3
+  · coil-89 3.6 · coil-68 4.1 · coil-87 5.3 · coil-83 6.2 — cardDetail): retailer photos with the retail box on white,
+  274–700 px; NO night renders exist for them → new renders need credits = waiting on owner (item 4 (30)).
+  (2) batch 3 on 06/10 (after the baseline freeze): argus-g4 + Argus Multi-Ohm + ARGUS P3 card-v2 + openOnCardPhoto
+  (P3's card renders on argus-g4 via relatedProductSlugs, so it stayed `variants/blue-leather.webp`; P3 page now opens
+  on the first colour) + M Bar 15K duplicate record (= M Switch Kit).
+  (3) BATCH 5 rest of the site (planner first; TFIT M Power after a researcher confirms the model); next in sharp-scan
+  order: joiway-f4 (1.9, 16 opts) · relx-creator (2.8) · argus-g4-mini (4.2) · relx-smash-go-12k (4.9).
+  (4) Esko pod-159 LAST: the 18 maker flavours show "หมด" (Shipnity status `unknown`; PilotProductDetail /
+  ProductMasterVariantPicker / catalog-resolver treat non-"in-stock" as out) — owner §18: show as available —
+  stock/cart change = 13.7 big (2), full set, own PR, + BSOT §21 (pod-159 block).
+  Higgsfield balance 1.6 credits [ตรวจแล้ว 01/10 afternoon — not used this chat]; 4K = 4, nano 2K = 2,
+  gpt_image_2_5 = 0.25, image_background_remover = 1. Back views G4 Pro KOKO Desert Gold / Golden Carbon in
+  `Higgs Okm/2026-10-01 G4 Pro KOKO back views/` — NOT on the site (no slot for a second view per colour).
   At the round close: `npx tsx scripts/asset-refs.ts` for unreferenced product photos (list in item 5).
 4 waiting on owner:
+  (30) coil photos: OK to spend credits? ~2 per coil with nano 2K (8 coils ≈ 16) or ~0.25 per coil with GPT Image
+       (lower detail) — balance 1.6. Recommendation: nano 2K for the 4 worst (coil-54/74/56/55) first.
+  (29) new photos not yet seen by the owner [ตรวจผ่านตามเกณฑ์ ≠ เจ้าของอนุมัติ]: G4 Classic Alpine Green · ARGUS G3
+       mini 9 · ARGUS P3 7 (Blue Leather graffiti = AI redraw: letters "ARG/MS", "P3", "voopoo" sit slightly
+       elsewhere than on VOOPOO's print) · Zero Nano card. Before/after: `_incoming/image-sitewide/b-voopoo/shots/`.
   (28) Thai copy flags from thai-copy (not changed): INFY `descriptionTh` says disposable-only brand (its English line says
        pod systems + cartridges too) · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" / "สินค้าที่คุณอาจสนใจ" stiff
        site-wide · RELX Creator = "เครื่องระบบสวิตช์" (locked word) or keep "เครื่องใช้ซ้ำ"
@@ -54,19 +65,26 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   - 05/10: re-read GSC against `docs/SEO_BASELINE.md` (Cowork supplies the numbers); after 05/10 the 7 baseline pages
     use the light set — delete `galleryNoteHeld` + the `heldNote` prop; M Bar 10K airflow row;
     then drop the "ถึง 05/10" clauses of TEAM_RULES 13.5 #3 / 13.7 / 13.8.
+  - A product's CARD renders on the baseline pages that list it in relatedProductSlugs (argus-g4 → argus-g4-mini,
+    argus-p3, vinci-s; caliburn-g5 → caliburn-g5-lite, caliburn-g4-pro-koko, caliburn-g4-pro) [ตรวจแล้ว — data] — until 05/10 change only colour photos
+    there. html-diff strips <script>: argus-g4's RSC payload now names P3's v2 colour files (DOM, head, JSON-LD identical)
+    [ตรวจแล้ว — checker PR #171]; Friday judged that "unchanged" (13.5 #3 proof = html-diff) — owner may rule otherwise.
   - `lineupFirst` has no product left (M Bar 10K moved to `openOnCardPhoto`) — the mechanism can go in a cleanup.
   - `dict.product.anatomyTitle` en/zh "from the outside in" (pre-existing, out of scope so far).
   - `_incoming/` folders moved out 01/10 to `C:\Users\dhetc\OKami24-เก็บ\incoming-01-10\` (not deleted).
   - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
   - Carried ideas: card sweep on 4:5 · ARTICLE round · category-structure round.
   - The all-options image ("ทั้งหมด") comes back later in a new form — the OWNER reopens it (01/10); until then none is made.
-  - Unreferenced since 01/10 (sweep at the round close): the six round lineups, G3 Pro KOKO lineup.webp + old variant files,
-    G4 Pro KOKO old variant files (card.png stays — the home Scene2 uses it), G4 Classic card.png / lineup.webp / old variants.
-6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`): tsc 0 · verify:commerce 17/17 ·
+  - Unreferenced since 01/10 [ตรวจแล้ว — checker PR #172 ran asset-refs.ts] (sweep at the round close): the six round lineups, G3 Pro KOKO lineup.webp + old variant files,
+    G4 Pro KOKO old variant files (card.png stays — the home Scene2 uses it), G4 Classic card.png / lineup.webp / old variants
+    + variant-alpine-green-v2.webp, argus-g3-mini card.webp / lineup.webp / variants/*, argus-p3 lineup.webp + variants/*
+    EXCEPT variants/blue-leather.webp (still the P3 card until 06/10), zero-nano card.webp.
+6 verify baseline at the last full close (clip round; its logs no longer exist after the 01/10 move — numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Latest light set: PR #167 — verify:catalog 29/29 · sharpness 5/5 · html-diff 98/107 (rest explained) · probe both modes.
-  Before it: PR #165 — scan.js 0/107 · verify:catalog 29/29 · sharpness gate 19/19 · html-diff live vs local 93/107
-  identical (rest explained) · gallery-probe normal mode whole sitemap 0 FLASH/STUCK, both modes on the 2 pages.
+  Latest light set [ตรวจแล้ว — run this chat]: PR #171 — tsc 0 · verify:catalog 29/29 · gallery-probe `--sitemap` 45/61 pages with a gallery PASS
+  in both modes, 0 FLASH/STUCK · html-diff live vs local on the 7 baseline pages identical 7/7
+  (`_incoming/image-sitewide/b-voopoo/html/`). PR #170 the same probe (normal mode) 45/61 PASS.
+Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
 ```
 
 ## 17. Tools and standing technical rules (not state — open when needed)
