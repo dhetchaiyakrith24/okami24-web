@@ -255,11 +255,11 @@ export const voopooProducts: Product[] = [
     colorVariants: [
       { id: "black", name: "Black", swatchHex: "#333435", image: { src: "/assets/products/argus-g4-mini/variant-black-v2.webp", alt: "VOOPOO ARGUS G4 mini, Black" } },
       { id: "green", name: "Green", swatchHex: "#8cd5c6", image: { src: "/assets/products/argus-g4-mini/variant-green-v2.webp", alt: "VOOPOO ARGUS G4 mini, Green" } },
-      { id: "orange", name: "Orange", swatchHex: "#dda875", image: { src: "/assets/products/argus-g4-mini/variant-orange-v2.webp", alt: "VOOPOO ARGUS G4 mini, Orange" } },
+      { id: "orange", name: "Orange", swatchHex: "#e78b5a", image: { src: "/assets/products/argus-g4-mini/variant-orange-v2.webp", alt: "VOOPOO ARGUS G4 mini, Orange" } },
       { id: "purple", name: "Purple", swatchHex: "#b7b2d6", image: { src: "/assets/products/argus-g4-mini/variant-purple-v2.webp", alt: "VOOPOO ARGUS G4 mini, Purple" } },
       { id: "silver", name: "Silver", swatchHex: "#c4c4c4", image: { src: "/assets/products/argus-g4-mini/variant-silver-v2.webp", alt: "VOOPOO ARGUS G4 mini, Silver" } },
       { id: "tarnish", name: "Tarnish", swatchHex: "#898a8f", image: { src: "/assets/products/argus-g4-mini/variant-tarnish-v2.webp", alt: "VOOPOO ARGUS G4 mini, Tarnish" } },
-      { id: "cyan", name: "Cyan", swatchHex: "#7bb0d9", image: { src: "/assets/products/argus-g4-mini/variant-cyan-v2.webp", alt: "VOOPOO ARGUS G4 mini, Cyan" } },
+      { id: "cyan", name: "Cyan", swatchHex: "#37bde4", image: { src: "/assets/products/argus-g4-mini/variant-cyan-v2.webp", alt: "VOOPOO ARGUS G4 mini, Cyan" } },
       { id: "blue", name: "Blue", swatchHex: "#bac9e6", image: { src: "/assets/products/argus-g4-mini/variant-blue-v2.webp", alt: "VOOPOO ARGUS G4 mini, Blue" } },
     ],
     // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 8
