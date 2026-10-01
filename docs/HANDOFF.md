@@ -10,15 +10,15 @@
 ```
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
-Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
 
 1 main: `git fetch && git log -1 --oneline origin/main` — this chat (01/10 evening) merged 3 PRs + this docs PR [ตรวจแล้ว — gh]:
   #169 `d8b9761` G4 Classic Alpine Green darkened to UWELL's forest green (owner chose "เข้มตาม UWELL"; checker 6/6; live
   [ตรวจแล้ว — curl: variant-alpine-green-v3 + swatch #324c42]) · #170 `9a5124b` ARGUS G3 mini 9 colours + card (checker
   6/7 → slot fix → re-check 4/4; live [ตรวจแล้ว — curl: card-v2 + variant-*-v2]) · #171 `97e39b1` ARGUS P3 7 colour
-  photos + Zero Nano card (checker 6/6; deploy was queued when this was written — check live with curl first).
+  photos + Zero Nano card (checker 6/6; live [ตรวจแล้ว — curl: argus-p3 7 variant-*-v2 · zero-nano card-v2]).
   Each = revert its merge commit (#171 = also one commit per product: 39ea538 P3 · 0eec50e Zero Nano).
-2 ahead of main: nothing (this §16 = docs PR, merged by Friday). Test server stopped. smogz-rules: nothing open.
+2 ahead of main: nothing (this §16 = docs PR, merged by Friday) [ตรวจแล้ว — git] · test server stopped [ตรวจแล้ว —
+  test-server.js status] · smogz-rules: nothing open [เชื่อว่า — not re-checked this chat].
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; UWELL scripts `b-uwell/`, VOOPOO/SALTHUB scripts `b-voopoo/`).
   THE METHODS THAT WORK: (a) one model, colours differ only in colour = ONE master + recolour by script so a swipe changes
@@ -31,9 +31,9 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
   `npx tsx scripts/process-images.ts --only <slug>` (it never overwrites a same-size file: change of a LIVE photo =
   new file name, lesson พ6). Check every night render for MIRRORING against the maker's front photo before using it.
   NIGHT RENDERS 01/10: 222 jobs, `_incoming/image-sitewide/night/jobs.tsv` → `Higgs Okm/` (git-excluded). Many are
-  unusable as-is — use them as a master for the methods above.
+  unusable as-is [ตรวจแล้ว — by eye, per product] — use them as a master for the methods above.
   Done this round (below-standard photos, sharp-scan `_incoming/image-sitewide/night/sharp-scan.tsv`): G4 Pro KOKO,
-  G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano. G3 Pro (plain) kept — sharp (lesson พ9).
+  G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano [ตรวจแล้ว — merged + checker each]. G3 Pro (plain) kept — sharp (lesson พ9).
 3b NEXT — ORDER (owner 01/10: Esko LAST; "เดินงานแก้รูปสินค้าให้เสร็จ"):
   (1) coils — 8 coil/cartridge cards below standard (sharp-scan: coil-54 1.1 · coil-74 2.6 · coil-56 3.2 · coil-55 3.3
   · coil-89 3.6 · coil-68 4.1 · coil-87 5.3 · coil-83 6.2 — cardDetail): retailer photos with the retail box on white,
@@ -66,23 +66,25 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
     use the light set — delete `galleryNoteHeld` + the `heldNote` prop; M Bar 10K airflow row;
     then drop the "ถึง 05/10" clauses of TEAM_RULES 13.5 #3 / 13.7 / 13.8.
   - A product's CARD renders on the baseline pages that list it in relatedProductSlugs (argus-g4 → argus-g4-mini,
-    argus-p3, vinci-s; caliburn-g5 → caliburn-g4-pro-koko, caliburn-g4-pro) — until 05/10 change only colour photos
-    there. html-diff strips <script>: argus-g4's RSC payload now names P3's v2 colour files (DOM, head, JSON-LD identical).
+    argus-p3, vinci-s; caliburn-g5 → caliburn-g5-lite, caliburn-g4-pro-koko, caliburn-g4-pro) [ตรวจแล้ว — data] — until 05/10 change only colour photos
+    there. html-diff strips <script>: argus-g4's RSC payload now names P3's v2 colour files (DOM, head, JSON-LD identical)
+    [ตรวจแล้ว — checker PR #171]; Friday judged that "unchanged" (13.5 #3 proof = html-diff) — owner may rule otherwise.
   - `lineupFirst` has no product left (M Bar 10K moved to `openOnCardPhoto`) — the mechanism can go in a cleanup.
   - `dict.product.anatomyTitle` en/zh "from the outside in" (pre-existing, out of scope so far).
   - `_incoming/` folders moved out 01/10 to `C:\Users\dhetc\OKami24-เก็บ\incoming-01-10\` (not deleted).
   - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
   - Carried ideas: card sweep on 4:5 · ARTICLE round · category-structure round.
   - The all-options image ("ทั้งหมด") comes back later in a new form — the OWNER reopens it (01/10); until then none is made.
-  - Unreferenced since 01/10 (sweep at the round close): the six round lineups, G3 Pro KOKO lineup.webp + old variant files,
+  - Unreferenced since 01/10 [ตรวจแล้ว — checker PR #172 ran asset-refs.ts] (sweep at the round close): the six round lineups, G3 Pro KOKO lineup.webp + old variant files,
     G4 Pro KOKO old variant files (card.png stays — the home Scene2 uses it), G4 Classic card.png / lineup.webp / old variants
     + variant-alpine-green-v2.webp, argus-g3-mini card.webp / lineup.webp / variants/*, argus-p3 lineup.webp + variants/*
     EXCEPT variants/blue-leather.webp (still the P3 card until 06/10), zero-nano card.webp.
-6 verify baseline at the last full close (clip round, logs `_incoming/clip-round/verify/`): tsc 0 · verify:commerce 17/17 ·
+6 verify baseline at the last full close (clip round; its logs no longer exist after the 01/10 move — numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Latest light set: PR #171 — tsc 0 · verify:catalog 29/29 · gallery-probe `--sitemap` 45/61 pages with a gallery PASS
+  Latest light set [ตรวจแล้ว — run this chat]: PR #171 — tsc 0 · verify:catalog 29/29 · gallery-probe `--sitemap` 45/61 pages with a gallery PASS
   in both modes, 0 FLASH/STUCK · html-diff live vs local on the 7 baseline pages identical 7/7
   (`_incoming/image-sitewide/b-voopoo/html/`). PR #170 the same probe (normal mode) 45/61 PASS.
+Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
 ```
 
 ## 17. Tools and standing technical rules (not state — open when needed)
