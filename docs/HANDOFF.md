@@ -55,9 +55,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   every render for MIRRORING. Edits to CRLF files = a .js edit script (`b-edge/edit-g3p-data.js` pattern) — sed/Edit strip CR.
   Done this round: G4 Pro KOKO, G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano, ARGUS G4 mini, Drag 6 (colours
   + lineup + home card), Caliburn G3 Pro (16 colours + card).
-3b NEXT — ORDER (owner 01/10: Esko LAST):
-  (1) Drag 6 lineup redo = RELX layout (`relx-studio.js d6`) + the light owner item (37) decides (hybrid or script-only), bigger in
-  the frame; publish as lineup-v3.webp (new name, lesson พ6) with the same proof as #177 (head-check 7/7, visible-text, gallery-probe).
+  OWNER 02/10 (question cards) [ตรวจแล้ว — chat]: image standard = UWELL's official Caliburn G5 renders (balanced light, no blown
+  white, real reflection lines; shadow placement = designer's call) for EVERY image below standard — rule IMAGE_SPEC §0 item 8 ·
+  background = transparent + soft shadow/reflection as semi-transparent pixels (no dark box) · wants to SEE one lifestyle sample
+  like UWELL's real-shot.webp (owner item 38) · Drag 6: prefers the photographic look of B (`relx/d6-B1.png`) but asked whether it
+  fits the site — answer given: B's light + the true devices (hybrid), transparent, shown on the local test server page first.
+3b NEXT — ORDER (owner 02/10: Caliburn G5 colours FIRST; owner 01/10: Esko LAST):
+  (0) Caliburn G5 — every colour except Mystic Forest (owner: broken edges, patch marks); standard = UWELL's own renders
+  (files.myuwell.com/uwell/product/caliburn-g5/…); caliburn-g5 is an SEO baseline page → images only + head-check 7/7.
+  (1) Drag 6 lineup redo = RELX layout (`relx-studio.js d6`) + HYBRID light (owner 02/10: the photographic look), bigger in
+  the frame; show it on the local page (390 + 1440) to the owner before publishing; publish as lineup-v3.webp (new name, lesson พ6) with the same proof as #177 (head-check 7/7, visible-text, gallery-probe).
   Then Caliburn G3 Pro: two "ทั้งหมด" (g3p-a / g3p-b, 8 each, UWELL order) — code change for two lineups + the two images; a
   DIFFERENT layout from Drag 6 per the owner's "vary per brand" (VOOPOO = RELX zigzag → UWELL e.g. V THRU or VMATE).
   (2) rest of the edge-defect list (`edge-audit/visual-audit.md`, agent's eye): vinci-s · vmate-i3 · drag-x3 · zero-pro ·
@@ -77,8 +84,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   and asked whether $20 of extra usage finishes the round — Friday: probably not (several chats left) [เชื่อว่า]; measure the spend
   after the first chat that actually uses extra usage (`get_usage` extraUsage.spent was $0.00 at 01/10 late) and tell the owner.
 4 waiting on owner:
-  (37) Drag 6 light: HYBRID (script devices + B's light, 0 credits — Friday recommends) or script-only — files sent 01/10 late:
-       `b-edge/relx/d6-AB.png` (A script / B AI) + `d6-AB-zoom.png` (B's wrong details).
+  (38) one lifestyle sample like UWELL's real-shot.webp (scene + props) — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags from thai-copy (not changed): INFY `descriptionTh` says disposable-only brand · shared strings
        "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" / "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ"
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour
