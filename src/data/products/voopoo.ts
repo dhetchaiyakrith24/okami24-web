@@ -338,27 +338,25 @@ export const voopooProducts: Product[] = [
     // allowed. Every color's real identity was re-verified against this new source before
     // deploying (Blue Leather's graffiti print and Black Metal's gear-panel finish both confirmed
     // to match the shop.voopoo.com-verified identities exactly, not just assumed from filenames).
+    // Image-sitewide round 01/10: those ~300x520 photos are still blurry in the hero. Each finish has its own print or
+    // texture, so no shared master: one sharp night render per finish (same pose as VOOPOO's photo), cut out; Grey /
+    // Brown / Red toned to VOOPOO's photo (_incoming/image-sitewide/b-voopoo/p3tone.js). Swatches = the leather colour on
+    // VOOPOO's photos. No "ทั้งหมด" image (owner 01/10). The CARD above stays until 06/10: it shows on argus-g4, a SEO
+    // baseline page frozen until 05/10 — then card-v2 + openOnCardPhoto (round batch 3).
     colorVariants: [
       {
         id: "blue-leather",
         name: "Blue Leather",
         swatchHex: "#2a4fb0",
-        image: { src: "/assets/products/argus-p3/variants/blue-leather.webp", alt: "VOOPOO ARGUS P3, Blue Leather" },
+        image: { src: "/assets/products/argus-p3/variant-blue-leather-v2.webp", alt: "VOOPOO ARGUS P3, Blue Leather" },
       },
-      { id: "black-leather", name: "Black Leather", swatchHex: "#2a2320", image: { src: "/assets/products/argus-p3/variants/black-leather.webp", alt: "VOOPOO ARGUS P3, Black Leather" } },
-      { id: "grey-leather", name: "Grey Leather", swatchHex: "#5a5a55", image: { src: "/assets/products/argus-p3/variants/grey-leather.webp", alt: "VOOPOO ARGUS P3, Grey Leather" } },
-      { id: "brown-leather", name: "Brown Leather", swatchHex: "#5c4433", image: { src: "/assets/products/argus-p3/variants/brown-leather.webp", alt: "VOOPOO ARGUS P3, Brown Leather" } },
-      { id: "red-leather", name: "Red Leather", swatchHex: "#8e3a3a", image: { src: "/assets/products/argus-p3/variants/red-leather.webp", alt: "VOOPOO ARGUS P3, Red Leather" } },
-      { id: "silver-leather", name: "Silver Leather", swatchHex: "#b8bcc0", image: { src: "/assets/products/argus-p3/variants/silver-leather.webp", alt: "VOOPOO ARGUS P3, Silver Leather" } },
-      { id: "black-metal", name: "Black Metal", swatchHex: "#2b2b2e", image: { src: "/assets/products/argus-p3/variants/black-metal.webp", alt: "VOOPOO ARGUS P3, Black Metal" } },
+      { id: "black-leather", name: "Black Leather", swatchHex: "#323232", image: { src: "/assets/products/argus-p3/variant-black-leather-v2.webp", alt: "VOOPOO ARGUS P3, Black Leather" } },
+      { id: "grey-leather", name: "Grey Leather", swatchHex: "#5f6460", image: { src: "/assets/products/argus-p3/variant-grey-leather-v2.webp", alt: "VOOPOO ARGUS P3, Grey Leather" } },
+      { id: "brown-leather", name: "Brown Leather", swatchHex: "#93654c", image: { src: "/assets/products/argus-p3/variant-brown-leather-v2.webp", alt: "VOOPOO ARGUS P3, Brown Leather" } },
+      { id: "red-leather", name: "Red Leather", swatchHex: "#b94543", image: { src: "/assets/products/argus-p3/variant-red-leather-v2.webp", alt: "VOOPOO ARGUS P3, Red Leather" } },
+      { id: "silver-leather", name: "Silver Leather", swatchHex: "#e0e0e0", image: { src: "/assets/products/argus-p3/variant-silver-leather-v2.webp", alt: "VOOPOO ARGUS P3, Silver Leather" } },
+      { id: "black-metal", name: "Black Metal", swatchHex: "#2b2b2e", image: { src: "/assets/products/argus-p3/variant-black-metal-v2.webp", alt: "VOOPOO ARGUS P3, Black Metal" } },
     ],
-    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
-    // individually-verified shop.voopoo.com photos above.
-    lineupImage: {
-      src: "/assets/products/argus-p3/lineup.webp",
-      alt: "VOOPOO ARGUS P3, all 7 finishes",
-      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
-    },
     specifications: [
       { key: "battery", label: "Battery", value: "1500mAh built-in", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified" },
