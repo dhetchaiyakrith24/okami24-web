@@ -55,13 +55,10 @@ export const infyProducts: Product[] = [
         sourceUrl: "https://dood-d.com/",
       },
     ],
-    lineupImage: {
-      src: "/assets/products/infy-20k/lineup-v2.webp",
-      alt: "INFY 20K, five of its 24 flavours side by side, Blueberry in front",
-      sourceName: "OKami24 composite",
-    },
+    // No all-options image behind an "all" chip (owner 01/10: the made-up lineups go — back to the Caliburn way, one device
+    // per option by swipe or chip).
     // Owner 30/09 (later the same day): the first image is ONE sharp device, like the Caliburn pages — the page opens on
-    // the card photo, flavours by swipe or chip; the lineup stays behind the "all" chip (`openOnCardPhoto`, not `lineupFirst`).
+    // the card photo, flavours by swipe or chip (`openOnCardPhoto`).
     openOnCardPhoto: true,
     storyDetails: true,
     // Flavours: the 18 every rich Thai shop list agrees on (akvapes.com), + Menthol Freeze, Grape Bubblegum, Watermelon
