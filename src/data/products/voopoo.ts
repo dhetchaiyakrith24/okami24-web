@@ -559,8 +559,7 @@ export const voopooProducts: Product[] = [
     // Higgsfield render of that colour (each has its own side panel — carbon, camo, denim, chevron — so no recolour),
     // cut out and its matte pulled in 5 px (the remover leaves a grey rim); card-v2 = a three-quarter Brown render.
     // Swatches of Blue / Red / Green = the frame colour on VOOPOO's photos (the old deep blue was off: the body is pale
-    // blue). Scripts: _incoming/image-sitewide/b-edge/ (choke.js, presize-edge.js). The old all-colours lineup stays
-    // until the new all-colours image (IMAGE_SPEC §0 item 5) is drafted.
+    // blue). Scripts: _incoming/image-sitewide/b-edge/ (choke.js, presize-edge.js).
     openOnCardPhoto: true,
     colorVariants: [
       { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variant-silver-v2.webp", alt: "VOOPOO DRAG 6, Silver" } },
@@ -576,12 +575,14 @@ export const voopooProducts: Product[] = [
       { id: "green", name: "Green", swatchHex: "#77b190", image: { src: "/assets/products/drag-6/variant-green-v2.webp", alt: "VOOPOO DRAG 6, Green" } },
       { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variant-metal-gray-v2.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
     ],
-    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
-    // individually-verified shop.voopoo.com photos above.
+    // All-colours image (IMAGE_SPEC §0 item 5, pod system — new layout, 01/10): the old flat row "จัดวางไม่สวย สินค้ามีขอบเยอะ"
+    // (owner). Owner picked layout 1 of four drafted from OKami's own posters ("VMATE MAX": Silver hero centre, the others
+    // stepping smaller and higher to both sides, clean gaps). Composed by script from the same 7 choked 4K renders as the
+    // colour photos above — no AI, no text (_incoming/image-sitewide/b-edge/d6-poster.js).
     lineupImage: {
-      src: "/assets/products/drag-6/lineup.webp",
+      src: "/assets/products/drag-6/lineup-v2.webp",
       alt: "VOOPOO DRAG 6, all 7 colors",
-      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+      sourceName: "OKami24 composite (from OKami24's renders of each colour)",
     },
     specifications: [
       { key: "battery", label: "Battery", value: "4400mAh built-in (two 2200mAh cells)", sourceStatus: "verified" },
