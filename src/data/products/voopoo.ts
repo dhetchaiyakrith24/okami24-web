@@ -440,7 +440,7 @@ export const voopooProducts: Product[] = [
       {
         id: "midnight-black",
         name: "Midnight Black",
-        swatchHex: "#1a1a1a",
+        swatchHex: "#353333",
         image: { src: "/assets/products/argus-g3-mini/variant-midnight-black-v2.webp", alt: "VOOPOO ARGUS G3 mini, Midnight Black" },
       },
       {
