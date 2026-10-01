@@ -4669,5 +4669,109 @@
   },
   "note": "image-sitewide round 3b (1) 01/10 — the page opens on one sharp tilted device (openOnCardPhoto)",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/p3-blue-leather.png",
+  "slug": "argus-p3",
+  "role": "variant",
+  "id": "blue-leather",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-argus-p3-blue-leather.png) — each P3 finish has its own print/texture, so no shared master; cut by scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-voopoo/presize-p3.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/argus-p3/variants/blue-leather.webp, shop.voopoo.com / vaping.com gallery — same pose)",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/p3-a.png + p3-b.png + p3-c.png (VOOPOO / night render) · _incoming/image-sitewide/b-voopoo/p3-fid.png (VOOPOO / final)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — VOOPOO's photos are ~300x520 (blurry at hero size); one sharp render per finish",
+  "fileName": "variant-blue-leather-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/p3-black-leather.png",
+  "slug": "argus-p3",
+  "role": "variant",
+  "id": "black-leather",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-argus-p3-black-leather.png) — each P3 finish has its own print/texture, so no shared master; cut by scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-voopoo/presize-p3.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/argus-p3/variants/black-leather.webp, shop.voopoo.com / vaping.com gallery — same pose)",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/p3-a.png + p3-b.png + p3-c.png (VOOPOO / night render) · _incoming/image-sitewide/b-voopoo/p3-fid.png (VOOPOO / final)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — VOOPOO's photos are ~300x520 (blurry at hero size); one sharp render per finish",
+  "fileName": "variant-black-leather-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/p3-grey-leather.png",
+  "slug": "argus-p3",
+  "role": "variant",
+  "id": "grey-leather",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-argus-p3-grey-leather.png) — each P3 finish has its own print/texture, so no shared master; cut by scripts/flatcut.js + tone moved to VOOPOO's photo by _incoming/image-sitewide/b-voopoo/p3tone.js; pre-sized by _incoming/image-sitewide/b-voopoo/presize-p3.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/argus-p3/variants/grey-leather.webp, shop.voopoo.com / vaping.com gallery — same pose)",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/p3-a.png + p3-b.png + p3-c.png (VOOPOO / night render) · _incoming/image-sitewide/b-voopoo/p3-fid.png (VOOPOO / final)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — VOOPOO's photos are ~300x520 (blurry at hero size); one sharp render per finish",
+  "fileName": "variant-grey-leather-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/p3-brown-leather.png",
+  "slug": "argus-p3",
+  "role": "variant",
+  "id": "brown-leather",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-argus-p3-brown-leather.png) — each P3 finish has its own print/texture, so no shared master; cut by scripts/flatcut.js + tone moved to VOOPOO's photo by _incoming/image-sitewide/b-voopoo/p3tone.js; pre-sized by _incoming/image-sitewide/b-voopoo/presize-p3.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/argus-p3/variants/brown-leather.webp, shop.voopoo.com / vaping.com gallery — same pose)",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/p3-a.png + p3-b.png + p3-c.png (VOOPOO / night render) · _incoming/image-sitewide/b-voopoo/p3-fid.png (VOOPOO / final)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — VOOPOO's photos are ~300x520 (blurry at hero size); one sharp render per finish",
+  "fileName": "variant-brown-leather-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/p3-red-leather.png",
+  "slug": "argus-p3",
+  "role": "variant",
+  "id": "red-leather",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-argus-p3-red-leather.png) — each P3 finish has its own print/texture, so no shared master; cut by scripts/flatcut.js + tone moved to VOOPOO's photo by _incoming/image-sitewide/b-voopoo/p3tone.js; pre-sized by _incoming/image-sitewide/b-voopoo/presize-p3.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/argus-p3/variants/red-leather.webp, shop.voopoo.com / vaping.com gallery — same pose)",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/p3-a.png + p3-b.png + p3-c.png (VOOPOO / night render) · _incoming/image-sitewide/b-voopoo/p3-fid.png (VOOPOO / final)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — VOOPOO's photos are ~300x520 (blurry at hero size); one sharp render per finish",
+  "fileName": "variant-red-leather-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/p3-silver-leather.png",
+  "slug": "argus-p3",
+  "role": "variant",
+  "id": "silver-leather",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-argus-p3-silver-leather.png) — each P3 finish has its own print/texture, so no shared master; cut by scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-voopoo/presize-p3.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/argus-p3/variants/silver-leather.webp, shop.voopoo.com / vaping.com gallery — same pose)",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/p3-a.png + p3-b.png + p3-c.png (VOOPOO / night render) · _incoming/image-sitewide/b-voopoo/p3-fid.png (VOOPOO / final)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — VOOPOO's photos are ~300x520 (blurry at hero size); one sharp render per finish",
+  "fileName": "variant-silver-leather-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/p3-black-metal.png",
+  "slug": "argus-p3",
+  "role": "variant",
+  "id": "black-metal",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-argus-p3-black-metal.png) — each P3 finish has its own print/texture, so no shared master; cut by scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-voopoo/presize-p3.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/argus-p3/variants/black-metal.webp, shop.voopoo.com / vaping.com gallery — same pose)",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/p3-a.png + p3-b.png + p3-c.png (VOOPOO / night render) · _incoming/image-sitewide/b-voopoo/p3-fid.png (VOOPOO / final)"
+  },
+  "note": "image-sitewide round 3b (1) 01/10 — VOOPOO's photos are ~300x520 (blurry at hero size); one sharp render per finish",
+  "fileName": "variant-black-metal-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/card-zero-nano.png",
+  "slug": "zero-nano",
+  "role": "card",
+  "replaces": "/assets/products/zero-nano/card.webp",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 card render \"a\" (Higgs Okm/2026-10-01 night - cards/card-zero-nano-a.png, job b1778b67-3332-4755-99d7-e96a64d2c2c9) — same 3/4 pose as SALTHUB's photo, M-bolt logo the right way round; cut by scripts/flatcut.js, strays cleared and teal moved to SALTHUB's photo by _incoming/image-sitewide/b-voopoo/zero-nano.js",
+   "reference": "SALTHUB's own photo (/assets/products/zero-nano/card.webp, 443x567)",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/zn-cmp.png (SALTHUB / new on dark / new on magenta)"
+  },
+  "note": "image-sitewide round 3b (2) 01/10 — the old card is 443x567 (sharpness 1.6, below standard)",
+  "fileName": "card-v2.webp"
  }
 ]
