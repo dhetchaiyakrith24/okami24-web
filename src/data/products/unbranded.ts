@@ -387,13 +387,10 @@ export const unbrandedProducts: Product[] = [
         sourceUrl: "https://vapemun.com/product/muro-sc-8k/",
       },
     ],
-    lineupImage: {
-      src: "/assets/products/muro-sc-8000/lineup.webp",
-      alt: "Muro SC 8000 Puffs, the device in front of five flavour pouches",
-      sourceName: "OKami24 composite",
-    },
+    // No all-options image behind an "all" chip (owner 01/10: the made-up lineups go — back to the Caliburn way, one device
+    // per option by swipe or chip).
     // Owner 30/09 (later the same day): the first image is ONE sharp device, like the Caliburn pages — the page opens on
-    // the card photo, flavours by swipe or chip; the lineup stays behind the "all" chip (`openOnCardPhoto`, not `lineupFirst`).
+    // the card photo, flavours by swipe or chip (`openOnCardPhoto`).
     openOnCardPhoto: true,
     storyDetails: true,
     // 12 flavours = the retailer lists (pod789.com and vapemun.com list the same 12; the 8 first stocked + Grape, Watermelon,
