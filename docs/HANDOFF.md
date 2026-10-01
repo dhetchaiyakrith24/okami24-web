@@ -15,15 +15,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   end date, TEAM_RULES 13.6 + round-close step 6; checker PASS · SMALL) and #184 `1107f0d` Caliburn G5: all 7 colours = UWELL's
   own per-colour renders tilted 12°, card-v2.webp (Mystic Forest tilted, 4:5), lineup-v2.webp (owner pick 3) (checker PASS 5/5 ·
   GitHub checks green · self-merge-check BIG) [ตรวจแล้ว]; deploy 36935743985, live [ตรวจแล้ว — curl: 9/9 new files 200, page
-  serves them, home flagship card = card-v2] · owner approval of the live page: [รอเจ้าของ]. Revert = the #184 merge.
-2 ahead of main: `git log --oneline origin/main..<branch>` — only the docs PR of this §16 [ตรวจแล้ว — git]. Test server stopped.
+  serves them] · owner 02/10 on the live page: "การ์ดเอาแบบตรงเหมือนเดิมดีกว่า" → PR `img-g5-card-upright` (card-v3.webp = the
+  upright render, 4:5; colours stay tilted) + PR `rules-baseline-off` (the 05/10 hold lifted, TEAM_RULES + §18) — see `git log`.
+2 ahead of main: `git log --oneline origin/main..<branch>` for each branch named in item 1 (open PRs) [ตรวจแล้ว — git].
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
   VOOPOO `b-voopoo/`, coils `b-coils/`).
-  OWNER 01/10 evening [ตรวจแล้ว — chat], overriding the round file (its 【ห้ามแตะ】 line on the 7 baseline pages still reads
-  "until 05/10" — the file is the owner's, not edited): (a) the 7 SEO baseline pages MAY get image work now; [Friday's
-  condition — เชื่อว่า]: images only, title/meta/H1/JSON-LD untouched — prove it with `b-edge/head-check.js` (live vs local
-  HTML of the 7 pages) · (b) all-options image for pod systems = `docs/IMAGE_SPEC.md` §0 item 5 · (c) "finish the image work".
+  OWNER 01/10 evening [ตรวจแล้ว — chat]: all-options image for pod systems = `docs/IMAGE_SPEC.md` §0 item 5 · "finish the image
+  work". OWNER 02/10: the 7 SEO baseline pages are no longer held (§18) — the round file's 05/10 line is void.
   ALL-COLOURS LAYOUT (owner 01/10 — rule in IMAGE_SPEC §0 item 5 "การจัดวาง"): few colours = UWELL float/tilt/layers · many =
   OKami's own poster layouts, every device whole, gaps, one hero. Composer `b-edge/d6-poster.js` (VMATE · V THRU · RELX · VEUZ fan;
   canvas sized from bounds) — copy it per product. Rejected (do not retry): stagger/arc/fan of round 1, UWELL tilt-cascade of 7
@@ -32,9 +31,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   "แต่ไม่อยากให้แบบตายตัว อยากให้มีการจัดวาง หลายหลายแบบในแต่ละแบรน" = vary the layout per brand (not one layout site-wide);
   (b) G3 Pro = two groups of 8 → TWO "ทั้งหมด" chips/images ("ทำเป็นหัวข้อ ทั้งหมด 2 ชิ้น", or a better idea) — needs a code change
   (`lineupImage` is one image today; ProductHero / ColorVariantRail) = tier B; (c) try B (AI relight) — done, see below.
-  RELX composer with studio floor + highlight roll-off: `b-edge/relx-studio.js d6 | g3p-a | g3p-b` → `b-edge/relx/<key>.png`.
-  B test (4 credits, job 55c8aa47, nano_banana_pro 4K, reference = relx/d6-page.png): `b-edge/relx/d6-B1.png` — light, shading, glossy floor = clearly more photographic, BUT AI changed
-  details (EVEREST LAB badge → scribble, screen text garbled, "VOOPOO" on the black tank → "17BECO", gold wheel → flat window —
+  RELX composer (studio floor + highlight roll-off): `b-edge/relx-studio.js d6 | g3p-a | g3p-b`. B test (4 credits, job
+  55c8aa47): `b-edge/relx/d6-B1.png` — more photographic, BUT AI changed details (badge, screen text, "VOOPOO" → "17BECO" —
   `relx/d6-AB-zoom.png`) → NOT publishable as is (IMAGE_SPEC §0 item 7). Friday's proposal [รอเจ้าของ (37)]: HYBRID = keep the
   script image's devices (100% true) and transfer only B's low-frequency light (blur(B)/blur(A) luminance ratio, large sigma) + B's
   floor reflections/shadows below the feet; 0 extra credits; the background stays transparent (IMAGE_SPEC §0 item 6).
@@ -59,18 +57,23 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Owner also wants EVERY product like M Bar 10K's lower page ("รายละเอียดเพิ่มเติม" story, `storyDetails: true` — today m-bar-10k ·
   m-bar-9k · m-switch-kit · infy-20k · muro-sc-8000) + extra article text for SEO = the separate round
   "รอบบทความ-รายละเอียดเพิ่มเติม" (this round's 【ห้ามแตะ】; its file waits in branch `inbox`, Friday 02/10, 7 batches).
-  G5 TEMPLATE (owner picks 02/10, this chat) [ตรวจแล้ว — chat]: card = the maker's own render tilted 12°, 4:5 · "เอียงทุกสีเลย" =
-  every colour image tilted the same way · all-colours image = pick 3 "group": the hero big in front on the left, the other
-  six in two upright tiers behind, soft contact shadow + faint reflection as semi-transparent pixels (`_incoming/image-sitewide/
-  g5/poster.js`; drafts `g5/owner-lineup-1-2-3.png`). Sources: myuwell G5 page pic9-<n>-product.webp (`g5/official/`), tilt =
+  G5 TEMPLATE (owner 02/10) [ตรวจแล้ว — chat]: card = the maker's own render UPRIGHT, 4:5 ("การ์ดเอาแบบตรงเหมือนเดิม") · colour
+  images = the maker's render tilted 12° ("เอียงทุกสี") — new work only; approved upright images stay ("เอาไว้ก่อน") ·
+  all-colours image = pick 3 "group": the hero big in front on the left, the other six in two upright tiers behind, soft
+  contact shadow + faint reflection as semi-transparent pixels (`_incoming/image-sitewide/g5/poster.js`). Sources: myuwell G5
+  page pic9-<n>-product.webp (`g5/official/`), tilt =
   `g5/tilt-all.js` (map entries + card), data edit `g5/edit-data2.js`. 0 credits, no AI.
-  G5 story ("รายละเอียดเพิ่มเติม") NOT done: it replaces the gallery + anatomy + feature cards of a baseline page (structure +
-  text, not images) → Friday holds it until 06/10 unless the owner says otherwise [รอเจ้าของ (40)]; UWELL posters downloaded
-  (`g5/src/`, 58 files: pic1 hero, pic3 tiles, pic5–pic10, specifi, pack-1..4, real-shot). Feature text for new blocks = article round.
+  G5 story ("รายละเอียดเพิ่มเติม") = batch 1 of the ARTICLE round, which runs NOW in a CLOUD chat beside this round (owner 02/10:
+  two chats). Its file = branch `inbox` `rounds/รอบบทความ-รายละเอียดเพิ่มเติม.txt` version 3 — section 【แบ่งงานกับรอบรูป】: this
+  round owns card/colour/flavour images, `lineupImage`, `scripts/process-images.map.json`; the article round owns `storyDetails`,
+  `storyCover`, `features[]`, product-copy-th, dictionaries, guides, `public/assets/products/<slug>/story-*.webp`. Fetch main
+  before every merge. UWELL G5 posters are on this computer only (`g5/src/`, 58 files) — the cloud chat downloads its own.
   OWNER 02/10 (credits + agents) [ตรวจแล้ว — chat]: quota reset, agents as the work needs (rule merged #183); the owner will top up
   Higgsfield — a way that gets a clearly better result may use credits, say the estimate first.
-3b NEXT — ORDER: waits for the owner's answer on the site-wide plan (item 4 (39)); until then the old order below stands
-  (owner 01/10: Esko LAST). (0) Caliburn G5 = done except the story (above).
+3b NEXT — ORDER = the site-wide plan (owner 02/10 "งั้น…" = two chats accepted; draft `_incoming/image-sitewide/g5/rollout-plan.md`
+  — set 2 is now lineups only, no re-tilt): (0) Caliburn G5 done (card upright PR). NEXT = set 1 UWELL: G5 Lite (8) · G5 Lite SE
+  (8) · G4 Pro (8) · G4 (8) · G4 mini (12) from UWELL's own per-colour files (`g5/maker-renders.md`) — card upright, colours
+  tilted, lineup poster (a layout per brand); then sets 2–6. The old list below = the items those sets absorb.
   (1) Drag 6 lineup redo = RELX layout (`relx-studio.js d6`) + HYBRID light (owner 02/10: the photographic look), bigger in
   the frame; show it on the local page (390 + 1440) to the owner before publishing; publish as lineup-v3.webp (new name, lesson พ6) with the same proof as #177 (head-check 7/7, visible-text, gallery-probe).
   Then Caliburn G3 Pro: two "ทั้งหมด" (g3p-a / g3p-b, 8 each, UWELL order) — code change for two lineups + the two images; a
@@ -89,12 +92,6 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   owner the credits for a whole set before starting it (IMAGE_SPEC §0 item 7).
   Round close: `npx tsx scripts/asset-refs.ts` for unreferenced photos (list in item 5).
 4 waiting on owner:
-  (39) site-wide plan after G5 (owner asked 02/10: order · two chats? · quota/credits) — Friday's draft
-       `_incoming/image-sitewide/g5/rollout-plan.md` (+ maker-render survey `g5/maker-renders.md`, inventory `g5/inventory.tsv`):
-       6 sets UWELL → UWELL re-tilt → VOOPOO → other pod kits → disposables/pods → coils + Esko; ~50–110 credits [เชื่อว่า];
-       two chats = images (computer) + article round (cloud), not two image chats (one test server / Chrome on this machine).
-  (40) G5 story before 06/10 (it changes the structure of a baseline page) or after (Friday's default).
-  (41) already-approved UPRIGHT option images (M Bar 10K/9K, INFY, M Switch …): tilt them too, or tilt only new work?
   (38) one lifestyle sample like UWELL's real-shot.webp (scene + props) — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags from thai-copy (not changed): INFY `descriptionTh` says disposable-only brand · shared strings
        "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" / "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ"
@@ -104,8 +101,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - Drag 6 tank: retailers name it UFORCE-X Tank II, the data has a "gene-tt-3" highlight — data check in a data round [เชื่อว่า].
   - coil-94's Shipnity name "UWELL คอยล์ Caliburn G4&G3 Series" shows in Thai on en/zh pages that link it (locale-hydration-scan
     FAIL on /products/caliburn-g3-pro en+zh — same on live before #176, not from it) [ตรวจแล้ว] — data round.
-  - 05/10: re-read GSC against `docs/SEO_BASELINE.md`; after 05/10 the 7 baseline pages use the light set — delete
-    `galleryNoteHeld` + `heldNote`; M Bar 10K airflow row; then drop the "ถึง 05/10" clauses of TEAM_RULES 13.5 #3 / 13.7 / 13.8.
+  - SEO round (owner 02/10: the baseline hold is lifted, the final SEO round polishes + asks for re-indexing): re-read GSC against
+    `docs/SEO_BASELINE.md` · delete `galleryNoteHeld` + `heldNote` + `TITLE_PRICE_HOLD_UNTIL_2026_10_05` · M Bar 10K airflow row.
   - `lineupFirst` has no product left — the mechanism can go in a cleanup.
   - `dict.product.anatomyTitle` en/zh "from the outside in" (pre-existing).
   - `_incoming/` folders moved out 01/10 to `C:\Users\dhetc\OKami24-เก็บ\incoming-01-10\` (not deleted).
@@ -192,6 +189,10 @@ boundary, never mid-word, never a dangling connective, never a bare floating num
 Marbo + M Bar plan · FAQ wholesale phrase · RINCOE/DOTMOD phrase · home index DONE · LINE counter option ก · breadcrumb
 NOT done (full wording: `git show aa21cbb:docs/HANDOFF.md` lines 262–275) · `okami24.net` / `.com` NXDOMAIN — leave them · `voopooTitle` rename NOT done · no `OKAMI24_METRICS_TOKEN` — read the
 Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
+
+**SEO baseline hold (owner 02/10):** the 05/10 wait is cancelled — "รอไปก็ต้องกลับมาแก้ ไว้ไปขัดเกลารอบ Seo สุดท้ายขอดัชนีใหม่" —
+the 7 baseline pages are worked on like any other page; the final SEO round polishes them and asks Google to re-index
+(the code-level title-price hold `TITLE_PRICE_HOLD_UNTIL_2026_10_05` is a title change = that round).
 
 **Copy and wording:** words already on the site without a key are not "new words" · `readMoreEyebrow` = "อ่านต่อ", not
 `footer.learn` · en/zh age-gate wording and en/zh `/about` copy APPROVED · the dialog nicotine sentence stays plain group ก ·
