@@ -88,9 +88,6 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Higgsfield: 178.6 credits after the B test 01/10 late [ตรวจแล้ว — balance 182.6 before − 4]; 4K = 4, nano 2K = 2, remover = 1 · tell the
   owner the credits for a whole set before starting it (IMAGE_SPEC §0 item 7).
   At the round close: `npx tsx scripts/asset-refs.ts` for unreferenced product photos (list in item 5).
-  Account weekly usage 99% on 01/10 late (resets 04/10 22:00 ICT) [ตรวจแล้ว — get_usage]; owner OK'd extra usage 01/10 ("ใช่ครับต่อเลย")
-  and asked whether $20 of extra usage finishes the round — Friday: probably not (several chats left) [เชื่อว่า]; measure the spend
-  after the first chat that actually uses extra usage (`get_usage` extraUsage.spent was $0.00 at 01/10 late) and tell the owner.
 4 waiting on owner:
   (38) one lifestyle sample like UWELL's real-shot.webp (scene + props) — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags from thai-copy (not changed): INFY `descriptionTh` says disposable-only brand · shared strings

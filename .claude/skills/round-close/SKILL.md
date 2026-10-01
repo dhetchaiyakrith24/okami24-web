@@ -72,6 +72,8 @@ Word-break fixes and anything the gates or the designer flagged → one commit. 
 
 - `docs/HANDOFF.md` §16: "open round" → "none — <round> closed" + tag (cloud: close commit) · rest refreshed — spec =
   skill `okami24-handoff` · permanent owner rulings of the round → §18.
+- Temporary rulings (written with an end date, `.claude/TEAM_RULES.md` 13.6): search §16, `.claude/LESSONS.md` and
+  `.claude/memory/` for ones that ended or end with the round → delete them; one with no end date = ask the owner.
 - Owner rulings on Thai words/sentences → `docs/THAI_STYLE_LOG.md` §7 (and the word table in THAI_STYLE §3 when the
   owner locked a word) — the main agent writes them.
 - The round file that ran is in `docs/rounds/` (re-copy if edited during the round) → delete its copy under `rounds/`
