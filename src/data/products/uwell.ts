@@ -472,104 +472,83 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g4-pro-koko/card.png",
-        alt: "UWELL Caliburn G4 Pro KOKO, gunmetal gray colourway, isolated product shot",
-        angle: "Front, isolated",
+        // Also shows in the caliburn-g5 page's related box (an SEO baseline page until 05/10) — owner 01/10: put it up now
+        // anyway, no wait.
+        src: "/assets/products/caliburn-g4-pro-koko/card-v2.webp",
+        alt: "UWELL Caliburn G4 Pro KOKO, Cosmic Gray, three-quarter view",
+        angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from UWELL's own images of this model",
         transparentBackground: true,
-        sourceName: "UWELL",
+        sourceName: "OKami24 render (Higgsfield) from UWELL's images",
         sourceUrl: "https://www.myuwell.com/products/caliburn",
       },
     ],
-    // Real UWELL color/finish lineup — owner quality review, 2026-09-02 (reputable-vendor
-    // photo-confirmed. "KOKO" is UWELL's naming convention for a touchscreen hardware edition of
-    // an existing Caliburn generation — it shares the G4 Pro's pod platform, it is not a separate
-    // color or pod system. QC RECOVERY PASS (2026-09-03, THIRD pass): the original vapesourcing/
-    // element vape source for these 8 had the same confirmed jagged-edge defect found across this
-    // whole batch (a plain per-pixel white threshold on a JPEG-compressed source leaves the
-    // background-removal edge visibly stair-stepped, especially on curved metallic rims).
-    // myuwell.com's own equivalent lineup strip could not be found for this product despite
-    // trying the same URL pattern that worked for caliburn-g5-lite/-lite-se. Replaced with a
-    // genuinely clean set found via reputable-retailer search: gascityvapes.com's own Shopify
-    // product photography, all 8 colors, no watermark, high resolution, background-removal edges
-    // properly anti-aliased this time (adaptive per-image background-color sampling instead of a
-    // fixed white threshold — one source here used light gray, not pure white, which the old fixed
-    // threshold silently failed on entirely).
+    // Image-sitewide round 3b (b), 01/10 (owner "ทำเลย" on the first sheet): every colour = ONE master device so only the
+    // frame colour changes on a swipe. The night render it comes from was a MIRROR image of the real device (G4 logo
+    // top-right; UWELL's own front photo has it top-left) — flopped, screen UI and the engraved logo mirrored back so
+    // they read, then the frame colour moved to each colour of UWELL's own colour banners
+    // (files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-1..9.webp); scripts and sheet:
+    // _incoming/image-sitewide/b-uwell/ (recolour-g4k.js, owner-sheet-1.png). Card-v2 = the Cosmic Gray photo tilted in 2D.
+    // From the front Desert Gold and Golden Carbon look the same — true to the device: they differ on the back panel.
+    // No all-colours image behind an "all" chip (owner 01/10: one device per colour, swipe — no all-colours view).
+    openOnCardPhoto: true,
+    // UWELL makes 9 colours (myuwell.com colour banners, read 2026-09-05 and again 01/10). Photos: image-sitewide round 3b
+    // (b) above. Swatches = the frame colour on those banners where the old value was off (Cosmic Gray is champagne-gray,
+    // Glass Blue a deep blue, Coral Pink a salmon pink); Golden Carbon keeps a darker gold than Desert Gold (same frame,
+    // carbon back). Golden Carbon has no stock — src/data/stock/sold-out.ts (the owner's single stock list).
     colorVariants: [
       {
         id: "desert-gold",
         name: "Desert Gold",
         swatchHex: "#c9a24b",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-desert-gold.webp", alt: "UWELL Caliburn G4 Pro KOKO, Desert Gold" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-desert-gold-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Desert Gold" },
       },
       {
         id: "waves-black",
         name: "Waves Black",
         swatchHex: "#1c1c1c",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-waves-black.webp", alt: "UWELL Caliburn G4 Pro KOKO, Waves Black" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-waves-black-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Waves Black" },
       },
       {
         id: "cosmic-gray",
         name: "Cosmic Gray",
-        swatchHex: "#54565a",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-cosmic-gray.webp", alt: "UWELL Caliburn G4 Pro KOKO, Cosmic Gray" },
+        swatchHex: "#afa796",
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-cosmic-gray-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Cosmic Gray" },
       },
       {
         id: "mirror-silver",
         name: "Mirror Silver",
         swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-mirror-silver.webp", alt: "UWELL Caliburn G4 Pro KOKO, Mirror Silver" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-mirror-silver-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Mirror Silver" },
       },
       {
         id: "crystal-white",
         name: "Crystal White",
         swatchHex: "#eef0f2",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-crystal-white.webp", alt: "UWELL Caliburn G4 Pro KOKO, Crystal White" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-crystal-white-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Crystal White" },
       },
       {
         id: "light-green",
         name: "Light Green",
         swatchHex: "#a8d5ba",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-light-green.webp", alt: "UWELL Caliburn G4 Pro KOKO, Light Green" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-light-green-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Light Green" },
       },
       {
         id: "glass-blue",
         name: "Glass Blue",
-        swatchHex: "#7fb8d9",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-glass-blue.webp", alt: "UWELL Caliburn G4 Pro KOKO, Glass Blue" },
+        swatchHex: "#259acf",
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-glass-blue-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Glass Blue" },
       },
-      // Coral Pink reverted to swatch-only (retrospective QC pass, 2026-09-03) — the source file
-      // itself is clean (verified directly and via the exact bytes Next.js serves), but the LIVE
-      // browser render consistently shows a real, reproducible dashed/ringing artifact tracing the
-      // device silhouette (confirmed across fresh tabs, a full server restart, and a rebuilt
-      // .next — not a cache issue). Root cause traced to Next's image optimizer serving this as a
-      // flattened JPEG (no alpha) for the storefront's actual request pattern, with visible ringing
-      // specifically at this color's high-contrast alpha edge; a stronger feather did not resolve
-      // it within a reasonable investigation window. Per the "replace with a better source or fall
-      // back to swatch-only" rule, this stays swatch-only rather than ship a confirmed defect. The
-      // asset file itself is left in place (not deleted) in case a future session finds the real
-      // fix (e.g. adjusting Next's image `quality`/format config) and wants to re-enable it.
       {
         id: "coral-pink",
         name: "Coral Pink",
-        swatchHex: "#e8899a",
-        // 2026-09-05: re-tried enabling the image under the owner's "show every colour" rule and
-        // re-checked in a fresh mobile-width headless render — the dashed white ringing around the
-        // silhouette IS still there (screenshot in the 2026-09-05 night report). Stays swatch-only;
-        // the colour itself is listed. Fix candidates for a future pass: re-cut the file with a
-        // softer/pre-multiplied alpha edge, or a different source photo.
+        swatchHex: "#fca693",
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-coral-pink-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Coral Pink" },
       },
-      // 2026-09-05: 9th official colour, added under the owner's rule that the showcase must list
-      // every colour the manufacturer makes (myuwell.com product page lists 9: Coral Pink, Light
-      // Green, Glass Blue, Cosmic Gray, Crystal White, Mirror Silver, Waves Black, Desert Gold,
-      // Golden Carbon — read from the printed label on each official color-N.webp). Swatch-only:
-      // UWELL's official image for it is a scene banner with the device cropped at the frame edge,
-      // which fails docs/IMAGE_SPEC.md (no partial product). Stock unknown until Shipnity is wired.
       {
         id: "golden-carbon",
         name: "Golden Carbon",
         swatchHex: "#b8923a",
-        // Added 2026-09-06 with no stock — listed in src/data/stock/sold-out.ts (the owner's
-        // single stock list), never hard-coded here.
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-golden-carbon-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Golden Carbon" },
       },
     ],
     specifications: [
@@ -1244,80 +1223,72 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g3-pro-koko/variant-emerald-green.webp",
-        alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green, isolated product shot",
-        angle: "Front, isolated",
+        src: "/assets/products/caliburn-g3-pro-koko/card-v2.webp",
+        alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green, three-quarter view",
+        angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from UWELL's images of this model",
         transparentBackground: true,
-        sourceName: "UWELL (retailer-redistributed studio photo, vapesourcing.com — matches myuwell.com's own render, tier-2)",
+        sourceName: "OKami24 render (Higgsfield) from UWELL's images",
         sourceUrl: "https://vapesourcing.com/uwell-caliburn-g3-pro-koko.html",
       },
     ],
-    // "All Colors" lineup (2026-09-04) — OKami24 composite built from the 8 individually-verified
-    // photos below now that every color has one; no fallback/generic image involved.
-    lineupImage: {
-      src: "/assets/products/caliburn-g3-pro-koko/lineup.webp",
-      alt: "UWELL Caliburn G3 Pro KOKO, all 8 colors",
-      sourceName: "OKami24 composite (from individually-verified retailer photos)",
-    },
+    // Image-sitewide round 3b (b), 01/10 (owner "ทำเลย" on the first sheet): the old photos were 274x438 retailer
+    // cut-outs with a white rim. Every colour = ONE master device (the night 01/10 Higgsfield front render made from UWELL's
+    // images) with the metal colour moved to each colour of the shop's own per-colour photos (vapesourcing redistribution
+    // of UWELL's render; gold and black were clipped there and come from UWELL's own colour) — only the frame colour changes
+    // on a swipe; scripts and sheet: _incoming/image-sitewide/b-uwell/ (recolour-g3k.js). Card = Emerald Green tilted in
+    // 2D. Swatches = the frame colour on these photos. UWELL has no per-colour files for this model (color-N.webp 404).
+    // No all-colours image behind an "all" chip (owner 01/10: one device per colour, swipe — no all-colours view).
+    openOnCardPhoto: true,
     // Real UWELL color/finish lineup — "KOKO" is UWELL's touchscreen-edition naming convention
     // (see caliburn-g4-pro-koko's own comment) — same G3 Pro pod platform, not a separate system.
-    // QC pass (2026-09-04, owner visual review): the previous card asset was a 2-color group shot
-    // ("Emerald Green and Lilac Purple" in one frame) reused for BOTH of those color slots — an
-    // established anti-pattern (a group shot must never stand in for one specific variant). Fixed
-    // by sourcing genuine individual per-color photos for all 8 colors from vapesourcing.com
-    // (800x800, clean, no watermark, screen-on renders pixel-matching myuwell.com's own official
-    // asset — strong evidence of manufacturer-supplied photography redistributed by the retailer,
-    // tagged tier-2 since it isn't fetched from myuwell.com itself). Each source image carried its
-    // own baked-in color-name caption below the device (same class of defect fixed on Caliburn
-    // G4/G4 Mini/G4 Classic this pass) — cropped off before background removal, not left in.
     colorVariants: [
       {
         id: "emerald-green",
         name: "Emerald Green",
-        swatchHex: "#1f7a5c",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-emerald-green.webp", alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green" },
+        swatchHex: "#82f490",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-emerald-green-v2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Emerald Green" },
       },
       {
         id: "light-silver",
         name: "Light Silver",
-        swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-light-silver.webp", alt: "UWELL Caliburn G3 Pro KOKO, Light Silver" },
+        swatchHex: "#e5e5e5",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-light-silver-v2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Light Silver" },
       },
       {
         id: "lilac-purple",
         name: "Lilac Purple",
-        swatchHex: "#a68fc9",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-lilac-purple.webp", alt: "UWELL Caliburn G3 Pro KOKO, Lilac Purple" },
+        swatchHex: "#aba6cd",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-lilac-purple-v2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Lilac Purple" },
       },
       {
         id: "luxury-gold",
         name: "Luxury Gold",
-        swatchHex: "#c9a24b",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-luxury-gold.webp", alt: "UWELL Caliburn G3 Pro KOKO, Luxury Gold" },
+        swatchHex: "#e7c490",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-luxury-gold-v2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Luxury Gold" },
       },
       {
         id: "midnight-black",
         name: "Midnight Black",
         swatchHex: "#1a1a1a",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-midnight-black.webp", alt: "UWELL Caliburn G3 Pro KOKO, Midnight Black" },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-midnight-black-v2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Midnight Black" },
       },
       {
         id: "rose-pink",
         name: "Rose Pink",
-        swatchHex: "#e0a3b0",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-rose-pink.webp", alt: "UWELL Caliburn G3 Pro KOKO, Rose Pink" },
+        swatchHex: "#f6acb7",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-rose-pink-v2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Rose Pink" },
       },
       {
         id: "sky-blue",
         name: "Sky Blue",
-        swatchHex: "#7fb8d9",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-sky-blue.webp", alt: "UWELL Caliburn G3 Pro KOKO, Sky Blue" },
+        swatchHex: "#4dd1f4",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-sky-blue-v2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Sky Blue" },
       },
       {
         id: "space-gray",
         name: "Space Gray",
-        swatchHex: "#54565a",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-space-gray.webp", alt: "UWELL Caliburn G3 Pro KOKO, Space Gray" },
+        swatchHex: "#a2a2a2",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/variant-space-gray-v2.webp", alt: "UWELL Caliburn G3 Pro KOKO, Space Gray" },
       },
     ],
     specifications: [
