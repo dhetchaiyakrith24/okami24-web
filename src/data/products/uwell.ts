@@ -195,7 +195,8 @@ export const uwellProducts: Product[] = [
       { key: "pod-compat", label: "Pod platform", value: "UWELL GPP cartridge platform", sourceStatus: "verified" },
     ],
     // Article round batch 1 (02/10): each highlight = one of UWELL's own G5 posters (story-*.webp, from
-    // files.myuwell.com/uwell/product/caliburn-g5/pc/; story-colours = the left part of UWELL's real-shot.webp strip,
+    // files.myuwell.com/uwell/product/caliburn-g5/pc/; story-colours-v2 = the left part of UWELL's real-shot.webp strip with its
+    // transparent gutters kept (designer 03/10: the first crop was flattened onto black),
     // story-battery-v4 = pic10-1 cut again at full size (owner 03/10: v3 tore at the cable, patchy rim, white in the letters) (no box behind the devices; the
     // aluminium poster pic11 is a cut-out already — both float, `transparent`)), told one per block in "more details" (`storyDetails`). Text from
     // UWELL's G5 page. "top-fill-gpp" went: UWELL's spec sheet ships side-refill pods in the international kit.
@@ -230,14 +231,14 @@ export const uwellProducts: Product[] = [
         title: "Immersive Design × UI",
         description: "The 0.85\" colour display renders a themed UI that matches the device finish, showing battery, wattage, and mode at a glance.",
         subline: "Pick a colour, and the screen theme comes with it.",
-        image: { src: "/assets/products/caliburn-g5/story-colours.webp", alt: "Official UWELL photos — the Caliburn G5 in several colours, each screen in its own theme", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2400, height: 1403 },
+        image: { src: "/assets/products/caliburn-g5/story-colours-v2.webp", alt: "Official UWELL photos — the Caliburn G5 in several colours, each screen in its own theme", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2400, height: 1409, transparent: true },
       },
       {
         id: "long-run-battery",
         title: "1600mAh battery",
         description: "UWELL rates the built-in 1600mAh battery at up to 6 days of typical use per charge; it charges over USB-C.",
         subline: "Up to 6 days of typical use per charge (UWELL).",
-        image: { src: "/assets/products/caliburn-g5/story-battery-v4.webp", alt: "Official UWELL poster — 1600mAh battery, up to 6 days of use", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2413, height: 1282, transparent: true },
+        image: { src: "/assets/products/caliburn-g5/story-battery-v4.webp", alt: "Official UWELL poster — 1600mAh battery, up to 6 days of use", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2413, height: 1131, transparent: true },
       },
       {
         id: "aluminium-airflow",
