@@ -14,7 +14,9 @@ import type { Guide } from "@/types/catalog";
  * sitemap and is linked from nowhere. To publish one: delete its id from this set — the one switch.
  * Guarded by src/lib/held-guides-contract-test.ts.
  */
-export const HELD_GUIDE_IDS: ReadonlySet<string> = new Set<string>(["comparing-caliburn-models", "argus-g4-vs-caliburn-g5"]);
+// 2026-10-02: the owner released both D3-held comparisons (article round, cloud chat: "ได้ ปล่อยขึ้นเว็บเลย") — the set is
+// empty, the switch stays for the next held article.
+export const HELD_GUIDE_IDS: ReadonlySet<string> = new Set<string>([]);
 
 const allGuides: Guide[] = [
   {
@@ -905,16 +907,17 @@ const allGuides: Guide[] = [
     reviewVideo: { videoId: "iDoW0BuyWog", title: "ESKO BAR SWITCH 20000 มันจะขนาดนั้นเลยหรอเนี้ยย?", channelName: "OKM YARZ", publishedAt: "2025-12-20" },
   },
   {
-    // Round 10B T05' — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md. HELD
-    // until after the 2026-10-05 SEO_BASELINE read (owner ruling D3) — spec-only by the owner's instruction, no shop
-    // experience. Before release: re-read the G4 manual for "auto-draw" (from researcher-B's summary, not re-read).
+    // Round 10B T05' — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md. Held
+    // under owner ruling D3, released 2026-10-02 (owner) — spec-only by the owner's instruction, no shop experience. The
+    // pre-release check "G4 fires on a draw" = the G4 spec row `firing` ("Draw or button (auto mode)"), verified on the UWELL
+    // manual copy in the data round of 2026-09-24 (uwell.ts).
     id: "comparing-caliburn-models",
     slug: "comparing-caliburn-models",
     title: "Caliburn G5 vs G4 ต่างกันยังไง เทียบ Caliburn 8 รุ่น",
     dek: "G5 แบต 1600mAh สลับโหมดด้วยการแตะ G4 แบต 1300mAh มีปุ่มยิง G4 Pro แบต 1800mAh จอทัช เทียบสเปกทีละคู่",
     category: "buying-guide",
     readingTimeMin: 7,
-    publishedAt: "2026-09-24",
+    publishedAt: "2026-10-02",
     thaiOnly: true,
     body: [
       {
@@ -1000,8 +1003,8 @@ const allGuides: Guide[] = [
     ],
   },
   {
-    // Round 10B T07' — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md. HELD
-    // until after the 2026-10-05 SEO_BASELINE read (owner ruling D3). Pair = the only cross-brand model pair with
+    // Round 10B T07' — writer draft 2 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-2-result.md. Held
+    // under owner ruling D3, released 2026-10-02 (owner). Pair = the only cross-brand model pair with
     // autocomplete evidence ("argus g4 vs caliburn g5", researcher-B-result.md), the one Cowork proposed.
     id: "argus-g4-vs-caliburn-g5",
     slug: "argus-g4-vs-caliburn-g5",
@@ -1009,7 +1012,7 @@ const allGuides: Guide[] = [
     dek: "ไม่มีคำตอบที่แน่นอนว่าตัวไหนดีกว่า แบตใกล้กัน วัตต์กับขนาดจอเท่ากัน ที่ต่างชัดคือระบบหัวพอต และ G5 สลับโหมดด้วยการแตะ",
     category: "buying-guide",
     readingTimeMin: 5,
-    publishedAt: "2026-09-24",
+    publishedAt: "2026-10-02",
     thaiOnly: true,
     body: [
       {
