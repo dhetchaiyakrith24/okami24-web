@@ -27,8 +27,6 @@ owner's dev server on port 3000, never two Chrome jobs at once).
 ## Step 2 — Designer once, only per 13.5 #6
 
 A new look, slot or component in the round → `designer` **one time** with the flagged crops only. Otherwise skip.
-A batch that changed an image or a layout already had its designer pass (skill `tier-b-proof` step 4b) — no
-second pass at the close unless something changed after it.
 
 ## Step 3 — Verify set (names only)
 
