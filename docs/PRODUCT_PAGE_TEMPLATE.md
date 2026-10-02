@@ -53,6 +53,7 @@ brand turn; moving a page to "stage" is part of that page's turn, not a side eff
 | colour/flavour tile in the all-options grid | that option in the hero (`#option-<id>`) |
 | poster of a pod/coil/cartridge | the shop page of the pods that fit (catalog-relationships) |
 | poster of a technology the site explains | its `/technology/<slug>` page |
+| poster of something a buying guide explains (e.g. airflow → MTL vs DTL) | that `/guides/<slug>` page |
 | brand logo in the hero | `/brands/<slug>` |
 | anything else | not a link, no hover lift |
 
