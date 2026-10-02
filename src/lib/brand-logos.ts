@@ -22,22 +22,16 @@ export const BRAND_LOGOS: Record<string, BrandLogo> = {
   infy: { src: "/assets/brands/infy-logo.png", width: 386, height: 120 },
   // shop.voopoo.com header (img-va.myshopline.com/image/store/1747294110724/-LOGO-0.png) — white; brand.voopoo.com serves
   // only a 146 px copy and says its kit PHOTOS must be bought (the logo is the shop's own header file)
-  voopoo: { src: "/assets/brands/voopoo-logo.png", width: 728, height: 120 },
+  voopoo: { src: "/assets/brands/voopoo-logo.png", width: 728, height: 120, scale: 0.85 },
   // salthub.com footer (wp-content/uploads/2023/12/Marbo-LOGO_画板-1-2.png — the file name says Marbo, the art is the
   // SaltHub wordmark) — white
   salthub: { src: "/assets/brands/salthub-logo.png", width: 370, height: 120, scale: 1.2 },
-  // dotmod.com header (cdn/shop/files/LOGO_035ae761….png) — gold emblem, no light version on the site
-  dotmod: { src: "/assets/brands/dotmod-logo.png", width: 120, height: 120, scale: 1.8 },
-  // eskobarvape.com header + footer (assets/eskobar-logo.avif, the only size served) — yellow
-  "esko-bar": { src: "/assets/brands/esko-bar-logo.png", width: 403, height: 37, scale: 0.7 },
-  // instabar.net header (cdn/shop/files/20220704165456.png) — white, two lines
-  instabar: { src: "/assets/brands/instabar-logo.png", width: 167, height: 120, scale: 1.8 },
   // myjoiway.id header (cdn/shop/files/1st_Logo_JOIWAY_….png) — white word between two green bars
   joiway: { src: "/assets/brands/joiway-logo.png", width: 344, height: 120, scale: 1.6 },
-  // kardinal.com header (cdn.prod.website-files.com/…/kardinal_logo_red.png) — red
-  "kardinal-stick": { src: "/assets/brands/kardinal-stick-logo.png", width: 525, height: 120 },
-  // nevoks.com header (cdn/shop/files/NEVOKS-Logo_20231108.png) — white
-  nevoks: { src: "/assets/brands/nevoks-logo.png", width: 600, height: 120 },
+  // files found, not listed until the brand has a /products page to check them at size (owner eye item 4, designer 03/10;
+  // candidates in _incoming/g5-template/logos/): DOTMOD (gold emblem only — letters too small at this size; keep the chip
+  // unless the maker serves a word logo) · Esko Bar (403 px wide file only) · instabar · Kardinal (the site names the
+  // brand "KS" — owner to choose) · NEVOKS
   // not yet (03/10): wotofo (the site serves a black wordmark only) · ske (the site's logo is a seasonal Halloween
   // version, black) · relx (relxnow.com serves no logo file; the UK store's file is a retailer lockup) · iqos (no logo on
   // iqos.com / jp.iqos.com) · tfit / lambda / rincoe (no file found, site unreachable or script-built)

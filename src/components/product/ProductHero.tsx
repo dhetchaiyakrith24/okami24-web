@@ -264,7 +264,7 @@ export function ProductHero({
           <div className="flex flex-wrap items-center gap-2 max-lg:order-1">
             {/* owner 03/10: the brand's own logo (linked to its brand page) in place of the text chip, when the file exists */}
             {BRAND_LOGOS[product.brandId] ? (
-              <Link href={`/brands/${getBrand(product.brandId)?.slug ?? product.brandId}`} className="mr-1 inline-flex items-center opacity-90 transition-opacity hover:opacity-100">
+              <Link href={`/brands/${getBrand(product.brandId)?.slug ?? product.brandId}`} className="mr-1 inline-flex h-6 items-center opacity-90 transition-opacity hover:opacity-100">
                 <Image
                   src={BRAND_LOGOS[product.brandId].src}
                   alt={brandName(product.brandId)}
