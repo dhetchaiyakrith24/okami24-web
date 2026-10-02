@@ -11,4 +11,11 @@ export interface BrandLogo {
   height: number;
 }
 
-export const BRAND_LOGOS: Record<string, BrandLogo> = {};
+export const BRAND_LOGOS: Record<string, BrandLogo> = {
+  // myuwell.com footer (files.myuwell.com/uwell/neo/footer/logo.png) — white on transparent
+  uwell: { src: "/assets/brands/uwell-logo.png", width: 225, height: 44 },
+  // infy.my header (wp-content/uploads/2024/03/Infy-Logo.png) — white on transparent, trimmed and scaled to 120 px tall
+  infy: { src: "/assets/brands/infy-logo.png", width: 386, height: 120 },
+  // not yet: salthub (its site serves only the "M" mark, no word) · voopoo (brand kit is a zip; licence note on brand.voopoo.com)
+  // · relx / joiway / tfit (no logo file found on the maker site) · wotofo (dark logo only) — researcher 03/10
+};
