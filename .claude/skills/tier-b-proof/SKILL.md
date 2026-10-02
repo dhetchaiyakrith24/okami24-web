@@ -104,10 +104,10 @@ Text-only tier B skips this step. Otherwise, before the designer and the checker
 2. Write `_incoming/<round>/owner-eye-<batch>.md`: the commit · one block per changed image/section with every
    list line ✓/✗ and the crop path · **"จุดที่พี่น่าจะติ"** — the 3 spots the owner is most likely to reject,
    worst first (an honest guess beats "none"). A fact line ✗ = fix before going on.
-3. Send the owner the draft (`SendUserFile`, Thai caption): the after shots 390 + 1440 of the changed spots +
-   the 3 spots. Then keep working on what does not depend on the answer (central §12 item 14). The PR waits for
-   the answer — `.claude/TEAM_RULES.md` 13.8 (the one place of that rule). Write the send time and the owner's
-   answer, word for word, in the same file.
+3. Send the owner the draft in chat, Thai caption — the after shots 390 + 1440 of the changed spots + the 3 spots
+   (desktop app: the `SendUserFile` tool; without it, full file paths in the message). Keep working — what the
+   owner's answer changes = `.claude/TEAM_RULES.md` 13.8 (the one place of that rule). Write the send time and the
+   owner's answer, word for word (none yet = "ยังไม่ตอบ"), in the same file.
 
 ## Step 5 — The designer brief
 

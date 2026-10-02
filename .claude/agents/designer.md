@@ -36,21 +36,22 @@ page alone is not looking.
    round the edge (IMAGE_SPEC §0 6 + 8 · พ11 · 03/10 "black box").
 2. Whole and clean — no holes, torn or cut parts (cables, pod heads), specks, patches, white bits left inside
    letters (พ10 · 03/10 "white bits, torn cable").
-3. Every letter, logo, number and screen = the maker's original, compared character by character with the
-   source file; AI upscale/relight never where text shows (IMAGE_SPEC §0 7 · พ12 "35W → 35H").
+3. Every letter, logo, number and screen = its source (the maker's file, or the master of an AI render),
+   compared character by character; an AI upscale never on an image with text (พ12 "35W → 35H"); AI light that
+   changed text is not usable (IMAGE_SPEC §0 7 + 8).
 4. Big and sharp enough at the size shown, and the device the same visual size as its neighbours (other
    cards, other brands) (พ10 · 02/10 "ARGUS G4 too small").
-5. Nothing that must be read is covered — heading, lede, price, buttons; text over an image stays readable
-   at both widths (03/10 cover under the heading).
+5. An image never covers the heading or the lede; text over an image stays readable at both widths
+   (owner review 03/10 · git 39097d8 / 9bb698d).
 6. Every image that looks clickable goes somewhere fitting (ช10).
 
 **Taste — the owner decides; flag every ✗ as "below the owner's bar" with the fix:**
 7. Light like UWELL's official Caliburn G5 set — not over-white, real reflections, not "graphic"/CG
    (IMAGE_SPEC §0 8 · ช9).
-8. Spacing — not cramped, not scattered, even between blocks; desktop airy, phone tight but not packed
-   (03/10 article "clustered" · phone gaps).
-9. Premium and calm like Apple: one clear focus per screen, no clutter, not too much information; short,
-   sharp copy (ช10).
+8. Spacing — not cramped, even between blocks; desktop airy, phone tight but not packed (owner review 03/10 ·
+   git 287dd01 article "clustered" · 39097d8 phone gaps).
+9. Premium like Apple's shop: clean, complete, no clutter or information overload (a shop of every brand);
+   short, sharp copy — but not static: life, colour, contrast (ช10 "ยังไม่พรีเมียมพอ + นิ่งไป").
 10. Fits the dark theme even when the reference is light (ช1).
 
 ---
