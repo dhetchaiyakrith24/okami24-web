@@ -130,8 +130,9 @@ export const uwellProducts: Product[] = [
     storyLayout: "stage",
     storyColoursAfter: "display-x-ui",
     // G5 template round batch 5 (owner 03/10: "กรอบดำ" + white bits in the CALIBURN word): hero.webp is already cut out —
-    // the black box was the poster card; story-cover-v2 = hero.webp without the CALIBURN G5 word row, floating (`transparent`)
-    storyCover: { src: "/assets/products/caliburn-g5/story-cover-v2.webp", alt: "Official UWELL Caliburn G5 campaign image, \"Simple Tap. Supreme Taste.\"", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 3081, height: 1291, transparent: true },
+    // the black box was the poster card, the white bits = studio white left inside the A/B/R counters of the word row;
+    // story-cover-v2 = hero.webp with those holes cleared (_incoming/g5-template/b5/eat-white.js), floating (`transparent`)
+    storyCover: { src: "/assets/products/caliburn-g5/story-cover-v2.webp", alt: "Official UWELL Caliburn G5 campaign image, \"Simple Tap. Supreme Taste.\"", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 3081, height: 1480, transparent: true },
     colorVariants: [
       {
         id: "mystic-forest",
@@ -197,7 +198,8 @@ export const uwellProducts: Product[] = [
     // Article round batch 1 (02/10): each highlight = one of UWELL's own G5 posters (story-*.webp, from
     // files.myuwell.com/uwell/product/caliburn-g5/pc/; story-colours-v2 = the left part of UWELL's real-shot.webp strip with its
     // transparent gutters kept (designer 03/10: the first crop was flattened onto black),
-    // story-battery-v4 = pic10-1 cut again at full size (owner 03/10: v3 tore at the cable, patchy rim, white in the letters) (no box behind the devices; the
+    // story-battery-v4 = pic10-1 cut again at full size, studio white between the letters cleared (owner 03/10: v3 tore at the cable,
+    // patchy rim, white in the letters) (no box behind the devices; the
     // aluminium poster pic11 is a cut-out already — both float, `transparent`)), told one per block in "more details" (`storyDetails`). Text from
     // UWELL's G5 page. "top-fill-gpp" went: UWELL's spec sheet ships side-refill pods in the international kit.
     features: [
