@@ -1,0 +1,126 @@
+/**
+ * The "more details" story text beside each maker poster, in all three languages — round "G5 template" batch 2
+ * (owner 02/10: "ข้อความต่อ 1 รูปตอนนี้น้อยไป" · short and sharp like Apple · th/en/zh · facts from the maker only).
+ *
+ * One entry per product slug, keyed by the `features[].id` whose poster the text sits beside. `ProductMoreDetails`
+ * (stage layout) reads it before the product's own `features` text; a slug or block without an entry renders as
+ * before. Kept out of the brand data file and product-copy-th.ts on purpose, like anatomy-sheet-copy.ts: a
+ * one-product story does not move the sitemap dates of every product that shares those files.
+ *
+ * Facts: UWELL's own G5 page and spec sheet (researcher notes `_incoming/g5-template/uwell-g5-source.md`); Thai =
+ * thai-copy 02/10 (`b2-copy-th.md`). A point that states a figure names the spec row that verifies it (`specKey`)
+ * and is dropped while that row is not `verified` in the product data.
+ */
+import type { SheetText } from "@/i18n/anatomy-sheet-copy";
+
+export interface StoryPoint {
+  text: SheetText;
+  /** shown only while this spec row is `verified` in the product data */
+  specKey?: string;
+}
+
+export interface StoryBlockCopy {
+  title: SheetText;
+  subline?: SheetText;
+  body: SheetText;
+  points?: StoryPoint[];
+  captions?: SheetText[];
+}
+
+export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
+  "caliburn-g5": {
+    "three-pods": {
+      title: { th: "ในกล่องมีหัวพอต 3 หัว", en: "Three pods in every kit", zh: "每套配 3 个烟弹" },
+      subline: { th: "หนึ่งในนั้นคือหัว GPP Alpha รุ่นใหม่", en: "One of them is the new GPP Alpha.", zh: "其中一个是全新 GPP Alpha。" },
+      body: {
+        th: "เปิดกล่องมาก็มีหัวสำรองไว้เปลี่ยน ลองเทียบหัว GPP ปกติกับหัว Alpha ได้ตั้งแต่วันแรก",
+        en: "Open the box and the spares are already there. Try a regular GPP pod against the Alpha from day one.",
+        zh: "打开包装，备用烟弹已经在里面。从第一天起就能比较普通 GPP 烟弹和 Alpha。",
+      },
+      points: [
+        { text: { th: "GPP ปกติ 2 หัว", en: "2 regular GPP pods", zh: "2 个普通 GPP 烟弹" }, specKey: "included-pod" },
+        { text: { th: "GPP Alpha 0.6 โอห์ม 1 หัว", en: "1 GPP Alpha, 0.6Ω", zh: "1 个 GPP Alpha，0.6Ω" }, specKey: "included-pod" },
+        { text: { th: "แบบหัวต่างกันตามเวอร์ชัน", en: "Pod types vary by market version", zh: "烟弹类型因销售版本而异" }, specKey: "included-pod" },
+      ],
+    },
+    "gpp-alpha": {
+      title: { th: "หัวพอต GPP Alpha", en: "GPP Alpha cartridge", zh: "GPP Alpha 烟弹" },
+      subline: { th: "คอยล์ใช้ได้นานขึ้น รสชาติไม่ดรอป", en: "Built to last. No flavour drop.", zh: "更耐用，口感不衰减。" },
+      body: {
+        th: "หัวนี้ใช้ AlphaCore ของ UWELL รสชาติคงที่ตั้งแต่พัฟแรกถึงพัฟสุดท้าย คอยล์ก็อยู่ได้นานขึ้น เปลี่ยนหัวน้อยลง",
+        en: "Built on UWELL's AlphaCore: steady flavour from the first puff to the last, and a coil that lasts longer, so you change pods less often.",
+        zh: "采用 UWELL 的 AlphaCore 技术：从第一口到最后一口口感稳定，线圈更持久，换烟弹的次数更少。",
+      },
+      points: [
+        { text: { th: "ออกแบบให้รั่วซึมยาก", en: "Leak-resistant design", zh: "防漏设计" } },
+        { text: { th: "ปากดูด TPU นุ่มปาก", en: "Soft-touch TPU mouthpiece", zh: "柔软 TPU 吸嘴" } },
+      ],
+    },
+    "triple-tap": {
+      title: { th: "Smart Triple-Tap Control", en: "Smart Triple-Tap Control", zh: "Smart Triple-Tap Control" },
+      subline: { th: "แตะสามครั้ง ตรงไหนของตัวเครื่องก็ได้", en: "Three taps, anywhere on the body.", zh: "在机身任意位置连敲三下。" },
+      body: {
+        // th = the owner-approved line (THAI_STYLE_LOG), kept until the owner rules on thai-copy's new one (b2-copy-th.md)
+        th: "ใช้เซ็นเซอร์จับการแตะแทนแถวปุ่มกด แตะเพื่อสลับโหมดวัตต์และเช็คสถานะเครื่อง ตัวเครื่องจึงเรียบ ไม่มีชิ้นส่วนเกิน",
+        en: "A built-in tap sensor stands in for the buttons. In the dark or in bright sun, when the screen is hard to read, a triple tap still switches instantly.",
+        zh: "内置触感传感器取代按键。在黑暗中或强光下看不清屏幕时，连敲三下照样能立即切换。",
+      },
+      points: [
+        { text: { th: "สลับโหมด", en: "Switch mode", zh: "切换模式" } },
+        { text: { th: "เปลี่ยนธีมหน้าจอ", en: "Change the UI theme", zh: "更换 UI 主题" } },
+        { text: { th: "ปรับความสว่างจอ", en: "Adjust brightness", zh: "调节亮度" } },
+      ],
+      captions: [
+        { th: "ในที่มืด", en: "In the dark", zh: "在黑暗中" },
+        { th: "กลางแดดจ้า", en: "Under bright sunlight", zh: "在强光下" },
+        { th: "ระหว่างเดินทาง", en: "On the go", zh: "在路上" },
+        { th: "ตอนกำลังเพลิน", en: "In the moment", zh: "尽情享受时" },
+      ],
+    },
+    "display-x-ui": {
+      title: { th: "จอสีเข้าชุดกับตัวเครื่อง", en: "A screen dressed to match", zh: "屏幕与机身同色搭配" },
+      subline: { th: "เลือกสีไหน ได้ธีมหน้าจอของสีนั้นมาด้วย", en: "Pick a colour, and its screen theme comes with it.", zh: "选一种颜色，就得到它专属的屏幕主题。" },
+      body: {
+        // th = the owner-approved line, kept until the owner rules on thai-copy's new one (b2-copy-th.md)
+        th: "จอสี 0.85 นิ้ว ธีมหน้าจอเข้ากับสีของตัวเครื่อง มองแวบเดียวก็เห็นแบต วัตต์ และโหมดที่ใช้อยู่",
+        en: "The 0.85\" colour screen shows battery, wattage and mode at a glance. Want a different theme? Triple-tap.",
+        zh: "0.85 英寸彩色屏让电量、功率和模式一眼可见。想换主题？连敲三下。",
+      },
+      points: [
+        { text: { th: "7 สี 7 ธีมหน้าจอ", en: "7 colours, 7 screen themes", zh: "7 种颜色，7 款屏幕主题" } },
+        { text: { th: "จอสี 0.85 นิ้ว", en: "0.85\" colour screen", zh: "0.85 英寸彩色屏" }, specKey: "screen" },
+      ],
+    },
+    "long-run-battery": {
+      title: { th: "แบต 1600mAh", en: "1600mAh battery", zh: "1600mAh 电池" },
+      subline: {
+        th: "ชาร์จครั้งเดียว ใช้งานทั่วไปได้สูงสุด 6 วัน (ตัวเลขของ UWELL)",
+        en: "Up to 6 days of typical use per charge (UWELL).",
+        zh: "一次充电，日常使用最长 6 天（UWELL 数据）。",
+      },
+      body: {
+        th: "ตัวเลข 6 วันคือการใช้งานทั่วไปตามที่ UWELL ระบุ ใช้จริงได้กี่วันขึ้นอยู่กับว่าสูบบ่อยแค่ไหน ตั้งกี่วัตต์ และเปิดช่องลมแค่ไหน",
+        en: "The 6 days is UWELL's figure for typical use. How long yours lasts depends on how often you vape, the wattage and the airflow.",
+        zh: "6 天是 UWELL 给出的日常使用数据。实际能用多久，取决于吸的频率、功率和气流大小。",
+      },
+      points: [
+        { text: { th: "แบต 1600mAh ในตัว", en: "1600mAh built in", zh: "内置 1600mAh" }, specKey: "battery" },
+        { text: { th: "ชาร์จผ่าน USB-C", en: "USB-C charging", zh: "USB-C 充电" }, specKey: "charging" },
+      ],
+    },
+    "aluminium-airflow": {
+      title: { th: "ตัวเครื่องอะลูมิเนียม ปรับลมได้ละเอียด", en: "Aluminium body, stepless airflow", zh: "铝合金机身，无级调气" },
+      subline: { th: "ถือแล้วดูดี สูบแล้วลื่น", en: "Premium in hand. Smooth on the draw.", zh: "握感高级，吸感顺滑。" },
+      body: {
+        th: "ตัวเครื่องเป็นอะลูมิเนียมอัลลอยผิวด้าน รอยนิ้วมือและคราบติดยาก จับแล้วถนัดมือ ด้านข้างปรับช่องลมได้ละเอียดแบบไม่มีขั้น ตั้งแต่สูบแน่นแบบ MTL (ดูดเข้าปากก่อน) ไปจนถึงโล่งขึ้นแบบ RDL",
+        en: "The matte aluminium-alloy body keeps fingerprints and smudges off and sits comfortably in the hand. The side airflow control turns smoothly, from a tighter MTL draw to a looser RDL.",
+        zh: "哑光铝合金机身不易留指纹和污渍，握持舒适。侧面的气流调节可顺滑微调，从较紧的 MTL 到较松的 RDL。",
+      },
+      points: [
+        { text: { th: "อะลูมิเนียมอัลลอยผิวด้าน", en: "Matte aluminium alloy", zh: "哑光铝合金" }, specKey: "materials" },
+        { text: { th: "หนัก 65 กรัม", en: "65g", zh: "重 65g" }, specKey: "weight" },
+        { text: { th: "ปรับลม MTL ถึง RDL", en: "Airflow from MTL to RDL", zh: "气流 MTL 到 RDL" }, specKey: "airflow" },
+      ],
+    },
+  },
+};

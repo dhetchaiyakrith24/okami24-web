@@ -260,9 +260,9 @@ export const uwellProducts: Product[] = [
       },
       {
         id: "g5-battery-life",
-        question: "How long does the battery last?",
+        question: "How many days does the Caliburn G5 last on a charge?",
         answer:
-          "Runtime depends on wattage, airflow, and how often the display is active; the 1600mAh cell is UWELL's stated capacity, but day-to-day runtime is a usage-dependent estimate rather than a fixed number.",
+          "UWELL rates the built-in 1600mAh battery at up to 6 days of typical use per charge. How long yours lasts depends on how often you vape, the wattage, the airflow and how often the screen is on.",
       },
     ],
     relatedProductSlugs: ["caliburn-g5-lite", "caliburn-g4-pro-koko", "caliburn-g4-pro"],

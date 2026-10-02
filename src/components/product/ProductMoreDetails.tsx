@@ -8,6 +8,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductAnatomySheet } from "@/components/product/ProductAnatomySheet";
 import { ProductAnatomy } from "@/components/product/ProductAnatomy";
 import { ANATOMY_SHEETS } from "@/i18n/anatomy-sheet-copy";
+import { STORY_COPY } from "@/i18n/story-copy";
+import { verifiedRows } from "@/lib/verified-specs";
 import { ProductArticleBody, ProductArticleLede } from "@/components/product/ProductArticle";
 import { productArticle } from "@/data/product-articles";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -176,6 +178,10 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
   const { dict, locale } = useLocale();
   const t = (x: string) => (locale === "th" ? thaiTypographyNode(x) : x);
   const gridAfter = product.storyColoursAfter ?? highlights[highlights.length - 1]?.id;
+  // batch 2 (G5 template round): the three-language story text beside each poster, when the product has one
+  const story = STORY_COPY[product.slug];
+  const rows = verifiedRows(product.specifications);
+  const titleOf = (f: Feature) => story?.[f.id]?.title[locale] ?? copyTh?.[f.id]?.title ?? f.title;
   return (
     <>
       <Container className="mt-8 lg:mt-16">
@@ -184,7 +190,7 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
             <li key={f.id}>
               <a href={`#story-${f.id}`} className="flex h-full flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 px-3 py-2.5 transition-colors hover:border-ember">
                 <span className="label-mono text-[0.65rem] text-steel" lang="en">{String(i + 1).padStart(2, "0")}</span>
-                <span className="text-sm font-medium leading-snug text-foreground">{t(copyTh?.[f.id]?.title ?? f.title)}</span>
+                <span className="text-sm font-medium leading-snug text-foreground">{t(titleOf(f))}</span>
               </a>
             </li>
           ))}
@@ -193,8 +199,11 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
       {highlights.map((f, i) => {
         const img = f.image!;
         const th = copyTh?.[f.id];
-        const subline = th?.subline ?? (locale === "th" ? undefined : f.subline);
-        const captions = th?.captions ?? (locale === "th" ? undefined : f.captions);
+        const sc = story?.[f.id];
+        const subline = sc ? sc.subline?.[locale] : (th?.subline ?? (locale === "th" ? undefined : f.subline));
+        const captions = sc ? sc.captions?.map((c) => c[locale]) : (th?.captions ?? (locale === "th" ? undefined : f.captions));
+        const body = sc?.body[locale] ?? th?.description ?? f.description;
+        const points = (sc?.points ?? []).filter((p) => !p.specKey || rows.some((r) => r.key === p.specKey)).map((p) => p.text[locale]);
         // G5 template round batch 1 (owner 02/10): desktop = the split rhythm of M Bar 10K (poster 7/12, text 5/12,
         // sides alternating, backgrounds alternating); phones keep the centred stage, with tighter gaps between posters.
         // One DOM order for both (headline → poster → text) — the grid places the two text parts beside the poster.
@@ -206,7 +215,7 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
               <Container className="flex flex-col items-center text-center lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-12 lg:text-left">
                 <div className={cn("flex flex-col items-center lg:col-span-5 lg:row-start-1 lg:items-start lg:self-end", textCol)}>
                   <span className="label-mono text-xs text-steel" lang="en">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="mt-2 max-w-3xl text-balance font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground lg:mt-3 lg:text-[2.5rem] lg:leading-[1.05]">{t(th?.title ?? f.title)}</h3>
+                  <h3 className="mt-2 max-w-3xl text-balance font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground lg:mt-3 lg:text-[2.5rem] lg:leading-[1.05]">{t(titleOf(f))}</h3>
                   {subline && <p className="mt-3 max-w-2xl text-lg text-balance text-foreground-muted lg:mt-4 lg:text-xl">{t(subline)}</p>}
                 </div>
                 {/* a portrait poster at the landscape width would fill more than a screen — narrower column */}
@@ -234,7 +243,18 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
                       ))}
                     </ul>
                   )}
-                  <p className="mt-4 max-w-xl text-base leading-relaxed text-pretty text-foreground-muted lg:mt-5 lg:max-w-md">{t(th?.description ?? f.description)}</p>
+                  <p className="mt-4 max-w-xl text-base leading-relaxed text-pretty text-foreground-muted lg:mt-5 lg:max-w-md">{t(body)}</p>
+                  {points.length > 0 && (
+                    // the facts in short — hairline rows like a spec list, left-aligned even in the centred phone column
+                    <ul className="mt-5 w-full max-w-sm border-t border-surface-border-soft text-left lg:max-w-md">
+                      {points.map((p) => (
+                        <li key={p} className="flex items-baseline gap-2.5 border-b border-surface-border-soft py-2.5 text-sm font-medium text-foreground">
+                          <span className="h-1.5 w-1.5 shrink-0 translate-y-[-0.15em] rounded-full bg-ember" aria-hidden />
+                          <span>{t(p)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   <div className="mt-3">
                     <Credit img={img} linkLabel={dict.product.gallerySourceLinkLabel} />
                   </div>
