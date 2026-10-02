@@ -40,7 +40,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   [ตรวจแล้ว]; shots `shots/cmp-390.png` / `cmp-1440.png`; a re-scan after merging main was RUNNING at the move (`vt-after2`,
   `vt-before2`, diff → `vt-diff2`). STILL TO DO: head-check, gallery-probe both modes, checker (brief like `set1/checker-brief-d.md`),
   then merge (deploy-on-merge stays — owner 02/10). Test server 3412 may be UP (`node scripts/test-server.js status` / `stop`).
-3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
+3 OPEN: round "รอบรูป-ทั้งเว็บ" — THE STANDARD IS CALIBURN G5 (owner 02/10; the file's "แบบ M Bar 10K" name is from 30/09)
+  (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
   VOOPOO `b-voopoo/`, coils `b-coils/`).
   OWNER 01/10 evening [ตรวจแล้ว — chat]: all-options image for pod systems = `docs/IMAGE_SPEC.md` §0 item 5 · "finish the image
@@ -95,8 +96,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (5) argus-g4 + Argus Multi-Ohm + M Bar 15K duplicate record (= M Switch Kit).
   (6) BATCH 5 rest of the site (planner first; joiway-f4 · relx-creator · relx-smash-go-12k …; TFIT M Power after a researcher) ·
   (7) Esko pod-159 LAST (stock/cart = 13.7 big (2), full set, own PR, + BSOT §21).
-  Higgsfield: 178.6 credits after the B test 01/10 late [ตรวจแล้ว — balance 182.6 before − 4; 0 used 02/10 — เชื่อว่า, not re-read]; 4K = 4, nano 2K = 2, remover = 1 · tell the
-  owner the credits for a whole set before starting it (IMAGE_SPEC §0 item 7).
+  Higgsfield: 178.6 credits after the B test 01/10 late [ตรวจแล้ว — balance 182.6 before − 4; 0 used 02/10 — เชื่อว่า, not re-read]; 4K = 4, nano 2K = 2, remover = 1 · use
+  without asking, report the spend (owner 02/10, IMAGE_SPEC §0 item 7).
   Round close: `npx tsx scripts/asset-refs.ts` for unreferenced photos (list in item 5).
 4 waiting on owner:
   (38) one lifestyle sample like UWELL's real-shot.webp (scene + props) — the owner wants to see it before deciding where it goes.
