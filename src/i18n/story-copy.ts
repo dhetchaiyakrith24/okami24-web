@@ -117,7 +117,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ตัวเครื่องอะลูมิเนียม ปรับลมได้ละเอียด", en: "Aluminium body, stepless airflow", zh: "铝合金机身，无级调气" },
       subline: { th: "ถือแล้วดูดี สูบแล้วลื่น", en: "Premium in hand. Smooth on the draw.", zh: "握感高级，吸感顺滑。" },
       body: {
-        th: "ตัวเครื่องเป็นอะลูมิเนียมอัลลอยผิวด้าน รอยนิ้วมือและคราบติดยาก จับแล้วถนัดมือ ด้านข้างปรับช่องลมได้ละเอียดแบบไม่มีขั้น ตั้งแต่สูบแน่นแบบ MTL (ดูดเข้าปากก่อน) ไปจนถึงโล่งขึ้นแบบ RDL",
+        th: "ตัวเครื่องเป็นอะลูมิเนียมอัลลอยผิวด้าน รอยนิ้วมือและคราบติดยาก จับแล้วถนัดมือ ด้านข้างปรับช่องลมได้ละเอียดแบบไม่มีขั้น ตั้งแต่ MTL (ดูดเข้าปากก่อน) ที่สูบแน่น ไปจนถึง RDL ที่โล่งขึ้น",
         en: "The matte aluminium-alloy body resists fingerprints and smudges and sits comfortably in the hand. The side airflow slider moves smoothly, from a tighter MTL draw to a looser RDL.",
         zh: "哑光铝合金机身不易留指纹和污渍，握持舒适。侧面可无级调节气流，从较紧的 MTL 到较松的 RDL。",
       },

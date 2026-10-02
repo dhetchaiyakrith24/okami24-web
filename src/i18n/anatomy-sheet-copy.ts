@@ -250,14 +250,14 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
           x: 85,
           y: 52,
           name: { th: "ปุ่มเลื่อนปรับลม", en: "Airflow slider", zh: "气流调节滑块" },
-          detail: { th: "ปรับช่องลมได้ละเอียดแบบไม่มีขั้น ตั้งแต่สูบแน่นแบบ MTL ถึงโล่งแบบ RDL", en: "Side slider, stepless from MTL to RDL", zh: "侧面滑块，MTL 到 RDL 无级调节" },
+          detail: { th: "ปรับช่องลมได้ละเอียดแบบไม่มีขั้น ตั้งแต่ MTL ที่สูบแน่น ถึง RDL ที่โล่ง", en: "Side slider, stepless from MTL to RDL", zh: "侧面滑块，MTL 到 RDL 无级调节" },
           specKey: "airflow",
         },
       ],
     },
     zooms: [
       { id: "screen", code: "DISPLAY", name: { th: "จอสี", en: "Colour screen", zh: "彩色屏" }, image: { src: `${G5}/zoom-screen-v2.webp`, width: 600, height: 600, alt: { th: "จอสีของ Caliburn G5 ระยะใกล้", en: "Caliburn G5 colour screen, close-up", zh: "Caliburn G5 彩色屏特写" } } },
-      { id: "port", code: "USB-C", name: { th: "ช่องชาร์จด้านข้าง", en: "Side USB-C port", zh: "侧面充电口" }, image: { src: `${G5}/zoom-port-v2.webp`, width: 600, height: 600, alt: { th: "ด้านข้าง Caliburn G5 ระยะใกล้ ช่องชาร์จ USB-C", en: "Caliburn G5 side close-up with the USB-C port", zh: "Caliburn G5 侧面特写，USB-C 充电口" } } },
+      { id: "port", code: "USB-C", name: { th: "ช่องชาร์จ", en: "USB-C port", zh: "充电口" }, image: { src: `${G5}/zoom-port-v2.webp`, width: 600, height: 600, alt: { th: "ด้านข้าง Caliburn G5 ระยะใกล้ ช่องชาร์จ USB-C", en: "Caliburn G5 side close-up with the USB-C port", zh: "Caliburn G5 侧面特写，USB-C 充电口" } } },
       { id: "airflow", code: "AIRFLOW", name: { th: "ปุ่มเลื่อนปรับลม", en: "Airflow slider", zh: "气流调节滑块" }, image: { src: `${G5}/zoom-airflow-v2.webp`, width: 600, height: 600, alt: { th: "ตัวปรับลมด้านข้างของ Caliburn G5 ระยะใกล้", en: "Caliburn G5 side airflow control, close-up", zh: "Caliburn G5 侧面气流调节特写" } } },
     ],
     facts: [
