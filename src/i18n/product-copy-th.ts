@@ -24,7 +24,7 @@ export interface ProductCopyTh {
    *  English text; an entry without `title` keeps the English title (a feature name the brand
    *  itself coined — Smart Triple-Tap Control, Pro-FOCS — stays English by THAI_STYLE layer 1).
    *  Read by FeatureGrid.tsx when the locale is Thai. */
-  features?: Record<string, { title?: string; description: string }>;
+  features?: Record<string, { title?: string; description: string; subline?: string; captions?: string[] }>;
   /** Round 30.4ค batch 2 (owner-approved value by value, 2026-09-15): the SpecSheet chip VALUES in
    *  Thai, keyed by `Specification.key` (unique within one product). Only values that contain
    *  words have an entry — a value that is just a number/unit/model name ("5–35W", "USB-C",
@@ -83,25 +83,32 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     features: {
       "three-pods": {
         title: "ในกล่องมีหัวพอต 3 หัว",
+        subline: "หนึ่งในนั้นคือหัว GPP Alpha รุ่นใหม่",
         description: "หนึ่งในสามหัวคือ GPP Alpha หัวรุ่นใหม่ของ UWELL ที่เหลือเป็นหัว GPP ปกติ เปิดกล่องมาก็มีหัวสำรองไว้เปลี่ยน",
       },
       "gpp-alpha": {
         title: "หัวพอต GPP Alpha",
+        subline: "คอยล์ใช้ได้นานขึ้น รสชาติไม่ดรอป",
         description: "หัวพอตรุ่นใหม่ของ UWELL ออกแบบให้คอยล์ใช้ได้นานขึ้น รสชาติคงที่ตั้งแต่พัฟแรกถึงพัฟสุดท้าย กันรั่วซึม และปากดูดเป็น TPU นุ่มปาก",
       },
       "triple-tap": {
+        subline: "ทางลัดของทุกอย่าง แตะตรงไหนของตัวเครื่องก็ได้สามครั้ง",
+        captions: ["ในที่มืด", "กลางแดดจ้า", "ระหว่างเดินทาง", "ตอนกำลังเพลิน"],
         description: "ใช้เซ็นเซอร์จับการแตะแทนแถวปุ่มกด แตะเพื่อสลับโหมดวัตต์และเช็คสถานะเครื่อง ตัวเครื่องจึงเรียบ ไม่มีชิ้นส่วนเกิน",
       },
       "display-x-ui": {
         title: "จอสีเข้าชุดกับตัวเครื่อง",
+        subline: "เลือกสีไหน ได้ธีมหน้าจอของสีนั้นมาด้วย",
         description: "จอสี 0.85 นิ้ว ธีมหน้าจอเข้ากับสีของตัวเครื่อง มองแวบเดียวก็เห็นแบต วัตต์ และโหมดที่ใช้อยู่",
       },
       "long-run-battery": {
         title: "แบต 1600mAh",
+        subline: "ชาร์จครั้งเดียว ใช้งานทั่วไปได้สูงสุด 6 วัน (ตัวเลขของ UWELL)",
         description: "แบตในตัว ชาร์จครั้งเดียวใช้งานทั่วไปได้สูงสุด 6 วัน ตามตัวเลขของ UWELL ชาร์จผ่าน USB-C",
       },
       "aluminium-airflow": {
         title: "ตัวเครื่องอะลูมิเนียม ปรับลมได้ละเอียด",
+        subline: "ถือแล้วดูดี สูบแล้วลื่น",
         description: "ตัวเครื่องอะลูมิเนียมผิวด้าน ไม่ค่อยติดรอยนิ้วมือ ด้านข้างมีตัวปรับลมแบบไม่มีขั้น ปรับได้ตั้งแต่สูบแน่นแบบ MTL (ดูดเข้าปากก่อน) ไปจนถึงโล่งขึ้นแบบ RDL",
       },
     },

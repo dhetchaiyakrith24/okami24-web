@@ -126,6 +126,9 @@ export const uwellProducts: Product[] = [
     // Article round batch 1 (02/10, owner: every product like M Bar 10K's lower page + an article): the "more details"
     // story (src/data/product-articles.ts holds the article). Cover = UWELL's own G5 campaign image already on the page.
     storyDetails: true,
+    // Owner 02/10 "ทำแบบ Uwell": the UWELL-style stage layout (designer option A); colours right after the screen block.
+    storyLayout: "stage",
+    storyColoursAfter: "display-x-ui",
     storyCover: { src: "/assets/products/caliburn-g5/hero.webp", alt: "Official UWELL Caliburn G5 campaign image, \"Simple Tap. Supreme Taste.\"", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/", width: 3840, height: 1620 },
     colorVariants: [
       {
@@ -198,36 +201,46 @@ export const uwellProducts: Product[] = [
         id: "three-pods",
         title: "Three pods in the kit",
         description: "Every G5 kit comes with three pods, one of them UWELL's new GPP Alpha cartridge, so you start with spares in the box.",
+        subline: "One of them is the new GPP Alpha.",
+        imageMobile: { src: "/assets/products/caliburn-g5/story-three-pods-mo.webp", alt: "Official UWELL Caliburn G5 poster — the device, its box and three pods (phone version)", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1301, height: 1001 },
         image: { src: "/assets/products/caliburn-g5/story-three-pods.webp", alt: "Official UWELL Caliburn G5 poster — the device, its box and three pods", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2400, height: 1029 },
       },
       {
         id: "gpp-alpha",
         title: "GPP Alpha cartridge",
         description: "UWELL's new Alpha pod is built for a longer coil life and steady flavour from the first puff to the last, with a leak-resistant design and a soft-touch TPU mouthpiece.",
+        subline: "A longer-lasting coil, no flavour drop.",
+        imageMobile: { src: "/assets/products/caliburn-g5/story-alpha-pod-mo.webp", alt: "Official UWELL poster of the GPP Alpha cartridge (phone version)", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1500, height: 2600 },
         image: { src: "/assets/products/caliburn-g5/story-alpha-pod.webp", alt: "Official UWELL poster of the GPP Alpha cartridge", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2400, height: 1412 },
       },
       {
         id: "triple-tap",
         title: "Smart Triple-Tap Control",
         description: "A tap-based gesture sensor replaces a row of buttons for switching between output modes and reading device status, keeping the shell free of extra hardware.",
+        subline: "Your shortcut to everything — a triple tap anywhere on the body.",
+        captions: ["In the dark", "Under bright sunlight", "On the go", "In the moment"],
+        imageMobile: { src: "/assets/products/caliburn-g5/story-triple-tap-mo.webp", alt: "Official UWELL poster — switching the Caliburn G5 with a triple tap (phone version)", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 760, height: 651 },
         image: { src: "/assets/products/caliburn-g5/story-triple-tap.webp", alt: "Official UWELL poster — switching the Caliburn G5 with a triple tap", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1050, height: 613 },
       },
       {
         id: "display-x-ui",
         title: "Immersive Design × UI",
         description: "The 0.85\" colour display renders a themed UI that matches the device finish, showing battery, wattage, and mode at a glance.",
+        subline: "Pick a colour, and the screen theme comes with it.",
         image: { src: "/assets/products/caliburn-g5/story-colours.webp", alt: "Official UWELL photos — the Caliburn G5 in several colours, each screen in its own theme", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2400, height: 1403 },
       },
       {
         id: "long-run-battery",
         title: "1600mAh battery",
         description: "UWELL rates the built-in 1600mAh battery at up to 6 days of typical use per charge; it charges over USB-C.",
+        subline: "Up to 6 days of typical use per charge (UWELL).",
         image: { src: "/assets/products/caliburn-g5/story-battery-v2.webp", alt: "Official UWELL poster — 1600mAh battery, up to 6 days of use", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2400, height: 1389 },
       },
       {
         id: "aluminium-airflow",
         title: "Aluminium body, stepless airflow",
         description: "A matte aluminium-alloy body that resists fingerprints, and a side airflow control that adjusts steplessly from a tighter MTL draw to a looser RDL.",
+        subline: "Premium in hand, smooth on the draw.",
         image: { src: "/assets/products/caliburn-g5/story-aluminium.webp", alt: "Official UWELL poster — the Caliburn G5 aluminium body and side airflow control", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1438, height: 1611 },
       },
     ],
