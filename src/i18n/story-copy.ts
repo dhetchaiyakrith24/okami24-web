@@ -116,7 +116,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ตัวเครื่องอะลูมิเนียม ปรับลมได้ละเอียด", en: "Aluminium body, stepless airflow", zh: "铝合金机身，无级调气" },
       subline: { th: "ถือแล้วดูดี สูบแล้วลื่น", en: "Premium in hand. Smooth on the draw.", zh: "握感高级，吸感顺滑。" },
       body: {
-        th: "จับถนัดมือ รอยนิ้วมือกับคราบติดยาก ลมก็ปรับหาจุดที่เข้ากับแนวการสูบของตัวเองได้",
+        th: "จับถนัดมือ รอยนิ้วมือกับคราบติดยาก ลมก็เลื่อนหาจุดที่ชอบได้เอง",
         en: "Comfortable in the hand, hard to smudge, and the airflow finds the draw that suits you.",
         zh: "握感舒适，不易留指纹和污渍，气流也能调到适合自己的吸感。",
       },
