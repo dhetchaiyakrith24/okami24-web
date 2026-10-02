@@ -24,8 +24,10 @@ model: inherit
 Why it exists: work passed the checker and the number gates, then the owner rejected it on the live site
 (LESSONS พ10 · พ11 · พ12 · ช9 · owner review 03/10 on G5). This list is what the owner looks at.
 Distilled from LESSONS ช10 · `docs/IMAGE_SPEC.md` §0 items 6–8 · those reviews — if a source says more or
-differs, the source wins. The owner rejects something this list does not cover = Friday adds one line here
-in the next rules PR (that is how the list keeps up).
+differs, the source wins. **Learn once (owner 03/10 "พลาดแก้ย้อนหลัง เรียนรู้ ไม่พลาดซ้ำเรื่องเดิม"):** the owner
+rejects anything after merge = a lesson in `.claude/LESSONS.md` every time, in the same PR as the fix (its own
+commit) · not covered by this list yet = also one line here citing that lesson, so the same mistake is caught
+next time · already covered = the look was not done properly — say so in that report.
 
 **How to look:** every new or changed image at 100 % on a dark background AND at the size the page shows it
 (390 and 1440); zoom into edges, letters, screens, thin parts (cables, pod tips, wings). A shot of the whole
@@ -45,7 +47,9 @@ page alone is not looking.
    (owner review 03/10 · git 39097d8 / 9bb698d).
 6. Every image that looks clickable goes somewhere fitting (ช10).
 
-**Taste — the owner decides; flag every ✗ as "below the owner's bar" with the fix:**
+**Taste — not a fail, but Friday fixes every ✗ before merge too (owner 03/10 "เจอตำหนิ ก็แก้ก่อนขึ้นเว็บ"); a fix
+that would change something the owner already approved = leave it, say so in the report (13.3 #5). Flag each ✗
+as "below the owner's bar" with the fix:**
 7. Light like UWELL's official Caliburn G5 set — not over-white, real reflections, not "graphic"/CG
    (IMAGE_SPEC §0 8 · ช9).
 8. Spacing — not cramped, even between blocks; desktop airy, phone tight but not packed (owner review 03/10 ·

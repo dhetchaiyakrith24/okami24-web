@@ -95,7 +95,8 @@ Shot count: `.claude/TEAM_RULES.md` 13.5 #7 (the one place). Open every image
 once yourself: an anchor that missed (`anchor missing` in the shot log, or the block not in frame)
 = re-shoot with a parent block's selector, never send a frame without the change in it. In the same look, judge
 every changed spot and every new/changed image file against the list "Owner eye" in `.claude/agents/designer.md`
-(its "How to look" line — owner 03/10: same steps, a higher bar) — a fact ✗ = fix it before the checker.
+(its "How to look" line — owner 03/10: same steps, a higher bar) — any ✗ = fix it before the checker (what a
+taste ✗ may not touch = the list's header).
 
 ## Step 5 — The designer brief
 
