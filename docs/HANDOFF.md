@@ -55,8 +55,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (`public/assets/brands/`; researcher list of the other brands = this chat, summary in brand-logos.ts comments).
   NEXT (new chat, round-open continue): rebuild the test server at the branch head · shots 390+1440 of G5 + one UWELL + one INFY
   page (logo) · visible-text WHOLE sitemap (ProductHero is shared) before = live 3e086e3 · scan.js · wordbreak (G5) · gallery-probe
-  --sitemap · checker · PR · merge · send the owner before/after. Then batch 6: owner says "ล็อก" · owner rules text length
-  (`_incoming/g5-template/seo-text-length.md`: 1,000–2,500 unique Thai chars, a fact at most twice) · template doc · site-wide
+  --sitemap · checker · PR · merge · send the owner before/after. OWNER 03/10 before the move [ตรวจแล้ว — chat]: logo position OK ·
+  the other brands' logos = Friday finds them herself (owner has no files; maker sites only, light version) · text length = §18 ·
+  G5: trim only repeated facts, the look stays · "the first image still has a black frame" — the file is fully transparent and
+  live 390 showed no frame (03/10 shot `_incoming/g5-template/b6/live-cover-390.png`); likely a cached page — re-check with the
+  owner's own screenshot. Then batch 6: owner says "ล็อก" · template doc · site-wide
   round file (brand by brand) into OneDrive `Run prompt/New prompt WEB/2-ยังไม่ทำ/` · round-close (tag g5-template-done) +
   asset-refs sweep (story-battery-v3, story-colours, story-cover-v2, anatomy zoom v2 now unreferenced). Ideas seen, not done:
   product FAQ answers absent from server HTML (SEO round) · zh spec/FAQ English site-wide.
@@ -225,6 +228,9 @@ Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
 **SEO baseline hold (owner 02/10):** the 05/10 wait is cancelled — "รอไปก็ต้องกลับมาแก้ ไว้ไปขัดเกลารอบ Seo สุดท้ายขอดัชนีใหม่" —
 the 7 baseline pages are worked on like any other page; the final SEO round polishes them and asks Google to re-index
 (the code-level title-price hold `TITLE_PRICE_HOLD_UNTIL_2026_10_05` is a title change = that round).
+
+**Text length per product page (owner 03/10):** 1,000–3,500 unique Thai characters of main content (spec table not counted) +
+the same fact at most twice outside the spec table — "ตอนนี้กำลังสวย ไม่ต้องลดเนื้อหา" (proposal: `_incoming/g5-template/seo-text-length.md`).
 
 **Brand logos (owner 03/10):** every brand's own logo goes on its product pages — "ใส่ตรงไหนตัดสินใจได้เลย"; Friday placed it
 in the product hero in place of the brand chip, linked to the brand page; maker-served files only (light version for the dark site).
