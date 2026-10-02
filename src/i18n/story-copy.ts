@@ -51,9 +51,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "หัวพอต GPP Alpha", en: "GPP Alpha cartridge", zh: "GPP Alpha 烟弹" },
       subline: { th: "คอยล์ใช้ได้นานขึ้น รสชาติไม่ดรอป", en: "Built to last. No flavour drop.", zh: "更耐用，口感不衰减。" },
       body: {
-        th: "ที่ทำได้แบบนี้เพราะหัวนี้ใช้ AlphaCore ของ UWELL สูบไปเรื่อย ๆ ก็ยังไม่ต้องรีบเปลี่ยนหัว",
-        en: "That comes from UWELL's AlphaCore — keep vaping and there's no rush to change the pod.",
-        zh: "这得益于 UWELL 的 AlphaCore 技术，一直抽下去也不用急着换烟弹。",
+        th: "หัวนี้ใช้ AlphaCore ของ UWELL สูบไปเรื่อย ๆ ก็ยังไม่ต้องรีบเปลี่ยนหัว",
+        en: "It runs on UWELL's AlphaCore — keep vaping and there's no rush to change the pod.",
+        zh: "采用 UWELL 的 AlphaCore 技术，一直抽下去也不用急着换烟弹。",
       },
       points: [
         { text: { th: "ออกแบบให้รั่วซึมยาก", en: "Leak-resistant design", zh: "防漏设计" } },
@@ -125,6 +125,8 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         { text: { th: "หนัก 65 กรัม", en: "65g", zh: "重 65g" }, specKey: "weight" },
         { text: { th: "ปรับลม MTL ถึง RDL", en: "Airflow from MTL to RDL", zh: "无级调气，MTL 到 RDL" }, specKey: "airflow" },
       ],
+      // checker #221: the MTL/DTL guide belongs to the airflow block, not to the "G5 vs G5 Lite" answer
+      link: { href: "/guides/understanding-mtl-vs-dtl", label: { th: "อ่านเรื่อง MTL กับ DTL", en: "Read: MTL vs. DTL", zh: "了解 MTL 与 DTL 的区别" } },
     },
   },
 };
