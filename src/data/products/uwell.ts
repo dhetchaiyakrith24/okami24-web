@@ -52,11 +52,11 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        // Image-sitewide round 3b (0), owner 02/10 card B: UWELL's own Mystic Forest render turned 12° (card.png stays
-        // on disk for the home Scene2Uwell, which is not touched).
-        src: "/assets/products/caliburn-g5/card-v2.webp",
-        alt: "UWELL Caliburn G5, Mystic Forest colourway, tilted product shot",
-        angle: "Front, tilted 12°",
+        // Image-sitewide round 3b (0), owner 02/10: UWELL's own upright Mystic Forest render, full size on the 4:5 card
+        // ("การ์ดเอาแบบตรงเหมือนเดิมดีกว่า" after the tilted card-v2 went live). card.png stays for the home Scene2Uwell.
+        src: "/assets/products/caliburn-g5/card-v3.webp",
+        alt: "UWELL Caliburn G5, Mystic Forest colourway, isolated product shot",
+        angle: "Front, isolated",
         transparentBackground: true,
         sourceName: "UWELL",
         sourceUrl: "https://www.myuwell.com/products/caliburn",
@@ -104,7 +104,7 @@ export const uwellProducts: Product[] = [
     // Image-sitewide round 3b (0), 02/10 (owner: "Focus Caliburn 5 ทุกสี ทุกรูป รูปรวม"): all seven colours now use
     // UWELL's own per-colour renders from the G5 page ("Pick Your Vibe",
     // files.myuwell.com/uwell/product/caliburn-g5/pc/pic9-<n>-product.webp) — the gascityvapes cut-outs above had broken
-    // pod edges and patch marks — each turned 12° like the card (owner: "เอียงทุกสีเลย"). Mapping in
+    // pod edges and patch marks — each turned 12° (owner: "เอียงทุกสีเลย"; the card went back upright, owner 02/10). Mapping in
     // scripts/process-images.map.json (*-v2.webp, lesson พ6). The all-colours image is the owner's pick 3 of 02/10:
     // Mystic Forest big in front on the left, the other six behind in two upright tiers, a soft contact shadow and a
     // faint reflection kept as semi-transparent pixels (IMAGE_SPEC §0 item 8) — _incoming/image-sitewide/g5/poster.js.
@@ -113,6 +113,8 @@ export const uwellProducts: Product[] = [
       alt: "UWELL Caliburn G5, all 7 colours",
       sourceName: "OKami24 composite (from UWELL's own per-colour renders)",
     },
+    // Owner 02/10 ("การ์ดเอาแบบตรงเหมือนเดิมดีกว่า"): the page opens on the upright card again, the tilted colours follow on swipe.
+    openOnCardPhoto: true,
     // Article round batch 1 (02/10, owner: every product like M Bar 10K's lower page + an article): the "more details"
     // story (src/data/product-articles.ts holds the article). Cover = UWELL's own G5 campaign image already on the page.
     storyDetails: true,
@@ -255,9 +257,11 @@ export const uwellProducts: Product[] = [
     // lineup shot. Real, alpha-transparent, high-resolution source — no OKami24 compositing
     // needed for this product.
     lineupImage: {
-      src: "/assets/products/caliburn-g5-lite/lineup.webp",
-      alt: "UWELL Caliburn G5 Lite, full official 8-color lineup",
-      sourceName: "UWELL (official brand site, myuwell.com)",
+      // Image-sitewide round, set 1 (02/10): the G5 layout the owner picked (the card colour big in front, the other
+      // 7 behind in two upright tiers, soft shadow + faint reflection) from UWELL's own fronts — _incoming/image-sitewide/set1/.
+      src: "/assets/products/caliburn-g5-lite/lineup-v2.webp",
+      alt: "UWELL Caliburn G5 Lite, all 8 colours",
+      sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
     // Real UWELL color/finish lineup — ALL 8 now have a real, OFFICIAL photo (owner quality
     // review, 2026-09-03, THIRD pass — see the card asset's angle note for the sourcing story).
@@ -379,9 +383,11 @@ export const uwellProducts: Product[] = [
     // "All Colors" lineup (owner mandate, 2026-09-03) — the exact same official myuwell.com strip
     // every per-color crop below came from, used here whole/uncropped.
     lineupImage: {
-      src: "/assets/products/caliburn-g5-lite-se/lineup.webp",
-      alt: "UWELL Caliburn G5 Lite SE, full official 8-color lineup",
-      sourceName: "UWELL (official brand site, myuwell.com)",
+      // Image-sitewide round, set 1 (02/10): the G5 layout the owner picked (the card colour big in front, the other
+      // 7 behind in two upright tiers, soft shadow + faint reflection) from UWELL's own fronts — _incoming/image-sitewide/set1/.
+      src: "/assets/products/caliburn-g5-lite-se/lineup-v2.webp",
+      alt: "UWELL Caliburn G5 Lite SE, all 8 colours",
+      sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
     // Real UWELL color/finish lineup — ALL 8 now have a real, OFFICIAL photo (owner quality
     // review, 2026-09-03, THIRD pass — see the card asset's angle note). All 8 finishes are
@@ -502,12 +508,20 @@ export const uwellProducts: Product[] = [
     // (files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-1..9.webp); scripts and sheet:
     // _incoming/image-sitewide/b-uwell/ (recolour-g4k.js, owner-sheet-1.png). Card-v2 = the Cosmic Gray photo tilted in 2D.
     // From the front Desert Gold and Golden Carbon look the same — true to the device: they differ on the back panel.
-    // No all-colours image behind an "all" chip (owner 01/10: one device per colour, swipe — no all-colours view).
+    // (The morning-01/10 "no all-colours view" was replaced the same evening — see lineupImage below.)
     openOnCardPhoto: true,
     // UWELL makes 9 colours (myuwell.com colour banners, read 2026-09-05 and again 01/10). Photos: image-sitewide round 3b
     // (b) above. Swatches = the frame colour on those banners where the old value was off (Cosmic Gray is champagne-gray,
     // Glass Blue a deep blue, Coral Pink a salmon pink); Golden Carbon keeps a darker gold than Desert Gold (same frame,
     // carbon back). Golden Carbon has no stock — src/data/stock/sold-out.ts (the owner's single stock list).
+    // Image-sitewide round, set 2 (02/10): all-colours image again (owner 01/10 evening, IMAGE_SPEC §0 item 5). Box-shaped
+    // device → "cluster": Cosmic Gray (the card colour) big in front, the other 8 in two rows behind, from this page's colour
+    // photos — _incoming/image-sitewide/set1/boxy.js.
+    lineupImage: {
+      src: "/assets/products/caliburn-g4-pro-koko/lineup-v2.webp",
+      alt: "UWELL Caliburn G4 Pro KOKO, all 9 colours",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
     colorVariants: [
       {
         id: "desert-gold",
@@ -784,9 +798,11 @@ export const uwellProducts: Product[] = [
     // map entries in scripts/process-images.map.json. The lineup is rebuilt from those 8 files
     // (scripts/build-lineup-grid.js --cols 4) — no image content invented.
     lineupImage: {
-      src: "/assets/products/caliburn-g4/lineup.webp",
-      alt: "UWELL Caliburn G4, all 8 colors",
-      sourceName: "OKami24 composite (from UWELL's official colour renders)",
+      // Image-sitewide round, set 1 (02/10): the G5 layout the owner picked (the card colour big in front, the other
+      // 7 behind in two upright tiers, soft shadow + faint reflection) from UWELL's own fronts — _incoming/image-sitewide/set1/.
+      src: "/assets/products/caliburn-g4/lineup-v2.webp",
+      alt: "UWELL Caliburn G4, all 8 colours",
+      sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
     colorVariants: [
       {
@@ -902,11 +918,12 @@ export const uwellProducts: Product[] = [
     // Image-fix round 2026-09-28: every colour photo is now UWELL's own render (myuwell.com caliburn-g4-mini
     // pc/1–12, front device only), each matched to the retailer-named photo it replaces — the maker's files carry no
     // colour names (order + hex in scripts/process-images.map.json). Lineup rebuilt from those 12 files
-    // (scripts/build-lineup-grid.js --cols 6).
+    // (scripts/build-lineup-grid.js --cols 6). Image-sitewide round, set 1 (02/10): lineup-v2 = the G5 layout the owner
+    // picked (Slate Grey big in front, the other 11 in two upright tiers) from the same 12 UWELL fronts — _incoming/image-sitewide/set1/.
     lineupImage: {
-      src: "/assets/products/caliburn-g4-mini/lineup.webp",
-      alt: "UWELL Caliburn G4 Mini, all 12 colors",
-      sourceName: "OKami24 composite (from UWELL's official colour renders)",
+      src: "/assets/products/caliburn-g4-mini/lineup-v2.webp",
+      alt: "UWELL Caliburn G4 Mini, all 12 colours",
+      sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
     colorVariants: [
       {
@@ -1047,9 +1064,15 @@ export const uwellProducts: Product[] = [
     // render, same orientation as UWELL's front photo, cut out by Higgsfield) with the body colour moved to each colour of
     // the shop's old per-colour photos (182x404, too small; their colour matches UWELL's collage mo/spe9.webp). The night
     // renders of the other colours were not used (Abyss Blue came out light blue; Alpine Green grew a "G" logo). Card-v2 =
-    // the silver photo tilted in 2D. No "ทั้งหมด" image (owner 01/10). Swatches of Abyss Blue / Alpine Green = the body
-    // colour on these photos (the old navy / dark green were off). Scripts: _incoming/image-sitewide/b-uwell/recolour-g4c.js.
+    // the silver photo tilted in 2D. Swatches of Abyss Blue / Alpine Green = the body colour on these photos (the old
+    // navy / dark green were off). Scripts: _incoming/image-sitewide/b-uwell/recolour-g4c.js. "ทั้งหมด" image (owner 01/10
+    // evening: pod systems get a new all-colours image): the G5 layout, Classic Silver big in front — set1/poster.js (02/10).
     openOnCardPhoto: true,
+    lineupImage: {
+      src: "/assets/products/caliburn-g4-classic/lineup-v2.webp",
+      alt: "UWELL Caliburn G4 Classic, all 4 colours",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
     colorVariants: [
       {
         id: "abyss-blue",
@@ -1227,10 +1250,18 @@ export const uwellProducts: Product[] = [
     // of UWELL's render; gold and black were clipped there and come from UWELL's own colour) — only the frame colour changes
     // on a swipe; scripts and sheet: _incoming/image-sitewide/b-uwell/ (recolour-g3k.js). Card = Emerald Green tilted in
     // 2D. Swatches = the frame colour on these photos. UWELL has no per-colour files for this model (color-N.webp 404).
-    // No all-colours image behind an "all" chip (owner 01/10: one device per colour, swipe — no all-colours view).
+    // (The morning-01/10 "no all-colours view" was replaced the same evening — see lineupImage below.)
     openOnCardPhoto: true,
     // Real UWELL color/finish lineup — "KOKO" is UWELL's touchscreen-edition naming convention
     // (see caliburn-g4-pro-koko's own comment) — same G3 Pro pod platform, not a separate system.
+    // Image-sitewide round, set 2 (02/10): all-colours image again (owner 01/10 evening, IMAGE_SPEC §0 item 5). Box-shaped
+    // device → "cluster": Emerald Green (the card colour) big in front, the other 7 in two rows behind, from this page's colour
+    // photos — _incoming/image-sitewide/set1/boxy.js.
+    lineupImage: {
+      src: "/assets/products/caliburn-g3-pro-koko/lineup-v2.webp",
+      alt: "UWELL Caliburn G3 Pro KOKO, all 8 colours",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
     colorVariants: [
       {
         id: "emerald-green",
