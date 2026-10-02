@@ -34,13 +34,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   blocks it; stale HTML can point at deleted JS) — not recommended. Owner also asked downsides (data · SEO · trust) — answered.
   Owner then (02/10): "ไม่กี่วินาที" matches what he saw; he cares about SEO only; asked about deploy windows every 1–2 h. Friday:
   SEO impact of short 5xx is small [เชื่อว่า]; hourly = up to 24 outages/day → recommend 04:00 + 12:00 (only when there is new work)
-  + manual for urgent fixes; one PR to deploy.yml — ANSWER PENDING [รอเจ้าของ]. Site merges wait for it.
+  + manual for urgent fixes. OWNER ANSWER 02/10 [ตรวจแล้ว — chat]: "ยังก่อน ทำรูปแบบเดิมไปก่อน" — keep deploy-on-merge; the owner will
+  time the next deploy himself. Deploys measured ~10/day (4–16, ). Site merges no longer wait.
 2 OPEN PR #195 `feat-g3p-two-lineups` (head dc3a478 = main merged in): `Product.lineupImage2` + ColorVariantRail pills "ทั้งหมด 1/2"
   (shared ProductHero → full-sitemap proof) + G3 Pro lineup-v2 / lineup2-v2 (G5 layout, 8 + 8). Proof `_incoming/image-sitewide/
   set1/proofe/`: first full-sitemap visible-text diff (107 pages × 3 × 2) = 12 changes, all the two pills on caliburn-g3-pro
   [ตรวจแล้ว]; shots `shots/cmp-390.png` / `cmp-1440.png`; a re-scan after merging main was RUNNING at the move (`vt-after2`,
   `vt-before2`, diff → `vt-diff2`). STILL TO DO: head-check, gallery-probe both modes, checker (brief like `set1/checker-brief-d.md`),
-  then merge ONLY after the deploy decision. Test server 3412 may be UP (`node scripts/test-server.js status` / `stop`).
+  then merge (deploy-on-merge stays — owner 02/10). Test server 3412 may be UP (`node scripts/test-server.js status` / `stop`).
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
   VOOPOO `b-voopoo/`, coils `b-coils/`).
