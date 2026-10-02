@@ -249,8 +249,8 @@ export const voopooProducts: Product[] = [
     // master (a 4K Silver render from VOOPOO's own 1254 px Silver render) with the body colour moved to VOOPOO's render of
     // each colour, per height band for the Cyan / Green / Orange gradients, so a swipe changes only the colour. Card-v2 =
     // the Black photo tilted in 2D. Swatches = the body colour on VOOPOO's renders. Scripts: _incoming/image-sitewide/b-edge/
-    // (recolour-g4m.js, choke.js, presize-edge.js). All-colours image (02/10, IMAGE_SPEC §0 item 5): the RELX Phantom poster
-    // layout from these 8 photos — b-edge/relx-studio.js ag4m.
+    // (recolour-g4m.js, choke.js, presize-edge.js). All-colours images (IMAGE_SPEC §0 item 5): see
+    // lineupImage below (two groups, 02/10).
     openOnCardPhoto: true,
     colorVariants: [
       { id: "black", name: "Black", swatchHex: "#333435", image: { src: "/assets/products/argus-g4-mini/variant-black-v2.webp", alt: "VOOPOO ARGUS G4 mini, Black" } },
@@ -262,9 +262,16 @@ export const voopooProducts: Product[] = [
       { id: "cyan", name: "Cyan", swatchHex: "#37bde4", image: { src: "/assets/products/argus-g4-mini/variant-cyan-v2.webp", alt: "VOOPOO ARGUS G4 mini, Cyan" } },
       { id: "blue", name: "Blue", swatchHex: "#bac9e6", image: { src: "/assets/products/argus-g4-mini/variant-blue-v2.webp", alt: "VOOPOO ARGUS G4 mini, Blue" } },
     ],
+    // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
+    // layout, _incoming/image-sitewide/dsx/vp-relx2.js argus-g4-mini-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/argus-g4-mini/lineup-v2.webp",
-      alt: "VOOPOO ARGUS G4 mini, all 8 colours",
+      src: "/assets/products/argus-g4-mini/lineup-v3.webp",
+      alt: "VOOPOO ARGUS G4 mini, colours 1–4 of 8",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/argus-g4-mini/lineup2-v3.webp",
+      alt: "VOOPOO ARGUS G4 mini, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     specifications: [
@@ -433,11 +440,18 @@ export const voopooProducts: Product[] = [
     // photos) with the body colour moved to each colour of VOOPOO's photo, so a swipe changes only the colour. Card-v2 =
     // the Sky Blue photo tilted in 2D. Swatches = the body colour on VOOPOO's photos.
     // Scripts: _incoming/image-sitewide/b-voopoo/recolour-g3m.js + presize-g3m.js. "ทั้งหมด" (02/10, owner 01/10 evening —
-    // IMAGE_SPEC §0 item 5): the RELX Phantom poster layout, all 9 one size — b-edge/relx-studio.js ag3m.
+    // IMAGE_SPEC §0 item 5): two groups, see the lineupImage comment below.
     openOnCardPhoto: true,
+    // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
+    // layout, _incoming/image-sitewide/dsx/vp-relx2.js argus-g3-mini-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/argus-g3-mini/lineup-v2.webp",
-      alt: "VOOPOO ARGUS G3 mini, all 9 colours",
+      src: "/assets/products/argus-g3-mini/lineup-v3.webp",
+      alt: "VOOPOO ARGUS G3 mini, colours 1–5 of 9",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/argus-g3-mini/lineup2-v3.webp",
+      alt: "VOOPOO ARGUS G3 mini, colours 6–9 of 9",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     colorVariants: [
@@ -691,12 +705,17 @@ export const voopooProducts: Product[] = [
       { id: "brown", name: "Brown", swatchHex: "#7b4929", image: { src: "/assets/products/drag-s3/variant-brown-v2.webp", alt: "VOOPOO DRAG S3, Brown" } },
       { id: "metal-gray", name: "Metal Gray", swatchHex: "#646b6c", image: { src: "/assets/products/drag-s3/variant-metal-gray-v2.webp", alt: "VOOPOO DRAG S3, Metal Gray" } },
     ],
-    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
-    // individually-verified shop.voopoo.com photos above.
+    // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
+    // layout, _incoming/image-sitewide/dsx/vp-relx2.js drag-s3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/drag-s3/lineup.webp",
-      alt: "VOOPOO DRAG S3, all 7 colors",
-      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+      src: "/assets/products/drag-s3/lineup-v2.webp",
+      alt: "VOOPOO DRAG S3, colours 1–4 of 7",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/drag-s3/lineup2-v2.webp",
+      alt: "VOOPOO DRAG S3, colours 5–7 of 7",
+      sourceName: "OKami24 composite (from this page's colour photos)",
     },
     specifications: [
       { key: "battery", label: "Battery", value: "3000mAh built-in", sourceStatus: "verified" },
@@ -786,12 +805,17 @@ export const voopooProducts: Product[] = [
       { id: "moss-green", name: "Moss Green", swatchHex: "#1f975d", image: { src: "/assets/products/drag-x3/variant-moss-green-v2.webp", alt: "VOOPOO DRAG X3, Moss Green" } },
       { id: "aurora-purple", name: "Aurora Purple", swatchHex: "#ba4fdd", image: { src: "/assets/products/drag-x3/variant-aurora-purple-v2.webp", alt: "VOOPOO DRAG X3, Aurora Purple" } },
     ],
-    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
-    // individually-verified shop.voopoo.com photos above.
+    // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
+    // layout, _incoming/image-sitewide/dsx/vp-relx2.js drag-x3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/drag-x3/lineup.webp",
-      alt: "VOOPOO DRAG X3, all 7 colors",
-      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+      src: "/assets/products/drag-x3/lineup-v2.webp",
+      alt: "VOOPOO DRAG X3, colours 1–4 of 7",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/drag-x3/lineup2-v2.webp",
+      alt: "VOOPOO DRAG X3, colours 5–7 of 7",
+      sourceName: "OKami24 composite (from this page's colour photos)",
     },
     specifications: [
       { key: "battery", label: "Battery", value: "Single external 18650 or 21700 cell (not included)", sourceStatus: "verified" },
@@ -888,12 +912,17 @@ export const voopooProducts: Product[] = [
       { id: "neon", name: "Neon", swatchHex: "#9743c0", image: { src: "/assets/products/vinci-s/variant-neon-v2.webp", alt: "VOOPOO VINCI S, Neon" } },
       { id: "pink", name: "Pink", swatchHex: "#d89cab", image: { src: "/assets/products/vinci-s/variant-pink-v2.webp", alt: "VOOPOO VINCI S, Pink" } },
     ],
-    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 8
-    // individually-verified shop.voopoo.com photos above.
+    // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
+    // layout, _incoming/image-sitewide/dsx/vp-relx2.js vinci-s-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/vinci-s/lineup.webp",
-      alt: "VOOPOO VINCI S, all 8 colors",
-      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+      src: "/assets/products/vinci-s/lineup-v2.webp",
+      alt: "VOOPOO VINCI S, colours 1–4 of 8",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/vinci-s/lineup2-v2.webp",
+      alt: "VOOPOO VINCI S, colours 5–8 of 8",
+      sourceName: "OKami24 composite (from this page's colour photos)",
     },
     specifications: [
       { key: "battery", label: "Battery", value: "2000mAh built-in", sourceStatus: "verified" },
