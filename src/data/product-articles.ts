@@ -25,115 +25,115 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // docs/cloud-results/รอบบทความ-รายละเอียดเพิ่มเติม.md §5). Owner format A, ~2,500 Thai characters.
   "caliburn-g5": {
     th: {
-      lede: "Caliburn G5 คือรุ่นที่ UWELL ใส่จอสี ระบบแตะ 3 ครั้ง และตัวเครื่องอะลูมิเนียมมาในชุดเดียว แถมหัวพอตในกล่องอีก 3 หัว ด้านล่างไล่ให้ดูทีละจุดจากข้อมูลของ UWELL พร้อมตอบเรื่องที่คนมักถามก่อนซื้อ",
+      lede: "Caliburn G5 มีจอสี แตะสามครั้งเพื่อสลับโหมด ตัวเครื่องเป็นอะลูมิเนียม และในกล่องมีหัวพอตมาให้สามหัว ด้านล่างคือรายละเอียดทีละข้อจาก UWELL",
       sections: [
         {
           heading: "Caliburn G5 ต่างจาก G5 Lite ยังไง",
           paragraphs: [
-            "สองรุ่นนี้ใช้แบต 1600mAh และขึ้นได้สูงสุด 35 วัตต์เท่ากัน ที่ต่างกันคือวิธีดูสถานะและวิธีสั่งงาน G5 มีจอสี 0.85 นิ้วที่บอกแบต วัตต์ และโหมดในหน้าเดียว ใช้การแตะ 3 ครั้งเป็นปุ่มลัด และปรับลมด้านข้างได้แบบไม่มีขั้น ส่วน G5 Lite บอกระดับแบตด้วยไฟ LED 4 ขีด",
-            "ถ้าอยากเห็นตัวเลขบนจอและชอบตัวเครื่องอะลูมิเนียม G5 ตอบโจทย์กว่า ถ้าอยากได้เครื่องที่ใช้ง่ายและไม่ต้องดูจอ ลองดู [Caliburn G5 Lite](/products/caliburn-g5-lite) ประกอบ"
+            "สองรุ่นนี้แบต 1600mAh และสูงสุด 35 วัตต์เท่ากัน ที่ต่างคือวิธีดูสถานะเครื่องกับวิธีใช้งาน G5 มีจอสี 0.85 นิ้ว บอกแบต วัตต์ และโหมดไว้ในหน้าเดียว และใช้การแตะสามครั้งเป็นทางลัด ส่วน G5 Lite ไม่มีจอสีและไม่มีระบบแตะ บอกระดับแบตด้วยไฟ LED 4 ขีด",
+            "ถ้าอยากเห็นตัวเลขบนจอและสลับโหมดด้วยการแตะ G5 เหมาะกว่า ถ้าอยากได้เครื่องที่ใช้ง่าย ไม่ต้องดูจอ ดู [Caliburn G5 Lite](/products/caliburn-g5-lite) แทน",
+            "ถ้ากำลังเทียบ G5 กับ G4 หรือ Caliburn รุ่นอื่น ดูตารางเทียบสเปกทีละคู่ได้ที่ [Caliburn G5 vs G4 ต่างกันยังไง](/guides/comparing-caliburn-models)"
           ]
         },
         {
-          heading: "หัวพอต Alpha ที่แถมมาในกล่องดียังไง",
+          heading: "GPP Alpha ต่างจากหัว GPP ปกติยังไง",
           paragraphs: [
-            "ทุกชุดมีหัวพอต 3 หัว หนึ่งในนั้นคือหัว GPP Alpha 0.6 โอห์ม ซึ่ง UWELL ออกแบบด้วยเทคโนโลยี AlphaCore ให้คอยล์อยู่ได้นานขึ้น และให้รสชาติคงที่ตั้งแต่พัฟแรกจนหมดหัว ส่วนอีก 2 หัวเป็นหัว GPP รุ่นปกติ โอห์มและแบบเติมน้ำยาต่างกันตามรุ่นจำหน่ายของแต่ละประเทศ",
-            "ปากดูดยาง TPU นุ่ม ๆ ของหัว Alpha นั้น UWELL ใส่ให้หัว GPP รุ่นปกติด้วย เวลาซื้อหัวพอตเพิ่ม ใช้ได้ทั้งหัว GPP แบบเติมด้านข้างและเติมด้านบน"
+            "ในสามหัวที่มากับกล่อง มี GPP Alpha 0.6 โอห์มอยู่หนึ่งหัว UWELL บอกว่าหัวนี้ใช้ AlphaCore ทำให้คอยล์ใช้ได้นานขึ้น และรสชาติคงที่ตั้งแต่พัฟแรกถึงพัฟสุดท้าย อีกสองหัวเป็นหัว GPP ปกติ โอห์มและแบบเติมน้ำยาต่างกันตามรุ่นจำหน่ายของแต่ละประเทศ",
+            "ปากดูดของหัว Alpha เป็นยาง TPU นุ่มปาก และ UWELL ใส่ปากดูดแบบนี้ให้หัว GPP ปกติด้วย"
           ]
         },
         {
-          heading: "แตะ 3 ครั้ง ใช้งานจริงยังไง",
+          heading: "แตะสามครั้ง ทำอะไรได้บ้าง",
           paragraphs: [
-            "แตะตรงไหนของตัวเครื่องก็ได้ 3 ครั้ง แล้วตั้งเองว่าจะให้ทำอะไร ระหว่างสลับโหมด เปลี่ยนธีมหน้าจอ หรือปรับความสว่าง UWELL ตั้งใจให้ใช้ได้ตอนที่มองจอไม่ถนัด เช่น ตอนเดิน ในที่มืด หรือกลางแดดจ้า ไม่ต้องก้มหาปุ่มเล็ก ๆ"
+            "ตั้งได้ว่าแตะสามครั้งแล้วให้เครื่องสลับโหมด เปลี่ยนธีมหน้าจอ หรือปรับความสว่าง แตะตรงไหนของตัวเครื่องก็ได้ UWELL ทำมาให้ใช้ตอนที่มองจอไม่ถนัด เช่น ตอนเดิน ในที่มืด หรือกลางแดด"
           ]
         },
         {
-          heading: "เลือกสียังไงดี",
+          heading: "7 สีต่างกันแค่สีตัวเครื่องไหม",
           paragraphs: [
-            "G5 มี 7 สี แต่ละสีมาพร้อมธีมหน้าจอที่ทำมาคู่กัน เลือกสีตัวเครื่องจึงเท่ากับเลือกบรรยากาศของหน้าจอไปด้วย ตัวเครื่องเป็นอะลูมิเนียมผิวด้าน ไม่ค่อยติดรอยนิ้วมือ ถือแล้วกระชับมือ"
+            "ไม่ใช่แค่สีตัวเครื่อง G5 มี 7 สี แต่ละสีมีธีมหน้าจอของตัวเอง เลือกสีก็คือเลือกหน้าตาของจอไปด้วย ตัวเครื่องเป็นอะลูมิเนียมผิวด้าน ไม่ค่อยติดรอยนิ้วมือ"
           ]
         },
         {
-          heading: "ปรับลมให้เข้ากับการสูบ",
+          heading: "ปรับลมได้แค่ไหน",
           paragraphs: [
-            "ตัวปรับลมอยู่ด้านข้างเครื่อง เลื่อนได้ต่อเนื่องไม่มีขั้น ตั้งแต่สูบแน่นแบบ MTL (ดูดเข้าปากก่อน) ไปจนถึงโล่งขึ้นแบบ RDL ถ้ายังไม่แน่ใจว่าตัวเองสูบแบบไหน อ่าน [MTL กับ DTL ต่างกันยังไง](/guides/understanding-mtl-vs-dtl) ก่อน",
-            "ถ้ากำลังเทียบ G5 กับ G4 หรือ Caliburn รุ่นอื่น มีตารางเทียบสเปกทีละคู่ไว้ที่ [Caliburn G5 vs G4 ต่างกันยังไง](/guides/comparing-caliburn-models)"
+            "ตัวปรับลมอยู่ด้านข้างเครื่อง ปรับได้ละเอียดแบบไม่มีขั้น ตั้งแต่สูบแน่นแบบ MTL ไปจนถึงโล่งขึ้นแบบ RDL ถ้ายังไม่แน่ใจว่าตัวเองสูบแนวไหน อ่าน [MTL กับ DTL](/guides/understanding-mtl-vs-dtl) ก่อน"
           ]
         }
       ]
     },
     en: {
-      lede: "The Caliburn G5 is where UWELL puts a colour screen, triple-tap control and an aluminium body in one kit, with three pods in the box. Below, each point is shown from UWELL's own material, with the questions people usually ask before buying.",
+      lede: "The Caliburn G5 has a colour screen, a triple tap to switch modes, an aluminium body and three pods in the box. Below, each point in detail from UWELL.",
       sections: [
         {
           heading: "How is the Caliburn G5 different from the G5 Lite?",
           paragraphs: [
-            "Both run on a 1600mAh battery up to 35W. The difference is how you read and control them: the G5 has a 0.85\" colour screen showing battery, wattage and mode on one view, a triple tap as a shortcut, and stepless side airflow; the G5 Lite shows battery level on a 4-bar LED.",
-            "If you want numbers on a screen and an aluminium body, the G5 fits better; for something simpler with no screen to read, see the [Caliburn G5 Lite](/products/caliburn-g5-lite)."
-          ]
-        },
-        {
-          heading: "What is special about the Alpha pod in the box?",
-          paragraphs: [
-            "Every kit has three pods, one of them a 0.6Ω GPP Alpha cartridge, which UWELL built with its AlphaCore technology for a longer coil life and steady flavour from the first puff to the last. The other two are standard GPP pods; their resistance and refill style depend on the market version.",
-            "The Alpha's soft-touch TPU mouthpiece is also fitted to UWELL's standard GPP pods. When you buy more pods, both side-refill and top-refill GPP cartridges fit."
-          ]
-        },
-        {
-          heading: "How does the triple tap work day to day?",
-          paragraphs: [
-            "Triple-tap anywhere on the body and choose what it does: switch mode, change the screen theme or adjust brightness. UWELL designed it for moments when the screen is hard to read — walking, in the dark or in bright sunlight — so there is no small button to find."
-          ]
-        },
-        {
-          heading: "Choosing a colour",
-          paragraphs: [
-            "The G5 comes in 7 colours, each paired with its own screen theme, so picking a finish also picks the look of the screen. The body is matte aluminium alloy that resists fingerprints and sits comfortably in the hand."
-          ]
-        },
-        {
-          heading: "Setting the airflow to how you draw",
-          paragraphs: [
-            "The airflow control sits on the side and moves without steps, from a tighter MTL draw to a looser RDL. Not sure which you are? Read [MTL vs. DTL](/guides/understanding-mtl-vs-dtl) first.",
+            "Both have a 1600mAh battery and a 35W maximum. The difference is how you read and use them: the G5 has a 0.85\" colour screen showing battery, wattage and mode on one view, and a triple tap as a shortcut; the G5 Lite has no colour screen and no tap control, and shows battery level on a 4-bar LED.",
+            "If you want numbers on a screen and tap-to-switch, the G5 fits better; for something simpler with no screen to read, see the [Caliburn G5 Lite](/products/caliburn-g5-lite) instead.",
             "Comparing the G5 with the G4 or another Caliburn? The pair-by-pair spec comparison is in [Caliburn G5 vs G4](/guides/comparing-caliburn-models)."
+          ]
+        },
+        {
+          heading: "How is GPP Alpha different from a standard GPP pod?",
+          paragraphs: [
+            "Of the three pods in the box, one is a 0.6Ω GPP Alpha. UWELL says it uses AlphaCore for a longer coil life and steady flavour from the first puff to the last. The other two are standard GPP pods; their resistance and refill style depend on the market version.",
+            "The Alpha's mouthpiece is soft-touch TPU, and UWELL fits the same mouthpiece to its standard GPP pods."
+          ]
+        },
+        {
+          heading: "What can the triple tap do?",
+          paragraphs: [
+            "Set a triple tap to switch mode, change the screen theme or adjust brightness — anywhere on the body. UWELL made it for moments when the screen is hard to read: walking, in the dark or in bright sunlight."
+          ]
+        },
+        {
+          heading: "Do the 7 colours differ only in colour?",
+          paragraphs: [
+            "Not only the body: each of the 7 colours has its own screen theme, so picking a colour also picks the look of the screen. The body is matte aluminium alloy that resists fingerprints."
+          ]
+        },
+        {
+          heading: "How far does the airflow adjust?",
+          paragraphs: [
+            "The airflow control is on the side and adjusts steplessly, from a tighter MTL draw to a looser RDL. Not sure which you are? Read [MTL vs. DTL](/guides/understanding-mtl-vs-dtl) first."
           ]
         }
       ]
     },
     zh: {
-      lede: "Caliburn G5 把彩色屏幕、三击控制和铝合金机身放进同一套装，盒内还附 3 颗烟弹。下面按 UWELL 官方资料逐项介绍，并回答购买前常见的问题。",
+      lede: "Caliburn G5 配备彩色屏幕、三击切换模式、铝合金机身，盒内附 3 颗烟弹。下面按 UWELL 资料逐项介绍。",
       sections: [
         {
           heading: "Caliburn G5 和 G5 Lite 有什么不同？",
           paragraphs: [
-            "两款都是 1600mAh 电池、最高 35W。不同在于查看与操作方式：G5 有 0.85 英寸彩色屏幕，一屏显示电量、功率和模式，用三击作为快捷键，侧边进气可无级调节；G5 Lite 则用 4 格 LED 显示电量。",
-            "想在屏幕上看到数字、喜欢铝合金机身，选 G5 更合适；想要更简单、不用看屏幕的机器，可以看看 [Caliburn G5 Lite](/products/caliburn-g5-lite)。"
-          ]
-        },
-        {
-          heading: "盒内的 Alpha 烟弹好在哪里？",
-          paragraphs: [
-            "每套附 3 颗烟弹，其中一颗是 0.6Ω 的 GPP Alpha 烟弹。UWELL 采用 AlphaCore 技术，让线圈寿命更长，从第一口到最后一口口味稳定。另外两颗是普通 GPP 烟弹，阻值和注油方式因销售版本而异。",
-            "Alpha 的软质 TPU 烟嘴，UWELL 也用在了普通 GPP 烟弹上。另购烟弹时，侧注油和顶注油的 GPP 烟弹都可以用。"
-          ]
-        },
-        {
-          heading: "三击在日常使用中怎么用？",
-          paragraphs: [
-            "在机身任意位置连敲三下，并自行设定它的功能：切换模式、更换屏幕主题或调节亮度。UWELL 的设计初衷是在不方便看屏幕时也能操作，比如走路、在暗处或强光下，不必去找小按键。"
-          ]
-        },
-        {
-          heading: "怎么选颜色？",
-          paragraphs: [
-            "G5 共有 7 种颜色，每种颜色都配有专属的屏幕主题，选机身颜色也就选了屏幕的风格。机身为磨砂铝合金，不易留指纹，握感舒适。"
-          ]
-        },
-        {
-          heading: "按吸法调节进气",
-          paragraphs: [
-            "进气调节在机身侧面，可无级滑动，从较紧的 MTL 到较松的 RDL。还不确定自己的吸法？先看 [MTL 与 DTL 的区别](/guides/understanding-mtl-vs-dtl)。",
+            "两款都是 1600mAh 电池、最高 35W。不同在于查看与操作方式：G5 有 0.85 英寸彩色屏幕，一屏显示电量、功率和模式，并用三击作为快捷操作；G5 Lite 没有彩色屏幕和敲击控制，用 4 格 LED 显示电量。",
+            "想在屏幕上看到数字、用敲击切换模式，选 G5 更合适；想要更简单、不用看屏幕的机器，可以看 [Caliburn G5 Lite](/products/caliburn-g5-lite)。",
             "如果正在比较 G5 与 G4 或其他 Caliburn，可以看逐对规格对比：[Caliburn G5 vs G4](/guides/comparing-caliburn-models)。"
+          ]
+        },
+        {
+          heading: "GPP Alpha 和普通 GPP 烟弹有什么不同？",
+          paragraphs: [
+            "盒内 3 颗烟弹中有 1 颗是 0.6Ω 的 GPP Alpha。UWELL 表示它采用 AlphaCore，线圈寿命更长，从第一口到最后一口口味稳定。另外 2 颗是普通 GPP 烟弹，阻值和注油方式因销售版本而异。",
+            "Alpha 的烟嘴是软质 TPU，UWELL 也把同样的烟嘴用在普通 GPP 烟弹上。"
+          ]
+        },
+        {
+          heading: "三击能做什么？",
+          paragraphs: [
+            "可以设定三击来切换模式、更换屏幕主题或调节亮度，在机身任意位置敲击即可。UWELL 的设计是让你在不方便看屏幕时也能操作，比如走路、在暗处或强光下。"
+          ]
+        },
+        {
+          heading: "7 种颜色只是机身颜色不同吗？",
+          paragraphs: [
+            "不只是机身：7 种颜色各有专属的屏幕主题，选颜色也就选了屏幕的样子。机身为磨砂铝合金，不易留指纹。"
+          ]
+        },
+        {
+          heading: "进气能调到什么程度？",
+          paragraphs: [
+            "进气调节在机身侧面，可无级调节，从较紧的 MTL 到较松的 RDL。还不确定自己的吸法？先看 [MTL 与 DTL 的区别](/guides/understanding-mtl-vs-dtl)。"
           ]
         }
       ]

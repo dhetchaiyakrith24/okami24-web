@@ -200,13 +200,13 @@ export const uwellProducts: Product[] = [
       {
         id: "triple-tap",
         title: "Smart Triple-Tap Control",
-        description: "A tap sensor in the body takes a triple tap as a shortcut — set it to switch mode, screen theme or brightness — so it works even when you cannot see the screen.",
+        description: "A tap-based gesture sensor replaces a row of buttons for switching between output modes and reading device status, keeping the shell free of extra hardware.",
         image: { src: "/assets/products/caliburn-g5/story-triple-tap.webp", alt: "Official UWELL poster — switching the Caliburn G5 with a triple tap", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1050, height: 613 },
       },
       {
         id: "display-x-ui",
         title: "Immersive Design × UI",
-        description: "Each colour comes with its own screen theme on the 0.85\" colour display, so the finish and the screen match, with battery, wattage and mode at a glance.",
+        description: "The 0.85\" colour display renders a themed UI that matches the device finish, showing battery, wattage, and mode at a glance.",
         image: { src: "/assets/products/caliburn-g5/story-ui-theme.webp", alt: "Official UWELL poster — the Mystic Forest colour and its screen theme", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2400, height: 1115 },
       },
       {

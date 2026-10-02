@@ -42,7 +42,7 @@ export const SPEC_LABELS_TH: Record<string, string> = {
   Airflow: "ช่องลม",
   // Article round 02/10 (Caliburn G5 rows from UWELL's spec sheet).
   Weight: "น้ำหนัก",
-  "Battery life": "ระยะใช้งานแบต",
+  "Battery life": "ระยะเวลาใช้งาน",
   Variant: "รุ่นย่อย",
   "Charge time": "เวลาชาร์จ",
   Chipset: "ชิป",
