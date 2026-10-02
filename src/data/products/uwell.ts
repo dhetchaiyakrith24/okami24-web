@@ -504,12 +504,20 @@ export const uwellProducts: Product[] = [
     // (files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-1..9.webp); scripts and sheet:
     // _incoming/image-sitewide/b-uwell/ (recolour-g4k.js, owner-sheet-1.png). Card-v2 = the Cosmic Gray photo tilted in 2D.
     // From the front Desert Gold and Golden Carbon look the same — true to the device: they differ on the back panel.
-    // No all-colours image behind an "all" chip (owner 01/10: one device per colour, swipe — no all-colours view).
+    // (The morning-01/10 "no all-colours view" was replaced the same evening — see lineupImage below.)
     openOnCardPhoto: true,
     // UWELL makes 9 colours (myuwell.com colour banners, read 2026-09-05 and again 01/10). Photos: image-sitewide round 3b
     // (b) above. Swatches = the frame colour on those banners where the old value was off (Cosmic Gray is champagne-gray,
     // Glass Blue a deep blue, Coral Pink a salmon pink); Golden Carbon keeps a darker gold than Desert Gold (same frame,
     // carbon back). Golden Carbon has no stock — src/data/stock/sold-out.ts (the owner's single stock list).
+    // Image-sitewide round, set 2 (02/10): all-colours image again (owner 01/10 evening, IMAGE_SPEC §0 item 5). Box-shaped
+    // device → "cluster": Cosmic Gray (the card colour) big in front, the other 8 in two rows behind, from this page's colour
+    // photos — _incoming/image-sitewide/set1/boxy.js.
+    lineupImage: {
+      src: "/assets/products/caliburn-g4-pro-koko/lineup-v2.webp",
+      alt: "UWELL Caliburn G4 Pro KOKO, all 9 colours",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
     colorVariants: [
       {
         id: "desert-gold",
@@ -1238,10 +1246,18 @@ export const uwellProducts: Product[] = [
     // of UWELL's render; gold and black were clipped there and come from UWELL's own colour) — only the frame colour changes
     // on a swipe; scripts and sheet: _incoming/image-sitewide/b-uwell/ (recolour-g3k.js). Card = Emerald Green tilted in
     // 2D. Swatches = the frame colour on these photos. UWELL has no per-colour files for this model (color-N.webp 404).
-    // No all-colours image behind an "all" chip (owner 01/10: one device per colour, swipe — no all-colours view).
+    // (The morning-01/10 "no all-colours view" was replaced the same evening — see lineupImage below.)
     openOnCardPhoto: true,
     // Real UWELL color/finish lineup — "KOKO" is UWELL's touchscreen-edition naming convention
     // (see caliburn-g4-pro-koko's own comment) — same G3 Pro pod platform, not a separate system.
+    // Image-sitewide round, set 2 (02/10): all-colours image again (owner 01/10 evening, IMAGE_SPEC §0 item 5). Box-shaped
+    // device → "cluster": Emerald Green (the card colour) big in front, the other 7 in two rows behind, from this page's colour
+    // photos — _incoming/image-sitewide/set1/boxy.js.
+    lineupImage: {
+      src: "/assets/products/caliburn-g3-pro-koko/lineup-v2.webp",
+      alt: "UWELL Caliburn G3 Pro KOKO, all 8 colours",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
     colorVariants: [
       {
         id: "emerald-green",
