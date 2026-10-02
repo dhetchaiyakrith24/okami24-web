@@ -95,6 +95,20 @@ Shot count: `.claude/TEAM_RULES.md` 13.5 #7 (the one place). Open every image
 once yourself: an anchor that missed (`anchor missing` in the shot log, or the block not in frame)
 = re-shoot with a parent block's selector, never send a frame without the change in it.
 
+## Step 4b — Owner eye, then the draft to the owner (a batch that changes an image or a layout · owner 03/10)
+
+Text-only tier B skips this step. Otherwise, before the designer and the checker:
+
+1. Look the way the owner looks — the list "Owner eye" in `.claude/agents/designer.md` (its "How to look" line).
+   Crop at 100 % what you check: edges, letters, screens, thin parts.
+2. Write `_incoming/<round>/owner-eye-<batch>.md`: the commit · one block per changed image/section with every
+   list line ✓/✗ and the crop path · **"จุดที่พี่น่าจะติ"** — the 3 spots the owner is most likely to reject,
+   worst first (an honest guess beats "none"). A fact line ✗ = fix before going on.
+3. Send the owner the draft in chat, Thai caption — the after shots 390 + 1440 of the changed spots + the 3 spots
+   (desktop app: the `SendUserFile` tool; without it, full file paths in the message). Keep working — what the
+   owner's answer changes = `.claude/TEAM_RULES.md` 13.8 (the one place of that rule). Write the send time and the
+   owner's answer, word for word (none yet = "ยังไม่ตอบ"), in the same file.
+
 ## Step 5 — The designer brief
 
 Write `_incoming/<round>/brief-designer-<batch>.md` with:
@@ -104,8 +118,9 @@ Write `_incoming/<round>/brief-designer-<batch>.md` with:
 4. what is NOT covered (groups not shot and why; pages that failed to scan);
 5. the report shape: the five fields of 13.4.
 
-When the designer is called: only per `.claude/TEAM_RULES.md` 13.5 #6 (a new look, slot or component), for a batch
-or at the round close (round-close step 2) — with these crops only, never the whole site.
+When the designer is called: only per `.claude/TEAM_RULES.md` 13.5 #6 (a new look, slot or component, or a changed
+image or layout), for a batch or at the round close (round-close step 2) — with these crops and the owner-eye file
+(step 4b) only, never the whole site.
 
 ## Evidence to keep
 
