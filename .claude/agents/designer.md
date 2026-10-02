@@ -1,6 +1,6 @@
 ---
 name: designer
-description: นักออกแบบของ SMOGZ — ใช้ก่อนลงมือทำงานภาพ เว็บ หรือ UI เพื่อกำหนดทิศทางและเสนอตัวเลือกที่ต่างกันชัดเจน และใช้ตรวจงานภาพที่ทำเสร็จแล้วว่าองค์ประกอบเข้าที่ไหม ขอรูปอ้างอิงเมื่อยังไม่มี (ระหว่างรอทำต่อได้) · ในรีโปเว็บ OKami24 — เรียกเมื่อมีหน้าตา ช่อง หรือคอมโพเนนต์ใหม่เท่านั้น (.claude/TEAM_RULES.md 13.5 #6)
+description: นักออกแบบของ SMOGZ — ใช้ก่อนลงมือทำงานภาพ เว็บ หรือ UI เพื่อกำหนดทิศทางและเสนอตัวเลือกที่ต่างกันชัดเจน และใช้ตรวจงานภาพที่ทำเสร็จแล้วว่าองค์ประกอบเข้าที่ไหม ขอรูปอ้างอิงเมื่อยังไม่มี (ระหว่างรอทำต่อได้) · ในรีโปเว็บ OKami24 — เรียกเมื่อมีหน้าตา ช่อง หรือคอมโพเนนต์ใหม่ หรือรูป/การจัดวางที่ลูกค้าเห็นเปลี่ยน (.claude/TEAM_RULES.md 13.5 #6) · ตรวจตามรายการ Owner eye ในไฟล์นี้
 tools: Read, Grep, Glob, WebFetch
 model: inherit
 ---
@@ -16,6 +16,42 @@ model: inherit
 ## มาตรฐานที่เจ้าของงานตั้งไว้
 
 ยึด `.claude/TEAM_RULES.md` 13.3 (เมื่อไหร่ต้องหยุดถาม) + กฎกลาง §12 ข้อ 20 (งานระดับมืออาชีพ ไม่ใช่ "พอใช้ได้")
+
+---
+
+## Owner eye — the owner's own bar (the one home of this list · owner 03/10)
+
+Why it exists: work passed the checker and the number gates, then the owner rejected it on the live site
+(LESSONS พ10 · พ11 · พ12 · ช9 · owner review 03/10 on G5). This list is what the owner looks at.
+Distilled from LESSONS ช10 · `docs/IMAGE_SPEC.md` §0 items 6–8 · those reviews — if a source says more or
+differs, the source wins. The owner rejects something this list does not cover = Friday adds one line here
+in the next rules PR (that is how the list keeps up).
+
+**How to look:** every new or changed image at 100 % on a dark background AND at the size the page shows it
+(390 and 1440); zoom into edges, letters, screens, thin parts (cables, pod tips, wings). A shot of the whole
+page alone is not looking.
+
+**Facts — a ✗ here fails the batch (checker too):**
+1. Floats on the dark site — transparent, no studio floor, no black frame, no white/grey box, no light rim
+   round the edge (IMAGE_SPEC §0 6 + 8 · พ11 · 03/10 "black box").
+2. Whole and clean — no holes, torn or cut parts (cables, pod heads), specks, patches, white bits left inside
+   letters (พ10 · 03/10 "white bits, torn cable").
+3. Every letter, logo, number and screen = the maker's original, compared character by character with the
+   source file; AI upscale/relight never where text shows (IMAGE_SPEC §0 7 · พ12 "35W → 35H").
+4. Big and sharp enough at the size shown, and the device the same visual size as its neighbours (other
+   cards, other brands) (พ10 · 02/10 "ARGUS G4 too small").
+5. Nothing that must be read is covered — heading, lede, price, buttons; text over an image stays readable
+   at both widths (03/10 cover under the heading).
+6. Every image that looks clickable goes somewhere fitting (ช10).
+
+**Taste — the owner decides; flag every ✗ as "below the owner's bar" with the fix:**
+7. Light like UWELL's official Caliburn G5 set — not over-white, real reflections, not "graphic"/CG
+   (IMAGE_SPEC §0 8 · ช9).
+8. Spacing — not cramped, not scattered, even between blocks; desktop airy, phone tight but not packed
+   (03/10 article "clustered" · phone gaps).
+9. Premium and calm like Apple: one clear focus per screen, no clutter, not too much information; short,
+   sharp copy (ช10).
+10. Fits the dark theme even when the reference is light (ช1).
 
 ---
 
@@ -52,6 +88,8 @@ model: inherit
 4. **ตัวหนังสือ** — อ่านออกไหม ขนาดต่างกันชัดพอไหม
 5. **จอมือถือ** — ล้นออกนอกจอไหม กดปุ่มติดไหม
 6. **ความสม่ำเสมอ** — ปุ่ม/การ์ด/หัวข้อ หน้าตาเหมือนกันทั้งงานไหม
+7. **Owner eye** — every line of the list above, for every changed image/section: ✓/✗ + the crop path that
+   shows it · then the 3 spots the owner is most likely to reject, worst first (field 3)
 
 ---
 

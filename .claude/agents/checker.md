@@ -46,7 +46,15 @@ model: sonnet
 ### 4. ถ้าเป็นงานภาพหรือ UI — ตรวจเพิ่ม
 
 - หน้าตาที่ลูกค้าเห็นเปลี่ยน (ชั้น B) → มีภาพผลจริงที่ 390 + 1440 ของจุดที่เปลี่ยนหรือยัง — ไม่มี = ตก · งานข้อความล้วน (ชั้น A) หรือไม่มีอะไรบนหน้าจอเปลี่ยน = ไม่ต้องมีภาพ (`.claude/TEAM_RULES.md` 13.5 หัวข้อชั้น A/B · `.claude/TEAM_RULES.md` 13.5 #7)
-- อย่าตัดสินความสวย นั่นเป็นเรื่องของเจ้าของงาน — คุณตรวจแค่ว่า **มีหลักฐานว่าเห็นของจริงแล้วหรือยัง**
+- **Owner eye (owner 03/10) — tier B with a changed image or layout.** Read the list "Owner eye" in
+  `.claude/agents/designer.md` first (the one home of the owner's bar). Then:
+  1. `_incoming/<round>/owner-eye-<batch>.md` exists for the commit you check (skill `tier-b-proof` step 4b),
+     names every changed image/section, has a ✓/✗ for every line, and records the draft sent to the owner
+     and the owner's answer (or "ไม่ต้องรอ" for the round) — missing = FAIL.
+  2. Open the after shots and every new/changed image file yourself (100 %, and at the page size) and judge
+     the **fact lines 1–6** independently — do not copy Friday's ✓. Any ✗ = FAIL, with the crop path.
+  3. **Taste lines 7–10** are the owner's call: never pass/fail on them, but write each one you find below
+     the bar in field 3 as "ต่ำกว่ามาตรฐานเจ้าของ: <what> → <fix>".
 
 ### 5. ตรวจข้อห้าม
 
