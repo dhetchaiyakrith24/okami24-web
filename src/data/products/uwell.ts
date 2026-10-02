@@ -906,11 +906,12 @@ export const uwellProducts: Product[] = [
     // Image-fix round 2026-09-28: every colour photo is now UWELL's own render (myuwell.com caliburn-g4-mini
     // pc/1–12, front device only), each matched to the retailer-named photo it replaces — the maker's files carry no
     // colour names (order + hex in scripts/process-images.map.json). Lineup rebuilt from those 12 files
-    // (scripts/build-lineup-grid.js --cols 6).
+    // (scripts/build-lineup-grid.js --cols 6). Image-sitewide round, set 1 (02/10): lineup-v2 = the G5 layout the owner
+    // picked (Slate Grey big in front, the other 11 in two upright tiers) from the same 12 UWELL fronts — _incoming/image-sitewide/set1/.
     lineupImage: {
-      src: "/assets/products/caliburn-g4-mini/lineup.webp",
-      alt: "UWELL Caliburn G4 Mini, all 12 colors",
-      sourceName: "OKami24 composite (from UWELL's official colour renders)",
+      src: "/assets/products/caliburn-g4-mini/lineup-v2.webp",
+      alt: "UWELL Caliburn G4 Mini, all 12 colours",
+      sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
     colorVariants: [
       {
@@ -1051,9 +1052,15 @@ export const uwellProducts: Product[] = [
     // render, same orientation as UWELL's front photo, cut out by Higgsfield) with the body colour moved to each colour of
     // the shop's old per-colour photos (182x404, too small; their colour matches UWELL's collage mo/spe9.webp). The night
     // renders of the other colours were not used (Abyss Blue came out light blue; Alpine Green grew a "G" logo). Card-v2 =
-    // the silver photo tilted in 2D. No "ทั้งหมด" image (owner 01/10). Swatches of Abyss Blue / Alpine Green = the body
-    // colour on these photos (the old navy / dark green were off). Scripts: _incoming/image-sitewide/b-uwell/recolour-g4c.js.
+    // the silver photo tilted in 2D. Swatches of Abyss Blue / Alpine Green = the body colour on these photos (the old
+    // navy / dark green were off). Scripts: _incoming/image-sitewide/b-uwell/recolour-g4c.js. "ทั้งหมด" image (owner 01/10
+    // evening: pod systems get a new all-colours image): the G5 layout, Classic Silver big in front — set1/poster.js (02/10).
     openOnCardPhoto: true,
+    lineupImage: {
+      src: "/assets/products/caliburn-g4-classic/lineup-v2.webp",
+      alt: "UWELL Caliburn G4 Classic, all 4 colours",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
     colorVariants: [
       {
         id: "abyss-blue",
