@@ -141,8 +141,9 @@ export function ProductMoreDetails({ product }: { product: Product }) {
   return (
     <section className="border-b border-surface-border-soft bg-surface-0" aria-labelledby="more-details-title">
       <Container className="pt-14 lg:pt-20">
-        {/* G5 template fixes (owner 03/10): on the stage layout a floating cover slides up under the heading — the wings sit
-            behind the text for depth, no frame; the text stays on top */}
+        {/* G5 template fixes (owner 03/10): on the stage layout a floating cover sits close under the heading, no frame — but
+            never over the heading or the lede (owner eye item 5: the wing tips reach the file's top edge, so no negative
+            margin); the text shadow stays for the feathers that come near it */}
         <div className={cn(stage && cover?.transparent && "relative z-10 [text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_0_18px_rgba(0,0,0,0.85)]")}>
           <SectionHeading
             eyebrow={dict.product.featuresEyebrow}
@@ -152,7 +153,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
           <ProductArticleLede slug={product.slug} />
         </div>
         {cover && (
-          <div className={cn("mt-8 flex flex-col gap-2 lg:mt-10", stage && cover.transparent && "relative z-0 -mt-4 lg:-mt-20")}>
+          <div className={cn("mt-8 flex flex-col gap-2 lg:mt-10", stage && cover.transparent && "relative z-0 mt-5 lg:mt-12")}>
             <Poster img={cover} sizes="(min-width: 1280px) 1200px, 100vw" />
             <Credit img={cover} linkLabel={dict.product.gallerySourceLinkLabel} />
           </div>
