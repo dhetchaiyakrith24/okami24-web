@@ -25,6 +25,8 @@ export interface StoryBlockCopy {
   body: SheetText;
   points?: StoryPoint[];
   captions?: SheetText[];
+  /** where the poster (and a text link under the text) goes — round G5 template batch 3; no link = not clickable */
+  link?: { href: string; label: SheetText };
 }
 
 export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
@@ -42,6 +44,8 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         { text: { th: "GPP Alpha 0.6 โอห์ม 1 หัว", en: "1 GPP Alpha, 0.6Ω", zh: "1 个 0.6Ω GPP Alpha 烟弹" }, specKey: "included-pod" },
         { text: { th: "แบบหัวต่างกันตามเวอร์ชัน", en: "Pod types vary by market version", zh: "烟弹类型因销售版本而异" }, specKey: "included-pod" },
       ],
+      // the GPP cartridges the shop sells (catalog-relationships.ts: every GPP cartridge fits the G5)
+      link: { href: "/products/coil-94", label: { th: "ดูหัวพอต GPP ที่ใช้กับ G5", en: "See the GPP pods that fit the G5", zh: "查看适用于 G5 的 GPP 烟弹" } },
     },
     "gpp-alpha": {
       title: { th: "หัวพอต GPP Alpha", en: "GPP Alpha cartridge", zh: "GPP Alpha 烟弹" },
@@ -70,6 +74,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         { text: { th: "เปลี่ยนธีมหน้าจอ", en: "Change the UI theme", zh: "更换 UI 主题" } },
         { text: { th: "ปรับความสว่างจอ", en: "Adjust brightness", zh: "调节屏幕亮度" } },
       ],
+      link: { href: "/technology/gesture-and-triple-tap-control", label: { th: "อ่านเรื่องระบบแตะสามครั้ง", en: "How triple-tap control works", zh: "了解三击控制" } },
       captions: [
         { th: "ในที่มืด", en: "In the dark", zh: "黑暗中" },
         { th: "กลางแดดจ้า", en: "Under bright sunlight", zh: "强光下" },

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
 import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
@@ -174,6 +174,25 @@ export function ProductHero({
     else setSelectedFlavorId(id);
     setShowAllColors(false);
   };
+  // G5 template round batch 3 (owner 02/10: every image that looks clickable goes somewhere fitting): a link to
+  // `#option-<id>` — the colour/flavour tiles in "more details" — picks that option here and scrolls the hero into
+  // view (instantly for visitors who asked for reduced motion). Also works when the page is opened with that hash.
+  const heroRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const ids = new Set(optionRecords.map((o) => o.id));
+    const pick = () => {
+      const m = /^#option-(.+)$/.exec(window.location.hash);
+      if (!m || !ids.has(decodeURIComponent(m[1]))) return;
+      selectOption(decodeURIComponent(m[1]));
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      heroRef.current?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    };
+    pick();
+    window.addEventListener("hashchange", pick);
+    return () => window.removeEventListener("hashchange", pick);
+    // the option list never changes after mount, and selectOption only calls state setters
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   // A lineupFirst product leads with the lineup instead: every option is in it, the card shows only one.
   const leadWithCard = !lineupFirst && (openOnCard || (optionRecords.length >= 2 && optionRecords.every((o) => !o.image)));
   const lineupSlide = lineupFirst && product.lineupImage
@@ -228,7 +247,7 @@ export function ProductHero({
 
   return (
     <>
-    <section className="relative overflow-hidden border-b border-surface-border-soft bg-surface-1">
+    <section ref={heroRef} className="relative scroll-mt-16 overflow-hidden border-b border-surface-border-soft bg-surface-1">
       <div
         className="pointer-events-none absolute inset-0 opacity-50"
         style={{

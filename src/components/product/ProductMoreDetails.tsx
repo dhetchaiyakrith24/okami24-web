@@ -2,6 +2,7 @@
 
 import { Fragment, type ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Feature, Product, StoryImage } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -48,6 +49,17 @@ function Poster({ img, sizes, className }: { img: StoryImage; sizes: string; cla
   );
 }
 
+/** A poster that goes somewhere (story `link`): the whole poster is the link, with a hover lift; no link = the plain
+ *  poster, which never looks clickable (G5 template round batch 3). */
+function PosterLink({ href, label, children }: { href?: string; label?: string; children: ReactNode }) {
+  if (!href) return <>{children}</>;
+  return (
+    <Link href={href} aria-label={label} className="group block rounded-2xl transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember">
+      {children}
+    </Link>
+  );
+}
+
 function Credit({ img, linkLabel }: { img: StoryImage; linkLabel: string }) {
   return (
     <p className="label-mono text-[0.6rem] text-foreground-dim" lang="en">
@@ -86,17 +98,42 @@ export function ProductMoreDetails({ product }: { product: Product }) {
           {(isColour ? dict.product.moreDetailsAllColours : dict.product.moreDetailsAllFlavours).replace("{count}", String(options.length))}
         </h3>
         <ul className={cn("grid grid-cols-3 gap-3 sm:grid-cols-4 lg:gap-4", stage && tiles.length === 7 ? "lg:grid-cols-7" : "lg:grid-cols-6")}>
-          {tiles.map((t) => (
-            <li key={t.id} className="flex flex-col overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
-              <div className="relative aspect-square w-full">
-                <Image src={t.photo!.src} alt={t.photo!.alt} fill sizes="(min-width: 1024px) 16vw, (min-width: 640px) 25vw, 33vw" className="object-contain p-2" />
-              </div>
-              <div className="flex items-start gap-1.5 px-3 pb-3 text-xs font-medium text-foreground-muted max-lg:px-2">
-                <span className="mt-[0.3em] block h-2.5 w-2.5 shrink-0 rounded-full border border-black/10" style={{ backgroundColor: t.swatchHex }} aria-hidden />
-                <span>{t.name}</span>
-              </div>
-            </li>
-          ))}
+          {tiles.map((t) => {
+            const tile = (
+              <>
+                <div className="relative aspect-square w-full">
+                  <Image src={t.photo!.src} alt={t.photo!.alt} fill sizes="(min-width: 1024px) 16vw, (min-width: 640px) 25vw, 33vw" className="object-contain p-2" />
+                </div>
+                <div className="flex items-start gap-1.5 px-3 pb-3 text-xs font-medium text-foreground-muted max-lg:px-2">
+                  <span className="mt-[0.3em] block h-2.5 w-2.5 shrink-0 rounded-full border border-black/10" style={{ backgroundColor: t.swatchHex }} aria-hidden />
+                  <span>{t.name}</span>
+                </div>
+              </>
+            );
+            // G5 template round batch 3: on the stage layout a tile picks its colour/flavour in the hero (ProductHero
+            // listens for `#option-<id>`); the split pages keep the plain tile
+            return (
+              <li key={t.id} className="flex flex-col overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1 transition-colors has-[a:hover]:border-ember">
+                {stage ? (
+                  <a
+                    href={`#option-${t.id}`}
+                    className="flex flex-col"
+                    onClick={(e) => {
+                      // the same tile twice = no hashchange; ask the hero again
+                      if (window.location.hash === `#option-${t.id}`) {
+                        e.preventDefault();
+                        window.dispatchEvent(new HashChangeEvent("hashchange"));
+                      }
+                    }}
+                  >
+                    {tile}
+                  </a>
+                ) : (
+                  tile
+                )}
+              </li>
+            );
+          })}
         </ul>
       </Container>
     ) : null;
@@ -203,6 +240,7 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
         const subline = sc ? sc.subline?.[locale] : (th?.subline ?? (locale === "th" ? undefined : f.subline));
         const captions = sc ? sc.captions?.map((c) => c[locale]) : (th?.captions ?? (locale === "th" ? undefined : f.captions));
         const body = sc?.body[locale] ?? th?.description ?? f.description;
+        const link = sc?.link;
         const points = (sc?.points ?? []).filter((p) => !p.specKey || rows.some((r) => r.key === p.specKey)).map((p) => p.text[locale]);
         // G5 template round batch 1 (owner 02/10): desktop = the split rhythm of M Bar 10K (poster 7/12, text 5/12,
         // sides alternating, backgrounds alternating); phones keep the centred stage, with tighter gaps between posters.
@@ -226,14 +264,16 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
                     img.height > img.width ? "max-w-md lg:justify-self-center" : "max-w-5xl",
                   )}
                 >
-                  {f.imageMobile ? (
-                    <>
-                      <Poster img={f.imageMobile} sizes="100vw" className="lg:hidden" />
-                      <Poster img={img} sizes="(min-width: 1280px) 700px, 58vw" className="hidden lg:block" />
-                    </>
-                  ) : (
-                    <Poster img={img} sizes="(min-width: 1280px) 700px, (min-width: 1024px) 58vw, 100vw" />
-                  )}
+                  <PosterLink href={link?.href} label={link ? link.label[locale] : undefined}>
+                    {f.imageMobile ? (
+                      <>
+                        <Poster img={f.imageMobile} sizes="100vw" className="lg:hidden" />
+                        <Poster img={img} sizes="(min-width: 1280px) 700px, 58vw" className="hidden lg:block" />
+                      </>
+                    ) : (
+                      <Poster img={img} sizes="(min-width: 1280px) 700px, (min-width: 1024px) 58vw, 100vw" />
+                    )}
+                  </PosterLink>
                 </div>
                 <div className={cn("flex flex-col items-center lg:col-span-5 lg:row-start-2 lg:items-start lg:self-start", textCol)}>
                   {captions && captions.length > 0 && (
@@ -254,6 +294,12 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
                         </li>
                       ))}
                     </ul>
+                  )}
+                  {link && (
+                    <Link href={link.href} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-ember transition-colors hover:text-foreground">
+                      {t(link.label[locale])}
+                      <span aria-hidden>›</span>
+                    </Link>
                   )}
                   <div className="mt-3">
                     <Credit img={img} linkLabel={dict.product.gallerySourceLinkLabel} />
