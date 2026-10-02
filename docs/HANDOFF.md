@@ -54,16 +54,19 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Done this round: G4 Pro KOKO, G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano, ARGUS G4 mini, Drag 6 (colours
   + lineup + home card), Caliburn G3 Pro (16 colours + card), Caliburn G5 (7 colours + card + lineup, #184).
   OWNER 02/10: image standard = IMAGE_SPEC §0 item 8 · Drag 6 = B's light + the true devices (hybrid), shown on the test server first.
-  OWNER 02/10: Caliburn G5 = the template for the site; the "รายละเอียดเพิ่มเติม" story + article text = the ARTICLE round (cloud).
+  OWNER 02/10: Caliburn G5 = the template for the site; the "รายละเอียดเพิ่มเติม" story + article text now belong to THIS round (below).
   G5 TEMPLATE (owner 02/10) [ตรวจแล้ว — chat]: card = the maker's own render UPRIGHT, 4:5 ("การ์ดเอาแบบตรงเหมือนเดิม") · colour
   images = the maker's render tilted 12° ("เอียงทุกสี") — new work only; approved upright images stay ("เอาไว้ก่อน") ·
   all-colours image = pick 3 "group": the hero big in front on the left, the other six in two upright tiers behind, soft
   contact shadow + faint reflection as semi-transparent pixels (`_incoming/image-sitewide/g5/` poster.js · tilt-all.js). 0 credits.
-  G5 story ("รายละเอียดเพิ่มเติม") = batch 1 of the ARTICLE round, which runs NOW in a CLOUD chat beside this round (owner 02/10:
-  two chats). Its file = branch `inbox` `rounds/รอบบทความ-รายละเอียดเพิ่มเติม.txt` version 3 — section 【แบ่งงานกับรอบรูป】: this
-  round owns card/colour/flavour images, `lineupImage`, `scripts/process-images.map.json`; the article round owns `storyDetails`,
-  `storyCover`, `features[]`, product-copy-th, dictionaries, guides, `public/assets/products/<slug>/story-*.webp`. Fetch main
-  before every merge. UWELL G5 posters are on this computer only (`g5/src/`, 58 files) — the cloud chat downloads its own.
+  ARTICLE ROUND STOPPED (owner 02/10 night) [ตรวจแล้ว]: "ก้อน 3 ยกเลิก … ย้ายงานไปฝั่งรูป Friday ทำคนเดียว" = story + article
+  work now lives in THIS chat; the article round file's 【แบ่งงานกับรอบรูป】 split is void. Done: #196 `dcef02b` two held comparison
+  guides released · #194 `38a9be3` G5 `storyLayout: "stage"` (UWELL-style, per product; M Bar pages stay "split") + 6 UWELL posters
+  `story-*.webp` (+`-mo`, cut-outs float: `StoryImage.transparent`) + article `src/data/product-articles.ts` (th/en/zh, format A)
+  + 5 spec rows from UWELL's sheet + pod row/FAQ/compat fixed (INT kit = side refill) · checker ×3 · live · #208 lesson ช8.
+  Keyword plan (55 pages × 1 query, brand-page clashes) + source-table pattern: `docs/cloud-results/รอบบทความ-รายละเอียดเพิ่มเติม.md`.
+  NOT done (only when the owner asks): articles for the other 54 pages · no story mechanism on the 18 ProductMaster pages · G5
+  drawn anatomy stays until the owner's exploded view (then `ANATOMY_SHEETS["caliburn-g5"]`).
   OWNER 02/10 (credits + agents) [ตรวจแล้ว — chat]: agents as the work needs · Higgsfield credits WITHOUT asking, also when the maker's
   or other sites' photos fall short of the standard (IMAGE_SPEC §0 item 7) — report the spend.
 3b NEXT (owner's 02/10 morning list (1)-(4) done except Drag 6):
@@ -107,7 +110,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
   - visible-text.js: "font fingerprint differs" on live-vs-local pairs (01/10 vt-d6, 02/10 vt-g5; same Chrome 154 both sides) —
     repeated, so it is the live/local font serving, not two machines [เชื่อว่า]; diffs were 0 changes both times.
-  - Carried ideas: card sweep on 4:5 · ARTICLE round · category-structure round.
+  - Carried ideas: card sweep on 4:5 · articles for the other product pages · category-structure round.
+  - Article-round leftovers: shared GPP note "Shared top-fill…" still on 8 UWELL pages (UWELL: side + top refill fit) · FAQ
+    "g5-battery-life" vs the new "up to 6 days" row · 8 brand titles naming a model (cloud-results §2) — final SEO round.
   - Language of reports (owner 02/10: chat = Thai for the parts he reads): 4 proposals queued for the next housekeeping round —
     OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบเก็บบ้าน-ครั้งถัดไป-ของที่รอ.txt` (owner: "เขียนไว้ใน Run prompt รอบเก็บบ้าน").
   - Unreferenced old photos (G3 Pro/KOKO, G4 Pro KOKO, G4 Classic, ARGUS, Zero Nano, Drag 6, G5 old variants + lineup.webp; 02/10:
