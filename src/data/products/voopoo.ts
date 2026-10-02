@@ -86,15 +86,18 @@ export const voopooProducts: Product[] = [
     // sourcing story) — "Green" was corrected to "Black" here, since VOOPOO's own 7-image gallery
     // has no green colorway at all; every name below is now a verified real color with a real
     // official photo, not a partially-guessed list.
-    // "All Colors" lineup (owner mandate, 2026-09-03 — global rollout pass) — an OKami24 composite
-    // built from these same 7 individually-verified official shop.voopoo.com photos.
-    // 2026-09-06: whole set re-sourced from the same shop.voopoo.com gallery at its native 2533px
-    // (device ≈1441px on the 1000px canvas, was 519px) and the lineup rebuilt with 8 colours —
-    // VOOPOO added Green since the 2026-09-03 pass. Sources: _incoming/argus-g4/SOURCE.md
+    // Colour photos: 2026-09-06 re-sourced from the shop.voopoo.com gallery at its native 2533px (_incoming/argus-g4/SOURCE.md).
+    // "ทั้งหมด" (02/10): two groups in the colour order (4+4) — the one-row image of 8 was tiny — RELX Phantom poster layout
+    // like the other VOOPOO pods, _incoming/image-sitewide/dsx/vp-relx2.js argus-g4-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/argus-g4/lineup.webp",
-      alt: "VOOPOO ARGUS G4, all 8 colors",
-      sourceName: "OKami24 composite (from individually-verified official VOOPOO photos)",
+      src: "/assets/products/argus-g4/lineup-v2.webp",
+      alt: "VOOPOO ARGUS G4, colours 1–4 of 8",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/argus-g4/lineup2-v2.webp",
+      alt: "VOOPOO ARGUS G4, colours 5–8 of 8",
+      sourceName: "OKami24 composite (from this page's colour photos)",
     },
     colorVariants: [
       {
