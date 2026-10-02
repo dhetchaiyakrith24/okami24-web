@@ -30,7 +30,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Caliburn G5 ต่างจาก G5 Lite ยังไง",
           paragraphs: [
-            "สองรุ่นนี้แบต 1600mAh และสูงสุด 35 วัตต์เท่ากัน ที่ต่างคือวิธีดูสถานะเครื่องกับวิธีใช้งาน G5 มีจอสี 0.85 นิ้ว บอกแบต วัตต์ และโหมดไว้ในหน้าเดียว และใช้การแตะสามครั้งเป็นทางลัด ส่วน G5 Lite ไม่มีจอสีและไม่มีระบบแตะ บอกระดับแบตด้วยไฟ LED 4 ขีด",
+            "สองรุ่นนี้แบต 1600mAh และสูงสุด 35 วัตต์เท่ากัน ที่ต่างคือวิธีดูสถานะเครื่องกับวิธีใช้งาน G5 มีจอสี 0.85 นิ้ว บอกแบต วัตต์ และโหมดไว้ในหน้าเดียว และใช้การแตะสามครั้งเป็นทางลัด ส่วน G5 Lite บอกระดับแบตด้วยไฟ LED บนตัวเครื่อง",
             "ถ้าอยากเห็นตัวเลขบนจอและสลับโหมดด้วยการแตะ G5 เหมาะกว่า ถ้าอยากได้เครื่องที่ใช้ง่าย ไม่ต้องดูจอ ดู [Caliburn G5 Lite](/products/caliburn-g5-lite) แทน",
             "ถ้ากำลังเทียบ G5 กับ G4 หรือ Caliburn รุ่นอื่น ดูตารางเทียบสเปกทีละคู่ได้ที่ [Caliburn G5 vs G4 ต่างกันยังไง](/guides/comparing-caliburn-models)"
           ]
@@ -39,7 +39,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "GPP Alpha ต่างจากหัว GPP ปกติยังไง",
           paragraphs: [
             "ในสามหัวที่มากับกล่อง มี GPP Alpha 0.6 โอห์มอยู่หนึ่งหัว UWELL บอกว่าหัวนี้ใช้ AlphaCore ทำให้คอยล์ใช้ได้นานขึ้น และรสชาติคงที่ตั้งแต่พัฟแรกถึงพัฟสุดท้าย อีกสองหัวเป็นหัว GPP ปกติ โอห์มและแบบเติมน้ำยาต่างกันตามรุ่นจำหน่ายของแต่ละประเทศ",
-            "ปากดูดของหัว Alpha เป็นยาง TPU นุ่มปาก และ UWELL ใส่ปากดูดแบบนี้ให้หัว GPP ปกติด้วย"
+            "ปากดูดของหัว Alpha เป็น TPU นุ่มปาก และ UWELL ใส่ปากดูดแบบนี้ให้หัว GPP ปกติด้วย"
           ]
         },
         {
@@ -68,9 +68,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "How is the Caliburn G5 different from the G5 Lite?",
           paragraphs: [
-            "Both have a 1600mAh battery and a 35W maximum. The difference is how you read and use them: the G5 has a 0.85\" colour screen showing battery, wattage and mode on one view, and a triple tap as a shortcut; the G5 Lite has no colour screen and no tap control, and shows battery level on a 4-bar LED.",
-            "If you want numbers on a screen and tap-to-switch, the G5 fits better; for something simpler with no screen to read, see the [Caliburn G5 Lite](/products/caliburn-g5-lite) instead.",
-            "Comparing the G5 with the G4 or another Caliburn? The pair-by-pair spec comparison is in [Caliburn G5 vs G4](/guides/comparing-caliburn-models)."
+            "Both have a 1600mAh battery and a 35W maximum. The difference is how you read and use them: the G5 has a 0.85\" colour screen showing battery, wattage and mode on one view, and a triple tap as a shortcut; the G5 Lite shows battery level with LED lights on the body.",
+            "If you want numbers on a screen and tap-to-switch, the G5 fits better; for something simpler with no screen to read, see the [Caliburn G5 Lite](/products/caliburn-g5-lite) instead."
           ]
         },
         {
@@ -106,9 +105,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Caliburn G5 和 G5 Lite 有什么不同？",
           paragraphs: [
-            "两款都是 1600mAh 电池、最高 35W。不同在于查看与操作方式：G5 有 0.85 英寸彩色屏幕，一屏显示电量、功率和模式，并用三击作为快捷操作；G5 Lite 没有彩色屏幕和敲击控制，用 4 格 LED 显示电量。",
-            "想在屏幕上看到数字、用敲击切换模式，选 G5 更合适；想要更简单、不用看屏幕的机器，可以看 [Caliburn G5 Lite](/products/caliburn-g5-lite)。",
-            "如果正在比较 G5 与 G4 或其他 Caliburn，可以看逐对规格对比：[Caliburn G5 vs G4](/guides/comparing-caliburn-models)。"
+            "两款都是 1600mAh 电池、最高 35W。不同在于查看与操作方式：G5 有 0.85 英寸彩色屏幕，一屏显示电量、功率和模式，并用三击作为快捷操作；G5 Lite 则用机身上的 LED 灯显示电量。",
+            "想在屏幕上看到数字、用敲击切换模式，选 G5 更合适；想要更简单、不用看屏幕的机器，可以看 [Caliburn G5 Lite](/products/caliburn-g5-lite)。"
           ]
         },
         {

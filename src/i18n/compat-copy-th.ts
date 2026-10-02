@@ -36,6 +36,8 @@ export const COMPAT_LABELS_TH: Record<string, string> = {
 export const COMPAT_NOTES_TH: Record<string, string> = {
   "Shared top-fill pod platform used across most current Caliburn devices; resistance options sold separately.":
     "เติมด้านบน ใช้หัวตัวเดียวกับ Caliburn รุ่นปัจจุบันส่วนใหญ่ โอห์มอื่นซื้อแยก",
+  "Every GPP cartridge fits, side-refill or top-refill (UWELL); resistance options sold separately.":
+    "ใส่หัว GPP ได้ทุกหัว ทั้งเติมด้านข้างและเติมด้านบน (UWELL) โอห์มอื่นซื้อแยก",
   "Legacy G3-series pod, still supported on select current-generation devices.": "หัวรุ่นก่อน เครื่องรุ่นปัจจุบันบางรุ่นยังใช้ได้",
   // Only the three Caliburn devices whose spec sheet carries a 2A charging figure still have this
   // note in the data (owner 2026-09-15: the other seven lost it in every language — unverifiable).

@@ -6,6 +6,14 @@ const gppCompatibility = {
   note: "Shared top-fill pod platform used across most current Caliburn devices; resistance options sold separately.",
 };
 
+// Article round 02/10: UWELL's G5 page — "All cartridges in G Pod Platform (GPP) are compatible", side and top refill.
+// G5 only for now; the shared note above ("top-fill") is re-checked per product in the UWELL batch.
+const gppSideTopCompatibility = {
+  type: "pod" as const,
+  label: "UWELL GPP cartridge platform",
+  note: "Every GPP cartridge fits, side-refill or top-refill (UWELL); resistance options sold separately.",
+};
+
 const g3PodCompatibility = {
   type: "pod" as const,
   label: "Caliburn G3 pod",
@@ -223,7 +231,7 @@ export const uwellProducts: Product[] = [
         image: { src: "/assets/products/caliburn-g5/story-aluminium.webp", alt: "Official UWELL poster — the Caliburn G5 aluminium body and side airflow control", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1438, height: 1611 },
       },
     ],
-    compatibility: [gppCompatibility, usbCNoNote],
+    compatibility: [gppSideTopCompatibility, usbCNoNote],
     whoIsThisFor: [
       "Vapers who want the current Caliburn platform without stepping up to a higher-output pod mod.",
       "Anyone switching from a button-only pod device who wants an onboard screen without added bulk.",
