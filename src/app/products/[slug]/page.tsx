@@ -93,6 +93,7 @@ function legacyProductImageSrcs(product: Product): (string | undefined)[] {
   return [
     product.assets.find((a) => a.role === "card")?.src,
     product.lineupImage?.src,
+    product.lineupImage2?.src,
     ...(product.colorVariants ?? []).map((v) => v.image?.src),
     ...(product.flavorVariants ?? []).map((v) => v.image?.src),
   ];
