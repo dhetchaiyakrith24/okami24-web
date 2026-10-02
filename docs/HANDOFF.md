@@ -20,17 +20,27 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Then #187 `37deacf` (owner "การ์ดเอาแบบตรงเหมือนเดิมดีกว่า": G5 card-v3 = the upright UWELL render + `openOnCardPhoto`; set 1
   lineup-v2 for G4 / G5 Lite / G5 Lite SE in the G5 layout) (checker PASS 4/4 · gallery-probe both modes 45/61, 0 FLASH/STUCK ·
   BIG) [ตรวจแล้ว]; deploy 36942605379, live [ตรวจแล้ว — curl: card-v3 + 3 lineups 200, pages serve them].
-  Overnight 02/10 (checker PASS each · checks green · BIG · live curl 200) [ตรวจแล้ว]: #190 `19e83ad` G4 mini + G4 Classic lineups (G5
-  layout) · #191 `4b21c56` G3 Pro KOKO + G4 Pro KOKO lineups ("cluster": box devices) · #192 `8623371` VOOPOO ARGUS G3 mini +
-  G4 mini (RELX Phantom layout) + P3 (cluster) lineups, P3 card-v2 + openOnCardPhoto. Owner review sheet:
-  `_incoming/image-sitewide/set1/overnight-lineups.png` [รอเจ้าของ]. Live site answers 502 for ~2–3 min right after each deploy
-  (seen 00:29 + 01:02 UTC, 200 again by itself) [ตรวจแล้ว — curl] — Render swap, not these PRs; report to the owner.
-  CHECKPOINT tag `checkpoint-g5-0210` → 37deacf (owner 02/10: guard against the chat compacting). DELETE IT when this chat's
-  image work ends — remind the owner (`git tag -d checkpoint-g5-0210 && git push origin :refs/tags/checkpoint-g5-0210`).
-  TEMPORARY RULINGS — THIS CHAT ONLY, end when it ends (owner 02/10 late, 13.6): Higgsfield credits without asking · no chat move
-  at 700k, no self-compact unless it makes the work more accurate · new layouts go live reversibly, the owner reviews next day ·
-  baseline pages: images only (title/meta/H1/JSON-LD wait for the SEO round).
-2 ahead of main: `git log --oneline origin/main..<branch>` — only open PRs of this chat, if any [ตรวจแล้ว — git].
+  Overnight 02/10 (checker PASS each · checks green · BIG · live curl 200) [ตรวจแล้ว]: #190 G4 mini + G4 Classic lineups · #191
+  G3 Pro KOKO + G4 Pro KOKO ("cluster") · #192 VOOPOO ARGUS G3 mini + G4 mini (RELX) + P3 (cluster) + P3 card-v2. Then the CLOUD
+  article-round chat merged #196 `dcef02b` (the two held comparison guides released — owner 02/10, ruling D3 lifted). Checkpoint
+  tag deleted; ALL temporary rulings of the night are CANCELLED (owner 02/10 morning) — normal rules again.
+  OWNER 02/10 morning [ตรวจแล้ว — chat]: (1) 7 lineups pass; KOKO ×2 + ARGUS G3 mini / G4 mini look too small → fix · (2) EVEREST LAB
+  badge "ไม่ต้องแก้" → publish Drag S3 / X3 / VINCI S night renders · (3) fix the deploy downtime BEFORE other work · (4) G3 Pro
+  two "ทั้งหมด" pills → do it. Order Friday told the owner: 3 → 4 → 2 → 1.
+  (3) DEPLOY DOWNTIME [ตรวจแล้ว — render.com/docs/deploys + /disks]: a persistent disk disables zero-downtime deploys; Render stops the
+  old instance before the new one (docs "a few seconds"; measured 2–3 min of Cloudflare 502). Options given to the owner, answer
+  PENDING [รอเจ้าของ]: A deploy once a night at 04:00 (deploy.yml schedule; manual for urgent) — Friday's pick · B move SQLite to
+  Render Postgres, drop the disk (cost unchecked, 1–2 rounds, DB = 13.3) · C Cloudflare stale-if-error (free; s-maxage on HTML
+  blocks it; stale HTML can point at deleted JS) — not recommended. Owner also asked downsides (data · SEO · trust) — answered.
+  Owner then (02/10): "ไม่กี่วินาที" matches what he saw; he cares about SEO only; asked about deploy windows every 1–2 h. Friday:
+  SEO impact of short 5xx is small [เชื่อว่า]; hourly = up to 24 outages/day → recommend 04:00 + 12:00 (only when there is new work)
+  + manual for urgent fixes; one PR to deploy.yml — ANSWER PENDING [รอเจ้าของ]. Site merges wait for it.
+2 OPEN PR #195 `feat-g3p-two-lineups` (head dc3a478 = main merged in): `Product.lineupImage2` + ColorVariantRail pills "ทั้งหมด 1/2"
+  (shared ProductHero → full-sitemap proof) + G3 Pro lineup-v2 / lineup2-v2 (G5 layout, 8 + 8). Proof `_incoming/image-sitewide/
+  set1/proofe/`: first full-sitemap visible-text diff (107 pages × 3 × 2) = 12 changes, all the two pills on caliburn-g3-pro
+  [ตรวจแล้ว]; shots `shots/cmp-390.png` / `cmp-1440.png`; a re-scan after merging main was RUNNING at the move (`vt-after2`,
+  `vt-before2`, diff → `vt-diff2`). STILL TO DO: head-check, gallery-probe both modes, checker (brief like `set1/checker-brief-d.md`),
+  then merge ONLY after the deploy decision. Test server 3412 may be UP (`node scripts/test-server.js status` / `stop`).
 3 OPEN: round "รอบรูป-ทั้งเว็บ แบบ M Bar 10K" (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
   VOOPOO `b-voopoo/`, coils `b-coils/`).
@@ -38,15 +48,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   work". OWNER 02/10: the 7 SEO baseline pages are no longer held (§18) — the round file's 05/10 line is void.
   ALL-COLOURS LAYOUT (owner 01/10 — rule in IMAGE_SPEC §0 item 5 "การจัดวาง"): few colours = UWELL float/tilt/layers · many =
   OKami's own poster layouts, every device whole, gaps, one hero. Composer `b-edge/d6-poster.js` (VMATE · V THRU · RELX · VEUZ fan;
-  canvas sized from bounds) — copy it per product. Rejected (do not retry): stagger/arc/fan of round 1, UWELL tilt-cascade of 7
-  ("แข็งๆ"), depth-cue cascade / V-wings (lesson ช7), G3 Pro fan + two rows of 16 ("ไม่ผ่านเลย").
+  canvas from bounds). Rejected: stagger/arc/fan, tilt-cascade of 7, depth cascade / V-wings (ช7), G3 Pro fan + two rows of 16.
   OWNER 01/10 late [ตรวจแล้ว — chat]: RELX Phantom layout OK, but vary the layout per brand ("หลายหลายแบบในแต่ละแบรน") ·
   G3 Pro = two groups of 8 → two "ทั้งหมด" ("ทำเป็นหัวข้อ ทั้งหมด 2 ชิ้น", or a better idea).
-  RELX composer (studio floor + highlight roll-off): `b-edge/relx-studio.js d6 | g3p-a | g3p-b`. B test (4 credits, job
-  55c8aa47): `b-edge/relx/d6-B1.png` — more photographic, BUT AI changed details (badge, screen text, "VOOPOO" → "17BECO" —
-  `relx/d6-AB-zoom.png`) → NOT publishable as is (IMAGE_SPEC §0 item 7). Friday's proposal [รอเจ้าของ (37)]: HYBRID = keep the
-  script image's devices (100% true) and transfer only B's low-frequency light (blur(B)/blur(A) luminance ratio, large sigma) + B's
-  floor reflections/shadows below the feet; 0 extra credits; the background stays transparent (IMAGE_SPEC §0 item 6).
+  Drag 6 light: AI relight test `b-edge/relx/d6-B1.png` (4 credits) looks photographic but changed badge/screen/"VOOPOO" text →
+  not publishable; proposal = HYBRID (true devices + only B's soft light and floor) [รอเจ้าของ (37)].
   THE METHODS THAT WORK: (a) one model, colours differ only in colour = ONE master + recolour by script — silver master:
   `b-uwell/recolour-g4c.js`; coloured master: `b-voopoo/recolour-g3m.js` (lesson 23); GRADIENT colours = targets per height band:
   `b-edge/recolour-g4m.js` (body) and `b-edge/recolour-g3p.js` (frame round a screen, masks `b-uwell/masks.js`); colour targets
@@ -60,10 +66,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Done this round: G4 Pro KOKO, G3 Pro KOKO, G4 Classic, ARGUS G3 mini, ARGUS P3 colours, Zero Nano, ARGUS G4 mini, Drag 6 (colours
   + lineup + home card), Caliburn G3 Pro (16 colours + card), Caliburn G5 (7 colours + card + lineup, #184).
   OWNER 02/10: image standard = IMAGE_SPEC §0 item 8 · Drag 6 = B's light + the true devices (hybrid), shown on the test server first.
-  OWNER 02/10 later [ตรวจแล้ว — chat]: "หยุดงานรูปทุกอย่างและ Focus Caliburn 5 ทุกสี ทุกรูป รูปรวม ให้เสร็จก่อนจะได้เป็นแบบให้ทั้งเว็บ".
-  Owner also wants EVERY product like M Bar 10K's lower page ("รายละเอียดเพิ่มเติม" story, `storyDetails: true` — today m-bar-10k ·
-  m-bar-9k · m-switch-kit · infy-20k · muro-sc-8000) + extra article text for SEO = the separate round
-  "รอบบทความ-รายละเอียดเพิ่มเติม" (this round's 【ห้ามแตะ】; its file waits in branch `inbox`, Friday 02/10, 7 batches).
+  OWNER 02/10: Caliburn G5 = the template for the site; the "รายละเอียดเพิ่มเติม" story + article text = the ARTICLE round (cloud).
   G5 TEMPLATE (owner 02/10) [ตรวจแล้ว — chat]: card = the maker's own render UPRIGHT, 4:5 ("การ์ดเอาแบบตรงเหมือนเดิม") · colour
   images = the maker's render tilted 12° ("เอียงทุกสี") — new work only; approved upright images stay ("เอาไว้ก่อน") ·
   all-colours image = pick 3 "group": the hero big in front on the left, the other six in two upright tiers behind, soft
@@ -79,18 +82,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   — set 2 is now lineups only, no re-tilt): (0) Caliburn G5 done (card upright PR). NEXT = set 1 UWELL: G5 Lite (8) · G5 Lite SE
   (8) · G4 Pro (8) · G4 (8) · G4 mini (12) from UWELL's own per-colour files (`g5/maker-renders.md`) — card upright, colours
   tilted, lineup poster (a layout per brand); then sets 2–6. The old list below = the items those sets absorb.
-  Lineups DONE (02/10): UWELL G5 · G4 · G5 Lite · G5 Lite SE · G4 mini · G4 Classic · G3 Pro KOKO · G4 Pro KOKO; VOOPOO ARGUS
-  G3 mini · G4 mini · P3. Layouts: UWELL slim = G5 "group" (`set1/poster.js`) · box devices = "cluster" (`set1/boxy.js`) ·
-  VOOPOO slim = RELX (`b-edge/relx-studio.js`). LEFT: G4 Pro (UWELL files = overlapping front+back pairs — no clean single
-  device; AI separation or a pair poster, owner's call) · G3 Pro 16 (two "ทั้งหมด" = code change in ProductHero, shared by all
-  product pages = full sitemap scan + designer) · Drag 6 (owner: RELX + photographic light + bigger — `relx/d6.png` = the 01/10
-  RELX draft; a tighter step overlaps devices; hybrid light not built) · argus-g4. Drag S3 / X3 / VINCI S night renders
-  (`night/out/colour-*.png`, 3584x4800, sharp) are faithful but the EVEREST LAB badge text is slightly garbled — NOT published;
-  pink/white need Higgsfield remover (flatcut eats the pale body edge) — owner to decide (fix the badge or accept).
-  (2) rest of the edge-defect list (`edge-audit/visual-audit.md`, agent's eye): vinci-s · vmate-i3 · drag-x3 · zero-pro ·
-  m-bar-15k (options soft) · muro-3ml · coil-1/38/53/54/56/74/94 · borderline argus-p3 card · drag-s3 · coil-89 · zero-cartridge ·
-  white boxes coil-55/70/72/83/87 · mood-monster-14k. Night renders that exist: drag-s3 / drag-x3 / vinci-s colours (from retailer
-  cut-outs — see above) · argus-g4 card a/b. Remake from the maker's photos, never from the old cut-out (lesson 22).
+  Lineups DONE: UWELL G5 · G4 · G5 Lite · G5 Lite SE · G4 mini · G4 Classic · G3 Pro KOKO · G4 Pro KOKO; VOOPOO ARGUS G3 mini · G4
+  mini · P3. Layouts: UWELL slim = G5 "group" (`set1/poster.js`) · box = "cluster" (`set1/boxy.js`) · VOOPOO slim = RELX
+  (`b-edge/relx-studio.js`). NEXT after (3)+(4): (2) Drag S3 / X3 / VINCI S = the night renders `night/out/colour-*.png`; flatcut
+  cuts ready (`set1/s3cut/`, `set1/cut-drag-x3/`, `set1/cut-vinci-s/`); `set1/holes.js` + magenta strips show flatcut ate the pale
+  body of VINCI S silver (20 %) / pink (7 %) and X3 champagne-golden (9 %) → Higgsfield remover + `b-edge/choke.js` (~3 credits —
+  tell the owner first); presize + map + data like presize-g3p.js. (1) small lineups (KOKO ×2, ARGUS G3 mini / G4 mini): the
+  square frame holds 7–9 devices side by side — try fewer per image (two groups, like G3 Pro) or a tighter layout; draft first.
+  LEFT: G4 Pro (overlapping front+back pairs), Drag 6 (RELX + photographic light), argus-g4, Esko last.
+  (2) edge defects left (`edge-audit/visual-audit.md`): vmate-i3 · zero-pro · m-bar-15k · muro-3ml · zero-cartridge · mood-monster-14k ·
+    coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87. Remake from the maker's photos (lesson 22).
   (4) coils — `b-coils/README.txt` (references found for the first 8, nothing generated).
   (5) argus-g4 + Argus Multi-Ohm + M Bar 15K duplicate record (= M Switch Kit).
   (6) BATCH 5 rest of the site (planner first; joiway-f4 · relx-creator · relx-smash-go-12k …; TFIT M Power after a researcher) ·
