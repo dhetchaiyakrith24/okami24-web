@@ -35,9 +35,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ในกล่องมีหัวพอต 3 หัว", en: "Three pods in every kit", zh: "每套配 3 个烟弹" },
       subline: { th: "หนึ่งในนั้นคือหัว GPP Alpha รุ่นใหม่", en: "One of them is the new GPP Alpha.", zh: "其中一个是全新 GPP Alpha。" },
       body: {
-        th: "เปิดกล่องมาก็มีหัวสำรองไว้เปลี่ยน ลองเทียบหัว GPP ปกติกับหัว Alpha ได้ตั้งแต่วันแรก",
-        en: "Open the box and the spares are already there. Try a regular GPP pod against the Alpha from day one.",
-        zh: "开箱就有备用烟弹，第一天就能对比普通 GPP 烟弹和 Alpha。",
+        th: "เปิดกล่องมาก็มีหัวสำรองไว้เปลี่ยน ลองสลับสองแบบดูได้เลยว่าชอบหัวไหน",
+        en: "Open the box and the spares are already there. Swap between the two and see which you like.",
+        zh: "开箱就有备用烟弹，两种换着用，看看更喜欢哪一种。",
       },
       points: [
         { text: { th: "GPP ปกติ 2 หัว", en: "2 regular GPP pods", zh: "2 个普通 GPP 烟弹" }, specKey: "included-pod" },
@@ -51,9 +51,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "หัวพอต GPP Alpha", en: "GPP Alpha cartridge", zh: "GPP Alpha 烟弹" },
       subline: { th: "คอยล์ใช้ได้นานขึ้น รสชาติไม่ดรอป", en: "Built to last. No flavour drop.", zh: "更耐用，口感不衰减。" },
       body: {
-        th: "หัวนี้ใช้ AlphaCore ของ UWELL รสชาติคงที่ตั้งแต่พัฟแรกถึงพัฟสุดท้าย คอยล์ก็อยู่ได้นานขึ้น เปลี่ยนหัวน้อยลง",
-        en: "Built on UWELL's AlphaCore: steady flavour from the first puff to the last, and a coil that lasts longer, so you change pods less often.",
-        zh: "采用 UWELL 的 AlphaCore 技术，从第一口到最后一口，口感始终稳定；线圈寿命更长，换烟弹的次数更少。",
+        th: "ที่ทำได้แบบนี้เพราะหัวนี้ใช้ AlphaCore ของ UWELL สูบไปเรื่อย ๆ ก็ยังไม่ต้องรีบเปลี่ยนหัว",
+        en: "That comes from UWELL's AlphaCore — keep vaping and there's no rush to change the pod.",
+        zh: "这得益于 UWELL 的 AlphaCore 技术，一直抽下去也不用急着换烟弹。",
       },
       points: [
         { text: { th: "ออกแบบให้รั่วซึมยาก", en: "Leak-resistant design", zh: "防漏设计" } },
@@ -92,8 +92,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         zh: "0.85 英寸彩色屏，电量、功率和模式一目了然。想换主题？轻敲三下就行。",
       },
       points: [
-        { text: { th: "7 สี 7 ธีมหน้าจอ", en: "7 colours, 7 screen themes", zh: "7 种颜色，7 款屏幕主题" } },
-        { text: { th: "จอสี 0.85 นิ้ว", en: "0.85\" colour screen", zh: "0.85 英寸彩色屏" }, specKey: "screen" },
+        { text: { th: "ตัวเครื่อง 7 สี", en: "7 body colours", zh: "机身 7 种颜色" } },
       ],
     },
     "long-run-battery": {
@@ -110,7 +109,6 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         zh: "实际能用多久，要看抽吸频率、功率设置和气流大小。",
       },
       points: [
-        { text: { th: "แบต 1600mAh ในตัว", en: "1600mAh built in", zh: "内置 1600mAh 电池" }, specKey: "battery" },
         { text: { th: "ชาร์จผ่าน USB-C", en: "USB-C charging", zh: "USB-C 充电" }, specKey: "charging" },
       ],
     },
@@ -118,9 +116,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ตัวเครื่องอะลูมิเนียม ปรับลมได้ละเอียด", en: "Aluminium body, stepless airflow", zh: "铝合金机身，无级调气" },
       subline: { th: "ถือแล้วดูดี สูบแล้วลื่น", en: "Premium in hand. Smooth on the draw.", zh: "握感高级，吸感顺滑。" },
       body: {
-        th: "ตัวเครื่องเป็นอะลูมิเนียมอัลลอยผิวด้าน รอยนิ้วมือและคราบติดยาก จับแล้วถนัดมือ ด้านข้างปรับช่องลมได้ละเอียดแบบไม่มีขั้น ตั้งแต่ MTL (ดูดเข้าปากก่อน) ที่สูบแน่น ไปจนถึง RDL ที่โล่งขึ้น",
-        en: "The matte aluminium-alloy body resists fingerprints and smudges and sits comfortably in the hand. The side airflow slider moves smoothly, from a tighter MTL draw to a looser RDL.",
-        zh: "哑光铝合金机身不易留指纹和污渍，握持舒适。侧面可无级调节气流，从较紧的 MTL 到较松的 RDL。",
+        th: "จับถนัดมือ รอยนิ้วมือกับคราบติดยาก ลมก็ปรับหาจุดที่เข้ากับแนวการสูบของตัวเองได้",
+        en: "Comfortable in the hand, hard to smudge, and the airflow finds the draw that suits you.",
+        zh: "握感舒适，不易留指纹和污渍，气流也能调到适合自己的吸感。",
       },
       points: [
         { text: { th: "อะลูมิเนียมอัลลอยผิวด้าน", en: "Matte aluminium alloy", zh: "哑光铝合金" }, specKey: "materials" },
