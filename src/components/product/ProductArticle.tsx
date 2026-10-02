@@ -23,12 +23,12 @@ export function ProductArticleBody({ slug }: { slug: string }) {
   const a = productArticle(slug, locale);
   if (!a) return null;
   return (
-    <div className="flex max-w-3xl flex-col gap-10 border-t border-surface-border-soft pt-10 lg:pt-14">
+    <div className="flex max-w-3xl flex-col gap-10 border-t border-surface-border-soft pt-10 lg:gap-14 lg:pt-16">
       {a.sections.map((s, i) => (
         <div key={i} className="flex flex-col gap-3">
           <h3 className="font-display text-xl font-semibold leading-snug tracking-tight text-foreground lg:text-2xl">{locale === "th" ? thaiTypographyNode(s.heading) : s.heading}</h3>
           {s.paragraphs.map((p, pi) => (
-            <p key={pi} className="text-base leading-relaxed text-foreground-muted">
+            <p key={pi} className="text-base leading-relaxed text-foreground-muted lg:text-[1.0625rem] lg:leading-8">
               {renderInline(p, locale, `a${i}p${pi}`)}
             </p>
           ))}
