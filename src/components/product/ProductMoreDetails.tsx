@@ -5,6 +5,8 @@ import type { Product, StoryImage } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductAnatomySheet } from "@/components/product/ProductAnatomySheet";
+import { ProductAnatomy } from "@/components/product/ProductAnatomy";
+import { ANATOMY_SHEETS } from "@/i18n/anatomy-sheet-copy";
 import { ProductArticleBody, ProductArticleLede } from "@/components/product/ProductArticle";
 import { productArticle } from "@/data/product-articles";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -30,6 +32,8 @@ import { cn } from "@/lib/utils";
  *     all-devices picture as the top image) was the duplicate, and it is gone (#130). On a `lineupFirst` product a
  *     flavour with no `boxImage` gets no tile: its device photo is already one swipe away in the gallery above, so a
  *     grid of the same device photos would be that duplicate again (round "image-sitewide" 2026-09-30, M Bar 9K).
+ *  A flagship with no exploded-view sheet yet keeps its old anatomy block right after the cover (owner 02/10, Caliburn
+ *  G5: the owner is making its exploded view; until then the page keeps the drawn one). M Bar 10K has a sheet → unchanged.
  *  Article round (02/10, designer option A): the product's article (src/data/product-articles.ts) — its lede under the
  *  heading, its buyer-question blocks after the grid. A product with no article renders exactly as before.
  */
@@ -89,6 +93,11 @@ export function ProductMoreDetails({ product }: { product: Product }) {
         )}
         <ProductAnatomySheet product={product} />
       </Container>
+      {product.isFlagship && !ANATOMY_SHEETS[product.slug] && (
+        <div className="mt-10 lg:mt-14">
+          <ProductAnatomy product={product} />
+        </div>
+      )}
 
       <div className="mt-10 flex flex-col lg:mt-14">
         {highlights.map((f, i) => {
