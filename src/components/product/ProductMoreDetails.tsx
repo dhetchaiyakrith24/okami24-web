@@ -153,7 +153,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
           <ProductArticleLede slug={product.slug} />
         </div>
         {cover && (
-          <div className={cn("mt-8 flex flex-col gap-2 lg:mt-10", stage && cover.transparent && "relative z-0 mt-5 lg:mt-6")}>
+          <div className={cn("mt-8 flex flex-col gap-2 lg:mt-10", stage && cover.transparent && "relative z-0 mt-5 lg:mt-12")}>
             <Poster img={cover} sizes="(min-width: 1280px) 1200px, 100vw" />
             <Credit img={cover} linkLabel={dict.product.gallerySourceLinkLabel} />
           </div>
