@@ -40,7 +40,7 @@ import { cn } from "@/lib/utils";
  */
 function Poster({ img, sizes, className }: { img: StoryImage; sizes: string; className?: string }) {
   return (
-    <div className={cn("overflow-hidden rounded-2xl border border-surface-border-soft bg-black", className)}>
+    <div className={cn(!img.transparent && "overflow-hidden rounded-2xl border border-surface-border-soft bg-black", className)}>
       <Image src={img.src} alt={img.alt} width={img.width} height={img.height} sizes={sizes} className="block h-auto w-full" />
     </div>
   );
@@ -83,7 +83,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
         <h3 className="font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">
           {(isColour ? dict.product.moreDetailsAllColours : dict.product.moreDetailsAllFlavours).replace("{count}", String(options.length))}
         </h3>
-        <ul className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6 lg:gap-4">
+        <ul className={cn("grid grid-cols-3 gap-3 sm:grid-cols-4 lg:gap-4", stage && tiles.length === 7 ? "lg:grid-cols-7" : "lg:grid-cols-6")}>
           {tiles.map((t) => (
             <li key={t.id} className="flex flex-col overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
               <div className="relative aspect-square w-full">

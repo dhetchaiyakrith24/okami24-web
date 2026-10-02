@@ -107,6 +107,9 @@ export interface StoryImage {
   sourceUrl?: string;
   width: number;
   height: number;
+  /** The file is a cut-out (transparent background): shown floating on the page, without the poster card
+   *  (owner 02/10 on the G5 aluminium poster: "ฉากหลังติดมาสีดำ ๆ"). */
+  transparent?: boolean;
 }
 
 export interface Compatibility {

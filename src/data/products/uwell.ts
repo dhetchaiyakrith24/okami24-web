@@ -194,7 +194,8 @@ export const uwellProducts: Product[] = [
     ],
     // Article round batch 1 (02/10): each highlight = one of UWELL's own G5 posters (story-*.webp, from
     // files.myuwell.com/uwell/product/caliburn-g5/pc/; story-colours = the left part of UWELL's real-shot.webp strip,
-    // story-battery-v2 = pic10-1 with the empty white margin trimmed — designer 02/10), told one per block in "more details" (`storyDetails`). Text from
+    // story-battery-v3 = pic10-1 with its white studio background cut out (owner 02/10: no box behind the devices; the
+    // aluminium poster pic11 is a cut-out already — both float, `transparent`)), told one per block in "more details" (`storyDetails`). Text from
     // UWELL's G5 page. "top-fill-gpp" went: UWELL's spec sheet ships side-refill pods in the international kit.
     features: [
       {
@@ -234,14 +235,14 @@ export const uwellProducts: Product[] = [
         title: "1600mAh battery",
         description: "UWELL rates the built-in 1600mAh battery at up to 6 days of typical use per charge; it charges over USB-C.",
         subline: "Up to 6 days of typical use per charge (UWELL).",
-        image: { src: "/assets/products/caliburn-g5/story-battery-v2.webp", alt: "Official UWELL poster — 1600mAh battery, up to 6 days of use", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2400, height: 1389 },
+        image: { src: "/assets/products/caliburn-g5/story-battery-v3.webp", alt: "Official UWELL poster — 1600mAh battery, up to 6 days of use", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2421, height: 1352, transparent: true },
       },
       {
         id: "aluminium-airflow",
         title: "Aluminium body, stepless airflow",
         description: "A matte aluminium-alloy body that resists fingerprints, and a side airflow control that adjusts steplessly from a tighter MTL draw to a looser RDL.",
         subline: "Premium in hand, smooth on the draw.",
-        image: { src: "/assets/products/caliburn-g5/story-aluminium.webp", alt: "Official UWELL poster — the Caliburn G5 aluminium body and side airflow control", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1438, height: 1611 },
+        image: { src: "/assets/products/caliburn-g5/story-aluminium.webp", alt: "Official UWELL poster — the Caliburn G5 aluminium body and side airflow control", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1438, height: 1611, transparent: true },
       },
     ],
     compatibility: [gppSideTopCompatibility, usbCNoNote],
