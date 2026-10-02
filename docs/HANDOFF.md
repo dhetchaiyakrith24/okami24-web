@@ -36,16 +36,23 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   vs the "up to 6 days" row + seo-auditor text-length proposal (B) · 3 every clickable-looking image links somewhere
   fitting (B) · 4 reveal-on-scroll, light, CSS only — motion touchable in this batch only (B) · 5 every G5 image to
   IMAGE_SPEC §0 item 8 (B) · 6 owner says "lock" on live + the template written in one doc + next round file drafted (A).
-  Batch 1 MERGED #212 `b2c5d90` (checker PASS 6/6, live 200) [ตรวจแล้ว]. Batches 2–5 = ONE PR from `g5-template-b4` (Friday's call:
-  one sitemap scan + one checker instead of four): story-copy.ts (th/en/zh text + points beside each poster) · FAQ battery
-  = the 6-day row · exploded view from UWELL's NATIVE pc_pic11 (anatomy *-v2; the AI 4K upscale rewrote screen text 35W→35H,
-  designer 03/10 — never upscale with AI where text shows) · links: colour tiles → `#option-<id>` (ProductHero) · pods poster →
-  /products/coil-94 · triple-tap → /technology/gesture-and-triple-tap-control (table `_incoming/g5-template/b3-image-links.md`) ·
-  reveal-on-scroll CSS `.okami-reveal` (globals.css) · cover = hero.webp without its word row, floating · battery v4 + colours v2
-  re-cut from UWELL files (owner 03/10 flagged black box / white bits / torn cable). OWNER 03/10 [ตรวจแล้ว — chat]: batch-2 draft
-  OK · new Thai for triple-tap + screen bodies YES · locked ปุ่มเลื่อนปรับลม + เวอร์ชัน (THAI_STYLE §3) · motion: Higgsfield
-  clips (videos stay on this computer, `_incoming/g5-template/b4/`) vs Friday's CSS — owner 03/10: "ขึ้น web ไปเลย ถ้าไม่เวิร์ค
-  พี่จะใช้ของ Hig" = Friday's CSS ships; Higgsfield = the fallback. Proof running: visible-text sitemap `_incoming/g5-template/b25/vt/` · then Lighthouse base/after · checker.
+  MERGED [ตรวจแล้ว — checker · GitHub green · deploy success · live curl 200]: #212 `b2c5d90` batch 1 (checker 6/6) · #213 `3e086e3`
+  batches 2–5 in one PR (checker 14/14 after one FAIL fixed — white pockets inside the 6 DAYS USE letters; self-merge-check BIG =
+  uwell.ts). What shipped: story-copy.ts (th/en/zh text + 2–3 spec points beside each poster) · FAQ battery = the 6-day row ·
+  exploded view from UWELL's NATIVE pc_pic11 (anatomy *-v2 — an AI 4K upscale rewrote screen text, lesson พ12) · links: colour
+  tiles → `#option-<id>` (ProductHero) · pods poster → /products/coil-94 · triple-tap → /technology/gesture-and-triple-tap-control
+  (`_incoming/g5-template/b3-image-links.md`) · reveal-on-scroll CSS `.okami-reveal` (owner 03/10 "ขึ้น web ไปเลย ถ้าไม่เวิร์ค
+  พี่จะใช้ของ Hig"; Higgsfield loops = fallback, files on this computer `_incoming/g5-template/b4/`) · cover = hero.webp floating,
+  white letter counters cleared · battery v4 + colours v2 re-cut from UWELL files. Proof: visible-text 654 files, 595 changes all on
+  G5, 0 elsewhere · scan.js 0/109 · wordbreak NEW 0 · gallery-probe 45/61 PASS · Lighthouse mobile median 77→76, LCP 6.2 s both.
+  OWNER 03/10 [ตรวจแล้ว — chat]: batch-2 draft OK · new Thai triple-tap + screen bodies · locked ปุ่มเลื่อนปรับลม + เวอร์ชัน.
+  NEXT = batch 6: (a) owner looks at /products/caliburn-g5 on live and says "ล็อก" (or lists fixes) · (b) owner rules the text
+  length: seo-auditor proposes 1,000–2,500 unique Thai chars per product page + one fact at most twice outside the spec table
+  (`_incoming/g5-template/seo-text-length.md`; G5 = 3,288, over because facts repeat — trim the article repeats if he picks it) ·
+  (c) write the template in ONE doc (parts · desktop/mobile layout · text length · image-link rule · reveal) · (d) draft the
+  site-wide round file (brand by brand) into OneDrive `Run prompt/New prompt WEB/2-ยังไม่ทำ/` · round-close (tag g5-template-done),
+  asset-refs sweep (story-battery-v3, story-colours, anatomy v1 gone already). Seen, not done: product FAQ answers are not in the
+  server HTML (shared ProductFAQ) → SEO round idea; zh spec/FAQ text is English site-wide (pre-existing).
 3a PAUSED until the G5 template round closes: round "รอบรูป-ทั้งเว็บ" — THE STANDARD IS CALIBURN G5 (owner 02/10; file renamed from "…แบบMBar10K…", owner 02/10)
   (`docs/rounds/รอบรูป-ทั้งเว็บ-มาตรฐานG5-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
