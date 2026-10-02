@@ -201,7 +201,8 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
                 <span className="label-mono text-xs text-steel" lang="en">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="mt-3 max-w-3xl text-balance font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">{t(th?.title ?? f.title)}</h3>
                 {subline && <p className="mt-4 max-w-2xl text-lg text-balance text-foreground-muted lg:text-xl">{t(subline)}</p>}
-                <div className="mt-8 w-full max-w-5xl lg:mt-12">
+                {/* a portrait poster at the landscape width would fill more than a screen — narrower column */}
+                <div className={cn("mt-8 w-full lg:mt-12", img.height > img.width ? "max-w-md lg:max-w-xl" : "max-w-5xl")}>
                   {f.imageMobile ? (
                     <>
                       <Poster img={f.imageMobile} sizes="100vw" className="lg:hidden" />
