@@ -24,8 +24,10 @@ model: inherit
 Why it exists: work passed the checker and the number gates, then the owner rejected it on the live site
 (LESSONS พ10 · พ11 · พ12 · ช9 · owner review 03/10 on G5). This list is what the owner looks at.
 Distilled from LESSONS ช10 · `docs/IMAGE_SPEC.md` §0 items 6–8 · those reviews — if a source says more or
-differs, the source wins. The owner rejects something this list does not cover = Friday adds one line here
-in the next rules PR (that is how the list keeps up).
+differs, the source wins. **Learn once (owner 03/10 "พลาดแก้ย้อนหลัง เรียนรู้ ไม่พลาดซ้ำเรื่องเดิม"):** the owner
+rejects something this list does not cover = Friday adds one line here **in the same PR as the fix**, so the
+same mistake is caught next time; the owner rejects something the list already covers = the look was not
+done properly — say so in that report (and a lesson in `.claude/LESSONS.md`).
 
 **How to look:** every new or changed image at 100 % on a dark background AND at the size the page shows it
 (390 and 1440); zoom into edges, letters, screens, thin parts (cables, pod tips, wings). A shot of the whole
