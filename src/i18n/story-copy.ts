@@ -104,9 +104,10 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         zh: "充一次电，日常使用最长可达 6 天（UWELL 数据）。",
       },
       body: {
-        th: "ตัวเลข 6 วันคือการใช้งานทั่วไปตามที่ UWELL ระบุ ใช้จริงได้กี่วันขึ้นอยู่กับว่าสูบบ่อยแค่ไหน ตั้งกี่วัตต์ และเปิดช่องลมแค่ไหน",
-        en: "The 6 days is UWELL's figure for typical use. How long yours lasts depends on how often you vape, the wattage and the airflow.",
-        zh: "6 天是 UWELL 给出的日常使用数据。实际能用多久，要看抽吸频率、功率设置和气流大小。",
+        // G5 template round 03/10: the "6 days is UWELL's figure" half went — the subline right above says it
+        th: "ใช้จริงได้กี่วันขึ้นอยู่กับว่าสูบบ่อยแค่ไหน ตั้งกี่วัตต์ และเปิดช่องลมแค่ไหน",
+        en: "How long yours lasts depends on how often you vape, the wattage and the airflow.",
+        zh: "实际能用多久，要看抽吸频率、功率设置和气流大小。",
       },
       points: [
         { text: { th: "แบต 1600mAh ในตัว", en: "1600mAh built in", zh: "内置 1600mAh 电池" }, specKey: "battery" },
