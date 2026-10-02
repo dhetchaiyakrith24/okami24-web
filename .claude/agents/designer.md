@@ -45,7 +45,9 @@ page alone is not looking.
    (owner review 03/10 · git 39097d8 / 9bb698d).
 6. Every image that looks clickable goes somewhere fitting (ช10).
 
-**Taste — the owner decides; flag every ✗ as "below the owner's bar" with the fix:**
+**Taste — not a fail, but Friday fixes every ✗ before merge too (owner 03/10 "เจอตำหนิ ก็แก้ก่อนขึ้นเว็บ"); a fix
+that would change something the owner already approved = leave it, say so in the report (13.3 #5). Flag each ✗
+as "below the owner's bar" with the fix:**
 7. Light like UWELL's official Caliburn G5 set — not over-white, real reflections, not "graphic"/CG
    (IMAGE_SPEC §0 8 · ช9).
 8. Spacing — not cramped, even between blocks; desktop airy, phone tight but not packed (owner review 03/10 ·
