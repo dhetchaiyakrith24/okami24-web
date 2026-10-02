@@ -1157,8 +1157,19 @@ export const uwellProducts: Product[] = [
     // flatcut — no rim). Front only (owner 01/10, item 32): Black Carbon / Black Leather / Green Camo / Midnight Black /
     // Space Gray differ on the BACK, so their swatches = the median colour of UWELL's back panel for that colour
     // (multi-tone finishes: the more colourful half — presize-g3p.js). The 6-colour lineup was removed: it said "all"
-    // over 6 of 16; the new all-colours image (IMAGE_SPEC §0 item 5) comes with the pod-system layout.
+    // over 6 of 16. 02/10: two all-colours images (owner 01/10 "ทั้งหมด 2 ชิ้น" → pills "ทั้งหมด 1" / "ทั้งหมด 2"), UWELL's
+    // order in two groups of 8, the G5 layout — _incoming/image-sitewide/set1/poster.js g3p-a / g3p-b.
     openOnCardPhoto: true,
+    lineupImage: {
+      src: "/assets/products/caliburn-g3-pro/lineup-v2.webp",
+      alt: "UWELL Caliburn G3 Pro, colours 1–8 of 16",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/caliburn-g3-pro/lineup2-v2.webp",
+      alt: "UWELL Caliburn G3 Pro, colours 9–16 of 16",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
     colorVariants: [
       { id: "pink-green", name: "Pink Green", swatchHex: "#986371", image: { src: "/assets/products/caliburn-g3-pro/variant-pink-green-v2.webp", alt: "UWELL Caliburn G3 Pro, Pink Green" } },
       { id: "frozen-aurora", name: "Frozen Aurora", swatchHex: "#c098a6", image: { src: "/assets/products/caliburn-g3-pro/variant-frozen-aurora-v2.webp", alt: "UWELL Caliburn G3 Pro, Frozen Aurora" } },
