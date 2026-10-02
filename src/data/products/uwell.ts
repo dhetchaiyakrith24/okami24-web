@@ -510,12 +510,17 @@ export const uwellProducts: Product[] = [
     // (b) above. Swatches = the frame colour on those banners where the old value was off (Cosmic Gray is champagne-gray,
     // Glass Blue a deep blue, Coral Pink a salmon pink); Golden Carbon keeps a darker gold than Desert Gold (same frame,
     // carbon back). Golden Carbon has no stock — src/data/stock/sold-out.ts (the owner's single stock list).
-    // Image-sitewide round, set 2 (02/10): all-colours image again (owner 01/10 evening, IMAGE_SPEC §0 item 5). Box-shaped
-    // device → "cluster": Cosmic Gray (the card colour) big in front, the other 8 in two rows behind, from this page's colour
-    // photos — _incoming/image-sitewide/set1/boxy.js.
+    // All-colours images (IMAGE_SPEC §0 item 5), 02/10: two groups in the colour order below — the one-image cluster of 9
+    // boxes "looked too small" (owner 02/10) — "cluster" layout (Cosmic Gray big in front in group 1), pills "ทั้งหมด 1" / "ทั้งหมด 2";
+    // _incoming/image-sitewide/dsx/koko-two.js.
     lineupImage: {
-      src: "/assets/products/caliburn-g4-pro-koko/lineup-v2.webp",
-      alt: "UWELL Caliburn G4 Pro KOKO, all 9 colours",
+      src: "/assets/products/caliburn-g4-pro-koko/lineup-v3.webp",
+      alt: "UWELL Caliburn G4 Pro KOKO, colours 1–5 of 9",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/caliburn-g4-pro-koko/lineup2-v3.webp",
+      alt: "UWELL Caliburn G4 Pro KOKO, colours 6–9 of 9",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     colorVariants: [
@@ -1261,12 +1266,17 @@ export const uwellProducts: Product[] = [
     openOnCardPhoto: true,
     // Real UWELL color/finish lineup — "KOKO" is UWELL's touchscreen-edition naming convention
     // (see caliburn-g4-pro-koko's own comment) — same G3 Pro pod platform, not a separate system.
-    // Image-sitewide round, set 2 (02/10): all-colours image again (owner 01/10 evening, IMAGE_SPEC §0 item 5). Box-shaped
-    // device → "cluster": Emerald Green (the card colour) big in front, the other 7 in two rows behind, from this page's colour
-    // photos — _incoming/image-sitewide/set1/boxy.js.
+    // All-colours images (IMAGE_SPEC §0 item 5), 02/10: two groups in the colour order below — the one-image cluster of 8
+    // boxes "looked too small" (owner 02/10) — "cluster" layout (Emerald Green big in front in group 1), pills "ทั้งหมด 1" / "ทั้งหมด 2";
+    // _incoming/image-sitewide/dsx/koko-two.js.
     lineupImage: {
-      src: "/assets/products/caliburn-g3-pro-koko/lineup-v2.webp",
-      alt: "UWELL Caliburn G3 Pro KOKO, all 8 colours",
+      src: "/assets/products/caliburn-g3-pro-koko/lineup-v3.webp",
+      alt: "UWELL Caliburn G3 Pro KOKO, colours 1–4 of 8",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/caliburn-g3-pro-koko/lineup2-v3.webp",
+      alt: "UWELL Caliburn G3 Pro KOKO, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     colorVariants: [
