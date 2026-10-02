@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types/catalog";
@@ -264,13 +264,16 @@ export function ProductHero({
           <div className="flex flex-wrap items-center gap-2 max-lg:order-1">
             {/* owner 03/10: the brand's own logo (linked to its brand page) in place of the text chip, when the file exists */}
             {BRAND_LOGOS[product.brandId] ? (
-              <Link href={`/brands/${getBrand(product.brandId)?.slug ?? product.brandId}`} className="mr-1 inline-flex items-center opacity-90 transition-opacity hover:opacity-100">
+              <Link href={`/brands/${getBrand(product.brandId)?.slug ?? product.brandId}`} className="mr-1 inline-flex h-6 items-center opacity-90 transition-opacity hover:opacity-100">
                 <Image
                   src={BRAND_LOGOS[product.brandId].src}
                   alt={brandName(product.brandId)}
+                  loading="eager"
                   width={BRAND_LOGOS[product.brandId].width}
                   height={BRAND_LOGOS[product.brandId].height}
-                  className="h-5 w-auto lg:h-6"
+                  // one visual letter size for every brand: 20 px (24 px from lg) × the logo's own `scale` (brand-logos.ts)
+                  style={{ "--logo-scale": BRAND_LOGOS[product.brandId].scale ?? 1 } as CSSProperties}
+                  className="h-[calc(1.25rem*var(--logo-scale))] w-auto lg:h-[calc(1.5rem*var(--logo-scale))]"
                 />
               </Link>
             ) : (
