@@ -25,6 +25,7 @@ import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 import { BRAND_LOGOS } from "@/lib/brand-logos";
 import { getBrand } from "@/data/brands";
+import { cn } from "@/lib/utils";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -268,9 +269,13 @@ export function ProductHero({
                 <Image
                   src={BRAND_LOGOS[product.brandId].src}
                   alt={brandName(product.brandId)}
+                  loading="eager"
                   width={BRAND_LOGOS[product.brandId].width}
                   height={BRAND_LOGOS[product.brandId].height}
-                  className="h-5 w-auto lg:h-6"
+                  className={cn(
+                    "w-auto",
+                    BRAND_LOGOS[product.brandId].shape === "square" ? "h-9 lg:h-10" : BRAND_LOGOS[product.brandId].shape === "long" ? "h-3.5 lg:h-4" : "h-5 lg:h-6",
+                  )}
                 />
               </Link>
             ) : (
