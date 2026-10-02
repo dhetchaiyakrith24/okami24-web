@@ -39,6 +39,7 @@ export function ColorVariantRail({
   allLabel,
   isAllSelected,
   onSelectAll,
+  allChips,
   outOfStockLabel,
   className,
 }: {
@@ -49,41 +50,49 @@ export function ColorVariantRail({
   allLabel?: string;
   isAllSelected?: boolean;
   onSelectAll?: () => void;
+  /** More than one "all" image: one pill per image, in order (replaces `allLabel`/`isAllSelected`/`onSelectAll`). */
+  allChips?: { label: string; selected: boolean; onSelect: () => void }[];
   outOfStockLabel?: string;
   /** Extra classes on the root (the product page uses it for its phone-only ordering). */
   className?: string;
 }) {
+  // Several "all" images (lineupImage2 — owner 01/10: Caliburn G3 Pro's 16 colours as two groups of 8): one pill each,
+  // labelled by the parent ("ทั้งหมด 1", "ทั้งหมด 2"); `allLabel`/`isAllSelected`/`onSelectAll` stay the single-pill case.
+  const pills = allChips ?? (onSelectAll && allLabel ? [{ label: allLabel, selected: !!isAllSelected, onSelect: onSelectAll }] : []);
+  const selectedPill = pills.find((p) => p.selected);
   const selected = variants.find((v) => v.id === selectedId);
   const listRef = useRef<HTMLDivElement>(null);
-  useChipAutoscroll(listRef, isAllSelected ? null : selectedId);
+  const anyAll = !!selectedPill;
+  useChipAutoscroll(listRef, anyAll ? null : selectedId);
 
   return (
     <div className={cn("flex flex-col gap-2.5", className)}>
       <span className="label-mono text-xs text-foreground-dim">
         {label}
-        {!isAllSelected && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
-        {isAllSelected && allLabel && <span className="ml-2 font-sans normal-case text-foreground-muted">{allLabel}</span>}
+        {!anyAll && selected && <span className="ml-2 font-sans normal-case text-foreground-muted">{selected.name}</span>}
+        {selectedPill && <span className="ml-2 font-sans normal-case text-foreground-muted">{selectedPill.label}</span>}
       </span>
       <div
         ref={listRef}
         className="okami-chip-row flex flex-wrap items-center gap-2.5 max-lg:-mx-5 max-lg:flex-nowrap max-lg:overflow-x-auto max-lg:overflow-y-hidden max-lg:px-5 max-lg:py-1.5 max-lg:[scrollbar-width:none] max-lg:[&::-webkit-scrollbar]:hidden"
       >
-        {onSelectAll && (
+        {pills.map((p) => (
           <button
+            key={p.label}
             type="button"
-            onClick={onSelectAll}
-            aria-pressed={isAllSelected}
-            title={allLabel}
+            onClick={p.onSelect}
+            aria-pressed={p.selected}
+            title={p.label}
             className={cn(
               "flex h-8 shrink-0 items-center rounded-full border px-3 text-xs font-semibold tracking-tight transition-all duration-150 max-lg:h-11 max-lg:px-4 max-lg:text-sm",
-              isAllSelected
+              p.selected
                 ? "border-ember bg-ember/10 text-foreground"
                 : "border-surface-border text-foreground-muted hover:border-foreground-dim hover:text-foreground"
             )}
           >
-            {allLabel}
+            {p.label}
           </button>
-        )}
+        ))}
         {variants.map((v) => {
           const outOfStock = v.availability === "out-of-stock";
           return (
@@ -95,11 +104,11 @@ export function ColorVariantRail({
               disabled={outOfStock}
               aria-disabled={outOfStock || undefined}
               aria-label={outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : v.name}
-              aria-pressed={!isAllSelected && v.id === selectedId}
+              aria-pressed={!anyAll && v.id === selectedId}
               title={outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : v.name}
               className={cn(
                 "relative h-8 w-8 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-surface-1 transition-all duration-150 max-lg:h-11 max-lg:w-11",
-                !isAllSelected && v.id === selectedId
+                !anyAll && v.id === selectedId
                   ? "scale-110 ring-ember"
                   : "ring-transparent hover:scale-105 hover:ring-surface-border",
                 outOfStock && "cursor-not-allowed hover:scale-100 hover:ring-transparent"

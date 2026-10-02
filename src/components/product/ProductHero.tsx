@@ -101,11 +101,18 @@ export function ProductHero({
   // — it only exists when a real lineup shot does. Starts unselected (an individual color/default
   // photo is still the strongest first impression); the customer opts INTO the lineup view.
   const [showAllColors, setShowAllColors] = useState(lineupFirst);
+  // Which "all" image is shown: `lineupImage2` is a second group (owner 01/10 — Caliburn G3 Pro's 16 colours as two
+  // groups of 8). With two, the pills read "ทั้งหมด 1" / "ทั้งหมด 2" (the label + its number, in every language).
+  const lineups = [product.lineupImage, product.lineupImage2].filter((l): l is NonNullable<typeof l> => !!l);
+  const [allIndex, setAllIndex] = useState(0);
+  const shownLineup = lineups[allIndex] ?? product.lineupImage;
+  const allLabelAt = (i: number) => (lineups.length > 1 ? `${dict.product.allVariantsLabel} ${i + 1}` : dict.product.allVariantsLabel);
   const selectedColor = product.colorVariants?.find((c) => c.id === selectedColorId);
   const selectedFlavor = product.flavorVariants?.find((f) => f.id === selectedFlavorId);
   // "all": the lineup photo. On a lineupFirst product it is also the unpicked start state, so it clears the pick
   // (the photo then claims no option, and the buy action asks for one); elsewhere it keeps the pick, as before.
-  function selectAll() {
+  function selectAll(i = 0) {
+    setAllIndex(i);
     if (lineupFirst) {
       setSelectedColorId(null);
       setSelectedFlavorId(null);
@@ -120,7 +127,7 @@ export function ProductHero({
   const lacksOwnPhoto = (o: { image?: unknown } | undefined) => optionRecords.length >= 2 && !!o && !o.image;
   const selectedRecord = selectedColor ?? selectedFlavor;
   const showNoPhoto = !showAllColors && lacksOwnPhoto(selectedRecord);
-  const heroOverrideImage = showAllColors ? product.lineupImage ?? null : selectedColor?.image ?? selectedFlavor?.image ?? null;
+  const heroOverrideImage = showAllColors ? shownLineup ?? null : selectedColor?.image ?? selectedFlavor?.image ?? null;
   // The display-info entry for whichever image is ACTUALLY shown right now, not just the card's —
   // see this component's own prop doc comment for the bug this fixes.
   const currentImageDisplayInfo = heroOverrideImage
@@ -216,7 +223,7 @@ export function ProductHero({
           },
         ];
   // On a lineupFirst product "all" is where the page starts, not an option — the buy bar then asks for a pick.
-  const selectedOptionLabel = showAllColors ? (product.lineupImage && !lineupFirst ? dict.product.allVariantsLabel : null) : selectedColor?.name ?? selectedFlavor?.name ?? null;
+  const selectedOptionLabel = showAllColors ? (product.lineupImage && !lineupFirst ? allLabelAt(allIndex) : null) : selectedColor?.name ?? selectedFlavor?.name ?? null;
   const priceText = sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : null;
 
   return (
@@ -264,7 +271,8 @@ export function ProductHero({
               label={dict.product.colorLabel}
               allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
               isAllSelected={showAllColors}
-              onSelectAll={product.lineupImage ? selectAll : undefined}
+              onSelectAll={product.lineupImage ? () => selectAll() : undefined}
+              allChips={lineups.length > 1 ? lineups.map((_, i) => ({ label: allLabelAt(i), selected: showAllColors && allIndex === i, onSelect: () => selectAll(i) })) : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
               className="max-lg:order-4"
             />
@@ -281,7 +289,7 @@ export function ProductHero({
               label={dict.product.flavorLabel}
               allLabel={product.lineupImage ? dict.product.allVariantsLabel : undefined}
               isAllSelected={showAllColors}
-              onSelectAll={product.lineupImage ? selectAll : undefined}
+              onSelectAll={product.lineupImage ? () => selectAll() : undefined}
               outOfStockLabel={dict.product.outOfStockChip}
               className="max-lg:order-4"
             />
@@ -366,7 +374,7 @@ export function ProductHero({
           <div className="absolute inset-0 lg:hidden">
             {showAllColors && product.lineupImage && !lineupFirst ? (
               <div className="relative h-full w-full p-2">
-                <ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayMap?.[product.lineupImage.src] ?? null} overrideImage={product.lineupImage} />
+                <ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayMap?.[(shownLineup ?? product.lineupImage).src] ?? null} overrideImage={shownLineup ?? product.lineupImage} />
               </div>
             ) : (
               <MobileVariantGallery
