@@ -28,7 +28,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   OWNER 02/10 afternoon [ตรวจแล้ว — chat]: "จัดการได้เลย … ตัดสินใจได้เลย … เสร็จแล้วรันงานอื่นต่อเลย" + "ไม่ต้องแวะถาม" (this chat).
 2 ahead of main: `git log --oneline origin/main..<branch>` — nothing open after #207 [ตรวจแล้ว — git]. Test server 3412 may be UP
   (`node scripts/test-server.js stop`).
-3 OPEN: round "รอบรูป-ทั้งเว็บ" — THE STANDARD IS CALIBURN G5 (owner 02/10; file renamed from "…แบบMBar10K…", owner 02/10)
+3 OPEN: round "G5 template" (`docs/rounds/รอบG5-แม่แบบ-02-10.txt` version 2, owner-approved 02/10): Caliburn G5 = the template for
+  the whole site, finished in ONE chat (the cloud article chat stopped, #210); touch only the G5 page + shared code it needs.
+  Working files `_incoming/g5-template/` (page list for every batch = `scope.txt` from scope-auditor 02/10; section shots =
+  `story-shot.sh <dir> <origin>`). Batches: 1 story layout — desktop split like M Bar 10K, phone stage with tighter gaps (B) ·
+  2 more text beside each poster, 3 languages, maker facts only + G5 exploded view (ANATOMY_SHEETS) + FAQ g5-battery-life
+  vs the "up to 6 days" row + seo-auditor text-length proposal (B) · 3 every clickable-looking image links somewhere
+  fitting (B) · 4 reveal-on-scroll, light, CSS only — motion touchable in this batch only (B) · 5 every G5 image to
+  IMAGE_SPEC §0 item 8 (B) · 6 owner says "lock" on live + the template written in one doc + next round file drafted (A).
+  Where it stopped: batch 1 — commit `010efd1` on `g5-template-b1`, draft sent to the owner, visible-text sitemap scan running.
+3a PAUSED until the G5 template round closes: round "รอบรูป-ทั้งเว็บ" — THE STANDARD IS CALIBURN G5 (owner 02/10; file renamed from "…แบบMBar10K…", owner 02/10)
   (`docs/rounds/รอบรูป-ทั้งเว็บ-มาตรฐานG5-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
   VOOPOO `b-voopoo/`, coils `b-coils/`).
