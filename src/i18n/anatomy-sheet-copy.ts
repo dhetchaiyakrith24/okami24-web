@@ -58,12 +58,16 @@ export interface AnatomySheet {
   assembled: SheetImage;
   /** base face call-outs, placed on the drawn bottom view (x/y = % of the drawing) */
   base: (SheetCallout & { x: number; y: number; to: [number, number] })[];
+  /** a real back-view photo with its own call-outs (x/y = % of the photo), shown in place of the drawn bottom view —
+   *  for a device whose base has nothing to show (Caliburn G5, round G5 template 02/10) */
+  back?: { image: SheetImage; callouts: (SheetCallout & { x: number; y: number })[] };
   zooms: { id: string; code: string; name: SheetText; image: SheetImage; leds?: boolean }[];
   facts: { specKey: string; text: SheetText }[];
   note: SheetText;
 }
 
 const A = "/assets/products/m-bar-10k/anatomy";
+const G5 = "/assets/products/caliburn-g5/anatomy";
 
 export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
   "m-bar-10k": {
@@ -168,6 +172,101 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
     ],
     note: {
       // owner 2026-09-30: say why the parts are shown apart; no "not the real device" — the photos ARE the real device
+      th: "ภาพแยกชิ้นช่วยให้เห็นว่าแต่ละส่วนอยู่ตรงไหนและทำหน้าที่อะไร",
+      en: "Shown part by part so you can see where each piece sits and what it does.",
+      zh: "分解图让您看清每个部件的位置和作用。",
+    },
+  },
+  // Round "G5 template" batch 2 (owner 02/10: the drawn placeholder → an exploded view). Every image = UWELL's own photo
+  // pc_pic11 (two silver G5, files.myuwell.com/uwell/product/caliburn-g5/pc/pic11.webp) at its own 1438 px, cut at the
+  // pod/frame seam, cropped, Lanczos-scaled only — `_incoming/g5-template/b2/export-anatomy-native.js`; nothing drawn or
+  // generated (an AI 4K upscale rewrote the screen text, 35W → 35H — designer 03/10 — so none is used). Labels rest on
+  // UWELL's page (pod, screen, aluminium body, side AFC) and its battery poster pic10-1 (the USB-C cable plugged into the
+  // side port). The oval side button is not labelled: UWELL's page does not say what it does.
+  "caliburn-g5": {
+    heading: { th: "ไล่ดูทีละส่วน จากบนลงล่าง", en: "Part by part, top to bottom", zh: "逐个部件，自上而下" },
+    sheetTitle: { th: "ภาพแยกชิ้น", en: "Exploded view", zh: "分解图" },
+    parts: [
+      {
+        id: "pod",
+        image: { src: `${G5}/part-pod-v2.webp`, width: 444, height: 441, alt: { th: "หัวพอต GPP ของ Caliburn G5", en: "Caliburn G5 GPP pod", zh: "Caliburn G5 GPP 烟弹" } },
+        callouts: [
+          {
+            n: 1,
+            code: "GPP POD",
+            y: 45,
+            name: { th: "หัวพอต GPP", en: "GPP pod", zh: "GPP 烟弹" },
+            detail: { th: "ถอดเปลี่ยนได้ ปากดูด TPU นุ่มปาก", en: "Swappable, with a soft-touch TPU mouthpiece", zh: "可更换，柔软 TPU 吸嘴" },
+          },
+        ],
+      },
+      {
+        id: "body",
+        image: { src: `${G5}/part-body-v2.webp`, width: 472, height: 1742, alt: { th: "ตัวเครื่อง Caliburn G5 มองจากด้านหน้า", en: "Caliburn G5 body, front view", zh: "Caliburn G5 机身正面" } },
+        callouts: [
+          {
+            n: 2,
+            code: "DISPLAY",
+            y: 40,
+            x: 42,
+            name: { th: "จอสี", en: "Colour screen", zh: "彩色屏" },
+            detail: { th: "0.85 นิ้ว ธีมหน้าจอเข้าชุดกับสีเครื่อง", en: "0.85\", with a screen theme for each colour", zh: "0.85 英寸，每种配色都有专属屏幕主题" },
+            specKey: "screen",
+          },
+          {
+            n: 3,
+            code: "USB-C PORT",
+            y: 46,
+            x: 88,
+            name: { th: "ช่องชาร์จ USB-C", en: "USB-C port", zh: "USB-C 充电口" },
+            detail: { th: "อยู่ด้านข้างตัวเครื่อง", en: "On the side of the body", zh: "位于机身侧面" },
+            specKey: "charging",
+          },
+          {
+            n: 4,
+            code: "BODY",
+            y: 78,
+            x: 80,
+            name: { th: "ตัวเครื่อง", en: "Body", zh: "机身" },
+            detail: { th: "อะลูมิเนียมอัลลอยผิวด้าน รอยนิ้วมือติดยาก", en: "Matte aluminium alloy that resists fingerprints", zh: "哑光铝合金，不易留指纹" },
+            specKey: "materials",
+          },
+        ],
+      },
+    ],
+    assembled: {
+      src: `${G5}/assembled-v2.webp`,
+      width: 472,
+      height: 2086,
+      alt: { th: "Caliburn G5 ทั้งเครื่อง มุมเฉียง", en: "Caliburn G5 assembled, three-quarter view", zh: "Caliburn G5 整机斜角视图" },
+    },
+    base: [],
+    back: {
+      image: { src: `${G5}/back-v2.webp`, width: 436, height: 1922, alt: { th: "Caliburn G5 มองจากด้านหลัง", en: "Caliburn G5, back view", zh: "Caliburn G5 背面" } },
+      callouts: [
+        {
+          n: 5,
+          code: "AIRFLOW",
+          x: 85,
+          y: 52,
+          name: { th: "ปุ่มเลื่อนปรับลม", en: "Airflow slider", zh: "气流调节滑块" },
+          detail: { th: "ปรับช่องลมได้ละเอียดแบบไม่มีขั้น ตั้งแต่ MTL ที่สูบแน่น ถึง RDL ที่โล่ง", en: "Side slider, stepless from MTL to RDL", zh: "侧面滑块，MTL 到 RDL 无级调节" },
+          specKey: "airflow",
+        },
+      ],
+    },
+    zooms: [
+      { id: "screen", code: "DISPLAY", name: { th: "จอสี", en: "Colour screen", zh: "彩色屏" }, image: { src: `${G5}/zoom-screen-v2.webp`, width: 600, height: 600, alt: { th: "จอสีของ Caliburn G5 ระยะใกล้", en: "Caliburn G5 colour screen, close-up", zh: "Caliburn G5 彩色屏特写" } } },
+      { id: "port", code: "USB-C", name: { th: "ช่องชาร์จ", en: "USB-C port", zh: "充电口" }, image: { src: `${G5}/zoom-port-v2.webp`, width: 600, height: 600, alt: { th: "ด้านข้าง Caliburn G5 ระยะใกล้ ช่องชาร์จ USB-C", en: "Caliburn G5 side close-up with the USB-C port", zh: "Caliburn G5 侧面特写，USB-C 充电口" } } },
+      { id: "airflow", code: "AIRFLOW", name: { th: "ปุ่มเลื่อนปรับลม", en: "Airflow slider", zh: "气流调节滑块" }, image: { src: `${G5}/zoom-airflow-v2.webp`, width: 600, height: 600, alt: { th: "ตัวปรับลมด้านข้างของ Caliburn G5 ระยะใกล้", en: "Caliburn G5 side airflow control, close-up", zh: "Caliburn G5 侧面气流调节特写" } } },
+    ],
+    facts: [
+      { specKey: "battery", text: { th: "แบต 1600mAh", en: "1600mAh battery", zh: "1600mAh 电池" } },
+      { specKey: "output", text: { th: "5–35 วัตต์", en: "5–35W", zh: "5–35W" } },
+      { specKey: "battery-life", text: { th: "ใช้งานทั่วไปได้สูงสุด 6 วัน", en: "Up to 6 days of typical use", zh: "日常使用最长 6 天" } },
+      { specKey: "weight", text: { th: "หนัก 65 กรัม", en: "65g", zh: "重 65g" } },
+    ],
+    note: {
       th: "ภาพแยกชิ้นช่วยให้เห็นว่าแต่ละส่วนอยู่ตรงไหนและทำหน้าที่อะไร",
       en: "Shown part by part so you can see where each piece sits and what it does.",
       zh: "分解图让您看清每个部件的位置和作用。",

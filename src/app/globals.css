@@ -294,6 +294,31 @@ html {
   }
 }
 
+/* G5 template round batch 4 (owner 02/10: images rise in lightly as they scroll into view). Pure CSS scroll-driven
+   animation — no script, no package: a browser without `animation-timeline` support, a visitor who asked for reduced
+   motion, or a page without JavaScript simply shows every poster at once. Only opacity and transform move, so nothing
+   on the page shifts. Owner 03/10 could not see the first, fainter version: the poster now starts 64px lower at 92 %
+   and settles over the first third of its way through the screen. */
+@keyframes okami-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 64px, 0) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .okami-reveal {
+      animation: okami-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 35%;
+    }
+  }
+}
+
 /* M1b — the phone hero's permanent background layer (see the comment on the layer itself in
    Hero.tsx). Everything here is scoped to phone/tablet widths and to `.okami-hero-bg`, which the
    markup only renders below `lg`; nothing in this block can reach the desktop hero.

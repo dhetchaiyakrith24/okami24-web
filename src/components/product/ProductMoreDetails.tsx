@@ -2,12 +2,15 @@
 
 import { Fragment, type ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Feature, Product, StoryImage } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductAnatomySheet } from "@/components/product/ProductAnatomySheet";
 import { ProductAnatomy } from "@/components/product/ProductAnatomy";
 import { ANATOMY_SHEETS } from "@/i18n/anatomy-sheet-copy";
+import { STORY_COPY } from "@/i18n/story-copy";
+import { verifiedRows } from "@/lib/verified-specs";
 import { ProductArticleBody, ProductArticleLede } from "@/components/product/ProductArticle";
 import { productArticle } from "@/data/product-articles";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -43,6 +46,17 @@ function Poster({ img, sizes, className }: { img: StoryImage; sizes: string; cla
     <div className={cn(!img.transparent && "overflow-hidden rounded-2xl border border-surface-border-soft bg-black", className)}>
       <Image src={img.src} alt={img.alt} width={img.width} height={img.height} sizes={sizes} className="block h-auto w-full" />
     </div>
+  );
+}
+
+/** A poster that goes somewhere (story `link`): the whole poster is the link, with a hover lift; no link = the plain
+ *  poster, which never looks clickable (G5 template round batch 3). */
+function PosterLink({ href, label, children }: { href?: string; label?: string; children: ReactNode }) {
+  if (!href) return <>{children}</>;
+  return (
+    <Link href={href} aria-label={label} className="group block rounded-2xl transition-transform duration-300 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ember">
+      {children}
+    </Link>
   );
 }
 
@@ -83,18 +97,43 @@ export function ProductMoreDetails({ product }: { product: Product }) {
         <h3 className="font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">
           {(isColour ? dict.product.moreDetailsAllColours : dict.product.moreDetailsAllFlavours).replace("{count}", String(options.length))}
         </h3>
-        <ul className={cn("grid grid-cols-3 gap-3 sm:grid-cols-4 lg:gap-4", stage && tiles.length === 7 ? "lg:grid-cols-7" : "lg:grid-cols-6")}>
-          {tiles.map((t) => (
-            <li key={t.id} className="flex flex-col overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1">
-              <div className="relative aspect-square w-full">
-                <Image src={t.photo!.src} alt={t.photo!.alt} fill sizes="(min-width: 1024px) 16vw, (min-width: 640px) 25vw, 33vw" className="object-contain p-2" />
-              </div>
-              <div className="flex items-start gap-1.5 px-3 pb-3 text-xs font-medium text-foreground-muted max-lg:px-2">
-                <span className="mt-[0.3em] block h-2.5 w-2.5 shrink-0 rounded-full border border-black/10" style={{ backgroundColor: t.swatchHex }} aria-hidden />
-                <span>{t.name}</span>
-              </div>
-            </li>
-          ))}
+        <ul className={cn("grid grid-cols-3 gap-3 sm:grid-cols-4 lg:gap-4", stage && tiles.length === 7 ? "lg:grid-cols-7" : "lg:grid-cols-6", stage && "okami-reveal")}>
+          {tiles.map((t) => {
+            const tile = (
+              <>
+                <div className="relative aspect-square w-full">
+                  <Image src={t.photo!.src} alt={t.photo!.alt} fill sizes="(min-width: 1024px) 16vw, (min-width: 640px) 25vw, 33vw" className="object-contain p-2" />
+                </div>
+                <div className="flex items-start gap-1.5 px-3 pb-3 text-xs font-medium text-foreground-muted max-lg:px-2">
+                  <span className="mt-[0.3em] block h-2.5 w-2.5 shrink-0 rounded-full border border-black/10" style={{ backgroundColor: t.swatchHex }} aria-hidden />
+                  <span>{t.name}</span>
+                </div>
+              </>
+            );
+            // G5 template round batch 3: on the stage layout a tile picks its colour/flavour in the hero (ProductHero
+            // listens for `#option-<id>`); the split pages keep the plain tile
+            return (
+              <li key={t.id} className="flex flex-col overflow-hidden rounded-2xl border border-surface-border-soft bg-surface-1 transition-colors has-[a:hover]:border-ember">
+                {stage ? (
+                  <a
+                    href={`#option-${t.id}`}
+                    className="flex flex-col"
+                    onClick={(e) => {
+                      // the same tile twice = no hashchange; ask the hero again
+                      if (window.location.hash === `#option-${t.id}`) {
+                        e.preventDefault();
+                        window.dispatchEvent(new HashChangeEvent("hashchange"));
+                      }
+                    }}
+                  >
+                    {tile}
+                  </a>
+                ) : (
+                  tile
+                )}
+              </li>
+            );
+          })}
         </ul>
       </Container>
     ) : null;
@@ -176,6 +215,10 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
   const { dict, locale } = useLocale();
   const t = (x: string) => (locale === "th" ? thaiTypographyNode(x) : x);
   const gridAfter = product.storyColoursAfter ?? highlights[highlights.length - 1]?.id;
+  // batch 2 (G5 template round): the three-language story text beside each poster, when the product has one
+  const story = STORY_COPY[product.slug];
+  const rows = verifiedRows(product.specifications);
+  const titleOf = (f: Feature) => story?.[f.id]?.title[locale] ?? copyTh?.[f.id]?.title ?? f.title;
   return (
     <>
       <Container className="mt-8 lg:mt-16">
@@ -184,7 +227,7 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
             <li key={f.id}>
               <a href={`#story-${f.id}`} className="flex h-full flex-col gap-1 rounded-xl border border-surface-border-soft bg-surface-1 px-3 py-2.5 transition-colors hover:border-ember">
                 <span className="label-mono text-[0.65rem] text-steel" lang="en">{String(i + 1).padStart(2, "0")}</span>
-                <span className="text-sm font-medium leading-snug text-foreground">{t(copyTh?.[f.id]?.title ?? f.title)}</span>
+                <span className="text-sm font-medium leading-snug text-foreground">{t(titleOf(f))}</span>
               </a>
             </li>
           ))}
@@ -193,8 +236,12 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
       {highlights.map((f, i) => {
         const img = f.image!;
         const th = copyTh?.[f.id];
-        const subline = th?.subline ?? (locale === "th" ? undefined : f.subline);
-        const captions = th?.captions ?? (locale === "th" ? undefined : f.captions);
+        const sc = story?.[f.id];
+        const subline = sc ? sc.subline?.[locale] : (th?.subline ?? (locale === "th" ? undefined : f.subline));
+        const captions = sc ? sc.captions?.map((c) => c[locale]) : (th?.captions ?? (locale === "th" ? undefined : f.captions));
+        const body = sc?.body[locale] ?? th?.description ?? f.description;
+        const link = sc?.link;
+        const points = (sc?.points ?? []).filter((p) => !p.specKey || rows.some((r) => r.key === p.specKey)).map((p) => p.text[locale]);
         // G5 template round batch 1 (owner 02/10): desktop = the split rhythm of M Bar 10K (poster 7/12, text 5/12,
         // sides alternating, backgrounds alternating); phones keep the centred stage, with tighter gaps between posters.
         // One DOM order for both (headline → poster → text) — the grid places the two text parts beside the poster.
@@ -206,25 +253,27 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
               <Container className="flex flex-col items-center text-center lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-12 lg:text-left">
                 <div className={cn("flex flex-col items-center lg:col-span-5 lg:row-start-1 lg:items-start lg:self-end", textCol)}>
                   <span className="label-mono text-xs text-steel" lang="en">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="mt-2 max-w-3xl text-balance font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground lg:mt-3 lg:text-[2.5rem] lg:leading-[1.05]">{t(th?.title ?? f.title)}</h3>
+                  <h3 className="mt-2 max-w-3xl text-balance font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground lg:mt-3 lg:text-[2.5rem] lg:leading-[1.05]">{t(titleOf(f))}</h3>
                   {subline && <p className="mt-3 max-w-2xl text-lg text-balance text-foreground-muted lg:mt-4 lg:text-xl">{t(subline)}</p>}
                 </div>
                 {/* a portrait poster at the landscape width would fill more than a screen — narrower column */}
                 <div
                   className={cn(
-                    "mt-5 w-full lg:col-span-7 lg:row-span-2 lg:row-start-1 lg:mt-0",
+                    "okami-reveal mt-5 w-full lg:col-span-7 lg:row-span-2 lg:row-start-1 lg:mt-0",
                     flip ? "lg:col-start-6" : "lg:col-start-1",
                     img.height > img.width ? "max-w-md lg:justify-self-center" : "max-w-5xl",
                   )}
                 >
-                  {f.imageMobile ? (
-                    <>
-                      <Poster img={f.imageMobile} sizes="100vw" className="lg:hidden" />
-                      <Poster img={img} sizes="(min-width: 1280px) 700px, 58vw" className="hidden lg:block" />
-                    </>
-                  ) : (
-                    <Poster img={img} sizes="(min-width: 1280px) 700px, (min-width: 1024px) 58vw, 100vw" />
-                  )}
+                  <PosterLink href={link?.href} label={link ? link.label[locale] : undefined}>
+                    {f.imageMobile ? (
+                      <>
+                        <Poster img={f.imageMobile} sizes="100vw" className="lg:hidden" />
+                        <Poster img={img} sizes="(min-width: 1280px) 700px, 58vw" className="hidden lg:block" />
+                      </>
+                    ) : (
+                      <Poster img={img} sizes="(min-width: 1280px) 700px, (min-width: 1024px) 58vw, 100vw" />
+                    )}
+                  </PosterLink>
                 </div>
                 <div className={cn("flex flex-col items-center lg:col-span-5 lg:row-start-2 lg:items-start lg:self-start", textCol)}>
                   {captions && captions.length > 0 && (
@@ -234,7 +283,24 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
                       ))}
                     </ul>
                   )}
-                  <p className="mt-4 max-w-xl text-base leading-relaxed text-pretty text-foreground-muted lg:mt-5 lg:max-w-md">{t(th?.description ?? f.description)}</p>
+                  <p className="mt-4 max-w-xl text-base leading-relaxed text-pretty text-foreground-muted lg:mt-5 lg:max-w-md">{t(body)}</p>
+                  {points.length > 0 && (
+                    // the facts in short — hairline rows like a spec list, left-aligned even in the centred phone column
+                    <ul className="mt-5 w-full max-w-sm border-t border-surface-border-soft text-left lg:max-w-md">
+                      {points.map((p) => (
+                        <li key={p} className="flex items-baseline gap-2.5 border-b border-surface-border-soft py-2.5 text-sm font-medium text-foreground">
+                          <span className="h-1.5 w-1.5 shrink-0 translate-y-[-0.15em] rounded-full bg-ember" aria-hidden />
+                          <span>{t(p)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {link && (
+                    <Link href={link.href} className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-ember transition-colors hover:text-foreground">
+                      {t(link.label[locale])}
+                      <span aria-hidden>›</span>
+                    </Link>
+                  )}
                   <div className="mt-3">
                     <Credit img={img} linkLabel={dict.product.gallerySourceLinkLabel} />
                   </div>

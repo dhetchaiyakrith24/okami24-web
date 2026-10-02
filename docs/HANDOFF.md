@@ -36,7 +36,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   vs the "up to 6 days" row + seo-auditor text-length proposal (B) · 3 every clickable-looking image links somewhere
   fitting (B) · 4 reveal-on-scroll, light, CSS only — motion touchable in this batch only (B) · 5 every G5 image to
   IMAGE_SPEC §0 item 8 (B) · 6 owner says "lock" on live + the template written in one doc + next round file drafted (A).
-  Where it stopped: batch 1 — commit `010efd1` on `g5-template-b1`, draft sent to the owner, visible-text sitemap scan running.
+  Batch 1 MERGED #212 `b2c5d90` (checker PASS 6/6, live 200) [ตรวจแล้ว]. Batches 2–5 = ONE PR from `g5-template-b4` (Friday's call:
+  one sitemap scan + one checker instead of four): story-copy.ts (th/en/zh text + points beside each poster) · FAQ battery
+  = the 6-day row · exploded view from UWELL's NATIVE pc_pic11 (anatomy *-v2; the AI 4K upscale rewrote screen text 35W→35H,
+  designer 03/10 — never upscale with AI where text shows) · links: colour tiles → `#option-<id>` (ProductHero) · pods poster →
+  /products/coil-94 · triple-tap → /technology/gesture-and-triple-tap-control (table `_incoming/g5-template/b3-image-links.md`) ·
+  reveal-on-scroll CSS `.okami-reveal` (globals.css) · cover = hero.webp without its word row, floating · battery v4 + colours v2
+  re-cut from UWELL files (owner 03/10 flagged black box / white bits / torn cable). OWNER 03/10 [ตรวจแล้ว — chat]: batch-2 draft
+  OK · new Thai for triple-tap + screen bodies YES · locked ปุ่มเลื่อนปรับลม + เวอร์ชัน (THAI_STYLE §3) · motion: Higgsfield
+  clips (videos stay on this computer, `_incoming/g5-template/b4/`) vs Friday's CSS — owner 03/10: "ขึ้น web ไปเลย ถ้าไม่เวิร์ค
+  พี่จะใช้ของ Hig" = Friday's CSS ships; Higgsfield = the fallback. Proof running: visible-text sitemap `_incoming/g5-template/b25/vt/` · then Lighthouse base/after · checker.
 3a PAUSED until the G5 template round closes: round "รอบรูป-ทั้งเว็บ" — THE STANDARD IS CALIBURN G5 (owner 02/10; file renamed from "…แบบMBar10K…", owner 02/10)
   (`docs/rounds/รอบรูป-ทั้งเว็บ-มาตรฐานG5-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
