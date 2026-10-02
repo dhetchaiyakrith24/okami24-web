@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import type { Product } from "@/types/catalog";
 import { ProductMedia } from "@/components/visual/ProductMedia";
 import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
@@ -21,6 +23,8 @@ import type { ImageDisplayInfo } from "@/lib/media-quality";
 import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
+import { BRAND_LOGOS } from "@/lib/brand-logos";
+import { getBrand } from "@/data/brands";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -258,7 +262,20 @@ export function ProductHero({
       <Container className="relative grid grid-cols-1 items-center gap-10 py-14 max-lg:gap-4 max-lg:py-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:py-20">
         <div className="order-2 flex flex-col gap-5 max-lg:contents lg:order-1">
           <div className="flex flex-wrap items-center gap-2 max-lg:order-1">
-            <Badge tone="steel">{brandName(product.brandId)}</Badge>
+            {/* owner 03/10: the brand's own logo (linked to its brand page) in place of the text chip, when the file exists */}
+            {BRAND_LOGOS[product.brandId] ? (
+              <Link href={`/brands/${getBrand(product.brandId)?.slug ?? product.brandId}`} className="mr-1 inline-flex items-center opacity-90 transition-opacity hover:opacity-100">
+                <Image
+                  src={BRAND_LOGOS[product.brandId].src}
+                  alt={brandName(product.brandId)}
+                  width={BRAND_LOGOS[product.brandId].width}
+                  height={BRAND_LOGOS[product.brandId].height}
+                  className="h-5 w-auto lg:h-6"
+                />
+              </Link>
+            ) : (
+              <Badge tone="steel">{brandName(product.brandId)}</Badge>
+            )}
             <Badge tone="neutral">{familyName(product.familyId)}</Badge>
             <EditorialTagBadge tag={product.editorialTag} />
           </div>
