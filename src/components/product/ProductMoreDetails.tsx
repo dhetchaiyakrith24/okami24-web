@@ -97,7 +97,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
         <h3 className="font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">
           {(isColour ? dict.product.moreDetailsAllColours : dict.product.moreDetailsAllFlavours).replace("{count}", String(options.length))}
         </h3>
-        <ul className={cn("grid grid-cols-3 gap-3 sm:grid-cols-4 lg:gap-4", stage && tiles.length === 7 ? "lg:grid-cols-7" : "lg:grid-cols-6")}>
+        <ul className={cn("grid grid-cols-3 gap-3 sm:grid-cols-4 lg:gap-4", stage && tiles.length === 7 ? "lg:grid-cols-7" : "lg:grid-cols-6", stage && "okami-reveal")}>
           {tiles.map((t) => {
             const tile = (
               <>
@@ -259,7 +259,7 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
                 {/* a portrait poster at the landscape width would fill more than a screen — narrower column */}
                 <div
                   className={cn(
-                    "mt-5 w-full lg:col-span-7 lg:row-span-2 lg:row-start-1 lg:mt-0",
+                    "okami-reveal mt-5 w-full lg:col-span-7 lg:row-span-2 lg:row-start-1 lg:mt-0",
                     flip ? "lg:col-start-6" : "lg:col-start-1",
                     img.height > img.width ? "max-w-md lg:justify-self-center" : "max-w-5xl",
                   )}
