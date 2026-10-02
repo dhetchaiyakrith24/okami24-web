@@ -34,12 +34,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   blocks it; stale HTML can point at deleted JS) — not recommended. Owner also asked downsides (data · SEO · trust) — answered.
   Owner: the gap looks like seconds; SEO is his only worry; Friday advised 04:00 + 12:00 windows. OWNER ANSWER 02/10 [ตรวจแล้ว — chat]: "ยังก่อน ทำรูปแบบเดิมไปก่อน" — keep deploy-on-merge; the owner will
   time the next deploy himself. Deploys ~10/day (4–16, `_incoming/deploy-days.txt`).
-2 OPEN PR #195 `feat-g3p-two-lineups` (head dc3a478 = main merged in): `Product.lineupImage2` + ColorVariantRail pills "ทั้งหมด 1/2"
-  (shared ProductHero → full-sitemap proof) + G3 Pro lineup-v2 / lineup2-v2 (G5 layout, 8 + 8). Proof `_incoming/image-sitewide/
-  set1/proofe/`: first full-sitemap visible-text diff (107 pages × 3 × 2) = 12 changes, all the two pills on caliburn-g3-pro
-  [ตรวจแล้ว]; shots `shots/cmp-390.png` / `cmp-1440.png`; a re-scan after merging main was RUNNING at the move (`vt-after2`,
-  `vt-before2`, diff → `vt-diff2`). STILL TO DO: head-check, gallery-probe both modes, checker (brief like `set1/checker-brief-d.md`),
-  then merge (deploy-on-merge stays — owner 02/10). Test server 3412 may be UP (`node scripts/test-server.js status` / `stop`).
+2 MERGED 02/10 (owner item (4) done): #195 `a922c31` — `Product.lineupImage2` + ColorVariantRail pills "ทั้งหมด 1/2" (shared
+  ProductHero) + G3 Pro lineup-v2 / lineup2-v2 (G5 layout, 8 + 8) [ตรวจแล้ว]: tsc 0 · eslint 0 · verify:catalog 29/29 ·
+  visible-text full sitemap 109 pages × 3 × 2 = 12 changes, all the two pills (`set1/proofe/vt-diff2/`) · head-check 61/61 same
+  (`proofe/head-check2.txt`) · gallery-probe both modes 45/61, 0 FLASH/STUCK · checker PASS (brief `set1/checker-brief-e.md`) ·
+  checks green · BIG; deploy 36996263482, live [ตรวจแล้ว — curl: page + both files 200, page serves them]. Owner has not seen it
+  [รอเจ้าของ] — shots `proofe/shots/cmp-390.png` / `cmp-1440.png`. Test server 3412 may be UP (`node scripts/test-server.js stop`).
 3 OPEN: round "รอบรูป-ทั้งเว็บ" — THE STANDARD IS CALIBURN G5 (owner 02/10; file renamed from "…แบบMBar10K…", owner 02/10)
   (`docs/rounds/รอบรูป-ทั้งเว็บ-มาตรฐานG5-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
