@@ -659,11 +659,11 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-s3/variants/spray-black.webp",
-        alt: "VOOPOO DRAG S3, Spray Black, isolated product shot",
-        angle: "Front, isolated",
+        src: "/assets/products/drag-s3/card-v2.webp",
+        alt: "VOOPOO DRAG S3, Spray Black, three-quarter view",
+        angle: "three-quarter, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) of this colour's photo",
         transparentBackground: true,
-        sourceName: "vapevo.com (authorized EU retailer, Shopify product gallery)",
+        sourceName: "OKami24 render (Higgsfield) from vapevo.com's photo of this colour",
         sourceUrl: "https://www.vapevo.com/en/products/voopoo-drag-s3-kit-e-cigarette-60w-3000mah-5ml",
       },
     ],
@@ -678,14 +678,18 @@ export const voopooProducts: Product[] = [
     // authorized EU VOOPOO retailer — real, non-AI, isolated studio photography, no box, device
     // fills most of an 800×800 frame) at ~220×751 after cropping — a ~4x resolution gain. Every
     // color re-verified against this new source before deploying.
+    // 02/10 (image-sitewide, G5 standard): every colour = a Higgsfield 4K remake of the photo above (remover cut, 22/22 on
+    // the fidelity check), tilted 12°; card-v2 = the Spray Black remake upright; swatches = the median body colour of
+    // those photos (several were guessed from the names). Scripts + sheets: _incoming/image-sitewide/dsx/ (map: scripts/process-images.map.json).
+    openOnCardPhoto: true,
     colorVariants: [
-      { id: "spray-black", name: "Spray Black", swatchHex: "#2b2b2b", image: { src: "/assets/products/drag-s3/variants/spray-black.webp", alt: "VOOPOO DRAG S3, Spray Black" } },
-      { id: "white", name: "White", swatchHex: "#eef0f2", image: { src: "/assets/products/drag-s3/variants/white.webp", alt: "VOOPOO DRAG S3, White" } },
-      { id: "pink", name: "Pink", swatchHex: "#e8899a", image: { src: "/assets/products/drag-s3/variants/pink.webp", alt: "VOOPOO DRAG S3, Pink" } },
-      { id: "blue", name: "Blue", swatchHex: "#2a6fbd", image: { src: "/assets/products/drag-s3/variants/blue.webp", alt: "VOOPOO DRAG S3, Blue" } },
-      { id: "green", name: "Green", swatchHex: "#4a8a5c", image: { src: "/assets/products/drag-s3/variants/green.webp", alt: "VOOPOO DRAG S3, Green" } },
-      { id: "brown", name: "Brown", swatchHex: "#5c4433", image: { src: "/assets/products/drag-s3/variants/brown.webp", alt: "VOOPOO DRAG S3, Brown" } },
-      { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-s3/variants/metal-gray.webp", alt: "VOOPOO DRAG S3, Metal Gray" } },
+      { id: "spray-black", name: "Spray Black", swatchHex: "#363636", image: { src: "/assets/products/drag-s3/variant-spray-black-v2.webp", alt: "VOOPOO DRAG S3, Spray Black" } },
+      { id: "white", name: "White", swatchHex: "#cdcdcd", image: { src: "/assets/products/drag-s3/variant-white-v2.webp", alt: "VOOPOO DRAG S3, White" } },
+      { id: "pink", name: "Pink", swatchHex: "#dccac9", image: { src: "/assets/products/drag-s3/variant-pink-v2.webp", alt: "VOOPOO DRAG S3, Pink" } },
+      { id: "blue", name: "Blue", swatchHex: "#435666", image: { src: "/assets/products/drag-s3/variant-blue-v2.webp", alt: "VOOPOO DRAG S3, Blue" } },
+      { id: "green", name: "Green", swatchHex: "#6f7c69", image: { src: "/assets/products/drag-s3/variant-green-v2.webp", alt: "VOOPOO DRAG S3, Green" } },
+      { id: "brown", name: "Brown", swatchHex: "#7b4929", image: { src: "/assets/products/drag-s3/variant-brown-v2.webp", alt: "VOOPOO DRAG S3, Brown" } },
+      { id: "metal-gray", name: "Metal Gray", swatchHex: "#646b6c", image: { src: "/assets/products/drag-s3/variant-metal-gray-v2.webp", alt: "VOOPOO DRAG S3, Metal Gray" } },
     ],
     // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
     // individually-verified shop.voopoo.com photos above.
@@ -745,11 +749,11 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-x3/variants/spray-black.webp",
-        alt: "VOOPOO DRAG X3, Spray Black, isolated product shot",
-        angle: "Front, isolated",
+        src: "/assets/products/drag-x3/card-v2.webp",
+        alt: "VOOPOO DRAG X3, Spray Black, three-quarter view",
+        angle: "three-quarter, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) of this colour's photo",
         transparentBackground: true,
-        sourceName: "vapevo.com (authorized EU retailer, Shopify product gallery)",
+        sourceName: "OKami24 render (Higgsfield) from vapevo.com's photo of this colour",
         sourceUrl: "https://www.vapevo.com/en/products/voopoo-drag-x3-kit-e-cigarette-80w-5ml",
       },
     ],
@@ -764,19 +768,23 @@ export const voopooProducts: Product[] = [
     // ~210×761 after cropping — a ~4x resolution gain that also fixes the torn edges outright
     // (fresh source, not a repair of the old one). Card asset switched from a separate, smaller
     // "card.png" to this same real "Spray Black" identity.
+    // 02/10 (image-sitewide, G5 standard): every colour = a Higgsfield 4K remake of the photo above (remover cut, 22/22 on
+    // the fidelity check), tilted 12°; card-v2 = the Spray Black remake upright; swatches = the median body colour of
+    // those photos (several were guessed from the names). Scripts + sheets: _incoming/image-sitewide/dsx/ (map: scripts/process-images.map.json).
+    openOnCardPhoto: true,
     colorVariants: [
-      { id: "gray-metal", name: "Gray Metal", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-x3/variants/gray-metal.webp", alt: "VOOPOO DRAG X3, Gray Metal" } },
+      { id: "gray-metal", name: "Gray Metal", swatchHex: "#696964", image: { src: "/assets/products/drag-x3/variant-gray-metal-v2.webp", alt: "VOOPOO DRAG X3, Gray Metal" } },
       {
         id: "spray-black",
         name: "Spray Black",
-        swatchHex: "#2b2b2b",
-        image: { src: "/assets/products/drag-x3/variants/spray-black.webp", alt: "VOOPOO DRAG X3, Spray Black" },
+        swatchHex: "#3a3a3a",
+        image: { src: "/assets/products/drag-x3/variant-spray-black-v2.webp", alt: "VOOPOO DRAG X3, Spray Black" },
       },
-      { id: "glow-pink", name: "Glow Pink", swatchHex: "#e8558a", image: { src: "/assets/products/drag-x3/variants/glow-pink.webp", alt: "VOOPOO DRAG X3, Glow Pink" } },
-      { id: "champagne-golden", name: "Champagne Golden", swatchHex: "#d4b483", image: { src: "/assets/products/drag-x3/variants/champagne-golden.webp", alt: "VOOPOO DRAG X3, Champagne Golden" } },
-      { id: "sky-blue", name: "Sky Blue", swatchHex: "#7fb8d9", image: { src: "/assets/products/drag-x3/variants/sky-blue.webp", alt: "VOOPOO DRAG X3, Sky Blue" } },
-      { id: "moss-green", name: "Moss Green", swatchHex: "#5c7a4a", image: { src: "/assets/products/drag-x3/variants/moss-green.webp", alt: "VOOPOO DRAG X3, Moss Green" } },
-      { id: "aurora-purple", name: "Aurora Purple", swatchHex: "#7b4a8e", image: { src: "/assets/products/drag-x3/variants/aurora-purple.webp", alt: "VOOPOO DRAG X3, Aurora Purple" } },
+      { id: "glow-pink", name: "Glow Pink", swatchHex: "#e5cfd0", image: { src: "/assets/products/drag-x3/variant-glow-pink-v2.webp", alt: "VOOPOO DRAG X3, Glow Pink" } },
+      { id: "champagne-golden", name: "Champagne Golden", swatchHex: "#e1dfd4", image: { src: "/assets/products/drag-x3/variant-champagne-golden-v2.webp", alt: "VOOPOO DRAG X3, Champagne Golden" } },
+      { id: "sky-blue", name: "Sky Blue", swatchHex: "#2b9dd2", image: { src: "/assets/products/drag-x3/variant-sky-blue-v2.webp", alt: "VOOPOO DRAG X3, Sky Blue" } },
+      { id: "moss-green", name: "Moss Green", swatchHex: "#1f975d", image: { src: "/assets/products/drag-x3/variant-moss-green-v2.webp", alt: "VOOPOO DRAG X3, Moss Green" } },
+      { id: "aurora-purple", name: "Aurora Purple", swatchHex: "#ba4fdd", image: { src: "/assets/products/drag-x3/variant-aurora-purple-v2.webp", alt: "VOOPOO DRAG X3, Aurora Purple" } },
     ],
     // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
     // individually-verified shop.voopoo.com photos above.
@@ -847,11 +855,11 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/vinci-s/variants/black.webp",
-        alt: "VOOPOO VINCI S, Black, isolated product shot",
-        angle: "Front, isolated",
+        src: "/assets/products/vinci-s/card-v2.webp",
+        alt: "VOOPOO VINCI S, Black, three-quarter view",
+        angle: "three-quarter, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) of this colour's photo",
         transparentBackground: true,
-        sourceName: "vapevo.com (authorized EU retailer, Shopify product gallery)",
+        sourceName: "OKami24 render (Higgsfield) from vapevo.com's photo of this colour",
         sourceUrl: "https://www.vapevo.com/en/products/voopoo-vinci-s-kit-e-cigarette-40w-2000mah-4-5ml",
       },
     ],
@@ -866,15 +874,19 @@ export const voopooProducts: Product[] = [
     // VOOPOO retailer, isolated studio photography, no box, device near-full-bleed top to bottom)
     // at ~200×724 after cropping — the strongest resolution gain of the 4 VOOPOO products in this
     // pass, and fixes the torn edge outright (fresh source, not a repair of the old one).
+    // 02/10 (image-sitewide, G5 standard): every colour = a Higgsfield 4K remake of the photo above (remover cut, 22/22 on
+    // the fidelity check), tilted 12°; card-v2 = the Black remake upright; swatches = the median body colour of
+    // those photos (several were guessed from the names). Scripts + sheets: _incoming/image-sitewide/dsx/ (map: scripts/process-images.map.json).
+    openOnCardPhoto: true,
     colorVariants: [
-      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/vinci-s/variants/black.webp", alt: "VOOPOO VINCI S, Black" } },
-      { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/vinci-s/variants/silver.webp", alt: "VOOPOO VINCI S, Silver" } },
-      { id: "grey", name: "Grey", swatchHex: "#5c5f63", image: { src: "/assets/products/vinci-s/variants/grey.webp", alt: "VOOPOO VINCI S, Grey" } },
-      { id: "blue-gradient", name: "Blue Gradient", swatchHex: "#3a7ca8", image: { src: "/assets/products/vinci-s/variants/blue-gradient.webp", alt: "VOOPOO VINCI S, Blue Gradient" } },
-      { id: "green-gradient", name: "Green Gradient", swatchHex: "#4a8a5c", image: { src: "/assets/products/vinci-s/variants/green-gradient.webp", alt: "VOOPOO VINCI S, Green Gradient" } },
-      { id: "gold-gradient", name: "Gold Gradient", swatchHex: "#c9a24b", image: { src: "/assets/products/vinci-s/variants/gold-gradient.webp", alt: "VOOPOO VINCI S, Gold Gradient" } },
-      { id: "neon", name: "Neon", swatchHex: "#c6f24a", image: { src: "/assets/products/vinci-s/variants/neon.webp", alt: "VOOPOO VINCI S, Neon" } },
-      { id: "pink", name: "Pink", swatchHex: "#e8899a", image: { src: "/assets/products/vinci-s/variants/pink.webp", alt: "VOOPOO VINCI S, Pink" } },
+      { id: "black", name: "Black", swatchHex: "#292a29", image: { src: "/assets/products/vinci-s/variant-black-v2.webp", alt: "VOOPOO VINCI S, Black" } },
+      { id: "silver", name: "Silver", swatchHex: "#b7b7b7", image: { src: "/assets/products/vinci-s/variant-silver-v2.webp", alt: "VOOPOO VINCI S, Silver" } },
+      { id: "grey", name: "Grey", swatchHex: "#4f4f4f", image: { src: "/assets/products/vinci-s/variant-grey-v2.webp", alt: "VOOPOO VINCI S, Grey" } },
+      { id: "blue-gradient", name: "Blue Gradient", swatchHex: "#1090be", image: { src: "/assets/products/vinci-s/variant-blue-gradient-v2.webp", alt: "VOOPOO VINCI S, Blue Gradient" } },
+      { id: "green-gradient", name: "Green Gradient", swatchHex: "#76ab74", image: { src: "/assets/products/vinci-s/variant-green-gradient-v2.webp", alt: "VOOPOO VINCI S, Green Gradient" } },
+      { id: "gold-gradient", name: "Gold Gradient", swatchHex: "#be8953", image: { src: "/assets/products/vinci-s/variant-gold-gradient-v2.webp", alt: "VOOPOO VINCI S, Gold Gradient" } },
+      { id: "neon", name: "Neon", swatchHex: "#9743c0", image: { src: "/assets/products/vinci-s/variant-neon-v2.webp", alt: "VOOPOO VINCI S, Neon" } },
+      { id: "pink", name: "Pink", swatchHex: "#d89cab", image: { src: "/assets/products/vinci-s/variant-pink-v2.webp", alt: "VOOPOO VINCI S, Pink" } },
     ],
     // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 8
     // individually-verified shop.voopoo.com photos above.
