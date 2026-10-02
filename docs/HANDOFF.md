@@ -151,8 +151,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - Language of reports (owner 02/10: chat = Thai for the parts he reads): 4 proposals queued for the next housekeeping round —
     OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบเก็บบ้าน-ครั้งถัดไป-ของที่รอ.txt` (owner: "เขียนไว้ใน Run prompt รอบเก็บบ้าน").
     OWNER 03/10 [ตรวจแล้ว — chat], also for the next housekeeping round: (D) a lower chat-move threshold in image rounds ·
-    (E) lighter rules overall · owner-eye drafts (13.8, PR #216): the draft does not hold the work for now — if misses
-    keep slipping through, switch to "wait for the owner's answer".
+    (E) lighter rules overall · owner eye: ไม่มีส่งร่าง ขั้นตอนเท่าเดิม (PR #218 #219).
   - Unreferenced old photos (G3 Pro/KOKO, G4 Pro KOKO, G4 Classic, ARGUS, Zero Nano, Drag 6, G5 old variants + lineup.webp; 02/10:
     S3 / X3 / VINCI S variants/*.webp + lineup.webp, KOKO + ARGUS G3/G4 mini lineup-v2, ARGUS G4 lineup.webp …):
     sweep at the round close with `npx tsx scripts/asset-refs.ts` (card.png of G5 / G4 Pro KOKO stay — home cinematic scenes).
