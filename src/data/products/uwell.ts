@@ -169,29 +169,57 @@ export const uwellProducts: Product[] = [
       { key: "screen", label: "Display", value: "0.85\" colour screen", sourceStatus: "verified" },
       // Data round (2026-09-24, batch 5): the G5 manual (manuals.plus copy) states "Capacity 3.0ml / 2.0ml" (by market
       // version) and the product page "Top Refill"; "magnetic connection" is not in either → dropped.
-      { key: "pod", label: "Pod capacity", value: "3.0mL (2.0mL in TPD markets), top refill", sourceStatus: "verified", sourceUrl: "https://manuals.plus/m/5709a095303c89dbb3fe992bd7b3cf31ba928aba1ad3f284fbfdc84d4b5fc06d" },
+      // Article round 02/10: UWELL's own spec sheet lists the in-box pods per market version — INT = side-refill GPP pods,
+      // FDA/TPD/CRC = top-refill — so "top refill" alone was true only for some versions; 2mL = TPD & CRC.
+      { key: "pod", label: "Pod capacity", value: "3mL (2mL in TPD & CRC versions); side- or top-refill pods by market version", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g5/pc/specifi.webp" },
+      { key: "included-pod", label: "Included pod", value: "3 pods per kit, one of them a 0.6Ω GPP Alpha cartridge (types by market version)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g5/pc/specifi.webp" },
+      { key: "battery-life", label: "Battery life", value: "Up to 6 days of typical use (UWELL's figure)", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5" },
+      { key: "airflow", label: "Airflow", value: "Stepless side airflow control, MTL to RDL", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5" },
+      { key: "materials", label: "Materials", value: "PCTG, aluminium alloy with a matte finish", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g5/pc/specifi.webp" },
+      { key: "weight", label: "Weight", value: "65g", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g5/pc/specifi.webp" },
       { key: "control", label: "Control system", value: "Smart Triple-Tap Control (gesture-based mode switching)", sourceStatus: "verified" },
       { key: "charging", label: "Charging", value: "USB-C", sourceStatus: "verified" },
       { key: "pod-compat", label: "Pod platform", value: "UWELL GPP cartridge platform", sourceStatus: "verified" },
     ],
+    // Article round batch 1 (02/10): each highlight = one of UWELL's own G5 posters (story-*.webp, from
+    // files.myuwell.com/uwell/product/caliburn-g5/pc/), told one per block in "more details" (`storyDetails`). Text from
+    // UWELL's G5 page. "top-fill-gpp" went: UWELL's spec sheet ships side-refill pods in the international kit.
     features: [
+      {
+        id: "three-pods",
+        title: "Three pods in the kit",
+        description: "Every G5 kit comes with three pods, one of them UWELL's new GPP Alpha cartridge, so you start with spares in the box.",
+        image: { src: "/assets/products/caliburn-g5/story-three-pods.webp", alt: "Official UWELL Caliburn G5 poster — the device, its box and three pods", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2400, height: 1029 },
+      },
+      {
+        id: "gpp-alpha",
+        title: "GPP Alpha cartridge",
+        description: "UWELL's new Alpha pod is built for a longer coil life and steady flavour from the first puff to the last, with a leak-resistant design and a soft-touch TPU mouthpiece.",
+        image: { src: "/assets/products/caliburn-g5/story-alpha-pod.webp", alt: "Official UWELL poster of the GPP Alpha cartridge", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2400, height: 1412 },
+      },
       {
         id: "triple-tap",
         title: "Smart Triple-Tap Control",
-        description:
-          "A tap-based gesture sensor replaces a row of buttons for switching between output modes and reading device status, keeping the shell free of extra hardware.",
+        description: "A tap sensor in the body takes a triple tap as a shortcut — set it to switch mode, screen theme or brightness — so it works even when you cannot see the screen.",
+        image: { src: "/assets/products/caliburn-g5/story-triple-tap.webp", alt: "Official UWELL poster — switching the Caliburn G5 with a triple tap", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1050, height: 613 },
       },
       {
         id: "display-x-ui",
         title: "Immersive Design × UI",
-        description:
-          "The 0.85\" colour display renders a themed UI that matches the device finish, showing battery, wattage, and mode at a glance.",
+        description: "Each colour comes with its own screen theme on the 0.85\" colour display, so the finish and the screen match, with battery, wattage and mode at a glance.",
+        image: { src: "/assets/products/caliburn-g5/story-ui-theme.webp", alt: "Official UWELL poster — the Mystic Forest colour and its screen theme", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2400, height: 1115 },
       },
       {
-        id: "top-fill-gpp",
-        title: "Top-fill GPP pods",
-        description:
-          "Pods fill from the top without removing them from the device.",
+        id: "long-run-battery",
+        title: "1600mAh battery",
+        description: "UWELL rates the built-in 1600mAh battery at up to 6 days of typical use per charge; it charges over USB-C.",
+        image: { src: "/assets/products/caliburn-g5/story-battery.webp", alt: "Official UWELL poster — 1600mAh battery, up to 6 days of use", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2400, height: 1275 },
+      },
+      {
+        id: "aluminium-airflow",
+        title: "Aluminium body, stepless airflow",
+        description: "A matte aluminium-alloy body that resists fingerprints, and a side airflow control that adjusts steplessly from a tighter MTL draw to a looser RDL.",
+        image: { src: "/assets/products/caliburn-g5/story-aluminium.webp", alt: "Official UWELL poster — the Caliburn G5 aluminium body and side airflow control", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1438, height: 1611 },
       },
     ],
     compatibility: [gppCompatibility, usbCNoNote],
@@ -205,7 +233,7 @@ export const uwellProducts: Product[] = [
         id: "g5-pods",
         question: "What pods does the Caliburn G5 use?",
         answer:
-          "It uses UWELL's GPP cartridge platform — the same top-fill pod family used across most current Caliburn devices, available in multiple coil resistances.",
+          "It uses UWELL's GPP cartridge platform — every GPP cartridge fits, side-refill or top-refill, in several coil resistances.",
       },
       {
         id: "g5-battery-life",
