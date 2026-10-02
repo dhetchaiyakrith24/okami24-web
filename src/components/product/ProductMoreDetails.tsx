@@ -143,7 +143,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
       <Container className="pt-14 lg:pt-20">
         {/* G5 template fixes (owner 03/10): on the stage layout a floating cover slides up under the heading — the wings sit
             behind the text for depth, no frame; the text stays on top */}
-        <div className={cn(stage && cover?.transparent && "relative z-10")}>
+        <div className={cn(stage && cover?.transparent && "relative z-10 [text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_0_18px_rgba(0,0,0,0.85)]")}>
           <SectionHeading
             eyebrow={dict.product.featuresEyebrow}
             title={<span id="more-details-title">{dict.product.moreDetailsTitle}</span>}
@@ -152,7 +152,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
           <ProductArticleLede slug={product.slug} />
         </div>
         {cover && (
-          <div className={cn("mt-8 flex flex-col gap-2 lg:mt-10", stage && cover.transparent && "relative z-0 -mt-6 lg:-mt-36")}>
+          <div className={cn("mt-8 flex flex-col gap-2 lg:mt-10", stage && cover.transparent && "relative z-0 -mt-4 lg:-mt-20")}>
             <Poster img={cover} sizes="(min-width: 1280px) 1200px, 100vw" />
             <Credit img={cover} linkLabel={dict.product.gallerySourceLinkLabel} />
           </div>
