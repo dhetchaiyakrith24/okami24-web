@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types/catalog";
@@ -25,7 +25,6 @@ import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 import { BRAND_LOGOS } from "@/lib/brand-logos";
 import { getBrand } from "@/data/brands";
-import { cn } from "@/lib/utils";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -272,10 +271,9 @@ export function ProductHero({
                   loading="eager"
                   width={BRAND_LOGOS[product.brandId].width}
                   height={BRAND_LOGOS[product.brandId].height}
-                  className={cn(
-                    "w-auto",
-                    BRAND_LOGOS[product.brandId].shape === "square" ? "h-9 lg:h-10" : BRAND_LOGOS[product.brandId].shape === "long" ? "h-3.5 lg:h-4" : "h-5 lg:h-6",
-                  )}
+                  // one visual letter size for every brand: 20 px (24 px from lg) × the logo's own `scale` (brand-logos.ts)
+                  style={{ "--logo-scale": BRAND_LOGOS[product.brandId].scale ?? 1 } as CSSProperties}
+                  className="h-[calc(1.25rem*var(--logo-scale))] w-auto lg:h-[calc(1.5rem*var(--logo-scale))]"
                 />
               </Link>
             ) : (
