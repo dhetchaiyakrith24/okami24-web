@@ -51,7 +51,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "หัวพอต GPP Alpha", en: "GPP Alpha cartridge", zh: "GPP Alpha 烟弹" },
       subline: { th: "คอยล์ใช้ได้นานขึ้น รสชาติไม่ดรอป", en: "Built to last. No flavour drop.", zh: "更耐用，口感不衰减。" },
       body: {
-        th: "หัวนี้ใช้ AlphaCore ของ UWELL สูบไปเรื่อย ๆ ก็ยังไม่ต้องรีบเปลี่ยนหัว",
+        th: "หัวนี้ใช้ AlphaCore ของ UWELL เปลี่ยนหัวน้อยลง",
         en: "It runs on UWELL's AlphaCore — keep vaping and there's no rush to change the pod.",
         zh: "采用 UWELL 的 AlphaCore 技术，一直抽下去也不用急着换烟弹。",
       },
