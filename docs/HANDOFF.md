@@ -11,35 +11,23 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — the 02/10 chat merged #183 `81c5dc0` (rules: temporary rulings carry an
-  end date, TEAM_RULES 13.6 + round-close step 6; checker PASS · SMALL) and #184 `1107f0d` Caliburn G5: all 7 colours = UWELL's
-  own per-colour renders tilted 12°, card-v2.webp (Mystic Forest tilted, 4:5), lineup-v2.webp (owner pick 3) (checker PASS 5/5 ·
-  GitHub checks green · self-merge-check BIG) [ตรวจแล้ว]; deploy 36935743985, live [ตรวจแล้ว — curl: 9/9 new files 200, page
-  serves them]. Then #186 `629f612` (the 7-baseline-page hold lifted — TEAM_RULES 13.5/13.7/13.8 + §18; checker PASS after 1
-  fix round · BIG) [ตรวจแล้ว].
-  Then #187 `37deacf` (owner "การ์ดเอาแบบตรงเหมือนเดิมดีกว่า": G5 card-v3 = the upright UWELL render + `openOnCardPhoto`; set 1
-  lineup-v2 for G4 / G5 Lite / G5 Lite SE in the G5 layout) (checker PASS 4/4 · gallery-probe both modes 45/61, 0 FLASH/STUCK ·
-  BIG) [ตรวจแล้ว]; deploy 36942605379, live [ตรวจแล้ว — curl: card-v3 + 3 lineups 200, pages serve them].
-  Overnight 02/10 (checker PASS each · checks green · BIG · live curl 200) [ตรวจแล้ว]: #190 G4 mini + G4 Classic lineups · #191
-  G3 Pro KOKO + G4 Pro KOKO ("cluster") · #192 VOOPOO ARGUS G3 mini + G4 mini (RELX) + P3 (cluster) + P3 card-v2. Then the CLOUD
-  article-round chat merged #196 `dcef02b` (the two held comparison guides released — owner 02/10, ruling D3 lifted). Checkpoint
-  tag deleted; ALL temporary rulings of the night are CANCELLED (owner 02/10 morning) — normal rules again.
-  OWNER 02/10 morning [ตรวจแล้ว — chat]: (1) 7 lineups pass; KOKO ×2 + ARGUS G3 mini / G4 mini look too small → fix · (2) EVEREST LAB
-  badge "ไม่ต้องแก้" → publish Drag S3 / X3 / VINCI S night renders · (3) fix the deploy downtime BEFORE other work · (4) G3 Pro
-  two "ทั้งหมด" pills → do it. Order Friday told the owner: 3 → 4 → 2 → 1.
-  (3) DEPLOY DOWNTIME [ตรวจแล้ว — render.com/docs/deploys + /disks]: a persistent disk disables zero-downtime deploys; Render stops the
-  old instance before the new one (docs "a few seconds"; measured 2–3 min of Cloudflare 502). Options given to the owner, answer
-  PENDING [รอเจ้าของ]: A deploy once a night at 04:00 (deploy.yml schedule; manual for urgent) — Friday's pick · B move SQLite to
-  Render Postgres, drop the disk (cost unchecked, 1–2 rounds, DB = 13.3) · C Cloudflare stale-if-error (free; s-maxage on HTML
-  blocks it; stale HTML can point at deleted JS) — not recommended. Owner also asked downsides (data · SEO · trust) — answered.
-  Owner: the gap looks like seconds; SEO is his only worry; Friday advised 04:00 + 12:00 windows. OWNER ANSWER 02/10 [ตรวจแล้ว — chat]: "ยังก่อน ทำรูปแบบเดิมไปก่อน" — keep deploy-on-merge; the owner will
-  time the next deploy himself. Deploys ~10/day (4–16, `_incoming/deploy-days.txt`).
-2 MERGED 02/10 (owner item (4) done): #195 `a922c31` — `Product.lineupImage2` + ColorVariantRail pills "ทั้งหมด 1/2" (shared
-  ProductHero) + G3 Pro lineup-v2 / lineup2-v2 (G5 layout, 8 + 8) [ตรวจแล้ว]: tsc 0 · eslint 0 · verify:catalog 29/29 ·
-  visible-text full sitemap 109 pages × 3 × 2 = 12 changes, all the two pills (`set1/proofe/vt-diff2/`) · head-check 61/61 same
-  (`proofe/head-check2.txt`) · gallery-probe both modes 45/61, 0 FLASH/STUCK · checker PASS (brief `set1/checker-brief-e.md`) ·
-  checks green · BIG; deploy 36996263482, live [ตรวจแล้ว — curl: page + both files 200, page serves them]. OWNER 02/10: "รูปรวม
-  G3 Pro ผ่าน" [ตรวจแล้ว — chat]. Test server 3412 may be UP (`node scripts/test-server.js stop`).
+1 main: `git fetch && git log -1 --oneline origin/main` — the 02/10 day chat merged (each: checker PASS · GitHub checks green ·
+  self-merge-check BIG · deploy on merge, live curl 200 for every new file) [ตรวจแล้ว]:
+  #195 `a922c31` `Product.lineupImage2` + ColorVariantRail pills "ทั้งหมด 1 / 2" + Caliburn G3 Pro two lineups — OWNER 02/10: "รูปรวม G3 Pro ผ่าน".
+  #204 `f555a9e` Drag S3 / X3 / VINCI S: 22 colours = the night 01/10 Higgsfield renders, cut by the Higgsfield remover (job id passed
+    straight in, no upload) + `b-edge/choke.js` + `dsx/despeck.js`; X3 Moss Green / Aurora Purple side panels pulled back to the photo
+    (`dsx/recolour-cells.js`, no AI); X3 Spray Black re-rendered (first IoU 0.944) · tilted 12° · card-v2 = default colour upright 4:5 +
+    openOnCardPhoto · swatches = median body colour of each photo (`dsx/swatch-check.js`; VINCI S Neon was lime, body is purple→blue) ·
+    fidelity 22/22 · sharpness 25/25. Pipeline: `_incoming/image-sitewide/dsx/` assemble.js → build.js → process-images.
+  #205 `b226955` VOOPOO all-colours = TWO groups (S3 4+3 · X3 4+3 · VINCI S 4+4 · ARGUS G3 mini 5+4 · G4 mini 4+4), RELX layout
+    (`dsx/vp-relx2.js`; 4-5 devices step 1.15 rise 0.42 → devices ~65 % of the square, was ~35-40 %). #206 `e1e60d1` KOKO ×2 the same
+    (cluster layout, `dsx/koko-two.js`). #207 `0c3d994` ARGUS G4 the same (RELX). Owner's "too small" item = done.
+  Docs #202 #203: §16 · Higgsfield credits without asking (IMAGE_SPEC §0 item 7; two stale "tell the owner first" lines removed).
+  Live site answers 502 for ~2-3 min after each deploy (Render disk swap) — owner 02/10 "ยังก่อน ทำรูปแบบเดิมไปก่อน": deploy-on-merge
+  stays, the owner times deploys himself. A proof shot taken during that window shows Cloudflare's error page — retake it.
+  OWNER 02/10 afternoon [ตรวจแล้ว — chat]: "จัดการได้เลย … ตัดสินใจได้เลย … เสร็จแล้วรันงานอื่นต่อเลย" + "ไม่ต้องแวะถาม" (this chat).
+2 ahead of main: `git log --oneline origin/main..<branch>` — nothing open after #207 [ตรวจแล้ว — git]. Test server 3412 may be UP
+  (`node scripts/test-server.js stop`).
 3 OPEN: round "รอบรูป-ทั้งเว็บ" — THE STANDARD IS CALIBURN G5 (owner 02/10; file renamed from "…แบบMBar10K…", owner 02/10)
   (`docs/rounds/รอบรูป-ทั้งเว็บ-มาตรฐานG5-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
@@ -51,8 +39,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   canvas from bounds). Rejected: stagger/arc/fan, tilt-cascade of 7, depth cascade / V-wings (ช7), G3 Pro fan + two rows of 16.
   OWNER 01/10 late [ตรวจแล้ว — chat]: RELX Phantom layout OK, but vary the layout per brand ("หลายหลายแบบในแต่ละแบรน") ·
   G3 Pro = two groups of 8 → two "ทั้งหมด" ("ทำเป็นหัวข้อ ทั้งหมด 2 ชิ้น", or a better idea).
-  Drag 6 light: AI relight test `b-edge/relx/d6-B1.png` (4 credits) looks photographic but changed badge/screen/"VOOPOO" text →
-  not publishable; proposal = HYBRID (true devices + only B's soft light and floor) [รอเจ้าของ (37)].
+  Drag 6 light: AI relight test `b-edge/relx/d6-B1.png` changed badge/screen text → not publishable. OWNER 02/10: HYBRID (true
+  devices + B's light) shown on the test server FIRST. Live lineup = the owner-picked VMATE MAX layout — do not replace it before that.
   THE METHODS THAT WORK: (a) one model, colours differ only in colour = ONE master + recolour by script — silver master:
   `b-uwell/recolour-g4c.js`; coloured master: `b-voopoo/recolour-g3m.js` (lesson 23); GRADIENT colours = targets per height band:
   `b-edge/recolour-g4m.js` (body) and `b-edge/recolour-g3p.js` (frame round a screen, masks `b-uwell/masks.js`); colour targets
@@ -76,30 +64,32 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   round owns card/colour/flavour images, `lineupImage`, `scripts/process-images.map.json`; the article round owns `storyDetails`,
   `storyCover`, `features[]`, product-copy-th, dictionaries, guides, `public/assets/products/<slug>/story-*.webp`. Fetch main
   before every merge. UWELL G5 posters are on this computer only (`g5/src/`, 58 files) — the cloud chat downloads its own.
-  OWNER 02/10 (credits + agents) [ตรวจแล้ว — chat]: quota reset, agents as the work needs (rule merged #183); the owner will top up
-  Higgsfield — a way that gets a clearly better result may use credits, say the estimate first.
-3b NEXT — ORDER = the site-wide plan (owner 02/10 "งั้น…" = two chats accepted; draft `_incoming/image-sitewide/g5/rollout-plan.md`
-  — set 2 is now lineups only, no re-tilt): (0) Caliburn G5 done (card upright PR). NEXT = set 1 UWELL: G5 Lite (8) · G5 Lite SE
-  (8) · G4 Pro (8) · G4 (8) · G4 mini (12) from UWELL's own per-colour files (`g5/maker-renders.md`) — card upright, colours
-  tilted, lineup poster (a layout per brand); then sets 2–6. The old list below = the items those sets absorb.
-  Lineups DONE: UWELL G5 · G4 · G5 Lite · G5 Lite SE · G4 mini · G4 Classic · G3 Pro KOKO · G4 Pro KOKO; VOOPOO ARGUS G3 mini · G4
-  mini · P3. Layouts: UWELL slim = G5 "group" (`set1/poster.js`) · box = "cluster" (`set1/boxy.js`) · VOOPOO slim = RELX
-  (`b-edge/relx-studio.js`). NEXT after (3)+(4): (2) Drag S3 / X3 / VINCI S = the night renders `night/out/colour-*.png`; flatcut
-  cuts ready (`set1/s3cut/`, `set1/cut-drag-x3/`, `set1/cut-vinci-s/`); `set1/holes.js` + magenta strips show flatcut ate the pale
-  body of VINCI S silver (20 %) / pink (7 %) and X3 champagne-golden (9 %) → Higgsfield remover + `b-edge/choke.js` (~3 credits,
-  no asking — IMAGE_SPEC §0 item 7); presize + map + data like presize-g3p.js. (1) small lineups (KOKO ×2, ARGUS G3 mini / G4 mini): the
-  square frame holds 7–9 devices side by side — try fewer per image (two groups, like G3 Pro) or a tighter layout; draft first.
-  LEFT: G4 Pro (overlapping front+back pairs), Drag 6 (RELX + photographic light), argus-g4, Esko last.
+  OWNER 02/10 (credits + agents) [ตรวจแล้ว — chat]: agents as the work needs · Higgsfield credits WITHOUT asking, also when the maker's
+  or other sites' photos fall short of the standard (IMAGE_SPEC §0 item 7) — report the spend.
+3b NEXT (owner's 02/10 morning list (1)-(4) done except Drag 6):
+  (a) Drag 6 = HYBRID light + RELX two groups (drafts without the light: `dsx/relx/drag-6-a|b.png`), test server first, owner looks.
+  (b) set 1 UWELL colour images + cards (G5 Lite 8 · G5 Lite SE 8 · G4 8 · G4 mini 12) are still the old upright files — the rollout
+    plan says "colours tilted, card upright" but the G5 ruling says approved upright images stay ("เอาไว้ก่อน") → owner (4) (40).
+  (c) G4 Pro (UWELL files = overlapping front+back pairs — AI separation or a pair poster).
+  Lineups DONE: UWELL G5 · G4 · G5 Lite · G5 Lite SE · G4 mini · G4 Classic (one image) · G3 Pro · KOKO ×2 (two groups); VOOPOO
+  ARGUS G3 mini · G4 mini · G4 · Drag S3 · X3 · VINCI S (two groups) · P3 (cluster). Layouts: UWELL slim = G5 "group"
+  (`set1/poster.js`) · box = "cluster" (`set1/boxy.js`, `dsx/koko-two.js`) · VOOPOO = RELX (`dsx/vp-relx2.js`). 7+ devices in one
+  square = too small → two groups ("ทั้งหมด 1 / 2"). Rejected 02/10 (Friday): "stage" (two upright rows) — back row half hidden.
+  Drag X3: retailers list 3 more colours (Carbon Fiber Black / Lake Green / Cherry Pink) but shop.voopoo.com lists the same 7 as ours
+  in every warehouse [ตรวจแล้ว 02/10] — no change.
   (2) edge defects left (`edge-audit/visual-audit.md`): vmate-i3 · zero-pro · m-bar-15k · muro-3ml · zero-cartridge · mood-monster-14k ·
     coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87. Remake from the maker's photos (lesson 22).
   (4) coils — `b-coils/README.txt` (references found for the first 8, nothing generated).
   (5) argus-g4 + Argus Multi-Ohm + M Bar 15K duplicate record (= M Switch Kit).
   (6) BATCH 5 rest of the site (planner first; joiway-f4 · relx-creator · relx-smash-go-12k …; TFIT M Power after a researcher) ·
   (7) Esko pod-159 LAST (stock/cart = 13.7 big (2), full set, own PR, + BSOT §21).
-  Higgsfield: 178.6 credits after the B test 01/10 late [ตรวจแล้ว — balance 182.6 before − 4; 0 used 02/10 — เชื่อว่า, not re-read]; 4K = 4, nano 2K = 2, remover = 1 · use
-  without asking, report the spend (owner 02/10, IMAGE_SPEC §0 item 7).
+  Higgsfield: 351.6 credits after #204 (the owner topped up; 27 used 02/10 = 23 remover + 1 4K render) [ตรวจแล้ว — balance];
+  4K = 4, remover = 1 · no asking, report the spend.
   Round close: `npx tsx scripts/asset-refs.ts` for unreferenced photos (list in item 5).
 4 waiting on owner:
+  (39) look at today's new images on the live site: Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups of 8
+       products (#205-#207) — Friday's own calls, reversible by revert.
+  (40) set 1 UWELL (3b (b)): re-tilt the old upright colour images to the G5 standard, or keep them? Friday: keep until a set is redone.
   (38) one lifestyle sample like UWELL's real-shot.webp (scene + props) — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags from thai-copy (not changed): INFY `descriptionTh` says disposable-only brand · shared strings
        "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" / "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ"
@@ -118,13 +108,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - visible-text.js: "font fingerprint differs" on live-vs-local pairs (01/10 vt-d6, 02/10 vt-g5; same Chrome 154 both sides) —
     repeated, so it is the live/local font serving, not two machines [เชื่อว่า]; diffs were 0 changes both times.
   - Carried ideas: card sweep on 4:5 · ARTICLE round · category-structure round.
-  - Unreferenced old photos (G3 Pro/KOKO, G4 Pro KOKO, G4 Classic, ARGUS, Zero Nano, Drag 6, G5 old variants + lineup.webp …):
+  - Language of reports (owner 02/10: chat = Thai for the parts he reads): 4 proposals queued for the next housekeeping round —
+    OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบเก็บบ้าน-ครั้งถัดไป-ของที่รอ.txt` (owner: "เขียนไว้ใน Run prompt รอบเก็บบ้าน").
+  - Unreferenced old photos (G3 Pro/KOKO, G4 Pro KOKO, G4 Classic, ARGUS, Zero Nano, Drag 6, G5 old variants + lineup.webp; 02/10:
+    S3 / X3 / VINCI S variants/*.webp + lineup.webp, KOKO + ARGUS G3/G4 mini lineup-v2, ARGUS G4 lineup.webp …):
     sweep at the round close with `npx tsx scripts/asset-refs.ts` (card.png of G5 / G4 Pro KOKO stay — home cinematic scenes).
 6 verify baseline at the last full close (clip round; numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Latest light set [ตรวจแล้ว — run 02/10]: PR #184 — tsc 0 · eslint uwell.ts 0 · verify:catalog 29/29 · gallery-probe `--sitemap`
-  45/61 pages PASS both modes, 0 FLASH/STUCK · visible-text 0 changes (6 pages × 3 locales × 2 widths, `g5/proof/vt-diff/`) ·
-  head-check 7/7 head/H1/JSON-LD same, non-image HTML identical with build hashes normalised (`g5/proof/html/`).
+  Latest light set [ตรวจแล้ว — run 02/10]: PRs #204-#207 — tsc 0 · eslint 0 · verify:catalog 29/29 · gallery-probe `--sitemap` 45/61
+  PASS both modes, 0 FLASH/STUCK (each PR) · visible-text: #204 27 changes (opens on the card) · #205 60 · #206 24 · #207 12 (pills only)
+  · head-check 7 baseline pages head/H1/JSON-LD same · sharpness gate PASS (25 · 10 · 4 · 2 files). Proof: `dsx/proof{,2,3,4}/`.
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-มาตรฐานG5-30-09.txt`
 ```
 
