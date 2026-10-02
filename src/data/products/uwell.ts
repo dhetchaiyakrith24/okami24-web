@@ -129,9 +129,9 @@ export const uwellProducts: Product[] = [
     // Owner 02/10 "ทำแบบ Uwell": the UWELL-style stage layout (designer option A); colours right after the screen block.
     storyLayout: "stage",
     storyColoursAfter: "display-x-ui",
-    // G5 template round batch 5 (owner 03/10: "กรอบดำ" + white bits in the CALIBURN word): UWELL's pic1.webp (wings on
-    // white) cut by Higgsfield's remover, un-mixed from the white and choked (_incoming/g5-template/b5/) — floats, no text baked in
-    storyCover: { src: "/assets/products/caliburn-g5/story-cover-v2.webp", alt: "Official UWELL Caliburn G5 campaign image, the device between orange wings", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 3200, height: 1363, transparent: true },
+    // G5 template round batch 5 (owner 03/10: "กรอบดำ" + white bits in the CALIBURN word): hero.webp is already cut out —
+    // the black box was the poster card; story-cover-v2 = hero.webp without the CALIBURN G5 word row, floating (`transparent`)
+    storyCover: { src: "/assets/products/caliburn-g5/story-cover-v2.webp", alt: "Official UWELL Caliburn G5 campaign image, \"Simple Tap. Supreme Taste.\"", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 3081, height: 1291, transparent: true },
     colorVariants: [
       {
         id: "mystic-forest",
