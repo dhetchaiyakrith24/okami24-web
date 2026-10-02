@@ -249,8 +249,8 @@ export const voopooProducts: Product[] = [
     // master (a 4K Silver render from VOOPOO's own 1254 px Silver render) with the body colour moved to VOOPOO's render of
     // each colour, per height band for the Cyan / Green / Orange gradients, so a swipe changes only the colour. Card-v2 =
     // the Black photo tilted in 2D. Swatches = the body colour on VOOPOO's renders. Scripts: _incoming/image-sitewide/b-edge/
-    // (recolour-g4m.js, choke.js, presize-edge.js). The old all-colours lineup stays until the new pod-system all-colours
-    // image (IMAGE_SPEC §0 item 5, owner 01/10 evening) is drafted.
+    // (recolour-g4m.js, choke.js, presize-edge.js). All-colours image (02/10, IMAGE_SPEC §0 item 5): the RELX Phantom poster
+    // layout from these 8 photos — b-edge/relx-studio.js ag4m.
     openOnCardPhoto: true,
     colorVariants: [
       { id: "black", name: "Black", swatchHex: "#333435", image: { src: "/assets/products/argus-g4-mini/variant-black-v2.webp", alt: "VOOPOO ARGUS G4 mini, Black" } },
@@ -262,12 +262,10 @@ export const voopooProducts: Product[] = [
       { id: "cyan", name: "Cyan", swatchHex: "#37bde4", image: { src: "/assets/products/argus-g4-mini/variant-cyan-v2.webp", alt: "VOOPOO ARGUS G4 mini, Cyan" } },
       { id: "blue", name: "Blue", swatchHex: "#bac9e6", image: { src: "/assets/products/argus-g4-mini/variant-blue-v2.webp", alt: "VOOPOO ARGUS G4 mini, Blue" } },
     ],
-    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 8
-    // individually-verified shop.voopoo.com photos above.
     lineupImage: {
-      src: "/assets/products/argus-g4-mini/lineup.webp",
-      alt: "VOOPOO ARGUS G4 mini, all 8 colors",
-      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+      src: "/assets/products/argus-g4-mini/lineup-v2.webp",
+      alt: "VOOPOO ARGUS G4 mini, all 8 colours",
+      sourceName: "OKami24 composite (from this page's colour photos)",
     },
     specifications: [
       { key: "battery", label: "Battery", value: "1650mAh built-in", sourceStatus: "verified" },
@@ -319,12 +317,13 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/argus-p3/variants/blue-leather.webp",
-        alt: "VOOPOO ARGUS P3, Blue Leather, isolated product shot",
-        angle: "Front, isolated",
+        // 02/10: card-v2 = the Blue Leather render of this page's colour photos, tilted 12° (map: scripts/process-images.map.json).
+        src: "/assets/products/argus-p3/card-v2.webp",
+        alt: "VOOPOO ARGUS P3, Blue Leather, tilted product shot",
+        angle: "Front, tilted 12°",
         transparentBackground: true,
-        sourceName: "vaping.com (authorized US retailer, BigCommerce product gallery)",
-        sourceUrl: "https://vaping.com/products/voopoo-argus-p3-kit",
+        sourceName: "OKami24 render (Higgsfield) from VOOPOO's images",
+        sourceUrl: "https://shop.voopoo.com/",
       },
     ],
     // Real VOOPOO color/finish lineup — QC pass (2026-09-04): all 7 (6 leather + 1 non-leather)
@@ -348,8 +347,14 @@ export const voopooProducts: Product[] = [
     // Image-sitewide round 01/10: those ~300x520 photos are still blurry in the hero. Each finish has its own print or
     // texture, so no shared master: one sharp night render per finish (same pose as VOOPOO's photo), cut out; Grey /
     // Brown / Red toned to VOOPOO's photo (_incoming/image-sitewide/b-voopoo/p3tone.js). Swatches = the leather colour on
-    // VOOPOO's photos. No "ทั้งหมด" image (owner 01/10). The CARD above stays until 06/10: it shows on argus-g4, a SEO
-    // baseline page frozen until 05/10 — then card-v2 + openOnCardPhoto (round batch 3).
+    // VOOPOO's photos. 02/10 (owner lifted the baseline hold, §18): card-v2 = the Blue Leather photo tilted 12° +
+    // openOnCardPhoto · "ทั้งหมด" (IMAGE_SPEC §0 item 5) = the "cluster" layout for box devices — set1/boxy.js.
+    openOnCardPhoto: true,
+    lineupImage: {
+      src: "/assets/products/argus-p3/lineup-v2.webp",
+      alt: "VOOPOO ARGUS P3, all 7 colours",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
     colorVariants: [
       {
         id: "blue-leather",
@@ -426,9 +431,15 @@ export const voopooProducts: Product[] = [
     // Image-sitewide round 01/10 (owner "เดินงานแก้รูปสินค้าให้เสร็จ"): VOOPOO's own per-colour photos are 250x500, too small
     // for the hero — the KOKO / G4 Classic method: ONE master (the night Sky Blue render, same orientation as VOOPOO's
     // photos) with the body colour moved to each colour of VOOPOO's photo, so a swipe changes only the colour. Card-v2 =
-    // the Sky Blue photo tilted in 2D. No "ทั้งหมด" image (owner 01/10). Swatches = the body colour on VOOPOO's photos.
-    // Scripts: _incoming/image-sitewide/b-voopoo/recolour-g3m.js + presize-g3m.js.
+    // the Sky Blue photo tilted in 2D. Swatches = the body colour on VOOPOO's photos.
+    // Scripts: _incoming/image-sitewide/b-voopoo/recolour-g3m.js + presize-g3m.js. "ทั้งหมด" (02/10, owner 01/10 evening —
+    // IMAGE_SPEC §0 item 5): the RELX Phantom poster layout, all 9 one size — b-edge/relx-studio.js ag3m.
     openOnCardPhoto: true,
+    lineupImage: {
+      src: "/assets/products/argus-g3-mini/lineup-v2.webp",
+      alt: "VOOPOO ARGUS G3 mini, all 9 colours",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
     colorVariants: [
       {
         id: "sky-blue",

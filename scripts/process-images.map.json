@@ -5286,5 +5286,18 @@
   "replaces": "/assets/products/caliburn-g5/card-v2.webp",
   "note": "image-sitewide round 3b (0) 02/10 — owner: \"G5 การ์ดเอาแบบตรงเหมือนเดิมดีกว่า\": UWELL's own upright Mystic Forest render (files.myuwell.com/uwell/product/caliburn-g5/pc/pic9-1-product.webp, the same render as card.png), 4:5, no AI",
   "fileName": "card-v3.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/set1/p3-card-tilt.png",
+  "slug": "argus-p3",
+  "role": "card",
+  "replaces": "/assets/products/argus-p3/variants/blue-leather.webp",
+  "aiRender": {
+   "tool": "the full-size night render (b-voopoo/p3final/p3-blue-leather.png) tilted 12 degrees in 2D (_incoming/image-sitewide/tilt-card.js) — no new render; Higgsfield nano_banana_pro 4k, the night 01/10 render of this colour (Higgs Okm/2026-10-01 night - colours/colour-argus-p3-blue-leather.png) — each P3 finish has its own print/texture, so no shared master; cut by scripts/flatcut.js; pre-sized by _incoming/image-sitewide/b-voopoo/presize-p3.js",
+   "reference": "VOOPOO's own photo of this colour (/assets/products/argus-p3/variants/blue-leather.webp, shop.voopoo.com / vaping.com gallery — same pose)",
+   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/p3-a.png + p3-b.png + p3-c.png (VOOPOO / night render) · _incoming/image-sitewide/b-voopoo/p3-fid.png (VOOPOO / final)"
+  },
+  "note": "image-sitewide round 02/10 — card-v2 + openOnCardPhoto; the old card (VOOPOO's 302x521 photo) waited for the argus-g4 baseline hold, lifted by the owner 02/10",
+  "fileName": "card-v2.webp"
  }
 ]
