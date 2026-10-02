@@ -24,7 +24,7 @@ export interface ProductCopyTh {
    *  English text; an entry without `title` keeps the English title (a feature name the brand
    *  itself coined — Smart Triple-Tap Control, Pro-FOCS — stays English by THAI_STYLE layer 1).
    *  Read by FeatureGrid.tsx when the locale is Thai. */
-  features?: Record<string, { title?: string; description: string }>;
+  features?: Record<string, { title?: string; description: string; subline?: string; captions?: string[] }>;
   /** Round 30.4ค batch 2 (owner-approved value by value, 2026-09-15): the SpecSheet chip VALUES in
    *  Thai, keyed by `Specification.key` (unique within one product). Only values that contain
    *  words have an entry — a value that is just a number/unit/model name ("5–35W", "USB-C",
@@ -53,7 +53,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     faqs: {
       "g5-pods": {
         question: "Caliburn G5 ใช้หัวพอตรุ่นไหน",
-        answer: "ใช้หัวพอต UWELL GPP หัวเดียวกับที่ Caliburn รุ่นปัจจุบันส่วนใหญ่ใช้ เติมน้ำยาด้านบน และมีหลายโอห์มให้เลือก",
+        answer: "หัวพอต UWELL GPP ใส่ได้ทุกหัว ทั้งแบบเติมด้านข้างและเติมด้านบน หัว GPP มีหลายโอห์ม",
       },
       "g5-battery-life": {
         question: "แบตใช้ได้นานแค่ไหน",
@@ -68,7 +68,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       battery: "1600mAh ในตัว",
       screen: "จอสี 0.85 นิ้ว",
-      pod: "3.0mL (2.0mL ตามมาตรฐาน TPD) เติมด้านบน",
+      pod: "3mL (2mL ในเวอร์ชัน TPD และ CRC) เติมด้านข้างหรือด้านบน แล้วแต่เวอร์ชันที่วางขาย",
+      "included-pod": "3 หัว หนึ่งในนั้นคือ GPP Alpha 0.6 โอห์ม (แบบหัวต่างกันตามเวอร์ชันที่วางขาย)",
+      "battery-life": "ใช้งานทั่วไปได้สูงสุด 6 วัน (ตัวเลขของ UWELL)",
+      airflow: "ด้านข้างเครื่อง ปรับได้ละเอียดแบบไม่มีขั้น ตั้งแต่ MTL ถึง RDL",
+      materials: "PCTG และอะลูมิเนียมอัลลอยผิวด้าน",
+      weight: "65 กรัม",
       control: "Smart Triple-Tap Control (แตะเพื่อสลับโหมด)",
       "pod-compat": "UWELL GPP",
     },
@@ -76,16 +81,35 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "รุ่นเรือธงล่าสุดของตระกูล Caliburn: พอตซิสเต็มแบตเตอรี่ 1600mAh พร้อมจอสี 0.85 นิ้ว และระบบสั่งงานด้วยการแตะสามครั้งสำหรับสลับโหมดโดยไม่ต้องใช้ปุ่ม",
     features: {
+      "three-pods": {
+        title: "ในกล่องมีหัวพอต 3 หัว",
+        subline: "หนึ่งในนั้นคือหัว GPP Alpha รุ่นใหม่",
+        description: "หนึ่งในสามหัวคือ GPP Alpha หัวรุ่นใหม่ของ UWELL ที่เหลือเป็นหัว GPP ปกติ เปิดกล่องมาก็มีหัวสำรองไว้เปลี่ยน",
+      },
+      "gpp-alpha": {
+        title: "หัวพอต GPP Alpha",
+        subline: "คอยล์ใช้ได้นานขึ้น รสชาติไม่ดรอป",
+        description: "หัวพอตรุ่นใหม่ของ UWELL ออกแบบให้คอยล์ใช้ได้นานขึ้น รสชาติคงที่ตั้งแต่พัฟแรกถึงพัฟสุดท้าย กันรั่วซึม และปากดูดเป็น TPU นุ่มปาก",
+      },
       "triple-tap": {
+        subline: "ทางลัดของทุกอย่าง แตะตรงไหนของตัวเครื่องก็ได้สามครั้ง",
+        captions: ["ในที่มืด", "กลางแดดจ้า", "ระหว่างเดินทาง", "ตอนกำลังเพลิน"],
         description: "ใช้เซ็นเซอร์จับการแตะแทนแถวปุ่มกด แตะเพื่อสลับโหมดวัตต์และเช็คสถานะเครื่อง ตัวเครื่องจึงเรียบ ไม่มีชิ้นส่วนเกิน",
       },
       "display-x-ui": {
         title: "จอสีเข้าชุดกับตัวเครื่อง",
+        subline: "เลือกสีไหน ได้ธีมหน้าจอของสีนั้นมาด้วย",
         description: "จอสี 0.85 นิ้ว ธีมหน้าจอเข้ากับสีของตัวเครื่อง มองแวบเดียวก็เห็นแบต วัตต์ และโหมดที่ใช้อยู่",
       },
-      "top-fill-gpp": {
-        title: "หัวพอตเติมด้านบน GPP",
-        description: "เติมน้ำยาจากด้านบนได้โดยไม่ต้องถอดหัวพอตออกจากเครื่อง",
+      "long-run-battery": {
+        title: "แบต 1600mAh",
+        subline: "ชาร์จครั้งเดียว ใช้งานทั่วไปได้สูงสุด 6 วัน (ตัวเลขของ UWELL)",
+        description: "แบตในตัว ชาร์จครั้งเดียวใช้งานทั่วไปได้สูงสุด 6 วัน ตามตัวเลขของ UWELL ชาร์จผ่าน USB-C",
+      },
+      "aluminium-airflow": {
+        title: "ตัวเครื่องอะลูมิเนียม ปรับลมได้ละเอียด",
+        subline: "ถือแล้วดูดี สูบแล้วลื่น",
+        description: "ตัวเครื่องอะลูมิเนียมผิวด้าน ไม่ค่อยติดรอยนิ้วมือ ด้านข้างมีตัวปรับลมแบบไม่มีขั้น ปรับได้ตั้งแต่สูบแน่นแบบ MTL (ดูดเข้าปากก่อน) ไปจนถึงโล่งขึ้นแบบ RDL",
       },
     },
   },

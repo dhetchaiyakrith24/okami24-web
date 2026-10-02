@@ -91,6 +91,12 @@ export interface Feature {
    *  every width (`width`/`height` = the file's pixels) — the maker's headline is printed in the poster, so any crop
    *  cuts words (designer 2026-09-30). */
   image?: StoryImage;
+  /** Stage layout only (`Product.storyLayout: "stage"`, article round 02/10): a short line under the block's headline. */
+  subline?: string;
+  /** Stage layout: the maker's phone version of `image` (below lg); absent = `image` everywhere. */
+  imageMobile?: StoryImage;
+  /** Stage layout: short caption chips under the poster (e.g. the four situations of UWELL's triple-tap poster). */
+  captions?: string[];
 }
 
 /** A maker poster shown whole in `ProductMoreDetails` (see `Feature.image`, `Product.storyCover`). */
@@ -101,6 +107,9 @@ export interface StoryImage {
   sourceUrl?: string;
   width: number;
   height: number;
+  /** The file is a cut-out (transparent background): shown floating on the page, without the poster card
+   *  (owner 02/10 on the G5 aluminium poster: "ฉากหลังติดมาสีดำ ๆ"). */
+  transparent?: boolean;
 }
 
 export interface Compatibility {
@@ -295,6 +304,15 @@ export interface Product {
    * gallery, the anatomy block and the feature cards. Absent = those three sections, unchanged.
    */
   storyDetails?: boolean;
+  /**
+   * Article round 02/10 (owner: "ทำแบบ Uwell … M bar เป็นแค่ตัวอย่าง"): how the "more details" story is laid out.
+   * "split" (default) = image 7/12 + text 5/12 alternating — M Bar 10K and the other story pages, unchanged.
+   * "stage" = UWELL-style: a highlight bar, then one centred block per highlight (number · headline · subline ·
+   * wide poster · text), the colour grid right after `storyColoursAfter` (designer option A, 02/10).
+   */
+  storyLayout?: "split" | "stage";
+  /** Stage layout: the `features[].id` after whose block the all-colours/flavours grid sits (default: after the last). */
+  storyColoursAfter?: string;
   /** The maker's campaign poster that opens the "more details" story, full width under its heading (`storyDetails`). */
   storyCover?: StoryImage;
   /**
