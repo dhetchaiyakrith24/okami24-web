@@ -47,12 +47,9 @@ model: sonnet
 
 - หน้าตาที่ลูกค้าเห็นเปลี่ยน (ชั้น B) → มีภาพผลจริงที่ 390 + 1440 ของจุดที่เปลี่ยนหรือยัง — ไม่มี = ตก · งานข้อความล้วน (ชั้น A) หรือไม่มีอะไรบนหน้าจอเปลี่ยน = ไม่ต้องมีภาพ (`.claude/TEAM_RULES.md` 13.5 หัวข้อชั้น A/B · `.claude/TEAM_RULES.md` 13.5 #7)
 - **Owner eye (owner 03/10) — tier B with a changed image or layout.** Read the list "Owner eye" in
-  `.claude/agents/designer.md` first (the one home of the owner's bar). Then:
-  1. The owner-eye file of skill `tier-b-proof` step 4b exists for the commit you check and holds everything
-     that step lists — missing or incomplete = FAIL.
-  2. Open the after shots and every new/changed image file yourself and judge every list line independently —
-     do not copy Friday's ✓. What a ✗ means (fact vs taste) = the list's own header. A fact ✗ goes in field 3
-     with the crop path; a taste ✗ as "ต่ำกว่ามาตรฐานเจ้าของ: <what> → <fix>".
+  `.claude/agents/designer.md` (the one home of the owner's bar), open the after shots and every new/changed
+  image file yourself, and judge every line independently. What a ✗ means (fact vs taste) = the list's own
+  header. A fact ✗ goes in field 3 with the crop path; a taste ✗ as "ต่ำกว่ามาตรฐานเจ้าของ: <what> → <fix>".
 
 ### 5. ตรวจข้อห้าม
 
