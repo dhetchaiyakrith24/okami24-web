@@ -218,6 +218,39 @@ function BottomView({ sheet, text, verified, showCode }: { sheet: AnatomySheet; 
   );
 }
 
+function BackView({ back, text, verified, alt, showCode }: { back: NonNullable<AnatomySheet["back"]>; text: (t: SheetText) => ReactNode; verified: (k?: string | string[]) => boolean; alt: (t: SheetText) => string; showCode: boolean }) {
+  // the maker's own back-view photo, numbered dots where each call-out sits (G5 template round, 02/10)
+  return (
+    <div className="flex flex-col gap-4">
+      <div className="relative mx-auto w-[34%] max-w-[9rem] lg:w-[46%]">
+        <Image src={back.image.src} alt={alt(back.image.alt)} width={back.image.width} height={back.image.height} sizes="(min-width: 1024px) 150px, 30vw" className={cn("block h-auto w-full", PART_LIGHT)} />
+        {back.callouts.map((c) => (
+          <span
+            key={c.n}
+            className="label-mono absolute flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border bg-[#17181b] text-[0.65rem] font-semibold tabular-nums"
+            style={{ left: `${c.x}%`, top: `${c.y}%`, color: EMBER_INK, borderColor: EMBER_INK }}
+            lang="en"
+            aria-hidden
+          >
+            {String(c.n).padStart(2, "0")}
+          </span>
+        ))}
+      </div>
+      <p className="label-mono text-center text-[0.65rem]" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
+        BACK VIEW
+      </p>
+      <ol className="flex flex-col gap-3">
+        {back.callouts.map((c) => (
+          <li key={c.n} className="flex gap-1">
+            <Num n={c.n} className="pt-[0.2em]" />
+            <CalloutText c={c} text={text} showDetail={verified(c.specKey)} showCode={showCode} />
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
 export function ProductAnatomySheet({ product }: { product: Product }) {
   const { dict, locale } = useLocale();
   const text = useText(locale);
@@ -291,7 +324,11 @@ export function ProductAnatomySheet({ product }: { product: Product }) {
               <ExplodedStack parts={sheet.parts} text={text} verified={verified} alt={alt} showCode={showCode} />
             </div>
             <div className="border-t pt-8 lg:col-span-4 lg:flex lg:flex-col lg:justify-center lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0" style={{ borderColor: RULE }}>
-              <BottomView sheet={sheet} text={text} verified={verified} showCode={showCode} />
+              {sheet.back ? (
+                <BackView back={sheet.back} text={text} verified={verified} alt={alt} showCode={showCode} />
+              ) : (
+                <BottomView sheet={sheet} text={text} verified={verified} showCode={showCode} />
+              )}
             </div>
           </div>
 
