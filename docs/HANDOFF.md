@@ -38,8 +38,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   ProductHero) + G3 Pro lineup-v2 / lineup2-v2 (G5 layout, 8 + 8) [ตรวจแล้ว]: tsc 0 · eslint 0 · verify:catalog 29/29 ·
   visible-text full sitemap 109 pages × 3 × 2 = 12 changes, all the two pills (`set1/proofe/vt-diff2/`) · head-check 61/61 same
   (`proofe/head-check2.txt`) · gallery-probe both modes 45/61, 0 FLASH/STUCK · checker PASS (brief `set1/checker-brief-e.md`) ·
-  checks green · BIG; deploy 36996263482, live [ตรวจแล้ว — curl: page + both files 200, page serves them]. Owner has not seen it
-  [รอเจ้าของ] — shots `proofe/shots/cmp-390.png` / `cmp-1440.png`. Test server 3412 may be UP (`node scripts/test-server.js stop`).
+  checks green · BIG; deploy 36996263482, live [ตรวจแล้ว — curl: page + both files 200, page serves them]. OWNER 02/10: "รูปรวม
+  G3 Pro ผ่าน" [ตรวจแล้ว — chat]. Test server 3412 may be UP (`node scripts/test-server.js stop`).
 3 OPEN: round "รอบรูป-ทั้งเว็บ" — THE STANDARD IS CALIBURN G5 (owner 02/10; file renamed from "…แบบMBar10K…", owner 02/10)
   (`docs/rounds/รอบรูป-ทั้งเว็บ-มาตรฐานG5-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
@@ -86,8 +86,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   mini · P3. Layouts: UWELL slim = G5 "group" (`set1/poster.js`) · box = "cluster" (`set1/boxy.js`) · VOOPOO slim = RELX
   (`b-edge/relx-studio.js`). NEXT after (3)+(4): (2) Drag S3 / X3 / VINCI S = the night renders `night/out/colour-*.png`; flatcut
   cuts ready (`set1/s3cut/`, `set1/cut-drag-x3/`, `set1/cut-vinci-s/`); `set1/holes.js` + magenta strips show flatcut ate the pale
-  body of VINCI S silver (20 %) / pink (7 %) and X3 champagne-golden (9 %) → Higgsfield remover + `b-edge/choke.js` (~3 credits —
-  tell the owner first); presize + map + data like presize-g3p.js. (1) small lineups (KOKO ×2, ARGUS G3 mini / G4 mini): the
+  body of VINCI S silver (20 %) / pink (7 %) and X3 champagne-golden (9 %) → Higgsfield remover + `b-edge/choke.js` (~3 credits,
+  no asking — IMAGE_SPEC §0 item 7); presize + map + data like presize-g3p.js. (1) small lineups (KOKO ×2, ARGUS G3 mini / G4 mini): the
   square frame holds 7–9 devices side by side — try fewer per image (two groups, like G3 Pro) or a tighter layout; draft first.
   LEFT: G4 Pro (overlapping front+back pairs), Drag 6 (RELX + photographic light), argus-g4, Esko last.
   (2) edge defects left (`edge-audit/visual-audit.md`): vmate-i3 · zero-pro · m-bar-15k · muro-3ml · zero-cartridge · mood-monster-14k ·
