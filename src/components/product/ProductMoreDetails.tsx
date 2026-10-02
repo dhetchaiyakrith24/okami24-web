@@ -79,7 +79,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
   const stage = product.storyLayout === "stage";
   const grid =
     tiles.length > 0 ? (
-      <Container className="flex flex-col gap-8 py-14 lg:py-20">
+      <Container className={cn("flex flex-col gap-8 py-14 lg:py-20", stage && "max-lg:gap-6 max-lg:py-8")}>
         <h3 className="font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">
           {(isColour ? dict.product.moreDetailsAllColours : dict.product.moreDetailsAllFlavours).replace("{count}", String(options.length))}
         </h3>
@@ -169,7 +169,8 @@ type FeatureCopyTh = Record<string, { title?: string; description: string; subli
  * block per highlight — number · headline · subline · the maker's poster (its phone version below lg when the data has
  * one) · caption chips · text · credit. One continuous background; the posters make the rhythm. The colour/flavour grid
  * follows the block named by `storyColoursAfter` (default: the last). White maker posters stay in their rounded card
- * (lesson ช1) — nothing here bleeds to the screen edge.
+ * (lesson ช1) — nothing here bleeds to the screen edge. G5 template round (02/10): from lg up each block is split like
+ * M Bar 10K's (poster beside its text, alternating); the centred stage stays on phones.
  */
 function StageStory({ product, highlights, copyTh, grid }: { product: Product; highlights: Feature[]; copyTh: FeatureCopyTh; grid: ReactNode }) {
   const { dict, locale } = useLocale();
@@ -177,7 +178,7 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
   const gridAfter = product.storyColoursAfter ?? highlights[highlights.length - 1]?.id;
   return (
     <>
-      <Container className="mt-12 lg:mt-16">
+      <Container className="mt-8 lg:mt-16">
         <ol className="grid grid-cols-2 gap-2 lg:grid-cols-6 lg:gap-3">
           {highlights.map((f, i) => (
             <li key={f.id}>
@@ -194,34 +195,49 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
         const th = copyTh?.[f.id];
         const subline = th?.subline ?? (locale === "th" ? undefined : f.subline);
         const captions = th?.captions ?? (locale === "th" ? undefined : f.captions);
+        // G5 template round batch 1 (owner 02/10): desktop = the split rhythm of M Bar 10K (poster 7/12, text 5/12,
+        // sides alternating, backgrounds alternating); phones keep the centred stage, with tighter gaps between posters.
+        // One DOM order for both (headline → poster → text) — the grid places the two text parts beside the poster.
+        const flip = i % 2 === 1;
+        const textCol = flip ? "lg:col-start-1" : "lg:col-start-8";
         return (
           <Fragment key={f.id}>
-            <div id={`story-${f.id}`} className="scroll-mt-24 py-16 lg:py-28">
-              <Container className="flex flex-col items-center text-center">
-                <span className="label-mono text-xs text-steel" lang="en">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="mt-3 max-w-3xl text-balance font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground">{t(th?.title ?? f.title)}</h3>
-                {subline && <p className="mt-4 max-w-2xl text-lg text-balance text-foreground-muted lg:text-xl">{t(subline)}</p>}
+            <div id={`story-${f.id}`} className={cn("scroll-mt-24 py-7 lg:py-16", !flip && "lg:bg-surface-1")}>
+              <Container className="flex flex-col items-center text-center lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-12 lg:text-left">
+                <div className={cn("flex flex-col items-center lg:col-span-5 lg:row-start-1 lg:items-start lg:self-end", textCol)}>
+                  <span className="label-mono text-xs text-steel" lang="en">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="mt-2 max-w-3xl text-balance font-display text-[length:var(--text-h2)] font-semibold leading-[0.95] tracking-tight text-foreground lg:mt-3 lg:text-[2.5rem] lg:leading-[1.05]">{t(th?.title ?? f.title)}</h3>
+                  {subline && <p className="mt-3 max-w-2xl text-lg text-balance text-foreground-muted lg:mt-4 lg:text-xl">{t(subline)}</p>}
+                </div>
                 {/* a portrait poster at the landscape width would fill more than a screen — narrower column */}
-                <div className={cn("mt-8 w-full lg:mt-12", img.height > img.width ? "max-w-md lg:max-w-xl" : "max-w-5xl")}>
+                <div
+                  className={cn(
+                    "mt-5 w-full lg:col-span-7 lg:row-span-2 lg:row-start-1 lg:mt-0",
+                    flip ? "lg:col-start-6" : "lg:col-start-1",
+                    img.height > img.width ? "max-w-md lg:justify-self-center" : "max-w-5xl",
+                  )}
+                >
                   {f.imageMobile ? (
                     <>
                       <Poster img={f.imageMobile} sizes="100vw" className="lg:hidden" />
-                      <Poster img={img} sizes="(min-width: 1280px) 1024px, 80vw" className="hidden lg:block" />
+                      <Poster img={img} sizes="(min-width: 1280px) 700px, 58vw" className="hidden lg:block" />
                     </>
                   ) : (
-                    <Poster img={img} sizes="(min-width: 1280px) 1024px, 100vw" />
+                    <Poster img={img} sizes="(min-width: 1280px) 700px, (min-width: 1024px) 58vw, 100vw" />
                   )}
                 </div>
-                {captions && captions.length > 0 && (
-                  <ul className="mt-6 flex flex-wrap justify-center gap-2">
-                    {captions.map((c) => (
-                      <li key={c} className="rounded-full border border-surface-border-soft bg-surface-1 px-3 py-1 text-sm text-foreground-muted">{t(c)}</li>
-                    ))}
-                  </ul>
-                )}
-                <p className="mt-6 max-w-xl text-base leading-relaxed text-pretty text-foreground-muted">{t(th?.description ?? f.description)}</p>
-                <div className="mt-3">
-                  <Credit img={img} linkLabel={dict.product.gallerySourceLinkLabel} />
+                <div className={cn("flex flex-col items-center lg:col-span-5 lg:row-start-2 lg:items-start lg:self-start", textCol)}>
+                  {captions && captions.length > 0 && (
+                    <ul className="mt-4 flex flex-wrap justify-center gap-2 lg:mt-6 lg:justify-start">
+                      {captions.map((c) => (
+                        <li key={c} className={cn("rounded-full border border-surface-border-soft bg-surface-1 px-3 py-1 text-sm text-foreground-muted", !flip && "lg:bg-surface-0")}>{t(c)}</li>
+                      ))}
+                    </ul>
+                  )}
+                  <p className="mt-4 max-w-xl text-base leading-relaxed text-pretty text-foreground-muted lg:mt-5 lg:max-w-md">{t(th?.description ?? f.description)}</p>
+                  <div className="mt-3">
+                    <Credit img={img} linkLabel={dict.product.gallerySourceLinkLabel} />
+                  </div>
                 </div>
               </Container>
             </div>
