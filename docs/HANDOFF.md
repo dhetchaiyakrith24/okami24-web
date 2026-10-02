@@ -40,8 +40,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   [ตรวจแล้ว]; shots `shots/cmp-390.png` / `cmp-1440.png`; a re-scan after merging main was RUNNING at the move (`vt-after2`,
   `vt-before2`, diff → `vt-diff2`). STILL TO DO: head-check, gallery-probe both modes, checker (brief like `set1/checker-brief-d.md`),
   then merge (deploy-on-merge stays — owner 02/10). Test server 3412 may be UP (`node scripts/test-server.js status` / `stop`).
-3 OPEN: round "รอบรูป-ทั้งเว็บ" — THE STANDARD IS CALIBURN G5 (owner 02/10; the file's "แบบ M Bar 10K" name is from 30/09)
-  (`docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`, working files
+3 OPEN: round "รอบรูป-ทั้งเว็บ" — THE STANDARD IS CALIBURN G5 (owner 02/10; file renamed from "…แบบMBar10K…", owner 02/10)
+  (`docs/rounds/รอบรูป-ทั้งเว็บ-มาตรฐานG5-30-09.txt`, working files
   `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
   VOOPOO `b-voopoo/`, coils `b-coils/`).
   OWNER 01/10 evening [ตรวจแล้ว — chat]: all-options image for pod systems = `docs/IMAGE_SPEC.md` §0 item 5 · "finish the image
@@ -125,7 +125,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Latest light set [ตรวจแล้ว — run 02/10]: PR #184 — tsc 0 · eslint uwell.ts 0 · verify:catalog 29/29 · gallery-probe `--sitemap`
   45/61 pages PASS both modes, 0 FLASH/STUCK · visible-text 0 changes (6 pages × 3 locales × 2 widths, `g5/proof/vt-diff/`) ·
   head-check 7/7 head/H1/JSON-LD same, non-image HTML identical with build hashes normalised (`g5/proof/html/`).
-Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-แบบMBar10K-30-09.txt`
+Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบรูป-ทั้งเว็บ-มาตรฐานG5-30-09.txt`
 ```
 
 ## 17. Tools and standing technical rules (not state — open when needed)
