@@ -131,8 +131,9 @@ export const uwellProducts: Product[] = [
     storyColoursAfter: "display-x-ui",
     // G5 template round batch 5 (owner 03/10: "กรอบดำ" + white bits in the CALIBURN word): hero.webp is already cut out —
     // the black box was the poster card, the white bits = studio white left inside the A/B/R counters of the word row;
-    // story-cover-v2 = hero.webp with those holes cleared (_incoming/g5-template/b5/eat-white.js), floating (`transparent`)
-    storyCover: { src: "/assets/products/caliburn-g5/story-cover-v2.webp", alt: "Official UWELL Caliburn G5 campaign image, \"Simple Tap. Supreme Taste.\"", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 3081, height: 1480, transparent: true },
+    // story-cover-v3 = hero.webp with those holes cleared (_incoming/g5-template/b5/eat-white.js) and the word repainted for the
+    // dark site (owner 03/10: the word was dim — b6/wordmark.js: silver CALIBURN, brighter G5), floating (`transparent`)
+    storyCover: { src: "/assets/products/caliburn-g5/story-cover-v3.webp", alt: "Official UWELL Caliburn G5 campaign image, \"Simple Tap. Supreme Taste.\"", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 3081, height: 1480, transparent: true },
     colorVariants: [
       {
         id: "mystic-forest",

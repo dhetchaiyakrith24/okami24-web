@@ -141,14 +141,18 @@ export function ProductMoreDetails({ product }: { product: Product }) {
   return (
     <section className="border-b border-surface-border-soft bg-surface-0" aria-labelledby="more-details-title">
       <Container className="pt-14 lg:pt-20">
-        <SectionHeading
-          eyebrow={dict.product.featuresEyebrow}
-          title={<span id="more-details-title">{dict.product.moreDetailsTitle}</span>}
-          description={sourceName ? dict.product.galleryNote.replace("{brand}", sourceName) : undefined}
-        />
-        <ProductArticleLede slug={product.slug} />
+        {/* G5 template fixes (owner 03/10): on the stage layout a floating cover slides up under the heading — the wings sit
+            behind the text for depth, no frame; the text stays on top */}
+        <div className={cn(stage && cover?.transparent && "relative z-10")}>
+          <SectionHeading
+            eyebrow={dict.product.featuresEyebrow}
+            title={<span id="more-details-title">{dict.product.moreDetailsTitle}</span>}
+            description={sourceName ? dict.product.galleryNote.replace("{brand}", sourceName) : undefined}
+          />
+          <ProductArticleLede slug={product.slug} />
+        </div>
         {cover && (
-          <div className="mt-8 flex flex-col gap-2 lg:mt-10">
+          <div className={cn("mt-8 flex flex-col gap-2 lg:mt-10", stage && cover.transparent && "relative z-0 -mt-6 lg:-mt-36")}>
             <Poster img={cover} sizes="(min-width: 1280px) 1200px, 100vw" />
             <Credit img={cover} linkLabel={dict.product.gallerySourceLinkLabel} />
           </div>
@@ -192,7 +196,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
         </>
       )}
       {hasArticle && (
-        <Container className="pb-14 lg:pb-20">
+        <Container className={cn("pb-14 lg:pb-20", stage && "lg:flex lg:justify-center")}>
           <ProductArticleBody slug={product.slug} />
         </Container>
       )}
@@ -221,7 +225,7 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
   const titleOf = (f: Feature) => story?.[f.id]?.title[locale] ?? copyTh?.[f.id]?.title ?? f.title;
   return (
     <>
-      <Container className="mt-8 lg:mt-16">
+      <Container className="mt-8 lg:mb-16 lg:mt-16">
         <ol className="grid grid-cols-2 gap-2 lg:grid-cols-6 lg:gap-3">
           {highlights.map((f, i) => (
             <li key={f.id}>
@@ -249,7 +253,7 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
         const textCol = flip ? "lg:col-start-1" : "lg:col-start-8";
         return (
           <Fragment key={f.id}>
-            <div id={`story-${f.id}`} className={cn("scroll-mt-24 py-7 lg:py-16", !flip && "lg:bg-surface-1")}>
+            <div id={`story-${f.id}`} className={cn("scroll-mt-24 py-5 lg:py-16", !flip && "lg:bg-surface-1")}>
               <Container className="flex flex-col items-center text-center lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-12 lg:text-left">
                 <div className={cn("flex flex-col items-center lg:col-span-5 lg:row-start-1 lg:items-start lg:self-end", textCol)}>
                   <span className="label-mono text-xs text-steel" lang="en">{String(i + 1).padStart(2, "0")}</span>

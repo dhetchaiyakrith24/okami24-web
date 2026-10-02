@@ -256,9 +256,9 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
       ],
     },
     zooms: [
-      { id: "screen", code: "DISPLAY", name: { th: "จอสี", en: "Colour screen", zh: "彩色屏" }, image: { src: `${G5}/zoom-screen-v2.webp`, width: 600, height: 600, alt: { th: "จอสีของ Caliburn G5 ระยะใกล้", en: "Caliburn G5 colour screen, close-up", zh: "Caliburn G5 彩色屏特写" } } },
-      { id: "port", code: "USB-C", name: { th: "ช่องชาร์จ", en: "USB-C port", zh: "充电口" }, image: { src: `${G5}/zoom-port-v2.webp`, width: 600, height: 600, alt: { th: "ด้านข้าง Caliburn G5 ระยะใกล้ ช่องชาร์จ USB-C", en: "Caliburn G5 side close-up with the USB-C port", zh: "Caliburn G5 侧面特写，USB-C 充电口" } } },
-      { id: "airflow", code: "AIRFLOW", name: { th: "ปุ่มเลื่อนปรับลม", en: "Airflow slider", zh: "气流调节滑块" }, image: { src: `${G5}/zoom-airflow-v2.webp`, width: 600, height: 600, alt: { th: "ตัวปรับลมด้านข้างของ Caliburn G5 ระยะใกล้", en: "Caliburn G5 side airflow control, close-up", zh: "Caliburn G5 侧面气流调节特写" } } },
+      { id: "screen", code: "DISPLAY", name: { th: "จอสี", en: "Colour screen", zh: "彩色屏" }, image: { src: `${G5}/zoom-screen-v3.webp`, width: 600, height: 600, alt: { th: "จอสีของ Caliburn G5 ระยะใกล้", en: "Caliburn G5 colour screen, close-up", zh: "Caliburn G5 彩色屏特写" } } },
+      { id: "port", code: "USB-C", name: { th: "ช่องชาร์จ", en: "USB-C port", zh: "充电口" }, image: { src: `${G5}/zoom-port-v3.webp`, width: 600, height: 600, alt: { th: "ด้านข้าง Caliburn G5 ระยะใกล้ ช่องชาร์จ USB-C", en: "Caliburn G5 side close-up with the USB-C port", zh: "Caliburn G5 侧面特写，USB-C 充电口" } } },
+      { id: "airflow", code: "AIRFLOW", name: { th: "ปุ่มเลื่อนปรับลม", en: "Airflow slider", zh: "气流调节滑块" }, image: { src: `${G5}/zoom-airflow-v3.webp`, width: 600, height: 600, alt: { th: "ตัวปรับลมด้านข้างของ Caliburn G5 ระยะใกล้", en: "Caliburn G5 side airflow control, close-up", zh: "Caliburn G5 侧面气流调节特写" } } },
     ],
     facts: [
       { specKey: "battery", text: { th: "แบต 1600mAh", en: "1600mAh battery", zh: "1600mAh 电池" } },
