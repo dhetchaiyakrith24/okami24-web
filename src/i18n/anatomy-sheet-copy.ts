@@ -178,8 +178,9 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
     },
   },
   // Round "G5 template" batch 2 (owner 02/10: the drawn placeholder → an exploded view). Every image = UWELL's own photo
-  // pc_pic11 (two silver G5, files.myuwell.com/uwell/product/caliburn-g5/pc/pic11.webp), 4K-upscaled once, cut at the
-  // pod/frame seam and cropped — `_incoming/g5-template/b2/export-anatomy.js`; nothing drawn or generated. Labels rest on
+  // pc_pic11 (two silver G5, files.myuwell.com/uwell/product/caliburn-g5/pc/pic11.webp) at its own 1438 px, cut at the
+  // pod/frame seam, cropped, Lanczos-scaled only — `_incoming/g5-template/b2/export-anatomy-native.js`; nothing drawn or
+  // generated (an AI 4K upscale rewrote the screen text, 35W → 35H — designer 03/10 — so none is used). Labels rest on
   // UWELL's page (pod, screen, aluminium body, side AFC) and its battery poster pic10-1 (the USB-C cable plugged into the
   // side port). The oval side button is not labelled: UWELL's page does not say what it does.
   "caliburn-g5": {
@@ -188,7 +189,7 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
     parts: [
       {
         id: "pod",
-        image: { src: `${G5}/part-pod-v1.webp`, width: 445, height: 442, alt: { th: "หัวพอต GPP ของ Caliburn G5", en: "Caliburn G5 GPP pod", zh: "Caliburn G5 GPP 烟弹" } },
+        image: { src: `${G5}/part-pod-v2.webp`, width: 444, height: 441, alt: { th: "หัวพอต GPP ของ Caliburn G5", en: "Caliburn G5 GPP pod", zh: "Caliburn G5 GPP 烟弹" } },
         callouts: [
           {
             n: 1,
@@ -201,7 +202,7 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
       },
       {
         id: "body",
-        image: { src: `${G5}/part-body-v1.webp`, width: 472, height: 1744, alt: { th: "ตัวเครื่อง Caliburn G5 มองจากด้านหน้า", en: "Caliburn G5 body, front view", zh: "Caliburn G5 机身正面" } },
+        image: { src: `${G5}/part-body-v2.webp`, width: 472, height: 1742, alt: { th: "ตัวเครื่อง Caliburn G5 มองจากด้านหน้า", en: "Caliburn G5 body, front view", zh: "Caliburn G5 机身正面" } },
         callouts: [
           {
             n: 2,
@@ -234,14 +235,14 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
       },
     ],
     assembled: {
-      src: `${G5}/assembled-v1.webp`,
+      src: `${G5}/assembled-v2.webp`,
       width: 472,
-      height: 2088,
+      height: 2086,
       alt: { th: "Caliburn G5 ทั้งเครื่อง มุมเฉียง", en: "Caliburn G5 assembled, three-quarter view", zh: "Caliburn G5 整机斜角视图" },
     },
     base: [],
     back: {
-      image: { src: `${G5}/back-v1.webp`, width: 436, height: 1926, alt: { th: "Caliburn G5 มองจากด้านหลัง", en: "Caliburn G5, back view", zh: "Caliburn G5 背面" } },
+      image: { src: `${G5}/back-v2.webp`, width: 436, height: 1922, alt: { th: "Caliburn G5 มองจากด้านหลัง", en: "Caliburn G5, back view", zh: "Caliburn G5 背面" } },
       callouts: [
         {
           n: 5,
@@ -255,9 +256,9 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
       ],
     },
     zooms: [
-      { id: "screen", code: "DISPLAY", name: { th: "จอสี", en: "Colour screen", zh: "彩色屏" }, image: { src: `${G5}/zoom-screen-v1.webp`, width: 900, height: 900, alt: { th: "จอสีของ Caliburn G5 ระยะใกล้", en: "Caliburn G5 colour screen, close-up", zh: "Caliburn G5 彩色屏特写" } } },
-      { id: "port", code: "USB-C", name: { th: "ช่องชาร์จด้านข้าง", en: "Side USB-C port", zh: "侧面充电口" }, image: { src: `${G5}/zoom-port-v1.webp`, width: 900, height: 900, alt: { th: "ด้านข้าง Caliburn G5 ระยะใกล้ ช่องชาร์จ USB-C", en: "Caliburn G5 side close-up with the USB-C port", zh: "Caliburn G5 侧面特写，USB-C 充电口" } } },
-      { id: "airflow", code: "AIRFLOW", name: { th: "ปุ่มเลื่อนปรับลม", en: "Airflow slider", zh: "气流调节滑块" }, image: { src: `${G5}/zoom-airflow-v1.webp`, width: 900, height: 900, alt: { th: "ตัวปรับลมด้านข้างของ Caliburn G5 ระยะใกล้", en: "Caliburn G5 side airflow control, close-up", zh: "Caliburn G5 侧面气流调节特写" } } },
+      { id: "screen", code: "DISPLAY", name: { th: "จอสี", en: "Colour screen", zh: "彩色屏" }, image: { src: `${G5}/zoom-screen-v2.webp`, width: 600, height: 600, alt: { th: "จอสีของ Caliburn G5 ระยะใกล้", en: "Caliburn G5 colour screen, close-up", zh: "Caliburn G5 彩色屏特写" } } },
+      { id: "port", code: "USB-C", name: { th: "ช่องชาร์จด้านข้าง", en: "Side USB-C port", zh: "侧面充电口" }, image: { src: `${G5}/zoom-port-v2.webp`, width: 600, height: 600, alt: { th: "ด้านข้าง Caliburn G5 ระยะใกล้ ช่องชาร์จ USB-C", en: "Caliburn G5 side close-up with the USB-C port", zh: "Caliburn G5 侧面特写，USB-C 充电口" } } },
+      { id: "airflow", code: "AIRFLOW", name: { th: "ปุ่มเลื่อนปรับลม", en: "Airflow slider", zh: "气流调节滑块" }, image: { src: `${G5}/zoom-airflow-v2.webp`, width: 600, height: 600, alt: { th: "ตัวปรับลมด้านข้างของ Caliburn G5 ระยะใกล้", en: "Caliburn G5 side airflow control, close-up", zh: "Caliburn G5 侧面气流调节特写" } } },
     ],
     facts: [
       { specKey: "battery", text: { th: "แบต 1600mAh", en: "1600mAh battery", zh: "1600mAh 电池" } },
