@@ -20,6 +20,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Then #187 `37deacf` (owner "การ์ดเอาแบบตรงเหมือนเดิมดีกว่า": G5 card-v3 = the upright UWELL render + `openOnCardPhoto`; set 1
   lineup-v2 for G4 / G5 Lite / G5 Lite SE in the G5 layout) (checker PASS 4/4 · gallery-probe both modes 45/61, 0 FLASH/STUCK ·
   BIG) [ตรวจแล้ว]; deploy 36942605379, live [ตรวจแล้ว — curl: card-v3 + 3 lineups 200, pages serve them].
+  Overnight 02/10 (checker PASS each · checks green · BIG · live curl 200) [ตรวจแล้ว]: #190 `19e83ad` G4 mini + G4 Classic lineups (G5
+  layout) · #191 `4b21c56` G3 Pro KOKO + G4 Pro KOKO lineups ("cluster": box devices) · #192 `8623371` VOOPOO ARGUS G3 mini +
+  G4 mini (RELX Phantom layout) + P3 (cluster) lineups, P3 card-v2 + openOnCardPhoto. Owner review sheet:
+  `_incoming/image-sitewide/set1/overnight-lineups.png` [รอเจ้าของ]. Live site answers 502 for ~2–3 min right after each deploy
+  (seen 00:29 + 01:02 UTC, 200 again by itself) [ตรวจแล้ว — curl] — Render swap, not these PRs; report to the owner.
   CHECKPOINT tag `checkpoint-g5-0210` → 37deacf (owner 02/10: guard against the chat compacting). DELETE IT when this chat's
   image work ends — remind the owner (`git tag -d checkpoint-g5-0210 && git push origin :refs/tags/checkpoint-g5-0210`).
   TEMPORARY RULINGS — THIS CHAT ONLY, end when it ends (owner 02/10 late, 13.6): Higgsfield credits without asking · no chat move
@@ -35,10 +40,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   OKami's own poster layouts, every device whole, gaps, one hero. Composer `b-edge/d6-poster.js` (VMATE · V THRU · RELX · VEUZ fan;
   canvas sized from bounds) — copy it per product. Rejected (do not retry): stagger/arc/fan of round 1, UWELL tilt-cascade of 7
   ("แข็งๆ"), depth-cue cascade / V-wings (lesson ช7), G3 Pro fan + two rows of 16 ("ไม่ผ่านเลย").
-  OWNER 01/10 late [ตรวจแล้ว — chat]: (a) the RELX Phantom poster layout (one tilt, zigzag high/low, every device whole) is OK
-  "แต่ไม่อยากให้แบบตายตัว อยากให้มีการจัดวาง หลายหลายแบบในแต่ละแบรน" = vary the layout per brand (not one layout site-wide);
-  (b) G3 Pro = two groups of 8 → TWO "ทั้งหมด" chips/images ("ทำเป็นหัวข้อ ทั้งหมด 2 ชิ้น", or a better idea) — needs a code change
-  (`lineupImage` is one image today; ProductHero / ColorVariantRail) = tier B; (c) try B (AI relight) — done, see below.
+  OWNER 01/10 late [ตรวจแล้ว — chat]: RELX Phantom layout OK, but vary the layout per brand ("หลายหลายแบบในแต่ละแบรน") ·
+  G3 Pro = two groups of 8 → two "ทั้งหมด" ("ทำเป็นหัวข้อ ทั้งหมด 2 ชิ้น", or a better idea).
   RELX composer (studio floor + highlight roll-off): `b-edge/relx-studio.js d6 | g3p-a | g3p-b`. B test (4 credits, job
   55c8aa47): `b-edge/relx/d6-B1.png` — more photographic, BUT AI changed details (badge, screen text, "VOOPOO" → "17BECO" —
   `relx/d6-AB-zoom.png`) → NOT publishable as is (IMAGE_SPEC §0 item 7). Friday's proposal [รอเจ้าของ (37)]: HYBRID = keep the
@@ -76,22 +79,20 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   — set 2 is now lineups only, no re-tilt): (0) Caliburn G5 done (card upright PR). NEXT = set 1 UWELL: G5 Lite (8) · G5 Lite SE
   (8) · G4 Pro (8) · G4 (8) · G4 mini (12) from UWELL's own per-colour files (`g5/maker-renders.md`) — card upright, colours
   tilted, lineup poster (a layout per brand); then sets 2–6. The old list below = the items those sets absorb.
-  Set 1 status: G4 / G5 Lite / G5 Lite SE lineups live (#187). LEFT: G4 Pro (UWELL files = front+back PAIRS `color-1..8`, no lineup
-  today — a pair-per-colour poster or the screen-front device only; decide by draft) · G4 mini (12 singles `pc/1..12`, side view;
-  12 is many — two groups like G3 Pro, or one). Sources downloaded: `set1/src/`. Colour images of set 1 are UWELL renders
-  already = not re-tilted (owner "เอาไว้ก่อน").
-  (1) Drag 6 lineup redo = RELX layout (`relx-studio.js d6`) + HYBRID light (owner 02/10: the photographic look), bigger in
-  the frame; show it on the local page (390 + 1440) to the owner before publishing; publish as lineup-v3.webp (new name, lesson พ6) with the same proof as #177 (head-check 7/7, visible-text, gallery-probe).
-  Then Caliburn G3 Pro: two "ทั้งหมด" (g3p-a / g3p-b, 8 each, UWELL order) — code change for two lineups + the two images; a
-  DIFFERENT layout from Drag 6 per the owner's "vary per brand" (VOOPOO = RELX zigzag → UWELL e.g. V THRU or VMATE).
+  Lineups DONE (02/10): UWELL G5 · G4 · G5 Lite · G5 Lite SE · G4 mini · G4 Classic · G3 Pro KOKO · G4 Pro KOKO; VOOPOO ARGUS
+  G3 mini · G4 mini · P3. Layouts: UWELL slim = G5 "group" (`set1/poster.js`) · box devices = "cluster" (`set1/boxy.js`) ·
+  VOOPOO slim = RELX (`b-edge/relx-studio.js`). LEFT: G4 Pro (UWELL files = overlapping front+back pairs — no clean single
+  device; AI separation or a pair poster, owner's call) · G3 Pro 16 (two "ทั้งหมด" = code change in ProductHero, shared by all
+  product pages = full sitemap scan + designer) · Drag 6 (owner: RELX + photographic light + bigger — `relx/d6.png` = the 01/10
+  RELX draft; a tighter step overlaps devices; hybrid light not built) · argus-g4. Drag S3 / X3 / VINCI S night renders
+  (`night/out/colour-*.png`, 3584x4800, sharp) are faithful but the EVEREST LAB badge text is slightly garbled — NOT published;
+  pink/white need Higgsfield remover (flatcut eats the pale body edge) — owner to decide (fix the badge or accept).
   (2) rest of the edge-defect list (`edge-audit/visual-audit.md`, agent's eye): vinci-s · vmate-i3 · drag-x3 · zero-pro ·
   m-bar-15k (options soft) · muro-3ml · coil-1/38/53/54/56/74/94 · borderline argus-p3 card · drag-s3 · coil-89 · zero-cartridge ·
   white boxes coil-55/70/72/83/87 · mood-monster-14k. Night renders that exist: drag-s3 / drag-x3 / vinci-s colours (from retailer
-  cut-outs — choke + zoom) · argus-g4 card a/b. Remake from the maker's photos, never from the old cut-out (lesson 22).
-  (3) all-colours image (poster layouts) for the other pod systems — G3 mini (9) · G4 Classic (4) · G4 mini (8, old lineup.webp still
-  used) · ARGUS P3 · then the rest that have colour variants.
+  cut-outs — see above) · argus-g4 card a/b. Remake from the maker's photos, never from the old cut-out (lesson 22).
   (4) coils — `b-coils/README.txt` (references found for the first 8, nothing generated).
-  (5) argus-g4 + Argus Multi-Ohm + ARGUS P3 card-v2 + openOnCardPhoto for P3 + M Bar 15K duplicate record (= M Switch Kit).
+  (5) argus-g4 + Argus Multi-Ohm + M Bar 15K duplicate record (= M Switch Kit).
   (6) BATCH 5 rest of the site (planner first; joiway-f4 · relx-creator · relx-smash-go-12k …; TFIT M Power after a researcher) ·
   (7) Esko pod-159 LAST (stock/cart = 13.7 big (2), full set, own PR, + BSOT §21).
   Higgsfield: 178.6 credits after the B test 01/10 late [ตรวจแล้ว — balance 182.6 before − 4; 0 used 02/10 — เชื่อว่า, not re-read]; 4K = 4, nano 2K = 2, remover = 1 · tell the
