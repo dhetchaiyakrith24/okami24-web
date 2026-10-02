@@ -32,10 +32,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   PENDING [รอเจ้าของ]: A deploy once a night at 04:00 (deploy.yml schedule; manual for urgent) — Friday's pick · B move SQLite to
   Render Postgres, drop the disk (cost unchecked, 1–2 rounds, DB = 13.3) · C Cloudflare stale-if-error (free; s-maxage on HTML
   blocks it; stale HTML can point at deleted JS) — not recommended. Owner also asked downsides (data · SEO · trust) — answered.
-  Owner then (02/10): "ไม่กี่วินาที" matches what he saw; he cares about SEO only; asked about deploy windows every 1–2 h. Friday:
-  SEO impact of short 5xx is small [เชื่อว่า]; hourly = up to 24 outages/day → recommend 04:00 + 12:00 (only when there is new work)
-  + manual for urgent fixes. OWNER ANSWER 02/10 [ตรวจแล้ว — chat]: "ยังก่อน ทำรูปแบบเดิมไปก่อน" — keep deploy-on-merge; the owner will
-  time the next deploy himself. Deploys measured ~10/day (4–16, ). Site merges no longer wait.
+  Owner: the gap looks like seconds; SEO is his only worry; Friday advised 04:00 + 12:00 windows. OWNER ANSWER 02/10 [ตรวจแล้ว — chat]: "ยังก่อน ทำรูปแบบเดิมไปก่อน" — keep deploy-on-merge; the owner will
+  time the next deploy himself. Deploys ~10/day (4–16, `_incoming/deploy-days.txt`).
 2 OPEN PR #195 `feat-g3p-two-lineups` (head dc3a478 = main merged in): `Product.lineupImage2` + ColorVariantRail pills "ทั้งหมด 1/2"
   (shared ProductHero → full-sitemap proof) + G3 Pro lineup-v2 / lineup2-v2 (G5 layout, 8 + 8). Proof `_incoming/image-sitewide/
   set1/proofe/`: first full-sitemap visible-text diff (107 pages × 3 × 2) = 12 changes, all the two pills on caliburn-g3-pro
