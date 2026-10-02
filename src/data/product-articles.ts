@@ -6,8 +6,8 @@ import type { Locale } from "@/i18n/config";
  * answer what a buyer asks — docs/rounds/รอบบทความ-รายละเอียดเพิ่มเติม.txt). One record per product slug, one copy
  * per locale; a locale without a copy falls back to `en`, then shows nothing.
  *
- * - `lede`: one or two sentences under the section heading, before the posters — what the section covers, not a list
- *   of the facts the posters tell.
+ * - `lede` (optional): one or two sentences under the section heading, before the posters — a reason to scroll, never a
+ *   list of the facts the posters tell nor a re-statement of the source line (G5 has none: designer 03/10).
  * - `sections`: the article itself, after the all-options grid — H3 blocks whose headings are buyer questions.
  *   Paragraphs may carry inline links `[text](/path)` (ArticleBody's syntax), at most three per article.
  *
@@ -18,7 +18,7 @@ import type { Locale } from "@/i18n/config";
  * This text does not reach <title>/meta/JSON-LD (they read head-copy / shortDescription only).
  */
 export interface ProductArticleCopy {
-  lede: string;
+  lede?: string;
   sections: ArticleSubsection[];
 }
 
@@ -28,7 +28,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // re-told a story poster (triple tap · 7 colours · airflow) were removed and repeated facts trimmed (thai-copy).
   "caliburn-g5": {
     th: {
-      lede: "ด้านล่างคือรายละเอียดทีละข้อจาก UWELL",
       sections: [
         {
           heading: "Caliburn G5 ต่างจาก G5 Lite ยังไง",
@@ -49,7 +48,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     en: {
-      lede: "Below, each point in detail from UWELL.",
       sections: [
         {
           heading: "How is the Caliburn G5 different from the G5 Lite?",
@@ -69,7 +67,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     zh: {
-      lede: "下面按 UWELL 资料逐项介绍。",
       sections: [
         {
           heading: "Caliburn G5 和 G5 Lite 有什么不同？",

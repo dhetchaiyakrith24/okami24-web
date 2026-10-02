@@ -14,7 +14,7 @@ import { thaiTypographyNode } from "@/lib/thai-typography";
 export function ProductArticleLede({ slug }: { slug: string }) {
   const { locale } = useLocale();
   const a = productArticle(slug, locale);
-  if (!a) return null;
+  if (!a?.lede) return null;
   return <p className="mt-6 max-w-2xl text-[length:var(--text-body-lg)] leading-relaxed text-pretty text-foreground">{renderInline(a.lede, locale, "lede")}</p>;
 }
 
