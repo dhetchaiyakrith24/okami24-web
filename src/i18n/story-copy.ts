@@ -578,9 +578,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "คำสั่งหลักอยู่ในแตะเดียว", en: "Core features in one tap", zh: "核心功能，一触即达" },
       subline: { th: "KOKO รุ่นแรกที่มีจอทัช", en: "The first KOKO with a touchscreen.", zh: "首款带触屏的 KOKO。" },
       body: {
-        th: "UWELL ออกแบบจอนี้ให้คนสูบพอตโดยเฉพาะ หน้าจอโล่งสะอาดตา หาเมนูเจอง่าย",
-        en: "UWELL built this screen for vapers: uncluttered, with menus easy to find.",
-        zh: "UWELL 专为烟友打造这块屏幕：界面简洁，菜单一找就到。",
+        th: "UWELL ออกแบบจอนี้ให้คนสูบพอตโดยเฉพาะ หน้าจอโล่งสะอาดตา ใช้งานง่าย",
+        en: "UWELL built this screen for vapers: uncluttered and intuitive.",
+        zh: "UWELL 专为烟友打造这块屏幕：界面简洁，操作直观。",
       },
       points: [
         { text: { th: "แตะแม่นยำมากกว่า 99.99% (ตัวเลขจากแล็บของ UWELL)", en: "Touch accuracy above 99.99% (UWELL LAB)", zh: "触控准确率 99.99% 以上（UWELL 实验室数据）" }, specKey: "touch" },
@@ -589,8 +589,8 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       link: { href: "/technology/onboard-touch-displays", label: { th: "อ่านเรื่องพอตจอทัช", en: "How touchscreen pods work", zh: "了解触屏烟具" } },
     },
     "screen": {
-      title: { th: "จอแตกยาก", en: "Ultra-shatterproof screen", zh: "超防摔屏幕" },
-      subline: { th: "จับแล้วถนัดมือ", en: "Superb hand feel.", zh: "手感出众。" },
+      title: { th: "จอทัช 2.0 นิ้ว", en: "2.0-inch touchscreen", zh: "2.0 英寸触屏" },
+      subline: { th: "จับแล้วถนัดมือ", en: "Comfortable in the hand.", zh: "握感舒适。" },
       body: {
         th: "ขอบจอบาง ตัวเครื่องโค้งรับมือ ถือแล้วกระชับ",
         en: "Minimal bezels and an ergonomic curve that sits snugly in the hand.",

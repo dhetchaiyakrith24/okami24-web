@@ -135,7 +135,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       "battery-life": "ใช้ได้สูงสุด 10 วัน (ตัวเลขจากแล็บของ UWELL)",
       "charge-time": "USB-C 5V/2.5A",
       output: "35W",
-      screen: "จอทัชสกรีน 2.0 นิ้ว ออกแบบให้แตกยาก",
+      screen: "จอทัชสกรีน 2.0 นิ้ว",
       touch: "แตะแม่นยำมากกว่า 99.99% ตอบสนองภายใน 0.2 วินาที (ตัวเลขจากแล็บของ UWELL)",
       modes: "Storm / Waves / Customize (โหมด Customize ตั้งวัตต์ช่วงต้น กลาง และท้ายพัฟได้เอง)",
       themes: "ธีมหน้าจอแบบสุ่ม 5 แบบ",

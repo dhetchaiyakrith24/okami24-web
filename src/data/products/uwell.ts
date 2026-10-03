@@ -7,7 +7,7 @@ const gppCompatibility = {
 };
 
 // Article round 02/10: UWELL's G5 page — "All cartridges in G Pod Platform (GPP) are compatible", side and top refill.
-// G5 only for now; the shared note above ("top-fill") is re-checked per product in the UWELL batch.
+// G5, G4 Pro, G4 Pro KOKO (batch 1c — UWELL's pod chart shows top and side refill); the shared note above ("top-fill") is re-checked per product in the UWELL batch.
 const gppSideTopCompatibility = {
   type: "pod" as const,
   label: "UWELL GPP cartridge platform",
@@ -733,7 +733,7 @@ export const uwellProducts: Product[] = [
       { key: "battery-life", label: "Battery life", value: "Up to 10 days of vaping (UWELL lab tests)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4-pro-koko/mo/2000mah.jpg" },
       { key: "charge-time", label: "Charging", value: "USB-C, 5V/2.5A", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/specifi.webp" },
       { key: "output", label: "Max output", value: "35W", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/specifi.webp" },
-      { key: "screen", label: "Display", value: "2.0\" ultra-shatterproof touchscreen", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/spe6-params.png" },
+      { key: "screen", label: "Display", value: "2.0\" touchscreen", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/spe6-params.png" },
       { key: "touch", label: "Touch", value: "Touch accuracy above 99.99%, response under 0.2s (UWELL LAB)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/spe6-params.png" },
       { key: "modes", label: "Output modes", value: "Storm / Waves / Customize (power set at the start, middle and end of a puff)", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro-koko" },
       { key: "themes", label: "Screen themes", value: "5 blind-draw UI themes", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro-koko" },
@@ -759,16 +759,16 @@ export const uwellProducts: Product[] = [
       {
         id: "one-tap",
         title: "Core features in one tap",
-        description: "UWELL built this screen for vapers: uncluttered, with menus easy to find.",
+        description: "UWELL built this screen for vapers: uncluttered and intuitive.",
         subline: "The first KOKO with a touchscreen.",
         image: { src: "/assets/products/caliburn-g4-pro-koko/story-one-tap.webp", alt: "Official UWELL poster — core features in one tap on the KOKO touchscreen", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro-koko", width: 1584, height: 1391, transparent: true },
       },
       {
         id: "screen",
-        title: "Ultra-shatterproof screen",
+        title: "2.0-inch touchscreen",
         description: "Minimal bezels and an ergonomic curve that sits snugly in the hand.",
-        subline: "Superb hand feel.",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/story-screen.webp", alt: "Official UWELL poster — the KOKO's ultra-shatterproof screen", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro-koko", width: 1040, height: 747, transparent: true },
+        subline: "Comfortable in the hand.",
+        image: { src: "/assets/products/caliburn-g4-pro-koko/story-screen.webp", alt: "Official UWELL poster — the KOKO's screen, \"Ultra-Shatterproof Screen\" printed by UWELL", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro-koko", width: 1040, height: 747, transparent: true },
       },
       {
         id: "battery",
@@ -799,7 +799,7 @@ export const uwellProducts: Product[] = [
         image: { src: "/assets/products/caliburn-g4-pro-koko/story-pods.webp", alt: "Official UWELL chart — GPP pods, top and side refill, 0.4Ω to 1.2Ω", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro-koko", width: 1800, height: 1200, transparent: true },
       },
     ],
-    compatibility: [gppCompatibility, g3PodCompatibility, usbCNoNote],
+    compatibility: [gppSideTopCompatibility, g3PodCompatibility, usbCNoNote],
     whoIsThisFor: [
       "Vapers who want a Caliburn with a touchscreen and selectable output modes, without stepping up to a pod kit.",
       "Anyone who likes a box shape they can make their own — collectable themes and a name of their choosing.",
@@ -992,10 +992,10 @@ export const uwellProducts: Product[] = [
         title: "Takes every GPP pod",
         description: "The upgraded pods fit the G3 series too, and you refill without taking the pod out.",
         subline: "Previous and upgraded.",
-        image: { src: "/assets/products/caliburn-g4-pro/story-pods.webp", alt: "Official UWELL chart — GPP pods, top and side refill, 0.4Ω to 1.2Ω", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro", width: 1800, height: 1201 },
+        image: { src: "/assets/products/caliburn-g4-pro/story-pods.webp", alt: "Official UWELL chart — GPP pods, top and side refill, 0.4Ω to 1.2Ω", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro", width: 1800, height: 1201, transparent: true },
       },
     ],
-    compatibility: [gppCompatibility, g3PodCompatibility, usbCNoNote],
+    compatibility: [gppSideTopCompatibility, g3PodCompatibility, usbCNoNote],
     whoIsThisFor: [
       "Vapers who want a big touchscreen they can read and adjust at a glance.",
       "Anyone who wants to fine-tune the draw with stepless airflow.",
