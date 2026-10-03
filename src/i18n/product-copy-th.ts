@@ -204,9 +204,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       firing: "สูบได้เลย หรือกดปุ่มก็ได้",
       output: "35W",
     },
-    tagline: "จอสีพร้อมปุ่มยิง บนตัวเครื่อง G4 มาตรฐาน",
+    tagline: "Caliburn จอสี เลือกโหมดได้ตามแนวสูบ",
     shortDescription:
-      "G4 รุ่นมาตรฐาน: เครื่องแบตเตอรี่ 1300mAh พร้อมจอสี เลือกโหมดวัตต์ได้ และใช้ปุ่มยิง — จุดกึ่งกลางระหว่างรุ่น Mini ที่ไม่มีจอ กับรุ่น Pro ที่เป็นทัชสกรีน",
+      "แบต 1300mAh สูงสุด 35 วัตต์ จอ 0.85 นิ้ว ปรับลมด้วยปุ่มเลื่อน หรือกลับด้านหัวพอตก็ได้",
   },
   "caliburn-g4-mini": {
     whoIsThisFor: {
@@ -232,7 +232,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "caliburn-g4-classic": {
     whoIsThisFor: {
-      0: "ชอบดูแบตจากสีไฟ และอยากได้ตัวเครื่องอะลูมิเนียมงานละเอียด",
+      0: "อยากได้ตัวเครื่องอะลูมิเนียมงานละเอียด",
     },
     specifications: {
       battery: "1400mAh ในตัว",
@@ -246,13 +246,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       control: "กดห้าครั้ง เปิด/ปิดเครื่อง · กดสองครั้ง ล็อก/ปลดล็อกปุ่มยิง · กดครั้งเดียว ยิง/ดูระดับแบต",
       "pod-compat": "UWELL GPP · เติมได้ขณะหัวเสียบอยู่ · มีช่องใสดูระดับในหัวพอต",
     },
-    tagline: "G4 ตัวเครื่องเดิม ในชุดสีรุ่น Classic",
+    tagline: "Caliburn ที่บอกแบตด้วยสีไฟ",
     shortDescription:
-      "Caliburn G4 รุ่น Classic ตัวเครื่องเดียวกับ G4 รุ่นมาตรฐาน มี 4 สี ใช้หัวพอต GPP เหมือนกัน",
+      "แบต 1400mAh สูงสุด 35 วัตต์ สูบได้ทั้งแบบดูดและกดปุ่ม",
   },
   "caliburn-g3-pro": {
     whoIsThisFor: {
-      0: "อยากได้ Caliburn ที่มีจอใหญ่ แต่ยังเป็นทรงเพรียว",
+      0: "อยากได้ Caliburn จอใหญ่ ไว้ดูวัตต์ แบต และจำนวนพัฟ",
       1: "ยังหาความแน่นของลมที่ชอบไม่เจอ อยากปรับเองทีละนิด",
     },
     specifications: {
@@ -270,9 +270,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       dimensions: "123.5 × 27.8 × 16.8 mm",
       weight: "ประมาณ 92 กรัม",
     },
-    tagline: "Caliburn รุ่นแรกที่จอ LCD โอบรอบด้านข้าง",
+    tagline: "Caliburn ทรงเพรียว จอเต็มหน้าเครื่อง",
     shortDescription:
-      "พอตแบตเตอรี่ 1000mAh สูงสุด 35 วัตต์ พร้อมจอ LCD ที่โอบรอบด้านข้างตัวเครื่อง ปรับช่องลมได้ทุกระดับ และในกล่องมีหัวพอตให้ 2 ตัว คนละโอห์ม",
+      "แบต 1000mAh สูงสุด 35 วัตต์ ปรับลมได้ละเอียด มีหัวพอต 0.4 และ 0.9 โอห์มมาในกล่อง",
   },
 
   "caliburn-g3-pro-koko": {
@@ -298,9 +298,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       dimensions: "85.15 × 49.5 × 19.5 mm (79.15 mm ในเวอร์ชัน TPD และ CRC)",
       weight: "ประมาณ 91 กรัม",
     },
-    tagline: "G3 Pro ตัวเครื่องเดิม ในชุดสีรุ่น KOKO",
+    tagline: "Caliburn ทรงกล่อง จอสี 1.8 นิ้ว",
     shortDescription:
-      "Caliburn G3 Pro รุ่น KOKO ตัวเครื่องเดียวกับ G3 Pro รุ่นมาตรฐาน มี 8 สี ใช้หัวพอต Caliburn G3 เหมือนกัน",
+      "แบต 1250mAh เปลี่ยนธีมหน้าจอได้ และใช้หัวพอต G3 ได้ทุกหัว",
   },
 
   "argus-g4": {

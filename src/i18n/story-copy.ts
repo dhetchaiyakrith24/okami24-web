@@ -801,7 +801,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ออกแบบมากันรั่ว", en: "Built not to leak", zh: "防漏设计" },
       subline: { th: "ระบบ U² ของ UWELL", en: "UWELL's U² anti-leak.", zh: "UWELL U² 防漏。" },
       body: {
-        th: "ตัวหัวเชื่อมด้วยคลื่นอัลตราโซนิก ส่วนร่องรูปตัว U คอยเก็บหยดน้ำยาที่ควบแน่น",
+        th: "หัวพอตเชื่อมปิดด้วยคลื่นอัลตราโซนิก และมีร่องตัว U คอยรับหยดน้ำยาไว้ข้างใน",
         en: "The pod is sealed by ultrasonic welding, and a U-shaped channel holds the condensate.",
         zh: "烟弹采用超声波焊接密封，U 形通道收集冷凝液。",
       },

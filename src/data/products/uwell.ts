@@ -1017,9 +1017,9 @@ export const uwellProducts: Product[] = [
     systemType: "open-pod",
     name: "Caliburn G4",
     displayName: "UWELL CALIBURN G4",
-    tagline: "A colour screen and button firing on the core G4 shell.",
+    tagline: "A colour screen, and a mode for how you vape.",
     shortDescription:
-      "The standard G4: a 1300mAh device with a colour screen, selectable power modes, and button-fired hits — the middle point between the screen-free Mini and the touchscreen Pro models.",
+      "1300mAh, up to 35W, a 0.85\" screen, and airflow set by a slider or by flipping the pod.",
     isFlagship: false,
     attributes: {
       batteryMah: 1300,
@@ -1395,9 +1395,9 @@ export const uwellProducts: Product[] = [
     systemType: "open-pod",
     name: "Caliburn G4 Classic",
     displayName: "UWELL CALIBURN G4 CLASSIC",
-    tagline: "A classic-finish edition on the core G4 hardware.",
+    tagline: "The Caliburn that shows its battery in colour light.",
     shortDescription:
-      "Positioned as a finish/edition variant on the standard G4 platform; core hardware is treated as equivalent to the G4 pending independent confirmation of any spec deltas.",
+      "1400mAh, up to 35W, fires on a draw or a button press.",
     isFlagship: false,
     attributes: {
       batteryMah: 1400,
@@ -1531,7 +1531,7 @@ export const uwellProducts: Product[] = [
     ],
     compatibility: [gppCompatibility, usbCNoNote],
     whoIsThisFor: [
-      "Vapers who like reading the battery from a light and want a finely made aluminium body.",
+      "Vapers who want a finely made aluminium body.",
     ],
     faqs: [],
     relatedProductSlugs: ["caliburn-g4"],
@@ -1546,9 +1546,9 @@ export const uwellProducts: Product[] = [
     systemType: "open-pod",
     name: "Caliburn G3 Pro",
     displayName: "UWELL CALIBURN G3 PRO",
-    tagline: "The Caliburn line's first full-wraparound screen.",
+    tagline: "The slim Caliburn with a full-front screen.",
     shortDescription:
-      "A 1000mAh, up-to-35W pod device with an LCD screen that wraps around the side of the shell, fully adjustable airflow, and two included pod resistances.",
+      "1000mAh, up to 35W, fine-tuned airflow, and two pods in the box: 0.4Ω and 0.9Ω.",
     isFlagship: false,
     attributes: {
       batteryMah: 1000,
@@ -1696,9 +1696,9 @@ export const uwellProducts: Product[] = [
     systemType: "open-pod",
     name: "Caliburn G3 Pro KOKO",
     displayName: "UWELL CALIBURN G3 PRO KOKO",
-    tagline: "A KOKO-edition finish on the G3 Pro platform.",
+    tagline: "The box-shaped Caliburn with a 1.8\" colour screen.",
     shortDescription:
-      "Positioned as a KOKO-branded edition of the G3 Pro; core hardware is treated as equivalent to the G3 Pro pending independent confirmation of any spec deltas.",
+      "1250mAh, switchable screen themes, and it takes every G3 pod.",
     isFlagship: false,
     attributes: {
       batteryMah: 1250,
