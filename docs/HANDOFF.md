@@ -34,9 +34,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   1d as merged: UWELL posters (G3 Pro 6 blocks, KOKO 7), th/en/zh + articles, every spec row from UWELL with sourceUrl (G3 Pro battery
   from UWELL's user manual zip; KOKO 1250mAh — the shop had "1000mAh unverified"; facts = 1d/facts-uwell.md). KOKO card now shows
   "1250mAh · Max 35W" sitewide. New flag `storyStartRight` (default unchanged) — G3 Pro starts poster-right (owner 03/10 "vary").
-  NEXT: batch 2 VOOPOO — skill round-open (continuation); start with the Drag 6 HYBRID lineup on the test server for the owner.
-  Speed (owner 04/10 asked why slow): one build per batch (bundle fixes) · whole-sitemap scan (≈ 20 min) only when a shared part
-  is touched (13.5 #5) · a build ≈ 8 min on this computer.
+  NEXT (owner 04/10 "แก้แชทหน้า"), in this order: (i) one small copy PR: head copy of G3 Pro + KOKO ((44) below) and G4 Classic + G4
+  ((41)) + the 2 Thai phrases the owner rejected (THAI_STYLE "ก้อน 1d" line: the RDL parenthesis in the G3 Pro article "เลือกหัวพอต
+  แบบไหนดี", "เก็บหยดน้ำยาที่ควบแน่น" in the KOKO anti-leak block) — head copy is round off-limits, the owner's "แก้" lifts it for
+  these 4 products only · (ii) table for (46) · (iii) batch 2 VOOPOO — start with the Drag 6 HYBRID lineup on the test server.
+  Speed (owner 04/10): one build per batch · whole-sitemap scan (≈ 20 min) only if a shared part changes · a build ≈ 8 min.
   Method that worked (1b–1d): maker page → .txt (`1b/extract.js`) · images listed in the page HTML + its `/_nuxt/*.js` chunks · ffmpeg
   stills from maker films · researcher reads posters/spec images into a facts sheet · copy-base.json (en/zh) → thai-copy → th.json →
   build.js inserts story-copy + articles, edit-th.js the Thai spec/who · `npm run verify:catalog` (tsc needs `npx next typegen` in a
@@ -64,13 +66,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (44) NEW 04/10 — head copy (tagline + shortDescription, Thai in product-copy-th.ts, English in uwell.ts; feeds meta + JSON-LD = round
-       off-limits) now contradicts the 1d story: G3 Pro "จอ LCD โอบรอบด้านข้าง / ปรับช่องลมได้ทุกระดับ" (not UWELL's words) · KOKO
-       "G3 Pro ตัวเครื่องเดิม ในชุดสีรุ่น KOKO / ตัวเครื่องเดียวกับ G3 Pro" (wrong: box-shaped, 1.8" screen, 1250mAh). thai-copy drafts:
-       G3 Pro tagline "Caliburn ทรงเพรียว จอเต็มหน้าเครื่อง ปรับลมได้ละเอียด" · KOKO "Caliburn ทรงกล่อง จอสี 1.8 นิ้ว แบต 1250mAh".
-       Friday's pick: fix in this round as one small PR together with (41) (wrong facts, not SEO wording) — else the SEO round.
-  (45) NEW 04/10 — 4 new Thai words not yet locked (thai-copy flags): "จอเต็มหน้าเครื่อง" (= full-screen) · "ช่องใสให้ดูน้ำยา" ·
-       "RDL (ดูดลงปอดแต่ลมยังมีแรงต้าน)" · "เก็บหยดน้ำยาที่ควบแน่น"; owner to look at /products/caliburn-g3-pro and -koko on live.
+  (46) NEW 04/10 — owner: the en / Thai / Chinese copy the agents write is "ไม่แมน ไม่นิ่ง ดูแข็ง ๆ ไม่ธรรมชาติ … อาจต้องเซ็ตใหม่"
+       (LESSONS ช11) → Friday sends a table (central §12 item 28) for resetting `thai-copy` + the en/zh writing BEFORE editing any
+       agent; owner decides. The fixes in NEXT (i) go ahead meanwhile.
+  (44) answered 04/10 "แก้แชทหน้า" → NEXT (i). The facts: head copy (tagline + shortDescription, Thai in product-copy-th.ts, English in
+       uwell.ts) contradicts the 1d story — G3 Pro "จอ LCD โอบรอบด้านข้าง / ปรับช่องลมได้ทุกระดับ" (not UWELL's words) · KOKO "G3 Pro
+       ตัวเครื่องเดิม ในชุดสีรุ่น KOKO / ตัวเครื่องเดียวกับ G3 Pro" (wrong: box-shaped, 1.8" screen, 1250mAh). thai-copy drafts (re-check
+       against ช11 first): G3 Pro "Caliburn ทรงเพรียว จอเต็มหน้าเครื่อง ปรับลมได้ละเอียด" · KOKO "Caliburn ทรงกล่อง จอสี 1.8 นิ้ว แบต 1250mAh".
   (41) G4 Classic / G4 hero line under the name (Thai shortDescription + tagline in product-copy-th.ts, English in uwell.ts) is wrong
        — Classic "same body as the standard G4 / Classic colourway", G4 "power modes" — and contradicts the page's own story.
        Asked 03/10: 1 fix in the round (Friday's pick; thai-copy draft: tagline "Caliburn รุ่นฉลอง 10 ปี ตัวเครื่องอะลูมิเนียม ไฟ RGB
@@ -102,8 +104,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     shortDescription both say 2.51. `src/data/technology.ts` onboard-touch-displays calls the KOKO modes "draw modes" — outside round.
   - wordbreak on G4 Pro / KOKO: "…เติมน้ำยาได้โดยไม่ | ต้องถอดหัวออก" (1440) and "โดยไม่ | ต้องไปถึงพอตคิท" (KOKO 390) — negation at a
     line end in 1c text, found 03/10 after merge; reword with thai-copy in the next G4 Pro touch.
-  - Live screenshots from the cloud still impossible (03/10): Chromium goes out direct and the cloud's egress gateway re-signs with its
-    own CA; both fixes refused by the session's auto-permission check → owner's permission rule needed, else live shots = computer.
+  - Live screenshots from the cloud impossible (03/10, egress gateway re-signs TLS; fixes need an owner permission rule) → computer.
   - SEO round (owner 02/10: baseline hold lifted): GSC vs `docs/SEO_BASELINE.md` · delete `galleryNoteHeld` + `heldNote` +
     `TITLE_PRICE_HOLD_UNTIL_2026_10_05` · M Bar 10K airflow row · G5 hero tagline repeats · product FAQ answers absent from server HTML ·
     8 brand titles naming a model (cloud-results §2) · shared GPP note "Shared top-fill…" on 8 UWELL pages.
@@ -113,7 +114,6 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - Housekeeping queue: OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบเก็บบ้าน-ครั้งถัดไป-ของที่รอ.txt` (+ owner 03/10 (D) lower
     chat-move threshold in image rounds · (E) lighter rules) · stale empty folder `_incoming/wt-d` (Windows lock, delete later).
   - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
-  - Git Bash turns "/products/x" args into Windows paths unless `MSYS_NO_PATHCONV=1` — wordbreak-scan then scans the whole sitemap.
 6 verify baseline at the last full close (clip round; numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
   Latest light set [ตรวจแล้ว — computer 04/10, #242 at aad2b63/7db5cd6]: tsc 0 · eslint 0 · verify:catalog 29 steps (only typecheck
