@@ -21,7 +21,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     checker round 1 conditional → fixed 846409e) · #229 `e100416` colours re-tilted 12° from UWELL's strip + upright 4:5 card,
     openOnCardPhoto, 18 old files out · #230 `b18d104` colour chips = median of UWELL's render (13 of 16 were off).
   Earlier 03/10: #215 #220 #221 #223 (G5 owner fixes, brand logos UWELL INFY VOOPOO SaltHub JOIWAY, one-fact-twice trim, template doc).
-2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Test server 3412 UP at 784db69
+2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Test server 3412 UP at 784db69 (b1a-swatches)
   (`node scripts/test-server.js stop`). Leftover local branches g5-* / brand-logos-8 / docs-* = merged.
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10
   with Friday's 3 recommendations: round 3a/3b merged in and closed · brand order as written · set-1 UWELL colours re-tilted 12°).
@@ -31,7 +31,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   G3 Pro KOKO · 2 VOOPOO (+ Drag 6 hybrid lineup on the test server first, + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*,
   m-switch-pod, m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag
   sitewide-template-done, asset-refs sweep of the 246 candidates, edge defects).
-  STOPPED AT: batch 1a done (#228-#230). NEXT: batch 1b — G4 + G4 mini + G4 Classic, same steps as 1a (working files and scripts to
+  STOPPED AT: batch 1a done (#228-#230); chat moved at 512k context before 1b. 1b research (maker pages, not yet built):
+  `_incoming/sitewide-template/1b/research.md` (G4 Classic product images load by JS — list them in the browser first).
+  NEXT: batch 1b — G4 + G4 mini + G4 Classic, same steps as 1a (working files and scripts to
   copy: `_incoming/sitewide-template/1a/` — page.txt from the maker page · prep.js posters · copy-en.md → thai-copy → copy.json →
   edit-data.js / edit-copy.js · tilt.js colours · swatch.js chips · page-text-length with facts.json · shots). Lessons from 1a:
   Git Bash needs MSYS_NO_PATHCONV=1 for "/products/x" args · a lede tail can split a compound at 1440 · count the template's own
