@@ -90,7 +90,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // questions the posters and the FAQ do not answer. Thai = thai-copy 03/10.
   "caliburn-g5-lite": {
     th: {
-      lede: "Caliburn G5 Lite ตัวเครื่องเบา จับถนัดมือ หยิบแล้วไปได้เลย ด้านล่างคือรายละเอียดทีละข้อ",
+      lede: "Caliburn G5 Lite ตัวเครื่องเบา จับถนัดมือ หยิบแล้วไปได้เลย",
       sections: [
         {
           heading: "G5 Lite กับ G5 Lite SE เลือกตัวไหนดี",
@@ -115,7 +115,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     en: {
-      lede: "The Caliburn G5 Lite is light, sits well in the hand and is made to grab and go. Each point below in detail.",
+      lede: "The Caliburn G5 Lite is light, sits well in the hand and is made to grab and go.",
       sections: [
         {
           heading: "G5 Lite or G5 Lite SE — which one?",
@@ -140,7 +140,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     zh: {
-      lede: "Caliburn G5 Lite 机身轻巧，握感顺手，拿起就走。下面逐项介绍。",
+      lede: "Caliburn G5 Lite 机身轻巧，握感顺手，拿起就走。",
       sections: [
         {
           heading: "G5 Lite 和 G5 Lite SE 怎么选？",
@@ -169,7 +169,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // questions the posters and the FAQ do not answer. Thai = thai-copy 03/10.
   "caliburn-g5-lite-se": {
     th: {
-      lede: "Caliburn G5 Lite SE ตัวเครื่องเบา จับถนัดมือ หยิบแล้วไปได้เลย ด้านล่างคือรายละเอียดทีละข้อ",
+      lede: "Caliburn G5 Lite SE ตัวเครื่องเบา จับถนัดมือ หยิบแล้วไปได้เลย",
       sections: [
         {
           heading: "G5 Lite SE ต่างจาก G5 Lite ตรงไหน",
@@ -194,7 +194,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     en: {
-      lede: "The Caliburn G5 Lite SE is light, sits well in the hand and is made to grab and go. Each point below in detail.",
+      lede: "The Caliburn G5 Lite SE is light, sits well in the hand and is made to grab and go.",
       sections: [
         {
           heading: "G5 Lite SE vs G5 Lite — what's different?",
@@ -219,7 +219,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     zh: {
-      lede: "Caliburn G5 Lite SE 机身轻巧，握感顺手，拿起就走。下面逐项介绍。",
+      lede: "Caliburn G5 Lite SE 机身轻巧，握感顺手，拿起就走。",
       sections: [
         {
           heading: "G5 Lite SE 和 G5 Lite 有什么不同？",
