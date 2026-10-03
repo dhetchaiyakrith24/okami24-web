@@ -1226,9 +1226,16 @@ export const uwellProducts: Product[] = [
     // colour names (order + hex in scripts/process-images.map.json). Lineup rebuilt from those 12 files
     // (scripts/build-lineup-grid.js --cols 6). Image-sitewide round, set 1 (02/10): lineup-v2 = the G5 layout the owner
     // picked (Slate Grey big in front, the other 11 in two upright tiers) from the same 12 UWELL fronts — _incoming/image-sitewide/set1/.
+    // Template round 03/10 (owner: "ภาพรวมเล็กไป ขยายใหญ่หน่อย"): two groups of 6 like G3 Pro — solid colours (hero Slate Grey) /
+    // gradient finishes (hero Peafowl Emerald), set1/poster.js g4m-a / g4m-b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/caliburn-g4-mini/lineup-v2.webp",
-      alt: "UWELL Caliburn G4 Mini, all 12 colours",
+      src: "/assets/products/caliburn-g4-mini/lineup-v3.webp",
+      alt: "UWELL Caliburn G4 Mini, the 6 solid colours",
+      sourceName: "OKami24 composite (from UWELL's own colour renders)",
+    },
+    lineupImage2: {
+      src: "/assets/products/caliburn-g4-mini/lineup2-v3.webp",
+      alt: "UWELL Caliburn G4 Mini, the 6 gradient finishes",
       sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
     // Site-wide template round, batch 1b (03/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — UWELL's own page
