@@ -470,4 +470,188 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       ],
     },
   },
+  // Site-wide template round batch 1c (03/10): UWELL's own G4 Pro / G4 Pro KOKO pages, posters and page films only
+  // (_incoming/sitewide-template/1c/copy-en.md lists the source of each line); Thai = thai-copy 03/10.
+  "caliburn-g4-pro": {
+    "one-tap": {
+      title: { th: "แตะครั้งเดียวก็ปรับได้", en: "One tap does it", zh: "轻点即可调节" },
+      subline: { th: "เครื่องจอทัชรุ่นแรกของ UWELL", en: "UWELL's first smart touchscreen.", zh: "UWELL 首款智能触屏。" },
+      body: {
+        th: "คำสั่งหลักอยู่บนจอให้เห็นเลย ไม่ต้องจำวิธีกด",
+        en: "The core functions sit on the screen itself, so there are no instructions to memorise.",
+        zh: "核心功能都在屏幕上，不用再记操作说明。",
+      },
+      captions: [
+        { th: "ปรับวัตต์", en: "Adjust wattage", zh: "调节功率" },
+        { th: "สลับโหมด", en: "Switch output modes", zh: "切换输出模式" },
+        { th: "รีเซ็ตตัวนับพัฟ", en: "Reset puff counter", zh: "口数清零" },
+      ],
+      points: [
+        { text: { th: "แตะแม่นยำมากกว่า 99.99% (ตัวเลขจากแล็บของ UWELL)", en: "Touch accuracy above 99.99% (UWELL LAB)", zh: "触控准确率 99.99% 以上（UWELL 实验室数据）" }, specKey: "touch" },
+        { text: { th: "ตอบสนองภายใน 0.2 วินาที (ตัวเลขจากแล็บของ UWELL)", en: "Responds in under 0.2s (UWELL LAB)", zh: "响应时间不到 0.2 秒（UWELL 实验室数据）" }, specKey: "touch" },
+      ],
+      link: { href: "/technology/onboard-touch-displays", label: { th: "อ่านเรื่องพอตจอทัช", en: "How touchscreen pods work", zh: "了解触屏烟具" } },
+    },
+    "themes": {
+      title: { th: "ธีมหน้าจอ 6 แบบ", en: "Six screen themes", zh: "六款屏幕主题" },
+      subline: { th: "ใช้ได้เลยครึ่งหนึ่ง อีกครึ่งต้องปลดล็อก", en: "Half ready to use, half to unlock.", zh: "一半直接可用，一半等你解锁。" },
+      body: {
+        th: "UWELL อยากให้การสูบพอตเหมือนเล่นเกมอัปเลเวล ใช้ไปเรื่อย ๆ จอก็มีของใหม่ให้เปิด",
+        en: "UWELL wants vaping to feel like levelling up: keep using it and the screen has something new to open.",
+        zh: "UWELL 想让抽烟像打怪升级：一直用下去，屏幕就有新内容可解锁。",
+      },
+      points: [
+        { text: { th: "3 ธีมพร้อมใช้ แต่ละธีมมีแอนิเมชันตอนสูบเข้าชุดกัน", en: "3 themes from day one, each with its own vaping animation", zh: "3 款主题开箱即用，各配专属抽吸动画" }, specKey: "themes" },
+        { text: { th: "อีก 3 ธีมซ่อนอยู่ ปลดล็อกเมื่อครบ 5,000 10,000 และ 20,000 พัฟ", en: "3 hidden themes open at 5,000, 10,000 and 20,000 puffs", zh: "3 款隐藏主题在 5,000、10,000、20,000 口时解锁" }, specKey: "themes" },
+      ],
+    },
+    "settings": {
+      title: { th: "เมนูตั้งค่า", en: "Settings menu", zh: "设置菜单" },
+      subline: { th: "ปัดจอลงก็เจอ", en: "Swipe down the screen.", zh: "下滑屏幕即可。" },
+      body: {
+        th: "UWELL รวมการตั้งค่าที่เหลือไว้ในเมนูนี้ที่เดียว",
+        en: "UWELL keeps the rest of the settings in this one menu.",
+        zh: "UWELL 把其余设置都放在这一个菜单里。",
+      },
+      points: [
+        { text: { th: "เลือกได้ 8 ภาษา (ไม่มีภาษาไทย)", en: "8 languages (no Thai)", zh: "8 种语言（不含泰语）" }, specKey: "settings" },
+        { text: { th: "ตั้งชื่อเครื่องเองผ่าน Clean UI", en: "Rename the device with Clean UI", zh: "开启 Clean UI 可为设备改名" }, specKey: "settings" },
+        { text: { th: "ปรับความสว่าง เวลาปิดจอ เปิด/ปิดแอนิเมชัน และโหมดประหยัดแบต", en: "Brightness, screen timeout, animations, battery saver", zh: "亮度、息屏时间、动画、省电模式" }, specKey: "settings" },
+      ],
+    },
+    "custom-mode": {
+      title: { th: "โหมด Custom", en: "Custom mode", zh: "自定义模式" },
+      subline: { th: "Storm กับ Waves ก็ยังมี", en: "Storm and Waves are still there.", zh: "Storm 和 Waves 依然都在。" },
+      body: {
+        th: "Storm ตบคอทันที Waves รสนุ่มลื่น ส่วน Custom ให้ตั้งเองว่าชอบแบบไหน",
+        en: "Storm gives an instant throat hit, Waves a smooth flavour. Custom is the one you tune yourself.",
+        zh: "Storm 带来即时击喉感，Waves 口感顺滑，Custom 由你自己调。",
+      },
+      points: [
+        { text: { th: "ตั้งวัตต์แยกกันได้ ช่วงต้น กลาง และท้ายของแต่ละพัฟ", en: "Set the power at the start, middle and end of each puff", zh: "每一口的开头、中段、结尾都能设定功率" }, specKey: "modes" },
+      ],
+    },
+    "battery": {
+      title: { th: "ไม่ต้องชาร์จบ่อย", en: "Charge less often", zh: "少充几次电" },
+      subline: { th: "แบตใหญ่กว่า G4 รุ่นมาตรฐาน", en: "A bigger battery than the standard G4.", zh: "电池比标准版 G4 更大。" },
+      body: {
+        th: "ใช้จริงได้กี่วันขึ้นอยู่กับว่าสูบบ่อยแค่ไหนและตั้งกี่วัตต์",
+        en: "How long yours lasts depends on how often you vape and the wattage you set.",
+        zh: "实际能用几天，取决于抽吸频率和设定的功率。",
+      },
+      points: [
+        { text: { th: "แบต 1800mAh ในตัว", en: "1800mAh built-in battery", zh: "内置 1800mAh 电池" }, specKey: "battery" },
+        { text: { th: "ใช้ได้สูงสุด 7 วัน (ตัวเลขของ UWELL)", en: "Up to 7 days of use (UWELL's figure)", zh: "最长使用 7 天（UWELL 数据）" }, specKey: "battery-life" },
+        { text: { th: "ชาร์จผ่าน USB-C 5V/2.5A", en: "USB-C, 5V/2.5A charging", zh: "USB-C 充电，5V/2.5A" }, specKey: "charge-time" },
+      ],
+    },
+    "pods": {
+      title: { th: "ใช้หัว GPP ได้ทุกหัว", en: "Takes every GPP pod", zh: "兼容所有 GPP 烟弹" },
+      subline: { th: "ทั้งหัวรุ่นก่อนและหัวรุ่นใหม่", en: "Previous and upgraded.", zh: "旧款与升级款都能用。" },
+      body: {
+        th: "หัวรุ่นใหม่ใส่กับ Caliburn สาย G3 ได้ด้วย และเติมน้ำยาได้โดยไม่ต้องถอดหัวออก",
+        en: "The upgraded pods fit the G3 series too, and you refill without taking the pod out.",
+        zh: "升级款烟弹也适用于 G3 系列，注油无需取下烟弹。",
+      },
+      points: [
+        { text: { th: "หัวเติมด้านบนและด้านข้าง 0.4–1.2 โอห์ม", en: "Top- and side-refill pods from 0.4Ω to 1.2Ω", zh: "顶部与侧边注油烟弹，0.4Ω 至 1.2Ω" }, specKey: "pod-compat" },
+        { text: { th: "ระบบกันรั่ว U²", en: "U² anti-leak", zh: "U² 防漏" }, specKey: "anti-leak" },
+        { text: { th: "ปากดูดโค้งรับริมฝีปาก", en: "Contoured mouthpiece", zh: "贴合唇形的烟嘴" } },
+      ],
+      link: { href: "/products/coil-94", label: { th: "ดูหัวพอต GPP ที่ใช้กับ G4 Pro", en: "See the GPP pods for the G4 Pro", zh: "查看 GPP 烟弹" } },
+    },
+  },
+  "caliburn-g4-pro-koko": {
+    "blind-draw": {
+      title: { th: "ธีมหน้าจอแบบสุ่ม", en: "Blind-draw themes", zh: "盲抽主题" },
+      subline: { th: "ไม่รู้ว่าจะได้ธีมไหน จนกว่าจะเปิด", en: "You don't know which one you get until it opens.", zh: "打开之前，不知道会抽到哪款。" },
+      body: {
+        th: "ธีมได้มาจากเกมสุ่มการ์ดของ UWELL เก็บสะสมไปเรื่อย ๆ ก็สนุกอีกแบบ",
+        en: "The themes come from UWELL's blind-draw card game — collecting them is fun of its own.",
+        zh: "主题来自 UWELL 的盲抽卡牌游戏，收集本身就是一种乐趣。",
+      },
+      points: [
+        { text: { th: "ธีมหน้าจอ 5 แบบ", en: "5 screen themes", zh: "5 款屏幕主题" }, specKey: "themes" },
+      ],
+    },
+    "one-tap": {
+      title: { th: "คำสั่งหลักอยู่ในแตะเดียว", en: "Core features in one tap", zh: "核心功能，一触即达" },
+      subline: { th: "KOKO รุ่นแรกที่มีจอทัช", en: "The first KOKO with a touchscreen.", zh: "首款带触屏的 KOKO。" },
+      body: {
+        th: "UWELL ทำจอนี้มาให้คนสูบพอตใช้โดยเฉพาะ หน้าจอไม่รก ไม่ต้องไล่หาเมนู",
+        en: "UWELL built this screen for vapers: an uncluttered screen, no menus to dig through.",
+        zh: "UWELL 专为烟友打造这块屏幕：界面简洁，不用层层找菜单。",
+      },
+      points: [
+        { text: { th: "แตะแม่นยำมากกว่า 99.99% (ตัวเลขจากแล็บของ UWELL)", en: "Touch accuracy above 99.99% (UWELL LAB)", zh: "触控准确率 99.99% 以上（UWELL 实验室数据）" }, specKey: "touch" },
+        { text: { th: "ตอบสนองภายใน 0.2 วินาที (ตัวเลขจากแล็บของ UWELL)", en: "Responds in under 0.2s (UWELL LAB)", zh: "响应时间不到 0.2 秒（UWELL 实验室数据）" }, specKey: "touch" },
+      ],
+      link: { href: "/technology/onboard-touch-displays", label: { th: "อ่านเรื่องพอตจอทัช", en: "How touchscreen pods work", zh: "了解触屏烟具" } },
+    },
+    "screen": {
+      title: { th: "จอแตกยาก", en: "Ultra-shatterproof screen", zh: "超防摔屏幕" },
+      subline: { th: "จับแล้วถนัดมือ", en: "Superb hand feel.", zh: "手感出众。" },
+      body: {
+        th: "ขอบจอบาง ตัวเครื่องโค้งรับมือ ถือแล้วกระชับ",
+        en: "Minimal bezels and an ergonomic curve that sits snugly in the hand.",
+        zh: "窄边框加人体工学曲线，握在手里很贴合。",
+      },
+      points: [
+        { text: { th: "ประมาณ 93 กรัม", en: "Approx. 93g", zh: "约 93g" }, specKey: "weight" },
+      ],
+    },
+    "battery": {
+      title: { th: "แบตอึด", en: "Long battery life", zh: "续航持久" },
+      subline: { th: "ความจุ 2000mAh", en: "2000mAh.", zh: "2000mAh。" },
+      body: {
+        th: "ชาร์จเต็มครั้งเดียว ใช้ได้สูงสุด 10 วัน (ตัวเลขจากแล็บของ UWELL)",
+        en: "One full charge lasts up to 10 days (UWELL lab tests).",
+        zh: "充满一次最长可用 10 天（UWELL 实验室数据）。",
+      },
+      points: [
+        { text: { th: "ชาร์จผ่าน USB-C 5V/2.5A", en: "USB-C, 5V/2.5A charging", zh: "USB-C 充电，5V/2.5A" }, specKey: "charge-time" },
+      ],
+    },
+    "naming": {
+      title: { th: "ตั้งชื่อให้เครื่อง", en: "Name your device", zh: "给设备起名" },
+      subline: { th: "มุกวงในหรือชื่อเท่ ๆ ก็ตั้งได้", en: "From inside jokes to iconic names.", zh: "从小梗到经典名字都行。" },
+      body: {
+        th: "เปิด Clean UI แล้วพิมพ์ชื่อบนจอได้เลย การตั้งค่าอื่นอยู่ในเมนูเดียวกัน",
+        en: "Switch on Clean UI and type the name on the screen; the other settings sit in the same menu.",
+        zh: "开启 Clean UI，直接在屏幕上输入名字；其他设置也在同一菜单里。",
+      },
+      points: [
+        { text: { th: "เลือกได้ 8 ภาษา (ไม่มีภาษาไทย)", en: "8 languages (no Thai)", zh: "8 种语言（不含泰语）" }, specKey: "settings" },
+        { text: { th: "ปรับความสว่างและเวลาปิดจอ", en: "Brightness and screen timeout", zh: "亮度与息屏时间" }, specKey: "settings" },
+        { text: { th: "เปิด/ปิดแอนิเมชัน โหมดประหยัดแบต และรีเซ็ตเครื่อง", en: "Animation, battery saver and system reset", zh: "动画、省电模式与系统重置" }, specKey: "settings" },
+      ],
+    },
+    "modes": {
+      title: { th: "เลือกได้ 3 โหมด", en: "Three modes", zh: "三种模式" },
+      subline: { th: "Storm, Waves และ Customize", en: "Storm, Waves and Customize.", zh: "Storm、Waves 与 Customize。" },
+      body: {
+        th: "Storm ตบคอทันที Waves รสนุ่มและนิ่ง ส่วน Customize ตั้งเองตามที่ชอบ",
+        en: "Storm for an instant throat hit, Waves for a smooth, steady taste, Customize set the way you like.",
+        zh: "Storm 即时击喉，Waves 口感顺滑稳定，Customize 按你喜欢的来设定。",
+      },
+      points: [
+        { text: { th: "ตั้งวัตต์แยกกันได้ ช่วงต้น กลาง และท้ายของแต่ละพัฟ", en: "Set the power at the start, middle and end of each puff", zh: "每一口的开头、中段、结尾都能设定功率" }, specKey: "modes" },
+      ],
+    },
+    "pods": {
+      title: { th: "ใช้หัว GPP ได้ทุกหัว", en: "Takes every GPP pod", zh: "兼容所有 GPP 烟弹" },
+      subline: { th: "ทั้งหัวรุ่นก่อนและหัวรุ่นใหม่", en: "Previous and upgraded.", zh: "旧款与升级款都能用。" },
+      body: {
+        th: "หัวรุ่นใหม่ใส่กับ Caliburn สาย G3 ได้ด้วย และเติมน้ำยาได้โดยไม่ต้องถอดหัวออก",
+        en: "The upgraded pods fit the G3 series too, and you refill without taking the pod out.",
+        zh: "升级款烟弹也适用于 G3 系列，注油无需取下烟弹。",
+      },
+      points: [
+        { text: { th: "หัวเติมด้านบนและด้านข้าง 0.4–1.2 โอห์ม", en: "Top- and side-refill pods from 0.4Ω to 1.2Ω", zh: "顶部与侧边注油烟弹，0.4Ω 至 1.2Ω" }, specKey: "pod-compat" },
+        { text: { th: "ระบบกันรั่ว U²", en: "U² anti-leak", zh: "U² 防漏" }, specKey: "anti-leak" },
+        { text: { th: "ปากดูดโค้งรับริมฝีปาก", en: "Contoured mouthpiece", zh: "贴合唇形的烟嘴" } },
+      ],
+      link: { href: "/products/coil-94", label: { th: "ดูหัวพอต GPP ที่ใช้กับ G4 Pro KOKO", en: "See the GPP pods for the KOKO", zh: "查看 GPP 烟弹" } },
+    },
+  },
 };

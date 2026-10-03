@@ -69,6 +69,10 @@ export const SPEC_LABELS_TH: Record<string, string> = {
   "Puffs per cartridge": "พัฟต่อหัวพอต",
   "Puffs per pod": "พัฟต่อหัวพอต",
   "Status indicator": "ไฟบอกสถานะ",
+  // Site-wide template round batch 1c (03/10, thai-copy): G4 Pro / G4 Pro KOKO touchscreen rows.
+  Touch: "การแตะจอ",
+  "Screen themes": "ธีมหน้าจอ",
+  Settings: "การตั้งค่า",
 };
 
 /** The Thai chip label for an English data label, or the label itself when there is no entry. */
