@@ -34,10 +34,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   1d as merged: UWELL posters (G3 Pro 6 blocks, KOKO 7), th/en/zh + articles, every spec row from UWELL with sourceUrl (G3 Pro battery
   from UWELL's user manual zip; KOKO 1250mAh — the shop had "1000mAh unverified"; facts = 1d/facts-uwell.md). KOKO card now shows
   "1250mAh · Max 35W" sitewide. New flag `storyStartRight` (default unchanged) — G3 Pro starts poster-right (owner 03/10 "vary").
-  NEXT (owner 04/10 "แก้แชทหน้า"), in this order: (i) one small copy PR: head copy of G3 Pro + KOKO ((44) below) and G4 Classic + G4
-  ((41)) + the 2 Thai phrases the owner rejected (THAI_STYLE "ก้อน 1d" line: the RDL parenthesis in the G3 Pro article "เลือกหัวพอต
-  แบบไหนดี", "เก็บหยดน้ำยาที่ควบแน่น" in the KOKO anti-leak block) — head copy is round off-limits, the owner's "แก้" lifts it for
-  these 4 products only · (ii) table for (46) · (iii) batch 2 VOOPOO — start with the Drag 6 HYBRID lineup on the test server.
+  NEXT, in order: (i) one copy PR: G3 Pro + KOKO head copy ((44), owner 04/10 "แก้แชทหน้า" — lifts the head off-limits for these 2)
+  + the 2 rejected Thai phrases (THAI_STYLE "ก้อน 1d": RDL parenthesis in G3 Pro article · KOKO anti-leak block) + (41) G4 Classic/G4
+  only if the owner confirms (Friday's question bundled it [เชื่อว่า]) · (ii) table for (46) · (iii) batch 2 VOOPOO (Drag 6 HYBRID first).
   Speed (owner 04/10): one build per batch · whole-sitemap scan (≈ 20 min) only if a shared part changes · a build ≈ 8 min.
   Method that worked (1b–1d): maker page → .txt (`1b/extract.js`) · images listed in the page HTML + its `/_nuxt/*.js` chunks · ffmpeg
   stills from maker films · researcher reads posters/spec images into a facts sheet · copy-base.json (en/zh) → thai-copy → th.json →
