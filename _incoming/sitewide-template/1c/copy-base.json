@@ -1,0 +1,502 @@
+{
+ "caliburn-g4-pro": {
+  "lede": {
+   "en": "The Caliburn G4 Pro runs on a touchscreen. Below, one by one, what a tap can do.",
+   "zh": "Caliburn G4 Pro 用触屏操作。下面逐项看看轻点一下能做什么。"
+  },
+  "blocks": {
+   "one-tap": {
+    "title": {
+     "en": "One tap does it",
+     "zh": "轻点即可调节"
+    },
+    "subline": {
+     "en": "UWELL's first smart touchscreen.",
+     "zh": "UWELL 首款智能触屏。"
+    },
+    "body": {
+     "en": "The core functions sit on the screen itself, so there are no instructions to memorise.",
+     "zh": "核心功能都在屏幕上，不用再记操作说明。"
+    },
+    "captions": [
+     {
+      "en": "Adjust wattage",
+      "zh": "调节功率"
+     },
+     {
+      "en": "Switch output modes",
+      "zh": "切换输出模式"
+     },
+     {
+      "en": "Reset puff counter",
+      "zh": "口数清零"
+     }
+    ],
+    "points": [
+     {
+      "text": {
+       "en": "Touch accuracy above 99.99% (UWELL LAB)",
+       "zh": "触控准确率 99.99% 以上（UWELL 实验室数据）"
+      },
+      "specKey": "touch"
+     },
+     {
+      "text": {
+       "en": "Responds in under 0.2s (UWELL LAB)",
+       "zh": "响应时间不到 0.2 秒（UWELL 实验室数据）"
+      },
+      "specKey": "touch"
+     }
+    ],
+    "link": {
+     "href": "/technology/onboard-touch-displays",
+     "en": "How touchscreen pods work",
+     "zh": "了解触屏烟具"
+    }
+   },
+   "themes": {
+    "title": {
+     "en": "Six screen themes",
+     "zh": "六款屏幕主题"
+    },
+    "subline": {
+     "en": "Half ready to use, half to unlock.",
+     "zh": "一半直接可用，一半等你解锁。"
+    },
+    "body": {
+     "en": "UWELL wants vaping to feel like levelling up: keep using it and the screen has something new to open.",
+     "zh": "UWELL 想让抽烟像打怪升级：一直用下去，屏幕就有新内容可解锁。"
+    },
+    "points": [
+     {
+      "text": {
+       "en": "3 themes from day one, each with its own vaping animation",
+       "zh": "3 款主题开箱即用，各配专属抽吸动画"
+      },
+      "specKey": "themes"
+     },
+     {
+      "text": {
+       "en": "3 hidden themes open at 5,000, 10,000 and 20,000 puffs",
+       "zh": "3 款隐藏主题在 5,000、10,000、20,000 口时解锁"
+      },
+      "specKey": "themes"
+     }
+    ]
+   },
+   "settings": {
+    "title": {
+     "en": "Settings menu",
+     "zh": "设置菜单"
+    },
+    "subline": {
+     "en": "Swipe down the screen.",
+     "zh": "下滑屏幕即可。"
+    },
+    "body": {
+     "en": "UWELL keeps the rest of the settings in this one menu.",
+     "zh": "UWELL 把其余设置都放在这一个菜单里。"
+    },
+    "points": [
+     {
+      "text": {
+       "en": "8 languages (no Thai)",
+       "zh": "8 种语言（不含泰语）"
+      },
+      "specKey": "settings"
+     },
+     {
+      "text": {
+       "en": "Rename the device with Clean UI",
+       "zh": "开启 Clean UI 可为设备改名"
+      },
+      "specKey": "settings"
+     },
+     {
+      "text": {
+       "en": "Brightness, screen timeout, animations, battery saver",
+       "zh": "亮度、息屏时间、动画、省电模式"
+      },
+      "specKey": "settings"
+     }
+    ]
+   },
+   "custom-mode": {
+    "title": {
+     "en": "Custom mode",
+     "zh": "自定义模式"
+    },
+    "subline": {
+     "en": "Storm and Waves are still there.",
+     "zh": "Storm 和 Waves 依然都在。"
+    },
+    "body": {
+     "en": "Storm gives an instant throat hit, Waves a smooth flavour. Custom is the one you tune yourself.",
+     "zh": "Storm 带来即时击喉感，Waves 口感顺滑，Custom 由你自己调。"
+    },
+    "points": [
+     {
+      "text": {
+       "en": "Set the power at the start, middle and end of each puff",
+       "zh": "每一口的开头、中段、结尾都能设定功率"
+      },
+      "specKey": "modes"
+     }
+    ]
+   },
+   "battery": {
+    "title": {
+     "en": "Charge less often",
+     "zh": "少充几次电"
+    },
+    "subline": {
+     "en": "A bigger battery than the standard G4.",
+     "zh": "电池比标准版 G4 更大。"
+    },
+    "body": {
+     "en": "How long yours lasts depends on how often you vape and the wattage you set.",
+     "zh": "实际能用几天，取决于抽吸频率和设定的功率。"
+    },
+    "points": [
+     {
+      "text": {
+       "en": "1800mAh built-in battery",
+       "zh": "内置 1800mAh 电池"
+      },
+      "specKey": "battery"
+     },
+     {
+      "text": {
+       "en": "Up to 7 days of use (UWELL's figure)",
+       "zh": "最长使用 7 天（UWELL 数据）"
+      },
+      "specKey": "battery-life"
+     },
+     {
+      "text": {
+       "en": "USB-C, 5V/2.5A charging",
+       "zh": "USB-C 充电，5V/2.5A"
+      },
+      "specKey": "charge-time"
+     }
+    ]
+   },
+   "pods": {
+    "title": {
+     "en": "Takes every GPP pod",
+     "zh": "兼容所有 GPP 烟弹"
+    },
+    "subline": {
+     "en": "Previous and upgraded.",
+     "zh": "旧款与升级款都能用。"
+    },
+    "body": {
+     "en": "The upgraded pods fit the G3 series too, and you refill without taking the pod out.",
+     "zh": "升级款烟弹也适用于 G3 系列，注油无需取下烟弹。"
+    },
+    "points": [
+     {
+      "text": {
+       "en": "Top- and side-refill pods from 0.4Ω to 1.2Ω",
+       "zh": "顶部与侧边注油烟弹，0.4Ω 至 1.2Ω"
+      },
+      "specKey": "pod-compat"
+     },
+     {
+      "text": {
+       "en": "U² anti-leak",
+       "zh": "U² 防漏"
+      },
+      "specKey": "anti-leak"
+     },
+     {
+      "text": {
+       "en": "Contoured mouthpiece",
+       "zh": "贴合唇形的烟嘴"
+      }
+     }
+    ],
+    "link": {
+     "href": "/products/coil-94",
+     "en": "See the GPP pods for the G4 Pro",
+     "zh": "查看 GPP 烟弹"
+    }
+   }
+  },
+  "article": {
+   "en": [
+    {
+     "heading": "G4 Pro or G4 Pro KOKO?",
+     "paragraphs": [
+      "Both have a touchscreen, up to 35W and GPP pods.",
+      "The G4 Pro is the slim one, with the bigger 2.51-inch screen, at about 78g.",
+      "The [G4 Pro KOKO](/products/caliburn-g4-pro-koko) is the box-shaped one, with a bigger 2000mAh battery, about 93g, and five blind-draw screen themes.",
+      "Pick the shape you like."
+     ]
+    },
+    {
+     "heading": "How is the G4 Pro different from the G4?",
+     "paragraphs": [
+      "The [G4](/products/caliburn-g4) has a 0.85-inch colour screen, one button to run it and two modes.",
+      "The G4 Pro runs on a touchscreen, adds the Custom mode and has a bigger battery."
+     ]
+    }
+   ],
+   "zh": [
+    {
+     "heading": "G4 Pro 还是 G4 Pro KOKO？",
+     "paragraphs": [
+      "两款都有触屏、最高 35W，都用 GPP 烟弹。",
+      "G4 Pro 是纤长款，屏幕更大，2.51 英寸，约 78g。",
+      "[G4 Pro KOKO](/products/caliburn-g4-pro-koko) 是方盒款，电池更大，2000mAh，约 93g，还有 5 款盲抽屏幕主题。",
+      "喜欢哪种造型就选哪款。"
+     ]
+    },
+    {
+     "heading": "G4 Pro 和 G4 有什么不同？",
+     "paragraphs": [
+      "[G4](/products/caliburn-g4) 是 0.85 英寸彩屏，一个按键操作，有两种模式。",
+      "G4 Pro 用触屏操作，多了 Custom 模式，电池也更大。"
+     ]
+    }
+   ]
+  }
+ },
+ "caliburn-g4-pro-koko": {
+  "lede": {
+   "en": "The G4 Pro KOKO is a box-shaped device run from a touchscreen, with screen themes to collect.",
+   "zh": "G4 Pro KOKO 是方盒机身，用触屏操作，还有屏幕主题可以收集。"
+  },
+  "blocks": {
+   "blind-draw": {
+    "title": {
+     "en": "Blind-draw themes",
+     "zh": "盲抽主题"
+    },
+    "subline": {
+     "en": "You don't know which one you get until it opens.",
+     "zh": "打开之前，不知道会抽到哪款。"
+    },
+    "body": {
+     "en": "The themes come from UWELL's blind-draw card game — collecting them is fun of its own.",
+     "zh": "主题来自 UWELL 的盲抽卡牌游戏，收集本身就是一种乐趣。"
+    },
+    "points": [
+     {
+      "text": {
+       "en": "5 screen themes",
+       "zh": "5 款屏幕主题"
+      },
+      "specKey": "themes"
+     }
+    ]
+   },
+   "one-tap": {
+    "title": {
+     "en": "Core features in one tap",
+     "zh": "核心功能，一触即达"
+    },
+    "subline": {
+     "en": "The first KOKO with a touchscreen.",
+     "zh": "首款带触屏的 KOKO。"
+    },
+    "body": {
+     "en": "UWELL built this screen for vapers: an uncluttered screen, no menus to dig through.",
+     "zh": "UWELL 专为烟友打造这块屏幕：界面简洁，不用层层找菜单。"
+    },
+    "points": [
+     {
+      "text": {
+       "en": "Touch accuracy above 99.99% (UWELL LAB)",
+       "zh": "触控准确率 99.99% 以上（UWELL 实验室数据）"
+      },
+      "specKey": "touch"
+     },
+     {
+      "text": {
+       "en": "Responds in under 0.2s (UWELL LAB)",
+       "zh": "响应时间不到 0.2 秒（UWELL 实验室数据）"
+      },
+      "specKey": "touch"
+     }
+    ],
+    "link": {
+     "href": "/technology/onboard-touch-displays",
+     "en": "How touchscreen pods work",
+     "zh": "了解触屏烟具"
+    }
+   },
+   "screen": {
+    "title": {
+     "en": "Ultra-shatterproof screen",
+     "zh": "超防摔屏幕"
+    },
+    "subline": {
+     "en": "Superb hand feel.",
+     "zh": "手感出众。"
+    },
+    "body": {
+     "en": "Minimal bezels and an ergonomic curve that sits snugly in the hand.",
+     "zh": "窄边框加人体工学曲线，握在手里很贴合。"
+    },
+    "points": [
+     {
+      "text": {
+       "en": "Approx. 93g",
+       "zh": "约 93g"
+      },
+      "specKey": "weight"
+     }
+    ]
+   },
+   "battery": {
+    "title": {
+     "en": "Long battery life",
+     "zh": "续航持久"
+    },
+    "subline": {
+     "en": "2000mAh.",
+     "zh": "2000mAh。"
+    },
+    "body": {
+     "en": "One full charge lasts up to 10 days (UWELL lab tests).",
+     "zh": "充满一次最长可用 10 天（UWELL 实验室数据）。"
+    },
+    "points": [
+     {
+      "text": {
+       "en": "USB-C, 5V/2.5A charging",
+       "zh": "USB-C 充电，5V/2.5A"
+      },
+      "specKey": "charge-time"
+     }
+    ]
+   },
+   "naming": {
+    "title": {
+     "en": "Name your device",
+     "zh": "给设备起名"
+    },
+    "subline": {
+     "en": "From inside jokes to iconic names.",
+     "zh": "从小梗到经典名字都行。"
+    },
+    "body": {
+     "en": "Switch on Clean UI and type the name on the screen; the other settings sit in the same menu.",
+     "zh": "开启 Clean UI，直接在屏幕上输入名字；其他设置也在同一菜单里。"
+    },
+    "points": [
+     {
+      "text": {
+       "en": "8 languages (no Thai)",
+       "zh": "8 种语言（不含泰语）"
+      },
+      "specKey": "settings"
+     },
+     {
+      "text": {
+       "en": "Brightness and screen timeout",
+       "zh": "亮度与息屏时间"
+      },
+      "specKey": "settings"
+     },
+     {
+      "text": {
+       "en": "Animation, battery saver and system reset",
+       "zh": "动画、省电模式与系统重置"
+      },
+      "specKey": "settings"
+     }
+    ]
+   },
+   "modes": {
+    "title": {
+     "en": "Three modes",
+     "zh": "三种模式"
+    },
+    "subline": {
+     "en": "Storm, Waves and Customize.",
+     "zh": "Storm、Waves 与 Customize。"
+    },
+    "body": {
+     "en": "Storm for an instant throat hit, Waves for a smooth, steady taste, Customize set the way you like.",
+     "zh": "Storm 即时击喉，Waves 口感顺滑稳定，Customize 按你喜欢的来设定。"
+    },
+    "points": [
+     {
+      "text": {
+       "en": "Set the power at the start, middle and end of each puff",
+       "zh": "每一口的开头、中段、结尾都能设定功率"
+      },
+      "specKey": "modes"
+     }
+    ]
+   },
+   "pods": {
+    "title": {
+     "en": "Takes every GPP pod",
+     "zh": "兼容所有 GPP 烟弹"
+    },
+    "subline": {
+     "en": "Previous and upgraded.",
+     "zh": "旧款与升级款都能用。"
+    },
+    "body": {
+     "en": "The upgraded pods fit the G3 series too, and you refill without taking the pod out.",
+     "zh": "升级款烟弹也适用于 G3 系列，注油无需取下烟弹。"
+    },
+    "points": [
+     {
+      "text": {
+       "en": "Top- and side-refill pods from 0.4Ω to 1.2Ω",
+       "zh": "顶部与侧边注油烟弹，0.4Ω 至 1.2Ω"
+      },
+      "specKey": "pod-compat"
+     },
+     {
+      "text": {
+       "en": "U² anti-leak",
+       "zh": "U² 防漏"
+      },
+      "specKey": "anti-leak"
+     },
+     {
+      "text": {
+       "en": "Contoured mouthpiece",
+       "zh": "贴合唇形的烟嘴"
+      }
+     }
+    ],
+    "link": {
+     "href": "/products/coil-94",
+     "en": "See the GPP pods for the KOKO",
+     "zh": "查看 GPP 烟弹"
+    }
+   }
+  },
+  "article": {
+   "en": [
+    {
+     "heading": "G4 Pro KOKO or G4 Pro?",
+     "paragraphs": [
+      "Both have a touchscreen, up to 35W and GPP pods.",
+      "The KOKO is the box-shaped one, with the bigger battery, at about 93g.",
+      "The [G4 Pro](/products/caliburn-g4-pro) is the slim one: a 2.51-inch screen, 1800mAh, about 78g.",
+      "Pick the shape you like."
+     ]
+    }
+   ],
+   "zh": [
+    {
+     "heading": "G4 Pro KOKO 还是 G4 Pro？",
+     "paragraphs": [
+      "两款都有触屏、最高 35W，都用 GPP 烟弹。",
+      "KOKO 是方盒款，电池更大，约 93g。",
+      "[G4 Pro](/products/caliburn-g4-pro) 是纤长款：2.51 英寸屏，1800mAh，约 78g。",
+      "喜欢哪种造型就选哪款。"
+     ]
+    }
+   ]
+  }
+ }
+}

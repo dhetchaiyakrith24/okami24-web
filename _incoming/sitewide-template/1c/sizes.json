@@ -1,0 +1,77 @@
+{
+ "public/assets/products/caliburn-g4-pro/story-cover.webp": [
+  1920,
+  1080,
+  false
+ ],
+ "public/assets/products/caliburn-g4-pro/story-one-tap.webp": [
+  1600,
+  900,
+  false
+ ],
+ "public/assets/products/caliburn-g4-pro/story-themes.webp": [
+  1600,
+  900,
+  false
+ ],
+ "public/assets/products/caliburn-g4-pro/story-settings.webp": [
+  1600,
+  900,
+  false
+ ],
+ "public/assets/products/caliburn-g4-pro/story-custom-mode.webp": [
+  1200,
+  1013,
+  false
+ ],
+ "public/assets/products/caliburn-g4-pro/story-battery.webp": [
+  1800,
+  1333,
+  false
+ ],
+ "public/assets/products/caliburn-g4-pro/story-pods.webp": [
+  1800,
+  1201,
+  true
+ ],
+ "public/assets/products/caliburn-g4-pro-koko/story-cover.webp": [
+  1920,
+  1080,
+  false
+ ],
+ "public/assets/products/caliburn-g4-pro-koko/story-blind-draw.webp": [
+  1360,
+  733,
+  true
+ ],
+ "public/assets/products/caliburn-g4-pro-koko/story-one-tap.webp": [
+  1584,
+  1391,
+  true
+ ],
+ "public/assets/products/caliburn-g4-pro-koko/story-screen.webp": [
+  1040,
+  747,
+  true
+ ],
+ "public/assets/products/caliburn-g4-pro-koko/story-battery.webp": [
+  1121,
+  500,
+  true
+ ],
+ "public/assets/products/caliburn-g4-pro-koko/story-naming.webp": [
+  1920,
+  1097,
+  false
+ ],
+ "public/assets/products/caliburn-g4-pro-koko/story-modes.webp": [
+  1200,
+  1013,
+  false
+ ],
+ "public/assets/products/caliburn-g4-pro-koko/story-pods.webp": [
+  1800,
+  1200,
+  true
+ ]
+}
