@@ -21,8 +21,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     UWELL's "Look Closer" close-ups were not used (labels laid over their device, cannot stand alone). No maker parts view → no exploded view.
   Earlier 03/10: 1b #233 #234 (G4 · G4 mini · G4 Classic, owner approved the G4 page in chat) · 1a #228-#230 · G5 close #225 #226.
 2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git].
-  Cloud chat: kit 1c lives in `_incoming/sitewide-template/1c/` of that container only (prep.js · copy-en.md · copy-base.json · th.json ·
-  build.js · edit-th.js · fix-*.js · rescan.sh · shots.sh) — `_incoming/` is not in git; the 1b kit is on branch `kit-1b` (never merge it).
+  Kits (never merge these branches): 1c = branch `kit-1c` (prep.js · copy-en.md · copy-base.json · th.json · build.js · edit-th.js ·
+  fix-*.js · rescan.sh · shots.sh · facts.json · UWELL's G4 Pro colour pairs mk/g4pro/pc_color-1..8.webp + both spec tables) ·
+  1b = branch `kit-1b`. Get one: `git fetch origin kit-1c && git restore --source origin/kit-1c --worktree -- _incoming/sitewide-template/1c`.
   The cloud container restarted 5× on 03/10 (each kills a running build) → run long jobs as one script file, re-run after a restart.
   Test-server limit (session tool, not a site bug): its image resizer runs one job at a time; a hung request blocks every image after it
   → stop/start; full-page shots need `--eval` that scrolls + waits for images (`_incoming/sitewide-template/1c/shots.sh`).
@@ -38,8 +39,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   the back device overlaps the front one's button side → isolating the front device needs an edge completion (AI) or a recolour master;
   UWELL's upright fronts pc/3-*, 6-* are cropped at the top = unusable) → the G4 Pro hero still opens on the pair, no openOnCardPhoto.
   KOKO colours (night-render master, 01/10) left as they are.
-  NEXT: either 1c-colours (G4 Pro card upright 4:5 + 8 colours tilted 12°, own PR, Higgsfield allowed — IMAGE_SPEC §0 item 7) or batch 1d
-  G3 Pro + G3 Pro KOKO. Method that worked (1b+1c): maker page → .txt (`extract.js`) · images are listed in the page's CSS and its
+  NEXT (owner 03/10, on the computer — chat moved there): in this order, each its own PR:
+   (a) copy fix, tier A fast path: "ตบคอ" (2 Thai strings in src/i18n/story-copy.ts, G4 Pro custom-mode + KOKO modes) → "แรงถึงคอ"
+       (owner: the only word that fails — he did not understand it; THAI_STYLE ก้อน 1c line).
+   (b) G4 mini all-colours image too small → make the devices bigger (owner: "ภาพรวมเล็กไป ขยายใหญ่หน่อย"; G4 mini otherwise passed).
+   (c) 1c-colours: G4 Pro card upright 4:5 + 8 colours tilted 12° (owner: "ทำได้" — Higgsfield allowed, IMAGE_SPEC §0 item 7).
+   (d) then batch 1d G3 Pro + G3 Pro KOKO — vary the stage arrangement a little between pages (owner 03/10, template §1 row 7).
+  Method that worked (1b+1c): maker page → .txt (`extract.js`) · images are listed in the page's CSS and its
   `/_nuxt/*.js` chunk (template strings like `pc/3-${item}.webp` — probe 1..10) · ffmpeg stills from the maker's page films (fps=1 sheet,
   then pick) · read spec images flattened on white · copy-en.md → thai-copy → th.json → build.js inserts story-copy + articles ·
   edit scripts as .js files (Thai never through `node -e` or a heredoc — it fails silently) · restore files with `git show <c>:f > f`,
@@ -69,22 +75,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        meta description + JSON-LD (round off-limits = head) → asked 03/10: 1 fix in the round (Friday's pick; thai-copy draft: tagline
        "Caliburn รุ่นฉลอง 10 ปี ตัวเครื่องอะลูมิเนียม ไฟ RGB แทนจอ" · short "Caliburn G4 Classic แบต 1400mAh สูงสุด 35 วัตต์ ไม่มีจอ ใช้ไฟ RGB
        14 ดวงบอกระดับแบต มีเซ็นเซอร์คู่ และใช้หัวพอต GPP") · 2 wait for the SEO round. Same card line shows on /brands/uwell etc.
-  (42) G4 page APPROVED (owner 03/10 cloud chat: "G4 ผ่านครับ") — G4 mini + G4 Classic not named yet, still open.
-       Look at batch 1b on live (G4 · G4 mini · G4 Classic; new Thai words in report item 4 of 03/10: เชื่อมด้วยคลื่นอัลตราโซนิก ·
-       ร่องรูปตัว U · เซ็นเซอร์คู่ · ระบบสูบได้เลย · ความแม่นยำในการยิง · ช่องใส · ค่อย ๆ ละเลียดทุกพัฟ) · colour dots of black bodies read
-       mid-grey (median of UWELL's render, as batch 1a) · pages now open on the card with the colour label empty until a colour is picked (= G5).
-  (43) look at batch 1c on live (G4 Pro · G4 Pro KOKO) · new Thai words to rule on: ตบคอ (throat hit) · แอนิเมชัน · อัปเลเวล ·
-       ทรงกล่อง / ทรงเพรียว · ธีมหน้าจอแบบสุ่ม / เกมสุ่มการ์ด · รีเซ็ตตัวนับพัฟ · โหมดประหยัดแบต · เวลาปิดจอ · label "การแตะจอ" (Touch).
-  (44) "ultra-shatterproof" (Thai draft "ออกแบบให้แตกยาก"): UWELL prints it on both posters (G4 Pro pc/nch.webp 2.51-inch · KOKO
-       pc/p3.png + pc/spe6-params.png 2.0-inch). Owner dropped it from the G4 Pro 2026-09-14 because UWELL's page TEXT lacked it; the
-       checker also reads it as a durability boast without a number → held off both pages. Friday's pick: 2 = keep it off (posters show it).
-       1 = put it back on both (spec row + one point) · 2 = keep off.
+  (42)+(43) answered 03/10 → work items NEXT (a)(b)(d) above; G4, G4 Classic approved by the owner, G4 mini = approved except (b);
+       batch 1c words locked (THAI_STYLE ก้อน 1c) except "ตบคอ". Still to look at on live: G4 Pro + G4 Pro KOKO pages (1c) as a whole.
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags (not changed): INFY `descriptionTh` says disposable-only brand · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" /
        "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ" (batch 4 needs it)
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
-  Answered 03/10 (do not ask again): G5 repeats = A keep · next round approved · logos: Kardinal = the maker's "Kardinal" word logo,
+  Answered 03/10 (do not ask again): "ultra-shatterproof" stays OFF both G4 Pro pages (owner: Friday decides → off; UWELL's posters
+  still show it) · G5 repeats = A keep · next round approved · logos: Kardinal = the maker's "Kardinal" word logo,
   site name "KS" stays · DOTMOD = text chip (Friday's call, owner "ตัดสินใจได้เลย").
 5 open / dated:
   - `src/data/guides.ts` (the which-Caliburn guide, Thai) still says G4 Classic specs are unconfirmed so it is left out of the comparison —
