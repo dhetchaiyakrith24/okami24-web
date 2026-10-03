@@ -57,6 +57,8 @@ as "below the owner's bar" with the fix:**
 9. Premium like Apple's shop: clean, complete, no clutter or information overload (a shop of every brand);
    short, sharp copy — but not static: life, colour, contrast (ช10 "ยังไม่พรีเมียมพอ + นิ่งไป").
 10. Fits the dark theme even when the reference is light (ช1).
+11. Trimming copy never deletes a whole block the page shows (lede, body, side points) — rewrite it in place; the look
+   stays (owner 03/10 on live: the G5 lede was gone · LESSONS พ14).
 
 ---
 
