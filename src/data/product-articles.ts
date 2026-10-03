@@ -7,7 +7,7 @@ import type { Locale } from "@/i18n/config";
  * per locale; a locale without a copy falls back to `en`, then shows nothing.
  *
  * - `lede` (optional): one or two sentences under the section heading, before the posters — a reason to scroll, never a
- *   list of the facts the posters tell nor a re-statement of the source line (G5 has none: designer 03/10).
+ *   list of the facts the posters tell nor a re-statement of the source line (G5: cut 03/10, back by the owner the same day).
  * - `sections`: the article itself, after the all-options grid — H3 blocks whose headings are buyer questions.
  *   Paragraphs may carry inline links `[text](/path)` (ArticleBody's syntax), at most three per article.
  *
@@ -28,6 +28,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // re-told a story poster (triple tap · 7 colours · airflow) were removed and repeated facts trimmed (thai-copy).
   "caliburn-g5": {
     th: {
+      lede: "Caliburn G5 มีจอสี แตะสามครั้งเพื่อสลับโหมด ตัวเครื่องเป็นอะลูมิเนียม และในกล่องมีหัวพอตมาให้สามหัว ด้านล่างคือรายละเอียดทีละข้อจาก UWELL",
       sections: [
         {
           heading: "Caliburn G5 ต่างจาก G5 Lite ยังไง",
@@ -47,6 +48,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     en: {
+      lede: "The Caliburn G5 has a colour screen, a triple tap to switch modes, an aluminium body and three pods in the box. Below, each point in detail from UWELL.",
       sections: [
         {
           heading: "How is the Caliburn G5 different from the G5 Lite?",
@@ -65,6 +67,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     zh: {
+      lede: "Caliburn G5 配备彩色屏幕、三击切换模式、铝合金机身，盒内附 3 颗烟弹。下面按 UWELL 资料逐项介绍。",
       sections: [
         {
           heading: "Caliburn G5 和 G5 Lite 有什么不同？",
