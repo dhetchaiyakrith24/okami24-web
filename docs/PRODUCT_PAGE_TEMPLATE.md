@@ -1,6 +1,7 @@
 # Product page template — Caliburn G5 (round "G5 template", owner 02/10)
 
-> Status: written 03/10 (batch 6). **Lock = the owner's word "ล็อก" on the live G5 page** — until then [รอเจ้าของ].
+> Status: **locked 03/10** — the owner on the live G5 page: "แก้ หลังจากนั้นล็อกได้" (the lede back = PR #225; "not perfect yet", so the
+> brand-by-brand round may still improve it — a change to this doc = the owner's word). Tag `g5-template-done`.
 > The reference page is `/products/caliburn-g5`. Every product page in the site-wide round is brought to this shape, brand by
 > brand. This file says WHAT a finished page has and where each rule lives; it does not copy rules that have their own home:
 > images = `docs/IMAGE_SPEC.md` · Thai words = `docs/THAI_STYLE.md` · owner rulings = HANDOFF §18 · the owner's eye =
@@ -13,7 +14,7 @@
 |---|---|---|---|
 | 1 | Hero photo | opens on the card: the maker's render, upright, 4:5 (`openOnCardPhoto`) · colour/flavour photos by swipe, each the maker's render tilted 12° (new work; approved upright sets stay until redone) · the all-options image last ("ทั้งหมด"; two groups "ทั้งหมด 1 / 2" when 7+ devices would shrink in one square) | product data `image` · `colorVariants[].image` · `lineupImage` (+ `lineupImage2`) · IMAGE_SPEC §0 items 5 + 8 |
 | 2 | Hero text | the brand's own logo in place of the brand chip, linked to `/brands/<slug>`; the row keeps the chip height whatever the logo, so the title starts at the same height on every page · family chip · name · short description · price read live | `src/lib/brand-logos.ts` (`scale` per logo so letters read one size; a logo is listed only after it was seen at size on a real page) · HANDOFF §18 "Brand logos" |
-| 3 | More details — heading | eyebrow + "รายละเอียดเพิ่มเติม" + the maker credit line · a lede only when it gives a reason to scroll (G5 has none — it repeated the credit line) | `product-articles.ts` `lede` (optional) |
+| 3 | More details — heading | eyebrow + "รายละเอียดเพิ่มเติม" + the maker credit line · a lede of 1–2 sentences under it — the heading never stands bare (owner 03/10 on live: "the text that used to be here is gone"; LESSONS พ14) | `product-articles.ts` `lede` (optional) |
 | 4 | Cover | the maker's campaign image; a cut-out (`transparent`) floats with no frame, a small gap under the text — never behind the heading or lede (Owner eye 5 · LESSONS พ13); a maker crop at the file edge gets a soft alpha fade, never drawn | `storyCover` · e.g. `_incoming/g5-template/b6/cover-fade.js` |
 | 5 | Exploded view | the maker's own parts view with labelled close-ups ("ไล่ดูทีละส่วน") — labels name the part in the shortest form; close-ups = native maker pixels (Lanczos + light unsharp), never an AI upscale on anything with text (LESSONS พ12); a crop never cuts screen text | `ANATOMY_SHEETS[slug]` (anatomy-sheet-copy.ts) |
 | 6 | Highlight chips | numbered chips (2 per row on phones, one row from lg) jumping to each block | automatic from `features[]` with `image` |
