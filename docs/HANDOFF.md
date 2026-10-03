@@ -16,8 +16,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     (checker 3/3; live: the lede present after the deploy swap — a curl right after "deploy success" still showed the old page).
   #226 `69f3686` G5 round close: 14 unused G5 images removed (asset-refs + anatomy folder by hand; kept files 200 live) ·
     `docs/PRODUCT_PAGE_TEMPLATE.md` locked 03/10 (checker 3/3). Tag `g5-template-done` = 69f3686 (pushed).
+  Batch 1a [ตรวจแล้ว — checker each · GitHub green · deploy · live curl]: #228 `4527c22` G5 Lite + G5 Lite SE on the template (stage
+    story from UWELL posters, cover = UWELL theme-poster, th/en/zh, article, 6 maker-verified spec rows, `scripts/page-text-length.js`;
+    checker round 1 conditional → fixed 846409e) · #229 `e100416` colours re-tilted 12° from UWELL's strip + upright 4:5 card,
+    openOnCardPhoto, 18 old files out · #230 `b18d104` colour chips = median of UWELL's render (13 of 16 were off).
   Earlier 03/10: #215 #220 #221 #223 (G5 owner fixes, brand logos UWELL INFY VOOPOO SaltHub JOIWAY, one-fact-twice trim, template doc).
-2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Test server 3412 UP at 34aece7
+2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Test server 3412 UP at 784db69
   (`node scripts/test-server.js stop`). Leftover local branches g5-* / brand-logos-8 / docs-* = merged.
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10
   with Friday's 3 recommendations: round 3a/3b merged in and closed · brand order as written · set-1 UWELL colours re-tilted 12°).
@@ -27,10 +31,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   G3 Pro KOKO · 2 VOOPOO (+ Drag 6 hybrid lineup on the test server first, + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*,
   m-switch-pod, m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag
   sitewide-template-done, asset-refs sweep of the 246 candidates, edge defects).
-  STOPPED AT: nothing built yet. NEXT: batch 1a — UWELL's G5 Lite / G5 Lite SE pages (researcher: posters, exploded view, specs),
-  storyDetails + storyLayout "stage" + story-copy th/en/zh + article + image links + colour images tilted 12° (G5 method
-  `_incoming/image-sitewide/g5/tilt-all.js`), Owner eye before the checker. A text-length counter script (1,000–3,500 unique Thai
-  chars + one fact at most twice) is to be written in `scripts/` in batch 1 (round file 【ตรวจ】).
+  STOPPED AT: batch 1a done (#228-#230). NEXT: batch 1b — G4 + G4 mini + G4 Classic, same steps as 1a (working files and scripts to
+  copy: `_incoming/sitewide-template/1a/` — page.txt from the maker page · prep.js posters · copy-en.md → thai-copy → copy.json →
+  edit-data.js / edit-copy.js · tilt.js colours · swatch.js chips · page-text-length with facts.json · shots). Lessons from 1a:
+  Git Bash needs MSYS_NO_PATHCONV=1 for "/products/x" args · a lede tail can split a compound at 1440 · count the template's own
+  "รุ่นนี้มี N สี" heading as one mention of the colour count · maker footnotes (UWELL LAB) attach to data, not to taste.
+  Thai words used in 1a, not yet in THAI_STYLE (owner to rule, report item 4): ทูโทน · ผิวลายริ้ว · เปลือกโปร่งแสง/แกนด้านใน ·
+  กลับด้านหัวพอตเพื่อปรับลม.
   Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD.
 3a THE IMAGE METHODS THAT WORK (from the old image round, kept for this round):
   (a) one model, colours differ only in colour = ONE master + recolour by script — silver master `b-uwell/recolour-g4c.js`; coloured
