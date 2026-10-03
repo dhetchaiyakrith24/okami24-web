@@ -136,9 +136,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "แบต 1600mAh", en: "1600mAh battery", zh: "1600mAh 电池" },
       subline: { th: "ชาร์จครั้งเดียว ใช้ได้สูงสุด 6 วัน (ตัวเลขของ UWELL)", en: "Up to 6 days on a single charge (UWELL's figure).", zh: "充一次电最长可用 6 天（UWELL 数据）。" },
       body: {
-        th: "ใช้จริงได้กี่วันขึ้นอยู่กับว่าสูบบ่อยแค่ไหน และเปิดลมแค่ไหน",
-        en: "How long yours lasts depends on how often you vape and how open the airflow is.",
-        zh: "实际能用几天，取决于抽吸频率和气流开多大。",
+        th: "ไม่ต้องชาร์จทุกวัน ใช้จริงได้กี่วันขึ้นอยู่กับการใช้งาน",
+        en: "No need to charge every day; how long yours lasts depends on how you use it.",
+        zh: "不用每天充电；实际能用几天取决于使用习惯。",
       },
       points: [
         { text: { th: "ไฟ LED 4 ขีดบอกระดับแบต", en: "4-bar LED shows the battery level", zh: "4 格 LED 显示电量" }, specKey: "screen" },
@@ -160,9 +160,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "35 วัตต์ รสชาติเข้ม", en: "35W, full flavour", zh: "35W，风味浓郁" },
       subline: { th: "รสกลมกล่อม มีหลายชั้น", en: "Rich and layered.", zh: "口感醇厚，层次丰富。" },
       body: {
-        th: "ระบบปรับรสชาติ Pro-FOCS 4.0 คุมให้ทุกพัฟรสสมดุล ตามผลทดสอบของ UWELL LAB",
-        en: "Pro-FOCS 4.0 keeps every puff balanced (UWELL LAB tests).",
-        zh: "Pro-FOCS 4.0 让每一口都口感均衡（UWELL LAB 测试）。",
+        th: "UWELL บอกว่าระบบปรับรสชาติ Pro-FOCS 4.0 คุมให้ทุกพัฟรสสมดุล",
+        en: "UWELL says Pro-FOCS 4.0 keeps every puff balanced.",
+        zh: "UWELL 表示，Pro-FOCS 4.0 让每一口都口感均衡。",
       },
       points: [
         { text: { th: "หัวพอต 0.4 โอห์ม", en: "0.4Ω pod", zh: "0.4Ω 烟弹" }, specKey: "pod-resistance" },
@@ -190,9 +190,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "แบต 1600mAh", en: "1600mAh battery", zh: "1600mAh 电池" },
       subline: { th: "ชาร์จครั้งเดียว ใช้ได้สูงสุด 6 วัน (ตัวเลขของ UWELL)", en: "Up to 6 days on a single charge (UWELL's figure).", zh: "充一次电最长可用 6 天（UWELL 数据）。" },
       body: {
-        th: "ใช้จริงได้กี่วันขึ้นอยู่กับว่าสูบบ่อยแค่ไหน และเปิดลมแค่ไหน",
-        en: "How long yours lasts depends on how often you vape and how open the airflow is.",
-        zh: "实际能用几天，取决于抽吸频率和气流开多大。",
+        th: "ไม่ต้องชาร์จทุกวัน ใช้จริงได้กี่วันขึ้นอยู่กับการใช้งาน",
+        en: "No need to charge every day; how long yours lasts depends on how you use it.",
+        zh: "不用每天充电；实际能用几天取决于使用习惯。",
       },
       points: [
         { text: { th: "ไฟ LED 4 ขีดบอกระดับแบต", en: "4-bar LED shows the battery level", zh: "4 格 LED 显示电量" }, specKey: "screen" },
@@ -214,9 +214,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "35 วัตต์ รสชาติเข้ม", en: "35W, full flavour", zh: "35W，风味浓郁" },
       subline: { th: "รสกลมกล่อม มีหลายชั้น", en: "Rich and layered.", zh: "口感醇厚，层次丰富。" },
       body: {
-        th: "ระบบปรับรสชาติ Pro-FOCS 4.0 คุมให้ทุกพัฟรสสมดุล ตามผลทดสอบของ UWELL LAB",
-        en: "Pro-FOCS 4.0 keeps every puff balanced (UWELL LAB tests).",
-        zh: "Pro-FOCS 4.0 让每一口都口感均衡（UWELL LAB 测试）。",
+        th: "UWELL บอกว่าระบบปรับรสชาติ Pro-FOCS 4.0 คุมให้ทุกพัฟรสสมดุล",
+        en: "UWELL says Pro-FOCS 4.0 keeps every puff balanced.",
+        zh: "UWELL 表示，Pro-FOCS 4.0 让每一口都口感均衡。",
       },
       points: [
         { text: { th: "หัวพอต 0.4 โอห์ม", en: "0.4Ω pod", zh: "0.4Ω 烟弹" }, specKey: "pod-resistance" },

@@ -398,7 +398,7 @@ export const uwellProducts: Product[] = [
       {
         id: "long-run-battery",
         title: "1600mAh battery",
-        description: "How long yours lasts depends on how often you vape and how open the airflow is.",
+        description: "No need to charge every day; how long yours lasts depends on how you use it.",
         subline: "Up to 6 days on a single charge (UWELL's figure).",
         image: { src: "/assets/products/caliburn-g5-lite/story-battery.webp", alt: "Official UWELL poster — 1600mAh, the Caliburn G5 Lite and G5 Lite SE", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 2215, height: 1613, transparent: true },
       },
@@ -412,7 +412,7 @@ export const uwellProducts: Product[] = [
       {
         id: "power-35w",
         title: "35W, full flavour",
-        description: "Pro-FOCS 4.0 keeps every puff balanced (UWELL LAB tests).",
+        description: "UWELL says Pro-FOCS 4.0 keeps every puff balanced.",
         subline: "Rich and layered.",
         image: { src: "/assets/products/caliburn-g5-lite/story-35w.webp", alt: "UWELL's 35W type from the Caliburn G5 Lite page", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 2400, height: 788, transparent: true },
       },
@@ -563,7 +563,7 @@ export const uwellProducts: Product[] = [
       {
         id: "long-run-battery",
         title: "1600mAh battery",
-        description: "How long yours lasts depends on how often you vape and how open the airflow is.",
+        description: "No need to charge every day; how long yours lasts depends on how you use it.",
         subline: "Up to 6 days on a single charge (UWELL's figure).",
         image: { src: "/assets/products/caliburn-g5-lite/story-battery.webp", alt: "Official UWELL poster — 1600mAh, the Caliburn G5 Lite and G5 Lite SE", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 2215, height: 1613, transparent: true },
       },
@@ -577,7 +577,7 @@ export const uwellProducts: Product[] = [
       {
         id: "power-35w",
         title: "35W, full flavour",
-        description: "Pro-FOCS 4.0 keeps every puff balanced (UWELL LAB tests).",
+        description: "UWELL says Pro-FOCS 4.0 keeps every puff balanced.",
         subline: "Rich and layered.",
         image: { src: "/assets/products/caliburn-g5-lite/story-35w.webp", alt: "UWELL's 35W type from the Caliburn G5 Lite page", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 2400, height: 788, transparent: true },
       },

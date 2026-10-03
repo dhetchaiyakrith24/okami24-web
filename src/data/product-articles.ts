@@ -107,7 +107,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ]
         },
         {
-          heading: "ไฟบนตัวเครื่องแต่ละสีบอกอะไร",
+          heading: "ไฟ 4 ขีดแต่ละสีบอกอะไร",
           paragraphs: [
             "ไฟ 4 ขีดบอกว่าแบตเหลือเท่าไหร่ และเปลี่ยนสีตามระดับแบต 4 ขีดสีเขียว แบตเหลือ 75–100% · 3 ขีดสีฟ้า 50–74% · 2 ขีดสีเหลือง 25–49% · 1 ขีดสีแดง 0–24%"
           ]
@@ -132,7 +132,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ]
         },
         {
-          heading: "What do the light colours mean?",
+          heading: "What do the 4-bar light colours mean?",
           paragraphs: [
             "The 4-bar light shows how much battery is left and changes colour with it: 4 green bars 75–100% · 3 blue 50–74% · 2 yellow 25–49% · 1 red 0–24%."
           ]
@@ -157,7 +157,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ]
         },
         {
-          heading: "机身指示灯颜色代表什么？",
+          heading: "4 格指示灯的颜色代表什么？",
           paragraphs: [
             "4 格指示灯显示剩余电量，并随电量变色：4 格绿色 75–100% · 3 格蓝色 50–74% · 2 格黄色 25–49% · 1 格红色 0–24%。"
           ]
@@ -186,7 +186,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ]
         },
         {
-          heading: "ไฟบนตัวเครื่องแต่ละสีบอกอะไร",
+          heading: "ไฟ 4 ขีดแต่ละสีบอกอะไร",
           paragraphs: [
             "ไฟ 4 ขีดบอกว่าแบตเหลือเท่าไหร่ และเปลี่ยนสีตามระดับแบต 4 ขีดสีเขียว แบตเหลือ 75–100% · 3 ขีดสีฟ้า 50–74% · 2 ขีดสีเหลือง 25–49% · 1 ขีดสีแดง 0–24%"
           ]
@@ -211,7 +211,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ]
         },
         {
-          heading: "What do the light colours mean?",
+          heading: "What do the 4-bar light colours mean?",
           paragraphs: [
             "The 4-bar light shows how much battery is left and changes colour with it: 4 green bars 75–100% · 3 blue 50–74% · 2 yellow 25–49% · 1 red 0–24%."
           ]
@@ -236,7 +236,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ]
         },
         {
-          heading: "机身指示灯颜色代表什么？",
+          heading: "4 格指示灯的颜色代表什么？",
           paragraphs: [
             "4 格指示灯显示剩余电量，并随电量变色：4 格绿色 75–100% · 3 格蓝色 50–74% · 2 格黄色 25–49% · 1 格红色 0–24%。"
           ]
