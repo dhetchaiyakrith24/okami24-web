@@ -11,18 +11,20 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — the 03/10 afternoon chat merged [ตรวจแล้ว — checker · GitHub green · deploy · live curl]:
-  #225 `e8d4de7` G5 lede back (owner on live: "the text that used to be here is gone") + LESSONS พ14 + designer Owner eye 11
-    (checker 3/3; live: the lede present after the deploy swap — a curl right after "deploy success" still showed the old page).
-  #226 `69f3686` G5 round close: 14 unused G5 images removed (asset-refs + anatomy folder by hand; kept files 200 live) ·
-    `docs/PRODUCT_PAGE_TEMPLATE.md` locked 03/10 (checker 3/3). Tag `g5-template-done` = 69f3686 (pushed).
-  Batch 1a [ตรวจแล้ว — checker each · GitHub green · deploy · live curl]: #228 `4527c22` G5 Lite + G5 Lite SE on the template (stage
-    story from UWELL posters, cover = UWELL theme-poster, th/en/zh, article, 6 maker-verified spec rows, `scripts/page-text-length.js`;
-    checker round 1 conditional → fixed 846409e) · #229 `e100416` colours re-tilted 12° from UWELL's strip + upright 4:5 card,
-    openOnCardPhoto, 18 old files out · #230 `b18d104` colour chips = median of UWELL's render (13 of 16 were off).
-  Earlier 03/10: #215 #220 #221 #223 (G5 owner fixes, brand logos UWELL INFY VOOPOO SaltHub JOIWAY, one-fact-twice trim, template doc).
-2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Test server 3412 UP at 784db69 (b1a-swatches)
-  (`node scripts/test-server.js stop`). Leftover local branches g5-* / brand-logos-8 / docs-* = merged.
+1 main: `git fetch && git log -1 --oneline origin/main` — the 03/10 evening chat merged batch 1b [ตรวจแล้ว — checker · GitHub green · deploy · live curl]:
+  #233 `6da3135` G4 + G4 mini + G4 Classic on the template (stage story 6/5/6 UWELL posters incl. 3 stills from UWELL's own films,
+    cover = UWELL banner, th/en/zh, lede + 2 buyer questions, maker-verified spec rows; G4 Classic data corrected from UWELL's spec
+    sheet = 1400mAh, no screen, 14 RGB LEDs; G4 in-box pods per market version). Checker round 1 = 1/6 (articles lost from the commit —
+    LESSONS พ15 · "น้ำยา" search hit the 3 devices · 1.2Ω in an alt · unattributed maker lines · 2 mini images) → fixed 8a37c63, round 2
+    6/6. CI failed once on the Google-font fetch, re-run green. Live: new pages served ~3 min after "deploy success"; a 502 for <21 s
+    during Render's swap (12:47:05 UTC), 200 since [ตรวจแล้ว].
+  #234 `a50341e` G4 (8) + G4 mini (12) colours re-tilted 12° from UWELL's front renders, cards upright 4:5, openOnCardPhoto, 14 swatches
+    = median of UWELL's render (gradient mini bodies: the end the name says), 22 old files out (checker 6/6).
+  Earlier 03/10: batch 1a #228-#230 (G5 Lite + SE) · #225 #226 G5 close (tag `g5-template-done`) · #215 #220 #221 #223.
+2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only (§16 + THAI_STYLE was in #233 + LESSONS พ15) [ตรวจแล้ว — git].
+  Test server 3412 UP at b7945bb (b1b-colours) — `node scripts/test-server.js stop`. Local branches b1b-g4 / b1b-colours = merged.
+  Test-server limit seen 03/10 (session tool, not a site bug): its image resizer runs one job at a time and one hung request (one
+  file at one width) blocks every image after it → stop/start the server; full-page shots need `--eval` that scrolls + waits for images.
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10
   with Friday's 3 recommendations: round 3a/3b merged in and closed · brand order as written · set-1 UWELL colours re-tilted 12°).
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md` (the one home). Scope (scope-auditor 03/10) = `_incoming/sitewide-template/scope.md`
@@ -31,15 +33,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   G3 Pro KOKO · 2 VOOPOO (+ Drag 6 hybrid lineup on the test server first, + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*,
   m-switch-pod, m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag
   sitewide-template-done, asset-refs sweep of the 246 candidates, edge defects).
-  STOPPED AT: batch 1a done (#228-#230); chat moved at 512k context before 1b. 1b research (maker pages, not yet built):
-  `_incoming/sitewide-template/1b/research.md` (G4 Classic product images load by JS — list them in the browser first).
-  NEXT: batch 1b — G4 + G4 mini + G4 Classic, same steps as 1a (working files and scripts to
-  copy: `_incoming/sitewide-template/1a/` — page.txt from the maker page · prep.js posters · copy-en.md → thai-copy → copy.json →
-  edit-data.js / edit-copy.js · tilt.js colours · swatch.js chips · page-text-length with facts.json · shots). Lessons from 1a:
-  Git Bash needs MSYS_NO_PATHCONV=1 for "/products/x" args · a lede tail can split a compound at 1440 · count the template's own
-  "รุ่นนี้มี N สี" heading as one mention of the colour count · maker footnotes (UWELL LAB) attach to data, not to taste.
-  Thai words used in 1a, not yet in THAI_STYLE (owner to rule, report item 4): ทูโทน · ผิวลายริ้ว · เปลือกโปร่งแสง/แกนด้านใน ·
-  กลับด้านหัวพอตเพื่อปรับลม.
+  STOPPED AT: batch 1b done (#233 #234); chat moved at ~600k context before 1c.
+  NEXT: batch 1c — G4 Pro + G4 Pro KOKO (G4 Pro: UWELL files = overlapping front+back pairs, §3a). Copy the 1b kit
+  `_incoming/sitewide-template/1b/`: extract.js (maker page → .txt) · the page's CSS (`/_nuxt/css/*.css`) lists more images than the
+  HTML (backgrounds) · ffmpeg stills from the maker's own films when the page has no still · prep.js · copy-en.md + copy-base.json (en/zh)
+  → thai-copy → th.json → merge.js → copy.json → edit-copy.js (restore files with `git show <c>:f > f`, never `git checkout <c> -- f`,
+  LESSONS พ15) · edit-data.js · tilt.js + swatch.js + edit-colours.js (own PR) · facts.json + page-text-length · wordbreak before/after ·
+  shots with the scroll-and-wait `--eval`. Run `npm run verify:catalog` before the checker (it caught "น้ำยา" in a device spec value).
   Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD.
 3a THE IMAGE METHODS THAT WORK (from the old image round, kept for this round):
   (a) one model, colours differ only in colour = ONE master + recolour by script — silver master `b-uwell/recolour-g4c.js`; coloured
@@ -56,6 +56,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   overlapping front+back pairs) · Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend.
 4 waiting on owner:
+  (41) G4 Classic / G4 hero line under the name (Thai `shortDescription` + `tagline` in product-copy-th.ts, English in uwell.ts) is wrong
+       — Classic "same body as the standard G4 / Classic colourway", G4 "power modes" — and now contradicts the page's own story. It feeds
+       meta description + JSON-LD (round off-limits = head) → asked 03/10: 1 fix in the round (Friday's pick; thai-copy draft: tagline
+       "Caliburn รุ่นฉลอง 10 ปี ตัวเครื่องอะลูมิเนียม ไฟ RGB แทนจอ" · short "Caliburn G4 Classic แบต 1400mAh สูงสุด 35 วัตต์ ไม่มีจอ ใช้ไฟ RGB
+       14 ดวงบอกระดับแบต มีเซ็นเซอร์คู่ และใช้หัวพอต GPP") · 2 wait for the SEO round. Same card line shows on /brands/uwell etc.
+  (42) look at batch 1b on live (G4 · G4 mini · G4 Classic; new Thai words in report item 4 of 03/10: เชื่อมด้วยคลื่นอัลตราโซนิก ·
+       ร่องรูปตัว U · เซ็นเซอร์คู่ · ระบบสูบได้เลย · ความแม่นยำในการยิง · ช่องใส · ค่อย ๆ ละเลียดทุกพัฟ) · colour dots of black bodies read
+       mid-grey (median of UWELL's render, as batch 1a) · pages now open on the card with the colour label empty until a colour is picked (= G5).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags (not changed): INFY `descriptionTh` says disposable-only brand · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" /
@@ -64,6 +72,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Answered 03/10 (do not ask again): G5 repeats = A keep · next round approved · logos: Kardinal = the maker's "Kardinal" word logo,
   site name "KS" stays · DOTMOD = text chip (Friday's call, owner "ตัดสินใจได้เลย").
 5 open / dated:
+  - `src/data/guides.ts` (the which-Caliburn guide, Thai) still says G4 Classic specs are unconfirmed so it is left out of the comparison —
+    now verified (#233); guide pages are outside this round → its own small PR or the data round.
+  - G4 `firing` row ("draw or button") is sourced from the manuals.plus copy of UWELL's manual, not a UWELL page (thai-copy flag 03/10).
   - Drag 6 tank: retailers name it UFORCE-X Tank II, the data has a "gene-tt-3" highlight — data check [เชื่อว่า].
   - coil-94's Thai Shipnity name shows on en/zh pages that link it (locale-hydration FAIL on caliburn-g3-pro and caliburn-g5 en+zh,
     same on live) [ตรวจแล้ว] — data round.
@@ -80,8 +91,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - Git Bash turns "/products/x" args into Windows paths unless `MSYS_NO_PATHCONV=1` — wordbreak-scan then scans the whole sitemap.
 6 verify baseline at the last full close (clip round; numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Latest light set [ตรวจแล้ว — run 03/10, #225]: tsc 0 · eslint 0 · verify:catalog 29/29 · scan.js PASS 0/109 · visible-text G5 +
-  2 controls 6 changes (lede only) · wordbreak G5 NEW 1 (orphan, left).
+  Latest light set [ตรวจแล้ว — run 03/10, #233 at 8a37c63]: tsc 0 · eslint 0 · verify:catalog 29/29 · scan.js PASS 0/109 · page-text-length
+  G4 1,703 · mini 1,433 · Classic 1,583 · wordbreak NEW 11 single-word lines (left) · locale-hydration = the known coil-94 name only.
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`
 ```
 
