@@ -95,16 +95,14 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       battery: "1600mAh",
       "pod-compat": "UWELL GPP",
+      "battery-life": "ชาร์จครั้งเดียวใช้ได้สูงสุด 6 วัน (ตัวเลขของ UWELL)",
+      "pod-resistance": "หัวพอต 0.4 โอห์ม",
+      "airflow": "ปรับได้ 2 แบบ กลับด้านหัวพอต และปรับละเอียดแบบไม่มีขั้น ตั้งแต่ MTL ถึง RDL",
+      "screen": "ไฟ LED 4 ขีด เปลี่ยนสีตามระดับแบต",
     },
     tagline: "G5 แบบเรียบง่าย แบตอึด พกใช้ทุกวัน",
     shortDescription:
       "รุ่นที่ตัดทอนความซับซ้อนลงจาก G5 ยังคงแบตเตอรี่ 1600mAh และสูงสุด 35 วัตต์เท่าเดิม แต่ปรับระบบควบคุมให้เรียบง่ายขึ้น",
-    features: {
-      "long-run-battery": {
-        title: "แบตเตอรี่ 1600mAh เท่า G5",
-        description: "ยกแบตเตอรี่ก้อนเต็มของ G5 มาใส่ในเครื่องที่เรียบง่ายกว่า ชาร์จครั้งเดียวใช้ได้นาน",
-      },
-    },
   },
   "caliburn-g5-lite-se": {
     whoIsThisFor: {
@@ -112,15 +110,14 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       battery: "1600mAh",
+      "battery-life": "ชาร์จครั้งเดียวใช้ได้สูงสุด 6 วัน (ตัวเลขของ UWELL)",
+      "pod-resistance": "หัวพอต 0.4 โอห์ม",
+      "airflow": "ปรับได้ 2 แบบ กลับด้านหัวพอต และปรับละเอียดแบบไม่มีขั้น ตั้งแต่ MTL ถึง RDL",
+      "screen": "ไฟ LED 4 ขีด เปลี่ยนสีตามระดับแบต",
+      "variant": "ทูโทน หนังคู่กับผิวลายริ้ว",
     },
     tagline: "G5 Lite ตัวเครื่องเดิม ในชุดสีรุ่นพิเศษ",
     shortDescription: "ใช้แบตเตอรี่ 1600mAh และสูงสุด 35 วัตต์เท่ากับ G5 Lite ต่างกันที่ชุดสีรุ่นพิเศษ",
-    features: {
-      "se-finish": {
-        title: "ชุดสีรุ่นพิเศษ",
-        description: "ตัวเครื่องเดียวกับ G5 Lite ไม่ได้เปลี่ยนสเปกข้างใน ต่างกันแค่ชุดสีรุ่นพิเศษ มี 8 สี",
-      },
-    },
   },
   "caliburn-g4-pro-koko": {
     faqs: {

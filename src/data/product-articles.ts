@@ -86,6 +86,164 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     }
   },
+  // Site-wide template round batch 1a (03/10): UWELL's G5 Lite / Lite SE page (_incoming/sitewide-template/1a/page.txt); buyer
+  // questions the posters and the FAQ do not answer. Thai = thai-copy 03/10.
+  "caliburn-g5-lite": {
+    th: {
+      lede: "Caliburn G5 Lite ตัวเครื่องเบา จับถนัดมือ หยิบแล้วไปได้เลย ด้านล่างคือรายละเอียดทีละข้อ",
+      sections: [
+        {
+          heading: "G5 Lite กับ G5 Lite SE เลือกตัวไหนดี",
+          paragraphs: [
+            "แบต วัตต์ และระบบลมของสองรุ่นนี้เหมือนกัน ที่ต่างคือผิวตัวเครื่อง G5 Lite เป็นเปลือกโปร่งแสงหุ้มแกนด้านใน ส่วน [G5 Lite SE](/products/caliburn-g5-lite-se) เป็นหนังคู่กับผิวลายริ้ว",
+            "ชอบผิวแบบไหนเลือกตัวนั้น ทั้งสองรุ่นมีให้เลือก 8 สี"
+          ]
+        },
+        {
+          heading: "ใช้หัวพอตอะไรได้บ้าง",
+          paragraphs: [
+            "หัวพอต GPP ใส่ได้ทุกหัว ทั้งแบบเติมด้านข้างและเติมด้านบน หัวชุดเดียวกันนี้ใช้กับ Caliburn สาย G5 G4 และ G3 ได้ด้วย ใครมีเครื่องสายนี้อยู่แล้ว ใช้หัวสลับกันได้เลย",
+            "ดู[หัวพอต GPP ที่ใช้กับ G5 Lite](/products/coil-94)"
+          ]
+        },
+        {
+          heading: "ไฟบนตัวเครื่องแต่ละสีบอกอะไร",
+          paragraphs: [
+            "ไฟ 4 ขีดบอกว่าแบตเหลือเท่าไหร่ และเปลี่ยนสีตามระดับแบต 4 ขีดสีเขียว แบตเหลือ 75–100% · 3 ขีดสีฟ้า 50–74% · 2 ขีดสีเหลือง 25–49% · 1 ขีดสีแดง 0–24%"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "The Caliburn G5 Lite is light, sits well in the hand and is made to grab and go. Each point below in detail.",
+      sections: [
+        {
+          heading: "G5 Lite or G5 Lite SE — which one?",
+          paragraphs: [
+            "Battery, power and airflow are the same on both. The difference is the body: the G5 Lite has an inner core under a translucent shell, the [G5 Lite SE](/products/caliburn-g5-lite-se) is leather paired with a striped texture.",
+            "Pick the finish you like — both come in 8 colours."
+          ]
+        },
+        {
+          heading: "Which pods fit?",
+          paragraphs: [
+            "Every GPP pod fits, side-refill and top-refill alike — and the same pods work across the Caliburn G5, G4 and G3 series, so if you already own one, you can swap pods between them.",
+            "See the [GPP pods for the G5 Lite](/products/coil-94)."
+          ]
+        },
+        {
+          heading: "What do the light colours mean?",
+          paragraphs: [
+            "The 4-bar light shows how much battery is left and changes colour with it: 4 green bars 75–100% · 3 blue 50–74% · 2 yellow 25–49% · 1 red 0–24%."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "Caliburn G5 Lite 机身轻巧，握感顺手，拿起就走。下面逐项介绍。",
+      sections: [
+        {
+          heading: "G5 Lite 和 G5 Lite SE 怎么选？",
+          paragraphs: [
+            "两款的电池、功率和气流系统相同，区别在机身：G5 Lite 是半透明外壳包裹内芯，[G5 Lite SE](/products/caliburn-g5-lite-se) 则是皮革搭配条纹质感。",
+            "喜欢哪种质感就选哪款，两款都有 8 种颜色。"
+          ]
+        },
+        {
+          heading: "能用哪些烟弹？",
+          paragraphs: [
+            "所有 GPP 烟弹都能用，侧注油和顶注油都可以；同一批烟弹也适用于 Caliburn G5、G4 和 G3 系列，已有这些机器的话烟弹可以互换。",
+            "查看[适用于 G5 Lite 的 GPP 烟弹](/products/coil-94)。"
+          ]
+        },
+        {
+          heading: "机身指示灯颜色代表什么？",
+          paragraphs: [
+            "4 格指示灯显示剩余电量，并随电量变色：4 格绿色 75–100% · 3 格蓝色 50–74% · 2 格黄色 25–49% · 1 格红色 0–24%。"
+          ]
+        }
+      ]
+    }
+  },
+  // Site-wide template round batch 1a (03/10): UWELL's G5 Lite / Lite SE page (_incoming/sitewide-template/1a/page.txt); buyer
+  // questions the posters and the FAQ do not answer. Thai = thai-copy 03/10.
+  "caliburn-g5-lite-se": {
+    th: {
+      lede: "Caliburn G5 Lite SE ตัวเครื่องเบา จับถนัดมือ หยิบแล้วไปได้เลย ด้านล่างคือรายละเอียดทีละข้อ",
+      sections: [
+        {
+          heading: "G5 Lite SE ต่างจาก G5 Lite ตรงไหน",
+          paragraphs: [
+            "ต่างกันที่ผิวตัวเครื่อง G5 Lite SE เป็นหนังคู่กับผิวลายริ้ว ส่วน [G5 Lite](/products/caliburn-g5-lite) เป็นเปลือกโปร่งแสงหุ้มแกนด้านใน แบต วัตต์ และระบบลมเหมือนกัน",
+            "ชอบผิวแบบไหนเลือกตัวนั้น ทั้งสองรุ่นมีให้เลือก 8 สี"
+          ]
+        },
+        {
+          heading: "ใช้หัวพอตอะไรได้บ้าง",
+          paragraphs: [
+            "หัวพอต GPP ใส่ได้ทุกหัว ทั้งแบบเติมด้านข้างและเติมด้านบน หัวชุดเดียวกันนี้ใช้กับ Caliburn สาย G5 G4 และ G3 ได้ด้วย ใครมีเครื่องสายนี้อยู่แล้ว ใช้หัวสลับกันได้เลย",
+            "ดู[หัวพอต GPP ที่ใช้กับ G5 Lite SE](/products/coil-94)"
+          ]
+        },
+        {
+          heading: "ไฟบนตัวเครื่องแต่ละสีบอกอะไร",
+          paragraphs: [
+            "ไฟ 4 ขีดบอกว่าแบตเหลือเท่าไหร่ และเปลี่ยนสีตามระดับแบต 4 ขีดสีเขียว แบตเหลือ 75–100% · 3 ขีดสีฟ้า 50–74% · 2 ขีดสีเหลือง 25–49% · 1 ขีดสีแดง 0–24%"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "The Caliburn G5 Lite SE is light, sits well in the hand and is made to grab and go. Each point below in detail.",
+      sections: [
+        {
+          heading: "G5 Lite SE vs G5 Lite — what's different?",
+          paragraphs: [
+            "The body: the G5 Lite SE is leather paired with a striped texture, the [G5 Lite](/products/caliburn-g5-lite) an inner core under a translucent shell. Battery, power and airflow are the same.",
+            "Pick the finish you like — both come in 8 colours."
+          ]
+        },
+        {
+          heading: "Which pods fit?",
+          paragraphs: [
+            "Every GPP pod fits, side-refill and top-refill alike — and the same pods work across the Caliburn G5, G4 and G3 series, so if you already own one, you can swap pods between them.",
+            "See the [GPP pods for the G5 Lite SE](/products/coil-94)."
+          ]
+        },
+        {
+          heading: "What do the light colours mean?",
+          paragraphs: [
+            "The 4-bar light shows how much battery is left and changes colour with it: 4 green bars 75–100% · 3 blue 50–74% · 2 yellow 25–49% · 1 red 0–24%."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "Caliburn G5 Lite SE 机身轻巧，握感顺手，拿起就走。下面逐项介绍。",
+      sections: [
+        {
+          heading: "G5 Lite SE 和 G5 Lite 有什么不同？",
+          paragraphs: [
+            "区别在机身：G5 Lite SE 是皮革搭配条纹质感，[G5 Lite](/products/caliburn-g5-lite) 是半透明外壳包裹内芯。电池、功率和气流系统相同。",
+            "喜欢哪种质感就选哪款，两款都有 8 种颜色。"
+          ]
+        },
+        {
+          heading: "能用哪些烟弹？",
+          paragraphs: [
+            "所有 GPP 烟弹都能用，侧注油和顶注油都可以；同一批烟弹也适用于 Caliburn G5、G4 和 G3 系列，已有这些机器的话烟弹可以互换。",
+            "查看[适用于 G5 Lite SE 的 GPP 烟弹](/products/coil-94)。"
+          ]
+        },
+        {
+          heading: "机身指示灯颜色代表什么？",
+          paragraphs: [
+            "4 格指示灯显示剩余电量，并随电量变色：4 格绿色 75–100% · 3 格蓝色 50–74% · 2 格黄色 25–49% · 1 格红色 0–24%。"
+          ]
+        }
+      ]
+    }
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

@@ -321,6 +321,12 @@ export const uwellProducts: Product[] = [
       alt: "UWELL Caliburn G5 Lite, all 8 colours",
       sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
+    // Site-wide template round, batch 1a (03/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — UWELL's own G5 Lite page
+    // (https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se) told one poster per block; text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.
+    // Cover = UWELL's campaign image theme-poster.webp (full scene, not a cut-out). Posters: _incoming/sitewide-template/1a/prep.js.
+    storyDetails: true,
+    storyLayout: "stage",
+    storyCover: { src: "/assets/products/caliburn-g5-lite/story-cover.webp", alt: "Official UWELL campaign image — Caliburn G5 Lite and G5 Lite SE", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 1920, height: 1080 },
     // Real UWELL color/finish lineup — ALL 8 now have a real, OFFICIAL photo (owner quality
     // review, 2026-09-03, THIRD pass — see the card asset's angle note for the sourcing story).
     // Every one of these 8 comes from the exact same official myuwell.com strip, cropped per-color.
@@ -378,13 +384,41 @@ export const uwellProducts: Product[] = [
       { key: "battery", label: "Battery", value: "1600mAh, long-run", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "35W", sourceStatus: "verified" },
       { key: "pod-compat", label: "Pod platform", value: "UWELL GPP cartridge platform", sourceStatus: "verified" },
-      { key: "screen", label: "Display", value: "LED status indicator (no colour screen)", sourceStatus: "unverified" },
+      { key: "battery-life", label: "Battery life", value: "Up to 6 days per charge (UWELL's figure)", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se" },
+      { key: "pod-resistance", label: "Resistance", value: "0.4Ω pod", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se" },
+      { key: "flavor-tech", label: "Flavor system", value: "Pro-FOCS 4.0", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se" },
+      { key: "airflow", label: "Airflow", value: "Dual adjustable: reversible pod airflow + stepless control, MTL to RDL", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se" },
+      { key: "screen", label: "Status indicator", value: "4-bar gradient LED battery indicator, colour by battery level", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se" },
     ],
     features: [
       {
         id: "long-run-battery",
-        title: "Long-run 1600mAh cell",
-        description: "Carries the G5's full-size battery into a simpler, screen-light shell for longer stretches between charges.",
+        title: "1600mAh battery",
+        description: "How long yours lasts depends on how often you vape and how open the airflow is.",
+        subline: "Up to 6 days on a single charge (UWELL's figure).",
+        image: { src: "/assets/products/caliburn-g5-lite/story-battery.webp", alt: "Official UWELL poster — 1600mAh, the Caliburn G5 Lite and G5 Lite SE", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 2215, height: 1613, transparent: true },
+      },
+      {
+        id: "dual-layer",
+        title: "Two-layer shell",
+        description: "Light and shaped to sit well in the hand — pick the colour that suits you.",
+        subline: "An inner core under a translucent shell.",
+        image: { src: "/assets/products/caliburn-g5-lite/story-dual-layer.webp", alt: "Official UWELL render — the Caliburn G5 Lite in Coral Orange", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 1611, height: 1782, transparent: true },
+      },
+      {
+        id: "power-35w",
+        title: "35W, full flavour",
+        description: "Pro-FOCS 4.0 keeps every puff balanced (UWELL LAB tests).",
+        subline: "Rich and layered.",
+        image: { src: "/assets/products/caliburn-g5-lite/story-35w.webp", alt: "UWELL's 35W type from the Caliburn G5 Lite page", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 2400, height: 788, transparent: true },
+      },
+      {
+        id: "airflow",
+        title: "Airflow, two ways",
+        description: "Like it tight or a little more open? Set the airflow to match.",
+        subline: "From MTL to RDL, always smooth.",
+        imageMobile: { src: "/assets/products/caliburn-g5-lite/story-airflow-mo.webp", alt: "Official UWELL poster — reversible cartridge and stepless airflow control (phone version)", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 1500, height: 2103 },
+        image: { src: "/assets/products/caliburn-g5-lite/story-airflow.webp", alt: "Official UWELL poster — reversible cartridge airflow control and stepless airflow control", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 2400, height: 1250 },
       },
     ],
     compatibility: [gppCompatibility, usbCNoNote],
@@ -447,6 +481,12 @@ export const uwellProducts: Product[] = [
       alt: "UWELL Caliburn G5 Lite SE, all 8 colours",
       sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
+    // Site-wide template round, batch 1a (03/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — UWELL's own G5 Lite page
+    // (https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se) told one poster per block; text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.
+    // Cover = UWELL's campaign image theme-poster.webp (full scene, not a cut-out). Posters: _incoming/sitewide-template/1a/prep.js.
+    storyDetails: true,
+    storyLayout: "stage",
+    storyCover: { src: "/assets/products/caliburn-g5-lite/story-cover.webp", alt: "Official UWELL campaign image — Caliburn G5 Lite and G5 Lite SE", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 1920, height: 1080 },
     // Real UWELL color/finish lineup — ALL 8 now have a real, OFFICIAL photo (owner quality
     // review, 2026-09-03, THIRD pass — see the card asset's angle note). All 8 finishes are
     // dual-tone leather per official copy; every one comes from the same official myuwell.com
@@ -504,13 +544,42 @@ export const uwellProducts: Product[] = [
     specifications: [
       { key: "battery", label: "Battery", value: "1600mAh, long-run", sourceStatus: "verified" },
       { key: "output", label: "Max output", value: "35W", sourceStatus: "verified" },
-      { key: "variant", label: "Variant", value: "Special-edition finish of the G5 Lite; finish-specific deltas beyond core hardware not independently confirmed", sourceStatus: "unverified" },
+      { key: "battery-life", label: "Battery life", value: "Up to 6 days per charge (UWELL's figure)", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se" },
+      { key: "pod-resistance", label: "Resistance", value: "0.4Ω pod", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se" },
+      { key: "flavor-tech", label: "Flavor system", value: "Pro-FOCS 4.0", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se" },
+      { key: "airflow", label: "Airflow", value: "Dual adjustable: reversible pod airflow + stepless control, MTL to RDL", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se" },
+      { key: "screen", label: "Status indicator", value: "4-bar gradient LED battery indicator, colour by battery level", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se" },
+      { key: "variant", label: "Variant", value: "Dual-tone finish: leather with a striped texture", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se" },
     ],
     features: [
       {
-        id: "se-finish",
-        title: "Special-edition finish",
-        description: "Positioned as a finish/colourway edition of the G5 Lite rather than a hardware revision.",
+        id: "long-run-battery",
+        title: "1600mAh battery",
+        description: "How long yours lasts depends on how often you vape and how open the airflow is.",
+        subline: "Up to 6 days on a single charge (UWELL's figure).",
+        image: { src: "/assets/products/caliburn-g5-lite/story-battery.webp", alt: "Official UWELL poster — 1600mAh, the Caliburn G5 Lite and G5 Lite SE", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 2215, height: 1613, transparent: true },
+      },
+      {
+        id: "dual-tone",
+        title: "Dual-tone finish",
+        description: "Light and shaped to sit well in the hand — pick the leather colour that suits you.",
+        subline: "Leather paired with a striped texture.",
+        image: { src: "/assets/products/caliburn-g5-lite-se/story-dual-tone.webp", alt: "Official UWELL render — the Caliburn G5 Lite SE in Purple Leather", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 1967, height: 2121, transparent: true },
+      },
+      {
+        id: "power-35w",
+        title: "35W, full flavour",
+        description: "Pro-FOCS 4.0 keeps every puff balanced (UWELL LAB tests).",
+        subline: "Rich and layered.",
+        image: { src: "/assets/products/caliburn-g5-lite/story-35w.webp", alt: "UWELL's 35W type from the Caliburn G5 Lite page", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 2400, height: 788, transparent: true },
+      },
+      {
+        id: "airflow",
+        title: "Airflow, two ways",
+        description: "Like it tight or a little more open? Set the airflow to match.",
+        subline: "From MTL to RDL, always smooth.",
+        imageMobile: { src: "/assets/products/caliburn-g5-lite/story-airflow-mo.webp", alt: "Official UWELL poster — reversible cartridge and stepless airflow control (phone version)", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 1500, height: 2103 },
+        image: { src: "/assets/products/caliburn-g5-lite/story-airflow.webp", alt: "Official UWELL poster — reversible cartridge airflow control and stepless airflow control", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 2400, height: 1250 },
       },
     ],
     compatibility: [gppCompatibility, usbCNoNote],

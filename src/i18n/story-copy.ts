@@ -129,4 +129,112 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       link: { href: "/guides/understanding-mtl-vs-dtl", label: { th: "อ่านเรื่อง MTL กับ DTL", en: "Read: MTL vs. DTL", zh: "了解 MTL 与 DTL 的区别" } },
     },
   },
+  // Site-wide template round batch 1a (03/10): UWELL's G5 Lite / Lite SE page only (_incoming/sitewide-template/1a/page.txt);
+  // Thai = thai-copy 03/10. Facts the hero already says (1600mAh, 35W) are not repeated as points.
+  "caliburn-g5-lite": {
+    "long-run-battery": {
+      title: { th: "แบต 1600mAh", en: "1600mAh battery", zh: "1600mAh 电池" },
+      subline: { th: "ชาร์จครั้งเดียว ใช้ได้สูงสุด 6 วัน (ตัวเลขของ UWELL)", en: "Up to 6 days on a single charge (UWELL's figure).", zh: "充一次电最长可用 6 天（UWELL 数据）。" },
+      body: {
+        th: "ใช้จริงได้กี่วันขึ้นอยู่กับว่าสูบบ่อยแค่ไหน และเปิดลมแค่ไหน",
+        en: "How long yours lasts depends on how often you vape and how open the airflow is.",
+        zh: "实际能用几天，取决于抽吸频率和气流开多大。",
+      },
+      points: [
+        { text: { th: "ไฟ LED 4 ขีดบอกระดับแบต", en: "4-bar LED shows the battery level", zh: "4 格 LED 显示电量" }, specKey: "screen" },
+      ],
+    },
+    "dual-layer": {
+      title: { th: "ผิวสองชั้น", en: "Two-layer shell", zh: "双层设计" },
+      subline: { th: "แกนด้านใน หุ้มด้วยเปลือกโปร่งแสง", en: "An inner core under a translucent shell.", zh: "内芯外覆半透明外壳。" },
+      body: {
+        th: "ตัวเครื่องเบา ทรงจับถนัดมือ เลือกสีที่เข้ากับตัวเองได้เลย",
+        en: "Light and shaped to sit well in the hand — pick the colour that suits you.",
+        zh: "机身轻巧，握感顺手，选一个适合你的颜色。",
+      },
+      points: [
+        { text: { th: "ตัวเครื่อง 8 สี", en: "8 colours", zh: "8 种颜色" } },
+      ],
+    },
+    "power-35w": {
+      title: { th: "35 วัตต์ รสชาติเข้ม", en: "35W, full flavour", zh: "35W，风味浓郁" },
+      subline: { th: "รสกลมกล่อม มีหลายชั้น", en: "Rich and layered.", zh: "口感醇厚，层次丰富。" },
+      body: {
+        th: "ระบบปรับรสชาติ Pro-FOCS 4.0 คุมให้ทุกพัฟรสสมดุล ตามผลทดสอบของ UWELL LAB",
+        en: "Pro-FOCS 4.0 keeps every puff balanced (UWELL LAB tests).",
+        zh: "Pro-FOCS 4.0 让每一口都口感均衡（UWELL LAB 测试）。",
+      },
+      points: [
+        { text: { th: "หัวพอต 0.4 โอห์ม", en: "0.4Ω pod", zh: "0.4Ω 烟弹" }, specKey: "pod-resistance" },
+      ],
+    },
+    "airflow": {
+      title: { th: "ปรับลมได้สองแบบ", en: "Airflow, two ways", zh: "两种气流调节" },
+      subline: { th: "ตั้งแต่ MTL ถึง RDL สูบลื่นทุกระดับ", en: "From MTL to RDL, always smooth.", zh: "从 MTL 到 RDL，始终顺滑。" },
+      body: {
+        th: "ชอบสูบแน่นหรืออยากโล่งขึ้นหน่อย ก็ตั้งลมให้ตรงกับที่ชอบได้เอง",
+        en: "Like it tight or a little more open? Set the airflow to match.",
+        zh: "喜欢紧一点还是松一点？气流按你的喜好来调。",
+      },
+      points: [
+        { text: { th: "กลับด้านหัวพอตเพื่อปรับลม", en: "Reverse the pod to change the airflow", zh: "烟弹可反转调节气流" }, specKey: "airflow" },
+        { text: { th: "ปรับช่องลมได้ละเอียดแบบไม่มีขั้น", en: "Stepless airflow control", zh: "无级气流调节" }, specKey: "airflow" },
+      ],
+      link: { href: "/guides/understanding-mtl-vs-dtl", label: { th: "อ่านเรื่อง MTL กับ DTL", en: "Read: MTL vs. DTL", zh: "了解 MTL 与 DTL 的区别" } },
+    },
+  },
+  // Site-wide template round batch 1a (03/10): UWELL's G5 Lite / Lite SE page only (_incoming/sitewide-template/1a/page.txt);
+  // Thai = thai-copy 03/10. Facts the hero already says (1600mAh, 35W) are not repeated as points.
+  "caliburn-g5-lite-se": {
+    "long-run-battery": {
+      title: { th: "แบต 1600mAh", en: "1600mAh battery", zh: "1600mAh 电池" },
+      subline: { th: "ชาร์จครั้งเดียว ใช้ได้สูงสุด 6 วัน (ตัวเลขของ UWELL)", en: "Up to 6 days on a single charge (UWELL's figure).", zh: "充一次电最长可用 6 天（UWELL 数据）。" },
+      body: {
+        th: "ใช้จริงได้กี่วันขึ้นอยู่กับว่าสูบบ่อยแค่ไหน และเปิดลมแค่ไหน",
+        en: "How long yours lasts depends on how often you vape and how open the airflow is.",
+        zh: "实际能用几天，取决于抽吸频率和气流开多大。",
+      },
+      points: [
+        { text: { th: "ไฟ LED 4 ขีดบอกระดับแบต", en: "4-bar LED shows the battery level", zh: "4 格 LED 显示电量" }, specKey: "screen" },
+      ],
+    },
+    "dual-tone": {
+      title: { th: "ผิวทูโทน", en: "Dual-tone finish", zh: "双色拼接" },
+      subline: { th: "หนังคู่กับผิวลายริ้ว", en: "Leather paired with a striped texture.", zh: "皮革搭配条纹质感。" },
+      body: {
+        th: "ตัวเครื่องเบา ทรงจับถนัดมือ เลือกสีหนังที่เข้ากับตัวเองได้เลย",
+        en: "Light and shaped to sit well in the hand — pick the leather colour that suits you.",
+        zh: "机身轻巧，握感顺手，选一个适合你的皮革颜色。",
+      },
+      points: [
+        { text: { th: "ตัวเครื่อง 8 สี", en: "8 colours", zh: "8 种颜色" } },
+      ],
+    },
+    "power-35w": {
+      title: { th: "35 วัตต์ รสชาติเข้ม", en: "35W, full flavour", zh: "35W，风味浓郁" },
+      subline: { th: "รสกลมกล่อม มีหลายชั้น", en: "Rich and layered.", zh: "口感醇厚，层次丰富。" },
+      body: {
+        th: "ระบบปรับรสชาติ Pro-FOCS 4.0 คุมให้ทุกพัฟรสสมดุล ตามผลทดสอบของ UWELL LAB",
+        en: "Pro-FOCS 4.0 keeps every puff balanced (UWELL LAB tests).",
+        zh: "Pro-FOCS 4.0 让每一口都口感均衡（UWELL LAB 测试）。",
+      },
+      points: [
+        { text: { th: "หัวพอต 0.4 โอห์ม", en: "0.4Ω pod", zh: "0.4Ω 烟弹" }, specKey: "pod-resistance" },
+      ],
+    },
+    "airflow": {
+      title: { th: "ปรับลมได้สองแบบ", en: "Airflow, two ways", zh: "两种气流调节" },
+      subline: { th: "ตั้งแต่ MTL ถึง RDL สูบลื่นทุกระดับ", en: "From MTL to RDL, always smooth.", zh: "从 MTL 到 RDL，始终顺滑。" },
+      body: {
+        th: "ชอบสูบแน่นหรืออยากโล่งขึ้นหน่อย ก็ตั้งลมให้ตรงกับที่ชอบได้เอง",
+        en: "Like it tight or a little more open? Set the airflow to match.",
+        zh: "喜欢紧一点还是松一点？气流按你的喜好来调。",
+      },
+      points: [
+        { text: { th: "กลับด้านหัวพอตเพื่อปรับลม", en: "Reverse the pod to change the airflow", zh: "烟弹可反转调节气流" }, specKey: "airflow" },
+        { text: { th: "ปรับช่องลมได้ละเอียดแบบไม่มีขั้น", en: "Stepless airflow control", zh: "无级气流调节" }, specKey: "airflow" },
+      ],
+      link: { href: "/guides/understanding-mtl-vs-dtl", label: { th: "อ่านเรื่อง MTL กับ DTL", en: "Read: MTL vs. DTL", zh: "了解 MTL 与 DTL 的区别" } },
+    },
+  },
 };
