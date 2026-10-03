@@ -423,7 +423,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "G4 Pro กับ G4 Pro KOKO เลือกตัวไหนดี",
           paragraphs: [
             "สองรุ่นนี้มีจอทัช สูงสุด 35 วัตต์ และใช้หัวพอต GPP เหมือนกัน",
-            "G4 Pro ทรงเพรียว จอใหญ่กว่าที่ 2.51 นิ้ว หนักประมาณ 78 กรัม",
+            "G4 Pro ทรงเพรียว จอใหญ่กว่า หนักประมาณ 78 กรัม",
             "[G4 Pro KOKO](/products/caliburn-g4-pro-koko) ทรงกล่อง แบตใหญ่กว่าที่ 2000mAh หนักประมาณ 93 กรัม และมีธีมหน้าจอแบบสุ่ม 5 แบบ",
             "ชอบทรงไหนเลือกตัวนั้น"
           ]
@@ -444,7 +444,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "G4 Pro or G4 Pro KOKO?",
           paragraphs: [
             "Both have a touchscreen, up to 35W and GPP pods.",
-            "The G4 Pro is the slim one, with the bigger 2.51-inch screen, at about 78g.",
+            "The G4 Pro is the slim one, with the bigger screen, at about 78g.",
             "The [G4 Pro KOKO](/products/caliburn-g4-pro-koko) is the box-shaped one, with a bigger 2000mAh battery, about 93g, and five blind-draw screen themes.",
             "Pick the shape you like."
           ]
@@ -465,7 +465,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "G4 Pro 还是 G4 Pro KOKO？",
           paragraphs: [
             "两款都有触屏、最高 35W，都用 GPP 烟弹。",
-            "G4 Pro 是纤长款，屏幕更大，2.51 英寸，约 78g。",
+            "G4 Pro 是纤长款，屏幕更大，约 78g。",
             "[G4 Pro KOKO](/products/caliburn-g4-pro-koko) 是方盒款，电池更大，2000mAh，约 93g，还有 5 款盲抽屏幕主题。",
             "喜欢哪种造型就选哪款。"
           ]

@@ -523,9 +523,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "โหมด Custom", en: "Custom mode", zh: "自定义模式" },
       subline: { th: "Storm กับ Waves ก็ยังมี", en: "Storm and Waves are still there.", zh: "Storm 和 Waves 依然都在。" },
       body: {
-        th: "Storm ตบคอทันที Waves รสนุ่มลื่น ส่วน Custom ให้ตั้งเองว่าชอบแบบไหน",
-        en: "Storm gives an instant throat hit, Waves a smooth flavour. Custom is the one you tune yourself.",
-        zh: "Storm 带来即时击喉感，Waves 口感顺滑，Custom 由你自己调。",
+        th: "Storm ตบคอทันที Waves รสนุ่มลื่น ส่วนโหมดนี้ให้ตั้งเองว่าชอบแบบไหน",
+        en: "Storm gives an instant throat hit, Waves a smooth flavour. This one you tune yourself.",
+        zh: "Storm 带来即时击喉感，Waves 口感顺滑，这个模式由你自己调。",
       },
       points: [
         { text: { th: "ตั้งวัตต์แยกกันได้ ช่วงต้น กลาง และท้ายของแต่ละพัฟ", en: "Set the power at the start, middle and end of each puff", zh: "每一口的开头、中段、结尾都能设定功率" }, specKey: "modes" },

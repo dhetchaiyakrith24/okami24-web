@@ -976,7 +976,7 @@ export const uwellProducts: Product[] = [
       {
         id: "custom-mode",
         title: "Custom mode",
-        description: "Storm gives an instant throat hit, Waves a smooth flavour. Custom is the one you tune yourself.",
+        description: "Storm gives an instant throat hit, Waves a smooth flavour. This one you tune yourself.",
         subline: "Storm and Waves are still there.",
         image: { src: "/assets/products/caliburn-g4-pro/story-custom-mode.webp", alt: "Still from UWELL's Caliburn G4 Pro film — power set at the start, middle and end of a puff", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro", width: 1200, height: 1013 },
       },
