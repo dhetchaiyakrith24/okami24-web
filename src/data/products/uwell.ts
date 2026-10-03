@@ -1827,14 +1827,14 @@ export const uwellProducts: Product[] = [
         title: "A full colour screen",
         description: "Every vaping detail is on the screen, with animations while you vape.",
         subline: "UWELL's first full-screen KOKO.",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/story-screen.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — three devices with the screen on", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1327, height: 756, transparent: true },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/story-screen.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — three devices with the screen on", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1327, height: 756 },
       },
       {
         id: "themes",
         title: "Screen themes",
         description: "Press the button four times to open the menu, then change the theme there.",
         subline: "Pick the look you like.",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/story-themes.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — screen themes", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1029, height: 625, transparent: true },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/story-themes.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — screen themes", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1029, height: 625 },
       },
       {
         id: "day-night",
@@ -1848,14 +1848,14 @@ export const uwellProducts: Product[] = [
         title: "Charge less often",
         description: "How long yours lasts depends on how often you vape and the wattage you set.",
         subline: "A bigger battery than the G3 Pro.",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/story-battery.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — 1250 mAh", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1024, height: 625, transparent: true },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/story-battery.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — 1250 mAh", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1024, height: 625 },
       },
       {
         id: "power",
         title: "Wattage and airflow, yours to set",
         description: "Press three times to set the wattage, and slide the airflow from smooth to strong.",
         subline: "Up to 35W.",
-        image: { src: "/assets/products/caliburn-g3-pro-koko/story-power.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — 35 W", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1809, height: 756, transparent: true },
+        image: { src: "/assets/products/caliburn-g3-pro-koko/story-power.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — 35 W", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1809, height: 756 },
       },
       {
         id: "anti-leak",
