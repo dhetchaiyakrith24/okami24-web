@@ -22,7 +22,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     = median of UWELL's render (gradient mini bodies: the end the name says), 22 old files out (checker 6/6).
   Earlier 03/10: batch 1a #228-#230 (G5 Lite + SE) · #225 #226 G5 close (tag `g5-template-done`) · #215 #220 #221 #223.
 2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only (§16 + THAI_STYLE was in #233 + LESSONS พ15) [ตรวจแล้ว — git].
-  Test server 3412 UP at b7945bb (b1b-colours) — `node scripts/test-server.js stop`. Local branches b1b-g4 / b1b-colours = merged.
+  Test server 3412 UP at b7945bb (b1b-colours) — `node scripts/test-server.js stop`. Leftover local branches b1b-* / g5-* / brand-logos-8 /
+  docs-* and worktrees `_incoming/wt-*` = merged work (safe to prune).
   Test-server limit seen 03/10 (session tool, not a site bug): its image resizer runs one job at a time and one hung request (one
   file at one width) blocks every image after it → stop/start the server; full-page shots need `--eval` that scrolls + waits for images.
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10
@@ -40,6 +41,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   → thai-copy → th.json → merge.js → copy.json → edit-copy.js (restore files with `git show <c>:f > f`, never `git checkout <c> -- f`,
   LESSONS พ15) · edit-data.js · tilt.js + swatch.js + edit-colours.js (own PR) · facts.json + page-text-length · wordbreak before/after ·
   shots with the scroll-and-wait `--eval`. Run `npm run verify:catalog` before the checker (it caught "น้ำยา" in a device spec value).
+  Tips kept from 1a: a lede tail can split a compound at 1440 · count the template's own "รุ่นนี้มี N สี" heading as one mention of the
+  colour count · maker footnotes (UWELL LAB) attach to data, not to taste.
   Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD.
 3a THE IMAGE METHODS THAT WORK (from the old image round, kept for this round):
   (a) one model, colours differ only in colour = ONE master + recolour by script — silver master `b-uwell/recolour-g4c.js`; coloured
