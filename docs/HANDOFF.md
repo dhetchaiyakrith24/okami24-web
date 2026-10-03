@@ -64,7 +64,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        meta description + JSON-LD (round off-limits = head) → asked 03/10: 1 fix in the round (Friday's pick; thai-copy draft: tagline
        "Caliburn รุ่นฉลอง 10 ปี ตัวเครื่องอะลูมิเนียม ไฟ RGB แทนจอ" · short "Caliburn G4 Classic แบต 1400mAh สูงสุด 35 วัตต์ ไม่มีจอ ใช้ไฟ RGB
        14 ดวงบอกระดับแบต มีเซ็นเซอร์คู่ และใช้หัวพอต GPP") · 2 wait for the SEO round. Same card line shows on /brands/uwell etc.
-  (42) look at batch 1b on live (G4 · G4 mini · G4 Classic; new Thai words in report item 4 of 03/10: เชื่อมด้วยคลื่นอัลตราโซนิก ·
+  (42) G4 page APPROVED (owner 03/10 cloud chat: "G4 ผ่านครับ") — G4 mini + G4 Classic not named yet, still open.
+       Look at batch 1b on live (G4 · G4 mini · G4 Classic; new Thai words in report item 4 of 03/10: เชื่อมด้วยคลื่นอัลตราโซนิก ·
        ร่องรูปตัว U · เซ็นเซอร์คู่ · ระบบสูบได้เลย · ความแม่นยำในการยิง · ช่องใส · ค่อย ๆ ละเลียดทุกพัฟ) · colour dots of black bodies read
        mid-grey (median of UWELL's render, as batch 1a) · pages now open on the card with the colour label empty until a colour is picked (= G5).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.

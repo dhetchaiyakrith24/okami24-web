@@ -414,6 +414,116 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     }
   },
+  // Site-wide template round batch 1c (03/10): from UWELL's G4 Pro / KOKO pages and spec sheets; Thai = thai-copy 03/10.
+  "caliburn-g4-pro": {
+    th: {
+      lede: "Caliburn G4 Pro สั่งงานด้วยจอทัช ด้านล่างไล่ให้ดูทีละอย่างว่าแตะแล้วทำอะไรได้บ้าง",
+      sections: [
+        {
+          heading: "G4 Pro กับ G4 Pro KOKO เลือกตัวไหนดี",
+          paragraphs: [
+            "สองรุ่นนี้มีจอทัช สูงสุด 35 วัตต์ และใช้หัวพอต GPP เหมือนกัน",
+            "G4 Pro ทรงเพรียว จอใหญ่กว่า หนักประมาณ 78 กรัม",
+            "[G4 Pro KOKO](/products/caliburn-g4-pro-koko) ทรงกล่อง แบตใหญ่กว่าที่ 2000mAh หนักประมาณ 93 กรัม และมีธีมหน้าจอแบบสุ่ม 5 แบบ",
+            "ชอบทรงไหนเลือกตัวนั้น"
+          ]
+        },
+        {
+          heading: "G4 Pro ต่างจาก G4 ยังไง",
+          paragraphs: [
+            "[G4](/products/caliburn-g4) มีจอสี 0.85 นิ้ว ใช้ปุ่มเดียวสั่งงาน และมี 2 โหมด",
+            "G4 Pro สั่งงานด้วยจอทัช เพิ่มโหมด Custom และแบตใหญ่กว่า"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "The Caliburn G4 Pro runs on a touchscreen. Below, one by one, what a tap can do.",
+      sections: [
+        {
+          heading: "G4 Pro or G4 Pro KOKO?",
+          paragraphs: [
+            "Both have a touchscreen, up to 35W and GPP pods.",
+            "The G4 Pro is the slim one, with the bigger screen, at about 78g.",
+            "The [G4 Pro KOKO](/products/caliburn-g4-pro-koko) is the box-shaped one, with a bigger 2000mAh battery, about 93g, and five blind-draw screen themes.",
+            "Pick the shape you like."
+          ]
+        },
+        {
+          heading: "How is the G4 Pro different from the G4?",
+          paragraphs: [
+            "The [G4](/products/caliburn-g4) has a 0.85-inch colour screen, one button to run it and two modes.",
+            "The G4 Pro runs on a touchscreen, adds the Custom mode and has a bigger battery."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "Caliburn G4 Pro 用触屏操作。下面逐项看看轻点一下能做什么。",
+      sections: [
+        {
+          heading: "G4 Pro 还是 G4 Pro KOKO？",
+          paragraphs: [
+            "两款都有触屏、最高 35W，都用 GPP 烟弹。",
+            "G4 Pro 是纤长款，屏幕更大，约 78g。",
+            "[G4 Pro KOKO](/products/caliburn-g4-pro-koko) 是方盒款，电池更大，2000mAh，约 93g，还有 5 款盲抽屏幕主题。",
+            "喜欢哪种造型就选哪款。"
+          ]
+        },
+        {
+          heading: "G4 Pro 和 G4 有什么不同？",
+          paragraphs: [
+            "[G4](/products/caliburn-g4) 是 0.85 英寸彩屏，一个按键操作，有两种模式。",
+            "G4 Pro 用触屏操作，多了 Custom 模式，电池也更大。"
+          ]
+        }
+      ]
+    },
+  },
+  "caliburn-g4-pro-koko": {
+    th: {
+      lede: "G4 Pro KOKO ตัวเครื่องทรงกล่อง สั่งงานด้วยจอทัช และมีธีมหน้าจอให้สุ่มสะสม",
+      sections: [
+        {
+          heading: "G4 Pro KOKO กับ G4 Pro เลือกตัวไหนดี",
+          paragraphs: [
+            "สองรุ่นนี้มีจอทัช สูงสุด 35 วัตต์ และใช้หัวพอต GPP เหมือนกัน",
+            "KOKO ทรงกล่อง แบตใหญ่กว่า หนักประมาณ 93 กรัม",
+            "[G4 Pro](/products/caliburn-g4-pro) ทรงเพรียว จอ 2.51 นิ้ว แบต 1800mAh หนักประมาณ 78 กรัม",
+            "ชอบทรงไหนเลือกตัวนั้น"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "The G4 Pro KOKO is a box-shaped device run from a touchscreen, with screen themes to collect.",
+      sections: [
+        {
+          heading: "G4 Pro KOKO or G4 Pro?",
+          paragraphs: [
+            "Both have a touchscreen, up to 35W and GPP pods.",
+            "The KOKO is the box-shaped one, with the bigger battery, at about 93g.",
+            "The [G4 Pro](/products/caliburn-g4-pro) is the slim one: a 2.51-inch screen, 1800mAh, about 78g.",
+            "Pick the shape you like."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "G4 Pro KOKO 是方盒机身，用触屏操作，还有屏幕主题可以收集。",
+      sections: [
+        {
+          heading: "G4 Pro KOKO 还是 G4 Pro？",
+          paragraphs: [
+            "两款都有触屏、最高 35W，都用 GPP 烟弹。",
+            "KOKO 是方盒款，电池更大，约 93g。",
+            "[G4 Pro](/products/caliburn-g4-pro) 是纤长款：2.51 英寸屏，1800mAh，约 78g。",
+            "喜欢哪种造型就选哪款。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
