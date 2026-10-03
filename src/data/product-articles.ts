@@ -423,7 +423,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "G4 Pro กับ G4 Pro KOKO เลือกตัวไหนดี",
           paragraphs: [
             "สองรุ่นนี้มีจอทัช สูงสุด 35 วัตต์ และใช้หัวพอต GPP เหมือนกัน",
-            "G4 Pro ทรงแท่ง จอใหญ่กว่าที่ 2.51 นิ้ว หนักประมาณ 78 กรัม",
+            "G4 Pro ทรงเพรียว จอใหญ่กว่าที่ 2.51 นิ้ว หนักประมาณ 78 กรัม",
             "[G4 Pro KOKO](/products/caliburn-g4-pro-koko) ทรงกล่อง แบตใหญ่กว่าที่ 2000mAh หนักประมาณ 93 กรัม และมีธีมหน้าจอแบบสุ่ม 5 แบบ",
             "ชอบทรงไหนเลือกตัวนั้น"
           ]
@@ -489,7 +489,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "สองรุ่นนี้มีจอทัช สูงสุด 35 วัตต์ และใช้หัวพอต GPP เหมือนกัน",
             "KOKO ทรงกล่อง แบตใหญ่กว่า หนักประมาณ 93 กรัม",
-            "[G4 Pro](/products/caliburn-g4-pro) ทรงแท่ง จอ 2.51 นิ้ว แบต 1800mAh หนักประมาณ 78 กรัม",
+            "[G4 Pro](/products/caliburn-g4-pro) ทรงเพรียว จอ 2.51 นิ้ว แบต 1800mAh หนักประมาณ 78 กรัม",
             "ชอบทรงไหนเลือกตัวนั้น"
           ]
         }
