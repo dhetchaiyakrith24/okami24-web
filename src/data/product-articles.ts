@@ -532,16 +532,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "G3 Pro กับ G3 Pro KOKO เลือกตัวไหนดี",
           paragraphs: [
-            "สองรุ่นนี้ใช้หัวพอต G3 และสูงสุด 35 วัตต์เหมือนกัน",
+            "สองรุ่นนี้ใช้หัวพอต G3 เหมือนกัน",
             "G3 Pro ทรงเพรียว แบต 1000mAh หนักประมาณ 92 กรัม",
             "[G3 Pro KOKO](/products/caliburn-g3-pro-koko) ทรงกล่อง จอสี 1.8 นิ้ว เปลี่ยนธีมหน้าจอได้ และแบตใหญ่กว่าที่ 1250mAh"
           ]
         },
         {
-          heading: "เลือกหัว 0.4 หรือ 0.9 โอห์มดี",
+          heading: "เลือกหัวพอตแบบไหนดี",
           paragraphs: [
-            "ตารางหัวพอตของ UWELL เริ่มที่ 0.4 โอห์มสำหรับ RDL (ดูดลงปอดแต่ลมยังมีแรงต้าน) ไปจบที่ 1.2 โอห์มสำหรับ MTL (สูบแบบดูดเข้าปากก่อน)",
-            "หัว 0.4 โอห์มลมโล่งกว่าและตั้งวัตต์ได้สูงกว่า ส่วนหัว 0.9 โอห์มลมแน่น เข้าทางคนสูบแบบ MTL",
+            "ตารางหัวพอตของ UWELL ไล่จาก RDL (ดูดลงปอดแต่ลมยังมีแรงต้าน) ที่โอห์มต่ำ ไปถึง MTL (สูบแบบดูดเข้าปากก่อน) ที่โอห์มสูง",
+            "หัวโอห์มต่ำลมโล่งกว่าและตั้งวัตต์ได้สูงกว่า ส่วนหัวโอห์มสูงลมแน่น เข้าทางคนสูบแบบ MTL",
             "ในกล่องมีมาให้ทั้งสองหัว ลองดูก่อนแล้วค่อยซื้อหัวที่ชอบเพิ่ม"
           ]
         }
@@ -553,16 +553,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "G3 Pro or G3 Pro KOKO?",
           paragraphs: [
-            "Both take the same G3 pods and go up to 35W.",
+            "Both take the same G3 pods.",
             "The G3 Pro is the slim one, with a 1000mAh battery, at about 92g.",
             "The [G3 Pro KOKO](/products/caliburn-g3-pro-koko) is the box-shaped one, with a 1.8-inch colour screen, screen themes and a 1250mAh battery."
           ]
         },
         {
-          heading: "0.4Ω or 0.9Ω?",
+          heading: "Which pod?",
           paragraphs: [
-            "UWELL's pod chart runs from RDL at 0.4Ω to MTL at 1.2Ω.",
-            "The 0.4Ω pod gives a looser RDL draw at higher wattage; the 0.9Ω pod a tighter MTL draw.",
+            "UWELL's pod chart runs from RDL at the low-ohm end to MTL at the high-ohm end.",
+            "A lower-ohm pod gives a looser RDL draw at higher wattage; a higher-ohm pod a tighter MTL draw.",
             "Both come in the box, so you can try each before buying more."
           ]
         }
@@ -574,16 +574,16 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "G3 Pro 还是 G3 Pro KOKO？",
           paragraphs: [
-            "两款都用同样的 G3 烟弹，最高 35W。",
+            "两款都用同样的 G3 烟弹。",
             "G3 Pro 是纤长款，1000mAh 电池，约 92 克。",
             "[G3 Pro KOKO](/products/caliburn-g3-pro-koko) 是方盒款，1.8 英寸彩屏，可换屏幕主题，1250mAh 电池。"
           ]
         },
         {
-          heading: "0.4Ω 还是 0.9Ω？",
+          heading: "选哪种烟弹？",
           paragraphs: [
-            "UWELL 的烟弹图从 0.4Ω 的 RDL 排到 1.2Ω 的 MTL。",
-            "0.4Ω 是较松的 RDL 吸感、功率更高；0.9Ω 是较紧的 MTL 吸感。",
+            "UWELL 的烟弹图从低阻值的 RDL 排到高阻值的 MTL。",
+            "低阻值烟弹是较松的 RDL 吸感、功率更高；高阻值烟弹是较紧的 MTL 吸感。",
             "两种都在盒内，可以都试过再决定要买哪种。"
           ]
         }
@@ -592,12 +592,12 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   "caliburn-g3-pro-koko": {
     th: {
-      lede: "Caliburn G3 Pro KOKO ทรงกล่อง จอสีเต็มหน้าเครื่อง และเปลี่ยนธีมหน้าจอได้ ด้านล่างไล่ให้ดูทีละอย่าง",
+      lede: "Caliburn G3 Pro KOKO ทรงกล่อง จอสีเต็มหน้าเครื่อง และแบตใหญ่กว่า G3 Pro ด้านล่างไล่ให้ดูทีละอย่าง",
       sections: [
         {
           heading: "G3 Pro KOKO กับ G3 Pro เลือกตัวไหนดี",
           paragraphs: [
-            "สองรุ่นนี้ใช้หัวพอต G3 และสูงสุด 35 วัตต์เหมือนกัน",
+            "สองรุ่นนี้ใช้หัวพอต G3 เหมือนกัน",
             "KOKO ทรงกล่อง แบตใหญ่กว่า หนักประมาณ 91 กรัม",
             "[G3 Pro](/products/caliburn-g3-pro) ทรงเพรียว แบต 1000mAh หนักพอ ๆ กันที่ประมาณ 92 กรัม"
           ]
@@ -618,7 +618,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "G3 Pro KOKO or G3 Pro?",
           paragraphs: [
-            "Both take the same G3 pods and go up to 35W.",
+            "Both take the same G3 pods.",
             "The KOKO is the box-shaped one, with the bigger battery, at about 91g.",
             "The [G3 Pro](/products/caliburn-g3-pro) is the slim one, with a 1000mAh battery, at much the same weight, about 92g."
           ]
@@ -639,7 +639,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "G3 Pro KOKO 还是 G3 Pro？",
           paragraphs: [
-            "两款都用同样的 G3 烟弹，最高 35W。",
+            "两款都用同样的 G3 烟弹。",
             "KOKO 是方盒款，电池更大，约 91 克。",
             "[G3 Pro](/products/caliburn-g3-pro) 是纤长款，1000mAh 电池，重量差不多，约 92 克。"
           ]

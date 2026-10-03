@@ -1644,9 +1644,9 @@ export const uwellProducts: Product[] = [
       },
       {
         id: "power",
-        title: "Up to 35W",
-        description: "Press the button three times, then pick the wattage. Each pod has its own range.",
-        subline: "Set the power to suit the pod.",
+        title: "Power to suit the pod",
+        description: "Press the button three times, then pick the wattage.",
+        subline: "Each pod has its own range.",
         image: { src: "/assets/products/caliburn-g3-pro/story-power.webp", alt: "UWELL's Caliburn G3 Pro poster — 35 W", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro", width: 1920, height: 800 },
       },
       {
@@ -1852,9 +1852,9 @@ export const uwellProducts: Product[] = [
       },
       {
         id: "power",
-        title: "Up to 35W",
+        title: "Wattage and airflow, yours to set",
         description: "Press three times to set the wattage, and slide the airflow from smooth to strong.",
-        subline: "Wattage and airflow, both yours to set.",
+        subline: "Up to 35W.",
         image: { src: "/assets/products/caliburn-g3-pro-koko/story-power.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — 35 W", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1809, height: 756, transparent: true },
       },
       {

@@ -671,12 +671,12 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       ],
     },
     "power": {
-      title: { th: "สูงสุด 35 วัตต์", en: "Up to 35W", zh: "最高 35W" },
-      subline: { th: "ตั้งวัตต์เองได้", en: "Set the power to suit the pod.", zh: "按烟弹设定功率。" },
+      title: { th: "ตั้งวัตต์ตามหัวพอต", en: "Power to suit the pod", zh: "按烟弹设定功率" },
+      subline: { th: "หัวแต่ละโอห์มตั้งได้คนละช่วง", en: "Each pod has its own range.", zh: "每种烟弹的范围不同。" },
       body: {
-        th: "กดปุ่ม 3 ครั้งแล้วเลือกวัตต์ หัวแต่ละโอห์มตั้งได้คนละช่วง",
-        en: "Press the button three times, then pick the wattage. Each pod has its own range.",
-        zh: "连按三下按键即可选择功率，每种烟弹的范围不同。",
+        th: "กดปุ่ม 3 ครั้งแล้วเลือกวัตต์",
+        en: "Press the button three times, then pick the wattage.",
+        zh: "连按三下按键即可选择功率。",
       },
       points: [
         { text: { th: "หัว 0.4 โอห์ม ตั้งได้ 5–35 วัตต์", en: "0.4Ω pod: 5–35W", zh: "0.4Ω 烟弹：5–35W" }, specKey: "output" },
@@ -713,7 +713,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ใช้หัวพอต G3 ได้ทุกหัว", en: "Takes every G3 pod", zh: "兼容所有 G3 烟弹" },
       subline: { th: "0.4–1.2 โอห์ม", en: "From 0.4Ω to 1.2Ω.", zh: "从 0.4Ω 到 1.2Ω。" },
       body: {
-        th: "ใช้ได้ทั้งน้ำยา freebase และ salt nic มีทั้งหัวเติมด้านบนและเติมด้านข้าง",
+        th: "มีทั้งหัวเติมด้านบนและเติมด้านข้าง ใช้ได้ทั้งน้ำยา freebase และ salt nic",
         en: "Any Caliburn G3 pod fits, for freebase or nic salt, in top-refill or side-refill versions.",
         zh: "所有 Caliburn G3 烟弹都能用，自由基或盐都可以，有顶注油和侧注油两种。",
       },
@@ -754,7 +754,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ธีมหน้าจอ", en: "Screen themes", zh: "屏幕主题" },
       subline: { th: "เลือกหน้าตาจอที่ชอบ", en: "Pick the look you like.", zh: "选你喜欢的样式。" },
       body: {
-        th: "กด 4 ครั้งเพื่อเปิดเมนู แล้วเลือกธีมจากในนั้น",
+        th: "กด 4 ครั้งเพื่อเปิดเมนู แล้วเลือกจากในนั้น",
         en: "Press the button four times to open the menu, then change the theme there.",
         zh: "连按四下按键打开菜单，在里面更换主题。",
       },
@@ -766,7 +766,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "DAY กับ NIGHT", en: "Day and night", zh: "日间与夜间" },
       subline: { th: "กลางวันจอสด กลางคืนแสงนุ่ม", en: "Bright by day, softer at night.", zh: "白天明亮，夜晚柔和。" },
       body: {
-        th: "สลับได้ในเมนูเดียวกับธีม เลือกให้เข้ากับแสงรอบตัว",
+        th: "สลับได้ในเมนูเดียวกัน เลือกให้เข้ากับแสงรอบตัว",
         en: "DAY mode keeps the screen vivid; NIGHT mode dims the glow. Both are in the same menu.",
         zh: "DAY 模式屏幕鲜亮，NIGHT 模式亮度更柔和，都在同一个菜单里。",
       },
@@ -786,8 +786,8 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       ],
     },
     "power": {
-      title: { th: "สูงสุด 35 วัตต์", en: "Up to 35W", zh: "最高 35W" },
-      subline: { th: "ตั้งวัตต์และปรับลมได้เอง", en: "Wattage and airflow, both yours to set.", zh: "功率和气流都由你调。" },
+      title: { th: "ตั้งวัตต์และปรับลมได้เอง", en: "Wattage and airflow, yours to set", zh: "功率和气流都由你调" },
+      subline: { th: "สูงสุด 35 วัตต์", en: "Up to 35W.", zh: "最高 35W。" },
       body: {
         th: "กด 3 ครั้งเพื่อตั้งวัตต์ ส่วนลมจะเอานุ่ม แรง หรือกลาง ๆ ก็ปรับได้",
         en: "Press three times to set the wattage, and slide the airflow from smooth to strong.",
@@ -810,7 +810,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ใช้หัวพอต G3 ได้ทุกหัว", en: "Takes every G3 pod", zh: "兼容所有 G3 烟弹" },
       subline: { th: "0.4–1.2 โอห์ม", en: "From 0.4Ω to 1.2Ω.", zh: "从 0.4Ω 到 1.2Ω。" },
       body: {
-        th: "ใช้ได้ทั้งน้ำยา freebase และ salt nic มีทั้งหัวเติมด้านบนและเติมด้านข้าง",
+        th: "มีทั้งหัวเติมด้านบนและเติมด้านข้าง ใช้ได้ทั้งน้ำยา freebase และ salt nic",
         en: "Any Caliburn G3 pod fits, for freebase or nic salt, in top-refill or side-refill versions.",
         zh: "所有 Caliburn G3 烟弹都能用，自由基或盐都可以，有顶注油和侧注油两种。",
       },
