@@ -578,9 +578,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "คำสั่งหลักอยู่ในแตะเดียว", en: "Core features in one tap", zh: "核心功能，一触即达" },
       subline: { th: "KOKO รุ่นแรกที่มีจอทัช", en: "The first KOKO with a touchscreen.", zh: "首款带触屏的 KOKO。" },
       body: {
-        th: "UWELL ทำจอนี้มาให้คนสูบพอตใช้โดยเฉพาะ หน้าจอโล่งสะอาดตา ไม่ต้องไล่หาเมนู",
-        en: "UWELL built this screen for vapers: an uncluttered screen, no menus to dig through.",
-        zh: "UWELL 专为烟友打造这块屏幕：界面简洁，不用层层找菜单。",
+        th: "UWELL ออกแบบจอนี้ให้คนสูบพอตโดยเฉพาะ หน้าจอโล่งสะอาดตา หาเมนูเจอง่าย",
+        en: "UWELL built this screen for vapers: uncluttered, with menus easy to find.",
+        zh: "UWELL 专为烟友打造这块屏幕：界面简洁，菜单一找就到。",
       },
       points: [
         { text: { th: "แตะแม่นยำมากกว่า 99.99% (ตัวเลขจากแล็บของ UWELL)", en: "Touch accuracy above 99.99% (UWELL LAB)", zh: "触控准确率 99.99% 以上（UWELL 实验室数据）" }, specKey: "touch" },

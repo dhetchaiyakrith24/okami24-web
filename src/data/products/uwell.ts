@@ -759,7 +759,7 @@ export const uwellProducts: Product[] = [
       {
         id: "one-tap",
         title: "Core features in one tap",
-        description: "UWELL built this screen for vapers: an uncluttered screen, no menus to dig through.",
+        description: "UWELL built this screen for vapers: uncluttered, with menus easy to find.",
         subline: "The first KOKO with a touchscreen.",
         image: { src: "/assets/products/caliburn-g4-pro-koko/story-one-tap.webp", alt: "Official UWELL poster — core features in one tap on the KOKO touchscreen", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro-koko", width: 1584, height: 1391, transparent: true },
       },
