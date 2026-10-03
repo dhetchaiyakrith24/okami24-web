@@ -11,13 +11,11 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — the 03–04/10 computer chat merged 4 PRs, each checker PASS + GitHub green [ตรวจแล้ว]:
-  #239 `abbdac9` (a) G4 Pro / KOKO "ตบคอ" → "แรงถึงคอ" (tier A) · live 2 pages [ตรวจแล้ว — curl]
-  #240 `f80567d` (b) G4 mini all-colours = two groups of 6 (solid / gradient), devices ~1.5× larger, lineupImage2 pills · live [ตรวจแล้ว]
-  #241 `158316c` (c) G4 Pro card upright 4:5 (Pearl Silver) + 8 colours = screen side + back side cut WHOLE from UWELL's pc/color-1..8
-    (a clean alpha gap between the two devices — no AI, 0 credits) tilted 12°; checker round 1 failed the sharpness gate on 4 light
-    colours → one resample per device + unsharp 0.65 → 9/9 PASS · live [ตรวจแล้ว]
-  #242 `372780c` (d) batch 1d G3 Pro + G3 Pro KOKO on the template (details in item 3) · live 6 + 7 story blocks [ตรวจแล้ว — curl].
+1 main: `git fetch && git log -1 --oneline origin/main` — the 04/10 chat merged #245 `5e2c363` (checker PASS round 2 at dac7159 +
+  GitHub green, BIG = uwell.ts data): head lines (tagline + short) of G3 Pro / G3 Pro KOKO / G4 / G4 Classic th + en (zh reads en),
+  so their meta description + Product JSON-LD description changed too · G3 Pro / KOKO article ledes th/en/zh · G4 Classic who-for ·
+  the 2 rejected 1d phrases fixed · deploy 37159026333 success · live meta of the 4 pages [ตรวจแล้ว — curl]. Proof:
+  `_incoming/sitewide-template/1e/` (gates4.log · vt-diff4 = 129 changes, all intended · checker files `_incoming/checker-245/`).
 2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Kits (never merge these branches):
   1b = branch `kit-1b` (also holds `_incoming/sitewide-template/scope.md`, the round scope) · 1c = branch `kit-1c`. Get one:
   `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d material is in
@@ -34,9 +32,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   1d as merged: UWELL posters (G3 Pro 6 blocks, KOKO 7), th/en/zh + articles, every spec row from UWELL with sourceUrl (G3 Pro battery
   from UWELL's user manual zip; KOKO 1250mAh — the shop had "1000mAh unverified"; facts = 1d/facts-uwell.md). KOKO card now shows
   "1250mAh · Max 35W" sitewide. New flag `storyStartRight` (default unchanged) — G3 Pro starts poster-right (owner 03/10 "vary").
-  NEXT, in order: (i) one copy PR: G3 Pro + KOKO head copy ((44), owner 04/10 "แก้แชทหน้า" — lifts the head off-limits for these 2)
-  + the 2 rejected Thai phrases (THAI_STYLE "ก้อน 1d": RDL parenthesis in G3 Pro article · KOKO anti-leak block) + (41) G4 Classic/G4
-  only if the owner confirms (Friday's question bundled it [เชื่อว่า]) · (ii) table for (46) · (iii) batch 2 VOOPOO (Drag 6 HYBRID first).
+  BATCH 2 VOOPOO — STARTED 04/10, nothing on a branch yet. Material (not in git): `_incoming/sitewide-template/2/` = research-voopoo.md
+  (researcher: our data vs maker — Drag 6 is a TANK MOD with UFORCE-X Tank II / PnP X, not a pod kit; "SMART/RBA/TC-TCR", "two 2200mAh
+  cells", G3 mini 95.3 mm, VMATE i3 dims = not on the maker page; MEDIUM confidence for all but ARGUS G4 — re-read the real pages) ·
+  pages/*.html = the 7 shop pages saved with curl + `Referer: https://shop.voopoo.com/` (argus-g4 = `_incoming/argus-g4/`) ·
+  posters.md (posters.js / landing.js: poster URLs per page; Drag 6 + X3 are landing pages, 70 / 62 images to sort).
+  Drag 6 HYBRID draft = `_incoming/image-sitewide/b-edge/d6-hybrid.js` → relx/d6-hy.png (true devices from relx-studio d6 × B's
+  low-frequency light on a 24×48 grid per device box, clamp 0.55–1.35, mirror reflection at each foot, transparent) · sent to the owner
+  04/10 as relx/d6-owner.png (left = live lineup-v2 the owner picked 01/10, right = hybrid) [รอเจ้าของ (47)] · 0 credits.
+  NEXT, in order: (i) owner answers (46) + (47) · (ii) batch 2 data/poster work that needs no new copy: read posters per product,
+  fix the data rows against the maker (13.7 big (2)) · (iii) copy for VOOPOO only after (46) is settled (the owner's voice reset).
   Speed (owner 04/10): one build per batch · whole-sitemap scan (≈ 20 min) only if a shared part changes · a build ≈ 8 min.
   Method that worked (1b–1d): maker page → .txt (`1b/extract.js`) · images listed in the page HTML + its `/_nuxt/*.js` chunks · ffmpeg
   stills from maker films · researcher reads posters/spec images into a facts sheet · copy-base.json (en/zh) → thai-copy → th.json →
@@ -65,18 +70,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (46) NEW 04/10 — owner: the en / Thai / Chinese copy the agents write is "ไม่แมน ไม่นิ่ง ดูแข็ง ๆ ไม่ธรรมชาติ … อาจต้องเซ็ตใหม่"
-       (LESSONS ช11) → Friday sends a table (central §12 item 28) for resetting `thai-copy` + the en/zh writing BEFORE editing any
-       agent; owner decides. The fixes in NEXT (i) go ahead meanwhile.
-  (44) answered 04/10 "แก้แชทหน้า" → NEXT (i). The facts: head copy (tagline + shortDescription, Thai in product-copy-th.ts, English in
-       uwell.ts) contradicts the 1d story — G3 Pro "จอ LCD โอบรอบด้านข้าง / ปรับช่องลมได้ทุกระดับ" (not UWELL's words) · KOKO "G3 Pro
-       ตัวเครื่องเดิม ในชุดสีรุ่น KOKO / ตัวเครื่องเดียวกับ G3 Pro" (wrong: box-shaped, 1.8" screen, 1250mAh). thai-copy drafts (re-check
-       against ช11 first): G3 Pro "Caliburn ทรงเพรียว จอเต็มหน้าเครื่อง ปรับลมได้ละเอียด" · KOKO "Caliburn ทรงกล่อง จอสี 1.8 นิ้ว แบต 1250mAh".
-  (41) G4 Classic / G4 hero line under the name (Thai shortDescription + tagline in product-copy-th.ts, English in uwell.ts) is wrong
-       — Classic "same body as the standard G4 / Classic colourway", G4 "power modes" — and contradicts the page's own story.
-       Asked 03/10: 1 fix in the round (Friday's pick; thai-copy draft: tagline "Caliburn รุ่นฉลอง 10 ปี ตัวเครื่องอะลูมิเนียม ไฟ RGB
-       แทนจอ" · short "Caliburn G4 Classic แบต 1400mAh สูงสุด 35 วัตต์ ไม่มีจอ ใช้ไฟ RGB 14 ดวงบอกระดับแบต มีเซ็นเซอร์คู่ และใช้หัวพอต GPP")
-       · 2 wait for the SEO round. Same card line shows on /brands/uwell etc.
+  (46) table SENT 04/10 in chat (reset the copy agent): 1 rewrite `thai-copy` voice = calm, short, confident, no explanatory
+       parentheses, 6–8 owner before→after pairs · 2 Thai written first from maker facts, en/zh from the same facts (no translating) ·
+       3 widen the agent to all 3 languages (`site-copy`) · 4 owner picks 3–5 reference samples · 5 one sample block to the owner before
+       a whole batch's copy. Friday recommends 1+2+3+5 (+4). No agent edited until the owner decides (central §12 item 28).
+  (47) NEW 04/10 Drag 6 all-colours: keep the live VMATE-MAX layout (owner-picked 01/10) or switch to the HYBRID RELX layout
+       (relx/d6-owner.png). Owner-approved image = 13.3 #5 → nothing replaced until the answer.
+  (48) NEW 04/10 THAI_STYLE layer 4 (line 29) still says a tech term gets a short Thai parenthesis at first mention ("MTL (สูบแบบ
+       ดูดเข้าปากก่อน)"); the owner rejected the RDL one as "เพี้ยน ๆ" and LESSONS ช11 reads "no parentheses" [เชื่อว่า]. #245 kept MTL's
+       (locked example) and dropped RDL's → keep layer 4, or drop the parentheses site-wide?
+  #245 head lines + ledes = Friday's own Thai (checker taste-read, not thai-copy) — ruled by the owner from the live pages.
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
