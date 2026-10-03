@@ -578,7 +578,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "คำสั่งหลักอยู่ในแตะเดียว", en: "Core features in one tap", zh: "核心功能，一触即达" },
       subline: { th: "KOKO รุ่นแรกที่มีจอทัช", en: "The first KOKO with a touchscreen.", zh: "首款带触屏的 KOKO。" },
       body: {
-        th: "UWELL ทำจอนี้มาให้คนสูบพอตใช้โดยเฉพาะ หน้าจอไม่รก ไม่ต้องไล่หาเมนู",
+        th: "UWELL ทำจอนี้มาให้คนสูบพอตใช้โดยเฉพาะ หน้าจอโล่งสะอาดตา ไม่ต้องไล่หาเมนู",
         en: "UWELL built this screen for vapers: an uncluttered screen, no menus to dig through.",
         zh: "UWELL 专为烟友打造这块屏幕：界面简洁，不用层层找菜单。",
       },
