@@ -1,0 +1,82 @@
+{
+ "public/assets/products/caliburn-g4/story-cover.webp": [
+  1920,
+  1080
+ ],
+ "public/assets/products/caliburn-g4/story-taste.webp": [
+  900,
+  1200
+ ],
+ "public/assets/products/caliburn-g4/story-modes.webp": [
+  908,
+  1210
+ ],
+ "public/assets/products/caliburn-g4/story-button.webp": [
+  1803,
+  1200
+ ],
+ "public/assets/products/caliburn-g4/story-airflow.webp": [
+  900,
+  1200
+ ],
+ "public/assets/products/caliburn-g4/story-pods.webp": [
+  1800,
+  1200
+ ],
+ "public/assets/products/caliburn-g4-mini/story-cover.webp": [
+  1920,
+  1040
+ ],
+ "public/assets/products/caliburn-g4-mini/story-minimal.webp": [
+  1400,
+  1400
+ ],
+ "public/assets/products/caliburn-g4-mini/story-taste.webp": [
+  1296,
+  1220
+ ],
+ "public/assets/products/caliburn-g4-mini/story-airflow.webp": [
+  900,
+  1200
+ ],
+ "public/assets/products/caliburn-g4-mini/story-pods.webp": [
+  920,
+  1201
+ ],
+ "public/assets/products/caliburn-g4-classic/story-cover.webp": [
+  1920,
+  1080
+ ],
+ "public/assets/products/caliburn-g4-classic/story-craft.webp": [
+  1470,
+  1059
+ ],
+ "public/assets/products/caliburn-g4-classic/story-twin-sensor.webp": [
+  2400,
+  1350
+ ],
+ "public/assets/products/caliburn-g4-classic/story-rgb-light.webp": [
+  1720,
+  746
+ ],
+ "public/assets/products/caliburn-g4-classic/story-dual-control.webp": [
+  850,
+  746
+ ],
+ "public/assets/products/caliburn-g4-classic/story-pods.webp": [
+  1162,
+  834
+ ],
+ "public/assets/products/caliburn-g4-classic/story-pro-focs.webp": [
+  896,
+  689
+ ],
+ "public/assets/products/caliburn-g4/story-anti-leak.webp": [
+  2693,
+  955
+ ],
+ "public/assets/products/caliburn-g4-mini/story-anti-leak.webp": [
+  2397,
+  850
+ ]
+}

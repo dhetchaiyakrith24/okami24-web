@@ -1,0 +1,9 @@
+feat(images): G4 + G4 mini colours re-tilted 12 deg from UWELL's own renders, cards upright 4:5
+
+Batch 1b part 2 (owner 03/10: set-1 UWELL colours re-tilted). 20 colour images = the front device of
+UWELL's per-colour render (G4 pc/2-9, G4 mini pc/1-12), turned 12 deg in 2D, no AI; card-v2 = the card
+colour upright on 4:5; openOnCardPhoto like G5 / G5 Lite. 14 swatches = median body colour of the same
+renders (gradient bodies: the end the colour name describes). Scripts: _incoming/sitewide-template/1b/
+tilt.js, swatch.js, edit-colours.js.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

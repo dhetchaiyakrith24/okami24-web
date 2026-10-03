@@ -1,0 +1,179 @@
+{
+  "caliburn-g4": {
+    "blocks": {
+      "taste": {
+        "title": { "en": "Taste above everything", "zh": "口味至上" },
+        "subline": { "en": "Upgraded GPP pods on PRO-FOCS 4.0.", "zh": "升级版 GPP 烟弹，搭配 PRO-FOCS 4.0。" },
+        "body": { "en": "UWELL built the G4 around flavour: the upgraded pods and its flavour tech work together.", "zh": "UWELL 以口味为核心打造 G4：升级烟弹与口感技术协同发挥。" },
+        "points": [
+          { "text": { "en": "Cartridge life up to 35% longer (UWELL lab tests)", "zh": "烟弹寿命最高提升 35%（UWELL 实验室数据）" }, "specKey": "flavor-tech" },
+          { "text": { "en": "Flavour satisfaction up to 35% higher (UWELL lab tests)", "zh": "口感满意度最高提升 35%（UWELL 实验室数据）" }, "specKey": "flavor-tech" },
+          { "text": { "en": "Up to 35W", "zh": "最高 35W" }, "specKey": "output" }
+        ]
+      },
+      "modes": {
+        "title": { "en": "Storm or Waves", "zh": "Storm 还是 Waves" },
+        "subline": { "en": "Two modes, picked on a 0.85-inch colour screen.", "zh": "两种模式，在 0.85 英寸彩屏上切换。" },
+        "body": { "en": "Storm hits fast, like a roller coaster. Waves stays smooth and steady, like the London Eye.", "zh": "Storm 来得快，像坐过山车；Waves 平稳顺滑，像坐伦敦眼。" },
+        "points": [
+          { "text": { "en": "0.85-inch HD colour screen", "zh": "0.85 英寸高清彩屏" }, "specKey": "screen" },
+          { "text": { "en": "Themed screen UI: on/off, mode, puffs, day/night, charging", "zh": "主题界面：开关机、模式、口数、日/夜、充电" }, "specKey": "screen" }
+        ]
+      },
+      "button": {
+        "title": { "en": "One button for everything", "zh": "一键搞定" },
+        "subline": { "en": "Count the clicks.", "zh": "按几下，做什么。" },
+        "body": { "en": "Wake the screen, lock the button, set the wattage, open the menu or switch off — without a second button.", "zh": "亮屏、锁定按键、调功率、进菜单、开关机，一个按键全包。" },
+        "points": [
+          { "text": { "en": "1 click: light up the screen", "zh": "按 1 下：亮屏" }, "specKey": "control" },
+          { "text": { "en": "2 clicks: lock/unlock button firing", "zh": "按 2 下：锁定/解锁按键点火" }, "specKey": "control" },
+          { "text": { "en": "3 clicks: adjust wattage", "zh": "按 3 下：调节功率" }, "specKey": "control" },
+          { "text": { "en": "4 clicks: menu", "zh": "按 4 下：进入菜单" }, "specKey": "control" },
+          { "text": { "en": "5 clicks: on/off", "zh": "按 5 下：开关机" }, "specKey": "control" }
+        ]
+      },
+      "airflow": {
+        "title": { "en": "Airflow your way", "zh": "气流随你调" },
+        "subline": { "en": "Three ways to set the draw.", "zh": "三种方式调节吸阻。" },
+        "body": { "en": "Slide the airflow valve, load the pod the other way round, or combine the two.", "zh": "推动气流滑块、把烟弹反向装入，或两者结合。" },
+        "points": [
+          { "text": { "en": "Airflow slider", "zh": "气流滑块" }, "specKey": "airflow" },
+          { "text": { "en": "Reversible pod", "zh": "烟弹可反向安装" }, "specKey": "airflow" }
+        ],
+        "link": { "href": "/guides/understanding-mtl-vs-dtl", "label": { "th": "อ่านเรื่อง MTL กับ DTL", "en": "Read: MTL vs. DTL", "zh": "了解 MTL 与 DTL 的区别" } }
+      },
+      "pods": {
+        "title": { "en": "Takes every GPP pod", "zh": "兼容所有 GPP 烟弹" },
+        "subline": { "en": "Old GPP pods and the upgraded ones.", "zh": "旧款与升级款 GPP 烟弹都能用。" },
+        "body": { "en": "The upgraded pods also fit the G3 series, and their mouthpiece is reshaped to sit better on the lips.", "zh": "升级款烟弹也适用于 G3 系列，烟嘴重新设计，含着更贴合。" },
+        "points": [
+          { "text": { "en": "Refill without taking the pod out", "zh": "无需取下烟弹即可注油" }, "specKey": "pod-compat" }
+        ],
+        "link": { "href": "/products/coil-94", "label": { "th": "", "en": "See the GPP pods", "zh": "查看 GPP 烟弹" } }
+      },
+      "anti-leak": {
+        "title": { "en": "Every drop stays put", "zh": "每一滴都留在原处" },
+        "subline": { "en": "UWELL's U² technique.", "zh": "UWELL 的 U² 工艺。" },
+        "body": { "en": "Ultrasonic welding seals the pod against leaks, and a U-shaped channel improves the airflow.", "zh": "超声波焊接提升防漏，U 形通道改善气流。" },
+        "points": [
+          { "text": { "en": "Ultrasonic welding", "zh": "超声波焊接" }, "specKey": "anti-leak" },
+          { "text": { "en": "U-shaped channel", "zh": "U 形通道" }, "specKey": "anti-leak" }
+        ]
+      }
+    },
+    "article": {
+      "en": { "lede": "Flavour comes first on the G4 — and a thumb-sized colour screen lets you pick how it hits.", "sections": [
+        { "heading": "G4 or G4 mini?", "paragraphs": ["The G4 has the colour screen, the two modes and a button; the [G4 mini](/products/caliburn-g4-mini) has no screen and fires when you draw.", "The G4 holds 1300mAh, the mini 1100mAh — and the mini weighs about 46 g against the G4's 54.7 g."] },
+        { "heading": "How is the G4 different from the G4 Classic?", "paragraphs": ["The [G4 Classic](/products/caliburn-g4-classic) is a different body: aluminium, no screen, RGB light at the base and a 1400mAh battery. Both take GPP pods."] } ] },
+      "zh": { "lede": "G4 把口味放在第一位，还有一块拇指大小的彩屏，让你选择想要的口感。", "sections": [
+        { "heading": "G4 还是 G4 mini？", "paragraphs": ["G4 有彩屏、两种模式和按键；[G4 mini](/products/caliburn-g4-mini) 没有屏幕，吸一下就出烟。", "G4 电池 1300mAh，mini 是 1100mAh；mini 约 46 克，G4 约 54.7 克。"] },
+        { "heading": "G4 和 G4 Classic 有什么不同？", "paragraphs": ["[G4 Classic](/products/caliburn-g4-classic) 是另一种机身：铝合金、没有屏幕、底部有 RGB 灯光，电池 1400mAh。两款都用 GPP 烟弹。"] } ] }
+    }
+  },
+  "caliburn-g4-mini": {
+    "blocks": {
+      "minimal": {
+        "title": { "en": "Minimal design", "zh": "极简设计" },
+        "subline": { "en": "Grab it. Own it.", "zh": "拿起就走。" },
+        "body": { "en": "A slim, simple body that sits easily in the hand and the pocket.", "zh": "纤薄简洁，握在手里、放进口袋都轻松。" },
+        "points": [
+          { "text": { "en": "Approx. 46 g", "zh": "约 46 克" }, "specKey": "weight" },
+          { "text": { "en": "12 colours", "zh": "12 种颜色" } }
+        ]
+      },
+      "taste": {
+        "title": { "en": "Awesome taste", "zh": "口感出众" },
+        "subline": { "en": "Savour every puff.", "zh": "细品每一口。" },
+        "body": { "en": "PRO-FOCS 4.0 keeps the true taste of your e-liquid.", "zh": "PRO-FOCS 4.0 保留烟油原本的味道。" },
+        "points": [
+          { "text": { "en": "Flavour satisfaction up to 35% higher (UWELL lab tests)", "zh": "口感满意度最高提升 35%（UWELL 实验室数据）" }, "specKey": "flavor-tech" },
+          { "text": { "en": "Cartridge life up to 35% longer (UWELL lab tests)", "zh": "烟弹寿命最高提升 35%（UWELL 实验室数据）" }, "specKey": "flavor-tech" },
+          { "text": { "en": "Up to 35W", "zh": "最高 35W" }, "specKey": "output" },
+          { "text": { "en": "Auto draw", "zh": "吸气自动启动" }, "specKey": "firing" }
+        ]
+      },
+      "airflow": "same:caliburn-g4",
+      "pods": "same:caliburn-g4",
+      "anti-leak": "same:caliburn-g4"
+    },
+    "article": {
+      "en": { "lede": "Small, simple and ready to go — the G4 mini keeps the G4's flavour in a lighter body.", "sections": [
+        { "heading": "G4 mini or G4?", "paragraphs": ["The mini has no screen and fires when you draw; the [G4](/products/caliburn-g4) adds a colour screen, two modes and a button.", "The mini holds 1100mAh and weighs about 46 g; the G4 holds 1300mAh and weighs 54.7 g."] },
+        { "heading": "G4 mini or G5 Lite?", "paragraphs": ["Neither has a screen. The [G5 Lite](/products/caliburn-g5-lite) carries a bigger 1600mAh battery with a 4-bar light; the G4 mini is the slimmer, lighter one."] } ] },
+      "zh": { "lede": "小巧、简单、拿起就走——G4 mini 用更轻的机身保留 G4 的口味。", "sections": [
+        { "heading": "G4 mini 还是 G4？", "paragraphs": ["mini 没有屏幕，吸一下就出烟；[G4](/products/caliburn-g4) 多了彩屏、两种模式和按键。", "mini 电池 1100mAh、约 46 克；G4 电池 1300mAh、约 54.7 克。"] },
+        { "heading": "G4 mini 还是 G5 Lite？", "paragraphs": ["两款都没有屏幕。[G5 Lite](/products/caliburn-g5-lite) 电池更大（1600mAh），配 4 格电量灯；G4 mini 更纤薄、更轻。"] } ] }
+    }
+  },
+  "caliburn-g4-classic": {
+    "blocks": {
+      "craft": {
+        "title": { "en": "Crafted the classic way", "zh": "经典工艺" },
+        "subline": { "en": "A decade of UWELL craftsmanship.", "zh": "UWELL 十年匠心。" },
+        "body": { "en": "Countless micro CNC passes leave a zirconia-smooth finish, and the one-piece winged shape sits smoothly in the hand.", "zh": "无数道微米级 CNC 工序带来锆石般顺滑的表面，一体式翼形流线设计握感顺手。" },
+        "points": [
+          { "text": { "en": "Aluminium alloy body", "zh": "铝合金机身" }, "specKey": "materials" },
+          { "text": { "en": "4 colours", "zh": "4 种颜色" } }
+        ]
+      },
+      "twin-sensor": {
+        "title": { "en": "Twin sensors", "zh": "双传感器" },
+        "subline": { "en": "A main sensor and a backup, in sync.", "zh": "主传感器与备用传感器同步工作。" },
+        "body": { "en": "Two sensors work together, so every puff is caught.", "zh": "两个传感器协同，每一口都能准确捕捉。" },
+        "points": [
+          { "text": { "en": "Auto-draw lifespan 300%+ (UWELL LAB)", "zh": "自动吸气寿命 300%+（UWELL LAB）" }, "specKey": "firing" },
+          { "text": { "en": "Trigger accuracy 99.999%+ (UWELL LAB)", "zh": "触发准确率 99.999%+（UWELL LAB）" }, "specKey": "firing" }
+        ]
+      },
+      "rgb-light": {
+        "title": { "en": "Light that breathes", "zh": "会呼吸的灯光" },
+        "subline": { "en": "14 mini RGB LEDs.", "zh": "14 颗迷你 RGB LED。" },
+        "body": { "en": "The base glows in shifting colours as you puff — the glow of classic e-cigarettes, with a modern twist.", "zh": "吸烟时底部灯光渐变流动，重现经典电子烟的光芒，并加入现代感。" },
+        "points": [
+          { "text": { "en": "Green: battery high · Blue: medium · Red: low", "zh": "绿色：电量高 · 蓝色：中 · 红色：低" }, "specKey": "screen" },
+          { "text": { "en": "5 clicks: on/off", "zh": "按 5 下：开关机" }, "specKey": "control" },
+          { "text": { "en": "2 clicks: lock/unlock the button", "zh": "按 2 下：锁定/解锁按键" }, "specKey": "control" },
+          { "text": { "en": "1 click: fire / show the battery", "zh": "按 1 下：启动 / 显示电量" }, "specKey": "control" }
+        ]
+      },
+      "dual-control": {
+        "title": { "en": "Two ways for air, two ways to fire", "zh": "双气流、双启动" },
+        "subline": { "en": "Set it the way you vape.", "zh": "按你的习惯来设置。" },
+        "body": { "en": "Turn the airflow without steps or flip the pod; fire with a light press of the button or simply draw.", "zh": "气流可无级调节，也可反装烟弹；轻按按键或直接吸都能启动。" },
+        "points": [
+          { "text": { "en": "Stepless airflow control", "zh": "无级气流调节" }, "specKey": "airflow" },
+          { "text": { "en": "Reversible pod", "zh": "烟弹可反向安装" }, "specKey": "airflow" },
+          { "text": { "en": "Button press approx. 255gf", "zh": "按键压力约 255gf" }, "specKey": "firing" },
+          { "text": { "en": "Or just draw", "zh": "也可吸气启动" }, "specKey": "firing" }
+        ],
+        "link": { "href": "/guides/understanding-mtl-vs-dtl", "label": { "th": "อ่านเรื่อง MTL กับ DTL", "en": "Read: MTL vs. DTL", "zh": "了解 MTL 与 DTL 的区别" } }
+      },
+      "pods": {
+        "title": { "en": "Takes GPP pods", "zh": "兼容 GPP 烟弹" },
+        "subline": { "en": "Refill without taking the pod out.", "zh": "无需取下烟弹即可注油。" },
+        "body": { "en": "A clear window shows how much e-liquid is left.", "zh": "透明视窗，余量一目了然。" },
+        "points": [
+          { "text": { "en": "GPP pods", "zh": "GPP 烟弹" }, "specKey": "pod-compat" }
+        ],
+        "link": { "href": "/products/coil-94", "label": { "th": "", "en": "See the GPP pods", "zh": "查看 GPP 烟弹" } }
+      },
+      "pro-focs": {
+        "title": { "en": "PRO-FOCS 4.0", "zh": "PRO-FOCS 4.0" },
+        "subline": { "en": "UWELL's flavour technology.", "zh": "UWELL 口感技术。" },
+        "body": { "en": "Paired with U² anti-leak, so the taste stays clean and the e-liquid stays in the pod.", "zh": "搭配 U² 防漏技术，口味纯净，烟油留在烟弹里。" },
+        "points": [
+          { "text": { "en": "PRO-FOCS 4.0", "zh": "PRO-FOCS 4.0" }, "specKey": "flavor-tech" },
+          { "text": { "en": "U² anti-leak", "zh": "U² 防漏" }, "specKey": "anti-leak" }
+        ]
+      }
+    },
+    "article": {
+      "en": { "lede": "UWELL's tenth-anniversary Caliburn: a machined aluminium body, colour light at the base, no screen.", "sections": [
+        { "heading": "G4 Classic or G4?", "paragraphs": ["The [G4](/products/caliburn-g4) has a colour screen and two modes; the Classic has no screen and shows the battery in light. The Classic holds 1400mAh against the G4's 1300mAh. Both take GPP pods."] },
+        { "heading": "G4 Classic or G5 Lite?", "paragraphs": ["Both skip the screen. The [G5 Lite](/products/caliburn-g5-lite) has a 1600mAh battery and a two-layer shell; the Classic is aluminium, with RGB light and twin sensors."] } ] },
+      "zh": { "lede": "UWELL 十周年纪念款 Caliburn：精工铝合金机身，底部彩色灯光，没有屏幕。", "sections": [
+        { "heading": "G4 Classic 还是 G4？", "paragraphs": ["[G4](/products/caliburn-g4) 有彩屏和两种模式；Classic 没有屏幕，用灯光显示电量。Classic 电池 1400mAh，G4 是 1300mAh。两款都用 GPP 烟弹。"] },
+        { "heading": "G4 Classic 还是 G5 Lite？", "paragraphs": ["两款都没有屏幕。[G5 Lite](/products/caliburn-g5-lite) 电池 1600mAh，双层外壳；Classic 是铝合金机身，配 RGB 灯光和双传感器。"] } ] }
+    }
+  }
+}
