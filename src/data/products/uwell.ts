@@ -302,7 +302,7 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g5-lite/card.webp",
+        src: "/assets/products/caliburn-g5-lite/card-v2.webp",
         alt: "UWELL Caliburn G5 Lite, Coral Orange colourway, isolated product shot",
         angle: "THIRD pass (2026-09-03, QC recovery) — REPLACES the vapesourcing.com-sourced set entirely. That set had real, confirmed defects (a floor-reflection blob that survived background removal, visible clone-repair seams on directional patterns) — not isolated bad files but a pipeline problem, per the owner's direct review. Root fix was sourcing, not patching: the owner found this product's official myuwell.com page renders its full 8-color lineup as ONE image (`caliburn-g5-lite/pc/spe3-lite.webp`) — genuinely official UWELL renders, already alpha-transparent (no background-removal step needed at all), no reflection, no watermark, screen-on. Each color was cropped from that single official strip by detecting each device's real alpha bounding box (not a guessed fixed slot), so nothing here is manufactured.",
         transparentBackground: true,
@@ -327,6 +327,10 @@ export const uwellProducts: Product[] = [
     storyDetails: true,
     storyLayout: "stage",
     storyCover: { src: "/assets/products/caliburn-g5-lite/story-cover.webp", alt: "Official UWELL campaign image — Caliburn G5 Lite and G5 Lite SE", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 1920, height: 1080 },
+    // Site-wide template round batch 1a (owner 03/10: set-1 UWELL colours re-tilted): every colour image = UWELL's own render cut
+    // from the maker's colour strip (pc/spe3-lite*.webp — the largest UWELL serves), turned 12° in 2D, no AI; the page opens on the
+    // card, the colour upright on 4:5 (_incoming/sitewide-template/1a/tilt.js).
+    openOnCardPhoto: true,
     // Real UWELL color/finish lineup — ALL 8 now have a real, OFFICIAL photo (owner quality
     // review, 2026-09-03, THIRD pass — see the card asset's angle note for the sourcing story).
     // Every one of these 8 comes from the exact same official myuwell.com strip, cropped per-color.
@@ -335,49 +339,49 @@ export const uwellProducts: Product[] = [
         id: "candy-pink",
         name: "Candy Pink",
         swatchHex: "#f28ab2",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-candy-pink.webp", alt: "UWELL Caliburn G5 Lite, Candy Pink" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-candy-pink-v2.webp", alt: "UWELL Caliburn G5 Lite, Candy Pink" },
       },
       {
         id: "coral-orange",
         name: "Coral Orange",
         swatchHex: "#f2794f",
-        image: { src: "/assets/products/caliburn-g5-lite/card.webp", alt: "UWELL Caliburn G5 Lite, Coral Orange" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-coral-orange-v2.webp", alt: "UWELL Caliburn G5 Lite, Coral Orange" },
       },
       {
         id: "creamy-celadon",
         name: "Creamy Celadon",
         swatchHex: "#a8c9a8",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-creamy-celadon.webp", alt: "UWELL Caliburn G5 Lite, Creamy Celadon" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-creamy-celadon-v2.webp", alt: "UWELL Caliburn G5 Lite, Creamy Celadon" },
       },
       {
         id: "knight-black",
         name: "Knight Black",
         swatchHex: "#1c1c1c",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-knight-black.webp", alt: "UWELL Caliburn G5 Lite, Knight Black" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-knight-black-v2.webp", alt: "UWELL Caliburn G5 Lite, Knight Black" },
       },
       {
         id: "lemon-green",
         name: "Lemon Green",
         swatchHex: "#c4d94a",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-lemon-green.webp", alt: "UWELL Caliburn G5 Lite, Lemon Green" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-lemon-green-v2.webp", alt: "UWELL Caliburn G5 Lite, Lemon Green" },
       },
       {
         id: "mint-green",
         name: "Mint Green",
         swatchHex: "#8fd9c4",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-mint-green.webp", alt: "UWELL Caliburn G5 Lite, Mint Green" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-mint-green-v2.webp", alt: "UWELL Caliburn G5 Lite, Mint Green" },
       },
       {
         id: "ocean-blue",
         name: "Ocean Blue",
         swatchHex: "#3a7ca8",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-ocean-blue.webp", alt: "UWELL Caliburn G5 Lite, Ocean Blue" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-ocean-blue-v2.webp", alt: "UWELL Caliburn G5 Lite, Ocean Blue" },
       },
       {
         id: "starry-gray",
         name: "Starry Gray",
         swatchHex: "#6b7280",
-        image: { src: "/assets/products/caliburn-g5-lite/variant-starry-gray.webp", alt: "UWELL Caliburn G5 Lite, Starry Gray" },
+        image: { src: "/assets/products/caliburn-g5-lite/variant-starry-gray-v2.webp", alt: "UWELL Caliburn G5 Lite, Starry Gray" },
       },
     ],
     specifications: [
@@ -464,7 +468,7 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g5-lite-se/card.webp",
+        src: "/assets/products/caliburn-g5-lite-se/card-v2.webp",
         alt: "UWELL Caliburn G5 Lite SE, Purple Leather colourway, isolated product shot",
         angle: "THIRD pass (2026-09-03, QC recovery) — REPLACES the vapesourcing.com/Element Vape set entirely, same reason and same fix as caliburn-g5-lite's card (see its angle note): the owner found myuwell.com renders this product's full 8-color lineup as one official, already-transparent strip (`caliburn-g5-lite/pc/spe3-lite-se.webp`), cropped per-color by real alpha bounds rather than sourced from watermarked retailer photos needing repair.",
         transparentBackground: true,
@@ -487,6 +491,10 @@ export const uwellProducts: Product[] = [
     storyDetails: true,
     storyLayout: "stage",
     storyCover: { src: "/assets/products/caliburn-g5-lite/story-cover.webp", alt: "Official UWELL campaign image — Caliburn G5 Lite and G5 Lite SE", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 1920, height: 1080 },
+    // Site-wide template round batch 1a (owner 03/10: set-1 UWELL colours re-tilted): every colour image = UWELL's own render cut
+    // from the maker's colour strip (pc/spe3-lite*.webp — the largest UWELL serves), turned 12° in 2D, no AI; the page opens on the
+    // card, the colour upright on 4:5 (_incoming/sitewide-template/1a/tilt.js).
+    openOnCardPhoto: true,
     // Real UWELL color/finish lineup — ALL 8 now have a real, OFFICIAL photo (owner quality
     // review, 2026-09-03, THIRD pass — see the card asset's angle note). All 8 finishes are
     // dual-tone leather per official copy; every one comes from the same official myuwell.com
@@ -496,49 +504,49 @@ export const uwellProducts: Product[] = [
         id: "black-leather",
         name: "Black Leather",
         swatchHex: "#2a2320",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-black-leather.webp", alt: "UWELL Caliburn G5 Lite SE, Black Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-black-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Black Leather" },
       },
       {
         id: "blue-leather",
         name: "Blue Leather",
         swatchHex: "#33475b",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-blue-leather.webp", alt: "UWELL Caliburn G5 Lite SE, Blue Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-blue-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Blue Leather" },
       },
       {
         id: "brown-leather",
         name: "Brown Leather",
         swatchHex: "#5c4433",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-brown-leather.webp", alt: "UWELL Caliburn G5 Lite SE, Brown Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-brown-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Brown Leather" },
       },
       {
         id: "gray-leather",
         name: "Gray Leather",
         swatchHex: "#5a5a55",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-gray-leather.webp", alt: "UWELL Caliburn G5 Lite SE, Gray Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-gray-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Gray Leather" },
       },
       {
         id: "orange-leather",
         name: "Orange Leather",
         swatchHex: "#b85c2e",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-orange-leather.webp", alt: "UWELL Caliburn G5 Lite SE, Orange Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-orange-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Orange Leather" },
       },
       {
         id: "pink-leather",
         name: "Pink Leather",
         swatchHex: "#c97b8f",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-pink-leather.webp", alt: "UWELL Caliburn G5 Lite SE, Pink Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-pink-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Pink Leather" },
       },
       {
         id: "purple-leather",
         name: "Purple Leather",
         swatchHex: "#5c4a6e",
-        image: { src: "/assets/products/caliburn-g5-lite-se/card.webp", alt: "UWELL Caliburn G5 Lite SE, Purple Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-purple-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Purple Leather" },
       },
       {
         id: "white-leather",
         name: "White Leather",
         swatchHex: "#e8e0d5",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-white-leather.webp", alt: "UWELL Caliburn G5 Lite SE, White Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-white-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, White Leather" },
       },
     ],
     specifications: [
