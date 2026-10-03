@@ -338,7 +338,7 @@ export const uwellProducts: Product[] = [
       {
         id: "candy-pink",
         name: "Candy Pink",
-        swatchHex: "#f28ab2",
+        swatchHex: "#f3adbb",
         image: { src: "/assets/products/caliburn-g5-lite/variant-candy-pink-v2.webp", alt: "UWELL Caliburn G5 Lite, Candy Pink" },
       },
       {
@@ -350,13 +350,13 @@ export const uwellProducts: Product[] = [
       {
         id: "creamy-celadon",
         name: "Creamy Celadon",
-        swatchHex: "#a8c9a8",
+        swatchHex: "#d4d3d4",
         image: { src: "/assets/products/caliburn-g5-lite/variant-creamy-celadon-v2.webp", alt: "UWELL Caliburn G5 Lite, Creamy Celadon" },
       },
       {
         id: "knight-black",
         name: "Knight Black",
-        swatchHex: "#1c1c1c",
+        swatchHex: "#5e5e5e",
         image: { src: "/assets/products/caliburn-g5-lite/variant-knight-black-v2.webp", alt: "UWELL Caliburn G5 Lite, Knight Black" },
       },
       {
@@ -368,19 +368,19 @@ export const uwellProducts: Product[] = [
       {
         id: "mint-green",
         name: "Mint Green",
-        swatchHex: "#8fd9c4",
+        swatchHex: "#cde4bd",
         image: { src: "/assets/products/caliburn-g5-lite/variant-mint-green-v2.webp", alt: "UWELL Caliburn G5 Lite, Mint Green" },
       },
       {
         id: "ocean-blue",
         name: "Ocean Blue",
-        swatchHex: "#3a7ca8",
+        swatchHex: "#a1bff7",
         image: { src: "/assets/products/caliburn-g5-lite/variant-ocean-blue-v2.webp", alt: "UWELL Caliburn G5 Lite, Ocean Blue" },
       },
       {
         id: "starry-gray",
         name: "Starry Gray",
-        swatchHex: "#6b7280",
+        swatchHex: "#c4c3c9",
         image: { src: "/assets/products/caliburn-g5-lite/variant-starry-gray-v2.webp", alt: "UWELL Caliburn G5 Lite, Starry Gray" },
       },
     ],
@@ -503,43 +503,43 @@ export const uwellProducts: Product[] = [
       {
         id: "black-leather",
         name: "Black Leather",
-        swatchHex: "#2a2320",
+        swatchHex: "#454545",
         image: { src: "/assets/products/caliburn-g5-lite-se/variant-black-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Black Leather" },
       },
       {
         id: "blue-leather",
         name: "Blue Leather",
-        swatchHex: "#33475b",
+        swatchHex: "#3fb6b5",
         image: { src: "/assets/products/caliburn-g5-lite-se/variant-blue-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Blue Leather" },
       },
       {
         id: "brown-leather",
         name: "Brown Leather",
-        swatchHex: "#5c4433",
+        swatchHex: "#9d664e",
         image: { src: "/assets/products/caliburn-g5-lite-se/variant-brown-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Brown Leather" },
       },
       {
         id: "gray-leather",
         name: "Gray Leather",
-        swatchHex: "#5a5a55",
+        swatchHex: "#9ca7a9",
         image: { src: "/assets/products/caliburn-g5-lite-se/variant-gray-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Gray Leather" },
       },
       {
         id: "orange-leather",
         name: "Orange Leather",
-        swatchHex: "#b85c2e",
+        swatchHex: "#e67831",
         image: { src: "/assets/products/caliburn-g5-lite-se/variant-orange-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Orange Leather" },
       },
       {
         id: "pink-leather",
         name: "Pink Leather",
-        swatchHex: "#c97b8f",
+        swatchHex: "#eec7c8",
         image: { src: "/assets/products/caliburn-g5-lite-se/variant-pink-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Pink Leather" },
       },
       {
         id: "purple-leather",
         name: "Purple Leather",
-        swatchHex: "#5c4a6e",
+        swatchHex: "#ceafde",
         image: { src: "/assets/products/caliburn-g5-lite-se/variant-purple-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Purple Leather" },
       },
       {
