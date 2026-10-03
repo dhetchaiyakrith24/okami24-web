@@ -306,7 +306,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         zh: "升级款烟弹也适用于 G3 系列，烟嘴重新设计，含着更贴合。",
       },
       points: [
-        { text: { th: "หัวรุ่นใหม่เติมน้ำยาได้ทั้งที่ยังเสียบอยู่", en: "Upgraded pods refill while still in place", zh: "升级款烟弹无需取下即可注油" }, specKey: "pod-compat" },
+        { text: { th: "หัวรุ่นใหม่เติมน้ำยาได้ขณะหัวเสียบอยู่", en: "Upgraded pods refill while still in place", zh: "升级款烟弹无需取下即可注油" }, specKey: "pod-compat" },
       ],
       link: { href: "/products/coil-94", label: { th: "ดูหัวพอต GPP ที่ใช้กับ G4", en: "See the GPP pods for the G4", zh: "查看 GPP 烟弹" } },
     },
@@ -376,7 +376,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         zh: "升级款烟弹也适用于 G3 系列，烟嘴重新设计，含着更贴合。",
       },
       points: [
-        { text: { th: "หัวรุ่นใหม่เติมน้ำยาได้ทั้งที่ยังเสียบอยู่", en: "Upgraded pods refill while still in place", zh: "升级款烟弹无需取下即可注油" }, specKey: "pod-compat" },
+        { text: { th: "หัวรุ่นใหม่เติมน้ำยาได้ขณะหัวเสียบอยู่", en: "Upgraded pods refill while still in place", zh: "升级款烟弹无需取下即可注油" }, specKey: "pod-compat" },
       ],
       link: { href: "/products/coil-94", label: { th: "ดูหัวพอต GPP ที่ใช้กับ G4 mini", en: "See the GPP pods for the G4 mini", zh: "查看 GPP 烟弹" } },
     },
@@ -450,7 +450,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
     },
     "pods": {
       title: { th: "ใช้หัวพอต GPP", en: "Takes GPP pods", zh: "兼容 GPP 烟弹" },
-      subline: { th: "เติมน้ำยาได้ทั้งที่หัวยังเสียบอยู่", en: "Refill without taking the pod out.", zh: "无需取下烟弹即可注油。" },
+      subline: { th: "เติมน้ำยาได้ขณะหัวเสียบอยู่", en: "Refill without taking the pod out.", zh: "无需取下烟弹即可注油。" },
       body: {
         th: "มีช่องใสให้เห็นน้ำยาที่เหลือ จะได้เติมทันก่อนหมด",
         en: "A clear window shows the e-liquid left, so you refill in time.",
