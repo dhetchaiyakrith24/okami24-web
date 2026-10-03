@@ -204,9 +204,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       firing: "สูบได้เลย หรือกดปุ่มก็ได้",
       output: "35W",
     },
-    tagline: "Caliburn จอสี เลือกโหมดได้ตามแนวสูบ",
+    tagline: "Caliburn จอสี เลือกโหมดตามแนวการสูบ",
     shortDescription:
-      "แบต 1300mAh สูงสุด 35 วัตต์ จอ 0.85 นิ้ว ปรับลมได้ทั้งปุ่มเลื่อนและกลับด้านหัวพอต",
+      "แบต 1300mAh สูงสุด 35 วัตต์ จอ 0.85 นิ้ว ปรับลมด้วยปุ่มเลื่อน หรือกลับด้านหัวพอตก็ได้",
   },
   "caliburn-g4-mini": {
     whoIsThisFor: {
@@ -232,7 +232,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "caliburn-g4-classic": {
     whoIsThisFor: {
-      0: "ชอบดูแบตจากสีไฟ และอยากได้ตัวเครื่องอะลูมิเนียมงานละเอียด",
+      0: "อยากได้ตัวเครื่องอะลูมิเนียมงานละเอียด",
     },
     specifications: {
       battery: "1400mAh ในตัว",
@@ -272,7 +272,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "Caliburn ทรงเพรียว จอเต็มหน้าเครื่อง",
     shortDescription:
-      "แบต 1000mAh สูงสุด 35 วัตต์ ปรับลมได้ละเอียด ในกล่องมีหัวพอตสองหัว 0.4 และ 0.9 โอห์ม",
+      "แบต 1000mAh สูงสุด 35 วัตต์ ปรับลมได้ละเอียด มีหัวพอต 0.4 และ 0.9 โอห์มมาในกล่อง",
   },
 
   "caliburn-g3-pro-koko": {

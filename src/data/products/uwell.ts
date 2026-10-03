@@ -1531,7 +1531,7 @@ export const uwellProducts: Product[] = [
     ],
     compatibility: [gppCompatibility, usbCNoNote],
     whoIsThisFor: [
-      "Vapers who like reading the battery from a light and want a finely made aluminium body.",
+      "Vapers who want a finely made aluminium body.",
     ],
     faqs: [],
     relatedProductSlugs: ["caliburn-g4"],

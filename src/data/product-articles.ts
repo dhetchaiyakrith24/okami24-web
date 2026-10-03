@@ -527,7 +527,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // Site-wide template round batch 1d (04/10): from UWELL's G3 Pro / KOKO pages, spec sheet and user manual; Thai = thai-copy 04/10.
   "caliburn-g3-pro": {
     th: {
-      lede: "ด้านล่างไล่ดูทีละเรื่อง ตั้งแต่จอ ช่องลม ไปจนถึงหัวพอตที่ใช้ได้",
+      lede: "จอ ช่องลม และหัวพอตที่ใช้ได้ ไล่ดูทีละเรื่องด้านล่าง",
       sections: [
         {
           heading: "G3 Pro กับ G3 Pro KOKO เลือกตัวไหนดี",
@@ -540,7 +540,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "เลือกหัวพอตแบบไหนดี",
           paragraphs: [
-            "ตารางหัวพอตของ UWELL ไล่จาก RDL ที่โอห์มต่ำ ไปถึง MTL ที่โอห์มสูง",
+            "ตารางหัวพอตของ UWELL ไล่จาก RDL ที่โอห์มต่ำ ไปถึง MTL (สูบแบบดูดเข้าปากก่อน) ที่โอห์มสูง",
             "หัวโอห์มต่ำลมโล่งกว่าและตั้งวัตต์ได้สูงกว่า ส่วนหัวโอห์มสูงลมแน่น เข้าทางคนสูบแบบ MTL",
             "ในกล่องมีมาให้ทั้งสองหัว ลองดูก่อนแล้วค่อยซื้อหัวที่ชอบเพิ่ม"
           ]
@@ -592,7 +592,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   "caliburn-g3-pro-koko": {
     th: {
-      lede: "ด้านล่างไล่ดูทีละเรื่อง ตั้งแต่จอ ธีม แบต ไปจนถึงหัวพอตที่ใช้ได้",
+      lede: "จอ ธีม แบต และหัวพอตที่ใช้ได้ ไล่ดูทีละเรื่องด้านล่าง",
       sections: [
         {
           heading: "G3 Pro KOKO กับ G3 Pro เลือกตัวไหนดี",
