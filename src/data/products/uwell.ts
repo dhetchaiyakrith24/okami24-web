@@ -562,7 +562,7 @@ export const uwellProducts: Product[] = [
       {
         id: "dual-tone",
         title: "Dual-tone finish",
-        description: "Light and shaped to sit well in the hand — pick the leather colour that suits you.",
+        description: "Light and shaped to sit well in the hand — pick the colour that suits you.",
         subline: "Leather paired with a striped texture.",
         image: { src: "/assets/products/caliburn-g5-lite-se/story-dual-tone.webp", alt: "Official UWELL render — the Caliburn G5 Lite SE in Purple Leather", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se", width: 1967, height: 2121, transparent: true },
       },

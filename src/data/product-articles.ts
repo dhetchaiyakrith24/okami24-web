@@ -96,13 +96,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "G5 Lite กับ G5 Lite SE เลือกตัวไหนดี",
           paragraphs: [
             "แบต วัตต์ และระบบลมของสองรุ่นนี้เหมือนกัน ที่ต่างคือผิวตัวเครื่อง G5 Lite เป็นเปลือกโปร่งแสงหุ้มแกนด้านใน ส่วน [G5 Lite SE](/products/caliburn-g5-lite-se) เป็นหนังคู่กับผิวลายริ้ว",
-            "ชอบผิวแบบไหนเลือกตัวนั้น ทั้งสองรุ่นมีให้เลือก 8 สี"
+            "ชอบผิวแบบไหนเลือกตัวนั้น"
           ]
         },
         {
           heading: "ใช้หัวพอตอะไรได้บ้าง",
           paragraphs: [
-            "หัวพอต GPP ใส่ได้ทุกหัว ทั้งแบบเติมด้านข้างและเติมด้านบน หัวชุดเดียวกันนี้ใช้กับ Caliburn สาย G5 G4 และ G3 ได้ด้วย ใครมีเครื่องสายนี้อยู่แล้ว ใช้หัวสลับกันได้เลย",
+            "หัวพอต GPP ใส่ได้ทุกหัว ทั้งหัวที่เติมน้ำยาด้านข้างและด้านบน หัวชุดเดียวกันนี้ใช้กับ Caliburn สาย G5 G4 และ G3 ได้ด้วย ใครมีเครื่องสายนี้อยู่แล้ว ใช้หัวสลับกันได้เลย",
             "ดู[หัวพอต GPP ที่ใช้กับ G5 Lite](/products/coil-94)"
           ]
         },
@@ -121,7 +121,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "G5 Lite or G5 Lite SE — which one?",
           paragraphs: [
             "Battery, power and airflow are the same on both. The difference is the body: the G5 Lite has an inner core under a translucent shell, the [G5 Lite SE](/products/caliburn-g5-lite-se) is leather paired with a striped texture.",
-            "Pick the finish you like — both come in 8 colours."
+            "Pick the finish you like."
           ]
         },
         {
@@ -146,7 +146,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "G5 Lite 和 G5 Lite SE 怎么选？",
           paragraphs: [
             "两款的电池、功率和气流系统相同，区别在机身：G5 Lite 是半透明外壳包裹内芯，[G5 Lite SE](/products/caliburn-g5-lite-se) 则是皮革搭配条纹质感。",
-            "喜欢哪种质感就选哪款，两款都有 8 种颜色。"
+            "喜欢哪种质感就选哪款。"
           ]
         },
         {
@@ -175,13 +175,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "G5 Lite SE ต่างจาก G5 Lite ตรงไหน",
           paragraphs: [
             "ต่างกันที่ผิวตัวเครื่อง G5 Lite SE เป็นหนังคู่กับผิวลายริ้ว ส่วน [G5 Lite](/products/caliburn-g5-lite) เป็นเปลือกโปร่งแสงหุ้มแกนด้านใน แบต วัตต์ และระบบลมเหมือนกัน",
-            "ชอบผิวแบบไหนเลือกตัวนั้น ทั้งสองรุ่นมีให้เลือก 8 สี"
+            "ชอบผิวแบบไหนเลือกตัวนั้น"
           ]
         },
         {
           heading: "ใช้หัวพอตอะไรได้บ้าง",
           paragraphs: [
-            "หัวพอต GPP ใส่ได้ทุกหัว ทั้งแบบเติมด้านข้างและเติมด้านบน หัวชุดเดียวกันนี้ใช้กับ Caliburn สาย G5 G4 และ G3 ได้ด้วย ใครมีเครื่องสายนี้อยู่แล้ว ใช้หัวสลับกันได้เลย",
+            "หัวพอต GPP ใส่ได้ทุกหัว ทั้งหัวที่เติมน้ำยาด้านข้างและด้านบน หัวชุดเดียวกันนี้ใช้กับ Caliburn สาย G5 G4 และ G3 ได้ด้วย ใครมีเครื่องสายนี้อยู่แล้ว ใช้หัวสลับกันได้เลย",
             "ดู[หัวพอต GPP ที่ใช้กับ G5 Lite SE](/products/coil-94)"
           ]
         },
@@ -200,7 +200,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "G5 Lite SE vs G5 Lite — what's different?",
           paragraphs: [
             "The body: the G5 Lite SE is leather paired with a striped texture, the [G5 Lite](/products/caliburn-g5-lite) an inner core under a translucent shell. Battery, power and airflow are the same.",
-            "Pick the finish you like — both come in 8 colours."
+            "Pick the finish you like."
           ]
         },
         {
@@ -225,7 +225,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "G5 Lite SE 和 G5 Lite 有什么不同？",
           paragraphs: [
             "区别在机身：G5 Lite SE 是皮革搭配条纹质感，[G5 Lite](/products/caliburn-g5-lite) 是半透明外壳包裹内芯。电池、功率和气流系统相同。",
-            "喜欢哪种质感就选哪款，两款都有 8 种颜色。"
+            "喜欢哪种质感就选哪款。"
           ]
         },
         {

@@ -202,9 +202,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ผิวทูโทน", en: "Dual-tone finish", zh: "双色拼接" },
       subline: { th: "หนังคู่กับผิวลายริ้ว", en: "Leather paired with a striped texture.", zh: "皮革搭配条纹质感。" },
       body: {
-        th: "ตัวเครื่องเบา ทรงจับถนัดมือ เลือกสีหนังที่เข้ากับตัวเองได้เลย",
-        en: "Light and shaped to sit well in the hand — pick the leather colour that suits you.",
-        zh: "机身轻巧，握感顺手，选一个适合你的皮革颜色。",
+        th: "ตัวเครื่องเบา ทรงจับถนัดมือ เลือกสีที่เข้ากับตัวเองได้เลย",
+        en: "Light and shaped to sit well in the hand — pick the colour that suits you.",
+        zh: "机身轻巧，握感顺手，选一个适合你的颜色。",
       },
       points: [
         { text: { th: "ตัวเครื่อง 8 สี", en: "8 colours", zh: "8 种颜色" } },
