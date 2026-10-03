@@ -1055,7 +1055,7 @@ export const uwellProducts: Product[] = [
         title: "Takes every GPP pod",
         description: "The upgraded pods also fit the G3 series, and their mouthpiece is reshaped to sit better on the lips.",
         subline: "Old GPP pods and the upgraded ones.",
-        image: { src: "/assets/products/caliburn-g4/story-pods.webp", alt: "Official UWELL chart — GPP pods, top and side refill, 0.4Ω to 1.2Ω", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4", width: 1800, height: 1200 },
+        image: { src: "/assets/products/caliburn-g4/story-pods.webp", alt: "Official UWELL chart — GPP pods, top and side refill", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4", width: 1800, height: 1200 },
       },
       {
         id: "anti-leak",
@@ -1229,7 +1229,7 @@ export const uwellProducts: Product[] = [
         title: "Awesome taste",
         description: "PRO-FOCS 4.0 keeps the true taste of your e-liquid.",
         subline: "Savour every puff.",
-        image: { src: "/assets/products/caliburn-g4-mini/story-taste.webp", alt: "Official UWELL illustration from the Caliburn G4 mini page — a long exhale", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-mini", width: 1296, height: 1220, transparent: true },
+        image: { src: "/assets/products/caliburn-g4-mini/story-taste.webp", alt: "Official UWELL illustration from the Caliburn G4 mini page — a long exhale", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-mini", width: 1296, height: 1220 },
       },
       {
         id: "airflow",

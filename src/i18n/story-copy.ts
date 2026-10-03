@@ -244,9 +244,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "รสชาติมาก่อน", en: "Taste above everything", zh: "口味至上" },
       subline: { th: "หัวพอต GPP รุ่นใหม่ คู่กับ Pro-FOCS 4.0", en: "Upgraded GPP pods on PRO-FOCS 4.0.", zh: "升级版 GPP 烟弹，搭配 PRO-FOCS 4.0。" },
       body: {
-        th: "หัวรุ่นใหม่ช่วยให้หัวพอตใช้ได้นานขึ้น ส่วนระบบปรับรสชาติช่วยให้ได้รสน้ำยาตรงตัว",
-        en: "The upgraded pods last longer, and the flavour tech keeps the e-liquid's taste true.",
-        zh: "升级烟弹更耐用，口感技术保留烟油原味。",
+        th: "UWELL บอกว่าหัวรุ่นใหม่ช่วยให้หัวพอตใช้ได้นานขึ้น ส่วนระบบปรับรสชาติช่วยให้ได้รสน้ำยาตรงตัว",
+        en: "UWELL says the upgraded pods last longer and the flavour tech keeps the e-liquid's taste true.",
+        zh: "UWELL 表示，升级烟弹更耐用，口感技术保留烟油原味。",
       },
       points: [
         { text: { th: "หัวพอตใช้ได้นานขึ้นสูงสุด 35% (ตัวเลขจากแล็บของ UWELL)", en: "Cartridge life up to 35% longer (UWELL lab tests)", zh: "烟弹寿命最高提升 35%（UWELL 实验室数据）" }, specKey: "flavor-tech" },
@@ -258,9 +258,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "Storm หรือ Waves", en: "Storm or Waves", zh: "Storm 还是 Waves" },
       subline: { th: "สองโหมด สองแนวการสูบ", en: "Two modes, two ways to vape.", zh: "两种模式，两种抽吸风格。" },
       body: {
-        th: "Storm ได้ไอเร็วทันใจ เหมือนนั่งรถไฟเหาะ ส่วน Waves นุ่ม นิ่ง สม่ำเสมอทุกพัฟ เหมือนนั่งชิงช้าสวรรค์ London Eye",
-        en: "Storm hits fast, like a roller coaster. Waves stays smooth and steady, like the London Eye.",
-        zh: "Storm 来得快，像坐过山车；Waves 平稳顺滑，像坐伦敦眼。",
+        th: "UWELL เปรียบว่า Storm ได้ไอเร็วทันใจเหมือนนั่งรถไฟเหาะ ส่วน Waves นุ่ม นิ่ง สม่ำเสมอ เหมือนนั่งชิงช้าสวรรค์ London Eye",
+        en: "UWELL compares Storm to a roller coaster — a fast hit — and Waves to the London Eye: smooth and steady.",
+        zh: "UWELL 把 Storm 比作过山车，来得快；把 Waves 比作伦敦眼，平稳顺滑。",
       },
       points: [
         { text: { th: "จอสี HD 0.85 นิ้ว", en: "0.85-inch HD colour screen", zh: "0.85 英寸高清彩屏" }, specKey: "screen" },
@@ -335,12 +335,11 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
       points: [
         { text: { th: "ประมาณ 46 กรัม", en: "Approx. 46 g", zh: "约 46 克" }, specKey: "weight" },
-        { text: { th: "ตัวเครื่อง 12 สี", en: "12 colours", zh: "12 种颜色" } },
       ],
     },
     "taste": {
       title: { th: "รสชาติดี", en: "Awesome taste", zh: "口感出众" },
-      subline: { th: "ทุกพัฟได้รสน้ำยาเต็ม ๆ", en: "Full e-liquid taste in every puff.", zh: "每一口都是饱满的烟油味道。" },
+      subline: { th: "ค่อย ๆ ละเลียดทุกพัฟ", en: "Savour every puff.", zh: "细品每一口。" },
       body: {
         th: "UWELL บอกว่าระบบปรับรสชาติ Pro-FOCS 4.0 เก็บรสของน้ำยาไว้ได้ตรงตัว",
         en: "UWELL says PRO-FOCS 4.0 keeps your e-liquid's taste true.",

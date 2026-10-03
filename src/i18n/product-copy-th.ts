@@ -191,7 +191,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       materials: "PCTG ABS และอะลูมิเนียมอัลลอย ADC12",
       dimensions: "26 × 15.65 × 114.98 mm (111.98 mm ในเวอร์ชัน TPD และ CRC)",
       weight: "ประมาณ 54.7 กรัม",
-      "pod-compat": "UWELL GPP ทั้งหัวรุ่นก่อนและรุ่นใหม่ · หัวรุ่นใหม่เติมน้ำยาได้ขณะหัวเสียบอยู่",
+      "pod-compat": "UWELL GPP ทั้งหัวรุ่นก่อนและรุ่นใหม่ · หัวรุ่นใหม่เติมได้ขณะหัวเสียบอยู่",
       "included-pod": "แล้วแต่เวอร์ชัน: INT 0.4Ω + 0.9Ω · FDA 0.6Ω + 0.9Ω เติมด้านข้าง · TPD และ CRC 0.4Ω + 0.6Ω เติมด้านบน (คอยล์ mesh FeCrAl)",
       battery: "1300mAh ในตัว",
       "charge-time": "USB-C ชาร์จเร็ว 5V/2A",
@@ -219,7 +219,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       materials: "PCTG และ PC",
       dimensions: "24.1 × 14 × 112.7 mm (109.7 mm ในเวอร์ชัน TPD และ CRC)",
       weight: "ประมาณ 46 กรัม",
-      "pod-compat": "UWELL GPP ทั้งหัวรุ่นก่อนและรุ่นใหม่ (ในกล่องมีหัว mesh 0.6Ω) · หัวรุ่นใหม่เติมน้ำยาได้ขณะหัวเสียบอยู่",
+      "pod-compat": "UWELL GPP ทั้งหัวรุ่นก่อนและรุ่นใหม่ (ในกล่องมีหัว mesh 0.6Ω) · หัวรุ่นใหม่เติมได้ขณะหัวเสียบอยู่",
     },
     tagline: "G4 เวอร์ชันย่อส่วน พกพาง่าย",
     shortDescription:
@@ -239,7 +239,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       firing: "สูบได้เลยด้วยเซ็นเซอร์คู่ หรือกดปุ่ม (แรงกดประมาณ 255gf) · ตัวเลขจากแล็บของ UWELL: อายุการใช้งานระบบสูบได้เลย 300%+ ความแม่นยำในการยิง 99.999%+",
       airflow: "ปรับช่องลมได้ละเอียดแบบไม่มีขั้น + กลับด้านหัวพอต",
       control: "กดห้าครั้ง เปิด/ปิดเครื่อง · กดสองครั้ง ล็อก/ปลดล็อกปุ่มยิง · กดครั้งเดียว ยิง/ดูระดับแบต",
-      "pod-compat": "UWELL GPP · เติมน้ำยาได้ขณะหัวเสียบอยู่ · มีช่องใสดูน้ำยา",
+      "pod-compat": "UWELL GPP · เติมได้ขณะหัวเสียบอยู่ · มีช่องใสดูระดับในหัวพอต",
     },
     tagline: "G4 ตัวเครื่องเดิม ในชุดสีรุ่น Classic",
     shortDescription:
