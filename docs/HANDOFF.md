@@ -11,95 +11,97 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — the 03/10 cloud chat merged batch 1c [ตรวจแล้ว — checker · GitHub green · live curl]:
-  #236 `406cd17` G4 Pro + G4 Pro KOKO on the template: stage story 6/7 blocks (UWELL posters + stills from UWELL's own page films:
-    G4 Pro video/theme.mp4 · 4.mp4 · 7.mp4, KOKO pc/Customize.mp4 · pc/7.mp4), cover = UWELL banner, th/en/zh, lede + buyer questions,
-    every spec row re-read from UWELL's spec sheets/posters with sourceUrl (G4 Pro 78g · KOKO 93g · 5V/2.5A · in-box pods per version ·
-    0.4–1.2Ω pods from UWELL's pod chart), 3 new Thai spec labels (Touch / Screen themes / Settings), fits-with = top or side refill.
-    Fixed wrong data: KOKO "Draw modes" → "Output modes" · KOKO who-line tying modes to MTL/RDL · G4 Pro "airflow ring" (not UWELL's).
-    Checker round 1 = 3/5 ("Superb hand feel" boast · fits-with said top-fill only) → fixed 0ae68b3, round 2 PASS. Live 16:04 UTC [ตรวจแล้ว].
-    UWELL's "Look Closer" close-ups were not used (labels laid over their device, cannot stand alone). No maker parts view → no exploded view.
-  Earlier 03/10: 1b #233 #234 (G4 · G4 mini · G4 Classic, owner approved the G4 page in chat) · 1a #228-#230 · G5 close #225 #226.
-2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git].
-  Kits (never merge these branches): 1c = branch `kit-1c` (prep.js · copy-en.md · copy-base.json · th.json · build.js · edit-th.js ·
-  fix-*.js · rescan.sh · shots.sh · facts.json · UWELL's G4 Pro colour pairs mk/g4pro/pc_color-1..8.webp + both spec tables) ·
-  1b = branch `kit-1b`. Get one: `git fetch origin kit-1c && git restore --source origin/kit-1c --worktree -- _incoming/sitewide-template/1c`.
-  The cloud container restarted 5× on 03/10 (each kills a running build) → run long jobs as one script file, re-run after a restart.
-  Test-server limit (session tool, not a site bug): its image resizer runs one job at a time; a hung request blocks every image after it
-  → stop/start; full-page shots need `--eval` that scrolls + waits for images (`_incoming/sitewide-template/1c/shots.sh`).
-3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10
-  with Friday's 3 recommendations: round 3a/3b merged in and closed · brand order as written · set-1 UWELL colours re-tilted 12°).
-  Template = `docs/PRODUCT_PAGE_TEMPLATE.md` (the one home). Scope (scope-auditor 03/10) = `_incoming/sitewide-template/scope.md`
-  + the round file's 【ขอบเขต】 block: 55 product pages; PM pages (coils, IQOS, pod-180) = cards/images only, no story mechanism.
-  Batches (all tier B): 1 UWELL — PRs 1a G5 Lite + G5 Lite SE · 1b G4 + G4 mini + G4 Classic · 1c G4 Pro + G4 Pro KOKO · 1d G3 Pro +
-  G3 Pro KOKO · 2 VOOPOO (+ Drag 6 hybrid lineup on the test server first, + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*,
-  m-switch-pod, m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag
-  sitewide-template-done, asset-refs sweep of the 246 candidates, edge defects).
-  STOPPED AT: batch 1c text/story merged (#236). NOT done in 1c: G4 Pro colour images + card (UWELL's files are front+back pairs where
-  the back device overlaps the front one's button side → isolating the front device needs an edge completion (AI) or a recolour master;
-  UWELL's upright fronts pc/3-*, 6-* are cropped at the top = unusable) → the G4 Pro hero still opens on the pair, no openOnCardPhoto.
-  KOKO colours (night-render master, 01/10) left as they are.
-  NEXT (owner 03/10, on the computer — chat moved there): in this order, each its own PR:
-   (a) copy fix, tier A fast path: "ตบคอ" (2 Thai strings in src/i18n/story-copy.ts, G4 Pro custom-mode + KOKO modes) → "แรงถึงคอ"
-       (owner: the only word that fails — he did not understand it; THAI_STYLE ก้อน 1c line).
-   (b) G4 mini all-colours image too small → make the devices bigger (owner: "ภาพรวมเล็กไป ขยายใหญ่หน่อย"; G4 mini otherwise passed).
-   (c) 1c-colours: G4 Pro card upright 4:5 + 8 colours tilted 12° (owner: "ทำได้" — Higgsfield allowed, IMAGE_SPEC §0 item 7).
-   (d) then batch 1d G3 Pro + G3 Pro KOKO — vary the stage arrangement a little between pages (owner 03/10, template §1 row 7).
-  Method that worked (1b+1c): maker page → .txt (`extract.js`) · images are listed in the page's CSS and its
-  `/_nuxt/*.js` chunk (template strings like `pc/3-${item}.webp` — probe 1..10) · ffmpeg stills from the maker's page films (fps=1 sheet,
-  then pick) · read spec images flattened on white · copy-en.md → thai-copy → th.json → build.js inserts story-copy + articles ·
-  edit scripts as .js files (Thai never through `node -e` or a heredoc — it fails silently) · restore files with `git show <c>:f > f`,
-  never `git checkout <c> -- f` (LESSONS พ15) · `npm run verify:catalog` (every Ω/number in copy needs a verified row) · page-text-length
-  --facts · wordbreak-scan → reword negations/compounds · checker.
-  Tips: a lede tail can split a compound at 1440 · count the template's "รุ่นนี้มี N สี" as one colour-count mention · maker footnotes
-  (UWELL LAB) attach to data · the head copy (tagline/shortDescription) counts toward "a fact at most twice" but is off-limits → cut the
-  repeat from the article/blocks · "แท่ง" is a locked-out word (use "ทรงเพรียว") · boasts without a number fail in en/zh too.
+1 main: `git fetch && git log -1 --oneline origin/main` — the 03–04/10 computer chat merged 4 PRs, each checker PASS + GitHub green [ตรวจแล้ว]:
+  #239 `abbdac9` (a) G4 Pro / KOKO "ตบคอ" → "แรงถึงคอ" (tier A) · live 2 pages [ตรวจแล้ว — curl]
+  #240 `f80567d` (b) G4 mini all-colours = two groups of 6 (solid / gradient), devices ~1.5× larger, lineupImage2 pills · live [ตรวจแล้ว]
+  #241 `158316c` (c) G4 Pro card upright 4:5 (Pearl Silver) + 8 colours = screen side + back side cut WHOLE from UWELL's pc/color-1..8
+    (a clean alpha gap between the two devices — no AI, 0 credits) tilted 12°; checker round 1 failed the sharpness gate on 4 light
+    colours → one resample per device + unsharp 0.65 → 9/9 PASS · live [ตรวจแล้ว]
+  #242 `372780c` (d) batch 1d G3 Pro + G3 Pro KOKO on the template (details in item 3) · deploy run on merge, live not yet curled.
+2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Kits: 1c = branch `kit-1c`; 1d material is in
+  `_incoming/sitewide-template/1d/` (not in git: facts-uwell.md = every UWELL fact with its file · mk/ = UWELL page files · manual/ =
+  G3 Pro user manual pages · prep.js · edit-data.js · build.js · edit-th.js · fix-rep.js · fix-wb.js · fix-poster.js · vt/ scans · shots/).
+  Kit branch for 1d not pushed — do it before a cloud chat needs it (`kit-1c` shows how).
+3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
+  Template = `docs/PRODUCT_PAGE_TEMPLATE.md` (the one home). Scope = `_incoming/sitewide-template/scope.md` + the round file's
+  【ขอบเขต】 block: 55 product pages; PM pages (coils, IQOS, pod-180) = cards/images only, no story mechanism.
+  Batches (all tier B): 1 UWELL — DONE (1a G5 Lite + SE · 1b G4 + mini + Classic · 1c G4 Pro + KOKO · 1d G3 Pro + KOKO) ·
+  2 VOOPOO (+ Drag 6 hybrid lineup on the test server first, + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*, m-switch-pod,
+  m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
+  asset-refs sweep of the 246 candidates, edge defects).
+  1d as merged: stage story with UWELL's own posters (G3 Pro 6 blocks, KOKO 7), UWELL banners as covers, th/en/zh + buyer-question
+  articles (Thai = thai-copy), every spec row re-read from UWELL with sourceUrl — G3 Pro from its page, spec strip and UWELL's user
+  manual zip (1000mAh · 5–35/25/15W by 0.4/0.6/0.9Ω pod · 92g · 0.4 + 0.9Ω side refill); KOKO from its spec sheet spe14-text.webp
+  (1250mAh — the shop had "1000mAh unverified" · 1.8" TFT · 91g · 4 days / 80 % in 20 min = UWELL figures · U² · Pro-FOCS 3.0).
+  KOKO product card now shows "1250mAh · Max 35W" on /, /products, pod-systems, /brands/uwell (its battery row became verified).
+  New optional flag `storyStartRight` (stage pages; default unchanged) — G3 Pro starts poster-right (owner 03/10 "vary the arrangement").
+  Checker #242 round 1 caught 2 image defects (KOKO opaque posters flagged transparent; G3 Pro close-up cut at the file edge) → fixed
+  (LESSONS พ16). Text: page-text-length PASS (G3 Pro 1,729 · KOKO 1,502) no fact > 2 · wordbreak = single words only.
+  NEXT: batch 2 VOOPOO — open with skill round-open (continuation); start with the Drag 6 HYBRID lineup on the test server for the owner.
+  Speed (owner 04/10 asked why the batch was slow): one build per batch where possible (bundle small fixes), whole-sitemap scans only
+  when a shared component is touched (13.5 #5) — each whole scan ≈ 20 min, each build ≈ 8 min on this computer.
+  Method that worked (1b–1d): maker page → .txt (`1b/extract.js`) · images listed in the page HTML + its `/_nuxt/*.js` chunks · ffmpeg
+  stills from maker films · researcher reads posters/spec images into a facts sheet · copy-base.json (en/zh) → thai-copy → th.json →
+  build.js inserts story-copy + articles, edit-th.js the Thai spec/who · `npm run verify:catalog` (tsc needs `npx next typegen` in a
+  fresh worktree) · page-text-length --facts · wordbreak-scan → reword · checker. Scripts as .js files (Thai/backslash never through
+  `node -e` or a heredoc) · parallel work while a checker reads the disk = a git worktree.
   Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD.
-3a THE IMAGE METHODS THAT WORK (from the old image round, kept for this round):
+3a THE IMAGE METHODS THAT WORK (kept for this round):
   (a) one model, colours differ only in colour = ONE master + recolour by script — silver master `b-uwell/recolour-g4c.js`; coloured
   master `b-voopoo/recolour-g3m.js` (lesson 23); gradients per height band `b-edge/recolour-g4m.js`, `b-edge/recolour-g3p.js` (masks
   `b-uwell/masks.js`); colour targets + swatch = median of the MAKER's photo · (b) each colour its own print = a night render per colour
-  · (c) single option = night card render · card from a set = tilt one colour 12° (`_incoming/image-sitewide/tilt-card.js`).
+  · (c) single option = night card render · card from a set = tilt one colour 12° (`_incoming/image-sitewide/tilt-card.js`) ·
+  (d) maker pair files with an alpha gap = cut both devices whole by connected components (`_incoming/sitewide-template/1c-colours/
+  split.js`, publish2.js: rotate ONCE to the final tilt, unsharp 0.65 — the sharpness gate fails a double rotation on light colours).
   CUT-OUT (lesson พ11): Higgsfield remover → `b-edge/choke.js` · unlike the studio grey → `scripts/flatcut.js` · ALWAYS zoom 4x on
   dark + magenta (`b-edge/edgezoom.js`). Then presize + map entries + `npx tsx scripts/process-images.ts --only <slug>` (new file
-  names, lesson พ6). Check every render for MIRRORING. CRLF files = a .js edit script. Paths under `_incoming/image-sitewide/`.
+  names, lesson พ6). Check every render for MIRRORING. Run `npx tsx scripts/image-sharpness-gate.ts --base origin/main` before the
+  checker. Paths under `_incoming/image-sitewide/`. Poster `transparent` only when ≥ 30 % of the file is transparent (LESSONS พ16).
   Lineups: UWELL slim = G5 "group" (`set1/poster.js`) · box = "cluster" (`set1/boxy.js`, `dsx/koko-two.js`) · VOOPOO = RELX
   (`dsx/vp-relx2.js`) · 7+ devices = two groups ("ทั้งหมด 1 / 2"). Drag 6: HYBRID (true devices + B's light) on the test server first.
   Left from it: edge defects (`edge-audit/visual-audit.md`: vmate-i3 · zero-pro · m-bar-15k · muro-3ml · zero-cartridge ·
-  mood-monster-14k · coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87) · coils `b-coils/README.txt` · G4 Pro (UWELL files =
-  overlapping front+back pairs) · Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
-  Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend.
+  mood-monster-14k · coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87) · coils `b-coils/README.txt` · Esko pod-159 LAST
+  (13.7 big (2), own PR, + BSOT §21).
+  Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (41) G4 Classic / G4 hero line under the name (Thai `shortDescription` + `tagline` in product-copy-th.ts, English in uwell.ts) is wrong
-       — Classic "same body as the standard G4 / Classic colourway", G4 "power modes" — and now contradicts the page's own story. It feeds
-       meta description + JSON-LD (round off-limits = head) → asked 03/10: 1 fix in the round (Friday's pick; thai-copy draft: tagline
-       "Caliburn รุ่นฉลอง 10 ปี ตัวเครื่องอะลูมิเนียม ไฟ RGB แทนจอ" · short "Caliburn G4 Classic แบต 1400mAh สูงสุด 35 วัตต์ ไม่มีจอ ใช้ไฟ RGB
-       14 ดวงบอกระดับแบต มีเซ็นเซอร์คู่ และใช้หัวพอต GPP") · 2 wait for the SEO round. Same card line shows on /brands/uwell etc.
-  (42)+(43) answered 03/10 → work items NEXT (a)(b)(d) above; G4, G4 Classic approved by the owner, G4 mini = approved except (b);
-       batch 1c words locked (THAI_STYLE ก้อน 1c) except "ตบคอ". Still to look at on live: G4 Pro + G4 Pro KOKO pages (1c) as a whole.
+  (44) NEW 04/10 — head copy (tagline + shortDescription, Thai in product-copy-th.ts, English in uwell.ts; feeds meta + JSON-LD = round
+       off-limits) now contradicts the 1d story: G3 Pro "จอ LCD โอบรอบด้านข้าง / ปรับช่องลมได้ทุกระดับ" (not UWELL's words) · KOKO
+       "G3 Pro ตัวเครื่องเดิม ในชุดสีรุ่น KOKO / ตัวเครื่องเดียวกับ G3 Pro" (wrong: box-shaped, 1.8" screen, 1250mAh). thai-copy drafts:
+       G3 Pro tagline "Caliburn ทรงเพรียว จอเต็มหน้าเครื่อง ปรับลมได้ละเอียด" · KOKO "Caliburn ทรงกล่อง จอสี 1.8 นิ้ว แบต 1250mAh".
+       Friday's pick: fix in this round as one small PR together with (41) (wrong facts, not SEO wording) — else the SEO round.
+  (45) NEW 04/10 — 4 new Thai words not yet locked (thai-copy flags): "จอเต็มหน้าเครื่อง" (= full-screen) · "ช่องใสให้ดูน้ำยา" ·
+       "RDL (ดูดลงปอดแต่ลมยังมีแรงต้าน)" · "เก็บหยดน้ำยาที่ควบแน่น"; owner to look at /products/caliburn-g3-pro and -koko on live.
+  (41) G4 Classic / G4 hero line under the name (Thai shortDescription + tagline in product-copy-th.ts, English in uwell.ts) is wrong
+       — Classic "same body as the standard G4 / Classic colourway", G4 "power modes" — and contradicts the page's own story.
+       Asked 03/10: 1 fix in the round (Friday's pick) · 2 wait for the SEO round. Same card line shows on /brands/uwell etc.
+  Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags (not changed): INFY `descriptionTh` says disposable-only brand · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" /
        "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ" (batch 4 needs it)
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
-  Answered 03/10 (do not ask again): "ultra-shatterproof" stays OFF both G4 Pro pages (owner: Friday decides → off; UWELL's posters
-  still show it) · G5 repeats = A keep · next round approved · logos: Kardinal = the maker's "Kardinal" word logo,
-  site name "KS" stays · DOTMOD = text chip (Friday's call, owner "ตัดสินใจได้เลย").
+  Answered 03/10 (do not ask again): "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · logos: Kardinal = the
+  maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
 5 open / dated:
-  - `src/data/guides.ts` (the which-Caliburn guide, Thai) still says G4 Classic specs are unconfirmed so it is left out of the comparison —
-    now verified (#233); guide pages are outside this round → its own small PR or the data round.
+  - 7 highlight chips wrap 6 + 1 at 1440 on caliburn-g4-pro-koko and caliburn-g3-pro-koko (chip bar is lg:grid-cols-6) — shared
+    component, its own small PR + whole-sitemap visible-text (checker #242: not a defect of 1d).
+  - G3 Pro KOKO colour images = the 01/10 Higgsfield master set; UWELL DOES have per-colour pairs colors/0..7.webp (the data comment
+    "color-N.webp 404" is outdated) but front and back overlap (one alpha component) → not cut like the G4 Pro. Left as is.
+  - G3 Pro colour names (16) are not on UWELL's page (no colorsList in its code) — they came from UWELL's pack1-4 chart (01/10).
+  - story-copy.ts G4 / G4 mini say the U-shaped channel "ช่วยให้ลมเดินดีขึ้น"; UWELL's KOKO poster says it stores condensate — check the
+    G4 posters before changing (thai-copy flag 04/10).
+  - G3 Pro story 01 (full-screen close-up) reads small in its 1920×800 frame (checker taste note) — a tighter crop is an option.
+  - `src/data/guides.ts` (which-Caliburn guide) still says G4 Classic specs are unconfirmed — verified in #233; guides = outside round.
   - G4 `firing` row ("draw or button") is sourced from the manuals.plus copy of UWELL's manual, not a UWELL page (thai-copy flag 03/10).
   - Drag 6 tank: retailers name it UFORCE-X Tank II, the data has a "gene-tt-3" highlight — data check [เชื่อว่า].
-  - coil-94's Thai Shipnity name shows on en/zh pages that link it (locale-hydration FAIL on caliburn-g3-pro and caliburn-g5 en+zh,
-    same on live; also "UWELL คอยล์ Caliburn G4&G3 Series" in the fits-with box of caliburn-g4-pro / -koko en+zh, before and after 1c)
-    [ตรวจแล้ว] — data round.
-  - Head copy off-limits this round, wrong since 1c (SEO round): KOKO shortDescription "2 นิ้ว" + "Custom" (UWELL: 2.0-inch, "Customize") ·
-    G4 Pro tagline + shortDescription both say 2.51 (the page counts it twice already). `src/data/technology.ts` onboard-touch-displays
-    calls the KOKO modes "draw modes" (they set power) and lists "older G3 pods" — technology page, outside this round.
-  - Live screenshots from the cloud still impossible (03/10): cause found — Chromium goes out direct, where the cloud's egress gateway
-    re-signs with its own CA ("Anthropic Egress Gateway"); `scripts/lib/cloud-ca.js` learns the CA through the proxy, which passes the
-    site's real chain (GTS Root R4), so the SPKI flag names the wrong key. Both fixes (trust the gateway CA · `--proxy-server`) were
-    refused by the session's auto-permission check → needs the owner's own permission rule, else live shots = computer.
+  - coil-94's Thai Shipnity name "UWELL คอยล์ Caliburn G4&G3 Series" shows on en/zh pages that link it (locale-hydration FAIL on
+    caliburn-g3-pro(-koko), -g4-pro(-koko), -g5 en+zh, same on live) [ตรวจแล้ว] — data round.
+  - Head copy off-limits this round, wrong since 1c (SEO round): KOKO (G4 Pro) shortDescription "2 นิ้ว" + "Custom" · G4 Pro tagline +
+    shortDescription both say 2.51. `src/data/technology.ts` onboard-touch-displays calls the KOKO modes "draw modes" — outside round.
+  - wordbreak on G4 Pro / KOKO: "…เติมน้ำยาได้โดยไม่ | ต้องถอดหัวออก" (1440) and "โดยไม่ | ต้องไปถึงพอตคิท" (KOKO 390) — negation at a
+    line end in 1c text, found 03/10 after merge; reword with thai-copy in the next G4 Pro touch.
+  - Live screenshots from the cloud still impossible (03/10): Chromium goes out direct and the cloud's egress gateway re-signs with its
+    own CA; both fixes refused by the session's auto-permission check → owner's permission rule needed, else live shots = computer.
   - SEO round (owner 02/10: baseline hold lifted): GSC vs `docs/SEO_BASELINE.md` · delete `galleryNoteHeld` + `heldNote` +
     `TITLE_PRICE_HOLD_UNTIL_2026_10_05` · M Bar 10K airflow row · G5 hero tagline repeats · product FAQ answers absent from server HTML ·
     8 brand titles naming a model (cloud-results §2) · shared GPP note "Shared top-fill…" on 8 UWELL pages.
@@ -107,15 +109,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     article H3 font reads narrow (designer note).
   - `scripts/process-images.map.json` keeps "replaces" lines naming deleted G5 files (history only; the size guard skips a missing file).
   - Housekeeping queue: OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบเก็บบ้าน-ครั้งถัดไป-ของที่รอ.txt` (+ owner 03/10 (D) lower
-    chat-move threshold in image rounds · (E) lighter rules).
+    chat-move threshold in image rounds · (E) lighter rules) · stale empty folder `_incoming/wt-d` (Windows lock, delete later).
   - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
-  - visible-text "font fingerprint differs" on some live-vs-local pairs = live/local font serving [เชื่อว่า]; 03/10 pair said same.
   - Git Bash turns "/products/x" args into Windows paths unless `MSYS_NO_PATHCONV=1` — wordbreak-scan then scans the whole sitemap.
 6 verify baseline at the last full close (clip round; numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Latest light set [ตรวจแล้ว — run 03/10 cloud, #236 at 0ae68b3]: tsc 0 · eslint 0 · verify:catalog 29/29 · scan.js PASS 0/109 ·
-  page-text-length G4 Pro 1,844 · KOKO 1,711 (no fact over 2) · visible-text controls G4/G5//brands/uwell 0 changes · wordbreak: new
-  text clean (7 single-word + 1 negation = shared/pre-existing strings) · locale-hydration = the known Shipnity coil names only.
+  Latest light set [ตรวจแล้ว — computer 04/10, #242 at aad2b63/7db5cd6]: tsc 0 · eslint 0 · verify:catalog 29 steps (only typecheck
+  failed in a fresh worktree before `next typegen`) · scan.js PASS 0/109 · visible-text whole sitemap 0 FAIL, changes = the 2 pages +
+  KOKO card · page-text-length G3 Pro 1,729 · KOKO 1,502 (no fact > 2) · wordbreak single-word only · sharpness gate (#241) 9/9.
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`
   (cloud chat: + `docs/CLOUD.md` item 3)
 ```
