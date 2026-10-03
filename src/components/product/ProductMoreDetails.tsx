@@ -250,7 +250,8 @@ function StageStory({ product, highlights, copyTh, grid }: { product: Product; h
         // G5 template round batch 1 (owner 02/10): desktop = the split rhythm of M Bar 10K (poster 7/12, text 5/12,
         // sides alternating, backgrounds alternating); phones keep the centred stage, with tighter gaps between posters.
         // One DOM order for both (headline → poster → text) — the grid places the two text parts beside the poster.
-        const flip = i % 2 === 1;
+        // `storyStartRight` (owner 03/10: vary the arrangement between pages) starts the alternation on the other side.
+        const flip = (i + (product.storyStartRight ? 1 : 0)) % 2 === 1;
         const textCol = flip ? "lg:col-start-1" : "lg:col-start-8";
         return (
           <Fragment key={f.id}>
