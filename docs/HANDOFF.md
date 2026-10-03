@@ -17,8 +17,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   #241 `158316c` (c) G4 Pro card upright 4:5 (Pearl Silver) + 8 colours = screen side + back side cut WHOLE from UWELL's pc/color-1..8
     (a clean alpha gap between the two devices — no AI, 0 credits) tilted 12°; checker round 1 failed the sharpness gate on 4 light
     colours → one resample per device + unsharp 0.65 → 9/9 PASS · live [ตรวจแล้ว]
-  #242 `372780c` (d) batch 1d G3 Pro + G3 Pro KOKO on the template (details in item 3) · deploy run on merge, live not yet curled.
-2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Kits: 1c = branch `kit-1c`; 1d material is in
+  #242 `372780c` (d) batch 1d G3 Pro + G3 Pro KOKO on the template (details in item 3) · live 6 + 7 story blocks [ตรวจแล้ว — curl].
+2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Kits (never merge these branches):
+  1b = branch `kit-1b` (also holds `_incoming/sitewide-template/scope.md`, the round scope) · 1c = branch `kit-1c`. Get one:
+  `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d material is in
   `_incoming/sitewide-template/1d/` (not in git: facts-uwell.md = every UWELL fact with its file · mk/ = UWELL page files · manual/ =
   G3 Pro user manual pages · prep.js · edit-data.js · build.js · edit-th.js · fix-rep.js · fix-wb.js · fix-poster.js · vt/ scans · shots/).
   Kit branch for 1d not pushed — do it before a cloud chat needs it (`kit-1c` shows how).
@@ -29,22 +31,20 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   2 VOOPOO (+ Drag 6 hybrid lineup on the test server first, + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*, m-switch-pod,
   m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
   asset-refs sweep of the 246 candidates, edge defects).
-  1d as merged: stage story with UWELL's own posters (G3 Pro 6 blocks, KOKO 7), UWELL banners as covers, th/en/zh + buyer-question
-  articles (Thai = thai-copy), every spec row re-read from UWELL with sourceUrl — G3 Pro from its page, spec strip and UWELL's user
-  manual zip (1000mAh · 5–35/25/15W by 0.4/0.6/0.9Ω pod · 92g · 0.4 + 0.9Ω side refill); KOKO from its spec sheet spe14-text.webp
-  (1250mAh — the shop had "1000mAh unverified" · 1.8" TFT · 91g · 4 days / 80 % in 20 min = UWELL figures · U² · Pro-FOCS 3.0).
-  KOKO product card now shows "1250mAh · Max 35W" on /, /products, pod-systems, /brands/uwell (its battery row became verified).
-  New optional flag `storyStartRight` (stage pages; default unchanged) — G3 Pro starts poster-right (owner 03/10 "vary the arrangement").
-  Checker #242 round 1 caught 2 image defects (KOKO opaque posters flagged transparent; G3 Pro close-up cut at the file edge) → fixed
-  (LESSONS พ16). Text: page-text-length PASS (G3 Pro 1,729 · KOKO 1,502) no fact > 2 · wordbreak = single words only.
-  NEXT: batch 2 VOOPOO — open with skill round-open (continuation); start with the Drag 6 HYBRID lineup on the test server for the owner.
-  Speed (owner 04/10 asked why the batch was slow): one build per batch where possible (bundle small fixes), whole-sitemap scans only
-  when a shared component is touched (13.5 #5) — each whole scan ≈ 20 min, each build ≈ 8 min on this computer.
+  1d as merged: UWELL posters (G3 Pro 6 blocks, KOKO 7), th/en/zh + articles, every spec row from UWELL with sourceUrl (G3 Pro battery
+  from UWELL's user manual zip; KOKO 1250mAh — the shop had "1000mAh unverified"; facts = 1d/facts-uwell.md). KOKO card now shows
+  "1250mAh · Max 35W" sitewide. New flag `storyStartRight` (default unchanged) — G3 Pro starts poster-right (owner 03/10 "vary").
+  NEXT: batch 2 VOOPOO — skill round-open (continuation); start with the Drag 6 HYBRID lineup on the test server for the owner.
+  Speed (owner 04/10 asked why slow): one build per batch (bundle fixes) · whole-sitemap scan (≈ 20 min) only when a shared part
+  is touched (13.5 #5) · a build ≈ 8 min on this computer.
   Method that worked (1b–1d): maker page → .txt (`1b/extract.js`) · images listed in the page HTML + its `/_nuxt/*.js` chunks · ffmpeg
   stills from maker films · researcher reads posters/spec images into a facts sheet · copy-base.json (en/zh) → thai-copy → th.json →
   build.js inserts story-copy + articles, edit-th.js the Thai spec/who · `npm run verify:catalog` (tsc needs `npx next typegen` in a
   fresh worktree) · page-text-length --facts · wordbreak-scan → reword · checker. Scripts as .js files (Thai/backslash never through
   `node -e` or a heredoc) · parallel work while a checker reads the disk = a git worktree.
+  Tips: count the template's "รุ่นนี้มี N สี" as one colour-count mention · the chip bar repeats every block title (a number in a
+  title = 2 already) · head copy (tagline/shortDescription) counts toward "a fact at most twice" but is off-limits → cut the repeat
+  elsewhere · maker footnotes (UWELL LAB) attach to data · boasts without a number fail in en/zh too.
   Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD.
 3a THE IMAGE METHODS THAT WORK (kept for this round):
   (a) one model, colours differ only in colour = ONE master + recolour by script — silver master `b-uwell/recolour-g4c.js`; coloured
@@ -73,7 +73,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        "RDL (ดูดลงปอดแต่ลมยังมีแรงต้าน)" · "เก็บหยดน้ำยาที่ควบแน่น"; owner to look at /products/caliburn-g3-pro and -koko on live.
   (41) G4 Classic / G4 hero line under the name (Thai shortDescription + tagline in product-copy-th.ts, English in uwell.ts) is wrong
        — Classic "same body as the standard G4 / Classic colourway", G4 "power modes" — and contradicts the page's own story.
-       Asked 03/10: 1 fix in the round (Friday's pick) · 2 wait for the SEO round. Same card line shows on /brands/uwell etc.
+       Asked 03/10: 1 fix in the round (Friday's pick; thai-copy draft: tagline "Caliburn รุ่นฉลอง 10 ปี ตัวเครื่องอะลูมิเนียม ไฟ RGB
+       แทนจอ" · short "Caliburn G4 Classic แบต 1400mAh สูงสุด 35 วัตต์ ไม่มีจอ ใช้ไฟ RGB 14 ดวงบอกระดับแบต มีเซ็นเซอร์คู่ และใช้หัวพอต GPP")
+       · 2 wait for the SEO round. Same card line shows on /brands/uwell etc.
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
