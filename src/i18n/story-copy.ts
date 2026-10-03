@@ -654,4 +654,171 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       link: { href: "/products/coil-94", label: { th: "ดูหัวพอต GPP ที่ใช้กับ G4 Pro KOKO", en: "See the GPP pods for the KOKO", zh: "查看 GPP 烟弹" } },
     },
   },
+  // Site-wide template round batch 1d (04/10): UWELL's own G3 Pro / G3 Pro KOKO pages, posters, spec sheet and user manual
+  // (_incoming/sitewide-template/1d/facts-uwell.md lists the source of each line); Thai = thai-copy 04/10.
+  "caliburn-g3-pro": {
+    "full-screen": {
+      title: { th: "จอเต็มหน้าเครื่อง", en: "The whole front is a screen", zh: "整个正面都是屏幕" },
+      subline: { th: "UWELL บอกว่าเป็นพอตรุ่นแรกที่ทำแบบนี้", en: "UWELL calls it the first full-screen pod.", zh: "UWELL 称它为首款全屏烟具。" },
+      body: {
+        th: "เหลือบมองทีเดียวก็รู้ทั้งวัตต์ แบต และจำนวนพัฟ",
+        en: "Wattage, battery and your puff count are there at a glance, no window to squint at.",
+        zh: "功率、电量和口数一眼就能看到，不用凑近小窗口。",
+      },
+      points: [
+        { text: { th: "แบตแสดงเป็น 4 ขีด", en: "Battery shown in 4 bars", zh: "电量以 4 格显示" }, specKey: "screen" },
+        { text: { th: "นับพัฟได้ถึง 999 แล้วเริ่มนับใหม่", en: "Puff counter up to 999, then it starts again", zh: "口数最多记到 999，之后重新计数" }, specKey: "screen" },
+      ],
+    },
+    "power": {
+      title: { th: "ตั้งวัตต์ตามหัวพอต", en: "Power to suit the pod", zh: "按烟弹设定功率" },
+      subline: { th: "หัวแต่ละโอห์มตั้งได้คนละช่วง", en: "Each pod has its own range.", zh: "每种烟弹的范围不同。" },
+      body: {
+        th: "กดปุ่ม 3 ครั้งแล้วเลือกวัตต์",
+        en: "Press the button three times, then pick the wattage.",
+        zh: "连按三下按键即可选择功率。",
+      },
+      points: [
+        { text: { th: "หัว 0.4 โอห์ม ตั้งได้ 5–35 วัตต์", en: "0.4Ω pod: 5–35W", zh: "0.4Ω 烟弹：5–35W" }, specKey: "output" },
+        { text: { th: "หัว 0.6 โอห์ม ตั้งได้ 5–25 วัตต์", en: "0.6Ω pod: 5–25W", zh: "0.6Ω 烟弹：5–25W" }, specKey: "output" },
+        { text: { th: "หัว 0.9 โอห์ม ตั้งได้ 5–15 วัตต์", en: "0.9Ω pod: 5–15W", zh: "0.9Ω 烟弹：5–15W" }, specKey: "output" },
+      ],
+    },
+    "airflow": {
+      title: { th: "ปรับลมได้ละเอียด", en: "Fine-tune the airflow", zh: "气流可微调" },
+      subline: { th: "ครั้งแรกในตระกูล Caliburn", en: "A first for the Caliburn line.", zh: "Caliburn 系列首次加入。" },
+      body: {
+        th: "ค่อย ๆ ปรับวาล์วทีละนิด จนได้ความแน่นที่ชอบ",
+        en: "Turn the valve a little at a time until the draw feels right to you.",
+        zh: "一点点转动气流阀，直到吸感合适为止。",
+      },
+      points: [
+        { text: { th: "วาล์วปรับลมอยู่ด้านข้าง", en: "Airflow adjustment valve on the side", zh: "侧面气流调节阀" }, specKey: "airflow" },
+      ],
+    },
+    "modes": {
+      title: { th: "สูบหรือกดก็ได้", en: "Draw or press", zh: "吸或按都能用" },
+      subline: { th: "ยิงได้ 2 แบบ", en: "Two ways to fire.", zh: "两种启动方式。" },
+      body: {
+        th: "แกะกล่องมาใช้ได้ทั้งสองแบบ ถ้าล็อกปุ่ม เครื่องจะยิงตอนสูบอย่างเดียว",
+        en: "Out of the box it fires when you draw or when you press. Lock the button and it fires on the draw only.",
+        zh: "出厂时吸气或按键都能启动；锁定按键后只靠吸气启动。",
+      },
+      points: [
+        { text: { th: "กดสองครั้งติดกัน ล็อกหรือปลดล็อกปุ่ม", en: "Press twice: lock or unlock the button", zh: "按两下：锁定或解锁按键" }, specKey: "firing" },
+        { text: { th: "กด 5 ครั้ง เปิดหรือปิดเครื่อง", en: "Press five times: on or off", zh: "按五下：开机或关机" }, specKey: "firing" },
+      ],
+    },
+    "pods": {
+      title: { th: "ใช้หัวพอต G3 ได้ทุกหัว", en: "Takes every G3 pod", zh: "兼容所有 G3 烟弹" },
+      subline: { th: "0.4–1.2 โอห์ม", en: "From 0.4Ω to 1.2Ω.", zh: "从 0.4Ω 到 1.2Ω。" },
+      body: {
+        th: "มีทั้งหัวเติมด้านบนและเติมด้านข้าง ใช้ได้ทั้งน้ำยา freebase และ salt nic",
+        en: "Any Caliburn G3 pod fits, for freebase or nic salt, in top-refill or side-refill versions.",
+        zh: "所有 Caliburn G3 烟弹都能用，自由基或盐都可以，有顶注油和侧注油两种。",
+      },
+      points: [
+        { text: { th: "ในกล่องมีหัว 0.4 และ 0.9 โอห์ม คอยล์ mesh เติมด้านข้าง", en: "In the box: 0.4Ω and 0.9Ω meshed pods, side refill", zh: "盒内附 0.4Ω 和 0.9Ω 网状烟弹，侧注油" }, specKey: "included-pod" },
+        { text: { th: "ระบบปรับรสชาติ Pro-FOCS", en: "Pro-FOCS flavour coil", zh: "Pro-FOCS 风味线圈" }, specKey: "flavor-tech" },
+      ],
+      link: { href: "/products/coil-94", label: { th: "ดูหัวพอตที่ใช้กับ G3 Pro", en: "See the G3 pods", zh: "查看 G3 烟弹" } },
+    },
+    "body": {
+      title: { th: "ตัวเครื่องซิงค์อัลลอย", en: "Zinc alloy body", zh: "锌合金机身" },
+      subline: { th: "มีช่องใสให้ดูน้ำยา", en: "With a clear e-liquid window.", zh: "带透明油窗。" },
+      body: {
+        th: "เหลือบมองช่องก็รู้ว่าน้ำยาเหลือแค่ไหน ถึงเวลาเติมหรือยัง",
+        en: "A glance at the window tells you how much e-liquid is left and when to refill.",
+        zh: "看一眼油窗就知道还剩多少烟油、该不该加油。",
+      },
+      points: [
+        { text: { th: "ประมาณ 92 กรัม", en: "About 92g", zh: "约 92 克" }, specKey: "weight" },
+        { text: { th: "123.5 × 27.8 × 16.8 mm", en: "123.5 × 27.8 × 16.8 mm", zh: "123.5 × 27.8 × 16.8 毫米" }, specKey: "dimensions" },
+      ],
+    },
+  },
+  "caliburn-g3-pro-koko": {
+    "screen": {
+      title: { th: "จอสีเต็มหน้าเครื่อง", en: "A full colour screen", zh: "整块彩色屏幕" },
+      subline: { th: "KOKO รุ่นแรกที่ได้จอแบบนี้", en: "UWELL's first full-screen KOKO.", zh: "UWELL 首款全屏 KOKO。" },
+      body: {
+        th: "ทุกอย่างที่ต้องดูตอนสูบอยู่บนจอ และมีแอนิเมชันขึ้นระหว่างสูบ",
+        en: "Every vaping detail is on the screen, with animations while you vape.",
+        zh: "抽吸信息都在屏幕上，抽吸时还有动画。",
+      },
+      points: [
+        { text: { th: "จอสี TFT 1.8 นิ้ว", en: "1.8-inch TFT colour screen", zh: "1.8 英寸 TFT 彩屏" }, specKey: "screen" },
+      ],
+    },
+    "themes": {
+      title: { th: "ธีมหน้าจอ", en: "Screen themes", zh: "屏幕主题" },
+      subline: { th: "เลือกหน้าตาจอที่ชอบ", en: "Pick the look you like.", zh: "选你喜欢的样式。" },
+      body: {
+        th: "กด 4 ครั้งเพื่อเปิดเมนู แล้วเลือกจากในนั้น",
+        en: "Press the button four times to open the menu, then change the theme there.",
+        zh: "连按四下按键打开菜单，在里面更换主题。",
+      },
+      points: [
+        { text: { th: "มีให้เลือก เช่น Planet, Twilight และ KOKO", en: "Themes include Planet, Twilight and KOKO", zh: "主题包括 Planet、Twilight 和 KOKO" }, specKey: "themes" },
+      ],
+    },
+    "day-night": {
+      title: { th: "DAY กับ NIGHT", en: "Day and night", zh: "日间与夜间" },
+      subline: { th: "กลางวันจอสด กลางคืนแสงนุ่ม", en: "Bright by day, softer at night.", zh: "白天明亮，夜晚柔和。" },
+      body: {
+        th: "สลับได้ในเมนูเดียวกัน เลือกให้เข้ากับแสงรอบตัว",
+        en: "DAY mode keeps the screen vivid; NIGHT mode dims the glow. Both are in the same menu.",
+        zh: "DAY 模式屏幕鲜亮，NIGHT 模式亮度更柔和，都在同一个菜单里。",
+      },
+    },
+    "battery": {
+      title: { th: "ไม่ต้องชาร์จบ่อย", en: "Charge less often", zh: "不用常充电" },
+      subline: { th: "แบตใหญ่กว่า G3 Pro", en: "A bigger battery than the G3 Pro.", zh: "电池比 G3 Pro 更大。" },
+      body: {
+        th: "ใช้จริงได้กี่วันขึ้นอยู่กับว่าสูบบ่อยแค่ไหนและตั้งกี่วัตต์",
+        en: "How long yours lasts depends on how often you vape and the wattage you set.",
+        zh: "实际续航取决于抽吸频率和设定的功率。",
+      },
+      points: [
+        { text: { th: "แบต 1250mAh ในตัว", en: "1250mAh built-in", zh: "内置 1250mAh 电池" }, specKey: "battery" },
+        { text: { th: "ชาร์จครั้งเดียวใช้ได้สูงสุด 4 วัน (ตัวเลขของ UWELL)", en: "Up to 4 days per charge (UWELL's figure)", zh: "一次充电最多用 4 天（UWELL 数据）" }, specKey: "battery-life" },
+        { text: { th: "ชาร์จ 5V/2A 20 นาที ได้ 80% (ตัวเลขของ UWELL)", en: "80% in 20 minutes at 5V/2A (UWELL's figure)", zh: "5V/2A 下 20 分钟充到 80%（UWELL 数据）" }, specKey: "charge-time" },
+      ],
+    },
+    "power": {
+      title: { th: "ตั้งวัตต์และปรับลมได้เอง", en: "Wattage and airflow, yours to set", zh: "功率和气流都由你调" },
+      subline: { th: "สูงสุด 35 วัตต์", en: "Up to 35W.", zh: "最高 35W。" },
+      body: {
+        th: "กด 3 ครั้งเพื่อตั้งวัตต์ ส่วนลมจะเอานุ่ม แรง หรือกลาง ๆ ก็ปรับได้",
+        en: "Press three times to set the wattage, and slide the airflow from smooth to strong.",
+        zh: "连按三下设定功率，气流从顺滑到强劲随手调。",
+      },
+      points: [
+        { text: { th: "5–35 วัตต์", en: "5–35W", zh: "5–35W" }, specKey: "output" },
+      ],
+    },
+    "anti-leak": {
+      title: { th: "ออกแบบมากันรั่ว", en: "Built not to leak", zh: "防漏设计" },
+      subline: { th: "ระบบ U² ของ UWELL", en: "UWELL's U² anti-leak.", zh: "UWELL U² 防漏。" },
+      body: {
+        th: "ตัวหัวเชื่อมด้วยคลื่นอัลตราโซนิก ส่วนร่องรูปตัว U คอยเก็บหยดน้ำยาที่ควบแน่น",
+        en: "The pod is sealed by ultrasonic welding, and a U-shaped channel holds the condensate.",
+        zh: "烟弹采用超声波焊接密封，U 形通道收集冷凝液。",
+      },
+    },
+    "pods": {
+      title: { th: "ใช้หัวพอต G3 ได้ทุกหัว", en: "Takes every G3 pod", zh: "兼容所有 G3 烟弹" },
+      subline: { th: "0.4–1.2 โอห์ม", en: "From 0.4Ω to 1.2Ω.", zh: "从 0.4Ω 到 1.2Ω。" },
+      body: {
+        th: "มีทั้งหัวเติมด้านบนและเติมด้านข้าง ใช้ได้ทั้งน้ำยา freebase และ salt nic",
+        en: "Any Caliburn G3 pod fits, for freebase or nic salt, in top-refill or side-refill versions.",
+        zh: "所有 Caliburn G3 烟弹都能用，自由基或盐都可以，有顶注油和侧注油两种。",
+      },
+      points: [
+        { text: { th: "ในกล่องมีหัว 0.4 โอห์ม (3mL) และ 0.9 โอห์ม (2.5mL) เติมด้านข้าง", en: "In the box: 0.4Ω (3ml) and 0.9Ω (2.5ml) pods, side refill", zh: "盒内附 0.4Ω（3ml）和 0.9Ω（2.5ml）烟弹，侧注油" }, specKey: "included-pod" },
+        { text: { th: "ระบบปรับรสชาติ Pro-FOCS 3.0", en: "Pro-FOCS 3.0 flavour coil", zh: "Pro-FOCS 3.0 风味线圈" }, specKey: "flavor-tech" },
+      ],
+      link: { href: "/products/coil-94", label: { th: "ดูหัวพอตที่ใช้กับ G3 Pro KOKO", en: "See the G3 pods", zh: "查看 G3 烟弹" } },
+    },
+  },
 };

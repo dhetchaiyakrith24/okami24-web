@@ -524,6 +524,137 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 1d (04/10): from UWELL's G3 Pro / KOKO pages, spec sheet and user manual; Thai = thai-copy 04/10.
+  "caliburn-g3-pro": {
+    th: {
+      lede: "Caliburn G3 Pro ทรงเพรียว จอเต็มหน้าเครื่อง และปรับลมได้ละเอียด ด้านล่างไล่ให้ดูทีละอย่าง",
+      sections: [
+        {
+          heading: "G3 Pro กับ G3 Pro KOKO เลือกตัวไหนดี",
+          paragraphs: [
+            "สองรุ่นนี้ใช้หัวพอต G3 เหมือนกัน",
+            "G3 Pro ทรงเพรียว แบต 1000mAh หนักประมาณ 92 กรัม",
+            "[G3 Pro KOKO](/products/caliburn-g3-pro-koko) ทรงกล่อง จอสี 1.8 นิ้ว เปลี่ยนธีมหน้าจอได้ และแบตใหญ่กว่าที่ 1250mAh"
+          ]
+        },
+        {
+          heading: "เลือกหัวพอตแบบไหนดี",
+          paragraphs: [
+            "ตารางหัวพอตของ UWELL ไล่จาก RDL (ดูดลงปอดแต่ลมยังมีแรงต้าน) ที่โอห์มต่ำ ไปถึง MTL (สูบแบบดูดเข้าปากก่อน) ที่โอห์มสูง",
+            "หัวโอห์มต่ำลมโล่งกว่าและตั้งวัตต์ได้สูงกว่า ส่วนหัวโอห์มสูงลมแน่น เข้าทางคนสูบแบบ MTL",
+            "ในกล่องมีมาให้ทั้งสองหัว ลองดูก่อนแล้วค่อยซื้อหัวที่ชอบเพิ่ม"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "The Caliburn G3 Pro is the Caliburn that put a full screen on the front and an airflow valve on the side. Below, one feature at a time.",
+      sections: [
+        {
+          heading: "G3 Pro or G3 Pro KOKO?",
+          paragraphs: [
+            "Both take the same G3 pods.",
+            "The G3 Pro is the slim one, with a 1000mAh battery, at about 92g.",
+            "The [G3 Pro KOKO](/products/caliburn-g3-pro-koko) is the box-shaped one, with a 1.8-inch colour screen, screen themes and a 1250mAh battery."
+          ]
+        },
+        {
+          heading: "Which pod?",
+          paragraphs: [
+            "UWELL's pod chart runs from RDL at the low-ohm end to MTL at the high-ohm end.",
+            "A lower-ohm pod gives a looser RDL draw at higher wattage; a higher-ohm pod a tighter MTL draw.",
+            "Both come in the box, so you can try each before buying more."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "Caliburn G3 Pro 正面是一整块屏幕，侧面有可调气流阀。下面逐项来看。",
+      sections: [
+        {
+          heading: "G3 Pro 还是 G3 Pro KOKO？",
+          paragraphs: [
+            "两款都用同样的 G3 烟弹。",
+            "G3 Pro 是纤长款，1000mAh 电池，约 92 克。",
+            "[G3 Pro KOKO](/products/caliburn-g3-pro-koko) 是方盒款，1.8 英寸彩屏，可换屏幕主题，1250mAh 电池。"
+          ]
+        },
+        {
+          heading: "选哪种烟弹？",
+          paragraphs: [
+            "UWELL 的烟弹图从低阻值的 RDL 排到高阻值的 MTL。",
+            "低阻值烟弹是较松的 RDL 吸感、功率更高；高阻值烟弹是较紧的 MTL 吸感。",
+            "两种都在盒内，可以都试过再决定要买哪种。"
+          ]
+        }
+      ]
+    },
+  },
+  "caliburn-g3-pro-koko": {
+    th: {
+      lede: "Caliburn G3 Pro KOKO ทรงกล่อง จอสีเต็มหน้าเครื่อง และแบตใหญ่กว่า G3 Pro ด้านล่างไล่ให้ดูทีละอย่าง",
+      sections: [
+        {
+          heading: "G3 Pro KOKO กับ G3 Pro เลือกตัวไหนดี",
+          paragraphs: [
+            "สองรุ่นนี้ใช้หัวพอต G3 เหมือนกัน",
+            "KOKO ทรงกล่อง แบตใหญ่กว่า หนักประมาณ 91 กรัม",
+            "[G3 Pro](/products/caliburn-g3-pro) ทรงเพรียว แบต 1000mAh หนักพอ ๆ กันที่ประมาณ 92 กรัม"
+          ]
+        },
+        {
+          heading: "G3 Pro KOKO กับ G4 Pro KOKO ต่างกันยังไง",
+          paragraphs: [
+            "สองรุ่นนี้อยู่ในตระกูล KOKO และมีจอสีเหมือนกัน",
+            "G3 Pro KOKO สั่งงานด้วยปุ่ม",
+            "[G4 Pro KOKO](/products/caliburn-g4-pro-koko) ใช้จอทัช 2.0 นิ้ว แบต 2000mAh และเลือกได้ 3 โหมด"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "The Caliburn G3 Pro KOKO is the box-shaped G3 Pro: a full colour screen and a bigger battery. Below, one feature at a time.",
+      sections: [
+        {
+          heading: "G3 Pro KOKO or G3 Pro?",
+          paragraphs: [
+            "Both take the same G3 pods.",
+            "The KOKO is the box-shaped one, with the bigger battery, at about 91g.",
+            "The [G3 Pro](/products/caliburn-g3-pro) is the slim one, with a 1000mAh battery, at much the same weight, about 92g."
+          ]
+        },
+        {
+          heading: "G3 Pro KOKO or G4 Pro KOKO?",
+          paragraphs: [
+            "Both are in the KOKO family and both have a colour screen.",
+            "The G3 Pro KOKO is run by its button.",
+            "The [G4 Pro KOKO](/products/caliburn-g4-pro-koko) has a 2.0-inch touchscreen, a 2000mAh battery and three output modes."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "Caliburn G3 Pro KOKO 是方盒版的 G3 Pro：整块彩屏，电池更大。下面逐项来看。",
+      sections: [
+        {
+          heading: "G3 Pro KOKO 还是 G3 Pro？",
+          paragraphs: [
+            "两款都用同样的 G3 烟弹。",
+            "KOKO 是方盒款，电池更大，约 91 克。",
+            "[G3 Pro](/products/caliburn-g3-pro) 是纤长款，1000mAh 电池，重量差不多，约 92 克。"
+          ]
+        },
+        {
+          heading: "G3 Pro KOKO 还是 G4 Pro KOKO？",
+          paragraphs: [
+            "两款都属于 KOKO 系列，都有彩屏。",
+            "G3 Pro KOKO 用按键操作。",
+            "[G4 Pro KOKO](/products/caliburn-g4-pro-koko) 是 2.0 英寸触屏，2000mAh 电池，三种输出模式。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

@@ -311,6 +311,11 @@ export interface Product {
    * wide poster · text), the colour grid right after `storyColoursAfter` (designer option A, 02/10).
    */
   storyLayout?: "split" | "stage";
+  /**
+   * Stage layout, desktop: start the alternating poster/text sides with the poster on the right (default: left), so pages
+   * on the same template do not all read alike (owner 03/10: "สลับ ๆ กันบ้างก็ได้ จะได้ไม่เหมือนกันทุกหน้า").
+   */
+  storyStartRight?: boolean;
   /** Stage layout: the `features[].id` after whose block the all-colours/flavours grid sits (default: after the last). */
   storyColoursAfter?: string;
   /** The maker's campaign poster that opens the "more details" story, full width under its heading (`storyDetails`). */
