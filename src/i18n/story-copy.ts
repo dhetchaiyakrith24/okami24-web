@@ -523,7 +523,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "โหมด Custom", en: "Custom mode", zh: "自定义模式" },
       subline: { th: "Storm กับ Waves ก็ยังมี", en: "Storm and Waves are still there.", zh: "Storm 和 Waves 依然都在。" },
       body: {
-        th: "Storm ตบคอทันที Waves รสนุ่มลื่น ส่วนโหมดนี้ให้ตั้งเองว่าชอบแบบไหน",
+        th: "Storm แรงถึงคอทันที Waves รสนุ่มลื่น ส่วนโหมดนี้ให้ตั้งเองว่าชอบแบบไหน",
         en: "Storm gives an instant throat hit, Waves a smooth flavour. This one you tune yourself.",
         zh: "Storm 带来即时击喉感，Waves 口感顺滑，这个模式由你自己调。",
       },
@@ -630,7 +630,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "เลือกได้ 3 โหมด", en: "Three modes", zh: "三种模式" },
       subline: { th: "Storm, Waves และ Customize", en: "Storm, Waves and Customize.", zh: "Storm、Waves 与 Customize。" },
       body: {
-        th: "Storm ตบคอทันที Waves รสนุ่มและนิ่ง ส่วน Customize ตั้งเองตามที่ชอบ",
+        th: "Storm แรงถึงคอทันที Waves รสนุ่มและนิ่ง ส่วน Customize ตั้งเองตามที่ชอบ",
         en: "Storm for an instant throat hit, Waves for a smooth, steady taste, Customize set the way you like.",
         zh: "Storm 即时击喉，Waves 口感顺滑稳定，Customize 按你喜欢的来设定。",
       },
