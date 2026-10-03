@@ -1579,6 +1579,13 @@ export const uwellProducts: Product[] = [
     // over 6 of 16. 02/10: two all-colours images (owner 01/10 "ทั้งหมด 2 ชิ้น" → pills "ทั้งหมด 1" / "ทั้งหมด 2"), UWELL's
     // order in two groups of 8, the G5 layout — _incoming/image-sitewide/set1/poster.js g3p-a / g3p-b.
     openOnCardPhoto: true,
+    // Site-wide template round batch 1d (04/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — UWELL's own page
+    // (https://www.myuwell.com/caliburn/caliburn-g3-pro) told one poster per block; text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.
+    // Facts: _incoming/sitewide-template/1d/facts-uwell.md (UWELL page, posters, UWELL's user manual). Posters: 1d/prep.js.
+    storyDetails: true,
+    storyLayout: "stage",
+    storyStartRight: true,
+    storyCover: { src: "/assets/products/caliburn-g3-pro/story-cover.webp", alt: "Official UWELL banner — the Caliburn G3 Pro", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro", width: 1920, height: 800 },
     lineupImage: {
       src: "/assets/products/caliburn-g3-pro/lineup-v2.webp",
       alt: "UWELL Caliburn G3 Pro, colours 1–8 of 16",
@@ -1608,28 +1615,69 @@ export const uwellProducts: Product[] = [
       { id: "emerald-green", name: "Emerald Green", swatchHex: "#9dcdaf", image: { src: "/assets/products/caliburn-g3-pro/variant-emerald-green-v2.webp", alt: "UWELL Caliburn G3 Pro, Emerald Green" } },
     ],
     specifications: [
-      { key: "battery", label: "Battery", value: "1000mAh, USB-C 2A charging", sourceStatus: "verified" },
-      { key: "output", label: "Output range", value: "5–35W", sourceStatus: "verified" },
-      { key: "screen", label: "Display", value: "Wraparound LCD screen", sourceStatus: "verified" },
-      { key: "pod", label: "Pod capacity", value: "3mL (0.4Ω pod) / 2.5mL (0.9Ω pod), both included", sourceStatus: "verified" },
-      { key: "airflow", label: "Airflow", value: "Fully adjustable", sourceStatus: "verified" },
+      // Site-wide template round batch 1d (04/10): every row re-read from UWELL (page, posters, spec sheet, user manual).
+      { key: "battery", label: "Battery", value: "1000mAh built-in", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/ow-product-material/User%20Manual-20240709173855406.zip" },
+      { key: "charge-time", label: "Charging", value: "USB-C, 2A", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro" },
+      { key: "output", label: "Output range", value: "5–35W (0.4Ω pod); 5–25W (0.6Ω); 5–15W (0.9Ω)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/ow-product-material/User%20Manual-20240709173855406.zip" },
+      { key: "screen", label: "Display", value: "Full-screen LCD: wattage, battery in 4 bars, puff count up to 999", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/ow-product-material/User%20Manual-20240709173855406.zip" },
+      { key: "firing", label: "Firing", value: "Draw or button; press twice to lock the button (draw only) · press 3 times: wattage · press 5 times: on/off", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/ow-product-material/User%20Manual-20240709173855406.zip" },
+      { key: "airflow", label: "Airflow", value: "Fine-tuning airflow adjustment valve", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro" },
+      { key: "pod", label: "Pod capacity", value: "3mL (0.4Ω) / 2.5mL (INT & FDA); 2mL (CRC & TPD)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburnG3Pro/pc/window/windowValue.webp" },
+      { key: "included-pod", label: "Included pod", value: "FeCrAl meshed 0.4Ω + 0.9Ω, side refill", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/ow-product-material/User%20Manual-20240709173855406.zip" },
+      { key: "pod-compat", label: "Pod platform", value: "Every Caliburn G3 (GPP) pod, 0.4Ω–1.2Ω, top or side refill", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburnG3Pro/pc/gppMid.webp" },
+      { key: "flavor-tech", label: "Flavor system", value: "Pro-FOCS", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro" },
+      { key: "materials", label: "Materials", value: "PCTG, zinc alloy", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburnG3Pro/pc/window/windowValue.webp" },
+      { key: "dimensions", label: "Dimensions", value: "123.5 × 27.8 × 16.8 mm", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburnG3Pro/pc/window/windowValue.webp" },
+      { key: "weight", label: "Weight", value: "Approx. 92g", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburnG3Pro/pc/window/windowValue.webp" },
     ],
     features: [
       {
-        id: "wraparound-screen",
-        title: "Wraparound LCD",
-        description: "The Caliburn line's first screen to wrap around an entire side of the device rather than sitting in a small window.",
+        id: "full-screen",
+        title: "The whole front is a screen",
+        description: "Wattage, battery and your puff count are there at a glance, no window to squint at.",
+        subline: "UWELL calls it the first full-screen pod.",
+        image: { src: "/assets/products/caliburn-g3-pro/story-full-screen.webp", alt: "UWELL's Caliburn G3 Pro poster — the full-screen display close up", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro", width: 1920, height: 800, transparent: true },
       },
       {
-        id: "dual-pod",
-        title: "Two pod resistances in the box",
-        description: "Ships with both a 0.4Ω and a 0.9Ω pod, covering a more open RDL draw and a tighter MTL draw out of the box.",
+        id: "power",
+        title: "Up to 35W",
+        description: "Press the button three times, then pick the wattage. Each pod has its own range.",
+        subline: "Set the power to suit the pod.",
+        image: { src: "/assets/products/caliburn-g3-pro/story-power.webp", alt: "UWELL's Caliburn G3 Pro poster — 35 W", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro", width: 1920, height: 800 },
+      },
+      {
+        id: "airflow",
+        title: "Fine-tune the airflow",
+        description: "Turn the valve a little at a time until the draw feels right to you.",
+        subline: "A first for the Caliburn line.",
+        image: { src: "/assets/products/caliburn-g3-pro/story-airflow.webp", alt: "Frame from UWELL's Caliburn G3 Pro animation — air drawn in through the side airflow valve", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro", width: 1920, height: 920 },
+      },
+      {
+        id: "modes",
+        title: "Draw or press",
+        description: "Out of the box it fires when you draw or when you press. Lock the button and it fires on the draw only.",
+        subline: "Two ways to fire.",
+        image: { src: "/assets/products/caliburn-g3-pro/story-modes.webp", alt: "Frame from UWELL's Caliburn G3 Pro animation — the side button lit", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro", width: 1920, height: 920 },
+      },
+      {
+        id: "pods",
+        title: "Takes every G3 pod",
+        description: "Any Caliburn G3 pod fits, for freebase or nic salt, in top-refill or side-refill versions.",
+        subline: "From 0.4Ω to 1.2Ω.",
+        image: { src: "/assets/products/caliburn-g3-pro/story-pods.webp", alt: "UWELL's Caliburn G3 pod chart — 0.4Ω to 1.2Ω, side refill and top refill", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro", width: 882, height: 517, transparent: true },
+      },
+      {
+        id: "body",
+        title: "Zinc alloy body",
+        description: "A glance at the window tells you how much e-liquid is left and when to refill.",
+        subline: "With a clear e-liquid window.",
+        image: { src: "/assets/products/caliburn-g3-pro/story-body.webp", alt: "UWELL's Caliburn G3 Pro poster — two devices, front and back", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro", width: 1920, height: 800 },
       },
     ],
     compatibility: [g3PodCompatibility, usbC],
     whoIsThisFor: [
-      "Vapers who want full wattage/battery visibility in a compact open-system pod.",
-      "Anyone who wants to try both MTL and RDL pods without buying extras first.",
+      "Vapers who want everything on one screen in a slim pod, and an airflow valve to fine-tune the draw.",
+      "Anyone not sure yet between MTL and RDL: a 0.4Ω and a 0.9Ω pod come in the box.",
     ],
     faqs: [],
     relatedProductSlugs: ["caliburn-g3-pro-koko", "caliburn-g4"],
@@ -1649,7 +1697,8 @@ export const uwellProducts: Product[] = [
       "Positioned as a KOKO-branded edition of the G3 Pro; core hardware is treated as equivalent to the G3 Pro pending independent confirmation of any spec deltas.",
     isFlagship: false,
     attributes: {
-      batteryMah: 1000,
+      batteryMah: 1250,
+      wattageMin: 5,
       wattageMax: 35,
       capacityMl: 3,
       screenType: "color-display",
@@ -1678,6 +1727,12 @@ export const uwellProducts: Product[] = [
     // 2D. Swatches = the frame colour on these photos. UWELL has no per-colour files for this model (color-N.webp 404).
     // (The morning-01/10 "no all-colours view" was replaced the same evening — see lineupImage below.)
     openOnCardPhoto: true,
+    // Site-wide template round batch 1d (04/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — UWELL's own page
+    // (https://www.myuwell.com/caliburn/caliburn-g3-pro-koko) told one poster per block; text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.
+    // Facts: _incoming/sitewide-template/1d/facts-uwell.md (UWELL page, posters, spec sheet spe14-text.webp). Posters: 1d/prep.js.
+    storyDetails: true,
+    storyLayout: "stage",
+    storyCover: { src: "/assets/products/caliburn-g3-pro-koko/story-cover.webp", alt: "Official UWELL banner — the Caliburn G3 Pro KOKO in the hand", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1920, height: 800 },
     // Real UWELL color/finish lineup — "KOKO" is UWELL's touchscreen-edition naming convention
     // (see caliburn-g4-pro-koko's own comment) — same G3 Pro pod platform, not a separate system.
     // All-colours images (IMAGE_SPEC §0 item 5), 02/10: two groups in the colour order below — the one-image cluster of 8
@@ -1744,19 +1799,79 @@ export const uwellProducts: Product[] = [
       },
     ],
     specifications: [
-      { key: "battery", label: "Battery", value: "Treated as equivalent to the G3 Pro (1000mAh) — not independently confirmed for this specific edition", sourceStatus: "unverified" },
-      { key: "variant", label: "Variant", value: "KOKO edition of the Caliburn G3 Pro", sourceStatus: "unverified" },
+      // Site-wide template round batch 1d (04/10): every row re-read from UWELL (page, posters, spec sheet).
+      { key: "battery", label: "Battery", value: "1250mAh built-in", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g3-pro-koko/spe14-text.webp" },
+      { key: "battery-life", label: "Battery life", value: "Up to 4 days per charge (UWELL's figure)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g3-pro-koko/datas.webp" },
+      { key: "charge-time", label: "Charging", value: "USB-C; 80% in 20 minutes at 5V/2A (UWELL's figure)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g3-pro-koko/datas.webp" },
+      { key: "output", label: "Output range", value: "5–35W", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko" },
+      { key: "screen", label: "Display", value: "1.8\" TFT colour screen", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g3-pro-koko/spe14-text.webp" },
+      { key: "themes", label: "Screen themes", value: "Dynamic themes (e.g. Planet, Twilight, KOKO) · DAY / NIGHT brightness modes", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko" },
+      { key: "firing", label: "Firing", value: "Press twice: lock the button · 3 times: wattage · 4 times: brightness & theme menu · 5 times: on/off", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko" },
+      { key: "airflow", label: "Airflow", value: "Adjustable airflow valve", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko" },
+      { key: "pod", label: "Pod capacity", value: "3mL (INT & FDA) / 2mL (TPD & CRC)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g3-pro-koko/spe14-text.webp" },
+      { key: "included-pod", label: "Included pod", value: "0.4Ω (3mL) + 0.9Ω (2.5mL), side refill (INT & FDA); top refill, 2mL (TPD & CRC)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g3-pro-koko/spe15-1-new.webp" },
+      { key: "pod-compat", label: "Pod platform", value: "Every Caliburn G3 (GPP) pod, 0.4Ω–1.2Ω, top or side refill", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g3-pro-koko/spe8-1.webp" },
+      { key: "anti-leak", label: "Anti-leak system", value: "U² anti-leak (ultrasonic welding + U-shaped channel)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g3-pro-koko/spe6-2.webp" },
+      { key: "flavor-tech", label: "Flavor system", value: "Pro-FOCS 3.0", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko" },
+      { key: "materials", label: "Materials", value: "PCTG, zinc alloy", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g3-pro-koko/spe14-text.webp" },
+      { key: "dimensions", label: "Dimensions", value: "85.15 × 49.5 × 19.5 mm (INT & FDA) / 79.15 mm tall (TPD & CRC)", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g3-pro-koko/spe14-text.webp" },
+      { key: "weight", label: "Weight", value: "Approx. 91g", sourceStatus: "verified", sourceUrl: "https://files.myuwell.com/uwell/product/caliburn-g3-pro-koko/spe14-text.webp" },
     ],
     features: [
       {
-        id: "koko-finish",
-        title: "KOKO edition finish",
-        description: "A distinct KOKO-branded finish on the G3 Pro shell rather than a separate hardware platform.",
+        id: "screen",
+        title: "A full colour screen",
+        description: "Every vaping detail is on the screen, with animations while you vape.",
+        subline: "UWELL's first full-screen KOKO.",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/story-screen.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — three devices with the screen on", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1327, height: 756, transparent: true },
+      },
+      {
+        id: "themes",
+        title: "Screen themes",
+        description: "Press the button four times to open the menu, then change the theme there.",
+        subline: "Pick the look you like.",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/story-themes.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — screen themes", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1029, height: 625, transparent: true },
+      },
+      {
+        id: "day-night",
+        title: "Day and night",
+        description: "DAY mode keeps the screen vivid; NIGHT mode dims the glow. Both are in the same menu.",
+        subline: "Bright by day, softer at night.",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/story-day-night.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — night mode", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1920, height: 800 },
+      },
+      {
+        id: "battery",
+        title: "Charge less often",
+        description: "How long yours lasts depends on how often you vape and the wattage you set.",
+        subline: "A bigger battery than the G3 Pro.",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/story-battery.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — 1250 mAh", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1024, height: 625, transparent: true },
+      },
+      {
+        id: "power",
+        title: "Up to 35W",
+        description: "Press three times to set the wattage, and slide the airflow from smooth to strong.",
+        subline: "Wattage and airflow, both yours to set.",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/story-power.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — 35 W", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1809, height: 756, transparent: true },
+      },
+      {
+        id: "anti-leak",
+        title: "Built not to leak",
+        description: "The pod is sealed by ultrasonic welding, and a U-shaped channel holds the condensate.",
+        subline: "UWELL's U² anti-leak.",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/story-anti-leak.webp", alt: "UWELL's Caliburn G3 Pro KOKO poster — U² anti-leak, ultrasonic welding and the U-shaped channel", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1920, height: 800 },
+      },
+      {
+        id: "pods",
+        title: "Takes every G3 pod",
+        description: "Any Caliburn G3 pod fits, for freebase or nic salt, in top-refill or side-refill versions.",
+        subline: "From 0.4Ω to 1.2Ω.",
+        image: { src: "/assets/products/caliburn-g3-pro-koko/story-pods.webp", alt: "UWELL's Caliburn G3 pod chart — 0.4Ω to 1.2Ω, side refill and top refill", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g3-pro-koko", width: 1762, height: 1034, transparent: true },
       },
     ],
     compatibility: [g3PodCompatibility, usbCNoNote],
     whoIsThisFor: [
-      "G3 Pro fans who want the KOKO-edition styling.",
+      "Vapers who like a box-shaped pod with a colour screen and themes to pick from.",
+      "Anyone who wants the G3 Pro's pods and 35W with a bigger battery.",
     ],
     faqs: [],
     relatedProductSlugs: ["caliburn-g3-pro"],
