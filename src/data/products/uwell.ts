@@ -851,9 +851,9 @@ export const uwellProducts: Product[] = [
         // front+back, printed colour name erased) processed to the 1000×1000 spec by
         // scripts/process-images.ts. The whole G4 Pro set (card + 8 colours) was redone from the
         // same official series so every colour shares one canvas. card.png left on disk untouched.
-        src: "/assets/products/caliburn-g4-pro/card.webp",
-        alt: "UWELL Caliburn G4 Pro, pearl-silver colourway, official render (front and back)",
-        angle: "Front, isolated",
+        src: "/assets/products/caliburn-g4-pro/card-v2.webp",
+        alt: "UWELL Caliburn G4 Pro, Pearl Silver, screen side, isolated product shot",
+        angle: "Screen side, upright on 4:5 — cut whole from UWELL's own colour render (batch 1c colours, 03/10)",
         transparentBackground: true,
         sourceName: "UWELL",
         sourceUrl: "https://www.myuwell.com/products/caliburn",
@@ -875,36 +875,40 @@ export const uwellProducts: Product[] = [
     // Green) had a retailer watermark sitting directly on the device's own base — wide enough
     // that neither a crop nor a small local patch could remove it without visibly cutting the
     // device or risking another seam — reverted to swatch-only until a clean source is found.
+    // Site-wide template round batch 1c colours (owner 03/10): every colour image = the screen side + the back side cut whole from
+    // UWELL's own per-colour render (a clean gap between the two devices — no AI), upright, then tilted 12° together (the finish
+    // pattern is on the back only); the page opens on the card, Pearl Silver upright on 4:5 (_incoming/sitewide-template/1c-colours/).
+    openOnCardPhoto: true,
     colorVariants: [
       {
         id: "desert-gold",
         name: "Desert Gold",
         swatchHex: "#c9a24b",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-desert-gold.webp", alt: "UWELL Caliburn G4 Pro, Desert Gold" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-desert-gold-v2.webp", alt: "UWELL Caliburn G4 Pro, Desert Gold" },
       },
       {
         id: "fantasy-pink",
         name: "Fantasy Pink",
         swatchHex: "#e6a3c0",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-fantasy-pink.webp", alt: "UWELL Caliburn G4 Pro, Fantasy Pink" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-fantasy-pink-v2.webp", alt: "UWELL Caliburn G4 Pro, Fantasy Pink" },
       },
       {
         id: "frost-white",
         name: "Frost White",
         swatchHex: "#e8ecec",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-frost-white.webp", alt: "UWELL Caliburn G4 Pro, Frost White" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-frost-white-v2.webp", alt: "UWELL Caliburn G4 Pro, Frost White" },
       },
       {
         id: "ink-blue",
         name: "Ink Blue",
         swatchHex: "#1e3a5c",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-ink-blue.webp", alt: "UWELL Caliburn G4 Pro, Ink Blue" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-ink-blue-v2.webp", alt: "UWELL Caliburn G4 Pro, Ink Blue" },
       },
       {
         id: "iron-gray",
         name: "Iron Gray",
         swatchHex: "#5c5f63",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-iron-gray.webp", alt: "UWELL Caliburn G4 Pro, Iron Gray" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-iron-gray-v2.webp", alt: "UWELL Caliburn G4 Pro, Iron Gray" },
       },
       {
         id: "light-green",
@@ -912,19 +916,19 @@ export const uwellProducts: Product[] = [
         swatchHex: "#a8d5ba",
         // 2026-09-05: official myuwell.com color-7.webp (owner-supplied link; the numbered file the
         // owner named, color-8, turned out to be Fantasy Pink — each file's printed label was read)
-        image: { src: "/assets/products/caliburn-g4-pro/variant-light-green.webp", alt: "UWELL Caliburn G4 Pro, Light Green" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-light-green-v2.webp", alt: "UWELL Caliburn G4 Pro, Light Green" },
       },
       {
         id: "pearl-silver",
         name: "Pearl Silver",
         swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-pearl-silver.webp", alt: "UWELL Caliburn G4 Pro, Pearl Silver" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-pearl-silver-v2.webp", alt: "UWELL Caliburn G4 Pro, Pearl Silver" },
       },
       {
         id: "stripe-black",
         name: "Stripe Black",
         swatchHex: "#1c1c1c",
-        image: { src: "/assets/products/caliburn-g4-pro/variant-stripe-black.webp", alt: "UWELL Caliburn G4 Pro, Stripe Black" },
+        image: { src: "/assets/products/caliburn-g4-pro/variant-stripe-black-v2.webp", alt: "UWELL Caliburn G4 Pro, Stripe Black" },
       },
     ],
     specifications: [
