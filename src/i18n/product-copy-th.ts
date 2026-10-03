@@ -204,9 +204,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       firing: "สูบได้เลย หรือกดปุ่มก็ได้",
       output: "35W",
     },
-    tagline: "Caliburn จอสี สองโหมด Storm กับ Waves",
+    tagline: "Caliburn จอสี เลือกโหมดได้ตามแนวสูบ",
     shortDescription:
-      "แบต 1300mAh สูงสุด 35 วัตต์ จอสี 0.85 นิ้ว ปรับลมได้ทั้งปุ่มเลื่อนและกลับด้านหัวพอต ใช้หัวพอต GPP",
+      "แบต 1300mAh สูงสุด 35 วัตต์ จอ 0.85 นิ้ว ปรับลมได้ทั้งปุ่มเลื่อนและกลับด้านหัวพอต",
   },
   "caliburn-g4-mini": {
     whoIsThisFor: {
@@ -246,13 +246,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       control: "กดห้าครั้ง เปิด/ปิดเครื่อง · กดสองครั้ง ล็อก/ปลดล็อกปุ่มยิง · กดครั้งเดียว ยิง/ดูระดับแบต",
       "pod-compat": "UWELL GPP · เติมได้ขณะหัวเสียบอยู่ · มีช่องใสดูระดับในหัวพอต",
     },
-    tagline: "Caliburn ใช้ไฟ RGB แทนจอ",
+    tagline: "Caliburn ที่บอกแบตด้วยสีไฟ",
     shortDescription:
-      "แบต 1400mAh สูงสุด 35 วัตต์ ไฟ RGB 14 ดวงบอกระดับแบต เซ็นเซอร์คู่ และใช้หัวพอต GPP",
+      "แบต 1400mAh สูงสุด 35 วัตต์ สูบได้ทั้งแบบดูดและกดปุ่ม",
   },
   "caliburn-g3-pro": {
     whoIsThisFor: {
-      0: "อยากได้ Caliburn ที่มีจอใหญ่ แต่ยังเป็นทรงเพรียว",
+      0: "อยากได้ Caliburn จอใหญ่ ไว้ดูวัตต์ แบต และจำนวนพัฟ",
       1: "ยังหาความแน่นของลมที่ชอบไม่เจอ อยากปรับเองทีละนิด",
     },
     specifications: {
@@ -300,7 +300,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "Caliburn ทรงกล่อง จอสี 1.8 นิ้ว",
     shortDescription:
-      "แบต 1250mAh สูงสุด 35 วัตต์ เปลี่ยนธีมหน้าจอได้ และใช้หัวพอต G3 ได้ทุกหัว",
+      "แบต 1250mAh เปลี่ยนธีมหน้าจอได้ และใช้หัวพอต G3 ได้ทุกหัว",
   },
 
   "argus-g4": {

@@ -527,7 +527,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // Site-wide template round batch 1d (04/10): from UWELL's G3 Pro / KOKO pages, spec sheet and user manual; Thai = thai-copy 04/10.
   "caliburn-g3-pro": {
     th: {
-      lede: "Caliburn G3 Pro ทรงเพรียว จอเต็มหน้าเครื่อง และปรับลมได้ละเอียด ด้านล่างไล่ให้ดูทีละอย่าง",
+      lede: "ด้านล่างไล่ดูทีละเรื่อง ตั้งแต่จอ ช่องลม ไปจนถึงหัวพอตที่ใช้ได้",
       sections: [
         {
           heading: "G3 Pro กับ G3 Pro KOKO เลือกตัวไหนดี",
@@ -548,7 +548,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     en: {
-      lede: "The Caliburn G3 Pro is the Caliburn that put a full screen on the front and an airflow valve on the side. Below, one feature at a time.",
+      lede: "Below, one thing at a time: the screen, the airflow and the pods it takes.",
       sections: [
         {
           heading: "G3 Pro or G3 Pro KOKO?",
@@ -569,7 +569,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     zh: {
-      lede: "Caliburn G3 Pro 正面是一整块屏幕，侧面有可调气流阀。下面逐项来看。",
+      lede: "下面逐项来看：屏幕、气流，以及适用的烟弹。",
       sections: [
         {
           heading: "G3 Pro 还是 G3 Pro KOKO？",
@@ -592,7 +592,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   },
   "caliburn-g3-pro-koko": {
     th: {
-      lede: "Caliburn G3 Pro KOKO ทรงกล่อง จอสีเต็มหน้าเครื่อง และแบตใหญ่กว่า G3 Pro ด้านล่างไล่ให้ดูทีละอย่าง",
+      lede: "ด้านล่างไล่ดูทีละเรื่อง ตั้งแต่จอ ธีม แบต ไปจนถึงหัวพอตที่ใช้ได้",
       sections: [
         {
           heading: "G3 Pro KOKO กับ G3 Pro เลือกตัวไหนดี",
@@ -613,7 +613,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     en: {
-      lede: "The Caliburn G3 Pro KOKO is the box-shaped G3 Pro: a full colour screen and a bigger battery. Below, one feature at a time.",
+      lede: "Below, one thing at a time: the screen, the themes, the battery and the pods it takes.",
       sections: [
         {
           heading: "G3 Pro KOKO or G3 Pro?",
@@ -634,7 +634,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     zh: {
-      lede: "Caliburn G3 Pro KOKO 是方盒版的 G3 Pro：整块彩屏，电池更大。下面逐项来看。",
+      lede: "下面逐项来看：屏幕、主题、电池，以及适用的烟弹。",
       sections: [
         {
           heading: "G3 Pro KOKO 还是 G3 Pro？",

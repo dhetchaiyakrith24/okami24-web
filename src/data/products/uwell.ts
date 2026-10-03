@@ -1017,9 +1017,9 @@ export const uwellProducts: Product[] = [
     systemType: "open-pod",
     name: "Caliburn G4",
     displayName: "UWELL CALIBURN G4",
-    tagline: "A colour screen and two modes: Storm and Waves.",
+    tagline: "A colour screen, and a mode for how you vape.",
     shortDescription:
-      "1300mAh, up to 35W, a 0.85\" colour screen, an airflow slider plus a reversible pod, and GPP pods.",
+      "1300mAh, up to 35W, a 0.85\" screen, and airflow set by a slider or by flipping the pod.",
     isFlagship: false,
     attributes: {
       batteryMah: 1300,
@@ -1395,9 +1395,9 @@ export const uwellProducts: Product[] = [
     systemType: "open-pod",
     name: "Caliburn G4 Classic",
     displayName: "UWELL CALIBURN G4 CLASSIC",
-    tagline: "The Caliburn that trades the screen for RGB light.",
+    tagline: "The Caliburn that shows its battery in colour light.",
     shortDescription:
-      "1400mAh, up to 35W, 14 RGB LEDs for the battery level, twin sensors, and GPP pods.",
+      "1400mAh, up to 35W, fires on a draw or a button press.",
     isFlagship: false,
     attributes: {
       batteryMah: 1400,
@@ -1698,7 +1698,7 @@ export const uwellProducts: Product[] = [
     displayName: "UWELL CALIBURN G3 PRO KOKO",
     tagline: "The box-shaped Caliburn with a 1.8\" colour screen.",
     shortDescription:
-      "1250mAh, up to 35W, switchable screen themes, and it takes every G3 pod.",
+      "1250mAh, switchable screen themes, and it takes every G3 pod.",
     isFlagship: false,
     attributes: {
       batteryMah: 1250,
