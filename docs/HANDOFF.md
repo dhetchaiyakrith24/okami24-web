@@ -11,118 +11,69 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — the 03/10 chat merged [ตรวจแล้ว — checker · GitHub green · deploy · live curl 200]:
-  #215 `8f9cefc` G5 owner review fixes (cover word, chip-bar margin, close-ups v3, reveal faster, article airier, phone gaps) + brand
-    logo in the hero (UWELL, INFY) — checker 11/11 · visible-text whole sitemap 654 files, 66 changes = the brand chip only.
-  #220 `20c061d` logos VOOPOO · SaltHub · JOIWAY (scale per logo, row fixed at chip height; 5 other found files pulled — no page to
-    see them at size, candidates `_incoming/g5-template/logos/`) — designer owner-eye pass → 3 fixes · checker 7/7.
-  #221 `6fe16a7` G5: one fact at most twice (article 5 → 2 sections, no lede, story bodies/points/exploded labels de-duplicated) ·
-    cover v4 (no negative margin — the wings sat over the lede on #215, lesson พ13; top rows faded, UWELL's banner crops the
-    wing) · close-ups v4 (port, airflow) · MTL/DTL guide = the airflow block's link — designer pass → every ✗ fixed · checker 2 rounds
-    PASS (round 1 FAIL on the twice-rule count → owner question, item 4) · GitHub `next build` failed once on Google Fonts, rerun green.
-  Docs: #217 #222 (§16 owner items D/E, owner eye = no draft) · #223 `40ca987` `docs/PRODUCT_PAGE_TEMPLATE.md` (batch 6 template).
-  Rules from the owner this chat (PR #216 #218 #219, not Friday's): "Owner eye" list in `.claude/agents/designer.md` — Friday and
-  the checker look with it, no drafts, every flaw fixed before going live, an owner rejection after live = fix + LESSONS line.
-2 ahead of main: nothing open [ตรวจแล้ว — git]. Leftover local branches g5-template-fix / g5-logos-trim / brand-logos-8 / g5-trim
-  are merged or superseded (g5-logos-trim = the split-up first try). Worktrees `_incoming/wt-pr` `wt-tpl` `wt-s16` can be removed
-  (`git worktree remove`). Test server 3412 UP at g5-trim be64774 (`node scripts/test-server.js stop`).
-3 OPEN: round "G5 template" (`docs/rounds/รอบG5-แม่แบบ-02-10.txt`): batches 1–5 merged (#212 #213 #215 #221) · batch 6 = template
-  doc merged (#223) + next round file drafted (OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`,
-  line added to `00-สารบัญ.txt`) + the owner's "ล็อก" on the live G5 page [รอเจ้าของ]. Working files `_incoming/g5-template/`
-  (owner-eye files `owner-eye-logos.md` · `owner-eye-g5-trim.md` · shots `oe/` · final before/after `oe/final-*.png`).
-  NEXT: owner says "ล็อก" (or lists fixes) → round-close: tag g5-template-done · `npx tsx scripts/asset-refs.ts` sweep (unreferenced
-  now: story-cover-v2, story-battery-v3, story-colours, anatomy zoom v2, part/assembled v1 if any) · §16 rewrite · the template doc's
-  status line → "locked 0x/10". Ideas seen, not done: product FAQ answers absent from server HTML (SEO round) · zh spec/FAQ English
-  site-wide · article H3 font (font-display reads narrow; designer note, pre-existing).
-3a PAUSED until the G5 template round closes: round "รอบรูป-ทั้งเว็บ" — THE STANDARD IS CALIBURN G5 (owner 02/10; file renamed from "…แบบMBar10K…", owner 02/10)
-  (`docs/rounds/รอบรูป-ทั้งเว็บ-มาตรฐานG5-30-09.txt`, working files
-  `_incoming/image-sitewide/`; this batch `b-edge/` (README = `b-edge/sources.md` + `jobs.tsv`); UWELL scripts `b-uwell/`,
-  VOOPOO `b-voopoo/`, coils `b-coils/`).
-  OWNER 01/10 evening [ตรวจแล้ว — chat]: all-options image for pod systems = `docs/IMAGE_SPEC.md` §0 item 5 · "finish the image
-  work". OWNER 02/10: the 7 SEO baseline pages are no longer held (§18) — the round file's 05/10 line is void.
-  ALL-COLOURS LAYOUT (owner 01/10 — rule in IMAGE_SPEC §0 item 5 "การจัดวาง"): few colours = UWELL float/tilt/layers · many =
-  OKami's own poster layouts, every device whole, gaps, one hero. Composer `b-edge/d6-poster.js` (VMATE · V THRU · RELX · VEUZ fan;
-  canvas from bounds). Rejected: stagger/arc/fan, tilt-cascade of 7, depth cascade / V-wings (ช7), G3 Pro fan + two rows of 16.
-  OWNER 01/10 late [ตรวจแล้ว — chat]: RELX Phantom layout OK, but vary the layout per brand ("หลายหลายแบบในแต่ละแบรน") ·
-  G3 Pro = two groups of 8 → two "ทั้งหมด" ("ทำเป็นหัวข้อ ทั้งหมด 2 ชิ้น", or a better idea).
-  Drag 6 light: AI relight test `b-edge/relx/d6-B1.png` changed badge/screen text → not publishable. OWNER 02/10: HYBRID (true
-  devices + B's light) shown on the test server FIRST. Live lineup = the owner-picked VMATE MAX layout — do not replace it before that.
-  THE METHODS THAT WORK: (a) one model, colours differ only in colour = ONE master + recolour by script — silver master:
-  `b-uwell/recolour-g4c.js`; coloured master: `b-voopoo/recolour-g3m.js` (lesson 23); GRADIENT colours = targets per height band:
-  `b-edge/recolour-g4m.js` (body) and `b-edge/recolour-g3p.js` (frame round a screen, masks `b-uwell/masks.js`); colour targets
-  from the MAKER's own photo/chart; swatch = median of the maker's photo (G3 Pro: the BACK panel; multi-tone = the more
-  colourful half — `b-edge/presize-g3p.js`) · (b) each colour its own print/texture = the night render of each colour (Drag 6,
-  ARGUS P3 `b-voopoo/p3tone.js`) · (c) single option = night card render · card from a set = tilt one colour 12°
-  (`_incoming/image-sitewide/tilt-card.js`). CUT-OUT (lesson พ11): Higgsfield remover → `b-edge/choke.js` · device clearly unlike
-  the studio grey → `scripts/flatcut.js` · ALWAYS zoom 4x on dark + magenta (`b-edge/edgezoom.js`) before use. Then presize + map
-  entries (`b-edge/presize-g3p.js` pattern) + `npx tsx scripts/process-images.ts --only <slug>` (new file names, lesson พ6). Check
-  every render for MIRRORING. Edits to CRLF files = a .js edit script (`b-edge/edit-g3p-data.js` pattern) — sed/Edit strip CR.
-  OWNER 02/10: image standard = IMAGE_SPEC §0 item 8 · Drag 6 = B's light + the true devices (hybrid), shown on the test server first.
-  OWNER 02/10: Caliburn G5 = the template for the site; the "รายละเอียดเพิ่มเติม" story + article text now belong to THIS round (below).
-  G5 TEMPLATE (owner 02/10) [ตรวจแล้ว — chat]: card = the maker's own render UPRIGHT, 4:5 ("การ์ดเอาแบบตรงเหมือนเดิม") · colour
-  images = the maker's render tilted 12° ("เอียงทุกสี") — new work only; approved upright images stay ("เอาไว้ก่อน") ·
-  all-colours image = pick 3 "group": the hero big in front on the left, the other six in two upright tiers behind, soft
-  contact shadow + faint reflection as semi-transparent pixels (`_incoming/image-sitewide/g5/` poster.js · tilt-all.js). 0 credits.
-  ARTICLE ROUND STOPPED (owner 02/10 night) [ตรวจแล้ว]: "ก้อน 3 ยกเลิก … ย้ายงานไปฝั่งรูป Friday ทำคนเดียว" = story + article
-  work now lives in THIS chat; the article round file's 【แบ่งงานกับรอบรูป】 split is void. Done: #196 `dcef02b` two held comparison
-  guides released · #194 `38a9be3` G5 `storyLayout: "stage"` (UWELL-style, per product; M Bar pages stay "split") + 6 UWELL posters
-  `story-*.webp` (+`-mo`, cut-outs float: `StoryImage.transparent`) + article `src/data/product-articles.ts` (th/en/zh, format A)
-  + 5 spec rows from UWELL's sheet + pod row/FAQ/compat fixed (INT kit = side refill) · checker ×3 · live · #208 lesson ช8.
-  Keyword plan (55 pages × 1 query, brand-page clashes) + source-table pattern: `docs/cloud-results/รอบบทความ-รายละเอียดเพิ่มเติม.md`.
-  NOT done (only when the owner asks): articles for the other 54 pages · no story mechanism on the 18 ProductMaster pages · G5
-  drawn anatomy stays until the owner's exploded view (then `ANATOMY_SHEETS["caliburn-g5"]`).
-  OWNER 02/10 (credits + agents) [ตรวจแล้ว — chat]: agents as the work needs · Higgsfield credits WITHOUT asking, also when the maker's
-  or other sites' photos fall short of the standard (IMAGE_SPEC §0 item 7) — report the spend.
-3b NEXT (owner's 02/10 morning list (1)-(4) done except Drag 6):
-  (a) Drag 6 = HYBRID light + RELX two groups (drafts without the light: `dsx/relx/drag-6-a|b.png`), test server first, owner looks.
-  (b) set 1 UWELL colour images + cards (G5 Lite 8 · G5 Lite SE 8 · G4 8 · G4 mini 12) are still the old upright files — the rollout
-    plan says "colours tilted, card upright" but the G5 ruling says approved upright images stay ("เอาไว้ก่อน") → owner (4) (40).
-  (c) G4 Pro (UWELL files = overlapping front+back pairs — AI separation or a pair poster).
-  Lineup layouts: UWELL slim = G5 "group" (`set1/poster.js`) · box = "cluster" (`set1/boxy.js`, `dsx/koko-two.js`) · VOOPOO =
-  RELX (`dsx/vp-relx2.js`) · 7+ devices = two groups ("ทั้งหมด 1 / 2").
-  (2) edge defects left (`edge-audit/visual-audit.md`): vmate-i3 · zero-pro · m-bar-15k · muro-3ml · zero-cartridge · mood-monster-14k ·
-    coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87. Remake from the maker's photos (lesson 22).
-  (4) coils — `b-coils/README.txt` (references found for the first 8, nothing generated).
-  (5) argus-g4 + Argus Multi-Ohm + M Bar 15K duplicate record (= M Switch Kit).
-  (6) BATCH 5 rest of the site (planner first; joiway-f4 · relx-creator · relx-smash-go-12k …; TFIT M Power after a researcher) ·
-  (7) Esko pod-159 LAST (stock/cart = 13.7 big (2), full set, own PR, + BSOT §21).
+1 main: `git fetch && git log -1 --oneline origin/main` — the 03/10 afternoon chat merged [ตรวจแล้ว — checker · GitHub green · deploy · live curl]:
+  #225 `e8d4de7` G5 lede back (owner on live: "the text that used to be here is gone") + LESSONS พ14 + designer Owner eye 11
+    (checker 3/3; live: the lede present after the deploy swap — a curl right after "deploy success" still showed the old page).
+  #226 `69f3686` G5 round close: 14 unused G5 images removed (asset-refs + anatomy folder by hand; kept files 200 live) ·
+    `docs/PRODUCT_PAGE_TEMPLATE.md` locked 03/10 (checker 3/3). Tag `g5-template-done` = 69f3686 (pushed).
+  Earlier 03/10: #215 #220 #221 #223 (G5 owner fixes, brand logos UWELL INFY VOOPOO SaltHub JOIWAY, one-fact-twice trim, template doc).
+2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Test server 3412 UP at 34aece7
+  (`node scripts/test-server.js stop`). Leftover local branches g5-* / brand-logos-8 / docs-* = merged.
+3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10
+  with Friday's 3 recommendations: round 3a/3b merged in and closed · brand order as written · set-1 UWELL colours re-tilted 12°).
+  Template = `docs/PRODUCT_PAGE_TEMPLATE.md` (the one home). Scope (scope-auditor 03/10) = `_incoming/sitewide-template/scope.md`
+  + the round file's 【ขอบเขต】 block: 55 product pages; PM pages (coils, IQOS, pod-180) = cards/images only, no story mechanism.
+  Batches (all tier B): 1 UWELL — PRs 1a G5 Lite + G5 Lite SE · 1b G4 + G4 mini + G4 Classic · 1c G4 Pro + G4 Pro KOKO · 1d G3 Pro +
+  G3 Pro KOKO · 2 VOOPOO (+ Drag 6 hybrid lineup on the test server first, + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*,
+  m-switch-pod, m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag
+  sitewide-template-done, asset-refs sweep of the 246 candidates, edge defects).
+  STOPPED AT: nothing built yet. NEXT: batch 1a — UWELL's G5 Lite / G5 Lite SE pages (researcher: posters, exploded view, specs),
+  storyDetails + storyLayout "stage" + story-copy th/en/zh + article + image links + colour images tilted 12° (G5 method
+  `_incoming/image-sitewide/g5/tilt-all.js`), Owner eye before the checker. A text-length counter script (1,000–3,500 unique Thai
+  chars + one fact at most twice) is to be written in `scripts/` in batch 1 (round file 【ตรวจ】).
+  Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD.
+3a THE IMAGE METHODS THAT WORK (from the old image round, kept for this round):
+  (a) one model, colours differ only in colour = ONE master + recolour by script — silver master `b-uwell/recolour-g4c.js`; coloured
+  master `b-voopoo/recolour-g3m.js` (lesson 23); gradients per height band `b-edge/recolour-g4m.js`, `b-edge/recolour-g3p.js` (masks
+  `b-uwell/masks.js`); colour targets + swatch = median of the MAKER's photo · (b) each colour its own print = a night render per colour
+  · (c) single option = night card render · card from a set = tilt one colour 12° (`_incoming/image-sitewide/tilt-card.js`).
+  CUT-OUT (lesson พ11): Higgsfield remover → `b-edge/choke.js` · unlike the studio grey → `scripts/flatcut.js` · ALWAYS zoom 4x on
+  dark + magenta (`b-edge/edgezoom.js`). Then presize + map entries + `npx tsx scripts/process-images.ts --only <slug>` (new file
+  names, lesson พ6). Check every render for MIRRORING. CRLF files = a .js edit script. Paths under `_incoming/image-sitewide/`.
+  Lineups: UWELL slim = G5 "group" (`set1/poster.js`) · box = "cluster" (`set1/boxy.js`, `dsx/koko-two.js`) · VOOPOO = RELX
+  (`dsx/vp-relx2.js`) · 7+ devices = two groups ("ทั้งหมด 1 / 2"). Drag 6: HYBRID (true devices + B's light) on the test server first.
+  Left from it: edge defects (`edge-audit/visual-audit.md`: vmate-i3 · zero-pro · m-bar-15k · muro-3ml · zero-cartridge ·
+  mood-monster-14k · coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87) · coils `b-coils/README.txt` · G4 Pro (UWELL files =
+  overlapping front+back pairs) · Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend.
-  Round close: `npx tsx scripts/asset-refs.ts` for unreferenced photos (list in item 5).
 4 waiting on owner:
-  (41) G5 lock: look at the live G5 page (after #221) and say "ล็อก" — or list what to change. Before/after: `_incoming/g5-template/oe/final-*.png`.
-  (42) G5 repeats Friday left (owner-approved text 13.3 #5 + hero/meta = SEO round): triple tap ×8 · 1600mAh ×5 · 0.85" ×3 · theme ×3 —
-       A keep (recommended: hero + approved bodies) · B cut the triple-tap tail of the display body + hero tagline in the SEO round.
-  (43) next round file (OneDrive 2-ยังไม่ทำ, 03/10): approve + its 3 questions (merge round 3a into it · brand order · re-tilt set 1).
-  (44) logos: Kardinal file says "Kardinal", the site names the brand "KS" — which? · DOTMOD only serves an emblem — keep the chip?
-  (39) look at today's new images on the live site: Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups of 8
-       products (#205-#207) — Friday's own calls, reversible by revert.
-  (40) set 1 UWELL (3b (b)): re-tilt the old upright colour images to the G5 standard, or keep them? Friday: keep until a set is redone.
-  (38) one lifestyle sample like UWELL's real-shot.webp (scene + props) — the owner wants to see it before deciding where it goes.
-  (28) Thai copy flags from thai-copy (not changed): INFY `descriptionTh` says disposable-only brand · shared strings
-       "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" / "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ"
-  (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour
-       file request
+  (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
+  (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
+  (28) Thai copy flags (not changed): INFY `descriptionTh` says disposable-only brand · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" /
+       "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ" (batch 4 needs it)
+  (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
+  Answered 03/10 (do not ask again): G5 repeats = A keep · next round approved · logos: Kardinal = the maker's "Kardinal" word logo,
+  site name "KS" stays · DOTMOD = text chip (Friday's call, owner "ตัดสินใจได้เลย").
 5 open / dated:
-  - Drag 6 tank: retailers name it UFORCE-X Tank II, the data has a "gene-tt-3" highlight — data check in a data round [เชื่อว่า].
-  - coil-94's Shipnity name "UWELL คอยล์ Caliburn G4&G3 Series" shows in Thai on en/zh pages that link it (locale-hydration-scan
-    FAIL on /products/caliburn-g3-pro en+zh — same on live before #176, not from it) [ตรวจแล้ว] — data round.
-  - SEO round (owner 02/10: the baseline hold is lifted, the final SEO round polishes + asks for re-indexing): re-read GSC against
-    `docs/SEO_BASELINE.md` · delete `galleryNoteHeld` + `heldNote` + `TITLE_PRICE_HOLD_UNTIL_2026_10_05` · M Bar 10K airflow row.
-  - `lineupFirst` has no product left — the mechanism can go in a cleanup.
-  - `dict.product.anatomyTitle` en/zh "from the outside in" (pre-existing).
-  - Carried ideas: card sweep on 4:5 · articles for the other product pages · category-structure round.
-  - Article-round leftovers: shared GPP note "Shared top-fill…" still on 8 UWELL pages (UWELL: side + top refill fit) ·
-    8 brand titles naming a model (cloud-results §2) — final SEO round.
-  - Language of reports (owner 02/10: chat = Thai for the parts he reads): 4 proposals queued for the next housekeeping round —
-    OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบเก็บบ้าน-ครั้งถัดไป-ของที่รอ.txt` (owner: "เขียนไว้ใน Run prompt รอบเก็บบ้าน").
-    OWNER 03/10 [ตรวจแล้ว — chat], also for the next housekeeping round: (D) a lower chat-move threshold in image rounds ·
-    (E) lighter rules overall · owner eye: ไม่มีส่งร่าง ขั้นตอนเท่าเดิม (PR #218 #219).
-  - Unreferenced old photos (G3 Pro/KOKO, G4 Pro KOKO, G4 Classic, ARGUS, Zero Nano, Drag 6, G5 old variants + lineup.webp; 02/10:
-    S3 / X3 / VINCI S variants/*.webp + lineup.webp, KOKO + ARGUS G3/G4 mini lineup-v2, ARGUS G4 lineup.webp …):
-    sweep at the round close with `npx tsx scripts/asset-refs.ts` (card.png of G5 / G4 Pro KOKO stay — home cinematic scenes).
+  - Drag 6 tank: retailers name it UFORCE-X Tank II, the data has a "gene-tt-3" highlight — data check [เชื่อว่า].
+  - coil-94's Thai Shipnity name shows on en/zh pages that link it (locale-hydration FAIL on caliburn-g3-pro and caliburn-g5 en+zh,
+    same on live) [ตรวจแล้ว] — data round.
+  - SEO round (owner 02/10: baseline hold lifted): GSC vs `docs/SEO_BASELINE.md` · delete `galleryNoteHeld` + `heldNote` +
+    `TITLE_PRICE_HOLD_UNTIL_2026_10_05` · M Bar 10K airflow row · G5 hero tagline repeats · product FAQ answers absent from server HTML ·
+    8 brand titles naming a model (cloud-results §2) · shared GPP note "Shared top-fill…" on 8 UWELL pages.
+  - `lineupFirst` has no product left — cleanup · `dict.product.anatomyTitle` en/zh "from the outside in" · zh spec/FAQ English site-wide ·
+    article H3 font reads narrow (designer note).
+  - `scripts/process-images.map.json` keeps "replaces" lines naming deleted G5 files (history only; the size guard skips a missing file).
+  - Housekeeping queue: OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบเก็บบ้าน-ครั้งถัดไป-ของที่รอ.txt` (+ owner 03/10 (D) lower
+    chat-move threshold in image rounds · (E) lighter rules).
+  - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
+  - visible-text "font fingerprint differs" on some live-vs-local pairs = live/local font serving [เชื่อว่า]; 03/10 pair said same.
+  - Git Bash turns "/products/x" args into Windows paths unless `MSYS_NO_PATHCONV=1` — wordbreak-scan then scans the whole sitemap.
 6 verify baseline at the last full close (clip round; numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบG5-แม่แบบ-02-10.txt`
+  Latest light set [ตรวจแล้ว — run 03/10, #225]: tsc 0 · eslint 0 · verify:catalog 29/29 · scan.js PASS 0/109 · visible-text G5 +
+  2 controls 6 changes (lede only) · wordbreak G5 NEW 1 (orphan, left).
+Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`
 ```
 
 ## 17. Tools and standing technical rules (not state — open when needed)
