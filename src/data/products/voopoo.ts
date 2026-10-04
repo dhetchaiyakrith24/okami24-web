@@ -615,12 +615,22 @@ export const voopooProducts: Product[] = [
     },
     specifications: [
       { key: "battery", label: "Battery", value: "4400mAh built-in (two 2200mAh cells)", sourceStatus: "verified" },
-      { key: "output", label: "Max output", value: "220W", sourceStatus: "verified" },
+      { key: "output", label: "Output range", value: "5–220W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
       { key: "screen", label: "Display", value: "1.66\" TFT — wattage, battery, resistance, puff count, mode", sourceStatus: "verified" },
       { key: "chip", label: "Chipset", value: "GENE.TT 3.0", sourceStatus: "verified" },
       { key: "modes", label: "Output modes", value: "SMART, RBA, TC-TCR", sourceStatus: "verified" },
-      { key: "control", label: "Control", value: "Precision adjustment wheel + capacitive unlock sensor on the fire button", sourceStatus: "verified" },
-      { key: "pod", label: "Pod platform", value: "DRAG-series coil pod (specific cartridge naming not independently confirmed)", sourceStatus: "unverified" },
+      { key: "control", label: "Control", value: "Precision Control Wheel + capacitive unlock sensor on the fire button (touch to unlock, locks again on release) · 5 presses on/off · 3 presses menu", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
+      // Batch 2b (04/10): VOOPOO's shop page + posters read file by file (_incoming/sitewide-template/2/facts-drag6.md) — the
+      // DRAG 6 is a built-in-battery mod with the UFORCE-X Tank II (PnP X coils), not a pod kit; the old "DRAG-series coil pod"
+      // row (unverified) is replaced by the maker's tank/coil rows. systemType/category stay — category structure = owner item (14).
+      { key: "tank", label: "E-liquid capacity", value: "5mL (2mL TPD), UFORCE-X Tank II, top fill", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
+      { key: "coil", label: "Coil", value: "Every PnP X coil; the kit comes with PnP X 0.15Ω and 0.3Ω", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
+      { key: "airflow", label: "Airflow", value: "Rotary airflow dial, Golden Triangle airflow", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
+      { key: "resistance", label: "Resistance range", value: "0.05–3.0Ω", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
+      { key: "charging", label: "Charging", value: "USB-C, 5V/3A", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
+      { key: "charge-time", label: "Charge time", value: "2–3 hours", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
+      { key: "dimensions", label: "Dimensions", value: "150 × 51.4 × 28.6 mm", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
+      { key: "weight", label: "Weight", value: "Approx. 280g (294g TPD)", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
     ],
     features: [
       {
@@ -631,23 +641,26 @@ export const voopooProducts: Product[] = [
       {
         id: "gene-tt-3",
         title: "GENE.TT 3.0 chipset",
-        description: "VOOPOO's higher-output chip generation, supporting SMART, RBA (rebuildable), and TC-TCR modes.",
+        description: "VOOPOO's chip for a faster draw response and steadier power output, up to 220W.",
       },
     ],
-    compatibility: [{ type: "pod", label: "DRAG-series coil pod", note: "Cartridge naming not independently confirmed." }, usbC2A],
+    compatibility: [
+      { type: "coil", label: "UFORCE-X Tank II (PnP X coils)", note: "Takes every PnP X coil; PnP X 0.15Ω and 0.3Ω come in the kit." },
+      { type: "charging", label: "USB-C", note: "5V/3A charging." },
+    ],
     whoIsThisFor: [
       "Experienced, high-wattage vapers who want a large built-in battery over swappable cells.",
       "Anyone who wants RBA/TC control alongside standard variable-wattage vaping.",
     ],
     faqs: [
       {
-        id: "drag6-rebuildable",
-        question: "Does the DRAG 6 support rebuildable coils?",
-        answer: "It includes an RBA (rebuildable atomizer) mode alongside standard SMART and TC-TCR output modes.",
+        id: "drag6-coils",
+        question: "Which coils does the DRAG 6 take?",
+        answer: "The UFORCE-X Tank II in the kit takes every PnP X coil, and PnP X 0.15Ω and 0.3Ω coils come in the box.",
       },
     ],
     relatedProductSlugs: ["drag-s3", "drag-x3"],
-    sourceUrls: ["https://www.voopoo.com/", "https://shop.voopoo.com/products/drag-6"],
+    sourceUrls: ["https://www.voopoo.com/drag-series/drag-6", "https://shop.voopoo.com/products/drag-6"],
   },
   {
     id: "drag-s3",

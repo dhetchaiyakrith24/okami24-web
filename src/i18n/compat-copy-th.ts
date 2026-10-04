@@ -25,6 +25,7 @@ export const COMPAT_LABELS_TH: Record<string, string> = {
   "Caliburn G3 pod": "หัวพอต Caliburn G3",
   "ARGUS top-fill cartridge platform": "หัวพอต ARGUS แบบเติมด้านบน",
   "DRAG-series coil pod": "หัวพอตสาย DRAG (เปลี่ยนคอยล์ได้)",
+  "UFORCE-X Tank II (PnP X coils)": "ถังน้ำยา UFORCE-X Tank II ใช้คอยล์ PnP X",
   "VINCI cartridge platform": "หัวพอต VINCI",
   "M Switch Pod cartridge": "หัวพอต M Switch Pod",
   "M Switch Kit device body": "ตัวเครื่อง M Switch Kit",
@@ -43,6 +44,8 @@ export const COMPAT_NOTES_TH: Record<string, string> = {
   // note in the data (owner 2026-09-15: the other seven lost it in every language — unverifiable).
   "5V/2A charging on current-generation devices.": "ชาร์จ 5V/2A",
   "5V/2A charging.": "ชาร์จ 5V/2A",
+  "5V/3A charging.": "ชาร์จ 5V/3A",
+  "Takes every PnP X coil; PnP X 0.15Ω and 0.3Ω come in the kit.": "ใช้คอยล์ PnP X ได้ทุกตัว ในกล่องมี 0.15Ω และ 0.3Ω",
   "0.4–3.0Ω resistance range.": "ช่วงโอห์ม 0.4–3.0Ω",
   "0.1–3.0Ω resistance range.": "ช่วงโอห์ม 0.1–3.0Ω",
   "0.3–3.0Ω resistance range.": "ช่วงโอห์ม 0.3–3.0Ω",
