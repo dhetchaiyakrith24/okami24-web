@@ -382,7 +382,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       modes: "DIY ตั้งกราฟวัตต์เองได้ บันทึกได้สูงสุด 3 ชุด · Party · ECO · SOS · Child Lock",
       control: "จอทัช และปุ่มด้านข้าง",
       firing: "สูบได้เลยโดยไม่ต้องกดปุ่ม",
-      pod: "ARGUS Snap Cartridge 2 หัว · 0.4Ω และ 0.7Ω · 2mL · เติมด้านบนโดยเปิดฝาออก · PCTG",
+      pod: "ARGUS Snap Cartridge 2 หัว · 0.4Ω และ 0.7Ω · 2mL · PCTG · เปิดฝาแล้วเติมจากด้านบน",
       "pod-compat": "หัวพอตตระกูล ARGUS ได้ทุกหัว ทั้ง Snap · Top Fill Cartridge · รุ่น CRC และ Top Fill Cartridge V2 ที่มี 0.4Ω RDL 18–30W · 0.7Ω MTL 14–18W · 1.0Ω MTL 10–14W · เช็คค่าโอห์มและวัตต์ให้ตรงกับเครื่องก่อนใช้",
       coil: "iCOSM CODE 2.0 · Liquid-Seal Shield · Mega-Core · Golden Cotton",
       airflow: "ปุ่มเลื่อนปรับลมแบบไม่มีขั้น",
