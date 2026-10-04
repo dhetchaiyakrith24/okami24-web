@@ -43,7 +43,8 @@ brand turn; moving a page to "stage" is part of that page's turn, not a side eff
   a poster.
 - Story text: title short (the chip bar shows it) · subline one line · body 1–2 sentences · points = short facts, each number
   with its `specKey` (dropped while the row is not verified).
-- Three languages for every new sentence (th/en/zh); Thai through `thai-copy`; gates = skill `thai-check`; a compound split or
+- Three languages for every new sentence (th/en/zh), all three through `thai-copy` (Thai first, en/zh from the same facts;
+  one sample block to the owner before a whole batch — owner 04/10); gates = skill `thai-check`; a compound split or
   a negation left at a line end (wordbreak-scan) is reworded, single words alone on a last line are left (HANDOFF §17).
 - Facts from the maker only (HANDOFF §18 "Product facts") · no claim THAI_STYLE §3 forbids · prices never typed.
 
