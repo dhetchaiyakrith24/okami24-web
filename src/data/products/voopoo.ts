@@ -597,7 +597,7 @@ export const voopooProducts: Product[] = [
     // facts-drag6.md. Posters = VOOPOO's files, down-sized only (2c/prep.js; the screen block = the bottom row of poster 37).
     storyDetails: true,
     storyLayout: "stage",
-    storyCover: { src: "/assets/products/drag-6/story-cover.webp", alt: "Official VOOPOO banner — the DRAG 6", sourceName: "VOOPOO", sourceUrl: "https://shop.voopoo.com/products/drag-6", width: 1920, height: 579 },
+    storyCover: { src: "/assets/products/drag-6/story-cover-v2.webp", alt: "Official VOOPOO banner — the DRAG 6", sourceName: "VOOPOO", sourceUrl: "https://shop.voopoo.com/products/drag-6", width: 2800, height: 844 },
     colorVariants: [
       { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variant-silver-v2.webp", alt: "VOOPOO DRAG 6, Silver" } },
       { id: "blue", name: "Blue", swatchHex: "#ccd6dc", image: { src: "/assets/products/drag-6/variant-blue-v2.webp", alt: "VOOPOO DRAG 6, Blue" } },

@@ -338,7 +338,7 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
     zooms: [
       { id: "screen", code: "DISPLAY", name: { th: "จอ", en: "Screen", zh: "屏幕" }, image: { src: `${D6}/zoom-screen-v1.webp`, width: 499, height: 499, alt: { th: "จอของ DRAG 6 ระยะใกล้", en: "DRAG 6 screen, close-up", zh: "DRAG 6 屏幕特写" } } },
       { id: "wheel", code: "CONTROL WHEEL", name: { th: "ล้อหมุน", en: "Control wheel", zh: "拨轮" }, image: { src: `${D6}/zoom-wheel-v1.webp`, width: 470, height: 470, alt: { th: "ล้อหมุนของ DRAG 6 ระยะใกล้", en: "DRAG 6 control wheel, close-up", zh: "DRAG 6 拨轮特写" } } },
-      { id: "airflow", code: "AIRFLOW", name: { th: "แหวนปรับลม", en: "Airflow adjustment", zh: "调气环" }, image: { src: `${D6}/zoom-airflow-v2.webp`, width: 400, height: 400, alt: { th: "แหวนปรับลมบนถังของ DRAG 6 ระยะใกล้", en: "DRAG 6 tank airflow dial, close-up", zh: "DRAG 6 烟仓调气环特写" } } },
+      { id: "airflow", code: "AIRFLOW", name: { th: "แหวนปรับลม", en: "Airflow adjustment", zh: "调气环" }, image: { src: `${D6}/zoom-airflow-v3.webp`, width: 500, height: 500, alt: { th: "แหวนปรับลมบนถังของ DRAG 6 ระยะใกล้", en: "DRAG 6 tank airflow dial, close-up", zh: "DRAG 6 烟仓调气环特写" } } },
     ],
     facts: [
       { specKey: "dimensions", text: { th: "150 × 51.4 × 28.6 mm", en: "150 × 51.4 × 28.6 mm", zh: "150 × 51.4 × 28.6 mm" } },
