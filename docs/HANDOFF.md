@@ -11,15 +11,19 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — the 04/10 chat merged #245 `5e2c363` (checker PASS round 2 at dac7159 +
-  GitHub green, BIG = uwell.ts data): head lines (tagline + short) of G3 Pro / G3 Pro KOKO / G4 / G4 Classic th + en (zh reads en),
-  so their meta description + Product JSON-LD description changed too · G3 Pro / KOKO article ledes th/en/zh · G4 Classic who-for ·
-  the 2 rejected 1d phrases fixed · deploy 37159026333 success · live meta of the 4 pages [ตรวจแล้ว — curl]. Proof:
-  `_incoming/sitewide-template/1e/` (gates4.log · vt-diff4 = 129 changes, all intended · checker files `_incoming/checker-245/`).
-  Then #247 `be4e7fc` (thai-copy voice reset, checker PASS r2) · #248 `34c4738` (BIG, checker PASS r2 at 6d9bb04, GitHub green):
-  Drag 6 all-colours = HYBRID lineup-v3.webp (lineup-v2 deleted) + G4 head line in the owner's words · deploy 37190995085 success ·
-  live drag-6 serves lineup-v3 (200 image/webp), live G4 line [ตรวจแล้ว — curl]. Shots: `_incoming/sitewide-template/2/shots/cmp-*.png`.
-2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Kits (never merge these branches):
+1 main: `git fetch && git log -1 --oneline origin/main` — the 04/10 chat merged (each checker PASS + GitHub green; live checked by curl):
+  #245 head lines G3 Pro / KOKO / G4 / G4 Classic + 2 rejected 1d phrases (proof `_incoming/sitewide-template/1e/`) · #247 thai-copy
+  voice reset · #248 Drag 6 all-colours HYBRID lineup-v3 + G4 line in the owner's words (shots `_incoming/sitewide-template/2/shots/`)
+  · #250 THAI_STYLE layer 4 = no explaining brackets · #246 #249 docs.
+2 ahead of main [ตรวจแล้ว — git]: branch `b2b-drag6-data` = OPEN PR #251 (34eb5be + 42cb34a, BIG) — checker r1 FAIL at 42cb34a, NOT merged
+  (live is unchanged and consistent). Data itself all verified against VOOPOO (checker re-traced every value). To fix before merge:
+  (a) /guides/reading-a-spec-sheet + /technology/high-output-chip-platforms use "DRAG 6 pod row is unverified" as their example → false
+  after merge: src/data/guides.ts:293-295 · guides-copy.ts th 287-293 / zh 641-647 · technology.ts:139 · technology-copy.ts th 132 /
+  zh 292 — pick another model that still has an unverified row (e.g. DRAG X3, guides.ts:214) and rewrite th/en/zh via `thai-copy`;
+  technology.ts also says "rebuildable-coil support" (not the maker's) · (b) wordbreak 390: «0.3Ω» alone on the coil row's last line
+  → reword (e.g. drop the repeated "PnP X") · non-blocking: catalog-relationships.ts:186-191 evidence tier "retailer" → maker now.
+  Checker files `_incoming/check-251/`. Then rebuild → gates (thai-check, scan.js, wordbreak) → checker re-check → merge.
+  Plus this docs PR. Kits (never merge these branches):
   1b = branch `kit-1b` (also holds `_incoming/sitewide-template/scope.md`, the round scope) · 1c = branch `kit-1c`. Get one:
   `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d material is in
   `_incoming/sitewide-template/1d/` (not in git: facts-uwell.md = every UWELL fact with its file · mk/ = UWELL page files · manual/ =
@@ -32,21 +36,22 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   2 VOOPOO (Drag 6 hybrid lineup DONE #248, + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*, m-switch-pod,
   m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
   asset-refs sweep of the 246 candidates, edge defects).
-  1d as merged: UWELL posters (G3 Pro 6 blocks, KOKO 7), th/en/zh + articles, every spec row from UWELL with sourceUrl (G3 Pro battery
-  from UWELL's user manual zip; KOKO 1250mAh — the shop had "1000mAh unverified"; facts = 1d/facts-uwell.md). KOKO card now shows
-  "1250mAh · Max 35W" sitewide. New flag `storyStartRight` (default unchanged) — G3 Pro starts poster-right (owner 03/10 "vary").
-  BATCH 2 VOOPOO — STARTED 04/10: 2a = #248 (Drag 6 all-colours, merged). Pages still to do: all 8. Material (not in git): `_incoming/sitewide-template/2/` = research-voopoo.md
-  (researcher: our data vs maker — Drag 6 is a TANK MOD with UFORCE-X Tank II / PnP X, not a pod kit; "SMART/RBA/TC-TCR", "two 2200mAh
-  cells", G3 mini 95.3 mm, VMATE i3 dims = not on the maker page; MEDIUM confidence for all but ARGUS G4 — re-read the real pages) ·
-  pages/*.html = the 7 shop pages saved with curl + `Referer: https://shop.voopoo.com/` (argus-g4 = `_incoming/argus-g4/`) ·
-  posters.md (posters.js / landing.js: poster URLs per page; Drag 6 + X3 are landing pages, 70 / 62 images to sort).
+  Flag `storyStartRight` (default off) starts a page poster-right (G3 Pro, owner 03/10 "vary").
+  BATCH 2 VOOPOO — STARTED 04/10: 2a = #248 (Drag 6 all-colours, merged) · 2b = #251 (Drag 6 data, open — item 2). Pages still to
+  do on the template: all 8. Material (not in git) `_incoming/sitewide-template/2/`: pages/*.html = the 7 shop pages (curl +
+  `Referer: https://shop.voopoo.com/`; www.voopoo.com does not resolve from this ISP — use shop.voopoo.com) · posters/<slug>/ = every
+  maker image (fetch-posters.js; sheet.js <slug> = numbered contact sheet) · facts-drag6.md = DRAG 6 facts read FILE BY FILE (cover
+  26/27 · chip 29 · tank 30+36 · screen 31+37 · battery 32 · controls 38 · PARTS VIEW 55 · box 56) · research-voopoo.md = web-summary
+  pass, UNRELIABLE (3 "not on maker" claims were wrong) → read the maker images file by file like facts-drag6.md. P3 / S3+X3 / VMATE i3 / G3 mini posters = one long 1024-px
+  "onepage" image each (posters/onepages.png) → cut into blocks; G4 mini = 6 posters 2133 px; ARGUS G4 = `_incoming/argus-g4/`.
+  sample-block-drag6.md = the reset thai-copy's first sample (A recommended / B warmer) [รอเจ้าของ (49)].
   Drag 6 HYBRID draft = `_incoming/image-sitewide/b-edge/d6-hybrid.js` → relx/d6-hy.png (true devices from relx-studio d6 × B's
   low-frequency light on a 24×48 grid per device box, clamp 0.55–1.35, mirror reflection at each foot, transparent) · sent to the owner
   04/10 as relx/d6-owner.png → owner "ได้ครับ" → live as lineup-v3 (publish: b-edge/d6-hy-publish.js) · 0 credits. Taste note
   (checker #248): the VOOPOO letters on the silver/blue/green tanks read faint at 4× under the transferred light — owner-approved.
-  NEXT, in order: (i) batch 2 data: read the posters per product (posters.md), fix the data rows against the maker (13.7 big (2) —
-  Drag 6 first: tank mod, modes, cells, charging) · (ii) copy with the reset `thai-copy`: ONE sample block (th/en/zh) to the owner
-  before the rest (owner 04/10) · (iii) story blocks page by page on the template (owner 04/10: images first, VOOPOO now).
+  NEXT, in order: (i) finish #251 (item 2) · (ii) owner's answer on (49) → Drag 6 story page on the template (posters above + parts
+  view 55 as "ไล่ดูทีละส่วน" + article) · (iii) the other 7 VOOPOO pages, each: facts file by file → data PR → story (owner 04/10:
+  images first, VOOPOO now).
   Speed (owner 04/10): one build per batch · whole-sitemap scan (≈ 20 min) only if a shared part changes · a build ≈ 8 min.
   Method that worked (1b–1d): maker page → .txt (`1b/extract.js`) · images listed in the page HTML + its `/_nuxt/*.js` chunks · ffmpeg
   stills from maker films · researcher reads posters/spec images into a facts sheet · copy-base.json (en/zh) → thai-copy → th.json →
@@ -75,9 +80,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (none open from 04/10 — (48): owner "1 ได้ครับ" to Friday's "drop the term brackets site-wide" = THAI_STYLE layer 4 · the 3 head
-       lines: owner "2 ไม่ครับ เราจะกลับไปเดินงานรูปก่อน อันนี้ทดไว้งานรอบ ภาษา - Seo ได้" · removing the EXISTING brackets in that
-       same round = Friday's reading [เชื่อว่า] — both queued in the SEO / language round below.)
+  (49) NEW 04/10 DRAG 6 sample story block (reset thai-copy) — A "ควบคุมได้ละเอียด" (recommended) vs B "หยิบขึ้นมาก็พร้อมใช้", and is
+       the voice the "สุภาพ นิ่ง ธรรมชาติ" he wants? File `_incoming/sitewide-template/2/sample-block-drag6.md` (also sent in chat).
+       VOOPOO story copy waits for this answer; data and images do not.
+  (closed 04/10: (48) = THAI_STYLE layer 4 · 3 head lines + existing brackets → SEO/language round, timing [เชื่อว่า] — item 5.)
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
@@ -94,7 +100,6 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - G3 Pro colour names (16) are not on UWELL's page (no colorsList in its code) — they came from UWELL's pack1-4 chart (01/10).
   - story-copy.ts G4 / G4 mini say the U-shaped channel "ช่วยให้ลมเดินดีขึ้น"; UWELL's KOKO poster says it stores condensate — check the
     G4 posters before changing (thai-copy flag 04/10).
-  - G3 Pro story 01 (full-screen close-up) reads small in its 1920×800 frame (checker taste note) — a tighter crop is an option.
   - `src/data/guides.ts` (which-Caliburn guide) still says G4 Classic specs are unconfirmed — verified in #233; guides = outside round.
   - G4 `firing` row ("draw or button") is sourced from the manuals.plus copy of UWELL's manual, not a UWELL page (thai-copy flag 03/10).
   - Drag 6 tank: retailers name it UFORCE-X Tank II, the data has a "gene-tt-3" highlight — data check [เชื่อว่า].
@@ -104,7 +109,6 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     shortDescription both say 2.51. `src/data/technology.ts` onboard-touch-displays calls the KOKO modes "draw modes" — outside round.
   - wordbreak on G4 Pro / KOKO: "…เติมน้ำยาได้โดยไม่ | ต้องถอดหัวออก" (1440) and "โดยไม่ | ต้องไปถึงพอตคิท" (KOKO 390) — negation at a
     line end in 1c text, found 03/10 after merge; reword with thai-copy in the next G4 Pro touch.
-  - Live screenshots from the cloud impossible (03/10, egress gateway re-signs TLS; fixes need an owner permission rule) → computer.
   - SEO round (owner 02/10: baseline hold lifted): GSC vs `docs/SEO_BASELINE.md` · delete `galleryNoteHeld` + `heldNote` +
     `TITLE_PRICE_HOLD_UNTIL_2026_10_05` · M Bar 10K airflow row · G5 hero tagline repeats · product FAQ answers absent from server HTML ·
     8 brand titles naming a model (cloud-results §2) · shared GPP note "Shared top-fill…" on 8 UWELL pages · (04/10, language
@@ -112,10 +116,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     re-word the G3 Pro / G3 Pro KOKO / G4 Classic head lines with the reset `thai-copy` (#245 lines read curt).
   - `lineupFirst` has no product left — cleanup · `dict.product.anatomyTitle` en/zh "from the outside in" · zh spec/FAQ English site-wide ·
     article H3 font reads narrow (designer note).
-  - `scripts/process-images.map.json` keeps "replaces" lines naming deleted G5 files (history only; the size guard skips a missing file).
   - Housekeeping queue: OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบเก็บบ้าน-ครั้งถัดไป-ของที่รอ.txt` (+ owner 03/10 (D) lower
     chat-move threshold in image rounds · (E) lighter rules) · stale empty folder `_incoming/wt-d` (Windows lock, delete later).
-  - Known lock limits (checker accepted): a ban hidden inside `bash -c '…'` / `python -c` is not seen by the hook.
 6 verify baseline at the last full close (clip round; numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
   Latest light set [ตรวจแล้ว — computer 04/10, #242 at aad2b63/7db5cd6]: tsc 0 · eslint 0 · verify:catalog 29 steps (only typecheck
