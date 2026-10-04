@@ -1252,14 +1252,16 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/vmate-i3/variants/black.webp",
-        alt: "VOOPOO VMATE i3, Black, isolated product shot",
-        angle: "Front, isolated",
+        // 05/10 (batch 2f-img): card-v2 = the Cyan Blue photo of the colour set below, tilted 12° like every VOOPOO card.
+        src: "/assets/products/vmate-i3/card-v2.webp",
+        alt: "VOOPOO VMATE i3, Cyan Blue, tilted product shot",
+        angle: "Front, tilted 12°",
         transparentBackground: true,
-        sourceName: "VOOPOO (shop.voopoo.com)",
-        sourceUrl: "https://shop.voopoo.com/products/vmate-i3",
+        sourceName: "OKami24 render (Higgsfield) from VOOPOO's images",
+        sourceUrl: "https://www.voopoo.com/v-series/vmate-i3",
       },
     ],
+    openOnCardPhoto: true,
     // Site-wide template round batch 2f (05/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — VOOPOO's own long
     // 1024-px poster told one panel per block (no cover: the strip's hero is portrait, so it is block 1); text in
     // src/i18n/story-copy.ts, article in src/data/product-articles.ts. Panels cut whole at the strip's quiet bands, every
@@ -1267,25 +1269,37 @@ export const voopooProducts: Product[] = [
     storyDetails: true,
     storyLayout: "stage",
     storyStartRight: true,
-    // Real VOOPOO color/finish lineup — QC pass (2026-09-04): all 7 colors sourced directly from
-    // shop.voopoo.com's own color→photo JSON binding (tier-1, see drag-6's comment for method).
-    // "Silver Black" is a genuine two-tone finish name, not a duplicate/typo. Card switched from
-    // the old "teal gradient" photo (never a confirmed exact match for "Cyan Blue") to "Black".
+    // Colours (batch 2f-img, 05/10): voopoo.com's colour banners show 11 — the 7 of the shop page + poster (names from
+    // shop.voopoo.com's colour→photo binding, QC 2026-09-04) and Yellow-orange Gradient · Green-gold Gradient · Forest Green ·
+    // Starlight Red (catalog completeness rule), in voopoo.com's order. VOOPOO's own front photos are 174 px wide and the
+    // banners show the device lying in perspective, so each colour = one Higgsfield render, upright like VOOPOO's front
+    // photo (each finish has its own texture — wave, carbon weave, marble, diamond grid, hexagon — so no shared master);
+    // owner passed the draft 05/10. Swatches = the median body colour of each photo (Neon = violet, not lime).
+    // Scripts + fidelity sheet: _incoming/sitewide-template/2/2fimg/i3/ (i3-site.js, fid-sheet.png).
     colorVariants: [
-      { id: "black", name: "Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/vmate-i3/variants/black.webp", alt: "VOOPOO VMATE i3, Black" } },
-      { id: "red", name: "Red", swatchHex: "#b83a3a", image: { src: "/assets/products/vmate-i3/variants/red.webp", alt: "VOOPOO VMATE i3, Red" } },
-      { id: "purple", name: "Purple", swatchHex: "#6b4a8e", image: { src: "/assets/products/vmate-i3/variants/purple.webp", alt: "VOOPOO VMATE i3, Purple" } },
-      { id: "pink", name: "Pink", swatchHex: "#e8899a", image: { src: "/assets/products/vmate-i3/variants/pink.webp", alt: "VOOPOO VMATE i3, Pink" } },
-      { id: "cyan-blue", name: "Cyan Blue", swatchHex: "#3ab5c6", image: { src: "/assets/products/vmate-i3/variants/cyan-blue.webp", alt: "VOOPOO VMATE i3, Cyan Blue" } },
-      { id: "neon", name: "Neon", swatchHex: "#c6f24a", image: { src: "/assets/products/vmate-i3/variants/neon.webp", alt: "VOOPOO VMATE i3, Neon" } },
-      { id: "silver-black", name: "Silver Black", swatchHex: "#7a7d80", image: { src: "/assets/products/vmate-i3/variants/silver-black.webp", alt: "VOOPOO VMATE i3, Silver Black" } },
+      { id: "cyan-blue", name: "Cyan Blue", swatchHex: "#83bec3", image: { src: "/assets/products/vmate-i3/variant-cyan-blue-v2.webp", alt: "VOOPOO VMATE i3, Cyan Blue" } },
+      { id: "silver-black", name: "Silver Black", swatchHex: "#8f8d94", image: { src: "/assets/products/vmate-i3/variant-silver-black-v2.webp", alt: "VOOPOO VMATE i3, Silver Black" } },
+      { id: "purple", name: "Purple", swatchHex: "#d7bbda", image: { src: "/assets/products/vmate-i3/variant-purple-v2.webp", alt: "VOOPOO VMATE i3, Purple" } },
+      { id: "neon", name: "Neon", swatchHex: "#953bdf", image: { src: "/assets/products/vmate-i3/variant-neon-v2.webp", alt: "VOOPOO VMATE i3, Neon" } },
+      { id: "pink", name: "Pink", swatchHex: "#d4949a", image: { src: "/assets/products/vmate-i3/variant-pink-v2.webp", alt: "VOOPOO VMATE i3, Pink" } },
+      { id: "black", name: "Black", swatchHex: "#433f44", image: { src: "/assets/products/vmate-i3/variant-black-v2.webp", alt: "VOOPOO VMATE i3, Black" } },
+      { id: "red", name: "Red", swatchHex: "#cb4346", image: { src: "/assets/products/vmate-i3/variant-red-v2.webp", alt: "VOOPOO VMATE i3, Red" } },
+      { id: "yellow-orange-gradient", name: "Yellow-orange Gradient", swatchHex: "#f39476", image: { src: "/assets/products/vmate-i3/variant-yellow-orange-gradient-v2.webp", alt: "VOOPOO VMATE i3, Yellow-orange Gradient" } },
+      { id: "green-gold-gradient", name: "Green-gold Gradient", swatchHex: "#bacbb4", image: { src: "/assets/products/vmate-i3/variant-green-gold-gradient-v2.webp", alt: "VOOPOO VMATE i3, Green-gold Gradient" } },
+      { id: "forest-green", name: "Forest Green", swatchHex: "#75aca3", image: { src: "/assets/products/vmate-i3/variant-forest-green-v2.webp", alt: "VOOPOO VMATE i3, Forest Green" } },
+      { id: "starlight-red", name: "Starlight Red", swatchHex: "#f16580", image: { src: "/assets/products/vmate-i3/variant-starlight-red-v2.webp", alt: "VOOPOO VMATE i3, Starlight Red" } },
     ],
-    // "All Colors" lineup (owner mandate, 2026-09-04) — OKami24 composite from the 7
-    // individually-verified shop.voopoo.com photos above.
+    // "ทั้งหมด" = two groups in voopoo.com order (6 + 5), the VOOPOO pod layout: _incoming/image-sitewide/dsx/vp-relx2.js
+    // vmate-i3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/vmate-i3/lineup.webp",
-      alt: "VOOPOO VMATE i3, all 7 colors",
-      sourceName: "OKami24 composite (from shop.voopoo.com photos)",
+      src: "/assets/products/vmate-i3/lineup-v2.webp",
+      alt: "VOOPOO VMATE i3, colours 1–6 of 11",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/vmate-i3/lineup2-v2.webp",
+      alt: "VOOPOO VMATE i3, colours 7–11 of 11",
+      sourceName: "OKami24 composite (from this page's colour photos)",
     },
     specifications: [
       // Batch 2f (05/10): every row re-read from VOOPOO's shop page + its long poster + www.voopoo.com, piece by piece

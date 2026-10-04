@@ -5667,5 +5667,161 @@
   "replaces": "/assets/products/argus-g4/card.webp",
   "note": "site-wide template round batch 2f-img 05/10 (owner: card too small) — VOOPOO's own Orange photo (shop.voopoo.com gallery, 2533 px), no AI: cut by scripts/flatcut.js + 2 px matte erode (_incoming/sitewide-template/2/2fimg/g4card/erode.js), tilted 12° in 2D (_incoming/image-sitewide/tilt-card.js)",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/i3/site/i3-cyan-blue.png",
+  "slug": "vmate-i3",
+  "role": "variant",
+  "id": "cyan-blue",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (_incoming/sitewide-template/2/2fimg/i3/render/cyan-1.png) — one render per finish (each has its own texture), upright like VOOPOO's front photos; cut by scripts/flatcut.js; pre-sized by _incoming/sitewide-template/2/2fimg/i3/i3-site.js",
+   "reference": "VOOPOO's own front photo of this colour (/assets/products/vmate-i3/variants/cyan-blue.webp) + VOOPOO's colour banner (voopoo.com vmate-i3 part5-pro1.webp) for colour and texture",
+   "fidelitySheet": "_incoming/sitewide-template/2/2fimg/i3/fid-sheet.png (VOOPOO banner / our render, every colour)"
+  },
+  "note": "site-wide template round batch 2f-img 05/10 — VOOPOO's photos are 174 px wide; voopoo.com shows 11 colours (shop + poster 7), catalog completeness rule",
+  "fileName": "variant-cyan-blue-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/i3/site/i3-silver-black.png",
+  "slug": "vmate-i3",
+  "role": "variant",
+  "id": "silver-black",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (_incoming/sitewide-template/2/2fimg/i3/render/silver-black-1.png) — one render per finish (each has its own texture), upright like VOOPOO's front photos; cut by scripts/flatcut.js; pre-sized by _incoming/sitewide-template/2/2fimg/i3/i3-site.js",
+   "reference": "VOOPOO's own front photo of this colour (/assets/products/vmate-i3/variants/silver-black.webp) + VOOPOO's colour banner (voopoo.com vmate-i3 part5-pro2.webp) for colour and texture",
+   "fidelitySheet": "_incoming/sitewide-template/2/2fimg/i3/fid-sheet.png (VOOPOO banner / our render, every colour)"
+  },
+  "note": "site-wide template round batch 2f-img 05/10 — VOOPOO's photos are 174 px wide; voopoo.com shows 11 colours (shop + poster 7), catalog completeness rule",
+  "fileName": "variant-silver-black-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/i3/site/i3-purple.png",
+  "slug": "vmate-i3",
+  "role": "variant",
+  "id": "purple",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (_incoming/sitewide-template/2/2fimg/i3/render/purple-1.png) — one render per finish (each has its own texture), upright like VOOPOO's front photos; cut by scripts/flatcut.js; pre-sized by _incoming/sitewide-template/2/2fimg/i3/i3-site.js",
+   "reference": "VOOPOO's own front photo of this colour (/assets/products/vmate-i3/variants/purple.webp) + VOOPOO's colour banner (voopoo.com vmate-i3 part5-pro3.webp) for colour and texture",
+   "fidelitySheet": "_incoming/sitewide-template/2/2fimg/i3/fid-sheet.png (VOOPOO banner / our render, every colour)"
+  },
+  "note": "site-wide template round batch 2f-img 05/10 — VOOPOO's photos are 174 px wide; voopoo.com shows 11 colours (shop + poster 7), catalog completeness rule",
+  "fileName": "variant-purple-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/i3/site/i3-neon.png",
+  "slug": "vmate-i3",
+  "role": "variant",
+  "id": "neon",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (_incoming/sitewide-template/2/2fimg/i3/render/neon-1.png) — one render per finish (each has its own texture), upright like VOOPOO's front photos; cut by scripts/flatcut.js; pre-sized by _incoming/sitewide-template/2/2fimg/i3/i3-site.js",
+   "reference": "VOOPOO's own front photo of this colour (/assets/products/vmate-i3/variants/neon.webp) + VOOPOO's colour banner (voopoo.com vmate-i3 part5-pro4.webp) for colour and texture",
+   "fidelitySheet": "_incoming/sitewide-template/2/2fimg/i3/fid-sheet.png (VOOPOO banner / our render, every colour)"
+  },
+  "note": "site-wide template round batch 2f-img 05/10 — VOOPOO's photos are 174 px wide; voopoo.com shows 11 colours (shop + poster 7), catalog completeness rule",
+  "fileName": "variant-neon-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/i3/site/i3-pink.png",
+  "slug": "vmate-i3",
+  "role": "variant",
+  "id": "pink",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (_incoming/sitewide-template/2/2fimg/i3/render/pink-1.png) — one render per finish (each has its own texture), upright like VOOPOO's front photos; cut by scripts/flatcut.js; pre-sized by _incoming/sitewide-template/2/2fimg/i3/i3-site.js",
+   "reference": "VOOPOO's own front photo of this colour (/assets/products/vmate-i3/variants/pink.webp) + VOOPOO's colour banner (voopoo.com vmate-i3 part5-pro5.webp) for colour and texture",
+   "fidelitySheet": "_incoming/sitewide-template/2/2fimg/i3/fid-sheet.png (VOOPOO banner / our render, every colour)"
+  },
+  "note": "site-wide template round batch 2f-img 05/10 — VOOPOO's photos are 174 px wide; voopoo.com shows 11 colours (shop + poster 7), catalog completeness rule",
+  "fileName": "variant-pink-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/i3/site/i3-black.png",
+  "slug": "vmate-i3",
+  "role": "variant",
+  "id": "black",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (_incoming/sitewide-template/2/2fimg/i3/render/black-1.png) — one render per finish (each has its own texture), upright like VOOPOO's front photos; cut by scripts/flatcut.js; pre-sized by _incoming/sitewide-template/2/2fimg/i3/i3-site.js",
+   "reference": "VOOPOO's own front photo of this colour (/assets/products/vmate-i3/variants/black.webp) + VOOPOO's colour banner (voopoo.com vmate-i3 part5-pro6.webp) for colour and texture",
+   "fidelitySheet": "_incoming/sitewide-template/2/2fimg/i3/fid-sheet.png (VOOPOO banner / our render, every colour)"
+  },
+  "note": "site-wide template round batch 2f-img 05/10 — VOOPOO's photos are 174 px wide; voopoo.com shows 11 colours (shop + poster 7), catalog completeness rule",
+  "fileName": "variant-black-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/i3/site/i3-red.png",
+  "slug": "vmate-i3",
+  "role": "variant",
+  "id": "red",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (_incoming/sitewide-template/2/2fimg/i3/render/red-1.png) — one render per finish (each has its own texture), upright like VOOPOO's front photos; cut by scripts/flatcut.js; pre-sized by _incoming/sitewide-template/2/2fimg/i3/i3-site.js",
+   "reference": "VOOPOO's own front photo of this colour (/assets/products/vmate-i3/variants/red.webp) + VOOPOO's colour banner (voopoo.com vmate-i3 part5-pro7.webp) for colour and texture",
+   "fidelitySheet": "_incoming/sitewide-template/2/2fimg/i3/fid-sheet.png (VOOPOO banner / our render, every colour)"
+  },
+  "note": "site-wide template round batch 2f-img 05/10 — VOOPOO's photos are 174 px wide; voopoo.com shows 11 colours (shop + poster 7), catalog completeness rule",
+  "fileName": "variant-red-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/i3/site/i3-yellow-orange-gradient.png",
+  "slug": "vmate-i3",
+  "role": "variant",
+  "id": "yellow-orange-gradient",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (_incoming/sitewide-template/2/2fimg/i3/render/yellow-orange-gradient-1.png) — one render per finish (each has its own texture), upright like VOOPOO's front photos; cut by scripts/flatcut.js; pre-sized by _incoming/sitewide-template/2/2fimg/i3/i3-site.js",
+   "reference": "VOOPOO's Cyan Blue front photo for the shape + VOOPOO's colour banner (voopoo.com vmate-i3 part5-pro8.webp) for colour and texture",
+   "fidelitySheet": "_incoming/sitewide-template/2/2fimg/i3/fid-sheet.png (VOOPOO banner / our render, every colour)"
+  },
+  "note": "site-wide template round batch 2f-img 05/10 — VOOPOO's photos are 174 px wide; voopoo.com shows 11 colours (shop + poster 7), catalog completeness rule",
+  "fileName": "variant-yellow-orange-gradient-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/i3/site/i3-green-gold-gradient.png",
+  "slug": "vmate-i3",
+  "role": "variant",
+  "id": "green-gold-gradient",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (_incoming/sitewide-template/2/2fimg/i3/render/green-gold-gradient-2.png) — one render per finish (each has its own texture), upright like VOOPOO's front photos; cut by scripts/flatcut.js; pre-sized by _incoming/sitewide-template/2/2fimg/i3/i3-site.js",
+   "reference": "VOOPOO's Cyan Blue front photo for the shape + VOOPOO's colour banner (voopoo.com vmate-i3 part5-pro9.webp) for colour and texture",
+   "fidelitySheet": "_incoming/sitewide-template/2/2fimg/i3/fid-sheet.png (VOOPOO banner / our render, every colour)"
+  },
+  "note": "site-wide template round batch 2f-img 05/10 — VOOPOO's photos are 174 px wide; voopoo.com shows 11 colours (shop + poster 7), catalog completeness rule",
+  "fileName": "variant-green-gold-gradient-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/i3/site/i3-forest-green.png",
+  "slug": "vmate-i3",
+  "role": "variant",
+  "id": "forest-green",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (_incoming/sitewide-template/2/2fimg/i3/render/forest-1.png) — one render per finish (each has its own texture), upright like VOOPOO's front photos; cut by scripts/flatcut.js; pre-sized by _incoming/sitewide-template/2/2fimg/i3/i3-site.js",
+   "reference": "VOOPOO's Cyan Blue front photo for the shape + VOOPOO's colour banner (voopoo.com vmate-i3 part5-pro10.webp) for colour and texture",
+   "fidelitySheet": "_incoming/sitewide-template/2/2fimg/i3/fid-sheet.png (VOOPOO banner / our render, every colour)"
+  },
+  "note": "site-wide template round batch 2f-img 05/10 — VOOPOO's photos are 174 px wide; voopoo.com shows 11 colours (shop + poster 7), catalog completeness rule",
+  "fileName": "variant-forest-green-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/i3/site/i3-starlight-red.png",
+  "slug": "vmate-i3",
+  "role": "variant",
+  "id": "starlight-red",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k (_incoming/sitewide-template/2/2fimg/i3/render/starlight-red-2t.png) — one render per finish (each has its own texture), upright like VOOPOO's front photos; cut by scripts/flatcut.js; pre-sized by _incoming/sitewide-template/2/2fimg/i3/i3-site.js",
+   "reference": "VOOPOO's Cyan Blue front photo for the shape + VOOPOO's colour banner (voopoo.com vmate-i3 part5-pro11.webp) for colour and texture",
+   "fidelitySheet": "_incoming/sitewide-template/2/2fimg/i3/fid-sheet.png (VOOPOO banner / our render, every colour)"
+  },
+  "note": "site-wide template round batch 2f-img 05/10 — VOOPOO's photos are 174 px wide; voopoo.com shows 11 colours (shop + poster 7), catalog completeness rule",
+  "fileName": "variant-starlight-red-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/i3/site/card-i3.png",
+  "slug": "vmate-i3",
+  "role": "card",
+  "replaces": "/assets/products/vmate-i3/variants/black.webp",
+  "aiRender": {
+   "tool": "the Cyan Blue render of this set tilted 12 degrees in 2D (_incoming/image-sitewide/tilt-card.js) — no new render",
+   "reference": "VOOPOO's own Cyan Blue front photo + voopoo.com banner part5-pro1",
+   "fidelitySheet": "_incoming/sitewide-template/2/2fimg/i3/fid-sheet.png"
+  },
+  "note": "batch 2f-img 05/10 — tilted card like every VOOPOO card; Cyan Blue = VOOPOO's first colour on voopoo.com and its poster hero",
+  "fileName": "card-v2.webp"
  }
 ]
