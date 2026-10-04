@@ -420,8 +420,11 @@ export const salthubProducts: Product[] = [
     // per option by swipe or chip).
     openOnCardPhoto: true,
     storyDetails: true,
-    // Opens the story: SALTHUB's own M Switch campaign poster (salthub.com/m-switch-kit/, switch_pod_kit_01.webp as served).
-    storyCover: { src: "/assets/products/m-switch-kit/story-cover.webp", alt: "Official SALTHUB M Switch campaign poster — 15K puffs, cotton mesh, Type-C, lanyard", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1920, height: 1186 },
+    // Site-wide template round batch 3b (05/10): split → the G5 template's stage (docs/PRODUCT_PAGE_TEMPLATE.md) — SALTHUB's own
+    // kit posters, one per block (1920 px, whole, down-sized only: _incoming/sitewide-template/3/3b/blocks.js). No cover: the
+    // campaign poster is 1920 px (poster-stretch ×1.36 as a full-width cover) and each of its icons has a block. Not used: the
+    // "Combination device and cartridge" poster (the head copy already says it twice).
+    storyLayout: "stage",
     flavorVariants: [
       { id: "kyoho-grape", name: "Kyoho Grape", swatchHex: "#ab8cf0", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-kyoho-grape-v4.webp", alt: "SALTHUB M Switch Kit, Kyoho Grape — device and pod" } },
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#ffffff", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-apple-aloe-v4.webp", alt: "SALTHUB M Switch Kit, Apple Aloe — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-apple-aloe.webp", alt: "SALTHUB M Switch starter kit, Apple Aloe — box and device, SALTHUB render" } },
@@ -442,37 +445,61 @@ export const salthubProducts: Product[] = [
       { id: "watermelon", name: "Watermelon", swatchHex: "#fb7a78", availability: "unknown", image: { src: "/assets/products/m-switch-kit/variant-watermelon-v4.webp", alt: "SALTHUB M Switch Kit, Watermelon — device and pod" }, boxImage: { src: "/assets/products/m-switch-kit/pack-watermelon.webp", alt: "SALTHUB M Switch starter kit, Watermelon — box and device, SALTHUB render" } },
     ],
     specifications: [
-      // Data round (2026-09-24, real browser): salthub.com product box "M SWITCH KIT · 15000 Puffs · Cotton Mesh Coil ·
-      // Type-C Fast Charging"; the M SWITCH POD box "Compatible with Switch Cartridge". SALTHUB lists the 600mAh battery
-      // under the heading "M SWITCH POD", not under the kit — so the kit's battery row stays unverified (owner's rule:
-      // the number goes only on the product the manufacturer names).
+      // Batch 3b (05/10): SALTHUB's own kit page + posters (_incoming/sitewide-template/3/facts-m-switch-kit.md). SALTHUB lists
+      // the 600mAh battery under "M SWITCH POD", not under the kit — the kit's battery row stays unverified (owner's rule).
       { key: "puffs-per-pod", label: "Puffs per pod", value: "Up to 15,000", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
       { key: "format", label: "Format", value: "Reusable device body + prefilled swap-in cartridges", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      { key: "coil", label: "Coil", value: "Cotton mesh", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/m-switch-kit/" },
+      { key: "airflow", label: "Airflow", value: "Adjust valve (slider)", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/m-switch-kit/" },
+      { key: "screen", label: "Display", value: "Digital battery display, charging and full-charge indicator", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/m-switch-kit/" },
+      { key: "charging", label: "Charging", value: "USB-C (SALTHUB: fast charging)", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/m-switch-kit/" },
       { key: "battery", label: "Battery capacity", value: "Not independently confirmed", sourceStatus: "unverified" },
     ],
     features: [
       {
-        id: "keep-the-body",
-        title: "Keep the device, swap the pod",
-        description: "Unlike a fully disposable device, only the M Switch Pod cartridge is replaced — the device body is recharged and reused.",
-        // 2026-09-30: SALTHUB's own poster for this highlight, told as a block in "more details" (`storyDetails`).
-        image: { src: "/assets/products/m-switch-kit/story-03.webp", alt: "Official SALTHUB M Switch poster, \"Combination device and cartridge\" — put the flavour cartridge into the device", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1920, height: 1186 },
+        id: "coil",
+        title: "A cotton mesh coil",
+        description: "SALTHUB says it gives an incredibly smooth, satisfying taste.",
+        subline: "This is the coil on the M Switch.",
+        image: { src: "/assets/products/m-switch-kit/story-coil.webp", alt: "SALTHUB's M Switch poster — cotton mesh, for an incredibly smooth and satisfying taste", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
+      },
+      {
+        id: "charge",
+        title: "Battery and charging",
+        description: "While it charges, a lightning mark flashes on the screen, so you can see it is charging.",
+        subline: "SALTHUB says the battery lasts longer.",
+        image: { src: "/assets/products/m-switch-kit/story-charge.webp", alt: "SALTHUB's M Switch poster — battery life last longer, Type-C charging port and the battery display", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
+      },
+      {
+        id: "airflow",
+        title: "Set the airflow",
+        description: "SALTHUB says the slider lets you set the airflow precisely.",
+        subline: "Slide the valve to adjust the airflow.",
+        image: { src: "/assets/products/m-switch-kit/story-airflow.webp", alt: "SALTHUB's M Switch poster — airflow adjust valve", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
+      },
+      {
+        id: "screen",
+        title: "A digital screen",
+        description: "At a full charge it shows 100% and switches off a second later.",
+        subline: "It always shows what's left.",
+        image: { src: "/assets/products/m-switch-kit/story-screen.webp", alt: "SALTHUB's M Switch poster — digital screen: battery level, charging indicator and full charge indicator", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
+      },
+      {
+        id: "lanyard",
+        title: "Comes with a lanyard",
+        description: "SALTHUB suggests wearing it as an accessory.",
+        subline: "Wear it round your neck and it's always to hand.",
+        image: { src: "/assets/products/m-switch-kit/story-lanyard.webp", alt: "SALTHUB's M Switch poster — equipped with a lanyard", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
       },
     ],
     compatibility: [{ type: "pod", label: "M Switch Pod cartridge" }, typeC],
     whoIsThisFor: [
-      "Disposable users who want to stop throwing away a full device every time and keep a reusable body instead.",
+      "Anyone on disposables who feels it's a waste to throw the whole device away each time.",
     ],
-    faqs: [
-      {
-        id: "m-switch-vs-disposable",
-        question: "How is this different from an M Bar disposable?",
-        answer:
-          "The M Switch Kit's device body is reusable and rechargeable — only the prefilled M Switch Pod cartridge is replaced, rather than discarding the whole unit.",
-      },
-    ],
+    // Batch 3b: the FAQ "different from an M Bar disposable?" left — the head copy already says it twice.
+    faqs: [],
     relatedProductSlugs: ["m-switch-pod", "zero-pro"],
-    sourceUrls: ["https://www.salthub.com/"],
+    sourceUrls: ["https://www.salthub.com/", "https://www.salthub.com/m-switch-kit/"],
   },
   {
     id: "m-switch-pod",

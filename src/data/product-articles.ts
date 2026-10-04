@@ -1357,6 +1357,60 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 3b (05/10): from SALTHUB's M Switch Kit page and posters; Thai = thai-copy 05/10.
+  "m-switch-kit": {
+    th: {
+      lede: "ด้านล่างไล่ดู M Switch Kit ทีละส่วนจากโปสเตอร์ของ SALTHUB เอง พร้อมบอกว่าแต่ละส่วนช่วยอะไรในการใช้งาน",
+      sections: [
+        {
+          heading: "เลือกกลิ่นแล้ว ในชุดจะได้อะไรบ้าง",
+          paragraphs: [
+            "แต่ละกลิ่นมาเป็นชุด มีตัวเครื่องคู่กับหัวพอตกลิ่นนั้นหนึ่งหัว ถ้าอยากได้หัวพอตเพิ่มหรืออยากลองกลิ่นอื่น ดูได้ที่[หน้าหัวพอต](/products/m-switch-pod)"
+          ]
+        },
+        {
+          heading: "ความจุแบตของตัวเครื่องเท่าไหร่",
+          paragraphs: [
+            "หน้า M Switch Kit บนเว็บของ SALTHUB ไม่ได้ระบุความจุแบตของตัวเครื่องไว้ เราจึงไม่ใส่ตัวเลข"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "Below, the M Switch Kit one part at a time, from SALTHUB's own posters.",
+      sections: [
+        {
+          heading: "What comes with each flavour?",
+          paragraphs: [
+            "Each flavour comes as the device with one pod of that flavour. Spare pods and other flavours are on the [pod page](/products/m-switch-pod)."
+          ]
+        },
+        {
+          heading: "How big is the battery?",
+          paragraphs: [
+            "SALTHUB doesn't give the kit's own battery size on its kit page, so we don't print one here."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "下面根据 SALTHUB 自己的海报，逐项来看 M Switch Kit。",
+      sections: [
+        {
+          heading: "每个口味的套装里有什么？",
+          paragraphs: [
+            "每个口味都是主机加一颗该口味的烟弹。备用烟弹见[烟弹页面](/products/m-switch-pod)。"
+          ]
+        },
+        {
+          heading: "电池有多大？",
+          paragraphs: [
+            "SALTHUB 的套装页面没有写机身电池容量，所以这里不写。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

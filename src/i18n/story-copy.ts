@@ -1395,4 +1395,67 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       ],
     },
   },
+  // Site-wide template round batch 3b (05/10): SALTHUB's own M Switch Kit page + posters (_incoming/sitewide-template/3/
+  // facts-m-switch-kit.md lists the source of each line); Thai = thai-copy 05/10.
+  "m-switch-kit": {
+    "coil": {
+      title: { th: "คอยล์ cotton mesh", en: "A cotton mesh coil", zh: "棉网线圈" },
+      subline: { th: "คอยล์แบบนี้ใช้กับ M Switch", en: "This is the coil on the M Switch.", zh: "M Switch 用的就是这种线圈。" },
+      body: {
+        th: "SALTHUB ระบุว่าคอยล์แบบนี้ให้รสที่นุ่มมากและเต็มอิ่ม",
+        en: "SALTHUB says it gives an incredibly smooth, satisfying taste.",
+        zh: "SALTHUB 表示它能带来非常顺滑、满足的口感。",
+      },
+      points: [
+        { text: { th: "หัวละสูงสุด 15,000 พัฟ", en: "Up to 15,000 puffs per pod", zh: "每颗烟弹最多 15,000 口" }, specKey: "puffs-per-pod" },
+      ],
+      link: { href: "/products/m-switch-pod", label: { th: "ดูกลิ่นของหัวพอตที่ใช้กับเครื่องนี้", en: "See the pod flavours", zh: "查看烟弹口味" } },
+    },
+    "charge": {
+      title: { th: "แบตเตอรี่และการชาร์จ", en: "Battery and charging", zh: "电池与充电" },
+      subline: { th: "SALTHUB ระบุว่าแบตใช้งานได้นานขึ้น", en: "SALTHUB says the battery lasts longer.", zh: "SALTHUB 表示续航更久。" },
+      body: {
+        th: "ระหว่างชาร์จ รูปสายฟ้าบนหน้าจอจะกะพริบ จึงเห็นได้ทันทีว่าไฟกำลังเข้า",
+        en: "While it charges, a lightning mark flashes on the screen, so you can see it is charging.",
+        zh: "充电时，屏幕上的闪电标志会闪烁，一看就知道正在充电。",
+      },
+      points: [
+        { text: { th: "ช่องชาร์จ USB-C", en: "USB-C charging port", zh: "USB-C 充电口" }, specKey: "charging" },
+      ],
+    },
+    "airflow": {
+      title: { th: "ปรับช่องลมได้เอง", en: "Set the airflow", zh: "调节进气" },
+      subline: { th: "เลื่อนปุ่มปรับลมได้ตามต้องการ", en: "Slide the valve to adjust the airflow.", zh: "推动阀门调节进气。" },
+      body: {
+        th: "SALTHUB ระบุว่าปุ่มนี้ปรับลมได้อย่างแม่นยำ จึงตั้งลมให้พอดีกับความชอบของตัวเองได้",
+        en: "SALTHUB says the slider lets you set the airflow precisely.",
+        zh: "SALTHUB 表示这个滑块可以精确调节进气量。",
+      },
+      points: [
+        { text: { th: "ปุ่มเลื่อนปรับลมข้างตัวเครื่อง", en: "Airflow adjust valve", zh: "进气调节阀" }, specKey: "airflow" },
+      ],
+      link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกวัตต์และช่องลม", en: "How to choose wattage and airflow", zh: "如何选择功率与进气量" } },
+    },
+    "screen": {
+      title: { th: "หน้าจอดิจิทัล", en: "A digital screen", zh: "数字屏幕" },
+      subline: { th: "บอกแบตที่เหลือไว้ให้ดูตลอดเวลา", en: "It always shows what's left.", zh: "随时显示剩余电量。" },
+      body: {
+        th: "เมื่อชาร์จเต็ม หน้าจอจะขึ้น 100% แล้วดับไปหลังจากนั้น 1 วินาที",
+        en: "At a full charge it shows 100% and switches off a second later.",
+        zh: "充满时显示 100%，一秒后熄灭。",
+      },
+      points: [
+        { text: { th: "แสดงแบตเป็นตัวเลขเปอร์เซ็นต์", en: "Battery shown as a percentage", zh: "电量以百分比显示" }, specKey: "screen" },
+      ],
+    },
+    "lanyard": {
+      title: { th: "มีสายคล้องคอมาให้", en: "Comes with a lanyard", zh: "附挂绳" },
+      subline: { th: "คล้องคอไว้ พกติดตัวไปไหนก็สะดวก", en: "Wear it round your neck and it's always to hand.", zh: "挂在脖子上，随身携带很方便。" },
+      body: {
+        th: "SALTHUB ระบุว่าคล้องไว้เป็นเครื่องประดับที่ดูทันสมัยได้ด้วย",
+        en: "SALTHUB suggests wearing it as an accessory.",
+        zh: "SALTHUB 建议把它当作配饰佩戴。",
+      },
+    },
+  },
 };
