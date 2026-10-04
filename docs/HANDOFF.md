@@ -77,9 +77,6 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   36 credits [ตรวจแล้ว — `balance`, 2dfix/credits.txt]; 2k = 2 each, 4k more). The app's auto-mode guard blocks uploads to Higgsfield until the owner allows it in that chat (04/10 did).
 4 waiting on owner:
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
-  #259 (04/10): the 12 sharp DRAG posters · the X3 cover is now VOOPOO's pink banner with no baked "DRAG X3" title (the old one was
-  champagne + title, too small to save) — keep or ask for another · the DRAG 6 GENE.TT chip poster keeps the AI-redrawn micro-circuit
-  (a rendered chip graphic, not a product surface — Friday's call) — keep, or put VOOPOO's soft pixels back (one composite box).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags (not changed): INFY `descriptionTh` says disposable-only brand · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" /
