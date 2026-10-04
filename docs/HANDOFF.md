@@ -70,7 +70,6 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (51) NEW 04/10 broken S3/X3 posters — A cloud fetch from www.voopoo.com (recommended) · B show smaller · C drop the cover (item 5).
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
@@ -81,9 +80,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - FIRST in the next chat (owner 04/10 on live #255, LESSONS พ17): DRAG X3 story-cover is visibly broken (904-px crop of VOOPOO's
     1024-px strip, shown ~1,200 px wide) and X3 posters 3–4 soft (owner: "ภาพ 3-4 ด้วยเช่นกันแต่ไม่แย่เท่าใบแรก" — which two = check
     with him / read as unlock + screen [เชื่อว่า]); same source for every S3 poster. Larger VOOPOO files on hand: X3 26-dragx3 1440×580,
-    32-X3-0 1280×560, 46/47 2100×1100 (colour line-up). Options (waiting on owner (51)): A fetch the posters from www.voopoo.com from a
-    cloud chat (that domain does not resolve from this ISP) · B show posters no wider than file ÷ 1.3 · C drop the cover where no
-    larger file exists. Also add a poster-stretch check (file width vs shown width × 2) and re-check DRAG 6's 766-px posters.
+    32-X3-0 1280×560, 46/47 2100×1100 (colour line-up). Owner 04/10: "สั่ง Upscale ดีกว่ามั้ย พี่ต้องการทำงานบนเครื่องก่อน" →
+    AI-upscale each poster on this computer; Friday raised LESSONS พ12 once → gate: 4× zoom every letter vs the original, any letter
+    changed = that file falls back to a larger VOOPOO file / shown smaller. Report credits spent. Also add a poster-stretch check (file width vs shown width × 2) and re-check DRAG 6's 766-px posters.
   - DEFERRED by the owner 04/10 ("ข้ามไปตัวอื่นก่อน ไว้ค่อยกลับมาแก้" — no date; Friday's plan: after the VOOPOO pages): DRAG S3 + X3 colour
     photos + two-group line-ups (owner on live #255: "ภาพสินค้า-รูปรวมยังดูเป็นกราฟฟิกเหมือนเดิม ทดไว้มาแก้รอบหลัง จดเอาไว้คู่กับ Drag 6") and the
     DRAG 6 all-colours image lineup-v3 — "รูปรวมยังเล็กไป สินค้ายังดู
