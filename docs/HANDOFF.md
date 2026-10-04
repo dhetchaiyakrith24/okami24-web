@@ -13,8 +13,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 
 1 main: `git fetch && git log -1 --oneline origin/main` — night 05→06/10 [ตรวจแล้ว — gh + curl]: #271 5b2545e (2g ARGUS G4) ·
   #273 694a1e8 (3a Zero Pro) · #274 10ab2a9 (3b M Switch Kit) · #275 f429625 (3e M Bar 15K data) — all BIG, checker PASS, deploy OK.
-2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Material not in git: `_incoming/sitewide-template/2/2fimg/` (p3-green-site.js ·
-  g4card/ · i3/ = www banners, render/, i3-site.js, keepdev.js, srtone.js, fid-sheet.png, shots/) · `2/2f/` · `2/2e/` etc. Kits (never merge): `kit-1b` (+ scope.md) ·
+2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Material not in git: `_incoming/sitewide-template/2/` (VOOPOO, per batch) · `3/` (SALTHUB). Kits (never merge): `kit-1b` (+ scope.md) ·
   `kit-1c` — `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d + 2x =
   local only — push a kit branch before a cloud chat needs it.
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
@@ -28,7 +27,6 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   2e #262 = ARGUS G4 mini + G3 mini · 2f #264 = ARGUS P3 + VMATE i3 story pages · 2f-img #267 + #268 = P3 Green Leather +
   two-group lineups, ARGUS G4 card-v2 (owner: "การ์ดเล็กไป"), VMATE i3 all 11 colours · 2g #271 = ARGUS G4 story page (7 VOOPOO
   panels, Multi-Ohm 0.7 / flip 1.0 / double press 0.4Ω, `2/2g/`). BATCH 2 DONE except the owner-deferred image work (item 5).
-  "Argus Multi-Ohm" = not a catalog product (no Shipnity row) → told on the G4 page only · M Bar 15K data → batch 3 (SALTHUB).
   BATCH 3 SALTHUB (`_incoming/sitewide-template/3/`: inventory.md, facts-<slug>.md, posters/, STATE.md) — 3a #273 Zero Pro (banner as
     block 1: 1920-px file too narrow for the cover · Black re-cut from SALTHUB colour poster 4 · lineups 1/2) · 3b #274 M Switch Kit
     split → stage (no cover, 5 blocks) · 3e #275 M Bar 15K plain data errors (ceramic coil, 600mAh, airflow, Black Berry swatch) ·
