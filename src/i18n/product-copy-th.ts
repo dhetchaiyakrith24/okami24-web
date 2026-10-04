@@ -496,12 +496,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       battery: "2000mAh ในตัว",
-      pod: "4.5mL (2mL ตามมาตรฐาน TPD)",
+      pod: "4.5mL (2mL ในเวอร์ชัน TPD)",
       fill: "เติมด้านบน",
       materials: "อะลูมิเนียมอัลลอยและ PC",
     },
     tagline: "40 วัตต์ หัวพอตเติมด้านบน",
-    shortDescription: "พอตคิทแบตเตอรี่ 2000mAh 5–40 วัตต์ หัวพอตเติมด้านบนความจุ 4.5mL (2mL ตามมาตรฐาน TPD) ช่วง 0.3–3.0 โอห์ม",
+    shortDescription: "พอตคิทแบตเตอรี่ 2000mAh 5–40 วัตต์ หัวพอตเติมด้านบนความจุ 4.5mL (2mL ในเวอร์ชัน TPD) ช่วง 0.3–3.0 โอห์ม",
     features: {
       "topside-fill": {
         title: "หัวพอตเติมด้านบน",

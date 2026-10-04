@@ -57,7 +57,7 @@ export const TECHNOLOGY_COPY_TH: Record<string, TechnologyCopy> = {
         heading: "ตัวอย่างจริง: ARGUS G3 mini ในกล่องมีหัวพอตค่าเดียว (0.7 โอห์ม)",
         paragraphs: [
           "[ARGUS G3 mini](/products/argus-g3-mini) เป็นพอตคิทระบบออโต้ (auto-draw) ไม่มีปุ่มยิง สเปกบอกว่าเครื่องปรับวัตต์ให้เองตามหัวพอตที่ใส่ สูงสุด 30 วัตต์ แปลว่าระบบรองรับหัวพอตมากกว่าค่าเดียว",
-          "แต่ในกล่องมีหัวพอตค่าเดียว คือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม 3mL (2mL ตามมาตรฐาน TPD) มีระบบกันรั่ว iCOSM CODE 2.0 ส่วนตัวเครื่องแบตในตัว 1350mAh",
+          "แต่ในกล่องมีหัวพอตค่าเดียว คือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม 3mL (2mL ในเวอร์ชัน TPD) มีระบบกันรั่ว iCOSM CODE 2.0 ส่วนตัวเครื่องแบตในตัว 1350mAh",
           "บอกตรง ๆ ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก ที่ได้คือหัวที่มาในกล่อง ทั้ง ARGUS G4, ARGUS G4 mini, ARGUS P3 และ ARGUS G3 mini ยังไม่มีหัวพอตขายแยกในแคตตาล็อก",
           "ส่วน MTL กับ RDL ที่พูดถึงข้างบนให้ความรู้สึกต่างกันยังไง อ่านที่ [MTL กับ DTL](/guides/understanding-mtl-vs-dtl)",
         ],
