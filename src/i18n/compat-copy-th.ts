@@ -59,11 +59,15 @@ export const COMPAT_NOTES_TH: Record<string, string> = {
   // ARGUS G3 mini and VINCI S — the 1A figure is the product's own `attributes.chargingType`.
   "Lower-amperage charging on this model.": "ชาร์จด้วยไฟ 1A",
   "Cartridge naming not independently confirmed.": "",
-  "V2 pod compatible, 0.4–3.0Ω.": "ใช้หัว V2 ได้ด้วย ช่วงโอห์ม 0.4–3.0Ω",
   // Batch 2e (04/10): ARGUS G4 mini, from VOOPOO's own page (thai-copy).
   "Two in the kit.": "ในกล่องมีมาให้สองหัว",
   // Batch 2e (04/10): ARGUS G4 mini, from VOOPOO's own page (thai-copy).
   "5V/1.5A charging.": "ชาร์จ 5V/1.5A",
+  // Batch 2f (05/10): ARGUS P3 / VMATE i3, from VOOPOO's own pages (thai-copy).
+  "ARGUS Snap Cartridge": "หัวพอต ARGUS Snap Cartridge",
+  "0.4Ω and 0.7Ω in the kit.": "ในกล่องมีมาให้ทั้ง 0.4 โอห์มและ 0.7 โอห์ม",
+  "VMATE Top Fill Cartridge": "หัวพอต VMATE Top Fill Cartridge",
+  "0.7Ω in the kit; VMATE Cartridge V2 fits too.": "ในกล่องมีหัว 0.7 โอห์มมาให้ และใช้ VMATE Cartridge V2 ได้ด้วย",
   "Rechargeable via USB-C.": "ชาร์จซ้ำได้",
 };
 

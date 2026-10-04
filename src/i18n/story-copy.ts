@@ -1124,4 +1124,128 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       ],
     },
   },
+  // Site-wide template round batch 2f (05/10): VOOPOO's own ARGUS P3 / VMATE i3 pages + posters
+  // (_incoming/sitewide-template/2/2f/facts-argus-p3.md + facts-vmate-i3.md list the source of each line); Thai = thai-copy 05/10.
+  "argus-p3": {
+    "touchfree": {
+      title: { th: "เลือกได้ทั้งหนังและโลหะ", en: "Leather or metal", zh: "皮革或金属" },
+      subline: { th: "ชุดสีหนังมีให้เลือกหลายสี และยังมีรุ่น Metal Edition", en: "Leather finishes, or the Metal Edition.", zh: "皮革款，或金属版。" },
+      body: {
+        th: "รุ่น Metal Edition มีลายเฟืองกับโลโก้ EVEREST LAB อยู่ที่ด้านหลัง ส่วนชุดสีหนังบางสี อย่าง Blue Leather ก็มีลายตัวอักษร ARGUS ตัวใหญ่พาดไว้เต็มแผ่น",
+        en: "The Metal Edition carries a gear pattern and the EVEREST LAB logo on the back; leather colours such as Blue Leather have a large ARGUS script across theirs.",
+        zh: "金属版背面是齿轮纹和 EVEREST LAB 标志；Blue Leather 等皮革配色则印着满版的 ARGUS 大字。",
+      },
+      points: [
+        { text: { th: "กรอบเครื่องเป็นซิงค์อัลลอย", en: "Zinc alloy frame", zh: "锌合金边框" }, specKey: "materials" },
+        { text: { th: "หัวพอตใช้ iCOSM CODE 2.0", en: "iCOSM CODE 2.0 in the cartridge", zh: "烟弹采用 iCOSM CODE 2.0" }, specKey: "coil" },
+      ],
+    },
+    "minibox": {
+      title: { th: "ถือได้ในมือเดียว", en: "Small enough for one hand", zh: "一只手就能握住" },
+      subline: { th: "Mini BOX แบบจอทัชเต็มจอรุ่นแรกของ VOOPOO", en: "VOOPOO's first full-touch Mini BOX.", zh: "VOOPOO 首款全触控 Mini BOX。" },
+      body: {
+        th: "ถึงด้านหน้าจะเป็นจอทั้งหน้า ตัวเครื่องก็หนักเพียง 82 กรัม",
+        en: "The whole front is screen, yet it weighs just 82g.",
+        zh: "整个正面都是屏幕，机身却只有 82g。",
+      },
+      points: [
+        { text: { th: "จอโค้งลงไปทั้งสองขอบ", en: "Screen curves over both edges", zh: "屏幕两侧弯曲包边" }, specKey: "screen" },
+        { text: { th: "แบต 1500mAh ในตัว", en: "1500mAh built-in battery", zh: "内置 1500mAh 电池" }, specKey: "battery" },
+        { text: { th: "ปุ่มด้านข้างปุ่มเดียว ใช้สั่งงานได้หลายอย่าง", en: "One side button for several functions", zh: "侧面一个按键，可操作多项功能" }, specKey: "control" },
+        { text: { th: "ปุ่มเลื่อนปรับลมแบบไม่มีขั้น", en: "Stepless airflow slider", zh: "无级进气调节" }, specKey: "airflow" },
+      ],
+    },
+    "touch": {
+      title: { th: "สิ่งที่อยู่บนจอ", en: "What's on the screen", zh: "屏幕上有什么" },
+      subline: { th: "แตะครั้งเดียวก็ปรับวัตต์ได้ และยังตั้งค่าอื่น ๆ ได้อีกหลายอย่าง", en: "Wattage in one tap, and plenty more to set.", zh: "一触即可调功率，还有更多设置可调。" },
+      body: {
+        th: "เครื่องจะเก็บจำนวนพัฟและเวลาที่สูบไว้ให้ ดูย้อนหลังได้ทั้งรายวันและรายเดือน ส่วนหน้าปัด ยิ่งใช้เครื่องนานก็จะปลดล็อกให้เลือกได้มากขึ้น",
+        en: "It keeps your puffs and vaping time by day and over months, and more watch faces unlock the longer you use it.",
+        zh: "它会按天、按月记录口数和抽吸时长；用得越久，解锁的表盘越多。",
+      },
+      points: [
+        { text: { th: "โหมด DIY ตั้งกราฟวัตต์เองได้ บันทึกไว้ได้สูงสุด 3 ชุด", en: "DIY power curve, up to three saved sets", zh: "DIY 功率曲线，最多保存三组" }, specKey: "modes" },
+        { text: { th: "โหมด Party ECO SOS และ Child Lock", en: "Party, ECO, SOS and Child Lock modes", zh: "派对、ECO、SOS 和童锁模式" }, specKey: "modes" },
+        { text: { th: "หน้าปัดมากกว่า 18 แบบ", en: "18+ watch faces", zh: "18 款以上表盘" }, specKey: "screen" },
+      ],
+      link: { href: "/technology/onboard-touch-displays", label: { th: "อ่านเรื่องพอตจอทัช", en: "How touchscreen pods work", zh: "了解触屏烟具" } },
+    },
+    "family": {
+      title: { th: "หัวพอตตระกูล ARGUS", en: "The ARGUS pod family", zh: "ARGUS 烟弹家族" },
+      subline: { th: "รวมถึง Snap Cartridge รุ่นใหม่ ที่เปิดฝาด้านบนแล้วเติมน้ำยาได้เลย", en: "Including the new Snap Cartridge, with a cap that snaps open.", zh: "包括全新的 Snap 烟弹，翻盖一掀即开。" },
+      body: {
+        th: "ใส่กับเครื่องนี้ได้ทุกหัว ค่าด้านล่างมาจากตารางของ VOOPOO ซึ่งแนะนำให้เช็คค่าโอห์มและวัตต์ก่อนใช้",
+        en: "They all fit this device. The figures below are VOOPOO's table, and VOOPOO asks you to check the resistance and output first.",
+        zh: "这些烟弹都能装在这台主机上。下面的数据来自 VOOPOO 的表格，VOOPOO 建议先核对阻值和功率。",
+      },
+      points: [
+        { text: { th: "0.4 โอห์ม สำหรับ RDL ที่ 18–30 วัตต์", en: "0.4Ω: RDL, 18–30W", zh: "0.4Ω：RDL，18–30W" }, specKey: "pod-compat" },
+        { text: { th: "0.7 โอห์ม สำหรับ MTL ที่ 14–18 วัตต์", en: "0.7Ω: MTL, 14–18W", zh: "0.7Ω：MTL，14–18W" }, specKey: "pod-compat" },
+        { text: { th: "1.0 โอห์ม สำหรับ MTL ที่ 10–14 วัตต์", en: "1.0Ω: MTL, 10–14W", zh: "1.0Ω：MTL，10–14W" }, specKey: "pod-compat" },
+        { text: { th: "Snap Cartridge จุน้ำยา 2mL ตัวหัวเป็น PCTG", en: "Snap Cartridge: 2mL, PCTG", zh: "Snap 烟弹：2mL，PCTG 材质" }, specKey: "pod" },
+      ],
+      link: { href: "/guides/understanding-mtl-vs-dtl", label: { th: "อ่านเรื่อง MTL กับ DTL", en: "Read: MTL vs. DTL", zh: "了解 MTL 与 DTL 的区别" } },
+    },
+  },
+  "vmate-i3": {
+    "pocket": {
+      title: { th: "ทำมาให้พกติดตัว", en: "Made for the pocket", zh: "为口袋而生" },
+      subline: { th: "เครื่องที่หยิบติดมือออกจากบ้านได้ทุกวัน", en: "One to take with you every day.", zh: "每天都能随手带出门。" },
+      body: {
+        th: "ตัวเครื่องหนาเพียง 15.1mm ใส่กระเป๋ากางเกงได้สบาย",
+        en: "At 15.1mm thick, it slips into a trouser pocket.",
+        zh: "机身厚 15.1mm，放进裤袋刚好。",
+      },
+      points: [
+        { text: { th: "ไม่มีปุ่ม สูบได้เลย", en: "Draw-activated, no buttons", zh: "吸气启动，没有按键" }, specKey: "firing" },
+        { text: { th: "ตัวเครื่องอะลูมิเนียมอัลลอย", en: "Aluminium alloy body", zh: "铝合金机身" }, specKey: "materials" },
+      ],
+    },
+    "power": {
+      title: { th: "ตัวเครื่องเบา แต่แบตอึด", en: "Light, with a battery that lasts", zh: "很轻，电池却很耐用" },
+      subline: { th: "หนัก 49.8 กรัม พอ ๆ กับไข่หนึ่งฟอง", en: "49.8g, about as much as an egg.", zh: "49.8g，和一颗鸡蛋差不多。" },
+      body: {
+        th: "ผิวตัวเครื่องมีให้เลือกสามลาย ส่วนแถบไฟด้านข้างจะเปลี่ยนสีตามแบตที่เหลือ ดูแล้วรู้ได้เลยว่าควรชาร์จเมื่อไหร่",
+        en: "VOOPOO finishes it in three different textures, and a light strip on the side tells you how much battery is left.",
+        zh: "VOOPOO 给它做了三种不同的纹理，侧面的灯带会告诉你还剩多少电。",
+      },
+      points: [
+        { text: { th: "แบต 1500mAh ในตัว", en: "1500mAh built-in battery", zh: "内置 1500mAh 电池" }, specKey: "battery" },
+        { text: { th: "ไฟสีแดงเมื่อแบตเหลือไม่เกิน 30% สีน้ำเงินที่ 30–70% และสีเขียวตั้งแต่ 70% ขึ้นไป", en: "Red up to 30%, blue 30–70%, green from 70%", zh: "30% 以下红色，30–70% 蓝色，70% 及以上绿色" }, specKey: "indicator" },
+        { text: { th: "ชาร์จเร็วผ่าน USB-C 5V/2A", en: "USB-C, 5V/2A fast charging", zh: "USB-C 快充，5V/2A" }, specKey: "charging" },
+        { text: { th: "ปุ่มเลื่อนปรับลม ปรับได้ตั้งแต่ MTL แบบแน่นจนถึง RDL ที่ลมโล่ง", en: "Airflow slider, from a tight MTL to an airy RDL", zh: "进气滑块，从偏紧的 MTL 到通畅的 RDL" }, specKey: "airflow" },
+      ],
+      link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกวัตต์และช่องลม", en: "How to choose wattage and airflow", zh: "如何选择功率与进气量" } },
+    },
+    "cartridge": {
+      title: { th: "หัวพอตที่ใช้ได้นานขึ้น", en: "A longer-lasting cartridge", zh: "更耐用的烟弹" },
+      subline: { th: "VMATE Top Fill Cartridge ใช้เทคโนโลยี iCOSM CODE ของ VOOPOO", en: "The VMATE Top Fill Cartridge, built on iCOSM CODE.", zh: "VMATE Top Fill Cartridge，采用 iCOSM CODE。" },
+      body: {
+        th: "เติมน้ำยาจากด้านบนได้โดยไม่ต้องถอดหัวพอตออกจากเครื่อง ส่วนตัวเลขสองข้อด้านล่างมาจากผลทดสอบในห้องแล็บของ VOOPOO เอง",
+        en: "You fill it from the top without taking it out. The two figures below are from VOOPOO's own lab tests.",
+        zh: "不用取下烟弹，从顶部就能注油。下面两个数字来自 VOOPOO 自己的实验室测试。",
+      },
+      points: [
+        { text: { th: "คอยล์ใช้ได้กับน้ำยา 90mL", en: "Coil life: 90mL of liquid", zh: "线圈寿命：90mL 烟油" }, specKey: "coil" },
+        { text: { th: "ตั้งทิ้งไว้ 30 วันโดยน้ำยาไม่รั่วซึม", en: "No leaks after 30 days standing", zh: "静置 30 天不漏油" }, specKey: "coil" },
+        { text: { th: "จุน้ำยา 3mL (2mL ในเวอร์ชัน TPD)", en: "3mL (2mL in the TPD version)", zh: "容量 3mL（TPD 版 2mL）" }, specKey: "pod" },
+      ],
+    },
+    "family": {
+      title: { th: "ใส่หัวพอต VMATE ได้ทุกหัว", en: "Every VMATE cartridge fits", zh: "VMATE 烟弹全都能用" },
+      subline: { th: "มีหัวพอตสองรุ่น รวมห้าแบบให้เลือก", en: "Two cartridge lines, five options.", zh: "两个烟弹系列，共五款可选。" },
+      body: {
+        th: "ถ้าอยากเปลี่ยนแนวการสูบ ก็เปลี่ยนไปใช้หัวที่โอห์มต่างออกไปได้ โดย VOOPOO แนะนำให้เช็คค่าโอห์มและวัตต์ก่อนใช้",
+        en: "To change the draw, pick another resistance; VOOPOO asks you to check the resistance and output first.",
+        zh: "想换吸感就换别的阻值；VOOPOO 建议先核对阻值和功率。",
+      },
+      points: [
+        { text: { th: "Top Fill 0.4 โอห์ม สำหรับ RDL หน้าเว็บ VOOPOO ระบุว่าต้องใช้ 30 วัตต์ขึ้นไป", en: "Top Fill 0.4Ω: RDL; VOOPOO's site says it needs 30W or more", zh: "Top Fill 0.4Ω：RDL；VOOPOO 官网注明需 30W 以上" }, specKey: "pod-compat" },
+        { text: { th: "Top Fill 0.7 โอห์ม ที่ 15–25 วัตต์", en: "Top Fill 0.7Ω: 15–25W", zh: "Top Fill 0.7Ω：15–25W" }, specKey: "pod-compat" },
+        { text: { th: "Top Fill 1.0 โอห์ม สำหรับ MTL ที่ 12–18 วัตต์", en: "Top Fill 1.0Ω: MTL, 12–18W", zh: "Top Fill 1.0Ω：MTL，12–18W" }, specKey: "pod-compat" },
+        { text: { th: "Cartridge V2 0.7 หรือ 1.2 โอห์ม สำหรับ MTL", en: "Cartridge V2 0.7Ω or 1.2Ω: MTL", zh: "Cartridge V2 0.7Ω 或 1.2Ω：MTL" }, specKey: "pod-compat" },
+      ],
+      link: { href: "/products/coil-72", label: { th: "ดูหัวพอต VMATE ที่ใช้กับ VMATE i3", en: "See the VMATE pods for the i3", zh: "查看适用于 VMATE i3 的 VMATE 烟弹" } },
+    },
+  },
 };

@@ -370,22 +370,30 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
 
   "argus-p3": {
     whoIsThisFor: {
-      0: "อยากได้พอตคิทสาย ARGUS ที่เข้าเมนูและตั้งค่าทุกอย่างจากจอทัชได้เลย",
+      0: "ชอบตั้งค่าเครื่องเอง ให้ตรงกับแนวการสูบของตัวเอง",
+      1: "ชอบเครื่องทรงกล่อง แต่อยากได้ตัวที่เล็กลงมา",
     },
     specifications: {
       battery: "1500mAh ในตัว",
-      screen: "จอทัชเต็มจอ TFT HD 2.01 นิ้ว",
-      pod: "ARGUS แบบเติมด้านบน",
+      output: "5–30W",
+      voltage: "3.2–4.2V",
+      resistance: "0.4–3.0Ω",
+      screen: "จอทัชเต็มจอ TFT HD 2.01 นิ้ว · โค้งลงทั้งสองขอบ · หน้าปัดมากกว่า 18 แบบ",
+      modes: "DIY ตั้งกราฟวัตต์เองได้ บันทึกได้สูงสุด 3 ชุด · Party · ECO · SOS · Child Lock",
+      control: "จอทัช และปุ่มด้านข้าง",
+      firing: "สูบได้เลยโดยไม่ต้องกดปุ่ม",
+      pod: "ARGUS Snap Cartridge 2 หัว · 0.4Ω และ 0.7Ω · 2mL · PCTG · เปิดฝาแล้วเติมจากด้านบน",
+      "pod-compat": "หัวพอตตระกูล ARGUS ได้ทุกหัว ทั้ง Snap · Top Fill Cartridge · รุ่น CRC และ Top Fill Cartridge V2 ที่มี 0.4Ω RDL 18–30W · 0.7Ω MTL 14–18W · 1.0Ω MTL 10–14W · เช็คค่าโอห์มและวัตต์ให้ตรงกับเครื่องก่อนใช้",
+      coil: "iCOSM CODE 2.0 · Liquid-Seal Shield · Mega-Core · Golden Cotton",
+      airflow: "ปุ่มเลื่อนปรับลมแบบไม่มีขั้น",
+      materials: "กรอบซิงค์อัลลอย · ชุดสีหนัง หรือรุ่น Metal Edition",
+      charging: "USB-C 5V/2A · ชาร์จเต็มในประมาณ 40 นาที",
+      weight: "82 กรัม",
     },
     tagline: "จอทัชเต็มจอ TFT HD 2.01 นิ้ว บนพอตคิทสาย ARGUS ของ VOOPOO",
     shortDescription: "พอตคิทแบตเตอรี่ 1500mAh 5–30 วัตต์ จอทัช TFT HD 2.01 นิ้ว กดเลือกเมนูและโหมดบนจอได้เลย",
-    features: {
-      "full-touch": {
-        title: "จอทัชเต็มจอ TFT HD",
-        description: "จอทัช 2.01 นิ้ว กดเข้าเมนูได้ครบ ไม่ใช่แค่จอโชว์สถานะ",
-      },
-    },
   },
+
   "argus-g3-mini": {
     whoIsThisFor: {
       0: "เพิ่งเริ่มสูบพอต และอยากได้เครื่องที่ใช้ง่าย หยิบขึ้นมาก็สูบได้เลย",
@@ -511,22 +519,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "vmate-i3": {
     whoIsThisFor: {
-      0: "พกพอตติดตัวทั้งวัน อยากได้เครื่องบาง ๆ ที่หยิบเข้าหยิบออกกระเป๋าได้คล่อง",
+      0: "อยากได้เครื่องที่ใช้ง่าย สำหรับสูบเป็นประจำทุกวัน",
+      1: "สูบทั้ง MTL และ RDL และอยากใช้เครื่องเดียวให้ได้ทั้งสองแนว",
     },
     specifications: {
       battery: "1500mAh ในตัว",
-      pod: "3mL VMATE Top Fill Cartridge (ใช้หัว V2 ได้ด้วย)",
-      charging: "USB-C 2A ชาร์จเร็ว",
+      output: "5–30W",
+      voltage: "3.2–4.2V",
+      resistance: "0.4–3.0Ω",
+      pod: "VMATE Top Fill Cartridge 0.7Ω · 3mL (2mL ในเวอร์ชัน TPD) · เติมด้านบนได้โดยไม่ต้องถอดหัวพอต",
+      "pod-compat": "หัวพอต VMATE ได้ทุกหัว · Top Fill Cartridge 0.4Ω RDL ใช้ 30W ขึ้นไป · 0.7Ω 15–25W · 1.0Ω MTL 12–18W · Cartridge V2 0.7Ω MTL 15–25W · 1.2Ω MTL 8–15W · เช็คค่าโอห์มและวัตต์ให้ตรงกับเครื่องก่อนใช้",
+      coil: "iCOSM CODE · อายุคอยล์ 90mL · ตั้งทิ้งไว้ 30 วันไม่รั่วซึม · ตัวเลขจากผลทดสอบในห้องแล็บของ VOOPOO",
+      airflow: "ปุ่มเลื่อนปรับลม ตั้งแต่ MTL แบบแน่นถึง RDL ที่ลมโล่ง",
+      firing: "ไม่มีปุ่ม สูบได้เลย",
+      indicator: "แถบไฟ Neon Light Strip ด้านข้าง · สีแดงเมื่อแบตเหลือไม่เกิน 30% · สีน้ำเงินที่ 30–70% · สีเขียวตั้งแต่ 70% ขึ้นไป",
+      materials: "อะลูมิเนียมอัลลอย",
+      charging: "USB-C 5V/2A ชาร์จเร็ว",
+      dimensions: "103 × 28.5 × 15.1 mm · 49.8 กรัม",
     },
     tagline: "พอตคิทตัวบาง ยาว 103mm",
     shortDescription: "พอตคิทสาย VMATE ของ VOOPOO: เครื่องอะลูมิเนียมอัลลอยบาง 15.1mm แบตเตอรี่ 1500mAh 5–30 วัตต์ หัวพอตเติมด้านบน 3mL",
-    features: {
-      "slim-body": {
-        title: "ตัวเครื่องอะลูมิเนียมอัลลอย บาง 15.1mm",
-        description: "15.1mm คือความหนาของตัวเครื่อง พกใส่กระเป๋ากางเกงได้สบาย",
-      },
-    },
   },
+
   "m-bar-10k": {
     faqs: {
       "m-bar-10k-modes": {
