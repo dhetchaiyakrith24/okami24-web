@@ -11,9 +11,9 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — the 04/10 chat (2nd) merged (each checker PASS + GitHub green, live by curl):
-  #251 DRAG 6 data · #253 batch 2c DRAG 6 page (story + exploded view + article) · #254 docs · #255 batch 2d DRAG S3 + DRAG X3
-  data + pages in ONE PR (checker r1 FAIL → dc66c3c fixes → r2 PASS; the ee619e2 deploy was still rolling out when this was written — curl /products/drag-s3 + drag-x3 first [เชื่อว่า live]).
+1 main: `git fetch && git log -1 --oneline origin/main` — the 04/10 chat (3rd) merged #259 = 98981bc (batch 2d-fix, BIG by
+  voopoo.ts; checker r1 FAIL → 3f35619 → r2 PASS; GitHub green): 12 DRAG S3/X3/6 story posters re-made sharp + DRAG 6 cover
+  2800 + airflow zoom 1000 + new `scripts/poster-stretch.js`. Live S3/X3 (#255) answered 200 before it [ตรวจแล้ว — curl].
 2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Kits (never merge these branches):
   1b = branch `kit-1b` (also holds `_incoming/sitewide-template/scope.md`, the round scope) · 1c = branch `kit-1c`. Get one:
   `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d material is in
@@ -28,10 +28,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
   asset-refs sweep of the 246 candidates, edge defects).
   Flag `storyStartRight` (default off) starts a page poster-right (G3 Pro, owner 03/10 "vary").
-  BATCH 2 VOOPOO — 04/10: 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 (owner has not seen S3/X3 live yet).
+  BATCH 2 VOOPOO — 04/10: 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 · 2d-fix #259 = sharp posters.
   Still to do on the template: ARGUS P3 · VMATE i3 · ARGUS G3 mini · ARGUS G4 mini · ARGUS G4 (VINCI S off-limits). Suggested pairs:
   2e ARGUS G3 mini + G4 mini · 2f ARGUS P3 + VMATE i3 · 2g ARGUS G4 (+ Multi-Ohm, M Bar 15K data). One PR per pair = data + page
-  (the 2d way, one build). Worked examples: DRAG 6 `_incoming/sitewide-template/2/2c/` (exploded view from a
+  (the 2d way, one build). NEXT = 2e. Facts READ file by file (researcher 04/10, local only, not in git):
+  `_incoming/sitewide-template/2/2e/facts-argus-g{3,4}-mini.md` (+ `2e/*.txt`, G3 mini strip cuts in `posters/argus-g3-mini/cut/`).
+  G3 mini = 1024-px strip → poster-stretch on the build, 3a (e) if it FAILs · G4 mini posters 2133 px · no parts view on either ·
+  leave out the "Contradictions" each facts file lists · G4 mini hero 01 is shared with ARGUS G4.
+  Worked examples: DRAG 6 `_incoming/sitewide-template/2/2c/` (exploded view from a
   maker 4K multi-view sheet: anat-crop.js + anat-build.js + zooms.json, scripts/flatcut.js) · S3/X3 `2/2d/` (facts-drag-*.md read
   piece by piece by `researcher` — cut a long onepage strip first: 2d/cut-onepage.js; blocks.js cuts whole poster blocks out of the
   strip and trims the strip's pale blurred page background + fills the light gap between tile pairs (checker #255: pale frames
@@ -43,11 +47,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   `Referer: https://shop.voopoo.com/`; www.voopoo.com does not resolve from this ISP — use shop.voopoo.com) · posters/<slug>/ = every
   maker image (fetch-posters.js; sheet.js <slug> = numbered contact sheet) · facts-drag6.md = DRAG 6 facts read FILE BY FILE (cover
   26/27 · chip 29 · tank 30+36 · screen 31+37 · battery 32 · controls 38 · PARTS VIEW 55 · box 56) · research-voopoo.md = web-summary
-  pass, UNRELIABLE (3 "not on maker" claims were wrong) → read the maker images file by file like facts-drag6.md. P3 / S3+X3 / VMATE i3 / G3 mini posters = one long 1024-px
-  "onepage" image each (posters/onepages.png) → cut into blocks; G4 mini = 6 posters 2133 px; ARGUS G4 = `_incoming/argus-g4/`.
+  pass, UNRELIABLE → read maker images file by file. P3 / VMATE i3 posters = one 1024-px "onepage" strip each · ARGUS G4 = `_incoming/argus-g4/`.
   VOICE for VOOPOO story copy (owner 04/10 on sample (49): "ผสมกัน"): Friday's reading = A's short calm titles + B's warmer everyday
-  bodies — used on #253 + #255; he saw DRAG 6 live and only raised the all-colours image (item 5) [เชื่อว่า the voice is accepted].
-  NEXT: (i) curl live /products/drag-s3 + /products/drag-x3 (item 1) · (ii) batch 2e.
+  bodies — used on #253 + #255; the owner saw DRAG 6 live and raised only the all-colours image (item 5) [เชื่อว่า voice accepted].
   Speed (owner 04/10): one build per batch · whole-sitemap scan (≈ 20 min) only if a shared part changes · a build ≈ 8 min.
   Gates per batch: `npm run verify:catalog` (fresh worktree: `npx next typegen` first) · page-text-length --facts · wordbreak-scan → reword
   · checker · scripts as .js files (Thai/backslash/backticks never through `node -e` or a heredoc).
@@ -59,6 +61,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   · (c) single option = night card render · card from a set = tilt one colour 12° (`_incoming/image-sitewide/tilt-card.js`) ·
   (d) maker pair files with an alpha gap = cut both devices whole by connected components (`_incoming/sitewide-template/1c-colours/
   split.js`, publish2.js: rotate ONCE to the final tilt, unsharp 0.65 — the sharpness gate fails a double rotation on light colours).
+  (e) maker poster too small, no larger maker file (poster-stretch FAIL) = AI upscale + VOOPOO's pixels back over every letter AND
+  every product-surface pattern (LESSONS 25 · `_incoming/sitewide-template/2/2dfix/`: upload.js → upscale "2k" → cmp.js letter gate
+  → composite.js boxes → publish.js; cut-outs: zoom.js keeps the original alpha + edge band).
   CUT-OUT (lesson พ11): Higgsfield remover → `b-edge/choke.js` · unlike the studio grey → `scripts/flatcut.js` · ALWAYS zoom 4x on
   dark + magenta (`b-edge/edgezoom.js`). Then presize + map entries + `npx tsx scripts/process-images.ts --only <slug>` (new file
   names, lesson พ6). Check every render for MIRRORING. Run `npx tsx scripts/image-sharpness-gate.ts --base origin/main` before the
@@ -68,21 +73,19 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Left from it: edge defects (`edge-audit/visual-audit.md`: vmate-i3 · zero-pro · m-bar-15k · muro-3ml · zero-cartridge ·
   mood-monster-14k · coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87) · coils `b-coils/README.txt` · Esko pod-159 LAST
   (13.7 big (2), own PR, + BSOT §21).
-  Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
+  Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (04/10: 15 upscale jobs, 315.1 → 279.1 =
+  36 credits by `balance`). The app's auto-mode guard blocks uploads to Higgsfield until the owner allows it in that chat (04/10 did).
 4 waiting on owner:
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
+  #259 (04/10): the 12 sharp DRAG posters · the X3 cover is now VOOPOO's pink banner with no baked "DRAG X3" title (the old one was
+  champagne + title, too small to save) — keep or ask for another · the DRAG 6 GENE.TT chip poster keeps the AI-redrawn micro-circuit
+  (a rendered chip graphic, not a product surface — Friday's call) — keep, or put VOOPOO's soft pixels back (one composite box).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags (not changed): INFY `descriptionTh` says disposable-only brand · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" /
        "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ" (batch 4 needs it)
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
 5 open / dated:
-  - FIRST in the next chat (owner 04/10 on live #255, LESSONS พ17): DRAG X3 story-cover is visibly broken (904-px crop of VOOPOO's
-    1024-px strip, shown ~1,200 px wide) and X3 posters 3–4 soft (owner: "ภาพ 3-4 ด้วยเช่นกันแต่ไม่แย่เท่าใบแรก" — which two = check
-    with him / read as unlock + screen [เชื่อว่า]); same source for every S3 poster. Larger VOOPOO files on hand: X3 26-dragx3 1440×580,
-    32-X3-0 1280×560, 46/47 2100×1100 (colour line-up). Owner 04/10: "สั่ง Upscale ดีกว่ามั้ย พี่ต้องการทำงานบนเครื่องก่อน" →
-    AI-upscale each poster on this computer; Friday raised LESSONS พ12 once → gate: 4× zoom every letter vs the original, any letter
-    changed = that file falls back to a larger VOOPOO file / shown smaller. Report credits spent. Also add a poster-stretch check (file width vs shown width × 2) and re-check DRAG 6's 766-px posters.
   - DEFERRED by the owner 04/10 ("ข้ามไปตัวอื่นก่อน ไว้ค่อยกลับมาแก้" — no date; Friday's plan: after the VOOPOO pages): DRAG S3 + X3 colour
     photos + two-group line-ups (owner on live #255: "ภาพสินค้า-รูปรวมยังดูเป็นกราฟฟิกเหมือนเดิม ทดไว้มาแก้รอบหลัง จดเอาไว้คู่กับ Drag 6") and the
     DRAG 6 all-colours image lineup-v3 — "รูปรวมยังเล็กไป สินค้ายังดู
@@ -154,7 +157,8 @@ Tools in scripts/ (usage = each file's head): shot.js · head-audit.js (head/lin
   scan.js · locale-hydration-scan.js · visible-text.js · wordbreak-scan.js + wb-diff.js · linemap-scan.js · html-diff.js ·
   overflow-390.js · og-gate.js · gallery-probe.js (touch/swipe every frame, `--sitemap`) · stale-image-audit.js ·
   flatcut.js · card-lines.js + card-lines-diff.js · empty-cards.ts · finder-dump.ts · measure-articles.ts ·
-  related-boxes.ts · guide-reading-rate.ts · record-scroll.js + frames-to-gif.js · self-merge-check.js (13.7)
+  related-boxes.ts · guide-reading-rate.ts · record-scroll.js + frames-to-gif.js · self-merge-check.js (13.7) ·
+  poster-stretch.js (story poster/cover/anatomy file width vs drawn width, LESSONS พ17)
 src files the skills use (the one list — skills may not name a file under src/, 13.2; fix a renamed file here):
   [i18n-test] `npx tsx src/i18n/i18n-contract-test.ts` · [catalog-method] `src/data/shipnity-seed/README.md` section
   "Catalog reconciliation methodology" · [legacy-products] `src/data/products/*.ts` · [taxonomy]
