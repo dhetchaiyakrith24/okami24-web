@@ -1331,7 +1331,7 @@ export const voopooProducts: Product[] = [
       {
         id: "power",
         title: "Light, with a battery that lasts",
-        description: "VOOPOO finishes it in three different textures, and a light strip on the side tells you how much battery is left.",
+        description: "VOOPOO finishes it in several different textures, and a light strip on the side tells you how much battery is left.",
         subline: "49.8g, about as much as an egg.",
         image: { src: "/assets/products/vmate-i3/story-power.webp", alt: "VOOPOO's VMATE i3 poster — power that lasts: the battery, 49.8g, three textures, the Neon Light Strip, 5V/2A charging and the airflow slider", sourceName: "VOOPOO", sourceUrl: I3_PAGE, width: 1024, height: 1358 },
       },
