@@ -11,11 +11,10 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — 05/10: #264 = 702edda (batch 2f ARGUS P3 + VMATE i3, BIG; checker r1
-  5/6 → r2 6/6; deploy 37225289855 OK; live: both pages + 8 posters 200, new text in HTML) · #265 = 3412048 (TPD wording +
-  THAI_STYLE words, SITE, checker 4/4; deploy 37225645867 OK) [ตรวจแล้ว — gh + curl].
-2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Material not in git: `_incoming/sitewide-template/2/2f/` (facts-*.md ·
-  blocks.js · copy JSON · apply.js · gates.sh · shots/ · green/) and `2/2e/` etc. Kits (never merge): `kit-1b` (+ scope.md) ·
+1 main: `git fetch && git log -1 --oneline origin/main` — 05/10: #267 = 04979fd (2f-img (a), BIG, checker 7/7, deploy 37229174301 OK,
+  live files 200) · #268 = 672d097 (2f-img (b), BIG, checker 9/9, deploy 37231467861) [ตรวจแล้ว — gh + curl].
+2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Material not in git: `_incoming/sitewide-template/2/2fimg/` (p3-green-site.js ·
+  g4card/ · i3/ = www banners, render/, i3-site.js, keepdev.js, srtone.js, fid-sheet.png, shots/) · `2/2f/` · `2/2e/` etc. Kits (never merge): `kit-1b` (+ scope.md) ·
   `kit-1c` — `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d + 2x =
   local only — push a kit branch before a cloud chat needs it.
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
@@ -26,17 +25,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
   asset-refs sweep of the 246 candidates, edge defects).
   BATCH 2 VOOPOO — 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 · 2d-fix #259 ·
-  2e #262 = ARGUS G4 mini + G3 mini · 2f #264 = ARGUS P3 + VMATE i3 (story pages only — colour images = 2f-img).
-  NEXT = 2f-img (tier B, own PR: images + colorVariants data), then 2g ARGUS G4 (+ Multi-Ohm, M Bar 15K data; its hero = G4 mini
-  poster 01, both devices — already the G4 mini cover). VINCI S off-limits.
-  2f-img (a) ARGUS P3 Green Leather (VOOPOO's colour poster: 8 finishes; shop + voopoo.com: 7 → catalog rule = add). Image READY
-    (not in git): `2/2f/green/p3-green-leather.png` = Brown Leather master recoloured by the poster's green-vs-brown difference
-    (`2/2f/p3-green.js`, zooms clean). To do: presize like `b-voopoo/presize-p3.js` (upright like its siblings) + map entry +
-    process-images · swatch = poster green (Lab 44/-22/17) · lineup of 8 = two groups (`set1/boxy.js`).
-  2f-img (b) VMATE i3 colours: today 174×758 upright files. voopoo.com has 11 banners ~1920×900 (URLs: `2/2f/facts-vmate-i3.md`
-    "Bigger files?") = our 7 + Yellow-orange Gradient · Green-gold Gradient · Forest Green · Starlight Red (names half hidden —
-    re-read) → all 11 · cut out (พ11), tilt 12°, card + openOnCardPhoto, two-group lineup · swatches: Neon is violet-magenta (not
-    lime #c6f24a), Purple = pale lilac.
+  2e #262 = ARGUS G4 mini + G3 mini · 2f #264 = ARGUS P3 + VMATE i3 story pages · 2f-img #267 + #268 = P3 Green Leather +
+  two-group lineups, ARGUS G4 card-v2 (owner: "การ์ดเล็กไป"), VMATE i3 all 11 colours.
+  NEXT = 2g ARGUS G4 (tier B: story page + Multi-Ohm, M Bar 15K data; its hero = G4 mini poster 01, both devices — already the G4
+  mini cover; the card is done in #267). VINCI S off-limits. Then batch 3 SALTHUB.
+  i3 method (#268, `2/2fimg/i3/`): one render per finish; wrong shape = re-roll "change ONLY the finish of reference 1" with a passed
+    render as ref 1; srtone.js = tone body pixels only; keepdev.js = drop a faint floor shadow. 16 renders = 120 credits.
   Examples: `2/2f/` (gaps.js → blocks.js portrait panels) · `2/2e/` (upscale + composite) · `2/2c/` (exploded view). Traps =
   LESSONS 24 + พ18. Material `_incoming/sitewide-template/2/`: pages/*.html (shop, curl + Referer shop.voopoo.com) · posters/<slug>/ ·
   www.voopoo.com via r.jina.ai only · research-voopoo.md UNRELIABLE · ARGUS G4 = `_incoming/argus-g4/`. Voice: owner "ผสมกัน" (#253–#264).
@@ -63,23 +57,27 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Left from it: edge defects (`edge-audit/visual-audit.md`: vmate-i3 · zero-pro · m-bar-15k · muro-3ml · zero-cartridge ·
   mood-monster-14k · coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87) · coils `b-coils/README.txt` · Esko pod-159 LAST
   (13.7 big (2), own PR, + BSOT §21).
-  Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — `balance` first, report the spend (upscale 2k = 2 each). 2f: 0 credits.
+  Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — `balance` first, report the spend (upscale 2k = 2 each).
 4 waiting on owner:
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b) ·
-  ARGUS G4 mini page (2e) · ARGUS P3 + VMATE i3 pages (2f #264; before/after 390+1440 `_incoming/sitewide-template/2/2f/shots/`).
-  (Owner 05/10: ARGUS G3 mini page passed · 2e words + "ในเวอร์ชัน TPD" approved → done in #265.)
+  ARGUS G4 mini page (2e) · ARGUS P3 + VMATE i3 pages (2f #264) · 2f-img: P3 Green Leather + "ทั้งหมด 1/2", ARGUS G4 card, VMATE i3
+  11 colours + card + lineups (before/after 390+1440: `_incoming/sitewide-template/2/2fimg/sheet-390.png` / `sheet-1440.png` and
+  `2/2fimg/i3/sheet-390.png` / `sheet-1440.png`).
+  (Owner 05/10: ARGUS G3 mini page passed · 2e words + TPD approved → #265 · 2f words "ได้" → THAI_STYLE in #267 · P3 Green Leather
+  "ขึ้นตามปกติ" · VMATE i3 AI draft "ผ่านครับ".)
   (2f) things the owner should know on those pages: VOOPOO's own P3 poster prints "1500mAh Big Bettery" (maker typo, left) ·
        VMATE Top Fill 0.4Ω: the poster says 18–30W, voopoo.com "at least 30W" — the text gives the site figure beside the poster ·
-       P3 has no dimensions row (VOOPOO gives two sizes) · i3 colours still the old small photos until 2f-img.
-  (2f) Thai words not in THAI_STYLE yet (thai-copy 05/10, used on the 2f pages): "หน้าปัด" (watch face) · "กราฟวัตต์" (power
-       curve) · "แถบไฟ" (Neon Light Strip) · "ห้องแล็บ" (lab test) · "ปลดล็อก" · "ลายเฟือง" · "Mini BOX" stays English —
-       Friday's pick: keep all.
+       P3 has no dimensions row (VOOPOO gives two sizes) · i3 card colour changed Black → Cyan Blue (VOOPOO's first colour) ·
+       i3 "three textures" → "several" (11 colours show 5 textures; VOOPOO's poster in that block still prints "Three Textures").
+  "Mini BOX" stays English (Friday's pick, the owner did not rule on it 05/10).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags (not changed): INFY `descriptionTh` says disposable-only brand · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" /
        "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ" (batch 4 needs it)
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
 5 open / dated:
+  - Unused since 2f-img (0 refs in src, checker #268): `argus-p3/lineup-v2.webp` · `vmate-i3/variants/*` · `vmate-i3/lineup.webp`
+    → batch 7 asset-refs sweep · wordbreak 05/10: «ไฟจะ» on /guides/fixing-no-draw-and-blinking-light@390 (guides = later round).
   - DEFERRED by the owner 04/10 ("ข้ามไปตัวอื่นก่อน ไว้ค่อยกลับมาแก้" — no date; Friday's plan: after the VOOPOO pages): DRAG S3 + X3 colour
     photos + two-group line-ups (owner on live #255: "ภาพสินค้า-รูปรวมยังดูเป็นกราฟฟิกเหมือนเดิม ทดไว้มาแก้รอบหลัง จดเอาไว้คู่กับ Drag 6") and the
     DRAG 6 all-colours image lineup-v3 — "รูปรวมยังเล็กไป สินค้ายังดู
