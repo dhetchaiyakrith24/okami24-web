@@ -1005,4 +1005,123 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกวัตต์และช่องลม", en: "Read: choosing wattage and airflow", zh: "如何选择功率与进气量" } },
     },
   },
+  // Site-wide template round batch 2e (04/10): VOOPOO's own ARGUS G4 mini / G3 mini pages + posters
+  // (_incoming/sitewide-template/2/2e/facts-argus-g4-mini.md + facts-argus-g3-mini.md list the source of each line); Thai = thai-copy 04/10.
+  "argus-g4-mini": {
+    "flip": {
+      title: { th: "กลับด้านหัวพอต ก็เปลี่ยนโอห์มได้", en: "Flip the pod, switch the resistance", zh: "翻转烟弹，切换阻值" },
+      subline: { th: "สองค่าโอห์มอยู่ในหัวพอตหัวเดียว", en: "Two resistances in one cartridge.", zh: "一颗烟弹，两种阻值。" },
+      body: {
+        th: "ใส่หัวพอตตามปกติเมื่ออยากได้ไอที่อุ่นและลมที่โล่งขึ้น หรือหมุนหัวพอต 180 องศาแล้วใส่กลับเข้าไปเมื่ออยากสูบแบบแน่น ตัวเครื่องจะรู้เองทันทีว่าหัวพอตใส่อยู่ด้านไหน",
+        en: "Put the pod in as it comes for a warmer, looser draw, or turn it 180° for a tight one. The device reads which way it sits by itself.",
+        zh: "按原样插入，吸感更暖更松；转 180° 插入，吸感就变紧。机身会自动识别烟弹的方向。",
+      },
+      points: [
+        { text: { th: "0.7 โอห์ม เหมาะกับ RDL และ MTL แบบลมโล่ง", en: "0.7Ω: RDL and loose MTL", zh: "0.7Ω：RDL 和松一些的 MTL" }, specKey: "pod" },
+        { text: { th: "1.0 โอห์ม เหมาะกับ MTL แบบแน่นและน้ำยา salt nic", en: "1.0Ω: a tight MTL draw that suits nic salts", zh: "1.0Ω：紧致的 MTL，适合盐尼古丁" }, specKey: "pod" },
+        { text: { th: "ไฟสีขาวคือ 0.7 โอห์ม ไฟสีเขียวคือ 1.0 โอห์ม", en: "White light for 0.7Ω, green light for 1.0Ω", zh: "白灯为 0.7Ω，绿灯为 1.0Ω" }, specKey: "indicator" },
+        { text: { th: "ปุ่มเลื่อนปรับลมแบบไม่มีขั้น ปรับได้ตั้งแต่ MTL ถึง RDL", en: "Stepless airflow slider, from MTL to RDL", zh: "无级进气滑块，从 MTL 到 RDL" }, specKey: "airflow" },
+      ],
+      link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกวัตต์และช่องลม", en: "How to choose wattage and airflow", zh: "如何选择功率与进气量" } },
+    },
+    "battery": {
+      title: { th: "แบตก้อนใหญ่ในตัว", en: "A big built-in battery", zh: "大容量内置电池" },
+      subline: { th: "เป็นแบตเตอรี่แบบความหนาแน่นสูง", en: "A high-density cell.", zh: "高密度电芯。" },
+      body: {
+        th: "ไฟสีขาวสี่ขีดด้านหน้าเครื่องบอกแบตที่เหลืออยู่ ขีดละ 25% จึงรู้ได้ง่าย ๆ ว่าถึงเวลาชาร์จหรือยัง",
+        en: "Four white bars on the front show what's left, a quarter each, so you know when to plug it in.",
+        zh: "机身正面的四格白灯显示剩余电量，每格 25%，什么时候该充电一看就知道。",
+      },
+      points: [
+        { text: { th: "แบต 1650mAh ในตัว", en: "1650mAh built-in battery", zh: "内置 1650mAh 电池" }, specKey: "battery" },
+        { text: { th: "ชาร์จผ่าน USB-C 5V/1.5A", en: "USB-C, 5V/1.5A charging", zh: "USB-C 充电，5V/1.5A" }, specKey: "charging" },
+      ],
+    },
+    "pod": {
+      title: { th: "หัวพอต Multi-Ohm", en: "The Multi-Ohm cartridge", zh: "Multi-Ohm 烟弹" },
+      subline: { th: "ใช้เทคโนโลยี Multi-Core Electrode ร่วมกับ iCOSM CODE 2.0 ของ VOOPOO", en: "Multi-core electrodes, with VOOPOO's iCOSM CODE 2.0.", zh: "多芯电极，搭配 VOOPOO 的 iCOSM CODE 2.0。" },
+      body: {
+        th: "เติมน้ำยาได้โดยไม่ต้องถอดหัวพอตออกจากเครื่อง ตัวหัวเป็น PCTG แบบใสที่ทนต่อการแตก",
+        en: "Fill it from the top without taking it out. The shell is clear, shatter-resistant PCTG.",
+        zh: "不用取下烟弹，从顶部就能注油。外壳是透明、抗摔的 PCTG。",
+      },
+      points: [
+        { text: { th: "จุน้ำยา 3.5mL (2mL ในเวอร์ชัน TPD) เติมด้านบน", en: "3.5mL (2mL in the TPD version), top fill", zh: "容量 3.5mL（TPD 版 2mL），顶部注油" }, specKey: "pod" },
+        { text: { th: "ตัวเครื่องใส่หัวพอตตระกูล ARGUS ได้ทุกหัว", en: "Takes every ARGUS pod-family cartridge", zh: "兼容整个 ARGUS 烟弹家族" }, specKey: "pod-compat" },
+      ],
+    },
+    "design": {
+      title: { th: "ตัวเครื่องโลหะ ดีไซน์เรียบ", en: "A minimal metal body", zh: "简约金属机身" },
+      subline: { th: "ไม่มีจอ และไม่มีเมนูให้ต้องตั้งค่า", en: "No screen, no menus.", zh: "没有屏幕，也没有菜单。" },
+      body: {
+        th: "สิ่งที่ต้องรู้ดูได้จากไฟด้านหน้าเครื่อง ส่วนตัวเรือนเป็นอะลูมิเนียมอัลลอยที่ทนต่อรอยขีดข่วน",
+        en: "The light on the front tells you what you need to know, and the aluminium alloy shell is scratch-resistant.",
+        zh: "需要知道的，看正面的指示灯就行；铝合金外壳耐刮。",
+      },
+      points: [
+        { text: { th: "สูบได้เลยโดยไม่ต้องกดปุ่ม", en: "Draw-activated", zh: "吸气即启动" }, specKey: "firing" },
+        { text: { th: "หนัก 56 กรัม", en: "56g", zh: "重 56g" }, specKey: "dimensions" },
+        { text: { th: "ขนาด 113 × 27.6 × 14.6 mm", en: "113 × 27.6 × 14.6 mm", zh: "113 × 27.6 × 14.6 mm" }, specKey: "dimensions" },
+      ],
+    },
+  },
+  "argus-g3-mini": {
+    "light": {
+      title: { th: "ถือแล้วเบามือ", en: "Light in the hand", zh: "握在手里很轻" },
+      subline: { th: "หนักเพียง 40.85 กรัม", en: "Just 40.85g.", zh: "只有 40.85g。" },
+      body: {
+        th: "VOOPOO ทำให้รุ่นนี้เบากว่ารุ่นก่อนหน้าเกือบ 20% และตกแต่งตัวเครื่องด้วยลายหมุดเล็ก ๆ แบบ Clous de Paris",
+        en: "VOOPOO made it nearly 20% lighter than the generation before, and gave it a Clous de Paris stud pattern.",
+        zh: "VOOPOO 让它比上一代轻了将近 20%，还加了巴黎钉纹。",
+      },
+      points: [
+        { text: { th: "อะลูมิเนียมอัลลอย", en: "Aluminium alloy", zh: "铝合金" }, specKey: "materials" },
+        { text: { th: "สูง 97.9 mm เมื่อใส่หัวพอต 3mL", en: "97.9mm tall with the 3mL cartridge", zh: "装上 3mL 烟弹高 97.9mm" }, specKey: "dimensions" },
+      ],
+    },
+    "icosm": {
+      title: { th: "คอยล์ที่ใหญ่ขึ้น", en: "A bigger coil", zh: "更大的线圈" },
+      subline: { th: "ครั้งแรกที่ VOOPOO นำ iCOSM CODE 2.0 มาใช้กับหัวพอตตระกูล ARGUS", en: "iCOSM CODE 2.0, now in ARGUS cartridges.", zh: "iCOSM CODE 2.0，首次用在 ARGUS 烟弹上。" },
+      body: {
+        th: "ในหัวพอตมีซีลที่ช่วยเก็บน้ำยาไว้ไม่ให้ซึมออกมา แกนคอยล์ขนาดใหญ่ และสำลี Golden Cotton ทำงานร่วมกัน เป็นเทคโนโลยีคอยล์แบบเดียวกับที่ใช้ใน ARGUS G3",
+        en: "A seal that keeps the liquid where it belongs, a larger core and golden cotton work together. It's the same coil technology as the ARGUS G3.",
+        zh: "锁住烟油的密封结构、更大的芯和金色棉一起配合。和 ARGUS G3 用的是同一套线圈技术。",
+      },
+      captions: [
+        { th: "Liquid-Seal Shield", en: "Liquid-Seal Shield", zh: "Liquid-Seal Shield" },
+        { th: "Mega-Core", en: "Mega-Core", zh: "Mega-Core" },
+        { th: "Golden Cotton", en: "Golden Cotton", zh: "Golden Cotton" },
+      ],
+    },
+    "cartridge": {
+      title: { th: "หัวพอต Top Fill Cartridge V2", en: "ARGUS Top Fill Cartridge V2", zh: "ARGUS Top Fill Cartridge V2" },
+      subline: { th: "มีให้เลือกสามค่าโอห์ม แต่ละค่าให้แนวการสูบต่างกัน", en: "Three resistances, each with its own draw.", zh: "三种阻值，各有各的吸感。" },
+      body: {
+        th: "หัวพอตเติมน้ำยาจากด้านบน ในกล่องมีหัว 0.7 โอห์มมาให้ ถ้าอยากได้แนวการสูบแบบอื่น ก็เลือกหัวที่โอห์มต่างออกไปได้",
+        en: "It fills from the top, and the kit comes with the 0.7Ω; for a different draw, pick another resistance.",
+        zh: "顶部注油，套装附 0.7Ω；想要别的吸感，就换其他阻值。",
+      },
+      points: [
+        { text: { th: "0.4 โอห์ม สำหรับ RDL ที่ 18–30 วัตต์", en: "0.4Ω: RDL, 18–30W", zh: "0.4Ω：RDL，18–30W" }, specKey: "pod-compat" },
+        { text: { th: "0.7 โอห์ม สำหรับ MTL ที่ 14–18 วัตต์", en: "0.7Ω: MTL, 14–18W", zh: "0.7Ω：MTL，14–18W" }, specKey: "pod-compat" },
+        { text: { th: "1.0 โอห์ม สำหรับ MTL ที่ 10–14 วัตต์", en: "1.0Ω: MTL, 10–14W", zh: "1.0Ω：MTL，10–14W" }, specKey: "pod-compat" },
+        { text: { th: "จุน้ำยา 3mL (2mL ในเวอร์ชัน TPD)", en: "3mL (2mL in the TPD version)", zh: "容量 3mL（TPD 版 2mL）" }, specKey: "pod" },
+      ],
+      link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกวัตต์และช่องลม", en: "How to choose wattage and airflow", zh: "如何选择功率与进气量" } },
+    },
+    "tiny": {
+      title: { th: "ตัวเล็ก แต่แบตก้อนใหญ่", en: "Small, with a big battery", zh: "机身小，电池大" },
+      subline: { th: "แบต 1350mAh อยู่ในตัวเครื่อง", en: "1350mAh, built in.", zh: "内置 1350mAh。" },
+      body: {
+        th: "ไม่ต้องตั้งค่าอะไรก่อน หยิบขึ้นมาก็พร้อมใช้งานทันที",
+        en: "Nothing to set up first: pick it up and it's ready.",
+        zh: "无需任何设置，拿起来就能用。",
+      },
+      points: [
+        { text: { th: "ไม่มีปุ่ม สูบได้เลย", en: "No fire button, draw-activated", zh: "没有点火键，吸气即启动" }, specKey: "firing" },
+        { text: { th: "ชาร์จผ่าน USB-C 5V/1A", en: "USB-C, 5V/1A charging", zh: "USB-C 充电，5V/1A" }, specKey: "charging" },
+        { text: { th: "ช่องลมตั้งมาแบบคงที่ ปรับไม่ได้", en: "Fixed airflow", zh: "进气量固定" }, specKey: "airflow" },
+      ],
+    },
+  },
 };
