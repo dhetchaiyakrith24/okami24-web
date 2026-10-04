@@ -1285,6 +1285,78 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 3a (05/10): from SALTHUB's Zero Pro page and posters; Thai = thai-copy 05/10.
+  "zero-pro": {
+    th: {
+      lede: "Zero Pro เป็นเครื่องในตระกูล Zero ของ SALTHUB ตัวเครื่องกะทัดรัด ด้านล่างไล่ให้ดูทีละเรื่อง",
+      sections: [
+        {
+          heading: "ใช้กับหัวพอตอะไร",
+          paragraphs: [
+            "Zero Pro ใช้หัวพอต Zero ซึ่งบนเว็บของ SALTHUB จัดไว้ในหมวดกลิ่นของ Zero Pro ส่วนตัวเลข 5,000 พัฟ มาจากโปสเตอร์ของ Zero Pro ที่ SALTHUB ทำไว้ ดูรายละเอียดหัวพอตได้ที่ [หน้าหัวพอต Zero](/products/zero-cartridge)"
+          ]
+        },
+        {
+          heading: "ชื่อสีของ SALTHUB กับชื่อบนเว็บเรา",
+          paragraphs: [
+            "SALTHUB เรียกชื่อสีบางสีต่างจากเรา ส่วน Red กับ Black ใช้ชื่อเดียวกัน",
+            "Flesh Pink คือสี Pink บนเว็บเรา",
+            "Black and Red Gradient คือสี Charcoal Red บนเว็บเรา",
+            "Blue-Purple Gradient คือสี Blue Purple บนเว็บเรา",
+            "Silver-Grey คือสี Gunmetal บนเว็บเรา",
+            "Light Blue คือสี Teal บนเว็บเรา",
+            "Yellow and Black Gradient คือสี Golden Fade บนเว็บเรา"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "The Zero Pro is a compact device in SALTHUB's Zero line. Below, one part at a time.",
+      sections: [
+        {
+          heading: "Which cartridge does it take?",
+          paragraphs: [
+            "The Zero Pro takes the Zero pods, which SALTHUB's site lists among the Zero Pro's flavours. The 5,000-puff figure is the one SALTHUB prints on its Zero Pro poster. See the pods on our [Zero pod page](/products/zero-cartridge)."
+          ]
+        },
+        {
+          heading: "SALTHUB's colour names and ours",
+          paragraphs: [
+            "SALTHUB names some colours differently from us; Red and Black are the same on both.",
+            "Flesh Pink is our Pink.",
+            "Black and Red Gradient is our Charcoal Red.",
+            "Blue-Purple Gradient is our Blue Purple.",
+            "Silver-Grey is our Gunmetal.",
+            "Light Blue is our Teal.",
+            "Yellow and Black Gradient is our Golden Fade."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "Zero Pro 是 SALTHUB Zero 系列里一款小巧的机型。下面逐项来看。",
+      sections: [
+        {
+          heading: "用哪种烟弹？",
+          paragraphs: [
+            "Zero Pro 用的是 Zero 烟弹，SALTHUB 官网把它们归在 Zero Pro 的口味里。5,000 口这个数字来自 SALTHUB 的 Zero Pro 海报。烟弹详情见 [Zero 烟弹页面](/products/zero-cartridge)。"
+          ]
+        },
+        {
+          heading: "SALTHUB 的颜色名与本站对照",
+          paragraphs: [
+            "SALTHUB 有几种颜色的叫法和我们不同，Red 和 Black 两边一样。",
+            "Flesh Pink 即本站的 Pink。",
+            "Black and Red Gradient 即本站的 Charcoal Red。",
+            "Blue-Purple Gradient 即本站的 Blue Purple。",
+            "Silver-Grey 即本站的 Gunmetal。",
+            "Light Blue 即本站的 Teal。",
+            "Yellow and Black Gradient 即本站的 Golden Fade。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

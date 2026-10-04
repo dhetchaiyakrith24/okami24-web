@@ -624,6 +624,7 @@ export const salthubProducts: Product[] = [
       portability: "ultra-compact",
       beginnerFriendly: true,
       chargingType: "USB-C",
+      batteryMah: 380,
     },
     assets: [
       {
@@ -663,6 +664,25 @@ export const salthubProducts: Product[] = [
     // Black and Red Gradient→charcoal-red, Blue-Purple Gradient→blue-purple, Black→black,
     // Silver-Grey→gunmetal, Light Blue→teal, Yellow and Black Gradient→golden-fade. Our ids/names
     // are deliberately unchanged. Source device height is 796–800px (owner accepted, 2026-09-04).
+    // Site-wide template round batch 3a (05/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — SALTHUB's own Zero Pro page
+    // told one poster per block (full-bleed 1920-px posters, whole, down-sized only: _incoming/sitewide-template/3/3a/blocks.js;
+    // the 1920-px banner is block 1, not a full-width cover — poster-stretch ×1.36, no larger SALTHUB file — LESSONS พ17);
+    // text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Not used: the spec card (its "2ML" disagrees with
+    // the cartridge's 2.2mL), the colour charts and the package poster. "ทั้งหมด 1 / 2" = the page's own colour cut-outs in
+    // SALTHUB's chart order, RELX Phantom layout (3a/lineup.js).
+    storyDetails: true,
+    storyLayout: "stage",
+    storyStartRight: true,
+    lineupImage: {
+      src: "/assets/products/zero-pro/lineup-a.webp",
+      alt: "SALTHUB Zero Pro, colours 1–4 of 8",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/zero-pro/lineup-b.webp",
+      alt: "SALTHUB Zero Pro, colours 5–8 of 8",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
     colorVariants: [
       { id: "blue-purple", name: "Blue Purple", swatchHex: "#4a4e8e", image: { src: "/assets/products/zero-pro/variant-blue-purple.webp", alt: "SALTHUB / Marbo Zero Pro, Blue Purple (official: Blue-Purple Gradient)" } },
       { id: "golden-fade", name: "Golden Fade", swatchHex: "#c9a24b", image: { src: "/assets/products/zero-pro/variant-golden-fade.webp", alt: "SALTHUB / Marbo Zero Pro, Golden Fade (official: Yellow and Black Gradient)" } },
@@ -672,7 +692,7 @@ export const salthubProducts: Product[] = [
         name: "Black",
         swatchHex: "#1a1a1a",
         // was this product's card photo; now its own cut-out so all 8 colours share one canvas
-        image: { src: "/assets/products/zero-pro/variant-black.webp", alt: "SALTHUB / Marbo Zero Pro, Black" },
+        image: { src: "/assets/products/zero-pro/variant-black-v3.webp", alt: "SALTHUB / Marbo Zero Pro, Black" },
       },
       { id: "pink", name: "Pink", swatchHex: "#e8899a", image: { src: "/assets/products/zero-pro/variant-pink.webp", alt: "SALTHUB / Marbo Zero Pro, Pink (official: Flesh Pink)" } },
       { id: "teal", name: "Teal", swatchHex: "#2a8a8a", image: { src: "/assets/products/zero-pro/variant-teal.webp", alt: "SALTHUB / Marbo Zero Pro, Teal (official: Light Blue)" } },
@@ -680,22 +700,55 @@ export const salthubProducts: Product[] = [
       { id: "charcoal-red", name: "Charcoal Red", swatchHex: "#6e3535", image: { src: "/assets/products/zero-pro/variant-charcoal-red.webp", alt: "SALTHUB / Marbo Zero Pro, Charcoal Red (official: Black and Red Gradient)" } },
     ],
     specifications: [
-      { key: "puffs-per-pod", label: "Puffs per cartridge", value: "Up to 5,000", sourceStatus: "verified" },
-      { key: "modes", label: "Power modes", value: "3 modes", sourceStatus: "verified" },
-      { key: "battery", label: "Battery capacity", value: "Not independently confirmed", sourceStatus: "unverified" },
+      // Batch 3a (05/10): rows from SALTHUB's own Zero Pro page + posters (_incoming/sitewide-template/3/facts-zero-pro.md). Left
+      // out: capacity (poster "2ML" vs the cartridge's 2.2mL) and "POWER 3.2-4.2W" (unit doubtful); the home page's "Benefits —
+      // ZERO PRO" box prints M Switch figures (600mAh, 15000 puffs) and is not used.
+      // checker #273: SALTHUB prints "5000 Puffs" on the Zero Pro poster/card — not "per cartridge" (the head copy still says per pod; SEO round)
+      { key: "puffs", label: "Rated puffs", value: "5,000 (SALTHUB's Zero Pro poster)", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/zero-pro/" },
+      { key: "modes", label: "Power modes", value: "3 modes — Low-end · Mid-range · High-end", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/zero-pro/" },
+      { key: "battery", label: "Battery capacity", value: "380mAh built-in", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/zero-pro/" },
+      { key: "resistance", label: "Resistance range", value: "0.5–2Ω", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/zero-pro/" },
+      { key: "airflow", label: "Airflow", value: "Side air intake", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/zero-pro/" },
+      { key: "charging", label: "Charging", value: "USB-C (SALTHUB: fast charging)", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/zero-pro/" },
     ],
     features: [
       {
-        id: "3-mode",
-        title: "3 power modes",
-        description: "A reusable switch-style body with three selectable output modes.",
+        id: "intro",
+        title: "The Zero Pro at a glance",
+        description: "The two on SALTHUB's poster are the Silver-Grey and the Blue-Purple Gradient.",
+        subline: "SALTHUB calls it compact and elegant.",
+        image: { src: "/assets/products/zero-pro/story-intro.webp", alt: "SALTHUB's Zero Pro banner — 5000 puffs, 3 mode for every vaping mood", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/zero-pro/", width: 1920, height: 1024 },
+      },
+      {
+        id: "modes",
+        title: "Pick the mode you feel like",
+        description: "Change between a softer and a stronger draw on the same device.",
+        subline: "SALTHUB calls it intelligent power regulation.",
+        image: { src: "/assets/products/zero-pro/story-modes.webp", alt: "SALTHUB's Zero Pro poster — 3 mode for every vaping mood: Low-end, Mid-range and High-end", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/zero-pro/", width: 1600, height: 853 },
+      },
+      {
+        id: "airflow",
+        title: "The path the air takes",
+        description: "SALTHUB says that helps the liquid vaporise completely.",
+        subline: "Air comes in from the side, so it has less far to travel.",
+        image: { src: "/assets/products/zero-pro/story-airflow.webp", alt: "SALTHUB's Zero Pro poster — side air intake", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/zero-pro/", width: 1600, height: 853 },
+      },
+      {
+        id: "battery",
+        title: "A built-in battery",
+        description: "SALTHUB says it charges fast, so a flat battery shouldn't keep you waiting long.",
+        subline: "380mAh.",
+        image: { src: "/assets/products/zero-pro/story-battery.webp", alt: "SALTHUB's Zero Pro poster — big battery with Type-C fast charging, 380mAh", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/zero-pro/", width: 1600, height: 853 },
       },
     ],
     compatibility: [{ type: "cartridge", label: "Zero Cartridge" }, typeC],
-    whoIsThisFor: ["Vapers who want a switch-style reusable device with selectable wattage modes rather than a single fixed output."],
+    whoIsThisFor: [
+      "Vapers who want to change between a softer and a stronger draw on one small device.",
+      "Anyone who likes a slim, pen-shaped device.",
+    ],
     faqs: [],
     relatedProductSlugs: ["zero-nano", "zero-cartridge", "m-switch-kit"],
-    sourceUrls: ["https://www.salthub.com/"],
+    sourceUrls: ["https://www.salthub.com/", "https://www.salthub.com/zero-pro/"],
   },
   {
     id: "zero-nano",
