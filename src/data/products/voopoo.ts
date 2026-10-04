@@ -718,7 +718,8 @@ export const voopooProducts: Product[] = [
       wattageMax: 60,
       screenType: "color-display",
       screenSize: "0.96\"",
-      drawStyle: "DTL",
+      // Batch 2d (04/10): VOOPOO's own comparison table — S3 "Best For: MTL / RDL / light DTL" (was "DTL").
+      drawStyle: "MTL/RDL",
       portability: "standard",
       beginnerFriendly: false,
       chargingType: "USB-C, 5V/2A",
@@ -755,7 +756,7 @@ export const voopooProducts: Product[] = [
     // cut whole out of its long DRAG S3 / X3 poster strip (+ the X3 unlock poster), down-sized only: 2d/blocks.js.
     storyDetails: true,
     storyLayout: "stage",
-    storyCover: { src: "/assets/products/drag-s3/story-cover.webp", alt: "Official VOOPOO banner — the DRAG S3", sourceName: "VOOPOO", sourceUrl: S3_PAGE, width: 972, height: 468 },
+    storyCover: { src: "/assets/products/drag-s3/story-cover.webp", alt: "Official VOOPOO banner — the DRAG S3", sourceName: "VOOPOO", sourceUrl: S3_PAGE, width: 901, height: 468 },
     colorVariants: [
       { id: "spray-black", name: "Spray Black", swatchHex: "#363636", image: { src: "/assets/products/drag-s3/variant-spray-black-v2.webp", alt: "VOOPOO DRAG S3, Spray Black" } },
       { id: "white", name: "White", swatchHex: "#cdcdcd", image: { src: "/assets/products/drag-s3/variant-white-v2.webp", alt: "VOOPOO DRAG S3, White" } },
@@ -938,8 +939,8 @@ export const voopooProducts: Product[] = [
       {
         id: "battery",
         title: "Bring your own cell",
-        description: "No spare with you? Plug the cable in and the cell charges inside the device — no need to take it out.",
-        subline: "Keep a spare, swap it in and carry on.",
+        description: "There's no built-in battery: when the cell runs down, swap in a charged spare and carry on.",
+        subline: "Choose the cell that suits how you vape.",
         image: { src: "/assets/products/drag-x3/story-battery.webp", alt: "VOOPOO's DRAG X3 poster — 18650 and 21700 cells, and the capacitive unlock sensor", sourceName: "VOOPOO", sourceUrl: X3_PAGE, width: 890, height: 644 },
       },
       {
@@ -961,7 +962,7 @@ export const voopooProducts: Product[] = [
         title: "The PnP X cartridge",
         description: "The kit comes with the DTL cartridge. For MTL, switch to the PnP X Cartridge MTL on the same device — VOOPOO sells it separately.",
         subline: "A chamber designed to keep the e-liquid in.",
-        image: { src: "/assets/products/drag-x3/story-pnpx.webp", alt: "VOOPOO's DRAG X3 poster — the PnP X platform and its leak-proof chamber", sourceName: "VOOPOO", sourceUrl: X3_PAGE, width: 900, height: 1365 },
+        image: { src: "/assets/products/drag-x3/story-pnpx.webp", alt: "VOOPOO's DRAG X3 poster — the PnP X platform and its leak-proof chamber", sourceName: "VOOPOO", sourceUrl: X3_PAGE, width: 900, height: 1356 },
       },
     ],
     compatibility: [{ type: "pod", label: "PnP X Cartridge (PnP X coils)", note: "PnP X Cartridge DTL (5mL) in the kit; takes every PnP X coil." }, usbC2A],

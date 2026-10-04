@@ -73,7 +73,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (closed 04/10: (49) = "ผสมกัน" — item 3 VOICE · (50) owner saw DRAG 6 live: only remark = the all-colours image (item 5), "go on".)
+  (closed 04/10: (49) = "ผสมกัน" — item 3 VOICE · (50) owner saw DRAG 6 live: only remark = the all-colours image (item 5), then "แก้ละไปต่อเลยครับ" (Friday read: note it and move on [เชื่อว่า]).)
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
@@ -83,7 +83,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Answered 03/10 (do not ask again): "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · logos: Kardinal = the
   maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
 5 open / dated:
-  - DEFERRED by the owner 04/10 (come back after the brand pages): DRAG 6 all-colours image lineup-v3 — "รูปรวมยังเล็กไป สินค้ายังดู
+  - DEFERRED by the owner 04/10 ("ข้ามไปตัวอื่นก่อน ไว้ค่อยกลับมาแก้" — no date; Friday's plan: after the VOOPOO pages): DRAG 6 all-colours image lineup-v3 — "รูปรวมยังเล็กไป สินค้ายังดู
     เป็นกราฟฟิก … ไว้ค่อยกลับมาแก้เรื่องภาพเหมือนกราฟฟิก" (same eye as LESSONS ช9: AI-made light reads as graphic; 7 devices too small).
     Also not fixed (checker #253 taste): text inside the 3 wide DRAG 6 posters ~6–7 px at 390 · "มีโหมด SMART RBA และ TC-TCR" reads as 2.
   - 7 highlight chips wrap 6 + 1 at 1440 on caliburn-g4-pro-koko and caliburn-g3-pro-koko (chip bar is lg:grid-cols-6) — shared

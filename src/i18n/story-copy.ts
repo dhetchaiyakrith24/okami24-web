@@ -947,11 +947,11 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
   "drag-x3": {
     "battery": {
       title: { th: "ใส่ถ่านที่เลือกเองได้", en: "Bring your own cell", zh: "电池由你来选" },
-      subline: { th: "มีก้อนสำรองไว้ ก็สลับใส่แล้วสูบต่อได้ทันที", en: "Keep a spare, swap it in and carry on.", zh: "备一颗电池，换上就能接着抽。" },
+      subline: { th: "เลือกก้อนที่เหมาะกับการใช้งานได้เอง", en: "Choose the cell that suits how you vape.", zh: "按你的使用习惯选择电池。" },
       body: {
-        th: "ถ้าไม่ได้พกก้อนสำรอง ก็เสียบสายชาร์จถ่านในเครื่องได้เลย ไม่ต้องถอดออกมาชาร์จแยก",
-        en: "No spare with you? Plug the cable in and the cell charges inside the device — no need to take it out.",
-        zh: "没带备用电池也没关系，插上线就能在机内充电，不用取出来单独充。",
+        th: "เครื่องรุ่นนี้ไม่มีแบตในตัว เมื่อถ่านหมด ก็เปลี่ยนเป็นก้อนสำรองที่ชาร์จไว้แล้วสูบต่อได้เลย",
+        en: "There's no built-in battery: when the cell runs down, swap in a charged spare and carry on.",
+        zh: "机身没有内置电池：电池没电时，换上一颗充好电的备用电池就能接着抽。",
       },
       points: [
         { text: { th: "ชาร์จผ่าน USB-C 5V/2A", en: "USB-C, 5V/2A charging", zh: "USB-C 充电，5V/2A" }, specKey: "charging" },
