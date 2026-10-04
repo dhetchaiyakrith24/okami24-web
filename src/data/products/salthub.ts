@@ -294,11 +294,12 @@ export const salthubProducts: Product[] = [
     isFlagship: false,
     attributes: {
       puffCount: 15000,
-      screenType: "none",
+      batteryMah: 600,
+      screenType: "led-indicator",
       drawStyle: "MTL",
       portability: "ultra-compact",
       beginnerFriendly: true,
-      chargingType: "USB-C, fast charging",
+      chargingType: "USB-C",
     },
     assets: [
       {
@@ -332,6 +333,8 @@ export const salthubProducts: Product[] = [
     // against, and Legacy Product Detail has no cart/purchase action to gate anyway.
     flavorVariants: [
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-apple-aloe.webp", alt: "SALTHUB M Bar 15K, Apple Aloe" } },
+      // Batch 3e: Black Berry is on SALTHUB's 15K flavour chart (posters 04+05) but has no SALTHUB photo for the 15K → swatch only
+      { id: "black-berry", name: "Black Berry", swatchHex: "#5f3ac8", availability: "unknown" },
       { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-blue-ice.webp", alt: "SALTHUB M Bar 15K, Blue Ice" } },
       { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-cola.webp", alt: "SALTHUB M Bar 15K, Cola" } },
       { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-double-mint.webp", alt: "SALTHUB M Bar 15K, Double Mint" } },
@@ -349,9 +352,12 @@ export const salthubProducts: Product[] = [
     ],
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 15,000", sourceStatus: "verified" },
-      { key: "coil", label: "Coil", value: "Cotton mesh coil", sourceStatus: "verified" },
-      { key: "charging", label: "Charging", value: "USB-C fast charging", sourceStatus: "verified" },
-      { key: "battery", label: "Battery capacity", value: "Not independently confirmed", sourceStatus: "unverified" },
+      // Batch 3e (05/10): coil / charging / battery / airflow re-read from SALTHUB's own 15K page + home box
+      // (_incoming/sitewide-template/3/facts-m-bar-15k.md) — the old coil + "fast" were the M SWITCH KIT box's words.
+      { key: "coil", label: "Coil", value: "Ceramic coil", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/wp-content/uploads/2025/08/m_bar_15k_2.webp" },
+      { key: "charging", label: "Charging", value: "USB-C", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/wp-content/uploads/2025/08/m_bar_15k_4.webp" },
+      { key: "battery", label: "Battery capacity", value: "600mAh", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
+      { key: "airflow", label: "Airflow", value: "Adjust valve (slider)", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/wp-content/uploads/2025/08/m_bar_15k_5.webp" },
       { key: "capacity", label: "E-liquid capacity", value: "Not independently confirmed", sourceStatus: "unverified" },
     ],
     features: [
@@ -367,7 +373,7 @@ export const salthubProducts: Product[] = [
     ],
     faqs: [],
     relatedProductSlugs: ["m-bar-10k", "m-bar-9k"],
-    sourceUrls: ["https://www.salthub.com/"],
+    sourceUrls: ["https://www.salthub.com/", "https://www.salthub.com/m-bar-15k/"],
   },
   {
     id: "m-switch-kit",

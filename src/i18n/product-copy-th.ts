@@ -605,8 +605,10 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       puffs: "สูงสุด 15,000",
-      coil: "cotton mesh",
-      charging: "USB-C ชาร์จเร็ว",
+      coil: "เซรามิก",
+      charging: "USB-C",
+      battery: "600mAh",
+      airflow: "ปุ่มเลื่อนปรับลม",
     },
     tagline: "M Bar รุ่นพัฟเยอะสุดของตระกูล ชาร์จซ้ำได้ผ่าน USB-C",
     shortDescription:
