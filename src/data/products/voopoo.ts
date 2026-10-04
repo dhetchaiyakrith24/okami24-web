@@ -603,14 +603,15 @@ export const voopooProducts: Product[] = [
       { id: "green", name: "Green", swatchHex: "#77b190", image: { src: "/assets/products/drag-6/variant-green-v2.webp", alt: "VOOPOO DRAG 6, Green" } },
       { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variant-metal-gray-v2.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
     ],
-    // All-colours image (IMAGE_SPEC §0 item 5, pod system — new layout, 01/10): the old flat row "จัดวางไม่สวย สินค้ามีขอบเยอะ"
-    // (owner). Owner picked layout 1 of four drafted from OKami's own posters ("VMATE MAX": Silver hero centre, the others
-    // stepping smaller and higher to both sides, clean gaps). Composed by script from the same 7 choked 4K renders as the
-    // colour photos above — no AI, no text (_incoming/image-sitewide/b-edge/d6-poster.js).
+    // All-colours image (IMAGE_SPEC §0 item 5): owner 04/10 "Drag 6 ได้ครับ" — the HYBRID draft replaces the VMATE-MAX row
+    // (lineup-v2). Layout = the RELX poster zigzag the owner sent for Drag 6 (b-edge/relx-studio.js d6), devices = the same 7
+    // choked 4K renders as the colour photos above; only the LOW-FREQUENCY light (a 24×48 ratio grid per device) comes from an
+    // AI relight, so no AI pixel or text lands on a device; floor = a mirror of each true device (b-edge/d6-hybrid.js,
+    // d6-hy-publish.js under _incoming/image-sitewide/).
     lineupImage: {
-      src: "/assets/products/drag-6/lineup-v2.webp",
+      src: "/assets/products/drag-6/lineup-v3.webp",
       alt: "VOOPOO DRAG 6, all 7 colors",
-      sourceName: "OKami24 composite (from OKami24's renders of each colour)",
+      sourceName: "OKami24 composite (OKami24's renders of each colour; light from a Higgsfield relight)",
     },
     specifications: [
       { key: "battery", label: "Battery", value: "4400mAh built-in (two 2200mAh cells)", sourceStatus: "verified" },

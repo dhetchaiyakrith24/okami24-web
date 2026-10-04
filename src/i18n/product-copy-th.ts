@@ -204,7 +204,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       firing: "สูบได้เลย หรือกดปุ่มก็ได้",
       output: "35W",
     },
-    tagline: "Caliburn จอสี เลือกโหมดได้ตามแนวสูบ",
+    tagline: "Caliburn จอสี เลือกโหมดได้ตามความต้องการและการใช้งาน",
     shortDescription:
       "แบต 1300mAh สูงสุด 35 วัตต์ จอ 0.85 นิ้ว ปรับลมด้วยปุ่มเลื่อน หรือกลับด้านหัวพอตก็ได้",
   },
