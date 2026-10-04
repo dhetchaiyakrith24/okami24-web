@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-04",
-  "endDate": "2026-10-01",
+  "startDate": "2026-09-05",
+  "endDate": "2026-10-02",
   "dimensions": [
    "query",
    "page"

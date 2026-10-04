@@ -3,12 +3,12 @@
   "account": "…@okami24-gsc.iam.gserviceaccount.com",
   "ranges": {
     "last28": {
-      "startDate": "2026-09-04",
-      "endDate": "2026-10-01"
+      "startDate": "2026-09-05",
+      "endDate": "2026-10-02"
     },
     "last90": {
-      "startDate": "2026-07-04",
-      "endDate": "2026-10-01"
+      "startDate": "2026-07-05",
+      "endDate": "2026-10-02"
     }
   },
   "rows": {
@@ -19,5 +19,5 @@
     "last28-country": 19,
     "last90-date": 24
   },
-  "ranAt": "2026-10-03T02:14:47.334Z"
+  "ranAt": "2026-10-04T02:49:17.656Z"
 }
