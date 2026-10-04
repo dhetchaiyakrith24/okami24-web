@@ -128,15 +128,15 @@ export const technologyEntries: TechnologyEntry[] = [
         heading: "What the chip is actually doing",
         paragraphs: [
           "How do GENE.TT and GENE.AI differ? First, what a chip does. Beyond the visible wattage number, a device's chipset governs how quickly it can ramp output, how it protects the battery under load, and — on newer chips — whether it can auto-detect and adjust to a given coil's resistance rather than requiring a manual setting.",
-          "VOOPOO's GENE.TT 3.0 (used in the high-output DRAG 6) and GENE.AI (used in the beginner-oriented ARGUS G3 mini) sit at opposite ends of that spectrum — one tuned for maximum output ceiling and rebuildable-coil support, the other tuned for automatic, fixed-wattage simplicity.",
+          "VOOPOO's GENE.TT 3.0 (used in the high-output DRAG 6) and GENE.AI (used in the beginner-oriented ARGUS G3 mini) sit at opposite ends of that spectrum — one tuned for a high output ceiling and several output modes, the other tuned for automatic, fixed-wattage simplicity.",
         ],
       },
       {
         heading: "Real example: SMART, RBA and TC-TCR modes on the DRAG 6's GENE.TT 3.0",
         paragraphs: [
-          "The [DRAG 6](/products/drag-6) runs the GENE.TT 3.0 chip: 220W maximum, a 4400mAh built-in battery (two 2200mAh cells), and SMART/RBA/TC-TCR (output modes) to choose from.",
-          "RBA (rebuildable-coil mode) is what puts this chip at the opposite end from GENE.AI. Wattage is set with a physical adjustment wheel, the fire button carries a capacitive unlock sensor, and the 1.66\" TFT screen shows wattage, battery, resistance, puff count and mode.",
-          "The DRAG 6's pod-platform line is marked unverified, so the product page only says it is a DRAG-series coil pod. Where that label comes from is in [How to read a spec sheet](/guides/reading-a-spec-sheet).",
+          "The [DRAG 6](/products/drag-6) runs the GENE.TT 3.0 chip: 220W maximum, a 4400mAh built-in battery (two 2200mAh cells), and SMART, RBA and TC-TCR modes to choose from.",
+          "The modes are what put this chip at the opposite end from GENE.AI. Wattage is set with a physical adjustment wheel, the fire button carries a capacitive unlock sensor, and the 1.66\" TFT screen shows wattage, battery, resistance, puff count and mode.",
+          "The DRAG 6's coil row is verified from VOOPOO's own page: the UFORCE-X Tank II in the kit takes every PnP X coil. How a row gets verified is in [How to read a spec sheet](/guides/reading-a-spec-sheet).",
         ],
       },
       {

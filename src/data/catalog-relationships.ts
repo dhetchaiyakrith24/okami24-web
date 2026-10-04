@@ -171,10 +171,9 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
   },
 
   // =================================================================================
-  // VOOPOO — PnP X coil platform. TIER 2 only: voopoo.com and shop.voopoo.com are
-  // DNS-blocked from this project's network (they resolve to a Thai MDES block page), so
-  // no tier-1 citation could be obtained. Re-verifying these three at source from an
-  // unblocked connection would upgrade them cheaply.
+  // VOOPOO — PnP X coil platform. DRAG 6 = TIER 1 since PR #251 (shop.voopoo.com resolves
+  // now; www.voopoo.com still does not from this ISP). DRAG S3 / X3 stay TIER 2 until their
+  // own shop.voopoo.com pages are read (sitewide-template batch 2).
   //
   // Deliberately NOT linked: coil-1 (original PnP coils) to vinci-s, despite coil-1's name
   // being "Coil Vinci" and both records carrying familyId "vinci". PnP and PnP X are
@@ -186,9 +185,9 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
     device: "drag-6",
     consumable: "coil-92",
     role: "coil",
-    evidence: "Retailer compatibility list for the VOOPOO PnP X replacement coils names the DRAG 6; the DRAG 6 kit itself ships with PnP X 0.15Ω and 0.3Ω coils in its UFORCE-X Tank II.",
-    sourceUrl: "https://www.alivape.com/products/voopoo-pnp-x-replacement-coils",
-    tier: "retailer",
+    evidence: "VOOPOO's own DRAG 6 page states the kit's UFORCE-X Tank II takes every PnP X coil, and the kit ships with PnP X 0.15Ω and 0.3Ω coils.",
+    sourceUrl: "https://shop.voopoo.com/products/drag-6",
+    tier: "official",
   },
   {
     device: "drag-s3",

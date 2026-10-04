@@ -286,13 +286,13 @@ const allGuides: Guide[] = [
         ],
       },
       {
-        heading: "What this catalog marks as unverified — a live example from the DRAG 6",
+        heading: "Rows we mark unverified — how the DRAG 6's coil row moved to verified",
         paragraphs: [
-          "Where an official spec couldn't be independently confirmed for a specific product page, it's labeled unverified rather than guessed — treat those fields as directional, not exact.",
-          "A real case is the [DRAG 6](/products/drag-6) page. Its battery (4400mAh built-in, as two 2200mAh cells), 220W maximum output, GENE.TT 3.0 chip, SMART/RBA/TC-TCR (output modes) and 1.66\" TFT screen are all verified.",
+          "When a spec can't be confirmed from the maker's own pages, we mark the row unverified and keep it off the product page. We would rather leave it out than guess.",
+          "The [DRAG 6](/products/drag-6) shows how a row can change. Its battery (4400mAh built in, from two 2200mAh cells), 220W maximum output, GENE.TT 3.0 chip, SMART/RBA/TC-TCR modes and 1.66\" TFT screen were confirmed from the start.",
           "What the GENE.TT chip does in a high-output device is in [High-Output Chip Platforms](/technology/high-output-chip-platforms).",
-          "The pod-platform line is marked unverified, because the exact name of the pod this device takes could not be confirmed from an official source — so the sheet only says it is a DRAG-series coil pod.",
-          "What does exist is a retailer's compatibility list that names PnP X coils for the DRAG 6. That level of evidence is not enough for us to write it into the spec table as official, so the label stays as it is.",
+          "For a while the coil row was held back. A retailer's compatibility list named PnP X coils for the DRAG 6, but we only print a spec as official when it comes from the maker.",
+          "VOOPOO's own DRAG 6 page now settles it: the UFORCE-X Tank II in the kit takes every PnP X coil, and PnP X 0.15Ω and 0.3Ω coils come in the box. The row is verified and now shows on the product page.",
         ],
       },
       {

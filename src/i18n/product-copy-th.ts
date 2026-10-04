@@ -406,9 +406,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "drag-6": {
     faqs: {
-      "drag6-rebuildable": {
-        question: "DRAG 6 ใช้คอยล์พันเองได้ไหม",
-        answer: "ตามสเปกมีโหมด RBA (โหมดสำหรับคอยล์พันเอง) ให้เลือก คู่กับโหมด SMART และ TC-TCR ส่วนจะใช้กับหัวพอตพันคอยล์ตัวไหนได้ ทักไลน์ @okm24 ถามได้",
+      "drag6-coils": {
+        question: "DRAG 6 ใช้คอยล์อะไรได้บ้าง",
+        answer: "ถังน้ำยา UFORCE-X Tank II ที่มากับชุดใช้คอยล์ PnP X ได้ทุกตัว และในกล่องมีคอยล์ PnP X 0.15 โอห์ม กับ 0.3 โอห์มมาให้ด้วย",
       },
     },
     whoIsThisFor: {
@@ -416,10 +416,15 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       1: "อยากมีโหมด RBA และ TC-TCR ติดเครื่องไว้ด้วย มากกว่าแค่ปรับวัตต์อย่างเดียว",
     },
     specifications: {
-      battery: "4400mAh ในตัว (ถ่าน 2200mAh สองก้อน)",
+      battery: "4400mAh ในตัว แบ่งเป็นสองก้อน ก้อนละ 2200mAh",
       screen: "จอ TFT 1.66 นิ้ว แสดงวัตต์ แบต โอห์ม จำนวนพัฟ และโหมด",
       modes: "SMART / RBA / TC-TCR",
-      control: "ล้อปรับวัตต์ละเอียด และเซ็นเซอร์แตะที่ปุ่มยิงไว้ปลดล็อก",
+      control: "ล้อปรับวัตต์ละเอียด และเซ็นเซอร์แตะที่ปุ่มยิงไว้ปลดล็อก ปล่อยนิ้วแล้วล็อกกลับเอง · กดห้าครั้ง เปิด/ปิดเครื่อง · กดสามครั้ง เข้าเมนู",
+      tank: "เติมด้านบน · 5mL (2mL ในเวอร์ชัน TPD) · UFORCE-X Tank II",
+      coil: "ใช้คอยล์ PnP X ได้ทุกตัว · ในกล่องมี 0.15Ω และ 0.3Ω",
+      airflow: "แหวนปรับลมแบบหมุน · ช่องลม Golden Triangle",
+      "charge-time": "2–3 ชั่วโมง",
+      weight: "ประมาณ 280 กรัม (294 กรัมในเวอร์ชัน TPD)",
     },
     tagline: "220 วัตต์ ชิป GENE.TT 3.0 ปรับวัตต์ละเอียดด้วยล้อหมุน",
     shortDescription:
@@ -431,7 +436,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       },
       "gene-tt-3": {
         title: "ชิป GENE.TT 3.0",
-        description: "ชิปของ VOOPOO สำหรับเครื่องวัตต์สูง มีโหมด SMART RBA และ TC-TCR ให้เลือก",
+        description: "ชิปของ VOOPOO ตอบสนองตอนสูบได้ไวขึ้น และจ่ายไฟนิ่งขึ้น สูงสุด 220 วัตต์",
       },
     },
   },
