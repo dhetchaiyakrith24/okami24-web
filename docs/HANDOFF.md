@@ -19,7 +19,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Then #247 `be4e7fc` (thai-copy voice reset, checker PASS r2) · #248 `34c4738` (BIG, checker PASS r2 at 6d9bb04, GitHub green):
   Drag 6 all-colours = HYBRID lineup-v3.webp (lineup-v2 deleted) + G4 head line in the owner's words · deploy 37190995085 success ·
   live drag-6 serves lineup-v3 (200 image/webp), live G4 line [ตรวจแล้ว — curl]. Shots: `_incoming/sitewide-template/2/shots/cmp-*.png`.
-2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Kits (never merge these branches):
+  Then #250 `57d5b67` (THAI_STYLE layer 4 = no explaining brackets, owner 04/10; checker PASS r2).
+2 ahead of main [ตรวจแล้ว — git]: branch `b2b-drag6-data` = OPEN PR #251 (34eb5be + 42cb34a, BIG) — checker r1 FAIL at 42cb34a, NOT merged
+  (live is unchanged and consistent). Data itself all verified against VOOPOO (checker re-traced every value). To fix before merge:
+  (a) /guides/reading-a-spec-sheet + /technology/high-output-chip-platforms use "DRAG 6 pod row is unverified" as their example → false
+  after merge: src/data/guides.ts:293-295 · guides-copy.ts th 287-293 / zh 641-647 · technology.ts:139 · technology-copy.ts th 132 /
+  zh 292 — pick another model that still has an unverified row (e.g. DRAG X3, guides.ts:214) and rewrite th/en/zh via `thai-copy`;
+  technology.ts also says "rebuildable-coil support" (not the maker's) · (b) wordbreak 390: «0.3Ω» alone on the coil row's last line
+  → reword (e.g. drop the repeated "PnP X") · non-blocking: catalog-relationships.ts:186-191 evidence tier "retailer" → maker now.
+  Checker files `_incoming/check-251/`. Then rebuild → gates (thai-check, scan.js, wordbreak) → checker re-check → merge.
+  Plus this docs PR. Kits (never merge these branches):
   1b = branch `kit-1b` (also holds `_incoming/sitewide-template/scope.md`, the round scope) · 1c = branch `kit-1c`. Get one:
   `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d material is in
   `_incoming/sitewide-template/1d/` (not in git: facts-uwell.md = every UWELL fact with its file · mk/ = UWELL page files · manual/ =
@@ -35,18 +44,22 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   1d as merged: UWELL posters (G3 Pro 6 blocks, KOKO 7), th/en/zh + articles, every spec row from UWELL with sourceUrl (G3 Pro battery
   from UWELL's user manual zip; KOKO 1250mAh — the shop had "1000mAh unverified"; facts = 1d/facts-uwell.md). KOKO card now shows
   "1250mAh · Max 35W" sitewide. New flag `storyStartRight` (default unchanged) — G3 Pro starts poster-right (owner 03/10 "vary").
-  BATCH 2 VOOPOO — STARTED 04/10: 2a = #248 (Drag 6 all-colours, merged). Pages still to do: all 8. Material (not in git): `_incoming/sitewide-template/2/` = research-voopoo.md
-  (researcher: our data vs maker — Drag 6 is a TANK MOD with UFORCE-X Tank II / PnP X, not a pod kit; "SMART/RBA/TC-TCR", "two 2200mAh
-  cells", G3 mini 95.3 mm, VMATE i3 dims = not on the maker page; MEDIUM confidence for all but ARGUS G4 — re-read the real pages) ·
-  pages/*.html = the 7 shop pages saved with curl + `Referer: https://shop.voopoo.com/` (argus-g4 = `_incoming/argus-g4/`) ·
-  posters.md (posters.js / landing.js: poster URLs per page; Drag 6 + X3 are landing pages, 70 / 62 images to sort).
+  BATCH 2 VOOPOO — STARTED 04/10: 2a = #248 (Drag 6 all-colours, merged) · 2b = #251 (Drag 6 data, open — item 2). Pages still to
+  do on the template: all 8. Material (not in git) `_incoming/sitewide-template/2/`: pages/*.html = the 7 shop pages (curl +
+  `Referer: https://shop.voopoo.com/`; www.voopoo.com does not resolve from this ISP — use shop.voopoo.com) · posters/<slug>/ = every
+  maker image (fetch-posters.js; sheet.js <slug> = numbered contact sheet) · facts-drag6.md = DRAG 6 facts read FILE BY FILE (cover
+  26/27 · chip 29 · tank 30+36 · screen 31+37 · battery 32 · controls 38 · PARTS VIEW 55 · box 56) · research-voopoo.md = the first
+  web-summary pass — UNRELIABLE (said "two 2200mAh cells", VMATE i3 size/alu/Silver Black were not on the maker side; all are) → for
+  every product read the maker images file by file like facts-drag6.md. P3 / S3+X3 / VMATE i3 / G3 mini posters = one long 1024-px
+  "onepage" image each (posters/onepages.png) → cut into blocks; G4 mini = 6 posters 2133 px; ARGUS G4 = `_incoming/argus-g4/`.
+  sample-block-drag6.md = the reset thai-copy's first sample (A recommended / B warmer) [รอเจ้าของ (49)].
   Drag 6 HYBRID draft = `_incoming/image-sitewide/b-edge/d6-hybrid.js` → relx/d6-hy.png (true devices from relx-studio d6 × B's
   low-frequency light on a 24×48 grid per device box, clamp 0.55–1.35, mirror reflection at each foot, transparent) · sent to the owner
   04/10 as relx/d6-owner.png → owner "ได้ครับ" → live as lineup-v3 (publish: b-edge/d6-hy-publish.js) · 0 credits. Taste note
   (checker #248): the VOOPOO letters on the silver/blue/green tanks read faint at 4× under the transferred light — owner-approved.
-  NEXT, in order: (i) batch 2 data: read the posters per product (posters.md), fix the data rows against the maker (13.7 big (2) —
-  Drag 6 first: tank mod, modes, cells, charging) · (ii) copy with the reset `thai-copy`: ONE sample block (th/en/zh) to the owner
-  before the rest (owner 04/10) · (iii) story blocks page by page on the template (owner 04/10: images first, VOOPOO now).
+  NEXT, in order: (i) finish #251 (item 2) · (ii) owner's answer on (49) → Drag 6 story page on the template (posters above + parts
+  view 55 as "ไล่ดูทีละส่วน" + article) · (iii) the other 7 VOOPOO pages, each: facts file by file → data PR → story (owner 04/10:
+  images first, VOOPOO now).
   Speed (owner 04/10): one build per batch · whole-sitemap scan (≈ 20 min) only if a shared part changes · a build ≈ 8 min.
   Method that worked (1b–1d): maker page → .txt (`1b/extract.js`) · images listed in the page HTML + its `/_nuxt/*.js` chunks · ffmpeg
   stills from maker films · researcher reads posters/spec images into a facts sheet · copy-base.json (en/zh) → thai-copy → th.json →
@@ -75,7 +88,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (none open from 04/10 — (48): owner "1 ได้ครับ" to Friday's "drop the term brackets site-wide" = THAI_STYLE layer 4 · the 3 head
+  (49) NEW 04/10 DRAG 6 sample story block (reset thai-copy) — A "ควบคุมได้ละเอียด" (recommended) vs B "หยิบขึ้นมาก็พร้อมใช้", and is
+       the voice the "สุภาพ นิ่ง ธรรมชาติ" he wants? File `_incoming/sitewide-template/2/sample-block-drag6.md` (also sent in chat).
+       VOOPOO story copy waits for this answer; data and images do not.
+  (closed 04/10 — (48): owner "1 ได้ครับ" to Friday's "drop the term brackets site-wide" = THAI_STYLE layer 4 · the 3 head
        lines: owner "2 ไม่ครับ เราจะกลับไปเดินงานรูปก่อน อันนี้ทดไว้งานรอบ ภาษา - Seo ได้" · removing the EXISTING brackets in that
        same round = Friday's reading [เชื่อว่า] — both queued in the SEO / language round below.)
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
