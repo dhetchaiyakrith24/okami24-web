@@ -1017,7 +1017,7 @@ export const uwellProducts: Product[] = [
     systemType: "open-pod",
     name: "Caliburn G4",
     displayName: "UWELL CALIBURN G4",
-    tagline: "A colour screen, and a mode for how you vape.",
+    tagline: "A colour screen, with modes to suit what you need and how you use it.",
     shortDescription:
       "1300mAh, up to 35W, a 0.85\" screen, and airflow set by a slider or by flipping the pod.",
     isFlagship: false,
