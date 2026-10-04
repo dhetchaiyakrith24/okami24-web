@@ -5659,5 +5659,13 @@
   },
   "note": "site-wide template round batch 2f-img 05/10 — catalog completeness rule: VOOPOO's poster shows 8 finishes, shop + voopoo.com 7",
   "fileName": "variant-green-leather-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/g4card/card-g4.png",
+  "slug": "argus-g4",
+  "role": "card",
+  "replaces": "/assets/products/argus-g4/card.webp",
+  "note": "site-wide template round batch 2f-img 05/10 (owner: card too small) — VOOPOO's own Orange photo (shop.voopoo.com gallery, 2533 px), no AI: cut by scripts/flatcut.js + 2 px matte erode (_incoming/sitewide-template/2/2fimg/g4card/erode.js), tilted 12° in 2D (_incoming/image-sitewide/tilt-card.js)",
+  "fileName": "card-v2.webp"
  }
 ]
