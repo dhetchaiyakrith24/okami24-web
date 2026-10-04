@@ -1210,6 +1210,81 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 2g (05/10): from VOOPOO's ARGUS G4 page and posters; Thai = thai-copy 05/10.
+  "argus-g4": {
+    th: {
+      lede: "ARGUS G4 เป็นรุ่นที่ VOOPOO ใส่จอและปุ่ม ให้ตั้งค่าเครื่องได้เอง ด้านล่างไล่ให้ดูทีละเรื่อง",
+      sections: [
+        {
+          heading: "ARGUS G4 กับ ARGUS G4 mini เลือกตัวไหนดี",
+          paragraphs: [
+            "ทั้งสองรุ่นใช้หัวพอต Multi-Ohm เหมือนกัน ส่วน [ARGUS G4 mini](/products/argus-g4-mini) ไม่มีจอ เปลี่ยนโอห์มได้สองค่าด้วยการกลับด้านหัวพอต และหนัก 56 กรัม",
+            "ถ้าอยากดูสถานะเครื่องบนจอ และอยากได้ค่าโอห์มที่สามจากการกดปุ่ม G4 จะเหมาะกว่า"
+          ]
+        },
+        {
+          heading: "ใช้หัวพอตอะไรได้บ้าง และหาซื้อได้ที่ไหน",
+          paragraphs: [
+            "หัวพอต ARGUS ที่ไล่ไว้ด้านบนใช้กับเครื่องนี้ได้ทุกหัว ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก หากต้องการ สอบถามได้ทางไลน์ @okm24"
+          ]
+        },
+        {
+          heading: "ในกล่องมีอะไรบ้าง",
+          paragraphs: [
+            "ในกล่องมีตัวเครื่อง ARGUS G4 หัวพอต ARGUS Multi-Ohm Cartridge สองหัว สายชาร์จ USB-C คู่มือการใช้งาน การ์ดรายชื่อหัวพอตตระกูล ARGUS ที่ใช้ร่วมกันได้ และสายคล้องคอ"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "On the ARGUS G4, VOOPOO adds a screen and a button so you can set the device up yourself. Below, one part at a time.",
+      sections: [
+        {
+          heading: "ARGUS G4 or ARGUS G4 mini?",
+          paragraphs: [
+            "Both take the Multi-Ohm cartridge. The [ARGUS G4 mini](/products/argus-g4-mini) has no screen and switches between two resistances by flipping the pod; it weighs 56g.",
+            "If you want to see the device's status on a screen and get a third resistance at the press of the button, the G4 is the one."
+          ]
+        },
+        {
+          heading: "Which pods fit, and where do I get them?",
+          paragraphs: [
+            "Every ARGUS pod in the block above fits. We don't sell ARGUS pods separately yet. Ask on LINE @okm24."
+          ]
+        },
+        {
+          heading: "What's in the box?",
+          paragraphs: [
+            "The ARGUS G4, two ARGUS Multi-Ohm Cartridges, a USB-C cable, the user manual, VOOPOO's ARGUS pod-family compatibility guide and a lanyard."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "ARGUS G4 是 VOOPOO 加了屏幕和按键、可以自己设置的机型。下面逐项来看。",
+      sections: [
+        {
+          heading: "ARGUS G4 还是 ARGUS G4 mini？",
+          paragraphs: [
+            "两款都用 Multi-Ohm 烟弹。[ARGUS G4 mini](/products/argus-g4-mini) 没有屏幕，靠翻转烟弹在两种阻值之间切换，重 56g。",
+            "想在屏幕上看机器状态，还想按键切出第三种阻值，就选 G4。"
+          ]
+        },
+        {
+          heading: "能用哪些烟弹？去哪里买？",
+          paragraphs: [
+            "上面列出的 ARGUS 烟弹都能用。我们暂时还没有单独销售 ARGUS 烟弹。可以在 LINE @okm24 询问。"
+          ]
+        },
+        {
+          heading: "包装里有什么？",
+          paragraphs: [
+            "ARGUS G4 主机、两颗 ARGUS Multi-Ohm 烟弹、一条 USB-C 数据线、使用说明书、VOOPOO 的 ARGUS 烟弹兼容指南，以及一条挂绳。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

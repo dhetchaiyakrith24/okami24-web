@@ -1248,4 +1248,102 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       link: { href: "/products/coil-72", label: { th: "ดูหัวพอต VMATE ที่ใช้กับ VMATE i3", en: "See the VMATE pods for the i3", zh: "查看适用于 VMATE i3 的 VMATE 烟弹" } },
     },
   },
+  // Site-wide template round batch 2g (05/10): VOOPOO's own ARGUS G4 page + posters (_incoming/sitewide-template/2/2g/
+  // facts-argus-g4.md lists the source of each line); Thai = thai-copy 05/10.
+  "argus-g4": {
+    "ohm": {
+      title: { th: "กลับด้านหัวพอต หรือกดปุ่ม ก็เปลี่ยนโอห์มได้", en: "Flip it or press the button", zh: "翻转或按键，即可切换阻值" },
+      subline: { th: "หัวพอต Multi-Ohm หัวเดียว ใช้ได้สามค่าโอห์ม", en: "Three resistances from one Multi-Ohm cartridge.", zh: "一颗 Multi-Ohm 烟弹，三种阻值。" },
+      body: {
+        th: "พอเปลี่ยนแล้ว ตัวเครื่องจะรู้ค่าโอห์มใหม่เองทันที จึงไม่ต้องพกหัวพอตหัวที่สองติดตัว และไม่ต้องเข้าเมนูเพื่อตั้งค่า",
+        en: "The device reads the new resistance by itself the moment you switch, so there is no second pod to carry and no menu to dig through.",
+        zh: "一切换，机身就会自己识别新的阻值，不用多带一颗烟弹，也不用进菜单。",
+      },
+      points: [
+        { text: { th: "0.7 โอห์ม เมื่อใส่หัวพอตตามปกติ เหมาะกับ MTL แบบลมโล่งและ RDL", en: "0.7Ω: insert it as it comes — loose MTL or RDL", zh: "0.7Ω：按原样插入 — 松一些的 MTL 或 RDL" }, specKey: "pod" },
+        { text: { th: "1.0 โอห์ม เมื่อหมุนหัวพอต 180 องศา เหมาะกับ MTL แบบแน่นและน้ำยา salt nic", en: "1.0Ω: turn it 180° — a tight MTL that suits nic salts", zh: "1.0Ω：转 180° 插入 — 紧致的 MTL，适合盐尼古丁" }, specKey: "pod" },
+        { text: { th: "0.4 โอห์ม เมื่อกดปุ่มสองครั้งติดกัน เหมาะกับ RDL ที่ลมโล่ง", en: "0.4Ω: press the button twice — an airy RDL", zh: "0.4Ω：按两下按键 — 通透的 RDL" }, specKey: "pod" },
+      ],
+      link: { href: "/technology/multi-resistance-cartridges", label: { th: "อ่านเรื่องระบบหัวพอตหลายโอห์ม", en: "Read: multi-resistance cartridges", zh: "了解多阻值烟弹" } },
+    },
+    "battery": {
+      title: { th: "แบตก้อนใหญ่ และชาร์จเต็มได้เร็ว", en: "A big battery, a quick charge", zh: "大电池，充电快" },
+      subline: { th: "เป็นแบตเตอรี่แบบความหนาแน่นสูง", en: "A high-density cell.", zh: "高密度电芯。" },
+      body: {
+        th: "VOOPOO ทำมาสำหรับคนที่สูบจัดและคนที่เดินทางบ่อย จะได้ไม่ต้องคอยหาที่เสียบชาร์จระหว่างวัน ตัวเลข 10% บนโปสเตอร์ VOOPOO เทียบกับ ARGUS G3 ส่วนหน้าเว็บของ VOOPOO ระบุว่าแบตใช้ได้นานกว่ารุ่นก่อน 22%",
+        en: "VOOPOO built it for heavy vapers and travellers, so less of the day goes on looking for a socket. The 10% on the poster is against the ARGUS G3; VOOPOO's own page says 22% longer than the previous generation.",
+        zh: "VOOPOO 是为重度用户和常出门的人设计的，少花时间找插座。海报上的 10% 是与 ARGUS G3 相比；VOOPOO 官网页面则写比上一代长 22%。",
+      },
+      points: [
+        { text: { th: "แบต 1650mAh ในตัว", en: "1650mAh built-in battery", zh: "内置 1650mAh 电池" }, specKey: "battery" },
+        { text: { th: "ชาร์จผ่าน USB-C เต็มในประมาณ 45 นาที", en: "Full in about 45 minutes over USB-C", zh: "USB-C 充电，约 45 分钟充满" }, specKey: "charging" },
+      ],
+    },
+    "tech": {
+      title: { th: "เทคโนโลยี Multi-Core", en: "Multi-core electrodes", zh: "多芯电极" },
+      subline: { th: "ขั้วสัมผัสเรียงเป็นบวก ลบ บวก ซึ่ง VOOPOO ระบุว่าเป็นครั้งแรกในวงการ", en: "Positive, negative, positive pins in the pod seat — VOOPOO calls it an industry first.", zh: "烟弹座上是正、负、正三根针脚 — VOOPOO 称之为业内首创。" },
+      body: {
+        th: "หัวพอตใช้ iCOSM CODE 2.0 ของ VOOPOO ซึ่ง VOOPOO ระบุว่าช่วยให้รสชาติไม่ดรอปตั้งแต่พัฟแรกจนถึงพัฟสุดท้าย และใช้ได้ทั้งน้ำยา freebase และ salt nic",
+        en: "With VOOPOO's iCOSM CODE 2.0 in the cartridge, VOOPOO says the taste holds from the first draw to the last, with freebase or nic salts.",
+        zh: "烟弹搭配 VOOPOO 的 iCOSM CODE 2.0，VOOPOO 表示从第一口到最后一口味道都不会衰减，游离碱烟油和盐尼古丁烟油都适用。",
+      },
+      points: [
+        { text: { th: "ปรับวัตต์ได้สูงสุด 35 วัตต์", en: "Up to 35W", zh: "最高 35W" }, specKey: "output" },
+      ],
+    },
+    "design": {
+      title: { th: "ตัวเครื่องเป็นโลหะทั้งตัว", en: "A full-metal body", zh: "全金属机身" },
+      subline: { th: "มีให้เลือกสองแบบ คืออะลูมิเนียมอัลลอย และซิงค์อัลลอยกับหนัง", en: "Two builds: aluminium alloy, or zinc alloy with leather.", zh: "两种版本：铝合金款，或锌合金皮革款。" },
+      body: {
+        th: "บางสีใช้งานผิวแบบ Zircon Sand ซึ่ง VOOPOO ระบุว่าเป็นครั้งแรกที่นำมาใช้",
+        en: "Some colours get a Zircon Sand finish, which VOOPOO says it is using for the first time.",
+        zh: "部分配色采用锆砂工艺，VOOPOO 称这是首次使用。",
+      },
+      points: [
+        { text: { th: "แบบอะลูมิเนียมอัลลอย หนัก 65 กรัม ขนาด 121 × 27.6 × 15.8 mm", en: "Aluminium alloy: 65g, 121 × 27.6 × 15.8 mm", zh: "铝合金款：65g，121 × 27.6 × 15.8 mm" }, specKey: "dimensions" },
+        { text: { th: "แบบซิงค์อัลลอยกับหนัง หนัก 85 กรัม ขนาด 121 × 27.6 × 16.6 mm", en: "Zinc alloy and leather: 85g, 121 × 27.6 × 16.6 mm", zh: "锌合金皮革款：85g，121 × 27.6 × 16.6 mm" }, specKey: "dimensions" },
+      ],
+    },
+    "menu": {
+      title: { th: "ปุ่มเดียว สั่งงานได้หลายอย่าง", en: "One button, several settings", zh: "一个按键，多项设置" },
+      subline: { th: "กดปุ่มกี่ครั้ง ก็จะเข้าการตั้งค่าคนละอย่างกัน", en: "A count of presses opens each setting.", zh: "按几下，就打开对应的设置。" },
+      body: {
+        th: "ปุ่มนี้เป็นปุ่มเดียวกับที่ใช้กดสลับโอห์ม จึงไม่ต้องจำว่าปุ่มไหนทำหน้าที่อะไร",
+        en: "It's the same button you press to switch resistance, so there's only one to remember.",
+        zh: "和切换阻值用的是同一个按键，只需记住这一个。",
+      },
+      points: [
+        { text: { th: "กดปุ่มสามครั้ง เพื่อปรับวัตต์", en: "Press 3 times: set the wattage", zh: "按 3 下：调功率" }, specKey: "control" },
+        { text: { th: "กดปุ่มห้าครั้งเพื่อเข้าเมนู ซึ่งมีปิดเครื่อง เปลี่ยนธีมหน้าจอ รีเซ็ตตัวนับพัฟ และล็อกหรือปลดล็อก", en: "Press 5 times: power off, theme, puff clear, lock", zh: "按 5 下：关机、主题、清除口数、锁定" }, specKey: "control" },
+        { text: { th: "กดปุ่มค้างไว้ เพื่อเปิดหน้าจอคำแนะนำ", en: "Long press: the tips screen", zh: "长按：提示界面" }, specKey: "control" },
+      ],
+    },
+    "fill": {
+      title: { th: "เติมจากด้านบน และปรับลมได้เอง", en: "Fill from the top, set the airflow", zh: "顶部注油，调节进气" },
+      subline: { th: "เติมน้ำยาได้โดยไม่ต้องถอดหัวพอตออกจากเครื่อง", en: "Refill without taking the pod out.", zh: "不用取下烟弹就能注油。" },
+      body: {
+        th: "เลื่อนปิดช่องลมจนสุดแล้วใช้คู่กับ 1.0 โอห์ม จะได้ MTL แบบแน่น เปิดไว้ครึ่งทางจะได้ MTL ที่สมดุล ส่วนเปิดจนสุดแล้วใช้คู่กับ 0.4 โอห์ม จะได้ RDL ที่ลมโล่ง",
+        en: "Close the slider for a tight MTL draw with the 1.0Ω, leave it half open for a balanced MTL, or open it all the way for an airy RDL with the 0.4Ω.",
+        zh: "关上滑块，配 1.0Ω 是紧致的 MTL；开一半是均衡的 MTL；全开配 0.4Ω 就是通透的 RDL。",
+      },
+      points: [
+        { text: { th: "เติมด้านบน มีจุกซิลิโคนปิดช่องเติม", en: "Top fill under a silicone plug", zh: "顶部注油，配硅胶塞" }, specKey: "pod" },
+        { text: { th: "ปุ่มเลื่อนปรับลมแบบไม่มีขั้น ปรับได้ตั้งแต่ MTL ถึง RDL", en: "Stepless airflow slider, MTL to RDL", zh: "无级进气滑块，从 MTL 到 RDL" }, specKey: "airflow" },
+      ],
+      link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกวัตต์และช่องลม", en: "How to choose wattage and airflow", zh: "如何选择功率与进气量" } },
+    },
+    "pods": {
+      title: { th: "ใส่หัวพอตตระกูล ARGUS ได้ทุกหัว", en: "The whole ARGUS pod family fits", zh: "整个 ARGUS 烟弹家族都能用" },
+      subline: { th: "หัวพอต ARGUS ที่มีอยู่แล้ว ก็นำมาใช้กับเครื่องนี้ต่อได้", en: "ARGUS pods you already own carry over.", zh: "手上已有的 ARGUS 烟弹照样能用。" },
+      body: {
+        th: "หัวพอต Multi-Ohm ที่ให้มาในกล่อง ตัวหัวเป็น PCTG แบบใสที่ทนต่อการแตก",
+        en: "The Multi-Ohm cartridge in the box is clear, shatter-resistant PCTG.",
+        zh: "随附的 Multi-Ohm 烟弹采用透明、抗摔的 PCTG。",
+      },
+      points: [
+        { text: { th: "หัวพอต Multi-Ohm จุน้ำยา 3.5mL (2mL ในเวอร์ชัน TPD)", en: "Multi-Ohm cartridge: 3.5mL (2mL in the TPD version)", zh: "Multi-Ohm 烟弹：3.5mL（TPD 版 2mL）" }, specKey: "pod" },
+        { text: { th: "ใส่ Snap Cartridge และ Top Fill Cartridge V2 ทั้งขนาด 2mL และ 3mL ได้ด้วย รวมถึงหัวพอตรุ่น CRC", en: "Also fits: Snap Cartridge, Top Fill Cartridge V2 (2mL and 3mL), CRC versions", zh: "也能用：Snap 烟弹、Top Fill Cartridge V2（2mL 和 3mL）、CRC 版本" }, specKey: "pod-compat" },
+      ],
+    },
+  },
 };
