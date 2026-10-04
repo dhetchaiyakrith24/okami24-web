@@ -1171,12 +1171,12 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       link: { href: "/technology/onboard-touch-displays", label: { th: "อ่านเรื่องพอตจอทัช", en: "How touchscreen pods work", zh: "了解触屏烟具" } },
     },
     "family": {
-      title: { th: "หัวพอต Snap Cartridge", en: "The Snap Cartridge", zh: "Snap 烟弹" },
-      subline: { th: "หัวพอตรุ่นใหม่ของตระกูล ARGUS เปิดฝาด้านบนแล้วเติมน้ำยาได้เลย", en: "A new ARGUS cartridge with a cap that snaps open.", zh: "全新 ARGUS 烟弹，翻盖一掀即开。" },
+      title: { th: "หัวพอตตระกูล ARGUS", en: "The ARGUS pod family", zh: "ARGUS 烟弹家族" },
+      subline: { th: "รวมถึง Snap Cartridge รุ่นใหม่ ที่เปิดฝาด้านบนแล้วเติมน้ำยาได้เลย", en: "Including the new Snap Cartridge, with a cap that snaps open.", zh: "包括全新的 Snap 烟弹，翻盖一掀即开。" },
       body: {
-        th: "หัวพอตตระกูล ARGUS รุ่นอื่นก็ใส่กับเครื่องนี้ได้ ค่าด้านล่างมาจากตารางของ VOOPOO ซึ่งแนะนำให้เช็คค่าโอห์มและวัตต์ก่อนใช้",
-        en: "Other ARGUS pod-family cartridges fit too. The figures below are VOOPOO's table, and VOOPOO asks you to check the resistance and output first.",
-        zh: "ARGUS 系列的其他烟弹也能用。下面的数据来自 VOOPOO 的表格，VOOPOO 建议先核对阻值和功率。",
+        th: "ใส่กับเครื่องนี้ได้ทุกหัว ค่าด้านล่างมาจากตารางของ VOOPOO ซึ่งแนะนำให้เช็คค่าโอห์มและวัตต์ก่อนใช้",
+        en: "They all fit this device. The figures below are VOOPOO's table, and VOOPOO asks you to check the resistance and output first.",
+        zh: "这些烟弹都能装在这台主机上。下面的数据来自 VOOPOO 的表格，VOOPOO 建议先核对阻值和功率。",
       },
       points: [
         { text: { th: "0.4 โอห์ม สำหรับ RDL ที่ 18–30 วัตต์", en: "0.4Ω: RDL, 18–30W", zh: "0.4Ω：RDL，18–30W" }, specKey: "pod-compat" },
@@ -1190,7 +1190,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
   "vmate-i3": {
     "pocket": {
       title: { th: "ทำมาให้พกติดตัว", en: "Made for the pocket", zh: "为口袋而生" },
-      subline: { th: "หัวพอตรุ่นใหม่ที่ VOOPOO ปรับให้ดีขึ้นสามด้าน", en: "Its cartridge, upgraded three ways.", zh: "烟弹做了三项升级。" },
+      subline: { th: "เครื่องที่หยิบติดมือออกจากบ้านได้ทุกวัน", en: "One to take with you every day.", zh: "每天都能随手带出门。" },
       body: {
         th: "ตัวเครื่องหนาเพียง 15.1mm ใส่กระเป๋ากางเกงได้สบาย",
         en: "At 15.1mm thick, it slips into a trouser pocket.",
@@ -1211,7 +1211,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
       points: [
         { text: { th: "แบต 1500mAh ในตัว", en: "1500mAh built-in battery", zh: "内置 1500mAh 电池" }, specKey: "battery" },
-        { text: { th: "ไฟสีแดงเมื่อแบตเหลือไม่เกิน 30% สีน้ำเงินที่ 30–70% และสีเขียวเมื่อเกิน 70%", en: "Red up to 30%, blue 30–70%, green above 70%", zh: "30% 以下红色，30–70% 蓝色，70% 以上绿色" }, specKey: "indicator" },
+        { text: { th: "ไฟสีแดงเมื่อแบตเหลือไม่เกิน 30% สีน้ำเงินที่ 30–70% และสีเขียวตั้งแต่ 70% ขึ้นไป", en: "Red up to 30%, blue 30–70%, green from 70%", zh: "30% 以下红色，30–70% 蓝色，70% 及以上绿色" }, specKey: "indicator" },
         { text: { th: "ชาร์จเร็วผ่าน USB-C 5V/2A", en: "USB-C, 5V/2A fast charging", zh: "USB-C 快充，5V/2A" }, specKey: "charging" },
         { text: { th: "ปุ่มเลื่อนปรับลม ปรับได้ตั้งแต่ MTL แบบแน่นจนถึง RDL ที่ลมโล่ง", en: "Airflow slider, from a tight MTL to an airy RDL", zh: "进气滑块，从偏紧的 MTL 到通畅的 RDL" }, specKey: "airflow" },
       ],
@@ -1240,8 +1240,8 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         zh: "想换吸感就换别的阻值；VOOPOO 建议先核对阻值和功率。",
       },
       points: [
-        { text: { th: "Top Fill 0.4 โอห์ม สำหรับ RDL ที่ 18–30 วัตต์", en: "Top Fill 0.4Ω: RDL, 18–30W", zh: "Top Fill 0.4Ω：RDL，18–30W" }, specKey: "pod-compat" },
-        { text: { th: "Top Fill 0.7 โอห์ม ใช้ได้ทั้ง RDL และ MTL ที่ 15–25 วัตต์", en: "Top Fill 0.7Ω: RDL to MTL, 15–25W", zh: "Top Fill 0.7Ω：RDL 到 MTL，15–25W" }, specKey: "pod-compat" },
+        { text: { th: "Top Fill 0.4 โอห์ม สำหรับ RDL หน้าเว็บ VOOPOO ระบุว่าต้องใช้ 30 วัตต์ขึ้นไป", en: "Top Fill 0.4Ω: RDL; VOOPOO's site says it needs 30W or more", zh: "Top Fill 0.4Ω：RDL；VOOPOO 官网注明需 30W 以上" }, specKey: "pod-compat" },
+        { text: { th: "Top Fill 0.7 โอห์ม ที่ 15–25 วัตต์", en: "Top Fill 0.7Ω: 15–25W", zh: "Top Fill 0.7Ω：15–25W" }, specKey: "pod-compat" },
         { text: { th: "Top Fill 1.0 โอห์ม สำหรับ MTL ที่ 12–18 วัตต์", en: "Top Fill 1.0Ω: MTL, 12–18W", zh: "Top Fill 1.0Ω：MTL，12–18W" }, specKey: "pod-compat" },
         { text: { th: "Cartridge V2 0.7 หรือ 1.2 โอห์ม สำหรับ MTL", en: "Cartridge V2 0.7Ω or 1.2Ω: MTL", zh: "Cartridge V2 0.7Ω 或 1.2Ω：MTL" }, specKey: "pod-compat" },
       ],
