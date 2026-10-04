@@ -5646,5 +5646,26 @@
   "note": "image-sitewide round 3b (2) 02/10 — owner: EVEREST LAB badge \"ไม่ต้องแก้\" → publish the night renders; G5 standard (colours tilted 12°, card upright 4:5) — card = the black render upright, 4:5",
   "replaces": "/assets/products/vinci-s/variants/black.webp",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/b-voopoo/site/p3-green-leather.png",
+  "slug": "argus-p3",
+  "role": "variant",
+  "id": "green-leather",
+  "aiRender": {
+   "tool": "No new AI render: our Brown Leather master (Higgsfield nano_banana_pro 4k night 01/10 render, toned to VOOPOO's photo — b-voopoo/p3final/p3-brown-leather.png) with the leather and frame moved in CIELAB by the green-vs-brown difference on VOOPOO's own colour poster (_incoming/sitewide-template/2/2f/p3-green.js); pre-sized by _incoming/sitewide-template/2/2fimg/p3-green-site.js",
+   "reference": "VOOPOO's ARGUS P3 colour poster (shop.voopoo.com onepage strip, 'Color & Specifications': Green Leather beside Brown Leather — same body, green leather, yellower gold frame)",
+   "fidelitySheet": "_incoming/sitewide-template/2/2f/green/compare.png (VOOPOO poster green / brown · ours green / brown) + green/zoom.png (edges on dark + magenta)"
+  },
+  "note": "site-wide template round batch 2f-img 05/10 — catalog completeness rule: VOOPOO's poster shows 8 finishes, shop + voopoo.com 7",
+  "fileName": "variant-green-leather-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/2/2fimg/g4card/card-g4.png",
+  "slug": "argus-g4",
+  "role": "card",
+  "replaces": "/assets/products/argus-g4/card.webp",
+  "note": "site-wide template round batch 2f-img 05/10 (owner: card too small) — VOOPOO's own Orange photo (shop.voopoo.com gallery, 2533 px), no AI: cut by scripts/flatcut.js + 2 px matte erode (_incoming/sitewide-template/2/2fimg/g4card/erode.js), tilted 12° in 2D (_incoming/image-sitewide/tilt-card.js)",
+  "fileName": "card-v2.webp"
  }
 ]

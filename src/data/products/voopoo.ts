@@ -44,9 +44,11 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/argus-g4/card.webp",
-        alt: "VOOPOO ARGUS G4, Orange colourway, isolated product shot",
-        angle: "Re-processed 2026-09-06 (LAUNCH_AUDIT 11): same official shop.voopoo.com gallery fetched at its native 2533×2533 — the standalone device cropped off the box shot is now ≈1441px on the 1000px canvas (was 519px, blurry on the home page). Earlier history: QC recovery pass (2026-09-03) — REPLACES the previous small (147×480) card asset, which the owner flagged as rendering too small on the real storefront. Re-sourced from VOOPOO's own shop (shop.voopoo.com/products/argus-g4 — the www.voopoo.com marketing site is DNS-blocked from this project's network, but the shop subdomain works with a Referer header) at genuinely high resolution (900×900 source), full official box+device gallery covering all 7 real colors. While re-sourcing, found the product's true color range is Brown/Blue/Gray/Orange/Purple/Black/Silver — \"Green\", previously listed here, does not appear anywhere in VOOPOO's own 7-image gallery and has been corrected to Black.",
+        // 05/10 (owner: "รูปการ์ดเล็กไป"): card-v2 = the same VOOPOO Orange photo at 2533 px, cut out and tilted 12° on the
+        // 1000x1250 card canvas like every VOOPOO card (_incoming/sitewide-template/2/2fimg/g4card/).
+        src: "/assets/products/argus-g4/card-v2.webp",
+        alt: "VOOPOO ARGUS G4, Orange colourway, tilted product shot",
+        angle: "Front, tilted 12°. Re-processed 2026-09-06 (LAUNCH_AUDIT 11): same official shop.voopoo.com gallery fetched at its native 2533×2533 — the standalone device cropped off the box shot is now ≈1441px on the 1000px canvas (was 519px, blurry on the home page). Earlier history: QC recovery pass (2026-09-03) — REPLACES the previous small (147×480) card asset, which the owner flagged as rendering too small on the real storefront. Re-sourced from VOOPOO's own shop (shop.voopoo.com/products/argus-g4 — the www.voopoo.com marketing site is DNS-blocked from this project's network, but the shop subdomain works with a Referer header) at genuinely high resolution (900×900 source), full official box+device gallery covering all 7 real colors. While re-sourcing, found the product's true color range is Brown/Blue/Gray/Orange/Purple/Black/Silver — \"Green\", previously listed here, does not appear anywhere in VOOPOO's own 7-image gallery and has been corrected to Black.",
         transparentBackground: true,
         sourceName: "VOOPOO (official brand shop, shop.voopoo.com)",
         sourceUrl: "https://shop.voopoo.com/products/argus-g4",
@@ -422,9 +424,18 @@ export const voopooProducts: Product[] = [
     // one taller than wide (narrow column, no enlargement): _incoming/sitewide-template/2/2f/blocks.js.
     storyDetails: true,
     storyLayout: "stage",
+    // Batch 2f-img (05/10): 8 finishes — VOOPOO's own colour poster adds Green Leather (shop + voopoo.com list 7; catalog
+    // completeness rule). Its photo = our Brown Leather master moved to the poster's green (_incoming/sitewide-template/2/2f/
+    // p3-green.js). "ทั้งหมด" = two groups of 4 in the page order (owner 05/10: the one image of 7 was too small) — the box
+    // "cluster" layout, _incoming/image-sitewide/set1/boxy.js argus-p3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/argus-p3/lineup-v2.webp",
-      alt: "VOOPOO ARGUS P3, all 7 colours",
+      src: "/assets/products/argus-p3/lineup-v3.webp",
+      alt: "VOOPOO ARGUS P3, colours 1–4 of 8",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/argus-p3/lineup2-v3.webp",
+      alt: "VOOPOO ARGUS P3, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     colorVariants: [
@@ -438,6 +449,7 @@ export const voopooProducts: Product[] = [
       { id: "grey-leather", name: "Grey Leather", swatchHex: "#5f6460", image: { src: "/assets/products/argus-p3/variant-grey-leather-v2.webp", alt: "VOOPOO ARGUS P3, Grey Leather" } },
       { id: "brown-leather", name: "Brown Leather", swatchHex: "#93654c", image: { src: "/assets/products/argus-p3/variant-brown-leather-v2.webp", alt: "VOOPOO ARGUS P3, Brown Leather" } },
       { id: "red-leather", name: "Red Leather", swatchHex: "#b94543", image: { src: "/assets/products/argus-p3/variant-red-leather-v2.webp", alt: "VOOPOO ARGUS P3, Red Leather" } },
+      { id: "green-leather", name: "Green Leather", swatchHex: "#4b714b", image: { src: "/assets/products/argus-p3/variant-green-leather-v2.webp", alt: "VOOPOO ARGUS P3, Green Leather" } },
       { id: "silver-leather", name: "Silver Leather", swatchHex: "#e0e0e0", image: { src: "/assets/products/argus-p3/variant-silver-leather-v2.webp", alt: "VOOPOO ARGUS P3, Silver Leather" } },
       { id: "black-metal", name: "Black Metal", swatchHex: "#2b2b2e", image: { src: "/assets/products/argus-p3/variant-black-metal-v2.webp", alt: "VOOPOO ARGUS P3, Black Metal" } },
     ],
