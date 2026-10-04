@@ -30,6 +30,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   panels, Multi-Ohm 0.7 / flip 1.0 / double press 0.4Ω, `2/2g/`). BATCH 2 DONE except the owner-deferred image work (item 5).
   "Argus Multi-Ohm" = not a catalog product (no Shipnity row) → told on the G4 page only · M Bar 15K data → batch 3 (SALTHUB).
   NEXT = BATCH 3 SALTHUB (owner 05/10 night: "ทำต่อยาวๆ ไม่ hand พรุ่งนี้ตรวจทีเดียว").
+  TEMPORARY RULING (13.6 — ends when the owner says so on 06/10 morning; delete it then): in THIS chat only, run batch after batch
+  in order — no handoff, no chat move at batch close, no stopping to ask (13.3 hard stops still apply) — report all at once.
   i3 method (#268, `2/2fimg/i3/`): one render per finish; wrong shape = re-roll "change ONLY the finish of reference 1" with a passed
     render as ref 1; srtone.js = tone body pixels only; keepdev.js = drop a faint floor shadow. 16 renders = 120 credits.
   Examples: `2/2f/` (gaps.js → blocks.js portrait panels) · `2/2e/` (upscale + composite) · `2/2c/` (exploded view). Traps =
