@@ -692,7 +692,7 @@ export const salthubProducts: Product[] = [
         name: "Black",
         swatchHex: "#1a1a1a",
         // was this product's card photo; now its own cut-out so all 8 colours share one canvas
-        image: { src: "/assets/products/zero-pro/variant-black.webp", alt: "SALTHUB / Marbo Zero Pro, Black" },
+        image: { src: "/assets/products/zero-pro/variant-black-v2.webp", alt: "SALTHUB / Marbo Zero Pro, Black" },
       },
       { id: "pink", name: "Pink", swatchHex: "#e8899a", image: { src: "/assets/products/zero-pro/variant-pink.webp", alt: "SALTHUB / Marbo Zero Pro, Pink (official: Flesh Pink)" } },
       { id: "teal", name: "Teal", swatchHex: "#2a8a8a", image: { src: "/assets/products/zero-pro/variant-teal.webp", alt: "SALTHUB / Marbo Zero Pro, Teal (official: Light Blue)" } },
