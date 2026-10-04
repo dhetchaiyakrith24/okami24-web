@@ -989,7 +989,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ARGUS G3 mini กับ ARGUS G4 mini เลือกตัวไหนดี",
           paragraphs: [
             "[ARGUS G4 mini](/products/argus-g4-mini) มีแบตใหญ่กว่าที่ 1650mAh ใช้หัวพอตที่กลับด้านเพื่อเปลี่ยนโอห์มได้ และมีปุ่มเลื่อนปรับลม",
-            "ถ้าอยากได้เครื่องที่เบากว่าและใช้ง่ายกว่า และไม่จำเป็นต้องปรับลม G3 mini ก็เพียงพอแล้ว"
+            "ถ้าเน้นเครื่องที่เบากว่า ใช้ง่ายกว่า และพอใจกับช่องลมแบบคงที่ G3 mini ก็เพียงพอแล้ว"
           ]
         },
         {
@@ -1002,7 +1002,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ในกล่องมีอะไรบ้าง",
           paragraphs: [
-            "ในกล่องมีตัวเครื่อง ARGUS G3 mini หัวพอต ARGUS Top Fill Cartridge V2 0.7 โอห์ม ขนาด 3mL หนึ่งหัว สายชาร์จ USB-C คู่มือการใช้งาน และการ์ดรายชื่อหัวพอตตระกูล ARGUS ที่ใช้ร่วมกันได้"
+            "ในกล่องมีตัวเครื่อง ARGUS G3 mini หัวพอต ARGUS Top Fill Cartridge V2 0.7 โอห์ม หนึ่งหัว สายชาร์จ USB-C คู่มือการใช้งาน และการ์ดรายชื่อหัวพอตตระกูล ARGUS ที่ใช้ร่วมกันได้"
           ]
         }
       ]
@@ -1014,7 +1014,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ARGUS G3 mini or ARGUS G4 mini?",
           paragraphs: [
             "The [ARGUS G4 mini](/products/argus-g4-mini) has a bigger 1650mAh battery, a cartridge you flip to change resistance and an airflow slider.",
-            "If you want a lighter, simpler device and don't need to adjust the airflow, the G3 mini is enough."
+            "If you want a lighter, simpler device and are happy with fixed airflow, the G3 mini is enough."
           ]
         },
         {
@@ -1027,7 +1027,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "What's in the box?",
           paragraphs: [
-            "The ARGUS G3 mini, one ARGUS Top Fill Cartridge V2 0.7Ω (3mL), a USB-C cable, the user manual and VOOPOO's ARGUS pod-family compatibility guide."
+            "The ARGUS G3 mini, one ARGUS Top Fill Cartridge V2 0.7Ω, a USB-C cable, the user manual and VOOPOO's ARGUS pod-family compatibility guide."
           ]
         }
       ]
@@ -1039,7 +1039,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "ARGUS G3 mini 还是 ARGUS G4 mini？",
           paragraphs: [
             "[ARGUS G4 mini](/products/argus-g4-mini) 电池更大（1650mAh），烟弹翻转即可切换阻值，还有进气滑块。",
-            "如果你想要更轻、更简单的机器，也不需要调进气，G3 mini 就够了。"
+            "如果你想要更轻、更简单的机器，固定进气也合你意，G3 mini 就够了。"
           ]
         },
         {
@@ -1052,7 +1052,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "包装里有什么？",
           paragraphs: [
-            "ARGUS G3 mini 主机、一颗 ARGUS Top Fill Cartridge V2 0.7Ω（3mL）、USB-C 数据线、使用说明书，以及 VOOPOO 的 ARGUS 烟弹家族兼容指南。"
+            "ARGUS G3 mini 主机、一颗 ARGUS Top Fill Cartridge V2 0.7Ω、USB-C 数据线、使用说明书，以及 VOOPOO 的 ARGUS 烟弹家族兼容指南。"
           ]
         }
       ]
