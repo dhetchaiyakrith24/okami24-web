@@ -28,7 +28,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
   asset-refs sweep of the 246 candidates, edge defects).
   Flag `storyStartRight` (default off) starts a page poster-right (G3 Pro, owner 03/10 "vary").
-  BATCH 2 VOOPOO — 04/10: 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 · 2d-fix #259 (sharp posters).
+  BATCH 2 VOOPOO — 04/10: 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 · 2d-fix #259.
   Still to do on the template: ARGUS P3 · VMATE i3 · ARGUS G3 mini · ARGUS G4 mini · ARGUS G4 (VINCI S off-limits). Suggested pairs:
   2e ARGUS G3 mini + G4 mini · 2f ARGUS P3 + VMATE i3 · 2g ARGUS G4 (+ Multi-Ohm, M Bar 15K data). One PR per pair = data + page
   (the 2d way, one build). NEXT = 2e. Facts READ file by file (researcher 04/10, local only, not in git):
