@@ -1372,11 +1372,11 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
     },
     "airflow": {
       title: { th: "ทางเดินของลม", en: "The path the air takes", zh: "进气路径" },
-      subline: { th: "SALTHUB ระบุว่าการรับลมจากด้านข้างทำให้ลมเดินทางสั้นลง", en: "SALTHUB says drawing air in from the side shortens its path.", zh: "SALTHUB 表示，侧面进气能缩短气流路径。" },
+      subline: { th: "รับลมจากด้านข้าง ทางที่ลมต้องผ่านจึงสั้นลง", en: "Air comes in from the side, so it has less far to travel.", zh: "从侧面进气，气流路径更短。" },
       body: {
-        th: "SALTHUB ระบุว่าเมื่อลมเดินทางสั้นลง น้ำยาก็กลายเป็นไอได้เต็มที่",
-        en: "According to SALTHUB, a shorter path helps the liquid vaporise completely.",
-        zh: "据 SALTHUB 介绍，路径更短，有助于烟油完全雾化。",
+        th: "SALTHUB ระบุว่าแบบนี้ช่วยให้น้ำยากลายเป็นไอได้เต็มที่",
+        en: "SALTHUB says that helps the liquid vaporise completely.",
+        zh: "SALTHUB 表示这有助于烟油完全雾化。",
       },
       points: [
         { text: { th: "ช่องลมเข้าอยู่ด้านข้างตัวเครื่อง", en: "Side air intake", zh: "侧面进气口" }, specKey: "airflow" },

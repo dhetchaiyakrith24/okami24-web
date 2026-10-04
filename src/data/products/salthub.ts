@@ -703,7 +703,8 @@ export const salthubProducts: Product[] = [
       // Batch 3a (05/10): rows from SALTHUB's own Zero Pro page + posters (_incoming/sitewide-template/3/facts-zero-pro.md). Left
       // out: capacity (poster "2ML" vs the cartridge's 2.2mL) and "POWER 3.2-4.2W" (unit doubtful); the home page's "Benefits —
       // ZERO PRO" box prints M Switch figures (600mAh, 15000 puffs) and is not used.
-      { key: "puffs-per-pod", label: "Puffs per cartridge", value: "Up to 5,000", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/zero-pro/" },
+      // checker #273: SALTHUB prints "5000 Puffs" on the Zero Pro poster/card — not "per cartridge" (the head copy still says per pod; SEO round)
+      { key: "puffs", label: "Rated puffs", value: "5,000 (SALTHUB's Zero Pro poster)", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/zero-pro/" },
       { key: "modes", label: "Power modes", value: "3 modes — Low-end · Mid-range · High-end", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/zero-pro/" },
       { key: "battery", label: "Battery capacity", value: "380mAh built-in", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/zero-pro/" },
       { key: "resistance", label: "Resistance range", value: "0.5–2Ω", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/zero-pro/" },
@@ -728,8 +729,8 @@ export const salthubProducts: Product[] = [
       {
         id: "airflow",
         title: "The path the air takes",
-        description: "According to SALTHUB, a shorter path helps the liquid vaporise completely.",
-        subline: "SALTHUB says drawing air in from the side shortens its path.",
+        description: "SALTHUB says that helps the liquid vaporise completely.",
+        subline: "Air comes in from the side, so it has less far to travel.",
         image: { src: "/assets/products/zero-pro/story-airflow.webp", alt: "SALTHUB's Zero Pro poster — side air intake", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/zero-pro/", width: 1600, height: 853 },
       },
       {

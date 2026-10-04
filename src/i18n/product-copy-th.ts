@@ -668,7 +668,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       1: "ชอบเครื่องทรงเพรียว หน้าตาคล้ายปากกา",
     },
     specifications: {
-      "puffs-per-pod": "สูงสุด 5,000",
+      puffs: "5,000 · ตามโปสเตอร์ Zero Pro ของ SALTHUB",
       modes: "3 โหมด คือ Low-end · Mid-range · High-end",
       battery: "380mAh ในตัว",
       resistance: "0.5–2Ω",
