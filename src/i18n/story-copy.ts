@@ -897,4 +897,112 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกวัตต์และช่องลม", en: "Read: choosing wattage and airflow", zh: "如何选择功率与进气量" } },
     },
   },
+  // Site-wide template round batch 2d (04/10): VOOPOO's own DRAG S3 / DRAG X3 pages + posters
+  // (_incoming/sitewide-template/2/2d/facts-drag-s3.md + facts-drag-x3.md list the source of each line); Thai = thai-copy 04/10.
+  "drag-s3": {
+    "battery": {
+      title: { th: "แบตก้อนใหญ่ ตัวเครื่องเล็ก", en: "Big battery, compact body", zh: "大电池，小机身" },
+      subline: { th: "ตัวเรือนเป็นซิงค์อัลลอยหุ้มด้วยหนัง", en: "Zinc alloy, wrapped in leather.", zh: "锌合金机身，外覆皮革。" },
+      body: {
+        th: "เมื่อแบตหมด แค่เสียบสายเข้ากับตัวเครื่องก็ชาร์จได้เลย ไม่ต้องมีถ่านสำรองหรือที่ชาร์จถ่านแยก",
+        en: "When it runs low, plug the cable straight into the device — no spare cells, no separate charger.",
+        zh: "没电时，把线直接插在机身上就能充，不用备用电池，也不用另配充电器。",
+      },
+      points: [
+        { text: { th: "ชาร์จผ่าน USB-C 5V/2A", en: "USB-C, 5V/2A charging", zh: "USB-C 充电，5V/2A" }, specKey: "charging" },
+        { text: { th: "ตัวเครื่องสูง 124.25 mm", en: "124.25mm tall", zh: "机身高 124.25mm" }, specKey: "dimensions" },
+      ],
+    },
+    "screen": {
+      title: { th: "จอ TFT 0.96 นิ้ว", en: "0.96-inch TFT screen", zh: "0.96 英寸 TFT 屏幕" },
+      subline: { th: "เปลี่ยนธีมหน้าจอได้ตามที่ชอบ", en: "Change the screen theme to suit you.", zh: "屏幕主题可按喜好更换。" },
+      body: {
+        th: "เลือกได้สามโหมด SMART จะคุมวัตต์ให้อยู่ในช่วงที่เหมาะกับคอยล์ที่ใส่ RBA ให้ตั้งวัตต์เองได้เต็มที่ ส่วน ECO เน้นประหยัดแบตให้ใช้ได้นานขึ้น",
+        en: "Three modes: SMART keeps the wattage within the right range for your coil, RBA leaves every setting to you, and ECO saves battery so it lasts longer.",
+        zh: "三种模式：SMART 自动把功率控制在适合所装线圈的范围内，RBA 完全由你手动设定，ECO 更省电、用得更久。",
+      },
+      points: [
+        { text: { th: "แสดงวัตต์ โหมด โอห์ม แบต และจำนวนพัฟ", en: "Shows wattage, mode, resistance, battery and puff count", zh: "显示功率、模式、阻值、电量和口数" }, specKey: "screen" },
+        { text: { th: "ชิป GENE.TT 2.0", en: "GENE.TT 2.0 chip", zh: "GENE.TT 2.0 芯片" }, specKey: "chip" },
+        { text: { th: "แตะปุ่มยิงเพื่อปลดล็อก ปล่อยนิ้วแล้วเครื่องล็อกกลับเอง", en: "Touch the fire button to unlock; it locks again when you let go", zh: "轻触火键解锁，松手后自动上锁" }, specKey: "control" },
+      ],
+    },
+    "coils": {
+      title: { th: "หัวพอต PnP X", en: "The PnP X cartridge", zh: "PnP X 烟弹" },
+      subline: { th: "เปลี่ยนคอยล์และปรับลมได้ตามที่ชอบสูบ", en: "Change the coil and the airflow to suit how you vape.", zh: "线圈和气流，都能按你的抽法调整。" },
+      body: {
+        th: "ช่องลมอยู่ด้านบนและปรับได้ด้วยการเลื่อน เลื่อนปิดเมื่ออยากสูบ MTL แบบแน่น ๆ หรือเลื่อนเปิดเมื่ออยากได้ลมโล่งขึ้น",
+        en: "The airflow sits on top and slides: close it down for a tight MTL draw, open it up for a looser one.",
+        zh: "进气口在顶部，滑动调节：关小是紧致的 MTL，开大吸感就更松。",
+      },
+      points: [
+        { text: { th: "ใส่ได้ทั้งหัวพอต PnP X Cartridge DTL และ MTL", en: "Takes the PnP X Cartridge DTL or MTL", zh: "可用 PnP X Cartridge DTL 或 MTL 烟弹" }, specKey: "pod-compat" },
+        { text: { th: "จุน้ำยา 5mL (2mL ในเวอร์ชัน TPD) เติมด้านข้าง", en: "Holds 5mL (2mL in the TPD version), filled from the side", zh: "容量 5mL（TPD 版 2mL），侧注油" }, specKey: "pod-compat" },
+        { text: { th: "ใช้คอยล์ PnP X ได้ทุกตัว ตั้งแต่ 0.15 ถึง 1.0 โอห์ม", en: "Takes every PnP X coil, from 0.15 to 1.0Ω", zh: "兼容全部 PnP X 线圈，0.15–1.0Ω" }, specKey: "coil" },
+        { text: { th: "สูบได้ทั้ง MTL RDL และ DTL แบบเบา ๆ", en: "MTL, RDL and light DTL", zh: "适合 MTL、RDL 和轻度 DTL" }, specKey: "vaping-style" },
+      ],
+      link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกวัตต์และช่องลม", en: "Read: choosing wattage and airflow", zh: "如何选择功率与进气量" } },
+    },
+  },
+  "drag-x3": {
+    "battery": {
+      title: { th: "ใส่ถ่านที่เลือกเองได้", en: "Bring your own cell", zh: "电池由你来选" },
+      subline: { th: "มีก้อนสำรองไว้ ก็สลับใส่แล้วสูบต่อได้ทันที", en: "Keep a spare, swap it in and carry on.", zh: "备一颗电池，换上就能接着抽。" },
+      body: {
+        th: "ถ้าไม่ได้พกก้อนสำรอง ก็เสียบสายชาร์จถ่านในเครื่องได้เลย ไม่ต้องถอดออกมาชาร์จแยก",
+        en: "No spare with you? Plug the cable in and the cell charges inside the device — no need to take it out.",
+        zh: "没带备用电池也没关系，插上线就能在机内充电，不用取出来单独充。",
+      },
+      points: [
+        { text: { th: "ชาร์จผ่าน USB-C 5V/2A", en: "USB-C, 5V/2A charging", zh: "USB-C 充电，5V/2A" }, specKey: "charging" },
+        { text: { th: "ใช้เวลาชาร์จ 2–3 ชั่วโมง", en: "Charges in 2–3 hours", zh: "充电约需 2–3 小时" }, specKey: "charge-time" },
+      ],
+    },
+    "unlock": {
+      title: { th: "ปลดล็อกได้สามแบบ", en: "Three ways to unlock", zh: "三种解锁方式" },
+      subline: { th: "เลือกแบบที่ถนัดได้จากเมนู", en: "Pick the one you prefer in the menu.", zh: "在菜单里选你习惯的方式。" },
+      body: {
+        th: "เซ็นเซอร์แบบแตะจะทำงานเฉพาะเมื่อนิ้วแตะ ไม่ทำงานเมื่อโดนกุญแจหรือผ้าในกระเป๋า",
+        en: "The touch sensor responds only to a finger, not to keys or fabric in your pocket.",
+        zh: "触摸感应只对手指有反应，口袋里的钥匙或布料都不会触发。",
+      },
+      captions: [
+        { th: "แตะเพื่อปลดล็อก", en: "Touch to unlock", zh: "触摸解锁" },
+        { th: "กดปุ่มเพื่อปลดล็อก", en: "Button unlock", zh: "按键解锁" },
+        { th: "ปลดล็อกค้างไว้", en: "Stay unlocked", zh: "保持解锁" },
+      ],
+      points: [
+        { text: { th: "กด 5 ครั้งเพื่อเปิดหรือปิดเครื่อง", en: "Press 5 times to turn it on or off", zh: "按 5 下开关机" }, specKey: "control" },
+        { text: { th: "กด 3 ครั้งเพื่อเข้าเมนู", en: "Press 3 times for the menu", zh: "按 3 下进入菜单" }, specKey: "control" },
+      ],
+    },
+    "screen": {
+      title: { th: "จอทัชสกรีน 1.66 นิ้ว", en: "1.66-inch touchscreen", zh: "1.66 英寸触摸屏" },
+      subline: { th: "เลือกธีมหน้าจอได้สามแบบ", en: "Three screen themes to choose from.", zh: "3 款屏幕主题可选。" },
+      body: {
+        th: "บนจอบอกแบต วัตต์ โหมด โอห์ม จำนวนพัฟ และสถานะล็อก จึงรู้ได้ทันทีว่าเครื่องตั้งไว้อย่างไร",
+        en: "It shows battery, wattage, mode, resistance, puff count and lock status, so you can see how it's set at once.",
+        zh: "屏幕显示电量、功率、模式、阻值、口数和锁定状态，当前设定一眼就清楚。",
+      },
+      points: [
+        { text: { th: "ชิป GENE.TT 2.0", en: "GENE.TT 2.0 chip", zh: "GENE.TT 2.0 芯片" }, specKey: "chip" },
+        { text: { th: "มีโหมด SMART RBA และ ECO ให้เลือก", en: "SMART, RBA and ECO modes", zh: "SMART、RBA、ECO 三种模式可选" }, specKey: "modes" },
+      ],
+    },
+    "pnpx": {
+      title: { th: "หัวพอต PnP X", en: "The PnP X cartridge", zh: "PnP X 烟弹" },
+      subline: { th: "ช่องน้ำยาออกแบบมาเพื่อกันรั่ว", en: "A chamber designed to keep the e-liquid in.", zh: "防漏腔体设计，让烟油待在该在的地方。" },
+      body: {
+        th: "หัวพอตที่มากับชุดเป็นแบบ DTL ถ้าอยากสูบ MTL ก็เปลี่ยนเป็นหัวพอต PnP X Cartridge MTL ได้ในเครื่องเดิม หัวแบบ MTL นี้ VOOPOO ขายแยกต่างหาก",
+        en: "The kit comes with the DTL cartridge. For MTL, switch to the PnP X Cartridge MTL on the same device — VOOPOO sells it separately.",
+        zh: "套装附带的是 DTL 烟弹；想抽 MTL，在同一台机器上换成 PnP X Cartridge MTL 即可，VOOPOO 单独出售。",
+      },
+      points: [
+        { text: { th: "จุน้ำยา 5mL (2mL ในเวอร์ชัน TPD) เติมด้านข้าง", en: "Holds 5mL (2mL in the TPD version), filled from the side", zh: "容量 5mL（TPD 版 2mL），侧注油" }, specKey: "pod-compat" },
+        { text: { th: "ใช้คอยล์ PnP X ได้ทุกตัว", en: "Takes every PnP X coil", zh: "兼容全部 PnP X 线圈" }, specKey: "coil" },
+        { text: { th: "ช่องลมอยู่ด้านบน", en: "Top airflow", zh: "顶部进气" }, specKey: "airflow" },
+      ],
+      link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกวัตต์และช่องลม", en: "Read: choosing wattage and airflow", zh: "如何选择功率与进气量" } },
+    },
+  },
 };

@@ -24,6 +24,9 @@ export const COMPAT_LABELS_TH: Record<string, string> = {
   "UWELL GPP cartridge platform": "หัวพอต UWELL GPP",
   "Caliburn G3 pod": "หัวพอต Caliburn G3",
   "ARGUS top-fill cartridge platform": "หัวพอต ARGUS แบบเติมด้านบน",
+  // Batch 2d (04/10): DRAG S3 / X3 cartridge, from VOOPOO's own pages (thai-copy).
+  "PnP X Cartridge (PnP X coils)": "หัวพอต PnP X Cartridge ใช้คอยล์ PnP X",
+  "PnP X Cartridge DTL (5mL) in the kit; takes every PnP X coil.": "ในกล่องมีหัวพอต PnP X Cartridge DTL 5mL ใช้คอยล์ PnP X ได้ทุกตัว",
   "DRAG-series coil pod": "หัวพอตสาย DRAG (เปลี่ยนคอยล์ได้)",
   "UFORCE-X Tank II (PnP X coils)": "ถังน้ำยา UFORCE-X Tank II ใช้คอยล์ PnP X",
   "VINCI cartridge platform": "หัวพอต VINCI",

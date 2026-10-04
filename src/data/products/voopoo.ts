@@ -1,6 +1,8 @@
 import type { Product } from "@/types/catalog";
 
 const usbC2A = { type: "charging" as const, label: "USB-C", note: "5V/2A charging." };
+const S3_PAGE = "https://shop.voopoo.com/products/drag-s3";
+const X3_PAGE = "https://shop.voopoo.com/products/drag-x3";
 const usbC1A = { type: "charging" as const, label: "USB-C", note: "Lower-amperage charging on this model." };
 
 export const voopooProducts: Product[] = [
@@ -748,6 +750,12 @@ export const voopooProducts: Product[] = [
     // the fidelity check), tilted 12°; card-v2 = the Spray Black remake upright; swatches = the median body colour of
     // those photos (several were guessed from the names). Scripts + sheets: _incoming/image-sitewide/dsx/ (map: scripts/process-images.map.json).
     openOnCardPhoto: true,
+    // Site-wide template round batch 2d (04/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — VOOPOO's own shop page told
+    // one poster per block; text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Posters = VOOPOO's files,
+    // cut whole out of its long DRAG S3 / X3 poster strip (+ the X3 unlock poster), down-sized only: 2d/blocks.js.
+    storyDetails: true,
+    storyLayout: "stage",
+    storyCover: { src: "/assets/products/drag-s3/story-cover.webp", alt: "Official VOOPOO banner — the DRAG S3", sourceName: "VOOPOO", sourceUrl: S3_PAGE, width: 972, height: 468 },
     colorVariants: [
       { id: "spray-black", name: "Spray Black", swatchHex: "#363636", image: { src: "/assets/products/drag-s3/variant-spray-black-v2.webp", alt: "VOOPOO DRAG S3, Spray Black" } },
       { id: "white", name: "White", swatchHex: "#cdcdcd", image: { src: "/assets/products/drag-s3/variant-white-v2.webp", alt: "VOOPOO DRAG S3, White" } },
@@ -770,27 +778,55 @@ export const voopooProducts: Product[] = [
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     specifications: [
-      { key: "battery", label: "Battery", value: "3000mAh built-in", sourceStatus: "verified" },
-      { key: "output", label: "Output range", value: "5–60W", sourceStatus: "verified" },
-      { key: "screen", label: "Display", value: "0.96\" TFT screen", sourceStatus: "verified" },
-      { key: "resistance", label: "Resistance range", value: "0.1–3.0Ω", sourceStatus: "verified" },
-      { key: "materials", label: "Materials", value: "Zinc alloy, leather", sourceStatus: "verified" },
-      { key: "charging", label: "Charging", value: "USB-C, 5V/2A", sourceStatus: "verified" },
+      // Batch 2d (04/10): every row re-read from VOOPOO's shop page + its one long poster, piece by piece
+      // (_incoming/sitewide-template/2/2d/facts-drag-s3.md). The old "DRAG-series coil pod" was not the maker's name.
+      { key: "battery", label: "Battery", value: "3000mAh built-in", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "output", label: "Output range", value: "5–60W", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "screen", label: "Display", value: "0.96\" TFT — wattage, mode, resistance, battery, puff count · themes", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "chip", label: "Chipset", value: "GENE.TT 2.0", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "modes", label: "Output modes", value: "SMART, RBA, ECO", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "control", label: "Control", value: "Capacitive unlock sensor on the fire button (touch to unlock, locks again on release) · 5 presses on/off · 3 presses menu", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "pod-compat", label: "Pod platform", value: "PnP X Cartridge DTL / MTL, 5mL (2mL TPD), side fill", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "coil", label: "Coil", value: "Every PnP X coil (0.15–1.0Ω); the kit comes with PnP X 0.6Ω and 0.8Ω", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "airflow", label: "Airflow", value: "Top airflow, sliding adjustment", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "resistance", label: "Resistance range", value: "0.1–3.0Ω", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "voltage", label: "Output voltage", value: "3.2–4.35V", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "materials", label: "Materials", value: "Zinc alloy, leather", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "charging", label: "Charging", value: "USB-C, 5V/2A", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "dimensions", label: "Dimensions", value: "124.25 × 33 × 28 mm", sourceStatus: "verified", sourceUrl: S3_PAGE },
+      { key: "vaping-style", label: "Vaping style", value: "MTL, RDL and light DTL", sourceStatus: "verified", sourceUrl: S3_PAGE },
     ],
     features: [
       {
-        id: "built-in-3000",
-        title: "3000mAh built-in cell",
-        description: "No cell swapping — a sealed built-in battery sized for all-day 60W use, charged over USB-C.",
+        id: "battery",
+        title: "Big battery, compact body",
+        description: "When it runs low, plug the cable straight into the device — no spare cells, no separate charger.",
+        subline: "Zinc alloy, wrapped in leather.",
+        image: { src: "/assets/products/drag-s3/story-battery.webp", alt: "VOOPOO's DRAG S3 poster — the 3000mAh battery and the compact body", sourceName: "VOOPOO", sourceUrl: S3_PAGE, width: 890, height: 638 },
+      },
+      {
+        id: "screen",
+        title: "0.96-inch TFT screen",
+        description: "Three modes: SMART keeps the wattage within the right range for your coil, RBA leaves every setting to you, and ECO saves battery so it lasts longer.",
+        subline: "Change the screen theme to suit you.",
+        image: { src: "/assets/products/drag-s3/story-screen.webp", alt: "VOOPOO's DRAG S3 poster — the 0.96-inch TFT screen and the PnP X cartridge", sourceName: "VOOPOO", sourceUrl: S3_PAGE, width: 890, height: 638 },
+      },
+      {
+        id: "coils",
+        title: "The PnP X cartridge",
+        description: "The airflow sits on top and slides: close it down for a tight MTL draw, open it up for a looser one.",
+        subline: "Change the coil and the airflow to suit how you vape.",
+        image: { src: "/assets/products/drag-s3/story-coils.webp", alt: "VOOPOO's DRAG S3 poster — PnP X cartridges and coils from 0.15Ω to 1.0Ω, MTL to DTL", sourceName: "VOOPOO", sourceUrl: S3_PAGE, width: 1024, height: 1385 },
       },
     ],
-    compatibility: [{ type: "pod", label: "DRAG-series coil pod", note: "0.1–3.0Ω resistance range." }, usbC2A],
+    compatibility: [{ type: "pod", label: "PnP X Cartridge (PnP X coils)", note: "PnP X Cartridge DTL (5mL) in the kit; takes every PnP X coil." }, usbC2A],
     whoIsThisFor: [
-      "Vapers who want DRAG-level output without managing external 18650/21700 cells.",
+      "Vapers who want a small DRAG to reach for every day.",
+      "Mostly-MTL vapers who sometimes swap coils for an RDL or light DTL draw.",
     ],
     faqs: [],
     relatedProductSlugs: ["drag-x3", "drag-6"],
-    sourceUrls: ["https://www.voopoo.com/drag-series/drag-s3"],
+    sourceUrls: ["https://www.voopoo.com/drag-series/drag-s3", S3_PAGE],
   },
   {
     id: "drag-x3",
@@ -814,7 +850,7 @@ export const voopooProducts: Product[] = [
       drawStyle: "DTL",
       portability: "standard",
       beginnerFriendly: false,
-      chargingType: "USB-C, 5V/2A (device); external cell charged separately",
+      chargingType: "USB-C, 5V/2A",
     },
     assets: [
       {
@@ -843,6 +879,13 @@ export const voopooProducts: Product[] = [
     // the fidelity check), tilted 12°; card-v2 = the Spray Black remake upright; swatches = the median body colour of
     // those photos (several were guessed from the names). Scripts + sheets: _incoming/image-sitewide/dsx/ (map: scripts/process-images.map.json).
     openOnCardPhoto: true,
+    // Site-wide template round batch 2d (04/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — VOOPOO's own shop page told
+    // one poster per block; text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Posters = VOOPOO's files,
+    // cut whole out of its long DRAG S3 / X3 poster strip (+ the X3 unlock poster), down-sized only: 2d/blocks.js.
+    storyDetails: true,
+    storyLayout: "stage",
+    storyStartRight: true,
+    storyCover: { src: "/assets/products/drag-x3/story-cover.webp", alt: "Official VOOPOO banner — the DRAG X3", sourceName: "VOOPOO", sourceUrl: X3_PAGE, width: 904, height: 454 },
     colorVariants: [
       { id: "gray-metal", name: "Gray Metal", swatchHex: "#696964", image: { src: "/assets/products/drag-x3/variant-gray-metal-v2.webp", alt: "VOOPOO DRAG X3, Gray Metal" } },
       {
@@ -870,28 +913,61 @@ export const voopooProducts: Product[] = [
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     specifications: [
-      { key: "battery", label: "Battery", value: "Single external 18650 or 21700 cell (not included)", sourceStatus: "verified" },
-      { key: "output", label: "Output range", value: "5–80W", sourceStatus: "verified" },
-      { key: "screen", label: "Display", value: "1.66\" touchscreen", sourceStatus: "verified" },
-      { key: "resistance", label: "Resistance range", value: "0.1–3.0Ω", sourceStatus: "verified" },
-      { key: "materials", label: "Materials", value: "Zinc alloy, leather", sourceStatus: "verified" },
+      // Batch 2d (04/10): every row re-read from VOOPOO's shop page + posters (_incoming/sitewide-template/2/2d/facts-drag-x3.md).
+      // Left out on purpose — VOOPOO's own page contradicts itself: the kit coils (spec card 0.15/0.3Ω vs kit list 0.6/0.8Ω)
+      // and the drip tip thread (810 vs 510). A blurb on the same page says 100W / single 18650 — the spec table says 80W, 18650/21700.
+      { key: "battery", label: "Battery", value: "Single external 18650 or 21700 cell (not included)", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "output", label: "Output range", value: "5–80W", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "screen", label: "Display", value: "1.66\" TFT touchscreen — battery, lock, wattage, mode, resistance, puff count · 3 themes", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "chip", label: "Chipset", value: "GENE.TT 2.0", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "modes", label: "Output modes", value: "SMART, RBA, ECO", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "control", label: "Control", value: "Capacitive touch unlock, button unlock or stay unlocked · 5 presses on/off · 3 presses menu", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "pod-compat", label: "Pod platform", value: "PnP X Cartridge DTL (in the kit) / MTL, 5mL (2mL TPD), side fill", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "coil", label: "Coil", value: "Every PnP X coil", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "airflow", label: "Airflow", value: "Top airflow", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "resistance", label: "Resistance range", value: "0.1–3.0Ω", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "voltage", label: "Output voltage", value: "3.2–4.2V", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "materials", label: "Materials", value: "Zinc alloy, leather", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "charging", label: "Charging", value: "USB-C, 5V/2A", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "charge-time", label: "Charge time", value: "2–3 hours", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "dimensions", label: "Dimensions", value: "133 × 34 × 28 mm", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "weight", label: "Weight", value: "130g", sourceStatus: "verified", sourceUrl: X3_PAGE },
+      { key: "vaping-style", label: "Vaping style", value: "DTL and MTL", sourceStatus: "verified", sourceUrl: X3_PAGE },
     ],
     features: [
       {
-        id: "external-cell",
-        title: "Swappable 18650/21700 cell",
-        description: "Runs on a single user-supplied external cell instead of a sealed built-in battery, so a spare cell means no downtime charging.",
+        id: "battery",
+        title: "Bring your own cell",
+        description: "No spare with you? Plug the cable in and the cell charges inside the device — no need to take it out.",
+        subline: "Keep a spare, swap it in and carry on.",
+        image: { src: "/assets/products/drag-x3/story-battery.webp", alt: "VOOPOO's DRAG X3 poster — 18650 and 21700 cells, and the capacitive unlock sensor", sourceName: "VOOPOO", sourceUrl: X3_PAGE, width: 890, height: 644 },
       },
       {
-        id: "touchscreen-166",
-        title: "1.66\" touchscreen",
-        description: "A 1.66\" touchscreen used for full menu and mode navigation.",
+        id: "unlock",
+        title: "Three ways to unlock",
+        description: "The touch sensor responds only to a finger, not to keys or fabric in your pocket.",
+        subline: "Pick the one you prefer in the menu.",
+        image: { src: "/assets/products/drag-x3/story-unlock.webp", alt: "VOOPOO's DRAG X3 poster — capacitive touch, button unlock and stay unlocked", sourceName: "VOOPOO", sourceUrl: X3_PAGE, width: 940, height: 484 },
+      },
+      {
+        id: "screen",
+        title: "1.66-inch touchscreen",
+        description: "It shows battery, wattage, mode, resistance, puff count and lock status, so you can see how it's set at once.",
+        subline: "Three screen themes to choose from.",
+        image: { src: "/assets/products/drag-x3/story-screen.webp", alt: "VOOPOO's DRAG X3 poster — the 1.66-inch touchscreen and the PnP X cartridge", sourceName: "VOOPOO", sourceUrl: X3_PAGE, width: 890, height: 644 },
+      },
+      {
+        id: "pnpx",
+        title: "The PnP X cartridge",
+        description: "The kit comes with the DTL cartridge. For MTL, switch to the PnP X Cartridge MTL on the same device — VOOPOO sells it separately.",
+        subline: "A chamber designed to keep the e-liquid in.",
+        image: { src: "/assets/products/drag-x3/story-pnpx.webp", alt: "VOOPOO's DRAG X3 poster — the PnP X platform and its leak-proof chamber", sourceName: "VOOPOO", sourceUrl: X3_PAGE, width: 900, height: 1365 },
       },
     ],
-    compatibility: [{ type: "pod", label: "DRAG-series coil pod", note: "0.1–3.0Ω resistance range." }, usbC2A],
+    compatibility: [{ type: "pod", label: "PnP X Cartridge (PnP X coils)", note: "PnP X Cartridge DTL (5mL) in the kit; takes every PnP X coil." }, usbC2A],
     whoIsThisFor: [
-      "Vapers who prefer swappable external cells over sealed built-in batteries.",
-      "Anyone who wants an 80W ceiling with full touchscreen control.",
+      "Vapers who prefer a removable cell to a built-in battery, and like to pick the cell to suit how they vape.",
+      "Mostly-DTL vapers who want the option of an MTL cartridge on the same device.",
     ],
     faqs: [
       {
@@ -901,7 +977,7 @@ export const voopooProducts: Product[] = [
       },
     ],
     relatedProductSlugs: ["drag-s3", "drag-6"],
-    sourceUrls: ["https://www.voopoo.com/drag-series/drag-x3"],
+    sourceUrls: ["https://www.voopoo.com/drag-series/drag-x3", X3_PAGE],
   },
   {
     id: "vinci-s",
