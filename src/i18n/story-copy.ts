@@ -1012,7 +1012,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "กลับด้านหัวพอต ก็เปลี่ยนโอห์มได้", en: "Flip the pod, switch the resistance", zh: "翻转烟弹，切换阻值" },
       subline: { th: "สองค่าโอห์มอยู่ในหัวพอตหัวเดียว", en: "Two resistances in one cartridge.", zh: "一颗烟弹，两种阻值。" },
       body: {
-        th: "ใส่หัวพอตตามปกติเมื่ออยากได้ไอที่อุ่นและลมที่โล่งขึ้น หรือหมุนหัวพอต 180 องศาแล้วใส่กลับเข้าไปเมื่ออยากสูบแบบแน่น ตัวเครื่องจะรู้เองทันทีว่ากำลังใช้ค่าโอห์มไหน",
+        th: "ใส่หัวพอตตามปกติเมื่ออยากได้ไอที่อุ่นและลมที่โล่งขึ้น หรือหมุนหัวพอต 180 องศาแล้วใส่กลับเข้าไปเมื่ออยากสูบแบบแน่น ตัวเครื่องจะรู้เองทันทีว่าหัวพอตใส่อยู่ด้านไหน",
         en: "Put the pod in as it comes for a warmer, looser draw, or turn it 180° for a tight one. The device reads which way it sits by itself.",
         zh: "按原样插入，吸感更暖更松；转 180° 插入，吸感就变紧。机身会自动识别烟弹的方向。",
       },
@@ -1097,7 +1097,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "หัวพอต Top Fill Cartridge V2", en: "ARGUS Top Fill Cartridge V2", zh: "ARGUS Top Fill Cartridge V2" },
       subline: { th: "มีให้เลือกสามค่าโอห์ม แต่ละค่าให้แนวการสูบต่างกัน", en: "Three resistances, each with its own draw.", zh: "三种阻值，各有各的吸感。" },
       body: {
-        th: "หัวพอตเติมน้ำยาจากด้านบน ในกล่องมีหัว 0.7 โอห์มมาให้ ถ้าอยากได้แนวการสูบแบบอื่น ก็เลือกหัวค่าโอห์มอื่นได้",
+        th: "หัวพอตเติมน้ำยาจากด้านบน ในกล่องมีหัว 0.7 โอห์มมาให้ ถ้าอยากได้แนวการสูบแบบอื่น ก็เลือกหัวที่โอห์มต่างออกไปได้",
         en: "It fills from the top, and the kit comes with the 0.7Ω; for a different draw, pick another resistance.",
         zh: "顶部注油，套装附 0.7Ω；想要别的吸感，就换其他阻值。",
       },
