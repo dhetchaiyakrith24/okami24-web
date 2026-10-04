@@ -36,8 +36,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   TEMPORARY RULING [ตรวจแล้ว — owner in chat 05/10] (13.6 — ends when the owner says so on 06/10 morning; delete it then): in THIS
   chat only, batch after batch in order — no handoff, no chat move (owner: "ไม่ต้องจบก้อนย้ายแชท" — overrides central §12 item 29
   for this chat; auto-compaction carries the context), no stopping to ask (13.3 hard stops still apply) — report all at once.
-  Worked examples `_incoming/sitewide-template/2/`: 2e (upscale + composite) · 2f (gaps.js → blocks.js) · 2g (panel cut + corners.js,
-  extract.js = page text + posters) · 2fimg/i3 (render per finish). Traps = LESSONS 24 + พ18. Voice: owner "ผสมกัน" (#253–#264).
+  Worked examples: `_incoming/sitewide-template/2/2e|2f|2g` + `3/3a|3b` (scripts in each). Traps = LESSONS 24 + พ18.
   One build per batch · whole-sitemap scans only when a shared part changes.
   Gates per batch: `npm run verify:catalog` (fresh worktree: `npx next typegen` first) · page-text-length --facts · wordbreak-scan → reword
   · checker · scripts as .js files (Thai/backslash/backticks never through `node -e` or a heredoc).
