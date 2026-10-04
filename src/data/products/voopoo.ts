@@ -200,7 +200,7 @@ export const voopooProducts: Product[] = [
         title: "Flip it or press the button",
         description: "The device reads the new resistance by itself the moment you switch, so there is no second pod to carry and no menu to dig through.",
         subline: "Three resistances from one Multi-Ohm cartridge.",
-        image: { src: "/assets/products/argus-g4/story-ohm-v2.webp", alt: "VOOPOO's ARGUS G4 poster — the Multi-Ohm cartridge: flip for 1.0Ω or 0.7Ω, press the button twice for 0.4Ω", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 1377 },
+        image: { src: "/assets/products/argus-g4/story-ohm-v3.webp", alt: "VOOPOO's ARGUS G4 poster — the Multi-Ohm cartridge: flip for 1.0Ω or 0.7Ω, press the button twice for 0.4Ω", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1592, height: 1367 },
       },
       {
         id: "battery",
