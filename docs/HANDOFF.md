@@ -31,13 +31,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   BATCH 2 VOOPOO — 04/10: 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 · 2d-fix #259 ·
   2e #262 = ARGUS G4 mini + G3 mini.
   Still to do on the template: ARGUS P3 · VMATE i3 · ARGUS G4 (VINCI S off-limits). Pairs: 2f ARGUS P3 + VMATE i3 ·
-  2g ARGUS G4 (+ Multi-Ohm, M Bar 15K data). One PR per pair = data + page (one build). NEXT = 2f, first step: `researcher`
+  2g ARGUS G4 (+ Multi-Ohm, M Bar 15K data; its hero = G4 mini poster 01, both devices — already the G4 mini cover). One PR per pair = data + page (one build). NEXT = 2f, first step: `researcher`
   reads P3 / VMATE i3 file by file into `_incoming/sitewide-template/2/2f/facts-*.md` (the 2e brief shape: posters/story ·
   facts with line/file · contradictions). Both = one 1024-px "onepage" strip each → cut with 2d/cut-onepage.js first.
   2e = the pattern to copy (`2/2e/`): blocks.js (panel cuts via probe.js · portrait hero = block 1, no cover) · composite.js
   (2k upscale of a landscape strip block, VOOPOO's pixels back over every device) · brief-2e.md (fact budget) → thai-copy.
-  2e tips: a fact left out of the text must be out of the posters too (LESSONS พ18) · weight goes in the dimensions row
-  (a "…g" row before a Thai row starting with a digit breaks search — verify:catalog catches it).
+  2e tips: LESSONS พ18 (a fact cut from the text is cut from the posters too; weight goes in the dimensions row).
   Older worked examples: DRAG 6 `2/2c/` (exploded view from a maker 4K multi-view sheet: anat-crop.js + anat-build.js) · S3/X3
   `2/2d/` (pale page background trimmed, light gap between tile pairs filled — checker #255, Owner eye #1). VOOPOO pages
   contradict themselves → leave those facts out, say so in a code comment. A maker parts view with English labels baked in is
