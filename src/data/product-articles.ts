@@ -1058,6 +1058,158 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 2f (05/10): from VOOPOO's ARGUS P3 / VMATE i3 pages and posters; Thai = thai-copy 05/10.
+  "argus-p3": {
+    th: {
+      lede: "ARGUS P3 เป็นรุ่นที่ VOOPOO ใส่ความสามารถไว้หลายอย่างในตัวเครื่องเดียว ด้านล่างไล่ให้ดูทีละเรื่อง",
+      sections: [
+        {
+          heading: "ARGUS P3 กับ ARGUS G4 mini เลือกตัวไหนดี",
+          paragraphs: [
+            "[ARGUS G4 mini](/products/argus-g4-mini) ไม่มีจอ ใช้วิธีกลับด้านหัวพอตเพื่อเปลี่ยนโอห์ม และเบากว่าที่ 56 กรัม",
+            "ถ้าอยากมีจอไว้ดูข้อมูลการสูบของตัวเอง P3 จะเหมาะกว่า โดยตัวเครื่องหนัก 82 กรัม"
+          ]
+        },
+        {
+          heading: "ใช้หัวพอตอะไรได้บ้าง และหาซื้อได้ที่ไหน",
+          paragraphs: [
+            "VOOPOO ระบุว่าใช้ได้ทั้ง Snap Cartridge และ Top Fill Cartridge V2 รวมถึง Top Fill Cartridge และหัวพอตรุ่น CRC",
+            "ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก หากต้องการ สอบถามได้ทางไลน์ @okm24"
+          ]
+        },
+        {
+          heading: "ในกล่องมีอะไรบ้าง",
+          paragraphs: [
+            "ในกล่องมีตัวเครื่อง ARGUS P3 หัวพอต ARGUS Snap Cartridge สองหัว คือ 0.4 โอห์มและ 0.7 โอห์ม สายชาร์จ USB-C คู่มือการใช้งาน คู่มือเริ่มใช้งานฉบับย่อ และการ์ดรายชื่อหัวพอตตระกูล ARGUS ที่ใช้ร่วมกันได้"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "The ARGUS P3 is VOOPOO's do-a-lot device in one small body. Below, one part at a time.",
+      sections: [
+        {
+          heading: "ARGUS P3 or ARGUS G4 mini?",
+          paragraphs: [
+            "The [ARGUS G4 mini](/products/argus-g4-mini) has no screen at all: you flip its cartridge to change resistance, and it is lighter at 56g.",
+            "If you want a screen that shows your vaping data, the P3 is the one; it weighs 82g."
+          ]
+        },
+        {
+          heading: "Which pods fit, and where do I get them?",
+          paragraphs: [
+            "VOOPOO lists the Snap Cartridge, the Top Fill Cartridge V2, the Top Fill Cartridge and their CRC versions.",
+            "We don't sell ARGUS pods separately yet. Ask on LINE @okm24."
+          ]
+        },
+        {
+          heading: "What's in the box?",
+          paragraphs: [
+            "The ARGUS P3, two ARGUS Snap Cartridges (0.4Ω and 0.7Ω), a USB-C cable, the user manual, a quick start guide and VOOPOO's ARGUS pod-family compatibility guide."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "ARGUS P3 是 VOOPOO 一款功能很多的机型。下面逐项来看。",
+      sections: [
+        {
+          heading: "ARGUS P3 还是 ARGUS G4 mini？",
+          paragraphs: [
+            "[ARGUS G4 mini](/products/argus-g4-mini) 完全没有屏幕：翻转烟弹即可切换阻值，重量也更轻，只有 56g。",
+            "如果想要一块能看抽吸数据的屏幕，就选 P3；它重 82g。"
+          ]
+        },
+        {
+          heading: "能用哪些烟弹？去哪里买？",
+          paragraphs: [
+            "VOOPOO 列出的有 Snap 烟弹、Top Fill Cartridge V2、Top Fill Cartridge 以及它们的 CRC 版本。",
+            "我们暂时还没有单独销售 ARGUS 烟弹。可以在 LINE @okm24 询问。"
+          ]
+        },
+        {
+          heading: "包装里有什么？",
+          paragraphs: [
+            "ARGUS P3 主机、两颗 ARGUS Snap 烟弹（0.4Ω 和 0.7Ω）、一条 USB-C 数据线、使用说明书、快速入门指南，以及 VOOPOO 的 ARGUS 烟弹兼容指南。"
+          ]
+        }
+      ]
+    },
+  },
+  "vmate-i3": {
+    th: {
+      lede: "VMATE i3 เป็นรุ่นที่ VOOPOO ทำมาให้หยิบใช้ได้ง่ายในทุกวัน ด้านล่างไล่ให้ดูทีละเรื่อง",
+      sections: [
+        {
+          heading: "VMATE i3 กับ ARGUS G3 mini เลือกตัวไหนดี",
+          paragraphs: [
+            "ทั้งสองรุ่นไม่มีปุ่ม สูบได้เลยเหมือนกัน ส่วน [ARGUS G3 mini](/products/argus-g3-mini) ตัวเล็กกว่า เบากว่าที่ 40.85 กรัม ใช้แบต 1350mAh และช่องลมเป็นแบบคงที่",
+            "ถ้าอยากปรับช่องลมได้เอง VMATE i3 จะเหมาะกว่า โดยเครื่องนี้ใช้หัวพอตตระกูล VMATE แทนหัวพอต ARGUS"
+          ]
+        },
+        {
+          heading: "หาซื้อหัวพอต VMATE ได้ที่ไหน",
+          paragraphs: [
+            "ร้านเรามี [หัวพอต VOOPOO VMATE](/products/coil-72) ขายอยู่ ก่อนสั่ง แนะนำให้เทียบค่าโอห์มกับตารางด้านบนอีกครั้ง"
+          ]
+        },
+        {
+          heading: "ในกล่องมีอะไรบ้าง",
+          paragraphs: [
+            "ในกล่องมีตัวเครื่อง VMATE i3 หัวพอต VMATE Top Fill Cartridge 0.7 โอห์ม หนึ่งหัว สายชาร์จ USB-C คู่มือการใช้งาน และการ์ดรายชื่อหัวพอตตระกูล VMATE ที่ใช้ร่วมกันได้"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "The VMATE i3 is VOOPOO's easy, everyday pod kit. Below, one part at a time.",
+      sections: [
+        {
+          heading: "VMATE i3 or ARGUS G3 mini?",
+          paragraphs: [
+            "Both fire when you draw. The [ARGUS G3 mini](/products/argus-g3-mini) is smaller and lighter at 40.85g, with a 1350mAh battery and fixed airflow.",
+            "The VMATE i3 is the one to pick if you want to open or close the airflow yourself, and it takes VMATE pods instead of ARGUS ones."
+          ]
+        },
+        {
+          heading: "Where do I get VMATE pods?",
+          paragraphs: [
+            "We carry [VOOPOO VMATE pods](/products/coil-72). Check the resistance against the table above before you order."
+          ]
+        },
+        {
+          heading: "What's in the box?",
+          paragraphs: [
+            "The VMATE i3, one VMATE Top Fill Cartridge 0.7Ω, a USB-C cable, the user manual and VOOPOO's VMATE pod-family compatibility guide."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "VMATE i3 是 VOOPOO 一款日常用起来很省心的主机。下面逐项来看。",
+      sections: [
+        {
+          heading: "VMATE i3 还是 ARGUS G3 mini？",
+          paragraphs: [
+            "两款都是吸气启动。[ARGUS G3 mini](/products/argus-g3-mini) 更小更轻，40.85g，电池 1350mAh，进气量固定。",
+            "如果你想自己调节进气大小，就选 VMATE i3；它用的是 VMATE 烟弹，而不是 ARGUS 烟弹。"
+          ]
+        },
+        {
+          heading: "去哪里买 VMATE 烟弹？",
+          paragraphs: [
+            "本店有售 [VOOPOO VMATE 烟弹](/products/coil-72)。下单前请对照上面的表格核对阻值。"
+          ]
+        },
+        {
+          heading: "包装里有什么？",
+          paragraphs: [
+            "VMATE i3 主机、一颗 VMATE Top Fill Cartridge 0.7Ω、一条 USB-C 数据线、使用说明书，以及 VOOPOO 的 VMATE 烟弹兼容指南。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

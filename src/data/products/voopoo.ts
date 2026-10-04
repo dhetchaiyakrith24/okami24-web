@@ -6,6 +6,8 @@ const S3_PAGE = "https://shop.voopoo.com/products/drag-s3";
 const X3_PAGE = "https://shop.voopoo.com/products/drag-x3";
 const G4M_PAGE = "https://shop.voopoo.com/products/argus-g4-mini";
 const G3M_PAGE = "https://shop.voopoo.com/products/argus-g3-mini";
+const P3_PAGE = "https://shop.voopoo.com/products/argus-p3";
+const I3_PAGE = "https://shop.voopoo.com/products/vmate-i3";
 const usbC1A = { type: "charging" as const, label: "USB-C", note: "Lower-amperage charging on this model." };
 
 export const voopooProducts: Product[] = [
@@ -374,6 +376,8 @@ export const voopooProducts: Product[] = [
       portability: "compact",
       beginnerFriendly: false,
       chargingType: "USB-C",
+      capacityMl: 2,
+      weightG: 82,
     },
     assets: [
       {
@@ -412,6 +416,12 @@ export const voopooProducts: Product[] = [
     // VOOPOO's photos. 02/10 (owner lifted the baseline hold, §18): card-v2 = the Blue Leather photo tilted 12° +
     // openOnCardPhoto · "ทั้งหมด" (IMAGE_SPEC §0 item 5) = the "cluster" layout for box devices — set1/boxy.js.
     openOnCardPhoto: true,
+    // Site-wide template round batch 2f (05/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — VOOPOO's own long
+    // 1024-px poster told one panel per block (no cover: the strip's hero is portrait, so it is block 1); text in
+    // src/i18n/story-copy.ts, article in src/data/product-articles.ts. Panels cut whole at the strip's quiet bands, every
+    // one taller than wide (narrow column, no enlargement): _incoming/sitewide-template/2/2f/blocks.js.
+    storyDetails: true,
+    storyLayout: "stage",
     lineupImage: {
       src: "/assets/products/argus-p3/lineup-v2.webp",
       alt: "VOOPOO ARGUS P3, all 7 colours",
@@ -432,25 +442,64 @@ export const voopooProducts: Product[] = [
       { id: "black-metal", name: "Black Metal", swatchHex: "#2b2b2e", image: { src: "/assets/products/argus-p3/variant-black-metal-v2.webp", alt: "VOOPOO ARGUS P3, Black Metal" } },
     ],
     specifications: [
-      { key: "battery", label: "Battery", value: "1500mAh built-in", sourceStatus: "verified" },
-      { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified" },
-      { key: "screen", label: "Display", value: "2.01\" full-touch TFT HD", sourceStatus: "verified" },
-      { key: "pod", label: "Pod platform", value: "ARGUS top-fill cartridge platform", sourceStatus: "verified" },
+      // Batch 2f (05/10): every row re-read from VOOPOO's shop page + its long poster + www.voopoo.com, piece by piece
+      // (_incoming/sitewide-template/2/2f/facts-argus-p3.md). No dimensions row: voopoo.com gives 51.35×20.7×60.7 mm on the
+      // product page and 56.1×49×20.4 mm in its own article (82g in both). No chip row (named on one page only; VOOPOO names
+      // its chips more than one way elsewhere). Materials = the shop page + poster ("Metal"; www says aluminum alloy → not named).
+      { key: "battery", label: "Battery", value: "1500mAh built-in", sourceStatus: "verified", sourceUrl: P3_PAGE },
+      { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified", sourceUrl: P3_PAGE },
+      { key: "voltage", label: "Output voltage", value: "3.2–4.2V", sourceStatus: "verified", sourceUrl: P3_PAGE },
+      { key: "resistance", label: "Resistance range", value: "0.4–3.0Ω", sourceStatus: "verified", sourceUrl: P3_PAGE },
+      { key: "screen", label: "Display", value: "2.01\" TFT HD, full touch, curved over both edges · 18+ watch faces", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/argus-series/argus-p3" },
+      { key: "modes", label: "Output modes", value: "DIY power curve (up to 3 saved sets) · Party · ECO · SOS · Child Lock", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/argus-series/argus-p3" },
+      { key: "control", label: "Control", value: "Touchscreen + side dial button", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/argus-series/argus-p3" },
+      { key: "firing", label: "Activation", value: "Draw-activated", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/news/490.html" },
+      { key: "pod", label: "Included pod", value: "2 × ARGUS Snap Cartridge (0.4Ω and 0.7Ω) · 2mL · top fill under a snap-open cap · PCTG", sourceStatus: "verified", sourceUrl: P3_PAGE },
+      { key: "pod-compat", label: "Pod platform", value: "Every ARGUS pod-family cartridge — Snap, Top Fill Cartridge V2 (0.4Ω RDL 18–30W · 0.7Ω MTL 14–18W · 1.0Ω MTL 10–14W), Top Fill Cartridge, CRC versions; check resistance and output", sourceStatus: "verified", sourceUrl: P3_PAGE },
+      { key: "coil", label: "Coil", value: "iCOSM CODE 2.0 — Liquid-Seal Shield, Mega-Core, Golden Cotton", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/argus-series/argus-p3" },
+      { key: "airflow", label: "Airflow", value: "Stepless slider", sourceStatus: "verified", sourceUrl: P3_PAGE },
+      { key: "materials", label: "Materials", value: "Zinc alloy frame · leather finishes or the Metal Edition", sourceStatus: "verified", sourceUrl: P3_PAGE },
+      { key: "charging", label: "Charging", value: "USB-C, 5V/2A · full in about 40 minutes", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/argus-series/argus-p3" },
+      { key: "weight", label: "Weight", value: "82g", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/argus-series/argus-p3" },
     ],
     features: [
       {
-        id: "full-touch",
-        title: "Full-touch TFT HD display",
-        description: "A 2.01\" touchscreen used for full menu navigation rather than a simple status readout.",
+        id: "touchfree",
+        title: "Leather or metal",
+        description: "The Metal Edition carries a gear pattern and the EVEREST LAB logo on the back; leather colours such as Blue Leather have a large ARGUS script across theirs.",
+        subline: "Leather finishes, or the Metal Edition.",
+        image: { src: "/assets/products/argus-p3/story-touchfree.webp", alt: "VOOPOO's ARGUS P3 poster — Big Play, Touch Free: the Metal Edition, the screen and a Blue Leather back", sourceName: "VOOPOO", sourceUrl: P3_PAGE, width: 1024, height: 1181 },
+      },
+      {
+        id: "minibox",
+        title: "Small enough for one hand",
+        description: "The whole front is screen, yet it weighs just 82g.",
+        subline: "VOOPOO's first full-touch Mini BOX.",
+        image: { src: "/assets/products/argus-p3/story-minibox.webp", alt: "VOOPOO's ARGUS P3 poster — VOOPOO's first full-touch Mini BOX: the screen, one hand to hold, the side dial and the airflow slider", sourceName: "VOOPOO", sourceUrl: P3_PAGE, width: 1024, height: 1241 },
+      },
+      {
+        id: "touch",
+        title: "What's on the screen",
+        description: "It keeps your puffs and vaping time by day and over months, and more watch faces unlock the longer you use it.",
+        subline: "Wattage in one tap, and plenty more to set.",
+        image: { src: "/assets/products/argus-p3/story-touch.webp", alt: "VOOPOO's ARGUS P3 poster — touchscreen interaction: vaping data, one-touch power, settings, 18+ watch faces, DIY power tuning and the Party / SOS / Child Lock modes", sourceName: "VOOPOO", sourceUrl: P3_PAGE, width: 1024, height: 1193 },
+      },
+      {
+        id: "family",
+        title: "The Snap Cartridge",
+        description: "Other ARGUS pod-family cartridges fit too. The figures below are VOOPOO's table, and VOOPOO asks you to check the resistance and output first.",
+        subline: "A new ARGUS cartridge with a cap that snaps open.",
+        image: { src: "/assets/products/argus-p3/story-family.webp", alt: "VOOPOO's ARGUS P3 poster — the new ARGUS Snap Cartridge and the ARGUS Top Fill Cartridge V2: 0.4Ω, 0.7Ω and 1.0Ω", sourceName: "VOOPOO", sourceUrl: P3_PAGE, width: 1024, height: 1141 },
       },
     ],
-    compatibility: [{ type: "pod", label: "ARGUS top-fill cartridge platform" }, usbC2A],
+    compatibility: [{ type: "pod", label: "ARGUS Snap Cartridge", note: "0.4Ω and 0.7Ω in the kit." }, usbC2A],
     whoIsThisFor: [
-      "Vapers who want full touchscreen menu control in a compact ARGUS-platform device.",
+      "Vapers who like to set the device up to suit the way they vape.",
+      "Anyone who likes box devices but wants a smaller one.",
     ],
     faqs: [],
     relatedProductSlugs: ["argus-g4", "argus-g4-mini"],
-    sourceUrls: ["https://www.voopoo.com/"],
+    sourceUrls: ["https://www.voopoo.com/argus-series/argus-p3", P3_PAGE, "https://www.voopoo.com/news/490.html"],
   },
   {
     id: "argus-g3-mini",
@@ -1185,6 +1234,7 @@ export const voopooProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C, 2A",
       dimensions: "103 × 28.5 × 15.1 mm",
+      weightG: 49.8,
     },
     assets: [
       {
@@ -1198,6 +1248,13 @@ export const voopooProducts: Product[] = [
         sourceUrl: "https://shop.voopoo.com/products/vmate-i3",
       },
     ],
+    // Site-wide template round batch 2f (05/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — VOOPOO's own long
+    // 1024-px poster told one panel per block (no cover: the strip's hero is portrait, so it is block 1); text in
+    // src/i18n/story-copy.ts, article in src/data/product-articles.ts. Panels cut whole at the strip's quiet bands, every
+    // one taller than wide (narrow column, no enlargement): _incoming/sitewide-template/2/2f/blocks.js.
+    storyDetails: true,
+    storyLayout: "stage",
+    storyStartRight: true,
     // Real VOOPOO color/finish lineup — QC pass (2026-09-04): all 7 colors sourced directly from
     // shop.voopoo.com's own color→photo JSON binding (tier-1, see drag-6's comment for method).
     // "Silver Black" is a genuine two-tone finish name, not a duplicate/typo. Card switched from
@@ -1219,26 +1276,61 @@ export const voopooProducts: Product[] = [
       sourceName: "OKami24 composite (from shop.voopoo.com photos)",
     },
     specifications: [
-      { key: "battery", label: "Battery", value: "1500mAh built-in", sourceStatus: "verified" },
-      { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified" },
-      { key: "pod", label: "Pod capacity", value: "3mL, VMATE Top Fill Cartridge (V2 pod compatible)", sourceStatus: "verified" },
-      { key: "dimensions", label: "Dimensions", value: "103 × 28.5 × 15.1 mm", sourceStatus: "verified" },
-      { key: "resistance", label: "Resistance range", value: "0.4–3.0Ω", sourceStatus: "verified" },
-      { key: "charging", label: "Charging", value: "USB-C, 2A fast charging", sourceStatus: "verified" },
+      // Batch 2f (05/10): every row re-read from VOOPOO's shop page + its long poster + www.voopoo.com, piece by piece
+      // (_incoming/sitewide-template/2/2f/facts-vmate-i3.md). Dimensions = the poster's spec table only. 0.4–3.0Ω is the
+      // device's range (the old pod note read it as a pod range). No chip row (as the ARGUS G3 mini). The 90mL / 30-day
+      // figures are VOOPOO's own lab tests ("Test data from Everest Lab").
+      { key: "battery", label: "Battery", value: "1500mAh built-in", sourceStatus: "verified", sourceUrl: I3_PAGE },
+      { key: "output", label: "Output range", value: "5–30W", sourceStatus: "verified", sourceUrl: I3_PAGE },
+      { key: "voltage", label: "Output voltage", value: "3.2–4.2V", sourceStatus: "verified", sourceUrl: I3_PAGE },
+      { key: "resistance", label: "Resistance range", value: "0.4–3.0Ω", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/v-series/vmate-i3" },
+      { key: "pod", label: "Included pod", value: "VMATE Top Fill Cartridge 0.7Ω · 3mL (2mL TPD) · top fill, without removing it", sourceStatus: "verified", sourceUrl: I3_PAGE },
+      { key: "pod-compat", label: "Pod platform", value: "Every VMATE cartridge — Top Fill Cartridge 0.4Ω RDL 18–30W · 0.7Ω RDL–MTL 15–25W · 1.0Ω MTL 12–18W · Cartridge V2 0.7Ω MTL 15–25W · 1.2Ω MTL 8–15W; check resistance and output", sourceStatus: "verified", sourceUrl: I3_PAGE },
+      { key: "coil", label: "Coil", value: "iCOSM CODE — 90mL coil life, 30 days standing without leaks (VOOPOO's lab tests)", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/v-series/vmate-i3" },
+      { key: "airflow", label: "Airflow", value: "Slider, tight MTL to airy RDL", sourceStatus: "verified", sourceUrl: I3_PAGE },
+      { key: "firing", label: "Activation", value: "Draw-activated, no buttons", sourceStatus: "verified", sourceUrl: I3_PAGE },
+      { key: "indicator", label: "Status indicator", value: "Neon Light Strip — red up to 30%, blue 30–70%, green above 70% battery", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/news/471.html" },
+      { key: "materials", label: "Materials", value: "Aluminium alloy", sourceStatus: "verified", sourceUrl: I3_PAGE },
+      { key: "charging", label: "Charging", value: "USB-C, 5V/2A fast charging", sourceStatus: "verified", sourceUrl: I3_PAGE },
+      { key: "dimensions", label: "Dimensions", value: "103 × 28.5 × 15.1 mm · 49.8g", sourceStatus: "verified", sourceUrl: I3_PAGE },
     ],
     features: [
       {
-        id: "slim-body",
-        title: "Slim aluminum-alloy body",
-        description: "A 15.1mm-thick body that sits comfortably in a trouser pocket.",
+        id: "pocket",
+        title: "Made for the pocket",
+        description: "At 15.1mm thick, it slips into a trouser pocket.",
+        subline: "Its cartridge, upgraded three ways.",
+        image: { src: "/assets/products/vmate-i3/story-pocket.webp", alt: "VOOPOO's VMATE i3 poster — 3X Freedom in Pocket: Silver Black and Cyan Blue, with the 3X upgrade badge", sourceName: "VOOPOO", sourceUrl: I3_PAGE, width: 1024, height: 1385 },
+      },
+      {
+        id: "power",
+        title: "Light, with a battery that lasts",
+        description: "VOOPOO finishes it in three different textures, and a light strip on the side tells you how much battery is left.",
+        subline: "49.8g, about as much as an egg.",
+        image: { src: "/assets/products/vmate-i3/story-power.webp", alt: "VOOPOO's VMATE i3 poster — power that lasts: the battery, 49.8g, three textures, the Neon Light Strip, 5V/2A charging and the airflow slider", sourceName: "VOOPOO", sourceUrl: I3_PAGE, width: 1024, height: 1358 },
+      },
+      {
+        id: "cartridge",
+        title: "A longer-lasting cartridge",
+        description: "You fill it from the top without taking it out. The two figures below are from VOOPOO's own lab tests.",
+        subline: "The VMATE Top Fill Cartridge, built on iCOSM CODE.",
+        image: { src: "/assets/products/vmate-i3/story-cartridge.webp", alt: "VOOPOO's VMATE i3 poster — the VMATE Top Fill Cartridge, upgraded three ways: longevity, leakproofing and flavour", sourceName: "VOOPOO", sourceUrl: I3_PAGE, width: 1024, height: 1152 },
+      },
+      {
+        id: "family",
+        title: "Every VMATE cartridge fits",
+        description: "To change the draw, pick another resistance; VOOPOO asks you to check the resistance and output first.",
+        subline: "Two cartridge lines, five options.",
+        image: { src: "/assets/products/vmate-i3/story-family.webp", alt: "VOOPOO's VMATE i3 poster — the VMATE pod family: VMATE Top Fill Cartridge 0.4Ω, 0.7Ω, 1.0Ω and VMATE Cartridge V2 0.7Ω, 1.2Ω", sourceName: "VOOPOO", sourceUrl: I3_PAGE, width: 1024, height: 1065 },
       },
     ],
-    compatibility: [{ type: "pod", label: "VMATE Top Fill Cartridge", note: "V2 pod compatible, 0.4–3.0Ω." }, usbC2A],
+    compatibility: [{ type: "pod", label: "VMATE Top Fill Cartridge", note: "0.7Ω in the kit; VMATE Cartridge V2 fits too." }, usbC2A],
     whoIsThisFor: [
-      "Vapers who carry a pod all day and want a slim device that slips in and out of a pocket easily.",
+      "Anyone who wants an easy device for everyday vaping.",
+      "Vapers who move between MTL and RDL and want one device for both.",
     ],
     faqs: [],
     relatedProductSlugs: ["argus-g3-mini", "vinci-s"],
-    sourceUrls: ["https://www.voopoo.com/v-series/vmate-i3"],
+    sourceUrls: ["https://www.voopoo.com/v-series/vmate-i3", I3_PAGE, "https://www.voopoo.com/news/471.html"],
   },
 ];
