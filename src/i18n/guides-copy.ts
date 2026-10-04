@@ -217,7 +217,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         paragraphs: [
           "[DRAG X3](/products/drag-x3) เป็นพอตคิทช่วงวัตต์ 5–80 วัตต์ ช่วงโอห์ม 0.1–3.0 โอห์ม จอทัช 1.66 นิ้ว ตัวเครื่องไม่มีแบตในตัว ใช้ถ่าน 18650 หรือ 21700 หนึ่งก้อน ซึ่งไม่ได้แถมมาในกล่อง",
           "ตัวเลขที่ต้องดูคือเพดาน 80 วัตต์กับโอห์มต่ำสุด 0.1 โอห์ม ส่วนวิธีอ่านตัวเลขในตารางดูที่ [วิธีอ่านตารางสเปก](/guides/reading-a-spec-sheet)",
-          "คอยล์ที่ใช้กับ DRAG X3 คือคอยล์ VOOPOO PnP X ตามรายการความเข้ากันได้ของร้านค้าปลีก ยังไม่ใช่ข้อมูลที่ยืนยันจากหน้าทางการของ VOOPOO",
+          "คอยล์ที่ใช้กับ DRAG X3 คือคอยล์ PnP X ของ VOOPOO หน้า DRAG X3 บนเว็บของ VOOPOO เองระบุว่าใช้คอยล์ PnP X ได้ทุกตัว",
           "รู้แล้วว่าตัวเองสูบแนวไหน แต่ยังไม่ได้เลือกเครื่อง เริ่มจาก [เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system)",
         ],
       },
@@ -225,7 +225,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
     faq: [
       {
         question: "คอยล์ไหนเหมาะกับ DRAG X3",
-        answer: "รายการความเข้ากันได้จากร้านค้าปลีกระบุว่า DRAG X3 ใช้คอยล์ VOOPOO PnP X ยังไม่มีการยืนยันจากหน้าทางการของ VOOPOO ตอนนี้คอยล์ PnP X ยังไม่ขึ้นหน้าเว็บเรา ทักไลน์ @okm24 ถามได้",
+        answer: "หน้า DRAG X3 บนเว็บของ VOOPOO ระบุว่าใช้คอยล์ PnP X ได้ทุกตัว ตอนนี้คอยล์ PnP X ยังไม่ขึ้นหน้าเว็บเรา ทักไลน์ @okm24 ถามได้",
       },
       {
         question: "MTL กับ RDL ต่างกันตรงไหน",
@@ -599,13 +599,13 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
         paragraphs: [
           "[DRAG X3](/products/drag-x3) 是一台换弹主机：功率范围 5–80W，阻值范围 0.1–3.0Ω，1.66 英寸触摸屏。它没有内置电池，使用单颗 18650 或 21700 电芯，且电芯不随机附带。",
           "要看的数字是 80W 的上限和 0.1Ω 的下限。规格表上的数字怎么读，见 [如何解读设备规格表](/guides/reading-a-spec-sheet)。",
-          "DRAG X3 使用的雾化芯是 VOOPOO PnP X，依据是零售商的兼容列表——尚未从 VOOPOO 官方页面确认。",
+          "DRAG X3 使用 VOOPOO 的 PnP X 雾化芯——VOOPOO 官方的 DRAG X3 页面写明，全部 PnP X 雾化芯都能用。",
           "已经知道自己的吸法，但还没选好设备？从 [选择你的第一款设备](/guides/choosing-your-first-pod-system) 开始。",
         ],
       },
     ],
     faq: [
-      { question: "DRAG X3 该用哪款雾化芯？", answer: "零售商的兼容列表将 VOOPOO PnP X 雾化芯列为 DRAG X3 适用，尚未从 VOOPOO 官方页面确认。PnP X 雾化芯目前未在本站上架，可通过 LINE @okm24 询问。" },
+      { question: "DRAG X3 该用哪款雾化芯？", answer: "VOOPOO 官方的 DRAG X3 页面写明，全部 PnP X 雾化芯都能用。PnP X 雾化芯目前未在本站上架，可通过 LINE @okm24 询问。" },
       { question: "MTL 和 RDL 有什么区别？", answer: "MTL 先把烟雾吸入口腔再入肺，进气紧、阻值高、功率低。RDL（受限直入肺）直接入肺但仍有一定阻力——比 MTL 松，比完整的 DTL 设置紧。" },
       { question: "Caliburn G4 Pro KOKO 用什么烟弹？", answer: "UWELL GPP 烟弹，共四种阻值：0.4、0.6、0.9 和 1.2Ω。也可使用旧款 Caliburn G3 烟弹。来源：UWELL 官方 G Pod Platform 页面。" },
     ],

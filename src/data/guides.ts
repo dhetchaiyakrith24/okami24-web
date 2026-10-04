@@ -211,7 +211,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "The [DRAG X3](/products/drag-x3) is a pod kit with a 5–80W output range, a 0.1–3.0Ω resistance range, and a 1.66\" touchscreen. It has no built-in battery — it runs on a single 18650 or 21700 cell, which is not included in the box.",
           "The numbers to look at are the 80W ceiling and the 0.1Ω floor. How to read the rest of a spec table is in [How to read a spec sheet](/guides/reading-a-spec-sheet).",
-          "The coil for the DRAG X3 is the VOOPOO PnP X coil, according to a retailer's compatibility list — not yet confirmed from VOOPOO's own pages.",
+          "The DRAG X3 uses VOOPOO's PnP X coils — VOOPOO's own DRAG X3 page says it takes every one of them.",
           "Know your draw style but not your device yet? Start from [Choosing your first pod](/guides/choosing-your-first-pod-system).",
         ],
       },
@@ -219,7 +219,7 @@ const allGuides: Guide[] = [
     faq: [
       {
         question: "Which coil fits the DRAG X3?",
-        answer: "A retailer compatibility list names the VOOPOO PnP X coil for the DRAG X3; this is not yet confirmed from VOOPOO's own pages. The PnP X coil is not on our site right now — ask on LINE @okm24.",
+        answer: "Every PnP X coil, according to VOOPOO's own DRAG X3 page. PnP X coils are not on our site right now — ask on LINE @okm24.",
       },
       {
         question: "What is the difference between MTL and RDL?",
