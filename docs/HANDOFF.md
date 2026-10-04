@@ -75,8 +75,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (none open from 04/10 — (48) ruled "เลิกทั้งเว็บ" = THAI_STYLE layer 4; the G3 Pro / KOKO / G4 Classic head lines: owner 04/10 "ไม่
-       — งานรูปก่อน" → both queued in the SEO / language round below.)
+  (none open from 04/10 — (48): owner "1 ได้ครับ" to Friday's "drop the term brackets site-wide" = THAI_STYLE layer 4 · the 3 head
+       lines: owner "2 ไม่ครับ เราจะกลับไปเดินงานรูปก่อน อันนี้ทดไว้งานรอบ ภาษา - Seo ได้" · removing the EXISTING brackets in that
+       same round = Friday's reading [เชื่อว่า] — both queued in the SEO / language round below.)
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
@@ -106,8 +107,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - Live screenshots from the cloud impossible (03/10, egress gateway re-signs TLS; fixes need an owner permission rule) → computer.
   - SEO round (owner 02/10: baseline hold lifted): GSC vs `docs/SEO_BASELINE.md` · delete `galleryNoteHeld` + `heldNote` +
     `TITLE_PRICE_HOLD_UNTIL_2026_10_05` · M Bar 10K airflow row · G5 hero tagline repeats · product FAQ answers absent from server HTML ·
-    8 brand titles naming a model (cloud-results §2) · shared GPP note "Shared top-fill…" on 8 UWELL pages · (owner 04/10, language
-    part) remove the term brackets site-wide (THAI_STYLE layer 4; list = `node scripts/paren-terms.js`; keep device-screen ones) ·
+    8 brand titles naming a model (cloud-results §2) · shared GPP note "Shared top-fill…" on 8 UWELL pages · (04/10, language
+    part — timing = Friday's reading [เชื่อว่า]) remove the term brackets site-wide (THAI_STYLE layer 4; list = `node scripts/paren-terms.js`; keep device-screen ones) ·
     re-word the G3 Pro / G3 Pro KOKO / G4 Classic head lines with the reset `thai-copy` (#245 lines read curt).
   - `lineupFirst` has no product left — cleanup · `dict.product.anatomyTitle` en/zh "from the outside in" · zh spec/FAQ English site-wide ·
     article H3 font reads narrow (designer note).
