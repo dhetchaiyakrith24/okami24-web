@@ -460,13 +460,13 @@ export const salthubProducts: Product[] = [
         id: "coil",
         title: "A cotton mesh coil",
         description: "SALTHUB says it gives an incredibly smooth, satisfying taste.",
-        subline: "SALTHUB uses this coil on the M Switch.",
+        subline: "This is the coil on the M Switch.",
         image: { src: "/assets/products/m-switch-kit/story-coil.webp", alt: "SALTHUB's M Switch poster — cotton mesh, for an incredibly smooth and satisfying taste", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
       },
       {
         id: "charge",
         title: "Battery and charging",
-        description: "While it charges, the screen shows the level with a flashing lightning mark.",
+        description: "While it charges, a lightning mark flashes on the screen, so you can see it is charging.",
         subline: "SALTHUB says the battery lasts longer.",
         image: { src: "/assets/products/m-switch-kit/story-charge.webp", alt: "SALTHUB's M Switch poster — battery life last longer, Type-C charging port and the battery display", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
       },
@@ -474,7 +474,7 @@ export const salthubProducts: Product[] = [
         id: "airflow",
         title: "Set the airflow",
         description: "SALTHUB says the slider lets you set the airflow precisely.",
-        subline: "Slide the valve to open or close the draw.",
+        subline: "Slide the valve to adjust the airflow.",
         image: { src: "/assets/products/m-switch-kit/story-airflow.webp", alt: "SALTHUB's M Switch poster — airflow adjust valve", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
       },
       {
@@ -495,7 +495,6 @@ export const salthubProducts: Product[] = [
     compatibility: [{ type: "pod", label: "M Switch Pod cartridge" }, typeC],
     whoIsThisFor: [
       "Anyone on disposables who feels it's a waste to throw the whole device away each time.",
-      "Anyone who likes to see the battery level at a glance.",
     ],
     // Batch 3b: the FAQ "different from an M Bar disposable?" left — the head copy already says it twice.
     faqs: [],

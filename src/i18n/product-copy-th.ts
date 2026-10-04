@@ -621,7 +621,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   "m-switch-kit": {
     whoIsThisFor: {
       0: "ใช้พอตใช้แล้วทิ้งอยู่ และเสียดายทุกครั้งที่หมดแล้วต้องทิ้งไปทั้งเครื่อง",
-      1: "อยากรู้ว่าแบตเหลืออยู่เท่าไหร่ แค่มองหน้าจอก็เห็น",
     },
     specifications: {
       "puffs-per-pod": "สูงสุด 15,000",

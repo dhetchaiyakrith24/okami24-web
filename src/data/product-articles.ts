@@ -1371,7 +1371,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ความจุแบตของตัวเครื่องเท่าไหร่",
           paragraphs: [
-            "หน้า M Switch Kit บนเว็บของ SALTHUB ไม่ได้ระบุความจุแบตของตัวเครื่องไว้ เราจึงไม่ใส่ตัวเลข และในตารางสเปกแถวนี้จะขึ้นว่า “ยังไม่ยืนยัน”"
+            "หน้า M Switch Kit บนเว็บของ SALTHUB ไม่ได้ระบุความจุแบตของตัวเครื่องไว้ เราจึงไม่ใส่ตัวเลข"
           ]
         }
       ]

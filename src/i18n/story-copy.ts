@@ -1400,9 +1400,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
   "m-switch-kit": {
     "coil": {
       title: { th: "คอยล์ cotton mesh", en: "A cotton mesh coil", zh: "棉网线圈" },
-      subline: { th: "SALTHUB ใช้คอยล์แบบนี้กับ M Switch", en: "SALTHUB uses this coil on the M Switch.", zh: "SALTHUB 在 M Switch 上用的就是这种线圈。" },
+      subline: { th: "คอยล์แบบนี้ใช้กับ M Switch", en: "This is the coil on the M Switch.", zh: "M Switch 用的就是这种线圈。" },
       body: {
-        th: "SALTHUB ระบุว่าคอยล์แบบนี้ให้รสที่นุ่มมาก และสูบได้เต็มอิ่ม",
+        th: "SALTHUB ระบุว่าคอยล์แบบนี้ให้รสที่นุ่มมากและเต็มอิ่ม",
         en: "SALTHUB says it gives an incredibly smooth, satisfying taste.",
         zh: "SALTHUB 表示它能带来非常顺滑、满足的口感。",
       },
@@ -1415,9 +1415,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "แบตเตอรี่และการชาร์จ", en: "Battery and charging", zh: "电池与充电" },
       subline: { th: "SALTHUB ระบุว่าแบตใช้งานได้นานขึ้น", en: "SALTHUB says the battery lasts longer.", zh: "SALTHUB 表示续航更久。" },
       body: {
-        th: "ระหว่างชาร์จ หน้าจอจะขึ้นระดับแบตพร้อมรูปสายฟ้ากะพริบ จึงเห็นได้ทันทีว่าไฟกำลังเข้า",
-        en: "While it charges, the screen shows the level with a flashing lightning mark.",
-        zh: "充电时，屏幕会显示电量，闪电标志随之闪烁。",
+        th: "ระหว่างชาร์จ รูปสายฟ้าบนหน้าจอจะกะพริบ จึงเห็นได้ทันทีว่าไฟกำลังเข้า",
+        en: "While it charges, a lightning mark flashes on the screen, so you can see it is charging.",
+        zh: "充电时，屏幕上的闪电标志会闪烁，一看就知道正在充电。",
       },
       points: [
         { text: { th: "ช่องชาร์จ USB-C", en: "USB-C charging port", zh: "USB-C 充电口" }, specKey: "charging" },
@@ -1425,7 +1425,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
     },
     "airflow": {
       title: { th: "ปรับช่องลมได้เอง", en: "Set the airflow", zh: "调节进气" },
-      subline: { th: "เลื่อนเปิดให้ลมโล่งขึ้น หรือเลื่อนปิดให้ลมแน่นขึ้นก็ได้", en: "Slide the valve to open or close the draw.", zh: "推动阀门，调松或调紧吸感。" },
+      subline: { th: "เลื่อนปุ่มปรับลมได้ตามต้องการ", en: "Slide the valve to adjust the airflow.", zh: "推动阀门调节进气。" },
       body: {
         th: "SALTHUB ระบุว่าปุ่มนี้ปรับลมได้อย่างแม่นยำ จึงตั้งลมให้พอดีกับความชอบของตัวเองได้",
         en: "SALTHUB says the slider lets you set the airflow precisely.",
@@ -1440,7 +1440,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "หน้าจอดิจิทัล", en: "A digital screen", zh: "数字屏幕" },
       subline: { th: "บอกแบตที่เหลือไว้ให้ดูตลอดเวลา", en: "It always shows what's left.", zh: "随时显示剩余电量。" },
       body: {
-        th: "เมื่อชาร์จเต็ม หน้าจอจะขึ้น 100% แล้วดับไปหลังจากนั้น 1 วินาที เห็นแล้วก็ถอดสายได้เลย",
+        th: "เมื่อชาร์จเต็ม หน้าจอจะขึ้น 100% แล้วดับไปหลังจากนั้น 1 วินาที",
         en: "At a full charge it shows 100% and switches off a second later.",
         zh: "充满时显示 100%，一秒后熄灭。",
       },
