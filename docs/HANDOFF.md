@@ -51,9 +51,6 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Speed (owner 04/10): one build per batch · whole-sitemap scan (≈ 20 min) only if a shared part changes · a build ≈ 8 min.
   Gates per batch: `npm run verify:catalog` (fresh worktree: `npx next typegen` first) · page-text-length --facts · wordbreak-scan → reword
   · checker · scripts as .js files (Thai/backslash/backticks never through `node -e` or a heredoc).
-  Tips: count the template's "รุ่นนี้มี N สี" as one colour-count mention · the chip bar repeats every block title (a number in a
-  title = 2 already) · head copy (tagline/shortDescription) counts toward "a fact at most twice" but is off-limits → cut the repeat
-  elsewhere · maker footnotes (UWELL LAB) attach to data · boasts without a number fail in en/zh too.
   Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD.
 3a THE IMAGE METHODS THAT WORK (kept for this round):
   (a) one model, colours differ only in colour = ONE master + recolour by script — silver master `b-uwell/recolour-g4c.js`; coloured
@@ -73,17 +70,23 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (closed 04/10: (49) = "ผสมกัน" — item 3 VOICE · (50) owner saw DRAG 6 live: only remark = the all-colours image (item 5), then "แก้ละไปต่อเลยครับ" (Friday read: note it and move on [เชื่อว่า]).)
+  (51) NEW 04/10 broken S3/X3 posters — A cloud fetch from www.voopoo.com (recommended) · B show smaller · C drop the cover (item 5).
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags (not changed): INFY `descriptionTh` says disposable-only brand · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" /
        "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ" (batch 4 needs it)
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
-  Answered 03/10 (do not ask again): "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · logos: Kardinal = the
-  maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
 5 open / dated:
-  - DEFERRED by the owner 04/10 ("ข้ามไปตัวอื่นก่อน ไว้ค่อยกลับมาแก้" — no date; Friday's plan: after the VOOPOO pages): DRAG 6 all-colours image lineup-v3 — "รูปรวมยังเล็กไป สินค้ายังดู
+  - FIRST in the next chat (owner 04/10 on live #255, LESSONS พ17): DRAG X3 story-cover is visibly broken (904-px crop of VOOPOO's
+    1024-px strip, shown ~1,200 px wide) and X3 posters 3–4 soft (owner: "ภาพ 3-4 ด้วยเช่นกันแต่ไม่แย่เท่าใบแรก" — which two = check
+    with him / read as unlock + screen [เชื่อว่า]); same source for every S3 poster. Larger VOOPOO files on hand: X3 26-dragx3 1440×580,
+    32-X3-0 1280×560, 46/47 2100×1100 (colour line-up). Options (waiting on owner (51)): A fetch the posters from www.voopoo.com from a
+    cloud chat (that domain does not resolve from this ISP) · B show posters no wider than file ÷ 1.3 · C drop the cover where no
+    larger file exists. Also add a poster-stretch check (file width vs shown width × 2) and re-check DRAG 6's 766-px posters.
+  - DEFERRED by the owner 04/10 ("ข้ามไปตัวอื่นก่อน ไว้ค่อยกลับมาแก้" — no date; Friday's plan: after the VOOPOO pages): DRAG S3 + X3 colour
+    photos + two-group line-ups (owner on live #255: "ภาพสินค้า-รูปรวมยังดูเป็นกราฟฟิกเหมือนเดิม ทดไว้มาแก้รอบหลัง จดเอาไว้คู่กับ Drag 6") and the
+    DRAG 6 all-colours image lineup-v3 — "รูปรวมยังเล็กไป สินค้ายังดู
     เป็นกราฟฟิก … ไว้ค่อยกลับมาแก้เรื่องภาพเหมือนกราฟฟิก" (same eye as LESSONS ช9: AI-made light reads as graphic; 7 devices too small).
     Also not fixed (checker #253 taste): text inside the 3 wide DRAG 6 posters ~6–7 px at 390 · "มีโหมด SMART RBA และ TC-TCR" reads as 2.
   - 7 highlight chips wrap 6 + 1 at 1440 on caliburn-g4-pro-koko and caliburn-g3-pro-koko (chip bar is lg:grid-cols-6) — shared
@@ -117,9 +120,6 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     chat-move threshold in image rounds · (E) lighter rules) · stale empty folder `_incoming/wt-d` (Windows lock, delete later).
 6 verify baseline at the last full close (clip round; numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
   verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-  Latest light set [ตรวจแล้ว — computer 04/10, #242 at aad2b63/7db5cd6]: tsc 0 · eslint 0 · verify:catalog 29 steps (only typecheck
-  failed in a fresh worktree before `next typegen`) · scan.js PASS 0/109 · visible-text whole sitemap 0 FAIL, changes = the 2 pages +
-  KOKO card · page-text-length G3 Pro 1,729 · KOKO 1,502 (no fact > 2) · wordbreak single-word only · sharpness gate (#241) 9/9.
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`
   (cloud chat: + `docs/CLOUD.md` item 3)
 ```
@@ -224,3 +224,5 @@ not on the site) · leftover credits = next in the queue, unclear source = skip.
 by swipe (IMAGE_SPEC §0 item 5) · all-options image ("ทั้งหมด"): pod systems get a NEW one (owner 01/10 evening, design left
 to Friday: plain, luxurious, premium, depth); disposables / pod-replacement products get none (IMAGE_SPEC §0 item 5) ·
 every product gets an SEO article in "more details" = its own later round.
+
+**Answered 03/10 (moved from §16 04/10):** "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · logos: Kardinal = the maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
