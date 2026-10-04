@@ -1270,7 +1270,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "แบตก้อนใหญ่ และชาร์จเต็มได้เร็ว", en: "A big battery, a quick charge", zh: "大电池，充电快" },
       subline: { th: "เป็นแบตเตอรี่แบบความหนาแน่นสูง", en: "A high-density cell.", zh: "高密度电芯。" },
       body: {
-        th: "VOOPOO ทำมาสำหรับคนที่สูบจัดและคนที่เดินทางบ่อย จะได้ไม่ต้องคอยหาที่เสียบชาร์จระหว่างวัน ตัวเลข 10% บนโปสเตอร์เป็นการเทียบกับ ARGUS G3 ส่วนหน้าเว็บของ VOOPOO ระบุว่าแบตใช้ได้นานกว่ารุ่นก่อน 22%",
+        th: "VOOPOO ทำมาสำหรับคนที่สูบจัดและคนที่เดินทางบ่อย จะได้ไม่ต้องคอยหาที่เสียบชาร์จระหว่างวัน ตัวเลข 10% บนโปสเตอร์ VOOPOO เทียบกับ ARGUS G3 ส่วนหน้าเว็บของ VOOPOO ระบุว่าแบตใช้ได้นานกว่ารุ่นก่อน 22%",
         en: "VOOPOO built it for heavy vapers and travellers, so less of the day goes on looking for a socket. The 10% on the poster is against the ARGUS G3; VOOPOO's own page says 22% longer than the previous generation.",
         zh: "VOOPOO 是为重度用户和常出门的人设计的，少花时间找插座。海报上的 10% 是与 ARGUS G3 相比；VOOPOO 官网页面则写比上一代长 22%。",
       },
