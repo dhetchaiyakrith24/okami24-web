@@ -44,12 +44,15 @@ professionalism (owner's words). What the owner disliked in the agent copy up to
 Before → after the owner ruled (use these to calibrate; never copy them into another product):
 | ก่อน | หลัง / คำตัดสิน |
 |---|---|
-| Caliburn จอสี เลือกโหมดได้ตามแนวสูบ | Caliburn จอสี เลือกโหมดได้ตามความต้องการและการใช้งาน (owner's own rewrite 04/10 — fuller, softer) |
-| RDL (ดูดลงปอดแต่ลมยังมีแรงต้าน) | rejected — no explaining bracket |
-| ร่องรูปตัว U คอยเก็บหยดน้ำยาที่ควบแน่น | rejected — translated jargon |
-| ตบคอ | แรงถึงคอ (locked, batch 1c) |
-| 40 วัตต์ เติมน้ำยาด้านบน ออกแบบมาเพื่อคนตามหารสชาติ | 40 วัตต์ เติมน้ำยาด้านบนได้โดยไม่ต้องถอดหัวพอต (owner 09-11: advertising → information) |
-| Every field below was independently confirmed… | ทุกรายการด้านล่างเช็คกับเว็บทางการของแบรนด์หรือแหล่งที่เชื่อถือได้แล้ว ("โทนผ่าน เสียงร้านที่รู้จริงแบบนี้ใช่แล้ว") |
+| (G4 head line) …เลือกโหมดได้ตามแนวสูบ | …เลือกโหมดได้ตามความต้องการและการใช้งาน (the owner typed this phrase himself 04/10 — fuller, softer) |
+| ตบคอ | แรงถึงคอ (locked, THAI_STYLE "ก้อน 1c") |
+| Every field below was independently confirmed… | ทุกรายการด้านล่างเช็คกับเว็บทางการของแบรนด์หรือแหล่งที่เชื่อถือได้แล้ว (THAI_STYLE_LOG §7 round 30.4 — owner: "โทนผ่าน เสียงร้านที่รู้จริงแบบนี้ใช่แล้ว") |
+
+Rejected by the owner (no "after" — he only said no):
+- "RDL (ดูดลงปอดแต่ลมยังมีแรงต้าน)" — owner: "เพี้ยน ๆ" (THAI_STYLE "ก้อน 1d").
+- "ร่องรูปตัว U คอยเก็บหยดน้ำยาที่ควบแน่น" — owner: not accepted (same line); Friday's reading = jargon translated
+  word for word [เชื่อว่า].
+- Friday's short head lines of PR #245 (e.g. "Caliburn จอสี เลือกโหมดได้ตามแนวสูบ") — owner 04/10: "ห้วน ตึง ไม่ยืดหยุ่น".
 
 **Sample first (owner 04/10, item 5):** before writing a whole batch, write ONE block (3–4 Thai sentences + its en/zh)
 and say so in your report — the main agent shows it to the owner; the rest of the batch follows the owner's reaction.
@@ -127,7 +130,8 @@ say, not the Royal Institute's spelling when that spelling sounds strange.
 
 1. Read it aloud in your head. Wherever you stumble, that is the spot to fix.
 2. Ask: would a person who sells pods for a living say this to a customer? If not, rewrite.
-3. Delete every word whose removal does not change the meaning.
+3. Delete filler that adds nothing (the "AI wrote this" list) — but keep the small words that make the sentence flow
+   and sound polite (The voice); a sentence that lost them reads curt.
 
 # Tone
 

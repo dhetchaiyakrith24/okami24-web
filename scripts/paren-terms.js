@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
 // Thai explanations in parentheses after a term, across the site source (owner 04/10, item (48): "which other ones have a
-// bracket?"). Finds "<Latin term or number> (<text with Thai letters>)" inside string literals of src/, one row per hit.
+// bracket?"). Finds "<Latin term> (<text with Thai letters>)" on any line of src/**/*.ts|tsx|json, one row per hit —
+// a line scan, not a string-literal parser: comment lines (// · * · /* · {/*) and *-contract-test.ts files are skipped,
+// code that happens to match (a call with a Thai argument) can still show up — read the "around it" column.
 //   node scripts/paren-terms.js [--md out.md]   → table on stdout (file:line · term · bracket · the sentence around it)
 // Thai letters are matched by code point (U+0E00–U+0E7F), not by a byte range (Git Bash grep pitfall, thai-check gate 4).
 const fs = require("fs");
@@ -13,14 +15,14 @@ function walk(dir) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
     if (e.isDirectory()) walk(p);
-    else if (/\.(ts|tsx|json)$/.test(e.name)) scan(p);
+    else if (/\.(ts|tsx|json)$/.test(e.name) && !/-contract-test\.ts$/.test(e.name)) scan(p);
   }
 }
 function scan(file) {
   const lines = fs.readFileSync(file, "utf8").split(/\r?\n/);
   lines.forEach((line, i) => {
     const t = line.trim();
-    if (t.startsWith("//") || t.startsWith("*") || t.startsWith("/*")) return; // comments
+    if (t.startsWith("//") || t.startsWith("*") || t.startsWith("/*") || t.startsWith("{/*")) return; // comments
     for (const m of line.matchAll(RE)) {
       if (!THAI.test(m[2])) continue; // only Thai explanations
       const s = Math.max(0, m.index - 40), ctx = line.slice(s, m.index + m[0].length + 30).trim();
