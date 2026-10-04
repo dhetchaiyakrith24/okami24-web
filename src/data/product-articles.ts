@@ -903,6 +903,161 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 2e (04/10): from VOOPOO's ARGUS G4 mini / G3 mini pages and posters; Thai = thai-copy 04/10.
+  "argus-g4-mini": {
+    th: {
+      lede: "ARGUS G4 mini เป็นรุ่นที่ VOOPOO ออกแบบให้หัวพอตหัวเดียวใช้ได้สองค่าโอห์ม ด้านล่างไล่ให้ดูทีละเรื่อง",
+      sections: [
+        {
+          heading: "ARGUS G4 mini กับ ARGUS G4 เลือกตัวไหนดี",
+          paragraphs: [
+            "[ARGUS G4](/products/argus-g4) มีจอ 0.85 นิ้วที่แสดงแบต วัตต์ โอห์ม สถานะล็อก และจำนวนพัฟ ตั้งวัตต์ได้สูงกว่า และชาร์จผ่าน USB-C 5V/2A ส่วนตัวเครื่องทำจากซิงค์อัลลอย หนัง และอะลูมิเนียมอัลลอย",
+            "ถ้าดูสถานะจากไฟก็เพียงพอแล้ว G4 mini จะเหมาะกว่า"
+          ]
+        },
+        {
+          heading: "ใช้หัวพอตอะไรได้บ้าง และหาซื้อได้ที่ไหน",
+          paragraphs: [
+            "VOOPOO ระบุว่าใช้ได้ทั้ง Multi-Ohm Cartridge กับ Snap Cartridge และ Top Fill Cartridge V2 ทั้งขนาด 2mL และ 3mL รวมถึงหัวพอต ARGUS รุ่นอื่น ๆ ซึ่งนับรุ่น CRC ไว้ด้วย",
+            "ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก หากต้องการ สอบถามได้ทางไลน์ @okm24"
+          ]
+        },
+        {
+          heading: "ในกล่องมีอะไรบ้าง",
+          paragraphs: [
+            "ในกล่องมีตัวเครื่อง ARGUS G4 mini หัวพอต ARGUS Multi-Ohm Cartridge สองหัว สายชาร์จ USB-C คู่มือการใช้งาน และการ์ดรายชื่อหัวพอตตระกูล ARGUS ที่ใช้ร่วมกันได้"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "VOOPOO built the ARGUS G4 mini around one idea: a single cartridge with two resistances. Below, one part at a time.",
+      sections: [
+        {
+          heading: "ARGUS G4 mini or ARGUS G4?",
+          paragraphs: [
+            "The [ARGUS G4](/products/argus-g4) adds a 0.85-inch screen that shows battery, wattage, resistance, lock state and puff count, a higher power ceiling and 5V/2A charging, in a body of zinc alloy, leather and aluminium alloy.",
+            "If the light tells you enough, the G4 mini is the one."
+          ]
+        },
+        {
+          heading: "Which pods fit, and where do I get them?",
+          paragraphs: [
+            "VOOPOO lists the Multi-Ohm Cartridge, the Snap Cartridge, the Top Fill Cartridge V2 (2mL and 3mL) and other ARGUS cartridges, CRC versions included.",
+            "We don't sell ARGUS pods separately yet. Ask on LINE @okm24."
+          ]
+        },
+        {
+          heading: "What's in the box?",
+          paragraphs: [
+            "The ARGUS G4 mini, two Multi-Ohm Cartridges, a USB-C cable, the user manual and VOOPOO's ARGUS pod-family compatibility guide."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "VOOPOO 围绕一个想法打造了 ARGUS G4 mini：一颗烟弹，两种阻值。下面逐项来看。",
+      sections: [
+        {
+          heading: "ARGUS G4 mini 还是 ARGUS G4？",
+          paragraphs: [
+            "[ARGUS G4](/products/argus-g4) 多了一块 0.85 英寸屏幕，显示电量、功率、阻值、锁定状态和口数，功率上限更高，支持 5V/2A 充电，机身用锌合金、皮革和铝合金。",
+            "如果看指示灯就够了，就选 G4 mini。"
+          ]
+        },
+        {
+          heading: "能用哪些烟弹，去哪里买？",
+          paragraphs: [
+            "VOOPOO 列出的有 Multi-Ohm Cartridge、Snap Cartridge、Top Fill Cartridge V2（2mL 和 3mL），以及其他 ARGUS 烟弹，包括 CRC 版本。",
+            "本店目前尚未单独销售 ARGUS 烟弹，可通过 LINE @okm24 询问。"
+          ]
+        },
+        {
+          heading: "包装里有什么？",
+          paragraphs: [
+            "ARGUS G4 mini 主机、两颗 Multi-Ohm Cartridge、USB-C 数据线、使用说明书，以及 VOOPOO 的 ARGUS 烟弹家族兼容指南。"
+          ]
+        }
+      ]
+    },
+  },
+  "argus-g3-mini": {
+    th: {
+      lede: "ARGUS G3 mini เป็นรุ่นที่ VOOPOO ทำมาให้ใช้ง่าย และตัวเล็กจนกำไว้ในมือได้มิด ด้านล่างไล่ให้ดูทีละเรื่อง",
+      sections: [
+        {
+          heading: "ARGUS G3 mini กับ ARGUS G4 mini เลือกตัวไหนดี",
+          paragraphs: [
+            "[ARGUS G4 mini](/products/argus-g4-mini) มีแบตใหญ่กว่าที่ 1650mAh ใช้หัวพอตที่กลับด้านเพื่อเปลี่ยนโอห์มได้ และมีปุ่มเลื่อนปรับลม",
+            "ถ้าอยากได้เครื่องที่เบากว่าและใช้ง่ายกว่า และไม่จำเป็นต้องปรับลม G3 mini ก็เพียงพอแล้ว"
+          ]
+        },
+        {
+          heading: "ใช้หัวพอตอะไรได้บ้าง และหาซื้อได้ที่ไหน",
+          paragraphs: [
+            "VOOPOO ระบุว่าหัวพอต ARGUS Top Fill Cartridge V2 ใช้ได้กับเครื่องในตระกูล ARGUS ทั้งหมด และแนะนำให้เช็คค่าโอห์มกับวัตต์ของแต่ละเครื่องก่อนใช้",
+            "ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก หากต้องการ สอบถามได้ทางไลน์ @okm24"
+          ]
+        },
+        {
+          heading: "ในกล่องมีอะไรบ้าง",
+          paragraphs: [
+            "ในกล่องมีตัวเครื่อง ARGUS G3 mini หัวพอต ARGUS Top Fill Cartridge V2 0.7 โอห์ม ขนาด 3mL หนึ่งหัว สายชาร์จ USB-C คู่มือการใช้งาน และการ์ดรายชื่อหัวพอตตระกูล ARGUS ที่ใช้ร่วมกันได้"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "The ARGUS G3 mini is the small one: simple to use, and small enough to fit in the palm of your hand. Below, one thing at a time.",
+      sections: [
+        {
+          heading: "ARGUS G3 mini or ARGUS G4 mini?",
+          paragraphs: [
+            "The [ARGUS G4 mini](/products/argus-g4-mini) has a bigger 1650mAh battery, a cartridge you flip to change resistance and an airflow slider.",
+            "If you want a lighter, simpler device and don't need to adjust the airflow, the G3 mini is enough."
+          ]
+        },
+        {
+          heading: "Which pods fit, and where do I get them?",
+          paragraphs: [
+            "The ARGUS Top Fill Cartridge V2 fits the whole ARGUS pod family; VOOPOO asks you to check the resistance and output against the device.",
+            "We don't sell ARGUS pods separately yet. Ask on LINE @okm24."
+          ]
+        },
+        {
+          heading: "What's in the box?",
+          paragraphs: [
+            "The ARGUS G3 mini, one ARGUS Top Fill Cartridge V2 0.7Ω (3mL), a USB-C cable, the user manual and VOOPOO's ARGUS pod-family compatibility guide."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "ARGUS G3 mini 是小巧的那一款：用起来简单，握在掌心刚刚好。下面逐项来看。",
+      sections: [
+        {
+          heading: "ARGUS G3 mini 还是 ARGUS G4 mini？",
+          paragraphs: [
+            "[ARGUS G4 mini](/products/argus-g4-mini) 电池更大（1650mAh），烟弹翻转即可切换阻值，还有进气滑块。",
+            "如果你想要更轻、更简单的机器，也不需要调进气，G3 mini 就够了。"
+          ]
+        },
+        {
+          heading: "能用哪些烟弹，去哪里买？",
+          paragraphs: [
+            "ARGUS Top Fill Cartridge V2 兼容整个 ARGUS 烟弹家族；VOOPOO 提醒按阻值和功率确认是否适配。",
+            "本店目前尚未单独销售 ARGUS 烟弹，可通过 LINE @okm24 询问。"
+          ]
+        },
+        {
+          heading: "包装里有什么？",
+          paragraphs: [
+            "ARGUS G3 mini 主机、一颗 ARGUS Top Fill Cartridge V2 0.7Ω（3mL）、USB-C 数据线、使用说明书，以及 VOOPOO 的 ARGUS 烟弹家族兼容指南。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

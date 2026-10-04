@@ -28,6 +28,8 @@ export const COMPAT_LABELS_TH: Record<string, string> = {
   "PnP X Cartridge (PnP X coils)": "หัวพอต PnP X Cartridge ใช้คอยล์ PnP X",
   "DRAG-series coil pod": "หัวพอตสาย DRAG (เปลี่ยนคอยล์ได้)",
   "UFORCE-X Tank II (PnP X coils)": "ถังน้ำยา UFORCE-X Tank II ใช้คอยล์ PnP X",
+  // Batch 2e (04/10): ARGUS G4 mini, from VOOPOO's own page (thai-copy).
+  "ARGUS Multi-Ohm Cartridge": "หัวพอต ARGUS Multi-Ohm Cartridge",
   "VINCI cartridge platform": "หัวพอต VINCI",
   "M Switch Pod cartridge": "หัวพอต M Switch Pod",
   "M Switch Kit device body": "ตัวเครื่อง M Switch Kit",
@@ -58,6 +60,10 @@ export const COMPAT_NOTES_TH: Record<string, string> = {
   "Lower-amperage charging on this model.": "ชาร์จด้วยไฟ 1A",
   "Cartridge naming not independently confirmed.": "",
   "V2 pod compatible, 0.4–3.0Ω.": "ใช้หัว V2 ได้ด้วย ช่วงโอห์ม 0.4–3.0Ω",
+  // Batch 2e (04/10): ARGUS G4 mini, from VOOPOO's own page (thai-copy).
+  "Two in the kit.": "ในกล่องมีมาให้สองหัว",
+  // Batch 2e (04/10): ARGUS G4 mini, from VOOPOO's own page (thai-copy).
+  "5V/1.5A charging.": "ชาร์จ 5V/1.5A",
   "Rechargeable via USB-C.": "ชาร์จซ้ำได้",
 };
 
