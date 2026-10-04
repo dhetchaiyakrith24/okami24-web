@@ -589,6 +589,13 @@ export const voopooProducts: Product[] = [
     // Swatches of Blue / Red / Green = the frame colour on VOOPOO's photos (the old deep blue was off: the body is pale
     // blue). Scripts: _incoming/image-sitewide/b-edge/ (choke.js, presize-edge.js).
     openOnCardPhoto: true,
+    // Site-wide template round batch 2c (04/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — VOOPOO's own page
+    // (https://shop.voopoo.com/products/drag-6) told one poster per block; text in src/i18n/story-copy.ts, article in
+    // src/data/product-articles.ts, exploded view in src/i18n/anatomy-sheet-copy.ts. Facts: _incoming/sitewide-template/2/
+    // facts-drag6.md. Posters = VOOPOO's files, down-sized only (2c/prep.js; the screen block = the bottom row of poster 37).
+    storyDetails: true,
+    storyLayout: "stage",
+    storyCover: { src: "/assets/products/drag-6/story-cover.webp", alt: "Official VOOPOO banner — the DRAG 6", sourceName: "VOOPOO", sourceUrl: "https://shop.voopoo.com/products/drag-6", width: 1920, height: 579 },
     colorVariants: [
       { id: "silver", name: "Silver", swatchHex: "#c8ccd0", image: { src: "/assets/products/drag-6/variant-silver-v2.webp", alt: "VOOPOO DRAG 6, Silver" } },
       { id: "blue", name: "Blue", swatchHex: "#ccd6dc", image: { src: "/assets/products/drag-6/variant-blue-v2.webp", alt: "VOOPOO DRAG 6, Blue" } },
@@ -616,7 +623,7 @@ export const voopooProducts: Product[] = [
     specifications: [
       { key: "battery", label: "Battery", value: "4400mAh built-in (two 2200mAh cells)", sourceStatus: "verified" },
       { key: "output", label: "Output range", value: "5–220W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
-      { key: "screen", label: "Display", value: "1.66\" TFT — wattage, battery, resistance, puff count, mode", sourceStatus: "verified" },
+      { key: "screen", label: "Display", value: "1.66\" TFT — wattage, battery, resistance, puff count, mode · 3 interface themes", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
       { key: "chip", label: "Chipset", value: "GENE.TT 3.0", sourceStatus: "verified" },
       { key: "modes", label: "Output modes", value: "SMART, RBA, TC-TCR", sourceStatus: "verified" },
       { key: "control", label: "Control", value: "Precision Control Wheel + capacitive unlock sensor on the fire button (touch to unlock, locks again on release) · 5 presses on/off · 3 presses menu", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
@@ -631,17 +638,45 @@ export const voopooProducts: Product[] = [
       { key: "charge-time", label: "Charge time", value: "2–3 hours", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
       { key: "dimensions", label: "Dimensions", value: "150 × 51.4 × 28.6 mm", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
       { key: "weight", label: "Weight", value: "Approx. 280g (294g TPD)", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
+      // Batch 2c (04/10): VOOPOO's spec list "Vaping Style: DTL & MTL" (shop page HTML). attributes.drawStyle stays "DTL" —
+      // the enum has no DTL+MTL bucket and the filter buckets are the category-structure item (14).
+      { key: "vaping-style", label: "Vaping style", value: "DTL and MTL", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/drag-6" },
     ],
     features: [
       {
-        id: "adjustment-wheel",
-        title: "Precision adjustment wheel",
-        description: "A physical wheel for wattage adjustment alongside the touch-capacitive fire button lock.",
+        id: "gene-tt-3",
+        title: "GENE.TT 3.0",
+        description: "Press fire and it responds faster, then holds the power steady through the whole draw.",
+        subline: "VOOPOO's new chip.",
+        image: { src: "/assets/products/drag-6/story-gene-tt-3.webp", alt: "VOOPOO's DRAG 6 poster — the GENE.TT 3.0 chip", sourceName: "VOOPOO", sourceUrl: "https://shop.voopoo.com/products/drag-6", width: 766, height: 766 },
       },
       {
-        id: "gene-tt-3",
-        title: "GENE.TT 3.0 chipset",
-        description: "VOOPOO's chip for a faster draw response and steadier power output, up to 220W.",
+        id: "battery",
+        title: "4400mAh battery",
+        description: "To charge, just plug the cable into the device — no cells to take out.",
+        subline: "Split across two 2200mAh cells.",
+        image: { src: "/assets/products/drag-6/story-battery.webp", alt: "VOOPOO's DRAG 6 poster — the 4400mAh battery glowing through the body", sourceName: "VOOPOO", sourceUrl: "https://shop.voopoo.com/products/drag-6", width: 766, height: 766 },
+      },
+      {
+        id: "screen",
+        title: "1.66-inch TFT screen",
+        description: "The high-resolution display reads clearly — one glance tells you how it is set.",
+        subline: "Choose the look you like.",
+        image: { src: "/assets/products/drag-6/story-screen.webp", alt: "VOOPOO's DRAG 6 poster — three interface themes and the 1.66-inch TFT screen", sourceName: "VOOPOO", sourceUrl: "https://shop.voopoo.com/products/drag-6", width: 897, height: 366 },
+      },
+      {
+        id: "control",
+        title: "Precise control",
+        description: "Let go and it locks itself again, so you never have to remember whether it is locked.",
+        subline: "A wheel for fine adjustment, and a fire button that unlocks at a touch.",
+        image: { src: "/assets/products/drag-6/story-control.webp", alt: "VOOPOO's DRAG 6 poster — the precision control wheel, 220W output and the capacitive unlock sensor", sourceName: "VOOPOO", sourceUrl: "https://shop.voopoo.com/products/drag-6", width: 1024, height: 454 },
+      },
+      {
+        id: "tank",
+        title: "UFORCE-X Tank II",
+        description: "To refill, twist the top cap open and fill straight in; turn the airflow dial for a tighter or a more open draw.",
+        subline: "The tank in the kit, for MTL and DTL alike.",
+        image: { src: "/assets/products/drag-6/story-tank.webp", alt: "VOOPOO's DRAG 6 poster — Golden Triangle airflow, the rotary airflow dial and top fill", sourceName: "VOOPOO", sourceUrl: "https://shop.voopoo.com/products/drag-6", width: 1024, height: 454 },
       },
     ],
     compatibility: [
@@ -649,8 +684,8 @@ export const voopooProducts: Product[] = [
       { type: "charging", label: "USB-C", note: "5V/3A charging." },
     ],
     whoIsThisFor: [
-      "Experienced, high-wattage vapers who want a large built-in battery over swappable cells.",
-      "Anyone who wants RBA/TC control alongside standard variable-wattage vaping.",
+      "Vapers who like to set the power themselves and would rather have a large built-in battery than cells to swap.",
+      "Anyone who vapes both MTL and DTL and wants one tank that handles both.",
     ],
     faqs: [
       {

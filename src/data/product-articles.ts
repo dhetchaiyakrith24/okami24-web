@@ -655,6 +655,93 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 2c (04/10): from VOOPOO's DRAG 6 page and posters; Thai = thai-copy 04/10.
+  "drag-6": {
+    th: {
+      lede: "DRAG 6 คือ DRAG ที่ VOOPOO ออกแบบใหม่ โดยยึดเรื่องการควบคุมเป็นหลัก ด้านล่างไล่ให้ดูทีละเรื่อง",
+      sections: [
+        {
+          heading: "DRAG 6 ต่างจาก DRAG 5 ยังไง",
+          paragraphs: [
+            "VOOPOO ปรับใหม่เกือบทุกส่วน ทั้งชิป แบต จอ ถังน้ำยา และปุ่มยิง",
+            "DRAG 5 ตั้งวัตต์สูงสุดได้น้อยกว่า ใช้ชิป GENE.TT 2.0 และถัง UFORCE-X Tank รุ่นก่อน",
+            "แบตของ DRAG 5 เป็นถ่าน 18650 สองก้อนแบบถอดเปลี่ยนได้ จอเล็กกว่า และปุ่มยิงเป็นปุ่มกดธรรมดา"
+          ]
+        },
+        {
+          heading: "DRAG 6 กับ DRAG X3 และ DRAG S3 เลือกตัวไหนดี",
+          paragraphs: [
+            "[DRAG X3](/products/drag-x3) ไม่มีแบตในตัว ใช้ถ่าน 18650 หรือ 21700 หนึ่งก้อนซึ่งต้องซื้อแยก ตั้งได้ 5–80 วัตต์ และใช้จอทัชขนาดเท่ากับ DRAG 6",
+            "[DRAG S3](/products/drag-s3) มีแบตในตัว 3000mAh ตั้งได้ 5–60 วัตต์ และใช้จอ TFT 0.96 นิ้ว",
+            "ถ้าชอบเปลี่ยนถ่านเอง DRAG X3 จะตรงกว่า ถ้าอยากได้แบตในตัวโดยไม่ต้องใช้วัตต์สูง DRAG S3 ก็เพียงพอ ส่วนช่วงวัตต์ที่กว้างที่สุดในสามรุ่นนี้อยู่ที่ DRAG 6"
+          ]
+        },
+        {
+          heading: "ในกล่องมีอะไรบ้าง",
+          paragraphs: [
+            "ในกล่องมีตัวเครื่อง DRAG 6 ถังน้ำยา และคอยล์ PnP X มาให้สองตัว คือ 0.15 โอห์มกับ 0.3 โอห์ม",
+            "นอกจากนั้นยังมี PnP X Platform Card หลอดแก้วสำรอง ชุดยางซิลิโคน สาย USB-C และคู่มือการใช้งาน"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "The DRAG 6 is the DRAG that VOOPOO rebuilt with control at its centre. Below, one thing at a time.",
+      sections: [
+        {
+          heading: "What changed from the DRAG 5?",
+          paragraphs: [
+            "VOOPOO reworked almost every part: the chip, the battery, the screen, the tank and the fire button.",
+            "The DRAG 5 had a lower wattage ceiling, the GENE.TT 2.0 chip and the earlier UFORCE-X Tank.",
+            "It ran on two removable 18650 cells, with a smaller screen and a plain press button."
+          ]
+        },
+        {
+          heading: "DRAG 6, DRAG X3 or DRAG S3?",
+          paragraphs: [
+            "The [DRAG X3](/products/drag-x3) has no built-in battery: it runs on one 18650 or 21700 cell, sold separately, goes from 5 to 80W, and has a touchscreen the same size as the DRAG 6's.",
+            "The [DRAG S3](/products/drag-s3) has a 3000mAh battery built in, runs 5–60W and has a 0.96-inch TFT screen.",
+            "If you like swapping cells, the X3 suits you better. If you want a built-in battery and don't need high wattage, the S3 is enough. The widest wattage range of the three is on the DRAG 6."
+          ]
+        },
+        {
+          heading: "What's in the box?",
+          paragraphs: [
+            "The DRAG 6 itself, the tank, and two PnP X coils: 0.15Ω and 0.3Ω.",
+            "Plus a PnP X Platform Card, a spare glass tube, a pack of silicone rubber parts, a USB-C cable and the user manual."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "DRAG 6 是 VOOPOO 以操控为核心重新打造的 DRAG。下面逐项来看。",
+      sections: [
+        {
+          heading: "DRAG 6 和 DRAG 5 有什么不同？",
+          paragraphs: [
+            "VOOPOO 几乎把每个部分都重新做了：芯片、电池、屏幕、烟仓和火键。",
+            "DRAG 5 的功率上限更低，用的是 GENE.TT 2.0 芯片，以及上一代 UFORCE-X Tank 烟仓。",
+            "它使用两颗可拆换的 18650 电池，屏幕更小，火键是普通按键。"
+          ]
+        },
+        {
+          heading: "DRAG 6、DRAG X3 还是 DRAG S3？",
+          paragraphs: [
+            "[DRAG X3](/products/drag-x3) 没有内置电池，使用一颗需另购的 18650 或 21700 电池，功率 5–80W，触屏尺寸与 DRAG 6 相同。",
+            "[DRAG S3](/products/drag-s3) 内置 3000mAh 电池，功率 5–60W，0.96 英寸 TFT 屏。",
+            "喜欢自己换电池，选 X3 更合适；想要内置电池又不需要高功率，S3 就够了；三款中功率范围最宽的是 DRAG 6。"
+          ]
+        },
+        {
+          heading: "包装内有什么？",
+          paragraphs: [
+            "DRAG 6 主机、烟仓，以及两颗 PnP X 线圈：0.15Ω 和 0.3Ω。",
+            "另有 PnP X Platform Card、备用玻璃管、硅胶配件包、USB-C 数据线和使用说明书。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

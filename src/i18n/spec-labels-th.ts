@@ -73,6 +73,8 @@ export const SPEC_LABELS_TH: Record<string, string> = {
   Touch: "การแตะจอ",
   "Screen themes": "ธีมหน้าจอ",
   Settings: "การตั้งค่า",
+  // Batch 2c (04/10): DRAG 6 "Vaping style" row — the locked word for draw style (THAI_STYLE ก้อน 9 "แนวการสูบ").
+  "Vaping style": "แนวการสูบ",
 };
 
 /** The Thai chip label for an English data label, or the label itself when there is no entry. */
