@@ -11,19 +11,12 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — the 04/10 chat merged (each checker PASS + GitHub green; live checked by curl):
-  #245 head lines G3 Pro / KOKO / G4 / G4 Classic + 2 rejected 1d phrases (proof `_incoming/sitewide-template/1e/`) · #247 thai-copy
-  voice reset · #248 Drag 6 all-colours HYBRID lineup-v3 + G4 line in the owner's words (shots `_incoming/sitewide-template/2/shots/`)
-  · #250 THAI_STYLE layer 4 = no explaining brackets · #246 #249 docs.
-2 ahead of main [ตรวจแล้ว — git]: branch `b2b-drag6-data` = OPEN PR #251 (34eb5be + 42cb34a, BIG) — checker r1 FAIL at 42cb34a, NOT merged
-  (live is unchanged and consistent). Data itself all verified against VOOPOO (checker re-traced every value). To fix before merge:
-  (a) /guides/reading-a-spec-sheet + /technology/high-output-chip-platforms use "DRAG 6 pod row is unverified" as their example → false
-  after merge: src/data/guides.ts:293-295 · guides-copy.ts th 287-293 / zh 641-647 · technology.ts:139 · technology-copy.ts th 132 /
-  zh 292 — pick another model that still has an unverified row (e.g. DRAG X3, guides.ts:214) and rewrite th/en/zh via `thai-copy`;
-  technology.ts also says "rebuildable-coil support" (not the maker's) · (b) wordbreak 390: «0.3Ω» alone on the coil row's last line
-  → reword (e.g. drop the repeated "PnP X") · non-blocking: catalog-relationships.ts:186-191 evidence tier "retailer" → maker now.
-  Checker files `_incoming/check-251/`. Then rebuild → gates (thai-check, scan.js, wordbreak) → checker re-check → merge.
-  Plus this docs PR. Kits (never merge these branches):
+1 main: `git fetch && git log -1 --oneline origin/main` — the 04/10 chat (2nd) merged (each checker PASS + GitHub green):
+  #251 DRAG 6 data from VOOPOO + r1 fixes (guide/technology examples rewritten as "how the coil row moved to verified", glosses
+  dropped, edge drag-6↔coil-92 tier official) — live checked by curl [ตรวจแล้ว] · #253 = batch 2c, DRAG 6 on the template (story
+  blocks + exploded view + article; checker 12/12 at 31c1533, then image-only fix 5ed0a50 under 13.5 #2(จ)) — deploy of 085594c
+  was running when this was written; curl the live page first [เชื่อว่า it deployed].
+2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Kits (never merge these branches):
   1b = branch `kit-1b` (also holds `_incoming/sitewide-template/scope.md`, the round scope) · 1c = branch `kit-1c`. Get one:
   `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d material is in
   `_incoming/sitewide-template/1d/` (not in git: facts-uwell.md = every UWELL fact with its file · mk/ = UWELL page files · manual/ =
@@ -33,25 +26,25 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md` (the one home). Scope = `_incoming/sitewide-template/scope.md` + the round file's
   【ขอบเขต】 block: 55 product pages; PM pages (coils, IQOS, pod-180) = cards/images only, no story mechanism.
   Batches (all tier B): 1 UWELL — DONE (1a G5 Lite + SE · 1b G4 + mini + Classic · 1c G4 Pro + KOKO · 1d G3 Pro + KOKO) ·
-  2 VOOPOO (Drag 6 hybrid lineup DONE #248, + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*, m-switch-pod,
+  2 VOOPOO (DRAG 6 DONE: #248 lineup · #251 data · #253 page; + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*, m-switch-pod,
   m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
   asset-refs sweep of the 246 candidates, edge defects).
   Flag `storyStartRight` (default off) starts a page poster-right (G3 Pro, owner 03/10 "vary").
-  BATCH 2 VOOPOO — STARTED 04/10: 2a = #248 (Drag 6 all-colours, merged) · 2b = #251 (Drag 6 data, open — item 2). Pages still to
-  do on the template: all 8. Material (not in git) `_incoming/sitewide-template/2/`: pages/*.html = the 7 shop pages (curl +
+  BATCH 2 VOOPOO — STARTED 04/10: 2a #248 lineup · 2b #251 data · 2c #253 page = DRAG 6 done (owner has not seen #253 live yet).
+  Pages still to do on the template: the other 7 (ARGUS P3 · DRAG S3 · DRAG X3 · VMATE i3 · ARGUS G3 mini · ARGUS G4 mini ·
+  ARGUS G4; VINCI S off-limits). DRAG 6 = the VOOPOO worked example: `_incoming/sitewide-template/2/2c/` (brief-drag6.md ·
+  copy-base.json + th.json → build.js · prep.js posters · anat-crop.js + anat-build.js + zooms.json = exploded view from a maker
+  4K tech sheet cut with scripts/flatcut.js · facts.json for page-text-length · shots/ before/after). Full-page shots: pass
+  `--eval` that sets every img `loading='eager'` + a 4 s wait, else lazy posters render black. Material (not in git) `_incoming/sitewide-template/2/`: pages/*.html = the 7 shop pages (curl +
   `Referer: https://shop.voopoo.com/`; www.voopoo.com does not resolve from this ISP — use shop.voopoo.com) · posters/<slug>/ = every
   maker image (fetch-posters.js; sheet.js <slug> = numbered contact sheet) · facts-drag6.md = DRAG 6 facts read FILE BY FILE (cover
   26/27 · chip 29 · tank 30+36 · screen 31+37 · battery 32 · controls 38 · PARTS VIEW 55 · box 56) · research-voopoo.md = web-summary
   pass, UNRELIABLE (3 "not on maker" claims were wrong) → read the maker images file by file like facts-drag6.md. P3 / S3+X3 / VMATE i3 / G3 mini posters = one long 1024-px
   "onepage" image each (posters/onepages.png) → cut into blocks; G4 mini = 6 posters 2133 px; ARGUS G4 = `_incoming/argus-g4/`.
-  sample-block-drag6.md = the reset thai-copy's first sample (A recommended / B warmer) [รอเจ้าของ (49)].
-  Drag 6 HYBRID draft = `_incoming/image-sitewide/b-edge/d6-hybrid.js` → relx/d6-hy.png (true devices from relx-studio d6 × B's
-  low-frequency light on a 24×48 grid per device box, clamp 0.55–1.35, mirror reflection at each foot, transparent) · sent to the owner
-  04/10 as relx/d6-owner.png → owner "ได้ครับ" → live as lineup-v3 (publish: b-edge/d6-hy-publish.js) · 0 credits. Taste note
-  (checker #248): the VOOPOO letters on the silver/blue/green tanks read faint at 4× under the transferred light — owner-approved.
-  NEXT, in order: (i) finish #251 (item 2) · (ii) owner's answer on (49) → Drag 6 story page on the template (posters above + parts
-  view 55 as "ไล่ดูทีละส่วน" + article) · (iii) the other 7 VOOPOO pages, each: facts file by file → data PR → story (owner 04/10:
-  images first, VOOPOO now).
+  VOICE for VOOPOO story copy (owner 04/10 on sample (49): "ผสมกัน"): Friday's reading = A's short calm titles + B's warmer everyday
+  bodies — used on #253 [เชื่อว่า that is what he meant; he has not seen it live].
+  NEXT, in order: (i) curl live /products/drag-6 (085594c deploy) · (ii) the other 7 VOOPOO pages, each: facts file by file → data
+  PR → story on the template (owner 04/10: images first, VOOPOO now) — S3/X3 data still say "DRAG-series coil pod" (old pod row).
   Speed (owner 04/10): one build per batch · whole-sitemap scan (≈ 20 min) only if a shared part changes · a build ≈ 8 min.
   Method that worked (1b–1d): maker page → .txt (`1b/extract.js`) · images listed in the page HTML + its `/_nuxt/*.js` chunks · ffmpeg
   stills from maker films · researcher reads posters/spec images into a facts sheet · copy-base.json (en/zh) → thai-copy → th.json →
@@ -80,10 +73,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (49) NEW 04/10 DRAG 6 sample story block (reset thai-copy) — A "ควบคุมได้ละเอียด" (recommended) vs B "หยิบขึ้นมาก็พร้อมใช้", and is
-       the voice the "สุภาพ นิ่ง ธรรมชาติ" he wants? File `_incoming/sitewide-template/2/sample-block-drag6.md` (also sent in chat).
-       VOOPOO story copy waits for this answer; data and images do not.
-  (closed 04/10: (48) = THAI_STYLE layer 4 · 3 head lines + existing brackets → SEO/language round, timing [เชื่อว่า] — item 5.)
+  (50) NEW 04/10 look at /products/drag-6 live (#253): the "mix A+B" voice · story blocks · the exploded view (black tech-sheet views +
+       the approved black render as 3/4) · reversible by revert. Taste notes not fixed (checker #253): at 390 the text printed inside the
+       three wide VOOPOO posters (control / screen / tank) is ~6–7 px — caption chips could repeat it, but that adds a fact mention ·
+       "มีโหมด SMART RBA และ TC-TCR" (owner-passed wording, LOG) can read as two modes.
+  (closed 04/10: (49) = "ผสมกัน" — item 3 VOICE.)
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
@@ -102,7 +96,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     G4 posters before changing (thai-copy flag 04/10).
   - `src/data/guides.ts` (which-Caliburn guide) still says G4 Classic specs are unconfirmed — verified in #233; guides = outside round.
   - G4 `firing` row ("draw or button") is sourced from the manuals.plus copy of UWELL's manual, not a UWELL page (thai-copy flag 03/10).
-  - Drag 6 tank: retailers name it UFORCE-X Tank II, the data has a "gene-tt-3" highlight — data check [เชื่อว่า].
+  - DRAG 6 head copy (off-limits → SEO round): shortDescription en "The current DRAG-series flagship" / th "รุ่นเรือธงล่าสุดของสาย
+    DRAG" is not VOOPOO's wording, and th "(ถ่าน 2200mAh สองก้อน)" uses the locked word for removable cells + a layer-4 bracket.
+  - DRAG 6 tank spec row splits "UFORCE-X | Tank II" at 390 (checker accepted ×3) · /guides/reading-a-spec-sheet still cites a
+    retailer list for the DRAG X3 coil (guides.ts ~214 + guides-copy th/zh) — maker-only rule, fix when X3 is read (batch 2) ·
+    compat-copy-th "DRAG-series coil pod" → "หัวพอตสาย DRAG (เปลี่ยนคอยล์ได้)" has a bracket and "สาย" (locked for flavour lines).
   - coil-94's Thai Shipnity name "UWELL คอยล์ Caliburn G4&G3 Series" shows on en/zh pages that link it (locale-hydration FAIL on
     caliburn-g3-pro(-koko), -g4-pro(-koko), -g5 en+zh, same on live) [ตรวจแล้ว] — data round.
   - Head copy off-limits this round, wrong since 1c (SEO round): KOKO (G4 Pro) shortDescription "2 นิ้ว" + "Custom" · G4 Pro tagline +
