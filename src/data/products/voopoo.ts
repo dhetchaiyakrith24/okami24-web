@@ -422,9 +422,18 @@ export const voopooProducts: Product[] = [
     // one taller than wide (narrow column, no enlargement): _incoming/sitewide-template/2/2f/blocks.js.
     storyDetails: true,
     storyLayout: "stage",
+    // Batch 2f-img (05/10): 8 finishes — VOOPOO's own colour poster adds Green Leather (shop + voopoo.com list 7; catalog
+    // completeness rule). Its photo = our Brown Leather master moved to the poster's green (_incoming/sitewide-template/2/2f/
+    // p3-green.js). "ทั้งหมด" = two groups of 4 in the page order (owner 05/10: the one image of 7 was too small) — the box
+    // "cluster" layout, _incoming/image-sitewide/set1/boxy.js argus-p3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/argus-p3/lineup-v2.webp",
-      alt: "VOOPOO ARGUS P3, all 7 colours",
+      src: "/assets/products/argus-p3/lineup-v3.webp",
+      alt: "VOOPOO ARGUS P3, colours 1–4 of 8",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/argus-p3/lineup2-v3.webp",
+      alt: "VOOPOO ARGUS P3, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     colorVariants: [
@@ -438,6 +447,7 @@ export const voopooProducts: Product[] = [
       { id: "grey-leather", name: "Grey Leather", swatchHex: "#5f6460", image: { src: "/assets/products/argus-p3/variant-grey-leather-v2.webp", alt: "VOOPOO ARGUS P3, Grey Leather" } },
       { id: "brown-leather", name: "Brown Leather", swatchHex: "#93654c", image: { src: "/assets/products/argus-p3/variant-brown-leather-v2.webp", alt: "VOOPOO ARGUS P3, Brown Leather" } },
       { id: "red-leather", name: "Red Leather", swatchHex: "#b94543", image: { src: "/assets/products/argus-p3/variant-red-leather-v2.webp", alt: "VOOPOO ARGUS P3, Red Leather" } },
+      { id: "green-leather", name: "Green Leather", swatchHex: "#4b714b", image: { src: "/assets/products/argus-p3/variant-green-leather-v2.webp", alt: "VOOPOO ARGUS P3, Green Leather" } },
       { id: "silver-leather", name: "Silver Leather", swatchHex: "#e0e0e0", image: { src: "/assets/products/argus-p3/variant-silver-leather-v2.webp", alt: "VOOPOO ARGUS P3, Silver Leather" } },
       { id: "black-metal", name: "Black Metal", swatchHex: "#2b2b2e", image: { src: "/assets/products/argus-p3/variant-black-metal-v2.webp", alt: "VOOPOO ARGUS P3, Black Metal" } },
     ],
