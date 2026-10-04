@@ -76,7 +76,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (47) ANSWERED 04/10 "Drag 6 ได้ครับ" → HYBRID replaces lineup-v2 as lineup-v3.webp (b-edge/d6-hy-publish.js), own PR with the
        G4 head-line fix (owner 04/10: "…เลือกโหมดได้ตามความต้องการและการใช้งาน").
   (48) NEW 04/10 THAI_STYLE layer 4 (line 29) still says a tech term gets a short Thai parenthesis at first mention ("MTL (สูบแบบ
-       ดูดเข้าปากก่อน)"); the owner rejected the RDL one as "เพี้ยน ๆ" and LESSONS ช11 reads "no parentheses" [เชื่อว่า]. #245 kept MTL's
+       ดูดเข้าปากก่อน)"); the owner rejected the RDL one as "เพี้ยน ๆ" (no NEW brackets meanwhile — LESSONS ช11). #245 kept MTL's
        (locked example) and dropped RDL's → keep layer 4, or drop the parentheses site-wide? Owner 04/10 asked to see them
        first → list sent in chat (10 term brackets · 3 screen-message brackets · 4 others; raw = `node scripts/paren-terms.js`).
   #245 head lines + ledes = Friday's own Thai (checker taste-read, not thai-copy) — ruled by the owner from the live pages.
