@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — 05/10: #271 = 5b2545e (2g ARGUS G4, BIG, checker 3 rounds → PASS at
-  2c8e9fa, deploy 37238373637 OK, live page + 7 poster files 200) [ตรวจแล้ว — gh + curl].
+1 main: `git fetch && git log -1 --oneline origin/main` — night 05→06/10 [ตรวจแล้ว — gh + curl]: #271 5b2545e (2g ARGUS G4) ·
+  #273 694a1e8 (3a Zero Pro) · #274 10ab2a9 (3b M Switch Kit) · #275 f429625 (3e M Bar 15K data) — all BIG, checker PASS, deploy OK.
 2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Material not in git: `_incoming/sitewide-template/2/2fimg/` (p3-green-site.js ·
   g4card/ · i3/ = www banners, render/, i3-site.js, keepdev.js, srtone.js, fid-sheet.png, shots/) · `2/2f/` · `2/2e/` etc. Kits (never merge): `kit-1b` (+ scope.md) ·
   `kit-1c` — `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d + 2x =
@@ -29,10 +29,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   two-group lineups, ARGUS G4 card-v2 (owner: "การ์ดเล็กไป"), VMATE i3 all 11 colours · 2g #271 = ARGUS G4 story page (7 VOOPOO
   panels, Multi-Ohm 0.7 / flip 1.0 / double press 0.4Ω, `2/2g/`). BATCH 2 DONE except the owner-deferred image work (item 5).
   "Argus Multi-Ohm" = not a catalog product (no Shipnity row) → told on the G4 page only · M Bar 15K data → batch 3 (SALTHUB).
-  NEXT = BATCH 3 SALTHUB (owner 05/10 night: "ทำต่อยาวๆ ไม่ hand พรุ่งนี้ตรวจทีเดียว").
+  BATCH 3 SALTHUB (`_incoming/sitewide-template/3/`: inventory.md, facts-<slug>.md, posters/, STATE.md) — 3a #273 Zero Pro (banner as
+    block 1: 1920-px file too narrow for the cover · Black re-cut from SALTHUB colour poster 4 · lineups 1/2) · 3b #274 M Switch Kit
+    split → stage (no cover, 5 blocks) · 3e #275 M Bar 15K plain data errors (ceramic coil, 600mAh, airflow, Black Berry swatch) ·
+    3c M Bar 10K stage = PREPARED in `3/3c/`, NOT built: it drops 4 owner-approved Thai lines (head copy uses those facts twice)
+    → waits for the owner (13.3 #5) · 3d Zero Cartridge (+20 SALTHUB flavours, 4938-px packs) + Zero Nano = NEXT · M Switch Pod
+    (no pod-only posters) and M Bar 9K (no feature posters) stay as they are. Owner question set = `3/STATE.md` §Owner questions.
   TEMPORARY RULING [ตรวจแล้ว — owner in chat 05/10] (13.6 — ends when the owner says so on 06/10 morning; delete it then): in THIS
-  chat only, batch after batch in order — no handoff, no chat move at batch close, no stopping to ask (13.3 hard stops still apply)
-  — report all at once. Context 700k still = move the chat (central §12 item 29).
+  chat only, batch after batch in order — no handoff, no chat move (owner: "ไม่ต้องจบก้อนย้ายแชท" — overrides central §12 item 29
+  for this chat; auto-compaction carries the context), no stopping to ask (13.3 hard stops still apply) — report all at once.
   Worked examples `_incoming/sitewide-template/2/`: 2e (upscale + composite) · 2f (gaps.js → blocks.js) · 2g (panel cut + corners.js,
   extract.js = page text + posters) · 2fimg/i3 (render per finish). Traps = LESSONS 24 + พ18. Voice: owner "ผสมกัน" (#253–#264).
   One build per batch · whole-sitemap scans only when a shared part changes.
