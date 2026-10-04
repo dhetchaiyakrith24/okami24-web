@@ -73,7 +73,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Left from it: edge defects (`edge-audit/visual-audit.md`: vmate-i3 · zero-pro · m-bar-15k · muro-3ml · zero-cartridge ·
   mood-monster-14k · coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87) · coils `b-coils/README.txt` · Esko pod-159 LAST
   (13.7 big (2), own PR, + BSOT §21).
-  Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (04/10: 15 upscale jobs, 315.1 → 279.1 =
+  Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (04/10: 14 upscale jobs, 315.1 → 279.1 =
   36 credits [ตรวจแล้ว — `balance`, 2dfix/credits.txt]; 2k = 2 each, 4k more). The app's auto-mode guard blocks uploads to Higgsfield until the owner allows it in that chat (04/10 did).
 4 waiting on owner:
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
