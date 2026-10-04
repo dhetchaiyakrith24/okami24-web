@@ -31,7 +31,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   BATCH 2 VOOPOO — 04/10: 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 (owner has not seen S3/X3 live yet).
   Still to do on the template: ARGUS P3 · VMATE i3 · ARGUS G3 mini · ARGUS G4 mini · ARGUS G4 (VINCI S off-limits). Suggested pairs:
   2e ARGUS G3 mini + G4 mini · 2f ARGUS P3 + VMATE i3 · 2g ARGUS G4 (+ Multi-Ohm, M Bar 15K data). One PR per pair = data + page
-  (the 2d way, one build) [เชื่อว่า fastest]. Worked examples: DRAG 6 `_incoming/sitewide-template/2/2c/` (exploded view from a
+  (the 2d way, one build). Worked examples: DRAG 6 `_incoming/sitewide-template/2/2c/` (exploded view from a
   maker 4K multi-view sheet: anat-crop.js + anat-build.js + zooms.json, scripts/flatcut.js) · S3/X3 `2/2d/` (facts-drag-*.md read
   piece by piece by `researcher` — cut a long onepage strip first: 2d/cut-onepage.js; blocks.js cuts whole poster blocks out of the
   strip and trims the strip's pale blurred page background + fills the light gap between tile pairs (checker #255: pale frames
