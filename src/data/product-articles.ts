@@ -1213,7 +1213,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // Site-wide template round batch 2g (05/10): from VOOPOO's ARGUS G4 page and posters; Thai = thai-copy 05/10.
   "argus-g4": {
     th: {
-      lede: "ARGUS G4 เป็นรุ่นที่ VOOPOO ใส่จอและปุ่มมาให้ตั้งค่าเครื่องได้เอง ด้านล่างไล่ให้ดูทีละเรื่อง",
+      lede: "ARGUS G4 เป็นรุ่นที่ VOOPOO ใส่จอและปุ่ม ให้ตั้งค่าเครื่องได้เอง ด้านล่างไล่ให้ดูทีละเรื่อง",
       sections: [
         {
           heading: "ARGUS G4 กับ ARGUS G4 mini เลือกตัวไหนดี",

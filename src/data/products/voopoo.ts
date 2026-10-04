@@ -103,7 +103,8 @@ export const voopooProducts: Product[] = [
     // like the other VOOPOO pods, _incoming/image-sitewide/dsx/vp-relx2.js argus-g4-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     // Site-wide template round batch 2g (05/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — VOOPOO's own shop page told
     // one poster panel per block; text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Panels cut whole along
-    // VOOPOO's panel edges, down-sized only: _incoming/sitewide-template/2/2g/blocks.js. Cover = the poster both devices share,
+    // VOOPOO's panel edges, down-sized only: _incoming/sitewide-template/2/2g/blocks.js (+ corners.js: transparent panel corners,
+    // checker #271). Cover = the poster both devices share,
     // already the G4 mini's cover (same file). Not used: the safety-protection panel (no safety claims) and VOOPOO's spec card.
     storyDetails: true,
     storyLayout: "stage",
@@ -199,21 +200,21 @@ export const voopooProducts: Product[] = [
         title: "Flip it or press the button",
         description: "The device reads the new resistance by itself the moment you switch, so there is no second pod to carry and no menu to dig through.",
         subline: "Three resistances from one Multi-Ohm cartridge.",
-        image: { src: "/assets/products/argus-g4/story-ohm.webp", alt: "VOOPOO's ARGUS G4 poster — the Multi-Ohm cartridge: flip for 1.0Ω or 0.7Ω, press the button twice for 0.4Ω", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 1366 },
+        image: { src: "/assets/products/argus-g4/story-ohm-v2.webp", alt: "VOOPOO's ARGUS G4 poster — the Multi-Ohm cartridge: flip for 1.0Ω or 0.7Ω, press the button twice for 0.4Ω", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 1377 },
       },
       {
         id: "battery",
         title: "A big battery, a quick charge",
-        description: "VOOPOO built it for heavy vapers and travellers, so less of the day goes on looking for a socket.",
+        description: "VOOPOO built it for heavy vapers and travellers, so less of the day goes on looking for a socket. The 10% on the poster is against the ARGUS G3; VOOPOO's own page says 22% longer than the previous generation.",
         subline: "A high-density cell.",
-        image: { src: "/assets/products/argus-g4/story-battery.webp", alt: "VOOPOO's ARGUS G4 poster — a see-through view of the 1650mAh battery and a 45-minute full charge", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 1137 },
+        image: { src: "/assets/products/argus-g4/story-battery-v2.webp", alt: "VOOPOO's ARGUS G4 poster — a see-through view of the 1650mAh battery and a 45-minute full charge", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1590, height: 1098 },
       },
       {
         id: "tech",
         title: "Multi-core electrodes",
         description: "With VOOPOO's iCOSM CODE 2.0 in the cartridge, VOOPOO says the taste holds from the first draw to the last, with freebase or nic salts.",
         subline: "Positive, negative, positive pins in the pod seat — VOOPOO calls it an industry first.",
-        image: { src: "/assets/products/argus-g4/story-tech.webp", alt: "VOOPOO's ARGUS G4 poster — multi-core electrode tech, iCOSM CODE 2.0 and a 35W maximum", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 942 },
+        image: { src: "/assets/products/argus-g4/story-tech-v2.webp", alt: "VOOPOO's ARGUS G4 poster — multi-core electrode tech, iCOSM CODE 2.0 and a 35W maximum", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1590, height: 928 },
       },
       {
         id: "design",
@@ -227,14 +228,14 @@ export const voopooProducts: Product[] = [
         title: "One button, several settings",
         description: "It's the same button you press to switch resistance, so there's only one to remember.",
         subline: "A count of presses opens each setting.",
-        image: { src: "/assets/products/argus-g4/story-menu.webp", alt: "VOOPOO's ARGUS G4 poster — one button for several functions: power off, theme, puff clear, lock or unlock", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 650 },
+        image: { src: "/assets/products/argus-g4/story-menu-v2.webp", alt: "VOOPOO's ARGUS G4 poster — one button for several functions: power off, theme, puff clear, lock or unlock", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1590, height: 639 },
       },
       {
         id: "fill",
         title: "Fill from the top, set the airflow",
         description: "Close the slider for a tight MTL draw with the 1.0Ω, leave it half open for a balanced MTL, or open it all the way for an airy RDL with the 0.4Ω.",
         subline: "Refill without taking the pod out.",
-        image: { src: "/assets/products/argus-g4/story-fill.webp", alt: "VOOPOO's ARGUS G4 poster — top filling and the stepless airflow slider", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 623 },
+        image: { src: "/assets/products/argus-g4/story-fill-v2.webp", alt: "VOOPOO's ARGUS G4 poster — top filling and the stepless airflow slider", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1591, height: 609 },
       },
       {
         id: "pods",
