@@ -16,6 +16,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   so their meta description + Product JSON-LD description changed too · G3 Pro / KOKO article ledes th/en/zh · G4 Classic who-for ·
   the 2 rejected 1d phrases fixed · deploy 37159026333 success · live meta of the 4 pages [ตรวจแล้ว — curl]. Proof:
   `_incoming/sitewide-template/1e/` (gates4.log · vt-diff4 = 129 changes, all intended · checker files `_incoming/checker-245/`).
+  Then #247 `be4e7fc` (thai-copy voice reset, checker PASS r2) · #248 `34c4738` (BIG, checker PASS r2 at 6d9bb04, GitHub green):
+  Drag 6 all-colours = HYBRID lineup-v3.webp (lineup-v2 deleted) + G4 head line in the owner's words · deploy 37190995085 success ·
+  live drag-6 serves lineup-v3 (200 image/webp), live G4 line [ตรวจแล้ว — curl]. Shots: `_incoming/sitewide-template/2/shots/cmp-*.png`.
 2 ahead of main: `git log --oneline origin/main..<branch>` — this docs PR only [ตรวจแล้ว — git]. Kits (never merge these branches):
   1b = branch `kit-1b` (also holds `_incoming/sitewide-template/scope.md`, the round scope) · 1c = branch `kit-1c`. Get one:
   `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d material is in
@@ -26,22 +29,24 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md` (the one home). Scope = `_incoming/sitewide-template/scope.md` + the round file's
   【ขอบเขต】 block: 55 product pages; PM pages (coils, IQOS, pod-180) = cards/images only, no story mechanism.
   Batches (all tier B): 1 UWELL — DONE (1a G5 Lite + SE · 1b G4 + mini + Classic · 1c G4 Pro + KOKO · 1d G3 Pro + KOKO) ·
-  2 VOOPOO (+ Drag 6 hybrid lineup on the test server first, + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*, m-switch-pod,
+  2 VOOPOO (Drag 6 hybrid lineup DONE #248, + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*, m-switch-pod,
   m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
   asset-refs sweep of the 246 candidates, edge defects).
   1d as merged: UWELL posters (G3 Pro 6 blocks, KOKO 7), th/en/zh + articles, every spec row from UWELL with sourceUrl (G3 Pro battery
   from UWELL's user manual zip; KOKO 1250mAh — the shop had "1000mAh unverified"; facts = 1d/facts-uwell.md). KOKO card now shows
   "1250mAh · Max 35W" sitewide. New flag `storyStartRight` (default unchanged) — G3 Pro starts poster-right (owner 03/10 "vary").
-  BATCH 2 VOOPOO — STARTED 04/10, nothing on a branch yet. Material (not in git): `_incoming/sitewide-template/2/` = research-voopoo.md
+  BATCH 2 VOOPOO — STARTED 04/10: 2a = #248 (Drag 6 all-colours, merged). Pages still to do: all 8. Material (not in git): `_incoming/sitewide-template/2/` = research-voopoo.md
   (researcher: our data vs maker — Drag 6 is a TANK MOD with UFORCE-X Tank II / PnP X, not a pod kit; "SMART/RBA/TC-TCR", "two 2200mAh
   cells", G3 mini 95.3 mm, VMATE i3 dims = not on the maker page; MEDIUM confidence for all but ARGUS G4 — re-read the real pages) ·
   pages/*.html = the 7 shop pages saved with curl + `Referer: https://shop.voopoo.com/` (argus-g4 = `_incoming/argus-g4/`) ·
   posters.md (posters.js / landing.js: poster URLs per page; Drag 6 + X3 are landing pages, 70 / 62 images to sort).
   Drag 6 HYBRID draft = `_incoming/image-sitewide/b-edge/d6-hybrid.js` → relx/d6-hy.png (true devices from relx-studio d6 × B's
   low-frequency light on a 24×48 grid per device box, clamp 0.55–1.35, mirror reflection at each foot, transparent) · sent to the owner
-  04/10 as relx/d6-owner.png (left = live lineup-v2 the owner picked 01/10, right = hybrid) [รอเจ้าของ (47)] · 0 credits.
-  NEXT, in order: (i) owner answers (46) + (47) · (ii) batch 2 data/poster work that needs no new copy: read posters per product,
-  fix the data rows against the maker (13.7 big (2)) · (iii) copy for VOOPOO only after (46) is settled (the owner's voice reset).
+  04/10 as relx/d6-owner.png → owner "ได้ครับ" → live as lineup-v3 (publish: b-edge/d6-hy-publish.js) · 0 credits. Taste note
+  (checker #248): the VOOPOO letters on the silver/blue/green tanks read faint at 4× under the transferred light — owner-approved.
+  NEXT, in order: (i) batch 2 data: read the posters per product (posters.md), fix the data rows against the maker (13.7 big (2) —
+  Drag 6 first: tank mod, modes, cells, charging) · (ii) copy with the reset `thai-copy`: ONE sample block (th/en/zh) to the owner
+  before the rest (owner 04/10) · (iii) story blocks page by page on the template · (48) decides the MTL/mesh brackets.
   Speed (owner 04/10): one build per batch · whole-sitemap scan (≈ 20 min) only if a shared part changes · a build ≈ 8 min.
   Method that worked (1b–1d): maker page → .txt (`1b/extract.js`) · images listed in the page HTML + its `/_nuxt/*.js` chunks · ffmpeg
   stills from maker films · researcher reads posters/spec images into a facts sheet · copy-base.json (en/zh) → thai-copy → th.json →
@@ -64,22 +69,18 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   names, lesson พ6). Check every render for MIRRORING. Run `npx tsx scripts/image-sharpness-gate.ts --base origin/main` before the
   checker. Paths under `_incoming/image-sitewide/`. Poster `transparent` only when ≥ 30 % of the file is transparent (LESSONS พ16).
   Lineups: UWELL slim = G5 "group" (`set1/poster.js`) · box = "cluster" (`set1/boxy.js`, `dsx/koko-two.js`) · VOOPOO = RELX
-  (`dsx/vp-relx2.js`) · 7+ devices = two groups ("ทั้งหมด 1 / 2"). Drag 6: HYBRID (true devices + B's light) on the test server first.
+  (`dsx/vp-relx2.js`) · 7+ devices = two groups ("ทั้งหมด 1 / 2") · AI light only = HYBRID (`b-edge/d6-hybrid.js`, Drag 6 #248).
   Left from it: edge defects (`edge-audit/visual-audit.md`: vmate-i3 · zero-pro · m-bar-15k · muro-3ml · zero-cartridge ·
   mood-monster-14k · coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87) · coils `b-coils/README.txt` · Esko pod-159 LAST
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (46) ANSWERED 04/10 "1 1235 4" → done in PR #247: `thai-copy` owns th/en/zh (name kept, not `site-copy` — 70+ files cite it),
-       voice = THAI_STYLE §2 "น้ำเสียง" (สุภาพ นิ่ง ธรรมชาติ · not curt · yardstick Apple / professional brands), Thai first from maker
-       facts, one sample block to the owner before a batch. Next copy work (VOOPOO) = first real use → send that sample block.
-  (47) ANSWERED 04/10 "Drag 6 ได้ครับ" → HYBRID replaces lineup-v2 as lineup-v3.webp (b-edge/d6-hy-publish.js), own PR with the
-       G4 head-line fix (owner 04/10: "…เลือกโหมดได้ตามความต้องการและการใช้งาน").
-  (48) NEW 04/10 THAI_STYLE layer 4 (line 29) still says a tech term gets a short Thai parenthesis at first mention ("MTL (สูบแบบ
+  (48) 04/10 THAI_STYLE layer 4 (line 29) still says a tech term gets a short Thai parenthesis at first mention ("MTL (สูบแบบ
        ดูดเข้าปากก่อน)"); the owner rejected the RDL one as "เพี้ยน ๆ" (no NEW brackets meanwhile — LESSONS ช11). #245 kept MTL's
        (locked example) and dropped RDL's → keep layer 4, or drop the parentheses site-wide? Owner 04/10 asked to see them
        first → list sent in chat (10 term brackets · 3 screen-message brackets · 4 others; raw = `node scripts/paren-terms.js`).
-  #245 head lines + ledes = Friday's own Thai (checker taste-read, not thai-copy) — ruled by the owner from the live pages.
+  #245 head lines + ledes = Friday's own Thai (checker taste-read, not thai-copy) — ruled by the owner from the live pages
+       (G4 already re-worded by the owner 04/10; the other three not ruled yet). (46) voice reset done in #247 — see THAI_STYLE §2.
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
