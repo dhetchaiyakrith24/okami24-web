@@ -821,4 +821,80 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       link: { href: "/products/coil-94", label: { th: "ดูหัวพอตที่ใช้กับ G3 Pro KOKO", en: "See the G3 pods", zh: "查看 G3 烟弹" } },
     },
   },
+  // Site-wide template round batch 2c (04/10): VOOPOO's own DRAG 6 page + posters
+  // (_incoming/sitewide-template/2/facts-drag6.md lists the source of each line); Thai = thai-copy 04/10.
+  "drag-6": {
+    "gene-tt-3": {
+      title: { th: "GENE.TT 3.0", en: "GENE.TT 3.0", zh: "GENE.TT 3.0" },
+      subline: { th: "ชิปรุ่นใหม่ของ VOOPOO", en: "VOOPOO's new chip.", zh: "VOOPOO 新一代芯片。" },
+      body: {
+        th: "พอกดยิง เครื่องตอบสนองได้ไวขึ้น และจ่ายไฟได้นิ่งตลอดการสูบ",
+        en: "Press fire and it responds faster, then holds the power steady through the whole draw.",
+        zh: "按下火键响应更快，整口抽吸功率输出都很稳定。",
+      },
+      points: [
+        { text: { th: "มีโหมด SMART RBA และ TC-TCR ให้เลือก", en: "SMART, RBA and TC-TCR modes", zh: "SMART、RBA、TC-TCR 三种模式可选" }, specKey: "modes" },
+        { text: { th: "ใช้คอยล์ได้ตั้งแต่ 0.05 ถึง 3.0 โอห์ม", en: "Works with coils from 0.05 to 3.0Ω", zh: "适用 0.05–3.0Ω 线圈" }, specKey: "resistance" },
+      ],
+      link: { href: "/technology/high-output-chip-platforms", label: { th: "อ่านเรื่องชิปในเครื่องวัตต์สูง", en: "How high-output chips work", zh: "了解高功率芯片" } },
+    },
+    "battery": {
+      title: { th: "แบต 4400mAh", en: "4400mAh battery", zh: "4400mAh 电池" },
+      subline: { th: "แบ่งเป็นสองก้อน ก้อนละ 2200mAh", en: "Split across two 2200mAh cells.", zh: "由两颗 2200mAh 电芯组成。" },
+      body: {
+        th: "เวลาชาร์จ แค่เสียบสายเข้ากับตัวเครื่องได้เลย ไม่ต้องถอดถ่านออกมาชาร์จแยก",
+        en: "To charge, just plug the cable into the device — no cells to take out.",
+        zh: "充电时把线直接插在机身上就行，不用把电芯拆下来单独充。",
+      },
+      points: [
+        { text: { th: "ชาร์จผ่าน USB-C 5V/3A", en: "USB-C, 5V/3A charging", zh: "USB-C 充电，5V/3A" }, specKey: "charging" },
+        { text: { th: "ใช้เวลาชาร์จ 2–3 ชั่วโมง", en: "Charges in 2–3 hours", zh: "充电约需 2–3 小时" }, specKey: "charge-time" },
+      ],
+    },
+    "screen": {
+      title: { th: "จอ TFT 1.66 นิ้ว", en: "1.66-inch TFT screen", zh: "1.66 英寸 TFT 屏幕" },
+      subline: { th: "เลือกหน้าตาจอได้ตามที่ชอบ", en: "Choose the look you like.", zh: "屏幕样式可按喜好选择。" },
+      body: {
+        th: "จอความละเอียดสูงอ่านได้ชัด เหลือบมองครั้งเดียวก็รู้ว่าตอนนี้ตั้งค่าไว้อย่างไร",
+        en: "The high-resolution display reads clearly — one glance tells you how it is set.",
+        zh: "高分辨率屏幕清晰易读，扫一眼就知道当前的设定。",
+      },
+      points: [
+        { text: { th: "ธีมหน้าจอ 3 แบบ", en: "Three interface themes", zh: "3 款界面主题" }, specKey: "screen" },
+        { text: { th: "แสดงวัตต์ แบต โอห์ม จำนวนพัฟ และโหมด", en: "Shows wattage, battery, resistance, puff count and mode", zh: "显示功率、电量、阻值、口数和模式" }, specKey: "screen" },
+      ],
+    },
+    "control": {
+      title: { th: "ควบคุมได้ละเอียด", en: "Precise control", zh: "精准掌控" },
+      subline: { th: "ปรับค่าด้วยล้อหมุน และปลดล็อกได้เพียงแตะที่ปุ่มยิง", en: "A wheel for fine adjustment, and a fire button that unlocks at a touch.", zh: "用拨轮细调，轻触火键即可解锁。" },
+      body: {
+        th: "พอปล่อยมือ เครื่องก็ล็อกกลับให้เอง จึงไม่ต้องคอยจำว่าล็อกไว้แล้วหรือยัง",
+        en: "Let go and it locks itself again, so you never have to remember whether it is locked.",
+        zh: "松开手指就会自动重新上锁，不用再记着有没有锁好。",
+      },
+      points: [
+        { text: { th: "กด 5 ครั้งเพื่อเปิดหรือปิดเครื่อง", en: "Press 5 times to turn it on or off", zh: "按 5 下开关机" }, specKey: "control" },
+        { text: { th: "กด 3 ครั้งเพื่อเข้าเมนู", en: "Press 3 times for the menu", zh: "按 3 下进入菜单" }, specKey: "control" },
+      ],
+    },
+    "tank": {
+      title: { th: "UFORCE-X Tank II", en: "UFORCE-X Tank II", zh: "UFORCE-X Tank II" },
+      subline: { th: "ถังน้ำยาที่มากับชุด สูบได้ทั้งแบบ MTL และ DTL", en: "The tank in the kit, for MTL and DTL alike.", zh: "套装附带的烟仓，MTL 和 DTL 都能抽。" },
+      body: {
+        th: "เวลาเติมน้ำยา แค่หมุนเปิดฝาด้านบนก็เติมได้เลย ส่วนแหวนปรับลมใช้หมุนให้สูบแน่นขึ้นหรือโล่งขึ้นตามที่ชอบ",
+        en: "To refill, twist the top cap open and fill straight in; turn the airflow dial for a tighter or a more open draw.",
+        zh: "注油时拧开顶盖就能直接加；转动调气环，可以让吸感更紧或更松。",
+      },
+      captions: [
+        { th: "ช่องลม Golden Triangle", en: "Golden Triangle airflow", zh: "Golden Triangle 气流结构" },
+        { th: "แหวนปรับลมแบบหมุน", en: "Rotary airflow dial", zh: "旋转调气环" },
+        { th: "เติมด้านบน", en: "Top fill", zh: "顶部注油" },
+      ],
+      points: [
+        { text: { th: "จุน้ำยา 5mL (2mL ในเวอร์ชัน TPD)", en: "Holds 5mL (2mL in the TPD version)", zh: "容量 5mL（TPD 版 2mL）" }, specKey: "tank" },
+        { text: { th: "ใช้คอยล์ PnP X ได้ทุกตัว", en: "Takes every PnP X coil", zh: "兼容全部 PnP X 线圈" }, specKey: "coil" },
+      ],
+      link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกวัตต์และช่องลม", en: "Read: choosing wattage and airflow", zh: "如何选择功率与进气量" } },
+    },
+  },
 };
