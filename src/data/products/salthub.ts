@@ -665,13 +665,14 @@ export const salthubProducts: Product[] = [
     // Silver-Grey→gunmetal, Light Blue→teal, Yellow and Black Gradient→golden-fade. Our ids/names
     // are deliberately unchanged. Source device height is 796–800px (owner accepted, 2026-09-04).
     // Site-wide template round batch 3a (05/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — SALTHUB's own Zero Pro page
-    // told one poster per block (full-bleed 1920-px posters, whole, down-sized only: _incoming/sitewide-template/3/3a/blocks.js);
+    // told one poster per block (full-bleed 1920-px posters, whole, down-sized only: _incoming/sitewide-template/3/3a/blocks.js;
+    // the 1920-px banner is block 1, not a full-width cover — poster-stretch ×1.36, no larger SALTHUB file — LESSONS พ17);
     // text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Not used: the spec card (its "2ML" disagrees with
     // the cartridge's 2.2mL), the colour charts and the package poster. "ทั้งหมด 1 / 2" = the page's own colour cut-outs in
     // SALTHUB's chart order, RELX Phantom layout (3a/lineup.js).
     storyDetails: true,
     storyLayout: "stage",
-    storyCover: { src: "/assets/products/zero-pro/story-cover.webp", alt: "SALTHUB's Zero Pro banner — 5000 puffs, 3 mode for every vaping mood", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/zero-pro/", width: 1920, height: 1024 },
+    storyStartRight: true,
     lineupImage: {
       src: "/assets/products/zero-pro/lineup-a.webp",
       alt: "SALTHUB Zero Pro, colours 1–4 of 8",
@@ -710,6 +711,13 @@ export const salthubProducts: Product[] = [
       { key: "charging", label: "Charging", value: "USB-C (SALTHUB: fast charging)", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/zero-pro/" },
     ],
     features: [
+      {
+        id: "intro",
+        title: "The Zero Pro at a glance",
+        description: "The two on SALTHUB's poster are the Silver-Grey and the Blue-Purple Gradient.",
+        subline: "SALTHUB calls it compact and elegant.",
+        image: { src: "/assets/products/zero-pro/story-intro.webp", alt: "SALTHUB's Zero Pro banner — 5000 puffs, 3 mode for every vaping mood", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/zero-pro/", width: 1920, height: 1024 },
+      },
       {
         id: "modes",
         title: "Pick the mode you feel like",

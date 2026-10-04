@@ -1293,7 +1293,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ใช้กับหัวพอตอะไร",
           paragraphs: [
-            "บนเว็บของ SALTHUB หัวพอต Zero อยู่ในหมวดกลิ่นของ Zero Pro ซึ่งที่ร้านเราใช้ชื่อว่า [Zero Cartridge](/products/zero-cartridge) และ SALTHUB ระบุว่าใช้ได้หัวละสูงสุด 5,000 พัฟ"
+            "บนเว็บของ SALTHUB หัวพอต Zero อยู่ในหมวดกลิ่นของ Zero Pro และ SALTHUB ระบุว่าใช้ได้หัวละสูงสุด 5,000 พัฟ ดูรายละเอียดเพิ่มเติมได้ที่ [หน้าหัวพอต Zero](/products/zero-cartridge)"
           ]
         },
         {
@@ -1310,7 +1310,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Which cartridge does it take?",
           paragraphs: [
-            "SALTHUB lists its ZERO cartridges with the Zero Pro, and we carry them as the [Zero Cartridge](/products/zero-cartridge). One cartridge gives up to 5,000 puffs, by SALTHUB's figure."
+            "On SALTHUB's site, the Zero cartridges sit with the Zero Pro's flavours, and SALTHUB rates each one at up to 5,000 puffs. There's more on our [Zero pod page](/products/zero-cartridge)."
           ]
         },
         {
@@ -1327,7 +1327,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "用哪种烟弹？",
           paragraphs: [
-            "SALTHUB 把 ZERO 烟弹和 Zero Pro 放在一起，我们这里叫 [Zero Cartridge](/products/zero-cartridge)。按 SALTHUB 的数字，一颗烟弹最多 5,000 口。"
+            "在 SALTHUB 官网上，Zero 烟弹归在 Zero Pro 的口味里，SALTHUB 标注每颗最多 5,000 口。详情见 [Zero 烟弹页面](/products/zero-cartridge)。"
           ]
         },
         {

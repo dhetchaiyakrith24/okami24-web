@@ -1349,6 +1349,15 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
   // Site-wide template round batch 3a (05/10): SALTHUB's own Zero Pro page + posters (_incoming/sitewide-template/3/
   // facts-zero-pro.md lists the source of each line); Thai = thai-copy 05/10.
   "zero-pro": {
+    "intro": {
+      title: { th: "ทำความรู้จัก Zero Pro", en: "The Zero Pro at a glance", zh: "Zero Pro 一览" },
+      subline: { th: "SALTHUB เรียกเครื่องนี้ว่ากะทัดรัดและดูเรียบหรู", en: "SALTHUB calls it compact and elegant.", zh: "SALTHUB 称它小巧、优雅。" },
+      body: {
+        th: "เครื่องสองสีที่เห็นในโปสเตอร์ของ SALTHUB คือสี Silver-Grey และสี Blue-Purple Gradient",
+        en: "The two on SALTHUB's poster are the Silver-Grey and the Blue-Purple Gradient.",
+        zh: "SALTHUB 海报上的两支分别是 Silver-Grey 和 Blue-Purple Gradient。",
+      },
+    },
     "modes": {
       title: { th: "เลือกโหมดให้เข้ากับอารมณ์ในตอนนั้น", en: "Pick the mode you feel like", zh: "每种心情都有对应模式" },
       subline: { th: "SALTHUB เรียกระบบนี้ว่าการปรับวัตต์แบบอัจฉริยะ", en: "SALTHUB calls it intelligent power regulation.", zh: "SALTHUB 称之为智能功率调节。" },
