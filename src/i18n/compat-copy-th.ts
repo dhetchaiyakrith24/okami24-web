@@ -26,7 +26,6 @@ export const COMPAT_LABELS_TH: Record<string, string> = {
   "ARGUS top-fill cartridge platform": "หัวพอต ARGUS แบบเติมด้านบน",
   // Batch 2d (04/10): DRAG S3 / X3 cartridge, from VOOPOO's own pages (thai-copy).
   "PnP X Cartridge (PnP X coils)": "หัวพอต PnP X Cartridge ใช้คอยล์ PnP X",
-  "PnP X Cartridge DTL (5mL) in the kit; takes every PnP X coil.": "ในกล่องมีหัวพอต PnP X Cartridge DTL 5mL ใช้คอยล์ PnP X ได้ทุกตัว",
   "DRAG-series coil pod": "หัวพอตสาย DRAG (เปลี่ยนคอยล์ได้)",
   "UFORCE-X Tank II (PnP X coils)": "ถังน้ำยา UFORCE-X Tank II ใช้คอยล์ PnP X",
   "VINCI cartridge platform": "หัวพอต VINCI",
@@ -38,6 +37,8 @@ export const COMPAT_LABELS_TH: Record<string, string> = {
 };
 
 export const COMPAT_NOTES_TH: Record<string, string> = {
+  // Batch 2d (04/10): DRAG S3 / X3 cartridge note (thai-copy).
+  "PnP X Cartridge DTL (5mL) in the kit; takes every PnP X coil.": "ในกล่องมีหัวพอต PnP X Cartridge DTL 5mL ใช้คอยล์ PnP X ได้ทุกตัว",
   "Shared top-fill pod platform used across most current Caliburn devices; resistance options sold separately.":
     "เติมด้านบน ใช้หัวตัวเดียวกับ Caliburn รุ่นปัจจุบันส่วนใหญ่ โอห์มอื่นซื้อแยก",
   "Every GPP cartridge fits, side-refill or top-refill (UWELL); resistance options sold separately.":

@@ -962,7 +962,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ปลดล็อกได้สามแบบ", en: "Three ways to unlock", zh: "三种解锁方式" },
       subline: { th: "เลือกแบบที่ถนัดได้จากเมนู", en: "Pick the one you prefer in the menu.", zh: "在菜单里选你习惯的方式。" },
       body: {
-        th: "เซ็นเซอร์แบบแตะจะทำงานเฉพาะเมื่อนิ้วแตะ ไม่ทำงานเมื่อโดนกุญแจหรือผ้าในกระเป๋า",
+        th: "เซ็นเซอร์แบบแตะตอบสนองต่อนิ้วเท่านั้น กุญแจหรือผ้าในกระเป๋าจึงปลดล็อกเครื่องไม่ได้",
         en: "The touch sensor responds only to a finger, not to keys or fabric in your pocket.",
         zh: "触摸感应只对手指有反应，口袋里的钥匙或布料都不会触发。",
       },
