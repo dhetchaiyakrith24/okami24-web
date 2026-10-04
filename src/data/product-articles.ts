@@ -1002,7 +1002,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ในกล่องมีอะไรบ้าง",
           paragraphs: [
-            "ในกล่องมีตัวเครื่อง ARGUS G3 mini หัวพอต ARGUS Top Fill Cartridge V2 0.7 โอห์ม หนึ่งหัว สายชาร์จ USB-C คู่มือการใช้งาน และการ์ดรายชื่อหัวพอตตระกูล ARGUS ที่ใช้ร่วมกันได้"
+            "ในกล่องมีตัวเครื่อง ARGUS G3 mini หัวพอต ARGUS Top Fill Cartridge V2 หนึ่งหัว สายชาร์จ USB-C คู่มือการใช้งาน และการ์ดรายชื่อหัวพอตตระกูล ARGUS ที่ใช้ร่วมกันได้"
           ]
         }
       ]
@@ -1027,7 +1027,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "What's in the box?",
           paragraphs: [
-            "The ARGUS G3 mini, one ARGUS Top Fill Cartridge V2 0.7Ω, a USB-C cable, the user manual and VOOPOO's ARGUS pod-family compatibility guide."
+            "The ARGUS G3 mini, one ARGUS Top Fill Cartridge V2, a USB-C cable, the user manual and VOOPOO's ARGUS pod-family compatibility guide."
           ]
         }
       ]
@@ -1052,7 +1052,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "包装里有什么？",
           paragraphs: [
-            "ARGUS G3 mini 主机、一颗 ARGUS Top Fill Cartridge V2 0.7Ω、USB-C 数据线、使用说明书，以及 VOOPOO 的 ARGUS 烟弹家族兼容指南。"
+            "ARGUS G3 mini 主机、一颗 ARGUS Top Fill Cartridge V2、USB-C 数据线、使用说明书，以及 VOOPOO 的 ARGUS 烟弹家族兼容指南。"
           ]
         }
       ]

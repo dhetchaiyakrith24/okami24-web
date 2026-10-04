@@ -1041,9 +1041,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "หัวพอต Multi-Ohm", en: "The Multi-Ohm cartridge", zh: "Multi-Ohm 烟弹" },
       subline: { th: "ใช้เทคโนโลยี Multi-Core Electrode ร่วมกับ iCOSM CODE 2.0 ของ VOOPOO", en: "Multi-core electrodes, with VOOPOO's iCOSM CODE 2.0.", zh: "多芯电极，搭配 VOOPOO 的 iCOSM CODE 2.0。" },
       body: {
-        th: "เติมน้ำยาได้โดยไม่ต้องถอดหัวพอตออกจากเครื่อง และตัวหัวเป็น PCTG แบบใส จึงเห็นได้ทันทีว่าน้ำยาเหลือเท่าไหร่",
-        en: "Fill it from the top without taking it out. The clear PCTG shell shows how much liquid is left.",
-        zh: "不用取下烟弹，从顶部就能注油。透明的 PCTG 外壳，剩多少烟油一眼可见。",
+        th: "เติมน้ำยาได้โดยไม่ต้องถอดหัวพอตออกจากเครื่อง ตัวหัวเป็น PCTG แบบใสที่ทนต่อการแตก",
+        en: "Fill it from the top without taking it out. The shell is clear, shatter-resistant PCTG.",
+        zh: "不用取下烟弹，从顶部就能注油。外壳是透明、抗摔的 PCTG。",
       },
       points: [
         { text: { th: "จุน้ำยา 3.5mL (2mL ในเวอร์ชัน TPD) เติมด้านบน", en: "3.5mL (2mL in the TPD version), top fill", zh: "容量 3.5mL（TPD 版 2mL），顶部注油" }, specKey: "pod" },
@@ -1075,7 +1075,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         zh: "VOOPOO 让它比上一代轻了将近 20%，还加了巴黎钉纹。",
       },
       points: [
-        { text: { th: "ตัวเครื่องอะลูมิเนียมอัลลอย", en: "Aluminium alloy body", zh: "铝合金机身" }, specKey: "materials" },
+        { text: { th: "อะลูมิเนียมอัลลอย", en: "Aluminium alloy", zh: "铝合金" }, specKey: "materials" },
         { text: { th: "สูง 97.9 mm เมื่อใส่หัวพอต 3mL", en: "97.9mm tall with the 3mL cartridge", zh: "装上 3mL 烟弹高 97.9mm" }, specKey: "dimensions" },
       ],
     },

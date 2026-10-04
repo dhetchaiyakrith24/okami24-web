@@ -324,12 +324,13 @@ export const voopooProducts: Product[] = [
         title: "A big built-in battery",
         description: "Four white bars on the front show what's left, a quarter each, so you know when to plug it in.",
         subline: "A high-density cell.",
-        image: { src: "/assets/products/argus-g4-mini/story-battery.webp", alt: "VOOPOO's ARGUS G4 mini poster — the 1650mAh high-density battery", sourceName: "VOOPOO", sourceUrl: G4M_PAGE, width: 1600, height: 1128 },
+        // checker #262: the poster's lower part only — its "45 mins Full Charge" tile is probably the bigger G4's figure (2e/fix-checker.js)
+        image: { src: "/assets/products/argus-g4-mini/story-battery-v2.webp", alt: "VOOPOO's ARGUS G4 mini poster — a see-through view of the 1650mAh battery", sourceName: "VOOPOO", sourceUrl: G4M_PAGE, width: 1600, height: 595 },
       },
       {
         id: "pod",
         title: "The Multi-Ohm cartridge",
-        description: "Fill it from the top without taking it out. The clear PCTG shell shows how much liquid is left.",
+        description: "Fill it from the top without taking it out. The shell is clear, shatter-resistant PCTG.",
         subline: "Multi-core electrodes, with VOOPOO's iCOSM CODE 2.0.",
         image: { src: "/assets/products/argus-g4-mini/story-pod.webp", alt: "VOOPOO's ARGUS G4 mini poster — multi-core electrode tech and iCOSM CODE 2.0", sourceName: "VOOPOO", sourceUrl: G4M_PAGE, width: 1600, height: 1099 },
       },
