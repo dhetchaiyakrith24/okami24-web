@@ -294,6 +294,7 @@ export const salthubProducts: Product[] = [
     isFlagship: false,
     attributes: {
       puffCount: 15000,
+      batteryMah: 600,
       screenType: "led-indicator",
       drawStyle: "MTL",
       portability: "ultra-compact",
