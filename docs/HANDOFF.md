@@ -46,7 +46,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (checker #248): the VOOPOO letters on the silver/blue/green tanks read faint at 4× under the transferred light — owner-approved.
   NEXT, in order: (i) batch 2 data: read the posters per product (posters.md), fix the data rows against the maker (13.7 big (2) —
   Drag 6 first: tank mod, modes, cells, charging) · (ii) copy with the reset `thai-copy`: ONE sample block (th/en/zh) to the owner
-  before the rest (owner 04/10) · (iii) story blocks page by page on the template · (48) decides the MTL/mesh brackets.
+  before the rest (owner 04/10) · (iii) story blocks page by page on the template (owner 04/10: images first, VOOPOO now).
   Speed (owner 04/10): one build per batch · whole-sitemap scan (≈ 20 min) only if a shared part changes · a build ≈ 8 min.
   Method that worked (1b–1d): maker page → .txt (`1b/extract.js`) · images listed in the page HTML + its `/_nuxt/*.js` chunks · ffmpeg
   stills from maker films · researcher reads posters/spec images into a facts sheet · copy-base.json (en/zh) → thai-copy → th.json →
@@ -75,12 +75,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (48) 04/10 THAI_STYLE layer 4 (line 29) still says a tech term gets a short Thai parenthesis at first mention ("MTL (สูบแบบ
-       ดูดเข้าปากก่อน)"); the owner rejected the RDL one as "เพี้ยน ๆ" (no NEW brackets meanwhile — LESSONS ช11). #245 kept MTL's
-       (locked example) and dropped RDL's → keep layer 4, or drop the parentheses site-wide? Owner 04/10 asked to see them
-       first → list sent in chat (10 term brackets · 3 screen-message brackets · 4 others; raw = `node scripts/paren-terms.js`).
-  #245 head lines + ledes = Friday's own Thai (checker taste-read, not thai-copy) — ruled by the owner from the live pages
-       (G4 already re-worded by the owner 04/10; the other three not ruled yet). (46) voice reset done in #247 — see THAI_STYLE §2.
+  (none open from 04/10 — (48) ruled "เลิกทั้งเว็บ" = THAI_STYLE layer 4; the G3 Pro / KOKO / G4 Classic head lines: owner 04/10 "ไม่
+       — งานรูปก่อน" → both queued in the SEO / language round below.)
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
@@ -110,7 +106,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - Live screenshots from the cloud impossible (03/10, egress gateway re-signs TLS; fixes need an owner permission rule) → computer.
   - SEO round (owner 02/10: baseline hold lifted): GSC vs `docs/SEO_BASELINE.md` · delete `galleryNoteHeld` + `heldNote` +
     `TITLE_PRICE_HOLD_UNTIL_2026_10_05` · M Bar 10K airflow row · G5 hero tagline repeats · product FAQ answers absent from server HTML ·
-    8 brand titles naming a model (cloud-results §2) · shared GPP note "Shared top-fill…" on 8 UWELL pages.
+    8 brand titles naming a model (cloud-results §2) · shared GPP note "Shared top-fill…" on 8 UWELL pages · (owner 04/10, language
+    part) remove the term brackets site-wide (THAI_STYLE layer 4; list = `node scripts/paren-terms.js`; keep device-screen ones) ·
+    re-word the G3 Pro / G3 Pro KOKO / G4 Classic head lines with the reset `thai-copy` (#245 lines read curt).
   - `lineupFirst` has no product left — cleanup · `dict.product.anatomyTitle` en/zh "from the outside in" · zh spec/FAQ English site-wide ·
     article H3 font reads narrow (designer note).
   - `scripts/process-images.map.json` keeps "replaces" lines naming deleted G5 files (history only; the size guard skips a missing file).
