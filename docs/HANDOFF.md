@@ -11,11 +11,9 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — the 04/10 chat (2nd) merged (each checker PASS + GitHub green):
-  #251 DRAG 6 data from VOOPOO + r1 fixes (guide/technology examples rewritten as "how the coil row moved to verified", glosses
-  dropped, edge drag-6↔coil-92 tier official) — live checked by curl [ตรวจแล้ว] · #253 = batch 2c, DRAG 6 on the template (story
-  blocks + exploded view + article; checker 12/12 at 31c1533, then image-only fix 5ed0a50 under 13.5 #2(จ)) — deploy of 085594c
-  was running when this was written; curl the live page first [เชื่อว่า it deployed].
+1 main: `git fetch && git log -1 --oneline origin/main` — the 04/10 chat (2nd) merged (each checker PASS + GitHub green, live by curl):
+  #251 DRAG 6 data · #253 batch 2c DRAG 6 page (story + exploded view + article) · #254 docs · #255 batch 2d DRAG S3 + DRAG X3
+  data + pages in ONE PR (checker r1 FAIL → dc66c3c fixes → r2 PASS; the ee619e2 deploy was still rolling out when this was written — curl /products/drag-s3 + drag-x3 first [เชื่อว่า live]).
 2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Kits (never merge these branches):
   1b = branch `kit-1b` (also holds `_incoming/sitewide-template/scope.md`, the round scope) · 1c = branch `kit-1c`. Get one:
   `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d material is in
@@ -26,31 +24,33 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md` (the one home). Scope = `_incoming/sitewide-template/scope.md` + the round file's
   【ขอบเขต】 block: 55 product pages; PM pages (coils, IQOS, pod-180) = cards/images only, no story mechanism.
   Batches (all tier B): 1 UWELL — DONE (1a G5 Lite + SE · 1b G4 + mini + Classic · 1c G4 Pro + KOKO · 1d G3 Pro + KOKO) ·
-  2 VOOPOO (DRAG 6 DONE: #248 lineup · #251 data · #253 page; + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*, m-switch-pod,
+  2 VOOPOO (DONE: DRAG 6 #248 #251 #253 · DRAG S3 + X3 #255; + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*, m-switch-pod,
   m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
   asset-refs sweep of the 246 candidates, edge defects).
   Flag `storyStartRight` (default off) starts a page poster-right (G3 Pro, owner 03/10 "vary").
-  BATCH 2 VOOPOO — STARTED 04/10: 2a #248 lineup · 2b #251 data · 2c #253 page = DRAG 6 done (owner has not seen #253 live yet).
-  Pages still to do on the template: the other 7 (ARGUS P3 · DRAG S3 · DRAG X3 · VMATE i3 · ARGUS G3 mini · ARGUS G4 mini ·
-  ARGUS G4; VINCI S off-limits). DRAG 6 = the VOOPOO worked example: `_incoming/sitewide-template/2/2c/` (brief-drag6.md ·
-  copy-base.json + th.json → build.js · prep.js posters · anat-crop.js + anat-build.js + zooms.json = exploded view from a maker
-  4K tech sheet cut with scripts/flatcut.js · facts.json for page-text-length · shots/ before/after). Full-page shots: pass
-  `--eval` that sets every img `loading='eager'` + a 4 s wait, else lazy posters render black. Material (not in git) `_incoming/sitewide-template/2/`: pages/*.html = the 7 shop pages (curl +
+  BATCH 2 VOOPOO — 04/10: 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 (owner has not seen S3/X3 live yet).
+  Still to do on the template: ARGUS P3 · VMATE i3 · ARGUS G3 mini · ARGUS G4 mini · ARGUS G4 (VINCI S off-limits). Suggested pairs:
+  2e ARGUS G3 mini + G4 mini · 2f ARGUS P3 + VMATE i3 · 2g ARGUS G4 (+ Multi-Ohm, M Bar 15K data). One PR per pair = data + page
+  (the 2d way, one build). Worked examples: DRAG 6 `_incoming/sitewide-template/2/2c/` (exploded view from a
+  maker 4K multi-view sheet: anat-crop.js + anat-build.js + zooms.json, scripts/flatcut.js) · S3/X3 `2/2d/` (facts-drag-*.md read
+  piece by piece by `researcher` — cut a long onepage strip first: 2d/cut-onepage.js; blocks.js cuts whole poster blocks out of the
+  strip and trims the strip's pale blurred page background + fills the light gap between tile pairs (checker #255: pale frames
+  on the dark site fail Owner eye #1); brief-s3-x3.md → thai-copy → copy-base.json + th.json (with spec/compat/guide keys) →
+  build.js + apply.js; facts.json for page-text-length). VOOPOO pages contradict themselves (X3: kit coils, drip-tip thread, a
+  100W blurb) → leave those out, say so in a code comment. A maker parts view with English labels baked in (X3 45-Front-1) is
+  not an exploded sheet — skip unless clean part images exist. Full-page shots: `--eval` set every img loading='eager' + 4 s wait.
+  Material (not in git) `_incoming/sitewide-template/2/`: pages/*.html = the 7 shop pages (curl +
   `Referer: https://shop.voopoo.com/`; www.voopoo.com does not resolve from this ISP — use shop.voopoo.com) · posters/<slug>/ = every
   maker image (fetch-posters.js; sheet.js <slug> = numbered contact sheet) · facts-drag6.md = DRAG 6 facts read FILE BY FILE (cover
   26/27 · chip 29 · tank 30+36 · screen 31+37 · battery 32 · controls 38 · PARTS VIEW 55 · box 56) · research-voopoo.md = web-summary
   pass, UNRELIABLE (3 "not on maker" claims were wrong) → read the maker images file by file like facts-drag6.md. P3 / S3+X3 / VMATE i3 / G3 mini posters = one long 1024-px
   "onepage" image each (posters/onepages.png) → cut into blocks; G4 mini = 6 posters 2133 px; ARGUS G4 = `_incoming/argus-g4/`.
   VOICE for VOOPOO story copy (owner 04/10 on sample (49): "ผสมกัน"): Friday's reading = A's short calm titles + B's warmer everyday
-  bodies — used on #253 [เชื่อว่า that is what he meant; he has not seen it live].
-  NEXT, in order: (i) curl live /products/drag-6 (085594c deploy) · (ii) the other 7 VOOPOO pages, each: facts file by file → data
-  PR → story on the template (owner 04/10: images first, VOOPOO now) — S3/X3 data still say "DRAG-series coil pod" (old pod row).
+  bodies — used on #253 + #255; he saw DRAG 6 live and only raised the all-colours image (item 5) [เชื่อว่า the voice is accepted].
+  NEXT: (i) curl live /products/drag-s3 + /products/drag-x3 (item 1) · (ii) batch 2e.
   Speed (owner 04/10): one build per batch · whole-sitemap scan (≈ 20 min) only if a shared part changes · a build ≈ 8 min.
-  Method that worked (1b–1d): maker page → .txt (`1b/extract.js`) · images listed in the page HTML + its `/_nuxt/*.js` chunks · ffmpeg
-  stills from maker films · researcher reads posters/spec images into a facts sheet · copy-base.json (en/zh) → thai-copy → th.json →
-  build.js inserts story-copy + articles, edit-th.js the Thai spec/who · `npm run verify:catalog` (tsc needs `npx next typegen` in a
-  fresh worktree) · page-text-length --facts · wordbreak-scan → reword · checker. Scripts as .js files (Thai/backslash never through
-  `node -e` or a heredoc) · parallel work while a checker reads the disk = a git worktree.
+  Gates per batch: `npm run verify:catalog` (fresh worktree: `npx next typegen` first) · page-text-length --facts · wordbreak-scan → reword
+  · checker · scripts as .js files (Thai/backslash/backticks never through `node -e` or a heredoc).
   Tips: count the template's "รุ่นนี้มี N สี" as one colour-count mention · the chip bar repeats every block title (a number in a
   title = 2 already) · head copy (tagline/shortDescription) counts toward "a fact at most twice" but is off-limits → cut the repeat
   elsewhere · maker footnotes (UWELL LAB) attach to data · boasts without a number fail in en/zh too.
