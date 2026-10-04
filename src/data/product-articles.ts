@@ -669,7 +669,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           ]
         },
         {
-          heading: "DRAG 6 กับ DRAG X3 และ DRAG S3 เลือกตัวไหนดี",
+          heading: "DRAG 6 กับ X3 และ S3 เลือกตัวไหนดี",
           paragraphs: [
             "[DRAG X3](/products/drag-x3) ไม่มีแบตในตัว ใช้ถ่าน 18650 หรือ 21700 หนึ่งก้อนซึ่งต้องซื้อแยก ตั้งได้ 5–80 วัตต์ และใช้จอทัชขนาดเท่ากับ DRAG 6",
             "[DRAG S3](/products/drag-s3) มีแบตในตัว 3000mAh ตั้งได้ 5–60 วัตต์ และใช้จอ TFT 0.96 นิ้ว",
@@ -679,8 +679,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ในกล่องมีอะไรบ้าง",
           paragraphs: [
-            "ในกล่องมีตัวเครื่อง DRAG 6 ถังน้ำยา และคอยล์ PnP X มาให้สองตัว คือ 0.15 โอห์มกับ 0.3 โอห์ม",
-            "นอกจากนั้นยังมี PnP X Platform Card หลอดแก้วสำรอง ชุดยางซิลิโคน สาย USB-C และคู่มือการใช้งาน"
+            "ในกล่องมีตัวเครื่อง DRAG 6 ถังน้ำยา และคอยล์สองตัว คือ PnP X 0.15 โอห์มกับ 0.3 โอห์ม",
+            "นอกจากนั้นยังมี PnP X Platform Card หลอดแก้วสำรอง ชุดยางซิลิโคน สาย USB-C และคู่มือ"
           ]
         }
       ]
