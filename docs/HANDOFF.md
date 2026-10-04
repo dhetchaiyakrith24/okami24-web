@@ -11,15 +11,16 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — the 04/10 chat (3rd) merged #259 = 98981bc (batch 2d-fix, BIG by
-  voopoo.ts; checker r1 FAIL → 3f35619 → r2 PASS; GitHub green): 12 DRAG S3/X3/6 story posters re-made sharp + DRAG 6 cover
-  2800 + airflow zoom 1000 + new `scripts/poster-stretch.js`. #259 live 04/10 ~15:25: the 3 pages serve every new file [ตรวจแล้ว — curl].
-2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Kits (never merge these branches):
+1 main: `git fetch && git log -1 --oneline origin/main` — the 04/10 chat (4th) merged #262 = df2a99c (batch 2e, BIG by
+  voopoo.ts; checker r1 FAIL → 2b8f7df → r2 PASS 4/4; GitHub green): ARGUS G4 mini + G3 mini on the template. Deploy run
+  37217601575 success; live 04/10 ~23:55: both pages serve every story-*.webp (200) [ตรวจแล้ว — gh + curl].
+2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. 2e material (not in git): `_incoming/sitewide-template/2/2e/`
+  (facts-*.md · blocks.js · composite.js + up/ (the Higgsfield upscale) · copy-base.json · th.json · brief-2e.md · build.js ·
+  apply.js · fix-*.js · gates.sh · vt-* scans · shots/ before/after 390+1440). Kits (never merge these branches):
   1b = branch `kit-1b` (also holds `_incoming/sitewide-template/scope.md`, the round scope) · 1c = branch `kit-1c`. Get one:
-  `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d material is in
-  `_incoming/sitewide-template/1d/` (not in git: facts-uwell.md = every UWELL fact with its file · mk/ = UWELL page files · manual/ =
-  G3 Pro user manual pages · prep.js · edit-data.js · build.js · edit-th.js · fix-rep.js · fix-wb.js · fix-poster.js · vt/ scans · shots/).
-  Kit branch for 1d not pushed — do it before a cloud chat needs it (`kit-1c` shows how).
+  `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d + 2x material is
+  local only (`_incoming/sitewide-template/1d/` facts-uwell.md = every UWELL fact with its file) — push a kit branch before a cloud
+  chat needs it (`kit-1c` shows how).
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md` (the one home). Scope = `_incoming/sitewide-template/scope.md` + the round file's
   【ขอบเขต】 block: 55 product pages; PM pages (coils, IQOS, pod-180) = cards/images only, no story mechanism.
@@ -27,27 +28,22 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   2 VOOPOO (DONE: DRAG 6 #248 #251 #253 · DRAG S3 + X3 #255; + argus-g4/Multi-Ohm/M Bar 15K data) · 3 SALTHUB (+ zero-*, m-switch-pod,
   m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
   asset-refs sweep of the 246 candidates, edge defects).
-  Flag `storyStartRight` (default off) starts a page poster-right (G3 Pro, owner 03/10 "vary").
-  BATCH 2 VOOPOO — 04/10: 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 · 2d-fix #259.
-  Still to do on the template: ARGUS P3 · VMATE i3 · ARGUS G3 mini · ARGUS G4 mini · ARGUS G4 (VINCI S off-limits). Suggested pairs:
-  2e ARGUS G3 mini + G4 mini · 2f ARGUS P3 + VMATE i3 · 2g ARGUS G4 (+ Multi-Ohm, M Bar 15K data). One PR per pair = data + page
-  (the 2d way, one build). NEXT = 2e. Facts READ file by file (researcher 04/10, local only, not in git):
-  `_incoming/sitewide-template/2/2e/facts-argus-g{3,4}-mini.md` (+ `2e/*.txt`, G3 mini cuts `posters/argus-g3-mini/cut/`).
-  G3 mini = 1024-px strip → poster-stretch on the build, 3a (e) if it FAILs · G4 mini posters 2133 px · no parts views ·
-  leave out the "Contradictions" each facts file lists · G4 mini hero 01 is shared with ARGUS G4.
-  Worked examples: DRAG 6 `_incoming/sitewide-template/2/2c/` (exploded view from a
-  maker 4K multi-view sheet: anat-crop.js + anat-build.js + zooms.json, scripts/flatcut.js) · S3/X3 `2/2d/` (facts-drag-*.md read
-  piece by piece by `researcher` — cut a long onepage strip first: 2d/cut-onepage.js; blocks.js cuts whole poster blocks out of the
-  strip and trims the strip's pale blurred page background + fills the light gap between tile pairs (checker #255: pale frames
-  on the dark site fail Owner eye #1); brief-s3-x3.md → thai-copy → copy-base.json + th.json (with spec/compat/guide keys) →
-  build.js + apply.js; facts.json for page-text-length). VOOPOO pages contradict themselves (X3: kit coils, drip-tip thread, a
-  100W blurb) → leave those out, say so in a code comment. A maker parts view with English labels baked in (X3 45-Front-1) is
-  not an exploded sheet — skip unless clean part images exist. Full-page shots: `--eval` set every img loading='eager' + 4 s wait.
-  Material (not in git) `_incoming/sitewide-template/2/`: pages/*.html = the 7 shop pages (curl +
-  `Referer: https://shop.voopoo.com/`; www.voopoo.com does not resolve from this ISP — use shop.voopoo.com) · posters/<slug>/ = every
-  maker image (fetch-posters.js; sheet.js <slug> = numbered contact sheet) · facts-drag6.md = DRAG 6 facts read FILE BY FILE (cover
-  26/27 · chip 29 · tank 30+36 · screen 31+37 · battery 32 · controls 38 · PARTS VIEW 55 · box 56) · research-voopoo.md = web-summary
-  pass, UNRELIABLE → read maker images file by file. P3 / VMATE i3 posters = one 1024-px "onepage" strip each · ARGUS G4 = `_incoming/argus-g4/`.
+  BATCH 2 VOOPOO — 04/10: 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 · 2d-fix #259 ·
+  2e #262 = ARGUS G4 mini + G3 mini.
+  Still to do on the template: ARGUS P3 · VMATE i3 · ARGUS G4 (VINCI S off-limits). Pairs: 2f ARGUS P3 + VMATE i3 ·
+  2g ARGUS G4 (+ Multi-Ohm, M Bar 15K data; its hero = G4 mini poster 01, both devices — already the G4 mini cover). One PR per pair = data + page (one build). NEXT = 2f, first step: `researcher`
+  reads P3 / VMATE i3 file by file into `_incoming/sitewide-template/2/2f/facts-*.md` (the 2e brief shape: posters/story ·
+  facts with line/file · contradictions). Both = one 1024-px "onepage" strip each → cut with 2d/cut-onepage.js first.
+  2e = the pattern to copy (`2/2e/`): blocks.js (panel cuts via probe.js · portrait hero = block 1, no cover) · composite.js
+  (2k upscale of a landscape strip block, VOOPOO's pixels back over every device) · brief-2e.md (fact budget) → thai-copy.
+  2e tips: LESSONS พ18 (a fact cut from the text is cut from the posters too; weight goes in the dimensions row).
+  Older worked examples: DRAG 6 `2/2c/` (exploded view from a maker 4K multi-view sheet: anat-crop.js + anat-build.js) · S3/X3
+  `2/2d/` (pale page background trimmed, light gap between tile pairs filled — checker #255, Owner eye #1). VOOPOO pages
+  contradict themselves → leave those facts out, say so in a code comment. A maker parts view with English labels baked in is
+  not an exploded sheet. Full-page shots: 2e/shots.js (eager images, --max-height 16000 --dpr 1).
+  Material (not in git) `_incoming/sitewide-template/2/`: pages/*.html = the 7 shop pages (curl + `Referer: https://shop.voopoo.com/`;
+  www.voopoo.com does not resolve here — researcher reads it through r.jina.ai) · posters/<slug>/ = every maker image (sheet.js
+  <slug> = contact sheet) · research-voopoo.md = UNRELIABLE web summary → read maker files one by one · ARGUS G4 = `_incoming/argus-g4/`.
   VOICE for VOOPOO story copy (owner 04/10 on sample (49): "ผสมกัน"): Friday's reading = A's short calm titles + B's warmer everyday
   bodies — used on #253 + #255; owner saw DRAG 6 live, raised only the all-colours image (item 5) [เชื่อว่า voice accepted].
   Speed (owner 04/10): one build per batch (≈ 8 min) · whole-sitemap scan (≈ 20 min) only if a shared part changes.
@@ -73,10 +69,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Left from it: edge defects (`edge-audit/visual-audit.md`: vmate-i3 · zero-pro · m-bar-15k · muro-3ml · zero-cartridge ·
   mood-monster-14k · coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87) · coils `b-coils/README.txt` · Esko pod-159 LAST
   (13.7 big (2), own PR, + BSOT §21).
-  Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (04/10: 14 upscale jobs, 315.1 → 279.1 =
-  36 credits [ตรวจแล้ว — `balance`, 2dfix/credits.txt]; 2k = 2 each, 4k more). The app's auto-mode guard blocks uploads to Higgsfield until the owner allows it in that chat (04/10 did).
+  Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — `balance` first, report the spend (2k = 2 each · 2e: 1 job; balance
+  279.1 before, 6,257.1 after = a top-up in between, so 2 = the price [เชื่อว่า]).
 4 waiting on owner:
-  Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
+  Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b) ·
+  ARGUS G4 mini + G3 mini pages (2e #262; before/after shots `_incoming/sitewide-template/2/2e/shots/`).
+  (2e) Thai words not in THAI_STYLE yet (thai-copy 04/10, used on the 2e pages): "ลายหมุด" (Clous de Paris) · "ความหนาแน่นสูง"
+       (high-density) · "กำไว้ในมือได้มิด" · "MTL แบบลมโล่ง" (loose MTL) · TPD = "ในเวอร์ชัน TPD" (DRAG + 2e) vs "ตามมาตรฐาน TPD"
+       (3 older places, THAI_STYLE §6) — Friday's pick: keep all, "ในเวอร์ชัน TPD" everywhere.
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags (not changed): INFY `descriptionTh` says disposable-only brand · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" /
@@ -90,9 +90,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     Also not fixed (checker #253 taste): text inside the 3 wide DRAG 6 posters ~6–7 px at 390 · "มีโหมด SMART RBA และ TC-TCR" reads as 2.
   - 7 highlight chips wrap 6 + 1 at 1440 on caliburn-g4-pro-koko and caliburn-g3-pro-koko (chip bar is lg:grid-cols-6) — shared
     component, its own small PR + whole-sitemap visible-text (checker #242: not a defect of 1d).
-  - G3 Pro KOKO colour images = the 01/10 Higgsfield master set; UWELL DOES have per-colour pairs colors/0..7.webp (the data comment
-    "color-N.webp 404" is outdated) but front and back overlap (one alpha component) → not cut like the G4 Pro. Left as is.
-  - G3 Pro colour names (16) are not on UWELL's page (no colorsList in its code) — they came from UWELL's pack1-4 chart (01/10).
+  - ARGUS G3 mini chip: VOOPOO names it "GENE AI 2.0" and "GENE TT 3.0" on the same voopoo.com page (researcher 04/10) → spec row
+    dropped in 2e. Still says "GENE.AI": the G3 mini head tagline + shortDescription (SEO round; the tagline also splits «ให้เอง» at
+    390) · `src/data/technology.ts` + technology-copy (the chips page uses the G3 mini as its GENE.AI example) · guides.ts +
+    guides-copy (beginner guide "auto-draw … GENE.AI") — outside the round; fix together when a round owns them.
+  - 2e taste notes (checker #262): "Clous | de Paris" splits at 390 · "tiny" poster captions ~7 px at 390 · G4 mini "pod" poster
+    shows the pod seat, under a cartridge title.
+  - G3 Pro KOKO data comment "color-N.webp 404" is outdated (UWELL has colors/0..7.webp; front/back overlap, so not cut) — fix next touch.
   - story-copy.ts G4 / G4 mini say the U-shaped channel "ช่วยให้ลมเดินดีขึ้น"; UWELL's KOKO poster says it stores condensate — check the
     G4 posters before changing (thai-copy flag 04/10).
   - `src/data/guides.ts` (which-Caliburn guide) still says G4 Classic specs are unconfirmed — verified in #233; guides = outside round.
