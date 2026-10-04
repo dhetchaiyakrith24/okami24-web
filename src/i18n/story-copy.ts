@@ -1276,11 +1276,11 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
       points: [
         { text: { th: "แบต 1650mAh ในตัว", en: "1650mAh built-in battery", zh: "内置 1650mAh 电池" }, specKey: "battery" },
-        { text: { th: "ชาร์จผ่าน USB-C 5V/2A เต็มในประมาณ 45 นาที", en: "Full in about 45 minutes over USB-C, 5V/2A", zh: "USB-C 5V/2A 充电，约 45 分钟充满" }, specKey: "charging" },
+        { text: { th: "ชาร์จผ่าน USB-C เต็มในประมาณ 45 นาที", en: "Full in about 45 minutes over USB-C", zh: "USB-C 充电，约 45 分钟充满" }, specKey: "charging" },
       ],
     },
     "tech": {
-      title: { th: "เทคโนโลยี Multi-Core Electrode", en: "Multi-core electrodes", zh: "多芯电极" },
+      title: { th: "เทคโนโลยี Multi-Core", en: "Multi-core electrodes", zh: "多芯电极" },
       subline: { th: "ขั้วสัมผัสเรียงเป็นบวก ลบ บวก ซึ่ง VOOPOO ระบุว่าเป็นครั้งแรกในวงการ", en: "Positive, negative, positive pins in the pod seat — VOOPOO calls it an industry first.", zh: "烟弹座上是正、负、正三根针脚 — VOOPOO 称之为业内首创。" },
       body: {
         th: "หัวพอตใช้ iCOSM CODE 2.0 ของ VOOPOO ซึ่ง VOOPOO ระบุว่าช่วยให้รสชาติไม่ดรอปตั้งแต่พัฟแรกจนถึงพัฟสุดท้าย และใช้ได้ทั้งน้ำยา freebase และ salt nic",

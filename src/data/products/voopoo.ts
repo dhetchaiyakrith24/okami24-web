@@ -39,7 +39,8 @@ export const voopooProducts: Product[] = [
       drawStyle: "MTL/RDL",
       portability: "compact",
       beginnerFriendly: true,
-      chargingType: "USB-C, 5V/2A (~45 min full charge)",
+      // batch 2g: "5V/2A" only — the anatomy diagram prints this line, and the 45 minutes already show twice (head + story)
+      chargingType: "USB-C, 5V/2A",
       capacityMl: 3.5,
     },
     assets: [
