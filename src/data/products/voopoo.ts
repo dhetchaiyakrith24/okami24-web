@@ -611,7 +611,7 @@ export const voopooProducts: Product[] = [
     lineupImage: {
       src: "/assets/products/drag-6/lineup-v3.webp",
       alt: "VOOPOO DRAG 6, all 7 colors",
-      sourceName: "OKami24 composite (from OKami24's renders of each colour)",
+      sourceName: "OKami24 composite (OKami24's renders of each colour; light from a Higgsfield relight)",
     },
     specifications: [
       { key: "battery", label: "Battery", value: "4400mAh built-in (two 2200mAh cells)", sourceStatus: "verified" },
