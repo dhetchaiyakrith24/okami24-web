@@ -60,11 +60,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — `balance` first, report the spend (upscale 2k = 2 each).
 4 waiting on owner:
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b) ·
-  ARGUS G4 mini page (2e) · ARGUS P3 + VMATE i3 pages (2f #264) · 2f-img: P3 Green Leather + "ทั้งหมด 1/2", ARGUS G4 card, VMATE i3
-  11 colours + card + lineups (before/after 390+1440: `_incoming/sitewide-template/2/2fimg/sheet-390.png` / `sheet-1440.png` and
-  `2/2fimg/i3/sheet-390.png` / `sheet-1440.png`).
-  (Owner 05/10: ARGUS G3 mini page passed · 2e words + TPD approved → #265 · 2f words "ได้" → THAI_STYLE in #267 · P3 Green Leather
-  "ขึ้นตามปกติ" · VMATE i3 AI draft "ผ่านครับ".)
+  ARGUS G4 mini page (2e) · ARGUS P3 + VMATE i3 story pages (2f #264).
+  (Owner 05/10: ARGUS G3 mini page passed · 2e words + TPD approved → #265 · 2f words "ได้" → THAI_STYLE in #267 · 2f-img report
+  (#267 + #268: P3 Green Leather + two lineups, G4 card, VMATE i3 11 colours) "ผ่านครับ" — wants the next chat to run long batches.)
   (2f) things the owner should know on those pages: VOOPOO's own P3 poster prints "1500mAh Big Bettery" (maker typo, left) ·
        VMATE Top Fill 0.4Ω: the poster says 18–30W, voopoo.com "at least 30W" — the text gives the site figure beside the poster ·
        P3 has no dimensions row (VOOPOO gives two sizes) · i3 card colour changed Black → Cyan Blue (VOOPOO's first colour) ·
