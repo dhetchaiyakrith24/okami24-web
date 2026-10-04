@@ -1365,13 +1365,13 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "เลือกกลิ่นแล้ว ในชุดจะได้อะไรบ้าง",
           paragraphs: [
-            "แต่ละกลิ่นมาเป็นชุด มีตัวเครื่องคู่กับหัวพอตกลิ่นนั้นหนึ่งหัว ถ้าอยากได้หัวพอตเพิ่มหรืออยากลองกลิ่นอื่น ดูได้ที่หน้า [M Switch Pod](/products/m-switch-pod)"
+            "แต่ละกลิ่นมาเป็นชุด มีตัวเครื่องคู่กับหัวพอตกลิ่นนั้นหนึ่งหัว ถ้าอยากได้หัวพอตเพิ่มหรืออยากลองกลิ่นอื่น ดูได้ที่[หน้าหัวพอต](/products/m-switch-pod)"
           ]
         },
         {
           heading: "ความจุแบตของตัวเครื่องเท่าไหร่",
           paragraphs: [
-            "หน้า M Switch Kit บนเว็บของ SALTHUB ไม่ได้ระบุความจุแบตของตัวเครื่องไว้ เราจึงไม่ใส่ตัวเลขให้ และติดป้าย “ยังไม่ยืนยัน” ไว้ในตารางสเปก"
+            "หน้า M Switch Kit บนเว็บของ SALTHUB ไม่ได้ระบุความจุแบตของตัวเครื่องไว้ เราจึงไม่ใส่ตัวเลข และในตารางสเปกแถวนี้จะขึ้นว่า “ยังไม่ยืนยัน”"
           ]
         }
       ]
@@ -1382,7 +1382,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "What comes with each flavour?",
           paragraphs: [
-            "Each flavour comes as the device with one pod of that flavour. Spare pods and other flavours are on the [M Switch Pod](/products/m-switch-pod) page."
+            "Each flavour comes as the device with one pod of that flavour. Spare pods and other flavours are on the [pod page](/products/m-switch-pod)."
           ]
         },
         {
@@ -1399,7 +1399,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "每个口味的套装里有什么？",
           paragraphs: [
-            "每个口味都是主机加一颗该口味的烟弹。备用烟弹见 [M Switch Pod](/products/m-switch-pod) 页面。"
+            "每个口味都是主机加一颗该口味的烟弹。备用烟弹见[烟弹页面](/products/m-switch-pod)。"
           ]
         },
         {
