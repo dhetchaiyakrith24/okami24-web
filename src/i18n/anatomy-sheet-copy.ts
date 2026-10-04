@@ -59,8 +59,9 @@ export interface AnatomySheet {
   /** base face call-outs, placed on the drawn bottom view (x/y = % of the drawing) */
   base: (SheetCallout & { x: number; y: number; to: [number, number] })[];
   /** a real back-view photo with its own call-outs (x/y = % of the photo), shown in place of the drawn bottom view —
-   *  for a device whose base has nothing to show (Caliburn G5, round G5 template 02/10) */
-  back?: { image: SheetImage; callouts: (SheetCallout & { x: number; y: number })[] };
+   *  for a device whose base has nothing to show (Caliburn G5, round G5 template 02/10) · `code` = its blueprint label when
+   *  the photo is not the back (DRAG 6: the control-wheel side, "SIDE VIEW"; default "BACK VIEW") */
+  back?: { image: SheetImage; callouts: (SheetCallout & { x: number; y: number })[]; code?: string };
   zooms: { id: string; code: string; name: SheetText; image: SheetImage; leds?: boolean }[];
   facts: { specKey: string; text: SheetText }[];
   note: SheetText;
@@ -68,6 +69,7 @@ export interface AnatomySheet {
 
 const A = "/assets/products/m-bar-10k/anatomy";
 const G5 = "/assets/products/caliburn-g5/anatomy";
+const D6 = "/assets/products/drag-6/anatomy";
 
 export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
   "m-bar-10k": {
@@ -265,6 +267,82 @@ export const ANATOMY_SHEETS: Record<string, AnatomySheet> = {
       { specKey: "output", text: { th: "5–35 วัตต์", en: "5–35W", zh: "5–35W" } },
       { specKey: "battery-life", text: { th: "ใช้งานทั่วไปได้สูงสุด 6 วัน", en: "Up to 6 days of typical use", zh: "日常使用最长 6 天" } },
       { specKey: "weight", text: { th: "หนัก 65 กรัม", en: "65g", zh: "重 65g" } },
+    ],
+    note: {
+      th: "ภาพแยกชิ้นช่วยให้เห็นว่าแต่ละส่วนอยู่ตรงไหนและทำหน้าที่อะไร",
+      en: "Shown part by part so you can see where each piece sits and what it does.",
+      zh: "分解图让您看清每个部件的位置和作用。",
+    },
+  },
+  // Site-wide template round batch 2c (04/10): parts and close-ups cut from VOOPOO's own 4113-px tech sheet of the black
+  // DRAG 6 (poster 14 on shop.voopoo.com/products/drag-6) — tank | body split at the 510 collar of the screen-face view,
+  // the control-wheel side as the second view; the 3/4 view = the site's approved black colour render. Part names =
+  // VOOPOO's own parts view (poster 55: Drip Tip · Top Cap · Airflow Adjustment · Glass Tube · Base · Revolve Button ·
+  // Fire Button · Built-in Battery · Screen · Type-C Port); Thai = thai-copy 04/10. Details only where the fact is not
+  // already said twice on the page (template §3). Scripts: _incoming/sitewide-template/2/2c/anat-crop.js + anat-build.js.
+  "drag-6": {
+    heading: { th: "ไล่ดูทีละส่วน จากบนลงล่าง", en: "Part by part, top to bottom", zh: "逐个部件，自上而下" },
+    sheetTitle: { th: "ภาพแยกชิ้น", en: "Exploded view", zh: "分解图" },
+    parts: [
+      {
+        id: "tank",
+        image: { src: `${D6}/part-tank-v1.webp`, width: 463, height: 858, alt: { th: "ถังน้ำยา UFORCE-X Tank II ของ DRAG 6", en: "DRAG 6 UFORCE-X Tank II", zh: "DRAG 6 UFORCE-X Tank II 烟仓" } },
+        callouts: [
+          { n: 1, code: "DRIP TIP", y: 14, name: { th: "ปากดูด", en: "Drip tip", zh: "吸嘴" } },
+          { n: 2, code: "TOP CAP", y: 27, name: { th: "ฝาบน", en: "Top cap", zh: "顶盖" } },
+          { n: 3, code: "AIRFLOW", y: 36, name: { th: "แหวนปรับลม", en: "Airflow adjustment", zh: "调气环" } },
+          {
+            n: 4,
+            code: "GLASS TUBE",
+            y: 63,
+            name: { th: "หลอดแก้ว", en: "Glass tube", zh: "玻璃管" },
+            detail: { th: "จุน้ำยา 5mL", en: "Holds 5mL", zh: "容量 5mL" },
+            specKey: "tank",
+          },
+          { n: 5, code: "BASE", y: 92, name: { th: "ฐานถัง", en: "Base", zh: "底座" } },
+        ],
+      },
+      {
+        id: "body",
+        image: { src: `${D6}/part-body-v1.webp`, width: 455, height: 1518, alt: { th: "ตัวเครื่อง DRAG 6 ด้านจอ", en: "DRAG 6 body, screen side", zh: "DRAG 6 机身屏幕面" } },
+        callouts: [
+          { n: 6, code: "FIRE BUTTON", y: 17, x: 49, name: { th: "ปุ่มยิง", en: "Fire button", zh: "火键" } },
+          {
+            n: 7,
+            code: "DISPLAY",
+            y: 50,
+            x: 49,
+            name: { th: "จอ", en: "Screen", zh: "屏幕" },
+            detail: { th: "ธีมหน้าจอ 3 แบบ", en: "3 interface themes", zh: "3 款界面主题" },
+            specKey: "screen",
+          },
+          { n: 8, code: "USB-C PORT", y: 86, x: 49, name: { th: "ช่องชาร์จ USB-C", en: "USB-C port", zh: "USB-C 接口" } },
+        ],
+      },
+    ],
+    assembled: {
+      src: `${D6}/assembled-v1.webp`,
+      width: 565,
+      height: 2000,
+      alt: { th: "DRAG 6 สีดำ ทั้งเครื่อง มุมเฉียง", en: "DRAG 6 in Black, assembled, three-quarter view", zh: "黑色 DRAG 6 整机斜角视图" },
+    },
+    base: [],
+    back: {
+      code: "SIDE VIEW",
+      image: { src: `${D6}/side-v1.webp`, width: 818, height: 2377, alt: { th: "DRAG 6 ด้านข้างที่มีล้อหมุน", en: "DRAG 6, the side with the control wheel", zh: "DRAG 6 带拨轮的侧面" } },
+      callouts: [
+        { n: 9, code: "CONTROL WHEEL", x: 56, y: 42, name: { th: "ล้อหมุน", en: "Control wheel", zh: "拨轮" } },
+        { n: 10, code: "BATTERY", x: 60, y: 72, name: { th: "แบตในตัว", en: "Built-in battery", zh: "内置电池" } },
+      ],
+    },
+    zooms: [
+      { id: "screen", code: "DISPLAY", name: { th: "จอ", en: "Screen", zh: "屏幕" }, image: { src: `${D6}/zoom-screen-v1.webp`, width: 499, height: 499, alt: { th: "จอของ DRAG 6 ระยะใกล้", en: "DRAG 6 screen, close-up", zh: "DRAG 6 屏幕特写" } } },
+      { id: "wheel", code: "CONTROL WHEEL", name: { th: "ล้อหมุน", en: "Control wheel", zh: "拨轮" }, image: { src: `${D6}/zoom-wheel-v1.webp`, width: 470, height: 470, alt: { th: "ล้อหมุนของ DRAG 6 ระยะใกล้", en: "DRAG 6 control wheel, close-up", zh: "DRAG 6 拨轮特写" } } },
+      { id: "airflow", code: "AIRFLOW", name: { th: "แหวนปรับลม", en: "Airflow adjustment", zh: "调气环" }, image: { src: `${D6}/zoom-airflow-v1.webp`, width: 440, height: 440, alt: { th: "แหวนปรับลมบนถังของ DRAG 6 ระยะใกล้", en: "DRAG 6 tank airflow dial, close-up", zh: "DRAG 6 烟仓调气环特写" } } },
+    ],
+    facts: [
+      { specKey: "dimensions", text: { th: "150 × 51.4 × 28.6 mm", en: "150 × 51.4 × 28.6 mm", zh: "150 × 51.4 × 28.6 mm" } },
+      { specKey: "weight", text: { th: "หนักประมาณ 280 กรัม", en: "About 280g", zh: "约 280g" } },
     ],
     note: {
       th: "ภาพแยกชิ้นช่วยให้เห็นว่าแต่ละส่วนอยู่ตรงไหนและทำหน้าที่อะไร",

@@ -237,7 +237,7 @@ function BackView({ back, text, verified, alt, showCode }: { back: NonNullable<A
         ))}
       </div>
       <p className="label-mono text-center text-[0.65rem]" style={{ color: CODE, letterSpacing: "0.14em" }} lang="en">
-        BACK VIEW
+        {back.code ?? "BACK VIEW"}
       </p>
       <ol className="flex flex-col gap-3">
         {back.callouts.map((c) => (
