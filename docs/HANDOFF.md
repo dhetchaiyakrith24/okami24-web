@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — 05/10: #267 = 04979fd (2f-img (a), BIG, checker 7/7, deploy 37229174301 OK,
-  live files 200) · #268 = 672d097 (2f-img (b), BIG, checker 9/9, deploy 37231467861) [ตรวจแล้ว — gh + curl].
+1 main: `git fetch && git log -1 --oneline origin/main` — 05/10: #271 = 5b2545e (2g ARGUS G4, BIG, checker 3 rounds → PASS at
+  2c8e9fa, deploy 37238373637 OK, live page + 7 poster files 200) [ตรวจแล้ว — gh + curl].
 2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Material not in git: `_incoming/sitewide-template/2/2fimg/` (p3-green-site.js ·
   g4card/ · i3/ = www banners, render/, i3-site.js, keepdev.js, srtone.js, fid-sheet.png, shots/) · `2/2f/` · `2/2e/` etc. Kits (never merge): `kit-1b` (+ scope.md) ·
   `kit-1c` — `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d + 2x =
@@ -26,14 +26,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   asset-refs sweep of the 246 candidates, edge defects).
   BATCH 2 VOOPOO — 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 · 2d-fix #259 ·
   2e #262 = ARGUS G4 mini + G3 mini · 2f #264 = ARGUS P3 + VMATE i3 story pages · 2f-img #267 + #268 = P3 Green Leather +
-  two-group lineups, ARGUS G4 card-v2 (owner: "การ์ดเล็กไป"), VMATE i3 all 11 colours.
-  NEXT = 2g ARGUS G4 (tier B: story page + Multi-Ohm, M Bar 15K data; its hero = G4 mini poster 01, both devices — already the G4
-  mini cover; the card is done in #267). VINCI S off-limits. Then batch 3 SALTHUB.
-  i3 method (#268, `2/2fimg/i3/`): one render per finish; wrong shape = re-roll "change ONLY the finish of reference 1" with a passed
-    render as ref 1; srtone.js = tone body pixels only; keepdev.js = drop a faint floor shadow. 16 renders = 120 credits.
-  Examples: `2/2f/` (gaps.js → blocks.js portrait panels) · `2/2e/` (upscale + composite) · `2/2c/` (exploded view). Traps =
-  LESSONS 24 + พ18. Material `_incoming/sitewide-template/2/`: pages/*.html (shop, curl + Referer shop.voopoo.com) · posters/<slug>/ ·
-  www.voopoo.com via r.jina.ai only · research-voopoo.md UNRELIABLE · ARGUS G4 = `_incoming/argus-g4/`. Voice: owner "ผสมกัน" (#253–#264).
+  two-group lineups, ARGUS G4 card-v2 (owner: "การ์ดเล็กไป"), VMATE i3 all 11 colours · 2g #271 = ARGUS G4 story page (7 VOOPOO
+  panels, Multi-Ohm 0.7 / flip 1.0 / double press 0.4Ω, `2/2g/`). BATCH 2 DONE except the owner-deferred image work (item 5).
+  "Argus Multi-Ohm" = not a catalog product (no Shipnity row) → told on the G4 page only · M Bar 15K data → batch 3 (SALTHUB).
+  NEXT = BATCH 3 SALTHUB (owner 05/10 night: "ทำต่อยาวๆ ไม่ hand พรุ่งนี้ตรวจทีเดียว").
+  TEMPORARY RULING [ตรวจแล้ว — owner in chat 05/10] (13.6 — ends when the owner says so on 06/10 morning; delete it then): in THIS
+  chat only, batch after batch in order — no handoff, no chat move at batch close, no stopping to ask (13.3 hard stops still apply)
+  — report all at once. Context 700k still = move the chat (central §12 item 29).
+  Worked examples `_incoming/sitewide-template/2/`: 2e (upscale + composite) · 2f (gaps.js → blocks.js) · 2g (panel cut + corners.js,
+  extract.js = page text + posters) · 2fimg/i3 (render per finish). Traps = LESSONS 24 + พ18. Voice: owner "ผสมกัน" (#253–#264).
   One build per batch · whole-sitemap scans only when a shared part changes.
   Gates per batch: `npm run verify:catalog` (fresh worktree: `npx next typegen` first) · page-text-length --facts · wordbreak-scan → reword
   · checker · scripts as .js files (Thai/backslash/backticks never through `node -e` or a heredoc).
@@ -60,9 +61,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — `balance` first, report the spend (upscale 2k = 2 each).
 4 waiting on owner:
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b) ·
-  ARGUS G4 mini page (2e) · ARGUS P3 + VMATE i3 story pages (2f #264).
-  (Owner 05/10: ARGUS G3 mini page passed · 2e words + TPD approved → #265 · 2f words "ได้" → THAI_STYLE in #267 · 2f-img report
-  (#267 + #268: P3 Green Leather + two lineups, G4 card, VMATE i3 11 colours) "ผ่านครับ" — wants the next chat to run long batches.)
+  ARGUS G4 mini page (2e) · ARGUS P3 + VMATE i3 story pages (2f #264) · ARGUS G4 page (2g #271: battery block names VOOPOO's two
+  figures — poster 10% vs ARGUS G3, page 22% vs previous gen; safety poster not used; 7 blocks → chip bar 6+1 at 1440).
   (2f) things the owner should know on those pages: VOOPOO's own P3 poster prints "1500mAh Big Bettery" (maker typo, left) ·
        VMATE Top Fill 0.4Ω: the poster says 18–30W, voopoo.com "at least 30W" — the text gives the site figure beside the poster ·
        P3 has no dimensions row (VOOPOO gives two sizes) · i3 card colour changed Black → Cyan Blue (VOOPOO's first colour) ·
@@ -76,12 +76,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 5 open / dated:
   - Unused since 2f-img (0 refs in src, checker #268): `argus-p3/lineup-v2.webp` · `vmate-i3/variants/*` · `vmate-i3/lineup.webp`
     → batch 7 asset-refs sweep · wordbreak 05/10: «ไฟจะ» on /guides/fixing-no-draw-and-blinking-light@390 (guides = later round).
-  - DEFERRED by the owner 04/10 ("ข้ามไปตัวอื่นก่อน ไว้ค่อยกลับมาแก้" — no date; Friday's plan: after the VOOPOO pages): DRAG S3 + X3 colour
-    photos + two-group line-ups (owner on live #255: "ภาพสินค้า-รูปรวมยังดูเป็นกราฟฟิกเหมือนเดิม ทดไว้มาแก้รอบหลัง จดเอาไว้คู่กับ Drag 6") and the
-    DRAG 6 all-colours image lineup-v3 — "รูปรวมยังเล็กไป สินค้ายังดู
-    เป็นกราฟฟิก … ไว้ค่อยกลับมาแก้เรื่องภาพเหมือนกราฟฟิก" (same eye as LESSONS ช9: AI-made light reads as graphic; 7 devices too small).
-    Also not fixed (checker #253 taste): text inside the 3 wide DRAG 6 posters ~6–7 px at 390 · "มีโหมด SMART RBA และ TC-TCR" reads as 2.
-    Owner 05/10 adds: ARGUS G4 mini images "ยังดูเป็นกราฟฟิกเหมือน Drag จดไว้ครับ ค่อยกลับมาแก้" — same deferred list.
+  - [ตรวจแล้ว — files, checker #272] ARGUS G4 after #271, outside the round: guide argus-g4-vs-caliburn-g5 still says G4 firing + pod capacity "unconfirmed" (now
+    3.5mL; VOOPOO still names no draw/button activation) · technology multi-resistance-cartridges quotes the old pod row "ARGUS
+    top-fill cartridge platform, multiple resistances" · G4 head copy: 0.85 twice (tagline + shortDescription) + the anatomy
+    diagram = 3 (SEO round; checker #271 accepted) · English names wrap at a space in the spec table (accepted).
+  - DEFERRED by the owner 04/10 + 05/10 (no date; "ไว้ค่อยกลับมาแก้"): images that "still look like graphics" (LESSONS ช9) — DRAG S3 +
+    X3 colour photos + two-group line-ups (#255) · DRAG 6 lineup-v3 (also too small) · ARGUS G4 mini images. Not fixed either (checker
+    #253 taste): text in the 3 wide DRAG 6 posters ~6–7 px at 390 · "มีโหมด SMART RBA และ TC-TCR" reads as 2.
   - 7 highlight chips wrap 6 + 1 at 1440 on caliburn-g4-pro-koko and caliburn-g3-pro-koko (chip bar is lg:grid-cols-6) — shared
     component, its own small PR + whole-sitemap visible-text (checker #242: not a defect of 1d).
   - ARGUS G3 mini chip: VOOPOO names it "GENE AI 2.0" and "GENE TT 3.0" on the same voopoo.com page (researcher 04/10) → spec row
