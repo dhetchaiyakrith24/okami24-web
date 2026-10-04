@@ -1205,9 +1205,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ตัวเครื่องเบา แต่แบตอึด", en: "Light, with a battery that lasts", zh: "很轻，电池却很耐用" },
       subline: { th: "หนัก 49.8 กรัม พอ ๆ กับไข่หนึ่งฟอง", en: "49.8g, about as much as an egg.", zh: "49.8g，和一颗鸡蛋差不多。" },
       body: {
-        th: "ผิวตัวเครื่องมีให้เลือกสามลาย ส่วนแถบไฟด้านข้างจะเปลี่ยนสีตามแบตที่เหลือ ดูแล้วรู้ได้เลยว่าควรชาร์จเมื่อไหร่",
-        en: "VOOPOO finishes it in three different textures, and a light strip on the side tells you how much battery is left.",
-        zh: "VOOPOO 给它做了三种不同的纹理，侧面的灯带会告诉你还剩多少电。",
+        th: "ผิวตัวเครื่องมีให้เลือกหลายลาย ส่วนแถบไฟด้านข้างจะเปลี่ยนสีตามแบตที่เหลือ ดูแล้วรู้ได้เลยว่าควรชาร์จเมื่อไหร่",
+        en: "VOOPOO finishes it in several different textures, and a light strip on the side tells you how much battery is left.",
+        zh: "VOOPOO 给它做了多种不同的纹理，侧面的灯带会告诉你还剩多少电。",
       },
       points: [
         { text: { th: "แบต 1500mAh ในตัว", en: "1500mAh built-in battery", zh: "内置 1500mAh 电池" }, specKey: "battery" },
