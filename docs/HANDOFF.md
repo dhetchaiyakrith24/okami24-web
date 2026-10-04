@@ -13,7 +13,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 
 1 main: `git fetch && git log -1 --oneline origin/main` — the 04/10 chat (3rd) merged #259 = 98981bc (batch 2d-fix, BIG by
   voopoo.ts; checker r1 FAIL → 3f35619 → r2 PASS; GitHub green): 12 DRAG S3/X3/6 story posters re-made sharp + DRAG 6 cover
-  2800 + airflow zoom 1000 + new `scripts/poster-stretch.js`. Live S3/X3 (#255) answered 200 before it [ตรวจแล้ว — curl].
+  2800 + airflow zoom 1000 + new `scripts/poster-stretch.js`. #259 live 04/10 ~15:25: the 3 pages serve every new file [ตรวจแล้ว — curl].
 2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Kits (never merge these branches):
   1b = branch `kit-1b` (also holds `_incoming/sitewide-template/scope.md`, the round scope) · 1c = branch `kit-1c`. Get one:
   `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d material is in
@@ -28,12 +28,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
   asset-refs sweep of the 246 candidates, edge defects).
   Flag `storyStartRight` (default off) starts a page poster-right (G3 Pro, owner 03/10 "vary").
-  BATCH 2 VOOPOO — 04/10: 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 · 2d-fix #259 = sharp posters.
+  BATCH 2 VOOPOO — 04/10: 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 · 2d-fix #259 (sharp posters).
   Still to do on the template: ARGUS P3 · VMATE i3 · ARGUS G3 mini · ARGUS G4 mini · ARGUS G4 (VINCI S off-limits). Suggested pairs:
   2e ARGUS G3 mini + G4 mini · 2f ARGUS P3 + VMATE i3 · 2g ARGUS G4 (+ Multi-Ohm, M Bar 15K data). One PR per pair = data + page
   (the 2d way, one build). NEXT = 2e. Facts READ file by file (researcher 04/10, local only, not in git):
-  `_incoming/sitewide-template/2/2e/facts-argus-g{3,4}-mini.md` (+ `2e/*.txt`, G3 mini strip cuts in `posters/argus-g3-mini/cut/`).
-  G3 mini = 1024-px strip → poster-stretch on the build, 3a (e) if it FAILs · G4 mini posters 2133 px · no parts view on either ·
+  `_incoming/sitewide-template/2/2e/facts-argus-g{3,4}-mini.md` (+ `2e/*.txt`, G3 mini cuts `posters/argus-g3-mini/cut/`).
+  G3 mini = 1024-px strip → poster-stretch on the build, 3a (e) if it FAILs · G4 mini posters 2133 px · no parts views ·
   leave out the "Contradictions" each facts file lists · G4 mini hero 01 is shared with ARGUS G4.
   Worked examples: DRAG 6 `_incoming/sitewide-template/2/2c/` (exploded view from a
   maker 4K multi-view sheet: anat-crop.js + anat-build.js + zooms.json, scripts/flatcut.js) · S3/X3 `2/2d/` (facts-drag-*.md read
@@ -49,8 +49,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   26/27 · chip 29 · tank 30+36 · screen 31+37 · battery 32 · controls 38 · PARTS VIEW 55 · box 56) · research-voopoo.md = web-summary
   pass, UNRELIABLE → read maker images file by file. P3 / VMATE i3 posters = one 1024-px "onepage" strip each · ARGUS G4 = `_incoming/argus-g4/`.
   VOICE for VOOPOO story copy (owner 04/10 on sample (49): "ผสมกัน"): Friday's reading = A's short calm titles + B's warmer everyday
-  bodies — used on #253 + #255; the owner saw DRAG 6 live and raised only the all-colours image (item 5) [เชื่อว่า voice accepted].
-  Speed (owner 04/10): one build per batch · whole-sitemap scan (≈ 20 min) only if a shared part changes · a build ≈ 8 min.
+  bodies — used on #253 + #255; owner saw DRAG 6 live, raised only the all-colours image (item 5) [เชื่อว่า voice accepted].
+  Speed (owner 04/10): one build per batch (≈ 8 min) · whole-sitemap scan (≈ 20 min) only if a shared part changes.
   Gates per batch: `npm run verify:catalog` (fresh worktree: `npx next typegen` first) · page-text-length --facts · wordbreak-scan → reword
   · checker · scripts as .js files (Thai/backslash/backticks never through `node -e` or a heredoc).
   Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD.
@@ -74,7 +74,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   mood-monster-14k · coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87) · coils `b-coils/README.txt` · Esko pod-159 LAST
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (04/10: 15 upscale jobs, 315.1 → 279.1 =
-  36 credits by `balance`). The app's auto-mode guard blocks uploads to Higgsfield until the owner allows it in that chat (04/10 did).
+  36 credits [ตรวจแล้ว — `balance`, 2dfix/credits.txt]; 2k = 2 each, 4k more). The app's auto-mode guard blocks uploads to Higgsfield until the owner allows it in that chat (04/10 did).
 4 waiting on owner:
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   #259 (04/10): the 12 sharp DRAG posters · the X3 cover is now VOOPOO's pink banner with no baked "DRAG X3" title (the old one was
