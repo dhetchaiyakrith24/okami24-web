@@ -171,9 +171,8 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
   },
 
   // =================================================================================
-  // VOOPOO — PnP X coil platform. DRAG 6 = TIER 1 since PR #251 (shop.voopoo.com resolves
-  // now; www.voopoo.com still does not from this ISP). DRAG S3 / X3 stay TIER 2 until their
-  // own shop.voopoo.com pages are read (sitewide-template batch 2).
+  // VOOPOO — PnP X coil platform. TIER 1 from each model's own shop.voopoo.com page (www.voopoo.com
+  // does not resolve from this ISP): DRAG 6 since PR #251, DRAG S3 / X3 since batch 2d (04/10).
   //
   // Deliberately NOT linked: coil-1 (original PnP coils) to vinci-s, despite coil-1's name
   // being "Coil Vinci" and both records carrying familyId "vinci". PnP and PnP X are
@@ -193,17 +192,17 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
     device: "drag-s3",
     consumable: "coil-92",
     role: "coil",
-    evidence: "Retailer compatibility list for the VOOPOO PnP X replacement coils names the DRAG S3.",
-    sourceUrl: "https://www.alivape.com/products/voopoo-pnp-x-replacement-coils",
-    tier: "retailer",
+    evidence: "VOOPOO's own DRAG S3 page states the full PnP X coil lineup (0.15–1.0Ω) fits, and the kit ships with PnP X 0.6Ω and 0.8Ω coils.",
+    sourceUrl: "https://shop.voopoo.com/products/drag-s3",
+    tier: "official",
   },
   {
     device: "drag-x3",
     consumable: "coil-92",
     role: "coil",
-    evidence: "Retailer compatibility list for the VOOPOO PnP X replacement coils names the DRAG X3.",
-    sourceUrl: "https://www.alivape.com/products/voopoo-pnp-x-replacement-coils",
-    tier: "retailer",
+    evidence: "VOOPOO's own DRAG X3 page states it is compatible with all PnP X coils.",
+    sourceUrl: "https://shop.voopoo.com/products/drag-x3",
+    tier: "official",
   },
 
   // =================================================================================
