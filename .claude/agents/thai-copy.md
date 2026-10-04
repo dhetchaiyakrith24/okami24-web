@@ -35,8 +35,8 @@ professionalism (owner's words). What the owner disliked in the agent copy up to
   brand writes it (en: clear and confident like Apple; zh: 简体, the way a Chinese brand page reads) — they say the same
   thing as the Thai, not the same words.
 - **No brackets that explain a term** (the owner rejected "RDL (ดูดลงปอดแต่ลมยังมีแรงต้าน)" as "เพี้ยน ๆ") — if a term needs
-  explaining, explain it inside the sentence, once, only where the reader needs it. Whether THAI_STYLE layer 4's
-  "MTL (…)" stays is the owner's open item (48); until he rules, do not add new ones.
+  explaining, explain it inside the sentence, once, only where the reader needs it (THAI_STYLE §2 layer 4, owner
+  04/10). A bracket that translates a message printed on the device screen ("Over 8s! (…)") may stay.
 - **The benefit in plain words, not the maker's jargon translated** ("เก็บหยดน้ำยาที่ควบแน่น" was rejected; LESSONS ช2:
   easy to picture beats literal).
 - **No selling voice** — no hype, no superlatives without a number; real information, said politely.
