@@ -70,15 +70,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — check `balance` first, report the spend (none spent 03–04/10).
 4 waiting on owner:
-  (46) table SENT 04/10 in chat (reset the copy agent): 1 rewrite `thai-copy` voice = calm, short, confident, no explanatory
-       parentheses, 6–8 owner before→after pairs · 2 Thai written first from maker facts, en/zh from the same facts (no translating) ·
-       3 widen the agent to all 3 languages (`site-copy`) · 4 owner picks 3–5 reference samples · 5 one sample block to the owner before
-       a whole batch's copy. Friday recommends 1+2+3+5 (+4). No agent edited until the owner decides (central §12 item 28).
-  (47) NEW 04/10 Drag 6 all-colours: keep the live VMATE-MAX layout (owner-picked 01/10) or switch to the HYBRID RELX layout
-       (relx/d6-owner.png). Owner-approved image = 13.3 #5 → nothing replaced until the answer.
+  (46) ANSWERED 04/10 "1 1235 4" → done in PR #247: `thai-copy` owns th/en/zh (name kept, not `site-copy` — 70+ files cite it),
+       voice = THAI_STYLE §2 "น้ำเสียง" (สุภาพ นิ่ง ธรรมชาติ · not curt · yardstick Apple / professional brands), Thai first from maker
+       facts, one sample block to the owner before a batch. Next copy work (VOOPOO) = first real use → send that sample block.
+  (47) ANSWERED 04/10 "Drag 6 ได้ครับ" → HYBRID replaces lineup-v2 as lineup-v3.webp (b-edge/d6-hy-publish.js), own PR with the
+       G4 head-line fix (owner 04/10: "…เลือกโหมดได้ตามความต้องการและการใช้งาน").
   (48) NEW 04/10 THAI_STYLE layer 4 (line 29) still says a tech term gets a short Thai parenthesis at first mention ("MTL (สูบแบบ
        ดูดเข้าปากก่อน)"); the owner rejected the RDL one as "เพี้ยน ๆ" and LESSONS ช11 reads "no parentheses" [เชื่อว่า]. #245 kept MTL's
-       (locked example) and dropped RDL's → keep layer 4, or drop the parentheses site-wide?
+       (locked example) and dropped RDL's → keep layer 4, or drop the parentheses site-wide? Owner 04/10 asked to see them
+       first → list sent in chat (10 term brackets · 3 screen-message brackets · 4 others; raw = `node scripts/paren-terms.js`).
   #245 head lines + ledes = Friday's own Thai (checker taste-read, not thai-copy) — ruled by the owner from the live pages.
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
