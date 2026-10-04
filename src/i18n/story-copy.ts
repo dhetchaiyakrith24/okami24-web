@@ -1346,4 +1346,44 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       ],
     },
   },
+  // Site-wide template round batch 3a (05/10): SALTHUB's own Zero Pro page + posters (_incoming/sitewide-template/3/
+  // facts-zero-pro.md lists the source of each line); Thai = thai-copy 05/10.
+  "zero-pro": {
+    "modes": {
+      title: { th: "เลือกโหมดให้เข้ากับอารมณ์ในตอนนั้น", en: "Pick the mode you feel like", zh: "每种心情都有对应模式" },
+      subline: { th: "SALTHUB เรียกระบบนี้ว่าการปรับวัตต์แบบอัจฉริยะ", en: "SALTHUB calls it intelligent power regulation.", zh: "SALTHUB 称之为智能功率调节。" },
+      body: {
+        th: "วันไหนอยากสูบเบา ๆ หรืออยากให้แรงขึ้นอีกหน่อย ก็สลับโหมดได้จากเครื่องเดียวกัน",
+        en: "Change between a softer and a stronger draw on the same device.",
+        zh: "同一台机器，就能在柔和与浓烈之间切换。",
+      },
+      points: [
+        { text: { th: "โหมด Low-end · Mid-range · High-end", en: "Low-end · Mid-range · High-end", zh: "Low-end · Mid-range · High-end" }, specKey: "modes" },
+      ],
+    },
+    "airflow": {
+      title: { th: "ทางเดินของลม", en: "The path the air takes", zh: "进气路径" },
+      subline: { th: "SALTHUB ระบุว่าการรับลมจากด้านข้างทำให้ลมเดินทางสั้นลง", en: "SALTHUB says drawing air in from the side shortens its path.", zh: "SALTHUB 表示，侧面进气能缩短气流路径。" },
+      body: {
+        th: "SALTHUB ระบุว่าเมื่อลมเดินทางสั้นลง น้ำยาก็กลายเป็นไอได้เต็มที่",
+        en: "According to SALTHUB, a shorter path helps the liquid vaporise completely.",
+        zh: "据 SALTHUB 介绍，路径更短，有助于烟油完全雾化。",
+      },
+      points: [
+        { text: { th: "ช่องลมเข้าอยู่ด้านข้างตัวเครื่อง", en: "Side air intake", zh: "侧面进气口" }, specKey: "airflow" },
+      ],
+    },
+    "battery": {
+      title: { th: "แบตเตอรี่อยู่ในตัวเครื่อง", en: "A built-in battery", zh: "内置电池" },
+      subline: { th: "ความจุ 380mAh", en: "380mAh.", zh: "容量 380mAh。" },
+      body: {
+        th: "SALTHUB ระบุว่าเครื่องนี้ชาร์จได้เร็ว เวลาแบตหมดจึงไม่ต้องรอนานก่อนจะกลับมาใช้ต่อ",
+        en: "SALTHUB says it charges fast, so a flat battery shouldn't keep you waiting long.",
+        zh: "SALTHUB 表示充电很快，没电时不用等太久就能接着用。",
+      },
+      points: [
+        { text: { th: "ชาร์จผ่าน USB-C", en: "Charges over USB-C", zh: "USB-C 充电" }, specKey: "charging" },
+      ],
+    },
+  },
 };

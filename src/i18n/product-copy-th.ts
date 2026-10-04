@@ -664,20 +664,19 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "zero-pro": {
     whoIsThisFor: {
-      0: "อยากได้เครื่องระบบสวิตช์ที่เลือกโหมดวัตต์ได้เอง แทนแบบที่ล็อกวัตต์ไว้ค่าเดียว",
+      0: "อยากสลับระหว่างสูบเบา ๆ กับสูบให้แรงขึ้น โดยใช้เครื่องตัวเล็กเพียงเครื่องเดียว",
+      1: "ชอบเครื่องทรงเพรียว หน้าตาคล้ายปากกา",
     },
     specifications: {
       "puffs-per-pod": "สูงสุด 5,000",
-      modes: "3 โหมด",
+      modes: "3 โหมด คือ Low-end · Mid-range · High-end",
+      battery: "380mAh ในตัว",
+      resistance: "0.5–2Ω",
+      airflow: "ช่องลมเข้าด้านข้าง",
+      charging: "USB-C · SALTHUB ระบุว่าชาร์จเร็ว",
     },
     tagline: "3 โหมด ในตัวเครื่องระบบสวิตช์ใช้ซ้ำได้",
     shortDescription: "เครื่องระบบสวิตช์ใช้ซ้ำได้ มี 3 โหมดวัตต์ ใช้หัวพอต Zero Cartridge รองรับสูงสุด 5,000 พัฟต่อหัวพอต",
-    features: {
-      "3-mode": {
-        title: "3 โหมดวัตต์",
-        description: "เลือกวัตต์ได้ 3 โหมดจากตัวเครื่องที่ใช้ซ้ำได้ เปลี่ยนแค่ Zero Cartridge ซึ่งเป็นหัวเดียวกับที่ Zero Nano ใช้",
-      },
-    },
   },
   "zero-nano": {
     whoIsThisFor: {

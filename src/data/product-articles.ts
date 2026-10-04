@@ -1285,6 +1285,60 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 3a (05/10): from SALTHUB's Zero Pro page and posters; Thai = thai-copy 05/10.
+  "zero-pro": {
+    th: {
+      lede: "Zero Pro เป็นเครื่องในตระกูล Zero ของ SALTHUB ตัวเครื่องกะทัดรัด ด้านล่างไล่ให้ดูทีละเรื่อง",
+      sections: [
+        {
+          heading: "ใช้กับหัวพอตอะไร",
+          paragraphs: [
+            "บนเว็บของ SALTHUB หัวพอต Zero อยู่ในหมวดกลิ่นของ Zero Pro ซึ่งที่ร้านเราใช้ชื่อว่า [Zero Cartridge](/products/zero-cartridge) และ SALTHUB ระบุว่าใช้ได้หัวละสูงสุด 5,000 พัฟ"
+          ]
+        },
+        {
+          heading: "ชื่อสีตามที่ SALTHUB เรียก",
+          paragraphs: [
+            "SALTHUB ตั้งชื่อสีของ Zero Pro ไว้ต่างจากชื่อที่ร้านเราใช้อยู่บ้าง ชื่อตามที่ SALTHUB เรียกคือ Flesh Pink · Red · Black and Red Gradient · Blue-Purple Gradient · Black · Silver-Grey · Light Blue · Yellow and Black Gradient"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "The Zero Pro is a compact device in SALTHUB's Zero line. Below, one part at a time.",
+      sections: [
+        {
+          heading: "Which cartridge does it take?",
+          paragraphs: [
+            "SALTHUB lists its ZERO cartridges with the Zero Pro, and we carry them as the [Zero Cartridge](/products/zero-cartridge). One cartridge gives up to 5,000 puffs, by SALTHUB's figure."
+          ]
+        },
+        {
+          heading: "SALTHUB's colour names",
+          paragraphs: [
+            "SALTHUB names the Zero Pro's colours a little differently from us: Flesh Pink · Red · Black and Red Gradient · Blue-Purple Gradient · Black · Silver-Grey · Light Blue · Yellow and Black Gradient."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "Zero Pro 是 SALTHUB Zero 系列里一款小巧的机型。下面逐项来看。",
+      sections: [
+        {
+          heading: "用哪种烟弹？",
+          paragraphs: [
+            "SALTHUB 把 ZERO 烟弹和 Zero Pro 放在一起，我们这里叫 [Zero Cartridge](/products/zero-cartridge)。按 SALTHUB 的数字，一颗烟弹最多 5,000 口。"
+          ]
+        },
+        {
+          heading: "SALTHUB 的颜色名称",
+          paragraphs: [
+            "SALTHUB 给 Zero Pro 起的颜色名和我们用的不完全一样：Flesh Pink · Red · Black and Red Gradient · Blue-Purple Gradient · Black · Silver-Grey · Light Blue · Yellow and Black Gradient。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
