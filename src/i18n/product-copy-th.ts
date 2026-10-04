@@ -528,7 +528,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       voltage: "3.2–4.2V",
       resistance: "0.4–3.0Ω",
       pod: "VMATE Top Fill Cartridge 0.7Ω · 3mL (2mL ในเวอร์ชัน TPD) · เติมด้านบนได้โดยไม่ต้องถอดหัวพอต",
-      "pod-compat": "หัวพอต VMATE ได้ทุกหัว · Top Fill Cartridge 0.4Ω RDL ใช้ 30W ขึ้นไปตามหน้าเว็บ VOOPOO · 0.7Ω 15–25W · 1.0Ω MTL 12–18W · Cartridge V2 0.7Ω MTL 15–25W · 1.2Ω MTL 8–15W · เช็คค่าโอห์มและวัตต์ให้ตรงกับเครื่องก่อนใช้",
+      "pod-compat": "หัวพอต VMATE ได้ทุกหัว · Top Fill Cartridge 0.4Ω RDL ใช้ 30W ขึ้นไป · 0.7Ω 15–25W · 1.0Ω MTL 12–18W · Cartridge V2 0.7Ω MTL 15–25W · 1.2Ω MTL 8–15W · เช็คค่าโอห์มและวัตต์ให้ตรงกับเครื่องก่อนใช้",
       coil: "iCOSM CODE · อายุคอยล์ 90mL · ตั้งทิ้งไว้ 30 วันไม่รั่วซึม · ตัวเลขจากผลทดสอบในห้องแล็บของ VOOPOO",
       airflow: "ปุ่มเลื่อนปรับลม ตั้งแต่ MTL แบบแน่นถึง RDL ที่ลมโล่ง",
       firing: "ไม่มีปุ่ม สูบได้เลย",

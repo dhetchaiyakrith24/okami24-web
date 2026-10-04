@@ -1285,7 +1285,7 @@ export const voopooProducts: Product[] = [
       { key: "voltage", label: "Output voltage", value: "3.2–4.2V", sourceStatus: "verified", sourceUrl: I3_PAGE },
       { key: "resistance", label: "Resistance range", value: "0.4–3.0Ω", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/v-series/vmate-i3" },
       { key: "pod", label: "Included pod", value: "VMATE Top Fill Cartridge 0.7Ω · 3mL (2mL TPD) · top fill, without removing it", sourceStatus: "verified", sourceUrl: I3_PAGE },
-      { key: "pod-compat", label: "Pod platform", value: "Every VMATE cartridge — Top Fill Cartridge 0.4Ω RDL, 30W or more (voopoo.com) · 0.7Ω 15–25W · 1.0Ω MTL 12–18W · Cartridge V2 0.7Ω MTL 15–25W · 1.2Ω MTL 8–15W; check resistance and output", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/v-series/vmate-i3" },
+      { key: "pod-compat", label: "Pod platform", value: "Every VMATE cartridge — Top Fill Cartridge 0.4Ω RDL, 30W or more · 0.7Ω 15–25W · 1.0Ω MTL 12–18W · Cartridge V2 0.7Ω MTL 15–25W · 1.2Ω MTL 8–15W; check resistance and output", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/v-series/vmate-i3" },
       { key: "coil", label: "Coil", value: "iCOSM CODE — 90mL coil life, 30 days standing without leaks (VOOPOO's lab tests)", sourceStatus: "verified", sourceUrl: "https://www.voopoo.com/v-series/vmate-i3" },
       { key: "airflow", label: "Airflow", value: "Slider, tight MTL to airy RDL", sourceStatus: "verified", sourceUrl: I3_PAGE },
       { key: "firing", label: "Activation", value: "Draw-activated, no buttons", sourceStatus: "verified", sourceUrl: I3_PAGE },
