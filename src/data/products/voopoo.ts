@@ -8,6 +8,7 @@ const G4M_PAGE = "https://shop.voopoo.com/products/argus-g4-mini";
 const G3M_PAGE = "https://shop.voopoo.com/products/argus-g3-mini";
 const P3_PAGE = "https://shop.voopoo.com/products/argus-p3";
 const I3_PAGE = "https://shop.voopoo.com/products/vmate-i3";
+const G4_PAGE = "https://shop.voopoo.com/products/argus-g4";
 const usbC1A = { type: "charging" as const, label: "USB-C", note: "Lower-amperage charging on this model." };
 
 export const voopooProducts: Product[] = [
@@ -39,6 +40,7 @@ export const voopooProducts: Product[] = [
       portability: "compact",
       beginnerFriendly: true,
       chargingType: "USB-C, 5V/2A (~45 min full charge)",
+      capacityMl: 3.5,
     },
     assets: [
       {
@@ -98,6 +100,14 @@ export const voopooProducts: Product[] = [
     // Colour photos: 2026-09-06 re-sourced from the shop.voopoo.com gallery at its native 2533px (_incoming/argus-g4/SOURCE.md).
     // "ทั้งหมด" (02/10): two groups in the colour order (4+4) — the one-row image of 8 was tiny — RELX Phantom poster layout
     // like the other VOOPOO pods, _incoming/image-sitewide/dsx/vp-relx2.js argus-g4-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
+    // Site-wide template round batch 2g (05/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — VOOPOO's own shop page told
+    // one poster panel per block; text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Panels cut whole along
+    // VOOPOO's panel edges, down-sized only: _incoming/sitewide-template/2/2g/blocks.js. Cover = the poster both devices share,
+    // already the G4 mini's cover (same file). Not used: the safety-protection panel (no safety claims) and VOOPOO's spec card.
+    storyDetails: true,
+    storyLayout: "stage",
+    storyStartRight: true,
+    storyCover: { src: "/assets/products/argus-g4-mini/story-cover.webp", alt: "Official VOOPOO banner — the ARGUS G4 beside the ARGUS G4 mini", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 2133, height: 1194 },
     lineupImage: {
       src: "/assets/products/argus-g4/lineup-v2.webp",
       alt: "VOOPOO ARGUS G4, colours 1–4 of 8",
@@ -164,57 +174,91 @@ export const voopooProducts: Product[] = [
       },
     ],
     specifications: [
-      { key: "battery", label: "Battery", value: "1650mAh built-in", sourceStatus: "verified" },
-      { key: "output", label: "Output range", value: "5–35W", sourceStatus: "verified" },
-      { key: "voltage", label: "Output voltage", value: "3.2–4.2V", sourceStatus: "verified" },
-      { key: "resistance", label: "Resistance range", value: "0.4–3.0Ω", sourceStatus: "verified" },
-      { key: "screen", label: "Display", value: "0.85\" HD screen — battery, wattage, resistance, lock state, puff count", sourceStatus: "verified" },
-      { key: "charging", label: "Charging", value: "USB-C, 5V/2A, ~45 minutes to full", sourceStatus: "verified" },
-      { key: "materials", label: "Materials", value: "Zinc alloy, leather, aluminum alloy", sourceStatus: "verified" },
-      { key: "pod", label: "Pod platform", value: "ARGUS top-fill cartridge platform, multiple resistances", sourceStatus: "verified" },
+      // Batch 2g (05/10): every row re-read from VOOPOO's shop page + its posters, piece by piece
+      // (_incoming/sitewide-template/2/2g/facts-argus-g4.md). No activation row (VOOPOO does not say draw or button for the G4).
+      // No battery-life % (page 22% vs the poster's 10% against the ARGUS G3). Weight sits in the dimensions row (LESSONS พ18).
+      // "Aluminum" = VOOPOO's spelling; "aluminium" holds "mini", and the search answered "argus g4 mini" with this page.
+      { key: "battery", label: "Battery", value: "1650mAh built-in", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "output", label: "Output range", value: "5–35W", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "voltage", label: "Output voltage", value: "3.2–4.2V", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "resistance", label: "Resistance range", value: "0.4–3.0Ω", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "screen", label: "Display", value: "0.85\" HD — battery, wattage, resistance, lock state, puff count", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "control", label: "Control", value: "One button: press twice = next resistance (0.7 → 1.0 → 0.4Ω) · 3 presses = wattage · 5 presses = menu (power off, theme, puff clear, lock) · long press = tips screen", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "pod", label: "Included pod", value: "2 × ARGUS Multi-Ohm Cartridge — 0.7Ω as it goes in, 1.0Ω turned 180°, 0.4Ω by pressing the button twice · 3.5mL (2mL TPD) · top fill under a silicone plug · PCTG", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "pod-compat", label: "Pod platform", value: "Every ARGUS pod-family cartridge: Multi-Ohm, Snap, Top Fill Cartridge V2 (2mL & 3mL), other ARGUS cartridges incl. CRC", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "coil", label: "Coil", value: "Multi-core electrode tech · iCOSM CODE 2.0", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "airflow", label: "Airflow", value: "Stepless slider, MTL to RDL", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "materials", label: "Materials", value: "Aluminum alloy, or zinc alloy with leather · Zircon Sand process on some colours", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "charging", label: "Charging", value: "USB-C, 5V/2A · full in about 45 minutes", sourceStatus: "verified", sourceUrl: G4_PAGE },
+      { key: "dimensions", label: "Dimensions", value: "Aluminum: 121 × 27.6 × 15.8 mm · 65g / Zinc alloy: 121 × 27.6 × 16.6 mm · 85g", sourceStatus: "verified", sourceUrl: G4_PAGE },
     ],
     features: [
       {
-        id: "hd-screen",
-        title: "0.85\" HD status screen",
-        description: "Shows battery level, output power, coil resistance, lock/unlock status, and puff count at a glance.",
+        id: "ohm",
+        title: "Flip it or press the button",
+        description: "The device reads the new resistance by itself the moment you switch, so there is no second pod to carry and no menu to dig through.",
+        subline: "Three resistances from one Multi-Ohm cartridge.",
+        image: { src: "/assets/products/argus-g4/story-ohm.webp", alt: "VOOPOO's ARGUS G4 poster — the Multi-Ohm cartridge: flip for 1.0Ω or 0.7Ω, press the button twice for 0.4Ω", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 1366 },
       },
       {
-        id: "fast-charge",
-        title: "45-minute fast charge",
-        description: "USB-C 5V/2A charging brings the device from empty to full in about 45 minutes.",
+        id: "battery",
+        title: "A big battery, a quick charge",
+        description: "VOOPOO built it for heavy vapers and travellers, so less of the day goes on looking for a socket.",
+        subline: "A high-density cell.",
+        image: { src: "/assets/products/argus-g4/story-battery.webp", alt: "VOOPOO's ARGUS G4 poster — a see-through view of the 1650mAh battery and a 45-minute full charge", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 1137 },
       },
       {
-        id: "multi-resistance-pod",
-        title: "Multi-resistance cartridge platform",
-        description: "One top-fill pod shape accepts several coil resistances, so switching draw style doesn't mean switching pods entirely.",
+        id: "tech",
+        title: "Multi-core electrodes",
+        description: "With VOOPOO's iCOSM CODE 2.0 in the cartridge, VOOPOO says the taste holds from the first draw to the last, with freebase or nic salts.",
+        subline: "Positive, negative, positive pins in the pod seat — VOOPOO calls it an industry first.",
+        image: { src: "/assets/products/argus-g4/story-tech.webp", alt: "VOOPOO's ARGUS G4 poster — multi-core electrode tech, iCOSM CODE 2.0 and a 35W maximum", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 942 },
+      },
+      {
+        id: "design",
+        title: "A full-metal body",
+        description: "Some colours get a Zircon Sand finish, which VOOPOO says it is using for the first time.",
+        subline: "Two builds: aluminium alloy, or zinc alloy with leather.",
+        image: { src: "/assets/products/argus-g4/story-design.webp", alt: "VOOPOO's ARGUS G4 poster — minimal style in eight colours, the screen and the full-metal body", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 1575 },
+      },
+      {
+        id: "menu",
+        title: "One button, several settings",
+        description: "It's the same button you press to switch resistance, so there's only one to remember.",
+        subline: "A count of presses opens each setting.",
+        image: { src: "/assets/products/argus-g4/story-menu.webp", alt: "VOOPOO's ARGUS G4 poster — one button for several functions: power off, theme, puff clear, lock or unlock", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 650 },
+      },
+      {
+        id: "fill",
+        title: "Fill from the top, set the airflow",
+        description: "Close the slider for a tight MTL draw with the 1.0Ω, leave it half open for a balanced MTL, or open it all the way for an airy RDL with the 0.4Ω.",
+        subline: "Refill without taking the pod out.",
+        image: { src: "/assets/products/argus-g4/story-fill.webp", alt: "VOOPOO's ARGUS G4 poster — top filling and the stepless airflow slider", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 623 },
+      },
+      {
+        id: "pods",
+        title: "The whole ARGUS pod family fits",
+        description: "The Multi-Ohm cartridge in the box is clear, shatter-resistant PCTG.",
+        subline: "ARGUS pods you already own carry over.",
+        image: { src: "/assets/products/argus-g4/story-pods.webp", alt: "VOOPOO's ARGUS G4 poster — ARGUS pod family full compatibility, 3.5mL and 2mL cartridges", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 1600, height: 900 },
       },
     ],
-    compatibility: [
-      { type: "pod", label: "ARGUS top-fill cartridge platform", note: "0.4–3.0Ω resistance range." },
-      usbC2A,
-    ],
+    compatibility: [{ type: "pod", label: "ARGUS Multi-Ohm Cartridge", note: "Two in the kit." }, usbC2A],
     whoIsThisFor: [
-      "Vapers who want a status screen with full battery/resistance/puff visibility in a compact pod kit.",
-      "Anyone prioritizing fast charging and multi-day battery life over maximum wattage headroom.",
-      "Users moving from a screen-free device who want more feedback without a full box mod.",
+      "Vapers who move between a tight MTL and an airy RDL and want it from one cartridge.",
+      "Anyone who wants to read and change settings on a screen without moving up to a box mod.",
     ],
+    // Batch 2g: the pods question left (the pods block answers it from VOOPOO's own list); the battery answer re-read from VOOPOO.
     faqs: [
       {
         id: "argus-g4-life",
         question: "How many days does the battery last?",
         answer:
-          "VOOPOO states roughly five days under normal use; actual runtime depends heavily on wattage, screen use, and how often it's fired.",
-      },
-      {
-        id: "argus-g4-pods",
-        question: "Can I use different resistance pods on the same device?",
-        answer:
-          "Yes — the ARGUS cartridge platform spans a 0.4–3.0Ω resistance range within the same top-fill pod shape.",
+          "VOOPOO says up to five days of normal use on one charge; how long it really lasts depends on the wattage you set and how often you vape.",
       },
     ],
     relatedProductSlugs: ["argus-g4-mini", "argus-p3", "vinci-s"],
-    sourceUrls: ["https://www.voopoo.com/argus-series/argus-g4", "https://shop.voopoo.com/products/argus-g4"],
+    sourceUrls: ["https://www.voopoo.com/argus-series/argus-g4", G4_PAGE],
   },
   {
     id: "argus-g4-mini",
