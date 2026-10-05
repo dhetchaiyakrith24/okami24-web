@@ -162,6 +162,8 @@ export const relxProducts: Product[] = [
     storyDetails: true,
     storyLayout: "stage",
     storyCover: { src: "/assets/products/relx-creator/story-cover.webp", alt: "RELX's Creator Pro one-pager — ice in every block, the device with a Creator pod, spec strip", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 2604, height: 977 },
+    // Phones: RELX's A4 portrait version of the same one-pager — the wide one's tile text is unreadable at 390 (checker #281).
+    storyCoverMobile: { src: "/assets/products/relx-creator/story-cover-mobile.webp", alt: "RELX's Creator Pro one-pager, portrait — ice in every block, the device with a Creator pod, spec strip", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1600, height: 2263 },
     specifications: [
       { key: "format", label: "Format", value: "Device only — prefilled pods sold separately", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
       { key: "battery", label: "Battery", value: "800mAh rechargeable, USB-C", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
@@ -189,8 +191,8 @@ export const relxProducts: Product[] = [
       {
         id: "airflow",
         title: "Set your airflow",
-        description: "If you like a loose, easy draw, open it up; if you like it tighter, close it down. Leave it wherever feels comfortable to you.",
-        subline: "RELX made the airflow adjustable across its full range, from wide open to its tightest.",
+        description: "Open it up for a light, easy draw, or narrow it for a tighter one, and leave it where it feels right.",
+        subline: "RELX lets you set the airflow anywhere from fully open to its tightest.",
         image: { src: "/assets/products/relx-creator/story-airflow.webp", alt: "RELX's Creator Pro picture — engineering and airflow, full-range adjustable airflow at the base", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
       },
     ],
