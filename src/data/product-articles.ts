@@ -1627,6 +1627,60 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 4e (06/10): from JOIWAY's own F4 TWINS posters; Thai = thai-copy 06/10.
+  "joiway-f4": {
+    th: {
+      lede: "ด้านล่างไล่ดู F4 TWINS ทีละส่วน จากโปสเตอร์ของ JOIWAY เอง",
+      sections: [
+        {
+          heading: "สูบได้กี่พัฟ",
+          paragraphs: [
+            "โปสเตอร์หน้าแรกของ JOIWAY ระบุไว้ที่ 20,000 พัฟต่อเครื่อง แบ่งเป็นฝั่งละ 10,000 พัฟ"
+          ]
+        },
+        {
+          heading: "ความเข้มข้นของนิโคตินเท่าไหร่",
+          paragraphs: [
+            "เรื่องนี้ JOIWAY ไม่ได้ระบุไว้บนโปสเตอร์ เราจึงไม่ใส่ตัวเลขขึ้นมาเอง ถ้าอยากรู้ว่าตัวที่ร้านมีเป็นแบบไหน ทักมาถามทางไลน์ @okm24 ได้เลย"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "Below, the F4 TWINS one part at a time, from JOIWAY's own posters.",
+      sections: [
+        {
+          heading: "How many puffs?",
+          paragraphs: [
+            "JOIWAY's cover poster gives 20,000 puffs for the device: 10,000 on each side."
+          ]
+        },
+        {
+          heading: "How strong is the nicotine?",
+          paragraphs: [
+            "JOIWAY's F4 posters don't state a nicotine strength, so we don't print one. Ask on LINE @okm24 for the version we stock."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "下面根据 JOIWAY 自己的海报，逐项来看 F4 TWINS。",
+      sections: [
+        {
+          heading: "能抽多少口？",
+          paragraphs: [
+            "JOIWAY 的封面海报写的是整机 20,000 口：每边 10,000 口。"
+          ]
+        },
+        {
+          heading: "尼古丁浓度是多少？",
+          paragraphs: [
+            "JOIWAY 的 F4 海报没有写尼古丁浓度，所以我们这里不写。我们店里的版本可以在 LINE @okm24 询问。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
