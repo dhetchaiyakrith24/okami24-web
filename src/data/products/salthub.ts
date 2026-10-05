@@ -866,18 +866,36 @@ export const salthubProducts: Product[] = [
         sourceUrl: "https://www.salthub.com/",
       },
     ],
-    // Real flavor lineup — the 2 currently-active Shipnity children for this exact cartridge
-    // (Pod-85 "หัวพอต Marbo Zero", the pre-rebrand name for this same product — see
-    // active-catalog-to-product-master.ts's own exactLegacyMatch note). Only 2 confirmed;
-    // salthub.com's own site has no dedicated flavor-gallery page for this cartridge to expand
-    // the list further (unlike M Bar/M Switch) — `availability: "unknown"`, same convention as
-    // every other Legacy SALTHUB product.
+    // Batch 3d (05/10): every flavour SALTHUB names (catalog completeness rule) — the 21 packs of its home slider "FLAVORS —
+    // ZERO PRO" + Strawberry (the home card's pod label); _incoming/sitewide-template/3/facts-zero-cartridge.md. The shop's own
+    // Shipnity children (Pod-85) are Apple Aloe + Fruit Tea. Swatch = the mean of the saturated pixels of SALTHUB's pack art (3d/names-and-swatches.js).
+    // No photos yet (SALTHUB's packs are busy posters) — swatch tiles. `availability: "unknown"` as every Legacy SALTHUB product.
     flavorVariants: [
-      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown" },
-      { id: "fruit-tea", name: "Fruit Tea", swatchHex: "#c9a24b", availability: "unknown" },
+      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7ac465", availability: "unknown" },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#3b4fa0", availability: "unknown" },
+      { id: "cigar", name: "Cigar", swatchHex: "#905e36", availability: "unknown" },
+      { id: "cola", name: "Cola", swatchHex: "#7e4d2f", availability: "unknown" },
+      { id: "fruit-tea", name: "Fruit Tea", swatchHex: "#b57c28", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#a064a9", availability: "unknown" },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#6dab74", availability: "unknown" },
+      { id: "grapefruit", name: "Grapefruit", swatchHex: "#cd7035", availability: "unknown" },
+      { id: "honey-yuzu", name: "Honey Yuzu", swatchHex: "#cd9d1f", availability: "unknown" },
+      { id: "ice-sparkling", name: "Ice Sparkling", swatchHex: "#4dc3d6", availability: "unknown" },
+      { id: "lemonade", name: "Lemonade", swatchHex: "#c9d249", availability: "unknown" },
+      { id: "lychee", name: "Lychee", swatchHex: "#cb4e61", availability: "unknown" },
+      { id: "mango", name: "Mango", swatchHex: "#d68b1c", availability: "unknown" },
+      { id: "mint", name: "Mint", swatchHex: "#67bc7c", availability: "unknown" },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#8b4791", availability: "unknown" },
+      { id: "oolong-tea", name: "Oolong Tea", swatchHex: "#be9250", availability: "unknown" },
+      { id: "peach", name: "Peach", swatchHex: "#d46c79", availability: "unknown" },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#ba3a34", availability: "unknown" },
+      { id: "pineapple", name: "Pineapple", swatchHex: "#c3af38", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#c9405f", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
+      { id: "yakult", name: "Yakult", swatchHex: "#de6569", availability: "unknown" },
     ],
     specifications: [
-      { key: "capacity", label: "Capacity", value: "2.2mL", sourceStatus: "verified" },
+      { key: "capacity", label: "Capacity", value: "2.2mL", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
       { key: "compat", label: "Compatible devices", value: "Zero Pro, Zero Nano", sourceStatus: "verified" },
     ],
     features: [],
