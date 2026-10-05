@@ -136,7 +136,7 @@ export const joiwayProducts: Product[] = [
       {
         id: "lights",
         title: "Colourful lights",
-        description: "In JOIWAY's poster the glow comes up around the tank, which gives the device a splash of colour as you vape.",
+        description: "In the picture the glow comes up around the tank, which gives the device a splash of colour as you vape.",
         subline: "JOIWAY says the lights flash while it's in use.",
         image: { src: "/assets/products/joiway-f3/story-lights.webp", alt: "JOIWAY's F3 poster — colourful lights flash while you vape", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 817 },
       },

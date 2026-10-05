@@ -1469,9 +1469,6 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         en: "Open it for a looser draw, close it down for a tighter one.",
         zh: "开大吸感更松，关小吸感更紧。",
       },
-      points: [
-        { text: { th: "ปรับช่องลมได้", en: "Adjustable airflow", zh: "进气可调" }, specKey: "airflow" },
-      ],
     },
     "charging": {
       title: { th: "ชาร์จแบตได้", en: "Charge it when it runs low", zh: "没电可以再充" },
@@ -1510,9 +1507,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ไฟหลากสี", en: "Colourful lights", zh: "多彩灯光" },
       subline: { th: "JOIWAY ระบุว่าไฟจะกะพริบระหว่างใช้งาน", en: "JOIWAY says the lights flash while it's in use.", zh: "JOIWAY 表示使用时灯会闪烁。" },
       body: {
-        th: "ในโปสเตอร์ของ JOIWAY แสงเรืองขึ้นรอบถังน้ำยา ทำให้เครื่องดูมีสีสันขึ้นเวลาสูบ",
-        en: "In JOIWAY's poster the glow comes up around the tank, which gives the device a splash of colour as you vape.",
-        zh: "在 JOIWAY 的海报里，光从油仓一圈透出来，抽的时候机身更有色彩。",
+        th: "ในภาพ แสงเรืองขึ้นรอบถังน้ำยา ทำให้เครื่องดูมีสีสันขึ้นเวลาสูบ",
+        en: "In the picture the glow comes up around the tank, which gives the device a splash of colour as you vape.",
+        zh: "图中光从油仓一圈透出来，抽的时候机身更有色彩。",
       },
     },
   },
