@@ -11,9 +11,10 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — night 05→06/10 [ตรวจแล้ว — gh + curl]: #271 (2g ARGUS G4) · #273 (3a Zero
-  Pro) · #274 (3b M Switch Kit) · #275 (3e M Bar 15K data) · #277 (3d Zero Cartridge 22 flavours) · #278 c156acb (4a JOIWAY F3) —
-  all BIG, checker PASS, deploy OK. Night state + morning report: `_incoming/sitewide-template/NIGHT-STATE.md` · `REPORT-0610.md`.
+1 main: `git fetch && git log -1 --oneline origin/main` — night 05→06/10 [ตรวจแล้ว — gh + curl]: #271 2g ARGUS G4 · #273 3a Zero Pro ·
+  #274 3b M Switch Kit · #275 3e M Bar 15K data · #277 3d Zero Cartridge · #278 4a JOIWAY F3 · #280 4c RELX Smash Go · #281 4d RELX
+  Creator (+ `storyCoverMobile`) · #282 4d-2 Creator White/Green/Yellow · #283 5a WOTOFO nexBAR 18K · #284 6 IQOS images — all BIG,
+  checker PASS, deploy OK. Night state + morning report: `_incoming/sitewide-template/NIGHT-STATE.md` · `REPORT-0610.md`.
 2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Material not in git: `_incoming/sitewide-template/2/` (VOOPOO, per batch) · `3/` (SALTHUB). Kits (never merge): `kit-1b` (+ scope.md) ·
   `kit-1c` — `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d + 2x =
   local only — push a kit branch before a cloud chat needs it.
@@ -24,22 +25,18 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   2 VOOPOO (below) · 3 SALTHUB (+ zero-*, m-switch-pod,
   m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
   asset-refs sweep of the 246 candidates, edge defects).
-  BATCH 2 VOOPOO — 2a #248 · 2b #251 · 2c #253 = DRAG 6 · 2d #255 = DRAG S3 + DRAG X3 · 2d-fix #259 ·
-  2e #262 = ARGUS G4 mini + G3 mini · 2f #264 = ARGUS P3 + VMATE i3 story pages · 2f-img #267 + #268 = P3 Green Leather +
-  two-group lineups, ARGUS G4 card-v2 (owner: "การ์ดเล็กไป"), VMATE i3 all 11 colours · 2g #271 = ARGUS G4 story page (7 VOOPOO
-  panels, Multi-Ohm 0.7 / flip 1.0 / double press 0.4Ω, `2/2g/`). BATCH 2 DONE except the owner-deferred image work (item 5).
-  BATCH 3 SALTHUB (`_incoming/sitewide-template/3/`: inventory.md, facts-<slug>.md, posters/, STATE.md) — 3a #273 Zero Pro (banner as
-    block 1: 1920-px file too narrow for the cover · Black re-cut from SALTHUB colour poster 4 · lineups 1/2) · 3b #274 M Switch Kit
-    split → stage (no cover, 5 blocks) · 3e #275 M Bar 15K plain data errors (ceramic coil, 600mAh, airflow, Black Berry swatch) ·
-    3c M Bar 10K stage = PREPARED in `3/3c/`, NOT built: it drops 4 owner-approved Thai lines (head copy uses those facts twice)
-    → waits for the owner (13.3 #5) · 3d #277 Zero Cartridge 2 → 22 flavours (swatch tiles; photos = proposed job) · Zero Nano,
-    M Switch Pod, M Bar 9K: no maker material to add. Owner question set = `REPORT-0610.md` §4.
-  BATCH 4 (`_incoming/sitewide-template/4/inventory.md`): 4a #278 JOIWAY F3 · NEXT 4c Smash Go · 4b TFIT / 4d Creator / 4e F4 wait for
-    the owner (REPORT-0610 §4).
+  BATCH 2 VOOPOO — DONE (#248 #251 #253 #255 #259 #262 #264 #267 #268 #271; scripts `2/`) except the owner-deferred image work (item 5).
+  Done: 3 SALTHUB #273 #274 #275 #277 (`3/STATE.md`) · 4 #278 #280 #281 #282 (`4/inventory.md`) · 5a #283 (`5/inventory.md`) ·
+    6 #284 IQOS images (PM pages = images only, 03/10). No maker material: Zero Nano · M Switch Pod · M Bar 9K · pod-180 · INFY · Muro ×3.
+  HELD for the owner (questions = `REPORT-0610.md` §4): 3c M Bar 10K stage prepared in `3/3c/` (drops 4 approved Thai lines, 13.3 #5)
+    · M Bar 15K category (SALTHUB: reusable + cartridge) + story · Zero Cartridge per-flavour photos (21 busy posters → cut-outs,
+    proposed) · 4b TFIT M Power (hidden; unhide = new sitemap page + footer, พ7) · 4e F4 TWINS 20K vs our NOS 15K/30K · Smash Go LOW
+    874 · Creator all-colours DRAFT `4/4d2/relx/relx-creator-page.png` · MOOOD (maker site needs a real browser).
+  BATCH 7 prep: `7/table.md` (product × part, `npx tsx _incoming/sitewide-template/7/table.ts`). Close waits on the owner's answers.
   TEMPORARY RULING [ตรวจแล้ว — owner in chat 05/10] (13.6 — ends when the owner says so on 06/10 morning; delete it then): in THIS
   chat only, batch after batch in order — no handoff, no chat move (owner: "ไม่ต้องจบก้อนย้ายแชท" — overrides central §12 item 29
   for this chat; auto-compaction carries the context), no stopping to ask (13.3 hard stops still apply) — report all at once.
-  Worked examples (scripts): `_incoming/sitewide-template/2/2g` · `3/3a` · `4/4a`. Traps = LESSONS 24 + พ18. One build per batch.
+  Worked examples (scripts): `_incoming/sitewide-template/4/4c` · `4/4d` · `5/5a`. Traps = LESSONS 24 + พ18 + พ20–พ23. One build per batch.
   Gates per batch: `npm run verify:catalog` (fresh worktree: `npx next typegen` first) · page-text-length --facts · wordbreak-scan → reword
   · checker · scripts as .js files (Thai/backslash/backticks never through `node -e` or a heredoc).
   Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD.
