@@ -1582,9 +1582,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "จอบอกสถานะของเครื่อง", en: "What the screen tells you", zh: "屏幕告诉你什么" },
       subline: { th: "WOTOFO ให้จอ LED บอกทั้งแบต น้ำยาที่เหลือ และโหมดที่ใช้อยู่", en: "WOTOFO's LED screen shows the battery, the e-liquid left and the mode you're in.", zh: "WOTOFO 的 LED 屏幕会显示电量、剩余烟油和当前模式。" },
       body: {
-        th: "แบตหรือน้ำยาใกล้หมดเมื่อไหร่ ก็เห็นจากจอได้ก่อน ไม่ต้องรอให้ดูดไม่ขึ้นแล้วค่อยรู้ตัว",
-        en: "You can see when the battery or the e-liquid is getting low, instead of finding out mid-puff.",
-        zh: "电量或烟油快用完时一眼就能看到，不用等到抽不出来才发现。",
+        th: "แบตหรือน้ำยาใกล้หมดเมื่อไหร่ จอก็บอกให้รู้ก่อน",
+        en: "When the battery or the e-liquid is getting low, the screen tells you first.",
+        zh: "电量或烟油快用完时，屏幕会先告诉你。",
       },
       points: [
         { text: { th: "NORM 16 วัตต์ / TURBO 19 วัตต์", en: "NORM 16W / TURBO 19W", zh: "NORM 16W / TURBO 19W" }, specKey: "modes" },

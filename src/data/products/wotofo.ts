@@ -113,7 +113,7 @@ export const wotofoProducts: Product[] = [
       {
         id: "screen",
         title: "What the screen tells you",
-        description: "You can see when the battery or the e-liquid is getting low, instead of finding out mid-puff.",
+        description: "When the battery or the e-liquid is getting low, the screen tells you first.",
         subline: "WOTOFO's LED screen shows the battery, the e-liquid left and the mode you're in.",
         image: { src: "/assets/products/wotofo-nexbar-18k/story-screen.webp", alt: "WOTOFO's nexBAR 18K picture — clear display, the LED screen up close", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
       },
