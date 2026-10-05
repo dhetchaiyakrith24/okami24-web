@@ -63,6 +63,11 @@ export const relxProducts: Product[] = [
       { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#e07a6b", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-peach-strawberry.webp", alt: "RELX Smash Go 12K, Peach Strawberry" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
       { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/relx-smash-go-12k/variant-watermelon.webp", alt: "RELX Smash Go 12K, Watermelon" }, sourceUrl: "https://www.relxnow.com/products/relx-smash-go-12k" },
     ],
+    // Site-wide template round batch 4c (06/10): the G5 template — RELX's own pictures, one per block (blocks.js in
+    // _incoming/sitewide-template/4/4c/); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Cover = RELX's KV.
+    storyDetails: true,
+    storyLayout: "stage",
+    storyCover: { src: "/assets/products/relx-smash-go-12k/story-cover.webp", alt: "RELX's Smash Go 12K key visual — supreme taste, five pens", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 2512, height: 1134 },
     specifications: [
       // Data round (2026-09-24, real browser): relxnow.com "Specifications" — Battery 400mAh · Size 20ml · Charging Port
       // Type-C · Puffs 12000 · Nicotine 3% / 5% · "Upgraded Mega MESH". It states no resistance, so "1.0Ω" is dropped;
@@ -75,13 +80,24 @@ export const relxProducts: Product[] = [
     ],
     features: [
       {
-        id: "official-lineup",
-        title: "RELX's own official Smash Go line",
-        description: "Unlike several disposables in this category, Smash Go 12K's exact identity, specs, and flavor lineup are confirmed directly on RELX's own global site — not inferred from a retailer.",
+        id: "inside",
+        title: "What's inside",
+        description: "Up to 12,000 puffs, on a 400mAh battery you can recharge.",
+        subline: "RELX shows its coil up close.",
+        image: { src: "/assets/products/relx-smash-go-12k/story-inside.webp", alt: "RELX's Smash Go 12K picture — the coil, up close", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 1224, height: 1224 },
+      },
+      {
+        id: "pocket",
+        title: "Comfortable to vape, easy to carry",
+        description: "It's pocket-sized, so it comes along wherever you go.",
+        subline: "RELX designed the mouthpiece to be comfortable on the lips.",
+        image: { src: "/assets/products/relx-smash-go-12k/story-pocket.webp", alt: "RELX's Smash Go 12K picture — comfortable mouthpiece design, pocket size", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 1224, height: 1224 },
       },
     ],
     compatibility: [typeC],
-    whoIsThisFor: ["Vapers who want a disposable from a large, internationally-recognized brand with a fully documented official flavor range."],
+    whoIsThisFor: [
+      "You want a disposable that's easy to carry and slips into a pocket for the whole day.",
+    ],
     faqs: [],
     relatedProductSlugs: ["relx-creator"],
     sourceUrls: ["https://www.relxnow.com/products/relx-smash-go-12k"],
