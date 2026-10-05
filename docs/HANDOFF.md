@@ -11,8 +11,9 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = d8f8e97 (#290) [ตรวจแล้ว — git]. 06/10 pm merged, checker PASS + deploy OK +
-  live curl [ตรวจแล้ว]: #288 M Bar 10K stage · #289 JOIWAY F4 = TWINS (live ~2.5 min after the deploy run, curl loop) · #290 RELX Creator "ทั้งหมด" image.
+1 main: `git fetch && git log -1 --oneline origin/main` = 7166bdf (#292) [ตรวจแล้ว — git]. 06/10 pm merged, checker PASS + deploy OK +
+  live curl [ตรวจแล้ว]: #288 M Bar 10K stage · #289 JOIWAY F4 = TWINS (live ~2.5 min after the deploy run, curl loop) · #290 RELX Creator "ทั้งหมด" image · #292
+  owner answers (cut "maker doesn't state X" sections, F4 "2 โหมด" + TWINS review video; whole-sitemap visible-text = 3 pages).
 2 ahead of main [ตรวจแล้ว — git]: only this docs PR (§16 + LESSONS พ21/พ24). No other PR open. Material not in git:
   `_incoming/sitewide-template/` (3/3c · 4/4e · 4/4f = scripts, facts, shots, logs per batch). Kits (never merge): `kit-1b` · `kit-1c` (`git fetch origin kit-1b &&
   git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template`) — later batches local only; push a kit for cloud.
@@ -52,12 +53,6 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (13.7 big (2), own PR, + BSOT §21).
 4 waiting on owner:
   (06/10 pm) look on live: M Bar 10K stage page · JOIWAY F4 TWINS page · RELX Creator "ทั้งหมด" image — reversible by revert.
-  (06/10 pm) the article section "nicotine — the maker's posters don't state it, so we don't print a number, ask LINE" (M Bar 10K,
-       JOIWAY F4, and the same pattern on earlier batches) vs §18 "never explain the absence" — Friday's recommendation: keep only the
-       LINE pointer, drop the explanation (one small PR over all such pages).
-  (06/10 pm) JOIWAY F4: the owner exception "2 โหมด 2 รส" is on no TWINS poster (it came from the shop's NOS review) — keep or drop
-       "2 โหมด" from the head copy? Recommendation: drop. The review video on the page is titled "F4 NOS" — keep (shop's own channel).
-  (06/10 pm) new Thai words (not locked): ดีไซน์เรียบ (block title, already used elsewhere) · มองเข้าไปข้างใน · ภาพโปร่ง · คู่กลิ่น.
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b) ·
   ARGUS G4 mini page (2e) · ARGUS P3 + VMATE i3 story pages (2f #264) · ARGUS G4 page (2g #271: battery block names VOOPOO's two
   figures — poster 10% vs ARGUS G3, page 22% vs previous gen; safety poster not used; 7 blocks → chip bar 6+1 at 1440).
@@ -72,6 +67,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        RELX Creator: article "RELX Creator Pod" (RELX) vs fits-with "RELX Creator 20K pod" (shop) — link the names?
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
 5 open / dated:
+  - (06/10 pm, checker #292) the same "maker doesn't state X, so no figure" pattern is still in the GUIDES (not product pages):
+    guides.ts ~155 en, ~501/509/556, ~611/637, ~801/817, ~869/870/880/894, ~1044 + guides-copy.ts ~307/359/446 → re-word or cut in
+    the guides round (owner rule §18 06/10 pm); F4 now LOW 948 (accepted, never pad).
   - M Bar 10K (#288): facts still over 2 from the untouched head copy + anatomy sheet + fits-with card (all down from live) —
     10,000 ×3 · ชาร์จ ×4 · RGB ×3 · 3 โหมด ×4 (checker #288 agreed) → SEO round (head) / an anatomy-sheet touch.
   - JOIWAY F4 (#289, checker notes): "สองถัง" said 6+ times · article "สูบได้กี่พัฟ" restates poster 01 — next F4 touch.
@@ -212,8 +210,7 @@ fact or the desktop-style option count, never placeholder text · spec-table hea
 **Product facts (data rounds 24–25/09, 30/09):** a per-row source link is required for rows touched in a round + rows of
 the 7 products the live 10B guides link to; older verified rows are grandfathered · every unverified number is hidden
 from render · when a fact is missing, state the fact or say nothing — never explain the absence · product facts come
-from the manufacturer only, everywhere on the site (THAI_STYLE) — named exceptions only: Joiway F4 "2 โหมด 2 รส" (the
-shop's own 30-day YouTube review) · INFY 20K 20 mL + adjustable airflow (owner's ruling as source) · RELX Creator pod fit
+from the manufacturer only, everywhere on the site (THAI_STYLE) — named exceptions only: INFY 20K 20 mL + adjustable airflow (owner's ruling as source) · RELX Creator pod fit
 Creator 20K + Muro Connector ("ร้านยืนยัน") · Esko Bar Switch 20K shows all 20 of the maker's flavours · "magnetic /
 แม่เหล็ก" only where the maker's own page, poster or manual says so (VOOPOO's unreachable site = the one open question).
 
@@ -239,4 +236,8 @@ exceptions when the maker has nothing more to say (never pad) · RELX's printed 
 all-colours image = publish the draft · pod-180 stays brandless · MOOOD = check its site in a real browser, then fix data / brand ·
 INFY 20K + Muro ×3 (no maker material) = skipped this round · IQOS colour completeness = its own round · WOTOFO's 11 flavours without
 photos + every other option without a photo + white-box coils = a new "option photos" round (Higgsfield, first set to the owner).
+**Answered 06/10 pm (owner, chat):** article sections that say "the maker doesn't state X, so we don't print it — ask LINE" read as
+"we don't know" = unprofessional → cut (M Bar 10K + JOIWAY F4 nicotine, M Switch Kit battery); never write that pattern again ·
+JOIWAY F4: "2 โหมด" belongs to the NOS edition → cut; the named exception "2 โหมด 2 รส" is gone · F4 review video = the shop's own
+F4 TWINS review (l-8sAPwOUZw, OKM YARZ), not the NOS one · words ดีไซน์เรียบ · มองเข้าไปข้างใน · ภาพโปร่ง · คู่กลิ่น = approved (THAI_STYLE).
 Not answered (no recommendation was given): the new words in Q8 · Q11 "RELX Creator Pod" vs "RELX Creator 20K" naming.

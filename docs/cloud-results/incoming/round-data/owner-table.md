@@ -89,7 +89,7 @@ reworded → owner decides at merge (via Cowork). Everything else = a cut or a m
 | joiway-f3 en | …the single-flavor model. We could not find the F3 specifications on Joiway's own site, so this page lists no figures yet. OKami24's own YouTube review covers the newer dual-flavor F4 — see that page. | …the single-flavor model. OKami24's own YouTube review covers the newer dual-flavor F4 — see that page. |
 | joiway-f4 th ★ | พอตใช้แล้วทิ้ง 2 โหมด 2 รสในเครื่องเดียว เรายังหาสเปก… ส่วนตัวนี้แหละที่ OKami24 รีวิวใช้จริง 30 วันบน YouTube | พอตใช้แล้วทิ้งจาก Joiway 2 โหมด 2 รสในเครื่องเดียว OKami24 รีวิวใช้จริง 30 วันไว้บน YouTube |
 | joiway-f4 en | A dual-flavor, dual-mode disposable (rotate the mouthpiece to switch flavors). We could not find… | A dual-flavor, dual-mode disposable from Joiway. This is the exact model OKami24's own YouTube channel reviewed… ("rotate the mouthpiece" cut — on no maker page, only in the held-back row) |
-| "2 โหมด 2 รส" (F4) | — | kept by owner exception (answer 3); clip https://www.youtube.com/watch?v=oHR-MAacTz0 recorded in sources-verified.md |
+| "2 โหมด 2 รส" (F4) | — | ~~kept by owner exception (answer 3)~~ **superseded 06/10 pm (owner): cut — it was the NOS edition; the page clip is now the F4 TWINS review l-8sAPwOUZw (HANDOFF §18)** |
 
 ## D. "magnetic / ยึดด้วยแม่เหล็ก / 磁吸" — counted with `grep -rniE "magnet|แม่เหล็ก|磁" src` (comments excluded): 20 spots before
 | Model | Spots | Maker check | Result |
