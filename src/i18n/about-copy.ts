@@ -42,15 +42,11 @@ export interface AboutCopy {
   whoTitle: string;
   who: string;
   selectionTitle: string;
-  /** Split around two things the component renders, not the copy: the live brand count, and the
-   *  two coloured badge words. `between` carries its own spaces — zh sets no space around 或. */
+  /** Split around the live brand count the component renders. Owner 05/10: the spec sentence = the /faq answer (maker
+   *  material "เป็นหลัก", every value's source checked) — the verified/unverified badge words went with the badges. */
   selection: {
     beforeCount: string;
     afterCount: string;
-    verified: string;
-    between: string;
-    unverified: string;
-    tail: string;
   };
   afterSaleTitle: string;
   afterSale: string;
@@ -79,11 +75,7 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     selection: {
       beforeCount: "เว็บนี้รวมพอตซิสเต็ม พอตคิท พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS จาก ",
       afterCount:
-        " แบรนด์ที่เราคัดมา เช่น UWELL VOOPOO SALTHUB มีหน้าเปรียบเทียบและตัวช่วยเลือกสินค้าไว้ช่วยหารุ่นที่เหมาะกับคุณ สเปกอ้างอิงจากเว็บทางการของแบรนด์เป็นหลัก รุ่นไหนเข้าหน้าทางการไม่ได้ ก็เช็คไขว้กับร้านค้าและรีวิวแทน ทุกค่าติดป้ายว่า ",
-      verified: "ยืนยันแล้ว",
-      between: " หรือ ",
-      unverified: "ยังไม่ยืนยัน",
-      tail: " กำกับไว้ ค่าที่ยืนยันไม่ได้เราบอกตรง ๆ ไม่เดา",
+        " แบรนด์ที่เราคัดมา เช่น UWELL VOOPOO SALTHUB มีหน้าเปรียบเทียบและตัวช่วยเลือกสินค้าไว้ช่วยหารุ่นที่เหมาะกับคุณ สเปกบนหน้าสินค้ามาจากข้อมูลของผู้ผลิตเป็นหลัก ทั้งเว็บทางการ โปสเตอร์ และคู่มือ ทุกค่าเช็คที่มาก่อนขึ้นหน้าเว็บ",
     },
     afterSaleTitle: "บริการหลังการขาย",
     afterSale:
@@ -112,11 +104,7 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     selection: {
       beforeCount: "This site brings together pod systems, pod kits, disposables, replacement pods, coils and IQOS from ",
       afterCount:
-        " brands we’ve picked — UWELL, VOOPOO and SALTHUB among them. A compare page and the Finder help you land on the model that fits you. Specs come mainly from the brands’ own official sites; where a model has no official page, we cross-check retailers and reviews instead. Every value is tagged ",
-      verified: "verified",
-      between: " or ",
-      unverified: "unverified",
-      tail: ". Specs we can’t confirm, we tell you — no guessing.",
+        " brands we’ve picked — UWELL, VOOPOO and SALTHUB among them. A compare page and the Finder help you land on the model that fits you. The specs on a product page come mainly from the maker’s own material — its official site, posters and manuals — and every value’s source is checked before it goes on the page.",
     },
     afterSaleTitle: "After-sales service",
     afterSale:
@@ -146,11 +134,7 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     selection: {
       beforeCount: "本站汇集了来自我们精选的 ",
       afterCount:
-        " 个品牌的烟弹系统、烟弹套装、一次性烟具、更换烟弹、芯和 IQOS，例如 UWELL、VOOPOO、SALTHUB。站内有对比页和选购助手，帮你找到适合自己的型号。参数主要以品牌官网为准；官网查不到的型号，就与零售商和评测交叉核对。每一项参数都标注了",
-      verified: "已验证",
-      between: "或",
-      unverified: "未核实",
-      tail: "。无法确认的参数，我们直说，不乱猜。",
+        " 个品牌的烟弹系统、烟弹套装、一次性烟具、更换烟弹、芯和 IQOS，例如 UWELL、VOOPOO、SALTHUB。站内有对比页和选购助手，帮你找到适合自己的型号。产品页上的参数主要来自厂商自己的资料，包括官网、海报和说明书；每一项参数上架前都核对过来源。",
     },
     afterSaleTitle: "售后服务",
     afterSale: "商品如有问题，可在收货后 7 天内申请售后。必须提供开箱视频，没有视频我们无法受理。全部条件见售后政策页面。",

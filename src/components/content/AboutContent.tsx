@@ -52,10 +52,6 @@ export function AboutContent({ brands }: { brands: Brand[] }) {
               {c.selection.beforeCount}
               {brands.length}
               {c.selection.afterCount}
-              <span className="text-verified">{c.selection.verified}</span>
-              {c.selection.between}
-              <span className="text-unverified">{c.selection.unverified}</span>
-              {c.selection.tail}
             </p>
           </section>
 
