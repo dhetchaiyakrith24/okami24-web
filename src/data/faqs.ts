@@ -45,14 +45,9 @@ export const siteFaqs: SiteFAQ[] = [
     category: "devices",
     question: "Where do the product specifications come from?",
     answer:
-      "Specifications are sourced from official brand pages and cross-checked against secondary retailer/review listings where the official page wasn't directly accessible. Every spec is labeled verified or unverified — unverified fields are shown rather than guessed.",
-  },
-  {
-    id: "unverified-meaning",
-    category: "devices",
-    question: "What does an \"unverified\" spec label mean?",
-    answer:
-      "It means that specific figure could not be independently confirmed against an official or reliable source during research. It's shown as a placeholder for completeness rather than omitted, but should not be treated as confirmed.",
+      // Owner 05/10 + HANDOFF §18 06/10 pm / "Product facts": maker sources only, unverified rows hidden — the old answer
+      // (retailer cross-checks, unverified rows shown) and the "unverified-meaning" entry described the retired process.
+      "The specs on a product page come mainly from the maker's own material — its official site, posters and manuals. Every row's source is checked before it goes on the page.",
   },
   {
     id: "open-vs-disposable-faq",

@@ -101,6 +101,12 @@ export function ArticleBody({
               ))}
             </div>
           ))}
+          {section.video && (
+            // Owner 05/10: a shop clip about this section's subject, after its text — the same card as the article's clip.
+            <div className="mt-3">
+              <ProductReviewVideo video={section.video} eyebrow={dict.product.reviewVideoEyebrow} watchOnYoutubeLabel={dict.product.watchOnYoutube} hiddenTitleLabel={dict.product.reviewVideoHiddenTitle} hideTitle={hideThaiClipTitle(locale, section.video.title)} />
+            </div>
+          )}
         </div>
       ))}
       {video && (

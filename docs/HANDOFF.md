@@ -11,50 +11,46 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 2e30f45 (#294) [ตรวจแล้ว — git]. 05/10 (new chat): #294 merged, checker PASS
-  (1 narrow re-check) + deploy OK + live check `_incoming/guides-unstated/live-check.js` LIVE OK [ตรวจแล้ว] = the guides no longer explain
-  a missing maker fact (owner rule §18 06/10 pm, applied site-wide to guides on the owner's go 05/10); verified spec rows written in instead.
-2 ahead of main [ตรวจแล้ว — git]: only this docs PR (§16). No other PR open. Material not in git:
-  `_incoming/sitewide-template/` (3/3c · 4/4e · 4/4f = scripts, facts, shots, logs per batch). Kits (never merge): `kit-1b` · `kit-1c` (`git fetch origin kit-1b &&
-  git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template`) — later batches local only; push a kit for cloud.
+1 main: `git fetch && git log -1 --oneline origin/main` = 627a73c (#299) [ตรวจแล้ว — git]. Merged 05/10, each checker PASS + deploy OK +
+  live check (`_incoming/guides-unstated/live-check.js` LIVE OK) [ตรวจแล้ว]: #294 guides no longer explain a missing maker fact (verified
+  rows written in) · #296 trust bar item 4 = title "เช็คสเปก"/"参数核对" + "สเปกทุกค่า เช็คที่มาก่อนขึ้นหน้าเว็บ" (owner: yes + option 1) and
+  /faq where-specs re-worded, "unverified-meaning" FAQ removed · #297 a shop clip inside the guide section about it (7 guides,
+  `SECTION_CLIPS`; no G5/G4/G4 Mini/G5 Lite/G4 Classic/G3 Pro clip exists) · #299 /about spec sentence = the /faq answer (owner option 1).
+2 ahead of main [ตรวจแล้ว — git]: `git log --oneline origin/main..origin/batch-4g-tfit-m-power` = 095451a (batch (d) TFIT, NOT built, NOT
+  scanned, NOT checked; branched from cf2394b → merge origin/main first: #296/#297 touch other files, only content-dates.json overlaps).
+  No PR open for it yet. Material not in git:
+  `_incoming/sitewide-template/` (scripts, facts, shots, logs per batch). Cloud = push a kit branch (never merge; e.g. `kit-1c`).
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md`. Scope = the round file's 【ขอบเขต】 block; PM pages (coils, IQOS, pod-180) = images only.
   DONE: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB #273 #274 #275 #277 #288 · 4 #278 #280 #281 #282 #289 #290 · 5a #283 · 6 #284 ·
   7 part 1 #286. Product × part table: `_incoming/sitewide-template/7/table.md` (`npx tsx _incoming/sitewide-template/7/table.ts`).
   NEXT (owner 06/10 in §18; tier B, one PR each):
-    (d) 4b TFIT M Power 20K: unhide (`hiddenFromStorefront` in tfit.ts) — facts `_incoming/sitewide-template/4/facts-tfit-m-power-20k.md`
-        (TFIT's own product; 18mL not 17mL). Needs: a card photo cut from TFIT's
-        `posters/tfit-m-power-20k/10-smallpic.jpg` (white background — LESSONS พ23), TFIT's logo `4/logos/tfit-logo.webp`, stage from
-        posters 01 cover + 03/04/06 (+05 or 09), head copy + FAQ doubt talk removed (wrong-fact fix allowed 06/10), spec rows. Flavour
-        photos: none from TFIT → the option-photo round. Unhiding adds TFIT to the footer brand list on EVERY page (LESSONS พ7) =
-        visible-text over the whole sitemap, before = build of main (13.5 #5, LESSONS พ20). Expect BIG (data).
+    (d) TFIT M Power 20K = batch 4g, WRITTEN on branch batch-4g-tfit-m-power 095451a (files: `_incoming/sitewide-template/4/4g/` —
+        copy-base.json · th.json · blocks.js · apply.js (applied — refuses twice)); what the commit holds = its message.
+        tsc/eslint/i18n 16/16/verify:catalog 29/29 passed in a worktree [ตรวจแล้ว]. NEXT: `git switch batch-4g-tfit-m-power && git merge origin/main` → build (test-server) →
+        visible-text over the WHOLE sitemap (footer brand list + /brands/tfit = new page; before = live main, LESSONS พ7/พ20) →
+        page-text-length --facts · wordbreak + lines.js on /products/tfit-m-power-20k + /brands/tfit · poster-stretch · sharpness gate ·
+        gallery-probe · locale-hydration · scan.js → shots 390/1440 → PR (expect BIG: data + a contract test) → checker.
+        Poster 04 prints TFIT's "72 hours" — image only, never in our text; flag it for the owner in the report. Flavour photos → option-photo round.
     (e) M Bar 15K → reusable/pod-system category per SALTHUB (own PR, BIG) + story · wrong head-copy facts fixed now (§18 06/10:
         "cotton mesh / ชาร์จเร็ว / 15 รส"). Facts `_incoming/sitewide-template/3/facts-m-bar-15k.md`.
     (f) MOOOD Monster 14K: open mooodvapes.com/14000puffs/ in a real browser (DNS failed for the researcher); brand site → fix data
         (screenType, flavours, battery) + move it off "Unbranded" (BIG).
     Skipped (owner): INFY 20K + Muro ×3 (no maker material) · pod-180 brandless.
-  Then close the round (skill `round-close`, tag sitewide-template-done). Not this round: Q16 IQOS colour completeness and Q18 "every
-  option gets a photo" (flavour photos Smash Go 10 · F3 30 · F4 16 (swatches are all the placeholder #7ed321) · Zero Cartridge 22 ·
-  WOTOFO 11 · M Bar / M Switch / INFY / Muro / TFIT 10 + the 19 white-box coils) = write a new round file for the owner.
-  Batch pattern (copy the last one): `3/3c` (split → stage) · `4/4e` (data fix + stage + cover) · `4/4f` (lineup image only):
-  facts → copy-base.json → thai-copy → th.json → blocks.js → apply.js → gates.sh → shots → PR → checker. Line reading: `4/4e/lines.js <url>` (every wrapped Thai line) + `4/4e/try.js <url> <json>` (try wordings on the real text
-  node) — LESSONS พ21. Long page shots drop posters on this machine → `4/4e/spots.js` per spot (LESSONS พ24).
+  Then close the round (skill `round-close`, tag sitewide-template-done). Not this round: IQOS colour completeness + "every option gets
+  a photo" (counts: `git show 9284319:docs/HANDOFF.md` §16 item 3) = write a new round file for the owner.
+  Batch pattern: `4/4e` or `4/4g`: facts → copy-base.json → thai-copy → th.json → blocks.js → apply.js → gates.sh → shots → PR → checker.
+  Line reading: `4/4e/lines.js <url>` + `4/4e/try.js <url> <json>` (LESSONS พ21) · shots per spot `--anchor` (พ24).
   Traps LESSONS 24 + พ18 + พ20–พ24 · gates: verify:catalog · page-text-length --facts · wordbreak-scan + every new Thai line read
   at 390/1440 · checker (tree/3412 untouched meanwhile — พ22; Friday slipped once on 06/10, the checker re-verified its commit).
   Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD
   (except the owner-allowed wrong-fact fixes).
-3a IMAGE METHODS (the full list — recolour masters, pair splits, AI upscale + maker pixels, lineup scripts — = `git show d3bc8e2:docs/HANDOFF.md`
-  §16 item 3a; LESSONS 23 · 25): CUT-OUT (lesson พ11): Higgsfield remover → `b-edge/choke.js` · unlike the studio grey → `scripts/flatcut.js`
-  (white/light products: render on dark grey first — พ23) · ALWAYS zoom 4x on dark + magenta (`b-edge/edgezoom.js`), tops included. Then
-  presize + map entries + `npx tsx scripts/process-images.ts --only <slug>` (new file names, lesson พ6) · check every render for
-  MIRRORING · `npx tsx scripts/image-sharpness-gate.ts --base origin/main` before the checker · poster `transparent` only when ≥ 30 % of
-  the file is transparent (พ16) · Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — `balance` first, report the spend.
-  Left for the option-photo round: edge defects (`edge-audit/visual-audit.md`) + coils (`b-coils/README.txt`) · Esko pod-159 LAST
-  (13.7 big (2), own PR, + BSOT §21).
+3a IMAGE METHODS = `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a + LESSONS 23 · 25 · พ6 · พ11 · พ16 · พ23 (cut-out: flatcut / Higgsfield
+  remover + choke · edgezoom 4x on dark + magenta · process-images map + new file names · sharpness gate before the checker). Esko pod-159
+  LAST (13.7 big (2), own PR, + BSOT §21).
 4 waiting on owner:
-  (05/10, checker #294) the trust bar on every page (`dictionaries/th.ts` trust item "เช็คกับเว็บทางการ": "สเปกที่ยืนยันไม่ได้
-       เราบอกตรง ๆ ไม่เดา") is the same "we don't guess" voice — trust.* is Do-not-touch (§17) → owner: re-word it? (Friday: yes, own PR,
-       whole-sitemap visible-text).
+  (05/10) look on live: trust bar "เช็คสเปก" line · /faq · /about spec sentence · guide clips (e.g. /guides/comparing-caliburn-models "G4 vs G4 Pro") —
+       reversible by revert (checker #297: G4 Pro clip in a two-model section; M Bar 9K sweets clip in "แนวอื่น").
   (06/10 pm) look on live: M Bar 10K stage page · JOIWAY F4 TWINS page · RELX Creator "ทั้งหมด" image — reversible by revert.
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b) ·
   ARGUS G4 mini page (2e) · ARGUS P3 + VMATE i3 story pages (2f #264) · ARGUS G4 page (2g #271: battery block names VOOPOO's two
@@ -76,8 +72,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - JOIWAY F4 (#289, checker notes): "สองถัง" said 6+ times · article "สูบได้กี่พัฟ" restates poster 01 — next F4 touch.
   - wordbreak 05/10: «ไฟจะ» on /guides/fixing-no-draw-and-blinking-light@390 (guides = later round) · `vmate-i3/variants/*` +
     `argus-p3/lineup-v2.webp` unused but kept by the #286 sweep (their names appear in src/ — check by hand).
-  - [ตรวจแล้ว — files, checker #272] ARGUS G4 after #271, outside the round: guide argus-g4-vs-caliburn-g5 still says G4 firing + pod capacity "unconfirmed" (now
-    3.5mL; VOOPOO still names no draw/button activation) · technology multi-resistance-cartridges quotes the old pod row "ARGUS
+  - [ตรวจแล้ว — files, checker #272] ARGUS G4 after #271, outside the round (the guide's "unconfirmed" lines = fixed in #294) ·
+    technology multi-resistance-cartridges quotes the old pod row "ARGUS
     top-fill cartridge platform, multiple resistances" · G4 head copy: 0.85 twice (tagline + shortDescription) + the anatomy
     diagram = 3 (SEO round; checker #271 accepted) · English names wrap at a space in the spec table (accepted).
   - DEFERRED by the owner 04/10 + 05/10 (no date; "ไว้ค่อยกลับมาแก้"): images that "still look like graphics" (LESSONS ช9) — DRAG S3 +
@@ -94,7 +90,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - G3 Pro KOKO data comment "color-N.webp 404" is outdated (UWELL has colors/0..7.webp; front/back overlap, so not cut) — fix next touch.
   - story-copy.ts G4 / G4 mini say the U-shaped channel "ช่วยให้ลมเดินดีขึ้น"; UWELL's KOKO poster says it stores condensate — check the
     G4 posters before changing (thai-copy flag 04/10).
-  - `src/data/guides.ts` (which-Caliburn guide) still says G4 Classic specs are unconfirmed — verified in #233; guides = outside round.
+  - (05/10) the same "explain the absence" voice is still on product pages: INFY 20K FAQ "สเปกในหน้านี้มาจากไหน" ("INFY ยังไม่ลงรุ่น
+    20K ในเว็บของตัวเอง…", product-copy-th.ts infy-20k + infy.ts) — owner rule §18 06/10 pm → cut it with the INFY page's next touch.
+  - (05/10) old worktrees from earlier rounds under `_incoming/wt-*` (wt-h · wt-keep · wt-pr · wt-s16 · wt-tpl; `git worktree list`) —
+    housekeeping; a worktree build cannot use a node_modules junction (Turbopack refuses), so build in the main tree only.
   - G4 `firing` row ("draw or button") is sourced from the manuals.plus copy of UWELL's manual, not a UWELL page (thai-copy flag 03/10).
   - DRAG 6 head copy (off-limits → SEO round): shortDescription en "The current DRAG-series flagship" / th "รุ่นเรือธงล่าสุดของสาย
     DRAG" is not VOOPOO's wording, and th "(ถ่าน 2200mAh สองก้อน)" uses the locked word for removable cells + a layer-4 bracket.
