@@ -1567,7 +1567,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
     },
     "airflow": {
       title: { th: "ปรับลมได้เองตามที่ชอบ", en: "Set your airflow", zh: "进气按自己的喜好调" },
-      subline: { th: "RELX ออกแบบให้ปรับช่องลมได้ ตั้งแต่เปิดเต็มที่ไปจนถึงแคบมาก", en: "RELX lets you set the airflow anywhere from fully open to its tightest.", zh: "RELX 的进气可以从全开一直调到最紧。" },
+      subline: { th: "RELX ให้ปรับช่องลมได้ ตั้งแต่เปิดเต็มที่ไปจนถึงแคบมาก", en: "RELX lets you set the airflow anywhere from fully open to its tightest.", zh: "RELX 的进气可以从全开一直调到最紧。" },
       body: {
         th: "ชอบดูดเบา ๆ ก็เปิดไว้กว้าง ชอบลมแน่นก็ปรับให้แคบ ตั้งไว้ตรงที่สูบแล้วสบายได้เลย",
         en: "Open it up for a light, easy draw, or narrow it for a tighter one, and leave it where it feels right.",
