@@ -321,17 +321,10 @@ export const salthubProducts: Product[] = [
         sourceUrl: "https://www.salthub.com/",
       },
     ],
-    // Composed 2026-09-06 from the 15 processed flavour files by scripts/build-lineup-grid.js
-    // (5×3 on a square 1600 canvas — designer direction: the hero frame is square, so the shop's
-    // older single-row strips waste ~74% of it and render each device ~32px wide on a phone).
-    // Reached through the "All" button, not the first image: the owner chose on 2026-09-06 to keep
-    // a single clear flavour as the opening shot, because at 15 flavours the lineup shrinks each
-    // pod to ~43px on a phone — good for "there are many", bad for "I want that one".
-    lineupImage: {
-      src: "/assets/products/m-bar-15k/lineup.webp",
-      alt: "SALTHUB M Bar 15K, the flavours SALTHUB photographed",
-      sourceName: "OKami24 composite (from official Marbo per-flavour photos)",
-    },
+    // 06/10 (owner, after #303: "ทำเลย" to the recommendation): like the M Switch Kit / 9K / 10K the page opens on the card —
+    // the device with a clear cartridge — and the flavours follow by swipe or chip. The OKami24-made 15-flavour lineup behind an
+    // "all" chip went with it (owner 01/10: the made-up lineups go; it also missed Black Berry).
+    openOnCardPhoto: true,
     // Site-wide template round batch 3f (06/10): the G5 template stage — SALTHUB's own 15K posters 08/07/11/09/10, one per block
     // (1920 px, whole, down-sized only: _incoming/sitewide-template/3/3f/blocks.js); text in src/i18n/story-copy.ts, article in
     // src/data/product-articles.ts. No cover (poster 06 is 1920 px) and no lanyard block (the M Switch Kit page tells it).
