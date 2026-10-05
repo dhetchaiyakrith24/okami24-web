@@ -148,6 +148,13 @@ export const relxProducts: Product[] = [
         sourceUrl: "https://relxnow.com/products/relx-creator-pro-device",
       },
     ],
+    // Batch 4f (06/10, owner "publish the draft"): the all-colours image behind the "ทั้งหมด" chip — this page's own 5 colour
+    // photos in the RELX Phantom layout (_incoming/sitewide-template/4/4d2/all-draft.js → 4/4f/apply.js).
+    lineupImage: {
+      src: "/assets/products/relx-creator/lineup.webp",
+      alt: "RELX Creator Pro device, all 5 colours — black, white, grey yellow, green, yellow",
+      sourceName: "OKami24 composite (from this page's colour photos)",
+    },
     openOnCardPhoto: true,
     colorVariants: [
       { id: "grey-yellow", name: "Grey Yellow", swatchHex: "#c9c9cb", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-grey-yellow.webp", alt: "RELX Creator Pro device, grey with a yellow base" } },
