@@ -1591,6 +1591,42 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 3c (06/10): from SALTHUB's M Bar 10K posters; Thai = thai-copy 05–06/10.
+  "m-bar-10k": {
+    th: {
+      lede: "ด้านล่างไล่ดู M Bar 10K ทีละส่วนจากโปสเตอร์ของ SALTHUB เอง พร้อมบอกว่าแต่ละส่วนช่วยอะไรในการใช้งาน",
+      sections: [
+        {
+          heading: "ความเข้มข้นของนิโคตินเท่าไหร่",
+          paragraphs: [
+            "โปสเตอร์ M Bar 10K ของ SALTHUB ไม่ได้ระบุความเข้มข้นของนิโคตินไว้ เราจึงไม่ใส่ตัวเลข ถ้าอยากทราบว่าตัวที่ร้านมีอยู่เป็นแบบไหน ทักไลน์ @okm24 ถามได้เลย"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "Below, the M Bar 10K one part at a time, from SALTHUB's own posters.",
+      sections: [
+        {
+          heading: "How strong is the nicotine?",
+          paragraphs: [
+            "SALTHUB's M Bar 10K posters don't state the nicotine strength, so we don't print one. Ask on LINE @okm24 for the version we stock."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "下面根据 SALTHUB 自己的海报，逐项来看 M Bar 10K。",
+      sections: [
+        {
+          heading: "尼古丁浓度是多少？",
+          paragraphs: [
+            "SALTHUB 的 M Bar 10K 海报没有写尼古丁浓度，所以我们这里不写。我们店里的版本可以在 LINE @okm24 询问。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

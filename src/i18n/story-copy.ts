@@ -1613,4 +1613,59 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       ],
     },
   },
+  // Site-wide template round batch 3c (06/10): SALTHUB's own M Bar 10K posters (_incoming/sitewide-template/3/
+  // facts-m-bar-10k.md lists the source of each line); Thai = thai-copy 05–06/10.
+  "m-bar-10k": {
+    "elegance": {
+      title: { th: "ดีไซน์เรียบหรู", en: "A refined, understated design", zh: "简约精致的设计" },
+      subline: { th: "SALTHUB ระบุว่าทำรุ่นนี้มาเพื่อคนที่มีรสนิยม", en: "SALTHUB made it \"for those who know elegance\".", zh: "SALTHUB 说它是\"为懂得优雅的人而做\"。" },
+      body: {
+        th: "นอกจากหน้าตาแล้ว ยังปรับลมให้แน่นหรือโล่งได้เอง ตามความชอบและการใช้งานของแต่ละคน",
+        en: "Beyond the looks, you can set the draw as tight or as open as you like, to suit the way you vape.",
+        zh: "除了外观，吸阻松紧也可以自己调，按个人习惯和用法来定。",
+      },
+      points: [
+        { text: { th: "แบตเตอรี่ 600mAh", en: "600mAh battery", zh: "600mAh 电池" }, specKey: "battery" },
+      ],
+    },
+    "bottle": {
+      title: { th: "ทรงขวดน้ำยา ฐานไล่สี", en: "An e-liquid bottle shape", zh: "烟油瓶造型" },
+      subline: { th: "SALTHUB เรียกดีไซน์นี้ว่าความหรูที่ไม่ต้องโชว์", en: "SALTHUB calls it understated luxury.", zh: "SALTHUB 称之为低调的奢华。" },
+      body: {
+        th: "ทรงเหมือนขวดน้ำยา ตรงฐานไล่สีต่างกันไปตามกลิ่น",
+        en: "Shaped like a classic e-liquid bottle, with a colour gradient at the base that differs from flavour to flavour.",
+        zh: "外形像经典的烟油瓶，底部的渐变色随口味不同。",
+      },
+    },
+    "display": {
+      title: { th: "ไฟบอกระดับแบต", en: "Battery level lights", zh: "电量指示灯" },
+      subline: { th: "ดูได้ทันทีว่าแบตยังเหลืออยู่เท่าไหร่", en: "See how much battery is left at a glance.", zh: "剩余电量一眼就能看到。" },
+      body: {
+        th: "ไฟ LED สี่ดวงบอกแบตทีละ 25% เมื่อเหลือไฟดวงเดียว ก็รู้ได้ว่าแบตใกล้หมดแล้ว",
+        en: "Four LEDs show the battery a quarter at a time, so when only one is lit, you know it is running low.",
+        zh: "四颗 LED 按每格 25% 显示电量，只剩一颗亮时，就说明电量快用完了。",
+      },
+    },
+    "modes": {
+      title: { th: "เลือกความแรงได้ตามที่ชอบ", en: "Your tempo, your call", zh: "节奏由你" },
+      subline: { th: "แค่กดปุ่มด้านล่างตัวเครื่องสองครั้งติดกัน ก็สลับโหมดได้", en: "Double-click the button at the bottom.", zh: "双击底部按键。" },
+      body: {
+        th: "จะสลับโหมดไปมากี่ครั้งก็ได้ อยากให้เบาลงหรือแรงขึ้นตอนไหน ก็เปลี่ยนได้ทันทีตามความต้องการ",
+        en: "Switch back and forth as often as you like, so the draw can be gentler or stronger whenever you want.",
+        zh: "模式可以随时来回切换，想轻一点或强一点，随时都能换。",
+      },
+      points: [
+        { text: { th: "โหมด Eco · Soft · Boost", en: "Eco · Soft · Boost", zh: "Eco · Soft · Boost" }, specKey: "modes" },
+      ],
+    },
+    "nonstop": {
+      title: { th: "สูบได้ต่อเนื่อง", en: "Built to keep going", zh: "持续发挥" },
+      subline: { th: "SALTHUB ระบุว่ารุ่นนี้สูบได้สม่ำเสมอ ตั้งแต่พัฟแรกไปจนถึงพัฟสุดท้าย", en: "SALTHUB says it performs the same from the first draw to the last.", zh: "SALTHUB 表示从第一口到最后一口表现一致。" },
+      body: {
+        th: "ส่วนคอยล์ที่อยู่ข้างในเป็นแบบ cotton mesh",
+        en: "The coil inside is cotton mesh.",
+        zh: "内部线圈是棉网线圈。",
+      },
+    },
+  },
 };
