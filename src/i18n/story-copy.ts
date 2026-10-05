@@ -1538,4 +1538,41 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
     },
   },
+  // Site-wide template round batch 4d (06/10): RELX's own Creator Pro Device page + pictures (_incoming/sitewide-template/4/
+  // facts-relx-creator.md); Thai = thai-copy 06/10.
+  "relx-creator": {
+    "button": {
+      title: { th: "กดปุ่มดูแบตได้ทุกเมื่อ", en: "Check the battery any time", zh: "随时查看电量" },
+      subline: { th: "RELX ให้กดปุ่มครั้งเดียว เพื่อดูแบตที่เหลืออยู่บนจอ", en: "RELX set it up so one click shows the battery level on the screen.", zh: "RELX 的设计是按一下按键，屏幕就显示剩余电量。" },
+      body: {
+        th: "ก่อนออกจากบ้านกดดูสักครั้ง ก็รู้ได้ว่าแบตยังเหลืออยู่มากหรือใกล้หมดแล้ว ไม่ต้องเดาเอาเอง",
+        en: "Check before you head out and you'll know whether there's plenty left or it's nearly flat, without guessing.",
+        zh: "出门前按一下，就知道电量还很足还是快用完了，不用靠猜。",
+      },
+      points: [
+        { text: { th: "แบตเตอรี่ 800mAh", en: "800mAh battery", zh: "800mAh 电池" }, specKey: "battery" },
+      ],
+    },
+    "modes": {
+      title: { th: "โหมด Normal และ Boost", en: "Normal or Boost, your choice", zh: "Normal 与 Boost 任你选" },
+      subline: { th: "RELX ให้กดปุ่มสองครั้งติดกัน เพื่อสลับไปมาระหว่างสองโหมดนี้", en: "RELX set it up so a double click on the button switches between the two.", zh: "RELX 的设计是连按两下按键，在两种模式之间切换。" },
+      body: {
+        th: "แต่ละโหมดจะขึ้นภาพบนจอไม่เหมือนกัน เห็นแล้วก็รู้ทันทีว่าตอนนี้เครื่องใช้โหมดไหนอยู่",
+        en: "Each mode puts a different picture on the screen, so a quick glance tells you which one is on.",
+        zh: "每个模式在屏幕上显示的图案不同，看一眼就知道现在用的是哪一档。",
+      },
+      points: [
+        { text: { th: "Normal 15 วัตต์ / Boost 25 วัตต์", en: "15W Normal / 25W Boost", zh: "15W Normal / 25W Boost" }, specKey: "modes" },
+      ],
+    },
+    "airflow": {
+      title: { th: "ปรับลมได้เองตามที่ชอบ", en: "Set your airflow", zh: "进气按自己的喜好调" },
+      subline: { th: "RELX ให้ปรับช่องลมได้ ตั้งแต่เปิดเต็มที่ไปจนถึงแคบมาก", en: "RELX lets you set the airflow anywhere from fully open to its tightest.", zh: "RELX 的进气可以从全开一直调到最紧。" },
+      body: {
+        th: "ชอบดูดเบา ๆ ก็เปิดไว้กว้าง ชอบลมแน่นก็ปรับให้แคบ ตั้งไว้ตรงที่สูบแล้วสบายได้เลย",
+        en: "Open it up for a light, easy draw, or narrow it for a tighter one, and leave it where it feels right.",
+        zh: "想吸得轻松就开大，喜欢紧一点就调小，停在自己舒服的位置就好。",
+      },
+    },
+  },
 };

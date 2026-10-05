@@ -157,6 +157,13 @@ export const relxProducts: Product[] = [
     // click = battery, double click = 15W Normal / 25W Boost, a smart screen with 100+ emojis, full-range adjustable
     // airflow. Pods: RELX says "RELX Creator Pods"; the owner (30/09, the shop's own stock) says it takes RELX Creator 20K
     // pods and Muro Connector pods — the owner's word, a named exception to THAI_STYLE §5 "manufacturer only".
+    // Site-wide template round batch 4d (06/10): the G5 template — RELX's own pictures, one per block (blocks.js in
+    // _incoming/sitewide-template/4/4d/); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Cover = RELX's UK one-pager.
+    storyDetails: true,
+    storyLayout: "stage",
+    storyCover: { src: "/assets/products/relx-creator/story-cover.webp", alt: "RELX's Creator Pro one-pager — ice in every block, the device with a Creator pod, spec strip", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 2604, height: 977 },
+    // Phones: RELX's A4 portrait version of the same one-pager — the wide one's tile text is unreadable at 390 (checker #281).
+    storyCoverMobile: { src: "/assets/products/relx-creator/story-cover-mobile.webp", alt: "RELX's Creator Pro one-pager, portrait — ice in every block, the device with a Creator pod, spec strip", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1600, height: 2263 },
     specifications: [
       { key: "format", label: "Format", value: "Device only — prefilled pods sold separately", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
       { key: "battery", label: "Battery", value: "800mAh rechargeable, USB-C", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
@@ -166,7 +173,29 @@ export const relxProducts: Product[] = [
       // No URL on purpose: the owner's word from the shop's stock (30/09) — the named exception in THAI_STYLE §5.
       { key: "compat", label: "Pod platform", value: "RELX Creator 20K pods, Muro Connector pods (shop-confirmed)", sourceStatus: "verified" },
     ],
-    features: [],
+    features: [
+      {
+        id: "button",
+        title: "Check the battery any time",
+        description: "Check before you head out and you'll know whether there's plenty left or it's nearly flat, without guessing.",
+        subline: "RELX set it up so one click shows the battery level on the screen.",
+        image: { src: "/assets/products/relx-creator/story-button.webp", alt: "RELX's Creator Pro picture — one click checks the battery on the pixel screen", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
+      },
+      {
+        id: "modes",
+        title: "Normal or Boost, your choice",
+        description: "Each mode puts a different picture on the screen, so a quick glance tells you which one is on.",
+        subline: "RELX set it up so a double click on the button switches between the two.",
+        image: { src: "/assets/products/relx-creator/story-modes.webp", alt: "RELX's Creator Pro picture — a double click adjusts power, Normal mode and Boost mode", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
+      },
+      {
+        id: "airflow",
+        title: "Set your airflow",
+        description: "Open it up for a light, easy draw, or narrow it for a tighter one, and leave it where it feels right.",
+        subline: "RELX lets you set the airflow anywhere from fully open to its tightest.",
+        image: { src: "/assets/products/relx-creator/story-airflow.webp", alt: "RELX's Creator Pro picture — engineering and airflow, full-range adjustable airflow at the base", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device", width: 1596, height: 1605 },
+      },
+    ],
     // The pod rows are the owner's word (shop stock, 30/09); the spec row and the FAQ say "shop-confirmed".
     compatibility: [
       { type: "pod", label: "RELX Creator 20K pod" },

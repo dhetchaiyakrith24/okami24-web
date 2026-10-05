@@ -320,6 +320,9 @@ export interface Product {
   storyColoursAfter?: string;
   /** The maker's campaign poster that opens the "more details" story, full width under its heading (`storyDetails`). */
   storyCover?: StoryImage;
+  /** The maker's phone/portrait version of `storyCover` (below lg) — for a wide poster whose text a phone can't read
+   *  (RELX Creator's UK one-pager, batch 4d); absent = `storyCover` everywhere. */
+  storyCoverMobile?: StoryImage;
   /**
    * A real OKami24-channel review video for this exact product (owner mandate, 2026-09-03 —
    * "map existing review videos to the correct product identities"). Absent unless a specific
