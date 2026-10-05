@@ -20,7 +20,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md`. Scope = the round file's 【ขอบเขต】 block; PM pages (coils, IQOS, pod-180) = images only.
   DONE: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB #273 #274 #275 #277 #288 · 4 #278 #280 #281 #282 #289 #290 · 5a #283 · 6 #284 ·
   7 part 1 #286. Product × part table: `_incoming/sitewide-template/7/table.md` (`npx tsx _incoming/sitewide-template/7/table.ts`).
-  NEXT (owner answers 06/10 in §18; tier B each, one PR each):
+  NEXT (owner 06/10 in §18; tier B, one PR each):
     (d) 4b TFIT M Power 20K: unhide (`hiddenFromStorefront` in tfit.ts) — facts `_incoming/sitewide-template/4/facts-tfit-m-power-20k.md`
         (TFIT's own product; 18mL not 17mL). Needs: a card photo cut from TFIT's
         `posters/tfit-m-power-20k/10-smallpic.jpg` (white background — LESSONS พ23), TFIT's logo `4/logos/tfit-logo.webp`, stage from
@@ -31,7 +31,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
         "cotton mesh / ชาร์จเร็ว / 15 รส"). Facts `_incoming/sitewide-template/3/facts-m-bar-15k.md`.
     (f) MOOOD Monster 14K: open mooodvapes.com/14000puffs/ in a real browser (DNS failed for the researcher); brand site → fix data
         (screenType, flavours, battery) + move it off "Unbranded" (BIG).
-    Skipped by the owner: INFY 20K + Muro ×3 (no maker material) · pod-180 stays brandless.
+    Skipped (owner): INFY 20K + Muro ×3 (no maker material) · pod-180 brandless.
   Then close the round (skill `round-close`, tag sitewide-template-done). Not this round: Q16 IQOS colour completeness and Q18 "every
   option gets a photo" (flavour photos Smash Go 10 · F3 30 · F4 16 (swatches are all the placeholder #7ed321) · Zero Cartridge 22 ·
   WOTOFO 11 · M Bar / M Switch / INFY / Muro / TFIT 10 + the 19 white-box coils) = write a new round file for the owner.
