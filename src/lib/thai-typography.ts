@@ -156,6 +156,8 @@ const MODEL_NAMES: ReadonlyArray<string> = [
   "Esko Bar Switch", "No Atomizer",
   // Data round (owner instruction 2026-09-24, batch 4): the G5 line's upper-case message, same rule.
   "NO ATOMIZER",
+  // Batch 5f (06/10): the MOOOD brand lede broke "Monster | 14K" at 390 — a split model name, same 10B rule.
+  "Monster 14K",
 ];
 
 // a number (with , . – - inside) followed by ONE plain space and a unit. A Thai unit may run
