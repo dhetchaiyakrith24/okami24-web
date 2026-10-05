@@ -159,7 +159,7 @@ export const joiwayProducts: Product[] = [
     systemType: "disposable",
     name: "Joiway F4",
     displayName: "JOIWAY F4",
-    tagline: "The newer, dual-flavor Joiway — matches OKami24's own review.",
+    tagline: "The newer, dual-flavor Joiway.",
     shortDescription:
       "A dual-flavor, dual-mode disposable from Joiway — two flavors in one device. OKami24's own YouTube channel used it for 30 days.",
     isFlagship: false,
@@ -231,9 +231,9 @@ export const joiwayProducts: Product[] = [
       },
       {
         id: "coils",
-        title: "Inside the twin tanks",
-        description: "One coil set per tank, so each flavour has a coil of its own.",
-        subline: "JOIWAY's see-through view shows both tanks.",
+        title: "A look inside",
+        description: "Inside, it uses two sets of mesh coils.",
+        subline: "JOIWAY's see-through view shows the inside.",
         image: { src: "/assets/products/joiway-f4/story-coils.webp", alt: "JOIWAY F4 poster — see-through twin tank, \"e-liquid tanks, Mesh Coils 2 sets\"", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 809 },
       },
       {
