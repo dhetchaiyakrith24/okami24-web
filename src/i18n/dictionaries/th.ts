@@ -25,8 +25,8 @@ export const th: Dictionary = {
     contactLine: "สอบถามทาง LINE",
     youtubeChannel: "ดูบน YouTube",
   },
-  // Round 30.4ข batch 5 — trust strip above the footer (TrustBar.tsx). Every line points at a
-  // sentence already approved on /about; see THAI_STYLE §7 "รอบ 30.4ข ก้อน 5".
+  // Round 30.4ข batch 5 — trust strip above the footer (TrustBar.tsx). Lines 1–3 point at a
+  // sentence already approved on /about (THAI_STYLE §7 "รอบ 30.4ข ก้อน 5"); line 4 re-worded 05/10 (owner).
   trust: {
     ariaLabel: "ทำไมต้องซื้อกับ OKami24",
     items: [
@@ -35,7 +35,8 @@ export const th: Dictionary = {
       // instead of after "ไม่" (390px 2×2 grid); en/zh unchanged.
       { title: "ราคาตรง", body: "ราคาที่เห็นคือราคาที่ขายจริง ไม่ปั่นราคา" },
       { title: "บริการจริง", body: "ทักไลน์มา แอดมินตอบเอง ไม่ใช่บอท" },
-      { title: "เช็คกับเว็บทางการ", body: "สเปกที่ยืนยันไม่ได้ เราบอกตรง ๆ ไม่เดา" },
+      // Owner 05/10: the old body ("สเปกที่ยืนยันไม่ได้ เราบอกตรง ๆ ไม่เดา") explained missing facts — HANDOFF §18 06/10 pm.
+      { title: "เช็คกับเว็บทางการ", body: "สเปกที่เห็น มาจากข้อมูลแบรนด์เอง" },
     ],
   },
   footer: {

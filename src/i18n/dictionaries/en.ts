@@ -34,7 +34,7 @@ export const en: Dictionary = {
       { title: "Genuine products", body: "From brands we trust." },
       { title: "Honest prices", body: "The price you see is the price we charge — no games." },
       { title: "Real service", body: "Message us on LINE — the admin replies, not a bot." },
-      { title: "Specs checked", body: "Specs we can't confirm, we tell you — no guessing." },
+      { title: "Specs checked", body: "The specs you see come straight from the brand." },
     ],
   },
   footer: {
