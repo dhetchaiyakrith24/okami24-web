@@ -762,7 +762,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "พอตใช้แล้วทิ้ง 2 รสในเครื่องเดียว",
     shortDescription:
-      "พอตใช้แล้วทิ้งจาก Joiway 2 โหมด 2 รสในเครื่องเดียว OKami24 รีวิวใช้จริง 30 วันไว้บน YouTube",
+      "พอตใช้แล้วทิ้งจาก Joiway 2 รสในเครื่องเดียว OKami24 รีวิวใช้จริง 30 วันไว้บน YouTube",
   },
   "tfit-m-power-20k": {
     tagline: "พอตใช้แล้วทิ้งของ TFIT ที่ OKami24 รีวิวใช้จริงบน YouTube",

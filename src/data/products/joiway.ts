@@ -161,13 +161,15 @@ export const joiwayProducts: Product[] = [
     displayName: "JOIWAY F4",
     tagline: "The newer, dual-flavor Joiway.",
     shortDescription:
-      "A dual-flavor, dual-mode disposable from Joiway — two flavors in one device. OKami24's own YouTube channel used it for 30 days.",
+      "A dual-flavor disposable from Joiway — two flavors in one device. OKami24's own YouTube channel used it for 30 days.",
     isFlagship: false,
     editorialTag: "Retailer-confirmed",
     // Confirmed via YouTube oEmbed (2026-09-03): real video, owned by youtube.com/@OKMYARZ — one
     // of OKami24's own three channels. A genuine 30-day hands-on review, the strongest kind of
     // review evidence found this mission.
-    reviewVideo: { videoId: "oHR-MAacTz0", title: "ประสบการณ์ 30 วัน JOIWAY F4 NOS นานขนาดนั้นเลยหรือ?", channelName: "OKM YARZ", publishedAt: "2025-12-01" },
+    // Owner 06/10 pm: the F4 NOS review (oHR-MAacTz0) was the wrong edition → the shop's own F4 TWINS review, same channel
+    // (YouTube oEmbed 06/10: title + author OKM YARZ; watch page uploadDate 2026-03-31).
+    reviewVideo: { videoId: "l-8sAPwOUZw", title: "30 วันกับ JOIWAY F4 TWINS DOUBLE FLAVOR สองกลิ่นในเครื่องเดียวเวิร์คไหม?", channelName: "OKM YARZ", publishedAt: "2026-03-31" },
     // Batch 4e (06/10): owner — our F4 is JOIWAY's F4 TWINS (maker posters + our photos), not the NOS edition: 20,000 puffs
     // (10,000 per side) and an "LED Display" per JOIWAY's cover poster; the old 30,000 / no-screen came from the NOS listing.
     attributes: {
