@@ -1579,7 +1579,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
   // facts-wotofo-nexbar-18k.md); Thai = thai-copy 06/10.
   "wotofo-nexbar-18k": {
     "screen": {
-      title: { th: "ดูสถานะของเครื่องได้จากจอ", en: "What the screen tells you", zh: "屏幕告诉你什么" },
+      title: { th: "จอบอกสถานะของเครื่อง", en: "What the screen tells you", zh: "屏幕告诉你什么" },
       subline: { th: "WOTOFO ให้จอ LED บอกทั้งแบต น้ำยาที่เหลือ และโหมดที่ใช้อยู่", en: "WOTOFO's LED screen shows the battery, the e-liquid left and the mode you're in.", zh: "WOTOFO 的 LED 屏幕会显示电量、剩余烟油和当前模式。" },
       body: {
         th: "แบตหรือน้ำยาใกล้หมดเมื่อไหร่ ก็เห็นจากจอได้ก่อน ไม่ต้องรอให้ดูดไม่ขึ้นแล้วค่อยรู้ตัว",
@@ -1591,7 +1591,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       ],
     },
     "mouthpiece": {
-      title: { th: "ปากดูดที่ออกแบบมาให้รับกับริมฝีปาก", en: "Shaped for your lips", zh: "贴合嘴唇的吸嘴" },
+      title: { th: "ปากดูดที่รับกับริมฝีปาก", en: "Shaped for your lips", zh: "贴合嘴唇的吸嘴" },
       subline: { th: "WOTOFO เลือกใช้ซิลิโคนทำปากดูดของรุ่นนี้", en: "WOTOFO made this model's mouthpiece from silicone.", zh: "WOTOFO 这款的吸嘴采用硅胶。" },
       body: {
         th: "จะสูบสั้น ๆ หรือสูบต่อกันนาน ๆ ก็ยังรู้สึกสบายปาก",

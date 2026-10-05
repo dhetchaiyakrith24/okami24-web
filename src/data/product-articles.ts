@@ -1543,9 +1543,9 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       lede: "ด้านล่างไล่ดู WOTOFO nexBAR 18K ทีละส่วนจากภาพของ WOTOFO เอง",
       sections: [
         {
-          heading: "มีให้เลือกทั้ง 20mg และ 50mg",
+          heading: "ความเข้มข้นที่มีให้เลือก",
           paragraphs: [
-            "WOTOFO ทำ nexBAR 18K ออกมาสองความเข้มข้น คือ 20mg และ 50mg และแต่ละความเข้มข้นก็มีรายการกลิ่นของตัวเอง รายชื่อกลิ่นด้านบนแสดงไว้ให้ดูแล้ว ถ้าอยากรู้ว่าตอนนี้ร้านมีกลิ่นไหนอยู่บ้าง ทักไลน์ @okm24 ถามได้เลย"
+            "WOTOFO ทำ nexBAR 18K ออกมาสองความเข้มข้น คือ 20mg และ 50mg และแต่ละความเข้มข้นก็มีรายการกลิ่นของตัวเอง ดูรายชื่อกลิ่นทั้งหมดได้ที่ด้านบน ถ้าอยากรู้ว่าตอนนี้ร้านมีกลิ่นไหนอยู่บ้าง ทักไลน์ @okm24 ถามได้เลย"
           ]
         }
       ]
@@ -1554,7 +1554,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       lede: "Below, the WOTOFO nexBAR 18K one part at a time, from WOTOFO's own pictures.",
       sections: [
         {
-          heading: "20mg or 50mg?",
+          heading: "Which strength?",
           paragraphs: [
             "WOTOFO makes the nexBAR 18K in two nicotine strengths, 20mg and 50mg, and each comes with its own set of flavours. The flavour list above shows them. To check what we have right now, message us on LINE @okm24."
           ]
@@ -1565,7 +1565,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       lede: "下面根据 WOTOFO 自己的图片，逐项来看 WOTOFO nexBAR 18K。",
       sections: [
         {
-          heading: "20mg 还是 50mg？",
+          heading: "选哪种浓度？",
           paragraphs: [
             "WOTOFO 的 nexBAR 18K 有 20mg 和 50mg 两种尼古丁浓度，每种都有各自的口味。上方的口味列表都列出来了。想知道我们现在有哪些，可以在 LINE @okm24 问我们。"
           ]
