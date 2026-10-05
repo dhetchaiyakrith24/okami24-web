@@ -33,6 +33,7 @@ const LEGACY_PRODUCT_FILES: Record<string, string> = {
   joiway: "joiway.ts",
   tfit: "tfit.ts",
   infy: "infy.ts",
+  moood: "moood.ts",
 };
 const LEGACY_PRODUCT_DATA = [...Object.values(LEGACY_PRODUCT_FILES), "unbranded.ts"].map((f) => `src/data/products/${f}`);
 

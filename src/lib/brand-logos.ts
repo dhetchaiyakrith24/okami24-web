@@ -31,6 +31,9 @@ export const BRAND_LOGOS: Record<string, BrandLogo> = {
   // tfitvape.com (its own API, configData.websiteLogo — 4/facts-tfit-m-power-20k.md, batch 4g 05/10) — white wordmark,
   // trimmed and scaled to 120 px tall
   tfit: { src: "/assets/brands/tfit-logo.png", width: 366, height: 120 },
+  // mooodvapes.com (offline; Wayback Machine copy of wp-content/uploads/2024/09/logo-moood.png, batch 5f 06/10) — light grey
+  // stacked mark (three discs over the word), trimmed and scaled to 120 px tall; stacked = scale > 1
+  moood: { src: "/assets/brands/moood-logo.png", width: 149, height: 120, scale: 2 },
   // files found, not listed until the brand has a /products page to check them at size (owner eye item 4, designer 03/10;
   // candidates in _incoming/g5-template/logos/): DOTMOD (gold emblem only — letters too small at this size; keep the chip
   // unless the maker serves a word logo) · Esko Bar (403 px wide file only) · instabar · Kardinal (the site names the

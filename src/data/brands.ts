@@ -154,9 +154,24 @@ export const brands: Brand[] = [
       "WOTOFO แบรนด์ฮาร์ดแวร์ที่ขยายมาทำพอตใช้แล้วทิ้งตระกูล nexBAR",
     referenceUrl: "https://www.wotofo.com/",
   },
+  {
+    id: "moood",
+    slug: "moood",
+    name: "MOOOD",
+    fullName: "MOOOD",
+    tagline: "Disposable vapes.",
+    taglineTh: "พอตใช้แล้วทิ้ง",
+    description:
+      // Batch 5f (06/10, owner: off "Unbranded"): MOOOD's own site (mooodvapes.com) is offline; its pages survive on the
+      // Wayback Machine (_incoming/sitewide-template/5/facts-mood-monster-14k.md) — the reference link points at that copy.
+      "A disposable-vape brand whose Monster 14K pairs Duo Mesh coils with a digital screen.",
+    descriptionTh:
+      "MOOOD แบรนด์พอตใช้แล้วทิ้ง ที่ร้านมีรุ่น Monster 14K",
+    referenceUrl: "https://web.archive.org/web/20241008232414/https://mooodvapes.com/",
+  },
   // Deliberately NOT adding a "NEXT" Brand record for Pod-173 ("Next Pro 2 Beyond") — no official
   // first-party site found (Thai retailer + one review-site convergence only), same evidentiary
-  // bar that already excludes Muro/BAAM/Dooze/Pepo/Dundu/Reswa/MOOOD/Foli/Vape City below. See the
+  // bar that already excludes Muro/BAAM/Dooze/Pepo/Dundu/Reswa/Foli/Vape City below. See the
   // catalog mission report for the citation trail; do not fabricate a referenceUrl to admit it.
 
   // Full-catalog mission — heated-tobacco brands. Owner has settled the business/legal-scope

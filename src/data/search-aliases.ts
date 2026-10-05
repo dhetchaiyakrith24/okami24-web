@@ -100,6 +100,9 @@ export const TERM_SEARCH_ALIASES: Record<string, string[]> = {
   mood: ["moood"],
   "มูดมอนสเตอร์": ["moood monster"],
   "มู้ดมอนสเตอร์": ["moood monster"],
+  // batch 5f (06/10): MOOOD is its own brand now — the brand name alone in Thai.
+  "มูด": ["moood"],
+  "มู้ด": ["moood"],
   // ── generic words ───────────────────────────────────────────────────────────────────────
   // The site's own home H1 names neither word (Thai H1: "Pod System ของแท้ ข้อมูลจริง"); "บุหรี่ไฟฟ้า" is what many customers still type
   // (Search Console records "บุหรี่ไฟฟ้า drag", docs/SEO_BASELINE.md) — owner 2026-09-22: accept
