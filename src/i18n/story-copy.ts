@@ -1554,7 +1554,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       ],
     },
     "modes": {
-      title: { th: "เลือกได้ทั้งโหมด Normal และ Boost", en: "Normal or Boost, your choice", zh: "Normal 与 Boost 任你选" },
+      title: { th: "โหมด Normal และ Boost", en: "Normal or Boost, your choice", zh: "Normal 与 Boost 任你选" },
       subline: { th: "RELX ให้กดปุ่มสองครั้งติดกัน เพื่อสลับไปมาระหว่างสองโหมดนี้", en: "RELX set it up so a double click on the button switches between the two.", zh: "RELX 的设计是连按两下按键，在两种模式之间切换。" },
       body: {
         th: "แต่ละโหมดจะขึ้นภาพบนจอไม่เหมือนกัน มองแวบเดียวก็รู้ว่าตอนนี้เครื่องใช้โหมดไหนอยู่",
