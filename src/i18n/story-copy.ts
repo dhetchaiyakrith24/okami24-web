@@ -1705,7 +1705,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "แบตกับหน้าจอ", en: "Battery and display", zh: "电池与屏幕" },
       subline: { th: "แบตใกล้หมดก็เสียบสาย USB-C ชาร์จต่อได้", en: "Plug in over USB-C when it runs low.", zh: "电量低了，插上 USB-C 就能充电。" },
       body: {
-        th: "ตัวเลขบนจอบอกเป็นเปอร์เซ็นต์ หยิบขึ้นมาดูก็รู้ว่ายังเหลืออยู่เท่าไหร่",
+        th: "ตัวเลขบนจอบอกเป็นเปอร์เซ็นต์ หยิบขึ้นมาดูก็รู้ว่าเหลืออยู่เท่าไหร่",
         en: "The display reads in percent, so a quick look tells you how much is left.",
         zh: "屏幕上的数字以百分比显示，看一眼就知道还剩多少。",
       },
