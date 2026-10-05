@@ -11,11 +11,11 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 2afe0cf (#297) [ตรวจแล้ว — git]. Merged 05/10, each checker PASS + deploy OK +
+1 main: `git fetch && git log -1 --oneline origin/main` = 627a73c (#299) [ตรวจแล้ว — git]. Merged 05/10, each checker PASS + deploy OK +
   live check (`_incoming/guides-unstated/live-check.js` LIVE OK) [ตรวจแล้ว]: #294 guides no longer explain a missing maker fact (verified
   rows written in) · #296 trust bar item 4 = title "เช็คสเปก"/"参数核对" + "สเปกทุกค่า เช็คที่มาก่อนขึ้นหน้าเว็บ" (owner: yes + option 1) and
   /faq where-specs re-worded, "unverified-meaning" FAQ removed · #297 a shop clip inside the guide section about it (7 guides,
-  `SECTION_CLIPS`; no G5/G4/G4 Mini/G5 Lite/G4 Classic/G3 Pro clip exists).
+  `SECTION_CLIPS`; no G5/G4/G4 Mini/G5 Lite/G4 Classic/G3 Pro clip exists) · #299 /about spec sentence = the /faq answer (owner option 1).
 2 ahead of main [ตรวจแล้ว — git]: `git log --oneline origin/main..origin/batch-4g-tfit-m-power` = 095451a (batch (d) TFIT, NOT built, NOT
   scanned, NOT checked; branched from cf2394b → merge origin/main first: #296/#297 touch other files, only content-dates.json overlaps).
   No PR open for it yet. Material not in git:
@@ -49,9 +49,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   remover + choke · edgezoom 4x on dark + magenta · process-images map + new file names · sharpness gate before the checker). Esko pod-159
   LAST (13.7 big (2), own PR, + BSOT §21).
 4 waiting on owner:
-  (05/10) /about still says "ค่าที่ยืนยันไม่ได้เราบอกตรง ๆ ไม่เดา" + "unverified badge" (src/i18n/about-copy.ts ~86/119/153, th/en/zh) —
-       same voice the owner cut, but /about copy is owner-approved (§18) → re-word it? (Friday: yes, like #296, own small PR).
-  (05/10) look on live: trust bar "เช็คสเปก" line · /faq · guide clips (e.g. /guides/comparing-caliburn-models "G4 vs G4 Pro") —
+  (05/10) look on live: trust bar "เช็คสเปก" line · /faq · /about spec sentence · guide clips (e.g. /guides/comparing-caliburn-models "G4 vs G4 Pro") —
        reversible by revert (checker #297: G4 Pro clip in a two-model section; M Bar 9K sweets clip in "แนวอื่น").
   (06/10 pm) look on live: M Bar 10K stage page · JOIWAY F4 TWINS page · RELX Creator "ทั้งหมด" image — reversible by revert.
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b) ·
