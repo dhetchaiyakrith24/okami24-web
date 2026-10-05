@@ -855,7 +855,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/iqosheet-16/card.webp",
+      src: "/assets/products/iqosheet-16/card-v2.webp",
       alt: "IQOS ILUMA i PRIME, Aspen Green, isolated official product render",
       angle: "Official manufacturer render, sourced directly from iqos.com/ph's own dedicated \"ILUMA i PRIME Aspen Green\" product page (via that page's own og:image meta tag, confirmed page-specific, not a generic/shared image). Aspen Green is one of this parent's 3 real active colors (also Midnight Black, Breeze Blue) — shown as the representative shot per the same one-static-card-image convention used elsewhere; not claimed to show all 3.",
       transparentBackground: true,
@@ -867,7 +867,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/iqosheet-18/card.webp",
+      src: "/assets/products/iqosheet-18/card-v2.webp",
       alt: "IQOS ILUMA i, Breeze Blue, isolated official product render",
       angle: "Official manufacturer render, sourced directly from iqos.com/ph's own dedicated \"ILUMA i Breeze Blue\" product page (via that page's own og:image meta tag). That same page's own on-page copy states \"IQOS ILUMA i is designed to be used with TEREA tobacco sticks\" — independent confirmation this is genuinely the ILUMA i device, not the original/Standard generation (see TAXONOMY_MATCHES[\"IQOSHEET-18\"]).",
       transparentBackground: true,
@@ -1353,13 +1353,13 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "IQOSHEET-15-17": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variants/IQOSHEET-15-17.webp", alt: "IQOS TEREA Black Ruby pack — official flavor note: Red Berry", transparentBackground: false, sourceName: "IQOS (official brand CDN, media.iqos.com — Indonesia)", sourceUrl: "https://media.iqos.com/is/image/pmintl/product/1000px/TEREA+BLACK+RUBY+PACK-pmi_G0002278_00_id-1783303712099.png" },
   },
   "IQOSHEET-16": {
-    "IQOSHEET-16-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-1.webp", alt: "IQOS ILUMA i PRIME, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-midnight-black.html" },
-    "IQOSHEET-16-2": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-2.webp", alt: "IQOS ILUMA i PRIME, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-breeze-blue.html" },
-    "IQOSHEET-16-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-3.webp", alt: "IQOS ILUMA i PRIME, Aspen Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
+    "IQOSHEET-16-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-1-v2.webp", alt: "IQOS ILUMA i PRIME, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-midnight-black.html" },
+    "IQOSHEET-16-2": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-2-v2.webp", alt: "IQOS ILUMA i PRIME, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-breeze-blue.html" },
+    "IQOSHEET-16-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-3-v2.webp", alt: "IQOS ILUMA i PRIME, Aspen Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
   },
   "IQOSHEET-18": {
-    "IQOSHEET-18-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-1.webp", alt: "IQOS ILUMA i, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-midnight-black.html" },
-    "IQOSHEET-18-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-3.webp", alt: "IQOS ILUMA i, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+    "IQOSHEET-18-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-1-v2.webp", alt: "IQOS ILUMA i, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-midnight-black.html" },
+    "IQOSHEET-18-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-3-v2.webp", alt: "IQOS ILUMA i, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
   },
   // IQOSHEET-14 (Lambda i8) — owner quality-review pass (2026-09-03) found a cleaner 1000×1000
   // per-color studio source on the same lambdasmoke.com page (see VERIFIED_MEDIA's angle note
