@@ -1455,7 +1455,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ความเข้มข้นมีให้เลือกสองแบบ",
           paragraphs: [
-            "RELX ทำ Smash Go 12K ไว้สองแบบ คือ salt nic 3% และ 5% ถ้าอยากรู้ว่ากลิ่นที่ชอบมีแบบไหนอยู่ที่ร้านตอนนี้ ทักไลน์ @okm24 ถามได้เลย"
+            "RELX ทำ Smash Go 12K ไว้สองแบบ คือ salt nic 3% และ 5% ถ้าอยากรู้ว่ากลิ่นที่ชอบมีแบบไหนอยู่ที่ร้านตอนนี้ ทักไลน์ @okm24 ถามได้เลย",
+            "กลิ่นที่ RELX มีให้เลือก เรารวมไว้ในตารางกลิ่นด้านบนแล้ว"
           ]
         }
       ]
@@ -1466,7 +1467,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "Two strengths to choose from",
           paragraphs: [
-            "RELX makes the Smash Go 12K in two nicotine salt strengths, 3% and 5%. To check which strength we have in your flavour right now, message us on LINE @okm24."
+            "RELX makes the Smash Go 12K in two nicotine salt strengths, 3% and 5%. To check which strength we have in your flavour right now, message us on LINE @okm24.",
+            "The flavours RELX offers are in the flavour grid above."
           ]
         }
       ]
@@ -1477,7 +1479,8 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "两种浓度可选",
           paragraphs: [
-            "RELX 的 Smash Go 12K 有 3% 和 5% 两种盐尼古丁浓度。想知道你喜欢的口味现在有哪种浓度，可以在 LINE @okm24 问我们。"
+            "RELX 的 Smash Go 12K 有 3% 和 5% 两种盐尼古丁浓度。想知道你喜欢的口味现在有哪种浓度，可以在 LINE @okm24 问我们。",
+            "RELX 提供的口味都在上方的口味表里。"
           ]
         }
       ]
