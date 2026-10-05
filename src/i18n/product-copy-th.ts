@@ -767,7 +767,14 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "joiway-f3": {
     whoIsThisFor: {
-      0: "ลูกค้าที่ถามหา Joiway อยู่แล้ว รุ่นนี้เป็นตัวรสเดียว ส่วนแบบ 2 รสในเครื่องเดียวคือ F4",
+      0: "สูบพอตใช้แล้วทิ้งเป็นประจำ และอยากได้เครื่องที่ใช้ได้นานก่อนต้องเปลี่ยนใหม่",
+      1: "ชอบให้เครื่องมีสีสัน มีไฟหลากสีขึ้นมาระหว่างสูบ",
+    },
+    specifications: {
+      puffs: "12,000+",
+      airflow: "ปรับได้",
+      charging: "USB-C",
+      coil: "นาโนคอยล์",
     },
     tagline: "พอตใช้แล้วทิ้งจาก Joiway รุ่นรสเดียว",
     shortDescription:
