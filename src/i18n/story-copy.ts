@@ -1825,7 +1825,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ชาร์จแล้วใช้ต่อได้", en: "Charge and carry on", zh: "充好电接着用" },
       subline: { th: "ช่องชาร์จอยู่ที่ฐานของตัวเครื่อง", en: "The cable goes into the base.", zh: "充电线插在机身底部。" },
       body: {
-        th: "ระหว่างชาร์จ หน้าจอจะขึ้นรูปสายฟ้าคู่กับตัวเลขแบต ดูได้เลยว่าชาร์จไปถึงไหนแล้ว",
+        th: "ระหว่างชาร์จ หน้าจอจะขึ้นรูปสายฟ้าคู่กับตัวเลขแบต บอกให้รู้ว่าชาร์จไปถึงไหนแล้ว",
         en: "While it charges, a lightning mark appears beside the battery number, so you can see how far it has got.",
         zh: "充电时，屏幕上的电量数字旁会出现闪电标志，充到多少一看便知。",
       },
@@ -1838,7 +1838,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ตั้งลมได้เอง", en: "Choose your airflow", zh: "进气自己调" },
       subline: { th: "ที่ปรับลมอยู่ด้านข้างตัวเครื่อง", en: "The valve is on the side of the body.", zh: "调节阀在机身侧面。" },
       body: {
-        th: "SALTHUB ระบุว่าปรับลมได้อย่างละเอียด จะชอบดูดแน่นหรือชอบลมโล่ง ก็เลื่อนหาจุดที่สบายสำหรับตัวเองได้",
+        th: "SALTHUB ระบุว่าปรับลมได้อย่างละเอียด ชอบดูดแน่นหรือชอบลมโล่ง ก็เลื่อนหาจุดที่สบายได้",
         en: "SALTHUB says it adjusts precisely, so whether you like a tighter or a looser draw, you can slide it to the spot that suits you.",
         zh: "SALTHUB 表示可以精细调节，喜欢紧一点还是松一点的吸感，都能推到自己舒服的位置。",
       },
