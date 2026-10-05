@@ -11,18 +11,19 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 2d792bb (#301) [ตรวจแล้ว — git]. #301 merged 06/10 = batch (d) TFIT M Power 20K
-  unhidden on the template: checker PASS 6/6 at 96c46fb · GitHub checks green · self-merge-check BIG (data) · deploy dep-db1u3pei0phs73ch89d0 → live 200 + new text + sitemap + footer TFIT (curl) [ตรวจแล้ว]. Before it, 05/10:
-  #294 guides · #296 trust bar "เช็คสเปก" · #297 guide clips · #299 /about spec sentence (all live-checked).
-2 ahead of main: nothing (batch-4g merged). Material not in git: `_incoming/sitewide-template/` (scripts, facts, shots, logs per batch;
-  4g = `4/4g/` incl. gates.sh · lines.js · try.js · spots.js · pr-body.md) + `_incoming/checker-301/`. Cloud = push a kit branch (never merge).
+1 main: `git fetch && git log -1 --oneline origin/main` = 42855c7 (#304) [ตรวจแล้ว — git]. Merged 06/10, each checker PASS + GitHub
+  checks green [ตรวจแล้ว]: #301 TFIT M Power 20K unhidden on the template (live-checked) · #303 M Bar 15K → pod kits + stage page
+  (checker round 2 PASS at 6c714d3; GitHub Actions outage 06/10 03:00–04:40 cancelled its checks twice — re-run after recovery, then deploy dep-db21ht0ae00c73eevq60 → live: stage blocks + Pod Kits + new SALTHUB lede (curl),
+  owner option 1) · #304 rules "faster, same quality" (owner 06/10 A–E: TEAM_RULES 13.5 (2)(จ) + 13.7 "PR ละ 1–3 สินค้า" ·
+  LESSONS พ20 rewritten + new 26).
+2 ahead of main: nothing. Material not in git: `_incoming/sitewide-template/` (scripts, facts, shots, logs per batch; latest =
+  `3/3f/` gates.sh · lines.js · try.js · try-body.js · spots.js · pr-body.md) + `_incoming/checker-301/ checker-303/`. Worktree
+  `_incoming/wt-rules-0610` (docs/rules work) — remove when done. Cloud = push a kit branch (never merge).
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md`. Scope = the round file's 【ขอบเขต】 block; PM pages (coils, IQOS, pod-180) = images only.
   DONE: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB #273 #274 #275 #277 #288 · 4 #278 #280 #281 #282 #289 #290 · 5a #283 · 6 #284 ·
-  7 part 1 #286 · (d) TFIT M Power 20K #301. Product × part table: `_incoming/sitewide-template/7/table.md` (`npx tsx _incoming/sitewide-template/7/table.ts`).
-  NEXT (owner 06/10 in §18; tier B, one PR each):
-    (e) M Bar 15K → reusable/pod-system category per SALTHUB (own PR, BIG) + story · wrong head-copy facts fixed now (§18 06/10:
-        "cotton mesh / ชาร์จเร็ว / 15 รส"). Facts `_incoming/sitewide-template/3/facts-m-bar-15k.md`.
+  7 part 1 #286 · (d) TFIT M Power 20K #301 · (e) M Bar 15K #303. Product × part table: `_incoming/sitewide-template/7/table.md` (`npx tsx _incoming/sitewide-template/7/table.ts`).
+  NEXT (owner 06/10 in §18; tier B; PR = 1–3 products of one brand, TEAM_RULES 13.7 · speed = LESSONS พ20 + 26):
     (f) MOOOD Monster 14K: open mooodvapes.com/14000puffs/ in a real browser (DNS failed for the researcher); brand site → fix data
         (screenType, flavours, battery) + move it off "Unbranded" (BIG).
     Skipped (owner): INFY 20K + Muro ×3 (no maker material) · pod-180 brandless.
@@ -38,6 +39,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   remover + choke · edgezoom 4x on dark + magenta · process-images map + new file names · sharpness gate before the checker). Esko pod-159
   LAST (13.7 big (2), own PR, + BSOT §21).
 4 waiting on owner:
+  (06/10 #303) look on live: /products/m-bar-15k (now a pod kit; title/JSON-LD/breadcrumb say Pod Kits automatically) ·
+       hero opens on one flavour's cartridge (Apple Aloe) — keep, or open on the card (device + clear Cola cartridge, `openOnCardPhoto`)? ·
+       the ฿349 15K set the shop sells = device + clear M Bar cartridge as the page says? (BSOT 30/09 notes the shop stocks black pods).
   (06/10 #301) look on live: /products/tfit-m-power-20k + /brands/tfit (now indexable, Thai lede = its meta description) · poster 04
        (battery block) prints TFIT's "Up to 72 hours of worry-free power" — keep whole (Friday + checker) or crop it off (redo LESSONS พ18).
   (05/10) look on live: trust bar "เช็คสเปก" line · /faq · /about spec sentence · guide clips (e.g. /guides/comparing-caliburn-models "G4 vs G4 Pro") —
@@ -57,6 +61,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        RELX Creator: article "RELX Creator Pod" (RELX) vs fits-with "RELX Creator 20K pod" (shop) — link the names?
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
 5 open / dated:
+  - "รุ่นนี้มี N กลิ่น" counts every option but the grid shows only those with a photo (15K: 16 vs 15 tiles — Black Berry has no
+    SALTHUB photo) — shared component (ProductMoreDetails), its own small PR + whole-sitemap visible-text (checker #303).
+  - `src/data/families.ts` m-bar still calls the line "disposable (9K/10K/15K)" — internal, not shown (checker #303).
   - TFIT M Power 20K next touch (checker #301, not blocking): airflow body restates its subline (story-copy "tfit-m-power-20k" airflow
     body) · battery subline names the charge port twice · design body «น้ำยายัง | เหลือ» at 390 → e.g. "…เห็นจากด้านนอกเลยว่าน้ำยา
     เหลืออยู่เท่าไหร่" · TFIT Thai head lines both say "รีวิวใช้จริงบน YouTube" (SEO round).
