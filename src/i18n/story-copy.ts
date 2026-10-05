@@ -1617,8 +1617,8 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
   // facts-m-bar-10k.md lists the source of each line); Thai = thai-copy 05–06/10.
   "m-bar-10k": {
     "elegance": {
-      title: { th: "ดีไซน์เรียบหรู", en: "A refined, understated design", zh: "简约精致的设计" },
-      subline: { th: "SALTHUB ระบุว่าทำรุ่นนี้มาเพื่อคนที่มีรสนิยม", en: "SALTHUB made it \"for those who know elegance\".", zh: "SALTHUB 说它是\"为懂得优雅的人而做\"。" },
+      title: { th: "ดีไซน์เรียบ", en: "A simple design", zh: "简洁的设计" },
+      subline: { th: "SALTHUB ระบุว่าทำรุ่นนี้มาเพื่อคนที่มีรสนิยม", en: "SALTHUB made it \"for those who know elegance\".", zh: "SALTHUB 说它是“为懂得优雅的人而做”。" },
       body: {
         th: "นอกจากหน้าตาแล้ว ยังปรับลมให้แน่นหรือโล่งได้เอง ตามความชอบและการใช้งานของแต่ละคน",
         en: "Beyond the looks, you can set the draw as tight or as open as you like, to suit the way you vape.",
@@ -1629,9 +1629,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ทรงขวดน้ำยา ฐานไล่สี", en: "An e-liquid bottle shape", zh: "烟油瓶造型" },
       subline: { th: "SALTHUB เรียกดีไซน์นี้ว่าความหรูที่ไม่ต้องโชว์", en: "SALTHUB calls it understated luxury.", zh: "SALTHUB 称之为低调的奢华。" },
       body: {
-        th: "เวลาพกไว้หลายกลิ่น แค่ดูสีที่ฐาน ก็พอแยกได้ว่าเครื่องไหนกลิ่นอะไร",
-        en: "Carry a few flavours and the colour at the base is enough to tell which is which.",
-        zh: "同时带着几种口味时，看一眼底部的颜色，大致就能分出哪支是什么口味。",
+        th: "สีจะต่างกันไปตามกลิ่น ดูได้จากรายการกลิ่นด้านล่าง",
+        en: "The colour changes from flavour to flavour; see the flavour list below.",
+        zh: "颜色随口味而不同，可以看下面的口味列表。",
       },
     },
     "display": {

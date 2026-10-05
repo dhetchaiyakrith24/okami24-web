@@ -538,7 +538,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       },
     },
     whoIsThisFor: {
-      0: "ชอบเปลี่ยนกลิ่นไปเรื่อย ๆ และอยากได้รุ่นที่มีให้เลือกทั้งสายเย็น สายผลไม้ ไปจนถึง Cola และ Matcha Latte",
+      0: "ชอบเปลี่ยนกลิ่นบ่อย และอยากได้รุ่นที่มีให้เลือกตั้งแต่สายเย็น สายผลไม้ ไปจนถึง Cola และ Matcha Latte",
     },
     specifications: {
       puffs: "สูงสุด 10,000",

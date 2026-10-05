@@ -124,7 +124,7 @@ export const salthubProducts: Product[] = [
     features: [
       {
         id: "elegance",
-        title: "A refined, understated design",
+        title: "A simple design",
         description: "Beyond the looks, you can set the draw as tight or as open as you like, to suit the way you vape.",
         subline: "SALTHUB made it \"for those who know elegance\".",
         image: { src: "/assets/products/m-bar-10k/angle-01.webp", alt: "Official SALTHUB M Bar 10K campaign image, \"Timeless Elegance\" — 10000 puffs, adjustable airflow, 3 mode, 600mAh, cotton mesh, Type-C", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1229 },
@@ -132,7 +132,7 @@ export const salthubProducts: Product[] = [
       {
         id: "bottle",
         title: "An e-liquid bottle shape",
-        description: "Carry a few flavours and the colour at the base is enough to tell which is which.",
+        description: "The colour changes from flavour to flavour; see the flavour list below.",
         subline: "SALTHUB calls it understated luxury.",
         image: { src: "/assets/products/m-bar-10k/angle-02.webp", alt: "Official SALTHUB M Bar 10K poster, \"Understated luxury radiates from within\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1085 },
       },
@@ -160,7 +160,7 @@ export const salthubProducts: Product[] = [
     ],
     compatibility: [typeC],
     whoIsThisFor: [
-      "You like to rotate flavours and want a range that runs from cool and fruity all the way to Cola and Matcha Latte.",
+      "You change flavours often and want a range that runs from cool and fruity all the way to Cola and Matcha Latte.",
     ],
     // Batch 3c: the FAQ "How do I switch power modes?" left — the modes block tells it.
     faqs: [
