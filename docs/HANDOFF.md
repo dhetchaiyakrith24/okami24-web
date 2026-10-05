@@ -83,43 +83,23 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - JOIWAY F4 (#289, checker notes): "สองถัง" said 6+ times · article "สูบได้กี่พัฟ" restates poster 01 — next F4 touch.
   - wordbreak 05/10: «ไฟจะ» on /guides/fixing-no-draw-and-blinking-light@390 (guides = later round) · `vmate-i3/variants/*` +
     `argus-p3/lineup-v2.webp` unused but kept by the #286 sweep (their names appear in src/ — check by hand).
-  - [ตรวจแล้ว — files, checker #272] ARGUS G4 after #271, outside the round (the guide's "unconfirmed" lines = fixed in #294) ·
-    technology multi-resistance-cartridges quotes the old pod row "ARGUS
-    top-fill cartridge platform, multiple resistances" · G4 head copy: 0.85 twice (tagline + shortDescription) + the anatomy
-    diagram = 3 (SEO round; checker #271 accepted) · English names wrap at a space in the spec table (accepted).
+  - UWELL/VOOPOO page-level notes held for the SEO round or each page's next touch (ARGUS G4 guide/tech rows · G3 mini
+    "GENE.AI" · 2e taste notes · G3 Pro KOKO comment · G4/G4 mini U-channel wording · G4 firing source · DRAG 6 head copy +
+    tank row + X3 coil guide · beginner-guide G3 mini size · KOKO/G4 Pro head copy · G4 Pro/KOKO negation wordbreak) = full text
+    `git show d311dba:docs/HANDOFF.md` §16 item 5.
   - DEFERRED by the owner 04/10 + 05/10 (no date; "ไว้ค่อยกลับมาแก้"): images that "still look like graphics" (LESSONS ช9) — DRAG S3 +
     X3 colour photos + two-group line-ups (#255) · DRAG 6 lineup-v3 (also too small) · ARGUS G4 mini images. Not fixed either (checker
     #253 taste): text in the 3 wide DRAG 6 posters ~6–7 px at 390 · "มีโหมด SMART RBA และ TC-TCR" reads as 2.
   - 7 highlight chips wrap 6 + 1 at 1440 on caliburn-g4-pro-koko and caliburn-g3-pro-koko (chip bar is lg:grid-cols-6) — shared
     component, its own small PR + whole-sitemap visible-text (checker #242: not a defect of 1d).
-  - ARGUS G3 mini chip: VOOPOO names it "GENE AI 2.0" and "GENE TT 3.0" on the same voopoo.com page (researcher 04/10) → spec row
-    dropped in 2e. Still says "GENE.AI": the G3 mini head tagline + shortDescription (SEO round; the tagline also splits «ให้เอง» at
-    390) · `src/data/technology.ts` + technology-copy (the chips page uses the G3 mini as its GENE.AI example) · guides.ts +
-    guides-copy (beginner guide "auto-draw … GENE.AI") — outside the round; fix together when a round owns them.
-  - 2e taste notes (checker #262): "Clous | de Paris" splits at 390 · "tiny" poster captions ~7 px at 390 · G4 mini "pod" poster
-    shows the pod seat, under a cartridge title.
-  - G3 Pro KOKO data comment "color-N.webp 404" is outdated (UWELL has colors/0..7.webp; front/back overlap, so not cut) — fix next touch.
-  - story-copy.ts G4 / G4 mini say the U-shaped channel "ช่วยให้ลมเดินดีขึ้น"; UWELL's KOKO poster says it stores condensate — check the
-    G4 posters before changing (thai-copy flag 04/10).
   - (05/10) the same "explain the absence" voice is still on product pages: INFY 20K FAQ "สเปกในหน้านี้มาจากไหน" ("INFY ยังไม่ลงรุ่น
     20K ในเว็บของตัวเอง…", product-copy-th.ts infy-20k + infy.ts) — owner rule §18 06/10 pm → cut it with the INFY page's next touch.
   - (05/10) old worktrees from earlier rounds under `_incoming/wt-*` (wt-h · wt-keep · wt-pr · wt-s16 · wt-tpl; `git worktree list`) —
     housekeeping; a worktree build cannot use a node_modules junction (Turbopack refuses), so build in the main tree only.
-  - G4 `firing` row ("draw or button") is sourced from the manuals.plus copy of UWELL's manual, not a UWELL page (thai-copy flag 03/10).
-  - DRAG 6 head copy (off-limits → SEO round): shortDescription en "The current DRAG-series flagship" / th "รุ่นเรือธงล่าสุดของสาย
-    DRAG" is not VOOPOO's wording, and th "(ถ่าน 2200mAh สองก้อน)" uses the locked word for removable cells + a layer-4 bracket.
-  - DRAG 6 tank spec row splits "UFORCE-X | Tank II" at 390 (checker accepted ×3) · /guides/reading-a-spec-sheet still cites a
-    retailer list for the DRAG X3 coil (guides.ts ~214 + guides-copy th/zh) — maker-only rule, fix when X3 is read (batch 2) ·
-    compat-copy-th "DRAG-series coil pod" → "หัวพอตสาย DRAG (เปลี่ยนคอยล์ได้)" has a bracket and "สาย" (locked for flavour lines).
   - coil-94's Thai Shipnity name "UWELL คอยล์ Caliburn G4&G3 Series" shows on en/zh pages that link it (locale-hydration FAIL on
     caliburn-g3-pro(-koko), -g4-pro(-koko), -g5 en+zh, same on live) [ตรวจแล้ว] — data round. Same for coil-72 "VOOPOO คอยล์ Vmate
     Infinity Edition" on vmate-i3 en/zh (live before and after #264) [ตรวจแล้ว], and its fits-with card there still shows the
     retailer evidence sentence from catalog-relationships.ts (maker-only rule) — data round.
-  - Beginner guide (guides.ts + guides-copy) still gives the G3 mini as 95.3 mm / 41 g (VOOPOO: 97.9 mm with 3mL / 40.85 g, #262).
-  - Head copy off-limits this round, wrong since 1c (SEO round): KOKO (G4 Pro) shortDescription "2 นิ้ว" + "Custom" · G4 Pro tagline +
-    shortDescription both say 2.51. `src/data/technology.ts` onboard-touch-displays calls the KOKO modes "draw modes" — outside round.
-  - wordbreak on G4 Pro / KOKO: "…เติมน้ำยาได้โดยไม่ | ต้องถอดหัวออก" (1440) and "โดยไม่ | ต้องไปถึงพอตคิท" (KOKO 390) — negation at a
-    line end in 1c text, found 03/10 after merge; reword with thai-copy in the next G4 Pro touch.
   - SEO round (owner 02/10: baseline hold lifted): GSC vs `docs/SEO_BASELINE.md` · delete `galleryNoteHeld` + `heldNote` +
     `TITLE_PRICE_HOLD_UNTIL_2026_10_05` · M Bar 10K airflow row · G5 hero tagline repeats · product FAQ answers absent from server HTML ·
     8 brand titles naming a model (cloud-results §2) · shared GPP note "Shared top-fill…" on 8 UWELL pages · (04/10, language
