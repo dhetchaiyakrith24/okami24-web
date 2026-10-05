@@ -1783,4 +1783,69 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       ],
     },
   },
+  // Site-wide template round batch 3f (06/10): SALTHUB's own M Bar 15K posters (_incoming/sitewide-template/3/facts-m-bar-15k.md
+  // lists the source of each line); Thai = thai-copy 06/10. The posters are near-twins of the M Switch Kit's — no sentence repeats
+  // that page; the cartridge (swap + ceramic coil) is what this page is about.
+  "m-bar-15k": {
+    "swap": {
+      title: { th: "ตัวเครื่องคู่กับหัวพอต", en: "A device with a swap-in cartridge", zh: "主机加可换的烟弹" },
+      subline: { th: "เลือกหัวพอตกลิ่นที่ชอบ แล้วเสียบลงบนตัวเครื่องได้เลย", en: "SALTHUB: put your favourite flavour cartridge into the device.", zh: "SALTHUB：把喜欢的口味烟弹装进主机。" },
+      body: {
+        th: "ตัวเครื่องเป็นส่วนที่เก็บไว้ใช้ต่อ ส่วนกลิ่นจะอยู่ในหัวพอตที่เสียบอยู่ด้านบน",
+        en: "The body is the part you keep; the flavour sits in the clear cartridge on top.",
+        zh: "主机留着用，口味在上面那颗透明烟弹里。",
+      },
+      points: [
+        { text: { th: "หัวพอตใส ถอดเปลี่ยนได้", en: "Clear, swappable cartridge", zh: "透明烟弹，可拆换" }, specKey: "format" },
+      ],
+      link: { href: "/products/m-switch-kit", label: { th: "ดู M Switch Kit รุ่นที่ใช้หัวพอตสีดำ", en: "See the M Switch Kit, the one with the black cartridge", zh: "查看用黑色烟弹的 M Switch Kit" } },
+    },
+    "coil": {
+      title: { th: "คอยล์เซรามิก", en: "A ceramic coil", zh: "陶瓷芯" },
+      subline: { th: "ติดมาในหัวพอตใสอยู่แล้ว", en: "It sits inside the clear cartridge.", zh: "就在透明烟弹里面。" },
+      body: {
+        th: "SALTHUB ระบุว่าคอยล์ตัวนี้ให้รสที่นุ่มลื่นและเต็มรส เมื่อเปลี่ยนหัวพอต ก็ได้คอยล์ตัวใหม่มาพร้อมกันด้วย",
+        en: "SALTHUB says it gives a smooth, full flavour. Each new cartridge brings a fresh coil with it.",
+        zh: "SALTHUB 表示它口感顺滑、味道饱满。换上新烟弹，线圈也跟着换新。",
+      },
+    },
+    "screen": {
+      title: { th: "เห็นแบตเป็นตัวเลข", en: "Battery left, as a number", zh: "剩余电量直接显示数字" },
+      subline: { th: "หน้าจอที่ตัวเครื่องแสดงตัวเลขนี้ไว้ตลอดเวลา", en: "The screen keeps it in view all the time.", zh: "屏幕一直显示着。" },
+      body: {
+        th: "ดูแล้วรู้ได้ล่วงหน้าว่าแบตใกล้หมด จะได้ชาร์จเตรียมไว้ก่อนออกจากบ้าน",
+        en: "You can see it running low ahead of time and charge it before you head out.",
+        zh: "电量快用完时提前就能看到，出门前先充好电。",
+      },
+      points: [
+        { text: { th: "บอกสถานะตอนกำลังชาร์จและเมื่อชาร์จเต็ม", en: "Charging and full-charge indicator", zh: "充电中与充满提示" }, specKey: "screen" },
+      ],
+    },
+    "charge": {
+      title: { th: "ชาร์จแล้วใช้ต่อได้", en: "Charge and carry on", zh: "充好电接着用" },
+      subline: { th: "ช่องชาร์จอยู่ที่ฐานของตัวเครื่อง", en: "The cable goes into the base.", zh: "充电线插在机身底部。" },
+      body: {
+        th: "ระหว่างชาร์จ หน้าจอจะขึ้นรูปสายฟ้าคู่กับตัวเลขแบต ดูได้เลยว่าชาร์จไปถึงไหนแล้ว",
+        en: "While it charges, a lightning mark appears beside the battery number, so you can see how far it has got.",
+        zh: "充电时，屏幕上的电量数字旁会出现闪电标志，充到多少一看便知。",
+      },
+      points: [
+        { text: { th: "แบตเตอรี่ 600mAh", en: "600mAh battery", zh: "600mAh 电池" }, specKey: "battery" },
+        { text: { th: "ชาร์จผ่าน USB-C", en: "USB-C charging", zh: "USB-C 充电" }, specKey: "charging" },
+      ],
+    },
+    "airflow": {
+      title: { th: "ตั้งลมได้เอง", en: "Choose your airflow", zh: "进气自己调" },
+      subline: { th: "ที่ปรับลมอยู่ด้านข้างตัวเครื่อง", en: "The valve is on the side of the body.", zh: "调节阀在机身侧面。" },
+      body: {
+        th: "SALTHUB ระบุว่าปรับลมได้อย่างละเอียด จะชอบดูดแน่นหรือชอบลมโล่ง ก็เลื่อนหาจุดที่สบายสำหรับตัวเองได้",
+        en: "SALTHUB says it adjusts precisely, so whether you like a tighter or a looser draw, you can slide it to the spot that suits you.",
+        zh: "SALTHUB 表示可以精细调节，喜欢紧一点还是松一点的吸感，都能推到自己舒服的位置。",
+      },
+      points: [
+        { text: { th: "ปุ่มเลื่อนปรับลม", en: "Airflow adjust valve", zh: "进气调节阀" }, specKey: "airflow" },
+      ],
+      link: { href: "/guides/choosing-wattage-and-airflow", label: { th: "อ่านวิธีเลือกลมให้เหมาะกับแนวการสูบ", en: "How to choose wattage and airflow", zh: "如何选择功率与进气量" } },
+    },
+  },
 };

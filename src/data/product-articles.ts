@@ -1697,6 +1697,60 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 3f (06/10): from SALTHUB's own M Bar 15K + M Switch Kit material; Thai = thai-copy 06/10.
+  "m-bar-15k": {
+    th: {
+      lede: "ด้านล่างไล่ดู M Bar 15K ทีละส่วนตามโปสเตอร์ของ SALTHUB เอง และเล่าไว้ด้วยว่าแต่ละส่วนมีประโยชน์อย่างไรตอนใช้งานจริง",
+      sections: [
+        {
+          heading: "M Bar 15K ต่างจาก M Switch Kit ตรงไหน",
+          paragraphs: [
+            "ทั้งสองรุ่นใช้ตัวเครื่อง M Switch แบบเดียวกัน มีหน้าจอ ปุ่มเลื่อนปรับลม และสายคล้องเหมือนกัน ความต่างอยู่ที่หัวพอต M Bar 15K ใช้หัวพอตใสที่มีคอยล์เซรามิก ส่วน [M Switch Kit](/products/m-switch-kit) ใช้หัวพอตสีดำที่มีคอยล์ cotton mesh"
+          ]
+        },
+        {
+          heading: "M Bar 15K สูบได้กี่พัฟ",
+          paragraphs: [
+            "SALTHUB ระบุว่า M Bar 15K สูบได้สูงสุด 15,000 พัฟ ส่วนในการใช้งานจริงจะได้ใกล้ตัวเลขนี้แค่ไหน ขึ้นอยู่กับว่าสูบบ่อยเพียงใด และดูดแต่ละครั้งนานเท่าไร"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "Below, the M Bar 15K one part at a time from SALTHUB's own posters, with what each part does for you day to day.",
+      sections: [
+        {
+          heading: "M Bar 15K or M Switch Kit?",
+          paragraphs: [
+            "Both use the same M Switch body, with the screen, the airflow slider and the lanyard. The difference is the cartridge: the M Bar 15K takes SALTHUB's clear M Bar cartridge with a ceramic coil, the [M Switch Kit](/products/m-switch-kit) its black cartridge with a cotton mesh coil."
+          ]
+        },
+        {
+          heading: "How many puffs?",
+          paragraphs: [
+            "SALTHUB rates the M Bar 15K at up to 15,000 puffs. How close you get depends on how often you vape and how long each draw is."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "下面根据 SALTHUB 自己的海报逐项来看 M Bar 15K，也说说每个部分在日常使用中有什么用。",
+      sections: [
+        {
+          heading: "M Bar 15K 和 M Switch Kit 怎么选？",
+          paragraphs: [
+            "两者用的是同一台 M Switch 主机，屏幕、进气滑块和挂绳都一样。区别在烟弹：M Bar 15K 用 SALTHUB 的透明 M Bar 烟弹，陶瓷芯；[M Switch Kit](/products/m-switch-kit) 用黑色烟弹，棉网芯。"
+          ]
+        },
+        {
+          heading: "能抽多少口？",
+          paragraphs: [
+            "SALTHUB 标注 M Bar 15K 最多 15,000 口。实际能抽到多接近这个数字，取决于抽的频率和每口的长短。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
