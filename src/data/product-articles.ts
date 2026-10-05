@@ -1491,7 +1491,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "หัวพอตที่ RELX ทำมาให้เครื่องนี้",
           paragraphs: [
-            "หัวพอตที่ RELX ออกแบบมาสำหรับเครื่องนี้โดยเฉพาะคือ RELX Creator Pod ความจุน้ำยาที่ RELX ระบุไว้คือ 2+8mL ใช้คอยล์ Dual Mesh และมีให้เลือก 13 กลิ่น ถ้าอยากรู้ว่าตอนนี้ร้านมีกลิ่นไหนอยู่บ้าง ทักไลน์ @okm24 ถามได้เลย"
+            "หัวพอตที่ RELX ออกแบบมาสำหรับเครื่องนี้โดยเฉพาะคือ RELX Creator Pod ความจุน้ำยาที่ RELX ระบุไว้คือ 2+8mL และใช้คอยล์ Dual Mesh ถ้าอยากรู้ว่าตอนนี้ร้านมีกลิ่นไหนอยู่บ้าง ทักไลน์ @okm24 ถามได้เลย"
           ]
         },
         {
@@ -1508,7 +1508,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "RELX's own pods for it",
           paragraphs: [
-            "The pod RELX designed specifically for this device is the RELX Creator Pod. RELX lists its capacity as 2+8mL, it uses a Dual Mesh coil, and it comes in 13 flavours. To check which flavours we have right now, message us on LINE @okm24."
+            "The pod RELX designed specifically for this device is the RELX Creator Pod. RELX lists its capacity as 2+8mL, and it uses a Dual Mesh coil. To check which flavours we have right now, message us on LINE @okm24."
           ]
         },
         {
@@ -1525,7 +1525,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "RELX 为它做的烟弹",
           paragraphs: [
-            "RELX 专为这台设备设计的烟弹是 RELX Creator Pod。RELX 标注的容量为 2+8mL，采用 Dual Mesh 线圈，共有 13 种口味。想知道我们现在有哪些口味，可以在 LINE @okm24 问我们。"
+            "RELX 专为这台设备设计的烟弹是 RELX Creator Pod。RELX 标注的容量为 2+8mL，采用 Dual Mesh 线圈。想知道我们现在有哪些口味，可以在 LINE @okm24 问我们。"
           ]
         },
         {
