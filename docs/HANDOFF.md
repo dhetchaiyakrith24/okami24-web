@@ -19,8 +19,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 2 ahead of main [ตรวจแล้ว — git]: `git log --oneline origin/main..origin/batch-4g-tfit-m-power` = 095451a (batch (d) TFIT, NOT built, NOT
   scanned, NOT checked; branched from cf2394b → merge origin/main first: #296/#297 touch other files, only content-dates.json overlaps).
   No PR open for it yet. Material not in git:
-  `_incoming/sitewide-template/` (3/3c · 4/4e · 4/4f = scripts, facts, shots, logs per batch). Kits (never merge): `kit-1b` · `kit-1c` (`git fetch origin kit-1b &&
-  git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template`) — later batches local only; push a kit for cloud.
+  `_incoming/sitewide-template/` (scripts, facts, shots, logs per batch). Cloud = push a kit branch (never merge; e.g. `kit-1c`).
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md`. Scope = the round file's 【ขอบเขต】 block; PM pages (coils, IQOS, pod-180) = images only.
   DONE: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB #273 #274 #275 #277 #288 · 4 #278 #280 #281 #282 #289 #290 · 5a #283 · 6 #284 ·
