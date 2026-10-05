@@ -1588,6 +1588,8 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
       points: [
         { text: { th: "NORM 16 วัตต์ / TURBO 19 วัตต์", en: "NORM 16W / TURBO 19W", zh: "NORM 16W / TURBO 19W" }, specKey: "modes" },
+        { text: { th: "บรรจุน้ำยา 21mL", en: "21mL e-liquid", zh: "21mL 烟油" }, specKey: "capacity" },
+        { text: { th: "แบตเตอรี่ 750mAh", en: "750mAh battery", zh: "750mAh 电池" }, specKey: "battery" },
       ],
     },
     "mouthpiece": {
