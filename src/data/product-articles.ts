@@ -1367,12 +1367,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "แต่ละกลิ่นมาเป็นชุด มีตัวเครื่องคู่กับหัวพอตกลิ่นนั้นหนึ่งหัว ถ้าอยากได้หัวพอตเพิ่มหรืออยากลองกลิ่นอื่น ดูได้ที่[หน้าหัวพอต](/products/m-switch-pod)"
           ]
-        },
-        {
-          heading: "ความจุแบตของตัวเครื่องเท่าไหร่",
-          paragraphs: [
-            "หน้า M Switch Kit บนเว็บของ SALTHUB ไม่ได้ระบุความจุแบตของตัวเครื่องไว้ เราจึงไม่ใส่ตัวเลข"
-          ]
         }
       ]
     },
@@ -1384,12 +1378,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "Each flavour comes as the device with one pod of that flavour. Spare pods and other flavours are on the [pod page](/products/m-switch-pod)."
           ]
-        },
-        {
-          heading: "How big is the battery?",
-          paragraphs: [
-            "SALTHUB doesn't give the kit's own battery size on its kit page, so we don't print one here."
-          ]
         }
       ]
     },
@@ -1400,12 +1388,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "每个口味的套装里有什么？",
           paragraphs: [
             "每个口味都是主机加一颗该口味的烟弹。备用烟弹见[烟弹页面](/products/m-switch-pod)。"
-          ]
-        },
-        {
-          heading: "电池有多大？",
-          paragraphs: [
-            "SALTHUB 的套装页面没有写机身电池容量，所以这里不写。"
           ]
         }
       ]
@@ -1592,39 +1574,19 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
     },
   },
   // Site-wide template round batch 3c (06/10): from SALTHUB's M Bar 10K posters; Thai = thai-copy 05–06/10.
+  // Owner 06/10 pm: its only section ("nicotine — not on the posters, ask LINE") went → lede only, no buyer-question block.
   "m-bar-10k": {
     th: {
       lede: "ด้านล่างไล่ดู M Bar 10K ทีละส่วนจากโปสเตอร์ของ SALTHUB เอง พร้อมบอกว่าแต่ละส่วนช่วยอะไรในการใช้งาน",
-      sections: [
-        {
-          heading: "ความเข้มข้นของนิโคตินเท่าไหร่",
-          paragraphs: [
-            "เรื่องนี้ SALTHUB ไม่ได้ระบุไว้บนโปสเตอร์ของรุ่นนี้ เราจึงไม่ใส่ตัวเลขขึ้นมาเอง ถ้าอยากทราบว่าตัวที่ร้านมีเป็นแบบไหน ทักไลน์ @okm24 ถามได้เลย"
-          ]
-        }
-      ]
+      sections: []
     },
     en: {
       lede: "Below, the M Bar 10K one part at a time, from SALTHUB's own posters.",
-      sections: [
-        {
-          heading: "How strong is the nicotine?",
-          paragraphs: [
-            "SALTHUB's M Bar 10K posters don't state the nicotine strength, so we don't print one. Ask on LINE @okm24 for the version we stock."
-          ]
-        }
-      ]
+      sections: []
     },
     zh: {
       lede: "下面根据 SALTHUB 自己的海报，逐项来看 M Bar 10K。",
-      sections: [
-        {
-          heading: "尼古丁浓度是多少？",
-          paragraphs: [
-            "SALTHUB 的 M Bar 10K 海报没有写尼古丁浓度，所以我们这里不写。我们店里的版本可以在 LINE @okm24 询问。"
-          ]
-        }
-      ]
+      sections: []
     },
   },
   // Site-wide template round batch 4e (06/10): from JOIWAY's own F4 TWINS posters; Thai = thai-copy 06/10.
@@ -1637,12 +1599,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "โปสเตอร์หน้าแรกของ JOIWAY ระบุไว้ที่ 20,000 พัฟต่อเครื่อง แบ่งเป็นฝั่งละ 10,000 พัฟ"
           ]
-        },
-        {
-          heading: "ความเข้มข้นของนิโคตินเท่าไหร่",
-          paragraphs: [
-            "เรื่องนี้ JOIWAY ไม่ได้ระบุไว้บนโปสเตอร์ เราจึงไม่ใส่ตัวเลขขึ้นมาเอง ถ้าอยากรู้ว่าตัวที่ร้านมีเป็นแบบไหน ทักมาถามทางไลน์ @okm24 ได้เลย"
-          ]
         }
       ]
     },
@@ -1654,12 +1610,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "JOIWAY's cover poster gives 20,000 puffs for the device: 10,000 on each side."
           ]
-        },
-        {
-          heading: "How strong is the nicotine?",
-          paragraphs: [
-            "JOIWAY's F4 posters don't state a nicotine strength, so we don't print one. Ask on LINE @okm24 for the version we stock."
-          ]
         }
       ]
     },
@@ -1670,12 +1620,6 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           heading: "能抽多少口？",
           paragraphs: [
             "JOIWAY 的封面海报写的是整机 20,000 口：每边 10,000 口。"
-          ]
-        },
-        {
-          heading: "尼古丁浓度是多少？",
-          paragraphs: [
-            "JOIWAY 的 F4 海报没有写尼古丁浓度，所以我们这里不写。我们店里的版本可以在 LINE @okm24 询问。"
           ]
         }
       ]
