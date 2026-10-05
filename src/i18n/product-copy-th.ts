@@ -576,7 +576,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     // Batch 3f (06/10): stage page (story text in story-copy.ts) · shortDescription = the 4 wrong facts fixed (owner §18 06/10:
     // disposable · cotton mesh · fast charging · 15 flavours) · tagline kept (nothing wrong in it). Thai = thai-copy 06/10.
     whoIsThisFor: {
-      0: "ชอบตัวเครื่องแบบ M Switch แต่อยากใช้หัวพอตแบบใส",
+      0: "ชอบตัวเครื่องแบบ M Switch แต่อยากได้หัวพอตของ M Bar",
       1: "อยากเห็นแบตที่เหลือเป็นตัวเลขบนหน้าจอ แทนการกะเอาเอง",
     },
     specifications: {

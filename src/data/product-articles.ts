@@ -1700,7 +1700,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
   // Site-wide template round batch 3f (06/10): from SALTHUB's own M Bar 15K + M Switch Kit material; Thai = thai-copy 06/10.
   "m-bar-15k": {
     th: {
-      lede: "ด้านล่างไล่ดู M Bar 15K ทีละส่วนตามโปสเตอร์ของ SALTHUB เอง และเล่าไว้ด้วยว่าแต่ละส่วนมีประโยชน์อย่างไรตอนใช้งานจริง",
+      lede: "ด้านล่างไล่ดู M Bar 15K ทีละส่วนจากโปสเตอร์ของ SALTHUB ตั้งแต่การเปลี่ยนหัวพอต คอยล์ หน้าจอ ไปจนถึงการชาร์จและการปรับลม",
       sections: [
         {
           heading: "M Bar 15K ต่างจาก M Switch Kit ตรงไหน",
@@ -1717,7 +1717,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     en: {
-      lede: "Below, the M Bar 15K one part at a time from SALTHUB's own posters, with what each part does for you day to day.",
+      lede: "Below, the M Bar 15K one part at a time from SALTHUB's posters: the swap-in cartridge, the coil, the screen, charging and airflow.",
       sections: [
         {
           heading: "M Bar 15K or M Switch Kit?",
@@ -1734,7 +1734,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
     zh: {
-      lede: "下面根据 SALTHUB 自己的海报逐项来看 M Bar 15K，也说说每个部分在日常使用中有什么用。",
+      lede: "下面根据 SALTHUB 的海报逐项来看 M Bar 15K：可换烟弹、线圈、屏幕、充电和进气。",
       sections: [
         {
           heading: "M Bar 15K 和 M Switch Kit 怎么选？",

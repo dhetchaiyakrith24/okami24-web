@@ -45,7 +45,8 @@ export const brands: Brand[] = [
       // sentence says only what the evidence supports — other shops use the name Marbo, and
       // salthub.com's footer shows the Marbo logo (_incoming/round8/researcher-1-result.md rows
       // 1 and 3a). It never says who makes or distributes what: no source for that (row 3c).
-      "SALTHUB เจ้าของ M Bar พอตใช้แล้วทิ้งรุ่น 9K 10K และ 15K กับเครื่องระบบสวิตช์ M Switch และ Zero ที่เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา ที่ร้านมีทั้งตัวเครื่องและหัวพอต ถ้าเคยเห็นชื่อ Marbo ตามร้านอื่น คือของตระกูลเดียวกันนี้ เว็บทางการ salthub.com เองก็มีโลโก้ Marbo อยู่ที่ท้ายเว็บ",
+      // Batch 3f (06/10): the 15K left "disposable" (owner 06/10 — pod kits); only that clause changed.
+      "SALTHUB เจ้าของ M Bar พอตใช้แล้วทิ้งรุ่น 9K และ 10K กับเครื่องระบบสวิตช์ M Switch และ Zero ที่เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา ส่วน M Bar 15K เป็นตัวเครื่อง M Switch คู่หัวพอตใส ที่ร้านมีทั้งตัวเครื่องและหัวพอต ถ้าเคยเห็นชื่อ Marbo ตามร้านอื่น คือของตระกูลเดียวกันนี้ เว็บทางการ salthub.com เองก็มีโลโก้ Marbo อยู่ที่ท้ายเว็บ",
     referenceUrl: "https://www.salthub.com/",
   },
   {
