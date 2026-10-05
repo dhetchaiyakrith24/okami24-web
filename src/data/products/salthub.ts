@@ -89,9 +89,11 @@ export const salthubProducts: Product[] = [
     storyDetails: true,
     // swatchHex of Pink Berry / Strawberry Kiwi / Watermelon Mint corrected 2026-09-30 to the device base colour on
     // SALTHUB's own flavour photos (violet · magenta · red — the old dots were guessed from the flavour names).
-    // Opens the story (designer 30/09: a campaign image, not a coil fact — it no longer sits beside the coil text;
-    // cotton mesh stays in the spec sheet).
-    storyCover: { src: "/assets/products/m-bar-10k/angle-01.webp", alt: "Official SALTHUB M Bar 10K campaign image, \"Timeless Elegance\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1229 },
+    // Site-wide template round batch 3c (06/10): split → the G5 template's stage (docs/PRODUCT_PAGE_TEMPLATE.md) — SALTHUB's own
+    // M Bar 10K posters 01–05, one per block (1920 px, whole: _incoming/sitewide-template/3/3c/blocks.js). No cover: poster 01
+    // is 1920 px (poster-stretch ×1.36 as a full-width cover) — it is block 1. Not used: 06 (flavour chart = the flavour grid)
+    // and 07 (packaging display).
+    storyLayout: "stage",
     flavorVariants: [
       { id: "all-berry", name: "All Berry", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-all-berry-v3.webp", alt: "SALTHUB M Bar 10K, All Berry — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-all-berry-v2.webp", alt: "SALTHUB M Bar 10K, All Berry — box and device" } },
       { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/m-bar-10k/variant-blue-ice-v3.webp", alt: "SALTHUB M Bar 10K, Blue Ice — device" }, boxImage: { src: "/assets/products/m-bar-10k/variant-blue-ice-v2.webp", alt: "SALTHUB M Bar 10K, Blue Ice — box and device" } },
@@ -115,52 +117,53 @@ export const salthubProducts: Product[] = [
       { key: "coil", label: "Coil", value: "Cotton mesh coil", sourceStatus: "verified", sourceUrl: "https://img.salthub.com/mbar10k/MBar10K_01.webp" },
       { key: "modes", label: "Power modes", value: "Eco / Soft / Boost, switched by double-click", sourceStatus: "verified", sourceUrl: "https://img.salthub.com/mbar10k/MBar10K_04.webp" },
       { key: "indicator", label: "Status indicator", value: "LED battery level in 25% increments; RGB shows active mode", sourceStatus: "verified", sourceUrl: "https://img.salthub.com/mbar10k/MBar10K_03.webp" },
+      // Batch 3c (06/10): "ADJUSTABLE AIRFLOW" is printed on SALTHUB's campaign poster 01 (the control is not named).
+      { key: "airflow", label: "Airflow", value: "Adjustable", sourceStatus: "verified", sourceUrl: "https://img.salthub.com/mbar10k/MBar10K_01.webp" },
     ],
-    // 2026-09-30: `image` = the maker's own poster for each highlight, told one per block in "more details"
-    // (`storyDetails`); mesh-coil has none, so it is not a block there (spec sheet row stays). bottle-shape /
-    // ten-k-puffs were added for posters 02 / 05 (writer, verified spec rows only).
+    // Batch 3c (06/10): one SALTHUB poster per stage block (posters 01–05); Thai/en/zh text = src/i18n/story-copy.ts.
     features: [
       {
-        id: "bottle-shape",
-        title: "E-liquid bottle shape",
-        description: "Shaped like a classic e-liquid bottle, with a colour gradient at the base that differs from flavour to flavour.",
+        id: "elegance",
+        title: "A simple design",
+        description: "Beyond the looks, you can set the draw as tight or as open as you like, to suit the way you vape.",
+        subline: "SALTHUB made it \"for those who know elegance\".",
+        image: { src: "/assets/products/m-bar-10k/angle-01.webp", alt: "Official SALTHUB M Bar 10K campaign image, \"Timeless Elegance\" — 10000 puffs, adjustable airflow, 3 mode, 600mAh, cotton mesh, Type-C", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1229 },
+      },
+      {
+        id: "bottle",
+        title: "An e-liquid bottle shape",
+        description: "The colour changes from flavour to flavour; see the flavour list below.",
+        subline: "SALTHUB calls it understated luxury.",
         image: { src: "/assets/products/m-bar-10k/angle-02.webp", alt: "Official SALTHUB M Bar 10K poster, \"Understated luxury radiates from within\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1085 },
       },
       {
-        id: "three-modes",
-        title: "Three power modes",
-        description: "Eco, Soft, and Boost modes are cycled with a double-click, changing output character without any menu.",
-        image: { src: "/assets/products/m-bar-10k/story-04.webp", alt: "Official SALTHUB M Bar 10K poster, \"Your tempo, your call\" — double-click the bottom button to switch Eco / Soft / Boost", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1600, height: 898 },
+        id: "display",
+        title: "Battery level lights",
+        description: "Four LEDs show the battery a quarter at a time, so when only one is lit, you know it is running low.",
+        subline: "See how much battery is left at a glance.",
+        image: { src: "/assets/products/m-bar-10k/angle-03.webp", alt: "SALTHUB M Bar 10K mini display, 4-LED battery indicator and Eco/Soft/Boost status indicator", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1096 },
       },
       {
-        id: "rgb-indicator",
-        title: "RGB mode indicator",
-        description: "A colour-coded LED shows which of the three power modes is currently active at a glance.",
-        image: { src: "/assets/products/m-bar-10k/angle-03.webp", alt: "SALTHUB M Bar 10K mini display, 4-LED battery indicator and Eco/Soft/Boost RGB status indicator", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1096 },
+        id: "modes",
+        title: "Your tempo, your call",
+        description: "Switch back and forth as often as you like, so the draw can be gentler or stronger whenever you want.",
+        subline: "Double-click the button at the bottom.",
+        image: { src: "/assets/products/m-bar-10k/story-modes.webp", alt: "Official SALTHUB M Bar 10K poster, \"Your tempo, your call\" — double-click the bottom button to switch Eco / Soft / Boost", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1078 },
       },
       {
-        id: "ten-k-puffs",
-        title: "Up to 10,000 puffs",
-        description: "Rated for up to 10,000 puffs, with a 600mAh battery you recharge over USB-C when it runs low.",
-        image: { src: "/assets/products/m-bar-10k/story-05.webp", alt: "Official SALTHUB M Bar 10K poster, \"Built for nonstop performance\" — up to 10,000 puffs", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1600, height: 899 },
-      },
-      {
-        id: "mesh-coil",
-        title: "Cotton mesh coil",
-        description: "A mesh coil design intended to keep flavor consistent across the device's rated puff count.",
+        id: "nonstop",
+        title: "Built to keep going",
+        description: "The puff count is the maker's figure; how many you actually get depends on how often and how long each person draws.",
+        subline: "SALTHUB says it performs the same from the first draw to the last.",
+        image: { src: "/assets/products/m-bar-10k/story-nonstop.webp", alt: "Official SALTHUB M Bar 10K poster, \"Built for nonstop performance\" — up to 10,000 puffs", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1079 },
       },
     ],
     compatibility: [typeC],
     whoIsThisFor: [
-      "Vapers who want mode flexibility (Eco/Soft/Boost) without an open-system pod device.",
-      "Anyone who wants a rechargeable disposable rather than a single-charge unit.",
+      "You change flavours often and want a range that runs from cool and fruity all the way to Cola and Matcha Latte.",
     ],
+    // Batch 3c: the FAQ "How do I switch power modes?" left — the modes block tells it.
     faqs: [
-      {
-        id: "m-bar-10k-modes",
-        question: "How do I switch power modes?",
-        answer: "Double-click to cycle between Eco, Soft, and Boost — the RGB indicator changes colour to show which mode is active.",
-      },
       {
         id: "m-bar-10k-recharge",
         question: "Is it rechargeable?",
@@ -168,7 +171,7 @@ export const salthubProducts: Product[] = [
       },
     ],
     relatedProductSlugs: ["m-bar-9k", "m-bar-15k", "m-switch-kit"],
-    sourceUrls: ["https://www.salthub.com/"],
+    sourceUrls: ["https://www.salthub.com/", "https://www.salthub.com/mbar-10k/"],
   },
   {
     id: "m-bar-9k",

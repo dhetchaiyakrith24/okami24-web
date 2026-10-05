@@ -532,18 +532,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
 
   "m-bar-10k": {
     faqs: {
-      "m-bar-10k-modes": {
-        question: "สลับโหมดวัตต์ยังไง",
-        answer: "กดสองครั้งติดกัน โหมดจะวนสลับระหว่าง Eco Soft และ Boost ส่วนไฟ RGB จะเปลี่ยนสีบอกว่าตอนนี้อยู่โหมดไหน",
-      },
       "m-bar-10k-recharge": {
         question: "ชาร์จได้ไหม",
         answer: "ได้ ชาร์จผ่าน USB-C แบตหมดก็ชาร์จแล้วใช้ต่อได้ ไม่ใช่แบบแบตหมดแล้วจบ",
       },
     },
     whoIsThisFor: {
-      0: "ยังสูบพอตใช้แล้วทิ้งอยู่ แต่อยากสลับโหมดวัตต์ได้ด้วย (Eco / Soft / Boost)",
-      1: "คนที่อยากได้พอตใช้แล้วทิ้งแบบชาร์จซ้ำได้ ไม่ใช่แบบแบตหมดแล้วจบ",
+      0: "ชอบเปลี่ยนกลิ่นบ่อย อยากได้รุ่นที่มีให้เลือกทั้งสายเย็น สายผลไม้ ไปจนถึง Cola และ Matcha Latte",
     },
     specifications: {
       puffs: "สูงสุด 10,000",
@@ -551,33 +546,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       coil: "cotton mesh",
       modes: "Eco / Soft / Boost กดสองครั้งเพื่อสลับ",
       indicator: "LED บอกระดับแบตเป็นขั้นละ 25% ส่วน RGB บอกโหมดที่ใช้อยู่",
+      airflow: "ปรับได้",
     },
     tagline: "3 โหมดวัตต์ วงแหวน RGB แสดงสถานะ รองรับ 10,000 พัฟ",
     // Round 8 B2: "Marbo" sentence — many shops use that name for M Bar (researcher-1 row 3a). No maker claim.
     shortDescription: "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์ให้สลับ พร้อมไฟ RGB แสดงโหมดที่ใช้งานอยู่ หลายร้านเรียก M Bar ว่า Marbo เป็นรุ่นเดียวกันนี้แหละ",
-    features: {
-      // 2026-09-30 "more details" story blocks (writer): posters 02 and 05.
-      "bottle-shape": {
-        title: "ทรงขวดน้ำยา ฐานไล่สี",
-        description: "ทรงเหมือนขวดน้ำยา ตรงฐานไล่สีต่างกันไปตามกลิ่น",
-      },
-      "ten-k-puffs": {
-        title: "สูงสุด 10,000 พัฟ",
-        description: "รองรับสูงสุด 10,000 พัฟ แบต 600mAh หมดก็ชาร์จผ่าน USB-C แล้วสูบต่อได้",
-      },
-      "three-modes": {
-        title: "สลับได้ 3 โหมดวัตต์",
-        description: "Eco Soft และ Boost กดสองครั้งติดกันก็สลับโหมดได้เลย ความแรงเปลี่ยนทันที",
-      },
-      "rgb-indicator": {
-        title: "ไฟ RGB บอกโหมด",
-        description: "ไฟ LED เปลี่ยนสีตามโหมดที่ใช้อยู่ เหลือบดูก็รู้ว่าตอนนี้เป็น Eco Soft หรือ Boost",
-      },
-      "mesh-coil": {
-        title: "คอยล์ cotton mesh",
-        description: "คอยล์แบบ mesh ออกแบบมาให้รสคงที่ตั้งแต่พัฟแรกไปจนครบจำนวนพัฟที่ระบุ",
-      },
-    },
   },
   "m-bar-9k": {
     whoIsThisFor: {
