@@ -393,6 +393,11 @@ export interface GuideSection {
   paragraphs: string[];
   /** Optional H3 blocks under this H2 (round SEO ข) — only when the H2 really has several points. */
   subsections?: ArticleSubsection[];
+  /** Optional shop clip about exactly this section's subject (owner 05/10: "ใส่คลิปคั่นในแต่ละหัวข้อ ถ้ามี"), shown after
+   *  the section's text. Same rule as the record-level `reviewVideo`: one of OKami24's own channels, title and date read
+   *  from YouTube's own data. A translated guide carries it in every locale's array (the arrays replace each other). Not
+   *  in JSON-LD — the record-level clip stays the article's one VideoObject. */
+  video?: ArticleReviewVideo;
 }
 
 export interface ArticleSubsection {
