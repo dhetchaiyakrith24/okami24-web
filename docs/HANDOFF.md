@@ -11,8 +11,9 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — night 05→06/10 [ตรวจแล้ว — gh + curl]: #271 5b2545e (2g ARGUS G4) ·
-  #273 694a1e8 (3a Zero Pro) · #274 10ab2a9 (3b M Switch Kit) · #275 f429625 (3e M Bar 15K data) — all BIG, checker PASS, deploy OK.
+1 main: `git fetch && git log -1 --oneline origin/main` — night 05→06/10 [ตรวจแล้ว — gh + curl]: #271 (2g ARGUS G4) · #273 (3a Zero
+  Pro) · #274 (3b M Switch Kit) · #275 (3e M Bar 15K data) · #277 (3d Zero Cartridge 22 flavours) · #278 c156acb (4a JOIWAY F3) —
+  all BIG, checker PASS, deploy OK. Night state + morning report: `_incoming/sitewide-template/NIGHT-STATE.md` · `REPORT-0610.md`.
 2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Material not in git: `_incoming/sitewide-template/2/` (VOOPOO, per batch) · `3/` (SALTHUB). Kits (never merge): `kit-1b` (+ scope.md) ·
   `kit-1c` — `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d + 2x =
   local only — push a kit branch before a cloud chat needs it.
@@ -31,13 +32,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     block 1: 1920-px file too narrow for the cover · Black re-cut from SALTHUB colour poster 4 · lineups 1/2) · 3b #274 M Switch Kit
     split → stage (no cover, 5 blocks) · 3e #275 M Bar 15K plain data errors (ceramic coil, 600mAh, airflow, Black Berry swatch) ·
     3c M Bar 10K stage = PREPARED in `3/3c/`, NOT built: it drops 4 owner-approved Thai lines (head copy uses those facts twice)
-    → waits for the owner (13.3 #5) · 3d Zero Cartridge (+20 SALTHUB flavours, 4938-px packs) + Zero Nano = NEXT · M Switch Pod
-    (no pod-only posters) and M Bar 9K (no feature posters) stay as they are. Owner question set = `3/STATE.md` §Owner questions.
+    → waits for the owner (13.3 #5) · 3d #277 Zero Cartridge 2 → 22 flavours (swatch tiles; photos = proposed job) · Zero Nano,
+    M Switch Pod, M Bar 9K: no maker material to add. Owner question set = `REPORT-0610.md` §4.
+  BATCH 4 (`_incoming/sitewide-template/4/inventory.md`): 4a #278 JOIWAY F3 · NEXT 4c Smash Go · 4b TFIT / 4d Creator / 4e F4 wait for
+    the owner (REPORT-0610 §4).
   TEMPORARY RULING [ตรวจแล้ว — owner in chat 05/10] (13.6 — ends when the owner says so on 06/10 morning; delete it then): in THIS
   chat only, batch after batch in order — no handoff, no chat move (owner: "ไม่ต้องจบก้อนย้ายแชท" — overrides central §12 item 29
   for this chat; auto-compaction carries the context), no stopping to ask (13.3 hard stops still apply) — report all at once.
-  Worked examples: `_incoming/sitewide-template/2/2e|2f|2g` + `3/3a|3b` (scripts in each). Traps = LESSONS 24 + พ18.
-  One build per batch · whole-sitemap scans only when a shared part changes.
+  Worked examples (scripts): `_incoming/sitewide-template/2/2g` · `3/3a` · `4/4a`. Traps = LESSONS 24 + พ18. One build per batch.
   Gates per batch: `npm run verify:catalog` (fresh worktree: `npx next typegen` first) · page-text-length --facts · wordbreak-scan → reword
   · checker · scripts as .js files (Thai/backslash/backticks never through `node -e` or a heredoc).
   Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD.
