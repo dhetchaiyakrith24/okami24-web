@@ -1483,6 +1483,60 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 4d (06/10): from RELX's own Creator Pro Device + Creator Pod pages; Thai = thai-copy 06/10.
+  "relx-creator": {
+    th: {
+      lede: "ด้านล่างไล่ดู RELX Creator ทีละส่วนจากภาพของ RELX เอง",
+      sections: [
+        {
+          heading: "หัวพอตที่ RELX ทำมาให้เครื่องนี้",
+          paragraphs: [
+            "หัวพอตที่ RELX ออกแบบมาสำหรับเครื่องนี้โดยเฉพาะคือ RELX Creator Pod ความจุน้ำยาที่ RELX ระบุไว้คือ 2+8mL ใช้คอยล์ Dual Mesh และมีให้เลือก 13 กลิ่น ถ้าอยากรู้ว่าตอนนี้ร้านมีกลิ่นไหนอยู่บ้าง ทักไลน์ @okm24 ถามได้เลย"
+          ]
+        },
+        {
+          heading: "บนจอมีอะไรให้ดูบ้าง",
+          paragraphs: [
+            "นอกจากแบตกับโหมดที่ใช้อยู่ RELX บอกว่าจอพิกเซลของเครื่องนี้มีหน้าอีโมจิ 100+ แบบ ซึ่งจะค่อย ๆ ปลดล็อกออกมาระหว่างที่สูบ ยิ่งใช้ไปนานก็จะได้เห็นหน้าใหม่ ๆ บนจอมากขึ้น"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "Below, the RELX Creator one part at a time, from RELX's own pictures.",
+      sections: [
+        {
+          heading: "RELX's own pods for it",
+          paragraphs: [
+            "The pod RELX designed specifically for this device is the RELX Creator Pod. RELX lists its capacity as 2+8mL, it uses a Dual Mesh coil, and it comes in 13 flavours. To check which flavours we have right now, message us on LINE @okm24."
+          ]
+        },
+        {
+          heading: "What's on the screen",
+          paragraphs: [
+            "Besides the battery and the mode you're in, RELX says the pixel screen has 100+ emoji faces that unlock as you puff, so new faces keep turning up the longer you use it."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "下面根据 RELX 自己的图片，逐项来看 RELX Creator。",
+      sections: [
+        {
+          heading: "RELX 为它做的烟弹",
+          paragraphs: [
+            "RELX 专为这台设备设计的烟弹是 RELX Creator Pod。RELX 标注的容量为 2+8mL，采用 Dual Mesh 线圈，共有 13 种口味。想知道我们现在有哪些口味，可以在 LINE @okm24 问我们。"
+          ]
+        },
+        {
+          heading: "屏幕会显示什么",
+          paragraphs: [
+            "除了电量和当前模式，RELX 表示像素屏上有 100+ 个表情，会随着抽吸逐步解锁，用得越久，看到的新表情就越多。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
