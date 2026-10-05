@@ -1575,4 +1575,41 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
     },
   },
+  // Site-wide template round batch 5a (06/10): WOTOFO's own nexBAR 18K page + pictures (_incoming/sitewide-template/5/
+  // facts-wotofo-nexbar-18k.md); Thai = thai-copy 06/10.
+  "wotofo-nexbar-18k": {
+    "screen": {
+      title: { th: "ดูสถานะของเครื่องได้จากจอ", en: "What the screen tells you", zh: "屏幕告诉你什么" },
+      subline: { th: "WOTOFO ให้จอ LED บอกทั้งแบต น้ำยาที่เหลือ และโหมดที่ใช้อยู่", en: "WOTOFO's LED screen shows the battery, the e-liquid left and the mode you're in.", zh: "WOTOFO 的 LED 屏幕会显示电量、剩余烟油和当前模式。" },
+      body: {
+        th: "แบตหรือน้ำยาใกล้หมดเมื่อไหร่ ก็เห็นจากจอได้ก่อน ไม่ต้องรอให้ดูดไม่ขึ้นแล้วค่อยรู้ตัว",
+        en: "You can see when the battery or the e-liquid is getting low, instead of finding out mid-puff.",
+        zh: "电量或烟油快用完时一眼就能看到，不用等到抽不出来才发现。",
+      },
+      points: [
+        { text: { th: "NORM 16 วัตต์ / TURBO 19 วัตต์", en: "NORM 16W / TURBO 19W", zh: "NORM 16W / TURBO 19W" }, specKey: "modes" },
+      ],
+    },
+    "mouthpiece": {
+      title: { th: "ปากดูดที่ออกแบบมาให้รับกับริมฝีปาก", en: "Shaped for your lips", zh: "贴合嘴唇的吸嘴" },
+      subline: { th: "WOTOFO เลือกใช้ซิลิโคนทำปากดูดของรุ่นนี้", en: "WOTOFO made this model's mouthpiece from silicone.", zh: "WOTOFO 这款的吸嘴采用硅胶。" },
+      body: {
+        th: "จะสูบสั้น ๆ หรือสูบต่อกันนาน ๆ ก็ยังรู้สึกสบายปาก",
+        en: "A few quick puffs or a longer session, it stays comfortable on the lips.",
+        zh: "无论是抽几口还是连着抽，含在嘴里都很舒服。",
+      },
+    },
+    "airflow": {
+      title: { th: "ตั้งลมได้ตามที่ชอบ", en: "Set the airflow the way you like", zh: "进气松紧自己选" },
+      subline: { th: "WOTOFO ให้ปรับลมได้ที่ก้นพอต ตรงจุดที่ภาพชี้ไว้", en: "WOTOFO put the airflow adjustment on the base, where the picture points.", zh: "WOTOFO 把进气调节设在机身底部，就是图中标出的位置。" },
+      body: {
+        th: "ชอบดูดเบา ๆ ให้ลมโล่ง หรือชอบให้ลมแน่นขึ้นอีกนิด ก็เลือกแบบที่สูบแล้วสบายได้เลย",
+        en: "Prefer a loose, easy draw, or something a little tighter? Pick whichever feels comfortable.",
+        zh: "喜欢松一点、吸着轻的，还是想再紧一点，选自己抽着舒服的那一档就好。",
+      },
+      points: [
+        { text: { th: "ปรับลมได้ 2 ระดับ", en: "2-level adjustable airflow", zh: "进气 2 档可调" }, specKey: "airflow" },
+      ],
+    },
+  },
 };
