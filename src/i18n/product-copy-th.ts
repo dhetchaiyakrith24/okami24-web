@@ -573,8 +573,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
   },
   "m-bar-15k": {
+    // Batch 3f (06/10): stage page (story text in story-copy.ts) · shortDescription = the 4 wrong facts fixed (owner §18 06/10:
+    // disposable · cotton mesh · fast charging · 15 flavours) · tagline kept (nothing wrong in it). Thai = thai-copy 06/10.
     whoIsThisFor: {
-      0: "ถ้าดูจำนวนพัฟก่อนอย่างอื่น รุ่นนี้คือตัวที่พัฟเยอะที่สุดในตระกูล M Bar",
+      0: "ชอบตัวเครื่องแบบ M Switch แต่อยากได้หัวพอตของ M Bar",
+      1: "อยากเห็นแบตที่เหลือเป็นตัวเลขบนหน้าจอ แทนการกะเอาเอง",
     },
     specifications: {
       puffs: "สูงสุด 15,000",
@@ -582,16 +585,12 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       charging: "USB-C",
       battery: "600mAh",
       airflow: "ปุ่มเลื่อนปรับลม",
+      format: "ตัวเครื่องใช้ซ้ำได้ คู่กับหัวพอตใสที่ถอดเปลี่ยนได้",
+      screen: "จอดิจิทัลบอกระดับแบต แสดงทั้งตอนกำลังชาร์จและเมื่อชาร์จเต็ม",
     },
     tagline: "M Bar รุ่นพัฟเยอะสุดของตระกูล ชาร์จซ้ำได้ผ่าน USB-C",
     shortDescription:
-      "พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 15,000 พัฟ คอยล์ cotton mesh ชาร์จเร็วผ่าน USB-C มี 15 รส",
-    features: {
-      "highest-puff": {
-        title: "15,000 พัฟ มากที่สุดในตระกูล M Bar",
-        description: "อยู่เหนือ M Bar 9K และ 10K ในสายเดียวกัน ตามจำนวนพัฟที่ SALTHUB ระบุไว้",
-      },
-    },
+      "ตัวเครื่อง M Switch ที่เก็บไว้ใช้ต่อได้ คู่กับหัวพอตใสของ M Bar ที่ถอดเปลี่ยนได้ รองรับสูงสุด 15,000 พัฟ",
   },
   "m-switch-kit": {
     whoIsThisFor: {

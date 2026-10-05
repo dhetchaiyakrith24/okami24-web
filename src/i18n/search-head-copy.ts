@@ -84,7 +84,8 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
     const p = priceOf("m-bar-15k");
     return {
       title: `SALTHUB M Bar 15K (Marbo) ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
-      description: `SALTHUB M Bar (Marbo) พอตใช้แล้วทิ้ง 15K${p ? ` ${p}` : ""} มี 9K และ 10K ส่วน M Switch และ Zero เป็นเครื่องระบบสวิตช์ เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา สั่งทาง LINE @okm24`,
+      // Batch 3f (06/10): the 15K is no longer called a disposable (owner §18 06/10 — reusable M Switch body + clear cartridge).
+      description: `SALTHUB M Bar 15K${p ? ` ${p}` : ""} ตัวเครื่อง M Switch คู่หัวพอตใส · M Bar (Marbo) 9K และ 10K เป็นพอตใช้แล้วทิ้ง ส่วน M Switch และ Zero เป็นเครื่องระบบสวิตช์ เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา สั่งทาง LINE @okm24`,
     };
   },
   voopoo: (priceOf) => {
@@ -308,7 +309,8 @@ const CONNECTIVE_PREFIX = /^(และ|แล้ว|ส่วน|กับ|ซ�
 /** Rows A17 + C1–C16 — product meta descriptions that replace the tagline / shortDescription in
  *  <head> only. Keyed by product slug. Rows C3–C6 are deliberately short (no spec to draw on). */
 export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
-  "m-bar-15k": "M Bar 15K (Marbo 15K) ที่ OKami24 (OKM) พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 15,000 พัฟ คอยล์ cotton mesh มี 15 รส",
+  // Batch 3f (06/10): wrong facts fixed (owner §18 06/10) — not a disposable, ceramic not cotton mesh, no flavour count.
+  "m-bar-15k": "M Bar 15K (Marbo 15K) ที่ OKami24 (OKM) ตัวเครื่องใช้ซ้ำ คู่กับหัวพอตใสคอยล์เซรามิก รองรับสูงสุด 15,000 พัฟ",
   "coil-1": "คอยล์ VOOPOO Vinci มี 0.15 · 0.6 · 1.2 โอห์ม ทั้งแบบ MTL และ DTL ใช้ได้กับ VINCI Pod · VINCI X Pod · DRAG Baby Trio",
   "coil-38": "คอยล์ VOOPOO TPP มี TPP-DM2 0.2 โอห์ม 40–60 วัตต์ · TPP-DM4 0.3 โอห์ม 32–40 วัตต์ ใช้ได้กับ TPP Pod · DRAG 3 · DRAG X Plus",
   "coil-54": "หัวพอตเปล่า Feelin Mini จากแบรนด์ NEVOKS สำหรับเครื่อง Feelin Mini ไม่มีคอยล์มาในกล่อง ต้องซื้อคอยล์แยก",

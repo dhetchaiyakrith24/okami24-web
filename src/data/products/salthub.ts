@@ -287,13 +287,16 @@ export const salthubProducts: Product[] = [
     slug: "m-bar-15k",
     brandId: "salthub",
     familyId: "m-bar",
-    categoryId: "disposables",
-    systemType: "disposable",
+    // Batch 3f (06/10): owner 06/10 (HANDOFF §18) "M Bar 15K → reusable/pod-system category" — SALTHUB sells it as the M Switch
+    // body + a clear swap-in M Bar cartridge (poster 08 "Combination device and cartridge"; 3/facts-m-bar-15k.md), the same shape
+    // as the M Switch Kit, so it sits in the Kit's category. Head copy: the wrong facts (disposable · cotton mesh · fast) fixed.
+    categoryId: "pod-kits",
+    systemType: "pod-kit",
     name: "M Bar 15K",
     displayName: "SALTHUB M BAR 15K",
     tagline: "The highest-rated puff count in the M Bar line.",
     shortDescription:
-      "An M Bar disposable rated up to 15,000 puffs on a cotton mesh coil with USB-C fast charging.",
+      "A reusable M Switch body paired with SALTHUB's clear, swap-in M Bar cartridge, rated up to 15,000 puffs.",
     isFlagship: false,
     attributes: {
       puffCount: 15000,
@@ -326,9 +329,14 @@ export const salthubProducts: Product[] = [
     // pod to ~43px on a phone — good for "there are many", bad for "I want that one".
     lineupImage: {
       src: "/assets/products/m-bar-15k/lineup.webp",
-      alt: "SALTHUB M Bar 15K, all 15 flavours",
+      alt: "SALTHUB M Bar 15K, the flavours SALTHUB photographed",
       sourceName: "OKami24 composite (from official Marbo per-flavour photos)",
     },
+    // Site-wide template round batch 3f (06/10): the G5 template stage — SALTHUB's own 15K posters 08/07/11/09/10, one per block
+    // (1920 px, whole, down-sized only: _incoming/sitewide-template/3/3f/blocks.js); text in src/i18n/story-copy.ts, article in
+    // src/data/product-articles.ts. No cover (poster 06 is 1920 px) and no lanyard block (the M Switch Kit page tells it).
+    storyDetails: true,
+    storyLayout: "stage",
     // Real flavor lineup — tier-1, verified directly against salthub.com's own m-bar-15k/ page
     // (each flavor has its own official product photo with a descriptive alt attribute, e.g.
     // "M Bar 15K grape aloe disposable vape pod"). `availability: "unknown"` throughout, same
@@ -361,21 +369,55 @@ export const salthubProducts: Product[] = [
       { key: "charging", label: "Charging", value: "USB-C", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/wp-content/uploads/2025/08/m_bar_15k_4.webp" },
       { key: "battery", label: "Battery capacity", value: "600mAh", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
       { key: "airflow", label: "Airflow", value: "Adjust valve (slider)", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/wp-content/uploads/2025/08/m_bar_15k_5.webp" },
+      // Batch 3f (06/10): format (poster 08) + display (poster 11), same labels as the M Switch Kit rows.
+      { key: "format", label: "Format", value: "Reusable device body + clear swap-in M Bar cartridge", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/wp-content/uploads/2025/08/m_bar_15k_3.webp" },
+      { key: "screen", label: "Display", value: "Digital battery display, charging and full-charge indicator", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/wp-content/uploads/2025/08/m_bar_15k_6.webp" },
       { key: "capacity", label: "E-liquid capacity", value: "Not independently confirmed", sourceStatus: "unverified" },
     ],
     features: [
       {
-        id: "highest-puff",
-        title: "Highest puff rating in the line",
-        description: "Positioned above the 9K and 10K as SALTHUB's longest-rated M Bar disposable.",
+        id: "swap",
+        title: "A device with a swap-in cartridge",
+        description: "The body is the part you keep; the flavour sits in the clear cartridge on top.",
+        subline: "SALTHUB: put your favourite flavour cartridge into the device.",
+        image: { src: "/assets/products/m-bar-15k/story-swap.webp", alt: "SALTHUB's M Bar 15K poster — a clear Grape Aloe cartridge going onto the M Switch body, \"Combination device and cartridge\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-bar-15k/", width: 1600, height: 988 },
+      },
+      {
+        id: "coil",
+        title: "A ceramic coil",
+        description: "SALTHUB says it gives a smooth, full flavour. Each new cartridge brings a fresh coil with it.",
+        subline: "It sits inside the cartridge.",
+        image: { src: "/assets/products/m-bar-15k/story-coil.webp", alt: "SALTHUB's M Bar 15K poster — the clear Grape Aloe cartridge with its coil lit, \"Ceramic coil, delivers an incredibly smooth and satisfying taste\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-bar-15k/", width: 1600, height: 988 },
+      },
+      {
+        id: "screen",
+        title: "Battery left, as a number",
+        description: "You can see it running low ahead of time and charge it before you head out.",
+        subline: "The screen keeps it in view all the time.",
+        image: { src: "/assets/products/m-bar-15k/story-screen.webp", alt: "SALTHUB's M Bar 15K poster — the screen showing 100%, with the charging and full-charge indicators explained", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-bar-15k/", width: 1600, height: 988 },
+      },
+      {
+        id: "charge",
+        title: "Charge and carry on",
+        description: "A lightning mark appears beside the battery number while it charges, so you can see how far it has got.",
+        subline: "The cable goes into the base.",
+        image: { src: "/assets/products/m-bar-15k/story-charge.webp", alt: "SALTHUB's M Bar 15K poster — a USB-C cable in the base, the screen at 89%, \"Battery life last longer\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-bar-15k/", width: 1600, height: 988 },
+      },
+      {
+        id: "airflow",
+        title: "Choose your airflow",
+        description: "Tighter or looser: SALTHUB says the valve adjusts precisely, so you can slide it to the spot that suits you.",
+        subline: "The valve is on the side of the body.",
+        image: { src: "/assets/products/m-bar-15k/story-airflow.webp", alt: "SALTHUB's M Bar 15K poster — air streams at the side valve, \"Airflow adjust valve\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-bar-15k/", width: 1600, height: 988 },
       },
     ],
     compatibility: [typeC],
     whoIsThisFor: [
-      "Vapers prioritizing the longest rated run-time in the M Bar disposable line.",
+      "You like the M Switch body but would rather have the M Bar cartridge.",
+      "You want the battery level as a number, not a guess.",
     ],
     faqs: [],
-    relatedProductSlugs: ["m-bar-10k", "m-bar-9k"],
+    relatedProductSlugs: ["m-switch-kit", "m-bar-10k"],
     sourceUrls: ["https://www.salthub.com/", "https://www.salthub.com/m-bar-15k/"],
   },
   {
