@@ -288,7 +288,7 @@ const allGuides: Guide[] = [
       {
         heading: "Rows we mark unverified — how the DRAG 6's coil row moved to verified",
         paragraphs: [
-          "When a spec can't be confirmed from the maker's own pages, we mark the row unverified and keep it off the product page. We would rather leave it out than guess.",
+          "When a spec can't be confirmed from the maker's own pages, we mark the row unverified and keep it off the product page.",
           "The [DRAG 6](/products/drag-6) shows how a row can change. Its battery (4400mAh built in, from two 2200mAh cells), 220W maximum output, GENE.TT 3.0 chip, SMART/RBA/TC-TCR modes and 1.66\" TFT screen were confirmed from the start.",
           "What the GENE.TT chip does in a high-output device is in [High-Output Chip Platforms](/technology/high-output-chip-platforms).",
           "For a while the coil row was held back. A retailer's compatibility list named PnP X coils for the DRAG 6, but we only print a spec as official when it comes from the maker.",
