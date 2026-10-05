@@ -1625,6 +1625,78 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 4g (05/10): from TFIT's own M Power 20K posters + site; Thai = thai-copy 05/10.
+  "tfit-m-power-20k": {
+    th: {
+      lede: "ด้านล่างไล่ดู M Power 20K ทีละส่วน จากโปสเตอร์ของ TFIT เอง",
+      sections: [
+        {
+          heading: "สูบได้กี่พัฟ",
+          paragraphs: [
+            "TFIT ระบุไว้ว่าสูบได้สูงสุด 20,000 พัฟ ส่วนใช้จริงจะได้ใกล้ตัวเลขนี้แค่ไหน ขึ้นอยู่กับว่าสูบบ่อยและดูดแต่ละครั้งนานเท่าไหร่"
+          ]
+        },
+        {
+          heading: "มีน้ำยาเท่าไหร่ และนิโคตินเข้มข้นแค่ไหน",
+          paragraphs: [
+            "ตามสเปกของ TFIT ตัวเครื่องมีน้ำยาบรรจุมาให้แล้ว 18mL และความเข้มข้นของนิโคตินอยู่ที่ 30mg"
+          ]
+        },
+        {
+          heading: "รุ่นนี้เป็นของแบรนด์ไหน",
+          paragraphs: [
+            "M Power 20K เป็นรุ่นของ TFIT แบรนด์บุหรี่ไฟฟ้าในเครือ THINKVAPE ซึ่งก่อตั้งขึ้นในปี 2015 และบนตัวเครื่องก็มีคำว่า DESIGNED BY TFIT พิมพ์ไว้"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "Below, the M Power 20K one part at a time, from TFIT's own posters.",
+      sections: [
+        {
+          heading: "How many puffs?",
+          paragraphs: [
+            "TFIT rates the M Power 20K at up to 20,000 puffs. How close you get depends on how often you draw and for how long."
+          ]
+        },
+        {
+          heading: "How much e-liquid, and how strong?",
+          paragraphs: [
+            "It comes prefilled with 18mL, at 30mg nicotine, per TFIT's spec card."
+          ]
+        },
+        {
+          heading: "Who makes it?",
+          paragraphs: [
+            "TFIT, a vape brand under THINKVAPE, founded in 2015. \"Designed by TFIT\" is printed on the device itself."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "下面根据 TFIT 自己的海报，逐项来看 M Power 20K。",
+      sections: [
+        {
+          heading: "能抽多少口？",
+          paragraphs: [
+            "TFIT 给出的数字是最多 20,000 口。实际能抽多少，取决于抽的频率和每口的长短。"
+          ]
+        },
+        {
+          heading: "烟油有多少？浓度多少？",
+          paragraphs: [
+            "按 TFIT 的规格卡，出厂预装 18mL，尼古丁 30mg。"
+          ]
+        },
+        {
+          heading: "是哪家做的？",
+          paragraphs: [
+            "TFIT，THINKVAPE 旗下的电子烟品牌，创立于 2015 年。机身上就印着 \"Designed by TFIT\"。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

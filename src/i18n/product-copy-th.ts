@@ -765,6 +765,20 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       "พอตใช้แล้วทิ้งจาก Joiway 2 รสในเครื่องเดียว OKami24 รีวิวใช้จริง 30 วันไว้บน YouTube",
   },
   "tfit-m-power-20k": {
+    whoIsThisFor: {
+      0: "ชอบสูบรสผลไม้หรือรสเย็น ๆ และอยากมีให้เลือกหลายกลิ่น",
+      1: "ชอบปรับลมเอง ให้ดูดแน่นหรือโล่งตามที่ถนัด",
+    },
+    specifications: {
+      puffs: "สูงสุด 20,000",
+      battery: "600mAh ชาร์จซ้ำได้",
+      charging: "USB-C",
+      capacity: "18mL บรรจุสำเร็จ",
+      coil: "คอยล์ mesh สองตัว 0.8Ω",
+      nicotine: "30mg",
+      airflow: "ปรับได้",
+      size: "Φ30 × 98 mm · 70 กรัม",
+    },
     tagline: "พอตใช้แล้วทิ้งของ TFIT ที่ OKami24 รีวิวใช้จริงบน YouTube",
     shortDescription:
       "พอตใช้แล้วทิ้งสายพัฟเยอะของ TFIT ที่ขายในตลาดไทย OKami24 รีวิวใช้จริงบน YouTube ทักไลน์ @okm24 ถามรุ่นและรสที่มีตอนนี้ได้",

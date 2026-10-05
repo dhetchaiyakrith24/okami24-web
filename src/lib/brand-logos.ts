@@ -28,11 +28,14 @@ export const BRAND_LOGOS: Record<string, BrandLogo> = {
   salthub: { src: "/assets/brands/salthub-logo.png", width: 370, height: 120, scale: 1.2 },
   // myjoiway.id header (cdn/shop/files/1st_Logo_JOIWAY_….png) — white word between two green bars
   joiway: { src: "/assets/brands/joiway-logo.png", width: 344, height: 120, scale: 1.6 },
+  // tfitvape.com (its own API, configData.websiteLogo — 4/facts-tfit-m-power-20k.md, batch 4g 05/10) — white wordmark,
+  // trimmed and scaled to 120 px tall
+  tfit: { src: "/assets/brands/tfit-logo.png", width: 366, height: 120 },
   // files found, not listed until the brand has a /products page to check them at size (owner eye item 4, designer 03/10;
   // candidates in _incoming/g5-template/logos/): DOTMOD (gold emblem only — letters too small at this size; keep the chip
   // unless the maker serves a word logo) · Esko Bar (403 px wide file only) · instabar · Kardinal (the site names the
   // brand "KS" — owner to choose) · NEVOKS
   // not yet (03/10): wotofo (the site serves a black wordmark only) · ske (the site's logo is a seasonal Halloween
   // version, black) · relx (relxnow.com serves no logo file; the UK store's file is a retailer lockup) · iqos (no logo on
-  // iqos.com / jp.iqos.com) · tfit / lambda / rincoe (no file found, site unreachable or script-built)
+  // iqos.com / jp.iqos.com) · lambda / rincoe (no file found, site unreachable or script-built)
 };

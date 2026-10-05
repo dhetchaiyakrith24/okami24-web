@@ -1721,4 +1721,66 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
     },
   },
+  // Site-wide template round batch 4g (05/10): TFIT's own M Power 20K posters (_incoming/sitewide-template/4/facts-tfit-m-power-20k.md
+  // lists the source of each line); Thai = thai-copy 05/10.
+  "tfit-m-power-20k": {
+    "coils": {
+      title: { th: "คอยล์ mesh สองตัวอยู่ด้านใน", en: "Two mesh coils inside", zh: "内置两组网状发热丝" },
+      subline: { th: "TFIT ระบุว่าให้รสชาติสมจริง และดูดได้ลื่นขึ้น", en: "TFIT: true-to-life flavour, a smoother draw.", zh: "TFIT：口味更真实，吸感更顺。" },
+      body: {
+        th: "รสที่ได้จึงเต็มขึ้น และไอก็นุ่มสม่ำเสมอไปทุกพัฟ",
+        en: "So the flavour comes through fuller, and the vapour stays smooth puff after puff.",
+        zh: "所以味道更饱满，每一口的烟雾都一样顺滑。",
+      },
+      points: [
+        { text: { th: "คอยล์ mesh สองตัว 0.8 โอห์ม", en: "Dual mesh coils, 0.8Ω", zh: "双网状发热丝，0.8Ω" }, specKey: "coil" },
+      ],
+    },
+    "battery": {
+      title: { th: "แบตที่ชาร์จต่อได้", en: "A battery you recharge", zh: "电池可以充电" },
+      subline: { th: "ช่องชาร์จอยู่ที่ก้นพอต เวลาชาร์จก็เสียบสายจากด้านล่าง", en: "The cable goes into the base.", zh: "充电线插在机身底部。" },
+      body: {
+        th: "ถ้าแบตหมดก่อนน้ำยา ก็ชาร์จแล้วสูบต่อได้ ไม่ต้องทิ้งทั้งเครื่องไปก่อนเวลา",
+        en: "If the battery runs out before the e-liquid does, charge it and carry on instead of throwing the device away early.",
+        zh: "电池比烟油先用完时，充上电就能继续抽，不必提早整支丢掉。",
+      },
+      points: [
+        { text: { th: "แบตเตอรี่ 600mAh", en: "600mAh battery", zh: "600mAh 电池" }, specKey: "battery" },
+        { text: { th: "ชาร์จผ่าน USB-C", en: "USB-C charging", zh: "USB-C 充电" }, specKey: "charging" },
+      ],
+    },
+    "airflow": {
+      title: { th: "ความแน่นของลม เลือกได้เอง", en: "Set the airflow yourself", zh: "气流可以自己调" },
+      subline: { th: "TFIT ระบุว่าปรับได้ตั้งแต่แน่นไปจนถึงโล่ง ตามที่แต่ละคนชอบ", en: "TFIT: from tighter to looser.", zh: "TFIT：从紧到松。" },
+      body: {
+        th: "ใครชอบดูดหนัก ๆ หรือชอบให้ลมผ่านสบาย ๆ ก็ใช้เครื่องเดียวกันนี้ได้ แค่ตั้งลมให้ตรงกับแนวการสูบของตัวเอง",
+        en: "Choose a tighter or a looser draw to suit how you vape.",
+        zh: "按自己的抽法，选更紧或更松的吸感。",
+      },
+      points: [
+        { text: { th: "ปรับลมได้", en: "Adjustable airflow", zh: "气流可调" }, specKey: "airflow" },
+      ],
+    },
+    "flavours": {
+      title: { th: "มีกลิ่นให้เลือกหลายแนว", en: "A range of flavours", zh: "多种口味可选" },
+      subline: { th: "หนึ่งในนั้นคือ Watermelon ที่เห็นในภาพนี้", en: "Watermelon is one of them.", zh: "西瓜是其中之一。" },
+      body: {
+        th: "มีทั้งสายผลไม้อย่าง Sakura Grape สายเย็นอย่าง Blue Ice และกลิ่นลูกอมอย่าง Rainbow Candy ชื่อกลิ่นที่เหลือดูได้จากตัวเลือกกลิ่นด้านบน",
+        en: "Fruit like Sakura Grape, ice like Blue Ice, candy like Rainbow Candy. The rest are in the flavour picker above.",
+        zh: "有 Sakura Grape 这样的水果味、Blue Ice 这样的冰凉口味，还有 Rainbow Candy 糖果味。其余口味可以在上方的口味选择里查看。",
+      },
+    },
+    "design": {
+      title: { th: "ตัวเครื่องสีดำ ถังน้ำยาใส", en: "A black body and a clear tank", zh: "黑色机身，透明烟油仓" },
+      subline: { th: "ในภาพของ TFIT ตัวเครื่องวางคู่กับรถแข่ง พร้อมคำว่า Feel the Speed", en: "In TFIT's picture it sits beside a race car: Feel the Speed.", zh: "TFIT 的海报里，它和赛车摆在一起：Feel the Speed。" },
+      body: {
+        th: "ถังน้ำยาเป็นแบบใส มองจากด้านนอกก็เห็นว่าน้ำยายังเหลืออยู่อีกเท่าไหร่",
+        en: "The tank on top is clear, so you can see from the outside how much is left.",
+        zh: "顶部的烟油仓是透明的，从外面就能看到还剩多少烟油。",
+      },
+      points: [
+        { text: { th: "Φ30 × 98 mm · 70 กรัม", en: "Φ30 × 98 mm · 70g", zh: "Φ30 × 98 mm · 70g" }, specKey: "size" },
+      ],
+    },
+  },
 };
