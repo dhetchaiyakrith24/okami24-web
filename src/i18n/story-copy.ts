@@ -1665,4 +1665,63 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
     },
   },
+  // Site-wide template round batch 4e (06/10): JOIWAY's own F4 TWINS posters (_incoming/sitewide-template/4/facts-joiway-f4.md
+  // lists the source of each line); Thai = thai-copy 06/10.
+  "joiway-f4": {
+    "twin": {
+      title: { th: "ถังน้ำยาคู่ วางเคียงกัน", en: "Two tanks, side by side", zh: "并排的两个烟油仓" },
+      subline: { th: "JOIWAY ตั้งชื่อรุ่นนี้ว่า TWINS", en: "JOIWAY calls this model TWINS.", zh: "JOIWAY 把这款叫作 TWINS。" },
+      body: {
+        th: "สองกลิ่นแยกอยู่คนละถัง โดยมีเลข 1 กับ 2 กำกับไว้บนตัวเครื่อง",
+        en: "The two flavours sit in separate tanks, numbered 1 and 2 on the device.",
+        zh: "两种口味分装在两个烟油仓里，机身上标着 1 和 2。",
+      },
+      points: [
+        { text: { th: "รวม 20mL ถังละ 10mL", en: "20mL in total, 10mL per tank", zh: "共 20mL，每仓 10mL" }, specKey: "capacity" },
+      ],
+    },
+    "switch": {
+      title: { th: "หมุนปากดูดเพื่อสลับกลิ่น", en: "Turn the mouthpiece to switch", zh: "转动吸嘴来切换" },
+      subline: { th: "JOIWAY ระบุว่าเปลี่ยนได้ตลอดเวลา", en: "JOIWAY: switch any time.", zh: "JOIWAY：随时都能换。" },
+      body: {
+        th: "หมุนปากดูดไปไว้เหนืออีกถังหนึ่ง พัฟถัดไปก็จะเป็นอีกกลิ่น",
+        en: "Rotate the mouthpiece over the other tank and the next draw is the other flavour.",
+        zh: "把吸嘴转到另一个烟油仓上方，下一口就是另一种口味。",
+      },
+    },
+    "coils": {
+      title: { th: "ด้านในถังน้ำยาคู่", en: "Inside the twin tanks", zh: "双烟油仓的内部" },
+      subline: { th: "ภาพโปร่งของ JOIWAY ให้เห็นถังน้ำยาทั้งสองฝั่ง", en: "JOIWAY's see-through view shows both tanks.", zh: "JOIWAY 的透视图把两个烟油仓都展示了出来。" },
+      body: {
+        th: "คอยล์มีมาถังละชุด แต่ละกลิ่นจึงใช้คอยล์ของตัวเอง",
+        en: "One coil set per tank, so each flavour has a coil of its own.",
+        zh: "每个烟油仓一组线圈，每种口味都用自己的线圈。",
+      },
+      points: [
+        { text: { th: "คอยล์ mesh 2 ชุด", en: "Mesh coils × 2", zh: "网状线圈 × 2" }, specKey: "coil" },
+      ],
+    },
+    "power": {
+      title: { th: "แบตกับหน้าจอ", en: "Battery and display", zh: "电池与屏幕" },
+      subline: { th: "แบตใกล้หมดก็เสียบสาย USB-C ชาร์จต่อได้", en: "Plug in over USB-C when it runs low.", zh: "电量低了，插上 USB-C 就能充电。" },
+      body: {
+        th: "ตัวเลขบนจอบอกเป็นเปอร์เซ็นต์ หยิบขึ้นมาดูก็รู้ว่ายังเหลืออยู่เท่าไหร่",
+        en: "The display reads in percent, so a quick look tells you how much is left.",
+        zh: "屏幕上的数字以百分比显示，看一眼就知道还剩多少。",
+      },
+      points: [
+        { text: { th: "แบตเตอรี่ 650mAh", en: "650mAh battery", zh: "650mAh 电池" }, specKey: "battery" },
+        { text: { th: "จอ LED", en: "LED display", zh: "LED 屏幕" }, specKey: "display" },
+      ],
+    },
+    "hand": {
+      title: { th: "เมื่ออยู่ในมือ", en: "In the hand", zh: "握在手里" },
+      subline: { th: "JOIWAY ระบุว่าดีไซน์สวยมีสไตล์", en: "JOIWAY: a stylish design.", zh: "JOIWAY：设计好看有型。" },
+      body: {
+        th: "ในภาพของ JOIWAY ถือเครื่องไว้ด้วยมือเดียว และหันจอออกมาให้เห็น",
+        en: "JOIWAY's photo shows it held in one hand, the display facing out.",
+        zh: "JOIWAY 的照片里，它单手就能握住，屏幕朝外。",
+      },
+    },
+  },
 };
