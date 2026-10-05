@@ -1455,7 +1455,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "ความเข้มข้นมีให้เลือกสองแบบ",
           paragraphs: [
-            "RELX มี Smash Go 12K ให้เลือกสองความเข้มข้น คือ salt nic 3% และ 5% ถ้าอยากรู้ว่ากลิ่นที่ชอบมีความเข้มข้นไหนอยู่ที่ร้านตอนนี้ ทักไลน์ @okm24 ถามได้เลย"
+            "RELX ทำ Smash Go 12K ไว้สองแบบ คือ salt nic 3% และ 5% ถ้าอยากรู้ว่ากลิ่นที่ชอบมีแบบไหนอยู่ที่ร้านตอนนี้ ทักไลน์ @okm24 ถามได้เลย"
           ]
         }
       ]

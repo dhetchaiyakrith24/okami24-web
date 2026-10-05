@@ -1526,7 +1526,6 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
       points: [
         { text: { th: "บรรจุน้ำยา 20mL", en: "20mL e-liquid", zh: "20mL 烟油" }, specKey: "capacity" },
-        { text: { th: "ช่องชาร์จ USB-C", en: "USB-C charging port", zh: "USB-C 充电口" }, specKey: "battery" },
       ],
     },
     "pocket": {
