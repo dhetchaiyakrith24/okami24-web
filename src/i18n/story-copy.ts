@@ -1629,7 +1629,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ทรงขวดน้ำยา ฐานไล่สี", en: "An e-liquid bottle shape", zh: "烟油瓶造型" },
       subline: { th: "SALTHUB เรียกดีไซน์นี้ว่าความหรูที่ไม่ต้องโชว์", en: "SALTHUB calls it understated luxury.", zh: "SALTHUB 称之为低调的奢华。" },
       body: {
-        th: "เวลาพกไว้หลายกลิ่น แค่ดูสีที่ฐานก็พอบอกได้ว่าเครื่องไหนกลิ่นอะไร",
+        th: "เวลาพกไว้หลายกลิ่น แค่ดูสีที่ฐาน ก็พอแยกได้ว่าเครื่องไหนกลิ่นอะไร",
         en: "Carry a few flavours and the colour at the base is enough to tell which is which.",
         zh: "同时带着几种口味时，看一眼底部的颜色，大致就能分出哪支是什么口味。",
       },
@@ -1638,16 +1638,16 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "ไฟบอกระดับแบต", en: "Battery level lights", zh: "电量指示灯" },
       subline: { th: "ดูได้ทันทีว่าแบตยังเหลืออยู่เท่าไหร่", en: "See how much battery is left at a glance.", zh: "剩余电量一眼就能看到。" },
       body: {
-        th: "ไฟ LED สี่ดวงบอกแบตทีละ 25% เมื่อเหลือไฟดวงเดียว ก็รู้ได้ว่าแบตใกล้หมดแล้ว",
+        th: "ไฟ LED สี่ดวงบอกแบตทีละ 25% เหลือดวงสุดท้ายเมื่อไหร่ ก็รู้ว่าแบตใกล้หมดแล้ว",
         en: "Four LEDs show the battery a quarter at a time, so when only one is lit, you know it is running low.",
         zh: "四颗 LED 按每格 25% 显示电量，只剩一颗亮时，就说明电量快用完了。",
       },
     },
     "modes": {
-      title: { th: "เลือกความแรงได้ตามที่ชอบ", en: "Your tempo, your call", zh: "节奏由你" },
+      title: { th: "เลือกความแรงได้เอง", en: "Your tempo, your call", zh: "节奏由你" },
       subline: { th: "แค่กดปุ่มด้านล่างตัวเครื่องสองครั้งติดกัน ก็สลับโหมดได้", en: "Double-click the button at the bottom.", zh: "双击底部按键。" },
       body: {
-        th: "จะสลับโหมดไปมากี่ครั้งก็ได้ อยากให้เบาลงหรือแรงขึ้นตอนไหน ก็เปลี่ยนได้ทันทีตามความต้องการ",
+        th: "สลับโหมดไปมากี่ครั้งก็ได้ อยากให้เบาลงหรือแรงขึ้นตอนไหน ก็เปลี่ยนได้ทันทีตามความต้องการ",
         en: "Switch back and forth as often as you like, so the draw can be gentler or stronger whenever you want.",
         zh: "模式可以随时来回切换，想轻一点或强一点，随时都能换。",
       },
