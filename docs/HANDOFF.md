@@ -11,27 +11,16 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 627a73c (#299) [ตรวจแล้ว — git]. Merged 05/10, each checker PASS + deploy OK +
-  live check (`_incoming/guides-unstated/live-check.js` LIVE OK) [ตรวจแล้ว]: #294 guides no longer explain a missing maker fact (verified
-  rows written in) · #296 trust bar item 4 = title "เช็คสเปก"/"参数核对" + "สเปกทุกค่า เช็คที่มาก่อนขึ้นหน้าเว็บ" (owner: yes + option 1) and
-  /faq where-specs re-worded, "unverified-meaning" FAQ removed · #297 a shop clip inside the guide section about it (7 guides,
-  `SECTION_CLIPS`; no G5/G4/G4 Mini/G5 Lite/G4 Classic/G3 Pro clip exists) · #299 /about spec sentence = the /faq answer (owner option 1).
-2 ahead of main [ตรวจแล้ว — git]: `git log --oneline origin/main..origin/batch-4g-tfit-m-power` = 095451a (batch (d) TFIT, NOT built, NOT
-  scanned, NOT checked; branched from cf2394b → merge origin/main first: #296/#297 touch other files, only content-dates.json overlaps).
-  No PR open for it yet. Material not in git:
-  `_incoming/sitewide-template/` (scripts, facts, shots, logs per batch). Cloud = push a kit branch (never merge; e.g. `kit-1c`).
+1 main: `git fetch && git log -1 --oneline origin/main` = 2d792bb (#301) [ตรวจแล้ว — git]. #301 merged 06/10 = batch (d) TFIT M Power 20K
+  unhidden on the template: checker PASS 6/6 at 96c46fb · GitHub checks green · self-merge-check BIG (data) · deploy dep-db1u3pei0phs73ch89d0 → live 200 + new text + sitemap + footer TFIT (curl) [ตรวจแล้ว]. Before it, 05/10:
+  #294 guides · #296 trust bar "เช็คสเปก" · #297 guide clips · #299 /about spec sentence (all live-checked).
+2 ahead of main: nothing (batch-4g merged). Material not in git: `_incoming/sitewide-template/` (scripts, facts, shots, logs per batch;
+  4g = `4/4g/` incl. gates.sh · lines.js · try.js · spots.js · pr-body.md) + `_incoming/checker-301/`. Cloud = push a kit branch (never merge).
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md`. Scope = the round file's 【ขอบเขต】 block; PM pages (coils, IQOS, pod-180) = images only.
   DONE: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB #273 #274 #275 #277 #288 · 4 #278 #280 #281 #282 #289 #290 · 5a #283 · 6 #284 ·
-  7 part 1 #286. Product × part table: `_incoming/sitewide-template/7/table.md` (`npx tsx _incoming/sitewide-template/7/table.ts`).
+  7 part 1 #286 · (d) TFIT M Power 20K #301. Product × part table: `_incoming/sitewide-template/7/table.md` (`npx tsx _incoming/sitewide-template/7/table.ts`).
   NEXT (owner 06/10 in §18; tier B, one PR each):
-    (d) TFIT M Power 20K = batch 4g, WRITTEN on branch batch-4g-tfit-m-power 095451a (files: `_incoming/sitewide-template/4/4g/` —
-        copy-base.json · th.json · blocks.js · apply.js (applied — refuses twice)); what the commit holds = its message.
-        tsc/eslint/i18n 16/16/verify:catalog 29/29 passed in a worktree [ตรวจแล้ว]. NEXT: `git switch batch-4g-tfit-m-power && git merge origin/main` → build (test-server) →
-        visible-text over the WHOLE sitemap (footer brand list + /brands/tfit = new page; before = live main, LESSONS พ7/พ20) →
-        page-text-length --facts · wordbreak + lines.js on /products/tfit-m-power-20k + /brands/tfit · poster-stretch · sharpness gate ·
-        gallery-probe · locale-hydration · scan.js → shots 390/1440 → PR (expect BIG: data + a contract test) → checker.
-        Poster 04 prints TFIT's "72 hours" — image only, never in our text; flag it for the owner in the report. Flavour photos → option-photo round.
     (e) M Bar 15K → reusable/pod-system category per SALTHUB (own PR, BIG) + story · wrong head-copy facts fixed now (§18 06/10:
         "cotton mesh / ชาร์จเร็ว / 15 รส"). Facts `_incoming/sitewide-template/3/facts-m-bar-15k.md`.
     (f) MOOOD Monster 14K: open mooodvapes.com/14000puffs/ in a real browser (DNS failed for the researcher); brand site → fix data
@@ -49,6 +38,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   remover + choke · edgezoom 4x on dark + magenta · process-images map + new file names · sharpness gate before the checker). Esko pod-159
   LAST (13.7 big (2), own PR, + BSOT §21).
 4 waiting on owner:
+  (06/10 #301) look on live: /products/tfit-m-power-20k + /brands/tfit (now indexable, Thai lede = its meta description) · poster 04
+       (battery block) prints TFIT's "Up to 72 hours of worry-free power" — keep whole (Friday + checker) or crop it off (redo LESSONS พ18).
   (05/10) look on live: trust bar "เช็คสเปก" line · /faq · /about spec sentence · guide clips (e.g. /guides/comparing-caliburn-models "G4 vs G4 Pro") —
        reversible by revert (checker #297: G4 Pro clip in a two-model section; M Bar 9K sweets clip in "แนวอื่น").
   (06/10 pm) look on live: M Bar 10K stage page · JOIWAY F4 TWINS page · RELX Creator "ทั้งหมด" image — reversible by revert.
@@ -66,6 +57,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        RELX Creator: article "RELX Creator Pod" (RELX) vs fits-with "RELX Creator 20K pod" (shop) — link the names?
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
 5 open / dated:
+  - TFIT M Power 20K next touch (checker #301, not blocking): airflow body restates its subline (story-copy "tfit-m-power-20k" airflow
+    body) · battery subline names the charge port twice · design body «น้ำยายัง | เหลือ» at 390 → e.g. "…เห็นจากด้านนอกเลยว่าน้ำยา
+    เหลืออยู่เท่าไหร่" · TFIT Thai head lines both say "รีวิวใช้จริงบน YouTube" (SEO round).
   - JOIWAY F4 page text LOW 948 (accepted 06/10 pm, never pad).
   - M Bar 10K (#288): facts still over 2 from the untouched head copy + anatomy sheet + fits-with card (all down from live) —
     10,000 ×3 · ชาร์จ ×4 · RGB ×3 · 3 โหมด ×4 (checker #288 agreed) → SEO round (head) / an anatomy-sheet touch.
