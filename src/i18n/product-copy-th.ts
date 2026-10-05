@@ -814,7 +814,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       // Batch 5f (06/10): rows from MOOOD's own files (moood.ts).
       coil: "DUO MESH",
       capacity: "16mL บรรจุสำเร็จ",
-      nicotine: "3% (กลิ่นที่ลงท้าย N5% = 5%)",
+      nicotine: "3%",
     },
     tagline: "พอตใช้แล้วทิ้ง รองรับสูงสุด 14,000 พัฟ",
     shortDescription: "พอตใช้แล้วทิ้งจาก MOOOD ซีรีส์ “Monster” รองรับสูงสุด 14,000 พัฟ และมีให้เลือกหลายกลิ่น",

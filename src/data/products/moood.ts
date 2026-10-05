@@ -4,7 +4,9 @@ import type { Product } from "@/types/catalog";
 // (mooodvapes.com) is offline (DNS); its pages and uploads survive on the Wayback Machine — facts and sources in
 // _incoming/sitewide-template/5/facts-mood-monster-14k.md. The maker's two key posters are near-identical web banners
 // (a printed "READ MORE" button), not a story, so the page is card + flavours (round rule "no poster = no part").
+// Spec rows name the maker's domain (verified-specs contract); links a visitor can click go to the Wayback copy.
 const MAKER = "https://mooodvapes.com/";
+const MAKER_ARCHIVE = "https://web.archive.org/web/20241008232414/https://mooodvapes.com/";
 
 // One device body for every flavour (LESSONS 20 — the Grape render, chrome mouthpiece as in the maker's photos) with each
 // flavour's own label from the maker's flavour photo; the two 5% labels keep the frosted body their only photo shows.
@@ -52,7 +54,7 @@ export const mooodProducts: Product[] = [
         angle: "Front, upright",
         transparentBackground: true,
         sourceName: "OKami24 render (Higgsfield) from MOOOD's own Berry Garden photo",
-        sourceUrl: MAKER,
+        sourceUrl: MAKER_ARCHIVE,
       },
     ],
     // Open on the card, flavours by swipe or chip (IMAGE_SPEC §0 item 5).
@@ -84,18 +86,19 @@ export const mooodProducts: Product[] = [
       flavour("blueberry-n5", "Blueberry N5%", "#3a4a8e"),
     ],
     // Rows from the maker's own files (Wayback copies, facts file above): posters 01/02/20 + every flavour photo print
-    // "14000 Puffs", "DUO MESH", "16 ml", "3% Nicotine"; the 5% labels print "5% NIC" on the device.
+    // "14000 Puffs", "DUO MESH", "16 ml", "3% Nicotine". The N5% flavours' 5% is seen only on a retailer photo of the
+    // device label (checker #308) — not a maker source, so it is not in the verified row.
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 14,000", sourceStatus: "verified", sourceUrl: MAKER },
       { key: "coil", label: "Coil", value: "DUO MESH", sourceStatus: "verified", sourceUrl: MAKER },
       { key: "capacity", label: "E-liquid capacity", value: "16mL prefilled", sourceStatus: "verified", sourceUrl: MAKER },
-      { key: "nicotine", label: "Nicotine strength", value: "3% (5% on the flavours marked N5%)", sourceStatus: "verified", sourceUrl: MAKER },
+      { key: "nicotine", label: "Nicotine strength", value: "3%", sourceStatus: "verified", sourceUrl: MAKER },
     ],
     features: [],
     compatibility: [],
     whoIsThisFor: ["Vapers looking for a high-puff-count disposable with a wide flavor lineup."],
     faqs: [],
     relatedProductSlugs: [],
-    sourceUrls: [MAKER],
+    sourceUrls: [MAKER_ARCHIVE],
   },
 ];
