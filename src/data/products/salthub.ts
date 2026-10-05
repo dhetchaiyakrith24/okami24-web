@@ -872,7 +872,7 @@ export const salthubProducts: Product[] = [
     // No photos yet (SALTHUB's packs are busy posters) — swatch tiles. `availability: "unknown"` as every Legacy SALTHUB product.
     flavorVariants: [
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7ac465", availability: "unknown" },
-      { id: "blueberry", name: "Blueberry", swatchHex: "#2386a3", availability: "unknown" },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#3b4fa0", availability: "unknown" },
       { id: "cigar", name: "Cigar", swatchHex: "#905e36", availability: "unknown" },
       { id: "cola", name: "Cola", swatchHex: "#7e4d2f", availability: "unknown" },
       { id: "fruit-tea", name: "Fruit Tea", swatchHex: "#b57c28", availability: "unknown" },
