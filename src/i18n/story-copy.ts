@@ -1550,7 +1550,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         zh: "出门前按一下，就知道电量还很足还是快用完了，不用靠猜。",
       },
       points: [
-        { text: { th: "แบตเตอรี่ 800mAh ชาร์จซ้ำได้ผ่าน USB-C", en: "800mAh battery, rechargeable via USB-C", zh: "800mAh 电池，可通过 USB-C 反复充电" }, specKey: "battery" },
+        { text: { th: "แบตเตอรี่ 800mAh", en: "800mAh battery", zh: "800mAh 电池" }, specKey: "battery" },
       ],
     },
     "modes": {
@@ -1567,11 +1567,11 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
     },
     "airflow": {
       title: { th: "ปรับลมได้เองตามที่ชอบ", en: "Set your airflow", zh: "进气按自己的喜好调" },
-      subline: { th: "RELX ออกแบบให้ปรับช่องลมได้ทั้งช่วง ตั้งแต่เปิดกว้างไปจนถึงแคบสุด", en: "RELX made the airflow adjustable across its full range, from wide open to its tightest.", zh: "RELX 把进气设计成可全程调节，从全开到最紧都可以。" },
+      subline: { th: "RELX ออกแบบให้ปรับช่องลมได้ ตั้งแต่เปิดเต็มที่ไปจนถึงแคบมาก", en: "RELX lets you set the airflow anywhere from fully open to its tightest.", zh: "RELX 的进气可以从全开一直调到最紧。" },
       body: {
-        th: "ชอบลมโล่งและดูดเบา ๆ ก็เปิดให้กว้าง ชอบลมแน่นขึ้นก็ปรับให้แคบลง ตั้งไว้ตรงไหนก็ได้ตามที่สูบแล้วสบาย",
-        en: "If you like a loose, easy draw, open it up; if you like it tighter, close it down. Leave it wherever feels comfortable to you.",
-        zh: "喜欢松一点、吸着轻的就开大，喜欢紧一点就调小，停在自己觉得舒服的位置就好。",
+        th: "ชอบดูดเบา ๆ ก็เปิดไว้กว้าง ชอบลมแน่นก็ปรับให้แคบ ตั้งไว้ตรงที่สูบแล้วสบายได้เลย",
+        en: "Open it up for a light, easy draw, or narrow it for a tighter one, and leave it where it feels right.",
+        zh: "想吸得轻松就开大，喜欢紧一点就调小，停在自己舒服的位置就好。",
       },
     },
   },
