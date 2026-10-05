@@ -1726,7 +1726,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
   "tfit-m-power-20k": {
     "coils": {
       title: { th: "คอยล์ mesh สองตัวอยู่ด้านใน", en: "Two mesh coils inside", zh: "内置两组网状发热丝" },
-      subline: { th: "TFIT ระบุว่าให้รสชาติใกล้เคียงของจริง และดูดได้ลื่นขึ้น", en: "TFIT: true-to-life flavour, a smoother draw.", zh: "TFIT：口味更真实，吸感更顺。" },
+      subline: { th: "TFIT ระบุว่าให้รสชาติสมจริง และดูดได้ลื่นขึ้น", en: "TFIT: true-to-life flavour, a smoother draw.", zh: "TFIT：口味更真实，吸感更顺。" },
       body: {
         th: "รสที่ได้จึงเต็มขึ้น และไอก็นุ่มสม่ำเสมอไปทุกพัฟ",
         en: "So the flavour comes through fuller, and the vapour stays smooth puff after puff.",
@@ -1771,7 +1771,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
     },
     "design": {
-      title: { th: "ตัวเครื่องสีดำ กับถังน้ำยาใสด้านบน", en: "A black body and a clear tank", zh: "黑色机身，透明烟油仓" },
+      title: { th: "ตัวเครื่องสีดำ ถังน้ำยาใส", en: "A black body and a clear tank", zh: "黑色机身，透明烟油仓" },
       subline: { th: "ในภาพของ TFIT ตัวเครื่องวางคู่กับรถแข่ง พร้อมคำว่า Feel the Speed", en: "In TFIT's picture it sits beside a race car: Feel the Speed.", zh: "TFIT 的海报里，它和赛车摆在一起：Feel the Speed。" },
       body: {
         th: "ถังน้ำยาเป็นแบบใส มองจากด้านนอกก็เห็นว่าน้ำยายังเหลืออยู่อีกเท่าไหร่",
