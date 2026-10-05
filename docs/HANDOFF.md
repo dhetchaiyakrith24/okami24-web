@@ -26,12 +26,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
   asset-refs sweep of the 246 candidates, edge defects).
   BATCH 2 VOOPOO — DONE (#248 #251 #253 #255 #259 #262 #264 #267 #268 #271; scripts `2/`) except the owner-deferred image work (item 5).
-  BATCH 3 SALTHUB (`_incoming/sitewide-template/3/` — STATE.md) — 3a #273 · 3b #274 · 3e #275 · 3d #277 · 3c M Bar 10K stage =
-    PREPARED in `3/3c/`, NOT built (drops 4 owner-approved Thai lines → owner, 13.3 #5) · Zero Nano / M Switch Pod / M Bar 9K: no maker material.
-  BATCH 4 (`4/inventory.md`) — 4a #278 F3 · 4c #280 Smash Go (LOW 874 = owner) · 4d #281 Creator story · 4d-2 #282 colours ·
-    the Creator all-colours image = DRAFT only (`4/4d2/relx/relx-creator-page.png`, owner sees first) · 4b TFIT / 4e F4 wait for the owner.
-  BATCH 5 (`5/inventory.md`) — 5a #283 WOTOFO nexBAR 18K · pod-180, INFY, Muro ×3: no maker material · MOOOD: maker site needs a real
-    browser → owner (REPORT-0610 §4). BATCH 6 — #284 IQOS images without the printed TEREA line (PM pages: images only, 03/10 ruling).
+  Done: 3 SALTHUB #273 #274 #275 #277 (`3/STATE.md`) · 4 #278 #280 #281 #282 (`4/inventory.md`) · 5a #283 (`5/inventory.md`) ·
+    6 #284 IQOS images (PM pages = images only, 03/10). No maker material: Zero Nano · M Switch Pod · M Bar 9K · pod-180 · INFY · Muro ×3.
+  HELD for the owner (questions = `REPORT-0610.md` §4): 3c M Bar 10K stage prepared in `3/3c/` (drops 4 approved Thai lines, 13.3 #5)
+    · M Bar 15K category (SALTHUB: reusable + cartridge) + story · Zero Cartridge per-flavour photos (21 busy posters → cut-outs,
+    proposed) · 4b TFIT M Power (hidden; unhide = new sitemap page + footer, พ7) · 4e F4 TWINS 20K vs our NOS 15K/30K · Smash Go LOW
+    874 · Creator all-colours DRAFT `4/4d2/relx/relx-creator-page.png` · MOOOD (maker site needs a real browser).
   BATCH 7 prep: `7/table.md` (product × part, `npx tsx _incoming/sitewide-template/7/table.ts`). Close waits on the owner's answers.
   TEMPORARY RULING [ตรวจแล้ว — owner in chat 05/10] (13.6 — ends when the owner says so on 06/10 morning; delete it then): in THIS
   chat only, batch after batch in order — no handoff, no chat move (owner: "ไม่ต้องจบก้อนย้ายแชท" — overrides central §12 item 29
