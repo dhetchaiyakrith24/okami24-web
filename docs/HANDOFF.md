@@ -11,35 +11,36 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` — night 05→06/10 [ตรวจแล้ว — gh + curl]: #271 2g ARGUS G4 · #273 3a Zero Pro ·
-  #274 3b M Switch Kit · #275 3e M Bar 15K data · #277 3d Zero Cartridge · #278 4a JOIWAY F3 · #280 4c RELX Smash Go · #281 4d RELX
-  Creator (+ `storyCoverMobile`) · #282 4d-2 Creator White/Green/Yellow · #283 5a WOTOFO nexBAR 18K · #284 6 IQOS images — all BIG,
-  checker PASS, deploy OK. Night state + morning report: `_incoming/sitewide-template/NIGHT-STATE.md` · `REPORT-0610.md`.
-2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. Material not in git: `_incoming/sitewide-template/2/` (VOOPOO, per batch) · `3/` (SALTHUB). Kits (never merge): `kit-1b` (+ scope.md) ·
-  `kit-1c` — `git fetch origin kit-1b && git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · 1d + 2x =
-  local only — push a kit branch before a cloud chat needs it.
+1 main: `git fetch && git log -1 --oneline origin/main` = d55650c (#286) [ตรวจแล้ว — git]. Night 05→06/10 merged, all checker PASS +
+  deploy OK [ตรวจแล้ว — gh + curl]: #271 #273 #274 #275 #277 #278 #280 #281 (+ `storyCoverMobile`) #282 #283 #284 #285 (docs) #286 (75
+  unused images removed). Night state + morning report (local, not in git): `_incoming/sitewide-template/NIGHT-STATE.md` · `REPORT-0610.md`.
+2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. No open PR. Material not in git: `_incoming/sitewide-template/2/` … `7/`
+  (per batch: scripts, facts, posters, shots, logs). Kits (never merge): `kit-1b` (+ scope.md) · `kit-1c` — `git fetch origin kit-1b &&
+  git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · later batches = local only — push a kit before a cloud chat.
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
-  Template = `docs/PRODUCT_PAGE_TEMPLATE.md` (the one home). Scope = `_incoming/sitewide-template/scope.md` + the round file's
-  【ขอบเขต】 block: 55 product pages; PM pages (coils, IQOS, pod-180) = cards/images only, no story mechanism.
-  Batches (all tier B): 1 UWELL — DONE (1a G5 Lite + SE · 1b G4 + mini + Classic · 1c G4 Pro + KOKO · 1d G3 Pro + KOKO) ·
-  2 VOOPOO (below) · 3 SALTHUB (+ zero-*, m-switch-pod,
-  m-bar-15k) · 4 RELX/JOIWAY/TFIT · 5 small brands (+ mood-monster, muro-*, pod-180) · 6 IQOS · 7 close (tag sitewide-template-done,
-  asset-refs sweep of the 246 candidates, edge defects).
-  BATCH 2 VOOPOO — DONE (#248 #251 #253 #255 #259 #262 #264 #267 #268 #271; scripts `2/`) except the owner-deferred image work (item 5).
-  Done: 3 SALTHUB #273 #274 #275 #277 (`3/STATE.md`) · 4 #278 #280 #281 #282 (`4/inventory.md`) · 5a #283 (`5/inventory.md`) ·
-    6 #284 IQOS images (PM pages = images only, 03/10). No maker material: Zero Nano · M Switch Pod · M Bar 9K · pod-180 · INFY · Muro ×3.
-  HELD for the owner (questions = `REPORT-0610.md` §4): 3c M Bar 10K stage prepared in `3/3c/` (drops 4 approved Thai lines, 13.3 #5)
-    · M Bar 15K category (SALTHUB: reusable + cartridge) + story · Zero Cartridge per-flavour photos (21 busy posters → cut-outs,
-    proposed) · 4b TFIT M Power (hidden; unhide = new sitemap page + footer, พ7) · 4e F4 TWINS 20K vs our NOS 15K/30K · Smash Go LOW
-    874 · Creator all-colours DRAFT `4/4d2/relx/relx-creator-page.png` · MOOOD (maker site needs a real browser).
-  BATCH 7 prep: `7/table.md` (product × part, `npx tsx _incoming/sitewide-template/7/table.ts`). Close waits on the owner's answers.
-  TEMPORARY RULING [ตรวจแล้ว — owner in chat 05/10] (13.6 — ends when the owner says so on 06/10 morning; delete it then): in THIS
-  chat only, batch after batch in order — no handoff, no chat move (owner: "ไม่ต้องจบก้อนย้ายแชท" — overrides central §12 item 29
-  for this chat; auto-compaction carries the context), no stopping to ask (13.3 hard stops still apply) — report all at once.
-  Worked examples (scripts): `_incoming/sitewide-template/4/4c` · `4/4d` · `5/5a`. Traps = LESSONS 24 + พ18 + พ20–พ23. One build per batch.
-  Gates per batch: `npm run verify:catalog` (fresh worktree: `npx next typegen` first) · page-text-length --facts · wordbreak-scan → reword
-  · checker · scripts as .js files (Thai/backslash/backticks never through `node -e` or a heredoc).
-  Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD.
+  Template = `docs/PRODUCT_PAGE_TEMPLATE.md`. Scope = the round file's 【ขอบเขต】 block; PM pages (coils, IQOS, pod-180) = images only.
+  DONE: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB #273 #274 #275 #277 · 4 #278 #280 #281 #282 · 5a #283 · 6 #284 · 7 part 1 #286.
+  Product × part table: `_incoming/sitewide-template/7/table.md` (`npx tsx _incoming/sitewide-template/7/table.ts`).
+  NEXT — the owner answered REPORT-0610 §4 on 06/10 ("ครับไปเลยครับ" = every recommended answer; rulings in §18), in this order, tier B each:
+    (a) 3c M Bar 10K → stage: built from `_incoming/sitewide-template/3/3c/` (copy-base.json, th-raw.json, brief-3c.md, blocks.js);
+        the 4 owner-approved Thai lines may go (§18 06/10).
+    (b) 4e JOIWAY F4 → the TWINS edition (maker: 20,000 puffs = 10K + 10K, 20mL, 650mAh, LED display): data (puffCount, screenType
+        "none" is wrong) + stage blocks 02–05 (+ cover 01) — facts `_incoming/sitewide-template/4/facts-joiway-f4.md`. Keep the owner
+        exception "2 โหมด 2 รส" unless it contradicts TWINS.
+    (c) RELX Creator all-colours image: publish the draft `_incoming/sitewide-template/4/4d2/relx/relx-creator-page.png`
+        (script `4/4d2/all-draft.js`) as the "ทั้งหมด" option.
+    (d) 4b TFIT M Power 20K: unhide (+1 sitemap page, brand/footer — พ7) — `4/facts-tfit-m-power-20k.md` (18ML, drop the doubt FAQ).
+    (e) M Bar 15K → reusable/pod-system category per SALTHUB (own PR, BIG) + story · wrong head-copy facts fixed now (§18 06/10).
+    (f) MOOOD Monster 14K: open mooodvapes.com/14000puffs/ in a real browser (DNS failed for the researcher); brand site → fix data
+        (screenType, flavours, battery) + move it off "Unbranded" (BIG).
+    Skipped by the owner's answer: INFY 20K + Muro ×3 (no maker material) · pod-180 stays brandless.
+  Then close the round (skill `round-close`, tag sitewide-template-done). Not this round: Q16 IQOS colour completeness (PM colour
+  mechanism) and Q18 "every option gets a photo" (flavour photos Smash Go 10 · F3 30 · F4 16 · Zero Cartridge 22 · WOTOFO 11 · M Bar /
+  M Switch / INFY / Muro + the 19 white-box coil images — flatcut eats white packaging, `_incoming/sitewide-template/7/trial/`)
+  = write a new round file for the owner.
+  Examples: `_incoming/sitewide-template/4/4c` · `4/4d` · `5/5a` · traps LESSONS 24 + พ18 + พ20–พ23 · gates: verify:catalog ·
+  page-text-length --facts · wordbreak-scan + every new Thai line read at 390/1440 (พ21) · checker (tree/3412 untouched meanwhile, พ22).
+  Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD (except (e)).
 3a THE IMAGE METHODS THAT WORK (kept for this round):
   (a) one model, colours differ only in colour = ONE master + recolour by script — silver master `b-uwell/recolour-g4c.js`; coloured
   master `b-voopoo/recolour-g3m.js` (lesson 23); gradients per height band `b-edge/recolour-g4m.js`, `b-edge/recolour-g3p.js` (masks
@@ -56,8 +57,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   checker. Paths under `_incoming/image-sitewide/`. Poster `transparent` only when ≥ 30 % of the file is transparent (LESSONS พ16).
   Lineups: UWELL slim = G5 "group" (`set1/poster.js`) · box = "cluster" (`set1/boxy.js`, `dsx/koko-two.js`) · VOOPOO = RELX
   (`dsx/vp-relx2.js`) · 7+ devices = two groups ("ทั้งหมด 1 / 2") · AI light only = HYBRID (`b-edge/d6-hybrid.js`, Drag 6 #248).
-  Left from it: edge defects (`edge-audit/visual-audit.md`: vmate-i3 · zero-pro · m-bar-15k · muro-3ml · zero-cartridge ·
-  mood-monster-14k · coils 1/38/53/54/56/74/89/94 + white boxes 55/70/72/83/87) · coils `b-coils/README.txt` · Esko pod-159 LAST
+  Left: edge defects (`edge-audit/visual-audit.md`) + coils (`b-coils/README.txt`) → the option-photo round · Esko pod-159 LAST
   (13.7 big (2), own PR, + BSOT §21).
   Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — `balance` first, report the spend (upscale 2k = 2 each).
 4 waiting on owner:
@@ -73,10 +73,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
   (28) Thai copy flags (not changed): INFY `descriptionTh` says disposable-only brand · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" /
        "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ" (batch 4 needs it)
+  (06/10) new Thai words from batch 3 (เซรามิก · หน้าจอดิจิทัล · สายคล้องคอ · ช่องลมเข้า · เรียบหรู — `_incoming/sitewide-template/3/STATE.md`) ·
+       RELX Creator: article "RELX Creator Pod" (RELX) vs fits-with "RELX Creator 20K pod" (shop) — link the names?
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
 5 open / dated:
-  - Unused since 2f-img (0 refs in src, checker #268): `argus-p3/lineup-v2.webp` · `vmate-i3/variants/*` · `vmate-i3/lineup.webp`
-    → batch 7 asset-refs sweep · wordbreak 05/10: «ไฟจะ» on /guides/fixing-no-draw-and-blinking-light@390 (guides = later round).
+  - wordbreak 05/10: «ไฟจะ» on /guides/fixing-no-draw-and-blinking-light@390 (guides = later round) · `vmate-i3/variants/*` +
+    `argus-p3/lineup-v2.webp` unused but kept by the #286 sweep (their names appear in src/ — check by hand).
   - [ตรวจแล้ว — files, checker #272] ARGUS G4 after #271, outside the round: guide argus-g4-vs-caliburn-g5 still says G4 firing + pod capacity "unconfirmed" (now
     3.5mL; VOOPOO still names no draw/button activation) · technology multi-resistance-cartridges quotes the old pod row "ARGUS
     top-fill cartridge platform, multiple resistances" · G4 head copy: 0.85 twice (tagline + shortDescription) + the anatomy
@@ -229,3 +231,14 @@ to Friday: plain, luxurious, premium, depth); disposables / pod-replacement prod
 every product gets an SEO article in "more details" = its own later round.
 
 **Answered 03/10 (moved from §16 04/10):** "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · logos: Kardinal = the maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
+
+**Answered 06/10 (owner, chat: "ครับไปเลยครับ" to the recommended answers in `_incoming/sitewide-template/REPORT-0610.md` §4):**
+M Bar 10K may drop its 4 owner-approved Thai lines for the stage page · M Bar 15K → reusable/pod-system category (own PR) · wrong
+facts in head copy are fixed now, not held for the SEO round (Zero Pro "5,000 พัฟต่อหัวพอต", M Bar 15K "cotton mesh/ชาร์จเร็ว/15 รส") ·
+Zero Cartridge per-flavour photos = yes (in the option-photo round) · JOIWAY F4 = the TWINS edition (maker + our photos), not NOS ·
+RELX Smash Go cover = RELX's KV with the models, kept · TFIT M Power = unhide (own PR) · Smash Go 874 and nexBAR-type LOW pages = accepted
+exceptions when the maker has nothing more to say (never pad) · RELX's printed "+30%" stays in the coil poster · RELX Creator
+all-colours image = publish the draft · pod-180 stays brandless · MOOOD = check its site in a real browser, then fix data / brand ·
+INFY 20K + Muro ×3 (no maker material) = skipped this round · IQOS colour completeness = its own round · WOTOFO's 11 flavours without
+photos + every other option without a photo + white-box coils = a new "option photos" round (Higgsfield, first set to the owner).
+Not answered (no recommendation was given): the new words in Q8 · Q11 "RELX Creator Pod" vs "RELX Creator 20K" naming.
