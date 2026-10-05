@@ -11,12 +11,11 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = d8f8e97 (#290) [ตรวจแล้ว — git]. Chat 06/10 (afternoon) merged, checker PASS +
-  deploy OK + live checked with curl [ตรวจแล้ว — gh + curl]: #288 M Bar 10K stage · #289 JOIWAY F4 = TWINS (Render serves ~2.5 min after
-  the deploy run) · #290 RELX Creator "ทั้งหมด" image.
-2 ahead of main [ตรวจแล้ว — git]: only this docs PR (§16 + LESSONS พ21 rewritten, พ24 new). No open PR. Material not in git:
-  `_incoming/sitewide-template/` (3/3c · 4/4e · 4/4f = scripts, facts, shots, logs per batch). Kits (never merge): `kit-1b` · `kit-1c`
-  — later batches are local only; push a kit before a cloud chat.
+1 main: `git fetch && git log -1 --oneline origin/main` = d8f8e97 (#290) [ตรวจแล้ว — git]. 06/10 pm merged, checker PASS + deploy OK +
+  live curl [ตรวจแล้ว]: #288 M Bar 10K stage · #289 JOIWAY F4 = TWINS (live ~2.5 min after the deploy run, curl loop) · #290 RELX Creator "ทั้งหมด" image.
+2 ahead of main [ตรวจแล้ว — git]: only this docs PR (§16 + LESSONS พ21/พ24). No other PR open. Material not in git:
+  `_incoming/sitewide-template/` (3/3c · 4/4e · 4/4f = scripts, facts, shots, logs per batch). Kits (never merge): `kit-1b` · `kit-1c` (`git fetch origin kit-1b &&
+  git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template`) — later batches local only; push a kit for cloud.
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md`. Scope = the round file's 【ขอบเขต】 block; PM pages (coils, IQOS, pod-180) = images only.
   DONE: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB #273 #274 #275 #277 #288 · 4 #278 #280 #281 #282 #289 #290 · 5a #283 · 6 #284 ·
