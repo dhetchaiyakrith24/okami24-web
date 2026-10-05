@@ -36,7 +36,9 @@ export const th: Dictionary = {
       { title: "ราคาตรง", body: "ราคาที่เห็นคือราคาที่ขายจริง ไม่ปั่นราคา" },
       { title: "บริการจริง", body: "ทักไลน์มา แอดมินตอบเอง ไม่ใช่บอท" },
       // Owner 05/10: the old body ("สเปกที่ยืนยันไม่ได้ เราบอกตรง ๆ ไม่เดา") explained missing facts — HANDOFF §18 06/10 pm.
-      { title: "เช็คกับเว็บทางการ", body: "สเปกที่เห็น มาจากข้อมูลแบรนด์เอง" },
+      // checker #296: "มาจากข้อมูลแบรนด์เอง" overstated on the Unbranded pages + the §18 named exceptions — the line says what
+      // is true on every page (every shown row passes the verified gate, src/lib/verified-specs.ts).
+      { title: "เช็คกับเว็บทางการ", body: "สเปกทุกค่า เช็คที่มาก่อนขึ้นหน้าเว็บ" },
     ],
   },
   footer: {

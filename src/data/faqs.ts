@@ -47,7 +47,7 @@ export const siteFaqs: SiteFAQ[] = [
     answer:
       // Owner 05/10 + HANDOFF §18 06/10 pm / "Product facts": maker sources only, unverified rows hidden — the old answer
       // (retailer cross-checks, unverified rows shown) and the "unverified-meaning" entry described the retired process.
-      "The specs on a product page come from the brand's own material — its official site, posters and manuals. Every row is checked before it goes on the page.",
+      "The specs on a product page come mainly from the maker's own material — its official site, posters and manuals. Every row's source is checked before it goes on the page.",
   },
   {
     id: "open-vs-disposable-faq",

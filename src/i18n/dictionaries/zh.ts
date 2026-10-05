@@ -38,7 +38,7 @@ export const zh: Dictionary = {
       { title: "正品", body: "来自我们信得过的品牌。" },
       { title: "价格透明", body: "页面标价就是售价，不炒价。" },
       { title: "服务实在", body: "LINE 联系我们，真人回复，不是机器人。" },
-      { title: "官网核对", body: "页面参数均以品牌官方资料为准。" },
+      { title: "官网核对", body: "每项参数上架前都核对过来源。" },
     ],
   },
   footer: {
