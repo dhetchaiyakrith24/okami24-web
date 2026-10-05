@@ -120,7 +120,7 @@ export const wotofoProducts: Product[] = [
       {
         id: "mouthpiece",
         title: "Shaped for your lips",
-        description: "A few quick puffs or a longer session, it stays comfortable on the lips.",
+        description: "It feels comfortable on the lips when you vape.",
         subline: "WOTOFO made this model's mouthpiece from silicone.",
         image: { src: "/assets/products/wotofo-nexbar-18k/story-mouthpiece.webp", alt: "WOTOFO's nexBAR 18K picture — ergonomic mouthpiece", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
       },
@@ -128,7 +128,7 @@ export const wotofoProducts: Product[] = [
         id: "airflow",
         title: "Set the airflow the way you like",
         description: "Prefer a loose, easy draw, or something a little tighter? Pick whichever feels comfortable.",
-        subline: "WOTOFO put the airflow adjustment on the base, where the picture points.",
+        subline: "WOTOFO made the airflow slider large, so it's easy to find and adjust.",
         image: { src: "/assets/products/wotofo-nexbar-18k/story-airflow.webp", alt: "WOTOFO's nexBAR 18K picture — adjustment airflow at the base", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
       },
     ],
@@ -136,6 +136,7 @@ export const wotofoProducts: Product[] = [
     whoIsThisFor: ["Customers who saw OKami24's own WOTOFO nexBAR 18K review and want the maker's full spec and flavour list."],
     faqs: [],
     relatedProductSlugs: [],
-    sourceUrls: [OFFICIAL_20MG, OFFICIAL_50MG],
+    // + WOTOFO's own review (battery percentage, the grooved slider, the button: batch 5a, checker #283 r1).
+    sourceUrls: [OFFICIAL_20MG, OFFICIAL_50MG, "https://www.wotofo.com/blogs/disposable-vape/wotofo-nexbar-18k-review"],
   },
 ];
