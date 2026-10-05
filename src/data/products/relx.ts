@@ -82,7 +82,7 @@ export const relxProducts: Product[] = [
       {
         id: "inside",
         title: "What's inside",
-        description: "Up to 12,000 puffs in all. If the 400mAh battery runs flat first, charge it for a while and keep going.",
+        description: "Up to 12,000 puffs, on a 400mAh battery you can recharge.",
         subline: "RELX shows its coil up close.",
         image: { src: "/assets/products/relx-smash-go-12k/story-inside.webp", alt: "RELX's Smash Go 12K picture — the coil, up close", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 1224, height: 1224 },
       },
@@ -97,7 +97,6 @@ export const relxProducts: Product[] = [
     compatibility: [typeC],
     whoIsThisFor: [
       "You want a disposable that's easy to carry and slips into a pocket for the whole day.",
-      "You like to choose your own nicotine salt strength, 3% or 5%.",
     ],
     faqs: [],
     relatedProductSlugs: ["relx-creator"],

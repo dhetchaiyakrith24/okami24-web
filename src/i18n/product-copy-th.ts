@@ -702,7 +702,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   "relx-smash-go-12k": {
     whoIsThisFor: {
       0: "อยากได้พอตใช้แล้วทิ้งที่พกง่าย ใส่กระเป๋ากางเกงแล้วติดตัวไปได้ทั้งวัน",
-      1: "อยากเลือกความเข้มข้นของ salt nic ได้เอง ระหว่าง 3% กับ 5%",
     },
     specifications: {
       puffs: "สูงสุด 12,000",
