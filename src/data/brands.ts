@@ -206,9 +206,13 @@ export const brands: Brand[] = [
     slug: "tfit",
     name: "TFIT",
     fullName: "TFIT (Thinkvape)",
-    tagline: "Disposable vape devices.",
+    tagline: "Pod systems and disposables.",
+    taglineTh: "พอตซิสเต็มและพอตใช้แล้วทิ้ง",
     description:
-      "A Shenzhen-based e-cigarette brand (tfitvape.com, under Thinkvape) known for its NOVA disposable line and, per independent retailer listings and OKami24's own product-review history, an \"M Power\" high-puff disposable model.",
+      // Batch 4g (05/10): from TFIT's own site (About text + product list, 4/facts-tfit-m-power-20k.md) — the M Power 20K is TFIT's own.
+      "A vape brand under THINKVAPE (tfitvape.com), founded in 2015 — maker of the NOVA and NOVA MAX pod systems and the M Power 20K disposable.",
+    descriptionTh:
+      "TFIT แบรนด์บุหรี่ไฟฟ้าในเครือ THINKVAPE ก่อตั้งเมื่อปี 2015 ทำทั้งพอตซิสเต็ม NOVA และ NOVA MAX ส่วนที่ร้านมีคือพอตใช้แล้วทิ้ง M Power 20K",
     referenceUrl: "https://www.tfitvape.com/",
   },
   {

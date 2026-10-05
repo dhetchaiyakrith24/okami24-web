@@ -5859,5 +5859,11 @@
   },
   "note": "batch 2f-img 05/10 — tilted card like every VOOPOO card; Cyan Blue = VOOPOO's first colour on voopoo.com and its poster hero",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/4/4g/card-cut2.png",
+  "slug": "tfit-m-power-20k",
+  "role": "card",
+  "note": "site-wide template round batch 4g 05/10 - TFIT's own Watermelon product shot (tfitvape.com API smallPic 2250 px, white background; _incoming/sitewide-template/4/facts-tfit-m-power-20k.md), no AI: cut by scripts/flatcut.js + 2 px matte erode (_incoming/sitewide-template/2/2fimg/g4card/erode.js), upright (disposable card standard)"
  }
 ]
