@@ -88,19 +88,67 @@ export const joiwayProducts: Product[] = [
       { id: "vodak", name: "Vodak", swatchHex: "#cfd8e8", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-vodak.webp", alt: "JOIWAY F3, Vodak" } },
       { id: "watermelon-orange", name: "Watermelon Orange", swatchHex: "#e8703a", availability: "unknown", image: { src: "/assets/products/joiway-f3/variant-watermelon-orange.webp", alt: "JOIWAY F3, Watermelon Orange" } },
     ],
+    // Site-wide template round batch 4a (06/10): the G5 template — JOIWAY's own Thai posters, one per block (3840 px, down-sized only:
+    // _incoming/sitewide-template/4/4a/blocks.js); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.
+    storyDetails: true,
+    storyLayout: "stage",
+    storyCover: { src: "/assets/products/joiway-f3/story-cover.webp", alt: "JOIWAY's F3 banner — 12000 puffs+", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 2604, height: 1504 },
     specifications: [
-      { key: "puffs", label: "Rated puffs", value: "Up to 12,000", sourceStatus: "unverified" },
+      // Batch 4a (06/10): rows from JOIWAY's own posters (4/facts-joiway-f3.md). 650mAh / 14mL / 3% are on no JOIWAY file (retailer-born)
+      // → unverified = hidden; the old coil row "Mesh coil, 1.0Ω" contradicted JOIWAY's "นาโน-คอยล์" → replaced.
+      { key: "puffs", label: "Rated puffs", value: "12,000+", sourceStatus: "verified", sourceUrl: "https://thai.myjoiway.com/" },
+      { key: "airflow", label: "Airflow", value: "Adjustable", sourceStatus: "verified", sourceUrl: "https://thai.myjoiway.com/" },
+      { key: "charging", label: "Charging", value: "USB-C", sourceStatus: "verified", sourceUrl: "https://thai.myjoiway.com/" },
+      { key: "coil", label: "Coil", value: "Nano coil", sourceStatus: "verified", sourceUrl: "https://thai.myjoiway.com/" },
       { key: "battery", label: "Battery", value: "650mAh rechargeable, USB-C", sourceStatus: "unverified" },
       { key: "capacity", label: "E-liquid capacity", value: "14mL prefilled", sourceStatus: "unverified" },
       { key: "nicotine", label: "Nicotine strength", value: "3% nicotine salt", sourceStatus: "unverified" },
-      { key: "coil", label: "Coil", value: "Mesh coil, 1.0Ω", sourceStatus: "unverified" },
     ],
-    features: [],
+    features: [
+      {
+        id: "airflow",
+        title: "Set the airflow to suit you",
+        description: "Open it for a looser draw, close it down for a tighter one.",
+        subline: "The airflow sits at the base of the device.",
+        image: { src: "/assets/products/joiway-f3/story-airflow.webp", alt: "JOIWAY's F3 poster — adjustable airflow at the base", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 817 },
+      },
+      {
+        id: "charging",
+        title: "Charge it when it runs low",
+        description: "Plug it in for a while, then keep going with the liquid that's left.",
+        subline: "If the battery runs out before the liquid, you don't have to throw the device away.",
+        image: { src: "/assets/products/joiway-f3/story-charging.webp", alt: "JOIWAY's F3 poster — Type-C charging", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 817 },
+      },
+      {
+        id: "tank",
+        title: "See what's left",
+        description: "You can see how much liquid is left without guessing, and know ahead of time when you'll need a new one.",
+        subline: "The tank sits at the top, just below the mouthpiece.",
+        image: { src: "/assets/products/joiway-f3/story-tank.webp", alt: "JOIWAY's F3 poster — transparent e-liquid tank, 360°", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 817 },
+      },
+      {
+        id: "coil",
+        title: "A nano coil",
+        description: "It comes built in, so there is no coil to buy or change for as long as you use it.",
+        subline: "JOIWAY describes it as updated, new technology.",
+        image: { src: "/assets/products/joiway-f3/story-coil.webp", alt: "JOIWAY's F3 poster — nano coil, updated technology", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 817 },
+      },
+      {
+        id: "lights",
+        title: "Colourful lights",
+        description: "In the picture the glow comes up around the tank, which gives the device a splash of colour as you vape.",
+        subline: "JOIWAY says the lights flash while it's in use.",
+        image: { src: "/assets/products/joiway-f3/story-lights.webp", alt: "JOIWAY's F3 poster — colourful lights flash while you vape", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 817 },
+      },
+    ],
     compatibility: [typeC],
-    whoIsThisFor: ["Customers already asking for Joiway by name — this is the single-flavor model; the F4 is the two-flavors-in-one device."],
+    whoIsThisFor: [
+      "You vape disposables regularly and want one that lasts a good while before you need a new one.",
+      "You like a device with some colour to it, with lights that come on as you vape.",
+    ],
     faqs: [],
     relatedProductSlugs: ["joiway-f4"],
-    sourceUrls: ["https://myjoiway.com/"],
+    sourceUrls: ["https://myjoiway.com/", "https://thai.myjoiway.com/"],
   },
   {
     id: "joiway-f4",

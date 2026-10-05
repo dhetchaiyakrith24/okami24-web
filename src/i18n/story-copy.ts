@@ -1458,4 +1458,59 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
     },
   },
+  // Site-wide template round batch 4a (06/10): JOIWAY's own F3 posters (_incoming/sitewide-template/4/facts-joiway-f3.md lists
+  // the source of each line); Thai = thai-copy 06/10.
+  "joiway-f3": {
+    "airflow": {
+      title: { th: "ตั้งลมได้ตามที่ชอบ", en: "Set the airflow to suit you", zh: "按自己的喜好调节进气" },
+      subline: { th: "ช่องลมอยู่ที่ฐานเครื่อง", en: "The airflow sits at the base of the device.", zh: "进气口位于机身底部。" },
+      body: {
+        th: "เปิดช่องลมให้กว้าง ลมจะโล่งและดูดได้เบาขึ้น ถ้าปรับให้แคบลง ลมจะแน่นขึ้น",
+        en: "Open it for a looser draw, close it down for a tighter one.",
+        zh: "开大吸感更松，关小吸感更紧。",
+      },
+    },
+    "charging": {
+      title: { th: "ชาร์จแบตได้", en: "Charge it when it runs low", zh: "没电可以再充" },
+      subline: { th: "แบตหมดก่อนน้ำยา ก็ไม่ต้องทิ้งทั้งเครื่อง", en: "If the battery runs out before the liquid, you don't have to throw the device away.", zh: "电池比烟油先用完，也不必整支丢掉。" },
+      body: {
+        th: "เสียบสายชาร์จไว้สักพัก แล้วก็สูบน้ำยาที่ยังเหลืออยู่ต่อได้",
+        en: "Plug it in for a while, then keep going with the liquid that's left.",
+        zh: "插上线充一会儿，剩下的烟油就能继续用。",
+      },
+      points: [
+        { text: { th: "ช่องชาร์จ USB-C", en: "USB-C charging", zh: "USB-C 充电" }, specKey: "charging" },
+      ],
+    },
+    "tank": {
+      title: { th: "ดูน้ำยาได้ทุกเมื่อ", en: "See what's left", zh: "余量一目了然" },
+      subline: { th: "ถังน้ำยาอยู่ส่วนบนของเครื่อง ใต้ปากดูด", en: "The tank sits at the top, just below the mouthpiece.", zh: "油仓在机身上部，烟嘴下方。" },
+      body: {
+        th: "น้ำยาเหลือเท่าไหร่ก็เห็นได้ด้วยตา ไม่ต้องเดา และรู้ก่อนว่าใกล้ถึงเวลาเปลี่ยนเครื่องใหม่",
+        en: "You can see how much liquid is left without guessing, and know ahead of time when you'll need a new one.",
+        zh: "还剩多少一眼就能看到，不用猜，也能提前知道快要换新的了。",
+      },
+      points: [
+        { text: { th: "ถังน้ำยาโปร่งใส มองเห็นได้รอบ 360°", en: "Transparent tank, 360° view", zh: "透明油仓，360° 可视" } },
+      ],
+    },
+    "coil": {
+      title: { th: "นาโนคอยล์", en: "A nano coil", zh: "纳米线圈" },
+      subline: { th: "JOIWAY ระบุว่าเป็นคอยล์ที่อัปเดตมาเป็นเทคโนโลยีแบบใหม่", en: "JOIWAY describes it as updated, new technology.", zh: "JOIWAY 称之为升级的新技术。" },
+      body: {
+        th: "คอยล์ติดมากับตัวเครื่องตั้งแต่แรก จึงไม่ต้องซื้อหรือเปลี่ยนคอยล์เองตลอดการใช้งาน",
+        en: "It comes built in, so there is no coil to buy or change for as long as you use it.",
+        zh: "线圈出厂就装在机身里，用到最后都不用自己买或换线圈。",
+      },
+    },
+    "lights": {
+      title: { th: "ไฟหลากสี", en: "Colourful lights", zh: "多彩灯光" },
+      subline: { th: "JOIWAY ระบุว่าไฟจะกะพริบระหว่างใช้งาน", en: "JOIWAY says the lights flash while it's in use.", zh: "JOIWAY 表示使用时灯会闪烁。" },
+      body: {
+        th: "ในภาพ แสงเรืองขึ้นรอบถังน้ำยา ทำให้เครื่องดูมีสีสันขึ้นเวลาสูบ",
+        en: "In the picture the glow comes up around the tank, which gives the device a splash of colour as you vape.",
+        zh: "图中光从油仓一圈透出来，抽的时候机身更有色彩。",
+      },
+    },
+  },
 };

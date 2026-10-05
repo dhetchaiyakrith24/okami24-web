@@ -1411,6 +1411,42 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 4a (06/10): from JOIWAY's own F3 posters; Thai = thai-copy 06/10.
+  "joiway-f3": {
+    th: {
+      lede: "ด้านล่างไล่ดู JOIWAY F3 ทีละส่วนจากโปสเตอร์ของ JOIWAY เอง พร้อมบอกว่าแต่ละส่วนช่วยอะไรในการใช้งาน",
+      sections: [
+        {
+          heading: "สูบได้กี่พัฟ และมีกลิ่นอะไรให้เลือกบ้าง",
+          paragraphs: [
+            "ตามโปสเตอร์หลักของ JOIWAY สูบได้ 12,000+ พัฟ ส่วนกลิ่นที่ JOIWAY มีให้เลือก เรารวมไว้ในตารางกลิ่นด้านบนแล้ว ถ้าอยากรู้ว่ากลิ่นไหนมีของอยู่ตอนนี้ ทักไลน์ @okm24 ถามได้เลย"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "Below, a look at the JOIWAY F3 one part at a time, taken from JOIWAY's own posters.",
+      sections: [
+        {
+          heading: "How many puffs, and which flavours?",
+          paragraphs: [
+            "JOIWAY's main poster gives 12,000+ puffs. The flavours JOIWAY offers are in the grid above; to check which ones are in stock right now, message us on LINE @okm24."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "下面根据 JOIWAY 自己的海报，逐项来看 JOIWAY F3。",
+      sections: [
+        {
+          heading: "多少口？有哪些口味？",
+          paragraphs: [
+            "JOIWAY 主海报标注 12,000+ 口。JOIWAY 提供的口味都在上方的口味表里，想知道现在哪些有货，可以在 LINE @okm24 问我们。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */
