@@ -1624,17 +1624,14 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         en: "Beyond the looks, you can set the draw as tight or as open as you like, to suit the way you vape.",
         zh: "除了外观，吸阻松紧也可以自己调，按个人习惯和用法来定。",
       },
-      points: [
-        { text: { th: "แบตเตอรี่ 600mAh", en: "600mAh battery", zh: "600mAh 电池" }, specKey: "battery" },
-      ],
     },
     "bottle": {
       title: { th: "ทรงขวดน้ำยา ฐานไล่สี", en: "An e-liquid bottle shape", zh: "烟油瓶造型" },
       subline: { th: "SALTHUB เรียกดีไซน์นี้ว่าความหรูที่ไม่ต้องโชว์", en: "SALTHUB calls it understated luxury.", zh: "SALTHUB 称之为低调的奢华。" },
       body: {
-        th: "ทรงเหมือนขวดน้ำยา ตรงฐานไล่สีต่างกันไปตามกลิ่น",
-        en: "Shaped like a classic e-liquid bottle, with a colour gradient at the base that differs from flavour to flavour.",
-        zh: "外形像经典的烟油瓶，底部的渐变色随口味不同。",
+        th: "เวลาพกไว้หลายกลิ่น แค่ดูสีที่ฐานก็พอบอกได้ว่าเครื่องไหนกลิ่นอะไร",
+        en: "Carry a few flavours and the colour at the base is enough to tell which is which.",
+        zh: "同时带着几种口味时，看一眼底部的颜色，大致就能分出哪支是什么口味。",
       },
     },
     "display": {
@@ -1662,9 +1659,9 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "สูบได้ต่อเนื่อง", en: "Built to keep going", zh: "持续发挥" },
       subline: { th: "SALTHUB ระบุว่ารุ่นนี้สูบได้สม่ำเสมอ ตั้งแต่พัฟแรกไปจนถึงพัฟสุดท้าย", en: "SALTHUB says it performs the same from the first draw to the last.", zh: "SALTHUB 表示从第一口到最后一口表现一致。" },
       body: {
-        th: "ส่วนคอยล์ที่อยู่ข้างในเป็นแบบ cotton mesh",
-        en: "The coil inside is cotton mesh.",
-        zh: "内部线圈是棉网线圈。",
+        th: "จำนวนพัฟเป็นตัวเลขที่ผู้ผลิตให้ไว้ ใช้จริงจะได้เท่าไหร่ ขึ้นอยู่กับว่าแต่ละคนสูบถี่และสูบยาวแค่ไหน",
+        en: "The puff count is the maker's figure; how many you actually get depends on how often and how long each person draws.",
+        zh: "口数是厂家给出的数字，实际能抽多少，要看每个人抽得多频繁、每口多长。",
       },
     },
   },

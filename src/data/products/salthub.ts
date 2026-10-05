@@ -132,7 +132,7 @@ export const salthubProducts: Product[] = [
       {
         id: "bottle",
         title: "An e-liquid bottle shape",
-        description: "Shaped like a classic e-liquid bottle, with a colour gradient at the base that differs from flavour to flavour.",
+        description: "Carry a few flavours and the colour at the base is enough to tell which is which.",
         subline: "SALTHUB calls it understated luxury.",
         image: { src: "/assets/products/m-bar-10k/angle-02.webp", alt: "Official SALTHUB M Bar 10K poster, \"Understated luxury radiates from within\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1085 },
       },
@@ -153,14 +153,13 @@ export const salthubProducts: Product[] = [
       {
         id: "nonstop",
         title: "Built to keep going",
-        description: "The coil inside is cotton mesh.",
+        description: "The puff count is the maker's figure; how many you actually get depends on how often and how long each person draws.",
         subline: "SALTHUB says it performs the same from the first draw to the last.",
         image: { src: "/assets/products/m-bar-10k/story-nonstop.webp", alt: "Official SALTHUB M Bar 10K poster, \"Built for nonstop performance\" — up to 10,000 puffs", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1079 },
       },
     ],
     compatibility: [typeC],
     whoIsThisFor: [
-      "You vape disposables regularly and want to set the airflow yourself until the draw feels right.",
       "You like to rotate flavours and want a range that runs from cool and fruity all the way to Cola and Matcha Latte.",
     ],
     // Batch 3c: the FAQ "How do I switch power modes?" left — the modes block tells it.
