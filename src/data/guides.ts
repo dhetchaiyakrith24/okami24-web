@@ -1,4 +1,19 @@
-import type { Guide } from "@/types/catalog";
+import type { ArticleReviewVideo, Guide } from "@/types/catalog";
+
+/**
+ * Section clips (owner 05/10: "เรามีคลิป Youtube ถ้ามีใส่คั่นไว้ในแต่ละหัวข้อด้วย"). Only the shop's own three channels
+ * (@OKMYARZ · @OKM_24 · @PODSYSTEM-OKAMI-II); each clip sits under the one section whose subject is exactly its model.
+ * Title / channel / upload date: the four already on product records were confirmed via YouTube oEmbed when they were
+ * added (products/*.ts); G4 Pro KOKO read from YouTube's own player data on 2026-10-05 (videoDetails + microformat).
+ * Searched 05/10 for Caliburn G5 / G4 / G4 Mini / G5 Lite / G4 Classic / G3 Pro clips on all three channels: none.
+ */
+export const SECTION_CLIPS = {
+  caliburnG4Pro: { videoId: "Hpifl9weNTc", title: "หลังใช้งาน UWELL CALIBURN G4 PRO ตัวจบพร้อมระบบสัมผัส!", channelName: "OKM YARZ", publishedAt: "2026-08-14" },
+  caliburnG4ProKoko: { videoId: "3-CrWMaLbUE", title: "UWELL CALIBURN G4 PRO KOKO พอตสุดล้ำพร้อมจอสัมผัส!", channelName: "OKM YARZ", publishedAt: "2026-03-07" },
+  argusG4: { videoId: "eUdbZyvV4Y0", title: "หลังใช้งาน VOOPOO ARGUS G4 เปลี่ยนค่าโอห์มได้ในหัวเดียว!", channelName: "OKAMI", publishedAt: "2026-08-15" },
+  mSwitch: { videoId: "DaJHk4e6_Y8", title: "30 วันกับ M SWITCH 15K เป็นยังไงบ้าง? (หัวรุ่นแรก)", channelName: "POD SYSTEM OKAMI II", publishedAt: "2026-04-12" },
+  mBar9kSweets: { videoId: "SijUuq9qRpE", title: "M BAR 9K รวมกลิ่นสายขนม มีรสอะไรบ้าง? 2026", channelName: "OKAMI", publishedAt: "2026-08-19" },
+} satisfies Record<string, ArticleReviewVideo>;
 
 // Round SEO ข batch 4 (2026-09-21): publishedAt = the commit that first added all seven records
 // (f29d7fc, 2026-08-29, read from git log — never invented). The modified date is no longer typed
@@ -156,6 +171,7 @@ const allGuides: Guide[] = [
           "The cartridge is the [M Switch Pod](/products/m-switch-pod): prefilled, made for the M Switch Kit. When it runs out you swap in a new pod and the body stays.",
           "Compared with an M Bar 10K, where the whole device is discarded, an M Switch discards only the pod — the same simplicity (no filling, no coil changes) with less waste per swap. Still undecided on the format? Start again from [Choosing your first pod](/guides/choosing-your-first-pod-system).",
         ],
+        video: SECTION_CLIPS.mSwitch,
       },
     ],
     relatedProductSlugs: ["caliburn-g5-lite", "m-bar-10k", "m-switch-kit"],
@@ -205,6 +221,7 @@ const allGuides: Guide[] = [
           "The modes are preset draw characters plus a Custom slot, running from a smooth, mild hit to a stronger, more robust one. It takes UWELL GPP pods and the older G3 pods.",
           "What an onboard touchscreen can do, and what it costs, is in [Onboard Touch Displays](/technology/onboard-touch-displays).",
         ],
+        video: SECTION_CLIPS.caliburnG4ProKoko,
       },
       {
         heading: "A real example: a high-output device like the DRAG X3",
@@ -284,6 +301,7 @@ const allGuides: Guide[] = [
             ],
           },
         ],
+        video: SECTION_CLIPS.argusG4,
       },
       {
         heading: "Rows we mark unverified — how the DRAG 6's coil row moved to verified",
@@ -539,6 +557,7 @@ const allGuides: Guide[] = [
           "M Bar 10K (2 กลิ่น): Cola · Matcha Latte",
           "M Switch Pod (1 กลิ่น): Cola",
         ],
+        video: SECTION_CLIPS.mBar9kSweets,
       },
       {
         heading: "กลิ่นที่คนค้นหา และกลิ่นใหม่ของ M Bar 9K",
@@ -703,6 +722,7 @@ const allGuides: Guide[] = [
           "M Switch Pod หัวละสูงสุด 15,000 พัฟ ส่วน M Bar 10K สูงสุด 10,000 พัฟ และ M Bar 9K สูงสุด 9,000 พัฟต่อเครื่อง",
           "ถ้ากำลังเทียบ M Switch กับเครื่องระบบสวิตช์ยี่ห้ออื่น อ่าน [Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch) ดูพอตใช้แล้วทิ้งรุ่นอื่นบนเว็บได้ที่ [หมวดพอตใช้แล้วทิ้ง](/products/disposables)",
         ],
+        video: SECTION_CLIPS.mSwitch,
       },
     ],
     relatedProductSlugs: ["m-bar-10k", "m-switch-kit"],
@@ -983,6 +1003,7 @@ const allGuides: Guide[] = [
           "ที่ต้องแลกคือน้ำหนัก ตามคู่มือของ UWELL G4 Pro หนัก 78 กรัม G4 หนัก 54.7 กรัม ส่วนวัตต์สูงสุด 35 วัตต์กับหัวพอต 3mL เท่ากันทั้งคู่",
           "อยากได้จอใหญ่ ปรับช่องลมละเอียด และใช้หัวพอตได้สองแบบ ดู G4 Pro อยากได้เครื่องที่เบากว่า ดู G4",
         ],
+        video: SECTION_CLIPS.caliburnG4Pro,
       },
       {
         heading: "Caliburn G4 vs G3 Pro",
@@ -1035,6 +1056,7 @@ const allGuides: Guide[] = [
           "หัว GPP มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม ช่วงที่ ARGUS G4 รับได้กว้างกว่า แต่ช่วงกว้างไม่ได้แปลว่ามีหัวพอตทุกค่าให้ซื้อ อ่านเรื่องนี้ที่ [วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet) ด้านความจุ หัวพอต ARGUS Multi-Ohm ที่มากับ ARGUS G4 จุ 3.5mL ส่วนหัว GPP ของ G5 จุ 3mL ในเวอร์ชัน TPD จุ 2mL ทั้งคู่",
           "ค่าโอห์มของหัวพอตที่ใส่มีผลกับแนวการสูบ ถ้ายังไม่แน่ใจว่าตัวเองสูบแนวไหน อ่าน [MTL กับ DTL](/guides/understanding-mtl-vs-dtl) ก่อน",
         ],
+        video: SECTION_CLIPS.argusG4,
       },
       {
         heading: "แบตกับการชาร์จ",

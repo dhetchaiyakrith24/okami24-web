@@ -7,6 +7,8 @@
  * reads "35 วัตต์" / "0.8 โอห์ม"; W and Ω stay only inside spec tables.
  */
 import type { ArticleFAQItem, GuideSection } from "@/types/catalog";
+// Owner 05/10: a section's shop clip lives in every locale's array (they replace each other) — one definition, in guides.ts.
+import { SECTION_CLIPS } from "@/data/guides";
 
 export interface GuideCopy {
   title: string;
@@ -168,6 +170,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           "หัวพอตที่ใช้คือ [M Switch Pod](/products/m-switch-pod) บรรจุน้ำยาสำเร็จ ทำมาสำหรับ M Switch Kit น้ำยาหมดก็ถอดเปลี่ยนหัวใหม่ ตัวเครื่องใช้ตัวเดิม",
           "เทียบกับ M Bar 10K ที่ทิ้งทั้งเครื่อง M Switch ทิ้งแค่หัวพอต ใช้ง่ายเท่ากัน คือไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์ ต่างกันที่ขยะต่อครั้งน้อยกว่า เทียบสองแบบนี้ละเอียดอ่านต่อที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) ถ้ายังตัดสินใจไม่ได้ว่าจะเอาแบบไหน กลับไปเริ่มที่ [เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system)",
         ],
+        video: SECTION_CLIPS.mSwitch,
       },
     ],
     faq: [
@@ -211,6 +214,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           "ตัวโหมดเป็นโหมดที่ตั้งค่ามาให้ บวกช่อง Custom ให้ปรับเอง ไล่ตั้งแต่ไอนุ่มเบาไปจนถึงหนักและแน่นขึ้น หัวพอตที่ใช้ได้คือ UWELL GPP และหัวพอต G3 รุ่นก่อน",
           "ส่วนจอทัชบนพอตทำอะไรได้บ้าง และแลกกับอะไร อ่านที่ [จอทัชสกรีนบนพอต](/technology/onboard-touch-displays)",
         ],
+        video: SECTION_CLIPS.caliburnG4ProKoko,
       },
       {
         heading: "ตัวอย่างจริง: เครื่องวัตต์สูงอย่าง DRAG X3",
@@ -282,6 +286,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
             ],
           },
         ],
+        video: SECTION_CLIPS.argusG4,
       },
       {
         heading: "สเปกที่ยังไม่ยืนยัน — แถวคอยล์ของ DRAG 6 ยืนยันได้อย่างไร",
@@ -561,6 +566,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           "配套烟弹是 [M Switch Pod](/products/m-switch-pod)：预填烟弹，专为 M Switch Kit 制作。用完换一颗新烟弹，机身留着。",
           "与整台丢弃的 M Bar 10K 相比，M Switch 只丢弃烟弹——同样简单（不注油、不换雾化芯），每次更换产生的废弃物更少。还没决定要哪种形态？回到 [选择你的第一款设备](/guides/choosing-your-first-pod-system) 从头开始。",
         ],
+        video: SECTION_CLIPS.mSwitch,
       },
     ],
     faq: [
@@ -593,6 +599,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           "这些模式是预设的吸感档位，外加一个可自定义的 Custom 档，从柔和轻盈到更强更扎实的击喉感。可用烟弹为 UWELL GPP 以及旧款 G3 烟弹。",
           "机身触控屏能做什么、代价是什么，见 [机身触控屏](/technology/onboard-touch-displays)。",
         ],
+        video: SECTION_CLIPS.caliburnG4ProKoko,
       },
       {
         heading: "真实例子：DRAG X3 这样的高功率设备",
@@ -636,6 +643,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           { heading: "功率、电压与阻值", paragraphs: ["功率范围 5–35W，输出电压 3.2–4.2V，阻值范围 0.4–3.0Ω（阻值和功率如何影响吸法，见 [MTL 与 DTL](/guides/understanding-mtl-vs-dtl)）。在这个范围内把功率设在哪里，见 [如何选择功率与进气量](/guides/choosing-wattage-and-airflow)。"] },
           { heading: "屏幕与烟弹", paragraphs: ["0.85 英寸 HD 屏幕，显示电量、功率、阻值、锁定状态和口数。机身为锌合金、皮革和铝合金。烟弹那一行写的是：ARGUS 顶部注油烟弹平台，多种阻值——这一行正是最后一节要继续说的。", "同一外形却有多种阻值的烟弹意味着什么，见 [多阻值烟弹平台](/technology/multi-resistance-cartridges)。"] },
         ],
+        video: SECTION_CLIPS.argusG4,
       },
       {
         heading: "标为「未验证」的规格行——DRAG 6 的雾化芯一行如何变为已验证",
