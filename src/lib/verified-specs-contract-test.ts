@@ -40,8 +40,8 @@ export const SOURCED_ROW_PRODUCTS = [
 const MANUFACTURER_HOSTS = [
   "salthub.com", "img.salthub.com", "relxnow.com", "myuwell.com", "files.myuwell.com", "manuals.plus", "eskobarvape.com",
   "voopoo.com", "shop.voopoo.com", "iqos.com", "nevoks.com", "wotofo.com",
-  // batch 4a (06/10): JOIWAY's own sites (the Thai one serves its product API + poster files — _incoming/joiway/SOURCE.md)
-  "myjoiway.com", "thai.myjoiway.com",
+  // batch 4a (06/10): JOIWAY's Thai site — it serves JOIWAY's product API + poster files (_incoming/joiway/SOURCE.md)
+  "thai.myjoiway.com",
 ];
 
 /** Published (Shipnity) products whose verified rows must each name a manufacturer `sourceUrl` — the same rule (a) as
