@@ -73,7 +73,7 @@ export const tfitProducts: Product[] = [
       { key: "coil", label: "Coil", value: "Dual mesh coils, 0.8Ω", sourceStatus: "verified", sourceUrl: "https://www.tfitvape.com/" },
       { key: "nicotine", label: "Nicotine strength", value: "30mg", sourceStatus: "verified", sourceUrl: "https://www.tfitvape.com/" },
       { key: "airflow", label: "Airflow", value: "Adjustable", sourceStatus: "verified", sourceUrl: "https://www.tfitvape.com/" },
-      { key: "size", label: "Size and weight", value: "Φ30 × 98 mm, 70g", sourceStatus: "verified", sourceUrl: "https://www.tfitvape.com/" },
+      { key: "size", label: "Dimensions", value: "Φ30 × 98 mm, 70g", sourceStatus: "verified", sourceUrl: "https://www.tfitvape.com/" },
     ],
     features: [
       {
