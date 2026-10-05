@@ -11,63 +11,58 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = d55650c (#286) [ตรวจแล้ว — git]. Night 05→06/10 merged, all checker PASS +
-  deploy OK [ตรวจแล้ว — gh + curl]: #271 #273 #274 #275 #277 #278 #280 #281 (+ `storyCoverMobile`) #282 #283 #284 #285 (docs) #286 (75
-  unused images removed). Night state + morning report (local, not in git): `_incoming/sitewide-template/NIGHT-STATE.md` · `REPORT-0610.md`.
-2 ahead of main [ตรวจแล้ว — git]: nothing but this docs PR. No open PR. Material not in git: `_incoming/sitewide-template/2/` … `7/`
-  (per batch: scripts, facts, posters, shots, logs). Kits (never merge): `kit-1b` (+ scope.md) · `kit-1c` — `git fetch origin kit-1b &&
-  git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template` · later batches = local only — push a kit before a cloud chat.
+1 main: `git fetch && git log -1 --oneline origin/main` = d8f8e97 (#290) [ตรวจแล้ว — git]. 06/10 pm merged, checker PASS + deploy OK +
+  live curl [ตรวจแล้ว]: #288 M Bar 10K stage · #289 JOIWAY F4 = TWINS (live ~2.5 min after the deploy run, curl loop) · #290 RELX Creator "ทั้งหมด" image.
+2 ahead of main [ตรวจแล้ว — git]: only this docs PR (§16 + LESSONS พ21/พ24). No other PR open. Material not in git:
+  `_incoming/sitewide-template/` (3/3c · 4/4e · 4/4f = scripts, facts, shots, logs per batch). Kits (never merge): `kit-1b` · `kit-1c` (`git fetch origin kit-1b &&
+  git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template`) — later batches local only; push a kit for cloud.
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md`. Scope = the round file's 【ขอบเขต】 block; PM pages (coils, IQOS, pod-180) = images only.
-  DONE: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB #273 #274 #275 #277 · 4 #278 #280 #281 #282 · 5a #283 · 6 #284 · 7 part 1 #286.
-  Product × part table: `_incoming/sitewide-template/7/table.md` (`npx tsx _incoming/sitewide-template/7/table.ts`).
-  NEXT — the owner answered REPORT-0610 §4 on 06/10 ("ครับไปเลยครับ" = every recommended answer; rulings in §18), in this order, tier B each:
-    (a) 3c M Bar 10K → stage: built from `_incoming/sitewide-template/3/3c/` (copy-base.json, th-raw.json, brief-3c.md, blocks.js);
-        the 4 owner-approved Thai lines may go (§18 06/10).
-    (b) 4e JOIWAY F4 → the TWINS edition (maker: 20,000 puffs = 10K + 10K, 20mL, 650mAh, LED display): data (puffCount, screenType
-        "none" is wrong) + stage blocks 02–05 (+ cover 01) — facts `_incoming/sitewide-template/4/facts-joiway-f4.md`. Keep the owner
-        exception "2 โหมด 2 รส" unless it contradicts TWINS.
-    (c) RELX Creator all-colours image: publish the draft `_incoming/sitewide-template/4/4d2/relx/relx-creator-page.png`
-        (script `4/4d2/all-draft.js`) as the "ทั้งหมด" option.
-    (d) 4b TFIT M Power 20K: unhide (+1 sitemap page, brand/footer — พ7) — `4/facts-tfit-m-power-20k.md` (18ML, drop the doubt FAQ).
-    (e) M Bar 15K → reusable/pod-system category per SALTHUB (own PR, BIG) + story · wrong head-copy facts fixed now (§18 06/10).
+  DONE: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB #273 #274 #275 #277 #288 · 4 #278 #280 #281 #282 #289 #290 · 5a #283 · 6 #284 ·
+  7 part 1 #286. Product × part table: `_incoming/sitewide-template/7/table.md` (`npx tsx _incoming/sitewide-template/7/table.ts`).
+  NEXT (owner 06/10 in §18; tier B, one PR each):
+    (d) 4b TFIT M Power 20K: unhide (`hiddenFromStorefront` in tfit.ts) — facts `_incoming/sitewide-template/4/facts-tfit-m-power-20k.md`
+        (TFIT's own product; 18mL not 17mL). Needs: a card photo cut from TFIT's
+        `posters/tfit-m-power-20k/10-smallpic.jpg` (white background — LESSONS พ23), TFIT's logo `4/logos/tfit-logo.webp`, stage from
+        posters 01 cover + 03/04/06 (+05 or 09), head copy + FAQ doubt talk removed (wrong-fact fix allowed 06/10), spec rows. Flavour
+        photos: none from TFIT → the option-photo round. Unhiding adds TFIT to the footer brand list on EVERY page (LESSONS พ7) =
+        visible-text over the whole sitemap, before = build of main (13.5 #5, LESSONS พ20). Expect BIG (data).
+    (e) M Bar 15K → reusable/pod-system category per SALTHUB (own PR, BIG) + story · wrong head-copy facts fixed now (§18 06/10:
+        "cotton mesh / ชาร์จเร็ว / 15 รส"). Facts `_incoming/sitewide-template/3/facts-m-bar-15k.md`.
     (f) MOOOD Monster 14K: open mooodvapes.com/14000puffs/ in a real browser (DNS failed for the researcher); brand site → fix data
         (screenType, flavours, battery) + move it off "Unbranded" (BIG).
-    Skipped by the owner's answer: INFY 20K + Muro ×3 (no maker material) · pod-180 stays brandless.
-  Then close the round (skill `round-close`, tag sitewide-template-done). Not this round: Q16 IQOS colour completeness (PM colour
-  mechanism) and Q18 "every option gets a photo" (flavour photos Smash Go 10 · F3 30 · F4 16 · Zero Cartridge 22 · WOTOFO 11 · M Bar /
-  M Switch / INFY / Muro + the 19 white-box coil images — flatcut eats white packaging, `_incoming/sitewide-template/7/trial/`)
-  = write a new round file for the owner.
-  Examples: `_incoming/sitewide-template/4/4c` · `4/4d` · `5/5a` · traps LESSONS 24 + พ18 + พ20–พ23 · gates: verify:catalog ·
-  page-text-length --facts · wordbreak-scan + every new Thai line read at 390/1440 (พ21) · checker (tree/3412 untouched meanwhile, พ22).
-  Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD (except (e)).
-3a THE IMAGE METHODS THAT WORK (kept for this round):
-  (a) one model, colours differ only in colour = ONE master + recolour by script — silver master `b-uwell/recolour-g4c.js`; coloured
-  master `b-voopoo/recolour-g3m.js` (lesson 23); gradients per height band `b-edge/recolour-g4m.js`, `b-edge/recolour-g3p.js` (masks
-  `b-uwell/masks.js`); colour targets + swatch = median of the MAKER's photo · (b) each colour its own print = a night render per colour
-  · (c) single option = night card render · card from a set = tilt one colour 12° (`_incoming/image-sitewide/tilt-card.js`) ·
-  (d) maker pair files with an alpha gap = cut both devices whole by connected components (`_incoming/sitewide-template/1c-colours/
-  split.js`, publish2.js: rotate ONCE to the final tilt, unsharp 0.65 — the sharpness gate fails a double rotation on light colours).
-  (e) maker poster too small, no larger maker file (poster-stretch FAIL) = AI upscale + VOOPOO's pixels back over every letter AND
-  every product-surface pattern (LESSONS 25 · `_incoming/sitewide-template/2/2dfix/`: upload.js → upscale "2k" → cmp.js letter gate
-  → composite.js boxes → publish.js; cut-outs: zoom.js keeps the original alpha + edge band).
-  CUT-OUT (lesson พ11): Higgsfield remover → `b-edge/choke.js` · unlike the studio grey → `scripts/flatcut.js` · ALWAYS zoom 4x on
-  dark + magenta (`b-edge/edgezoom.js`). Then presize + map entries + `npx tsx scripts/process-images.ts --only <slug>` (new file
-  names, lesson พ6). Check every render for MIRRORING. Run `npx tsx scripts/image-sharpness-gate.ts --base origin/main` before the
-  checker. Paths under `_incoming/image-sitewide/`. Poster `transparent` only when ≥ 30 % of the file is transparent (LESSONS พ16).
-  Lineups: UWELL slim = G5 "group" (`set1/poster.js`) · box = "cluster" (`set1/boxy.js`, `dsx/koko-two.js`) · VOOPOO = RELX
-  (`dsx/vp-relx2.js`) · 7+ devices = two groups ("ทั้งหมด 1 / 2") · AI light only = HYBRID (`b-edge/d6-hybrid.js`, Drag 6 #248).
-  Left: edge defects (`edge-audit/visual-audit.md`) + coils (`b-coils/README.txt`) → the option-photo round · Esko pod-159 LAST
+    Skipped (owner): INFY 20K + Muro ×3 (no maker material) · pod-180 brandless.
+  Then close the round (skill `round-close`, tag sitewide-template-done). Not this round: Q16 IQOS colour completeness and Q18 "every
+  option gets a photo" (flavour photos Smash Go 10 · F3 30 · F4 16 (swatches are all the placeholder #7ed321) · Zero Cartridge 22 ·
+  WOTOFO 11 · M Bar / M Switch / INFY / Muro / TFIT 10 + the 19 white-box coils) = write a new round file for the owner.
+  Batch pattern (copy the last one): `3/3c` (split → stage) · `4/4e` (data fix + stage + cover) · `4/4f` (lineup image only):
+  facts → copy-base.json → thai-copy → th.json → blocks.js → apply.js → gates.sh → shots → PR → checker. Line reading: `4/4e/lines.js <url>` (every wrapped Thai line) + `4/4e/try.js <url> <json>` (try wordings on the real text
+  node) — LESSONS พ21. Long page shots drop posters on this machine → `4/4e/spots.js` per spot (LESSONS พ24).
+  Traps LESSONS 24 + พ18 + พ20–พ24 · gates: verify:catalog · page-text-length --facts · wordbreak-scan + every new Thai line read
+  at 390/1440 · checker (tree/3412 untouched meanwhile — พ22; Friday slipped once on 06/10, the checker re-verified its commit).
+  Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD
+  (except the owner-allowed wrong-fact fixes).
+3a IMAGE METHODS (the full list — recolour masters, pair splits, AI upscale + maker pixels, lineup scripts — = `git show d3bc8e2:docs/HANDOFF.md`
+  §16 item 3a; LESSONS 23 · 25): CUT-OUT (lesson พ11): Higgsfield remover → `b-edge/choke.js` · unlike the studio grey → `scripts/flatcut.js`
+  (white/light products: render on dark grey first — พ23) · ALWAYS zoom 4x on dark + magenta (`b-edge/edgezoom.js`), tops included. Then
+  presize + map entries + `npx tsx scripts/process-images.ts --only <slug>` (new file names, lesson พ6) · check every render for
+  MIRRORING · `npx tsx scripts/image-sharpness-gate.ts --base origin/main` before the checker · poster `transparent` only when ≥ 30 % of
+  the file is transparent (พ16) · Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — `balance` first, report the spend.
+  Left for the option-photo round: edge defects (`edge-audit/visual-audit.md`) + coils (`b-coils/README.txt`) · Esko pod-159 LAST
   (13.7 big (2), own PR, + BSOT §21).
-  Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — `balance` first, report the spend (upscale 2k = 2 each).
 4 waiting on owner:
+  (06/10 pm) look on live: M Bar 10K stage page · JOIWAY F4 TWINS page · RELX Creator "ทั้งหมด" image — reversible by revert.
+  (06/10 pm) the article section "nicotine — the maker's posters don't state it, so we don't print a number, ask LINE" (M Bar 10K,
+       JOIWAY F4, and the same pattern on earlier batches) vs §18 "never explain the absence" — Friday's recommendation: keep only the
+       LINE pointer, drop the explanation (one small PR over all such pages).
+  (06/10 pm) JOIWAY F4: the owner exception "2 โหมด 2 รส" is on no TWINS poster (it came from the shop's NOS review) — keep or drop
+       "2 โหมด" from the head copy? Recommendation: drop. The review video on the page is titled "F4 NOS" — keep (shop's own channel).
+  (06/10 pm) new Thai words (not locked): ดีไซน์เรียบ (block title, already used elsewhere) · มองเข้าไปข้างใน · ภาพโปร่ง · คู่กลิ่น.
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b) ·
   ARGUS G4 mini page (2e) · ARGUS P3 + VMATE i3 story pages (2f #264) · ARGUS G4 page (2g #271: battery block names VOOPOO's two
   figures — poster 10% vs ARGUS G3, page 22% vs previous gen; safety poster not used; 7 blocks → chip bar 6+1 at 1440).
-  (2f) things the owner should know on those pages: VOOPOO's own P3 poster prints "1500mAh Big Bettery" (maker typo, left) ·
-       VMATE Top Fill 0.4Ω: the poster says 18–30W, voopoo.com "at least 30W" — the text gives the site figure beside the poster ·
-       P3 has no dimensions row (VOOPOO gives two sizes) · i3 card colour changed Black → Cyan Blue (VOOPOO's first colour) ·
-       i3 "three textures" → "several" (11 colours show 5 textures; VOOPOO's poster in that block still prints "Three Textures").
+  (2f) five facts the owner should know on those pages (P3 maker typo, VMATE 0.4Ω wattage, P3 no size row, i3 card colour, i3
+       textures) = `git show d3bc8e2:docs/HANDOFF.md` §16 item 4 (2f).
   "Mini BOX" stays English (Friday's pick, the owner did not rule on it 05/10).
   (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
   (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
@@ -77,6 +72,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        RELX Creator: article "RELX Creator Pod" (RELX) vs fits-with "RELX Creator 20K pod" (shop) — link the names?
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
 5 open / dated:
+  - M Bar 10K (#288): facts still over 2 from the untouched head copy + anatomy sheet + fits-with card (all down from live) —
+    10,000 ×3 · ชาร์จ ×4 · RGB ×3 · 3 โหมด ×4 (checker #288 agreed) → SEO round (head) / an anatomy-sheet touch.
+  - JOIWAY F4 (#289, checker notes): "สองถัง" said 6+ times · article "สูบได้กี่พัฟ" restates poster 01 — next F4 touch.
   - wordbreak 05/10: «ไฟจะ» on /guides/fixing-no-draw-and-blinking-light@390 (guides = later round) · `vmate-i3/variants/*` +
     `argus-p3/lineup-v2.webp` unused but kept by the #286 sweep (their names appear in src/ — check by hand).
   - [ตรวจแล้ว — files, checker #272] ARGUS G4 after #271, outside the round: guide argus-g4-vs-caliburn-g5 still says G4 firing + pod capacity "unconfirmed" (now
