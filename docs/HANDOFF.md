@@ -14,8 +14,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 1 main: `git fetch && git log -1 --oneline origin/main` = 2afe0cf (#297) [ตรวจแล้ว — git]. Merged 05/10, each checker PASS + deploy OK +
   live check (`_incoming/guides-unstated/live-check.js` LIVE OK) [ตรวจแล้ว]: #294 guides no longer explain a missing maker fact (verified
   rows written in) · #296 trust bar item 4 = title "เช็คสเปก"/"参数核对" + "สเปกทุกค่า เช็คที่มาก่อนขึ้นหน้าเว็บ" (owner: yes + option 1) and
-  /faq where-specs re-worded, "unverified-meaning" FAQ removed · #297 a shop clip inside the guide section about it (owner 05/10 — 7 guides,
-  `SECTION_CLIPS` in guides.ts; the 3 channels have no G5/G4/G4 Mini/G5 Lite/G4 Classic/G3 Pro clip, searched 05/10).
+  /faq where-specs re-worded, "unverified-meaning" FAQ removed · #297 a shop clip inside the guide section about it (7 guides,
+  `SECTION_CLIPS`; no G5/G4/G4 Mini/G5 Lite/G4 Classic/G3 Pro clip exists).
 2 ahead of main [ตรวจแล้ว — git]: `git log --oneline origin/main..origin/batch-4g-tfit-m-power` = 095451a (batch (d) TFIT, NOT built, NOT
   scanned, NOT checked; branched from cf2394b → merge origin/main first: #296/#297 touch other files, only content-dates.json overlaps).
   No PR open for it yet. Material not in git:
@@ -27,12 +27,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   7 part 1 #286. Product × part table: `_incoming/sitewide-template/7/table.md` (`npx tsx _incoming/sitewide-template/7/table.ts`).
   NEXT (owner 06/10 in §18; tier B, one PR each):
     (d) TFIT M Power 20K = batch 4g, WRITTEN on branch batch-4g-tfit-m-power 095451a (files: `_incoming/sitewide-template/4/4g/` —
-        copy-base.json · th.json (thai-copy 05/10, incl. brand taglineTh/descriptionTh) · blocks.js · apply.js (already applied —
-        refuses twice) · card-cut2.png). In the commit: unhidden · card = TFIT's Watermelon shot (flatcut + 2 px erode, map entry) ·
-        stage cover 01 + blocks coils 03 · battery 04 · airflow 06 · flavours 05 · design 09 · 8 verified rows (18mL, 0.8Ω, 30mg, Φ30×98 70g) ·
-        en head copy no longer "unconfirmed" · doubt FAQ removed · /brands/tfit goes live (brand Thai + TFIT logo in brand-logos) ·
-        flavor-names + verified-specs contract (tfitvape.com) + "tfit" alias no longer dormant. tsc/eslint/i18n 16/16/verify:catalog 29/29
-        passed in a worktree [ตรวจแล้ว]. NEXT: `git switch batch-4g-tfit-m-power && git merge origin/main` → build (test-server) →
+        copy-base.json · th.json · blocks.js · apply.js (applied — refuses twice)); what the commit holds = its message.
+        tsc/eslint/i18n 16/16/verify:catalog 29/29 passed in a worktree [ตรวจแล้ว]. NEXT: `git switch batch-4g-tfit-m-power && git merge origin/main` → build (test-server) →
         visible-text over the WHOLE sitemap (footer brand list + /brands/tfit = new page; before = live main, LESSONS พ7/พ20) →
         page-text-length --facts · wordbreak + lines.js on /products/tfit-m-power-20k + /brands/tfit · poster-stretch · sharpness gate ·
         gallery-probe · locale-hydration · scan.js → shots 390/1440 → PR (expect BIG: data + a contract test) → checker.
@@ -42,29 +38,22 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     (f) MOOOD Monster 14K: open mooodvapes.com/14000puffs/ in a real browser (DNS failed for the researcher); brand site → fix data
         (screenType, flavours, battery) + move it off "Unbranded" (BIG).
     Skipped (owner): INFY 20K + Muro ×3 (no maker material) · pod-180 brandless.
-  Then close the round (skill `round-close`, tag sitewide-template-done). Not this round: Q16 IQOS colour completeness and Q18 "every
-  option gets a photo" (flavour photos Smash Go 10 · F3 30 · F4 16 (swatches are all the placeholder #7ed321) · Zero Cartridge 22 ·
-  WOTOFO 11 · M Bar / M Switch / INFY / Muro / TFIT 10 + the 19 white-box coils) = write a new round file for the owner.
-  Batch pattern (copy the last one): `3/3c` (split → stage) · `4/4e` (data fix + stage + cover) · `4/4f` (lineup image only):
-  facts → copy-base.json → thai-copy → th.json → blocks.js → apply.js → gates.sh → shots → PR → checker. Line reading: `4/4e/lines.js <url>` (every wrapped Thai line) + `4/4e/try.js <url> <json>` (try wordings on the real text
-  node) — LESSONS พ21. Long page shots drop posters on this machine → `4/4e/spots.js` per spot (LESSONS พ24).
+  Then close the round (skill `round-close`, tag sitewide-template-done). Not this round: IQOS colour completeness + "every option gets
+  a photo" (counts: `git show 9284319:docs/HANDOFF.md` §16 item 3) = write a new round file for the owner.
+  Batch pattern: `4/4e` or `4/4g`: facts → copy-base.json → thai-copy → th.json → blocks.js → apply.js → gates.sh → shots → PR → checker.
+  Line reading: `4/4e/lines.js <url>` + `4/4e/try.js <url> <json>` (LESSONS พ21) · shots per spot `--anchor` (พ24).
   Traps LESSONS 24 + พ18 + พ20–พ24 · gates: verify:catalog · page-text-length --facts · wordbreak-scan + every new Thai line read
   at 390/1440 · checker (tree/3412 untouched meanwhile — พ22; Friday slipped once on 06/10, the checker re-verified its commit).
   Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD
   (except the owner-allowed wrong-fact fixes).
-3a IMAGE METHODS (the full list — recolour masters, pair splits, AI upscale + maker pixels, lineup scripts — = `git show d3bc8e2:docs/HANDOFF.md`
-  §16 item 3a; LESSONS 23 · 25): CUT-OUT (lesson พ11): Higgsfield remover → `b-edge/choke.js` · unlike the studio grey → `scripts/flatcut.js`
-  (white/light products: render on dark grey first — พ23) · ALWAYS zoom 4x on dark + magenta (`b-edge/edgezoom.js`), tops included. Then
-  presize + map entries + `npx tsx scripts/process-images.ts --only <slug>` (new file names, lesson พ6) · check every render for
-  MIRRORING · `npx tsx scripts/image-sharpness-gate.ts --base origin/main` before the checker · poster `transparent` only when ≥ 30 % of
-  the file is transparent (พ16) · Higgsfield: credits without asking (IMAGE_SPEC §0 item 7) — `balance` first, report the spend.
-  Left for the option-photo round: edge defects (`edge-audit/visual-audit.md`) + coils (`b-coils/README.txt`) · Esko pod-159 LAST
-  (13.7 big (2), own PR, + BSOT §21).
+3a IMAGE METHODS = `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a + LESSONS 23 · 25 · พ6 · พ11 · พ16 · พ23 (cut-out: flatcut / Higgsfield
+  remover + choke · edgezoom 4x on dark + magenta · process-images map + new file names · sharpness gate before the checker). Esko pod-159
+  LAST (13.7 big (2), own PR, + BSOT §21).
 4 waiting on owner:
   (05/10) /about still says "ค่าที่ยืนยันไม่ได้เราบอกตรง ๆ ไม่เดา" + "unverified badge" (src/i18n/about-copy.ts ~86/119/153, th/en/zh) —
        same voice the owner cut, but /about copy is owner-approved (§18) → re-word it? (Friday: yes, like #296, own small PR).
   (05/10) look on live: trust bar "เช็คสเปก" line · /faq · guide clips (e.g. /guides/comparing-caliburn-models "G4 vs G4 Pro") —
-       reversible by revert. checker #297 notes: the G4 Pro clip sits in a two-model section; the M Bar 9K sweets clip in "แนวอื่น".
+       reversible by revert (checker #297: G4 Pro clip in a two-model section; M Bar 9K sweets clip in "แนวอื่น").
   (06/10 pm) look on live: M Bar 10K stage page · JOIWAY F4 TWINS page · RELX Creator "ทั้งหมด" image — reversible by revert.
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b) ·
   ARGUS G4 mini page (2e) · ARGUS P3 + VMATE i3 story pages (2f #264) · ARGUS G4 page (2g #271: battery block names VOOPOO's two
