@@ -1551,7 +1551,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "โหมด NORM กับ TURBO ต่างกันตรงไหน",
           paragraphs: [
-            "WOTOFO บอกว่าโหมด NORM ให้วัตต์แบบสมดุล เหมาะกับการสูบในชีวิตประจำวัน ส่วนโหมด TURBO จะเพิ่มวัตต์ขึ้น และลมจะมีแรงต้านมากขึ้น เหมาะกับคนที่ชอบดูดแน่น ๆ การสลับโหมดทำได้จากปุ่มที่ก้นพอต ระหว่างที่จอติดอยู่ กดปุ่มหนึ่งครั้งก็สลับระหว่าง NORM กับ TURBO ได้ ส่วนการเปิดหรือปิดเครื่อง ให้กดปุ่มเดียวกันค้างไว้ 3 วินาที"
+            "WOTOFO บอกว่าโหมด NORM ให้วัตต์แบบสมดุล เหมาะกับการสูบในชีวิตประจำวัน ส่วนโหมด TURBO จะเพิ่มวัตต์ขึ้น และลมจะมีแรงต้านมากขึ้น ดูดแน่นขึ้น การสลับโหมดทำได้จากปุ่มเปิด-ปิดที่ก้นพอต ระหว่างที่จอติดอยู่ กดปุ่มหนึ่งครั้งก็สลับระหว่าง NORM กับ TURBO ได้ ส่วนการเปิดหรือปิดเครื่อง ให้กดปุ่มเดียวกันค้างไว้ 3 วินาที"
           ]
         }
       ]
@@ -1568,7 +1568,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "NORM or TURBO: what's the difference?",
           paragraphs: [
-            "WOTOFO describes NORM as balanced power for everyday vaping. TURBO raises the power and adds airflow resistance for a tighter draw. To switch between them, press the button on the base once while the screen is on. To turn the device on or off, hold the same button for 3 seconds."
+            "WOTOFO describes NORM as balanced power for everyday vaping. TURBO raises the power and adds airflow resistance for a tighter draw. To switch between them, press the power button on the base once while the screen is on. To turn the device on or off, hold the same button for 3 seconds."
           ]
         }
       ]
@@ -1585,7 +1585,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
         {
           heading: "NORM 和 TURBO 有什么不同？",
           paragraphs: [
-            "按照 WOTOFO 的说法，NORM 模式输出均衡，适合日常使用；TURBO 模式会提高功率，同时增加进气阻力，适合喜欢吸感紧一些的人。屏幕亮着时，按一下底部的按键，就能在 NORM 和 TURBO 之间切换。开关机则是长按同一个按键 3 秒。"
+            "按照 WOTOFO 的说法，NORM 模式输出均衡，适合日常使用；TURBO 模式会提高功率，同时增加进气阻力，吸感更紧。屏幕亮着时，按一下底部的开关键，就能在 NORM 和 TURBO 之间切换。开关机则是长按同一个按键 3 秒。"
           ]
         }
       ]
