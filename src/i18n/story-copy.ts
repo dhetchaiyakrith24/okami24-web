@@ -1691,7 +1691,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
     },
     "coils": {
       title: { th: "ด้านในถังน้ำยาคู่", en: "Inside the twin tanks", zh: "双烟油仓的内部" },
-      subline: { th: "ภาพโปร่งของ JOIWAY ให้เห็นถังน้ำยาทั้งสองฝั่ง", en: "JOIWAY's see-through view shows both tanks.", zh: "JOIWAY 的透视图把两个烟油仓都展示了出来。" },
+      subline: { th: "JOIWAY ทำภาพโปร่งให้เห็นถังน้ำยาทั้งสองฝั่ง", en: "JOIWAY's see-through view shows both tanks.", zh: "JOIWAY 的透视图把两个烟油仓都展示了出来。" },
       body: {
         th: "คอยล์มีมาถังละชุด แต่ละกลิ่นจึงใช้คอยล์ของตัวเอง",
         en: "One coil set per tank, so each flavour has a coil of its own.",
@@ -1718,7 +1718,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       title: { th: "เมื่ออยู่ในมือ", en: "In the hand", zh: "握在手里" },
       subline: { th: "JOIWAY ระบุว่าดีไซน์สวยมีสไตล์", en: "JOIWAY: a stylish design.", zh: "JOIWAY：设计好看有型。" },
       body: {
-        th: "ในภาพของ JOIWAY ถือเครื่องไว้ด้วยมือเดียว และหันจอออกมาให้เห็น",
+        th: "ในภาพของ JOIWAY ถือเครื่องไว้ด้วยมือเดียว หน้าจอหันออกมา",
         en: "JOIWAY's photo shows it held in one hand, the display facing out.",
         zh: "JOIWAY 的照片里，它单手就能握住，屏幕朝外。",
       },
