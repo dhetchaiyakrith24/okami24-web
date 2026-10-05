@@ -11,10 +11,10 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 7166bdf (#292) [ตรวจแล้ว — git]. 06/10 pm merged, checker PASS + deploy OK +
-  live curl [ตรวจแล้ว]: #288 M Bar 10K stage · #289 JOIWAY F4 = TWINS (live ~2.5 min after the deploy run, curl loop) · #290 RELX Creator "ทั้งหมด" image · #292
-  owner answers (cut "maker doesn't state X" sections, F4 "2 โหมด" + TWINS review video; whole-sitemap visible-text = 3 pages).
-2 ahead of main [ตรวจแล้ว — git]: only this docs PR (§16 + LESSONS พ21/พ24). No other PR open. Material not in git:
+1 main: `git fetch && git log -1 --oneline origin/main` = 2e30f45 (#294) [ตรวจแล้ว — git]. 05/10 (new chat): #294 merged, checker PASS
+  (1 narrow re-check) + deploy OK + live check `_incoming/guides-unstated/live-check.js` LIVE OK [ตรวจแล้ว] = the guides no longer explain
+  a missing maker fact (owner rule §18 06/10 pm, applied site-wide to guides on the owner's go 05/10); verified spec rows written in instead.
+2 ahead of main [ตรวจแล้ว — git]: only this docs PR (§16). No other PR open. Material not in git:
   `_incoming/sitewide-template/` (3/3c · 4/4e · 4/4f = scripts, facts, shots, logs per batch). Kits (never merge): `kit-1b` · `kit-1c` (`git fetch origin kit-1b &&
   git restore --source origin/kit-1b --worktree -- _incoming/sitewide-template`) — later batches local only; push a kit for cloud.
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
@@ -52,6 +52,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Left for the option-photo round: edge defects (`edge-audit/visual-audit.md`) + coils (`b-coils/README.txt`) · Esko pod-159 LAST
   (13.7 big (2), own PR, + BSOT §21).
 4 waiting on owner:
+  (05/10, checker #294) the trust bar on every page (`dictionaries/th.ts` trust item "เช็คกับเว็บทางการ": "สเปกที่ยืนยันไม่ได้
+       เราบอกตรง ๆ ไม่เดา") is the same "we don't guess" voice — trust.* is Do-not-touch (§17) → owner: re-word it? (Friday: yes, own PR,
+       whole-sitemap visible-text).
   (06/10 pm) look on live: M Bar 10K stage page · JOIWAY F4 TWINS page · RELX Creator "ทั้งหมด" image — reversible by revert.
   Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b) ·
   ARGUS G4 mini page (2e) · ARGUS P3 + VMATE i3 story pages (2f #264) · ARGUS G4 page (2g #271: battery block names VOOPOO's two
@@ -67,9 +70,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        RELX Creator: article "RELX Creator Pod" (RELX) vs fits-with "RELX Creator 20K pod" (shop) — link the names?
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
 5 open / dated:
-  - (06/10 pm, checker #292) the same "maker doesn't state X, so no figure" pattern is still in the GUIDES (not product pages):
-    guides.ts ~155 en, ~501/509/556, ~611/637, ~801/817, ~869/870/880/894, ~1044 + guides-copy.ts ~307/359/446 → re-word or cut in
-    the guides round (owner rule §18 06/10 pm); F4 now LOW 948 (accepted, never pad).
+  - JOIWAY F4 page text LOW 948 (accepted 06/10 pm, never pad).
   - M Bar 10K (#288): facts still over 2 from the untouched head copy + anatomy sheet + fits-with card (all down from live) —
     10,000 ×3 · ชาร์จ ×4 · RGB ×3 · 3 โหมด ×4 (checker #288 agreed) → SEO round (head) / an anatomy-sheet touch.
   - JOIWAY F4 (#289, checker notes): "สองถัง" said 6+ times · article "สูบได้กี่พัฟ" restates poster 01 — next F4 touch.
