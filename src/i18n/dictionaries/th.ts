@@ -38,7 +38,8 @@ export const th: Dictionary = {
       // Owner 05/10: the old body ("สเปกที่ยืนยันไม่ได้ เราบอกตรง ๆ ไม่เดา") explained missing facts — HANDOFF §18 06/10 pm.
       // checker #296: "มาจากข้อมูลแบรนด์เอง" overstated on the Unbranded pages + the §18 named exceptions — the line says what
       // is true on every page (every shown row passes the verified gate, src/lib/verified-specs.ts).
-      { title: "เช็คกับเว็บทางการ", body: "สเปกทุกค่า เช็คที่มาก่อนขึ้นหน้าเว็บ" },
+      // Title too (owner 05/10, option 1): "เช็คกับเว็บทางการ" claimed an official site the Unbranded pages do not have — = en "Specs checked".
+      { title: "เช็คสเปก", body: "สเปกทุกค่า เช็คที่มาก่อนขึ้นหน้าเว็บ" },
     ],
   },
   footer: {
