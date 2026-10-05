@@ -166,7 +166,7 @@ export const brands: Brand[] = [
       // Wayback Machine (_incoming/sitewide-template/5/facts-mood-monster-14k.md) — the reference link points at that copy.
       "A disposable-vape brand whose Monster 14K pairs Duo Mesh coils with a digital screen.",
     descriptionTh:
-      "MOOOD แบรนด์พอตใช้แล้วทิ้ง รุ่นที่ร้านมีคือ Monster 14K",
+      "MOOOD แบรนด์พอตใช้แล้วทิ้ง รุ่น Monster 14K คือรุ่นที่ร้านมี",
     referenceUrl: "https://web.archive.org/web/20241008232414/https://mooodvapes.com/",
   },
   // Deliberately NOT adding a "NEXT" Brand record for Pod-173 ("Next Pro 2 Beyond") — no official
