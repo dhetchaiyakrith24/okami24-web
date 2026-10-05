@@ -1447,6 +1447,42 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 4c (06/10): from RELX's own Smash Go 12K page; Thai = thai-copy 06/10.
+  "relx-smash-go-12k": {
+    th: {
+      lede: "ด้านล่างไล่ดู RELX Smash Go 12K ทีละส่วนจากภาพของ RELX เอง พร้อมบอกว่าแต่ละส่วนช่วยอะไรในการใช้งาน",
+      sections: [
+        {
+          heading: "ความเข้มข้นมีให้เลือกสองแบบ",
+          paragraphs: [
+            "RELX มี Smash Go 12K ให้เลือกสองความเข้มข้น คือ salt nic 3% และ 5% ถ้าอยากรู้ว่ากลิ่นที่ชอบมีความเข้มข้นไหนอยู่ที่ร้านตอนนี้ ทักไลน์ @okm24 ถามได้เลย"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "Below, a look at the RELX Smash Go 12K one part at a time, taken from RELX's own pictures.",
+      sections: [
+        {
+          heading: "Two strengths to choose from",
+          paragraphs: [
+            "RELX makes the Smash Go 12K in two nicotine salt strengths, 3% and 5%. To check which strength we have in your flavour right now, message us on LINE @okm24."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "下面根据 RELX 自己的图片，逐项来看 RELX Smash Go 12K。",
+      sections: [
+        {
+          heading: "两种浓度可选",
+          paragraphs: [
+            "RELX 的 Smash Go 12K 有 3% 和 5% 两种盐尼古丁浓度。想知道你喜欢的口味现在有哪种浓度，可以在 LINE @okm24 问我们。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

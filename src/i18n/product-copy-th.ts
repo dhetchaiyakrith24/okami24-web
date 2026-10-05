@@ -701,7 +701,8 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // in meaning, never smoothed into a more confident-sounding Thai sentence than the English.
   "relx-smash-go-12k": {
     whoIsThisFor: {
-      0: "อยากได้พอตใช้แล้วทิ้งจากแบรนด์ที่รุ่นและรสทั้งหมดเช็คได้บนเว็บทางการ",
+      0: "อยากได้พอตใช้แล้วทิ้งที่พกง่าย ใส่กระเป๋ากางเกงแล้วติดตัวไปได้ทั้งวัน",
+      1: "อยากเลือกความเข้มข้นของ salt nic ได้เอง ระหว่าง 3% กับ 5%",
     },
     specifications: {
       puffs: "สูงสุด 12,000",
@@ -713,12 +714,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "พอตใช้แล้วทิ้งของ RELX มีอยู่ในเว็บทางการ คอยล์ MEGA MESH",
     shortDescription:
       "พอตใช้แล้วทิ้งชาร์จซ้ำได้จากไลน์อัพทางการของ RELX รองรับสูงสุด 12,000 พัฟ แบตเตอรี่ 400mAh คอยล์ MEGA MESH มี 10 รส ยืนยันตรงจาก relxnow.com",
-    features: {
-      "official-lineup": {
-        title: "อยู่ในไลน์อัพทางการของ RELX",
-        description: "ตัวรุ่น สเปก และรายชื่อรสทั้ง 10 รส เช็คตรงจากเว็บทางการของ RELX ไม่ได้อ้างจากร้านค้าอื่น",
-      },
-    },
   },
   // Round "image-sitewide" 2026-09-30 (writer draft A): re-published as a device + prefilled pods, not a disposable.
   "relx-creator": {

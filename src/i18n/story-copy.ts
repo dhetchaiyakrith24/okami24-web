@@ -1513,4 +1513,30 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
     },
   },
+  // Site-wide template round batch 4c (06/10): RELX's own Smash Go 12K page + pictures (_incoming/sitewide-template/4/
+  // facts-relx-smash-go-12k.md); Thai = thai-copy 06/10.
+  "relx-smash-go-12k": {
+    "inside": {
+      title: { th: "สิ่งที่อยู่ข้างในเครื่อง", en: "What's inside", zh: "内部配置" },
+      subline: { th: "ภาพจาก RELX ให้เห็นคอยล์ที่อยู่ข้างในแบบใกล้ ๆ", en: "RELX shows its coil up close.", zh: "RELX 展示了线圈的特写。" },
+      body: {
+        th: "เครื่องนี้สูบได้สูงสุด 12,000 พัฟ ถ้าแบตเตอรี่ 400mAh หมดก่อนน้ำยา ก็เสียบชาร์จไว้สักพัก แล้วสูบต่อได้เลย",
+        en: "Up to 12,000 puffs in all. If the 400mAh battery runs flat first, charge it for a while and keep going.",
+        zh: "整支最多可抽 12,000 口。400mAh 电池如果比烟油先用完，充一会儿电就能接着抽。",
+      },
+      points: [
+        { text: { th: "บรรจุน้ำยา 20mL", en: "20mL e-liquid", zh: "20mL 烟油" }, specKey: "capacity" },
+        { text: { th: "ช่องชาร์จ USB-C", en: "USB-C charging port", zh: "USB-C 充电口" }, specKey: "battery" },
+      ],
+    },
+    "pocket": {
+      title: { th: "สูบสบายปาก พกไปได้ทุกที่", en: "Comfortable to vape, easy to carry", zh: "吸着舒服，带着方便" },
+      subline: { th: "RELX ออกแบบปากดูดมาให้สูบได้สบายปาก", en: "RELX designed the mouthpiece to be comfortable on the lips.", zh: "RELX 把吸嘴设计得抽起来很舒服。" },
+      body: {
+        th: "ตัวเครื่องมีขนาดพอดีกระเป๋ากางเกง จะออกไปไหนก็หยิบติดตัวไปได้สะดวก",
+        en: "It's pocket-sized, so it comes along wherever you go.",
+        zh: "机身只有口袋大小，去哪儿都能随手带上。",
+      },
+    },
+  },
 };
