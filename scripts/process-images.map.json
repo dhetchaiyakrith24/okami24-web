@@ -3774,6 +3774,42 @@
   "note": "image-sitewide round 2026-09-30 — the black the shop sells (owner 30/09; RELX's official photos OK'd by the owner)"
  },
  {
+  "source": "_incoming/sitewide-template/4/4d2/gen/white-d1-final.png",
+  "slug": "relx-creator",
+  "role": "variant",
+  "id": "white",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k job 170450ad-91cb-4138-9bc0-38cd9bc115d3 (our black render _incoming/image-sitewide/relx/gen/bk-4.png as pose + RELX's white render for colours, on a dark charcoal background so the light top face keys cleanly — checker #282 r1 found the first white's studs cut on the studio grey) → scripts/flatcut.js → _incoming/sitewide-template/4/4d2/despeck.js",
+   "reference": "RELX's own white Creator Pro render https://cdn.shopify.com/s/files/1/0041/5914/4047/files/relx-creator-pro-vape-device-white.jpg (device crop _incoming/image-sitewide/relx/refs/official-white.png)",
+   "fidelitySheet": "_incoming/sitewide-template/4/4d2/fidelity-sheet.jpg (RELX official | render, white · green · yellow) + _incoming/sitewide-template/4/4d2/wd-top-dark.jpg, wd-top-mag.jpg, wd-bottom-mag.jpg, edges-white2.png (white) · edges-2.png (green, yellow)"
+  },
+  "note": "sitewide-template round batch 4d-2 (06/10) — RELX's colour, missing on our page (catalog completeness rule); the shop's stock unknown"
+ },
+ {
+  "source": "_incoming/sitewide-template/4/4d2/gen/green-2-final.png",
+  "slug": "relx-creator",
+  "role": "variant",
+  "id": "green",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k job 4a3a488c-45f6-4f5c-802f-91505f8890c3 (first try 70dabacc moved the studs) (our black render _incoming/image-sitewide/relx/gen/bk-4.png as pose + RELX's green render for colours; three studs in the body colour + one red, as the black) → Higgsfield image_background_remover d6645d69 + _incoming/image-sitewide/b-edge/choke.js → _incoming/sitewide-template/4/4d2/despeck.js",
+   "reference": "RELX's own green Creator Pro render https://cdn.shopify.com/s/files/1/0041/5914/4047/files/relx-creator-pro-vape-device-green.jpg (device crop _incoming/image-sitewide/relx/refs/official-green.png)",
+   "fidelitySheet": "_incoming/sitewide-template/4/4d2/fidelity-sheet.jpg (RELX official | render, white · green · yellow) + _incoming/sitewide-template/4/4d2/edges.png, edges-white.png, edges-2.png (4x edge zoom)"
+  },
+  "note": "sitewide-template round batch 4d-2 (06/10) — RELX's colour, missing on our page (catalog completeness rule); the shop's stock unknown"
+ },
+ {
+  "source": "_incoming/sitewide-template/4/4d2/gen/yellow-1-final.png",
+  "slug": "relx-creator",
+  "role": "variant",
+  "id": "yellow",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k job 9b0c360c-53d8-4d33-bb95-c1daf79ecd2c (our black render _incoming/image-sitewide/relx/gen/bk-4.png as pose + RELX's yellow render for colours; three studs in the body colour + one red, as the black) → Higgsfield image_background_remover a38b58f3 + _incoming/image-sitewide/b-edge/choke.js (flatcut left a grey halo on top) → _incoming/sitewide-template/4/4d2/despeck.js",
+   "reference": "RELX's own yellow Creator Pro render https://cdn.shopify.com/s/files/1/0041/5914/4047/files/relx-creator-pro-vape-device-yellow.jpg (device crop _incoming/image-sitewide/relx/refs/official-yellow.png)",
+   "fidelitySheet": "_incoming/sitewide-template/4/4d2/fidelity-sheet.jpg (RELX official | render, white · green · yellow) + _incoming/sitewide-template/4/4d2/edges.png, edges-white.png, edges-2.png (4x edge zoom)"
+  },
+  "note": "sitewide-template round batch 4d-2 (06/10) — RELX's colour, missing on our page (catalog completeness rule); the shop's stock unknown"
+ },
+ {
   "source": "_incoming/image-sitewide/msw/v4/final/apple-aloe.png",
   "slug": "m-switch-pod",
   "role": "variant",

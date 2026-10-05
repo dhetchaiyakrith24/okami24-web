@@ -152,6 +152,11 @@ export const relxProducts: Product[] = [
     colorVariants: [
       { id: "grey-yellow", name: "Grey Yellow", swatchHex: "#c9c9cb", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-grey-yellow.webp", alt: "RELX Creator Pro device, grey with a yellow base" } },
       { id: "black", name: "Black", swatchHex: "#2b2b2d", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-black.webp", alt: "RELX Creator Pro device, black" }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      // Batch 4d-2 (06/10): RELX's other three colours (relxnow.com lists Black / White / Green / Yellow) — catalog completeness;
+      // OKami24 renders in the black's pose from RELX's own colour renders (map `aiRender`). The shop's stock is unknown.
+      { id: "white", name: "White", swatchHex: "#dcdcdf", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-white.webp", alt: "RELX Creator Pro device, white" }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "green", name: "Green", swatchHex: "#cfd796", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-green.webp", alt: "RELX Creator Pro device, green" }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
+      { id: "yellow", name: "Yellow", swatchHex: "#e6d19e", availability: "unknown", image: { src: "/assets/products/relx-creator/variant-yellow.webp", alt: "RELX Creator Pro device, yellow" }, sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
     ],
     // RELX's own Creator Pro Device page (relxnow.com, read 2026-09-30): 800mAh, Type-C fast charging, one button — one
     // click = battery, double click = 15W Normal / 25W Boost, a smart screen with 100+ emojis, full-range adjustable
