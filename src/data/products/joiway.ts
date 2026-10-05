@@ -159,20 +159,22 @@ export const joiwayProducts: Product[] = [
     systemType: "disposable",
     name: "Joiway F4",
     displayName: "JOIWAY F4",
-    tagline: "The newer, dual-flavor Joiway — matches OKami24's own review.",
+    tagline: "The newer, dual-flavor Joiway.",
     shortDescription:
-      "A dual-flavor, dual-mode disposable from Joiway. This is the exact model OKami24's own YouTube channel reviewed over 30 days (\"ประสบการณ์ 30 วัน JOIWAY F4 NOS\").",
+      "A dual-flavor, dual-mode disposable from Joiway — two flavors in one device. OKami24's own YouTube channel used it for 30 days.",
     isFlagship: false,
     editorialTag: "Retailer-confirmed",
     // Confirmed via YouTube oEmbed (2026-09-03): real video, owned by youtube.com/@OKMYARZ — one
     // of OKami24's own three channels. A genuine 30-day hands-on review, the strongest kind of
     // review evidence found this mission.
     reviewVideo: { videoId: "oHR-MAacTz0", title: "ประสบการณ์ 30 วัน JOIWAY F4 NOS นานขนาดนั้นเลยหรือ?", channelName: "OKM YARZ", publishedAt: "2025-12-01" },
+    // Batch 4e (06/10): owner — our F4 is JOIWAY's F4 TWINS (maker posters + our photos), not the NOS edition: 20,000 puffs
+    // (10,000 per side) and an "LED Display" per JOIWAY's cover poster; the old 30,000 / no-screen came from the NOS listing.
     attributes: {
       batteryMah: 650,
-      puffCount: 30000,
+      puffCount: 20000,
       capacityMl: 20,
-      screenType: "none",
+      screenType: "led-indicator",
       drawStyle: "MTL",
       portability: "ultra-compact",
       beginnerFriendly: true,
@@ -196,19 +198,57 @@ export const joiwayProducts: Product[] = [
         sourceUrl: "https://thai.myjoiway.com/web",
       },
     ],
+    // Site-wide template round batch 4e (06/10): the G5 template — JOIWAY's own F4 TWINS posters, one per block (3840 px, down-sized
+    // only: _incoming/sitewide-template/4/4e/blocks.js); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.
+    storyDetails: true,
+    storyLayout: "stage",
+    storyCover: { src: "/assets/products/joiway-f4/story-cover.webp", alt: "JOIWAY's F4 TWINS poster — 650mAh, double flavor, LED display, Type-C, 20mL, 20000 puffs (10000 puffs and 10mL per side)", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 2604, height: 1316 },
     specifications: [
-      { key: "puffs", label: "Rated puffs", value: "NOS mode ~15,000 / TURBO mode ~30,000 (some retailers list a single flattened \"20,000\" figure)", sourceStatus: "unverified" },
-      { key: "battery", label: "Battery", value: "650mAh rechargeable, USB-C", sourceStatus: "unverified" },
-      { key: "capacity", label: "E-liquid capacity", value: "20mL prefilled", sourceStatus: "unverified" },
+      // Batch 4e (06/10): rows from JOIWAY's own F4 TWINS posters (4/facts-joiway-f4.md). 3% is on no JOIWAY file → unverified = hidden.
+      // The old NOS ~15,000 / TURBO ~30,000 row was the NOS edition's — replaced by the TWINS figures.
+      { key: "puffs", label: "Rated puffs", value: "Up to 20,000 (10,000 per side)", sourceStatus: "verified", sourceUrl: "https://thai.myjoiway.com/" },
+      { key: "capacity", label: "E-liquid capacity", value: "20mL prefilled, 10mL per tank", sourceStatus: "verified", sourceUrl: "https://thai.myjoiway.com/" },
+      { key: "battery", label: "Battery", value: "650mAh rechargeable, USB-C", sourceStatus: "verified", sourceUrl: "https://thai.myjoiway.com/" },
+      { key: "coil", label: "Coil", value: "Mesh coils, 2 sets", sourceStatus: "verified", sourceUrl: "https://thai.myjoiway.com/" },
+      { key: "flavor-modes", label: "Flavor switching", value: "Two tanks; rotate the mouthpiece to switch", sourceStatus: "verified", sourceUrl: "https://thai.myjoiway.com/" },
+      { key: "display", label: "Display", value: "LED display", sourceStatus: "verified", sourceUrl: "https://thai.myjoiway.com/" },
       { key: "nicotine", label: "Nicotine strength", value: "3% nicotine salt", sourceStatus: "unverified" },
-      { key: "coil", label: "Coil", value: "Mesh coil", sourceStatus: "unverified" },
-      { key: "flavor-modes", label: "Flavor switching", value: "Dual-flavor, rotate mouthpiece to switch — up to 16 flavor combinations", sourceStatus: "unverified" },
     ],
     features: [
       {
-        id: "dual-flavor",
-        title: "Dual-flavor switching",
-        description: "Rotating the mouthpiece switches between two loaded flavors in the same device, rather than committing to one flavor per unit.",
+        id: "twin",
+        title: "Two tanks, side by side",
+        description: "The two flavours sit in separate tanks, numbered 1 and 2 on the device.",
+        subline: "JOIWAY calls this model TWINS.",
+        image: { src: "/assets/products/joiway-f4/story-twin.webp", alt: "JOIWAY F4 poster — the device with two mouthpieces labelled 1 Grape Ice and 2 Blueberry Ice, two vapour plumes", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 809 },
+      },
+      {
+        id: "switch",
+        title: "Turn the mouthpiece to switch",
+        description: "Rotate the mouthpiece over the other tank and the next draw is the other flavour.",
+        subline: "JOIWAY: switch any time.",
+        image: { src: "/assets/products/joiway-f4/story-switch.webp", alt: "JOIWAY F4 poster — rotating mouthpiece over the twin tank, \"twin-tank design, two e-liquids, two flavours, switch any time\"", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 809 },
+      },
+      {
+        id: "coils",
+        title: "A look inside",
+        description: "Inside, it uses two sets of mesh coils.",
+        subline: "JOIWAY's see-through view shows the inside.",
+        image: { src: "/assets/products/joiway-f4/story-coils.webp", alt: "JOIWAY F4 poster — see-through twin tank, \"e-liquid tanks, Mesh Coils 2 sets\"", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 809 },
+      },
+      {
+        id: "power",
+        title: "Battery and display",
+        description: "The display reads in percent, so a quick look tells you how much is left.",
+        subline: "Plug in over USB-C when it runs low.",
+        image: { src: "/assets/products/joiway-f4/story-power.webp", alt: "JOIWAY F4 poster — 650MAH, charging over a Type-C cable, and a close-up of the twin LED display", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 809 },
+      },
+      {
+        id: "hand",
+        title: "In the hand",
+        description: "JOIWAY's photo shows it held in one hand, the display facing out.",
+        subline: "JOIWAY: a stylish design.",
+        image: { src: "/assets/products/joiway-f4/story-hand.webp", alt: "JOIWAY F4 poster — the device held in one hand, \"stylish design\"", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 809 },
       },
     ],
     // 2026-09-06 — all 16 official dual-flavour combinations (each device carries two flavours;
@@ -234,9 +274,12 @@ export const joiwayProducts: Product[] = [
       { id: "cool-mint-ice-and-strawberry-ice", name: "Cool Mint Ice + Strawberry Ice", swatchHex: "#7ed321", availability: "unknown", image: { src: "/assets/products/joiway-f4/variant-cool-mint-ice-and-strawberry-ice.webp", alt: "JOIWAY F4, Cool Mint Ice + Strawberry Ice (pair #16)" } },
     ],
     compatibility: [typeC],
-    whoIsThisFor: ["Anyone who tires of one flavor quickly and wants two in one device, switching back and forth without carrying two."],
+    whoIsThisFor: [
+      "You tire of one flavour quickly and like to change during the day.",
+      "You'd rather pick from ready-made flavour pairs than match them yourself.",
+    ],
     faqs: [],
     relatedProductSlugs: ["joiway-f3"],
-    sourceUrls: ["https://myjoiway.com/"],
+    sourceUrls: ["https://myjoiway.com/", "https://thai.myjoiway.com/"],
   },
 ];
