@@ -1537,6 +1537,60 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
       ]
     },
   },
+  // Site-wide template round batch 5a (06/10): from WOTOFO's own nexBAR 18K pages (20mg + 50mg); Thai = thai-copy 06/10.
+  "wotofo-nexbar-18k": {
+    th: {
+      lede: "ด้านล่างไล่ดู WOTOFO nexBAR 18K ทีละส่วนจากภาพของ WOTOFO เอง",
+      sections: [
+        {
+          heading: "ความเข้มข้นที่มีให้เลือก",
+          paragraphs: [
+            "WOTOFO ทำ nexBAR 18K ออกมาสองความเข้มข้น คือ 20mg และ 50mg และแต่ละความเข้มข้นก็มีกลิ่นให้เลือกแยกกัน เลื่อนขึ้นไปดูรายชื่อกลิ่นได้ ถ้าอยากรู้ว่าตอนนี้ร้านมีกลิ่นไหน ทักไลน์ @okm24 ถามได้เลย"
+          ]
+        },
+        {
+          heading: "โหมด NORM กับ TURBO ต่างกันตรงไหน",
+          paragraphs: [
+            "WOTOFO บอกว่าโหมด NORM ให้วัตต์แบบสมดุล เหมาะกับการสูบในชีวิตประจำวัน ส่วนโหมด TURBO จะเพิ่มวัตต์ขึ้น และลมจะมีแรงต้านมากขึ้น ดูดแน่นขึ้น การสลับโหมดทำได้จากปุ่มเปิด-ปิดที่ก้นพอต ระหว่างที่จอติดอยู่ กดปุ่มหนึ่งครั้งก็สลับระหว่าง NORM กับ TURBO ได้ ส่วนการเปิดหรือปิดเครื่อง ให้กดปุ่มเดียวกันค้างไว้ 3 วินาที"
+          ]
+        }
+      ]
+    },
+    en: {
+      lede: "Below, the WOTOFO nexBAR 18K one part at a time, from WOTOFO's own pictures.",
+      sections: [
+        {
+          heading: "Which strength?",
+          paragraphs: [
+            "WOTOFO makes the nexBAR 18K in two nicotine strengths, 20mg and 50mg, and each comes with its own set of flavours. The flavour list above shows them. To check what we have right now, message us on LINE @okm24."
+          ]
+        },
+        {
+          heading: "NORM or TURBO: what's the difference?",
+          paragraphs: [
+            "WOTOFO describes NORM as balanced power for everyday vaping. TURBO raises the power and adds airflow resistance for a tighter draw. To switch between them, press the power button on the base once while the screen is on. To turn the device on or off, hold the same button for 3 seconds."
+          ]
+        }
+      ]
+    },
+    zh: {
+      lede: "下面根据 WOTOFO 自己的图片，逐项来看 WOTOFO nexBAR 18K。",
+      sections: [
+        {
+          heading: "选哪种浓度？",
+          paragraphs: [
+            "WOTOFO 的 nexBAR 18K 有 20mg 和 50mg 两种尼古丁浓度，每种都有各自的口味。上方的口味列表都列出来了。想知道我们现在有哪些，可以在 LINE @okm24 问我们。"
+          ]
+        },
+        {
+          heading: "NORM 和 TURBO 有什么不同？",
+          paragraphs: [
+            "按照 WOTOFO 的说法，NORM 模式输出均衡，适合日常使用；TURBO 模式会提高功率，同时增加进气阻力，吸感更紧。屏幕亮着时，按一下底部的开关键，就能在 NORM 和 TURBO 之间切换。开关机则是长按同一个按键 3 秒。"
+          ]
+        }
+      ]
+    },
+  },
 };
 
 /** The active locale's article for a product, falling back to English; undefined when the product has none. */

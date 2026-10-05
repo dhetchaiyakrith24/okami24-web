@@ -1575,4 +1575,42 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
     },
   },
+  // Site-wide template round batch 5a (06/10): WOTOFO's own nexBAR 18K page + pictures (_incoming/sitewide-template/5/
+  // facts-wotofo-nexbar-18k.md); Thai = thai-copy 06/10.
+  "wotofo-nexbar-18k": {
+    "screen": {
+      title: { th: "จอบอกสถานะของเครื่อง", en: "What the screen tells you", zh: "屏幕告诉你什么" },
+      subline: { th: "WOTOFO ให้จอ LED บอกแบตเตอรี่ น้ำยาที่เหลือ และโหมดที่ใช้อยู่", en: "WOTOFO's LED screen shows the battery, the e-liquid left and the mode you're in.", zh: "WOTOFO 的 LED 屏幕会显示电量、剩余烟油和当前模式。" },
+      body: {
+        th: "แบตหรือน้ำยาใกล้หมดเมื่อไหร่ จอก็บอกให้รู้ก่อน",
+        en: "When the battery or the e-liquid is getting low, the screen tells you first.",
+        zh: "电量或烟油快用完时，屏幕会先告诉你。",
+      },
+      points: [
+        { text: { th: "NORM 16 วัตต์ / TURBO 19 วัตต์", en: "NORM 16W / TURBO 19W", zh: "NORM 16W / TURBO 19W" }, specKey: "modes" },
+        { text: { th: "แบตเตอรี่แสดงเป็นเปอร์เซ็นต์", en: "Battery shown as a percentage", zh: "电量以百分比显示" } },
+      ],
+    },
+    "mouthpiece": {
+      title: { th: "ปากดูดที่รับกับริมฝีปาก", en: "Shaped for your lips", zh: "贴合嘴唇的吸嘴" },
+      subline: { th: "WOTOFO เลือกใช้ซิลิโคนทำปากดูดของรุ่นนี้", en: "WOTOFO made this model's mouthpiece from silicone.", zh: "WOTOFO 这款的吸嘴采用硅胶。" },
+      body: {
+        th: "เวลาสูบจึงรู้สึกสบายปาก",
+        en: "It feels comfortable on the lips when you vape.",
+        zh: "抽的时候，含在嘴里很舒服。",
+      },
+    },
+    "airflow": {
+      title: { th: "ตั้งลมได้ตามที่ชอบ", en: "Set the airflow the way you like", zh: "进气松紧自己选" },
+      subline: { th: "WOTOFO ทำปุ่มเลื่อนปรับลมมาให้ตัวใหญ่ หาเจอง่ายและปรับได้สะดวก", en: "WOTOFO made the airflow slider large, so it's easy to find and adjust.", zh: "WOTOFO 把进气滑块做得比较大，好找也好调。" },
+      body: {
+        th: "ชอบดูดเบา ๆ ให้ลมโล่ง หรือชอบให้ลมแน่นขึ้นอีกนิด ก็เลือกแบบที่สูบแล้วสบายได้เลย",
+        en: "Prefer a loose, easy draw, or something a little tighter? Pick whichever feels comfortable.",
+        zh: "喜欢松一点、吸着轻的，还是想再紧一点，选自己抽着舒服的那一档就好。",
+      },
+      points: [
+        { text: { th: "ปุ่มยาวมีร่อง อยู่ที่ก้นพอต", en: "Long, grooved slider on the base", zh: "带凹槽的长滑块，位于底部" } },
+      ],
+    },
+  },
 };

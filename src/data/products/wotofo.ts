@@ -93,6 +93,10 @@ export const wotofoProducts: Product[] = [
       { id: "pineapple-ice", name: "Pineapple Ice", swatchHex: "#e8c83a", availability: "unknown", sourceUrl: OFFICIAL_50MG },
       { id: "watermelon-dragon-fruit", name: "Watermelon Dragon Fruit", swatchHex: "#e0487a", availability: "unknown", sourceUrl: OFFICIAL_50MG },
     ],
+    // Site-wide template round batch 5a (06/10): the G5 template — WOTOFO's own pictures, one per block (blocks.js in
+    // _incoming/sitewide-template/5/5a/); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. No cover (posters 1980 px).
+    storyDetails: true,
+    storyLayout: "stage",
     // wotofo.com 20mg page, "SPECIFICATIONS" block + copy (checked 2026-09-29).
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 18,000", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
@@ -105,11 +109,34 @@ export const wotofoProducts: Product[] = [
       { key: "nicotine", label: "Nicotine strength", value: "20mg or 50mg", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
       { key: "size", label: "Dimensions", value: "101 × 44 × 26.7 mm", sourceStatus: "verified", sourceUrl: OFFICIAL_20MG },
     ],
-    features: [],
+    features: [
+      {
+        id: "screen",
+        title: "What the screen tells you",
+        description: "When the battery or the e-liquid is getting low, the screen tells you first.",
+        subline: "WOTOFO's LED screen shows the battery, the e-liquid left and the mode you're in.",
+        image: { src: "/assets/products/wotofo-nexbar-18k/story-screen.webp", alt: "WOTOFO's nexBAR 18K picture — clear display, the LED screen up close", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
+      },
+      {
+        id: "mouthpiece",
+        title: "Shaped for your lips",
+        description: "It feels comfortable on the lips when you vape.",
+        subline: "WOTOFO made this model's mouthpiece from silicone.",
+        image: { src: "/assets/products/wotofo-nexbar-18k/story-mouthpiece.webp", alt: "WOTOFO's nexBAR 18K picture — ergonomic mouthpiece", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
+      },
+      {
+        id: "airflow",
+        title: "Set the airflow the way you like",
+        description: "Prefer a loose, easy draw, or something a little tighter? Pick whichever feels comfortable.",
+        subline: "WOTOFO made the airflow slider large, so it's easy to find and adjust.",
+        image: { src: "/assets/products/wotofo-nexbar-18k/story-airflow.webp", alt: "WOTOFO's nexBAR 18K picture — adjustment airflow at the base", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
+      },
+    ],
     compatibility: [typeC],
     whoIsThisFor: ["Customers who saw OKami24's own WOTOFO nexBAR 18K review and want the maker's full spec and flavour list."],
     faqs: [],
     relatedProductSlugs: [],
-    sourceUrls: [OFFICIAL_20MG, OFFICIAL_50MG],
+    // + WOTOFO's own review (battery percentage, the grooved slider, the button: batch 5a, checker #283 r1).
+    sourceUrls: [OFFICIAL_20MG, OFFICIAL_50MG, "https://www.wotofo.com/blogs/disposable-vape/wotofo-nexbar-18k-review"],
   },
 ];
