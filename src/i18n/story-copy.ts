@@ -1796,13 +1796,13 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
         zh: "主机留着用，口味在上面那颗透明烟弹里。",
       },
       points: [
-        { text: { th: "หัวพอตใส ถอดเปลี่ยนได้", en: "Clear, swappable cartridge", zh: "透明烟弹，可拆换" }, specKey: "format" },
+        { text: { th: "ถอดเปลี่ยนหัวพอตได้", en: "Swappable cartridge", zh: "烟弹可拆换" }, specKey: "format" },
       ],
       link: { href: "/products/m-switch-kit", label: { th: "ดู M Switch Kit รุ่นที่ใช้หัวพอตสีดำ", en: "See the M Switch Kit, the one with the black cartridge", zh: "查看用黑色烟弹的 M Switch Kit" } },
     },
     "coil": {
       title: { th: "คอยล์เซรามิก", en: "A ceramic coil", zh: "陶瓷芯" },
-      subline: { th: "ติดมาในหัวพอตใสอยู่แล้ว", en: "It sits inside the clear cartridge.", zh: "就在透明烟弹里面。" },
+      subline: { th: "ติดมาในหัวพอตอยู่แล้ว", en: "It sits inside the cartridge.", zh: "就在烟弹里面。" },
       body: {
         th: "SALTHUB ระบุว่าคอยล์ตัวนี้ให้รสที่นุ่มลื่นและเต็มรส เมื่อเปลี่ยนหัวพอต ก็ได้คอยล์ตัวใหม่มาพร้อมกันด้วย",
         en: "SALTHUB says it gives a smooth, full flavour. Each new cartridge brings a fresh coil with it.",
@@ -1831,7 +1831,6 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
       },
       points: [
         { text: { th: "แบตเตอรี่ 600mAh", en: "600mAh battery", zh: "600mAh 电池" }, specKey: "battery" },
-        { text: { th: "ชาร์จผ่าน USB-C", en: "USB-C charging", zh: "USB-C 充电" }, specKey: "charging" },
       ],
     },
     "airflow": {

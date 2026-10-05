@@ -296,7 +296,7 @@ export const salthubProducts: Product[] = [
     displayName: "SALTHUB M BAR 15K",
     tagline: "The highest-rated puff count in the M Bar line.",
     shortDescription:
-      "A reusable M Switch body paired with SALTHUB's clear, swap-in M Bar cartridge, rated up to 15,000 puffs and charged over USB-C.",
+      "A reusable M Switch body paired with SALTHUB's clear, swap-in M Bar cartridge, rated up to 15,000 puffs.",
     isFlagship: false,
     attributes: {
       puffCount: 15000,
@@ -386,7 +386,7 @@ export const salthubProducts: Product[] = [
         id: "coil",
         title: "A ceramic coil",
         description: "SALTHUB says it gives a smooth, full flavour. Each new cartridge brings a fresh coil with it.",
-        subline: "It sits inside the clear cartridge.",
+        subline: "It sits inside the cartridge.",
         image: { src: "/assets/products/m-bar-15k/story-coil.webp", alt: "SALTHUB's M Bar 15K poster — the clear Grape Aloe cartridge with its coil lit, \"Ceramic coil, delivers an incredibly smooth and satisfying taste\"", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-bar-15k/", width: 1600, height: 988 },
       },
       {

@@ -590,7 +590,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "M Bar รุ่นพัฟเยอะสุดของตระกูล ชาร์จซ้ำได้ผ่าน USB-C",
     shortDescription:
-      "ตัวเครื่อง M Switch ที่เก็บไว้ใช้ต่อได้ คู่กับหัวพอตใสของ M Bar ที่ถอดเปลี่ยนได้ รองรับสูงสุด 15,000 พัฟ และชาร์จผ่าน USB-C",
+      "ตัวเครื่อง M Switch ที่เก็บไว้ใช้ต่อได้ คู่กับหัวพอตใสของ M Bar ที่ถอดเปลี่ยนได้ รองรับสูงสุด 15,000 พัฟ",
   },
   "m-switch-kit": {
     whoIsThisFor: {
