@@ -1691,7 +1691,7 @@ export const STORY_COPY: Record<string, Record<string, StoryBlockCopy>> = {
     },
     "coils": {
       title: { th: "มองเข้าไปข้างใน", en: "A look inside", zh: "看看内部" },
-      subline: { th: "JOIWAY ทำภาพโปร่ง ให้เห็นด้านในของตัวเครื่อง", en: "JOIWAY's see-through view shows the inside.", zh: "JOIWAY 的透视图展示了机身内部。" },
+      subline: { th: "ภาพโปร่งของ JOIWAY ช่วยให้เห็นด้านในของตัวเครื่อง", en: "JOIWAY's see-through view shows the inside.", zh: "JOIWAY 的透视图展示了机身内部。" },
       body: {
         th: "ข้างในใช้คอยล์ mesh สองชุด",
         en: "Inside, it uses two sets of mesh coils.",
