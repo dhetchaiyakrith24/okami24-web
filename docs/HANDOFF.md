@@ -11,24 +11,35 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 42855c7 (#304) [ตรวจแล้ว — git]. Merged 06/10, each checker PASS + GitHub
-  checks green [ตรวจแล้ว]: #301 TFIT M Power 20K unhidden on the template (live-checked) · #303 M Bar 15K → pod kits + stage page
-  (checker round 2 PASS at 6c714d3; GitHub Actions outage 06/10 03:00–04:40 cancelled its checks twice — re-run after recovery, then deploy dep-db21ht0ae00c73eevq60 → live: stage blocks + Pod Kits + new SALTHUB lede (curl),
-  owner option 1) · #304 rules "faster, same quality" (owner 06/10 A–E: TEAM_RULES 13.5 (2)(จ) + 13.7 "PR ละ 1–3 สินค้า" ·
-  LESSONS พ20 rewritten + new 26).
+0 TEMPORARY owner instruction (06/10 ~05:15, before sleeping) — expires when the owner is back and reviews (06/10 daytime); delete
+  this item then: "เมื่อทำเสร็จแล้ว ตรวจแล้ว ไปตัวต่อไปได้เลยตามลำดับ · ไม่ต้องแวะถาม ทำได้เลย พรุ่งนี้พี่มาตรวจทีเดียว · เพดานการสร้าง
+  ตั้งไว้ที่ 300 เครดิต" (Higgsfield). = run item 3 NEXT in order without stopping to ask; questions go to the morning report
+  (item 4) and the recommended default is used meanwhile. Still stop for TEAM_RULES 13.3 #1/#2/#3/#6/#7 (then carry on with the rest).
+1 main: `git fetch && git log -1 --oneline origin/main` = 502acb1 (#306) [ตรวจแล้ว — git]. Merged 06/10, each checker PASS + GitHub
+  checks green [ตรวจแล้ว]: #301 TFIT M Power 20K unhidden (live-checked) · #303 M Bar 15K → pod kits + stage page (GitHub Actions
+  outage 06/10 03:00–04:40 cancelled its checks twice; re-run after recovery, owner option 1) · #304 rules "faster, same quality"
+  (owner 06/10 A–E: TEAM_RULES 13.5 (2)(จ) + 13.7 "PR ละ 1–3 สินค้า" · LESSONS พ20 + 26) · #306 M Bar 15K opens on its card, made-up
+  lineup removed (owner "ทำเลย") → deploy run 37380617185 → live 200 (a ~40 s 502 on every page during Render's swap, then 200 — curl ×6).
 2 ahead of main: nothing. Material not in git: `_incoming/sitewide-template/` (scripts, facts, shots, logs per batch; latest =
-  `3/3f/` gates.sh · lines.js · try.js · try-body.js · spots.js · pr-body.md) + `_incoming/checker-301/ checker-303/`. Worktree
-  `_incoming/wt-rules-0610` (docs/rules work) — remove when done. Cloud = push a kit branch (never merge).
+  `3/3f/` gates.sh · lines.js · try.js · try-body.js · spots.js · pr-body.md) + `_incoming/checker-301/ checker-303/`. Folder
+  `_incoming/wt-rules-0610` = a removed worktree that Windows kept locked — delete the folder. Cloud = push a kit branch (never merge).
 3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
   Template = `docs/PRODUCT_PAGE_TEMPLATE.md`. Scope = the round file's 【ขอบเขต】 block; PM pages (coils, IQOS, pod-180) = images only.
   DONE: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB #273 #274 #275 #277 #288 · 4 #278 #280 #281 #282 #289 #290 · 5a #283 · 6 #284 ·
   7 part 1 #286 · (d) TFIT M Power 20K #301 · (e) M Bar 15K #303. Product × part table: `_incoming/sitewide-template/7/table.md` (`npx tsx _incoming/sitewide-template/7/table.ts`).
   NEXT (owner 06/10 in §18; tier B; PR = 1–3 products of one brand, TEAM_RULES 13.7 · speed = LESSONS พ20 + 26):
-    (f) MOOOD Monster 14K: open mooodvapes.com/14000puffs/ in a real browser (DNS failed for the researcher); brand site → fix data
-        (screenType, flavours, battery) + move it off "Unbranded" (BIG).
+    (f) MOOOD Monster 14K — facts + sources = `_incoming/sitewide-template/5/facts-mood-monster-14k.md` (06/10). The live maker
+        sites are gone (DNS); the maker's own site survives on the Wayback Machine → 20 official files already downloaded to
+        `5/mood/official/` (15 flavour photos 768 px · 2 key posters 1080 px · pack poster). Do: new brand MOOOD off "Unbranded" (footer on
+        every page → whole-sitemap visible-text, LESSONS พ7) · screenType → has a screen (poster 01: digits + e-liquid gauge) · DUO MESH ·
+        flavours = DEFAULT union: the maker's 15 + the shop's stock names not on the 2024 list (Sugus Apple · Fanta · Mango Peach ·
+        Kyoho Grape · N5% — real Shipnity stock) [รอเจ้าของ — default used] · battery 600/650 conflict → no verified row · photos =
+        the maker's files (sharpness gate; 768 px may need the LESSONS 25 method, ≤ 300 credits) · stage page only if the 2 posters
+        carry it, else card + flavours (round rule "ไม่มีโปสเตอร์ = ไม่ทำส่วนนั้น").
     Skipped (owner): INFY 20K + Muro ×3 (no maker material) · pod-180 brandless.
-  Then close the round (skill `round-close`, tag sitewide-template-done). Not this round: IQOS colour completeness + "every option gets
-  a photo" (counts: `git show 9284319:docs/HANDOFF.md` §16 item 3) = write a new round file for the owner.
+  Then close the round (skill `round-close`, tag sitewide-template-done) and STOP: the next round needs the owner's approved round
+  file — draft it (IQOS colour completeness + "every option gets a photo"; counts `git show 9284319:docs/HANDOFF.md` §16 item 3) into
+  `docs/rounds/` as a draft for the morning report, do not start it.
   Batch pattern: `4/4e` or `4/4g`: facts → copy-base.json → thai-copy → th.json → blocks.js → apply.js → gates.sh → shots → PR → checker.
   Line reading: `4/4e/lines.js <url>` + `4/4e/try.js <url> <json>` (LESSONS พ21) · shots per spot `--anchor` (พ24).
   Traps LESSONS 24 + พ18 + พ20–พ24 · gates: verify:catalog · page-text-length --facts · wordbreak-scan + every new Thai line read
@@ -39,11 +50,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   remover + choke · edgezoom 4x on dark + magenta · process-images map + new file names · sharpness gate before the checker). Esko pod-159
   LAST (13.7 big (2), own PR, + BSOT §21).
 4 waiting on owner:
-  (06/10 #303) look on live: /products/m-bar-15k (now a pod kit; title/JSON-LD/breadcrumb say Pod Kits automatically) ·
-       hero opens on one flavour's cartridge (Apple Aloe) — keep, or open on the card (device + clear Cola cartridge, `openOnCardPhoto`)? ·
+  (06/10 #303 #306) look on live: /products/m-bar-15k (now a pod kit, opens on the card; title/JSON-LD/breadcrumb say Pod Kits) ·
        the ฿349 15K set the shop sells = device + clear M Bar cartridge as the page says? (BSOT 30/09 notes the shop stocks black pods).
-  (06/10 #301) look on live: /products/tfit-m-power-20k + /brands/tfit (now indexable, Thai lede = its meta description) · poster 04
-       (battery block) prints TFIT's "Up to 72 hours of worry-free power" — keep whole (Friday + checker) or crop it off (redo LESSONS พ18).
+  (06/10 #301) look on live: /products/tfit-m-power-20k + /brands/tfit (TFIT poster 04 "72 hours" = kept whole, owner "ทำเลย" 06/10).
+  (06/10 night) MOOOD flavour list default (union, item 3 (f)) · the next round's draft file — both in the morning report.
   (05/10) look on live: trust bar "เช็คสเปก" line · /faq · /about spec sentence · guide clips (e.g. /guides/comparing-caliburn-models "G4 vs G4 Pro") —
        reversible by revert (checker #297: G4 Pro clip in a two-model section; M Bar 9K sweets clip in "แนวอื่น").
   (06/10 pm) look on live: M Bar 10K stage page · JOIWAY F4 TWINS page · RELX Creator "ทั้งหมด" image — reversible by revert.
