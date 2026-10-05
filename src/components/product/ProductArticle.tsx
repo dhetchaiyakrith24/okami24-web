@@ -21,7 +21,8 @@ export function ProductArticleLede({ slug }: { slug: string }) {
 export function ProductArticleBody({ slug }: { slug: string }) {
   const { locale } = useLocale();
   const a = productArticle(slug, locale);
-  if (!a) return null;
+  // A lede-only article (owner 06/10 pm: M Bar 10K's one section went) renders no empty bordered block.
+  if (!a || a.sections.length === 0) return null;
   return (
     <div className="flex max-w-3xl flex-col gap-10 border-t border-surface-border-soft pt-10 lg:gap-14 lg:pt-16">
       {a.sections.map((s, i) => (
