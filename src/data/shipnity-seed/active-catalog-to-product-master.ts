@@ -1356,10 +1356,23 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "IQOSHEET-16-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-1-v2.webp", alt: "IQOS ILUMA i PRIME, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-midnight-black.html" },
     "IQOSHEET-16-2": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-2-v2.webp", alt: "IQOS ILUMA i PRIME, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-breeze-blue.html" },
     "IQOSHEET-16-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-3-v2.webp", alt: "IQOS ILUMA i PRIME, Aspen Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
+    // Round "option photos + IQOS colours" 2026-10-06: the colours IQOS sells that Shipnity does not stock
+    // (VERIFIED_ADDITIONAL_VARIANTS below), same angle and framing as the three above
+    // (_incoming/option-photos/iqos/make.js). iqos.com has no angled photo of PRIME Electric Purple, only an
+    // upright one: our render keeps the shape of the Garnet Red photo and the colour of the Electric Purple one.
+    "iqosheet-16-verified-garnet-red": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/garnet-red.webp", alt: "IQOS ILUMA i PRIME, Garnet Red", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-garnet-red.html" },
+    "iqosheet-16-verified-electric-purple": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/electric-purple.webp", alt: "IQOS ILUMA i PRIME, Electric Purple", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS's own Electric Purple photo", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-electric-purple.html" },
   },
   "IQOSHEET-18": {
     "IQOSHEET-18-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-1-v2.webp", alt: "IQOS ILUMA i, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-midnight-black.html" },
     "IQOSHEET-18-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-3-v2.webp", alt: "IQOS ILUMA i, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+    // Same round: Leaf Green (iqos.com shows it upright only) and Bold Ruby (jp.iqos.com, 416 px upright only) are
+    // renders that keep the shape of the Digital Violet photo and the colour of IQOS's own photo of that colour.
+    "iqosheet-18-verified-digital-violet": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/digital-violet.webp", alt: "IQOS ILUMA i, Digital Violet", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-digital-violet.html" },
+    "iqosheet-18-verified-vivid-terracotta": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/vivid-terracotta.webp", alt: "IQOS ILUMA i, Vivid Terracotta", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-vivid-terracotta.html" },
+    "iqosheet-18-verified-electric-purple": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/electric-purple.webp", alt: "IQOS ILUMA i, Electric Purple", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-electric-purple.html" },
+    "iqosheet-18-verified-leaf-green": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/leaf-green.webp", alt: "IQOS ILUMA i, Leaf Green", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS's own Leaf Green photo", sourceUrl: "https://www.iqos.com/my/en/shop/iluma-i-leaf-green-kit.html" },
+    "iqosheet-18-verified-bold-ruby": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/bold-ruby.webp", alt: "IQOS ILUMA i, Bold Ruby", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS Japan's own Bold Ruby photo", sourceUrl: "https://jp.iqos.com/iqos-iluma-i-bold-ruby" },
   },
   // IQOSHEET-14 (Lambda i8) — owner quality-review pass (2026-09-03) found a cleaner 1000×1000
   // per-color studio source on the same lambdasmoke.com page (see VERIFIED_MEDIA's angle note
@@ -1480,6 +1493,21 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
     { code: "watermelon-ice", label: "Watermelon Ice", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "watermelon-lime", label: "Watermelon Lime", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "yogurt", label: "Yogurt", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+  ],
+  // Round "option photos + IQOS colours" 2026-10-06 (owner: every colour IQOS sells for the models the shop has).
+  // Standard colours only, read from iqos.com's own shop pages (union of markets); limited editions are not
+  // listed. Aspen Green (PRIME, a Shipnity child) is gone from some markets but still sold in others — kept.
+  "IQOSHEET-16": [
+    { code: "garnet-red", label: "Garnet Red", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-garnet-red.html" },
+    { code: "electric-purple", label: "Electric Purple", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-electric-purple.html" },
+  ],
+  "IQOSHEET-18": [
+    { code: "digital-violet", label: "Digital Violet", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-digital-violet.html" },
+    { code: "vivid-terracotta", label: "Vivid Terracotta", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-vivid-terracotta.html" },
+    { code: "electric-purple", label: "Electric Purple", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-electric-purple.html" },
+    { code: "leaf-green", label: "Leaf Green", sourceUrl: "https://www.iqos.com/my/en/shop/iluma-i-leaf-green-kit.html" },
+    // Japan only (jp.iqos.com, on sale from 2026-09-16).
+    { code: "bold-ruby", label: "Bold Ruby", sourceUrl: "https://jp.iqos.com/iqos-iluma-i-bold-ruby" },
   ],
 };
 
