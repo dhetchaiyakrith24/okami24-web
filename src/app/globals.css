@@ -84,6 +84,14 @@ html {
   color-scheme: dark;
 }
 
+/* Owner 2026-10-06 (image theft): iOS Safari's long-press "Save to Photos" menu and dragging a
+   picture out of the page are switched off for every image. Right-click and Android's long-press
+   are cancelled by ImageSaveGuard (layout). Nothing visible changes. */
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+}
+
 /* Mobile round A (owner 2026-09-08, MOBILE_SPEC M2.4 + decision B-ก): while a product page shows
    the sticky buy bar (.mobile-buy-bar), the page gets room under its last line so the footer is
    never hidden behind the bar, and the floating LINE button climbs above it. Phone/tablet widths

@@ -7,6 +7,7 @@ import { TrustBar } from "@/components/layout/TrustBar";
 import { AgeGate } from "@/components/layout/AgeGate";
 import { LineContact } from "@/components/layout/LineContact";
 import { LineClickTracker } from "@/components/layout/LineClickTracker";
+import { ImageSaveGuard } from "@/components/layout/ImageSaveGuard";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SITE_URL } from "@/lib/seo";
 import { HOME_HEAD_TH } from "@/i18n/search-head-copy";
@@ -103,6 +104,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {/* Round 8 (owner 2026-09-23, option ก): counts clicks on every LINE link site-wide —
               in-site, no cookie, nothing sent outside. Renders nothing. */}
           <LineClickTracker />
+          {/* Owner 2026-10-06: no right-click / drag / long-press save on pictures. Renders nothing. */}
+          <ImageSaveGuard />
         </LocaleProvider>
       </body>
     </html>
