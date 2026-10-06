@@ -13,47 +13,38 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 
 0 TEMPORARY owner instruction (06/10 ~05:15, before sleeping) — expires when the owner is back and reviews (06/10 daytime); delete
   this item then: "เมื่อทำเสร็จแล้ว ตรวจแล้ว ไปตัวต่อไปได้เลยตามลำดับ · ไม่ต้องแวะถาม ทำได้เลย พรุ่งนี้พี่มาตรวจทีเดียว · เพดานการสร้าง
-  ตั้งไว้ที่ 300 เครดิต" (Higgsfield). = run item 3 NEXT in order without stopping to ask; questions go to the morning report
-  (item 4) and the recommended default is used meanwhile. Still stop for TEAM_RULES 13.3 #1/#2/#3/#6/#7 (then carry on with the rest).
-1 main: `git fetch && git log -1 --oneline origin/main` = 502acb1 (#306) [ตรวจแล้ว — git]. Merged 06/10, each checker PASS + GitHub
-  checks green [ตรวจแล้ว]: #301 TFIT M Power 20K unhidden (live-checked) · #303 M Bar 15K → pod kits + stage page (GitHub Actions
-  outage 06/10 03:00–04:40 cancelled its checks twice; re-run after recovery, owner option 1) · #304 rules "faster, same quality"
-  (owner 06/10 A–E: TEAM_RULES 13.5 (2)(จ) + 13.7 "PR ละ 1–3 สินค้า" · LESSONS พ20 + 26) · #306 M Bar 15K opens on its card, made-up
-  lineup removed (owner "ทำเลย") → deploy run 37380617185 → live 200 (a ~40 s 502 on every page during Render's swap, then 200 — curl ×6).
-2 ahead of main: nothing. Material not in git: `_incoming/sitewide-template/` (scripts, facts, shots, logs per batch; latest =
-  `3/3f/` gates.sh · lines.js · try.js · try-body.js · spots.js · pr-body.md) + `_incoming/checker-301/ checker-303/`. Folder
-  `_incoming/wt-rules-0610` = a removed worktree that Windows kept locked — delete the folder. Cloud = push a kit branch (never merge).
-3 OPEN: round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`, owner-approved 03/10).
-  Template = `docs/PRODUCT_PAGE_TEMPLATE.md`. Scope = the round file's 【ขอบเขต】 block; PM pages (coils, IQOS, pod-180) = images only.
-  DONE: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB #273 #274 #275 #277 #288 · 4 #278 #280 #281 #282 #289 #290 · 5a #283 · 6 #284 ·
-  7 part 1 #286 · (d) TFIT M Power 20K #301 · (e) M Bar 15K #303. Product × part table: `_incoming/sitewide-template/7/table.md` (`npx tsx _incoming/sitewide-template/7/table.ts`).
-  NEXT (owner 06/10 in §18; tier B; PR = 1–3 products of one brand, TEAM_RULES 13.7 · speed = LESSONS พ20 + 26):
-    (f) MOOOD Monster 14K — facts + sources = `_incoming/sitewide-template/5/facts-mood-monster-14k.md` (06/10). The live maker
-        sites are gone (DNS); the maker's own site survives on the Wayback Machine → 20 official files already downloaded to
-        `5/mood/official/` (15 flavour photos 768 px · 2 key posters 1080 px · pack poster). Do: new brand MOOOD off "Unbranded" (footer on
-        every page → whole-sitemap visible-text, LESSONS พ7) · screenType → has a screen (poster 01: digits + e-liquid gauge) · DUO MESH ·
-        flavours = DEFAULT union: the maker's 15 + the shop's stock names not on the 2024 list (Sugus Apple · Fanta · Mango Peach ·
-        Kyoho Grape · N5% — real Shipnity stock) [รอเจ้าของ — default used] · battery 600/650 conflict → no verified row · photos =
-        the maker's files (sharpness gate; 768 px may need the LESSONS 25 method, ≤ 300 credits) · stage page only if the 2 posters
-        carry it, else card + flavours (round rule "ไม่มีโปสเตอร์ = ไม่ทำส่วนนั้น").
-    Skipped (owner): INFY 20K + Muro ×3 (no maker material) · pod-180 brandless.
-  Then close the round (skill `round-close`, tag sitewide-template-done) and STOP: the next round needs the owner's approved round
-  file — draft it (IQOS colour completeness + "every option gets a photo"; counts `git show 9284319:docs/HANDOFF.md` §16 item 3) into
-  `docs/rounds/` as a draft for the morning report, do not start it.
-  Batch pattern: `4/4e` or `4/4g`: facts → copy-base.json → thai-copy → th.json → blocks.js → apply.js → gates.sh → shots → PR → checker.
-  Line reading: `4/4e/lines.js <url>` + `4/4e/try.js <url> <json>` (LESSONS พ21) · shots per spot `--anchor` (พ24).
-  Traps LESSONS 24 + พ18 + พ20–พ24 · gates: verify:catalog · page-text-length --facts · wordbreak-scan + every new Thai line read
-  at 390/1440 · checker (tree/3412 untouched meanwhile — พ22; Friday slipped once on 06/10, the checker re-verified its commit).
-  Off-limits: caliburn-g5 · vinci-s · Drag 6 colour images · pod-159 · cart/price/stock · service pages · head/title/JSON-LD
-  (except the owner-allowed wrong-fact fixes).
-3a IMAGE METHODS = `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a + LESSONS 23 · 25 · พ6 · พ11 · พ16 · พ23 (cut-out: flatcut / Higgsfield
-  remover + choke · edgezoom 4x on dark + magenta · process-images map + new file names · sharpness gate before the checker). Esko pod-159
-  LAST (13.7 big (2), own PR, + BSOT §21).
+  ตั้งไว้ที่ 300 เครดิต" (Higgsfield). Used 06/10 morning: 84 credits (MOOOD, 21 renders × 4). The list it covered is DONE (item 3) —
+  nothing more runs under it: the next round needs the owner's approved round file.
+1 main: `git fetch && git log -1 --oneline origin/main` = 5d779f1 (#308) + this docs PR on top [ตรวจแล้ว — git]. Merged 06/10 morning: #308 MOOOD Monster 14K
+  (checker 3 rounds → PASS at 222bffe · GitHub checks green · self-merge-check BIG) → merge 5d779f1 → deploy run 37392951350 success → live 200 on /products/mood-monster-14k · /brands/moood · /about · / (curl, after ~2 min of Render's swap).
+2 ahead of main: nothing besides this docs PR [ตรวจแล้ว — git]. Material not in git: `_incoming/sitewide-template/` (per batch; MOOOD = `5/mood/` — official/ (Wayback copies) ·
+  maneevp/ + retail/ (shop copies of the maker template / the 5% labels) · ai/ (renders r-*, normalized n-*, final t-*, jobs.tsv) ·
+  compose.js · fid-sheet.png · gates/) · close evidence `_incoming/sitewide-template/close/`. Folders `_incoming/wt-rules-0610` + `wt-d`
+  = locked by Windows, delete when free.
+3 OPEN: none — round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`) CLOSED 06/10,
+  tag `sitewide-template-done` [ตรวจแล้ว]. Batches: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB · 4 RELX/JOIWAY/TFIT · 5a #283 · 6 #284 ·
+  7 #286 · (d) TFIT #301 · (e) M Bar 15K #303/#306 · (f) MOOOD #308. Skipped (owner): INFY 20K + Muro ×3 (no maker material) ·
+  pod-180 brandless. Product × part table: `_incoming/sitewide-template/7/table.md` (regenerated at the close; its "colour photos"
+  column counts colour options only).
+  NEXT = owner's call: draft round file `docs/rounds/ร่าง-รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt` [รอเจ้าของ] (option photos: 60 of 526
+  options without a photo, measured 06/10 by `_incoming/sitewide-template/5/mood/count-gaps.ts` · IQOS colour completeness). Do not
+  start it before the owner approves it.
+3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
+  masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
+  magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
 4 waiting on owner:
+  (06/10 #308 MOOOD) look on live: /products/mood-monster-14k + /brands/moood (new brand page; footer brand list on every page; home and
+       /about now count 14 brands) — reversible by revert. Decide:
+       - flavours = the union default: 19 on the maker's template + the shop's Grape N5% / Blueberry N5% (keep?) [รอเจ้าของ — default used]
+       - Grape N5% / Blueberry N5% photos show a frosted body with no screen (their only picture, a c9vapes.com shop photo, shows it;
+         a third shop photo shows Sugar Apple on the same body = maybe a newer batch): keep / drop the photos / white body + 5% label
+       - nicotine row says 3% only (maker); the 5% is seen only on that shop photo — add a "5%" line once a maker source exists?
+       - the label prints "Sugar Apple", the shop's stock list says "Sugus Apple" (the page shows Sugar Apple; id kept) — OK?
+       - "เว็บไซต์ทางการ ↗" on /brands/moood opens the Wayback copy (mooodvapes.com is offline) — OK?
+       - no story blocks: the maker's two key posters are one web banner (printed "READ MORE") twice; page text 220 (LOW, never padded)
   (06/10 #303 #306) look on live: /products/m-bar-15k (now a pod kit, opens on the card; title/JSON-LD/breadcrumb say Pod Kits) ·
        the ฿349 15K set the shop sells = device + clear M Bar cartridge as the page says? (BSOT 30/09 notes the shop stocks black pods).
   (06/10 #301) look on live: /products/tfit-m-power-20k + /brands/tfit (TFIT poster 04 "72 hours" = kept whole, owner "ทำเลย" 06/10).
-  (06/10 night) MOOOD flavour list default (union, item 3 (f)) · the next round's draft file — both in the morning report.
   (05/10) look on live: trust bar "เช็คสเปก" line · /faq · /about spec sentence · guide clips (e.g. /guides/comparing-caliburn-models "G4 vs G4 Pro") —
        reversible by revert (checker #297: G4 Pro clip in a two-model section; M Bar 9K sweets clip in "แนวอื่น").
   (06/10 pm) look on live: M Bar 10K stage page · JOIWAY F4 TWINS page · RELX Creator "ทั้งหมด" image — reversible by revert.
@@ -71,22 +62,23 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        RELX Creator: article "RELX Creator Pod" (RELX) vs fits-with "RELX Creator 20K pod" (shop) — link the names?
   (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
 5 open / dated:
+  - MOOOD who-for line (owner-approved round 30.3) says "รส" twice — the locked word is "กลิ่น" (thai-copy 06/10: "อยากได้พอตใช้แล้วทิ้ง
+    สายพัฟเยอะ ที่มีกลิ่นให้เลือกหลายกลิ่น") — ask before touching (13.3 #5). Search "Sugus" finds nothing now (no alias) — data round.
+    `src/data/products/unbranded.ts` header comment still lists MOOOD among the unbranded lines (history text, not shown).
   - "รุ่นนี้มี N กลิ่น" counts every option but the grid shows only those with a photo (15K: 16 vs 15 tiles — Black Berry has no
     SALTHUB photo) — shared component (ProductMoreDetails), its own small PR + whole-sitemap visible-text (checker #303).
   - `src/data/families.ts` m-bar still calls the line "disposable (9K/10K/15K)" — internal, not shown (checker #303).
   - TFIT M Power 20K next touch (checker #301, not blocking): airflow body restates its subline (story-copy "tfit-m-power-20k" airflow
     body) · battery subline names the charge port twice · design body «น้ำยายัง | เหลือ» at 390 → e.g. "…เห็นจากด้านนอกเลยว่าน้ำยา
     เหลืออยู่เท่าไหร่" · TFIT Thai head lines both say "รีวิวใช้จริงบน YouTube" (SEO round).
-  - JOIWAY F4 page text LOW 948 (accepted 06/10 pm, never pad).
+  - JOIWAY F4 page text LOW 948 (accepted 06/10 pm, never pad) · MOOOD 220 (no maker posters).
   - M Bar 10K (#288): facts still over 2 from the untouched head copy + anatomy sheet + fits-with card (all down from live) —
     10,000 ×3 · ชาร์จ ×4 · RGB ×3 · 3 โหมด ×4 (checker #288 agreed) → SEO round (head) / an anatomy-sheet touch.
   - JOIWAY F4 (#289, checker notes): "สองถัง" said 6+ times · article "สูบได้กี่พัฟ" restates poster 01 — next F4 touch.
-  - wordbreak 05/10: «ไฟจะ» on /guides/fixing-no-draw-and-blinking-light@390 (guides = later round) · `vmate-i3/variants/*` +
-    `argus-p3/lineup-v2.webp` unused but kept by the #286 sweep (their names appear in src/ — check by hand).
-  - UWELL/VOOPOO page-level notes held for the SEO round or each page's next touch (ARGUS G4 guide/tech rows · G3 mini
-    "GENE.AI" · 2e taste notes · G3 Pro KOKO comment · G4/G4 mini U-channel wording · G4 firing source · DRAG 6 head copy +
-    tank row + X3 coil guide · beginner-guide G3 mini size · KOKO/G4 Pro head copy · G4 Pro/KOKO negation wordbreak) = full text
-    `git show d311dba:docs/HANDOFF.md` §16 item 5.
+  - wordbreak: «ไฟจะ» on /guides/fixing-no-draw-and-blinking-light@390 (guides = later round) · the whole-sitemap scan at 222bffe
+    (`_incoming/sitewide-template/5/mood/gates/wb3.log`) lists the pre-existing flags (/about, /how-to-order, guides, G4 Pro/KOKO …) ·
+    `vmate-i3/variants/*` + `argus-p3/lineup-v2.webp` unused but kept by the #286 sweep (their names appear in src/ — check by hand).
+  - UWELL/VOOPOO page-level notes held for the SEO round or each page's next touch = `git show d311dba:docs/HANDOFF.md` §16 item 5.
   - DEFERRED by the owner 04/10 + 05/10 (no date; "ไว้ค่อยกลับมาแก้"): images that "still look like graphics" (LESSONS ช9) — DRAG S3 +
     X3 colour photos + two-group line-ups (#255) · DRAG 6 lineup-v3 (also too small) · ARGUS G4 mini images. Not fixed either (checker
     #253 taste): text in the 3 wide DRAG 6 posters ~6–7 px at 390 · "มีโหมด SMART RBA และ TC-TCR" reads as 2.
@@ -108,10 +100,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - `lineupFirst` has no product left — cleanup · `dict.product.anatomyTitle` en/zh "from the outside in" · zh spec/FAQ English site-wide ·
     article H3 font reads narrow (designer note).
   - Housekeeping queue: OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบเก็บบ้าน-ครั้งถัดไป-ของที่รอ.txt` (+ owner 03/10 (D) lower
-    chat-move threshold in image rounds · (E) lighter rules) · stale empty folder `_incoming/wt-d` (Windows lock, delete later).
-6 verify baseline at the last full close (clip round; numbers kept as recorded): tsc 0 · verify:commerce 17/17 ·
-  verify:catalog --full 32/32 · count-storefront 53/53 · i18n 16/16 · thai-raw-chars 0 · scan.js 0/104 · og-gate 104/104.
-Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` + `docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`
+    chat-move threshold in image rounds · (E) lighter rules).
+6 verify baseline at this close (round "sitewide template", 06/10, main 5d779f1 tree; numbers as printed) [ตรวจแล้ว]: tsc 0 · verify:commerce
+  17/17 · verify:catalog --full 31/31 · count-storefront 56/56 (38 legacy + 18 ProductMaster) · i18n 16/16 · thai-raw-chars 0 ·
+  scan.js 0/112 · og-gate 112/112 · logs `_incoming/sitewide-template/close/` (scan = `5/mood/gates/scan3.log` at 222bffe, same tree;
+  i18n + thai-raw-chars printed in the chat, re-run by checker #309). Tag sitewide-template-done = 5b68440 (this PR's first commit).
+Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` (+ the round file the owner approves next)
   (cloud chat: + `docs/CLOUD.md` item 3)
 ```
 
