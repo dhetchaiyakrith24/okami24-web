@@ -660,14 +660,15 @@ export const uwellProducts: Product[] = [
     // carbon back). Golden Carbon has no stock — src/data/stock/sold-out.ts (the owner's single stock list).
     // All-colours images (IMAGE_SPEC §0 item 5), 02/10: two groups in the colour order below — the one-image cluster of 9
     // boxes "looked too small" (owner 02/10) — "cluster" layout (Cosmic Gray big in front in group 1), pills "ทั้งหมด 1" / "ทั้งหมด 2";
-    // _incoming/image-sitewide/dsx/koko-two.js.
+    // _incoming/image-sitewide/dsx/koko-two.js. v4 (07/10) = the same groups and layout from the v3 studio photos, each device
+    // keeping its own contact shadow + reflection (_incoming/look-batch/koko-lineup.js).
     lineupImage: {
-      src: "/assets/products/caliburn-g4-pro-koko/lineup-v3.webp",
+      src: "/assets/products/caliburn-g4-pro-koko/lineup-v4.webp",
       alt: "UWELL Caliburn G4 Pro KOKO, colours 1–5 of 9",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/caliburn-g4-pro-koko/lineup2-v3.webp",
+      src: "/assets/products/caliburn-g4-pro-koko/lineup2-v4.webp",
       alt: "UWELL Caliburn G4 Pro KOKO, colours 6–9 of 9",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
