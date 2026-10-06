@@ -11,22 +11,21 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = cef9c09 (#311) [ตรวจแล้ว — git]. 06/10 pm: #311 batch 1 IQOS colours (live,
-  curl 200 on the 4 new photos + pages). The owner approved this round 06/10 pm ("ทำต่อเลย … รันต่อได้เลย").
-2 ahead of main: branch `option-photos-2-salthub` = batch 2 (Zero Cartridge 22 flavour photos + M Bar 15K Black Berry + owner-review
-  list item 20) — see `git log --oneline origin/main..origin/option-photos-2-salthub` and its PR (checker state = item 3).
-  Material not in git: `_incoming/option-photos/` — STATE.md · scope.md · iqos/ · b1/ (batch 1 proof) · b2/ (batch 2 scripts + proof).
+1 main: `git fetch && git log -1 --oneline origin/main` = b03ad33 (#312) [ตรวจแล้ว — git]. 06/10 night: #311 batch 1 IQOS (live) ·
+  #312 batch 2 SALTHUB (merged; live check = the report of this chat) · this docs PR. Round approved by the owner 06/10 pm.
+2 ahead of main: branch `option-photos-3` (from b03ad33) = LESSONS 28 (poster registration method) only — NOT checked yet; batch 3
+  goes on it (its checker covers LESSONS 28). Material not in git: `_incoming/option-photos/` — STATE.md · scope.md · iqos/ · b1/ ·
+  b2/ (README.md = the poster-registration scripts, reusable).
 3 OPEN: round "option photos + IQOS colours" = `docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt` (owner approved 06/10 pm).
-  Batches (all tier B): 1 IQOS colours complete (iqosheet-16/18) · 2 Zero Cartridge 22 + M Bar 15K Black Berry · 3 WOTOFO 11 · TFIT 10 ·
-  INFY 2 · Muro 3ML 4 · 4 coils ×8 (white box) · 5 close. Scope (scope-auditor 06/10) = round file block + `_incoming/option-photos/scope.md`.
-  Batch 1 DONE = #311 (merged cef9c09): PRIME 5 colours · ILUMA i 7 (Bold Ruby = jp.iqos.com). AI renders (nano_banana_2 4k): PRIME
-  Electric Purple 47ab7be5-68b8-421f-bae0-6eeba730f3c9 · Leaf Green 622cae8b-682e-42e9-9061-28a7b7a3c141 (re-toned, dE 0.5) · Bold
-  Ruby c78765cc-9ff8-4a90-bce5-8ab76b4fae66. iqosheet-17 (ILUMA ONE) is not published = not in scope.
-  Batch 2 = branch option-photos-2-salthub: 21 Zero pods cut from SALTHUB's own posters (registered, common outline — b2/README
-  steps = podmask → register → refine → align → silhouette → edgedome → cut → mkmap → process-images → sharpen); Strawberry +
-  15K Black Berry = real template pod + AI band (bandswap.js; jobs 93f513e9-0b4d-4945-864e-a194b0ea7da5 · 6c0d358c-dd94-47a8-
-  b72f-0b91eba79b80). Zero keeps `openOnCardPhoto`. Credits this round: 17.
-  NEXT: finish batch 2 (proof → PR → checker → merge → `docs/รอพี่ตรวจ.md` §จ) · then batch 3 in a NEW chat (context rule §12 ข้อ 29).
+  Batches (all tier B): 1 IQOS ✓ #311 · 2 SALTHUB ✓ #312 · 3 WOTOFO nexBAR 18K 11 · TFIT M Power 20K 10 · INFY 20K 2 · Muro 3ML 4 ·
+  4 coils ×8 (white box) · 5 close. Scope (scope-auditor 06/10) = round file block + `_incoming/option-photos/scope.md`.
+  Done: PRIME 5 colours · ILUMA i 7 (Bold Ruby = jp.iqos.com) · Zero Cartridge 22/22 · M Bar 15K 16/16. AI jobs (nano_banana_2 4k):
+  47ab7be5 PRIME Electric Purple · 622cae8b Leaf Green (re-toned) · c78765cc Bold Ruby · 93f513e9 Zero Strawberry band · 6c0d358c 15K
+  Black Berry band. iqosheet-17 (ILUMA ONE) not published = out of scope. Credits this round: 17.
+  checker #312 taste notes (not fixed, source-bound): Apple Aloe / Ice Sparkling labels faint as in SALTHUB's posters · Strawberry
+  bottom corners show a ~1 px grey pod-rim line at 5x zoom.
+  NEXT (new chat, moved at ~600k context): batch 3 — re-measure the gaps first (`_incoming/sitewide-template/5/mood/count-gaps.ts`),
+  find each product's maker images (LESSONS 18–20 · 27 · 28), then the same proof chain as #312 (b2/proof).
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
