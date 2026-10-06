@@ -919,7 +919,7 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/drag-s3/card-v3.webp",
+        src: "/assets/products/drag-s3/card-v4.webp",
         alt: "VOOPOO DRAG S3, Spray Black, upright front view",
         angle: "upright, isolated — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10) of this colour's photo",
         transparentBackground: true,
@@ -949,26 +949,28 @@ export const voopooProducts: Product[] = [
     storyLayout: "stage",
     storyCover: { src: "/assets/products/drag-s3/story-cover-v2.webp", alt: "Official VOOPOO banner — the DRAG S3", sourceName: "VOOPOO", sourceUrl: S3_PAGE, width: 2800, height: 1456 },
     colorVariants: [
-      { id: "spray-black", name: "Spray Black", swatchHex: "#363636", image: { src: "/assets/products/drag-s3/variant-spray-black-v3.webp", alt: "VOOPOO DRAG S3, Spray Black", ownFloor: true } },
-      { id: "white", name: "White", swatchHex: "#cdcdcd", image: { src: "/assets/products/drag-s3/variant-white-v4.webp", alt: "VOOPOO DRAG S3, White", ownFloor: true } },
-      { id: "pink", name: "Pink", swatchHex: "#dccac9", image: { src: "/assets/products/drag-s3/variant-pink-v3.webp", alt: "VOOPOO DRAG S3, Pink", ownFloor: true } },
-      { id: "blue", name: "Blue", swatchHex: "#435666", image: { src: "/assets/products/drag-s3/variant-blue-v3.webp", alt: "VOOPOO DRAG S3, Blue", ownFloor: true } },
-      { id: "green", name: "Green", swatchHex: "#6f7c69", image: { src: "/assets/products/drag-s3/variant-green-v3.webp", alt: "VOOPOO DRAG S3, Green", ownFloor: true } },
-      { id: "brown", name: "Brown", swatchHex: "#7b4929", image: { src: "/assets/products/drag-s3/variant-brown-v3.webp", alt: "VOOPOO DRAG S3, Brown", ownFloor: true } },
-      { id: "metal-gray", name: "Metal Gray", swatchHex: "#646b6c", image: { src: "/assets/products/drag-s3/variant-metal-gray-v3.webp", alt: "VOOPOO DRAG S3, Metal Gray", ownFloor: true } },
+      { id: "spray-black", name: "Spray Black", swatchHex: "#363636", image: { src: "/assets/products/drag-s3/variant-spray-black-v5.webp", alt: "VOOPOO DRAG S3, Spray Black", ownFloor: true } },
+      { id: "white", name: "White", swatchHex: "#cdcdcd", image: { src: "/assets/products/drag-s3/variant-white-v5.webp", alt: "VOOPOO DRAG S3, White", ownFloor: true } },
+      { id: "pink", name: "Pink", swatchHex: "#dccac9", image: { src: "/assets/products/drag-s3/variant-pink-v5.webp", alt: "VOOPOO DRAG S3, Pink", ownFloor: true } },
+      { id: "blue", name: "Blue", swatchHex: "#435666", image: { src: "/assets/products/drag-s3/variant-blue-v5.webp", alt: "VOOPOO DRAG S3, Blue", ownFloor: true } },
+      { id: "green", name: "Green", swatchHex: "#6f7c69", image: { src: "/assets/products/drag-s3/variant-green-v5.webp", alt: "VOOPOO DRAG S3, Green", ownFloor: true } },
+      { id: "brown", name: "Brown", swatchHex: "#7b4929", image: { src: "/assets/products/drag-s3/variant-brown-v5.webp", alt: "VOOPOO DRAG S3, Brown", ownFloor: true } },
+      { id: "metal-gray", name: "Metal Gray", swatchHex: "#646b6c", image: { src: "/assets/products/drag-s3/variant-metal-gray-v5.webp", alt: "VOOPOO DRAG S3, Metal Gray", ownFloor: true } },
     ],
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js drag-s3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     // Image-look roll-out J2 (07/10): every colour + card re-shot in studio light by AI, upright like the approved White,
-    // own contact shadow kept (IMAGE_SPEC §0 item 8); line-ups v3 = the same layout from those devices
-    // (_incoming/look-batch/relx-lineup.js · JOBS.md J2).
+    // own contact shadow kept (IMAGE_SPEC §0 item 8) (JOBS.md J2). The v3 set failed the owner (07/10) → v5 = the owner-picked
+    // blue-S2 recipe (real vapevo photo as the only image, light-focused prompt; IMAGE_PROMPTS v3; owner "ยกเว้นให้ Drag"), the
+    // garbled "EVEREST LAB" badge text re-set in real type (look-batch/everest-patch.js), floor clipped to the device columns;
+    // line-ups v5 = every colour standing in one row on the floor (owner's draft 2, look-batch/ds-lineup-floor.js --row --pick).
     lineupImage: {
-      src: "/assets/products/drag-s3/lineup-v3.webp",
+      src: "/assets/products/drag-s3/lineup-v5.webp",
       alt: "VOOPOO DRAG S3, colours 1–4 of 7",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/drag-s3/lineup2-v3.webp",
+      src: "/assets/products/drag-s3/lineup2-v5.webp",
       alt: "VOOPOO DRAG S3, colours 5–7 of 7",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
