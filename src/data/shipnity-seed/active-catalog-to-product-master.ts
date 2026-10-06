@@ -1366,6 +1366,13 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   "IQOSHEET-18": {
     "IQOSHEET-18-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-1-v2.webp", alt: "IQOS ILUMA i, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-midnight-black.html" },
     "IQOSHEET-18-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-3-v2.webp", alt: "IQOS ILUMA i, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+    // Same round: Leaf Green (iqos.com shows it upright only) and Bold Ruby (jp.iqos.com, 416 px upright only) are
+    // renders that keep the shape of the Digital Violet photo and the colour of IQOS's own photo of that colour.
+    "iqosheet-18-verified-digital-violet": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/digital-violet.webp", alt: "IQOS ILUMA i, Digital Violet", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-digital-violet.html" },
+    "iqosheet-18-verified-vivid-terracotta": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/vivid-terracotta.webp", alt: "IQOS ILUMA i, Vivid Terracotta", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-vivid-terracotta.html" },
+    "iqosheet-18-verified-electric-purple": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/electric-purple.webp", alt: "IQOS ILUMA i, Electric Purple", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-electric-purple.html" },
+    "iqosheet-18-verified-leaf-green": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/leaf-green.webp", alt: "IQOS ILUMA i, Leaf Green", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS's own Leaf Green photo", sourceUrl: "https://www.iqos.com/my/en/shop/iluma-i-leaf-green-kit.html" },
+    "iqosheet-18-verified-bold-ruby": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/bold-ruby.webp", alt: "IQOS ILUMA i, Bold Ruby", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS Japan's own Bold Ruby photo", sourceUrl: "https://jp.iqos.com/iqos-iluma-i-bold-ruby" },
   },
   // IQOSHEET-14 (Lambda i8) — owner quality-review pass (2026-09-03) found a cleaner 1000×1000
   // per-color studio source on the same lambdasmoke.com page (see VERIFIED_MEDIA's angle note
@@ -1493,6 +1500,14 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
   "IQOSHEET-16": [
     { code: "garnet-red", label: "Garnet Red", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-garnet-red.html" },
     { code: "electric-purple", label: "Electric Purple", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-electric-purple.html" },
+  ],
+  "IQOSHEET-18": [
+    { code: "digital-violet", label: "Digital Violet", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-digital-violet.html" },
+    { code: "vivid-terracotta", label: "Vivid Terracotta", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-vivid-terracotta.html" },
+    { code: "electric-purple", label: "Electric Purple", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-electric-purple.html" },
+    { code: "leaf-green", label: "Leaf Green", sourceUrl: "https://www.iqos.com/my/en/shop/iluma-i-leaf-green-kit.html" },
+    // Japan only (jp.iqos.com, on sale from 2026-09-16).
+    { code: "bold-ruby", label: "Bold Ruby", sourceUrl: "https://jp.iqos.com/iqos-iluma-i-bold-ruby" },
   ],
 };
 
