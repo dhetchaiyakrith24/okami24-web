@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = b03ad33 (#312) [ตรวจแล้ว — git]. 06/10 night: #311 batch 1 IQOS (live) ·
-  #312 batch 2 SALTHUB (merged; live check = the report of this chat) · this docs PR. Round approved by the owner 06/10 pm.
+1 main: `git fetch && git log -1 --oneline origin/main` = 384511e (#317) [ตรวจแล้ว — git]. 06/10 night: #311 batch 1 IQOS · #312 batch 2
+  SALTHUB · #317 admin prices (16 of 17 rows, checker PASS 6/6) · this docs PR.
 2 ahead of main: branch `option-photos-3` (from b03ad33) = LESSONS 28 (poster registration method) only — NOT checked yet; batch 3
   goes on it (its checker covers LESSONS 28). Material not in git: `_incoming/option-photos/` — STATE.md · scope.md · iqos/ · b1/ ·
   b2/ (README.md = the poster-registration scripts, reusable).
@@ -25,7 +25,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   checker #312 taste notes (not fixed, source-bound): Apple Aloe / Ice Sparkling labels faint as in SALTHUB's posters · Strawberry
   bottom corners show a ~1 px grey pod-rim line at 5x zoom.
   PAUSED 06/10 night. Owner's order (answers 06/10 night, one chat = one round):
-   (1) selling prices — the 17 admin rows (§18 "Selling prices") · money = full check set (13.5 #3);
+   (1) DONE #317 — 16 of 17 admin price rows (basis "owner-confirmed"); held = "Coil Caliburn G" + m-bar-15k + INFY 20K/Argus
+       Multi-Ohm from the admin chat → `docs/รอพี่ตรวจ.md` items 24–26; proof `_incoming/prices-0610/` (vt-diff · head-before/after);
    (2) image-look pilot — methods A (script: tame clipped whites + studio light falloff, 0 credits) AND B (AI studio relight + the
        maker's pixels pasted back over logo/text/screen), on MOOOD 1 flavour + Drag S3 1 colour, beside G5 → owner picks → IMAGE_SPEC rule;
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
