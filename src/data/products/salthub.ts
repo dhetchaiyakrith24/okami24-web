@@ -337,8 +337,9 @@ export const salthubProducts: Product[] = [
     // against, and Legacy Product Detail has no cart/purchase action to gate anyway.
     flavorVariants: [
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-apple-aloe.webp", alt: "SALTHUB M Bar 15K, Apple Aloe" } },
-      // Batch 3e: Black Berry is on SALTHUB's 15K flavour chart (posters 04+05) but has no SALTHUB photo for the 15K → swatch only
-      { id: "black-berry", name: "Black Berry", swatchHex: "#5f3ac8", availability: "unknown" },
+      // Black Berry is on SALTHUB's 15K flavour chart (posters 04+05) but has no SALTHUB photo set (round "option photos" 06/10):
+      // the real Mixberry pod photo with its bands redrawn by AI after the Black Berry pod on poster 05 (_incoming/option-photos/b2/)
+      { id: "black-berry", name: "Black Berry", swatchHex: "#5f3ac8", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-black-berry.webp", alt: "SALTHUB M Bar 15K, Black Berry" } },
       { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-blue-ice.webp", alt: "SALTHUB M Bar 15K, Blue Ice" } },
       { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-cola.webp", alt: "SALTHUB M Bar 15K, Cola" } },
       { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-double-mint.webp", alt: "SALTHUB M Bar 15K, Double Mint" } },
@@ -907,30 +908,35 @@ export const salthubProducts: Product[] = [
     // Batch 3d (05/10): every flavour SALTHUB names (catalog completeness rule) — the 21 packs of its home slider "FLAVORS —
     // ZERO PRO" + Strawberry (the home card's pod label); _incoming/sitewide-template/3/facts-zero-cartridge.md. The shop's own
     // Shipnity children (Pod-85) are Apple Aloe + Fruit Tea. Swatch = the mean of the saturated pixels of SALTHUB's pack art (3d/names-and-swatches.js).
-    // No photos yet (SALTHUB's packs are busy posters) — swatch tiles. `availability: "unknown"` as every Legacy SALTHUB product.
+    // Round "option photos" 06/10: now that every flavour has a photo the hero would lead with the first flavour — it keeps
+    // opening on the card (SALTHUB's own Strawberry pod) as before, like every other SALTHUB page; flavours by swipe or chip.
+    openOnCardPhoto: true,
+    // Photos (round "option photos" 06/10): each pod cut from SALTHUB's own flavour poster with one outline common to all 21;
+    // Strawberry (no poster) = the real Peach Strawberry pod + an AI-drawn Strawberry band after SALTHUB's home-card pod
+    // (_incoming/option-photos/b2/). `availability: "unknown"` as every Legacy SALTHUB product.
     flavorVariants: [
-      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7ac465", availability: "unknown" },
-      { id: "blueberry", name: "Blueberry", swatchHex: "#3b4fa0", availability: "unknown" },
-      { id: "cigar", name: "Cigar", swatchHex: "#905e36", availability: "unknown" },
-      { id: "cola", name: "Cola", swatchHex: "#7e4d2f", availability: "unknown" },
-      { id: "fruit-tea", name: "Fruit Tea", swatchHex: "#b57c28", availability: "unknown" },
-      { id: "grape", name: "Grape", swatchHex: "#a064a9", availability: "unknown" },
-      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#6dab74", availability: "unknown" },
-      { id: "grapefruit", name: "Grapefruit", swatchHex: "#cd7035", availability: "unknown" },
-      { id: "honey-yuzu", name: "Honey Yuzu", swatchHex: "#cd9d1f", availability: "unknown" },
-      { id: "ice-sparkling", name: "Ice Sparkling", swatchHex: "#4dc3d6", availability: "unknown" },
-      { id: "lemonade", name: "Lemonade", swatchHex: "#c9d249", availability: "unknown" },
-      { id: "lychee", name: "Lychee", swatchHex: "#cb4e61", availability: "unknown" },
-      { id: "mango", name: "Mango", swatchHex: "#d68b1c", availability: "unknown" },
-      { id: "mint", name: "Mint", swatchHex: "#67bc7c", availability: "unknown" },
-      { id: "mixberry", name: "Mixberry", swatchHex: "#8b4791", availability: "unknown" },
-      { id: "oolong-tea", name: "Oolong Tea", swatchHex: "#be9250", availability: "unknown" },
-      { id: "peach", name: "Peach", swatchHex: "#d46c79", availability: "unknown" },
-      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#ba3a34", availability: "unknown" },
-      { id: "pineapple", name: "Pineapple", swatchHex: "#c3af38", availability: "unknown" },
-      { id: "strawberry", name: "Strawberry", swatchHex: "#c9405f", availability: "unknown" },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
-      { id: "yakult", name: "Yakult", swatchHex: "#de6569", availability: "unknown" },
+      { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#7ac465", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-apple-aloe.webp", alt: "SALTHUB Zero Cartridge, Apple Aloe" } },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#3b4fa0", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-blueberry.webp", alt: "SALTHUB Zero Cartridge, Blueberry" } },
+      { id: "cigar", name: "Cigar", swatchHex: "#905e36", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-cigar.webp", alt: "SALTHUB Zero Cartridge, Cigar" } },
+      { id: "cola", name: "Cola", swatchHex: "#7e4d2f", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-cola.webp", alt: "SALTHUB Zero Cartridge, Cola" } },
+      { id: "fruit-tea", name: "Fruit Tea", swatchHex: "#b57c28", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-fruit-tea.webp", alt: "SALTHUB Zero Cartridge, Fruit Tea" } },
+      { id: "grape", name: "Grape", swatchHex: "#a064a9", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-grape.webp", alt: "SALTHUB Zero Cartridge, Grape" } },
+      { id: "grape-aloe", name: "Grape Aloe", swatchHex: "#6dab74", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-grape-aloe.webp", alt: "SALTHUB Zero Cartridge, Grape Aloe" } },
+      { id: "grapefruit", name: "Grapefruit", swatchHex: "#cd7035", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-grapefruit.webp", alt: "SALTHUB Zero Cartridge, Grapefruit" } },
+      { id: "honey-yuzu", name: "Honey Yuzu", swatchHex: "#cd9d1f", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-honey-yuzu.webp", alt: "SALTHUB Zero Cartridge, Honey Yuzu" } },
+      { id: "ice-sparkling", name: "Ice Sparkling", swatchHex: "#4dc3d6", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-ice-sparkling.webp", alt: "SALTHUB Zero Cartridge, Ice Sparkling" } },
+      { id: "lemonade", name: "Lemonade", swatchHex: "#c9d249", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-lemonade.webp", alt: "SALTHUB Zero Cartridge, Lemonade" } },
+      { id: "lychee", name: "Lychee", swatchHex: "#cb4e61", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-lychee.webp", alt: "SALTHUB Zero Cartridge, Lychee" } },
+      { id: "mango", name: "Mango", swatchHex: "#d68b1c", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-mango.webp", alt: "SALTHUB Zero Cartridge, Mango" } },
+      { id: "mint", name: "Mint", swatchHex: "#67bc7c", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-mint.webp", alt: "SALTHUB Zero Cartridge, Mint" } },
+      { id: "mixberry", name: "Mixberry", swatchHex: "#8b4791", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-mixberry.webp", alt: "SALTHUB Zero Cartridge, Mixberry" } },
+      { id: "oolong-tea", name: "Oolong Tea", swatchHex: "#be9250", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-oolong-tea.webp", alt: "SALTHUB Zero Cartridge, Oolong Tea" } },
+      { id: "peach", name: "Peach", swatchHex: "#d46c79", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-peach.webp", alt: "SALTHUB Zero Cartridge, Peach" } },
+      { id: "peach-strawberry", name: "Peach Strawberry", swatchHex: "#ba3a34", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-peach-strawberry.webp", alt: "SALTHUB Zero Cartridge, Peach Strawberry" } },
+      { id: "pineapple", name: "Pineapple", swatchHex: "#c3af38", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-pineapple.webp", alt: "SALTHUB Zero Cartridge, Pineapple" } },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-strawberry.webp", alt: "SALTHUB Zero Cartridge, Strawberry" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-watermelon.webp", alt: "SALTHUB Zero Cartridge, Watermelon" } },
+      { id: "yakult", name: "Yakult", swatchHex: "#de6569", availability: "unknown", image: { src: "/assets/products/zero-cartridge/variant-yakult.webp", alt: "SALTHUB Zero Cartridge, Yakult" } },
     ],
     specifications: [
       { key: "capacity", label: "Capacity", value: "2.2mL", sourceStatus: "verified", sourceUrl: "https://www.salthub.com/" },
