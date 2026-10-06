@@ -811,9 +811,13 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     specifications: {
       puffs: "สูงสุด 14,000",
+      // Batch 5f (06/10): rows from MOOOD's own files (moood.ts).
+      coil: "DUO MESH",
+      capacity: "16mL บรรจุสำเร็จ",
+      nicotine: "3%",
     },
     tagline: "พอตใช้แล้วทิ้ง รองรับสูงสุด 14,000 พัฟ",
-    shortDescription: "พอตใช้แล้วทิ้งจาก MOOOD ซีรีส์ “Monster” รองรับสูงสุด 14,000 พัฟ ตอนนี้มีให้เลือก 10 รส",
+    shortDescription: "พอตใช้แล้วทิ้งจาก MOOOD ซีรีส์ “Monster” รองรับสูงสุด 14,000 พัฟ และมีให้เลือกหลายกลิ่น",
   },
   "muro-3ml": {
     whoIsThisFor: {

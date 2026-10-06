@@ -149,6 +149,16 @@ export const families: ProductFamily[] = [
     tagline: "WOTOFO's disposable line.",
     description: "WOTOFO's nexBAR disposable series, sold in several puff-count tiers (10K and 18K among them).",
   },
+  {
+    id: "moood-monster",
+    slug: "moood-monster",
+    brandId: "moood",
+    categoryId: "disposables",
+    name: "MOOOD Monster Series",
+    tagline: "MOOOD's 14,000-puff disposable line.",
+    // Batch 5f (06/10): the maker's own name for the line ("MONSTER SERIES 14000 PUFFS", mooodvapes.com via the Wayback Machine).
+    description: "MOOOD's MONSTER SERIES disposable line.",
+  },
 ];
 
 export function getFamily(id: string): ProductFamily | undefined {

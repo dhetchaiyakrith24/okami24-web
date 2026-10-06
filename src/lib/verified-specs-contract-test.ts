@@ -44,6 +44,9 @@ const MANUFACTURER_HOSTS = [
   "thai.myjoiway.com",
   // batch 4g (05/10): TFIT's own site — its product API + poster files (_incoming/sitewide-template/4/facts-tfit-m-power-20k.md)
   "tfitvape.com",
+  // batch 5f (06/10): MOOOD's own site — offline now; its pages and files read from the Wayback Machine
+  // (_incoming/sitewide-template/5/facts-mood-monster-14k.md)
+  "mooodvapes.com",
 ];
 
 /** Published (Shipnity) products whose verified rows must each name a manufacturer `sourceUrl` — the same rule (a) as

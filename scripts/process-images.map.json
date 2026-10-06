@@ -5865,5 +5865,289 @@
   "slug": "tfit-m-power-20k",
   "role": "card",
   "note": "site-wide template round batch 4g 05/10 - TFIT's own Watermelon product shot (tfitvape.com API smallPic 2250 px, white background; _incoming/sitewide-template/4/facts-tfit-m-power-20k.md), no AI: cut by scripts/flatcut.js + 2 px matte erode (_incoming/sitewide-template/2/2fimg/g4card/erode.js), upright (disposable card standard)"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-berry-garden.png",
+  "slug": "mood-monster-14k",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-berry-garden.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/04-flavour-berry-garden.jpg, 768 px) + the maker's key poster 01 (Berry Garden is its hero)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — card = Berry Garden upright (the maker's poster 01 hero flavour; disposable card standard), same file set as the flavours"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-banana-ice.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "banana-ice",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-banana-ice.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/03-flavour-banana-ice.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-banana-ice.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-berry-garden.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "berry-garden",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-berry-garden.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/04-flavour-berry-garden.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-berry-garden.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-blueberry.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "blueberry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-blueberry.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/05-flavour-blueberry.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-blueberry.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-cola.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "cola",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-cola.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/06-flavour-cola.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-cola.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-fanta.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "fanta",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-fanta.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's flavour poster as re-hosted by maneevp.com at 1000 px (_incoming/sitewide-template/5/mood/maneevp/fanta.jpg; same MOOOD template as the maker's files)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-fanta.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-grape.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-grape.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/08-flavour-grape.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-grape.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-grape-lychee.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "grape-lychee",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-grape-lychee.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/07-flavour-grape-lychee.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-grape-lychee.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-ice-sparkling.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "ice-sparkling",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-ice-sparkling.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/09-flavour-ice-sparkling.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-ice-sparkling.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-kyoho-grape.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "kyoho-grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-kyoho-grape.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "a retailer photo (c9vapes.com, _incoming/sitewide-template/5/mood/retail/khoyo-grape.webp, 600 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-kyoho-grape.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-lemon-tea.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "lemon-tea",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-lemon-tea.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/10-flavour-lemon-tea.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-lemon-tea.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-lychee.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "lychee",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-lychee.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/11-flavour-lychee.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-lychee.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-mango-peach.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "mango-peach",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-mango-peach.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's flavour poster as re-hosted by maneevp.com at 1000 px (_incoming/sitewide-template/5/mood/maneevp/Mango-Peach.jpg; same MOOOD template as the maker's files)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-mango-peach.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-mint.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "mint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-mint.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/12-flavour-mint.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-mint.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-peach-orange.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "peach-orange",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-peach-orange.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/13-flavour-peach-orange.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-peach-orange.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-pineapple.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "pineapple",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-pineapple.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/14-flavour-pineapple.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-pineapple.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-strawberry.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "strawberry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-strawberry.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/15-flavour-strawberry.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-strawberry.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-sugar-apple.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "sugus-apple",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-sugar-apple.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's flavour poster as re-hosted by maneevp.com at 1000 px (_incoming/sitewide-template/5/mood/maneevp/Sugus-Apple.jpg; same MOOOD template as the maker's files)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-sugus-apple.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-watermelon.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "watermelon",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-watermelon.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/16-flavour-watermelon-1.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-watermelon.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-watermelon-strawberry.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "watermelon-strawberry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-watermelon-strawberry.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv); LESSONS 20: one device body (the Grape render — chrome mouthpiece as in the maker's photos) + this flavour's own label band (_incoming/sitewide-template/5/mood/compose.js), master silhouette as alpha",
+   "reference": "the maker's own flavour photo (mooodvapes.com via the Wayback Machine, _incoming/sitewide-template/5/mood/official/17-flavour-watermelon-strawberry.jpg, 768 px)",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-watermelon-strawberry.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-grape-n5.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "grape-n5",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-grape-n5.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv) — its own frosted 5% body kept as the source shows it; normalized by norm.js, cut by scripts/flatcut.js",
+   "reference": "a retailer photo (c9vapes.com, _incoming/sitewide-template/5/mood/retail/moood-14k-grape-nic5.webp, 600 px) — the only picture of this 5% label",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-grape-n5.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/5/mood/ai/t-blueberry-n5.png",
+  "slug": "mood-monster-14k",
+  "role": "variant",
+  "id": "blueberry-n5",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 4k cut-out \"keep exactly, remove everything else\" (_incoming/sitewide-template/5/mood/ai/r-blueberry-n5.png, jobs in _incoming/sitewide-template/5/mood/ai/jobs.tsv) — its own frosted 5% body kept as the source shows it; normalized by norm.js, cut by scripts/flatcut.js",
+   "reference": "a retailer photo (c9vapes.com, _incoming/sitewide-template/5/mood/retail/moood-14k-blueberry-nic5.webp, 600 px) — the only picture of this 5% label",
+   "fidelitySheet": "_incoming/sitewide-template/5/mood/fid-sheet.png"
+  },
+  "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
+  "fileName": "variant-blueberry-n5.webp"
  }
 ]
