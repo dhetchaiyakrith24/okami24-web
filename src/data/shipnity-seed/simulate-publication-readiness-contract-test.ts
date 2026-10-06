@@ -116,7 +116,7 @@ export function runSimulationContractTests(): SimulationContractResult[] {
   };
   checkGenuinelyPublished("Coil-38", 450, 2);
   checkGenuinelyPublished("Coil-53", 550, 1);
-  checkGenuinelyPublished("Coil-55", 299, 0);
+  checkGenuinelyPublished("Coil-55", 250, 0); // owner override 2026-10-06 (admin list)
   checkGenuinelyPublished("Coil-56", 300, 1);
   checkGenuinelyPublished("Coil-74", 250, 1);
   checkGenuinelyPublished("Coil-89", 350, 2);

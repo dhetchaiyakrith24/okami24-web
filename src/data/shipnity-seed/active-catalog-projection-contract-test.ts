@@ -204,17 +204,17 @@ export function runProjectionContractTests(): ProjectionContractResult[] {
   // state — that admission-time nullability invariant is still covered, just synthetically, by
   // product-master-contract-test.ts's fixtures rather than a real example here.
   // Later session: Coil-55 also genuinely published (real tier-2 media closed the gap, ฿299
-  // under the updated pricing rule) — see publication-approvals.ts.
+  // under the updated pricing rule; owner override 2026-10-06 → ฿250) — see publication-approvals.ts.
   const coil55 = byId.get("Coil-55");
   check(
-    "real pipeline: Coil-55 is a fully-enriched, non-draft, genuinely PUBLISHED candidate (uwell, pods-cartridges, real copy, ฿299)",
+    "real pipeline: Coil-55 is a fully-enriched, non-draft, genuinely PUBLISHED candidate (uwell, pods-cartridges, real copy, ฿250)",
     coil55?.status === "candidate" &&
       !coil55.isDraft &&
       coil55.product.brandId === "uwell" &&
       coil55.product.categoryId === "pods-cartridges" &&
       coil55.product.tagline !== null &&
       coil55.product.publicationStatus === "published" &&
-      coil55.product.pricing.sellingPrice === 299,
+      coil55.product.pricing.sellingPrice === 250,
     JSON.stringify(coil55)
   );
 

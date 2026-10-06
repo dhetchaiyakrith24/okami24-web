@@ -38,13 +38,15 @@ export function runLegacyPricingContractTests(): LegacyPricingContractResult[] {
   // Prices round 2026-09-21: two bases. A "shipnity" row must name its parent code; an
   // "owner-estimate" row has no parent (null) and its evidence must open with the owner's tag so
   // the placeholder is findable in one grep when the stock API brings the real price.
-  const badBasis = entries.filter(([, a]) => a.basis !== "shipnity" && a.basis !== "owner-estimate").map(([slug, a]) => `${slug}=${String(a.basis)}`);
-  check('every approval carries a valid basis ("shipnity" | "owner-estimate")', badBasis.length === 0, badBasis.join(", ") || `${entries.filter(([, a]) => a.basis === "shipnity").length} shipnity · ${entries.filter(([, a]) => a.basis === "owner-estimate").length} owner-estimate`);
+  // Admin price list 2026-10-06: a third basis, "owner-confirmed" — parent optional, evidence tagged like the estimates.
+  const badBasis = entries.filter(([, a]) => a.basis !== "shipnity" && a.basis !== "owner-estimate" && a.basis !== "owner-confirmed").map(([slug, a]) => `${slug}=${String(a.basis)}`);
+  check('every approval carries a valid basis ("shipnity" | "owner-estimate" | "owner-confirmed")', badBasis.length === 0, badBasis.join(", ") || `${entries.filter(([, a]) => a.basis === "shipnity").length} shipnity · ${entries.filter(([, a]) => a.basis === "owner-estimate").length} owner-estimate · ${entries.filter(([, a]) => a.basis === "owner-confirmed").length} owner-confirmed`);
 
   const missingEvidence = entries
     .filter(([, a]) => {
       if (a.evidence.trim().length < 20) return true;
       if (a.basis === "shipnity") return !a.shipnityProductId;
+      if (a.basis === "owner-confirmed") return !/^owner-confirmed \d{4}-\d{2}-\d{2}:/.test(a.evidence);
       // Tag = "owner-estimate <ISO date of the owner's ruling>:" — 2026-09-21 for the prices round, later dates since.
       return a.shipnityProductId !== null || !/^owner-estimate \d{4}-\d{2}-\d{2}:/.test(a.evidence);
     })
