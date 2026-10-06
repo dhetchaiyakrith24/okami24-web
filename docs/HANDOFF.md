@@ -14,17 +14,17 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 1 main: `git fetch && git log -1 --oneline origin/main` = 5644357 (#310) [ตรวจแล้ว — git]. 06/10: #308 MOOOD (live, curl 200) · #309 round
   close (tag sitewide-template-done = 5b68440) · #310 owner-review list moved to `docs/รอพี่ตรวจ.md`. The owner's night-time run-on
   instruction ended when the owner came back (06/10 pm: "ทำต่อเลย … รันต่อได้เลย" = approved the next round, see item 3).
-2 ahead of main: branch `option-photos-1-iqos` (`git log --oneline origin/main..origin/option-photos-1-iqos`): the approved round
-  file (docs/rounds rename + scope block) + this §16 — docs only, NOT checked yet, no site change yet. Material not in git:
-  `_incoming/option-photos/` — STATE.md (read first) · scope.md · iqos/ (official images) · `_incoming/sitewide-template/` (last round).
+2 ahead of main: branch `option-photos-1-iqos` = PR #311 (batch 1, checker PASS 10/10 at bc58667; the Leaf Green re-tone after it =
+  13.5 #2 (จ)). Material not in git: `_incoming/option-photos/` — STATE.md (read first) · scope.md · iqos/ · b1/ (proof) · b2/ (prep).
 3 OPEN: round "option photos + IQOS colours" = `docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt` (owner approved 06/10 pm).
   Batches (all tier B): 1 IQOS colours complete (iqosheet-16/18) · 2 Zero Cartridge 22 + M Bar 15K Black Berry · 3 WOTOFO 11 · TFIT 10 ·
   INFY 2 · Muro 3ML 4 · 4 coils ×8 (white box) · 5 close. Scope (scope-auditor 06/10) = round file block + `_incoming/option-photos/scope.md`.
-  STOPPED at batch 1 (chat move at 646k context): colours + official images found, 2 AI renders submitted (job ids in STATE.md).
-  NEXT: fetch the 2 renders → check vs the colour photos → cut-outs → map entries (process-images, new file names) +
-  VERIFIED_ADDITIONAL_VARIANTS / VERIFIED_VARIANT_MEDIA for IQOSHEET-16/-18 → build → gates (visible-text on the 5 scope pages +
-  controls, gallery-probe, sharpness, scan) → shots 390/1440 → PR (BIG) → checker → merge → add the batch to `docs/รอพี่ตรวจ.md` §จ.
-  Credits this round: 8.
+  Batch 1 = PR #311: PRIME +Garnet Red +Electric Purple (5 colours) · ILUMA i +Digital Violet +Vivid Terracotta +Electric Purple
+  +Leaf Green +Bold Ruby (7, Bold Ruby = jp.iqos.com). AI renders (Higgsfield nano_banana_2 4k, IMAGE_SPEC §0 item 7): PRIME Electric
+  Purple job 47ab7be5-68b8-421f-bae0-6eeba730f3c9 · Leaf Green 622cae8b-682e-42e9-9061-28a7b7a3c141 (re-toned to IQOS's Lab, dE 0.5) ·
+  Bold Ruby c78765cc-9ff8-4a90-bce5-8ab76b4fae66. iqosheet-17 (ILUMA ONE) is not published = not in scope. Credits this round: 11.
+  NEXT: batch 2 — prep in `_incoming/option-photos/b2/` (Zero posters registered to MINT: reg2.json + aligned/; per-poster bottom edge
+  still to find; Black Berry = the Mixberry 15K variant re-banded per SALTHUB poster 05).
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
@@ -65,7 +65,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     `TITLE_PRICE_HOLD_UNTIL_2026_10_05` · M Bar 10K airflow row · G5 hero tagline repeats · product FAQ answers absent from server HTML ·
     8 brand titles naming a model (cloud-results §2) · shared GPP note "Shared top-fill…" on 8 UWELL pages · (04/10, language
     part — timing = Friday's reading [เชื่อว่า]) remove the term brackets site-wide (THAI_STYLE layer 4; list = `node scripts/paren-terms.js`; keep device-screen ones) ·
-    re-word the G3 Pro / G3 Pro KOKO / G4 Classic head lines with the reset `thai-copy` (#245 lines read curt).
+    re-word the G3 Pro / G3 Pro KOKO / G4 Classic head lines with the reset `thai-copy` (#245 lines read curt) · iqosheet-18 meta
+    description (search-head-copy.ts) says "มี 2 สี Midnight Black และ Breeze Blue" — the page lists 7 since #311.
   - `lineupFirst` has no product left — cleanup · `dict.product.anatomyTitle` en/zh "from the outside in" · zh spec/FAQ English site-wide ·
     article H3 font reads narrow (designer note).
   - Housekeeping queue: OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบเก็บบ้าน-ครั้งถัดไป-ของที่รอ.txt` (+ owner 03/10 (D) lower
