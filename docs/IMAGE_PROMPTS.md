@@ -7,6 +7,26 @@ Each version says: what it is for · what came out · how it differs from the on
 mark the old "in use" as backup, delete the oldest if that makes 4. Who uses it: the image chat (Higgsfield through
 Chrome, Nano Banana Pro 2K 1:1, Unlimited ON). Who edits it: any chat, in a PR like any other file.
 
+**Flow for every product (owner 07/10 "ภาพรวม" — one prompt + fix lines, not a new prompt per problem):**
+1. `node scripts/image-source-check.js <slug>` → `_incoming/look-batch/<slug>/SOURCE-CHECK.md` (size · AI history ·
+   exposure · halo · tilt per candidate photo) + the eye check it lists (mirrored · watermark · right colour · text).
+2. Pick image 1: maker photo → real retailer photo → our site photo; a weak one can be helped (detail from one photo,
+   colour words from the maker's colour banner).
+3. Prompt = the version below that fits + the fix lines for every flag (table). A new kind of problem = add one row.
+4. ONE colour first, 2 renders → `node scripts/image-source-check.js --compare <old> <new M- file>`: LITTLE CHANGE = the
+   old light was copied → change image 1 / version before anything else · CHANGED → eye: 3 points + G5 bar → full set.
+
+| flag (source check) | fix line / action |
+|---|---|
+| AI-RELIT | prefer a real photo as image 1 + v3; if none exists, v2 and expect --compare to decide |
+| SMALL (< 800 px) | upscale before sending (`prep-orig.js` does ~1700 px) + "rebuild crisp micro-texture; every printed word exactly as in the photo" |
+| BRIGHT | + "recover detail in the highlights, no blown-out whites" |
+| DARK | + "lift the shadows enough to show the surface texture and every printed detail" |
+| HALO (eye-check on magenta) | send the photo on the flat #2b2e33 backdrop, never a fringed cut-out; we key it ourselves after |
+| TILTED / mirrored | pose line: "upright, front facing" / "seen from slightly to the right exactly like image 1, never mirrored" |
+| colour drifts (seen in the test) | name the colour plainly + "the same hue and depth as image 1, not paler" (KOKO desert-gold) |
+| micro text garbled (after) | patch the logo/screen from the real photo by script after keying (not a prompt line) |
+
 How to fill a prompt: one product + one colour/flavour per generation, 2 renders per item. **Pick the version by the
 reference photo first:** site photo was a FLAT graphic (recoloured, no real light — e.g. KOKO v2) → v2 with that photo
 (`_incoming/look-pilot/prep.js` → `in-<id>.png`) · site photo was ALREADY AI-relit (e.g. Drag S3/X3 v2, 02/10 remakes —
