@@ -950,7 +950,7 @@ export const voopooProducts: Product[] = [
     storyCover: { src: "/assets/products/drag-s3/story-cover-v2.webp", alt: "Official VOOPOO banner — the DRAG S3", sourceName: "VOOPOO", sourceUrl: S3_PAGE, width: 2800, height: 1456 },
     colorVariants: [
       { id: "spray-black", name: "Spray Black", swatchHex: "#363636", image: { src: "/assets/products/drag-s3/variant-spray-black-v2.webp", alt: "VOOPOO DRAG S3, Spray Black" } },
-      { id: "white", name: "White", swatchHex: "#cdcdcd", image: { src: "/assets/products/drag-s3/variant-white-v2.webp", alt: "VOOPOO DRAG S3, White" } },
+      { id: "white", name: "White", swatchHex: "#cdcdcd", image: { src: "/assets/products/drag-s3/variant-white-v3.webp", alt: "VOOPOO DRAG S3, White", ownFloor: true } },
       { id: "pink", name: "Pink", swatchHex: "#dccac9", image: { src: "/assets/products/drag-s3/variant-pink-v2.webp", alt: "VOOPOO DRAG S3, Pink" } },
       { id: "blue", name: "Blue", swatchHex: "#435666", image: { src: "/assets/products/drag-s3/variant-blue-v2.webp", alt: "VOOPOO DRAG S3, Blue" } },
       { id: "green", name: "Green", swatchHex: "#6f7c69", image: { src: "/assets/products/drag-s3/variant-green-v2.webp", alt: "VOOPOO DRAG S3, Green" } },

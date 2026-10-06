@@ -155,8 +155,9 @@ export interface ColorVariant {
   /** Approximate real-world swatch color for the selector dot — an honest visual approximation
    *  from the real product photo/name, never a claim of exact factory color-matching. */
   swatchHex: string;
-  /** Present only when a real, sourced photo of this exact color exists. */
-  image?: { src: string; alt: string };
+  /** Present only when a real, sourced photo of this exact color exists. `ownFloor`: the file carries its own studio
+   *  contact shadow + floor reflection (image-look pilot 07/10), so the product hero drops its painted floor oval. */
+  image?: { src: string; alt: string; ownFloor?: true };
   sourceUrl?: string;
   /** Catalog truth vs. operational stock truth — same contract as `FlavorVariant.availability`
    *  (see `VariantAvailability`). Optional here because colour lists predate the stock field;
