@@ -79,8 +79,8 @@ Word-break fixes and anything the gates or the designer flagged → one commit. 
 - The round file that ran is in `docs/rounds/` (re-copy if edited during the round) → delete its copy under `rounds/`
   on branch `inbox`, if any (a commit on `inbox` that only removes that file).
 
-## Step 7 — The 4-part report (Thai, `docs/TEMPLATES.md` (ข))
+## Step 7 — The short 3-part report (Thai, `docs/TEMPLATES.md` (ข))
 
-Cut: narration of the way there · repeating the instruction · reasons scattered through the body (all reasons go in
-item 3). Keep: tables go in `_incoming/<round>/`, the report gives the path. Item 3 also answers `docs/TEMPLATES.md`
-(ค)-8: which part of the instruction prescribed a method that was not needed or blocked a better one ("nothing" = one line).
+Plain words, no file names / hashes / commands in the report — they go in the PR body. The PR body also answers
+`docs/TEMPLATES.md` (ค)-8: which part of the instruction prescribed a method that was not needed or blocked a better one
+("nothing" = one line).
