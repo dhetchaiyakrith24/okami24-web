@@ -32,35 +32,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
-4 waiting on owner:
-  (06/10 #308 MOOOD) look on live: /products/mood-monster-14k + /brands/moood (new brand page; footer brand list on every page; home and
-       /about now count 14 brands) — reversible by revert. Decide:
-       - flavours = the union default: 19 on the maker's template + the shop's Grape N5% / Blueberry N5% (keep?) [รอเจ้าของ — default used]
-       - Grape N5% / Blueberry N5% photos show a frosted body with no screen (their only picture, a c9vapes.com shop photo, shows it;
-         a third shop photo shows Sugar Apple on the same body = maybe a newer batch): keep / drop the photos / white body + 5% label
-       - nicotine row says 3% only (maker); the 5% is seen only on that shop photo — add a "5%" line once a maker source exists?
-       - the label prints "Sugar Apple", the shop's stock list says "Sugus Apple" (the page shows Sugar Apple; id kept) — OK?
-       - "เว็บไซต์ทางการ ↗" on /brands/moood opens the Wayback copy (mooodvapes.com is offline) — OK?
-       - no story blocks: the maker's two key posters are one web banner (printed "READ MORE") twice; page text 220 (LOW, never padded)
-  (06/10 #303 #306) look on live: /products/m-bar-15k (now a pod kit, opens on the card; title/JSON-LD/breadcrumb say Pod Kits) ·
-       the ฿349 15K set the shop sells = device + clear M Bar cartridge as the page says? (BSOT 30/09 notes the shop stocks black pods).
-  (06/10 #301) look on live: /products/tfit-m-power-20k + /brands/tfit (TFIT poster 04 "72 hours" = kept whole, owner "ทำเลย" 06/10).
-  (05/10) look on live: trust bar "เช็คสเปก" line · /faq · /about spec sentence · guide clips (e.g. /guides/comparing-caliburn-models "G4 vs G4 Pro") —
-       reversible by revert (checker #297: G4 Pro clip in a two-model section; M Bar 9K sweets clip in "แนวอื่น").
-  (06/10 pm) look on live: M Bar 10K stage page · JOIWAY F4 TWINS page · RELX Creator "ทั้งหมด" image — reversible by revert.
-  Still to look at on live: G4 Pro + G4 Pro KOKO (1c) as a whole · G4 Pro new colours (c) · G4 mini two all-colours images (b) ·
-  ARGUS G4 mini page (2e) · ARGUS P3 + VMATE i3 story pages (2f #264) · ARGUS G4 page (2g #271: battery block names VOOPOO's two
-  figures — poster 10% vs ARGUS G3, page 22% vs previous gen; safety poster not used; 7 blocks → chip bar 6+1 at 1440).
-  (2f) five facts the owner should know on those pages (P3 maker typo, VMATE 0.4Ω wattage, P3 no size row, i3 card colour, i3
-       textures) = `git show d3bc8e2:docs/HANDOFF.md` §16 item 4 (2f).
-  "Mini BOX" stays English (Friday's pick, the owner did not rule on it 05/10).
-  (39) look at the Drag S3 / X3 / VINCI S colours + cards (#204) and the two-group lineups (#205-#207) on live — reversible by revert.
-  (38) one lifestyle sample like UWELL's real-shot.webp — the owner wants to see it before deciding where it goes.
-  (28) Thai copy flags (not changed): INFY `descriptionTh` says disposable-only brand · shared strings "คำถามที่พบบ่อยเกี่ยวกับอุปกรณ์นี้" /
-       "สินค้าที่คุณอาจสนใจ" stiff · RELX Creator = "เครื่องระบบสวิตช์" or keep "เครื่องใช้ซ้ำ" (batch 4 needs it)
-  (06/10) new Thai words from batch 3 (เซรามิก · หน้าจอดิจิทัล · สายคล้องคอ · ช่องลมเข้า · เรียบหรู — `_incoming/sitewide-template/3/STATE.md`) ·
-       RELX Creator: article "RELX Creator Pod" (RELX) vs fits-with "RELX Creator 20K pod" (shop) — link the names?
-  (14) category structure — its own round · (1) image-theft protection · (2) Muro Connector category · (3) SALTHUB per-flavour files
+4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md` (Thai, owner 06/10 pm "บันทึกไว้ในไฟล์งานใหม่") — add new items there,
+  delete an item once the owner answers (a permanent ruling → §18). Nothing waiting on the owner is written here.
 5 open / dated:
   - MOOOD who-for line (owner-approved round 30.3) says "รส" twice — the locked word is "กลิ่น" (thai-copy 06/10: "อยากได้พอตใช้แล้วทิ้ง
     สายพัฟเยอะ ที่มีกลิ่นให้เลือกหลายกลิ่น") — ask before touching (13.3 #5). Search "Sugus" finds nothing now (no alias) — data round.
