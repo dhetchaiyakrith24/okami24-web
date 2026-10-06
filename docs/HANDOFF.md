@@ -24,10 +24,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Black Berry band. iqosheet-17 (ILUMA ONE) not published = out of scope. Credits this round: 17.
   checker #312 taste notes (not fixed, source-bound): Apple Aloe / Ice Sparkling labels faint as in SALTHUB's posters · Strawberry
   bottom corners show a ~1 px grey pod-rim line at 5x zoom.
-  PAUSED 06/10 night (owner): before batch 3, agree how to make images look like studio photos, not graphics (owner-review
-  list 23 · Friday's proposal = the report of that chat: diagnose → pilot 2–3 methods on MOOOD + one more → owner picks → IMAGE_SPEC rule).
-  Also queued by the owner: selling prices from the admin (§18 "Selling prices") · M Bar 15K black pod only (list 22, BSOT conflict) ·
-  MOOOD who-for line. Order = the owner's pick (one chat = one round).
+  PAUSED 06/10 night. Owner's order (answers 06/10 night, one chat = one round):
+   (1) selling prices — the 17 admin rows (§18 "Selling prices") · money = full check set (13.5 #3);
+   (2) image-look pilot — methods A (script: tame clipped whites + studio light falloff, 0 credits) AND B (AI studio relight + the
+       maker's pixels pasted back over logo/text/screen), on MOOOD 1 flavour + Drag S3 1 colour, beside G5 → owner picks → IMAGE_SPEC rule;
+   (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
+   (4) then this round's batch 3 with the picked image standard. Small item: MOOOD who-for line "รส" → "กลิ่น" (§18).
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).

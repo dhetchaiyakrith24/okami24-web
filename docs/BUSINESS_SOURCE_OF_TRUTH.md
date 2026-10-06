@@ -618,6 +618,10 @@ they are the brief for the image batches in `docs/LAUNCH_AUDIT.md`.
   owner asked for it explicitly, so add them; do not invent names beyond the manufacturer's list.
 
 ### M Bar 15K / M Switch Pod — the shop sells BOTH pod types
+
+> **Superseded 2026-10-06 (owner, chat):** "ตอนนี้มีแต่หัวดำ" — the shop now sells ONLY the black pod; the clear pod is the
+> problem model and comes off the site (M Bar 15K shows the black pod only). The black pod = the owner's photos of real stock
+> (30/09) already live on `m-switch-pod`. The text below is the history of the earlier ruling.
 - **Owner correction to the 2026-09-04 note** (which said only the black COTTON MESH pod is
   stocked): **both the clear pod and the black pod are genuinely sold.**
 - Authoritative references, given by the owner — follow how salthub.com itself splits them, do not
