@@ -11,12 +11,12 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 2392aad (#319) [ตรวจแล้ว — git]. 06/10 night: #311 batch 1 IQOS · #312 batch 2
-  SALTHUB · #317 admin prices (16 of 17 rows, checker PASS 6/6) · #319 Coil-53 450 + INFY 20K 400 (checker: data PASS 3/3).
+1 main: `git fetch && git log -1 --oneline origin/main` = ea1608d (#322) [ตรวจแล้ว — git]. 06/10 night: #311 batch 1 IQOS · #312 batch 2
+  SALTHUB · #317 admin prices (16 of 17 rows, checker PASS 6/6) · #319 Coil-53 450 + INFY 20K 400 (checker: data PASS 3/3) · #322 image-theft guard (checker PASS 6/6).
 2 ahead of main: branch `option-photos-3` (from b03ad33) = LESSONS 28 (poster registration method) only — NOT checked yet; batch 3
   goes on it (its checker covers LESSONS 28). Material not in git: `_incoming/option-photos/` — STATE.md · scope.md · iqos/ · b1/ ·
-  b2/ (README.md = the poster-registration scripts, reusable). Branch `image-save-guard` = the image-theft guard (item 3b).
-3b IMAGE THEFT (owner in chat 06/10 night, inserted before the open round): `ImageSaveGuard` (root layout) cancels right-click and
+  b2/ (README.md = the poster-registration scripts, reusable).
+3b IMAGE THEFT — DONE #322, live 06/10 22:25; owner tested computer + phone: right-click and long-press save both blocked (owner approved): `ImageSaveGuard` (root layout) cancels right-click and
   drag on every <img>; globals.css turns off iOS long-press save. Not done, with reasons told to the owner: blocking the original
   files (og:image + JSON-LD Product image point at them; the optimiser already serves 1920 px) · metadata/invisible watermark
   (the optimiser strips it [เชื่อว่า]) · visible watermark (IMAGE_SPEC §3 bans it; owner not asked to change it). Proof
