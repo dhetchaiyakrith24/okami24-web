@@ -11,8 +11,9 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = ea1608d (#322) [ตรวจแล้ว — git]. 06/10 night: #311 batch 1 IQOS · #312 batch 2
-  SALTHUB · #317 admin prices (16 of 17 rows, checker PASS 6/6) · #319 Coil-53 450 + INFY 20K 400 (checker: data PASS 3/3) · #322 image-theft guard (checker PASS 6/6).
+1 main: `git fetch && git log -1 --oneline origin/main` = 39af184 (#326) + this docs PR [ตรวจแล้ว — git]. 06–07/10: #311 IQOS · #312
+  SALTHUB · #317 + #319 admin prices · #322 image-theft guard · #325 image-look pilot (KOKO Glass Blue + Drag S3 White live, checker PASS 5/5;
+  deploy 2f4918c success, live HTML has both v3 files) · #326 docs. No PR open from this chat.
 2 ahead of main: branch `option-photos-3` (from b03ad33) = LESSONS 28 (poster registration method) only — NOT checked yet; batch 3
   goes on it (its checker covers LESSONS 28). Material not in git: `_incoming/option-photos/` — STATE.md · scope.md · iqos/ · b1/ ·
   b2/ (README.md = the poster-registration scripts, reusable).
@@ -37,11 +38,24 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        asking, §18); m-bar-15k 349 left for item (3) (`docs/รอพี่ตรวจ.md` item 25); proof `_incoming/prices-0610/`. Admin's
        "ARGUS Multi-Ohm 3 pcs = 450": the only ARGUS pod in the catalog is Coil-21 "คอยล์ Argus Pod", Shipnity ฿450 already
        and not published — nothing to change [เชื่อว่า same item; checker #319 note];
-   (2) image look — DONE pilot #325 (owner picked B = AI studio re-shoot, own shadow + floor reflection, `ownFloor` flag; KOKO Glass Blue +
-       Drag S3 White live). Roll-out RUNNING with a 2nd chat "สร้างรูปผ่าน Higgsfield" (Chrome only, free Unlimited): its card +
-       queue + prompts = `_incoming/look-batch/` BRIEF.md · JOBS.md · PROMPTS.md (not in git); this chat keys (`_incoming/look-pilot/
-       matte.js`), checks, places, merges; line-ups composed here. Owner 07/10: Artifact review for the first 2-3 brands, then merge
-       straight (LESSONS ช13); IMAGE_SPEC rule text still to write;
+   (2) image look — RUNNING (the site chat = YOU). Pilot #325 live (B = AI studio re-shoot keeping its own shadow + floor reflection,
+       colour flag `ownFloor` hides the hero's painted oval). Roll-out with the 2nd chat "สร้างรูปผ่าน Higgsfield" (Chrome only, free
+       Unlimited to 11/10, ONE render at a time account-wide — tried a 2nd tab 07/10, same queue): its card + job board + prompts =
+       `_incoming/look-batch/` BRIEF.md · JOBS.md · PROMPTS.md (not in git). FIRST: SendMessage it your chat name ("site chat moved,
+       talk to <name>") — it still addresses the old chat "ราคา 17 รายการจากไฟล์แอดมิน". Your loop per delivery: pick -1/-2 (flat
+       backdrop, framing like the approved one) → `node _incoming/look-batch/run.js <slug> <id> <render> --base <floor y>` (KOKO base
+       1880; other products: read the floor line once from a bottom crop) = `<slug>/M-<id>.png` site canvas + C- (dark/magenta) +
+       O- (v2 outline) → look at C- and O- (logo · shape · text; tiny flaws skip, owner 07/10) → webp to
+       `public/assets/products/<slug>/variant-<id>-v3.webp` + data `ownFloor: true` + process-images map entry (copy the #325 ones).
+       J1 KOKO state 07/10: keyed coral-pink · cosmic-gray · crystal-white · desert-gold (from the -1 renders; desert gold reads a bit
+       duller than v2 — compare when all 9 are in) · waiting: golden-carbon · light-green · mirror-silver · waves-black (+ -2 of
+       cosmic-gray / desert-gold). When J1 is complete: compose the KOKO line-ups ("ทั้งหมด" 1 + 2) from the 9 new photos (no AI),
+       Artifact report for the owner (UWELL = 1 of the first 2–3 brands), one PR, checker, merge. Then J2 Drag S3 the same way.
+       After 2–3 brands approved: no Artifact, merge straight (LESSONS ช13). Still to write: the IMAGE_SPEC rule for this method.
+       Owner verdicts 07/10 (redo list = J1–J5): still graphic = relx-creator · g4-pro-koko · argus-g4-mini · drag-s3 line-up · drag-x3 ·
+       vinci-s (redo) · zero-cartridge (first image also too small) · joiway-f4 = skip (no source) · m-bar-15k: the clear pod must
+       come off the site (= item (3)) · passed: caliburn-g4-pro · argus-p3 · vmate-i3 · iqosheet-16 · iqosheet-18 · /faq + /about spec line.
+       G4 vs G4 Pro clip: the shop channel (OKM YARZ) has no comparison video — keep the guide's clips as they are;
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
    (4) then this round's batch 3 with the picked image standard. Small item: MOOOD who-for line "รส" → "กลิ่น" (§18).
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
@@ -67,9 +81,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     (`_incoming/sitewide-template/5/mood/gates/wb3.log`) lists the pre-existing flags (/about, /how-to-order, guides, G4 Pro/KOKO …) ·
     `vmate-i3/variants/*` + `argus-p3/lineup-v2.webp` unused but kept by the #286 sweep (their names appear in src/ — check by hand).
   - UWELL/VOOPOO page-level notes held for the SEO round or each page's next touch = `git show d311dba:docs/HANDOFF.md` §16 item 5.
-  - DEFERRED by the owner 04/10 + 05/10 (no date; "ไว้ค่อยกลับมาแก้"): images that "still look like graphics" (LESSONS ช9) — DRAG S3 +
-    X3 colour photos + two-group line-ups (#255) · DRAG 6 lineup-v3 (also too small) · ARGUS G4 mini images. Not fixed either (checker
-    #253 taste): text in the 3 wide DRAG 6 posters ~6–7 px at 390 · "มีโหมด SMART RBA และ TC-TCR" reads as 2.
+  - DRAG 6 lineup-v3 still too small (owner 04/10, not in the J1–J5 queue yet) · checker #253 taste: text in the 3 wide DRAG 6
+    posters ~6–7 px at 390 · "มีโหมด SMART RBA และ TC-TCR" reads as 2.
   - 7 highlight chips wrap 6 + 1 at 1440 on caliburn-g4-pro-koko and caliburn-g3-pro-koko (chip bar is lg:grid-cols-6) — shared
     component, its own small PR + whole-sitemap visible-text (checker #242: not a defect of 1d).
   - (05/10) the same "explain the absence" voice is still on product pages: INFY 20K FAQ "สเปกในหน้านี้มาจากไหน" ("INFY ยังไม่ลงรุ่น
