@@ -1356,6 +1356,12 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "IQOSHEET-16-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-1-v2.webp", alt: "IQOS ILUMA i PRIME, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-midnight-black.html" },
     "IQOSHEET-16-2": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-2-v2.webp", alt: "IQOS ILUMA i PRIME, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-breeze-blue.html" },
     "IQOSHEET-16-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/IQOSHEET-16-3-v2.webp", alt: "IQOS ILUMA i PRIME, Aspen Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
+    // Round "option photos + IQOS colours" 2026-10-06: the colours IQOS sells that Shipnity does not stock
+    // (VERIFIED_ADDITIONAL_VARIANTS below), same angle and framing as the three above
+    // (_incoming/option-photos/iqos/make.js). iqos.com has no angled photo of PRIME Electric Purple, only an
+    // upright one: our render keeps the shape of the Garnet Red photo and the colour of the Electric Purple one.
+    "iqosheet-16-verified-garnet-red": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/garnet-red.webp", alt: "IQOS ILUMA i PRIME, Garnet Red", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-garnet-red.html" },
+    "iqosheet-16-verified-electric-purple": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-16/variants/electric-purple.webp", alt: "IQOS ILUMA i PRIME, Electric Purple", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS's own Electric Purple photo", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-electric-purple.html" },
   },
   "IQOSHEET-18": {
     "IQOSHEET-18-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/IQOSHEET-18-1-v2.webp", alt: "IQOS ILUMA i, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-midnight-black.html" },
@@ -1480,6 +1486,13 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
     { code: "watermelon-ice", label: "Watermelon Ice", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "watermelon-lime", label: "Watermelon Lime", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     { code: "yogurt", label: "Yogurt", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+  ],
+  // Round "option photos + IQOS colours" 2026-10-06 (owner: every colour IQOS sells for the models the shop has).
+  // Standard colours only, read from iqos.com's own shop pages (union of markets); limited editions are not
+  // listed. Aspen Green (PRIME, a Shipnity child) is gone from some markets but still sold in others — kept.
+  "IQOSHEET-16": [
+    { code: "garnet-red", label: "Garnet Red", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-garnet-red.html" },
+    { code: "electric-purple", label: "Electric Purple", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-electric-purple.html" },
   ],
 };
 
