@@ -337,8 +337,9 @@ export const salthubProducts: Product[] = [
     // against, and Legacy Product Detail has no cart/purchase action to gate anyway.
     flavorVariants: [
       { id: "apple-aloe", name: "Apple Aloe", swatchHex: "#8ab84a", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-apple-aloe.webp", alt: "SALTHUB M Bar 15K, Apple Aloe" } },
-      // Batch 3e: Black Berry is on SALTHUB's 15K flavour chart (posters 04+05) but has no SALTHUB photo for the 15K → swatch only
-      { id: "black-berry", name: "Black Berry", swatchHex: "#5f3ac8", availability: "unknown" },
+      // Black Berry is on SALTHUB's 15K flavour chart (posters 04+05) but has no SALTHUB photo set (round "option photos" 06/10):
+      // the real Mixberry pod photo with its bands redrawn by AI after the Black Berry pod on poster 05 (_incoming/option-photos/b2/)
+      { id: "black-berry", name: "Black Berry", swatchHex: "#5f3ac8", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-black-berry.webp", alt: "SALTHUB M Bar 15K, Black Berry" } },
       { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-blue-ice.webp", alt: "SALTHUB M Bar 15K, Blue Ice" } },
       { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-cola.webp", alt: "SALTHUB M Bar 15K, Cola" } },
       { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/m-bar-15k/variant-double-mint.webp", alt: "SALTHUB M Bar 15K, Double Mint" } },
