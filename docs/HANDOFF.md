@@ -137,7 +137,7 @@ Business facts live in `docs/BUSINESS_SOURCE_OF_TRUTH.md`, Thai words in `docs/T
 
 **Shop and ordering:** the cart is closed (LAUNCH_AUDIT item 43) → LINE @okm24 · never propose reopening it · the 4
 service pages (`/warranty /shipping /how-to-order /privacy`) are not touched and carry no JSON-LD on purpose (item 49) ·
-admin page and OTP are parked · caliburn-g4-pro = Pod-181 · muro-3ml = ฿99 · overwrite the 20 owner-estimate rows in
+admin page and OTP are parked · caliburn-g4-pro = Pod-181 · muro-3ml = ฿150 (admin list, "Selling prices" below) · overwrite the 20 owner-estimate rows in
 `legacy-price-approvals.ts` only when the stock API lands.
 
 **Head copy and SEO:** e-liquid stock is 0 on the storefront → "น้ำยา" stays out of head copy except `/e-liquid` itself ·

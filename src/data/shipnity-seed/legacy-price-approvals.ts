@@ -40,19 +40,24 @@
  *     price when listed there, otherwise market price ±50–100". `shipnityProductId` is null and
  *     `evidence` starts with "owner-estimate 2026-09-21:" followed by the owner's reasoning.
  *     These are placeholders to be overwritten in one place when the stock API arrives.
+ * ADMIN PRICE LIST (owner ruling 2026-10-06, HANDOFF §18 "Selling prices"): the admin's current selling prices (17 rows,
+ * owner-confirmed 2026-10-01; the list itself stays outside git) replace the site's prices. A third basis:
+ *   - "owner-confirmed": the owner's own current selling price. It outranks the Shipnity "ราคาขาย" and is NOT a
+ *     placeholder — the stock API must not overwrite it. `shipnityProductId` keeps the matched parent (or null); `evidence`
+ *     starts with "owner-confirmed <ISO date>:", names the list row and the old price, then keeps the original match note.
  * `basis` is an internal tag only — no component reads it and no customer ever sees it.
  */
 
-export type LegacyPriceBasis = "shipnity" | "owner-estimate";
+export type LegacyPriceBasis = "shipnity" | "owner-estimate" | "owner-confirmed";
 
 export interface LegacyPriceApproval {
-  /** THB, integer. The price a customer pays — verbatim "ราคาขาย" of the matched Shipnity parent, or the owner's estimate. */
+  /** THB, integer. The price a customer pays — verbatim "ราคาขาย" of the matched Shipnity parent, the owner's estimate, or the owner's confirmed price. */
   sellingPrice: number;
   /** ISO date the price was reviewed/approved. */
   lastPriceReview: string;
-  /** Shipnity parent code, e.g. "Pod-168". `null` only when `basis` is "owner-estimate". */
+  /** Shipnity parent code, e.g. "Pod-168". `null` when `basis` is "owner-estimate" (optional for "owner-confirmed"). */
   shipnityProductId: string | null;
-  /** Where the number comes from — see the header ("shipnity" | "owner-estimate"). Internal only. */
+  /** Where the number comes from — see the header ("shipnity" | "owner-estimate" | "owner-confirmed"). Internal only. */
   basis: LegacyPriceBasis;
   /** How the legacy product was matched to that parent — see the header for the three tiers. */
   evidence: string;
@@ -68,18 +73,18 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     evidence: 'exact-legacy-match: Shipnity "Caliburn G4 Pro" (Pod-168, 4 colours, ฿1190) — exactLegacyMatch in active-catalog-to-product-master.ts; re-verified 2026-09-21: price unchanged ฿1,190; parent re-coded Pod-168 → Pod-181',
   },
   "argus-g4": {
-    sellingPrice: 1090,
-    lastPriceReview: "2026-09-05",
-    basis: "shipnity",
+    sellingPrice: 1100,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Pod-179",
-    evidence: 'exact-legacy-match: Shipnity "Voopoo Argus G4" (Pod-179, 6 colours, ฿1090); 6 of 6 Excel colour names are in the legacy colour list',
+    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "Argus G4" ฿1090 → ฿1100 · match was — exact-legacy-match: Shipnity "Voopoo Argus G4" (Pod-179, 6 colours, ฿1090); 6 of 6 Excel colour names are in the legacy colour list',
   },
   "vmate-i3": {
-    sellingPrice: 690,
-    lastPriceReview: "2026-09-05",
-    basis: "shipnity",
+    sellingPrice: 800,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Pod-177",
-    evidence: 'exact-legacy-match: Shipnity "Vmate i3" (Pod-177, 5 colours, ฿690); 5 of 5 Excel colour names are in the legacy colour list',
+    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "Vmate i3" ฿690 → ฿800 · match was — exact-legacy-match: Shipnity "Vmate i3" (Pod-177, 5 colours, ฿690); 5 of 5 Excel colour names are in the legacy colour list',
   },
   "zero-pro": {
     sellingPrice: 990,
@@ -89,25 +94,25 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     evidence: 'exact-legacy-match: Shipnity "Marbo Zero Pro" (Pod-178, 8 colours, ฿990) — pre-rebrand name of SALTHUB Zero Pro; 6 of 8 Excel colour names match',
   },
   "zero-cartridge": {
-    sellingPrice: 129,
-    lastPriceReview: "2026-09-05",
-    basis: "shipnity",
+    sellingPrice: 150,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Pod-85",
-    evidence: 'exact-legacy-match: Shipnity "หัวพอต Marbo Zero" (Pod-85, 31 flavours, ฿129) — the Zero pod head; both legacy flavours are in the Excel list',
+    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "หัว Marbo Zero" ฿129 → ฿150 · match was — exact-legacy-match: Shipnity "หัวพอต Marbo Zero" (Pod-85, 31 flavours, ฿129) — the Zero pod head; both legacy flavours are in the Excel list',
   },
   "m-bar-9k": {
-    sellingPrice: 349,
-    lastPriceReview: "2026-09-05",
-    basis: "shipnity",
+    sellingPrice: 350,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Disposable-25",
-    evidence: 'exact-legacy-match: Shipnity "Marbo Bar 9K" (Disposable-25, 23 flavours, ฿349); 21 of 22 legacy flavours are in the Excel list',
+    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "Marbo 9K" ฿349 → ฿350 · match was — exact-legacy-match: Shipnity "Marbo Bar 9K" (Disposable-25, 23 flavours, ฿349); 21 of 22 legacy flavours are in the Excel list',
   },
   "m-switch-pod": {
-    sellingPrice: 349,
-    lastPriceReview: "2026-09-05",
-    basis: "shipnity",
+    sellingPrice: 400,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Pod-147",
-    evidence: 'exact-legacy-match: Shipnity "M Switch 15k" (Pod-147, 17 flavours, ฿349) — the prefilled cartridge; 16 of 18 legacy flavours are in the Excel list',
+    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "หัว M Bar 15K" ฿349 → ฿400 · match was — exact-legacy-match: Shipnity "M Switch 15k" (Pod-147, 17 flavours, ฿349) — the prefilled cartridge; 16 of 18 legacy flavours are in the Excel list',
   },
 
   // ---- Tier 2: the Shipnity parent's own name is the legacy product (Unbranded tier) --------
@@ -126,25 +131,25 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     evidence: 'active-parent-name: Shipnity "Muro Space 15k" (Disposable-38, 15 flavours, ฿329); 5 of 5 legacy flavours are in the Excel list',
   },
   "muro-3ml": {
-    sellingPrice: 99,
-    lastPriceReview: "2026-09-05",
-    basis: "shipnity",
+    sellingPrice: 150,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Pod-120",
-    evidence: 'active-parent-name: Shipnity "Muro 3 ML" (Pod-120, 14 flavours, ฿99); 10 of 10 legacy flavours are in the Excel list; re-verified 2026-09-21 against vapenow.shop (฿99); Shipnity parent Pod-120 not in the 21/09 listing',
+    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "หัว Muro 3 ml" ฿99 → ฿150 · match was — active-parent-name: Shipnity "Muro 3 ML" (Pod-120, 14 flavours, ฿99); 10 of 10 legacy flavours are in the Excel list; re-verified 2026-09-21 against vapenow.shop (฿99); Shipnity parent Pod-120 not in the 21/09 listing',
   },
   "muro-sc-8000": {
-    sellingPrice: 259,
-    lastPriceReview: "2026-09-05",
-    basis: "shipnity",
+    sellingPrice: 300,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Pod-166",
-    evidence: 'active-parent-name: Shipnity "Muro SC 8000 Puffs" (Pod-166, 12 flavours, ฿259); 8 of 8 legacy flavours are in the Excel list',
+    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "Muro SC 8000 Puff" ฿259 → ฿300 · match was — active-parent-name: Shipnity "Muro SC 8000 Puffs" (Pod-166, 12 flavours, ฿259); 8 of 8 legacy flavours are in the Excel list',
   },
   "muro-connector-20k": {
-    sellingPrice: 259,
-    lastPriceReview: "2026-09-05",
-    basis: "shipnity",
+    sellingPrice: 300,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Pod-171",
-    evidence: 'active-parent-name: Shipnity "Muro Connector 20k" (Pod-171, 33 flavours, ฿259); 20 of 20 legacy flavours are in the Excel list',
+    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "Muro Connector 20K" ฿259 → ฿300 · match was — active-parent-name: Shipnity "Muro Connector 20k" (Pod-171, 33 flavours, ฿259); 20 of 20 legacy flavours are in the Excel list',
   },
   "vazer-one-pod": {
     sellingPrice: 59,
@@ -165,18 +170,18 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
   // Flagged for owner confirmation in the 2026-09-05 report; remove the entry to revert the product
   // to browse-only if the match is wrong.
   "joiway-f3": {
-    sellingPrice: 329,
-    lastPriceReview: "2026-09-05",
-    basis: "shipnity",
+    sellingPrice: 350,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Pod-133",
-    evidence: 'child-option-match: Pod-133 (20 flavours, ฿329, Excel remaining 0 on 31-08). 15 of the 16 original Joiway F3 flavours are in its list (only "Funta Grape" absent — Excel has "Funta Green", the known Grape/Green naming question); the other Excel-only name is "Vodka" vs legacy "Vodak". No other Excel group overlaps F3 by more than 6 names.',
+    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "Joiway F3" ฿329 → ฿350 · match was — child-option-match: Pod-133 (20 flavours, ฿329, Excel remaining 0 on 31-08). 15 of the 16 original Joiway F3 flavours are in its list (only "Funta Grape" absent — Excel has "Funta Green", the known Grape/Green naming question); the other Excel-only name is "Vodka" vs legacy "Vodak". No other Excel group overlaps F3 by more than 6 names.',
   },
   "m-bar-10k": {
-    sellingPrice: 379,
-    lastPriceReview: "2026-09-05",
-    basis: "shipnity",
+    sellingPrice: 400,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Pod-172",
-    evidence: 'child-option-match: Pod-172 (12 flavours, ฿379). 11 of 12 Excel flavours are in the legacy M Bar 10K list (Excel-only: "Matcha Late"); the runner-up group (Pod-156, ฿550) overlaps only 6 of 12.',
+    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "Marbo 10K" ฿379 → ฿400 · match was — child-option-match: Pod-172 (12 flavours, ฿379). 11 of 12 Excel flavours are in the legacy M Bar 10K list (Excel-only: "Matcha Late"); the runner-up group (Pod-156, ฿550) overlaps only 6 of 12.',
   },
 
   // ---- Prices round 2026-09-21, basis "shipnity": 9 parents read by Cowork from the Shipnity ----
@@ -189,11 +194,11 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     evidence: 'shipnity-backoffice: "Infy 20000" (Pod-170, ฿369) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
   },
   "relx-smash-go-12k": {
-    sellingPrice: 299,
-    lastPriceReview: "2026-09-21",
-    basis: "shipnity",
+    sellingPrice: 320,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Disposable-39",
-    evidence: 'shipnity-backoffice: "RELX Smash GO 12K" (Disposable-39, ฿299) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "RELX Smash Go 12K" ฿299 → ฿320 · match was — shipnity-backoffice: "RELX Smash GO 12K" (Disposable-39, ฿299) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
   },
   "relx-creator": {
     sellingPrice: 250,
@@ -203,11 +208,11 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     evidence: 'shipnity-backoffice: "Relx Creator (เครื่อง)" (Pod-138, ฿250) — the device; the legacy record is modelled as the 22K device generation, not the prefilled pod (Pod-137 "Relx Creator Pod 20K" ฿349) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
   },
   "m-switch-kit": {
-    sellingPrice: 550,
-    lastPriceReview: "2026-09-21",
-    basis: "shipnity",
+    sellingPrice: 600,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Pod-156",
-    evidence: 'shipnity-backoffice: "ชุดเซ็ท M Switch 15k" (Pod-156, ฿550) — the device + pod set — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+    evidence: 'owner-confirmed 2026-10-06: admin current-price list row "M Switch Kit" ฿550 → ฿600 · match was — shipnity-backoffice: "ชุดเซ็ท M Switch 15k" (Pod-156, ฿550) — the device + pod set — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
   },
   "tfit-m-power-20k": {
     sellingPrice: 320,

@@ -71,7 +71,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // VERIFIED_MEDIA["Coil-55"] — the retail box explicitly reads "CALIBURN G2 Empty Cartridge" /
   // "2 PCS", matching this record's real identity and child count exactly). Single unambiguous
   // operationalSellingPrice.
-  "Coil-55": { sellingPrice: 299, lastPriceReview: "2026-09-01" },
+  "Coil-55": { sellingPrice: 250, lastPriceReview: "2026-10-06" }, // owner override 2026-10-06: admin list row "Tang Caliburn G2" (was ฿299)
   // Same pricing rule, fifth wave: real tier-2 media closed the gap AND resolved the resistance-
   // identity conflict in the same source (see VERIFIED_MEDIA["Coil-53"] / TAXONOMY_MATCHES["Coil-53"]
   // — the retail box explicitly reads "1 Ω", and myuwell.com's own Caliburn G2 page confirms 1.0Ω
@@ -86,10 +86,10 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   //   ^ WITHDRAWN 2026-09-06 (owner decision, LAUNCH_AUDIT item 11): card image carries another
   //     shop's text baked into the picture. Entry removed = unpublished; data/media/copy kept.
   //     Re-add this line to republish once a clean photo exists.
-  "Coil-1": { sellingPrice: 130, lastPriceReview: "2026-09-02" },
-  "Coil-72": { sellingPrice: 350, lastPriceReview: "2026-09-02" },
+  "Coil-1": { sellingPrice: 150, lastPriceReview: "2026-10-06" }, // owner override 2026-10-06: admin list row "Coil Voopoo Vinci" (was ฿130)
+  "Coil-72": { sellingPrice: 300, lastPriceReview: "2026-10-06" }, // owner override 2026-10-06: admin list row "Coil Vmate" (was ฿350)
   "Coil-94": { sellingPrice: 450, lastPriceReview: "2026-09-02" },
-  "Pod-159": { sellingPrice: 549, lastPriceReview: "2026-09-02" },
+  "Pod-159": { sellingPrice: 450, lastPriceReview: "2026-10-06" }, // owner override 2026-10-06: admin list row "Esko Bar Switch 20K" (was ฿549)
   "coil-54": { sellingPrice: 250, lastPriceReview: "2026-09-02" },
   // Heated-tobacco wave — same pricing rule, same full readiness (identity/brand/category/media/
   // price all real and cited — see TAXONOMY_MATCHES/VERIFIED_MEDIA/VERIFIED_SPECIFICATIONS
