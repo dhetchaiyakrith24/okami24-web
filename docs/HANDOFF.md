@@ -17,7 +17,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   nothing more runs under it: the next round needs the owner's approved round file.
 1 main: `git fetch && git log -1 --oneline origin/main` = 5d779f1 (#308) + this docs PR on top [ตรวจแล้ว — git]. Merged 06/10 morning: #308 MOOOD Monster 14K
   (checker 3 rounds → PASS at 222bffe · GitHub checks green · self-merge-check BIG) → merge 5d779f1 → deploy run 37392951350 success → live 200 on /products/mood-monster-14k · /brands/moood · /about · / (curl, after ~2 min of Render's swap).
-2 ahead of main: nothing. Material not in git: `_incoming/sitewide-template/` (per batch; MOOOD = `5/mood/` — official/ (Wayback copies) ·
+2 ahead of main: nothing besides this docs PR [ตรวจแล้ว — git]. Material not in git: `_incoming/sitewide-template/` (per batch; MOOOD = `5/mood/` — official/ (Wayback copies) ·
   maneevp/ + retail/ (shop copies of the maker template / the 5% labels) · ai/ (renders r-*, normalized n-*, final t-*, jobs.tsv) ·
   compose.js · fid-sheet.png · gates/) · close evidence `_incoming/sitewide-template/close/`. Folders `_incoming/wt-rules-0610` + `wt-d`
   = locked by Windows, delete when free.
@@ -101,9 +101,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     article H3 font reads narrow (designer note).
   - Housekeeping queue: OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบเก็บบ้าน-ครั้งถัดไป-ของที่รอ.txt` (+ owner 03/10 (D) lower
     chat-move threshold in image rounds · (E) lighter rules).
-6 verify baseline at this close (round "sitewide template", 06/10, main 5d779f1 tree; numbers as printed): tsc 0 · verify:commerce
+6 verify baseline at this close (round "sitewide template", 06/10, main 5d779f1 tree; numbers as printed) [ตรวจแล้ว]: tsc 0 · verify:commerce
   17/17 · verify:catalog --full 31/31 · count-storefront 56/56 (38 legacy + 18 ProductMaster) · i18n 16/16 · thai-raw-chars 0 ·
-  scan.js 0/112 · og-gate 112/112 · logs `_incoming/sitewide-template/close/`.
+  scan.js 0/112 · og-gate 112/112 · logs `_incoming/sitewide-template/close/` (scan = `5/mood/gates/scan3.log` at 222bffe, same tree;
+  i18n + thai-raw-chars printed in the chat, re-run by checker #309). Tag sitewide-template-done = 5b68440 (this PR's first commit).
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` (+ the round file the owner approves next)
   (cloud chat: + `docs/CLOUD.md` item 3)
 ```
