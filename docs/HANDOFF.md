@@ -11,12 +11,16 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 39af184 (#326) + this docs PR [ตรวจแล้ว — git]. 06–07/10: #311 IQOS · #312
-  SALTHUB · #317 + #319 admin prices · #322 image-theft guard · #325 image-look pilot (KOKO Glass Blue + Drag S3 White live, checker PASS 5/5;
-  deploy 2f4918c success, live HTML has both v3 files) · #326 docs. No PR open from this chat.
-2 ahead of main: branch `option-photos-3` (from b03ad33) = LESSONS 28 (poster registration method) only — NOT checked yet; batch 3
-  goes on it (its checker covers LESSONS 28). Material not in git: `_incoming/option-photos/` — STATE.md · scope.md · iqos/ · b1/ ·
-  b2/ (README.md = the poster-registration scripts, reusable).
+1 main: `git fetch && git log -1 --oneline origin/main` = c5350c0 (#328) [ตรวจแล้ว — git]. 07/10: #328 = G4 Pro KOKO image look done —
+  9 colours (glass-blue v4 re-keyed) + card-v3 + line-ups v4 live (deploy success, live HTML lists all 12 new files [ตรวจแล้ว curl]);
+  checker FAIL 1/7 (mirror-silver colour) → owner "ลงไปเลย" → re-check PASS 4/4 at 929f875; owner passed KOKO 07/10.
+  Open: PR #329 DRAFT (Drag S3 — owner failed the set, see item 3 (2)).
+2 ahead of main: branch `image-look-drag-s3` (`git log --oneline origin/main..image-look-drag-s3`): 8b49fdc + 29b0a4f + 4ca02a7 = the
+  FAILED Drag S3 images (checker PASS 6/6 at 29b0a4f, owner FAIL — to be replaced on this branch) · 28fe779 + 5804658 = LESSONS ch13
+  (owner review-page format · "okay ≠ standard") · d5bcb0f + d49df47 = IMAGE_PROMPTS v3 added then reverted (misread) — net: docs fine,
+  images to replace. Branch `option-photos-3` (from b03ad33) = LESSONS 28 only, NOT checked; batch 3 goes on it. Not in git:
+  `_incoming/option-photos/` (STATE.md · scope.md · iqos/ · b1/ · b2/) and `_incoming/look-batch/` (below). Test server 3412 = up
+  (Drag S3 branch build) — stop it before the next build.
 3b IMAGE THEFT — DONE #322, live 06/10 22:25; owner tested computer + phone: right-click and long-press save both blocked (owner approved): `ImageSaveGuard` (root layout) cancels right-click and
   drag on every <img>; globals.css turns off iOS long-press save. Not done, with reasons told to the owner: blocking the original
   files (og:image + JSON-LD Product image point at them; the optimiser already serves 1920 px) · metadata/invisible watermark
@@ -38,23 +42,31 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        asking, §18); m-bar-15k 349 left for item (3) (`docs/รอพี่ตรวจ.md` item 25); proof `_incoming/prices-0610/`. Admin's
        "ARGUS Multi-Ohm 3 pcs = 450": the only ARGUS pod in the catalog is Coil-21 "คอยล์ Argus Pod", Shipnity ฿450 already
        and not published — nothing to change [เชื่อว่า same item; checker #319 note];
-   (2) image look — RUNNING (the site chat = YOU). Pilot #325 live (B = AI studio re-shoot keeping its own shadow + floor reflection,
-       colour flag `ownFloor` hides the hero's painted oval). Roll-out with the 2nd chat "สร้างรูปผ่าน Higgsfield" (Chrome only, free
-       Unlimited to 11/10, ONE render at a time account-wide — tried a 2nd tab 07/10, same queue): its card + job board + prompts =
-       `_incoming/look-batch/` BRIEF.md · JOBS.md · PROMPTS.md (not in git). FIRST: SendMessage it your chat name ("site chat moved,
-       talk to <name>") — it still addresses the old chat "ราคา 17 รายการจากไฟล์แอดมิน". Your loop per delivery: pick -1/-2 (flat
-       backdrop, framing like the approved one) → `node _incoming/look-batch/run.js <slug> <id> <render> --base <floor y>` (KOKO base
-       1880; other products: read the floor line once from a bottom crop) = `<slug>/M-<id>.png` site canvas + C- (dark/magenta) +
-       O- (v2 outline) → look at C- and O- (logo · shape · text; tiny flaws skip, owner 07/10) → webp to
-       `public/assets/products/<slug>/variant-<id>-v3.webp` + data `ownFloor: true` + process-images map entry (copy the #325 ones).
-       J1 KOKO state 07/10: keyed coral-pink · cosmic-gray · crystal-white · desert-gold (from the -1 renders; desert gold reads a bit
-       duller than v2 — compare when all 9 are in) · waiting: golden-carbon · light-green · mirror-silver · waves-black (+ -2 of
-       cosmic-gray / desert-gold). When J1 is complete: compose the KOKO line-ups ("ทั้งหมด" 1 + 2) from the 9 new photos (no AI),
-       Artifact report for the owner (UWELL = 1 of the first 2–3 brands), one PR, checker, merge. Then J2 Drag S3 the same way.
-       After 2–3 brands approved: no Artifact, merge straight (LESSONS ช13). Still to write: the IMAGE_SPEC rule for this method.
-       Owner verdicts 07/10 (redo list = J1–J5): still graphic = relx-creator · g4-pro-koko · argus-g4-mini · drag-s3 line-up · drag-x3 ·
-       vinci-s (redo) · zero-cartridge (first image also too small) · joiway-f4 = skip (no source) · m-bar-15k: the clear pod must
-       come off the site (= item (3)) · passed: caliburn-g4-pro · argus-p3 · vmate-i3 · iqosheet-16 · iqosheet-18 · /faq + /about spec line.
+   (2) image look — RUNNING (the site chat = YOU). Method = IMAGE_SPEC §0 item 8 · prompt wording = docs/IMAGE_PROMPTS.md (v2 in use,
+       v1 backup; ≤3 versions, owner 07/10) · review page format = LESSONS ช13 (big images, zoom 2–3x before|after, NO site screenshots,
+       one-letter questions). The image chat "สร้างรูปผ่าน Higgsfield" renders through Chrome (free Unlimited to 11/10, one render at a
+       time account-wide, shared with the dive chat — max 3 queued each); FIRST SendMessage it your chat name ("site chat moved, talk to
+       <name>"; it now addresses "KOKO รูปผ่าน Higgsfield"). Board = `_incoming/look-batch/JOBS.md` + BRIEF.md (not in git).
+       Your loop: `node _incoming/look-batch/run.js <slug> <id> <render> [--base N] [--tag r2] [--floorFade]` (floor line auto; KOKO used
+       1880) → M- (site canvas) · C- (dark/magenta) · D- (device only, full size) · O- → pick → map entries like `koko-map.js` /
+       `drag-map.js` → `npx tsx scripts/process-images.ts --map <file>` → data `ownFloor: true` → line-ups by script (koko-lineup.js = own
+       floors; relx-lineup.js = tilted RELX layout; ds-lineup-floor.js [--row] = standing drafts) → `zoom-pairs.js` + review page → PR →
+       checker. Pilot renders sit ~8% bigger: re-key them (done: KOKO glass-blue v4, Drag S3 white v4). New file name on every replace.
+       DONE: J1 KOKO (#328, owner passed 07/10). J2 Drag S3 = FAILED by the owner 07/10: "เอาให้สวยแบบ KOKO ขั้นต่ำคือ G5" — the new set
+       looked like the old one (old v2 photos were already AI-relit 02/10 and "keep exactly" kept their light; mean luma Blue 100→96 vs
+       KOKO coral 105→73). "Okay ≠ standard" (LESSONS ช13). Owner then: retest with the FULL KOKO prompt (v2), NO image 2 (no new render as
+       pose/tone guide), and fix the Drag source. In the image chat queue 07/10: blue-K1/K2 (image 1 = in-blue.png = site photo) +
+       blue-K3/K4 (image 1 = orig-blue.png = the real vapevo photo via `prep-orig.js`; orig-<id>.png ready for all 7); also landing
+       blue-L1..L3 (G5 light ref + pilot pose — dropped idea, spend nothing more). NEXT: key K1–K4, show the owner big before|after
+       (old v2 · K site-ref · K real-ref) — test ONE colour before any full set. Researcher 07/10: no real Drag S3 photo larger than
+       vapevo's 218×751 (vapesourcing ~590 px tall device, voopoo.com ~400 px) — orig-*.png stay the best real source [เชื่อว่า, sizes by eye].
+       voopoo.com/drag-series/drag-s3 lists 3 NEW colours (Lake Green · Cherry Pink · Brooklyn Gray) not in our 7 [เชื่อว่า] — catalog rule → data round. Open owner choices on the Drag review page
+       https://claude.ai/artifact/LawnY3T4NTdWGtiqdnmVoN: line-up draft 2 (standing row) recommended · EVEREST LAB micro-text patch from
+       the maker photo recommended. White (pilot, live) is redone with the set. J3 drag-x3 ON HOLD (sky-blue-1 · aurora-purple-2 ·
+       champagne-golden-1 keyed with v2, glow-pink renders saved — likely redo the same way as Drag S3) · J4 relx-creator · argus-g4-mini ·
+       J5 zero-cartridge not started. Owner verdicts 07/10 still to do: relx-creator · argus-g4-mini · drag-x3 · vinci-s · zero-cartridge
+       (first image too small) · joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)) · passed: caliburn-g4-pro · argus-p3 ·
+       vmate-i3 · iqosheet-16/18. Known matte limit (checker #329): black drip tips key slightly translucent (fine on the dark site).
        G4 vs G4 Pro clip: the shop channel (OKM YARZ) has no comparison video — keep the guide's clips as they are;
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
    (4) then this round's batch 3 with the picked image standard. Small item: MOOOD who-for line "รส" → "กลิ่น" (§18).
