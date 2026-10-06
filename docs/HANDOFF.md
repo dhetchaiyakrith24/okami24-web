@@ -152,6 +152,9 @@ the 7 baseline pages are worked on like any other page; the final SEO round poli
 **Text length per product page (owner 03/10):** 1,000–3,500 unique Thai characters of main content (spec table not counted) +
 the same fact at most twice outside the spec table — "ตอนนี้กำลังสวย ไม่ต้องลดเนื้อหา" (proposal: `_incoming/g5-template/seo-text-length.md`).
 
+**Catalog options sold in one market only (owner 06/10 night, "ใส่ไว้ครับ"):** a colour/flavour the maker sells in a single
+market (e.g. IQOS ILUMA i Bold Ruby, jp.iqos.com only) is listed like every other option — non-purchasable until stocked.
+
 **Brand logos (owner 03/10):** every brand's own logo goes on its product pages — "ใส่ตรงไหนตัดสินใจได้เลย"; Friday placed it
 in the product hero in place of the brand chip, linked to the brand page; maker-served files only (light version for the dark site).
 
