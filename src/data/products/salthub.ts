@@ -908,6 +908,9 @@ export const salthubProducts: Product[] = [
     // Batch 3d (05/10): every flavour SALTHUB names (catalog completeness rule) — the 21 packs of its home slider "FLAVORS —
     // ZERO PRO" + Strawberry (the home card's pod label); _incoming/sitewide-template/3/facts-zero-cartridge.md. The shop's own
     // Shipnity children (Pod-85) are Apple Aloe + Fruit Tea. Swatch = the mean of the saturated pixels of SALTHUB's pack art (3d/names-and-swatches.js).
+    // Round "option photos" 06/10: now that every flavour has a photo the hero would lead with the first flavour — it keeps
+    // opening on the card (SALTHUB's own Strawberry pod) as before, like every other SALTHUB page; flavours by swipe or chip.
+    openOnCardPhoto: true,
     // Photos (round "option photos" 06/10): each pod cut from SALTHUB's own flavour poster with one outline common to all 21;
     // Strawberry (no poster) = the real Peach Strawberry pod + an AI-drawn Strawberry band after SALTHUB's home-card pod
     // (_incoming/option-photos/b2/). `availability: "unknown"` as every Legacy SALTHUB product.
