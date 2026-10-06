@@ -24,8 +24,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Black Berry band. iqosheet-17 (ILUMA ONE) not published = out of scope. Credits this round: 17.
   checker #312 taste notes (not fixed, source-bound): Apple Aloe / Ice Sparkling labels faint as in SALTHUB's posters · Strawberry
   bottom corners show a ~1 px grey pod-rim line at 5x zoom.
-  NEXT (new chat, moved at ~600k context): batch 3 — re-measure the gaps first (`_incoming/sitewide-template/5/mood/count-gaps.ts`),
-  find each product's maker images (LESSONS 18–20 · 27 · 28), then the same proof chain as #312 (b2/proof).
+  PAUSED 06/10 night (owner): before batch 3, agree how to make images look like studio photos, not graphics (owner-review
+  list 23 · Friday's proposal = the report of that chat: diagnose → pilot 2–3 methods on MOOOD + one more → owner picks → IMAGE_SPEC rule).
+  Also queued by the owner: selling prices from the admin (§18 "Selling prices") · M Bar 15K black pod only (list 22, BSOT conflict) ·
+  MOOOD who-for line. Order = the owner's pick (one chat = one round).
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
@@ -154,6 +156,14 @@ the same fact at most twice outside the spec table — "ตอนนี้กำ
 
 **Catalog options sold in one market only (owner 06/10 night, "ใส่ไว้ครับ"):** a colour/flavour the maker sells in a single
 market (e.g. IQOS ILUMA i Bold Ruby, jp.iqos.com only) is listed like every other option — non-purchasable until stocked.
+
+**MOOOD Monster 14K (owner 06/10 night):** Grape N5% / Blueberry N5% keep the real frosted body (A) · flavour list = maker 19 + the
+shop's 2 N5% · "Sugar Apple" as printed · nicotine row 3% · official-site link to the Wayback copy · no story section, 220 chars OK ·
+who-for line: change "รส" → "…ที่มีกลิ่นให้เลือกหลายกลิ่น" (to do).
+
+**Selling prices (owner 06/10 night):** the admin's current prices in `รายงานจากแอดมิน แชท/รายงานสินค้า-ราคาไม่ตรง.txt` (17 rows,
+confirmed by the owner 01/10) replace the site's prices — this supersedes "overwrite only when the stock API lands" above for those rows.
+That folder also holds admin chat screenshots: never add it to git.
 
 **Brand logos (owner 03/10):** every brand's own logo goes on its product pages — "ใส่ตรงไหนตัดสินใจได้เลย"; Friday placed it
 in the product hero in place of the brand chip, linked to the brand page; maker-served files only (light version for the dark site).
