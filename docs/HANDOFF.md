@@ -37,8 +37,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        asking, §18); m-bar-15k 349 left for item (3) (`docs/รอพี่ตรวจ.md` item 25); proof `_incoming/prices-0610/`. Admin's
        "ARGUS Multi-Ohm 3 pcs = 450": the only ARGUS pod in the catalog is Coil-21 "คอยล์ Argus Pod", Shipnity ฿450 already
        and not published — nothing to change [เชื่อว่า same item; checker #319 note];
-   (2) image-look pilot — methods A (script: tame clipped whites + studio light falloff, 0 credits) AND B (AI studio relight + the
-       maker's pixels pasted back over logo/text/screen), on MOOOD 1 flavour + Drag S3 1 colour, beside G5 → owner picks → IMAGE_SPEC rule;
+   (2) image look — DONE pilot #325 (owner picked B = AI studio re-shoot, own shadow + floor reflection, `ownFloor` flag; KOKO Glass Blue +
+       Drag S3 White live). Roll-out RUNNING with a 2nd chat "สร้างรูปผ่าน Higgsfield" (Chrome only, free Unlimited): its card +
+       queue + prompts = `_incoming/look-batch/` BRIEF.md · JOBS.md · PROMPTS.md (not in git); this chat keys (`_incoming/look-pilot/
+       matte.js`), checks, places, merges; line-ups composed here. Owner 07/10: Artifact review for the first 2-3 brands, then merge
+       straight (LESSONS ช13); IMAGE_SPEC rule text still to write;
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
    (4) then this round's batch 3 with the picked image standard. Small item: MOOOD who-for line "รส" → "กลิ่น" (§18).
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
