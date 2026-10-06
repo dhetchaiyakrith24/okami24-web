@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-06",
-  "endDate": "2026-10-03",
+  "startDate": "2026-09-07",
+  "endDate": "2026-10-04",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 399,
-   "impressions": 1727,
-   "ctr": 0.23103647944412276,
-   "position": 8.96757382744644
+   "clicks": 418,
+   "impressions": 1929,
+   "ctr": 0.21669258683255574,
+   "position": 8.893208916537066
   },
   {
    "keys": [
@@ -30,9 +30,9 @@
     "idn"
    ],
    "clicks": 1,
-   "impressions": 2,
-   "ctr": 0.5,
-   "position": 30.5
+   "impressions": 3,
+   "ctr": 0.3333333333333333,
+   "position": 31.333333333333332
   },
   {
    "keys": [
@@ -78,6 +78,15 @@
    "impressions": 1,
    "ctr": 0,
    "position": 42
+  },
+  {
+   "keys": [
+    "fra"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 34
   },
   {
    "keys": [
@@ -129,9 +138,9 @@
     "mex"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "ctr": 0,
-   "position": 104
+   "position": 52.5
   },
   {
    "keys": [
@@ -192,9 +201,18 @@
     "usa"
    ],
    "clicks": 0,
-   "impressions": 5,
+   "impressions": 8,
    "ctr": 0,
-   "position": 43.8
+   "position": 54.25
+  },
+  {
+   "keys": [
+    "ven"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 1
   }
  ]
 }
