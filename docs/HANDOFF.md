@@ -11,24 +11,20 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-0 TEMPORARY owner instruction (06/10 ~05:15, before sleeping) — expires when the owner is back and reviews (06/10 daytime); delete
-  this item then: "เมื่อทำเสร็จแล้ว ตรวจแล้ว ไปตัวต่อไปได้เลยตามลำดับ · ไม่ต้องแวะถาม ทำได้เลย พรุ่งนี้พี่มาตรวจทีเดียว · เพดานการสร้าง
-  ตั้งไว้ที่ 300 เครดิต" (Higgsfield). Used 06/10 morning: 84 credits (MOOOD, 21 renders × 4). The list it covered is DONE (item 3) —
-  nothing more runs under it: the next round needs the owner's approved round file.
-1 main: `git fetch && git log -1 --oneline origin/main` = 5d779f1 (#308) + this docs PR on top [ตรวจแล้ว — git]. Merged 06/10 morning: #308 MOOOD Monster 14K
-  (checker 3 rounds → PASS at 222bffe · GitHub checks green · self-merge-check BIG) → merge 5d779f1 → deploy run 37392951350 success → live 200 on /products/mood-monster-14k · /brands/moood · /about · / (curl, after ~2 min of Render's swap).
-2 ahead of main: nothing besides this docs PR [ตรวจแล้ว — git]. Material not in git: `_incoming/sitewide-template/` (per batch; MOOOD = `5/mood/` — official/ (Wayback copies) ·
-  maneevp/ + retail/ (shop copies of the maker template / the 5% labels) · ai/ (renders r-*, normalized n-*, final t-*, jobs.tsv) ·
-  compose.js · fid-sheet.png · gates/) · close evidence `_incoming/sitewide-template/close/`. Folders `_incoming/wt-rules-0610` + `wt-d`
-  = locked by Windows, delete when free.
-3 OPEN: none — round "sitewide template, brand by brand" (`docs/rounds/รอบไล่ทั้งเว็บ-ตามแม่แบบG5-ทีละแบรนด์-03-10.txt`) CLOSED 06/10,
-  tag `sitewide-template-done` [ตรวจแล้ว]. Batches: 1 UWELL · 2 VOOPOO (#248–#271) · 3 SALTHUB · 4 RELX/JOIWAY/TFIT · 5a #283 · 6 #284 ·
-  7 #286 · (d) TFIT #301 · (e) M Bar 15K #303/#306 · (f) MOOOD #308. Skipped (owner): INFY 20K + Muro ×3 (no maker material) ·
-  pod-180 brandless. Product × part table: `_incoming/sitewide-template/7/table.md` (regenerated at the close; its "colour photos"
-  column counts colour options only).
-  NEXT = owner's call: draft round file `docs/rounds/ร่าง-รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt` [รอเจ้าของ] (option photos: 60 of 526
-  options without a photo, measured 06/10 by `_incoming/sitewide-template/5/mood/count-gaps.ts` · IQOS colour completeness). Do not
-  start it before the owner approves it.
+1 main: `git fetch && git log -1 --oneline origin/main` = 5644357 (#310) [ตรวจแล้ว — git]. 06/10: #308 MOOOD (live, curl 200) · #309 round
+  close (tag sitewide-template-done = 5b68440) · #310 owner-review list moved to `docs/รอพี่ตรวจ.md`. The owner's night-time run-on
+  instruction ended when the owner came back (06/10 pm: "ทำต่อเลย … รันต่อได้เลย" = approved the next round, see item 3).
+2 ahead of main: branch `option-photos-1-iqos` (`git log --oneline origin/main..origin/option-photos-1-iqos`): the approved round
+  file (docs/rounds rename + scope block) + this §16 — docs only, NOT checked yet, no site change yet. Material not in git:
+  `_incoming/option-photos/` — STATE.md (read first) · scope.md · iqos/ (official images) · `_incoming/sitewide-template/` (last round).
+3 OPEN: round "option photos + IQOS colours" = `docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt` (owner approved 06/10 pm).
+  Batches (all tier B): 1 IQOS colours complete (iqosheet-16/18) · 2 Zero Cartridge 22 + M Bar 15K Black Berry · 3 WOTOFO 11 · TFIT 10 ·
+  INFY 2 · Muro 3ML 4 · 4 coils ×8 (white box) · 5 close. Scope (scope-auditor 06/10) = round file block + `_incoming/option-photos/scope.md`.
+  STOPPED at batch 1 (chat move at 646k context): colours + official images found, 2 AI renders submitted (job ids in STATE.md).
+  NEXT: fetch the 2 renders → check vs the colour photos → cut-outs → map entries (process-images, new file names) +
+  VERIFIED_ADDITIONAL_VARIANTS / VERIFIED_VARIANT_MEDIA for IQOSHEET-16/-18 → build → gates (visible-text on the 5 scope pages +
+  controls, gallery-probe, sharpness, scan) → shots 390/1440 → PR (BIG) → checker → merge → add the batch to `docs/รอพี่ตรวจ.md` §จ.
+  Credits this round: 8.
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
