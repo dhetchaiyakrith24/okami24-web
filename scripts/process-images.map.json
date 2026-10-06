@@ -6291,5 +6291,18 @@
   },
   "note": "image-look roll-out J1 07/10 — the first image the page opens on (openOnCardPhoto) in the studio look",
   "fileName": "card-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/caliburn-g4-pro-koko/M-glass-blue.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "glass-blue",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k (MCP, 2 credits), studio re-shoot of the site's v2 photo flattened on #2b2e33 (_incoming/look-pilot/prep.js) — prompt in _incoming/look-pilot (owner picked render B2 07/10); re-keyed 07/10 by _incoming/look-pilot/matte2.js via look-batch/run.js (base 1880, the KOKO roll-out setting) keeping the contact shadow + floor reflection (colour flag ownFloor drops the hero's painted oval); render job cda647e1",
+   "reference": "the v2 photo it replaces (variant-glass-blue-v2.webp — UWELL colour banner color-3 + UWELL front photo, see that entry)",
+   "fidelitySheet": "_incoming/look-pilot/fid-koko2.png (floor cut: shape IoU 0.978; colour dE fails by design = the relight) + owner Artifact report 07/10 (logo · shape outline · screen text all pass)"
+  },
+  "note": "image-look roll-out J1 07/10 — the SAME pilot render re-keyed so the device is the size of the other 8 colours (v3 sat ~8% bigger: its wide floor reflection shrank the trim box); owner 07/10 \"Glass Blue ตัดใหม่\"",
+  "fileName": "variant-glass-blue-v4.webp"
  }
 ]

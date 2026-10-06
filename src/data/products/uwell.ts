@@ -713,7 +713,7 @@ export const uwellProducts: Product[] = [
         id: "glass-blue",
         name: "Glass Blue",
         swatchHex: "#259acf",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-glass-blue-v3.webp", alt: "UWELL Caliburn G4 Pro KOKO, Glass Blue", ownFloor: true },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-glass-blue-v4.webp", alt: "UWELL Caliburn G4 Pro KOKO, Glass Blue", ownFloor: true },
       },
       {
         id: "coral-pink",
