@@ -19,8 +19,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 3b IMAGE THEFT — DONE #322, live 06/10 22:25; owner tested computer + phone: right-click and long-press save both blocked (owner approved): `ImageSaveGuard` (root layout) cancels right-click and
   drag on every <img>; globals.css turns off iOS long-press save. Not done, with reasons told to the owner: blocking the original
   files (og:image + JSON-LD Product image point at them; the optimiser already serves 1920 px) · metadata/invisible watermark
-  (the optimiser strips it [เชื่อว่า]) · visible watermark (IMAGE_SPEC §3 bans it; owner not asked to change it). Proof
-  `_incoming/image-guard/`.
+  (the optimiser strips metadata [เชื่อว่า]; a pixel watermark means re-encoding every file) · watermark in the file (IMAGE_SPEC
+  §3 bans it; Merchant Center rejects it). Logo laid over images on screen only: drafts A corner logo · B "okami24.store" text
+  (Friday's pick) · C faint mark over the product (failed the eye test) = `_incoming/image-guard/logo-mock/`; owner 06/10 night
+  "เอาแค่นี้ก่อน" = not now, do not re-propose unprompted. New images need nothing: the guard covers every <img> (the site has
+  no CSS background images). Proof `_incoming/image-guard/`.
 3 OPEN: round "option photos + IQOS colours" = `docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt` (owner approved 06/10 pm).
   Batches (all tier B): 1 IQOS ✓ #311 · 2 SALTHUB ✓ #312 · 3 WOTOFO nexBAR 18K 11 · TFIT M Power 20K 10 · INFY 20K 2 · Muro 3ML 4 ·
   4 coils ×8 (white box) · 5 close. Scope (scope-auditor 06/10) = round file block + `_incoming/option-photos/scope.md`.
