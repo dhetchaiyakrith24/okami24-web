@@ -960,14 +960,15 @@ export const voopooProducts: Product[] = [
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js drag-s3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     // Image-look roll-out J2 (07/10): every colour + card re-shot in studio light by AI, upright like the approved White,
-    // own contact shadow kept (IMAGE_SPEC §0 item 8) (JOBS.md J2).
+    // own contact shadow kept (IMAGE_SPEC §0 item 8); line-ups v3 = the same layout from those devices
+    // (_incoming/look-batch/relx-lineup.js · JOBS.md J2).
     lineupImage: {
-      src: "/assets/products/drag-s3/lineup-v2.webp",
+      src: "/assets/products/drag-s3/lineup-v3.webp",
       alt: "VOOPOO DRAG S3, colours 1–4 of 7",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/drag-s3/lineup2-v2.webp",
+      src: "/assets/products/drag-s3/lineup2-v3.webp",
       alt: "VOOPOO DRAG S3, colours 5–7 of 7",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
