@@ -68,8 +68,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        Owner verdicts 07/10 still to do: relx-creator · argus-g4-mini · drag-x3 · vinci-s · zero-cartridge · joiway-f4 = skip ·
        m-bar-15k clear pod off the site (= item (3)) · passed: caliburn-g4-pro · argus-p3 · vmate-i3 · iqosheet-16/18.
        Researcher 07/10: no real Drag S3 photo larger than vapevo's 218×751 [เชื่อว่า]. voopoo.com lists 3 NEW Drag S3 colours
-       (Lake Green · Cherry Pink · Brooklyn Gray) not in our 7 [เชื่อว่า] — catalog rule → data round. Known matte limit (checker
-       #329): black drip tips key slightly translucent (fine on the dark site).
+       (Lake Green · Cherry Pink · Brooklyn Gray) not in our 7 [เชื่อว่า] — catalog rule → data round.
        G4 vs G4 Pro clip: the shop channel (OKM YARZ) has no comparison video — keep the guide's clips as they are;
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
    (4) then this round's batch 3 with the picked image standard. Small item: MOOOD who-for line "รส" → "กลิ่น" (§18).
