@@ -76,7 +76,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // identity conflict in the same source (see VERIFIED_MEDIA["Coil-53"] / TAXONOMY_MATCHES["Coil-53"]
   // — the retail box explicitly reads "1 Ω", and myuwell.com's own Caliburn G2 page confirms 1.0Ω
   // as a real, G2-compatible UWELL coil resistance). Single unambiguous operationalSellingPrice.
-  "Coil-53": { sellingPrice: 550, lastPriceReview: "2026-09-01" },
+  "Coil-53": { sellingPrice: 450, lastPriceReview: "2026-10-06" }, // owner override 2026-10-06: admin list row "Coil Caliburn G" + owner in chat "450 เหมือนกัน" (was ฿550)
   // Full-catalog mission (2026-09-02): second media wave closed the gap for 7 more taxonomy-
   // resolved candidates (see VERIFIED_MEDIA entries in active-catalog-to-product-master.ts).
   // Same pricing rule throughout: single, unambiguous operationalSellingPrice, no conflicting

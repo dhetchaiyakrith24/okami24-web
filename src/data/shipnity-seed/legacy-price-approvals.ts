@@ -187,11 +187,11 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
   // ---- Prices round 2026-09-21, basis "shipnity": 9 parents read by Cowork from the Shipnity ----
   // ---- back-office screenshots of 2026-09-21 (9 pages; owner's instruction file, table ก) -------
   "infy-20k": {
-    sellingPrice: 369,
-    lastPriceReview: "2026-09-21",
-    basis: "shipnity",
+    sellingPrice: 400,
+    lastPriceReview: "2026-10-06",
+    basis: "owner-confirmed",
     shipnityProductId: "Pod-170",
-    evidence: 'shipnity-backoffice: "Infy 20000" (Pod-170, ฿369) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+    evidence: 'owner-confirmed 2026-10-06: admin chat "INFY 20K … 400 ฿" (owner rule: an admin-reported price applies) ฿369 → ฿400 · match was — shipnity-backoffice: "Infy 20000" (Pod-170, ฿369) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
   },
   "relx-smash-go-12k": {
     sellingPrice: 320,
