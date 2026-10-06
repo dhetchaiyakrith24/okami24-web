@@ -920,7 +920,7 @@ export const voopooProducts: Product[] = [
         kind: "official-photo",
         role: "card",
         src: "/assets/products/drag-s3/card-v3.webp",
-        alt: "VOOPOO DRAG S3, Spray Black, three-quarter view",
+        alt: "VOOPOO DRAG S3, Spray Black, upright front view",
         angle: "upright, isolated — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10) of this colour's photo",
         transparentBackground: true,
         sourceName: "OKami24 render (Higgsfield) from vapevo.com's photo of this colour",
