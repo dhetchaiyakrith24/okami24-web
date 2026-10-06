@@ -31,8 +31,13 @@ camera, on a seamless dark charcoal grey studio backdrop (#2b2e33) that is perfe
 no vignette, no spotlight, no gradient — with a soft realistic contact shadow under its base and a faint reflection on
 the floor. Photographic, sharp focus, natural micro-texture, no CGI look, no glow, no text added, no props.
 ```
-Optional 2nd reference (colour guide only): an already-passed render of the same tone (KOKO desert-gold used
-golden-carbon-1).
+2nd reference (image 2), two uses — say which in the first line of the prompt:
+- **pose guide (use it for every colour after the first of a product):** the product's already-passed render (Drag S3:
+  `_incoming/look-pilot/B-drag-2.png`) with the lead line `Image 1 is the device to re-photograph (its colours,
+  textures and every detail). Image 2 is only a guide for pose, camera angle, lighting and size in frame — copy its
+  upright pose and framing exactly, but not its colour or pattern.` — Drag S3 blue/brown/green 07/10: all 6 renders
+  came out upright at the same angle and size as White.
+- **tone guide:** an already-passed render of the same tone, colour only (KOKO desert-gold used golden-carbon-1).
 
 ## v1 — backup (07/10, the pilot #325 — owner picked B2)
 
