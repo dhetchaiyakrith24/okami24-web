@@ -628,9 +628,9 @@ export const uwellProducts: Product[] = [
         role: "card",
         // Also shows in the caliburn-g5 page's related box (an SEO baseline page until 05/10) — owner 01/10: put it up now
         // anyway, no wait.
-        src: "/assets/products/caliburn-g4-pro-koko/card-v2.webp",
+        src: "/assets/products/caliburn-g4-pro-koko/card-v3.webp",
         alt: "UWELL Caliburn G4 Pro KOKO, Cosmic Gray, three-quarter view",
-        angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from UWELL's own images of this model",
+        angle: "tilted, isolated — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10) of the Cosmic Gray photo made from UWELL's own images of this model",
         transparentBackground: true,
         sourceName: "OKami24 render (Higgsfield) from UWELL's images",
         sourceUrl: "https://www.myuwell.com/products/caliburn",
@@ -642,6 +642,8 @@ export const uwellProducts: Product[] = [
     // they read, then the frame colour moved to each colour of UWELL's own colour banners
     // (files.myuwell.com/uwell/product/caliburn-g4-pro-koko/pc/color-1..9.webp); scripts and sheet:
     // _incoming/image-sitewide/b-uwell/ (recolour-g4k.js, owner-sheet-1.png). Card-v2 = the Cosmic Gray photo tilted in 2D.
+    // Image-look roll-out 07/10 (v3 colour photos + card-v3): each v2 photo re-shot in studio light by AI, own contact
+    // shadow kept (IMAGE_SPEC §0 item 8) — _incoming/look-batch/ (JOBS.md J1).
     // From the front Desert Gold and Golden Carbon look the same — true to the device: they differ on the back panel.
     // (The morning-01/10 "no all-colours view" was replaced the same evening — see lineupImage below.)
     openOnCardPhoto: true,
@@ -674,37 +676,37 @@ export const uwellProducts: Product[] = [
         id: "desert-gold",
         name: "Desert Gold",
         swatchHex: "#c9a24b",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-desert-gold-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Desert Gold" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-desert-gold-v3.webp", alt: "UWELL Caliburn G4 Pro KOKO, Desert Gold", ownFloor: true },
       },
       {
         id: "waves-black",
         name: "Waves Black",
         swatchHex: "#1c1c1c",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-waves-black-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Waves Black" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-waves-black-v3.webp", alt: "UWELL Caliburn G4 Pro KOKO, Waves Black", ownFloor: true },
       },
       {
         id: "cosmic-gray",
         name: "Cosmic Gray",
         swatchHex: "#afa796",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-cosmic-gray-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Cosmic Gray" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-cosmic-gray-v3.webp", alt: "UWELL Caliburn G4 Pro KOKO, Cosmic Gray", ownFloor: true },
       },
       {
         id: "mirror-silver",
         name: "Mirror Silver",
         swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-mirror-silver-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Mirror Silver" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-mirror-silver-v3.webp", alt: "UWELL Caliburn G4 Pro KOKO, Mirror Silver", ownFloor: true },
       },
       {
         id: "crystal-white",
         name: "Crystal White",
         swatchHex: "#eef0f2",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-crystal-white-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Crystal White" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-crystal-white-v3.webp", alt: "UWELL Caliburn G4 Pro KOKO, Crystal White", ownFloor: true },
       },
       {
         id: "light-green",
         name: "Light Green",
         swatchHex: "#a8d5ba",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-light-green-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Light Green" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-light-green-v3.webp", alt: "UWELL Caliburn G4 Pro KOKO, Light Green", ownFloor: true },
       },
       {
         id: "glass-blue",
@@ -716,13 +718,13 @@ export const uwellProducts: Product[] = [
         id: "coral-pink",
         name: "Coral Pink",
         swatchHex: "#fca693",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-coral-pink-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Coral Pink" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-coral-pink-v3.webp", alt: "UWELL Caliburn G4 Pro KOKO, Coral Pink", ownFloor: true },
       },
       {
         id: "golden-carbon",
         name: "Golden Carbon",
         swatchHex: "#b8923a",
-        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-golden-carbon-v2.webp", alt: "UWELL Caliburn G4 Pro KOKO, Golden Carbon" },
+        image: { src: "/assets/products/caliburn-g4-pro-koko/variant-golden-carbon-v3.webp", alt: "UWELL Caliburn G4 Pro KOKO, Golden Carbon", ownFloor: true },
       },
     ],
     specifications: [
