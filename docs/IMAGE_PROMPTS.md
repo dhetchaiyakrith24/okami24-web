@@ -7,11 +7,38 @@ Each version says: what it is for · what came out · how it differs from the on
 mark the old "in use" as backup, delete the oldest if that makes 4. Who uses it: the image chat (Higgsfield through
 Chrome, Nano Banana Pro 2K 1:1, Unlimited ON). Who edits it: any chat, in a PR like any other file.
 
-How to fill a prompt: one product + one colour/flavour per generation, 2 renders per item. Reference = the product's
-current site photo flattened on #2b2e33 (`_incoming/look-pilot/prep.js` → `_incoming/look-batch/<slug>/in-<id>.png`).
+How to fill a prompt: one product + one colour/flavour per generation, 2 renders per item. **Pick the version by the
+reference photo first:** site photo was a FLAT graphic (recoloured, no real light — e.g. KOKO v2) → v2 with that photo
+(`_incoming/look-pilot/prep.js` → `in-<id>.png`) · site photo was ALREADY AI-relit (e.g. Drag S3/X3 v2, 02/10 remakes —
+check the map's `aiRender` / note) → v3 with the REAL maker/retailer photo (`_incoming/look-batch/prep-orig.js` →
+`orig-<id>.png`), because an already-lit reference makes "keep exactly" copy its old light (Drag S3 07/10: v2 gave
+mean luma 100→96, the owner failed the set as "no different"). Always test ONE colour before a full set.
 `{COLOUR}` = the colour/flavour in plain words · list every logo, word and number visible on the device.
 
-## v2 — IN USE (07/10, KOKO roll-out J1)
+## v3 — IN USE for already-AI-relit references (07/10, Drag S3 redo — owner picked render blue-S2)
+
+For: products whose site photo was already AI-relit. Image 1 = the real photo only, no image 2. Short identity sentence,
+the rest describes the light — no "keep the reference's light/colours" lines. Came out: Drag S3 blue-S2 = the most
+contrast of 9 tests (darker right side, raked leather, crisp tank highlights); owner 07/10 "สวยไปอีกแบบ ยกเว้นให้ Drag"
+= accepted for Drag below the G5 bar (matte leather takes little light) — other products still need G5. S1 came out
+mirrored (side panel on the left) → the "seen from slightly to the right" line was added for the set.
+Differs from v2: real photo instead of the site photo · light written out, identity cut to one sentence.
+
+```
+A premium flagship studio product photograph of this exact [brand + device] - [side panel material + badge], [frame
+colour] metal frame, black glass front with the round mountain logo, screen showing [numbers/words], [tank colour] tank
+with the [brand] logo, black drip tip; keep every logo and printed word as in the photo. Seen from slightly to the right
+exactly like image 1 - the side panel on the RIGHT, never mirrored. Dramatic directional key light from the upper left,
+deep falloff into shadow across the right side of the body, crisp bright specular highlights on the metal frame and the
+tank, a glossy reflection streak across the screen glass, a thin bright rim light on the right edge, rich contrast and
+deep blacks. Upright, front facing the camera, on a flat, even dark charcoal grey studio backdrop (#2b2e33) with a soft
+contact shadow and a faint floor reflection. Photographic, sharp, no CGI look, no text added, no props.
+```
+(Exact text of blue-S2 = the same without the "Seen from slightly to the right" sentence, with "navy blue leather body,
+light-blue metal frame … screen showing 60W and SMART, silver tank with the VOOPOO logo". Non-Drag devices: replace the
+Drag part list with that device's parts.)
+
+## v2 — IN USE for flat-graphic references (07/10, KOKO roll-out J1)
 
 For: every device colour photo of the image-look roll-out. Came out: KOKO 8/8 colours passed the 3-point check; two
 problems fixed by the two new lines — a vignette/spotlight backdrop that the matte had to work around, and a gold that
