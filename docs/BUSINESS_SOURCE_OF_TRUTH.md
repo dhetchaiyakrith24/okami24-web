@@ -155,6 +155,11 @@ This must become the website's main commerce/catalog data layer for:
   exactly, 2026-09-21):** "พอตใช้แล้วทิ้งอ้าง vapenow.shop ไม่ต่ำกว่าราคาเขา เลขสวย · pod system ถ้า
   vapenow มีใช้ตามนั้น ไม่มี = ราคาตลาด ±50–100" — the owner ruled the 20 estimates acceptable on
   2026-09-21.
+- **2026-10-06 — the admin's current selling prices replace the site's (owner, chat; HANDOFF §18
+  "Selling prices"):** the 17-row list the owner confirmed on 2026-10-01 (kept outside git). Applied
+  rows carry basis `"owner-confirmed"` in `legacy-price-approvals.ts` (or an "owner override" note in
+  `publication-approvals.ts`): an owner-set price that outranks the Shipnity "ราคาขาย" and is **not**
+  overwritten by the stock API. The two price files themselves list which rows were applied.
 
 ---
 
