@@ -11,33 +11,7 @@ How to fill a prompt: one product + one colour/flavour per generation, 2 renders
 current site photo flattened on #2b2e33 (`_incoming/look-pilot/prep.js` → `_incoming/look-batch/<slug>/in-<id>.png`).
 `{COLOUR}` = the colour/flavour in plain words · list every logo, word and number visible on the device.
 
-## v3 — ON TEST (07/10, Drag S3 redo)
-
-For: products whose site photo was already AI-relit (Drag S3, Drag X3 …) — v2's "keep exactly" kept that old light, and
-the owner failed the whole Drag S3 set ("ไม่ต่าง") 07/10: "make it beautiful like KOKO, minimum = G5 — the prompt itself
-should get there, with no style reference image". Differs from v2: image 1 = the REAL retailer/maker photo (not our AI
-remake) used for identity only · the old light is thrown away and the light is written out in full · no image 2.
-Came out: [pending — test drag-s3 blue 07/10].
-
-```
-Re-photograph this exact [brand + device type] as a premium flagship product photograph for the brand's own website.
-Image 1 is a small, flat photo of the real device — use it ONLY for what the device is: its exact shape and
-proportions, the {COLOUR} [material] body and its texture, [every part], the [brand] logo and every printed letter and
-number ([list them]). Do not add, remove or redesign any part; every printed word stays exactly as in image 1.
-Ignore image 1's lighting completely and light the device from scratch: a large soft key light from the upper left
-that wraps around the left edge; a strong falloff into deep shadow across the right third of the body so the front
-shows a clear light-to-dark gradient; a narrow strip light from behind on the right drawing a crisp bright rim along
-the right edge and the [tank / pod]; polished metal parts show crisp specular highlights and dark mirror reflections;
-the screen glass shows one clean diagonal reflection streak; the body material shows its real texture raked by the
-light; deep blacks, rich contrast — never flat, even or hazy lighting, no blown-out highlights.
-Camera: straight-on, upright, front facing, lens slightly above centre, 85 mm look, the whole device in sharp focus,
-filling about 80% of the frame height. The device stands on a seamless dark charcoal grey studio backdrop (#2b2e33)
-that is perfectly flat and even from edge to edge — no vignette, no spotlight, no gradient — with a soft realistic
-contact shadow under its base and a faint reflection on the floor. Photographic, natural micro-texture, no CGI look,
-no glow, no text added, no props.
-```
-
-## v2 — backup (07/10, KOKO roll-out J1 — in use until v3 passes)
+## v2 — IN USE (07/10, KOKO roll-out J1)
 
 For: every device colour photo of the image-look roll-out. Came out: KOKO 8/8 colours passed the 3-point check; two
 problems fixed by the two new lines — a vignette/spotlight backdrop that the matte had to work around, and a gold that
