@@ -6149,5 +6149,31 @@
   },
   "note": "site-wide template round batch 5f 06/10 — every flavour the maker's template shows + the shop's 5% stock (catalog completeness rule); the old retailer crops (variants/*.webp) retire",
   "fileName": "variant-blueberry-n5.webp"
+ },
+ {
+  "source": "_incoming/look-pilot/M-koko.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "glass-blue",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k (MCP, 2 credits), studio re-shoot of the site's v2 photo flattened on #2b2e33 (_incoming/look-pilot/prep.js) — prompt in _incoming/look-pilot (owner picked render B2 07/10); backdrop keyed by _incoming/look-pilot/matte.js keeping the contact shadow + floor reflection (colour flag ownFloor drops the hero's painted oval); render job cda647e1",
+   "reference": "the v2 photo it replaces (variant-glass-blue-v2.webp — UWELL colour banner color-3 + UWELL front photo, see that entry)",
+   "fidelitySheet": "_incoming/look-pilot/fid-koko2.png (floor cut: shape IoU 0.978; colour dE fails by design = the relight) + owner Artifact report 07/10 (logo · shape outline · screen text all pass)"
+  },
+  "note": "image-look pilot 07/10 — studio light instead of the flat graphic look (owner: 'ยังดูกราฟิก'); pre-placed 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-glass-blue-v3.webp"
+ },
+ {
+  "source": "_incoming/look-pilot/M-drag.png",
+  "slug": "drag-s3",
+  "role": "variant",
+  "id": "white",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k (MCP, 2 credits), studio re-shoot of the site's v2 photo flattened on #2b2e33 (_incoming/look-pilot/prep.js) — prompt in _incoming/look-pilot (owner picked render B2 07/10); backdrop keyed by _incoming/look-pilot/matte.js keeping the contact shadow + floor reflection (colour flag ownFloor drops the hero's painted oval); render job 83232f76",
+   "reference": "the v2 photo it replaces (variant-white-v2.webp — vapevo.com photo bound by shop.voopoo.com colour data, see that entry)",
+   "fidelitySheet": "_incoming/look-pilot/fid-drag.png (pose changed tilted → upright, owner OK 07/10; tiny EVEREST LAB mark + small print under 60W drawn loosely by the AI — owner: skip tiny flaws) + owner Artifact report 07/10"
+  },
+  "note": "image-look pilot 07/10 — studio light; pre-placed 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-white-v3.webp"
  }
 ]
