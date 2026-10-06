@@ -25,8 +25,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   checker #312 taste notes (not fixed, source-bound): Apple Aloe / Ice Sparkling labels faint as in SALTHUB's posters · Strawberry
   bottom corners show a ~1 px grey pod-rim line at 5x zoom.
   PAUSED 06/10 night. Owner's order (answers 06/10 night, one chat = one round):
-   (1) DONE #317 — 16 of 17 admin price rows (basis "owner-confirmed"); held = "Coil Caliburn G" + m-bar-15k + INFY 20K/Argus
-       Multi-Ohm from the admin chat → `docs/รอพี่ตรวจ.md` items 24–26; proof `_incoming/prices-0610/` (vt-diff · head-before/after);
+   (1) DONE #317 + prices-admin-2 PR — all 17 admin rows + INFY 20K 400 (basis "owner-confirmed"; admin prices apply without
+       asking, §18); m-bar-15k 349 left for item (3) (`docs/รอพี่ตรวจ.md` item 25); proof `_incoming/prices-0610/`;
    (2) image-look pilot — methods A (script: tame clipped whites + studio light falloff, 0 credits) AND B (AI studio relight + the
        maker's pixels pasted back over logo/text/screen), on MOOOD 1 flavour + Drag S3 1 colour, beside G5 → owner picks → IMAGE_SPEC rule;
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
@@ -166,6 +166,8 @@ who-for line: change "รส" → "…ที่มีกลิ่นให้เ
 
 **Selling prices (owner 06/10 night):** the admin's current prices in `รายงานจากแอดมิน แชท/รายงานสินค้า-ราคาไม่ตรง.txt` (17 rows,
 confirmed by the owner 01/10) replace the site's prices — this supersedes "overwrite only when the stock API lands" above for those rows.
+Later the same night: **any price an admin reports applies at once — never ask the owner** ("รายการใดที่แอดมินแจ้งมาให้บังคับใช้ราคานั้นได้เลย
+ไม่ต้องถาม") · "Coil Caliburn G" = both Caliburn coils at ฿450 (G2 + G4/G3).
 That folder also holds admin chat screenshots: never add it to git.
 
 **Brand logos (owner 03/10):** every brand's own logo goes on its product pages — "ใส่ตรงไหนตัดสินใจได้เลย"; Friday placed it
