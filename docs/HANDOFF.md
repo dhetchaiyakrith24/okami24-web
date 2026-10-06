@@ -11,11 +11,16 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 384511e (#317) [ตรวจแล้ว — git]. 06/10 night: #311 batch 1 IQOS · #312 batch 2
-  SALTHUB · #317 admin prices (16 of 17 rows, checker PASS 6/6) · this docs PR.
+1 main: `git fetch && git log -1 --oneline origin/main` = 2392aad (#319) [ตรวจแล้ว — git]. 06/10 night: #311 batch 1 IQOS · #312 batch 2
+  SALTHUB · #317 admin prices (16 of 17 rows, checker PASS 6/6) · #319 Coil-53 450 + INFY 20K 400 (checker: data PASS 3/3).
 2 ahead of main: branch `option-photos-3` (from b03ad33) = LESSONS 28 (poster registration method) only — NOT checked yet; batch 3
   goes on it (its checker covers LESSONS 28). Material not in git: `_incoming/option-photos/` — STATE.md · scope.md · iqos/ · b1/ ·
-  b2/ (README.md = the poster-registration scripts, reusable).
+  b2/ (README.md = the poster-registration scripts, reusable). Branch `image-save-guard` = the image-theft guard (item 3b).
+3b IMAGE THEFT (owner in chat 06/10 night, inserted before the open round): `ImageSaveGuard` (root layout) cancels right-click and
+  drag on every <img>; globals.css turns off iOS long-press save. Not done, with reasons told to the owner: blocking the original
+  files (og:image + JSON-LD Product image point at them; the optimiser already serves 1920 px) · metadata/invisible watermark
+  (the optimiser strips it [เชื่อว่า]) · visible watermark (IMAGE_SPEC §3 bans it; owner not asked to change it). Proof
+  `_incoming/image-guard/`.
 3 OPEN: round "option photos + IQOS colours" = `docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt` (owner approved 06/10 pm).
   Batches (all tier B): 1 IQOS ✓ #311 · 2 SALTHUB ✓ #312 · 3 WOTOFO nexBAR 18K 11 · TFIT M Power 20K 10 · INFY 20K 2 · Muro 3ML 4 ·
   4 coils ×8 (white box) · 5 close. Scope (scope-auditor 06/10) = round file block + `_incoming/option-photos/scope.md`.
@@ -25,8 +30,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   checker #312 taste notes (not fixed, source-bound): Apple Aloe / Ice Sparkling labels faint as in SALTHUB's posters · Strawberry
   bottom corners show a ~1 px grey pod-rim line at 5x zoom.
   PAUSED 06/10 night. Owner's order (answers 06/10 night, one chat = one round):
-   (1) DONE #317 + prices-admin-2 PR — all 17 admin rows + INFY 20K 400 (basis "owner-confirmed"; admin prices apply without
-       asking, §18); m-bar-15k 349 left for item (3) (`docs/รอพี่ตรวจ.md` item 25); proof `_incoming/prices-0610/`;
+   (1) DONE #317 + #319 — all 17 admin rows + INFY 20K 400 (basis "owner-confirmed"; admin prices apply without
+       asking, §18); m-bar-15k 349 left for item (3) (`docs/รอพี่ตรวจ.md` item 25); proof `_incoming/prices-0610/`. Admin's
+       "ARGUS Multi-Ohm 3 pcs = 450": the only ARGUS pod in the catalog is Coil-21 "คอยล์ Argus Pod", Shipnity ฿450 already
+       and not published — nothing to change [เชื่อว่า same item; checker #319 note];
    (2) image-look pilot — methods A (script: tame clipped whites + studio light falloff, 0 credits) AND B (AI studio relight + the
        maker's pixels pasted back over logo/text/screen), on MOOOD 1 flavour + Drag S3 1 colour, beside G5 → owner picks → IMAGE_SPEC rule;
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
