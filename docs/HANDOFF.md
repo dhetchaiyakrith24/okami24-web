@@ -11,16 +11,18 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = c5350c0 (#328) [ตรวจแล้ว — git]. 07/10: #328 = G4 Pro KOKO image look done —
-  9 colours (glass-blue v4 re-keyed) + card-v3 + line-ups v4 live (deploy success, live HTML lists all 12 new files [ตรวจแล้ว curl]);
-  checker FAIL 1/7 (mirror-silver colour) → owner "ลงไปเลย" → re-check PASS 4/4 at 929f875; owner passed KOKO 07/10.
-  Open: PR #329 DRAFT (Drag S3 — owner failed the set, see item 3 (2)).
-2 ahead of main: branch `image-look-drag-s3` (`git log --oneline origin/main..image-look-drag-s3`): 8b49fdc + 29b0a4f + 4ca02a7 = the
-  FAILED Drag S3 images (checker PASS 6/6 at 29b0a4f, owner FAIL — to be replaced on this branch) · 28fe779 + 5804658 = LESSONS ch13
-  (owner review-page format · "okay ≠ standard") · d5bcb0f + d49df47 = a misread prompt added then reverted · e83b2b2 + d6ab167 =
-  IMAGE_PROMPTS v3 + flow table + scripts/image-source-check.js (NOT checked yet — checker with the Drag S3 PR) · 0ae80cf+ = HANDOFF. Branch `option-photos-3` (from b03ad33) = LESSONS 28 only, NOT checked; batch 3 goes on it. Not in git:
-  `_incoming/option-photos/` (STATE.md · scope.md · iqos/ · b1/ · b2/) and `_incoming/look-batch/` (below). Test server 3412 = up
-  (Drag S3 branch build) — stop it before the next build.
+1 main: `git fetch && git log -1 --oneline origin/main` = de9f4e1 (#331 rules copy @dd73801) [ตรวจแล้ว — git]. 07/10: #328 KOKO live
+  (owner passed) · central rule §12 item 29 changed (owner 07/10, smogz-rules #12): a chat move = Friday runs the owner-made routine
+  `friday-chat-move` (`mcp__scheduled-tasks__run_scheduled_task`, Manual, exists [ตรวจแล้ว]) — Computer use cannot touch the Claude
+  window; Friday cannot create routines (blocked) and a self-merge without review was blocked once (owner then said "merge เองได้").
+  Open: PR #329 DRAFT (Drag S3 v5, item 3 (2)).
+2 ahead of main: branch `image-look-drag-s3`: older commits = failed v3 set + LESSONS ch13 + IMAGE_PROMPTS v3 + image-source-check
+  (see `git log`) · 86245d5 = Drag S3 v5 (7 colours + card-v4 + line-ups v5, failed v3 files removed) · c2e578d = card-v4 re-centred +
+  process-images.map.json v3→v5. checker on 86245d5: FAIL 1 = card off-centre (fixed in c2e578d, NOT re-checked yet — needs a
+  rebuild + 390/1440 card shots `sh _incoming/look-batch/ds5/shots.sh after http://localhost:3412`), taste notes: green darker than the
+  real sage, pink rosier than pastel → re-render green/pink (S5) queued after X3, then rebuild once. Branch `option-photos-3` = LESSONS 28
+  only, NOT checked. Test server 3412 = up (86245d5 build) — stop before the next build. Owner review page (Drag S3 v5):
+  https://claude.ai/artifact/NaS45DCEkmX9qJW7DsLzQx (file `_incoming/look-batch/review-ds5/ds5-review.html`, update it after merge).
 3b IMAGE THEFT — DONE #322, live 06/10 22:25; owner tested computer + phone: right-click and long-press save both blocked (owner approved): `ImageSaveGuard` (root layout) cancels right-click and
   drag on every <img>; globals.css turns off iOS long-press save. Not done, with reasons told to the owner: blocking the original
   files (og:image + JSON-LD Product image point at them; the optimiser already serves 1920 px) · metadata/invisible watermark
@@ -49,22 +51,23 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        (LITTLE CHANGE = old light copied → change image 1/version) → eye (3 points + G5 bar) → full set. Review page = LESSONS ช13
        (big images, zoom before|after, NO site screenshots, one-number questions). Owner bar: G5 minimum; "okay ≠ standard";
        EXCEPTION 07/10 "ยกเว้นให้ Drag": Drag S3 / Drag X3 accepted at the S2 look (matte leather) — VINCI S and the rest still need G5.
-       The image chat "สร้างรูปผ่าน Higgsfield" renders through Chrome (free Unlimited to 11/10, one render at a time account-wide,
-       shared with the dive chat — max 3 queued each); FIRST SendMessage it your chat name ("site chat moved, talk to <name>"; it now
-       addresses "KOKO รูปผ่าน Higgsfield"). Board = `_incoming/look-batch/JOBS.md` + BRIEF.md (not in git).
+       NO image chat any more (owner 07/10 night: stopped) — the SITE chat renders itself in Higgsfield through Chrome
+       (claude-in-chrome, its own tab, free Unlimited to 11/10, one render at a time account-wide, shared with the Dive project — keep
+       ≤3 queued). How-to notes (upload, tick one thumbnail, Generate by ref, output names via Higgsfield MCP `show_generations` (read
+       only) → `node _incoming/look-batch/get.js <slug> <id> <S#> <hf_name>`) = JOBS.md J3 "SITE CHAT RENDERS" block. Board = JOBS.md.
+       EVEREST LAB badge text: `node _incoming/look-batch/everest-patch.js <render> <out> [--win x0,y0,x1,y1] [--vfill] --zoom z.png`
+       (Drag S3 default window; Drag X3 = `--win 846,850,928,864` or near it — check the printed box is ~67×10) before run.js.
        Your loop: `node _incoming/look-batch/run.js <slug> <id> <render> [--base N] [--tag S1] [--floorFade]` (floor line auto) → M-
        (site canvas) · C- (dark/magenta) · D- (device only) · O- → pick → map entries like `drag-map.js` → `npx tsx
        scripts/process-images.ts --map <file>` → data `ownFloor: true` → line-ups by script → review page → PR → checker.
        Pilot renders sit ~8% bigger: re-key them. New file name on every replace (30-day cache).
-       DONE: J1 KOKO (#328, owner passed). J2 Drag S3 RUNNING in the image chat: all 7 colours (white too) with the S2 recipe,
-       image 1 = `drag-s3/orig-<id>.png` (real vapevo photo via `prep-orig.js`), files `<id>-S1/-S2.png`; blue = `blue-S2.png`
-       (already keyed: `run.js drag-s3 blue drag-s3/blue-S2.png --tag S2`). NEXT when they land: key each (`--tag S1|S2`), pick
-       (check NOT mirrored: leather side panel on the RIGHT), REPLACE the failed v3 files on branch image-look-drag-s3 under NEW names
-       (v5 — v3/v4 exist), card from the spray-black pick (`card-tilt.js` with deg 0 or `matte2 --device`), line-ups = owner's
-       draft 2 "standing row" (`ds-lineup-floor.js --row`, edit its file list to the new M- files) unless the owner says otherwise,
-       EVEREST LAB micro-text patch = recommended to the owner, not answered yet; then review page (big) → checker → PR #329 (draft) ready.
-       J3 next on the same recipe: drag-x3/orig-<id>.png + vinci-s/orig-<id>.png ready; old v2-based x3 renders dropped; VINCI S = G5
-       bar, neon first for a look. J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) not started.
+       DONE: J1 KOKO (#328, owner passed). J2 Drag S3 v5 = on branch (item 2): picks = `_incoming/look-batch/drag-s3/pick.json`
+       (M- files; "c" = beam-clean.js, "t" = everest-patch.js), map = `drag-map-v5.js` → json, line-ups `ds-lineup-floor.js --row
+       --pick`, floors clipped with `clip-floor.js` (lopsided floor shadow = off-centre on the site — clip every M- and the card D-).
+       Pale colours need the S4 light + "stays <colour>" line (pink/white went mauve/grey). Owner said "Friday decides" on EVEREST LAB
+       → patched. J3 Drag X3 (S recipe, `__X`/`__X4` in the Chrome tab): sky-blue-S2 · aurora-purple-S2 · champagne-golden-S2 ·
+       glow-pink-S1 keyed + text patched (`*-S#t.png`); gray-metal ×2 + moss-green ×1 queued 07/10 ~07:15; spray-black not started;
+       then VINCI S (G5 bar, neon first, `__V`/`__DV` in hf-helpers.js). J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) not started.
        Owner verdicts 07/10 still to do: relx-creator · argus-g4-mini · drag-x3 · vinci-s · zero-cartridge · joiway-f4 = skip ·
        m-bar-15k clear pod off the site (= item (3)) · passed: caliburn-g4-pro · argus-p3 · vmate-i3 · iqosheet-16/18.
        Researcher 07/10: no real Drag S3 photo larger than vapevo's 218×751 [เชื่อว่า]. voopoo.com lists 3 NEW Drag S3 colours
