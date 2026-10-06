@@ -11,20 +11,22 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 5644357 (#310) [ตรวจแล้ว — git]. 06/10: #308 MOOOD (live, curl 200) · #309 round
-  close (tag sitewide-template-done = 5b68440) · #310 owner-review list moved to `docs/รอพี่ตรวจ.md`. The owner's night-time run-on
-  instruction ended when the owner came back (06/10 pm: "ทำต่อเลย … รันต่อได้เลย" = approved the next round, see item 3).
-2 ahead of main: branch `option-photos-1-iqos` = PR #311 (batch 1, checker PASS 10/10 at bc58667; the Leaf Green re-tone after it =
-  13.5 #2 (จ)). Material not in git: `_incoming/option-photos/` — STATE.md (read first) · scope.md · iqos/ · b1/ (proof) · b2/ (prep).
+1 main: `git fetch && git log -1 --oneline origin/main` = cef9c09 (#311) [ตรวจแล้ว — git]. 06/10 pm: #311 batch 1 IQOS colours (live,
+  curl 200 on the 4 new photos + pages). The owner approved this round 06/10 pm ("ทำต่อเลย … รันต่อได้เลย").
+2 ahead of main: branch `option-photos-2-salthub` = batch 2 (Zero Cartridge 22 flavour photos + M Bar 15K Black Berry + owner-review
+  list item 20) — see `git log --oneline origin/main..origin/option-photos-2-salthub` and its PR (checker state = item 3).
+  Material not in git: `_incoming/option-photos/` — STATE.md · scope.md · iqos/ · b1/ (batch 1 proof) · b2/ (batch 2 scripts + proof).
 3 OPEN: round "option photos + IQOS colours" = `docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt` (owner approved 06/10 pm).
   Batches (all tier B): 1 IQOS colours complete (iqosheet-16/18) · 2 Zero Cartridge 22 + M Bar 15K Black Berry · 3 WOTOFO 11 · TFIT 10 ·
   INFY 2 · Muro 3ML 4 · 4 coils ×8 (white box) · 5 close. Scope (scope-auditor 06/10) = round file block + `_incoming/option-photos/scope.md`.
-  Batch 1 = PR #311: PRIME +Garnet Red +Electric Purple (5 colours) · ILUMA i +Digital Violet +Vivid Terracotta +Electric Purple
-  +Leaf Green +Bold Ruby (7, Bold Ruby = jp.iqos.com). AI renders (Higgsfield nano_banana_2 4k, IMAGE_SPEC §0 item 7): PRIME Electric
-  Purple job 47ab7be5-68b8-421f-bae0-6eeba730f3c9 · Leaf Green 622cae8b-682e-42e9-9061-28a7b7a3c141 (re-toned to IQOS's Lab, dE 0.5) ·
-  Bold Ruby c78765cc-9ff8-4a90-bce5-8ab76b4fae66. iqosheet-17 (ILUMA ONE) is not published = not in scope. Credits this round: 11.
-  NEXT: batch 2 — prep in `_incoming/option-photos/b2/` (Zero posters registered to MINT: reg2.json + aligned/; per-poster bottom edge
-  still to find; Black Berry = the Mixberry 15K variant re-banded per SALTHUB poster 05).
+  Batch 1 DONE = #311 (merged cef9c09): PRIME 5 colours · ILUMA i 7 (Bold Ruby = jp.iqos.com). AI renders (nano_banana_2 4k): PRIME
+  Electric Purple 47ab7be5-68b8-421f-bae0-6eeba730f3c9 · Leaf Green 622cae8b-682e-42e9-9061-28a7b7a3c141 (re-toned, dE 0.5) · Bold
+  Ruby c78765cc-9ff8-4a90-bce5-8ab76b4fae66. iqosheet-17 (ILUMA ONE) is not published = not in scope.
+  Batch 2 = branch option-photos-2-salthub: 21 Zero pods cut from SALTHUB's own posters (registered, common outline — b2/README
+  steps = podmask → register → refine → align → silhouette → edgedome → cut → mkmap → process-images → sharpen); Strawberry +
+  15K Black Berry = real template pod + AI band (bandswap.js; jobs 93f513e9-0b4d-4945-864e-a194b0ea7da5 · 6c0d358c-dd94-47a8-
+  b72f-0b91eba79b80). Zero keeps `openOnCardPhoto`. Credits this round: 17.
+  NEXT: finish batch 2 (proof → PR → checker → merge → `docs/รอพี่ตรวจ.md` §จ) · then batch 3 in a NEW chat (context rule §12 ข้อ 29).
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
@@ -34,8 +36,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - MOOOD who-for line (owner-approved round 30.3) says "รส" twice — the locked word is "กลิ่น" (thai-copy 06/10: "อยากได้พอตใช้แล้วทิ้ง
     สายพัฟเยอะ ที่มีกลิ่นให้เลือกหลายกลิ่น") — ask before touching (13.3 #5). Search "Sugus" finds nothing now (no alias) — data round.
     `src/data/products/unbranded.ts` header comment still lists MOOOD among the unbranded lines (history text, not shown).
-  - "รุ่นนี้มี N กลิ่น" counts every option but the grid shows only those with a photo (15K: 16 vs 15 tiles — Black Berry has no
-    SALTHUB photo) — shared component (ProductMoreDetails), its own small PR + whole-sitemap visible-text (checker #303).
+  - "รุ่นนี้มี N กลิ่น" counts every option but the grid shows only those with a photo — 15K now 16/16 (batch 2); the rule itself
+    stays (shared ProductMoreDetails) — the round's remaining batches close the other gaps.
   - `src/data/families.ts` m-bar still calls the line "disposable (9K/10K/15K)" — internal, not shown (checker #303).
   - TFIT M Power 20K next touch (checker #301, not blocking): airflow body restates its subline (story-copy "tfit-m-power-20k" airflow
     body) · battery subline names the charge port twice · design body «น้ำยายัง | เหลือ» at 390 → e.g. "…เห็นจากด้านนอกเลยว่าน้ำยา
