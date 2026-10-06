@@ -6175,5 +6175,134 @@
   },
   "note": "image-look pilot 07/10 — studio light; pre-placed 1000 canvas, device 839 px from y 80",
   "fileName": "variant-white-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/caliburn-g4-pro-koko/M-coral-pink.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "coral-pink",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of the site's v2 photo flattened on #2b2e33, prompt = _incoming/look-batch/BRIEF.md template (same method as the glass-blue pilot, owner picked B2 07/10); render _incoming/look-batch/caliburn-g4-pro-koko/coral-pink-1.png; backdrop keyed by _incoming/look-pilot/matte2.js (via look-batch/run.js) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "the v2 photo it replaces (variant-coral-pink-v2.webp — UWELL colour banner frame colour on the UWELL front photo, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/caliburn-g4-pro-koko/O-coral-pink.webp (v2 outline over the render) + _incoming/look-batch/caliburn-g4-pro-koko/C-coral-pink.png (dark + magenta) — owner's 3 points (logo · shape · screen text) pass; colour dE not used (relight by design)"
+  },
+  "note": "image-look roll-out J1 07/10 — studio light instead of the flat graphic look (owner 07/10: g4-pro-koko 'still graphic'); pre-placed 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-coral-pink-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/caliburn-g4-pro-koko/M-cosmic-gray.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "cosmic-gray",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of the site's v2 photo flattened on #2b2e33, prompt = _incoming/look-batch/BRIEF.md template (same method as the glass-blue pilot, owner picked B2 07/10); render _incoming/look-batch/caliburn-g4-pro-koko/cosmic-gray-1.png; backdrop keyed by _incoming/look-pilot/matte2.js (via look-batch/run.js) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "the v2 photo it replaces (variant-cosmic-gray-v2.webp — UWELL colour banner frame colour on the UWELL front photo, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/caliburn-g4-pro-koko/O-cosmic-gray.webp (v2 outline over the render) + _incoming/look-batch/caliburn-g4-pro-koko/C-cosmic-gray.png (dark + magenta) — owner's 3 points (logo · shape · screen text) pass; colour dE not used (relight by design)"
+  },
+  "note": "image-look roll-out J1 07/10 — studio light instead of the flat graphic look (owner 07/10: g4-pro-koko 'still graphic'); pre-placed 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-cosmic-gray-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/caliburn-g4-pro-koko/M-crystal-white.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "crystal-white",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of the site's v2 photo flattened on #2b2e33, prompt = _incoming/look-batch/BRIEF.md template (same method as the glass-blue pilot, owner picked B2 07/10); render _incoming/look-batch/caliburn-g4-pro-koko/crystal-white-1.png; backdrop keyed by _incoming/look-pilot/matte2.js (via look-batch/run.js) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "the v2 photo it replaces (variant-crystal-white-v2.webp — UWELL colour banner frame colour on the UWELL front photo, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/caliburn-g4-pro-koko/O-crystal-white.webp (v2 outline over the render) + _incoming/look-batch/caliburn-g4-pro-koko/C-crystal-white.png (dark + magenta) — owner's 3 points (logo · shape · screen text) pass; colour dE not used (relight by design)"
+  },
+  "note": "image-look roll-out J1 07/10 — studio light instead of the flat graphic look (owner 07/10: g4-pro-koko 'still graphic'); pre-placed 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-crystal-white-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/caliburn-g4-pro-koko/M-desert-gold.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "desert-gold",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of the site's v2 photo flattened on #2b2e33, prompt = _incoming/look-batch/BRIEF.md template (same method as the glass-blue pilot, owner picked B2 07/10); render _incoming/look-batch/caliburn-g4-pro-koko/desert-gold-4.png; backdrop keyed by _incoming/look-pilot/matte2.js (via look-batch/run.js) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "the v2 photo it replaces (variant-desert-gold-v2.webp — UWELL colour banner frame colour on the UWELL front photo, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/caliburn-g4-pro-koko/O-desert-gold.webp (v2 outline over the render) + _incoming/look-batch/caliburn-g4-pro-koko/C-desert-gold.png (dark + magenta) — owner's 3 points (logo · shape · screen text) pass; colour dE not used (relight by design)"
+  },
+  "note": "image-look roll-out J1 07/10 — studio light instead of the flat graphic look (owner 07/10: g4-pro-koko 'still graphic'); pre-placed 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-desert-gold-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/caliburn-g4-pro-koko/M-golden-carbon.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "golden-carbon",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of the site's v2 photo flattened on #2b2e33, prompt = _incoming/look-batch/BRIEF.md template (same method as the glass-blue pilot, owner picked B2 07/10); render _incoming/look-batch/caliburn-g4-pro-koko/golden-carbon-1.png; backdrop keyed by _incoming/look-pilot/matte2.js (via look-batch/run.js) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "the v2 photo it replaces (variant-golden-carbon-v2.webp — UWELL colour banner frame colour on the UWELL front photo, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/caliburn-g4-pro-koko/O-golden-carbon.webp (v2 outline over the render) + _incoming/look-batch/caliburn-g4-pro-koko/C-golden-carbon.png (dark + magenta) — owner's 3 points (logo · shape · screen text) pass; colour dE not used (relight by design)"
+  },
+  "note": "image-look roll-out J1 07/10 — studio light instead of the flat graphic look (owner 07/10: g4-pro-koko 'still graphic'); pre-placed 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-golden-carbon-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/caliburn-g4-pro-koko/M-light-green.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "light-green",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of the site's v2 photo flattened on #2b2e33, prompt = _incoming/look-batch/BRIEF.md template (same method as the glass-blue pilot, owner picked B2 07/10); render _incoming/look-batch/caliburn-g4-pro-koko/light-green-1.png; backdrop keyed by _incoming/look-pilot/matte2.js (via look-batch/run.js) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "the v2 photo it replaces (variant-light-green-v2.webp — UWELL colour banner frame colour on the UWELL front photo, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/caliburn-g4-pro-koko/O-light-green.webp (v2 outline over the render) + _incoming/look-batch/caliburn-g4-pro-koko/C-light-green.png (dark + magenta) — owner's 3 points (logo · shape · screen text) pass; colour dE not used (relight by design)"
+  },
+  "note": "image-look roll-out J1 07/10 — studio light instead of the flat graphic look (owner 07/10: g4-pro-koko 'still graphic'); pre-placed 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-light-green-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/caliburn-g4-pro-koko/M-mirror-silver.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "mirror-silver",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of the site's v2 photo flattened on #2b2e33, prompt = _incoming/look-batch/BRIEF.md template (same method as the glass-blue pilot, owner picked B2 07/10); render _incoming/look-batch/caliburn-g4-pro-koko/mirror-silver-1.png; backdrop keyed by _incoming/look-pilot/matte2.js (via look-batch/run.js) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "the v2 photo it replaces (variant-mirror-silver-v2.webp — UWELL colour banner frame colour on the UWELL front photo, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/caliburn-g4-pro-koko/O-mirror-silver.webp (v2 outline over the render) + _incoming/look-batch/caliburn-g4-pro-koko/C-mirror-silver.png (dark + magenta) — owner's 3 points (logo · shape · screen text) pass; colour dE not used (relight by design)"
+  },
+  "note": "image-look roll-out J1 07/10 — studio light instead of the flat graphic look (owner 07/10: g4-pro-koko 'still graphic'); pre-placed 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-mirror-silver-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/caliburn-g4-pro-koko/M-waves-black.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "waves-black",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of the site's v2 photo flattened on #2b2e33, prompt = _incoming/look-batch/BRIEF.md template (same method as the glass-blue pilot, owner picked B2 07/10); render _incoming/look-batch/caliburn-g4-pro-koko/waves-black-1.png; backdrop keyed by _incoming/look-pilot/matte2.js (via look-batch/run.js) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "the v2 photo it replaces (variant-waves-black-v2.webp — UWELL colour banner frame colour on the UWELL front photo, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/caliburn-g4-pro-koko/O-waves-black.webp (v2 outline over the render) + _incoming/look-batch/caliburn-g4-pro-koko/C-waves-black.png (dark + magenta) — owner's 3 points (logo · shape · screen text) pass; colour dE not used (relight by design)"
+  },
+  "note": "image-look roll-out J1 07/10 — studio light instead of the flat graphic look (owner 07/10: g4-pro-koko 'still graphic'); pre-placed 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-waves-black-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/caliburn-g4-pro-koko/card-cosmic-tilt.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of the site's v2 photo flattened on #2b2e33, prompt = _incoming/look-batch/BRIEF.md template (same method as the glass-blue pilot, owner picked B2 07/10); render _incoming/look-batch/caliburn-g4-pro-koko/cosmic-gray-1.png; backdrop keyed by _incoming/look-pilot/matte2.js (via look-batch/run.js) keeping the contact shadow + floor reflection (colour flag ownFloor); card = the same render keyed at full size, floor cut at the foot line (matte2.js --device), rotated 12° like card-v2 (look-batch/card-tilt.js)",
+   "reference": "variant-cosmic-gray-v2.webp (the photo card-v2 was tilted from)",
+   "fidelitySheet": "_incoming/look-batch/caliburn-g4-pro-koko/O-cosmic-gray.webp + _incoming/look-batch/caliburn-g4-pro-koko/C-cosmic-gray.png; tilt angle measured equal to card-v2 (major axis -86.1° vs -85.9°)"
+  },
+  "note": "image-look roll-out J1 07/10 — the first image the page opens on (openOnCardPhoto) in the studio look",
+  "fileName": "card-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/caliburn-g4-pro-koko/M-glass-blue.png",
+  "slug": "caliburn-g4-pro-koko",
+  "role": "variant",
+  "id": "glass-blue",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k (MCP, 2 credits), studio re-shoot of the site's v2 photo flattened on #2b2e33 (_incoming/look-pilot/prep.js) — prompt in _incoming/look-pilot (owner picked render B2 07/10); re-keyed 07/10 by _incoming/look-pilot/matte2.js via look-batch/run.js (base 1880, the KOKO roll-out setting) keeping the contact shadow + floor reflection (colour flag ownFloor drops the hero's painted oval); render job cda647e1",
+   "reference": "the v2 photo it replaces (variant-glass-blue-v2.webp — UWELL colour banner color-3 + UWELL front photo, see that entry)",
+   "fidelitySheet": "_incoming/look-pilot/fid-koko2.png (floor cut: shape IoU 0.978; colour dE fails by design = the relight) + owner Artifact report 07/10 (logo · shape outline · screen text all pass)"
+  },
+  "note": "image-look roll-out J1 07/10 — the SAME pilot render re-keyed so the device is the size of the other 8 colours (v3 sat ~8% bigger: its wide floor reflection shrank the trim box); owner 07/10 \"Glass Blue ตัดใหม่\"",
+  "fileName": "variant-glass-blue-v4.webp"
  }
 ]
