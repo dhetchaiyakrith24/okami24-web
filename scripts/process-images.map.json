@@ -6680,14 +6680,14 @@
   "fileName": "variant-grey-yellow-v3.webp"
  },
  {
-  "source": "_incoming/look-batch/relx-creator/M-white-S2.png",
+  "source": "_incoming/look-batch/relx-creator/M-white-S2d.png",
   "slug": "relx-creator",
   "role": "variant",
   "id": "white",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own white render (image 2 = _incoming/look-batch/relx-creator/orig-white.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/white-S2.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js (colour flag ownFloor)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own white render (image 2 = _incoming/look-batch/relx-creator/orig-white.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/white-S2.png; logo darkened to RELX's charcoal by relx-creator/logo-dark.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js (colour flag ownFloor)",
    "reference": "RELX's official white Creator Pro render (_incoming/image-sitewide/relx/refs/official-white.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
-   "fidelitySheet": "_incoming/look-batch/relx-creator/C-white-S2.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
+   "fidelitySheet": "_incoming/look-batch/relx-creator/C-white-S2d.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
   },
   "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
   "fileName": "variant-white-v3.webp"
@@ -6706,14 +6706,14 @@
   "fileName": "variant-green-v3.webp"
  },
  {
-  "source": "_incoming/look-batch/relx-creator/M-yellow-S1h.png",
+  "source": "_incoming/look-batch/relx-creator/M-yellow-S1g.png",
   "slug": "relx-creator",
   "role": "variant",
   "id": "yellow",
   "aiRender": {
    "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own yellow render (image 2 = _incoming/look-batch/relx-creator/orig-yellow.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/yellow-S1.png; body colour pulled to RELX's render by look-batch/hue-match.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js (colour flag ownFloor)",
    "reference": "RELX's official yellow Creator Pro render (_incoming/image-sitewide/relx/refs/official-yellow.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
-   "fidelitySheet": "_incoming/look-batch/relx-creator/C-yellow-S1h.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
+   "fidelitySheet": "_incoming/look-batch/relx-creator/C-yellow-S1g.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
   },
   "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
   "fileName": "variant-yellow-v3.webp"
