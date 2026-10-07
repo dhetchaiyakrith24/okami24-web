@@ -189,7 +189,7 @@ admin page and OTP are parked · caliburn-g4-pro = Pod-181 · muro-3ml = ฿150 
 
 **Head copy and SEO:** e-liquid stock is 0 on the storefront → "น้ำยา" stays out of head copy except `/e-liquid` itself ·
 "พอตไฟฟ้า" and "บุหรี่ไฟฟ้า" are both allowed in head copy · misspelled search terms → hidden search aliases only, never
-visible copy · "Marbo" in Latin only in visible copy (aliases hidden) · the head-copy trim rule: cut at a sentence/phrase
+visible copy · "Marbo" in Latin only in visible copy (aliases hidden) — EXCEPT one sentence per owner page for Thai names with typing evidence (owner 07/10, sheet 35 = 1: มาโบ · เอสโคบาร์ · จอยเวย์ · ไอคอส · อินฟี่ in the brand ledes; THAI_STYLE layer 1) · the head-copy trim rule: cut at a sentence/phrase
 boundary, never mid-word, never a dangling connective, never a bare floating number, never a stranded clause-opener
 (THAI_STYLE_LOG §7) · round 7 close (SEO ค): home word order · guides "คืออะไร"/"ยี่ห้อไหนดี" · `/e-liquid` "น้ำยา" exception ·
 Marbo + M Bar plan · FAQ wholesale phrase · RINCOE/DOTMOD phrase · home index DONE · LINE counter option ก · breadcrumb
