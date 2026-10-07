@@ -67,14 +67,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        OWNER PRICES 07/10 (review sheet 25): M Bar 15K device + pod = ฿600 · pod only = ฿400 — money = full set (13.5 #3), own batch,
        through the price-approval data (never typed by hand), with the black-pod split; ฿349 stays until then.
    (4) then this round's batch 3 with the picked image standard.
-3s OPEN (SEO chat, its own worktree `_incoming/wt-seo-d` + docs worktree `_incoming/wt-seo-d-docs`; working files `_incoming/seo-d/`):
-  round "SEO D keyword map" = `docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt` (owner opened 07/10). Batches: 1 GSC 05/10 → SEO_BASELINE ✓ #340 ·
-  2 hold lift + ReturnFeesCustomerResponsibility (B) = PR #341 (checker pending at write) · 3 keyword map = SEO_LANDSCAPE §0 (A, docs PR) ·
-  4 heads + 5 Thai names (A/B, one PR: thai-copy set → seo-auditor → code) · 6 internal links per the map (B; categories/brands have no
-  related-articles block yet; guides→owner gaps: pod-systems, pods-cartridges, m-bar-15k, joiway, infy-20k, /e-liquid 0 inbound) · 7 close.
-  Ask the owner before: GSC "validate fix" (merchant listings) · request indexing. No site merge on 10/10 (LINE broadcast — image chat note).
-  Worktree builds work with a COPY of node_modules (not a junction): `node scripts/test-server.js build|start` from the worktree; tell the
-  image chat before using port 3412. preview_start runs in the MAIN folder — do not use it from a worktree.
+3s OPEN (SEO chat → next chat; worktree `_incoming/wt-seo-d` = builds work there · notes `_incoming/seo-d/` · tools = LESSONS พ27):
+  round `docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`. Live [ตรวจแล้ว curl]: 1 #340 · 2 #341 (GSC "validate fix" STARTED 7/10, 26 items —
+  read at close) · 3 keyword map `docs/SEO_LANDSCAPE.md` §0 #342 · 4 heads 17 pages + 5 Thai names (owner sheet 35 = 1) #344 dfb101c.
+  NEXT = batch 6 links (B): guides → pod-systems / pods-cartridges / joiway / joiway-f4 / m-bar-15k / infy-20k = 0 links, /e-liquid 0
+  inbound (head-audit inbound.json 07/10); brand + category pages have no related-articles block → reuse `RelatedArticles` fed by guides
+  that already link there; count links on every sitemap URL before/after (LESSONS 7). Then 7 close: next GSC read date + query→page
+  splits to watch (§0) · ask owner before "request indexing" · hand-offs §0.5 · seo-auditor close · round-close tag seo-d-keymap-done.
+  Not this round: "หัวพอตใส" still on the m-bar-15k page + article (item 3 (3)) · esko card "20 รสชาติ" (Shipnity axis label, data round).
 3t OPEN (slip-check chat, own worktree `_incoming/wt-slip`, branch `slip-check`; working files `_incoming/slip-check/`): round "staff slip
   check (EasySlip)" = `docs/rounds/รอบ-ตรวจสลิป-หน้าทีมงาน-07-10.txt` (owner opened 07/10, start 07/10 — only rule: no site merge ON 10/10).
   Batches: 1 API docs read ✓ (`_incoming/slip-check/easyslip-api.md`, API v2) · 2 /staff + one staff password (B) · 3 slip check (B, full
