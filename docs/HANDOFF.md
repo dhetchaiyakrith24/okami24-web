@@ -11,12 +11,23 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 39af184 (#326) + this docs PR [ตรวจแล้ว — git]. 06–07/10: #311 IQOS · #312
-  SALTHUB · #317 + #319 admin prices · #322 image-theft guard · #325 image-look pilot (KOKO Glass Blue + Drag S3 White live, checker PASS 5/5;
-  deploy 2f4918c success, live HTML has both v3 files) · #326 docs. No PR open from this chat.
-2 ahead of main: branch `option-photos-3` (from b03ad33) = LESSONS 28 (poster registration method) only — NOT checked yet; batch 3
-  goes on it (its checker covers LESSONS 28). Material not in git: `_incoming/option-photos/` — STATE.md · scope.md · iqos/ · b1/ ·
-  b2/ (README.md = the poster-registration scripts, reusable).
+1 main: `git fetch && git log -1 --oneline origin/main` = de9f4e1 (#331 rules copy @dd73801) [ตรวจแล้ว — git]. 07/10: #328 KOKO live
+  (owner passed) · central rule §12 item 29 changed (owner 07/10, smogz-rules #12): a chat move = Friday runs the owner-made routine
+  `friday-chat-move` (`mcp__scheduled-tasks__run_scheduled_task`, Manual, exists [ตรวจแล้ว]) — Computer use cannot touch the Claude
+  window; Friday cannot create routines (blocked) and a self-merge without review was blocked once (owner then said "merge เองได้").
+  Open: PR #329 DRAFT (Drag S3 v5, item 3 (2)).
+2 ahead of main: branch `image-look-drag-s3`: older commits = failed v3 set + LESSONS ch13 + IMAGE_PROMPTS v3 + image-source-check
+  (see `git log`) · 86245d5 = Drag S3 v5 (7 colours + card-v4 + line-ups v5, failed v3 files removed) · c2e578d = card-v4 re-centred +
+  process-images.map.json v3→v5. checker on 86245d5: FAIL 1 = card off-centre (fixed in c2e578d, NOT re-checked yet), taste notes:
+  green darker than the real sage, pink rosier than pastel. RENDERING NOW in Higgsfield (queued 07/10 ~08:05, Chrome tab of the old
+  chat): Drag S3 green (`__S4` + "same mid olive-sage lightness") + pink (`__S4` + "very pale cream-pink") → save as
+  `drag-s3/green-S5.png` / `pink-S5.png` (names via Higgsfield MCP `show_generations` size 3 → `get.js`), compare with orig-*,
+  if better: everest-patch → run.js --tag S5t → clip-floor → pick.json → `node drag-map-v5.js` → rm the two v5 webps → process-images
+  → line-ups (`ds-lineup-floor.js --row --pick` + webp as before) → commit. THEN: stop 3412 → `test-server.js build` + start →
+  `sh _incoming/look-batch/ds5/shots.sh after http://localhost:3412` → checker re-check (card centred + any swapped colour) → mark
+  #329 ready → merge (13.7) → curl live → update the review page (same file, republish; add green/pink if swapped, "ขึ้นเว็บแล้ว").
+  Branch `option-photos-3` = LESSONS 28 only, NOT checked. Owner review page (Drag S3 v5):
+  https://claude.ai/artifact/NaS45DCEkmX9qJW7DsLzQx (file `_incoming/look-batch/review-ds5/ds5-review.html`).
 3b IMAGE THEFT — DONE #322, live 06/10 22:25; owner tested computer + phone: right-click and long-press save both blocked (owner approved): `ImageSaveGuard` (root layout) cancels right-click and
   drag on every <img>; globals.css turns off iOS long-press save. Not done, with reasons told to the owner: blocking the original
   files (og:image + JSON-LD Product image point at them; the optimiser already serves 1920 px) · metadata/invisible watermark
@@ -38,23 +49,38 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        asking, §18); m-bar-15k 349 left for item (3) (`docs/รอพี่ตรวจ.md` item 25); proof `_incoming/prices-0610/`. Admin's
        "ARGUS Multi-Ohm 3 pcs = 450": the only ARGUS pod in the catalog is Coil-21 "คอยล์ Argus Pod", Shipnity ฿450 already
        and not published — nothing to change [เชื่อว่า same item; checker #319 note];
-   (2) image look — RUNNING (the site chat = YOU). Pilot #325 live (B = AI studio re-shoot keeping its own shadow + floor reflection,
-       colour flag `ownFloor` hides the hero's painted oval). Roll-out with the 2nd chat "สร้างรูปผ่าน Higgsfield" (Chrome only, free
-       Unlimited to 11/10, ONE render at a time account-wide — tried a 2nd tab 07/10, same queue): its card + job board + prompts =
-       `_incoming/look-batch/` BRIEF.md · JOBS.md · PROMPTS.md (not in git). FIRST: SendMessage it your chat name ("site chat moved,
-       talk to <name>") — it still addresses the old chat "ราคา 17 รายการจากไฟล์แอดมิน". Your loop per delivery: pick -1/-2 (flat
-       backdrop, framing like the approved one) → `node _incoming/look-batch/run.js <slug> <id> <render> --base <floor y>` (KOKO base
-       1880; other products: read the floor line once from a bottom crop) = `<slug>/M-<id>.png` site canvas + C- (dark/magenta) +
-       O- (v2 outline) → look at C- and O- (logo · shape · text; tiny flaws skip, owner 07/10) → webp to
-       `public/assets/products/<slug>/variant-<id>-v3.webp` + data `ownFloor: true` + process-images map entry (copy the #325 ones).
-       J1 KOKO state 07/10: keyed coral-pink · cosmic-gray · crystal-white · desert-gold (from the -1 renders; desert gold reads a bit
-       duller than v2 — compare when all 9 are in) · waiting: golden-carbon · light-green · mirror-silver · waves-black (+ -2 of
-       cosmic-gray / desert-gold). When J1 is complete: compose the KOKO line-ups ("ทั้งหมด" 1 + 2) from the 9 new photos (no AI),
-       Artifact report for the owner (UWELL = 1 of the first 2–3 brands), one PR, checker, merge. Then J2 Drag S3 the same way.
-       After 2–3 brands approved: no Artifact, merge straight (LESSONS ช13). Still to write: the IMAGE_SPEC rule for this method.
-       Owner verdicts 07/10 (redo list = J1–J5): still graphic = relx-creator · g4-pro-koko · argus-g4-mini · drag-s3 line-up · drag-x3 ·
-       vinci-s (redo) · zero-cartridge (first image also too small) · joiway-f4 = skip (no source) · m-bar-15k: the clear pod must
-       come off the site (= item (3)) · passed: caliburn-g4-pro · argus-p3 · vmate-i3 · iqosheet-16 · iqosheet-18 · /faq + /about spec line.
+   (2) image look — RUNNING (the site chat = YOU). Method = IMAGE_SPEC §0 item 8 · FLOW + fix-line table + prompt versions =
+       docs/IMAGE_PROMPTS.md (owner 07/10 "ภาพรวม"): `node scripts/image-source-check.js <slug>` on the candidate photos → pick image 1
+       (maker → real retailer → site photo) → v2 (flat-graphic reference, KOKO) or v3 (already-AI-relit reference → REAL photo, light
+       written out = the owner-picked Drag S3 blue-S2 recipe) + fix lines → ONE colour first → `--compare <old> <new M-file>`
+       (LITTLE CHANGE = old light copied → change image 1/version) → eye (3 points + G5 bar) → full set. Review page = LESSONS ช13
+       (big images, zoom before|after, NO site screenshots, one-number questions). Owner bar: G5 minimum; "okay ≠ standard";
+       EXCEPTION 07/10 "ยกเว้นให้ Drag": Drag S3 / Drag X3 accepted at the S2 look (matte leather) — VINCI S and the rest still need G5.
+       NO image chat any more (owner 07/10 night: stopped) — the SITE chat renders itself in Higgsfield through Chrome
+       (claude-in-chrome, its own tab, free Unlimited to 11/10, one render at a time account-wide, shared with the Dive project — keep
+       ≤3 queued). How-to notes (upload, tick one thumbnail, Generate by ref, output names via Higgsfield MCP `show_generations` (read
+       only) → `node _incoming/look-batch/get.js <slug> <id> <S#> <hf_name>`) = JOBS.md J3 "SITE CHAT RENDERS" block. Board = JOBS.md.
+       EVEREST LAB badge text: `node _incoming/look-batch/everest-patch.js <render> <out> [--win x0,y0,x1,y1] [--vfill] --zoom z.png`
+       (Drag S3 default window; Drag X3 = `--win 846,850,928,864` or near it — check the printed box is ~67×10) before run.js.
+       Your loop: `node _incoming/look-batch/run.js <slug> <id> <render> [--base N] [--tag S1] [--floorFade]` (floor line auto) → M-
+       (site canvas) · C- (dark/magenta) · D- (device only) · O- → pick → map entries like `drag-map.js` → `npx tsx
+       scripts/process-images.ts --map <file>` → data `ownFloor: true` → line-ups by script → review page → PR → checker.
+       Pilot renders sit ~8% bigger: re-key them. New file name on every replace (30-day cache).
+       DONE: J1 KOKO (#328, owner passed). J2 Drag S3 v5 = on branch (item 2): picks = `_incoming/look-batch/drag-s3/pick.json`
+       (M- files; "c" = beam-clean.js, "t" = everest-patch.js), map = `drag-map-v5.js` → json, line-ups `ds-lineup-floor.js --row
+       --pick`, floors clipped with `clip-floor.js` (lopsided floor shadow = off-centre on the site — clip every M- and the card D-).
+       Pale colours need the S4 light + "stays <colour>" line (pink/white went mauve/grey). Owner said "Friday decides" on EVEREST LAB
+       → patched. J3 Drag X3 (S recipe; the Chrome-tab helpers `__S`/`__S4`/`__X`/`__X4` are in hf-helpers.js + JOBS.md — re-paste
+       after any reload): picks in `drag-x3/pick.json` = sky-blue · aurora-purple · champagne-golden · glow-pink · moss-green ·
+       spray-black (all keyed, floors clipped; spray-black's EVEREST patch printed a 20×11 box = WRONG, redo its patch with a better
+       --win, then re-key). gray-metal: S1/S2 too dark (read black), S3 grey but adds a diagonal seam → S4 RENDERING (queued ~08:00).
+       Then: `node x3-map-v5.js` (files variant-<id>-v3 · card-v3 from the spray-black D- file clipped like Drag S3's `-card.png`),
+       `x3-lineup-floor.js --row --pick`, data in voopoo.ts drag-x3 (card + 7 variants ownFloor + lineups), own PR (Drag X3 = Drag
+       exception), review page like ds5. Then VINCI S (G5 bar, neon first, `__V`/`__DV`). J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) not started.
+       Owner verdicts 07/10 still to do: relx-creator · argus-g4-mini · drag-x3 · vinci-s · zero-cartridge · joiway-f4 = skip ·
+       m-bar-15k clear pod off the site (= item (3)) · passed: caliburn-g4-pro · argus-p3 · vmate-i3 · iqosheet-16/18.
+       Researcher 07/10: no real Drag S3 photo larger than vapevo's 218×751 [เชื่อว่า]. voopoo.com lists 3 NEW Drag S3 colours
+       (Lake Green · Cherry Pink · Brooklyn Gray) not in our 7 [เชื่อว่า] — catalog rule → data round.
        G4 vs G4 Pro clip: the shop channel (OKM YARZ) has no comparison video — keep the guide's clips as they are;
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
    (4) then this round's batch 3 with the picked image standard. Small item: MOOOD who-for line "รส" → "กลิ่น" (§18).
