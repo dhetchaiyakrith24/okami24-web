@@ -215,8 +215,6 @@ export const zh: Dictionary = {
     gallerySourceLinkLabel: "来源",
     // Owner 2026-09-30: the "not for commercial reuse" clause goes (the shop sells); the credit stays.
     galleryNote: "图片来自 {brand} 官方。",
-    // The old line, held on the 7 SEO-baseline pages until 2026-10-05 (types.ts) — delete after.
-    galleryNoteHeld: "图片来自 {brand} 官方，仅作参考展示，不作商业转载。",
   },
   pilot: {
     unpublishedBadge: "未发布",

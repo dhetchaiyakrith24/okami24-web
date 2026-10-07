@@ -220,8 +220,6 @@ export const en: Dictionary = {
     gallerySourceLinkLabel: "source",
     // Owner 2026-09-30: the "not for commercial purposes" clause goes (the shop sells); the credit stays.
     galleryNote: "Real photography from {brand}.",
-    // The old line, held on the 7 SEO-baseline pages until 2026-10-05 (types.ts) — delete after.
-    galleryNoteHeld: "Real photography from {brand}, used here for reference — not redistributed for commercial purposes.",
   },
   pilot: {
     unpublishedBadge: "Unpublished",

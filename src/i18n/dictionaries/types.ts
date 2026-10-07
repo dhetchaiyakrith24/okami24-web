@@ -260,9 +260,6 @@ export interface Dictionary {
     gallerySourceLinkLabel: string;
     /** Lede under the gallery heading (ProductGallery.tsx) — `{brand}` is the photos' sourceName. Round 30.4ค batch 5: was hardcoded English. */
     galleryNote: string;
-    /** The pre-2026-09-30 lede (with the "not for commercial use" clause), kept only on the 7 SEO-baseline product
-     *  pages until 2026-10-05 (`TITLE_PRICE_HOLD_UNTIL_2026_10_05`). Delete it, and its use in ProductGallery, after. */
-    galleryNoteHeld: string;
   };
   /** ProductMaster pilot bridge (Phase 3.0/3.1) chrome — was hardcoded Thai regardless of locale
    *  before this fix; see the report for why that was a real bug, not a design choice. */

@@ -9,10 +9,7 @@ import { galleryCaptionTh } from "@/i18n/gallery-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import { cn } from "@/lib/utils";
 
-/** `heldNote` — from the server page: this slug is one of the 7 SEO-baseline pages (TITLE_PRICE_HOLD_UNTIL_2026_10_05),
- *  which keep the pre-2026-09-30 lede until 05/10. Passed in, so the 33 KB head-copy module stays out of the browser bundle
- *  (checker #130). */
-export function ProductGallery({ product, heldNote = false }: { product: Product; heldNote?: boolean }) {
+export function ProductGallery({ product }: { product: Product }) {
   const { dict, locale } = useLocale();
   const photos = product.assets.filter((a) => a.kind === "official-photo" && a.role === "detail");
   if (photos.length === 0) return null;
@@ -29,8 +26,8 @@ export function ProductGallery({ product, heldNote = false }: { product: Product
         <SectionHeading
           eyebrow={dict.product.galleryEyebrow}
           title={dict.product.galleryTitle}
-          // Owner 2026-09-30 cut the "not for commercial use" clause; the 7 SEO-baseline pages keep the old line until 05/10.
-          description={(heldNote ? dict.product.galleryNoteHeld : dict.product.galleryNote).replace("{brand}", photos[0].sourceName ?? "")}
+          // Owner 2026-09-30 cut the "not for commercial use" clause.
+          description={dict.product.galleryNote.replace("{brand}", photos[0].sourceName ?? "")}
         />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {photos.map((photo, i) => (
