@@ -645,7 +645,9 @@ const allGuides: Guide[] = [
         ],
       },
     ],
-    relatedProductSlugs: ["m-bar-9k", "joiway-f3", "relx-smash-go-12k"],
+    // Round "SEO ง" batch 6 (2026-10-07): + JOIWAY F4 and INFY 20K, two more disposables (category "disposables") — the
+    // keyword map's /products/joiway-f4 and /products/infy-20k had no article linking them.
+    relatedProductSlugs: ["m-bar-9k", "joiway-f3", "relx-smash-go-12k", "joiway-f4", "infy-20k"],
     faq: [
       {
         question: "Marbo 9K สูบได้กี่วัน",
