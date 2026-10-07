@@ -73,35 +73,29 @@ export type PriceOf = (slug: string) => string | null;
  *  Every other brand keeps `brandTitleTh()` + its `descriptionTh`. Prices come through `priceOf`
  *  (see the header comment); a null price drops just that " ฿…" fragment. */
 export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string; description: string }> = {
+  // Round SEO D batch 4 (07/10, keyword map SEO_LANDSCAPE §0): every brand title is brand-level — the model terms
+  // ("15k", "joiway f4", "caliburn g5", "drag 6") belong to the product pages; GSC 21/09–05/10 showed brand pages
+  // taking them. Wording = thai-copy 07/10, read by seo-auditor 07/10.
   relx: (priceOf) => {
-    const p = priceOf("relx-smash-go-12k");
-    return {
-      title: `พอต RELX Smash Go 12K ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
-      description: `RELX ที่ OKami24 (OKM) มีรุ่น Smash Go 12K พอตใช้แล้วทิ้งจากไลน์อัพทางการ รองรับสูงสุด 12,000 พัฟ มีให้เลือก 10 รส ของแท้${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
-    };
-  },
-  salthub: (priceOf) => {
-    const p = priceOf("m-bar-15k");
-    return {
-      title: `SALTHUB M Bar 15K (Marbo) ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
-      // Batch 3f (06/10): the 15K is no longer called a disposable (owner §18 06/10 — reusable M Switch body + clear cartridge).
-      description: `SALTHUB M Bar 15K${p ? ` ${p}` : ""} ตัวเครื่อง M Switch คู่หัวพอตใส · M Bar (Marbo) 9K และ 10K เป็นพอตใช้แล้วทิ้ง ส่วน M Switch และ Zero เป็นเครื่องระบบสวิตช์ เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา สั่งทาง LINE @okm24`,
-    };
-  },
-  voopoo: (priceOf) => {
     const p = (slug: string) => { const v = priceOf(slug); return v ? ` ${v}` : ""; };
     return {
-      title: `VOOPOO DRAG 6 · DRAG S3 · ARGUS G4 ของแท้${OKM_TITLE_SUFFIX}`,
-      description: `พอตคิท VOOPOO ที่ OKami24 (OKM) มี DRAG 6${p("drag-6")} ให้ได้ถึง 220 วัตต์ · DRAG S3${p("drag-s3")} · ARGUS G4${p("argus-g4")} พร้อมหัวพอตและคอยล์แท้ สั่งทาง LINE @okm24`,
+      title: `RELX ของแท้ พอตใช้แล้วทิ้งและพอตคิท${OKM_TITLE_SUFFIX}`,
+      description: `RELX ของแท้ที่ OKami24 (OKM) มีทั้ง Smash Go 12K พอตใช้แล้วทิ้ง${p("relx-smash-go-12k")} และ RELX Creator เครื่องระบบสวิตช์ที่เปลี่ยนแค่หัวพอต${p("relx-creator")} สั่งทาง LINE @okm24`,
     };
   },
-  uwell: (priceOf) => {
-    const p = (slug: string) => { const v = priceOf(slug); return v ? ` ${v}` : ""; };
-    return {
-      title: `UWELL Caliburn G5 · G4 · G3 Pro ของแท้${OKM_TITLE_SUFFIX}`,
-      description: `พอตซิสเต็ม UWELL ที่ OKami24 (OKM) มี Caliburn G5${p("caliburn-g5")} · G4${p("caliburn-g4")} · G3 Pro${p("caliburn-g3-pro")} พร้อมหัวพอตและคอยล์แท้ของ Caliburn สั่งทาง LINE @okm24`,
-    };
-  },
+  // "15k" belongs to /products/m-bar-15k (GSC: every "15k" query landed here) — no 15K, no price in this head.
+  salthub: () => ({
+    title: `SALTHUB M Bar (Marbo) ของแท้ บอกราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
+    description: "SALTHUB เจ้าของ M Bar ที่หลายร้านเรียกว่า Marbo มีทั้งพอตใช้แล้วทิ้ง M Bar 9K และ 10K กับเครื่องระบบสวิตช์ M Switch และ Zero สั่งทาง LINE @okm24",
+  }),
+  voopoo: () => ({
+    title: `VOOPOO พอตคิท หัวพอต คอยล์ ของแท้${OKM_TITLE_SUFFIX}`,
+    description: "VOOPOO ของแท้ที่ OKami24 (OKM) มีพอตคิทตระกูล ARGUS DRAG VINCI และ VMATE พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+  }),
+  uwell: () => ({
+    title: `UWELL Caliburn พอตซิสเต็ม ของแท้ ราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
+    description: "UWELL ผู้ผลิตพอตซิสเต็มตระกูล Caliburn ที่ร้านมีทั้งตัวเครื่องหลายรุ่น พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+  }),
   // Round 7 "SEO ค" B2 — the seven brands that still read "X ของแท้ทุกรุ่นที่ร้านมี". Pattern agreed
   // with seo-auditor #1 and thai-copy: the brand page's title = brand word + category word (the
   // brand term), the product page's title = model + price (the model term) — a single-product
@@ -119,8 +113,10 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   "esko-bar": (priceOf) => {
     const p = priceOf("pod-159");
     return {
-      title: `ESKO BAR เครื่องระบบสวิตช์ ของแท้${p ? ` ${p}` : ""}${OKM_TITLE_SUFFIX}`,
-      description: `ESKO BAR แบรนด์พอตใช้แล้วทิ้งและเครื่องระบบสวิตช์ ที่ร้านมี Esko Bar Switch 20K เครื่องที่เปลี่ยนแค่หัวพอตบรรจุสำเร็จ ของแท้${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
+      // Round SEO D: the model price left the brand title (pod-159 owns "esko bar switch 20k"); 20 = the flavours listed
+      // for pod-159 (BSOT §21) — "กลิ่น" is the locked word for a flavour option (THAI_STYLE, round 10B).
+      title: `ESKO BAR เครื่องระบบสวิตช์ ของแท้ 20 กลิ่น${OKM_TITLE_SUFFIX}`,
+      description: `ESKO BAR ที่ร้านมีคือ Esko Bar Switch 20K ของแท้ ตัวเครื่องใช้ซ้ำได้ เปลี่ยนแค่หัวพอตบรรจุสำเร็จ มีให้เลือก 20 กลิ่น${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
     };
   },
   // Image-fix round 2026-09-30: Pod-180 is nexBar CLEAR 18K (no brand); the WOTOFO page lists WOTOFO nexBAR 18K, sold
@@ -153,8 +149,10 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   joiway: (priceOf) => {
     const p = (slug: string) => { const v = priceOf(slug); return v ? ` ${v}` : ""; };
     return {
-      title: `JOIWAY พอตใช้แล้วทิ้ง F3 · F4 ของแท้${OKM_TITLE_SUFFIX}`,
-      description: `JOIWAY ผู้ผลิตพอตใช้แล้วทิ้ง ที่ร้านมี F3${p("joiway-f3")} และ F4${p("joiway-f4")} สลับ 2 รสในเครื่องเดียว OKami24 รีวิวใช้จริงไว้บน YouTube สั่งทาง LINE @okm24`,
+      // Round SEO D: "joiway f4" queries landed on this page (GSC 0/10) — the model names left the title. F3 is the
+      // single-flavour model; only F4 switches between two (the old line read as if both did).
+      title: `JOIWAY พอตใช้แล้วทิ้ง ของแท้ บอกราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
+      description: `JOIWAY พอตใช้แล้วทิ้ง ที่ร้านมี F3 รุ่นกลิ่นเดียว${p("joiway-f3")} และ F4 คู่กลิ่นในเครื่องเดียว${p("joiway-f4")} ซึ่ง OKami24 รีวิวใช้จริงไว้บน YouTube สั่งทาง LINE @okm24`,
     };
   },
 };
@@ -229,6 +227,8 @@ export function categoryTitleTh(labelTh: string, categoryId?: string): string {
 export const PRODUCT_TITLE_HEAD_TH: Record<string, string> = {
   "m-bar-9k": "SALTHUB M BAR 9K (Marbo) ของแท้",
   "m-bar-10k": "SALTHUB M BAR 10K (Marbo) ของแท้",
+  // Round SEO D: matches 9K/10K; "พอตคิท" because the 15K is a reusable body + pod, never a disposable (owner 06/10).
+  "m-bar-15k": "SALTHUB M BAR 15K (Marbo) พอตคิท ของแท้",
   "coil-1": "คอยล์ VOOPOO Vinci สำหรับ VINCI Pod ของแท้",
   "coil-38": "คอยล์ VOOPOO TPP สำหรับ DRAG 3 ของแท้",
   "coil-53": "คอยล์ UWELL Caliburn G2 ของแท้",
@@ -298,7 +298,18 @@ const CONNECTIVE_PREFIX = /^(และ|แล้ว|ส่วน|กับ|ซ�
  *  <head> only. Keyed by product slug. Rows C3–C6 are deliberately short (no spec to draw on). */
 export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Batch 3f (06/10): wrong facts fixed (owner §18 06/10) — not a disposable, ceramic not cotton mesh, no flavour count.
-  "m-bar-15k": "M Bar 15K (Marbo 15K) ที่ OKami24 (OKM) ตัวเครื่องใช้ซ้ำ คู่กับหัวพอตใสคอยล์เซรามิก รองรับสูงสุด 15,000 พัฟ",
+  // Round SEO D (07/10): no "M Switch" (m-switch-kit owns it) · no "ใส"/coil type (BSOT 06/10: black pods only).
+  "m-bar-15k": "M Bar 15K (Marbo 15K) จาก SALTHUB ตัวเครื่องใช้ซ้ำได้ คู่กับหัวพอตที่ถอดเปลี่ยนได้ รองรับสูงสุด 15,000 พัฟ",
+  // Round SEO D (07/10) — head-only lines that open with the model name (the page's own shortDescription stays as
+  // it is). Every number is a verified spec row of that product (thai-copy + seo-auditor 07/10).
+  "m-bar-10k": "M Bar 10K (Marbo 10K) จาก SALTHUB พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์",
+  "caliburn-g5": "UWELL Caliburn G5 พอตซิสเต็มที่มีจอสี 0.85 นิ้ว แตะสามครั้งเพื่อสลับโหมดวัตต์ แบต 1600mAh ปรับได้ 5–35 วัตต์",
+  "caliburn-g3-pro": "Caliburn G3 Pro มีจอเต็มหน้าเครื่องบอกวัตต์และจำนวนพัฟ แบต 1000mAh ปรับลมได้ละเอียด ให้หัวพอต 0.4 กับ 0.9 โอห์มมาในกล่อง",
+  "caliburn-g3-pro-koko": "Caliburn G3 Pro KOKO ทรงกล่อง จอสี 1.8 นิ้วที่เปลี่ยนธีมหน้าจอได้ แบต 1250mAh และใช้หัวพอต G3 ได้ทุกหัว",
+  "caliburn-g4-classic": "Caliburn G4 Classic แบต 1400mAh ใช้สีไฟบอกแบตที่เหลือแทนจอ สูบได้เลยโดยไม่ต้องกดปุ่ม และปรับช่องลมได้ละเอียดแบบไม่มีขั้น",
+  "argus-g4": "VOOPOO ARGUS G4 แบต 1650mAh ปรับได้ 5–35 วัตต์ จอ HD 0.85 นิ้วบอกแบต วัตต์และโอห์ม ปุ่มเลื่อนปรับลมตั้งแต่ MTL ถึง RDL",
+  "argus-g4-mini": "VOOPOO ARGUS G4 mini ตัวเครื่องเล็กลงแต่แบต 1650mAh เท่ารุ่นใหญ่ ปรับได้ 5–30 วัตต์ ไม่มีจอ และสูบได้เลยโดยไม่ต้องกดปุ่ม",
+  "joiway-f4": "JOIWAY F4 พอตใช้แล้วทิ้งแบบ Double Flavor คู่กลิ่นในเครื่องเดียว หมุนปากดูดเพื่อสลับ รองรับสูงสุด 20,000 พัฟ มีจอ LED",
   "coil-1": "คอยล์ VOOPOO Vinci มี 0.15 · 0.6 · 1.2 โอห์ม ทั้งแบบ MTL และ DTL ใช้ได้กับ VINCI Pod · VINCI X Pod · DRAG Baby Trio",
   "coil-38": "คอยล์ VOOPOO TPP มี TPP-DM2 0.2 โอห์ม 40–60 วัตต์ · TPP-DM4 0.3 โอห์ม 32–40 วัตต์ ใช้ได้กับ TPP Pod · DRAG 3 · DRAG X Plus",
   "coil-54": "หัวพอตเปล่า Feelin Mini จากแบรนด์ NEVOKS สำหรับเครื่อง Feelin Mini ไม่มีคอยล์มาในกล่อง ต้องซื้อคอยล์แยก",
@@ -313,7 +324,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "coil-89": "หัวพอต RINCOE Jellybox V คอยล์ในตัว มี 0.8 และ 1.0 โอห์ม ความจุ 3mL เติมด้านข้าง ใช้ได้กับ Jellybox V1 · V2 · V3",
   "coil-94": "หัวพอต Caliburn G4&G3 Series จากแบรนด์ UWELL คอยล์ mesh ในตัว มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม",
   "iqosheet-16": "เครื่องอุ่นยาสูบ IQOS ILUMA i PRIME ชาร์จผ่าน USB-C เต็มแล้วใช้ได้สูงสุด 20 ก้าน ใช้กับก้าน TEREA เท่านั้น",
-  "iqosheet-18": "เครื่องอุ่นยาสูบ IQOS ILUMA i ใช้ได้กับก้าน TEREA เท่านั้น มี 2 สี Midnight Black และ Breeze Blue",
+  "iqosheet-18": "เครื่องอุ่นยาสูบ IQOS ILUMA i ใช้ได้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 7 สีที่ IQOS ทำออกมา",
   "pod-180": "พอตใช้แล้วทิ้ง nexBar CLEAR 18K ตัวใส สูงสุด 18,000 พัฟ น้ำยา 18mL แบต 650mAh ชาร์จผ่าน USB-C มี 2 โหมด Normal กับ Turbo",
 };
 
