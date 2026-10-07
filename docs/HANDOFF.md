@@ -20,7 +20,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   add an item there whenever something waits for the owner's eye, delete it once answered; `docs/รอพี่ตรวจ.md` mirrors it in git.
   Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
-2 ahead of main: branch `docs-handoff-0710-eve` = this §16 (+ LESSONS) only. Branch `option-photos-3` = LESSONS 28 only, NOT checked.
+2 ahead of main: branch `docs-handoff-0710-eve` = this §16 + LESSONS ch15 + waiting list 31 only. Branch `option-photos-3` = LESSONS 28 only, NOT checked.
   SHARED FOLDER: another chat (friday-chat-move) switched this folder's branch mid-work on 07/10 and a commit landed on its branch —
   before every commit run `git branch --show-current`; two chats on this repo at once = one of them in a worktree.
 3b IMAGE THEFT — DONE #322 (live 06/10, owner tested + approved): `ImageSaveGuard` (root layout) blocks right-click/drag on every <img>,
@@ -55,8 +55,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        Drag S3 recipe = `drag-s3/pick.json` ("t" = everest-patch.js; the detector misses on new renders → use `--box x0,y0,x1,y1` by hand).
        NEXT image jobs: J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) — not started. Owner verdicts still to
        do: relx-creator · argus-g4-mini · zero-cartridge · joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)).
-       Owner taste question to put on the sheet with the #337 report: Drag S3 line-ups 5 + 5 make each device smaller than the old 4 + 3
-       (checker taste note; a 3rd "ทั้งหมด 3" pill = component change) — keep 5 + 5 (Friday's pick) or 4 + 3 + 3.
+       Drag S3 line-ups 5 + 5 vs 4 + 3 + 3 = on the review sheet (item 31; a 3rd "ทั้งหมด 3" pill = component change).
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
        OWNER PRICES 07/10 (review sheet 25): M Bar 15K device + pod = ฿600 · pod only = ฿400 — money = full set (13.5 #3), own batch,
        through the price-approval data (never typed by hand), with the black-pod split; ฿349 stays until then.
