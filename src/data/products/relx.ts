@@ -119,7 +119,7 @@ export const relxProducts: Product[] = [
     displayName: "RELX CREATOR",
     tagline: "RELX's Creator Pro device — pods sold separately.",
     shortDescription:
-      "The RELX Creator Pro device on its own: an 800mAh USB-C battery with a pixel smart screen, 15W / 25W at a double click and adjustable airflow. A closed pod system — fit a prefilled pod, swap the pod when it runs out and keep the device. Takes RELX Creator 20K pods and Muro Connector pods.",
+      "The RELX Creator Pro device on its own: an 800mAh USB-C battery with a pixel smart screen, 15W / 25W at a double click and adjustable airflow. A closed pod system — fit a prefilled pod, swap the pod when it runs out and keep the device. Takes RELX Creator Pods and Muro Connector pods.",
     isFlagship: false,
     // Confirmed via YouTube oEmbed (2026-09-03): real video, owned by
     // youtube.com/@PODSYSTEM-OKAMI-II — one of OKami24's own three channels.
@@ -183,7 +183,7 @@ export const relxProducts: Product[] = [
       { key: "screen", label: "Display", value: "Pixel smart screen with emoji faces; one click shows the battery", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
       { key: "airflow", label: "Airflow", value: "Adjustable", sourceStatus: "verified", sourceUrl: "https://relxnow.com/products/relx-creator-pro-device" },
       // No URL on purpose: the owner's word from the shop's stock (30/09) — the named exception in THAI_STYLE §5.
-      { key: "compat", label: "Pod platform", value: "RELX Creator 20K pods, Muro Connector pods (shop-confirmed)", sourceStatus: "verified" },
+      { key: "compat", label: "Pod platform", value: "RELX Creator Pods, Muro Connector pods (shop-confirmed)", sourceStatus: "verified" },
     ],
     features: [
       {
@@ -210,7 +210,7 @@ export const relxProducts: Product[] = [
     ],
     // The pod rows are the owner's word (shop stock, 30/09); the spec row and the FAQ say "shop-confirmed".
     compatibility: [
-      { type: "pod", label: "RELX Creator 20K pod" },
+      { type: "pod", label: "RELX Creator Pod" },
       { type: "pod", label: "Muro Connector pod" },
       typeC,
     ],
@@ -219,7 +219,7 @@ export const relxProducts: Product[] = [
       {
         id: "relx-creator-pods",
         question: "Which pods fit the RELX Creator?",
-        answer: "RELX Creator 20K pods and Muro Connector pods — the shop confirmed both from its own stock. For any other pod, ask on LINE @okm24 first.",
+        answer: "RELX Creator Pods and Muro Connector pods — the shop confirmed both from its own stock. For any other pod, ask on LINE @okm24 first.",
       },
     ],
     relatedProductSlugs: ["muro-connector-20k", "relx-smash-go-12k"],

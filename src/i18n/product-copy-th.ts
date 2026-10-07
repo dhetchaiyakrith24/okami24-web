@@ -694,7 +694,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     faqs: {
       "relx-creator-pods": {
         question: "RELX Creator ใช้กับหัวพอตรุ่นไหนได้บ้าง",
-        answer: "ใส่ได้ทั้งหัวพอต RELX Creator 20K และหัวพอต Muro Connector สองรุ่นนี้ร้านยืนยันจากของจริงที่มีอยู่ ถ้าจะใช้กับหัวพอตรุ่นอื่น ทักไลน์ @okm24 ถามก่อนได้เลย",
+        answer: "ใส่ได้ทั้งหัวพอต RELX Creator Pod และหัวพอต Muro Connector สองรุ่นนี้ร้านยืนยันจากของจริงที่มีอยู่ ถ้าจะใช้กับหัวพอตรุ่นอื่น ทักไลน์ @okm24 ถามก่อนได้เลย",
       },
     },
     specifications: {
@@ -703,9 +703,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       modes: "15W Normal / 25W Boost กดสองครั้งสลับโหมด",
       screen: "จอพิกเซล โชว์หน้าอีโมจิ กดปุ่มครั้งเดียวดูแบต",
       airflow: "ปรับได้",
-      compat: "RELX Creator 20K และ Muro Connector (ร้านยืนยันจากของจริง)",
+      compat: "RELX Creator Pod และ Muro Connector (ร้านยืนยันจากของจริง)",
     },
-    tagline: "เครื่องใช้ซ้ำของ RELX ใส่หัวพอตบรรจุสำเร็จ หมดก็เปลี่ยนแค่หัว",
+    tagline: "เครื่องระบบสวิตช์ของ RELX หัวพอตหมดก็เปลี่ยนแค่หัว",
     shortDescription:
       "ขายเฉพาะตัวเครื่อง หัวพอตบรรจุสำเร็จซื้อแยก หัวหมดก็เปลี่ยนแค่หัว ตัวเครื่องชาร์จแล้วใช้ต่อได้ มีจอพิกเซลโชว์หน้าอีโมจิ กดสองครั้งติดกันสลับ 15 กับ 25 วัตต์",
   },
@@ -807,7 +807,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // this file. Taglines shortened by the owner ("รองรับสูงสุด N พัฟ" says everything the English does).
   "mood-monster-14k": {
     whoIsThisFor: {
-      0: "อยากได้พอตใช้แล้วทิ้งสายพัฟเยอะ ที่มีรสให้เลือกหลายรส",
+      0: "อยากได้พอตใช้แล้วทิ้งสายพัฟเยอะ มีให้เลือกหลายกลิ่น",
     },
     specifications: {
       puffs: "สูงสุด 14,000",
@@ -839,7 +839,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "muro-connector-20k": {
     whoIsThisFor: {
-      0: "อยากได้พอตใช้แล้วทิ้งสายพัฟเยอะ และรสก็มีให้เลือกเยอะ",
+      0: "อยากได้พอตใช้แล้วทิ้งสายพัฟเยอะ มีให้เลือกหลายกลิ่น",
     },
     specifications: {
       puffs: "สูงสุด 20,000",
