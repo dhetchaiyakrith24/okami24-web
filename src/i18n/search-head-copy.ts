@@ -146,15 +146,19 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
       description: `DOTMOD ผู้ผลิต dotAIO และคอยล์ dotCoils ที่ร้านมีคอยล์แท้สำหรับ dotAIO V2${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
     };
   },
-  joiway: (priceOf) => {
-    const p = (slug: string) => { const v = priceOf(slug); return v ? ` ${v}` : ""; };
-    return {
-      // Round SEO D: "joiway f4" queries landed on this page (GSC 0/10) — the model names left the title. F3 is the
-      // single-flavour model; only F4 switches between two (the old line read as if both did).
-      title: `JOIWAY พอตใช้แล้วทิ้ง ของแท้ บอกราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
-      description: `JOIWAY พอตใช้แล้วทิ้ง ที่ร้านมี F3 รุ่นกลิ่นเดียว${p("joiway-f3")} และ F4 คู่กลิ่นในเครื่องเดียว${p("joiway-f4")} ซึ่ง OKami24 รีวิวใช้จริงไว้บน YouTube สั่งทาง LINE @okm24`,
-    };
-  },
+  // Round SEO D: "joiway f4" queries landed on this page (GSC 0/10) — the model names and prices left the title (batch 4)
+  // and the description (close, seo-auditor 08/10): /products/joiway-f4 owns "joiway f4". Wording = thai-copy 08/10.
+  joiway: () => ({
+    title: `JOIWAY พอตใช้แล้วทิ้ง ของแท้ บอกราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
+    description: "JOIWAY ของแท้ที่ OKami24 (OKM) มีทั้งพอตใช้แล้วทิ้งรุ่นกลิ่นเดียว และรุ่นคู่กลิ่นในเครื่องเดียว พร้อมคลิปรีวิวใช้จริงบน YouTube สั่งทาง LINE @okm24",
+  }),
+  // Round SEO D close (seo-auditor 08/10): with no override this page's description was its lede, which names "INFY 20K"
+  // — /products/infy-20k owns "infy 20k". Title kept exactly as the default (brandTitleTh + the layout suffix); the
+  // description reuses the lede's first half (the one Thai-name sentence, owner 07/10) without the model. thai-copy 08/10.
+  infy: () => ({
+    title: "INFY ของแท้ทุกรุ่นที่ร้านมี — OKami24",
+    description: "INFY หรือที่หลายคนเรียกว่าอินฟี่ เป็นแบรนด์ที่ OKami24 มีพอตใช้แล้วทิ้งของแท้ พร้อมบอกราคาไว้บนหน้าเว็บ สั่งทาง LINE @okm24",
+  }),
 };
 
 /** Row B2 — appended to every product description; the price is the catalog's, never typed. */
