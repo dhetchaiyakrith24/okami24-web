@@ -563,9 +563,9 @@ export const salthubProducts: Product[] = [
     name: "M Switch Pod",
     displayName: "SALTHUB M SWITCH POD",
     // Owner 2026-10-08: the shop's admin list calls this pod "หัว M Bar 15K".
-    searchAliases: ["M Bar 15K", "Marbo 15K"],
+    searchAliases: ["M Bar 15K", "MBar 15K"],
     tagline: "The prefilled cartridge for the M Switch Kit.",
-    shortDescription: "A prefilled replacement cartridge for the M Switch Kit device body — the set we sell as the M Bar 15K.",
+    shortDescription: "A prefilled replacement cartridge for the M Switch Kit device body — we sell the Kit as the M Bar 15K.",
     isFlagship: false,
     attributes: {
       capacityMl: 2.2,
