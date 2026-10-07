@@ -6923,5 +6923,303 @@
   },
   "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80 · v4 07/10 night: shadow beside the base faded (checker #345)",
   "fileName": "variant-black-v4.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-apple-aloe-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "apple-aloe",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-a.png = the variant-<id>.webp cuts of apple-aloe, blueberry, cigar, cola side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-a-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/apple-aloe-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-apple-aloe.webp — the pod cut from SALTHUB's own apple-aloe flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-apple-aloe-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-apple-aloe-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-blueberry-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "blueberry",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-a.png = the variant-<id>.webp cuts of apple-aloe, blueberry, cigar, cola side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-a-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/blueberry-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-blueberry.webp — the pod cut from SALTHUB's own blueberry flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-blueberry-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-blueberry-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-cigar-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "cigar",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-a.png = the variant-<id>.webp cuts of apple-aloe, blueberry, cigar, cola side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-a-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/cigar-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-cigar.webp — the pod cut from SALTHUB's own cigar flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-cigar-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-cigar-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-cola-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "cola",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-a.png = the variant-<id>.webp cuts of apple-aloe, blueberry, cigar, cola side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-a-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/cola-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-cola.webp — the pod cut from SALTHUB's own cola flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-cola-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-cola-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-fruit-tea-Q2fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "fruit-tea",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-b.png = the variant-<id>.webp cuts of fruit-tea, grape, grape-aloe, grapefruit side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-b-S2.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/fruit-tea-QS2.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-fruit-tea.webp — the pod cut from SALTHUB's own fruit-tea flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-fruit-tea-Q2.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-fruit-tea-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-grape-Q2fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-b.png = the variant-<id>.webp cuts of fruit-tea, grape, grape-aloe, grapefruit side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-b-S2.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/grape-QS2.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-grape.webp — the pod cut from SALTHUB's own grape flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-grape-Q2.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-grape-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-grape-aloe-Q2fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "grape-aloe",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-b.png = the variant-<id>.webp cuts of fruit-tea, grape, grape-aloe, grapefruit side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-b-S2.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/grape-aloe-QS2.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-grape-aloe.webp — the pod cut from SALTHUB's own grape-aloe flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-grape-aloe-Q2.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-grape-aloe-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-grapefruit-Q2fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "grapefruit",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-b.png = the variant-<id>.webp cuts of fruit-tea, grape, grape-aloe, grapefruit side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-b-S2.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/grapefruit-QS2.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-grapefruit.webp — the pod cut from SALTHUB's own grapefruit flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-grapefruit-Q2.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-grapefruit-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-honey-yuzu-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "honey-yuzu",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-c.png = the variant-<id>.webp cuts of honey-yuzu, ice-sparkling, lemonade, lychee side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-c-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/honey-yuzu-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-honey-yuzu.webp — the pod cut from SALTHUB's own honey-yuzu flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-honey-yuzu-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-honey-yuzu-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-ice-sparkling-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "ice-sparkling",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-c.png = the variant-<id>.webp cuts of honey-yuzu, ice-sparkling, lemonade, lychee side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-c-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/ice-sparkling-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-ice-sparkling.webp — the pod cut from SALTHUB's own ice-sparkling flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-ice-sparkling-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-ice-sparkling-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-lemonade-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "lemonade",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-c.png = the variant-<id>.webp cuts of honey-yuzu, ice-sparkling, lemonade, lychee side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-c-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/lemonade-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-lemonade.webp — the pod cut from SALTHUB's own lemonade flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-lemonade-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-lemonade-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-lychee-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "lychee",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-c.png = the variant-<id>.webp cuts of honey-yuzu, ice-sparkling, lemonade, lychee side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-c-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/lychee-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-lychee.webp — the pod cut from SALTHUB's own lychee flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-lychee-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-lychee-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-mango-S1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "mango",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with this flavour's pod photo (_incoming/look-batch/zero-cartridge/orig-mango.png = public/assets/products/zero-cartridge/variant-mango.webp upscaled on #2b2e33 by zero-cartridge/prep.js) as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with the Zero part list (look-batch/hf-helpers.js __ZC); render _incoming/look-batch/zero-cartridge/mango-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-mango.webp — the pod cut from SALTHUB's own mango flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-mango-S1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-mango-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-mint-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "mint",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-d.png = the variant-<id>.webp cuts of mint, mixberry, oolong-tea, peach side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-d-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/mint-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-mint.webp — the pod cut from SALTHUB's own mint flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-mint-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-mint-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-mixberry-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "mixberry",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-d.png = the variant-<id>.webp cuts of mint, mixberry, oolong-tea, peach side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-d-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/mixberry-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-mixberry.webp — the pod cut from SALTHUB's own mixberry flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-mixberry-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-mixberry-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-oolong-tea-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "oolong-tea",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-d.png = the variant-<id>.webp cuts of mint, mixberry, oolong-tea, peach side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-d-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/oolong-tea-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-oolong-tea.webp — the pod cut from SALTHUB's own oolong-tea flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-oolong-tea-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-oolong-tea-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-peach-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "peach",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-d.png = the variant-<id>.webp cuts of mint, mixberry, oolong-tea, peach side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-d-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/peach-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-peach.webp — the pod cut from SALTHUB's own peach flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-peach-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-peach-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-peach-strawberry-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "peach-strawberry",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-e.png = the variant-<id>.webp cuts of peach-strawberry, pineapple, watermelon, yakult side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-e-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/peach-strawberry-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-peach-strawberry.webp — the pod cut from SALTHUB's own peach-strawberry flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-peach-strawberry-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-peach-strawberry-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-pineapple-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "pineapple",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-e.png = the variant-<id>.webp cuts of peach-strawberry, pineapple, watermelon, yakult side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-e-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/pineapple-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-pineapple.webp — the pod cut from SALTHUB's own pineapple flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-pineapple-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-pineapple-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-strawberry-S1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "strawberry",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with this flavour's pod photo (_incoming/look-batch/zero-cartridge/orig-strawberry.png = public/assets/products/zero-cartridge/variant-strawberry.webp upscaled on #2b2e33 by zero-cartridge/prep.js) as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with the Zero part list (look-batch/hf-helpers.js __ZC); render _incoming/look-batch/zero-cartridge/strawberry-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-strawberry.webp — the pod cut from SALTHUB's own strawberry flavour poster (round \"option photos\" 06/10; Strawberry = the real Peach Strawberry pod + an AI-drawn Strawberry band after SALTHUB's home-card pod)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-strawberry-S1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-strawberry-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-watermelon-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "watermelon",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-e.png = the variant-<id>.webp cuts of peach-strawberry, pineapple, watermelon, yakult side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-e-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/watermelon-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-watermelon.webp — the pod cut from SALTHUB's own watermelon flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-watermelon-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-watermelon-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/M-yakult-Q1fs.png",
+  "slug": "zero-cartridge",
+  "role": "variant",
+  "id": "yakult",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot of four flavour pod photos in one render (_incoming/look-batch/zero-cartridge/quad-e.png = the variant-<id>.webp cuts of peach-strawberry, pineapple, watermelon, yakult side by side on #2b2e33, zero-cartridge/quad.js) as the only image; prompt = IMAGE_PROMPTS v3 light with the Zero part list per pod (hf-helpers.js __ZC4); render _incoming/look-batch/zero-cartridge/quad-e-S1.png, this pod cut out by zero-cartridge/split-quad.js → _incoming/look-batch/zero-cartridge/yakult-QS1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js",
+   "reference": "public/assets/products/zero-cartridge/variant-yakult.webp — the pod cut from SALTHUB's own yakult flavour poster (round \"option photos\" 06/10)",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-yakult-Q1.png (dark + magenta) — 3 points: the flavour label word + ZERO + M logo exactly as printed · band / lower section / cap colours as on SALTHUB's pod · the smoky clear shell with its oval mouthpiece and centre post"
+  },
+  "note": "image-look J5 08/10 — G5 bar; 1000 canvas, pod 839 px from y 80",
+  "fileName": "variant-yakult-v2.webp"
+ },
+ {
+  "source": "_incoming/look-batch/zero-cartridge/D-strawberry-S1f-card.png",
+  "slug": "zero-cartridge",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with this flavour's pod photo (_incoming/look-batch/zero-cartridge/orig-strawberry.png = public/assets/products/zero-cartridge/variant-strawberry.webp upscaled on #2b2e33 by zero-cartridge/prep.js) as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with the Zero part list (look-batch/hf-helpers.js __ZC); render _incoming/look-batch/zero-cartridge/strawberry-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (foot line by hand), holes the matte cut in the smoky clear shell filled back from the render by look-batch/fill-holes.js, floor clipped to the device columns by clip-floor.js and its edge faded by soft-floor.js, own contact shadow + floor reflection kept (flavour flag ownFloor) — chain = zero-cartridge/key.js; card = the same render keyed at full size with the floor cut at the foot line (matte2.js --device), shell holes filled by fill-holes.js, upright; floor clipped by card-clip.js so the card centres",
+   "reference": "public/assets/products/zero-cartridge/variant-strawberry.webp",
+   "fidelitySheet": "_incoming/look-batch/zero-cartridge/C-strawberry-S1.png"
+  },
+  "note": "image-look J5 08/10 — card from the Strawberry render, upright like the flavour photos (was SALTHUB's pod tilted)",
+  "fileName": "card-v2.webp"
  }
 ]

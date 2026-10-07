@@ -202,8 +202,9 @@ export interface FlavorVariant {
    *  flavor (official flavor-card art, a labeled retail photo, etc.) — same "never fabricate" rule
    *  as `ColorVariant.image`. Most flavors on most disposables will not have one, by design: the
    *  physical device usually looks identical across flavors, so this is optional richness, not a
-   *  completeness requirement. */
-  image?: { src: string; alt: string };
+   *  completeness requirement. `ownFloor`: as `ColorVariant.image` (image-look J5, 08/10 — the first flavour photos
+   *  with their own studio shadow). */
+  image?: { src: string; alt: string; ownFloor?: true };
   /** Image-fix round 2026-09-30 (owner: flavour photos show the device alone; box photos move to the lower
    *  "more details" part of the page): the box + device photo of this flavour, shown in `ProductMoreDetails`'
    *  flavour grid. Same sourcing rule as `image`. */
