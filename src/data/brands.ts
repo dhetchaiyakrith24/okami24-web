@@ -192,7 +192,7 @@ export const brands: Brand[] = [
       "Philip Morris International's heated-tobacco device brand — the ILUMA device family (Prime/i/i ONE/ONE) paired with TEREA tobacco sticks, using induction heating.",
     descriptionTh:
       // Round SEO D batch 5 (owner 07/10): the Thai name people type ("ไอคอส", autocomplete 07/10), one mention.
-      "IQOS ของ Philip Morris International หรือที่คนไทยเรียกกันว่าไอคอส เป็นเครื่องอุ่นยาสูบด้วยความร้อน ไม่ใช้น้ำยา ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมี ILUMA i และ ILUMA i PRIME",
+      "IQOS ของ Philip Morris International หรือที่คนไทยเรียกกันว่าไอคอส เป็นเครื่องอุ่นยาสูบด้วยความร้อน ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมี ILUMA i และ ILUMA i PRIME",
     referenceUrl: "https://www.iqos.com/",
   },
   // Tier-1 disposable growth mission (2026-09-03) — owner-named business-priority brands.
