@@ -11,29 +11,18 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 7d577e9 (#333 docs) · #332 Drag X3 live 07/10 ~16:40 ICT · #329 Drag S3 v5/v6 live
-  ~15:20 (both checked by curl [ตรวจแล้ว]). Render: ~1 min of 502 site-wide after each deploy — wait, then curl.
-  OWNER 07/10 evening (awake): the scheduled-task autonomous order is CANCELLED — back to a normal chat (owner present; stop-and-ask
-  items go to the owner in chat again, not only to รอพี่ตรวจ). FIRST TASK of the next chat: make the owner a review sheet ("ใบตรวจ") of
-  everything waiting for the owner's eye — source = `docs/รอพี่ตรวจ.md` (items still open — 26/27 answered 07/10 eve: Drag S3 + X3 PASSED, S3 "not crisp" accepted = LESSONS ช13) + the two review pages below; one line per item,
-  an answer slot per item (A/B/C or yes/no), Thai, phone-friendly — then keep working on VINCI S and add to the sheet as items appear.
-2 ahead of main: branch `image-look-vinci-s` = this §16 only. Branch `option-photos-3` = LESSONS 28 only, NOT checked.
-  Review pages (owner): Drag S3 https://claude.ai/artifact/NaS45DCEkmX9qJW7DsLzQx · Drag X3 https://claude.ai/artifact/QqzubsSvZdMhjcc7i85WMq
-  (files `_incoming/look-batch/review-ds5/ds5-review.html` · `review-x3/x3-review.html`).
-  VINCI S IN PROGRESS (G5 bar, v3 with the real vapevo photo flattened on #2b2e33 = `vinci-s/orig-<id>-bg.png`): neon DONE = pick
-  `vinci-s/M-neon-S2.png` (`--compare` CHANGED 110/43 → 81/57, hue = real, key clean; S1 has a hard colour band). QUEUED in Higgsfield
-  (07/10 eve): black 2a3fe908 · grey 6cba6179 · green-gradient (id via `show_generations` size 4) → `node
-  _incoming/look-batch/get.js vinci-s <id> S1 <hf_name>`. NOT queued yet: silver · blue-gradient · gold-gradient · pink (pale → swap the
-  light sentence for the S4 one "Strong key light from the front-left, clear fall-off to the right, a darker floor," + "stays <colour>,
-  never grey"). Prompt = the neon one with the colour from `__DV` (hf-helpers.js) + "(the same hue and depth as image 1, not paler,
-  not more saturated)". Each: run.js vinci-s <id> <render> --tag S1 → clip-floor → eye on C- sheet + `hue-stats.js` vs orig → pick.json
-  → `node vinci-map-v3.js` → process-images --map vinci-map-v3.json → card = `card-clip.js vinci-s/D-<black pick>` → line-ups
-  `vinci-lineup-floor.js --row --pick` (4 + 4) → webp lineup(2)-v3 → data in voopoo.ts vinci-s (8 variants v3 ownFloor + card-v3 +
-  lineups v3; alts say "upright front view") → PR → checker → merge → NO review page (LESSONS ช13: 3 brands passed → stop) — one line in the review sheet.
-  Typing a long prompt into the Higgsfield box freezes the page ~40 s but the text lands (check with innerText); after an upload the
-  new photo is the 2nd tile, untick the 3rd, tick the 2nd. New tools (`_incoming/look-batch/`, not in git): foot-bg.js · card-clip.js ·
-  hue-match.js · hue-stats.js · metal-match.js (not used) · zmag.js · cmp3.js · vinci-map-v3.js · vinci-lineup-floor.js; matte2.js
-  `--protect` / `--bg`; everest-patch.js `--box`.
+1 main: `git fetch && git log -1 --oneline origin/main` = 234d588 (#337 Drag S3 +3 colours) · #336 owner-sheet copy live 07/10 eve
+  (curl: new headings / RELX / MOOOD / INFY lines on the live site [ตรวจแล้ว]) · #335 VINCI S v3 live ~17:30 (curl: 11 v3 files [ตรวจแล้ว]).
+  #337 live 07/10 eve (curl: the 3 new variant-*-v5 + lineup(2)-v7 on /products/drag-s3 [ตรวจแล้ว]).
+  Render: ~1 min of 502 site-wide after each deploy — wait, then curl. Owner present (normal chat; stop-and-ask items go to the owner in chat).
+  OWNER REVIEW SHEET = artifact https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr (page `_incoming/review-sheet/sheet.html`, db
+  capability): items live in its db collection "items", the owner's answers in "answers" (read with the ArtifactData tool, "list") —
+  add an item there whenever something waits for the owner's eye, delete it once answered; `docs/รอพี่ตรวจ.md` mirrors it in git.
+  Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
+  credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
+2 ahead of main: branch `docs-handoff-0710-eve` = this §16 (+ LESSONS) only. Branch `option-photos-3` = LESSONS 28 only, NOT checked.
+  SHARED FOLDER: another chat (friday-chat-move) switched this folder's branch mid-work on 07/10 and a commit landed on its branch —
+  before every commit run `git branch --show-current`; two chats on this repo at once = one of them in a worktree.
 3b IMAGE THEFT — DONE #322 (live 06/10, owner tested + approved): `ImageSaveGuard` (root layout) blocks right-click/drag on every <img>,
   globals.css blocks iOS long-press save; new images need nothing. Logo-over-image drafts (`_incoming/image-guard/logo-mock/`) = owner
   06/10 "เอาแค่นี้ก่อน" — do not re-propose unprompted. Not done (reasons told to the owner): original files · invisible watermark · watermark in file.
@@ -43,7 +32,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Done: PRIME 5 colours · ILUMA i 7 (Bold Ruby = jp.iqos.com) · Zero Cartridge 22/22 · M Bar 15K 16/16. AI jobs (nano_banana_2 4k):
   AI job ids of batches 1–2 + checker #312 taste notes = `git show 7d577e9:docs/HANDOFF.md` §16 item 3. Credits this round: 17.
   PAUSED 06/10 night. Owner's order (answers 06/10 night, one chat = one round):
-   (1) DONE #317 + #319 (prices; m-bar-15k 349 left for item (3) = รอพี่ตรวจ 25; ARGUS note = `git show 7d577e9:docs/HANDOFF.md`);
+   (1) DONE #317 + #319 (prices; m-bar-15k 349 left for item (3); ARGUS note = `git show 7d577e9:docs/HANDOFF.md`);
    (2) image look — RUNNING (the site chat = YOU). Method = IMAGE_SPEC §0 item 8 · FLOW + fix-line table + prompt versions =
        docs/IMAGE_PROMPTS.md (owner 07/10 "ภาพรวม"): `node scripts/image-source-check.js <slug>` on the candidate photos → pick image 1
        (maker → real retailer → site photo) → v2 (flat-graphic reference, KOKO) or v3 (already-AI-relit reference → REAL photo, light
@@ -58,17 +47,19 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        Tools: everest-patch.js (badge text; X3 `--win 846,850,928,864`) → run.js <slug> <id> <render> --tag S1 (M- site canvas · C- dark/magenta
        · D- device only) → clip-floor → pick → map script → process-images --map → data ownFloor → line-ups → review page → PR → checker.
        New file name on every replace once live (30-day cache).
-       DONE: J1 KOKO (#328, owner passed) · J2 Drag S3 (#329 live 07/10, checker 5/5, owner verdict = รอพี่ตรวจ 26): picks
-       `_incoming/look-batch/drag-s3/pick.json` (M- files; "c" beam-clean.js · "t" everest-patch.js), map `drag-map-v5.js`, line-ups
-       `ds-lineup-floor.js --row --pick`, floors clipped with `clip-floor.js` (lopsided floor = off-centre on the site). Pale colours need
-       the S4 light + "stays the SAME light value as image 1" line. J3 Drag X3 = #332 live 07/10 (checker pass after fixes; owner verdict = รอพี่ตรวจ 27; helpers `__S`/`__S4`/`__X`/`__X4` in
-       hf-helpers.js — this chat typed prompts straight into the box instead: click the box, ctrl+a, type; the page froze ~40 s on a
-       long type but kept the text). VINCI S = item 2 (in progress). J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) not started.
-       Owner verdicts 07/10 still to do: relx-creator · argus-g4-mini · drag-x3 · vinci-s · zero-cartridge · joiway-f4 = skip ·
-       m-bar-15k clear pod off the site (= item (3)) · passed: caliburn-g4-pro · argus-p3 · vmate-i3 · iqosheet-16/18.
-       Drag S3 has 10 colours (+ Lake Green · Cherry Pink · Brooklyn Gray, 2 real shops agree [ตรวจแล้ว]; maker site unreachable from
-       the tools) — owner sheet 29 A = add after VINCI S: renders done 07/10 (Chrome free, `drag-new3-map.js`, line-ups 5 + 5), PR next.
+       DONE (all live, checker passed): J1 KOKO #328 · J2 Drag S3 #329 (owner passed, "not crisp" accepted) + 3 colours VOOPOO added
+       #337 (Lake Green · Cherry Pink · Brooklyn Gray; 2 real shops list the same 10 — vapeuk.co.uk read by the checker, legionofvapers 403
+       to curl; image 1 = legionofvapers 800² photo cut off white by `prep-white.js`; Brooklyn keyed with matte2 `--protect` over its dark
+       panel; map `drag-new3-map.js`; line-ups v7 = 5 + 5) · J3 Drag X3 #332 (owner passed) · VINCI S #335 (owner passed 07/10; grey needed
+       4 renders — S1 read black; map `vinci-map-v3.js`, picks `vinci-s/pick.json`). Picks/maps/line-up scripts all in `_incoming/look-batch/`.
+       Drag S3 recipe = `drag-s3/pick.json` ("t" = everest-patch.js; the detector misses on new renders → use `--box x0,y0,x1,y1` by hand).
+       NEXT image jobs: J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) — not started. Owner verdicts still to
+       do: relx-creator · argus-g4-mini · zero-cartridge · joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)).
+       Owner taste question to put on the sheet with the #337 report: Drag S3 line-ups 5 + 5 make each device smaller than the old 4 + 3
+       (checker taste note; a 3rd "ทั้งหมด 3" pill = component change) — keep 5 + 5 (Friday's pick) or 4 + 3 + 3.
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
+       OWNER PRICES 07/10 (review sheet 25): M Bar 15K device + pod = ฿600 · pod only = ฿400 — money = full set (13.5 #3), own batch,
+       through the price-approval data (never typed by hand), with the black-pod split; ฿349 stays until then.
    (4) then this round's batch 3 with the picked image standard.
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
