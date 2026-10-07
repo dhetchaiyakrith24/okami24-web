@@ -21,7 +21,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   image work") · image work goes live after the checker without a review page (before/after page only for a hard case).
   Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
-2 ahead of main: nothing of the image chat (#359 merged; its branch image-look-zero-cartridge = merged). Branch `option-photos-3` =
+2 ahead of main: nothing of the image chat (#359 + #361 merged; branches image-look-zero-cartridge / docs-handoff-j5 = merged).
+  Untracked, NOT the image chat's, left alone: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching). Branch `option-photos-3` =
   LESSONS 28 only, NOT checked. Before every commit run `git branch --show-current`; more than one chat on this repo = the others in worktrees.
 3b IMAGE THEFT — DONE #322 (live 06/10, owner tested + approved): `ImageSaveGuard` (root layout) blocks right-click/drag on every <img>,
   globals.css blocks iOS long-press save; new images need nothing. Logo-over-image drafts (`_incoming/image-guard/logo-mock/`) = owner
@@ -33,7 +34,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   AI job ids of batches 1–2 + checker #312 taste notes = `git show 7d577e9:docs/HANDOFF.md` §16 item 3. Credits this round: 17.
   PAUSED 06/10 night. Owner's order (answers 06/10 night, one chat = one round):
    (1) DONE #317 + #319 (prices; m-bar-15k 349 left for item (3); ARGUS note = `git show 7d577e9:docs/HANDOFF.md`);
-   (2) image look — J1–J5 DONE, all live 08/10 (owner verdict on zero-cartridge open). Method = IMAGE_SPEC §0 item 8 · FLOW + fix-line table + prompt versions =
+   (2) image look — J1–J5 DONE, all live and owner-passed 08/10. Method = IMAGE_SPEC §0 item 8 · FLOW + fix-line table + prompt versions =
        docs/IMAGE_PROMPTS.md (owner 07/10 "ภาพรวม"): `node scripts/image-source-check.js <slug>` on the candidate photos → pick image 1
        (maker → real retailer → site photo) → v2 (flat-graphic reference, KOKO) or v3 (already-AI-relit reference → REAL photo, light
        written out = the owner-picked Drag S3 blue-S2 recipe) + fix lines → ONE colour first → `--compare <old> <new M-file>`
@@ -62,8 +63,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        `split-quad.js` → `key.js` chain: run.js → `fill-holes.js` (smoky clear shell holes repainted from the render's own pixels) →
        clip-floor → soft-floor); 22 pods in 7 renders. FlavorVariant.image now takes `ownFloor` too. Known: set B (Fruit Tea · Grape ·
        Grape Aloe · Grapefruit) has a fainter floor reflection; checker flag: faint ragged black at the Strawberry mouthpiece rim on
-       magenta only. Recipes = JOBS.md J4 + J5. Image-look queue J1–J5 = all live. Owner verdicts still to do: zero-cartridge ·
-       joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)). Shots = `shots-j4/` · `shots-j5/`. NEXT = item (3).
+       magenta only. Recipes = JOBS.md J4 + J5. Image-look queue J1–J5 = all live; owner passed zero-cartridge 08/10.
+       Still open: joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)). Shots = `shots-j4/` · `shots-j5/`.
+       NEXT CHAT (owner 08/10 "ย้ายแชทเลย", context 65% here) = item (3) below. First step: read BSOT (M Bar 15K / M Switch rows) +
+       the m-bar-15k / m-switch-kit / m-switch-pod data and the price-approval data path (13.5 #3 full set — money), then post a
+       ≤7-step plan to the owner before touching prices.
        Owner 07/10 (sheet 31 = A): Drag S3 passed, line-ups 5 + 5 kept. Image work from now: merge → live (§18).
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
        OWNER PRICES 07/10 (review sheet 25): M Bar 15K device + pod = ฿600 · pod only = ฿400 — money = full set (13.5 #3), own batch,
