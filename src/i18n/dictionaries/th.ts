@@ -241,10 +241,8 @@ export const th: Dictionary = {
     officialSite: "เว็บไซต์ทางการ ↗",
     gallerySourceLinkLabel: "แหล่งที่มา",
     // Owner 2026-09-30: the rights clause goes ("เรากำลังทำเพื่อการค้า" — the shop sells, the clause said it does not);
-    // the credit stays. Until 2026-10-05 the 7 SEO-baseline pages keep the old line (`galleryNoteHeld`, round ban).
+    // the credit stays.
     galleryNote: "ภาพจริงจาก {brand}",
-    // Round 30.4ค batch 5 (owner 2026-09-15, option ก) — the old line, held on the baseline pages only; delete after 05/10.
-    galleryNoteHeld: "ภาพจริงจาก {brand} ใช้เป็นภาพประกอบเท่านั้น และไม่นำไปเผยแพร่ต่อเพื่อการค้า",
   },
   pilot: {
     unpublishedBadge: "ยังไม่เผยแพร่",

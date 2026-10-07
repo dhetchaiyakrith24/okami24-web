@@ -236,8 +236,10 @@ export function articleJsonLd(input: {
  *   `freeShippingThreshold` on ShippingRateSettings, not on OfferShippingDetails, and Google's
  *   merchant-listing parser does not read it there — stating it would need a second Offer or
  *   prose, both outside this round.
- * - 7-day claim window, item returned by post at the customer's cost, replacement only — never a
- *   cash refund (`ExchangeRefund`).
+ * - 7-day claim window, item returned by post at the customer's cost (BSOT §12 item 14 →
+ *   `ReturnFeesCustomerResponsibility`; Google: never together with returnShippingFeesAmount — the
+ *   generic `ReturnShippingFees` made GSC ask for that amount on every listing, 2026-10-05),
+ *   replacement only — never a cash refund (`ExchangeRefund`).
  */
 export function offerMerchantFields() {
   return {
@@ -257,7 +259,7 @@ export function offerMerchantFields() {
       returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
       merchantReturnDays: 7,
       returnMethod: "https://schema.org/ReturnByMail",
-      returnFees: "https://schema.org/ReturnShippingFees",
+      returnFees: "https://schema.org/ReturnFeesCustomerResponsibility",
       refundType: "https://schema.org/ExchangeRefund",
     },
   };

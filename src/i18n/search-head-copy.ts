@@ -185,26 +185,14 @@ const ROOT_TITLE_SUFFIX = " — OKami24";
 const TITLE_MAX = 60;
 
 /**
- * Round 7 "SEO ค" B2 — the seven product pages whose `<title>` stays exactly as approved in round
- * SEO ก until the Search Console re-read on 2026-10-05: `docs/SEO_BASELINE.md` names them by page
- * (drag-6, drag-s3, caliburn-g5-lite-se, m-bar-15k) or by query (caliburn g5, caliburn g5 lite,
- * voopoo argus g4), and a title change before that date would make a CTR move unattributable
- * between the title and the description line (seo-auditor #1, 2026-09-23). The other 46 gain the
- * price now: the 33 pages Google has not indexed have no baseline line to lose, and the price plus
- * the Thai type word is what tells the near-identical coil pages apart.
- * Delete this set (and the branch that reads it) after the re-read.
- */
-export const TITLE_PRICE_HOLD_UNTIL_2026_10_05 = new Set(["drag-6", "drag-s3", "caliburn-g5-lite-se", "m-bar-15k", "caliburn-g5", "caliburn-g5-lite", "argus-g4"]);
-
-/**
  * `<title>` of a product page = the approved base title, plus the catalog price where one exists —
- * unless the slug is on hold (above), or the price would push the title past the ceiling (a
+ * unless the price would push the title past the ceiling (a
  * four-digit price can arrive from the stock API any day; the guard drops the fragment instead of
  * letting a title silently grow past 60 — thai-copy's note 8). og:title keeps using
  * `shareTitleWithPriceTh` unchanged, so the share-card gate's "title + price" rule still holds.
  */
 export function productTitleWithPriceTh(slug: string, baseTitle: string, price: number | null): string {
-  if (price === null || TITLE_PRICE_HOLD_UNTIL_2026_10_05.has(slug)) return baseTitle;
+  if (price === null) return baseTitle;
   const withPrice = shareTitleWithPriceTh(baseTitle, price);
   return [...withPrice].length + ROOT_TITLE_SUFFIX.length <= TITLE_MAX ? withPrice : baseTitle;
 }

@@ -70,7 +70,7 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
 import type { Product } from "@/types/catalog";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { productTitleTh } from "@/i18n/search-titles";
-import { categoryTitleTh, PRODUCT_DESCRIPTION_HEAD_TH, TITLE_PRICE_HOLD_UNTIL_2026_10_05, PRODUCT_TITLE_HEAD_TH, productTitleWithPriceTh, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
+import { categoryTitleTh, PRODUCT_DESCRIPTION_HEAD_TH, PRODUCT_TITLE_HEAD_TH, productTitleWithPriceTh, shareTitleWithPriceTh, withPriceSuffixTh } from "@/i18n/search-head-copy";
 
 /** Every image src `PilotProductDetail` could possibly display for this product — the
  *  product-level card, the neutral variant fallback, and each variant's own photo. The variant
@@ -310,13 +310,13 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(legacyTrail)) }} />
       <Breadcrumbs trail={legacyTrail} />
       <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />
-      <ProductReviewSection product={product} frozen={TITLE_PRICE_HOLD_UNTIL_2026_10_05.has(product.slug)} />
+      <ProductReviewSection product={product} />
       {/* `storyDetails` (image-fix round 2026-09-30): one "more details" story in place of the three sections below. */}
       {product.storyDetails ? (
         <ProductMoreDetails product={product} />
       ) : (
         <>
-          <ProductGallery product={product} heldNote={TITLE_PRICE_HOLD_UNTIL_2026_10_05.has(product.slug)} />
+          <ProductGallery product={product} />
           {product.isFlagship && <ProductAnatomy product={product} />}
           <FeatureGrid product={product} />
         </>
