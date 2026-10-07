@@ -17,7 +17,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Render: ~1 min of 502 site-wide after each deploy — wait, then curl. Owner present (normal chat; stop-and-ask items go to the owner in chat).
   OWNER REVIEW SHEET = artifact https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr (page `_incoming/review-sheet/sheet.html`, db
   capability): items live in its db collection "items", the owner's answers in "answers" (read with the ArtifactData tool, "list") —
-  add an item there whenever something waits for the owner's eye, delete it once answered; `docs/รอพี่ตรวจ.md` mirrors it in git.
+  add an item ONLY for an owner decision (one line, details folded — §18 "Review sheet"), delete it once answered; `docs/รอพี่ตรวจ.md` mirrors it.
   Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
 2 ahead of main: branch `docs-handoff-0710-eve` = this §16 + LESSONS ch15 + waiting list 31 only. Branch `option-photos-3` = LESSONS 28 only, NOT checked.
@@ -55,7 +55,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        Drag S3 recipe = `drag-s3/pick.json` ("t" = everest-patch.js; the detector misses on new renders → use `--box x0,y0,x1,y1` by hand).
        NEXT image jobs: J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) — not started. Owner verdicts still to
        do: relx-creator · argus-g4-mini · zero-cartridge · joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)).
-       Drag S3 line-ups 5 + 5 vs 4 + 3 + 3 = on the review sheet (item 31; a 3rd "ทั้งหมด 3" pill = component change).
+       Owner sheet 31 = A (07/10): Drag S3 passed, line-ups 5 + 5 kept. Image work from now: merge → live, no sheet item (§18).
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
        OWNER PRICES 07/10 (review sheet 25): M Bar 15K device + pod = ฿600 · pod only = ฿400 — money = full set (13.5 #3), own batch,
        through the price-approval data (never typed by hand), with the black-pod split; ฿349 stays until then.
@@ -237,6 +237,10 @@ not on the site) · leftover credits = next in the queue, unclear source = skip.
 by swipe (IMAGE_SPEC §0 item 5) · all-options image ("ทั้งหมด"): pod systems get a NEW one (owner 01/10 evening, design left
 to Friday: plain, luxurious, premium, depth); disposables / pod-replacement products get none (IMAGE_SPEC §0 item 5) ·
 every product gets an SEO article in "more details" = its own later round.
+**Review sheet + image work (owner 07/10 night, chat):** "ใบตรวจทำให้สั้นและกระชับลง … ทำงานรูปภาพเสร็จ ขึ้นเว็บเลย … เดี๋ยวพี่ไปดูในเว็บเอง"
+→ the review sheet (artifact, §16 item 1) holds ONLY decisions the owner must make: one short line + answer buttons per item, details
+folded behind a tap · no "look at this" items · image work = checker passes → merge → live, no review page and no sheet item; the
+owner checks the live site (replaces LESSONS ช13's per-model review page and the "one line in the review sheet" step).
 
 **Answered 03/10 (moved from §16 04/10):** "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · logos: Kardinal = the maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
 
