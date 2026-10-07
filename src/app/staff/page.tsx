@@ -57,7 +57,10 @@ export default async function StaffPage() {
             recent={recentChecks(30)}
           />
           <form action={staffLogoutAction} className="flex justify-center">
-            <button type="submit" className="text-sm text-foreground-dim underline-offset-4 hover:text-foreground hover:underline">
+            <button
+              type="submit"
+              className="rounded-full px-5 py-3 text-sm text-foreground-dim underline-offset-4 hover:text-foreground hover:underline"
+            >
               ออกจากระบบ
             </button>
           </form>

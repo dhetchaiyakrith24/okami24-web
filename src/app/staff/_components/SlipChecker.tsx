@@ -147,7 +147,13 @@ function Party({ label, party, chip }: { label: string; party: PartyView | null;
 function Result({ result, onNext }: { result: OkResult; onNext: () => void }) {
   const flags = flagsFor(result);
   const bad = flags.some((f) => f.tone === "bad");
-  const headline: Flag = flags[0] ?? { tone: "warn", title: "✅ ธนาคารยืนยันสลิปนี้ และเงินเข้าบัญชีของร้าน" };
+  // A green ✅ with no order total entered must still say the amount was not compared — a rushed reader takes
+  // green for "paid in full" (designer, round close 08/10).
+  const headline: Flag = flags[0] ?? {
+    tone: "warn",
+    title: "✅ ธนาคารยืนยันสลิปนี้ และเงินเข้าบัญชีของร้าน",
+    detail: result.amountCheck ? undefined : "ยังไม่ได้เทียบกับยอดออเดอร์ ดูยอดเงินด้านล่างเองว่าตรงหรือไม่",
+  };
   const ok = flags.length === 0;
   const tone = ok
     ? "border-verified/50 bg-verified/10 text-verified"
@@ -158,7 +164,7 @@ function Result({ result, onNext }: { result: OkResult; onNext: () => void }) {
   return (
     <section aria-live="polite" className="flex flex-col gap-4 rounded-xl border border-surface-border-soft bg-surface-1 p-5">
       <div className={`flex flex-col gap-1 rounded-lg border px-4 py-3 ${tone}`}>
-        <p className="text-base font-semibold leading-snug">{keep(headline.title)}</p>
+        <p className="text-xl font-bold leading-snug">{keep(headline.title)}</p>
         {headline.detail && <p className="text-sm leading-relaxed text-foreground">{keep(headline.detail)}</p>}
       </div>
       {flags.slice(1).map((f) => (
@@ -180,13 +186,21 @@ function Result({ result, onNext }: { result: OkResult; onNext: () => void }) {
           {result.amountCheck?.matches && (
             <dd className="text-sm text-verified">ตรงกับยอดออเดอร์ {formatBaht(result.amountCheck.expected)}</dd>
           )}
+          {!result.amountCheck && <dd className="text-sm text-foreground-dim">{keep("ไม่ได้ใส่ยอดออเดอร์ จึงยังไม่ได้เทียบยอด")}</dd>}
         </div>
         <div className="flex flex-col gap-1 border-t border-surface-border-soft py-3">
           <dt className="text-xs text-foreground-dim">วันเวลาที่โอน</dt>
           <dd className="text-sm text-foreground">{formatDateTime(result.slip.transferredAt)}</dd>
         </div>
-        <Party label="ผู้รับ" party={result.slip.receiver} chip={result.slip.receiverStatus} />
-        <Party label="ผู้โอน" party={result.slip.sender} />
+        {result.slip.receiver || result.slip.sender ? (
+          <>
+            <Party label="ผู้รับ" party={result.slip.receiver} chip={result.slip.receiverStatus} />
+            <Party label="ผู้โอน" party={result.slip.sender} />
+          </>
+        ) : (
+          // Answered from our log (no names kept): one row instead of the same sentence twice.
+          <Party label="ผู้รับ · ผู้โอน" party={null} chip={result.slip.receiverStatus} />
+        )}
         <div className="flex flex-col gap-1 border-t border-surface-border-soft py-3">
           <dt className="text-xs text-foreground-dim">เลขอ้างอิงรายการ</dt>
           <dd className="break-all font-mono text-sm text-foreground">{result.slip.transRef}</dd>
@@ -248,13 +262,18 @@ function Quota({ quota, configured }: { quota: QuotaView | null; configured: boo
   );
 }
 
+/** Ten rows first — the full list (up to 30) pushed the logout button ~7,000 px down at 390 (designer 08/10). */
+const RECENT_FIRST = 10;
+
 function RecentLog({ recent }: { recent: SlipCheckRecord[] }) {
+  const [all, setAll] = useState(false);
   if (recent.length === 0) return null;
+  const shown = all ? recent : recent.slice(0, RECENT_FIRST);
   return (
     <section className="flex flex-col gap-3">
       <h2 className="text-sm font-semibold text-foreground">ตรวจล่าสุด</h2>
       <ul className="flex flex-col divide-y divide-surface-border-soft rounded-xl border border-surface-border-soft bg-surface-1">
-        {recent.map((r) => (
+        {shown.map((r) => (
           <li key={r.transRef} className="flex flex-col gap-1 px-4 py-3">
             <div className="flex items-center justify-between gap-3">
               <span className="text-base font-semibold text-foreground">{formatBaht(r.amountSatang / 100)}</span>
@@ -270,6 +289,15 @@ function RecentLog({ recent }: { recent: SlipCheckRecord[] }) {
           </li>
         ))}
       </ul>
+      {!all && recent.length > RECENT_FIRST && (
+        <button
+          type="button"
+          onClick={() => setAll(true)}
+          className="inline-flex items-center justify-center rounded-full border border-surface-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-foreground-dim hover:bg-surface-2"
+        >
+          ดูเพิ่มอีก {formatCount(recent.length - RECENT_FIRST)} รายการ
+        </button>
+      )}
     </section>
   );
 }
@@ -372,7 +400,8 @@ export function SlipChecker({
 
   return (
     <div className="flex flex-col gap-6">
-      <Quota quota={quota} configured={configured} />
+      {/* While a verdict is on screen it comes first; the quota card (with its own yellow warning) moves under it. */}
+      {!result && <Quota quota={quota} configured={configured} />}
 
       {configured && !result && (
         <form onSubmit={submit} className="flex flex-col gap-4 rounded-xl border border-surface-border-soft bg-surface-1 p-5">
@@ -439,6 +468,7 @@ export function SlipChecker({
       )}
 
       {result && <Result result={result} onNext={reset} />}
+      {result && <Quota quota={quota} configured={configured} />}
 
       <RecentLog recent={recent} />
     </div>
