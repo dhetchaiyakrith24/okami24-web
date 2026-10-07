@@ -6345,17 +6345,17 @@
   "fileName": "variant-white-v5.webp"
  },
  {
-  "source": "_incoming/look-batch/drag-s3/M-green-S1ct.png",
+  "source": "_incoming/look-batch/drag-s3/M-green-S5t.png",
   "slug": "drag-s3",
   "role": "variant",
   "id": "green",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/drag-s3/orig-green.png as the only image (prompt = docs/IMAGE_PROMPTS.md v3, the owner-picked blue-S2 recipe: device in one sentence, the rest on light, side panel on the RIGHT never mirrored); render _incoming/look-batch/drag-s3/green-S1.png (then backdrop light beam removed by look-batch/beam-clean.js, then badge text 'EVEREST LAB' re-set in real type by look-batch/everest-patch.js, before keying); keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/drag-s3/orig-green.png as the only image (prompt = docs/IMAGE_PROMPTS.md v3, the owner-picked blue-S2 recipe: device in one sentence, the rest on light, side panel on the RIGHT never mirrored); render _incoming/look-batch/drag-s3/green-S5.png (then badge text 'EVEREST LAB' re-set in real type by look-batch/everest-patch.js, before keying); keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor)",
    "reference": "_incoming/look-batch/drag-s3/orig-green.png — the vapevo.com photo behind variant-green-v2.webp (bound by shop.voopoo.com colour data, see that entry)",
-   "fidelitySheet": "_incoming/look-batch/drag-s3/C-green-S1ct.png (dark + magenta) — owner's 3 points (VOOPOO tank logo · 60W / SMART · side badge as on the real photo); leather/side panel on the right as the real photo; \"EVEREST LAB\" badge text re-set in real type (everest-patch.js); micro screen text drawn loosely (owner: skip tiny flaws)"
+   "fidelitySheet": "_incoming/look-batch/drag-s3/C-green-S5t.png (dark + magenta) — owner's 3 points (VOOPOO tank logo · 60W / SMART · side badge as on the real photo); leather/side panel on the right as the real photo; \"EVEREST LAB\" badge text re-set in real type (everest-patch.js); micro screen text drawn loosely (owner: skip tiny flaws)"
   },
   "note": "image-look J2 redo 07/10 — the v3 set failed the owner; S2 recipe accepted for Drag only (owner 07/10 'ยกเว้นให้ Drag'); 1000 canvas, device 839 px from y 80",
-  "fileName": "variant-green-v5.webp"
+  "fileName": "variant-green-v6.webp"
  },
  {
   "source": "_incoming/look-batch/drag-s3/M-brown-S2t.png",
@@ -6371,17 +6371,17 @@
   "fileName": "variant-brown-v5.webp"
  },
  {
-  "source": "_incoming/look-batch/drag-s3/M-pink-S4t.png",
+  "source": "_incoming/look-batch/drag-s3/M-pink-S5t.png",
   "slug": "drag-s3",
   "role": "variant",
   "id": "pink",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/drag-s3/orig-pink.png as the only image (prompt = docs/IMAGE_PROMPTS.md v3, the owner-picked blue-S2 recipe: device in one sentence, the rest on light, side panel on the RIGHT never mirrored); render _incoming/look-batch/drag-s3/pink-S4.png (then badge text 'EVEREST LAB' re-set in real type by look-batch/everest-patch.js, before keying); keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/drag-s3/orig-pink.png as the only image (prompt = docs/IMAGE_PROMPTS.md v3, the owner-picked blue-S2 recipe: device in one sentence, the rest on light, side panel on the RIGHT never mirrored); render _incoming/look-batch/drag-s3/pink-S5.png (then badge text 'EVEREST LAB' re-set in real type by look-batch/everest-patch.js, before keying); keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor); pink S5 keyed with matte2.js --protect (dark top bezel kept) and per-row --bg boxes from look-batch/foot-bg.js (dark floor at the foot corner cut)",
    "reference": "_incoming/look-batch/drag-s3/orig-pink.png — the vapevo.com photo behind variant-pink-v2.webp (bound by shop.voopoo.com colour data, see that entry)",
-   "fidelitySheet": "_incoming/look-batch/drag-s3/C-pink-S4t.png (dark + magenta) — owner's 3 points (VOOPOO tank logo · 60W / SMART · side badge as on the real photo); leather/side panel on the right as the real photo; \"EVEREST LAB\" badge text re-set in real type (everest-patch.js); micro screen text drawn loosely (owner: skip tiny flaws)"
+   "fidelitySheet": "_incoming/look-batch/drag-s3/C-pink-S5t.png (dark + magenta) — owner's 3 points (VOOPOO tank logo · 60W / SMART · side badge as on the real photo); leather/side panel on the right as the real photo; \"EVEREST LAB\" badge text re-set in real type (everest-patch.js); micro screen text drawn loosely (owner: skip tiny flaws)"
   },
   "note": "image-look J2 redo 07/10 — the v3 set failed the owner; S2 recipe accepted for Drag only (owner 07/10 'ยกเว้นให้ Drag'); 1000 canvas, device 839 px from y 80",
-  "fileName": "variant-pink-v5.webp"
+  "fileName": "variant-pink-v6.webp"
  },
  {
   "source": "_incoming/look-batch/drag-s3/M-metal-gray-S2t.png",

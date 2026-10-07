@@ -951,9 +951,9 @@ export const voopooProducts: Product[] = [
     colorVariants: [
       { id: "spray-black", name: "Spray Black", swatchHex: "#363636", image: { src: "/assets/products/drag-s3/variant-spray-black-v5.webp", alt: "VOOPOO DRAG S3, Spray Black", ownFloor: true } },
       { id: "white", name: "White", swatchHex: "#cdcdcd", image: { src: "/assets/products/drag-s3/variant-white-v5.webp", alt: "VOOPOO DRAG S3, White", ownFloor: true } },
-      { id: "pink", name: "Pink", swatchHex: "#dccac9", image: { src: "/assets/products/drag-s3/variant-pink-v5.webp", alt: "VOOPOO DRAG S3, Pink", ownFloor: true } },
+      { id: "pink", name: "Pink", swatchHex: "#dccac9", image: { src: "/assets/products/drag-s3/variant-pink-v6.webp", alt: "VOOPOO DRAG S3, Pink", ownFloor: true } },
       { id: "blue", name: "Blue", swatchHex: "#435666", image: { src: "/assets/products/drag-s3/variant-blue-v5.webp", alt: "VOOPOO DRAG S3, Blue", ownFloor: true } },
-      { id: "green", name: "Green", swatchHex: "#6f7c69", image: { src: "/assets/products/drag-s3/variant-green-v5.webp", alt: "VOOPOO DRAG S3, Green", ownFloor: true } },
+      { id: "green", name: "Green", swatchHex: "#6f7c69", image: { src: "/assets/products/drag-s3/variant-green-v6.webp", alt: "VOOPOO DRAG S3, Green", ownFloor: true } },
       { id: "brown", name: "Brown", swatchHex: "#7b4929", image: { src: "/assets/products/drag-s3/variant-brown-v5.webp", alt: "VOOPOO DRAG S3, Brown", ownFloor: true } },
       { id: "metal-gray", name: "Metal Gray", swatchHex: "#646b6c", image: { src: "/assets/products/drag-s3/variant-metal-gray-v5.webp", alt: "VOOPOO DRAG S3, Metal Gray", ownFloor: true } },
     ],
@@ -965,12 +965,12 @@ export const voopooProducts: Product[] = [
     // garbled "EVEREST LAB" badge text re-set in real type (look-batch/everest-patch.js), floor clipped to the device columns;
     // line-ups v5 = every colour standing in one row on the floor (owner's draft 2, look-batch/ds-lineup-floor.js --row --pick).
     lineupImage: {
-      src: "/assets/products/drag-s3/lineup-v5.webp",
+      src: "/assets/products/drag-s3/lineup-v6.webp",
       alt: "VOOPOO DRAG S3, colours 1–4 of 7",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/drag-s3/lineup2-v5.webp",
+      src: "/assets/products/drag-s3/lineup2-v6.webp",
       alt: "VOOPOO DRAG S3, colours 5–7 of 7",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
