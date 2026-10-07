@@ -245,7 +245,13 @@ customer says they paid.
 7. Completed
 8. Cancelled
 
-Do not implement payment automation yet.
+Do not implement payment automation yet — **one exception (owner 2026-10-07, chat):** a **staff-only slip-check
+page** on the site. Staff (who take orders in LINE) upload a customer's slip image; the page asks **EasySlip**
+(developer.easyslip.com, the owner's own account — plan **฿350 / 1,000 slips per month**) and shows the bank's
+answer: amount, date/time, receiver account (must be the account below), and whether the same slip was already
+checked. A **human still approves** every payment — the page never changes an order by itself. Access = **one shared
+staff password** (owner pick A); the page is not linked from the site, not indexed, not in the sitemap. The API key
+and the staff password live only in the host's secret settings, entered by the owner — never in git or chat.
 
 **Receiving account (owner 2026-09-06, answer 1):**
 - Bank: **Kasikornbank (KBank)** — read from the owner's PromptPay QR image (K+ branding);
@@ -529,8 +535,8 @@ Explicit unresolved items — **never invent answers for these**:
 - Exact production database/backend
 - Shipnity integration mechanism/API availability
 - Final authentication implementation
-- Final payment implementation (automation / slip verification — the receiving account itself is
-  resolved, see §9)
+- Final payment implementation (automation — the receiving account is resolved, and a staff-only slip-check page
+  with a human approving is decided, both in §9)
 - E-commerce registration / legally required seller details (§11)
 - SMS provider — still unchosen, and no longer blocking: OTP is switched off for launch (§9)
 - Final Product Master schema
