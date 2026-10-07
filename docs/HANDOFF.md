@@ -78,7 +78,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 3t OPEN (slip-check chat, own worktree `_incoming/wt-slip`, branch `slip-check`; working files `_incoming/slip-check/`): round "staff slip
   check (EasySlip)" = `docs/rounds/รอบ-ตรวจสลิป-หน้าทีมงาน-07-10.txt` (owner opened 07/10, start 07/10 — only rule: no site merge ON 10/10).
   Batches: 1 API docs read ✓ (`_incoming/slip-check/easyslip-api.md`, API v2) · 2 /staff + one staff password (B) · 3 slip check (B, full
-  set — money) · 4 quota + log (A/B) — 2–4 built as ONE PR (commits per batch) · 5 admin manual + BSOT §9 + close.
+  set — money) · 4 quota + log (A/B) — 2–4 ✓ #347 (merged 07/10, checker 5/5 + re-check 3/3) · 5 admin manual + DEPLOY-RENDER §7 +
+  BSOT §9 "Built" = docs PR from branch `slip-check-manual` · then close (tag slip-check-done) after the owner's first real slip.
   Local test = `next dev -p 3431` in the worktree + `_incoming/slip-check/mock-easyslip.js` (OKAMI24_EASYSLIP_TEST_BASE, dev only).
   Owner to do after merge: set OKAMI24_STAFF_PASSWORD + OKAMI24_EASYSLIP_API_KEY in Render (click steps in the manual), then test 1 real slip.
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
