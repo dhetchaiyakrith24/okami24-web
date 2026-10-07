@@ -46,6 +46,7 @@ const SETUP_CODES = new Set([
 const DOWN_CODES = new Set(["TIMEOUT", "NETWORK", "API_SERVER_ERROR", "INTERNAL_SERVER_ERROR", "BAD_RESPONSE"]);
 
 function errorText(code: string, retryAfterSeconds?: number): string {
+  if (code === "FORBIDDEN") return "เว็บไม่รับคำขอตรวจจากหน้านี้ (รหัส 403) กรุณาโหลดหน้าใหม่แล้วลองอีกครั้ง ถ้ายังไม่ได้ แจ้งเจ้าของร้าน";
   if (code === "SESSION") return "หมดเวลาเข้าสู่ระบบแล้ว กรุณาโหลดหน้านี้ใหม่แล้วใส่รหัสทีมงานอีกครั้ง";
   if (SETUP_CODES.has(code)) return `ระบบตรวจสลิปยังตั้งค่าไม่เรียบร้อย กรุณาแจ้งเจ้าของร้าน (รหัส ${code})`;
   if (code === "QUOTA_EXCEEDED")
@@ -344,6 +345,10 @@ export function SlipChecker({
         setError(errorText("SESSION"));
         return;
       }
+      if (res.status === 403) {
+        setError(errorText("FORBIDDEN"));
+        return;
+      }
       let data: SlipCheckResponse;
       try {
         data = (await res.json()) as SlipCheckResponse;
@@ -353,6 +358,8 @@ export function SlipChecker({
       }
       if (!data.ok) {
         setError(errorText(data.error, data.retryAfterSeconds));
+        // Keep the quota box honest: EasySlip just said the month is used up.
+        if (data.error === "QUOTA_EXCEEDED") setQuota((q) => (q ? { ...q, used: q.max ?? q.used, remaining: 0 } : q));
         return;
       }
       setResult(data);

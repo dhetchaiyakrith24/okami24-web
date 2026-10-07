@@ -65,7 +65,10 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   const origin = request.headers.get("origin");
   if (origin) {
     try {
-      if (new URL(origin).host !== request.headers.get("host")) return new NextResponse(null, { status: 403, headers: HEADERS });
+      // Behind Cloudflare + Render the public host may arrive as X-Forwarded-Host; either one matching is fine.
+      const originHost = new URL(origin).host;
+      const hosts = [request.headers.get("host"), request.headers.get("x-forwarded-host")?.split(",")[0]?.trim()];
+      if (!hosts.includes(originHost)) return new NextResponse(null, { status: 403, headers: HEADERS });
     } catch {
       return new NextResponse(null, { status: 403, headers: HEADERS });
     }

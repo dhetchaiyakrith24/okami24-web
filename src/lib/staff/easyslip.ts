@@ -51,7 +51,7 @@ export interface VerifyData {
  *  of ours: NOT_CONFIGURED · TIMEOUT · NETWORK · BAD_RESPONSE. */
 export type EasySlipResult<T> = { ok: true; data: T } | { ok: false; code: string; retryAfterSeconds?: number };
 
-async function call<T>(path: string, init: RequestInit): Promise<EasySlipResult<T>> {
+async function call<T>(path: string, init: RequestInit, timeoutMs = TIMEOUT_MS): Promise<EasySlipResult<T>> {
   const key = apiKey();
   if (!key) return { ok: false, code: "NOT_CONFIGURED" };
   let res: Response;
@@ -59,7 +59,7 @@ async function call<T>(path: string, init: RequestInit): Promise<EasySlipResult<
     res = await fetch(`${BASE}${path}`, {
       ...init,
       headers: { ...(init.headers ?? {}), Authorization: `Bearer ${key}` },
-      signal: AbortSignal.timeout(TIMEOUT_MS),
+      signal: AbortSignal.timeout(timeoutMs),
       cache: "no-store",
     });
   } catch (err) {
@@ -125,12 +125,15 @@ interface InfoData {
 
 let quotaCache: { at: number; value: EasySlipResult<QuotaInfo> } | null = null;
 const QUOTA_CACHE_MS = 60_000;
+const QUOTA_TIMEOUT_MS = 3_000;
 
 /** Free to call (/en/v2/info "This endpoint does not consume quota"); still cached a minute so a page
  *  that several staff keep open does not hammer it. `fresh` skips the cache right after a check. */
 export async function getQuota(fresh = false): Promise<EasySlipResult<QuotaInfo>> {
   if (!fresh && quotaCache && Date.now() - quotaCache.at < QUOTA_CACHE_MS) return quotaCache.value;
-  const result = await call<InfoData>("/info", { method: "GET" });
+  // Short timeout: the staff page awaits this while rendering, and the quota box is optional — a slow
+  // EasySlip must not hold the page on a blank screen (checker #347). Verify keeps the long timeout.
+  const result = await call<InfoData>("/info", { method: "GET" }, QUOTA_TIMEOUT_MS);
   const value: EasySlipResult<QuotaInfo> = result.ok
     ? {
         ok: true,
