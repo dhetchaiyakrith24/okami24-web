@@ -309,6 +309,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "caliburn-g4-classic": "Caliburn G4 Classic แบต 1400mAh ใช้สีไฟบอกแบตที่เหลือแทนจอ สูบได้เลยโดยไม่ต้องกดปุ่ม และปรับช่องลมได้ละเอียดแบบไม่มีขั้น",
   "argus-g4": "VOOPOO ARGUS G4 แบต 1650mAh ปรับได้ 5–35 วัตต์ จอ HD 0.85 นิ้วบอกแบต วัตต์และโอห์ม ปุ่มเลื่อนปรับลมตั้งแต่ MTL ถึง RDL",
   "argus-g4-mini": "VOOPOO ARGUS G4 mini ตัวเครื่องเล็กลงแต่แบต 1650mAh เท่ารุ่นใหญ่ ปรับได้ 5–30 วัตต์ ไม่มีจอ และสูบได้เลยโดยไม่ต้องกดปุ่ม",
+  "tfit-m-power-20k": "TFIT M Power 20K พอตใช้แล้วทิ้ง รองรับสูงสุด 20,000 พัฟ ใช้คอยล์ mesh สองตัว แบต 600mAh ชาร์จผ่าน USB-C ปรับช่องลมได้",
   "joiway-f4": "JOIWAY F4 พอตใช้แล้วทิ้งแบบ Double Flavor คู่กลิ่นในเครื่องเดียว หมุนปากดูดเพื่อสลับ รองรับสูงสุด 20,000 พัฟ มีจอ LED",
   "coil-1": "คอยล์ VOOPOO Vinci มี 0.15 · 0.6 · 1.2 โอห์ม ทั้งแบบ MTL และ DTL ใช้ได้กับ VINCI Pod · VINCI X Pod · DRAG Baby Trio",
   "coil-38": "คอยล์ VOOPOO TPP มี TPP-DM2 0.2 โอห์ม 40–60 วัตต์ · TPP-DM4 0.3 โอห์ม 32–40 วัตต์ ใช้ได้กับ TPP Pod · DRAG 3 · DRAG X Plus",
@@ -324,7 +325,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "coil-89": "หัวพอต RINCOE Jellybox V คอยล์ในตัว มี 0.8 และ 1.0 โอห์ม ความจุ 3mL เติมด้านข้าง ใช้ได้กับ Jellybox V1 · V2 · V3",
   "coil-94": "หัวพอต Caliburn G4&G3 Series จากแบรนด์ UWELL คอยล์ mesh ในตัว มี 0.4 · 0.6 · 0.9 · 1.2 โอห์ม",
   "iqosheet-16": "เครื่องอุ่นยาสูบ IQOS ILUMA i PRIME ชาร์จผ่าน USB-C เต็มแล้วใช้ได้สูงสุด 20 ก้าน ใช้กับก้าน TEREA เท่านั้น",
-  "iqosheet-18": "เครื่องอุ่นยาสูบ IQOS ILUMA i ใช้ได้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 7 สีที่ IQOS ทำออกมา",
+  "iqosheet-18": "IQOS ILUMA i เครื่องอุ่นยาสูบ ใช้ได้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 7 สีที่ IQOS ทำออกมา",
   "pod-180": "พอตใช้แล้วทิ้ง nexBar CLEAR 18K ตัวใส สูงสุด 18,000 พัฟ น้ำยา 18mL แบต 650mAh ชาร์จผ่าน USB-C มี 2 โหมด Normal กับ Turbo",
 };
 
