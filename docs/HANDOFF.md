@@ -168,6 +168,11 @@ Agents: when to call each = the `description` line of its file in `.claude/agent
   an agent added or edited is usable at once in the running chat
 ```
 
+- **Night chain (owner 07/10):** routine `friday-chat-move` = hourly (cron "5 * * * *"), OFF by default; its prompt holds the night
+  rules (duplicate guard · no site merge / deploy / spend · morning sheet = `docs/รอพี่ตรวจ.md` · stop at 600–700K, no run_scheduled_task).
+  On = owner says he is going to sleep (skill okami24-handoff (ฉ)) · off = every day chat at its start (skill round-open Step 2) · TEAM_RULES 13.6.
+  Before the first night the owner archives routine-born chats still open (a run still "Running" makes the next slot "Skipped").
+
 ## 18. Permanent owner rulings — settled, never re-ask (central §12 item 17)
 
 Business facts live in `docs/BUSINESS_SOURCE_OF_TRUTH.md`, Thai words in `docs/THAI_STYLE.md`, images in

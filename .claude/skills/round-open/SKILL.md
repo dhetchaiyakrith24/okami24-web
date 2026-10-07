@@ -26,6 +26,8 @@ cite an old ruling. Tools and verify commands: `docs/HANDOFF.md` §17, when need
 
 ## Step 2 — Confirm the repo
 
+0. Day chat (the owner opened it): turn the night chain off first — `mcp__scheduled-tasks__update_scheduled_task`
+   taskId `friday-chat-move` enabled false (TEAM_RULES 13.6). A night run follows its own routine prompt instead.
 1. Read the `session-sync` lines in the chat's first context (the SessionStart hook fetched and fast-forwarded a
    clean branch): `STOP SIGN` = tell the owner first · `RE-READ NOW` = re-read those rule files first · no
    `session-sync` line at all = the hook did not run: say so, `git fetch origin` by hand, and run
