@@ -6742,5 +6742,186 @@
   },
   "note": "image-look J4 07/10 — card from the grey-yellow pick, upright like the colour photos",
   "fileName": "card-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/argus-g4-mini/M-black-S2s.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "black",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with VOOPOO's own photo of this colour (public/assets/products/argus-g4-mini/variants/black.webp, upscaled on #2b2e33 by look-batch/prep-orig.js → _incoming/look-batch/argus-g4-mini/orig-black.png) as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with the ARGUS part list (look-batch/hf-helpers.js __ARG for Black — dramatic key; __ARG2 for every other colour — front-left key, because the dramatic key turned Silver gunmetal); render _incoming/look-batch/argus-g4-mini/black-S2.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/argus-g4-mini/orig-black.png — VOOPOO's own black photo (shop.voopoo.com colour binding, see the product's data comment)",
+   "fidelitySheet": "_incoming/look-batch/argus-g4-mini/C-black-S2s.png (dark + magenta) — owner's 3 points (infinity logo + four lit indicator dashes · ARGUS lettering at the base · slim body, clear pod with its OPEN tab, as on VOOPOO's photo); colour vs VOOPOO's photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-black-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/argus-g4-mini/M-silver-S2s.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "silver",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with VOOPOO's own photo of this colour (public/assets/products/argus-g4-mini/variants/silver.webp, upscaled on #2b2e33 by look-batch/prep-orig.js → _incoming/look-batch/argus-g4-mini/orig-silver.png) as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with the ARGUS part list (look-batch/hf-helpers.js __ARG for Black — dramatic key; __ARG2 for every other colour — front-left key, because the dramatic key turned Silver gunmetal); render _incoming/look-batch/argus-g4-mini/silver-S2.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/argus-g4-mini/orig-silver.png — VOOPOO's own silver photo (shop.voopoo.com colour binding, see the product's data comment)",
+   "fidelitySheet": "_incoming/look-batch/argus-g4-mini/C-silver-S2s.png (dark + magenta) — owner's 3 points (infinity logo + four lit indicator dashes · ARGUS lettering at the base · slim body, clear pod with its OPEN tab, as on VOOPOO's photo); colour vs VOOPOO's photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-silver-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/argus-g4-mini/M-blue-S1s.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "blue",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with VOOPOO's own photo of this colour (public/assets/products/argus-g4-mini/variants/blue.webp, upscaled on #2b2e33 by look-batch/prep-orig.js → _incoming/look-batch/argus-g4-mini/orig-blue.png) as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with the ARGUS part list (look-batch/hf-helpers.js __ARG for Black — dramatic key; __ARG2 for every other colour — front-left key, because the dramatic key turned Silver gunmetal); render _incoming/look-batch/argus-g4-mini/blue-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/argus-g4-mini/orig-blue.png — VOOPOO's own blue photo (shop.voopoo.com colour binding, see the product's data comment)",
+   "fidelitySheet": "_incoming/look-batch/argus-g4-mini/C-blue-S1s.png (dark + magenta) — owner's 3 points (infinity logo + four lit indicator dashes · ARGUS lettering at the base · slim body, clear pod with its OPEN tab, as on VOOPOO's photo); colour vs VOOPOO's photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-blue-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/argus-g4-mini/M-purple-S1s.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "purple",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with VOOPOO's own photo of this colour (public/assets/products/argus-g4-mini/variants/purple.webp, upscaled on #2b2e33 by look-batch/prep-orig.js → _incoming/look-batch/argus-g4-mini/orig-purple.png) as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with the ARGUS part list (look-batch/hf-helpers.js __ARG for Black — dramatic key; __ARG2 for every other colour — front-left key, because the dramatic key turned Silver gunmetal); render _incoming/look-batch/argus-g4-mini/purple-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/argus-g4-mini/orig-purple.png — VOOPOO's own purple photo (shop.voopoo.com colour binding, see the product's data comment)",
+   "fidelitySheet": "_incoming/look-batch/argus-g4-mini/C-purple-S1s.png (dark + magenta) — owner's 3 points (infinity logo + four lit indicator dashes · ARGUS lettering at the base · slim body, clear pod with its OPEN tab, as on VOOPOO's photo); colour vs VOOPOO's photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-purple-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/argus-g4-mini/M-cyan-S1s.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "cyan",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with VOOPOO's own photo of this colour (public/assets/products/argus-g4-mini/variants/cyan.webp, upscaled on #2b2e33 by look-batch/prep-orig.js → _incoming/look-batch/argus-g4-mini/orig-cyan.png) as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with the ARGUS part list (look-batch/hf-helpers.js __ARG for Black — dramatic key; __ARG2 for every other colour — front-left key, because the dramatic key turned Silver gunmetal); render _incoming/look-batch/argus-g4-mini/cyan-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/argus-g4-mini/orig-cyan.png — VOOPOO's own cyan photo (shop.voopoo.com colour binding, see the product's data comment)",
+   "fidelitySheet": "_incoming/look-batch/argus-g4-mini/C-cyan-S1s.png (dark + magenta) — owner's 3 points (infinity logo + four lit indicator dashes · ARGUS lettering at the base · slim body, clear pod with its OPEN tab, as on VOOPOO's photo); colour vs VOOPOO's photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-cyan-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/argus-g4-mini/M-green-S1s.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "green",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with VOOPOO's own photo of this colour (public/assets/products/argus-g4-mini/variants/green.webp, upscaled on #2b2e33 by look-batch/prep-orig.js → _incoming/look-batch/argus-g4-mini/orig-green.png) as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with the ARGUS part list (look-batch/hf-helpers.js __ARG for Black — dramatic key; __ARG2 for every other colour — front-left key, because the dramatic key turned Silver gunmetal); render _incoming/look-batch/argus-g4-mini/green-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/argus-g4-mini/orig-green.png — VOOPOO's own green photo (shop.voopoo.com colour binding, see the product's data comment)",
+   "fidelitySheet": "_incoming/look-batch/argus-g4-mini/C-green-S1s.png (dark + magenta) — owner's 3 points (infinity logo + four lit indicator dashes · ARGUS lettering at the base · slim body, clear pod with its OPEN tab, as on VOOPOO's photo); colour vs VOOPOO's photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-green-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/argus-g4-mini/M-orange-S1hs.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "orange",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with VOOPOO's own photo of this colour (public/assets/products/argus-g4-mini/variants/orange.webp, upscaled on #2b2e33 by look-batch/prep-orig.js → _incoming/look-batch/argus-g4-mini/orig-orange.png) as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with the ARGUS part list (look-batch/hf-helpers.js __ARG for Black — dramatic key; __ARG2 for every other colour — front-left key, because the dramatic key turned Silver gunmetal); render _incoming/look-batch/argus-g4-mini/orange-S1.png; body colour pulled back to VOOPOO's photo by look-batch/hue-match.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/argus-g4-mini/orig-orange.png — VOOPOO's own orange photo (shop.voopoo.com colour binding, see the product's data comment)",
+   "fidelitySheet": "_incoming/look-batch/argus-g4-mini/C-orange-S1hs.png (dark + magenta) — owner's 3 points (infinity logo + four lit indicator dashes · ARGUS lettering at the base · slim body, clear pod with its OPEN tab, as on VOOPOO's photo); colour vs VOOPOO's photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-orange-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/argus-g4-mini/M-tarnish-S2s.png",
+  "slug": "argus-g4-mini",
+  "role": "variant",
+  "id": "tarnish",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with VOOPOO's own photo of this colour (public/assets/products/argus-g4-mini/variants/tarnish.webp, upscaled on #2b2e33 by look-batch/prep-orig.js → _incoming/look-batch/argus-g4-mini/orig-tarnish.png) as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with the ARGUS part list (look-batch/hf-helpers.js __ARG for Black — dramatic key; __ARG2 for every other colour — front-left key, because the dramatic key turned Silver gunmetal); render _incoming/look-batch/argus-g4-mini/tarnish-S2.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/argus-g4-mini/orig-tarnish.png — VOOPOO's own tarnish photo (shop.voopoo.com colour binding, see the product's data comment)",
+   "fidelitySheet": "_incoming/look-batch/argus-g4-mini/C-tarnish-S2s.png (dark + magenta) — owner's 3 points (infinity logo + four lit indicator dashes · ARGUS lettering at the base · slim body, clear pod with its OPEN tab, as on VOOPOO's photo); colour vs VOOPOO's photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-tarnish-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/argus-g4-mini/D-black-S2-card.png",
+  "slug": "argus-g4-mini",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with VOOPOO's own photo of this colour (public/assets/products/argus-g4-mini/variants/black.webp, upscaled on #2b2e33 by look-batch/prep-orig.js → _incoming/look-batch/argus-g4-mini/orig-black.png) as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with the ARGUS part list (look-batch/hf-helpers.js __ARG for Black — dramatic key; __ARG2 for every other colour — front-left key, because the dramatic key turned Silver gunmetal); render _incoming/look-batch/argus-g4-mini/black-S2.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor); card = the same render keyed at full size with the floor cut at the foot line (matte2.js --device), upright; floor shadow clipped to the device columns by look-batch/card-clip.js so the card centres",
+   "reference": "_incoming/look-batch/argus-g4-mini/orig-black.png — VOOPOO's own black photo (shop.voopoo.com colour binding, see the product's data comment)",
+   "fidelitySheet": "_incoming/look-batch/argus-g4-mini/C-black-S2s.png"
+  },
+  "note": "image-look J4 07/10 — card from the black pick, upright like the colour photos",
+  "fileName": "card-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/relx-creator/M-grey-yellow-S3hs.png",
+  "slug": "relx-creator",
+  "role": "variant",
+  "id": "grey-yellow",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the owner's own 3/4 photo (_incoming/image-sitewide/relx/owner/3.jpg, upscaled → _incoming/look-batch/relx-creator/orig-grey-yellow.png) as the only image; prompt = IMAGE_PROMPTS v3 light, front-left key (tab helper __RELX2); render _incoming/look-batch/relx-creator/grey-yellow-S3.png; the yellow base pulled back to the photo's lemon yellow by look-batch/hue-match.js (render came out mustard); keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "the owner's photo _incoming/image-sitewide/relx/owner/3.jpg",
+   "fidelitySheet": "_incoming/look-batch/relx-creator/C-grey-yellow-S3hs.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80 · v4 07/10 night: shadow beside the base faded (checker #345)",
+  "fileName": "variant-grey-yellow-v4.webp"
+ },
+ {
+  "source": "_incoming/look-batch/relx-creator/M-white-S2ds.png",
+  "slug": "relx-creator",
+  "role": "variant",
+  "id": "white",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own white render (image 2 = _incoming/look-batch/relx-creator/orig-white.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/white-S2.png; logo darkened to RELX's charcoal by relx-creator/logo-dark.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "RELX's official white Creator Pro render (_incoming/image-sitewide/relx/refs/official-white.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
+   "fidelitySheet": "_incoming/look-batch/relx-creator/C-white-S2ds.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80 · v4 07/10 night: shadow beside the base faded (checker #345)",
+  "fileName": "variant-white-v4.webp"
+ },
+ {
+  "source": "_incoming/look-batch/relx-creator/M-green-S2hs.png",
+  "slug": "relx-creator",
+  "role": "variant",
+  "id": "green",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own green render (image 2 = _incoming/look-batch/relx-creator/orig-green.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/green-S2.png; body colour pulled to RELX's render by look-batch/hue-match.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "RELX's official green Creator Pro render (_incoming/image-sitewide/relx/refs/official-green.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
+   "fidelitySheet": "_incoming/look-batch/relx-creator/C-green-S2hs.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80 · v4 07/10 night: shadow beside the base faded (checker #345)",
+  "fileName": "variant-green-v4.webp"
+ },
+ {
+  "source": "_incoming/look-batch/relx-creator/M-yellow-S1gs.png",
+  "slug": "relx-creator",
+  "role": "variant",
+  "id": "yellow",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own yellow render (image 2 = _incoming/look-batch/relx-creator/orig-yellow.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/yellow-S1.png; body colour pulled to RELX's render by look-batch/hue-match.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "RELX's official yellow Creator Pro render (_incoming/image-sitewide/relx/refs/official-yellow.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
+   "fidelitySheet": "_incoming/look-batch/relx-creator/C-yellow-S1gs.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80 · v4 07/10 night: shadow beside the base faded (checker #345)",
+  "fileName": "variant-yellow-v4.webp"
+ },
+ {
+  "source": "_incoming/look-batch/relx-creator/M-black-S1hs.png",
+  "slug": "relx-creator",
+  "role": "variant",
+  "id": "black",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), colour re-make of the passed Grey Yellow render (image 1 = _incoming/look-batch/relx-creator/pose-guide.png, the grey-yellow-S3 render: same pose, light, logo and smiley) with RELX's own black render (image 2 = _incoming/look-batch/relx-creator/orig-black.png, colours and contacts only) — tab helper __RELXC; render _incoming/look-batch/relx-creator/black-S1.png; body colour pulled to RELX's render by look-batch/hue-match.js; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto; --protect box over the body where its shadow side matched the backdrop) keeping the contact shadow + floor reflection, floor clipped to the device columns by clip-floor.js, the shadow beside the device then faded smoothly by look-batch/soft-floor.js (checker #345, owner 07/10) (colour flag ownFloor)",
+   "reference": "RELX's official black Creator Pro render (_incoming/image-sitewide/relx/refs/official-black.png, relxnow.com) for the colours + _incoming/look-batch/relx-creator/pose-guide.png for the pose",
+   "fidelitySheet": "_incoming/look-batch/relx-creator/C-black-S1hs.png (dark + magenta) — owner's 3 points (RELX logo — its colour as on RELX's render of that colour · block shape and the contacts on top · pixel smiley screen readable); colour vs RELX's render with look-batch/hue-stats.js"
+  },
+  "note": "image-look J4 07/10 — G5 bar; 1000 canvas, device 839 px from y 80 · v4 07/10 night: shadow beside the base faded (checker #345)",
+  "fileName": "variant-black-v4.webp"
  }
 ]

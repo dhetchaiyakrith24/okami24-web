@@ -292,9 +292,9 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/argus-g4-mini/card-v2.webp",
-        alt: "VOOPOO ARGUS G4 mini, Black, three-quarter view",
-        angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from VOOPOO's own photos of this model",
+        src: "/assets/products/argus-g4-mini/card-v3.webp",
+        alt: "VOOPOO ARGUS G4 mini, Black, upright front view",
+        angle: "upright, isolated — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10) of VOOPOO's own Black photo",
         transparentBackground: true,
         sourceName: "OKami24 render (Higgsfield) from VOOPOO's images",
         sourceUrl: "https://shop.voopoo.com/products/argus-g4-mini",
@@ -312,6 +312,11 @@ export const voopooProducts: Product[] = [
     // the Black photo tilted in 2D. Swatches = the body colour on VOOPOO's renders. Scripts: _incoming/image-sitewide/b-edge/
     // (recolour-g4m.js, choke.js, presize-edge.js). All-colours images (IMAGE_SPEC §0 item 5): see
     // lineupImage below (two groups, 02/10).
+    // Image-look roll-out J4 (07/10, G5 bar): every colour + card re-shot in studio light by AI, each from VOOPOO's own photo
+    // of that colour (the only reference), upright, four lit battery dashes as on VOOPOO's photo; Orange's body pulled back to
+    // VOOPOO's photo by script; floor clipped to the device columns, own contact shadow kept (ownFloor); line-ups v4 = every
+    // colour standing in one row (look-batch/lineup-row.js --row --pick). Source + check per file in
+    // scripts/process-images.map.json `aiRender`.
     openOnCardPhoto: true,
     // Site-wide template round batch 2e (04/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — VOOPOO's own shop page told
     // one poster per block; text in src/i18n/story-copy.ts, article in src/data/product-articles.ts. Posters = VOOPOO's files
@@ -320,24 +325,24 @@ export const voopooProducts: Product[] = [
     storyLayout: "stage",
     storyCover: { src: "/assets/products/argus-g4-mini/story-cover.webp", alt: "Official VOOPOO banner — the ARGUS G4 mini beside the ARGUS G4", sourceName: "VOOPOO", sourceUrl: G4M_PAGE, width: 2133, height: 1194 },
     colorVariants: [
-      { id: "black", name: "Black", swatchHex: "#333435", image: { src: "/assets/products/argus-g4-mini/variant-black-v2.webp", alt: "VOOPOO ARGUS G4 mini, Black" } },
-      { id: "green", name: "Green", swatchHex: "#8cd5c6", image: { src: "/assets/products/argus-g4-mini/variant-green-v2.webp", alt: "VOOPOO ARGUS G4 mini, Green" } },
-      { id: "orange", name: "Orange", swatchHex: "#e78b5a", image: { src: "/assets/products/argus-g4-mini/variant-orange-v2.webp", alt: "VOOPOO ARGUS G4 mini, Orange" } },
-      { id: "purple", name: "Purple", swatchHex: "#b7b2d6", image: { src: "/assets/products/argus-g4-mini/variant-purple-v2.webp", alt: "VOOPOO ARGUS G4 mini, Purple" } },
-      { id: "silver", name: "Silver", swatchHex: "#c4c4c4", image: { src: "/assets/products/argus-g4-mini/variant-silver-v2.webp", alt: "VOOPOO ARGUS G4 mini, Silver" } },
-      { id: "tarnish", name: "Tarnish", swatchHex: "#898a8f", image: { src: "/assets/products/argus-g4-mini/variant-tarnish-v2.webp", alt: "VOOPOO ARGUS G4 mini, Tarnish" } },
-      { id: "cyan", name: "Cyan", swatchHex: "#37bde4", image: { src: "/assets/products/argus-g4-mini/variant-cyan-v2.webp", alt: "VOOPOO ARGUS G4 mini, Cyan" } },
-      { id: "blue", name: "Blue", swatchHex: "#bac9e6", image: { src: "/assets/products/argus-g4-mini/variant-blue-v2.webp", alt: "VOOPOO ARGUS G4 mini, Blue" } },
+      { id: "black", name: "Black", swatchHex: "#333435", image: { src: "/assets/products/argus-g4-mini/variant-black-v3.webp", alt: "VOOPOO ARGUS G4 mini, Black", ownFloor: true } },
+      { id: "green", name: "Green", swatchHex: "#8cd5c6", image: { src: "/assets/products/argus-g4-mini/variant-green-v3.webp", alt: "VOOPOO ARGUS G4 mini, Green", ownFloor: true } },
+      { id: "orange", name: "Orange", swatchHex: "#e78b5a", image: { src: "/assets/products/argus-g4-mini/variant-orange-v3.webp", alt: "VOOPOO ARGUS G4 mini, Orange", ownFloor: true } },
+      { id: "purple", name: "Purple", swatchHex: "#b7b2d6", image: { src: "/assets/products/argus-g4-mini/variant-purple-v3.webp", alt: "VOOPOO ARGUS G4 mini, Purple", ownFloor: true } },
+      { id: "silver", name: "Silver", swatchHex: "#c4c4c4", image: { src: "/assets/products/argus-g4-mini/variant-silver-v3.webp", alt: "VOOPOO ARGUS G4 mini, Silver", ownFloor: true } },
+      { id: "tarnish", name: "Tarnish", swatchHex: "#898a8f", image: { src: "/assets/products/argus-g4-mini/variant-tarnish-v3.webp", alt: "VOOPOO ARGUS G4 mini, Tarnish", ownFloor: true } },
+      { id: "cyan", name: "Cyan", swatchHex: "#37bde4", image: { src: "/assets/products/argus-g4-mini/variant-cyan-v3.webp", alt: "VOOPOO ARGUS G4 mini, Cyan", ownFloor: true } },
+      { id: "blue", name: "Blue", swatchHex: "#bac9e6", image: { src: "/assets/products/argus-g4-mini/variant-blue-v3.webp", alt: "VOOPOO ARGUS G4 mini, Blue", ownFloor: true } },
     ],
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js argus-g4-mini-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
     lineupImage: {
-      src: "/assets/products/argus-g4-mini/lineup-v3.webp",
+      src: "/assets/products/argus-g4-mini/lineup-v4.webp",
       alt: "VOOPOO ARGUS G4 mini, colours 1–4 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/argus-g4-mini/lineup2-v3.webp",
+      src: "/assets/products/argus-g4-mini/lineup2-v4.webp",
       alt: "VOOPOO ARGUS G4 mini, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
