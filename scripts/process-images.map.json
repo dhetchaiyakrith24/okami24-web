@@ -6510,5 +6510,121 @@
   },
   "note": "image-look J3 07/10 — card from the Spray Black pick; the hero keeps its painted floor under the card",
   "fileName": "card-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/vinci-s/M-neon-S2.png",
+  "slug": "vinci-s",
+  "role": "variant",
+  "id": "neon",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/vinci-s/orig-neon.png (flattened on #2b2e33 as orig-neon-bg.png — HALO rule) as the only image (prompt = docs/IMAGE_PROMPTS.md v3 with the VINCI S part list, hf-helpers.js __V + \"the same hue and depth as image 1\" + \"rebuild crisp micro-texture\"); render _incoming/look-batch/vinci-s/neon-S2.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/vinci-s/orig-neon.png — the vapevo.com photo behind variant-neon-v2.webp (bound by shop.voopoo.com colour data, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/vinci-s/C-neon-S2.png (dark + magenta) — owner's 3 points (VOOPOO logo at the base · VINCI word on the dot-grid panel · body shape, side button, light strip and clear pod as on the real photo); colour checked against the real photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J3 07/10 — VINCI S, G5 bar (owner: Drag exception does not apply); 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-neon-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/vinci-s/M-black-S1.png",
+  "slug": "vinci-s",
+  "role": "variant",
+  "id": "black",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/vinci-s/orig-black.png (flattened on #2b2e33 as orig-black-bg.png — HALO rule) as the only image (prompt = docs/IMAGE_PROMPTS.md v3 with the VINCI S part list, hf-helpers.js __V + \"the same hue and depth as image 1\" + \"rebuild crisp micro-texture\"); render _incoming/look-batch/vinci-s/black-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/vinci-s/orig-black.png — the vapevo.com photo behind variant-black-v2.webp (bound by shop.voopoo.com colour data, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/vinci-s/C-black-S1.png (dark + magenta) — owner's 3 points (VOOPOO logo at the base · VINCI word on the dot-grid panel · body shape, side button, light strip and clear pod as on the real photo); colour checked against the real photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J3 07/10 — VINCI S, G5 bar (owner: Drag exception does not apply); 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-black-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/vinci-s/M-grey-S4.png",
+  "slug": "vinci-s",
+  "role": "variant",
+  "id": "grey",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 2K 1:1 through the Higgsfield MCP (2 credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/vinci-s/orig-grey.png (flattened on #2b2e33 as orig-grey-bg.png — HALO rule) as the only image (prompt = docs/IMAGE_PROMPTS.md v3 with the VINCI S part list, hf-helpers.js __V + \"the same hue and depth as image 1\" + \"rebuild crisp micro-texture\"); render _incoming/look-batch/vinci-s/grey-S4.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/vinci-s/orig-grey.png — the vapevo.com photo behind variant-grey-v2.webp (bound by shop.voopoo.com colour data, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/vinci-s/C-grey-S4.png (dark + magenta) — owner's 3 points (VOOPOO logo at the base · VINCI word on the dot-grid panel · body shape, side button, light strip and clear pod as on the real photo); colour checked against the real photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J3 07/10 — VINCI S, G5 bar (owner: Drag exception does not apply); 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-grey-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/vinci-s/M-silver-S1.png",
+  "slug": "vinci-s",
+  "role": "variant",
+  "id": "silver",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 2K 1:1 through the Higgsfield MCP (2 credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/vinci-s/orig-silver.png (flattened on #2b2e33 as orig-silver-bg.png — HALO rule) as the only image (prompt = docs/IMAGE_PROMPTS.md v3 with the VINCI S part list, hf-helpers.js __V + \"the same hue and depth as image 1\" + \"rebuild crisp micro-texture\"); render _incoming/look-batch/vinci-s/silver-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/vinci-s/orig-silver.png — the vapevo.com photo behind variant-silver-v2.webp (bound by shop.voopoo.com colour data, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/vinci-s/C-silver-S1.png (dark + magenta) — owner's 3 points (VOOPOO logo at the base · VINCI word on the dot-grid panel · body shape, side button, light strip and clear pod as on the real photo); colour checked against the real photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J3 07/10 — VINCI S, G5 bar (owner: Drag exception does not apply); 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-silver-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/vinci-s/M-blue-gradient-S1.png",
+  "slug": "vinci-s",
+  "role": "variant",
+  "id": "blue-gradient",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 2K 1:1 through the Higgsfield MCP (2 credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/vinci-s/orig-blue-gradient.png (flattened on #2b2e33 as orig-blue-gradient-bg.png — HALO rule) as the only image (prompt = docs/IMAGE_PROMPTS.md v3 with the VINCI S part list, hf-helpers.js __V + \"the same hue and depth as image 1\" + \"rebuild crisp micro-texture\"); render _incoming/look-batch/vinci-s/blue-gradient-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/vinci-s/orig-blue-gradient.png — the vapevo.com photo behind variant-blue-gradient-v2.webp (bound by shop.voopoo.com colour data, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/vinci-s/C-blue-gradient-S1.png (dark + magenta) — owner's 3 points (VOOPOO logo at the base · VINCI word on the dot-grid panel · body shape, side button, light strip and clear pod as on the real photo); colour checked against the real photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J3 07/10 — VINCI S, G5 bar (owner: Drag exception does not apply); 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-blue-gradient-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/vinci-s/M-green-gradient-S1.png",
+  "slug": "vinci-s",
+  "role": "variant",
+  "id": "green-gradient",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/vinci-s/orig-green-gradient.png (flattened on #2b2e33 as orig-green-gradient-bg.png — HALO rule) as the only image (prompt = docs/IMAGE_PROMPTS.md v3 with the VINCI S part list, hf-helpers.js __V + \"the same hue and depth as image 1\" + \"rebuild crisp micro-texture\"); render _incoming/look-batch/vinci-s/green-gradient-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/vinci-s/orig-green-gradient.png — the vapevo.com photo behind variant-green-gradient-v2.webp (bound by shop.voopoo.com colour data, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/vinci-s/C-green-gradient-S1.png (dark + magenta) — owner's 3 points (VOOPOO logo at the base · VINCI word on the dot-grid panel · body shape, side button, light strip and clear pod as on the real photo); colour checked against the real photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J3 07/10 — VINCI S, G5 bar (owner: Drag exception does not apply); 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-green-gradient-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/vinci-s/M-gold-gradient-S1.png",
+  "slug": "vinci-s",
+  "role": "variant",
+  "id": "gold-gradient",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 2K 1:1 through the Higgsfield MCP (2 credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/vinci-s/orig-gold-gradient.png (flattened on #2b2e33 as orig-gold-gradient-bg.png — HALO rule) as the only image (prompt = docs/IMAGE_PROMPTS.md v3 with the VINCI S part list, hf-helpers.js __V + \"the same hue and depth as image 1\" + \"rebuild crisp micro-texture\"); render _incoming/look-batch/vinci-s/gold-gradient-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/vinci-s/orig-gold-gradient.png — the vapevo.com photo behind variant-gold-gradient-v2.webp (bound by shop.voopoo.com colour data, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/vinci-s/C-gold-gradient-S1.png (dark + magenta) — owner's 3 points (VOOPOO logo at the base · VINCI word on the dot-grid panel · body shape, side button, light strip and clear pod as on the real photo); colour checked against the real photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J3 07/10 — VINCI S, G5 bar (owner: Drag exception does not apply); 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-gold-gradient-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/vinci-s/M-pink-S1.png",
+  "slug": "vinci-s",
+  "role": "variant",
+  "id": "pink",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_2 2K 1:1 through the Higgsfield MCP (2 credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/vinci-s/orig-pink.png (flattened on #2b2e33 as orig-pink-bg.png — HALO rule) as the only image (prompt = docs/IMAGE_PROMPTS.md v3 with the VINCI S part list, hf-helpers.js __V + \"the same hue and depth as image 1\" + \"rebuild crisp micro-texture\"); render _incoming/look-batch/vinci-s/pink-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/vinci-s/orig-pink.png — the vapevo.com photo behind variant-pink-v2.webp (bound by shop.voopoo.com colour data, see that entry)",
+   "fidelitySheet": "_incoming/look-batch/vinci-s/C-pink-S1.png (dark + magenta) — owner's 3 points (VOOPOO logo at the base · VINCI word on the dot-grid panel · body shape, side button, light strip and clear pod as on the real photo); colour checked against the real photo with look-batch/hue-stats.js"
+  },
+  "note": "image-look J3 07/10 — VINCI S, G5 bar (owner: Drag exception does not apply); 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-pink-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/vinci-s/D-black-S1-card.png",
+  "slug": "vinci-s",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the real vapevo.com photo _incoming/look-batch/vinci-s/orig-black.png (flattened on #2b2e33 as orig-black-bg.png — HALO rule) as the only image (prompt = docs/IMAGE_PROMPTS.md v3 with the VINCI S part list, hf-helpers.js __V + \"the same hue and depth as image 1\" + \"rebuild crisp micro-texture\"); render _incoming/look-batch/vinci-s/black-S1.png; keyed by _incoming/look-pilot/matte2.js via look-batch/run.js (floor line auto) keeping the contact shadow + floor reflection (colour flag ownFloor); card = the same render keyed at full size with the floor cut at the foot line (matte2.js --device), upright; floor shadow clipped to the device columns by look-batch/card-clip.js so the card centres",
+   "reference": "_incoming/look-batch/vinci-s/orig-black.png",
+   "fidelitySheet": "_incoming/look-batch/vinci-s/C-black-S1.png"
+  },
+  "note": "image-look J3 07/10 — card from the Black pick (card-v2 was Black too); the hero keeps its painted floor under the card",
+  "fileName": "card-v3.webp"
  }
 ]
