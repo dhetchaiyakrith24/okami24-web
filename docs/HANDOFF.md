@@ -66,9 +66,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        long type but kept the text). VINCI S = item 2 (in progress). J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) not started.
        Owner verdicts 07/10 still to do: relx-creator · argus-g4-mini · drag-x3 · vinci-s · zero-cartridge · joiway-f4 = skip ·
        m-bar-15k clear pod off the site (= item (3)) · passed: caliburn-g4-pro · argus-p3 · vmate-i3 · iqosheet-16/18.
-       voopoo.com lists 3 NEW Drag S3 colours (Lake Green · Cherry Pink · Brooklyn Gray) not in our 7 [เชื่อว่า] — catalog rule → data round.
+       Drag S3 has 10 colours (+ Lake Green · Cherry Pink · Brooklyn Gray, 2 real shops agree [ตรวจแล้ว]; maker site unreachable from
+       the tools) — owner sheet 29 A = add after VINCI S: renders done 07/10 (Chrome free, `drag-new3-map.js`, line-ups 5 + 5), PR next.
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
-   (4) then this round's batch 3 with the picked image standard. Small item: MOOOD who-for line "รส" → "กลิ่น" (§18).
+   (4) then this round's batch 3 with the picked image standard.
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
@@ -78,9 +79,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - (owner 07/10, "จดไว้ก่อน" — not started, needs its own round) TYPO-TOLERANT SEARCH, Thai + English: (a) the site search finds the
     product even when the name is misspelled; (b) Google: a misspelled query still finds the shop (SEO round). Search "Sugus"
     alias gap (below) belongs to (a).
-  - MOOOD who-for line (owner-approved round 30.3) says "รส" twice — the locked word is "กลิ่น" (thai-copy 06/10: "อยากได้พอตใช้แล้วทิ้ง
-    สายพัฟเยอะ ที่มีกลิ่นให้เลือกหลายกลิ่น") — ask before touching (13.3 #5). Search "Sugus" finds nothing now (no alias) — data round.
-    `src/data/products/unbranded.ts` header comment still lists MOOOD among the unbranded lines (history text, not shown).
+  - (owner sheet 07/10, item 16 A — not started, new look = designer, own round) a lifestyle / real-shot strip at the END of product
+    pages, for models whose maker publishes such photos (sample = UWELL's G5 real-shot strip, `_incoming/review-sheet/uwell-real-shot.webp`).
+    Owner sheet answers live in the artifact's db (https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr, collection "answers"): 12 A + 13 A
+    (ARGUS G4 battery figures / P3 + i3 facts accepted as they are) · 16 A (above) · the rest = PR "copy: owner review-sheet answers".
+  - Search "Sugus" finds nothing now (no alias) — data round (= typo search (a) above). `src/data/products/unbranded.ts` header comment
+    still lists MOOOD among the unbranded lines (history text, not shown).
   - "รุ่นนี้มี N กลิ่น" counts every option but the grid shows only those with a photo — 15K now 16/16 (batch 2); the rule itself
     stays (shared ProductMoreDetails) — the round's remaining batches close the other gaps.
   - `src/data/families.ts` m-bar still calls the line "disposable (9K/10K/15K)" — internal, not shown (checker #303).
@@ -259,4 +263,4 @@ photos + every other option without a photo + white-box coils = a new "option ph
 "we don't know" = unprofessional → cut (M Bar 10K + JOIWAY F4 nicotine, M Switch Kit battery); never write that pattern again ·
 JOIWAY F4: "2 โหมด" belongs to the NOS edition → cut; the named exception "2 โหมด 2 รส" is gone · F4 review video = the shop's own
 F4 TWINS review (l-8sAPwOUZw, OKM YARZ), not the NOS one · words ดีไซน์เรียบ · มองเข้าไปข้างใน · ภาพโปร่ง · คู่กลิ่น = approved (THAI_STYLE).
-Not answered (no recommendation was given): the new words in Q8 · Q11 "RELX Creator Pod" vs "RELX Creator 20K" naming.
+**Answered 07/10 (owner, review sheet):** the Q8 words are locked and the RELX pod is "RELX Creator Pod" (THAI_STYLE "คำจากใบตรวจ").
