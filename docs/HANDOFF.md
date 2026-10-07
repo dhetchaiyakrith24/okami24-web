@@ -11,32 +11,21 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 4626890 (#329 Drag S3 v5/v6 merged 07/10 ~15:19 ICT, deploy run 37592649401
-  → Render dep-db301049v7es73ag33j0, live checked by curl: green/pink-v6 + lineup-v6 + card-v4 = 200, page HTML lists them [ตรวจแล้ว]).
+1 main: `git fetch && git log -1 --oneline origin/main` = 8e0f06a (#332 Drag X3 merged 07/10 ~16:40 ICT; deploy run 37597774419 green, live
+  checked by curl: card/7 variants/2 line-ups v3 = 200 and on the page [ตรวจแล้ว]) · #329 Drag S3 v5/v6 live since ~15:20 [ตรวจแล้ว].
   Central rule §12 item 29 (owner 07/10): a chat move = Friday runs routine `friday-chat-move` (`mcp__scheduled-tasks__run_scheduled_task`).
-  Open: PR #332 (Drag X3, item 2). Live site answered 502 for ~1 min while Render switched builds (normal for a deploy) [ตรวจแล้ว].
-2 ahead of main: branch `image-look-drag-x3` (`git log --oneline origin/main..image-look-drag-x3`): 11f3d10 = Drag X3 7 colours v3 + card-v3
-  + lineup(2)-v3 + data + map append · 7a12c2e = รอพี่ตรวจ item 26. checker on 7a12c2e = FAIL: Moss Green too dark/blue · Gray Metal
-  frame lighter than the real gunmetal (screen micro-text + slight 3/4 pose = same as the accepted Drag S3 set, owner "skip tiny flaws"
-  → Friday's call: not a defect). Fix in progress, NOT committed: Moss Green = `M-moss-green-S1th.png` (look-batch/hue-match.js pulled the
-  keyed colour to the real photo's median, L 0.25 → 0.36; pick.json + x3-map-v5.js updated) · Gray Metal = new render RENDERING in
-  Higgsfield (Chrome tab, job 898d3a4e-907b-4221-9a10-d42b9a7f6401, prompt = S4 + "DARK GUNMETAL frame") → get.js drag-x3 gray-metal S5 →
-  everest-patch (--win 846,850,928,864, add --vfill / --box when the patch shows a box) → run.js --tag S5t → clip-floor → pick.json →
-  `node x3-map-v5.js` → process-images --map x3-map-v5.json → `x3-lineup-floor.js --row --pick` → webp lineup(2)-v3 (q82 alpha 90) →
-  commit → build 3412 → `sh _incoming/look-batch/x3/shots.sh after http://localhost:3412` → checker re-check (moss + gray only) →
-  merge → curl → review page for Drag X3 (copy ds5-review.html) + รอพี่ตรวจ item. If the gray render is no better: keep S4, write it
-  in รอพี่ตรวจ as a taste item and say so to the checker. New tools this chat (all `_incoming/look-batch/`): foot-bg.js · card-clip.js ·
-  hue-match.js · hue-stats.js · metal-match.js (mask catches panel speckles — not used) · zmag.js · cmp3.js; matte2.js --protect/--bg;
-  everest-patch.js --box. Branch `option-photos-3` = LESSONS 28 only, NOT checked. Drag S3 review page (updated, "ขึ้นเว็บแล้ว"):
-  https://claude.ai/artifact/NaS45DCEkmX9qJW7DsLzQx (file `_incoming/look-batch/review-ds5/ds5-review.html`).
-3b IMAGE THEFT — DONE #322, live 06/10 22:25; owner tested computer + phone: right-click and long-press save both blocked (owner approved): `ImageSaveGuard` (root layout) cancels right-click and
-  drag on every <img>; globals.css turns off iOS long-press save. Not done, with reasons told to the owner: blocking the original
-  files (og:image + JSON-LD Product image point at them; the optimiser already serves 1920 px) · metadata/invisible watermark
-  (the optimiser strips metadata [เชื่อว่า]; a pixel watermark means re-encoding every file) · watermark in the file (IMAGE_SPEC
-  §3 bans it; Merchant Center rejects it). Logo laid over images on screen only: drafts A corner logo · B "okami24.store" text
-  (Friday's pick) · C faint mark over the product (failed the eye test) = `_incoming/image-guard/logo-mock/`; owner 06/10 night
-  "เอาแค่นี้ก่อน" = not now, do not re-propose unprompted. New images need nothing: the guard covers every <img> (the site has
-  no CSS background images). Proof `_incoming/image-guard/`.
+  Render switches builds with ~1 min of 502 on the whole site after each deploy (seen 07/10) — wait, then curl.
+2 ahead of main: docs PR branch `docs-after-drag-x3` (this §16 + รอพี่ตรวจ 26/27 links) — docs only. Branch `option-photos-3` = LESSONS 28
+  only, NOT checked. Branches `image-look-drag-s3` / `-x3` = merged.
+  Review pages (owner): Drag S3 https://claude.ai/artifact/NaS45DCEkmX9qJW7DsLzQx (`_incoming/look-batch/review-ds5/ds5-review.html`) ·
+  Drag X3 https://claude.ai/artifact/QqzubsSvZdMhjcc7i85WMq (`_incoming/look-batch/review-x3/x3-review.html`).
+  New tools this chat (`_incoming/look-batch/`, not in git): foot-bg.js (per-row --bg boxes) · card-clip.js (card from a D- file) ·
+  hue-match.js (pull a keyed colour to the real photo's median; --skip the colour display) · hue-stats.js (median colour) · metal-match.js
+  (texture mask — catches panel speckles, not used) · zmag.js · cmp3.js; matte2.js `--protect` / `--bg`; run.js passes both;
+  everest-patch.js `--box` (faint text the detector splits; use with --win + --vfill).
+3b IMAGE THEFT — DONE #322 (live 06/10, owner tested + approved): `ImageSaveGuard` (root layout) blocks right-click/drag on every <img>,
+  globals.css blocks iOS long-press save; new images need nothing. Logo-over-image drafts (`_incoming/image-guard/logo-mock/`) = owner
+  06/10 "เอาแค่นี้ก่อน" — do not re-propose unprompted. Not done (reasons told to the owner): original files · invisible watermark · watermark in file.
 3 OPEN: round "option photos + IQOS colours" = `docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt` (owner approved 06/10 pm).
   Batches (all tier B): 1 IQOS ✓ #311 · 2 SALTHUB ✓ #312 · 3 WOTOFO nexBAR 18K 11 · TFIT M Power 20K 10 · INFY 20K 2 · Muro 3ML 4 ·
   4 coils ×8 (white box) · 5 close. Scope (scope-auditor 06/10) = round file block + `_incoming/option-photos/scope.md`.
@@ -70,7 +59,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        DONE: J1 KOKO (#328, owner passed) · J2 Drag S3 (#329 live 07/10, checker 5/5, owner verdict = รอพี่ตรวจ 26): picks
        `_incoming/look-batch/drag-s3/pick.json` (M- files; "c" beam-clean.js · "t" everest-patch.js), map `drag-map-v5.js`, line-ups
        `ds-lineup-floor.js --row --pick`, floors clipped with `clip-floor.js` (lopsided floor = off-centre on the site). Pale colours need
-       the S4 light + "stays the SAME light value as image 1" line. J3 Drag X3 = PR #332 (item 2; helpers `__S`/`__S4`/`__X`/`__X4` in
+       the S4 light + "stays the SAME light value as image 1" line. J3 Drag X3 = #332 live 07/10 (checker pass after fixes; owner verdict = รอพี่ตรวจ 27; helpers `__S`/`__S4`/`__X`/`__X4` in
        hf-helpers.js — this chat typed prompts straight into the box instead: click the box, ctrl+a, type; the page froze ~40 s on a
        long type but kept the text). Then VINCI S (G5 bar, neon first, `__V`/`__DV`). J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) not started.
        Owner verdicts 07/10 still to do: relx-creator · argus-g4-mini · drag-x3 · vinci-s · zero-cartridge · joiway-f4 = skip ·
