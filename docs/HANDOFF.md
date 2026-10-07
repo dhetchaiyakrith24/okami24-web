@@ -11,16 +11,15 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 234d588 (#337 Drag S3 +3 colours) · #336 owner-sheet copy live 07/10 eve
+1 main: `git fetch && git log -1 --oneline origin/main` = the #339 docs merge (owner rulings 07/10 night) · #338 docs · #337 Drag S3 +3 colours · #336 owner-sheet copy live 07/10 eve
   (curl: new headings / RELX / MOOOD / INFY lines on the live site [ตรวจแล้ว]) · #335 VINCI S v3 live ~17:30 (curl: 11 v3 files [ตรวจแล้ว]).
   #337 live 07/10 eve (curl: the 3 new variant-*-v5 + lineup(2)-v7 on /products/drag-s3 [ตรวจแล้ว]).
   Render: ~1 min of 502 site-wide after each deploy — wait, then curl. Owner present (normal chat; stop-and-ask items go to the owner in chat).
-  OWNER REVIEW SHEET = artifact https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr (page `_incoming/review-sheet/sheet.html`, db
-  capability): items live in its db collection "items", the owner's answers in "answers" (read with the ArtifactData tool, "list") —
-  add an item there whenever something waits for the owner's eye, delete it once answered; `docs/รอพี่ตรวจ.md` mirrors it in git.
+  Owner decisions: ask in chat + one line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (retired 07/10 night, §18 "Review sheet +
+  image work") · image work goes live after the checker without a review page (before/after page only for a hard case).
   Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
-2 ahead of main: branch `docs-handoff-0710-eve` = this §16 + LESSONS ch15 + waiting list 31 only. Branch `option-photos-3` = LESSONS 28 only, NOT checked.
+2 ahead of main: nothing of this round. Branch `option-photos-3` = LESSONS 28 only, NOT checked.
   SHARED FOLDER: another chat (friday-chat-move) switched this folder's branch mid-work on 07/10 and a commit landed on its branch —
   before every commit run `git branch --show-current`; two chats on this repo at once = one of them in a worktree.
 3b IMAGE THEFT — DONE #322 (live 06/10, owner tested + approved): `ImageSaveGuard` (root layout) blocks right-click/drag on every <img>,
@@ -55,7 +54,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        Drag S3 recipe = `drag-s3/pick.json` ("t" = everest-patch.js; the detector misses on new renders → use `--box x0,y0,x1,y1` by hand).
        NEXT image jobs: J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) — not started. Owner verdicts still to
        do: relx-creator · argus-g4-mini · zero-cartridge · joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)).
-       Drag S3 line-ups 5 + 5 vs 4 + 3 + 3 = on the review sheet (item 31; a 3rd "ทั้งหมด 3" pill = component change).
+       Owner 07/10 (sheet 31 = A): Drag S3 passed, line-ups 5 + 5 kept. Image work from now: merge → live (§18).
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
        OWNER PRICES 07/10 (review sheet 25): M Bar 15K device + pod = ฿600 · pod only = ฿400 — money = full set (13.5 #3), own batch,
        through the price-approval data (never typed by hand), with the black-pod split; ฿349 stays until then.
@@ -237,6 +236,12 @@ not on the site) · leftover credits = next in the queue, unclear source = skip.
 by swipe (IMAGE_SPEC §0 item 5) · all-options image ("ทั้งหมด"): pod systems get a NEW one (owner 01/10 evening, design left
 to Friday: plain, luxurious, premium, depth); disposables / pod-replacement products get none (IMAGE_SPEC §0 item 5) ·
 every product gets an SEO article in "more details" = its own later round.
+**Review sheet + image work (owner 07/10 night, chat):** "ใบตรวจแบบที่ทำมาล่าสุดไม่ต้องทำแล้ว … เอาไว้งานใหญ่ที่ต้องดู Before - after จริงๆ
+เช่นสินค้าตัวนี้แก้ยาก ต้นแบบมาเละ ค่อยทำ" + "ทำงานรูปภาพเสร็จ ขึ้นเว็บเลย … เดี๋ยวพี่ไปดูในเว็บเอง" → NO review-sheet artifact by default
+(the 07/10 one is retired) · owner decisions = asked in chat + one line in `docs/รอพี่ตรวจ.md` · image work = checker passes → merge →
+live, no review page; the owner checks the live site · a before/after review page ONLY for a big, hard case (a product that is hard to
+fix, a broken source photo) · images = the free Chrome route only, never paid credits ("ใช้ Chrome") · two chats at once: no
+worktree rule — the night routine `friday-chat-move` checks for another working chat before any checkout/commit/build (its step 0b).
 
 **Answered 03/10 (moved from §16 04/10):** "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · logos: Kardinal = the maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
 
