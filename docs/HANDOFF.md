@@ -11,18 +11,29 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = 8e0f06a (#332 Drag X3 merged 07/10 ~16:40 ICT; deploy run 37597774419 green, live
-  checked by curl: card/7 variants/2 line-ups v3 = 200 and on the page [ตรวจแล้ว]) · #329 Drag S3 v5/v6 live since ~15:20 [ตรวจแล้ว].
-  Central rule §12 item 29 (owner 07/10): a chat move = Friday runs routine `friday-chat-move` (`mcp__scheduled-tasks__run_scheduled_task`).
-  Render switches builds with ~1 min of 502 on the whole site after each deploy (seen 07/10) — wait, then curl.
-2 ahead of main: docs PR branch `docs-after-drag-x3` (this §16 + รอพี่ตรวจ 26/27 links) — docs only. Branch `option-photos-3` = LESSONS 28
-  only, NOT checked. Branches `image-look-drag-s3` / `-x3` = merged.
-  Review pages (owner): Drag S3 https://claude.ai/artifact/NaS45DCEkmX9qJW7DsLzQx (`_incoming/look-batch/review-ds5/ds5-review.html`) ·
-  Drag X3 https://claude.ai/artifact/QqzubsSvZdMhjcc7i85WMq (`_incoming/look-batch/review-x3/x3-review.html`).
-  New tools this chat (`_incoming/look-batch/`, not in git): foot-bg.js (per-row --bg boxes) · card-clip.js (card from a D- file) ·
-  hue-match.js (pull a keyed colour to the real photo's median; --skip the colour display) · hue-stats.js (median colour) · metal-match.js
-  (texture mask — catches panel speckles, not used) · zmag.js · cmp3.js; matte2.js `--protect` / `--bg`; run.js passes both;
-  everest-patch.js `--box` (faint text the detector splits; use with --win + --vfill).
+1 main: `git fetch && git log -1 --oneline origin/main` = 7d577e9 (#333 docs) · #332 Drag X3 live 07/10 ~16:40 ICT · #329 Drag S3 v5/v6 live
+  ~15:20 (both checked by curl [ตรวจแล้ว]). Render gives ~1 min of 502 on the whole site after each deploy (07/10) — wait, then curl.
+  OWNER 07/10 evening (awake): the scheduled-task autonomous order is CANCELLED — back to a normal chat (owner present; stop-and-ask
+  items go to the owner in chat again, not only to รอพี่ตรวจ). FIRST TASK of the next chat: make the owner a review sheet ("ใบตรวจ") of
+  everything waiting for the owner's eye — source = `docs/รอพี่ตรวจ.md` (items 12–27) + the two review pages below; one line per item,
+  an answer slot per item (A/B/C or yes/no), Thai, phone-friendly — then keep working on VINCI S and add to the sheet as items appear.
+2 ahead of main: branch `image-look-vinci-s` = this §16 only. Branch `option-photos-3` = LESSONS 28 only, NOT checked.
+  Review pages (owner): Drag S3 https://claude.ai/artifact/NaS45DCEkmX9qJW7DsLzQx · Drag X3 https://claude.ai/artifact/QqzubsSvZdMhjcc7i85WMq
+  (files `_incoming/look-batch/review-ds5/ds5-review.html` · `review-x3/x3-review.html`).
+  VINCI S IN PROGRESS (G5 bar, v3 with the real vapevo photo flattened on #2b2e33 = `vinci-s/orig-<id>-bg.png`): neon DONE = pick
+  `vinci-s/M-neon-S2.png` (`--compare` CHANGED 110/43 → 81/57, hue = real, key clean; S1 has a hard colour band). QUEUED in Higgsfield
+  (07/10 ~16:30 UTC+7, server side): black 2a3fe908 · grey 6cba6179 · green-gradient (id via `show_generations` size 4) → `node
+  _incoming/look-batch/get.js vinci-s <id> S1 <hf_name>`. NOT queued yet: silver · blue-gradient · gold-gradient · pink (pale → swap the
+  light sentence for the S4 one "Strong key light from the front-left, clear fall-off to the right, a darker floor," + "stays <colour>,
+  never grey"). Prompt = the neon one with the colour from `__DV` (hf-helpers.js) + "(the same hue and depth as image 1, not paler,
+  not more saturated)". Each: run.js vinci-s <id> <render> --tag S1 → clip-floor → eye on C- sheet + `hue-stats.js` vs orig → pick.json
+  → `node vinci-map-v3.js` → process-images --map vinci-map-v3.json → card = `card-clip.js vinci-s/D-<black pick>` → line-ups
+  `vinci-lineup-floor.js --row --pick` (4 + 4) → webp lineup(2)-v3 → data in voopoo.ts vinci-s (8 variants v3 ownFloor + card-v3 +
+  lineups v3; alts say "upright front view") → PR → checker → merge → review page (copy review-x3) + รอพี่ตรวจ item.
+  Typing a long prompt into the Higgsfield box freezes the page ~40 s but the text lands (check with innerText); after an upload the
+  new photo is the 2nd tile, untick the 3rd, tick the 2nd. New tools (`_incoming/look-batch/`, not in git): foot-bg.js · card-clip.js ·
+  hue-match.js · hue-stats.js · metal-match.js (not used) · zmag.js · cmp3.js · vinci-map-v3.js · vinci-lineup-floor.js; matte2.js
+  `--protect` / `--bg`; everest-patch.js `--box`.
 3b IMAGE THEFT — DONE #322 (live 06/10, owner tested + approved): `ImageSaveGuard` (root layout) blocks right-click/drag on every <img>,
   globals.css blocks iOS long-press save; new images need nothing. Logo-over-image drafts (`_incoming/image-guard/logo-mock/`) = owner
   06/10 "เอาแค่นี้ก่อน" — do not re-propose unprompted. Not done (reasons told to the owner): original files · invisible watermark · watermark in file.
@@ -30,15 +41,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Batches (all tier B): 1 IQOS ✓ #311 · 2 SALTHUB ✓ #312 · 3 WOTOFO nexBAR 18K 11 · TFIT M Power 20K 10 · INFY 20K 2 · Muro 3ML 4 ·
   4 coils ×8 (white box) · 5 close. Scope (scope-auditor 06/10) = round file block + `_incoming/option-photos/scope.md`.
   Done: PRIME 5 colours · ILUMA i 7 (Bold Ruby = jp.iqos.com) · Zero Cartridge 22/22 · M Bar 15K 16/16. AI jobs (nano_banana_2 4k):
-  47ab7be5 PRIME Electric Purple · 622cae8b Leaf Green (re-toned) · c78765cc Bold Ruby · 93f513e9 Zero Strawberry band · 6c0d358c 15K
-  Black Berry band. iqosheet-17 (ILUMA ONE) not published = out of scope. Credits this round: 17.
-  checker #312 taste notes (not fixed, source-bound): Apple Aloe / Ice Sparkling labels faint as in SALTHUB's posters · Strawberry
-  bottom corners show a ~1 px grey pod-rim line at 5x zoom.
+  AI job ids of batches 1–2 + checker #312 taste notes = `git show 7d577e9:docs/HANDOFF.md` §16 item 3. Credits this round: 17.
   PAUSED 06/10 night. Owner's order (answers 06/10 night, one chat = one round):
-   (1) DONE #317 + #319 — all 17 admin rows + INFY 20K 400 (basis "owner-confirmed"; admin prices apply without
-       asking, §18); m-bar-15k 349 left for item (3) (`docs/รอพี่ตรวจ.md` item 25); proof `_incoming/prices-0610/`. Admin's
-       "ARGUS Multi-Ohm 3 pcs = 450": the only ARGUS pod in the catalog is Coil-21 "คอยล์ Argus Pod", Shipnity ฿450 already
-       and not published — nothing to change [เชื่อว่า same item; checker #319 note];
+   (1) DONE #317 + #319 (prices; m-bar-15k 349 left for item (3) = รอพี่ตรวจ 25; ARGUS note = `git show 7d577e9:docs/HANDOFF.md`);
    (2) image look — RUNNING (the site chat = YOU). Method = IMAGE_SPEC §0 item 8 · FLOW + fix-line table + prompt versions =
        docs/IMAGE_PROMPTS.md (owner 07/10 "ภาพรวม"): `node scripts/image-source-check.js <slug>` on the candidate photos → pick image 1
        (maker → real retailer → site photo) → v2 (flat-graphic reference, KOKO) or v3 (already-AI-relit reference → REAL photo, light
@@ -50,23 +55,18 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        (claude-in-chrome, its own tab, free Unlimited to 11/10, one render at a time account-wide, shared with the Dive project — keep
        ≤3 queued). How-to notes (upload, tick one thumbnail, Generate by ref, output names via Higgsfield MCP `show_generations` (read
        only) → `node _incoming/look-batch/get.js <slug> <id> <S#> <hf_name>`) = JOBS.md J3 "SITE CHAT RENDERS" block. Board = JOBS.md.
-       EVEREST LAB badge text: `node _incoming/look-batch/everest-patch.js <render> <out> [--win x0,y0,x1,y1] [--vfill] --zoom z.png`
-       (Drag S3 default window; Drag X3 = `--win 846,850,928,864` or near it — check the printed box is ~67×10) before run.js.
-       Your loop: `node _incoming/look-batch/run.js <slug> <id> <render> [--base N] [--tag S1] [--floorFade]` (floor line auto) → M-
-       (site canvas) · C- (dark/magenta) · D- (device only) · O- → pick → map entries like `drag-map.js` → `npx tsx
-       scripts/process-images.ts --map <file>` → data `ownFloor: true` → line-ups by script → review page → PR → checker.
-       Pilot renders sit ~8% bigger: re-key them. New file name on every replace (30-day cache).
+       Tools: everest-patch.js (badge text; X3 `--win 846,850,928,864`) → run.js <slug> <id> <render> --tag S1 (M- site canvas · C- dark/magenta
+       · D- device only) → clip-floor → pick → map script → process-images --map → data ownFloor → line-ups → review page → PR → checker.
+       New file name on every replace once live (30-day cache).
        DONE: J1 KOKO (#328, owner passed) · J2 Drag S3 (#329 live 07/10, checker 5/5, owner verdict = รอพี่ตรวจ 26): picks
        `_incoming/look-batch/drag-s3/pick.json` (M- files; "c" beam-clean.js · "t" everest-patch.js), map `drag-map-v5.js`, line-ups
        `ds-lineup-floor.js --row --pick`, floors clipped with `clip-floor.js` (lopsided floor = off-centre on the site). Pale colours need
        the S4 light + "stays the SAME light value as image 1" line. J3 Drag X3 = #332 live 07/10 (checker pass after fixes; owner verdict = รอพี่ตรวจ 27; helpers `__S`/`__S4`/`__X`/`__X4` in
        hf-helpers.js — this chat typed prompts straight into the box instead: click the box, ctrl+a, type; the page froze ~40 s on a
-       long type but kept the text). Then VINCI S (G5 bar, neon first, `__V`/`__DV`). J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) not started.
+       long type but kept the text). VINCI S = item 2 (in progress). J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) not started.
        Owner verdicts 07/10 still to do: relx-creator · argus-g4-mini · drag-x3 · vinci-s · zero-cartridge · joiway-f4 = skip ·
        m-bar-15k clear pod off the site (= item (3)) · passed: caliburn-g4-pro · argus-p3 · vmate-i3 · iqosheet-16/18.
-       Researcher 07/10: no real Drag S3 photo larger than vapevo's 218×751 [เชื่อว่า]. voopoo.com lists 3 NEW Drag S3 colours
-       (Lake Green · Cherry Pink · Brooklyn Gray) not in our 7 [เชื่อว่า] — catalog rule → data round.
-       G4 vs G4 Pro clip: the shop channel (OKM YARZ) has no comparison video — keep the guide's clips as they are;
+       voopoo.com lists 3 NEW Drag S3 colours (Lake Green · Cherry Pink · Brooklyn Gray) not in our 7 [เชื่อว่า] — catalog rule → data round.
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
    (4) then this round's batch 3 with the picked image standard. Small item: MOOOD who-for line "รส" → "กลิ่น" (§18).
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
