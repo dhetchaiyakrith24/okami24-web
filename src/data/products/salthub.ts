@@ -170,7 +170,7 @@ export const salthubProducts: Product[] = [
         answer: "Yes — it charges over USB-C rather than being discarded once the internal battery is depleted.",
       },
     ],
-    relatedProductSlugs: ["m-bar-9k", "m-bar-15k", "m-switch-kit"],
+    relatedProductSlugs: ["m-bar-9k", "m-switch-kit"],
     sourceUrls: ["https://www.salthub.com/", "https://www.salthub.com/mbar-10k/"],
   },
   {
@@ -279,12 +279,17 @@ export const salthubProducts: Product[] = [
       "Vapers who want to adjust draw tightness on a disposable rather than committing to one airflow.",
     ],
     faqs: [],
-    relatedProductSlugs: ["m-bar-10k", "m-bar-15k"],
+    relatedProductSlugs: ["m-bar-10k", "m-switch-kit"],
     sourceUrls: ["https://www.salthub.com/"],
   },
   {
     id: "m-bar-15k",
     slug: "m-bar-15k",
+    // Owner 2026-10-08 (chat): the clear M Bar pod is off the site (BSOT 06/10), so the 15K = the M Switch body + the black
+    // pod = the M Switch Kit — the page folds into the Kit's (next.config.ts `redirects` sends /products/m-bar-15k there;
+    // the Kit carries the "M Bar 15K" name). Not deleted: record, photos and price stay; delete this line and the redirect
+    // to bring it back.
+    hiddenFromStorefront: { since: "2026-10-08", reason: "owner 08/10: M Bar 15K folds into the M Switch Kit (black pod only)" },
     brandId: "salthub",
     familyId: "m-bar",
     // Batch 3f (06/10): owner 06/10 (HANDOFF §18) "M Bar 15K → reusable/pod-system category" — SALTHUB sells it as the M Switch
@@ -423,6 +428,8 @@ export const salthubProducts: Product[] = [
     systemType: "pod-kit",
     name: "M Switch Kit",
     displayName: "SALTHUB M SWITCH KIT",
+    // Owner 2026-10-08: the shop sells this set as "M Bar 15K" (the retired m-bar-15k page redirects here).
+    searchAliases: ["M Bar 15K", "MBar 15K", "Marbo 15K"],
     tagline: "A reusable body, prefilled cartridges — no filling required.",
     shortDescription:
       "A reusable device body paired with prefilled M Switch Pod cartridges rated up to 15,000 puffs per pod — a device you keep and recharge, refilled by swapping cartridges rather than bottled e-liquid.",
@@ -555,6 +562,8 @@ export const salthubProducts: Product[] = [
     systemType: "pod-cartridge",
     name: "M Switch Pod",
     displayName: "SALTHUB M SWITCH POD",
+    // Owner 2026-10-08: the shop's admin list calls this pod "หัว M Bar 15K".
+    searchAliases: ["M Bar 15K", "Marbo 15K"],
     tagline: "The prefilled cartridge for the M Switch Kit.",
     shortDescription: "A prefilled replacement cartridge for the M Switch Kit device body.",
     isFlagship: false,
