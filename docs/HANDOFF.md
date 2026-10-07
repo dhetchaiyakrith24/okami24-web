@@ -11,22 +11,23 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = #359 merge 90e58a7 (Zero Cartridge J5 images, 08/10) · #354 SEO ง close ·
-  #352 SEO links · #350 ARGUS G4 mini J4 + RELX fixes · #343 docs (slip-check ruling) · SEO chat = #340–#344 #352 #354 + this close PR.
+1 main: `git fetch && git log -1 --oneline origin/main` = #363 merge 54a57ed (Zero Cartridge: Fruit Tea / Grape / Grape Aloe /
+  Grapefruit re-done in the J5 look, live 08/10 [ตรวจแล้ว curl]) · #359 Zero Cartridge J5 · #354 SEO ง close · #350 ARGUS G4 mini J4.
   A worktree may run its own `next build` + `next start -p 3413` (SEO chat 08/10: SITE_URL + OKAMI24_DATA_DIR=<tmp> env) — no port clash. Render: ~1 min of 502 site-wide after each deploy — wait, then curl.
-  THREE CHATS share this folder on 07/10 night: image chat (main folder) · SEO chat (`_incoming/wt-seo-d`) · slip-check chat (own worktree) —
-  test port 3412 is one: message the others before build/start, and say when free. NO site merge on 10/10 (owner's LINE broadcast,
+  NIGHT 08/10: night chain ON + a TEMPORARY NIGHT ORDER in the routine prompt (owner 08/10: image work long, many products/brands,
+  routine chats do not hand off — the app compacts context) — EXPIRES 2026-10-08 18:00 or when the owner's day chat opens: that chat
+  deletes the block from routine `friday-chat-move` and turns the routine off (round-open Step 2 item 0). NO site merge on 10/10 (owner's LINE broadcast,
   2–4k visitors; load test 07/10: 129 req/s, 3,892/3,892 = 200, p99 357 ms [ตรวจแล้ว] — `_incoming/loadtest/load.js`).
   Owner decisions: ask in chat + one line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (retired 07/10 night, §18 "Review sheet +
   image work") · image work goes live after the checker without a review page (before/after page only for a hard case).
   Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
-2 ahead of main: nothing of the image chat (#359 + #361 merged; branches image-look-zero-cartridge / docs-handoff-j5 = merged).
+2 ahead of main: PR #364 branch `mbar15k-into-kit` (worktree `_incoming/wt-mbar`, head d413b84 = item 3 (3)) — full set done, checker
+  run 08/10 night (result in the PR / this chat's report); NOT merged at night (site PR) → morning, after the owner answers
+  `docs/รอพี่ตรวจ.md` 20. Main folder = detached at d413b84 (test build of #364 on 3412). Docs branch `docs-night-0810` (worktree `_incoming/wt-docs`).
   Untracked, NOT the image chat's, left alone: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching). Branch `option-photos-3` =
   LESSONS 28 only, NOT checked. Before every commit run `git branch --show-current`; more than one chat on this repo = the others in worktrees.
-3b IMAGE THEFT — DONE #322 (live 06/10, owner tested + approved): `ImageSaveGuard` (root layout) blocks right-click/drag on every <img>,
-  globals.css blocks iOS long-press save; new images need nothing. Logo-over-image drafts (`_incoming/image-guard/logo-mock/`) = owner
-  06/10 "เอาแค่นี้ก่อน" — do not re-propose unprompted. Not done (reasons told to the owner): original files · invisible watermark · watermark in file.
+3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
 3 OPEN: round "option photos + IQOS colours" = `docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt` (owner approved 06/10 pm).
   Batches (all tier B): 1 IQOS ✓ #311 · 2 SALTHUB ✓ #312 · 3 WOTOFO nexBAR 18K 11 · TFIT M Power 20K 10 · INFY 20K 2 · Muro 3ML 4 ·
   4 coils ×8 (white box) · 5 close. Scope (scope-auditor 06/10) = round file block + `_incoming/option-photos/scope.md`.
@@ -38,14 +39,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        #335 · J4 RELX #345/#350 + ARGUS G4 mini #350 · J5 Zero Cartridge #359. Method for item (4) = IMAGE_SPEC §0 item 8 + IMAGE_PROMPTS
        (one colour first → 3 points + G5 bar → full set; Drag = the only S2-look exception); renders, keying, maps, four-per-render =
        JOBS.md J3–J5 (scripts + helpers in `_incoming/look-batch/`; old details = `git show 853f3ce:docs/HANDOFF.md` §16 item 3 (2)).
-       New file name on every replace once live (30-day cache).
-       NEXT CHAT (owner 08/10 "ย้ายแชทเลย") = item (3) below. First step: read BSOT (M Bar 15K / M Switch rows) + the m-bar-15k /
-       m-switch-kit / m-switch-pod data and the price-approval data path (13.5 #3 full set — money), then post a ≤7-step plan
-       to the owner before touching prices. Still open: joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)).
-   (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
-       OWNER PRICES 07/10 (review sheet 25): M Bar 15K device + pod = ฿600 · pod only = ฿400 — money = full set (13.5 #3), own batch,
-       through the price-approval data (never typed by hand), with the black-pod split; ฿349 stays until then.
-   (4) then this round's batch 3 with the picked image standard.
+       New file name on every replace once live (30-day cache). Quad renders: check EVERY pod of the picked render against the
+       set (08/10 owner caught 4 Zero pods from a flat pale retry S2 — fixed #363 from S1 with `zero-cartridge/deghost.js`).
+   (3) M Bar 15K — owner 08/10 chose "fold into the M Switch Kit" (BSOT M Bar 15K section, entry 08/10): PR #364 = 15K hidden +
+       308 redirect to the Kit (next.config.ts) + Product.searchAliases + Kit/Pod title/meta/one visible line (thai-copy 08/10).
+       Prices unchanged (Kit ฿600 / Pod ฿400 already live = the owner's 07/10 prices). Waiting: รอพี่ตรวจ 20 (head rows vs the round's
+       【ห้ามแตะ】 head — drop commit 33f5df8's head rows if "2") · 21 (home desktop intro Scene4Hero still shows the clear-pod card;
+       "1" = swap to `m-switch-kit/card-v2.webp`, + `scripts/image-audit.ts` row).
+   (4) NOW (night 08/10): this round's batch 3 — WOTOFO nexBAR 18K 11 · TFIT M Power 20K 10 (all) · INFY 20K 2 · Muro 3ML 4;
+       gap list `npx tsx _incoming/option-photos/b3/list-gaps.ts`; researcher's source table → `_incoming/option-photos/b3/`
+       (no source anywhere = a reason row, never a drawn label). Then batch 4 (8 coils).
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
