@@ -18,11 +18,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Open: PR #329 DRAFT (Drag S3 v5, item 3 (2)).
 2 ahead of main: branch `image-look-drag-s3`: older commits = failed v3 set + LESSONS ch13 + IMAGE_PROMPTS v3 + image-source-check
   (see `git log`) · 86245d5 = Drag S3 v5 (7 colours + card-v4 + line-ups v5, failed v3 files removed) · c2e578d = card-v4 re-centred +
-  process-images.map.json v3→v5. checker on 86245d5: FAIL 1 = card off-centre (fixed in c2e578d, NOT re-checked yet — needs a
-  rebuild + 390/1440 card shots `sh _incoming/look-batch/ds5/shots.sh after http://localhost:3412`), taste notes: green darker than the
-  real sage, pink rosier than pastel → re-render green/pink (S5) queued after X3, then rebuild once. Branch `option-photos-3` = LESSONS 28
-  only, NOT checked. Test server 3412 = up (86245d5 build) — stop before the next build. Owner review page (Drag S3 v5):
-  https://claude.ai/artifact/NaS45DCEkmX9qJW7DsLzQx (file `_incoming/look-batch/review-ds5/ds5-review.html`, update it after merge).
+  process-images.map.json v3→v5. checker on 86245d5: FAIL 1 = card off-centre (fixed in c2e578d, NOT re-checked yet), taste notes:
+  green darker than the real sage, pink rosier than pastel. RENDERING NOW in Higgsfield (queued 07/10 ~08:05, Chrome tab of the old
+  chat): Drag S3 green (`__S4` + "same mid olive-sage lightness") + pink (`__S4` + "very pale cream-pink") → save as
+  `drag-s3/green-S5.png` / `pink-S5.png` (names via Higgsfield MCP `show_generations` size 3 → `get.js`), compare with orig-*,
+  if better: everest-patch → run.js --tag S5t → clip-floor → pick.json → `node drag-map-v5.js` → rm the two v5 webps → process-images
+  → line-ups (`ds-lineup-floor.js --row --pick` + webp as before) → commit. THEN: stop 3412 → `test-server.js build` + start →
+  `sh _incoming/look-batch/ds5/shots.sh after http://localhost:3412` → checker re-check (card centred + any swapped colour) → mark
+  #329 ready → merge (13.7) → curl live → update the review page (same file, republish; add green/pink if swapped, "ขึ้นเว็บแล้ว").
+  Branch `option-photos-3` = LESSONS 28 only, NOT checked. Owner review page (Drag S3 v5):
+  https://claude.ai/artifact/NaS45DCEkmX9qJW7DsLzQx (file `_incoming/look-batch/review-ds5/ds5-review.html`).
 3b IMAGE THEFT — DONE #322, live 06/10 22:25; owner tested computer + phone: right-click and long-press save both blocked (owner approved): `ImageSaveGuard` (root layout) cancels right-click and
   drag on every <img>; globals.css turns off iOS long-press save. Not done, with reasons told to the owner: blocking the original
   files (og:image + JSON-LD Product image point at them; the optimiser already serves 1920 px) · metadata/invisible watermark
@@ -65,9 +70,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        (M- files; "c" = beam-clean.js, "t" = everest-patch.js), map = `drag-map-v5.js` → json, line-ups `ds-lineup-floor.js --row
        --pick`, floors clipped with `clip-floor.js` (lopsided floor shadow = off-centre on the site — clip every M- and the card D-).
        Pale colours need the S4 light + "stays <colour>" line (pink/white went mauve/grey). Owner said "Friday decides" on EVEREST LAB
-       → patched. J3 Drag X3 (S recipe, `__X`/`__X4` in the Chrome tab): sky-blue-S2 · aurora-purple-S2 · champagne-golden-S2 ·
-       glow-pink-S1 keyed + text patched (`*-S#t.png`); gray-metal ×2 + moss-green ×1 queued 07/10 ~07:15; spray-black not started;
-       then VINCI S (G5 bar, neon first, `__V`/`__DV` in hf-helpers.js). J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) not started.
+       → patched. J3 Drag X3 (S recipe; the Chrome-tab helpers `__S`/`__S4`/`__X`/`__X4` are in hf-helpers.js + JOBS.md — re-paste
+       after any reload): picks in `drag-x3/pick.json` = sky-blue · aurora-purple · champagne-golden · glow-pink · moss-green ·
+       spray-black (all keyed, floors clipped; spray-black's EVEREST patch printed a 20×11 box = WRONG, redo its patch with a better
+       --win, then re-key). gray-metal: S1/S2 too dark (read black), S3 grey but adds a diagonal seam → S4 RENDERING (queued ~08:00).
+       Then: `node x3-map-v5.js` (files variant-<id>-v3 · card-v3 from the spray-black D- file clipped like Drag S3's `-card.png`),
+       `x3-lineup-floor.js --row --pick`, data in voopoo.ts drag-x3 (card + 7 variants ownFloor + lineups), own PR (Drag X3 = Drag
+       exception), review page like ds5. Then VINCI S (G5 bar, neon first, `__V`/`__DV`). J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) not started.
        Owner verdicts 07/10 still to do: relx-creator · argus-g4-mini · drag-x3 · vinci-s · zero-cartridge · joiway-f4 = skip ·
        m-bar-15k clear pod off the site (= item (3)) · passed: caliburn-g4-pro · argus-p3 · vmate-i3 · iqosheet-16/18.
        Researcher 07/10: no real Drag S3 photo larger than vapevo's 218×751 [เชื่อว่า]. voopoo.com lists 3 NEW Drag S3 colours
