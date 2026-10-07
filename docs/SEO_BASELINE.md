@@ -198,6 +198,10 @@ Live changes (main; details = `git show <merge>`):
   links to /products/pod-systems, /products/disposables, /e-liquid, /products/coils-accessories, /products/pods-cartridges ·
   how-long-a-disposable-lasts lists JOIWAY F4 + INFY 20K. Internal links inside `<main>` 952 → 984 (checker #352); title /
   meta / H1 / JSON-LD types unchanged on all 112 sitemap URLs.
+- #354 (08/10, round close): /brands/joiway description without F3/F4 + prices · /brands/infy gets a head override (title
+  unchanged, description without "INFY 20K") — the two brand metas seo-auditor found still competing with the product pages.
+  /brands/esko-bar description still names Esko Bar Switch 20K on purpose (single-model brand; Google already sends
+  "esko bar switch 20k" to pod-159 — watch row 7).
 
 Watch list for 22/10 (seo-auditor at the round close, 08/10 · judge mainly by WHICH page Google sends each query to — impressions
 are small and the window is ~2 weeks, so clicks alone are noise · first check URL Inspection "last crawl" of the re-headed pages:

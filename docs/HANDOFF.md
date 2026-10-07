@@ -11,8 +11,9 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = #350 merge d8778d4 (ARGUS G4 mini J4 + RELX fixes, 08/10 ~00:10) · #345 RELX ·
-  #343 docs (slip-check ruling) · #341/#340/#342/#344 = SEO chat. Render: ~1 min of 502 site-wide after each deploy — wait, then curl.
+1 main: `git fetch && git log -1 --oneline origin/main` = #354 merge c1bde26 (SEO ง close, 08/10) · #352 SEO links ·
+  #350 ARGUS G4 mini J4 + RELX fixes · #343 docs (slip-check ruling) · SEO chat = #340–#344 #352 #354 + this close PR.
+  A worktree may run its own `next build` + `next start -p 3413` (SEO chat 08/10: SITE_URL + OKAMI24_DATA_DIR=<tmp> env) — no port clash. Render: ~1 min of 502 site-wide after each deploy — wait, then curl.
   THREE CHATS share this folder on 07/10 night: image chat (main folder) · SEO chat (`_incoming/wt-seo-d`) · slip-check chat (own worktree) —
   test port 3412 is one: message the others before build/start, and say when free. NO site merge on 10/10 (owner's LINE broadcast,
   2–4k visitors; load test 07/10: 129 req/s, 3,892/3,892 = 200, p99 357 ms [ตรวจแล้ว] — `_incoming/loadtest/load.js`).
@@ -68,7 +69,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
    (4) then this round's batch 3 with the picked image standard.
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
-  "อ่านต่อ" box + guide links, d1e12e4). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
+  "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
   also read the "validate fix" started 07/10). Hand-offs (articles / missing pages / misspellings / pages with 0 article links) =
   SEO_LANDSCAPE §0.5. Request indexing for the 17 re-headed pages = owner sheet item 36. Worktree `_incoming/wt-seo-d` + notes
   `_incoming/seo-d/` kept until the 22/10 read. Not done here: "หัวพอตใส" on m-bar-15k (item 3 (3)) · esko card "20 รสชาติ" (data round).
