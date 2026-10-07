@@ -46,7 +46,9 @@ export const brands: Brand[] = [
       // salthub.com's footer shows the Marbo logo (_incoming/round8/researcher-1-result.md rows
       // 1 and 3a). It never says who makes or distributes what: no source for that (row 3c).
       // Batch 3f (06/10): the 15K left "disposable" (owner 06/10 — pod kits); only that clause changed.
-      "SALTHUB เจ้าของ M Bar พอตใช้แล้วทิ้งรุ่น 9K และ 10K กับเครื่องระบบสวิตช์ M Switch และ Zero ที่เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา ส่วน M Bar 15K เป็นตัวเครื่อง M Switch คู่หัวพอตใส ที่ร้านมีทั้งตัวเครื่องและหัวพอต ถ้าเคยเห็นชื่อ Marbo ตามร้านอื่น คือของตระกูลเดียวกันนี้ เว็บทางการ salthub.com เองก็มีโลโก้ Marbo อยู่ที่ท้ายเว็บ",
+      // Round SEO D batch 5 (owner 07/10): "มาโบ" — the Thai name people type (Google autocomplete 07/10) — one mention,
+      // the exception to THAI_STYLE layer 1; "ใส" left the 15K clause (BSOT 06/10: black pods only).
+      "SALTHUB เจ้าของ M Bar พอตใช้แล้วทิ้งรุ่น 9K และ 10K กับเครื่องระบบสวิตช์ M Switch และ Zero ที่เปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา ส่วน M Bar 15K เป็นตัวเครื่อง M Switch คู่หัวพอต ที่ร้านมีทั้งตัวเครื่องและหัวพอต ถ้าเคยเห็นชื่อ Marbo ตามร้านอื่น หรือได้ยินคนเรียกว่ามาโบ ก็คือของตระกูลเดียวกันนี้ เว็บทางการ salthub.com มีโลโก้ Marbo อยู่ที่ท้ายเว็บ",
     referenceUrl: "https://www.salthub.com/",
   },
   {
@@ -84,7 +86,8 @@ export const brands: Brand[] = [
     description:
       "A disposable-vape brand offering both single-use ESKO BAR Disposable devices and the ESKO BAR SWITCH reusable pod system.",
     descriptionTh:
-      "ESKO BAR แบรนด์พอตใช้แล้วทิ้งและเครื่องระบบสวิตช์ ที่ร้านมี Esko Bar Switch 20K เครื่องที่เปลี่ยนแค่หัวพอตบรรจุสำเร็จ ไม่ต้องเติมน้ำยา",
+      // Round SEO D batch 5 (owner 07/10): the Thai name people type ("เอสโคบาร์", autocomplete 07/10), one mention.
+      "ESKO BAR หรือที่หลายคนเรียกว่าเอสโคบาร์ เป็นแบรนด์พอตใช้แล้วทิ้งและเครื่องระบบสวิตช์ ที่ร้านมี Esko Bar Switch 20K เครื่องที่เปลี่ยนแค่หัวพอตบรรจุสำเร็จ ไม่ต้องเติมน้ำยา",
     referenceUrl: "https://eskobarvape.com/",
   },
   {
@@ -139,7 +142,8 @@ export const brands: Brand[] = [
       "A vape brand (This Is Salts) whose INFY 20K disposable is sold on the Thai market; INFY's own sites do not list the 20K yet.",
     // 2026-09-30 (round "image-sitewide"): the brand went live with INFY 20K — its line shows on /about and /brands/infy.
     descriptionTh:
-      "INFY ร้านมีรุ่นพอตใช้แล้วทิ้ง 20K",
+      // Round SEO D batch 5 (owner 07/10): the Thai name people type ("อินฟี่", autocomplete 07/10), one mention.
+      "INFY หรือที่หลายคนเรียกว่าอินฟี่ เป็นแบรนด์ที่ร้านมีรุ่น INFY 20K พอตใช้แล้วทิ้ง",
     referenceUrl: "https://www.infy.my/",
   },
   {
@@ -187,7 +191,8 @@ export const brands: Brand[] = [
     description:
       "Philip Morris International's heated-tobacco device brand — the ILUMA device family (Prime/i/i ONE/ONE) paired with TEREA tobacco sticks, using induction heating.",
     descriptionTh:
-      "IQOS ของ Philip Morris International เครื่องอุ่นยาสูบด้วยความร้อน ไม่ใช้น้ำยา ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมี ILUMA i และ ILUMA i PRIME",
+      // Round SEO D batch 5 (owner 07/10): the Thai name people type ("ไอคอส", autocomplete 07/10), one mention.
+      "IQOS ของ Philip Morris International หรือที่คนไทยเรียกกันว่าไอคอส เป็นเครื่องอุ่นยาสูบด้วยความร้อน ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมี ILUMA i และ ILUMA i PRIME",
     referenceUrl: "https://www.iqos.com/",
   },
   // Tier-1 disposable growth mission (2026-09-03) — owner-named business-priority brands.
@@ -214,7 +219,9 @@ export const brands: Brand[] = [
     description:
       "A vape device manufacturer (myjoiway.com) selling disposables under an \"X Series\" naming pattern, including the F-series disposable line, alongside e-juice and accessories.",
     descriptionTh:
-      "JOIWAY ผู้ผลิตพอตใช้แล้วทิ้ง ที่ร้านมี F3 และ F4 ที่สลับ 2 รสในเครื่องเดียว ซึ่ง OKami24 รีวิวใช้จริงไว้บน YouTube",
+      // Round SEO D batch 5 (owner 07/10): the Thai name people type ("จอยเวย์", autocomplete 07/10), one mention; F3 is
+      // the single-flavour model — the old line read as if both switched two.
+      "JOIWAY หรือที่หลายคนเรียกว่าจอยเวย์ เป็นผู้ผลิตพอตใช้แล้วทิ้ง ที่ร้านมี F3 รุ่นกลิ่นเดียว และ F4 ที่สลับได้สองกลิ่นในเครื่องเดียว ซึ่ง OKami24 รีวิวใช้จริงไว้บน YouTube",
     referenceUrl: "https://myjoiway.com/",
   },
   {
