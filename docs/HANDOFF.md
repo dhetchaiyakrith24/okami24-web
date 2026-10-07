@@ -65,11 +65,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   iqosheet-18 · m-bar-10k · tfit-m-power-20k; on the first quota message stop for that sitting (live test ~40 s each; success = the
   card shows "✓ ขอการจัดทำดัชนีแล้ว"; the search box needs two clicks before typing). Worktree `_incoming/wt-seo-d` + notes
   `_incoming/seo-d/` kept until the 22/10 read. Not done here: "หัวพอตใส" on m-bar-15k (item 3 (3)) · esko card "20 รสชาติ" (data round).
-3t CLOSED 08/10 — round "staff slip check (EasySlip)" (`docs/rounds/รอบ-ตรวจสลิป-หน้าทีมงาน-07-10.txt`), tag `slip-check-done`.
-  Live: `/staff` (#347 BIG, checker 5/5 + re-check 3/3) + admin guide / DEPLOY-RENDER §7 / BSOT §9 "Built" (#348). Owner set both Render
-  secrets 07–08/10 and passed a real slip on the live site 08/10 (amount/time = K PLUS, duplicate warning shown) [รอเจ้าของ → ผ่าน].
-  Owner still to do: forward `docs/คู่มือแอดมิน-ตรวจสลิป.md` (from the line down) to the LINE team group + the password in a separate message.
-  First EasySlip error seen = INVALID_API_KEY from a key copied 1–2 chars short — the staff page shows the code in brackets; that is the fix path.
+3t CLOSED 08/10 — staff slip check (EasySlip), tag `slip-check-done`, live #347/#348, owner passed a real slip. Owner still to do: forward
+  `docs/คู่มือแอดมิน-ตรวจสลิป.md` to the LINE team group (+ password separately). Error INVALID_API_KEY = key copied short.
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
