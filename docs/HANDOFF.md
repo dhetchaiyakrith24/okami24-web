@@ -11,7 +11,7 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = the #339-ish docs merge after 9b58191 (#338 docs) · #337 Drag S3 +3 colours · #336 owner-sheet copy live 07/10 eve
+1 main: `git fetch && git log -1 --oneline origin/main` = the #339 docs merge (owner rulings 07/10 night) · #338 docs · #337 Drag S3 +3 colours · #336 owner-sheet copy live 07/10 eve
   (curl: new headings / RELX / MOOOD / INFY lines on the live site [ตรวจแล้ว]) · #335 VINCI S v3 live ~17:30 (curl: 11 v3 files [ตรวจแล้ว]).
   #337 live 07/10 eve (curl: the 3 new variant-*-v5 + lineup(2)-v7 on /products/drag-s3 [ตรวจแล้ว]).
   Render: ~1 min of 502 site-wide after each deploy — wait, then curl. Owner present (normal chat; stop-and-ask items go to the owner in chat).
