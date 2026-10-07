@@ -11,22 +11,23 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = de9f4e1 (#331 rules copy @dd73801) [ตรวจแล้ว — git]. 07/10: #328 KOKO live
-  (owner passed) · central rule §12 item 29 changed (owner 07/10, smogz-rules #12): a chat move = Friday runs the owner-made routine
-  `friday-chat-move` (`mcp__scheduled-tasks__run_scheduled_task`, Manual, exists [ตรวจแล้ว]) — Computer use cannot touch the Claude
-  window; Friday cannot create routines (blocked) and a self-merge without review was blocked once (owner then said "merge เองได้").
-  Open: PR #329 DRAFT (Drag S3 v5, item 3 (2)).
-2 ahead of main: branch `image-look-drag-s3`: older commits = failed v3 set + LESSONS ch13 + IMAGE_PROMPTS v3 + image-source-check
-  (see `git log`) · 86245d5 = Drag S3 v5 (7 colours + card-v4 + line-ups v5, failed v3 files removed) · c2e578d = card-v4 re-centred +
-  process-images.map.json v3→v5. checker on 86245d5: FAIL 1 = card off-centre (fixed in c2e578d, NOT re-checked yet), taste notes:
-  green darker than the real sage, pink rosier than pastel. RENDERING NOW in Higgsfield (queued 07/10 ~08:05, Chrome tab of the old
-  chat): Drag S3 green (`__S4` + "same mid olive-sage lightness") + pink (`__S4` + "very pale cream-pink") → save as
-  `drag-s3/green-S5.png` / `pink-S5.png` (names via Higgsfield MCP `show_generations` size 3 → `get.js`), compare with orig-*,
-  if better: everest-patch → run.js --tag S5t → clip-floor → pick.json → `node drag-map-v5.js` → rm the two v5 webps → process-images
-  → line-ups (`ds-lineup-floor.js --row --pick` + webp as before) → commit. THEN: stop 3412 → `test-server.js build` + start →
-  `sh _incoming/look-batch/ds5/shots.sh after http://localhost:3412` → checker re-check (card centred + any swapped colour) → mark
-  #329 ready → merge (13.7) → curl live → update the review page (same file, republish; add green/pink if swapped, "ขึ้นเว็บแล้ว").
-  Branch `option-photos-3` = LESSONS 28 only, NOT checked. Owner review page (Drag S3 v5):
+1 main: `git fetch && git log -1 --oneline origin/main` = 4626890 (#329 Drag S3 v5/v6 merged 07/10 ~15:19 ICT, deploy run 37592649401
+  → Render dep-db301049v7es73ag33j0, live checked by curl: green/pink-v6 + lineup-v6 + card-v4 = 200, page HTML lists them [ตรวจแล้ว]).
+  Central rule §12 item 29 (owner 07/10): a chat move = Friday runs routine `friday-chat-move` (`mcp__scheduled-tasks__run_scheduled_task`).
+  Open: PR #332 (Drag X3, item 2). Live site answered 502 for ~1 min while Render switched builds (normal for a deploy) [ตรวจแล้ว].
+2 ahead of main: branch `image-look-drag-x3` (`git log --oneline origin/main..image-look-drag-x3`): 11f3d10 = Drag X3 7 colours v3 + card-v3
+  + lineup(2)-v3 + data + map append · 7a12c2e = รอพี่ตรวจ item 26. checker on 7a12c2e = FAIL: Moss Green too dark/blue · Gray Metal
+  frame lighter than the real gunmetal (screen micro-text + slight 3/4 pose = same as the accepted Drag S3 set, owner "skip tiny flaws"
+  → Friday's call: not a defect). Fix in progress, NOT committed: Moss Green = `M-moss-green-S1th.png` (look-batch/hue-match.js pulled the
+  keyed colour to the real photo's median, L 0.25 → 0.36; pick.json + x3-map-v5.js updated) · Gray Metal = new render RENDERING in
+  Higgsfield (Chrome tab, job 898d3a4e-907b-4221-9a10-d42b9a7f6401, prompt = S4 + "DARK GUNMETAL frame") → get.js drag-x3 gray-metal S5 →
+  everest-patch (--win 846,850,928,864, add --vfill / --box when the patch shows a box) → run.js --tag S5t → clip-floor → pick.json →
+  `node x3-map-v5.js` → process-images --map x3-map-v5.json → `x3-lineup-floor.js --row --pick` → webp lineup(2)-v3 (q82 alpha 90) →
+  commit → build 3412 → `sh _incoming/look-batch/x3/shots.sh after http://localhost:3412` → checker re-check (moss + gray only) →
+  merge → curl → review page for Drag X3 (copy ds5-review.html) + รอพี่ตรวจ item. If the gray render is no better: keep S4, write it
+  in รอพี่ตรวจ as a taste item and say so to the checker. New tools this chat (all `_incoming/look-batch/`): foot-bg.js · card-clip.js ·
+  hue-match.js · hue-stats.js · metal-match.js (mask catches panel speckles — not used) · zmag.js · cmp3.js; matte2.js --protect/--bg;
+  everest-patch.js --box. Branch `option-photos-3` = LESSONS 28 only, NOT checked. Drag S3 review page (updated, "ขึ้นเว็บแล้ว"):
   https://claude.ai/artifact/NaS45DCEkmX9qJW7DsLzQx (file `_incoming/look-batch/review-ds5/ds5-review.html`).
 3b IMAGE THEFT — DONE #322, live 06/10 22:25; owner tested computer + phone: right-click and long-press save both blocked (owner approved): `ImageSaveGuard` (root layout) cancels right-click and
   drag on every <img>; globals.css turns off iOS long-press save. Not done, with reasons told to the owner: blocking the original
@@ -66,17 +67,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        (site canvas) · C- (dark/magenta) · D- (device only) · O- → pick → map entries like `drag-map.js` → `npx tsx
        scripts/process-images.ts --map <file>` → data `ownFloor: true` → line-ups by script → review page → PR → checker.
        Pilot renders sit ~8% bigger: re-key them. New file name on every replace (30-day cache).
-       DONE: J1 KOKO (#328, owner passed). J2 Drag S3 v5 = on branch (item 2): picks = `_incoming/look-batch/drag-s3/pick.json`
-       (M- files; "c" = beam-clean.js, "t" = everest-patch.js), map = `drag-map-v5.js` → json, line-ups `ds-lineup-floor.js --row
-       --pick`, floors clipped with `clip-floor.js` (lopsided floor shadow = off-centre on the site — clip every M- and the card D-).
-       Pale colours need the S4 light + "stays <colour>" line (pink/white went mauve/grey). Owner said "Friday decides" on EVEREST LAB
-       → patched. J3 Drag X3 (S recipe; the Chrome-tab helpers `__S`/`__S4`/`__X`/`__X4` are in hf-helpers.js + JOBS.md — re-paste
-       after any reload): picks in `drag-x3/pick.json` = sky-blue · aurora-purple · champagne-golden · glow-pink · moss-green ·
-       spray-black (all keyed, floors clipped; spray-black's EVEREST patch printed a 20×11 box = WRONG, redo its patch with a better
-       --win, then re-key). gray-metal: S1/S2 too dark (read black), S3 grey but adds a diagonal seam → S4 RENDERING (queued ~08:00).
-       Then: `node x3-map-v5.js` (files variant-<id>-v3 · card-v3 from the spray-black D- file clipped like Drag S3's `-card.png`),
-       `x3-lineup-floor.js --row --pick`, data in voopoo.ts drag-x3 (card + 7 variants ownFloor + lineups), own PR (Drag X3 = Drag
-       exception), review page like ds5. Then VINCI S (G5 bar, neon first, `__V`/`__DV`). J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) not started.
+       DONE: J1 KOKO (#328, owner passed) · J2 Drag S3 (#329 live 07/10, checker 5/5, owner verdict = รอพี่ตรวจ 26): picks
+       `_incoming/look-batch/drag-s3/pick.json` (M- files; "c" beam-clean.js · "t" everest-patch.js), map `drag-map-v5.js`, line-ups
+       `ds-lineup-floor.js --row --pick`, floors clipped with `clip-floor.js` (lopsided floor = off-centre on the site). Pale colours need
+       the S4 light + "stays the SAME light value as image 1" line. J3 Drag X3 = PR #332 (item 2; helpers `__S`/`__S4`/`__X`/`__X4` in
+       hf-helpers.js — this chat typed prompts straight into the box instead: click the box, ctrl+a, type; the page froze ~40 s on a
+       long type but kept the text). Then VINCI S (G5 bar, neon first, `__V`/`__DV`). J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) not started.
        Owner verdicts 07/10 still to do: relx-creator · argus-g4-mini · drag-x3 · vinci-s · zero-cartridge · joiway-f4 = skip ·
        m-bar-15k clear pod off the site (= item (3)) · passed: caliburn-g4-pro · argus-p3 · vmate-i3 · iqosheet-16/18.
        Researcher 07/10: no real Drag S3 photo larger than vapevo's 218×751 [เชื่อว่า]. voopoo.com lists 3 NEW Drag S3 colours
