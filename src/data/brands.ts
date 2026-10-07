@@ -143,7 +143,7 @@ export const brands: Brand[] = [
     // 2026-09-30 (round "image-sitewide"): the brand went live with INFY 20K — its line shows on /about and /brands/infy.
     descriptionTh:
       // Round SEO D batch 5 (owner 07/10): the Thai name people type ("อินฟี่", autocomplete 07/10), one mention.
-      "INFY หรือที่หลายคนเรียกว่าอินฟี่ รุ่นที่ร้านมีคือ INFY 20K พอตใช้แล้วทิ้ง",
+      "INFY หรือที่หลายคนเรียกว่าอินฟี่ เป็นแบรนด์ที่ร้านมีรุ่น INFY 20K พอตใช้แล้วทิ้ง",
     referenceUrl: "https://www.infy.my/",
   },
   {
