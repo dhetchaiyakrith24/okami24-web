@@ -75,13 +75,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   that already link there; count links on every sitemap URL before/after (LESSONS 7). Then 7 close: next GSC read date + query→page
   splits to watch (§0) · ask owner before "request indexing" · hand-offs §0.5 · seo-auditor close · round-close tag seo-d-keymap-done.
   Not this round: "หัวพอตใส" still on the m-bar-15k page + article (item 3 (3)) · esko card "20 รสชาติ" (Shipnity axis label, data round).
-3t OPEN (slip-check chat, own worktree `_incoming/wt-slip`, branch `slip-check`; working files `_incoming/slip-check/`): round "staff slip
-  check (EasySlip)" = `docs/rounds/รอบ-ตรวจสลิป-หน้าทีมงาน-07-10.txt` (owner opened 07/10, start 07/10 — only rule: no site merge ON 10/10).
-  Batches: 1 API docs read ✓ (`_incoming/slip-check/easyslip-api.md`, API v2) · 2 /staff + one staff password (B) · 3 slip check (B, full
-  set — money) · 4 quota + log (A/B) — 2–4 ✓ #347 (merged 07/10, checker 5/5 + re-check 3/3) · 5 admin manual + DEPLOY-RENDER §7 +
-  BSOT §9 "Built" = docs PR from branch `slip-check-manual` · then close (tag slip-check-done) after the owner's first real slip.
-  Local test = `next dev -p 3431` in the worktree + `_incoming/slip-check/mock-easyslip.js` (OKAMI24_EASYSLIP_TEST_BASE, dev only).
-  Owner to do after merge: set OKAMI24_STAFF_PASSWORD + OKAMI24_EASYSLIP_API_KEY in Render (click steps in the manual), then test 1 real slip.
+3t CLOSED 08/10 — round "staff slip check (EasySlip)" (`docs/rounds/รอบ-ตรวจสลิป-หน้าทีมงาน-07-10.txt`), tag `slip-check-done`.
+  Live: `/staff` (#347 BIG, checker 5/5 + re-check 3/3) + admin guide / DEPLOY-RENDER §7 / BSOT §9 "Built" (#348). Owner set both Render
+  secrets 07–08/10 and passed a real slip on the live site 08/10 (amount/time = K PLUS, duplicate warning shown) [รอเจ้าของ → ผ่าน].
+  Owner still to do: forward `docs/คู่มือแอดมิน-ตรวจสลิป.md` (from the line down) to the LINE team group + the password in a separate message.
+  First EasySlip error seen = INVALID_API_KEY from a key copied 1–2 chars short — the staff page shows the code in brackets; that is the fix path.
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
