@@ -11,17 +11,17 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = the #339 docs merge (owner rulings 07/10 night) · #338 docs · #337 Drag S3 +3 colours · #336 owner-sheet copy live 07/10 eve
-  (curl: new headings / RELX / MOOOD / INFY lines on the live site [ตรวจแล้ว]) · #335 VINCI S v3 live ~17:30 (curl: 11 v3 files [ตรวจแล้ว]).
-  #337 live 07/10 eve (curl: the 3 new variant-*-v5 + lineup(2)-v7 on /products/drag-s3 [ตรวจแล้ว]).
-  Render: ~1 min of 502 site-wide after each deploy — wait, then curl. Owner present (normal chat; stop-and-ask items go to the owner in chat).
+1 main: `git fetch && git log -1 --oneline origin/main` = #345 merge 726f66c (RELX Creator J4 images, 07/10 ~23:00) · #343 docs (slip-check
+  ruling) · #341/#340/#342 = SEO chat. Render: ~1 min of 502 site-wide after each deploy — wait, then curl. Owner present 07/10 night.
+  THREE CHATS share this folder on 07/10 night: image chat (main folder) · SEO chat (`_incoming/wt-seo-d`) · slip-check chat (own worktree) —
+  test port 3412 is one: message the others before build/start, and say when free. NO site merge on 10/10 (owner's LINE broadcast,
+  2–4k visitors; load test 07/10: 129 req/s, 3,892/3,892 = 200, p99 357 ms [ตรวจแล้ว] — `_incoming/loadtest/load.js`).
   Owner decisions: ask in chat + one line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (retired 07/10 night, §18 "Review sheet +
   image work") · image work goes live after the checker without a review page (before/after page only for a hard case).
   Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
-2 ahead of main: nothing of this round. Branch `option-photos-3` = LESSONS 28 only, NOT checked.
-  SHARED FOLDER: another chat (friday-chat-move) switched this folder's branch mid-work on 07/10 and a commit landed on its branch —
-  before every commit run `git branch --show-current`; two chats on this repo at once = one of them in a worktree.
+2 ahead of main: nothing of the image chat (#345 merged; its branch image-look-relx-creator = merged). Branch `option-photos-3` =
+  LESSONS 28 only, NOT checked. Before every commit run `git branch --show-current`; more than one chat on this repo = the others in worktrees.
 3b IMAGE THEFT — DONE #322 (live 06/10, owner tested + approved): `ImageSaveGuard` (root layout) blocks right-click/drag on every <img>,
   globals.css blocks iOS long-press save; new images need nothing. Logo-over-image drafts (`_incoming/image-guard/logo-mock/`) = owner
   06/10 "เอาแค่นี้ก่อน" — do not re-propose unprompted. Not done (reasons told to the owner): original files · invisible watermark · watermark in file.
@@ -52,8 +52,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        panel; map `drag-new3-map.js`; line-ups v7 = 5 + 5) · J3 Drag X3 #332 (owner passed) · VINCI S #335 (owner passed 07/10; grey needed
        4 renders — S1 read black; map `vinci-map-v3.js`, picks `vinci-s/pick.json`). Picks/maps/line-up scripts all in `_incoming/look-batch/`.
        Drag S3 recipe = `drag-s3/pick.json` ("t" = everest-patch.js; the detector misses on new renders → use `--box x0,y0,x1,y1` by hand).
-       NEXT image jobs: J4 relx-creator · argus-g4-mini · J5 zero-cartridge (first image too small) — not started. Owner verdicts still to
-       do: relx-creator · argus-g4-mini · zero-cartridge · joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)).
+       J4 (07/10 night, site chat in Chrome, 0 credits): RELX Creator LIVE #345 (5 colours + card-v3 upright + lineup-v3 row; checker
+       round 1 failed Yellow colour + a map path → fixed, re-check 4/4 PASS; not fixed, checker "should": faint shadow crumb at the
+       base's lower right · line-up empty space under the row at 390). ARGUS G4 mini: 8/8 picks DONE in `_incoming/look-batch/
+       argus-g4-mini/pick.json` + map/line-ups/card ready — NEXT CHAT: re-render Black once (unlit dots; the other 7 have lit
+       dashes), then branch → process-images → voopoo.ts swap (line-ups must be NEW names: lineup-v4 / lineup2-v4, argus already
+       uses -v3) → gates → build → shots → checker → merge. Full step list + every key flag = `_incoming/look-batch/JOBS.md` J4.
+       Recipes learned = JOBS.md J4 (dark vs pale light; RELX = passed master as image 1 + RELX colour render as image 2;
+       hue-match.js for drift; --protect/--bg for dark bodies). J5 zero-cartridge (first image too small) — inputs
+       `zero-cartridge/orig-<id>.png` prep started (mango, strawberry), not rendered. Owner verdicts still to do: argus-g4-mini ·
+       zero-cartridge · joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)). Shots J4 = `_incoming/look-batch/shots-j4/`.
        Owner 07/10 (sheet 31 = A): Drag S3 passed, line-ups 5 + 5 kept. Image work from now: merge → live (§18).
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
        OWNER PRICES 07/10 (review sheet 25): M Bar 15K device + pod = ฿600 · pod only = ฿400 — money = full set (13.5 #3), own batch,
@@ -67,6 +75,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Ask the owner before: GSC "validate fix" (merchant listings) · request indexing. No site merge on 10/10 (LINE broadcast — image chat note).
   Worktree builds work with a COPY of node_modules (not a junction): `node scripts/test-server.js build|start` from the worktree; tell the
   image chat before using port 3412. preview_start runs in the MAIN folder — do not use it from a worktree.
+3t OPEN 07/10 night (its own chat + worktree): round "slip check" = `docs/rounds/รอบ-ตรวจสลิป-หน้าทีมงาน-07-10.txt` — staff-only page,
+  EasySlip verify image, one staff password, human approves (BSOT §9 exception, owner 07/10 · #343). Owner 07/10: START TODAY — the round
+  file's "start after 10/10" line is wrong (the only ban = no site merge ON 10/10); that chat fixes the line. Key + password = the owner types
+  them into Render, never in chat/git.
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
