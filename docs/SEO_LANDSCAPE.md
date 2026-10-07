@@ -42,7 +42,7 @@
 | pod kit · พอตคิท | pod kit 0/1 1.0 · starter kit pod 0/3 66 | `/products/pod-kits` | — | คงเดิม |
 | พอตใช้แล้วทิ้ง · disposable | พอตใช้แล้วทิ้ง 0/1 2.0 · disposable 0/2 44 | `/products/disposables` | — | คงเดิม |
 | พอตเปลี่ยนหัว · switch pod | (ไม่มีแถว · autocomplete มี "พอตเปลี่ยนหัว infy/15k/20000คำ") | คู่มือ `disposable-vs-switch-pod` (ยังไม่มีหน้าหมวด) | — | **หน้าที่ขาด:** หมวดพอตเปลี่ยนหัว (ข้อ 0.5) |
-| หัวพอต · pods · cartridge | pods 0/18 3.9 · หัวพอต 0/2 3.0 · cartridge pod 0/2 4.0 · หัวพอตเปล่า 0/3 9.7 · หัวพอต(เปล่า) ราคาส่ง 0/1 + 0/1 | `/products/pods-cartridges` | pods → pods-cartridges 0/18 | คงเดิม · "หัวพอต<รุ่น>" = หน้ารุ่นนั้น (0.3) |
+| หัวพอต · pods · cartridge | pods 0/18 3.9 · หัวพอต 0/2 3.0 · cartridge pod 0/2 4.0 · หัวพอตเปล่า 0/3 9.7 · หัวพอต(เปล่า) ราคาส่ง 0/1 + 0/1 | `/products/pods-cartridges` | pods → pods-cartridges 0/18 | คงเดิม · "หัวพอต<รุ่น>" = หน้าหัวพอตของรุ่นนั้น (0.3) |
 | คอยล์ · คอยล์พอต | คอยล์ voopoo 0/1 5.0 · คอยล์ caliburn g3 0/1 26 | `/products/coils-accessories` | — | คงเดิม · คอยล์<รุ่น> = หน้าคอยล์รุ่นนั้น |
 | เครื่องอุ่นยาสูบ · hnb | เครื่อง ดูด บุหรี่ hnb ราคา 1/1 5.0 | `/products/heated-tobacco-devices` | — | คงเดิม |
 | น้ำยาบุหรี่ไฟฟ้า | น้ำยาบุหรี่ไฟฟ้า 0/2 62.5 | `/e-liquid` (HANDOFF §18) | — | คงเดิม |
@@ -75,7 +75,7 @@
 | salthub · marbo · m bar · ชื่อเรียก "มาโบ" "เอ็มบาร์" | salthub 0/12 33.2 · marbo pod 0/1 6.0 | `/brands/salthub` | salthub → brands/salthub 0/5 · m-switch-kit 0/3 · m-bar-pod (ซ่อนแล้ว 404) 0/3 · m-bar-10k 0/3 · zero-pro 0/1 | ก้อน 4: title แบรนด์ถอยชื่อรุ่น 15K+ราคา กลับเป็นระดับแบรนด์ |
 | m bar 15k · marbo 15k | m bar 15k 0/3 6.0 · mbar 15k 0/3 9.7 | `/products/m-bar-15k` | **คำที่มี 15k → brands/salthub 0/6** | ก้อน 4: salthub ถอย (title+meta มี "M Bar 15K ฿349") |
 | m bar 10k | m bar 10k 1/2 75.5 | `/products/m-bar-10k` | — | head ค้าง (HANDOFF §16 ข้อ 5) |
-| m bar switch · m switch | m bar switch 1/1 15 · m switch 0/1 50 · พอต m switch 0/1 96 | `/products/m-switch-kit` | — | — |
+| m bar switch · m switch | m bar switch 1/1 15 · m switch 0/1 50 · พอต m switch 0/1 96 | `/products/m-switch-kit` | — | m-bar-15k (ตัวเครื่อง M Switch) ห้ามมีคำ "M Switch" ใน head |
 | marbo zero pro · zero nano · marbo ice blast | marbo zero pro 0/2 1.0 · marbo zero nano 0/1 3.0 · marbo ice blast 1/1 73 | `zero-pro` · `zero-nano` · `m-bar-10k` | — | — |
 | voopoo · พอต/คอยล์/หัวพอต voopoo | voopoo 3/18 10.7 · voopoo ทุกรุ่น 1/1 · เครื่องบุหรี่ไฟฟ้า voopoo 0/1 · หัวพอต voopoo 0/1 · พอต voopoo 0/1 87 | `/brands/voopoo` | voopoo → brands/voopoo 3/18 | ก้อน 4: title แบรนด์ (ตอนนี้ "DRAG 6 · DRAG S3 · ARGUS G4") ถอยชื่อรุ่น |
 | drag 6 | voopoo drag 6 ราคา 8/11 3.3 · drag 6 4/22 8.5 · voopoo drag 6 4/17 8.5 · drag6 4/11 8.0 · drag 6 ราคา 1/4 · drag 6 voopoo 1/2 · voopoo drag6 1/2 · darg 6 0/2 | `/products/drag-6` | drag 6 → drag-6 4/22 · *voopoo drag* → drag-6 11/30 + brands/voopoo 2/2 | คงเดิม (ชนะอยู่แล้ว) |
@@ -94,7 +94,7 @@
 | caliburn g3 (ตัวไม่ Pro) | caliburn g3 0/10 5.5 · caliburn g 3 1/2 · uwell caliburn g3 0/2 · g3 caliburn 0/1 | — (ชั่วคราว: `caliburn-g3-pro`) | **caliburn g3 → g3-pro-koko 0/9 · g3-pro 0/5 · uwell 0/1** | **หน้าที่ขาด** (เจ้าของ 25/09: ต้องมีหน้า) |
 | หัวพอต caliburn g3/g4 | caliburn g3 pod 0/1 · uwell caliburn g3 pro pod 0/1 | `/products/coil-94` | — | — |
 | caliburn g2 | caliburn g2 0/6 48 | `coil-53` / `coil-55` (ร้านมีแค่คอยล์/หัว) | — | — |
-| infy · infy 20k · ชื่อเรียก "อินฟี่" | infy 20k 0/25 13.8 · infy 20000 0/3 40 · infy 20k milk tea 0/2 · lnfy 20k 0/2 · infy bar pro 20k 0/1 · infy 20k disposable pod 0/1 · infy 0/2 97 | `/products/infy-20k` (infy คำเดียว = `/brands/infy`) | infy 20k → infy-20k 0/25 + brands/infy 0/2 | — ("infy 12k" = หน้าที่ขาด รอบ 10C) |
+| infy · infy 20k · ชื่อเรียก "อินฟี่" | infy 20k 0/25 13.8 · infy 20000 0/3 40 · infy 20k milk tea 0/2 · lnfy 20k 0/2 · infy bar pro 20k 0/1 · infy 20k disposable pod 0/1 · infy 0/2 97 | `/products/infy-20k` (infy คำเดียว = `/brands/infy`) | infy 20k → infy-20k 0/25 + brands/infy 0/2 | อันดับ 13.8 = หน้า 2 · head ไม่ช่วย → ก้อน 6 ลิงก์เข้า (seo-auditor 07/10) · "infy 12k" = หน้าที่ขาด |
 | nexbar clear 18k · wotofo | nexbar clear 18k 3/8 19 · wotofo 0/1 · wotofo vape 0/1 | `/products/pod-180` (nexbar clear) · `/brands/wotofo` | nexbar clear → pod-180 2/7 + brands/wotofo 1/1 | — |
 | moood · monster 14k | monster 14k 1/5 5.8 · mood monster 1/2 21 · mood 14k 0/1 · moood 14 0/1 · mood บุหรี่ 0/1 | `/products/mood-monster-14k` (แบรนด์ = `/brands/moood`) | — | — |
 | muro | muro connector 20k 1/5 26 · muro sc 8000 0/2 17.5 | `muro-connector-20k` · `muro-sc-8000` | — | ไม่มี `/brands/muro` (ข้อ 0.5) |
