@@ -22,9 +22,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   image work") · image work goes live after the checker without a review page (before/after page only for a hard case).
   Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
-2 ahead of main: PR #364 branch `mbar15k-into-kit` (worktree `_incoming/wt-mbar`, head d413b84 = item 3 (3)) — full set done, checker
-  run 08/10 night (result in the PR / this chat's report); NOT merged at night (site PR) → morning, after the owner answers
-  `docs/รอพี่ตรวจ.md` 20. Main folder = detached at d413b84 (test build of #364 on 3412). Docs branch `docs-night-0810` (worktree `_incoming/wt-docs`).
+2 ahead of main — ALL waiting for the morning (site PRs, no merge at night):
+  #364 `mbar15k-into-kit` (wt `_incoming/wt-mbar`) = item 3 (3), checker 6/6 PASS at d413b84; 7d52f22 after it = checker's notes only
+  (alias + Pod en line, 13.5 #2 (จ)) · #366 `option-photos-3-infy` (wt-b3) · #367 `option-photos-3-muro` (wt-b3m) · #368
+  `option-photos-3-tfit` (wt-b3t) = batch 3, checker running 08/10 night (result: PR comments are NOT written — read this chat's
+  report / re-run the checker if unknown). Main folder = DETACHED at a local-only combined tree (main + the 4 branches) serving 3412 —
+  `git checkout` a real branch before any commit there. Docs worktree `_incoming/wt-docs`.
   Untracked, NOT the image chat's, left alone: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching). Branch `option-photos-3` =
   LESSONS 28 only, NOT checked. Before every commit run `git branch --show-current`; more than one chat on this repo = the others in worktrees.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
@@ -34,21 +37,22 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Done: PRIME 5 colours · ILUMA i 7 (Bold Ruby = jp.iqos.com) · Zero Cartridge 22/22 · M Bar 15K 16/16. AI jobs (nano_banana_2 4k):
   AI job ids of batches 1–2 + checker #312 taste notes = `git show 7d577e9:docs/HANDOFF.md` §16 item 3. Credits this round: 17.
   PAUSED 06/10 night. Owner's order (answers 06/10 night, one chat = one round):
-   (1) DONE #317 + #319 (prices; m-bar-15k 349 left for item (3); ARGUS note = `git show 7d577e9:docs/HANDOFF.md`);
-   (2) image look — J1–J5 DONE, all live and owner-passed 08/10: J1 KOKO #328 · J2 Drag S3 #329/#337 · J3 Drag X3 #332 · VINCI S
-       #335 · J4 RELX #345/#350 + ARGUS G4 mini #350 · J5 Zero Cartridge #359. Method for item (4) = IMAGE_SPEC §0 item 8 + IMAGE_PROMPTS
-       (one colour first → 3 points + G5 bar → full set; Drag = the only S2-look exception); renders, keying, maps, four-per-render =
-       JOBS.md J3–J5 (scripts + helpers in `_incoming/look-batch/`; old details = `git show 853f3ce:docs/HANDOFF.md` §16 item 3 (2)).
-       New file name on every replace once live (30-day cache). Quad renders: check EVERY pod of the picked render against the
-       set (08/10 owner caught 4 Zero pods from a flat pale retry S2 — fixed #363 from S1 with `zero-cartridge/deghost.js`).
+   (1) DONE #317 + #319 (prices) · (2) image look J1–J5 DONE + owner-passed (#328–#359, #363). Method = IMAGE_SPEC §0 item 8 +
+       IMAGE_PROMPTS + `_incoming/look-batch/JOBS.md` J3–J5 (scripts there). New file name on every replace once live (30-day
+       cache). Quad renders: check EVERY pod of the picked render (owner caught 4 flat Zero pods 08/10 → #363).
    (3) M Bar 15K — owner 08/10 chose "fold into the M Switch Kit" (BSOT M Bar 15K section, entry 08/10): PR #364 = 15K hidden +
        308 redirect to the Kit (next.config.ts) + Product.searchAliases + Kit/Pod title/meta/one visible line (thai-copy 08/10).
        Prices unchanged (Kit ฿600 / Pod ฿400 already live = the owner's 07/10 prices). Waiting: รอพี่ตรวจ 20 (head rows vs the round's
        【ห้ามแตะ】 head — drop commit 33f5df8's head rows if "2") · 21 (home desktop intro Scene4Hero still shows the clear-pod card;
        "1" = swap to `m-switch-kit/card-v2.webp`, + `scripts/image-audit.ts` row).
-   (4) NOW (night 08/10): this round's batch 3 — WOTOFO nexBAR 18K 11 · TFIT M Power 20K 10 (all) · INFY 20K 2 · Muro 3ML 4;
-       gap list `npx tsx _incoming/option-photos/b3/list-gaps.ts`; researcher's source table → `_incoming/option-photos/b3/`
-       (no source anywhere = a reason row, never a drawn label). Then batch 4 (8 coils).
+   (4) batch 3 DONE as PRs #366–#368 (INFY 2 = recolour master · MURO 4 = MURO box art from ihavevape.net · TFIT 10 = TFIT's
+       Watermelon shot + names printed as its chart, `_incoming/option-photos/b3/tfit/names.js`). nexBAR 11 = reason rows
+       (`_incoming/option-photos/b3/reasons.md`: 6 exist only as the Vivid Edition = other design → รอพี่ตรวจ 22 · 5 none anywhere).
+       NEXT (night queue, in order): (a) checker result of #366–#368 → fix if bounced; (b) batch 4 coils: count-gaps PM rows
+       (coil-38 ×2 · 53 · 56 · 68 · 70 · 74 · 87 · 89 ×2, `npx tsx _incoming/sitewide-template/5/mood/count-gaps.ts`) + the white-box
+       cards (`_incoming/image-sitewide/b-coils/README.txt` — refs ready; renders = Higgsfield through Chrome only); (c) MURO 3ML is
+       missing 4 flavours the market lists (Apple Juice · Mineral Water · Strawberry Peach · Cola — ihavevape.net has box art; catalog
+       completeness rule; confirm with a 2nd source before adding); (d) round close (batch 5) = count-gaps + reasons table → docs.
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
