@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = #345 merge 726f66c (RELX Creator J4 images, 07/10 ~23:00) · #343 docs (slip-check
-  ruling) · #341/#340/#342 = SEO chat. Render: ~1 min of 502 site-wide after each deploy — wait, then curl. Owner present 07/10 night.
+1 main: `git fetch && git log -1 --oneline origin/main` = #350 merge d8778d4 (ARGUS G4 mini J4 + RELX fixes, 08/10 ~00:10) · #345 RELX ·
+  #343 docs (slip-check ruling) · #341/#340/#342/#344 = SEO chat. Render: ~1 min of 502 site-wide after each deploy — wait, then curl.
   THREE CHATS share this folder on 07/10 night: image chat (main folder) · SEO chat (`_incoming/wt-seo-d`) · slip-check chat (own worktree) —
   test port 3412 is one: message the others before build/start, and say when free. NO site merge on 10/10 (owner's LINE broadcast,
   2–4k visitors; load test 07/10: 129 req/s, 3,892/3,892 = 200, p99 357 ms [ตรวจแล้ว] — `_incoming/loadtest/load.js`).
@@ -20,7 +20,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   image work") · image work goes live after the checker without a review page (before/after page only for a hard case).
   Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
-2 ahead of main: nothing of the image chat (#345 merged; its branch image-look-relx-creator = merged). Branch `option-photos-3` =
+2 ahead of main: nothing of the image chat (#350 merged; its branch image-look-argus-g4-mini = merged). Branch `option-photos-3` =
   LESSONS 28 only, NOT checked. Before every commit run `git branch --show-current`; more than one chat on this repo = the others in worktrees.
 3b IMAGE THEFT — DONE #322 (live 06/10, owner tested + approved): `ImageSaveGuard` (root layout) blocks right-click/drag on every <img>,
   globals.css blocks iOS long-press save; new images need nothing. Logo-over-image drafts (`_incoming/image-guard/logo-mock/`) = owner
@@ -52,16 +52,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        panel; map `drag-new3-map.js`; line-ups v7 = 5 + 5) · J3 Drag X3 #332 (owner passed) · VINCI S #335 (owner passed 07/10; grey needed
        4 renders — S1 read black; map `vinci-map-v3.js`, picks `vinci-s/pick.json`). Picks/maps/line-up scripts all in `_incoming/look-batch/`.
        Drag S3 recipe = `drag-s3/pick.json` ("t" = everest-patch.js; the detector misses on new renders → use `--box x0,y0,x1,y1` by hand).
-       J4 (07/10 night, site chat in Chrome, 0 credits): RELX Creator LIVE #345 (5 colours + card-v3 upright + lineup-v3 row; checker
-       round 1 failed Yellow colour + a map path → fixed, re-check 4/4 PASS; not fixed, checker "should": faint shadow crumb at the
-       base's lower right · line-up empty space under the row at 390). ARGUS G4 mini: 8/8 picks DONE in `_incoming/look-batch/
-       argus-g4-mini/pick.json` + map/line-ups/card ready — NEXT CHAT: re-render Black once (unlit dots; the other 7 have lit
-       dashes), then branch → process-images → voopoo.ts swap (line-ups must be NEW names: lineup-v4 / lineup2-v4, argus already
-       uses -v3) → gates → build → shots → checker → merge. Full step list + every key flag = `_incoming/look-batch/JOBS.md` J4.
-       Recipes learned = JOBS.md J4 (dark vs pale light; RELX = passed master as image 1 + RELX colour render as image 2;
-       hue-match.js for drift; --protect/--bg for dark bodies). J5 zero-cartridge (first image too small) — inputs
-       `zero-cartridge/orig-<id>.png` prep started (mango, strawberry), not rendered. Owner verdicts still to do: argus-g4-mini ·
-       zero-cartridge · joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)). Shots J4 = `_incoming/look-batch/shots-j4/`.
+       J4 DONE (site chat in Chrome, 0 credits): RELX Creator #345 (owner passed 08/10) + its checker #345 "should" items fixed in
+       #350 (owner 08/10 "fix"): variants v4 (shadow crumb beside the base faded by `soft-floor.js`) + lineup-v4 zig-zag group
+       (`lineup-zig.js --zig`, 1/3/5 front · 2/4 behind). ARGUS G4 mini #350 (8 colours + card-v3 + lineup-v4/lineup2-v4; Black
+       re-rendered black-S2 with lit dashes; soft-floor on all 8; checker PASS + re-check 4/4; known minor: Black's OPEN tab reads
+       "OPE▶"). Prompt helpers `__ARG` / `__ARG2` now in `hf-helpers.js` (the tab-only copy was lost once — save every new helper
+       there). Recipes = JOBS.md J4 (dark vs pale light; RELX = passed master as image 1 + RELX colour render as image 2;
+       hue-match.js for drift; --protect/--bg for dark bodies; soft-floor after clip-floor). NEXT = J5 zero-cartridge (first image
+       too small) — inputs `zero-cartridge/orig-<id>.png` prep started (mango, strawberry), not rendered. Owner verdicts still to
+       do: argus-g4-mini · zero-cartridge · joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)). Shots = `shots-j4/`.
        Owner 07/10 (sheet 31 = A): Drag S3 passed, line-ups 5 + 5 kept. Image work from now: merge → live (§18).
    (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
        OWNER PRICES 07/10 (review sheet 25): M Bar 15K device + pod = ฿600 · pod only = ฿400 — money = full set (13.5 #3), own batch,
