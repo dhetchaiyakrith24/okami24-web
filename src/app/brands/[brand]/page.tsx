@@ -18,6 +18,8 @@ import { COLLECTION_VIDEOS } from "@/data/collection-videos";
 import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import { getDictionary } from "@/i18n/dictionaries";
+import { RelatedArticles } from "@/components/product/RelatedArticles";
+import { relatedArticlesForCollection } from "@/lib/article-relevance";
 
 export function generateStaticParams() {
   return brands.map((b) => ({ brand: b.slug }));
@@ -81,6 +83,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
   const brandPageDescription = headOverride?.description ?? brand.descriptionTh ?? brand.description;
   // Round "clip": the page's shop clip (if any) + its VideoObject, described from the Thai dictionary like the product page's.
   const clip = isEmpty ? undefined : COLLECTION_VIDEOS[brandPath];
+  const collectionSlugs = [...products, ...publishedProducts, ...pilotProducts].map((p) => p.slug);
 
   return (
     <>
@@ -96,6 +99,13 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
         <PilotProductSection products={pilotProducts} />
         <CollectionReviewVideo video={clip} contextName={brand.name} />
       </Container>
+      {/* Round "SEO ง" batch 6: the articles that link this brand or cover its products (article-relevance.ts). */}
+      {!isEmpty && (
+        <RelatedArticles
+          articles={relatedArticlesForCollection(brandPath, collectionSlugs)}
+          otherLocaleArticles={relatedArticlesForCollection(brandPath, collectionSlugs, { skipThaiOnly: true })}
+        />
+      )}
     </>
   );
 }

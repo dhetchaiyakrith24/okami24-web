@@ -60,7 +60,7 @@ import { videoObjectJsonLd } from "@/lib/video-jsonld";
 import { getDictionary } from "@/i18n/dictionaries";
 import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, offerMerchantFields, openGraphWithImage, organizationRef, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { categoriesWithProducts, categoryIsEmpty } from "@/lib/category-visibility";
-import { relatedArticlesForLegacy, relatedArticlesForPublished } from "@/lib/article-relevance";
+import { relatedArticlesForCollection, relatedArticlesForLegacy, relatedArticlesForPublished } from "@/lib/article-relevance";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
@@ -194,6 +194,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
     const categoryPath = `/products/${category.slug}`;
     // Round "clip": the page's shop clip (if any) + its VideoObject (src/data/collection-videos.ts).
     const clip = isEmptyCategory ? undefined : COLLECTION_VIDEOS[categoryPath];
+    const collectionSlugs = [...products, ...publishedProducts, ...pilotProducts].map((p) => p.slug);
     return (
       <>
         {/* Batch 4: the same Thai title/lede generateMetadata returns for this page, as schema —
@@ -220,6 +221,13 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <PilotProductSection products={pilotProducts} />
           <CollectionReviewVideo video={clip} contextName={category.name} />
         </Container>
+        {/* Round "SEO ง" batch 6: the articles that link this category or cover its products (article-relevance.ts). */}
+        {!isEmptyCategory && (
+          <RelatedArticles
+            articles={relatedArticlesForCollection(categoryPath, collectionSlugs)}
+            otherLocaleArticles={relatedArticlesForCollection(categoryPath, collectionSlugs, { skipThaiOnly: true })}
+          />
+        )}
       </>
     );
   }

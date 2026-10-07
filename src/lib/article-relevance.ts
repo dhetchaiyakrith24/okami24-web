@@ -29,6 +29,8 @@
  */
 import { guides } from "@/data/guides";
 import { technologyEntries } from "@/data/technology";
+import { GUIDES_COPY_TH } from "@/i18n/guides-copy";
+import { TECHNOLOGY_COPY_TH } from "@/i18n/technology-copy";
 import type { Product, Specification } from "@/types/catalog";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 
@@ -158,4 +160,58 @@ export function relatedArticlesForLegacy(product: Product, opts?: RelatedArticle
 
 export function relatedArticlesForPublished(product: StorefrontProductView, opts?: RelatedArticleOptions): RelatedArticle[] {
   return withAuthoredFirst(product.slug, publishedRules(product), opts);
+}
+
+/**
+ * Round "SEO ง" batch 6 (2026-10-07): brand and category pages get the same "อ่านต่อ" box. Measured on the live site
+ * that day: none of the 29 brand/category pages linked an article, and the keyword map (docs/SEO_LANDSCAPE.md §0) names
+ * pages such as /products/pod-systems, /brands/joiway and /products/infy-20k that no article linked either.
+ *
+ * Same rule as above — no judgement call, the data already says it. An article belongs on a collection page when
+ *   1. its own text links that page (`](/products/pod-systems)` in the Thai or English body), or
+ *   2. it is about products shown on that page: a body link to one of them, or its own `relatedProductSlugs`.
+ * Ordered by (1) first, then by how many of the page's products it covers; ties keep the article order of /guides
+ * (guides, then technology). Same cap of three, same Thai-only rule for en/zh.
+ */
+const LINK_IN_TEXT = /\]\((\/[^)\s#?]+)\)/g;
+
+function linkedPaths(...records: unknown[]): Set<string> {
+  const out = new Set<string>();
+  for (const r of records) if (r) for (const m of JSON.stringify(r).matchAll(LINK_IN_TEXT)) out.add(m[1]);
+  return out;
+}
+
+/** article → every page it points at: body links (English record + Thai overlay) and its relatedProductSlugs. */
+const ARTICLE_TARGETS: { kind: "guide" | "technology"; id: string; paths: Set<string> }[] = [
+  ...guides.map((g) => {
+    const paths = linkedPaths(g.body, g.faq, GUIDES_COPY_TH[g.id]?.body, GUIDES_COPY_TH[g.id]?.faq);
+    for (const slug of g.relatedProductSlugs ?? []) paths.add(`/products/${slug}`);
+    return { kind: "guide" as const, id: g.id, paths };
+  }),
+  ...technologyEntries.map((t) => {
+    const paths = linkedPaths(t.body, t.faq, TECHNOLOGY_COPY_TH[t.id]?.body, TECHNOLOGY_COPY_TH[t.id]?.faq);
+    for (const slug of t.relatedProductSlugs ?? []) paths.add(`/products/${slug}`);
+    return { kind: "technology" as const, id: t.id, paths };
+  }),
+];
+
+export function relatedArticlesForCollection(pagePath: string, productSlugs: readonly string[], opts: RelatedArticleOptions = {}): RelatedArticle[] {
+  const productPaths = [...new Set(productSlugs)].map((s) => `/products/${s}`);
+  const scored = ARTICLE_TARGETS.map((t, order) => {
+    const direct = t.paths.has(pagePath);
+    const covered = productPaths.filter((p) => t.paths.has(p));
+    const why = direct ? `the article links ${pagePath}` : `the article covers ${covered.length} product(s) on this page: ${covered.join(", ")}`;
+    return { t, order, score: (direct ? 1000 : 0) + covered.length, why };
+  })
+    .filter((s) => s.score > 0)
+    .sort((a, b) => b.score - a.score || a.order - b.order);
+  const out: RelatedArticle[] = [];
+  for (const s of scored) {
+    if (opts.skipThaiOnly && s.t.kind === "guide" && GUIDE_BY_ID.get(s.t.id)?.thaiOnly) continue;
+    const a = article(s.t.kind, s.t.id, s.why);
+    if (!a || a.href === pagePath) continue;
+    out.push(a);
+    if (out.length === MAX_PER_PRODUCT) break;
+  }
+  return out;
 }

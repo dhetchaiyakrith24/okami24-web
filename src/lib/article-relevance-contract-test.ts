@@ -10,9 +10,17 @@
 
 import { guides } from "@/data/guides";
 import { technologyEntries } from "@/data/technology";
-import { allProducts } from "@/data/products";
-import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
-import { relatedArticlesForLegacy, relatedArticlesForPublished, type RelatedArticle } from "@/lib/article-relevance";
+import { allProducts, getProductsByBrand, getProductsByCategory } from "@/data/products";
+import { brands } from "@/data/brands";
+import { categories } from "@/data/categories";
+import {
+  getPilotProductsByBrand,
+  getPilotProductsByCategory,
+  getPublishedProducts,
+  getPublishedProductsByBrand,
+  getPublishedProductsByCategory,
+} from "@/data/shipnity-seed/storefront-bridge";
+import { relatedArticlesForCollection, relatedArticlesForLegacy, relatedArticlesForPublished, type RelatedArticle } from "@/lib/article-relevance";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 
@@ -121,6 +129,32 @@ export function runArticleRelevanceContractTests(): ArticleRelevanceContractResu
     const reached = new Set(rows.flatMap((r) => r.articles.map((a) => a.href)));
     const unreached = [...guideHrefs, ...techHrefs].filter((h) => !reached.has(h));
     check(`articles reachable from a product page: ${reached.size}/${guideHrefs.size + techHrefs.size}`, true, unreached.length ? `not reached: ${unreached.join(", ")}` : "every article is reachable");
+  }
+
+  // ---- 8. Brand and category pages (round "SEO ง" batch 6): same rules, page = the collection ----
+  {
+    const collections = [
+      ...brands.map((b) => ({ path: `/brands/${b.slug}`, slugs: [...getProductsByBrand(b.id), ...getPublishedProductsByBrand(b.id), ...getPilotProductsByBrand(b.id)].map((p) => p.slug) })),
+      ...categories.map((c) => ({ path: `/products/${c.slug}`, slugs: [...getProductsByCategory(c.id), ...getPublishedProductsByCategory(c.id), ...getPilotProductsByCategory(c.id)].map((p) => p.slug) })),
+    ];
+    const bad: string[] = [];
+    let total = 0;
+    for (const c of collections) {
+      for (const opts of [{}, { skipThaiOnly: true }]) {
+        const list = relatedArticlesForCollection(c.path, c.slugs, opts);
+        total += list.length;
+        if (list.length > 3) bad.push(`${c.path}: ${list.length} links`);
+        if (new Set(list.map((a) => a.href)).size !== list.length) bad.push(`${c.path}: duplicate`);
+        for (const a of list) {
+          if (!guideHrefs.has(a.href) && !techHrefs.has(a.href)) bad.push(`${c.path} → ${a.href}: no such article`);
+          if ("skipThaiOnly" in opts && guides.some((g) => g.thaiOnly && `/guides/${g.slug}` === a.href)) bad.push(`${c.path} → ${a.href}: Thai-only guide on en/zh`);
+          // The evidence names products; each one must really be on this page.
+          const named = a.why.match(/\/products\/[a-z0-9-]+/g) ?? [];
+          if (!a.why.startsWith("the article links") && (named.length === 0 || named.some((p) => !c.slugs.includes(p.slice("/products/".length))))) bad.push(`${c.path} → ${a.href}: "${a.why}"`);
+        }
+      }
+    }
+    check(`brand/category article links resolve, stay within 3, and name only products on that page (${total} links)`, bad.length === 0, bad.join(" · ") || "all hold");
   }
 
   return results;
