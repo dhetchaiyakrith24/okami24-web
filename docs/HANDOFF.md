@@ -66,14 +66,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        OWNER PRICES 07/10 (review sheet 25): M Bar 15K device + pod = ฿600 · pod only = ฿400 — money = full set (13.5 #3), own batch,
        through the price-approval data (never typed by hand), with the black-pod split; ฿349 stays until then.
    (4) then this round's batch 3 with the picked image standard.
-3s OPEN (SEO chat → next chat; worktree `_incoming/wt-seo-d` = builds work there · notes `_incoming/seo-d/` · tools = LESSONS พ27):
-  round `docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`. Live [ตรวจแล้ว curl]: 1 #340 · 2 #341 (GSC "validate fix" STARTED 7/10, 26 items —
-  read at close) · 3 keyword map `docs/SEO_LANDSCAPE.md` §0 #342 · 4 heads 17 pages + 5 Thai names (owner sheet 35 = 1) #344 dfb101c.
-  NEXT = batch 6 links (B): guides → pod-systems / pods-cartridges / joiway / joiway-f4 / m-bar-15k / infy-20k = 0 links, /e-liquid 0
-  inbound (head-audit inbound.json 07/10); brand + category pages have no related-articles block → reuse `RelatedArticles` fed by guides
-  that already link there; count links on every sitemap URL before/after (LESSONS 7). Then 7 close: next GSC read date + query→page
-  splits to watch (§0) · ask owner before "request indexing" · hand-offs §0.5 · seo-auditor close · round-close tag seo-d-keymap-done.
-  Not this round: "หัวพอตใส" still on the m-bar-15k page + article (item 3 (3)) · esko card "20 รสชาติ" (Shipnity axis label, data round).
+3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
+  #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
+  "อ่านต่อ" box + guide links, d1e12e4). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
+  also read the "validate fix" started 07/10). Hand-offs (articles / missing pages / misspellings / pages with 0 article links) =
+  SEO_LANDSCAPE §0.5. Request indexing for the 17 re-headed pages = owner sheet item 36. Worktree `_incoming/wt-seo-d` + notes
+  `_incoming/seo-d/` kept until the 22/10 read. Not done here: "หัวพอตใส" on m-bar-15k (item 3 (3)) · esko card "20 รสชาติ" (data round).
 3t CLOSED 08/10 — round "staff slip check (EasySlip)" (`docs/rounds/รอบ-ตรวจสลิป-หน้าทีมงาน-07-10.txt`), tag `slip-check-done`.
   Live: `/staff` (#347 BIG, checker 5/5 + re-check 3/3) + admin guide / DEPLOY-RENDER §7 / BSOT §9 "Built" (#348). Owner set both Render
   secrets 07–08/10 and passed a real slip on the live site 08/10 (amount/time = K PLUS, duplicate warning shown) [รอเจ้าของ → ผ่าน].
@@ -120,12 +118,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     caliburn-g3-pro(-koko), -g4-pro(-koko), -g5 en+zh, same on live) [ตรวจแล้ว] — data round. Same for coil-72 "VOOPOO คอยล์ Vmate
     Infinity Edition" on vmate-i3 en/zh (live before and after #264) [ตรวจแล้ว], and its fits-with card there still shows the
     retailer evidence sentence from catalog-relationships.ts (maker-only rule) — data round.
-  - SEO round (owner 02/10: baseline hold lifted): GSC vs `docs/SEO_BASELINE.md` · delete `galleryNoteHeld` + `heldNote` +
-    `TITLE_PRICE_HOLD_UNTIL_2026_10_05` · M Bar 10K airflow row · G5 hero tagline repeats · product FAQ answers absent from server HTML ·
-    8 brand titles naming a model (cloud-results §2) · shared GPP note "Shared top-fill…" on 8 UWELL pages · (04/10, language
-    part — timing = Friday's reading [เชื่อว่า]) remove the term brackets site-wide (THAI_STYLE layer 4; list = `node scripts/paren-terms.js`; keep device-screen ones) ·
-    re-word the G3 Pro / G3 Pro KOKO / G4 Classic head lines with the reset `thai-copy` (#245 lines read curt) · iqosheet-18 meta
-    description (search-head-copy.ts) says "มี 2 สี Midnight Black และ Breeze Blue" — the page lists 7 since #311.
+  - Next SEO round (left after round SEO ง): M Bar 10K airflow row + head · G5 hero tagline repeats · product FAQ answers absent from
+    server HTML · shared GPP note "Shared top-fill…" on 8 UWELL pages · (04/10, language part — timing = Friday's reading [เชื่อว่า])
+    remove the term brackets site-wide (THAI_STYLE layer 4; list = `node scripts/paren-terms.js`; keep device-screen ones).
   - `lineupFirst` has no product left — cleanup · `dict.product.anatomyTitle` en/zh "from the outside in" · zh spec/FAQ English site-wide ·
     article H3 font reads narrow (designer note).
   - Housekeeping queue: OneDrive `Run prompt\New prompt WEB\2-ยังไม่ทำ\รอบเก็บบ้าน-ครั้งถัดไป-ของที่รอ.txt` (+ owner 03/10 (D) lower
@@ -209,8 +204,7 @@ NOT done (full wording: `git show aa21cbb:docs/HANDOFF.md` lines 262–275) · `
 Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
 
 **SEO baseline hold (owner 02/10):** the 05/10 wait is cancelled — "รอไปก็ต้องกลับมาแก้ ไว้ไปขัดเกลารอบ Seo สุดท้ายขอดัชนีใหม่" —
-the 7 baseline pages are worked on like any other page; the final SEO round polishes them and asks Google to re-index
-(the code-level title-price hold `TITLE_PRICE_HOLD_UNTIL_2026_10_05` is a title change = that round).
+the 7 baseline pages are worked on like any other page (hold code removed in round SEO ง, #341).
 
 **Text length per product page (owner 03/10):** 1,000–3,500 unique Thai characters of main content (spec table not counted) +
 the same fact at most twice outside the spec table — "ตอนนี้กำลังสวย ไม่ต้องลดเนื้อหา" (proposal: `_incoming/g5-template/seo-text-length.md`).

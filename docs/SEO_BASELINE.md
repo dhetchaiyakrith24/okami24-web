@@ -178,3 +178,40 @@ title ที่เปลี่ยนวันที่ 2026-09-23 (รายล�
   22 "no photo of this flavour yet" panels gone, "All" chip added; title/meta/H1/JSON-LD text unchanged.
 - Held page `m-bar-15k`: rendered HTML identical to live (html-diff 7/7, the 9K related card still `card.webp`); its hidden
   RSC data carries the 9K's new image paths (1 -> 24 references) and its sitemap lastmod moved (salthub.ts date).
+
+## Round "SEO ง — keyword map" (07–08/10/2026) - what changed before the next read · NEXT READ = 2026-10-22
+
+**Next Search Console read: 2026-10-22** (14 days after the last batch went live; compare 2026-10-08 → 2026-10-21 against the
+05/10 read above, same columns). Query → owner page = `docs/SEO_LANDSCAPE.md` §0 (the one home of "which page owns which query").
+
+Live changes (main; details = `git show <merge>`):
+- #341 (07/10): the 7 held pages released (price back in their titles, `TITLE_PRICE_HOLD_UNTIL_2026_10_05` and the held
+  gallery notes removed) · product JSON-LD return policy = `returnFees: ReturnFeesCustomerResponsibility` without
+  `returnShippingFeesAmount` · clip uploadDate with a time zone. GSC "validate fix" for the merchant-listings warning was
+  started 07/10 (26 items); the report still showed 06/10 data on 08/10 → read its result on 22/10.
+- #344 (07/10): heads rewritten by the keyword map — before/after table = `_incoming/seo-d/b4-head-set.md` (computer only;
+  git: `git show d145fd3`): esko-bar, joiway, salthub, voopoo, uwell, relx brand heads step back from model names + prices;
+  joiway-f4 / iqosheet-18 / tfit metas open with the model name (iqosheet-18 now "7 สี"); m-bar-15k title adds "(Marbo)";
+  G3 Pro / G3 Pro KOKO / G4 Classic heads · batch 5 (`c5b23f2`): the Thai names people type (มาโบ · เอสโคบาร์ · อินฟี่ ·
+  จอยเวย์ · ไอคอส) once each in 5 brand ledes (เอ็มบาร์ / คาลิเบิร์น not added).
+- #352 (08/10): every non-empty brand and category page carries the "อ่านต่อ" article box (article-relevance.ts) · guide body
+  links to /products/pod-systems, /products/disposables, /e-liquid, /products/coils-accessories, /products/pods-cartridges ·
+  how-long-a-disposable-lasts lists JOIWAY F4 + INFY 20K. Internal links inside `<main>` 952 → 984 (checker #352); title /
+  meta / H1 / JSON-LD types unchanged on all 112 sitemap URLs.
+
+Watch list for 22/10 (seo-auditor at the round close, 08/10 · judge mainly by WHICH page Google sends each query to — impressions
+are small and the window is ~2 weeks, so clicks alone are noise · first check URL Inspection "last crawl" of the re-headed pages:
+not re-crawled = that row says nothing yet):
+
+| # | query | owner page | at open (page clicks/impr. · pos.) | worked | another pass |
+|---|---|---|---|---|---|
+| 1 | joiway f4 | /products/joiway-f4 | brands/joiway 0/10 | most impressions on joiway-f4 | brand still wins → F4 out of every brand line |
+| 2 | argus g4 · voopoo argus g4 ราคา | /products/argus-g4 | argus-g4-mini 1/8 · argus-g4 0/2 | argus-g4 = main page | mini still main → article links to argus-g4, mini head differs more |
+| 3 | caliburn g5 | /products/caliburn-g5 | g5-lite 2/5 · uwell 2/2 · g5 0/2 | caliburn-g5 main, uwell gone | g5-lite / comparison guide wins → drop the bare "G5" from g5-lite's meta |
+| 4 | m bar 15k · mbar 15k | /products/m-bar-15k | brands/salthub 0/6 | m-bar-15k gets them | salthub still shows → m-bar-15k needs article links (0 today) |
+| 5 | esko bar | /brands/esko-bar | 0/87 · 3.6 | clicks > 0 at a similar position | still 0 clicks → rethink the head |
+| 6 | joiway | /brands/joiway | 1/120 · 6.3 | CTR up, brand page still main | CTR unchanged |
+| 7 | esko bar switch 20k | /products/pod-159 | pod-159 0/7 · 9.1 | still pod-159, pos ≤ 9.1 | brand page appears → rewrite pod-159 meta (thin), model + price out of the brand meta |
+| 8 | infy 20k | /products/infy-20k | infy-20k 0/25 · 13.8 · brands/infy 0/2 | position better than 13.8, brand share not up | brand share grows → move "อินฟี่" to the product page |
+
+Also on 22/10: the merchant-listings "validate fix" result (started 07/10) · index coverage (GSC overview 08/10: 109 indexed / 13 not).
