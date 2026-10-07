@@ -75,6 +75,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md` (Thai, owner 06/10 pm "บันทึกไว้ในไฟล์งานใหม่") — add new items there,
   delete an item once the owner answers (a permanent ruling → §18). Nothing waiting on the owner is written here.
 5 open / dated:
+  - (owner 07/10, "จดไว้ก่อน" — not started, needs its own round) TYPO-TOLERANT SEARCH, Thai + English: (a) the site search finds the
+    product even when the name is misspelled; (b) Google: a misspelled query still finds the shop (SEO round). Search "Sugus"
+    alias gap (below) belongs to (a).
   - MOOOD who-for line (owner-approved round 30.3) says "รส" twice — the locked word is "กลิ่น" (thai-copy 06/10: "อยากได้พอตใช้แล้วทิ้ง
     สายพัฟเยอะ ที่มีกลิ่นให้เลือกหลายกลิ่น") — ask before touching (13.3 #5). Search "Sugus" finds nothing now (no alias) — data round.
     `src/data/products/unbranded.ts` header comment still lists MOOOD among the unbranded lines (history text, not shown).

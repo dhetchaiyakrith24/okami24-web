@@ -839,7 +839,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   },
   "muro-connector-20k": {
     whoIsThisFor: {
-      0: "อยากได้พอตใช้แล้วทิ้งสายพัฟเยอะ และมีให้เลือกหลายกลิ่น",
+      0: "อยากได้พอตใช้แล้วทิ้งสายพัฟเยอะ มีให้เลือกหลายกลิ่น",
     },
     specifications: {
       puffs: "สูงสุด 20,000",
