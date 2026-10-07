@@ -59,6 +59,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        OWNER PRICES 07/10 (review sheet 25): M Bar 15K device + pod = ฿600 · pod only = ฿400 — money = full set (13.5 #3), own batch,
        through the price-approval data (never typed by hand), with the black-pod split; ฿349 stays until then.
    (4) then this round's batch 3 with the picked image standard.
+3s OPEN (SEO chat, its own worktree `_incoming/wt-seo-d` + docs worktree `_incoming/wt-seo-d-docs`; working files `_incoming/seo-d/`):
+  round "SEO D keyword map" = `docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt` (owner opened 07/10). Batches: 1 GSC 05/10 → SEO_BASELINE ✓ #340 ·
+  2 hold lift + ReturnFeesCustomerResponsibility (B) = PR #341 (checker pending at write) · 3 keyword map = SEO_LANDSCAPE §0 (A, docs PR) ·
+  4 heads + 5 Thai names (A/B, one PR: thai-copy set → seo-auditor → code) · 6 internal links per the map (B; categories/brands have no
+  related-articles block yet; guides→owner gaps: pod-systems, pods-cartridges, m-bar-15k, joiway, infy-20k, /e-liquid 0 inbound) · 7 close.
+  Ask the owner before: GSC "validate fix" (merchant listings) · request indexing. No site merge on 10/10 (LINE broadcast — image chat note).
+  Worktree builds work with a COPY of node_modules (not a junction): `node scripts/test-server.js build|start` from the worktree; tell the
+  image chat before using port 3412. preview_start runs in the MAIN folder — do not use it from a worktree.
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
