@@ -23,8 +23,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
 2 ahead of main — ALL waiting for the morning (site PRs, no merge at night):
-  #364 `mbar15k-into-kit` (wt `_incoming/wt-mbar`) = item 3 (3), checker 6/6 PASS at d413b84; 7d52f22 after it = checker's notes only
-  (alias + Pod en line, 13.5 #2 (จ)) · #366 `option-photos-3-infy` (wt-b3) · #367 `option-photos-3-muro` (wt-b3m) · #368
+  #364 `mbar15k-into-kit` (wt `_incoming/wt-mbar`) = item 3 (3), checker 6/6 PASS at d413b84; 7d52f22 = checker's notes only (13.5 #2 (จ))
+  · #366 `option-photos-3-infy` (wt-b3) · #367 `option-photos-3-muro` (wt-b3m) · #368
   `option-photos-3-tfit` (wt-b3t) = batch 3: checker PASS #366 at 38d1ada · #368 at e6ae755 · #367 at 79eef9e all PASS except the
   sharpness gate canvas rule (MURO box art max 600 px, boxes 340x490 like the 6 live) = owner exception needed (รอพี่ตรวจ 24; if "1"
   add an IMAGE_SPEC exception line like the M Bar 9K pack one, then merge). Main folder = DETACHED at a local-only combined tree (main + the 4 branches) serving 3412 —
