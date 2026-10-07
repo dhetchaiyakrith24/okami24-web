@@ -75,10 +75,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Ask the owner before: GSC "validate fix" (merchant listings) · request indexing. No site merge on 10/10 (LINE broadcast — image chat note).
   Worktree builds work with a COPY of node_modules (not a junction): `node scripts/test-server.js build|start` from the worktree; tell the
   image chat before using port 3412. preview_start runs in the MAIN folder — do not use it from a worktree.
-3t OPEN 07/10 night (its own chat + worktree): round "slip check" = `docs/rounds/รอบ-ตรวจสลิป-หน้าทีมงาน-07-10.txt` — staff-only page,
-  EasySlip verify image, one staff password, human approves (BSOT §9 exception, owner 07/10 · #343). Owner 07/10: START TODAY — the round
-  file's "start after 10/10" line is wrong (the only ban = no site merge ON 10/10); that chat fixes the line. Key + password = the owner types
-  them into Render, never in chat/git.
+3t OPEN (slip-check chat, own worktree `_incoming/wt-slip`, branch `slip-check`; working files `_incoming/slip-check/`): round "staff slip
+  check (EasySlip)" = `docs/rounds/รอบ-ตรวจสลิป-หน้าทีมงาน-07-10.txt` (owner opened 07/10, start 07/10 — only rule: no site merge ON 10/10).
+  Batches: 1 API docs read ✓ (`_incoming/slip-check/easyslip-api.md`, API v2) · 2 /staff + one staff password (B) · 3 slip check (B, full
+  set — money) · 4 quota + log (A/B) — 2–4 built as ONE PR (commits per batch) · 5 admin manual + BSOT §9 + close.
+  Local test = `next dev -p 3431` in the worktree + `_incoming/slip-check/mock-easyslip.js` (OKAMI24_EASYSLIP_TEST_BASE, dev only).
+  Owner to do after merge: set OKAMI24_STAFF_PASSWORD + OKAMI24_EASYSLIP_API_KEY in Render (click steps in the manual), then test 1 real slip.
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).

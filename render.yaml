@@ -102,6 +102,18 @@ services:
       # not there yet, reads it back, and logs a `[qr]` line either way (src/lib/promptpay-qr-install.ts).
       - key: OKAMI24_PROMPTPAY_QR_BASE64
         sync: false
+      # Staff slip-check page /staff (owner ruling 2026-10-07, BSOT §9 "one exception"). Two secrets, VALUES
+      # entered by the owner in the dashboard only — never here, never in chat (same sync:false rule as above):
+      #   OKAMI24_STAFF_PASSWORD   the one shared staff password (8+ characters). Unset = /staff answers 404.
+      #                            Changing it logs every staff phone out (src/lib/staff/auth.ts).
+      #   OKAMI24_EASYSLIP_API_KEY the API key from the owner's EasySlip account (developer.easyslip.com),
+      #                            read only on the server (src/lib/staff/easyslip.ts).
+      # Both are read per request, not at build time — a new value applies once the running service restarts
+      # with it (any of the dashboard's save-and-deploy choices does that).
+      - key: OKAMI24_STAFF_PASSWORD
+        sync: false
+      - key: OKAMI24_EASYSLIP_API_KEY
+        sync: false
       # Online ordering switch (owner decision 2026-09-07: "ปิดการสั่งซื้อชั่วคราว — ข้อมูลสินค้า
       # ยังไม่นิ่ง"). "off" = the catalogue is fully browsable with prices, but "Add to cart" becomes
       # "Order on LINE @okm24", the header's cart icon is hidden, and /cart + /checkout send the
