@@ -1,6 +1,6 @@
 # OKami24 — สนามแข่ง SEO (SEO_LANDSCAPE)
 
-> ตรวจวันที่ **2026-09-25** (รอบ 10C · ตรวจอย่างเดียว ไม่แตะเว็บ) · **อ่านคู่กับ `docs/SEO_BASELINE.md` วันที่ 2026-10-05**
+> ตรวจวันที่ **2026-09-25** (รอบ 10C · ตรวจอย่างเดียว ไม่แตะเว็บ) · อ่านคู่กับ `docs/SEO_BASELINE.md` · **แผนที่คีย์ (คำไหนหน้าไหน) = ข้อ 0 (07/10)**
 > คีย์ที่มีใน SEO_BASELINE ใช้สะกดเดียวกัน (m bar · salthub · uwell · drag 6 · caliburn g5 · pod system ตัวไหนดี · marbo · พอตเปลี่ยนหัว · esko bar switch 20k)
 > ข้อมูลดิบ (มีชื่อเว็บ) อยู่ `_incoming/round10c/` เท่านั้น — ไฟล์นี้ไม่ระบุชื่อ/โดเมนร้านค้า
 > ป้าย: [ตรวจแล้ว] เห็นเองบนหน้า Google/Trends/เว็บจริงวันนี้ · [เชื่อว่า] อนุมานจากข้อมูล · [ยังไม่มีข้อมูล] หาไม่ได้
@@ -22,6 +22,108 @@
 
 ---
 
+## 0. แผนที่คีย์ — หนึ่งกลุ่มคำ = หนึ่งหน้าเจ้าของ (รอบ SEO ง · 07/10 · ที่เดียวของ "คำนี้หน้าไหน")
+
+> ที่มา: คำค้นจริง 187 คำ (GSC 21/09–05/10 อ่าน 07/10 — `docs/rounds/รอบ-SEO-ง-แนบ-gsc-คำค้น-2026-10-07.tsv`) · คำค้น→หน้า
+> อ่านจาก GSC รายคำ 07/10 · title/H1 ของ 112 หน้าจากเว็บจริง 07/10 · ชื่อเรียกไทย = Google autocomplete (researcher 07/10) · คอลัมน์
+> "หน้าเจ้าของ" ในตารางข้อ 2 ข้างล่าง = ภาพ 25/09 — **ถ้าไม่ตรงกับตารางนี้ ยึดตารางนี้**
+> ตัวเลข = คลิก/แสดง · อันดับ · "วันนี้ไปหน้าไหน" มีเฉพาะคำที่เปิดดูรายคำ · ป้าย: ทุกแถวคำค้น/ตัวเลข [ตรวจแล้ว] · การเลือกหน้าเจ้าของ = Friday ตัดสินตามคำตัดสินเจ้าของหลัง 10C + HANDOFF §18
+
+**กติกา:** คำในตารางมีหน้าเจ้าของหน้าเดียว · หน้าอื่นที่ title/meta ชิงคำเดียวกัน = ต้องถอย (คอลัมน์ "ต้องทำ") · คำรุ่น = หน้าสินค้าเสมอ หน้าแบรนด์ถือแค่ชื่อแบรนด์
+· คำถาม = บทความ แต่ "…ราคา" = หน้าสินค้า/หมวด · ห้ามหน้าเจ้าของสองหน้า
+
+### 0.1 ชื่อร้าน · คำกว้าง · ประเภท
+
+| กลุ่มคำ | คำค้นจริง (คลิก/แสดง · อันดับ) | หน้าเจ้าของ | วันนี้ Google ส่งไป | ต้องทำ |
+|---|---|---|---|---|
+| ชื่อร้าน | okami pod 15/25 4.4 · okami24 11/14 1.0 · okm pod 6/8 1.9 · okami พอต 3/5 2.8 · okami บุหรี่ไฟฟ้า 2/3 5.3 · okm yarz 1/1 7.0 · okm (คำเดียว) ไม่มีแถว | `/` | — | คงเดิม (CTR 60–79%) · `/about` เป็นหน้ารอง "คือใคร" ไม่ไล่คำนี้ |
+| พอต · ร้านพอต · พอตไฟฟ้า · บุหรี่ไฟฟ้า · พอตของแท้ | พอตของแท้ 0/1 2.0 · (พอต/ร้านพอต/พอตไฟฟ้า ยังไม่มีแถว) | `/` | — | ก้อน 4: พิจารณาเติม "พอตไฟฟ้า" ใน title หน้าแรก (พักไว้ตั้งแต่รอบ 9 · ถอดพักแล้ว) · บุหรี่ไฟฟ้า = ไม่เน้น (คำตัดสินหลัง 10C) |
+| pod · pod system · พอตซิสเต็ม | pod 24/114 6.8 · pod system 2/11 3.5 · pod systems 0/2 · pods system 0/1 30 · p.o.d 0/2 3.0 · pod system ราคา 0/1 2.0 · pod 21 0/1 | `/products/pod-systems` | pod → pod-systems 20/60 3.6 + **pod-kits 4/49 7.9** + คู่มือเครื่องแรก 0/5 · pod system → pod-systems 2/11 | pod-kits ไม่ไล่ "pod" คำเดียว (คงคำ "Pod Kit") · ก้อน 6: pod-kits ลิงก์ไป pod-systems |
+| pod kit · พอตคิท | pod kit 0/1 1.0 · starter kit pod 0/3 66 | `/products/pod-kits` | — | คงเดิม |
+| พอตใช้แล้วทิ้ง · disposable | พอตใช้แล้วทิ้ง 0/1 2.0 · disposable 0/2 44 | `/products/disposables` | — | คงเดิม |
+| พอตเปลี่ยนหัว · switch pod | (ไม่มีแถว · autocomplete มี "พอตเปลี่ยนหัว infy/15k/20000คำ") | คู่มือ `disposable-vs-switch-pod` (ยังไม่มีหน้าหมวด) | — | **หน้าที่ขาด:** หมวดพอตเปลี่ยนหัว (ข้อ 0.5) |
+| หัวพอต · pods · cartridge | pods 0/18 3.9 · หัวพอต 0/2 3.0 · cartridge pod 0/2 4.0 · หัวพอตเปล่า 0/3 9.7 · หัวพอต(เปล่า) ราคาส่ง 0/1 + 0/1 | `/products/pods-cartridges` | pods → pods-cartridges 0/18 | คงเดิม · "หัวพอต<รุ่น>" = หน้ารุ่นนั้น (0.3) |
+| คอยล์ · คอยล์พอต | คอยล์ voopoo 0/1 5.0 · คอยล์ caliburn g3 0/1 26 | `/products/coils-accessories` | — | คงเดิม · คอยล์<รุ่น> = หน้าคอยล์รุ่นนั้น |
+| เครื่องอุ่นยาสูบ · hnb | เครื่อง ดูด บุหรี่ hnb ราคา 1/1 5.0 | `/products/heated-tobacco-devices` | — | คงเดิม |
+| น้ำยาบุหรี่ไฟฟ้า | น้ำยาบุหรี่ไฟฟ้า 0/2 62.5 | `/e-liquid` (HANDOFF §18) | — | คงเดิม |
+| อุปกรณ์บุหรี่ไฟฟ้า | (ไม่มีแถว) | `/products` | — | คงเดิม |
+
+### 0.2 คำถาม
+
+| กลุ่มคำ | คำค้นจริง | หน้าเจ้าของ | ต้องทำ |
+|---|---|---|---|
+| pod system ตัวไหนดี · ยี่ห้อไหนดี · แนะนำ · pantip · พอตตัวไหนดี · ดีไหม | ยี่ห้อไหนดี 0/4 64 · แนะนํา 0/3 91 · ตัวไหนดี 0/1 68 | คู่มือ `choosing-your-first-pod-system` | ก้อน 6 ลิงก์เข้า · อันดับ 60–90 = หน้ายังอ่อน |
+| pod system คือ · พอตคืออะไร | pod system คือ 0/3 70 · คืออะไร 0/1 | คู่มือ `choosing-your-first-pod-system` (ชั่วคราว) | **บทความที่ขาด:** "pod system คืออะไร" เรื่องเดี่ยว (0.5) |
+| MTL · DTL · RDL | rozdiel mtl a rdl 0/4 · mtl draw 0/2 · rdl vape meaning 0/2 · dtl 0/1 · rdl vs mtl 0/1 · what does dtl and mtl mean 0/1 | คู่มือ `understanding-mtl-vs-dtl` | คนค้นเป็นต่างชาติ (อังกฤษ/สโลวัก) อันดับ 50–99 — ไม่ลงแรงเพิ่ม |
+| ดูดไม่ขึ้น · ไฟกะพริบ | พอตดูดไม่ขึ้นแก้ยังไง 0/1 54 | คู่มือ `fixing-no-draw-and-blinking-light` | ก้อน 6 ลิงก์เข้า |
+| ใช้ได้กี่วัน | (ไม่มีแถว) | คู่มือ `how-long-a-disposable-lasts` | — |
+| เติมน้ำยายังไง | เติมน้ำยายังไง 0/1 1.0 | (ไม่มีหน้าตอบ) | **บทความที่ขาด** (0.5) |
+| marbo กลิ่นไหนดี · มีกลิ่นอะไรบ้าง | มีกลิ่นอะไรบ้าง 0/1 14 | คู่มือ `choosing-a-marbo-flavor` | — |
+| caliburn รุ่นไหนดี · เทียบ caliburn | (ไม่มีแถว) | คู่มือ `comparing-caliburn-models` | — |
+| esko bar switch vs m switch | (คู่มือมีคลิก 3/23 ใน 05/10) | คู่มือ `esko-bar-switch-vs-m-switch` | — |
+
+### 0.3 แบรนด์และรุ่น
+
+| กลุ่มคำ | คำค้นจริง (คลิก/แสดง · อันดับ) | หน้าเจ้าของ | วันนี้ Google ส่งไป | ต้องทำ |
+|---|---|---|---|---|
+| esko bar · esko · ชื่อเรียก "เอสโคบาร์" | **esko bar 0/87 3.6** · esko 0/3 · esko bar vape 0/1 · eskobarvape 0/1 · eski bar 0/1 · eskbar 0/1 | `/brands/esko-bar` | esko bar → brands/esko-bar 0/87 | **ก้อน 4: head ใหม่** (ติดหน้า 1 แต่ไม่มีคนกด) |
+| esko bar switch 20k | esko bar switch 20k 0/7 9.1 · esko switch 0/2 1.0 · esko bar switch 0/1 · …kit 0/1 · …ราคา 0/1 · หัว esko bar 1/1 · หัว esko 0/2 | `/products/pod-159` | 20k → pod-159 0/7 | brands/esko-bar ถอยชื่อรุ่น+ราคาออกจาก title (ก้อน 4) |
+| esko bar 20k (ตัวไม่สวิตช์) | esko bar 20k 0/3 16.7 | — | — | **หน้าที่ขาด** [ยังไม่มีข้อมูล ร้านขายไหม] |
+| joiway · ชื่อเรียก "จอยเวย์" | **joiway 1/120 6.3** · joi way 0/4 · joiway ราคา 0/4 · joway pod 0/3 · joiway pod 0/2 · pod joiway 0/2 · joiwat 0/2 · joiway vape 0/1 · joiwy 0/1 · oiway 0/1 · pot joiway 0/1 · พอ ต joiway ราคา 0/1 · บุหรี่ไฟฟ้า joiway 0/1 | `/brands/joiway` | joiway → brands/joiway 1/120 | **ก้อน 4: head ใหม่** |
+| joiway f4 · double flavor | joiway f4 0/10 10.3 · joiway double flavor 0/3 10 | `/products/joiway-f4` | **f4 → brands/joiway 0/10 (หน้าแบรนด์แย่ง)** | ก้อน 4: brand ถอยชื่อรุ่น/ราคา · meta ของ F4 ไม่มีคำ "F4" → เติม |
+| joiway f3 | joiway f3 0/1 4.0 | `/products/joiway-f3` | — | — |
+| salthub · marbo · m bar · ชื่อเรียก "มาโบ" "เอ็มบาร์" | salthub 0/12 33.2 · marbo pod 0/1 6.0 | `/brands/salthub` | salthub → brands/salthub 0/5 · m-switch-kit 0/3 · m-bar-pod (ซ่อนแล้ว 404) 0/3 · m-bar-10k 0/3 · zero-pro 0/1 | ก้อน 4: title แบรนด์ถอยชื่อรุ่น 15K+ราคา กลับเป็นระดับแบรนด์ |
+| m bar 15k · marbo 15k | m bar 15k 0/3 6.0 · mbar 15k 0/3 9.7 | `/products/m-bar-15k` | **คำที่มี 15k → brands/salthub 0/6** | ก้อน 4: salthub ถอย (title+meta มี "M Bar 15K ฿349") |
+| m bar 10k | m bar 10k 1/2 75.5 | `/products/m-bar-10k` | — | head ค้าง (HANDOFF §16 ข้อ 5) |
+| m bar switch · m switch | m bar switch 1/1 15 · m switch 0/1 50 · พอต m switch 0/1 96 | `/products/m-switch-kit` | — | — |
+| marbo zero pro · zero nano · marbo ice blast | marbo zero pro 0/2 1.0 · marbo zero nano 0/1 3.0 · marbo ice blast 1/1 73 | `zero-pro` · `zero-nano` · `m-bar-10k` | — | — |
+| voopoo · พอต/คอยล์/หัวพอต voopoo | voopoo 3/18 10.7 · voopoo ทุกรุ่น 1/1 · เครื่องบุหรี่ไฟฟ้า voopoo 0/1 · หัวพอต voopoo 0/1 · พอต voopoo 0/1 87 | `/brands/voopoo` | voopoo → brands/voopoo 3/18 | ก้อน 4: title แบรนด์ (ตอนนี้ "DRAG 6 · DRAG S3 · ARGUS G4") ถอยชื่อรุ่น |
+| drag 6 | voopoo drag 6 ราคา 8/11 3.3 · drag 6 4/22 8.5 · voopoo drag 6 4/17 8.5 · drag6 4/11 8.0 · drag 6 ราคา 1/4 · drag 6 voopoo 1/2 · voopoo drag6 1/2 · darg 6 0/2 | `/products/drag-6` | drag 6 → drag-6 4/22 · *voopoo drag* → drag-6 11/30 + brands/voopoo 2/2 | คงเดิม (ชนะอยู่แล้ว) |
+| drag s3 | drag s3 1/7 8.3 · voopoo s3 0/1 20 | `/products/drag-s3` | — | — |
+| drag x3 · drag x | drag x 3 0/1 14 | `/products/drag-x3` | — | "voopoo drag x" (ไม่ใช่ X3) = **หน้าที่ขาด** (เจ้าของ 25/09: ต้องมีหน้า) |
+| drag 3 | drag 3 0/5 68 | `/products/coil-38` (คอยล์ของ Drag 3 — ร้านไม่มีตัวเครื่อง) | — | — |
+| argus g4 | voopoo argus g4 ราคา 5/7 2.0 · argus g4 1/11 6.5 · voopoo argus g4 1/5 · argus g4 voopoo 1/1 · drag argus 0/1 | `/products/argus-g4` | **argus g4 → argus-g4-mini 1/8 · argus-g4 0/2** | ก้อน 4: head argus-g4 (ปลดพักแล้วในก้อน 2) · ก้อน 6 ลิงก์ mini→G4 |
+| argus g4 mini | argus g4 mini 5/10 4.8 · g4mini 0/1 · voopoo argus g4 mini price 0/1 | `/products/argus-g4-mini` | — | — |
+| argus g3 mini | voopoo argus g3 mini 2/2 10 · argus g3 mini 0/1 | `/products/argus-g3-mini` | — | — |
+| vmate i3 · vinci s | voopoo vmate i3 7/9 12.1 · vinci s 0/1 5.0 | `vmate-i3` · `vinci-s` | — | — |
+| uwell · caliburn · ชื่อเรียก "คาลิเบิร์น" (หลักฐานเบา) | uwell 0/3 57 · caliburn 0/2 86 · caliburn g 0/2 · uwell caliburn 1/1 · uwell caliburn g 0/4 59 | `/brands/uwell` | — | ก้อน 4: title แบรนด์ (ตอนนี้ "Caliburn G5 · G4 · G3 Pro") ถอยชื่อรุ่น |
+| caliburn g5 | caliburn g5 4/7 14 · uwell caliburn g5 0/2 | `/products/caliburn-g5` | **caliburn g5 → g5-lite 2/5 · brands/uwell 2/2 · caliburn-g5 0/2** | ก้อน 4: head caliburn-g5 + uwell ถอย · ก้อน 6 ลิงก์ |
+| caliburn g5 lite · g5 lite se | caliburn g5 lite 0/6 5.0 · caliburn g 5 lite 0/3 · uwell g5 lite 0/1 · caliburn g5 lite se 0/1 · g5 lite pod 0/1 | `caliburn-g5-lite` · `caliburn-g5-lite-se` | — | — |
+| caliburn g4 · g4 pro · g4 mini · koko · classic | caliburn g4 pro ราคา 1/3 2.0 · caliburn g4 pro 1/3 · caliburn g4 mini 1/6 4.0 · caliburn g4 1/1 · g4 pro 0/1 · uwell g4 pro 0/1 · uwell caliburn g4 pro 0/2 · …g4 mini 0/2 · …g4 0/1 · …g4 pro koko 0/1 | หน้ารุ่นตามชื่อ | — | head G4 Classic ห้วน (ก้อน 4) |
+| caliburn g3 pro · koko | caliburn g3 pro 1/9 5.2 · uwell caliburn g3 pro 0/3 · uwell g3 pro 0/3 · caliburn g3pro 0/1 · g3 pro 0/1 | `/products/caliburn-g3-pro` (+ `-koko` สำหรับ "koko") | — | head G3 Pro / KOKO ห้วน (ก้อน 4) |
+| caliburn g3 (ตัวไม่ Pro) | caliburn g3 0/10 5.5 · caliburn g 3 1/2 · uwell caliburn g3 0/2 · g3 caliburn 0/1 | — (ชั่วคราว: `caliburn-g3-pro`) | **caliburn g3 → g3-pro-koko 0/9 · g3-pro 0/5 · uwell 0/1** | **หน้าที่ขาด** (เจ้าของ 25/09: ต้องมีหน้า) |
+| หัวพอต caliburn g3/g4 | caliburn g3 pod 0/1 · uwell caliburn g3 pro pod 0/1 | `/products/coil-94` | — | — |
+| caliburn g2 | caliburn g2 0/6 48 | `coil-53` / `coil-55` (ร้านมีแค่คอยล์/หัว) | — | — |
+| infy · infy 20k · ชื่อเรียก "อินฟี่" | infy 20k 0/25 13.8 · infy 20000 0/3 40 · infy 20k milk tea 0/2 · lnfy 20k 0/2 · infy bar pro 20k 0/1 · infy 20k disposable pod 0/1 · infy 0/2 97 | `/products/infy-20k` (infy คำเดียว = `/brands/infy`) | infy 20k → infy-20k 0/25 + brands/infy 0/2 | — ("infy 12k" = หน้าที่ขาด รอบ 10C) |
+| nexbar clear 18k · wotofo | nexbar clear 18k 3/8 19 · wotofo 0/1 · wotofo vape 0/1 | `/products/pod-180` (nexbar clear) · `/brands/wotofo` | nexbar clear → pod-180 2/7 + brands/wotofo 1/1 | — |
+| moood · monster 14k | monster 14k 1/5 5.8 · mood monster 1/2 21 · mood 14k 0/1 · moood 14 0/1 · mood บุหรี่ 0/1 | `/products/mood-monster-14k` (แบรนด์ = `/brands/moood`) | — | — |
+| muro | muro connector 20k 1/5 26 · muro sc 8000 0/2 17.5 | `muro-connector-20k` · `muro-sc-8000` | — | ไม่มี `/brands/muro` (ข้อ 0.5) |
+| relx | relx creator 0/1 · relx creator pro 0/1 · "relx" 0/1 | `/products/relx-creator` · `/brands/relx` | — | ก้อน 4: title แบรนด์ relx (ตอนนี้ "พอต RELX Smash Go 12K ฿320") ถอยชื่อรุ่น |
+| nevoks · dotmod · rincoe · iqos | nevoks 2/2 · ngovoks 0/1 · dotmod 1/5 47 · dotmod thailand 0/3 · rincoe 0/1 40 · iqos 1/2 · "iqos" 0/1 | `/brands/<แบรนด์>` | — | dotmod/rincoe/nevoks = คำตัดสินเจ้าของ §18 ไม่แตะ |
+| tfit | (ไม่มีแถว) | `/products/tfit-m-power-20k` · `/brands/tfit` | — | head TFIT ซ้ำ (ก้อน 4) |
+
+**ไม่มีหน้าเจ้าของ (เจตนาไม่ชัด/นอกเรื่อง — ไม่ไล่):** ราคา 0/8 6.4 (กระจาย 6 หน้า) · ราคาไทย · ผลิตปี · ซ่อม 1/1 · พอตสี่เหลี่ยม 0/4 · พอตตัวเล็ก · ขอดูเป็นรูปภาพได้ไหม · ขอรูปประกอบหน่อยครับ · ขอดูตัวอย่าง · รูปภาพแต่ละรุ่น · was ist das · what is this? · "1" · vapemun 1/6 (ชื่อร้านอื่น — ไม่ไล่ชื่อคู่แข่ง)
+
+### 0.4 ชื่อเรียกไทยที่มีหลักฐานว่าคนพิมพ์ (ก้อน 5 — ลงหน้าเจ้าของแบบประโยคปกติ)
+
+GSC ไม่มีคำค้นอักษรไทยของชื่อรุ่นเลย (มีแต่ละติน) · หลักฐานมาจาก Google autocomplete 07/10 [ตรวจแล้ว]:
+มีหลักฐาน = **มาโบ** (M Bar/Marbo — "มาโบ 10k" "มาโบ 15k" "มาโบเปลี่ยนหัว") → `/brands/salthub` · **เอ็มบาร์** ("เอ็มบาร์ 9k/10k") → `/brands/salthub` ·
+**เอสโคบาร์** (สะกด "โค" — "เอสโคบาร์ 20k เปลี่ยนหัว") → `/brands/esko-bar` · **อินฟี่** ("อินฟี่ 20000 คํา" "อินฟี่เปลี่ยนหัว") → `/products/infy-20k` ·
+**จอยเวย์** ("จอยเวย์ f4/f3") → `/brands/joiway` · **ไอคอส** ("ไอคอส ราคา") → `/brands/iqos` · หลักฐานเบา: มาโบ้ · คาลิเบิร์น (→ `/brands/uwell`) · ซอลฮับ ·
+**ไม่พบ/ปนความหมายอื่น (ไม่ใส่):** มาร์โบ (Marlboro) · ดราก/แดรก · อาร์กัส · วูพู/วูปู · รีแล็กซ์ · เน็กซ์บาร์ · ทีฟิต · วินชี่ · วีเมท · พอตซิสเต็ม · พอดซิสเต็ม
+
+### 0.5 ส่งต่อ
+
+**หน้า/บทความที่ขาด → รอบบทความ / รอบข้อมูล:** (1) บทความ "pod system คืออะไร" (คำค้นอันดับ 70 ด้วยคู่มือเลือกเครื่องแรก) (2) บทความ "เติมน้ำยาพอตยังไง"
+(3) หน้า Caliburn G3 (ตัวไม่ Pro — 10+ แสดง ไปตกหน้า G3 Pro/KOKO) (4) หน้า VOOPOO Drag X (5) หน้าหมวด/รวม "พอตเปลี่ยนหัว" [เชื่อว่า: autocomplete แรง ไม่มีหน้าหมวด]
+(6) `/brands/muro` (3 รุ่นบนเว็บ ไม่มีหน้าแบรนด์) (7) Esko Bar 20K ตัวไม่สวิตช์ · M Bar 18K · Marbo 25K · INFY 12K = [ยังไม่มีข้อมูล ร้านขายไหม] (ข้อ 5 เดิม)
+
+**คำสะกดผิดที่เจอในคำค้นจริง → รอบช่องค้นหา (HANDOFF §16 ข้อ 5 "TYPO-TOLERANT SEARCH"):** joiwat · joiwy · oiway · joway · joi way · pot joiway ·
+พอ ต joiway · eski bar · eskbar · eskobarvape · darg 6 · drag6 · voopoo drag6 · lnfy 20k · ngovoks (nevoks) · mood / moood (แบรนด์ MOOOD) · drag x 3 ·
+caliburn g 3 · g3 caliburn · caliburn g3pro · caliburn g 5 lite · mbar 15k · g4mini · p.o.d · pods system · voopoo s3 (ขาด drag) · ชื่อไทย: เอสโคบาร์ (แบรนด์สะกด Esko)
+
+---
+
 ## 1. สรุป 1 หน้า — ลงแรงที่ไหนหลัง 05/10
 
 **ภาพรวม [ตรวจแล้ว]:** ค้น 33 คำ เว็บเราติดหน้า 1 (มือถือ) **คำเดียว = "drag 6" อันดับ 5** · แต่**ช่อง YouTube ของร้านติดหน้า 1 แล้ว 6 คำ** (พอตใช้แล้วทิ้ง · คอยล์พอต · m bar · pod system ตัวไหนดี · esko bar switch 20k · tfit m power) → ตอนนี้คลิปคือของที่แข็งที่สุดของร้านบน Google ไม่ใช่เว็บ
@@ -40,7 +142,7 @@
 **ควรเลิกหวัง (อย่างน้อยรอบใกล้นี้):** *(บุหรี่ไฟฟ้า · พอต · พอตไฟฟ้า · น้ำยาบุหรี่ไฟฟ้า · ร้านพอต → แทนด้วยบล็อกนี้: "คำตัดสินเจ้าของหลัง 10C" ด้านบน)* บุหรี่ไฟฟ้า · พอต · พอตไฟฟ้า · น้ำยาบุหรี่ไฟฟ้า (หน้า 1 เป็นข่าว/รัฐ/โรงพยาบาลเตือนภัยเกินครึ่ง — Google มองว่าคนค้นหาข้อมูล ไม่ใช่หาร้าน) · pod · พอด · คอยล์ · freebase (คำมีหลายความหมาย — pod = วงดนตรี/Kubernetes, คอยล์ = คอยล์รถ/แอร์ 7 ใน 7, freebase = เคมี/ยาเสพติด) · uwell (หน้า 1 = ผู้ผลิต+รีวิว ไม่มีร้านเลย) · **ร้านพอต** — คนค้นระดับกลาง แต่คนค้นหา "ส่งด่วนใกล้ฉัน" (ทุกร้านบนหน้า 1 ขาย "ส่งด่วนไลน์แมน 24 ชม.") ถ้าร้านไม่ได้ขายแบบนั้น ไม่คุ้ม [รอเจ้าของ] *(แทนด้วยบล็อกนี้: ร้านพอต = ไล่ — "คำตัดสินเจ้าของหลัง 10C")*
 
 **ของที่ต้องมีก่อนถึงจะสู้ได้:**
-1. **หน้าเจ้าของคำเดียวต่อคำ** — ตอนนี้ marbo 5 หน้า · m bar 5 หน้า · คอยล์ 5 หน้า · พอตใช้แล้วทิ้ง 3 หน้า · pod system 3 หน้าแย่งกันเอง (ตารางข้อ 2)
+1. **หน้าเจ้าของคำเดียวต่อคำ** — ตัดสินแล้วในแผนที่คีย์ข้อ 0 (07/10) · ภาพ 25/09 = marbo 5 หน้า · m bar 5 · คอยล์ 5 · พอตใช้แล้วทิ้ง 3 · pod system 3 แย่งกันเอง
 2. **คลิป** — ของที่ได้ผลแล้วจริง: เอาคลิปที่ติดหน้า 1 ไปฝังในหน้าที่ตรงคำ + จัดชื่อคลิปที่ยังไม่ตรงคำ (ข้อ 4)
 3. **ลิงก์เข้า** — หาแหล่งที่ปลอดภัยไม่เจอจริง (ข้อ 3) · ทางเดียวที่คุ้ม = เอา okami24.net กลับมาแล้วชี้มาเว็บนี้ (คำถามค้างจากรอบ 9 · ใช้เงิน = เจ้าของตัดสิน) *(แทนด้วยบล็อกนี้: okami24.net เจ้าของไม่สนใจ ห้ามเสนออีก — "คำตัดสินเจ้าของหลัง 10C")*
 4. **เวลา** — บทความ 5 เรื่องเพิ่งขึ้น 24/09 · ตัดสินผลคำถามทั้งกลุ่มหลังเห็น index ใน Search Console
