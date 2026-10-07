@@ -956,6 +956,13 @@ export const voopooProducts: Product[] = [
       { id: "green", name: "Green", swatchHex: "#6f7c69", image: { src: "/assets/products/drag-s3/variant-green-v6.webp", alt: "VOOPOO DRAG S3, Green", ownFloor: true } },
       { id: "brown", name: "Brown", swatchHex: "#7b4929", image: { src: "/assets/products/drag-s3/variant-brown-v5.webp", alt: "VOOPOO DRAG S3, Brown", ownFloor: true } },
       { id: "metal-gray", name: "Metal Gray", swatchHex: "#646b6c", image: { src: "/assets/products/drag-s3/variant-metal-gray-v5.webp", alt: "VOOPOO DRAG S3, Metal Gray", ownFloor: true } },
+      // 07/10 eve: 3 more DRAG S3 colours (vapeuk.co.uk + legionofvapers.com list the same 10; the maker page was not reachable
+      // from the research tools) — catalog completeness rule. Image 1 = legionofvapers.com's photo (vapevo has only the old 7),
+      // same S2 studio recipe (Brooklyn Gray keyed with matte2.js --protect over its dark side panel; its photo shows no side badge);
+      // swatches = the median side-panel colour of those photos (same method as the 7 above). Map: look-batch/drag-new3-map.js.
+      { id: "lake-green", name: "Lake Green", swatchHex: "#345859", image: { src: "/assets/products/drag-s3/variant-lake-green-v5.webp", alt: "VOOPOO DRAG S3, Lake Green", ownFloor: true } },
+      { id: "cherry-pink", name: "Cherry Pink", swatchHex: "#969eb0", image: { src: "/assets/products/drag-s3/variant-cherry-pink-v5.webp", alt: "VOOPOO DRAG S3, Cherry Pink", ownFloor: true } },
+      { id: "brooklyn-gray", name: "Brooklyn Gray", swatchHex: "#58777f", image: { src: "/assets/products/drag-s3/variant-brooklyn-gray-v5.webp", alt: "VOOPOO DRAG S3, Brooklyn Gray", ownFloor: true } },
     ],
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js drag-s3-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
@@ -963,15 +970,16 @@ export const voopooProducts: Product[] = [
     // own contact shadow kept (IMAGE_SPEC §0 item 8) (JOBS.md J2). The v3 set failed the owner (07/10) → v5 = the owner-picked
     // blue-S2 recipe (real vapevo photo as the only image, light-focused prompt; IMAGE_PROMPTS v3; owner "ยกเว้นให้ Drag"), the
     // garbled "EVEREST LAB" badge text re-set in real type (look-batch/everest-patch.js), floor clipped to the device columns;
-    // line-ups v5 = every colour standing in one row on the floor (owner's draft 2, look-batch/ds-lineup-floor.js --row --pick).
+    // line-ups v5 = every colour standing in one row on the floor (owner's draft 2, look-batch/ds-lineup-floor.js --row --pick);
+    // v7 (07/10 eve) = 5 + 5 since the 3 new colours.
     lineupImage: {
-      src: "/assets/products/drag-s3/lineup-v6.webp",
-      alt: "VOOPOO DRAG S3, colours 1–4 of 7",
+      src: "/assets/products/drag-s3/lineup-v7.webp",
+      alt: "VOOPOO DRAG S3, colours 1–5 of 10",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/drag-s3/lineup2-v6.webp",
-      alt: "VOOPOO DRAG S3, colours 5–7 of 7",
+      src: "/assets/products/drag-s3/lineup2-v7.webp",
+      alt: "VOOPOO DRAG S3, colours 6–10 of 10",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     specifications: [

@@ -6626,5 +6626,44 @@
   },
   "note": "image-look J3 07/10 — card from the Black pick (card-v2 was Black too); the hero keeps its painted floor under the card",
   "fileName": "card-v3.webp"
+ },
+ {
+  "source": "_incoming/look-batch/drag-s3/M-lake-green-S1t.png",
+  "slug": "drag-s3",
+  "role": "variant",
+  "id": "lake-green",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the retailer photo _incoming/look-batch/drag-s3/orig-lake-green-bg.png as the only image (prompt = docs/IMAGE_PROMPTS.md v3, the owner-picked blue-S2 recipe; Cherry Pink with the S4 light for pale colours); render _incoming/look-batch/drag-s3/lake-green-S1.png, then the AI-garbled \"EVEREST LAB\" badge text re-set in real type by look-batch/everest-patch.js --box (before keying); keyed by _incoming/look-pilot/matte2.js via look-batch/run.js keeping the contact shadow + floor reflection (colour flag ownFloor)",
+   "reference": "_incoming/look-batch/drag-s3/orig-lake-green-bg.png — https://www.legionofvapers.com/wp-content/uploads/2026/05/VOOPOO-Drag-S3-Pod-Kit-Lake-Green.webp (legionofvapers.com, 800², white backdrop cut by look-batch/prep-white.js; colour name + 10-colour list also on vapeuk.co.uk; maker site not reachable from the research tools 07/10)",
+   "fidelitySheet": "_incoming/look-batch/drag-s3/C-lake-green-S1t.png (dark + magenta) — VOOPOO tank logo · 60W / SMART · DRAG S3 side badge · side panel pattern on the RIGHT as on the photo"
+  },
+  "note": "image-look 07/10 — Drag S3 colours VOOPOO added (owner sheet 29 A, catalog completeness rule); 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-lake-green-v5.webp"
+ },
+ {
+  "source": "_incoming/look-batch/drag-s3/M-cherry-pink-S1t.png",
+  "slug": "drag-s3",
+  "role": "variant",
+  "id": "cherry-pink",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the retailer photo _incoming/look-batch/drag-s3/orig-cherry-pink-bg.png as the only image (prompt = docs/IMAGE_PROMPTS.md v3, the owner-picked blue-S2 recipe; Cherry Pink with the S4 light for pale colours); render _incoming/look-batch/drag-s3/cherry-pink-S1.png, then the AI-garbled \"EVEREST LAB\" badge text re-set in real type by look-batch/everest-patch.js --box (before keying); keyed by _incoming/look-pilot/matte2.js via look-batch/run.js keeping the contact shadow + floor reflection (colour flag ownFloor); faint backdrop specks left of the device cleared outside the solid device columns (checker #337)",
+   "reference": "_incoming/look-batch/drag-s3/orig-cherry-pink-bg.png — https://www.legionofvapers.com/wp-content/uploads/2026/05/VOOPOO-Drag-S3-Pod-Kit-Cherry-Pink.webp (legionofvapers.com, 800², white backdrop cut by look-batch/prep-white.js; colour name + 10-colour list also on vapeuk.co.uk; maker site not reachable from the research tools 07/10)",
+   "fidelitySheet": "_incoming/look-batch/drag-s3/C-cherry-pink-S1t.png (dark + magenta) — VOOPOO tank logo · 60W / SMART · DRAG S3 side badge · side panel pattern on the RIGHT as on the photo"
+  },
+  "note": "image-look 07/10 — Drag S3 colours VOOPOO added (owner sheet 29 A, catalog completeness rule); 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-cherry-pink-v5.webp"
+ },
+ {
+  "source": "_incoming/look-batch/drag-s3/M-brooklyn-gray-S1t.png",
+  "slug": "drag-s3",
+  "role": "variant",
+  "id": "brooklyn-gray",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the retailer photo _incoming/look-batch/drag-s3/orig-brooklyn-gray-bg.png as the only image (prompt = docs/IMAGE_PROMPTS.md v3, the owner-picked blue-S2 recipe; Cherry Pink with the S4 light for pale colours); render _incoming/look-batch/drag-s3/brooklyn-gray-S1.png, then the AI-garbled \"EVEREST LAB\" badge text re-set in real type by look-batch/everest-patch.js --box (before keying); keyed by _incoming/look-pilot/matte2.js via look-batch/run.js keeping the contact shadow + floor reflection (colour flag ownFloor); keyed with matte2.js --protect 1010,725,1255,1850 (the dark side panel the backdrop flood ate — checker #337)",
+   "reference": "_incoming/look-batch/drag-s3/orig-brooklyn-gray-bg.png — https://www.legionofvapers.com/wp-content/uploads/2026/05/VOOPOO-Drag-S3-Pod-Kit-Brooklyn-Grey.webp (legionofvapers.com, 800², white backdrop cut by look-batch/prep-white.js; colour name + 10-colour list also on vapeuk.co.uk; maker site not reachable from the research tools 07/10)",
+   "fidelitySheet": "_incoming/look-batch/drag-s3/C-brooklyn-gray-S1t.png (dark + magenta) — VOOPOO tank logo · 60W / SMART · DRAG S3 side badge · side panel pattern on the RIGHT as on the photo"
+  },
+  "note": "image-look 07/10 — Drag S3 colours VOOPOO added (owner sheet 29 A, catalog completeness rule); 1000 canvas, device 839 px from y 80",
+  "fileName": "variant-brooklyn-gray-v5.webp"
  }
 ]
