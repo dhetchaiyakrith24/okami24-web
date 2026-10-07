@@ -432,7 +432,7 @@ export const salthubProducts: Product[] = [
     searchAliases: ["M Bar 15K", "MBar 15K", "Marbo 15K"],
     tagline: "A reusable body, prefilled cartridges — no filling required.",
     shortDescription:
-      "A reusable device body paired with prefilled M Switch Pod cartridges rated up to 15,000 puffs per pod — a device you keep and recharge, refilled by swapping cartridges rather than bottled e-liquid.",
+      "A reusable device body paired with prefilled M Switch Pod cartridges rated up to 15,000 puffs per pod — a device you keep and recharge, refilled by swapping cartridges rather than bottled e-liquid. We sell this set as the M Bar 15K, or Marbo 15K.",
     isFlagship: false,
     // Confirmed via YouTube oEmbed (2026-09-03): real video, correct title, owned by
     // youtube.com/@PODSYSTEM-OKAMI-II — one of OKami24's own three channels. A dedicated 30-day
@@ -565,7 +565,7 @@ export const salthubProducts: Product[] = [
     // Owner 2026-10-08: the shop's admin list calls this pod "หัว M Bar 15K".
     searchAliases: ["M Bar 15K", "Marbo 15K"],
     tagline: "The prefilled cartridge for the M Switch Kit.",
-    shortDescription: "A prefilled replacement cartridge for the M Switch Kit device body.",
+    shortDescription: "A prefilled replacement cartridge for the M Switch Kit device body — the set we sell as the M Bar 15K.",
     isFlagship: false,
     attributes: {
       capacityMl: 2.2,
