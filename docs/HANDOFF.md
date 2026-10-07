@@ -23,10 +23,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
 2 ahead of main — ALL waiting for the morning (site PRs, no merge at night):
-  #364 `mbar15k-into-kit` (wt `_incoming/wt-mbar`) = item 3 (3), checker 6/6 PASS at d413b84; 7d52f22 after it = checker's notes only
-  (alias + Pod en line, 13.5 #2 (จ)) · #366 `option-photos-3-infy` (wt-b3) · #367 `option-photos-3-muro` (wt-b3m) · #368
-  `option-photos-3-tfit` (wt-b3t) = batch 3, checker running 08/10 night (result: PR comments are NOT written — read this chat's
-  report / re-run the checker if unknown). Main folder = DETACHED at a local-only combined tree (main + the 4 branches) serving 3412 —
+  #364 `mbar15k-into-kit` (wt `_incoming/wt-mbar`) = item 3 (3), checker 6/6 PASS at d413b84; 7d52f22 = checker's notes only (13.5 #2 (จ))
+  · #366 `option-photos-3-infy` (wt-b3) · #367 `option-photos-3-muro` (wt-b3m) · #368
+  `option-photos-3-tfit` (wt-b3t) = batch 3: checker PASS #366 at 38d1ada · #368 at e6ae755 · #367 at 79eef9e all PASS except the
+  sharpness gate canvas rule (MURO box art max 600 px, boxes 340x490 like the 6 live) = owner exception needed (รอพี่ตรวจ 24; if "1"
+  add an IMAGE_SPEC exception line like the M Bar 9K pack one, then merge). Main folder = DETACHED at a local-only combined tree (main + the 4 branches) serving 3412 —
   `git checkout` a real branch before any commit there. Docs worktree `_incoming/wt-docs`.
   Untracked, NOT the image chat's, left alone: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching). Branch `option-photos-3` =
   LESSONS 28 only, NOT checked. Before every commit run `git branch --show-current`; more than one chat on this repo = the others in worktrees.
@@ -48,7 +49,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
    (4) batch 3 DONE as PRs #366–#368 (INFY 2 = recolour master · MURO 4 = MURO box art from ihavevape.net · TFIT 10 = TFIT's
        Watermelon shot + names printed as its chart, `_incoming/option-photos/b3/tfit/names.js`). nexBAR 11 = reason rows
        (`_incoming/option-photos/b3/reasons.md`: 6 exist only as the Vivid Edition = other design → รอพี่ตรวจ 22 · 5 none anywhere).
-       NEXT (night queue, in order): (a) checker result of #366–#368 → fix if bounced; (b) batch 4 coils: count-gaps PM rows
+       NEXT (night queue, in order): (a) done — see item 2; (b) batch 4 coils: count-gaps PM rows
        (coil-38 ×2 · 53 · 56 · 68 · 70 · 74 · 87 · 89 ×2, `npx tsx _incoming/sitewide-template/5/mood/count-gaps.ts`) + the white-box
        cards (`_incoming/image-sitewide/b-coils/README.txt` — refs ready; renders = Higgsfield through Chrome only); (c) MURO 3ML is
        missing 4 flavours the market lists (Apple Juice · Mineral Water · Strawberry Peach · Cola — ihavevape.net has box art; catalog
