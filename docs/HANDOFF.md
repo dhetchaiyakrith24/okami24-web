@@ -12,24 +12,24 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
 1 main: `git fetch && git log -1 --oneline origin/main` = 7d577e9 (#333 docs) · #332 Drag X3 live 07/10 ~16:40 ICT · #329 Drag S3 v5/v6 live
-  ~15:20 (both checked by curl [ตรวจแล้ว]). Render gives ~1 min of 502 on the whole site after each deploy (07/10) — wait, then curl.
+  ~15:20 (both checked by curl [ตรวจแล้ว]). Render: ~1 min of 502 site-wide after each deploy — wait, then curl.
   OWNER 07/10 evening (awake): the scheduled-task autonomous order is CANCELLED — back to a normal chat (owner present; stop-and-ask
   items go to the owner in chat again, not only to รอพี่ตรวจ). FIRST TASK of the next chat: make the owner a review sheet ("ใบตรวจ") of
-  everything waiting for the owner's eye — source = `docs/รอพี่ตรวจ.md` (items 12–27) + the two review pages below; one line per item,
+  everything waiting for the owner's eye — source = `docs/รอพี่ตรวจ.md` (items still open — 26/27 answered 07/10 eve: Drag S3 + X3 PASSED, S3 "not crisp" accepted = LESSONS ช13) + the two review pages below; one line per item,
   an answer slot per item (A/B/C or yes/no), Thai, phone-friendly — then keep working on VINCI S and add to the sheet as items appear.
 2 ahead of main: branch `image-look-vinci-s` = this §16 only. Branch `option-photos-3` = LESSONS 28 only, NOT checked.
   Review pages (owner): Drag S3 https://claude.ai/artifact/NaS45DCEkmX9qJW7DsLzQx · Drag X3 https://claude.ai/artifact/QqzubsSvZdMhjcc7i85WMq
   (files `_incoming/look-batch/review-ds5/ds5-review.html` · `review-x3/x3-review.html`).
   VINCI S IN PROGRESS (G5 bar, v3 with the real vapevo photo flattened on #2b2e33 = `vinci-s/orig-<id>-bg.png`): neon DONE = pick
   `vinci-s/M-neon-S2.png` (`--compare` CHANGED 110/43 → 81/57, hue = real, key clean; S1 has a hard colour band). QUEUED in Higgsfield
-  (07/10 ~16:30 UTC+7, server side): black 2a3fe908 · grey 6cba6179 · green-gradient (id via `show_generations` size 4) → `node
+  (07/10 eve): black 2a3fe908 · grey 6cba6179 · green-gradient (id via `show_generations` size 4) → `node
   _incoming/look-batch/get.js vinci-s <id> S1 <hf_name>`. NOT queued yet: silver · blue-gradient · gold-gradient · pink (pale → swap the
   light sentence for the S4 one "Strong key light from the front-left, clear fall-off to the right, a darker floor," + "stays <colour>,
   never grey"). Prompt = the neon one with the colour from `__DV` (hf-helpers.js) + "(the same hue and depth as image 1, not paler,
   not more saturated)". Each: run.js vinci-s <id> <render> --tag S1 → clip-floor → eye on C- sheet + `hue-stats.js` vs orig → pick.json
   → `node vinci-map-v3.js` → process-images --map vinci-map-v3.json → card = `card-clip.js vinci-s/D-<black pick>` → line-ups
   `vinci-lineup-floor.js --row --pick` (4 + 4) → webp lineup(2)-v3 → data in voopoo.ts vinci-s (8 variants v3 ownFloor + card-v3 +
-  lineups v3; alts say "upright front view") → PR → checker → merge → review page (copy review-x3) + รอพี่ตรวจ item.
+  lineups v3; alts say "upright front view") → PR → checker → merge → NO review page (LESSONS ช13: 3 brands passed → stop) — one line in the review sheet.
   Typing a long prompt into the Higgsfield box freezes the page ~40 s but the text lands (check with innerText); after an upload the
   new photo is the 2nd tile, untick the 3rd, tick the 2nd. New tools (`_incoming/look-batch/`, not in git): foot-bg.js · card-clip.js ·
   hue-match.js · hue-stats.js · metal-match.js (not used) · zmag.js · cmp3.js · vinci-map-v3.js · vinci-lineup-floor.js; matte2.js
