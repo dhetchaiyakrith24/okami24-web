@@ -956,8 +956,9 @@ export const voopooProducts: Product[] = [
       { id: "green", name: "Green", swatchHex: "#6f7c69", image: { src: "/assets/products/drag-s3/variant-green-v6.webp", alt: "VOOPOO DRAG S3, Green", ownFloor: true } },
       { id: "brown", name: "Brown", swatchHex: "#7b4929", image: { src: "/assets/products/drag-s3/variant-brown-v5.webp", alt: "VOOPOO DRAG S3, Brown", ownFloor: true } },
       { id: "metal-gray", name: "Metal Gray", swatchHex: "#646b6c", image: { src: "/assets/products/drag-s3/variant-metal-gray-v5.webp", alt: "VOOPOO DRAG S3, Metal Gray", ownFloor: true } },
-      // 07/10 eve: the 3 colours VOOPOO added (vapeuk.co.uk + legionofvapers.com list the same 10; shop.voopoo.com's search listing
-      // marks them NEW — the maker page itself was not reachable from the research tools) — catalog completeness rule. Image 1 = legionofvapers.com's photo (vapevo has only the old 7), same S2 studio recipe;
+      // 07/10 eve: 3 more DRAG S3 colours (vapeuk.co.uk + legionofvapers.com list the same 10; the maker page was not reachable
+      // from the research tools) — catalog completeness rule. Image 1 = legionofvapers.com's photo (vapevo has only the old 7),
+      // same S2 studio recipe (Brooklyn Gray keyed with matte2.js --protect over its dark side panel; its photo shows no side badge);
       // swatches = the median side-panel colour of those photos (same method as the 7 above). Map: look-batch/drag-new3-map.js.
       { id: "lake-green", name: "Lake Green", swatchHex: "#345859", image: { src: "/assets/products/drag-s3/variant-lake-green-v5.webp", alt: "VOOPOO DRAG S3, Lake Green", ownFloor: true } },
       { id: "cherry-pink", name: "Cherry Pink", swatchHex: "#969eb0", image: { src: "/assets/products/drag-s3/variant-cherry-pink-v5.webp", alt: "VOOPOO DRAG S3, Cherry Pink", ownFloor: true } },
