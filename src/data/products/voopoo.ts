@@ -1207,9 +1207,9 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/vinci-s/card-v2.webp",
-        alt: "VOOPOO VINCI S, Black, three-quarter view",
-        angle: "three-quarter, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) of this colour's photo",
+        src: "/assets/products/vinci-s/card-v3.webp",
+        alt: "VOOPOO VINCI S, Black, upright front view",
+        angle: "upright, isolated — OKami24 Higgsfield studio re-shoot (IMAGE_SPEC §0 item 8, 07/10) of this colour's photo",
         transparentBackground: true,
         sourceName: "OKami24 render (Higgsfield) from vapevo.com's photo of this colour",
         sourceUrl: "https://www.vapevo.com/en/products/voopoo-vinci-s-kit-e-cigarette-40w-2000mah-4-5ml",
@@ -1231,24 +1231,27 @@ export const voopooProducts: Product[] = [
     // those photos (several were guessed from the names). Scripts + sheets: _incoming/image-sitewide/dsx/ (map: scripts/process-images.map.json).
     openOnCardPhoto: true,
     colorVariants: [
-      { id: "black", name: "Black", swatchHex: "#292a29", image: { src: "/assets/products/vinci-s/variant-black-v2.webp", alt: "VOOPOO VINCI S, Black" } },
-      { id: "silver", name: "Silver", swatchHex: "#b7b7b7", image: { src: "/assets/products/vinci-s/variant-silver-v2.webp", alt: "VOOPOO VINCI S, Silver" } },
-      { id: "grey", name: "Grey", swatchHex: "#4f4f4f", image: { src: "/assets/products/vinci-s/variant-grey-v2.webp", alt: "VOOPOO VINCI S, Grey" } },
-      { id: "blue-gradient", name: "Blue Gradient", swatchHex: "#1090be", image: { src: "/assets/products/vinci-s/variant-blue-gradient-v2.webp", alt: "VOOPOO VINCI S, Blue Gradient" } },
-      { id: "green-gradient", name: "Green Gradient", swatchHex: "#76ab74", image: { src: "/assets/products/vinci-s/variant-green-gradient-v2.webp", alt: "VOOPOO VINCI S, Green Gradient" } },
-      { id: "gold-gradient", name: "Gold Gradient", swatchHex: "#be8953", image: { src: "/assets/products/vinci-s/variant-gold-gradient-v2.webp", alt: "VOOPOO VINCI S, Gold Gradient" } },
-      { id: "neon", name: "Neon", swatchHex: "#9743c0", image: { src: "/assets/products/vinci-s/variant-neon-v2.webp", alt: "VOOPOO VINCI S, Neon" } },
-      { id: "pink", name: "Pink", swatchHex: "#d89cab", image: { src: "/assets/products/vinci-s/variant-pink-v2.webp", alt: "VOOPOO VINCI S, Pink" } },
+      { id: "black", name: "Black", swatchHex: "#292a29", image: { src: "/assets/products/vinci-s/variant-black-v3.webp", alt: "VOOPOO VINCI S, Black", ownFloor: true } },
+      { id: "silver", name: "Silver", swatchHex: "#b7b7b7", image: { src: "/assets/products/vinci-s/variant-silver-v3.webp", alt: "VOOPOO VINCI S, Silver", ownFloor: true } },
+      { id: "grey", name: "Grey", swatchHex: "#4f4f4f", image: { src: "/assets/products/vinci-s/variant-grey-v3.webp", alt: "VOOPOO VINCI S, Grey", ownFloor: true } },
+      { id: "blue-gradient", name: "Blue Gradient", swatchHex: "#1090be", image: { src: "/assets/products/vinci-s/variant-blue-gradient-v3.webp", alt: "VOOPOO VINCI S, Blue Gradient", ownFloor: true } },
+      { id: "green-gradient", name: "Green Gradient", swatchHex: "#76ab74", image: { src: "/assets/products/vinci-s/variant-green-gradient-v3.webp", alt: "VOOPOO VINCI S, Green Gradient", ownFloor: true } },
+      { id: "gold-gradient", name: "Gold Gradient", swatchHex: "#be8953", image: { src: "/assets/products/vinci-s/variant-gold-gradient-v3.webp", alt: "VOOPOO VINCI S, Gold Gradient", ownFloor: true } },
+      { id: "neon", name: "Neon", swatchHex: "#9743c0", image: { src: "/assets/products/vinci-s/variant-neon-v3.webp", alt: "VOOPOO VINCI S, Neon", ownFloor: true } },
+      { id: "pink", name: "Pink", swatchHex: "#d89cab", image: { src: "/assets/products/vinci-s/variant-pink-v3.webp", alt: "VOOPOO VINCI S, Pink", ownFloor: true } },
     ],
     // "ทั้งหมด" (02/10): two groups in maker order — the 7-9-device image was too small (owner 02/10) — RELX Phantom poster
     // layout, _incoming/image-sitewide/dsx/vp-relx2.js vinci-s-a / -b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
+    // Image-look roll-out J3 (07/10): every colour + card re-shot in studio light by AI from the real vapevo photo (G5 bar —
+    // the Drag exception does not apply), upright, floor clipped to the device columns, own contact shadow kept (ownFloor);
+    // line-ups v3 = every colour standing in one row (look-batch/vinci-lineup-floor.js --row --pick).
     lineupImage: {
-      src: "/assets/products/vinci-s/lineup-v2.webp",
+      src: "/assets/products/vinci-s/lineup-v3.webp",
       alt: "VOOPOO VINCI S, colours 1–4 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/vinci-s/lineup2-v2.webp",
+      src: "/assets/products/vinci-s/lineup2-v3.webp",
       alt: "VOOPOO VINCI S, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
