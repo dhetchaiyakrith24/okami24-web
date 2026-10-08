@@ -84,7 +84,7 @@ export function ProductMasterVariantPicker({
                 outOfStock && "opacity-50"
               )}
             >
-              {v.label}
+              <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.label}</span>
               {outOfStock && outOfStockLabel && <span className="text-[0.6rem] uppercase tracking-wide">{outOfStockLabel}</span>}
             </button>
           );
