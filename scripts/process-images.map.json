@@ -5893,6 +5893,131 @@
   "note": "site-wide template round batch 4g 05/10 - TFIT's own Watermelon product shot (tfitvape.com API smallPic 2250 px, white background; _incoming/sitewide-template/4/facts-tfit-m-power-20k.md), no AI: cut by scripts/flatcut.js + 2 px matte erode (_incoming/sitewide-template/2/2fimg/g4card/erode.js), upright (disposable card standard)"
  },
  {
+  "source": "_incoming/option-photos/b3/tfit/out/blue-ice.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "blue-ice",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-blue-ice.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/double-mint.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "double-mint",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-double-mint.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/grape.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-grape.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/grape-apple.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "grape-apple",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-grape-apple.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/hami-melon.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "hami-melon",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-hami-melon.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/mix-berry.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "mix-berry",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-mix-berry.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/rainbow-candy.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "rainbow-candy",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-rainbow-candy.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/sakura-grape.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "sakura-grape",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-sakura-grape.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/strawberry.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "strawberry",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-strawberry.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/4/4g/card-cut2.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "watermelon",
+  "note": "option-photos round batch 3 (08/10) — TFIT's own Watermelon product shot itself (no edit), same cut as the card; upright like the card",
+  "fileName": "variant-watermelon.webp"
+ },
+ {
   "source": "_incoming/sitewide-template/5/mood/ai/t-berry-garden.png",
   "slug": "mood-monster-14k",
   "role": "card",
