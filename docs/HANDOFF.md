@@ -11,7 +11,7 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge, on top of #399 f197574d [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge, on top of #400 45bf5af (stock 2b, item 3u) [ตรวจแล้ว].
   OPEN site PR #401 (coil-94 box shots, item 3c) — checker PASS, NOT merged on purpose: owner "ขึ้นเว็บวันที่ 11/10".
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
   #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
@@ -25,7 +25,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   e4e9f4c re-check PASS) [ตรวจแล้ว]. Worktrees: `_incoming/wt-coil3` (own node_modules copy, on branch coil94-box-b2; test server 3412
   stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 (this docs PR) — removable after #401 merges (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
-  copy, Next types generated with `npx next typegen`) is on branch `docs-shipnity-max` = this handoff's docs PR; nothing else unmerged.
+  copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
 3 CLOSED 08/10 — round "3 coil photos" (`docs/rounds/รอบรูปคอยล์3ตัว-coil-1-72-94-08-10.txt`), tag `coil-photos-3-done`. Live: #388
   coil-1 (PnP TW15 / DW60 / TR1, TR1 rubber colours share one photo) + coil-72 (VMATE V2 0.7 / 1.2 + Top Fill, 0.4/0.7 share) ·
@@ -52,10 +52,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   = 256 SKU · 7 "check" · 265 null → null = sold out, a product with every option sold out offers no order button, sold-out chip
   names struck through; fully sold-out products 2 → 28. Checker PASS 8/8 (`_incoming/stock-api/checker-395/report.md`); 5 near names
   whose sibling owns the code = null (owner told). Evidence + scripts: `_incoming/stock-api/` (Max dump, match.js, gen-map.js).
-  NEXT STEP (batch 2b — small, tier B, own PR, checker; not on 10/10): (1) Zero Nano (legacy, no options) still orderable → a
-  product-level switch from sku-map `product: null` (ProductHero + resolveProductRef legacy branch) · (2) JSON-LD of the 9
-  ProductMaster all-sold-out pages (coil-54/56/68/70/74/83/87/89, pod-180) still InStoreOnly → OutOfStock (page.tsx rule is
-  legacy-only) · (3) owner list 24 answered by the admin → set those 7 "check" to a code or null.
+  Batch 2b #400 LIVE 45bf5af (deploy 37807905826 success; curl 61/61 product pages 200, OutOfStock JSON-LD on all 10) [ตรวจแล้ว]:
+  Zero Nano (legacy, no options, sku-map `product: null`) sold out as a whole via `Product.availability` set by applySoldOut →
+  hero shows sold-out, resolveProductRef rejects it · JSON-LD OutOfStock on zero-nano + the 9 ProductMaster all-sold-out pages
+  (coil-54/56/68/70/74/83/87/89, pod-180); the other 51 product pages' JSON-LD identical. Checker PASS 5/5 on 975fdb1b; owner
+  said "merge ได้เลย" in chat (the app's permission layer had refused Friday's first merge). Proof: `_incoming/stock-api/b2b/`.
+  NOW (batch 2c, tier B, own PR, designer + checker; not on 10/10): owner 08/10 "ขีดค่าสีทิ้งไว้เหมือนเดิมแต่ก็ยังกดดูได้" + keep it
+  premium + tell the customer on that page → legacy sold-out colour/flavour chips become clickable (still struck through; today
+  `disabled` in ColorVariantRail / FlavorVariantGrid — ProductMaster picker already selectable) + a small "สินค้าหมด" notice on
+  the hero photo while a sold-out option is selected. The buy gate already blocks a sold-out option (no change there).
+  WAITING: the 7 "check" SKUs = owner list 24 (`docs/รอพี่ตรวจ.md`), not answered by the admin yet [รอเจ้าของ].
   Then batch 3 = stock adapter when the warehouse sends the API · batch 4+ = order push carrying the shipping fee.
   The owner holds (chat 08/10) a warehouse report "2 ways to fix the shipping fee" + 5 questions (35 or 50 · which way · separate
   shipping/discount fields · cost per SKU · API doc + test key) and the admin message for list 24 — answers come back via the owner.
