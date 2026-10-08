@@ -342,8 +342,13 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round 7 "SEO ค" B2: "pod system คือ" (@60) and "ยี่ห้อไหนดี" (@57) joined the line — thai-copy row D ก;
   // "ตัวไหนดี" already leads the title/H1. The definition paraphrases the pod-systems category lede
   // without the word "น้ำยา" (HANDOFF §16 4b keeps it out of head copy until the category has stock).
+  // Round SEO E "pod" (09/10, seo-auditor): "pod system คือ" now belongs to what-is-a-pod-system — this row stops opening on
+  // the definition and leads with "ยี่ห้อไหนดี" instead.
   "choosing-your-first-pod-system":
-    "Pod System คือพอตที่เติมเองได้ เปลี่ยนหัวพอตได้ ยี่ห้อไหนดี เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมี Caliburn G5 · M Bar 9K",
+    "Pod System ยี่ห้อไหนดีสำหรับเครื่องแรก เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมี Caliburn G5 · M Bar 9K",
+  // Round SEO E "pod": the dek says "น้ำยา", which stays out of head copy (HANDOFF §17 "Head copy") — head-only row, dek unchanged.
+  "what-is-a-pod-system":
+    "Pod System คืออะไร ในเครื่องมีอะไรบ้าง ทำงานยังไง ค่าโอห์มของหัวพอตบอกอะไร และหัวพอตควรเปลี่ยนเมื่อไหร่",
   "open-system-vs-disposable":
     "เทียบพอตใช้แล้วทิ้งกับพอตซิสเต็ม ต่างกันตรงไหน ต้องดูแลแค่ไหน พร้อมตัวอย่างจริง M Bar 10K · M Switch Kit · Caliburn G5 Lite และวิธีเช็คของแท้จากกล่อง",
   "reading-a-spec-sheet":
