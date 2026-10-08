@@ -607,7 +607,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "ตัวเครื่องใช้ซ้ำได้ หัวพอตบรรจุสำเร็จ",
     shortDescription:
-      "ตัวเครื่องใช้ซ้ำได้ จับคู่กับหัวพอต M Switch Pod บรรจุสำเร็จ รองรับสูงสุด 15,000 พัฟต่อหัวพอต เก็บตัวเครื่องไว้ชาร์จใช้ต่อ แล้วเปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา",
+      "ตัวเครื่องใช้ซ้ำได้ จับคู่กับหัวพอต M Switch Pod บรรจุสำเร็จ รองรับสูงสุด 15,000 พัฟต่อหัวพอต เก็บตัวเครื่องไว้ชาร์จใช้ต่อ แล้วเปลี่ยนแค่หัวพอต ไม่ต้องเติมน้ำยา ร้านเราเรียกชุดนี้ว่า M Bar 15K หรือ Marbo 15K",
   },
   "m-switch-pod": {
     whoIsThisFor: {
@@ -617,7 +617,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       battery: "600mAh",
     },
     tagline: "หัวพอตบรรจุสำเร็จสำหรับ M Switch Kit",
-    shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ ใช้กับตัวเครื่อง M Switch Kit",
+    shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ ใช้กับตัวเครื่อง M Switch Kit ซึ่งร้านเราเรียกว่า M Bar 15K",
   },
   "m-bar-pod": {
     whoIsThisFor: {
@@ -824,7 +824,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       0: "มีเครื่องที่ใส่หัวพอต Muro 3ML ได้อยู่แล้ว ส่วนเครื่องตัวเองใช้ได้ไหม ถามก่อนได้ทางไลน์ @okm24",
     },
     tagline: "หัวพอตบรรจุน้ำยาสำเร็จ 3mL",
-    shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 3mL ของ Muro ตอนนี้มีให้เลือก 10 รส",
+    shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 3mL ของ Muro มีให้เลือก 14 รส",
   },
   "muro-sc-8000": {
     whoIsThisFor: {

@@ -91,6 +91,17 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  /**
+   * Retired product pages → the page that now sells the same thing (permanent, so Google moves the old URL's
+   * standing to the new one). A slug listed here is `hiddenFromStorefront` in its data file.
+   *
+   * m-bar-15k (owner 2026-10-08, chat): with the clear M Bar pod off the site (BSOT "M Bar 15K / M Switch Pod"),
+   * the 15K is the M Switch body + the black pod = the M Switch Kit, so its page folds into the Kit's.
+   */
+  async redirects() {
+    return [{ source: "/products/m-bar-15k", destination: "/products/m-switch-kit", permanent: true }];
+  },
 };
 
 export default nextConfig;

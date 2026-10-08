@@ -166,7 +166,7 @@ export const unbrandedProducts: Product[] = [
     name: "Muro 3ML",
     displayName: "Muro 3ML",
     tagline: "A 3mL prefilled pod cartridge.",
-    shortDescription: "A 3mL prefilled replacement pod cartridge from the Muro line, currently stocked in 10 flavors.",
+    shortDescription: "A 3mL prefilled replacement pod cartridge from the Muro line, available in 14 flavors.",
     isFlagship: false,
     attributes: {
       capacityMl: 3,
@@ -185,6 +185,12 @@ export const unbrandedProducts: Product[] = [
     // batch 3 (08/10) found the same box template for them on ihavevape.net (600 px, 2024-07,
     // _incoming/option-photos/b3/muro/) — the same plain 340x490 crop, box intact. Muro Grape's box
     // prints "VERY STRAWBERRY" on its side panel: that is the maker's artwork, kept as is.
+    // Round "option photos" (08/10): Apple Juice, Mineral Water, Strawberry Peach and Cola added — ihavevape.net lists 14
+    // flavours (these 4 + the 10 above) and vapeclubth.org/muro-pod-juice.html carries the same 14 in its option table;
+    // box art from ihavevape.net (Apple Juice / Mineral Water / Strawberry Peach 1080 px posters, Cola 600 px), the same
+    // plain 340x490 crop of the whole box (_incoming/option-photos/b4/muro/crop.js); on the three posters the maker's pod
+    // stands against the box's right edge, so a sliver of that real pod shows at the crop's right edge — kept, not painted
+    // out. Not stocked yet = availability "unknown".
     assets: [
       {
         kind: "official-photo",
@@ -247,6 +253,10 @@ export const unbrandedProducts: Product[] = [
       { id: "honey-lemon", name: "Honey Lemon", swatchHex: "#d9b23a", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/honey-lemon.webp", alt: "Muro 3ML, Honey Lemon flavor box" } },
       { id: "very-strawberry", name: "Very Strawberry", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/very-strawberry.webp", alt: "Muro 3ML, Very Strawberry flavor box" } },
       { id: "double-shisha", name: "Double Shisha", swatchHex: "#7a5a2f", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/double-shisha.webp", alt: "Muro 3ML, Double Shisha flavor box" } },
+      { id: "apple-juice", name: "Apple Juice", swatchHex: "#9e1b32", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/apple-juice.webp", alt: "Muro 3ML, Apple Juice flavor box" } },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#2a8fd6", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/mineral-water.webp", alt: "Muro 3ML, Mineral Water flavor box" } },
+      { id: "strawberry-peach", name: "Strawberry Peach", swatchHex: "#d23a5a", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/strawberry-peach.webp", alt: "Muro 3ML, Strawberry Peach flavor box" } },
+      { id: "cola", name: "Cola", swatchHex: "#a3201f", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/cola.webp", alt: "Muro 3ML, Cola flavor box" } },
     ],
     specifications: [{ key: "capacity", label: "Capacity", value: "3mL", sourceStatus: "verified" }],
     features: [],
@@ -254,7 +264,7 @@ export const unbrandedProducts: Product[] = [
     whoIsThisFor: ["Owners of a compatible pod device restocking flavor cartridges."],
     faqs: [],
     relatedProductSlugs: ["muro-space-15k", "muro-sc-8000", "muro-connector-20k", "muro-freebase", "muro-salt-nic"],
-    sourceUrls: ["https://vapemun.com/", "https://ecigelm.com/"],
+    sourceUrls: ["https://vapemun.com/", "https://ecigelm.com/", "https://ihavevape.net/product/close-system-muro-3-ml/", "https://vapeclubth.org/muro-pod-juice.html"],
   },
   {
     id: "muro-sc-8000",

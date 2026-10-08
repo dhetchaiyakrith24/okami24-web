@@ -3543,6 +3543,32 @@
   "fileName": "variant-strawberry-ice-cream-v2.webp"
  },
  {
+  "source": "_incoming/image-sitewide/infy2/final/milk-tea-cha.png",
+  "slug": "infy-20k",
+  "role": "variant",
+  "id": "milk-tea-cha",
+  "aiRender": {
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; option-photos batch 3 08/10: same master + script, outline #e09057 read by infy2/src4/sample4.js, name split as printed on the device)",
+   "reference": "master: as the other 22 flavours (infy2/gen/m2-a.png); outline colour + name: this flavour's device art vap150ipro.com/wp-content/uploads/2026/08/infy-20k-Milk-Tea-Cha.webp (_incoming/image-sitewide/infy2/src4/Milk-Tea-Cha.webp — reseller art, used as colour/name reference only: shop watermark + spec chips) — infy.my has no 20K page",
+   "fidelitySheet": "_incoming/image-sitewide/infy2/src4/out3.png + mtc-zoom.png (letters, outline colour, name vs the reference art)"
+  },
+  "note": "option-photos round batch 3 (08/10) — image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-milk-tea-cha-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/infy2/final/matcha.png",
+  "slug": "infy-20k",
+  "role": "variant",
+  "id": "matcha",
+  "aiRender": {
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; option-photos batch 3 08/10: same master + script, outline #8e9f3f read by infy2/src4/sample4.js, name split as printed on the device)",
+   "reference": "master: as the other 22 flavours (infy2/gen/m2-a.png); outline colour + name: this flavour's device art vap150ipro.com/wp-content/uploads/2026/08/infy-20k-Matcha.webp (_incoming/image-sitewide/infy2/src4/Matcha.webp — reseller art, used as colour/name reference only: shop watermark + spec chips) — infy.my has no 20K page",
+   "fidelitySheet": "_incoming/image-sitewide/infy2/src4/out3.png + mtc-zoom.png (letters, outline colour, name vs the reference art)"
+  },
+  "note": "option-photos round batch 3 (08/10) — image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-matcha-v2.webp"
+ },
+ {
   "source": "_incoming/image-sitewide/gen/muro-card-1-cut.png",
   "slug": "muro-sc-8000",
   "role": "card",
@@ -5867,6 +5893,131 @@
   "note": "site-wide template round batch 4g 05/10 - TFIT's own Watermelon product shot (tfitvape.com API smallPic 2250 px, white background; _incoming/sitewide-template/4/facts-tfit-m-power-20k.md), no AI: cut by scripts/flatcut.js + 2 px matte erode (_incoming/sitewide-template/2/2fimg/g4card/erode.js), upright (disposable card standard)"
  },
  {
+  "source": "_incoming/option-photos/b3/tfit/out/blue-ice.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "blue-ice",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-blue-ice.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/double-mint.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "double-mint",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-double-mint.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/grape.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-grape.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/grape-apple.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "grape-apple",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-grape-apple.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/hami-melon.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "hami-melon",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-hami-melon.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/mix-berry.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "mix-berry",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-mix-berry.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/rainbow-candy.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "rainbow-candy",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-rainbow-candy.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/sakura-grape.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "sakura-grape",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-sakura-grape.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b3/tfit/out/strawberry.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "strawberry",
+  "aiRender": {
+   "tool": "no AI image model: TFIT's own Watermelon product shot (the card cut, _incoming/sitewide-template/4/4g/card-cut2.png) with the printed WATERMELON erased (column blend from the clean body rows) and this flavour's name printed in white Arial Bold, cap height + width matched to the original print, line split as TFIT prints it — _incoming/option-photos/b3/tfit/names.js (LESSONS 11)",
+   "reference": "TFIT's 10-flavour chart (tfitvape.com poster 07, _incoming/sitewide-template/4/posters/tfit-m-power-20k/07-10-flavours.png): every flavour is the same device, only the small white name near the base differs",
+   "fidelitySheet": "_incoming/option-photos/b3/tfit/sheet.png (the 10 printed names vs the chart)"
+  },
+  "note": "option-photos round batch 3 (08/10) — one master for every flavour so only the name changes when a customer swipes; upright like the card",
+  "fileName": "variant-strawberry.webp"
+ },
+ {
+  "source": "_incoming/sitewide-template/4/4g/card-cut2.png",
+  "slug": "tfit-m-power-20k",
+  "role": "variant",
+  "id": "watermelon",
+  "note": "option-photos round batch 3 (08/10) — TFIT's own Watermelon product shot itself (no edit), same cut as the card; upright like the card",
+  "fileName": "variant-watermelon.webp"
+ },
+ {
   "source": "_incoming/sitewide-template/5/mood/ai/t-berry-garden.png",
   "slug": "mood-monster-14k",
   "role": "card",
@@ -7221,5 +7372,267 @@
   },
   "note": "image-look J5 08/10 — card from the Strawberry render, upright like the flavour photos (was SALTHUB's pod tilted)",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c56.png",
+  "slug": "coil-56",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Vapesourcing's photo of the silver PnP X Cartridge MTL (800 px) — https://image.vapesourcing.com/images/202509/silver-voopoo-pnp-x-tank-empty-mtl.jpg (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c56-S1.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c56.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c56.png",
+  "slug": "coil-56",
+  "role": "variant",
+  "id": "coil-56-3",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Vapesourcing's photo of the silver PnP X Cartridge MTL (800 px) — https://image.vapesourcing.com/images/202509/silver-voopoo-pnp-x-tank-empty-mtl.jpg (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c56-S1.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c56.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-56-3.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c68.png",
+  "slug": "coil-68",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "VOOPOO's own product photo of the black ITO-X (1000 px, VOOPOO's Shopline store) — https://img-va.myshopline.com/image/store/1747294110724/Black1000.jpg (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c68-S1.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c68.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c68.png",
+  "slug": "coil-68",
+  "role": "variant",
+  "id": "coil-68-1",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "VOOPOO's own product photo of the black ITO-X (1000 px, VOOPOO's Shopline store) — https://img-va.myshopline.com/image/store/1747294110724/Black1000.jpg (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c68-S1.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c68.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-68-1.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c87one.png",
+  "slug": "coil-87",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "3FVape's photo of the black TPP Pod 2-pack (one pod shown — the shop sells it per pod) — https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c87-S1 (right pod of the pair).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c87one.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c87one.png",
+  "slug": "coil-87",
+  "role": "variant",
+  "id": "coil-87-1",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "3FVape's photo of the black TPP Pod 2-pack (one pod shown — the shop sells it per pod) — https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c87-S1 (right pod of the pair).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c87one.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-87-1.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c83.png",
+  "slug": "coil-83",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Vapormo's photo of the ARGUS POD empty cartridge (800 px, SKU VAPC20221025) — https://cdn.shopify.com/s/files/1/0404/9154/8827/products/VAPC20221025.jpg (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c83-S1.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c83.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c38-card.png",
+  "slug": "coil-38",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Giant Vapes' variant photos of the TPP-DM2 box (700 px) and the TPP-DM4 box (800 px), each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c38-dm2-S1 + c38-dm4-S1 (card = the two composed by stagger.js, no AI).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c38-dm2.png + _incoming/option-photos/b4/fid/c38-dm4.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye (card = the option renders composed, no AI)"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c38-dm2.png",
+  "slug": "coil-38",
+  "role": "variant",
+  "id": "coil-38-2",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Giant Vapes' variant photos of the TPP-DM2 box (700 px) and the TPP-DM4 box (800 px), each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c38-dm2-S1 + c38-dm4-S1 (card = the two composed by stagger.js, no AI).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c38-dm2.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-38-2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c38-dm4s.png",
+  "slug": "coil-38",
+  "role": "variant",
+  "id": "coil-38-4",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Giant Vapes' variant photos of the TPP-DM2 box (700 px) and the TPP-DM4 box (800 px), each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c38-dm2-S1 + c38-dm4-S1 (card = the two composed by stagger.js, no AI).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c38-dm4.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white · source = the keyed render with a light unsharp mask (sharp sigma 0.7) so it clears the sharpness gate against the card",
+  "fileName": "variant-coil-38-4.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c55.png",
+  "slug": "coil-55",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Vapesourcing's photo of the CALIBURN G2 pod (800 px) — https://image.vapesourcing.com/images/202111/uwell-caliburn-g2-pod3_(1).jpg (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c55-S1.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c55.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c74.png",
+  "slug": "coil-74",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Vapormo's photo of the CALIBURN X pod, printed side (800 px; myuwell.com shows the same PRO FOCS pod on the device) — https://www.vapormo.com/products/uwell-caliburn-x-replacement-empty-pod-cartridge-3ml-2pcs-pack (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c74-S1.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c74.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c74.png",
+  "slug": "coil-74",
+  "role": "variant",
+  "id": "coil-74-1",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Vapormo's photo of the CALIBURN X pod, printed side (800 px; myuwell.com shows the same PRO FOCS pod on the device) — https://www.vapormo.com/products/uwell-caliburn-x-replacement-empty-pod-cartridge-3ml-2pcs-pack (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c74-S1.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c74.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-74-1.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c53.png",
+  "slug": "coil-53",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Giant Vapes' photo of the 1.0 ohm box with its blister (500 px, the box reads 1 Ω) — https://giantvapes.com/products/uwell-caliburn-g-replacement-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c53-S1.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c53.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c53.png",
+  "slug": "coil-53",
+  "role": "variant",
+  "id": "coil-53-2",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Giant Vapes' photo of the 1.0 ohm box with its blister (500 px, the box reads 1 Ω) — https://giantvapes.com/products/uwell-caliburn-g-replacement-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c53-S1.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c53.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-53-2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c54.png",
+  "slug": "coil-54",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "evolutionvaping.co.uk's photo of the 2-pack (600 px, the largest clean pod-only photo found 08/10) — https://evolutionvaping.co.uk/products/feelin-mini-replacement-pods-2-pack-by-nevoks (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c54-S2.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c54.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c89-card.png",
+  "slug": "coil-89",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Vapormo's photo of both Jellybox V pods side by side (800 px; 0.8Ω with three red stripes, 1.0Ω without) — https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c89-08-S1 + c89-10-S2 (card = the two staggered by stagger.js — 1.0Ω behind, 0.8Ω in front — no AI).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c89-08.png + _incoming/option-photos/b4/fid/c89-10.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye (card = the option renders composed, no AI)"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c89-08.png",
+  "slug": "coil-89",
+  "role": "variant",
+  "id": "coil-89-1",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Vapormo's photo of both Jellybox V pods side by side (800 px; 0.8Ω with three red stripes, 1.0Ω without) — https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c89-08-S1 + c89-10-S2 (card = the two staggered by stagger.js — 1.0Ω behind, 0.8Ω in front — no AI).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c89-08.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-89-1.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c89-10.png",
+  "slug": "coil-89",
+  "role": "variant",
+  "id": "coil-89-2",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Vapormo's photo of both Jellybox V pods side by side (800 px; 0.8Ω with three red stripes, 1.0Ω without) — https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c89-08-S1 + c89-10-S2 (card = the two staggered by stagger.js — 1.0Ω behind, 0.8Ω in front — no AI).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c89-10.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-89-2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c70.png",
+  "slug": "coil-70",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Element Vape's photo of the 0.7Ω box with its blister (700 px; dotmod no longer lists 0.7Ω, so no maker photo exists) — https://www.elementvape.com/dotmod-dotcoils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c70-S1.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c70.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c70.png",
+  "slug": "coil-70",
+  "role": "variant",
+  "id": "coil-70-2",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Element Vape's photo of the 0.7Ω box with its blister (700 px; dotmod no longer lists 0.7Ω, so no maker photo exists) — https://www.elementvape.com/dotmod-dotcoils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c70-S1.png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c70.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-70-2.webp"
  }
 ]

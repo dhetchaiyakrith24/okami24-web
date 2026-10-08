@@ -7,8 +7,8 @@ import { HeroProduct } from "./HeroProduct";
 /**
  * SALTHUB M BAR — the visual energy peak. Straighter, more centered travel than the two previous
  * chapters (less lateral, more toward-camera) so this chapter reads as the most direct, most
- * dominant pass of the sequence. The M Bar 10K travels through first; the M Bar 15K — already
- * red/black, the same identity palette as OKami itself — follows along the same corridor. The
+ * dominant pass of the sequence. The M Bar 10K travels through first; the M Switch Kit (in place
+ * of the M Bar 15K, folded into the Kit 08/10) — black, the dark side of OKami's palette — follows along the same corridor. The
  * flare that peaks here is the same energy the finale's convergence stage pulls back inward.
  */
 export function Scene4Hero({ progress }: { progress: MotionValue<number> }) {
@@ -42,8 +42,8 @@ export function Scene4Hero({ progress }: { progress: MotionValue<number> }) {
         />
         <HeroProduct
           progress={progress}
-          src="/assets/products/m-bar-15k/card.webp"
-          alt="SaltHub M Bar 15K"
+          src="/assets/products/m-switch-kit/hero-scene4.webp"
+          alt="SaltHub M Switch Kit"
           sizeClass="h-[50vh] w-[25vh] sm:h-[58vh] sm:w-[29vh]"
           glow="rgba(255,60,60,0.45)"
           focusAt={[0.38, 0.54, 0.68, 0.80]}
