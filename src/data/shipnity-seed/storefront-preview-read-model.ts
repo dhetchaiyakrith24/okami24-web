@@ -31,7 +31,7 @@
  */
 
 import { brands, getBrand } from "@/data/brands";
-import { hasNoSku, isMarkedSoldOut } from "@/data/stock/apply-sold-out";
+import { isMarkedSoldOut, isProductMarkedSoldOut } from "@/data/stock/apply-sold-out";
 import { categories, getCategory } from "@/data/categories";
 import { families } from "@/data/families";
 import { validateProductMasterRegistry, type ProductMasterInput } from "@/data/product-master-schema";
@@ -245,7 +245,7 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
     priceReferenceSource: product.pricing.priceReference?.source ?? null,
     optionAxisLabel: axis?.label ?? null,
     optionAxisCode: axis?.code ?? null,
-    availabilityStatus: hasNoSku(product.slug) || everyVariantSoldOut ? "out-of-stock" : product.availability.status,
+    availabilityStatus: isProductMarkedSoldOut(product.slug) || everyVariantSoldOut ? "out-of-stock" : product.availability.status,
     variants,
     specifications: product.specifications,
     sourceUrls: product.sourceUrls,
