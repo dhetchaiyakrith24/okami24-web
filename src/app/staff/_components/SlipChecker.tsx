@@ -134,7 +134,15 @@ const FLAG_TONE: Record<Flag["tone"], string> = {
 };
 
 /** After the order is confirmed: one tap so the next check of this transfer says "already used". Undo = a mis-tap. */
-function UsedMark({ transRef, initialUsedAt }: { transRef: string; initialUsedAt: string | null }) {
+function UsedMark({
+  transRef,
+  initialUsedAt,
+  onChange,
+}: {
+  transRef: string;
+  initialUsedAt: string | null;
+  onChange: (usedAt: string | null) => void;
+}) {
   const router = useRouter();
   const [usedAt, setUsedAt] = useState<string | null>(initialUsedAt);
   const [pending, setPending] = useState(false);
@@ -155,6 +163,7 @@ function UsedMark({ transRef, initialUsedAt }: { transRef: string; initialUsedAt
       const data = (await res.json().catch(() => null)) as SlipUsedResponse | null;
       if (!data || !data.ok) return setError("บันทึกไม่สำเร็จ ลองกดอีกครั้ง");
       setUsedAt(data.usedAt);
+      onChange(data.usedAt);
       router.refresh();
     } catch {
       setError("บันทึกไม่สำเร็จ ลองกดอีกครั้ง");
@@ -224,7 +233,12 @@ function Party({ label, party, chip }: { label: string; party: PartyView | null;
 }
 
 function Result({ result, onNext }: { result: OkResult; onNext: () => void }) {
-  const all = flagsFor(result);
+  // "Undo (mis-tap)" on a slip that arrived already marked: the red "already used" headline goes with the mark
+  // (checker #383). Marking a slip here never turns its own headline red — that warning is for the NEXT check.
+  const [unmarked, setUnmarked] = useState(false);
+  const shown: OkResult =
+    unmarked && result.duplicate?.by === "log" ? { ...result, duplicate: { ...result.duplicate, usedAt: null } } : result;
+  const all = flagsFor(shown);
   const flags = all.filter((f) => f.tone !== "info");
   const notes = all.filter((f) => f.tone === "info");
   const bad = flags.some((f) => f.tone === "bad");
@@ -278,7 +292,12 @@ function Result({ result, onNext }: { result: OkResult; onNext: () => void }) {
       </dl>
 
       {(result.slip.receiverStatus !== "mismatch" || usedAt) && (
-        <UsedMark key={result.slip.transRef} transRef={result.slip.transRef} initialUsedAt={usedAt} />
+        <UsedMark
+          key={result.slip.transRef}
+          transRef={result.slip.transRef}
+          initialUsedAt={usedAt}
+          onChange={(next) => setUnmarked(next === null)}
+        />
       )}
 
       <div className="flex flex-col gap-1 text-xs leading-relaxed text-foreground-dim">
