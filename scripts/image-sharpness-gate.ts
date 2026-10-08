@@ -10,8 +10,12 @@
  *                 351-px phone hero, so a 625-px file is drawn 1.7x enlarged on a 3x phone.
  *   phoneSharp  — mean |laplacian| inside the product (alpha >= 128) after resizing the product to the size a
  *                 3x phone actually draws it (1053 device px for the file's long side, object-contain). Higher =
- *                 crisper. A modified file must reach >= 90% of the file it replaces; an added variant file must
- *                 reach >= 90% of the product's own card (what the customer saw before the new photo). Lineups: canvas
+ *                 crisper. A modified file must reach >= 90% of the file it replaces; an added variant-<id> file
+ *                 that replaces an option photo deleted in the same diff (same product, same <id> in any case, e.g.
+ *                 variants/Coil-1-1.webp -> variant-coil-1-1.webp — a new name keeps the CDN from serving the old file)
+ *                 must reach >= 90% of that deleted file (IMAGE_SPEC "ของรูปที่มันแทน", round "3 coil photos" 08/10);
+ *                 any other added variant file must reach >= 90% of the product's own card (what the customer saw
+ *                 before the new photo). Lineups: canvas
  *                 check only (a strip → grid layout change moves the number without any blur).
  *   restored    — a modified file byte-identical to an earlier version of the same path on <base> passes as
  *                 "restored" (putting back photos the site already showed, owner 28/09).
@@ -84,7 +88,13 @@ function cardOf(dir: string): string | null {
 
 (async () => {
   const diff = git(["diff", "--name-status", "--no-renames", base, "--", "public/assets/products"]).toString().trim();
-  const rows = diff ? diff.split(/\r?\n/).map((l) => l.split("\t")).filter(([st, f]) => /^[AM]$/.test(st) && /\.(webp|png|jpe?g)$/i.test(f)) : [];
+  const all = diff ? diff.split(/\r?\n/).map((l) => l.split("\t")) : [];
+  const rows = all.filter(([st, f]) => /^[AM]$/.test(st) && /\.(webp|png|jpe?g)$/i.test(f));
+  // option photos deleted in this diff, keyed by product dir + lower-case id: the file a renamed variant-<id> replaces
+  const productDir = (f: string) => f.split("/").slice(0, 4).join("/");
+  const idOf = (f: string) => path.basename(f).replace(/\.[^.]+$/, "").replace(/^variant-/i, "").toLowerCase();
+  const deleted = new Map<string, string>();
+  for (const [st, f] of all) if (st === "D" && /\.(webp|png|jpe?g)$/i.test(f)) deleted.set(`${productDir(f)}|${idOf(f)}`, f);
   if (!rows.length) { console.log(`no product image added or modified since ${base}\nPASS`); return; }
   let fail = 0;
   for (const [st, f] of rows) {
@@ -96,14 +106,19 @@ function cardOf(dir: string): string | null {
     const problems: string[] = [];
     if (!isDetail && now.canvas < MIN_CANVAS) problems.push(`canvas ${now.canvas} < ${MIN_CANVAS}`);
     let ref: string | null = null, refSharp: number | null = null;
+    let refKind = st === "M" ? "the file it replaces" : "the product card";
     // a lineup's layout can change (strip → grid): the number then measures layout, not blur — canvas check only,
     // the owner judges a lineup by eye on the 3x / 1440 before/after
     if (name.startsWith("lineup")) ref = null;
     else if (st === "M") ref = f;
-    else if (/^variant-/.test(name)) ref = cardOf(path.posix.dirname(f));
+    else if (/^variant-/.test(name)) {
+      const replaced = deleted.get(`${productDir(f)}|${idOf(f)}`);
+      ref = replaced ?? cardOf(path.posix.dirname(f));
+      if (replaced) refKind = "the option photo it replaces";
+    }
     if (ref) {
       refSharp = (await phoneSharp(git(["show", `${base}:${ref}`]))).sharp;
-      if (now.sharp < refSharp * RATIO) problems.push(`phoneSharp ${now.sharp} < 90% of ${st === "M" ? "the file it replaces" : "the product card"} (${refSharp})`);
+      if (now.sharp < refSharp * RATIO) problems.push(`phoneSharp ${now.sharp} < 90% of ${refKind} (${refSharp})`);
     }
     if (problems.length) fail++;
     console.log(`${problems.length ? "FAIL" : "ok  "}  ${f}  canvas ${now.canvas} · product ${now.productLong}px · phoneSharp ${now.sharp}${refSharp !== null ? ` (ref ${refSharp})` : ""}${problems.length ? "  ← " + problems.join("; ") : ""}`);
