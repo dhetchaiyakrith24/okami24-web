@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge, on top of #405 86394087; last site merge = #404 e977207 (stock 2c, item 3u) [ตรวจแล้ว].
-  OPEN site PR #401 (coil-94 box shots, item 3c) — checker PASS, NOT merged on purpose: owner "ขึ้นเว็บวันที่ 11/10".
+1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #401 185a56b7 (coil-94 box
+  shots, item 3c; deploy run 37816800272 success) [ตรวจแล้ว].
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
   #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
   deploy job ends — wait, then curl.
@@ -21,9 +21,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Image renders = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — 0 credits this chat: balance 5,082.4, every Nano
   Banana Pro transaction 0 [ตรวจแล้ว]; never the Higgsfield MCP generate tools. Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main: `git log --oneline origin/main..origin/coil94-box-b2` = f1496ea + e4e9f4c (PR #401, both checker-passed —
-  e4e9f4c re-check PASS) [ตรวจแล้ว]. Worktrees: `_incoming/wt-coil3` (own node_modules copy, on branch coil94-box-b2; test server 3412
-  stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 (this docs PR) — removable after #401 merges (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
+2 ahead of main: nothing of item 3c (#401 merged) [ตรวจแล้ว]. Worktrees: `_incoming/wt-coil3` (own node_modules copy, on merged
+  branch coil94-box-b2; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
@@ -35,16 +34,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (card-72 11.6 vs 22.6, card-94 6.8 vs 15.8) — Friday + checker agree: clean product vs text-heavy photo. Minor, open: faint
   stray pixels along the pod bottoms of 94-2/94-3 visible only at 2.7x zoom (checker `_incoming/chk-coil2/pod92b.jpg`).
   Tools + sources: `_incoming/coil3/` (key/D-*.png = the masters process-images reads; fix/ = checker fixes, pre-D-*.png backups).
-3c READY, MERGE ON 11/10 — follow-up batch of round "3 coil photos" (owner 08/10 evening: coil-94 box shots 0.6 / 0.9 / 1.2
-  "ยังดูกราฟฟิกไป" → B, more photographic). PR #401 (branch coil94-box-b2, head e4e9f4c): variant-coil-94-2/3/4-v2.webp (new names,
-  old three removed; card + 0.4 untouched). Box upright on charcoal, 4 pods standing in front (Chrome Unlimited, 0 credits).
-  Checker: f1496ea FAIL on the 0.6 file only (pod-4 edge steps, floor slab, specks, garbled top strip) → re-cut e4e9f4c → re-check
-  PASS [ตรวจแล้ว]. Gate PASS · phoneSharp new/old 10.14/9.78 · 11.43/11.59 · 13.07/10.96 · tsc 0 · verify:catalog 31/31 ·
-  self-merge-check BIG (image work, IMAGE_SPEC §7 = merge allowed). GitHub checks on e4e9f4c green 08/10 (checks · copy ×2 · decide) [ตรวจแล้ว].
-  NEXT STEP on 11/10: `gh pr checks 401` all green → merge commit (pinned head e4e9f4c; PR moved = re-check) → deploy → curl
-  /products/coil-94 + the three -v2 files → report with live links (LESSONS ช18) + `_incoming/coil3/b2/proof/pair-390.jpg` /
-  `pair-1440.jpg` (owner already got both 08/10) [รอเจ้าของ: owner has not said "OK" to the look — style 1 still possible].
-  Tools: `_incoming/coil3/b2/` (podfill.js · soften.js · logofix.js · strip.js · sharpen.js · apply-b2.js · grid.js; masters key/D-c94-*-v2.png).
+3c DONE 09/10 — coil-94 box shots 0.6 / 0.9 / 1.2 re-shot more photographic (owner 08/10 "ยังดูกราฟฟิกไป" → B). LIVE #401
+  (185a56b7, 09/10 ~00:30, owner 09/10 "ผ่านครับ" to the look + "ขึ้นตอนนี้เลย" instead of 11/10) [ตรวจแล้ว]: variant-coil-94-2/3/4-v2.webp,
+  old three removed; curl: the three files 200 and byte-identical to git, /products/coil-94 references only the -v2 names, / + page 200.
+  Checker: 0.6 failed once (pod-4 edge, slab, specks, garbled strip) → re-cut → PASS. Rollback = revert #401. Tools: `_incoming/coil3/b2/`.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (opened 08/10, own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file · no site merge on 10/10. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: batch 1 survey #393 (`docs/cloud-results/stock-api-sku-survey.md` = counts, warehouse ask-list, plan, dropship
