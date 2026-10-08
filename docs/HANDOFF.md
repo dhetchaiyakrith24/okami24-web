@@ -51,16 +51,17 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   ONE job at a time (a second click is refused). Tools `_incoming/coil5/` (addcoil.js · cutJ4b.js · apply-c53.js · prompt-J.txt).
   Candidates left: coil-70 Dotmod (sold out).
   The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
-3e OPEN ROUND "SEO จ — pod" = `docs/rounds/รอบ-SEO-จ-pod-09-10.txt` (opened 09/10, own chat). 【ห้ามแตะ】 product images · price
-  files · stock · NO site merge on 10/10. Owner 09/10: protect what ranked — /products/pod-systems head stays byte-identical.
+3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
+  deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
+  pod-systems title/meta/H1 unchanged [ตรวจแล้ว]. Owner 09/10: protect what ranked — pod-systems head byte-identical.
   Found 09/10 in GSC [ตรวจแล้ว]: Google moved bare "pod" from pod-systems (30/09–02/10, pos 3.6) to pod-kits (03/10 →, pos ~10).
-  PR #414 (branch seo-e-pod-open, head a3cd7fe7): links "พอตซิสเต็ม" in 3 guides · new article what-is-a-pod-system (th/en/zh) ·
-  pod-kits lede "Pod Kit หรือพอตคิท" · first-pod guide heading + meta stop answering "pod system คือ" (owner choice A). Gates on
-  e8cc9c4e/66252d3a: scan.js 0/112 · hydration 0/32 · raw chars 0 · word-break new flags 0 · visible-text diff = round-only.
-  seo-auditor FAIL → fixed a3cd7fe7 (head rows) · checker on a3cd7fe7 = see the PR / next §16 write. MERGE 11/10 after checker +
-  green checks; then curl + head-audit, docs PR (this) for SEO_LANDSCAPE §0 + SEO_BASELINE rows 9–10, offer the owner "request
-  indexing" for the new article. Next: GSC rows 9–10 on 22/10 and 01/11 · open idea = a pod-kits → pod-systems link slot (designer).
-  Proof: `_incoming/seo-e-pod/` (head-set.md · vt-diff/ shots · wb2.log · article-sources.md).
+  #414: links "พอตซิสเต็ม" in 3 guides · new article what-is-a-pod-system (th/en/zh) · pod-kits lede "Pod Kit หรือพอตคิท…ก็มี…" ·
+  first-pod guide heading + meta stop answering "pod system คือ" (owner choice A). Gates: scan.js 0/112 · hydration 0/32 · raw 0 ·
+  word-break new flags 0 · visible-text diff round-only. seo-auditor FAIL → fixed a3cd7fe7 · checker PASS 6/6 on a3cd7fe7; 5d8ccbef
+  (pod-kits "ก็", checker taste note) after it under 13.5 (จ). Rollback = revert 8a22c21e.
+  NEXT: offer the owner "request indexing" for /guides/what-is-a-pod-system + /products/pod-kits · GSC rows 9–10 (SEO_BASELINE) on
+  22/10 and 01/11 · open idea = a pod-kits → pod-systems link slot (designer). Round not tagged yet (round-close).
+  Proof: `_incoming/seo-e-pod/` (head-set.md · vt-diff/ shots · wb2.log · article-sources.md · podkits-390/1440.png).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (opened 08/10, own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file · no site merge on 10/10. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: batch 1 survey #393 (`docs/cloud-results/stock-api-sku-survey.md` = counts, warehouse ask-list, plan, dropship
