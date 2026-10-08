@@ -11,18 +11,18 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #401 185a56b7 (coil-94 box
-  shots, item 3c; deploy run 37816800272 success) [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #410 8276a247 (coil-38
+  photos, item 3d; deploy run 37823744743 success) [ตรวจแล้ว].
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
   #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
   deploy job ends — wait, then curl.
   Night chain OFF (day chat 08/10 turned it off). NO site merge on 10/10 (owner's LINE broadcast). Owner decisions: ask in chat + one
   line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (§18) · image work goes live after the checker.
-  Image renders = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — 0 credits this chat: balance 5,082.4, every Nano
+  Image renders = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — 0 credits this chat: balance 5,076.4, every Nano
   Banana Pro transaction 0 [ตรวจแล้ว]; never the Higgsfield MCP generate tools. Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main: nothing of item 3c (#401 merged) [ตรวจแล้ว]. Worktrees: `_incoming/wt-coil3` (own node_modules copy, on merged
-  branch coil94-box-b2; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
+2 ahead of main: nothing of items 3c/3d (#401, #410 merged) [ตรวจแล้ว]. Worktrees: `_incoming/wt-coil3` (own node_modules copy, on
+  merged branch coil38-tpp-b; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
@@ -38,6 +38,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (185a56b7, 09/10 ~00:30, owner 09/10 "ผ่านครับ" to the look + "ขึ้นตอนนี้เลย" instead of 11/10) [ตรวจแล้ว]: variant-coil-94-2/3/4-v2.webp,
   old three removed; curl: the three files 200 and byte-identical to git, /products/coil-94 references only the -v2 names, / + page 200.
   Checker: 0.6 failed once (pod-4 edge, slab, specks, garbled strip) → re-cut → PASS. Rollback = revert #401. Tools: `_incoming/coil3/b2/`.
+3d IMAGE CHAT 09/10 (owner: this chat keeps doing images on the free Chrome route until 11/10; SEO "pod" = another chat).
+  DONE: coil-38 VOOPOO TPP card + DM2 / DM4 re-shot in the coil-94 B style (box upright, 3 coils lying in front) — LIVE #410
+  8276a247 (deploy 37823744743; curl: 3 files byte-identical to git, page 200), checker PASS 5/5, 0 credits (5,076.4) [ตรวจแล้ว].
+  Tools `_incoming/coil4/` (prompts.js · coilfill.js = coil silhouettes · solidcrop.js; the worktree reaches it through a JUNCTION —
+  Git Bash `ln -s` made a stale COPY that fed process-images old masters). Candidates left: coil-53 UWELL Caliburn G coil (reference
+  box half-hidden by the blister → AI would invent the hidden words: needs a cleaner reference first) · coil-70 Dotmod (sold out).
+  The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (opened 08/10, own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file · no site merge on 10/10. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: batch 1 survey #393 (`docs/cloud-results/stock-api-sku-survey.md` = counts, warehouse ask-list, plan, dropship
