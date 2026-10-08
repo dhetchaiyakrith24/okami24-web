@@ -7461,42 +7461,42 @@
   "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/option-photos/b4/key/D-c38-card.png",
+  "source": "_incoming/coil4/D-c38-dm2-v2.png",
   "slug": "coil-38",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
-   "reference": "Giant Vapes' variant photos of the TPP-DM2 box (700 px) and the TPP-DM4 box (800 px), each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c38-dm2-S1 + c38-dm4-S1 (card = the two composed by stagger.js, no AI).png)",
-   "fidelitySheet": "_incoming/option-photos/b4/fid/c38-dm2.png + _incoming/option-photos/b4/fid/c38-dm4.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye (card = the option renders composed, no AI)"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the box photo; box upright on a #2b2e33 sweep, its 3 coils out of the blister lying in front (prompts: _incoming/coil4/prompts.js); keyed off the backdrop by _incoming/coil3/matte3.js --device (box protected, box foot line measured), coils cut by their measured silhouettes (_incoming/coil4/coilfill.js — face ellipses + body polygons), placed by place.js, specks dropped by fix/clean.js, light unsharp mask (b2/sharpen.js); DM2 side-face fine print and the mirrored word on a coil body softened (b2/soften.js — AI-invented wording)",
+   "reference": "Giant Vapes' variant photos of the TPP-DM2 box and the TPP-DM4 box, each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/coil4/in/c38-dm2.png; render _incoming/coil4/out/c38-dm2-A.png)",
+   "fidelitySheet": "_incoming/coil4/fid-c38-dm2-v2.png — box art, every printed word and number, coil shape checked by eye against the reference (IoU does not apply: the reference has the coils in a blister, the re-shoot lays them on the floor)"
   },
-  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "card-v2.webp"
+  "note": "coil-38 re-shoot 09/10 (same direction as the coil-94 box shots the owner passed 09/10) — was the flat box + blister render · card = the DM2 option shot",
+  "fileName": "card-v3.webp"
  },
  {
-  "source": "_incoming/option-photos/b4/key/D-c38-dm2.png",
+  "source": "_incoming/coil4/D-c38-dm2-v2.png",
   "slug": "coil-38",
   "role": "variant",
   "id": "coil-38-2",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
-   "reference": "Giant Vapes' variant photos of the TPP-DM2 box (700 px) and the TPP-DM4 box (800 px), each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c38-dm2-S1 + c38-dm4-S1 (card = the two composed by stagger.js, no AI).png)",
-   "fidelitySheet": "_incoming/option-photos/b4/fid/c38-dm2.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the box photo; box upright on a #2b2e33 sweep, its 3 coils out of the blister lying in front (prompts: _incoming/coil4/prompts.js); keyed off the backdrop by _incoming/coil3/matte3.js --device (box protected, box foot line measured), coils cut by their measured silhouettes (_incoming/coil4/coilfill.js — face ellipses + body polygons), placed by place.js, specks dropped by fix/clean.js, light unsharp mask (b2/sharpen.js); DM2 side-face fine print and the mirrored word on a coil body softened (b2/soften.js — AI-invented wording)",
+   "reference": "Giant Vapes' variant photos of the TPP-DM2 box and the TPP-DM4 box, each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/coil4/in/c38-dm2.png; render _incoming/coil4/out/c38-dm2-A.png)",
+   "fidelitySheet": "_incoming/coil4/fid-c38-dm2-v2.png — box art, every printed word and number, coil shape checked by eye against the reference (IoU does not apply: the reference has the coils in a blister, the re-shoot lays them on the floor)"
   },
-  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "variant-coil-38-2.webp"
+  "note": "coil-38 re-shoot 09/10 (same direction as the coil-94 box shots the owner passed 09/10) — was the flat box + blister render",
+  "fileName": "variant-coil-38-2-v2.webp"
  },
  {
-  "source": "_incoming/option-photos/b4/key/D-c38-dm4s.png",
+  "source": "_incoming/coil4/D-c38-dm4-v2.png",
   "slug": "coil-38",
   "role": "variant",
   "id": "coil-38-4",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
-   "reference": "Giant Vapes' variant photos of the TPP-DM2 box (700 px) and the TPP-DM4 box (800 px), each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c38-dm2-S1 + c38-dm4-S1 (card = the two composed by stagger.js, no AI).png)",
-   "fidelitySheet": "_incoming/option-photos/b4/fid/c38-dm4.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the box photo; box upright on a #2b2e33 sweep, its 3 coils out of the blister lying in front (prompts: _incoming/coil4/prompts.js); keyed off the backdrop by _incoming/coil3/matte3.js --device (box protected, box foot line measured), coils cut by their measured silhouettes (_incoming/coil4/coilfill.js — face ellipses + body polygons), placed by place.js, specks dropped by fix/clean.js, light unsharp mask (b2/sharpen.js); DM2 side-face fine print and the mirrored word on a coil body softened (b2/soften.js — AI-invented wording)",
+   "reference": "Giant Vapes' variant photos of the TPP-DM2 box and the TPP-DM4 box, each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/coil4/in/c38-dm4.png; render _incoming/coil4/out/c38-dm4-A.png)",
+   "fidelitySheet": "_incoming/coil4/fid-c38-dm4-v2.png — box art, every printed word and number, coil shape checked by eye against the reference (IoU does not apply: the reference has the coils in a blister, the re-shoot lays them on the floor)"
   },
-  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white · source = the keyed render with a light unsharp mask (sharp sigma 0.7) so it clears the sharpness gate against the card",
-  "fileName": "variant-coil-38-4.webp"
+  "note": "coil-38 re-shoot 09/10 (same direction as the coil-94 box shots the owner passed 09/10) — was the flat box + blister render",
+  "fileName": "variant-coil-38-4-v2.webp"
  },
  {
   "source": "_incoming/option-photos/b4/key/D-c55.png",
