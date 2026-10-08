@@ -7271,5 +7271,30 @@
   },
   "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
   "fileName": "variant-coil-68-1.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c87one.png",
+  "slug": "coil-87",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "3FVape's photo of the black TPP Pod 2-pack (one pod shown — the shop sells it per pod) — https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c87-S1 (right pod of the pair).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c87one.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c87one.png",
+  "slug": "coil-87",
+  "role": "variant",
+  "id": "coil-87-1",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "3FVape's photo of the black TPP Pod 2-pack (one pod shown — the shop sells it per pod) — https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c87-S1 (right pod of the pair).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c87one.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-87-1.webp"
  }
 ]

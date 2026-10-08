@@ -706,12 +706,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-87/card.webp",
-      alt: "VOOPOO TPP Pod in Black, 5.5mL, retail box with two pods, one showing the ADAPT TPP COILS base engraving",
-      angle: "Front, plain white-background product photography, whitespace-trimmed only. VARIANT PROOF (this is what resolved the record's long-standing Black-vs-Gunmetal question): the VOOPOO box in frame carries a printed rounded \"BLACK\" badge under the pod render, above \"TPP POD\" / \"COMPATIBLE WITH ALL TPP COIL\" — manufacturer packaging artwork, so the colour name is VOOPOO's own. Independently corroborated by the retailer's variant-to-SKU mapping (Black = VPO097-BLA, Gunmetal = VPO097-GUN). TWO DISCLOSED IMPERFECTIONS, both deliberate: (1) this is the US-market box, so a printed FDA nicotine-warning panel occupies part of the frame — it is genuine retail packaging, not a decorative marketing overlay, and a pods-only crop that excluded it was rejected for falling under product-image.ts's 400px card floor; (2) the box shows a 2-pack while this record's child is \"Black / 1 หัว\" (one head) — the Thai retailer splits the box, so product copy must never claim a 2-pack.",
-      transparentBackground: false,
-      sourceName: "Element Vape (US vape retailer; product photography — NOT VOOPOO's own site)",
-      sourceUrl: "https://www.elementvape.com/voopoo-tpp-pods",
+      src: "/assets/products/coil-87/card-v2.webp",
+      alt: "VOOPOO TPP Pod, black, 5.5 mL empty pod cartridge, studio photo",
+      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of 3FVape's photo of the black TPP Pod 2-pack (one pod shown — the shop sells it per pod); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from 3FVape's product photo",
+      sourceUrl: "https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html",
     },
   ],
   "Pod-169": [
@@ -1322,6 +1322,9 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-94-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-2.webp", alt: "UWELL CALIBURN G3 pod, 0.6Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
     "Coil-94-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-3.webp", alt: "UWELL CALIBURN G3 pod, 0.9Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
     "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-4.webp", alt: "UWELL CALIBURN G3 pod, 1.2Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
+  },
+  "Coil-87": {
+    "Coil-87-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-87/variant-coil-87-1.webp", alt: "VOOPOO TPP Pod, black, 5.5 mL empty pod cartridge, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from 3FVape's product photo", sourceUrl: "https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html" },
   },
   "Coil-68": {
     "Coil-68-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-68/variant-coil-68-1.webp", alt: "VOOPOO ITO-X pod cartridge, black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product photo", sourceUrl: "https://img-va.myshopline.com/image/store/1747294110724/Black1000.jpg" },
