@@ -23,8 +23,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 2 ahead of main: nothing after the close PR [ตรวจแล้ว]. Worktrees: `_incoming/wt-coil3` (own node_modules copy, detached at main;
   test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable
   (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
-  `git branch --show-current` before every commit. A SEPARATE CHAT (owner 08/10) is opening the round "Shipnity stock API + SKU"
-  (survey first, no site edits in its first batch) — check `git log origin/main` / open PRs before touching src/data/shipnity-seed/.
+  `git branch --show-current` before every commit. Stock round = item 3u (worktree `_incoming/wt-stock`, branch `stock-survey`)
+  — check `git log origin/main` / open PRs before touching src/data/shipnity-seed/ or src/data/stock/.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
 3 CLOSED 08/10 — round "3 coil photos" (`docs/rounds/รอบรูปคอยล์3ตัว-coil-1-72-94-08-10.txt`), tag `coil-photos-3-done`. Live: #388
   coil-1 (PnP TW15 / DW60 / TR1, TR1 rubber colours share one photo) + coil-72 (VMATE V2 0.7 / 1.2 + Top Fill, 0.4/0.7 share) ·
@@ -34,6 +34,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (card-72 11.6 vs 22.6, card-94 6.8 vs 15.8) — Friday + checker agree: clean product vs text-heavy photo. Minor, open: faint
   stray pixels along the pod bottoms of 94-2/94-3 visible only at 2.7x zoom (checker `_incoming/chk-coil2/pod92b.jpg`).
   Tools + sources: `_incoming/coil3/` (key/D-*.png = the masters process-images reads; fix/ = checker fixes, pre-D-*.png backups).
+3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (opened 08/10, a chat of its own).
+  【ห้ามแตะ】 coil-1/72/94 photos · every price file · no site merge on 10/10.
+  Batch 1 (survey, docs only) DONE = `docs/cloud-results/stock-api-sku-survey.md` (numbers, ask-list, 6-batch plan) [ตรวจแล้ว]:
+  528 web options → 249 exact SKU · 7 spelling · 7 needs a human · 42 option not in Shipnity · 223 on 29 products absent from
+  Shipnity Max. Raw dumps/scripts `_incoming/stock-api/` (re-read Max = owner logs in, app browser, `match.js`).
+  NEXT: owner answers in `docs/รอพี่ตรวจ.md` (which Shipnity · API doc/key from the stock team) → batch 2 SKU map (data, checker).
+  No scope-auditor yet: batch 1 touches no page; call it before batch 4 (the first visible change).
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
