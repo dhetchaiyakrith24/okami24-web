@@ -40,13 +40,20 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   528 web options → 249 exact SKU · 7 spelling · 7 needs a human · 42 option not in Shipnity · 223 on 29 products absent from
   Shipnity Max. Raw dumps/scripts `_incoming/stock-api/` (re-read Max = owner logs in, app browser, `match.js`).
   Owner answers 08/10 = §18 "Stock" (Max = the warehouse's · item 22 = 2 · item 23 = 1 "ยืนยัน", over half sold out is fine).
-  Batch 2 (B) on branch `stock-sku-map` (worktree `_incoming/wt-stock`, own node_modules copy): 11cb4c8 `src/data/stock/sku-map.ts`
-  (528 options: 256 SKU · 7 "check" · 265 null) + no SKU = out-of-stock through the sold-out path → fully sold-out products 2 → 28
-  (Zero Nano = the 29th: a legacy product with no options has no stock switch — open) · 04ef602 strike-through on sold-out chips.
-  JSON-LD Offer → OutOfStock on the legacy all-sold-out pages (existing rule, page.tsx). Page list = SKU-map products with a null
-  + controls (`_incoming/stock-api/pages-u.txt`; stock is read only on product pages — grep of src). Checker not run yet.
-  Open after batch 2: the 7 "check" (admin) · G4 Pro: §18 says Pod-181, Max says Pod-168 (map uses Max) · seed in-stock flags of
-  ProductMaster options are from September (only the API fixes them) · batch 3 = stock adapter when the API arrives.
+  Batch 2 (B) MERGED #395 → c9fcb73 (checker PASS 8/8 on 2559647, report `_incoming/stock-api/checker-395/report.md`; diff
+  `vt-diff2/`, shots `shots/`): `src/data/stock/sku-map.ts` (528 options: 256 SKU · 7 "check" · 265 null) · no SKU = out-of-stock
+  through the sold-out path · a product whose every option is sold out offers no order button (2559647 — the first diff left
+  17 all-sold-out pages still saying "สั่งซื้อทางไลน์": 9 → 26 after the fix) · sold-out chip names struck through. Fully sold-out
+  products 2 → 28; order button → "สินค้าหมด · สอบถามทาง LINE" on 26 pages; cart gate blocks 264/265 null options (per the
+  checker report: resolveProductRef run on every null; the 1 = Zero Nano).
+  Friday's call, owner told: 5 near names whose sibling already owns the code = null, not "check" (VMATE Starlight Red · M Switch
+  Grape Aloe · Zero Cartridge Strawberry · MOOOD Blueberry N5% · Esko Blueberry Jam).
+  NEXT batch (small, own PR, checker): Zero Nano (legacy, no options) still orderable — needs a product-level stock switch ·
+  JSON-LD of the 9 ProductMaster all-sold-out pages (coil-54/56/68/70/74/83/87/89, pod-180) still InStoreOnly (page.tsx rule
+  covers legacy only) → OutOfStock. Then batch 3 = stock adapter when the API arrives (survey doc plan) · order push carries
+  the dropship shipping fee (survey doc last section).
+  Open: the 7 "check" (admin, owner list 24) · G4 Pro code (owner list 25; map uses Max Pod-168) · ProductMaster seed in-stock
+  flags are from September (only the API fixes them) · test server 3412 = stopped at this close.
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
