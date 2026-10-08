@@ -806,12 +806,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-54/card.webp",
-      alt: "NEVOKS Feelin Mini refillable pod cartridge, box of 2, isolated product shot",
-      angle: "Plain crop of a real retailer product photo showing the retail box plus exactly 2 cartridges — matching this record's single active child (\"ขายยกกล่อง 1 กล่อง 2 หัว\", sold as 1 box of 2) exactly.",
-      transparentBackground: false,
-      sourceName: "Aromes et Liquides (French authorized NEVOKS retailer)",
-      sourceUrl: "https://www.aromes-et-liquides.fr/nevoks-feelin-mini-cartouche-x2",
+      src: "/assets/products/coil-54/card-v2.webp",
+      alt: "NEVOKS Feelin Mini empty refillable pod cartridges, pair, studio photo",
+      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of evolutionvaping.co.uk's photo of the 2-pack (600 px, the largest clean pod-only photo found 08/10); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from Evolution Vaping's product photo",
+      sourceUrl: "https://evolutionvaping.co.uk/products/feelin-mini-replacement-pods-2-pack-by-nevoks",
     },
   ],
   // Heated-tobacco wave — official first-party media throughout (found via each specific
