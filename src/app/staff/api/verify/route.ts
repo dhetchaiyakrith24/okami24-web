@@ -120,7 +120,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         receiver: SHOP_VIEW,
         sender: null,
       },
-      duplicate: { by: "log", firstCheckedAt: known.firstCheckedAt, previousChecks, usedAt: known.usedAt },
+      duplicate: { by: "log", firstCheckedAt: known.firstCheckedAt, previousChecks },
       amountCheck: amountCheck(expected, known.amountSatang),
       quota: await quotaView(false),
     });
@@ -164,7 +164,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       sender: partyView(raw.sender),
     },
     duplicate: before
-      ? { by: "log", firstCheckedAt: before.firstCheckedAt, previousChecks: before.checkCount, usedAt: before.usedAt }
+      ? { by: "log", firstCheckedAt: before.firstCheckedAt, previousChecks: before.checkCount }
       : result.data.isDuplicate
         ? { by: "easyslip" }
         : null,

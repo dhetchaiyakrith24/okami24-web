@@ -32,17 +32,13 @@ export type SlipCheckResponse =
         receiver: PartyView | null;
         sender: PartyView | null;
       };
-      /** null = first time this transfer is seen. "log" = in our log since `firstCheckedAt`; `usedAt` = when a
-       *  staff member marked it as used for an order (null = never marked) · "easyslip" = EasySlip says it was
+      /** null = first time this transfer is seen. "log" = in our log since `firstCheckedAt` · "easyslip" = EasySlip says it was
        *  verified before (e.g. from its own dashboard), not in our log. */
       duplicate:
         | null
-        | { by: "log"; firstCheckedAt: string; previousChecks: number; usedAt: string | null }
+        | { by: "log"; firstCheckedAt: string; previousChecks: number }
         | { by: "easyslip" };
       amountCheck: null | { expected: number; matches: boolean };
       quota: QuotaView | null;
     }
   | { ok: false; error: string; retryAfterSeconds?: number };
-
-/** POST /staff/api/used — mark a checked slip as used for an order, or undo a mis-tap. */
-export type SlipUsedResponse = { ok: true; usedAt: string | null } | { ok: false; error: string };
