@@ -72,14 +72,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
   also read the "validate fix" started 07/10). Hand-offs (articles / missing pages / misspellings / pages with 0 article links) =
-  SEO_LANDSCAPE §0.5. REQUEST INDEXING (owner 08/10 "36 = 1 กดได้เลย"): 22 re-headed
-  pages; 13 done 08/10 in the app browser (GSC URL inspection → "ขอการจัดทำดัชนี"): ~00:50–01:06 joiway-f4 · m-bar-15k · argus-g4 ·
-  caliburn-g5 · brands joiway · salthub · esko-bar · voopoo · uwell · relx, then ~01:22–01:28 brands/infy · caliburn-g5-lite ·
-  caliburn-g5-lite-se — both times GSC then said "เกินโควต้าแล้ว" (the limit is not a fixed 10 per day). 08/10 evening (owner signed the app
-  browser in to Google): argus-g4-mini + caliburn-g3-pro done, then "เกินโควต้าแล้ว". STILL OPEN, from 09/10: the other 7 — products
-  caliburn-g3-pro-koko · caliburn-g4-classic · drag-6 · drag-s3 · iqosheet-18 · m-bar-10k · tfit-m-power-20k (open the overview page fresh
-  for each URL, click the inspect box by its ref, then the visible "ขอการจัดทำดัชนี" by ref — a pixel click hit "ขออีกครั้ง"); on the first quota message stop for that sitting (live test ~40 s each; success = the
-  card shows "✓ ขอการจัดทำดัชนีแล้ว"; the search box needs two clicks before typing). Worktree `_incoming/wt-seo-d` + notes
+  SEO_LANDSCAPE §0.5. REQUEST INDEXING (owner 08/10 "36 = 1 กดได้เลย") DONE 22/22 [ตรวจแล้ว]: 13 on 08/10 ~01:00, 2 on 08/10 evening,
+  the last 7 on 09/10 00:05–00:20 (caliburn-g3-pro-koko · caliburn-g4-classic · drag-6 · drag-s3 · iqosheet-18 · m-bar-10k ·
+  tfit-m-power-20k — each card showed "✓ ขอการจัดทำดัชนีแล้ว", no quota message). Worktree `_incoming/wt-seo-d` + notes
   `_incoming/seo-d/` kept until the 22/10 read. Not done here: "หัวพอตใส" on m-bar-15k (item 3 (3)) · esko card "20 รสชาติ" (data round).
 3t CLOSED 08/10 — staff slip check (EasySlip), tag `slip-check-done`, live #347/#348, owner passed a real slip. Owner still to do: forward
   `docs/คู่มือแอดมิน-ตรวจสลิป.md` to the LINE team group (+ password separately). Error INVALID_API_KEY = key copied short.
