@@ -903,12 +903,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-74/card.webp",
-      alt: "UWELL Caliburn X empty replacement pod, isolated product shot, full cap-to-base view",
-      angle: "THIRD owner quality-review correction pass (2026-09-03) — REPLACES the previous asset's crop entirely, not another tweak of the same file. The SECOND-pass fix (2026-09-02) was rejected again in the owner's screenshot-based review as still \"materially lowering perceived storefront quality\": re-inspection found that version had over-cropped the pod tight enough to cut the base off at the frame edge — a genuinely different defect (awkward cropping) from what that pass's own comment described fixing. Re-built from scratch from the same real, identity-verified Element Vape source photo (\"caliburn_x_empty_cartridge...front\", 700×700), this time keeping the FULL pod including the complete base and its charging-contact notch, with even breathing-room padding on all sides so the frame reads as intentional, not truncated. The retailer's corner watermark — which sits on the plain black base band — was removed using the same truthful-repair principle as before (real pixels from elsewhere in the SAME photo, not invented detail): a horizontal mirror of the whole frame supplies correct plain-texture and correct silhouette curvature for most of the affected width (this pod is close to bilaterally symmetric), and the resulting duplicate mirror-image of the base's single notch was then removed by cloning an adjacent clean strip of the same plain base texture over it, since the real device has only one notch. Two mislabeled retailer photos of a different \"PRO FOCS\"-branded pod were found under this same listing elsewhere and rejected as wrong-product during sourcing (unchanged finding from the prior pass).",
-      transparentBackground: true, // background cut 2026-09-05 by scripts/process-images.ts --fix-opaque (flat white/dark bg → alpha); pixels of the product untouched,
-      sourceName: "Element Vape (US vape retailer; product photography — NOT UWELL's own site)",
-      sourceUrl: "https://www.elementvape.com/uwell-caliburn-x-pods",
+      src: "/assets/products/coil-74/card-v2.webp",
+      alt: "UWELL CALIBURN X empty refillable pod cartridge, 3 mL, PRO FOCS side, studio photo",
+      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapormo's photo of the CALIBURN X pod, printed side (800 px; myuwell.com shows the same PRO FOCS pod on the device); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo",
+      sourceUrl: "https://www.vapormo.com/products/uwell-caliburn-x-replacement-empty-pod-cartridge-3ml-2pcs-pack",
     },
   ],
   "Coil-89": [
@@ -1322,6 +1322,9 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-94-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-2.webp", alt: "UWELL CALIBURN G3 pod, 0.6Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
     "Coil-94-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-3.webp", alt: "UWELL CALIBURN G3 pod, 0.9Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
     "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-4.webp", alt: "UWELL CALIBURN G3 pod, 1.2Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
+  },
+  "Coil-74": {
+    "Coil-74-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-74/variant-coil-74-1.webp", alt: "UWELL CALIBURN X empty refillable pod cartridge, 3 mL, PRO FOCS side, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/uwell-caliburn-x-replacement-empty-pod-cartridge-3ml-2pcs-pack" },
   },
   "Coil-38": {
     "Coil-38-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-38/variant-coil-38-2.webp", alt: "VOOPOO TPP-DM2 0.2Ω coils, box and blister of 3, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photos", sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils" },
