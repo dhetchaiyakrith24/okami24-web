@@ -121,6 +121,7 @@ const SEARCH_TEXT = new Map<string, SearchText>(
         primary: [
           p.name,
           p.displayName,
+          ...(p.searchAliases ?? []),
           p.brandId,
           brand?.name,
           brand?.fullName,

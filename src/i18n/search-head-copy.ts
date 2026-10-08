@@ -83,7 +83,8 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
       description: `RELX ของแท้ที่ OKami24 (OKM) มีทั้ง Smash Go 12K พอตใช้แล้วทิ้ง${p("relx-smash-go-12k")} และ RELX Creator เครื่องระบบสวิตช์ที่เปลี่ยนแค่หัวพอต${p("relx-creator")} สั่งทาง LINE @okm24`,
     };
   },
-  // "15k" belongs to /products/m-bar-15k (GSC: every "15k" query landed here) — no 15K, no price in this head.
+  // "15k" belongs to /products/m-switch-kit (the shop's "M Bar 15K"; the m-bar-15k page redirects there since 08/10) —
+  // no 15K, no price in this head.
   salthub: () => ({
     title: `SALTHUB M Bar (Marbo) ของแท้ บอกราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
     description: "SALTHUB เจ้าของ M Bar ที่หลายร้านเรียกว่า Marbo มีทั้งพอตใช้แล้วทิ้ง M Bar 9K และ 10K กับเครื่องระบบสวิตช์ M Switch และ Zero สั่งทาง LINE @okm24",
@@ -224,15 +225,16 @@ export function categoryTitleTh(labelTh: string, categoryId?: string): string {
  * Wording = thai-copy's rows (2026-09-23). Coils and pods put the locked Thai type word first
  * (คอยล์ / หัวพอต / หัวพอตเปล่า — THAI_STYLE "กติกาเรียกหัวพอต"); every "สำหรับ …" names one device
  * already listed in that product's approved meta description. "(Marbo)" = the name the SALTHUB
- * line is marketed under (same source as the m-bar-15k description). m-bar-15k itself is on the
- * hold list above and keeps its SEO-ก title. Model names keep the catalog's spelling; the
+ * line is marketed under. Model names keep the catalog's spelling; the
  * iqosheet / pod-159 pages keep their generated titles so `<title>`, Product.name and H1 agree.
  */
 export const PRODUCT_TITLE_HEAD_TH: Record<string, string> = {
   "m-bar-9k": "SALTHUB M BAR 9K (Marbo) ของแท้",
   "m-bar-10k": "SALTHUB M BAR 10K (Marbo) ของแท้",
-  // Round SEO D: matches 9K/10K; "พอตคิท" because the 15K is a reusable body + pod, never a disposable (owner 06/10).
-  "m-bar-15k": "SALTHUB M BAR 15K (Marbo) พอตคิท ของแท้",
+  // Owner 08/10: the M Bar 15K page folded into the Kit — the Kit's title carries the shop's name for it (thai-copy 08/10);
+  // the Pod opens with the locked type word, like the coil/pod rows below.
+  "m-switch-kit": "SALTHUB M SWITCH KIT (M BAR 15K) ของแท้",
+  "m-switch-pod": "หัวพอต M SWITCH POD (M BAR 15K) ของแท้",
   "coil-1": "คอยล์ VOOPOO Vinci สำหรับ VINCI Pod ของแท้",
   "coil-38": "คอยล์ VOOPOO TPP สำหรับ DRAG 3 ของแท้",
   "coil-53": "คอยล์ UWELL Caliburn G2 ของแท้",
@@ -301,9 +303,9 @@ const CONNECTIVE_PREFIX = /^(และ|แล้ว|ส่วน|กับ|ซ�
 /** Rows A17 + C1–C16 — product meta descriptions that replace the tagline / shortDescription in
  *  <head> only. Keyed by product slug. Rows C3–C6 are deliberately short (no spec to draw on). */
 export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
-  // Batch 3f (06/10): wrong facts fixed (owner §18 06/10) — not a disposable, ceramic not cotton mesh, no flavour count.
-  // Round SEO D (07/10): no "M Switch" (m-switch-kit owns it) · no "ใส"/coil type (BSOT 06/10: black pods only).
-  "m-bar-15k": "M Bar 15K (Marbo 15K) จาก SALTHUB ตัวเครื่องใช้ซ้ำได้ คู่กับหัวพอตที่ถอดเปลี่ยนได้ รองรับสูงสุด 15,000 พัฟ",
+  // Owner 08/10: the M Bar 15K page folded into the Kit — the searched names first, then what the set is (thai-copy 08/10;
+  // 15,000 = the Kit's verified puffs-per-pod row).
+  "m-switch-kit": "M Bar 15K (Marbo 15K) ที่ร้านขาย คือ M Switch Kit ตัวเครื่องใช้ซ้ำได้ คู่กับหัวพอตสีดำบรรจุสำเร็จ หัวละสูงสุด 15,000 พัฟ",
   // Round SEO D (07/10) — head-only lines that open with the model name (the page's own shortDescription stays as
   // it is). Every number is a verified spec row of that product (thai-copy + seo-auditor 07/10).
   "m-bar-10k": "M Bar 10K (Marbo 10K) จาก SALTHUB พอตใช้แล้วทิ้งชาร์จซ้ำได้ รองรับสูงสุด 10,000 พัฟ ใช้คอยล์ cotton mesh มี 3 โหมดวัตต์",
