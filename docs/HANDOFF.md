@@ -27,8 +27,17 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   = 4f1bc81, conflict in content-dates.json only — 13.5 #2 (จ), GitHub checks decide) → รอพี่ตรวจ 23 ("ได้" = merge both).
   Batch 4 coils = 6 STACKED PRs, merge in order a→f, retarget the next to main after each merge (`gh pr edit <n> --base main`):
   #372 coils-a-voopoo-pods (56·68·87) → #373 coils-b-voopoo-argus-tpp (83·38) → #374 coils-c-uwell (55·74·53) → #375 coils-d-nevoks
-  (54) → #376 coils-e-rincoe (89) → #377 coils-f-dotmod (70, tip). Checker started 08/10 ~15:40 on all six — result not in yet when
-  this was written [รอ checker]. Worktree `_incoming/wt-b4s` (own node_modules copy; test server 3412 serves the tip build).
+  (54) → #376 coils-e-rincoe (89) → #377 coils-f-dotmod (70, tip). CHECKER 08/10 [ตรวจแล้ว]: #373 9980b2a · #374 45be1e3 · #375 3884601 ·
+  #376 439da10 · #377 97a9f7e (own change) = PASS with notes · #372 c8a3674 = FAIL: coil-87 card-v2 + variant-coil-87-1 keep a grey studio-floor
+  slab under the base (straight bottom edge, specks at the bottom corners). Report = `_incoming/wt-b4s/_incoming/check-coils-b4-08-10.txt`.
+  FIX IN PROGRESS (chat moved at 705k): source = `_incoming/option-photos/b4/key/D-c87one-old.png` (the right pod of D-c87.png, ft 8 —
+  clean shoulder); rows ≥ 1116 = slab (cut done → `key/D-c87one.png`), but a dark band is still left at the bottom-left/right corners
+  (check `key/z87both.png`) — clean it (or re-render the single pod `in/c87s.jpg` on a plain backdrop), then in `_incoming/wt-b4s` on
+  branch coils-a-voopoo-pods: copy the file into `_incoming/option-photos/b4/key/`, `npx tsx scripts/process-images.ts --only coil-87
+  --force`, commit, push, merge coils-a forward into b→f (as done for the DM4 fix: `git merge` each, fast-forward pushes, NO force
+  push), re-check only coil-87 (13.4), sharpness gate, then merge the stack a→f. Checker notes kept (not FAIL): coil-55 tiny serial
+  line on the tank · DM2 side-panel micro text · coil-53 grey floor reflection under the blister · coil-53/70 cards > 150 KB.
+  Worktree `_incoming/wt-b4s` (own node_modules copy; test server 3412 serves the tip build — stop it before switching branches).
   `muro-3ml-4-flavours` (wt-muro4, adddd44, pushed, NO PR yet, not checked) → waits รอพี่ตรวจ 25 (boxes at 340x490 = extends the
   IMAGE_SPEC exception; "1" = open PR + checker + add the 4 files to the exception line). Branch `option-photos-4-coils` = the
   same 11 products as one branch (superseded by the stack, delete when the stack is merged).
@@ -48,18 +57,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        "1" = swap to `m-switch-kit/card-v2.webp`, + `scripts/image-audit.ts` row).
    (4) batch 3: MURO live #367 · INFY #366 + TFIT #368 ready (above) · nexBAR 11 = reason rows
        (`_incoming/option-photos/b3/reasons.md`: 6 exist only as the Vivid Edition = other design → รอพี่ตรวจ 22 · 5 none anywhere).
-   (5) batch 4 coils DONE on branches (08/10): 11 products, cards + every option photo, Higgsfield re-shoot through Chrome Unlimited
-       (0 credits) → keyed by `_incoming/option-photos/b4/matte3.js` (`--ft 8`, `--grow 1.5 --fblur 2` on grainy backdrops, `--protect`
-       boxes over dark/black parts) → `apply.js` + `commit-one-any.sh` (data + map, deterministic) · two-option cards composed by
-       `pair.js`/`stagger.js` (no AI). count-gaps on the tip: 33 → 23 [ตรวจแล้ว] (left: TFIT 10 + INFY 2 = #368/#366 · nexBAR 11 =
-       reasons). Gates on the tip: tsc 0 · verify:catalog 30/30 · sharpness PASS 21/21 [ตรวจแล้ว]. Open notes: RINCOE 1.0 IoU 0.94 + TPP-DM2
-       0.937 (< 0.95 default — reference cut halo / box+blister shift; checker to judge) · coil-53 card 155 KB, coil-70 160 KB (cap 150).
-       Not in batch, still retailer photos: coil-72 Vmate yellow boxes · coil-94 G4&G3 pods (both have per-option photos already).
-       Higgsfield-through-Chrome + keying know-how = LESSONS 29.
-       NEXT: (a) checker result → fix → merge the stack a→f (image PRs: IMAGE_SPEC §7, merge even if BIG) → curl + after shots
-       (`_incoming/option-photos/b4/shots.sh after`, live) to the owner; (b) owner answers 20–23 + 25 → merge #364 / #366 / #368 / MURO;
-       (c) round close (batch 5) = count-gaps + the nexBAR reasons table (`_incoming/option-photos/b3/reasons.md`) → docs, tag
-       option-photos-done (skill round-close).
+   (5) batch 4 coils on branches (08/10, item 2): 11 products, cards + every option photo, Higgsfield via Chrome (0 credits), tools +
+       know-how = `_incoming/option-photos/b4/` + LESSONS 29. count-gaps on the tip 33 → 23 [ตรวจแล้ว] (left: TFIT 10 + INFY 2 = #368/#366 ·
+       nexBAR 11 = reasons) · tsc 0 · verify:catalog 30/30 · sharpness 21/21. Not in batch: coil-72 Vmate · coil-94 (retailer photos).
+       NEXT: (a) coil-87 fix (item 2) → merge stack a→f (IMAGE_SPEC §7) → after shots `b4/shots.sh after` vs live → owner; (b) owner
+       answers 20–23 + 25 → merge #364/#366/#368/MURO; (c) round close = count-gaps + nexBAR reasons table → docs, tag option-photos-done.
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
