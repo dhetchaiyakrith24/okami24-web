@@ -61,8 +61,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 3t CLOSED 08/10 — staff slip check (EasySlip), tag `slip-check-done`, live #347/#348, owner passed a real slip. Owner still to do: forward
   `docs/คู่มือแอดมิน-ตรวจสลิป.md` to the LINE team group (+ password separately). Error INVALID_API_KEY = key copied short.
   FIX #383 (08/10, staff case): slips paid through the shop's K+ QR name the receiver by the QR reference 004999137680913
-  (payment.ts `promptPayRef`) → now "match"; same image is answered from the log only when it was "match"; staff mark
-  "used for an order" (migration 0006) → re-check = grey note, marked = red. Checker PASS on 5cf058a + undo fix 3e16e38.
+  (payment.ts `promptPayRef`) → now "match"; same image is answered from the log only when it was "match". Then owner 08/10
+  "ผ่านคือผ่าน ไม่ผ่านคือไม่ผ่าน ไม่ต้องบันทึก" → PR slip-check-simple: first check = verdict, the same transfer again = always
+  red with the first-check time; the "used" button of #383 removed (migration 0007 drops used_at; 0006 stays, it is applied live).
   NOT proven on a real slip yet [เชื่อว่า]: the exact masked shape EasySlip returns for that QR — an "unclear" verdict now
   logs `[slip-check] receiver unclear — shape …` (Render logs, no names/digits) → read it if staff report "unclear" again.
   Guide changed → the owner should re-send `docs/คู่มือแอดมิน-ตรวจสลิป.md` section 3 to the team.
