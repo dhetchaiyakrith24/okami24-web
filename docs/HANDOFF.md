@@ -42,8 +42,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   DONE: coil-38 VOOPOO TPP card + DM2 / DM4 re-shot in the coil-94 B style (box upright, 3 coils lying in front) — LIVE #410
   8276a247 (deploy 37823744743; curl: 3 files byte-identical to git, page 200), checker PASS 5/5, 0 credits (5,076.4) [ตรวจแล้ว].
   Tools `_incoming/coil4/` (prompts.js · coilfill.js = coil silhouettes · solidcrop.js; the worktree reaches it through a JUNCTION —
-  Git Bash `ln -s` made a stale COPY that fed process-images old masters). Candidates left: coil-53 UWELL Caliburn G coil (reference
-  box half-hidden by the blister → AI would invent the hidden words: needs a cleaner reference first) · coil-70 Dotmod (sold out).
+  Git Bash `ln -s` made a stale COPY that fed process-images old masters). Candidates left: coil-70 Dotmod (sold out) ·
+  coil-53 UWELL Caliburn G 1.0Ω — STOPPED 09/10 after 5 render rounds, NOT shipped, live image unchanged [ตรวจแล้ว]: clean box
+  reference found (Element Vape, 1 Ω box front unobstructed) and the box comes out right, but every render gives the coil body the long
+  OVAL window of the 0.8Ω mesh coil; the 1.0Ω coil shows small ROUND cotton holes (Element Vape blister photo) and no clear single-coil
+  photo of the 1.0Ω was found → wrong-variant image. Best render `_incoming/coil5/out/c53-F.png` (4 coils, box text right, flap word
+  removed) + full cut pipeline (`_incoming/coil5/` soften-flap.js · polycut.js + poly53.json · trimfloor.js · apply-c53.js) ready if a
+  real 1.0Ω single-coil photo turns up (next: search more retailers / UWELL) — or the owner accepts it [รอเจ้าของ].
   The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (opened 08/10, own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file · no site merge on 10/10. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
