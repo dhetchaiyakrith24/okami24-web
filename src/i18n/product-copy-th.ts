@@ -824,7 +824,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       0: "มีเครื่องที่ใส่หัวพอต Muro 3ML ได้อยู่แล้ว ส่วนเครื่องตัวเองใช้ได้ไหม ถามก่อนได้ทางไลน์ @okm24",
     },
     tagline: "หัวพอตบรรจุน้ำยาสำเร็จ 3mL",
-    shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 3mL ของ Muro ตอนนี้มีให้เลือก 10 รส",
+    shortDescription: "หัวพอตสำหรับเปลี่ยน บรรจุน้ำยาสำเร็จ 3mL ของ Muro มีให้เลือก 14 รส",
   },
   "muro-sc-8000": {
     whoIsThisFor: {
