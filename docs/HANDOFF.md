@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = #367 merge 663fca2 (MURO 3ML 4 box photos, owner exception 08/10 "24 ได้" →
-  IMAGE_SPEC exceptions) · #363 Zero Cartridge 4 pods re-done (live) · #359 Zero Cartridge J5 · #354 SEO ง close.
+1 main: `git fetch && git log -1 --oneline origin/main` = #371 merge 6b70cd2 (docs) · last site PR #367 (MURO 3ML 4 box photos, owner
+  exception 08/10 "24 ได้" → IMAGE_SPEC exceptions) · #363 Zero Cartridge 4 pods re-done (live) · #354 SEO ง close.
   A worktree may run its own `next build` + `next start -p 3413` (SEO chat 08/10: SITE_URL + OKAMI24_DATA_DIR=<tmp> env) — no port clash. Render: ~1 min of 502 site-wide after each deploy — wait, then curl.
   Night chain OFF + the 08/10 temporary night order deleted from the routine (owner 08/10 morning). The night run stalled 05:18 on a
   Bash permission prompt (compound `cd … && git …`) — LESSONS พ29. NO site merge on 10/10 (owner's LINE broadcast,
@@ -23,33 +23,43 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
 2 ahead of main — waiting on owner answers (`docs/รอพี่ตรวจ.md`), all checker-passed:
   #364 `mbar15k-into-kit` (wt `_incoming/wt-mbar`) = item 3 (3), checker 6/6 at d413b84 + 7d52f22 notes-only (13.5 #2 (จ)) → รอพี่ตรวจ 20 + 21
-  · #366 `option-photos-3-infy` (wt-b3, 38d1ada) + #368 `option-photos-3-tfit` (wt-b3t, e6ae755) → รอพี่ตรวจ 23 ("ได้" = merge both).
-  Main folder = on main. Worktrees: wt-mbar · wt-b3 · wt-b3m (merged, removable) · wt-b3t · wt-docs.
+  · #366 `option-photos-3-infy` (wt-b3, 38d1ada) + #368 `option-photos-3-tfit` (wt-b3t; checker passed e6ae755, then main merged in
+  = 4f1bc81, conflict in content-dates.json only — 13.5 #2 (จ), GitHub checks decide) → รอพี่ตรวจ 23 ("ได้" = merge both).
+  Batch 4 coils = 6 STACKED PRs, merge in order a→f, retarget the next to main after each merge (`gh pr edit <n> --base main`):
+  #372 coils-a-voopoo-pods (56·68·87) → #373 coils-b-voopoo-argus-tpp (83·38) → #374 coils-c-uwell (55·74·53) → #375 coils-d-nevoks
+  (54) → #376 coils-e-rincoe (89) → #377 coils-f-dotmod (70, tip). Checker started 08/10 ~15:40 on all six — result not in yet when
+  this was written [รอ checker]. Worktree `_incoming/wt-b4s` (own node_modules copy; test server 3412 serves the tip build).
+  `muro-3ml-4-flavours` (wt-muro4, adddd44, pushed, NO PR yet, not checked) → waits รอพี่ตรวจ 25 (boxes at 340x490 = extends the
+  IMAGE_SPEC exception; "1" = open PR + checker + add the 4 files to the exception line). Branch `option-photos-4-coils` = the
+  same 11 products as one branch (superseded by the stack, delete when the stack is merged).
+  Main folder = on main. Worktrees: wt-mbar · wt-b3 · wt-b3m (merged, removable) · wt-b3t · wt-b4 (superseded) · wt-b4s · wt-muro4 · wt-docs2.
   Untracked, NOT the image chat's, left alone: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching). Branch `option-photos-3` =
   LESSONS 28 only, NOT checked. Before every commit run `git branch --show-current`; more than one chat on this repo = the others in worktrees.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
 3 OPEN: round "option photos + IQOS colours" = `docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt` (owner approved 06/10 pm).
   Batches (all tier B): 1 IQOS ✓ #311 · 2 SALTHUB ✓ #312 · 3 WOTOFO nexBAR 18K 11 · TFIT M Power 20K 10 · INFY 20K 2 · Muro 3ML 4 ·
   4 coils ×8 (white box) · 5 close. Scope (scope-auditor 06/10) = round file block + `_incoming/option-photos/scope.md`.
-  Done: PRIME 5 colours · ILUMA i 7 (Bold Ruby = jp.iqos.com) · Zero Cartridge 22/22 · M Bar 15K 16/16. AI jobs (nano_banana_2 4k):
-  AI job ids of batches 1–2 + checker #312 taste notes = `git show 7d577e9:docs/HANDOFF.md` §16 item 3. Credits this round: 17.
-  PAUSED 06/10 night. Owner's order (answers 06/10 night, one chat = one round):
-   (1) DONE #317 + #319 (prices) · (2) image look J1–J5 DONE + owner-passed (#328–#359, #363). Method = IMAGE_SPEC §0 item 8 +
-       IMAGE_PROMPTS + `_incoming/look-batch/JOBS.md` J3–J5 (scripts there). New file name on every replace once live (30-day
-       cache). Quad renders: check EVERY pod of the picked render (owner caught 4 flat Zero pods 08/10 → #363).
+  Batches 1–2 + (1) prices + (2) image look J1–J5 = DONE (history + AI job ids: `git show 7d577e9:docs/HANDOFF.md` §16 item 3).
+  Credits this round: 17 (batch 4 = 0, Chrome Unlimited). New file name on every replace once live (30-day cache).
    (3) M Bar 15K — owner 08/10 chose "fold into the M Switch Kit" (BSOT M Bar 15K section, entry 08/10): PR #364 = 15K hidden +
        308 redirect to the Kit (next.config.ts) + Product.searchAliases + Kit/Pod title/meta/one visible line (thai-copy 08/10).
        Prices unchanged (Kit ฿600 / Pod ฿400 already live = the owner's 07/10 prices). Waiting: รอพี่ตรวจ 20 (head rows vs the round's
        【ห้ามแตะ】 head — drop commit 33f5df8's head rows if "2") · 21 (home desktop intro Scene4Hero still shows the clear-pod card;
        "1" = swap to `m-switch-kit/card-v2.webp`, + `scripts/image-audit.ts` row).
-   (4) batch 3: MURO live #367 · INFY #366 + TFIT #368 ready · was PRs #366–#368 (INFY 2 = recolour master · MURO 4 = MURO box art from ihavevape.net · TFIT 10 = TFIT's
-       Watermelon shot + names printed as its chart, `_incoming/option-photos/b3/tfit/names.js`). nexBAR 11 = reason rows
+   (4) batch 3: MURO live #367 · INFY #366 + TFIT #368 ready (above) · nexBAR 11 = reason rows
        (`_incoming/option-photos/b3/reasons.md`: 6 exist only as the Vivid Edition = other design → รอพี่ตรวจ 22 · 5 none anywhere).
-       NEXT CHAT (owner 08/10 "ไปรันงานต่อ"), in order: (a) merge what รอพี่ตรวจ 20–23 answers allow; (b) batch 4 coils: count-gaps PM rows
-       (coil-38 ×2 · 53 · 56 · 68 · 70 · 74 · 87 · 89 ×2, `npx tsx _incoming/sitewide-template/5/mood/count-gaps.ts`) + the white-box
-       cards (`_incoming/image-sitewide/b-coils/README.txt` — refs ready; renders = Higgsfield through Chrome only); (c) MURO 3ML is
-       missing 4 flavours the market lists (Apple Juice · Mineral Water · Strawberry Peach · Cola — ihavevape.net has box art; catalog
-       completeness rule; confirm with a 2nd source before adding); (d) round close (batch 5) = count-gaps + reasons table → docs.
+   (5) batch 4 coils DONE on branches (08/10): 11 products, cards + every option photo, Higgsfield re-shoot through Chrome Unlimited
+       (0 credits) → keyed by `_incoming/option-photos/b4/matte3.js` (`--ft 8`, `--grow 1.5 --fblur 2` on grainy backdrops, `--protect`
+       boxes over dark/black parts) → `apply.js` + `commit-one-any.sh` (data + map, deterministic) · two-option cards composed by
+       `pair.js`/`stagger.js` (no AI). count-gaps on the tip: 33 → 23 [ตรวจแล้ว] (left: TFIT 10 + INFY 2 = #368/#366 · nexBAR 11 =
+       reasons). Gates on the tip: tsc 0 · verify:catalog 30/30 · sharpness PASS 21/21 [ตรวจแล้ว]. Open notes: RINCOE 1.0 IoU 0.94 + TPP-DM2
+       0.937 (< 0.95 default — reference cut halo / box+blister shift; checker to judge) · coil-53 card 155 KB, coil-70 160 KB (cap 150).
+       Not in batch, still retailer photos: coil-72 Vmate yellow boxes · coil-94 G4&G3 pods (both have per-option photos already).
+       Higgsfield-through-Chrome + keying know-how = LESSONS 29.
+       NEXT: (a) checker result → fix → merge the stack a→f (image PRs: IMAGE_SPEC §7, merge even if BIG) → curl + after shots
+       (`_incoming/option-photos/b4/shots.sh after`, live) to the owner; (b) owner answers 20–23 + 25 → merge #364 / #366 / #368 / MURO;
+       (c) round close (batch 5) = count-gaps + the nexBAR reasons table (`_incoming/option-photos/b3/reasons.md`) → docs, tag
+       option-photos-done (skill round-close).
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
@@ -82,25 +92,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - "รุ่นนี้มี N กลิ่น" counts every option but the grid shows only those with a photo — 15K now 16/16 (batch 2); the rule itself
     stays (shared ProductMoreDetails) — the round's remaining batches close the other gaps.
   - `src/data/families.ts` m-bar still calls the line "disposable (9K/10K/15K)" — internal, not shown (checker #303).
-  - TFIT M Power 20K next touch (checker #301, not blocking): airflow body restates its subline (story-copy "tfit-m-power-20k" airflow
-    body) · battery subline names the charge port twice · design body «น้ำยายัง | เหลือ» at 390 → e.g. "…เห็นจากด้านนอกเลยว่าน้ำยา
-    เหลืออยู่เท่าไหร่" · TFIT Thai head lines both say "รีวิวใช้จริงบน YouTube" (SEO round).
-  - JOIWAY F4 page text LOW 948 (accepted 06/10 pm, never pad) · MOOOD 220 (no maker posters).
-  - M Bar 10K (#288): facts still over 2 from the untouched head copy + anatomy sheet + fits-with card (all down from live) —
-    10,000 ×3 · ชาร์จ ×4 · RGB ×3 · 3 โหมด ×4 (checker #288 agreed) → SEO round (head) / an anatomy-sheet touch.
-  - JOIWAY F4 (#289, checker notes): "สองถัง" said 6+ times · article "สูบได้กี่พัฟ" restates poster 01 — next F4 touch.
+  - Page-level notes held for each page's next touch (TFIT M Power 20K checker #301 · JOIWAY F4 LOW 948 + #289 · M Bar 10K #288 ·
+    UWELL/VOOPOO · DRAG 6 lineup + #253 · KOKO 7 chips wrap 6+1 at 1440 #242) = `git show 6b70cd2:docs/HANDOFF.md` §16 item 5.
   - wordbreak: «ไฟจะ» on /guides/fixing-no-draw-and-blinking-light@390 (guides = later round) · the whole-sitemap scan at 222bffe
     (`_incoming/sitewide-template/5/mood/gates/wb3.log`) lists the pre-existing flags (/about, /how-to-order, guides, G4 Pro/KOKO …) ·
     `vmate-i3/variants/*` + `argus-p3/lineup-v2.webp` unused but kept by the #286 sweep (their names appear in src/ — check by hand).
-  - UWELL/VOOPOO page-level notes held for the SEO round or each page's next touch = `git show d311dba:docs/HANDOFF.md` §16 item 5.
-  - DRAG 6 lineup-v3 still too small (owner 04/10, not in the J1–J5 queue yet) · checker #253 taste: text in the 3 wide DRAG 6
-    posters ~6–7 px at 390 · "มีโหมด SMART RBA และ TC-TCR" reads as 2.
-  - 7 highlight chips wrap 6 + 1 at 1440 on caliburn-g4-pro-koko and caliburn-g3-pro-koko (chip bar is lg:grid-cols-6) — shared
-    component, its own small PR + whole-sitemap visible-text (checker #242: not a defect of 1d).
   - (05/10) the same "explain the absence" voice is still on product pages: INFY 20K FAQ "สเปกในหน้านี้มาจากไหน" ("INFY ยังไม่ลงรุ่น
     20K ในเว็บของตัวเอง…", product-copy-th.ts infy-20k + infy.ts) — owner rule §18 06/10 pm → cut it with the INFY page's next touch.
   - (05/10) old worktrees from earlier rounds under `_incoming/wt-*` (wt-h · wt-keep · wt-pr · wt-s16 · wt-tpl; `git worktree list`) —
-    housekeeping; a worktree build cannot use a node_modules junction (Turbopack refuses), so build in the main tree only.
+    housekeeping · a worktree builds fine with its own COPY of node_modules (robocopy, 08/10 wt-b4s) — a junction is refused by Turbopack.
   - coil-94's Thai Shipnity name "UWELL คอยล์ Caliburn G4&G3 Series" shows on en/zh pages that link it (locale-hydration FAIL on
     caliburn-g3-pro(-koko), -g4-pro(-koko), -g5 en+zh, same on live) [ตรวจแล้ว] — data round. Same for coil-72 "VOOPOO คอยล์ Vmate
     Infinity Edition" on vmate-i3 en/zh (live before and after #264) [ตรวจแล้ว], and its fits-with card there still shows the
