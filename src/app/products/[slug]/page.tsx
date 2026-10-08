@@ -248,8 +248,9 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         category: categoryNameOf(publishedProduct.categoryId),
         image: publishedProduct.image ? [absoluteUrl(publishedProduct.image.src)] : undefined,
         // Only a genuinely published product has an owner-approved price — never fabricated from
-        // priceReference (see buildPublishedCatalog()'s own readiness gate).
-        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...OFFER_AVAILABILITY, ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
+        // priceReference (see buildPublishedCatalog()'s own readiness gate). Out of stock as a whole (no SKU, or every
+        // option sold out — the read model's own answer) → OutOfStock, same rule as the legacy branch (stock round 2b).
+        offers: publishedProduct.sellingPrice !== null ? { "@type": "Offer", priceCurrency: "THB", price: publishedProduct.sellingPrice, ...OFFER_AVAILABILITY, ...(publishedProduct.availabilityStatus === "out-of-stock" ? { availability: "https://schema.org/OutOfStock" } : {}), ...OFFER_SELLER, ...OFFER_MERCHANT } : undefined,
       };
       const publishedImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(publishedProduct));
       const publishedTrail = [
