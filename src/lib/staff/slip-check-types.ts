@@ -19,8 +19,10 @@ export interface PartyView {
 export type SlipCheckResponse =
   | {
       ok: true;
-      /** "api" = EasySlip answered just now · "image-cache" = this exact file was checked before, answered
-       *  from our log without calling EasySlip (no names then — the log keeps none). */
+      /** "api" = EasySlip answered just now · "image-cache" = this exact file was checked before and its receiver
+       *  was the shop's, answered from our log without calling EasySlip (the receiver shown is then the shop's own
+       *  account; the sender's name is not kept). Any other earlier verdict asks EasySlip again — a slip it has
+       *  already verified costs no quota (/en/v2/verify/bank/ "Duplicate Handling"). */
       source: "api" | "image-cache";
       slip: {
         transRef: string;
@@ -30,10 +32,17 @@ export type SlipCheckResponse =
         receiver: PartyView | null;
         sender: PartyView | null;
       };
-      /** null = first time this transfer is seen. "log" = in our log since `firstCheckedAt` ·
-       *  "easyslip" = EasySlip says it was verified before (e.g. from its own dashboard), not in our log. */
-      duplicate: null | { by: "log"; firstCheckedAt: string; previousChecks: number } | { by: "easyslip" };
+      /** null = first time this transfer is seen. "log" = in our log since `firstCheckedAt`; `usedAt` = when a
+       *  staff member marked it as used for an order (null = never marked) · "easyslip" = EasySlip says it was
+       *  verified before (e.g. from its own dashboard), not in our log. */
+      duplicate:
+        | null
+        | { by: "log"; firstCheckedAt: string; previousChecks: number; usedAt: string | null }
+        | { by: "easyslip" };
       amountCheck: null | { expected: number; matches: boolean };
       quota: QuotaView | null;
     }
   | { ok: false; error: string; retryAfterSeconds?: number };
+
+/** POST /staff/api/used — mark a checked slip as used for an order, or undo a mis-tap. */
+export type SlipUsedResponse = { ok: true; usedAt: string | null } | { ok: false; error: string };

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import type { ReceiverStatus } from "@/lib/staff/receiver-match";
-import type { PartyView, QuotaView, SlipCheckResponse } from "@/lib/staff/slip-check-types";
+import type { PartyView, QuotaView, SlipCheckResponse, SlipUsedResponse } from "@/lib/staff/slip-check-types";
 import type { SlipCheckRecord } from "@/lib/staff/slip-checks";
 import { formatBaht, formatCount, formatDateTime } from "@/app/staff/_components/format";
 
@@ -86,10 +86,18 @@ const RECEIVER_CHIP: Record<ReceiverStatus, { label: string; className: string }
   unclear: { label: "ต้องดูเอง", className: "border-unverified/50 bg-unverified/10 text-unverified" },
 };
 
-type Flag = { tone: "bad" | "warn"; title: string; detail?: string };
+/** "info" = worth knowing, not a warning — it never takes the headline (a re-check of the same slip read as an
+ *  alarm on 08/10 and sent staff checking again). */
+type Flag = { tone: "bad" | "warn" | "info"; title: string; detail?: string };
 
 function flagsFor(r: OkResult): Flag[] {
   const flags: Flag[] = [];
+  if (r.duplicate?.by === "log" && r.duplicate.usedAt)
+    flags.push({
+      tone: "bad",
+      title: "❌ สลิปนี้ใช้กับออเดอร์ไปแล้ว",
+      detail: `ทีมงานบันทึกว่าใช้แล้วเมื่อ ${formatDateTime(r.duplicate.usedAt)} · อย่าใช้ยืนยันออเดอร์อื่น ถ้านี่คือออเดอร์เดิมที่ยืนยันไปแล้ว ไม่ต้องทำอะไรเพิ่ม`,
+    });
   if (r.slip.receiverStatus === "mismatch")
     flags.push({ tone: "bad", title: "❌ เงินเข้าบัญชีอื่น ไม่ใช่บัญชีของร้าน", detail: "อย่าเพิ่งยืนยันออเดอร์ ให้สอบถามลูกค้าก่อน" });
   if (r.amountCheck && !r.amountCheck.matches)
@@ -98,17 +106,11 @@ function flagsFor(r: OkResult): Flag[] {
       title: "❌ ยอดในสลิปไม่ตรงกับยอดออเดอร์",
       detail: `สลิป ${formatBaht(r.slip.amount)} · ออเดอร์ ${formatBaht(r.amountCheck.expected)}`,
     });
-  if (r.duplicate?.by === "log")
-    flags.push({
-      tone: "warn",
-      title: "⚠️ สลิปนี้เคยตรวจแล้ว",
-      detail: `ตรวจครั้งแรกเมื่อ ${formatDateTime(r.duplicate.firstCheckedAt)} · ตรวจไปแล้ว ${formatCount(r.duplicate.previousChecks)} ครั้ง ดูให้แน่ใจว่ายังไม่ได้ใช้กับออเดอร์อื่น ก่อนยืนยันออเดอร์นี้`,
-    });
   if (r.duplicate?.by === "easyslip")
     flags.push({
       tone: "warn",
-      title: "⚠️ EasySlip แจ้งว่าสลิปนี้เคยถูกตรวจมาก่อน",
-      detail: "ไม่ได้ตรวจจากหน้านี้ จึงไม่มีเวลาที่ตรวจ ดูให้แน่ใจว่ายังไม่ได้ใช้กับออเดอร์อื่น",
+      title: "⚠️ สลิปนี้เคยถูกตรวจจากที่อื่นมาก่อน",
+      detail: "ไม่ได้ตรวจจากหน้านี้ จึงไม่รู้ว่าใช้กับออเดอร์ไหนแล้วหรือยัง ดูให้แน่ใจก่อนยืนยันออเดอร์นี้",
     });
   if (r.slip.receiverStatus === "unclear")
     flags.push({
@@ -116,7 +118,83 @@ function flagsFor(r: OkResult): Flag[] {
       title: "⚠️ ธนาคารยืนยันสลิปแล้ว แต่ระบบบอกไม่ได้ว่าเงินเข้าบัญชีร้านหรือไม่",
       detail: "ให้เปิดแอปธนาคารของร้านดูยอดเข้าอีกครั้ง",
     });
+  if (r.duplicate?.by === "log" && !r.duplicate.usedAt)
+    flags.push({
+      tone: "info",
+      title: `ตรวจสลิปใบนี้ไปแล้วเมื่อ ${formatDateTime(r.duplicate.firstCheckedAt)} (รวม ${formatCount(r.duplicate.previousChecks + 1)} ครั้ง)`,
+      detail: "ยังไม่มีใครบันทึกว่าใช้กับออเดอร์ ถ้าเป็นการตรวจซ้ำของออเดอร์เดิม ใช้ผลนี้ได้ตามปกติ",
+    });
   return flags;
+}
+
+const FLAG_TONE: Record<Flag["tone"], string> = {
+  bad: "border-danger/60 bg-danger/10 text-danger",
+  warn: "border-unverified/60 bg-unverified/10 text-unverified",
+  info: "border-surface-border bg-surface-2 text-foreground",
+};
+
+/** After the order is confirmed: one tap so the next check of this transfer says "already used". Undo = a mis-tap. */
+function UsedMark({ transRef, initialUsedAt }: { transRef: string; initialUsedAt: string | null }) {
+  const router = useRouter();
+  const [usedAt, setUsedAt] = useState<string | null>(initialUsedAt);
+  const [pending, setPending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function save(used: boolean) {
+    if (pending) return;
+    setPending(true);
+    setError(null);
+    try {
+      const res = await fetch("/staff/api/used", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ transRef, used }),
+      });
+      if (res.status === 404) return setError(errorText("SESSION"));
+      if (res.status === 403) return setError(errorText("FORBIDDEN"));
+      const data = (await res.json().catch(() => null)) as SlipUsedResponse | null;
+      if (!data || !data.ok) return setError("บันทึกไม่สำเร็จ ลองกดอีกครั้ง");
+      setUsedAt(data.usedAt);
+      router.refresh();
+    } catch {
+      setError("บันทึกไม่สำเร็จ ลองกดอีกครั้ง");
+    } finally {
+      setPending(false);
+    }
+  }
+
+  return (
+    <div className="flex flex-col gap-2 rounded-lg border border-surface-border-soft bg-surface-2 px-4 py-3">
+      {usedAt ? (
+        <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+          <p className="text-sm font-semibold text-verified">✓ บันทึกว่าใช้กับออเดอร์แล้ว {formatDateTime(usedAt)}</p>
+          <button
+            type="button"
+            onClick={() => save(false)}
+            disabled={pending}
+            className="text-sm text-foreground-dim underline underline-offset-4 hover:text-foreground disabled:opacity-50"
+          >
+            ยกเลิก (กดผิด)
+          </button>
+        </div>
+      ) : (
+        <>
+          <button
+            type="button"
+            onClick={() => save(true)}
+            disabled={pending}
+            className="inline-flex items-center justify-center rounded-full bg-ember px-6 py-3 text-sm font-semibold text-[#181008] transition-colors hover:bg-ember-strong disabled:opacity-50"
+          >
+            {pending ? "กำลังบันทึก…" : "บันทึกว่าใช้สลิปนี้กับออเดอร์แล้ว"}
+          </button>
+          <p className="text-xs leading-relaxed text-foreground-dim">
+            {keep("กดหลังยืนยันออเดอร์ ถ้ามีคนส่งสลิปนี้มาตรวจอีก ระบบจะเตือนว่าใช้ไปแล้ว")}
+          </p>
+        </>
+      )}
+      {error && <p className="text-sm text-danger">{keep(error)}</p>}
+    </div>
+  );
 }
 
 function Party({ label, party, chip }: { label: string; party: PartyView | null; chip?: ReceiverStatus }) {
@@ -137,7 +215,8 @@ function Party({ label, party, chip }: { label: string; party: PartyView | null;
             <span className="block text-foreground-muted">{[party.bank, party.account].filter(Boolean).join(" · ") || "—"}</span>
           </>
         ) : (
-          <span className="text-foreground-muted">บันทึกของร้านไม่เก็บชื่อและเลขบัญชี ดูได้จากรูปสลิป</span>
+          // Only the sender can be missing (a slip answered from our log): the log keeps no customer names.
+          <span className="text-foreground-muted">{keep("ระบบไม่เก็บชื่อลูกค้าไว้ ดูชื่อผู้โอนได้จากรูปสลิป")}</span>
         )}
       </dd>
     </div>
@@ -145,8 +224,11 @@ function Party({ label, party, chip }: { label: string; party: PartyView | null;
 }
 
 function Result({ result, onNext }: { result: OkResult; onNext: () => void }) {
-  const flags = flagsFor(result);
+  const all = flagsFor(result);
+  const flags = all.filter((f) => f.tone !== "info");
+  const notes = all.filter((f) => f.tone === "info");
   const bad = flags.some((f) => f.tone === "bad");
+  const usedAt = result.duplicate?.by === "log" ? result.duplicate.usedAt : null;
   // A green ✅ with no order total entered must still say the amount was not compared — a rushed reader takes
   // green for "paid in full" (designer, round close 08/10).
   const headline: Flag = flags[0] ?? {
@@ -167,13 +249,8 @@ function Result({ result, onNext }: { result: OkResult; onNext: () => void }) {
         <p className="text-xl font-bold leading-snug">{keep(headline.title)}</p>
         {headline.detail && <p className="text-sm leading-relaxed text-foreground">{keep(headline.detail)}</p>}
       </div>
-      {flags.slice(1).map((f) => (
-        <div
-          key={f.title}
-          className={`flex flex-col gap-1 rounded-lg border px-4 py-3 ${
-            f.tone === "bad" ? "border-danger/60 bg-danger/10 text-danger" : "border-unverified/60 bg-unverified/10 text-unverified"
-          }`}
-        >
+      {[...flags.slice(1), ...notes].map((f) => (
+        <div key={f.title} className={`flex flex-col gap-1 rounded-lg border px-4 py-3 ${FLAG_TONE[f.tone]}`}>
           <p className="text-sm font-semibold leading-snug">{keep(f.title)}</p>
           {f.detail && <p className="text-sm leading-relaxed text-foreground">{keep(f.detail)}</p>}
         </div>
@@ -192,20 +269,17 @@ function Result({ result, onNext }: { result: OkResult; onNext: () => void }) {
           <dt className="text-xs text-foreground-dim">วันเวลาที่โอน</dt>
           <dd className="text-sm text-foreground">{formatDateTime(result.slip.transferredAt)}</dd>
         </div>
-        {result.slip.receiver || result.slip.sender ? (
-          <>
-            <Party label="ผู้รับ" party={result.slip.receiver} chip={result.slip.receiverStatus} />
-            <Party label="ผู้โอน" party={result.slip.sender} />
-          </>
-        ) : (
-          // Answered from our log (no names kept): one row instead of the same sentence twice.
-          <Party label="ผู้รับ · ผู้โอน" party={null} chip={result.slip.receiverStatus} />
-        )}
+        <Party label="ผู้รับ" party={result.slip.receiver} chip={result.slip.receiverStatus} />
+        <Party label="ผู้โอน" party={result.slip.sender} />
         <div className="flex flex-col gap-1 border-t border-surface-border-soft py-3">
           <dt className="text-xs text-foreground-dim">เลขอ้างอิงรายการ</dt>
           <dd className="break-all font-mono text-sm text-foreground">{result.slip.transRef}</dd>
         </div>
       </dl>
+
+      {(result.slip.receiverStatus !== "mismatch" || usedAt) && (
+        <UsedMark key={result.slip.transRef} transRef={result.slip.transRef} initialUsedAt={usedAt} />
+      )}
 
       <div className="flex flex-col gap-1 text-xs leading-relaxed text-foreground-dim">
         {result.source === "image-cache" && <p>{keep("รูปนี้เคยตรวจแล้ว จึงตอบจากบันทึกของร้าน ไม่ได้ส่งไปตรวจซ้ำ และไม่เสียโควตา")}</p>}
@@ -284,6 +358,7 @@ function RecentLog({ recent }: { recent: SlipCheckRecord[] }) {
             <p className="text-xs leading-relaxed text-foreground-muted">
               โอน {formatDateTime(r.transferredAt)} · ตรวจล่าสุด {formatDateTime(r.lastCheckedAt)}
               {r.checkCount > 1 ? ` · ตรวจ ${formatCount(r.checkCount)} ครั้ง` : ""}
+              {r.usedAt ? " · ใช้กับออเดอร์แล้ว" : ""}
             </p>
             <p className="break-all font-mono text-xs text-foreground-dim">{r.transRef}</p>
           </li>

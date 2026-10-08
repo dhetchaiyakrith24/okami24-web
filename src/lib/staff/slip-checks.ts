@@ -12,6 +12,8 @@ export interface SlipCheckRecord {
   firstCheckedAt: string;
   lastCheckedAt: string;
   checkCount: number;
+  /** when a staff member marked this slip as used for an order (migration 0006); null = not marked */
+  usedAt: string | null;
 }
 
 interface Row {
@@ -22,6 +24,7 @@ interface Row {
   first_checked_at: string;
   last_checked_at: string;
   check_count: number;
+  used_at: string | null;
 }
 
 function toRecord(r: Row): SlipCheckRecord {
@@ -33,6 +36,7 @@ function toRecord(r: Row): SlipCheckRecord {
     firstCheckedAt: r.first_checked_at,
     lastCheckedAt: r.last_checked_at,
     checkCount: r.check_count,
+    usedAt: r.used_at ?? null,
   };
 }
 
@@ -50,15 +54,19 @@ export function findByTransRef(transRef: string): SlipCheckRecord | null {
   return row ? toRecord(row) : null;
 }
 
-/** Count one more look at a slip that is already in the log. */
-export function touchCheck(transRef: string, imageSha256: string | null): SlipCheckRecord | null {
+/** Count one more look at a slip that is already in the log. `receiverStatus` = the verdict of a fresh
+ *  EasySlip answer, which replaces the stored one (an "unclear" from before a fix can become a "match"). */
+export function touchCheck(
+  transRef: string,
+  imageSha256: string | null,
+  receiverStatus?: ReceiverStatus
+): SlipCheckRecord | null {
   const db = getDb();
   const now = new Date().toISOString();
   db.transaction(() => {
-    db.prepare("UPDATE slip_checks SET last_checked_at = ?, check_count = check_count + 1 WHERE trans_ref = ?").run(
-      now,
-      transRef
-    );
+    db.prepare(
+      "UPDATE slip_checks SET last_checked_at = ?, check_count = check_count + 1, receiver_status = COALESCE(?, receiver_status) WHERE trans_ref = ?"
+    ).run(now, receiverStatus ?? null, transRef);
     if (imageSha256) {
       db.prepare("INSERT OR IGNORE INTO slip_check_images (image_sha256, trans_ref) VALUES (?, ?)").run(imageSha256, transRef);
     }
@@ -87,6 +95,14 @@ export function recordFirstCheck(input: {
     );
   })();
   return findByTransRef(input.transRef)!;
+}
+
+/** Mark (or, for a mis-tap, unmark) a slip as used for an order. Returns null when the slip is not in the log. */
+export function setUsed(transRef: string, used: boolean): SlipCheckRecord | null {
+  getDb()
+    .prepare("UPDATE slip_checks SET used_at = ? WHERE trans_ref = ?")
+    .run(used ? new Date().toISOString() : null, transRef);
+  return findByTransRef(transRef);
 }
 
 export function recentChecks(limit = 30): SlipCheckRecord[] {

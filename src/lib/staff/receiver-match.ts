@@ -7,7 +7,11 @@
  * of it is confirmed":
  *   - bank must be KBank (id 004 / short KBANK) — the shop's only account (BSOT §9);
  *   - every digit the slip DOES show must equal the shop's digit at the same position;
- *   - the Thai name, when the slip carries one, must contain the shop owner's first name.
+ *   - the Thai name, when the slip carries one, must contain the shop owner's first name;
+ *   - a slip paid by scanning the shop's own K+ QR names the receiver by that QR's 15-digit PromptPay
+ *     reference (`account.proxy`, type EWALLETID — "เติมเงินพร้อมเพย์" on the slip) instead of the account
+ *     number: its visible digits in place confirm the shop the same way (real case 2026-10-08, which came
+ *     back "unclear" because the reference was unknown here and the slip carried no bank).
  * "unclear" = nothing contradicts but nothing is confirmed either (e.g. a PromptPay slip that shows only
  * a masked phone number and no name) — the staff member checks the bank app by hand.
  *
@@ -32,6 +36,8 @@ export interface ShopAccount {
   digits: string;
   /** the account holder's Thai first name as printed on slips, without title */
   firstNameTh: string;
+  /** digits only — the PromptPay reference of the shop's own QR (src/data/payment.ts `promptPayRef`) */
+  promptPayRef?: string;
 }
 
 const TITLES = /^(นาย|นางสาว|นาง|น\.ส\.|ด\.ช\.|ด\.ญ\.|บจก\.|บริษัท)\s*/;
@@ -65,6 +71,19 @@ export function matchReceiver(receiver: SlipParty | undefined, shop: ShopAccount
 
   let confirmed = 0;
 
+  // Paid through the shop's QR: the receiver is the QR's PromptPay reference. A same-length reference whose
+  // visible digits differ is someone else's QR; another length (a phone, an ID card) is simply not compared.
+  let viaShopQr = false;
+  const proxy = receiver.account?.proxy?.account;
+  if (proxy && shop.promptPayRef) {
+    const d = digitsAgree(proxy, shop.promptPayRef);
+    if (d && !d.agree) return "mismatch";
+    if (d && d.shown >= 3) {
+      viaShopQr = true;
+      confirmed++;
+    }
+  }
+
   const masked = receiver.account?.bank?.account;
   if (masked) {
     const d = digitsAgree(masked, shop.digits);
@@ -84,5 +103,5 @@ export function matchReceiver(receiver: SlipParty | undefined, shop: ShopAccount
     if (given.startsWith(first)) confirmed++;
   }
 
-  return bankIsShop && confirmed > 0 ? "match" : "unclear";
+  return (bankIsShop || viaShopQr) && confirmed > 0 ? "match" : "unclear";
 }
