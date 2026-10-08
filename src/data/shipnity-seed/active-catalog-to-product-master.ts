@@ -682,12 +682,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-70/card.webp",
-      alt: "dotmod dotCoil 0.7Ω replacement coils, 5-pack retail box with five blister-packed brass coil heads",
-      angle: "Front, plain white-background product photography, whitespace-trimmed only (no recolor, relabel or composite). VARIANT PROOF: the retail box in frame is legibly printed \"0.7Ω (14-20w)\" alongside \"Copyright 2021 DOTMOD\", \"Made In China\", barcode 850010 57398 and www.dotmod.com — an exact match to this record's single active child (0.7Ω). PHYSICAL-TYPE PROOF: five individually blister-packed brass coil heads with no tank or pod body are visible, confirming this is a genuine BARE COIL (unlike Coil-21/55/56/68/74/83/87/94, where the same naming pattern resolved to pods). Sourced from Element Vape's own variant-to-image mapping for the 0.7Ω option (SKU DM036-07), so the resistance-to-photo pairing is the retailer's, not this project's inference. NOTE ON TIER: dotmod.com's current dotCoils lineup is 0.15Ω/0.3Ω/0.6Ω only — 0.7Ω is legacy stock with no tier-1 image still published, which is why a tier-2 source is used here rather than preferred.",
-      transparentBackground: false,
-      sourceName: "Element Vape (US vape retailer; product photography — NOT dotmod's own site)",
-      sourceUrl: "https://www.elementvape.com/dotmod-dotaio-v2-dotcoils",
+      src: "/assets/products/coil-70/card-v2.webp",
+      alt: "dotmod dotCoil 0.7Ω (14-20w), box and blister of 5 brass coils, studio photo",
+      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Element Vape's photo of the 0.7Ω box with its blister (700 px; dotmod no longer lists 0.7Ω, so no maker photo exists); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo",
+      sourceUrl: "https://www.elementvape.com/dotmod-dotcoils",
     },
   ],
   "Coil-83": [
@@ -1322,6 +1322,9 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-94-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-2.webp", alt: "UWELL CALIBURN G3 pod, 0.6Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
     "Coil-94-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-3.webp", alt: "UWELL CALIBURN G3 pod, 0.9Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
     "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-4.webp", alt: "UWELL CALIBURN G3 pod, 1.2Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
+  },
+  "Coil-70": {
+    "Coil-70-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-70/variant-coil-70-2.webp", alt: "dotmod dotCoil 0.7Ω (14-20w), box and blister of 5 brass coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo", sourceUrl: "https://www.elementvape.com/dotmod-dotcoils" },
   },
   "Coil-89": {
     "Coil-89-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-1.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 0.8Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
