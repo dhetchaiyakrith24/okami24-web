@@ -233,6 +233,13 @@ export interface Product {
    * `src/data/products/index.ts` for the split. Always record why + since when.
    */
   hiddenFromStorefront?: { since: string; reason: string };
+  /**
+   * Other real names this exact product is sold under (e.g. the M Switch Kit is the shop's "M Bar 15K") — searched like
+   * the product name, never rendered. A name listed here must also appear in the product's visible copy (a spacing
+   * variant of it, e.g. "MBar 15K", may sit beside it); misspellings do not belong here (they are brand-level aliases in
+   * `src/data/search-aliases.ts`).
+   */
+  searchAliases?: string[];
   editorialTag?: string; // e.g. "Editor's Pick" — explicitly demo curation, never sales data
 
   // Normalized attributes — power the filters, compare table, and finder. The device-only fields
