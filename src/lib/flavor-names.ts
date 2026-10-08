@@ -90,6 +90,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Sakura Grape",
   "Berry Garden",
   "Peach Orange",
+  "Apple Juice",
   "Black Berry",
   "Double Mint",
   "Funta Grape",
