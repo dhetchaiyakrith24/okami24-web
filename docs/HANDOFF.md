@@ -34,6 +34,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (card-72 11.6 vs 22.6, card-94 6.8 vs 15.8) — Friday + checker agree: clean product vs text-heavy photo. Minor, open: faint
   stray pixels along the pod bottoms of 94-2/94-3 visible only at 2.7x zoom (checker `_incoming/chk-coil2/pod92b.jpg`).
   Tools + sources: `_incoming/coil3/` (key/D-*.png = the masters process-images reads; fix/ = checker fixes, pre-D-*.png backups).
+3c OPEN — follow-up batch of round "3 coil photos" (owner 08/10 evening, after seeing #389 live): coil-94 single pods "สวย" but the box
+  shots 0.6 / 0.9 / 1.2 (coil-94-2/3/4) "ยังดูกราฟฟิกไป" → owner picked B = re-render them more photographic. Friday's draft style
+  "2" (box upright, 4 pods standing in front on the same floor, real-studio light; owner did not explicitly confirm 2 — show the
+  finished set and say style 1 is still possible). Renders done (Chrome Unlimited, 0 credits, balance 5,082.4 [ตรวจแล้ว]):
+  `_incoming/coil3/b2/` c94-06-C2 · c94-09-C1 · c94-12-C1, notes + matte settings + what is left = `_incoming/coil3/b2/prompts.txt`.
+  Cut-outs: 0.6 OK (b2/P-06.png) · 0.9 + 1.2 need another matte pass (rear pods eaten · the purple half-letter strip on the 0.9 box top
+  came back · protect box too high on 1.2). Then per object: floor/contact-shadow cut (`_incoming/coil3/fix/fix94.js` approach) ·
+  `fix/clean.js` · NEW file names (e.g. variant-coil-94-2-v2.webp — Cloudflare keeps an old name 30 days, LESSONS พ6) via apply3.js c94
+  (D-* masters, render names, refs = Black Note box photo + the 0.4 pod render) · process-images · sharpness gate · test server
+  3412 · shots 390 + 1440 · checker · merge on/after 11/10 (no site merge 10/10) · report with the live links (LESSONS ช18).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (opened 08/10, own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file · no site merge on 10/10. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: batch 1 survey #393 (`docs/cloud-results/stock-api-sku-survey.md` = counts, warehouse ask-list, plan, dropship
