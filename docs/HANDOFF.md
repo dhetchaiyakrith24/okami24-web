@@ -11,7 +11,7 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge, on top of #400 45bf5af (stock 2b, item 3u) [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge, on top of #405 86394087; last site merge = #404 e977207 (stock 2c, item 3u) [ตรวจแล้ว].
   OPEN site PR #401 (coil-94 box shots, item 3c) — checker PASS, NOT merged on purpose: owner "ขึ้นเว็บวันที่ 11/10".
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
   #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
@@ -57,10 +57,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   hero shows sold-out, resolveProductRef rejects it · JSON-LD OutOfStock on zero-nano + the 9 ProductMaster all-sold-out pages
   (coil-54/56/68/70/74/83/87/89, pod-180); the other 51 product pages' JSON-LD identical. Checker PASS 5/5 on 975fdb1b; owner
   said "merge ได้เลย" in chat (the app's permission layer had refused Friday's first merge). Proof: `_incoming/stock-api/b2b/`.
-  NOW (batch 2c, tier B, own PR, designer + checker; not on 10/10): owner 08/10 "ขีดค่าสีทิ้งไว้เหมือนเดิมแต่ก็ยังกดดูได้" + keep it
-  premium + tell the customer on that page → legacy sold-out colour/flavour chips become clickable (still struck through; today
-  `disabled` in ColorVariantRail / FlavorVariantGrid — ProductMaster picker already selectable) + a small "สินค้าหมด" notice on
-  the hero photo while a sold-out option is selected. The buy gate already blocks a sold-out option (no change there).
+  Batch 2c #404 LIVE e977207 (09/10, deploy 37814644521 success; curl 61/61 product pages 200) [ตรวจแล้ว]: owner 08/10
+  "ขีดค่าสีทิ้งไว้เหมือนเดิมแต่ก็ยังกดดูได้" + premium + say it on the page ("ทำเลย") → sold-out chips stay struck through but are
+  clickable (photo shows) · SoldOutPhotoBadge = glass pill "สินค้าหมด" top-left of the hero photo opposite the heart (smaller on
+  phones), same rule as the buy action; on load at 1440 it shows on exactly the 29 products sold out as a whole · "All colours"
+  after a sold-out pick returns to the opening option. Buy gates unchanged. Designer direction; checker FAIL 3/5 on 9e2c64d8
+  (lineup gap + 390 overlap) → fixed c0cbbdf/48138eb → re-check PASS. Proof `_incoming/stock-api/b2c/` (+ checker `_incoming/review-b2c/`).
+  Taste note for the owner [รอเจ้าของ]: at 390 the small pill still sits on the top-left corner of the IQOS ILUMA i cap
+  (iqosheet-18, ~70% of the pill) — accepted by checker as premium; alternative = keep a free band above full-frame photos.
   WAITING: the 7 "check" SKUs = owner list 24 (`docs/รอพี่ตรวจ.md`), not answered by the admin yet [รอเจ้าของ].
   Then batch 3 = stock adapter when the warehouse sends the API · batch 4+ = order push carrying the shipping fee.
   The owner holds (chat 08/10) a warehouse report "2 ways to fix the shipping fee" + 5 questions (35 or 50 · which way · separate
