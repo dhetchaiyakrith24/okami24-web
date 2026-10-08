@@ -219,3 +219,18 @@ not re-crawled = that row says nothing yet):
 | 8 | infy 20k | /products/infy-20k | infy-20k 0/25 · 13.8 · brands/infy 0/2 | position better than 13.8, brand share not up | brand share grows → move "อินฟี่" to the product page |
 
 Also on 22/10: the merchant-listings "validate fix" result (started 07/10) · index coverage (GSC overview 08/10: 109 indexed / 13 not).
+
+## Round "SEO จ — pod" (09/10/2026, PR #414, goes live 11/10 at the earliest) - what changed before the next read
+
+GSC read 09/10 (owner's account, query = exactly `pod`, by page and day): pod-systems was the ranking URL only 30/09–02/10
+(20 clicks / 60 impr. / pos 3.6; 01/10 alone 15/42) · from 03/10 Google shows pod-kits (03/10 0/26 4.2 · 05/10 2/9 9.6 · last
+24 h on 09/10 0/9 9.9). No head of either page changed in that window. Changes in #414: pod-systems head untouched · 3 Thai guides
+link "พอตซิสเต็ม" → pod-systems · new article /guides/what-is-a-pod-system (owns "pod system คือ") · pod-kits lede/meta opens
+"Pod Kit หรือพอตคิท" · first-pod guide heading + meta no longer open "Pod System คือ". In-content links to pod-systems 4 → 9.
+
+| # | query | owner page | at open (09/10) | worked | another pass |
+|---|---|---|---|---|---|
+| 9 | pod (exact) | /products/pod-systems | pod-kits 0/9 · 9.9 (24 h) | pod-systems is the URL again, pos ≤ 6 | pod-kits still shown → a pod-kits → pod-systems link block (new slot, designer) |
+| 10 | pod system คือ | /guides/what-is-a-pod-system | first-pod guide 0/3 · 70 | the new article gets the impressions | first-pod guide still shown → check its head again |
+
+The live date is 11/10, so on 22/10 these two rows have ~10 days — read them again on 2026-11-01 before judging.
