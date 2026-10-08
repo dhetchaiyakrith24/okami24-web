@@ -180,15 +180,18 @@ export const unbrandedProducts: Product[] = [
     // 600 px flavour posters (2024-07, https://ihavevape.net/product/close-system-muro-3-ml/) all use ONE box template at
     // one position, so one measured hexagon (the box silhouette: spine top, top back-right, front top-right, front
     // bottom-right, front bottom-left, spine bottom) cuts every box out of its splash backdrop — box pixels untouched,
-    // everything outside the box removed (_incoming/option-photos/muro-cut/cut.js). Same 340x490 frame as before, no
-    // upscale (IMAGE_SPEC §4 exception). ihavevape.net lists the 14 flavours and vapeclubth.org/muro-pod-juice.html carries
+    // everything outside the box removed (_incoming/option-photos/muro-cut/cut.js). Owner 08/10 "ขนาดสินค้าตัวนี้ยังดูเล็กๆ":
+    // the 340x490 files rendered at intrinsic size in the hero (src/lib/media-quality.ts), so each box was re-rendered 2x
+    // (Higgsfield Nano Banana Pro through Chrome, "same image, high resolution", every word checked against the cut) and
+    // fitted back onto the measured outline at 694x1000 (-hd files; _incoming/muro-big/align.js + edge.js — the alpha is
+    // the cut's own, never the AI's). ihavevape.net lists the 14 flavours and vapeclubth.org/muro-pod-juice.html carries
     // the same 14. Muro Grape's box prints "VERY STRAWBERRY" on its side panel: that is the maker's artwork, kept as is.
     // Not stocked yet = availability "unknown".
     assets: [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/muro-3ml/variants/grape-cut.webp",
+        src: "/assets/products/muro-3ml/variants/grape-hd.webp",
         alt: "Muro 3ML, Grape flavor box",
         angle: "Front, angled",
         transparentBackground: true,
@@ -202,35 +205,35 @@ export const unbrandedProducts: Product[] = [
         name: "Grape",
         swatchHex: "#6b4a8e",
         availability: "unknown",
-        image: { src: "/assets/products/muro-3ml/variants/grape-cut.webp", alt: "Muro 3ML, Grape flavor box" },
+        image: { src: "/assets/products/muro-3ml/variants/grape-hd.webp", alt: "Muro 3ML, Grape flavor box" },
       },
       {
         id: "watermelon",
         name: "Watermelon",
         swatchHex: "#d94f6b",
         availability: "unknown",
-        image: { src: "/assets/products/muro-3ml/variants/watermelon-cut.webp", alt: "Muro 3ML, Watermelon flavor box" },
+        image: { src: "/assets/products/muro-3ml/variants/watermelon-hd.webp", alt: "Muro 3ML, Watermelon flavor box" },
       },
       {
         id: "smooth-mint",
         name: "Smooth Mint",
         swatchHex: "#4ec9a0",
         availability: "unknown",
-        image: { src: "/assets/products/muro-3ml/variants/smooth-mint-cut.webp", alt: "Muro 3ML, Smooth Mint flavor box" },
+        image: { src: "/assets/products/muro-3ml/variants/smooth-mint-hd.webp", alt: "Muro 3ML, Smooth Mint flavor box" },
       },
       {
         id: "green-slush",
         name: "Green Slush",
         swatchHex: "#5ec95e",
         availability: "unknown",
-        image: { src: "/assets/products/muro-3ml/variants/green-slush-cut.webp", alt: "Muro 3ML, Green Slush flavor box" },
+        image: { src: "/assets/products/muro-3ml/variants/green-slush-hd.webp", alt: "Muro 3ML, Green Slush flavor box" },
       },
       {
         id: "mix-berries",
         name: "Mix Berries",
         swatchHex: "#8e3a6b",
         availability: "unknown",
-        image: { src: "/assets/products/muro-3ml/variants/mix-berries-cut.webp", alt: "Muro 3ML, Mix Berries flavor box" },
+        image: { src: "/assets/products/muro-3ml/variants/mix-berries-hd.webp", alt: "Muro 3ML, Mix Berries flavor box" },
       },
       {
         id: "blueberry-bubblegum",
@@ -238,18 +241,18 @@ export const unbrandedProducts: Product[] = [
         swatchHex: "#8a5ac9",
         availability: "unknown",
         image: {
-          src: "/assets/products/muro-3ml/variants/blueberry-bubblegum-cut.webp",
+          src: "/assets/products/muro-3ml/variants/blueberry-bubblegum-hd.webp",
           alt: "Muro 3ML, Blueberry Bubblegum flavor box",
         },
       },
-      { id: "muro-grape", name: "Muro Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/muro-grape-cut.webp", alt: "Muro 3ML, Muro Grape flavor box" } },
-      { id: "honey-lemon", name: "Honey Lemon", swatchHex: "#d9b23a", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/honey-lemon-cut.webp", alt: "Muro 3ML, Honey Lemon flavor box" } },
-      { id: "very-strawberry", name: "Very Strawberry", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/very-strawberry-cut.webp", alt: "Muro 3ML, Very Strawberry flavor box" } },
-      { id: "double-shisha", name: "Double Shisha", swatchHex: "#7a5a2f", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/double-shisha-cut.webp", alt: "Muro 3ML, Double Shisha flavor box" } },
-      { id: "apple-juice", name: "Apple Juice", swatchHex: "#9e1b32", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/apple-juice-cut.webp", alt: "Muro 3ML, Apple Juice flavor box" } },
-      { id: "mineral-water", name: "Mineral Water", swatchHex: "#2a8fd6", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/mineral-water-cut.webp", alt: "Muro 3ML, Mineral Water flavor box" } },
-      { id: "strawberry-peach", name: "Strawberry Peach", swatchHex: "#d23a5a", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/strawberry-peach-cut.webp", alt: "Muro 3ML, Strawberry Peach flavor box" } },
-      { id: "cola", name: "Cola", swatchHex: "#a3201f", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/cola-cut.webp", alt: "Muro 3ML, Cola flavor box" } },
+      { id: "muro-grape", name: "Muro Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/muro-grape-hd.webp", alt: "Muro 3ML, Muro Grape flavor box" } },
+      { id: "honey-lemon", name: "Honey Lemon", swatchHex: "#d9b23a", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/honey-lemon-hd.webp", alt: "Muro 3ML, Honey Lemon flavor box" } },
+      { id: "very-strawberry", name: "Very Strawberry", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/very-strawberry-hd.webp", alt: "Muro 3ML, Very Strawberry flavor box" } },
+      { id: "double-shisha", name: "Double Shisha", swatchHex: "#7a5a2f", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/double-shisha-hd.webp", alt: "Muro 3ML, Double Shisha flavor box" } },
+      { id: "apple-juice", name: "Apple Juice", swatchHex: "#9e1b32", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/apple-juice-hd.webp", alt: "Muro 3ML, Apple Juice flavor box" } },
+      { id: "mineral-water", name: "Mineral Water", swatchHex: "#2a8fd6", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/mineral-water-hd.webp", alt: "Muro 3ML, Mineral Water flavor box" } },
+      { id: "strawberry-peach", name: "Strawberry Peach", swatchHex: "#d23a5a", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/strawberry-peach-hd.webp", alt: "Muro 3ML, Strawberry Peach flavor box" } },
+      { id: "cola", name: "Cola", swatchHex: "#a3201f", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/cola-hd.webp", alt: "Muro 3ML, Cola flavor box" } },
     ],
     specifications: [{ key: "capacity", label: "Capacity", value: "3mL", sourceStatus: "verified" }],
     features: [],
