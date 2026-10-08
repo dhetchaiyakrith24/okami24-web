@@ -951,12 +951,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-55/card.webp",
-      alt: "UWELL Caliburn G2 Empty Cartridge, 2-piece retail box, isolated product shot",
-      angle: "Plain rectangular crop/trim of a real retailer product photo. Unambiguous exact match: the box itself reads \"CALIBURN G2 Empty Cartridge\" / \"2 PCS\", and shows exactly 2 empty pod cartridges — matching this record's own child label (\"1 กล่อง / มี 2ตัว\", 1 box of 2) exactly, both in product identity (empty cartridge, not the coil) and quantity.",
-      transparentBackground: false,
-      sourceName: "Giant Vapes (US vape retailer)",
-      sourceUrl: "https://giantvapes.com/products/uwell-caliburn-g2-replacement-pods",
+      src: "/assets/products/coil-55/card-v2.webp",
+      alt: "UWELL CALIBURN G2 empty refillable pod cartridge, studio photo",
+      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapesourcing's photo of the CALIBURN G2 pod (800 px); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from Vapesourcing's product photo",
+      sourceUrl: "https://image.vapesourcing.com/images/202111/uwell-caliburn-g2-pod3_(1).jpg",
     },
   ],
   "Coil-53": [
