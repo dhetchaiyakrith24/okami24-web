@@ -12,8 +12,6 @@ export interface SlipCheckRecord {
   firstCheckedAt: string;
   lastCheckedAt: string;
   checkCount: number;
-  /** when a staff member marked this slip as used for an order (migration 0006); null = not marked */
-  usedAt: string | null;
 }
 
 interface Row {
@@ -24,7 +22,6 @@ interface Row {
   first_checked_at: string;
   last_checked_at: string;
   check_count: number;
-  used_at: string | null;
 }
 
 function toRecord(r: Row): SlipCheckRecord {
@@ -36,7 +33,6 @@ function toRecord(r: Row): SlipCheckRecord {
     firstCheckedAt: r.first_checked_at,
     lastCheckedAt: r.last_checked_at,
     checkCount: r.check_count,
-    usedAt: r.used_at ?? null,
   };
 }
 
@@ -95,14 +91,6 @@ export function recordFirstCheck(input: {
     );
   })();
   return findByTransRef(input.transRef)!;
-}
-
-/** Mark (or, for a mis-tap, unmark) a slip as used for an order. Returns null when the slip is not in the log. */
-export function setUsed(transRef: string, used: boolean): SlipCheckRecord | null {
-  getDb()
-    .prepare("UPDATE slip_checks SET used_at = ? WHERE trans_ref = ?")
-    .run(used ? new Date().toISOString() : null, transRef);
-  return findByTransRef(transRef);
 }
 
 export function recentChecks(limit = 30): SlipCheckRecord[] {

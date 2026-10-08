@@ -80,7 +80,7 @@ try {
   const cols = (table: string) => (db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).map((c) => c.name).sort();
   const slipCols = cols("slip_checks");
   check(
-    "slip_checks holds ref / amount / time / receiver verdict / check times / used mark only",
+    "slip_checks holds ref / amount / time / receiver verdict / check times only",
     slipCols.join(",") ===
       [
         "amount_satang",
@@ -90,7 +90,6 @@ try {
         "receiver_status",
         "trans_ref",
         "transferred_at",
-        "used_at",
       ]
         .sort()
         .join(","),
