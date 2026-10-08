@@ -963,11 +963,11 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-53/card.webp",
-      alt: "UWELL Caliburn G replacement coil, 1.0Ω, 4-pack retail box, isolated product shot",
-      angle: "Plain rectangular crop/trim of a real retailer product photo — the retailer's own dedicated \"1.0 ohm\" variant image, confirmed via that page's own variant→image JSON mapping (same technique used for Coil-38/Coil-92). Unambiguous exact match: the box itself reads \"1 Ω\" directly, resolving both the media gap and the resistance-identity question at once — see TAXONOMY_MATCHES[\"Coil-53\"] for the full identity evidence.",
-      transparentBackground: false,
-      sourceName: "Giant Vapes (US vape retailer)",
+      src: "/assets/products/coil-53/card-v2.webp",
+      alt: "UWELL CALIBURN G replacement coil 1.0Ω, box and blister of 4, studio photo",
+      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Giant Vapes' photo of the 1.0 ohm box with its blister (500 px, the box reads 1 Ω); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photo",
       sourceUrl: "https://giantvapes.com/products/uwell-caliburn-g-replacement-coils",
     },
   ],
@@ -1322,6 +1322,9 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-94-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-2.webp", alt: "UWELL CALIBURN G3 pod, 0.6Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
     "Coil-94-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-3.webp", alt: "UWELL CALIBURN G3 pod, 0.9Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
     "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-4.webp", alt: "UWELL CALIBURN G3 pod, 1.2Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
+  },
+  "Coil-53": {
+    "Coil-53-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-53/variant-coil-53-2.webp", alt: "UWELL CALIBURN G replacement coil 1.0Ω, box and blister of 4, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photo", sourceUrl: "https://giantvapes.com/products/uwell-caliburn-g-replacement-coils" },
   },
   "Coil-74": {
     "Coil-74-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-74/variant-coil-74-1.webp", alt: "UWELL CALIBURN X empty refillable pod cartridge, 3 mL, PRO FOCS side, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/uwell-caliburn-x-replacement-empty-pod-cartridge-3ml-2pcs-pack" },
