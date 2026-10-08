@@ -638,6 +638,12 @@ they are the brief for the image batches in `docs/LAUNCH_AUDIT.md`.
 > **Superseded 2026-10-06 (owner, chat):** "ตอนนี้มีแต่หัวดำ" — the shop now sells ONLY the black pod; the clear pod is the
 > problem model and comes off the site (M Bar 15K shows the black pod only). The black pod = the owner's photos of real stock
 > (30/09) already live on `m-switch-pod`. The text below is the history of the earlier ruling.
+>
+> **ตอบแล้ว 2026-10-08 (เจ้าของในแชท) — M Bar 15K รวมเข้า M Switch Kit:** เมื่อหัวใสออกจากเว็บ สิ่งที่ร้านขายในชื่อ "M Bar 15K"
+> (ตัวเครื่อง M Switch + หัวดำ) = M Switch Kit ทุกประการ และหัวดำอย่างเดียว = M Switch Pod (ใบราคาแอดมินเรียก "หัว M Bar 15K")
+> ราคาของเจ้าของ 07/10 (ชุด ฿600 · หัวอย่างเดียว ฿400) = ราคาของ 2 หน้านี้อยู่แล้ว · ผล: หน้า `m-bar-15k` ซ่อน (ข้อมูล/รูปเก็บไว้)
+> และ `/products/m-bar-15k` ส่งต่อถาวรไป `/products/m-switch-kit` · หน้า Kit และ Pod ใช้ชื่อ "M Bar 15K" ด้วย (ค้นหาเจอ + ข้อความบนหน้า)
+> · ราคา ฿349 ของ `m-bar-15k` ไม่ขึ้นเว็บอีก (หน้าซ่อน)
 - **Owner correction to the 2026-09-04 note** (which said only the black COTTON MESH pod is
   stocked): **both the clear pod and the black pod are genuinely sold.**
 - Authoritative references, given by the owner — follow how salthub.com itself splits them, do not

@@ -74,9 +74,9 @@
 | joiway f4 · double flavor | joiway f4 0/10 10.3 · joiway double flavor 0/3 10 | `/products/joiway-f4` | **f4 → brands/joiway 0/10 (หน้าแบรนด์แย่ง)** | ก้อน 4: brand ถอยชื่อรุ่น/ราคา · meta ของ F4 ไม่มีคำ "F4" → เติม |
 | joiway f3 | joiway f3 0/1 4.0 | `/products/joiway-f3` | — | — |
 | salthub · marbo · m bar · ชื่อเรียก "มาโบ" "เอ็มบาร์" | salthub 0/12 33.2 · marbo pod 0/1 6.0 | `/brands/salthub` | salthub → brands/salthub 0/5 · m-switch-kit 0/3 · m-bar-pod (ซ่อนแล้ว 404) 0/3 · m-bar-10k 0/3 · zero-pro 0/1 | ก้อน 4: title แบรนด์ถอยชื่อรุ่น 15K+ราคา กลับเป็นระดับแบรนด์ |
-| m bar 15k · marbo 15k | m bar 15k 0/3 6.0 · mbar 15k 0/3 9.7 | `/products/m-bar-15k` | **คำที่มี 15k → brands/salthub 0/6** | ก้อน 4: salthub ถอย (title+meta มี "M Bar 15K ฿349") |
+| m bar 15k · marbo 15k | m bar 15k 0/3 6.0 · mbar 15k 0/3 9.7 | `/products/m-switch-kit` (หัวอย่างเดียว = `m-switch-pod`) | **คำที่มี 15k → brands/salthub 0/6** | 08/10 เจ้าของ: หน้า m-bar-15k ซ่อน + ส่งต่อถาวรไป m-switch-kit · Kit/Pod ใส่ชื่อ "M Bar 15K" |
 | m bar 10k | m bar 10k 1/2 75.5 | `/products/m-bar-10k` | — | head ค้าง (HANDOFF §16 ข้อ 5) |
-| m bar switch · m switch | m bar switch 1/1 15 · m switch 0/1 50 · พอต m switch 0/1 96 | `/products/m-switch-kit` | — | m-bar-15k (ตัวเครื่อง M Switch) ห้ามมีคำ "M Switch" ใน head |
+| m bar switch · m switch | m bar switch 1/1 15 · m switch 0/1 50 · พอต m switch 0/1 96 | `/products/m-switch-kit` | — | เป็นเจ้าของ "m bar 15k" ด้วย (08/10) |
 | marbo zero pro · zero nano · marbo ice blast | marbo zero pro 0/2 1.0 · marbo zero nano 0/1 3.0 · marbo ice blast 1/1 73 | `zero-pro` · `zero-nano` · `m-bar-10k` | — | — |
 | voopoo · พอต/คอยล์/หัวพอต voopoo | voopoo 3/18 10.7 · voopoo ทุกรุ่น 1/1 · เครื่องบุหรี่ไฟฟ้า voopoo 0/1 · หัวพอต voopoo 0/1 · พอต voopoo 0/1 87 | `/brands/voopoo` | voopoo → brands/voopoo 3/18 | ก้อน 4: title แบรนด์ (ตอนนี้ "DRAG 6 · DRAG S3 · ARGUS G4") ถอยชื่อรุ่น |
 | drag 6 | voopoo drag 6 ราคา 8/11 3.3 · drag 6 4/22 8.5 · voopoo drag 6 4/17 8.5 · drag6 4/11 8.0 · drag 6 ราคา 1/4 · drag 6 voopoo 1/2 · voopoo drag6 1/2 · darg 6 0/2 | `/products/drag-6` | drag 6 → drag-6 4/22 · *voopoo drag* → drag-6 11/30 + brands/voopoo 2/2 | คงเดิม (ชนะอยู่แล้ว) |
@@ -124,7 +124,7 @@ GSC ไม่มีคำค้นอักษรไทยของชื่อ�
 
 **หน้าเจ้าของที่ยังไม่มีบทความลิงก์เข้าเลย หลังก้อน 6 (#352 · checker 08/10) → รอบบทความ** (ก้อน 6 ทำแค่ห่อคำเดิมเป็นลิงก์ ไม่เขียนประโยคใหม่):
 heated-tobacco-devices · หน้าแบรนด์ joiway / infy / relx / iqos / wotofo / moood · drag-s3 · argus-g4-mini · pod-180 · mood-monster-14k · zero-pro ·
-zero-nano · relx-creator · vmate-i3 · m-bar-15k (ตั้งใจไม่ลิงก์ — ตัวตนเทียบ M Switch ยังรอเจ้าของ HANDOFF §16 ข้อ 3 (3)) · pod-kits → pod-systems
+zero-nano · relx-creator · vmate-i3 · pod-kits → pod-systems
 ลิงก์ตรงยังไม่มี (ไม่มีประโยคเดิมให้ห่อ)
 
 **คำสะกดผิดที่เจอในคำค้นจริง → รอบช่องค้นหา (HANDOFF §16 ข้อ 5 "TYPO-TOLERANT SEARCH"):** joiwat · joiwy · oiway · joway · joi way · pot joiway ·

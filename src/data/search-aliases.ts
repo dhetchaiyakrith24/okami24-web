@@ -33,7 +33,7 @@ export const TERM_SEARCH_ALIASES: Record<string, string[]> = {
   "ซอลฮับ": ["salthub"],
   "ซอลต์ฮับ": ["salthub"],
   // "Marbo" is how the SALTHUB line is marketed (salthub.com's footer carries the Marbo logo —
-  // note in src/data/products/salthub.ts; the m-bar-15k head copy says "M Bar 15K (Marbo)").
+  // note in src/data/products/salthub.ts; the m-switch-kit head copy says "M Bar 15K (Marbo 15K)").
   marbo: ["salthub"],
   "มาร์โบ": ["salthub"],
   "มาร์โบ้": ["salthub"],
