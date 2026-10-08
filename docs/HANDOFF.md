@@ -11,24 +11,20 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = #363 merge 54a57ed (Zero Cartridge: Fruit Tea / Grape / Grape Aloe /
-  Grapefruit re-done in the J5 look, live 08/10 [ตรวจแล้ว curl]) · #359 Zero Cartridge J5 · #354 SEO ง close · #350 ARGUS G4 mini J4.
+1 main: `git fetch && git log -1 --oneline origin/main` = #367 merge 663fca2 (MURO 3ML 4 box photos, owner exception 08/10 "24 ได้" →
+  IMAGE_SPEC exceptions) · #363 Zero Cartridge 4 pods re-done (live) · #359 Zero Cartridge J5 · #354 SEO ง close.
   A worktree may run its own `next build` + `next start -p 3413` (SEO chat 08/10: SITE_URL + OKAMI24_DATA_DIR=<tmp> env) — no port clash. Render: ~1 min of 502 site-wide after each deploy — wait, then curl.
-  NIGHT 08/10: night chain ON + a TEMPORARY NIGHT ORDER in the routine prompt (owner 08/10: image work long, many products/brands,
-  routine chats do not hand off — the app compacts context) — EXPIRES 2026-10-08 18:00 or when the owner's day chat opens: that chat
-  deletes the block from routine `friday-chat-move` and turns the routine off (round-open Step 2 item 0). NO site merge on 10/10 (owner's LINE broadcast,
+  Night chain OFF + the 08/10 temporary night order deleted from the routine (owner 08/10 morning). The night run stalled 05:18 on a
+  Bash permission prompt (compound `cd … && git …`) — LESSONS พ29. NO site merge on 10/10 (owner's LINE broadcast,
   2–4k visitors; load test 07/10: 129 req/s, 3,892/3,892 = 200, p99 357 ms [ตรวจแล้ว] — `_incoming/loadtest/load.js`).
   Owner decisions: ask in chat + one line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (retired 07/10 night, §18 "Review sheet +
   image work") · image work goes live after the checker without a review page (before/after page only for a hard case).
   Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
-2 ahead of main — ALL waiting for the morning (site PRs, no merge at night):
-  #364 `mbar15k-into-kit` (wt `_incoming/wt-mbar`) = item 3 (3), checker 6/6 PASS at d413b84; 7d52f22 = checker's notes only (13.5 #2 (จ))
-  · #366 `option-photos-3-infy` (wt-b3) · #367 `option-photos-3-muro` (wt-b3m) · #368
-  `option-photos-3-tfit` (wt-b3t) = batch 3: checker PASS #366 at 38d1ada · #368 at e6ae755 · #367 at 79eef9e all PASS except the
-  sharpness gate canvas rule (MURO box art max 600 px, boxes 340x490 like the 6 live) = owner exception needed (รอพี่ตรวจ 24; if "1"
-  add an IMAGE_SPEC exception line like the M Bar 9K pack one, then merge). Main folder = DETACHED at a local-only combined tree (main + the 4 branches) serving 3412 —
-  `git checkout` a real branch before any commit there. Docs worktree `_incoming/wt-docs`.
+2 ahead of main — waiting on owner answers (`docs/รอพี่ตรวจ.md`), all checker-passed:
+  #364 `mbar15k-into-kit` (wt `_incoming/wt-mbar`) = item 3 (3), checker 6/6 at d413b84 + 7d52f22 notes-only (13.5 #2 (จ)) → รอพี่ตรวจ 20 + 21
+  · #366 `option-photos-3-infy` (wt-b3, 38d1ada) + #368 `option-photos-3-tfit` (wt-b3t, e6ae755) → รอพี่ตรวจ 23 ("ได้" = merge both).
+  Main folder = on main. Worktrees: wt-mbar · wt-b3 · wt-b3m (merged, removable) · wt-b3t · wt-docs.
   Untracked, NOT the image chat's, left alone: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching). Branch `option-photos-3` =
   LESSONS 28 only, NOT checked. Before every commit run `git branch --show-current`; more than one chat on this repo = the others in worktrees.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
@@ -46,10 +42,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
        Prices unchanged (Kit ฿600 / Pod ฿400 already live = the owner's 07/10 prices). Waiting: รอพี่ตรวจ 20 (head rows vs the round's
        【ห้ามแตะ】 head — drop commit 33f5df8's head rows if "2") · 21 (home desktop intro Scene4Hero still shows the clear-pod card;
        "1" = swap to `m-switch-kit/card-v2.webp`, + `scripts/image-audit.ts` row).
-   (4) batch 3 DONE as PRs #366–#368 (INFY 2 = recolour master · MURO 4 = MURO box art from ihavevape.net · TFIT 10 = TFIT's
+   (4) batch 3: MURO live #367 · INFY #366 + TFIT #368 ready · was PRs #366–#368 (INFY 2 = recolour master · MURO 4 = MURO box art from ihavevape.net · TFIT 10 = TFIT's
        Watermelon shot + names printed as its chart, `_incoming/option-photos/b3/tfit/names.js`). nexBAR 11 = reason rows
        (`_incoming/option-photos/b3/reasons.md`: 6 exist only as the Vivid Edition = other design → รอพี่ตรวจ 22 · 5 none anywhere).
-       NEXT (night queue, in order): (a) done — see item 2; (b) batch 4 coils: count-gaps PM rows
+       NEXT CHAT (owner 08/10 "ไปรันงานต่อ"), in order: (a) merge what รอพี่ตรวจ 20–23 answers allow; (b) batch 4 coils: count-gaps PM rows
        (coil-38 ×2 · 53 · 56 · 68 · 70 · 74 · 87 · 89 ×2, `npx tsx _incoming/sitewide-template/5/mood/count-gaps.ts`) + the white-box
        cards (`_incoming/image-sitewide/b-coils/README.txt` — refs ready; renders = Higgsfield through Chrome only); (c) MURO 3ML is
        missing 4 flavours the market lists (Apple Juice · Mineral Water · Strawberry Peach · Cola — ihavevape.net has box art; catalog
