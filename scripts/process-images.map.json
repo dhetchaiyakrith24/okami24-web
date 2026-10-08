@@ -7420,5 +7420,43 @@
   },
   "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c89-card.png",
+  "slug": "coil-89",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Vapormo's photo of both Jellybox V pods side by side (800 px; 0.8Ω with three red stripes, 1.0Ω without) — https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c89-08-S1 + c89-10-S2 (card = the two staggered by stagger.js — 1.0Ω behind, 0.8Ω in front — no AI).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c89-08.png + _incoming/option-photos/b4/fid/c89-10.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye (card = the option renders composed, no AI)"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c89-08.png",
+  "slug": "coil-89",
+  "role": "variant",
+  "id": "coil-89-1",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Vapormo's photo of both Jellybox V pods side by side (800 px; 0.8Ω with three red stripes, 1.0Ω without) — https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c89-08-S1 + c89-10-S2 (card = the two staggered by stagger.js — 1.0Ω behind, 0.8Ω in front — no AI).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c89-08.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-89-1.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c89-10.png",
+  "slug": "coil-89",
+  "role": "variant",
+  "id": "coil-89-2",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Vapormo's photo of both Jellybox V pods side by side (800 px; 0.8Ω with three red stripes, 1.0Ω without) — https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c89-08-S1 + c89-10-S2 (card = the two staggered by stagger.js — 1.0Ω behind, 0.8Ω in front — no AI).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c89-10.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-89-2.webp"
  }
 ]
