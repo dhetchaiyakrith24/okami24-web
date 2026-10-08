@@ -45,19 +45,22 @@ export const tfitProducts: Product[] = [
         sourceUrl: "https://www.tfitvape.com/",
       },
     ],
-    // The 10 flavours = TFIT's own "10 FLAVORS" poster (batch 4g 05/10 — missing 0, extra 0). No per-flavour product photos
-    // from TFIT → swatches until the option-photo round.
+    // The 10 flavours = TFIT's own "10 FLAVORS" poster (batch 4g 05/10 — missing 0, extra 0). TFIT shows every flavour as the
+    // same device with only the small white name near the base changed (poster 07), so each photo = TFIT's own Watermelon shot
+    // with that flavour's name printed as the chart prints it (round "option photos" batch 3, 08/10; Watermelon = the shot
+    // itself — scripts/process-images.map.json). The page still opens on the card, flavours by swipe or chip.
+    openOnCardPhoto: true,
     flavorVariants: [
-      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown" },
-      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown" },
-      { id: "grape", name: "Grape", swatchHex: "#6a4c93", availability: "unknown" },
-      { id: "grape-apple", name: "Grape Apple", swatchHex: "#7a5aa0", availability: "unknown" },
-      { id: "hami-melon", name: "Hami Melon", swatchHex: "#c5c53e", availability: "unknown" },
-      { id: "mix-berry", name: "Mix Berry", swatchHex: "#6b3a5e", availability: "unknown" },
-      { id: "rainbow-candy", name: "Rainbow Candy", swatchHex: "#d1479c", availability: "unknown" },
-      { id: "sakura-grape", name: "Sakura Grape", swatchHex: "#d18ab0", availability: "unknown" },
-      { id: "strawberry", name: "Strawberry", swatchHex: "#c23a4e", availability: "unknown" },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
+      { id: "blue-ice", name: "Blue Ice", swatchHex: "#2a6fbd", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-blue-ice.webp", alt: "TFIT M Power 20K, Blue Ice — device" } },
+      { id: "double-mint", name: "Double Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-double-mint.webp", alt: "TFIT M Power 20K, Double Mint — device" } },
+      { id: "grape", name: "Grape", swatchHex: "#6a4c93", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-grape.webp", alt: "TFIT M Power 20K, Grape — device" } },
+      { id: "grape-apple", name: "Grape Apple", swatchHex: "#7a5aa0", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-grape-apple.webp", alt: "TFIT M Power 20K, Grape Apple — device" } },
+      { id: "hami-melon", name: "Hami Melon", swatchHex: "#c5c53e", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-hami-melon.webp", alt: "TFIT M Power 20K, Hami Melon — device" } },
+      { id: "mix-berry", name: "Mix Berry", swatchHex: "#6b3a5e", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-mix-berry.webp", alt: "TFIT M Power 20K, Mix Berry — device" } },
+      { id: "rainbow-candy", name: "Rainbow Candy", swatchHex: "#d1479c", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-rainbow-candy.webp", alt: "TFIT M Power 20K, Rainbow Candy — device" } },
+      { id: "sakura-grape", name: "Sakura Grape", swatchHex: "#d18ab0", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-sakura-grape.webp", alt: "TFIT M Power 20K, Sakura Grape — device" } },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#c23a4e", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-strawberry.webp", alt: "TFIT M Power 20K, Strawberry — device" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/tfit-m-power-20k/variant-watermelon.webp", alt: "TFIT M Power 20K, Watermelon — device" } },
     ],
     // Site-wide template round batch 4g (05/10): the G5 template — TFIT's own M Power 20K posters, one per block (down-sized only:
     // _incoming/sitewide-template/4/4g/blocks.js); text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.
