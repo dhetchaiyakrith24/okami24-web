@@ -22,9 +22,10 @@ import { useChipAutoscroll } from "./use-chip-autoscroll";
  *
  * Sold-out colours (owner instruction, 2026-09-06): a colour whose `availability` is
  * `"out-of-stock"` still renders — catalog truth is never hidden — but dimmed, struck through
- * with a diagonal, labelled in its tooltip, and NOT selectable (`disabled`), so it can never
- * become the colour that goes into the cart. `"unknown"`/absent renders like in-stock, matching
- * the legacy cart gate in `resolveProductRef()`.
+ * with a diagonal and labelled in its tooltip. Since stock round batch 2c (owner 08/10) it IS selectable, so the
+ * customer can look at that colour's photo; ProductHero then shows the sold-out state (photo badge + buy action) and
+ * the cart gates (ProductHero + `resolveProductRef()`) keep it out of the cart. `"unknown"`/absent renders like
+ * in-stock, matching the legacy cart gate.
  *
  * Phones (mobile round A, 2026-09-08 — every `max-lg:` class): the row no longer wraps, it
  * scrolls sideways edge to edge, each dot is a 44×44 target, and the selected dot scrolls itself
@@ -100,9 +101,7 @@ export function ColorVariantRail({
               key={v.id}
               type="button"
               data-option-id={v.id}
-              onClick={outOfStock ? undefined : () => onSelect(v.id)}
-              disabled={outOfStock}
-              aria-disabled={outOfStock || undefined}
+              onClick={() => onSelect(v.id)}
               aria-label={outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : v.name}
               aria-pressed={!anyAll && v.id === selectedId}
               title={outOfStock && outOfStockLabel ? `${v.name} — ${outOfStockLabel}` : v.name}
@@ -110,8 +109,7 @@ export function ColorVariantRail({
                 "relative h-8 w-8 shrink-0 rounded-full ring-2 ring-offset-2 ring-offset-surface-1 transition-all duration-150 max-lg:h-11 max-lg:w-11",
                 !anyAll && v.id === selectedId
                   ? "scale-110 ring-ember"
-                  : "ring-transparent hover:scale-105 hover:ring-surface-border",
-                outOfStock && "cursor-not-allowed hover:scale-100 hover:ring-transparent"
+                  : "ring-transparent hover:scale-105 hover:ring-surface-border"
               )}
             >
               <span

@@ -81,7 +81,8 @@ export function ProductMasterVariantPicker({
                 selectedId === v.id
                   ? "border-ember bg-ember-soft/30 text-ember"
                   : "border-surface-border bg-surface-1 text-foreground-muted hover:border-foreground-dim",
-                outOfStock && "opacity-50"
+                // Picked = full opacity, so the ember frame of a sold-out option still reads as selected (batch 2c).
+                outOfStock && selectedId !== v.id && "opacity-50"
               )}
             >
               <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.label}</span>

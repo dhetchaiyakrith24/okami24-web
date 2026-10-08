@@ -22,7 +22,7 @@ import { cn } from "@/lib/utils";
  *
  * Owner decision A-ข (2026-09-08): an option that is sold out is still a slide — the customer
  * can swipe onto it and see it (catalogue completeness), the page then shows its sold-out
- * state; the chips for such options stay disabled exactly as before. A selection from outside
+ * state (since stock batch 2c the chips are selectable too, and the slide carries a sold-out photo badge). A selection from outside
  * the gallery never animates, so reduced motion needs nothing extra. The frame has a fixed aspect ratio, so no
  * layout shift while images load.
  *
