@@ -929,7 +929,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       role: "card",
       src: "/assets/products/coil-38/card-v3.webp",
       alt: "VOOPOO TPP-DM2 0.2Ω coil box with three coils, studio photo",
-      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Giant Vapes' variant photos of the TPP-DM2 box (700 px) and the TPP-DM4 box (800 px), each with its blister of 3; shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      angle: "Front, studio re-shoot 09/10 (coil-94 box-shot direction, owner passed 09/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Giant Vapes' TPP-DM2 box photo: the box upright with its three coils out of the blister lying in front; every printed mark checked by eye against that photo. Card = the DM2 option shot. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photos",
       sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils",
