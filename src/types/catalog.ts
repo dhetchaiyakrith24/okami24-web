@@ -234,6 +234,12 @@ export interface Product {
    */
   hiddenFromStorefront?: { since: string; reason: string };
   /**
+   * Stock of a product with NO colour/flavour options (stock round batch 2b, 2026-10-08). Never written in a product
+   * file: `applySoldOut()` sets `"out-of-stock"` at load when the Shipnity SKU map says the warehouse has no SKU for it
+   * (`product: null`). Absent = no signal, sells as before. Products with options carry stock per option instead.
+   */
+  availability?: VariantAvailability;
+  /**
    * Other real names this exact product is sold under (e.g. the M Switch Kit is the shop's "M Bar 15K") — searched like
    * the product name, never rendered. A name listed here must also appear in the product's visible copy (a spacing
    * variant of it, e.g. "MBar 15K", may sit beside it); misspellings do not belong here (they are brand-level aliases in

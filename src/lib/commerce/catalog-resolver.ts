@@ -164,6 +164,11 @@ function resolveLegacyRef(ref: ProductRef, catalogItem: CatalogItem): ResolveRes
     ...(product.flavorVariants ?? []).map((v) => ({ id: v.id, label: v.name, availability: v.availability })),
   ];
 
+  // A product without options that has no SKU in the warehouse (applySoldOut, stock round batch 2b).
+  if (options.length === 0 && product.availability === "out-of-stock") {
+    return { ok: false, reason: "out-of-stock", detail: `"${ref.slug}" is out of stock.` };
+  }
+
   let variantLabel: string | null = null;
   if (options.length > 0) {
     if (ref.variantId === null) {

@@ -195,6 +195,19 @@ export function runCatalogResolverContractTests(): ResolverContractResult[] {
       JSON.stringify(soldOut)
     );
   }
+  // A priced product without options and without a warehouse SKU (stock round 2b — Zero Nano on 2026-10-08). Optional
+  // fixture: it disappears once every such product gets a SKU; sku-map-contract-test.ts checks the flag is applied.
+  const legacyWholeSoldOut = legacyProducts.find(
+    (p) => p.slug in LEGACY_APPROVED_PRICING && (p.colorVariants?.length ?? 0) + (p.flavorVariants?.length ?? 0) === 0 && p.availability === "out-of-stock"
+  );
+  if (legacyWholeSoldOut) {
+    const whole = resolveProductRef({ origin: "legacy", slug: legacyWholeSoldOut.slug, variantId: null });
+    check(
+      `a legacy product without options marked out-of-stock ("${legacyWholeSoldOut.slug}") is rejected at the money boundary`,
+      !whole.ok && whole.reason === "out-of-stock",
+      JSON.stringify(whole)
+    );
+  }
 
   return results;
 }
