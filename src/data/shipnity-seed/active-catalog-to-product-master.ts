@@ -694,12 +694,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-83/card.webp",
-      alt: "VOOPOO ARGUS POD Empty Cartridge, 2.0mL, 2-piece retail box with two empty transparent pods",
-      angle: "Front, plain white-background product photography, whitespace-trimmed only. IDENTITY + PACK-COUNT PROOF: the VOOPOO-branded box in frame reads \"ARGUS POD\" / \"Empty Cartridge\" / \"2pcs\" / \"2.0mL\" — the \"2pcs\" matches this record's only active child (\"1 กล่อง2 หัว\", 1 box of 2 heads) exactly. PHYSICAL-TYPE PROOF: the two pods shown are transparent with a visibly EMPTY coil socket, confirming an empty refillable pod sold without a coil (VOOPOO ITO M-series coils are bought separately) rather than a bare coil head. Deliberate care point: Coil-21 (Argus Pod Cartridge, integrated coil, 3pcs) is a near-identical-looking pod in near-identical packaging — the two card images must never be swapped; this one is identifiable by \"Empty Cartridge / 2pcs\", Coil-21's by a resistance badge and \"3PCS\".",
-      transparentBackground: false,
-      sourceName: "HealthCabin (vape wholesaler; product photography — NOT VOOPOO's own site)",
-      sourceUrl: "https://www.healthcabin.net/voopoo-argus-pod-argus-p1-argus-z-argus-g-argus-a-empty-cartridge-p/28679.html",
+      src: "/assets/products/coil-83/card-v2.webp",
+      alt: "VOOPOO ARGUS POD empty refillable pod cartridge, 2 mL, studio photo",
+      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapormo's photo of the ARGUS POD empty cartridge (800 px, SKU VAPC20221025); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo",
+      sourceUrl: "https://cdn.shopify.com/s/files/1/0404/9154/8827/products/VAPC20221025.jpg",
     },
   ],
   "Coil-87": [
