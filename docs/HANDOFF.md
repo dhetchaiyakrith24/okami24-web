@@ -11,41 +11,42 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = #383 merge 006a96c (staff slip-check fix, item 3t) — live, deploy run
-  37773490651 success + curl 200 after the Render swap [ตรวจแล้ว]. Today's site merges, in order: #372–#377 coils stack · #366
-  INFY · #364 M Bar 15K → M Switch Kit (+ home Scene 4 = Kit) · #368 TFIT · #379 MURO 14 flavours · #380 MURO boxes cut out ·
-  #383 slip check. Rollback points = those merge commits (revert one PR). A queued deploy on main can show
-  "cancelled" when a newer push queues behind it (e18b29a 08/10) → run Actions → deploy → Run workflow (deploy=true) by hand.
-  Render: ~1 min of 502 + ~2 min before the new build serves after the deploy job ends — wait, then curl.
-  Night chain OFF (day chat 08/10 turned it off again). NO site merge on 10/10 (owner's LINE broadcast, 2–4k visitors; load test 07/10:
-  129 req/s, 3,892/3,892 = 200, p99 357 ms [ตรวจแล้ว] — `_incoming/loadtest/load.js`).
-  Owner decisions: ask in chat + one line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (§18 "Review sheet + image work") · image
-  work goes live after the checker without a review page. Image renders = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10),
-  never the Higgsfield MCP (bills credits; balance 5,130 [ตรวจแล้ว]); MCP read-only tools are fine.
-  Local build in a worktree: only `_incoming/wt-b4s` has its own node_modules copy (others fail "Could not find the Next.js package");
-  build needs SITE_URL=https://okami24.store (localhost is refused) + OKAMI24_DATA_DIR=<tmp>; `next start -p 3412`.
-2 ahead of main: nothing of this round [ตรวจแล้ว]. This docs PR (#378 `docs-0810e`) = round close. Main folder = on main 6b70cd2
-  (behind — `git pull` before use). Worktrees left: wt-b4s (detached at 24ca72a, build env — keep) · wt-docs2 · older rounds' (item 5).
-  Untracked, NOT the image chat's, left alone: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
-  Before every commit run `git branch --show-current`; more than one chat on this repo = the others in worktrees.
+1 main: `git fetch && git log -1 --oneline origin/main` = #387 merge 4ea2b26 (sharpness gate: a renamed option photo is measured
+  against the photo it replaces) [ตรวจแล้ว]. Today's merges after the last close: #386 MURO 3ML 14 boxes 694x1000 (owner 08/10
+  "ขนาดสินค้าตัวนี้ยังดูเล็กๆ ปรับขนาดขึ้นหน่อย") — live, deploy on ed1d002 success, curl 200 serving `-hd.webp` [ตรวจแล้ว] · #387 gate
+  (tools only). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl.
+  Night chain OFF (day chat 08/10 turned it off). NO site merge on 10/10 (owner's LINE broadcast). Owner decisions: ask in chat + one
+  line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (§18) · image work goes live after the checker.
+  Image renders = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — 0 credits this chat: balance 5,082.4, every Nano
+  Banana Pro transaction 0 [ตรวจแล้ว]; never the Higgsfield MCP generate tools. Higgsfield prompt box = Lexical editor: typing 1,300
+  chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (see `_incoming/coil3/` notes in item 3).
+2 ahead of main [ตรวจแล้ว]: PR #388 `coils3-voopoo` (coil-1 + coil-72, head c66e66e) and PR #389 `coils3-uwell` (coil-94, head
+  fa3698e) — both pushed, checker RUNNING at the chat move (agent, report not received) → new chat: re-run the checker on both heads
+  (brief = round file pass criteria + item 3 below). Both PRs touch scripts/process-images.map.json + content-dates.json → merge one,
+  then `git merge origin/main` into the other, re-run `node ../coil3/apply3.js c94` (or c1 c72) if map.json conflicts (take main's,
+  re-apply), re-run the gate, re-check the moved head. Worktrees: `_incoming/wt-coil3` (own node_modules copy now; on LOCAL branch
+  coils3-all = #388+#389 merged, test server 3412 serves it) · `_incoming/wt-b4s` (on merged branch gate-variant-ref) · wt-docs2.
+  Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching). `git branch --show-current`
+  before every commit.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
-3 NEXT (owner 08/10 "เอา 1-2 ก่อน", both in ONE new chat, in this order):
-  (1) the 9 GSC request-indexing pages left from round SEO ง (item 3s below — short, stop at the first quota message);
-  (2) round "3 coil photos" = `docs/rounds/รอบรูปคอยล์3ตัว-coil-1-72-94-08-10.txt` (Friday's draft from the owner's pick; start with skill
-      round-open — coil-1 PnP · coil-72 VMATE · coil-94 CALIBURN G3, Higgsfield via Chrome FREE ONLY UNTIL 11/10 → do it before then;
-      know-how = `_incoming/option-photos/b4/` + LESSONS 29 · NO site merge on 10/10).
-  PREVIOUS ROUND: none open — round "option photos + IQOS colours" (`docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt`) CLOSED 08/10, tag
-  `option-photos-done`. Pass criterion met [ตรวจแล้ว]: count-gaps on main 24ca72a = 11 of 524 options without a photo, all 11 =
-  WOTOFO nexBAR 18K with a reason row (IMAGE_SPEC §4 exceptions: 6 Vivid-only → owner 08/10 "22 = 1" no photo · 5 none anywhere).
-  IQOS all colours = batch 1 #311. Start of round 06/10: 60 of 526. Credits used: 17 (batch 4 = 0, Chrome).
-  Edge audit (`_incoming/image-sitewide/edge-audit/visual-audit.md`, 01/10): every flagged product got new images after it EXCEPT
-  coil-1 (A+C+W) · coil-72 options (W, white boxes) · coil-94 (C+W) — retailer-photo coils outside this round's 8 → next image round.
-  Checker notes kept (not FAIL, for the next touch): coil-55 tiny serial line on the tank · DM2 side-panel micro text · coil-53 grey
-  floor reflection under the blister · coil-53/70 cards > 150 KB · coil-87 1–3 px faint specks off the body (invisible at size) ·
-  MURO 3ML boxes: all 14 now cut out (#380, `_incoming/option-photos/muro-cut/cut.js` = one 6-corner outline for the shared poster
-  template) — still 600 px sources at 340x490 (IMAGE_SPEC §4 exception); a larger/sharper box = AI upscale or render, not done.
-  Tools + know-how of the round: `_incoming/option-photos/` (b4/ = coils: key/, ellipsecut.js = cut a round base along an ellipse,
-  floorclean.js, count-gaps.ts — copy it 4 folders below the worktree root, e.g. `_incoming/tmp/x/y/`, its imports are `../../../../src`) + LESSONS 29.
+3 OPEN ROUND "3 coil photos" = `docs/rounds/รอบรูปคอยล์3ตัว-coil-1-72-94-08-10.txt` (opened 08/10, scope-auditor: 30 pages + controls
+  /, /products/disposables, /products/iqosheet-16). Batches: 1 coil-1 (B) · 2 coil-72 (B) · 3 coil-94 (B) = built, in PRs #388/#389,
+  checker pending · 4 close (A): edge audit file `_incoming/image-sitewide/edge-audit/visual-audit.md` mark coil-1/72/94 done, §16,
+  tag `coil-photos-3-done` (skill round-close). NEXT STEP: checker on #388 + #389 → merge both (image PRs: BIG is fine, IMAGE_SPEC §7)
+  → curl live → report with before/after `_incoming/coil3/proof/*-pair-390.jpg / -1440.jpg` → close.
+  What the renders are [ตรวจแล้ว by Friday, not yet by the checker]: coil-1 options = box + coil per resistance (TW15 violet ring,
+  DW60 red, TR1 teal; card = the 3 coils in a row, row.js); TR1 white/blue rubber share one photo (every source shows one o-ring
+  colour); coil-72 = V2 0.7 / 1.2 (ohm on the black tab) + Top Fill (0.4/0.7 share — identical pods); card = stagger V2 + Top Fill;
+  coil-94 = 0.4 single pod, 0.6 / 0.9 box + 4 pods, 1.2 CRC box + 4 pods (AI-added floating label above the box cleared with
+  matte3 `--clear`); card = the 0.4 pod. Researcher: no VOOPOO 1-1.5k gallery reachable (403), no UWELL pod-alone files.
+  Tools: `_incoming/coil3/` (in/ refs, out/ renders, key/ cut-outs, prompts.js, apply3.js = writes data + map, matte3.js now has
+  `--clear`, cutfoot.js, foottrim.js = trims the contact-shadow slab past a pod's base, place.js, row.js, coilcut.js, fid/).
+  MURO hd tools: `_incoming/muro-big/` (align.js = AI box fitted on the measured cut alpha, edge.js, dot.js, lowfix.js colour).
+  Gate fix #387 needed for these PRs: the old gate measured renamed option photos against the old busy card (11 false FAILs).
+  GSC (item 3s): the 9 pages were NOT requested this chat — the app browser was not signed in to Google (owner asked to sign in,
+  no answer) → owner signs in (Ctrl+Shift+B → Google sign-in), then do the 9.
+  LESSONS to write at the close: owner sees a small hero image as a defect (MURO 340 px files drawn at intrinsic size) · Lexical
+  prompt box · AI re-render fitted onto a measured cut keeps the outline exact · gate compared renamed variants with the card.
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
