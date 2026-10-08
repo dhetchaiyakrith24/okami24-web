@@ -260,7 +260,9 @@ export function ProductHero({
     const option = options.find((o) => o.id === s.id);
     return (option ? option.outOfStock : everyOptionSoldOut) ? { ...s, node: <>{s.node}{soldOutBadge}</> } : s;
   });
-  const desktopSoldOut = everyOptionSoldOut || (!showAllColors && selectedOutOfStock);
+  // Same rule as the buy action (canAddToCart): "All colors" after picking a sold-out colour keeps that colour as the
+  // cart choice, so the lineup photo carries the badge too (checker #404).
+  const photoSoldOut = everyOptionSoldOut || selectedOutOfStock;
   // On a lineupFirst product "all" is where the page starts, not an option — the buy bar then asks for a pick.
   const selectedOptionLabel = showAllColors ? (product.lineupImage && !lineupFirst ? allLabelAt(allIndex) : null) : selectedColor?.name ?? selectedFlavor?.name ?? null;
   const priceText = sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : null;
@@ -404,7 +406,7 @@ export function ProductHero({
             aria-hidden
           />
           <FavoriteButton slug={product.slug} className="absolute right-2 top-2 z-10" />
-          {desktopSoldOut && <SoldOutPhotoBadge label={dict.product.outOfStockChip} className="max-lg:hidden" />}
+          {photoSoldOut && <SoldOutPhotoBadge label={dict.product.outOfStockChip} className="max-lg:hidden" />}
           <div className="relative h-full w-full p-8 max-lg:hidden lg:p-12">
             {showNoPhoto && selectedRecord ? (
               <NoOptionPhoto name={selectedRecord.name} swatchHex={selectedRecord.swatchHex} note={noPhotoNote} />
@@ -431,7 +433,7 @@ export function ProductHero({
             {showAllColors && product.lineupImage && !lineupFirst ? (
               <div className="relative h-full w-full p-2">
                 <ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayMap?.[(shownLineup ?? product.lineupImage).src] ?? null} overrideImage={shownLineup ?? product.lineupImage} />
-                {everyOptionSoldOut && soldOutBadge}
+                {photoSoldOut && soldOutBadge}
               </div>
             ) : (
               <MobileVariantGallery
