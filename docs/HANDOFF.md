@@ -11,9 +11,10 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = #380 merge 9630fcf (MURO 3ML 14 boxes cut out, owner 08/10 after the
-  round close) — live, deploy run on 9630fcf success + curl 200 [ตรวจแล้ว]. Today's site merges, in order: #372–#377 coils stack · #366
-  INFY · #364 M Bar 15K → M Switch Kit (+ home Scene 4 = Kit) · #368 TFIT · #379 MURO 14 flavours · #380 MURO boxes cut out. Rollback points = those merge commits (revert one PR). A queued deploy on main can show
+1 main: `git fetch && git log -1 --oneline origin/main` = #383 merge 006a96c (staff slip-check fix, item 3t) — live, deploy run
+  37773490651 success + curl 200 after the Render swap [ตรวจแล้ว]. Today's site merges, in order: #372–#377 coils stack · #366
+  INFY · #364 M Bar 15K → M Switch Kit (+ home Scene 4 = Kit) · #368 TFIT · #379 MURO 14 flavours · #380 MURO boxes cut out ·
+  #383 slip check. Rollback points = those merge commits (revert one PR). A queued deploy on main can show
   "cancelled" when a newer push queues behind it (e18b29a 08/10) → run Actions → deploy → Run workflow (deploy=true) by hand.
   Render: ~1 min of 502 + ~2 min before the new build serves after the deploy job ends — wait, then curl.
   Night chain OFF (day chat 08/10 turned it off again). NO site merge on 10/10 (owner's LINE broadcast, 2–4k visitors; load test 07/10:
@@ -59,6 +60,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   `_incoming/seo-d/` kept until the 22/10 read. Not done here: "หัวพอตใส" on m-bar-15k (item 3 (3)) · esko card "20 รสชาติ" (data round).
 3t CLOSED 08/10 — staff slip check (EasySlip), tag `slip-check-done`, live #347/#348, owner passed a real slip. Owner still to do: forward
   `docs/คู่มือแอดมิน-ตรวจสลิป.md` to the LINE team group (+ password separately). Error INVALID_API_KEY = key copied short.
+  FIX #383 (08/10, staff case): slips paid through the shop's K+ QR name the receiver by the QR reference 004999137680913
+  (payment.ts `promptPayRef`) → now "match"; same image is answered from the log only when it was "match"; staff mark
+  "used for an order" (migration 0006) → re-check = grey note, marked = red. Checker PASS on 5cf058a + undo fix 3e16e38.
+  NOT proven on a real slip yet [เชื่อว่า]: the exact masked shape EasySlip returns for that QR — an "unclear" verdict now
+  logs `[slip-check] receiver unclear — shape …` (Render logs, no names/digits) → read it if staff report "unclear" again.
+  Guide changed → the owner should re-send `docs/คู่มือแอดมิน-ตรวจสลิป.md` section 3 to the team.
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
