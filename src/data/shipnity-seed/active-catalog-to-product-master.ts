@@ -706,12 +706,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-87/card.webp",
-      alt: "VOOPOO TPP Pod in Black, 5.5mL, retail box with two pods, one showing the ADAPT TPP COILS base engraving",
-      angle: "Front, plain white-background product photography, whitespace-trimmed only. VARIANT PROOF (this is what resolved the record's long-standing Black-vs-Gunmetal question): the VOOPOO box in frame carries a printed rounded \"BLACK\" badge under the pod render, above \"TPP POD\" / \"COMPATIBLE WITH ALL TPP COIL\" — manufacturer packaging artwork, so the colour name is VOOPOO's own. Independently corroborated by the retailer's variant-to-SKU mapping (Black = VPO097-BLA, Gunmetal = VPO097-GUN). TWO DISCLOSED IMPERFECTIONS, both deliberate: (1) this is the US-market box, so a printed FDA nicotine-warning panel occupies part of the frame — it is genuine retail packaging, not a decorative marketing overlay, and a pods-only crop that excluded it was rejected for falling under product-image.ts's 400px card floor; (2) the box shows a 2-pack while this record's child is \"Black / 1 หัว\" (one head) — the Thai retailer splits the box, so product copy must never claim a 2-pack.",
-      transparentBackground: false,
-      sourceName: "Element Vape (US vape retailer; product photography — NOT VOOPOO's own site)",
-      sourceUrl: "https://www.elementvape.com/voopoo-tpp-pods",
+      src: "/assets/products/coil-87/card-v2.webp",
+      alt: "VOOPOO TPP Pod, black, 5.5 mL empty pod cartridge, studio photo",
+      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of 3FVape's photo of the black TPP Pod 2-pack (one pod shown — the shop sells it per pod); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from 3FVape's product photo",
+      sourceUrl: "https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html",
     },
   ],
   "Pod-169": [
@@ -734,12 +734,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-68/card.webp",
-      alt: "VOOPOO ITO-X Pod Cartridge, Black, isolated product shot",
-      angle: "Front, isolated (alpha background from source). The pod body itself is printed \"ITO-X\", and the retailer's own variant-specific product photo/title/alt text are all labeled \"Black\" — matching this record's single active child exactly.",
+      src: "/assets/products/coil-68/card-v2.webp",
+      alt: "VOOPOO ITO-X pod cartridge, black, studio photo",
+      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of VOOPOO's own product photo of the black ITO-X (1000 px, VOOPOO's Shopline store); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
-      sourceName: "Black Note (US vape retailer; product photography)",
-      sourceUrl: "https://www.blacknote.com/e-juice/voopoo-ito-x-coils/",
+      sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product photo",
+      sourceUrl: "https://img-va.myshopline.com/image/store/1747294110724/Black1000.jpg",
     },
   ],
   "Coil-63": [
@@ -891,12 +891,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-56/card.webp",
-      alt: "VOOPOO PnP X Cartridge MTL, silver colorway, retail box and two cartridges, isolated product shot",
-      angle: "Storefront quality-correction pass (2026-09-02) — REPLACES the previous asset. The owner flagged that asset (131×205) as an explicit NEGATIVE quality benchmark — genuinely soft/blurry, not merely small. A prior session's comment claimed \"every available official image is the same small in-frame device size (~110-150px), so no sharper source exists\"; re-checking shop.voopoo.com directly found that claim was wrong — this 600×600 official gallery photo (box + 2pcs, plain white background) was reachable and, on inspection, genuinely sharp (VOOPOO logo and CE mark crisply legible under zoom). Plain trim only, no other processing.",
-      transparentBackground: false,
-      sourceName: "VOOPOO (official Shopline storefront CDN)",
-      sourceUrl: "https://shop.voopoo.com/products/pnp-x-cartridge",
+      src: "/assets/products/coil-56/card-v2.webp",
+      alt: "VOOPOO PnP X Cartridge MTL, silver, 5 mL, studio photo",
+      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapesourcing's photo of the silver PnP X Cartridge MTL (800 px); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from Vapesourcing's product photo",
+      sourceUrl: "https://image.vapesourcing.com/images/202509/silver-voopoo-pnp-x-tank-empty-mtl.jpg",
     },
   ],
   "Coil-74": [
@@ -1322,6 +1322,15 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-94-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-2.webp", alt: "UWELL CALIBURN G3 pod, 0.6Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
     "Coil-94-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-3.webp", alt: "UWELL CALIBURN G3 pod, 0.9Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
     "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-4.webp", alt: "UWELL CALIBURN G3 pod, 1.2Ω meshed, retail box", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
+  },
+  "Coil-87": {
+    "Coil-87-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-87/variant-coil-87-1.webp", alt: "VOOPOO TPP Pod, black, 5.5 mL empty pod cartridge, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from 3FVape's product photo", sourceUrl: "https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html" },
+  },
+  "Coil-68": {
+    "Coil-68-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-68/variant-coil-68-1.webp", alt: "VOOPOO ITO-X pod cartridge, black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product photo", sourceUrl: "https://img-va.myshopline.com/image/store/1747294110724/Black1000.jpg" },
+  },
+  "Coil-56": {
+    "Coil-56-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-56/variant-coil-56-3.webp", alt: "VOOPOO PnP X Cartridge MTL, silver, 5 mL, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapesourcing's product photo", sourceUrl: "https://image.vapesourcing.com/images/202509/silver-voopoo-pnp-x-tank-empty-mtl.jpg" },
   },
   // IQOSHEET-15 — FULL REBUILD (owner quality review, 2026-09-02). 11 of this parent's 12
   // selectable flavors now have a real, current, exact-name official photo — up from 6, and every
