@@ -195,7 +195,7 @@ export const unbrandedProducts: Product[] = [
         alt: "Muro 3ML, Grape flavor box",
         angle: "Front, angled",
         transparentBackground: true,
-        sourceName: "Retailer photo (ihavevape.net), box cut out of its poster — not a manufacturer-official site",
+        sourceName: "OKami24 render (Higgsfield) from ihavevape.net's flavour poster (box cut out, re-rendered 2x) — not a manufacturer-official site",
         sourceUrl: "https://ihavevape.net/product/close-system-muro-3-ml/",
       },
     ],
