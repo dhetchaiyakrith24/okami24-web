@@ -23,8 +23,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 2 ahead of main: nothing after the close PR [ตรวจแล้ว]. Worktrees: `_incoming/wt-coil3` (own node_modules copy, detached at main;
   test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable
   (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
-  `git branch --show-current` before every commit. Stock round = item 3u (worktree `_incoming/wt-stock`, branch `stock-survey`)
-  — check `git log origin/main` / open PRs before touching src/data/shipnity-seed/ or src/data/stock/.
+  `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
+  copy, Next types generated with `npx next typegen`) is on branch `docs-shipnity-max` = this handoff's docs PR; nothing else unmerged.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
 3 CLOSED 08/10 — round "3 coil photos" (`docs/rounds/รอบรูปคอยล์3ตัว-coil-1-72-94-08-10.txt`), tag `coil-photos-3-done`. Live: #388
   coil-1 (PnP TW15 / DW60 / TR1, TR1 rubber colours share one photo) + coil-72 (VMATE V2 0.7 / 1.2 + Top Fill, 0.4/0.7 share) ·
@@ -34,26 +34,23 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (card-72 11.6 vs 22.6, card-94 6.8 vs 15.8) — Friday + checker agree: clean product vs text-heavy photo. Minor, open: faint
   stray pixels along the pod bottoms of 94-2/94-3 visible only at 2.7x zoom (checker `_incoming/chk-coil2/pod92b.jpg`).
   Tools + sources: `_incoming/coil3/` (key/D-*.png = the masters process-images reads; fix/ = checker fixes, pre-D-*.png backups).
-3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (opened 08/10, a chat of its own).
-  【ห้ามแตะ】 coil-1/72/94 photos · every price file · no site merge on 10/10.
-  Batch 1 (survey, docs only) DONE = `docs/cloud-results/stock-api-sku-survey.md` (numbers, ask-list, 6-batch plan) [ตรวจแล้ว]:
-  528 web options → 249 exact SKU · 7 spelling · 7 needs a human · 42 option not in Shipnity · 223 on 29 products absent from
-  Shipnity Max. Raw dumps/scripts `_incoming/stock-api/` (re-read Max = owner logs in, app browser, `match.js`).
-  Owner answers 08/10 = §18 "Stock" (Max = the warehouse's · item 22 = 2 · item 23 = 1 "ยืนยัน", over half sold out is fine).
-  Batch 2 (B) MERGED #395 → c9fcb73 (checker PASS 8/8 on 2559647, report `_incoming/stock-api/checker-395/report.md`; diff
-  `vt-diff2/`, shots `shots/`): `src/data/stock/sku-map.ts` (528 options: 256 SKU · 7 "check" · 265 null) · no SKU = out-of-stock
-  through the sold-out path · a product whose every option is sold out offers no order button (2559647 — the first diff left
-  17 all-sold-out pages still saying "สั่งซื้อทางไลน์": 9 → 26 after the fix) · sold-out chip names struck through. Fully sold-out
-  products 2 → 28; order button → "สินค้าหมด · สอบถามทาง LINE" on 26 pages; cart gate blocks 264/265 null options (per the
-  checker report: resolveProductRef run on every null; the 1 = Zero Nano).
-  Friday's call, owner told: 5 near names whose sibling already owns the code = null, not "check" (VMATE Starlight Red · M Switch
-  Grape Aloe · Zero Cartridge Strawberry · MOOOD Blueberry N5% · Esko Blueberry Jam).
-  NEXT batch (small, own PR, checker): Zero Nano (legacy, no options) still orderable — needs a product-level stock switch ·
-  JSON-LD of the 9 ProductMaster all-sold-out pages (coil-54/56/68/70/74/83/87/89, pod-180) still InStoreOnly (page.tsx rule
-  covers legacy only) → OutOfStock. Then batch 3 = stock adapter when the API arrives (survey doc plan) · order push carries
-  the dropship shipping fee (survey doc last section).
-  Open: the 7 "check" (admin, owner list 24) · G4 Pro code (owner list 25; map uses Max Pod-168) · ProductMaster seed in-stock
-  flags are from September (only the API fixes them) · test server 3412 = stopped at this close.
+3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (opened 08/10, own chat).
+  【ห้ามแตะ】 coil-1/72/94 photos · every price file · no site merge on 10/10. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
+  Done [ตรวจแล้ว]: batch 1 survey #393 (`docs/cloud-results/stock-api-sku-survey.md` = counts, warehouse ask-list, plan, dropship
+  shipping-fee note) · batch 2 #395 LIVE c9fcb73 (deploy 37796327486; curl 42/42 pages 200): `src/data/stock/sku-map.ts` 528 options
+  = 256 SKU · 7 "check" · 265 null → null = sold out, a product with every option sold out offers no order button, sold-out chip
+  names struck through; fully sold-out products 2 → 28. Checker PASS 8/8 (`_incoming/stock-api/checker-395/report.md`); 5 near names
+  whose sibling owns the code = null (owner told). Evidence + scripts: `_incoming/stock-api/` (Max dump, match.js, gen-map.js).
+  NEXT STEP (batch 2b — small, tier B, own PR, checker; not on 10/10): (1) Zero Nano (legacy, no options) still orderable → a
+  product-level switch from sku-map `product: null` (ProductHero + resolveProductRef legacy branch) · (2) JSON-LD of the 9
+  ProductMaster all-sold-out pages (coil-54/56/68/70/74/83/87/89, pod-180) still InStoreOnly → OutOfStock (page.tsx rule is
+  legacy-only) · (3) owner list 24 answered by the admin → set those 7 "check" to a code or null.
+  Then batch 3 = stock adapter when the warehouse sends the API · batch 4+ = order push carrying the shipping fee.
+  The owner holds (chat 08/10) a warehouse report "2 ways to fix the shipping fee" + 5 questions (35 or 50 · which way · separate
+  shipping/discount fields · cost per SKU · API doc + test key) and the admin message for list 24 — answers come back via the owner.
+  Open: ProductMaster seed in-stock flags are from September (API fixes) · `legacy-price-approvals.ts` still names Pod-181 for
+  caliburn-g4-pro (price file 【ห้ามแตะ】 — next allowed touch) · unused half-filled Claude Docs page claude.ai/code/artifact/
+  92a058d3-edb8-4321-abd6-4eb655f5dbe3 (delete only if asked) · test server 3412 stopped.
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
@@ -187,7 +184,7 @@ Business facts live in `docs/BUSINESS_SOURCE_OF_TRUTH.md`, Thai words in `docs/T
 
 **Shop and ordering:** the cart is closed (LAUNCH_AUDIT item 43) → LINE @okm24 · never propose reopening it · the 4
 service pages (`/warranty /shipping /how-to-order /privacy`) are not touched and carry no JSON-LD on purpose (item 49) ·
-admin page and OTP are parked · caliburn-g4-pro = Pod-181 · muro-3ml = ฿150 (admin list, "Selling prices" below) · overwrite the 20 owner-estimate rows in
+admin page and OTP are parked · caliburn-g4-pro = Pod-168 (Max's code, owner 08/10 — the old Pod-181 belongs to the retired system) · muro-3ml = ฿150 (admin list, "Selling prices" below) · overwrite the 20 owner-estimate rows in
 `legacy-price-approvals.ts` only when the stock API lands.
 
 **Head copy and SEO:** e-liquid stock is 0 on the storefront → "น้ำยา" stays out of head copy except `/e-liquid` itself ·
@@ -205,8 +202,9 @@ the 7 baseline pages are worked on like any other page (hold code removed in rou
 **Text length per product page (owner 03/10):** 1,000–3,500 unique Thai characters of main content (spec table not counted) +
 the same fact at most twice outside the spec table — "ตอนนี้กำลังสวย ไม่ต้องลดเนื้อหา" (proposal: `_incoming/g5-template/seo-text-length.md`).
 
-**Stock (owner 08/10):** stock truth = Shipnity Max only — the WAREHOUSE's account, not the shop's (we only read it, to open
-the cart later) · an option or product with no SKU there = "สินค้าหมด", page and option stay (SEO; customers pick another
+**Stock (owner 08/10):** stock truth = Shipnity Max only (`app.shipnitymax.com`) — the WAREHOUSE's account, not the shop's (we
+only read it, to open the cart later) · the old Shipnity (`shipnity.com`, source of the September seed and of the Pod-181 re-code)
+is retired: "ตัวเก่าเขาไม่ได้ใช้แล้ว" — never take a code, stock or price from it · an option or product with no SKU there = "สินค้าหมด", page and option stay (SEO; customers pick another
 model), even when that is over half the catalog · Shipnity spellings that differ are matched in `src/data/stock/sku-map.ts`,
 never fixed in Shipnity · the warehouse will send the API; build the SKU map meanwhile.
 

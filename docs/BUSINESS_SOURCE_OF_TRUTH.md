@@ -110,6 +110,12 @@ catalog.
 **Purpose:** operational stock / availability, order operations, tracking, warehouse-facing
 workflow. Shipnity stock is considered reasonably real-time.
 
+**Which Shipnity (owner, chat 2026-10-08):** only **Shipnity Max** (`app.shipnitymax.com`), the warehouse's own account —
+the shop reads it, it does not own it. The old Shipnity (`shipnity.com`) is no longer used ("ตัวเก่าเขาไม่ได้ใช้แล้ว"):
+product codes, stock and prices are never taken from it. The business model is dropship: the warehouse holds the stock,
+packs and ships, and bills the shop cost per item + shipping on every order (owner, same chat; details and the open
+shipping-fee questions: `docs/cloud-results/stock-api-sku-survey.md`, last section).
+
 **Important:** Shipnity is **not** the complete product-content master. It does not contain
 enough detailed variant/product presentation data for the website.
 
