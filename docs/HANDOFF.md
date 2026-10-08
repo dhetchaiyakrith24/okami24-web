@@ -13,15 +13,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 
 1 main: `git fetch && git log -1 --oneline origin/main` = this close's docs PR merge, on top of #389 merge 246f5bd [ตรวจแล้ว].
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
-  #389 coil-94 photos (246f5bd; live check in the close report). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
+  #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
   deploy job ends — wait, then curl.
   Night chain OFF (day chat 08/10 turned it off). NO site merge on 10/10 (owner's LINE broadcast). Owner decisions: ask in chat + one
   line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (§18) · image work goes live after the checker.
   Image renders = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — 0 credits this chat: balance 5,082.4, every Nano
   Banana Pro transaction 0 [ตรวจแล้ว]; never the Higgsfield MCP generate tools. Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main: nothing [ตรวจแล้ว]. Worktrees: `_incoming/wt-coil3` (own node_modules copy, detached at main; test server 3412 still
-  serves the coils3-all build — stop it when done) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable
+2 ahead of main: nothing after the close PR [ตรวจแล้ว]. Worktrees: `_incoming/wt-coil3` (own node_modules copy, detached at main;
+  test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable
   (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. A SEPARATE CHAT (owner 08/10) is opening the round "Shipnity stock API + SKU"
   (survey first, no site edits in its first batch) — check `git log origin/main` / open PRs before touching src/data/shipnity-seed/.
