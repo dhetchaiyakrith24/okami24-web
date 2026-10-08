@@ -54,6 +54,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Everything else passed (text, V2/Top Fill not swapped, TR1 + Top Fill shared photos, AI label gone, provenance rows, old files gone).
   LESSONS to write at the close: owner sees a small hero image as a defect (MURO 340 px files drawn at intrinsic size) · Lexical
   prompt box · AI re-render fitted onto a measured cut keeps the outline exact · gate compared renamed variants with the card.
+3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (opened 08/10, a chat of its own;
+  the coil round in item 3 is another chat's). 【ห้ามแตะ】 coil-1/72/94 photos · every price file · no site merge on 10/10.
+  Batch 1 (survey, docs only) DONE = `docs/cloud-results/stock-api-sku-survey.md` (numbers, ask-list, 6-batch plan) [ตรวจแล้ว]:
+  528 web options → 249 exact SKU · 7 spelling · 7 needs a human · 42 option not in Shipnity · 223 on 29 products absent from
+  Shipnity Max. Raw dumps/scripts `_incoming/stock-api/` (re-read Max = owner logs in, app browser, `match.js`).
+  NEXT: owner answers in `docs/รอพี่ตรวจ.md` (which Shipnity · API doc/key from the stock team) → batch 2 SKU map (data, checker).
+  No scope-auditor yet: batch 1 touches no page; call it before batch 4 (the first visible change).
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
