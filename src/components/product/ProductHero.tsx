@@ -149,7 +149,10 @@ export function ProductHero({
   // it no longer blocks the buy action; ProductBuyAction gets choiceMissingLabel instead (designer 2026-09-28).
   const choiceMissing = hasOptions && cartVariantId === null;
   const choiceMissingLabel = choiceMissing ? ((product.colorVariants?.length ?? 0) > 0 ? dict.product.chooseColorFirst : dict.product.chooseFlavorFirst) : null;
-  const canAddToCart = sellingPrice !== null && !selectedOutOfStock;
+  // Every option sold out (stock round 08/10: no SKU in the warehouse) = the product is sold out, even with nothing picked
+  // yet — otherwise a page that opens on no option would still offer "order on LINE".
+  const everyOptionSoldOut = hasOptions && [...(product.colorVariants ?? []), ...(product.flavorVariants ?? [])].every((v) => v.availability === "out-of-stock");
+  const canAddToCart = sellingPrice !== null && !selectedOutOfStock && !everyOptionSoldOut;
   // Data round (owner 2026-09-24): a stat shows only when a verified spec row states the same number.
   const facts = verifiedAttributes(product);
   const hasVerifiedSpecs = verifiedRows(product.specifications).length > 0;

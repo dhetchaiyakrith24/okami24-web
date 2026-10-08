@@ -209,6 +209,21 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
   const valueLabelByCode = new Map(axis?.allowedValues.map((v) => [v.code, v.label] as const) ?? []);
   const cardAsset = product.assets.find((a) => a.role === "card" && a.kind === "official-photo");
   const neutralFallback = getNeutralVariantFallback(product.commerce.integrationRef?.externalId ?? product.internalId);
+  const variants = product.variants.map((v) => {
+    const selection = v.optionSelections[0];
+    const label = selection ? (valueLabelByCode.get(selection.valueCode) ?? selection.valueCode) : v.id;
+    return {
+      id: v.id,
+      label,
+      image: v.image ? { src: v.image.src, alt: v.image.alt } : undefined,
+      // Owner's sold-out list (src/data/stock/sold-out.ts) and "no SKU" (sku-map.ts) can only ever force a variant OUT
+      // of stock; a Shipnity "unknown"/"out-of-stock" is never promoted by them.
+      availabilityStatus: isMarkedSoldOut(product.slug, label, v.id) ? ("out-of-stock" as const) : v.availability.status,
+    };
+  });
+  // No SKU in the warehouse (src/data/stock/sku-map.ts `product: null`), or every option sold out = the product is out of
+  // stock — a page that opens on no option must not offer to order it (stock round 08/10). Never promotes a status.
+  const everyVariantSoldOut = variants.length > 0 && variants.every((v) => v.availabilityStatus === "out-of-stock");
 
   return {
     slug: product.slug,
@@ -230,20 +245,8 @@ function toView(product: ProductMasterInput): StorefrontProductView | null {
     priceReferenceSource: product.pricing.priceReference?.source ?? null,
     optionAxisLabel: axis?.label ?? null,
     optionAxisCode: axis?.code ?? null,
-    // No SKU in the warehouse (src/data/stock/sku-map.ts `product: null`) = out of stock; never promotes a status.
-    availabilityStatus: hasNoSku(product.slug) ? "out-of-stock" : product.availability.status,
-    variants: product.variants.map((v) => {
-      const selection = v.optionSelections[0];
-      const label = selection ? (valueLabelByCode.get(selection.valueCode) ?? selection.valueCode) : v.id;
-      return {
-        id: v.id,
-        label,
-        image: v.image ? { src: v.image.src, alt: v.image.alt } : undefined,
-        // Owner's sold-out list (src/data/stock/sold-out.ts) and "no SKU" (sku-map.ts) can only ever force a variant OUT
-        // of stock; a Shipnity "unknown"/"out-of-stock" is never promoted by them.
-        availabilityStatus: isMarkedSoldOut(product.slug, label, v.id) ? "out-of-stock" : v.availability.status,
-      };
-    }),
+    availabilityStatus: hasNoSku(product.slug) || everyVariantSoldOut ? "out-of-stock" : product.availability.status,
+    variants,
     specifications: product.specifications,
     sourceUrls: product.sourceUrls,
     reviewVideo: product.reviewVideo,
