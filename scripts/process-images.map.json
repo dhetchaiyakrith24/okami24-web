@@ -7308,5 +7308,43 @@
   },
   "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c38-card.png",
+  "slug": "coil-38",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Giant Vapes' variant photos of the TPP-DM2 box (700 px) and the TPP-DM4 box (800 px), each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c38-dm2-S1 + c38-dm4-S1 (card = the two composed by stagger.js, no AI).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c38-dm2.png + _incoming/option-photos/b4/fid/c38-dm4.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye (card = the option renders composed, no AI)"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c38-dm2.png",
+  "slug": "coil-38",
+  "role": "variant",
+  "id": "coil-38-2",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Giant Vapes' variant photos of the TPP-DM2 box (700 px) and the TPP-DM4 box (800 px), each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c38-dm2-S1 + c38-dm4-S1 (card = the two composed by stagger.js, no AI).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c38-dm2.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-38-2.webp"
+ },
+ {
+  "source": "_incoming/option-photos/b4/key/D-c38-dm4.png",
+  "slug": "coil-38",
+  "role": "variant",
+  "id": "coil-38-4",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
+   "reference": "Giant Vapes' variant photos of the TPP-DM2 box (700 px) and the TPP-DM4 box (800 px), each with its blister of 3 — https://giantvapes.com/products/voopoo-tpp-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c38-dm2-S1 + c38-dm4-S1 (card = the two composed by stagger.js, no AI).png)",
+   "fidelitySheet": "_incoming/option-photos/b4/fid/c38-dm4.png — shape IoU vs the reference cut (refcut/) and the outline overlay; logo, every printed mark, cap/tank/base colours checked by eye"
+  },
+  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-38-4.webp"
  }
 ]
