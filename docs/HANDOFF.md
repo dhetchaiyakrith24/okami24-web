@@ -39,8 +39,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Batch 1 (survey, docs only) DONE = `docs/cloud-results/stock-api-sku-survey.md` (numbers, ask-list, 6-batch plan) [ตรวจแล้ว]:
   528 web options → 249 exact SKU · 7 spelling · 7 needs a human · 42 option not in Shipnity · 223 on 29 products absent from
   Shipnity Max. Raw dumps/scripts `_incoming/stock-api/` (re-read Max = owner logs in, app browser, `match.js`).
-  NEXT: owner answers in `docs/รอพี่ตรวจ.md` (which Shipnity · API doc/key from the stock team) → batch 2 SKU map (data, checker).
-  No scope-auditor yet: batch 1 touches no page; call it before batch 4 (the first visible change).
+  Owner answers 08/10 = §18 "Stock" (Max = the warehouse's · item 22 = 2 · item 23 = 1 "ยืนยัน", over half sold out is fine).
+  Batch 2 (B) on branch `stock-sku-map` (worktree `_incoming/wt-stock`, own node_modules copy): 11cb4c8 `src/data/stock/sku-map.ts`
+  (528 options: 256 SKU · 7 "check" · 265 null) + no SKU = out-of-stock through the sold-out path → fully sold-out products 2 → 28
+  (Zero Nano = the 29th: a legacy product with no options has no stock switch — open) · 04ef602 strike-through on sold-out chips.
+  JSON-LD Offer → OutOfStock on the legacy all-sold-out pages (existing rule, page.tsx). Page list = SKU-map products with a null
+  + controls (`_incoming/stock-api/pages-u.txt`; stock is read only on product pages — grep of src). Checker not run yet.
+  Open after batch 2: the 7 "check" (admin) · G4 Pro: §18 says Pod-181, Max says Pod-168 (map uses Max) · seed in-stock flags of
+  ProductMaster options are from September (only the API fixes them) · batch 3 = stock adapter when the API arrives.
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
@@ -186,6 +192,11 @@ the 7 baseline pages are worked on like any other page (hold code removed in rou
 
 **Text length per product page (owner 03/10):** 1,000–3,500 unique Thai characters of main content (spec table not counted) +
 the same fact at most twice outside the spec table — "ตอนนี้กำลังสวย ไม่ต้องลดเนื้อหา" (proposal: `_incoming/g5-template/seo-text-length.md`).
+
+**Stock (owner 08/10):** stock truth = Shipnity Max only — the WAREHOUSE's account, not the shop's (we only read it, to open
+the cart later) · an option or product with no SKU there = "สินค้าหมด", page and option stay (SEO; customers pick another
+model), even when that is over half the catalog · Shipnity spellings that differ are matched in `src/data/stock/sku-map.ts`,
+never fixed in Shipnity · the warehouse will send the API; build the SKU map meanwhile.
 
 **Catalog options sold in one market only (owner 06/10 night, "ใส่ไว้ครับ"):** a colour/flavour the maker sells in a single
 market (e.g. IQOS ILUMA i Bold Ruby, jp.iqos.com only) is listed like every other option — non-purchasable until stocked.
