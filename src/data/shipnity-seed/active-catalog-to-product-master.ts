@@ -963,12 +963,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-53/card-v2.webp",
-      alt: "UWELL CALIBURN G replacement coil 1.0Ω, box and blister of 4, studio photo",
-      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Giant Vapes' photo of the 1.0 ohm box with its blister (500 px, the box reads 1 Ω); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      src: "/assets/products/coil-53/card-v3.webp",
+      alt: "UWELL CALIBURN G 1.0Ω coil box with four coils, studio photo",
+      angle: "Front, studio re-shoot 09/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from Element Vape's photos of the 1 Ω box and its blister of 4 (round cotton holes of the 1 Ω coil); the render's three coils + one copied coil = the 4 of the box; box art, every printed mark and the coil shape checked by eye against those photos. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
-      sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photo",
-      sourceUrl: "https://giantvapes.com/products/uwell-caliburn-g-replacement-coils",
+      sourceName: "OKami24 render (Higgsfield) from Element Vape's product photos",
+      sourceUrl: "https://www.elementvape.com/uwell-caliburn-g-coils",
     },
   ],
   // Tier-1 disposable growth mission (2026-09-03) — closes the last blocker on Pod-180. Real price
@@ -1331,7 +1331,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-89-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-89/variant-coil-89-2.webp", alt: "RINCOE Jellybox V pod cartridge, Mesh 1.0Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/rincoe-jellybox-v-pod-cartridge-3ml-3pcs-pack" },
   },
   "Coil-53": {
-    "Coil-53-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-53/variant-coil-53-2.webp", alt: "UWELL CALIBURN G replacement coil 1.0Ω, box and blister of 4, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Giant Vapes' product photo", sourceUrl: "https://giantvapes.com/products/uwell-caliburn-g-replacement-coils" },
+    "Coil-53-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-53/variant-coil-53-2-v2.webp", alt: "UWELL CALIBURN G 1.0Ω coil box with four coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photos", sourceUrl: "https://www.elementvape.com/uwell-caliburn-g-coils" },
   },
   "Coil-74": {
     "Coil-74-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-74/variant-coil-74-1.webp", alt: "UWELL CALIBURN X empty refillable pod cartridge, 3 mL, PRO FOCS side, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's product photo", sourceUrl: "https://www.vapormo.com/products/uwell-caliburn-x-replacement-empty-pod-cartridge-3ml-2pcs-pack" },

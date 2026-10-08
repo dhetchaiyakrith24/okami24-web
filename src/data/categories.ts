@@ -22,7 +22,9 @@ export const categories: Category[] = [
     description:
       "Reusable pods: you only swap the pod or coil. ARGUS and DRAG let you set the wattage; switch-style devices like M Switch keep it simple with prefilled pods.",
     descriptionTh:
-      "พอตคิทคือพอตที่ใช้ซ้ำได้ เปลี่ยนแค่หัวพอตหรือคอยล์ อยากปรับวัตต์เองก็มีสาย ARGUS กับ DRAG อยากง่ายก็มีเครื่องระบบสวิตช์อย่าง M Switch ที่ใช้หัวพอตบรรจุสำเร็จ",
+      // Round SEO E "pod" (09/10): opens on its own name instead of "พอตคิทคือพอตที่…" — GSC moved the bare query "pod" from
+      // pod-systems (owner page, SEO_LANDSCAPE §0) to this page on 02–03/10; the generic "…คือพอต" definition is the one we drop.
+      "Pod Kit หรือพอตคิท เครื่องที่ใช้ซ้ำได้ เปลี่ยนแค่หัวพอตหรือคอยล์ อยากปรับวัตต์เองก็มีสาย ARGUS กับ DRAG อยากง่ายก็มี M Switch ระบบสวิตช์ที่ใช้หัวพอตบรรจุสำเร็จ",
     systemTypes: ["pod-kit"],
   },
   {

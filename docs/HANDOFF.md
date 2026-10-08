@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #410 8276a247 (coil-38
-  photos, item 3d; deploy run 37823744743 success) [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #415 1ede0ebd (coil-53
+  photos, item 3d; deploy run 37842057614) [ตรวจแล้ว].
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
   #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
   deploy job ends — wait, then curl.
@@ -42,13 +42,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   DONE: coil-38 VOOPOO TPP card + DM2 / DM4 re-shot in the coil-94 B style (box upright, 3 coils lying in front) — LIVE #410
   8276a247 (deploy 37823744743; curl: 3 files byte-identical to git, page 200), checker PASS 5/5, 0 credits (5,076.4) [ตรวจแล้ว].
   Tools `_incoming/coil4/` (prompts.js · coilfill.js = coil silhouettes · solidcrop.js; the worktree reaches it through a JUNCTION —
-  Git Bash `ln -s` made a stale COPY that fed process-images old masters). Candidates left: coil-70 Dotmod (sold out) ·
-  coil-53 UWELL Caliburn G 1.0Ω — STOPPED 09/10 after 5 render rounds, NOT shipped, live image unchanged [ตรวจแล้ว]: clean box
-  reference found (Element Vape, 1 Ω box front unobstructed) and the box comes out right, but every render gives the coil body the long
-  OVAL window of the 0.8Ω mesh coil; the 1.0Ω coil shows small ROUND cotton holes (Element Vape blister photo) and no clear single-coil
-  photo of the 1.0Ω was found → wrong-variant image. Best render `_incoming/coil5/out/c53-F.png` (4 coils, box text right, flap word
-  removed) + full cut pipeline (`_incoming/coil5/` soften-flap.js · polycut.js + poly53.json · trimfloor.js · apply-c53.js) ready if a
-  real 1.0Ω single-coil photo turns up (next: search more retailers / UWELL) — or the owner accepts it [รอเจ้าของ].
+  Git Bash `ln -s` made a stale COPY that fed process-images old masters).
+  DONE: coil-53 UWELL CALIBURN G 1.0Ω card + option re-shot (box upright, 4 coils in front) — #415 merged 1ede0ebd (deploy run
+  37842057614, Render dep-db403nc9v7es738k5f60), checker PASS 5/5 (note: lower edge of coils 3–4 slightly ragged, visible only on
+  magenta), 0 credits (5,076.4) [ตรวจแล้ว]. Lesson: a reference holding a DIFFERENT variant (the 0.8Ω single coil) made 5 renders copy
+  its oval window — the owner's fix "crop the coil only" (1Ω coils cut out of the blister photo as image 2, box front as image 1)
+  worked first time; the render gave 3 coils, the 4th = its front coil copied along the row (owner chose this). Free Unlimited =
+  ONE job at a time (a second click is refused). Tools `_incoming/coil5/` (addcoil.js · cutJ4b.js · apply-c53.js · prompt-J.txt).
+  Candidates left: coil-70 Dotmod (sold out).
   The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
 3e OPEN ROUND "SEO จ — pod" = `docs/rounds/รอบ-SEO-จ-pod-09-10.txt` (opened 09/10, own chat). 【ห้ามแตะ】 product images · price
   files · stock · NO site merge on 10/10. Owner 09/10: protect what ranked — /products/pod-systems head stays byte-identical.
