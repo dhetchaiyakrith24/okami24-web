@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-08",
-  "endDate": "2026-10-05",
+  "startDate": "2026-09-09",
+  "endDate": "2026-10-06",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 446,
-   "impressions": 2120,
-   "ctr": 0.21037735849056605,
-   "position": 8.734905660377358
+   "clicks": 449,
+   "impressions": 2284,
+   "ctr": 0.19658493870402802,
+   "position": 8.948336252189142
   },
   {
    "keys": [
@@ -192,9 +192,18 @@
     "svk"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 4,
    "ctr": 0,
-   "position": 83.66666666666667
+   "position": 83.5
+  },
+  {
+   "keys": [
+    "tkm"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 3
   },
   {
    "keys": [
