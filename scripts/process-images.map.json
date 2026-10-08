@@ -7789,42 +7789,42 @@
   "fileName": "variant-coil-94-1.webp"
  },
  {
-  "source": "_incoming/coil3/key/D-c94-06.png",
+  "source": "_incoming/coil3/key/D-c94-06-v2.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-2",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
-   "reference": "Black Note's photos of each CALIBURN G3 pod option (0.4Ω pod; 0.6Ω / 0.9Ω boxes with 4 pods; 1.2Ω CRC Version box with 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-06.png; render _incoming/coil3/out/c94-06-S1.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c94-06.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the Black Note box photo, image 2 (0.6 / 0.9) = the approved 0.4Ω pod render; box upright on a #2b2e33 sweep with its 4 pods standing in front (prompts: _incoming/coil3/b2/prompts.txt); keyed off the backdrop by _incoming/coil3/matte3.js --device (box + each pod protected, floor cut per pod foot), clear pod silhouettes restored by b2/podfill.js, placed by place.js, specks dropped by fix/clean.js; AI-garbled side-sticker word softened (b2/soften.js, 0.6 / 0.9) and the 1.2 box logo word re-set to the real \"PRO FOCS\" (b2/logofix.js)",
+   "reference": "Black Note's photo of this CALIBURN G3 option (box + 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-06.png; render _incoming/coil3/b2/c94-06-C2.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c94-06-v2.png — box art, every printed mark and the pods checked by eye against the reference (IoU / colour numbers do not apply: the reference lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "variant-coil-94-2.webp"
+  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B), replaces variant-coil-94-2.webp",
+  "fileName": "variant-coil-94-2-v2.webp"
  },
  {
-  "source": "_incoming/coil3/key/D-c94-09.png",
+  "source": "_incoming/coil3/key/D-c94-09-v2.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-3",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
-   "reference": "Black Note's photos of each CALIBURN G3 pod option (0.4Ω pod; 0.6Ω / 0.9Ω boxes with 4 pods; 1.2Ω CRC Version box with 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-09.png; render _incoming/coil3/out/c94-09-S1.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c94-09.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the Black Note box photo, image 2 (0.6 / 0.9) = the approved 0.4Ω pod render; box upright on a #2b2e33 sweep with its 4 pods standing in front (prompts: _incoming/coil3/b2/prompts.txt); keyed off the backdrop by _incoming/coil3/matte3.js --device (box + each pod protected, floor cut per pod foot), clear pod silhouettes restored by b2/podfill.js, placed by place.js, specks dropped by fix/clean.js; AI-garbled side-sticker word softened (b2/soften.js, 0.6 / 0.9) and the 1.2 box logo word re-set to the real \"PRO FOCS\" (b2/logofix.js)",
+   "reference": "Black Note's photo of this CALIBURN G3 option (box + 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-09.png; render _incoming/coil3/b2/c94-09-C1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c94-09-v2.png — box art, every printed mark and the pods checked by eye against the reference (IoU / colour numbers do not apply: the reference lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "variant-coil-94-3.webp"
+  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B), replaces variant-coil-94-3.webp",
+  "fileName": "variant-coil-94-3-v2.webp"
  },
  {
-  "source": "_incoming/coil3/key/D-c94-12.png",
+  "source": "_incoming/coil3/key/D-c94-12-v2.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-4",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
-   "reference": "Black Note's photos of each CALIBURN G3 pod option (0.4Ω pod; 0.6Ω / 0.9Ω boxes with 4 pods; 1.2Ω CRC Version box with 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-12.png; render _incoming/coil3/out/c94-12-S1.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c94-12.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the Black Note box photo, image 2 (0.6 / 0.9) = the approved 0.4Ω pod render; box upright on a #2b2e33 sweep with its 4 pods standing in front (prompts: _incoming/coil3/b2/prompts.txt); keyed off the backdrop by _incoming/coil3/matte3.js --device (box + each pod protected, floor cut per pod foot), clear pod silhouettes restored by b2/podfill.js, placed by place.js, specks dropped by fix/clean.js; AI-garbled side-sticker word softened (b2/soften.js, 0.6 / 0.9) and the 1.2 box logo word re-set to the real \"PRO FOCS\" (b2/logofix.js)",
+   "reference": "Black Note's photo of this CALIBURN G3 option (box + 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-12.png; render _incoming/coil3/b2/c94-12-C1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c94-12-v2.png — box art, every printed mark and the pods checked by eye against the reference (IoU / colour numbers do not apply: the reference lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "variant-coil-94-4.webp"
+  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B), replaces variant-coil-94-4.webp",
+  "fileName": "variant-coil-94-4-v2.webp"
  }
 ]
