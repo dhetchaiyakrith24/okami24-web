@@ -25,6 +25,7 @@
 import type { Product } from "@/types/catalog";
 import { SOLD_OUT_LIST } from "./sold-out";
 import { SHIPNITY_SKU_MAP } from "./sku-map";
+import { WAREHOUSE_OUT_OF_STOCK } from "./warehouse-stock";
 
 export interface SoldOutEntry {
   /** 1-based line number inside SOLD_OUT_LIST (for typo reports). */
@@ -85,9 +86,25 @@ export function hasNoSku(slug: string, id?: string): boolean {
   return entry.options !== undefined && entry.options[id] === null;
 }
 
-/** The one sold-out answer for an option: on the owner's list, or no SKU in the warehouse. */
+/**
+ * The warehouse marked this SKU "ไม่มีของ" in the latest Shipnity Max read (`warehouse-stock.ts`, batch 3a, owner 09/10).
+ * `id` = the option id, or omitted for a product without options. "check", null and unmapped → false.
+ */
+export function isWarehouseOut(slug: string, id?: string): boolean {
+  const entry = SHIPNITY_SKU_MAP[slug];
+  if (!entry) return false;
+  const code = id === undefined ? entry.product : entry.options?.[id];
+  return typeof code === "string" && code !== "check" && WAREHOUSE_OUT_OF_STOCK.has(code);
+}
+
+/** The one sold-out answer for an option: on the owner's list, no SKU in the warehouse, or the warehouse has none. */
 export function isMarkedSoldOut(slug: string, nameOrId: string, id?: string): boolean {
-  return isListedSoldOut(slug, nameOrId, id) || (id !== undefined && hasNoSku(slug, id));
+  return isListedSoldOut(slug, nameOrId, id) || (id !== undefined && (hasNoSku(slug, id) || isWarehouseOut(slug, id)));
+}
+
+/** The product-level answer for a product without options: no SKU, or the warehouse has none of its SKU. */
+export function isProductMarkedSoldOut(slug: string): boolean {
+  return hasNoSku(slug) || isWarehouseOut(slug);
 }
 
 /**
@@ -100,7 +117,7 @@ export function applySoldOut(products: Product[]): Product[] {
     const hasOptions = (p.colorVariants?.length ?? 0) + (p.flavorVariants?.length ?? 0) > 0;
     return {
       ...p,
-      ...(!hasOptions && hasNoSku(p.slug) ? { availability: "out-of-stock" as const } : {}),
+      ...(!hasOptions && isProductMarkedSoldOut(p.slug) ? { availability: "out-of-stock" as const } : {}),
       colorVariants: p.colorVariants?.map((v) => (isMarkedSoldOut(p.slug, v.name, v.id) ? { ...v, availability: "out-of-stock" as const } : v)),
       flavorVariants: p.flavorVariants?.map((v) => (isMarkedSoldOut(p.slug, v.name, v.id) ? { ...v, availability: "out-of-stock" as const } : v)),
     };

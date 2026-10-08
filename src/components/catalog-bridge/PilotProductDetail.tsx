@@ -92,7 +92,9 @@ export function PilotProductDetail({
   // 2026-09-29 (owner: the standard product photo comes first): under the photo rule the page always opens on the
   // product card with nothing picked — even when options have photos — so a device whose flavour photos show only its
   // pods (ESKO BAR SWITCH) never loses its device photo from the gallery.
-  const initialVariantId = photoRule ? null : (product.variants[0]?.id ?? null);
+  // Open on the first option that can be ordered (same rule as legacy ProductHero's firstSellable — stock batch 3a: the
+  // warehouse read made coil-94's first option sold out, and the page opened on "สินค้าหมด" with three in stock).
+  const initialVariantId = photoRule ? null : ((product.variants.find((v) => v.availabilityStatus === "in-stock") ?? product.variants[0])?.id ?? null);
   const noPhotoNote = product.optionAxisCode === "color" ? dict.product.noPhotoColor : dict.product.noPhotoFlavor;
   const [selectedVariantId, setSelectedVariantId] = useState(initialVariantId);
   const selectedVariant = product.variants.find((v) => v.id === selectedVariantId);

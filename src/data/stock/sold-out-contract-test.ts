@@ -6,7 +6,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { parseSoldOutList, normalizeOption, hasNoSku } from "./apply-sold-out";
+import { parseSoldOutList, normalizeOption, hasNoSku, isWarehouseOut } from "./apply-sold-out";
 import { catalogIncludingHidden } from "@/data/products";
 import { buildPublishedCatalog } from "@/data/shipnity-seed/storefront-preview-read-model";
 
@@ -67,15 +67,16 @@ export function runSoldOutContractTests(): SoldOutContractResult[] {
   check("every listed option reads out-of-stock in the catalog the storefront uses", notApplied.length === 0, notApplied.join("; ") || "ok");
 
   // And nothing outside the list is out-of-stock by accident in the legacy catalog — the list is
-  // the single place stock is hand-maintained now (owner decision 2026-09-06, Q1 "แบบ 1"); the only other source is
-  // "no SKU in the warehouse" (sku-map.ts, owner 08/10), which is data from Shipnity, not a hand-kept stock mark.
+  // the single place stock is hand-maintained now (owner decision 2026-09-06, Q1 "แบบ 1"); the only other sources are
+  // "no SKU in the warehouse" (sku-map.ts, owner 08/10) and the warehouse's own "ไม่มีของ" (warehouse-stock.ts, owner 09/10) —
+  // data from Shipnity, not hand-kept stock marks.
   const listedKeys = new Set(entries.map((e) => `${e.slug}|${e.option}`));
   const stray = catalogIncludingHidden.flatMap((p) =>
     [...(p.colorVariants ?? []), ...(p.flavorVariants ?? [])]
-      .filter((v) => v.availability === "out-of-stock" && !listedKeys.has(`${p.slug}|${normalizeOption(v.name)}`) && !listedKeys.has(`${p.slug}|${normalizeOption(v.id)}`) && !hasNoSku(p.slug, v.id))
+      .filter((v) => v.availability === "out-of-stock" && !listedKeys.has(`${p.slug}|${normalizeOption(v.name)}`) && !listedKeys.has(`${p.slug}|${normalizeOption(v.id)}`) && !hasNoSku(p.slug, v.id) && !isWarehouseOut(p.slug, v.id))
       .map((v) => `${p.slug} / ${v.name}`)
   );
-  check("no legacy option is hard-coded out-of-stock outside the list or the no-SKU map", stray.length === 0, stray.join("; ") || "ok");
+  check("no legacy option is hard-coded out-of-stock outside the list, the no-SKU map or the warehouse read", stray.length === 0, stray.join("; ") || "ok");
 
   return results;
 }

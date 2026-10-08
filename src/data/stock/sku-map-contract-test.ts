@@ -4,6 +4,7 @@
  * out-of-stock in the catalog the storefront uses. Discovered and run by scripts/verify-catalog.ts.
  */
 import { SHIPNITY_SKU_MAP } from "./sku-map";
+import { WAREHOUSE_ALL_CODES, WAREHOUSE_OUT_OF_STOCK, WAREHOUSE_STOCK_READ_ON } from "./warehouse-stock";
 import { allProducts } from "@/data/products";
 import { buildPublishedCatalog } from "@/data/shipnity-seed/storefront-preview-read-model";
 
@@ -74,6 +75,26 @@ export function runSkuMapContractTests(): SkuMapContractResult[] {
     } else if (e.product === null && ((pm && pm.availabilityStatus !== "out-of-stock") || (l && l.availability !== "out-of-stock"))) notApplied.push(slug);
   }
   check("every \"no SKU\" option reads out-of-stock where the storefront reads it", notApplied.length === 0, notApplied.join("; ") || "ok");
+
+  // Warehouse read (warehouse-stock.ts, batch 3a): every mapped code is still in the latest read — a code that vanished
+  // from the Shipnity Max list means the map or the read is wrong — and every "ไม่มีของ" option reads out-of-stock.
+  const gone = values.filter((x) => typeof x.v === "string" && x.v !== "check" && !WAREHOUSE_ALL_CODES.has(x.v)).map((x) => `${x.where}: ${x.v}`);
+  check(`every mapped code is in the warehouse read of ${WAREHOUSE_STOCK_READ_ON}`, gone.length === 0, gone.join("; ") || "ok");
+  const notOut: string[] = [];
+  for (const [slug, e] of Object.entries(SHIPNITY_SKU_MAP)) {
+    const l = legacy.get(slug);
+    const pm = published.get(slug);
+    if (e.options) {
+      for (const [id, v] of Object.entries(e.options)) {
+        if (typeof v !== "string" || !WAREHOUSE_OUT_OF_STOCK.has(v)) continue;
+        const opt = l ? [...(l.colorVariants ?? []), ...(l.flavorVariants ?? [])].find((o) => o.id === id)?.availability : pm?.variants.find((o) => o.id === id)?.availabilityStatus;
+        if (opt !== "out-of-stock") notOut.push(`${slug} / ${id}`);
+      }
+    } else if (typeof e.product === "string" && WAREHOUSE_OUT_OF_STOCK.has(e.product)) {
+      if ((pm && pm.availabilityStatus !== "out-of-stock") || (l && l.availability !== "out-of-stock")) notOut.push(slug);
+    }
+  }
+  check("every option the warehouse marks \"ไม่มีของ\" reads out-of-stock where the storefront reads it", notOut.length === 0, notOut.join("; ") || "ok");
 
   return results;
 }
