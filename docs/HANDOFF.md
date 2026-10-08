@@ -58,10 +58,18 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (lineup gap + 390 overlap) → fixed c0cbbdf/48138eb → re-check PASS. Proof `_incoming/stock-api/b2c/` (+ checker `_incoming/review-b2c/`).
   Taste note for the owner [รอเจ้าของ]: at 390 the small pill still sits on the top-left corner of the IQOS ILUMA i cap
   (iqosheet-18, ~70% of the pill) — accepted by checker as premium; alternative = keep a free band above full-frame photos.
+  09/10 owner "1A2A" [ตรวจแล้ว]: #408 LIVE 52b13c8 = shipping fee 60 → 50 (free from 500 unchanged; warehouse bills the shop 35,
+  internal — BSOT §10) · #409 LIVE eee41d1 (deploy 37822445042; curl 61/61 200, OutOfStock 5/5) = batch 3a: Shipnity Max
+  "ไม่มีของ" → sold out. Read in the app browser (owner signed in), product list only: steps in the header of
+  `scripts/stock-sync.js` → `src/data/stock/warehouse-stock.ts` (09/10: 658 codes, 397 out). Effect: 20 products, 5 whole
+  (caliburn-g4-pro, vmate-i3, relx-smash-go-12k, tfit-m-power-20k, pod-159); ProductMaster pages now open on the first
+  orderable option (coil-94 → 0.6Ω). Checker PASS 5/5 both. Snapshots: `_incoming/stock-api/sync/`.
+  NEXT: re-read every morning until the API (owner "2A") — HOW is waiting on the owner [รอเจ้าของ]: A scheduled task 08:30
+  (read → PR → checker → merge, never on a no-merge day) · B by hand on request · C scheduled but owner confirms merges.
   WAITING: the 7 "check" SKUs = owner list 24 (`docs/รอพี่ตรวจ.md`), not answered by the admin yet [รอเจ้าของ].
-  Then batch 3 = stock adapter when the warehouse sends the API · batch 4+ = order push carrying the shipping fee.
-  The owner holds (chat 08/10) a warehouse report "2 ways to fix the shipping fee" + 5 questions (35 or 50 · which way · separate
-  shipping/discount fields · cost per SKU · API doc + test key) and the admin message for list 24 — answers come back via the owner.
+  Then batch 3b = stock adapter when the warehouse sends the API (replaces the read) · batch 4+ = order push carrying the
+  shipping fee (35 to the warehouse on its own field, free shipping as a shop-paid discount line — survey doc last section).
+  Still from the warehouse: API doc + test key · separate shipping/discount fields · cost per SKU — answers come via the owner.
   Open: ProductMaster seed in-stock flags are from September (API fixes) · `legacy-price-approvals.ts` still names Pod-181 for
   caliburn-g4-pro (price file 【ห้ามแตะ】 — next allowed touch) · unused half-filled Claude Docs page claude.ai/code/artifact/
   92a058d3-edb8-4321-abd6-4eb655f5dbe3 (delete only if asked) · test server 3412 stopped.
