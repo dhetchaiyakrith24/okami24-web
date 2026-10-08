@@ -188,7 +188,9 @@ export const unbrandedProducts: Product[] = [
     // Round "option photos" (08/10): Apple Juice, Mineral Water, Strawberry Peach and Cola added — ihavevape.net lists 14
     // flavours (these 4 + the 10 above) and vapeclubth.org/muro-pod-juice.html carries the same 14 in its option table;
     // box art from ihavevape.net (Apple Juice / Mineral Water / Strawberry Peach 1080 px posters, Cola 600 px), the same
-    // plain 340x490 crop of the box (_incoming/option-photos/b4/muro/crop.js). Not stocked yet = availability "unknown".
+    // plain 340x490 crop of the whole box (_incoming/option-photos/b4/muro/crop.js); on the three posters the maker's pod
+    // stands against the box's right edge, so a sliver of that real pod shows at the crop's right edge — kept, not painted
+    // out. Not stocked yet = availability "unknown".
     assets: [
       {
         kind: "official-photo",
