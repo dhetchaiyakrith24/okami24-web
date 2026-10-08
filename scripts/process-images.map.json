@@ -7762,5 +7762,69 @@
   },
   "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
   "fileName": "variant-coil-72-4.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c94-card.png",
+  "slug": "coil-94",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "Black Note's photos of each CALIBURN G3 pod option (0.4Ω pod; 0.6Ω / 0.9Ω boxes with 4 pods; 1.2Ω CRC Version box with 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-04.png; render _incoming/coil3/out/c94-04-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c94-04.png + _incoming/coil3/fid/c94-06.png + _incoming/coil3/fid/c94-09.png + _incoming/coil3/fid/c94-12.png — card = the single-pod render of the 0.4Ω option (the box shots of the other options are too busy at card size)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c94-04.png",
+  "slug": "coil-94",
+  "role": "variant",
+  "id": "coil-94-1",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "Black Note's photos of each CALIBURN G3 pod option (0.4Ω pod; 0.6Ω / 0.9Ω boxes with 4 pods; 1.2Ω CRC Version box with 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-04.png; render _incoming/coil3/out/c94-04-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c94-04.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-94-1.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c94-06.png",
+  "slug": "coil-94",
+  "role": "variant",
+  "id": "coil-94-2",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "Black Note's photos of each CALIBURN G3 pod option (0.4Ω pod; 0.6Ω / 0.9Ω boxes with 4 pods; 1.2Ω CRC Version box with 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-06.png; render _incoming/coil3/out/c94-06-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c94-06.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-94-2.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c94-09.png",
+  "slug": "coil-94",
+  "role": "variant",
+  "id": "coil-94-3",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "Black Note's photos of each CALIBURN G3 pod option (0.4Ω pod; 0.6Ω / 0.9Ω boxes with 4 pods; 1.2Ω CRC Version box with 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-09.png; render _incoming/coil3/out/c94-09-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c94-09.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-94-3.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c94-12.png",
+  "slug": "coil-94",
+  "role": "variant",
+  "id": "coil-94-4",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "Black Note's photos of each CALIBURN G3 pod option (0.4Ω pod; 0.6Ω / 0.9Ω boxes with 4 pods; 1.2Ω CRC Version box with 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-12.png; render _incoming/coil3/out/c94-12-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c94-12.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-94-4.webp"
  }
 ]
