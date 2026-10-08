@@ -7634,5 +7634,133 @@
   },
   "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
   "fileName": "variant-coil-70-2.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c1-card.png",
+  "slug": "coil-1",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "VOOPOO's own box + coil images (shop.voopoo.com gallery, the panels of the previous card) with Vapevo's upright coil photos for TW15 / DW60 (1080 px) — https://shop.voopoo.com/products/pnp-coils (input: _incoming/coil3/in/c1-tw15.png; render _incoming/coil3/out/c1-tw15-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c1-tw15.png + _incoming/coil3/fid/c1-dw60.png + _incoming/coil3/fid/c1-tr1.png — card = the coils of the three option renders lined up by row.js (no AI)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c1-tw15.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-1",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "VOOPOO's own box + coil images (shop.voopoo.com gallery, the panels of the previous card) with Vapevo's upright coil photos for TW15 / DW60 (1080 px) — https://shop.voopoo.com/products/pnp-coils (input: _incoming/coil3/in/c1-tw15.png; render _incoming/coil3/out/c1-tw15-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c1-tw15.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-1-1.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c1-dw60.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-14",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "VOOPOO's own box + coil images (shop.voopoo.com gallery, the panels of the previous card) with Vapevo's upright coil photos for TW15 / DW60 (1080 px) — https://shop.voopoo.com/products/pnp-coils (input: _incoming/coil3/in/c1-dw60.png; render _incoming/coil3/out/c1-dw60-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c1-dw60.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-1-14.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c1-tr1.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-11",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "VOOPOO's own box + coil images (shop.voopoo.com gallery, the panels of the previous card) with Vapevo's upright coil photos for TW15 / DW60 (1080 px) — https://shop.voopoo.com/products/pnp-coils (input: _incoming/coil3/in/c1-tr1.png; render _incoming/coil3/out/c1-tr1-S2.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c1-tr1.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-1-11.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c1-tr1.png",
+  "slug": "coil-1",
+  "role": "variant",
+  "id": "coil-1-12",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "VOOPOO's own box + coil images (shop.voopoo.com gallery, the panels of the previous card) with Vapevo's upright coil photos for TW15 / DW60 (1080 px) — https://shop.voopoo.com/products/pnp-coils (input: _incoming/coil3/in/c1-tr1.png; render _incoming/coil3/out/c1-tr1-S2.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c1-tr1.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-1-12.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c72-card.png",
+  "slug": "coil-72",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "Vapormo's photo of the two VMATE Cartridge V2 pods, 0.7Ω and 1.2Ω on the tab (800 px), and Vapesourcing's photo of the VMATE Top Fill pod (800 px; the 0.4Ω and 0.7Ω pods look the same) — https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack (input: _incoming/coil3/in/c72-v2-07.png; render _incoming/coil3/out/c72-v2-07-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c72-v2-07.png + _incoming/coil3/fid/c72-v2-12.png + _incoming/coil3/fid/c72-tf.png — card = the V2 0.7Ω and Top Fill renders staggered by stagger.js (no AI)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c72-v2-07.png",
+  "slug": "coil-72",
+  "role": "variant",
+  "id": "coil-72-1",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "Vapormo's photo of the two VMATE Cartridge V2 pods, 0.7Ω and 1.2Ω on the tab (800 px), and Vapesourcing's photo of the VMATE Top Fill pod (800 px; the 0.4Ω and 0.7Ω pods look the same) — https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack (input: _incoming/coil3/in/c72-v2-07.png; render _incoming/coil3/out/c72-v2-07-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c72-v2-07.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-72-1.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c72-v2-12.png",
+  "slug": "coil-72",
+  "role": "variant",
+  "id": "coil-72-2",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "Vapormo's photo of the two VMATE Cartridge V2 pods, 0.7Ω and 1.2Ω on the tab (800 px), and Vapesourcing's photo of the VMATE Top Fill pod (800 px; the 0.4Ω and 0.7Ω pods look the same) — https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack (input: _incoming/coil3/in/c72-v2-12.png; render _incoming/coil3/out/c72-v2-b.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c72-v2-12.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-72-2.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c72-tf.png",
+  "slug": "coil-72",
+  "role": "variant",
+  "id": "coil-72-3",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "Vapormo's photo of the two VMATE Cartridge V2 pods, 0.7Ω and 1.2Ω on the tab (800 px), and Vapesourcing's photo of the VMATE Top Fill pod (800 px; the 0.4Ω and 0.7Ω pods look the same) — https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack (input: _incoming/coil3/in/c72-tf.png; render _incoming/coil3/out/c72-tf-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c72-tf.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-72-3.webp"
+ },
+ {
+  "source": "_incoming/coil3/key/D-c72-tf.png",
+  "slug": "coil-72",
+  "role": "variant",
+  "id": "coil-72-4",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
+   "reference": "Vapormo's photo of the two VMATE Cartridge V2 pods, 0.7Ω and 1.2Ω on the tab (800 px), and Vapesourcing's photo of the VMATE Top Fill pod (800 px; the 0.4Ω and 0.7Ω pods look the same) — https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack (input: _incoming/coil3/in/c72-tf.png; render _incoming/coil3/out/c72-tf-S1.png)",
+   "fidelitySheet": "_incoming/coil3/fid/c72-tf.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+  },
+  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
+  "fileName": "variant-coil-72-4.webp"
  }
 ]
