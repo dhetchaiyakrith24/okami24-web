@@ -770,12 +770,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-72/card.webp",
-      alt: "VOOPOO VMATE Infinity Edition Cartridge retail packaging — 0.7Ω, 1.2Ω, 0.4Ω Top Fill, and 0.7Ω Top Fill, one box per variant",
-      angle: "Plain 2x2 composite of 4 real, individually-verified retailer box photos, one per active child, each box printed with its own exact capacity/resistance (\"3mL | 0.7Ω\", \"3mL | 1.2Ω\", \"3mL | 0.4Ω\" Top Fill, \"3mL | 0.7Ω\" Top Fill) — an exact match to all 4 active variants. Each source photo carried a retailer watermark baked into the bottom-right corner of the frame; cropped locally to the watermark-free upper portion of the same real photo (box + variant label, nothing altered/added) rather than used as-is or discarded.",
-      transparentBackground: true, // background cut 2026-09-05 by scripts/process-images.ts --fix-opaque (flat white/dark bg → alpha); pixels of the product untouched,
-      sourceName: "Huff and Puffers (US vape retailer; VOOPOO product photography, watermark cropped)",
-      sourceUrl: "https://www.huffandpuffers.com/products/voopoo-vmate-infinity-edition-cartridge",
+      src: "/assets/products/coil-72/card-v2.webp",
+      alt: "VOOPOO VMATE Cartridge V2 (side fill) and VMATE Top Fill Cartridge, studio photo",
+      angle: "Front, studio re-shoot (round \"3 coil photos\", 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapormo's photo of the two VMATE Cartridge V2 pods, 0.7Ω and 1.2Ω on the tab (800 px), and Vapesourcing's photo of the VMATE Top Fill pod (800 px; the 0.4Ω and 0.7Ω pods look the same); shape checked against that photo (scripts/ai-fidelity-sheet.js outline overlay) and every printed mark by eye; card = the V2 0.7Ω and Top Fill renders staggered by stagger.js (no AI). Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos",
+      sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack",
     },
   ],
   "Coil-94": [
@@ -1312,10 +1312,10 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-1-12": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-12.webp", alt: "VOOPOO PnP-TR1 coil 1.2Ω with its box, studio photo (every source shows one o-ring colour for TR1; the white / blue rubber options share this photo)", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images", sourceUrl: "https://shop.voopoo.com/products/pnp-coils" },
   },
   "Coil-72": {
-    "Coil-72-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variants/Coil-72-1.webp", alt: "VOOPOO VMATE Cartridge V2, 0.7Ω side-fill, retail box", transparentBackground: false, sourceName: "Huff and Puffers (US vape retailer, watermark cropped)", sourceUrl: "https://www.huffandpuffers.com/products/voopoo-vmate-infinity-edition-cartridge" },
-    "Coil-72-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variants/Coil-72-2.webp", alt: "VOOPOO VMATE Cartridge V2, 1.2Ω side-fill, retail box", transparentBackground: false, sourceName: "Huff and Puffers (US vape retailer, watermark cropped)", sourceUrl: "https://www.huffandpuffers.com/products/voopoo-vmate-infinity-edition-cartridge" },
-    "Coil-72-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variants/Coil-72-3.webp", alt: "VOOPOO VMATE Top Fill Cartridge, 0.4Ω, retail box", transparentBackground: false, sourceName: "Huff and Puffers (US vape retailer, watermark cropped)", sourceUrl: "https://www.huffandpuffers.com/products/voopoo-vmate-infinity-edition-cartridge" },
-    "Coil-72-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variants/Coil-72-4.webp", alt: "VOOPOO VMATE Top Fill Cartridge, 0.7Ω, retail box", transparentBackground: false, sourceName: "Huff and Puffers (US vape retailer, watermark cropped)", sourceUrl: "https://www.huffandpuffers.com/products/voopoo-vmate-infinity-edition-cartridge" },
+    "Coil-72-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-1.webp", alt: "VOOPOO VMATE Cartridge V2 0.7Ω side-fill pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
+    "Coil-72-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-2.webp", alt: "VOOPOO VMATE Cartridge V2 1.2Ω side-fill pod, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
+    "Coil-72-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-3.webp", alt: "VOOPOO VMATE Top Fill Cartridge pod, studio photo (the 0.4Ω and 0.7Ω pods look the same; the resistance is printed on the box only)", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
+    "Coil-72-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-4.webp", alt: "VOOPOO VMATE Top Fill Cartridge pod, studio photo (the 0.4Ω and 0.7Ω pods look the same; the resistance is printed on the box only)", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
   },
   "Coil-94": {
     "Coil-94-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variants/Coil-94-1.webp", alt: "UWELL CALIBURN G3 pod, 0.4Ω meshed", transparentBackground: false, sourceName: "Black Note (US vape retailer)", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
