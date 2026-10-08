@@ -15,7 +15,7 @@ import { useChipAutoscroll } from "./use-chip-autoscroll";
  *
  * Catalog truth vs. stock truth (see `VariantAvailability`'s doc comment) is rendered, not hidden:
  * an `"out-of-stock"` flavor still appears — a verified real flavor is never removed from view
- * just because it isn't currently stocked — but is visually dimmed, carries the sold-out label,
+ * just because it isn't currently stocked — but is visually dimmed, its name struck through (owner 08/10), carries the sold-out label,
  * and (since 2026-09-06, owner instruction) is NOT selectable: `disabled`, no click handler, so it
  * can never become the flavour that goes into the cart. Priced legacy products now DO have a real
  * cart action (see `ProductHero` / `resolveProductRef()`'s legacy branch), and the server-side gate
@@ -110,7 +110,7 @@ export function FlavorVariantGrid({
                 style={{ backgroundColor: v.swatchHex }}
                 aria-hidden
               />
-              <span>{v.name}</span>
+              <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.name}</span>
               {outOfStock && <span className="text-[0.6rem] uppercase tracking-wide text-foreground-dim">{outOfStockLabel}</span>}
             </button>
           );
