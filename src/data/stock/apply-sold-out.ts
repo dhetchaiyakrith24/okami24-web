@@ -90,12 +90,17 @@ export function isMarkedSoldOut(slug: string, nameOrId: string, id?: string): bo
   return isListedSoldOut(slug, nameOrId, id) || (id !== undefined && hasNoSku(slug, id));
 }
 
-/** Legacy catalog: returns a copy of `products` with every listed or SKU-less colour/flavour marked out-of-stock. */
+/**
+ * Legacy catalog: returns a copy of `products` with every listed or SKU-less colour/flavour marked out-of-stock, and a
+ * product without options marked out-of-stock as a whole when it has no SKU (`product: null`, e.g. Zero Nano).
+ */
 export function applySoldOut(products: Product[]): Product[] {
   return products.map((p) => {
     if (!listed.has(p.slug.toLowerCase()) && !SHIPNITY_SKU_MAP[p.slug]) return p;
+    const hasOptions = (p.colorVariants?.length ?? 0) + (p.flavorVariants?.length ?? 0) > 0;
     return {
       ...p,
+      ...(!hasOptions && hasNoSku(p.slug) ? { availability: "out-of-stock" as const } : {}),
       colorVariants: p.colorVariants?.map((v) => (isMarkedSoldOut(p.slug, v.name, v.id) ? { ...v, availability: "out-of-stock" as const } : v)),
       flavorVariants: p.flavorVariants?.map((v) => (isMarkedSoldOut(p.slug, v.name, v.id) ? { ...v, availability: "out-of-stock" as const } : v)),
     };

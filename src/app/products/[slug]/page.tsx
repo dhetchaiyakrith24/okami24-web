@@ -288,9 +288,10 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
   // Owner-approved price (legacy-price-approvals.ts) — null keeps the product browse-only.
   const legacySellingPrice = getLegacyApprovedPrice(product.slug);
   // Every option on the owner's sold-out list (e.g. WOTOFO nexBAR 18K, 2026-09-30) → the Offer says OutOfStock, not
-  // InStoreOnly. A product with any option in stock keeps OFFER_AVAILABILITY unchanged.
+  // InStoreOnly. A product with any option in stock keeps OFFER_AVAILABILITY unchanged. A product without options reads
+  // its own `availability` (no SKU, stock round batch 2b).
   const legacyOptions = [...(product.flavorVariants ?? []), ...(product.colorVariants ?? [])];
-  const legacyAllSoldOut = legacyOptions.length > 0 && legacyOptions.every((o) => o.availability === "out-of-stock");
+  const legacyAllSoldOut = legacyOptions.length > 0 ? legacyOptions.every((o) => o.availability === "out-of-stock") : product.availability === "out-of-stock";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",

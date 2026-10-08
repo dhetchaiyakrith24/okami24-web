@@ -71,7 +71,7 @@ export function runSkuMapContractTests(): SkuMapContractResult[] {
         const opt = l ? [...(l.colorVariants ?? []), ...(l.flavorVariants ?? [])].find((o) => o.id === id)?.availability : pm?.variants.find((o) => o.id === id)?.availabilityStatus;
         if (opt !== "out-of-stock") notApplied.push(`${slug} / ${id}`);
       }
-    } else if (e.product === null && pm && pm.availabilityStatus !== "out-of-stock") notApplied.push(slug);
+    } else if (e.product === null && ((pm && pm.availabilityStatus !== "out-of-stock") || (l && l.availability !== "out-of-stock"))) notApplied.push(slug);
   }
   check("every \"no SKU\" option reads out-of-stock where the storefront reads it", notApplied.length === 0, notApplied.join("; ") || "ok");
 
