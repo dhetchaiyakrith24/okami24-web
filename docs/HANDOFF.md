@@ -11,9 +11,9 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = #379 merge 24ca72a (MURO 3ML 14 flavours) — live, deploy run on 24ca72a
-  success + curl 200 [ตรวจแล้ว]. Today's site merges, in order: #372–#377 coils stack · #366 INFY · #364 M Bar 15K → M Switch Kit (+ home
-  Scene 4 = Kit) · #368 TFIT · #379 MURO. Rollback points = those merge commits (revert one PR). A queued deploy on main can show
+1 main: `git fetch && git log -1 --oneline origin/main` = #380 merge 9630fcf (MURO 3ML 14 boxes cut out, owner 08/10 after the
+  round close) — live, deploy run on 9630fcf success + curl 200 [ตรวจแล้ว]. Today's site merges, in order: #372–#377 coils stack · #366
+  INFY · #364 M Bar 15K → M Switch Kit (+ home Scene 4 = Kit) · #368 TFIT · #379 MURO 14 flavours · #380 MURO boxes cut out. Rollback points = those merge commits (revert one PR). A queued deploy on main can show
   "cancelled" when a newer push queues behind it (e18b29a 08/10) → run Actions → deploy → Run workflow (deploy=true) by hand.
   Render: ~1 min of 502 + ~2 min before the new build serves after the deploy job ends — wait, then curl.
   Night chain OFF (day chat 08/10 turned it off again). NO site merge on 10/10 (owner's LINE broadcast, 2–4k visitors; load test 07/10:
@@ -36,7 +36,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   coil-1 (A+C+W) · coil-72 options (W, white boxes) · coil-94 (C+W) — retailer-photo coils outside this round's 8 → next image round.
   Checker notes kept (not FAIL, for the next touch): coil-55 tiny serial line on the tank · DM2 side-panel micro text · coil-53 grey
   floor reflection under the blister · coil-53/70 cards > 150 KB · coil-87 1–3 px faint specks off the body (invisible at size) ·
-  MURO 3 posters keep a sliver of the maker's pod at the box's right edge (honest, checker PASS; crop it out only if the owner asks).
+  MURO 3ML boxes: all 14 now cut out (#380, `_incoming/option-photos/muro-cut/cut.js` = one 6-corner outline for the shared poster
+  template) — still 600 px sources at 340x490 (IMAGE_SPEC §4 exception); a larger/sharper box = AI upscale or render, not done.
   Tools + know-how of the round: `_incoming/option-photos/` (b4/ = coils: key/, ellipsecut.js = cut a round base along an ellipse,
   floorclean.js, count-gaps.ts — copy it 4 folders below the worktree root, e.g. `_incoming/tmp/x/y/`, its imports are `../../../../src`) + LESSONS 29.
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
