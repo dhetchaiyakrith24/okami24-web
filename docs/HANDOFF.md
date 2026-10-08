@@ -45,6 +45,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Gate fix #387 needed for these PRs: the old gate measured renamed option photos against the old busy card (11 false FAILs).
   GSC (item 3s): the 9 pages were NOT requested this chat — the app browser was not signed in to Google (owner asked to sign in,
   no answer) → owner signs in (Ctrl+Shift+B → Google sign-in), then do the 9.
+  CHECKER RESULT (arrived after the move, heads c66e66e / fa3698e) = both FAIL, fixes listed; evidence `_incoming/chk-coil/`:
+  #388: 72-2 (1.2) pod ~8% smaller than 72-1 (768 vs 838 px) -> rescale to match · card-72 phoneSharp 11.6 vs old card 22.6 (gate does
+  not compare renamed cards; decide + write in report) · TW15 thin contact shadow under the box (magenta 3x only) · send owner the full
+  1440 shots (*-after-1440.png), the pair crops cut the product off. #389: 94-2 (0.6) opaque ~12 px reflection slab under the pods/box
+  (cut flat at y=848) and a faint one under 94-4 (1.2) -> cut at the foot like 94-1 · 94-3 (0.9) purple strip with half-cut
+  "Refillable Pod" letters on the box top (from the source crop) -> crop it off · card-94 phoneSharp 6.8 vs old 15.8 (same note).
+  Everything else passed (text, V2/Top Fill not swapped, TR1 + Top Fill shared photos, AI label gone, provenance rows, old files gone).
   LESSONS to write at the close: owner sees a small hero image as a defect (MURO 340 px files drawn at intrinsic size) · Lexical
   prompt box · AI re-render fitted onto a measured cut keeps the outline exact · gate compared renamed variants with the card.
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
