@@ -7536,29 +7536,29 @@
   "fileName": "variant-coil-74-1.webp"
  },
  {
-  "source": "_incoming/option-photos/b4/key/D-c53.png",
+  "source": "_incoming/coil5/D-c53-v2.png",
   "slug": "coil-53",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
-   "reference": "Giant Vapes' photo of the 1.0 ohm box with its blister (500 px, the box reads 1 Ω) — https://giantvapes.com/products/uwell-caliburn-g-replacement-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c53-S1.png)",
-   "fidelitySheet": "_incoming/option-photos/b4/fid/c53.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the box front only, image 2 = the 1Ω coils cropped out of the blister photo (the 0.8Ω single-coil photo left out — it made every render copy its oval window); box upright on a #2b2e33 sweep, coils lying in front, printed side down (prompt: _incoming/coil5/prompt-J.txt); the render gave 3 coils, the 4th is its front coil copied one step along the row with a soft contact shadow (_incoming/coil5/addcoil.js); box cut by its measured outline, coils by the front coil's hand-measured outline placed at the 4 row positions with dark backdrop slivers peeled (cutJ4b.js), placed by coil3/place.js, light unsharp mask (coil3/b2/sharpen.js)",
+   "reference": "Element Vape's photos of the CALIBURN G 1Ω box (front, unobstructed) and the 1Ω box with its blister of 4 (the coils cropped out alone: round cotton holes, no oval window) — https://www.elementvape.com/uwell-caliburn-g-coils (inputs: _incoming/coil5/c53-boxref.png + _incoming/coil5/c53-coilref.png; render _incoming/coil5/out/c53-J.png, 4-coil composite _incoming/coil5/out/c53-J4.png)",
+   "fidelitySheet": "_incoming/coil5/fid-c53-v2.jpg — box art, every printed word and number, coil shape checked by eye against the reference (IoU does not apply: the reference coils are in a blister / standing, the re-shoot lays them on the floor)"
   },
-  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "card-v2.webp"
+  "note": "coil-53 re-shoot 09/10 (same direction as the coil-94 / coil-38 box shots the owner passed 09/10) — was the box + blister render on white",
+  "fileName": "card-v3.webp"
  },
  {
-  "source": "_incoming/option-photos/b4/key/D-c53.png",
+  "source": "_incoming/coil5/D-c53-v2.png",
   "slug": "coil-53",
   "role": "variant",
   "id": "coil-53-2",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
-   "reference": "Giant Vapes' photo of the 1.0 ohm box with its blister (500 px, the box reads 1 Ω) — https://giantvapes.com/products/uwell-caliburn-g-replacement-coils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c53-S1.png)",
-   "fidelitySheet": "_incoming/option-photos/b4/fid/c53.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the box front only, image 2 = the 1Ω coils cropped out of the blister photo (the 0.8Ω single-coil photo left out — it made every render copy its oval window); box upright on a #2b2e33 sweep, coils lying in front, printed side down (prompt: _incoming/coil5/prompt-J.txt); the render gave 3 coils, the 4th is its front coil copied one step along the row with a soft contact shadow (_incoming/coil5/addcoil.js); box cut by its measured outline, coils by the front coil's hand-measured outline placed at the 4 row positions with dark backdrop slivers peeled (cutJ4b.js), placed by coil3/place.js, light unsharp mask (coil3/b2/sharpen.js)",
+   "reference": "Element Vape's photos of the CALIBURN G 1Ω box (front, unobstructed) and the 1Ω box with its blister of 4 (the coils cropped out alone: round cotton holes, no oval window) — https://www.elementvape.com/uwell-caliburn-g-coils (inputs: _incoming/coil5/c53-boxref.png + _incoming/coil5/c53-coilref.png; render _incoming/coil5/out/c53-J.png, 4-coil composite _incoming/coil5/out/c53-J4.png)",
+   "fidelitySheet": "_incoming/coil5/fid-c53-v2.jpg — box art, every printed word and number, coil shape checked by eye against the reference (IoU does not apply: the reference coils are in a blister / standing, the re-shoot lays them on the floor)"
   },
-  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "variant-coil-53-2.webp"
+  "note": "coil-53 re-shoot 09/10 (same direction as the coil-94 / coil-38 box shots the owner passed 09/10) — was the box + blister render on white",
+  "fileName": "variant-coil-53-2-v2.webp"
  },
  {
   "source": "_incoming/option-photos/b4/key/D-c54.png",
