@@ -131,6 +131,86 @@ const allGuides: Guide[] = [
       },
     ],
   },
+  // Round SEO E "pod" (2026-10-09): the one article that answers "pod system คืออะไร" (SEO_LANDSCAPE §0). Placed second so the
+  // pod-systems "อ่านต่อ" box (relatedArticlesForCollection, ties keep this order) offers it. Product facts reuse rows already on
+  // the site only (thai-copy 09/10 source map: _incoming/seo-e-pod/article-sources.md); no new numbers.
+  {
+    id: "what-is-a-pod-system",
+    slug: "what-is-a-pod-system",
+    title: "What Is a Pod System? Parts and How It Works",
+    dek: "A pod system is a refillable device: you fill the pod yourself, swap it when the coil wears out, and choose the resistance. Here's what's inside and how it works.",
+    category: "how-it-works",
+    readingTimeMin: 4,
+    publishedAt: "2026-10-09",
+    body: [
+      {
+        heading: "What is a pod system?",
+        paragraphs: [
+          "A [pod system](/products/pod-systems) is a vape in two parts: a device body that holds the battery, and a pod that sits on top. You fill the pod with e-liquid yourself, and when its coil wears out you replace only the pod — the device carries on.",
+          "UWELL's Caliburn family is one example. Below, part by part: what's inside, how the parts work together, and what a pod's resistance tells you.",
+        ],
+      },
+      {
+        heading: "What's inside a pod system",
+        paragraphs: [
+          "The device body is the part you hold. Inside are the battery and a chip that controls the power going out. Most current pod devices use a sealed, built-in battery charged over USB-C. Some show battery and wattage on a screen; some fire with a button, others have no button and fire when you draw.",
+          "The pod sits on top of the device and holds the e-liquid tank, the coil and the mouthpiece in one piece. Pods like UWELL's GPP have the coil built in, so the whole pod is replaced when the coil is spent; some other devices use an empty pod that takes a separate coil.",
+          "The air inlet is where air comes in, passes the coil and carries vapor up to the mouthpiece. A wider inlet gives a looser draw, a narrower one a tighter draw, and many devices let you adjust it.",
+        ],
+      },
+      {
+        heading: "How a pod system works",
+        paragraphs: [
+          "The wicking material inside the coil soaks up e-liquid from the tank. When you press the fire button or start to draw, the device sends power from the battery to the coil; the coil heats up and turns the e-liquid in the wick into vapor, and the air coming in through the inlet carries it to the mouthpiece.",
+          "How much power goes to the coil is the wattage. Some devices let you set it yourself; others set it automatically for the pod you put in. And because the wick has to be soaked before it works well, a freshly filled pod should sit for several minutes before the first draw.",
+        ],
+      },
+      {
+        heading: "What a pod's resistance tells you",
+        paragraphs: [
+          "Every coil has a resistance, measured in ohms, and it gives a rough idea of the draw the pod is made for. Lower resistance usually means a more open draw at higher wattage; higher resistance suits a tighter MTL draw — vapor into the mouth first, then the lungs — at lower wattage. How the two feel is in [MTL vs. DTL](/guides/understanding-mtl-vs-dtl).",
+          "A real example: UWELL's GPP pod comes in four resistances — 0.4, 0.6, 0.9 and 1.2 ohm — and the same pod fits most current Caliburn devices (G5, G4 and G3 series). To change how a Caliburn draws, you change the pod, not the device.",
+          "VOOPOO's ARGUS top-fill cartridge follows the same idea: one pod shape, several resistances. More in [Multi-Resistance Cartridges](/technology/multi-resistance-cartridges).",
+        ],
+      },
+      {
+        heading: "Refill it yourself, or use a prefilled pod",
+        paragraphs: [
+          "A pod system uses bottled e-liquid you buy separately and fill yourself, so the flavor and nicotine strength are your choice.",
+          "On this site, [pod kits](/products/pod-kits) are reusable devices too, where you swap only the pod or coil: ARGUS and DRAG let you set the wattage, and switch-style devices like M Switch take prefilled pods with nothing to fill.",
+          "[Disposables](/products/disposables) are ready out of the box, with the e-liquid already inside, and most can be recharged until it runs out. What each format gains and gives up is in [Open-system vs. disposable](/guides/open-system-vs-disposable).",
+        ],
+      },
+      {
+        heading: "How long a pod lasts, and when to change it",
+        paragraphs: [
+          "Coils are a consumable part on any open-system device. The wick wears out gradually with use, so a pod has no fixed lifespan in days — it depends on how each person vapes.",
+          "The usual signs it's time: a harsh or burnt taste, less vapor, or a gurgling sound on the draw. How to look after a pod is in [Coil & pod maintenance](/guides/coil-and-pod-maintenance), and replacement pods are in [Pods & Cartridges](/products/pods-cartridges) — check the pod matches your device model first.",
+        ],
+      },
+      {
+        heading: "Next: choosing your first device",
+        paragraphs: [
+          "Now that you know how a pod system works, the next step is choosing the format and model that suit what you need and how you'll use it. Start with [Choosing your first pod](/guides/choosing-your-first-pod-system), or see every model on the site in [Pod Systems](/products/pod-systems).",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["caliburn-g5", "caliburn-g5-lite", "coil-94"],
+    faq: [
+      {
+        question: "How is a pod system different from a pod kit?",
+        answer: "Both keep the device and swap only the pod or coil. On this site, pod systems are the devices you refill yourself and choose the resistance for, such as the Caliburn family; pod kits include ARGUS and DRAG, which let you set the wattage, and switch-style devices like M Switch that take prefilled pods.",
+      },
+      {
+        question: "How is a pod system different from a disposable?",
+        answer: "A pod system is filled by you and you replace the pod while the device stays. A disposable comes prefilled and is ready out of the box; most recharge until the e-liquid runs out, and then the whole device is discarded.",
+      },
+      {
+        question: "What's the difference between a pod and a coil?",
+        answer: "The coil is the part that heats up and turns e-liquid into vapor. The pod is the piece that sits on the device and also holds the tank and mouthpiece. Pods like UWELL's GPP have the coil built in, so you change the whole pod; some devices use an empty pod where only the coil is swapped.",
+      },
+    ],
+  },
   {
     id: "open-system-vs-disposable",
     slug: "open-system-vs-disposable",
