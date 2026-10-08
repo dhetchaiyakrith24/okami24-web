@@ -28,7 +28,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Untracked, NOT the image chat's, left alone: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   Before every commit run `git branch --show-current`; more than one chat on this repo = the others in worktrees.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
-3 OPEN ROUND: none — round "option photos + IQOS colours" (`docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt`) CLOSED 08/10, tag
+3 NEXT (owner 08/10 "เอา 1-2 ก่อน", both in ONE new chat, in this order):
+  (1) the 9 GSC request-indexing pages left from round SEO ง (item 3s below — short, stop at the first quota message);
+  (2) round "3 coil photos" = `docs/rounds/รอบรูปคอยล์3ตัว-coil-1-72-94-08-10.txt` (Friday's draft from the owner's pick; start with skill
+      round-open — coil-1 PnP · coil-72 VMATE · coil-94 CALIBURN G3, Higgsfield via Chrome FREE ONLY UNTIL 11/10 → do it before then;
+      know-how = `_incoming/option-photos/b4/` + LESSONS 29 · NO site merge on 10/10).
+  PREVIOUS ROUND: none open — round "option photos + IQOS colours" (`docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt`) CLOSED 08/10, tag
   `option-photos-done`. Pass criterion met [ตรวจแล้ว]: count-gaps on main 24ca72a = 11 of 524 options without a photo, all 11 =
   WOTOFO nexBAR 18K with a reason row (IMAGE_SPEC §4 exceptions: 6 Vivid-only → owner 08/10 "22 = 1" no photo · 5 none anywhere).
   IQOS all colours = batch 1 #311. Start of round 06/10: 60 of 526. Credits used: 17 (batch 4 = 0, Chrome).
