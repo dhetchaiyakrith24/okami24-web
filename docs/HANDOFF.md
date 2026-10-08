@@ -40,11 +40,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   528 web options → 249 exact SKU · 7 spelling · 7 needs a human · 42 option not in Shipnity · 223 on 29 products absent from
   Shipnity Max. Raw dumps/scripts `_incoming/stock-api/` (re-read Max = owner logs in, app browser, `match.js`).
   Owner answers 08/10 = §18 "Stock" (Max = the warehouse's · item 22 = 2 · item 23 = 1 "ยืนยัน", over half sold out is fine).
-  Batch 2 (B) MERGED #395 → c9fcb73 (checker PASS 8/8 on 2559647; evidence `_incoming/stock-api/checker-395/`, diff
+  Batch 2 (B) MERGED #395 → c9fcb73 (checker PASS 8/8 on 2559647, report `_incoming/stock-api/checker-395/report.md`; diff
   `vt-diff2/`, shots `shots/`): `src/data/stock/sku-map.ts` (528 options: 256 SKU · 7 "check" · 265 null) · no SKU = out-of-stock
-  through the sold-out path · a product whose every option is sold out offers no order button (2559647 — the first diff showed
-  19 colour pages still saying "สั่งซื้อทางไลน์") · sold-out chip names struck through. Fully sold-out products 2 → 28; order
-  button → "สินค้าหมด · สอบถามทาง LINE" on 26 pages; cart gate blocks 264/265 null options (checker ran resolveProductRef).
+  through the sold-out path · a product whose every option is sold out offers no order button (2559647 — the first diff left
+  17 all-sold-out pages still saying "สั่งซื้อทางไลน์": 9 → 26 after the fix) · sold-out chip names struck through. Fully sold-out
+  products 2 → 28; order button → "สินค้าหมด · สอบถามทาง LINE" on 26 pages; cart gate blocks 264/265 null options (per the
+  checker report: resolveProductRef run on every null; the 1 = Zero Nano).
   Friday's call, owner told: 5 near names whose sibling already owns the code = null, not "check" (VMATE Starlight Red · M Switch
   Grape Aloe · Zero Cartridge Strawberry · MOOOD Blueberry N5% · Esko Blueberry Jam).
   NEXT batch (small, own PR, checker): Zero Nano (legacy, no options) still orderable — needs a product-level stock switch ·
