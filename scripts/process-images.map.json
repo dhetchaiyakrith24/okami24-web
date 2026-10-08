@@ -3543,6 +3543,32 @@
   "fileName": "variant-strawberry-ice-cream-v2.webp"
  },
  {
+  "source": "_incoming/image-sitewide/infy2/final/milk-tea-cha.png",
+  "slug": "infy-20k",
+  "role": "variant",
+  "id": "milk-tea-cha",
+  "aiRender": {
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; option-photos batch 3 08/10: same master + script, outline #e09057 read by infy2/src4/sample4.js, name split as printed on the device)",
+   "reference": "master: as the other 22 flavours (infy2/gen/m2-a.png); outline colour + name: this flavour's device art vap150ipro.com/wp-content/uploads/2026/08/infy-20k-Milk-Tea-Cha.webp (_incoming/image-sitewide/infy2/src4/Milk-Tea-Cha.webp — reseller art, used as colour/name reference only: shop watermark + spec chips) — infy.my has no 20K page",
+   "fidelitySheet": "_incoming/image-sitewide/infy2/src4/out3.png + mtc-zoom.png (letters, outline colour, name vs the reference art)"
+  },
+  "note": "option-photos round batch 3 (08/10) — image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-milk-tea-cha-v2.webp"
+ },
+ {
+  "source": "_incoming/image-sitewide/infy2/final/matcha.png",
+  "slug": "infy-20k",
+  "role": "variant",
+  "id": "matcha",
+  "aiRender": {
+   "tool": "v2 (01/10, owner: v1 \"ดูกราฟิก ๆ แปลก ๆ\" — v1 copied a retailer CG render with neon-glow letters and a blue base glow): Higgsfield nano_banana_pro 4k, 1 master render (Blueberry, upright; job 73a8402a-3f5a-444a-ac8d-d917024ceeab, _incoming/image-sitewide/infy2/gen/m2-a.png — v1 geometry + the maker's REAL photos for material: matte soft-touch black, printed letters, no glow) + screen fixed by script (_incoming/image-sitewide/infy2/fix-screen.js: droplet on the pink tile, white frame, as on the real device) + flatcut + per-flavour recolour by script (_incoming/image-sitewide/infy2/recolour2.js — v1 method, coordinates re-measured; option-photos batch 3 08/10: same master + script, outline #8e9f3f read by infy2/src4/sample4.js, name split as printed on the device)",
+   "reference": "master: as the other 22 flavours (infy2/gen/m2-a.png); outline colour + name: this flavour's device art vap150ipro.com/wp-content/uploads/2026/08/infy-20k-Matcha.webp (_incoming/image-sitewide/infy2/src4/Matcha.webp — reseller art, used as colour/name reference only: shop watermark + spec chips) — infy.my has no 20K page",
+   "fidelitySheet": "_incoming/image-sitewide/infy2/src4/out3.png + mtc-zoom.png (letters, outline colour, name vs the reference art)"
+  },
+  "note": "option-photos round batch 3 (08/10) — image-sitewide round 2026-09-30 batch 4 — the M Bar 10K treatment: device alone, upright front view, one master for every flavour so only the print changes when a customer swipes; flat #E9E9EC keyed with scripts/flatcut.js; pre-sized to the 840-px product box (lanczos3) + sharpen sigma 0.5 (the M Bar 10K standard step)",
+  "fileName": "variant-matcha-v2.webp"
+ },
+ {
   "source": "_incoming/image-sitewide/gen/muro-card-1-cut.png",
   "slug": "muro-sc-8000",
   "role": "card",

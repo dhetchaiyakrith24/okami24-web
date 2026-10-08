@@ -63,9 +63,9 @@ export const infyProducts: Product[] = [
     storyDetails: true,
     // Flavours: the 18 every rich Thai shop list agrees on (akvapes.com), + Menthol Freeze, Grape Bubblegum, Watermelon
     // Bubblegum (relxth.co, dood-d.com) and Strawberry Ice Cream (dood-d.com) with device art, + Milk Tea Cha and Matcha
-    // (vapedumpthailand.store, ihavevape.net — no art anywhere, so no photo and a flavour-tone swatch). INFY publishes no
-    // list (catalog completeness rule: every flavour the market shows). The INFY BAR PRO list is a different product.
-    // `swatchHex` = the outline colour on the photo (for the two without art: the flavour's tone, FlavorVariant doc).
+    // (vapedumpthailand.store, ihavevape.net; device art found 08/10 on vap150ipro.com → photos from the same master, round
+    // "option photos" batch 3). INFY publishes no list (catalog completeness rule: every flavour the market shows). The INFY
+    // BAR PRO list is a different product. `swatchHex` = the outline colour on the photo.
     flavorVariants: [
       { id: "cola", name: "Cola", swatchHex: "#bc5338", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-cola-v2.webp", alt: "INFY 20K, Cola — device" } },
       { id: "grape-apple", name: "Grape Apple", swatchHex: "#5ebb71", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-grape-apple-v2.webp", alt: "INFY 20K, Grape Apple — device" } },
@@ -89,8 +89,8 @@ export const infyProducts: Product[] = [
       { id: "grape-bubblegum", name: "Grape Bubblegum", swatchHex: "#7b6bba", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-grape-bubblegum-v2.webp", alt: "INFY 20K, Grape Bubblegum — device" } },
       { id: "watermelon-bubblegum", name: "Watermelon Bubblegum", swatchHex: "#c96839", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-watermelon-bubblegum-v2.webp", alt: "INFY 20K, Watermelon Bubblegum — device" } },
       { id: "strawberry-ice-cream", name: "Strawberry Ice Cream", swatchHex: "#be6d8e", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-strawberry-ice-cream-v2.webp", alt: "INFY 20K, Strawberry Ice Cream — device" } },
-      { id: "milk-tea-cha", name: "Milk Tea Cha", swatchHex: "#c9a27e", availability: "unknown", sourceUrl: "https://www.vapedumpthailand.store/products/infy-20k-disposable-pod-20000-puffs" },
-      { id: "matcha", name: "Matcha", swatchHex: "#7ea35a", availability: "unknown", sourceUrl: "https://www.vapedumpthailand.store/products/infy-20k-disposable-pod-20000-puffs" },
+      { id: "milk-tea-cha", name: "Milk Tea Cha", swatchHex: "#e09057", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-milk-tea-cha-v2.webp", alt: "INFY 20K, Milk Tea Cha — device" }, sourceUrl: "https://www.vapedumpthailand.store/products/infy-20k-disposable-pod-20000-puffs" },
+      { id: "matcha", name: "Matcha", swatchHex: "#8e9f3f", availability: "unknown", image: { src: "/assets/products/infy-20k/variant-matcha-v2.webp", alt: "INFY 20K, Matcha — device" }, sourceUrl: "https://www.vapedumpthailand.store/products/infy-20k-disposable-pod-20000-puffs" },
     ],
     specifications: [
       { key: "puffs", label: "Rated puffs", value: "Up to 20,000", sourceStatus: "unverified" },
