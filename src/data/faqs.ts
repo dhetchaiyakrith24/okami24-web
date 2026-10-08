@@ -12,9 +12,9 @@ import { CONTACT } from "@/data/contact";
  * Shipping figures are the same ones the original answer already states.
  */
 export const ORDERING_ON_LINE_FAQ_ANSWER: Record<"en" | "th" | "zh", string> = {
-  en: "Right now the easier way to order is LINE @okm24: message us the model, colour or flavour you want, and the admin confirms the total and how to pay in the chat. Once the payment is checked, the order ships with a tracking number. Shipping is 60 baht, free on orders from 500 baht up. Want help picking a model? Just ask.",
-  th: "ช่วงนี้สั่งผ่านไลน์ @okm24 สะดวกกว่า ทักมาบอกรุ่น สี หรือกลิ่นที่ต้องการ แอดมินสรุปยอดและวิธีโอนให้ในแชท จ่ายแล้วแอดมินตรวจยอดโอนก่อน แล้วจึงจัดส่งพร้อมเลขพัสดุให้ติดตาม ค่าส่ง 60 บาท ยอด 500 บาทขึ้นไปส่งฟรี อยากให้ช่วยเลือกรุ่นก็ทักมาได้เลย",
-  zh: "这段时间用 LINE @okm24 下单更方便：告诉店主想要的型号、颜色或口味，店主会在聊天里确认总价和付款方式。核对到账后安排出货，并提供物流单号查询。运费 60 泰铢，满 500 泰铢免运费。想让店主帮忙挑型号也可以直接问。",
+  en: "Right now the easier way to order is LINE @okm24: message us the model, colour or flavour you want, and the admin confirms the total and how to pay in the chat. Once the payment is checked, the order ships with a tracking number. Shipping is 50 baht, free on orders from 500 baht up. Want help picking a model? Just ask.",
+  th: "ช่วงนี้สั่งผ่านไลน์ @okm24 สะดวกกว่า ทักมาบอกรุ่น สี หรือกลิ่นที่ต้องการ แอดมินสรุปยอดและวิธีโอนให้ในแชท จ่ายแล้วแอดมินตรวจยอดโอนก่อน แล้วจึงจัดส่งพร้อมเลขพัสดุให้ติดตาม ค่าส่ง 50 บาท ยอด 500 บาทขึ้นไปส่งฟรี อยากให้ช่วยเลือกรุ่นก็ทักมาได้เลย",
+  zh: "这段时间用 LINE @okm24 下单更方便：告诉店主想要的型号、颜色或口味，店主会在聊天里确认总价和付款方式。核对到账后安排出货，并提供物流单号查询。运费 50 泰铢，满 500 泰铢免运费。想让店主帮忙挑型号也可以直接问。",
 };
 /** The FAQ id whose answer `ORDERING_ON_LINE_FAQ_ANSWER` replaces. */
 export const ORDERING_FAQ_ID = "what-is-this-site";
@@ -25,7 +25,7 @@ export const siteFaqs: SiteFAQ[] = [
     category: "ordering",
     question: "How do I actually order from OKami24?",
     answer:
-      "Add what you want to the cart, verify your phone number with the OTP code, enter your delivery address, and confirm the order. Then pay by bank transfer or QR scan — once an admin has checked the payment, the order is approved and shipped with a tracking number. Shipping is 60 baht, free on orders from 500 baht up. If a product isn't buyable on the site yet, or you'd like help picking a model, message us on LINE @okm24.",
+      "Add what you want to the cart, verify your phone number with the OTP code, enter your delivery address, and confirm the order. Then pay by bank transfer or QR scan — once an admin has checked the payment, the order is approved and shipped with a tracking number. Shipping is 50 baht, free on orders from 500 baht up. If a product isn't buyable on the site yet, or you'd like help picking a model, message us on LINE @okm24.",
     // Owner decision (2026-09-06): the site has a real cart now, so the ordering FAQ sends people
     // to the catalog instead of LINE. LINE stays the fallback inside the answer text itself.
     action: { href: "/products", labelKey: "browseProductsCta" },

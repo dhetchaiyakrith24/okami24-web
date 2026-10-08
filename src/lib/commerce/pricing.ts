@@ -1,13 +1,13 @@
 import type { ResolvedLine } from "./catalog-resolver";
 
 /**
- * Shipping/totals math — verbatim from docs/BUSINESS_SOURCE_OF_TRUTH.md §10: flat 60 THB, free at
+ * Shipping/totals math — verbatim from docs/BUSINESS_SOURCE_OF_TRUTH.md §10: flat 50 THB (owner 2026-10-09, was 60), free at
  * a 500 THB subtotal. Pure functions, no I/O, so they're cheap to unit-test (see
  * pricing-contract-test.ts) and safe to call from both cart display and checkout submission.
  * Never accept a client-submitted subtotal/shipping/total — only ever compute them here from
  * server-resolved lines.
  */
-export const FLAT_SHIPPING_FEE_THB = 60;
+export const FLAT_SHIPPING_FEE_THB = 50;
 export const FREE_SHIPPING_THRESHOLD_THB = 500;
 
 export interface PricedLine {
