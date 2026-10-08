@@ -73,7 +73,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
   also read the "validate fix" started 07/10). Hand-offs (articles / missing pages / misspellings / pages with 0 article links) =
   SEO_LANDSCAPE §0.5. REQUEST INDEXING (owner 08/10 "36 = 1 กดได้เลย") DONE 22/22 [ตรวจแล้ว]: 13 on 08/10 ~01:00, 2 on 08/10 evening,
-  the last 7 on 09/10 00:05–00:20 (caliburn-g3-pro-koko · caliburn-g4-classic · drag-6 · drag-s3 · iqosheet-18 · m-bar-10k ·
+  the last 7 on 09/10 ~00:03–00:12 (caliburn-g3-pro-koko · caliburn-g4-classic · drag-6 · drag-s3 · iqosheet-18 · m-bar-10k ·
   tfit-m-power-20k — each card showed "✓ ขอการจัดทำดัชนีแล้ว", no quota message). Worktree `_incoming/wt-seo-d` + notes
   `_incoming/seo-d/` kept until the 22/10 read. Not done here: "หัวพอตใส" on m-bar-15k (item 3 (3)) · esko card "20 รสชาติ" (data round).
 3t CLOSED 08/10 — staff slip check (EasySlip), tag `slip-check-done`, live #347/#348, owner passed a real slip. Owner still to do: forward
