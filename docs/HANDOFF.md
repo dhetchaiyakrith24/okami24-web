@@ -11,41 +11,45 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = #359 merge 90e58a7 (Zero Cartridge J5 images, 08/10) · #354 SEO ง close ·
-  #352 SEO links · #350 ARGUS G4 mini J4 + RELX fixes · #343 docs (slip-check ruling) · SEO chat = #340–#344 #352 #354 + this close PR.
+1 main: `git fetch && git log -1 --oneline origin/main` = #367 merge 663fca2 (MURO 3ML 4 box photos, owner exception 08/10 "24 ได้" →
+  IMAGE_SPEC exceptions) · #363 Zero Cartridge 4 pods re-done (live) · #359 Zero Cartridge J5 · #354 SEO ง close.
   A worktree may run its own `next build` + `next start -p 3413` (SEO chat 08/10: SITE_URL + OKAMI24_DATA_DIR=<tmp> env) — no port clash. Render: ~1 min of 502 site-wide after each deploy — wait, then curl.
-  THREE CHATS share this folder on 07/10 night: image chat (main folder) · SEO chat (`_incoming/wt-seo-d`) · slip-check chat (own worktree) —
-  test port 3412 is one: message the others before build/start, and say when free. NO site merge on 10/10 (owner's LINE broadcast,
+  Night chain OFF + the 08/10 temporary night order deleted from the routine (owner 08/10 morning). The night run stalled 05:18 on a
+  Bash permission prompt (compound `cd … && git …`) — LESSONS พ29. NO site merge on 10/10 (owner's LINE broadcast,
   2–4k visitors; load test 07/10: 129 req/s, 3,892/3,892 = 200, p99 357 ms [ตรวจแล้ว] — `_incoming/loadtest/load.js`).
   Owner decisions: ask in chat + one line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (retired 07/10 night, §18 "Review sheet +
   image work") · image work goes live after the checker without a review page (before/after page only for a hard case).
   Image renders: owner 07/10 eve = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — NOT the Higgsfield MCP (it bills
   credits: 14 credits went on VINCI S before the owner switched back; balance 5,130 [ตรวจแล้ว]). MCP read-only tools (show_generations) are fine.
-2 ahead of main: nothing of the image chat (#359 + #361 merged; branches image-look-zero-cartridge / docs-handoff-j5 = merged).
+2 ahead of main — waiting on owner answers (`docs/รอพี่ตรวจ.md`), all checker-passed:
+  #364 `mbar15k-into-kit` (wt `_incoming/wt-mbar`) = item 3 (3), checker 6/6 at d413b84 + 7d52f22 notes-only (13.5 #2 (จ)) → รอพี่ตรวจ 20 + 21
+  · #366 `option-photos-3-infy` (wt-b3, 38d1ada) + #368 `option-photos-3-tfit` (wt-b3t, e6ae755) → รอพี่ตรวจ 23 ("ได้" = merge both).
+  Main folder = on main. Worktrees: wt-mbar · wt-b3 · wt-b3m (merged, removable) · wt-b3t · wt-docs.
   Untracked, NOT the image chat's, left alone: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching). Branch `option-photos-3` =
   LESSONS 28 only, NOT checked. Before every commit run `git branch --show-current`; more than one chat on this repo = the others in worktrees.
-3b IMAGE THEFT — DONE #322 (live 06/10, owner tested + approved): `ImageSaveGuard` (root layout) blocks right-click/drag on every <img>,
-  globals.css blocks iOS long-press save; new images need nothing. Logo-over-image drafts (`_incoming/image-guard/logo-mock/`) = owner
-  06/10 "เอาแค่นี้ก่อน" — do not re-propose unprompted. Not done (reasons told to the owner): original files · invisible watermark · watermark in file.
+3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
 3 OPEN: round "option photos + IQOS colours" = `docs/rounds/รอบรูปทุกตัวเลือก-IQOSสีครบ-06-10.txt` (owner approved 06/10 pm).
   Batches (all tier B): 1 IQOS ✓ #311 · 2 SALTHUB ✓ #312 · 3 WOTOFO nexBAR 18K 11 · TFIT M Power 20K 10 · INFY 20K 2 · Muro 3ML 4 ·
   4 coils ×8 (white box) · 5 close. Scope (scope-auditor 06/10) = round file block + `_incoming/option-photos/scope.md`.
   Done: PRIME 5 colours · ILUMA i 7 (Bold Ruby = jp.iqos.com) · Zero Cartridge 22/22 · M Bar 15K 16/16. AI jobs (nano_banana_2 4k):
   AI job ids of batches 1–2 + checker #312 taste notes = `git show 7d577e9:docs/HANDOFF.md` §16 item 3. Credits this round: 17.
   PAUSED 06/10 night. Owner's order (answers 06/10 night, one chat = one round):
-   (1) DONE #317 + #319 (prices; m-bar-15k 349 left for item (3); ARGUS note = `git show 7d577e9:docs/HANDOFF.md`);
-   (2) image look — J1–J5 DONE, all live and owner-passed 08/10: J1 KOKO #328 · J2 Drag S3 #329/#337 · J3 Drag X3 #332 · VINCI S
-       #335 · J4 RELX #345/#350 + ARGUS G4 mini #350 · J5 Zero Cartridge #359. Method for item (4) = IMAGE_SPEC §0 item 8 + IMAGE_PROMPTS
-       (one colour first → 3 points + G5 bar → full set; Drag = the only S2-look exception); renders, keying, maps, four-per-render =
-       JOBS.md J3–J5 (scripts + helpers in `_incoming/look-batch/`; old details = `git show 853f3ce:docs/HANDOFF.md` §16 item 3 (2)).
-       New file name on every replace once live (30-day cache).
-       NEXT CHAT (owner 08/10 "ย้ายแชทเลย") = item (3) below. First step: read BSOT (M Bar 15K / M Switch rows) + the m-bar-15k /
-       m-switch-kit / m-switch-pod data and the price-approval data path (13.5 #3 full set — money), then post a ≤7-step plan
-       to the owner before touching prices. Still open: joiway-f4 = skip · m-bar-15k clear pod off the site (= item (3)).
-   (3) M Bar 15K black pod only (BSOT updated 06/10; black pods = m-switch-pod's live photos; decide how 15K and M Switch Kit/Pod split);
-       OWNER PRICES 07/10 (review sheet 25): M Bar 15K device + pod = ฿600 · pod only = ฿400 — money = full set (13.5 #3), own batch,
-       through the price-approval data (never typed by hand), with the black-pod split; ฿349 stays until then.
-   (4) then this round's batch 3 with the picked image standard.
+   (1) DONE #317 + #319 (prices) · (2) image look J1–J5 DONE + owner-passed (#328–#359, #363). Method = IMAGE_SPEC §0 item 8 +
+       IMAGE_PROMPTS + `_incoming/look-batch/JOBS.md` J3–J5 (scripts there). New file name on every replace once live (30-day
+       cache). Quad renders: check EVERY pod of the picked render (owner caught 4 flat Zero pods 08/10 → #363).
+   (3) M Bar 15K — owner 08/10 chose "fold into the M Switch Kit" (BSOT M Bar 15K section, entry 08/10): PR #364 = 15K hidden +
+       308 redirect to the Kit (next.config.ts) + Product.searchAliases + Kit/Pod title/meta/one visible line (thai-copy 08/10).
+       Prices unchanged (Kit ฿600 / Pod ฿400 already live = the owner's 07/10 prices). Waiting: รอพี่ตรวจ 20 (head rows vs the round's
+       【ห้ามแตะ】 head — drop commit 33f5df8's head rows if "2") · 21 (home desktop intro Scene4Hero still shows the clear-pod card;
+       "1" = swap to `m-switch-kit/card-v2.webp`, + `scripts/image-audit.ts` row).
+   (4) batch 3: MURO live #367 · INFY #366 + TFIT #368 ready · was PRs #366–#368 (INFY 2 = recolour master · MURO 4 = MURO box art from ihavevape.net · TFIT 10 = TFIT's
+       Watermelon shot + names printed as its chart, `_incoming/option-photos/b3/tfit/names.js`). nexBAR 11 = reason rows
+       (`_incoming/option-photos/b3/reasons.md`: 6 exist only as the Vivid Edition = other design → รอพี่ตรวจ 22 · 5 none anywhere).
+       NEXT CHAT (owner 08/10 "ไปรันงานต่อ"), in order: (a) merge what รอพี่ตรวจ 20–23 answers allow; (b) batch 4 coils: count-gaps PM rows
+       (coil-38 ×2 · 53 · 56 · 68 · 70 · 74 · 87 · 89 ×2, `npx tsx _incoming/sitewide-template/5/mood/count-gaps.ts`) + the white-box
+       cards (`_incoming/image-sitewide/b-coils/README.txt` — refs ready; renders = Higgsfield through Chrome only); (c) MURO 3ML is
+       missing 4 flavours the market lists (Apple Juice · Mineral Water · Strawberry Peach · Cola — ihavevape.net has box art; catalog
+       completeness rule; confirm with a 2nd source before adding); (d) round close (batch 5) = count-gaps + reasons table → docs.
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
@@ -58,11 +62,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   iqosheet-18 · m-bar-10k · tfit-m-power-20k; on the first quota message stop for that sitting (live test ~40 s each; success = the
   card shows "✓ ขอการจัดทำดัชนีแล้ว"; the search box needs two clicks before typing). Worktree `_incoming/wt-seo-d` + notes
   `_incoming/seo-d/` kept until the 22/10 read. Not done here: "หัวพอตใส" on m-bar-15k (item 3 (3)) · esko card "20 รสชาติ" (data round).
-3t CLOSED 08/10 — round "staff slip check (EasySlip)" (`docs/rounds/รอบ-ตรวจสลิป-หน้าทีมงาน-07-10.txt`), tag `slip-check-done`.
-  Live: `/staff` (#347 BIG, checker 5/5 + re-check 3/3) + admin guide / DEPLOY-RENDER §7 / BSOT §9 "Built" (#348). Owner set both Render
-  secrets 07–08/10 and passed a real slip on the live site 08/10 (amount/time = K PLUS, duplicate warning shown) [รอเจ้าของ → ผ่าน].
-  Owner still to do: forward `docs/คู่มือแอดมิน-ตรวจสลิป.md` (from the line down) to the LINE team group + the password in a separate message.
-  First EasySlip error seen = INVALID_API_KEY from a key copied 1–2 chars short — the staff page shows the code in brackets; that is the fix path.
+3t CLOSED 08/10 — staff slip check (EasySlip), tag `slip-check-done`, live #347/#348, owner passed a real slip. Owner still to do: forward
+  `docs/คู่มือแอดมิน-ตรวจสลิป.md` to the LINE team group (+ password separately). Error INVALID_API_KEY = key copied short.
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
