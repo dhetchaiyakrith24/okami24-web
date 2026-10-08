@@ -16,10 +16,9 @@ import { useChipAutoscroll } from "./use-chip-autoscroll";
  * Catalog truth vs. stock truth (see `VariantAvailability`'s doc comment) is rendered, not hidden:
  * an `"out-of-stock"` flavor still appears — a verified real flavor is never removed from view
  * just because it isn't currently stocked — but is visually dimmed, its name struck through (owner 08/10), carries the sold-out label,
- * and (since 2026-09-06, owner instruction) is NOT selectable: `disabled`, no click handler, so it
- * can never become the flavour that goes into the cart. Priced legacy products now DO have a real
- * cart action (see `ProductHero` / `resolveProductRef()`'s legacy branch), and the server-side gate
- * rejects an out-of-stock option anyway — this is the matching client-side half. `"unknown"`
+ * and since stock round batch 2c (owner 08/10) IS selectable, so the customer can look at it; selected, it turns
+ * fully opaque with the ember frame and an ember sold-out label. It still never reaches the cart: ProductHero's buy
+ * gate shows the sold-out state and `resolveProductRef()`'s legacy branch rejects it server-side. `"unknown"`
  * renders like `"in-stock"` deliberately: we have no live signal either way, and marking it as if
  * confirmed-unavailable would be its own kind of fabrication.
  *
@@ -87,22 +86,23 @@ export function FlavorVariantGrid({
         )}
         {variants.map((v) => {
           const outOfStock = v.availability === "out-of-stock";
+          const selected = v.id === selectedId && !isAllSelected;
           return (
             <button
               key={v.id}
               type="button"
               data-option-id={v.id}
-              onClick={outOfStock ? undefined : () => onSelect(v.id)}
-              disabled={outOfStock}
-              aria-disabled={outOfStock || undefined}
+              onClick={() => onSelect(v.id)}
               aria-pressed={v.id === selectedId}
               title={outOfStock ? `${v.name} — ${outOfStockLabel}` : v.name}
               className={cn(
                 "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all duration-150 max-lg:min-h-11 max-lg:shrink-0 max-lg:whitespace-nowrap max-lg:px-4 max-lg:text-sm",
-                v.id === selectedId && !isAllSelected
+                selected
                   ? "border-ember bg-ember/10 text-foreground"
                   : "border-surface-border text-foreground-muted hover:border-foreground-dim hover:text-foreground",
-                outOfStock && "cursor-not-allowed border-dashed opacity-50 hover:border-surface-border hover:text-foreground-muted"
+                // Sold out: dashed + dimmed until picked; picked = full opacity so the ember frame reads as selected.
+                outOfStock && !selected && "border-dashed opacity-50 hover:opacity-80",
+                outOfStock && selected && "text-foreground-muted"
               )}
             >
               <span
@@ -111,7 +111,7 @@ export function FlavorVariantGrid({
                 aria-hidden
               />
               <span className={cn(outOfStock && "line-through decoration-foreground-dim")}>{v.name}</span>
-              {outOfStock && <span className="text-[0.6rem] uppercase tracking-wide text-foreground-dim">{outOfStockLabel}</span>}
+              {outOfStock && <span className={cn("text-[0.6rem] uppercase tracking-wide", selected ? "text-ember" : "text-foreground-dim")}>{outOfStockLabel}</span>}
             </button>
           );
         })}

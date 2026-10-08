@@ -27,6 +27,7 @@ import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 import { MobileVariantGallery, MOBILE_SLIDE_SIZES } from "@/components/product/MobileVariantGallery";
 import { pilotVariantOptions } from "@/components/product/variant-options";
 import { NoOptionPhoto } from "@/components/product/NoOptionPhoto";
+import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
 import { verifiedRows } from "@/lib/verified-specs";
 
 /**
@@ -149,6 +150,13 @@ export function PilotProductDetail({
           })),
         ]
       : [{ id: "default", node: renderImage(product.image, true) }];
+  // Stock batch 2c (owner 08/10): the photo of an option that cannot be ordered carries the sold-out badge — per slide
+  // on phones, over the still image on desktop — on the same rule as the buy action (`available`).
+  const soldOutBadge = <SoldOutPhotoBadge label={dict.product.outOfStockChip} />;
+  const badgedSlides = slides.map((s) => {
+    const option = options.find((o) => o.id === s.id);
+    return (option ? option.outOfStock : product.availabilityStatus !== "in-stock") ? { ...s, node: <>{s.node}{soldOutBadge}</> } : s;
+  });
 
   return (
     <>
@@ -246,10 +254,11 @@ export function PilotProductDetail({
             style={{ background: "radial-gradient(ellipse 58% 54% at 50% 40%, var(--color-steel-soft) 0%, transparent 72%)" }}
             aria-hidden
           />
-          <MobileVariantGallery slides={slides} selectedId={selectedVariantId ?? "default"} onSelect={(id) => setSelectedVariantId(id === "default" ? null : id)} className="h-full" ariaLabel={axisLabel ?? undefined} />
+          <MobileVariantGallery slides={badgedSlides} selectedId={selectedVariantId ?? "default"} onSelect={(id) => setSelectedVariantId(id === "default" ? null : id)} className="h-full" ariaLabel={axisLabel ?? undefined} />
         </div>
 
         <div className="relative order-1 aspect-[4/5] w-full max-lg:hidden lg:order-2">
+          {!available && soldOutBadge}
           {showNoPhoto && selectedVariant ? (
             <div className="h-full w-full p-8 lg:p-12">
               <NoOptionPhoto name={selectedVariant.label} note={noPhotoNote} />

@@ -15,6 +15,7 @@ import { Badge } from "@/components/ui/Badge";
 import { EditorialTagBadge } from "@/components/catalog/EditorialTagBadge";
 import { Button } from "@/components/ui/Button";
 import { FavoriteButton } from "@/components/catalog/FavoriteButton";
+import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
 import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
@@ -251,6 +252,15 @@ export function ProductHero({
             ),
           },
         ];
+  // Stock batch 2c (owner 08/10): a sold-out option stays viewable and its photo carries the sold-out badge — on phones
+  // per slide (it travels with the swipe), on desktop over the still image. The product card / lineup slide gets it
+  // only when nothing at all can be ordered.
+  const soldOutBadge = <SoldOutPhotoBadge label={dict.product.outOfStockChip} />;
+  const badgedSlides = slides.map((s) => {
+    const option = options.find((o) => o.id === s.id);
+    return (option ? option.outOfStock : everyOptionSoldOut) ? { ...s, node: <>{s.node}{soldOutBadge}</> } : s;
+  });
+  const desktopSoldOut = everyOptionSoldOut || (!showAllColors && selectedOutOfStock);
   // On a lineupFirst product "all" is where the page starts, not an option — the buy bar then asks for a pick.
   const selectedOptionLabel = showAllColors ? (product.lineupImage && !lineupFirst ? allLabelAt(allIndex) : null) : selectedColor?.name ?? selectedFlavor?.name ?? null;
   const priceText = sellingPrice !== null ? `฿${sellingPrice.toLocaleString("th-TH")}` : null;
@@ -394,6 +404,7 @@ export function ProductHero({
             aria-hidden
           />
           <FavoriteButton slug={product.slug} className="absolute right-2 top-2 z-10" />
+          {desktopSoldOut && <SoldOutPhotoBadge label={dict.product.outOfStockChip} className="max-lg:hidden" />}
           <div className="relative h-full w-full p-8 max-lg:hidden lg:p-12">
             {showNoPhoto && selectedRecord ? (
               <NoOptionPhoto name={selectedRecord.name} swatchHex={selectedRecord.swatchHex} note={noPhotoNote} />
@@ -420,10 +431,11 @@ export function ProductHero({
             {showAllColors && product.lineupImage && !lineupFirst ? (
               <div className="relative h-full w-full p-2">
                 <ProductMedia product={product} sizes={MOBILE_SLIDE_SIZES} qualityAware={imageDisplayMap?.[(shownLineup ?? product.lineupImage).src] ?? null} overrideImage={shownLineup ?? product.lineupImage} />
+                {everyOptionSoldOut && soldOutBadge}
               </div>
             ) : (
               <MobileVariantGallery
-                slides={slides}
+                slides={badgedSlides}
                 selectedId={lineupFirst && showAllColors ? "all" : selectedOptionId ?? "default"}
                 onSelect={selectOption}
                 className="h-full"
