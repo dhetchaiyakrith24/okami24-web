@@ -11,49 +11,29 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = #387 merge 4ea2b26 (sharpness gate: a renamed option photo is measured
-  against the photo it replaces) [ตรวจแล้ว]. Today's merges after the last close: #386 MURO 3ML 14 boxes 694x1000 (owner 08/10
-  "ขนาดสินค้าตัวนี้ยังดูเล็กๆ ปรับขนาดขึ้นหน่อย") — live, deploy on ed1d002 success, curl 200 serving `-hd.webp` [ตรวจแล้ว] · #387 gate
-  (tools only). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl.
+1 main: `git fetch && git log -1 --oneline origin/main` = this close's docs PR merge, on top of #389 merge 246f5bd [ตรวจแล้ว].
+  Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
+  #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
+  deploy job ends — wait, then curl.
   Night chain OFF (day chat 08/10 turned it off). NO site merge on 10/10 (owner's LINE broadcast). Owner decisions: ask in chat + one
   line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (§18) · image work goes live after the checker.
   Image renders = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — 0 credits this chat: balance 5,082.4, every Nano
   Banana Pro transaction 0 [ตรวจแล้ว]; never the Higgsfield MCP generate tools. Higgsfield prompt box = Lexical editor: typing 1,300
-  chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (see `_incoming/coil3/` notes in item 3).
-2 ahead of main [ตรวจแล้ว]: PR #388 `coils3-voopoo` (coil-1 + coil-72, head c66e66e) and PR #389 `coils3-uwell` (coil-94, head
-  fa3698e) — both pushed, checker RUNNING at the chat move (agent, report not received) → new chat: re-run the checker on both heads
-  (brief = round file pass criteria + item 3 below). Both PRs touch scripts/process-images.map.json + content-dates.json → merge one,
-  then `git merge origin/main` into the other, re-run `node ../coil3/apply3.js c94` (or c1 c72) if map.json conflicts (take main's,
-  re-apply), re-run the gate, re-check the moved head. Worktrees: `_incoming/wt-coil3` (own node_modules copy now; on LOCAL branch
-  coils3-all = #388+#389 merged, test server 3412 serves it) · `_incoming/wt-b4s` (on merged branch gate-variant-ref) · wt-docs2.
-  Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching). `git branch --show-current`
-  before every commit.
+  chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
+2 ahead of main: nothing after the close PR [ตรวจแล้ว]. Worktrees: `_incoming/wt-coil3` (own node_modules copy, detached at main;
+  test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable
+  (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
+  `git branch --show-current` before every commit. A SEPARATE CHAT (owner 08/10) is opening the round "Shipnity stock API + SKU"
+  (survey first, no site edits in its first batch) — check `git log origin/main` / open PRs before touching src/data/shipnity-seed/.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
-3 OPEN ROUND "3 coil photos" = `docs/rounds/รอบรูปคอยล์3ตัว-coil-1-72-94-08-10.txt` (opened 08/10, scope-auditor: 30 pages + controls
-  /, /products/disposables, /products/iqosheet-16). Batches: 1 coil-1 (B) · 2 coil-72 (B) · 3 coil-94 (B) = built, in PRs #388/#389,
-  checker pending · 4 close (A): edge audit file `_incoming/image-sitewide/edge-audit/visual-audit.md` mark coil-1/72/94 done, §16,
-  tag `coil-photos-3-done` (skill round-close). NEXT STEP: checker on #388 + #389 → merge both (image PRs: BIG is fine, IMAGE_SPEC §7)
-  → curl live → report with before/after `_incoming/coil3/proof/*-pair-390.jpg / -1440.jpg` → close.
-  What the renders are [ตรวจแล้ว by Friday, not yet by the checker]: coil-1 options = box + coil per resistance (TW15 violet ring,
-  DW60 red, TR1 teal; card = the 3 coils in a row, row.js); TR1 white/blue rubber share one photo (every source shows one o-ring
-  colour); coil-72 = V2 0.7 / 1.2 (ohm on the black tab) + Top Fill (0.4/0.7 share — identical pods); card = stagger V2 + Top Fill;
-  coil-94 = 0.4 single pod, 0.6 / 0.9 box + 4 pods, 1.2 CRC box + 4 pods (AI-added floating label above the box cleared with
-  matte3 `--clear`); card = the 0.4 pod. Researcher: no VOOPOO 1-1.5k gallery reachable (403), no UWELL pod-alone files.
-  Tools: `_incoming/coil3/` (in/ refs, out/ renders, key/ cut-outs, prompts.js, apply3.js = writes data + map, matte3.js now has
-  `--clear`, cutfoot.js, foottrim.js = trims the contact-shadow slab past a pod's base, place.js, row.js, coilcut.js, fid/).
-  MURO hd tools: `_incoming/muro-big/` (align.js = AI box fitted on the measured cut alpha, edge.js, dot.js, lowfix.js colour).
-  Gate fix #387 needed for these PRs: the old gate measured renamed option photos against the old busy card (11 false FAILs).
-  GSC (item 3s): the 9 pages were NOT requested this chat — the app browser was not signed in to Google (owner asked to sign in,
-  no answer) → owner signs in (Ctrl+Shift+B → Google sign-in), then do the 9.
-  CHECKER RESULT (arrived after the move, heads c66e66e / fa3698e) = both FAIL, fixes listed; evidence `_incoming/chk-coil/`:
-  #388: 72-2 (1.2) pod ~8% smaller than 72-1 (768 vs 838 px) -> rescale to match · card-72 phoneSharp 11.6 vs old card 22.6 (gate does
-  not compare renamed cards; decide + write in report) · TW15 thin contact shadow under the box (magenta 3x only) · send owner the full
-  1440 shots (*-after-1440.png), the pair crops cut the product off. #389: 94-2 (0.6) opaque ~12 px reflection slab under the pods/box
-  (cut flat at y=848) and a faint one under 94-4 (1.2) -> cut at the foot like 94-1 · 94-3 (0.9) purple strip with half-cut
-  "Refillable Pod" letters on the box top (from the source crop) -> crop it off · card-94 phoneSharp 6.8 vs old 15.8 (same note).
-  Everything else passed (text, V2/Top Fill not swapped, TR1 + Top Fill shared photos, AI label gone, provenance rows, old files gone).
-  LESSONS to write at the close: owner sees a small hero image as a defect (MURO 340 px files drawn at intrinsic size) · Lexical
-  prompt box · AI re-render fitted onto a measured cut keeps the outline exact · gate compared renamed variants with the card.
+3 CLOSED 08/10 — round "3 coil photos" (`docs/rounds/รอบรูปคอยล์3ตัว-coil-1-72-94-08-10.txt`), tag `coil-photos-3-done`. Live: #388
+  coil-1 (PnP TW15 / DW60 / TR1, TR1 rubber colours share one photo) + coil-72 (VMATE V2 0.7 / 1.2 + Top Fill, 0.4/0.7 share) ·
+  #389 coil-94 (CALIBURN G3 0.4 pod, 0.6 / 0.9 / 1.2 CRC box sets). Checker: first pass FAIL both, re-check PASS both (b76b1c8 /
+  1c3633a); #389 then took a main merge (map.json + content-dates conflict, re-applied with apply3.js c94, same 13-file diff) —
+  merged on green checks without a third checker pass (13.5 #2 (จ)). Cards keep lower phoneSharp than the old busy retailer cards
+  (card-72 11.6 vs 22.6, card-94 6.8 vs 15.8) — Friday + checker agree: clean product vs text-heavy photo. Minor, open: faint
+  stray pixels along the pod bottoms of 94-2/94-3 visible only at 2.7x zoom (checker `_incoming/chk-coil2/pod92b.jpg`).
+  Tools + sources: `_incoming/coil3/` (key/D-*.png = the masters process-images reads; fix/ = checker fixes, pre-D-*.png backups).
 3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
   #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
   "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
@@ -61,8 +41,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   SEO_LANDSCAPE §0.5. REQUEST INDEXING (owner 08/10 "36 = 1 กดได้เลย"): 22 re-headed
   pages; 13 done 08/10 in the app browser (GSC URL inspection → "ขอการจัดทำดัชนี"): ~00:50–01:06 joiway-f4 · m-bar-15k · argus-g4 ·
   caliburn-g5 · brands joiway · salthub · esko-bar · voopoo · uwell · relx, then ~01:22–01:28 brands/infy · caliburn-g5-lite ·
-  caliburn-g5-lite-se — both times GSC then said "เกินโควต้าแล้ว" (the limit is not a fixed 10 per day). NEXT CHAT, a few hours later or
-  09/10: the other 9 — products argus-g4-mini · caliburn-g3-pro · caliburn-g3-pro-koko · caliburn-g4-classic · drag-6 · drag-s3 ·
+  caliburn-g5-lite-se — both times GSC then said "เกินโควต้าแล้ว" (the limit is not a fixed 10 per day). STILL OPEN (08/10 evening: the app
+  browser is not signed in to Google — the owner signs in there first, Friday never types the password): the other 9 — products argus-g4-mini · caliburn-g3-pro · caliburn-g3-pro-koko · caliburn-g4-classic · drag-6 · drag-s3 ·
   iqosheet-18 · m-bar-10k · tfit-m-power-20k; on the first quota message stop for that sitting (live test ~40 s each; success = the
   card shows "✓ ขอการจัดทำดัชนีแล้ว"; the search box needs two clicks before typing). Worktree `_incoming/wt-seo-d` + notes
   `_incoming/seo-d/` kept until the 22/10 read. Not done here: "หัวพอตใส" on m-bar-15k (item 3 (3)) · esko card "20 รสชาติ" (data round).
