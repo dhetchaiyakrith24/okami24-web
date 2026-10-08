@@ -61,9 +61,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   SEO_LANDSCAPE §0.5. REQUEST INDEXING (owner 08/10 "36 = 1 กดได้เลย"): 22 re-headed
   pages; 13 done 08/10 in the app browser (GSC URL inspection → "ขอการจัดทำดัชนี"): ~00:50–01:06 joiway-f4 · m-bar-15k · argus-g4 ·
   caliburn-g5 · brands joiway · salthub · esko-bar · voopoo · uwell · relx, then ~01:22–01:28 brands/infy · caliburn-g5-lite ·
-  caliburn-g5-lite-se — both times GSC then said "เกินโควต้าแล้ว" (the limit is not a fixed 10 per day). STILL OPEN (08/10 evening: the app
-  browser is not signed in to Google — the owner signs in there first, Friday never types the password): the other 9 — products argus-g4-mini · caliburn-g3-pro · caliburn-g3-pro-koko · caliburn-g4-classic · drag-6 · drag-s3 ·
-  iqosheet-18 · m-bar-10k · tfit-m-power-20k; on the first quota message stop for that sitting (live test ~40 s each; success = the
+  caliburn-g5-lite-se — both times GSC then said "เกินโควต้าแล้ว" (the limit is not a fixed 10 per day). 08/10 evening (owner signed the app
+  browser in to Google): argus-g4-mini + caliburn-g3-pro done, then "เกินโควต้าแล้ว". STILL OPEN, from 09/10: the other 7 — products
+  caliburn-g3-pro-koko · caliburn-g4-classic · drag-6 · drag-s3 · iqosheet-18 · m-bar-10k · tfit-m-power-20k (open the overview page fresh
+  for each URL, click the inspect box by its ref, then the visible "ขอการจัดทำดัชนี" by ref — a pixel click hit "ขออีกครั้ง"); on the first quota message stop for that sitting (live test ~40 s each; success = the
   card shows "✓ ขอการจัดทำดัชนีแล้ว"; the search box needs two clicks before typing). Worktree `_incoming/wt-seo-d` + notes
   `_incoming/seo-d/` kept until the 22/10 read. Not done here: "หัวพอตใส" on m-bar-15k (item 3 (3)) · esko card "20 รสชาติ" (data round).
 3t CLOSED 08/10 — staff slip check (EasySlip), tag `slip-check-done`, live #347/#348, owner passed a real slip. Owner still to do: forward
@@ -108,6 +109,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     caliburn-g3-pro(-koko), -g4-pro(-koko), -g5 en+zh, same on live) [ตรวจแล้ว] — data round. Same for coil-72 "VOOPOO คอยล์ Vmate
     Infinity Edition" on vmate-i3 en/zh (live before and after #264) [ตรวจแล้ว], and its fits-with card there still shows the
     retailer evidence sentence from catalog-relationships.ts (maker-only rule) — data round.
+  - (owner 08/10 evening, "จดไว้เดี๋ยวมาตามเก็บรอบ Seo") "pod" — the owner searched on computer + phone and could NOT find the shop;
+    GSC (to 05/10) says query `pod` 24 clicks / 114 impressions / avg 6.8, daily 3.3 → 15.4, first seen 29/09, two pages split it
+    (pod-systems 3.6 · pod-kits 7.9). = FIRST topic of the next SEO round (SEO_LANDSCAPE §0 row "pod · pod system"): one owner page,
+    head/H1/copy, internal links, the missing "pod system คืออะไร" article; check what a signed-out phone in Thailand sees first.
   - Next SEO round (left after round SEO ง): M Bar 10K airflow row + head · G5 hero tagline repeats · product FAQ answers absent from
     server HTML · shared GPP note "Shared top-fill…" on 8 UWELL pages · (04/10, language part — timing = Friday's reading [เชื่อว่า])
     remove the term brackets site-wide (THAI_STYLE layer 4; list = `node scripts/paren-terms.js`; keep device-screen ones).
