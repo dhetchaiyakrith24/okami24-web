@@ -115,12 +115,17 @@ export function ProductHero({
   const selectedColor = product.colorVariants?.find((c) => c.id === selectedColorId);
   const selectedFlavor = product.flavorVariants?.find((f) => f.id === selectedFlavorId);
   // "all": the lineup photo. On a lineupFirst product it is also the unpicked start state, so it clears the pick
-  // (the photo then claims no option, and the buy action asks for one); elsewhere it keeps the pick, as before.
+  // (the photo then claims no option, and the buy action asks for one); elsewhere it keeps the pick, as before —
+  // unless the pick is sold out (reachable since stock batch 2c, sold-out chips are clickable): then it returns to the
+  // page's opening option, so the lineup of every colour never reads "sold out" while others still sell (checker #404).
   function selectAll(i = 0) {
     setAllIndex(i);
     if (lineupFirst) {
       setSelectedColorId(null);
       setSelectedFlavorId(null);
+    } else {
+      if (selectedColor?.availability === "out-of-stock") setSelectedColorId(initialOption(product.colorVariants));
+      if (selectedFlavor?.availability === "out-of-stock") setSelectedFlavorId(initialOption(product.flavorVariants));
     }
     setShowAllColors(true);
   }
