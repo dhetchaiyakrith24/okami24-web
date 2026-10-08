@@ -29,14 +29,14 @@ export function runPricingContractTests(): PricingContractResult[] {
 
   check(
     "FREE_SHIPPING_THRESHOLD_THB and FLAT_SHIPPING_FEE_THB match docs/BUSINESS_SOURCE_OF_TRUTH.md §10 exactly",
-    FREE_SHIPPING_THRESHOLD_THB === 500 && FLAT_SHIPPING_FEE_THB === 60,
+    FREE_SHIPPING_THRESHOLD_THB === 500 && FLAT_SHIPPING_FEE_THB === 50,
     `threshold=${FREE_SHIPPING_THRESHOLD_THB} fee=${FLAT_SHIPPING_FEE_THB}`
   );
 
   const belowThreshold = computeOrderTotals([line(200, 1)]);
   check(
-    "a 200 THB subtotal (below the 500 THB free-shipping threshold) charges the flat 60 THB fee",
-    belowThreshold.subtotal === 200 && belowThreshold.shippingFee === 60 && belowThreshold.total === 260,
+    "a 200 THB subtotal (below the 500 THB free-shipping threshold) charges the flat 50 THB fee",
+    belowThreshold.subtotal === 200 && belowThreshold.shippingFee === 50 && belowThreshold.total === 250,
     JSON.stringify(belowThreshold)
   );
 

@@ -311,7 +311,8 @@ how-to-order page and on the order page next to the bank details.
 
 ## 10. Shipping
 
-- **Standard shipping fee:** 60 THB
+- **Standard shipping fee:** 50 THB (owner, chat 2026-10-09: "พี่คิดลูกค้า 50 บาท" — was 60 THB). The warehouse (Shipnity Max,
+  dropship) bills the shop 35 THB shipping per order ("คลังคิดพี่ 35 บาท") — internal cost, never shown to customers.
 - **Free shipping threshold:** 500 THB
 - **Cut-off (owner 2026-09-06, answer 3):** orders with payment made **and reported before 15:00**
   ship the same day; later ones ship the next working day. (The owner wrote "สั่งก่อน 15:00"; the

@@ -230,7 +230,7 @@ export function articleJsonLd(input: {
  * (shippingDetails, hasMerchantReturnPolicy). Every value is a fact already written in
  * `docs/BUSINESS_SOURCE_OF_TRUTH.md` §10 (shipping) and §12 (claims), read from the same
  * constants the cart math uses where one exists:
- * - flat 60 THB rate (`FLAT_SHIPPING_FEE_THB`), Thailand only, dispatch same/next working day
+ * - flat 50 THB rate (`FLAT_SHIPPING_FEE_THB`), Thailand only, dispatch same/next working day
  *   (handling 0–1 day), delivery 1–3 days after dispatch. Carrier names are deliberately absent
  *   (owner 2026-09-07). The 500 THB free-shipping threshold is NOT expressed: schema.org puts
  *   `freeShippingThreshold` on ShippingRateSettings, not on OfferShippingDetails, and Google's
