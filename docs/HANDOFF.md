@@ -45,7 +45,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Gate fix #387 needed for these PRs: the old gate measured renamed option photos against the old busy card (11 false FAILs).
   GSC (item 3s): the 9 pages were NOT requested this chat — the app browser was not signed in to Google (owner asked to sign in,
   no answer) → owner signs in (Ctrl+Shift+B → Google sign-in), then do the 9.
-  CHECKER RESULT (arrived after the move, heads c66e66e / fa3698e) = both FAIL, fixes listed; evidence :
+  CHECKER RESULT (arrived after the move, heads c66e66e / fa3698e) = both FAIL, fixes listed; evidence `_incoming/chk-coil/`:
   #388: 72-2 (1.2) pod ~8% smaller than 72-1 (768 vs 838 px) -> rescale to match · card-72 phoneSharp 11.6 vs old card 22.6 (gate does
   not compare renamed cards; decide + write in report) · TW15 thin contact shadow under the box (magenta 3x only) · send owner the full
   1440 shots (*-after-1440.png), the pair crops cut the product off. #389: 94-2 (0.6) opaque ~12 px reflection slab under the pods/box
