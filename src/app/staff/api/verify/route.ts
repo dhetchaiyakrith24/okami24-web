@@ -5,13 +5,16 @@ import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { ACCEPTED_IMAGE_TYPES, MAX_IMAGE_BYTES, getQuota, verifySlipImage } from "@/lib/staff/easyslip";
 import { matchReceiver, type ShopAccount, type SlipParty } from "@/lib/staff/receiver-match";
 import type { PartyView, QuotaView, SlipCheckResponse } from "@/lib/staff/slip-check-types";
+import { sameSiteRequest } from "@/lib/staff/request-guard";
 import { findByImageHash, findByTransRef, recordFirstCheck, touchCheck } from "@/lib/staff/slip-checks";
 
 /**
  * POST /staff/api/verify — the staff page uploads ONE slip image here (multipart field `image`, optional
  * `expected` = the order total in baht). Slip-check round 2026-10-07, BSOT §9 "one exception":
  *   1. staff session required (src/lib/staff/auth.ts) — 404 without one, like a page that does not exist;
- *   2. the exact same file checked before → answered from our log, EasySlip is NOT called;
+ *   2. the exact same file checked before AND its receiver was the shop's → answered from our log, EasySlip is
+ *      NOT called (any other earlier verdict is asked again — EasySlip answers a slip it already verified from
+ *      its cache without using quota, and a fix to our receiver check then applies to it; 08/10);
  *   3. otherwise EasySlip verifies it (key on the server only) and we record transRef / amount / time;
  *   4. the answer says whether the money went to the shop's account and whether this transfer was seen
  *      before. Nothing here changes an order — a person still approves every payment.
@@ -32,12 +35,32 @@ const SHOP: ShopAccount = {
   bankShort: "KBANK",
   digits: PAYMENT_ACCOUNT.accountNumber.replace(/\D/g, ""),
   firstNameTh: PAYMENT_ACCOUNT.accountName.replace(/^(นาย|นางสาว|นาง)\s*/, "").split(/\s+/)[0],
+  promptPayRef: PAYMENT_ACCOUNT.promptPayRef.replace(/\D/g, ""),
 };
+
+/** Shown for a slip answered from our log (verdict "match" only): the receiver is the shop's own account. */
+const SHOP_VIEW: PartyView = { name: PAYMENT_ACCOUNT.accountName, bank: PAYMENT_ACCOUNT.bankName.th, account: "บัญชีของร้าน" };
+
+/** What the slip's receiver block looked like, with every digit and letter of a value hidden — so a verdict
+ *  that stays "unclear" can be explained from the server log next time, without logging anyone's name or
+ *  number (the receiver may be a third party). */
+function receiverShape(p: SlipParty | undefined): string {
+  if (!p) return "no receiver";
+  const hide = (v?: string) => (v ? v.replace(/[0-9]/g, "9").replace(/[^9\-\s]/g, "x") : "-");
+  return JSON.stringify({
+    bank: p.bank ? { id: p.bank.id ?? null, short: p.bank.short ?? null } : null,
+    nameTh: Boolean(p.account?.name?.th?.trim()),
+    nameEn: Boolean(p.account?.name?.en?.trim()),
+    bankAccount: p.account?.bank ? { type: p.account.bank.type ?? null, shape: hide(p.account.bank.account) } : null,
+    proxy: p.account?.proxy ? { type: p.account.proxy.type ?? null, shape: hide(p.account.proxy.account) } : null,
+  });
+}
 
 function partyView(p: SlipParty | undefined): PartyView | null {
   if (!p) return null;
   const name = p.account?.name?.th?.trim() || p.account?.name?.en?.trim() || null;
-  const bank = p.bank?.name?.trim() || p.bank?.short?.trim() || null;
+  // A slip paid through a PromptPay QR may carry no bank at all, only the QR's reference (08/10).
+  const bank = p.bank?.name?.trim() || p.bank?.short?.trim() || (p.account?.proxy?.account ? "พร้อมเพย์" : null);
   const account = p.account?.bank?.account?.trim() || p.account?.proxy?.account?.trim() || null;
   return { name, bank, account };
 }
@@ -61,18 +84,7 @@ function amountCheck(expected: number | null, amountSatang: number) {
 export async function POST(request: NextRequest): Promise<NextResponse> {
   if (!staffAreaEnabled() || !(await isStaff())) return new NextResponse(null, { status: 404, headers: HEADERS });
 
-  // Same-site only. The cookie is SameSite=Lax (never sent on a cross-site POST); this is the second lock.
-  const origin = request.headers.get("origin");
-  if (origin) {
-    try {
-      // Behind Cloudflare + Render the public host may arrive as X-Forwarded-Host; either one matching is fine.
-      const originHost = new URL(origin).host;
-      const hosts = [request.headers.get("host"), request.headers.get("x-forwarded-host")?.split(",")[0]?.trim()];
-      if (!hosts.includes(originHost)) return new NextResponse(null, { status: 403, headers: HEADERS });
-    } catch {
-      return new NextResponse(null, { status: 403, headers: HEADERS });
-    }
-  }
+  if (!sameSiteRequest(request)) return new NextResponse(null, { status: 403, headers: HEADERS });
 
   const declared = Number(request.headers.get("content-length") ?? "0");
   if (Number.isFinite(declared) && declared > MAX_IMAGE_BYTES + 64 * 1024) return reply({ ok: false, error: "IMAGE_SIZE_TOO_LARGE" }, 413);
@@ -92,9 +104,9 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   const bytes = Buffer.from(await image.arrayBuffer());
   const imageSha256 = crypto.createHash("sha256").update(bytes).digest("hex");
 
-  // 2. Same file again → our log answers, no EasySlip call, no quota.
+  // 2. Same file again, receiver already confirmed → our log answers, no EasySlip call, no quota.
   const known = findByImageHash(imageSha256);
-  if (known) {
+  if (known && known.receiverStatus === "match") {
     const previousChecks = known.checkCount;
     touchCheck(known.transRef, null);
     return reply({
@@ -105,10 +117,10 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         amount: known.amountSatang / 100,
         transferredAt: known.transferredAt,
         receiverStatus: known.receiverStatus,
-        receiver: null,
+        receiver: SHOP_VIEW,
         sender: null,
       },
-      duplicate: { by: "log", firstCheckedAt: known.firstCheckedAt, previousChecks },
+      duplicate: { by: "log", firstCheckedAt: known.firstCheckedAt, previousChecks, usedAt: known.usedAt },
       amountCheck: amountCheck(expected, known.amountSatang),
       quota: await quotaView(false),
     });
@@ -133,10 +145,11 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   // account's digits are the shop's.
   const matched = result.data.matchedAccount?.bankNumber?.replace(/\D/g, "");
   if (receiverStatus === "unclear" && matched === SHOP.digits) receiverStatus = "match";
+  if (receiverStatus === "unclear") console.info(`[slip-check] receiver unclear — shape ${receiverShape(raw.receiver)}`);
 
   const before = findByTransRef(raw.transRef);
   const record = before
-    ? touchCheck(raw.transRef, imageSha256)!
+    ? touchCheck(raw.transRef, imageSha256, receiverStatus)!
     : recordFirstCheck({ transRef: raw.transRef, amountSatang, transferredAt: raw.date, receiverStatus, imageSha256 });
 
   return reply({
@@ -151,7 +164,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       sender: partyView(raw.sender),
     },
     duplicate: before
-      ? { by: "log", firstCheckedAt: before.firstCheckedAt, previousChecks: before.checkCount }
+      ? { by: "log", firstCheckedAt: before.firstCheckedAt, previousChecks: before.checkCount, usedAt: before.usedAt }
       : result.data.isDuplicate
         ? { by: "easyslip" }
         : null,

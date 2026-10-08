@@ -17,6 +17,11 @@ export const PAYMENT_ACCOUNT = {
   bankName: { th: "ธนาคารกสิกรไทย", en: "Kasikornbank (KBank)", zh: "开泰银行 (KBank)" },
   accountName: "นาย จีระศักดิ์ เกษมสวัสดิ์",
   accountNumber: "153-8-29240-7",
+  /** The PromptPay reference of the shop's own K+ QR ("เลขที่อ้างอิง" printed under it — read from the owner's QR
+   *  image in the private data folder, 2026-10-08). A customer who scans that QR gets a slip whose receiver is
+   *  this 15-digit e-wallet ID ("เติมเงินพร้อมเพย์"), not the account number — real case 08/10. Used only by the
+   *  staff slip check (src/lib/staff/receiver-match.ts); never shown to customers. */
+  promptPayRef: "004999137680913",
 } as const;
 
 /** The PromptPay QR file — kept in the gitignored private data folder, never under `public/`.

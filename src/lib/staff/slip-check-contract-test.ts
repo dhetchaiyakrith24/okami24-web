@@ -3,7 +3,8 @@
  *
  * What the slip-check page promises and what this test holds it to:
  *   1. the receiver check says "match" only when the bank is KBank AND a real piece of the shop's account
- *      (≥3 visible digits in place, or the owner's first name) is confirmed; any contradiction = "mismatch";
+ *      (≥3 visible digits in place, or the owner's first name) is confirmed — or the receiver is the shop QR's
+ *      PromptPay reference (≥3 visible digits in place, 08/10); any contradiction = "mismatch";
  *      nothing confirmed = "unclear". Cases use the masked shapes in the EasySlip docs
  *      (document.easyslip.com /en/v2/verify/bank/: `xxx-x-x5678-x`, `08xxxxxxxx89`).
  *   2. the migrations give the log NO column that could hold a slip image, a name or an account number
@@ -28,7 +29,13 @@ const check = (name: string, passed: boolean, detail = "") => results.push({ nam
 
 // Same values the route derives from src/data/payment.ts (BSOT §9). Kept literal here on purpose: if the
 // shop account ever changes, this test should be read again, not silently follow.
-const SHOP: ShopAccount = { bankId: "004", bankShort: "KBANK", digits: "1538292407", firstNameTh: "จีระศักดิ์" };
+const SHOP: ShopAccount = {
+  bankId: "004",
+  bankShort: "KBANK",
+  digits: "1538292407",
+  firstNameTh: "จีระศักดิ์",
+  promptPayRef: "004999137680913",
+};
 
 const kbank = { id: "004", name: "กสิกรไทย", short: "KBANK" };
 const scb = { id: "014", name: "ไทยพาณิชย์", short: "SCB" };
@@ -51,6 +58,16 @@ check("masked account of a different length → ignored, not a match by itself",
 check("no bank at all + name → unclear (bank unconfirmed)", r(party(undefined, { name: { th: "นาย จีระศักดิ์" } })) === "unclear");
 check("no receiver → unclear", r(undefined) === "unclear");
 check("English name only → unclear (shop's English spelling is not on record)", r(party(kbank, { name: { en: "MR. JEERASAK K" } })) === "unclear");
+// Paid by scanning the shop's K+ QR (real case 08/10): the receiver is the QR's PromptPay reference, no bank given.
+const viaQr = (account: string, name?: string): SlipParty =>
+  party(undefined, { ...(name ? { name: { th: name } } : {}), proxy: { type: "EWALLETID", account } });
+check("shop QR reference in full + name, no bank → match (08/10 case)", r(viaQr("004999137680913", "นาย จีระศักดิ์ เกษมสวัสดิ์")) === "match");
+check("shop QR reference masked, digits in place, no name → match", r(viaQr("004999xxxxx0913")) === "match");
+check("shop QR reference with dashes → match", r(viaQr("004-999-13768-0913")) === "match");
+check("another 15-digit reference → mismatch", r(viaQr("004999137680914", "นาย จีระศักดิ์ เกษมสวัสดิ์")) === "mismatch");
+check("QR reference showing only two digits, no name → unclear", r(viaQr("xxxxxxxxxxxxx13")) === "unclear");
+check("shop QR reference but another bank named → mismatch", r(party(scb, { proxy: { type: "EWALLETID", account: "004999137680913" } })) === "mismatch");
+check("shop QR reference but another person's name → mismatch", r(viaQr("004999137680913", "นาง สมหญิง ใจดี")) === "mismatch");
 
 // 2. schema promise
 const MIGRATIONS_DIR = path.join(process.cwd(), "src", "lib", "db", "migrations");
@@ -63,9 +80,20 @@ try {
   const cols = (table: string) => (db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).map((c) => c.name).sort();
   const slipCols = cols("slip_checks");
   check(
-    "slip_checks holds ref / amount / time / receiver verdict / check times only",
+    "slip_checks holds ref / amount / time / receiver verdict / check times / used mark only",
     slipCols.join(",") ===
-      ["amount_satang", "check_count", "first_checked_at", "last_checked_at", "receiver_status", "trans_ref", "transferred_at"].sort().join(","),
+      [
+        "amount_satang",
+        "check_count",
+        "first_checked_at",
+        "last_checked_at",
+        "receiver_status",
+        "trans_ref",
+        "transferred_at",
+        "used_at",
+      ]
+        .sort()
+        .join(","),
     slipCols.join(",")
   );
   const imgCols = cols("slip_check_images");

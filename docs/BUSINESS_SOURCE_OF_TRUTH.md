@@ -254,9 +254,10 @@ staff password** (owner pick A); the page is not linked from the site, not index
 and the staff password live only in the host's secret settings, entered by the owner — never in git or chat.
 **Built (#347, 2026-10-07):** `/staff` (404 until the password is set) · a staff session lasts 12 hours · 5 wrong passwords
 from one address in 15 minutes (or 30 from anywhere) pause logins for 15 minutes · the page keeps, per checked slip, only the
-bank's transaction reference, amount, transfer time, the receiver verdict and when it was checked — no slip image, no names or
-account numbers · the same file uploaded again is answered from that record (no EasySlip call) · quota shown from EasySlip's
-own count. Owner setup = `docs/DEPLOY-RENDER.md` §7 · staff guide = `docs/คู่มือแอดมิน-ตรวจสลิป.md`.
+bank's transaction reference, amount, transfer time, the receiver verdict, when it was checked and when staff marked it "used
+for an order" (08/10) — no slip image, no names or account numbers · the same file uploaded again is answered from that record
+(no EasySlip call) when its receiver was the shop's · a slip paid through the shop's PromptPay QR is recognised by the QR's
+reference (08/10) · quota shown from EasySlip's own count. Owner setup = `docs/DEPLOY-RENDER.md` §7 · staff guide = `docs/คู่มือแอดมิน-ตรวจสลิป.md`.
 
 **Receiving account (owner 2026-09-06, answer 1):**
 - Bank: **Kasikornbank (KBank)** — read from the owner's PromptPay QR image (K+ branding);
