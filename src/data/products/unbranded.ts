@@ -181,8 +181,10 @@ export const unbrandedProducts: Product[] = [
     // minor decorative ice/fruit-prop and flavor-name-watermark bleed at the frame edges as an
     // honest framing limit, not a pixel alteration (retail-box photography precedent, same as
     // Coil-89/Vazer One this session). The other 4 flavors (Muro Grape, Honey Lemon, Very
-    // Strawberry, Double Shisha) returned JSON error bodies (not real images) from every URL
-    // tried on this source — left without an `image` field rather than guessing.
+    // Strawberry, Double Shisha) returned JSON error bodies on that source; round "option photos"
+    // batch 3 (08/10) found the same box template for them on ihavevape.net (600 px, 2024-07,
+    // _incoming/option-photos/b3/muro/) — the same plain 340x490 crop, box intact. Muro Grape's box
+    // prints "VERY STRAWBERRY" on its side panel: that is the maker's artwork, kept as is.
     assets: [
       {
         kind: "official-photo",
@@ -241,10 +243,10 @@ export const unbrandedProducts: Product[] = [
           alt: "Muro 3ML, Blueberry Bubblegum flavor box",
         },
       },
-      { id: "muro-grape", name: "Muro Grape", swatchHex: "#6b4a8e", availability: "unknown" },
-      { id: "honey-lemon", name: "Honey Lemon", swatchHex: "#d9b23a", availability: "unknown" },
-      { id: "very-strawberry", name: "Very Strawberry", swatchHex: "#c9405f", availability: "unknown" },
-      { id: "double-shisha", name: "Double Shisha", swatchHex: "#7a5a2f", availability: "unknown" },
+      { id: "muro-grape", name: "Muro Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/muro-grape.webp", alt: "Muro 3ML, Muro Grape flavor box" } },
+      { id: "honey-lemon", name: "Honey Lemon", swatchHex: "#d9b23a", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/honey-lemon.webp", alt: "Muro 3ML, Honey Lemon flavor box" } },
+      { id: "very-strawberry", name: "Very Strawberry", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/very-strawberry.webp", alt: "Muro 3ML, Very Strawberry flavor box" } },
+      { id: "double-shisha", name: "Double Shisha", swatchHex: "#7a5a2f", availability: "unknown", image: { src: "/assets/products/muro-3ml/variants/double-shisha.webp", alt: "Muro 3ML, Double Shisha flavor box" } },
     ],
     specifications: [{ key: "capacity", label: "Capacity", value: "3mL", sourceStatus: "verified" }],
     features: [],
