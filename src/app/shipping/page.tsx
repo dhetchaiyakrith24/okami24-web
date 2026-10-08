@@ -8,7 +8,7 @@ import { ShippingContent } from "@/components/content/service-pages/ShippingCont
 // Body rendered in th/en/zh by ShippingContent from src/i18n/service-pages/shipping.tsx.
 export const metadata: Metadata = {
   title: "การจัดส่ง",
-  description: "ค่าส่ง OKami24 60 บาททั่วประเทศ ยอด 500 บาทขึ้นไปส่งฟรี · โอนก่อน 15:00 ส่งวันเดียวกัน ถึงใน 1–3 วัน · ส่งไว มีเลขพัสดุให้เช็คทุกคำสั่งซื้อ",
+  description: "ค่าส่ง OKami24 50 บาททั่วประเทศ ยอด 500 บาทขึ้นไปส่งฟรี · โอนก่อน 15:00 ส่งวันเดียวกัน ถึงใน 1–3 วัน · ส่งไว มีเลขพัสดุให้เช็คทุกคำสั่งซื้อ",
   ...canonicalFor("/shipping"),
 };
 

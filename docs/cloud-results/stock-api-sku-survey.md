@@ -102,11 +102,11 @@ Not in this round: order push to Shipnity (needs answer 6) · auto price update 
 ## Order push — the dropship shipping-fee problem (owner, chat 08/10)
 
 Model (owner): dropship — the shop holds no stock; the website takes the order, the warehouse packs and ships, and bills
-the shop **cost per SKU + shipping on every order** (owner: shipping 50; his example said 1,035 on a 1,000 order — 35 or
-50 to confirm). The warehouse's problem: an order arriving through the API carries the customer's figures, so a
+the shop **cost per SKU + shipping on every order**. Answered by the owner 09/10: the warehouse charges the shop **35 THB**
+shipping per order; the shop charges the customer **50 THB** (free from 500 — BSOT §10). The warehouse's problem: an order arriving through the API carries the customer's figures, so a
 free-shipping order (BSOT §10: free from 500) arrives with shipping 0 and the warehouse system has no shipping to bill.
 Fix to build with the order push: every order sent to the warehouse carries the **real shipping fee on its own field, every
 time**, and free shipping as a **separate shop-paid discount line** (customer total unchanged); the warehouse bills from
 cost + that field, never from the customer total; the site stores per order sale · cost · shipping · discount · margin for a
 monthly match against the warehouse bill. Needs from the API doc: separate shipping and discount fields on order create,
-and the shop's cost per SKU. Margin note: a free-shipping order pays the 50 out of the shop's margin.
+and the shop's cost per SKU. Margin note: a free-shipping order pays the warehouse's 35 out of the shop's margin.
