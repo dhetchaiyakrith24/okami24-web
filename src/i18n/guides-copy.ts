@@ -30,10 +30,12 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       // (_incoming/round8/writer-2-result.md). The first sentence of the next section lost its
       // own three-way definition so the two do not say the same thing twice.
       {
-        heading: "Pod System คืออะไร ต่างกับพอตคิทและพอตใช้แล้วทิ้งยังไง",
+        // Round SEO E "pod" (owner 09/10 "ตามนั้นเลย", choice A): "Pod System คืออะไร" is now answered by its own article
+        // (what-is-a-pod-system); this heading stops competing for "pod system คือ" and links there instead.
+        heading: "พอตซิสเต็ม พอตคิท และพอตใช้แล้วทิ้ง ต่างกันยังไง",
         paragraphs: [
           "[Pod System หรือพอตซิสเต็ม](/products/pod-systems) คือพอตที่เติมน้ำยาเอง เปลี่ยนหัวพอตได้ เลือกโอห์มได้เอง ส่วนพอตคิทก็ใช้ซ้ำได้ แต่เปลี่ยนแค่หัวพอตหรือคอยล์ บางรุ่นตั้งวัตต์เองได้ บางรุ่นเป็นเครื่องระบบสวิตช์ที่ใช้หัวพอตบรรจุสำเร็จมาให้เลย",
-          "[พอตใช้แล้วทิ้ง](/products/disposables) แกะกล่องแล้วสูบได้เลย ไม่ต้องเติมน้ำยา ส่วนใหญ่ชาร์จซ้ำได้จนน้ำยาหมด สามแบบนี้คือทางแยกแรกตอนเลือกพอตเครื่องแรก",
+          "[พอตใช้แล้วทิ้ง](/products/disposables) แกะกล่องแล้วสูบได้เลย ไม่ต้องเติมน้ำยา ส่วนใหญ่ชาร์จซ้ำได้จนน้ำยาหมด สามแบบนี้คือทางแยกแรกตอนเลือกพอตเครื่องแรก ส่วนข้างในพอตซิสเต็มมีอะไรและทำงานยังไง อ่านได้ที่ [Pod System คืออะไร](/guides/what-is-a-pod-system)",
         ],
       },
       {
