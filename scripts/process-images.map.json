@@ -7511,29 +7511,29 @@
   "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/option-photos/b4/key/D-c74.png",
+  "source": "_incoming/coil7/D-c74-v2.png",
   "slug": "coil-74",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
-   "reference": "Vapormo's photo of the CALIBURN X pod, printed side (800 px; myuwell.com shows the same PRO FOCS pod on the device) — https://www.vapormo.com/products/uwell-caliburn-x-replacement-empty-pod-cartridge-3ml-2pcs-pack (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c74-S1.png)",
-   "fidelitySheet": "_incoming/option-photos/b4/fid/c74.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome; the 7-day Unlimited had ended, 2 credits per render, 2 renders = 4 credits), real-studio re-shoot with the reference as the only image: box upright on a #2b2e33 sweep, its 2 pods standing in front (prompt: _incoming/coil7/prompt-A.txt); render A2 picked (A1 copied a faint retailer watermark onto the floor); box cut by its measured outline, caps and windows by a luminance key, pod bases by hand-measured outlines (cut74.js), placed by coil3/place.js, light unsharp mask (coil3/b2/sharpen.js)",
+   "reference": "a retailer's photo of the CALIBURN X 3 ml empty-cartridge box (2 PCS) with its two pods (1652 px, no watermark; myuwell.com no longer has a CALIBURN X page) — https://cdn.shoplightspeed.com/shops/608288/files/56151148/1652x1652x2/uwell-caliburn-x-3ml-replacement-pod-box-of-2.jpg (input: _incoming/coil7/c74-ref.jpg; renders _incoming/coil7/out/c74-A1.png, _incoming/coil7/out/c74-A2.png)",
+   "fidelitySheet": "_incoming/coil7/out/cmp.jpg — box art, every printed word and number, pod shape checked by eye against the reference (A2 vs reference side by side)"
   },
-  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "card-v2.webp"
+  "note": "coil-74 re-shoot 11/10 (same direction as the coil-94 / coil-38 / coil-53 / coil-70 box shots the owner passed) — was a pod-only render from an 800 px photo, soft at card size",
+  "fileName": "card-v3.webp"
  },
  {
-  "source": "_incoming/option-photos/b4/key/D-c74.png",
+  "source": "_incoming/coil7/D-c74-v2.png",
   "slug": "coil-74",
   "role": "variant",
   "id": "coil-74-1",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
-   "reference": "Vapormo's photo of the CALIBURN X pod, printed side (800 px; myuwell.com shows the same PRO FOCS pod on the device) — https://www.vapormo.com/products/uwell-caliburn-x-replacement-empty-pod-cartridge-3ml-2pcs-pack (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c74-S1.png)",
-   "fidelitySheet": "_incoming/option-photos/b4/fid/c74.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome; the 7-day Unlimited had ended, 2 credits per render, 2 renders = 4 credits), real-studio re-shoot with the reference as the only image: box upright on a #2b2e33 sweep, its 2 pods standing in front (prompt: _incoming/coil7/prompt-A.txt); render A2 picked (A1 copied a faint retailer watermark onto the floor); box cut by its measured outline, caps and windows by a luminance key, pod bases by hand-measured outlines (cut74.js), placed by coil3/place.js, light unsharp mask (coil3/b2/sharpen.js)",
+   "reference": "a retailer's photo of the CALIBURN X 3 ml empty-cartridge box (2 PCS) with its two pods (1652 px, no watermark; myuwell.com no longer has a CALIBURN X page) — https://cdn.shoplightspeed.com/shops/608288/files/56151148/1652x1652x2/uwell-caliburn-x-3ml-replacement-pod-box-of-2.jpg (input: _incoming/coil7/c74-ref.jpg; renders _incoming/coil7/out/c74-A1.png, _incoming/coil7/out/c74-A2.png)",
+   "fidelitySheet": "_incoming/coil7/out/cmp.jpg — box art, every printed word and number, pod shape checked by eye against the reference (A2 vs reference side by side)"
   },
-  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "variant-coil-74-1.webp"
+  "note": "coil-74 re-shoot 11/10 (same direction as the coil-94 / coil-38 / coil-53 / coil-70 box shots the owner passed) — was a pod-only render from an 800 px photo, soft at card size",
+  "fileName": "variant-coil-74-1-v2.webp"
  },
  {
   "source": "_incoming/coil5/D-c53-v2.png",
