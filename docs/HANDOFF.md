@@ -21,8 +21,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Image renders = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — 0 credits this chat: balance 5,076.4, every Nano
   Banana Pro transaction 0 [ตรวจแล้ว]; never the Higgsfield MCP generate tools. Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main: nothing of items 3c/3d (#401, #410 merged) [ตรวจแล้ว]. Worktrees: `_incoming/wt-coil3` (own node_modules copy, on
-  merged branch coil38-tpp-b; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
+2 ahead of main: nothing of items 3c/3d (#401, #410, #415 merged) [ตรวจแล้ว]; coil-70 work (item 3d) will be on branch
+  `coil70-box` in `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
@@ -49,7 +49,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   its oval window — the owner's fix "crop the coil only" (1Ω coils cut out of the blister photo as image 2, box front as image 1)
   worked first time; the render gave 3 coils, the 4th = its front coil copied along the row (owner chose this). Free Unlimited =
   ONE job at a time (a second click is refused). Tools `_incoming/coil5/` (addcoil.js · cutJ4b.js · apply-c53.js · prompt-J.txt).
-  Candidates left: coil-70 Dotmod (sold out).
+  NEXT / IN PROGRESS (owner 10/10 20:49 "ทำต่อได้เลย"): coil-70 Dotmod coil (sold out, still shown) re-shot the same way — refs = the
+  box front alone + the coils cropped alone (never a photo of another variant in the refs). Current live photo: Dotmod box + blister
+  of 5, 0.7Ω (14-20w). NO site merge on 10/10 → open the PR, run the checker, merge on 11/10. Higgsfield free Unlimited ends 11/10.
+  Weekly account quota 90% (09/10 04:00) — one checker per PR, no other agents.
   The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
