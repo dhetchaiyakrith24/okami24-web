@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { PAYMENT_ACCOUNT } from "@/data/payment";
 import { isStaff, staffAreaEnabled } from "@/lib/staff/auth";
 import { ACCEPTED_IMAGE_TYPES, MAX_IMAGE_BYTES, getQuota, verifySlipImage } from "@/lib/staff/easyslip";
-import { matchReceiver, type ShopAccount, type SlipParty } from "@/lib/staff/receiver-match";
+import { explainReceiver, type ShopAccount, type SlipParty } from "@/lib/staff/receiver-match";
 import type { PartyView, QuotaView, SlipCheckResponse } from "@/lib/staff/slip-check-types";
 import { sameSiteRequest } from "@/lib/staff/request-guard";
 import { findByImageHash, findByTransRef, recordFirstCheck, touchCheck } from "@/lib/staff/slip-checks";
@@ -41,9 +41,9 @@ const SHOP: ShopAccount = {
 /** Shown for a slip answered from our log (verdict "match" only): the receiver is the shop's own account. */
 const SHOP_VIEW: PartyView = { name: PAYMENT_ACCOUNT.accountName, bank: PAYMENT_ACCOUNT.bankName.th, account: "บัญชีของร้าน" };
 
-/** What the slip's receiver block looked like, with every digit and letter of a value hidden — so a verdict
- *  that stays "unclear" can be explained from the server log next time, without logging anyone's name or
- *  number (the receiver may be a third party). */
+/** What the slip's receiver block looked like, with every digit and letter of a value hidden — so any verdict
+ *  other than "match" can be explained from the server log, without logging anyone's name or number (the
+ *  receiver may be a third party). */
 function receiverShape(p: SlipParty | undefined): string {
   if (!p) return "no receiver";
   const hide = (v?: string) => (v ? v.replace(/[0-9]/g, "9").replace(/[^9\-\s]/g, "x") : "-");
@@ -140,12 +140,16 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   const raw = result.data.rawSlip;
   const amountSatang = Math.round(raw.amount.amount * 100);
-  let receiverStatus = matchReceiver(raw.receiver, SHOP);
+  const verdict = explainReceiver(raw.receiver, SHOP);
+  let receiverStatus = verdict.status;
   // A match against an account the owner registered in the EasySlip portal also counts — only when that
-  // account's digits are the shop's.
+  // account's digits are the shop's. EasySlip's own matcher outranks ours (10/10: ours turned shop slips red).
   const matched = result.data.matchedAccount?.bankNumber?.replace(/\D/g, "");
-  if (receiverStatus === "unclear" && matched === SHOP.digits) receiverStatus = "match";
-  if (receiverStatus === "unclear") console.info(`[slip-check] receiver unclear — shape ${receiverShape(raw.receiver)}`);
+  if (receiverStatus !== "match" && matched === SHOP.digits) receiverStatus = "match";
+  if (receiverStatus !== "match")
+    console.info(
+      `[slip-check] receiver ${receiverStatus} — ${verdict.reasons.join(" ")} — shape ${receiverShape(raw.receiver)}`
+    );
 
   const before = findByTransRef(raw.transRef);
   const record = before
