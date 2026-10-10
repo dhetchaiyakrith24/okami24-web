@@ -11,17 +11,17 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #425 d2ca48a2 (stock: owner list 24,
-  item 3u; before it #422 4c7ddeb8 coil-70 photos, item 3d) [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #428 b59b1c85 (coil-74 photos, item 3f;
+  deploy 38072104003); before it #425 d2ca48a2 stock list 24 · #422 4c7ddeb8 coil-70 [ตรวจแล้ว].
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
   #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
   deploy job ends — wait, then curl.
   Night chain OFF (day chat 08/10 turned it off). Site merges open again (owner 10/10 late "Merge ได้ลูกค้าน้อยแล้ว"). Owner decisions: ask in chat + one
   line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (§18) · image work goes live after the checker.
   Image renders = Higgsfield web app in Chrome, never the MCP generate tools. 11/10: the app's built-in browser pane has no
-  file-upload tool (refs only via 3 KB base64 chunks + sha256 check — works but slow) → owner: "ลองผ่าน Chrome". Same day the
-  Nano Banana Pro Unlimited switch refuses to turn on in both browsers (dialog "7-day Unlimited · ACTIVE · expires 11 OCT") →
-  renders cost 2 credits each (IMAGE_SPEC §0 item 7; report the spend). Balance before = 5,076.4. Higgsfield prompt box = Lexical editor: typing 1,300
+  file-upload tool (refs only via 3 KB base64 chunks + sha256 check — works but slow) → owner: "ลองผ่าน Chrome". The Nano
+  Banana Pro Unlimited ended 11/10 00:00 → free renders only on the "365 Unlimited" models (item 3f); NO credit spend without the
+  owner's yes in chat (owner 11/10 — overrides IMAGE_SPEC §0 item 7 "use credits without asking" until the owner says otherwise). Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
 2 ahead of main: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
@@ -63,8 +63,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   10/10 — images first, new products after). Audit = `_incoming/img-audit-1010/` (sheets/, flags.txt = numbers, noisy; eye ranking, worst
   first: joiway-f4 card+21 · zero-nano card · joiway-f3 15 green "12000+" options · coil-74 card+option · argus-g4 card+7 · caliburn-g5-lite
   (+SE) · zero-pro card · pod-159 card · relx-smash-go-12k · caliburn-g4-classic · argus-g4 gallery · coil-94 card+0.4Ω + coil-55).
-  Owner picked pod/coil cards first. IN PROGRESS: coil-74 = UWELL CALIBURN X 3ml empty pod box + 2 pods (ref = retailer photo
-  1652 px, `_incoming/coil7/`).
+  Owner picked pod/coil cards first. DONE: coil-74 LIVE #428 (box + 2 pods, Nano Banana Pro render A2, checker PASS 5/5, 4 credits —
+  owner 11/10: "ทำไมถึงใช้เครดิต" = NO credits without the owner's yes; balance 5,072.4).
+  FREE ROUTE (11/10, tested): Nano Banana Pro/2 Unlimited ENDED 11/10 00:00 (owner checked). Still free = the "365 Unlimited" models:
+  Seedream 4.5 (switch turns on, button reads "Unlimited", history `use_unlim: true`, credits unchanged) · Seedream 5.0 Lite · Nano
+  Banana (v1) · GPT Image (not GPT Image 2 = 6.5 credits) · FLUX.2 Pro 1K · Kling O1 Image. Seedream 4.5 test on the coil-74 ref
+  (`_incoming/coil7/out/c74-S1.png`): every printed word right and sharp, BUT it invented glowing orange rim lights on the pods and a
+  spotlight backdrop → next prompt: add "no glowing lines, no LED light, no spotlight, even dark backdrop". Check the button reads
+  "Unlimited" before EVERY click. Upload refs with the Chrome extension's file_upload on the uploads panel's hidden file input
+  (find "button type=file"); results via the MCP `show_generations` (read-only). NEXT: coil-94 card + 0.4Ω option, coil-55, then the
+  ranked list above. Weekly Claude quota 95% on 11/10 (resets 11/10 22:00) — one checker per PR.
   The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
