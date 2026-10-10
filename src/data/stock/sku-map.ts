@@ -346,11 +346,11 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "watermelon": "Disposable-39-4",
   } },
   "relx-creator": { parent: "Pod-138", options: {
-    "grey-yellow": "check", // admin to confirm: Pod-138-1/2 battery-only rows (เฉพาะแบตเตอรี่-สีเทาเหลือง / สีดำ)
-    "black": "check", // admin to confirm: Pod-138-1/2 battery-only rows (เฉพาะแบตเตอรี่-สีเทาเหลือง / สีดำ)
-    "white": "check", // admin to confirm: Pod-138-1/2 battery-only rows (เฉพาะแบตเตอรี่-สีเทาเหลือง / สีดำ)
-    "green": "check", // admin to confirm: Pod-138-1/2 battery-only rows (เฉพาะแบตเตอรี่-สีเทาเหลือง / สีดำ)
-    "yellow": "check", // admin to confirm: Pod-138-1/2 battery-only rows (เฉพาะแบตเตอรี่-สีเทาเหลือง / สีดำ)
+    "grey-yellow": "Pod-138-1", // owner list 24 (10/10): battery-only สีเทาเหลือง = Grey Yellow
+    "black": "Pod-138-2", // owner list 24 (10/10): battery-only สีดำ = Black
+    "white": null, // owner list 24 (10/10): not in the warehouse
+    "green": null, // owner list 24 (10/10): not in the warehouse
+    "yellow": null, // owner list 24 (10/10): not in the warehouse
   } },
   "joiway-f3": { parent: "Pod-133", options: {
     "american-cookies": "Pod-133-10",
@@ -358,7 +358,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "cola-ice": "Pod-133-5",
     "cola-lemon": "Pod-133-12",
     "cool-mint-ice": "Pod-133-4",
-    "funta-grape": "check", // admin to confirm: Pod-133-15 Funta Green
+    "funta-grape": null, // owner list 24 (10/10): Pod-133-15 Funta Green is a different flavour
     "grape-ice": "Pod-133-1",
     "green-apple-ice": "Pod-133-7",
     "hokkaido-melon-ice": "Pod-133-16",
@@ -604,7 +604,7 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
   "iqosheet-18": { parent: "IQOSHEET-18", options: {
     "IQOSHEET-18-1": "IQOSHEET-18-1",
     "IQOSHEET-18-3": "IQOSHEET-18-3",
-    "iqosheet-18-verified-digital-violet": "check", // admin to confirm: IQOSHEET-18-5 Violet
+    "iqosheet-18-verified-digital-violet": "IQOSHEET-18-5", // owner list 24 (10/10): warehouse "Violet" = Digital Violet
     "iqosheet-18-verified-vivid-terracotta": "IQOSHEET-18-2",
     "iqosheet-18-verified-electric-purple": null,
     "iqosheet-18-verified-leaf-green": "IQOSHEET-18-4",
