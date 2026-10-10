@@ -120,9 +120,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (payment.ts `promptPayRef`) → now "match"; same image is answered from the log only when it was "match". Then owner 08/10
   "ผ่านคือผ่าน ไม่ผ่านคือไม่ผ่าน ไม่ต้องบันทึก" → PR slip-check-simple: first check = verdict, the same transfer again = always
   red with the first-check time; the "used" button of #383 removed (migration 0007 drops used_at; 0006 stays, it is applied live).
-  NOT proven on a real slip yet [เชื่อว่า]: the exact masked shape EasySlip returns for that QR — an "unclear" verdict now
-  logs `[slip-check] receiver unclear — shape …` (Render logs, no names/digits) → read it if staff report "unclear" again.
-  Guide changed → the owner should re-send `docs/คู่มือแอดมิน-ตรวจสลิป.md` section 3 to the team.
+  #421 (10/10, owner OK'd a merge on the no-merge day, live 77cd48b): Krungsri (KSA…) slips to the shop's account came back
+  red "ไม่ใช่บัญชีร้าน" — likely the name rule (English names) [เชื่อว่า]. Now account digits / QR ref decide; red only on another
+  bank or other digits; a name never turns a slip red. Every non-match logs `[slip-check] receiver <status> — bank:… account:…
+  qr:… name:… — shape …` (Render logs, no names/digits) → read it first if staff report a wrong verdict.
+  OWNER RULING 10/10: if a correct transfer is judged wrong AGAIN → switch to EasySlip deciding: owner registers the shop
+  account in the EasySlip portal (developer.easyslip.com — log in from the owner's own Chrome; the app browser fails the
+  Cloudflare check), test one K+ QR slip + one Krungsri slip, then drop our receiver-match and show EasySlip's
+  `matchedAccount` only. Guide changed → the owner should re-send `docs/คู่มือแอดมิน-ตรวจสลิป.md` section 3 to the team.
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
