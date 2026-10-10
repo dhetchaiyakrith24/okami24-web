@@ -63,12 +63,24 @@ export function runCatalogResolverContractTests(): ResolverContractResult[] {
   }
 
   if (withoutVariants) {
-    const zeroVariantResult = resolveProductRef({ origin: "product-master", slug: withoutVariants.slug, variantId: null });
-    check(
-      `a zero-variant published product ("${withoutVariants.slug}") resolves fine with variantId: null`,
-      zeroVariantResult.ok && zeroVariantResult.line.unitPrice === withoutVariants.sellingPrice,
-      JSON.stringify(zeroVariantResult)
-    );
+    // The daily warehouse snapshot can mark every zero-variant product sold out (2026-10-10: coil-54/55/83 all
+    // "ไม่มีของ"), so pick an in-stock one when there is one; otherwise prove the sold-out rejection instead.
+    const zeroInStock = published.find((p) => p.variants.length === 0 && p.availabilityStatus === "in-stock");
+    if (zeroInStock) {
+      const zeroVariantResult = resolveProductRef({ origin: "product-master", slug: zeroInStock.slug, variantId: null });
+      check(
+        `a zero-variant in-stock published product ("${zeroInStock.slug}") resolves fine with variantId: null`,
+        zeroVariantResult.ok && zeroVariantResult.line.unitPrice === zeroInStock.sellingPrice,
+        JSON.stringify(zeroVariantResult)
+      );
+    } else {
+      const zeroVariantResult = resolveProductRef({ origin: "product-master", slug: withoutVariants.slug, variantId: null });
+      check(
+        `every zero-variant published product is sold out — "${withoutVariants.slug}" with variantId: null is rejected as out-of-stock, not variant-required`,
+        !zeroVariantResult.ok && zeroVariantResult.reason === "out-of-stock",
+        JSON.stringify(zeroVariantResult)
+      );
+    }
   }
 
   const missing = resolveProductRef({ origin: "product-master", slug: "definitely-not-a-real-slug-xyz", variantId: null });
