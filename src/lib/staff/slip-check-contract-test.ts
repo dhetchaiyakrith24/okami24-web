@@ -2,9 +2,10 @@
  * OKami24 — staff slip-check contract (round "ตรวจสลิป หน้าทีมงาน", 2026-10-07).
  *
  * What the slip-check page promises and what this test holds it to:
- *   1. the receiver check says "match" only when the bank is KBank AND a real piece of the shop's account
- *      (≥3 visible digits in place, or the owner's first name) is confirmed — or the receiver is the shop QR's
- *      PromptPay reference (≥3 visible digits in place, 08/10); any contradiction = "mismatch";
+ *   1. the receiver check says "match" when the shop's account digits (≥3 visible, in place) or the shop QR's
+ *      PromptPay reference are confirmed and nothing on the slip contradicts them, or — with no digits — the bank is
+ *      KBank and the Thai first name fits; "mismatch" only on another bank or other digits with nothing of the shop's
+ *      confirmed; a name never turns anything red (10/10 Krungsri case); everything else = "unclear";
  *      nothing confirmed = "unclear". Cases use the masked shapes in the EasySlip docs
  *      (document.easyslip.com /en/v2/verify/bank/: `xxx-x-x5678-x`, `08xxxxxxxx89`).
  *   2. the migrations give the log NO column that could hold a slip image, a name or an account number
@@ -50,7 +51,12 @@ check("name without title, no space → match", r(party(kbank, { name: { th: "�
 check("another bank → mismatch", r(party(scb, { name: { th: "นาย จีระศักดิ์ เ" } })) === "mismatch");
 check("bank given only as short code → still compared", r(party({ short: "kbank" }, { name: { th: "นาย จีระศักดิ์" } })) === "match");
 check("a visible digit that differs → mismatch", r(party(kbank, { name: { th: "นาย จีระศักดิ์ เ" }, bank: { account: "xxx-x-x9241-x" } })) === "mismatch");
-check("another person's name → mismatch", r(party(kbank, { name: { th: "นาง สมหญิง ใจดี" }, bank: { account: "xxx-x-x9240-x" } })) === "mismatch");
+check("shop digits but another person's Thai name → unclear (a person looks, never red on a name)", r(party(kbank, { name: { th: "นาง สมหญิง ใจดี" }, bank: { account: "xxx-x-x9240-x" } })) === "unclear");
+check("KBank, no digits, another Thai name → unclear, not red", r(party(kbank, { name: { th: "นาง สมหญิง ใจดี" } })) === "unclear");
+// 10/10 real case: Krungsri slips to the shop's account (shown "XXX-8-29240-X", names printed in English) came back red.
+check("Krungsri-style: KBank + XXX-8-29240-X + English name in the th field → match", r(party(kbank, { name: { th: "MR. JEERASAK KASEMSAWAT" }, bank: { type: "BANKAC", account: "XXX-8-29240-X" } })) === "match");
+check("Krungsri-style: no bank block + shop digits + English name → match", r(party(undefined, { name: { th: "JEERASAK K", en: "JEERASAK K" }, bank: { account: "XXX-8-29240-X" } })) === "match");
+check("shop digits + a 15-digit reference that differs → unclear, not red", r(party(kbank, { bank: { account: "xxx-8-29240-x" }, proxy: { type: "EWALLETID", account: "004999137680914" } })) === "unclear");
 check("name cut inside the first name but agreeing → not a mismatch", r(party(kbank, { name: { th: "นาย จีระศั" } })) !== "mismatch");
 check("PromptPay phone only, no name → unclear", r(party(kbank, { proxy: { type: "MSISDN", account: "08xxxxxxxx89" } })) === "unclear");
 check("only two visible digits, no name → unclear (could be chance)", r(party(kbank, { bank: { account: "xxx-x-xxx40-x" } })) === "unclear");
@@ -66,8 +72,8 @@ check("shop QR reference masked, digits in place, no name → match", r(viaQr("0
 check("shop QR reference with dashes → match", r(viaQr("004-999-13768-0913")) === "match");
 check("another 15-digit reference → mismatch", r(viaQr("004999137680914", "นาย จีระศักดิ์ เกษมสวัสดิ์")) === "mismatch");
 check("QR reference showing only two digits, no name → unclear", r(viaQr("xxxxxxxxxxxxx13")) === "unclear");
-check("shop QR reference but another bank named → mismatch", r(party(scb, { proxy: { type: "EWALLETID", account: "004999137680913" } })) === "mismatch");
-check("shop QR reference but another person's name → mismatch", r(viaQr("004999137680913", "นาง สมหญิง ใจดี")) === "mismatch");
+check("shop QR reference but another bank named → unclear (evidence disagrees)", r(party(scb, { proxy: { type: "EWALLETID", account: "004999137680913" } })) === "unclear");
+check("shop QR reference but another person's Thai name → unclear", r(viaQr("004999137680913", "นาง สมหญิง ใจดี")) === "unclear");
 
 // 2. schema promise
 const MIGRATIONS_DIR = path.join(process.cwd(), "src", "lib", "db", "migrations");

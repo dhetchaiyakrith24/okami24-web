@@ -1,21 +1,21 @@
 /**
- * Does the slip's receiver look like the shop's account? (slip-check round 2026-10-07)
+ * Does the slip's receiver look like the shop's account? (slip-check round 2026-10-07 · reworked 2026-10-10)
  *
  * A bank slip never shows the full receiver account: EasySlip returns it MASKED, e.g. `xxx-x-x9240-x`
- * (document.easyslip.com /en/v2/verify/bank/ — `receiver.account.bank.account`), and slips often cut the
- * surname short. So the check is "nothing contradicts the shop's account, and at least one real piece
- * of it is confirmed":
- *   - bank must be KBank (id 004 / short KBANK) — the shop's only account (BSOT §9);
- *   - every digit the slip DOES show must equal the shop's digit at the same position;
- *   - the Thai name, when the slip carries one, must contain the shop owner's first name;
- *   - a slip paid by scanning the shop's own K+ QR names the receiver by that QR's 15-digit PromptPay
- *     reference (`account.proxy`, type EWALLETID — "เติมเงินพร้อมเพย์" on the slip) instead of the account
- *     number: its visible digits in place confirm the shop the same way (real case 2026-10-08, which came
- *     back "unclear" because the reference was unknown here and the slip carried no bank).
- * "unclear" = nothing contradicts but nothing is confirmed either (e.g. a PromptPay slip that shows only
- * a masked phone number and no name) — the staff member checks the bank app by hand.
+ * (document.easyslip.com /en/v2/verify/bank/ — `receiver.account.bank.account`). Evidence, strongest first:
+ *   - the visible digits of the account number, in place, against the shop's (≥3 shown = confirmed);
+ *   - a slip paid by scanning the shop's own K+ QR names the receiver by that QR's 15-digit PromptPay reference
+ *     (`account.proxy`, type EWALLETID — "เติมเงินพร้อมเพย์" on the slip; real case 2026-10-08) — same rule;
+ *   - the bank (must be KBank — the shop's only account, BSOT §9);
+ *   - the Thai name (weakest: banks print it differently — truncated, or in English on Krungsri slips).
+ * "mismatch" (red) only on HARD evidence of another account: another bank, or visible account / QR digits that
+ * differ, with nothing of the shop's confirmed. A name never turns anything red, and a name with no Thai letters
+ * is not compared at all — 10/10 Krungsri slips that went to the shop's account came back red, most likely on the
+ * name [เชื่อว่า].
+ * "unclear" = not confirmed and not contradicted, or the evidence disagrees — the staff member checks by hand.
  *
- * Pure: no I/O, so slip-check-contract-test.ts can run it against the documented response shapes.
+ * Pure: no I/O, so slip-check-contract-test.ts can run it against the documented response shapes. `reasons` say
+ * which rule decided (no names or digits in them) and go to the server log for any verdict other than "match".
  */
 
 export type ReceiverStatus = "match" | "mismatch" | "unclear";
@@ -41,67 +41,76 @@ export interface ShopAccount {
 }
 
 const TITLES = /^(นาย|นางสาว|นาง|น\.ส\.|ด\.ช\.|ด\.ญ\.|บจก\.|บริษัท)\s*/;
+const THAI = /[ก-๛]/;
 
 function compact(text: string): string {
   return text.replace(/\s+/g, "");
 }
 
-/** Positional digit check on a masked account. Returns null when the slip shows no usable digits. */
-function digitsAgree(masked: string, shopDigits: string): { agree: boolean; shown: number } | null {
+type Digits = "confirmed" | "differs" | "too-few" | "not-comparable" | "absent";
+
+/** Positional digit check on a masked number against the shop's. */
+function compareDigits(masked: string | undefined, shopDigits: string | undefined): Digits {
+  if (!masked || !masked.trim()) return "absent";
+  if (!shopDigits) return "not-comparable";
   const chars = masked.replace(/[-\s]/g, "");
-  if (chars.length !== shopDigits.length) return null;
+  if (chars.length !== shopDigits.length) return "not-comparable";
   let shown = 0;
   for (let i = 0; i < chars.length; i++) {
     const c = chars[i];
     if (!/[0-9]/.test(c)) continue;
     shown++;
-    if (c !== shopDigits[i]) return { agree: false, shown };
+    if (c !== shopDigits[i]) return "differs";
   }
-  return shown === 0 ? null : { agree: true, shown };
+  // Three or more matching visible digits is a real confirmation; one or two could be chance.
+  return shown >= 3 ? "confirmed" : "too-few";
 }
 
-export function matchReceiver(receiver: SlipParty | undefined, shop: ShopAccount): ReceiverStatus {
-  if (!receiver) return "unclear";
+export interface ReceiverVerdict {
+  status: ReceiverStatus;
+  reasons: string[];
+}
+
+export function explainReceiver(receiver: SlipParty | undefined, shop: ShopAccount): ReceiverVerdict {
+  if (!receiver) return { status: "unclear", reasons: ["no-receiver"] };
 
   const bankId = receiver.bank?.id?.trim();
   const bankShort = receiver.bank?.short?.trim().toUpperCase();
-  const bankKnown = Boolean(bankId || bankShort);
-  const bankIsShop = bankId === shop.bankId || bankShort === shop.bankShort;
-  if (bankKnown && !bankIsShop) return "mismatch";
+  const bank = !bankId && !bankShort ? "absent" : bankId === shop.bankId || bankShort === shop.bankShort ? "shop" : "other";
 
-  let confirmed = 0;
+  const account = compareDigits(receiver.account?.bank?.account, shop.digits);
+  const qr = compareDigits(receiver.account?.proxy?.account, shop.promptPayRef);
 
-  // Paid through the shop's QR: the receiver is the QR's PromptPay reference. A same-length reference whose
-  // visible digits differ is someone else's QR; another length (a phone, an ID card) is simply not compared.
-  let viaShopQr = false;
-  const proxy = receiver.account?.proxy?.account;
-  if (proxy && shop.promptPayRef) {
-    const d = digitsAgree(proxy, shop.promptPayRef);
-    if (d && !d.agree) return "mismatch";
-    if (d && d.shown >= 3) {
-      viaShopQr = true;
-      confirmed++;
+  let name: "fits" | "differs" | "not-thai" | "absent" = "absent";
+  const nameTh = receiver.account?.name?.th?.trim();
+  if (nameTh) {
+    if (!THAI.test(nameTh)) name = "not-thai";
+    else {
+      const given = compact(nameTh.replace(TITLES, ""));
+      const first = compact(shop.firstNameTh);
+      // Slips truncate long names ("นาย จีระศักดิ์ เ"); the first name is the part that is always whole.
+      name = given.startsWith(first) || (given.length >= 4 && first.startsWith(given)) ? "fits" : "differs";
     }
   }
 
-  const masked = receiver.account?.bank?.account;
-  if (masked) {
-    const d = digitsAgree(masked, shop.digits);
-    if (d && !d.agree) return "mismatch";
-    // Three or more matching visible digits is a real confirmation; one or two could be chance.
-    if (d && d.shown >= 3) confirmed++;
-  }
+  const reasons = [`bank:${bank}`, `account:${account}`, `qr:${qr}`, `name:${name}`];
+  const shopConfirmed = account === "confirmed" || qr === "confirmed";
+  const otherAccount = account === "differs" || qr === "differs";
 
-  const nameTh = receiver.account?.name?.th;
-  if (nameTh && nameTh.trim()) {
-    const given = compact(nameTh.trim().replace(TITLES, ""));
-    const first = compact(shop.firstNameTh);
-    // Slips truncate long names ("นาย จีระศักดิ์ เ"); the first name is the part that is always whole.
-    // A slip that cut even the first name short still has to agree with its beginning.
-    const agrees = given.startsWith(first) || (given.length >= 4 && first.startsWith(given));
-    if (!agrees) return "mismatch";
-    if (given.startsWith(first)) confirmed++;
+  if (shopConfirmed) {
+    // The shop's digits in place decide — unless the same slip ALSO shows another account, another bank, or a
+    // clearly different Thai name (a masked number shows as few as 4 digits): then a person looks, never red.
+    if (otherAccount || bank === "other" || name === "differs")
+      return { status: "unclear", reasons: [...reasons, "evidence-disagrees"] };
+    return { status: "match", reasons };
   }
+  if (otherAccount || bank === "other") return { status: "mismatch", reasons };
+  // No digits to go on: the shop's bank plus the owner's Thai first name is enough; a different Thai name is not
+  // proof of another account (banks print names differently), so it stays for a person to check.
+  if (bank === "shop" && name === "fits") return { status: "match", reasons };
+  return { status: "unclear", reasons };
+}
 
-  return (bankIsShop || viaShopQr) && confirmed > 0 ? "match" : "unclear";
+export function matchReceiver(receiver: SlipParty | undefined, shop: ShopAccount): ReceiverStatus {
+  return explainReceiver(receiver, shop).status;
 }
