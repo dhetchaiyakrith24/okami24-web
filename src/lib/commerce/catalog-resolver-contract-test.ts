@@ -90,23 +90,27 @@ export function runCatalogResolverContractTests(): ResolverContractResult[] {
   // (VERIFIED_ADDITIONAL_VARIANTS — manufacturer-verified content truth, not operational stock
   // truth) must be rejected at this money boundary exactly like a confirmed-zero variant, never
   // silently treated as purchasable. Derived from the real published catalog, not a fabricated
-  // fixture, so this fails loudly if the current data no longer exercises the "unknown" branch.
+  // fixture. Since owner list 24 (2026-10-10) every published variant can carry a warehouse code, so when no "unknown"
+  // variant is left the same gate (anything not "in-stock" is rejected) is proved on a confirmed sold-out variant instead.
   const unknownStockPair = published.flatMap((p) => p.variants.filter((v) => v.availabilityStatus === "unknown").map((v) => ({ product: p, variant: v })))[0];
+  const notInStockPair =
+    unknownStockPair ??
+    published.flatMap((p) => p.variants.filter((v) => v.availabilityStatus !== "in-stock").map((v) => ({ product: p, variant: v })))[0];
   check(
-    "test fixture sanity: at least one published product carries a variant with no confirmed Shipnity stock signal (availabilityStatus \"unknown\") to exercise the oversell-risk rejection branch",
-    unknownStockPair !== undefined,
-    unknownStockPair ? `${unknownStockPair.product.slug} / ${unknownStockPair.variant.id}` : "none found"
+    "test fixture sanity: at least one published variant is not confirmed in stock (\"unknown\" preferred, else sold out) to exercise the oversell-risk rejection branch",
+    notInStockPair !== undefined,
+    notInStockPair ? `${notInStockPair.product.slug} / ${notInStockPair.variant.id} (${notInStockPair.variant.availabilityStatus})` : "none found"
   );
-  if (unknownStockPair) {
-    const unknownResult = resolveProductRef({
+  if (notInStockPair) {
+    const notInStockResult = resolveProductRef({
       origin: "product-master",
-      slug: unknownStockPair.product.slug,
-      variantId: unknownStockPair.variant.id,
+      slug: notInStockPair.product.slug,
+      variantId: notInStockPair.variant.id,
     });
     check(
-      `a variant with no confirmed Shipnity stock signal ("${unknownStockPair.product.slug}" / "${unknownStockPair.variant.id}") is rejected, not treated as purchasable just because it's catalog-verified`,
-      !unknownResult.ok && unknownResult.reason === "out-of-stock",
-      JSON.stringify(unknownResult)
+      `a variant not confirmed in stock ("${notInStockPair.product.slug}" / "${notInStockPair.variant.id}", ${notInStockPair.variant.availabilityStatus}) is rejected, not treated as purchasable just because it's catalog-verified`,
+      !notInStockResult.ok && notInStockResult.reason === "out-of-stock",
+      JSON.stringify(notInStockResult)
     );
   }
 
