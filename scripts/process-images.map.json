@@ -7611,29 +7611,29 @@
   "fileName": "variant-coil-89-2.webp"
  },
  {
-  "source": "_incoming/option-photos/b4/key/D-c70.png",
+  "source": "_incoming/coil6/D-c70-v2.png",
   "slug": "coil-70",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
-   "reference": "Element Vape's photo of the 0.7Ω box with its blister (700 px; dotmod no longer lists 0.7Ω, so no maker photo exists) — https://www.elementvape.com/dotmod-dotcoils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c70-S1.png)",
-   "fidelitySheet": "_incoming/option-photos/b4/fid/c70.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the box back only, image 2 = the 0.7Ω coils only; box upright on a #2b2e33 sweep, its 5 coils lying in front, printed side down (prompt: _incoming/coil6/prompt-B.txt); render marks not on the reference removed (_incoming/coil6/fixB.js: \".Co.\" after DOTMOD, a curled sticker at the barcode label's end, print on the front coil); box cut by its measured outline, coils by a brass key + hand-measured coil outlines for the black O-rings (cut70.js), placed by coil3/place.js, light unsharp mask (coil3/b2/sharpen.js)",
+   "reference": "Element Vape's photo of the dotCoil 0.7Ω box back (the only face that prints 0.7Ω (14-20w); the two front faces differ by resistance and could not be told apart) with its blister of 5 — the box cut out alone, the 0.7Ω coils cut out of the blister alone — https://www.elementvape.com/dotmod-dotcoils (inputs: _incoming/coil6/c70-boxref.png + _incoming/coil6/c70-coilref.png; render _incoming/coil6/out/c70-B.png, fixed _incoming/coil6/out/c70-B1.png)",
+   "fidelitySheet": "_incoming/coil6/fid-c70-v2.jpg — box art, every printed word and number, coil shape checked by eye against the reference (IoU does not apply: the reference coils are in a blister, the re-shoot lays them on the floor)"
   },
-  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "card-v2.webp"
+  "note": "coil-70 re-shoot 10/10 (same direction as the coil-94 / coil-38 / coil-53 box shots the owner passed 09/10) — was the box + blister render on white",
+  "fileName": "card-v3.webp"
  },
  {
-  "source": "_incoming/option-photos/b4/key/D-c70.png",
+  "source": "_incoming/coil6/D-c70-v2.png",
   "slug": "coil-70",
   "role": "variant",
   "id": "coil-70-2",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
-   "reference": "Element Vape's photo of the 0.7Ω box with its blister (700 px; dotmod no longer lists 0.7Ω, so no maker photo exists) — https://www.elementvape.com/dotmod-dotcoils (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c70-S1.png)",
-   "fidelitySheet": "_incoming/option-photos/b4/fid/c70.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the box back only, image 2 = the 0.7Ω coils only; box upright on a #2b2e33 sweep, its 5 coils lying in front, printed side down (prompt: _incoming/coil6/prompt-B.txt); render marks not on the reference removed (_incoming/coil6/fixB.js: \".Co.\" after DOTMOD, a curled sticker at the barcode label's end, print on the front coil); box cut by its measured outline, coils by a brass key + hand-measured coil outlines for the black O-rings (cut70.js), placed by coil3/place.js, light unsharp mask (coil3/b2/sharpen.js)",
+   "reference": "Element Vape's photo of the dotCoil 0.7Ω box back (the only face that prints 0.7Ω (14-20w); the two front faces differ by resistance and could not be told apart) with its blister of 5 — the box cut out alone, the 0.7Ω coils cut out of the blister alone — https://www.elementvape.com/dotmod-dotcoils (inputs: _incoming/coil6/c70-boxref.png + _incoming/coil6/c70-coilref.png; render _incoming/coil6/out/c70-B.png, fixed _incoming/coil6/out/c70-B1.png)",
+   "fidelitySheet": "_incoming/coil6/fid-c70-v2.jpg — box art, every printed word and number, coil shape checked by eye against the reference (IoU does not apply: the reference coils are in a blister, the re-shoot lays them on the floor)"
   },
-  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "variant-coil-70-2.webp"
+  "note": "coil-70 re-shoot 10/10 (same direction as the coil-94 / coil-38 / coil-53 box shots the owner passed 09/10) — was the box + blister render on white",
+  "fileName": "variant-coil-70-2-v2.webp"
  },
  {
   "source": "_incoming/coil3/key/D-c1-card.png",
