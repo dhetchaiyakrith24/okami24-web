@@ -11,18 +11,19 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #415 1ede0ebd (coil-53
-  photos, item 3d; deploy run 37842057614) [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #425 d2ca48a2 (stock: owner list 24,
+  item 3u; before it #422 4c7ddeb8 coil-70 photos, item 3d) [ตรวจแล้ว].
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
   #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
   deploy job ends — wait, then curl.
-  Night chain OFF (day chat 08/10 turned it off). NO site merge on 10/10 (owner's LINE broadcast). Owner decisions: ask in chat + one
+  Night chain OFF (day chat 08/10 turned it off). Site merges open again (owner 10/10 late "Merge ได้ลูกค้าน้อยแล้ว"). Owner decisions: ask in chat + one
   line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (§18) · image work goes live after the checker.
-  Image renders = ONLY the free Chrome web app (Higgsfield Unlimited, to 11/10) — 0 credits this chat: balance 5,076.4, every Nano
-  Banana Pro transaction 0 [ตรวจแล้ว]; never the Higgsfield MCP generate tools. Higgsfield prompt box = Lexical editor: typing 1,300
+  Image renders = Higgsfield web app in Chrome, never the MCP generate tools. 11/10: the app's built-in browser pane has no
+  file-upload tool (refs only via 3 KB base64 chunks + sha256 check — works but slow) → owner: "ลองผ่าน Chrome". Same day the
+  Nano Banana Pro Unlimited switch refuses to turn on in both browsers (dialog "7-day Unlimited · ACTIVE · expires 11 OCT") →
+  renders cost 2 credits each (IMAGE_SPEC §0 item 7; report the spend). Balance before = 5,076.4. Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main: branch `coil70-box` = PR #422 (head 91139ca9, coil-70 photos, item 3d) — checker PASS, NOT merged (10/10) [ตรวจแล้ว];
-  worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
+2 ahead of main: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
@@ -49,16 +50,21 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   its oval window — the owner's fix "crop the coil only" (1Ω coils cut out of the blister photo as image 2, box front as image 1)
   worked first time; the render gave 3 coils, the 4th = its front coil copied along the row (owner chose this). Free Unlimited =
   ONE job at a time (a second click is refused). Tools `_incoming/coil5/` (addcoil.js · cutJ4b.js · apply-c53.js · prompt-J.txt).
-  READY, MERGE ON 11/10 (no site merge 10/10): coil-70 dotmod dotCoil 0.7Ω re-shot (box BACK — the only face printing 0.7Ω (14-20w);
+  LIVE #422 4c7ddeb8 (10/10 late, deploy 38060356297; curl: card-v3 + variant-coil-70-2-v2 byte-identical to git, page 200): coil-70 dotmod dotCoil 0.7Ω re-shot (box BACK — the only face printing 0.7Ω (14-20w);
   the two box fronts differ by resistance and could not be matched — + 5 brass coils lying in front) = PR #422 head 91139ca9, checker
   PASS 4/5 + item 5 (390/1440 pages) checked by Friday on test server 3412: page 200, only card-v3 / variant-coil-70-2-v2, sold-out
   badge shown [ตรวจแล้ว]. Removed render inventions: ".Co." after DOTMOD, curled sticker at the barcode end, coil print (faint seam
   inside the barcode label at 3x only). Checker taste note: card leans left, wide empty top right (same layout as coil-53).
-  NEXT STEP 11/10: `git fetch origin main`, re-run `node scripts/self-merge-check.js --pr 422`, GitHub checks green → merge with
-  --match-head-commit 91139ca9 (if main moved: merge main in, re-check only the conflict) → watch deploy → curl /products/coil-70 for
-  card-v3 + byte-compare both files. Tools `_incoming/coil6/` (fixB.js · cut70.js · apply-c70.js · prompt-B.txt). 0 credits (5,076.4).
+  Tools `_incoming/coil6/` (fixB.js · cut70.js · apply-c70.js · prompt-B.txt). 0 credits (5,076.4).
   Higgsfield draft box is SHARED across tabs and chats (the Dive chat edits it live) — set refs + prompt and click Generate in one go;
-  free Unlimited = one job at a time; ends 11/10. Weekly account quota ~90% — one checker per PR.
+  Weekly account quota ~90% — one checker per PR.
+3f IMAGE SWEEP (owner 10/10 late): "ทำให้ครบทั้งเว็บ" — every image still below IMAGE_SPEC, then ADD the warehouse products the site
+  lacks (21 Shipnity parents, `_incoming/img-audit-1010/shipnity-unlisted.json`) with their photos; price = Shipnity "ราคาขาย" (owner
+  10/10 — images first, new products after). Audit = `_incoming/img-audit-1010/` (sheets/, flags.txt = numbers, noisy; eye ranking, worst
+  first: joiway-f4 card+21 · zero-nano card · joiway-f3 15 green "12000+" options · coil-74 card+option · argus-g4 card+7 · caliburn-g5-lite
+  (+SE) · zero-pro card · pod-159 card · relx-smash-go-12k · caliburn-g4-classic · argus-g4 gallery · coil-94 card+0.4Ω + coil-55).
+  Owner picked pod/coil cards first. IN PROGRESS: coil-74 = UWELL CALIBURN X 3ml empty pod box + 2 pods (ref = retailer photo
+  1652 px, `_incoming/coil7/`).
   The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
@@ -99,7 +105,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   orderable option (coil-94 → 0.6Ω). Checker PASS 5/5 both. Snapshots: `_incoming/stock-api/sync/`.
   NEXT: re-read every morning until the API (owner "2A") — HOW is waiting on the owner [รอเจ้าของ]: A scheduled task 08:30
   (read → PR → checker → merge, never on a no-merge day) · B by hand on request · C scheduled but owner confirms merges.
-  WAITING: the 7 "check" SKUs = owner list 24 (`docs/รอพี่ตรวจ.md`), not answered by the admin yet [รอเจ้าของ].
+  DONE #425 (10/10): owner list 24 answered — RELX Creator grey-yellow = Pod-138-1, black = Pod-138-2, white/green/yellow null ·
+  F3 Funta Grape ≠ Funta Green (null) · Digital Violet = IQOSHEET-18-5; no "check" left; checker PASS 8/8 [ตรวจแล้ว].
   Then batch 3b = stock adapter when the warehouse sends the API (replaces the read) · batch 4+ = order push carrying the
   shipping fee (35 to the warehouse on its own field, free shipping as a shop-paid discount line — survey doc last section).
   Still from the warehouse: API doc + test key · separate shipping/discount fields · cost per SKU — answers come via the owner.
