@@ -50,6 +50,7 @@ export const zh: Dictionary = {
     tools: "工具",
     help: "帮助",
     ageNotice: "仅限21岁以上人士购买。尼古丁为成瘾性物质。下单与咨询请加 LINE",
+    siteUnreachable: "网站打不开？查看解决方法",
   },
   hero: {
     badgeSuffix: "· 当前旗舰产品",

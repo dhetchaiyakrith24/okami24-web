@@ -55,6 +55,8 @@ export interface Dictionary {
     /** Column title for the customer-service links (วิธีสั่งซื้อ / การจัดส่ง / ติดต่อเรา / ความเป็นส่วนตัว). */
     help: string;
     ageNotice: string;
+    /** Round "site unreachable" (owner 11/10): the link to the DNS help page under the LINE/YouTube icons, every page. */
+    siteUnreachable: string;
   };
   hero: {
     badgeSuffix: string;

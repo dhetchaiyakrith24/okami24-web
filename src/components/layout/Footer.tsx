@@ -3,8 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Minus, Plus } from "lucide-react";
+import { ArrowRight, Minus, Plus } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { DNS_GUIDE_ID } from "@/data/guides";
 import { categoriesWithProducts } from "@/lib/category-visibility";
 import { CONTACT } from "@/data/contact";
 import { brandsWithProducts } from "@/lib/brand-visibility";
@@ -80,6 +81,12 @@ export function Footer() {
               <YoutubeIcon className="h-4 w-4" />
             </Link>
           </div>
+          {/* Round "site unreachable" (owner 11/10): the DNS help page, next to LINE so it reads as help — here and not in
+              the help column, which phones show folded (designer 11/10). */}
+          <Link href={`/guides/${DNS_GUIDE_ID}`} className="inline-flex w-fit items-center gap-1 text-sm text-foreground-muted transition-colors hover:text-ember">
+            {dict.footer.siteUnreachable}
+            <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+          </Link>
         </div>
 
         <FooterColumn title={dict.footer.shop} defaultOpen>
