@@ -533,7 +533,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
   // Round "site unreachable" (11/10): title + dek only — the page body is DnsGuideContent (src/i18n/dns-guide-copy.tsx).
   "cant-open-the-website": {
     title: "เข้าเว็บไม่ได้? เปลี่ยน DNS บนมือถือ ทำเองได้ทีละขั้น",
-    dek: "ตั้ง DNS ในมือถือได้เองทีละขั้น ทั้ง iPhone และ Android จะตั้งในเครื่องหรือใช้แอปก็ได้ เปลี่ยนแล้วมีผลกับทุกเว็บ ไม่ใช่แค่ okami24.store",
+    dek: "ตั้งไว้ที่เดียวในเครื่อง ก็ใช้ได้กับทุกเว็บ ไม่ใช่แค่เว็บเรา มีวิธีให้ทั้ง iPhone Android และคอม",
     body: [],
   },
 };
@@ -922,7 +922,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
   // Round "site unreachable" (11/10): title + dek only — the page body is DnsGuideContent (src/i18n/dns-guide-copy.tsx).
   "cant-open-the-website": {
     title: "网站打不开？在手机上更改 DNS，一步步照着做",
-    dek: "在 iPhone 或 Android 上按步骤自行更改 DNS，可以在设置里改，也可以用应用。改好后对所有网站生效，不只是 okami24.store。",
+    dek: "在设备上改一个设置，所有网站都适用，不只是我们家。iPhone、Android 和电脑都有对应的方法。",
     body: [],
   },
 };

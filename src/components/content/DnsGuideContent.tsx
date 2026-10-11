@@ -20,7 +20,7 @@ export function DnsGuideContent() {
     <div className="flex flex-col gap-12">
       <div className="flex flex-col gap-3">
         <p className="text-lg font-medium leading-relaxed text-foreground">{c.lead}</p>
-        <p className="text-base leading-relaxed text-foreground-muted">{c.intro}</p>
+        {c.note && <p className="text-sm leading-relaxed text-foreground-muted">{c.note}</p>}
       </div>
 
       <nav id="choose" aria-label={c.jumpLabel} className="scroll-mt-24">

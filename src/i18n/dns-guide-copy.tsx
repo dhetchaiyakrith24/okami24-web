@@ -57,7 +57,8 @@ export interface DnsGroupCopy {
 
 export interface DnsGuideCopy {
   lead: ReactNode;
-  intro: ReactNode;
+  /** Optional small line under the lead (zh: the menu labels are the English UI). */
+  note?: string;
   jumpLabel: string;
   backToChoice: string;
   sourceLabel: string;
@@ -168,8 +169,7 @@ const M = { th: mocks("th", (k) => MOCK_ALT.th[k]), en: mocks("en", (k) => MOCK_
 
 export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
   th: {
-    lead: "ถ้าวันไหนเปิด okami24.store ไม่ขึ้น ลองเปลี่ยน DNS ในมือถือดูก่อน เปลี่ยนแล้วมีผลกับทุกเว็บ ไม่ใช่แค่เว็บของเรา",
-    intro: <>DNS คือสมุดที่อยู่ที่มือถือใช้หาว่าแต่ละเว็บอยู่ที่ไหน เว็บอื่นที่เคยเปิดไม่ขึ้นก็ลองเปิดอีกครั้งได้ และอยากเปลี่ยนกลับเมื่อไหร่ก็ทำได้ เลือกวิธีที่สะดวกด้านล่าง แนะนำให้แคปหน้าจอขั้นตอนของมือถือตัวเองเก็บไว้ด้วย ถ้าทำแล้ว<N>ยังเปิดไม่ขึ้น</N> ทักไลน์ @okm24 <N>แอดมิน</N>ช่วยดูให้ได้</>,
+    lead: <>ทุกวิธีในหน้านี้ใช้บริการฟรีของ Google หรือ Cloudflare ถ้าวันไหนอยากกลับไปเป็น<N>แบบเดิม</N> ก็ตั้งกลับได้เองทุกเมื่อ</>,
     jumpLabel: "เลือกวิธีที่สะดวก",
     backToChoice: "↑ เลือกวิธีอื่น",
     sourceLabel: "ที่มา:",
@@ -304,8 +304,7 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
     lineCta: "ทักไลน์ @okm24",
   },
   en: {
-    lead: "If okami24.store ever won't open, try changing the DNS on your phone. The change applies to every site, not only ours.",
-    intro: "DNS is the address book your phone uses to find each website, so any other site that wouldn't open is worth another try, and you can switch it back whenever you like. Pick the way that suits you below; it's a good idea to screenshot the steps for your phone. If the site still won't open, message us on LINE @okm24 and an admin will help.",
+    lead: "Every method here uses a free service from Google or Cloudflare, and if you ever want things back the way they were, you can switch back yourself any time.",
     jumpLabel: "Choose a way",
     backToChoice: "↑ Choose another way",
     sourceLabel: "Source:",
@@ -440,8 +439,8 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
     lineCta: "Message us on LINE",
   },
   zh: {
-    lead: "如果哪天 okami24.store 打不开，可以先试着更改手机的 DNS。改好后对所有网站生效，不只是我们的网站。",
-    intro: "DNS 就像手机用来查找网站位置的通讯录；以前打不开的其他网站，也可以再试一次，想改回来随时都可以。请在下方选择方便的方法，建议把自己手机的步骤截图保存。以下菜单名称以英文界面为准，中文界面的设备请找对应选项。照做后仍然打不开，欢迎通过 LINE @okm24 联系客服协助。",
+    lead: "这里的每种方法用的都是 Google 或 Cloudflare 的免费服务；哪天想恢复原样，随时都能自己改回来。",
+    note: "以下菜单名称以英文界面为准，中文界面的设备请找对应选项。",
     jumpLabel: "选择适合你的方法",
     backToChoice: "↑ 选择其他方法",
     sourceLabel: "来源：",
