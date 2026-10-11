@@ -130,5 +130,36 @@ git ไม่ยอมเปิดด่าน (hook) ให้เองหล�
 - ใน GitHub: **Delete tag / Force push** — จุดกลับทุกจุดในข้อ 2 อยู่ตรงนั้น · **Delete branch** ได้เฉพาะ branch ที่งานอยู่ใน main แล้ว (นำหน้า main 0 commit) หรือมี tag เก็บปลายไว้ (คำตัดสิน 8A · แก้บรรทัดนี้รอบ B 27/09 — ของเดิมห้ามลบ branch ทุกตัว)
 - ใน Render: **เปิด Auto-Deploy** — ห้ามตลอด เหตุผล = `docs/DEPLOY-RENDER.md` หัวข้อ "เรื่องที่ต้องรู้ไว้" (เจ้าของเคาะ Q4 รอบ B)
 
+## 6. วันที่ลูกค้าเข้า okami24.store ไม่ได้ → โดเมนสำรอง okami24.net (รอบ "เข้าเว็บไม่ได้" 11/10)
+
+หลักคิด: เว็บเดียว เครื่องเดียว ตอบได้ 2 ชื่อ · ทุกหน้าบอก Google ว่าตัวหลักคือ okami24.store อยู่แล้ว (canonical) จึงไม่แย่งอันดับกันเอง
+· **ไม่ตั้ง 301 จาก .net ไป .store** — ถ้าตั้ง ลูกค้าที่เข้า .net จะถูกส่งกลับไปชื่อที่เข้าไม่ได้ · ที่มาทุกขั้น = `docs/cloud-results/dns-guide-sources.md` + ลิงก์ท้ายข้อนี้
+
+**6ก. ตั้งครั้งเดียว (ทำตอนนี้ ตอนเว็บยังปกติ) — พี่กด Friday ดูผลให้**
+1. **ซื้อ** ที่ Cloudflare: dash.cloudflare.com → **Register domains** → พิมพ์ `okami24.net` → **Search** → **Purchase** → เลือกปีที่
+   **Payment option** → กรอกที่อยู่ → **Complete purchase** · ต่ออายุอัตโนมัติเปิดเองอยู่แล้ว — **ห้ามปิด** และ okami24.store ก็ต้องต่ออายุตลอด
+2. **ผูกกับเว็บ** ที่ Render: dashboard.render.com → บริการ **okami24** → **Settings** → **Custom Domains** → **+ Add Custom Domain** → พิมพ์
+   `okami24.net` → **Save** · Render จะเพิ่ม `www.okami24.net` ให้เองด้วย · **จดชื่อปลายทาง `….onrender.com` ที่ Render แสดง** ส่งให้ Friday ได้
+   - แผน Hobby ผูกได้ 2 โดเมน — ถ้า Render นับ www ด้วยแล้วเกิน จะคิดเพิ่ม $0.25 ต่อเดือนต่อโดเมน (ยังไม่ยืนยันว่านับไหม · เห็นค่าใช้จ่ายขึ้น = บอก Friday)
+3. **ตั้ง DNS** ที่ Cloudflare (โดเมน okami24.net) → **DNS** → **Records**: ลบแถว **AAAA** ที่มีทั้งหมด → เพิ่ม **CNAME** ชื่อ `@` ปลายทาง =
+   ชื่อ `….onrender.com` จากข้อ 2 → เพิ่ม **CNAME** ชื่อ `www` ปลายทางเดียวกัน → ทั้งสองแถว Proxy status = **DNS only** (เมฆเทา)
+4. **ยืนยัน** ที่ Render: กด **Verify** ข้าง okami24.net (ไม่ผ่าน = รอสักพักแล้วกดใหม่) → รอจนขึ้นว่าใบรับรอง (certificate) **issued**
+5. Cloudflare (okami24.net) → **SSL/TLS** → **Overview** → ตั้งเป็น **Full** · จากนั้นจะเปลี่ยนเมฆเป็นสีส้มหรือคงสีเทาก็ได้
+6. **เสร็จเมื่อ:** เปิด https://okami24.net ขึ้นหน้าเดียวกับ okami24.store · Friday เช็คด้วย curl ว่าได้ 200 และ canonical ยังชี้ .store
+   (ช่วงแรกได้ 502 = Render ยังจัดเส้นทางไม่เสร็จ รอแล้วลองใหม่)
+
+**6ข. วันที่ลูกค้าบอกว่าเข้าไม่ได้ (ระยะสั้น) — ไม่ต้องแก้อะไรในเว็บ**
+1. ส่งข้อความทาง LINE (ร่าง ปรับคำได้): "ถ้าวันนี้เปิด okami24.store ไม่ขึ้น เข้าเว็บเดียวกันได้ที่ okami24.net หรือตั้งค่ามือถือตามนี้
+   okami24.net/guides/cant-open-the-website แล้วกลับมาใช้ชื่อเดิมได้ตามปกติ"
+2. ดูว่าเป็นเฉพาะบางเครือข่ายหรือทุกคน: ให้ Friday เปิดเว็บจากเครื่องร้าน + curl — เว็บล่มจริง (ทุกคนเข้าไม่ได้) = ข้อ 1 ของไฟล์นี้ ไม่ใช่ข้อนี้
+
+**6ค. ถ้าเข้าไม่ได้ยาวหลายสัปดาห์ และพี่ตัดสินใจย้ายไป .net ถาวร — งานใหญ่ ให้ Friday เปิดรอบ ห้ามกดเองทีละจุด**
+- เปลี่ยน `SITE_URL` เป็น `https://okami24.net` (ไฟล์คำสั่งรอบต้องมีบรรทัด【แตะได้】`render.yaml`) → canonical / sitemap ทั้งเว็บชี้ .net
+- ตั้ง 301 จากทุกหน้าของ okami24.store ไปหน้าเดียวกันบน .net (Google แนะนำ 301/308 และให้คงไว้อย่างน้อย 1 ปี)
+- Search Console → **Change of Address** จาก okami24.store ไป okami24.net: ต้องเป็นเจ้าของทั้งสองโดเมนในบัญชี Google เดียวกัน · ต้องมี 301
+  ก่อน · มีผล 180 วัน · ถือโดเมนเก่าไว้อย่างน้อย 1 ปี
+- ที่มา: render.com/docs/custom-domains · render.com/docs/configure-cloudflare-dns · developers.cloudflare.com/registrar/get-started/register-domain/ ·
+  support.google.com/webmasters/answer/9370220 · developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes (เช็ค 11/10)
+
 ---
 ถ้าอ่านแล้วไม่แน่ใจข้อไหน: ยังไม่ต้องกด · ถามในแชทก่อน · "ไม่กด" ปลอดภัยกว่า "กดผิด" เสมอ

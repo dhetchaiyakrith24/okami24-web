@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { Guide } from "@/types/catalog";
+import { DNS_GUIDE_ID, getGuide } from "@/data/guides";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GuideCategoryLabel, GuideText, HomeText } from "@/components/home/HomeCopy";
@@ -14,6 +16,7 @@ import { GuideCategoryLabel, GuideText, HomeText } from "@/components/home/HomeC
 // rails (ProductRailSection), the heading now takes the width the flex row gives it and only
 // wraps when it meets the "All guides" link.
 export function GuideTeaserGrid({ guides }: { guides: Guide[] }) {
+  const helpGuide = getGuide(DNS_GUIDE_ID);
   return (
     <section className="bg-surface-1 py-14 lg:py-20">
       <Container className="flex flex-col gap-10">
@@ -45,6 +48,30 @@ export function GuideTeaserGrid({ guides }: { guides: Guide[] }) {
             </Link>
           ))}
         </div>
+        {helpGuide && (
+          // Round "site unreachable" (owner 11/10, choice C): the DNS help page as one full-width row under the three
+          // cards — not a 4th card, which would strand alone on a new row of the 3-column grid (designer 11/10).
+          <Link
+            href={`/guides/${helpGuide.slug}`}
+            className="group flex flex-col gap-3 rounded-2xl border border-surface-border-soft bg-surface-0 p-6 transition-colors hover:border-steel/40 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
+          >
+            <div className="flex min-w-0 flex-col gap-2">
+              <span className="label-mono text-[0.65rem] text-steel" lang="en">
+                Help
+              </span>
+              {/* text-balance: at 390 the greedy wrap split "มือ|ถือ"; balanced lines break at the space after "วิธีเปลี่ยน"
+                  instead, the way the guide's own H1 wraps. */}
+              <h3 className="font-display text-xl font-semibold leading-tight text-balance text-foreground group-hover:text-ember">
+                <GuideText id={helpGuide.id} field="title" en={helpGuide.title} />
+              </h3>
+              {/* No line clamp (checker 11/10): at 390 a 2-line clamp cut the dek mid-sentence; it is one card, so it may run 3 lines. */}
+              <p className="text-sm text-foreground-muted">
+                <GuideText id={helpGuide.id} field="dek" en={helpGuide.dek} />
+              </p>
+            </div>
+            <ArrowRight className="hidden h-5 w-5 shrink-0 text-foreground-dim transition-colors group-hover:text-ember sm:block" aria-hidden />
+          </Link>
+        )}
       </Container>
     </section>
   );
