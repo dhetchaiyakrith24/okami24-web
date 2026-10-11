@@ -318,7 +318,7 @@ relx ไม่มี นิโคติน (ไม่เขียนคำอ้
 |---|---|---|
 | คู่มือ `choosing-a-marbo-flavor` และ/หรือ `/products/m-bar-9k` | `-DMIKvoQPw8` TOP 5 กลิ่น MARBO BAR 9K (54K) | ตรงเรื่องที่สุด · ตอนนี้คู่มือฝังคลิป 2.9K วิว (`QptFMwIXbJE`) |
 | คู่มือ `choosing-your-first-pod-system` (ยังไม่มีคลิป) | คลิปงบ/เลือกรุ่นของ POD SYSTEM OKAMI II ที่ครองกล่องคลิป | คลิปพวกนี้ครองกล่องคลิปของคำนี้อยู่ · ต้องเช็กรุ่นในคลิป (ปี 2023–2025) กับสินค้าที่มีก่อน |
-| คู่มือ `coil-and-pod-maintenance` (ยังไม่มีคลิป) | `f86AJRNHX4U` ทำไมคอยล์พอตถึงพังไว | ติด #4 คำ "คอยล์พอต" |
+| ทำแล้ว (รอบ SEO ฉ ก้อน 5 · เจ้าของ 12/10): บทความ `fixing-a-burnt-pod` · `coil-and-pod-maintenance` เปลี่ยนเป็น `e_r5uqEC2LQ` | `f86AJRNHX4U` ทำไมคอยล์พอตถึงพังไว | ติด #4 คำ "คอยล์พอต" · ตรงเรื่องพอตไหม้ |
 | `/products/disposables` | `uQnQwH5_0qg` 5 รุ่น พอตใช้แล้วทิ้งโคตรเย็น 2025 | ติด #8 คำ "พอตใช้แล้วทิ้ง" |
 | `/brands/salthub` | `fkufor0DfQI` M BAR 9K และ M SWITCH 15K สรุปจบในคลิปเดียว | ติด #3 คำ "m bar" |
 | `/products/muro-connector-20k` | `Y-HU06P2MHU` หรือ `Mp0QbGUX3gU` | คลิปพูดถึงสินค้าตัวนี้ตรง ๆ · ตรงคำค้น "RELX Creator หัว" |

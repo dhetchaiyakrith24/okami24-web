@@ -376,6 +376,12 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
     "เข้าเว็บไม่ได้ ลองเปลี่ยน DNS บนมือถือ Android ตั้ง DNS ส่วนตัวเป็น dns.google · iPhone ใส่ 8.8.8.8 ใน Wi-Fi หรือใช้แอป 1.1.1.1 ของ Cloudflare มีวิธีบนคอมด้วย",
   "battery-care-and-charging":
     "วิธีดูแลแบตพอต แบตในตัวชาร์จผ่าน USB-C ตามที่ผู้ผลิตกำหนด อย่าเสียบชาร์จทิ้งไว้นาน ๆ ถ่าน 18650/21700 ชาร์จด้วยแท่นชาร์จแยก เช็คว่าฟิล์มหุ้มไม่ฉีก",
+  // Round SEO ฉ batch 5 (12/10): thai-copy's drafted metas, with "น้ำยา" taken out (HANDOFF §18 "Head copy") — the dek on
+  // the page keeps it. Owner words: "พอตไหม้" · "หัวพอตรั่ว" / "พอตรั่ว" (the shop's clip titles use both).
+  "fixing-a-burnt-pod":
+    "พอตไหม้เกิดจากอะไร ดูยังไง แก้ยังไง รวมอาการ สาเหตุที่ร้านเจอบ่อย และนิสัยเล็ก ๆ ที่ช่วยให้คอยล์ไม่ไหม้ไว ใช้ได้ทั้งพอตซิสเต็มและพอตใช้แล้วทิ้ง",
+  "fixing-a-leaking-pod":
+    "หัวพอตรั่วหรือพอตรั่ว เกิดจากอะไร แก้ยังไง ร้านรวมสาเหตุที่เจอบ่อย สิ่งที่ควรทำทันทีเมื่อเจอรอยรั่ว และวิธีเติม วิธีเก็บเครื่อง ที่ช่วยไม่ให้รั่วซ้ำ",
 };
 
 /** Row C19 — keyed by technology entry id. */
