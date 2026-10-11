@@ -33,7 +33,7 @@ function Row({ row }: { row: MockRow }) {
       return <p className="px-3 pt-2 text-[13px] text-foreground-dim">{row.label}</p>;
     case "nav":
       return (
-        <div className={`flex min-h-10 items-center justify-between gap-2 px-3 py-2 text-sm text-foreground-muted ${row.hi ? HI : ""}`}>
+        <div className={`flex min-h-9 items-center justify-between gap-2 px-3 py-1.5 text-sm text-foreground-muted ${row.hi ? HI : ""}`}>
           <span>{row.label}</span>
           <span className="flex shrink-0 items-center gap-1 text-[13px] text-foreground-dim">
             {row.value}
@@ -43,7 +43,7 @@ function Row({ row }: { row: MockRow }) {
       );
     case "radio":
       return (
-        <div className={`flex min-h-10 items-center gap-2.5 px-3 py-2 text-sm text-foreground-muted ${row.hi ? HI : ""}`}>
+        <div className={`flex min-h-9 items-center gap-2.5 px-3 py-1.5 text-sm text-foreground-muted ${row.hi ? HI : ""}`}>
           <span className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full border ${row.on ? "border-ember" : "border-foreground-dim"}`}>
             {row.on && <span className="h-2 w-2 rounded-full bg-ember" />}
           </span>
@@ -52,7 +52,7 @@ function Row({ row }: { row: MockRow }) {
       );
     case "switch":
       return (
-        <div className={`flex min-h-10 items-center justify-between gap-2 px-3 py-2 text-sm text-foreground-muted ${row.hi ? HI : ""}`}>
+        <div className={`flex min-h-9 items-center justify-between gap-2 px-3 py-1.5 text-sm text-foreground-muted ${row.hi ? HI : ""}`}>
           <span className="flex flex-col">
             <span>{row.label}</span>
             {row.sub && <span className="text-[13px] text-foreground-dim">{row.sub}</span>}
@@ -64,9 +64,9 @@ function Row({ row }: { row: MockRow }) {
       );
     case "input":
       return (
-        <div className="px-3 py-2">
-          {row.label && <p className="mb-1 text-[13px] text-foreground-dim">{row.label}</p>}
-          <div className={`rounded-md border border-surface-border px-2.5 py-1.5 font-mono text-sm text-foreground ${row.hi ? HI : ""}`}>{row.value}</div>
+        <div className="px-3 py-1.5">
+          {row.label && <p className="mb-0.5 text-[13px] text-foreground-dim">{row.label}</p>}
+          <div className={`rounded-md border border-surface-border px-2.5 py-1 font-mono text-sm text-foreground ${row.hi ? HI : ""}`}>{row.value}</div>
         </div>
       );
     case "list":

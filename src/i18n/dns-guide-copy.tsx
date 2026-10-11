@@ -98,7 +98,6 @@ const shot = (file: string, height: number, alt: Alt) => {
   return { th: { ...base, alt: alt.th }, en: { ...base, alt: alt.en }, zh: { ...base, alt: alt.zh } };
 };
 const SHOT = {
-  site: shot("iphone-1-site-v3.webp", 398, { th: "หน้าเว็บ one.one.one.one ที่มีปุ่ม App Store", en: "The one.one.one.one website with its App Store button", zh: "one.one.one.one 网站及其 App Store 按钮" }),
   get: shot("iphone-2-get-v2.webp", 195, { th: "แอป 1.1.1.1: Faster Internet ใน App Store กับปุ่มรับ", en: "1.1.1.1: Faster Internet in the App Store with the Get button", zh: "App Store 中的 1.1.1.1: Faster Internet 与获取按钮" }),
   accept: shot("iphone-3-accept-v3.webp", 216, { th: "ปุ่ม Accept ในแอป 1.1.1.1", en: "The Accept button in the 1.1.1.1 app", zh: "1.1.1.1 应用中的 Accept 按钮" }),
   switch: shot("iphone-4-switch-v2.webp", 249, { th: "สวิตช์ WARP สีส้มในแอป 1.1.1.1", en: "The orange WARP switch in the 1.1.1.1 app", zh: "1.1.1.1 应用中的橙色 WARP 开关" }),
@@ -123,13 +122,12 @@ const mocks = (l: UiLang, alt: (k: string) => string) => {
   return {
     and1: m(u.settings, [{ kind: "bar" }, { kind: "nav", label: u.network, hi: true }, { kind: "bar" }], "and1"),
     and2: m(u.network, [{ kind: "bar" }, { kind: "bar" }, { kind: "nav", label: u.privateDns, hi: true }], "and2"),
-    and3: m(u.privateDns, [{ kind: "radio", label: u.off }, { kind: "radio", label: u.auto }, { kind: "radio", label: u.hostname, on: true }, { kind: "input", value: "dns.google", hi: true }, { kind: "button", label: u.save }], "and3"),
-    warp: m("1.1.1.1", [{ kind: "switch", label: "WARP", sub: "Connected", on: true, hi: true }], "warp"),
+    and3: m(u.privateDns, [{ kind: "radio", label: u.off }, { kind: "radio", label: u.auto }, { kind: "radio", label: u.hostname, on: true }, { kind: "input", value: "dns.google", hi: true }], "and3"),
     mac1: m(u.sysSettings, [{ kind: "bar" }, { kind: "nav", label: u.macNetwork, hi: true }, { kind: "bar" }], "mac1", "window"),
     mac2: m(u.macNetwork, [{ kind: "nav", label: "Wi-Fi" }, { kind: "button", label: u.details, hi: true }], "mac2", "window"),
     mac4: m("DNS", [{ kind: "list", label: u.dnsServers, items: ["8.8.8.8", "8.8.4.4"], plus: true, hi: true }], "mac4", "window"),
     win1: m(u.settings, [{ kind: "bar" }, { kind: "nav", label: u.winNetwork, hi: true }, { kind: "bar" }], "win1", "window"),
-    win4: m("Wi-Fi", [{ kind: "switch", label: "IPv4", on: true }, { kind: "input", label: u.preferred, value: "8.8.8.8", hi: true }, { kind: "input", label: u.alternate, value: "8.8.4.4" }, { kind: "nav", label: u.doh, value: u.dohOn }, { kind: "button", label: u.save }], "win4", "window"),
+    win4: m("Wi-Fi", [{ kind: "input", label: u.preferred, value: "8.8.8.8", hi: true }, { kind: "input", label: u.alternate, value: "8.8.4.4" }, { kind: "nav", label: u.doh, value: u.dohOn }], "win4", "window"),
   };
 };
 
@@ -138,7 +136,6 @@ const MOCK_ALT: Record<"th" | "en" | "zh", Record<string, string>> = {
     and1: "ภาพประกอบ หน้าการตั้งค่าของ Android แตะเครือข่ายและอินเทอร์เน็ต",
     and2: "ภาพประกอบ แตะ DNS ส่วนตัว",
     and3: "ภาพประกอบ เลือกชื่อโฮสต์ของผู้ให้บริการ DNS ส่วนตัว แล้วพิมพ์ dns.google",
-    warp: "ภาพประกอบ สวิตช์ WARP เปิดอยู่ ขึ้นว่า Connected",
     mac1: "ภาพประกอบ หน้าต่างการตั้งค่าระบบของ Mac คลิกเครือข่าย",
     mac2: "ภาพประกอบ คลิกปุ่มรายละเอียดของ Wi-Fi",
     mac4: "ภาพประกอบ รายการเซิร์ฟเวอร์ DNS มี 8.8.8.8 และ 8.8.4.4 กับปุ่มบวก",
@@ -149,7 +146,6 @@ const MOCK_ALT: Record<"th" | "en" | "zh", Record<string, string>> = {
     and1: "Illustration: Android Settings, tap Network & internet",
     and2: "Illustration: tap Private DNS",
     and3: "Illustration: choose Private DNS provider hostname and type dns.google",
-    warp: "Illustration: the WARP switch on, showing Connected",
     mac1: "Illustration: Mac System Settings, click Network",
     mac2: "Illustration: click Details for Wi-Fi",
     mac4: "Illustration: the DNS Servers list with 8.8.8.8 and 8.8.4.4 and the plus button",
@@ -160,7 +156,6 @@ const MOCK_ALT: Record<"th" | "en" | "zh", Record<string, string>> = {
     and1: "示意图：Android 设置，点 Network & internet",
     and2: "示意图：点 Private DNS",
     and3: "示意图：选择 Private DNS provider hostname 并输入 dns.google",
-    warp: "示意图：WARP 开关已打开，显示 Connected",
     mac1: "示意图：Mac 的 System Settings，点 Network",
     mac2: "示意图：点 Wi-Fi 的 Details",
     mac4: "示意图：DNS Servers 列表中有 8.8.8.8 和 8.8.4.4 以及加号按钮",
@@ -173,7 +168,7 @@ const M = { th: mocks("th", (k) => MOCK_ALT.th[k]), en: mocks("en", (k) => MOCK_
 
 export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
   th: {
-    lead: "ถ้าวันไหนเปิด okami24.store ไม่ขึ้น ลองเปลี่ยน DNS ในมือถือดูก่อน ตั้งครั้งเดียวก็มีผลกับทุกเว็บ ไม่ใช่แค่เว็บของเรา",
+    lead: "ถ้าวันไหนเปิด okami24.store ไม่ขึ้น ลองเปลี่ยน DNS ในมือถือดูก่อน เปลี่ยนแล้วมีผลกับทุกเว็บ ไม่ใช่แค่เว็บของเรา",
     intro: <>DNS คือสมุดที่อยู่ที่มือถือใช้หาว่าแต่ละเว็บอยู่ที่ไหน เว็บอื่นที่เคยเปิดไม่ขึ้นก็ลองเปิดอีกครั้งได้ และอยากเปลี่ยนกลับเมื่อไหร่ก็ทำได้ เลือกวิธีที่สะดวกด้านล่าง แนะนำให้แคปหน้าจอขั้นตอนของมือถือตัวเองเก็บไว้ด้วย ถ้าทำแล้ว<N>ยังเปิดไม่ขึ้น</N> ทักไลน์ @okm24 <N>แอดมิน</N>ช่วยดูให้ได้</>,
     jumpLabel: "เลือกวิธีที่สะดวก",
     backToChoice: "↑ เลือกวิธีอื่น",
@@ -194,9 +189,9 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
             cross: { label: "ใช้เน็ตมือถืออยู่? ใช้แอป 1.1.1.1 แทน →", href: "#iphone-app" },
             steps: [
               { title: "เปิดการตั้งค่า Wi-Fi", body: <>เปิด <B>การตั้งค่า</B> แล้วแตะ <B>Wi-Fi</B></>, image: SHOT.wifi1.th },
-              { title: "เข้าหน้าตั้งค่า DNS", body: <>แตะ <B>ⓘ</B> ข้างชื่อ Wi-Fi ที่ต่ออยู่ แล้วแตะ <N><B>กำหนดค่า DNS</B></N></>, image: SHOT.wifi2.th },
-              { title: "เปลี่ยนเป็นกำหนดเอง", body: <>แตะ <B>กำหนดเอง</B> ถ้ามีเซิร์ฟเวอร์เดิมอยู่ในรายการ แตะปุ่ม <B>−</B> สีแดงหน้าเซิร์ฟเวอร์นั้นเพื่อลบออก</>, image: SHOT.wifi3.th },
-              { title: "ใส่ที่อยู่ของ Google", body: <>แตะ <N><B>เพิ่มเซิร์ฟเวอร์</B></N> <N>แล้วพิมพ์ <V>8.8.8.8</V></N> จากนั้นแตะ <N><B>เพิ่มเซิร์ฟเวอร์</B></N> <N>อีกครั้งแล้วพิมพ์ <V>8.8.4.4</V></N></>, image: SHOT.wifi4.th },
+              { title: "เลือก Wi-Fi ที่ต่ออยู่", body: <>แตะ <B>ⓘ</B> ข้างชื่อ Wi-Fi ที่ต่ออยู่</>, image: SHOT.wifi2.th },
+              { title: "เข้าหน้าตั้งค่า DNS", body: <>เลื่อนลงแล้วแตะ <N><B>กำหนดค่า DNS</B></N></>, image: SHOT.wifi3.th },
+              { title: "ใส่ที่อยู่ของ Google", body: <>เลือก <B>กำหนดเอง</B> ถ้ามีเซิร์ฟเวอร์เดิมอยู่ในรายการ แตะปุ่ม <B>−</B> สีแดงเพื่อลบออก จากนั้นแตะ <N><B>เพิ่มเซิร์ฟเวอร์</B></N> <N>แล้วพิมพ์ <V>8.8.8.8</V></N> และแตะ <N><B>เพิ่มเซิร์ฟเวอร์</B></N> <N>อีกครั้งแล้วพิมพ์ <V>8.8.4.4</V></N></>, image: SHOT.wifi4.th },
               { title: "บันทึกแล้วเปิดเว็บอีกครั้ง", body: <>แตะ <B>บันทึก</B> ที่มุมขวาบน แล้วลองเปิด okami24.store <N>อีกครั้ง</N></> },
             ],
             note: "วิธีนี้มีผลเฉพาะ Wi-Fi ที่ตั้งไว้ ถ้าต่อ Wi-Fi อื่นต้องตั้งใหม่อีกครั้ง ถ้าอยากให้มีผลทั้งเครื่อง ใช้แอป 1.1.1.1 ในหัวข้อถัดไปได้",
@@ -237,7 +232,7 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
             title: "ใช้แอป 1.1.1.1 บน iPhone",
             network: { everywhere: true, text: "ใช้ได้ทั้งเน็ตมือถือและ Wi-Fi" },
             steps: [
-              { title: "เปิดเว็บของแอป 1.1.1.1", body: <>เปิด <Ext /> แล้วแตะ <B>App Store</B> ถ้าค้นหาใน Google ให้เลือกผลที่เป็นเว็บ <N>one.one.one.one</N></>, image: SHOT.site.th },
+              { title: "เปิดเว็บของแอป 1.1.1.1", body: <>เปิด <Ext /> แล้วแตะ <B>App Store</B> ถ้าค้นหาใน Google ให้เลือกผลที่เป็นเว็บ <N>one.one.one.one</N></> },
               { title: "ติดตั้งแอป", body: <>แอปชื่อ “1.1.1.1: Faster Internet” <N>ของ Cloudflare</N> <N>แตะ <B>รับ</B></N> เพื่อติดตั้ง แล้วแตะ <B>เปิด</B></>, image: SHOT.get.th },
               { title: "ยอมรับเงื่อนไข", body: <>แตะ <B>Next</B> แล้วแตะ <B>Accept</B> ถ้า iPhone ถามว่าให้เพิ่มการตั้งค่า VPN ไหม ให้ยืนยัน<N>เพื่อไปต่อ</N></>, image: SHOT.accept.th },
               { title: "เปิดสวิตช์ WARP", body: <>แตะสวิตช์ให้เป็นสีส้ม รอจนขึ้นว่า “Connected” แล้วลองเปิด okami24.store <N>อีกครั้ง</N></>, image: SHOT.switch.th },
@@ -251,14 +246,12 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
             device: "Android",
             title: "ใช้แอป 1.1.1.1 บน Android",
             network: { everywhere: true, text: "ใช้ได้ทั้งเน็ตมือถือและ Wi-Fi" },
-            caption: "ภาพประกอบ",
             steps: [
               { title: "ติดตั้งแอปจาก Google Play", body: <>ค้นหา “1.1.1.1: Faster Internet” <N>ของ Cloudflare</N> ใน Google Play เป็น<N>แอปฟรี</N> ติดตั้ง<N>แล้วเปิดแอป</N></> },
-              { title: "ยอมรับเงื่อนไข", body: "ดูหน้าแนะนำของแอปไปตามลำดับ แล้วกดยอมรับเงื่อนไขการใช้งาน" },
+              { title: "ยอมรับเงื่อนไข", body: "เปิดแอป แล้วกดยอมรับเงื่อนไขการใช้งาน" },
               { title: "เปิดสวิตช์ WARP", body: "แตะสวิตช์เพื่อเปิด WARP ถ้ามือถือถามว่าให้แอปตั้งค่า VPN ไหม ให้ยืนยันเพื่อไปต่อ" },
-              { title: "รอให้ขึ้น Connected", body: <>รอจนแอปขึ้นว่า “Connected” แล้วลองเปิด okami24.store <N>อีกครั้ง</N></>, mock: M.th.warp },
+              { title: "รอให้ขึ้น Connected", body: <>รอจนแอปขึ้นว่า “Connected” แล้วลองเปิด okami24.store <N>อีกครั้ง</N></> },
             ],
-            undo: "อยากเลิกใช้ ลบแอป 1.1.1.1 ออกจากเครื่องได้ตามปกติ",
             sources: [SRC.cloudflareAndroid],
           },
         ],
@@ -268,13 +261,13 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
         chip: "คอม",
         chipSub: "Mac · Windows",
         title: "ตั้งค่าบนคอม",
-        lead: "ถ้าเปิดเว็บจากคอม ตั้งค่าในเครื่องได้ตามขั้นด้านล่าง มีผลเฉพาะคอมเครื่องนั้นและการเชื่อมต่อที่ตั้งไว้",
+        lead: "ถ้าเปิดเว็บจากคอม ตั้งค่าในเครื่องได้ตามขั้นด้านล่าง มีผลเฉพาะคอมเครื่องนั้น",
         methods: [
           {
             id: "mac",
             device: "Mac",
             title: "ตั้งค่า DNS บน Mac",
-            network: { everywhere: false, text: "มีผลเฉพาะ Mac เครื่องนี้ และเฉพาะการเชื่อมต่อที่ตั้งค่าไว้" },
+            network: { everywhere: false, text: "มีผลเฉพาะ Mac เครื่องนี้" },
             caption: "ภาพประกอบ หน้าจออาจต่างกันตามรุ่น",
             steps: [
               { title: "เปิดการตั้งค่าเครือข่าย", body: <>คลิกเมนู Apple แล้วเลือก <N><B>การตั้งค่าระบบ</B></N> จากนั้นคลิก <B>เครือข่าย</B> <N>ที่แถบด้านข้าง</N></>, mock: M.th.mac1 },
@@ -311,7 +304,7 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
     lineCta: "ทักไลน์ @okm24",
   },
   en: {
-    lead: "If okami24.store ever won't open, try changing the DNS on your phone. Set it once and it applies to every site, not only ours.",
+    lead: "If okami24.store ever won't open, try changing the DNS on your phone. The change applies to every site, not only ours.",
     intro: "DNS is the address book your phone uses to find each website, so any other site that wouldn't open is worth another try, and you can switch it back whenever you like. Pick the way that suits you below; it's a good idea to screenshot the steps for your phone. If the site still won't open, message us on LINE @okm24 and an admin will help.",
     jumpLabel: "Choose a way",
     backToChoice: "↑ Choose another way",
@@ -332,9 +325,9 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
             cross: { label: "On mobile data? Use the 1.1.1.1 app instead →", href: "#iphone-app" },
             steps: [
               { title: "Open Wi-Fi settings", body: <>Open <B>Settings</B> and tap <B>Wi-Fi</B>.</>, image: SHOT.wifi1.en },
-              { title: "Go to the DNS setting", body: <>Tap <B>ⓘ</B> next to the Wi-Fi you&apos;re connected to, then tap <B>Configure DNS</B>.</>, image: SHOT.wifi2.en },
-              { title: "Switch to Manual", body: <>Tap <B>Manual</B>. If there are servers already in the list, tap the red <B>−</B> next to each one to remove it.</>, image: SHOT.wifi3.en },
-              { title: "Enter Google's addresses", body: <>Tap <B>Add Server</B> and type <V>8.8.8.8</V>, then tap <B>Add Server</B> again and type <V>8.8.4.4</V>.</>, image: SHOT.wifi4.en },
+              { title: "Choose your Wi-Fi", body: <>Tap <B>ⓘ</B> next to the Wi-Fi you&apos;re connected to.</>, image: SHOT.wifi2.en },
+              { title: "Go to the DNS setting", body: <>Scroll down and tap <B>Configure DNS</B>.</>, image: SHOT.wifi3.en },
+              { title: "Enter Google's addresses", body: <>Choose <B>Manual</B>. If servers are already listed, tap the red <B>−</B> to remove them. Then tap the green <B>+</B> and type <V>8.8.8.8</V>, and tap it again to type <V>8.8.4.4</V>.</>, image: SHOT.wifi4.en },
               { title: "Save and try again", body: <>Tap <B>Save</B> in the top right, then open okami24.store again.</> },
             ],
             note: "This only applies to the Wi-Fi you set it on; on another Wi-Fi you'd set it again. To cover the whole phone, use the 1.1.1.1 app in the next section.",
@@ -375,7 +368,7 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
             title: "Use the 1.1.1.1 app on iPhone",
             network: { everywhere: true, text: "Works on mobile data and Wi-Fi" },
             steps: [
-              { title: "Open the 1.1.1.1 website", body: <>Open <Ext /> and tap <B>App Store</B>. If you search on Google, pick the result for one.one.one.one.</>, image: SHOT.site.en },
+              { title: "Open the 1.1.1.1 website", body: <>Open <Ext /> and tap <B>App Store</B>. If you search on Google, pick the result for one.one.one.one.</> },
               { title: "Install the app", body: <>The app is “1.1.1.1: Faster Internet” by Cloudflare. Tap <B>Get</B> to install it, then <B>Open</B>.</>, image: SHOT.get.en },
               { title: "Accept the terms", body: <>Tap <B>Next</B>, then <B>Accept</B>. If your iPhone asks whether to add the VPN configuration, confirm to continue.</>, image: SHOT.accept.en },
               { title: "Turn on WARP", body: "Tap the switch so it turns orange, wait until it shows “Connected”, then open okami24.store again.", image: SHOT.switch.en },
@@ -389,14 +382,12 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
             device: "Android",
             title: "Use the 1.1.1.1 app on Android",
             network: { everywhere: true, text: "Works on mobile data and Wi-Fi" },
-            caption: "Illustration.",
             steps: [
               { title: "Install the app", body: "Search Google Play for “1.1.1.1: Faster Internet” by Cloudflare. It's free. Install it, then open it." },
-              { title: "Accept the terms", body: "Go through the welcome screens and accept the app's Terms of Service." },
+              { title: "Accept the terms", body: "Open the app and accept the Terms of Service." },
               { title: "Turn on WARP", body: "Tap the switch to turn on WARP. If your phone asks to set up a VPN connection, confirm to continue." },
-              { title: "Wait for Connected", body: "When the app shows “Connected”, open okami24.store again.", mock: M.en.warp },
+              { title: "Wait for Connected", body: "When the app shows “Connected”, open okami24.store again." },
             ],
-            undo: "To stop using it, simply delete the 1.1.1.1 app.",
             sources: [SRC.cloudflareAndroid],
           },
         ],
@@ -406,13 +397,13 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
         chip: "Computer",
         chipSub: "Mac · Windows",
         title: "On a computer",
-        lead: "If you use a computer, set it on the computer itself. It applies only to that computer, on the connection you set it for.",
+        lead: "If you use a computer, set it on the computer itself. It applies only to that computer.",
         methods: [
           {
             id: "mac",
             device: "Mac",
             title: "Set up DNS on a Mac",
-            network: { everywhere: false, text: "Only affects this Mac, on the connection you set it for" },
+            network: { everywhere: false, text: "Only affects this Mac" },
             caption: "Illustration — screens may differ by version.",
             steps: [
               { title: "Open Network settings", body: <>Open the Apple menu, choose <B>System Settings</B>, then click <B>Network</B> in the sidebar.</>, mock: M.en.mac1 },
@@ -449,7 +440,7 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
     lineCta: "Message us on LINE",
   },
   zh: {
-    lead: "如果哪天 okami24.store 打不开，可以先试着更改手机的 DNS。设置一次就对所有网站生效，不只是我们的网站。",
+    lead: "如果哪天 okami24.store 打不开，可以先试着更改手机的 DNS。改好后对所有网站生效，不只是我们的网站。",
     intro: "DNS 就像手机用来查找网站位置的通讯录；以前打不开的其他网站，也可以再试一次，想改回来随时都可以。请在下方选择方便的方法，建议把自己手机的步骤截图保存。以下菜单名称以英文界面为准，中文界面的设备请找对应选项。照做后仍然打不开，欢迎通过 LINE @okm24 联系客服协助。",
     jumpLabel: "选择适合你的方法",
     backToChoice: "↑ 选择其他方法",
@@ -470,9 +461,9 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
             cross: { label: "在用移动数据？改用 1.1.1.1 应用 →", href: "#iphone-app" },
             steps: [
               { title: "打开 Wi-Fi 设置", body: <>打开 <B>“Settings”</B>，点 <B>“Wi-Fi”</B>。</>, image: SHOT.wifi1.zh },
-              { title: "进入 DNS 设置", body: <>点已连接 Wi-Fi 名称旁的 <B>ⓘ</B>，再点 <B>“Configure DNS”</B>。</>, image: SHOT.wifi2.zh },
-              { title: "改为手动", body: <>点 <B>“Manual”</B>。列表中如有原来的服务器，点它前面的红色 <B>−</B> 删除。</>, image: SHOT.wifi3.zh },
-              { title: "填入 Google 的地址", body: <>点 <B>“Add Server”</B>，输入 <V>8.8.8.8</V>；再点一次 <B>“Add Server”</B>，输入 <V>8.8.4.4</V>。</>, image: SHOT.wifi4.zh },
+              { title: "选择已连接的 Wi-Fi", body: <>点已连接 Wi-Fi 名称旁的 <B>ⓘ</B>。</>, image: SHOT.wifi2.zh },
+              { title: "进入 DNS 设置", body: <>向下滚动，点 <B>“Configure DNS”</B>。</>, image: SHOT.wifi3.zh },
+              { title: "填入 Google 的地址", body: <>选择 <B>“Manual”</B>。列表中如有原来的服务器，点红色 <B>−</B> 删除。然后点绿色 <B>+</B> 输入 <V>8.8.8.8</V>，再点一次输入 <V>8.8.4.4</V>。</>, image: SHOT.wifi4.zh },
               { title: "保存后重新打开", body: <>点右上角的 <B>“Save”</B>，然后重新打开 okami24.store。</> },
             ],
             note: "这个方法只对设置过的 Wi-Fi 有效，连接其他 Wi-Fi 时需要重新设置。想对整部手机生效，可以使用下一部分的 1.1.1.1 应用。",
@@ -513,7 +504,7 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
             title: "在 iPhone 上使用 1.1.1.1 应用",
             network: { everywhere: true, text: "移动数据和 Wi-Fi 都适用" },
             steps: [
-              { title: "打开 1.1.1.1 官网", body: <>打开 <Ext />，点 <B>“App Store”</B>。如果用 Google 搜索，请选择 one.one.one.one 的结果。</>, image: SHOT.site.zh },
+              { title: "打开 1.1.1.1 官网", body: <>打开 <Ext />，点 <B>“App Store”</B>。如果用 Google 搜索，请选择 one.one.one.one 的结果。</> },
               { title: "安装应用", body: <>应用名为 Cloudflare 的 “1.1.1.1: Faster Internet”。点 <B>“Get”</B> 安装，再点 <B>“Open”</B>。</>, image: SHOT.get.zh },
               { title: "同意条款", body: <>点 <B>“Next”</B>，再点 <B>“Accept”</B>。如果 iPhone 询问是否添加 VPN 配置，确认即可继续。</>, image: SHOT.accept.zh },
               { title: "打开 WARP", body: "点开关使其变成橙色，等到显示 “Connected”，然后重新打开 okami24.store。", image: SHOT.switch.zh },
@@ -527,14 +518,12 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
             device: "Android",
             title: "在 Android 上使用 1.1.1.1 应用",
             network: { everywhere: true, text: "移动数据和 Wi-Fi 都适用" },
-            caption: "示意图。",
             steps: [
               { title: "安装应用", body: "在 Google Play 搜索 Cloudflare 的 “1.1.1.1: Faster Internet”，这是免费应用。安装后打开。" },
-              { title: "同意条款", body: "看完应用的介绍页面后，同意服务条款。" },
+              { title: "同意条款", body: "打开应用，同意服务条款。" },
               { title: "打开 WARP", body: "点开关打开 WARP。如果手机询问是否设置 VPN 连接，确认即可继续。" },
-              { title: "等待显示 Connected", body: "等应用显示 “Connected” 后，重新打开 okami24.store。", mock: M.zh.warp },
+              { title: "等待显示 Connected", body: "等应用显示 “Connected” 后，重新打开 okami24.store。" },
             ],
-            undo: "不想再用时，直接删除 1.1.1.1 应用即可。",
             sources: [SRC.cloudflareAndroid],
           },
         ],
@@ -544,13 +533,13 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
         chip: "电脑",
         chipSub: "Mac · Windows",
         title: "在电脑上",
-        lead: "用电脑的话，可以按下面的步骤在电脑上设置，只对这台电脑、在所设置的连接上有效。",
+        lead: "用电脑的话，可以按下面的步骤在电脑上设置，只对这台电脑有效。",
         methods: [
           {
             id: "mac",
             device: "Mac",
             title: "在 Mac 上设置 DNS",
-            network: { everywhere: false, text: "只对这台 Mac、在所设置的连接上有效" },
+            network: { everywhere: false, text: "只对这台 Mac 有效" },
             caption: "示意图——画面可能因版本而异。",
             steps: [
               { title: "打开网络设置", body: <>点左上角的苹果菜单，选择 <B>“System Settings”</B>，再点边栏中的 <B>“Network”</B>。</>, mock: M.zh.mac1 },
