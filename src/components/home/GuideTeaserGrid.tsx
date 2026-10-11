@@ -59,7 +59,9 @@ export function GuideTeaserGrid({ guides }: { guides: Guide[] }) {
               <span className="label-mono text-[0.65rem] text-steel" lang="en">
                 Help
               </span>
-              <h3 className="font-display text-xl font-semibold leading-tight text-foreground group-hover:text-ember">
+              {/* text-balance: at 390 the greedy wrap split "มือ|ถือ"; balanced lines break at the space after "วิธีเปลี่ยน"
+                  instead, the way the guide's own H1 wraps. */}
+              <h3 className="font-display text-xl font-semibold leading-tight text-balance text-foreground group-hover:text-ember">
                 <GuideText id={helpGuide.id} field="title" en={helpGuide.title} />
               </h3>
               <p className="line-clamp-2 text-sm text-foreground-muted">
