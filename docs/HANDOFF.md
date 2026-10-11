@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #439 a86d4626 (DNS guide top copy + Wi-Fi shots, item 3g;
-  deploy 38163379359); before it #435 4b95cb00 DNS guide v2 · #428 b59b1c85 coil-74 photos [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #441 63a36a46 (DNS guide head-only meta, item 3g;
+  deploy 38165055490); before it #439 a86d4626 DNS guide top copy + Wi-Fi shots · #435 4b95cb00 DNS guide v2 [ตรวจแล้ว].
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
   #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
   deploy job ends — wait, then curl.
@@ -96,8 +96,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   the Android 1.1.1.1 app) → undo line "อยากเลิกใช้ ลบแอป 1.1.1.1 ออกจากเครื่อง" + Cloudflare WARP Android source → re-check PASS on
   1c66a51c. Gates: scan.js 0/113 · hydration guide/guides 0 · wordbreak = live, 0 new · visible-text: only dek/lead/intro.
   Proof `_incoming/dns-round/vt3-diff/` + checker `_incoming/chk-dns3/`. Rollback = revert a86d4626.
-  Checker taste notes, owner's call (`docs/รอพี่ตรวจ.md` 47): lead still reads formal · dek has no "DNS" (meta) · home card 390
-  breaks "ไม่ใช่แค่เว็บ | เรา" (between two words; thai-typography list is do-not-touch).
+  Owner 12/10 on the checker's 3 taste notes (sheet 47): 47.2 → "ทำเพื่อลูกค้า Search ด้วย" = LIVE #441 63a36a46 (deploy
+  38165055490): head-only row in GUIDE_DESCRIPTION_HEAD_TH (meta / og / JSON-LD; page + cards keep the dek): "เข้าเว็บไม่ได้ ลอง
+  เปลี่ยน DNS บนมือถือ Android ตั้ง DNS ส่วนตัวเป็น dns.google · iPhone ใส่ 8.8.8.8 ใน Wi-Fi หรือใช้แอป 1.1.1.1 ของ Cloudflare มีวิธีบนคอมด้วย"
+  (158 chars, trimmed from 195 after checker PASS — 13.5 (จ), facts only removed). head-audit live: 113 pages 200, 0 duplicate
+  descriptions [ตรวจแล้ว]. 47.1 (lead formal) + 47.3 (home card 390 "เว็บ | เรา") = kept as recommended (owner did not object).
   Found, not this round: home en/zh show 16 Thai nodes (พอตซิสเต็ม/พอตคิท/พอตใช้แล้วทิ้ง), same on live before #439 — offered to the
   owner as a separate task.
   NEXT [รอเจ้าของ]: owner buys okami24.net + RECOVERY §6ก → Friday curls https://okami24.net (200, canonical .store) — the test
