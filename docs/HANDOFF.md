@@ -90,7 +90,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   + 404); locale = one URL, client-side language (server HTML Thai) → new guide = 1 URL, no `thaiOnly`, copy in guides-copy;
   age gate = localStorage, not in server HTML; controls / · /guides · /products/caliburn-g5 · /privacy. Contract tests that a
   new guide touches: guide-locale · i18n · content-dates · held-guides · article-relevance.
-  Work happens in worktree `_incoming/wt-dns` (another chat uses the main folder). Where it stopped: designer direction running.
+  Work happens in worktree `_incoming/wt-dns` (another chat uses the main folder; its own node_modules copy; test server
+  3412 = this worktree's build — never preview_start, it serves the MAIN folder, LESSONS พ27).
+  Batches 2+3 in ONE PR, branch `dns-guide-page` (Friday 11/10: every link points at the page → one sitemap scan, one
+  checker, one revert): /guides/cant-open-the-website (DnsGuideContent + src/i18n/dns-guide-copy.tsx; iPhone steps + 5 crops
+  from the owner's iPhone shots 11/10 in public/assets/guides/dns/; Android/Chrome/Windows text only until the owner's shots)
+  · footer link under the LINE/YouTube icons · age-gate line under the buttons (text only) · home card under the 3 guide
+  teasers. Copy = thai-copy 11/10. Gates so far: tsc 0 · eslint 0 · scan.js 0/113 · locale-hydration 0/34 · raw chars 0.
+  Owner decided the Google "2nd result" route; the page links one.one.one.one directly instead (results move) — told the owner.
+  Where it stopped: whole-sitemap wordbreak (`_incoming/dns-round/wb2`) running; then visible-text after-scan vs
+  `_incoming/dns-round/vt-before` (live, c592a387) → checker → merge. Batch 4 research (Render/Cloudflare/Google) running.
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
   pod-systems title/meta/H1 unchanged [ตรวจแล้ว]. Owner 09/10: protect what ranked — pod-systems head byte-identical.
