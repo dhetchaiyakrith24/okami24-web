@@ -64,7 +64,8 @@ export function GuideTeaserGrid({ guides }: { guides: Guide[] }) {
               <h3 className="font-display text-xl font-semibold leading-tight text-balance text-foreground group-hover:text-ember">
                 <GuideText id={helpGuide.id} field="title" en={helpGuide.title} />
               </h3>
-              <p className="line-clamp-2 text-sm text-foreground-muted">
+              {/* No line clamp (checker 11/10): at 390 a 2-line clamp cut the dek mid-sentence; it is one card, so it may run 3 lines. */}
+              <p className="text-sm text-foreground-muted">
                 <GuideText id={helpGuide.id} field="dek" en={helpGuide.dek} />
               </p>
             </div>

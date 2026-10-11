@@ -78,7 +78,7 @@ const shot = (file: string, height: number, alt: Record<"th" | "en" | "zh", stri
 const SHOT = {
   site: shot("iphone-1-site.webp", 634, { th: "หน้าเว็บ one.one.one.one ที่มีปุ่ม App Store", en: "The one.one.one.one website with its App Store button", zh: "one.one.one.one 网站及其 App Store 按钮" }),
   get: shot("iphone-2-get.webp", 167, { th: "แอป 1.1.1.1: Faster Internet ใน App Store กับปุ่มรับ", en: "1.1.1.1: Faster Internet in the App Store with the Get button", zh: "App Store 中的 1.1.1.1: Faster Internet 与获取按钮" }),
-  accept: shot("iphone-3-accept.webp", 745, { th: "หน้าเงื่อนไขของแอป 1.1.1.1 กับปุ่ม Accept", en: "The 1.1.1.1 app's privacy screen with the Accept button", zh: "1.1.1.1 应用的隐私页面与 Accept 按钮" }),
+  accept: shot("iphone-3-accept-v2.webp", 185, { th: "หน้าเงื่อนไขของแอป 1.1.1.1 กับปุ่ม Accept", en: "The 1.1.1.1 app's privacy screen with the Accept button", zh: "1.1.1.1 应用的隐私页面与 Accept 按钮" }),
   switch: shot("iphone-4-switch.webp", 453, { th: "สวิตช์ WARP สีส้มในแอป 1.1.1.1", en: "The orange WARP switch in the 1.1.1.1 app", zh: "1.1.1.1 应用中的橙色 WARP 开关" }),
   disable: shot("iphone-undo-disable.webp", 683, { th: "เมนูปิด 1.1.1.1 ที่มีปุ่ม Disable", en: "The 1.1.1.1 turn-off menu with the Disable button", zh: "1.1.1.1 的关闭菜单与 Disable 按钮" }),
 };
@@ -148,7 +148,7 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
           { title: "เปิดการตั้งค่าเครือข่าย", body: <>เปิด <B>การตั้งค่า</B> คลิก <B>เครือข่าย & อินเทอร์เน็ต</B> <N>แล้วคลิก <B>Wi-Fi</B></N></> },
           { title: "เลือกเครือข่ายที่ใช้อยู่", body: <>คลิก <B>จัดการเครือข่ายที่รู้จัก</B> แล้วเลือกเครือข่าย<N>ที่ใช้อยู่</N> ถ้าต่อสายแลน ให้เลือก <B>Ethernet</B> แทน</> },
           { title: "แก้ไขการตั้งค่า DNS", body: <>คลิก <B>แก้ไข</B> ที่การตั้งค่า IP เลือก <B>ด้วยตนเอง</B> แล้วเปิด <B>IPv4</B></> },
-          { title: "ใส่ที่อยู่ของ Google", body: <>ช่อง <B>DNS ที่ต้องการ</B> ใส่ <V>8.8.8.8</V> ช่อง <N><B>DNS สำรอง</B></N> ใส่ <V>8.8.4.4</V> และตั้ง <N><B>DNS ผ่าน HTTPS</B></N> เป็น <B>เปิด (เทมเพลตอัตโนมัติ)</B></> },
+          { title: "ใส่ที่อยู่ของ Google", body: <>ช่อง <B>DNS ที่ต้องการ</B> ใส่ <V>8.8.8.8</V> <N>ช่อง <B>DNS สำรอง</B></N> ใส่ <V>8.8.4.4</V> และตั้ง <N><B>DNS ผ่าน HTTPS</B></N> เป็น <B>เปิด (เทมเพลตอัตโนมัติ)</B></> },
           { title: "บันทึกแล้วเปิดเว็บอีกครั้ง", body: <>คลิก <B>บันทึก</B> แล้วลองเปิด okami24.store อีกครั้ง</> },
         ],
         note: "ใช้ Mac หรืออยากตั้งค่าที่เราเตอร์ในบ้าน ดูวิธีได้ในคู่มือ Google Public DNS ที่ลิงก์ไว้ด้านล่าง",
