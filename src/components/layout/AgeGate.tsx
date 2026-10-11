@@ -137,6 +137,8 @@ export function AgeGate() {
             {copy.decline}
           </button>
         </div>
+        {/* Round "site unreachable" (owner 11/10, choice A): one line under the buttons, so the decision stays first. */}
+        <p className="mt-5 text-center text-xs leading-relaxed text-foreground-dim">{copy.siteHelp}</p>
       </div>
     </div>
   );

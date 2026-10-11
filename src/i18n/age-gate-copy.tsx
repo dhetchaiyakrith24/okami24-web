@@ -47,6 +47,10 @@ export interface AgeGateCopy {
   nicotine: string;
   confirm: string;
   decline: string;
+  /** Round "site unreachable" (owner 11/10, choice A): one plain line under the buttons pointing to the footer's DNS help
+   *  link — NOT group ก (a new line, the strings above are untouched). Text only, no link: the visitor has not confirmed
+   *  yet, so a link would open the guide under this same dialog, and the Tab trap counts buttons only (designer 11/10). */
+  siteHelp: string;
 }
 
 export const AGE_GATE: ServiceCopy<AgeGateCopy> = {
@@ -57,6 +61,7 @@ export const AGE_GATE: ServiceCopy<AgeGateCopy> = {
     nicotine: "นิโคตินเป็นสารเสพติด เว็บไซต์นี้ไม่มีการกล่าวอ้างด้านสุขภาพ ความปลอดภัย หรือการเลิกบุหรี่ใดๆ เกี่ยวกับการสูบไอ",
     confirm: "ใช่ ฉันอายุ 21 ปีขึ้นไป",
     decline: "ไม่ใช่ ฉันอายุต่ำกว่า 21 ปี",
+    siteHelp: "ถ้าวันไหนเปิดเว็บไม่ขึ้น ดูวิธีแก้ได้ที่ท้ายเว็บ",
   },
   en: {
     eyebrow: "Age notice",
@@ -65,6 +70,7 @@ export const AGE_GATE: ServiceCopy<AgeGateCopy> = {
     nicotine: "Nicotine is addictive. This site makes no health, safety or quit-smoking claims about vaping.",
     confirm: "Yes, I’m 21 or over",
     decline: "No, I’m under 21",
+    siteHelp: "If the site ever won’t open, the fix is linked at the bottom of every page.",
   },
   zh: {
     eyebrow: "年龄提示",
@@ -73,5 +79,6 @@ export const AGE_GATE: ServiceCopy<AgeGateCopy> = {
     nicotine: "尼古丁为成瘾性物质。本网站不对电子烟做出任何健康、安全或戒烟方面的声明。",
     confirm: "是，我已年满21岁",
     decline: "否，我未满21岁",
+    siteHelp: "如果哪天网站打不开，可在页面底部查看解决方法。",
   },
 };
