@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getGuide, guides } from "@/data/guides";
+import { DNS_GUIDE_ID, getGuide, guides } from "@/data/guides";
+import { DnsGuideContent } from "@/components/content/DnsGuideContent";
 import { getProduct } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { ArticleBody } from "@/components/content/ArticleBody";
@@ -58,13 +59,18 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
       <ThaiOnlyGuideGate thaiOnly={guide.thaiOnly}>
         <GuideDetailPageHeader id={guide.id} title={guide.title} dek={guide.dek} readingTimeMin={guide.readingTimeMin} />
         <Container className="max-w-3xl py-12 lg:py-16">
-          <ArticleBody
-            sections={guide.body}
-            translated={{ th: GUIDES_COPY_TH[guide.id]?.body, zh: GUIDES_COPY_ZH[guide.id]?.body }}
-            faq={guide.faq}
-            translatedFaq={{ th: GUIDES_COPY_TH[guide.id]?.faq, zh: GUIDES_COPY_ZH[guide.id]?.faq }}
-            video={guide.reviewVideo}
-          />
+          {/* Round "site unreachable" (11/10): the DNS help page has its own body (steps per device), not article sections. */}
+          {guide.id === DNS_GUIDE_ID ? (
+            <DnsGuideContent />
+          ) : (
+            <ArticleBody
+              sections={guide.body}
+              translated={{ th: GUIDES_COPY_TH[guide.id]?.body, zh: GUIDES_COPY_ZH[guide.id]?.body }}
+              faq={guide.faq}
+              translatedFaq={{ th: GUIDES_COPY_TH[guide.id]?.faq, zh: GUIDES_COPY_ZH[guide.id]?.faq }}
+              video={guide.reviewVideo}
+            />
+          )}
         </Container>
         <RelatedProducts products={related} />
       </ThaiOnlyGuideGate>

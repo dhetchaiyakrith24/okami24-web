@@ -530,6 +530,12 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       },
     ],
   },
+  // Round "site unreachable" (11/10): title + dek only — the page body is DnsGuideContent (src/i18n/dns-guide-copy.tsx).
+  "cant-open-the-website": {
+    title: "เข้าเว็บไม่ได้? วิธีเปลี่ยน DNS บนมือถือและคอม",
+    dek: "ทำตามได้เองทีละขั้นทั้งบนมือถือและคอม แนะนำให้แคปหน้าจอเก็บไว้ก่อน เผื่อวันไหนเปิดเว็บไม่ขึ้นจะได้มีวิธีอยู่ในมือ",
+    body: [],
+  },
 };
 
 export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
@@ -912,5 +918,11 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
       { question: "该从多少瓦开始？", answer: "从设备支持范围的中段开始，再逐步调整。没有适用于所有设备的单一数字，因为各设备范围不同——Caliburn G3 Pro 是 5–35W，VINCI S 是 5–40W。" },
       { question: "低阻值和高阻值有什么不同？", answer: "阻值低通常在高功率下吸感更开放；阻值高适合低功率的紧口 MTL 吸法。Caliburn G3 Pro 盒内附带 0.4Ω 和 0.9Ω 两颗烟弹。" },
     ],
+  },
+  // Round "site unreachable" (11/10): title + dek only — the page body is DnsGuideContent (src/i18n/dns-guide-copy.tsx).
+  "cant-open-the-website": {
+    title: "网站打不开？手机和电脑更改 DNS 的方法",
+    dek: "在手机或电脑上按步骤自行设置。建议现在先截图保存，万一哪天网站打不开，就能直接照着做。",
+    body: [],
   },
 };

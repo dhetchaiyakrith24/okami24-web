@@ -33,6 +33,10 @@ export const SECTION_CLIPS = {
 // empty, the switch stays for the next held article.
 export const HELD_GUIDE_IDS: ReadonlySet<string> = new Set<string>([]);
 
+/** The "can't open the website" DNS help page (round "site unreachable", 11/10) — id = slug; the route renders
+ *  DnsGuideContent for it instead of ArticleBody, and the footer / age gate / home card link to it. */
+export const DNS_GUIDE_ID = "cant-open-the-website";
+
 const allGuides: Guide[] = [
   {
     id: "choosing-your-first-pod-system",
@@ -1161,6 +1165,20 @@ const allGuides: Guide[] = [
       { question: "หัวพอต Caliburn ใส่ ARGUS G4 ได้ไหม", answer: "สองรุ่นนี้ใช้คนละระบบหัวพอต ARGUS G4 ใช้ระบบหัวพอต ARGUS ส่วน Caliburn G5 ใช้ GPP ของ UWELL จะซื้อหัวพอตเพิ่ม ดูให้ตรงกับระบบของเครื่อง" },
       { question: "VOOPOO กับ Caliburn ต่างกันยังไง", answer: "VOOPOO เป็นแบรนด์ ส่วน Caliburn เป็นตระกูลของ UWELL ถ้าเทียบรุ่นต่อรุ่น ARGUS G4 กับ Caliburn G5 แบตกับวัตต์ใกล้กัน ต่างกันที่ระบบหัวพอต และ G5 สลับโหมดด้วยการแตะ" },
     ],
+  },
+  {
+    // Round "site unreachable" (owner 11/10): a help page, not an article — its body is DnsGuideContent (copy in
+    // src/i18n/dns-guide-copy.tsx), so `body` stays empty and the route swaps ArticleBody for it. Last in the array on
+    // purpose: the home teaser shows guides.slice(0, 3). No related products and no body links, so it never joins an
+    // "อ่านต่อ" box (article-relevance.ts). th/zh title + dek in guides-copy.ts.
+    id: DNS_GUIDE_ID,
+    slug: DNS_GUIDE_ID,
+    title: "Can't open the site? How to change your DNS",
+    dek: "Step-by-step for phones and computers. It's worth taking a screenshot now, so you have it ready if the site ever won't load.",
+    category: "getting-started",
+    readingTimeMin: 3,
+    publishedAt: "2026-10-11",
+    body: [],
   },
 ];
 
