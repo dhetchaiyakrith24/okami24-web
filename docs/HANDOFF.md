@@ -74,6 +74,17 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (find "button type=file"); results via the MCP `show_generations` (read-only). NEXT: coil-94 card + 0.4Ω option, coil-55, then the
   ranked list above. Weekly Claude quota 95% on 11/10 (resets 11/10 22:00) — one checker per PR.
   The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
+3g OPEN ROUND 11/10 (own chat) "site unreachable" = `docs/rounds/รอบคู่มือเว็บเข้าไม่ได้-DNS-โดเมนสำรอง-11-10.txt`, from main 909a227d.
+  Batches: 1 official-source facts → `docs/cloud-results/dns-guide-sources.md` (docs, researcher) · 2 new /guides page th/en/zh
+  (tier B, designer + thai-copy) · 3 footer link on every page + homepage / age-gate spot (tier B, whole-sitemap scan) · 4 backup
+  domain (owner buys + clicks, Friday writes steps + RECOVERY "day the site is blocked").
+  Friday's position (told the owner at open): backup domain = same Render service + the existing absolute canonical to
+  https://okami24.store (live, checked) — no 301 (a 301 sends blocked customers back to the blocked host); encrypted DNS methods
+  first, plain 8.8.8.8 last (ISP port-53 interception — pending researcher proof).
+  Asked the owner 11/10 [รอเจ้าของ]: 1 homepage spot (rec. A age-gate line + C homepage card) · 2 screenshots (rec. owner shoots
+  Android + iPhone) · 3 backup name — RDAP 404 (free) 11/10: okami24.net (rec.) · okm24.store · okami24.online · okami24shop.com ·
+  okami24.xyz; okami24.com taken; .co/.shop RDAP unreliable.
+  Where it stopped: batch 1 + scope-auditor running.
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
   pod-systems title/meta/H1 unchanged [ตรวจแล้ว]. Owner 09/10: protect what ranked — pod-systems head byte-identical.
@@ -149,8 +160,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md` (Thai, owner 06/10 pm "บันทึกไว้ในไฟล์งานใหม่") — add new items there,
   delete an item once the owner answers (a permanent ruling → §18). Nothing waiting on the owner is written here.
 5 open / dated:
-  - (owner 11/10) NEXT ROUND READY (not opened): `docs/rounds/รอบคู่มือเว็บเข้าไม่ได้-DNS-โดเมนสำรอง-11-10.txt` — DNS-block guide page,
-    homepage spot, footer link, backup domain; owner rulings inside. Analytics = NOT now (owner 11/10), revisit before the first paid ad.
+  - Analytics = NOT now (owner 11/10), revisit before the first paid ad.
   - (owner 07/10, "จดไว้ก่อน" — not started, needs its own round) TYPO-TOLERANT SEARCH, Thai + English: (a) the site search finds the
     product even when the name is misspelled; (b) Google: a misspelled query still finds the shop (SEO round). Search "Sugus"
     alias gap (below) belongs to (a).
