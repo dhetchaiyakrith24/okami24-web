@@ -149,6 +149,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md` (Thai, owner 06/10 pm "บันทึกไว้ในไฟล์งานใหม่") — add new items there,
   delete an item once the owner answers (a permanent ruling → §18). Nothing waiting on the owner is written here.
 5 open / dated:
+  - (owner 11/10) NEXT ROUND READY (not opened): `docs/rounds/รอบคู่มือเว็บเข้าไม่ได้-DNS-โดเมนสำรอง-11-10.txt` — DNS-block guide page,
+    homepage spot, footer link, backup domain; owner rulings inside. Analytics = NOT now (owner 11/10), revisit before the first paid ad.
   - (owner 07/10, "จดไว้ก่อน" — not started, needs its own round) TYPO-TOLERANT SEARCH, Thai + English: (a) the site search finds the
     product even when the name is misspelled; (b) Google: a misspelled query still finds the shop (SEO round). Search "Sugus"
     alias gap (below) belongs to (a).
