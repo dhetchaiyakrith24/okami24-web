@@ -359,6 +359,10 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
     "ตั้งกี่วัตต์ดี เปิดช่องลมแค่ไหน สองอย่างนี้ปรับไปด้วยกัน พร้อมตัวอย่างจริง Caliburn G3 Pro ที่ให้หัวพอต 2 ค่าโอห์มมาในกล่อง และ VINCI S ช่วงวัตต์ 5–40 วัตต์",
   "understanding-mtl-vs-dtl":
     "MTL กับ DTL ต่างกันยังไง MTL ดึงไอเข้าปากก่อนแล้วค่อยลงปอด ช่องลมแคบ โอห์มสูง วัตต์ต่ำ · DTL ดึงไอลงปอดเลย ช่องลมโล่ง โอห์มต่ำ วัตต์สูง · RDL อยู่ตรงกลาง",
+  // Round "site unreachable" (owner 12/10, sheet 47.2): the short dek (card + page) has no search words, so the head gets
+  // the terms people type — every method named with its official value (docs/cloud-results/dns-guide-sources.md).
+  "cant-open-the-website":
+    "เข้าเว็บไม่ได้ ลองเปลี่ยน DNS บนมือถือ Android ตั้ง DNS ส่วนตัวเป็น dns.google · iPhone ใส่ 8.8.8.8 ใน Wi-Fi หรือใช้แอป 1.1.1.1 ของ Cloudflare มีวิธีบนคอมด้วย",
   "battery-care-and-charging":
     "วิธีดูแลแบตพอต แบตในตัวชาร์จผ่าน USB-C ตามที่ผู้ผลิตกำหนด อย่าเสียบชาร์จทิ้งไว้นาน ๆ ถ่าน 18650/21700 ชาร์จด้วยแท่นชาร์จแยก เช็คว่าฟิล์มหุ้มไม่ฉีก",
 };
