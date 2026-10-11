@@ -47,10 +47,12 @@ export const categories: Category[] = [
     labelTh: "Pods & Cartridges / หัวพอต",
     // Round SEO ฉ batch 3 (12/10): this lede is also the meta — it now names "หัวพอตเปล่า" (people type it; the page sat at
     // pos 5.2 with 0/112 clicks) and every brand the page lists (NEVOKS coil-54, RINCOE coil-89). thai-copy + seo-auditor 12/10.
+    // Order of the three kinds re-cut after the checker (12/10): the first cut broke "คอยล์ใน|ตัว" at 1440 — this one was
+    // measured at the lede's 350 px (390) and 672 px (1440) widths with no break inside a word.
     description:
       "Replacement pods from UWELL, VOOPOO, SALTHUB, NEVOKS and RINCOE: empty, with a built-in coil, or prefilled for switch-style devices. Check the model before ordering.",
     descriptionTh:
-      "หัวพอตของ UWELL VOOPOO SALTHUB NEVOKS และ RINCOE มีทั้งหัวพอตเปล่า แบบคอยล์ในตัว และหัวพอตบรรจุสำเร็จของเครื่องระบบสวิตช์ เช็คให้ตรงรุ่นเครื่องก่อนสั่ง",
+      "หัวพอตของ UWELL VOOPOO SALTHUB NEVOKS และ RINCOE มีทั้งหัวพอตเปล่า แบบที่มีคอยล์ในตัว และแบบบรรจุสำเร็จของเครื่องระบบสวิตช์ เช็คให้ตรงรุ่นเครื่องก่อนสั่ง",
     systemTypes: ["pod-cartridge"],
   },
   {

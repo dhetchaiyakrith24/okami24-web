@@ -80,7 +80,7 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   // names and prices belong to the product pages (SEO_LANDSCAPE §0.6). Wording = thai-copy 12/10, read by seo-auditor 12/10.
   relx: () => ({
     title: `RELX ของแท้ พอตใช้แล้วทิ้งและพอตคิท${OKM_TITLE_SUFFIX}`,
-    description: "RELX ของแท้ที่ OKami24 (OKM) รวมไว้ทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และเครื่องระบบสวิตช์ที่เปลี่ยนแค่หัวพอต บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+    description: "RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และเครื่องระบบสวิตช์ที่เปลี่ยนแค่หัวพอต บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
   }),
   // "15k" belongs to /products/m-switch-kit (the shop's "M Bar 15K"; the m-bar-15k page redirects there since 08/10) —
   // no 15K, no price in this head.
