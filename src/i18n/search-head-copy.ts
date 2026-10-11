@@ -362,7 +362,7 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round "site unreachable" (owner 12/10, sheet 47.2): the short dek (card + page) has no search words, so the head gets
   // the terms people type — every method named with its official value (docs/cloud-results/dns-guide-sources.md).
   "cant-open-the-website":
-    "เข้าเว็บไม่ได้ ลองเปลี่ยน DNS บนมือถือ Android ตั้ง DNS ส่วนตัวเป็น dns.google · iPhone ใส่ 8.8.8.8 ใน Wi-Fi หรือใช้แอป 1.1.1.1 ของ Cloudflare มีวิธีบนคอมด้วย ใช้ได้กับทุกเว็บ ตั้งกลับได้ทุกเมื่อ",
+    "เข้าเว็บไม่ได้ ลองเปลี่ยน DNS บนมือถือ Android ตั้ง DNS ส่วนตัวเป็น dns.google · iPhone ใส่ 8.8.8.8 ใน Wi-Fi หรือใช้แอป 1.1.1.1 ของ Cloudflare มีวิธีบนคอมด้วย",
   "battery-care-and-charging":
     "วิธีดูแลแบตพอต แบตในตัวชาร์จผ่าน USB-C ตามที่ผู้ผลิตกำหนด อย่าเสียบชาร์จทิ้งไว้นาน ๆ ถ่าน 18650/21700 ชาร์จด้วยแท่นชาร์จแยก เช็คว่าฟิล์มหุ้มไม่ฉีก",
 };
