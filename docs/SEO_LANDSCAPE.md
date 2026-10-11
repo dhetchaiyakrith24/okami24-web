@@ -1,6 +1,7 @@
 # OKami24 — สนามแข่ง SEO (SEO_LANDSCAPE)
 
 > ตรวจวันที่ **2026-09-25** (รอบ 10C · ตรวจอย่างเดียว ไม่แตะเว็บ) · อ่านคู่กับ `docs/SEO_BASELINE.md` · **แผนที่คีย์ (คำไหนหน้าไหน) = ข้อ 0 (07/10)**
+> · **เช็กลิสต์หน้า 1 จากหน้าทางการของ Google + สถานะเว็บเรา = ข้อ 7 (รอบ SEO ฉ 12/10)**
 > คีย์ที่มีใน SEO_BASELINE ใช้สะกดเดียวกัน (m bar · salthub · uwell · drag 6 · caliburn g5 · pod system ตัวไหนดี · marbo · พอตเปลี่ยนหัว · esko bar switch 20k)
 > ข้อมูลดิบ (มีชื่อเว็บ) อยู่ `_incoming/round10c/` เท่านั้น — ไฟล์นี้ไม่ระบุชื่อ/โดเมนร้านค้า
 > ป้าย: [ตรวจแล้ว] เห็นเองบนหน้า Google/Trends/เว็บจริงวันนี้ · [เชื่อว่า] อนุมานจากข้อมูล · [ยังไม่มีข้อมูล] หาไม่ได้
@@ -335,3 +336,67 @@ caliburn g 3 · g3 caliburn · caliburn g3pro · caliburn g 5 lite · mbar 15k �
 - **หน้า Google:** มือถือจำลอง (Android · 375 กว้าง) · ไม่ล็อกอิน · hl=th gl=th · ค้นทีละคำ ห่างกัน ≈65 วินาที · 33 ครั้ง · **ไม่เจอ CAPTCHA ไม่โดนบล็อก**
 - **ข้อมูลอาจเอียง:** (1) **ตำแหน่ง = ราชบุรี** (Google บอกเองว่ามาจาก IP) ไม่ใช่กรุงเทพ — คำแบบ "ร้าน…/ใกล้ฉัน" ในกรุงเทพจะต่าง (2) มือถือจำลองในเบราว์เซอร์คอม ไม่ใช่มือถือจริง (หน้าตาผลเหมือนมือถือ แต่ไม่ยืนยัน 100%) (3) ภาพวันเดียว — อันดับขยับทุกวัน ตัวเลขหลักคือ SEO_BASELINE วันที่ 05/10 (4) ตัวแยกประเภทหน้าอ่านจากข้อความในหน้า ผลที่มีลิงก์ย่อยของผู้ผลิตอ่านได้ตั้งแต่คำที่ 18 (voopoo) — คำ 1–17 ที่ไม่ใช่ชื่อแบรนด์ไม่น่ามีบล็อกนี้ [เชื่อว่า] (5) "ร้าน" รวมทั้งหน้าขายและบทความบล็อกของร้าน ไม่ได้แยก
 - **ไฟล์ดิบ:** `_incoming/round10c/trends-raw.md` · `serp-raw.md` · `scope-auditor-result.md` · `seo-auditor-result.md` · `researcher-backlink-result.md` · `extras.md` (ข้อเสนอที่แตะเว็บ)
+
+---
+
+## 7. เช็กลิสต์ "ติดหน้า 1 ต้องมีอะไร" — สถานะเว็บเรา (รอบ SEO ฉ ก้อน 1 · 12/10)
+
+> ที่มาของข้อกำหนด = หน้าทางการเท่านั้น (researcher เปิดอ่านจริง 12/10): `dev/` = developers.google.com/search/docs/ · `sc/` = support.google.com/webmasters/answer/ ·
+> สถานะวัดจากเว็บจริง 12/10: `node scripts/head-audit.js https://okami24.store` (113 หน้า) · curl · Lighthouse 13 มือถือ 5 หน้า · Search Console ผ่าน Chrome ของเจ้าของ
+> (อ่านอย่างเดียว · ข้อมูลถึง 09/10) · seo-auditor เปิดรอบ · ไฟล์ดิบ `_incoming/seo-f/` (gsc-1012-queries.txt 250 คำ · gsc-1012-pages.txt 104 หน้า · lh/ · live-1012/)
+> ✅ ทำแล้ว · 🔧 ต้องปรับ · ⬜ ยังไม่ทำ · ป้ายตามหัวไฟล์ (ไม่มีป้าย = [ตรวจแล้ว])
+
+**ภาพรวม GSC 28 วัน (12/09–09/10):** คลิก 523 · แสดง 2.95K · CTR 17.8% · อันดับเฉลี่ย 9.7 · 250 คำ · 104 หน้ามีข้อมูล ·
+คำใหญ่: pod 27/135 อันดับ 7.7 · voopoo drag 6 15/71 7.8 · joiway 3/180 6.4 · esko bar 0/87 3.6 · infy 20k 2/67 12.6 · joiway f4 2/55 10.0
+
+### 7.1 เทคนิค
+
+| # | ข้อกำหนด (ทางการ) | สถานะเว็บเรา + หลักฐาน | ที่มา |
+|---|---|---|---|
+| 1 | Googlebot เข้าได้ · ตอบ 200 · robots.txt ไม่บล็อก + มีบรรทัด Sitemap | ✅ 113/113 ตอบ 200 · robots เปิดทั้งเว็บ (ปิดแค่ /preview/ /api/) · มีบรรทัด Sitemap | dev/essentials/technical · dev/crawling-indexing/robots/create-robots-txt |
+| 2 | canonical ชี้ตัวเอง URL เต็ม รูปแบบเดียวกันทุกที่ | ✅ 113/113 · http→https 301 · www→ไม่มี www 301 · ปิดท้าย / → 308 | dev/crawling-indexing/consolidate-duplicate-urls |
+| 3 | sitemap ถูกรูปแบบ · `lastmod` ต้องตรงกับการแก้จริง (ไม่งั้น Google ไม่เชื่อ) | ✅ 113 URL ตรงกับเว็บ · GSC อ่านสำเร็จ · 🔧 บทความ 21 หน้า `dateModified` = 12/10 ทุกหน้า (วันที่ของทั้งกลุ่ม ไม่ใช่ของหน้า) [เชื่อว่า: มาจาก content-dates รายกลุ่ม] | dev/crawling-indexing/sitemaps/build-sitemap · dev/appearance/publication-dates |
+| 4 | HTTPS | ✅ GSC HTTPS 67 / ไม่ใช่ HTTPS 0 | dev/appearance/page-experience |
+| 5 | หน้าที่ไม่มีต้องตอบ 404 จริง (ไม่ใช่ soft 404) | ✅ URL มั่วตอบ 404 | dev/crawling-indexing/http-network-errors |
+| 6 | index ครบ | ✅ เก็บแล้ว 109 · ไม่เก็บ 13 (noindex 7 ตั้งใจ · redirect 3 · 5xx 1 · crawl แล้วไม่เก็บ 2) — รายงานอัปเดตล่าสุด 4/10 · 🔧 เปิดดู URL ของ 5xx 1 กับ crawl-ไม่เก็บ 2 (ก้อน 4) | sc/7440203 |
+| 7 | มือถือ: เนื้อหา หัวข้อ title ข้อมูลโครงสร้าง เท่ากับคอม | ✅ URL เดียว responsive (หน้าเดียวกันทุกจอ) | dev/crawling-indexing/mobile/mobile-sites-mobile-first-indexing |
+| 8 | Core Web Vitals: LCP ≤ 2.5 วิ · INP ≤ 200 ms · CLS ≤ 0.1 (ค่าจริงของผู้ใช้ 75%) | GSC: **ไม่มีข้อมูลผู้ใช้จริงพอ ทั้งมือถือและคอม** → Google ยังไม่มีตัวเลข CWV ของเรา · Lighthouse มือถือ (จำลอง): **LCP 10.3–11.6 วิ ทุกหน้า** (/ · pod-systems · drag-6 · joiway · what-is-a-pod-system) · CLS 0 ✅ · TBT 130–220 ms · ช่วงที่ช้า = "รอแสดงผล" ~2.1 วิในเครื่องจริง ไม่ใช่โหลดรูป → 🔧 **ก้อน 4 อันดับ 1** [เชื่อว่า: สาเหตุผูกกับ JS ตอนเปิดหน้า เช่น AgeGate/hydration — ยังไม่พิสูจน์] | web.dev/articles/vitals · sc/9205520 |
+| 9 | เนื้อหาอยู่ใน HTML จากเซิร์ฟเวอร์ · ลิงก์เป็น `<a href>` | ✅ head-audit อ่านเนื้อหา/ลิงก์จาก HTML ดิบได้ทุกหน้า | dev/crawling-indexing/javascript/javascript-seo-basics · dev/crawling-indexing/links-crawlable |
+| 10 | หลายภาษา = hreflang ทุกเวอร์ชัน | ✅ ไม่ต้องมี: en/zh สลับบน URL เดียว Google เห็นแต่ภาษาไทย [เชื่อว่า] → **บทความแปลทีหลังไม่กระทบ SEO** | dev/specialty/international/localized-versions |
+
+### 7.2 หน้า (head · หัวข้อ · รูป · ข้อมูลโครงสร้าง)
+
+| # | ข้อกำหนด | สถานะ | ที่มา |
+|---|---|---|---|
+| 11 | title ทุกหน้าไม่ซ้ำ อธิบายหน้าได้ ไม่ยัดคำ | ✅ ซ้ำ 0 / 113 · 🔧 หน้าแย่งคำกันเอง: `/about` ใช้ท้าย title เดียวกับหน้าแรก ("ร้านพอตของแท้ ราคาตรง บริการจริง") · `/brands/uwell` "พอตซิสเต็ม … ราคาทุกรุ่น" ชน pod-systems · meta ของ `/brands/iqos` `/brands/relx` `/brands/wotofo` ใส่รุ่น+ราคา (กติกาเดียวกับ #354) → ก้อน 3 | dev/appearance/title-link |
+| 12 | meta description ไม่ซ้ำ สรุปหน้า | ✅ ซ้ำ 0 · 🔧 บาง: pod-159 (93 ตัว ชื่อ+ราคา) · /brands/moood · /e-liquid/tobacco-style · /e-liquid/dessert · /technology/onboard-touch-displays · 🔧 "น้ำยา" อยู่ใน meta นอก /e-liquid 9 หน้า (ขัด HANDOFF §18 — pod-systems ห้ามแตะ) | dev/appearance/snippet |
+| 13 | หัวข้อหลักเด่นชัด (H1) ตรงกับสิ่งที่หน้าตอบ | ✅ H1 หน้าละ 1 · 🔧 H1 หน้าเจ้าของที่ไม่มีคำค้น: /brands/salthub (ไม่มี Marbo/M Bar) · /e-liquid ("กลุ่มรสชาติ") · หน้าแรก (H1 "Pod System ของแท้ ข้อมูลจริง" — เจ้าของเคยผ่าน ต้องถามก่อนแตะ) | dev/fundamentals/seo-starter-guide |
+| 14 | รูปมี alt ที่อธิบายจริง | ✅ รูปไม่มี alt 0 / 113 หน้า | dev/appearance/google-images |
+| 15 | Product + Offer บนหน้าสินค้า | ✅ 55/55 · GSC ข้อมูลสินค้า 29 ถูก / 0 ผิด · ผู้ขาย 29 / 0 · 🔧 ไม่มี `brand` 4 หน้า (muro ×3 · pod-180) · ⚠ หน้าทางการ merchant listing ระบุว่า **สินค้ายาสูบและ vape ไม่มีสิทธิ์** ลง Shopping ฟรี → ไม่เสนอ Merchant Center (ที่ GSC ชวน "แสดง 53 สินค้าในแท็บ Shopping") — เสี่ยงบัญชี / ไม่คุ้ม | dev/appearance/structured-data/merchant-listing |
+| 16 | Organization + WebSite ที่หน้าแรก · BreadcrumbList | ✅ หน้าแรกมีทั้งสอง · GSC เส้นทาง 63 ถูก / 0 · 🔧 /how-to-order /shipping /warranty /privacy ไม่มี JSON-LD เลย (ผลน้อย) | dev/appearance/structured-data/organization · …/breadcrumb |
+| 17 | Article: headline · image · author · datePublished/dateModified มีเขตเวลา ตรงกับวันที่ที่เห็นบนหน้า | ✅ Article 21/21 · 🔧 ไม่มีวันที่ให้เห็นบนหน้า · image = รูปกลางของเว็บ · dateModified ไม่ตรงการแก้จริง (ข้อ 3) | dev/appearance/structured-data/article · dev/appearance/publication-dates |
+| 18 | FAQ rich results | ✅ ไม่ต้องทำ: Google เลิกแสดง FAQ rich results แล้ว (07/05/2026) — กล่อง FAQ ยังดีต่อคนอ่าน แต่ไม่ช่วยหน้าผลค้นหา | dev/updates |
+| 19 | วิดีโอ: VideoObject (name · thumbnailUrl · uploadDate) · Google index วิดีโอเฉพาะ "หน้าดูคลิป" (คลิปเป็นเรื่องหลักของหน้า) | ✅ GSC วิดีโอ 9 ถูก / 0 · "วิดีโอใน 19 หน้าไม่ index" = ตามกติกา (คลิปเป็นของรองในหน้าสินค้า/บทความ) ไม่ใช่ข้อผิด → ไม่แก้ · ⬜ ฝังคลิปที่ติดหน้า 1 เพิ่ม (ข้อ 4 ตาราง "ควรฝังคลิปเพิ่ม") = ช่วยคนอ่าน/เวลาอยู่หน้า [เชื่อว่า] → ก้อน 3 | dev/appearance/video · sc/9495631 |
+
+### 7.3 เนื้อหา · ลิงก์
+
+| # | ข้อกำหนด | สถานะ | ที่มา |
+|---|---|---|---|
+| 20 | เนื้อหาเพื่อคน: ข้อมูลของตัวเอง ครอบเรื่องจริง มีค่ามากกว่าผลอื่น **มีประสบการณ์ใช้จริง** | 🔧 หน้าเจ้าของบาง (ตัวไทยในเนื้อหา): /brands/esko-bar 262 · /brands/joiway 412 · heated-tobacco-devices 198 · pod-180 · pod-159 — esko-bar ติดอันดับ 3.6 แต่คลิก 0/87 · ⬜ ประสบการณ์จริงของร้าน (คลิป YouTube) ยังไม่อยู่บนเว็บ = **เนื้อหาสีเขียว ก้อน 5–6** | dev/fundamentals/creating-helpful-content |
+| 21 | Who / How / Why: บอกว่าใครเขียน ทำยังไง ทำเพื่อใคร · ห้ามโปรไฟล์ปลอม | ⬜ บทความไม่มีผู้เขียน/วันที่ให้เห็นบนหน้า (JSON-LD author = Organization) → ก้อน 5: บล็อก "ใครเขียน" ของจริง (ร้าน / ช่อง YouTube ของเจ้าของ) — หน้าตาใหม่ = designer | dev/fundamentals/creating-helpful-content |
+| 22 | เรื่องสุขภาพ (YMYL) = แหล่งอ้างอิงและผู้รู้สำคัญขึ้น | ⬜ ยังไม่มีบทความเรื่องนี้ · กติการอบนี้: แหล่งรัฐ/งานวิจัยต่างประเทศ ทั้งสองด้าน (ไฟล์คำสั่งรอบ) | dev/fundamentals/creating-helpful-content |
+| 23 | ห้ามแกล้งทำให้ดูสด (เปลี่ยนวันที่โดยเนื้อไม่เปลี่ยน) · ห้ามผลิตหน้าจำนวนมากที่ไม่มีของจริง (scaled content abuse) | ✅ ยังไม่เคยทำ · กันไว้ในก้อน 5–6: ทุกบทความมีของจริงจากคลิป ไม่ทำบทความล้อคำค้น | dev/essentials/spam-policies · dev/fundamentals/using-gen-ai-content |
+| 24 | ลิงก์ภายใน: ทุกหน้าที่สำคัญมีหน้าอื่นลิงก์เข้า · ข้อความลิงก์บอกปลายทาง | ✅ ไม่มีหน้ากำพร้าจริง (เมนูบน/ล่างลิงก์ทุกหมวด/แบรนด์) · 🔧 หน้าสินค้า 24 หน้าไม่ลิงก์หน้าแบรนด์ตัวเองในเนื้อหา · /brands/esko-bar ลิงก์เข้าจากเนื้อหา 2 · pod-kits → pod-systems 0 · /e-liquid 1 → ก้อน 3/6 | dev/crawling-indexing/links-crawlable |
+| 25 | ลิงก์จากเว็บอื่น: ได้มาเองตามธรรมชาติ · ห้ามซื้อ/แลก/เครือข่าย | ⬜ หาแหล่งปลอดภัยไม่เจอ (ข้อ 3) · ทางที่ถูกกติกาและทำได้ = เนื้อหาที่คนอยากอ้างถึง (ก้อน 5–6) + คนค้นชื่อร้านจากคลิป | dev/essentials/spam-policies · dev/fundamentals/seo-starter-guide |
+| 26 | Search Console: ขอ index หน้าใหม่/หน้าที่แก้ (คิวละหน้า มีโควตาต่อวัน ส่งซ้ำไม่ช่วย) | ⬜ ก้อน 7 | sc/9012289 |
+
+**Google บอกเองว่าไม่ช่วยอันดับ:** meta keywords · priority/changefreq ใน sitemap · ความยาวบทความ (ตั้งเป้าจำนวนคำ = สัญญาณไม่ดี) · ลำดับ/จำนวนหัวข้อ ·
+E-E-A-T ไม่ใช่ตัวคะแนนตรง (แต่ความน่าเชื่อถือสำคัญที่สุด) · CWV คะแนนเต็มไม่การันตีอันดับ · ขอ index ซ้ำไม่เร่ง
+
+### 7.4 ต้องปรับ / ยังไม่ทำ — เรียงตามผลกระทบ (กฎกลาง §7)
+
+1. **เนื้อหาสีเขียว + ประสบการณ์จริง (ข้อ 20–22)** — ช่องว่างที่ใหญ่ที่สุดของเว็บเทียบกับเกณฑ์ Google และเป็นของที่คู่แข่งไม่มี → ก้อน 5–6
+2. **หน้าเจ้าของคำที่ติดหน้า 1 แต่ไม่มีคนกด / บาง (ข้อ 11–13 · 20)** — esko bar 0/87 อันดับ 3.6 · joiway 3/180 · infy 20k 2/67 อันดับ 12.6 · salthub H1 → ก้อน 3
+3. **หน้าแย่งคำกันเอง (ข้อ 11)** — /about ↔ หน้าแรก · /brands/uwell ↔ pod-systems · meta แบรนด์ iqos/relx/wotofo → ก้อน 3 (ชุดเสนอผ่าน seo-auditor ก่อนลง)
+4. **ลิงก์ภายใน + ฝังคลิป (ข้อ 19 · 24)** → ก้อน 3/6
+5. **ความเร็วมือถือ LCP ~10 วิ (ข้อ 8)** — ดีต่อลูกค้าแน่ แต่ผลต่ออันดับตอนนี้น้อย เพราะ Google ยังไม่มีข้อมูลผู้ใช้จริงของเว็บเรา [เชื่อว่า] → ก้อน 4 · ที่เหลือของก้อน 4: dateModified/วันที่บนหน้า · brand ใน JSON-LD 4 หน้า · URL 5xx/crawl-ไม่เก็บ 3 รายการ · JSON-LD หน้าบริการ 4 หน้า

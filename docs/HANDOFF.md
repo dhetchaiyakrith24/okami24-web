@@ -109,10 +109,24 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Owner may later send a Mac screenshot (closing OK label unconfirmed — page says "กดยืนยันเพื่อบันทึก").
   Not in this round: LINE OA rich menu / pinned post / box card (owner: later) · Analytics (before the first paid ad).
   Worktree `_incoming/wt-dns` (own node_modules copy; test server 3412 stopped) — removable after the round closes.
-3h READY, NOT OPEN 12/10 — round "SEO ฉ" (owner 12/10: "หน้า 1 ทุกคีย์ · ปล่อยพลังเต็มที่" + "เนื้อหาสีเขียว" = knowledge articles from
-  the owner's YouTube) = `docs/rounds/รอบ-SEO-ฉ-อัดฉีดเต็ม-หน้า1-เนื้อหาสีเขียว-12-10.txt` (7 batches; already in git — round-open step 1
-  copy is done). Opens in ITS OWN new chat (owner opens it; one chat = one round) with skill round-open; 3g stays in its chat
-  (only okami24.net left, no site work). Next GSC reads 22/10 + 01/11 fall inside it (SEO_BASELINE).
+3h OPEN 12/10 (own chat) — round "SEO ฉ" = `docs/rounds/รอบ-SEO-ฉ-อัดฉีดเต็ม-หน้า1-เนื้อหาสีเขียว-12-10.txt` (owner: page 1 for every
+  key + "green" knowledge articles from the owner's 4 YouTube channels). Opened on main dcc4ca7e, branch `seo-f-batch1`.
+  Owner answers at open (12/10, cards): all 4 channels (OKM YARZ · OKM 24 · POD SYSTEM OKAMI II · OKAMI) · no scripts — Friday pulls
+  topics/data from YouTube itself, SHOWS THE OWNER THE GREEN TOPIC LIST FIRST, then writes new articles "ที่สุดและตึงกว่าเดิม" ·
+  THAI FIRST, translate later (en/zh share the URL, no hreflang → translation does not affect Google) · Thai voice for green
+  articles: more natural, flowing, small fitting jokes allowed so it reads human-written (owner 12/10 — round-level, on top of
+  THAI_STYLE §2) · folder `รายงานจากแอดมิน แชท/` = product work, NOT this round, do not read · free tools only (no Google Ads
+  account → no Keyword Planner; volume = GSC impressions + Trends + autocomplete) · pages already on page 1: Friday keeps their
+  ranking head and improves around it (owner 12/10 "เราจะจัดการเองและทำให้ดีกว่าเดิม").
+  Batches (tiers): 1 checklist doc (A, docs) DONE = SEO_LANDSCAPE §7 · 2 full keyword map doc (+ owner picks the first key group) ·
+  3 heads/H1/links/clip embeds (A/B, set on paper → seo-auditor → code) · 4 technical (B: mobile LCP ~10 s lab on 5 pages, cause
+  not proven — render delay, suspect AgeGate/hydration; dateModified per page; brand on 4 products; 5xx/crawled URLs) ·
+  5 green set 1 (B, Thai first, designer for an author/date block) · 6 green set 2 + topic clusters (B) · 7 measure + hand over.
+  Evidence `_incoming/seo-f/`: gsc-1012-queries.txt (250 queries 12/09–09/10) · gsc-1012-pages.txt (104 pages + index/CWV/
+  enhancement reports) · live-1012/ (head-audit 113) · lh/ (Lighthouse 13 mobile) · scope-auditor-1012.md. seo-auditor open
+  audit = reply in chat 12/10, findings folded into SEO_LANDSCAPE §7 (cannibals: /about vs home tail, /brands/uwell vs
+  pod-systems, iqos/relx/wotofo brand metas; "น้ำยา" in 9 metas outside /e-liquid; SEO_BASELINE row 4 still names m-bar-15k).
+  Next GSC reads 22/10 (rows 1–8) + 01/11 (rows 9–10).
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
   pod-systems title/meta/H1 unchanged [ตรวจแล้ว]. Owner 09/10: protect what ranked — pod-systems head byte-identical.
