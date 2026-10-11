@@ -132,6 +132,20 @@ zero-nano · relx-creator · vmate-i3 · pod-kits → pod-systems
 พอ ต joiway · eski bar · eskbar · eskobarvape · darg 6 · drag6 · voopoo drag6 · lnfy 20k · ngovoks (nevoks) · mood / moood (แบรนด์ MOOOD) · drag x 3 ·
 caliburn g 3 · g3 caliburn · caliburn g3pro · caliburn g 5 lite · mbar 15k · g4mini · p.o.d · pods system · voopoo s3 (ขาด drag) · ชื่อไทย: เอสโคบาร์ (แบรนด์สะกด Esko)
 
+### 0.6 คำใหม่ใน GSC 12/10 (รอบ SEO ฉ ก้อน 2 · 28 วัน 12/09–09/10 · 250 คำ เทียบรายการ 07/10 = ใหม่ 63 คำ · `_incoming/seo-f/gsc-1012-queries.txt`)
+
+ส่วนใหญ่เป็นคำแปรของกลุ่มเดิม → **เข้าหน้าเจ้าของเดิมในตาราง 0.1–0.3** (ไม่ต้องมีหน้าใหม่): caliburn g5 ราคา · calibirn g5 → caliburn-g5 · g5lite · uwell caliburn g5 lite → caliburn-g5-lite ·
+voopoo drag 6 kit · drag 6 kit · drag voopoo 6 → drag-6 · voopoo drag s3 · voopoo drag s 3 → drag-s3 · voopoo argus mini → argus-g4-mini · salthub 15k · salthub m switch → m-switch-kit ·
+marbo mint · marbo 10k → m-bar-10k · m zero nano → zero-nano · infy20k · 20k infy · เครื่อง infy · infy pod ใช้แล้วทิ้ง · infy pod · พอต infy → infy-20k · tfit m power 20k (ราคา) · m power 20k → tfit-m-power-20k ·
+relx smash go (12k) → relx-smash-go-12k · relx device → /brands/relx · nevoks vape → /brands/nevoks · dotmod coil → coil-70 · joiway twin · vape joiway → joiway-f4 / /brands/joiway ·
+pod device · pod open system · p o d s · p.o.d. → /products/pod-systems · พอตมินิ → /products/pod-kits [เชื่อว่า] · catrit pod (สะกดผิด cartridge) → /products/pods-cartridges · mtl rdl · mtl vs rdl → คู่มือ MTL ·
+pod system pantip → คู่มือเลือกเครื่องแรก · iluma i prime · iluma prime → /products/iqosheet-16 [เชื่อว่า: ตรวจชื่อรุ่นในหน้าก่อน]
+**สะกดผิดเพิ่ม → รอบช่องค้นหา (HANDOFF §16 ข้อ 5):** eco bar · sco bar · ekko bar · eskobar (Esko Bar) · catrit · calibirn
+**ไม่มีหน้า → ส่งรอบรูป 3f (เพิ่มสินค้า) ถ้าร้านมีขาย [ยังไม่มีข้อมูล]:** onehub relx (0/4 · 5.2) · mafia bar 15k · joiway 12k
+**ไม่ไล่ (เจตนาไม่ชัด/ไม่ใช่ของร้าน):** ราคา เท่า ไหร่ · แบบนี้เท่าไหร่ · ฉันอยากทราบราคา · ยกลังราคาเท่าไหร่ · price · กลิ่น · รุ่นอะไร · ของแท้หรือว่าของปลอม · okami vape (ชื่อร้าน → / อยู่แล้ว) ·
+relx ไม่มี นิโคติน (ไม่เขียนคำอ้างเรื่องนิโคติน) · บุหรี่ไฟฟ้า drag · น้ํายาบุหรี่ไฟฟ้า (มีแถวแล้ว)
+**หัวข้อคำถามใหม่จาก autocomplete (ไม่อยู่ใน GSC เพราะเรายังไม่มีหน้า) = ตาราง "เนื้อหาสีเขียว" ข้อ 8** — แต่ละหัวข้อเป็นหน้าเจ้าของของคำถามนั้นหน้าเดียว
+
 ---
 
 ## 1. สรุป 1 หน้า — ลงแรงที่ไหนหลัง 05/10
@@ -400,3 +414,34 @@ E-E-A-T ไม่ใช่ตัวคะแนนตรง (แต่ควา�
 3. **หน้าแย่งคำกันเอง (ข้อ 11)** — /about ↔ หน้าแรก · /brands/uwell ↔ pod-systems · meta แบรนด์ iqos/relx/wotofo → ก้อน 3 (ชุดเสนอผ่าน seo-auditor ก่อนลง)
 4. **ลิงก์ภายใน + ฝังคลิป (ข้อ 19 · 24)** → ก้อน 3/6
 5. **ความเร็วมือถือ LCP ~10 วิ (ข้อ 8)** — ดีต่อลูกค้าแน่ แต่ผลต่ออันดับตอนนี้น้อย เพราะ Google ยังไม่มีข้อมูลผู้ใช้จริงของเว็บเรา [เชื่อว่า] → ก้อน 4 · ที่เหลือของก้อน 4: dateModified/วันที่บนหน้า · brand ใน JSON-LD 4 หน้า · URL 5xx/crawl-ไม่เก็บ 3 รายการ · JSON-LD หน้าบริการ 4 หน้า
+
+---
+
+## 8. เนื้อหาสีเขียว — หัวข้อจากช่อง YouTube ของร้าน → บทความบนเว็บ (รอบ SEO ฉ ก้อน 2 · 12/10)
+
+> "เนื้อหาสีเขียว" (คำเจ้าของ 12/10) = คลิปให้ความรู้ของร้าน ไม่ใช่รีวิวรุ่น → เขียนใหม่เป็นบทความบนเว็บ (ไม่ถอดคำพูด) ฝังคลิปต้นทาง ลิงก์ไปหน้าเจ้าของคำ
+> ช่อง (อ่าน 12/10 จากหน้า /videos ของ YouTube · `_incoming/seo-f/yt/*.tsv`): OKM YARZ `@OKMYARZ` 109 คลิป · OKAMI `@OKM_24` 94 + shorts 23 · POD SYSTEM OKAMI II
+> `@PODSYSTEM-OKAMI-II` 74 + shorts 22 · ชื่อ "OKM 24" กับ "OKAMI" ที่เจ้าของให้มา = ช่องเดียวกัน (`@OKM_24` ชื่อช่อง OKAMI) [ตรวจแล้ว] ·
+> หลักฐานคนค้น: autocomplete Google (`_incoming/seo-f/yt/ac-1.txt`) · Trends ไทย 12 เดือน (`_incoming/seo-f/trends-1012.txt` · หัวพอต = 100) · GSC 250 คำ ·
+> ข้อความในคลิปอ่านได้จากปุ่ม "แสดงข้อความถอดเสียง" ของ YouTube (เบราว์เซอร์ในแอป · คำบรรยายอัตโนมัติ — ชื่อรุ่น/ตัวเลขต้องเช็กกับผู้ผลิตก่อนใช้)
+
+| # | หัวข้อบทความ | คนค้น (หลักฐาน) | คลิปต้นทาง (id) | ใหม่ / ปรับของเดิม | ลิงก์ไปหน้าเจ้าของคำ |
+|---|---|---|---|---|---|
+| 1 | **พอตไหม้** ดูยังไง เกิดจากอะไร แก้ยังไง | autocomplete 9 แบบ (แก้ยังไง · ดูยังไง · เกิดจากอะไร · ไหม้เร็ว · ไหม้ไว) · Trends ~0.9 | f86AJRNHX4U (ติด #4 "คอยล์พอต") · 8BZZ-8LJogs · nh4vVnHMshQ · e_r5uqEC2LQ | ใหม่ | /products/pods-cartridges · /products/coils-accessories |
+| 2 | **พอตรั่ว / หัวพอตรั่ว** สาเหตุและวิธีแก้ | autocomplete 6 แบบ (หัวพอตรั่วแก้ยังไง · เกิดจากอะไร · พอตน้ำยารั่ว) · Trends ~0.9 | KqrsdAvi5qM · sWzhjV-sK1U · XCJi85tGZ1o · short ZU9yzFDF4Yg | ใหม่ | /products/pods-cartridges |
+| 3 | **พอตดูดไม่ขึ้น ไฟกะพริบ** | autocomplete 7 แบบ · Trends ~1.6 · GSC อันดับ 54 | MlQjKTSls-0 (ฝังอยู่แล้ว) · htDb9aXyIqI · LIvXtXCsjqI · mLOBUSRpsfw | ปรับ `fixing-no-draw-and-blinking-light` | /products/pods-cartridges · หน้ารุ่น |
+| 4 | **ชาร์จพอต** กี่นาที · ชาร์จไม่เข้า · ข้ามคืนได้ไหม · Fast Charge | autocomplete 10+ แบบ (ชาร์จพอตกี่นาที · ชาร์จไม่เข้า · ไฟกระพริบ) · Trends ~32 [ปนคำ "พอร์ต"] | PlK5TxATFlU · ANpE7sf-80w · j9MUgpjhUbs · LQ7y3MtDgQI · DP8NZUCpD2g | ปรับ `battery-care-and-charging` | /products/pod-systems · /products/pod-kits |
+| 5 | **หัวพอตใช้ได้กี่วัน** + วิธียืดอายุพอต | autocomplete (หัวพอตใช้ได้กี่วัน · พอต 1 หัวใช้ได้กี่วัน) | e_r5uqEC2LQ · X2iA2oKXUGU · -JvtKWLx3OY · Nwf7ZHo-Qos · xXTw_JsMK3Y · VKRP3OlLqBc · i0DgETDQeUA | ปรับ `coil-and-pod-maintenance` | /products/pods-cartridges |
+| 6 | **พอตใช้แล้วทิ้ง** ความจริงที่ควรรู้: ตัวเลขบนจอเชื่อได้แค่ไหน · พัฟเยอะใช้นานจริงไหม · ช่วงท้ายกลิ่นจาง | autocomplete (ใช้ได้กี่วัน) · Trends พอตใช้แล้วทิ้ง ~30 | tEqKAnqmCjs · 4DoUt2ABgmU · n0FCGY43RhQ · bfAWZ3_pln4 · 5r9jHv3CdKU · 0R0mLimgZds · Dtw8yd5EcPQ | ปรับ `how-long-a-disposable-lasts` | /products/disposables |
+| 7 | **มือใหม่เลือกพอต** ดูอะไรก่อน · งบเท่าไหร่ | GSC "pod system ยี่ห้อไหนดี/แนะนำ" อันดับ 62–87 · คลิปเราครองกล่องคลิป 4/4 | nv46XcTCVXc · cuse7nkM5eY · 0dDQ4q8KaNw · e8AWg6Xc8JM · wTLybr4_Gqw | ปรับ `choosing-your-first-pod-system` | /products/pod-systems · /products/disposables |
+| 8 | **Salt Nic กับ Freebase** ต่างกันยังไง · นิโคติน 3% กับ 5% · PG/VG | autocomplete (salt nic กับ freebase ต่างกันอย่างไร · นิโคติน 3 กับ 5 ต่างกันยังไง) · Trends salt nic ~0.2 | mY4M61mKQjc · nGdMbdLuFkk · MM_PibfhO0s · i5SPcPp9HAE · 1uuJrjCzFBE · QrZxZDd9bmU | ใหม่ (head ห้ามคำ "น้ำยา" — HANDOFF §18) | /e-liquid |
+| 9 | **ค่าโอห์ม วัตต์ แอร์โฟลว์** ปรับแล้วฟีลเปลี่ยนยังไง | GSC mtl/dtl อันดับ 35–99 (ต่างชาติ) · autocomplete "ค่าโอห์มคืออะไร" (ปนไฟฟ้า) | 3MDOf6E4s3A · 8G8wiTmGrYk · cPYybXJ4zzA · kMCAzQ0H3us · 7o0JGxsHfAg · HX7i9eqk_dg | ปรับ `choosing-wattage-and-airflow` + `understanding-mtl-vs-dtl` | /products/pod-systems · /products/coils-accessories |
+| 10 | **พอตขึ้นเครื่องบินได้ไหม** | autocomplete แรง (… ได้ไหม 2569 ล่าสุด · พกพอตขึ้นเครื่องบินได้ไหม) · Trends ต่ำกว่าเกณฑ์ | nvyDoYy_1U8 · BhndRb2tfSM | ใหม่ — ข้อเท็จจริงจากกติกาสายการบิน/IATA เท่านั้น [รอเจ้าของ: เรื่องนี้แตะกฎของประเทศปลายทาง] | /products/disposables |
+| 11 | **เลิกบุหรี่ด้วยพอต** ประสบการณ์ของเจ้าของ + ข้อมูลรัฐ/งานวิจัยต่างประเทศทั้งสองด้าน | Trends "เลิกบุหรี่" ~150 (สูง แต่หน้า 1 เป็นหน่วยงานสุขภาพ) | n7nS4LnEK8g (วิธีเลิกบุหรี่ไฟฟ้า) | ใหม่ — กติกาสุขภาพของไฟล์คำสั่งรอบ · ประโยคทั้งหมดเจ้าของเคาะก่อนขึ้น | / (ไม่ลิงก์ขาย) |
+
+**กลุ่มเรื่อง (topic cluster) ที่เสนอ:** ข้อ 1–5 = "ปัญหาและการดูแลพอต" (หน้าหลักของกลุ่ม = คู่มือดูแลหัวพอต ข้อ 5 · ลิงก์ไปมาครบวง) — ตรงคีย์ "หัวพอต" ที่คนค้นสูงสุดในกลุ่มสินค้า (Trends หัวพอต 100 ·
+ร้านพอต ~112 · marbo ~108) และใกล้การซื้อ (พอตไหม้/รั่ว = ต้องซื้อหัวใหม่) · ข้อ 6–7 = "เลือกพอต" · ข้อ 8–9 = "ความรู้เชิงลึก" · ข้อ 10–11 = เรื่องเฉพาะที่ต้องให้เจ้าของเคาะ
+
+**คลิปที่ไม่ใช่สีเขียว (รีวิว/ข่าวรุ่น) ไม่อยู่ในตารางนี้** — ใช้ฝังในหน้าสินค้าของรุ่นนั้น (ข้อ 4 ตาราง "ควรฝังคลิปเพิ่ม") ไม่ใช่บทความ
+
+**เจ้าของเคาะ 12/10 (การ์ด):** ชุดแรก (ก้อน 5) = กลุ่ม "ปัญหาและการดูแลพอต" ข้อ 1–5 · ข้อ 10 เครื่องบิน = เอา เฉพาะกติกาสายการบิน (ไม่ลงรายละเอียดกฎหมายประเทศปลายทาง ให้ผู้อ่านเช็กเอง) · ชุด 2 (ก้อน 6) = ข้อ 6–11 ตามลำดับ

@@ -118,7 +118,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   THAI_STYLE §2) · folder `รายงานจากแอดมิน แชท/` = product work, NOT this round, do not read · free tools only (no Google Ads
   account → no Keyword Planner; volume = GSC impressions + Trends + autocomplete) · pages already on page 1: Friday keeps their
   ranking head and improves around it (owner 12/10 "เราจะจัดการเองและทำให้ดีกว่าเดิม").
-  Batches (tiers): 1 checklist doc (A, docs) DONE = SEO_LANDSCAPE §7 · 2 full keyword map doc (+ owner picks the first key group) ·
+  Batches (tiers): 1 checklist doc (A, docs) DONE = SEO_LANDSCAPE §7 · 2 keyword map doc DONE = §0.6 (63 new GSC queries mapped)
+  + §8 green topics (11 topics, clip ids, autocomplete/Trends evidence; owner 12/10 cards: set 1 = topics 1–5 "problems + pod care",
+  airplane topic = airline carriage rules only; set 2 = 6–11) · YouTube transcripts: Claude Browser pane, watch page →
+  expand description → "แสดงข้อความถอดเสียง" button → read `ytd-transcript-segment-renderer .segment-text` (direct timedtext
+  fetch returns 0 bytes) · Trends: in the app browser call /trends/api/explore + widgetdata/multiline from page JS (charts
+  don't render) · GITHUB ACTIONS BLOCKED 12/10: "recent account payments have failed or your spending limit needs to be
+  increased" → PR #446 checks never started → no merge/deploy until the owner fixes billing [รอเจ้าของ] ·
   3 heads/H1/links/clip embeds (A/B, set on paper → seo-auditor → code) · 4 technical (B: mobile LCP ~10 s lab on 5 pages, cause
   not proven — render delay, suspect AgeGate/hydration; dateModified per page; brand on 4 products; 5xx/crawled URLs) ·
   5 green set 1 (B, Thai first, designer for an author/date block) · 6 green set 2 + topic clusters (B) · 7 measure + hand over.
