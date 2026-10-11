@@ -69,3 +69,20 @@ tool, not raw text: open the page before quoting exact wording on the site.
 - [verified] DoT uses port 853, which a network can block (Google DoT page).
 - Site consequence: order = methods that work on every network first (Android Private DNS · iPhone 1.1.1.1 app · Chrome),
   Wi-Fi-only manual DNS last — reason on the page = "works on mobile data too", not interception.
+
+## 6. Official Thai labels (follow-up, 2026-10-11 — re-open the page before quoting exact wording)
+
+- Chrome Android [verified https://support.google.com/chrome/answer/10468685?hl=th&co=GENIE.Platform%3DAndroid]: เพิ่มเติม
+  (มุมขวาบน) → การตั้งค่า → ความเป็นส่วนตัวและความปลอดภัย → ส่วน "ความปลอดภัย" → ใช้ DNS ที่ปลอดภัย → "เลือกผู้ให้บริการปัจจุบัน
+  หรือผู้ให้บริการรายอื่น". Computer [verified …&co=GENIE.Platform%3DDesktop]: same + ส่วน "ขั้นสูง". Neither the Thai nor the
+  English page names Google / Cloudflare in the provider list [not confirmed] → the page does not name list items.
+- Samsung Thai labels: no official samsung.com/th page found [not confirmed] → English labels (US page) or the search tip.
+- iPhone Wi-Fi manual DNS: Google's Thai page (AI-translated, says so) uses "Configure DNS" + "กำหนดเอง"; Apple's own Thai labels
+  [not confirmed] → not on the page until the owner's screenshots show the real labels.
+- Windows 11 [verified https://support.microsoft.com/th-th/windows/essential-network-settings-and-tasks-in-windows-f21a9bbc-c582-55cd-35e0-73431160a1b9]:
+  เครือข่าย & อินเทอร์เน็ต → Wi-Fi → จัดการเครือข่ายที่รู้จัก (หรือ Ethernet) → แก้ไข (การกำหนดค่า IP) → อัตโนมัติ (DHCP) / ด้วยตนเอง →
+  IPv4 → "DNS ที่ต้องการ" / "DNS สำรอง" → "DNS ผ่าน HTTPS": ปิด / เปิด (เทมเพลตอัตโนมัติ) / เปิด (เทมเพลตด้วยตนเอง) → บันทึก.
+- 1.1.1.1 app is free [verified https://one.one.one.one/ · https://developers.cloudflare.com/warp-client/get-started/ios/]; undo
+  = delete the app (Remove App → Delete App) [verified same]; "switch WARP off" and cellular coverage on iOS [not confirmed].
+- Private DNS on mobile data: only Cloudflare states it ("all networks, including cellular"); Google's pages do not [not confirmed
+  Google-side] → cite Cloudflare for the network line.

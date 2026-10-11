@@ -82,9 +82,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   https://okami24.store (live, checked) — no 301 (a 301 sends blocked customers back to the blocked host); encrypted DNS methods
   first, plain 8.8.8.8 last — ISP port-53 interception NOT confirmed by an official source, so the page's reason = "works on
   mobile data too" (batch 1 doc §5).
-  Asked the owner 11/10 [รอเจ้าของ]: 1 homepage spot (rec. A age-gate line + C homepage card) · 2 screenshots (rec. owner shoots
-  Android + iPhone) · 3 backup name — RDAP 404 (free) 11/10: okami24.net (rec.) · okm24.store · okami24.online · okami24shop.com ·
-  okami24.xyz; okami24.com taken; .co/.shop RDAP unreliable.
+  Owner 11/10 "ตามนั้นเลย" (all three recommendations): homepage = A one line in the age gate + C one homepage card ·
+  screenshots = the owner shoots them (Android + iPhone, Thai UI) — the page ships finished without them, shots slot in later ·
+  backup domain = okami24.net (RDAP free 11/10), the owner buys it at Cloudflare Registrar (same account as okami24.store).
   Batch 1 DONE a0ed9c64 (`docs/cloud-results/dns-guide-sources.md`; not on the page: Chrome on iPhone, .mobileconfig, 1.1.1.1
   app undo/networks). Scope (scope-auditor 11/10): sitemap 112 live; footer = 117 pages (+ /compare /finder /search /favorites
   + 404); locale = one URL, client-side language (server HTML Thai) → new guide = 1 URL, no `thaiOnly`, copy in guides-copy;
