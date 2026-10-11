@@ -1,6 +1,7 @@
 # OKami24 — สนามแข่ง SEO (SEO_LANDSCAPE)
 
 > ตรวจวันที่ **2026-09-25** (รอบ 10C · ตรวจอย่างเดียว ไม่แตะเว็บ) · อ่านคู่กับ `docs/SEO_BASELINE.md` · **แผนที่คีย์ (คำไหนหน้าไหน) = ข้อ 0 (07/10)**
+> · **เช็กลิสต์หน้า 1 จากหน้าทางการของ Google + สถานะเว็บเรา = ข้อ 7 (รอบ SEO ฉ 12/10)**
 > คีย์ที่มีใน SEO_BASELINE ใช้สะกดเดียวกัน (m bar · salthub · uwell · drag 6 · caliburn g5 · pod system ตัวไหนดี · marbo · พอตเปลี่ยนหัว · esko bar switch 20k)
 > ข้อมูลดิบ (มีชื่อเว็บ) อยู่ `_incoming/round10c/` เท่านั้น — ไฟล์นี้ไม่ระบุชื่อ/โดเมนร้านค้า
 > ป้าย: [ตรวจแล้ว] เห็นเองบนหน้า Google/Trends/เว็บจริงวันนี้ · [เชื่อว่า] อนุมานจากข้อมูล · [ยังไม่มีข้อมูล] หาไม่ได้
@@ -130,6 +131,20 @@ zero-nano · relx-creator · vmate-i3 · pod-kits → pod-systems
 **คำสะกดผิดที่เจอในคำค้นจริง → รอบช่องค้นหา (HANDOFF §16 ข้อ 5 "TYPO-TOLERANT SEARCH"):** joiwat · joiwy · oiway · joway · joi way · pot joiway ·
 พอ ต joiway · eski bar · eskbar · eskobarvape · darg 6 · drag6 · voopoo drag6 · lnfy 20k · ngovoks (nevoks) · mood / moood (แบรนด์ MOOOD) · drag x 3 ·
 caliburn g 3 · g3 caliburn · caliburn g3pro · caliburn g 5 lite · mbar 15k · g4mini · p.o.d · pods system · voopoo s3 (ขาด drag) · ชื่อไทย: เอสโคบาร์ (แบรนด์สะกด Esko)
+
+### 0.6 คำใหม่ใน GSC 12/10 (รอบ SEO ฉ ก้อน 2 · 28 วัน 12/09–09/10 · 250 คำ เทียบรายการ 07/10 = ใหม่ 63 คำ · `_incoming/seo-f/gsc-1012-queries.txt`)
+
+ส่วนใหญ่เป็นคำแปรของกลุ่มเดิม → **เข้าหน้าเจ้าของเดิมในตาราง 0.1–0.3** (ไม่ต้องมีหน้าใหม่): caliburn g5 ราคา · calibirn g5 → caliburn-g5 · g5lite · uwell caliburn g5 lite → caliburn-g5-lite ·
+voopoo drag 6 kit · drag 6 kit · drag voopoo 6 → drag-6 · voopoo drag s3 · voopoo drag s 3 → drag-s3 · voopoo argus mini → argus-g4-mini · salthub 15k · salthub m switch → m-switch-kit ·
+marbo mint · marbo 10k → m-bar-10k · m zero nano → zero-nano · infy20k · 20k infy · เครื่อง infy · infy pod ใช้แล้วทิ้ง · infy pod · พอต infy → infy-20k · tfit m power 20k (ราคา) · m power 20k → tfit-m-power-20k ·
+relx smash go (12k) → relx-smash-go-12k · relx device → /brands/relx · nevoks vape → /brands/nevoks · dotmod coil → coil-70 · joiway twin · vape joiway → joiway-f4 / /brands/joiway ·
+pod device · pod open system · p o d s · p.o.d. → /products/pod-systems · พอตมินิ → /products/pod-kits [เชื่อว่า] · catrit pod (สะกดผิด cartridge) → /products/pods-cartridges · mtl rdl · mtl vs rdl → คู่มือ MTL ·
+pod system pantip → คู่มือเลือกเครื่องแรก · iluma i prime · iluma prime → /products/iqosheet-16 [เชื่อว่า: ตรวจชื่อรุ่นในหน้าก่อน]
+**สะกดผิดเพิ่ม → รอบช่องค้นหา (HANDOFF §16 ข้อ 5):** eco bar · sco bar · ekko bar · eskobar (Esko Bar) · catrit · calibirn
+**ไม่มีหน้า → ส่งรอบรูป 3f (เพิ่มสินค้า) ถ้าร้านมีขาย [ยังไม่มีข้อมูล]:** onehub relx (0/4 · 5.2) · mafia bar 15k · joiway 12k
+**ไม่ไล่ (เจตนาไม่ชัด/ไม่ใช่ของร้าน):** ราคา เท่า ไหร่ · แบบนี้เท่าไหร่ · ฉันอยากทราบราคา · ยกลังราคาเท่าไหร่ · price · กลิ่น · รุ่นอะไร · ของแท้หรือว่าของปลอม · okami vape (ชื่อร้าน → / อยู่แล้ว) ·
+relx ไม่มี นิโคติน (ไม่เขียนคำอ้างเรื่องนิโคติน) · บุหรี่ไฟฟ้า drag · น้ํายาบุหรี่ไฟฟ้า (มีแถวแล้ว)
+**หัวข้อคำถามใหม่จาก autocomplete (ไม่อยู่ใน GSC เพราะเรายังไม่มีหน้า) = ตาราง "เนื้อหาสีเขียว" ข้อ 8** — แต่ละหัวข้อเป็นหน้าเจ้าของของคำถามนั้นหน้าเดียว
 
 ---
 
@@ -335,3 +350,98 @@ caliburn g 3 · g3 caliburn · caliburn g3pro · caliburn g 5 lite · mbar 15k �
 - **หน้า Google:** มือถือจำลอง (Android · 375 กว้าง) · ไม่ล็อกอิน · hl=th gl=th · ค้นทีละคำ ห่างกัน ≈65 วินาที · 33 ครั้ง · **ไม่เจอ CAPTCHA ไม่โดนบล็อก**
 - **ข้อมูลอาจเอียง:** (1) **ตำแหน่ง = ราชบุรี** (Google บอกเองว่ามาจาก IP) ไม่ใช่กรุงเทพ — คำแบบ "ร้าน…/ใกล้ฉัน" ในกรุงเทพจะต่าง (2) มือถือจำลองในเบราว์เซอร์คอม ไม่ใช่มือถือจริง (หน้าตาผลเหมือนมือถือ แต่ไม่ยืนยัน 100%) (3) ภาพวันเดียว — อันดับขยับทุกวัน ตัวเลขหลักคือ SEO_BASELINE วันที่ 05/10 (4) ตัวแยกประเภทหน้าอ่านจากข้อความในหน้า ผลที่มีลิงก์ย่อยของผู้ผลิตอ่านได้ตั้งแต่คำที่ 18 (voopoo) — คำ 1–17 ที่ไม่ใช่ชื่อแบรนด์ไม่น่ามีบล็อกนี้ [เชื่อว่า] (5) "ร้าน" รวมทั้งหน้าขายและบทความบล็อกของร้าน ไม่ได้แยก
 - **ไฟล์ดิบ:** `_incoming/round10c/trends-raw.md` · `serp-raw.md` · `scope-auditor-result.md` · `seo-auditor-result.md` · `researcher-backlink-result.md` · `extras.md` (ข้อเสนอที่แตะเว็บ)
+
+---
+
+## 7. เช็กลิสต์ "ติดหน้า 1 ต้องมีอะไร" — สถานะเว็บเรา (รอบ SEO ฉ ก้อน 1 · 12/10)
+
+> ที่มาของข้อกำหนด = หน้าทางการเท่านั้น (researcher เปิดอ่านจริง 12/10): `dev/` = developers.google.com/search/docs/ · `sc/` = support.google.com/webmasters/answer/ ·
+> สถานะวัดจากเว็บจริง 12/10: `node scripts/head-audit.js https://okami24.store` (113 หน้า) · curl · Lighthouse 13 มือถือ 5 หน้า · Search Console ผ่าน Chrome ของเจ้าของ
+> (อ่านอย่างเดียว · ข้อมูลถึง 09/10) · seo-auditor เปิดรอบ · ไฟล์ดิบ `_incoming/seo-f/` (gsc-1012-queries.txt 250 คำ · gsc-1012-pages.txt 104 หน้า · lh/ · live-1012/)
+> ✅ ทำแล้ว · 🔧 ต้องปรับ · ⬜ ยังไม่ทำ · ป้ายตามหัวไฟล์ (ไม่มีป้าย = [ตรวจแล้ว])
+
+**ภาพรวม GSC 28 วัน (12/09–09/10):** คลิก 523 · แสดง 2.95K · CTR 17.8% · อันดับเฉลี่ย 9.7 · 250 คำ · 104 หน้ามีข้อมูล ·
+คำใหญ่: pod 27/135 อันดับ 7.7 · voopoo drag 6 15/71 7.8 · joiway 3/180 6.4 · esko bar 0/87 3.6 · infy 20k 2/67 12.6 · joiway f4 2/55 10.0
+
+### 7.1 เทคนิค
+
+| # | ข้อกำหนด (ทางการ) | สถานะเว็บเรา + หลักฐาน | ที่มา |
+|---|---|---|---|
+| 1 | Googlebot เข้าได้ · ตอบ 200 · robots.txt ไม่บล็อก + มีบรรทัด Sitemap | ✅ 113/113 ตอบ 200 · robots เปิดทั้งเว็บ (ปิดแค่ /preview/ /api/) · มีบรรทัด Sitemap | dev/essentials/technical · dev/crawling-indexing/robots/create-robots-txt |
+| 2 | canonical ชี้ตัวเอง URL เต็ม รูปแบบเดียวกันทุกที่ | ✅ 113/113 · http→https 301 · www→ไม่มี www 301 · ปิดท้าย / → 308 | dev/crawling-indexing/consolidate-duplicate-urls |
+| 3 | sitemap ถูกรูปแบบ · `lastmod` ต้องตรงกับการแก้จริง (ไม่งั้น Google ไม่เชื่อ) | ✅ 113 URL ตรงกับเว็บ · GSC อ่านสำเร็จ · 🔧 บทความ 21 หน้า `dateModified` = 12/10 ทุกหน้า (วันที่ของทั้งกลุ่ม ไม่ใช่ของหน้า) [เชื่อว่า: มาจาก content-dates รายกลุ่ม] | dev/crawling-indexing/sitemaps/build-sitemap · dev/appearance/publication-dates |
+| 4 | HTTPS | ✅ GSC HTTPS 67 / ไม่ใช่ HTTPS 0 | dev/appearance/page-experience |
+| 5 | หน้าที่ไม่มีต้องตอบ 404 จริง (ไม่ใช่ soft 404) | ✅ URL มั่วตอบ 404 | dev/crawling-indexing/http-network-errors |
+| 6 | index ครบ | ✅ เก็บแล้ว 109 · ไม่เก็บ 13 (noindex 7 ตั้งใจ · redirect 3 · 5xx 1 · crawl แล้วไม่เก็บ 2) — รายงานอัปเดตล่าสุด 4/10 · 🔧 เปิดดู URL ของ 5xx 1 กับ crawl-ไม่เก็บ 2 (ก้อน 4) | sc/7440203 |
+| 7 | มือถือ: เนื้อหา หัวข้อ title ข้อมูลโครงสร้าง เท่ากับคอม | ✅ URL เดียว responsive (หน้าเดียวกันทุกจอ) | dev/crawling-indexing/mobile/mobile-sites-mobile-first-indexing |
+| 8 | Core Web Vitals: LCP ≤ 2.5 วิ · INP ≤ 200 ms · CLS ≤ 0.1 (ค่าจริงของผู้ใช้ 75%) | GSC: **ไม่มีข้อมูลผู้ใช้จริงพอ ทั้งมือถือและคอม** → Google ยังไม่มีตัวเลข CWV ของเรา · Lighthouse มือถือ (จำลอง): **LCP 10.3–11.6 วิ ทุกหน้า** (/ · pod-systems · drag-6 · joiway · what-is-a-pod-system) · CLS 0 ✅ · TBT 130–220 ms · ช่วงที่ช้า = "รอแสดงผล" ~2.1 วิในเครื่องจริง ไม่ใช่โหลดรูป → 🔧 **ก้อน 4 อันดับ 1** [เชื่อว่า: สาเหตุผูกกับ JS ตอนเปิดหน้า เช่น AgeGate/hydration — ยังไม่พิสูจน์] | web.dev/articles/vitals · sc/9205520 |
+| 9 | เนื้อหาอยู่ใน HTML จากเซิร์ฟเวอร์ · ลิงก์เป็น `<a href>` | ✅ head-audit อ่านเนื้อหา/ลิงก์จาก HTML ดิบได้ทุกหน้า | dev/crawling-indexing/javascript/javascript-seo-basics · dev/crawling-indexing/links-crawlable |
+| 10 | หลายภาษา = hreflang ทุกเวอร์ชัน | ✅ ไม่ต้องมี: en/zh สลับบน URL เดียว Google เห็นแต่ภาษาไทย [เชื่อว่า] → **บทความแปลทีหลังไม่กระทบ SEO** | dev/specialty/international/localized-versions |
+
+### 7.2 หน้า (head · หัวข้อ · รูป · ข้อมูลโครงสร้าง)
+
+| # | ข้อกำหนด | สถานะ | ที่มา |
+|---|---|---|---|
+| 11 | title ทุกหน้าไม่ซ้ำ อธิบายหน้าได้ ไม่ยัดคำ | ✅ ซ้ำ 0 / 113 · 🔧 หน้าแย่งคำกันเอง: `/about` ใช้ท้าย title เดียวกับหน้าแรก ("ร้านพอตของแท้ ราคาตรง บริการจริง") · `/brands/uwell` "พอตซิสเต็ม … ราคาทุกรุ่น" ชน pod-systems · meta ของ `/brands/iqos` `/brands/relx` `/brands/wotofo` ใส่รุ่น+ราคา (กติกาเดียวกับ #354) → ก้อน 3 | dev/appearance/title-link |
+| 12 | meta description ไม่ซ้ำ สรุปหน้า | ✅ ซ้ำ 0 · 🔧 บาง: pod-159 (93 ตัว ชื่อ+ราคา) · /brands/moood · /e-liquid/tobacco-style · /e-liquid/dessert · /technology/onboard-touch-displays · 🔧 "น้ำยา" อยู่ใน meta นอก /e-liquid 9 หน้า (ขัด HANDOFF §18 — pod-systems ห้ามแตะ) | dev/appearance/snippet |
+| 13 | หัวข้อหลักเด่นชัด (H1) ตรงกับสิ่งที่หน้าตอบ | ✅ H1 หน้าละ 1 · 🔧 H1 หน้าเจ้าของที่ไม่มีคำค้น: /brands/salthub (ไม่มี Marbo/M Bar) · /e-liquid ("กลุ่มรสชาติ") · หน้าแรก (H1 "Pod System ของแท้ ข้อมูลจริง" — เจ้าของเคยผ่าน ต้องถามก่อนแตะ) | dev/fundamentals/seo-starter-guide |
+| 14 | รูปมี alt ที่อธิบายจริง | ✅ รูปไม่มี alt 0 / 113 หน้า | dev/appearance/google-images |
+| 15 | Product + Offer บนหน้าสินค้า | ✅ 55/55 · GSC ข้อมูลสินค้า 29 ถูก / 0 ผิด · ผู้ขาย 29 / 0 · 🔧 ไม่มี `brand` 4 หน้า (muro ×3 · pod-180) · ⚠ หน้าทางการ merchant listing ระบุว่า **สินค้ายาสูบและ vape ไม่มีสิทธิ์** ลง Shopping ฟรี → ไม่เสนอ Merchant Center (ที่ GSC ชวน "แสดง 53 สินค้าในแท็บ Shopping") — เสี่ยงบัญชี / ไม่คุ้ม | dev/appearance/structured-data/merchant-listing |
+| 16 | Organization + WebSite ที่หน้าแรก · BreadcrumbList | ✅ หน้าแรกมีทั้งสอง · GSC เส้นทาง 63 ถูก / 0 · 🔧 /how-to-order /shipping /warranty /privacy ไม่มี JSON-LD เลย (ผลน้อย) | dev/appearance/structured-data/organization · …/breadcrumb |
+| 17 | Article: headline · image · author · datePublished/dateModified มีเขตเวลา ตรงกับวันที่ที่เห็นบนหน้า | ✅ Article 21/21 · 🔧 ไม่มีวันที่ให้เห็นบนหน้า · image = รูปกลางของเว็บ · dateModified ไม่ตรงการแก้จริง (ข้อ 3) | dev/appearance/structured-data/article · dev/appearance/publication-dates |
+| 18 | FAQ rich results | ✅ ไม่ต้องทำ: Google เลิกแสดง FAQ rich results แล้ว (07/05/2026) — กล่อง FAQ ยังดีต่อคนอ่าน แต่ไม่ช่วยหน้าผลค้นหา | dev/updates |
+| 19 | วิดีโอ: VideoObject (name · thumbnailUrl · uploadDate) · Google index วิดีโอเฉพาะ "หน้าดูคลิป" (คลิปเป็นเรื่องหลักของหน้า) | ✅ GSC วิดีโอ 9 ถูก / 0 · "วิดีโอใน 19 หน้าไม่ index" = ตามกติกา (คลิปเป็นของรองในหน้าสินค้า/บทความ) ไม่ใช่ข้อผิด → ไม่แก้ · ⬜ ฝังคลิปที่ติดหน้า 1 เพิ่ม (ข้อ 4 ตาราง "ควรฝังคลิปเพิ่ม") = ช่วยคนอ่าน/เวลาอยู่หน้า [เชื่อว่า] → ก้อน 3 | dev/appearance/video · sc/9495631 |
+
+### 7.3 เนื้อหา · ลิงก์
+
+| # | ข้อกำหนด | สถานะ | ที่มา |
+|---|---|---|---|
+| 20 | เนื้อหาเพื่อคน: ข้อมูลของตัวเอง ครอบเรื่องจริง มีค่ามากกว่าผลอื่น **มีประสบการณ์ใช้จริง** | 🔧 หน้าเจ้าของบาง (ตัวไทยในเนื้อหา): /brands/esko-bar 262 · /brands/joiway 412 · heated-tobacco-devices 198 · pod-180 · pod-159 — esko-bar ติดอันดับ 3.6 แต่คลิก 0/87 · ⬜ ประสบการณ์จริงของร้าน (คลิป YouTube) ยังไม่อยู่บนเว็บ = **เนื้อหาสีเขียว ก้อน 5–6** | dev/fundamentals/creating-helpful-content |
+| 21 | Who / How / Why: บอกว่าใครเขียน ทำยังไง ทำเพื่อใคร · ห้ามโปรไฟล์ปลอม | ⬜ บทความไม่มีผู้เขียน/วันที่ให้เห็นบนหน้า (JSON-LD author = Organization) → ก้อน 5: บล็อก "ใครเขียน" ของจริง (ร้าน / ช่อง YouTube ของเจ้าของ) — หน้าตาใหม่ = designer | dev/fundamentals/creating-helpful-content |
+| 22 | เรื่องสุขภาพ (YMYL) = แหล่งอ้างอิงและผู้รู้สำคัญขึ้น | ⬜ ยังไม่มีบทความเรื่องนี้ · กติการอบนี้: แหล่งรัฐ/งานวิจัยต่างประเทศ ทั้งสองด้าน (ไฟล์คำสั่งรอบ) | dev/fundamentals/creating-helpful-content |
+| 23 | ห้ามแกล้งทำให้ดูสด (เปลี่ยนวันที่โดยเนื้อไม่เปลี่ยน) · ห้ามผลิตหน้าจำนวนมากที่ไม่มีของจริง (scaled content abuse) | ✅ ยังไม่เคยทำ · กันไว้ในก้อน 5–6: ทุกบทความมีของจริงจากคลิป ไม่ทำบทความล้อคำค้น | dev/essentials/spam-policies · dev/fundamentals/using-gen-ai-content |
+| 24 | ลิงก์ภายใน: ทุกหน้าที่สำคัญมีหน้าอื่นลิงก์เข้า · ข้อความลิงก์บอกปลายทาง | ✅ ไม่มีหน้ากำพร้าจริง (เมนูบน/ล่างลิงก์ทุกหมวด/แบรนด์) · 🔧 หน้าสินค้า 24 หน้าไม่ลิงก์หน้าแบรนด์ตัวเองในเนื้อหา · /brands/esko-bar ลิงก์เข้าจากเนื้อหา 2 · pod-kits → pod-systems 0 · /e-liquid 1 → ก้อน 3/6 | dev/crawling-indexing/links-crawlable |
+| 25 | ลิงก์จากเว็บอื่น: ได้มาเองตามธรรมชาติ · ห้ามซื้อ/แลก/เครือข่าย | ⬜ หาแหล่งปลอดภัยไม่เจอ (ข้อ 3) · ทางที่ถูกกติกาและทำได้ = เนื้อหาที่คนอยากอ้างถึง (ก้อน 5–6) + คนค้นชื่อร้านจากคลิป | dev/essentials/spam-policies · dev/fundamentals/seo-starter-guide |
+| 26 | Search Console: ขอ index หน้าใหม่/หน้าที่แก้ (คิวละหน้า มีโควตาต่อวัน ส่งซ้ำไม่ช่วย) | ⬜ ก้อน 7 | sc/9012289 |
+
+**Google บอกเองว่าไม่ช่วยอันดับ:** meta keywords · priority/changefreq ใน sitemap · ความยาวบทความ (ตั้งเป้าจำนวนคำ = สัญญาณไม่ดี) · ลำดับ/จำนวนหัวข้อ ·
+E-E-A-T ไม่ใช่ตัวคะแนนตรง (แต่ความน่าเชื่อถือสำคัญที่สุด) · CWV คะแนนเต็มไม่การันตีอันดับ · ขอ index ซ้ำไม่เร่ง
+
+### 7.4 ต้องปรับ / ยังไม่ทำ — เรียงตามผลกระทบ (กฎกลาง §7)
+
+1. **เนื้อหาสีเขียว + ประสบการณ์จริง (ข้อ 20–22)** — ช่องว่างที่ใหญ่ที่สุดของเว็บเทียบกับเกณฑ์ Google และเป็นของที่คู่แข่งไม่มี → ก้อน 5–6
+2. **หน้าเจ้าของคำที่ติดหน้า 1 แต่ไม่มีคนกด / บาง (ข้อ 11–13 · 20)** — esko bar 0/87 อันดับ 3.6 · joiway 3/180 · infy 20k 2/67 อันดับ 12.6 · salthub H1 → ก้อน 3
+3. **หน้าแย่งคำกันเอง (ข้อ 11)** — /about ↔ หน้าแรก · /brands/uwell ↔ pod-systems · meta แบรนด์ iqos/relx/wotofo → ก้อน 3 (ชุดเสนอผ่าน seo-auditor ก่อนลง)
+4. **ลิงก์ภายใน + ฝังคลิป (ข้อ 19 · 24)** → ก้อน 3/6
+5. **ความเร็วมือถือ LCP ~10 วิ (ข้อ 8)** — ดีต่อลูกค้าแน่ แต่ผลต่ออันดับตอนนี้น้อย เพราะ Google ยังไม่มีข้อมูลผู้ใช้จริงของเว็บเรา [เชื่อว่า] → ก้อน 4 · ที่เหลือของก้อน 4: dateModified/วันที่บนหน้า · brand ใน JSON-LD 4 หน้า · URL 5xx/crawl-ไม่เก็บ 3 รายการ · JSON-LD หน้าบริการ 4 หน้า
+
+---
+
+## 8. เนื้อหาสีเขียว — หัวข้อจากช่อง YouTube ของร้าน → บทความบนเว็บ (รอบ SEO ฉ ก้อน 2 · 12/10)
+
+> "เนื้อหาสีเขียว" (คำเจ้าของ 12/10) = คลิปให้ความรู้ของร้าน ไม่ใช่รีวิวรุ่น → เขียนใหม่เป็นบทความบนเว็บ (ไม่ถอดคำพูด) ฝังคลิปต้นทาง ลิงก์ไปหน้าเจ้าของคำ
+> ช่อง (อ่าน 12/10 จากหน้า /videos ของ YouTube · `_incoming/seo-f/yt/*.tsv`): OKM YARZ `@OKMYARZ` 109 คลิป · OKAMI `@OKM_24` 94 + shorts 23 · POD SYSTEM OKAMI II
+> `@PODSYSTEM-OKAMI-II` 74 + shorts 22 · ชื่อ "OKM 24" กับ "OKAMI" ที่เจ้าของให้มา = ช่องเดียวกัน (`@OKM_24` ชื่อช่อง OKAMI) [ตรวจแล้ว] ·
+> หลักฐานคนค้น: autocomplete Google (`_incoming/seo-f/yt/ac-1.txt`) · Trends ไทย 12 เดือน (`_incoming/seo-f/trends-1012.txt` · หัวพอต = 100) · GSC 250 คำ ·
+> ข้อความในคลิปอ่านได้จากปุ่ม "แสดงข้อความถอดเสียง" ของ YouTube (เบราว์เซอร์ในแอป · คำบรรยายอัตโนมัติ — ชื่อรุ่น/ตัวเลขต้องเช็กกับผู้ผลิตก่อนใช้)
+
+| # | หัวข้อบทความ | คนค้น (หลักฐาน) | คลิปต้นทาง (id) | ใหม่ / ปรับของเดิม | ลิงก์ไปหน้าเจ้าของคำ |
+|---|---|---|---|---|---|
+| 1 | **พอตไหม้** ดูยังไง เกิดจากอะไร แก้ยังไง | autocomplete 9 แบบ (แก้ยังไง · ดูยังไง · เกิดจากอะไร · ไหม้เร็ว · ไหม้ไว) · Trends ~0.9 | f86AJRNHX4U (ติด #4 "คอยล์พอต") · 8BZZ-8LJogs · nh4vVnHMshQ · e_r5uqEC2LQ | ใหม่ | /products/pods-cartridges · /products/coils-accessories |
+| 2 | **พอตรั่ว / หัวพอตรั่ว** สาเหตุและวิธีแก้ | autocomplete 6 แบบ (หัวพอตรั่วแก้ยังไง · เกิดจากอะไร · พอตน้ำยารั่ว) · Trends ~0.9 | KqrsdAvi5qM · sWzhjV-sK1U · XCJi85tGZ1o · short ZU9yzFDF4Yg | ใหม่ | /products/pods-cartridges |
+| 3 | **พอตดูดไม่ขึ้น ไฟกะพริบ** | autocomplete 7 แบบ · Trends ~1.6 · GSC อันดับ 54 | MlQjKTSls-0 (ฝังอยู่แล้ว) · htDb9aXyIqI · LIvXtXCsjqI · mLOBUSRpsfw | ปรับ `fixing-no-draw-and-blinking-light` | /products/pods-cartridges · หน้ารุ่น |
+| 4 | **ชาร์จพอต** กี่นาที · ชาร์จไม่เข้า · ข้ามคืนได้ไหม · Fast Charge | autocomplete 10+ แบบ (ชาร์จพอตกี่นาที · ชาร์จไม่เข้า · ไฟกระพริบ) · Trends ~32 [ปนคำ "พอร์ต"] | PlK5TxATFlU · ANpE7sf-80w · j9MUgpjhUbs · LQ7y3MtDgQI · DP8NZUCpD2g | ปรับ `battery-care-and-charging` | /products/pod-systems · /products/pod-kits |
+| 5 | **หัวพอตใช้ได้กี่วัน** + วิธียืดอายุพอต | autocomplete (หัวพอตใช้ได้กี่วัน · พอต 1 หัวใช้ได้กี่วัน) | e_r5uqEC2LQ · X2iA2oKXUGU · -JvtKWLx3OY · Nwf7ZHo-Qos · xXTw_JsMK3Y · VKRP3OlLqBc · i0DgETDQeUA | ปรับ `coil-and-pod-maintenance` | /products/pods-cartridges |
+| 6 | **พอตใช้แล้วทิ้ง** ความจริงที่ควรรู้: ตัวเลขบนจอเชื่อได้แค่ไหน · พัฟเยอะใช้นานจริงไหม · ช่วงท้ายกลิ่นจาง | autocomplete (ใช้ได้กี่วัน) · Trends พอตใช้แล้วทิ้ง ~30 | tEqKAnqmCjs · 4DoUt2ABgmU · n0FCGY43RhQ · bfAWZ3_pln4 · 5r9jHv3CdKU · 0R0mLimgZds · Dtw8yd5EcPQ | ปรับ `how-long-a-disposable-lasts` | /products/disposables |
+| 7 | **มือใหม่เลือกพอต** ดูอะไรก่อน · งบเท่าไหร่ | GSC "pod system ยี่ห้อไหนดี/แนะนำ" อันดับ 62–87 · คลิปเราครองกล่องคลิป 4/4 | nv46XcTCVXc · cuse7nkM5eY · 0dDQ4q8KaNw · e8AWg6Xc8JM · wTLybr4_Gqw | ปรับ `choosing-your-first-pod-system` | /products/pod-systems · /products/disposables |
+| 8 | **Salt Nic กับ Freebase** ต่างกันยังไง · นิโคติน 3% กับ 5% · PG/VG | autocomplete (salt nic กับ freebase ต่างกันอย่างไร · นิโคติน 3 กับ 5 ต่างกันยังไง) · Trends salt nic ~0.2 | mY4M61mKQjc · nGdMbdLuFkk · MM_PibfhO0s · i5SPcPp9HAE · 1uuJrjCzFBE · QrZxZDd9bmU | ใหม่ (head ห้ามคำ "น้ำยา" — HANDOFF §18) | /e-liquid |
+| 9 | **ค่าโอห์ม วัตต์ แอร์โฟลว์** ปรับแล้วฟีลเปลี่ยนยังไง | GSC mtl/dtl อันดับ 35–99 (ต่างชาติ) · autocomplete "ค่าโอห์มคืออะไร" (ปนไฟฟ้า) | 3MDOf6E4s3A · 8G8wiTmGrYk · cPYybXJ4zzA · kMCAzQ0H3us · 7o0JGxsHfAg · HX7i9eqk_dg | ปรับ `choosing-wattage-and-airflow` + `understanding-mtl-vs-dtl` | /products/pod-systems · /products/coils-accessories |
+| 10 | **พอตขึ้นเครื่องบินได้ไหม** | autocomplete แรง (… ได้ไหม 2569 ล่าสุด · พกพอตขึ้นเครื่องบินได้ไหม) · Trends ต่ำกว่าเกณฑ์ | nvyDoYy_1U8 · BhndRb2tfSM | ใหม่ — ข้อเท็จจริงจากกติกาสายการบิน/IATA เท่านั้น [รอเจ้าของ: เรื่องนี้แตะกฎของประเทศปลายทาง] | /products/disposables |
+| 11 | **เลิกบุหรี่ด้วยพอต** ประสบการณ์ของเจ้าของ + ข้อมูลรัฐ/งานวิจัยต่างประเทศทั้งสองด้าน | Trends "เลิกบุหรี่" ~150 (สูง แต่หน้า 1 เป็นหน่วยงานสุขภาพ) | n7nS4LnEK8g (วิธีเลิกบุหรี่ไฟฟ้า) | ใหม่ — กติกาสุขภาพของไฟล์คำสั่งรอบ · ประโยคทั้งหมดเจ้าของเคาะก่อนขึ้น | / (ไม่ลิงก์ขาย) |
+
+**กลุ่มเรื่อง (topic cluster) ที่เสนอ:** ข้อ 1–5 = "ปัญหาและการดูแลพอต" (หน้าหลักของกลุ่ม = คู่มือดูแลหัวพอต ข้อ 5 · ลิงก์ไปมาครบวง) — ตรงคีย์ "หัวพอต" ที่คนค้นสูงสุดในกลุ่มสินค้า (Trends หัวพอต 100 ·
+ร้านพอต ~112 · marbo ~108) และใกล้การซื้อ (พอตไหม้/รั่ว = ต้องซื้อหัวใหม่) · ข้อ 6–7 = "เลือกพอต" · ข้อ 8–9 = "ความรู้เชิงลึก" · ข้อ 10–11 = เรื่องเฉพาะที่ต้องให้เจ้าของเคาะ
+
+**คลิปที่ไม่ใช่สีเขียว (รีวิว/ข่าวรุ่น) ไม่อยู่ในตารางนี้** — ใช้ฝังในหน้าสินค้าของรุ่นนั้น (ข้อ 4 ตาราง "ควรฝังคลิปเพิ่ม") ไม่ใช่บทความ
+
+**เจ้าของเคาะ 12/10 (การ์ด):** ชุดแรก (ก้อน 5) = กลุ่ม "ปัญหาและการดูแลพอต" ข้อ 1–5 · ข้อ 10 เครื่องบิน = เอา เฉพาะกติกาสายการบิน (ไม่ลงรายละเอียดกฎหมายประเทศปลายทาง ให้ผู้อ่านเช็กเอง) · ชุด 2 (ก้อน 6) = ข้อ 6–11 ตามลำดับ

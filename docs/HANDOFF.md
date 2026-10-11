@@ -23,7 +23,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Banana Pro Unlimited ended 11/10 00:00 → free renders only on the "365 Unlimited" models (item 3f); NO credit spend without the
   owner's yes in chat (owner 11/10 — overrides IMAGE_SPEC §0 item 7 "use credits without asking" until the owner says otherwise). Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
+2 ahead of main (12/10, round SEO ฉ = item 3h): `seo-f-batch1` = docs PR #446 (batches 1–2 + this §16; main merged in 271e2887,
+  checks re-running after the $15 Actions budget — docs-only, no checker, merge when green) · `seo-f-b3` 08465cce = batch 3 copy,
+  pushed, no PR, NOT checked (`git log --oneline origin/main..seo-f-b3`). Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
@@ -81,10 +83,38 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Open, outside the round: home en/zh 16 Thai nodes (offered as its own task) · owner may send a Mac screenshot (closing OK label
   unconfirmed) · LINE OA rich menu / pinned post / box card (owner: later) · Search Console check in 2–4 weeks that no okami-24.com
   URL shows instead of .store. Worktree `_incoming/wt-dns` removable (housekeeping).
-3h READY, NOT OPEN 12/10 — round "SEO ฉ" (owner 12/10: "หน้า 1 ทุกคีย์ · ปล่อยพลังเต็มที่" + "เนื้อหาสีเขียว" = knowledge articles from
-  the owner's YouTube) = `docs/rounds/รอบ-SEO-ฉ-อัดฉีดเต็ม-หน้า1-เนื้อหาสีเขียว-12-10.txt` (7 batches; already in git — round-open step 1
-  copy is done). Opens in ITS OWN new chat (owner opens it; one chat = one round) with skill round-open; 3g stays in its chat
-  (3g closed 12/10). Next GSC reads 22/10 + 01/11 fall inside it (SEO_BASELINE).
+3h OPEN 12/10 (own chat) — round "SEO ฉ" = `docs/rounds/รอบ-SEO-ฉ-อัดฉีดเต็ม-หน้า1-เนื้อหาสีเขียว-12-10.txt` (owner: page 1 for every
+  key + "green" knowledge articles from the shop's YouTube). Opened on main dcc4ca7e. Owner rulings at open (12/10, cards):
+  channels = OKM YARZ @OKMYARZ · OKAMI @OKM_24 (= "OKM 24") · POD SYSTEM OKAMI II @PODSYSTEM-OKAMI-II · Friday pulls topics from
+  YouTube, showed the green topic list first (done) · THAI FIRST, translate later (`thaiOnly: true`; en/zh share the URL, no
+  hreflang → no SEO effect) · green-article voice: natural, flowing, a few fitting jokes (owner OK'd the drafts' voice) ·
+  folder `รายงานจากแอดมิน แชท/` = product work, not this round · free tools only (no Ads account) · page-1 pages: keep the
+  ranking head, improve around it · health/quitting = neutral, foreign gov/research sources (#444/#445, in the round file).
+  GitHub Actions: budget $15/month (owner 12/10) — ONE docs PR per batch of work, or ride along a code PR (LESSONS 32).
+  Batches: 1 checklist DONE = SEO_LANDSCAPE §7 · 2 keyword map DONE = §0.6 + §8 green topics (owner: set 1 = topics 1–5
+  "problems + pod care", airplane = airline rules only, set 2 = 6–11) → both in docs PR #446 (branch `seo-f-batch1`).
+  3 = branch `seo-f-b3` commit 08465cce (pushed, NO PR yet, NOT checked by checker): pods-cartridges
+  + coils-accessories ledes/metas, coils title "คอยล์พอต", iqos/relx/wotofo metas brand-level, salthub H1 "SALTHUB M Bar (Marbo)"
+  (BRAND_H1), /e-liquid H1. Paper set `_incoming/seo-f/b3-head-set.md` (thai-copy + seo-auditor 8/8 PASS; clip rows dropped —
+  COLLECTION_VIDEOS only takes page-1 clips). Gates done: tsc 0 · eslint 0 · verify:catalog 31/31 · head-audit test server vs
+  live = exactly 9 field diffs on the 7 pages, 106 pages unchanged · scan.js PASS 0/113 [ตรวจแล้ว]. Hydration + wordbreak ran on
+  their DEFAULT page lists, not the 7 touched pages (the path args did not reach them) → rerun on the 7 pages; the wordbreak flags
+  printed were pre-existing guide flags (e.g. «ไฟจะ» on fixing-no-draw, HANDOFF item 5). Still to do for 3: those two reruns ·
+  tier-B before/after shots of the 2 H1s (salthub, /e-liquid) at 390/1440 (skill tier-b-proof) · checker · PR (merge main first)
+  · SEO_BASELINE: log the salthub H1 as a variable of watch row 4. Test server 3412 = build of 08465cce, left UP (stop:
+  `node scripts/test-server.js stop`).
+  NEXT STEP (first): finish batch 3 as above → open its PR → checker → merge. Then batch 5 coding from b5-articles-draft.md.
+  4 technical (B): mobile LCP 10.3–11.6 s lab on 5 pages (render delay, suspect AgeGate/hydration — not proven) · per-article
+  dateModified (all 21 articles share the family date = fake freshness; also blocks the author/date block) · brand on muro ×3 +
+  pod-180 JSON-LD · GSC 5xx 1 + crawled-not-indexed 2 URLs.
+  5 green set 1: drafts A "พอตไหม้" (fixing-a-burnt-pod) + B "หัวพอตรั่ว" (fixing-a-leaking-pod), owner answers, research
+  verdicts and the exact wording changes = `_incoming/seo-f/b5-articles-draft.md` (READ IT FIRST). Owner: move clip f86AJRNHX4U
+  to A, coil-and-pod-maintenance gets e_r5uqEC2LQ · author/date block = designer option C (dates "9 ต.ค. 2026"; "เผยแพร่" only
+  until per-article dates exist) · shop numbers 1–2 s / 50/50 / 80–90% OK. Still to draft: topics 3–5 (reworks of
+  fixing-no-draw, battery-care, coil-and-pod-maintenance). Transcripts `_incoming/seo-f/yt/tx/` (method: `yt/grab.js` in the app
+  browser + `yt/recv.js` on 127.0.0.1:47811; clips without captions = description only).
+  Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
+  Next GSC reads 22/10 (rows 1–8) + 01/11 (rows 9–10).
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
   pod-systems title/meta/H1 unchanged [ตรวจแล้ว]. Owner 09/10: protect what ranked — pod-systems head byte-identical.
