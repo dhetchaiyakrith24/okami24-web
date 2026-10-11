@@ -645,3 +645,12 @@ node_modules ล้ม → robocopy node_modules เข้า worktree แล้
 ได้ผล: ส่งไฟล์เข้าแถบเบราว์เซอร์ของแอปด้วย base64 ทีละ 3 KB + เช็ก sha256 ทีละท่อน (ส่งก้อนเดียวพังทุกครั้ง) · ใน Chrome ใช้ file_upload กับปุ่ม type=file ในแผงอัปโหลด ·
 ตัวฟรี "365 Unlimited" (Seedream 4.5) เปิดสวิตช์ได้ ปุ่มขึ้น "Unlimited" และเครดิตไม่ลด · ดูผลด้วย show_generations ของ MCP (อ่านอย่างเดียว)
 **ใช้ซ้ำเมื่อไหร่:** ทุกครั้งที่จะใช้เงิน/เครดิต — ถ้าถามเจ้าของค้างอยู่ ห้ามตัดสินเองด้วยกฎเก่า รอคำตอบ (HANDOFF §16 3f · เจ้าของ 11/10) · เช็กปุ่ม Generate ว่าขึ้น "Unlimited" ก่อนกดทุกครั้ง
+
+## 32. โควตา GitHub Actions หมดกลางเดือน — merge ไม่ได้ทั้งรีโป (12/10 · 281 PR ใน 12 วัน · เพดาน $0)
+
+ด่านทุกตัวไม่เริ่มรัน: "recent account payments have failed or your spending limit needs to be increased" — สาเหตุจริงคือโควตาฟรีของ GitHub Pro เดือนนั้นหมด
+($19.98) และ budget ของ Actions = $0 (หยุดเมื่อถึงเพดาน) · ทุก job ถูกปัดเป็นนาทีเต็ม: PR เอกสารล้วน 1 อัน ≈ 5 นาที (decide 2 · copy 3) ·
+PR ที่แตะเว็บ ≈ 11 นาที (checks ~3 นาที × 2 รอบ PR/main + deploy) · วันเดียวแชทนี้เปิด PR เอกสาร 7 อัน
+แก้: เจ้าของเลือก budget Actions $15/เดือน (12/10) · central-rules-copy รัน push เฉพาะ main (PR ใช้รอบ pull_request ที่เป็นด่านบังคับอยู่แล้ว)
+**ใช้ซ้ำเมื่อไหร่:** ทุกครั้งที่จะเปิด PR เอกสาร (HANDOFF · รอพี่ตรวจ · RECOVERY) — รวมไว้ใน PR เดียวต่อก้อนงาน หรือใส่ไปกับ PR งานที่กำลังจะเปิด
+ไม่เปิดทีละเรื่อง (เจ้าของ 12/10 "ทำข้อลดด้วย") · ด่านไม่เริ่มรันเลย (job 0 step) = อ่าน annotation ของ check-run ก่อนเดา (`gh api …/check-runs/<id>/annotations`)

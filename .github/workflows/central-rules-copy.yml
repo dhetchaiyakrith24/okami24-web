@@ -6,6 +6,7 @@ name: central-rules-copy
 on:
   pull_request:
   push:
+    branches: [main]   # PR branches are checked by the pull_request run; a second run per push only cost minutes (12/10)
   workflow_dispatch:
   schedule:
     - cron: "0 1 * * 1"   # Mondays 01:00 UTC = 08:00 Bangkok
