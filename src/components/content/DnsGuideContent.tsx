@@ -2,7 +2,7 @@
 
 import { CONTACT } from "@/data/contact";
 import { Button } from "@/components/ui/Button";
-import { InfoCard, NumberedSteps, PhaseLabel, useServiceCopy } from "@/components/content/ServicePage";
+import { InfoCard, NumberedSteps, PhaseLabel, StepShot, useServiceCopy } from "@/components/content/ServicePage";
 import { DNS_GUIDE } from "@/i18n/dns-guide-copy";
 
 /**
@@ -53,6 +53,7 @@ export function DnsGuideContent() {
           {m.note && <p className="text-sm leading-relaxed text-foreground-muted">{m.note}</p>}
           <div className="flex flex-col gap-1.5 border-t border-surface-border-soft pt-3 text-sm leading-relaxed text-foreground-dim">
             {m.undo && <p>{m.undo}</p>}
+            {m.undoImage && <StepShot image={m.undoImage} />}
             <p>
               {c.sourceLabel}{" "}
               {m.sources.map((s, si) => (

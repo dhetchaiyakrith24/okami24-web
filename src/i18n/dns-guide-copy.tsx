@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { Step } from "@/components/content/ServicePage";
+import type { Step, StepImage } from "@/components/content/ServicePage";
 import { B, type ServiceCopy } from "./service-pages/shared";
 
 /**
@@ -16,6 +16,12 @@ function V({ children }: { children: ReactNode }) {
   return <span className="font-mono text-foreground">{children}</span>;
 }
 
+/** Words that must stay on one line at 390 / 1440 (scripts/wordbreak-scan.js + a read of the shots, 11/10) — a span,
+ *  not an invisible character (raw U+00A0 / U+2060 in source fails scripts/thai-raw-chars-check.js). */
+function N({ children }: { children: ReactNode }) {
+  return <span className="whitespace-nowrap">{children}</span>;
+}
+
 export interface DnsMethodCopy {
   id: "android" | "iphone" | "chrome" | "computer";
   chip: string;
@@ -26,6 +32,7 @@ export interface DnsMethodCopy {
   steps: Step[];
   note?: ReactNode;
   undo?: ReactNode;
+  undoImage?: StepImage;
   sources: { label: string; href: string }[];
 }
 
@@ -51,11 +58,36 @@ const SRC = {
   microsoft: { label: "Microsoft Support", href: "https://support.microsoft.com/en-us/windows/essential-network-settings-and-tasks-in-windows-f21a9bbc-c582-55cd-35e0-73431160a1b9" },
 };
 
+/** The app's official site (verified source, and the 2nd Google result on the owner's phone 11/10 — the page links it
+ *  directly instead of saying "pick the 2nd result", which moves). */
+function Ext() {
+  return (
+    <a href="https://one.one.one.one/" target="_blank" rel="noopener noreferrer nofollow" className="whitespace-nowrap font-medium text-foreground underline decoration-foreground-dim underline-offset-4 transition-colors hover:text-ember hover:decoration-ember">
+      one.one.one.one
+    </a>
+  );
+}
+
+/** The owner's own iPhone screenshots (Thai iOS, 11/10, originals in _incoming/dns-shots/iphone/), cropped by
+ *  _incoming/dns-round/crop-iphone.js — no status bar, no profile photo. One set for every language (designer 11/10);
+ *  only the alt text is translated. */
+const shot = (file: string, height: number, alt: Record<"th" | "en" | "zh", string>) => {
+  const base = { src: `/assets/guides/dns/${file}`, width: 480, height };
+  return { th: { ...base, alt: alt.th }, en: { ...base, alt: alt.en }, zh: { ...base, alt: alt.zh } };
+};
+const SHOT = {
+  site: shot("iphone-1-site.webp", 634, { th: "หน้าเว็บ one.one.one.one ที่มีปุ่ม App Store", en: "The one.one.one.one website with its App Store button", zh: "one.one.one.one 网站及其 App Store 按钮" }),
+  get: shot("iphone-2-get.webp", 167, { th: "แอป 1.1.1.1: Faster Internet ใน App Store กับปุ่มรับ", en: "1.1.1.1: Faster Internet in the App Store with the Get button", zh: "App Store 中的 1.1.1.1: Faster Internet 与获取按钮" }),
+  accept: shot("iphone-3-accept.webp", 745, { th: "หน้าเงื่อนไขของแอป 1.1.1.1 กับปุ่ม Accept", en: "The 1.1.1.1 app's privacy screen with the Accept button", zh: "1.1.1.1 应用的隐私页面与 Accept 按钮" }),
+  switch: shot("iphone-4-switch.webp", 453, { th: "สวิตช์ WARP สีส้มในแอป 1.1.1.1", en: "The orange WARP switch in the 1.1.1.1 app", zh: "1.1.1.1 应用中的橙色 WARP 开关" }),
+  disable: shot("iphone-undo-disable.webp", 683, { th: "เมนูปิด 1.1.1.1 ที่มีปุ่ม Disable", en: "The 1.1.1.1 turn-off menu with the Disable button", zh: "1.1.1.1 的关闭菜单与 Disable 按钮" }),
+};
+
 export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
   th: {
     intro: [
       "ถ้าวันไหนเปิด okami24.store ไม่ขึ้น ลองเปลี่ยน DNS ของเครื่องดูก่อน DNS คือสมุดที่อยู่ที่มือถือหรือคอมใช้หาว่าเว็บแต่ละเว็บอยู่ที่ไหน เปลี่ยนได้เองจากในเครื่อง และเปลี่ยนกลับได้เสมอ",
-      "เลือกวิธีตามเครื่องที่ใช้ด้านล่างได้เลย ถ้าทำแล้วยังเปิดไม่ขึ้น ทักไลน์ @okm24 แอดมินช่วยดูให้ได้",
+      <>เลือกวิธีตามเครื่องที่ใช้ด้านล่างได้เลย ถ้าทำแล้ว<N>ยังเปิดไม่ขึ้น</N> ทักไลน์ @okm24 แอดมินช่วยดูให้ได้</>,
     ],
     jumpLabel: "เลือกวิธีตามเครื่องที่ใช้",
     sourceLabel: "ที่มา:",
@@ -68,8 +100,8 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
         intro: "ใช้ได้กับ Android 9 ขึ้นไป",
         steps: [
           { title: "เปิดการตั้งค่า", body: <>เปิดแอป <B>การตั้งค่า</B> แล้วแตะ <B>เครือข่ายและอินเทอร์เน็ต</B></> },
-          { title: "หาเมนู DNS ส่วนตัว", body: <>แตะ <B>DNS ส่วนตัว</B> ถ้าหาไม่เจอ ลองพิมพ์ “DNS ส่วนตัว” ในช่องค้นหาของหน้าการตั้งค่า</> },
-          { title: "พิมพ์ dns.google", body: <>เลือก <B>ชื่อโฮสต์ของผู้ให้บริการ DNS ส่วนตัว</B> แล้วพิมพ์ <V>dns.google</V></> },
+          { title: "หาเมนู DNS ส่วนตัว", body: <>แตะ <B>DNS ส่วนตัว</B> ถ้าหาไม่เจอ ลองพิมพ์ <N>“DNS ส่วนตัว”</N> ในช่องค้นหาของหน้าการตั้งค่า</> },
+          { title: "พิมพ์ dns.google", body: <>เลือก <B>ชื่อโฮสต์ของผู้ให้บริการ DNS ส่วนตัว</B> <N>แล้วพิมพ์ <V>dns.google</V></N></> },
           { title: "บันทึกแล้วเปิดเว็บอีกครั้ง", body: <>แตะ <B>บันทึก</B> แล้วลองเปิด okami24.store อีกครั้ง</> },
         ],
         note: "ชื่อและตำแหน่งของเมนูอาจต่างกันไปตามยี่ห้อมือถือ ถ้าหาไม่เจอ ใช้ช่องค้นหาตามขั้นที่ 2 ได้เลย และถ้าเปิดแอป VPN หรือแอปที่เปลี่ยน DNS อยู่ การตั้งค่านี้จะยังไม่มีผล",
@@ -82,12 +114,13 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
         title: "ใช้แอป 1.1.1.1 บน iPhone",
         network: { everywhere: false, text: "ใช้แอปฟรีของ Cloudflare" },
         steps: [
-          { title: "ดาวน์โหลดแอป", body: "ค้นหา “1.1.1.1: Faster Internet” ใน App Store แล้วติดตั้ง" },
-          { title: "เปิดแอปและยอมรับข้อตกลง", body: "เปิดแอปขึ้นมา แล้วยอมรับข้อตกลงการใช้งานที่แอปแสดง" },
-          { title: "ติดตั้งโปรไฟล์ VPN", body: "แอปจะขอติดตั้งโปรไฟล์ VPN และ iPhone จะถามว่าให้เพิ่มการตั้งค่า VPN ไหม ให้ยืนยันเพื่อไปต่อ" },
-          { title: "เปิด WARP", body: "เปิดสวิตช์ WARP จนขึ้นว่า “Connected” แล้วลองเปิด okami24.store อีกครั้ง" },
+          { title: "เปิดเว็บของแอป 1.1.1.1", body: <>เปิด <Ext /> แล้วแตะ <B>App Store</B> ถ้าค้นหาใน Google ให้เลือกผลที่เป็นเว็บ <N>one.one.one.one</N></>, image: SHOT.site.th },
+          { title: "ติดตั้งแอป", body: <>แอปชื่อ “1.1.1.1: Faster Internet” ของ Cloudflare แตะ <B>รับ</B> เพื่อติดตั้ง แล้วแตะ <B>เปิด</B></>, image: SHOT.get.th },
+          { title: "ยอมรับเงื่อนไข", body: <>แตะ <B>Next</B> แล้วแตะ <B>Accept</B> ถ้า iPhone ถามว่าให้เพิ่มการตั้งค่า VPN ไหม ให้ยืนยันเพื่อไปต่อ</>, image: SHOT.accept.th },
+          { title: "เปิดสวิตช์ WARP", body: <>แตะสวิตช์ให้เป็นสีส้ม รอจนขึ้นว่า “Connected” แล้วลองเปิด okami24.store <N>อีกครั้ง</N></>, image: SHOT.switch.th },
         ],
-        undo: "อยากเลิกใช้ ลบแอป 1.1.1.1 ออกจากเครื่องได้ตามปกติ",
+        undo: <>อยากปิด แตะสวิตช์อีกครั้ง แล้วเลือก <B>Disable</B></>,
+        undoImage: SHOT.disable.th,
         sources: [SRC.cloudflareIos],
       },
       {
@@ -99,10 +132,10 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
         steps: [
           { title: "เปิดเมนูของ Chrome", body: <>กด <B>เพิ่มเติม</B> ที่มุมขวาบน แล้วกด <B>การตั้งค่า</B></> },
           { title: "ไปที่ความเป็นส่วนตัว", body: <>กด <B>ความเป็นส่วนตัวและความปลอดภัย</B></> },
-          { title: "เปิด DNS ที่ปลอดภัย", body: <>ในส่วน <B>ความปลอดภัย</B> ให้เปิด <B>ใช้ DNS ที่ปลอดภัย</B> ถ้าใช้คอม ให้กดเปิดส่วน <B>ขั้นสูง</B> ก่อน แล้วจะเห็นตัวเลือกนี้</> },
+          { title: "เปิด DNS ที่ปลอดภัย", body: <>ในส่วน <B>ความปลอดภัย</B> ให้เปิด <B>ใช้ DNS ที่ปลอดภัย</B> ถ้าใช้คอม ให้กดเปิดส่วน <B>ขั้นสูง</B> ก่อน แล้วจะเห็น<N>ตัวเลือกนี้</N></> },
           { title: "เลือกผู้ให้บริการ", body: "เลือกผู้ให้บริการรายอื่นจากรายการที่ Chrome มีให้ แล้วลองเปิด okami24.store อีกครั้ง" },
         ],
-        note: "ถ้าเป็นเครื่องของที่ทำงาน หรือเครื่องที่ตั้งการควบคุมโดยผู้ปกครองไว้ อาจใช้ตัวเลือกนี้ไม่ได้",
+        note: <>ถ้าเป็นเครื่องของที่ทำงาน หรือเครื่องที่ตั้งการควบคุมโดย<N>ผู้ปกครอง</N>ไว้ อาจใช้ตัวเลือกนี้ไม่ได้</>,
         undo: <>อยากเปลี่ยนกลับ ปิด <B>ใช้ DNS ที่ปลอดภัย</B> ในหน้าเดิม</>,
         sources: [SRC.chromeTh],
       },
@@ -112,10 +145,10 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
         title: "ตั้งค่า DNS บนคอม Windows 11",
         network: { everywhere: false, text: "มีผลเฉพาะคอมเครื่องนี้ และเฉพาะเครือข่ายที่ตั้งค่าไว้" },
         steps: [
-          { title: "เปิดการตั้งค่าเครือข่าย", body: <>เปิด <B>การตั้งค่า</B> คลิก <B>เครือข่าย & อินเทอร์เน็ต</B> แล้วคลิก <B>Wi-Fi</B></> },
-          { title: "เลือกเครือข่ายที่ใช้อยู่", body: <>คลิก <B>จัดการเครือข่ายที่รู้จัก</B> แล้วเลือกเครือข่ายที่ใช้อยู่ ถ้าต่อสายแลน ให้เลือก <B>Ethernet</B> แทน</> },
+          { title: "เปิดการตั้งค่าเครือข่าย", body: <>เปิด <B>การตั้งค่า</B> คลิก <B>เครือข่าย & อินเทอร์เน็ต</B> <N>แล้วคลิก <B>Wi-Fi</B></N></> },
+          { title: "เลือกเครือข่ายที่ใช้อยู่", body: <>คลิก <B>จัดการเครือข่ายที่รู้จัก</B> แล้วเลือกเครือข่าย<N>ที่ใช้อยู่</N> ถ้าต่อสายแลน ให้เลือก <B>Ethernet</B> แทน</> },
           { title: "แก้ไขการตั้งค่า DNS", body: <>คลิก <B>แก้ไข</B> ที่การตั้งค่า IP เลือก <B>ด้วยตนเอง</B> แล้วเปิด <B>IPv4</B></> },
-          { title: "ใส่ที่อยู่ของ Google", body: <>ช่อง <B>DNS ที่ต้องการ</B> ใส่ <V>8.8.8.8</V> ช่อง <B>DNS สำรอง</B> ใส่ <V>8.8.4.4</V> และตั้ง <B>DNS ผ่าน HTTPS</B> เป็น <B>เปิด (เทมเพลตอัตโนมัติ)</B></> },
+          { title: "ใส่ที่อยู่ของ Google", body: <>ช่อง <B>DNS ที่ต้องการ</B> ใส่ <V>8.8.8.8</V> ช่อง <N><B>DNS สำรอง</B></N> ใส่ <V>8.8.4.4</V> และตั้ง <B>DNS ผ่าน HTTPS</B> เป็น <B>เปิด (เทมเพลตอัตโนมัติ)</B></> },
           { title: "บันทึกแล้วเปิดเว็บอีกครั้ง", body: <>คลิก <B>บันทึก</B> แล้วลองเปิด okami24.store อีกครั้ง</> },
         ],
         note: "ใช้ Mac หรืออยากตั้งค่าที่เราเตอร์ในบ้าน ดูวิธีได้ในคู่มือ Google Public DNS ที่ลิงก์ไว้ด้านล่าง",
@@ -157,12 +190,13 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
         title: "Use the 1.1.1.1 app on iPhone",
         network: { everywhere: false, text: "Uses a free app from Cloudflare" },
         steps: [
-          { title: "Download the app", body: "Search for “1.1.1.1: Faster Internet” on the App Store and install it." },
-          { title: "Open it and accept the terms", body: "Open the app and accept the terms it shows you." },
-          { title: "Install the VPN profile", body: "The app asks to install a VPN profile, and your iPhone asks whether to add the VPN configuration. Confirm to continue." },
-          { title: "Turn on WARP", body: "Switch WARP on until it shows “Connected”, then open okami24.store again." },
+          { title: "Open the 1.1.1.1 website", body: <>Open <Ext /> and tap <B>App Store</B>. If you search on Google, pick the result for one.one.one.one.</>, image: SHOT.site.en },
+          { title: "Install the app", body: <>The app is “1.1.1.1: Faster Internet” by Cloudflare. Tap <B>Get</B> to install it, then <B>Open</B>.</>, image: SHOT.get.en },
+          { title: "Accept the terms", body: <>Tap <B>Next</B>, then <B>Accept</B>. If your iPhone asks whether to add the VPN configuration, confirm to continue.</>, image: SHOT.accept.en },
+          { title: "Turn on WARP", body: "Tap the switch so it turns orange, wait until it shows “Connected”, then open okami24.store again.", image: SHOT.switch.en },
         ],
-        undo: "To stop using it, simply delete the 1.1.1.1 app.",
+        undo: <>To turn it off, tap the switch again and choose <B>Disable</B>.</>,
+        undoImage: SHOT.disable.en,
         sources: [SRC.cloudflareIos],
       },
       {
@@ -232,12 +266,13 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
         title: "在 iPhone 上使用 1.1.1.1 应用",
         network: { everywhere: false, text: "使用 Cloudflare 的免费应用" },
         steps: [
-          { title: "下载应用", body: "在 App Store 搜索 “1.1.1.1: Faster Internet” 并安装。" },
-          { title: "打开并同意条款", body: "打开应用，同意应用显示的使用条款。" },
-          { title: "安装 VPN 描述文件", body: "应用会请求安装 VPN 描述文件，iPhone 会询问是否添加 VPN 配置，确认即可继续。" },
-          { title: "打开 WARP", body: "打开 WARP 开关，直到显示 “Connected”，然后重新打开 okami24.store。" },
+          { title: "打开 1.1.1.1 官网", body: <>打开 <Ext />，点 <B>“App Store”</B>。如果用 Google 搜索，请选择 one.one.one.one 的结果。</>, image: SHOT.site.zh },
+          { title: "安装应用", body: <>应用名为 Cloudflare 的 “1.1.1.1: Faster Internet”。点 <B>“Get”</B> 安装，再点 <B>“Open”</B>。</>, image: SHOT.get.zh },
+          { title: "同意条款", body: <>点 <B>“Next”</B>，再点 <B>“Accept”</B>。如果 iPhone 询问是否添加 VPN 配置，确认即可继续。</>, image: SHOT.accept.zh },
+          { title: "打开 WARP", body: "点开关使其变成橙色，等到显示 “Connected”，然后重新打开 okami24.store。", image: SHOT.switch.zh },
         ],
-        undo: "不想再用时，直接删除 1.1.1.1 应用即可。",
+        undo: <>想关闭时：再点一次开关，选择 <B>“Disable”</B>。</>,
+        undoImage: SHOT.disable.zh,
         sources: [SRC.cloudflareIos],
       },
       {

@@ -84,5 +84,11 @@ tool, not raw text: open the page before quoting exact wording on the site.
   IPv4 → "DNS ที่ต้องการ" / "DNS สำรอง" → "DNS ผ่าน HTTPS": ปิด / เปิด (เทมเพลตอัตโนมัติ) / เปิด (เทมเพลตด้วยตนเอง) → บันทึก.
 - 1.1.1.1 app is free [verified https://one.one.one.one/ · https://developers.cloudflare.com/warp-client/get-started/ios/]; undo
   = delete the app (Remove App → Delete App) [verified same]; "switch WARP off" and cellular coverage on iOS [not confirmed].
+- iPhone flow seen on the owner's own iPhone (Thai iOS, 4G, 2026-10-11 21:55, 9 screenshots in `_incoming/dns-shots/iphone/`)
+  [ตรวจแล้ว — first-hand]: Google "1.1.1.1" → 2nd result = one.one.one.one → "App Store" button → App Store "รับ" → "เปิด" →
+  app "What is WARP?" → **Next** → "Our Commitment to Privacy" (explains it adds a VPN configuration) → **Accept** → switch
+  "Disconnected" → tap → orange, "Connecting" · undo = tap the switch again → menu "Pause for 15 minutes / Pause for 1 hour /
+  Switch to DNS only mode / **Disable**". The iOS "Add VPN configuration" prompt itself was not in the set (kept conditional).
+  This replaces the unconfirmed "switch off" note above: undo = switch → Disable.
 - Private DNS on mobile data: only Cloudflare states it ("all networks, including cellular"); Google's pages do not [not confirmed
   Google-side] → cite Cloudflare for the network line.

@@ -18,6 +18,7 @@
 import { useMemo } from "react";
 import type { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { CONTACT } from "@/data/contact";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -64,9 +65,32 @@ export function PhaseLabel({ children }: { children: ReactNode }) {
   return <span className="label-mono block text-xs text-ember">{children}</span>;
 }
 
+/** A screenshot under a step (round "site unreachable", designer 11/10): the owner's own phone, cropped to the part to
+ *  tap. Optional — a step without one renders exactly as before on the five service pages. */
+export interface StepImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 export interface Step {
   title: string;
   body: ReactNode;
+  image?: StepImage;
+}
+
+export function StepShot({ image }: { image: StepImage }) {
+  return (
+    <Image
+      src={image.src}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+      sizes="240px"
+      className="mt-3 h-auto w-full max-w-[200px] rounded-2xl border border-surface-border-soft lg:max-w-[240px]"
+    />
+  );
 }
 
 /** Numbered steps — one column, number in an ember ring, title + at most two short lines. */
@@ -81,6 +105,7 @@ export function NumberedSteps({ steps, start = 1 }: { steps: Step[]; start?: num
           <div className="min-w-0">
             <h3 className="font-semibold text-foreground">{s.title}</h3>
             <div className="mt-1 text-sm leading-relaxed text-foreground-muted">{s.body}</div>
+            {s.image && <StepShot image={s.image} />}
           </div>
         </li>
       ))}
