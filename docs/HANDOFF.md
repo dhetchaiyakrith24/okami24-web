@@ -96,6 +96,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   src/i18n/dns-guide-copy.tsx th/en/zh. (b) iPhone Wi-Fi shots with the blurred network name (iphone-wifi-1-settings,
   iphone-wifi-2-info) look unprofessional — replace the blur with a clean overwrite in iOS style (e.g. "Home Wi-Fi", same
   size/colour as the iOS text on that row) via _incoming/dns-round/crop-wifi.js; NEW file names (Cloudflare caches by name).
+  (a+) Owner 12/10 on the intro paragraph ("DNS คือสมุดที่อยู่… แนะนำให้แคปหน้าจอ… ทักไลน์"): "ไม่เอา อธิบายเยอะแบบไม่จำเป็น
+  ลูกค้าไม่จำเป็นต้องรู้ แค่รู้ว่าแก้แล้วมีข้อดีมากกว่าข้อเสีย อันตรายไม่มี ปลอดภัยไหม ใช่" → drop the DNS explanation; top =
+  benefit + reassurance only. Friday's proposal told to the owner: reassure with checkable facts (free service of Google /
+  Cloudflare · switch back any time · deletes nothing on the phone) instead of the bare word "ปลอดภัย" (a promise + THAI_STYLE
+  avoids it) — the owner may still ask for "ปลอดภัย" outright; if he does, his word wins (chat > rules). LINE help stays in the
+  after-card at the bottom.
   Then: owner buys okami24.net + RECOVERY §6ก → Friday curls https://okami24.net (200, canonical .store) ·
   Render Hobby = 2 custom domains, +$0.25/mo each beyond (whether the auto-added www counts is unconfirmed) · then round-close.
   Owner may later send a Mac screenshot (closing OK label unconfirmed — page says "กดยืนยันเพื่อบันทึก").
