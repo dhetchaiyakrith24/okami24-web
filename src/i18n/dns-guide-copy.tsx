@@ -57,7 +57,8 @@ export interface DnsGroupCopy {
 
 export interface DnsGuideCopy {
   lead: ReactNode;
-  intro: ReactNode;
+  /** Optional small line under the lead (zh: the menu labels are the English UI). */
+  note?: string;
   jumpLabel: string;
   backToChoice: string;
   sourceLabel: string;
@@ -73,6 +74,7 @@ const SRC = {
   googleDns: { label: "Google Public DNS", href: "https://developers.google.com/speed/public-dns/docs/using" },
   cloudflareAndroid: { label: "Cloudflare", href: "https://developers.cloudflare.com/1.1.1.1/setup/android/" },
   cloudflareIos: { label: "Cloudflare", href: "https://developers.cloudflare.com/1.1.1.1/setup/ios/" },
+  cloudflareAndroidRemove: { label: "Cloudflare WARP", href: "https://developers.cloudflare.com/warp-client/get-started/android/" },
   appleTh: { label: "Apple Support", href: "https://support.apple.com/th-th/guide/mac-help/mh14127/mac" },
   apple: { label: "Apple Support", href: "https://support.apple.com/guide/mac-help/change-dns-settings-on-mac-mh14127/mac" },
   microsoftTh: { label: "Microsoft Support", href: "https://support.microsoft.com/th-th/windows/essential-network-settings-and-tasks-in-windows-f21a9bbc-c582-55cd-35e0-73431160a1b9" },
@@ -91,7 +93,7 @@ function Ext() {
 
 /** The owner's own iPhone screenshots (Thai iOS, 11/10; originals in _incoming/dns-shots/), cropped by
  *  _incoming/dns-round/crop-*.js to the strip that is tapped — no status bar, no name or photo, no neighbours' Wi-Fi,
- *  no IP addresses, home Wi-Fi name blurred. One set for every language; only the alt text is translated. */
+ *  no IP addresses, home Wi-Fi name overwritten as "Home Wi-Fi" in the iOS row style (_incoming/dns-round/wifi-v3/overwrite.js, owner 12/10). One set for every language; only the alt text is translated. */
 type Alt = Record<"th" | "en" | "zh", string>;
 const shot = (file: string, height: number, alt: Alt) => {
   const base = { src: `/assets/guides/dns/${file}`, width: 560, height };
@@ -102,8 +104,8 @@ const SHOT = {
   accept: shot("iphone-3-accept-v3.webp", 216, { th: "ปุ่ม Accept ในแอป 1.1.1.1", en: "The Accept button in the 1.1.1.1 app", zh: "1.1.1.1 应用中的 Accept 按钮" }),
   switch: shot("iphone-4-switch-v2.webp", 249, { th: "สวิตช์ WARP สีส้มในแอป 1.1.1.1", en: "The orange WARP switch in the 1.1.1.1 app", zh: "1.1.1.1 应用中的橙色 WARP 开关" }),
   disable: shot("iphone-undo-disable-v2.webp", 388, { th: "เมนูปิด 1.1.1.1 ที่มีปุ่ม Disable", en: "The 1.1.1.1 turn-off menu with the Disable button", zh: "1.1.1.1 的关闭菜单与 Disable 按钮" }),
-  wifi1: shot("iphone-wifi-1-settings.webp", 210, { th: "หน้าการตั้งค่าของ iPhone ที่มีแถว Wi-Fi", en: "iPhone Settings with the Wi-Fi row", zh: "iPhone 设置中的 Wi-Fi 一栏" }),
-  wifi2: shot("iphone-wifi-2-info.webp", 82, { th: "Wi-Fi ที่ต่ออยู่กับปุ่ม ⓘ", en: "The connected Wi-Fi with its ⓘ button", zh: "已连接的 Wi-Fi 及其 ⓘ 按钮" }),
+  wifi1: shot("iphone-wifi-1-settings-v3.webp", 210, { th: "หน้าการตั้งค่าของ iPhone ที่มีแถว Wi-Fi", en: "iPhone Settings with the Wi-Fi row", zh: "iPhone 设置中的 Wi-Fi 一栏" }),
+  wifi2: shot("iphone-wifi-2-info-v3.webp", 82, { th: "Wi-Fi ที่ต่ออยู่กับปุ่ม ⓘ", en: "The connected Wi-Fi with its ⓘ button", zh: "已连接的 Wi-Fi 及其 ⓘ 按钮" }),
   wifi3: shot("iphone-wifi-3-dns.webp", 118, { th: "แถวกำหนดค่า DNS", en: "The Configure DNS row", zh: "配置 DNS 一栏" }),
   wifi4: shot("iphone-wifi-4-manual-v2.webp", 480, { th: "หน้ากำหนดค่า DNS ที่เลือกกำหนดเอง มีเซิร์ฟเวอร์ 8.8.8.8 และ 8.8.4.4", en: "Configure DNS set to Manual with servers 8.8.8.8 and 8.8.4.4", zh: "配置 DNS 设为手动，服务器为 8.8.8.8 和 8.8.4.4" }),
 };
@@ -168,8 +170,7 @@ const M = { th: mocks("th", (k) => MOCK_ALT.th[k]), en: mocks("en", (k) => MOCK_
 
 export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
   th: {
-    lead: "ถ้าวันไหนเปิด okami24.store ไม่ขึ้น ลองเปลี่ยน DNS ในมือถือดูก่อน เปลี่ยนแล้วมีผลกับทุกเว็บ ไม่ใช่แค่เว็บของเรา",
-    intro: <>DNS คือสมุดที่อยู่ที่มือถือใช้หาว่าแต่ละเว็บอยู่ที่ไหน เว็บอื่นที่เคยเปิดไม่ขึ้นก็ลองเปิดอีกครั้งได้ และอยากเปลี่ยนกลับเมื่อไหร่ก็ทำได้ เลือกวิธีที่สะดวกด้านล่าง แนะนำให้แคปหน้าจอขั้นตอนของมือถือตัวเองเก็บไว้ด้วย ถ้าทำแล้ว<N>ยังเปิดไม่ขึ้น</N> ทักไลน์ @okm24 <N>แอดมิน</N>ช่วยดูให้ได้</>,
+    lead: <>ทุกวิธีในหน้านี้ใช้บริการฟรีของ Google หรือ Cloudflare ถ้าวันไหนอยากกลับไปเป็น<N>แบบเดิม</N> ก็ตั้งกลับได้เองทุกเมื่อ</>,
     jumpLabel: "เลือกวิธีที่สะดวก",
     backToChoice: "↑ เลือกวิธีอื่น",
     sourceLabel: "ที่มา:",
@@ -252,7 +253,8 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
               { title: "เปิดสวิตช์ WARP", body: "แตะสวิตช์เพื่อเปิด WARP ถ้ามือถือถามว่าให้แอปตั้งค่า VPN ไหม ให้ยืนยันเพื่อไปต่อ" },
               { title: "รอให้ขึ้น Connected", body: <>รอจนแอปขึ้นว่า “Connected” แล้วลองเปิด okami24.store <N>อีกครั้ง</N></> },
             ],
-            sources: [SRC.cloudflareAndroid],
+            undo: <>อยากเลิกใช้ ลบแอป 1.1.1.1 ออกจากเครื่อง</>,
+            sources: [SRC.cloudflareAndroid, SRC.cloudflareAndroidRemove],
           },
         ],
       },
@@ -304,8 +306,7 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
     lineCta: "ทักไลน์ @okm24",
   },
   en: {
-    lead: "If okami24.store ever won't open, try changing the DNS on your phone. The change applies to every site, not only ours.",
-    intro: "DNS is the address book your phone uses to find each website, so any other site that wouldn't open is worth another try, and you can switch it back whenever you like. Pick the way that suits you below; it's a good idea to screenshot the steps for your phone. If the site still won't open, message us on LINE @okm24 and an admin will help.",
+    lead: "Every method here uses a free service from Google or Cloudflare, and if you ever want things back the way they were, you can switch back yourself any time.",
     jumpLabel: "Choose a way",
     backToChoice: "↑ Choose another way",
     sourceLabel: "Source:",
@@ -388,7 +389,8 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
               { title: "Turn on WARP", body: "Tap the switch to turn on WARP. If your phone asks to set up a VPN connection, confirm to continue." },
               { title: "Wait for Connected", body: "When the app shows “Connected”, open okami24.store again." },
             ],
-            sources: [SRC.cloudflareAndroid],
+            undo: <>To stop using it, remove the 1.1.1.1 app from your phone.</>,
+            sources: [SRC.cloudflareAndroid, SRC.cloudflareAndroidRemove],
           },
         ],
       },
@@ -440,8 +442,8 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
     lineCta: "Message us on LINE",
   },
   zh: {
-    lead: "如果哪天 okami24.store 打不开，可以先试着更改手机的 DNS。改好后对所有网站生效，不只是我们的网站。",
-    intro: "DNS 就像手机用来查找网站位置的通讯录；以前打不开的其他网站，也可以再试一次，想改回来随时都可以。请在下方选择方便的方法，建议把自己手机的步骤截图保存。以下菜单名称以英文界面为准，中文界面的设备请找对应选项。照做后仍然打不开，欢迎通过 LINE @okm24 联系客服协助。",
+    lead: "这里的每种方法用的都是 Google 或 Cloudflare 的免费服务；哪天想恢复原样，随时都能自己改回来。",
+    note: "以下菜单名称以英文界面为准，中文界面的设备请找对应选项。",
     jumpLabel: "选择适合你的方法",
     backToChoice: "↑ 选择其他方法",
     sourceLabel: "来源：",
@@ -524,7 +526,8 @@ export const DNS_GUIDE: ServiceCopy<DnsGuideCopy> = {
               { title: "打开 WARP", body: "点开关打开 WARP。如果手机询问是否设置 VPN 连接，确认即可继续。" },
               { title: "等待显示 Connected", body: "等应用显示 “Connected” 后，重新打开 okami24.store。" },
             ],
-            sources: [SRC.cloudflareAndroid],
+            undo: <>想停用时：把 1.1.1.1 应用从手机中删除。</>,
+            sources: [SRC.cloudflareAndroid, SRC.cloudflareAndroidRemove],
           },
         ],
       },

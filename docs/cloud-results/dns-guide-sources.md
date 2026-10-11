@@ -84,6 +84,9 @@ tool, not raw text: open the page before quoting exact wording on the site.
   IPv4 → "DNS ที่ต้องการ" / "DNS สำรอง" → "DNS ผ่าน HTTPS": ปิด / เปิด (เทมเพลตอัตโนมัติ) / เปิด (เทมเพลตด้วยตนเอง) → บันทึก.
 - 1.1.1.1 app is free [verified https://one.one.one.one/ · https://developers.cloudflare.com/warp-client/get-started/ios/]; undo
   = delete the app (Remove App → Delete App) [verified same]; "switch WARP off" and cellular coverage on iOS [not confirmed].
+- Android 1.1.1.1 app undo = remove the app [verified https://developers.cloudflare.com/warp-client/get-started/android/ section
+  "How to remove the application", read 12/10; its button labels read like iOS ("Remove App" / "Delete App") so the page says
+  only "remove the app", no labels] · Cloudflare's Android setup page also says "disable the 1.1.1.1 app" (captive-portal note).
 - iPhone flow seen on the owner's own iPhone (Thai iOS, 4G, 2026-10-11 21:55, 9 screenshots in `_incoming/dns-shots/iphone/`)
   [ตรวจแล้ว — first-hand]: Google "1.1.1.1" → 2nd result = one.one.one.one → "App Store" button → App Store "รับ" → "เปิด" →
   app "What is WARP?" → **Next** → "Our Commitment to Privacy" (explains it adds a VPN configuration) → **Accept** → switch
