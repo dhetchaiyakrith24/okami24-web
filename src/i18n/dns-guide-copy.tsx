@@ -91,7 +91,7 @@ function Ext() {
 
 /** The owner's own iPhone screenshots (Thai iOS, 11/10; originals in _incoming/dns-shots/), cropped by
  *  _incoming/dns-round/crop-*.js to the strip that is tapped — no status bar, no name or photo, no neighbours' Wi-Fi,
- *  no IP addresses, home Wi-Fi name blurred. One set for every language; only the alt text is translated. */
+ *  no IP addresses, home Wi-Fi name overwritten as "Home Wi-Fi" in the iOS row style (_incoming/dns-round/wifi-v3/overwrite.js, owner 12/10). One set for every language; only the alt text is translated. */
 type Alt = Record<"th" | "en" | "zh", string>;
 const shot = (file: string, height: number, alt: Alt) => {
   const base = { src: `/assets/guides/dns/${file}`, width: 560, height };
@@ -102,8 +102,8 @@ const SHOT = {
   accept: shot("iphone-3-accept-v3.webp", 216, { th: "ปุ่ม Accept ในแอป 1.1.1.1", en: "The Accept button in the 1.1.1.1 app", zh: "1.1.1.1 应用中的 Accept 按钮" }),
   switch: shot("iphone-4-switch-v2.webp", 249, { th: "สวิตช์ WARP สีส้มในแอป 1.1.1.1", en: "The orange WARP switch in the 1.1.1.1 app", zh: "1.1.1.1 应用中的橙色 WARP 开关" }),
   disable: shot("iphone-undo-disable-v2.webp", 388, { th: "เมนูปิด 1.1.1.1 ที่มีปุ่ม Disable", en: "The 1.1.1.1 turn-off menu with the Disable button", zh: "1.1.1.1 的关闭菜单与 Disable 按钮" }),
-  wifi1: shot("iphone-wifi-1-settings.webp", 210, { th: "หน้าการตั้งค่าของ iPhone ที่มีแถว Wi-Fi", en: "iPhone Settings with the Wi-Fi row", zh: "iPhone 设置中的 Wi-Fi 一栏" }),
-  wifi2: shot("iphone-wifi-2-info.webp", 82, { th: "Wi-Fi ที่ต่ออยู่กับปุ่ม ⓘ", en: "The connected Wi-Fi with its ⓘ button", zh: "已连接的 Wi-Fi 及其 ⓘ 按钮" }),
+  wifi1: shot("iphone-wifi-1-settings-v3.webp", 210, { th: "หน้าการตั้งค่าของ iPhone ที่มีแถว Wi-Fi", en: "iPhone Settings with the Wi-Fi row", zh: "iPhone 设置中的 Wi-Fi 一栏" }),
+  wifi2: shot("iphone-wifi-2-info-v3.webp", 82, { th: "Wi-Fi ที่ต่ออยู่กับปุ่ม ⓘ", en: "The connected Wi-Fi with its ⓘ button", zh: "已连接的 Wi-Fi 及其 ⓘ 按钮" }),
   wifi3: shot("iphone-wifi-3-dns.webp", 118, { th: "แถวกำหนดค่า DNS", en: "The Configure DNS row", zh: "配置 DNS 一栏" }),
   wifi4: shot("iphone-wifi-4-manual-v2.webp", 480, { th: "หน้ากำหนดค่า DNS ที่เลือกกำหนดเอง มีเซิร์ฟเวอร์ 8.8.8.8 และ 8.8.4.4", en: "Configure DNS set to Manual with servers 8.8.8.8 and 8.8.4.4", zh: "配置 DNS 设为手动，服务器为 8.8.8.8 和 8.8.4.4" }),
 };
