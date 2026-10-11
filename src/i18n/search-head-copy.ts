@@ -76,13 +76,12 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   // Round SEO D batch 4 (07/10, keyword map SEO_LANDSCAPE §0): every brand title is brand-level — the model terms
   // ("15k", "joiway f4", "caliburn g5", "drag 6") belong to the product pages; GSC 21/09–05/10 showed brand pages
   // taking them. Wording = thai-copy 07/10, read by seo-auditor 07/10.
-  relx: (priceOf) => {
-    const p = (slug: string) => { const v = priceOf(slug); return v ? ` ${v}` : ""; };
-    return {
-      title: `RELX ของแท้ พอตใช้แล้วทิ้งและพอตคิท${OKM_TITLE_SUFFIX}`,
-      description: `RELX ของแท้ที่ OKami24 (OKM) มีทั้ง Smash Go 12K พอตใช้แล้วทิ้ง${p("relx-smash-go-12k")} และ RELX Creator เครื่องระบบสวิตช์ที่เปลี่ยนแค่หัวพอต${p("relx-creator")} สั่งทาง LINE @okm24`,
-    };
-  },
+  // Round SEO ฉ batch 3 (12/10): relx / iqos / wotofo metas step back to brand level like joiway/infy in #354 — the model
+  // names and prices belong to the product pages (SEO_LANDSCAPE §0.6). Wording = thai-copy 12/10, read by seo-auditor 12/10.
+  relx: () => ({
+    title: `RELX ของแท้ พอตใช้แล้วทิ้งและพอตคิท${OKM_TITLE_SUFFIX}`,
+    description: "RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และเครื่องระบบสวิตช์ที่เปลี่ยนแค่หัวพอต บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+  }),
   // "15k" belongs to /products/m-switch-kit (the shop's "M Bar 15K"; the m-bar-15k page redirects there since 08/10) —
   // no 15K, no price in this head.
   salthub: () => ({
@@ -104,13 +103,11 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   // non-price sentence below is the brand's own `descriptionTh` already on the page; prices
   // come through `priceOf` like the four entries above. relx/salthub stay as approved in SEO ก
   // (their Search Console lines are being measured until 2026-10-05).
-  iqos: (priceOf) => {
-    const p = (slug: string) => { const v = priceOf(slug); return v ? ` ${v}` : ""; };
-    return {
-      title: `IQOS ของแท้ เครื่องอุ่นยาสูบ ILUMA${OKM_TITLE_SUFFIX}`,
-      description: `IQOS ของ Philip Morris International เครื่องอุ่นยาสูบ ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมี ILUMA i${p("iqosheet-18")} และ ILUMA i PRIME${p("iqosheet-16")} สั่งทาง LINE @okm24`,
-    };
-  },
+  // "ไอคอส" = the Thai name with typing evidence (owner 07/10, sheet 35), same as "อินฟี่" in the infy meta below.
+  iqos: () => ({
+    title: `IQOS ของแท้ เครื่องอุ่นยาสูบ ILUMA${OKM_TITLE_SUFFIX}`,
+    description: "IQOS หรือที่คนไทยเรียกกันว่าไอคอส เป็นเครื่องอุ่นยาสูบที่ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมีเครื่องตระกูล ILUMA ของแท้ให้เลือก สั่งทาง LINE @okm24",
+  }),
   "esko-bar": (priceOf) => {
     const p = priceOf("pod-159");
     return {
@@ -122,9 +119,11 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   },
   // Image-fix round 2026-09-30: Pod-180 is nexBar CLEAR 18K (no brand); the WOTOFO page lists WOTOFO nexBAR 18K, sold
   // out — so no price and no stock claim here (owner "ตามแนะนำ").
+  // SEO ฉ batch 3: the 18K spec line is the product page's (wotofo-nexbar-18k); the first clause is the brand lede in
+  // brands.ts. "สอบถาม", not "สั่ง": the model is sold out.
   wotofo: () => ({
     title: `WOTOFO พอตใช้แล้วทิ้งตระกูล nexBAR${OKM_TITLE_SUFFIX}`,
-    description: "WOTOFO พอตใช้แล้วทิ้งตระกูล nexBAR ดูสเปกเต็มของ nexBAR 18K สูงสุด 18,000 พัฟ น้ำยา 21mL แบตเตอรี่ 750mAh 2 โหมด NORM กับ TURBO พร้อมรายชื่อกลิ่นจากผู้ผลิต",
+    description: "WOTOFO แบรนด์ฮาร์ดแวร์ที่ขยายมาทำพอตใช้แล้วทิ้งตระกูล nexBAR ดูสเปกและรายชื่อกลิ่นตามที่ผู้ผลิตประกาศไว้ได้ในหน้าสินค้า สอบถามเพิ่มเติมได้ทาง LINE @okm24",
   }),
   nevoks: (priceOf) => {
     const p = priceOf("coil-54");
@@ -160,6 +159,15 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
     title: "INFY ของแท้ทุกรุ่นที่ร้านมี — OKami24",
     description: "INFY หรือที่หลายคนเรียกว่าอินฟี่ เป็นแบรนด์ที่ OKami24 มีพอตใช้แล้วทิ้งของแท้ พร้อมบอกราคาไว้บนหน้าเว็บ สั่งทาง LINE @okm24",
   }),
+};
+
+/**
+ * Round SEO ฉ batch 3 (12/10): brand pages whose H1 should carry the name people search, not only `brand.name`
+ * (menus, breadcrumbs and JSON-LD keep `brand.name`). "Marbo" (Trends ~ the biggest product-name key) was missing from
+ * the salthub H1; the words are the start of its approved title. Latin only → the same in every locale.
+ */
+export const BRAND_H1: Record<string, string> = {
+  salthub: "SALTHUB M Bar (Marbo)",
 };
 
 /** Row B2 — appended to every product description; the price is the catalog's, never typed. */
@@ -211,6 +219,9 @@ export function productTitleWithPriceTh(slug: string, baseTitle: string, price: 
  */
 const CATEGORY_TITLE_HEAD_TH: Record<string, string> = {
   disposables: "Disposable Pod / พอตใช้แล้วทิ้ง ของแท้ ราคาทุกรุ่น",
+  // Round SEO ฉ batch 3 (12/10): "คอยล์พอต" was in no head on the site; the page lists coils only. 49 chars — at 50+
+  // categoryTitleTh() silently falls back to the label title, so keep it ≤ 49 (seo-auditor 12/10).
+  "coils-accessories": "Coils & Accessories / คอยล์พอต ของแท้ ราคาทุกรุ่น",
 };
 
 export function categoryTitleTh(labelTh: string, categoryId?: string): string {

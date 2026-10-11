@@ -334,7 +334,7 @@ export const zh: Dictionary = {
   },
   eliquid: {
     eyebrow: "烟油",
-    pageTitle: "风味系列",
+    pageTitle: "电子烟油风味系列",
     pageDescription:
       "本板块是风味系列的编辑向导，并非某一品牌瓶装烟油的完整目录——由于尚无经核实的单品烟油信息来源，因此不会编造任何内容。",
     disclaimer:
