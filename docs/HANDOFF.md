@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #428 b59b1c85 (coil-74 photos, item 3f;
-  deploy 38072104003); before it #425 d2ca48a2 stock list 24 · #422 4c7ddeb8 coil-70 [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #439 a86d4626 (DNS guide top copy + Wi-Fi shots, item 3g;
+  deploy 38163379359); before it #435 4b95cb00 DNS guide v2 · #428 b59b1c85 coil-74 photos [ตรวจแล้ว].
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
   #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
   deploy job ends — wait, then curl.
@@ -87,23 +87,22 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   scan.js 0/113 · hydration 0/34 · raw 0 · wordbreak guide/home/guides 0 new vs pre-round baseline · bold-label split 0 ·
   service pages' <main> byte-identical to live. Proof `_incoming/dns-round/` (live-v2/ shots) + checker `_incoming/chk-dns/`.
   Rollback = revert 4b95cb00 (v2) / 97136d19 (v1).
-  NEXT FIRST (owner 12/10 00:45, after seeing the live page: "โดยรวมโอเครละ แก้ 2 จุด") — one small PR, tier B, checker:
-  (a) Top copy of the guide (th first; en/zh follow): the dek + lead + intro repeat themselves ("เปลี่ยน DNS" ×3, "เปลี่ยนแล้ว
-  มีผลกับทุกเว็บ" in both dek and lead) — cut the repeats, shorter, and change the voice to a friend telling a friend, knowing
-  wink ("ตั้งตรงนี้ทีเดียว ก็เข้าได้ทุกเว็บแหละ" feel — owner: "อารมณ์เพื่อนคุยกันแล้วยักคิ้ว"). Limits stay: never name sites,
-  never "ถูกบล็อก", no time/speed/safety claims, true for every method shown. thai-copy writes 2 variants; Friday picks.
-  Files: dek = src/i18n/guides-copy.ts "cant-open-the-website" (also home card + /guides card + meta) · lead/intro =
-  src/i18n/dns-guide-copy.tsx th/en/zh. (b) iPhone Wi-Fi shots with the blurred network name (iphone-wifi-1-settings,
-  iphone-wifi-2-info) look unprofessional — replace the blur with a clean overwrite in iOS style (e.g. "Home Wi-Fi", same
-  size/colour as the iOS text on that row) via _incoming/dns-round/crop-wifi.js; NEW file names (Cloudflare caches by name).
-  (a+) Owner 12/10 on the intro paragraph ("DNS คือสมุดที่อยู่… แนะนำให้แคปหน้าจอ… ทักไลน์"): "ไม่เอา อธิบายเยอะแบบไม่จำเป็น
-  ลูกค้าไม่จำเป็นต้องรู้ แค่รู้ว่าแก้แล้วมีข้อดีมากกว่าข้อเสีย อันตรายไม่มี ปลอดภัยไหม ใช่" → drop the DNS explanation; top =
-  benefit + reassurance only. Friday's proposal told to the owner: reassure with checkable facts (free service of Google /
-  Cloudflare · switch back any time · deletes nothing on the phone) instead of the bare word "ปลอดภัย" (a promise + THAI_STYLE
-  avoids it) — the owner may still ask for "ปลอดภัย" outright; if he does, his word wins (chat > rules). LINE help stays in the
-  after-card at the bottom.
-  Then: owner buys okami24.net + RECOVERY §6ก → Friday curls https://okami24.net (200, canonical .store) ·
-  Render Hobby = 2 custom domains, +$0.25/mo each beyond (whether the auto-added www counts is unconfirmed) · then round-close.
+  LIVE #439 a86d4626 (12/10, deploy 38163379359; curl: guide / home / guides 200, new dek = meta, old DNS paragraph gone,
+  2 new Wi-Fi webp byte-identical to git) [ตรวจแล้ว] = the owner's 2 fixes of 12/10 00:45: (a) top copy th/en/zh — dek "ตั้งไว้ที่เดียว
+  ในเครื่อง ก็ใช้ได้กับทุกเว็บ ไม่ใช่แค่เว็บเรา มีวิธีให้ทั้ง iPhone Android และคอม" (also home Help card, /guides card, meta) · lead "ทุกวิธี
+  ในหน้านี้ใช้บริการฟรีของ Google หรือ Cloudflare ถ้าวันไหนอยากกลับไปเป็นแบบเดิม ก็ตั้งกลับได้เองทุกเมื่อ" · intro paragraph removed (zh
+  keeps its English-UI line as `note`) · thai-copy variant A · (b) iPhone Wi-Fi shots 1–2: "Home Wi-Fi" drawn in the iOS row style
+  (`_incoming/dns-round/wifi-v3/overwrite.js`, Segoe UI 600) as -v3 files. Checker round 1 FAIL 1/4 ("switch back any time" unbacked for
+  the Android 1.1.1.1 app) → undo line "อยากเลิกใช้ ลบแอป 1.1.1.1 ออกจากเครื่อง" + Cloudflare WARP Android source → re-check PASS on
+  1c66a51c. Gates: scan.js 0/113 · hydration guide/guides 0 · wordbreak = live, 0 new · visible-text: only dek/lead/intro.
+  Proof `_incoming/dns-round/vt3-diff/` + checker `_incoming/chk-dns3/`. Rollback = revert a86d4626.
+  Checker taste notes, owner's call (`docs/รอพี่ตรวจ.md` 47): lead still reads formal · dek has no "DNS" (meta) · home card 390
+  breaks "ไม่ใช่แค่เว็บ | เรา" (between two words; thai-typography list is do-not-touch).
+  Found, not this round: home en/zh show 16 Thai nodes (พอตซิสเต็ม/พอตคิท/พอตใช้แล้วทิ้ง), same on live before #439 — offered to the
+  owner as a separate task.
+  NEXT [รอเจ้าของ]: owner buys okami24.net + RECOVERY §6ก → Friday curls https://okami24.net (200, canonical .store) — the test
+  server already answers Host okami24.net / www with 200, no redirect, canonical .store [ตรวจแล้ว 12/10] · Render Hobby = 2 custom
+  domains, +$0.25/mo each beyond (whether the auto-added www counts is unconfirmed) · then round-close.
   Owner may later send a Mac screenshot (closing OK label unconfirmed — page says "กดยืนยันเพื่อบันทึก").
   Not in this round: LINE OA rich menu / pinned post / box card (owner: later) · Analytics (before the first paid ad).
   Worktree `_incoming/wt-dns` (own node_modules copy; test server 3412 stopped) — removable after the round closes.
