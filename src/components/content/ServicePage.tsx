@@ -78,6 +78,8 @@ export interface Step {
   title: string;
   body: ReactNode;
   image?: StepImage;
+  /** A drawn screen (ScreenMock) instead of a photo — for devices the shop has no screenshot of (designer 11/10). */
+  mock?: ReactNode;
 }
 
 export function StepShot({ image }: { image: StepImage }) {
@@ -87,28 +89,44 @@ export function StepShot({ image }: { image: StepImage }) {
       alt={image.alt}
       width={image.width}
       height={image.height}
-      sizes="240px"
-      className="mt-3 h-auto w-full max-w-[200px] rounded-2xl border border-surface-border-soft lg:max-w-[240px]"
+      sizes="300px"
+      className="mt-3 h-auto w-full max-w-[280px] rounded-2xl border border-surface-border-soft lg:max-w-[300px]"
     />
   );
 }
 
-/** Numbered steps — one column, number in an ember ring, title + at most two short lines. */
-export function NumberedSteps({ steps, start = 1 }: { steps: Step[]; start?: number }) {
+/** Numbered steps — one column, number in an ember ring, title + at most two short lines.
+ *  `headingLevel` / `split` (round "site unreachable" v2, designer 11/10) are opt-in: the five service pages pass neither
+ *  and render exactly as before. `split` = from lg up, a step's text sits left and its picture right. */
+export function NumberedSteps({ steps, start = 1, headingLevel = 3, split = false }: { steps: Step[]; start?: number; headingLevel?: 3 | 4; split?: boolean }) {
+  const H = headingLevel === 4 ? "h4" : "h3";
   return (
     <ol className="flex flex-col gap-5">
-      {steps.map((s, i) => (
-        <li key={s.title} className="flex gap-4">
-          <span className="label-mono flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-ember/40 bg-ember-soft/30 text-xs text-ember" lang="en">
-            {start + i}
-          </span>
-          <div className="min-w-0">
-            <h3 className="font-semibold text-foreground">{s.title}</h3>
-            <div className="mt-1 text-sm leading-relaxed text-foreground-muted">{s.body}</div>
-            {s.image && <StepShot image={s.image} />}
-          </div>
-        </li>
-      ))}
+      {steps.map((s, i) => {
+        const visual = s.mock ? <div className="mt-3">{s.mock}</div> : s.image ? <StepShot image={s.image} /> : null;
+        return (
+          <li key={s.title} className="flex gap-4">
+            <span className="label-mono flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-ember/40 bg-ember-soft/30 text-xs text-ember" lang="en">
+              {start + i}
+            </span>
+            {split && visual ? (
+              <div className="min-w-0 flex-1 lg:grid lg:grid-cols-[1fr_300px] lg:gap-8">
+                <div>
+                  <H className="font-semibold text-foreground">{s.title}</H>
+                  <div className="mt-1 text-sm leading-relaxed text-foreground-muted">{s.body}</div>
+                </div>
+                <div className="lg:[&>*]:mt-0">{visual}</div>
+              </div>
+            ) : (
+              <div className="min-w-0">
+                <H className="font-semibold text-foreground">{s.title}</H>
+                <div className="mt-1 text-sm leading-relaxed text-foreground-muted">{s.body}</div>
+                {visual}
+              </div>
+            )}
+          </li>
+        );
+      })}
     </ol>
   );
 }

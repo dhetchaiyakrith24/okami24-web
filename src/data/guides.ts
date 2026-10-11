@@ -1173,10 +1173,10 @@ const allGuides: Guide[] = [
     // "อ่านต่อ" box (article-relevance.ts). th/zh title + dek in guides-copy.ts.
     id: DNS_GUIDE_ID,
     slug: DNS_GUIDE_ID,
-    title: "Can't open the site? How to change your DNS",
-    dek: "Step-by-step for phones and computers. It's worth taking a screenshot now, so you have it ready if the site ever won't load.",
+    title: "Can't open the site? Change your phone's DNS, step by step",
+    dek: "Change the DNS on your iPhone or Android step by step, in Settings or with an app. The change applies to every site, not just okami24.store.",
     category: "getting-started",
-    readingTimeMin: 3,
+    readingTimeMin: 5,
     publishedAt: "2026-10-11",
     body: [],
   },
