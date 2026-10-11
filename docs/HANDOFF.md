@@ -109,6 +109,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Owner may later send a Mac screenshot (closing OK label unconfirmed — page says "กดยืนยันเพื่อบันทึก").
   Not in this round: LINE OA rich menu / pinned post / box card (owner: later) · Analytics (before the first paid ad).
   Worktree `_incoming/wt-dns` (own node_modules copy; test server 3412 stopped) — removable after the round closes.
+3h READY, NOT OPEN 12/10 — round "SEO ฉ" (owner 12/10: "หน้า 1 ทุกคีย์ · ปล่อยพลังเต็มที่" + "เนื้อหาสีเขียว" = knowledge articles from
+  the owner's YouTube) = `docs/rounds/รอบ-SEO-ฉ-อัดฉีดเต็ม-หน้า1-เนื้อหาสีเขียว-12-10.txt` (7 batches; already in git — round-open step 1
+  copy is done). Opens in ITS OWN new chat (owner opens it; one chat = one round) with skill round-open; 3g stays in its chat
+  (only okami24.net left, no site work). Next GSC reads 22/10 + 01/11 fall inside it (SEO_BASELINE).
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
   pod-systems title/meta/H1 unchanged [ตรวจแล้ว]. Owner 09/10: protect what ranked — pod-systems head byte-identical.
