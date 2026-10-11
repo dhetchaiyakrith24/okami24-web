@@ -99,15 +99,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   4 technical (B): mobile LCP 10.3–11.6 s lab on 5 pages (render delay, suspect AgeGate/hydration — not proven) · per-article
   dateModified (all articles share the family date = fake freshness; also blocks the author/date block) · brand on muro ×3 +
   pod-180 JSON-LD · GSC 5xx 1 + crawled-not-indexed 2 URLs.
-  5 green set 1, topics 1–2 = PR #451 branch `seo-f-b5` (merged = `git log origin/main` shows it): /guides/fixing-a-burnt-pod
+  5 green set 1, topics 1–2 = PR #451 branch `seo-f-b5` (checker PASS on 0d4465de; Friday merges it right after this commit): /guides/fixing-a-burnt-pod
   "พอตไหม้ เกิดจากอะไร แก้ยังไง" + /guides/fixing-a-leaking-pod "หัวพอตรั่ว แก้ยังไง เกิดจากอะไร" (thaiOnly), clip move done,
   3 approved articles link "ไหม้" to A (owner 12/10 "แตะได้"), owner's 10 words in THAI_STYLE. Checker 1st pass FAIL 5/6 (7 new
-  wordbreak flags) → fixed 50375f92 (5 sentences re-cut, LESSONS 33) → needs the re-check of those spots, then merge. Proof
+  wordbreak flags) → fixed 50375f92 (5 sentences re-cut, LESSONS 33) → re-check PASS (0 flags at 390/1440). Proof
   `_incoming/seo-f/b5/` (vt/diff2 · wb-* · hyd*). NOT in #451: author/date block (designer option C; needs per-article dates = 4).
   Still to draft: topics 3–5 (reworks of fixing-no-draw, battery-care, coil-and-pod-maintenance). Drafts/answers/research =
   `_incoming/seo-f/b5-articles-draft.md`. Transcripts `_incoming/seo-f/yt/tx/` (method: `yt/grab.js` in the app browser +
   `yt/recv.js` on 127.0.0.1:47811; clips without captions = description only).
-  NEXT STEP: #451 re-check → merge → curl. Then topics 3–5 (batch 5 rest) or batch 4 per-article dates (unblocks author block).
+  NEXT STEP: confirm #451 is live (curl the 2 new URLs) → topics 3–5 (batch 5 rest) or batch 4 per-article dates (unblocks the
+  author block).
   Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
   Next GSC reads 22/10 (rows 1–8) + 01/11 (rows 9–10).
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
