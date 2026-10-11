@@ -80,11 +80,17 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   domain (owner buys + clicks, Friday writes steps + RECOVERY "day the site is blocked").
   Friday's position (told the owner at open): backup domain = same Render service + the existing absolute canonical to
   https://okami24.store (live, checked) — no 301 (a 301 sends blocked customers back to the blocked host); encrypted DNS methods
-  first, plain 8.8.8.8 last (ISP port-53 interception — pending researcher proof).
+  first, plain 8.8.8.8 last — ISP port-53 interception NOT confirmed by an official source, so the page's reason = "works on
+  mobile data too" (batch 1 doc §5).
   Asked the owner 11/10 [รอเจ้าของ]: 1 homepage spot (rec. A age-gate line + C homepage card) · 2 screenshots (rec. owner shoots
   Android + iPhone) · 3 backup name — RDAP 404 (free) 11/10: okami24.net (rec.) · okm24.store · okami24.online · okami24shop.com ·
   okami24.xyz; okami24.com taken; .co/.shop RDAP unreliable.
-  Where it stopped: batch 1 + scope-auditor running.
+  Batch 1 DONE a0ed9c64 (`docs/cloud-results/dns-guide-sources.md`; not on the page: Chrome on iPhone, .mobileconfig, 1.1.1.1
+  app undo/networks). Scope (scope-auditor 11/10): sitemap 112 live; footer = 117 pages (+ /compare /finder /search /favorites
+  + 404); locale = one URL, client-side language (server HTML Thai) → new guide = 1 URL, no `thaiOnly`, copy in guides-copy;
+  age gate = localStorage, not in server HTML; controls / · /guides · /products/caliburn-g5 · /privacy. Contract tests that a
+  new guide touches: guide-locale · i18n · content-dates · held-guides · article-relevance.
+  Work happens in worktree `_incoming/wt-dns` (another chat uses the main folder). Where it stopped: designer direction running.
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
   pod-systems title/meta/H1 unchanged [ตรวจแล้ว]. Owner 09/10: protect what ranked — pod-systems head byte-identical.
