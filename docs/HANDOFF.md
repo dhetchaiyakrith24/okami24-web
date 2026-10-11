@@ -74,32 +74,26 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (find "button type=file"); results via the MCP `show_generations` (read-only). NEXT: coil-94 card + 0.4Ω option, coil-55, then the
   ranked list above. Weekly Claude quota 95% on 11/10 (resets 11/10 22:00) — one checker per PR.
   The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
-3g OPEN ROUND 11/10 (own chat) "site unreachable" = `docs/rounds/รอบคู่มือเว็บเข้าไม่ได้-DNS-โดเมนสำรอง-11-10.txt`, from main 909a227d.
-  Batches: 1 official-source facts → `docs/cloud-results/dns-guide-sources.md` (docs, researcher) · 2 new /guides page th/en/zh
-  (tier B, designer + thai-copy) · 3 footer link on every page + homepage / age-gate spot (tier B, whole-sitemap scan) · 4 backup
-  domain (owner buys + clicks, Friday writes steps + RECOVERY "day the site is blocked").
-  Friday's position (told the owner at open): backup domain = same Render service + the existing absolute canonical to
-  https://okami24.store (live, checked) — no 301 (a 301 sends blocked customers back to the blocked host); encrypted DNS methods
-  first, plain 8.8.8.8 last — ISP port-53 interception NOT confirmed by an official source, so the page's reason = "works on
-  mobile data too" (batch 1 doc §5).
-  Owner 11/10 "ตามนั้นเลย" (all three recommendations): homepage = A one line in the age gate + C one homepage card ·
-  screenshots = the owner shoots them (Android + iPhone, Thai UI) — the page ships finished without them, shots slot in later ·
-  backup domain = okami24.net (RDAP free 11/10), the owner buys it at Cloudflare Registrar (same account as okami24.store).
-  Batch 1 DONE a0ed9c64 (`docs/cloud-results/dns-guide-sources.md`; not on the page: Chrome on iPhone, .mobileconfig, 1.1.1.1
-  app undo/networks). Scope (scope-auditor 11/10): sitemap 112 live; footer = 117 pages (+ /compare /finder /search /favorites
-  + 404); locale = one URL, client-side language (server HTML Thai) → new guide = 1 URL, no `thaiOnly`, copy in guides-copy;
-  age gate = localStorage, not in server HTML; controls / · /guides · /products/caliburn-g5 · /privacy. Contract tests that a
-  new guide touches: guide-locale · i18n · content-dates · held-guides · article-relevance.
-  Work happens in worktree `_incoming/wt-dns` (another chat uses the main folder; its own node_modules copy; test server
-  3412 = this worktree's build — never preview_start, it serves the MAIN folder, LESSONS พ27).
-  Batches 2+3 in ONE PR, branch `dns-guide-page` (Friday 11/10: every link points at the page → one sitemap scan, one
-  checker, one revert): /guides/cant-open-the-website (DnsGuideContent + src/i18n/dns-guide-copy.tsx; iPhone steps + 5 crops
-  from the owner's iPhone shots 11/10 in public/assets/guides/dns/; Android/Chrome/Windows text only until the owner's shots)
-  · footer link under the LINE/YouTube icons · age-gate line under the buttons (text only) · home card under the 3 guide
-  teasers. Copy = thai-copy 11/10. Gates so far: tsc 0 · eslint 0 · scan.js 0/113 · locale-hydration 0/34 · raw chars 0.
-  Owner decided the Google "2nd result" route; the page links one.one.one.one directly instead (results move) — told the owner.
-  Where it stopped: whole-sitemap wordbreak (`_incoming/dns-round/wb2`) running; then visible-text after-scan vs
-  `_incoming/dns-round/vt-before` (live, c592a387) → checker → merge. Batch 4 research (Render/Cloudflare/Google) running.
+3g OPEN ROUND 11/10 (own chat) "site unreachable" = `docs/rounds/รอบคู่มือเว็บเข้าไม่ได้-DNS-โดเมนสำรอง-11-10.txt`.
+  Owner 11/10 "ตามนั้นเลย": homepage = A age-gate line + C home card · owner shoots screenshots · backup domain okami24.net.
+  Facts = `docs/cloud-results/dns-guide-sources.md` (official pages + the owner's iPhone screenshots 11/10, originals in
+  `_incoming/dns-shots/iphone/`). Encrypted methods first; ISP port-53 interception unconfirmed → never claimed.
+  DONE batch 1 #432 · batches 2+3 LIVE #433 merged 97136d19 (deploy run 38152437233 success) = /guides/cant-open-the-website
+  (th/en/zh; Android · iPhone with 5 crops of the owner's shots · Chrome · Windows 11) + footer link on every page + age-gate
+  line + home Help card + RECOVERY §6 (backup-domain setup + the day customers cannot reach okami24.store). Checker PASS 7/7
+  on 10adaf16; after it only wrap/crop polish (13.5 (จ)): nowrap 'ช่อง DNS สำรอง' / 'แล้วเปิด IPv4', Help card dek
+  unclamped, Accept shot → iphone-3-accept-v2.webp. Gates: tsc 0 · eslint 0 · verify:catalog 31/31 · scan.js 0/113 ·
+  hydration 0/34 · raw 0 · wordbreak whole sitemap: footer/home 0 new flags · visible-text vs live: 0 changed 0 removed 66
+  added. Proof `_incoming/dns-round/` (compare-home-footer-390/1440.png · shots2/) + checker `_incoming/dns-check/`.
+  Rollback = revert 97136d19.
+  LIVE CHECK: [ตรวจแล้ว] 11/10 after ~2 min of Render lag: page 200 + own title/canonical · sitemap 113 loc incl. the page · footer link on / /privacy /products/caliburn-g5 /compare · 5 images byte-identical to git · / /guides /how-to-order 200.
+  NEXT [รอเจ้าของ]: (1) owner buys okami24.net + RECOVERY §6ก steps → Friday curls https://okami24.net (200, canonical .store)
+  · Render Hobby = 2 custom domains, +$0.25/mo each beyond — whether the auto-added www counts is unconfirmed.
+  (2) owner's Android + Chrome screenshots → crops under those steps (StepImage prop on NumberedSteps; new file names).
+  Checker source notes for the owner: Chrome line "only in Chrome" is inference · "work device" loose for "managed" ·
+  "Connected" from Cloudflare docs (owner's shot shows Connecting) · Chrome's own menu words "ความปลอดภัย" appear (labels).
+  Not in this round: LINE OA rich menu / pinned post / box card (owner: later) · Analytics (before the first paid ad).
+  Worktree `_incoming/wt-dns` (own node_modules copy; test server 3412 stopped) — removable after the round closes.
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
   pod-systems title/meta/H1 unchanged [ตรวจแล้ว]. Owner 09/10: protect what ranked — pod-systems head byte-identical.
