@@ -340,7 +340,7 @@ export const en: Dictionary = {
   },
   eliquid: {
     eyebrow: "E-Liquid",
-    pageTitle: "Flavor Families",
+    pageTitle: "E-Liquid Flavor Families",
     pageDescription:
       "This section is an editorial character guide to flavor families, not a catalog of specific branded bottled e-liquid — we don't have verified sourcing for individual e-liquid SKUs, so we're not inventing any.",
     disclaimer:

@@ -12,7 +12,7 @@ import { BrandPageMeta } from "@/components/catalog/BrandPageMeta";
 import { BrandPageHeader } from "@/components/catalog/BrandPageHeader";
 import { canonicalFor, collectionPageJsonLd, NOINDEX_FOLLOW, pageBreadcrumbJsonLd } from "@/lib/seo";
 import { brandTitleTh } from "@/i18n/search-titles";
-import { BRAND_HEAD_TH, formatPriceTh } from "@/i18n/search-head-copy";
+import { BRAND_H1, BRAND_HEAD_TH, formatPriceTh } from "@/i18n/search-head-copy";
 import { getCatalogItem } from "@/lib/catalog-index";
 import { COLLECTION_VIDEOS } from "@/data/collection-videos";
 import { CollectionReviewVideo } from "@/components/catalog/CollectionReviewVideo";
@@ -93,7 +93,7 @@ export default async function BrandPage({ params }: { params: Promise<{ brand: s
           the full title here (_incoming/seo-c/keymap.md §3). CollectionPage above keeps the title. */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageBreadcrumbJsonLd(brand.name, brandPath)) }} />
       {clip && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoObjectJsonLd(clip, `${clip.channelName} — ${getDictionary("th").product.reviewVideoEyebrow}: ${brand.name}`)) }} />}
-      <BrandPageHeader brand={brand} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
+      <BrandPageHeader brand={brand} title={BRAND_H1[brandSlug]} meta={<BrandPageMeta families={families} referenceUrl={brand.referenceUrl} />} />
       <Container className="flex flex-col gap-12 py-12 lg:py-16">
         <CatalogBrowser products={products} publishedProducts={publishedProducts} searchTexts={catalogSearchTexts(products, publishedProducts)} isEmptyCategory={products.length === 0 && publishedProducts.length === 0} />
         <PilotProductSection products={pilotProducts} />

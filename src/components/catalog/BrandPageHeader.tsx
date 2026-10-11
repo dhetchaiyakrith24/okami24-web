@@ -21,9 +21,10 @@ import type { ReactNode } from "react";
  * where one exists (the four brands whose tagline is a plain description); a brand whose tagline
  * is a slogan has no `taglineTh` and keeps the English line in every language.
  */
-export function BrandPageHeader({ brand, meta }: { brand: Brand; meta?: ReactNode }) {
+/** Round SEO ฉ batch 3: `title` = an H1 override from BRAND_H1 (search-head-copy.ts); default stays `brand.name`. */
+export function BrandPageHeader({ brand, title, meta }: { brand: Brand; title?: string; meta?: ReactNode }) {
   const { locale } = useLocale();
   const description = locale === "th" ? thaiTypographyNode(brand.descriptionTh ?? brand.description) : brand.description;
   const eyebrow = locale === "th" ? (brand.taglineTh ?? brand.tagline) : brand.tagline;
-  return <PageHeader eyebrow={eyebrow} title={brand.name} description={description} meta={meta} />;
+  return <PageHeader eyebrow={eyebrow} title={title ?? brand.name} description={description} meta={meta} />;
 }
