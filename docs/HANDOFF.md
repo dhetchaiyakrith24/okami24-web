@@ -74,48 +74,17 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (find "button type=file"); results via the MCP `show_generations` (read-only). NEXT: coil-94 card + 0.4Ω option, coil-55, then the
   ranked list above. Weekly Claude quota 95% on 11/10 (resets 11/10 22:00) — one checker per PR.
   The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
-3g OPEN ROUND 11/10 (own chat) "site unreachable" = `docs/rounds/รอบคู่มือเว็บเข้าไม่ได้-DNS-โดเมนสำรอง-11-10.txt`.
-  Owner 11/10: homepage = A age-gate line + C home card · backup domain okami-24.com (bought 12/10 instead of .net) · guide v2 structure = phone "no app"
-  (iPhone Wi-Fi manual DNS + Android Private DNS) · "1.1.1.1 app" (iPhone + Android) · "computer" (Mac + Windows); Chrome
-  dropped; inviting copy (benefit: every site, not only ours — never naming sites, never "ถูกบล็อก"); owner has no Android →
-  drawn screens (ScreenMock) with official labels only. Facts = `docs/cloud-results/dns-guide-sources.md` (official pages,
-  the owner's Thai-iOS screenshots in `_incoming/dns-shots/`, his 4G test of the 1.1.1.1 app).
-  LIVE: batch 1 #432 · v1 #433 97136d19 (guide + footer link on every page + age-gate line + home Help card + RECOVERY §6) ·
-  v2 #435 4b95cb00 (deploy run 38159513940; curl: page 200, 12 anchors incl. v1 #iphone/#android, 8 images byte-identical
-  to git) [ตรวจแล้ว]. v2 checker: round 1 FAIL 3/6 (unbacked lines, white site shot with Cloudflare's "safer" slogan, shot
-  order, tall drawings) → fixed 81c79c07 → round 2 PASS. Gates on 81c79c07: tsc 0 · eslint 0 · verify:catalog 31/31 ·
-  scan.js 0/113 · hydration 0/34 · raw 0 · wordbreak guide/home/guides 0 new vs pre-round baseline · bold-label split 0 ·
-  service pages' <main> byte-identical to live. Proof `_incoming/dns-round/` (live-v2/ shots) + checker `_incoming/chk-dns/`.
-  Rollback = revert 4b95cb00 (v2) / 97136d19 (v1).
-  LIVE #439 a86d4626 (12/10, deploy 38163379359; curl: guide / home / guides 200, new dek = meta, old DNS paragraph gone,
-  2 new Wi-Fi webp byte-identical to git) [ตรวจแล้ว] = the owner's 2 fixes of 12/10 00:45: (a) top copy th/en/zh — dek "ตั้งไว้ที่เดียว
-  ในเครื่อง ก็ใช้ได้กับทุกเว็บ ไม่ใช่แค่เว็บเรา มีวิธีให้ทั้ง iPhone Android และคอม" (also home Help card, /guides card, meta) · lead "ทุกวิธี
-  ในหน้านี้ใช้บริการฟรีของ Google หรือ Cloudflare ถ้าวันไหนอยากกลับไปเป็นแบบเดิม ก็ตั้งกลับได้เองทุกเมื่อ" · intro paragraph removed (zh
-  keeps its English-UI line as `note`) · thai-copy variant A · (b) iPhone Wi-Fi shots 1–2: "Home Wi-Fi" drawn in the iOS row style
-  (`_incoming/dns-round/wifi-v3/overwrite.js`, Segoe UI 600) as -v3 files. Checker round 1 FAIL 1/4 ("switch back any time" unbacked for
-  the Android 1.1.1.1 app) → undo line "อยากเลิกใช้ ลบแอป 1.1.1.1 ออกจากเครื่อง" + Cloudflare WARP Android source → re-check PASS on
-  1c66a51c. Gates: scan.js 0/113 · hydration guide/guides 0 · wordbreak = live, 0 new · visible-text: only dek/lead/intro.
-  Proof `_incoming/dns-round/vt3-diff/` + checker `_incoming/chk-dns3/`. Rollback = revert a86d4626.
-  Owner 12/10 on the checker's 3 taste notes (sheet 47): 47.2 → "ทำเพื่อลูกค้า Search ด้วย" = LIVE #441 63a36a46 (deploy
-  38165055490): head-only row in GUIDE_DESCRIPTION_HEAD_TH (meta / og / JSON-LD; page + cards keep the dek): "เข้าเว็บไม่ได้ ลอง
-  เปลี่ยน DNS บนมือถือ Android ตั้ง DNS ส่วนตัวเป็น dns.google · iPhone ใส่ 8.8.8.8 ใน Wi-Fi หรือใช้แอป 1.1.1.1 ของ Cloudflare มีวิธีบนคอมด้วย"
-  (158 chars, trimmed from 195 after checker PASS — 13.5 (จ), facts only removed). head-audit live: 113 pages 200, 0 duplicate
-  descriptions [ตรวจแล้ว]. 47.1 (lead formal) + 47.3 (home card 390 "เว็บ | เรา") = kept as recommended (owner did not object).
-  Found, not this round: home en/zh show 16 Thai nodes (พอตซิสเต็ม/พอตคิท/พอตใช้แล้วทิ้ง), same on live before #439 — offered to the
-  owner as a separate task.
-  BACKUP DOMAIN DONE 12/10 [ตรวจแล้ว]: owner bought okami-24.com (Cloudflare, same account as .store, expires 2027-10-12, auto-renew) ·
-  Friday (owner "กดให้เลย" per step) added it on Render (Verified; 2/2 included domains, no extra cost) and 2 CNAMEs → okami24.onrender.com,
-  DNS only · curl: https://okami-24.com 200, www 301 → root, canonical / sitemap / robots = okami24.store. RECOVERY §6 rewritten.
-  okami-pod.com (old shop site in the same Cloudflare account: registered ELSEWHERE, A → 35.213.178.222 not answering, MX on the old
-  host, GSC-verified) — owner: "ตัดทิ้ง ยกเลิกให้"; NOT deleted — waiting on `docs/รอพี่ตรวจ.md` 48 (redirect to .store first? any
-  @okami-pod.com mail in use? which provider bills it). Next: round-close of 3g.
-  Owner may later send a Mac screenshot (closing OK label unconfirmed — page says "กดยืนยันเพื่อบันทึก").
-  Not in this round: LINE OA rich menu / pinned post / box card (owner: later) · Analytics (before the first paid ad).
-  Worktree `_incoming/wt-dns` (own node_modules copy; test server 3412 stopped) — removable after the round closes.
+3g CLOSED 12/10 — round "site unreachable" (`docs/rounds/รอบคู่มือเว็บเข้าไม่ได้-DNS-โดเมนสำรอง-11-10.txt`), tag `site-unreachable-done`.
+  Live [ตรวจแล้ว]: DNS help guide /guides/cant-open-the-website (v2 #435 · top copy + Wi-Fi shots #439 · head-only meta #441) · footer link
+  on every page + age-gate line + home Help card (#433) · backup domain okami-24.com (Render custom domain + 2 CNAMEs DNS only,
+  canonical stays okami24.store; RECOVERY §6) · facts `docs/cloud-results/dns-guide-sources.md`. Rollback per PR (revert).
+  Open, outside the round: home en/zh 16 Thai nodes (offered as its own task) · owner may send a Mac screenshot (closing OK label
+  unconfirmed) · LINE OA rich menu / pinned post / box card (owner: later) · Search Console check in 2–4 weeks that no okami-24.com
+  URL shows instead of .store. Worktree `_incoming/wt-dns` removable (housekeeping).
 3h READY, NOT OPEN 12/10 — round "SEO ฉ" (owner 12/10: "หน้า 1 ทุกคีย์ · ปล่อยพลังเต็มที่" + "เนื้อหาสีเขียว" = knowledge articles from
   the owner's YouTube) = `docs/rounds/รอบ-SEO-ฉ-อัดฉีดเต็ม-หน้า1-เนื้อหาสีเขียว-12-10.txt` (7 batches; already in git — round-open step 1
   copy is done). Opens in ITS OWN new chat (owner opens it; one chat = one round) with skill round-open; 3g stays in its chat
-  (backup domain done 12/10; only okami-pod.com + round-close left, no site work). Next GSC reads 22/10 + 01/11 fall inside it (SEO_BASELINE).
+  (3g closed 12/10). Next GSC reads 22/10 + 01/11 fall inside it (SEO_BASELINE).
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
   pod-systems title/meta/H1 unchanged [ตรวจแล้ว]. Owner 09/10: protect what ranked — pod-systems head byte-identical.
@@ -384,3 +353,6 @@ F4 TWINS review (l-8sAPwOUZw, OKM YARZ), not the NOS one · words ดีไซ�
 **Answered 08/10 (owner, chat, รอพี่ตรวจ 20–25):** M Bar 15K name stays in the Kit/Pod head copy (20) · home desktop intro Scene 4 =
 M Switch Kit (21) · WOTOFO nexBAR 18K flavours whose only maker photo is the Vivid Edition (a different body) stay WITHOUT a photo —
 never use a Vivid render for them (22) · MURO 3ML boxes at 340×490 = fine for all 8 small boxes (24 + 25, IMAGE_SPEC exception).
+**Answered 12/10 (owner, chat, round 3g):** backup domain = okami-24.com (not .net; canonical stays okami24.store, no 301 between them) ·
+okami-pod.com (old site) = ignore, never touch or propose ("ไม่ต้องสนใจ ทิ้งได้เลย") · GitHub Actions budget $15/month, stop at the limit;
+batch docs edits into one PR per batch (LESSONS 32) · DNS guide health/quit-smoking writing = neutral, foreign official sources (SEO ฉ file).
