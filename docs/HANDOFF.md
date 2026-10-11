@@ -75,23 +75,21 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   ranked list above. Weekly Claude quota 95% on 11/10 (resets 11/10 22:00) — one checker per PR.
   The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
 3g OPEN ROUND 11/10 (own chat) "site unreachable" = `docs/rounds/รอบคู่มือเว็บเข้าไม่ได้-DNS-โดเมนสำรอง-11-10.txt`.
-  Owner 11/10 "ตามนั้นเลย": homepage = A age-gate line + C home card · owner shoots screenshots · backup domain okami24.net.
-  Facts = `docs/cloud-results/dns-guide-sources.md` (official pages + the owner's iPhone screenshots 11/10, originals in
-  `_incoming/dns-shots/iphone/`). Encrypted methods first; ISP port-53 interception unconfirmed → never claimed.
-  DONE batch 1 #432 · batches 2+3 LIVE #433 merged 97136d19 (deploy run 38152437233 success) = /guides/cant-open-the-website
-  (th/en/zh; Android · iPhone with 5 crops of the owner's shots · Chrome · Windows 11) + footer link on every page + age-gate
-  line + home Help card + RECOVERY §6 (backup-domain setup + the day customers cannot reach okami24.store). Checker PASS 7/7
-  on 10adaf16; after it only wrap/crop polish (13.5 (จ)): nowrap 'ช่อง DNS สำรอง' / 'แล้วเปิด IPv4', Help card dek
-  unclamped, Accept shot → iphone-3-accept-v2.webp. Gates: tsc 0 · eslint 0 · verify:catalog 31/31 · scan.js 0/113 ·
-  hydration 0/34 · raw 0 · wordbreak whole sitemap: footer/home 0 new flags · visible-text vs live: 0 changed 0 removed 66
-  added. Proof `_incoming/dns-round/` (compare-home-footer-390/1440.png · shots2/) + checker `_incoming/dns-check/`.
-  Rollback = revert 97136d19.
-  LIVE CHECK: [ตรวจแล้ว] 11/10 after ~2 min of Render lag: page 200 + own title/canonical · sitemap 113 loc incl. the page · footer link on / /privacy /products/caliburn-g5 /compare · 5 images byte-identical to git · / /guides /how-to-order 200.
-  NEXT [รอเจ้าของ]: (1) owner buys okami24.net + RECOVERY §6ก steps → Friday curls https://okami24.net (200, canonical .store)
-  · Render Hobby = 2 custom domains, +$0.25/mo each beyond — whether the auto-added www counts is unconfirmed.
-  (2) owner's Android + Chrome screenshots → crops under those steps (StepImage prop on NumberedSteps; new file names).
-  Checker source notes for the owner: Chrome line "only in Chrome" is inference · "work device" loose for "managed" ·
-  "Connected" from Cloudflare docs (owner's shot shows Connecting) · Chrome's own menu words "ความปลอดภัย" appear (labels).
+  Owner 11/10: homepage = A age-gate line + C home card · backup domain okami24.net · guide v2 structure = phone "no app"
+  (iPhone Wi-Fi manual DNS + Android Private DNS) · "1.1.1.1 app" (iPhone + Android) · "computer" (Mac + Windows); Chrome
+  dropped; inviting copy (benefit: every site, not only ours — never naming sites, never "ถูกบล็อก"); owner has no Android →
+  drawn screens (ScreenMock) with official labels only. Facts = `docs/cloud-results/dns-guide-sources.md` (official pages,
+  the owner's Thai-iOS screenshots in `_incoming/dns-shots/`, his 4G test of the 1.1.1.1 app).
+  LIVE: batch 1 #432 · v1 #433 97136d19 (guide + footer link on every page + age-gate line + home Help card + RECOVERY §6) ·
+  v2 #435 4b95cb00 (deploy run 38159513940; curl: page 200, 12 anchors incl. v1 #iphone/#android, 8 images byte-identical
+  to git) [ตรวจแล้ว]. v2 checker: round 1 FAIL 3/6 (unbacked lines, white site shot with Cloudflare's "safer" slogan, shot
+  order, tall drawings) → fixed 81c79c07 → round 2 PASS. Gates on 81c79c07: tsc 0 · eslint 0 · verify:catalog 31/31 ·
+  scan.js 0/113 · hydration 0/34 · raw 0 · wordbreak guide/home/guides 0 new vs pre-round baseline · bold-label split 0 ·
+  service pages' <main> byte-identical to live. Proof `_incoming/dns-round/` (live-v2/ shots) + checker `_incoming/chk-dns/`.
+  Rollback = revert 4b95cb00 (v2) / 97136d19 (v1).
+  NEXT [รอเจ้าของ]: owner buys okami24.net + RECOVERY §6ก → Friday curls https://okami24.net (200, canonical .store) ·
+  Render Hobby = 2 custom domains, +$0.25/mo each beyond (whether the auto-added www counts is unconfirmed) · then round-close.
+  Owner may later send a Mac screenshot (closing OK label unconfirmed — page says "กดยืนยันเพื่อบันทึก").
   Not in this round: LINE OA rich menu / pinned post / box card (owner: later) · Analytics (before the first paid ad).
   Worktree `_incoming/wt-dns` (own node_modules copy; test server 3412 stopped) — removable after the round closes.
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
