@@ -23,7 +23,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Banana Pro Unlimited ended 11/10 00:00 → free renders only on the "365 Unlimited" models (item 3f); NO credit spend without the
   owner's yes in chat (owner 11/10 — overrides IMAGE_SPEC §0 item 7 "use credits without asking" until the owner says otherwise). Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
+2 ahead of main (12/10, round SEO ฉ = item 3h): `seo-f-batch1` = docs PR #446 (batches 1–2 + this §16; main merged in 271e2887,
+  checks re-running after the $15 Actions budget — docs-only, no checker, merge when green) · `seo-f-b3` 08465cce = batch 3 copy,
+  pushed, no PR, NOT checked (`git log --oneline origin/main..seo-f-b3`). Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
@@ -91,12 +93,17 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   GitHub Actions: budget $15/month (owner 12/10) — ONE docs PR per batch of work, or ride along a code PR (LESSONS 32).
   Batches: 1 checklist DONE = SEO_LANDSCAPE §7 · 2 keyword map DONE = §0.6 + §8 green topics (owner: set 1 = topics 1–5
   "problems + pod care", airplane = airline rules only, set 2 = 6–11) → both in docs PR #446 (branch `seo-f-batch1`).
-  3 = branch `seo-f-b3` commit 08465cce (NOT pushed/PR'd at the time of writing — check `git log origin/seo-f-b3`): pods-cartridges
+  3 = branch `seo-f-b3` commit 08465cce (pushed, NO PR yet, NOT checked by checker): pods-cartridges
   + coils-accessories ledes/metas, coils title "คอยล์พอต", iqos/relx/wotofo metas brand-level, salthub H1 "SALTHUB M Bar (Marbo)"
   (BRAND_H1), /e-liquid H1. Paper set `_incoming/seo-f/b3-head-set.md` (thai-copy + seo-auditor 8/8 PASS; clip rows dropped —
   COLLECTION_VIDEOS only takes page-1 clips). Gates done: tsc 0 · eslint 0 · verify:catalog 31/31 · head-audit test server vs
-  live = exactly 9 field diffs on the 7 pages, 106 pages unchanged [ตรวจแล้ว]. Pending: scan.js / hydration / wordbreak (were
-  running) · tier-B shots of the 2 H1s (390/1440) · checker · SEO_BASELINE: log salthub H1 as a variable of watch row 4.
+  live = exactly 9 field diffs on the 7 pages, 106 pages unchanged · scan.js PASS 0/113 [ตรวจแล้ว]. Hydration + wordbreak ran on
+  their DEFAULT page lists, not the 7 touched pages (the path args did not reach them) → rerun on the 7 pages; the wordbreak flags
+  printed were pre-existing guide flags (e.g. «ไฟจะ» on fixing-no-draw, HANDOFF item 5). Still to do for 3: those two reruns ·
+  tier-B before/after shots of the 2 H1s (salthub, /e-liquid) at 390/1440 (skill tier-b-proof) · checker · PR (merge main first)
+  · SEO_BASELINE: log the salthub H1 as a variable of watch row 4. Test server 3412 = build of 08465cce, left UP (stop:
+  `node scripts/test-server.js stop`).
+  NEXT STEP (first): finish batch 3 as above → open its PR → checker → merge. Then batch 5 coding from b5-articles-draft.md.
   4 technical (B): mobile LCP 10.3–11.6 s lab on 5 pages (render delay, suspect AgeGate/hydration — not proven) · per-article
   dateModified (all 21 articles share the family date = fake freshness; also blocks the author/date block) · brand on muro ×3 +
   pod-180 JSON-LD · GSC 5xx 1 + crawled-not-indexed 2 URLs.
