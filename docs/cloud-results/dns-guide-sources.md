@@ -90,5 +90,24 @@ tool, not raw text: open the page before quoting exact wording on the site.
   "Disconnected" → tap → orange, "Connecting" · undo = tap the switch again → menu "Pause for 15 minutes / Pause for 1 hour /
   Switch to DNS only mode / **Disable**". The iOS "Add VPN configuration" prompt itself was not in the set (kept conditional).
   This replaces the unconfirmed "switch off" note above: undo = switch → Disable.
+  Owner confirmed in chat 11/10: on 4G the switch reached "Connected" and okami24.store opened → iPhone app = works on mobile
+  data too [ตรวจแล้ว — owner first-hand] (with Cloudflare's Android-page "any network" statement).
+- iPhone Wi-Fi manual DNS seen on the owner's own iPhone (Thai iOS, 2026-10-11 23:35, 4 screenshots in
+  `_incoming/dns-shots/iphone-wifi/`) [ตรวจแล้ว — first-hand]: **การตั้งค่า** → **Wi-Fi** → ⓘ next to the connected network →
+  section "DNS" → **กำหนดค่า DNS** → **กำหนดเอง** (NOT "ด้วยตนเอง"; Google's AI-translated Thai page also says กำหนดเอง) →
+  under "เซิร์ฟเวอร์ DNS": red minus removes a server, **เพิ่มเซิร์ฟเวอร์** adds one → **บันทึก** (top right) · undo =
+  **อัตโนมัติ**. Only that Wi-Fi network [verified Google "using" page]. Crops: `_incoming/dns-round/crop-wifi.js` (name/photo,
+  neighbour networks and IPs cut; home Wi-Fi name blurred).
+- Mac [verified — Friday read the Thai page text 2026-10-11 https://support.apple.com/th-th/guide/mac-help/mh14127/mac · EN
+  https://support.apple.com/guide/mac-help/change-dns-settings-on-mac-mh14127/mac; the page lists macOS 27 back to High
+  Sierra]: เลือกเมนู Apple > **การตั้งค่าระบบ** แล้วคลิก **เครือข่าย** ในแถบด้านข้าง คลิกบริการเครือข่าย คลิก **รายละเอียด** จากนั้นคลิก
+  **DNS** (อาจต้องเลื่อนลง) · add: click + (icon, no text label) at the bottom of the **เซิร์ฟเวอร์ DNS** list, enter an IPv4 or IPv6
+  address · remove: select the server, click − (icon). [not confirmed]: the closing OK button's Thai label, and that the
+  setting is per network service (the path goes through one service — likely, not stated).
+- Android 1.1.1.1 app [verified — Friday read https://developers.cloudflare.com/1.1.1.1/setup/android/ 2026-10-11]: "Download
+  1.1.1.1: Faster Internet from Google Play for free" → "Launch … and accept the Terms of Service" → "Toggle the WARP button to
+  Connected" → "Install the VPN profile…"; the app "automatically configures your phone to use 1.1.1.1 on any network you connect
+  to". Android manual Wi-Fi DNS (older versions) = static IP via Modify network → may break captive-portal Wi-Fi → NOT on the
+  page; Android's no-app way = Private DNS (all networks).
 - Private DNS on mobile data: only Cloudflare states it ("all networks, including cellular"); Google's pages do not [not confirmed
   Google-side] → cite Cloudflare for the network line.
