@@ -45,10 +45,14 @@ export const categories: Category[] = [
     name: "Pods & Cartridges",
     shortName: "Pods",
     labelTh: "Pods & Cartridges / หัวพอต",
+    // Round SEO ฉ batch 3 (12/10): this lede is also the meta — it now names "หัวพอตเปล่า" (people type it; the page sat at
+    // pos 5.2 with 0/112 clicks) and every brand the page lists (NEVOKS coil-54, RINCOE coil-89). thai-copy + seo-auditor 12/10.
+    // Order of the three kinds re-cut after the checker (12/10): the first cut broke "คอยล์ใน|ตัว" at 1440 — this one was
+    // measured at the lede's 350 px (390) and 672 px (1440) widths with no break inside a word.
     description:
-      "UWELL, VOOPOO and SALTHUB replacement pods, refillable, or prefilled for switch-style devices. Each fits its own device only; check the model before ordering.",
+      "Replacement pods from UWELL, VOOPOO, SALTHUB, NEVOKS and RINCOE: empty, with a built-in coil, or prefilled for switch-style devices. Check the model before ordering.",
     descriptionTh:
-      "หัวพอตสำหรับเปลี่ยน มีของ UWELL VOOPOO และ SALTHUB ทั้งแบบเติมเอง และแบบบรรจุสำเร็จของเครื่องระบบสวิตช์ แต่ละหัวใช้ได้เฉพาะเครื่องของมัน เช็คให้ตรงรุ่นก่อนสั่ง",
+      "หัวพอตของ UWELL VOOPOO SALTHUB NEVOKS และ RINCOE มีทั้งหัวพอตเปล่า แบบที่มีคอยล์ในตัว และแบบบรรจุสำเร็จของเครื่องระบบสวิตช์ เช็คให้ตรงรุ่นเครื่องก่อนสั่ง",
     systemTypes: ["pod-cartridge"],
   },
   {
@@ -57,10 +61,12 @@ export const categories: Category[] = [
     name: "Coils & Accessories",
     shortName: "Coils & Accessories",
     labelTh: "Coils & Accessories / คอยล์และอุปกรณ์เสริม",
+    // Round SEO ฉ batch 3 (12/10): opens with "คอยล์พอต" (in no head before; the shop's clip ranks #4 for it). RINCOE left:
+    // no RINCOE coil is on this page (Coil-63 withdrawn 06/09, Coil-89 moved to pods-cartridges).
     description:
-      "Genuine replacement coils from UWELL, VOOPOO, RINCOE and DOTMOD. Match your device model, then pick ohms by how you vape: lower is airier, higher is tighter.",
+      "Genuine replacement pod coils from UWELL, VOOPOO and DOTMOD. Match your device model first, then pick ohms by how you vape: lower is airier, higher is tighter.",
     descriptionTh:
-      "คอยล์แท้สำหรับเปลี่ยน ตอนนี้มีของ UWELL VOOPOO RINCOE และ DOTMOD เลือกให้ตรงรุ่นเครื่องก่อน แล้วค่อยเลือกโอห์มตามแนวการสูบ โอห์มต่ำสูบโล่ง โอห์มสูงสูบแน่น",
+      "คอยล์พอตของแท้สำหรับเปลี่ยน ตอนนี้มีของ UWELL VOOPOO และ DOTMOD เลือกให้ตรงรุ่นเครื่องก่อน แล้วค่อยเลือกโอห์มตามแนวการสูบ โอห์มต่ำสูบโล่ง โอห์มสูงสูบแน่น",
     systemTypes: ["coil", "accessory"],
   },
   // Phase 3.5 (E-liquid) — deliberately `systemTypes: []`, not a guess at a device value. `SystemType`

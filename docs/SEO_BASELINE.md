@@ -234,3 +234,15 @@ link "พอตซิสเต็ม" → pod-systems · new article /guides/wha
 | 10 | pod system คือ | /guides/what-is-a-pod-system | first-pod guide 0/3 · 70 | the new article gets the impressions | first-pod guide still shown → check its head again |
 
 The live date is 11/10, so on 22/10 these two rows have ~10 days — read them again on 2026-11-01 before judging.
+
+## Round "SEO ฉ" batch 3 (12/10/2026, branch seo-f-b3) - what changed before the 22/10 read
+
+Heads changed (paper set `_incoming/seo-f/b3-head-set.md`; GSC = 28 days to 09/10): /products/pods-cartridges meta = lede now
+names "หัวพอตเปล่า" + 5 brands (page 0/112 · 5.2) · /products/coils-accessories title + lede open with "คอยล์พอต" (in no head
+before) · /brands/iqos · /brands/relx · /brands/wotofo metas step back to brand level (no model names / prices) · H1 only:
+/brands/salthub "SALTHUB" → "SALTHUB M Bar (Marbo)" (page 5/75 · 18.0) · /e-liquid "กลุ่มรสชาติ" → "กลุ่มรสชาติของน้ำยาบุหรี่ไฟฟ้า"
+(0/25 · 16.2). Watch rows 1–8 heads untouched.
+
+**Row 4 variable:** the salthub H1 now says "M Bar" — if "m bar 15k" queries move further to /brands/salthub on 22/10, this H1 is a
+suspect next to the missing article links. New row to read on 01/11: "คอยล์พอต" → /products/coils-accessories (at open: our clip #4,
+the page not in the query list).
