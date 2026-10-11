@@ -75,7 +75,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   ranked list above. Weekly Claude quota 95% on 11/10 (resets 11/10 22:00) — one checker per PR.
   The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
 3g OPEN ROUND 11/10 (own chat) "site unreachable" = `docs/rounds/รอบคู่มือเว็บเข้าไม่ได้-DNS-โดเมนสำรอง-11-10.txt`.
-  Owner 11/10: homepage = A age-gate line + C home card · backup domain okami24.net · guide v2 structure = phone "no app"
+  Owner 11/10: homepage = A age-gate line + C home card · backup domain okami-24.com (bought 12/10 instead of .net) · guide v2 structure = phone "no app"
   (iPhone Wi-Fi manual DNS + Android Private DNS) · "1.1.1.1 app" (iPhone + Android) · "computer" (Mac + Windows); Chrome
   dropped; inviting copy (benefit: every site, not only ours — never naming sites, never "ถูกบล็อก"); owner has no Android →
   drawn screens (ScreenMock) with official labels only. Facts = `docs/cloud-results/dns-guide-sources.md` (official pages,
@@ -103,16 +103,19 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   descriptions [ตรวจแล้ว]. 47.1 (lead formal) + 47.3 (home card 390 "เว็บ | เรา") = kept as recommended (owner did not object).
   Found, not this round: home en/zh show 16 Thai nodes (พอตซิสเต็ม/พอตคิท/พอตใช้แล้วทิ้ง), same on live before #439 — offered to the
   owner as a separate task.
-  NEXT [รอเจ้าของ]: owner buys okami24.net + RECOVERY §6ก → Friday curls https://okami24.net (200, canonical .store) — the test
-  server already answers Host okami24.net / www with 200, no redirect, canonical .store [ตรวจแล้ว 12/10] · Render Hobby = 2 custom
-  domains, +$0.25/mo each beyond (whether the auto-added www counts is unconfirmed) · then round-close.
+  BACKUP DOMAIN DONE 12/10 [ตรวจแล้ว]: owner bought okami-24.com (Cloudflare, same account as .store, expires 2027-10-12, auto-renew) ·
+  Friday (owner "กดให้เลย" per step) added it on Render (Verified; 2/2 included domains, no extra cost) and 2 CNAMEs → okami24.onrender.com,
+  DNS only · curl: https://okami-24.com 200, www 301 → root, canonical / sitemap / robots = okami24.store. RECOVERY §6 rewritten.
+  okami-pod.com (old shop site in the same Cloudflare account: registered ELSEWHERE, A → 35.213.178.222 not answering, MX on the old
+  host, GSC-verified) — owner: "ตัดทิ้ง ยกเลิกให้"; NOT deleted — waiting on `docs/รอพี่ตรวจ.md` 48 (redirect to .store first? any
+  @okami-pod.com mail in use? which provider bills it). Next: round-close of 3g.
   Owner may later send a Mac screenshot (closing OK label unconfirmed — page says "กดยืนยันเพื่อบันทึก").
   Not in this round: LINE OA rich menu / pinned post / box card (owner: later) · Analytics (before the first paid ad).
   Worktree `_incoming/wt-dns` (own node_modules copy; test server 3412 stopped) — removable after the round closes.
 3h READY, NOT OPEN 12/10 — round "SEO ฉ" (owner 12/10: "หน้า 1 ทุกคีย์ · ปล่อยพลังเต็มที่" + "เนื้อหาสีเขียว" = knowledge articles from
   the owner's YouTube) = `docs/rounds/รอบ-SEO-ฉ-อัดฉีดเต็ม-หน้า1-เนื้อหาสีเขียว-12-10.txt` (7 batches; already in git — round-open step 1
   copy is done). Opens in ITS OWN new chat (owner opens it; one chat = one round) with skill round-open; 3g stays in its chat
-  (only okami24.net left, no site work). Next GSC reads 22/10 + 01/11 fall inside it (SEO_BASELINE).
+  (backup domain done 12/10; only okami-pod.com + round-close left, no site work). Next GSC reads 22/10 + 01/11 fall inside it (SEO_BASELINE).
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
   pod-systems title/meta/H1 unchanged [ตรวจแล้ว]. Owner 09/10: protect what ranked — pod-systems head byte-identical.
