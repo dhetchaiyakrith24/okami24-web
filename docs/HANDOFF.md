@@ -87,7 +87,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   scan.js 0/113 · hydration 0/34 · raw 0 · wordbreak guide/home/guides 0 new vs pre-round baseline · bold-label split 0 ·
   service pages' <main> byte-identical to live. Proof `_incoming/dns-round/` (live-v2/ shots) + checker `_incoming/chk-dns/`.
   Rollback = revert 4b95cb00 (v2) / 97136d19 (v1).
-  NEXT [รอเจ้าของ]: owner buys okami24.net + RECOVERY §6ก → Friday curls https://okami24.net (200, canonical .store) ·
+  NEXT FIRST (owner 12/10 00:45, after seeing the live page: "โดยรวมโอเครละ แก้ 2 จุด") — one small PR, tier B, checker:
+  (a) Top copy of the guide (th first; en/zh follow): the dek + lead + intro repeat themselves ("เปลี่ยน DNS" ×3, "เปลี่ยนแล้ว
+  มีผลกับทุกเว็บ" in both dek and lead) — cut the repeats, shorter, and change the voice to a friend telling a friend, knowing
+  wink ("ตั้งตรงนี้ทีเดียว ก็เข้าได้ทุกเว็บแหละ" feel — owner: "อารมณ์เพื่อนคุยกันแล้วยักคิ้ว"). Limits stay: never name sites,
+  never "ถูกบล็อก", no time/speed/safety claims, true for every method shown. thai-copy writes 2 variants; Friday picks.
+  Files: dek = src/i18n/guides-copy.ts "cant-open-the-website" (also home card + /guides card + meta) · lead/intro =
+  src/i18n/dns-guide-copy.tsx th/en/zh. (b) iPhone Wi-Fi shots with the blurred network name (iphone-wifi-1-settings,
+  iphone-wifi-2-info) look unprofessional — replace the blur with a clean overwrite in iOS style (e.g. "Home Wi-Fi", same
+  size/colour as the iOS text on that row) via _incoming/dns-round/crop-wifi.js; NEW file names (Cloudflare caches by name).
+  Then: owner buys okami24.net + RECOVERY §6ก → Friday curls https://okami24.net (200, canonical .store) ·
   Render Hobby = 2 custom domains, +$0.25/mo each beyond (whether the auto-added www counts is unconfirmed) · then round-close.
   Owner may later send a Mac screenshot (closing OK label unconfirmed — page says "กดยืนยันเพื่อบันทึก").
   Not in this round: LINE OA rich menu / pinned post / box card (owner: later) · Analytics (before the first paid ad).
