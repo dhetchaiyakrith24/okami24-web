@@ -74,64 +74,39 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (find "button type=file"); results via the MCP `show_generations` (read-only). NEXT: coil-94 card + 0.4Ω option, coil-55, then the
   ranked list above. Weekly Claude quota 95% on 11/10 (resets 11/10 22:00) — one checker per PR.
   The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
-3g OPEN ROUND 11/10 (own chat) "site unreachable" = `docs/rounds/รอบคู่มือเว็บเข้าไม่ได้-DNS-โดเมนสำรอง-11-10.txt`.
-  Owner 11/10: homepage = A age-gate line + C home card · backup domain okami24.net · guide v2 structure = phone "no app"
-  (iPhone Wi-Fi manual DNS + Android Private DNS) · "1.1.1.1 app" (iPhone + Android) · "computer" (Mac + Windows); Chrome
-  dropped; inviting copy (benefit: every site, not only ours — never naming sites, never "ถูกบล็อก"); owner has no Android →
-  drawn screens (ScreenMock) with official labels only. Facts = `docs/cloud-results/dns-guide-sources.md` (official pages,
-  the owner's Thai-iOS screenshots in `_incoming/dns-shots/`, his 4G test of the 1.1.1.1 app).
-  LIVE: batch 1 #432 · v1 #433 97136d19 (guide + footer link on every page + age-gate line + home Help card + RECOVERY §6) ·
-  v2 #435 4b95cb00 (deploy run 38159513940; curl: page 200, 12 anchors incl. v1 #iphone/#android, 8 images byte-identical
-  to git) [ตรวจแล้ว]. v2 checker: round 1 FAIL 3/6 (unbacked lines, white site shot with Cloudflare's "safer" slogan, shot
-  order, tall drawings) → fixed 81c79c07 → round 2 PASS. Gates on 81c79c07: tsc 0 · eslint 0 · verify:catalog 31/31 ·
-  scan.js 0/113 · hydration 0/34 · raw 0 · wordbreak guide/home/guides 0 new vs pre-round baseline · bold-label split 0 ·
-  service pages' <main> byte-identical to live. Proof `_incoming/dns-round/` (live-v2/ shots) + checker `_incoming/chk-dns/`.
-  Rollback = revert 4b95cb00 (v2) / 97136d19 (v1).
-  LIVE #439 a86d4626 (12/10, deploy 38163379359; curl: guide / home / guides 200, new dek = meta, old DNS paragraph gone,
-  2 new Wi-Fi webp byte-identical to git) [ตรวจแล้ว] = the owner's 2 fixes of 12/10 00:45: (a) top copy th/en/zh — dek "ตั้งไว้ที่เดียว
-  ในเครื่อง ก็ใช้ได้กับทุกเว็บ ไม่ใช่แค่เว็บเรา มีวิธีให้ทั้ง iPhone Android และคอม" (also home Help card, /guides card, meta) · lead "ทุกวิธี
-  ในหน้านี้ใช้บริการฟรีของ Google หรือ Cloudflare ถ้าวันไหนอยากกลับไปเป็นแบบเดิม ก็ตั้งกลับได้เองทุกเมื่อ" · intro paragraph removed (zh
-  keeps its English-UI line as `note`) · thai-copy variant A · (b) iPhone Wi-Fi shots 1–2: "Home Wi-Fi" drawn in the iOS row style
-  (`_incoming/dns-round/wifi-v3/overwrite.js`, Segoe UI 600) as -v3 files. Checker round 1 FAIL 1/4 ("switch back any time" unbacked for
-  the Android 1.1.1.1 app) → undo line "อยากเลิกใช้ ลบแอป 1.1.1.1 ออกจากเครื่อง" + Cloudflare WARP Android source → re-check PASS on
-  1c66a51c. Gates: scan.js 0/113 · hydration guide/guides 0 · wordbreak = live, 0 new · visible-text: only dek/lead/intro.
-  Proof `_incoming/dns-round/vt3-diff/` + checker `_incoming/chk-dns3/`. Rollback = revert a86d4626.
-  Owner 12/10 on the checker's 3 taste notes (sheet 47): 47.2 → "ทำเพื่อลูกค้า Search ด้วย" = LIVE #441 63a36a46 (deploy
-  38165055490): head-only row in GUIDE_DESCRIPTION_HEAD_TH (meta / og / JSON-LD; page + cards keep the dek): "เข้าเว็บไม่ได้ ลอง
-  เปลี่ยน DNS บนมือถือ Android ตั้ง DNS ส่วนตัวเป็น dns.google · iPhone ใส่ 8.8.8.8 ใน Wi-Fi หรือใช้แอป 1.1.1.1 ของ Cloudflare มีวิธีบนคอมด้วย"
-  (158 chars, trimmed from 195 after checker PASS — 13.5 (จ), facts only removed). head-audit live: 113 pages 200, 0 duplicate
-  descriptions [ตรวจแล้ว]. 47.1 (lead formal) + 47.3 (home card 390 "เว็บ | เรา") = kept as recommended (owner did not object).
-  Found, not this round: home en/zh show 16 Thai nodes (พอตซิสเต็ม/พอตคิท/พอตใช้แล้วทิ้ง), same on live before #439 — offered to the
-  owner as a separate task.
-  NEXT [รอเจ้าของ]: owner buys okami24.net + RECOVERY §6ก → Friday curls https://okami24.net (200, canonical .store) — the test
-  server already answers Host okami24.net / www with 200, no redirect, canonical .store [ตรวจแล้ว 12/10] · Render Hobby = 2 custom
-  domains, +$0.25/mo each beyond (whether the auto-added www counts is unconfirmed) · then round-close.
-  Owner may later send a Mac screenshot (closing OK label unconfirmed — page says "กดยืนยันเพื่อบันทึก").
-  Not in this round: LINE OA rich menu / pinned post / box card (owner: later) · Analytics (before the first paid ad).
-  Worktree `_incoming/wt-dns` (own node_modules copy; test server 3412 stopped) — removable after the round closes.
+3g CLOSED 12/10 — round "site unreachable" (`docs/rounds/รอบคู่มือเว็บเข้าไม่ได้-DNS-โดเมนสำรอง-11-10.txt`), tag `site-unreachable-done`.
+  Live [ตรวจแล้ว]: DNS help guide /guides/cant-open-the-website (v2 #435 · top copy + Wi-Fi shots #439 · head-only meta #441) · footer link
+  on every page + age-gate line + home Help card (#433) · backup domain okami-24.com (Render custom domain + 2 CNAMEs DNS only,
+  canonical stays okami24.store; RECOVERY §6) · facts `docs/cloud-results/dns-guide-sources.md`. Rollback per PR (revert).
+  Open, outside the round: home en/zh 16 Thai nodes (offered as its own task) · owner may send a Mac screenshot (closing OK label
+  unconfirmed) · LINE OA rich menu / pinned post / box card (owner: later) · Search Console check in 2–4 weeks that no okami-24.com
+  URL shows instead of .store. Worktree `_incoming/wt-dns` removable (housekeeping).
 3h OPEN 12/10 (own chat) — round "SEO ฉ" = `docs/rounds/รอบ-SEO-ฉ-อัดฉีดเต็ม-หน้า1-เนื้อหาสีเขียว-12-10.txt` (owner: page 1 for every
-  key + "green" knowledge articles from the owner's 4 YouTube channels). Opened on main dcc4ca7e, branch `seo-f-batch1`.
-  Owner answers at open (12/10, cards): all 4 channels (OKM YARZ · OKM 24 · POD SYSTEM OKAMI II · OKAMI) · no scripts — Friday pulls
-  topics/data from YouTube itself, SHOWS THE OWNER THE GREEN TOPIC LIST FIRST, then writes new articles "ที่สุดและตึงกว่าเดิม" ·
-  THAI FIRST, translate later (en/zh share the URL, no hreflang → translation does not affect Google) · Thai voice for green
-  articles: more natural, flowing, small fitting jokes allowed so it reads human-written (owner 12/10 — round-level, on top of
-  THAI_STYLE §2) · folder `รายงานจากแอดมิน แชท/` = product work, NOT this round, do not read · free tools only (no Google Ads
-  account → no Keyword Planner; volume = GSC impressions + Trends + autocomplete) · pages already on page 1: Friday keeps their
-  ranking head and improves around it (owner 12/10 "เราจะจัดการเองและทำให้ดีกว่าเดิม").
-  Batches (tiers): 1 checklist doc (A, docs) DONE = SEO_LANDSCAPE §7 · 2 keyword map doc DONE = §0.6 (63 new GSC queries mapped)
-  + §8 green topics (11 topics, clip ids, autocomplete/Trends evidence; owner 12/10 cards: set 1 = topics 1–5 "problems + pod care",
-  airplane topic = airline carriage rules only; set 2 = 6–11) · YouTube transcripts: Claude Browser pane, watch page →
-  expand description → "แสดงข้อความถอดเสียง" button → read `ytd-transcript-segment-renderer .segment-text` (direct timedtext
-  fetch returns 0 bytes) · Trends: in the app browser call /trends/api/explore + widgetdata/multiline from page JS (charts
-  don't render) · GITHUB ACTIONS BLOCKED 12/10: "recent account payments have failed or your spending limit needs to be
-  increased" → PR #446 checks never started → no merge/deploy until the owner fixes billing [รอเจ้าของ] ·
-  3 heads/H1/links/clip embeds (A/B, set on paper → seo-auditor → code) · 4 technical (B: mobile LCP ~10 s lab on 5 pages, cause
-  not proven — render delay, suspect AgeGate/hydration; dateModified per page; brand on 4 products; 5xx/crawled URLs) ·
-  5 green set 1 (B, Thai first, designer for an author/date block) · 6 green set 2 + topic clusters (B) · 7 measure + hand over.
-  Evidence `_incoming/seo-f/`: gsc-1012-queries.txt (250 queries 12/09–09/10) · gsc-1012-pages.txt (104 pages + index/CWV/
-  enhancement reports) · live-1012/ (head-audit 113) · lh/ (Lighthouse 13 mobile) · scope-auditor-1012.md. seo-auditor open
-  audit = reply in chat 12/10, findings folded into SEO_LANDSCAPE §7 (cannibals: /about vs home tail, /brands/uwell vs
-  pod-systems, iqos/relx/wotofo brand metas; "น้ำยา" in 9 metas outside /e-liquid; SEO_BASELINE row 4 still names m-bar-15k).
+  key + "green" knowledge articles from the shop's YouTube). Opened on main dcc4ca7e. Owner rulings at open (12/10, cards):
+  channels = OKM YARZ @OKMYARZ · OKAMI @OKM_24 (= "OKM 24") · POD SYSTEM OKAMI II @PODSYSTEM-OKAMI-II · Friday pulls topics from
+  YouTube, showed the green topic list first (done) · THAI FIRST, translate later (`thaiOnly: true`; en/zh share the URL, no
+  hreflang → no SEO effect) · green-article voice: natural, flowing, a few fitting jokes (owner OK'd the drafts' voice) ·
+  folder `รายงานจากแอดมิน แชท/` = product work, not this round · free tools only (no Ads account) · page-1 pages: keep the
+  ranking head, improve around it · health/quitting = neutral, foreign gov/research sources (#444/#445, in the round file).
+  GitHub Actions: budget $15/month (owner 12/10) — ONE docs PR per batch of work, or ride along a code PR (LESSONS 32).
+  Batches: 1 checklist DONE = SEO_LANDSCAPE §7 · 2 keyword map DONE = §0.6 + §8 green topics (owner: set 1 = topics 1–5
+  "problems + pod care", airplane = airline rules only, set 2 = 6–11) → both in docs PR #446 (branch `seo-f-batch1`).
+  3 = branch `seo-f-b3` commit 08465cce (NOT pushed/PR'd at the time of writing — check `git log origin/seo-f-b3`): pods-cartridges
+  + coils-accessories ledes/metas, coils title "คอยล์พอต", iqos/relx/wotofo metas brand-level, salthub H1 "SALTHUB M Bar (Marbo)"
+  (BRAND_H1), /e-liquid H1. Paper set `_incoming/seo-f/b3-head-set.md` (thai-copy + seo-auditor 8/8 PASS; clip rows dropped —
+  COLLECTION_VIDEOS only takes page-1 clips). Gates done: tsc 0 · eslint 0 · verify:catalog 31/31 · head-audit test server vs
+  live = exactly 9 field diffs on the 7 pages, 106 pages unchanged [ตรวจแล้ว]. Pending: scan.js / hydration / wordbreak (were
+  running) · tier-B shots of the 2 H1s (390/1440) · checker · SEO_BASELINE: log salthub H1 as a variable of watch row 4.
+  4 technical (B): mobile LCP 10.3–11.6 s lab on 5 pages (render delay, suspect AgeGate/hydration — not proven) · per-article
+  dateModified (all 21 articles share the family date = fake freshness; also blocks the author/date block) · brand on muro ×3 +
+  pod-180 JSON-LD · GSC 5xx 1 + crawled-not-indexed 2 URLs.
+  5 green set 1: drafts A "พอตไหม้" (fixing-a-burnt-pod) + B "หัวพอตรั่ว" (fixing-a-leaking-pod), owner answers, research
+  verdicts and the exact wording changes = `_incoming/seo-f/b5-articles-draft.md` (READ IT FIRST). Owner: move clip f86AJRNHX4U
+  to A, coil-and-pod-maintenance gets e_r5uqEC2LQ · author/date block = designer option C (dates "9 ต.ค. 2026"; "เผยแพร่" only
+  until per-article dates exist) · shop numbers 1–2 s / 50/50 / 80–90% OK. Still to draft: topics 3–5 (reworks of
+  fixing-no-draw, battery-care, coil-and-pod-maintenance). Transcripts `_incoming/seo-f/yt/tx/` (method: `yt/grab.js` in the app
+  browser + `yt/recv.js` on 127.0.0.1:47811; clips without captions = description only).
+  Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
   Next GSC reads 22/10 (rows 1–8) + 01/11 (rows 9–10).
 3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
   deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
@@ -401,3 +376,6 @@ F4 TWINS review (l-8sAPwOUZw, OKM YARZ), not the NOS one · words ดีไซ�
 **Answered 08/10 (owner, chat, รอพี่ตรวจ 20–25):** M Bar 15K name stays in the Kit/Pod head copy (20) · home desktop intro Scene 4 =
 M Switch Kit (21) · WOTOFO nexBAR 18K flavours whose only maker photo is the Vivid Edition (a different body) stay WITHOUT a photo —
 never use a Vivid render for them (22) · MURO 3ML boxes at 340×490 = fine for all 8 small boxes (24 + 25, IMAGE_SPEC exception).
+**Answered 12/10 (owner, chat, round 3g):** backup domain = okami-24.com (not .net; canonical stays okami24.store, no 301 between them) ·
+okami-pod.com (old site) = ignore, never touch or propose ("ไม่ต้องสนใจ ทิ้งได้เลย") · GitHub Actions budget $15/month, stop at the limit;
+batch docs edits into one PR per batch (LESSONS 32) · DNS guide health/quit-smoking writing = neutral, foreign official sources (SEO ฉ file).
