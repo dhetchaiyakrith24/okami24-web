@@ -373,6 +373,9 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
     "ตั้งกี่วัตต์ดี เปิดช่องลมแค่ไหน สองอย่างนี้ปรับไปด้วยกัน พร้อมตัวอย่างจริง Caliburn G3 Pro ที่ให้หัวพอต 2 ค่าโอห์มมาในกล่อง และ VINCI S ช่วงวัตต์ 5–40 วัตต์",
   "understanding-mtl-vs-dtl":
     "MTL กับ DTL ต่างกันยังไง MTL ดึงไอเข้าปากก่อนแล้วค่อยลงปอด ช่องลมแคบ โอห์มสูง วัตต์ต่ำ · DTL ดึงไอลงปอดเลย ช่องลมโล่ง โอห์มต่ำ วัตต์สูง · RDL อยู่ตรงกลาง",
+  // Round SEO ฉ batch 6b topic 8 (12/10): the new Thai-only article — its dek says "น้ำยา", which stays out of head copy.
+  "salt-nic-vs-freebase":
+    "salt nic กับ freebase ต่างกันยังไง แบบไหนเข้ากับพอตตัวเล็ก แบบไหนเข้ากับเครื่องวัตต์สูง ตัวเลข 3% กับ 5% บอกอะไร และสัดส่วน PG/VG มีผลกับรสและควันยังไง",
   // Round "site unreachable" (owner 12/10, sheet 47.2): the short dek (card + page) has no search words, so the head gets
   // the terms people type — every method named with its official value (docs/cloud-results/dns-guide-sources.md).
   "cant-open-the-website":

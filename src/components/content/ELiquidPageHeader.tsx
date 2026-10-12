@@ -1,9 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { ThaiText } from "@/components/i18n/ThaiText";
 import { CONTACT } from "@/data/contact";
+
+/** Round SEO ฉ batch 6b (12/10): the full salt nic article is Thai-only (Guide.thaiOnly), so this one line is Thai-only too —
+ *  kept here, not in the dictionaries (they must hold the same non-empty keys in all three locales). The link text is the
+ *  article's title, which carries the search phrase; /e-liquid itself keeps the bare words "salt nic" / "freebase". */
+const NIC_GUIDE_TH = { lead: "อ่านแบบเต็มได้ที่บทความ", href: "/guides/salt-nic-vs-freebase", link: "salt nic กับ freebase ต่างกันยังไง แบบไหนเหมาะกับใคร" };
 
 /** Same pattern as ComparePageHeader.tsx / FAQPageHeader.tsx. */
 export function ELiquidPageHeader() {
@@ -18,7 +24,7 @@ export function ELiquidPageHeader() {
  * counted by LineClickTracker like every other one (spot "other" — this is copy, not a button).
  */
 export function ELiquidNicotineTypes() {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
   const t = dict.eliquid;
   return (
     <section className="mt-14 max-w-3xl" aria-labelledby="eliquid-nicotine-types">
@@ -32,6 +38,14 @@ export function ELiquidNicotineTypes() {
         <p>
           {t.nicP3} {t.nicP4} {t.nicP5}
         </p>
+        {locale === "th" ? (
+          <p>
+            {NIC_GUIDE_TH.lead}{" "}
+            <Link href={NIC_GUIDE_TH.href} className="font-semibold text-foreground underline underline-offset-4 hover:text-red">
+              {NIC_GUIDE_TH.link}
+            </Link>
+          </p>
+        ) : null}
         <p className="font-semibold text-foreground">{t.nicNotSold}</p>
         <p>
           <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground underline-offset-4 hover:text-red hover:underline">

@@ -588,6 +588,105 @@ const allGuides: Guide[] = [
     reviewVideo: { videoId: "cPYybXJ4zzA", title: "ค่าโอห์มต่างกัน ฟีลต่างกันยังไง?", channelName: "OKM YARZ", publishedAt: "2026-08-17" },
   },
   {
+    // Round SEO ฉ batch 6b "green" set 2, topic 8 (owner 12/10): thai-copy draft 12/10 from the shop's clips (descriptions only —
+    // _incoming/seo-f/b6/clips-6b.tsv); facts _incoming/seo-f/b6/research-6b.md. Free-base vs protonated nicotine = Duell/Pankow/
+    // Peyton, Chem Res Toxicol 2018 (PMC6008736) · "smoother, less harsh at matched strength" = Leventhal et al., JAMA Netw Open
+    // 2021 (sensory results only) · salt ↔ low-power MTL pods, freebase ↔ higher-power sub-ohm = Aspire · RELX UK · Lost Vape ·
+    // PG/VG feel + Aspire's coil chart (1.5–2.5Ω 70% PG · 0.5–1.4Ω 50/50 · 0.1–0.4Ω 80% VG) = Aspire 2023 · high PG floods a
+    // sub-ohm coil = GeekVape FAQ · product rows = the site's own verified spec rows (relxnow · salthub · VOOPOO ARGUS G4 mini ·
+    // MOOOD · WOTOFO). No mg ↔ % conversion anywhere: no maker on the site publishes one. Clip 1uuJrjCzFBE (NEXAS BOOSTER 16K,
+    // not sold here) left out. "น้ำยา" is in the dek → head-only meta row in GUIDE_DESCRIPTION_HEAD_TH.
+    id: "salt-nic-vs-freebase",
+    slug: "salt-nic-vs-freebase",
+    title: "salt nic กับ freebase ต่างกันยังไง แบบไหนเหมาะกับใคร",
+    dek: "salt nic กับ freebase คือนิโคตินคนละแบบ ไม่ใช่ยี่ห้อหรือกลิ่น บทความนี้เล่าว่าสองแบบต่างกันตรงไหน แบบไหนเข้ากับเครื่องแบบไหน ตัวเลข 3% กับ 5% บอกอะไร และสัดส่วน PG/VG ข้างขวดน้ำยามีผลกับการสูบยังไง",
+    category: "how-it-works",
+    readingTimeMin: 7,
+    publishedAt: "2026-10-12",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "salt nic กับ freebase คืออะไร",
+        paragraphs: [
+          "salt nic กับ freebase ต่างกันยังไง ตอบสั้น ๆ คือเป็นนิโคตินคนละแบบ ไม่ใช่ยี่ห้อ และไม่ใช่กลิ่น น้ำยาแต่ละขวดหรือพอตใช้แล้วทิ้งแต่ละรุ่นจะใช้แบบใดแบบหนึ่ง ซึ่งดูได้จากข้างกล่องหรือสเปกของรุ่นนั้น",
+          "freebase คือนิโคตินในรูปเดิม ส่วน salt nic คือนิโคตินที่ผู้ผลิตผสมกรดลงไป กรดทำให้นิโคตินเปลี่ยนไปอยู่อีกรูปหนึ่ง ซึ่งงานวิจัยด้านเคมีวัดแยกได้ชัดว่าต่างจากรูป freebase ความต่างตรงนี้คือเหตุผลที่สองแบบให้ความรู้สึกตอนสูบไม่เหมือนกัน",
+        ],
+      },
+      {
+        heading: "สูบแล้วรู้สึกต่างกันยังไง",
+        paragraphs: [
+          "ความต่างที่รู้สึกได้ชัดคือความนุ่ม งานวิจัยที่ตีพิมพ์ใน JAMA Network Open เมื่อปี 2021 ให้ผู้ร่วมทดลองสูบเทียบกัน แล้วพบว่าที่ความเข้มข้นเท่ากัน salt nic ให้ความรู้สึกนุ่มกว่าและบาดคอน้อยกว่า freebase",
+          "ถึงอย่างนั้น freebase ก็ยังมีคนเลือกอยู่ จากที่ร้านเห็น คนที่เลือก freebase มักชอบความรู้สึกตอนสูบ ความชัดของรส และควันที่ได้จากเครื่องวัตต์สูง ซึ่งเป็นการสูบอีกแนวหนึ่ง ไม่ได้แปลว่าแบบไหนดีกว่ากัน แค่เข้ากับคนละแนว",
+        ],
+        video: { videoId: "nGdMbdLuFkk", title: "ทำไมทุกวันนี้ยังมีคนเลือก Freebase?", channelName: "OKAMI", publishedAt: "2026-09-26" },
+      },
+      {
+        heading: "salt nic เข้ากับพอตตัวเล็ก freebase เข้ากับเครื่องวัตต์สูง",
+        paragraphs: [
+          "แบบไหนเหมาะกับใคร ดูจากเครื่องที่ใช้ก่อนเลย ผู้ผลิตอย่าง Aspire RELX และ Lost Vape แนะนำไปทางเดียวกัน คือ salt nic เข้ากับพอตตัวเล็กที่ใช้วัตต์ต่ำและสูบแน่นแบบ MTL ส่วน freebase เข้ากับเครื่องวัตต์สูงที่ใช้คอยล์โอห์มต่ำ",
+          "จากที่ร้านเห็น พอตที่ขายกันทุกวันนี้ส่วนใหญ่ใช้ salt nic อย่าง [M Bar 9K](/products/m-bar-9k) ที่ SALTHUB ระบุว่าเป็น salt nic 30mg และ [RELX Smash Go 12K](/products/relx-smash-go-12k) ที่ RELX ระบุว่าเป็น salt nic มีให้เลือก 3% หรือ 5%",
+          "บางเครื่องก็ทำมาให้ใช้ได้ทั้งสองแบบ [ARGUS G4 mini](/products/argus-g4-mini) ใช้หัวพอตที่กลับด้านเพื่อเปลี่ยนโอห์มได้ VOOPOO ระบุว่าด้าน 1.0 โอห์มให้สูบแน่นแบบ MTL และเข้ากับ salt nic ส่วนด้าน 0.7 โอห์มสูบได้ตั้งแต่ MTL แบบลมโล่งไปจนถึง RDL และเข้ากับ freebase",
+          "ถ้าใช้พอตซิสเต็มที่เติมน้ำยาเอง ให้เลือกแบบที่เข้ากับเครื่องก่อน แล้วค่อยเลือกกลิ่นที่ชอบ กลุ่มรสแต่ละแบบดูได้ที่ [กลุ่มรสชาติของน้ำยาบุหรี่ไฟฟ้า](/e-liquid) ตอนนี้หน้าร้านเรายังไม่มีน้ำยาแบบขวดขาย ถ้าอยากรู้ว่าเครื่องของคุณเข้ากับแบบไหน ทักไลน์ @okm24 ถามร้านได้",
+        ],
+        video: { videoId: "MM_PibfhO0s", title: "ทำไมพอตส่วนใหญ่ถึงเลือกใช้ Salt Nic?", channelName: "OKAMI", publishedAt: "2026-09-12" },
+      },
+      {
+        heading: "3% กับ 5% และ 30mg บอกอะไร",
+        paragraphs: [
+          "ตัวเลขอย่าง 3% 5% หรือ 30mg คือความเข้มข้นของนิโคติน ตัวเลขยิ่งสูง นิโคตินยิ่งเข้ม แต่ละแบรนด์เลือกบอกด้วยหน่วยไม่เหมือนกัน RELX Smash Go 12K กับ [MOOOD Monster 14K](/products/mood-monster-14k) บอกเป็น % ส่วน M Bar 9K กับ [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) บอกเป็น mg โดย WOTOFO มีให้เลือก 20mg กับ 50mg",
+          "บนเว็บเรา เราเทียบในหน่วยเดียวกันเท่านั้น % เทียบกับ % และ mg เทียบกับ mg เพราะผู้ผลิตรุ่นที่อยู่บนเว็บเรายังไม่ได้บอกไว้ว่าสองหน่วยนี้แปลงกันยังไง เราจึงไม่แปลงให้เอง ก็คล้ายเทียบราคาที่เป็นบาทกับเป็นเยน ต้องรู้อัตราแลกก่อนถึงจะเทียบกันได้",
+          "3% กับ 5% เลือกแบบไหน แล้วแต่ความชอบของแต่ละคน รุ่นอย่าง RELX Smash Go 12K มีให้เลือกทั้งสองความเข้มข้นในรุ่นเดียว ถ้ายังไม่แน่ใจว่าแบบไหนเข้ากับตัวเอง ทักไลน์ @okm24 ถามร้านได้",
+        ],
+      },
+      {
+        heading: "PG กับ VG ต่างกันยังไง",
+        paragraphs: [
+          "นอกจากชนิดนิโคติน ข้างขวดน้ำยามักบอกสัดส่วน PG กับ VG ไว้ด้วย สองตัวนี้คือส่วนผสมหลักของน้ำยา PG ใสและไหลง่าย ส่วน VG ข้นกว่า PG หลายสิบเท่า",
+          "ความรู้สึกตอนสูบก็ต่างกัน Aspire อธิบายว่า PG พารสได้ชัดและให้ความรู้สึกแรงถึงคอมากกว่า ส่วน VG ให้ควันหนาและรสออกหวานกว่านิดหน่อย น้ำยาที่ PG สูงจึงเข้ากับคนที่อยากได้รสชัด ส่วนน้ำยาที่ VG สูงเข้ากับคนที่ชอบควันแน่น",
+        ],
+        video: { videoId: "i5SPcPp9HAE", title: "น้ำยา PG/VG ต่างกัน ทำไมฟีลพอตถึงไม่เหมือนกัน?", channelName: "OKAMI", publishedAt: "2026-09-18" },
+      },
+      {
+        heading: "เลือกสัดส่วน PG/VG ให้เข้ากับคอยล์",
+        paragraphs: [
+          "ความข้นมีผลกับการซึมเข้าสำลีด้วย VG ซึมช้ากว่า PG คอยล์โอห์มสูงที่มีรูให้น้ำยาไหลเข้าเล็กจึงเข้ากับน้ำยาที่ PG สูงกว่า ส่วนคอยล์โอห์มต่ำของเครื่องวัตต์สูงรับน้ำยาที่ข้นกว่าได้ ตารางของ Aspire เช่น แนะนำ PG 70% สำหรับคอยล์ 1.5–2.5 โอห์ม สัดส่วน 50/50 สำหรับคอยล์ 0.5–1.4 โอห์ม และ VG 80% สำหรับคอยล์ 0.1–0.4 โอห์ม",
+          "ใช้ผิดคู่ก็มีอาการให้เห็น น้ำยา VG สูงในคอยล์ตัวเล็กอาจซึมไม่ทันจนไหม้ ส่วนน้ำยา PG สูงในคอยล์โอห์มต่ำ GeekVape บอกว่าอาจไหลเข้าคอยล์มากเกินจนท่วมได้ หลักที่ร้านใช้จึงง่าย ๆ คือเลือกน้ำยาให้เข้ากับคอยล์ อาการไหม้และวิธีกันอ่านต่อได้ที่ [พอตไหม้ เกิดจากอะไร](/guides/fixing-a-burnt-pod)",
+          "ส่วนพอตใช้แล้วทิ้งกับหัวพอตบรรจุสำเร็จ มีน้ำยามาในเครื่องแล้ว เรื่อง PG/VG จึงไม่ต้องเลือกเอง ดูแค่ชนิดนิโคตินกับความเข้มข้นบนกล่องก็พอ ส่วนโอห์มกับวัตต์ของคอยล์ อ่านต่อได้ที่ [ตั้งกี่วัตต์ดี](/guides/choosing-wattage-and-airflow)",
+        ],
+        video: { videoId: "QrZxZDd9bmU", title: "8 เคล็ดลับ เลือกน้ำยาอย่างไรให้เหมาะกับคุณ?", channelName: "OKAMI", publishedAt: "2025-05-02" },
+      },
+    ],
+    relatedProductSlugs: ["relx-smash-go-12k", "m-bar-9k", "argus-g4-mini"],
+    faq: [
+      {
+        question: "salt nic กับ freebase ต่างกันยังไง",
+        answer: "เป็นนิโคตินคนละแบบ salt nic คือนิโคตินที่ผู้ผลิตผสมกรดลงไป ส่วน freebase คือนิโคตินในรูปเดิม งานวิจัยพบว่าที่ความเข้มข้นเท่ากัน salt nic ให้ความรู้สึกนุ่มกว่า และผู้ผลิตมักแนะนำ salt nic กับพอตตัวเล็กวัตต์ต่ำ ส่วน freebase กับเครื่องวัตต์สูง",
+      },
+      {
+        question: "freebase ใช้กับพอตตัวเล็กได้ไหม",
+        answer: "ผู้ผลิตอย่าง Aspire RELX และ Lost Vape แนะนำ freebase กับเครื่องวัตต์สูงที่ใช้คอยล์โอห์มต่ำ ส่วนพอตตัวเล็กที่สูบแน่นแบบ MTL ผู้ผลิตแนะนำ salt nic บางเครื่องอย่าง ARGUS G4 mini ทำมาให้ใช้ได้ทั้งสองแบบ ดูคำแนะนำของเครื่องที่ใช้อยู่เป็นหลัก",
+      },
+      {
+        question: "นิโคติน 3% กับ 5% ต่างกันยังไง",
+        answer: "ต่างกันที่ความเข้มข้น 5% เข้มกว่า 3% รุ่นอย่าง RELX Smash Go 12K มีให้เลือกทั้งสองแบบ เลือกแบบไหนแล้วแต่ความชอบ ถ้ายังไม่แน่ใจ ทักไลน์ @okm24 ถามร้านได้",
+      },
+      {
+        question: "30mg เท่ากับกี่ %",
+        answer: "ผู้ผลิตรุ่นที่อยู่บนเว็บเรายังไม่ได้บอกวิธีแปลงระหว่าง mg กับ % ไว้ เราจึงไม่แปลงให้เอง และเทียบความเข้มข้นในหน่วยเดียวกันเท่านั้น ตัวเลขยิ่งสูง นิโคตินยิ่งเข้ม",
+      },
+      {
+        question: "PG/VG เลือกยังไง",
+        answer: "เลือกให้เข้ากับคอยล์ VG ข้นและซึมช้ากว่า คอยล์โอห์มสูงตัวเล็กจึงเข้ากับน้ำยาที่ PG สูงกว่า ส่วนคอยล์โอห์มต่ำของเครื่องวัตต์สูงรับน้ำยาที่ VG สูงได้ PG ให้รสชัดและแรงถึงคอ ส่วน VG ให้ควันหนา",
+      },
+      {
+        question: "พอตใช้แล้วทิ้งเป็น salt nic ไหม",
+        answer: "หลายรุ่นเป็น salt nic เช่น M Bar 9K และ RELX Smash Go 12K แต่บางรุ่นบอกแค่ตัวเลขความเข้มข้น ดูที่สเปกของรุ่นนั้นเป็นหลัก",
+      },
+    ],
+    // The shop's own explainer on exactly this topic (@OKMYARZ); title + upload date as read for the keyword map (SEO_LANDSCAPE §8 row 8).
+    reviewVideo: { videoId: "mY4M61mKQjc", title: "Salt Nic กับ Freebase ต่างกันยังไง? แบบไหนเหมาะกับใคร", channelName: "OKM YARZ", publishedAt: "2026-09-08" },
+  },
+  {
     // Round 10B T03' — writer draft 1 + thai-copy pass (2026-09-24), source map _incoming/round10b/writer-1-result.md.
     // "NEW" on Zapple + Kyoho Grape: SALTHUB's own M Bar 9K poster https://www.salthub.com/wp-content/uploads/2025/08/m_bar_9k_06.webp
     // (re-checked in a real browser 2026-09-24, owner fix C).
