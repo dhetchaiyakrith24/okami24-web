@@ -113,3 +113,26 @@ export function familyLastModified(family: ContentFamily): Date {
 export function familyModifiedDate(family: ContentFamily): string {
   return familyLastModified(family).toLocaleDateString("en-CA", { timeZone: "Asia/Bangkok" });
 }
+
+/** Round SEO ฉ batch 4 (2026-10-12): files beyond guides.ts / guides-copy.ts / search-head-copy.ts that hold one
+ *  guide's own text — the DNS help page (DNS_GUIDE_ID in src/data/guides.ts) keeps its body in its own copy file. */
+export const GUIDE_EXTRA_SOURCES: Record<string, readonly string[]> = {
+  "cant-open-the-website": ["src/i18n/dns-guide-copy.tsx"],
+};
+
+const GUIDE_DATES: Record<string, string> = (contentDates as { guides?: Record<string, string> }).guides ?? {};
+
+/** The newest commit that changed THIS guide's own text (scripts/lib/guide-dates.ts) — not the newest commit to any
+ *  guide file, which re-dated every article whenever one was edited. */
+export function guideLastModified(id: string): Date {
+  const iso = GUIDE_DATES[id];
+  if (!iso) throw new Error(`content-dates.json has no guide date for "${id}" — run npx tsx scripts/content-dates.ts`);
+  return new Date(iso);
+}
+
+/** YYYY-MM-DD (Bangkok) for Article `dateModified` and the visible "updated" line — never earlier than the
+ *  guide's datePublished (a held article can be published after its last text change). */
+export function guideModifiedDate(id: string, publishedAt?: string): string {
+  const day = guideLastModified(id).toLocaleDateString("en-CA", { timeZone: "Asia/Bangkok" });
+  return publishedAt && publishedAt > day ? publishedAt : day;
+}

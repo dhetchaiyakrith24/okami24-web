@@ -407,6 +407,17 @@ export interface Dictionary {
     /** Round 10B (owner ruling 2026-09-24, en/zh wording given by the owner): the one line an English or Chinese visitor
      *  sees on a Thai-only guide's URL (Guide.thaiOnly), above a link back to /guides. The Thai page never shows it. */
     thaiOnlyNotice: string;
+    /** Round SEO ฉ batch 4 (designer option C, owner OK 12/10): byline under a guide's H1 (GuideByline) —
+     *  "<bylineAuthor with {team} = the /about link> · <bylinePublished> <date> · <bylineUpdated> <date>" (zh has no "by"). */
+    bylineAuthor: string;
+    bylineTeam: string;
+    bylinePublished: string;
+    bylineUpdated: string;
+    /** Closing line of a guide body (ArticleBody `sourceNote`): `{channels}` = the shop channels of the clips on that
+     *  page joined by `channelJoiner`; `sourceNoteNoClip` when the page has no clip. */
+    sourceNote: string;
+    sourceNoteNoClip: string;
+    channelJoiner: string;
   };
   eliquid: {
     eyebrow: string;

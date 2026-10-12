@@ -14,9 +14,10 @@ import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import contentDates from "@/data/content-dates.json";
 import { allProducts } from "@/data/products";
-import { guides } from "@/data/guides";
+import { guides, heldGuides } from "@/data/guides";
 import { technologyEntries } from "@/data/technology";
-import { allContentPaths, CONTENT_SOURCES, contentLastModified, familyLastModified, familyModifiedDate, legacyProductSource } from "@/lib/content-dates";
+import { allContentPaths, CONTENT_SOURCES, contentLastModified, familyLastModified, familyModifiedDate, GUIDE_EXTRA_SOURCES, guideModifiedDate, legacyProductSource } from "@/lib/content-dates";
+import { computeGuideDates } from "../../scripts/lib/guide-dates";
 
 export interface ContentDatesContractResult {
   name: string;
@@ -95,10 +96,32 @@ export function runContentDatesContractTests(): ContentDatesContractResult[] {
     check(`${family}: no record still carries a hand-typed updatedAt`, typed.length === 0, typed.map((r) => r.slug).join(", ") || "none");
   }
 
+  // ---- 4b. Per-guide dates (round SEO ฉ batch 4): one date per guide = the newest commit that changed ITS text ----
+  const recordedGuides: Record<string, string> = (contentDates as { guides?: Record<string, string> }).guides ?? {};
+  const guideIds = [...guides, ...heldGuides].map((g) => g.id);
+  const missingGuides = guideIds.filter((id) => !(id in recordedGuides));
+  check(`every guide has its own date in content-dates.json "guides"`, missingGuides.length === 0, missingGuides.join(", ") || `${guideIds.length} guides`);
+  const extraGuides = Object.keys(recordedGuides).filter((id) => !guideIds.includes(id));
+  check(`content-dates.json "guides" lists no guide that no longer exists`, extraGuides.length === 0, extraGuides.join(", ") || "none");
+  let gitGuides: Record<string, string> = {};
+  let gitError = "";
+  try {
+    gitGuides = computeGuideDates(ROOT, guideIds, GUIDE_EXTRA_SOURCES);
+  } catch (e) {
+    gitError = String(e);
+  }
+  const staleGuides = guideIds.filter((id) => gitGuides[id] !== recordedGuides[id]).map((id) => `${id}: json ${recordedGuides[id]} ≠ git ${gitGuides[id]}`);
+  check(`every guide date matches git (run: npx tsx scripts/content-dates.ts)`, !gitError && staleGuides.length === 0, gitError || staleGuides.join("; ") || "all current");
+  const earlier = [...guides, ...heldGuides].filter((g) => g.id in recordedGuides && g.publishedAt && guideModifiedDate(g.id, g.publishedAt) < g.publishedAt).map((g) => g.id);
+  check(`guide dateModified is never earlier than its datePublished`, earlier.length === 0, earlier.join(", ") || "all ≥ published");
+  const guidePageSrc = readFileSync(path.join(ROOT, "src", "app", "guides", "[slug]", "page.tsx"), "utf8");
+  check(`the guide page dates each article by its own text (guideModifiedDate), not the guide family`, guidePageSrc.includes("guideModifiedDate(") && !guidePageSrc.includes('familyModifiedDate("guides")'), "");
+
   // ---- 5. The sitemap module no longer stamps build time ----
   const sitemapSrc = readFileSync(path.join(ROOT, "src", "app", "sitemap.ts"), "utf8");
   check(`sitemap.ts does not use new Date() for lastModified`, !/lastModified:\s*new Date\(\)/.test(sitemapSrc), "");
   check(`sitemap.ts reads content-dates`, sitemapSrc.includes("@/lib/content-dates"), "");
+  check(`sitemap.ts dates each guide by its own text (guideLastModified)`, sitemapSrc.includes("guideLastModified(g.id)"), "");
   check(`contentLastModified throws on an unknown path set (never silently "now")`, (() => {
     try {
       contentLastModified(["does/not/exist.ts"]);

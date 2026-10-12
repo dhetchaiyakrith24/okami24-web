@@ -7,7 +7,7 @@ import { flavorFamilies } from "@/data/flavors";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { SITE_URL as BASE_URL } from "@/lib/seo";
 import { brandsWithProducts } from "@/lib/brand-visibility";
-import { contentLastModified, familyLastModified, legacyProductSource, type ContentFamily } from "@/lib/content-dates";
+import { contentLastModified, familyLastModified, guideLastModified, legacyProductSource, type ContentFamily } from "@/lib/content-dates";
 
 // Round "search-price" batch 3 (2026-09-22): `lastModified` used to be `new Date()` — the build
 // time, the same on all 105 URLs, so every deploy told crawlers the privacy page had just changed.
@@ -66,8 +66,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // about-page navigation — one source of truth for "is this brand real yet."
   const brandDate = familyLastModified("brand");
   for (const b of brandsWithProducts()) routes.push({ url: `${BASE_URL}/brands/${b.slug}`, lastModified: brandDate });
-  const guidesDate = familyLastModified("guides");
-  for (const g of guides) routes.push({ url: `${BASE_URL}/guides/${g.slug}`, lastModified: guidesDate });
+  // Round SEO ฉ batch 4 (2026-10-12): each guide is dated by its own last text change, not by the newest guide-file commit.
+  for (const g of guides) routes.push({ url: `${BASE_URL}/guides/${g.slug}`, lastModified: guideLastModified(g.id) });
   const technologyDate = familyLastModified("technology");
   for (const t of technologyEntries) routes.push({ url: `${BASE_URL}/technology/${t.slug}`, lastModified: technologyDate });
   const eLiquidDate = familyLastModified("eLiquid");

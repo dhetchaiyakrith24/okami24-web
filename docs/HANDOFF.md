@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's PR merge; last site merge = #451 22c5415f (green articles
-  1–2, item 3h; deploy 38182969724); before it #450 3b783b09 · #441 63a36a46 (DNS guide head-only meta, item 3g) [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's PR merge; last site merge = #452 5ccf9d83 (green articles
+  3–5, item 3h; deploy 38211448976; curl: 3 titles new) · #451 22c5415f (articles 1–2) · #450 3b783b09 [ตรวจแล้ว].
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
   #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
   deploy job ends — wait, then curl.
@@ -23,8 +23,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Banana Pro Unlimited ended 11/10 00:00 → free renders only on the "365 Unlimited" models (item 3f); NO credit spend without the
   owner's yes in chat (owner 11/10 — overrides IMAGE_SPEC §0 item 7 "use credits without asking" until the owner says otherwise). Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main (12/10, round SEO ฉ = item 3h): `seo-f-b5b` = PR #452 (batch 5 rest; this §16 rides on it) — see item 3h.
-  #446 (docs, batches 1–2), #450 (batch 3), #451 (batch 5 topics 1–2) are merged. Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
+2 ahead of main (12/10, round SEO ฉ = item 3h): `seo-f-b4` = PR #453 (batch 4 dates + byline; this §16 rides on it) — see 3h.
+  #446 · #450 · #451 · #452 merged. Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
@@ -96,26 +96,25 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   [ตรวจแล้ว]: pods/coils ledes+metas, coils title "คอยล์พอต", iqos/relx/wotofo metas brand-level, salthub + /e-liquid H1.
   Checker FAIL 4/5 (relx meta drifted from the paper; pods lede "คอยล์ใน|ตัว" at 1440) → fixed ab4a197d → re-check PASS 5/5.
   Proof `_incoming/seo-f/b3-vt/diff/` (+ s005/s010 *-after-fix.png). SEO_BASELINE has the batch-3 variables (row 4 + คอยล์พอต).
-  4 technical (B): mobile LCP 10.3–11.6 s lab on 5 pages (render delay, suspect AgeGate/hydration — not proven) · per-article
-  dateModified (all articles share the family date = fake freshness; also blocks the author/date block) · brand on muro ×3 +
-  pod-180 JSON-LD · GSC 5xx 1 + crawled-not-indexed 2 URLs.
-  5 green set 1: topics 1–2 LIVE #451 22c5415f (deploy 38182969724; curl: /guides/fixing-a-burnt-pod + /guides/fixing-a-leaking-pod
-  200, H1 right) [ตรวจแล้ว]. Topics 3–5 = PR #452 branch `seo-f-b5b` (one commit per article: 3179ca30 no-draw · 2ca3fc23 charging
-  · b122e216 pod-life hub; + b12550b1 dates · fe23b072 24 line-break fixes · 45df84bd checker fixes: overnight advice credited to
-  Vaporesso only, "a little warm is normal" / "many stop when full" cut — checker 1st pass FAIL 14/17 on fe23b072 → re-check PASS on
-  45df84bd; this §16 commit rides on #452, Friday merges right after it): Thai copy only for charging + pod-life (en/zh bodies
-  unchanged, owner "Thai first"), titles "ชาร์จพอตกี่นาทีถึงเต็ม ชาร์จข้ามคืนได้ไหม และวิธีดูแลแบต" · "หัวพอตใช้ได้กี่วัน
-  เปลี่ยนเมื่อไหร่ และวิธียืดอายุหัวพอต"; coil-and-pod-maintenance = cluster hub (links topics 1–4). Facts = maker only
-  (`_incoming/seo-f/b5b/research.md`); clips `b5b/clips.tsv`. Gates on the fe23b072 build: scan.js 0/115 · hydration 0/8 ·
-  wordbreak full sitemap NEW 0 / FIXED 5 (`b5b/wb-all-diff.md`) · visible-text only round pages · head-audit only the 3 pages.
-  Owner questions open: `docs/รอพี่ตรวจ.md` 42 (shop lines "1–3 สัปดาห์ / เกินเดือน" · "ลืมชาร์จสักคืน") · 43 (words
-  หัวชาร์จ · หัวชาร์จเร็ว + Fast Charge · ชาร์จข้ามคืน). Out of scope, for the data round: caliburn-g4-mini charging row "~58 min
-  at 2A" unverified (manual copy says 5V/1A adapter).
-  Checker taste notes for the next guide touch (batch 4, measure with `_incoming/seo-f/b5b/render-b5b.tsx`): no-draw H2 "Caliburn
-  ไฟกะพริบแบบไหน แปล|ว่าอะไร" at 390 (ICU sees two words, scan misses it) · coil "มากกว่าตัว|หัวพอต" at 390 · product read-more
-  label "…วิธียืดอายุ|หัวพอต" (one word on the last line) · overnight clip sits at the article end (record-level clip).
-  NEXT STEP: confirm #452 live (curl the 3 URLs) → batch 4 per-article dates + author block (designer option C,
-  owner OK 12/10) + the taste notes above → request indexing for all set-1 URLs in one go (owner 12/10: "ขอทีเดียวเมื่อทำเสร็จ").
+  4 technical: per-guide dates + byline = PR #453 branch `seo-f-b4` (BIG: touches scripts/content-dates.ts, run by the post-commit
+  hook): cefc2aff `scripts/lib/guide-dates.ts` dates each guide by the newest commit that changed ITS text (record + TH/ZH copy +
+  head row; ~0.3 s) → content-dates.json "guides" → Article dateModified + sitemap lastmod (was: one family date for all) ·
+  a007fa1f byline under the H1 "โดย ทีม OKami24 · เผยแพร่ … · อัปเดต …" + closing source line (thai-copy wording; "เท่านั้น" left
+  out — RELX Creator Pod / INFY 20K are shop-confirmed exceptions) · b2efd543 #452 taste notes re-cut (coil title now "หัวพอตใช้ได้
+  กี่วัน เปลี่ยนเมื่อไหร่ และวิธีดูแลให้ใช้ได้นาน") · a4e4a1bf no double rule under the FAQ. Gates on the b2efd543 build: verify:catalog
+  31/31 · content-dates test 77/77 · wordbreak full sitemap NEW 0 · scan.js 0/115 · hydration 0/38 · head = coil title + 1 /about
+  link per guide · JSON-LD dateModified per guide `_incoming/seo-f/b4/datemodified.txt`. Proof `_incoming/seo-f/b4/` (37 shots — byline
+  on 17 guides × 2 widths, over the 30 cap; reason in the report). a4e4a1bf build: guide pages wordbreak NEW 0, shots retaken. Checker: sent on a4e4a1bf.
+  Left in batch 4: mobile LCP 10.3–11.6 s lab (render delay, suspect AgeGate/hydration — not proven) · brand on muro ×3 + pod-180
+  JSON-LD · GSC 5xx 1 + crawled-not-indexed 2 URLs.
+  5 green set 1 DONE: topics 1–2 LIVE #451 · topics 3–5 LIVE #452 (no-draw · charging · pod-life hub; Thai copy only for charging +
+  pod-life, en/zh bodies unchanged; maker facts `_incoming/seo-f/b5b/research.md`; checker FAIL 14/17 → re-check PASS) [ตรวจแล้ว].
+  Owner 12/10: 42 "ได้" (shop lines 1–3 weeks / one forgotten night) · 43 "ได้" (words → THAI_STYLE §3 SEO ฉ line).
+  Out of scope, for the data round: caliburn-g4-mini charging row "~58 min at 2A" unverified (manual copy says 5V/1A adapter).
+  Open taste note: the charging article's record-level clip sits at the end, not under the overnight section.
+  NEXT STEP: checker on #453 → merge → curl → request indexing for all set-1 URLs in one go (owner 12/10 "ขอทีเดียวเมื่อทำเสร็จ":
+  /guides/fixing-a-burnt-pod · fixing-a-leaking-pod · fixing-no-draw-and-blinking-light · battery-care-and-charging ·
+  coil-and-pod-maintenance) → batch 4 rest (LCP · brand JSON-LD) or batch 6 green set 2 (topics 6–11).
   Drafts/answers/research of topics 1–2 = `_incoming/seo-f/b5-articles-draft.md`. Transcripts `_incoming/seo-f/yt/tx/`.
   Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
   Next GSC reads 22/10 (rows 1–8) + 01/11 (rows 9–10).
