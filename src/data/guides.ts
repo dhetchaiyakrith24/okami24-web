@@ -94,8 +94,8 @@ const allGuides: Guide[] = [
       {
         heading: "Real example: an auto-draw pod kit for beginners (ARGUS G3 mini)",
         paragraphs: [
-          "The [ARGUS G3 mini](/products/argus-g3-mini) is an auto-draw pod kit: no fire button, the device activates when you inhale, and wattage auto-adjusts to whichever pod is installed, up to 30W, on VOOPOO's GENE.AI chipset.",
-          "It carries a 1350mAh battery in a 95.3 × 25.8 × 13.7 mm, 41 g body. The included pod is the ARGUS Top Fill Cartridge V2 at 0.7 ohm, 3mL (2mL in TPD regions), with the iCOSM CODE 2.0 anti-leak system.",
+          "The [ARGUS G3 mini](/products/argus-g3-mini) is an auto-draw pod kit: no fire button, the device activates when you inhale, and wattage auto-adjusts to whichever pod is installed, up to 30W.",
+          "It carries a 1350mAh battery and weighs 40.85 g. The included pod is the ARGUS Top Fill Cartridge V2 at 0.7 ohm, 3mL (2mL in TPD regions), with the iCOSM CODE 2.0 anti-leak system.",
           "One thing to know before you decide: this shop does not yet sell ARGUS pods separately — the pod that ships in the box is what you get here.",
         ],
       },

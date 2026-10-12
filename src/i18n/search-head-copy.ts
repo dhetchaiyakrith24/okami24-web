@@ -356,7 +356,8 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round SEO E "pod" (09/10, seo-auditor): "pod system คือ" now belongs to what-is-a-pod-system — this row stops opening on
   // the definition and leads with "ยี่ห้อไหนดี" instead.
   "choosing-your-first-pod-system":
-    "Pod System ยี่ห้อไหนดีสำหรับเครื่องแรก เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมี Caliburn G5 · M Bar 9K",
+    // Round SEO ฉ batch 6a (12/10): the beginner angle of the reworked article (puffs · nicotine strength · flavour · cost over time).
+    "Pod System ยี่ห้อไหนดีสำหรับมือใหม่ เริ่มจากเลือกแบบก่อน แล้วดูจำนวนพัฟ ความเข้มข้นนิโคติน กลิ่น และความคุ้มในระยะยาว พร้อมตัวอย่างจริง Caliburn G5 · M Bar 9K",
   // Round SEO E "pod": the dek says "น้ำยา", which stays out of head copy (HANDOFF §17 "Head copy") — head-only row, dek unchanged.
   "what-is-a-pod-system":
     "Pod System คืออะไร ในเครื่องมีอะไรบ้าง ทำงานยังไง ค่าโอห์มของหัวพอตบอกอะไร และหัวพอตควรเปลี่ยนเมื่อไหร่",
