@@ -24,7 +24,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
     // one transcript) and the feature / budget clips — research _incoming/seo-f/b6/research-6a.md. No price or baht figure
     // (prices are never typed by hand); "30mg = 3%" left out (no maker states the conversion). Not on page 1 (avg ~43) → head
     // reworded around "Pod System ตัวไหนดี" for the beginner angle.
-    title: "Pod System ตัวไหนดี มือใหม่เลือกพอตต้องดูอะไรก่อน",
+    title: "Pod System ตัวไหนดี เลือกพอตเครื่องแรก ดูอะไรก่อน",
     dek: "มือใหม่เลือกพอตเครื่องแรก ควรเริ่มจากเลือกแบบก่อน แล้วค่อยดูจำนวนพัฟ ความเข้มข้นนิโคติน กลิ่น และความสามารถของเครื่อง บทความนี้ไล่ให้ทีละข้อ พร้อมเรื่องงบที่ควรคิดเผื่อระยะยาว",
     body: [
       // Round 8 B3 (owner ruling 2026-09-23, round-7 close item 2): "Pod System คืออะไร" opener and

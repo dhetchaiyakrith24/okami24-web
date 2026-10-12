@@ -44,7 +44,7 @@ const allGuides: Guide[] = [
     title: "Choosing Your First Pod System",
     dek: "A practical starting point for picking between open-system pods, pod kits, and disposables.",
     category: "getting-started",
-    readingTimeMin: 6,
+    readingTimeMin: 8,
     publishedAt: "2026-08-29",
     body: [
       {
