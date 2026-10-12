@@ -369,8 +369,10 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // shop's experience); GPP stays in this line though it left the H1.
   "coil-and-pod-maintenance":
     "หัวพอตใช้ได้กี่วัน ร้านเราใช้หัวละราว 1–3 สัปดาห์ ขึ้นกับวิธีสูบและการดูแล รวมสัญญาณว่าถึงเวลาเปลี่ยน วิธีใช้ให้นานขึ้น และหัวพอต GPP ใช้กับ Caliburn รุ่นไหน",
+  // Round SEO ฉ batch 6b (12/10): the reworked Thai article leads with "ตั้งกี่วัตต์ดี", the coil's ohm and the maker's range (seo-auditor: same start as the title); the per-pod
+  // ranges of the G3 Pro replace the old "two pods in the box" angle.
   "choosing-wattage-and-airflow":
-    "ตั้งกี่วัตต์ดี เปิดช่องลมแค่ไหน สองอย่างนี้ปรับไปด้วยกัน พร้อมตัวอย่างจริง Caliburn G3 Pro ที่ให้หัวพอต 2 ค่าโอห์มมาในกล่อง และ VINCI S ช่วงวัตต์ 5–40 วัตต์",
+    "ตั้งกี่วัตต์ดี เริ่มจากโอห์มของคอยล์และช่วงวัตต์ที่ผู้ผลิตแนะนำ ไล่จากค่าต่ำขึ้นไป ปรับช่องลมแล้วรสเปลี่ยนยังไง พร้อมตัวอย่าง Caliburn G3 Pro",
   "understanding-mtl-vs-dtl":
     "MTL กับ DTL ต่างกันยังไง MTL ดึงไอเข้าปากก่อนแล้วค่อยลงปอด ช่องลมแคบ โอห์มสูง วัตต์ต่ำ · DTL ดึงไอลงปอดเลย ช่องลมโล่ง โอห์มต่ำ วัตต์สูง · RDL อยู่ตรงกลาง",
   // Round SEO ฉ batch 6b topic 8 (12/10): the new Thai-only article — its dek says "น้ำยา", which stays out of head copy.

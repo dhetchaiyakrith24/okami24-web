@@ -551,7 +551,7 @@ const allGuides: Guide[] = [
       {
         heading: "A reasonable starting point",
         paragraphs: [
-          "Starting near the middle of a device's wattage range with airflow mostly closed for MTL (or mostly open for DTL) gives a reasonable baseline to adjust from, rather than starting at either extreme. Not sure which draw style is yours? Read [MTL vs DTL](/guides/understanding-mtl-vs-dtl) first.",
+          "Start at the low end of the wattage range printed for your coil or pod, with the airflow mostly closed for MTL (or mostly open for DTL), then step up a little at a time. Not sure which draw style is yours? Read [MTL vs DTL](/guides/understanding-mtl-vs-dtl) first.",
         ],
       },
       // Round SEO ข (2026-09-21): sections + FAQ below from verified rows only — source map
@@ -559,8 +559,8 @@ const allGuides: Guide[] = [
       {
         heading: "A real example: the Caliburn G3 Pro ships with two pod resistances",
         paragraphs: [
-          "The [Caliburn G3 Pro](/products/caliburn-g3-pro) is a clear example of having both variables to work with: a 5–35W range, fully adjustable airflow, and two pods in the box — a 0.4Ω and a 0.9Ω.",
-          "Following the section above: with the higher-resistance 0.9Ω pod, start mid-range with airflow nearly closed; with the lower-resistance 0.4Ω pod, start mid-range too but with the airflow further open, then move in small steps.",
+          "The [Caliburn G3 Pro](/products/caliburn-g3-pro) is a clear example of having both variables to work with: a 5–35W range, fully adjustable airflow, and two pods in the box — a 0.4Ω and a 0.9Ω. The 35W ceiling belongs to one pod only, though: UWELL's manual gives 5–35W for the 0.4Ω pod, 5–25W for the 0.6Ω and 5–15W for the 0.9Ω.",
+          "So read the range of the pod you have fitted, not the device's. With the 0.9Ω pod, start low within 5–15W with the airflow nearly closed; with the 0.4Ω pod, start low too but with the airflow further open, then move up in small steps.",
           "The wraparound LCD shows the wattage the whole time, so you always know where you are.",
         ],
       },
@@ -568,21 +568,22 @@ const allGuides: Guide[] = [
         heading: "A real example: the wide wattage range of the VINCI S",
         paragraphs: [
           "The [VINCI S](/products/vinci-s) is a pod kit with a wider 5–40W range, a 0.3–3.0Ω resistance range, a 4.5mL pod (2mL in TPD regions) filled from the top without removing it, and a 2000mAh built-in battery.",
-          "A wide range gives you more room to adjust, but it also means the middle of this device's range is a different point from the middle of the Caliburn G3 Pro's. The starting point is the middle of the device in your hand, and before setting it, look at the wattage range and the resistance of the pod you have fitted together. How to read those two lines is in [How to read a spec sheet](/guides/reading-a-spec-sheet).",
+          "A wide range gives you more room to adjust, but the device's range only says what it can deliver, not what the fitted coil can take. Before setting it, check the wattage range of the coil or pod you have fitted and start at its low end. How to read those lines is in [How to read a spec sheet](/guides/reading-a-spec-sheet).",
         ],
       },
     ],
     faq: [
       {
         question: "What wattage should I start at?",
-        answer: "Near the middle of the range your device supports, then adjust. There is no one number for every device, because ranges differ — the Caliburn G3 Pro is 5–35W, the VINCI S 5–40W.",
+        answer: "At the low end of the range printed for the coil or pod you have fitted, then step up. There is no one number for every device: on the Caliburn G3 Pro, UWELL's manual gives 5–35W for the 0.4Ω pod, 5–25W for the 0.6Ω and 5–15W for the 0.9Ω.",
       },
       {
         question: "Low resistance vs high resistance — what changes?",
         answer: "Lower resistance usually means an airier draw at higher wattage; higher resistance suits a tight MTL draw at lower wattage. The Caliburn G3 Pro ships with a 0.4Ω and a 0.9Ω pod in the box.",
       },
     ],
-    relatedProductSlugs: ["caliburn-g3-pro", "vinci-s"],
+    // Round SEO ฉ batch 6b: + coil-38, the coil whose printed range the Thai article uses as its example.
+    relatedProductSlugs: ["caliburn-g3-pro", "vinci-s", "coil-38"],
     // Confirmed via YouTube oEmbed (2026-09-21, round SEO ข batch 2): the shop's own clip on how
     // resistance changes the draw, owned by youtube.com/@OKMYARZ. Owner bound it (Q3, 2026-09-21).
     reviewVideo: { videoId: "cPYybXJ4zzA", title: "ค่าโอห์มต่างกัน ฟีลต่างกันยังไง?", channelName: "OKM YARZ", publishedAt: "2026-08-17" },
