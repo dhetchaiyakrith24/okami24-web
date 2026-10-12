@@ -26,27 +26,29 @@ export function GuideByline({ publishedAt, modifiedAt }: { publishedAt: string; 
   const { dict, locale } = useLocale();
   const t = dict.guides;
   const [before, after = ""] = t.bylineAuthor.split("{team}");
+  // Each part carries its own "·" before it, inside a left gutter the row pulls out of view (-ml + overflow-hidden):
+  // a part that starts a new line at 390 has its dot clipped, so no line ever ends or starts on a dangling "·"
+  // (checker #453 owner-eye note).
+  const part = "relative whitespace-nowrap pl-4 before:absolute before:left-[0.3rem] before:content-['·']";
   return (
-    <p className="label-mono flex flex-wrap gap-x-2 gap-y-1 text-xs text-foreground-dim">
-      <span className="whitespace-nowrap">
-        {before}
-        <Link href="/about" className="underline decoration-surface-border underline-offset-4 hover:text-foreground">
-          {t.bylineTeam}
-        </Link>
-        {after}
-      </span>
-      <span aria-hidden="true">·</span>
-      <span className="whitespace-nowrap">
-        {t.bylinePublished} <time dateTime={publishedAt}>{formatGuideDate(publishedAt, locale)}</time>
-      </span>
-      {modifiedAt > publishedAt && (
-        <>
-          <span aria-hidden="true">·</span>
-          <span className="whitespace-nowrap">
+    <p className="label-mono overflow-hidden text-xs text-foreground-dim">
+      <span className="-ml-4 flex flex-wrap gap-y-1">
+        <span className={part}>
+          {before}
+          <Link href="/about" className="underline decoration-surface-border underline-offset-4 hover:text-foreground">
+            {t.bylineTeam}
+          </Link>
+          {after}
+        </span>
+        <span className={part}>
+          {t.bylinePublished} <time dateTime={publishedAt}>{formatGuideDate(publishedAt, locale)}</time>
+        </span>
+        {modifiedAt > publishedAt && (
+          <span className={part}>
             {t.bylineUpdated} <time dateTime={modifiedAt}>{formatGuideDate(modifiedAt, locale)}</time>
           </span>
-        </>
-      )}
+        )}
+      </span>
     </p>
   );
 }
