@@ -241,6 +241,12 @@ Marbo + M Bar plan · FAQ wholesale phrase · RINCOE/DOTMOD phrase · home index
 NOT done (full wording: `git show aa21cbb:docs/HANDOFF.md` lines 262–275) · `okami24.net` / `.com` NXDOMAIN — leave them · `voopooTitle` rename NOT done · no `OKAMI24_METRICS_TOKEN` — read the
 Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
 
+**Sources named in articles (owner 13/10, chat):** no Thai agency or Thai source is named or linked as a source on the
+site ("ไม่อยากให้อ้างอิงหน่วยงานไทย เพราะข้อมูลมันเอียงน้ำหนักเพื่อผลประโยชน์ของประเทศไทยเอง") — name international or
+foreign bodies (IATA, NHS, WHO …); a rule only a Thai source states may be written as a plain rule, its source kept in the
+code comment / evidence file · health / quitting copy = both sides kept, the cautious side trimmed to each agency's core
+position ("ไม่ใช่เชิงชวนซื้อขาย แต่ก็ไม่ตัดทิ้งจนลูกค้าหันหน้าหนี") · the owner is never named in his own quit story.
+
 **SEO baseline hold (owner 02/10):** the 05/10 wait is cancelled — "รอไปก็ต้องกลับมาแก้ ไว้ไปขัดเกลารอบ Seo สุดท้ายขอดัชนีใหม่" —
 the 7 baseline pages are worked on like any other page (hold code removed in round SEO ง, #341).
 
