@@ -78,13 +78,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   "ขอการจัดทำดัชนีแล้ว"). GSC overview 12/10: "videos on 19 pages not indexed" — batch 4 rest candidate.
   6 green set 2 — picked before batch 4 rest because SEO_LANDSCAPE §7.4 ranks green content #1 and LCP #5.
   6a topics 6–7 LIVE #455 186c3c57 (disposable-lasts + first-pod beginner checklist) [ตรวจแล้ว].
-  6b topics 8–9 = branch `seo-f-b6b` (12/10): NEW Thai-only /guides/salt-nic-vs-freebase "นิโคติน salt nic กับ freebase ต่างกันยังไง
-  เหมาะกับใคร" · wattage guide Thai rewrite + the "0.9Ω start mid-range" bug fixed th/en/zh · MTL guide Thai rework + "กี่โอห์มถึงเรียกว่า
-  MTL หรือ RDL" · /e-liquid one Thai-only line linking the article. seo-auditor paper check applied (wattage meta aligned with title).
-  Line breaks: 8 candidate rounds in the real elements (`_incoming/seo-f/b6b/cands*.json` + `render-6b.tsx` + `run2.js` + `loop.js`
-  — loop.js runs a candidate file over many pages in hidden iframes) before ONE rebuild. Owner item 50 [รอเจ้าของ] = /e-liquid H2
-  + meta step back from the question (owner-approved copy, 13.3 #5) — NOT done. Word "ท่วม" used as GeekVape's flooding wording
-  (asked as item 51). Evidence `_incoming/seo-f/b6b/`. Status of checker/merge = the PR.
+  6b topics 8–9 LIVE #456 d0780fe4 (13/10; deploy 38285876551 success; curl: 8 pages 200, new title + sitemap entry + /e-liquid
+  line live, m-bar-9k "read next" = live before) [ตรวจแล้ว]: NEW Thai-only /guides/salt-nic-vs-freebase "นิโคติน salt nic กับ freebase
+  ต่างกันยังไง เหมาะกับใคร" (record LAST in allGuides — an earlier slot pushed older articles off product "read next" boxes) · wattage
+  guide Thai rewrite + the "0.9Ω start mid-range" bug fixed th/en/zh · MTL guide Thai rework + "กี่โอห์มถึงเรียกว่า MTL หรือ RDL" ·
+  /e-liquid one Thai-only line linking the article. Checker FAIL 1 ("ผู้ร่วมการ|ศึกษา") → re-check PASS at 34a57fc4. Line-break tools
+  `_incoming/seo-f/b6b/`: cands*.json + render-6b.tsx + run2.js + loop.js (one candidate file over many pages in hidden iframes) +
+  lines.js (every block's line ends — catches compound splits the scanner misses). Proof: vt-diff/ (34 shots, 390+1440; zh shots of the
+  coils-accessories link skipped — same component as en). Owner items 50 (/e-liquid H2 + meta step back + the added line) and 51
+  (words ท่วม · บาดคอ · พารส) [รอเจ้าของ]. Request indexing for the 3 guides = not done yet (owner's Chrome).
   6c topics 10–11 (airline rules · quitting — health lines need the owner's yes as one set before going live) — not started.
   Then batch 4 rest (mobile LCP · brand on muro ×3 + pod-180 JSON-LD · GSC 5xx/crawled-not-indexed · video indexing).
   Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
