@@ -18,7 +18,9 @@ export const metadata: Metadata = {
   // writer #2's proposal, listed for the owner in the round report (13.4 #6).
   // thai-copy #1: "…และยาสูบ salt nic…" read as one flavour; this order keeps the 5 families, the
   // "ให้รสแบบไหน" promise, the two new keys and the owner's own "ยังไม่มีขายหน้าร้าน" (159 chars).
-  description: "น้ำยา 5 กลุ่มรสชาติ ผลไม้ เมนทอลและความเย็น ของหวาน เครื่องดื่ม ยาสูบ ให้รสแบบไหน salt nic กับ freebase ต่างกันยังไง ยังไม่มีขายหน้าร้าน ถามทาง LINE @okm24 ได้",
+  // Round SEO ฉ batch 6b (owner 13/10, item 50): the question "salt nic กับ freebase ต่างกันยังไง" now belongs to
+  // /guides/salt-nic-vs-freebase — this line keeps the bare words only (seo-auditor's wording).
+  description: "น้ำยา 5 กลุ่มรสชาติ ผลไม้ เมนทอลและความเย็น ของหวาน เครื่องดื่ม ยาสูบ ให้รสแบบไหน และเป็น salt nic หรือ freebase ยังไม่มีขายหน้าร้าน ถามทาง LINE @okm24 ได้",
   ...canonicalFor("/e-liquid"),
 };
 

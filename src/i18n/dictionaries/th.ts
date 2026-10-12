@@ -381,7 +381,8 @@ export const th: Dictionary = {
     // Round 8 B4 (owner 2026-09-23, round-7 close item 3): salt nic vs freebase — from the verified
     // nicotine-type rows in unbranded.ts and the MTL sentence of the first-pod guide; no strength,
     // no PG/VG, no health wording. Wording: writer #2 (_incoming/round8/writer-2-result.md).
-    nicTitle: "salt nic กับ freebase ต่างกันยังไง",
+    // Round SEO ฉ batch 6b (owner 13/10, item 50): the question form moved to /guides/salt-nic-vs-freebase.
+    nicTitle: "salt nic กับ freebase",
     // thai-copy #1 pass applied (_incoming/round8/thai-copy-1-result.md): nicP4 no longer says
     // "พอตซิสเต็ม" — on this site that means the Caliburn family, a low-watt MTL pod, which the
     // sentence above pairs with salt nic; the split is by wattage instead, nothing new claimed.
