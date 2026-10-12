@@ -374,7 +374,7 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "choosing-wattage-and-airflow":
     "ตั้งกี่วัตต์ดี เริ่มจากโอห์มของคอยล์และช่วงวัตต์ที่ผู้ผลิตแนะนำ ไล่จากค่าต่ำขึ้นไป ปรับช่องลมแล้วรสเปลี่ยนยังไง พร้อมตัวอย่าง Caliburn G3 Pro",
   "understanding-mtl-vs-dtl":
-    "MTL กับ DTL ต่างกันยังไง MTL ดึงไอเข้าปากก่อนแล้วค่อยลงปอด ช่องลมแคบ โอห์มสูง วัตต์ต่ำ · DTL ดึงไอลงปอดเลย ช่องลมโล่ง โอห์มต่ำ วัตต์สูง · RDL อยู่ตรงกลาง",
+    "MTL กับ DTL ต่างกันยังไง MTL ดูดเข้าปากก่อนแล้วค่อยลงปอด ช่องลมแคบ โอห์มสูง วัตต์ต่ำ ส่วน DTL ดูดลงปอดตรง ๆ ช่องลมโล่ง โอห์มต่ำ วัตต์สูง และ RDL อยู่ตรงกลาง",
   // Round SEO ฉ batch 6b topic 8 (12/10): the new Thai-only article — its dek says "น้ำยา", which stays out of head copy.
   "salt-nic-vs-freebase":
     "salt nic กับ freebase ต่างกันยังไง แบบไหนเข้ากับพอตตัวเล็ก แบบไหนเข้ากับเครื่องวัตต์สูง ตัวเลข 3% กับ 5% บอกอะไร และสัดส่วน PG/VG มีผลกับรสและควันยังไง",

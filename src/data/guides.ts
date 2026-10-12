@@ -331,7 +331,8 @@ const allGuides: Guide[] = [
         answer: "UWELL GPP pods, which come in four resistances: 0.4, 0.6, 0.9 and 1.2Ω. It also accepts the older Caliburn G3 pods. Source: UWELL's own G Pod Platform page.",
       },
     ],
-    relatedProductSlugs: ["caliburn-g4-pro-koko", "drag-x3"],
+    // Round SEO ฉ batch 6b: + ARGUS G4 mini, the flip-pod example of the new "which ohm is MTL or RDL" section (Thai).
+    relatedProductSlugs: ["caliburn-g4-pro-koko", "drag-x3", "argus-g4-mini"],
     // Confirmed via YouTube oEmbed (2026-09-21, round SEO ข batch 2): the shop's own explainer on
     // exactly this topic, owned by youtube.com/@OKMYARZ. Owner bound it (Q3, 2026-09-21).
     reviewVideo: { videoId: "_s48AaDCtf4", title: "MTL / RDL / DTL ต่างกันยังไง? แบบไหนเหมาะกับคุณ", channelName: "OKM YARZ", publishedAt: "2026-09-19" },
