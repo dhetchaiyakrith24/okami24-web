@@ -331,7 +331,8 @@ const allGuides: Guide[] = [
         answer: "UWELL GPP pods, which come in four resistances: 0.4, 0.6, 0.9 and 1.2Ω. It also accepts the older Caliburn G3 pods. Source: UWELL's own G Pod Platform page.",
       },
     ],
-    relatedProductSlugs: ["caliburn-g4-pro-koko", "drag-x3"],
+    // Round SEO ฉ batch 6b: + ARGUS G4 mini, the flip-pod example of the new "which ohm is MTL or RDL" section (Thai).
+    relatedProductSlugs: ["caliburn-g4-pro-koko", "drag-x3", "argus-g4-mini"],
     // Confirmed via YouTube oEmbed (2026-09-21, round SEO ข batch 2): the shop's own explainer on
     // exactly this topic, owned by youtube.com/@OKMYARZ. Owner bound it (Q3, 2026-09-21).
     reviewVideo: { videoId: "_s48AaDCtf4", title: "MTL / RDL / DTL ต่างกันยังไง? แบบไหนเหมาะกับคุณ", channelName: "OKM YARZ", publishedAt: "2026-09-19" },
@@ -551,7 +552,7 @@ const allGuides: Guide[] = [
       {
         heading: "A reasonable starting point",
         paragraphs: [
-          "Starting near the middle of a device's wattage range with airflow mostly closed for MTL (or mostly open for DTL) gives a reasonable baseline to adjust from, rather than starting at either extreme. Not sure which draw style is yours? Read [MTL vs DTL](/guides/understanding-mtl-vs-dtl) first.",
+          "Start at the low end of the wattage range printed for your coil or pod, with the airflow mostly closed for MTL (or mostly open for DTL), then step up a little at a time. Not sure which draw style is yours? Read [MTL vs DTL](/guides/understanding-mtl-vs-dtl) first.",
         ],
       },
       // Round SEO ข (2026-09-21): sections + FAQ below from verified rows only — source map
@@ -559,8 +560,8 @@ const allGuides: Guide[] = [
       {
         heading: "A real example: the Caliburn G3 Pro ships with two pod resistances",
         paragraphs: [
-          "The [Caliburn G3 Pro](/products/caliburn-g3-pro) is a clear example of having both variables to work with: a 5–35W range, fully adjustable airflow, and two pods in the box — a 0.4Ω and a 0.9Ω.",
-          "Following the section above: with the higher-resistance 0.9Ω pod, start mid-range with airflow nearly closed; with the lower-resistance 0.4Ω pod, start mid-range too but with the airflow further open, then move in small steps.",
+          "The [Caliburn G3 Pro](/products/caliburn-g3-pro) is a clear example of having both variables to work with: a 5–35W range, fully adjustable airflow, and two pods in the box — a 0.4Ω and a 0.9Ω. The 35W ceiling belongs to one pod only, though: UWELL's manual gives 5–35W for the 0.4Ω pod, 5–25W for the 0.6Ω and 5–15W for the 0.9Ω.",
+          "So read the range of the pod you have fitted, not the device's. With the 0.9Ω pod, start low within 5–15W with the airflow nearly closed; with the 0.4Ω pod, start low too but with the airflow further open, then move up in small steps.",
           "The wraparound LCD shows the wattage the whole time, so you always know where you are.",
         ],
       },
@@ -568,21 +569,22 @@ const allGuides: Guide[] = [
         heading: "A real example: the wide wattage range of the VINCI S",
         paragraphs: [
           "The [VINCI S](/products/vinci-s) is a pod kit with a wider 5–40W range, a 0.3–3.0Ω resistance range, a 4.5mL pod (2mL in TPD regions) filled from the top without removing it, and a 2000mAh built-in battery.",
-          "A wide range gives you more room to adjust, but it also means the middle of this device's range is a different point from the middle of the Caliburn G3 Pro's. The starting point is the middle of the device in your hand, and before setting it, look at the wattage range and the resistance of the pod you have fitted together. How to read those two lines is in [How to read a spec sheet](/guides/reading-a-spec-sheet).",
+          "A wide range gives you more room to adjust, but the device's range only says what it can deliver, not what the fitted coil can take. Before setting it, check the wattage range of the coil or pod you have fitted and start at its low end. How to read those lines is in [How to read a spec sheet](/guides/reading-a-spec-sheet).",
         ],
       },
     ],
     faq: [
       {
         question: "What wattage should I start at?",
-        answer: "Near the middle of the range your device supports, then adjust. There is no one number for every device, because ranges differ — the Caliburn G3 Pro is 5–35W, the VINCI S 5–40W.",
+        answer: "At the low end of the range printed for the coil or pod you have fitted, then step up. There is no one number for every device: on the Caliburn G3 Pro, UWELL's manual gives 5–35W for the 0.4Ω pod, 5–25W for the 0.6Ω and 5–15W for the 0.9Ω.",
       },
       {
         question: "Low resistance vs high resistance — what changes?",
         answer: "Lower resistance usually means an airier draw at higher wattage; higher resistance suits a tight MTL draw at lower wattage. The Caliburn G3 Pro ships with a 0.4Ω and a 0.9Ω pod in the box.",
       },
     ],
-    relatedProductSlugs: ["caliburn-g3-pro", "vinci-s"],
+    // Round SEO ฉ batch 6b: + coil-38, the coil whose printed range the Thai article uses as its example.
+    relatedProductSlugs: ["caliburn-g3-pro", "vinci-s", "coil-38"],
     // Confirmed via YouTube oEmbed (2026-09-21, round SEO ข batch 2): the shop's own clip on how
     // resistance changes the draw, owned by youtube.com/@OKMYARZ. Owner bound it (Q3, 2026-09-21).
     reviewVideo: { videoId: "cPYybXJ4zzA", title: "ค่าโอห์มต่างกัน ฟีลต่างกันยังไง?", channelName: "OKM YARZ", publishedAt: "2026-08-17" },
@@ -1441,6 +1443,107 @@ const allGuides: Guide[] = [
     readingTimeMin: 5,
     publishedAt: "2026-10-11",
     body: [],
+  },
+  // Round SEO ฉ batch 6b: placed last on purpose — authored "read next" links follow this array's order, and an earlier
+  // slot pushed older articles (e.g. how-long-a-disposable-lasts on m-bar-9k) off product pages.
+  {
+    // Round SEO ฉ batch 6b "green" set 2, topic 8 (owner 12/10): thai-copy draft 12/10 from the shop's clips (descriptions only —
+    // _incoming/seo-f/b6/clips-6b.tsv); facts _incoming/seo-f/b6/research-6b.md. Free-base vs protonated nicotine = Duell/Pankow/
+    // Peyton, Chem Res Toxicol 2018 (PMC6008736) · "smoother, less harsh at matched strength" = Leventhal et al., JAMA Netw Open
+    // 2021 (sensory results only) · salt ↔ low-power MTL pods, freebase ↔ higher-power sub-ohm = Aspire · RELX UK · Lost Vape ·
+    // PG/VG feel + Aspire's coil chart (1.5–2.5Ω 70% PG · 0.5–1.4Ω 50/50 · 0.1–0.4Ω 80% VG) = Aspire 2023 · high PG floods a
+    // sub-ohm coil = GeekVape FAQ · product rows = the site's own verified spec rows (relxnow · salthub · VOOPOO ARGUS G4 mini ·
+    // MOOOD · WOTOFO). No mg ↔ % conversion anywhere: no maker on the site publishes one. Clip 1uuJrjCzFBE (NEXAS BOOSTER 16K,
+    // not sold here) left out. "น้ำยา" is in the dek → head-only meta row in GUIDE_DESCRIPTION_HEAD_TH.
+    id: "salt-nic-vs-freebase",
+    slug: "salt-nic-vs-freebase",
+    title: "นิโคติน salt nic กับ freebase ต่างกันยังไง เหมาะกับใคร",
+    dek: "salt nic กับ freebase คือนิโคตินสองชนิด บทความนี้เล่าว่าทั้งคู่ต่างกันยังไง เข้ากับเครื่องแบบใด ตัวเลข 3% กับ 5% บอกอะไร และสัดส่วน PG/VG ข้างขวดน้ำยามีผลยังไง",
+    category: "how-it-works",
+    readingTimeMin: 7,
+    publishedAt: "2026-10-12",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "salt nic กับ freebase คืออะไร",
+        paragraphs: [
+          "salt nic กับ freebase ต่างกันยังไง ตอบสั้น ๆ คือเป็นนิโคตินคนละแบบ ไม่ใช่ยี่ห้อ และไม่ใช่กลิ่น น้ำยาแต่ละขวดหรือพอตใช้แล้วทิ้งแต่ละรุ่นจะใช้แบบเดียว ซึ่งดูได้จากข้างกล่องหรือสเปกของรุ่นนั้น",
+          "freebase คือนิโคตินในรูปเดิม ส่วน salt nic คือนิโคตินที่ผู้ผลิตผสมกรดลงไป กรดทำให้นิโคตินเปลี่ยนไปอยู่อีกรูปหนึ่ง ซึ่งงานวิจัยด้านเคมีวัดแยกได้ชัดว่าต่างจากรูป freebase ความต่างตรงนี้คือเหตุผลที่สูบแล้วรู้สึกไม่เหมือนกัน",
+        ],
+      },
+      {
+        heading: "สูบแล้วรู้สึกต่างกันยังไง",
+        paragraphs: [
+          "ความต่างที่รู้สึกได้ชัดคือความนุ่ม งานวิจัยที่ตีพิมพ์ใน JAMA Network Open เมื่อปี 2021 ได้ทดลองให้คนสูบเทียบกัน แล้วพบว่าที่ความเข้มข้นเท่ากัน salt nic นุ่มกว่าและบาดคอน้อยกว่า freebase",
+          "ถึงอย่างนั้น freebase ก็ยังมีคนเลือกอยู่ จากที่ร้านเห็น คนที่เลือก freebase มักชอบความรู้สึกตอนสูบ รสชาติที่ชัด และควันที่ได้จากเครื่องวัตต์สูง ซึ่งเป็นการสูบอีกแนวหนึ่ง ไม่ได้แปลว่าแบบไหนดีกว่ากัน แค่เหมาะกับคนละแนว",
+        ],
+        video: { videoId: "nGdMbdLuFkk", title: "ทำไมทุกวันนี้ยังมีคนเลือก Freebase?", channelName: "OKAMI", publishedAt: "2026-09-26" },
+      },
+      {
+        heading: "salt nic เข้ากับพอตตัวเล็ก freebase เข้ากับเครื่องวัตต์สูง",
+        paragraphs: [
+          "แบบไหนเหมาะกับใคร ดูจากเครื่องที่ใช้ก่อนเลย ผู้ผลิตอย่าง Aspire RELX และ Lost Vape แนะนำไปทางเดียวกัน คือ salt nic เข้ากับพอตตัวเล็กที่ใช้วัตต์ต่ำและสูบแน่นแบบ MTL ส่วน freebase เข้ากับเครื่องวัตต์สูงที่ใช้คอยล์โอห์มต่ำ",
+          "จากที่ร้านเห็น พอตที่ขายกันทุกวันนี้ส่วนใหญ่ใช้ salt nic อย่าง [M Bar 9K](/products/m-bar-9k) ที่ SALTHUB ระบุว่าเป็น salt nic 30mg และ [RELX Smash Go 12K](/products/relx-smash-go-12k) ที่ RELX ระบุว่าเป็น salt nic มีให้เลือก 3% หรือ 5%",
+          "บางเครื่องก็ทำมาให้ใช้ได้ทั้งสองแบบ [ARGUS G4 mini](/products/argus-g4-mini) ใช้หัวพอตที่กลับด้านเพื่อเปลี่ยนโอห์มได้ VOOPOO ระบุว่าด้าน 1.0 โอห์มสูบแบบ MTL ที่แน่น เหมาะกับ salt nic ส่วนด้าน 0.7 โอห์มสูบได้ตั้งแต่ MTL แบบลมโล่งไปจนถึง RDL และเหมาะกับ freebase มากกว่า",
+          "ถ้าใช้พอตซิสเต็มที่เติมน้ำยาเอง ให้เลือกแบบที่เข้ากับเครื่องก่อน แล้วค่อยเลือกกลิ่นที่ชอบ กลุ่มรสแต่ละแบบดูได้ที่ [กลุ่มรสชาติของน้ำยาบุหรี่ไฟฟ้า](/e-liquid) ตอนนี้หน้าร้านเรายังไม่มีน้ำยาแบบขวดขาย ถ้าอยากรู้ว่าเครื่องที่ใช้อยู่เข้ากับแบบไหน ทักไลน์ @okm24 ถามร้านได้",
+        ],
+        video: { videoId: "MM_PibfhO0s", title: "ทำไมพอตส่วนใหญ่ถึงเลือกใช้ Salt Nic?", channelName: "OKAMI", publishedAt: "2026-09-12" },
+      },
+      {
+        heading: "3% กับ 5% และ 30mg บอกอะไร",
+        paragraphs: [
+          "ตัวเลขอย่าง 3% 5% หรือ 30mg คือความเข้มข้นของนิโคติน ตัวเลขยิ่งสูง นิโคตินยิ่งเข้ม แต่ละแบรนด์เลือกบอกด้วยหน่วยไม่เหมือนกัน อย่าง [MOOOD Monster 14K](/products/mood-monster-14k) กับ RELX Smash Go 12K บอกเป็น % ขณะที่ [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) กับ M Bar 9K บอกเป็น mg ซึ่ง WOTOFO มีให้เลือกทั้ง 20mg และ 50mg",
+          "บนเว็บเรา เราเทียบในหน่วยเดียวกันเท่านั้น % เทียบกับ % และ mg เทียบกับ mg เพราะผู้ผลิตรุ่นที่อยู่บนเว็บเรายังไม่ได้บอกไว้ว่าสองหน่วยนี้แปลงกันยังไง เราจึงไม่แปลงให้เอง ก็คล้ายเทียบราคาที่เป็นบาทกับเป็นเยน ต้องรู้อัตราแลกก่อนถึงจะเทียบกันได้",
+          "3% กับ 5% เลือกแบบไหน แล้วแต่ความชอบของแต่ละคน รุ่นอย่าง RELX Smash Go 12K มีให้เลือกทั้งสองความเข้มข้นในรุ่นเดียว ยังไม่แน่ใจว่าตัวเองชอบแบบไหน ทักไลน์ @okm24 ถามร้านได้",
+        ],
+      },
+      {
+        heading: "PG กับ VG ต่างกันยังไง",
+        paragraphs: [
+          "นอกจากชนิดนิโคติน ข้างขวดน้ำยามักบอกสัดส่วน PG กับ VG ไว้ด้วย สองตัวนี้คือส่วนผสมหลักของน้ำยา PG ใสและไหลง่าย ส่วน VG ข้นกว่า PG หลายสิบเท่า",
+          "ความรู้สึกตอนสูบก็ต่างกัน Aspire อธิบายว่า PG พารสได้ชัดและให้ความรู้สึกแรงถึงคอมากกว่า ส่วน VG ให้ควันหนาและรสออกหวานกว่านิดหน่อย น้ำยาที่ PG สูงจึงเข้ากับคนที่อยากได้รสชัด ส่วนน้ำยาที่ VG สูงเข้ากับคนที่ชอบควันแน่น",
+        ],
+        video: { videoId: "i5SPcPp9HAE", title: "น้ำยา PG/VG ต่างกัน ทำไมฟีลพอตถึงไม่เหมือนกัน?", channelName: "OKAMI", publishedAt: "2026-09-18" },
+      },
+      {
+        heading: "เลือก PG/VG ให้เข้ากับคอยล์",
+        paragraphs: [
+          "ความข้นมีผลกับการซึมเข้าสำลีด้วย VG ซึมช้ากว่า PG คอยล์โอห์มสูงที่มีรูให้น้ำยาไหลเข้าเล็กจึงเข้ากับน้ำยาที่ PG สูงกว่า ส่วนคอยล์โอห์มต่ำของเครื่องวัตต์สูงรับน้ำยาที่ข้นกว่าได้ ตารางของ Aspire แนะนำ PG 70% กับคอยล์ 1.5–2.5 โอห์ม สัดส่วน 50/50 กับคอยล์ 0.5–1.4 โอห์ม และ VG 80% กับคอยล์ 0.1–0.4 โอห์ม",
+          "ใช้ผิดคู่ก็มีอาการให้เห็น น้ำยา VG สูงในคอยล์ตัวเล็กอาจซึมไม่ทันจนไหม้ ส่วนน้ำยา PG สูงในคอยล์โอห์มต่ำ GeekVape บอกว่าอาจไหลเข้าคอยล์มากเกินจนท่วมได้ หลักที่ร้านใช้จึงง่าย ๆ คือเลือกน้ำยาให้เข้ากับคอยล์ อาการไหม้และวิธีกันอ่านต่อได้ที่ [พอตไหม้ เกิดจากอะไร](/guides/fixing-a-burnt-pod)",
+          "ส่วนพอตใช้แล้วทิ้งกับหัวพอตบรรจุสำเร็จ มีน้ำยามาในเครื่องแล้ว เรื่อง PG/VG จึงไม่ต้องเลือกเอง ดูแค่ชนิดนิโคตินกับความเข้มข้นบนกล่องก็พอ ส่วนโอห์มกับวัตต์ของคอยล์ อ่านต่อได้ที่ [ตั้งกี่วัตต์ดี](/guides/choosing-wattage-and-airflow)",
+        ],
+        video: { videoId: "QrZxZDd9bmU", title: "8 เคล็ดลับ เลือกน้ำยาอย่างไรให้เหมาะกับคุณ?", channelName: "OKAMI", publishedAt: "2025-05-02" },
+      },
+    ],
+    relatedProductSlugs: ["relx-smash-go-12k", "m-bar-9k", "argus-g4-mini"],
+    faq: [
+      {
+        question: "salt nic กับ freebase ต่างกันยังไง",
+        answer: "เป็นนิโคตินคนละแบบ salt nic คือนิโคตินที่ผู้ผลิตผสมกรดลงไป ส่วน freebase คือนิโคตินในรูปเดิม งานวิจัยพบว่าที่ความเข้มข้นเท่ากัน salt nic ให้ความรู้สึกนุ่มกว่า และผู้ผลิตมักแนะนำ salt nic กับพอตตัวเล็กวัตต์ต่ำ ส่วน freebase กับเครื่องวัตต์สูง",
+      },
+      {
+        question: "freebase ใช้กับพอตตัวเล็กได้ไหม",
+        answer: "ผู้ผลิตอย่าง Aspire RELX และ Lost Vape แนะนำ freebase กับเครื่องวัตต์สูงที่ใช้คอยล์โอห์มต่ำ ส่วนพอตตัวเล็กที่สูบแน่นแบบ MTL ผู้ผลิตแนะนำ salt nic บางเครื่องอย่าง ARGUS G4 mini ทำมาให้ใช้ได้ทั้งสองแบบ ดูคำแนะนำของเครื่องที่ใช้อยู่เป็นหลัก",
+      },
+      {
+        question: "นิโคติน 3% กับ 5% ต่างกันยังไง",
+        answer: "ต่างกันที่ความเข้มข้น 5% เข้มกว่า 3% รุ่นอย่าง RELX Smash Go 12K มีให้เลือกทั้งสองแบบ เลือกแบบไหนแล้วแต่ความชอบ ถ้ายังไม่แน่ใจ ทักไลน์ @okm24 ถามร้านได้",
+      },
+      {
+        question: "30mg เท่ากับกี่ %",
+        answer: "ผู้ผลิตรุ่นที่อยู่บนเว็บเรายังไม่ได้บอกวิธีแปลงระหว่าง mg กับ % ไว้ เราจึงไม่แปลงให้เอง และเทียบความเข้มข้นในหน่วยเดียวกันเท่านั้น ตัวเลขยิ่งสูง นิโคตินยิ่งเข้ม",
+      },
+      {
+        question: "PG/VG เลือกยังไง",
+        answer: "เลือกให้เข้ากับคอยล์ VG ข้นและซึมช้ากว่า คอยล์โอห์มสูงตัวเล็กจึงเข้ากับน้ำยาที่ PG สูงกว่า ส่วนคอยล์โอห์มต่ำของเครื่องวัตต์สูงรับน้ำยาที่ VG สูงได้ PG ให้รสชัดและแรงถึงคอ ส่วน VG ให้ควันหนา",
+      },
+      {
+        question: "พอตใช้แล้วทิ้งเป็น salt nic ไหม",
+        answer: "หลายรุ่นเป็น salt nic เช่น M Bar 9K และ RELX Smash Go 12K แต่บางรุ่นบอกแค่ตัวเลขความเข้มข้น ดูที่สเปกของรุ่นนั้นเป็นหลัก",
+      },
+    ],
+    // The shop's own explainer on exactly this topic (@OKMYARZ); title + upload date as read for the keyword map (SEO_LANDSCAPE §8 row 8).
+    reviewVideo: { videoId: "mY4M61mKQjc", title: "Salt Nic กับ Freebase ต่างกันยังไง? แบบไหนเหมาะกับใคร", channelName: "OKM YARZ", publishedAt: "2026-09-08" },
   },
 ];
 
