@@ -74,15 +74,25 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Owner 12/10: 42 "ได้" (shop lines 1–3 weeks / one forgotten night) · 43 "ได้" (words → THAI_STYLE §3 SEO ฉ line).
   Out of scope, for the data round: caliburn-g4-mini charging row "~58 min at 2A" unverified (manual copy says 5V/1A adapter).
   Open taste note: the charging article's record-level clip sits at the end, not under the overnight section.
-  NEXT STEP: request indexing (Search Console, owner's Chrome — owner 12/10 "ขอทีเดียวเมื่อทำเสร็จ", ask once in chat before
-  clicking) for /guides/fixing-a-burnt-pod · fixing-a-leaking-pod · fixing-no-draw-and-blinking-light · battery-care-and-charging
-  · coil-and-pod-maintenance (+ 3e's two URLs) → then batch 4 rest (mobile LCP · brand on muro ×3 + pod-180 JSON-LD · GSC 5xx/crawled-not-indexed)
-  or batch 6 green set 2 (topics 6–11, SEO_LANDSCAPE §8) — Friday picks by impact (central §7) and says why.
+  Request indexing DONE 12/10: 7/7 (owner 2 · Friday 5 via the owner's Chrome, owner OK'd in chat; every dialog read
+  "ขอการจัดทำดัชนีแล้ว"). GSC overview 12/10: "videos on 19 pages not indexed" — batch 4 rest candidate.
+  6 green set 2 — picked before batch 4 rest because SEO_LANDSCAPE §7.4 ranks green content #1 and LCP #5.
+  6a topics 6–7 = PR #455 (branch `seo-f-b6`): how-long-a-disposable-lasts reworked (Thai-only) + choosing-your-first-pod-system
+  Thai beginner checklist; H1s "พอตใช้แล้วทิ้ง ใช้ได้กี่วัน และเรื่องที่ควรรู้" · "Pod System ตัวไหนดี เลือกพอตเครื่องแรก ดูอะไรก่อน"
+  (seo-auditor paper check applied). Checker FAIL on d0c85077 (unsourced "no-nicotine options" + "มือ|ใหม่"/"ถ้า" line ends) →
+  fixed e9be1538 → re-check of those spots + merge = the next step if this line still says so. Evidence `_incoming/seo-f/b6/`.
+  6b topics 8–9 = drafted, NOT applied: `_incoming/seo-f/b6/draft-6b.md` (thai-copy, verbatim) + facts `research-6b.md` +
+  clips `clips-6b.tsv`. Friday's calls when applying: new slug `salt-nic-vs-freebase` title A; drop clip 1uuJ (model not sold);
+  coil-38/coil-94 storefront check before linking; /e-liquid H2 = same phrase as the new title → seo-auditor paper check first
+  (likely: /e-liquid block links to the guide); wattage guide fixes the "0.9Ω start mid-range" bug in th/en/zh; measure every
+  heading/H1/FAQ question with `_incoming/seo-f/b6/c7.js`-style line reads (LESSONS 33). New word to ask: "น้ำยาท่วมคอยล์".
+  6c topics 10–11 (airline rules · quitting — health lines need the owner's yes as one set before going live) — not started.
+  Then batch 4 rest (mobile LCP · brand on muro ×3 + pod-180 JSON-LD · GSC 5xx/crawled-not-indexed · video indexing).
   Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
   Next GSC reads 22/10 (rows 1–8) + 01/11 (rows 9–10).
 3e LIVE 09/10 — round "SEO จ — pod" #414 8a22c21e (what-is-a-pod-system article; pod-systems head kept byte-identical — owner
   09/10 "protect what ranked"; GSC 09/10: bare "pod" moved from pod-systems to pod-kits). Round not tagged yet (round-close).
-  Open: request indexing for /guides/what-is-a-pod-system + /products/pod-kits (do it in the same Search Console session as 3h) ·
+  Request indexing for /guides/what-is-a-pod-system + /products/pod-kits DONE 12/10 (with 3h) · Open:
   idea: a pod-kits → pod-systems link slot (designer). Proof `_incoming/seo-e-pod/`.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (opened 08/10, own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file · no site merge on 10/10. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
