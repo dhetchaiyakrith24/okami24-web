@@ -69,6 +69,7 @@ export function ArticleBody({
   faq,
   translatedFaq,
   video,
+  sourceNote,
 }: {
   sections: GuideSection[];
   translated?: Partial<Record<"th" | "zh", GuideSection[]>>;
@@ -76,10 +77,15 @@ export function ArticleBody({
   faq?: ArticleFAQItem[];
   translatedFaq?: Partial<Record<"th" | "zh", ArticleFAQItem[]>>;
   video?: ArticleReviewVideo;
+  /** Round SEO ฉ batch 4 (designer option C): one closing line — who wrote it, where product facts come from, which
+   *  shop channel the clips on this page are from (names read from those clips). Guides only; off by default. */
+  sourceNote?: boolean;
 }) {
   const { locale, dict } = useLocale();
   const activeSections = (locale === "th" || locale === "zh" ? translated?.[locale] : undefined) ?? sections;
   const activeFaq = (locale === "th" || locale === "zh" ? translatedFaq?.[locale] : undefined) ?? faq;
+  const channels = [...new Set([...activeSections.map((s) => s.video?.channelName), video?.channelName].filter((c): c is string => Boolean(c)))];
+  const noteText = channels.length > 0 ? dict.guides.sourceNote.replace("{channels}", channels.join(dict.guides.channelJoiner)) : dict.guides.sourceNoteNoClip;
 
   return (
     <div className="flex flex-col gap-10">
@@ -124,6 +130,9 @@ export function ArticleBody({
             <FAQAccordion items={activeFaq.map((item, i) => ({ id: `article-faq-${i}`, question: plainText(item.question), answer: plainText(item.answer) }))} />
           </div>
         </div>
+      )}
+      {sourceNote && (
+        <p className="border-t border-surface-border-soft pt-6 text-xs leading-relaxed text-foreground-dim">{locale === "th" ? thaiTypographyNode(noteText) : noteText}</p>
       )}
     </div>
   );

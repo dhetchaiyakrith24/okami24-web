@@ -60,7 +60,13 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
       {videoJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }} />}
       {/* Round 10B: a Thai-only guide shows only a one-line notice on en/zh (ThaiOnlyGuideGate). */}
       <ThaiOnlyGuideGate thaiOnly={guide.thaiOnly}>
-        <GuideDetailPageHeader id={guide.id} title={guide.title} dek={guide.dek} readingTimeMin={guide.readingTimeMin} />
+        <GuideDetailPageHeader
+          id={guide.id}
+          title={guide.title}
+          dek={guide.dek}
+          readingTimeMin={guide.readingTimeMin}
+          byline={guide.id === DNS_GUIDE_ID || !guide.publishedAt ? undefined : { publishedAt: guide.publishedAt, modifiedAt }}
+        />
         <Container className="max-w-3xl py-12 lg:py-16">
           {/* Round "site unreachable" (11/10): the DNS help page has its own body (steps per device), not article sections. */}
           {guide.id === DNS_GUIDE_ID ? (
@@ -72,6 +78,7 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
               faq={guide.faq}
               translatedFaq={{ th: GUIDES_COPY_TH[guide.id]?.faq, zh: GUIDES_COPY_ZH[guide.id]?.faq }}
               video={guide.reviewVideo}
+              sourceNote
             />
           )}
         </Container>

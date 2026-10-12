@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
 import { thaiTypographyNode } from "@/lib/thai-typography";
+import { GuideByline } from "@/components/content/GuideByline";
 
 /**
  * Fixes a real regression found during the owner quality review (2026-09-02): `/guides/[slug]`
@@ -18,11 +19,14 @@ export function GuideDetailPageHeader({
   title,
   dek,
   readingTimeMin,
+  byline,
 }: {
   id: string;
   title: string;
   dek: string;
   readingTimeMin: number;
+  /** Round SEO ฉ batch 4: the who/when line under the H1 (GuideByline) — omitted on the DNS help page. */
+  byline?: { publishedAt: string; modifiedAt: string };
 }) {
   const { dict, locale } = useLocale();
   const overlay = locale === "th" ? GUIDES_COPY_TH[id] : locale === "zh" ? GUIDES_COPY_ZH[id] : undefined;
@@ -36,6 +40,7 @@ export function GuideDetailPageHeader({
       eyebrow={`${dict.guides.detailEyebrow} · ${readingTimeMin} ${dict.guides.readingTimeMinutes}`}
       title={locale === "th" ? thaiTypographyNode(shownTitle) : shownTitle}
       description={locale === "th" ? thaiTypographyNode(shownDek) : shownDek}
+      meta={byline && <GuideByline publishedAt={byline.publishedAt} modifiedAt={byline.modifiedAt} />}
     />
   );
 }

@@ -331,6 +331,13 @@ export const zh: Dictionary = {
     readingTimeMinutes: "分钟阅读",
     detailEyebrow: "指南",
     thaiOnlyNotice: "本文仅提供泰语版本。",
+    bylineAuthor: "{team}",
+    bylineTeam: "OKami24 团队",
+    bylinePublished: "发布于",
+    bylineUpdated: "更新于",
+    sourceNote: "本文由 OKami24 团队撰写。文中的产品参数与细节来自厂商官网、海报或说明书。视频来自本店的 YouTube 频道 {channels}。",
+    sourceNoteNoClip: "本文由 OKami24 团队撰写。文中的产品参数与细节来自厂商官网、海报或说明书。",
+    channelJoiner: " 和 ",
   },
   eliquid: {
     eyebrow: "烟油",

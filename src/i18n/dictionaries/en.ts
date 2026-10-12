@@ -337,6 +337,13 @@ export const en: Dictionary = {
     readingTimeMinutes: "min read",
     detailEyebrow: "Guide",
     thaiOnlyNotice: "This guide is available in Thai only.",
+    bylineAuthor: "By the {team}",
+    bylineTeam: "OKami24 team",
+    bylinePublished: "Published",
+    bylineUpdated: "Updated",
+    sourceNote: "Written by the OKami24 team. Product specs and details come from each manufacturer's own website, posters or manual. The videos come from {channels} on YouTube, run by our shop.",
+    sourceNoteNoClip: "Written by the OKami24 team. Product specs and details come from each manufacturer's own website, posters or manual.",
+    channelJoiner: " and ",
   },
   eliquid: {
     eyebrow: "E-Liquid",

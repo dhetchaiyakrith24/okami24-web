@@ -360,6 +360,13 @@ export const th: Dictionary = {
     detailEyebrow: "คู่มือ",
     // Never rendered: the Thai page shows the article itself (Guide.thaiOnly, round 10B). Kept for the dictionary shape.
     thaiOnlyNotice: "บทความนี้มีเฉพาะภาษาไทย",
+    bylineAuthor: "โดย {team}",
+    bylineTeam: "ทีม OKami24",
+    bylinePublished: "เผยแพร่",
+    bylineUpdated: "อัปเดต",
+    sourceNote: "บทความนี้เขียนโดยทีม OKami24 สเปกและรายละเอียดของสินค้าอ้างอิงจากเว็บไซต์ โปสเตอร์ หรือคู่มือของผู้ผลิต ส่วนคลิปที่แนบไว้มาจากช่อง YouTube {channels} ของร้านเรา",
+    sourceNoteNoClip: "บทความนี้เขียนโดยทีม OKami24 สเปกและรายละเอียดของสินค้าอ้างอิงจากเว็บไซต์ โปสเตอร์ หรือคู่มือของผู้ผลิต",
+    channelJoiner: " และช่อง ",
   },
   eliquid: {
     eyebrow: "น้ำยา",
