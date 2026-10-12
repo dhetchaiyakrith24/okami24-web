@@ -11,11 +11,9 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #455 186c3c57 (green articles 6–7, item 3h) · #453
-  673f8c01 (per-guide dates + byline) · #452 5ccf9d83 (green 3–5) · #451 22c5415f (1–2) [ตรวจแล้ว].
-  Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
-  #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
-  deploy job ends — wait, then curl.
+1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #458 c9fac3db (/e-liquid H2 + meta step back, 13/10,
+  deploy 38288670834 success, curl: new meta + H2 "salt nic กับ freebase" live) · #456 d0780fe4 (green 8–9) · #455 186c3c57 (6–7) [ตรวจแล้ว].
+  Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl.
   Night chain OFF (day chat 08/10 turned it off). Site merges open again (owner 10/10 late "Merge ได้ลูกค้าน้อยแล้ว"). Owner decisions: ask in chat + one
   line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (§18) · image work goes live after the checker.
   Image renders = Higgsfield web app in Chrome, never the MCP generate tools. 11/10: the app's built-in browser pane has no
@@ -23,7 +21,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Banana Pro Unlimited ended 11/10 00:00 → free renders only on the "365 Unlimited" models (item 3f); NO credit spend without the
   owner's yes in chat (owner 11/10 — overrides IMAGE_SPEC §0 item 7 "use credits without asking" until the owner says otherwise). Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main: nothing (12/10, after #453) — the handoff docs PR rides alone (branch `seo-f-handoff`) [ตรวจแล้ว].
+2 ahead of main: nothing (13/10, after #458; this handoff = its own docs PR, branch `seo-f-handoff-6c`) [ตรวจแล้ว].
   #446 · #450 · #451 · #452 merged. Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
@@ -85,9 +83,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   /e-liquid one Thai-only line linking the article. Checker FAIL 1 ("ผู้ร่วมการ|ศึกษา") → re-check PASS at 34a57fc4. Line-break tools
   `_incoming/seo-f/b6b/`: cands*.json + render-6b.tsx + run2.js + loop.js (one candidate file over many pages in hidden iframes) +
   lines.js (every block's line ends — catches compound splits the scanner misses). Proof: vt-diff/ (34 shots, 390+1440; zh shots of the
-  coils-accessories link skipped — same component as en). Owner items 50 (/e-liquid H2 + meta step back + the added line) and 51
-  (words ท่วม · บาดคอ · พารส) [รอเจ้าของ]. Request indexing for the 3 guides = not done yet (owner's Chrome).
-  6c topics 10–11 (airline rules · quitting — health lines need the owner's yes as one set before going live) — not started.
+  coils-accessories link skipped — same component as en). Owner 13/10 "ที่เหลือจัดการเลย" = items 50 + 51 as recommended →
+  #458 c9fac3db: /e-liquid Thai H2 "salt nic กับ freebase" + meta keeps the bare words (the question = the guide's) · THAI_STYLE words
+  ท่วม · บาดคอ · พารส. Request indexing 13/10 (owner's Chrome): salt-nic-vs-freebase + choosing-wattage-and-airflow DONE (dialog
+  "ขอการจัดทำดัชนีแล้ว"); understanding-mtl-vs-dtl NOT done — GSC "เกินโควต้าแล้ว" (daily quota) → do it on 14/10 or later.
+  6c topics 10–11 = NEXT (owner 13/10: own new chat) — not started: 10 airline rules ("พอตขึ้นเครื่องบินได้ไหม", airline/IATA
+  facts only, SEO_LANDSCAPE §8 row 10) · 11 quitting (owner's own story as one person's experience + foreign gov/research both
+  sides — round file ban list; EVERY health line = one owner question set before going live). Clips: §8 rows 10–11. Tier B.
+  First step: researcher (airline/IATA + foreign health sources) + thai-copy draft → owner set for the health lines (work goes on).
   Then batch 4 rest (mobile LCP · brand on muro ×3 + pod-180 JSON-LD · GSC 5xx/crawled-not-indexed · video indexing).
   Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
   Next GSC reads 22/10 (rows 1–8) + 01/11 (rows 9–10).
