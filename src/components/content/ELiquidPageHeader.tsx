@@ -9,7 +9,7 @@ import { CONTACT } from "@/data/contact";
 /** Round SEO ฉ batch 6b (12/10): the full salt nic article is Thai-only (Guide.thaiOnly), so this one line is Thai-only too —
  *  kept here, not in the dictionaries (they must hold the same non-empty keys in all three locales). The link text is the
  *  article's title, which carries the search phrase; /e-liquid itself keeps the bare words "salt nic" / "freebase". */
-const NIC_GUIDE_TH = { lead: "อ่านแบบเต็มได้ที่บทความ", href: "/guides/salt-nic-vs-freebase", link: "salt nic กับ freebase ต่างกันยังไง แบบไหนเหมาะกับใคร" };
+const NIC_GUIDE_TH = { lead: "อ่านแบบเต็มได้ที่บทความ", href: "/guides/salt-nic-vs-freebase", link: "นิโคติน salt nic กับ freebase ต่างกันยังไง เหมาะกับใคร" };
 
 /** Same pattern as ComparePageHeader.tsx / FAQPageHeader.tsx. */
 export function ELiquidPageHeader() {
