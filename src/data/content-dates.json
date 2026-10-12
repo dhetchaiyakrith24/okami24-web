@@ -58,5 +58,25 @@
     "src/i18n/technology-copy.ts": "2026-10-05T01:13:19+07:00",
     "src/lib/catalog-search.ts": "2026-09-22T15:46:52+07:00",
     "src/lib/finder.ts": "2026-09-25T00:04:57+07:00"
+  },
+  "guides": {
+    "argus-g4-vs-caliburn-g5": "2026-10-05T20:19:39+07:00",
+    "battery-care-and-charging": "2026-10-12T08:54:34+07:00",
+    "cant-open-the-website": "2026-10-12T01:40:53+07:00",
+    "choosing-a-marbo-flavor": "2026-10-05T20:19:39+07:00",
+    "choosing-wattage-and-airflow": "2026-10-05T19:15:10+07:00",
+    "choosing-your-first-pod-system": "2026-10-09T02:51:02+07:00",
+    "coil-and-pod-maintenance": "2026-10-12T08:10:48+07:00",
+    "comparing-caliburn-models": "2026-10-05T20:19:39+07:00",
+    "disposable-vs-switch-pod": "2026-10-12T04:26:41+07:00",
+    "esko-bar-switch-vs-m-switch": "2026-10-05T19:15:10+07:00",
+    "fixing-a-burnt-pod": "2026-10-12T05:48:10+07:00",
+    "fixing-a-leaking-pod": "2026-10-12T05:48:10+07:00",
+    "fixing-no-draw-and-blinking-light": "2026-10-12T08:54:34+07:00",
+    "how-long-a-disposable-lasts": "2026-10-12T04:26:41+07:00",
+    "open-system-vs-disposable": "2026-10-09T00:55:22+07:00",
+    "reading-a-spec-sheet": "2026-10-05T20:19:39+07:00",
+    "understanding-mtl-vs-dtl": "2026-10-05T20:19:39+07:00",
+    "what-is-a-pod-system": "2026-10-09T02:51:02+07:00"
   }
 }
