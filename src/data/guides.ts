@@ -904,7 +904,7 @@ const allGuides: Guide[] = [
         video: { videoId: "htDb9aXyIqI", title: "รวมปัญหาที่พบบ่อยของผู้ใช้งานพอต 2025", channelName: "OKM YARZ", publishedAt: "2025-11-14" },
       },
       {
-        heading: "Caliburn ไฟกะพริบแบบไหน แปลว่าอะไร",
+        heading: "ไฟกะพริบบน Caliburn แต่ละแบบหมายถึงอะไร",
         paragraphs: ["ไฟหรือข้อความบนจอของแต่ละรุ่นแปลไม่เหมือนกัน ความหมายของตระกูล Caliburn ข้างล่างนี้มาจากคู่มือของ UWELL ทั้งหมด"],
         subsections: [
           {
