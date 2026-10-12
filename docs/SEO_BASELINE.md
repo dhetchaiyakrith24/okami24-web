@@ -246,3 +246,13 @@ before) · /brands/iqos · /brands/relx · /brands/wotofo metas step back to bra
 **Row 4 variable:** the salthub H1 now says "M Bar" — if "m bar 15k" queries move further to /brands/salthub on 22/10, this H1 is a
 suspect next to the missing article links. New row to read on 01/11: "คอยล์พอต" → /products/coils-accessories (at open: our clip #4,
 the page not in the query list).
+
+## Round "SEO ฉ" batch 6b (13/10/2026, PR #456, merge d0780fe4, live 13/10) - what changed before the 22/10 + 01/11 reads
+
+New page: /guides/salt-nic-vs-freebase (Thai-only) title "นิโคติน salt nic กับ freebase ต่างกันยังไง เหมาะกับใคร" — no GSC row
+yet; read on 01/11: "salt nic กับ freebase ต่างกันอย่างไร" (autocomplete) · "salt nic" / "freebase" still owned by /e-liquid (its H2 +
+meta unchanged, owner item 50 open) — if /e-liquid and the article share the query on 01/11, item 50's step-back is the fix.
+Titles changed: /guides/choosing-wattage-and-airflow "เลือกวัตต์และช่องลม เริ่มที่กี่วัตต์ดี" → "ตั้งกี่วัตต์ดี เริ่มจากโอห์มของคอยล์ก่อน
+แล้วค่อยปรับช่องลม" (+ meta) · /guides/understanding-mtl-vs-dtl "MTL กับ DTL ต่างยังไง…" → "MTL กับ DTL สูบต่างกันยังไง แล้ว RDL
+คืออะไร" (+ meta; keys foreign, 35 impressions at 35.3 — not worked on). Internal links: relx-smash-go-12k + argus-g4-mini "read next"
+boxes now carry the salt nic article; coil-38 carries the wattage guide; m-bar-9k unchanged.
