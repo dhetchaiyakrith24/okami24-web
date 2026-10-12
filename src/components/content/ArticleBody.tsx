@@ -132,7 +132,8 @@ export function ArticleBody({
         </div>
       )}
       {sourceNote && (
-        <p className="border-t border-surface-border-soft pt-6 text-xs leading-relaxed text-foreground-dim">{locale === "th" ? thaiTypographyNode(noteText) : noteText}</p>
+        // The FAQ block above already ends on a rule (border-b) — a second rule here stacked two lines with a gap between.
+        <p className={`${activeFaq && activeFaq.length > 0 ? "-mt-4" : "border-t border-surface-border-soft pt-6"} text-xs leading-relaxed text-foreground-dim`}>{locale === "th" ? thaiTypographyNode(noteText) : noteText}</p>
       )}
     </div>
   );
