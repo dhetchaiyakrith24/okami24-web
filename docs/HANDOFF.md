@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's PR merge; last site merge = #452 5ccf9d83 (green articles
-  3–5, item 3h; deploy 38211448976; curl: 3 titles new) · #451 22c5415f (articles 1–2) · #450 3b783b09 [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #453 673f8c01 (per-guide
+  dates + byline, item 3h; deploy 38219785421 success) · #452 5ccf9d83 (green articles 3–5) · #451 22c5415f (1–2) [ตรวจแล้ว].
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
   #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
   deploy job ends — wait, then curl.
@@ -23,65 +23,29 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Banana Pro Unlimited ended 11/10 00:00 → free renders only on the "365 Unlimited" models (item 3f); NO credit spend without the
   owner's yes in chat (owner 11/10 — overrides IMAGE_SPEC §0 item 7 "use credits without asking" until the owner says otherwise). Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main (12/10, round SEO ฉ = item 3h): `seo-f-b4` = PR #453 (batch 4 dates + byline; this §16 rides on it) — see 3h.
+2 ahead of main: nothing (12/10, after #453) — the handoff docs PR rides alone (branch `seo-f-handoff`) [ตรวจแล้ว].
   #446 · #450 · #451 · #452 merged. Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
-3 CLOSED 08/10 — round "3 coil photos" (`docs/rounds/รอบรูปคอยล์3ตัว-coil-1-72-94-08-10.txt`), tag `coil-photos-3-done`. Live: #388
-  coil-1 (PnP TW15 / DW60 / TR1, TR1 rubber colours share one photo) + coil-72 (VMATE V2 0.7 / 1.2 + Top Fill, 0.4/0.7 share) ·
-  #389 coil-94 (CALIBURN G3 0.4 pod, 0.6 / 0.9 / 1.2 CRC box sets). Checker: first pass FAIL both, re-check PASS both (b76b1c8 /
-  1c3633a); #389 then took a main merge (map.json + content-dates conflict, re-applied with apply3.js c94, same 13-file diff) —
-  merged on green checks without a third checker pass (13.5 #2 (จ)). Cards keep lower phoneSharp than the old busy retailer cards
-  (card-72 11.6 vs 22.6, card-94 6.8 vs 15.8) — Friday + checker agree: clean product vs text-heavy photo. Minor, open: faint
-  stray pixels along the pod bottoms of 94-2/94-3 visible only at 2.7x zoom (checker `_incoming/chk-coil2/pod92b.jpg`).
-  Tools + sources: `_incoming/coil3/` (key/D-*.png = the masters process-images reads; fix/ = checker fixes, pre-D-*.png backups).
-3c DONE 09/10 — coil-94 box shots 0.6 / 0.9 / 1.2 re-shot more photographic (owner 08/10 "ยังดูกราฟฟิกไป" → B). LIVE #401
-  (185a56b7, 09/10 ~00:30, owner 09/10 "ผ่านครับ" to the look + "ขึ้นตอนนี้เลย" instead of 11/10) [ตรวจแล้ว]: variant-coil-94-2/3/4-v2.webp,
-  old three removed; curl: the three files 200 and byte-identical to git, /products/coil-94 references only the -v2 names, / + page 200.
-  Checker: 0.6 failed once (pod-4 edge, slab, specks, garbled strip) → re-cut → PASS. Rollback = revert #401. Tools: `_incoming/coil3/b2/`.
-3d IMAGE CHAT 09/10 (owner: this chat keeps doing images on the free Chrome route until 11/10; SEO "pod" = another chat).
-  DONE: coil-38 VOOPOO TPP card + DM2 / DM4 re-shot in the coil-94 B style (box upright, 3 coils lying in front) — LIVE #410
-  8276a247 (deploy 37823744743; curl: 3 files byte-identical to git, page 200), checker PASS 5/5, 0 credits (5,076.4) [ตรวจแล้ว].
-  Tools `_incoming/coil4/` (prompts.js · coilfill.js = coil silhouettes · solidcrop.js; the worktree reaches it through a JUNCTION —
-  Git Bash `ln -s` made a stale COPY that fed process-images old masters).
-  DONE: coil-53 UWELL CALIBURN G 1.0Ω card + option re-shot (box upright, 4 coils in front) — #415 merged 1ede0ebd (deploy run
-  37842057614, Render dep-db403nc9v7es738k5f60), checker PASS 5/5 (note: lower edge of coils 3–4 slightly ragged, visible only on
-  magenta), 0 credits (5,076.4) [ตรวจแล้ว]. Lesson: a reference holding a DIFFERENT variant (the 0.8Ω single coil) made 5 renders copy
-  its oval window — the owner's fix "crop the coil only" (1Ω coils cut out of the blister photo as image 2, box front as image 1)
-  worked first time; the render gave 3 coils, the 4th = its front coil copied along the row (owner chose this). Free Unlimited =
-  ONE job at a time (a second click is refused). Tools `_incoming/coil5/` (addcoil.js · cutJ4b.js · apply-c53.js · prompt-J.txt).
-  LIVE #422 4c7ddeb8 (10/10 late, deploy 38060356297; curl: card-v3 + variant-coil-70-2-v2 byte-identical to git, page 200): coil-70 dotmod dotCoil 0.7Ω re-shot (box BACK — the only face printing 0.7Ω (14-20w);
-  the two box fronts differ by resistance and could not be matched — + 5 brass coils lying in front) = PR #422 head 91139ca9, checker
-  PASS 4/5 + item 5 (390/1440 pages) checked by Friday on test server 3412: page 200, only card-v3 / variant-coil-70-2-v2, sold-out
-  badge shown [ตรวจแล้ว]. Removed render inventions: ".Co." after DOTMOD, curled sticker at the barcode end, coil print (faint seam
-  inside the barcode label at 3x only). Checker taste note: card leans left, wide empty top right (same layout as coil-53).
-  Tools `_incoming/coil6/` (fixB.js · cut70.js · apply-c70.js · prompt-B.txt). 0 credits (5,076.4).
-  Higgsfield draft box is SHARED across tabs and chats (the Dive chat edits it live) — set refs + prompt and click Generate in one go;
-  Weekly account quota ~90% — one checker per PR.
-3f IMAGE SWEEP (owner 10/10 late): "ทำให้ครบทั้งเว็บ" — every image still below IMAGE_SPEC, then ADD the warehouse products the site
-  lacks (21 Shipnity parents, `_incoming/img-audit-1010/shipnity-unlisted.json`) with their photos; price = Shipnity "ราคาขาย" (owner
-  10/10 — images first, new products after). Audit = `_incoming/img-audit-1010/` (sheets/, flags.txt = numbers, noisy; eye ranking, worst
-  first: joiway-f4 card+21 · zero-nano card · joiway-f3 15 green "12000+" options · coil-74 card+option · argus-g4 card+7 · caliburn-g5-lite
-  (+SE) · zero-pro card · pod-159 card · relx-smash-go-12k · caliburn-g4-classic · argus-g4 gallery · coil-94 card+0.4Ω + coil-55).
-  Owner picked pod/coil cards first. DONE: coil-74 LIVE #428 (box + 2 pods, Nano Banana Pro render A2, checker PASS 5/5, 4 credits —
-  owner 11/10: "ทำไมถึงใช้เครดิต" = NO credits without the owner's yes; balance 5,072.4).
-  FREE ROUTE (11/10, tested): Nano Banana Pro/2 Unlimited ENDED 11/10 00:00 (owner checked). Still free = the "365 Unlimited" models:
-  Seedream 4.5 (switch turns on, button reads "Unlimited", history `use_unlim: true`, credits unchanged) · Seedream 5.0 Lite · Nano
-  Banana (v1) · GPT Image (not GPT Image 2 = 6.5 credits) · FLUX.2 Pro 1K · Kling O1 Image. Seedream 4.5 test on the coil-74 ref
-  (`_incoming/coil7/out/c74-S1.png`): every printed word right and sharp, BUT it invented glowing orange rim lights on the pods and a
-  spotlight backdrop → next prompt: add "no glowing lines, no LED light, no spotlight, even dark backdrop". Check the button reads
-  "Unlimited" before EVERY click. Upload refs with the Chrome extension's file_upload on the uploads panel's hidden file input
-  (find "button type=file"); results via the MCP `show_generations` (read-only). NEXT: coil-94 card + 0.4Ω option, coil-55, then the
-  ranked list above. Weekly Claude quota 95% on 11/10 (resets 11/10 22:00) — one checker per PR.
-  The Higgsfield prompt box is shared with the Dive chat (same account): open a NEW tab, the draft there may be theirs.
-3g CLOSED 12/10 — round "site unreachable" (`docs/rounds/รอบคู่มือเว็บเข้าไม่ได้-DNS-โดเมนสำรอง-11-10.txt`), tag `site-unreachable-done`.
-  Live [ตรวจแล้ว]: DNS help guide /guides/cant-open-the-website (v2 #435 · top copy + Wi-Fi shots #439 · head-only meta #441) · footer link
-  on every page + age-gate line + home Help card (#433) · backup domain okami-24.com (Render custom domain + 2 CNAMEs DNS only,
-  canonical stays okami24.store; RECOVERY §6) · facts `docs/cloud-results/dns-guide-sources.md`. Rollback per PR (revert).
-  Open, outside the round: home en/zh 16 Thai nodes (offered as its own task) · owner may send a Mac screenshot (closing OK label
-  unconfirmed) · LINE OA rich menu / pinned post / box card (owner: later) · Search Console check in 2–4 weeks that no okami-24.com
-  URL shows instead of .store. Worktree `_incoming/wt-dns` removable (housekeeping).
+3 CLOSED 08/10 — round "3 coil photos", tag `coil-photos-3-done` (live #388 coil-1 + coil-72 · #389 coil-94; rollback = revert one PR).
+  Open, minor: faint stray pixels along the pod bottoms of 94-2/94-3 at 2.7x only (`_incoming/chk-coil2/pod92b.jpg`). Tools `_incoming/coil3/`.
+3c DONE 09/10 — coil-94 box shots v2 LIVE #401 (owner "ผ่านครับ"; rollback = revert #401). Tools `_incoming/coil3/b2/`.
+3d DONE 09–10/10 (image chat, free Chrome route, 0 credits) [ตรวจแล้ว]: coil-38 #410 · coil-53 #415 · coil-70 #422 live. Tools
+  `_incoming/coil4/`–`coil6/`. Taste note open: coil-53/coil-70 cards lean left (wide empty top right). The Higgsfield draft box is
+  SHARED across tabs and chats (the Dive chat edits it live) — open a new tab, set refs + prompt and click Generate in one go.
+3f IMAGE SWEEP (owner 10/10 late "ทำให้ครบทั้งเว็บ"): every image below IMAGE_SPEC, then ADD the 21 warehouse products the site lacks
+  (`_incoming/img-audit-1010/shipnity-unlisted.json`, price = Shipnity "ราคาขาย"). Audit `_incoming/img-audit-1010/` (eye ranking, worst
+  first: joiway-f4 card+21 · zero-nano card · joiway-f3 15 green "12000+" options · argus-g4 card+7 · caliburn-g5-lite (+SE) · zero-pro
+  card · pod-159 card · relx-smash-go-12k · caliburn-g4-classic · argus-g4 gallery · coil-94 card+0.4Ω + coil-55). DONE: coil-74 #428.
+  Credits: NONE without the owner's yes in chat (owner 11/10). Free = the "365 Unlimited" models (Seedream 4.5 · Seedream 5.0 Lite ·
+  Nano Banana v1 · GPT Image · FLUX.2 Pro 1K · Kling O1 Image) — check the button reads "Unlimited" before EVERY click; Seedream 4.5
+  needs "no glowing lines, no LED light, no spotlight, even dark backdrop". Refs via the Chrome extension's file_upload on the uploads
+  panel's hidden file input; results via MCP `show_generations` (read-only). NEXT: coil-94 card + 0.4Ω option, coil-55, then the list.
+3g CLOSED 12/10 — round "site unreachable", tag `site-unreachable-done` (DNS guide #435/#439/#441 · footer/age-gate/home links #433 ·
+  backup domain okami-24.com, canonical stays .store, RECOVERY §6). Open, outside the round: home en/zh 16 Thai nodes (offered as
+  its own task) · owner may send a Mac screenshot · LINE OA rich menu / pinned post (owner: later) · Search Console check in 2–4
+  weeks that no okami-24.com URL shows instead of .store. Worktree `_incoming/wt-dns` removable.
 3h OPEN 12/10 (own chat) — round "SEO ฉ" = `docs/rounds/รอบ-SEO-ฉ-อัดฉีดเต็ม-หน้า1-เนื้อหาสีเขียว-12-10.txt` (owner: page 1 for every
   key + "green" knowledge articles from the shop's YouTube). Opened on main dcc4ca7e. Owner rulings at open (12/10, cards):
   channels = OKM YARZ @OKMYARZ · OKAMI @OKM_24 (= "OKM 24") · POD SYSTEM OKAMI II @PODSYSTEM-OKAMI-II · Friday pulls topics from
@@ -92,19 +56,17 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   GitHub Actions: budget $15/month (owner 12/10) — ONE docs PR per batch of work, or ride along a code PR (LESSONS 32).
   Batches: 1 checklist DONE = SEO_LANDSCAPE §7 · 2 keyword map DONE = §0.6 + §8 green topics (owner: set 1 = topics 1–5
   "problems + pod care", airplane = airline rules only, set 2 = 6–11) → both in docs PR #446 (branch `seo-f-batch1`).
-  3 LIVE #450 3b783b09 (deploy 38178082660; curl: 8 pages 200, salthub H1 "SALTHUB M Bar (Marbo)", /e-liquid H1, relx meta)
-  [ตรวจแล้ว]: pods/coils ledes+metas, coils title "คอยล์พอต", iqos/relx/wotofo metas brand-level, salthub + /e-liquid H1.
-  Checker FAIL 4/5 (relx meta drifted from the paper; pods lede "คอยล์ใน|ตัว" at 1440) → fixed ab4a197d → re-check PASS 5/5.
-  Proof `_incoming/seo-f/b3-vt/diff/` (+ s005/s010 *-after-fix.png). SEO_BASELINE has the batch-3 variables (row 4 + คอยล์พอต).
-  4 technical: per-guide dates + byline = PR #453 branch `seo-f-b4` (BIG: touches scripts/content-dates.ts, run by the post-commit
-  hook): cefc2aff `scripts/lib/guide-dates.ts` dates each guide by the newest commit that changed ITS text (record + TH/ZH copy +
-  head row; ~0.3 s) → content-dates.json "guides" → Article dateModified + sitemap lastmod (was: one family date for all) ·
-  a007fa1f byline under the H1 "โดย ทีม OKami24 · เผยแพร่ … · อัปเดต …" + closing source line (thai-copy wording; "เท่านั้น" left
-  out — RELX Creator Pod / INFY 20K are shop-confirmed exceptions) · b2efd543 #452 taste notes re-cut (coil title now "หัวพอตใช้ได้
-  กี่วัน เปลี่ยนเมื่อไหร่ และวิธีดูแลให้ใช้ได้นาน") · a4e4a1bf no double rule under the FAQ. Gates on the b2efd543 build: verify:catalog
-  31/31 · content-dates test 77/77 · wordbreak full sitemap NEW 0 · scan.js 0/115 · hydration 0/38 · head = coil title + 1 /about
-  link per guide · JSON-LD dateModified per guide `_incoming/seo-f/b4/datemodified.txt`. Proof `_incoming/seo-f/b4/` (37 shots — byline
-  on 17 guides × 2 widths, over the 30 cap; reason in the report). a4e4a1bf build: guide pages wordbreak NEW 0, shots retaken. Checker: sent on a4e4a1bf.
+  3 LIVE #450 3b783b09 [ตรวจแล้ว]: pods/coils ledes+metas, coils title "คอยล์พอต", iqos/relx/wotofo metas, salthub + /e-liquid H1;
+  SEO_BASELINE has the batch-3 variables. Proof `_incoming/seo-f/b3-vt/diff/`.
+  4 technical — part LIVE #453 673f8c01 (12/10; curl: 6 guide pages 200, MTL dateModified 2026-10-05 + sitemap lastmod
+  10-05, byline on 5/5 checked guides, none on the DNS page) [ตรวจแล้ว]: `scripts/lib/guide-dates.ts` dates each guide by the
+  newest commit that changed ITS text → content-dates.json "guides" → Article dateModified + sitemap lastmod + the visible byline
+  "โดย ทีม OKami24 · เผยแพร่ … · อัปเดต …" + closing source line (thai-copy wording, "เท่านั้น" left out) · #452 taste notes re-cut ·
+  separators never dangle at 390. Checker PASS (facts) on a4e4a1bf; byline separator fix 2006fbf8 after it under 13.5 (จ), read by
+  Friday on the build at 390/1440 th/en (`_incoming/seo-f/b4/byline/`). Proof `_incoming/seo-f/b4/` (37 shots: byline on 17
+  guides × 2 widths — over the 30 cap, told the owner in the report). Note: self-merge-check printed SITE, not BIG, for a PR that
+  touched scripts/content-dates.ts (hook-run via a command string) — offered as its own task (chip "Make self-merge-check see
+  hook-run scripts"); the full set was run anyway.
   Left in batch 4: mobile LCP 10.3–11.6 s lab (render delay, suspect AgeGate/hydration — not proven) · brand on muro ×3 + pod-180
   JSON-LD · GSC 5xx 1 + crawled-not-indexed 2 URLs.
   5 green set 1 DONE: topics 1–2 LIVE #451 · topics 3–5 LIVE #452 (no-draw · charging · pod-life hub; Thai copy only for charging +
@@ -112,81 +74,39 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Owner 12/10: 42 "ได้" (shop lines 1–3 weeks / one forgotten night) · 43 "ได้" (words → THAI_STYLE §3 SEO ฉ line).
   Out of scope, for the data round: caliburn-g4-mini charging row "~58 min at 2A" unverified (manual copy says 5V/1A adapter).
   Open taste note: the charging article's record-level clip sits at the end, not under the overnight section.
-  NEXT STEP: checker on #453 → merge → curl → request indexing for all set-1 URLs in one go (owner 12/10 "ขอทีเดียวเมื่อทำเสร็จ":
-  /guides/fixing-a-burnt-pod · fixing-a-leaking-pod · fixing-no-draw-and-blinking-light · battery-care-and-charging ·
-  coil-and-pod-maintenance) → batch 4 rest (LCP · brand JSON-LD) or batch 6 green set 2 (topics 6–11).
-  Drafts/answers/research of topics 1–2 = `_incoming/seo-f/b5-articles-draft.md`. Transcripts `_incoming/seo-f/yt/tx/`.
+  NEXT STEP: request indexing (Search Console, owner's Chrome — owner 12/10 "ขอทีเดียวเมื่อทำเสร็จ", ask once in chat before
+  clicking) for /guides/fixing-a-burnt-pod · fixing-a-leaking-pod · fixing-no-draw-and-blinking-light · battery-care-and-charging
+  · coil-and-pod-maintenance (+ 3e's two URLs) → then batch 4 rest (mobile LCP · brand on muro ×3 + pod-180 JSON-LD · GSC 5xx/crawled-not-indexed)
+  or batch 6 green set 2 (topics 6–11, SEO_LANDSCAPE §8) — Friday picks by impact (central §7) and says why.
   Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
   Next GSC reads 22/10 (rows 1–8) + 01/11 (rows 9–10).
-3e LIVE 09/10 ~04:30 — round "SEO จ — pod" (`docs/rounds/รอบ-SEO-จ-pod-09-10.txt`). #414 merged 8a22c21e (owner "ขึ้นได้เลย"),
-  deploy run 37846462052 success; curl: new article + pod-systems + pod-kits + first-pod guide 200, sitemap has the article,
-  pod-systems title/meta/H1 unchanged [ตรวจแล้ว]. Owner 09/10: protect what ranked — pod-systems head byte-identical.
-  Found 09/10 in GSC [ตรวจแล้ว]: Google moved bare "pod" from pod-systems (30/09–02/10, pos 3.6) to pod-kits (03/10 →, pos ~10).
-  #414: links "พอตซิสเต็ม" in 3 guides · new article what-is-a-pod-system (th/en/zh) · pod-kits lede "Pod Kit หรือพอตคิท…ก็มี…" ·
-  first-pod guide heading + meta stop answering "pod system คือ" (owner choice A). Gates: scan.js 0/112 · hydration 0/32 · raw 0 ·
-  word-break new flags 0 · visible-text diff round-only. seo-auditor FAIL → fixed a3cd7fe7 · checker PASS 6/6 on a3cd7fe7; 5d8ccbef
-  (pod-kits "ก็", checker taste note) after it under 13.5 (จ). Rollback = revert 8a22c21e.
-  NEXT: offer the owner "request indexing" for /guides/what-is-a-pod-system + /products/pod-kits · GSC rows 9–10 (SEO_BASELINE) on
-  22/10 and 01/11 · open idea = a pod-kits → pod-systems link slot (designer). Round not tagged yet (round-close).
-  Proof: `_incoming/seo-e-pod/` (head-set.md · vt-diff/ shots · wb2.log · article-sources.md · podkits-390/1440.png).
+3e LIVE 09/10 — round "SEO จ — pod" #414 8a22c21e (what-is-a-pod-system article; pod-systems head kept byte-identical — owner
+  09/10 "protect what ranked"; GSC 09/10: bare "pod" moved from pod-systems to pod-kits). Round not tagged yet (round-close).
+  Open: request indexing for /guides/what-is-a-pod-system + /products/pod-kits (do it in the same Search Console session as 3h) ·
+  idea: a pod-kits → pod-systems link slot (designer). Proof `_incoming/seo-e-pod/`.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (opened 08/10, own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file · no site merge on 10/10. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
-  Done [ตรวจแล้ว]: batch 1 survey #393 (`docs/cloud-results/stock-api-sku-survey.md` = counts, warehouse ask-list, plan, dropship
-  shipping-fee note) · batch 2 #395 LIVE c9fcb73 (deploy 37796327486; curl 42/42 pages 200): `src/data/stock/sku-map.ts` 528 options
-  = 256 SKU · 7 "check" · 265 null → null = sold out, a product with every option sold out offers no order button, sold-out chip
-  names struck through; fully sold-out products 2 → 28. Checker PASS 8/8 (`_incoming/stock-api/checker-395/report.md`); 5 near names
-  whose sibling owns the code = null (owner told). Evidence + scripts: `_incoming/stock-api/` (Max dump, match.js, gen-map.js).
-  Batch 2b #400 LIVE 45bf5af (deploy 37807905826 success; curl 61/61 product pages 200, OutOfStock JSON-LD on all 10) [ตรวจแล้ว]:
-  Zero Nano (legacy, no options, sku-map `product: null`) sold out as a whole via `Product.availability` set by applySoldOut →
-  hero shows sold-out, resolveProductRef rejects it · JSON-LD OutOfStock on zero-nano + the 9 ProductMaster all-sold-out pages
-  (coil-54/56/68/70/74/83/87/89, pod-180); the other 51 product pages' JSON-LD identical. Checker PASS 5/5 on 975fdb1b; owner
-  said "merge ได้เลย" in chat (the app's permission layer had refused Friday's first merge). Proof: `_incoming/stock-api/b2b/`.
-  Batch 2c #404 LIVE e977207 (09/10, deploy 37814644521 success; curl 61/61 product pages 200) [ตรวจแล้ว]: owner 08/10
-  "ขีดค่าสีทิ้งไว้เหมือนเดิมแต่ก็ยังกดดูได้" + premium + say it on the page ("ทำเลย") → sold-out chips stay struck through but are
-  clickable (photo shows) · SoldOutPhotoBadge = glass pill "สินค้าหมด" top-left of the hero photo opposite the heart (smaller on
-  phones), same rule as the buy action; on load at 1440 it shows on exactly the 29 products sold out as a whole · "All colours"
-  after a sold-out pick returns to the opening option. Buy gates unchanged. Designer direction; checker FAIL 3/5 on 9e2c64d8
-  (lineup gap + 390 overlap) → fixed c0cbbdf/48138eb → re-check PASS. Proof `_incoming/stock-api/b2c/` (+ checker `_incoming/review-b2c/`).
-  Taste note for the owner [รอเจ้าของ]: at 390 the small pill still sits on the top-left corner of the IQOS ILUMA i cap
-  (iqosheet-18, ~70% of the pill) — accepted by checker as premium; alternative = keep a free band above full-frame photos.
-  09/10 owner "1A2A" [ตรวจแล้ว]: #408 LIVE 52b13c8 = shipping fee 60 → 50 (free from 500 unchanged; warehouse bills the shop 35,
-  internal — BSOT §10) · #409 LIVE eee41d1 (deploy 37822445042; curl 61/61 200, OutOfStock 5/5) = batch 3a: Shipnity Max
-  "ไม่มีของ" → sold out. Read in the app browser (owner signed in), product list only: steps in the header of
-  `scripts/stock-sync.js` → `src/data/stock/warehouse-stock.ts` (09/10: 658 codes, 397 out). Effect: 20 products, 5 whole
-  (caliburn-g4-pro, vmate-i3, relx-smash-go-12k, tfit-m-power-20k, pod-159); ProductMaster pages now open on the first
-  orderable option (coil-94 → 0.6Ω). Checker PASS 5/5 both. Snapshots: `_incoming/stock-api/sync/`.
+  Done [ตรวจแล้ว]: batch 1 survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · batch 2 #395 (`src/data/stock/sku-map.ts`; null =
+  sold out) · 2b #400 (Zero Nano whole-product sold out, OutOfStock JSON-LD) · 2c #404 (sold-out chips clickable + glass pill
+  "สินค้าหมด") · #408 shipping 60 → 50 · 3a #409 (Shipnity Max "ไม่มีของ" read → `scripts/stock-sync.js` →
+  `src/data/stock/warehouse-stock.ts`) · #425 owner list 24 answered. Evidence `_incoming/stock-api/`. Taste note [รอเจ้าของ]: at
+  390 the small pill sits on the IQOS ILUMA i cap (iqosheet-18) — alternative = a free band above full-frame photos.
   NEXT: re-read every morning until the API (owner "2A") — HOW is waiting on the owner [รอเจ้าของ]: A scheduled task 08:30
   (read → PR → checker → merge, never on a no-merge day) · B by hand on request · C scheduled but owner confirms merges.
-  DONE #425 (10/10): owner list 24 answered — RELX Creator grey-yellow = Pod-138-1, black = Pod-138-2, white/green/yellow null ·
-  F3 Funta Grape ≠ Funta Green (null) · Digital Violet = IQOSHEET-18-5; no "check" left; checker PASS 8/8 [ตรวจแล้ว].
   Then batch 3b = stock adapter when the warehouse sends the API (replaces the read) · batch 4+ = order push carrying the
   shipping fee (35 to the warehouse on its own field, free shipping as a shop-paid discount line — survey doc last section).
   Still from the warehouse: API doc + test key · separate shipping/discount fields · cost per SKU — answers come via the owner.
   Open: ProductMaster seed in-stock flags are from September (API fixes) · `legacy-price-approvals.ts` still names Pod-181 for
   caliburn-g4-pro (price file 【ห้ามแตะ】 — next allowed touch) · unused half-filled Claude Docs page claude.ai/code/artifact/
   92a058d3-edb8-4321-abd6-4eb655f5dbe3 (delete only if asked) · test server 3412 stopped.
-3s CLOSED 08/10 — round "SEO ง keyword map" (`docs/rounds/รอบ-SEO-ง-แผนที่คีย์-07-10.txt`), tag `seo-d-keymap-done`. Live: #340 ·
-  #341 · #342 (keyword map = `docs/SEO_LANDSCAPE.md` §0, the one home of "which page owns which query") · #344 · #352 (brand/category
-  "อ่านต่อ" box + guide links, d1e12e4) · #354 (JOIWAY/INFY brand metas without models, c1bde26). NEXT GSC READ = 2026-10-22 (`docs/SEO_BASELINE.md` last section: what changed + watch list;
-  also read the "validate fix" started 07/10). Hand-offs (articles / missing pages / misspellings / pages with 0 article links) =
-  SEO_LANDSCAPE §0.5. REQUEST INDEXING (owner 08/10 "36 = 1 กดได้เลย") DONE 22/22 [ตรวจแล้ว]: 13 on 08/10 ~01:00, 2 on 08/10 evening,
-  the last 7 on 09/10 ~00:03–00:12 (caliburn-g3-pro-koko · caliburn-g4-classic · drag-6 · drag-s3 · iqosheet-18 · m-bar-10k ·
-  tfit-m-power-20k — each card showed "✓ ขอการจัดทำดัชนีแล้ว", no quota message). Worktree `_incoming/wt-seo-d` + notes
-  `_incoming/seo-d/` kept until the 22/10 read. Not done here: "หัวพอตใส" on m-bar-15k (item 3 (3)) · esko card "20 รสชาติ" (data round).
-3t CLOSED 08/10 — staff slip check (EasySlip), tag `slip-check-done`, live #347/#348, owner passed a real slip. Owner still to do: forward
-  `docs/คู่มือแอดมิน-ตรวจสลิป.md` to the LINE team group (+ password separately). Error INVALID_API_KEY = key copied short.
-  FIX #383 (08/10, staff case): slips paid through the shop's K+ QR name the receiver by the QR reference 004999137680913
-  (payment.ts `promptPayRef`) → now "match"; same image is answered from the log only when it was "match". Then owner 08/10
-  "ผ่านคือผ่าน ไม่ผ่านคือไม่ผ่าน ไม่ต้องบันทึก" → PR slip-check-simple: first check = verdict, the same transfer again = always
-  red with the first-check time; the "used" button of #383 removed (migration 0007 drops used_at; 0006 stays, it is applied live).
-  #421 (10/10, owner OK'd a merge on the no-merge day, live 77cd48b): Krungsri (KSA…) slips to the shop's account came back
-  red "ไม่ใช่บัญชีร้าน" — likely the name rule (English names) [เชื่อว่า]. Now account digits / QR ref decide; red only on another
-  bank or other digits; a name never turns a slip red. Every non-match logs `[slip-check] receiver <status> — bank:… account:…
-  qr:… name:… — shape …` (Render logs, no names/digits) → read it first if staff report a wrong verdict.
-  OWNER RULING 10/10: if a correct transfer is judged wrong AGAIN → switch to EasySlip deciding: owner registers the shop
-  account in the EasySlip portal (developer.easyslip.com — log in from the owner's own Chrome; the app browser fails the
-  Cloudflare check), test one K+ QR slip + one Krungsri slip, then drop our receiver-match and show EasySlip's
-  `matchedAccount` only. Guide changed → the owner should re-send `docs/คู่มือแอดมิน-ตรวจสลิป.md` section 3 to the team.
+3s CLOSED 08/10 — round "SEO ง keyword map", tag `seo-d-keymap-done` (#340–#354; keyword map = SEO_LANDSCAPE §0; request indexing
+  22/22 done 08–09/10). NEXT GSC READ 2026-10-22 (`docs/SEO_BASELINE.md` last section + the "validate fix" started 07/10). Worktree
+  `_incoming/wt-seo-d` + `_incoming/seo-d/` kept until the 22/10 read. Not done: "หัวพอตใส" on m-bar-15k · esko card "20 รสชาติ" (data round).
+3t CLOSED 08/10 — staff slip check (EasySlip), tag `slip-check-done`; later fixes #383 (K+ QR ref) · slip-check-simple (first check =
+  verdict) · #421 (account digits / QR ref decide; a name never turns a slip red; non-match logs `[slip-check] receiver …` in Render).
+  Owner still to do: forward `docs/คู่มือแอดมิน-ตรวจสลิป.md` (section 3 changed) to the LINE team group (+ password separately).
+  OWNER RULING 10/10: a correct transfer judged wrong AGAIN → switch to EasySlip's `matchedAccount` (owner registers the shop account
+  at developer.easyslip.com from his own Chrome, test one K+ QR + one Krungsri slip, then drop our receiver-match).
 3a IMAGE METHODS = LESSONS 18–20 · 23 · 25 · 27 · พ6 · พ11 · พ16 · พ23 + `git show d3bc8e2:docs/HANDOFF.md` §16 item 3a (recolour
   masters, pair splits, AI upscale + maker pixels, lineup scripts) · cut-out: flatcut / Higgsfield remover + choke · edgezoom 4x on dark +
   magenta · process-images map + new file names · sharpness gate before the checker. Esko pod-159 LAST (13.7 big (2), own PR, + BSOT §21).
