@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` = this handoff's docs PR merge; last site merge = #453 673f8c01 (per-guide
-  dates + byline, item 3h; deploy 38219785421 success) · #452 5ccf9d83 (green articles 3–5) · #451 22c5415f (1–2) [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #455 186c3c57 (green articles 6–7, item 3h) · #453
+  673f8c01 (per-guide dates + byline) · #452 5ccf9d83 (green 3–5) · #451 22c5415f (1–2) [ตรวจแล้ว].
   Today's site merges: #386 MURO 3ML boxes 694x1000 · #388 coil-1 + coil-72 photos (0147d2c, deploy success, curl: 5 files = git) ·
   #389 coil-94 photos (246f5bd, deploy success, curl: 5 files = git; /, coil-1, coil-72, coil-94 pages 200). Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the
   deploy job ends — wait, then curl.
@@ -77,15 +77,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Request indexing DONE 12/10: 7/7 (owner 2 · Friday 5 via the owner's Chrome, owner OK'd in chat; every dialog read
   "ขอการจัดทำดัชนีแล้ว"). GSC overview 12/10: "videos on 19 pages not indexed" — batch 4 rest candidate.
   6 green set 2 — picked before batch 4 rest because SEO_LANDSCAPE §7.4 ranks green content #1 and LCP #5.
-  6a topics 6–7 = PR #455 (branch `seo-f-b6`): how-long-a-disposable-lasts reworked (Thai-only) + choosing-your-first-pod-system
-  Thai beginner checklist; H1s "พอตใช้แล้วทิ้ง ใช้ได้กี่วัน และเรื่องที่ควรรู้" · "Pod System ตัวไหนดี เลือกพอตเครื่องแรก ดูอะไรก่อน"
-  (seo-auditor paper check applied). Checker FAIL on d0c85077 (unsourced "no-nicotine options" + "มือ|ใหม่"/"ถ้า" line ends) →
-  fixed e9be1538 → re-check of those spots + merge = the next step if this line still says so. Evidence `_incoming/seo-f/b6/`.
-  6b topics 8–9 = drafted, NOT applied: `_incoming/seo-f/b6/draft-6b.md` (thai-copy, verbatim) + facts `research-6b.md` +
-  clips `clips-6b.tsv`. Friday's calls when applying: new slug `salt-nic-vs-freebase` title A; drop clip 1uuJ (model not sold);
-  coil-38/coil-94 storefront check before linking; /e-liquid H2 = same phrase as the new title → seo-auditor paper check first
-  (likely: /e-liquid block links to the guide); wattage guide fixes the "0.9Ω start mid-range" bug in th/en/zh; measure every
-  heading/H1/FAQ question with `_incoming/seo-f/b6/c7.js`-style line reads (LESSONS 33). New word to ask: "น้ำยาท่วมคอยล์".
+  6a topics 6–7 LIVE #455 186c3c57 (disposable-lasts + first-pod beginner checklist) [ตรวจแล้ว].
+  6b topics 8–9 = branch `seo-f-b6b` (12/10): NEW Thai-only /guides/salt-nic-vs-freebase "นิโคติน salt nic กับ freebase ต่างกันยังไง
+  เหมาะกับใคร" · wattage guide Thai rewrite + the "0.9Ω start mid-range" bug fixed th/en/zh · MTL guide Thai rework + "กี่โอห์มถึงเรียกว่า
+  MTL หรือ RDL" · /e-liquid one Thai-only line linking the article. seo-auditor paper check applied (wattage meta aligned with title).
+  Line breaks: 8 candidate rounds in the real elements (`_incoming/seo-f/b6b/cands*.json` + `render-6b.tsx` + `run2.js` + `loop.js`
+  — loop.js runs a candidate file over many pages in hidden iframes) before ONE rebuild. Owner item 50 [รอเจ้าของ] = /e-liquid H2
+  + meta step back from the question (owner-approved copy, 13.3 #5) — NOT done. Word "ท่วม" used as GeekVape's flooding wording
+  (asked as item 51). Evidence `_incoming/seo-f/b6b/`. Status of checker/merge = the PR.
   6c topics 10–11 (airline rules · quitting — health lines need the owner's yes as one set before going live) — not started.
   Then batch 4 rest (mobile LCP · brand on muro ×3 + pod-180 JSON-LD · GSC 5xx/crawled-not-indexed · video indexing).
   Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
