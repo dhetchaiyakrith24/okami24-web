@@ -356,7 +356,8 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round SEO E "pod" (09/10, seo-auditor): "pod system คือ" now belongs to what-is-a-pod-system — this row stops opening on
   // the definition and leads with "ยี่ห้อไหนดี" instead.
   "choosing-your-first-pod-system":
-    "Pod System ยี่ห้อไหนดีสำหรับเครื่องแรก เริ่มจากเลือกแบบก่อน พอตซิสเต็ม พอตคิท หรือใช้แล้วทิ้ง แนะนำจากของที่ร้านมี Caliburn G5 · M Bar 9K",
+    // Round SEO ฉ batch 6a (12/10): the beginner angle of the reworked article (puffs · nicotine strength · flavour · cost over time).
+    "Pod System ยี่ห้อไหนดีสำหรับมือใหม่ เริ่มจากเลือกแบบก่อน แล้วดูจำนวนพัฟ ความเข้มข้นนิโคติน กลิ่น และความคุ้มในระยะยาว พร้อมตัวอย่างจริง Caliburn G5 · M Bar 9K",
   // Round SEO E "pod": the dek says "น้ำยา", which stays out of head copy (HANDOFF §17 "Head copy") — head-only row, dek unchanged.
   "what-is-a-pod-system":
     "Pod System คืออะไร ในเครื่องมีอะไรบ้าง ทำงานยังไง ค่าโอห์มของหัวพอตบอกอะไร และหัวพอตควรเปลี่ยนเมื่อไหร่",
@@ -386,6 +387,9 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
     "พอตไหม้เกิดจากอะไร ดูยังไง แก้ยังไง รวมอาการ สาเหตุที่ร้านเจอบ่อย และนิสัยเล็ก ๆ ที่ช่วยให้คอยล์ไม่ไหม้ไว ใช้ได้ทั้งพอตซิสเต็มและพอตใช้แล้วทิ้ง",
   "fixing-a-leaking-pod":
     "หัวพอตรั่วหรือพอตรั่ว เกิดจากอะไร แก้ยังไง ร้านรวมสาเหตุที่เจอบ่อย สิ่งที่ควรทำทันทีเมื่อเจอรอยรั่ว และวิธีเติม วิธีเก็บเครื่อง ที่ช่วยไม่ให้รั่วซ้ำ",
+  // Round SEO ฉ batch 6a topic 6 (12/10): the reworked dek says "น้ำยา" → head-only line without it (HANDOFF §18 "Head copy").
+  "how-long-a-disposable-lasts":
+    "พอตใช้แล้วทิ้งใช้ได้กี่วัน ไม่มีตัวเลขตายตัว ร้านรวมวิธีอ่านตัวเลขพัฟบนกล่อง พัฟเยอะใช้ได้นานกว่าจริงไหม ทำไมช่วงท้ายกลิ่นจางลง และวิธีใช้ให้ได้นานขึ้น",
   // Round SEO ฉ batch 5 topic 3 (12/10): the Thai-only guide had no head line (the dek was used).
   "fixing-no-draw-and-blinking-light":
     "พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง ไล่เช็คทีละข้อ ตั้งแต่พลาสติกที่ก้นพอต แบต ขั้วสัมผัส จนถึงความหมายของไฟและข้อความบนจอ Caliburn G4 Mini · G4 · G5 และ M Switch",
