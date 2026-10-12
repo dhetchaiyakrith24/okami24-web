@@ -430,7 +430,7 @@ const allGuides: Guide[] = [
     title: "Coil & Pod Maintenance Basics",
     dek: "Simple habits that keep flavor consistent and extend coil life on an open-system pod.",
     category: "maintenance",
-    readingTimeMin: 4,
+    readingTimeMin: 7,
     publishedAt: "2026-08-29",
     // Round SEO ฉ batch 5 (owner 12/10): the shop's pod-life clip (@OKM_24 "OKAMI"); f86AJRNHX4U (round "clip", #4 for
     // "คอยล์พอต") moved to fixing-a-burnt-pod, whose subject it is. Title, channel and upload date read from YouTube 12/10.
