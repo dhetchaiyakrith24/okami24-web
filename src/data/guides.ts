@@ -491,8 +491,12 @@ const allGuides: Guide[] = [
     title: "Battery Care & Charging Basics",
     dek: "General care habits for built-in and external vape batteries.",
     category: "maintenance",
-    readingTimeMin: 4,
+    readingTimeMin: 8,
     publishedAt: "2026-08-29",
+    // Round SEO ฉ batch 5 topic 4 (12/10): the shop's overnight-charging clip (@OKMYARZ) — it covers charge time, overnight
+    // charging, fast chargers and heat, the subjects of the reworked Thai copy. Title, channel and upload date read from
+    // YouTube's page data 12/10. en/zh bodies are unchanged (owner 12/10: Thai first, translate later).
+    reviewVideo: { videoId: "ANpE7sf-80w", title: "ชาร์จพอตทิ้งไว้ข้ามคืนแบตพังจริงไหม?", channelName: "OKM YARZ", publishedAt: "2026-06-08" },
     body: [
       {
         heading: "Built-in batteries",

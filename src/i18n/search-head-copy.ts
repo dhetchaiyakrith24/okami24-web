@@ -374,8 +374,10 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // the terms people type — every method named with its official value (docs/cloud-results/dns-guide-sources.md).
   "cant-open-the-website":
     "เข้าเว็บไม่ได้ ลองเปลี่ยน DNS บนมือถือ Android ตั้ง DNS ส่วนตัวเป็น dns.google · iPhone ใส่ 8.8.8.8 ใน Wi-Fi หรือใช้แอป 1.1.1.1 ของ Cloudflare มีวิธีบนคอมด้วย",
+  // Round SEO ฉ batch 5 topic 4 (12/10): thai-copy's line for the reworked Thai article (searches: ชาร์จพอตกี่นาที ·
+  // ข้ามคืน · Fast Charge · ชาร์จไม่เข้า).
   "battery-care-and-charging":
-    "วิธีดูแลแบตพอต แบตในตัวชาร์จผ่าน USB-C ตามที่ผู้ผลิตกำหนด อย่าเสียบชาร์จทิ้งไว้นาน ๆ ถ่าน 18650/21700 ชาร์จด้วยแท่นชาร์จแยก เช็คว่าฟิล์มหุ้มไม่ฉีก",
+    "ชาร์จพอตกี่นาทีถึงเต็ม ชาร์จข้ามคืนได้ไหม ใช้หัวชาร์จเร็ว Fast Charge ได้หรือเปล่า และชาร์จไม่เข้าต้องเช็คอะไร รวมวิธีชาร์จและดูแลแบตที่ร้านใช้เอง",
   // Round SEO ฉ batch 5 (12/10): thai-copy's drafted metas, with "น้ำยา" taken out (HANDOFF §18 "Head copy") — the dek on
   // the page keeps it. Owner words: "พอตไหม้" · "หัวพอตรั่ว" / "พอตรั่ว" (the shop's clip titles use both).
   "fixing-a-burnt-pod":
