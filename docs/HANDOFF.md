@@ -54,8 +54,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   GitHub Actions budget $15/month → one docs PR per batch (LESSONS 32).
   OPEN after the close:
   - GSC reads: 22/10 (rows 1–8 + 22 + 24) · 01/11 (rows 9–21, 23) · 15/11 · 10/12 — SEO_BASELINE last section says what "worked" means.
-  - Request indexing NOT done for 9 URLs (SEO_BASELINE last section) — owner OK in chat first, then Friday via the owner's Chrome
-    (GSC: drive by `find` refs, screenshots time out; the inspection input that works = combobox "ตรวจสอบ URL ใน okami24.store").
+  - Request indexing DONE for every page the round changed (last 9 on 14/10, owner "ทำเลย"; list = SEO_BASELINE last section).
+    GSC in the owner's Chrome: screenshots time out — drive it by `find` refs; type the URL into the combobox "ตรวจสอบ URL ใน
+    okami24.store" + Enter TWICE (the first one is swallowed), then click the request button that sits next to the new URL.
   - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio himself; a renamed clip → update its `title` in guides.ts.
   - [รอเจ้าของ] รอพี่ตรวจ 54 (quit guide H1 "หน่วย|งาน" at 1440).
   - Next speed work (offered, not started): guides-copy (162 KB) on home/guides/products · PRODUCT_COPY_TH via ProductCard · framer-motion
