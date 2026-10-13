@@ -89,8 +89,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   6c topic 10 LIVE #460 a337a4f4 (13/10): /guides/taking-a-pod-on-a-plane (Thai-only, last in allGuides, clip BhndRb2tfSM) + leak
   guide link + head meta row. Checker FAIL r1 + r2 (line ends only) → r3 PASS on ef6cb143 (30a1b22d fixed 6 FAQ-answer breaks the earlier
   whole-page reads never measured — closed accordions, LESSONS 36). Evidence `_incoming/seo-f/b6c/` (research.md · checker-brief.md · chk3-*).
-  Request indexing NOT done yet: the owner's Chrome did not respond to clicks 13/10 ~19:25 (window likely minimised; screenshot timed out)
-  → redo via the inspection box on the GSC overview page (the /search-console/inspect?… URL form gives a 404).
+  Request indexing DONE 13/10 ~20:10 (owner's Chrome, dialog "ขอการจัดทำดัชนีแล้ว"). Way in: the inspection box on the GSC overview
+  page (a hand-built /search-console/inspect?… URL gives a 404) · the owner's Chrome stops answering while its window is minimised.
   6c topic 11 = branch `seo-f-b6c-quit` (PR — see item 2): NEW Thai-only /guides/quit-smoking-with-a-pod "เลิกบุหรี่ด้วยพอตได้ไหม
   ข้อมูลสองด้านจากหน่วยงานสุขภาพ" from `_incoming/seo-f/b6c/quit-record.md` (owner 13/10 answers) — 21 blocks reworded for line ends
   only, every string measured before commit (`_incoming/seo-f/b6c/rq.js` + slot candidates `_incoming/seo-f/b6d/mks.js`, picks in
