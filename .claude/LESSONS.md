@@ -714,7 +714,7 @@ h1/h2/p/FAQ/การ์ด/lede) — 18 จุดใน 1 build · ย่อห
 เมนูบน/ล่าง (Client) เรียก `categoriesWithProducts()` เอง → แคตตาล็อกทั้งร้าน + zod ไปทุกหน้า (ไฟล์เดียว 807 KB) · หน้าสินค้า (Client) อ่าน
 PRODUCT_COPY_TH / STORY_COPY / บทความ / ตารางเข้ากันได้ ของสินค้าทุกตัวเอง · LCP จำลองของ Lighthouse นับ JS ทุกไฟล์ที่โหลดก่อนภาพแรก จึงสูง
 ทั้งที่เครื่องจริงวาดหน้าใน ~1 วิ · แก้ = หน้าเซิร์ฟเวอร์คำนวณแล้วส่งเฉพาะชิ้นของหน้านั้นเป็น prop (`import type` ในไฟล์ client) →
-JS gzip −34…−48% · LCP −1.1…−1.8 วิ · พิสูจน์ "หน้าไม่เปลี่ยน" ด้วย `_incoming/seo-f/b4r/markup-diff.js` (HTML ทุก URL ใน sitemap ตัด script)
+JS gzip −33…−48% · LCP −1.1…−1.8 วิ · พิสูจน์ "หน้าไม่เปลี่ยน" ด้วย `_incoming/seo-f/b4r/markup-diff.js` (HTML ทุก URL ใน sitemap ตัด script)
 + visible-text 3 ภาษา · วัดน้ำหนักด้วย `js-weight.js` · Lighthouse ต้องวัดตอนเครื่องว่าง (12/10 ได้ 10–11 วิเพราะมีงานอื่นรัน · ว่าง = 7–9 วิ)
 พลาดระหว่างทาง: `npm run build` เปล่า ๆ ล้ม (ไม่มี SITE_URL) → ใช้ `node scripts/test-server.js build` เสมอ · แก้ `guides.ts` แค่บรรทัด import ก็ขยับ
 วันที่ "อัปเดต" ของหน้ารวมบทความ (content-dates) → ส่ง id เป็น prop แทน และไฟล์ data/i18n ที่อยู่ใน `src/lib/content-dates.ts` อย่าแตะในงานโค้ด
