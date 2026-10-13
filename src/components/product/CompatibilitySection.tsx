@@ -5,10 +5,11 @@ import { Plug, Users } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { compatLabelTh, compatNoteTh } from "@/i18n/compat-copy-th";
-import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
+import type { ProductCopyTh } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 
-export function CompatibilitySection({ product }: { product: Product }) {
+/** `copyTh` = PRODUCT_COPY_TH[product.slug], from the server page (SEO ฉ batch 4 — this component no longer pulls the whole table in; ProductCard still does). */
+export function CompatibilitySection({ product, copyTh }: { product: Product; copyTh?: ProductCopyTh }) {
   const { dict, locale } = useLocale();
   if (product.compatibility.length === 0 && product.whoIsThisFor.length === 0) return null;
   // Round 30.4ค batches 3–4 (owner 2026-09-15): a Thai visitor reads the compatibility labels/notes
@@ -16,7 +17,7 @@ export function CompatibilitySection({ product }: { product: Product }) {
   // "เหมาะกับใคร" bullets from the product's `whoIsThisFor` overlay in product-copy-th.ts (keyed by
   // index). Anything without an entry keeps its English text. Markup is exactly what it was.
   const th = locale === "th";
-  const whoTh = th ? PRODUCT_COPY_TH[product.slug]?.whoIsThisFor : undefined;
+  const whoTh = th ? copyTh?.whoIsThisFor : undefined;
 
   return (
     <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">

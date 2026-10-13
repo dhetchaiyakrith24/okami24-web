@@ -6,12 +6,13 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SpecChip } from "@/components/ui/SpecChip";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { specLabelTh } from "@/i18n/spec-labels-th";
-import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
+import type { ProductCopyTh } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import { ThaiText } from "@/components/i18n/ThaiText";
 import { verifiedRows } from "@/lib/verified-specs";
 
-export function SpecSheet({ product }: { product: Product }) {
+/** `copyTh` = PRODUCT_COPY_TH[product.slug], from the server page (SEO ฉ batch 4 — this component no longer pulls the whole table in; ProductCard still does). */
+export function SpecSheet({ product, copyTh }: { product: Product; copyTh?: ProductCopyTh }) {
   const { dict, locale } = useLocale();
   // Data round (owner 2026-09-24, question 1 ก): an unverified row is not shown at all — it used to be listed with an
   // "ยังไม่ยืนยัน" badge, which still put an unsourced number in front of the customer. No verified row → no section
@@ -21,7 +22,7 @@ export function SpecSheet({ product }: { product: Product }) {
   // Round 30.4ค batch 2 (owner 2026-09-15): a Thai visitor reads each chip's VALUE from the product's
   // `specifications` overlay in product-copy-th.ts (keyed by spec key); a key without an entry keeps
   // the data value (numbers / units / model names need no translation).
-  const valuesTh = locale === "th" ? PRODUCT_COPY_TH[product.slug]?.specifications : undefined;
+  const valuesTh = locale === "th" ? copyTh?.specifications : undefined;
 
   return (
     <section id="specifications" className="scroll-mt-20 border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">

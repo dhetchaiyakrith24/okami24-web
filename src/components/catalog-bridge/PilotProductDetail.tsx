@@ -12,7 +12,7 @@ import { PilotRelatedProducts } from "./PilotRelatedProducts";
 import { RelatedArticles } from "@/components/product/RelatedArticles";
 import type { RelatedArticle } from "@/lib/article-relevance";
 import { CompatibleProducts } from "@/components/product/CompatibleProducts";
-import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
+import type { RelatedConsumable, RelatedDevice } from "@/data/catalog-relationships";
 import { SourceNote } from "@/components/product/SourceNote";
 import { hideThaiClipTitle, ProductReviewVideo } from "@/components/product/ProductReviewVideo";
 import { videoObjectJsonLd } from "@/lib/video-jsonld";
@@ -62,9 +62,16 @@ export function PilotProductDetail({
   relatedArticlesOtherLocales,
   imageDisplayMap,
   orderingEnabled = true,
+  worksWith,
+  fitsDevices,
 }: {
   product: StorefrontProductView;
   related: StorefrontProductView[];
+  /** The compatibility lists (`getCompatibleConsumables` / `getCompatibleDevices`), computed by the server page:
+   *  calling them here put the whole catalog and its zod check into the browser bundle of every
+   *  /products/* page (round SEO ฉ batch 4, 14/10). */
+  worksWith: RelatedConsumable[];
+  fitsDevices: RelatedDevice[];
   /** Round "backlink" (2026-09-22): articles this product's data ties it to — built by the
    *  server page with `relatedArticlesForPublished`. Empty means the block does not render. */
   relatedArticles?: RelatedArticle[];
@@ -331,8 +338,8 @@ export function PilotProductDetail({
       {/* Structured, clickable compatibility — same component and same evidence-backed edge
           table the legacy product page uses, so a published ProductMaster part can link to the
           legacy device it fits and vice versa. Renders nothing when there are no verified links. */}
-      <CompatibleProducts direction="works-with" items={getCompatibleConsumables(product.slug)} />
-      <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
+      <CompatibleProducts direction="works-with" items={worksWith} />
+      <CompatibleProducts direction="fits-devices" items={fitsDevices} />
       <PilotRelatedProducts products={related} />
       <RelatedArticles articles={relatedArticles ?? []} otherLocaleArticles={relatedArticlesOtherLocales} />
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}

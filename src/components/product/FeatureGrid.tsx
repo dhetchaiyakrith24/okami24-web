@@ -4,7 +4,7 @@ import type { Product } from "@/types/catalog";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
+import type { ProductCopyTh } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 
 /**
@@ -14,9 +14,10 @@ import { thaiTypographyNode } from "@/lib/thai-typography";
  * English title (brand-coined feature names). Markup and classes are exactly what they were —
  * only which string each <h3>/<p> holds changes.
  */
-export function FeatureGrid({ product }: { product: Product }) {
+/** `copyTh` = PRODUCT_COPY_TH[product.slug], from the server page (SEO ฉ batch 4 — this component no longer pulls the whole table in; ProductCard still does). */
+export function FeatureGrid({ product, copyTh: copyThAll }: { product: Product; copyTh?: ProductCopyTh }) {
   const { dict, locale } = useLocale();
-  const copyTh = locale === "th" ? PRODUCT_COPY_TH[product.slug]?.features : undefined;
+  const copyTh = locale === "th" ? copyThAll?.features : undefined;
   if (product.features.length === 0) return null;
 
   return (

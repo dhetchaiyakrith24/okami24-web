@@ -11,6 +11,7 @@ import { ProductReviewSection } from "@/components/product/ProductReviewSection"
 import { ProductAnatomy } from "@/components/product/ProductAnatomy";
 import { FeatureGrid } from "@/components/product/FeatureGrid";
 import { ProductMoreDetails } from "@/components/product/ProductMoreDetails";
+import { productDetailsCopy } from "@/lib/product-details-copy";
 import { SpecSheet } from "@/components/product/SpecSheet";
 import { CompatibilitySection } from "@/components/product/CompatibilitySection";
 import { CompatibleProducts } from "@/components/product/CompatibleProducts";
@@ -263,20 +264,23 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedJsonLd) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(publishedTrail)) }} />
           <Breadcrumbs trail={publishedTrail} />
-          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />
+          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} worksWith={getCompatibleConsumables(publishedProduct.slug)} fitsDevices={getCompatibleDevices(publishedProduct.slug)} />
         </>
       );
     }
     const pilotProduct = getPilotProduct(slug);
     if (pilotProduct) {
       const pilotImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(pilotProduct));
-      return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} relatedArticles={relatedArticlesForPublished(pilotProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(pilotProduct, { skipThaiOnly: true })} imageDisplayMap={pilotImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />;
+      return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} relatedArticles={relatedArticlesForPublished(pilotProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(pilotProduct, { skipThaiOnly: true })} imageDisplayMap={pilotImageDisplayMap} orderingEnabled={ORDERING_ENABLED} worksWith={getCompatibleConsumables(pilotProduct.slug)} fitsDevices={getCompatibleDevices(pilotProduct.slug)} />;
     }
     notFound();
   }
 
   const related = getRelatedProducts(product);
   const brand = getBrand(product.brandId);
+  // The product's own Thai copy, handed to the Client Components below as a prop (SEO ฉ batch 4, 14/10 — importing
+  // PRODUCT_COPY_TH in them shipped every product's Thai text to the browser of every product page).
+  const copyTh = PRODUCT_COPY_TH[product.slug];
 
   const legacyCardImage = product.assets.find((a) => a.role === "card");
   // Server-side only — reads the real files under public/ to decide, PER IMAGE, whether
@@ -319,26 +323,26 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(legacyTrail)) }} />
       <Breadcrumbs trail={legacyTrail} />
-      <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />
+      <ProductHero product={product} sellingPrice={legacySellingPrice} imageDisplayInfo={heroImageDisplayInfo} imageDisplayMap={heroImageDisplayMap} orderingEnabled={ORDERING_ENABLED} copyTh={copyTh} brandSlug={brand?.slug ?? product.brandId} />
       <ProductReviewSection product={product} />
       {/* `storyDetails` (image-fix round 2026-09-30): one "more details" story in place of the three sections below. */}
       {product.storyDetails ? (
-        <ProductMoreDetails product={product} />
+        <ProductMoreDetails product={product} copy={productDetailsCopy(product.slug)} />
       ) : (
         <>
           <ProductGallery product={product} />
           {product.isFlagship && <ProductAnatomy product={product} />}
-          <FeatureGrid product={product} />
+          <FeatureGrid product={product} copyTh={copyTh} />
         </>
       )}
-      <SpecSheet product={product} />
-      <CompatibilitySection product={product} />
+      <SpecSheet product={product} copyTh={copyTh} />
+      <CompatibilitySection product={product} copyTh={copyTh} />
       {/* Structured, clickable compatibility — real catalog products verified to fit, on top of
           (not instead of) the free-text platform facts above. Renders nothing when there are no
           verified links, so an unlinked product's page is unchanged. */}
       <CompatibleProducts direction="works-with" items={getCompatibleConsumables(product.slug)} />
       <CompatibleProducts direction="fits-devices" items={getCompatibleDevices(product.slug)} />
-      <ProductFAQ slug={product.slug} faqs={product.faqs} />
+      <ProductFAQ faqs={product.faqs} faqsTh={copyTh?.faqs} />
       <RelatedProducts products={related} />
       {/* Round "backlink" (2026-09-22): the reading exit — articles this product's own data ties
           it to (src/lib/article-relevance.ts), no new copy, nothing to buy. */}
