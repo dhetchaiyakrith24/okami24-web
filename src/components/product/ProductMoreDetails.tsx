@@ -13,7 +13,6 @@ import type { ProductDetailsCopy } from "@/lib/product-details-copy";
 import { verifiedRows } from "@/lib/verified-specs";
 import { ProductArticleBody, ProductArticleLede } from "@/components/product/ProductArticle";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import { cn } from "@/lib/utils";
 
@@ -79,7 +78,7 @@ function Credit({ img, linkLabel }: { img: StoryImage; linkLabel: string }) {
  *  (src/lib/product-details-copy.ts — importing the tables here shipped every product's text to the browser). */
 export function ProductMoreDetails({ product, copy }: { product: Product; copy: ProductDetailsCopy }) {
   const { dict, locale } = useLocale();
-  const copyTh = locale === "th" ? PRODUCT_COPY_TH[product.slug]?.features : undefined;
+  const copyTh = locale === "th" ? copy.featuresTh : undefined;
   const highlights = product.features.filter((f) => f.image);
   const cover = product.storyCover;
   const isColour = (product.colorVariants?.length ?? 0) > 0;

@@ -18,14 +18,13 @@ import { FavoriteButton } from "@/components/catalog/FavoriteButton";
 import { SoldOutPhotoBadge } from "@/components/product/SoldOutPhotoBadge";
 import { brandName, familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
+import type { ProductCopyTh } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { ImageDisplayInfo } from "@/lib/media-quality";
 import { ProductBuyAction } from "@/components/commerce/ProductBuyAction";
 import { MobileBuyBar } from "@/components/commerce/MobileBuyBar";
 import { verifiedAttributes, verifiedRows } from "@/lib/verified-specs";
 import { BRAND_LOGOS } from "@/lib/brand-logos";
-import { getBrand } from "@/data/brands";
 
 /** First option a customer may actually buy — skips options marked out-of-stock so the page never
  *  opens on a colour/flavour the cart would reject (falls back to the first option when every one
@@ -67,8 +66,14 @@ export function ProductHero({
   imageDisplayInfo,
   imageDisplayMap,
   orderingEnabled = true,
+  copyTh: copyThAll,
+  brandSlug,
 }: {
   product: Product;
+  /** PRODUCT_COPY_TH[product.slug] and the brand page slug, from the server page (round SEO ฉ batch 4, 14/10): importing
+   *  the Thai copy table and the brand list here shipped every product's Thai text to the browser of every product page. */
+  copyTh?: ProductCopyTh;
+  brandSlug: string;
   /** From the server page (src/lib/commerce/ordering-mode.ts — owner 2026-09-07). False = the
    *  cart form is replaced by OrderViaLineButton; everything else on the page is unchanged.
    *  Defaults to true so every other caller renders exactly as before. */
@@ -91,7 +96,7 @@ export function ProductHero({
   // English stayed above the Thai ("never replacing", Phase 3.2.2), which left two English lines in
   // the hero of every legacy product page after the site went Thai-first. A slug without a Thai
   // entry keeps the English lines, so nothing goes blank; en/zh visitors see exactly what they did.
-  const copyTh = locale === "th" ? PRODUCT_COPY_TH[product.slug] : undefined;
+  const copyTh = locale === "th" ? copyThAll : undefined;
   // Round 30.4ค closing: render-time Thai typography (thai-typography.ts) — data strings stay plain.
   const heroTagline = copyTh?.tagline ? thaiTypographyNode(copyTh.tagline) : product.tagline;
   const heroDescription = copyTh?.shortDescription ? thaiTypographyNode(copyTh.shortDescription) : product.shortDescription;
@@ -287,7 +292,7 @@ export function ProductHero({
           <div className="flex flex-wrap items-center gap-2 max-lg:order-1">
             {/* owner 03/10: the brand's own logo (linked to its brand page) in place of the text chip, when the file exists */}
             {BRAND_LOGOS[product.brandId] ? (
-              <Link href={`/brands/${getBrand(product.brandId)?.slug ?? product.brandId}`} className="mr-1 inline-flex h-6 items-center opacity-90 transition-opacity hover:opacity-100">
+              <Link href={`/brands/${brandSlug}`} className="mr-1 inline-flex h-6 items-center opacity-90 transition-opacity hover:opacity-100">
                 <Image
                   src={BRAND_LOGOS[product.brandId].src}
                   alt={brandName(product.brandId)}
