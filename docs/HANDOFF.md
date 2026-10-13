@@ -21,8 +21,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Banana Pro Unlimited ended 11/10 00:00 → free renders only on the "365 Unlimited" models (item 3f); NO credit spend without the
   owner's yes in chat (owner 11/10 — overrides IMAGE_SPEC §0 item 7 "use credits without asking" until the owner says otherwise). Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main: branch `seo-f-b4r-docs` = this docs-only update (PR, merge as docs-only 13.7). Nothing else ahead.
-  #446 · #450 · #451 · #452 · #460 · #463 · #465 · #466 merged. Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
+2 ahead of main: nothing (round SEO ฉ closed; its last docs PR = branch `seo-f-b7`). Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
@@ -44,72 +43,25 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   backup domain okami-24.com, canonical stays .store, RECOVERY §6). Open, outside the round: home en/zh 16 Thai nodes (offered as
   its own task) · owner may send a Mac screenshot · LINE OA rich menu / pinned post (owner: later) · Search Console check in 2–4
   weeks that no okami-24.com URL shows instead of .store. Worktree `_incoming/wt-dns` removable.
-3h OPEN 12/10 (own chat) — round "SEO ฉ" = `docs/rounds/รอบ-SEO-ฉ-อัดฉีดเต็ม-หน้า1-เนื้อหาสีเขียว-12-10.txt` (owner: page 1 for every
-  key + "green" knowledge articles from the shop's YouTube). Opened on main dcc4ca7e. Owner rulings at open (12/10, cards):
-  channels = OKM YARZ @OKMYARZ · OKAMI @OKM_24 (= "OKM 24") · POD SYSTEM OKAMI II @PODSYSTEM-OKAMI-II · Friday pulls topics from
-  YouTube, showed the green topic list first (done) · THAI FIRST, translate later (`thaiOnly: true`; en/zh share the URL, no
-  hreflang → no SEO effect) · green-article voice: natural, flowing, a few fitting jokes (owner OK'd the drafts' voice) ·
-  folder `รายงานจากแอดมิน แชท/` = product work, not this round · free tools only (no Ads account) · page-1 pages: keep the
-  ranking head, improve around it · health/quitting = neutral, foreign gov/research sources (#444/#445, in the round file).
-  GitHub Actions: budget $15/month (owner 12/10) — ONE docs PR per batch of work, or ride along a code PR (LESSONS 32).
-  Batches: 1 checklist DONE = SEO_LANDSCAPE §7 · 2 keyword map DONE = §0.6 + §8 green topics (owner: set 1 = topics 1–5
-  "problems + pod care", airplane = airline rules only, set 2 = 6–11) → both in docs PR #446 (branch `seo-f-batch1`).
-  3 LIVE #450 3b783b09 [ตรวจแล้ว]: pods/coils ledes+metas, coils title "คอยล์พอต", iqos/relx/wotofo metas, salthub + /e-liquid H1;
-  SEO_BASELINE has the batch-3 variables. Proof `_incoming/seo-f/b3-vt/diff/`.
-  4 technical — part LIVE #453 673f8c01 (12/10; curl: 6 guide pages 200, MTL dateModified 2026-10-05 + sitemap lastmod
-  10-05, byline on 5/5 checked guides, none on the DNS page) [ตรวจแล้ว]: `scripts/lib/guide-dates.ts` dates each guide by the
-  newest commit that changed ITS text → content-dates.json "guides" → Article dateModified + sitemap lastmod + the visible byline
-  "โดย ทีม OKami24 · เผยแพร่ … · อัปเดต …" + closing source line (thai-copy wording, "เท่านั้น" left out) · #452 taste notes re-cut ·
-  separators never dangle at 390. Checker PASS (facts) on a4e4a1bf; byline separator fix 2006fbf8 after it under 13.5 (จ), read by
-  Friday on the build at 390/1440 th/en (`_incoming/seo-f/b4/byline/`). Proof `_incoming/seo-f/b4/` (37 shots: byline on 17
-  guides × 2 widths — over the 30 cap, told the owner in the report). Note: self-merge-check printed SITE, not BIG, for a PR that
-  touched scripts/content-dates.ts (hook-run via a command string) — offered as its own task (chip "Make self-merge-check see
-  hook-run scripts"); the full set was run anyway.
-  4 rest DONE 14/10 [ตรวจแล้ว] (SEO_LANDSCAPE §7 rows 6 · 8 · 15 · §7.4 item 5): cause of the slow mobile LCP = Client Components
-  importing whole-catalog tables. #465 39ffe04d header/footer get nav lists as props (checker PASS 6/6 on 226560af) · #466 a42acc1e
-  product page passes each product's slice (compat lists · article/story/anatomy · PRODUCT_COPY_TH entry; src/lib/product-details-copy.ts;
-  checker PASS 6/6 on 2d548f46, comment-only fix 34793d68 after it under 13.5 (จ)). Proof: server HTML of all 118 sitemap URLs equal to
-  live (2 = Cloudflare e-mail only) · hydrated text 0 changes (36 + 48 page×locale×width) · JS gzip home 533→353 KB, products 595→365 ·
-  live Lighthouse median LCP −1.1…−1.8 s on 5 pages. Tools + evidence `_incoming/seo-f/b4r/` (markup-diff.js · js-weight.js · lh/run3.sh).
-  GSC 14/10: 5xx = nexbar-18k (200 now) → request indexing + validate fix started (owner "ทำเลย") · crawled-not-indexed = OG image ·
-  brand ×4 = intentional · service-page JSON-LD = not done (no rich result applies) · video "not indexed" = by design (§7 row 19).
-  Left, offered as next speed work: guides-copy (162 KB) on home/guides/products · PRODUCT_COPY_TH via ProductCard · framer-motion on home.
-  5 green set 1 DONE: topics 1–2 LIVE #451 · topics 3–5 LIVE #452 (no-draw · charging · pod-life hub; Thai copy only for charging +
-  pod-life, en/zh bodies unchanged; maker facts `_incoming/seo-f/b5b/research.md`; checker FAIL 14/17 → re-check PASS) [ตรวจแล้ว].
-  Owner 12/10: 42 "ได้" (shop lines 1–3 weeks / one forgotten night) · 43 "ได้" (words → THAI_STYLE §3 SEO ฉ line).
-  Out of scope, for the data round: caliburn-g4-mini charging row "~58 min at 2A" unverified (manual copy says 5V/1A adapter).
-  Open taste note: the charging article's record-level clip sits at the end, not under the overnight section.
-  Request indexing DONE 12/10: 7/7 (owner 2 · Friday 5 via the owner's Chrome, owner OK'd in chat; every dialog read
-  "ขอการจัดทำดัชนีแล้ว").
-  6 green set 2 — picked before batch 4 rest because SEO_LANDSCAPE §7.4 ranks green content #1 and LCP #5.
-  6a topics 6–7 LIVE #455 186c3c57 (disposable-lasts + first-pod beginner checklist) [ตรวจแล้ว].
-  6b topics 8–9 LIVE #456 d0780fe4 (13/10; deploy 38285876551 success; curl: 8 pages 200, new title + sitemap entry + /e-liquid
-  line live, m-bar-9k "read next" = live before) [ตรวจแล้ว]: NEW Thai-only /guides/salt-nic-vs-freebase "นิโคติน salt nic กับ freebase
-  ต่างกันยังไง เหมาะกับใคร" (record LAST in allGuides — an earlier slot pushed older articles off product "read next" boxes) · wattage
-  guide Thai rewrite + the "0.9Ω start mid-range" bug fixed th/en/zh · MTL guide Thai rework + "กี่โอห์มถึงเรียกว่า MTL หรือ RDL" ·
-  /e-liquid one Thai-only line linking the article. Checker FAIL 1 ("ผู้ร่วมการ|ศึกษา") → re-check PASS at 34a57fc4. Line-break tools
-  `_incoming/seo-f/b6b/`: cands*.json + render-6b.tsx + run2.js + loop.js (one candidate file over many pages in hidden iframes) +
-  lines.js (every block's line ends — catches compound splits the scanner misses). Proof: vt-diff/ (34 shots, 390+1440; zh shots of the
-  coils-accessories link skipped — same component as en). Owner 13/10 "ที่เหลือจัดการเลย" = items 50 + 51 as recommended →
-  #458 c9fac3db: /e-liquid Thai H2 "salt nic กับ freebase" + meta keeps the bare words (the question = the guide's) · THAI_STYLE words
-  ท่วม · บาดคอ · พารส. Request indexing DONE for all 3 (MTL guide 13/10 ~05:00, owner's Chrome, dialog "ขอการจัดทำดัชนีแล้ว").
-  6c topic 10 LIVE #460 a337a4f4 (13/10): /guides/taking-a-pod-on-a-plane (Thai-only, last in allGuides, clip BhndRb2tfSM) + leak
-  guide link + head meta row. Checker FAIL r1 + r2 (line ends only) → r3 PASS on ef6cb143. Evidence `_incoming/seo-f/b6c/`.
-  Request indexing DONE 13/10 ~20:10 (owner's Chrome, dialog "ขอการจัดทำดัชนีแล้ว").
-  6c topic 11 LIVE #463 101ea390 (13/10 ~22:00, deploy 38417934156 success; curl: page 200, Health NZ + NHS how-to-quit-vaping links,
-  /guides card, sitemap entry) [ตรวจแล้ว]: Thai-only /guides/quit-smoking-with-a-pod "เลิกบุหรี่ด้วยพอตได้ไหม ข้อมูลสองด้านจาก
-  หน่วยงานสุขภาพ" (record `_incoming/seo-f/b6c/quit-record.md`, owner 13/10 answers; last in allGuides, no relatedProductSlugs).
-  Checker r1 FAIL (line ends + facts: 2 missing source links, "ทุกฝั่ง" over the sources, 2 unsourced lines) → r2 FAIL (8 line-end
-  classes) → r3 PASS on c79a3ee8 (facts PASS since r2). Friday's own gates on c79a3ee8: scan.js PASS 0/118 · hydration 0 Thai nodes.
-  Line-end tools = `_incoming/seo-f/b6d/cand-driver.js` (the checker's emulation; candidates into the real elements of a built page)
-  + `_incoming/seo-f/b6c/bad-quit.js` (class rules) — LESSONS 36. Shots after: `_incoming/seo-f/b6d/shots/quit-390.png` + `quit-1440.png`.
-  Open [รอเจ้าของ]: H1 "หน่วย|งาน" at 1440 = รอพี่ตรวจ 54 (recommend 1: join "หน่วยงาน" site-wide, title unchanged — owner's 4A).
-  Request indexing DONE 13/10 ~23:00 (dialog "ขอการจัดทำดัชนีแล้ว"). GSC in the owner's Chrome: screenshots time out — drive it by
-  `find` refs; the inspection input that works is the combobox (ref "ตรวจสอบ URL ใน okami24.store"), not the textbox beside it.
-  NEXT: batch 7 (measure + handover: SEO_BASELINE, URL list, YouTube title drafts, seo-auditor close) — or more speed work if the owner
-  picks it (item "Left" above). Batches 1–6 + 4 rest are done.
-  Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
-  Next GSC reads 22/10 (rows 1–8) + 01/11 (rows 9–10).
+3h CLOSED 14/10 — round "SEO ฉ" (`docs/rounds/รอบ-SEO-ฉ-อัดฉีดเต็ม-หน้า1-เนื้อหาสีเขียว-12-10.txt`), tag `seo-f-full-done` [ตรวจแล้ว]. Every batch
+  in `git log --grep "SEO ฉ"`; live PRs #450 #451 #452 #453 #455 #456 #458 #460 #463 #465 #466 (each passed its checker). Results +
+  state: SEO_LANDSCAPE §7 (checklist, statuses) · §0 (key map; 0.2 got "พอตซิสเต็มกับพอตใช้แล้วทิ้งต่างกัน" → open-system-vs-disposable)
+  · §4 (YouTube drafts 1–13) · §8 (green topics) · SEO_BASELINE last section (changes, start point of rows 11–24, reads). seo-auditor
+  close 14/10: 0 real cannibalization (`_incoming/seo-f/b7/ha-close/`). Close gates on main e12cff11: tsc 0 · verify:commerce 17/17 ·
+  i18n 16/16 · content-dates current · raw chars 0 · scan.js 0/118 (live) · og-gate 118/118 · storefront 55/55 (`_incoming/seo-f/b7/`).
+  Owner rulings of the round that stay: THAI FIRST for new articles (`thaiOnly: true`, translate later) · health/quitting = neutral,
+  foreign gov/research sources, both sides (thai-check item 5 replaced for that topic — round file) · free SEO tools only ·
+  GitHub Actions budget $15/month → one docs PR per batch (LESSONS 32).
+  OPEN after the close:
+  - GSC reads: 22/10 (rows 1–8 + 22 + 24) · 01/11 (rows 9–21, 23) · 15/11 · 10/12 — SEO_BASELINE last section says what "worked" means.
+  - Request indexing NOT done for 9 URLs (SEO_BASELINE last section) — owner OK in chat first, then Friday via the owner's Chrome
+    (GSC: drive by `find` refs, screenshots time out; the inspection input that works = combobox "ตรวจสอบ URL ใน okami24.store").
+  - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio himself; a renamed clip → update its `title` in guides.ts.
+  - [รอเจ้าของ] รอพี่ตรวจ 54 (quit guide H1 "หน่วย|งาน" at 1440).
+  - Next speed work (offered, not started): guides-copy (162 KB) on home/guides/products · PRODUCT_COPY_TH via ProductCard · framer-motion
+    on home (SEO_LANDSCAPE §7 row 8).
+  - Taste note: the charging article's record-level clip sits at the end, not under the overnight section · data round: caliburn-g4-mini
+    charging row "~58 min at 2A" unverified · /faq has no in-content links (→ open-system-vs-disposable).
 3e LIVE 09/10 — round "SEO จ — pod" #414 8a22c21e (what-is-a-pod-system article; pod-systems head kept byte-identical — owner
   09/10 "protect what ranked"; GSC 09/10: bare "pod" moved from pod-systems to pod-kits). Round not tagged yet (round-close).
   Request indexing for /guides/what-is-a-pod-system + /products/pod-kits DONE 12/10 (with 3h) · Open:

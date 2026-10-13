@@ -256,3 +256,53 @@ Titles changed: /guides/choosing-wattage-and-airflow "เลือกวัต�
 แล้วค่อยปรับช่องลม" (+ meta) · /guides/understanding-mtl-vs-dtl "MTL กับ DTL ต่างยังไง…" → "MTL กับ DTL สูบต่างกันยังไง แล้ว RDL
 คืออะไร" (+ meta; keys foreign, 35 impressions at 35.3 — not worked on). Internal links: relx-smash-go-12k + argus-g4-mini "read next"
 boxes now carry the salt nic article; coil-38 carries the wattage guide; m-bar-9k unchanged.
+
+## Round "SEO ฉ" close (14/10/2026) - everything the round changed + the start point of every target query · READS 22/10 · 01/11 · 15/11 · 10/12
+
+Start point = GSC read 12/10 (28 days 12/09–09/10, before any batch went live; `_incoming/seo-f/gsc-1012-queries.txt`) — numbers
+are clicks/impressions · avg position; "no row" = no impression in that window. Goal of the round = avg position ≤ 10 for every
+query (round file); rankings move 2–8 weeks after a page goes live, so the reads below decide, not the close.
+
+Live changes not yet listed above (batch 3 + 6b have their own sections; details = `git show <merge>`; times local):
+- #451 (12/10 06:05) + #452 (12/10 13:12): green set 1, Thai-only bodies — NEW /guides/fixing-a-burnt-pod · NEW /guides/fixing-a-leaking-pod ·
+  reworked /guides/fixing-no-draw-and-blinking-light · /guides/battery-care-and-charging · /guides/coil-and-pod-maintenance (hub of the
+  "problems + pod care" cluster, links both ways). Clips embedded per SEO_LANDSCAPE §8.
+- #453 (12/10 14:48): every guide's Article dateModified + sitemap lastmod = the newest commit that changed ITS text; visible byline
+  "โดย ทีม OKami24 · เผยแพร่ … · อัปเดต …" on every guide except the DNS page.
+- #455 (12/10 18:44): /guides/how-long-a-disposable-lasts (Thai rework) · /guides/choosing-your-first-pod-system (Thai beginner checklist;
+  title "Pod System ตัวไหนดี เลือกพอตเครื่องแรก ดูอะไรก่อน").
+- #458 (13/10 01:06): /e-liquid Thai H2 "salt nic กับ freebase" + meta keep the bare words; the question belongs to the 6b article.
+- #460 (13/10 19:14): NEW /guides/taking-a-pod-on-a-plane (Thai-only) + a link from the leaking-pod guide.
+- #463 (13/10 21:57): NEW /guides/quit-smoking-with-a-pod (Thai-only; foreign health-agency sources, both sides).
+- #465 (14/10 00:54) + #466 (14/10 01:33): no visible change; mobile JS gzip −33…−48% (lab LCP −1.1…−1.8 s; SEO_LANDSCAPE §7 row 8).
+  If Search Console starts showing field Core Web Vitals, that is the row to watch — the site had "not enough data" on 12/10.
+
+Requested indexing: 12/10 the 5 set-1 guides + what-is-a-pod-system + pod-kits · 13/10 salt-nic-vs-freebase, choosing-wattage-and-airflow,
+understanding-mtl-vs-dtl, taking-a-pod-on-a-plane, quit-smoking-with-a-pod · 14/10 products/wotofo-nexbar-18k (+ "validate fix" of the
+5xx row started). **Not requested yet (9):** /guides/how-long-a-disposable-lasts · /guides/choosing-your-first-pod-system ·
+/products/pods-cartridges · /products/coils-accessories · /brands/salthub · /e-liquid · /brands/iqos · /brands/relx · /brands/wotofo.
+
+| # | query (group) | owner page | start 12/10 | read | worked | another pass |
+|---|---|---|---|---|---|---|
+| 11 | พอตไหม้ (แก้ยังไง · ดูยังไง · เกิดจากอะไร) | /guides/fixing-a-burnt-pod | no row | 01/11 · 15/11 · 10/12 | the query appears, pos ≤ 10 | no row by 15/11 → check URL Inspection "indexed", then the H1/title words |
+| 12 | หัวพอตรั่ว · พอตรั่ว | /guides/fixing-a-leaking-pod | no row | same | same | same |
+| 13 | พอตดูดไม่ขึ้น · ไฟกะพริบ | /guides/fixing-no-draw-and-blinking-light | พอตดูดไม่ขึ้นแก้ยังไง 0/1 · 54 | same | pos ≤ 10 | still > 20 → add the clip's wording to the H2s |
+| 14 | ชาร์จพอตกี่นาที · ชาร์จไม่เข้า · ข้ามคืน | /guides/battery-care-and-charging | no row | same | the query appears, pos ≤ 10 | Trends mixes in phone charging — judge by GSC rows only |
+| 15 | หัวพอตใช้ได้กี่วัน | /guides/coil-and-pod-maintenance | no row | same | same | same |
+| 16 | พอตใช้แล้วทิ้ง ใช้ได้กี่วัน | /guides/how-long-a-disposable-lasts | no row (พอตใช้แล้วทิ้ง 0/1 · 2.0 = /products/disposables) | same | the guide gets the "กี่วัน" rows, disposables keeps the bare word | the category page takes "กี่วัน" → step its meta back |
+| 17 | pod system ตัวไหนดี · ยี่ห้อไหนดี · แนะนำ · pantip | /guides/choosing-your-first-pod-system | ยี่ห้อไหนดี 0/5 · 62.8 · แนะนํา 0/5 · 87.4 · ตัวไหนดี 0/2 · 62.5 · pantip 0/1 · 58 | same | pos ≤ 20 by 15/11, ≤ 10 by 10/12 | no move → the page needs links from pod-systems / home (designer slot) |
+| 18 | salt nic กับ freebase ต่างกันยังไง · นิโคติน 3 กับ 5 | /guides/salt-nic-vs-freebase | no row | 01/11 · 15/11 · 10/12 | the question goes to the guide, /e-liquid keeps "salt nic" | both share the question → /e-liquid H2 steps back further (item 50 follow-up) |
+| 19 | ตั้งกี่วัตต์ดี · ค่าโอห์ม | /guides/choosing-wattage-and-airflow | no row | same | the query appears | none expected soon (no evidence of volume) |
+| 20 | พอตขึ้นเครื่องบินได้ไหม | /guides/taking-a-pod-on-a-plane | no row | same | the query appears, pos ≤ 10 | no row by 15/11 → the title wording vs autocomplete ("…ได้ไหม 2569") |
+| 21 | เลิกบุหรี่ด้วยพอต · พอตช่วยเลิกบุหรี่ไหม | /guides/quit-smoking-with-a-pod | no row | same | the query appears | YMYL topic — slow; judge only on 10/12 |
+| 22 | หัวพอตเปล่า · หัวพอต · pods | /products/pods-cartridges | หัวพอตเปล่า 0/3 · 9.7 · หัวพอต 0/2 · 3.0 · pods 0/24 · 4.3 | 22/10 · 15/11 | clicks > 0 on "pods" (was 0/24) | still 0 clicks → meta rewrite |
+| 23 | คอยล์พอต | /products/coils-accessories | no row (our clip #4 on YouTube) | 01/11 · 15/11 | the query appears | — |
+| 24 | ร้านพอต · พอตของแท้ | / | พอตของแท้ 0/1 · 2.0 (07/10) | 22/10 · 15/11 | rows land on / | /about gets them → take "ร้านพอต" out of the /about title (seo-auditor 14/10) |
+
+seo-auditor round close (14/10, live main e12cff11, 118 URLs, same method as the open read): **0 real cannibalization**; 17
+overlaps Google can tell apart (table + evidence `_incoming/seo-f/b7/ha-close/`); the one to watch is "pod" (row 9). Site-wide
+before → after the round: pages 113 → 118 · titles changed 7 · H1 8 · metas 13 · links inside `<main>` 949 → 1036 · pages with
+no in-content inbound link 3 → 2 (/technology · /privacy — both still in the menus).
+
+Rows 1–10 (above) keep their dates ("pod" / "pod system" = row 9). Also on 22/10: the 5xx "validate fix" result (started 14/10) and the index coverage count
+(GSC 14/10: 113 indexed / 13 not — noindex 8 · redirect 3 · 5xx 1 · crawled-not-indexed 1 = an OG image).
