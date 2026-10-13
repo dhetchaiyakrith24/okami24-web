@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-13",
-  "endDate": "2026-10-10",
+  "startDate": "2026-09-14",
+  "endDate": "2026-10-11",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 513,
-   "impressions": 2820,
-   "ctr": 0.1819148936170213,
-   "position": 9.224822695035462
+   "clicks": 525,
+   "impressions": 2872,
+   "ctr": 0.18279944289693592,
+   "position": 9.16817548746518
   },
   {
    "keys": [
@@ -36,12 +36,21 @@
   },
   {
    "keys": [
+    "bih"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 35
+  },
+  {
+   "keys": [
     "bra"
    ],
    "clicks": 0,
-   "impressions": 3,
+   "impressions": 2,
    "ctr": 0,
-   "position": 45.333333333333336
+   "position": 52
   },
   {
    "keys": [
@@ -147,9 +156,9 @@
     "mmr"
    ],
    "clicks": 0,
-   "impressions": 18,
+   "impressions": 16,
    "ctr": 0,
-   "position": 7.888888888888889
+   "position": 6.625
   },
   {
    "keys": [
@@ -165,9 +174,9 @@
     "nor"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 1,
    "ctr": 0,
-   "position": 8.5
+   "position": 7
   },
   {
    "keys": [
@@ -210,9 +219,9 @@
     "usa"
    ],
    "clicks": 0,
-   "impressions": 10,
+   "impressions": 11,
    "ctr": 0,
-   "position": 55.4
+   "position": 59.36363636363637
   },
   {
    "keys": [
