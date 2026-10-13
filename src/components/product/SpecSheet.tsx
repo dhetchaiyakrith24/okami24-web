@@ -11,7 +11,7 @@ import { thaiTypographyNode } from "@/lib/thai-typography";
 import { ThaiText } from "@/components/i18n/ThaiText";
 import { verifiedRows } from "@/lib/verified-specs";
 
-/** `copyTh` = PRODUCT_COPY_TH[product.slug], from the server page (SEO ฉ batch 4 — keeps the table out of the browser). */
+/** `copyTh` = PRODUCT_COPY_TH[product.slug], from the server page (SEO ฉ batch 4 — this component no longer pulls the whole table in; ProductCard still does). */
 export function SpecSheet({ product, copyTh }: { product: Product; copyTh?: ProductCopyTh }) {
   const { dict, locale } = useLocale();
   // Data round (owner 2026-09-24, question 1 ก): an unverified row is not shown at all — it used to be listed with an

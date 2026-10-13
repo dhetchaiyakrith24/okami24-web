@@ -8,8 +8,8 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
 import type { ProductCopyTh } from "@/i18n/product-copy-th";
 import { thaiTypography } from "@/lib/thai-typography";
 
-/** `faqsTh` = the product's PRODUCT_COPY_TH entry's `faqs`, from the server page (SEO ฉ batch 4 — keeps the table out of
- *  the browser). */
+/** `faqsTh` = the product's PRODUCT_COPY_TH entry's `faqs`, from the server page (SEO ฉ batch 4 — this component no
+ *  longer pulls the whole table in; ProductCard still does). */
 export function ProductFAQ({ faqs, faqsTh }: { faqs: FAQItem[]; faqsTh?: ProductCopyTh["faqs"] }) {
   const { dict, locale } = useLocale();
   if (faqs.length === 0) return null;

@@ -14,7 +14,7 @@ import { thaiTypographyNode } from "@/lib/thai-typography";
  * English title (brand-coined feature names). Markup and classes are exactly what they were —
  * only which string each <h3>/<p> holds changes.
  */
-/** `copyTh` = PRODUCT_COPY_TH[product.slug], from the server page (SEO ฉ batch 4 — keeps the table out of the browser). */
+/** `copyTh` = PRODUCT_COPY_TH[product.slug], from the server page (SEO ฉ batch 4 — this component no longer pulls the whole table in; ProductCard still does). */
 export function FeatureGrid({ product, copyTh: copyThAll }: { product: Product; copyTh?: ProductCopyTh }) {
   const { dict, locale } = useLocale();
   const copyTh = locale === "th" ? copyThAll?.features : undefined;

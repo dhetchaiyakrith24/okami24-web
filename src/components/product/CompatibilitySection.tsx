@@ -8,7 +8,7 @@ import { compatLabelTh, compatNoteTh } from "@/i18n/compat-copy-th";
 import type { ProductCopyTh } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 
-/** `copyTh` = PRODUCT_COPY_TH[product.slug], from the server page (SEO ฉ batch 4 — keeps the table out of the browser). */
+/** `copyTh` = PRODUCT_COPY_TH[product.slug], from the server page (SEO ฉ batch 4 — this component no longer pulls the whole table in; ProductCard still does). */
 export function CompatibilitySection({ product, copyTh }: { product: Product; copyTh?: ProductCopyTh }) {
   const { dict, locale } = useLocale();
   if (product.compatibility.length === 0 && product.whoIsThisFor.length === 0) return null;
