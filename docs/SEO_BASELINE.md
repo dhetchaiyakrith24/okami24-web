@@ -279,8 +279,9 @@ Live changes not yet listed above (batch 3 + 6b have their own sections; details
 
 Requested indexing: 12/10 the 5 set-1 guides + what-is-a-pod-system + pod-kits · 13/10 salt-nic-vs-freebase, choosing-wattage-and-airflow,
 understanding-mtl-vs-dtl, taking-a-pod-on-a-plane, quit-smoking-with-a-pod · 14/10 products/wotofo-nexbar-18k (+ "validate fix" of the
-5xx row started). **Not requested yet (9):** /guides/how-long-a-disposable-lasts · /guides/choosing-your-first-pod-system ·
-/products/pods-cartridges · /products/coils-accessories · /brands/salthub · /e-liquid · /brands/iqos · /brands/relx · /brands/wotofo.
+5xx row started) and, after the close (owner "ทำเลย"), the last 9: /guides/how-long-a-disposable-lasts · /guides/choosing-your-first-pod-system ·
+/products/pods-cartridges · /products/coils-accessories · /brands/salthub · /e-liquid · /brands/iqos · /brands/relx · /brands/wotofo — every
+page the round changed has now been requested (each dialog read "ขอการจัดทำดัชนีแล้ว").
 
 | # | query (group) | owner page | start 12/10 | read | worked | another pass |
 |---|---|---|---|---|---|---|
