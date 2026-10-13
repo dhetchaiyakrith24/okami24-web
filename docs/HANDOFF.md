@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #463 101ea390 (quit guide, 13/10 ~22:00, deploy
-  38417934156 success, curl: page 200 + links + /guides card + sitemap) · #460 a337a4f4 (plane guide) · #458 · #456 [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #466 a42acc1e (product-page JS, 14/10, deploy
+  38447669781 success, curl 200 + live JS = checked build) · #465 39ffe04d (header/footer JS) · #463 101ea390 (quit guide) [ตรวจแล้ว].
   Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl.
   Night chain OFF (day chat 08/10 turned it off). Site merges open again (owner 10/10 late "Merge ได้ลูกค้าน้อยแล้ว"). Owner decisions: ask in chat + one
   line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (§18) · image work goes live after the checker.
@@ -21,8 +21,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Banana Pro Unlimited ended 11/10 00:00 → free renders only on the "365 Unlimited" models (item 3f); NO credit spend without the
   owner's yes in chat (owner 11/10 — overrides IMAGE_SPEC §0 item 7 "use credits without asking" until the owner says otherwise). Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main: branch `seo-f-handoff-1310` = this docs-only handoff (PR, merge as docs-only 13.7). Nothing else ahead.
-  #446 · #450 · #451 · #452 · #460 · #463 merged. Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
+2 ahead of main: branch `seo-f-b4r-docs` = this docs-only update (PR, merge as docs-only 13.7). Nothing else ahead.
+  #446 · #450 · #451 · #452 · #460 · #463 · #465 · #466 merged. Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
@@ -65,15 +65,22 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   guides × 2 widths — over the 30 cap, told the owner in the report). Note: self-merge-check printed SITE, not BIG, for a PR that
   touched scripts/content-dates.ts (hook-run via a command string) — offered as its own task (chip "Make self-merge-check see
   hook-run scripts"); the full set was run anyway.
-  Left in batch 4: mobile LCP 10.3–11.6 s lab (render delay, suspect AgeGate/hydration — not proven) · brand on muro ×3 + pod-180
-  JSON-LD · GSC 5xx 1 + crawled-not-indexed 2 URLs.
+  4 rest DONE 14/10 [ตรวจแล้ว] (SEO_LANDSCAPE §7 rows 6 · 8 · 15 · §7.4 item 5): cause of the slow mobile LCP = Client Components
+  importing whole-catalog tables. #465 39ffe04d header/footer get nav lists as props (checker PASS 6/6 on 226560af) · #466 a42acc1e
+  product page passes each product's slice (compat lists · article/story/anatomy · PRODUCT_COPY_TH entry; src/lib/product-details-copy.ts;
+  checker PASS 6/6 on 2d548f46, comment-only fix 34793d68 after it under 13.5 (จ)). Proof: server HTML of all 118 sitemap URLs equal to
+  live (2 = Cloudflare e-mail only) · hydrated text 0 changes (36 + 48 page×locale×width) · JS gzip home 533→353 KB, products 595→365 ·
+  live Lighthouse median LCP −1.1…−1.8 s on 5 pages. Tools + evidence `_incoming/seo-f/b4r/` (markup-diff.js · js-weight.js · lh/run3.sh).
+  GSC 14/10: 5xx = nexbar-18k (200 now) → request indexing + validate fix started (owner "ทำเลย") · crawled-not-indexed = OG image ·
+  brand ×4 = intentional · service-page JSON-LD = not done (no rich result applies) · video "not indexed" = by design (§7 row 19).
+  Left, offered as next speed work: guides-copy (162 KB) on home/guides/products · PRODUCT_COPY_TH via ProductCard · framer-motion on home.
   5 green set 1 DONE: topics 1–2 LIVE #451 · topics 3–5 LIVE #452 (no-draw · charging · pod-life hub; Thai copy only for charging +
   pod-life, en/zh bodies unchanged; maker facts `_incoming/seo-f/b5b/research.md`; checker FAIL 14/17 → re-check PASS) [ตรวจแล้ว].
   Owner 12/10: 42 "ได้" (shop lines 1–3 weeks / one forgotten night) · 43 "ได้" (words → THAI_STYLE §3 SEO ฉ line).
   Out of scope, for the data round: caliburn-g4-mini charging row "~58 min at 2A" unverified (manual copy says 5V/1A adapter).
   Open taste note: the charging article's record-level clip sits at the end, not under the overnight section.
   Request indexing DONE 12/10: 7/7 (owner 2 · Friday 5 via the owner's Chrome, owner OK'd in chat; every dialog read
-  "ขอการจัดทำดัชนีแล้ว"). GSC overview 12/10: "videos on 19 pages not indexed" — batch 4 rest candidate.
+  "ขอการจัดทำดัชนีแล้ว").
   6 green set 2 — picked before batch 4 rest because SEO_LANDSCAPE §7.4 ranks green content #1 and LCP #5.
   6a topics 6–7 LIVE #455 186c3c57 (disposable-lasts + first-pod beginner checklist) [ตรวจแล้ว].
   6b topics 8–9 LIVE #456 d0780fe4 (13/10; deploy 38285876551 success; curl: 8 pages 200, new title + sitemap entry + /e-liquid
@@ -97,10 +104,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Line-end tools = `_incoming/seo-f/b6d/cand-driver.js` (the checker's emulation; candidates into the real elements of a built page)
   + `_incoming/seo-f/b6c/bad-quit.js` (class rules) — LESSONS 36. Shots after: `_incoming/seo-f/b6d/shots/quit-390.png` + `quit-1440.png`.
   Open [รอเจ้าของ]: H1 "หน่วย|งาน" at 1440 = รอพี่ตรวจ 54 (recommend 1: join "หน่วยงาน" site-wide, title unchanged — owner's 4A).
-  NOT done: request indexing for /guides/quit-smoking-with-a-pod — the owner's Chrome froze again 13/10 ~22:05 (window minimised;
-  session-tool limit). Way in: the inspection box on the GSC overview page (a hand-built /search-console/inspect?… URL gives a 404).
-  NEXT (new chat): (1) request indexing for the quit guide → (2) batch 4 rest (mobile LCP · brand on muro ×3 + pod-180 JSON-LD ·
-  GSC 5xx / crawled-not-indexed · video indexing) — plan it first (big by 13.1 #3).
+  Request indexing DONE 13/10 ~23:00 (dialog "ขอการจัดทำดัชนีแล้ว"). GSC in the owner's Chrome: screenshots time out — drive it by
+  `find` refs; the inspection input that works is the combobox (ref "ตรวจสอบ URL ใน okami24.store"), not the textbox beside it.
+  NEXT: batch 7 (measure + handover: SEO_BASELINE, URL list, YouTube title drafts, seo-auditor close) — or more speed work if the owner
+  picks it (item "Left" above). Batches 1–6 + 4 rest are done.
   Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
   Next GSC reads 22/10 (rows 1–8) + 01/11 (rows 9–10).
 3e LIVE 09/10 — round "SEO จ — pod" #414 8a22c21e (what-is-a-pod-system article; pod-systems head kept byte-identical — owner
