@@ -11,6 +11,7 @@ import { ProductReviewSection } from "@/components/product/ProductReviewSection"
 import { ProductAnatomy } from "@/components/product/ProductAnatomy";
 import { FeatureGrid } from "@/components/product/FeatureGrid";
 import { ProductMoreDetails } from "@/components/product/ProductMoreDetails";
+import { productDetailsCopy } from "@/lib/product-details-copy";
 import { SpecSheet } from "@/components/product/SpecSheet";
 import { CompatibilitySection } from "@/components/product/CompatibilitySection";
 import { CompatibleProducts } from "@/components/product/CompatibleProducts";
@@ -323,7 +324,7 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
       <ProductReviewSection product={product} />
       {/* `storyDetails` (image-fix round 2026-09-30): one "more details" story in place of the three sections below. */}
       {product.storyDetails ? (
-        <ProductMoreDetails product={product} />
+        <ProductMoreDetails product={product} copy={productDetailsCopy(product.slug)} />
       ) : (
         <>
           <ProductGallery product={product} />

@@ -8,11 +8,10 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductAnatomySheet } from "@/components/product/ProductAnatomySheet";
 import { ProductAnatomy } from "@/components/product/ProductAnatomy";
-import { ANATOMY_SHEETS } from "@/i18n/anatomy-sheet-copy";
-import { STORY_COPY } from "@/i18n/story-copy";
+import type { StoryBlockCopy } from "@/i18n/story-copy";
+import type { ProductDetailsCopy } from "@/lib/product-details-copy";
 import { verifiedRows } from "@/lib/verified-specs";
 import { ProductArticleBody, ProductArticleLede } from "@/components/product/ProductArticle";
-import { productArticle } from "@/data/product-articles";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import { thaiTypographyNode } from "@/lib/thai-typography";
@@ -76,7 +75,9 @@ function Credit({ img, linkLabel }: { img: StoryImage; linkLabel: string }) {
   );
 }
 
-export function ProductMoreDetails({ product }: { product: Product }) {
+/** `copy` = this product's slice of the article / story / anatomy-sheet tables, from the server page
+ *  (src/lib/product-details-copy.ts — importing the tables here shipped every product's text to the browser). */
+export function ProductMoreDetails({ product, copy }: { product: Product; copy: ProductDetailsCopy }) {
   const { dict, locale } = useLocale();
   const copyTh = locale === "th" ? PRODUCT_COPY_TH[product.slug]?.features : undefined;
   const highlights = product.features.filter((f) => f.image);
@@ -87,7 +88,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
     ? (product.colorVariants ?? []).map((o) => ({ id: o.id, name: o.name, swatchHex: o.swatchHex, photo: o.image }))
     : (product.flavorVariants ?? []).map((o) => ({ id: o.id, name: o.name, swatchHex: o.swatchHex, photo: o.boxImage ?? (product.lineupFirst ? undefined : o.image) }));
   const tiles = options.filter((t) => t.photo);
-  const hasArticle = productArticle(product.slug, locale) !== undefined;
+  const hasArticle = copy.articles[locale] !== undefined;
   if (!cover && highlights.length === 0 && tiles.length === 0 && !hasArticle) return null;
   const sourceName = cover?.sourceName ?? highlights[0]?.image?.sourceName;
   const stage = product.storyLayout === "stage";
@@ -150,7 +151,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
             title={<span id="more-details-title">{dict.product.moreDetailsTitle}</span>}
             description={sourceName ? dict.product.galleryNote.replace("{brand}", sourceName) : undefined}
           />
-          <ProductArticleLede slug={product.slug} />
+          <ProductArticleLede articles={copy.articles} />
         </div>
         {cover && (
           <div className={cn("mt-8 flex flex-col gap-2 lg:mt-10", stage && cover.transparent && "relative z-0 mt-5 lg:mt-12")}>
@@ -165,16 +166,16 @@ export function ProductMoreDetails({ product }: { product: Product }) {
             <Credit img={cover} linkLabel={dict.product.gallerySourceLinkLabel} />
           </div>
         )}
-        <ProductAnatomySheet product={product} />
+        <ProductAnatomySheet product={product} sheet={copy.anatomySheet} />
       </Container>
-      {product.isFlagship && !ANATOMY_SHEETS[product.slug] && (
+      {product.isFlagship && !copy.anatomySheet && (
         <div className="mt-10 lg:mt-14">
           <ProductAnatomy product={product} />
         </div>
       )}
 
       {stage ? (
-        <StageStory product={product} highlights={highlights} copyTh={copyTh} grid={grid} />
+        <StageStory product={product} highlights={highlights} copyTh={copyTh} story={copy.story} grid={grid} />
       ) : (
         <>
           <div className="mt-10 flex flex-col lg:mt-14">
@@ -205,7 +206,7 @@ export function ProductMoreDetails({ product }: { product: Product }) {
       )}
       {hasArticle && (
         <Container className={cn("pb-14 lg:pb-20", stage && "lg:flex lg:justify-center")}>
-          <ProductArticleBody slug={product.slug} />
+          <ProductArticleBody articles={copy.articles} />
         </Container>
       )}
     </section>
@@ -223,12 +224,12 @@ type FeatureCopyTh = Record<string, { title?: string; description: string; subli
  * (lesson ช1) — nothing here bleeds to the screen edge. G5 template round (02/10): from lg up each block is split like
  * M Bar 10K's (poster beside its text, alternating); the centred stage stays on phones.
  */
-function StageStory({ product, highlights, copyTh, grid }: { product: Product; highlights: Feature[]; copyTh: FeatureCopyTh; grid: ReactNode }) {
+function StageStory({ product, highlights, copyTh, story, grid }: { product: Product; highlights: Feature[]; copyTh: FeatureCopyTh; story?: Record<string, StoryBlockCopy>; grid: ReactNode }) {
   const { dict, locale } = useLocale();
   const t = (x: string) => (locale === "th" ? thaiTypographyNode(x) : x);
   const gridAfter = product.storyColoursAfter ?? highlights[highlights.length - 1]?.id;
   // batch 2 (G5 template round): the three-language story text beside each poster, when the product has one
-  const story = STORY_COPY[product.slug];
+  // (`story` = STORY_COPY[product.slug], looked up by the server page)
   const rows = verifiedRows(product.specifications);
   const titleOf = (f: Feature) => story?.[f.id]?.title[locale] ?? copyTh?.[f.id]?.title ?? f.title;
   return (

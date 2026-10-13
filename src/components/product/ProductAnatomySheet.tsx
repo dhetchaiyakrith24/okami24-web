@@ -5,7 +5,7 @@ import { useCallback, useLayoutEffect, useRef, useState, type ReactNode } from "
 import type { Product } from "@/types/catalog";
 import type { Locale } from "@/i18n/config";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { ANATOMY_SHEETS, type AnatomySheet, type SheetCallout, type SheetPart, type SheetText } from "@/i18n/anatomy-sheet-copy";
+import type { AnatomySheet, SheetCallout, SheetPart, SheetText } from "@/i18n/anatomy-sheet-copy";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import { verifiedRows } from "@/lib/verified-specs";
 import { cn } from "@/lib/utils";
@@ -251,10 +251,10 @@ function BackView({ back, text, verified, alt, showCode }: { back: NonNullable<A
   );
 }
 
-export function ProductAnatomySheet({ product }: { product: Product }) {
+/** `sheet` = ANATOMY_SHEETS[product.slug], looked up by the server page (src/lib/product-details-copy.ts). */
+export function ProductAnatomySheet({ product, sheet }: { product: Product; sheet?: AnatomySheet }) {
   const { dict, locale } = useLocale();
   const text = useText(locale);
-  const sheet = ANATOMY_SHEETS[product.slug];
   if (!sheet) return null;
   const rows = verifiedRows(product.specifications);
   const verified = (k?: string | string[]) => ([] as string[]).concat(k ?? []).every((key) => rows.some((r) => r.key === key));
