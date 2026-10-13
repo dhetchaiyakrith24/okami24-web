@@ -21,7 +21,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Banana Pro Unlimited ended 11/10 00:00 → free renders only on the "365 Unlimited" models (item 3f); NO credit spend without the
   owner's yes in chat (owner 11/10 — overrides IMAGE_SPEC §0 item 7 "use credits without asking" until the owner says otherwise). Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main: nothing (13/10, after #458; this handoff = its own docs PR, branch `seo-f-handoff-6c`) [ตรวจแล้ว].
+2 ahead of main: branch `seo-f-b6c` = OPEN PR #460 (22 commits, head = this handoff commit; `git log --oneline origin/main..seo-f-b6c`)
+  [ตรวจแล้ว 13/10 ~05:30]. NOT checker-passed: checker FAIL round 1 (2c8d0b31) + round 2 (55865742) — both only line ends (facts PASS,
+  no-Thai-agency PASS); round 3 = the LAST allowed (13.4) not run yet. Fixes since round 2: a09d1231 · 10592bde · 5a679b12 (+ dates).
+  GitHub checks green on 2c8d0b31; re-run on every push. A test-server build of 72e0cb15 was running when the chat paused (port 3412).
   #446 · #450 · #451 · #452 merged. Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
@@ -85,12 +88,20 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   lines.js (every block's line ends — catches compound splits the scanner misses). Proof: vt-diff/ (34 shots, 390+1440; zh shots of the
   coils-accessories link skipped — same component as en). Owner 13/10 "ที่เหลือจัดการเลย" = items 50 + 51 as recommended →
   #458 c9fac3db: /e-liquid Thai H2 "salt nic กับ freebase" + meta keeps the bare words (the question = the guide's) · THAI_STYLE words
-  ท่วม · บาดคอ · พารส. Request indexing 13/10 (owner's Chrome): salt-nic-vs-freebase + choosing-wattage-and-airflow DONE (dialog
-  "ขอการจัดทำดัชนีแล้ว"); understanding-mtl-vs-dtl NOT done — GSC "เกินโควต้าแล้ว" (daily quota) → do it on 14/10 or later.
-  6c topics 10–11 = NEXT (owner 13/10: own new chat) — not started: 10 airline rules ("พอตขึ้นเครื่องบินได้ไหม", airline/IATA
-  facts only, SEO_LANDSCAPE §8 row 10) · 11 quitting (owner's own story as one person's experience + foreign gov/research both
-  sides — round file ban list; EVERY health line = one owner question set before going live). Clips: §8 rows 10–11. Tier B.
-  First step: researcher (airline/IATA + foreign health sources) + thai-copy draft → owner set for the health lines (work goes on).
+  ท่วม · บาดคอ · พารส. Request indexing DONE for all 3 (MTL guide 13/10 ~05:00, owner's Chrome, dialog "ขอการจัดทำดัชนีแล้ว").
+  6c topic 10 = PR #460 (open, see item 2): NEW Thai-only /guides/taking-a-pod-on-a-plane "พอตขึ้นเครื่องบินได้ไหม ต้องใส่กระเป๋าถือ
+  หรือโหลดใต้เครื่องได้" (last in allGuides, no relatedProductSlugs, clip BhndRb2tfSM — the OKM YARZ one is age-restricted) + leak
+  guide links it + head meta row. Facts = IATA 2026 PDF + Vietnam Airlines, Thai-only rules unattributed (owner 13/10 → §18 "Sources
+  named in articles"). Evidence `_incoming/seo-f/b6c/` (research.md · health-quotes.md · iata-2026.pdf · checker-brief.md · chk*/).
+  NEXT (new chat): (1) `node scripts/test-server.js status` (start / rebuild the head if needed) → in the app browser at 390 AND 1440
+  run `_incoming/seo-f/b6c/pagebad.js` `__pageBad()` + `lines.js` `__lines()` on /guides/taking-a-pod-on-a-plane and /guides —
+  read EVERY line end by eye (LESSONS 36: the word list misses new words; serve the folder with `node _incoming/seo-f/b6c/serve.js`,
+  port 47815) → (2) checker round 3 = a new checker agent with checker-brief.md + "round 3: only line ends + the commits since
+  55865742" → PASS = merge (13.7) → curl the live page → request indexing for /guides/taking-a-pod-on-a-plane (owner's Chrome,
+  owner OK'd indexing in chat 13/10). FAIL round 3 = 13.3 #7: report to the owner, do not loop.
+  6c topic 11 (quitting) = NOT built yet; record ready to paste = `_incoming/seo-f/b6c/quit-record.md` (owner 13/10 answers applied:
+  2B no owner name · story held — "ไว้ว่างๆพี่มาเขียนให้" (รอพี่ตรวจ 52) · 3A · 4A · 5A · 6A · words 7 = THAI_STYLE). Own PR after #460,
+  same gates + bad.js with the health words, checker with the round-file health line. Slug quit-smoking-with-a-pod.
   Then batch 4 rest (mobile LCP · brand on muro ×3 + pod-180 JSON-LD · GSC 5xx/crawled-not-indexed · video indexing).
   Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
   Next GSC reads 22/10 (rows 1–8) + 01/11 (rows 9–10).
@@ -240,6 +251,12 @@ boundary, never mid-word, never a dangling connective, never a bare floating num
 Marbo + M Bar plan · FAQ wholesale phrase · RINCOE/DOTMOD phrase · home index DONE · LINE counter option ก · breadcrumb
 NOT done (full wording: `git show aa21cbb:docs/HANDOFF.md` lines 262–275) · `okami24.net` / `.com` NXDOMAIN — leave them · `voopooTitle` rename NOT done · no `OKAMI24_METRICS_TOKEN` — read the
 Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
+
+**Sources named in articles (owner 13/10, chat):** no Thai agency or Thai source is named or linked as a source on the
+site ("ไม่อยากให้อ้างอิงหน่วยงานไทย เพราะข้อมูลมันเอียงน้ำหนักเพื่อผลประโยชน์ของประเทศไทยเอง") — name international or
+foreign bodies (IATA, NHS, WHO …); a rule only a Thai source states may be written as a plain rule, its source kept in the
+code comment / evidence file · health / quitting copy = both sides kept, the cautious side trimmed to each agency's core
+position ("ไม่ใช่เชิงชวนซื้อขาย แต่ก็ไม่ตัดทิ้งจนลูกค้าหันหน้าหนี") · the owner is never named in his own quit story.
 
 **SEO baseline hold (owner 02/10):** the 05/10 wait is cancelled — "รอไปก็ต้องกลับมาแก้ ไว้ไปขัดเกลารอบ Seo สุดท้ายขอดัชนีใหม่" —
 the 7 baseline pages are worked on like any other page (hold code removed in round SEO ง, #341).

@@ -378,6 +378,9 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round SEO ฉ batch 6b topic 8 (12/10): the new Thai-only article — its dek says "น้ำยา", which stays out of head copy.
   "salt-nic-vs-freebase":
     "salt nic กับ freebase ต่างกันยังไง แบบไหนเข้ากับพอตตัวเล็ก แบบไหนเข้ากับเครื่องวัตต์สูง ตัวเลข 3% กับ 5% บอกอะไร และสัดส่วน PG/VG มีผลกับรสและควันยังไง",
+  // Round SEO ฉ batch 6c topic 10 (13/10): the searcher's question first, then the three rules people look for.
+  "taking-a-pod-on-a-plane":
+    "พอตขึ้นเครื่องบินได้ไหม ตามกติกาการบิน พอตต้องอยู่ในกระเป๋าถือ โหลดใต้เครื่องไม่ได้ และสูบหรือชาร์จบนเครื่องไม่ได้ พร้อมวิธีพกพาวเวอร์แบงก์และถ่านสำรอง",
   // Round "site unreachable" (owner 12/10, sheet 47.2): the short dek (card + page) has no search words, so the head gets
   // the terms people type — every method named with its official value (docs/cloud-results/dns-guide-sources.md).
   "cant-open-the-website":
