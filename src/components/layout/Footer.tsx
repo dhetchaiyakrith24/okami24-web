@@ -5,22 +5,22 @@ import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight, Minus, Plus } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { DNS_GUIDE_ID } from "@/data/guides";
-import { categoriesWithProducts } from "@/lib/category-visibility";
+import type { NavCategory } from "@/lib/category-visibility";
 import { CONTACT } from "@/data/contact";
-import { brandsWithProducts } from "@/lib/brand-visibility";
+import type { NavBrand } from "@/lib/brand-visibility";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 
-export function Footer() {
+export function Footer({ categories, brands, dnsGuideId }: { categories: NavCategory[]; brands: NavBrand[]; dnsGuideId: string }) {
   const { dict } = useLocale();
   // Only link brands that actually have a real product in the catalog right now — a brand added
   // on real evidence but still fully media-blocked (see shipnity-seed/README.md) would otherwise
   // be a dead-end link from primary navigation. See brand-visibility.ts's own doc comment.
-  const brands = brandsWithProducts();
   // Same rule as the brand list (round "share-deadend", 2026-09-22): the footer lists the
   // categories that have something in them; an empty one keeps its URL but is not offered.
-  const categories = categoriesWithProducts();
+  // Both lists and the DNS help page id come from the root layout as props (SEO ฉ batch 4, 13/10 —
+  // computing the lists here, or importing the id from src/data/guides.ts, shipped the whole catalog
+  // and every article body to every page's browser bundle).
   // Round "leftovers" (2026-09-22): the two social icons carried Thai aria-labels written straight
   // into the JSX, so a screen reader on the English or Chinese site announced them in Thai on
   // every page. They read the dictionary now, like every other string in this component.
@@ -83,7 +83,7 @@ export function Footer() {
           </div>
           {/* Round "site unreachable" (owner 11/10): the DNS help page, next to LINE so it reads as help — here and not in
               the help column, which phones show folded (designer 11/10). */}
-          <Link href={`/guides/${DNS_GUIDE_ID}`} className="inline-flex w-fit items-center gap-1 text-sm text-foreground-muted transition-colors hover:text-ember">
+          <Link href={`/guides/${dnsGuideId}`} className="inline-flex w-fit items-center gap-1 text-sm text-foreground-muted transition-colors hover:text-ember">
             {dict.footer.siteUnreachable}
             <ArrowRight className="h-3.5 w-3.5" aria-hidden />
           </Link>

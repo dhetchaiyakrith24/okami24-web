@@ -16,3 +16,11 @@ import { getPublishedProductsByBrand } from "@/data/shipnity-seed/storefront-bri
 export function brandsWithProducts() {
   return brands.filter((b) => getProductsByBrand(b.id).length > 0 || getPublishedProductsByBrand(b.id).length > 0);
 }
+
+/** The footer's brand row — computed in the root layout and passed as a prop, same reason as `NavCategory` in
+ *  category-visibility.ts (round SEO ฉ batch 4, 13/10). */
+export type NavBrand = { id: string; slug: string; name: string };
+
+export function navBrands(): NavBrand[] {
+  return brandsWithProducts().map(({ id, slug, name }) => ({ id, slug, name }));
+}

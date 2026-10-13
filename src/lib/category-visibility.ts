@@ -30,3 +30,13 @@ export function categoryIsEmpty(categoryId: string): boolean {
 export function categoriesWithProducts(): Category[] {
   return categories.filter((c) => !categoryIsEmpty(c.id));
 }
+
+/** What the header and footer need from a category (round SEO ฉ batch 4, 13/10). The root layout (a Server Component)
+ *  computes the list and passes it down as props: the header and footer are Client Components, and calling
+ *  `categoriesWithProducts()` inside them shipped the whole catalog (legacy + ProductMaster + its zod check) to every
+ *  page's browser bundle. Client Components import only this TYPE from here. */
+export type NavCategory = Pick<Category, "id" | "slug" | "name" | "shortName" | "labelTh">;
+
+export function navCategories(): NavCategory[] {
+  return categoriesWithProducts().map(({ id, slug, name, shortName, labelTh }) => ({ id, slug, name, shortName, labelTh }));
+}

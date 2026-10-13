@@ -8,6 +8,9 @@ import { AgeGate } from "@/components/layout/AgeGate";
 import { LineContact } from "@/components/layout/LineContact";
 import { LineClickTracker } from "@/components/layout/LineClickTracker";
 import { ImageSaveGuard } from "@/components/layout/ImageSaveGuard";
+import { navCategories } from "@/lib/category-visibility";
+import { navBrands } from "@/lib/brand-visibility";
+import { DNS_GUIDE_ID } from "@/data/guides";
 import { LocaleProvider } from "@/components/i18n/LocaleProvider";
 import { SITE_URL } from "@/lib/seo";
 import { HOME_HEAD_TH } from "@/i18n/search-head-copy";
@@ -81,6 +84,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  // Computed here, on the server, and handed to the header and footer (Client Components) as plain
+  // lists — see NavCategory in src/lib/category-visibility.ts for why.
+  const categories = navCategories();
   return (
     // `lang="th"` matches DEFAULT_LOCALE — Thai is what every visitor and every crawler gets
     // (owner decision 2026-09-06, BSOT §20; see i18n/config.ts). LocaleProvider corrects this
@@ -94,12 +100,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-surface-0 text-foreground font-body">
         <LocaleProvider>
           <AgeGate />
-          <Header orderingEnabled={ORDERING_ENABLED} />
+          <Header orderingEnabled={ORDERING_ENABLED} categories={categories} />
           <main className="flex-1">{children}</main>
           {/* Round 30.4ข batch 5: the four-claim trust strip sits between the page and the footer on
               every route (owner's placement "ก่อน footer"). */}
           <TrustBar />
-          <Footer />
+          <Footer categories={categories} brands={navBrands()} dnsGuideId={DNS_GUIDE_ID} />
           <LineContact />
           {/* Round 8 (owner 2026-09-23, option ก): counts clicks on every LINE link site-wide —
               in-site, no cookie, nothing sent outside. Renders nothing. */}
