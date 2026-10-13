@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #458 c9fac3db (/e-liquid H2 + meta step back, 13/10,
-  deploy 38288670834 success, curl: new meta + H2 "salt nic กับ freebase" live) · #456 d0780fe4 (green 8–9) · #455 186c3c57 (6–7) [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #460 a337a4f4 (plane guide, 13/10 ~19:00, deploy
+  38395865373 success, curl: page 200 + new FAQ wording + /guides card + sitemap + leak-guide link live) · #458 c9fac3db · #456 · #455 [ตรวจแล้ว].
   Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl.
   Night chain OFF (day chat 08/10 turned it off). Site merges open again (owner 10/10 late "Merge ได้ลูกค้าน้อยแล้ว"). Owner decisions: ask in chat + one
   line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (§18) · image work goes live after the checker.
@@ -21,11 +21,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Banana Pro Unlimited ended 11/10 00:00 → free renders only on the "365 Unlimited" models (item 3f); NO credit spend without the
   owner's yes in chat (owner 11/10 — overrides IMAGE_SPEC §0 item 7 "use credits without asking" until the owner says otherwise). Higgsfield prompt box = Lexical editor: typing 1,300
   chars froze the tab; set it with `ed=el.__lexicalEditor` + parseEditorState (LESSONS 29).
-2 ahead of main: branch `seo-f-b6c` = OPEN PR #460 (22 commits, head = this handoff commit; `git log --oneline origin/main..seo-f-b6c`)
-  [ตรวจแล้ว 13/10 ~05:30]. NOT checker-passed: checker FAIL round 1 (2c8d0b31) + round 2 (55865742) — both only line ends (facts PASS,
-  no-Thai-agency PASS); round 3 = the LAST allowed (13.4) not run yet. Fixes since round 2: a09d1231 · 10592bde · 5a679b12 (+ dates).
-  GitHub checks green on 2c8d0b31; re-run on every push. A test-server build of 72e0cb15 was running when the chat paused (port 3412).
-  #446 · #450 · #451 · #452 merged. Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
+2 ahead of main: branch `seo-f-b6c-quit` = topic 11 (quitting guide) — see item 3h 6c. `git log --oneline origin/main..seo-f-b6c-quit`.
+  #446 · #450 · #451 · #452 · #460 merged. Earlier: nothing of 3d/3u (#422, #425 merged) [ตรวจแล้ว]; worktree `_incoming/wt-coil3` (own node_modules copy; test server 3412 stopped) · `_incoming/wt-b4s` (merged gate-variant-ref) · wt-docs2 — all removable (housekeeping). Untracked, NOT ours: folder `รายงานจากแอดมิน แชท/` at the repo root (ask the owner before touching).
   `git branch --show-current` before every commit. Stock round = item 3u: its worktree `_incoming/wt-stock` (own node_modules
   copy, Next types generated with `npx next typegen`; test server = `next start -p 3413`, stopped) — its own branches: see item 3u.
 3b IMAGE THEFT — DONE #322 (owner approved; new images need nothing) · logo-over-image = owner "เอาแค่นี้ก่อน", do not re-propose.
@@ -89,19 +86,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   coils-accessories link skipped — same component as en). Owner 13/10 "ที่เหลือจัดการเลย" = items 50 + 51 as recommended →
   #458 c9fac3db: /e-liquid Thai H2 "salt nic กับ freebase" + meta keeps the bare words (the question = the guide's) · THAI_STYLE words
   ท่วม · บาดคอ · พารส. Request indexing DONE for all 3 (MTL guide 13/10 ~05:00, owner's Chrome, dialog "ขอการจัดทำดัชนีแล้ว").
-  6c topic 10 = PR #460 (open, see item 2): NEW Thai-only /guides/taking-a-pod-on-a-plane "พอตขึ้นเครื่องบินได้ไหม ต้องใส่กระเป๋าถือ
-  หรือโหลดใต้เครื่องได้" (last in allGuides, no relatedProductSlugs, clip BhndRb2tfSM — the OKM YARZ one is age-restricted) + leak
-  guide links it + head meta row. Facts = IATA 2026 PDF + Vietnam Airlines, Thai-only rules unattributed (owner 13/10 → §18 "Sources
-  named in articles"). Evidence `_incoming/seo-f/b6c/` (research.md · health-quotes.md · iata-2026.pdf · checker-brief.md · chk*/).
-  NEXT (new chat): (1) `node scripts/test-server.js status` (start / rebuild the head if needed) → in the app browser at 390 AND 1440
-  run `_incoming/seo-f/b6c/pagebad.js` `__pageBad()` + `lines.js` `__lines()` on /guides/taking-a-pod-on-a-plane and /guides —
-  read EVERY line end by eye (LESSONS 36: the word list misses new words; serve the folder with `node _incoming/seo-f/b6c/serve.js`,
-  port 47815) → (2) checker round 3 = a new checker agent with checker-brief.md + "round 3: only line ends + the commits since
-  55865742" → PASS = merge (13.7) → curl the live page → request indexing for /guides/taking-a-pod-on-a-plane (owner's Chrome,
-  owner OK'd indexing in chat 13/10). FAIL round 3 = 13.3 #7: report to the owner, do not loop.
-  6c topic 11 (quitting) = NOT built yet; record ready to paste = `_incoming/seo-f/b6c/quit-record.md` (owner 13/10 answers applied:
-  2B no owner name · story held — "ไว้ว่างๆพี่มาเขียนให้" (รอพี่ตรวจ 52) · 3A · 4A · 5A · 6A · words 7 = THAI_STYLE). Own PR after #460,
-  same gates + bad.js with the health words, checker with the round-file health line. Slug quit-smoking-with-a-pod.
+  6c topic 10 LIVE #460 a337a4f4 (13/10): /guides/taking-a-pod-on-a-plane (Thai-only, last in allGuides, clip BhndRb2tfSM) + leak
+  guide link + head meta row. Checker FAIL r1 + r2 (line ends only) → r3 PASS on ef6cb143 (30a1b22d fixed 6 FAQ-answer breaks the earlier
+  whole-page reads never measured — closed accordions, LESSONS 36). Evidence `_incoming/seo-f/b6c/` (research.md · checker-brief.md · chk3-*).
+  Request indexing DONE 13/10 ~20:10 (owner's Chrome, dialog "ขอการจัดทำดัชนีแล้ว"). Way in: the inspection box on the GSC overview
+  page (a hand-built /search-console/inspect?… URL gives a 404) · the owner's Chrome stops answering while its window is minimised.
+  6c topic 11 = branch `seo-f-b6c-quit` (PR — see item 2): NEW Thai-only /guides/quit-smoking-with-a-pod "เลิกบุหรี่ด้วยพอตได้ไหม
+  ข้อมูลสองด้านจากหน่วยงานสุขภาพ" from `_incoming/seo-f/b6c/quit-record.md` (owner 13/10 answers) — 21 blocks reworded for line ends
+  only, every string measured before commit (`_incoming/seo-f/b6c/rq.js` + slot candidates `_incoming/seo-f/b6d/mks.js`, picks in
+  mkfinal.js / apply8.js). Open [รอเจ้าของ]: H1 "หน่วย|งาน" at 1440 = รอพี่ตรวจ 54 (recommend joining the word site-wide; title = owner's 4A).
+  NEXT: checker with `_incoming/seo-f/b6d/checker-brief.md` on the build of the branch head → merge → curl → request indexing for both guides.
   Then batch 4 rest (mobile LCP · brand on muro ×3 + pod-180 JSON-LD · GSC 5xx/crawled-not-indexed · video indexing).
   Evidence `_incoming/seo-f/`: gsc-1012-*.txt · trends-1012.txt · yt/ (channel lists, ac-1.txt) · live-1012/ · lh/ · b3-after/.
   Next GSC reads 22/10 (rows 1–8) + 01/11 (rows 9–10).
