@@ -263,14 +263,14 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedJsonLd) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(publishedTrail)) }} />
           <Breadcrumbs trail={publishedTrail} />
-          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />
+          <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} worksWith={getCompatibleConsumables(publishedProduct.slug)} fitsDevices={getCompatibleDevices(publishedProduct.slug)} />
         </>
       );
     }
     const pilotProduct = getPilotProduct(slug);
     if (pilotProduct) {
       const pilotImageDisplayMap = await buildImageDisplayMap(storefrontProductImageSrcs(pilotProduct));
-      return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} relatedArticles={relatedArticlesForPublished(pilotProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(pilotProduct, { skipThaiOnly: true })} imageDisplayMap={pilotImageDisplayMap} orderingEnabled={ORDERING_ENABLED} />;
+      return <PilotProductDetail product={pilotProduct} related={getPilotRelatedProducts(pilotProduct)} relatedArticles={relatedArticlesForPublished(pilotProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(pilotProduct, { skipThaiOnly: true })} imageDisplayMap={pilotImageDisplayMap} orderingEnabled={ORDERING_ENABLED} worksWith={getCompatibleConsumables(pilotProduct.slug)} fitsDevices={getCompatibleDevices(pilotProduct.slug)} />;
     }
     notFound();
   }
