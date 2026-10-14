@@ -91,3 +91,6 @@ model: sonnet
   (`scripts/guard-tool.js` · TEAM_RULES 13.7) — if it stops you, report it; never work around it.
 - Stop only a server you started: `node scripts/test-server.js stop`, or kill that one PID. A process you did not start is
   not yours — report it. Do not touch another round's `_incoming/` folder or any file outside this project.
+- Git Bash: `export MSYS_NO_PATHCONV=1` before any script that takes a `/path` (else it silently scans the whole sitemap) ·
+  every browser/scan command under `timeout <seconds>` · the test server stops answering = report and stop — never
+  stop/rebuild it yourself (13/10: a checker hung 3 hours on a dead server).

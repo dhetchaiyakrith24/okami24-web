@@ -22,7 +22,7 @@ model: inherit
 ## Owner eye — the owner's own bar (the one home of this list · owner 03/10)
 
 Why it exists: work passed the checker and the number gates, then the owner rejected it on the live site
-(LESSONS พ10 · พ11 · พ12 · ช9 · owner review 03/10 on G5). This list is what the owner looks at.
+(owner reviews 01–03/10 on G5, Drag S3/X3, ARGUS G4 — the stories are in git history of LESSONS). This list is what the owner looks at.
 Distilled from LESSONS ช10 · `docs/IMAGE_SPEC.md` §0 items 6–8 · those reviews — if a source says more or
 differs, the source wins. **Learn once (owner 03/10 "พลาดแก้ย้อนหลัง เรียนรู้ ไม่พลาดซ้ำเรื่องเดิม"):** the owner
 rejects anything after merge = not covered by this list yet → add it HERE as a new numbered point (this list is the
@@ -37,12 +37,12 @@ page alone is not looking.
 1. Floats on the dark site — transparent, no studio floor, no black frame, no white/grey box, no light rim
    round the edge (IMAGE_SPEC §0 6 + 8 · พ11 · 03/10 "black box").
 2. Whole and clean — no holes, torn or cut parts (cables, pod heads), specks, patches, white bits left inside
-   letters (พ10 · 03/10 "white bits, torn cable").
+   letters (03/10 "white bits, torn cable").
 3. Every letter, logo, number and screen = its source (the maker's file, or the master of an AI render),
-   compared character by character; an AI upscale never on an image with text (พ12 "35W → 35H"); AI light that
+   compared character by character; an AI upscale never on an image with text (03/10 G5 screen "35W → 35H"); AI light that
    changed text is not usable (IMAGE_SPEC §0 7 + 8).
 4. Big and sharp enough at the size shown, and the device the same visual size as its neighbours (other
-   cards, other brands) (พ10 · 02/10 "ARGUS G4 too small").
+   cards, other brands) (02/10 "ARGUS G4 too small" · 08/10 MURO 3ML "ดูเล็ก").
 5. An image never covers the heading or the lede; text over an image stays readable at both widths
    (owner review 03/10 · git 39097d8 / 9bb698d).
 6. Every image that looks clickable goes somewhere fitting (ช10).
@@ -51,14 +51,15 @@ page alone is not looking.
 that would change something the owner already approved = `.claude/TEAM_RULES.md` 13.3 #5. Flag each ✗
 as "below the owner's bar" with the fix:**
 7. Light like UWELL's official Caliburn G5 set — not over-white, real reflections, not "graphic"/CG
-   (IMAGE_SPEC §0 8 · ช9).
+   (IMAGE_SPEC §0 8 · owner 02/10 Drag S3 "ดูกราฟิก ขาวสว่างเกิน").
 8. Spacing — not cramped, even between blocks; desktop airy, phone tight but not packed (owner review 03/10 ·
    git 287dd01 article "clustered" · 39097d8 phone gaps).
 9. Premium like Apple's shop: clean, complete, no clutter or information overload (a shop of every brand);
    short, sharp copy — but not static: life, colour, contrast (ช10 "ยังไม่พรีเมียมพอ + นิ่งไป").
-10. Fits the dark theme even when the reference is light (ช1).
+10. Fits the dark theme even when the reference is light — the site's colour tokens are the default, a light panel is
+   an option in the draft, never shipped straight (owner 30/09 "อย่าลืมปรับสีพื้นหลังให้เข้ากับธีมเว็บ").
 11. Trimming copy never deletes a whole block the page shows (lede, body, side points) — rewrite it in place; the look
-   stays (owner 03/10 on live: the G5 lede was gone · LESSONS พ14).
+   stays (owner 03/10 on live: the G5 lede was gone).
 
 ---
 
