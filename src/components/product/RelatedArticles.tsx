@@ -3,8 +3,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
-import { TECHNOLOGY_COPY_TH, TECHNOLOGY_COPY_ZH } from "@/i18n/technology-copy";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { RelatedArticle } from "@/lib/article-relevance";
 
@@ -30,18 +28,8 @@ export function RelatedArticles({ articles: thaiArticles, otherLocaleArticles }:
   if (articles.length === 0) return null;
 
   const label = (a: RelatedArticle) => {
-    const overlay =
-      a.kind === "guide"
-        ? locale === "th"
-          ? GUIDES_COPY_TH[a.id]?.title
-          : locale === "zh"
-            ? GUIDES_COPY_ZH[a.id]?.title
-            : undefined
-        : locale === "th"
-          ? TECHNOLOGY_COPY_TH[a.id]?.name
-          : locale === "zh"
-            ? TECHNOLOGY_COPY_ZH[a.id]?.name
-            : undefined;
+    // titleTh / titleZh come with the list from the server (article-relevance.ts) — the copy tables stay off the browser.
+    const overlay = locale === "th" ? a.titleTh : locale === "zh" ? a.titleZh : undefined;
     const text = overlay ?? a.title;
     return locale === "th" ? thaiTypographyNode(text) : text;
   };

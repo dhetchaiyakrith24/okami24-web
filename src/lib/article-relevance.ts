@@ -29,8 +29,8 @@
  */
 import { guides } from "@/data/guides";
 import { technologyEntries } from "@/data/technology";
-import { GUIDES_COPY_TH } from "@/i18n/guides-copy";
-import { TECHNOLOGY_COPY_TH } from "@/i18n/technology-copy";
+import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
+import { TECHNOLOGY_COPY_TH, TECHNOLOGY_COPY_ZH } from "@/i18n/technology-copy";
 import type { Product, Specification } from "@/types/catalog";
 import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-preview-read-model";
 
@@ -42,6 +42,10 @@ export interface RelatedArticle {
   href: string;
   /** English title/name; the component overlays the visitor's language the way /guides does. */
   title: string;
+  /** The TH / ZH title (guides-copy · technology-copy), looked up here on the server so RelatedArticles (a Client Component)
+   *  does not import those tables — they hold every article body (round SEO ฉ speed work part 3, 14/10). */
+  titleTh?: string;
+  titleZh?: string;
   /** Why this pairing exists — read by the contract test and by anyone auditing a page. */
   why: string;
 }
@@ -61,10 +65,10 @@ const TECH_BY_ID = new Map(technologyEntries.map((t) => [t.id, t]));
 function article(kind: "guide" | "technology", id: string, why: string): RelatedArticle | null {
   if (kind === "guide") {
     const g = GUIDE_BY_ID.get(id);
-    return g ? { kind, id, href: `/guides/${g.slug}`, title: g.title, why } : null;
+    return g ? { kind, id, href: `/guides/${g.slug}`, title: g.title, titleTh: GUIDES_COPY_TH[id]?.title, titleZh: GUIDES_COPY_ZH[id]?.title, why } : null;
   }
   const t = TECH_BY_ID.get(id);
-  return t ? { kind, id, href: `/technology/${t.slug}`, title: t.name, why } : null;
+  return t ? { kind, id, href: `/technology/${t.slug}`, title: t.name, titleTh: TECHNOLOGY_COPY_TH[id]?.name, titleZh: TECHNOLOGY_COPY_ZH[id]?.name, why } : null;
 }
 
 /** article id → the products the article itself lists, read backwards. */

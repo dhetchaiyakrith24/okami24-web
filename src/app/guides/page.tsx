@@ -3,6 +3,7 @@ import { guides } from "@/data/guides";
 import { Container } from "@/components/ui/Container";
 import { GuidesPageHeader } from "@/components/content/GuidesPageHeader";
 import { GuideCard } from "@/components/content/GuideCard";
+import { guideHeadCopy } from "@/lib/guide-head-copy";
 import { canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function GuidesPage() {
       <Container className="py-12 lg:py-16">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {guides.map((guide, i) => (
-            <GuideCard key={guide.id} guide={guide} index={i} />
+            <GuideCard key={guide.id} guide={guide} index={i} copy={guideHeadCopy(guide.id)} />
           ))}
         </div>
       </Container>

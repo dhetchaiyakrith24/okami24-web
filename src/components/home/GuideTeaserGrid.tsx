@@ -5,6 +5,7 @@ import { DNS_GUIDE_ID, getGuide } from "@/data/guides";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GuideCategoryLabel, GuideText, HomeText } from "@/components/home/HomeCopy";
+import { guideHeadCopy } from "@/lib/guide-head-copy";
 
 // Round 30.3ข: the heading, "All guides" link, the three card titles/deks and the reading-time
 // label read the visitor's language (card copy through the same overlay the guide page uses); the
@@ -36,10 +37,10 @@ export function GuideTeaserGrid({ guides }: { guides: Guide[] }) {
               <div className="flex flex-col gap-3">
                 <GuideCategoryLabel index={i} category={guide.category} className="label-mono text-[0.65rem] text-steel" />
                 <h3 className="font-display text-xl font-semibold leading-tight text-foreground group-hover:text-ember">
-                  <GuideText id={guide.id} field="title" en={guide.title} />
+                  <GuideText copy={guideHeadCopy(guide.id)} field="title" en={guide.title} />
                 </h3>
                 <p className="line-clamp-3 text-sm text-foreground-muted">
-                  <GuideText id={guide.id} field="dek" en={guide.dek} />
+                  <GuideText copy={guideHeadCopy(guide.id)} field="dek" en={guide.dek} />
                 </p>
               </div>
               <span className="label-mono text-[0.65rem] text-foreground-dim">
@@ -62,11 +63,11 @@ export function GuideTeaserGrid({ guides }: { guides: Guide[] }) {
               {/* text-balance: at 390 the greedy wrap split "มือ|ถือ"; balanced lines break at the space after "วิธีเปลี่ยน"
                   instead, the way the guide's own H1 wraps. */}
               <h3 className="font-display text-xl font-semibold leading-tight text-balance text-foreground group-hover:text-ember">
-                <GuideText id={helpGuide.id} field="title" en={helpGuide.title} />
+                <GuideText copy={guideHeadCopy(helpGuide.id)} field="title" en={helpGuide.title} />
               </h3>
               {/* No line clamp (checker 11/10): at 390 a 2-line clamp cut the dek mid-sentence; it is one card, so it may run 3 lines. */}
               <p className="text-sm text-foreground-muted">
-                <GuideText id={helpGuide.id} field="dek" en={helpGuide.dek} />
+                <GuideText copy={guideHeadCopy(helpGuide.id)} field="dek" en={helpGuide.dek} />
               </p>
             </div>
             <ArrowRight className="hidden h-5 w-5 shrink-0 text-foreground-dim transition-colors group-hover:text-ember sm:block" aria-hidden />

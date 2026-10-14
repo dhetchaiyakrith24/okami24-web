@@ -3,7 +3,7 @@
 import Link from "next/link";
 import type { Guide } from "@/types/catalog";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
+import type { GuideHeadCopy } from "@/lib/guide-head-copy";
 import { labelLang } from "@/lib/label-lang";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 
@@ -13,8 +13,9 @@ import { thaiTypographyNode } from "@/lib/thai-typography";
  * (built for the detail page) but were never wired in here, the FIRST place a customer actually
  * reads guide content. Fixed by applying the exact same overlay-and-replace lookup the detail
  * page already uses, so the listing and detail pages can never disagree on language again.
+ * `copy` = guideHeadCopy(guide.id) from the server page (src/lib/guide-head-copy.ts) — keeps the full copy table off the browser.
  */
-export function GuideCard({ guide, index }: { guide: Guide; index: number }) {
+export function GuideCard({ guide, index, copy }: { guide: Guide; index: number; copy: GuideHeadCopy }) {
   const { dict, locale } = useLocale();
   const categoryLabels: Record<Guide["category"], string> = {
     "getting-started": dict.guides.categoryGettingStarted,
@@ -24,7 +25,7 @@ export function GuideCard({ guide, index }: { guide: Guide; index: number }) {
   };
   // Round 10B (owner ruling 2026-09-24): a Thai-only guide is not listed on an English or Chinese page.
   if (guide.thaiOnly && locale !== "th") return null;
-  const overlay = locale === "th" ? GUIDES_COPY_TH[guide.id] : locale === "zh" ? GUIDES_COPY_ZH[guide.id] : undefined;
+  const overlay = locale === "th" ? copy.th : locale === "zh" ? copy.zh : undefined;
   return (
     <Link
       href={`/guides/${guide.slug}`}

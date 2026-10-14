@@ -6,6 +6,7 @@ import { getProduct } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { ArticleBody } from "@/components/content/ArticleBody";
 import { GuideDetailPageHeader } from "@/components/content/GuideDetailPageHeader";
+import { guideHeadCopy } from "@/lib/guide-head-copy";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { ThaiOnlyGuideGate } from "@/components/content/ThaiOnlyGuideGate";
 import type { Product } from "@/types/catalog";
@@ -61,7 +62,7 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
       {/* Round 10B: a Thai-only guide shows only a one-line notice on en/zh (ThaiOnlyGuideGate). */}
       <ThaiOnlyGuideGate thaiOnly={guide.thaiOnly}>
         <GuideDetailPageHeader
-          id={guide.id}
+          copy={guideHeadCopy(guide.id)}
           title={guide.title}
           dek={guide.dek}
           readingTimeMin={guide.readingTimeMin}
