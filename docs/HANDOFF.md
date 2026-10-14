@@ -53,8 +53,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (3) from Friday's own view since we started: what to cut / add / change;
   (4) every skill + agent (count them), was each really used (git log / chats), cut / merge / add which;
   (5) why work got slow lately — where it sticks: duplicate checks, waits, builds, agent calls (measure, don't guess).
-  Plus clear the housekeeping leftovers (line above + `house-check` "files nobody references") [เชื่อว่า — Friday's reading of
-  "ระหว่างนี้เราเคลียเรื่องของตกค้างในรอบเก็บบ้าน"; confirm with the owner in the first reply].
+  (6) clear the housekeeping leftovers (line above + `house-check` "files nobody references") — owner confirmed 15/10 "ใช่ครับ".
+  (7) owner 15/10: make housekeeping a skill and/or a WEEKLY round. Friday's proposal given in chat: keep skill house-clean
+  (update it) + a weekly scheduled task that is READ-ONLY (house-check + rule check → short Thai report in รอพี่ตรวจ, edits
+  nothing until the owner picks) — like the cartoon project's weekly task (seen by name only). SETUP STARTS WITH AN
+  INTERVIEW of the owner (AskUserQuestion, options + recommendation, open questions allowed for rules — central §12 item 13):
+  goal / what "a clean house" means · always do · never touch or never show · what Friday may fix without asking (e.g. dead
+  pointers) vs needs the owner's pick · day + time + frequency · report length and where · agent budget per run. Write the
+  answers into the skill + §18, then create the task (the app asks the owner to approve — show him the full prompt first).
   Tools: skill house-clean · rule-auditor (one call) · `node scripts/house-check.js` · evidence `_incoming/house-clean-1410/`.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
