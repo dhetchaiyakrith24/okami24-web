@@ -20,6 +20,7 @@ Always:
   the one attached = say so.
 - `.claude/LESSONS.md` — **headings only** (`grep -n "^## " .claude/LESSONS.md`), then open the lessons whose heading
   matches the round's work. Open it again before deciding "the order given is fine, but there is a better way".
+  A round or batch with image work: also the headings of `.claude/LESSONS-images.md` (other rounds skip that file).
 
 Only on rounds that change copy shown on the site: `docs/THAI_STYLE.md` (rules) · `docs/THAI_STYLE_LOG.md` only to
 cite an old ruling. Tools and verify commands: `docs/HANDOFF.md` §17, when needed.
