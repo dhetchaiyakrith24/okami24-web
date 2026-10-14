@@ -11,8 +11,8 @@
 //         then the before/after shots go to the owner). (The 7 SEO-baseline-page hold, 13.7 item (3), was lifted by
 //         the owner 02/10.)
 //   ok    off the site (docs · skills · agents · rules text · ordinary scripts)
-// Also BIG: a PR that edits 13.7 itself (its merge rule). Not visible here and still Friday's to check: checker PASS ·
-// every GitHub check green.
+// Also BIG: a PR that edits 13.7 itself (its merge rule). --pr also reads the PR description: no `Checker: PASS <head sha>`
+// / `Checker: SKIP <reason>` line = BLOCKED (TEAM_RULES 13.4, owner 15/10). Still Friday's to check: every GitHub check green.
 // "Not sure = big": the off-site list is an ALLOW-list.
 //
 // Usage:
@@ -24,7 +24,7 @@
 //   node scripts/self-merge-check.js --base <ref>    # PROOF SIZING, not a merge verdict: every change since <ref>,
 //                                                    #   committed or not + untracked; judges "site touched?" only
 // Last line (merge verdict): SMALL · SITE · BIG — or BLOCKED when it cannot judge (not this repo · render.yaml would
-// deploy on merge · local HEAD is not the PR head · empty diff). Exit 0 for SMALL/SITE/BIG, 1 for BLOCKED.
+// deploy on merge · local HEAD is not the PR head · --pr: no valid Checker line · empty diff). Exit 0 for SMALL/SITE/BIG, 1 for BLOCKED.
 // Also prints `HEAD <sha>` — merge exactly that commit (pin it in the merge call).
 // --base and --files keep their old PASS/BLOCKED lines ("site touched?" / list test) — skill round-close reads them.
 "use strict";
@@ -101,6 +101,20 @@ function unquoteGitPath(line) {
     i += 1;
   }
   return Buffer.from(bytes).toString("utf8");
+}
+
+// The PR description must carry the checker's verdict (TEAM_RULES 13.4, owner 15/10): `Checker: PASS <sha>` for the PR
+// head it checked (≥ 7 hex chars), or `Checker: SKIP <reason>` for a PR that needs no checker (docs-only 13.7 · a
+// polish after PASS, 13.5 #2 (จ)). Returns why the line fails, or "" when it is fine. --pr mode only (needs `gh`).
+function checkerLineProblem(body, prHead) {
+  const m = body.match(/^\s*Checker:\s*(PASS|SKIP)\b[ \t]*(.*)$/im);
+  if (!m) return "no `Checker: PASS <sha>` / `Checker: SKIP <reason>` line in the PR description (TEAM_RULES 13.4)";
+  const rest = m[2].trim();
+  if (m[1].toUpperCase() === "SKIP") return rest ? "" : "`Checker: SKIP` needs a reason (TEAM_RULES 13.4)";
+  const sha = (rest.match(/^[0-9a-f]{7,40}\b/i) || [""])[0].toLowerCase();
+  if (!sha) return "`Checker: PASS` needs the checked head sha (TEAM_RULES 13.4)";
+  if (!prHead.toLowerCase().startsWith(sha)) return `checker passed ${sha.slice(0, 7)}, the PR head is ${prHead.slice(0, 7)} - check again (TEAM_RULES 13.4)`;
+  return "";
 }
 
 function changedFiles(argv) {
@@ -188,11 +202,17 @@ function main() {
     const pr = argv.indexOf("--pr");
     if (pr !== -1 && !sizing) {
       // the build/hook lists are read from the local tree, and the pin must be the PR's own head
-      const prHead = execFileSync("gh", ["pr", "view", argv[pr + 1], "--json", "headRefOid", "-q", ".headRefOid"], { cwd: ROOT, encoding: "utf8" }).trim();
+      const view = JSON.parse(execFileSync("gh", ["pr", "view", argv[pr + 1], "--json", "headRefOid,body"], { cwd: ROOT, encoding: "utf8" }));
+      const prHead = view.headRefOid;
       if (prHead !== head) {
         blocked++;
         console.log(`BLOCKED  (repo) local HEAD ${head.slice(0, 7)} is not the PR head ${prHead.slice(0, 7)} - check out the PR branch first`);
       }
+      const why = checkerLineProblem(view.body || "", prHead);
+      if (why) {
+        blocked++;
+        console.log(`BLOCKED  (repo) ${why}`);
+      } else console.log("checker line ok");
     }
     if (head) console.log(`HEAD ${head}`);
   }

@@ -13,7 +13,7 @@
 // short or carry no function word, and anything marked lang="en" (labelLang) is skipped outright;
 // the brand `tagline` strings from src/data/brands.ts are allow-listed explicitly as well.
 //
-//   node scripts/scan.js [--base http://localhost:3412] [--allow "<exact text>"]... [--verbose]
+//   node scripts/scan.js [--base http://localhost:3412] [--pages "/ /guides /products/x"] [--allow "<exact text>"]... [--verbose]
 //
 // Pass = 0 flagged runs across all pages (prints "0/<pages>"). Exit code 1 when anything is flagged
 // so the checker can use it as a gate. Read-only, no browser needed.
@@ -25,6 +25,9 @@ const opt = (name, def) => { const i = args.indexOf(name); return i >= 0 ? args[
 const base = opt("--base", "http://localhost:3412").replace(/\/$/, "");
 const VERBOSE = args.includes("--verbose");
 const extraAllow = args.map((a, i) => (a === "--allow" ? args[i + 1] : null)).filter(Boolean);
+// --pages "/a /b,/c" = only these paths (TEAM_RULES 13.5 #2 (ข): the touched pages + the pages that show that text);
+// without it = every sitemap URL (13.5 #5: shared parts). Paths start with "/"; full URLs are cut to their path.
+const PAGES = (opt("--pages", "") || "").split(/[\s,]+/).filter(Boolean).map((p) => p.replace(/^https?:\/\/[^/]+/, "") || "/");
 
 const THAI = /\p{Script=Thai}/u;
 const FUNCTION_WORD = /\b(is|are|the|for|which|that|designed|stated|with|from|your|our|can|will|has|not|when)\b/i;
@@ -93,15 +96,26 @@ function scanHtml(html) {
 }
 
 async function main() {
-  const smRes = await fetch(`${base}/sitemap.xml`);
-  if (!smRes.ok) { console.error(`sitemap.xml → HTTP ${smRes.status}`); process.exit(2); }
-  const sm = await smRes.text();
-  const urls = [...new Set([...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(/^https?:\/\/[^/]+/, "") || "/"))];
-  let flaggedPages = 0, flaggedRuns = 0;
+  let urls;
+  if (PAGES.length) urls = [...new Set(PAGES)];
+  else {
+    const smRes = await fetch(`${base}/sitemap.xml`);
+    if (!smRes.ok) { console.error(`sitemap.xml → HTTP ${smRes.status}`); process.exit(2); }
+    const sm = await smRes.text();
+    urls = [...new Set([...sm.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].replace(/^https?:\/\/[^/]+/, "") || "/"))];
+  }
+  let flaggedPages = 0, flaggedRuns = 0, unread = 0;
   const distinct = new Map();
   for (const u of urls) {
+    // a page that could not be read is not a pass (15/10: Git Bash rewrote "/guides" into "C:/Program Files/Git/guides"
+    // — run with MSYS_NO_PATHCONV=1 — and the scan still printed PASS)
+    if (!u.startsWith("/")) { unread++; console.log(`${u}\tNOT A PATH (Git Bash? set MSYS_NO_PATHCONV=1)`); continue; }
     let html;
-    try { html = await (await fetch(base + u)).text(); } catch (e) { console.log(`${u}\tFETCH FAILED ${e.message}`); continue; }
+    try {
+      const res = await fetch(base + u);
+      if (!res.ok) { unread++; console.log(`${u}\tHTTP ${res.status}`); continue; }
+      html = await res.text();
+    } catch (e) { unread++; console.log(`${u}\tFETCH FAILED ${e.message}`); continue; }
     const hits = scanHtml(html);
     if (hits.length) {
       flaggedPages++; flaggedRuns += hits.length;
@@ -124,8 +138,9 @@ async function main() {
     for (const [text, info] of distinct) console.log(`| ${info.pages.length} | ${info.pages.slice(0, 3).join(" · ")} | ${info.chain} | ${text.slice(0, 200)} |`);
   }
   console.log("");
-  console.log(flaggedPages === 0 ? `PASS 0/${urls.length}` : `FAIL ${flaggedPages}/${urls.length}`);
-  process.exit(flaggedPages === 0 ? 0 : 1);
+  if (unread) console.log(`unreadable pages: ${unread} (not scanned = not passed)`);
+  console.log(flaggedPages === 0 && !unread ? `PASS 0/${urls.length}` : `FAIL ${flaggedPages}/${urls.length}${unread ? ` · ${unread} unreadable` : ""}`);
+  process.exit(flaggedPages === 0 && !unread ? 0 : 1);
 }
 
 main().catch((e) => { console.error(e); process.exit(2); });
