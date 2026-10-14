@@ -17,12 +17,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Images: Higgsfield web app in the owner's Chrome, free "365 Unlimited" models only · the Higgsfield MCP generate/upscale
   tools are DENIED in `.claude/settings.json` (14/10) · credits only on the owner's yes in chat (IMAGE_SPEC §0 item 7) ·
   tool tips = LESSONS 29 + §17 "Higgsfield".
-2 ahead of main: `git log --oneline origin/main..origin/house-1410` = the housekeeping round (item 3). Worktrees: only
+2 ahead of main: nothing (housekeeping merged #476 18bab17b). Worktrees: only
   `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped). Untracked folder
   `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's (admin price reports + chat screenshots): never in git, never delete.
   `git branch --show-current` before every commit.
-3 OPEN ROUND "housekeeping 14/10" = `_incoming/house-clean-1410/plan.md` (computer only) · skill house-clean.
-  Done [ตรวจแล้ว]: measure (`_incoming/house-clean-1410/house-check.txt`) · rule-auditor 70 rows (`rule-audit.md`, same folder) ·
+3 CLOSED 14/10 — round "housekeeping 14/10" (`_incoming/house-clean-1410/plan.md`, computer only), #476 merge 18bab17b,
+  tag `house-clean-1410-done` · checker 2 rounds (round 1 FAIL 4 doc blockers → fixed a5c5ec6 → round 2 PASS). Done [ตรวจแล้ว]: measure (`_incoming/house-clean-1410/house-check.txt`) · rule-auditor 70 rows (`rule-audit.md`, same folder) ·
   owner approved every recommendation in chat 14/10 · 16 merged worktrees + merged branches removed (local 368 → 26 · GitHub
   402 → 24 · 10 unmerged kept; files found inside the worktrees moved to `_incoming/wt-rescue/`) · rules/skills/agents/docs
   commits on house-1410 · LESSONS 181,269 → 129,682 bytes (git blobs, `git show <rev>:.claude/LESSONS.md | wc -c`; 27 deleted
@@ -30,11 +30,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   entry for the read-only `balance` tool was refused in the chat, then removed) · tag seo-e-pod-done · `_incoming` move (owner
   14/10: a folder on C:): 87 folders no tracked file names → `C:\Users\dhetc\OKami24-archive\_incoming\` (list + log in
   `_incoming/house-clean-1410/incoming-move.*`); `_incoming` now 25,537 MB, archive 665 MB (`sizes-after-move.txt`).
-  NEXT: PR #476 checker round 2 → merge → report. Then (in direction, own PR): move the ~30 reusable scripts LESSONS points at
-  from `_incoming/` into `scripts/` (then the big image folders can move out too) · image lessons into their own file ·
-  warehouse questions as one copy-ready list. Owner reviewing central-rules PR smogz-rules#13 (Friday's notes given in chat
-  14/10). Not done this round: scan.js page-list option (approved item 3 — not built) · THAI_STYLE §6 open
-  items + history columns · locks L1–L3, L5–L10 of `rule-audit.md` (proposals) · a page-list option for `scan.js`.
+  NEXT (a follow-up chat, ideas from the owner's other project 14/10 = `_incoming/house-clean-1410/other-project-adapt.md`):
+  move the 29 reusable scripts LESSONS points at (`grep -o "_incoming/[^ \`]*\.[jt]s" .claude/LESSONS.md`) into `scripts/`
+  and re-point → then the big image folders can move to the archive too · image lessons into their own file read only in
+  image work · warehouse questions as one copy-ready list in รอพี่ตรวจ.
+  Central rules: the owner is reviewing smogz-rules#13 (the other project edits it alone); the web side's reply =
+  `_incoming/house-clean-1410/reply-smogz-pr13.md`. After it merges (sync copy arrives): add "readable more than one way =
+  ask" to 13.3 · rewrite the 13.6 night-chain exception (its quoted phrase is gone) · ask the owner before changing the
+  `friday-chat-move` prompt (stop at 600–700K → let the app compact) · keep the 13.8 exception (item 13 still lists "ลูกค้าเห็น").
+  Not done: scan.js page-list option (approved item 3) · THAI_STYLE §6 open items + history columns · locks L1–L3, L5–L10 of
+  `rule-audit.md` (proposal: one "pre-checker gate" script, own round).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
