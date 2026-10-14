@@ -16,7 +16,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Night chain OFF. Owner decisions: ask in chat + one line in `docs/รอพี่ตรวจ.md` (no review-sheet artifact — §18).
   Images: Higgsfield web app in the owner's Chrome, free "365 Unlimited" models only · the Higgsfield MCP generate/upscale
   tools are DENIED in `.claude/settings.json` (14/10) · credits only on the owner's yes in chat (IMAGE_SPEC §0 item 7) ·
-  tool tips = LESSONS 29 + §17 "Higgsfield".
+  tool tips = LESSONS-images 29 + §17 "Higgsfield".
 2 ahead of main: nothing (housekeeping merged #476 18bab17b). Worktrees: only
   `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped). Untracked folder
   `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's (admin price reports + chat screenshots): never in git, never delete.
@@ -30,10 +30,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   entry for the read-only `balance` tool was refused in the chat, then removed) · tag seo-e-pod-done · `_incoming` move (owner
   14/10: a folder on C:): 87 folders no tracked file names → `C:\Users\dhetc\OKami24-archive\_incoming\` (list + log in
   `_incoming/house-clean-1410/incoming-move.*`); `_incoming` now 25,537 MB, archive 665 MB (`sizes-after-move.txt`).
-  NEXT (a follow-up chat, ideas from the owner's other project 14/10 = `_incoming/house-clean-1410/other-project-adapt.md`):
-  move the 29 reusable scripts LESSONS points at (`grep -o "_incoming/[^ \`]*\.[jt]s" .claude/LESSONS.md`) into `scripts/`
-  and re-point → then the big image folders can move to the archive too · image lessons into their own file read only in
-  image work · warehouse questions as one copy-ready list in รอพี่ตรวจ.
+  Follow-up 15/10 (owner: same chat; ideas from the owner's other project = `_incoming/house-clean-1410/other-project-adapt.md`),
+  branch reuse-1510: the 29 recipes LESSONS pointed at (+3 they require) COPIED into `scripts/lab/` (originals stay; header
+  names the source) and LESSONS re-pointed · image lessons (14 15 20 22 25 27 28 29 พ6 พ16, ids kept) →
+  `.claude/LESSONS-images.md`, read only in image work · warehouse questions = รอพี่ตรวจ "คำถามถึงคลังสินค้า" (copy-ready).
+  Finding: the big image folders are NOT pinned by the scripts but by image provenance in src data + `process-images.map.json`
+  — only `checker-344` became unreferenced and moved. Freeing more = a ruling that provenance may point at the archive (ask).
   Central rules: the owner is reviewing smogz-rules#13 (the other project edits it alone); the web side's reply =
   `_incoming/house-clean-1410/reply-smogz-pr13.md`. After it merges (sync copy arrives): add "readable more than one way =
   ask" to 13.3 · rewrite the 13.6 night-chain exception (its quoted phrase is gone) · ask the owner before changing the
@@ -48,7 +50,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   NEXT: owner 14/10 "C" = a scheduled morning read that prepares the PR (read → PR → checker); the OWNER confirms in chat before
   it merges (TEAM_RULES 13.7) — not built yet. Then stock adapter when the warehouse sends the API · then order push with the
   shipping fee (35 to the warehouse on its own field, free shipping as a shop-paid discount line — survey doc last section).
-  From the warehouse (via the owner): API doc + test key · shipping/discount fields · cost per SKU.
+  From the warehouse (via the owner): the copy-ready question list = รอพี่ตรวจ "คำถามถึงคลังสินค้า".
   Open: ProductMaster seed in-stock flags are from September · `legacy-price-approvals.ts` still names Pod-181 for
   caliburn-g4-pro (price file 【ห้ามแตะ】 — next allowed touch) · taste [รอเจ้าของ]: at 390 the small pill sits on the IQOS
   ILUMA i cap (iqosheet-18) — alternative = a free band above full-frame photos.
@@ -134,7 +136,7 @@ Tools in scripts/ (usage = each file's head): shot.js · head-audit.js (head/lin
   overflow-390.js · og-gate.js · gallery-probe.js (touch/swipe every frame, `--sitemap`) · stale-image-audit.js ·
   flatcut.js · card-lines.js + card-lines-diff.js · empty-cards.ts · finder-dump.ts · measure-articles.ts ·
   related-boxes.ts · guide-reading-rate.ts · record-scroll.js + frames-to-gif.js · self-merge-check.js (13.7) ·
-  poster-stretch.js (story poster/cover/anatomy file width vs drawn width, LESSONS พ17)
+  poster-stretch.js (story poster/cover/anatomy file width vs drawn width, LESSONS-images พ17)
 src files the skills use (the one list — skills may not name a file under src/, 13.2; fix a renamed file here):
   [i18n-test] `npx tsx src/i18n/i18n-contract-test.ts` · [catalog-method] `src/data/shipnity-seed/README.md` section
   "Catalog reconciliation methodology" · [legacy-products] `src/data/products/*.ts` · [taxonomy]
@@ -152,7 +154,7 @@ Higgsfield (web app in the owner's Chrome): the draft box is SHARED across tabs 
   and click Generate in one go · free = the "365 Unlimited" models (Seedream 4.5 · Seedream 5.0 Lite · Nano Banana v1 ·
   GPT Image · FLUX.2 Pro 1K · Kling O1 Image) — check the button reads "Unlimited" before EVERY click · refs = the Chrome extension's
   file_upload on the uploads panel's hidden input (the app's built-in browser pane has no upload tool: 3 KB base64 chunks +
-  sha256 check — slow) · results via MCP `show_generations` (read-only) · prompt box = Lexical editor (LESSONS 29)
+  sha256 check — slow) · results via MCP `show_generations` (read-only) · prompt box = Lexical editor (LESSONS-images 29)
 Night chain: its rules live in the routine `friday-chat-move` prompt (TEAM_RULES 13.6) · before the first night the owner
   archives routine-born chats still open (a run still "Running" makes the next slot "Skipped")
 ```
