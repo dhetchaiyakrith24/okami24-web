@@ -1,5 +1,19 @@
 {
   "permissions": {
+    "allow": [
+      "Bash(node scripts/house-check.js)",
+      "Bash(node scripts/self-merge-check.js:*)",
+      "Bash(git status:*)",
+      "Bash(git fetch:*)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git branch:*)",
+      "Bash(git worktree list:*)",
+      "Bash(git config core.hooksPath)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr view:*)",
+      "Write(_incoming/**)"
+    ],
     "deny": [
       "mcp__3446bec7-5db3-4937-a674-65e536aa4921__generate_image",
       "mcp__3446bec7-5db3-4937-a674-65e536aa4921__generate_image_batch",
