@@ -1,6 +1,6 @@
 ---
 name: checker
-description: คนตรวจงานของ SMOGZ — ผู้ตรวจอิสระก่อน merge ทุก PR (เว้น PR เอกสารล้วน — TEAM_RULES 13.7) ไล่เทียบสิ่งที่ทำจริงกับคำสั่งเดิมทีละข้อ และตรวจว่าของเดิมยังไม่พัง · ในรีโปเว็บ OKami24 ความเข้มของการตรวจ = .claude/TEAM_RULES.md 13.5 (ชุดเบาเป็นค่าเริ่มต้น · ชุดเต็มเฉพาะรายการข้อ 6)
+description: คนตรวจงานของ SMOGZ — ผู้ตรวจอิสระก่อน merge ทุก PR (เว้น PR เอกสารล้วน — TEAM_RULES 13.7) ไล่เทียบสิ่งที่ทำจริงกับคำสั่งเดิมทีละข้อ และตรวจว่าของเดิมยังไม่พัง · ในรีโปเว็บ OKami24 ความเข้มของการตรวจ = .claude/TEAM_RULES.md 13.5 (ชุดเบาเป็นค่าเริ่มต้น · ชุดเต็มเฉพาะรายการข้อ 3)
 tools: Read, Grep, Glob, Bash
 model: sonnet
 ---
@@ -56,8 +56,7 @@ model: sonnet
 - มี password / API key / token หลุดออกมาไหม
 - มีตัวเลข สถิติ หรือรีวิวที่กุขึ้นมาเองไหม (ถ้าไม่มีที่มา = ตก)
 - แตะฐานข้อมูล ระบบล็อกอิน ระบบจ่ายเงิน หรือ deploy โดยไม่ได้รับอนุญาตไหม
-- **ด่านถาวรภาษาไทยบนเว็บ (อักขระล่องหนดิบ · ประโยคอังกฤษหลุดบนหน้าไทย · คำห้าม) = สกิล `thai-check`** — เปิดอ่าน `.claude/skills/thai-check/SKILL.md` เอง (คุณไม่มีเครื่องมือเรียกสกิล จึงอ่านไฟล์ตรง ๆ) · **ด่านที่อ่านจากซอร์ส (อักขระล่องหนดิบ · คำห้าม · คำอ้างห้ามในข้อความใหม่) รันทุกก้อนที่แตะ `src/`** — เร็ว ไม่ต้องมีเซิร์ฟเวอร์ · **ด่านที่ต้องเปิดเว็บ (`scripts/scan.js` ทั้ง sitemap · en/zh หลัง hydration) รันเมื่อข้อความที่ลูกค้าเห็นเปลี่ยน** (หน้า · head/meta · JSON-LD — `.claude/TEAM_RULES.md` 13.5 #2 (ข)) · ผลยาวแนบไฟล์ใน `_incoming/` แล้วอ้าง path ในช่อง 4 · ข้อความเดิม 3 ด่าน (เจ้าของสั่ง 2026-09-16 / 2026-09-17) ย้ายไปสกิลทั้งหมด 2026-09-20 — ข้อความเต็มก่อนย้ายอยู่ (บันทึกชั้น 10)
-
+- **ด่านถาวรภาษาไทยบนเว็บ (อักขระล่องหนดิบ · ประโยคอังกฤษหลุดบนหน้าไทย · คำห้าม) = สกิล `thai-check`** — เปิดอ่าน `.claude/skills/thai-check/SKILL.md` เอง (คุณไม่มีเครื่องมือเรียกสกิล จึงอ่านไฟล์ตรง ๆ) · **ด่านที่อ่านจากซอร์ส (อักขระล่องหนดิบ · คำห้าม · คำอ้างห้ามในข้อความใหม่) รันทุกก้อนที่แตะ `src/`** — เร็ว ไม่ต้องมีเซิร์ฟเวอร์ · **ด่านที่ต้องเปิดเว็บ (`scripts/scan.js` ทั้ง sitemap · en/zh หลัง hydration) รันเมื่อข้อความที่ลูกค้าเห็นเปลี่ยน** (หน้า · head/meta · JSON-LD — `.claude/TEAM_RULES.md` 13.5 #2 (ข)) · ผลยาวแนบไฟล์ใน `_incoming/` แล้วอ้าง path ในช่อง 4
 ---
 
 ## รูปแบบการรายงาน — 5 ช่องตาม .claude/TEAM_RULES.md 13.4 — ห้ามเกินนี้
@@ -92,3 +91,6 @@ model: sonnet
   (`scripts/guard-tool.js` · TEAM_RULES 13.7) — if it stops you, report it; never work around it.
 - Stop only a server you started: `node scripts/test-server.js stop`, or kill that one PID. A process you did not start is
   not yours — report it. Do not touch another round's `_incoming/` folder or any file outside this project.
+- Git Bash: `export MSYS_NO_PATHCONV=1` before any script that takes a `/path` (else it silently scans the whole sitemap) ·
+  every browser/scan command under `timeout <seconds>` · the test server stops answering = report and stop — never
+  stop/rebuild it yourself (13/10: a checker hung 3 hours on a dead server).

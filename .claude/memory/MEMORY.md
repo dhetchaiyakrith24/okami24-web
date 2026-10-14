@@ -3,5 +3,5 @@
 > New memories go here (one fact per file, one index line) — not in the computer's memory folder (cloud cannot see it).
 > Rules, lessons and state have their own homes (TEAM_RULES head); a memory that became one of them is deleted here.
 
-- [CRLF และ shell บนเครื่องนี้](project-crlf-tooling.md) — ไฟล์ใหม่ = `unix2dos` ก่อน add · backslash/regex/ไทย ห้ามผ่าน heredoc หรือ `node -e`
-- [บรรทัด session-sync ตอนเปิดแชท](project-session-sync.md) — STOP SIGN = บอกเจ้าของก่อน · RE-READ NOW = อ่านไฟล์กฎใหม่
+(empty — 14/10 the two memories moved to their homes: CRLF/shell = `docs/HANDOFF.md` §17 "Windows shell" · session-sync
+lines = skill `round-open` Step 2 item 1)

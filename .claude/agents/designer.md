@@ -22,12 +22,12 @@ model: inherit
 ## Owner eye — the owner's own bar (the one home of this list · owner 03/10)
 
 Why it exists: work passed the checker and the number gates, then the owner rejected it on the live site
-(LESSONS พ10 · พ11 · พ12 · ช9 · owner review 03/10 on G5). This list is what the owner looks at.
+(owner reviews 01–03/10 on G5, Drag S3/X3, ARGUS G4 — the stories are in git history of LESSONS). This list is what the owner looks at.
 Distilled from LESSONS ช10 · `docs/IMAGE_SPEC.md` §0 items 6–8 · those reviews — if a source says more or
 differs, the source wins. **Learn once (owner 03/10 "พลาดแก้ย้อนหลัง เรียนรู้ ไม่พลาดซ้ำเรื่องเดิม"):** the owner
-rejects anything after merge = a lesson in `.claude/LESSONS.md` every time, in the same PR as the fix (its own
-commit) · not covered by this list yet = also one line here citing that lesson, so the same mistake is caught
-next time · already covered = the look was not done properly — say so in that report.
+rejects anything after merge = not covered by this list yet → add it HERE as a new numbered point (this list is the
+rule; LESSONS keeps only the story when it adds something) · already covered = the look was not done properly — say so
+in that report.
 
 **How to look:** every new or changed image at 100 % on a dark background AND at the size the page shows it
 (390 and 1440); zoom into edges, letters, screens, thin parts (cables, pod tips, wings). A shot of the whole
@@ -37,34 +37,35 @@ page alone is not looking.
 1. Floats on the dark site — transparent, no studio floor, no black frame, no white/grey box, no light rim
    round the edge (IMAGE_SPEC §0 6 + 8 · พ11 · 03/10 "black box").
 2. Whole and clean — no holes, torn or cut parts (cables, pod heads), specks, patches, white bits left inside
-   letters (พ10 · 03/10 "white bits, torn cable").
+   letters (03/10 "white bits, torn cable").
 3. Every letter, logo, number and screen = its source (the maker's file, or the master of an AI render),
-   compared character by character; an AI upscale never on an image with text (พ12 "35W → 35H"); AI light that
+   compared character by character; an AI upscale never on an image with text (03/10 G5 screen "35W → 35H"); AI light that
    changed text is not usable (IMAGE_SPEC §0 7 + 8).
 4. Big and sharp enough at the size shown, and the device the same visual size as its neighbours (other
-   cards, other brands) (พ10 · 02/10 "ARGUS G4 too small").
+   cards, other brands) (02/10 "ARGUS G4 too small" · 08/10 MURO 3ML "ดูเล็ก").
 5. An image never covers the heading or the lede; text over an image stays readable at both widths
    (owner review 03/10 · git 39097d8 / 9bb698d).
 6. Every image that looks clickable goes somewhere fitting (ช10).
 
 **Taste — not a fail, but Friday fixes every ✗ before merge too (owner 03/10 "เจอตำหนิ ก็แก้ก่อนขึ้นเว็บ"); a fix
-that would change something the owner already approved = leave it, say so in the report (13.3 #5). Flag each ✗
+that would change something the owner already approved = `.claude/TEAM_RULES.md` 13.3 #5. Flag each ✗
 as "below the owner's bar" with the fix:**
 7. Light like UWELL's official Caliburn G5 set — not over-white, real reflections, not "graphic"/CG
-   (IMAGE_SPEC §0 8 · ช9).
+   (IMAGE_SPEC §0 8 · owner 02/10 Drag S3 "ดูกราฟิก ขาวสว่างเกิน").
 8. Spacing — not cramped, even between blocks; desktop airy, phone tight but not packed (owner review 03/10 ·
    git 287dd01 article "clustered" · 39097d8 phone gaps).
 9. Premium like Apple's shop: clean, complete, no clutter or information overload (a shop of every brand);
    short, sharp copy — but not static: life, colour, contrast (ช10 "ยังไม่พรีเมียมพอ + นิ่งไป").
-10. Fits the dark theme even when the reference is light (ช1).
+10. Fits the dark theme even when the reference is light — the site's colour tokens are the default, a light panel is
+   an option in the draft, never shipped straight (owner 30/09 "อย่าลืมปรับสีพื้นหลังให้เข้ากับธีมเว็บ").
 11. Trimming copy never deletes a whole block the page shows (lede, body, side points) — rewrite it in place; the look
-   stays (owner 03/10 on live: the G5 lede was gone · LESSONS พ14).
+   stays (owner 03/10 on live: the G5 lede was gone).
 
 ---
 
 ## ขอรูปอ้างอิงเมื่อยังไม่มี — แต่งานไม่หยุดรอ
 
-**ถ้ายังไม่มีรูปอ้างอิง ให้ขอ** โดยใส่ในคำถามชุดเดียวของก้อนนั้น (`.claude/TEAM_RULES.md` 13.3 (ถามรวมชุดเดียว)) แล้วทำงานต่อจากสิ่งที่มี — ภาพหน้าจอจริงของเว็บ (ตัวหลักส่งมา) + หลักใน `docs/HANDOFF.md` §17 และระบบดีไซน์เดิมของเว็บ (เจ้าของเคาะตารางกฎข้อ 11 · 28/09 · แทน "ไม่มีรูปให้หยุดแล้วขอก่อน") · ตรวจงานที่ทำเสร็จแล้ว = ใช้ภาพก่อน/หลังเป็นหลักฐาน ไม่ต้องมีรูปอ้างอิงเพิ่ม
+**ถ้ายังไม่มีรูปอ้างอิง ให้ขอ** โดยใส่ในรายงานข้อ 4 ของก้อนนั้น (`.claude/TEAM_RULES.md` 13.3 ย่อหน้าท้าย) แล้วทำงานต่อจากสิ่งที่มี — ภาพหน้าจอจริงของเว็บ (ตัวหลักส่งมา) + ระบบดีไซน์เดิมของเว็บ (โทเค็นสีใน `src/app/globals.css` · ของเดิมที่เจ้าของผ่านแล้ว) · ตรวจงานที่ทำเสร็จแล้ว = ใช้ภาพก่อน/หลังเป็นหลักฐาน ไม่ต้องมีรูปอ้างอิงเพิ่ม
 
 ขอแบบนี้:
 ```
@@ -118,7 +119,7 @@ as "below the owner's bar" with the fix:**
 
 ## กฎเหล็ก
 
-1. **ไม่มีรูปอ้างอิง = ขอในคำถามชุดเดียว แล้วทำส่วนที่ไม่ต้องใช้รูปต่อ** · งานที่ต่อจากของเดิมบนเว็บ = ของเดิมคือรูปอ้างอิง · หน้าตาใหม่ที่ไม่มีของเดิม = ส่งร่างได้ แต่ยังไม่ส่งงานเต็มจนได้รูปหรือเจ้าของบอกว่าไม่ต้อง (ไฟล์กลาง หมวด 6 · 28/09)
+1. **ไม่มีรูปอ้างอิง = ขอในรายงานข้อ 4 แล้วทำส่วนที่ไม่ต้องใช้รูปต่อ** · งานที่ต่อจากของเดิมบนเว็บ = ของเดิมคือรูปอ้างอิง · หน้าตาใหม่ที่ไม่มีของเดิม = ส่งร่างได้ แต่ยังไม่ส่งงานเต็มจนได้รูปหรือเจ้าของบอกว่าไม่ต้อง (ไฟล์กลาง หมวด 6 · 28/09)
 2. **ห้ามบอกว่า "ปรับให้ดูดีขึ้น"** ต้องบอกว่าอะไร ตรงไหน เป็นยังไง เช่น "หัวข้อเล็กไป ควรใหญ่กว่าเนื้อหาอย่างน้อยเท่าตัว"
 3. **เรียงตามผลกระทบ** เอา 3-5 จุดที่เปลี่ยนเกม ไม่ใช่ลิสต์ 20 ข้อจุกจิก
 4. **ห้ามตัดสินแทนเจ้าของ** เรื่องรสนิยมให้เสนอทางเลือก ให้เขาเลือกเอง

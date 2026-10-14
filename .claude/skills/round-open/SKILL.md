@@ -45,20 +45,20 @@ Objections only, max 5 items, each passing the test *if I do not say this, the w
 - **real bans** of this round, one line each, only where obeying them changes what gets built;
 - **method prescribed without need** — say the way you will take and why (central §12 item 16), then start without
   waiting (13.1 #4);
-- **ambiguous wording** that sends the work two ways — ask as one set with a recommendation (central §12 item 13), keep
+- **ambiguous wording** that sends the work two different ways = a change of direction (13.3 #4) — ask as one set with a recommendation (central §12 item 13), keep
   working on what it does not block.
 Nothing to object to = `ไม่เห็นจุดเสี่ยง — คำสั่งชัด เริ่มได้เลย`. Never restate the instruction.
 
-## Step 4 — Scope: `scope-auditor` when the round touches the site
+## Step 4 — Scope: `scope-auditor` only for shared parts or more than 3 pages (13.2)
 
-Before the first batch of a round that touches what a visitor gets (skip for docs/rules/skills/agents —
-`self-merge-check` would print `SMALL`). It counts from the live sitemap; its page list becomes the checker's page list
+Before the first batch of a round that touches a part every page shares (13.5 #5) or more than 3 pages. Otherwise skip
+it and name the touched pages yourself — they become the checker's page list. It counts from the sitemap; its page list becomes the checker's page list
 for every batch. Scope grows mid-round = call it again for the new part (a change of direction = 13.3 #4).
 
 ## Step 5 — Batches, then start
 
 Split the goal into checkable batches, each with "how we know it is done" and its tier (A = text only · B = structure
-or screen · not sure = B — 13.5). Big by central §12 item 12 = plan first (`planner` optional, 13.1 #3). Tell the owner
+or screen · not sure = B — 13.5). Big by central §12 item 12 = plan first (`planner` optional, 13.1 #3; ≤7 steps = central §12 item 12). Tell the owner
 3–5 lines of what in what order and **start**. Helper files → `_incoming/<round>/` or `scripts/`.
 
 Write the round into `docs/HANDOFF.md` §16 item 3 (instruction file · batches with tiers · where it stopped — spec:

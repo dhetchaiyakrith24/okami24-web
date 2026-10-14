@@ -66,7 +66,7 @@ every time.
 
 The order below is the one that produced facts that passed the checker in the data rounds. What counts as an
 acceptable source for a customer-read fact is NOT decided here: the owner's data-round rulings live in
-`docs/HANDOFF.md` §18 (permanent owner rulings — "owner rulings 2026-09-24/25 (round data)") and the code gate
+`docs/HANDOFF.md` §18 (permanent owner rulings — "Product facts (data rounds 24–25/09, 30/09)") and the code gate
 is the spec-row gate (files: HANDOFF §17 "src files the skills use" [spec-gate]) (a row is shown only when it is
 `sourceStatus: "verified"`). Wording rules for the sentence that carries the fact: skill `thai-check`.
 
@@ -136,7 +136,7 @@ session if run as a subagent) in this shape, one entry per product:
   Flags: anything ambiguous, conflicting, or needing a business/owner decision
 ```
 
-Never edit `TAXONOMY_MATCHES` / `VERIFIED_MEDIA` / `publication-approvals.ts` directly from within
+Never edit `TAXONOMY_MATCHES` / `VERIFIED_MEDIA` / the publication approvals (HANDOFF §17 [approvals]) directly from within
 research — that's a data-authoring step for whoever reviews the findings, keeping evidence-
 gathering and catalog-authoring as separate, reviewable steps (this is also why the mission that
 produced this Skill ran research as read-only subagents, then applied their findings by hand).
@@ -148,7 +148,7 @@ read-only research role in `.claude/TEAM_RULES.md` 13.2 — never `general-purpo
 rather than doing it serially. Each agent's prompt should be self-contained and include:
 
 1. The exact Shipnity id(s), names, prices, and active children (copy straight from
-   `active-catalog-source.ts` — the agent has no other way to see this).
+   the active catalog source (HANDOFF §17 [active-catalog]) — the agent has no other way to see this).
 2. "This is RESEARCH ONLY — do not edit files" stated explicitly (the researcher agent has no edit tools anyway).
 3. The evidence tiers and rejection checklist from Steps 2 and 4 above, inlined (the agent starts
    with no context and won't have read this Skill).

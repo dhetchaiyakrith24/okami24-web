@@ -35,7 +35,7 @@ every PR that touches the site) plus the Thai-copy gates on the touched pages.
 
 - `npx tsc --noEmit` · `npx eslint <files touched this round>` · `npm run verify:commerce`
 - `SITE_URL=<production origin> npm run verify:catalog -- --full` — builds by itself: stop the test server first
-  (HANDOFF §17 "ปิด server")
+  (HANDOFF §17 "stop =")
 - `npx tsx scripts/count-storefront.ts` — printed counts = HANDOFF §16 item 6 unless the round changed the catalog
   (then write the new counts there)
 - the i18n contract test (HANDOFF §17 "src files the skills use" [i18n-test]) · `node scripts/thai-raw-chars-check.js`
@@ -45,7 +45,7 @@ every PR that touches the site) plus the Thai-copy gates on the touched pages.
 
 Long logs → `_incoming/<round>/`, cite the paths. **A cloud round** writes its evidence summary (commands, printed
 totals, error text quoted exactly) to `docs/cloud-results/<round>.md`; a computer round only when a cloud chat will
-need it. Secret-scan any text file before it goes into git; screenshots go to a private Artifact page, never git.
+need it. Secret-scan any text file before it goes into git; screenshots stay in `_incoming/<round>/` and go to the owner with the report, never git.
 
 ## A gate the round added — see it red once before trusting it
 
@@ -60,7 +60,7 @@ Word-break fixes and anything the gates or the designer flagged → one commit. 
 
 ## Step 5 — Checker, tag, push, merge
 
-1. `checker` passes the close — **skip** when nothing changed after the last batch's checker PASS (13.5 #2 (จ)); say so.
+1. `checker` passes the close — **skip** when nothing changed after the last batch's checker PASS (13.4: a result holds for its commit); say so.
 2. Commits split so each topic reverts on its own (13.7).
 3. **Annotated tag on the round-close commit, before the push:** `git tag -a <english-name> <commit> -F <thai-message-file>`
    (English name, no spaces — pattern: `git tag -n1`; Thai message the owner can read) → `git push` + `git push origin --tags`.
@@ -73,7 +73,7 @@ Word-break fixes and anything the gates or the designer flagged → one commit. 
 - `docs/HANDOFF.md` §16: "open round" → "none — <round> closed" + tag (cloud: close commit) · rest refreshed — spec =
   skill `okami24-handoff` · permanent owner rulings of the round → §18.
 - Temporary rulings (written with an end date, `.claude/TEAM_RULES.md` 13.6): search §16, `.claude/LESSONS.md` and
-  `.claude/memory/` for ones that ended or end with the round → delete them; one with no end date = ask the owner.
+  `.claude/memory/` for ones that ended or end with the round → delete them; one with no end date = list it in report item 4 with a proposed end date (13.3 last paragraph).
 - Owner rulings on Thai words/sentences → `docs/THAI_STYLE_LOG.md` §7 (and the word table in THAI_STYLE §3 when the
   owner locked a word) — the main agent writes them.
 - The round file that ran is in `docs/rounds/` (re-copy if edited during the round) → delete its copy under `rounds/`

@@ -1,4 +1,29 @@
 {
+  "permissions": {
+    "deny": [
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__generate_image",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__generate_image_batch",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__generate_video",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__generate_video_batch",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__generate_audio",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__generate_audio_batch",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__generate_3d",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__upscale_image",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__upscale_video",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__remove_background",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__outpaint_image",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__reframe",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__execute_preset",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__ai_influencer_generate",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__build_ai_influencer",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__motion_control",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__ads_studio_generate",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__shorts_studio_create",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__create_voice",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__voice_change",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__dubbing"
+    ]
+  },
   "hooks": {
     "SessionStart": [
       {

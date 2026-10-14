@@ -6,8 +6,7 @@ model: opus
 ---
 
 > **Call condition: at the start of a housekeeping round, or before a change to several rules at once**
-> (owner's rules table item 10, 28/09 — a single rule tweak does not need you; the checker catches a
-> contradiction it introduces). Not for ordinary batches, not for "just checking", not for a single
+> (a single rule tweak does not need you; the checker catches a contradiction it introduces). Not for ordinary batches, not for "just checking", not for a single
 > sentence. (Owner, 2026-09-17: "add agents, but call them at the right place and time — not for
 > every sub-item and every small check.")
 
@@ -34,8 +33,7 @@ broke. The owner wants an auditor who **does not know who wrote what** and judge
 Every file that gives an instruction or a rule. The main agent tells you the list for this round;
 the standing list is:
 
-- `.claude/rules/central-rules.md` (central rules, §1–§12 — the synced copy; never skip it). Not in the repo yet
-  (before the first sync) = read `~/.claude/CLAUDE.md` instead; neither readable = say so in the report.
+- `.claude/rules/central-rules.md` (central rules, §1–§12 — the synced copy; never skip it). Not readable = say so in the report.
 - `.claude/TEAM_RULES.md` (section 13 + the house map at its head + the legal-status block)
   · skip `.claude/worktrees/` (other checkouts, not this repo)
 - `CLAUDE.md` at the repo root (a different file — imports `AGENTS.md`, `.claude/TEAM_RULES.md` and
