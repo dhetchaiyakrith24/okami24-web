@@ -12,56 +12,26 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
 1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #474 e111ac8e (never split หน่วยงาน, owner item 54;
-  live 200) [ตรวจแล้ว]. Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl.
-  Night chain OFF. Owner decisions: ask in chat + one line in `docs/รอพี่ตรวจ.md` (no review-sheet artifact — §18).
-  Images: Higgsfield web app in the owner's Chrome, free "365 Unlimited" models only · the Higgsfield MCP generate/upscale
-  tools are DENIED in `.claude/settings.json` (14/10) · credits only on the owner's yes in chat (IMAGE_SPEC §0 item 7) ·
-  tool tips = LESSONS-images 29 + §17 "Higgsfield".
-2 ahead of main: nothing (housekeeping merged #476 18bab17b). Worktrees: only
-  `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped). Untracked folder
-  `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's (admin price reports + chat screenshots): never in git, never delete.
-  `git branch --show-current` before every commit.
-3 CLOSED 14/10 — round "housekeeping 14/10" (`_incoming/house-clean-1410/plan.md`, computer only), #476 merge 18bab17b,
-  tag `house-clean-1410-done` · checker 2 rounds (round 1 FAIL 4 doc blockers → fixed a5c5ec6 → round 2 PASS). Done [ตรวจแล้ว]: measure (`_incoming/house-clean-1410/house-check.txt`) · rule-auditor 70 rows (`rule-audit.md`, same folder) ·
-  owner approved every recommendation in chat 14/10 · 16 merged worktrees + merged branches removed (local 368 → 26 · GitHub
-  402 → 24 · 10 unmerged kept; files found inside the worktrees moved to `_incoming/wt-rescue/`) · rules/skills/agents/docs
-  commits on house-1410 · LESSONS 181,269 → 129,682 bytes (git blobs, `git show <rev>:.claude/LESSONS.md | wc -c`; 27 deleted
-  = now rules elsewhere · 17 nested under one head · `lessons-verify.js` = 0 kept lines lost) · Higgsfield deny lock (a test
-  entry for the read-only `balance` tool was refused in the chat, then removed) · tag seo-e-pod-done · `_incoming` move (owner
-  14/10: a folder on C:): 87 folders no tracked file names → `C:\Users\dhetc\OKami24-archive\_incoming\` (list + log in
-  `_incoming/house-clean-1410/incoming-move.*`); `_incoming` now 25,537 MB, archive 665 MB (`sizes-after-move.txt`).
-  Follow-up 15/10 (owner: same chat; ideas from the owner's other project = `_incoming/house-clean-1410/other-project-adapt.md`),
-  #479 merge 6f26816d (checker PASS): the 29 recipes LESSONS pointed at (+3 they require) COPIED into `scripts/lab/` (originals stay; header
-  names the source) and LESSONS re-pointed · image lessons (14 15 20 22 25 27 28 29 พ6 พ16, ids kept) →
-  `.claude/LESSONS-images.md`, read only in image work · warehouse questions = รอพี่ตรวจ "คำถามถึงคลังสินค้า" (copy-ready).
-  Finding: the big image folders are NOT pinned by the scripts but by image provenance in src data + `process-images.map.json`
-  — only `checker-344` became unreferenced and moved. Re-pointing provenance at the archive = NOT now (owner 15/10, §18).
-  Central rules smogz-rules#13 merged 14/10 (all 5 web-side asks in: numbers from files · compare old/new when shrinking ·
-  "ผู้ช่วยสังเกต" label · stop list must hold "readable more than one way = ask" · item-15 taste) → copy synced #478 ff9f268d
-  (checker PASS, byte-identical to 2f9617b). Web side adjusted #480 f3c5add2: 13.3 #8 ambiguity · item-15 exception dropped
-  (central says the same) · 13.8 + 13.5 exceptions still quote existing text · night routine `friday-chat-move` prompt
-  rewritten 15/10 with the owner's approval in chat: no stop at 600–700K, the app compacts, re-read rules + §16 after each.
-  Not done: scan.js page-list option (approved item 3) · THAI_STYLE §6 open items + history columns · locks L1–L3, L5–L10 of
-  `rule-audit.md` (proposal: one "pre-checker gate" script, own round).
-3n NEXT CHAT = owner 15/10 (chat, Thai) — the other web side is editing the central rules meanwhile; READ-ONLY audit first,
-  report in Thai, then act only on what the owner picks. Owner's intent (unchanged): Friday is not tied by the hands —
-  think, analyse, design at full strength, build on what we made together (123 → 456) · never guess: guessing = ask.
-  Answer, with numbers taken from files/commands (central §12 item 9):
-  (1) does our workflow really run as written — what % (rule by rule: followed / bypassed / dead, from git log + PRs + chats);
-  (2) do rules · guides · docs · files contradict each other, are they messy, bigger than needed (sizes now: rules loaded
-      every chat 36,919 chars · HANDOFF 29,348 · §16 ~11 KB · LESSONS 78,681 + LESSONS-images 52,011 bytes — `house-check`);
-  (3) from Friday's own view since we started: what to cut / add / change;
-  (4) every skill + agent (count them), was each really used (git log / chats), cut / merge / add which;
-  (5) why work got slow lately — where it sticks: duplicate checks, waits, builds, agent calls (measure, don't guess).
-  (6) clear the housekeeping leftovers (line above + `house-check` "files nobody references") — owner confirmed 15/10 "ใช่ครับ".
-  (7) owner 15/10: make housekeeping a skill and/or a WEEKLY round. Friday's proposal given in chat: keep skill house-clean
-  (update it) + a weekly scheduled task that is READ-ONLY (house-check + rule check → short Thai report in รอพี่ตรวจ, edits
-  nothing until the owner picks) — like the cartoon project's weekly task (seen by name only). SETUP STARTS WITH AN
-  INTERVIEW of the owner (AskUserQuestion, options + recommendation, open questions allowed for rules — central §12 item 13):
-  goal / what "a clean house" means · always do · never touch or never show · what Friday may fix without asking (e.g. dead
-  pointers) vs needs the owner's pick · day + time + frequency · report length and where · agent budget per run. Write the
-  answers into the skill + §18, then create the task (the app asks the owner to approve — show him the full prompt first).
-  Tools: skill house-clean · rule-auditor (one call) · `node scripts/house-check.js` · evidence `_incoming/house-clean-1410/`.
+  live 200) [ตรวจแล้ว] · last merge = #484 be9c09cc (house audit 15/10, no site file). Rollback = revert one PR. Render: ~1 min
+  of 502 + ~2 min after the deploy job ends — wait, then curl. Night chain OFF. Owner decisions: ask in chat + one line in
+  `docs/รอพี่ตรวจ.md` (no review-sheet artifact — §18). Images: Higgsfield web app in the owner's Chrome, free "365 Unlimited"
+  models only · the Higgsfield MCP generate/upscale tools are DENIED in `.claude/settings.json` · credits only on the owner's yes
+  in chat (IMAGE_SPEC §0 item 7) · tool tips = LESSONS-images 29 + §17 "Higgsfield".
+2 ahead of main: nothing. Worktrees: only `_incoming/wt-stock` (stock round · own node_modules copy · test server
+  `next start -p 3413`, stopped). Untracked folder `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's (admin price reports +
+  chat screenshots): never in git, never delete (listed in `.git/info/exclude` on the computer 15/10 — hidden from git status).
+  `git branch --show-current` before every commit. Git hooks: core.hooksPath must read `.githooks` (session-sync resets it).
+3 DONE 15/10 — house audit (item 3n, owner's 7 questions) → #484 merge be9c09cc (checker PASS round 3 at 6cb7d10; rounds 1–2
+  FAIL on a lost planner rule, a lost THAI_STYLE item, `git branch:*` in the allow-list, one HANDOFF phrase). Report + evidence =
+  `_incoming/house-1510/` (computer only: report.md · compliance.md · rule-audit.md 52 rows · tx-*.txt). Rulings = §18
+  "Answered 15/10". Weekly task `okami24-house-weekly` created 15/10 (Sunday 20:00, prompt = skill house-clean (ก)) — the app did
+  NOT keep auto mode on it: its git-write step can pause on a prompt until the owner sets the task's mode or approves once
+  (รอพี่ตรวจ item 61). Earlier round "housekeeping 14/10" = tag `house-clean-1410-done`.
+  House-audit leftovers (own work, not started): rule-audit rows 20 (rulings still only in `git show` of old HANDOFFs → §18) ·
+  40 (self-merge-check `--base` prints BLOCKED for "site touched") · 45 (re-measure the scan baseline on the test server at the
+  next full close) · house-check skips a dead pointer on a line that says "deleted/removed" (known limit) · the LOCK ROUND =
+  rule-audit 14/10 L1–L3, L5–L10 + "do not touch the tree/3412 while the checker reads" → one "pre-checker gate" script, its own
+  round (Friday's pick 15/10).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
@@ -98,6 +68,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     evidence sentence · the 2 sentences still citing a retailer page (VMATE i3 · Caliburn X, compat copy — from THAI_STYLE
     15/10) · search "Sugus" alias · MOOOD who-for line → "…ที่มีกลิ่นให้เลือกหลายกลิ่น" (§18) · INFY 20K "explain the
     absence" FAQ (cut at the page's next touch, §18 06/10 pm) · nexBAR 18K counts 31 flavours, shows 20.
+  - Copy items moved from THAI_STYLE §6 (15/10, record = THAI_STYLE_LOG end): /e-liquid page description = switch to version ข
+    the day e-liquid goes on sale · hidden products' "research-voice" taglines (tfit-m-power-20k · infy-20k · joiway-f3) rewrite as
+    a group · M Switch Kit / Zero Pro / Zero Nano are switch systems typed pod-kit + Coil-72 (built-in-coil pod) still typed coil — Coil-89 already moved (data) ·
+    "ท็อปฟิล" vs "Top Fill เติมบน" (transliteration sweep) · designer: `text-wrap: balance` on mobile H2/H3 · (closed: "พอตใช้แล้วทิ้ง"
+    split mid-word = the owner ruled NOT to bind it, THAI_STYLE §5 — reword only) · รอพี่ตรวจ 60 = BSOT ~line 588 says src/proxy.ts
+    was deleted; it exists (the WebP enforcer).
   - Site, own tasks: home en/zh 16 Thai nodes · the owner may send a Mac screenshot (DNS round 3g) · /faq has no in-content links (→ open-system-vs-disposable) · pod-kits →
     pod-systems link slot (designer) · LINE OA rich menu / pinned post (owner: later) · Analytics = NOT now (revisit before the
     first paid ad).
