@@ -3,7 +3,7 @@
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import type { Dictionary } from "@/i18n/dictionaries";
 import type { Guide } from "@/types/catalog";
-import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
+import type { GuideHeadCopy } from "@/lib/guide-head-copy";
 import { FLAVOR_COPY_TH, FLAVOR_COPY_ZH } from "@/i18n/flavor-copy";
 import { labelLang } from "@/lib/label-lang";
 import { thaiTypographyNode } from "@/lib/thai-typography";
@@ -27,9 +27,10 @@ export function HomeText({ k, n }: { k: keyof Dictionary["home"]; n?: number }) 
 
 /** A guide's title or dek in the visitor's language — the same overlay GuideDetailPageHeader uses
  *  on the guide's own page, so the teaser card and the page it opens read the same words. */
-export function GuideText({ id, field, en }: { id: string; field: "title" | "dek"; en: string }) {
+export function GuideText({ copy, field, en }: { copy: GuideHeadCopy; field: "title" | "dek"; en: string }) {
   const { locale } = useLocale();
-  const overlay = locale === "th" ? GUIDES_COPY_TH[id] : locale === "zh" ? GUIDES_COPY_ZH[id] : undefined;
+  // `copy` = guideHeadCopy(id) from the server section (src/lib/guide-head-copy.ts) — the full copy table stays off the browser.
+  const overlay = locale === "th" ? copy.th : locale === "zh" ? copy.zh : undefined;
   return <>{locale === "th" && overlay?.[field] ? thaiTypographyNode(overlay[field]) : (overlay?.[field] ?? en)}</>;
 }
 

@@ -2,7 +2,7 @@
 
 import { PageHeader } from "@/components/ui/PageHeader";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { GUIDES_COPY_TH, GUIDES_COPY_ZH } from "@/i18n/guides-copy";
+import type { GuideHeadCopy } from "@/lib/guide-head-copy";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import { GuideByline } from "@/components/content/GuideByline";
 
@@ -12,16 +12,17 @@ import { GuideByline } from "@/components/content/GuideByline";
  * ("Guide · N min read") and English title/dek — exactly the "hardcoded PageHeader" class of bug
  * the earlier i18n pass's contract test was meant to catch (see i18n-contract-test.ts), missed
  * here because this call sat in a `[slug]` dynamic route the static scan didn't enumerate.
- * `id` looks up a real TH/ZH translation of this guide's own title/dek in guides-copy.ts.
+ * `copy` carries the real TH/ZH translation of this guide's own title/dek from guides-copy.ts.
  */
 export function GuideDetailPageHeader({
-  id,
   title,
   dek,
   readingTimeMin,
   byline,
+  copy,
 }: {
-  id: string;
+  /** guideHeadCopy(id) from the server page (src/lib/guide-head-copy.ts) — keeps the full copy table off the browser. */
+  copy: GuideHeadCopy;
   title: string;
   dek: string;
   readingTimeMin: number;
@@ -29,7 +30,7 @@ export function GuideDetailPageHeader({
   byline?: { publishedAt: string; modifiedAt: string };
 }) {
   const { dict, locale } = useLocale();
-  const overlay = locale === "th" ? GUIDES_COPY_TH[id] : locale === "zh" ? GUIDES_COPY_ZH[id] : undefined;
+  const overlay = locale === "th" ? copy.th : locale === "zh" ? copy.zh : undefined;
   // Round 10B (designer, 2026-09-24): the typography used to run only when a TH overlay existed, but the round-10B
   // articles are Thai-only and keep their Thai in the record itself — their H1/dek skipped it ("M | Switch" at 390).
   // On the Thai page it now runs on whichever string is shown; English/Chinese pages are unchanged.
