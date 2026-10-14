@@ -70,8 +70,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     absence" FAQ (cut at the page's next touch, §18 06/10 pm) · nexBAR 18K counts 31 flavours, shows 20.
   - Copy items moved from THAI_STYLE §6 (15/10, record = THAI_STYLE_LOG end): /e-liquid page description = switch to version ข
     the day e-liquid goes on sale · hidden products' "research-voice" taglines (tfit-m-power-20k · infy-20k · joiway-f3) rewrite as
-    a group · M Switch Kit / Zero Pro / Zero Nano are switch systems typed pod-kit + Coil-89/72 built-in-coil pods typed coil (data) ·
-    "ท็อปฟิล" vs "Top Fill เติมบน" (transliteration sweep) · designer: `text-wrap: balance` on mobile H2/H3.
+    a group · M Switch Kit / Zero Pro / Zero Nano are switch systems typed pod-kit + Coil-72 (built-in-coil pod) still typed coil — Coil-89 already moved (data) ·
+    "ท็อปฟิล" vs "Top Fill เติมบน" (transliteration sweep) · designer: `text-wrap: balance` on mobile H2/H3 · (closed: "พอตใช้แล้วทิ้ง"
+    split mid-word = the owner ruled NOT to bind it, THAI_STYLE §5 — reword only) · รอพี่ตรวจ 60 = BSOT ~line 588 says src/proxy.ts
+    was deleted; it exists (the WebP enforcer).
   - Site, own tasks: home en/zh 16 Thai nodes · the owner may send a Mac screenshot (DNS round 3g) · /faq has no in-content links (→ open-system-vs-disposable) · pod-kits →
     pod-systems link slot (designer) · LINE OA rich menu / pinned post (owner: later) · Analytics = NOT now (revisit before the
     first paid ad).
