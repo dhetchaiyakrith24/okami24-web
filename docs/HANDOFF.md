@@ -58,7 +58,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     GSC in the owner's Chrome: screenshots time out — drive it by `find` refs; type the URL into the combobox "ตรวจสอบ URL ใน
     okami24.store" + Enter TWICE (the first one is swallowed), then click the request button that sits next to the new URL.
   - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio himself; a renamed clip → update its `title` in guides.ts.
-  - [รอเจ้าของ] รอพี่ตรวจ 54 (quit guide H1 "หน่วย|งาน" at 1440).
+  - Owner 14/10 item 54 = "1": keep "หน่วยงาน" from breaking site-wide (thai-typography.ts no-break word list — the owner's OK lifts
+    its 【ห้ามแตะ】 for this word only), quit guide title unchanged. NOT DONE — next chat: shared text mechanism = 13.5 #5 whole-sitemap
+    wordbreak scan before/after on the TEST SERVER (build of main = before), checker, PR. Then the ProductCard speed step below.
   - Speed work after the round: guides-copy DONE #470 (JS gzip home 353→284 KB · /guides 301→232 · guide 339→271 · product 365→286;
     server HTML 115/118 = live, hydrated text 30/30 unchanged; `_incoming/seo-f/b4r/` md4 · vt3-diff · js-weight-p3.txt). NEXT, same
     method (LESSONS 37): PRODUCT_COPY_TH via ProductCard — ProductCard is pulled into client graphs by CatalogBrowser + RelatedProducts
@@ -79,8 +81,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   "สินค้าหมด") · #408 shipping 60 → 50 · 3a #409 (Shipnity Max "ไม่มีของ" read → `scripts/stock-sync.js` →
   `src/data/stock/warehouse-stock.ts`) · #425 owner list 24 answered. Evidence `_incoming/stock-api/`. Taste note [รอเจ้าของ]: at
   390 the small pill sits on the IQOS ILUMA i cap (iqosheet-18) — alternative = a free band above full-frame photos.
-  NEXT: re-read every morning until the API (owner "2A") — HOW is waiting on the owner [รอเจ้าของ]: A scheduled task 08:30
-  (read → PR → checker → merge, never on a no-merge day) · B by hand on request · C scheduled but owner confirms merges.
+  NEXT: re-read every morning until the API (owner "2A") — HOW = owner 14/10 **"C"**: a scheduled read each morning that prepares
+  the PR (read → PR → checker), and the OWNER confirms before it merges (no merge without his OK in chat) — not built yet (stock round).
   Then batch 3b = stock adapter when the warehouse sends the API (replaces the read) · batch 4+ = order push carrying the
   shipping fee (35 to the warehouse on its own field, free shipping as a shop-paid discount line — survey doc last section).
   Still from the warehouse: API doc + test key · separate shipping/discount fields · cost per SKU — answers come via the owner.
@@ -306,3 +308,6 @@ batch docs edits into one PR per batch (LESSONS 32) · DNS guide health/quit-smo
 **Answered 14/10 (owner, chat, item 55 "ให้ GitHub"):** main's branch protection requires BOTH `copy` and `checks` (set 14/10 by
 Friday: `gh api …/branches/main/protection/required_status_checks` → contexts copy + checks; strict off; admins enforced; no force
 push) — a PR cannot merge before the full build/verify job passes; a docs-only PR still merges because its skipped `checks` counts.
+**Answered 14/10 (owner, chat, sheet items 39 · 54 · 40 · 38):** 39 = checks run on the TEST SERVER, not the live site (Render
+bandwidth over the free tier; LESSONS 5) · 54 = "1" lock "หน่วยงาน" site-wide, title unchanged · 40 = "C" stock read scheduled each
+morning, the owner confirms before merge · 38 = free models first, no credits (unchanged).
