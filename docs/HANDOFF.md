@@ -35,12 +35,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   names the source) and LESSONS re-pointed · image lessons (14 15 20 22 25 27 28 29 พ6 พ16, ids kept) →
   `.claude/LESSONS-images.md`, read only in image work · warehouse questions = รอพี่ตรวจ "คำถามถึงคลังสินค้า" (copy-ready).
   Finding: the big image folders are NOT pinned by the scripts but by image provenance in src data + `process-images.map.json`
-  — only `checker-344` became unreferenced and moved. Freeing more = a ruling that provenance may point at the archive (ask).
+  — only `checker-344` became unreferenced and moved. Re-pointing provenance at the archive = NOT now (owner 15/10, §18).
   Central rules smogz-rules#13 merged 14/10 (all 5 web-side asks in: numbers from files · compare old/new when shrinking ·
   "ผู้ช่วยสังเกต" label · stop list must hold "readable more than one way = ask" · item-15 taste) → copy synced #478 ff9f268d
-  (checker PASS, byte-identical to 2f9617b). Web side adjusted (branch rules-after-sync): 13.3 #8 ambiguity · item-15
-  exception dropped (central says the same) · 13.6 night chain re-pointed; its routine prompt still says "stop at 600–700K"
-  = รอพี่ตรวจ 59 before the next night run · 13.8 + 13.5 exceptions still quote existing text.
+  (checker PASS, byte-identical to 2f9617b). Web side adjusted #480 f3c5add2: 13.3 #8 ambiguity · item-15 exception dropped
+  (central says the same) · 13.8 + 13.5 exceptions still quote existing text · night routine `friday-chat-move` prompt
+  rewritten 15/10 with the owner's approval in chat: no stop at 600–700K, the app compacts, re-read rules + §16 after each.
   Not done: scan.js page-list option (approved item 3) · THAI_STYLE §6 open items + history columns · locks L1–L3, L5–L10 of
   `rule-audit.md` (proposal: one "pre-checker gate" script, own round).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
@@ -271,3 +271,6 @@ push) — a PR cannot merge before the full build/verify job passes; a docs-only
 **Answered 14/10 (owner, chat, sheet items 39 · 54 · 40 · 38):** 39 = checks run on the TEST SERVER, not the live site (Render
 bandwidth over the free tier; TEAM_RULES 13.5 head) · 54 = "1" lock "หน่วยงาน" site-wide, title unchanged · 40 = "C" stock read scheduled each
 morning, the owner confirms before merge · 38 = free models first, no credits (unchanged).
+**Answered 15/10 (owner, chat):** night runs do not move chats — the app compacts, the run re-reads rules + §16 after each
+compaction (central §12 item 29; routine prompt rewritten) · image provenance in src data / `process-images.map.json` stays
+pointing at `_incoming/` — do not re-point it at the archive to free disk (not now; the PC has room).
