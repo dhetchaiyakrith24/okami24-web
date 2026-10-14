@@ -31,15 +31,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   14/10: a folder on C:): 87 folders no tracked file names → `C:\Users\dhetc\OKami24-archive\_incoming\` (list + log in
   `_incoming/house-clean-1410/incoming-move.*`); `_incoming` now 25,537 MB, archive 665 MB (`sizes-after-move.txt`).
   Follow-up 15/10 (owner: same chat; ideas from the owner's other project = `_incoming/house-clean-1410/other-project-adapt.md`),
-  branch reuse-1510: the 29 recipes LESSONS pointed at (+3 they require) COPIED into `scripts/lab/` (originals stay; header
+  #479 merge 6f26816d (checker PASS): the 29 recipes LESSONS pointed at (+3 they require) COPIED into `scripts/lab/` (originals stay; header
   names the source) and LESSONS re-pointed · image lessons (14 15 20 22 25 27 28 29 พ6 พ16, ids kept) →
   `.claude/LESSONS-images.md`, read only in image work · warehouse questions = รอพี่ตรวจ "คำถามถึงคลังสินค้า" (copy-ready).
   Finding: the big image folders are NOT pinned by the scripts but by image provenance in src data + `process-images.map.json`
   — only `checker-344` became unreferenced and moved. Freeing more = a ruling that provenance may point at the archive (ask).
-  Central rules: the owner is reviewing smogz-rules#13 (the other project edits it alone); the web side's reply =
-  `_incoming/house-clean-1410/reply-smogz-pr13.md`. After it merges (sync copy arrives): add "readable more than one way =
-  ask" to 13.3 · rewrite the 13.6 night-chain exception (its quoted phrase is gone) · ask the owner before changing the
-  `friday-chat-move` prompt (stop at 600–700K → let the app compact) · keep the 13.8 exception (item 13 still lists "ลูกค้าเห็น").
+  Central rules smogz-rules#13 merged 14/10 (all 5 web-side asks in: numbers from files · compare old/new when shrinking ·
+  "ผู้ช่วยสังเกต" label · stop list must hold "readable more than one way = ask" · item-15 taste) → copy synced #478 ff9f268d
+  (checker PASS, byte-identical to 2f9617b). Web side adjusted (branch rules-after-sync): 13.3 #8 ambiguity · item-15
+  exception dropped (central says the same) · 13.6 night chain re-pointed; its routine prompt still says "stop at 600–700K"
+  = รอพี่ตรวจ 59 before the next night run · 13.8 + 13.5 exceptions still quote existing text.
   Not done: scan.js page-list option (approved item 3) · THAI_STYLE §6 open items + history columns · locks L1–L3, L5–L10 of
   `rule-audit.md` (proposal: one "pre-checker gate" script, own round).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).

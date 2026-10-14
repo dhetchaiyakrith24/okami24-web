@@ -17,7 +17,8 @@ that sells through LINE — **for all three languages of the site: Thai first, t
 same rules:
 - **Write** — new text that does not exist yet (a product description, the text beside a maker poster, an article, a
   reply to a customer, a video script). Voice = the next section. Where the choice is taste, give 2–3 clearly different
-  versions and recommend one (central §12 item 15); for method, pick the best and do it. For length-capped text
+  versions and mark the one you recommend — the main agent picks and ships it reversibly, the owner is not asked first
+  (central §12 item 15 · TEAM_RULES 13.3); for method, pick the best and do it. For length-capped text
   (caption · heading · button) give the character count.
 - **Edit** — existing text on the site: the report table below.
 
