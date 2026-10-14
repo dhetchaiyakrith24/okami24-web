@@ -11,8 +11,9 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #470 efbfaa80 (guide-copy JS, 14/10 ~17:16; checker
-  PASS 6/6 on 8cd8816c, comment-only 6531c20e after it) · #466 a42acc1e (product-page JS) · #465 39ffe04d (header/footer JS) [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #474 e111ac8e (never split หน่วยงาน, owner item 54;
+  deploy success, live 200) · #470 efbfaa80 (guide-copy JS) · #466 · #465 [ตรวจแล้ว]. OWNER 14/10: STOP feature work — housekeeping
+  first. Draft plan + retrospective = `_incoming/house-clean-1410/plan.md` (computer only) → next chat = skill `house-clean`.
   Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl.
   Night chain OFF (day chat 08/10 turned it off). Site merges open again (owner 10/10 late "Merge ได้ลูกค้าน้อยแล้ว"). Owner decisions: ask in chat + one
   line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (§18) · image work goes live after the checker.
@@ -58,9 +59,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     GSC in the owner's Chrome: screenshots time out — drive it by `find` refs; type the URL into the combobox "ตรวจสอบ URL ใน
     okami24.store" + Enter TWICE (the first one is swallowed), then click the request button that sits next to the new URL.
   - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio himself; a renamed clip → update its `title` in guides.ts.
-  - Owner 14/10 item 54 = "1": keep "หน่วยงาน" from breaking site-wide (thai-typography.ts no-break word list — the owner's OK lifts
-    its 【ห้ามแตะ】 for this word only), quit guide title unchanged. NOT DONE — next chat: shared text mechanism = 13.5 #5 whole-sitemap
-    wordbreak scan before/after on the TEST SERVER (build of main = before), checker, PR. Then the ProductCard speed step below.
+  - Owner item 54 DONE #474 (14/10): "หน่วยงาน" in NEVER_SPLIT; 1440 H1 now "…ข้อมูลสองด้านจาก / หน่วยงานสุขภาพ"; wordbreak scan 118
+    URLs × 2 on the test server: 0 new in-word splits, 3 "single-word-last-line" flags = scanner artefacts of the new span (390 shots
+    line-identical); overflow-390 118/118 (checker). Evidence `_incoming/owner54/`. Item 40 (stock "C") = not built — stock round chat.
   - Speed work after the round: guides-copy DONE #470 (JS gzip home 353→284 KB · /guides 301→232 · guide 339→271 · product 365→286;
     server HTML 115/118 = live, hydrated text 30/30 unchanged; `_incoming/seo-f/b4r/` md4 · vt3-diff · js-weight-p3.txt). NEXT, same
     method (LESSONS 37): PRODUCT_COPY_TH via ProductCard — ProductCard is pulled into client graphs by CatalogBrowser + RelatedProducts
