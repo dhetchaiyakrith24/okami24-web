@@ -13,7 +13,15 @@
       "mcp__3446bec7-5db3-4937-a674-65e536aa4921__remove_background",
       "mcp__3446bec7-5db3-4937-a674-65e536aa4921__outpaint_image",
       "mcp__3446bec7-5db3-4937-a674-65e536aa4921__reframe",
-      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__execute_preset"
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__execute_preset",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__ai_influencer_generate",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__build_ai_influencer",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__motion_control",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__ads_studio_generate",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__shorts_studio_create",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__create_voice",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__voice_change",
+      "mcp__3446bec7-5db3-4937-a674-65e536aa4921__dubbing"
     ]
   },
   "hooks": {

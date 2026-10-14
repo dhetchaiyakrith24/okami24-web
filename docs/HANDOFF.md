@@ -25,10 +25,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Done [ตรวจแล้ว]: measure (`_incoming/house-clean-1410/house-check.txt`) · rule-auditor 70 rows (`rule-audit.md`, same folder) ·
   owner approved every recommendation in chat 14/10 · 16 merged worktrees + merged branches removed (local 368 → 26 · GitHub
   402 → 24 · 10 unmerged kept; files found inside the worktrees moved to `_incoming/wt-rescue/`) · rules/skills/agents/docs
-  commits on house-1410 · LESSONS 183,419 → 130,224 bytes (27 deleted = now rules elsewhere · 17 nested under one head ·
-  `lessons-verify.js` = 0 kept lines lost) · Higgsfield deny lock (seen red on a harmless tool, then removed) · tag seo-e-pod-done.
-  NEXT: checker on house-1410 (TEAM_RULES 13.7 (4) + settings = big) → merge → report. Then the `_incoming` move (32 GB,
-  owner: move, not delete) = waits on รอพี่ตรวจ 58 (where to; the PC has only C:). Not done this round: THAI_STYLE §6 open
+  commits on house-1410 · LESSONS 181,269 → 129,682 bytes (git blobs, `git show <rev>:.claude/LESSONS.md | wc -c`; 27 deleted
+  = now rules elsewhere · 17 nested under one head · `lessons-verify.js` = 0 kept lines lost) · Higgsfield deny lock (a test
+  entry for the read-only `balance` tool was refused in the chat, then removed) · tag seo-e-pod-done · `_incoming` move (owner
+  14/10: a folder on C:): 87 folders no tracked file names → `C:\Users\dhetc\OKami24-archive\_incoming\` (list + log in
+  `_incoming/house-clean-1410/incoming-move.*`); `_incoming` now 25,537 MB, archive 665 MB (`sizes-after-move.txt`).
+  NEXT: PR #476 checker round 2 → merge → report. Then (in direction, own PR): move the ~30 reusable scripts LESSONS points at
+  from `_incoming/` into `scripts/` (then the big image folders can move out too) · image lessons into their own file ·
+  warehouse questions as one copy-ready list. Owner reviewing central-rules PR smogz-rules#13 (Friday's notes given in chat
+  14/10). Not done this round: scan.js page-list option (approved item 3 — not built) · THAI_STYLE §6 open
   items + history columns · locks L1–L3, L5–L10 of `rule-audit.md` (proposals) · a page-list option for `scan.js`.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
@@ -65,7 +70,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     Shipnity name on en/zh pages that link it + coil-72 "VOOPOO คอยล์ Vmate Infinity Edition" on vmate-i3 en/zh and its retailer
     evidence sentence · search "Sugus" alias · MOOOD who-for line → "…ที่มีกลิ่นให้เลือกหลายกลิ่น" (§18) · INFY 20K "explain the
     absence" FAQ (cut at the page's next touch, §18 06/10 pm) · nexBAR 18K counts 31 flavours, shows 20.
-  - Site, own tasks: home en/zh 16 Thai nodes · /faq has no in-content links (→ open-system-vs-disposable) · pod-kits →
+  - Site, own tasks: home en/zh 16 Thai nodes · the owner may send a Mac screenshot (DNS round 3g) · /faq has no in-content links (→ open-system-vs-disposable) · pod-kits →
     pod-systems link slot (designer) · LINE OA rich menu / pinned post (owner: later) · Analytics = NOT now (revisit before the
     first paid ad).
   - Own rounds (owner 07/10): typo-tolerant search Thai + English (site + Google) · a lifestyle / real-shot strip at the end of
@@ -100,7 +105,8 @@ Do not touch unless the round file names it: layout outside the named spot · im
   round 30.4ข · ProductHero stats / PuffCount / Coil-72/89 category (data round) · footer.tagline / cart (their own rounds)
   — never: joiner/NBSP outside the list · two Chrome jobs at once · fixing tier-B orphan words one by one · placeholders
   in an empty spec row · screenshots without a scan first (13.5 #7)
-Site copy (every round): every new sentence = 3 languages and the owner rules the Thai (13.3 "ask as one set") · every
+Site copy (every round): every new sentence = 3 languages (new articles = Thai first, `thaiOnly: true` — §18) · Friday picks
+  reversibly, the owner keeps/undoes after merge (TEAM_RULES 13.3 last paragraph + 13.8) · every
   number points at a verified spec row · no U+2060/NBSP outside the mechanism · thaiTypography() has a locale guard ·
   generated evidence mirrors the component logic in full · forbidden claims = THAI_STYLE §3 (one list) · prices are
   never typed — always read live from the catalog (`priceOf` / `getCatalogItem`)
@@ -133,11 +139,13 @@ src files the skills use (the one list — skills may not name a file under src/
 Verify: which set = 13.5 · the full list with commands = skill `round-close` step 3 · pass = what each script prints ·
   the last full-set counts = §16 item 6
 Git: commit message English, prefix feat/fix/copy/data/docs/chore/agents/rules · Thai text via `git commit -F <file>` ·
-  push/merge/deploy = 13.7 · tag = skill `round-close` step 5
+  push/merge/deploy = 13.7 · tag = skill `round-close` step 5 · a check that never starts (job with 0 steps) = read the
+  check-run annotations first (`gh api …/check-runs/<id>/annotations`) — 12/10 it was the Actions quota
 Agents: when to call each = the `description` line of its file in `.claude/agents/` · never one call per sub-item ·
   an agent added or edited is usable at once in the running chat
 Higgsfield (web app in the owner's Chrome): the draft box is SHARED across tabs and chats — open a new tab, set refs + prompt
-  and click Generate in one go · check the button reads "Unlimited" before EVERY click · refs = the Chrome extension's
+  and click Generate in one go · free = the "365 Unlimited" models (Seedream 4.5 · Seedream 5.0 Lite · Nano Banana v1 ·
+  GPT Image · FLUX.2 Pro 1K · Kling O1 Image) — check the button reads "Unlimited" before EVERY click · refs = the Chrome extension's
   file_upload on the uploads panel's hidden input (the app's built-in browser pane has no upload tool: 3 KB base64 chunks +
   sha256 check — slow) · results via MCP `show_generations` (read-only) · prompt box = Lexical editor (LESSONS 29)
 Night chain: its rules live in the routine `friday-chat-move` prompt (TEAM_RULES 13.6) · before the first night the owner
@@ -204,7 +212,7 @@ fact or the desktop-style option count, never placeholder text · spec-table hea
 **Product facts (data rounds 24–25/09, 30/09):** a per-row source link is required for rows touched in a round + rows of
 the 7 products the live 10B guides link to; older verified rows are grandfathered · every unverified number is hidden
 from render · when a fact is missing, state the fact or say nothing — never explain the absence · product facts come
-from the manufacturer only, everywhere on the site (THAI_STYLE) — named exceptions only: INFY 20K 20 mL + adjustable airflow (owner's ruling as source) · RELX Creator pod fit
+from the manufacturer only, everywhere on the site (THAI_STYLE) — named exceptions only: ARGUS G4 battery figures + the P3 and i3 facts as they are (owner sheet 12 A + 13 A, 07/10) · INFY 20K 20 mL + adjustable airflow (owner's ruling as source) · RELX Creator pod fit
 Creator 20K + Muro Connector ("ร้านยืนยัน") · Esko Bar Switch 20K shows all 20 of the maker's flavours · "magnetic /
 แม่เหล็ก" only where the maker's own page, poster or manual says so (VOOPOO's unreachable site = the one open question).
 
@@ -213,7 +221,8 @@ Creator 20K + Muro Connector ("ร้านยืนยัน") · Esko Bar Swit
 the caliburn-g5 baseline page's related box ("ไม่รอผล ทำเลย") · Desert Gold / Golden Carbon back views via Higgsfield (stored,
 not on the site) · unclear source = skip.
 
-**Images:** the first photo of a multi-option product = one sharp single device, Caliburn style; other colours/flavours
+**Images:** image theft = handled by #322 (new images need nothing) · a logo over the image = owner "เอาแค่นี้ก่อน", do not
+re-propose · the first photo of a multi-option product = one sharp single device, Caliburn style; other colours/flavours
 by swipe (IMAGE_SPEC §0 item 5) · all-options image ("ทั้งหมด"): pod systems get a NEW one (owner 01/10 evening, design left
 to Friday: plain, luxurious, premium, depth); disposables / pod-replacement products get none (IMAGE_SPEC §0 item 5) ·
 every product gets an SEO article in "more details" = its own later round.
