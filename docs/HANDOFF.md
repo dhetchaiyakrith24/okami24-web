@@ -125,7 +125,7 @@ Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อ�
 ```
 Do not touch unless the round file names it: layout outside the named spot · images (outside an image round) · motion ·
   ordering-mode.ts · slug/URL/sitemap/structured data · service pages · Hero.tsx · cinematic/ · THAI_STYLE group ก ·
-  labelTh/name/shortName · lg:min-h-10 · age/nicotine warnings · colour/flavour names · thai-typography.ts list ·
+  labelTh/name/shortName · lg:min-h-10 · age/nicotine warnings · colour/flavour names · thai-typography.ts list (locked, 13.7) ·
   CategoryLabel.tsx / label-lang · card-headline-spec.ts rules · dictionary catalog.card* / trust.* (set ก) · TrustBar row
   layout / 4 icons · sticky th on /compare · ScrollHintFrame · headings K1–K3 · locked word "อุ่นยาสูบ" · the ban on
   "ไม่เผาไหม้" in every language · FAQ eyebrow "ถาม-ตอบ" · /search eyebrow = footer.tools · THAI_STYLE_LOG §7 rows of
@@ -142,13 +142,17 @@ Test server: `node scripts/test-server.js build` then `start` (port 3412 · SITE
   stop → start · stop = `node scripts/test-server.js stop` (kills only the PID on 3412 · `status`) ·
   port 3000 + `.claude/launch.json` "vapor-dev" = the owner's own dev server, agents never start it · never build while
   the server runs (`test-server.js build` and `verify:catalog --full` refuse; a bare `next build` has no gate) ·
+  a SECOND server (3412 busy with another chat): a worktree with a real copy of node_modules (robocopy ~1 min; a junction
+  cannot build), then `SITE_URL=https://okami24.store npx next build` + `next start -p 3413` with the test-server env
+  (OKAMI24_DATA_DIR=<tmp> · OKAMI24_BACKUP_DISABLED=1 · OKAMI24_STARTUP_PROBE=0; no SITE_URL = build fails at /robots.txt) ·
+  stop it by the PID on 3413 only ·
   Chrome one job at a time · a job over 10 minutes = background + watch the log · a full-page `shot.js` with black
   posters = shoot spot by spot with `--anchor` instead of chasing a page bug · an agent silent past 2x its time budget =
   look at its PID/output files
 Windows shell: scripts are written with the Write tool · Thai text enters scripts through json/txt files only (argv is
   mangled) · shot.js wraps the eval result in JSON twice (parse twice) · CRLF: a new file from Write = LF → unix2dos
   before git add · `scripts/eol-check.js --staged` runs in .githooks/pre-commit (hooks on after a clone:
-  `node scripts/prepare-clone.js`, `docs/RECOVERY.md` 2ค) · .githooks/ files are always LF · Git Bash turns an arg "/"
+  `node scripts/prepare-clone.js`, `docs/RECOVERY.md` 2ค · session-sync resets core.hooksPath to .githooks + warns) · .githooks/ files are always LF · Git Bash turns an arg "/"
   into a path → MSYS_NO_PATHCONV=1 · `node -e "…"` runs backticks as commands and drops `\s` → script files only ·
   never pipe a long-running logger into `| head` (it kills node mid-run) — log to a file, then `tail` · the cloud is Linux (no autocrlf; `test-server.js stop` works there too)
 Tools in scripts/ (usage = each file's head): shot.js · head-audit.js (head/links of every sitemap page) · site-audit.js ·
@@ -156,6 +160,7 @@ Tools in scripts/ (usage = each file's head): shot.js · head-audit.js (head/lin
   overflow-390.js · og-gate.js · gallery-probe.js (touch/swipe every frame, `--sitemap`) · stale-image-audit.js ·
   flatcut.js · card-lines.js + card-lines-diff.js · empty-cards.ts · finder-dump.ts · measure-articles.ts ·
   related-boxes.ts · guide-reading-rate.ts · record-scroll.js + frames-to-gif.js · self-merge-check.js (13.7) ·
+  house-check.js (housekeeping measure: sizes · locks · rules followed · leftovers) · lab/js-weight.js (first-paint JS per page) ·
   poster-stretch.js (story poster/cover/anatomy file width vs drawn width, LESSONS-images พ17)
 src files the skills use (the one list — skills may not name a file under src/, 13.2; fix a renamed file here):
   [i18n-test] `npx tsx src/i18n/i18n-contract-test.ts` · [catalog-method] `src/data/shipnity-seed/README.md` section
@@ -217,7 +222,7 @@ market (e.g. IQOS ILUMA i Bold Ruby, jp.iqos.com only) is listed like every othe
 
 **MOOOD Monster 14K (owner 06/10 night):** Grape N5% / Blueberry N5% keep the real frosted body (A) · flavour list = maker 19 + the
 shop's 2 N5% · "Sugar Apple" as printed · nicotine row 3% · official-site link to the Wayback copy · no story section, 220 chars OK ·
-who-for line: change "รส" → "…ที่มีกลิ่นให้เลือกหลายกลิ่น" (to do).
+who-for line = "…ที่มีกลิ่นให้เลือกหลายกลิ่น" (the edit itself = §16 item 5).
 
 **Selling prices (owner 06/10 night):** the admin's current prices in `รายงานจากแอดมิน แชท/รายงานสินค้า-ราคาไม่ตรง.txt` (17 rows,
 confirmed by the owner 01/10) replace the site's prices.
@@ -293,3 +298,13 @@ morning, the owner confirms before merge · 38 = free models first, no credits (
 **Answered 15/10 (owner, chat):** night runs do not move chats — the app compacts, the run re-reads rules + §16 after each
 compaction (central §12 item 29; routine prompt rewritten) · image provenance in src data / `process-images.map.json` stays
 pointing at `_incoming/` — do not re-point it at the archive to free disk (owner: "ยังไม่ทำตามที่แนะนำ").
+**Answered 15/10 (owner, chat — house audit 3n, `_incoming/house-1510/report.md`):** TEAM_RULES 13.3 gets item 9 (what central
+§8–§9 says to ask + 【แตะได้】 lock prompts) · a colour/flavour the maker has and the site lacks = add it, then report (IMAGE_SPEC §5) ·
+housekeeping may fix dead pointers + exact duplicates, then report; everything else waits for the owner's pick · web image work
+"done" = merged + shots in the report (TEAM_RULES 13.5) · §16 is written before a long task only at the chat-move threshold
+(skill okami24-handoff (ค)) · a method the owner dictates = a goal: object in one line, then the better way ("ทำตามที่สั่ง" = exact,
+13.8) · WEEKLY HOUSEKEEPING: Sunday 20:00 · checks = rules (conflict · duplicate · dead pointer) · sizes vs last week · leftovers ·
+locks on + % rules followed · report = 5-line Thai summary in the task's chat + full file in `_incoming/` · rule-auditor every
+2nd week · never touches central rules · BSOT/prices · the owner's folder · src/ (Friday's pick when the owner did not follow the
+question) · scheduled-task prompt `okami24-stock-sync` = keep · technical choices (locks, scripts, check method) are Friday's —
+never asked (the owner could not follow the lock questions) · central item 13 vs 15 = left as is (the web exception covers it).
