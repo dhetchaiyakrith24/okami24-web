@@ -11,8 +11,8 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #466 a42acc1e (product-page JS, 14/10, deploy
-  38447669781 success, curl 200 + live JS = checked build) · #465 39ffe04d (header/footer JS) · #463 101ea390 (quit guide) [ตรวจแล้ว].
+1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #470 efbfaa80 (guide-copy JS, 14/10 ~17:16; checker
+  PASS 6/6 on 8cd8816c, comment-only 6531c20e after it) · #466 a42acc1e (product-page JS) · #465 39ffe04d (header/footer JS) [ตรวจแล้ว].
   Rollback = revert one PR. Render: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl.
   Night chain OFF (day chat 08/10 turned it off). Site merges open again (owner 10/10 late "Merge ได้ลูกค้าน้อยแล้ว"). Owner decisions: ask in chat + one
   line in `docs/รอพี่ตรวจ.md` · NO review-sheet artifact (§18) · image work goes live after the checker.
@@ -59,8 +59,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     okami24.store" + Enter TWICE (the first one is swallowed), then click the request button that sits next to the new URL.
   - YouTube drafts 8–13 (SEO_LANDSCAPE §4) = the owner pastes them in Studio himself; a renamed clip → update its `title` in guides.ts.
   - [รอเจ้าของ] รอพี่ตรวจ 54 (quit guide H1 "หน่วย|งาน" at 1440).
-  - Next speed work (offered, not started): guides-copy (162 KB) on home/guides/products · PRODUCT_COPY_TH via ProductCard · framer-motion
-    on home (SEO_LANDSCAPE §7 row 8).
+  - Speed work after the round: guides-copy DONE #470 (JS gzip home 353→284 KB · /guides 301→232 · guide 339→271 · product 365→286;
+    server HTML 115/118 = live, hydrated text 30/30 unchanged; `_incoming/seo-f/b4r/` md4 · vt3-diff · js-weight-p3.txt). NEXT, same
+    method (LESSONS 37): PRODUCT_COPY_TH via ProductCard — ProductCard is pulled into client graphs by CatalogBrowser + RelatedProducts
+    (→ ProductRail) + FavoritesList/FinderTool/SearchTool; give it a `taglineTh` prop, server callers pass PRODUCT_COPY_TH[slug]?.tagline
+    (CatalogBrowser + RelatedProducts take a slug→tagline map; the 3 tool components may keep importing the table — their routes load
+    the catalog anyway) · then framer-motion on home (owner-approved hero animations — designer first, it is a look). Measure on the
+    test server, not the live site (รอพี่ตรวจ 39: Render bandwidth is over the free tier) — before = a build of main.
   - Taste note: the charging article's record-level clip sits at the end, not under the overnight section · data round: caliburn-g4-mini
     charging row "~58 min at 2A" unverified · /faq has no in-content links (→ open-system-vs-disposable).
 3e LIVE 09/10 — round "SEO จ — pod" #414 8a22c21e (what-is-a-pod-system article; pod-systems head kept byte-identical — owner
