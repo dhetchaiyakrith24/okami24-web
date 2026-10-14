@@ -303,3 +303,6 @@ never use a Vivid render for them (22) · MURO 3ML boxes at 340×490 = fine for 
 **Answered 12/10 (owner, chat, round 3g):** backup domain = okami-24.com (not .net; canonical stays okami24.store, no 301 between them) ·
 okami-pod.com (old site) = ignore, never touch or propose ("ไม่ต้องสนใจ ทิ้งได้เลย") · GitHub Actions budget $15/month, stop at the limit;
 batch docs edits into one PR per batch (LESSONS 32) · DNS guide health/quit-smoking writing = neutral, foreign official sources (SEO ฉ file).
+**Answered 14/10 (owner, chat, item 55 "ให้ GitHub"):** main's branch protection requires BOTH `copy` and `checks` (set 14/10 by
+Friday: `gh api …/branches/main/protection/required_status_checks` → contexts copy + checks; strict off; admins enforced; no force
+push) — a PR cannot merge before the full build/verify job passes; a docs-only PR still merges because its skipped `checks` counts.
