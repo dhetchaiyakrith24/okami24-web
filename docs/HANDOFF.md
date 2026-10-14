@@ -174,7 +174,8 @@ Windows shell: scripts are written with the Write tool · Thai text enters scrip
   mangled) · shot.js wraps the eval result in JSON twice (parse twice) · CRLF: a new file from Write = LF → unix2dos
   before git add · `scripts/eol-check.js --staged` runs in .githooks/pre-commit (hooks on after a clone:
   `node scripts/prepare-clone.js`, `docs/RECOVERY.md` 2ค) · .githooks/ files are always LF · Git Bash turns an arg "/"
-  into a path → MSYS_NO_PATHCONV=1 · the cloud is Linux (no autocrlf; `test-server.js stop` works there too)
+  into a path → MSYS_NO_PATHCONV=1 · `node -e "…"` runs backticks as commands and drops `\s` → script files only ·
+  never pipe a long-running logger into `| head` (it kills node mid-run) — log to a file, then `tail` · the cloud is Linux (no autocrlf; `test-server.js stop` works there too)
 Tools in scripts/ (usage = each file's head): shot.js · head-audit.js (head/links of every sitemap page) · site-audit.js ·
   scan.js · locale-hydration-scan.js · visible-text.js · wordbreak-scan.js + wb-diff.js · linemap-scan.js · html-diff.js ·
   overflow-390.js · og-gate.js · gallery-probe.js (touch/swipe every frame, `--sitemap`) · stale-image-audit.js ·
@@ -185,7 +186,8 @@ src files the skills use (the one list — skills may not name a file under src/
   [i18n-test] `npx tsx src/i18n/i18n-contract-test.ts` · [catalog-method] `src/data/shipnity-seed/README.md` section
   "Catalog reconciliation methodology" · [legacy-products] `src/data/products/*.ts` · [taxonomy]
   `src/data/shipnity-seed/active-catalog-to-product-master.ts` (`TAXONOMY_MATCHES`) · [spec-gate]
-  `src/lib/verified-specs.ts` + `src/lib/verified-specs-contract-test.ts`
+  `src/lib/verified-specs.ts` + `src/lib/verified-specs-contract-test.ts` · [approvals]
+  `src/data/shipnity-seed/publication-approvals.ts` · [active-catalog] `src/data/shipnity-seed/active-catalog-source.ts`
 Verify: which set = 13.5 · the full list with commands = skill `round-close` step 3 · pass = what each script prints ·
   the last full-set counts = §16 item 6
 Git: commit message English, prefix feat/fix/copy/data/docs/chore/agents/rules · Thai text via `git commit -F <file>` ·
