@@ -43,7 +43,7 @@ file — they come from the run.
   Chrome or font update makes a whole site of fake changes; it does not hide a real one, it drowns it); (3) that
   folder's `scan.log` has no `FAIL` line. Say in the report which folder was reused. Reuse skips the before SCAN only:
   build the base for "before" shots (step 4) only when `shots-before.txt` is not empty.
-- **Before** = the round's base commit (the commit its `pre-…` tag names on the computer; in the cloud, the main commit
+- **Before** = the round's base commit (origin/main when the round opened — `round-open`; in the cloud, the main commit
   the round record `docs/cloud-results/<round>.md` names as base), or the batch's base for a
   batch proof — not "whatever is live": if earlier rounds are still unmerged, live is not the base and
   their work would show up as unexplained changes.

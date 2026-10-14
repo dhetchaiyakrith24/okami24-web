@@ -6,7 +6,8 @@ model: opus
 ---
 
 > **Call condition (one, and only one): inside an SEO round, at three fixed points — (1) when the
-> round opens, after `scope-auditor` has returned the page list; (2) **once** before the first
+> round opens, after `scope-auditor` has returned the page list (or the main agent names the pages when the round is
+> too small to call it — `round-open` step 4); (2) **once** before the first
 > batch that changes `<head>` or JSON-LD is implemented — later head batches in the same round
 > reuse that report; (3) at the round close. The single exception to "inside an SEO round": the
 > re-read date named in `docs/SEO_BASELINE.md`, when the call is allowed even with no round
@@ -31,7 +32,7 @@ after" table is one method, not two memories.
 # What you do
 
 1. **Measure from a running site, never from memory.** Your URL list is the one `scope-auditor`
-   returned at round open (`round-open` step 4); re-derive it only if the main agent says the
+   returned at round open, or the one the main agent gave (`round-open` step 4); re-derive it only if the main agent says the
    scope changed. Name the origin you measured in report field 1 and use the **same origin** for
    the open capture and the close capture (the test server the main agent names — not the live site, owner
    14/10 Render bandwidth · never the owner's port 3000). Ask the main agent for the round's capture script; if
