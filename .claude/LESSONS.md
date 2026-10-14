@@ -721,10 +721,11 @@ JS gzip −33…−48% · LCP −1.1…−1.8 วิ · พิสูจน์ "�
 **ใช้ซ้ำเมื่อไหร่:** ทุกครั้งที่สร้างหรือแก้ Client Component (`"use client"`) — ห้าม import ตาราง/ข้อมูลทั้งชุดเป็นค่า ให้หน้าเซิร์ฟเวอร์ส่งชิ้นของหน้านั้นมา ·
 งานความเร็วถัดไปเริ่มจาก `js-weight.js` + ค้นข้อความเด่นใน chunk ที่ใหญ่สุด ไม่เดาจากโค้ด
 
-## 38. สั่ง `gh pr merge` ตอนด่านของ commit หัวยังรัน = GitHub เปิด merge อัตโนมัติให้เอง (exit 8) — #470 merge เองหลังด่านผ่าน 3 วิ (14/10)
+## 38. สั่ง `gh pr merge` ตอนด่านของ commit หัวยังรัน = GitHub ตั้ง merge อัตโนมัติ แล้ว merge ทันทีที่ด่าน "บังคับ" ผ่าน — ซึ่งบังคับแค่ `copy` (#470 · 14/10)
 
-แก้คอมเมนต์หลัง checker ผ่าน → push → ลูปรอด่านอ่านผลของ commit ก่อนหน้า (ยังขึ้น pass) จึงสั่ง merge ทันที → ถูกปฏิเสธ แล้ว Friday
-สั่งซ้ำเพื่อดู error → คำสั่งนั้นจบด้วย exit 8 และ GitHub ตั้ง auto-merge ไว้ให้ → merge เองตอนด่านผ่าน · เงื่อนไขครบ (checker ผ่าน · ด่านเขียว ·
-commit หัวตรึงตรง) แต่ผิดกติกา "ไม่เปิด auto-merge เว้นเจ้าของสั่ง" และ 13.7 "ด่านยังรัน = ยังไม่ผ่าน"
-**ใช้ซ้ำเมื่อไหร่:** ทุกครั้งหลัง push commit ใหม่เข้า PR — รอด่านด้วย `gh run list --branch <branch> --json headSha,status` ให้ headSha ตรงกับ commit หัว
-และ status = completed ก่อน · เห็น `pending` = ห้ามสั่ง `gh pr merge` เลย (แม้แค่ "ลองดู error")
+แก้คอมเมนต์หลัง checker ผ่าน → push → ลูปรอด่านอ่านผลของ commit ก่อนหน้า (ยังขึ้น pass) → สั่ง merge ถูกปฏิเสธ → สั่งซ้ำเพื่อดู error
+(exit 8) → PR merge 10:16:10Z ทั้งที่ job `checks` (build + verify เต็ม) ของ commit หัวเพิ่งเริ่ม 10:16:11Z และผ่านตอน 10:18:52Z · ที่ merge ได้เพราะ
+branch protection ของ main บังคับแค่ด่าน `copy` (`gh api …/branches/main/protection/required_status_checks` → `["copy"]`) · ผลจริงไม่เสียหาย
+(`checks` ผ่านทีหลัง · deploy บน main รันด่านเต็มก่อนขึ้นเว็บ) แต่ผิด 13.7 "ยังรัน = ยังไม่ผ่าน" และ "ไม่เปิด auto-merge เว้นเจ้าของสั่ง"
+**ใช้ซ้ำเมื่อไหร่:** ทุกครั้งหลัง push commit ใหม่เข้า PR — รอด้วย `gh run list --branch <branch> --json headSha,status,conclusion` จน run ของ
+commit หัว = completed + success (ดูทุก job ใน `gh run view <id> --json jobs`) ก่อนสั่ง merge · เห็น pending = ห้ามสั่ง `gh pr merge` แม้แค่ "ลองดู error"
