@@ -720,3 +720,12 @@ JS gzip −33…−48% · LCP −1.1…−1.8 วิ · พิสูจน์ "�
 วันที่ "อัปเดต" ของหน้ารวมบทความ (content-dates) → ส่ง id เป็น prop แทน และไฟล์ data/i18n ที่อยู่ใน `src/lib/content-dates.ts` อย่าแตะในงานโค้ด
 **ใช้ซ้ำเมื่อไหร่:** ทุกครั้งที่สร้างหรือแก้ Client Component (`"use client"`) — ห้าม import ตาราง/ข้อมูลทั้งชุดเป็นค่า ให้หน้าเซิร์ฟเวอร์ส่งชิ้นของหน้านั้นมา ·
 งานความเร็วถัดไปเริ่มจาก `js-weight.js` + ค้นข้อความเด่นใน chunk ที่ใหญ่สุด ไม่เดาจากโค้ด
+
+## 38. สั่ง `gh pr merge` ตอนด่านของ commit หัวยังรัน = GitHub ตั้ง merge อัตโนมัติ แล้ว merge ทันทีที่ด่าน "บังคับ" ผ่าน — ซึ่งบังคับแค่ `copy` (#470 · 14/10)
+
+แก้คอมเมนต์หลัง checker ผ่าน → push → ลูปรอด่านอ่านผลของ commit ก่อนหน้า (ยังขึ้น pass) → สั่ง merge ถูกปฏิเสธ → สั่งซ้ำเพื่อดู error
+(exit 8) → PR merge 10:16:10Z ทั้งที่ job `checks` (build + verify เต็ม) ของ commit หัวเพิ่งเริ่ม 10:16:11Z และผ่านตอน 10:18:52Z · ที่ merge ได้เพราะ
+branch protection ของ main บังคับแค่ด่าน `copy` (`gh api …/branches/main/protection/required_status_checks` → `["copy"]`) · ผลจริงไม่เสียหาย
+(`checks` ผ่านทีหลัง · deploy บน main รันด่านเต็มก่อนขึ้นเว็บ) แต่ผิด 13.7 "ยังรัน = ยังไม่ผ่าน" และ "ไม่เปิด auto-merge เว้นเจ้าของสั่ง"
+**ใช้ซ้ำเมื่อไหร่:** ทุกครั้งหลัง push commit ใหม่เข้า PR — รอด้วย `gh run list --branch <branch> --json headSha,status,conclusion` จน run ของ
+commit หัว = completed + success (ดูทุก job ใน `gh run view <id> --json jobs`) ก่อนสั่ง merge · เห็น pending = ห้ามสั่ง `gh pr merge` แม้แค่ "ลองดู error"
