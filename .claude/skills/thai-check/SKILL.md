@@ -1,6 +1,6 @@
 ---
 name: thai-check
-description: Gate every change to copy shown on the OKami24 site before it is committed — Thai, English or Chinese, in dictionaries, product data, page components, head/meta or JSON-LD. Use it on every batch that touches site text, and when the checker needs the Thai-copy gates (the checker reads this file directly). It runs the English-leak scan across the sitemap, the raw-invisible-character scan, the forbidden-word grep, the head/JSON-LD and en/zh checks, and applies the copy principles (unverifiable = unsaid, no health/price/guarantee claims, numbers need a verified spec row, no negation left where a line break flips the meaning, product facts from the manufacturer only). It points at the locked-word and permanent-exception tables in THAI_STYLE instead of copying them.
+description: Gate every change to copy shown on the OKami24 site before it is committed — Thai, English or Chinese, in dictionaries, product data, page components, head/meta or JSON-LD. Use it on every batch that touches site text, and when the checker needs the Thai-copy gates (the checker reads this file directly). It runs the English-leak scan (the touched pages + the pages that show that text; the whole sitemap only for a part every page shares — TEAM_RULES 13.5), the raw-invisible-character scan, the forbidden-word grep, the head/JSON-LD and en/zh checks, and applies the copy principles (unverifiable = unsaid, no health/price/guarantee claims, numbers need a verified spec row, no negation left where a line break flips the meaning, product facts from the manufacturer only). It points at the locked-word and permanent-exception tables in THAI_STYLE instead of copying them.
 ---
 
 # Thai copy check
@@ -28,12 +28,14 @@ a file under `_incoming/<round>/` and the path is cited in field 4 of its report
 ## Gates (all must pass; the script decides, not the reader)
 
 1. **English sentence leak on the Thai site — `node scripts/scan.js`** against the running test
-   server (how to build and start it: `docs/HANDOFF.md` §17). It walks **every URL in the
-   sitemap** and flags visible text runs that read as an English sentence to a Thai visitor;
-   what counts as a flag, what is skipped (`lang="en"` elements, brand slogans) and the extra
-   allow-list flag are defined in the script's own header comment — do not restate them.
-   **Pass = zero flagged runs across every page in the sitemap** (the script prints `0/<pages>`
-   and exits non-zero otherwise). If anything is flagged: report every text with its page —
+   server (how to build and start it: `docs/HANDOFF.md` §17). Pages: `--pages "<paths>"` = the
+   touched pages + the pages that show that text (brand · category · `/products` · home);
+   without `--pages` it walks every URL in the sitemap — only for a part every page shares
+   (TEAM_RULES 13.5 #2 (ข) and #5). It flags visible text runs that read as an English sentence to
+   a Thai visitor; what counts as a flag, what is skipped (`lang="en"` elements, brand slogans) and
+   the extra allow-list flag are defined in the script's own header comment — do not restate them.
+   **Pass = zero flagged runs and zero unreadable pages** (the script prints `PASS 0/<pages>`
+   and exits non-zero otherwise · Git Bash: `MSYS_NO_PATHCONV=1` or the paths get rewritten). If anything is flagged: report every text with its page —
    never assume a flag is intentional. A brand name, model name, category name or slogan that
    gets flagged means the script is wrong: report that separately, do not allow-list it silently.
 
@@ -49,10 +51,10 @@ a file under `_incoming/<round>/` and the path is cited in field 4 of its report
    from memory; a second mechanism file appearing, including the deleted predecessor that section
    records, = fail). What the mechanism glues (space before ๆ, number–unit, the two-word model
    names, the owner's word-joiner exceptions bound to specific sentences) is listed in that
-   section; **adding any item to it = owner's ruling only**. Title, meta, Open Graph, JSON-LD and
+   section; adding an item = the file is locked (TEAM_RULES 13.7 【แตะได้】 — `scripts/guard-tool.js` asks the owner). Title, meta, Open Graph, JSON-LD and
    the en/zh locales read the raw strings: every page's `<head>` and JSON-LD must contain **0**
    of the two characters, and en/zh after hydration must contain **0** Thai text nodes —
-   checked with `scripts/shot.js` using the locale cookie plus an eval (curl cannot: SSR always
+   checked with `scripts/locale-hydration-scan.js` on the touched pages (curl cannot: SSR always
    renders Thai). The `/about` compliance sentence is the one `within` exception and is not to be
    reused elsewhere (THAI_STYLE "กลุ่ม ก" row + the mechanism section).
 

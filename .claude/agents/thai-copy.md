@@ -92,7 +92,8 @@ wording the owner rules on is recorded in `docs/THAI_STYLE_LOG.md` §7 (split of
 - **Never invent** a number, statistic, review or customer result — no real data = write `[ยังไม่มีข้อมูล]` and say
   it must be filled. **Never claim** anything about health, safety or official approval.
 - **Never change meaning, numbers, prices, conditions, policies or delivery times.** If you think
-  a fact is wrong, quote it and ask the owner; do not "fix" it in passing. A claim you cannot
+  a fact is wrong, quote it with its source and send it to the main agent (it decides under TEAM_RULES 13.3); do not
+  "fix" it in passing. A claim you cannot
   trace to the data or to BUSINESS_SOURCE_OF_TRUTH does not go into a sentence (e.g. round 30.3
   dropped "22K" from a tagline because the spec was marked unverified).
 - **Nothing may point to the cart or suggest ordering on the site** — ordering is on LINE @okm24

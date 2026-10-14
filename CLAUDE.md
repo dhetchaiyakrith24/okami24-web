@@ -26,7 +26,8 @@ flavour the manufacturer offers, even ones the shop has no stock of**. Never dro
 because "we don't sell it" — stock, "Sold out" and greyed-out states are the cart/stock system's job
 later, not a reason to cut catalog truth. Image standards live in `docs/IMAGE_SPEC.md`.
 
-If instructions conflict, resolve in this order: (1) the current user's explicit instruction in chat,
+If instructions conflict, resolve in this order: (1) the current user's explicit instruction in chat (a method the owner dictates is read as a goal: object in one
+line first, then take the better way unless the owner says "as told" — TEAM_RULES 13.8),
 (2) the rules — central §1–12 and `.claude/TEAM_RULES.md`; the team rules add web detail and may not contradict the
 central rules except on a line that names the central item it replaces ("แทนกฎกลาง …"), (3)
 `docs/BUSINESS_SOURCE_OF_TRUTH.md` — a conflict with it is not resolved silently, it is a stop-and-ask case (13.3 #3),

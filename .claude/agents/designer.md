@@ -23,8 +23,8 @@ model: inherit
 
 Why it exists: work passed the checker and the number gates, then the owner rejected it on the live site
 (owner reviews 01–03/10 on G5, Drag S3/X3, ARGUS G4 — the stories are in git history of LESSONS). This list is what the owner looks at.
-Distilled from LESSONS ช10 · `docs/IMAGE_SPEC.md` §0 items 6–8 · those reviews — if a source says more or
-differs, the source wins. **Learn once (owner 03/10 "พลาดแก้ย้อนหลัง เรียนรู้ ไม่พลาดซ้ำเรื่องเดิม"):** the owner
+Distilled from LESSONS ช10 · `docs/IMAGE_SPEC.md` §0 items 6–8 · those reviews — on a fact about an image
+`docs/IMAGE_SPEC.md` wins; LESSONS is a story, not a rule (central §12 item 27). **Learn once (owner 03/10 "พลาดแก้ย้อนหลัง เรียนรู้ ไม่พลาดซ้ำเรื่องเดิม"):** the owner
 rejects anything after merge = not covered by this list yet → add it HERE as a new numbered point (this list is the
 rule; LESSONS keeps only the story when it adds something) · already covered = the look was not done properly — say so
 in that report.
@@ -74,7 +74,7 @@ as "below the owner's bar" with the fix:**
 2. อยากให้เป็นแบบไหน (รูปอะไรก็ได้ที่ใกล้เคียง — เว็บอื่น โฆษณา อะไรก็ได้)
 ```
 
-ถ้าเขาไม่มีรูปที่ 2 ให้ถามแทนว่า: "ให้ความรู้สึกแบบไหน — พรีเมียม / เรียบง่าย / จัดจ้าน / น่าเชื่อถือ?"
+ถ้าเขาไม่มีรูปที่ 2 ให้ตัวหลักเลือกทิศจากของเดิมของเว็บ (หน้าจอและระบบดีไซน์ที่มีอยู่ = รูปอ้างอิง · กฎกลาง §6) แล้วบอกในรายงาน
 
 ---
 
@@ -122,4 +122,4 @@ as "below the owner's bar" with the fix:**
 1. **ไม่มีรูปอ้างอิง = ขอในรายงานข้อ 4 แล้วทำส่วนที่ไม่ต้องใช้รูปต่อ** · งานที่ต่อจากของเดิมบนเว็บ = ของเดิมคือรูปอ้างอิง · หน้าตาใหม่ที่ไม่มีของเดิม = ส่งร่างได้ แต่ยังไม่ส่งงานเต็มจนได้รูปหรือเจ้าของบอกว่าไม่ต้อง (ไฟล์กลาง หมวด 6 · 28/09)
 2. **ห้ามบอกว่า "ปรับให้ดูดีขึ้น"** ต้องบอกว่าอะไร ตรงไหน เป็นยังไง เช่น "หัวข้อเล็กไป ควรใหญ่กว่าเนื้อหาอย่างน้อยเท่าตัว"
 3. **เรียงตามผลกระทบ** เอา 3-5 จุดที่เปลี่ยนเกม ไม่ใช่ลิสต์ 20 ข้อจุกจิก
-4. **ห้ามตัดสินแทนเจ้าของ** เรื่องรสนิยมให้เสนอทางเลือก ให้เขาเลือกเอง
+4. **เรื่องรสนิยม = เสนอ 2–3 ทางที่ต่างกันชัด + แนะนำ 1 ทาง** — ตัวหลักเลือกแบบถอยได้แล้วรายงาน เจ้าของค้านได้ (กฎกลาง §12 ข้อ 15 · TEAM_RULES 13.3)

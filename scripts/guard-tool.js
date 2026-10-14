@@ -5,7 +5,8 @@
 //   A  never kill node by image name (it also kills the owner's own dev server) — stop the test server with
 //      `node scripts/test-server.js stop`                                                        → deny
 //   B  never force push, never push straight to main (the way into main is a merge)              → deny
-//   C  render.yaml · .env* · src/lib/commerce/ordering-mode.ts (the cart switch) change only when a line of
+//   C  render.yaml · .env* · src/lib/commerce/ordering-mode.ts (the cart switch) · src/lib/thai-typography.ts (the Thai
+//      line-break word list — THAI_STYLE §5, owner 15/10) change only when a line of
 //      the open round file that starts with 【แตะได้】 names the path (the plan = the permission, no tickets); otherwise the
 //      normal permission prompt asks the owner                                                   → allow / ask
 //
@@ -17,11 +18,11 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..");
-const LOCKED = [/(^|[\\/])render\.yaml$/i, /(^|[\\/])\.env[^\\/]*$/i, /(^|[\\/])ordering-mode\.ts$/i];
+const LOCKED = [/(^|[\\/])render\.yaml$/i, /(^|[\\/])\.env[^\\/]*$/i, /(^|[\\/])ordering-mode\.ts$/i, /(^|[\\/])thai-typography\.ts$/i];
 // C in a shell command: the locked file must be the TARGET of a write (owner 01/10: a commit message that merely
 // mentions render.yaml must not trip it). Text is judged after heredoc bodies, here-strings and quoted strings holding
 // spaces (messages) are blanked; a quoted path without spaces stays.
-const NAME = String.raw`["']?[^\s;|&<>"']*(?:render\.yaml|\.env(?:\.[\w.-]+)?|ordering-mode\.ts)(?![\w.-])`;
+const NAME = String.raw`["']?[^\s;|&<>"']*(?:render\.yaml|\.env(?:\.[\w.-]+)?|ordering-mode\.ts|thai-typography\.ts)(?![\w.-])`;
 const ARGS = String.raw`[^;|&\n]*\s`;
 const WRITE_TARGETS = [
   new RegExp(String.raw`>[>|]?\s*` + NAME, "i"), // > file · >> file · >| file
@@ -60,7 +61,7 @@ function openRoundText() {
     const h = fs.readFileSync(path.join(ROOT, "docs", "HANDOFF.md"), "utf8");
     const s16 = h.slice(h.indexOf("## 16."), h.indexOf("## 17.") > 0 ? h.indexOf("## 17.") : undefined);
     const lines = s16.split(/\r?\n/);
-    const open = lines.findIndex((l) => /^\s*3\s+OPEN\b/.test(l));
+    const open = lines.findIndex((l) => /^\s*3[a-z]?\s+OPEN\b/.test(l)); // "3 OPEN …" or a lettered item "3u OPEN ROUND …"
     if (open < 0) return "";
     const m = lines.slice(open, open + 3).join(" ").match(/docs\/rounds\/[^`\s]+/);
     return m ? fs.readFileSync(path.join(ROOT, m[0]), "utf8") : "";
@@ -83,7 +84,7 @@ function allowedByRound(name) {
     });
 }
 function lockedDecision(what) {
-  const name = what.replace(/\\/g, "/").split("/").pop().replace(/["'`]/g, "").match(/render\.yaml|ordering-mode\.ts|\.env[\w.-]*/i)[0];
+  const name = what.replace(/\\/g, "/").split("/").pop().replace(/["'`]/g, "").match(/render\.yaml|ordering-mode\.ts|thai-typography\.ts|\.env[\w.-]*/i)[0];
   if (allowedByRound(name)) return;
   decide("ask", `${name} is locked (TEAM_RULES 13.7 · owner 01/10): no 【แตะได้】 line of the open round's instruction file names it — ask the owner (or Javis) to add one to the round file; never add it yourself.`);
 }

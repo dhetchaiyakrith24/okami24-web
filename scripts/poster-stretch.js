@@ -10,7 +10,7 @@
 // name starts with story- or sits in anatomy/), it reads the width the page draws it at 1440 (desktop, counted at 2x)
 // and at 390 (phone, counted at 3x), then the pixel width of the source file in public/. need = the larger of
 // (css width x DPR) / file width. need > --max (default 1.3) = FAIL: find a larger maker file or show it smaller —
-// never enlarge a file with text in it by AI without the letter-by-letter check (LESSONS พ12).
+// never enlarge a file with text in it by AI without the letter-by-letter check (designer.md Owner eye · LESSONS-images พ17).
 // Uses scripts/shot.js (--eval) for the page measurement, so it needs Chrome like every other screenshot here.
 const { execFileSync } = require("child_process");
 const fs = require("fs");

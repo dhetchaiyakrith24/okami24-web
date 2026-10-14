@@ -14,6 +14,7 @@
 //                this checkout, or rounds/ on origin/inbox) must be the same text — a difference = warning.
 //   5 cloud      CLAUDE_CODE_REMOTE=true → then runs `prepare-clone.js --session-start` (after the fetch, never beside it:
 //                two git fetches at once fight over the ref lock).
+//   6 hooks      core.hooksPath must be .githooks (the commit/push locks) — anything else = reset it + warn (15/10).
 // Output = the hook JSON: `systemMessage` = one Thai line the owner sees · `additionalContext` = the English lines for
 // Friday. Always exits 0 (a SessionStart hook cannot stop a chat; the warning is the stop sign — central §1).
 "use strict";
@@ -157,13 +158,24 @@ if (CLOUD && !DRY) {
   ctx.push(`${p.stdout || ""}${p.stderr || ""}`.trim() || "prepare-clone: no output");
 }
 
-const ok = warn.length === 0;
+// 6 git hooks — the commit/push locks (.githooks: line endings · large files · no force push · no push to main) run only
+// when core.hooksPath = .githooks. 15/10 it was found set to "nul" (cause unknown) with the locks silently off for days
+// (house audit 3n) → put it back and say so every time it happens (TEAM_RULES 13.7).
+const lockWarn = [];
+const hp = git("config", "core.hooksPath").out;
+if (hp !== ".githooks") {
+  const fixed = !DRY && git("config", "core.hooksPath", ".githooks").ok;
+  lockWarn.push(`ตัวล็อก git ถูกปิด (core.hooksPath = "${hp || "ไม่ได้ตั้ง"}")${fixed ? " — Friday เปิดกลับแล้ว" : " — ยังไม่ได้เปิดกลับ"}`);
+  ctx.push(`GIT HOOKS WERE OFF: core.hooksPath = "${hp}" ${fixed ? "→ reset to .githooks" : "(not reset)"} — tell the owner; something turned them off.`);
+}
+
+const ok = warn.length === 0 && lockWarn.length === 0;
 const systemMessage = ok
   ? upd
     ? `อัปเดตจาก GitHub แล้ว ✓ (${branch} ${upd.from} → ${upd.to} · ${upd.n} commit)${reread.length ? " — กฎมีเปลี่ยน Friday อ่านใหม่ก่อนเริ่ม" : ""}`
     : `คอมตรงกับ GitHub ✓ (${branch} ${short("HEAD")})`
-  : `⚠ คอมยังไม่ตรงกับ GitHub: ${warn.join(" · ")} — Friday จะบอกก่อนเริ่มงาน`;
-if (!ok) ctx.unshift("STOP SIGN — tell the owner in Thai, first line of your first reply, before any work: " + warn.join(" · "));
+  : `⚠ ${[warn.length ? `คอมยังไม่ตรงกับ GitHub: ${warn.join(" · ")}` : "", ...lockWarn].filter(Boolean).join(" · ")} — Friday จะบอกก่อนเริ่มงาน`;
+if (!ok) ctx.unshift("STOP SIGN — tell the owner in Thai, first line of your first reply, before any work: " + [...warn, ...lockWarn].join(" · "));
 process.stdout.write(
   JSON.stringify({
     systemMessage,

@@ -1,6 +1,6 @@
 ---
 name: round-open
-description: Open a work round for the OKami24 site — any round, whatever its name (SEO, articles, data, cart, housekeeping, or one that does not exist yet). Use it every time the owner opens a round by attaching a round instruction file, before touching any file. It sequences what to read, how to confirm the repo state against the instruction file, the scope-auditor call (rounds that touch the site; again only if the scope grows), splitting the round into batches with their tier A/B, and writing the "round open" state into the handoff block. Also use it when a new chat continues an already-open round (skip the scope-auditor call in that case).
+description: Open a work round for the OKami24 site — any round, whatever its name (SEO, articles, data, cart, housekeeping, or one that does not exist yet). Use it every time the owner opens a round by attaching a round instruction file, before touching any file. It sequences what to read, how to confirm the repo state against the instruction file, the scope-auditor call (rounds that touch a part every page shares or more than 3 pages — TEAM_RULES 13.2; again only if the scope grows), splitting the round into batches with their tier A/B, and writing the "round open" state into the handoff block. Also use it when a new chat continues an already-open round (skip the scope-auditor call in that case).
 ---
 
 # Round open
@@ -14,7 +14,8 @@ a round already open = Step 1 + Step 2, then Step 5, continuing from the batch �
 ## Step 1 — Read first (the one "read first" list)
 
 Always:
-- `docs/HANDOFF.md` **§16** (state) — and §18 (permanent owner rulings) only when a decision touches one.
+- `docs/HANDOFF.md` **§16** (state) — and before ANY question to the owner, search its topic in §18 + `docs/THAI_STYLE.md` +
+  `docs/BUSINESS_SOURCE_OF_TRUTH.md` first (a settled ruling is never asked again — central §12 item 17).
 - The round instruction file. Git is its master (`docs/rounds/README.md`): copy it into `docs/rounds/` at open (computer:
   the attached file · cloud: branch `inbox`) and commit it with the round's first docs commit; a copy that differs from
   the one attached = say so.
@@ -59,7 +60,7 @@ for every batch. Scope grows mid-round = call it again for the new part (a chang
 ## Step 5 — Batches, then start
 
 Split the goal into checkable batches, each with "how we know it is done" and its tier (A = text only · B = structure
-or screen · not sure = B — 13.5). Big by central §12 item 12 = plan first (`planner` optional, 13.1 #3; ≤7 steps = central §12 item 12). Tell the owner
+or screen · not sure = B — 13.5). Big by central §12 item 12 = plan first (13.1 #3; ≤7 steps = central §12 item 12). Tell the owner
 3–5 lines of what in what order and **start**. Helper files → `_incoming/<round>/` or `scripts/`.
 
 Write the round into `docs/HANDOFF.md` §16 item 3 (instruction file · batches with tiers · where it stopped — spec:
