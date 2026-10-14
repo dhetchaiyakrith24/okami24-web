@@ -43,6 +43,19 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   rewritten 15/10 with the owner's approval in chat: no stop at 600–700K, the app compacts, re-read rules + §16 after each.
   Not done: scan.js page-list option (approved item 3) · THAI_STYLE §6 open items + history columns · locks L1–L3, L5–L10 of
   `rule-audit.md` (proposal: one "pre-checker gate" script, own round).
+3n NEXT CHAT = owner 15/10 (chat, Thai) — the other web side is editing the central rules meanwhile; READ-ONLY audit first,
+  report in Thai, then act only on what the owner picks. Owner's intent (unchanged): Friday is not tied by the hands —
+  think, analyse, design at full strength, build on what we made together (123 → 456) · never guess: guessing = ask.
+  Answer, with numbers taken from files/commands (central §12 item 9):
+  (1) does our workflow really run as written — what % (rule by rule: followed / bypassed / dead, from git log + PRs + chats);
+  (2) do rules · guides · docs · files contradict each other, are they messy, bigger than needed (sizes now: rules loaded
+      every chat 36,919 chars · HANDOFF 29,348 · §16 ~11 KB · LESSONS 78,681 + LESSONS-images 52,011 bytes — `house-check`);
+  (3) from Friday's own view since we started: what to cut / add / change;
+  (4) every skill + agent (count them), was each really used (git log / chats), cut / merge / add which;
+  (5) why work got slow lately — where it sticks: duplicate checks, waits, builds, agent calls (measure, don't guess).
+  Plus clear the housekeeping leftovers (line above + `house-check` "files nobody references") [เชื่อว่า — Friday's reading of
+  "ระหว่างนี้เราเคลียเรื่องของตกค้างในรอบเก็บบ้าน"; confirm with the owner in the first reply].
+  Tools: skill house-clean · rule-auditor (one call) · `node scripts/house-check.js` · evidence `_incoming/house-clean-1410/`.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
