@@ -273,4 +273,4 @@ bandwidth over the free tier; TEAM_RULES 13.5 head) · 54 = "1" lock "หน่�
 morning, the owner confirms before merge · 38 = free models first, no credits (unchanged).
 **Answered 15/10 (owner, chat):** night runs do not move chats — the app compacts, the run re-reads rules + §16 after each
 compaction (central §12 item 29; routine prompt rewritten) · image provenance in src data / `process-images.map.json` stays
-pointing at `_incoming/` — do not re-point it at the archive to free disk (not now; the PC has room).
+pointing at `_incoming/` — do not re-point it at the archive to free disk (owner: "ยังไม่ทำตามที่แนะนำ").
