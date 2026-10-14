@@ -138,7 +138,8 @@ const JOINED: ReadonlyArray<{ word: string; within: string; joined: string }> = 
 // Round 10B (owner ruling 2026-09-24, question 3 ก): "กะพริบ" "ผู้ผลิต" "จอทัช" "กี่วัน" added — the round-10B article
 // scan split each of them ("ไฟกะ | พริบ", "ผู้ | ผลิต", "จอ | ทัช", "กี่ | วัน"). "จอทัช" keeps its older JOINED entry too
 // (harmless: that sentence is joined first, then this entry finds nothing left to join there).
-const NEVER_SPLIT: ReadonlyArray<{ word: string; joined: string }> = ["หัวพอต", "ตัวเครื่อง", "ใช้แล้วทิ้ง", "ยังไม่ยืนยัน", "ชาร์จซ้ำ", "กะพริบ", "ผู้ผลิต", "จอทัช", "กี่วัน"].map(
+// Owner 14/10 (sheet item 54, "1"): "หน่วยงาน" added — the quit-smoking guide H1 broke "หน่วย | งาน" at 1440; title unchanged.
+const NEVER_SPLIT: ReadonlyArray<{ word: string; joined: string }> = ["หัวพอต", "ตัวเครื่อง", "ใช้แล้วทิ้ง", "ยังไม่ยืนยัน", "ชาร์จซ้ำ", "กะพริบ", "ผู้ผลิต", "จอทัช", "กี่วัน", "หน่วยงาน"].map(
   (word) => ({ word, joined: joinWord(word) })
 );
 // Round 10B (same ruling): "USB-C" broke after its hyphen ("USB- | C", 390). The joiner after the hyphen becomes a
