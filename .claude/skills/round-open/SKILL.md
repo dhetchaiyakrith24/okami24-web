@@ -46,7 +46,7 @@ Objections only, max 5 items, each passing the test *if I do not say this, the w
 - **real bans** of this round, one line each, only where obeying them changes what gets built;
 - **method prescribed without need** — say the way you will take and why (central §12 item 16), then start without
   waiting (13.1 #4);
-- **ambiguous wording** that sends the work two different ways = a change of direction (13.3 #4) — ask as one set with a recommendation (central §12 item 13), keep
+- **ambiguous wording** that sends the work two different ways = 13.3 #8 — ask as one set with a recommendation (central §12 item 13), keep
   working on what it does not block.
 Nothing to object to = `ไม่เห็นจุดเสี่ยง — คำสั่งชัด เริ่มได้เลย`. Never restate the instruction.
 
