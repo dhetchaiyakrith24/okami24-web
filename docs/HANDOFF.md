@@ -95,6 +95,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     graphic" (owner 04/10, later).
   - Data round: caliburn-g4-mini "~58 min at 2A" unverified · "หัวพอตใส" on m-bar-15k · esko card "20 รสชาติ" · coil-94 Thai
     Shipnity name on en/zh pages that link it + coil-72 "VOOPOO คอยล์ Vmate Infinity Edition" on vmate-i3 en/zh and its retailer
+    sentence + the 2 sentences still citing a retailer page (VMATE i3 · Caliburn X, compat copy — from THAI_STYLE 15/10) ·
     evidence sentence · search "Sugus" alias · MOOOD who-for line → "…ที่มีกลิ่นให้เลือกหลายกลิ่น" (§18) · INFY 20K "explain the
     absence" FAQ (cut at the page's next touch, §18 06/10 pm) · nexBAR 18K counts 31 flavours, shows 20.
   - Site, own tasks: home en/zh 16 Thai nodes · the owner may send a Mac screenshot (DNS round 3g) · /faq has no in-content links (→ open-system-vs-disposable) · pod-kits →

@@ -113,7 +113,7 @@ async function main() {
     let html;
     try {
       const res = await fetch(base + u);
-      if (!res.ok) { unread++; console.log(`${u}\tHTTP ${res.status}`); continue; }
+      if (!res.ok) { unread++; console.log(`${u}\tHTTP ${res.status}`); await res.body?.cancel(); continue; } // drain: an unread body crashes node on exit (Windows)
       html = await res.text();
     } catch (e) { unread++; console.log(`${u}\tFETCH FAILED ${e.message}`); continue; }
     const hits = scanHtml(html);
@@ -140,7 +140,7 @@ async function main() {
   console.log("");
   if (unread) console.log(`unreadable pages: ${unread} (not scanned = not passed)`);
   console.log(flaggedPages === 0 && !unread ? `PASS 0/${urls.length}` : `FAIL ${flaggedPages}/${urls.length}${unread ? ` · ${unread} unreadable` : ""}`);
-  process.exit(flaggedPages === 0 && !unread ? 0 : 1);
+  process.exitCode = flaggedPages === 0 && !unread ? 0 : 1; // not process.exit(): exiting with a socket still open crashes node on Windows
 }
 
 main().catch((e) => { console.error(e); process.exit(2); });

@@ -26,7 +26,8 @@ description: /เก็บบ้าน — เก็บบ้านฝั่ง 
    ไฟล์ที่ไม่มีใครอ้าง · ของค้างใน `_incoming` · worktree · ตัวล็อก · % ทำตามกฎ 7 วัน · โฟลเดอร์งานตั้งเวลาของโปรเจกต์นี้)
 2. **rule-auditor ทุก 2 สัปดาห์** — เรียกเมื่อ `rule-audit.md` ล่าสุดใน `_incoming/house-*/` เก่ากว่า 13 วัน · 1 ครั้ง · บรีฟ = เลนส์ 3 ข้อ
    (ไม่แก้แล้วเละ · มัดมือ · จัดการของเก่า) + ผลข้อ 1 · เก็บผลที่ `_incoming/house-<YYYYMMDD>/rule-audit.md`
-3. **แก้ที่แก้เองได้** (หัวข้อบน) บน branch `house-weekly-<YYYYMMDD>` จาก origin/main · commit + push · เปิด PR
+3. **แก้ที่แก้เองได้** (หัวข้อบน) ใน worktree แยก `git worktree add _incoming/wt-house-<YYYYMMDD> -b house-weekly-<YYYYMMDD> origin/main`
+   — ห้ามสลับ branch ของโฟลเดอร์หลัก (แชทกลางวันอาจทำงานอยู่) · commit + push · เปิด PR · เสร็จแล้ว `git worktree remove` worktree นั้น
    - ทุกไฟล์เป็นเอกสารล้วน (13.7) = คำอธิบาย PR มี `Checker: SKIP docs-only (13.7)` → `node scripts/self-merge-check.js --pr <n>` ขึ้น `SMALL` → merge
    - มีไฟล์อื่น (สกิล agent กฎ) = เปิด PR ทิ้งไว้ให้แชทกลางวันส่ง checker ก่อน merge
    - ไม่มีอะไรต้องแก้ = ไม่สร้าง branch
