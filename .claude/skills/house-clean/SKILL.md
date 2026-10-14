@@ -20,7 +20,8 @@ description: /เก็บบ้าน — เก็บบ้านฝั่ง 
 
 ## (ก) รายสัปดาห์ — งานตั้งเวลา `okami24-house-weekly` (ไม่มีคนเฝ้า)
 
-คำสั่งละครั้ง ไม่ต่อ `cd … &&` (คำสั่งที่อนุญาตไว้ล่วงหน้า = `permissions.allow` ใน `.claude/settings.json` — TEAM_RULES 13.6)
+คำสั่งละครั้ง ไม่ต่อ `cd … &&` (คำสั่งอ่านอย่างเดียวอนุญาตไว้ใน `permissions.allow` ของ `.claude/settings.json` · ขั้นเขียน git ต้องให้งานอยู่โหมด Auto —
+TEAM_RULES 13.6 · ยังไม่ได้ตั้ง = รอพี่ตรวจ ข้อ 61)
 
 1. **วัด:** `node scripts/house-check.js` → เก็บผลที่ `_incoming/house-<YYYYMMDD>/house-check.txt` (ขนาดเทียบสัปดาห์ก่อน · ตัวชี้ตาย ·
    ไฟล์ที่ไม่มีใครอ้าง · ของค้างใน `_incoming` · worktree · ตัวล็อก · % ทำตามกฎ 7 วัน · โฟลเดอร์งานตั้งเวลาของโปรเจกต์นี้)
