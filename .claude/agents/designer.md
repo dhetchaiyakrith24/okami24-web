@@ -25,9 +25,9 @@ Why it exists: work passed the checker and the number gates, then the owner reje
 (LESSONS พ10 · พ11 · พ12 · ช9 · owner review 03/10 on G5). This list is what the owner looks at.
 Distilled from LESSONS ช10 · `docs/IMAGE_SPEC.md` §0 items 6–8 · those reviews — if a source says more or
 differs, the source wins. **Learn once (owner 03/10 "พลาดแก้ย้อนหลัง เรียนรู้ ไม่พลาดซ้ำเรื่องเดิม"):** the owner
-rejects anything after merge = a lesson in `.claude/LESSONS.md` every time, in the same PR as the fix (its own
-commit) · not covered by this list yet = also one line here citing that lesson, so the same mistake is caught
-next time · already covered = the look was not done properly — say so in that report.
+rejects anything after merge = not covered by this list yet → add it HERE as a new numbered point (this list is the
+rule; LESSONS keeps only the story when it adds something) · already covered = the look was not done properly — say so
+in that report.
 
 **How to look:** every new or changed image at 100 % on a dark background AND at the size the page shows it
 (390 and 1440); zoom into edges, letters, screens, thin parts (cables, pod tips, wings). A shot of the whole
@@ -48,7 +48,7 @@ page alone is not looking.
 6. Every image that looks clickable goes somewhere fitting (ช10).
 
 **Taste — not a fail, but Friday fixes every ✗ before merge too (owner 03/10 "เจอตำหนิ ก็แก้ก่อนขึ้นเว็บ"); a fix
-that would change something the owner already approved = leave it, say so in the report (13.3 #5). Flag each ✗
+that would change something the owner already approved = `.claude/TEAM_RULES.md` 13.3 #5. Flag each ✗
 as "below the owner's bar" with the fix:**
 7. Light like UWELL's official Caliburn G5 set — not over-white, real reflections, not "graphic"/CG
    (IMAGE_SPEC §0 8 · ช9).
@@ -64,7 +64,7 @@ as "below the owner's bar" with the fix:**
 
 ## ขอรูปอ้างอิงเมื่อยังไม่มี — แต่งานไม่หยุดรอ
 
-**ถ้ายังไม่มีรูปอ้างอิง ให้ขอ** โดยใส่ในคำถามชุดเดียวของก้อนนั้น (`.claude/TEAM_RULES.md` 13.3 (ถามรวมชุดเดียว)) แล้วทำงานต่อจากสิ่งที่มี — ภาพหน้าจอจริงของเว็บ (ตัวหลักส่งมา) + หลักใน `docs/HANDOFF.md` §17 และระบบดีไซน์เดิมของเว็บ (เจ้าของเคาะตารางกฎข้อ 11 · 28/09 · แทน "ไม่มีรูปให้หยุดแล้วขอก่อน") · ตรวจงานที่ทำเสร็จแล้ว = ใช้ภาพก่อน/หลังเป็นหลักฐาน ไม่ต้องมีรูปอ้างอิงเพิ่ม
+**ถ้ายังไม่มีรูปอ้างอิง ให้ขอ** โดยใส่ในรายงานข้อ 4 ของก้อนนั้น (`.claude/TEAM_RULES.md` 13.3 ย่อหน้าท้าย) แล้วทำงานต่อจากสิ่งที่มี — ภาพหน้าจอจริงของเว็บ (ตัวหลักส่งมา) + ระบบดีไซน์เดิมของเว็บ (โทเค็นสีใน `src/app/globals.css` · ของเดิมที่เจ้าของผ่านแล้ว) · ตรวจงานที่ทำเสร็จแล้ว = ใช้ภาพก่อน/หลังเป็นหลักฐาน ไม่ต้องมีรูปอ้างอิงเพิ่ม
 
 ขอแบบนี้:
 ```

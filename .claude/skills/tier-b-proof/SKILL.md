@@ -1,14 +1,14 @@
 ---
 name: tier-b-proof
-description: Prove what changed on screen between two builds of the OKami24 site — the touched pages + control pages (the whole sitemap only per `.claude/TEAM_RULES.md` 13.5 #5), all three languages, both widths of the two-tier rule — then shoot only the spots that changed and hand the designer a ready brief. Use it for every tier-B batch or round close that needs before/after proof, and to prove "nothing a visitor sees changed" on a round that must leave the site alone. It reads the text a visitor actually sees after hydration (not the raw HTML, which carries every language), so English and Chinese pages are covered.
+description: Prove what changed on screen between two builds of the OKami24 site — the touched pages + control pages (the whole sitemap only per `.claude/TEAM_RULES.md` 13.5 #5), all three languages, both widths 390 + 1440 (13.5 head) — then shoot only the spots that changed and hand the designer a ready brief. Use it for every tier-B batch or round close that needs before/after proof, and to prove "nothing a visitor sees changed" on a round that must leave the site alone. It reads the text a visitor actually sees after hydration (not the raw HTML, which carries every language), so English and Chinese pages are covered.
 ---
 
 # Tier-B proof
 
 This skill is the **procedure** for before/after proof. The rules it follows stay where they live:
-what tier B is = `.claude/TEAM_RULES.md` 13.5 (head: tier A/B); the screenshot cap and the
-scan-first rule = `.claude/TEAM_RULES.md` 13.5 #7; one Chrome job at a time, the test server and
-how to stop it = HANDOFF §17 ("test server" · "ปิด server"); what the designer judges =
+what tier B is, and that before/after are measured on the test server, never the live site = `.claude/TEAM_RULES.md`
+13.5 (head); the scan-first rule = 13.5 #7; one Chrome job at a time, the test server and
+how to stop it = HANDOFF §17 ("test server" · "stop ="); what the designer judges =
 `.claude/agents/designer.md`. Never write a page count, a change count or a screenshot count into this
 file — they come from the run.
 
@@ -42,16 +42,13 @@ file — they come from the run.
   `environment: same machine` — anything else voids the reuse: scan the before side as below (a
   Chrome or font update makes a whole site of fake changes; it does not hide a real one, it drowns it); (3) that
   folder's `scan.log` has no `FAIL` line. Say in the report which folder was reused. Reuse skips the before SCAN only:
-  "before" shots (step 4) come from the live site when live = base (below), otherwise build the base only when
-  `shots-before.txt` is not empty.
+  build the base for "before" shots (step 4) only when `shots-before.txt` is not empty.
 - **Before** = the round's base commit (the commit its `pre-…` tag names on the computer; in the cloud, the main commit
   the round record `docs/cloud-results/<round>.md` names as base), or the batch's base for a
   batch proof — not "whatever is live": if earlier rounds are still unmerged, live is not the base and
   their work would show up as unexplained changes.
-  - The live origin may stand in for the base only when they are the same code: `git diff --stat
-    <live commit> <base> -- src public` is empty (`.claude/LESSONS.md` #5) — then no build. (Cloud: not yet — its
-    Chromium cannot open the live site, `docs/CLOUD.md` §1; build the base instead.)
-  - Otherwise build the base commit in a worktree under `_incoming/<round>/`: `git worktree add
+  - Never the live origin (owner 14/10 — Render bandwidth is over the free tier): build the base commit in a worktree
+    under `_incoming/<round>/`: `git worktree add
     --detach <dir> <commit>`, then copy `node_modules` into it (a junction/link breaks the Turbopack
     build: "points out of the filesystem root"), copy `scripts/test-server.js` into its `scripts/`
     if that commit predates it, and run that copy's `build` and `start` from the worktree.
@@ -64,8 +61,8 @@ file — they come from the run.
 `node scripts/visible-text.js scan --base <origin> --out _incoming/<round>/<name>-before --commit <sha>
 2> _incoming/<round>/<name>-before/scan.log` — `--commit` only when that side was built from a clean tree at that
 commit (a worktree of a commit, or `git status --porcelain` empty); a build with uncommitted changes gets no `--commit` (make the folder first; then `-after`; a later round may reuse the folder only with both — step 1).
-No page list = every URL of that side's sitemap; default languages and widths = the ones
-the two-tier rule names (check the script header — change them only if the rule changed). One Chrome
+No page list = every URL of that side's sitemap; default languages and widths = 390 + 1440
+(13.5 head; check the script header — change them only if the rule changed). One Chrome
 job at a time: never run two scans, a scan and a shot, or a scan and `linemap`/`wordbreak` together.
 A `FAIL` line = that page was not measured; re-run it, never diff over a gap.
 
@@ -78,9 +75,7 @@ A `FAIL` line = that page was not measured; re-run it, never diff over a gap.
 - Every group must be explained by the batch's own goal. A change nobody asked for = a regression:
   stop, fix, re-scan the affected side. Never shoot or brief around it.
 - "Files on one side only" = a page that exists on one side (added/removed route, or a scan gap).
-- Live vs local builds differ in a few known, non-visitor ways (e-mail obfuscation by the CDN —
-  already normalised by the script). Anything else that differs between two builds of the same code
-  is noise to report, not to hide.
+- Anything that differs between two builds of the same code is noise to report, not to hide.
 - For a "the site must not change" proof, the pass is `0 change(s)` and `one-side files 0`.
 
 ## Step 4 — Shoot only the changed spots
@@ -91,7 +86,7 @@ answers. The plan (`shots.md`) covers every distinct change once in the shot lan
 page+width whose changes exist only in another language, which is shot in that language): fewest
 pages that show all changes, one image per page section, anchored on the first change in it, a "before"
 image only where something was removed or changed. `shots.md` ties each image to its change groups.
-Shot count: `.claude/TEAM_RULES.md` 13.5 #7 (the one place). Open every image
+Open every image
 once yourself: an anchor that missed (`anchor missing` in the shot log, or the block not in frame)
 = re-shoot with a parent block's selector, never send a frame without the change in it. In the same look, judge
 every changed spot and every new/changed image file against the list "Owner eye" in `.claude/agents/designer.md`

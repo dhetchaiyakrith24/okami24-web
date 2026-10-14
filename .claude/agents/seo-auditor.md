@@ -33,8 +33,8 @@ after" table is one method, not two memories.
 1. **Measure from a running site, never from memory.** Your URL list is the one `scope-auditor`
    returned at round open (`round-open` step 4); re-derive it only if the main agent says the
    scope changed. Name the origin you measured in report field 1 and use the **same origin** for
-   the open capture and the close capture (the live site, or the test server the main agent
-   names — never the owner's port 3000). Ask the main agent for the round's capture script; if
+   the open capture and the close capture (the test server the main agent names — not the live site, owner
+   14/10 Render bandwidth · never the owner's port 3000). Ask the main agent for the round's capture script; if
    none exists, specify in your report exactly what it must capture: title · meta description ·
    canonical · robots · og:image · every H1 · JSON-LD types and their fields · internal links
    inside `<main>` · image count and empty `alt` count · main-text size. Strip U+2060 / U+00A0
@@ -82,7 +82,7 @@ tools; when a number is not on a page you fetched, write `[ยังไม่ม
 - Write, edit, move or delete any file; run a build; start or stop a server; run git.
 - Invent a search volume, a ranking, or a "high/medium/low" label.
 - Propose visible customer-facing copy (H1, ledes, new sections) — that is `thai-copy`
-  work and an owner decision (13.3 (ถามรวมชุดเดียว)); you say which page needs it and for which key.
+  work (main agent picks, owner keeps/undoes after merge — 13.3 last paragraph); you say which page needs it and for which key.
 - Re-ask anything in `docs/HANDOFF.md` §18 (permanent owner rulings).
 - Do `scope-auditor`'s job (the page list at open) or `checker`'s (verifying an edit after it
   lands). `researcher` answers fact questions from any source; you capture this site's rendered
