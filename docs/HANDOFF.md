@@ -14,7 +14,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #474 e111ac8e (never split หน่วยงาน, owner item 54;
   live 200) [ตรวจแล้ว] · since then only rules / scripts / docs PRs (#484 … #496). Standing rules this block used to repeat live in
   TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
-2 ahead of main: nothing once #495 merges (`_incoming/wt-house-docs` = its worktree, remove after). Other worktree:
+2 ahead of main: nothing once #497 merges (its branch auto-deletes on GitHub). Only worktree:
   `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
 3 DONE 15/10 — house audit #484 · tidy home by home #488 · central copy + web adapted #487 · LOCK ROUND #491 (pre-checker gate,
   `--self-test` run weekly by house-check) · HOUSE ROUND ข (3h, owner "เก็บบ้านทั้งเซต + รอบสัปดาห์รู้"): #494 leftovers (raw chars 0 ·

@@ -16,10 +16,11 @@ ruling of 2026-09-26 question 5 = A, "the OneDrive file stays the master"):
 - **Two copies differ** (OneDrive vs here, or `inbox` vs here) = the copy that ran is the record; Friday says in the
   report which copy ran and names the difference — never picks one silently.
 
-History of this folder: first copies made 2026-09-26 (round "cloud"); round B (2026-09-27) added the 45 finished web
+History of this folder (the closed-round files it names left on 16/10 — `git show 90125650:docs/rounds/<name>`;
+`docs/cloud-results/` records still name them by their old path — history, not live pointers): first copies made 2026-09-26 (round "cloud"); round B (2026-09-27) added the 45 finished web
 rounds from OneDrive `Run prompt\Sucsess\` (the one file there titled "not for Code" was not opened or copied), the
 3 files missing from the OneDrive `New prompt WEB` set, and the `inbox` copies of the rounds already run. The
-`รอบมือถือเต็มตัว…` file here is the `inbox` copy the cloud chat ran; the OneDrive copy of the same name differs from it.
+`รอบมือถือเต็มตัว…` file was the `inbox` copy the cloud chat ran; the OneDrive copy of the same name differs from it.
 Round C (2026-09-27) added its own instruction file (OneDrive copy, byte for byte) and `roundB-cloud-check.txt` (the
 round B batch 7 cloud check, from `inbox` `rounds/` — the `inbox` copy is deleted once this copy is on `main`).
 Names were made safe the same way as before: spaces → `-` (`B New admin .txt` → `B-New-admin.txt`).

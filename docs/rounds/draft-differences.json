@@ -1,10 +1,4 @@
 {
   "note": "OneDrive round drafts known to differ from their git copy — read by scripts/session-sync.js at every chat open. A match (same file name + same sha256 of the draft, BOM off, CRLF->LF, trimmed) = one info line instead of a warning. The draft changes again = the hash no longer matches = warning again. Remove the entry once the difference is settled.",
-  "known": [
-    {
-      "file": "รอบมือถือเต็มตัว-คลาวด์ถ่ายภาพ-เปิดเว็บจริง.txt",
-      "sha256": "31e72410746c8f4916589e83413ad25eced0e9a08b0b771c28502fbe16538f79",
-      "why": "the git copy is the inbox copy the cloud chat ran; Javis checks what the OneDrive copy adds (round B stop-2 item 10)"
-    }
-  ]
+  "known": []
 }
