@@ -7,9 +7,10 @@ import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 // (BSOT §8–§10). Since the same evening the body is rendered in th/en/zh by HowToOrderContent
 // from src/i18n/service-pages/how-to-order.tsx; page metadata stays Thai (primary market).
 export const metadata: Metadata = {
-  title: "วิธีสั่งซื้อ",
+  // Round "SEO all keys" batch 6 (16/10): the head carries the words people type — "สั่ง/ซื้อพอตออนไลน์" (SEO_LANDSCAPE §9.4).
+  title: "วิธีสั่งซื้อพอตออนไลน์",
   description:
-    "วิธีสั่งซื้อกับ OKami24 ทีละขั้น — ช่วงนี้สั่งทางไลน์ @okm24 บอกรุ่นที่อยากได้ แอดมินสรุปยอดรวมค่าส่งและวิธีโอน ตรวจยอดแล้วจัดส่งพร้อมเลขพัสดุ",
+    "ซื้อพอตออนไลน์กับ OKami24 ได้ทางไลน์ @okm24 บอกรุ่น สี หรือกลิ่นที่ต้องการ แอดมินจะสรุปยอดและวิธีโอนให้ในแชท ตรวจยอดแล้วจึงจัดส่งพร้อมเลขพัสดุ ส่งทั่วประเทศไทย",
   ...canonicalFor("/how-to-order"),
 };
 
