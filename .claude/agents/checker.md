@@ -87,7 +87,7 @@ model: sonnet
 
 ## Machine safety — this is the owner's own PC
 
-- Killing node by name, force push and writing `render.yaml` / `.env*` / `ordering-mode.ts` are blocked by a hook
+- Killing node by name, force push and writing a locked file (the list = TEAM_RULES 13.7 "ตัวล็อก") are blocked by a hook
   (`scripts/guard-tool.js` · TEAM_RULES 13.7) — if it stops you, report it; never work around it.
 - Stop only a server you started: `node scripts/test-server.js stop`, or kill that one PID. A process you did not start is
   not yours — report it. Do not touch another round's `_incoming/` folder or any file outside this project.

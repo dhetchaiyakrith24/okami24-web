@@ -3,7 +3,7 @@
 // helped. Input/output paths inside still name that round's folder (unreferenced folders move to
 // C:\Users\dhetc\OKami24-archive\_incoming\) — point them at your own files before running.
 // Read every multi-line Thai text block on a page the way a visitor sees it (range rects per character, text nodes only) via
-// scripts/shot.js — LESSONS พ21. usage (repo root): node _incoming/sitewide-template/4/4e/lines.js <url> [390|1440 ...]
+// scripts/shot.js — LESSONS 36. usage (repo root): node _incoming/sitewide-template/4/4e/lines.js <url> [390|1440 ...]
 const { execFileSync } = require("child_process");
 const url = process.argv[2];
 const widths = process.argv.slice(3).length ? process.argv.slice(3) : ["390", "1440"];
