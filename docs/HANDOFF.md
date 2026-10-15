@@ -41,9 +41,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (own chat, worktree `.claude/worktrees/seo-all-keys-a38889`,
   branch `claude/seo-all-keys-a38889` · own build tree `_incoming/wt-build` inside it + test server `next start -p 3414`; script
   `_incoming/seo-keys/setup-build.sh <commit>` rebuilds it) · 【ห้ามแตะ】 product images + image map (image round) · every price file.
-  Batch 1 = the key list SEO_LANDSCAPE §9 (16/10, 5 researchers) · batches 2–6 = §9.6 (2 pod system cluster · 3 head · 4 choosing
-  articles · 5 strengthen · 6 buying/trust + GSC 22/10) · evidence `_incoming/seo-keys/` (scope-auditor-open.md = checker page lists).
-  Stopped at: batch 1 PR (docs) · seo-auditor open read running on 3414.
+  Order = SEO_LANDSCAPE §9.6. DONE [ตรวจแล้ว]: batch 1 key list #499 · batches 2 + 5 #502 d5fae710 (2 new Thai guides refilling-a-pod +
+  how-long-a-pod-device-lasts · 6 guides strengthened, body/FAQ only; checker PASS 143d66fa, title fix after it per 13.5 #2 (จ)).
+  Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them (§9.6 row 3 lists the pages).
+  NEXT: 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" section) → batch 3 head set (seo-auditor reads the paper set
+  first; baseline = `_incoming/seo-keys/seo-auditor-open.md`) → batch 4 = drafts ready `_incoming/seo-keys/b4-flavour-draft.md` +
+  `b4-switch-draft.md` (each lists the links to add after 22/10; switch-pod waits on รอพี่ตรวจ 65) · still to draft: disposables
+  "ยี่ห้อไหนดี" · VOOPOO Drag / Argus families · batch 6 buying/trust. Owner list 63–66 open.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
