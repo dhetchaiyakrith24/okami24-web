@@ -30,7 +30,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (code/artifact/92a058d3…) was the same artifact as "ทางแก้ค่าส่งออเดอร์ Dropship" (to keep) → gone for good; its substance lives in
   `docs/cloud-results/stock-api-sku-survey.md` last section (lesson = LESSONS พ31) · computer: `_incoming/wt-rescue` (links
   removed first, targets intact) + `.agents/` deleted, ~\OKami24-เก็บ → `OKami24-archive\incoming-01-10`, empty ~\Claude outputs removed ·
-  closed round briefs out of `docs/rounds/` (#497, git keeps them) · rule rows C4 + A5 applied (#497). OKM photo / OKM CT = not ours
+  closed round briefs out of `docs/rounds/` (#497, git keeps them) · rule rows C4 + A5 applied (#497).
+  Owner brief 16/10 (from the Dive Records chat) → #500: house-clean "รายการเดียว" = the one home for what Friday does alone outside
+  git or as a deletion (weekly prompt + §17 point to it) · new skill `skill-vet` + `scripts/skill-scan.js` (outside skills are read
+  raw at a pinned commit, scanned, owner's OK first; house-check runs its bait self-test + scans our skills weekly).
+  NEXT: the first outside skill — Friday proposes one to the owner before adopting (owner: "ก่อนลงถามพี่ก่อนว่าจะลงตัวไหน"). OKM photo / OKM CT = not ours
   unless the owner says so (central §12 item 32).
   Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
   redirect into a checker-read tree = discipline (rule-audit L1 proposes a lock) · scan tools against the live site (L2).
