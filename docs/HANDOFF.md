@@ -32,7 +32,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   removed first, targets intact) + `.agents/` deleted, ~\OKami24-เก็บ → `OKami24-archive\incoming-01-10`, empty ~\Claude outputs removed ·
   closed round briefs out of `docs/rounds/` (#497, git keeps them) · rule rows C4 + A5 applied (#497).
   Owner brief 16/10 (from the Dive Records chat) → #500: house-clean "รายการเดียว" = the one home for what Friday does alone outside
-  git or as a deletion (weekly prompt + §17 point to it) · new skill `skill-vet` + `scripts/skill-scan.js` (outside skills are read
+  git or as a deletion (weekly prompt + §17 point to it) · skill `find-skills` (vercel-labs original + our vetting, 16/10) + `scripts/skill-scan.js` (outside skills are read
   raw at a pinned commit, scanned, owner's OK first; house-check runs its bait self-test + scans our skills weekly).
   NEXT: the first outside skill — Friday proposes one to the owner before adopting (owner: "ก่อนลงถามพี่ก่อนว่าจะลงตัวไหน"). OKM photo / OKM CT = not ours
   unless the owner says so (central §12 item 32).

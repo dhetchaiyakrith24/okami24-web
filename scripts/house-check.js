@@ -195,7 +195,7 @@ try {
   const out = String(e.stdout || "");
   console.log(`  pre-checker-gate --self-test: FAIL\n${out.split("\n").filter((l) => /FAIL/.test(l)).join("\n")}`);
 }
-// outside-skill scanner (skill skill-vet, owner 16/10): the bait must still trip it, and our own skills stay clean of
+// outside-skill scanner (skill find-skills, owner 16/10): the bait must still trip it, and our own skills stay clean of
 // anything a person cannot see or that acts on load
 for (const [label, cmd] of [
   ["skill-scan --self-test", "node scripts/skill-scan.js --self-test"],
