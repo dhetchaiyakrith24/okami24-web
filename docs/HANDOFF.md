@@ -12,20 +12,18 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
 1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #474 e111ac8e (never split หน่วยงาน, owner item 54;
-  live 200) [ตรวจแล้ว] · last merge = #484 be9c09cc (house audit 15/10, no site file). Rollback = revert one PR. Render: ~1 min
+  live 200) [ตรวจแล้ว] · last merge = #487 4f4eff22 (central copy @c1ca27c + web adapted, no site file). Rollback = revert one PR. Render: ~1 min
   of 502 + ~2 min after the deploy job ends — wait, then curl. Night = the owner says ไปนอน → keep working in the same chat (TEAM_RULES 13.6). Owner decisions: ask in chat + one line in
   `docs/รอพี่ตรวจ.md` (no review-sheet artifact — §18). Images: Higgsfield web app in the owner's Chrome, free "365 Unlimited"
   models only · the Higgsfield MCP generate/upscale tools are DENIED in `.claude/settings.json` · credits only on the owner's yes
   in chat (IMAGE_SPEC §0 item 7) · tool tips = LESSONS-images 29 + §17 "Higgsfield".
-2 open PRs (15/10 housekeeping "เกลาทีละบ้าน", owner "แก้และทำเลย"): #488 `house-homes` (skill house-clean 6-home step · the
-  Friday rows of `_incoming/house-1510/homes-audit.md` · checker round 1 FAIL on 3 wording points, fixed, round 2 next) ·
-  #487 `rules-sync/c1ca27c` (central copy @c1ca27c, sha matches `.claude/rules-source.json` + the web adapted to it: new report
-  format 12.10, Remote Control tool in 13.6, tags 12.9, §5–12) — merge #488 first, then merge main into #487, checker, merge.
-  Worktrees: `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped) ·
-  `_incoming/wt-rules` (#487, remove after merge). Untracked folder `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's (admin
-  price reports + chat screenshots): never in git, never delete (listed in `.git/info/exclude` on the computer — hidden from git
-  status). `git branch --show-current` before every commit. Git hooks: core.hooksPath must read `.githooks` (session-sync resets it).
-3 DONE 15/10 — house audit 3n → #484 (be9c09cc) · "เกลาทีละบ้าน" round 1 (#488 + #487 above) · weekly task
+2 ahead of main: nothing open. Worktrees: only `_incoming/wt-stock` (stock round · own node_modules copy · test server
+  `next start -p 3413`, stopped). Untracked folder `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's (admin price reports +
+  chat screenshots): never in git, never delete (listed in `.git/info/exclude` on the computer — hidden from git status).
+  `git branch --show-current` before every commit. Git hooks: core.hooksPath must read `.githooks` (session-sync resets it).
+3 DONE 15/10 — house audit 3n → #484 (be9c09cc) · "เกลาทีละบ้าน" round 1 → #488 d765963c (checker PASS 15b57e0f, round 1 FAIL
+  on 3 wording points) · central copy @c1ca27c + web adapted (report format 12.10 · Remote Control tool in 13.6 · tags 12.9 · §5–12)
+  → #487 4f4eff22 (checker PASS bc3cc153, round 1 FAIL on 3 leftovers) · weekly task
   `okami24-house-weekly` prompt now has the 6-home step (Sunday 20:00; its mode may still need the owner's Auto — รอพี่ตรวจ 61).
   Owner answers 15/10 (written into the rules): night = the owner says ไปนอน → keep working in the same chat, night chain off
   (TEAM_RULES 13.6) · AI upscale of a poster with text = allowed when original pixels go back over every text/pattern (IMAGE_SPEC §0 7)
