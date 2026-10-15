@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
-// skill-scan.js — hidden-instruction scan for an OUTSIDE agent skill (skill `skill-vet`, step 5 · owner 16/10).
+// skill-scan.js — hidden-instruction scan for an OUTSIDE agent skill (skill `find-skills`, OKami24 step C · owner 16/10).
 // Adapted from the Dive Records find-skills scanner (owner's brief 16/10, read once with his OK) to this repo's ways.
 // Reads RAW files only: at a pinned commit through `gh api` (git tree + blobs — never a rendered page or WebFetch,
 // they drop hidden characters and comments), or local files. Read-only: never writes, installs or runs the skill.
@@ -191,7 +191,7 @@ function main() {
     n += found.length;
   }
   console.log(`\nscan: ${files.length} file(s)${hiddenOnly ? " (hidden-only)" : ""} · ${n} line(s) to look at`);
-  if (n) console.log("Read every flagged line in context and name it benign or suspicious in the owner report (skill skill-vet step 5).");
+  if (n) console.log("Read every flagged line in context and name it benign or suspicious in the owner report (skill find-skills step C).");
   process.exit(n ? 1 : 0);
 }
 

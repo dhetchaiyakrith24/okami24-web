@@ -11,15 +11,16 @@
 //      normal permission prompt asks the owner                                                   → allow / ask
 // Lock round 15/10 (rule-audit 14/10 L2 L3 L5 L7 + LESSONS พ22) — each a rule that was kept only by memory:
 //   D  no bare `next build` / `npm run build` in the main folder — `node scripts/test-server.js build` (right env,
-//      refuses while 3412 is up); a build that runs IN a worktree under _incoming/ (the shell's cwd, or a `cd` before
-//      it) passes (HANDOFF §17 "Test server")                                                     → deny
+//      refuses while 3412 is up); a build that runs IN a worktree under _incoming/ or an app worktree under
+//      .claude/worktrees/ (the shell's cwd, or a `cd` before it) passes (HANDOFF §17 "Test server") → deny
 //   E  no blind `git add -A` / `--all` / `.` / `*` and no `git commit -a` — add files by name (TEAM_RULES 13.7)  → deny
 //   F  self-merge-check and the merge never in one command — run it alone, read its last line, then merge
 //      (TEAM_RULES 13.7)                                                                         → deny
 //   G  Windows Git Bash: `node scripts/…` with a page path like /about and no MSYS_NO_PATHCONV=1 — Git Bash turns it
 //      into C:/Program Files/Git/about (HANDOFF §17 "Windows shell")                             → deny
 //   H  while scripts/pre-checker-gate.js has noted "the checker is reading" (scripts/lib/checker-lock.js): no edit in that
-//      working tree outside _incoming/, no git command that moves or rewrites it, no test-server build/start/stop,
+//      working tree outside _incoming/ and .claude/worktrees/ (trees of their own), no git command that moves or
+//      rewrites it, no test-server build/start/stop,
 //      no build — until `node scripts/pre-checker-gate.js --done` (LESSONS พ22)                  → deny
 //
 // Input: the hook JSON on stdin ({ tool_name, tool_input, cwd }). Output: a PreToolUse decision on stdout, or nothing
