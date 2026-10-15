@@ -298,6 +298,9 @@ function selfTest() {
     ok(guard(sh("node scripts/x.js /c/Users/a.txt")) === "none", "L3 a /c/… drive path → allowed");
     ok(guard(sh("node scripts/x.js | sed -n '/a/p'")) === "none", "L3 a pipe after the script → allowed");
     ok(guard(sh('git commit -m "ran node scripts/scan.js --pages /about"')) === "none" && guard(sh('gh pr create --title "foo /bar"')) === "none", "L3 a commit message / gh title quoting it → allowed");
+    ok(guard(sh("node --max-old-space-size=4096 scripts/scan.js /about")) === "deny", "L3 node's own flag before the script still → deny (gap 15/10)");
+    ok(guard(sh('node scripts/x.js --title "a /b"')) === "none", "L3 a quoted argument that does not START with / → allowed (gap 15/10)");
+    ok(guard(sh("node scripts/scan.js --pages=/about,/faq")) === "deny", "L3 a --flag=/… value → deny");
   } else console.log("  skip L3 (Git Bash path rewriting exists on Windows only)");
   ok(guard(sh("git push --force")) === "deny", "B force push still → deny (old lock intact)");
   const env = { OKAMI24_CHECKER_LOCK_DIR: tmp };
