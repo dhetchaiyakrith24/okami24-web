@@ -674,7 +674,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "[DRAG X3](/products/drag-x3) ไม่มีแบตในตัว ใช้ถ่าน 18650 หรือ 21700 หนึ่งก้อนซึ่งต้องซื้อแยก ตั้งได้ 5–80 วัตต์ และใช้จอทัชขนาดเท่ากับ DRAG 6",
             "[DRAG S3](/products/drag-s3) มีแบตในตัว 3000mAh ตั้งได้ 5–60 วัตต์ และใช้จอ TFT 0.96 นิ้ว",
             "ถ้าชอบเปลี่ยนถ่านเอง DRAG X3 จะตรงกว่า ถ้าอยากได้แบตในตัวโดยไม่ต้องใช้วัตต์สูง DRAG S3 ก็เพียงพอ ส่วนช่วงวัตต์ที่กว้างที่สุดในสามรุ่นนี้อยู่ที่ DRAG 6",
-            "ทั้งสามรุ่นในตระกูล DRAG เทียบกันทีละเรื่องไว้ที่[DRAG 6 กับ DRAG S3 ต่างกันยังไง](/guides/comparing-voopoo-drag-models)"
+            "ทั้งสามรุ่นในตระกูล DRAG เทียบกันทีละเรื่องไว้ที่ [DRAG 6 กับ DRAG S3 ต่างกันยังไง](/guides/comparing-voopoo-drag-models)"
           ]
         },
         {
@@ -761,7 +761,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
           paragraphs: [
             "[DRAG 6](/products/drag-6) มีแบตในตัว 4400mAh ตั้งได้ถึง 220 วัตต์ ใช้ชิป GENE.TT 3.0 และตัวเครื่องใหญ่กว่า",
             "ถังน้ำยา UFORCE-X Tank II ของ DRAG 6 ก็ใช้คอยล์ PnP X ได้เหมือนกัน ถ้าเน้นวัตต์สูงเป็นหลัก DRAG 6 จะเหมาะกว่า ส่วนถ้าอยากได้เครื่องที่เล็กกว่า DRAG S3 จะตรงกว่า",
-            "ทั้งสามรุ่นในตระกูล DRAG เทียบกันทีละเรื่องไว้ที่[DRAG 6 กับ DRAG S3 ต่างกันยังไง](/guides/comparing-voopoo-drag-models)"
+            "ทั้งสามรุ่นในตระกูล DRAG เทียบกันทีละเรื่องไว้ที่ [DRAG 6 กับ DRAG S3 ต่างกันยังไง](/guides/comparing-voopoo-drag-models)"
           ]
         },
         {
@@ -842,7 +842,7 @@ export const PRODUCT_ARTICLES: Record<string, Partial<Record<Locale, ProductArti
             "ทั้งสองรุ่นใช้หัวพอตและคอยล์ PnP X ชุดเดียวกัน และใช้ชิป GENE.TT 2.0 เหมือนกัน",
             "[DRAG S3](/products/drag-s3) มีแบต 3000mAh อยู่ในตัว ตั้งได้ถึง 60 วัตต์ และใช้จอ TFT 0.96 นิ้ว ตัวเครื่องเล็กกว่า DRAG X3 เล็กน้อย",
             "ถ้าอยากได้เครื่องที่เสียบสายชาร์จได้เลยโดยไม่ต้องดูแลเรื่องถ่าน DRAG S3 จะเหมาะกว่า ถ้าชอบเลือกถ่านเอง และอยากได้วัตต์ที่สูงกว่ากับจอที่ใหญ่กว่า DRAG X3 จะตรงกว่า",
-            "ทั้งสามรุ่นในตระกูล DRAG เทียบกันทีละเรื่องไว้ที่[DRAG 6 กับ DRAG S3 ต่างกันยังไง](/guides/comparing-voopoo-drag-models)"
+            "ทั้งสามรุ่นในตระกูล DRAG เทียบกันทีละเรื่องไว้ที่ [DRAG 6 กับ DRAG S3 ต่างกันยังไง](/guides/comparing-voopoo-drag-models)"
           ]
         },
         {
