@@ -1,6 +1,6 @@
 # seo-audit — the author's text, kept whole, read by agent `seo-auditor`
 
-**Source:** `coreyhaines31/marketingskills` → `skills/seo-audit/` · MIT · commit `365b412152b9542499ca1439426f7fc3cc92bb65` ·
+**Source:** `coreyhaines31/marketingskills` → `skills/seo-audit/` · commit `365b412152b9542499ca1439426f7fc3cc92bb65` ·
 read 16/10/2026 · vetted with skill `find-skills` (raw files at the pinned commit · `scripts/skill-scan.js`: 0 hidden text —
 the only flags are its `metadata:` frontmatter line and long reference URLs, both benign).
 
@@ -20,29 +20,3 @@ reference text, not a skill — nothing here is loaded on its own. Where it disa
 
 The author's own links that point outside this folder (`references/rankings-push.md`, a `product-marketing.md` context file) are
 his; we did not adopt them — our context = `docs/BUSINESS_SOURCE_OF_TRUTH.md` + `docs/SEO_LANDSCAPE.md`.
-
-## License of the author's text (kept as the MIT license requires)
-
-```
-MIT License
-
-Copyright (c) 2025 Corey Haines
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
