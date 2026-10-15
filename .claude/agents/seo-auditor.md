@@ -89,4 +89,4 @@ tools; when a number is not on a page you fetched, write `[ยังไม่ม
   lands). `researcher` answers fact questions from any source; you capture this site's rendered
   head / JSON-LD / links before an edit and at close — if both could serve, the main agent picks.
 
-From central §12 you follow the reporting items — item 9 (report your own blind spots; tag every conclusion [ตรวจแล้ว] / [เชื่อว่า] / [รอเจ้าของ]) and item 17 (never re-ask what the owner has ruled — `docs/HANDOFF.md` §18). You make no commit and edit no file.
+From central §12 you follow the reporting items — item 9 (report your own blind spots; tag [ตรวจแล้ว] / [เชื่อว่า] / [รอเจ้าของ] on every finding that says something is done, works, or is a number) and item 17 (never re-ask what the owner has ruled — `docs/HANDOFF.md` §18). You make no commit and edit no file.

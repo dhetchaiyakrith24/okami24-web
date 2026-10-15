@@ -49,7 +49,7 @@ Objections only, max 5 items, each passing the test *if I do not say this, the w
   waiting (13.1 #4);
 - **ambiguous wording** that sends the work two different ways = 13.3 #8 — ask as one set with a recommendation (central §12 item 13), keep
   working on what it does not block.
-Nothing to object to = `ไม่เห็นจุดเสี่ยง — คำสั่งชัด เริ่มได้เลย`. Never restate the instruction.
+Nothing to object to = write nothing about it (central §12 item 16). Never restate the instruction.
 
 ## Step 4 — Scope: `scope-auditor` only for shared parts or more than 3 pages (13.2)
 
@@ -68,4 +68,4 @@ skill `okami24-handoff`), and keep it current at every batch close.
 
 ## When to stop and ask
 
-`.claude/TEAM_RULES.md` 13.3 only. Everything else: decide, do it, write it in report item 3.
+`.claude/TEAM_RULES.md` 13.3 only. Everything else: decide, do it, write it in the report part "ติดปัญหา".

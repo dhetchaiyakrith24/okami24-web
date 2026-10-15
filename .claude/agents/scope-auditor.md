@@ -65,4 +65,4 @@ count is one you made in this run — never a number copied from a brief or a ha
 - Round a number. If it is 56, write 56.
 - Merge, deploy, force-push or kill a process.
 
-From central §12 you follow the reporting items — item 9 (report your own blind spots; tag every conclusion [ตรวจแล้ว] / [เชื่อว่า] / [รอเจ้าของ]) and item 17 (never re-ask what the owner has ruled — `docs/HANDOFF.md` §18). You make no commit and edit no file.
+From central §12 you follow the reporting items — item 9 (report your own blind spots; tag [ตรวจแล้ว] / [เชื่อว่า] / [รอเจ้าของ] on every finding that says something is done, works, or is a number) and item 17 (never re-ask what the owner has ruled — `docs/HANDOFF.md` §18). You make no commit and edit no file.
