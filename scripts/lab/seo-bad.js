@@ -13,7 +13,7 @@ window.__COMPOUNDS = ["เหมือนกัน", "หายไป", "ออ�
   "เหนือศีรษะ", "อุณหภูมิ", "ทิชชู่", "เคาน์เตอร์", "เช็คอิน", "นโยบาย", "ข้อกำหนด", "ส่วนตัว", "ท้องเครื่อง", "ใต้ท้องเครื่อง",
   "ลานจอด", "แรงดันไฟ", "ความจุ", "ผู้อ่าน", "ทุกครั้ง", "ทุกกรณี", "ทุกชนิด", "ตลอดเที่ยวบิน", "ล่วงหน้า"];
 window.__bad = (left, right) => {
-  const L = left.replace(/[ ⁠]/g, " "), R = right.replace(/[ ⁠]/g, " ");
+  const L = left.replace(/[\u00a0\u2060]/g, " "), R = right.replace(/[\u00a0\u2060]/g, " ");
   if (/(\d|หนึ่ง|สอง|สาม|สี่|ห้า|สิบ)$/.test(L.trimEnd()) &&/^\s*(ก้อน|ลิตร|นาที|วัน|ชั่วโมง|คน|ตัว|ใบ|ครั้ง|mL|Wh|มวน)/.test(R)) return "num|unit";
   const a = L.replace(/\s+$/, ""), b = R.replace(/^\s+/, "");
   if (L !== a || R !== b) return ""; // the break falls on a space: never inside a word

@@ -8,7 +8,9 @@
 // scripts/pre-checker-gate.js --self-test · a checker note left on) · rules followed (merged PRs,
 // last 7 days) · this project's scheduled-task folders · dead pointers (a backticked repo path that does
 // not exist · a "13.x" the rules file has no heading for · <FILE> [§N] "heading" whose words are gone) · files nobody references (scripts · docs · agents · skills) ·
-// _incoming/ folders nobody references (size, date) · stray git worktrees.
+// _incoming/ folders nobody references (size, date) · stray git worktrees · branches (merged / unmerged, local + GitHub)
+// and tags · loose files/folders at the repo root. claude.ai Artifacts are not measured here (the Artifact tool's list —
+// skill house-clean home 8).
 const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
@@ -126,6 +128,47 @@ if (fs.existsSync("_incoming")) {
 const wts = execSync("git worktree list", { encoding: "utf8" }).trim().split("\n");
 console.log(`\n## git worktrees (${wts.length})`);
 for (const w of wts) console.log(`  ${w}`);
+
+// 5b. branches and tags (owner 15/10 "Git มีอะไรรกมั้ย") — a branch merged into main keeps its commits in main, so
+// deleting it loses nothing (skill house-clean home 8) · unmerged = list, someone decides · tags = round checkpoints, kept
+console.log("\n## git branches and tags (merged = commits already in origin/main)");
+const gitLines = (c) => {
+  try {
+    return execSync(c, { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).split("\n").map((l) => l.replace(/^[*+]?\s+/, "").trim()).filter(Boolean);
+  } catch {
+    return [];
+  }
+};
+const inWt = new Set(wts.map((w) => (w.match(/\[(.+)\]$/) || [])[1]).filter(Boolean));
+const localAll = gitLines("git branch --format=%(refname:short)").filter((b) => b !== "main");
+const localMerged = new Set(gitLines("git branch --merged origin/main --format=%(refname:short)"));
+const remoteAll = gitLines("git branch -r --format=%(refname:short)").filter((b) => !/^origin(\/(HEAD|main))?$/.test(b));
+const remoteMerged = new Set(gitLines("git branch -r --merged origin/main --format=%(refname:short)"));
+// a branch cut from main minutes ago also reads "merged" — only ones whose last commit is over 7 days old are offered
+const weekAgo = Date.now() / 1000 - 7 * 86400;
+const lm = localAll.filter((b) => localMerged.has(b) && !inWt.has(b) && Number(gitLines(`git log -1 --format=%ct ${b}`)[0] || 0) < weekAgo);
+const rm = remoteAll.filter((b) => remoteMerged.has(b));
+console.log(`  local  ${localAll.length} · merged ${lm.length} (safe to delete${lm.length ? `: ${lm.join(" ")}` : ""})`);
+const lastOf = (b) => gitLines(`git log -1 --format=%cs·%s ${b}`)[0] || "";
+for (const b of localAll.filter((b) => !localMerged.has(b))) console.log(`    unmerged ${b.padEnd(30)} ${inWt.has(b) ? "(checked out in a worktree) " : ""}${lastOf(b).slice(0, 90)}`);
+console.log(`  remote ${remoteAll.length} · merged ${rm.length}${rm.length ? ` (on GitHub — list for the owner first, 13.3 #1: ${rm.join(" ")})` : ""}`);
+for (const b of remoteAll.filter((b) => !remoteMerged.has(b))) console.log(`    unmerged ${b.padEnd(30)} ${lastOf(b).slice(0, 90)}`);
+console.log(`  tags   ${gitLines("git tag").length} (round checkpoints — kept)`);
+const pack = gitLines("git count-objects -vH").find((l) => l.startsWith("size-pack"));
+if (pack) console.log(`  repo   ${pack.replace("size-pack: ", "")} packed`);
+
+// 5c. loose folders at the repo root (owner 15/10 "อย่าให้กระจัดกระจาย") — anything untracked at the top level that is
+// not a tool's own folder, the work folder _incoming/, or the owner's folder
+console.log("\n## loose files/folders at the repo root (not in git, not a known tool folder)");
+// "Higgs Okm" = the Higgsfield image masters: scripts/process-images.map.json names them as image provenance (stays put)
+const KNOWN_ROOT = new Set(["_incoming", "node_modules", ".next", ".data", ".git", ".agents", "next-env.d.ts", "tsconfig.tsbuildinfo", "รายงานจากแอดมิน แชท", "Higgs Okm"]);
+const topTracked = new Set(tracked.map((f) => f.split("/")[0]));
+const loose = fs.readdirSync(".").filter((n) => !topTracked.has(n) && !KNOWN_ROOT.has(n));
+for (const n of loose) {
+  const st = fs.statSync(n);
+  console.log(`  ${n.padEnd(30)} ${((st.isDirectory() ? size(n) : st.size) / 1048576).toFixed(1).padStart(8)} MB  ${st.mtime.toISOString().slice(0, 10)}  → move under _incoming/ or the owner decides`);
+}
+if (!loose.length) console.log("  none");
 
 // 6. locks — the commit/push gates run only when core.hooksPath = .githooks (15/10: found "nul", gates off for days)
 console.log("\n## locks");

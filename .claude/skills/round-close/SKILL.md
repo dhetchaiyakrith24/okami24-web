@@ -16,7 +16,7 @@ owner's dev server on port 3000, never two Chrome jobs at once).
 
 0. `node scripts/self-merge-check.js --base <base>` ends in `PASS` (nothing a visitor gets changed — the allow-list of
    13.7) → that output with its command IS the proof: skip steps 1–2 and the server gates of step 3; run 13.5 #2 (ก)
-   for the files touched. `BLOCKED` = continue below.
+   for the files touched. `SITE-TOUCHED` = continue below.
 1. **Thai text on a page changed** → `node scripts/wordbreak-scan.js` on the pages the round touched (the round's page
    list, skill `round-open` step 4), both widths, output under `_incoming/<round>/`, then `node scripts/wb-diff.js <before> <after>` against a scan
    of the round's base build (or the previous close's scan when it was made on the same kind of machine — skill

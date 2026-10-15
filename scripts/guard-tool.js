@@ -140,11 +140,35 @@ function checkShell(cmd, cwd) {
 function checkPathConversion(cmd) {
   if (process.platform !== "win32" || /MSYS_NO_PATHCONV=1/.test(cmd)) return;
   for (const seg of stripBodies(cmd).split(/\n|&&|\|\|?|;/)) { // the script's own arguments only — not a `| sed '/x/p'` after it
-    const m = seg.match(/^\s*(?:\w+=\S*\s+)*(?:timeout\s+\d+\s+)?(?:node|npx\s+tsx|tsx)\s+(?:\S*\/)?scripts\/[\w./-]+\.(?:c?js|mjs|ts)\b(.*)$/);
-    if (m && /(?:^|[\s"'=,])\/(?:(?=[\s"',]|$)|(?![a-zA-Z]\/|\/|(?:tmp|dev|usr|etc|mnt|proc|bin|opt|home)\b)[\w-])/.test(m[1])) {
+    // node's own flags may sit before the script (`node --max-old-space-size=4096 scripts/x.js /a` — gap 15/10)
+    const m = seg.match(/^\s*(?:\w+=\S*\s+)*(?:timeout\s+\d+\s+)?(?:node(?:\s+--?[\w-]+(?:=\S+)?)*|npx\s+tsx|tsx)\s+(?:\S*\/)?scripts\/[\w./-]+\.(?:c?js|mjs|ts)\b(.*)$/);
+    // Git Bash rewrites an ARGUMENT that starts with "/" (or a --flag=/… value, or a comma list item) — a "/" inside a
+    // quoted argument that starts with something else (`--title "a /b"`) stays as typed (gap 15/10)
+    const rewritten = (a) => /(?:^|=|,)\/(?:$|,|(?![a-zA-Z]\/|\/|(?:tmp|dev|usr|etc|mnt|proc|bin|opt|home)\b)[\w-])/.test(a);
+    if (m && shellArgs(m[1]).some(rewritten)) {
       decide("deny", "Git Bash will turn the page path into C:/Program Files/Git/… and the script scans the wrong pages. Put `MSYS_NO_PATHCONV=1 ` in front of the command (HANDOFF §17 \"Windows shell\").");
     }
   }
+}
+
+// Split a command tail into shell arguments with their quotes removed ('a b' "c d" e\ f → 3 arguments).
+function shellArgs(s) {
+  const out = [];
+  let cur = null;
+  let q = "";
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (q) {
+      if (c === q) q = "";
+      else if (c === "\\" && q === '"' && i + 1 < s.length) cur += s[++i];
+      else cur += c;
+    } else if (c === "'" || c === '"') { q = c; cur = cur ?? ""; }
+    else if (c === "\\" && i + 1 < s.length) cur = (cur ?? "") + s[++i];
+    else if (/\s/.test(c)) { if (cur !== null) out.push(cur); cur = null; }
+    else cur = (cur ?? "") + c;
+  }
+  if (cur !== null) out.push(cur);
+  return out;
 }
 
 // H — the checker is reading a working tree (scripts/lib/checker-lock.js)
