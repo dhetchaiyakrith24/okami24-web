@@ -35,7 +35,7 @@ page alone is not looking.
 
 **Facts — a ✗ here fails the batch (checker too):**
 1. Floats on the dark site — transparent, no studio floor, no black frame, no white/grey box, no light rim
-   round the edge (IMAGE_SPEC §0 6 + 8 · พ11 · 03/10 "black box").
+   round the edge (IMAGE_SPEC §0 6 + 8 · LESSONS-images 21 · 03/10 "black box").
 2. Whole and clean — no holes, torn or cut parts (cables, pod heads), specks, patches, white bits left inside
    letters (03/10 "white bits, torn cable").
 3. Every letter, logo, number and screen = its source (the maker's file, or the master of an AI render),
