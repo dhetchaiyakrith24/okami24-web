@@ -180,7 +180,10 @@ function checkerReading() {
     msg: `The checker is reading ${String(note.sha).slice(0, 8)} (${note.branch}) in ${note.tree} since ${note.started} — leave that working tree and the test server alone until its report, then run \`node scripts/pre-checker-gate.js --done\` there (LESSONS พ22). Prepare the next work under _incoming/ or in a worktree.`,
   }));
 }
-const inside = (p, tree) => (p + "/").startsWith(tree + "/") && !(p + "/").startsWith(tree + "/_incoming/");
+// _incoming/ and the app's worktrees under .claude/worktrees/ are trees of their own (16/10: a checker note on the main
+// folder froze the SEO chat's app worktree nested inside it)
+const inside = (p, tree) =>
+  (p + "/").startsWith(tree + "/") && !(p + "/").startsWith(tree + "/_incoming/") && !(p + "/").startsWith(tree + "/.claude/worktrees/");
 // Covers the acts that move or rebuild a tree (git, builds, the test server) and the Edit/Write tools — not every shell
 // write (rm · sed -i · a redirect): those stay Friday's discipline (TEAM_RULES 13.4 says so). Where a segment runs = the
 // hook's cwd moved by any `cd` before it, or git's own -C.

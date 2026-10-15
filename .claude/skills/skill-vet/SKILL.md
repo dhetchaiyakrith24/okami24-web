@@ -67,7 +67,7 @@ The whole method goes against how the owner works → recommend not adopting.
 ## 7. Owner report, then adopt
 Report in Thai (central §12 item 10): what it does · why it fits this shop · the scan result (benign / suspicious per flag) ·
 good and bad points · the count: lines kept · changed · dropped, with the reason for every change · a recommendation.
-**A new skill = the owner's OK first** (central §12 item 28). On his OK:
+**A new skill = the owner's OK first** (central §12 item 28 · files from outside = TEAM_RULES 13.3 #9). On his OK:
 - Write `.claude/skills/<name>/SKILL.md` = the original text + a source line at the top (repo · path · license · commit sha ·
   date read) + a short "changed / dropped" list.
 - Frontmatter = `name` + `description` only unless he OKs more · no load-time commands · no runtime fetches.
