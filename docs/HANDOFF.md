@@ -47,10 +47,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 3i OPEN ROUND "image sweep" = `docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt` (own chat; owns the main folder's `_incoming/img-1610/`,
   worktrees `_incoming/img-1610/wt-img` (work, own node_modules) · `wt-gate` (checker tree) · `wt-base` (base build 47320ddd, before
   shots `_incoming/img-1610/shots/before-*` for every product of the round)). Nano Banana Pro Unlimited free in Chrome to ~19/10.
-  LIVE [ตรวจแล้ว]: #501 coil-94/55/53 · #503 JOIWAY F4 card + 16 pairs. OPEN: PR #505 ARGUS G4 — checker round 2 FAIL (silver + gray
-  bottoms) → next check is round 3 of 3. Chat moved at ~810k context 16/10 ~03:00: full state, file-by-file next steps and how the
-  shared Higgsfield draft/queue really behaves = `_incoming/img-1610/NEXT.md` (read it first). NEXT: re-render ARGUS silver → fix →
-  checker round 3 → merge · SALTHUB zero-nano + zero-pro cards · JOIWAY F3 14 green flavours · then the round order in NEXT.md.
+  LIVE [ตรวจแล้ว]: #501 coil-94/55/53 · #503 JOIWAY F4 card + 16 pairs · #505 ARGUS G4 (checker r3 PASS) · #512 SALTHUB Zero Pro +
+  Zero Nano cards (r3 PASS) · #516 JOIWAY F3 card + 14 green flavours (r2 PASS) — all curl 200 16/10. OPEN: Caliburn G5 Lite 8 colours
+  + G5 Lite SE card (b6/: orange render keyed; knight black queued) — STOPPED 16/10 ~04:30: Claude in Chrome disconnected (no browser
+  listed) → uploads to Higgsfield impossible until Chrome + the extension are back. State, prompts, pipelines, lessons to fold in =
+  `_incoming/img-1610/NEXT.md` (read it first) · prompts `_incoming/img-1610/prompts.md`. NEXT: G5 Lite → the round order in NEXT.md.
 3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side chat 2, worktree `.claude/worktrees/seo-all-keys-2-c830d3`,
   own build tree `_incoming/wt-build` inside it + test server `next start -p 3414`; `_incoming/seo-keys/setup-build.sh <ref>` moves +
   rebuilds it — the first run's node_modules copy = PowerShell robocopy; the worktree root's `node_modules` = a junction to it) ·
