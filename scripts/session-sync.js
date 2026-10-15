@@ -16,7 +16,7 @@
 //                two git fetches at once fight over the ref lock).
 //   6 hooks      core.hooksPath must be .githooks (the commit/push locks) — anything else = reset it + warn (15/10).
 // Output = the hook JSON: `systemMessage` = one Thai line the owner sees · `additionalContext` = the English lines for
-// Friday. Always exits 0 (a SessionStart hook cannot stop a chat; the warning is the stop sign — central §1).
+// Friday. Always exits 0 (a SessionStart hook cannot stop a chat; the warning is the stop sign — central §12 item 9: never say done before it is).
 "use strict";
 const { spawnSync } = require("child_process");
 const fs = require("fs");
