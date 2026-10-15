@@ -4886,16 +4886,16 @@
   "fileName": "variant-black-metal-v2.webp"
  },
  {
-  "source": "_incoming/img-1610/b3/key/D-zn.png",
+  "source": "_incoming/img-1610/b3/key/P-zn.png",
   "slug": "zero-nano",
   "role": "card",
   "replaces": "/assets/products/zero-nano/card-v2.webp",
   "aiRender": {
-   "tool": "Cut-out of the night 01/10 Higgsfield nano_banana_pro render already used by card-v2 (same pose, M-bolt logo the right way round), re-keyed for round img-1610 16/10 (_incoming/img-1610/b3: clean edge, no grey halo)",
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot of SALTHUB's photo (_incoming/img-1610/b3/in/zn.png -> b3/out/zn-A.png), keyed to b3/key/D-zn.png, then the teal body gained to the mean of SALTHUB's photo and the clear pod made smoky like it (b3/zntone.js - checker #512 round 1: body was 14% duller)",
    "reference": "SALTHUB's own photo (/assets/products/zero-nano/card.webp, 443x567)",
-   "fidelitySheet": "_incoming/img-1610/b3/fid/fid-zn.png - shape IoU 0.991 against the render; teal, M logo, pod checked by eye"
+   "fidelitySheet": "_incoming/img-1610/b3/fid/fid-zn.png (shape IoU 0.991) + _incoming/img-1610/b3/fid/fid-zn2.jpg (SALTHUB photo / new on white / dark / magenta)"
   },
-  "note": "round img-1610 16/10 - audit 10/10: card-v2 edge left a halo on dark; image-sitewide round 3b (2) 01/10 — the old card is 443x567 (sharpness 1.6, below standard)",
+  "note": "round img-1610 16/10 - audit 10/10: card-v2 edge left a halo on dark; the new card is a fresh render matched to SALTHUB's photo",
   "fileName": "card-v3.webp"
  },
  {
