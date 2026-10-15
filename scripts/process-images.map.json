@@ -65,11 +65,16 @@
   "alphaCut": 200
  },
  {
-  "source": "_incoming/joiway/joiway-f4/main.webp",
+  "source": "_incoming/img-1610/b2/key/t-front3.png",
   "slug": "joiway-f4",
   "role": "card",
-  "note": "thai.myjoiway.com API img (official) — 741px is BELOW the 800 spec; written under an explicit exception because the product currently has NO photo at all (glyph). Needs owner OK; revert = delete public/assets/products/joiway-f4/card.webp + the data reference.",
-  "minLong": 741
+  "note": "round img-1610 16/10 - studio re-shoot, was the 741 px maker photo (soft)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1)",
+   "reference": "JOIWAY official F4 TWINS photo, thai.myjoiway.com (_incoming/joiway/joiway-f4/main.webp, 1070x1176; input _incoming/img-1610/b2/in/f4front.png; render _incoming/img-1610/b2/out/f4front-B.png)",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-front.png - shape IoU 0.995; JOIWAY logo, DOUBLE FLAVOR, F4 badge, both LED displays checked by eye (colour dE does not apply: re-lit, IMAGE_SPEC §0 item 8 (3))"
+  },
+  "fileName": "card-v3.webp"
  },
  {
   "source": "_incoming/uwell/caliburn-g4-pro/color-1.webp",
@@ -498,148 +503,212 @@
   "alphaCut": 200
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-01-grape-ice+lychee-ice.png",
+  "source": "_incoming/img-1610/b2/key/D-f4-grape-ice-and-lychee-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "grape-ice-and-lychee-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #01 (grape-ice + lychee-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-grape-ice+lychee-ice.*, 734 px) - names read from it: 1 GRAPE ICE / 2 LYCHEE ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-grape-ice-and-lychee-ice-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-02-grape-ice+watermelon-ice.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-grape-ice-and-watermelon-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "grape-ice-and-watermelon-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #02 (grape-ice + watermelon-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-grape-ice+watermelon-ice.*, 734 px) - names read from it: 1 GRAPE ICE / 2 WATERMELON ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-grape-ice-and-watermelon-ice-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-03-grape-ice+blueberry-ice.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-grape-ice-and-blueberry-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "grape-ice-and-blueberry-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #03 (grape-ice + blueberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-grape-ice+blueberry-ice.*, 734 px) - names read from it: 1 GRAPE ICE / 2 BLUEBERRY ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-grape-ice-and-blueberry-ice-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-04-blueberry-ice+lychee-ice.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-blueberry-ice-and-lychee-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "blueberry-ice-and-lychee-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #04 (blueberry-ice + lychee-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-blueberry-ice+lychee-ice.*, 734 px) - names read from it: 1 BLUEBERRY ICE / 2 LYCHEE ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-blueberry-ice-and-lychee-ice-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-05-blueberry-ice+watermelon-ice.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-blueberry-ice-and-watermelon-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "blueberry-ice-and-watermelon-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #05 (blueberry-ice + watermelon-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-blueberry-ice+watermelon-ice.*, 734 px) - names read from it: 1 BLUEBERRY ICE / 2 WATERMELON ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-blueberry-ice-and-watermelon-ice-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-06-watermelon-ice+strawberry-ice.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-watermelon-ice-and-strawberry-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "watermelon-ice-and-strawberry-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #06 (watermelon-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-watermelon-ice+strawberry-ice.*, 734 px) - names read from it: 1 WATERMELON ICE / 2 STRAWBERRY ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-watermelon-ice-and-strawberry-ice-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-07-watermelon-ice+lychee-ice.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-watermelon-ice-and-lychee-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "watermelon-ice-and-lychee-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #07 (watermelon-ice + lychee-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-watermelon-ice+lychee-ice.*, 734 px) - names read from it: 1 WATERMELON ICE / 2 LYCHEE ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-watermelon-ice-and-lychee-ice-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-08-watermelon-ice+rainbow-candy.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-watermelon-ice-and-rainbow-candy.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "watermelon-ice-and-rainbow-candy",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #08 (watermelon-ice + rainbow-candy) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-watermelon-ice+rainbow-candy.*, 734 px) - names read from it: 1 WATERMELON ICE / 2 RAINBOW CANDY",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-watermelon-ice-and-rainbow-candy-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-09-cola-ice+green-apple-ice.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-cola-ice-and-green-apple-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "cola-ice-and-green-apple-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #09 (cola-ice + green-apple-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-cola-ice+green-apple-ice.*, 734 px) - names read from it: 1 COLA ICE / 2 GREEN APPLE ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-cola-ice-and-green-apple-ice-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-10-cola-ice+strawberry-ice.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-cola-ice-and-strawberry-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "cola-ice-and-strawberry-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #10 (cola-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-cola-ice+strawberry-ice.*, 734 px) - names read from it: 1 COLA ICE / 2 STRAWBERRY ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-cola-ice-and-strawberry-ice-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-11-green-apple-ice+american-cookies.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-green-apple-ice-and-american-cookies.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "green-apple-ice-and-american-cookies",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #11 (green-apple-ice + american-cookies) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-green-apple-ice+american-cookies.*, 734 px) - names read from it: 1 GREEN APPLE ICE / 2 AMERICAN COOKIES",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-green-apple-ice-and-american-cookies-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-12-green-apple-ice+strawberry-ice.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-green-apple-ice-and-strawberry-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "green-apple-ice-and-strawberry-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #12 (green-apple-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-green-apple-ice+strawberry-ice.*, 734 px) - names read from it: 1 GREEN APPLE ICE / 2 STRAWBERRY ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-green-apple-ice-and-strawberry-ice-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-13-rainbow-candy+cool-mint-ice.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-rainbow-candy-and-cool-mint-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "rainbow-candy-and-cool-mint-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #13 (rainbow-candy + cool-mint-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-rainbow-candy+cool-mint-ice.*, 734 px) - names read from it: 1 RAINBOW CANDY / 2 COOL MINT ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-rainbow-candy-and-cool-mint-ice-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-14-rainbow-candy+strawberry-ice.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-rainbow-candy-and-strawberry-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "rainbow-candy-and-strawberry-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #14 (rainbow-candy + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-rainbow-candy+strawberry-ice.*, 734 px) - names read from it: 1 RAINBOW CANDY / 2 STRAWBERRY ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-rainbow-candy-and-strawberry-ice-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-15-lychee-ice+american-cookies.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-lychee-ice-and-american-cookies.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "lychee-ice-and-american-cookies",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #15 (lychee-ice + american-cookies) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-lychee-ice+american-cookies.*, 734 px) - names read from it: 1 LYCHEE ICE / 2 AMERICAN COOKIES",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-lychee-ice-and-american-cookies-v3.webp"
  },
  {
-  "source": "_incoming/joiway/joiway-f4/option-16-cool-mint-ice+strawberry-ice.webp",
+  "source": "_incoming/img-1610/b2/key/D-f4-cool-mint-ice-and-strawberry-ice.png",
   "slug": "joiway-f4",
   "role": "variant",
   "id": "cool-mint-ice-and-strawberry-ice",
-  "keepLargestComponent": true,
-  "note": "dual-flavour pair #16 (cool-mint-ice + strawberry-ice) — official image has a faint grey brand mark behind the device; largest-component keeps only the device · 734px is below the 800 floor — accepted under the same owner exception as the F4 card (2026-09-06, official images are the only ones that exist)",
-  "minLong": 734
+  "note": "round img-1610 16/10 - studio re-shoot from one master, names typed (was the 734 px maker photo with a grey brand mark behind it)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v2 + front-left light for a bright colour + large in frame (_incoming/img-1610/b2/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device, foot slab trimmed, specks dropped, base corners cut on a measured rounded outline (b2/basecut.js - checker #503 round 1); the back-view master (render _incoming/img-1610/b2/out/f4back-A.png) has its two AI-printed names erased and this pair typed in a real font by _incoming/img-1610/b2/f4compose.js (Arial Black sheared 12 deg, white, cap height and start line measured on the master - LESSONS-images 11)",
+   "reference": "JOIWAY official F4 TWINS back photo of this pair (_incoming/joiway/joiway-f4/option-*-cool-mint-ice+strawberry-ice.*, 734 px) - names read from it: 1 COOL MINT ICE / 2 STRAWBERRY ICE",
+   "fidelitySheet": "_incoming/img-1610/b2/fid/fid-f4-back.png (shape IoU 0.966 vs the decluttered maker back photo) + _incoming/img-1610/b2/key/f4-sheet.jpg (all 16, both names read by eye against the maker photos _incoming/img-1610/b2/labels.jpg)"
+  },
+  "fileName": "variant-cool-mint-ice-and-strawberry-ice-v3.webp"
  },
  {
   "source": "_incoming/argus-g4/raw/voopoo-Sliver-9.jpg",
