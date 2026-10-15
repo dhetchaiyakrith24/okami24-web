@@ -7764,32 +7764,32 @@
   "fileName": "variant-coil-72-4.webp"
  },
  {
-  "source": "_incoming/coil3/key/D-c94-card.png",
+  "source": "_incoming/img-1610/b1/key/D-c94-04.png",
   "slug": "coil-94",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
-   "reference": "Black Note's photos of each CALIBURN G3 pod option (0.4Ω pod; 0.6Ω / 0.9Ω boxes with 4 pods; 1.2Ω CRC Version box with 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-04.png; render _incoming/coil3/out/c94-04-S1.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c94-04.png + _incoming/coil3/fid/c94-06.png + _incoming/coil3/fid/c94-09.png + _incoming/coil3/fid/c94-12.png — card = the single-pod render of the 0.4Ω option (the box shots of the other options are too busy at card size)"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light + 'large in frame' + 'the dark backdrop shows through the clear and smoky parts, never milky white' (_incoming/img-1610/b1/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --ft 8 --device, foot slab trimmed (coil3/foottrim.js), specks dropped (img-1610/specks.js)",
+   "reference": "Black Note's photo of the CALIBURN G3 3ml 0.4Ω pod (bn-04.webp, 144 px wide — the only photo of this option; no 0.4Ω box photo exists, researcher 16/10) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/img-1610/b1/in/c94-04w.png; render _incoming/img-1610/b1/out/c94-04-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b1/fid/fid-c94-04.png — shape IoU 0.992; MIN mark, CE, crossed bin, red stripe, side tab checked by eye (colour dE does not apply: re-lit on dark on purpose, IMAGE_SPEC §0 item 8 (3))"
   },
-  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "card-v2.webp"
+  "note": "round img-1610 16/10 — re-shot: the 08/10 render copied the white-background look (milky pod); card = the 0.4Ω pod",
+  "fileName": "card-v3.webp"
  },
  {
-  "source": "_incoming/coil3/key/D-c94-04.png",
+  "source": "_incoming/img-1610/b1/key/D-c94-04.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-1",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this item's part list (_incoming/coil3/prompts.js); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js (low flood threshold, black box/base protected, foot line measured per render), floor cut at the foot (cutfoot.js); wide box+pods groups placed by place.js",
-   "reference": "Black Note's photos of each CALIBURN G3 pod option (0.4Ω pod; 0.6Ω / 0.9Ω boxes with 4 pods; 1.2Ω CRC Version box with 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-04.png; render _incoming/coil3/out/c94-04-S1.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c94-04.png — outline overlay vs the reference; logo, every printed mark and colour checked by eye (IoU understates multi-object shots: the white-background reference loses its white/clear parts in the cut, LESSONS 29)"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light + 'large in frame' + 'the dark backdrop shows through the clear and smoky parts, never milky white' (_incoming/img-1610/b1/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --ft 8 --device, foot slab trimmed (coil3/foottrim.js), specks dropped (img-1610/specks.js)",
+   "reference": "Black Note's photo of the CALIBURN G3 3ml 0.4Ω pod (bn-04.webp, 144 px wide — the only photo of this option; no 0.4Ω box photo exists, researcher 16/10) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/img-1610/b1/in/c94-04w.png; render _incoming/img-1610/b1/out/c94-04-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b1/fid/fid-c94-04.png — shape IoU 0.992; MIN mark, CE, crossed bin, red stripe, side tab checked by eye (colour dE does not apply: re-lit on dark on purpose, IMAGE_SPEC §0 item 8 (3))"
   },
-  "note": "round \"3 coil photos\" 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "variant-coil-94-1.webp"
+  "note": "round img-1610 16/10 — re-shot (was the milky 08/10 render)",
+  "fileName": "variant-coil-94-1-v2.webp"
  },
  {
-  "source": "_incoming/coil3/key/D-c94-06-v2.png",
+  "source": "_incoming/img-1610/b1/key/D-c94-06-v3.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-2",
@@ -7798,11 +7798,11 @@
    "reference": "Black Note's photo of this CALIBURN G3 option (box + 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-06.png; render _incoming/coil3/b2/c94-06-C2.png)",
    "fidelitySheet": "_incoming/coil3/fid/c94-06-v2.png — box art, every printed mark and the pods checked by eye against the reference (IoU / colour numbers do not apply: the reference lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B), replaces variant-coil-94-2.webp",
-  "fileName": "variant-coil-94-2-v2.webp"
+  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B) · img-1610 16/10: faint stray pixels along the pod bottoms dropped (img-1610/specks.js — owner taste note)",
+  "fileName": "variant-coil-94-2-v3.webp"
  },
  {
-  "source": "_incoming/coil3/key/D-c94-09-v2.png",
+  "source": "_incoming/img-1610/b1/key/D-c94-09-v3.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-3",
@@ -7811,11 +7811,11 @@
    "reference": "Black Note's photo of this CALIBURN G3 option (box + 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-09.png; render _incoming/coil3/b2/c94-09-C1.png)",
    "fidelitySheet": "_incoming/coil3/fid/c94-09-v2.png — box art, every printed mark and the pods checked by eye against the reference (IoU / colour numbers do not apply: the reference lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B), replaces variant-coil-94-3.webp",
-  "fileName": "variant-coil-94-3-v2.webp"
+  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B) · img-1610 16/10: faint stray pixels along the pod bottoms dropped (img-1610/specks.js — owner taste note)",
+  "fileName": "variant-coil-94-3-v3.webp"
  },
  {
-  "source": "_incoming/coil3/key/D-c94-12-v2.png",
+  "source": "_incoming/img-1610/b1/key/D-c94-12-v3.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-4",
@@ -7824,7 +7824,7 @@
    "reference": "Black Note's photo of this CALIBURN G3 option (box + 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-12.png; render _incoming/coil3/b2/c94-12-C1.png)",
    "fidelitySheet": "_incoming/coil3/fid/c94-12-v2.png — box art, every printed mark and the pods checked by eye against the reference (IoU / colour numbers do not apply: the reference lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B), replaces variant-coil-94-4.webp",
-  "fileName": "variant-coil-94-4-v2.webp"
+  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B) · img-1610 16/10: faint stray pixels dropped (img-1610/specks.js)",
+  "fileName": "variant-coil-94-4-v3.webp"
  }
 ]
