@@ -711,11 +711,12 @@ export const salthubProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/zero-pro/card.webp",
-        alt: "SALTHUB Zero Pro, black pen-style device with M logo, isolated product shot",
-        angle: "3/4, isolated",
-        transparentBackground: false,
-        sourceName: "SALTHUB",
+        // Image round img-1610 16/10: the old card was the small shop photo — card-v2 = a studio re-shoot of it (same tilt).
+        src: "/assets/products/zero-pro/card-v2.webp",
+        alt: "SALTHUB Zero Pro, black-to-red pen-style device with M logo, isolated product shot",
+        angle: "3/4, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from the shop photo",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from SALTHUB's photo",
         sourceUrl: "https://www.salthub.com/",
       },
     ],
@@ -857,7 +858,7 @@ export const salthubProducts: Product[] = [
         role: "card",
         // Image-sitewide round 01/10: the old SALTHUB photo (card.webp, 443x567) was below the sharpness standard —
         // card-v2 = the night render in the same 3/4 pose, teal matched to that photo (_incoming/image-sitewide/b-voopoo/zero-nano.js).
-        src: "/assets/products/zero-nano/card-v2.webp",
+        src: "/assets/products/zero-nano/card-v3.webp",
         alt: "SALTHUB Zero Nano, teal compact device, isolated product shot",
         angle: "3/4, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from SALTHUB's own photo",
         transparentBackground: true,
