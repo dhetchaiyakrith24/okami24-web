@@ -68,4 +68,56 @@ if (process.env.CLAUDE_CODE_REMOTE === "true") {
 const TMP = process.env.TEMP || os.tmpdir();
 const MACHINE = WIN ? "windows-chrome" : process.env.CLAUDE_CODE_REMOTE === "true" ? "cloud-linux-chromium" : `${process.platform}-chrome`;
 
-module.exports = { CHROME, FLAGS, TMP, MACHINE, findChrome };
+// ONE Chrome job at a time on this machine (HANDOFF §17 — two jobs at once slow each other into false flags; every
+// chat and agent shares the machine). Reading CHROME = this process is a Chrome job: it takes the machine-wide note
+// <tmp>/okami24-chrome-job.json, or waits for the job that holds it (OKAMI24_CHROME_LOCK_WAIT seconds, default 900),
+// then gives up with exit 2. Child processes of the holder pass (OKAMI24_CHROME_JOB carries the holder's pid) · a note
+// whose pid is gone is taken over · scripts that only need findChrome() (prepare-clone) never take it.
+const LOCK_DIR = process.env.OKAMI24_CHROME_LOCK_DIR || os.tmpdir();
+const LOCK = path.join(LOCK_DIR, "okami24-chrome-job.json");
+const alive = (pid) => {
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch (e) {
+    return e.code === "EPERM";
+  }
+};
+function holder() {
+  try {
+    const h = JSON.parse(fs.readFileSync(LOCK, "utf8"));
+    return h.pid && h.pid !== process.pid && String(h.pid) !== process.env.OKAMI24_CHROME_JOB && alive(h.pid) ? h : null;
+  } catch {
+    return null;
+  }
+}
+let locked = false;
+function takeChromeLock() {
+  if (locked) return;
+  locked = true;
+  const waitMs = Number(process.env.OKAMI24_CHROME_LOCK_WAIT ?? 900) * 1000;
+  const until = Date.now() + waitMs;
+  let h = holder();
+  if (h) process.stderr.write(`chrome: waiting — another Chrome job holds the machine (${h.script}, pid ${h.pid}, since ${h.started})\n`);
+  while (h && Date.now() < until) {
+    Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 2000);
+    h = holder();
+  }
+  if (h) {
+    process.stderr.write(`chrome: gave up — ${h.script} (pid ${h.pid}) still runs. One Chrome job at a time (HANDOFF §17): wait for it, then run again.\n`);
+    process.exit(2);
+  }
+  if (process.env.OKAMI24_CHROME_JOB) return; // a child of the holder — the parent's note covers it
+  fs.writeFileSync(LOCK, JSON.stringify({ pid: process.pid, script: path.basename(process.argv[1] || "node"), started: new Date().toISOString() }));
+  process.env.OKAMI24_CHROME_JOB = String(process.pid);
+  process.on("exit", () => {
+    try {
+      if (JSON.parse(fs.readFileSync(LOCK, "utf8")).pid === process.pid) fs.unlinkSync(LOCK);
+    } catch {
+      /* gone already */
+    }
+  });
+}
+
+module.exports = { FLAGS, TMP, MACHINE, findChrome, LOCK };
+Object.defineProperty(module.exports, "CHROME", { enumerable: true, get: () => (takeChromeLock(), CHROME) });

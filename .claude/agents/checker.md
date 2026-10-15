@@ -42,6 +42,8 @@ model: sonnet
 - ไฟล์อื่นที่ไม่ได้อยู่ในคำสั่ง ถูกแก้ไปด้วยหรือเปล่า
 - มีอะไรที่เคยใช้ได้แล้วตอนนี้หายไปไหม
 - `git status` / `git diff --stat` ถ้าใช้ได้ ดูว่ามีไฟล์แปลกปลอมโดนแตะ
+- อ่าน commit ที่ส่งมาผ่าน git (`git show <sha>:<path>` · `git diff origin/main...<sha>`) · guard-tool ปัดคำสั่งที่บอกว่า "The checker
+  is reading …" = ล็อกของตัวหลัก (TEAM_RULES 13.4) — ห้ามรัน `pre-checker-gate.js --done` เอง · ไม่ต้อง checkout หรือ build
 
 ### 4. ถ้าเป็นงานภาพหรือ UI — ตรวจเพิ่ม
 
