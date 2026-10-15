@@ -51,16 +51,22 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   bottoms) → next check is round 3 of 3. Chat moved at ~810k context 16/10 ~03:00: full state, file-by-file next steps and how the
   shared Higgsfield draft/queue really behaves = `_incoming/img-1610/NEXT.md` (read it first). NEXT: re-render ARGUS silver → fix →
   checker round 3 → merge · SALTHUB zero-nano + zero-pro cards · JOIWAY F3 14 green flavours · then the round order in NEXT.md.
-3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (own chat, worktree `.claude/worktrees/seo-all-keys-a38889`,
-  branch `claude/seo-all-keys-a38889` · own build tree `_incoming/wt-build` inside it + test server `next start -p 3414`; script
-  `_incoming/seo-keys/setup-build.sh <commit>` rebuilds it) · 【ห้ามแตะ】 product images + image map (image round) · every price file.
-  Order = SEO_LANDSCAPE §9.6. DONE [ตรวจแล้ว]: batch 1 key list #499 · batches 2 + 5 #502 d5fae710 (2 new Thai guides refilling-a-pod +
-  how-long-a-pod-device-lasts · 6 guides strengthened, body/FAQ only; checker PASS 143d66fa, title fix after it per 13.5 #2 (จ)).
+3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side chat 2, worktree `.claude/worktrees/seo-all-keys-2-c830d3`,
+  own build tree `_incoming/wt-build` inside it + test server `next start -p 3414`; `_incoming/seo-keys/setup-build.sh <ref>` moves +
+  rebuilds it — the first run's node_modules copy = PowerShell robocopy; the worktree root's `node_modules` = a junction to it) ·
+  【ห้ามแตะ】 product images + image map (image round) · every price file. Order = SEO_LANDSCAPE §9.6.
+  DONE [ตรวจแล้ว]: batch 1 key list #499 · batches 2 + 5 #502 d5fae710 · #514 ff2b9de6 (checker PASS db388bd3, round 2 of 3): Thai guide
+  /guides/comparing-voopoo-drag-models + /how-to-order · /shipping · /faq heads and copy for "สั่งพอตออนไลน์ / พอตส่งด่วน / ซื้อพอตที่ไหน"
+  + 3 /faq ordering items (BSOT §3/§8/§10/§12).
   Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them (§9.6 row 3 lists the pages).
+  Drafts waiting for 22/10 (they link frozen pages) in `_incoming/seo-keys/`: b4-flavour · b4-switch (also owner item 65) · b4-argus ·
+  b4-disposable — each lists its "links after 22/10" and its open data questions. Working notes = `_incoming/seo-keys/next-notes.md`.
   NEXT: 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" section) → batch 3 head set (seo-auditor reads the paper set
-  first; baseline = `_incoming/seo-keys/seo-auditor-open.md`) → batch 4 = drafts ready `_incoming/seo-keys/b4-flavour-draft.md` +
-  `b4-switch-draft.md` (each lists the links to add after 22/10; switch-pod waits on รอพี่ตรวจ 65) · still to draft: disposables
-  "ยี่ห้อไหนดี" · VOOPOO Drag / Argus families · batch 6 buying/trust. Owner list 63–66 open.
+  first; baseline = `_incoming/seo-keys/seo-auditor-open.md`; "สั่ง/ซื้อพอตออนไลน์" now sits on /how-to-order — `/` keeps
+  "ร้านพอตออนไลน์") → merge the 4 drafts → FAQAccordion server HTML (answers render only when opened, so FAQ answer links are not
+  in the HTML — shared by /faq, product and guide FAQs → whole-sitemap scan, after 22/10) · "พอตของแท้" = researcher on maker check
+  pages (16/10) decides write/skip · flavour FAQs on non-frozen pages (pod-180 · /brands/relx · zero-cartridge). Owner list 63–66 open.
+  Line breaks in collapsed FAQ answers: scan with `_incoming/seo-keys/wb-openscan.js` (each answer opened) — LESSONS พ34.
   Tool (owner 16/10): skill `content-strategy` (#508) = the way to plan pillars, clusters, buyer stages and the article order for the
   remaining batches — its OKami24 rules at its end (keymap = SEO_LANDSCAPE §0).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
