@@ -22,11 +22,14 @@
 //                                                    #   PR's branch: a local HEAD other than the PR head is BLOCKED
 //   node scripts/self-merge-check.js --files a,b     # a given list — gate tests only, NOT a merge verdict (no head pinned)
 //   node scripts/self-merge-check.js --base <ref>    # PROOF SIZING, not a merge verdict: every change since <ref>,
-//                                                    #   committed or not + untracked; judges "site touched?" only
+//                                                    #   committed or not + untracked; judges "site touched?" only:
+//                                                    #   last line PASS (nothing a visitor gets changed, exit 0) or
+//                                                    #   SITE-TOUCHED (exit 1) - a sizing answer, never a merge verdict
 // Last line (merge verdict): SMALL · SITE · BIG — or BLOCKED when it cannot judge (not this repo · render.yaml would
 // deploy on merge · local HEAD is not the PR head · --pr: no valid Checker line · empty diff). Exit 0 for SMALL/SITE/BIG, 1 for BLOCKED.
 // Also prints `HEAD <sha>` — merge exactly that commit (pin it in the merge call).
-// --base and --files keep their old PASS/BLOCKED lines ("site touched?" / list test) — skill round-close reads them.
+// --files keeps its PASS/BLOCKED lines (list test) · --base prints PASS / SITE-TOUCHED (rule-audit 15/10 row 40:
+// BLOCKED meant two things) — skill round-close reads it.
 "use strict";
 const { execFileSync } = require("child_process");
 const fs = require("fs");
@@ -176,7 +179,7 @@ function main() {
     if (sizing) {
       const why = siteReason(f, build);
       if (why) blocked++;
-      console.log(`${why ? "BLOCKED" : "ok     "}  ${f}${why ? `  (${why})` : ""}`);
+      console.log(`${why ? "site   " : "ok     "}  ${f}${why ? `  (${why})` : ""}`);
       continue;
     }
     const bigWhy = bigReason(f, hooks, build);
@@ -216,7 +219,7 @@ function main() {
     }
     if (head) console.log(`HEAD ${head}`);
   }
-  if (sizing) console.log(blocked ? "BLOCKED - something on the site changed since the base" : "PASS - nothing on the site changed since the base (proof sizing only - not a merge verdict)");
+  if (sizing) console.log(blocked ? `SITE-TOUCHED - ${blocked} file(s) a visitor gets changed since the base (proof sizing only - not a merge verdict)` : "PASS - nothing on the site changed since the base (proof sizing only - not a merge verdict)");
   else if (list) console.log(blocked ? `BLOCKED - list check: ${big} big · ${site} site (gate test, not a merge verdict)` : "PASS - list check: all off the site, none big (gate test, not a merge verdict: no head commit pinned)");
   else if (blocked) console.log("BLOCKED - cannot judge this PR (see the (repo) lines) - do not merge");
   else if (big) console.log("BIG - merge after checker + green checks, then report it on its own line (TEAM_RULES 13.7, owner 30/09)");
