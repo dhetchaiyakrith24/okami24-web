@@ -32,9 +32,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Friday picks ("แทนกฎกลาง §12 ข้อ 28", 13.3) · `voopooTitle` keeps its name (§18). Evidence = `_incoming/house-1510/` (computer only).
   Leftovers (own work, not started): rule-audit rows 20 (old rulings only in `git show` — round 7 lifted 15/10, others not
   checked) · 40 (self-merge-check `--base` prints BLOCKED for "site touched") · 45 (re-measure the scan baseline on the test server
-  at the next full close) · house-check misses a renamed HEADING pointer and a dead pointer on a "deleted/removed" line · the LOCK
-  ROUND (rule-audit 14/10 L1–L3, L5–L10 + "do not touch the tree/3412 while the checker reads" → one "pre-checker gate" script) ·
-  `scripts/lab/seo-c7.js:11` has 2 raw invisible characters (`thai-raw-chars-check.js` exit 1, pre-existing).
+  at the next full close) · `scripts/lab/seo-c7.js:11` has 2 raw invisible characters (`thai-raw-chars-check.js` exit 1, pre-existing).
+  LOCK ROUND 15/10 (branch `lock-round`, own chat): rule-audit L1–L3, L5–L10 + LESSONS พ22 → `scripts/pre-checker-gate.js`
+  (run before every checker, TEAM_RULES 13.4) + new denies in guard-tool / pre-commit / lib/chrome.js · house-check now
+  catches a renamed quoted heading and a dead pointer on a "deleted" line about something else.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
@@ -115,7 +116,7 @@ Do not touch unless the round file names it: layout outside the named spot · im
   layout / 4 icons · sticky th on /compare · ScrollHintFrame · headings K1–K3 · locked word "อุ่นยาสูบ" · the ban on
   "ไม่เผาไหม้" in every language · FAQ eyebrow "ถาม-ตอบ" · /search eyebrow = footer.tools · THAI_STYLE_LOG §7 rows of
   round 30.4ข · ProductHero stats / PuffCount / Coil-72 category (data round) · footer.tagline / cart (their own rounds)
-  — never: joiner/NBSP outside the list · two Chrome jobs at once · fixing tier-B orphan words one by one · placeholders
+  — never: joiner/NBSP outside the list · two Chrome jobs at once (locked: `scripts/lib/chrome.js` makes the second wait) · fixing tier-B orphan words one by one · placeholders
   in an empty spec row · screenshots without a scan first (13.5 #7)
 Site copy (every round): every new sentence = 3 languages (new articles = Thai first, `thaiOnly: true` — §18) · Friday picks
   reversibly, the owner keeps/undoes after merge (TEAM_RULES 13.3 last paragraph + 13.8) · every
@@ -126,25 +127,29 @@ Test server: `node scripts/test-server.js build` then `start` (port 3412 · SITE
   OKAMI24_DATA_DIR=<tmp> · backup and startup probe off · log `_incoming/test-server-3412.log`) · a new build needs
   stop → start · stop = `node scripts/test-server.js stop` (kills only the PID on 3412 · `status`) ·
   port 3000 + `.claude/launch.json` "vapor-dev" = the owner's own dev server, agents never start it · never build while
-  the server runs (`test-server.js build` and `verify:catalog --full` refuse; a bare `next build` has no gate) ·
+  the server runs (`test-server.js build` and `verify:catalog --full` refuse; a bare `next build` / `npm run build` in the
+  main folder is denied by `scripts/guard-tool.js` — only a worktree under `_incoming/` builds bare) · while the checker
+  reads (note of `scripts/pre-checker-gate.js`, TEAM_RULES 13.4) start/stop/build of 3412 is denied too ·
   a SECOND server (3412 busy with another chat): a worktree with a real copy of node_modules (robocopy ~1 min; a junction
   cannot build), then `SITE_URL=https://okami24.store npx next build` + `next start -p 3413` with the test-server env
   (OKAMI24_DATA_DIR=<tmp> · OKAMI24_BACKUP_DISABLED=1 · OKAMI24_STARTUP_PROBE=0; no SITE_URL = build fails at /robots.txt) ·
   stop it by the PID on 3413 only ·
-  Chrome one job at a time · a job over 10 minutes = background + watch the log · a full-page `shot.js` with black
+  Chrome one job at a time (machine-wide note in the OS temp folder — a second script prints "chrome: waiting", gives up
+  after 15 min with exit 2; `OKAMI24_CHROME_LOCK_WAIT=<s>`) · a job over 10 minutes = background + watch the log · a full-page `shot.js` with black
   posters = shoot spot by spot with `--anchor` instead of chasing a page bug · an agent silent past 2x its time budget =
   look at its PID/output files
 Windows shell: scripts are written with the Write tool · Thai text enters scripts through json/txt files only (argv is
   mangled) · shot.js wraps the eval result in JSON twice (parse twice) · CRLF: a new file from Write = LF → unix2dos
   before git add · `scripts/eol-check.js --staged` runs in .githooks/pre-commit (hooks on after a clone:
   `node scripts/prepare-clone.js`, `docs/RECOVERY.md` 2ค · session-sync resets core.hooksPath to .githooks + warns) · .githooks/ files are always LF · Git Bash turns an arg "/"
-  into a path → MSYS_NO_PATHCONV=1 · `node -e "…"` runs backticks as commands and drops `\s` → script files only ·
+  into a path → MSYS_NO_PATHCONV=1 (guard-tool denies a `node scripts/…` call with a /page argument without it) · `node -e "…"` runs backticks as commands and drops `\s` → script files only ·
   never pipe a long-running logger into `| head` (it kills node mid-run) — log to a file, then `tail` · the cloud is Linux (no autocrlf; `test-server.js stop` works there too)
 Tools in scripts/ (usage = each file's head): shot.js · head-audit.js (head/links of every sitemap page) · site-audit.js ·
   scan.js · locale-hydration-scan.js · visible-text.js · wordbreak-scan.js + wb-diff.js · linemap-scan.js · html-diff.js ·
   overflow-390.js · og-gate.js · gallery-probe.js (touch/swipe every frame, `--sitemap`) · stale-image-audit.js ·
   flatcut.js · card-lines.js + card-lines-diff.js · empty-cards.ts · finder-dump.ts · measure-articles.ts ·
   related-boxes.ts · guide-reading-rate.ts · record-scroll.js + frames-to-gif.js · self-merge-check.js (13.7) ·
+  pre-checker-gate.js (13.4 — before every checker · `--done` after its report · `--self-test` = every lock on a planted example) ·
   house-check.js (housekeeping measure: sizes · locks · rules followed · leftovers) · lab/js-weight.js (first-paint JS per page) ·
   poster-stretch.js (story poster/cover/anatomy file width vs drawn width, LESSONS-images พ17)
 src files the skills use (the one list — skills may not name a file under src/, 13.2; fix a renamed file here):

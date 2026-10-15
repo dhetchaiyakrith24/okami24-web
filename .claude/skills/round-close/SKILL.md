@@ -61,6 +61,9 @@ Word-break fixes and anything the gates or the designer flagged → one commit. 
 ## Step 5 — Checker, tag, push, merge
 
 1. `checker` passes the close — **skip** when nothing changed after the last batch's checker PASS (13.4: a result holds for its commit); say so.
+   Before every checker call (each batch, each re-check): `node scripts/pre-checker-gate.js` → `GATE PASS <sha>` = the sha
+   to brief the checker with (it reads `git show <sha>:…` / `git diff origin/main...<sha>`); after its report:
+   `node scripts/pre-checker-gate.js --done` (13.4 — the tree and 3412 stay still in between).
 2. Commits split so each topic reverts on its own (13.7).
 3. **Annotated tag on the round-close commit, before the push:** `git tag -a <english-name> <commit> -F <thai-message-file>`
    (English name, no spaces — pattern: `git tag -n1`; Thai message the owner can read) → `git push` + `git push origin --tags`.
