@@ -10,8 +10,9 @@ import { ORDERING_ENABLED } from "@/lib/commerce/ordering-mode";
 import { FAQ_COPY_TH } from "@/i18n/faq-copy";
 
 export const metadata: Metadata = {
-  title: "คำถามที่พบบ่อย",
-  description: "สั่งซื้อยังไง สเปกสินค้ามาจากไหน พอตซิสเต็มกับพอตใช้แล้วทิ้งต่างกันตรงไหน นิโคติน 30mg หมายถึงอะไร ถ้ายังไม่เจอคำตอบ ทัก LINE @okm24",
+  // Round "SEO all keys" batch 6 (16/10): "ซื้อพอตที่ไหน" + the buying questions the page now answers (SEO_LANDSCAPE §9.4).
+  title: "คำถามที่พบบ่อยเรื่องการซื้อพอต",
+  description: "ซื้อพอตที่ไหน สั่งยังไง ส่งกี่วันถึง ซื้อยกลังได้ไหม และพอตซิสเต็มกับพอตใช้แล้วทิ้งต่างกันตรงไหน ถ้ายังไม่เจอสิ่งที่อยากรู้ ทักไลน์ @okm24 ได้ทุกวัน",
   ...canonicalFor("/faq"),
 };
 

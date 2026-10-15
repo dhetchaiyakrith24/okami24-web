@@ -36,6 +36,13 @@ function actionLabel(dict: ReturnType<typeof useLocale>["dict"], labelKey: FAQAc
       return dict.faq.contactLineCta;
     case "browseProductsCta":
       return dict.faq.browseProductsCta;
+    // Round "SEO all keys" batch 6 (16/10): the three service pages, labelled by their existing nav words.
+    case "howToOrder":
+      return dict.nav.howToOrder;
+    case "shipping":
+      return dict.nav.shipping;
+    case "warranty":
+      return dict.nav.warranty;
   }
 }
 

@@ -40,6 +40,33 @@ export const siteFaqs: SiteFAQ[] = [
       "Message @okm24 on LINE and tell us the model and the quantity you want — the admin checks stock and replies in the chat. The line is open every day, 24 hours.",
     action: { href: CONTACT.lineUrl, labelKey: "contactLineCta" },
   },
+  // Round "SEO all keys" batch 6 (16/10, SEO_LANDSCAPE §9.4): "ซื้อพอตที่ไหน" + the two questions BSOT §16 lists as asked
+  // most ("ส่งกี่วัน" · "ถ้าสินค้ามีปัญหารับผิดชอบไหม"). Facts: BSOT §3 (LINE every day, 24 h) · §8 · §10 · §12 — the claim
+  // answer points at /warranty instead of listing symptoms, so no "not covered" line is softened.
+  {
+    id: "where-to-buy",
+    category: "ordering",
+    question: "Where can I buy a pod online and have it delivered?",
+    answer:
+      "Right here at OKami24. Browse the models, prices, colours and flavours on this site first, then message us on LINE @okm24 with the one you want — the admin checks stock and confirms the total in the chat. We deliver anywhere in Thailand, and every order comes with a tracking number. LINE is open every day, 24 hours.",
+    action: { href: "/how-to-order", labelKey: "howToOrder" },
+  },
+  {
+    id: "shipping-time",
+    category: "ordering",
+    question: "How long does delivery take?",
+    answer:
+      "Transfer and send us the slip on LINE before 15:00 and we ship the same day; after 15:00 it goes out the next working day. We ship Monday to Saturday, not on Sundays or public holidays. Once it’s out, it arrives within 1–3 days, and the admin sends you the tracking number on LINE.",
+    action: { href: "/shipping", labelKey: "shipping" },
+  },
+  {
+    id: "problem-on-arrival",
+    category: "ordering",
+    question: "What if something’s wrong with my order when it arrives?",
+    answer:
+      "You can claim with us within 7 days of receiving it, and an unboxing video is required as evidence. If the claim is approved we send you a new one of the same item — or, if that’s out of stock, another item at the same price. There’s no cash refund in any case. The claims page lists exactly which problems are covered.",
+    action: { href: "/warranty", labelKey: "warranty" },
+  },
   {
     id: "where-specs-come-from",
     category: "devices",
