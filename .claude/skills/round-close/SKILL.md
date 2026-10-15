@@ -1,6 +1,6 @@
 ---
 name: round-close
-description: Close a work round for the OKami24 site after the last batch passed the checker. Use it for every round close, whatever the round's name. It sequences the proof sized to what changed (nothing a visitor gets changed = one self-merge-check line), the word-break scan when on-page Thai changed, the designer pass when 13.5 #6 calls for it, the verify set 13.5 names (light or full), the one-commit fix of what the close found, the annotated tag + tag push (a cloud round: the close commit instead), HANDOFF §16, and the report (central §12 item 10). It names the checks but never their expected numbers — pass is what each script itself prints.
+description: Close a work round for the OKami24 site after the last batch passed the checker. Use it for every round close, whatever the round's name. It sequences the proof sized to what changed (nothing a visitor gets changed = one self-merge-check line), the word-break scan when on-page Thai changed, the designer pass when 13.5 item 6 calls for it, the verify set 13.5 names (light or full), the one-commit fix of what the close found, the annotated tag + tag push (a cloud round = the close commit instead), HANDOFF §16, and the report (central §12 item 10). It names the checks but never their expected numbers — pass is what each script itself prints.
 ---
 
 # Round close

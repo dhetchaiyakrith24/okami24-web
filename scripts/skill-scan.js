@@ -62,7 +62,13 @@ function scanText(text) {
     if (base > 0) add("hidden", "frontmatter indented", 1, `${base} space(s) — read it by hand`);
     fm.forEach((l, k) => {
       if (!l.trim() || indent(l) > base || l.trim().startsWith("#")) return; // a YAML comment is not a key
-      if (/^(name|description)\s*:/.test(l.trim())) return;
+      if (/^(name|description)\s*:/.test(l.trim())) {
+        // an unquoted value holding ": " or " #" is cut there by YAML — the skill then loads with a wrong or short
+        // description (16/10: round-close and tier-b-proof were cut at " #" for weeks)
+        const v = l.trim().replace(/^(name|description)\s*:\s*/, "");
+        if (!/^["']/.test(v) && /: | #/.test(v)) add("hidden", "frontmatter value cut by YAML", k + 1, l);
+        return;
+      }
       add("hidden", "frontmatter beyond name/description", k + 1, l);
     });
   }
@@ -157,6 +163,7 @@ function selfTest() {
     "เลือกความแรงนิโคตินให้เหมาะกับตัวเอง แล้วชาร์จแบตให้เต็มก่อนใช้ครั้งแรก",
     "สอบถามเพิ่มเติมทางไลน์ของร้านได้ตลอด ส่งของทุกวันจันทร์ถึงเสาร์",
   ].join("\n");
+  check(scanText(["---", "name: z", "description: does a thing. Note: also #5 here", "---"].join("\n")).some((f) => f.label === "frontmatter value cut by YAML"), "a description YAML would cut at ': ' or ' #' flagged");
   const m = scanText(more);
   check(m.some((f) => f.label === "frontmatter tab-indented"), "tab-indented frontmatter key flagged");
   check(m.some((f) => f.label === "control character"), "C1 control (U+0085) flagged");
