@@ -1758,7 +1758,7 @@ const allGuides: Guide[] = [
     // Links avoid the pages frozen until the 22/10 GSC read (SEO_LANDSCAPE §9.6). Evidence _incoming/seo-keys/b2-facts.md.
     id: "refilling-a-pod",
     slug: "refilling-a-pod",
-    title: "เติมน้ำยาพอตยังไง และหัวพอตแบบไหนเติมเองได้",
+    title: "เติมพอตยังไง หัวพอตแบบไหนเติมเองได้ และเติมแค่ไหนดี",
     dek: "เติมน้ำยาพอตไม่ยาก แต่ต้องรู้ก่อนว่าหัวพอตของเราเติมเองได้หรือเปล่า บทความนี้เล่าวิธีเติมทีละขั้น เติมแค่ไหนถึงพอดี และหัวพอตใหม่ควรรอนานแค่ไหนก่อนสูบ",
     category: "maintenance",
     readingTimeMin: 6,

@@ -318,3 +318,7 @@ Rows 1–10 (above) keep their dates ("pod" / "pod system" = row 9). Also on 22/
 - No new link to the watch-row pages 1–8 (frozen until this read). Category read-next boxes unchanged (measured from code).
 - Targets: refilling-a-pod gets "เติมน้ำยา…" rows (m-switch-kit loses them) · how-long-a-pod-device-lasts gets "พอต…ใช้ได้นาน…"
   rows · read 01/11 · 15/11 (new pages need ~2–4 weeks).
+- Title of /guides/refilling-a-pod = "เติมพอตยังไง หัวพอตแบบไหนเติมเองได้ และเติมแค่ไหนดี" ("น้ำยา" kept out of head copy, HANDOFF §18;
+  owner question รอพี่ตรวจ 66). Brand read-next boxes moved (battery-care-and-charging now links more products, checker #502):
+  /brands/uwell slot 3 coil-and-pod-maintenance → battery-care-and-charging (GSC uwell 15/74 — watch) · /brands/relx and /brands/wotofo
+  gain battery-care in front (2 → 3) · /brands/tfit 0 → 1.
