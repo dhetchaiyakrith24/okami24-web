@@ -1,6 +1,6 @@
 ---
 name: round-close
-description: Close a work round for the OKami24 site after the last batch passed the checker. Use it for every round close, whatever the round's name. It sequences the proof sized to what changed (nothing a visitor gets changed = one self-merge-check line), the word-break scan when on-page Thai changed, the designer pass when 13.5 #6 calls for it, the verify set 13.5 names (light or full), the one-commit fix of what the close found, the annotated tag + tag push (a cloud round: the close commit instead), HANDOFF §16, and the 4-part report. It names the checks but never their expected numbers — pass is what each script itself prints.
+description: Close a work round for the OKami24 site after the last batch passed the checker. Use it for every round close, whatever the round's name. It sequences the proof sized to what changed (nothing a visitor gets changed = one self-merge-check line), the word-break scan when on-page Thai changed, the designer pass when 13.5 #6 calls for it, the verify set 13.5 names (light or full), the one-commit fix of what the close found, the annotated tag + tag push (a cloud round: the close commit instead), HANDOFF §16, and the report (central §12 item 10). It names the checks but never their expected numbers — pass is what each script itself prints.
 ---
 
 # Round close
@@ -73,14 +73,14 @@ Word-break fixes and anything the gates or the designer flagged → one commit. 
 - `docs/HANDOFF.md` §16: "open round" → "none — <round> closed" + tag (cloud: close commit) · rest refreshed — spec =
   skill `okami24-handoff` · permanent owner rulings of the round → §18.
 - Temporary rulings (written with an end date, `.claude/TEAM_RULES.md` 13.6): search §16, `.claude/LESSONS.md` and
-  `.claude/memory/` for ones that ended or end with the round → delete them; one with no end date = list it in report item 4 with a proposed end date (13.3 last paragraph).
+  `.claude/memory/` for ones that ended or end with the round → delete them; one with no end date = list it in the report part "ต้องตัดสินใจ/ทำ" with a proposed end date (13.3 last paragraph).
 - Owner rulings on Thai words/sentences → `docs/THAI_STYLE_LOG.md` §7 (and the word table in THAI_STYLE §3 when the
   owner locked a word) — the main agent writes them.
 - The round file that ran is in `docs/rounds/` (re-copy if edited during the round) → delete its copy under `rounds/`
   on branch `inbox`, if any (a commit on `inbox` that only removes that file).
 
-## Step 7 — The 4-part report (Thai, `docs/TEMPLATES.md` (ข))
+## Step 7 — The report (Thai, central §12 item 10 · `docs/TEMPLATES.md` (ข))
 
 Cut: narration of the way there · repeating the instruction · reasons scattered through the body (all reasons go in
-item 3). Keep: tables go in `_incoming/<round>/`, the report gives the path. Item 3 also answers `docs/TEMPLATES.md`
+the part "ติดปัญหา"). Keep: tables go in `_incoming/<round>/`, the report gives the link. The part "ติดปัญหา" also answers `docs/TEMPLATES.md`
 (ค)-8: which part of the instruction prescribed a method that was not needed or blocked a better one ("nothing" = one line).

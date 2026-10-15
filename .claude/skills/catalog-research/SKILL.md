@@ -72,7 +72,7 @@ is the spec-row gate (files: HANDOFF §17 "src files the skills use" [spec-gate]
 
 1. **The main agent opens the maker's page in the in-app browser itself** and reads the text (page text / page HTML)
    or the maker's own spec image — the case `.claude/TEAM_RULES.md` 13.2 allows when an agent cannot do the job (the
-   researcher and checker have no browser); say so in one line of report item 3. Their job here is to propose URLs
+   researcher and checker have no browser); say so in one line of the report part "ติดปัญหา". Their job here is to propose URLs
    and to re-read what the main agent quotes. **Computer only** — a cloud chat has no in-app browser and its Chromium
    cannot open HTTPS sites (`docs/CLOUD.md` table 1): there, read the page text with `curl` / WebFetch; unreadable =
    `[ยังไม่มีข้อมูล]`, never a guess.

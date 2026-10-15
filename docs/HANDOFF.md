@@ -3,7 +3,7 @@
 > Rewritten at the housekeeping round 01/10: §1–§15 (history up to 2026-09-22) and the relocated round blocks were
 > removed — the full old file is `git show aa21cbb:docs/HANDOFF.md`. Section numbers 16–18 are kept so every pointer
 > stays valid. §16: the same topic is overwritten, a new topic is added in its item (spec + when = skill `okami24-handoff`).
-> Tags on every statement: [ตรวจแล้ว] / [เชื่อว่า] / [รอเจ้าของ] · "ตรวจผ่านตามเกณฑ์" ≠ "เจ้าของอนุมัติ".
+> Tags [ตรวจแล้ว] / [เชื่อว่า] / [รอเจ้าของ] on every "done / works / number" statement (central §12 item 9) · "ตรวจผ่านตามเกณฑ์" ≠ "เจ้าของอนุมัติ".
 
 ## 16. Paste block for the next chat
 

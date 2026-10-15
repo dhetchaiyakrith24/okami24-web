@@ -87,7 +87,7 @@ wording the owner rules on is recorded in `docs/THAI_STYLE_LOG.md` §7 (split of
 - **Use only the locked words in THAI_STYLE §3 — the whole table, not a fixed list** (the table has
   grown every round since 2026-09-10; read it, do not remember it). Their banned twins in the
   "ห้ามใช้" column of that table may not appear in anything you propose. If you need a Thai word for something the table does not
-  cover, **flag it** (the main agent picks one reversibly and lists it in report item 4, 13.3 last paragraph — the work does not wait) — list it in your report as "คำที่ยังไม่ล็อก" with 2–3 candidates and
+  cover, **flag it** (the main agent picks one reversibly and lists it in the report part "ต้องตัดสินใจ/ทำ", 13.3 last paragraph — the work does not wait) — list it in your report as "คำที่ยังไม่ล็อก" with 2–3 candidates and
   what real customers say. Never coin a term on your own.
 - **Never invent** a number, statistic, review or customer result — no real data = write `[ยังไม่มีข้อมูล]` and say
   it must be filled. **Never claim** anything about health, safety or official approval.
