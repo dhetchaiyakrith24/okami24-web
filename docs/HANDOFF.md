@@ -58,6 +58,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   first; baseline = `_incoming/seo-keys/seo-auditor-open.md`) → batch 4 = drafts ready `_incoming/seo-keys/b4-flavour-draft.md` +
   `b4-switch-draft.md` (each lists the links to add after 22/10; switch-pod waits on รอพี่ตรวจ 65) · still to draft: disposables
   "ยี่ห้อไหนดี" · VOOPOO Drag / Argus families · batch 6 buying/trust. Owner list 63–66 open.
+  Tool (owner 16/10): skill `content-strategy` (#508) = the way to plan pillars, clusters, buyer stages and the article order for the
+  remaining batches — its OKami24 rules at its end (keymap = SEO_LANDSCAPE §0).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
