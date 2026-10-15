@@ -86,7 +86,7 @@ the rule that is read most often (the central rules and `.claude/TEAM_RULES.md`,
 
 Close the report with:
 
-1. Counts: how many ขัดกัน · ตายแล้ว · ทับซ้อน · กำกวม.
+1. Counts: how many of each of the six kinds (ขัดกัน · ตายแล้ว · ทับซ้อน · กำกวม · มัดมือ · ทำเป็นตัวล็อกได้).
 2. Files you could not read (path + why).
 3. **What you did not check** — so nobody mistakes silence for a pass.
 

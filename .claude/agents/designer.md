@@ -39,7 +39,7 @@ page alone is not looking.
 2. Whole and clean — no holes, torn or cut parts (cables, pod heads), specks, patches, white bits left inside
    letters (03/10 "white bits, torn cable").
 3. Every letter, logo, number and screen = its source (the maker's file, or the master of an AI render),
-   compared character by character; an AI upscale never on an image with text (03/10 G5 screen "35W → 35H"); AI light that
+   compared character by character; an AI upscale on an image with text only when every letter, number and product pattern is pasted back from the original pixels and compared spot by spot (owner 15/10 · IMAGE_SPEC §0 7 · 03/10 G5 screen "35W → 35H"); AI light that
    changed text is not usable (IMAGE_SPEC §0 7 + 8).
 4. Big and sharp enough at the size shown, and the device the same visual size as its neighbours (other
    cards, other brands) (02/10 "ARGUS G4 too small" · 08/10 MURO 3ML "ดูเล็ก").

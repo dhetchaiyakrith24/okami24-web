@@ -13,40 +13,30 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 
 1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #474 e111ac8e (never split หน่วยงาน, owner item 54;
   live 200) [ตรวจแล้ว] · last merge = #484 be9c09cc (house audit 15/10, no site file). Rollback = revert one PR. Render: ~1 min
-  of 502 + ~2 min after the deploy job ends — wait, then curl. Night chain OFF. Owner decisions: ask in chat + one line in
+  of 502 + ~2 min after the deploy job ends — wait, then curl. Night = the owner says ไปนอน → keep working in the same chat (TEAM_RULES 13.6). Owner decisions: ask in chat + one line in
   `docs/รอพี่ตรวจ.md` (no review-sheet artifact — §18). Images: Higgsfield web app in the owner's Chrome, free "365 Unlimited"
   models only · the Higgsfield MCP generate/upscale tools are DENIED in `.claude/settings.json` · credits only on the owner's yes
   in chat (IMAGE_SPEC §0 item 7) · tool tips = LESSONS-images 29 + §17 "Higgsfield".
-2 ahead of main: branch `house-homes` (pushed, NOT checked yet, no PR): skill house-clean "เกลาทีละบ้าน" (6 homes, owner 15/10
-  "แก้และทำเลย") + รอพี่ตรวจ item order fixed + this §16. Worktrees: only `_incoming/wt-stock` (stock round · own node_modules copy · test server
-  `next start -p 3413`, stopped). Untracked folder `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's (admin price reports +
-  chat screenshots): never in git, never delete (listed in `.git/info/exclude` on the computer 15/10 — hidden from git status).
-  `git branch --show-current` before every commit. Git hooks: core.hooksPath must read `.githooks` (session-sync resets it).
-3 DONE 15/10 — house audit (item 3n, owner's 7 questions) → #484 merge be9c09cc (checker PASS round 3 at 6cb7d10; rounds 1–2
-  FAIL on a lost planner rule, a lost THAI_STYLE item, `git branch:*` in the allow-list, one HANDOFF phrase). Report + evidence =
-  `_incoming/house-1510/` (computer only: report.md · compliance.md · rule-audit.md 52 rows · tx-*.txt). Rulings = §18
-  "Answered 15/10". Weekly task `okami24-house-weekly` created 15/10 (Sunday 20:00, prompt = skill house-clean (ก)) — the app did
-  NOT keep auto mode on it: its git-write step can pause on a prompt until the owner sets the task's mode or approves once
-  (รอพี่ตรวจ item 61). Earlier round "housekeeping 14/10" = tag `house-clean-1410-done`.
-  House-audit leftovers (own work, not started): rule-audit rows 20 (rulings still only in `git show` of old HANDOFFs → §18) ·
-  40 (self-merge-check `--base` prints BLOCKED for "site touched") · 45 (re-measure the scan baseline on the test server at the
-  next full close) · house-check skips a dead pointer on a line that says "deleted/removed" (known limit) · the LOCK ROUND =
-  rule-audit 14/10 L1–L3, L5–L10 + "do not touch the tree/3412 while the checker reads" → one "pre-checker gate" script, its own
-  round (Friday's pick 15/10).
-3h NEXT CHAT (chat moved at 640k, 15/10) — continue "เกลาทีละบ้าน" on branch `house-homes`, in this order:
-  (a) apply the 47 Friday-may-do rows of `_incoming/house-1510/homes-audit.md` (computer only; homes: lessons · guides ·
-      rulings · rules) — verify each [เชื่อว่า] row against git first · no file under src/ public/
-  (b) owner picks = only what the owner can judge, one by one with an example he sees (TEAM_RULES 13.3; technical = decide):
-      night chain "ปิดอยู่" = state or ban? · `voopooTitle` "rename NOT done" = banned or not yet? · Owner eye #3 exception for
-      pasting original pixels over text? · delete 2 stale pointer files in the account memory folder (outside git, 13.3 #1) ·
-      TEAM_RULES 13.3 vs central §6 reference-image wait / central 12.28 vs "technical = Friday" = Friday drafts, owner rules
-  (c) receive the new central copy = PR #487 (rules-sync/c1ca27c, smogz-rules#14 merged c1ca27c): check the sha per
-      `.claude/rules-source.json`, then in the SAME PR adapt the web: every "รายงาน 4 หัวข้อ" → central 12.10 new report
-      format · central 12.31 Remote Control tool name into TEAM_RULES 13.6 · tags per new 12.9 (okami24-handoff rule 1 ·
-      HANDOFF line 6 · researcher/rule-auditor/scope-auditor/seo-auditor) · no "ไม่เห็นจุดเสี่ยง" line (round-open) · CLAUDE.md
-      "central §1–12" → "§5–12" · review sheet only for big multi-image work (12.22) → checker → merge
-  (d) update the scheduled task `okami24-house-weekly` prompt: add step "tidy home by home" (skill house-clean (ก) step 3)
-  (e) report to the owner in the new 12.10 format + the plain-Thai goal summary of housekeeping he asked for 15/10.
+2 open PRs (15/10 housekeeping "เกลาทีละบ้าน", owner "แก้และทำเลย"): #488 `house-homes` (skill house-clean 6-home step · the
+  Friday rows of `_incoming/house-1510/homes-audit.md` · checker round 1 FAIL on 3 wording points, fixed, round 2 next) ·
+  #487 `rules-sync/c1ca27c` (central copy @c1ca27c, sha matches `.claude/rules-source.json` + the web adapted to it: new report
+  format 12.10, Remote Control tool in 13.6, tags 12.9, §5–12) — merge #488 first, then merge main into #487, checker, merge.
+  Worktrees: `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped) ·
+  `_incoming/wt-rules` (#487, remove after merge). Untracked folder `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's (admin
+  price reports + chat screenshots): never in git, never delete (listed in `.git/info/exclude` on the computer — hidden from git
+  status). `git branch --show-current` before every commit. Git hooks: core.hooksPath must read `.githooks` (session-sync resets it).
+3 DONE 15/10 — house audit 3n → #484 (be9c09cc) · "เกลาทีละบ้าน" round 1 (#488 + #487 above) · weekly task
+  `okami24-house-weekly` prompt now has the 6-home step (Sunday 20:00; its mode may still need the owner's Auto — รอพี่ตรวจ 61).
+  Owner answers 15/10 (written into the rules): night = the owner says ไปนอน → keep working in the same chat, night chain off
+  (TEAM_RULES 13.6) · AI upscale of a poster with text = allowed when original pixels go back over every text/pattern (IMAGE_SPEC §0 7)
+  · an approved image exception reused for the exact same case = do it, then report (IMAGE_SPEC §4). Friday's picks (owner may object):
+  new look with nothing to compare and no reference image = draft + other parts meanwhile (13.3) · conflicting TECHNICAL rules =
+  Friday picks ("แทนกฎกลาง §12 ข้อ 28", 13.3) · `voopooTitle` keeps its name (§18). Evidence = `_incoming/house-1510/` (computer only).
+  Leftovers (own work, not started): rule-audit rows 20 (old rulings only in `git show` — round 7 lifted 15/10, others not
+  checked) · 40 (self-merge-check `--base` prints BLOCKED for "site touched") · 45 (re-measure the scan baseline on the test server
+  at the next full close) · house-check misses a renamed HEADING pointer and a dead pointer on a "deleted/removed" line · the LOCK
+  ROUND (rule-audit 14/10 L1–L3, L5–L10 + "do not touch the tree/3412 while the checker reads" → one "pre-checker gate" script) ·
+  `scripts/lab/seo-c7.js:11` has 2 raw invisible characters (`thai-raw-chars-check.js` exit 1, pre-existing).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
@@ -95,7 +85,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     pod-systems link slot (designer) · LINE OA rich menu / pinned post (owner: later) · Analytics = NOT now (revisit before the
     first paid ad).
   - Own rounds (owner 07/10): typo-tolerant search Thai + English (site + Google) · a lifestyle / real-shot strip at the end of
-    product pages (sheet 16 A; answers in https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr collection "answers") · every product
+    product pages (sheet 16 A, the owner wants one sample shot first; answers in https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr collection "answers") · every product
     gets an SEO article in "more details" (owner 01/10).
   - Slip check (owner 10/10): a correct transfer judged wrong AGAIN → switch to EasySlip's `matchedAccount` (the owner's step =
     รอพี่ตรวจ 57), then test one K+ QR + one Krungsri slip and drop our receiver-match.
@@ -178,8 +168,8 @@ Higgsfield (web app in the owner's Chrome): the draft box is SHARED across tabs 
   GPT Image · FLUX.2 Pro 1K · Kling O1 Image) — check the button reads "Unlimited" before EVERY click · refs = the Chrome extension's
   file_upload on the uploads panel's hidden input (the app's built-in browser pane has no upload tool: 3 KB base64 chunks +
   sha256 check — slow) · results via MCP `show_generations` (read-only) · prompt box = Lexical editor (LESSONS-images 29)
-Night chain: its rules live in the routine `friday-chat-move` prompt (TEAM_RULES 13.6) · before the first night the owner
-  archives routine-born chats still open (a run still "Running" makes the next slot "Skipped")
+Scheduled tasks: unattended = the task's mode set to Auto in the app (TEAM_RULES 13.6) · a new task: "Run now" once while the owner
+  is there and "Always allow" each prompt, or skill `fewer-permission-prompts` · one command per Bash call
 ```
 
 ## 18. Permanent owner rulings — settled, never re-ask (central §12 item 17)
@@ -200,7 +190,7 @@ boundary, never mid-word, never a dangling connective, never a bare floating num
 "M Bar" must both rank ("SALTHUB (Marbo)" brand title · "M Bar = Marbo" body line · FAQ "Marbo กับ M Bar") · wholesale FAQ =
 "ติดต่อหลังไมค์ทางไลน์", no numbers, no discount · breadcrumb "Home" stays (no "หน้าแรก" — no ranking effect) · LINE-click counter =
 in-site count, no cookies, nothing sent outside ·
-new articles = THAI FIRST (`thaiOnly: true`, translated later) · free SEO tools only (round SEO ฉ) · `okami24.net` / `.com` NXDOMAIN — leave them · `voopooTitle` rename NOT done · no `OKAMI24_METRICS_TOKEN` — read the
+new articles = THAI FIRST (`thaiOnly: true`, translated later) · free SEO tools only (round SEO ฉ) · `okami24.net` / `.com` NXDOMAIN — leave them · `voopooTitle` (code name of the home section "Pod Kit / พอตคิท") keeps its name — a rename changes nothing a visitor sees (Friday 15/10) · no `OKAMI24_METRICS_TOKEN` — read the
 Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
 
 **Sources named in articles (owner 13/10, chat):** no Thai agency or Thai source is named or linked as a source on the
@@ -260,8 +250,8 @@ to Friday: plain, luxurious, premium, depth); disposables / pod-replacement prod
 เช่นสินค้าตัวนี้แก้ยาก ต้นแบบมาเละ ค่อยทำ" + "ทำงานรูปภาพเสร็จ ขึ้นเว็บเลย … เดี๋ยวพี่ไปดูในเว็บเอง" → NO review-sheet artifact by default
 (the 07/10 one is retired) · owner decisions = asked in chat + one line in `docs/รอพี่ตรวจ.md` · image work = checker passes → merge →
 live, no review page; the owner checks the live site · a before/after review page ONLY for a big, hard case (a product that is hard to
-fix, a broken source photo) · images = the free Chrome route; credits only on the owner's yes in chat (IMAGE_SPEC §0 item 7) · two chats at once: no
-worktree rule — the night routine `friday-chat-move` checks for another working chat before any checkout/commit/build (its step 0b).
+fix, a broken source photo) · images = the free Chrome route; credits only on the owner's yes in chat (IMAGE_SPEC §0 item 7) · two chats at once: the
+second chat works in its own git worktree, never switches the main folder's branch (LESSONS พ22 · พ27).
 
 **Answered 03/10 (moved from §16 04/10):** "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · logos: Kardinal = the maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
 
