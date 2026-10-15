@@ -307,3 +307,14 @@ no in-content inbound link 3 → 2 (/technology · /privacy — both still in th
 
 Rows 1–10 (above) keep their dates ("pod" / "pod system" = row 9). Also on 22/10: the 5xx "validate fix" result (started 14/10) and the index coverage count
 (GSC 14/10: 113 indexed / 13 not — noindex 8 · redirect 3 · 5xx 1 · crawled-not-indexed 1 = an OG image).
+
+## Round "SEO all keys" batches 2 + 5 (16/10/2026) - what changed before the 22/10 read · key list = SEO_LANDSCAPE §9
+
+- NEW /guides/refilling-a-pod ("เติมน้ำยาพอตยังไง" — GSC 16/09–13/10 sent "เติมน้ำยายังไง" 0/1 · 1.0 to /products/m-switch-kit) ·
+  NEW /guides/how-long-a-pod-device-lasts ("พอต 1 ตัวใช้ได้นานแค่ไหน", the owner's key 16/10 — no row). Both Thai-only, appended
+  to allGuides, no relatedProductSlugs; both link /products/pod-systems in the body (row 9 "pod" reads this too).
+- Body + FAQ only (no title / meta / H1 change): battery-care-and-charging · coil-and-pod-maintenance · how-long-a-disposable-lasts ·
+  fixing-no-draw-and-blinking-light · what-is-a-pod-system (FAQ "พอตคืออะไร") · choosing-a-marbo-flavor.
+- No new link to the watch-row pages 1–8 (frozen until this read). Category read-next boxes unchanged (measured from code).
+- Targets: refilling-a-pod gets "เติมน้ำยา…" rows (m-switch-kit loses them) · how-long-a-pod-device-lasts gets "พอต…ใช้ได้นาน…"
+  rows · read 01/11 · 15/11 (new pages need ~2–4 weeks).
