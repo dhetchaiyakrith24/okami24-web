@@ -401,6 +401,12 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round SEO ฉ batch 5 topic 3 (12/10): the Thai-only guide had no head line (the dek was used).
   "fixing-no-draw-and-blinking-light":
     "พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง ไล่เช็คทีละข้อ ตั้งแต่พลาสติกที่ก้นพอต แบต ขั้วสัมผัส จนถึงความหมายของไฟและข้อความบนจอ Caliburn G4 Mini · G4 · G5 และ M Switch",
+  // Round "SEO all keys" batch 2 (16/10): thai-copy's head lines for the two new Thai-only guides — the deks say "น้ำยา",
+  // which stays out of head copy (HANDOFF §18 "Head copy").
+  "refilling-a-pod":
+    "วิธีเติมพอตทีละขั้น หัวพอตแบบไหนเติมเองได้ แบบไหนเป็นหัวพอตบรรจุสำเร็จ เติมแค่ไหนถึงพอดี และหัวพอตใหม่ควรพักกี่นาทีก่อนสูบ ตามคำแนะนำของผู้ผลิต",
+  "how-long-a-pod-device-lasts":
+    "พอต 1 ตัวใช้ได้นานแค่ไหน ตัวเครื่อง หัวพอต และคอยล์ เสื่อมไม่พร้อมกัน ดูสัญญาณว่าส่วนไหนถึงเวลาเปลี่ยน และนิสัยที่ช่วยให้ตัวเครื่องอยู่กับเราได้นานขึ้น",
 };
 
 /** Row C19 — keyed by technology entry id. */
