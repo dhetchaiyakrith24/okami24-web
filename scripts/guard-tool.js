@@ -9,16 +9,27 @@
 //      line-break word list — THAI_STYLE §5, owner 15/10) change only when a line of
 //      the open round file that starts with 【แตะได้】 names the path (the plan = the permission, no tickets); otherwise the
 //      normal permission prompt asks the owner                                                   → allow / ask
+// Lock round 15/10 (rule-audit 14/10 L2 L3 L5 L7 + LESSONS พ22) — each a rule that was kept only by memory:
+//   D  no bare `next build` / `npm run build` in the main folder — `node scripts/test-server.js build` (right env,
+//      refuses while 3412 is up); a worktree under _incoming/ builds bare (HANDOFF §17 "Test server")   → deny
+//   E  no blind `git add -A` / `--all` / `.` / `*` and no `git commit -a` — add files by name (TEAM_RULES 13.7)  → deny
+//   F  self-merge-check and the merge never in one command — run it alone, read its last line, then merge
+//      (TEAM_RULES 13.7)                                                                         → deny
+//   G  Windows Git Bash: `node scripts/…` with a page path like /about and no MSYS_NO_PATHCONV=1 — Git Bash turns it
+//      into C:/Program Files/Git/about (HANDOFF §17 "Windows shell")                             → deny
+//   H  while scripts/pre-checker-gate.js has noted "the checker is reading" (scripts/lib/checker-lock.js): no edit in that
+//      working tree outside _incoming/, no git command that moves or rewrites it, no test-server build/start/stop,
+//      no build — until `node scripts/pre-checker-gate.js --done` (LESSONS พ22)                  → deny
 //
-// Input: the hook JSON on stdin ({ tool_name, tool_input }). Output: a PreToolUse decision on stdout, or nothing
+// Input: the hook JSON on stdin ({ tool_name, tool_input, cwd }). Output: a PreToolUse decision on stdout, or nothing
 // (= carry on as usual). Fails open on its own errors — a broken guard must not stop all work; the git pre-push
-// hook (scripts/push-guard.js) still stops B.
+// hook (scripts/push-guard.js) still stops B. Every lock has a planted example in `node scripts/pre-checker-gate.js --self-test`.
 // Try it: echo '{"tool_name":"Bash","tool_input":{"command":"git push --force"}}' | node scripts/guard-tool.js
-const fs = require("fs");
 const path = require("path");
+const { LOCKED, allowedByRound } = require("./lib/round-file");
+const checkerLock = require("./lib/checker-lock");
 
 const ROOT = path.resolve(__dirname, "..");
-const LOCKED = [/(^|[\\/])render\.yaml$/i, /(^|[\\/])\.env[^\\/]*$/i, /(^|[\\/])ordering-mode\.ts$/i, /(^|[\\/])thai-typography\.ts$/i];
 // C in a shell command: the locked file must be the TARGET of a write (owner 01/10: a commit message that merely
 // mentions render.yaml must not trip it). Text is judged after heredoc bodies, here-strings and quoted strings holding
 // spaces (messages) are blanked; a quoted path without spaces stays.
@@ -55,34 +66,6 @@ function decide(decision, reason) {
   process.exit(0);
 }
 
-// the instruction file of the round that is open now = the first docs/rounds/… path on the "OPEN" line of HANDOFF §16
-function openRoundText() {
-  try {
-    const h = fs.readFileSync(path.join(ROOT, "docs", "HANDOFF.md"), "utf8");
-    const s16 = h.slice(h.indexOf("## 16."), h.indexOf("## 17.") > 0 ? h.indexOf("## 17.") : undefined);
-    const lines = s16.split(/\r?\n/);
-    const open = lines.findIndex((l) => /^\s*3[a-z]?\s+OPEN\b/.test(l)); // "3 OPEN …" or a lettered item "3u OPEN ROUND …"
-    if (open < 0) return "";
-    const m = lines.slice(open, open + 3).join(" ").match(/docs\/rounds\/[^`\s]+/);
-    return m ? fs.readFileSync(path.join(ROOT, m[0]), "utf8") : "";
-  } catch {
-    return "";
-  }
-}
-// the plan allows it = a line of the open round's file that STARTS with 【แตะได้】, is not the template placeholder
-// (<…>) and carries no ไม่/ห้าม (not/never), and names the file — `.env*` on that line covers every .env file
-function allowedByRound(name) {
-  const lower = name.toLowerCase();
-  return openRoundText()
-    .split(/\r?\n/)
-    .some((l) => {
-      const s = l.trim();
-      if (!s.startsWith("【แตะได้】") || /[<>]|ไม่|ห้าม/.test(s)) return false;
-      const body = s.slice("【แตะได้】".length).toLowerCase();
-      if (lower.startsWith(".env") && /\.env\*/.test(body)) return true;
-      return body.split(/[\s,·、]+/).some((tok) => tok.replace(/[`"'()]/g, "").split(/[\\/]/).pop() === lower);
-    });
-}
 function lockedDecision(what) {
   const name = what.replace(/\\/g, "/").split("/").pop().replace(/["'`]/g, "").match(/render\.yaml|ordering-mode\.ts|thai-typography\.ts|\.env[\w.-]*/i)[0];
   if (allowedByRound(name)) return;
@@ -128,7 +111,79 @@ function checkShell(cmd) {
     const hit = WRITE_TARGETS.map((re) => seg.match(re)).find(Boolean);
     if (hit) lockedDecision(hit[0].match(new RegExp(NAME, "i"))[0]);
   }
+  const worktreeWork = /_incoming[\\/]/.test(cmd); // a worktree under _incoming/ (HANDOFF §17 "a SECOND server")
+  for (const seg of segs) {
+    const g = gitCall(seg);
+    // D
+    if (isBuild(seg) && !worktreeWork) {
+      decide("deny", "No bare build in the main folder (HANDOFF §17 \"Test server\"): run `node scripts/test-server.js build` — right env, and it refuses while 3412 is up.");
+    }
+    // E
+    if (g && g.sub === "add" && g.args.some((a) => /^(-A|--all|\.|\*|:\/|-[a-zA-Z]*A[a-zA-Z]*)$/.test(a))) {
+      decide("deny", "No blind add (TEAM_RULES 13.7): `git status --short`, then `git add <file> <file>` by name.");
+    }
+    if (g && g.sub === "commit" && g.args.some((a) => a === "--all" || /^-[a-zA-Z]*a[a-zA-Z]*$/.test(a))) {
+      decide("deny", "No `git commit -a` (TEAM_RULES 13.7): `git status --short`, `git add <file>` by name, then commit.");
+    }
+  }
+  // F
+  if (/self-merge-check/.test(plain) && /\bgh\s+pr\s+merge\b|\bgh\s+api\b[^\n]*\/merge\b|(?:^|[\s&;|])git\s+merge\b/.test(plain)) {
+    decide("deny", "Run `node scripts/self-merge-check.js` ALONE, read its last line (BLOCKED = no merge), then merge in a separate command (TEAM_RULES 13.7).");
+  }
 }
+
+// G — Windows Git Bash rewrites a leading "/" argument into its install folder; the raw command is read (a page list is
+// usually quoted: --pages "/a /b"). /c/… (a drive) and /tmp-style system folders are real paths and pass.
+function checkPathConversion(cmd) {
+  if (process.platform !== "win32" || /MSYS_NO_PATHCONV=1/.test(cmd)) return;
+  for (const seg of cmd.split(/\n|&&|\|\|?|;/)) { // the script's own arguments only — not a `| sed '/x/p'` after it
+    const m = seg.match(/\b(?:node|tsx)\b[^\n]*?\bscripts\/[\w./-]+\.(?:c?js|mjs|ts)\b(.*)$/);
+    if (m && /(?:^|[\s"'=,])\/(?![a-zA-Z]\/|\/|(?:tmp|dev|usr|etc|mnt|proc|bin|opt|home)\b)[\w-]/.test(m[1])) {
+      decide("deny", "Git Bash will turn the page path into C:/Program Files/Git/… and the script scans the wrong pages. Put `MSYS_NO_PATHCONV=1 ` in front of the command (HANDOFF §17 \"Windows shell\").");
+    }
+  }
+}
+
+// H — the checker is reading a working tree (scripts/lib/checker-lock.js)
+const norm = (p) => path.resolve(String(p)).replace(/\\/g, "/").replace(/\/$/, "").toLowerCase();
+function checkerReading() {
+  return checkerLock.readAll(ROOT).map((note) => ({ // every worktree's note lives in the main folder's .git
+    ...note,
+    tree: norm(note.tree),
+    msg: `The checker is reading ${String(note.sha).slice(0, 8)} (${note.branch}) in ${note.tree} since ${note.started} — leave that working tree and the test server alone until its report, then run \`node scripts/pre-checker-gate.js --done\` there (LESSONS พ22). Prepare the next work under _incoming/ or in a worktree.`,
+  }));
+}
+const inside = (p, tree) => (p + "/").startsWith(tree + "/") && !(p + "/").startsWith(tree + "/_incoming/");
+function checkReadingShell(cmd, cwd) {
+  const plain = blankText(cmd);
+  const lowered = cmd.replace(/\\/g, "/").toLowerCase();
+  for (const r of checkerReading()) {
+    const rel = path.relative(ROOT, r.tree).replace(/\\/g, "/").toLowerCase();
+    const touchesTree = inside(norm(cwd || ROOT), r.tree)
+      ? !/_incoming\//.test(lowered)
+      : lowered.includes(r.tree) || Boolean(rel && !rel.startsWith("..") && lowered.includes(rel));
+    for (const seg of segments(plain)) {
+      if (/test-server\.js["']?\s+(build|start|stop|restart)\b/.test(seg)) decide("deny", r.msg); // 3412 is the machine's, not one tree's
+      if (!touchesTree) continue;
+      const g = gitCall(seg);
+      if (g && /^(checkout|switch|reset|merge|pull|rebase|commit|restore|clean|cherry-pick|revert|am|apply)$/.test(g.sub)) decide("deny", r.msg);
+      if (g && g.sub === "stash" && !/^(list|show)$/.test(g.args[0] || "")) decide("deny", r.msg);
+      if (isBuild(seg)) decide("deny", r.msg);
+    }
+  }
+}
+function checkReadingEdit(file, cwd) {
+  if (!file) return;
+  const p = norm(path.resolve(cwd || ROOT, file));
+  for (const r of checkerReading()) if (inside(p, r.tree)) decide("deny", r.msg);
+}
+
+function gitCall(seg) {
+  const m = seg.match(/(?:^|[\s&'"\\/])git(?:\.exe)?["']?\s+(?:-[cC]\s+\S+\s+|--?[\w-]+(?:=\S+)?\s+)*([a-z][\w-]*)\b(.*)$/i);
+  if (!m) return null;
+  return { sub: m[1].toLowerCase(), args: m[2].trim().split(/\s+/).filter(Boolean).map((a) => a.replace(/^["']|["']$/g, "")) };
+}
+const isBuild = (seg) => /(?:^|\s)(?:npx\s+)?next\s+build\b|\bnpm\s+run\s+build\b|\b(?:pnpm|yarn)\s+(?:run\s+)?build\b/.test(seg);
 
 let raw = "";
 process.stdin.on("data", (d) => (raw += d));
@@ -142,9 +197,16 @@ process.stdin.on("end", () => {
   try {
     const tool = input.tool_name || "";
     const ti = input.tool_input || {};
-    if (tool === "Bash" || tool === "PowerShell") checkShell(String(ti.command || ""));
+    const cwd = input.cwd || process.cwd();
+    if (tool === "Bash" || tool === "PowerShell") {
+      const cmd = String(ti.command || "");
+      checkShell(cmd);
+      if (tool === "Bash") checkPathConversion(cmd);
+      checkReadingShell(cmd, cwd);
+    }
     if (["Edit", "Write", "MultiEdit", "NotebookEdit"].includes(tool)) {
       const p = String(ti.file_path || ti.notebook_path || "").replace(/\\/g, "/");
+      checkReadingEdit(p, cwd); // deny first — it outranks C's "ask"
       if (LOCKED.some((re) => re.test(p))) lockedDecision(p);
     }
   } catch {

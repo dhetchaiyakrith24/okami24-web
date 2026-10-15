@@ -2,6 +2,12 @@
 # Commit gates for every commit made in this clone (any agent). Setup after clone: git config core.hooksPath .githooks
 # 1. line endings — rule: docs/HANDOFF.md §17 "CRLF" · checker: scripts/eol-check.js
 # 2. no video/audio and no file over the cap — scripts/large-file-check.js (round B, owner ruling Q7 ③)
+# 3. no commit on main — the way into main is a merged PR (TEAM_RULES 13.7 · rule-audit 14/10 L6: "branch --show-current
+#    before every commit" was kept by memory). Work on a branch: git switch -c <name> (the staged files come along).
 # (content dates: .githooks/post-commit folds them into the commit after it is made — owner 30/09 rules item 7B)
+if [ "$(git branch --show-current)" = "main" ]; then
+  echo "pre-commit: no commits on main (TEAM_RULES 13.7) - git switch -c <branch>, then commit there" >&2
+  exit 1
+fi
 node scripts/eol-check.js --staged || exit 1
 exec node scripts/large-file-check.js --staged
