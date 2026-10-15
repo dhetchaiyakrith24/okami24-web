@@ -12,21 +12,23 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
 1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #474 e111ac8e (never split หน่วยงาน, owner item 54;
-  live 200) [ตรวจแล้ว] · since then only rules / scripts / docs PRs (#484 … #495). Standing rules this block used to repeat live in
+  live 200) [ตรวจแล้ว] · since then only rules / scripts / docs PRs (#484 … #496). Standing rules this block used to repeat live in
   TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
-2 ahead of main: nothing open. Worktrees: only `_incoming/wt-stock` (stock round · own node_modules copy · test server
-  `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
+2 ahead of main: nothing once #495 merges (`_incoming/wt-house-docs` = its worktree, remove after). Other worktree:
+  `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
 3 DONE 15/10 — house audit #484 · tidy home by home #488 · central copy + web adapted #487 · LOCK ROUND #491 (pre-checker gate,
   `--self-test` run weekly by house-check) · HOUSE ROUND ข (3h, owner "เก็บบ้านทั้งเซต + รอบสัปดาห์รู้"): #494 leftovers (raw chars 0 ·
   `self-merge-check --base` = PASS / SITE-TOUCHED · L3 node-flag slip + quoted-arg false deny fixed) + skill house-clean = 8 homes
   (7 docs + briefs · 8 git / `_incoming` / root folders / scheduled-task folders / Artifacts) + house-check git & root sections ·
   #495 docs: 47 history copies in docs/archive + ARTICLES_10A deleted (git keeps them) · 24 old owner rulings lifted (§18 end,
-  IMAGE_SPEC §4) · rule-audit 15/10 full (`_incoming/house-1510b/rule-audit.md`, 31 new rows): its docs rows applied in #495, its rules/skill/agent rows = the next PR ·
+  IMAGE_SPEC §4) · rule-audit 15/10 full (`_incoming/house-1510b/rule-audit.md`, 31 new rows): its docs rows applied in #495, its rules/skill/agent rows in #496 (d1828883) ·
   weekly task prompt = 8 homes. Computer: 15 merged local branches deleted · finished `_incoming/` folders + 36 loose logs moved to
   `C:\Users\dhetc\OKami24-archive\_incoming\` (§17 "Work folders") · "Claude outputs" moved there too.
-  Left for the owner (one yes/no set, รอพี่ตรวจ): 8 merged GitHub branches (the app's guard refused Friday's delete · 13 more belong to the open stock round = kept) · old
+  Left for the owner (one yes/no set, รอพี่ตรวจ): the merged GitHub branches house-check lists outside the stock round (the app's guard refused Friday's delete · the stock
+  round's own ones = kept) · old
   OKami24 artifacts · closed round briefs in docs/rounds (owner Q1 made that folder the record) · `_incoming/wt-rescue` (holds
-  dangling links, could not be moved) · `.agents/` (old copy of catalog-research) · folders OKami24-เก็บ / OKM photo / OKM CT /
+  dangling links, could not be moved) · the half-filled Claude Docs page
+  claude.ai/code/artifact/92a058d3-edb8-4321-abd6-4eb655f5dbe3 · `.agents/` (old copy of catalog-research) · folders OKami24-เก็บ / OKM photo / OKM CT /
   ~\Claude outputs outside the repo (not named by any project rule = central §12 item 32 until the owner says they are ours).
   Rule-audit rows waiting on the owner: C4 (house-clean owner column vs 13.3) · A5 (LESSONS ช20 → rule?) · old #44 proposal D.
   Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
@@ -96,6 +98,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - Rule-audit 15/10 lock proposals (Friday's, a hook = checker): L1 rm/sed -i/redirect into a checker-read tree · L2 scan/shot
     tools against the live site · L3 `Owner: OK` line for the morning stock PR (with the stock task).
   - Scan baseline re-measure on the test server (rule-audit row 45) = the next full round close.
+  - Proposal to make (owner's queue 03/10, item D = rule-audit old #44): move chats earlier in image rounds (~350–400K) = a
+    central-rule change → propose with reasons first (central §12 item 28).
 6 verify baseline = round SEO ฉ close 14/10 (`_incoming/seo-f/b7/*.log`, numbers as printed) [ตรวจแล้ว]: tsc 0 (empty log) ·
   verify:commerce 17/17 · i18n 16/16 · content-dates current (57 paths) · raw NBSP/U+2060 in source 0 (again 0 on 15/10 after
   #494) · scan.js 0/118 + og-gate 118/118 (both against the live site — before the 14/10 test-server rule) · storefront 55 shown /

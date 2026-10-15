@@ -134,7 +134,7 @@
 - **หน้าเว็บ/ข้อความ:** grep "NOVA" ทั้ง src+public = 0 · อ่าน about/page.tsx, faq-copy.ts, AgeGate, Footer, dictionaries th/en/zh
 - **ซื้อได้จริง:** อ่าน `otp/sender.ts`, `shipnity/adapter.ts`, `order-status.ts`, dictionaries (ข้อความ bankDetailsTbdNote) + HTTP 200 ทุกหน้าในเส้นทาง
 - **มือถือ/ความเร็ว:** Chrome headless ผ่าน CDP จำลอง 390×844 (สคริปต์ดัดแปลงจาก `scripts/shot.js`) 18 หน้า บน production server port 3412 (ปิดแล้ว) — วัดเวลาโหลด, scrollWidth, exception, console error, request ≥400, รูปเสีย · curl วัดเวลาตอบ 23 URL
-- **งานค้าง:** `git log --all` 84 commit · `git show 022bf9c8:docs/archive/PROJECT_HANDOFF.md` §5–7 · `docs/HANDOFF.md` §4–7, §13 · `NIGHT_REPORT_2026-09-05/06` §3–4
+- **งานค้าง:** `git log --all` 84 commit · `git show 022bf9c8:docs/archive/PROJECT_HANDOFF.md` §5–7 · `docs/HANDOFF.md` §4–7, §13 · `git show 022bf9c8:docs/archive/NIGHT_REPORT_2026-09-05.md` (and -06) §3–4
 - **ไม่ได้ตรวจ:** กดซื้อจริงเต็มวงจรวันนี้ (ข้อ 26) · ความปลอดภัย (rate-limit OTP, security headers — เห็นแค่ว่า next.config ว่าง) · หน้าจอคอม (ตรวจแค่มือถือ 390 ตามคำสั่ง) · ภาษาจีน (มีแต่ไม่ได้อ่านเนื้อหา)
 
 ---

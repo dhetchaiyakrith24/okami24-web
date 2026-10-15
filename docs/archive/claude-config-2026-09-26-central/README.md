@@ -11,4 +11,4 @@ A second backup outside `~/.claude` and outside git: `_incoming/central-rules/ba
 Secret scan before commit (email / token / password / phone patterns): 0 hits.
 
 Nobody reads rules from here. Restore steps (put the full file back on the computer): `docs/RECOVERY.md` §2ง.
-Previous snapshots: `../claude-config-2026-09-25/` · `../claude-config-2026-09-25-owner/`.
+Previous snapshots: `../claude-config-2026-09-25/` (deleted 15/10 — `git show 022bf9c8:docs/archive/claude-config-2026-09-25/CLAUDE.md`) · `../claude-config-2026-09-25-owner/`.
