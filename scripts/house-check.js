@@ -195,6 +195,19 @@ try {
   const out = String(e.stdout || "");
   console.log(`  pre-checker-gate --self-test: FAIL\n${out.split("\n").filter((l) => /FAIL/.test(l)).join("\n")}`);
 }
+// outside-skill scanner (skill skill-vet, owner 16/10): the bait must still trip it, and our own skills stay clean of
+// anything a person cannot see or that acts on load
+for (const [label, cmd] of [
+  ["skill-scan --self-test", "node scripts/skill-scan.js --self-test"],
+  ["skill-scan our skills (hidden-only)", "node scripts/skill-scan.js --local .claude/skills --hidden-only"],
+]) {
+  try {
+    const out = execSync(cmd, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+    console.log(`  ${label}: ${out.trim().split("\n").filter(Boolean).pop()}`);
+  } catch (e) {
+    console.log(`  ${label}: FAIL\n${String(e.stdout || "").split("\n").filter((l) => /FAIL|\[/.test(l)).join("\n")}`);
+  }
+}
 for (const n of require("./lib/checker-lock").readAll(ROOT)) console.log(`  checker note still on: ${n.sha.slice(0, 8)} (${n.branch}) since ${n.started} — --done if that checker reported`);
 
 // 7. rules followed — PRs merged in the last 7 days (needs `gh` = the computer) · TEAM_RULES 13.4 / 13.7

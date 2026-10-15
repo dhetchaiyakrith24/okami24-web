@@ -313,6 +313,8 @@ function selfTest() {
   ok(guard({ tool_name: "Edit", tool_input: { file_path: path.join(ROOT, "docs", "HANDOFF.md") }, cwd: ROOT }, env) === "deny", "พ22 note on → Edit in the read tree → deny");
   ok(guard({ tool_name: "Write", tool_input: { file_path: path.join(ROOT, "_incoming", "next", "plan.md") }, cwd: ROOT }, env) === "none", "พ22 note on → Write under _incoming/ → allowed");
   ok(guard(sh("git -C _incoming/wt-x checkout -b next"), env) === "none", "พ22 note on → git in a worktree under _incoming/ → allowed");
+  ok(guard({ tool_name: "Edit", tool_input: { file_path: path.join(ROOT, ".claude", "worktrees", "wt-y", "docs", "a.md") }, cwd: ROOT }, env) === "none" &&
+    guard(sh("git -C .claude/worktrees/wt-y commit -m x"), env) === "none", "พ22 note on → an app worktree under .claude/worktrees/ is its own tree → allowed (16/10)");
   ok(guard(sh("git checkout main 2>&1 | tee _incoming/x.log"), env) === "deny", "พ22 note on → a log under _incoming/ does not excuse a checkout → deny");
   ok(guard(sh("git checkout main", wt), env) === "none", "พ22 note on → the shell sits in another worktree → allowed");
   ok(guard(sh("node scripts/pre-checker-gate.js --done"), env) === "none", "พ22 note on → --done → allowed");
