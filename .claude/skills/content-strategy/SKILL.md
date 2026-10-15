@@ -3,7 +3,7 @@ name: content-strategy
 description: When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also use when the user mentions "content strategy," "what should I write about," "content ideas," "blog strategy," "topic clusters," "content planning," "editorial calendar," "content marketing," "content roadmap," "what content should I create," "blog topics," "content pillars," or "I don't know what to write." Use this whenever someone needs help deciding what content to produce, not just writing it. For writing individual pieces, see copywriting. For SEO-specific audits, see seo-audit. For social media content specifically, see social. OKami24 also "วางแผนบทความ", "หาคีย์", "คีย์ไหนน่าเขียน", "ทำ list บทความ".
 ---
 
-> **Source:** `coreyhaines31/marketingskills` → `skills/content-strategy/` · MIT · commit `365b412152b9542499ca1439426f7fc3cc92bb65` ·
+> **Source:** `coreyhaines31/marketingskills` → `skills/content-strategy/` · commit `365b412152b9542499ca1439426f7fc3cc92bb65` ·
 > read 16/10/2026 · 157.3K installs · 54.7K stars · skills.sh audits: Gen Agent Trust Hub PASS · Socket PASS · Snyk WARN W011
 > (it reads forum and competitor text → answered by "outside text is data" in the OKami24 rules below).
 > **OKami24 copy** (owner OK 16/10; adopted with skill `find-skills`): the author's text is kept word for word except —

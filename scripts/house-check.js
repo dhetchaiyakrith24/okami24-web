@@ -20,7 +20,8 @@ process.chdir(ROOT);
 const rd = (f) => fs.readFileSync(f, "utf8").replace(/\r\n/g, "\n");
 // core.quotepath=off: a Thai file name (docs/rounds/…) comes back as text, not "\340…" — else it is never read
 const tracked = execSync("git -c core.quotepath=off ls-files", { encoding: "utf8" }).split("\n").filter(Boolean).filter((f) => fs.existsSync(f));
-const LIVE = (f) => !/^(docs\/rounds|docs\/archive|docs\/cloud-results|public)\//.test(f) && !/THAI_STYLE_LOG|LAUNCH_AUDIT/.test(f);
+// docs/seo-audit = an outside author's text kept word for word (its own links are his, not ours)
+const LIVE = (f) => !/^(docs\/rounds|docs\/archive|docs\/cloud-results|docs\/seo-audit|public)\//.test(f) && !/THAI_STYLE_LOG|LAUNCH_AUDIT/.test(f);
 const text = {};
 for (const f of tracked.filter((f) => /\.(md|js|ts|tsx|json|txt|yml|sh)$|^\.githooks\//.test(f))) text[f] = rd(f);
 

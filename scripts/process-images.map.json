@@ -711,122 +711,115 @@
   "fileName": "variant-cool-mint-ice-and-strawberry-ice-v3.webp"
  },
  {
-  "source": "_incoming/argus-g4/raw/voopoo-Sliver-9.jpg",
-  "slug": "argus-g4",
-  "role": "card",
-  "replaces": "/assets/products/argus-g4/card.webp",
-  "crop": {
-   "x0": 0.675,
-   "y0": 0,
-   "x1": 0.83,
-   "y1": 1
-  },
-  "note": "LAUNCH_AUDIT 11 (8) — official shop.voopoo.com gallery re-fetched at 2533px (was 900px → device 519px). Each gallery image is box + a standalone device on the right; the crop keeps only the device column (white gap between box and device = cols 1575–1745). Orange stays the card, matching the hero. See _incoming/argus-g4/SOURCE.md"
- },
- {
-  "source": "_incoming/argus-g4/raw/voopoo-Sliver-9.jpg",
+  "source": "_incoming/img-1610/b4/key/P-ag4-orange.png",
   "slug": "argus-g4",
   "role": "variant",
   "id": "orange",
   "replaces": "/assets/products/argus-g4/card.webp",
-  "crop": {
-   "x0": 0.675,
-   "y0": 0,
-   "x1": 0.83,
-   "y1": 1
+  "note": "round img-1610 16/10 - studio re-shoot (was the maker photo cut from white: jagged edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js)",
+   "reference": "VOOPOO shop.voopoo.com gallery photo of the orange ARGUS G4 (_incoming/argus-g4/raw/voopoo-Sliver-9.jpg, 2533 px, device column; input _incoming/img-1610/b4/in/ag4-orange.png; render _incoming/img-1610/b4/out/ag4-orange-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b4/fid/fid-orange.png + _incoming/img-1610/b4/key/all8.jpg (maker photo beside the new file for all 8) - screen, side button, ARGUS lettering, body colour and texture checked by eye"
   },
-  "note": "orange also written as its own variant file so all 8 colours share one canvas (whole-set rule)"
+  "fileName": "variant-orange-v2.webp"
  },
  {
-  "source": "_incoming/argus-g4/raw/voopoo-Sliver-11.jpg",
+  "source": "_incoming/img-1610/b4/key/P-ag4-black.png",
   "slug": "argus-g4",
   "role": "variant",
   "id": "black",
   "replaces": "/assets/products/argus-g4/variants/black.webp",
-  "crop": {
-   "x0": 0.675,
-   "y0": 0,
-   "x1": 0.83,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js)",
+   "reference": "VOOPOO shop.voopoo.com gallery photo of the black ARGUS G4 (_incoming/argus-g4/raw/voopoo-Sliver-11.jpg, 2533 px, device column; input _incoming/img-1610/b4/in/ag4-black.png; render _incoming/img-1610/b4/out/ag4-black-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b4/fid/fid-black.png + _incoming/img-1610/b4/key/all8.jpg (maker photo beside the new file for all 8) - screen, side button, ARGUS lettering, body colour and texture checked by eye"
+  },
+  "note": "round img-1610 16/10 - studio re-shoot (was the maker photo cut from white: jagged edges)",
+  "fileName": "variant-black-v2.webp"
  },
  {
-  "source": "_incoming/argus-g4/raw/voopoo-Sliver-10.jpg",
+  "source": "_incoming/img-1610/b4/key/P-ag4-purple.png",
   "slug": "argus-g4",
   "role": "variant",
   "id": "purple",
   "replaces": "/assets/products/argus-g4/variants/purple.webp",
-  "crop": {
-   "x0": 0.675,
-   "y0": 0,
-   "x1": 0.83,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js)",
+   "reference": "VOOPOO shop.voopoo.com gallery photo of the purple ARGUS G4 (_incoming/argus-g4/raw/voopoo-Sliver-10.jpg, 2533 px, device column; input _incoming/img-1610/b4/in/ag4-purple.png; render _incoming/img-1610/b4/out/ag4-purple-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b4/fid/fid-purple.png + _incoming/img-1610/b4/key/all8.jpg (maker photo beside the new file for all 8) - screen, side button, ARGUS lettering, body colour and texture checked by eye"
+  },
+  "note": "round img-1610 16/10 - studio re-shoot (was the maker photo cut from white: jagged edges) · 16/10 a 2-px tick on the right edge near the base removed (b4/sideclip.js)",
+  "fileName": "variant-purple-v3.webp"
  },
  {
-  "source": "_incoming/argus-g4/raw/voopoo-Sliver-12.jpg",
+  "source": "_incoming/img-1610/b4/key/P-ag4-silver.png",
   "slug": "argus-g4",
   "role": "variant",
   "id": "silver",
   "replaces": "/assets/products/argus-g4/variants/silver.webp",
-  "crop": {
-   "x0": 0.675,
-   "y0": 0,
-   "x1": 0.83,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js); checker #505 round 1: body edges clipped to the measured straight sides and made solid inside (key had left a dark slab / streaks); screen bottom row 00800 replaced by the orange render's 00000 pixels (same UI, b4/fixag.js)",
+   "reference": "VOOPOO shop.voopoo.com gallery photo of the silver ARGUS G4 (_incoming/argus-g4/raw/voopoo-Sliver-12.jpg, 2533 px, device column; input _incoming/img-1610/b4/in/ag4-silver.png; render _incoming/img-1610/b4/out/ag4-silver-C.png)",
+   "fidelitySheet": "_incoming/img-1610/b4/fid/fid-silver.png + _incoming/img-1610/b4/key/all8.jpg (maker photo beside the new file for all 8) - screen, side button, ARGUS lettering, body colour and texture checked by eye"
+  },
+  "note": "round img-1610 16/10 - studio re-shoot (was the maker photo cut from white: jagged edges) · 16/10 re-render (checker #505 round 2: old render was a slanted view, curved bottom): straight front at eye level, render ag4-silver-C.png, pod edge smoothed from its own key (b4/podsmooth.js), body sides clipped, bottom rows alpha from the clean purple key (b4/silverC.js)",
+  "fileName": "variant-silver-v4.webp"
  },
  {
-  "source": "_incoming/argus-g4/raw/voopoo-Sliver-7.jpg",
+  "source": "_incoming/img-1610/b4/key/P-ag4-blue.png",
   "slug": "argus-g4",
   "role": "variant",
   "id": "blue",
   "replaces": "/assets/products/argus-g4/variants/blue.webp",
-  "crop": {
-   "x0": 0.675,
-   "y0": 0,
-   "x1": 0.83,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js)",
+   "reference": "VOOPOO shop.voopoo.com gallery photo of the blue ARGUS G4 (_incoming/argus-g4/raw/voopoo-Sliver-7.jpg, 2533 px, device column; input _incoming/img-1610/b4/in/ag4-blue.png; render _incoming/img-1610/b4/out/ag4-blue-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b4/fid/fid-blue.png + _incoming/img-1610/b4/key/all8.jpg (maker photo beside the new file for all 8) - screen, side button, ARGUS lettering, body colour and texture checked by eye"
+  },
+  "note": "round img-1610 16/10 - studio re-shoot (was the maker photo cut from white: jagged edges) · 16/10 bottom rows alpha from the clean purple key (b4/bottomcopy.js, speck at bottom right gone), sides clipped (b4/sideclip.js) - checker #505 round 2",
+  "fileName": "variant-blue-v3.webp"
  },
  {
-  "source": "_incoming/argus-g4/raw/voopoo-Sliver-8.jpg",
+  "source": "_incoming/img-1610/b4/key/P-ag4-gray.png",
   "slug": "argus-g4",
   "role": "variant",
   "id": "gray",
   "replaces": "/assets/products/argus-g4/variants/gray.webp",
-  "crop": {
-   "x0": 0.675,
-   "y0": 0,
-   "x1": 0.83,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js); checker #505 round 1: body edges clipped to the measured straight sides and made solid inside (key had left a dark slab / streaks)",
+   "reference": "VOOPOO shop.voopoo.com gallery photo of the gray ARGUS G4 (_incoming/argus-g4/raw/voopoo-Sliver-8.jpg, 2533 px, device column; input _incoming/img-1610/b4/in/ag4-gray.png; render _incoming/img-1610/b4/out/ag4-gray-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b4/fid/fid-gray.png + _incoming/img-1610/b4/key/all8.jpg (maker photo beside the new file for all 8) - screen, side button, ARGUS lettering, body colour and texture checked by eye"
+  },
+  "note": "round img-1610 16/10 - studio re-shoot (was the maker photo cut from white: jagged edges) · 16/10 bottom rows alpha from the clean purple key (b4/bottomcopy.js), sides clipped to the body edge (b4/sideclip.js) - checker #505 round 2",
+  "fileName": "variant-gray-v4.webp"
  },
  {
-  "source": "_incoming/argus-g4/raw/voopoo-Sliver-6.jpg",
+  "source": "_incoming/img-1610/b4/key/P-ag4-brown.png",
   "slug": "argus-g4",
   "role": "variant",
   "id": "brown",
   "replaces": "/assets/products/argus-g4/variants/brown.webp",
-  "crop": {
-   "x0": 0.675,
-   "y0": 0,
-   "x1": 0.83,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js)",
+   "reference": "VOOPOO shop.voopoo.com gallery photo of the brown ARGUS G4 (_incoming/argus-g4/raw/voopoo-Sliver-6.jpg, 2533 px, device column; input _incoming/img-1610/b4/in/ag4-brown.png; render _incoming/img-1610/b4/out/ag4-brown-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b4/fid/fid-brown.png + _incoming/img-1610/b4/key/all8.jpg (maker photo beside the new file for all 8) - screen, side button, ARGUS lettering, body colour and texture checked by eye"
+  },
+  "note": "round img-1610 16/10 - studio re-shoot (was the maker photo cut from white: jagged edges)",
+  "fileName": "variant-brown-v2.webp"
  },
  {
-  "source": "_incoming/argus-g4/raw/voopoo-Sliver-9-1.jpg",
+  "source": "_incoming/img-1610/b4/key/P-ag4-green.png",
   "slug": "argus-g4",
   "role": "variant",
   "id": "green",
-  "crop": {
-   "x0": 0.675,
-   "y0": 0,
-   "x1": 0.83,
-   "y1": 1
+  "note": "round img-1610 16/10 - studio re-shoot (was the maker photo cut from white: jagged edges)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js)",
+   "reference": "VOOPOO shop.voopoo.com gallery photo of the green ARGUS G4 (_incoming/argus-g4/raw/voopoo-Sliver-9-1.jpg, 2533 px, device column; input _incoming/img-1610/b4/in/ag4-green.png; render _incoming/img-1610/b4/out/ag4-green-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b4/fid/fid-green.png + _incoming/img-1610/b4/key/all8.jpg (maker photo beside the new file for all 8) - screen, side button, ARGUS lettering, body colour and texture checked by eye"
   },
-  "note": "NEW colour 2026-09-06 — VOOPOO's own shop now lists 8 colours incl. Green (variant options + own photo); owner rule: show every colour the maker offers"
+  "fileName": "variant-green-v2.webp"
  },
  {
   "source": "_incoming/relx-smash-go-12k/raw/grape.jpg",
@@ -4893,17 +4886,17 @@
   "fileName": "variant-black-metal-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-voopoo/site/card-zero-nano.png",
+  "source": "_incoming/img-1610/b3/key/P-zn.png",
   "slug": "zero-nano",
   "role": "card",
-  "replaces": "/assets/products/zero-nano/card.webp",
+  "replaces": "/assets/products/zero-nano/card-v2.webp",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, the night 01/10 card render \"a\" (Higgs Okm/2026-10-01 night - cards/card-zero-nano-a.png, job b1778b67-3332-4755-99d7-e96a64d2c2c9) — same 3/4 pose as SALTHUB's photo, M-bolt logo the right way round; cut by scripts/flatcut.js, strays cleared and teal moved to SALTHUB's photo by _incoming/image-sitewide/b-voopoo/zero-nano.js",
+   "tool": "Higgsfield Nano Banana Pro 2K (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot of SALTHUB's photo (_incoming/img-1610/b3/in/zn.png -> b3/out/zn-A.png), keyed to b3/key/D-zn.png, then the teal body gained to the mean of SALTHUB's photo and the clear pod made smoky like it (b3/zntone.js - checker #512 round 1: body was 14% duller)",
    "reference": "SALTHUB's own photo (/assets/products/zero-nano/card.webp, 443x567)",
-   "fidelitySheet": "_incoming/image-sitewide/b-voopoo/zn-cmp.png (SALTHUB / new on dark / new on magenta)"
+   "fidelitySheet": "_incoming/img-1610/b3/fid/fid-zn.png (shape IoU 0.991) + _incoming/img-1610/b3/fid/fid-zn2.jpg (SALTHUB photo / new on white / dark / magenta)"
   },
-  "note": "image-sitewide round 3b (2) 01/10 — the old card is 443x567 (sharpness 1.6, below standard)",
-  "fileName": "card-v2.webp"
+  "note": "round img-1610 16/10 - audit 10/10: card-v2 edge left a halo on dark; the new card is a fresh render matched to SALTHUB's photo",
+  "fileName": "card-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/b-edge/site/g4m-black.png",
@@ -5792,12 +5785,16 @@
   "fileName": "variant-green-leather-v2.webp"
  },
  {
-  "source": "_incoming/sitewide-template/2/2fimg/g4card/card-g4.png",
+  "source": "_incoming/img-1610/b4/key/P-ag4-orange.png",
   "slug": "argus-g4",
   "role": "card",
-  "replaces": "/assets/products/argus-g4/card.webp",
-  "note": "site-wide template round batch 2f-img 05/10 (owner: card too small) — VOOPOO's own Orange photo (shop.voopoo.com gallery, 2533 px), no AI: cut by scripts/flatcut.js + 2 px matte erode (_incoming/sitewide-template/2/2fimg/g4card/erode.js), tilted 12° in 2D (_incoming/image-sitewide/tilt-card.js)",
-  "fileName": "card-v2.webp"
+  "note": "round img-1610 16/10 - upright studio re-shoot (was the 2D-tilted cut of the maker photo: soft, jagged edge); card = the Orange option",
+  "fileName": "card-v3.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js)",
+   "reference": "VOOPOO shop.voopoo.com gallery photo of the Orange ARGUS G4 (_incoming/argus-g4/raw/voopoo-Sliver-9.jpg, 2533 px, device column; input _incoming/img-1610/b4/in/ag4-orange.png; render _incoming/img-1610/b4/out/ag4-orange-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b4/fid/fid-orange.png - shape IoU 0.97; screen (infinity logo, 100%, 35 W, 0.4 ohm, 00000), side button, ARGUS lettering, gold-to-red gradient checked by eye"
+  }
  },
  {
   "source": "_incoming/sitewide-template/2/2fimg/i3/site/i3-cyan-blue.png",
@@ -7896,5 +7893,18 @@
   },
   "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B) · img-1610 16/10: faint stray pixels dropped (img-1610/specks.js)",
   "fileName": "variant-coil-94-4-v3.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b3/key/P-zp.png",
+  "slug": "zero-pro",
+  "role": "card",
+  "replaces": "/assets/products/zero-pro/card.webp",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the shop photo as the only image (_incoming/img-1610/prompts.md \"SALTHUB Zero Pro\"); render _incoming/img-1610/b3/out/zp-A.png keyed by _incoming/coil3/matte3.js --device, then the silhouette rebuilt as the rod it is (rotated rounded rectangle fitted to the clean body rows, b3/zpshape.js T1D=34 - the key reached into the contact shadow)",
+   "reference": "the live Zero Pro card (/assets/products/zero-pro/card.webp, charcoal-red) - input _incoming/img-1610/b3/in/zp.png",
+   "fidelitySheet": "_incoming/img-1610/b3/fid/fid-zp.jpg - shop photo beside the new file: tilt, M logo + 3 lines, side button, black-to-red gradient checked by eye"
+  },
+  "note": "round img-1610 16/10 - the old card is a small shop photo (audit 10/10)",
+  "fileName": "card-v2.webp"
  }
 ]
