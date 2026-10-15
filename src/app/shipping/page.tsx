@@ -7,8 +7,10 @@ import { ShippingContent } from "@/components/content/service-pages/ShippingCont
 // chosen per destination and is never named on the site — owner, 2026-09-09 (round 30.1).
 // Body rendered in th/en/zh by ShippingContent from src/i18n/service-pages/shipping.tsx.
 export const metadata: Metadata = {
-  title: "การจัดส่ง",
-  description: "ค่าส่ง OKami24 50 บาททั่วประเทศ ยอด 500 บาทขึ้นไปส่งฟรี · โอนก่อน 15:00 ส่งวันเดียวกัน ถึงใน 1–3 วัน · ส่งไว มีเลขพัสดุให้เช็คทุกคำสั่งซื้อ",
+  // Round "SEO all keys" batch 6 (16/10): "พอตส่งด่วน" answered with what the shop really does (BSOT §10: same-day dispatch
+  // when paid and reported before 15:00, 1–3 days) — no rider/express claim, no carrier name, no "ส่งฟรี" in new copy (THAI_STYLE).
+  title: "ส่งพอตไวทั่วไทย โอนก่อน 15:00 ส่งวันเดียวกัน",
+  description: "อยากได้พอตด่วน โอนและส่งสลิปทางไลน์ก่อน 15:00 เราจัดส่งให้วันเดียวกัน ถึงมือใน 1–3 วัน ส่งทั่วประเทศไทย ค่าส่ง 50 บาท และมีเลขพัสดุให้เช็คทุกคำสั่งซื้อ",
   ...canonicalFor("/shipping"),
 };
 

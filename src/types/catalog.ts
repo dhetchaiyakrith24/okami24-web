@@ -461,7 +461,7 @@ export interface TechnologyEntry {
  */
 export interface FAQAction {
   href: string;
-  labelKey: "finder" | "compare" | "favorites" | "eliquid" | "viewGuideCta" | "contactLineCta" | "browseProductsCta";
+  labelKey: "finder" | "compare" | "favorites" | "eliquid" | "viewGuideCta" | "contactLineCta" | "browseProductsCta" | "howToOrder" | "shipping" | "warranty";
 }
 
 export interface SiteFAQ {

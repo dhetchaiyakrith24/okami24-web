@@ -407,6 +407,9 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
     "วิธีเติมพอตทีละขั้น หัวพอตแบบไหนเติมเองได้ แบบไหนเป็นหัวพอตบรรจุสำเร็จ เติมแค่ไหนถึงพอดี และหัวพอตใหม่ควรพักกี่นาทีก่อนสูบ ตามคำแนะนำของผู้ผลิต",
   "how-long-a-pod-device-lasts":
     "พอต 1 ตัวใช้ได้นานแค่ไหน ตัวเครื่อง หัวพอต และคอยล์ เสื่อมไม่พร้อมกัน ดูสัญญาณว่าส่วนไหนถึงเวลาเปลี่ยน และนิสัยที่ช่วยให้ตัวเครื่องอยู่กับเราได้นานขึ้น",
+  // Round "SEO all keys" batch 4 (16/10): thai-copy's head line for the Drag family comparison.
+  "comparing-voopoo-drag-models":
+    "DRAG 6 กับ DRAG S3 ต่างกันยังไง และ DRAG X3 ต่างจาก DRAG 6 ตรงไหน เทียบแบต วัตต์ จอ หัวพอต และขนาดของ VOOPOO DRAG ทีละเรื่อง ให้เลือกได้ตรงกับการใช้งาน",
 };
 
 /** Row C19 — keyed by technology entry id. */
