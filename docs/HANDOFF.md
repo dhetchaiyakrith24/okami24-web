@@ -12,62 +12,40 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
 1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #474 e111ac8e (never split หน่วยงาน, owner item 54;
-  live 200) [ตรวจแล้ว] · last merge = #491 ee0725b8 (lock round: pre-checker gate + locks, no site file). Rollback = revert one PR. Render: ~1 min
-  of 502 + ~2 min after the deploy job ends — wait, then curl. Night = the owner says ไปนอน → keep working in the same chat (TEAM_RULES 13.6). Owner decisions: ask in chat + one line in
-  `docs/รอพี่ตรวจ.md` (no review-sheet artifact — §18). Images: Higgsfield web app in the owner's Chrome, free "365 Unlimited"
-  models only · the Higgsfield MCP generate/upscale tools are DENIED in `.claude/settings.json` · credits only on the owner's yes
-  in chat (IMAGE_SPEC §0 item 7) · tool tips = LESSONS-images 29 + §17 "Higgsfield".
-2 ahead of main: nothing open. Worktrees: only `_incoming/wt-stock` (stock round · own node_modules copy · test server
-  `next start -p 3413`, stopped). Untracked folder `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's (admin price reports +
-  chat screenshots): never in git, never delete (listed in `.git/info/exclude` on the computer — hidden from git status).
-  `git branch --show-current` before every commit. Git hooks: core.hooksPath must read `.githooks` (session-sync resets it).
-3 DONE 15/10 — house audit 3n → #484 (be9c09cc) · "เกลาทีละบ้าน" round 1 → #488 d765963c (checker PASS 15b57e0f, round 1 FAIL
-  on 3 wording points) · central copy @c1ca27c + web adapted (report format 12.10 · Remote Control tool in 13.6 · tags 12.9 · §5–12)
-  → #487 4f4eff22 (checker PASS bc3cc153, round 1 FAIL on 3 leftovers) · weekly task
-  `okami24-house-weekly` prompt now has the 6-home step (Sunday 20:00; its mode may still need the owner's Auto — รอพี่ตรวจ 61).
-  Owner answers 15/10 (written into the rules): night = the owner says ไปนอน → keep working in the same chat, night chain off
-  (TEAM_RULES 13.6) · AI upscale of a poster with text = allowed when original pixels go back over every text/pattern (IMAGE_SPEC §0 7)
-  · an approved image exception reused for the exact same case = do it, then report (IMAGE_SPEC §4). Friday's picks (owner may object):
-  new look with nothing to compare and no reference image = draft + other parts meanwhile (13.3) · conflicting TECHNICAL rules =
-  Friday picks ("แทนกฎกลาง §12 ข้อ 28", 13.3) · `voopooTitle` keeps its name (§18). Evidence = `_incoming/house-1510/` (computer only).
-  DONE 15/10 — LOCK ROUND → #491 ee0725b8 (checker PASS 0394616f, round 1 FAIL A–E fixed): rule-audit L1–L3, L5–L10 +
-  LESSONS พ22 → `scripts/pre-checker-gate.js` (run before every checker, `--done` after its report — TEAM_RULES 13.4) +
-  new denies in guard-tool / pre-commit / lib/chrome.js · `--self-test` = 53 planted cases, run weekly by house-check ·
-  house-check now catches a renamed quoted heading and a dead pointer on a "deleted" line about something else.
-  Known gaps (checker, not blocking): `(cd wt && build)` in a subshell is denied · `node x.js --title "a /b"` trips L3 ·
-  `node --flag scripts/x.js /a` slips L3 · rm / sed -i / redirects in a read tree are discipline, not locked.
-3h NEXT CHAT (moved at 525k, 15/10 — the owner: "ครับทำเลย" to the leftovers, then a cleanup of Artifacts · git · computer folders).
-  In this order, each step done = merged + one line in the report:
-  (1) LEFTOVERS (Friday's own, no owner question): rule-audit row 20 = find rulings still only in `git show` of old HANDOFFs
-      (`git log -p -- docs/HANDOFF.md` before aa21cbb) and lift the still-valid ones into §18 / their home · row 40 =
-      self-merge-check `--base` prints BLOCKED for "site touched" — make it print the right verdict · `scripts/lab/seo-c7.js:11`
-      2 raw invisible characters (`node scripts/thai-raw-chars-check.js` must end clean) · lock-round known gaps (lines above)
-      if cheap · row 45 (re-measure the scan baseline) stays for the next full round close.
-  (2) ARTIFACTS: list the owner's claude.ai artifacts (Artifact tool, action list, scope mine) → table: title · last update ·
-      still used? (grep the URL in the repo + §16/§18) · proposal keep/delete. Deleting is permanent and outside git =
-      TEAM_RULES 13.3 #1: show the list to the owner in chat, delete only what he confirms. Known: the half-filled Claude Docs
-      page in item 5 · the review-sheet artifact FyeA5PgJswtYDvoh3xUwSr still holds "answers" for an own round (keep).
-  (3) GIT: local branches (`git branch`, 27 incl. main on 15/10) + remote (`git branch -r`, 31) + tags (59) + worktree
-      `_incoming/wt-stock` (stock round — ask that round's state first, 3u) → merged-into-main branches = delete (commits stay
-      in main); unmerged = list with last commit + owner question only if it is his call; tags = keep (round checkpoints) unless
-      one is clearly junk · `git gc` size before/after · deleting REMOTE branches = outside the computer → list first (13.3 #1).
-  (4) COMPUTER FOLDERS of THIS project only (repo + `_incoming/`; central §12 item 32 = never touch another project's folder —
-      if the owner means other folders, ask which, and say other projects are off-limits unless he confirms in chat):
-      `node scripts/house-check.js` lists `_incoming/` folders nobody references → proposal: archive / delete per folder with
-      size and date; deleting non-git files = 13.3 #1 (owner confirms the list) · never touch `รายงานจากแอดมิน แชท/`.
-  Report in the central §12 item 10 format; the deletion lists go to the owner as ONE set of yes/no choices (A/B per group).
+  live 200) [ตรวจแล้ว] · since then only rules / scripts / docs PRs (#484 … #496). Standing rules this block used to repeat live in
+  TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
+2 ahead of main: nothing once #495 merges (`_incoming/wt-house-docs` = its worktree, remove after). Other worktree:
+  `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
+3 DONE 15/10 — house audit #484 · tidy home by home #488 · central copy + web adapted #487 · LOCK ROUND #491 (pre-checker gate,
+  `--self-test` run weekly by house-check) · HOUSE ROUND ข (3h, owner "เก็บบ้านทั้งเซต + รอบสัปดาห์รู้"): #494 leftovers (raw chars 0 ·
+  `self-merge-check --base` = PASS / SITE-TOUCHED · L3 node-flag slip + quoted-arg false deny fixed) + skill house-clean = 8 homes
+  (7 docs + briefs · 8 git / `_incoming` / root folders / scheduled-task folders / Artifacts) + house-check git & root sections ·
+  #495 docs: 47 history copies in docs/archive + ARTICLES_10A deleted (git keeps them) · 24 old owner rulings lifted (§18 end,
+  IMAGE_SPEC §4) · rule-audit 15/10 full (`_incoming/house-1510b/rule-audit.md`, 31 new rows): its docs rows applied in #495, its rules/skill/agent rows in #496 (d1828883) ·
+  weekly task prompt = 8 homes. Computer: 15 merged local branches deleted · finished `_incoming/` folders + 36 loose logs moved to
+  `C:\Users\dhetc\OKami24-archive\_incoming\` (§17 "Work folders") · "Claude outputs" moved there too.
+  Left for the owner (one yes/no set, รอพี่ตรวจ): the merged GitHub branches house-check lists outside the stock round (the app's guard refused Friday's delete · the stock
+  round's own ones = kept) · old
+  OKami24 artifacts · closed round briefs in docs/rounds (owner Q1 made that folder the record) · `_incoming/wt-rescue` (holds
+  dangling links, could not be moved) · the half-filled Claude Docs page
+  claude.ai/code/artifact/92a058d3-edb8-4321-abd6-4eb655f5dbe3 · `.agents/` (old copy of catalog-research) · folders OKami24-เก็บ / OKM photo / OKM CT /
+  ~\Claude outputs outside the repo (not named by any project rule = central §12 item 32 until the owner says they are ours).
+  Rule-audit rows waiting on the owner: C4 (house-clean owner column vs 13.3) · A5 (LESSONS ช20 → rule?) · old #44 proposal D.
+  Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
+  redirect into a checker-read tree = discipline (rule-audit L1 proposes a lock) · scan tools against the live site (L2).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
   sold out + OutOfStock JSON-LD · #404 sold-out chips + pill "สินค้าหมด" · #408 shipping 60 → 50 · #409 Shipnity Max read →
   `scripts/stock-sync.js` → warehouse-stock data · #425 owner list 24. Evidence `_incoming/stock-api/`.
   NEXT: owner 14/10 "C" = a scheduled morning read that prepares the PR (read → PR → checker); the OWNER confirms in chat before
-  it merges (TEAM_RULES 13.7) — not built yet. Then stock adapter when the warehouse sends the API · then order push with the
+  it merges (TEAM_RULES 13.7). State 15/10: the app has no stock task (deleted 08/10); its prompt folder `okami24-stock-sync`
+  is kept (§18) — the PR step was never built. Then stock adapter when the warehouse sends the API · then order push with the
   shipping fee (35 to the warehouse on its own field, free shipping as a shop-paid discount line — survey doc last section).
   From the warehouse (via the owner): the copy-ready question list = รอพี่ตรวจ "คำถามถึงคลังสินค้า".
   Open: ProductMaster seed in-stock flags are from September · `legacy-price-approvals.ts` still names Pod-181 for
-  caliburn-g4-pro (price file 【ห้ามแตะ】 — next allowed touch) · taste [รอเจ้าของ]: at 390 the small pill sits on the IQOS
-  ILUMA i cap (iqosheet-18) — alternative = a free band above full-frame photos.
+  caliburn-g4-pro (price file 【ห้ามแตะ】 — next allowed touch) · at 390 the small pill sits on the IQOS ILUMA i cap (iqosheet-18):
+  Friday's pick at the next touch = a free band above full-frame photos (taste, reversible — 13.3 last paragraph).
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md` — nothing waiting on the owner is written here.
 5 open / dated:
   - GSC reads: 22/10 (SEO_BASELINE last section rows 1–8 + 22 + 24, and round SEO ง's "validate fix" started 07/10) · 01/11
@@ -88,7 +66,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     light, no spotlight, even dark backdrop".
   - Taste notes: coil-53/coil-70 cards lean left · faint stray pixels on 94-2/94-3 pod bottoms at 2.7x
     (`_incoming/chk-coil2/pod92b.jpg`) · the charging article's record-level clip sits at the end · Drag 6 group image "still
-    graphic" (owner 04/10, later).
+    graphic" (owner 04/10, later) · the M Bar 10K anatomy sheet "looks a bit big" → polish its size (owner 29/09, from the old HANDOFF).
   - Data round: caliburn-g4-mini "~58 min at 2A" unverified · "หัวพอตใส" on m-bar-15k · esko card "20 รสชาติ" · coil-94 Thai
     Shipnity name on en/zh pages that link it + coil-72 "VOOPOO คอยล์ Vmate Infinity Edition" on vmate-i3 en/zh and its retailer
     evidence sentence · the 2 sentences still citing a retailer page (VMATE i3 · Caliburn X, compat copy — from THAI_STYLE
@@ -98,8 +76,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     the day e-liquid goes on sale · "research-voice" taglines written while hidden (tfit-m-power-20k · infy-20k · joiway-f3 — all live now) rewrite as
     a group · M Switch Kit / Zero Pro / Zero Nano are switch systems typed pod-kit + Coil-72 (built-in-coil pod) still typed coil — Coil-89 already moved (data) ·
     "ท็อปฟิล" vs "Top Fill เติมบน" (transliteration sweep) · designer: `text-wrap: balance` on mobile H2/H3 · (closed: "พอตใช้แล้วทิ้ง"
-    split mid-word = the owner ruled NOT to bind it, THAI_STYLE §5 — reword only) · รอพี่ตรวจ 60 = BSOT ~line 588 says src/proxy.ts
-    was deleted; it exists (the WebP enforcer).
+    split mid-word = the owner ruled NOT to bind it, THAI_STYLE §5 — reword only) · anatomy sheet part names read oddly ("ปลอกลายร่อง")
+    → reword for easy understanding even if not literal · "วงแหวน RGB" → "ไฟ RGB" (EN "RGB status ring" likewise) (both owner 29/09,
+    from the old HANDOFF; still in the i18n copy files).
   - Site, own tasks: home en/zh 16 Thai nodes · the owner may send a Mac screenshot (DNS round 3g) · /faq has no in-content links (→ open-system-vs-disposable) · pod-kits →
     pod-systems link slot (designer) · LINE OA rich menu / pinned post (owner: later) · Analytics = NOT now (revisit before the
     first paid ad).
@@ -112,16 +91,19 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     GPP note on 8 UWELL pages · term brackets site-wide (`node scripts/paren-terms.js`; keep device-screen ones).
   - Cleanup: `lineupFirst` unused · `dict.product.anatomyTitle` en/zh · zh spec/FAQ English · article H3 font reads narrow ·
     m-bar-15k card.webp still referenced (hidden product, harmless) · families.ts / unbranded.ts history comments ·
-    `vmate-i3/variants/*` + `argus-p3/lineup-v2.webp` unused (names appear in src/ — check by hand).
+    `vmate-i3/variants/*` + `argus-p3/lineup-v2.webp` unused (names appear in src/ — check by hand) · `attributes.drawStyle`: an old
+    ruling called it "deliberately unused", it is now used in CompareTool + infy.ts — check it is a real maker fact.
   - Page notes for each page's next touch = `git show 6b70cd2:docs/HANDOFF.md` §16 item 5 · wordbreak: «ไฟจะ» on
     /guides/fixing-no-draw-and-blinking-light@390 + pre-existing flags in `_incoming/sitewide-template/5/mood/gates/wb3.log`.
-  - Unused half-filled Claude Docs page claude.ai/code/artifact/92a058d3-edb8-4321-abd6-4eb655f5dbe3 (delete only if asked).
-  - Proposal to make (owner's queue 03/10, item D): move chats earlier in image rounds (~350–400K) = a central-rule change →
-    propose with reasons first (central §12 item 28).
+  - Rule-audit 15/10 lock proposals (Friday's, a hook = checker): L1 rm/sed -i/redirect into a checker-read tree · L2 scan/shot
+    tools against the live site · L3 `Owner: OK` line for the morning stock PR (with the stock task).
+  - Scan baseline re-measure on the test server (rule-audit row 45) = the next full round close.
+  - Proposal to make (owner's queue 03/10, item D = rule-audit old #44): move chats earlier in image rounds (~350–400K) = a
+    central-rule change → propose with reasons first (central §12 item 28).
 6 verify baseline = round SEO ฉ close 14/10 (`_incoming/seo-f/b7/*.log`, numbers as printed) [ตรวจแล้ว]: tsc 0 (empty log) ·
-  verify:commerce 17/17 · i18n 16/16 · content-dates current (57 paths) · raw NBSP/U+2060 in source 0 · scan.js 0/118 +
-  og-gate 118/118 (both against the live site — before the 14/10 test-server rule) · storefront 55 shown / 55 buyable (37 legacy
-  + 18 ProductMaster). verify:catalog --full = GitHub `checks` on every site PR.
+  verify:commerce 17/17 · i18n 16/16 · content-dates current (57 paths) · raw NBSP/U+2060 in source 0 (again 0 on 15/10 after
+  #494) · scan.js 0/118 + og-gate 118/118 (both against the live site — before the 14/10 test-server rule) · storefront 55 shown /
+  55 buyable (37 legacy + 18 ProductMaster). verify:catalog --full = GitHub `checks` on every site PR.
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` (+ the round file the owner approves next)
   (cloud chat: + `docs/CLOUD.md` item 3)
 ```
@@ -187,6 +169,11 @@ Git: commit message English, prefix feat/fix/copy/data/docs/chore/agents/rules �
   check-run annotations first (`gh api …/check-runs/<id>/annotations`) — 12/10 it was the Actions quota
 Agents: when to call each = TEAM_RULES 13.2 (+ the `description` line of its file in `.claude/agents/`) · never one call per sub-item ·
   an agent added or edited is usable at once in the running chat
+Render after a merge: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl. Higgsfield generate/upscale MCP
+  tools are DENIED in `.claude/settings.json` (the web app in the owner's Chrome is the way · IMAGE_SPEC §0 item 7).
+Work folders (owner 14/10 "move, never delete"): round work = `_incoming/<round>/` (not in git) · finished, unreferenced folders
+  move to `C:\Users\dhetc\OKami24-archive\_incoming\` (skill house-clean home 8) · image provenance keeps pointing at `_incoming/` (§18)
+  · `Higgs Okm/` at the repo root = Higgsfield masters named by `scripts/process-images.map.json` (stays put).
 Higgsfield (web app in the owner's Chrome): the draft box is SHARED across tabs and chats — open a new tab, set refs + prompt
   and click Generate in one go · free = the "365 Unlimited" models (Seedream 4.5 · Seedream 5.0 Lite · Nano Banana v1 ·
   GPT Image · FLUX.2 Pro 1K · Kling O1 Image) — check the button reads "Unlimited" before EVERY click · refs = the Chrome extension's
@@ -301,3 +288,18 @@ batch docs edits into one PR per batch · DNS guide health/quit-smoking writing 
 THAI_STYLE §5 · IMAGE_SPEC §5 · skills house-clean / okami24-handoff · central §12 item 29): image provenance in src data /
 `process-images.map.json` stays pointing at `_incoming/` — do not re-point it at the archive to free disk ("ยังไม่ทำตามที่แนะนำ") ·
 scheduled-task prompt `okami24-stock-sync` = keep · central item 13 vs 15 = left as is (the web exception covers it).
+**Lifted 15/10 from the old HANDOFFs (rule-audit row 20 — owner rulings that lived only in `git show aa21cbb:docs/HANDOFF.md` §3 and
+older §16 copies; image ones went to IMAGE_SPEC §4):**
+Shop: an empty category leaves the 4 nav surfaces and the sitemap, its page is noindex, the URL keeps working and it comes back by
+itself; copy "ยังไม่มีสินค้าในหมวดนี้" + "กลับมาดูใหม่เมื่อมีสินค้าเพิ่ม" (22/09 "เคาะทางตัน") · desktop card price = variant B (price on its
+own line under the tagline) · Argus Multi-Ohm Cartridges (3 pcs) = an Argus accessory in the VOOPOO category · WOTOFO stays on /about
+with its brand and footer link; its brand page = Friday decides, never an empty page for customers · BLUEBERRY ICE (printed on the
+device) and Blueberry (maker's list) — both kept (30/09 "ตามนั้นเลย").
+Search: many alias spellings per brand are fine, one direction only, never rendered; every brand on sale needs a Thai alias ·
+"น้ำยา" keeps returning its 3 prefilled items (m-switch-pod · muro-3ml · coil-74) while e-liquid stock is 0.
+Head copy, clips: "(Marbo)" stays in the 4 M Bar titles · one clip per article (round SEO ข) · en/zh caption under a clip whose Thai
+title is hidden = "Hands-on review (in Thai)" / "真机试用（泰语讲解）" · VideoObject `uploadDate` carries the zone
+(`YYYY-MM-DDT00:00:00+07:00`, owner from GSC 26/09) · @PODSYSTEM-OKAMI-II is the owner's second YouTube channel (researchers may cite it).
+Copy: "แท้" only ever as a sweep of all brand ledes, never one brand · brand ledes say "ที่ร้านมี", not "ที่ร้านตอนนี้มี" · gallery
+lede th/en/zh = credit only ("ภาพจริงจาก {brand}") — the owner cut "ใช้เป็นภาพประกอบเท่านั้น…" ("เรากำลังทำเพื่อการค้า").
+Central rules repo: adding a project = edit key A, never re-make it.

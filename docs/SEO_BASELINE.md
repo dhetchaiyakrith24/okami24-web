@@ -144,7 +144,7 @@ title ที่เปลี่ยนวันที่ 2026-09-23 (รายล�
   - open-system-vs-disposable เสียกล่องบน m-bar-9k · ได้ลิงก์ในเนื้อจาก T19 · mesh-coil-systems เสียกล่องบน m-bar-9k · coil-and-pod-maintenance เสียกล่องบน m-switch-pod ได้ลิงก์ในเนื้อ 2
   - **`/brands/salthub` ได้ลิงก์เพิ่ม 2** (จาก T03' และ T11) — หน้านี้อยู่ในรายการอ่าน CTR 10-05 · /faq +1 · /brands/esko-bar +1 · /products/pod-159 +1 · /products/disposables +2
 - **วันที่ของคู่มือเดิมทั้ง 7 เรื่องขยับเป็น 2026-09-24** (Article dateModified + sitemap lastmod) ทั้งที่เนื้อหาไม่เปลี่ยน ยกเว้น open-system-vs-disposable — เพราะวันที่นับทั้งกลุ่มจาก `content-dates` · รวมคู่มือเลือกพอตเครื่องแรกที่กำลังวัด
-- **ขอ Cowork ตอนอ่าน 10-05 (เพิ่ม):** คำ "marbo" · "esko bar switch 20k" · "พอตเปลี่ยนหัว" ไปลงหน้าไหน · สถานะ index ของบทความใหม่ 5 เรื่อง · ตาราง URL + คำค้นที่ต้องดู = `docs/ARTICLES_10A.md` §4 (slug ตรงตามที่ขึ้นจริงทุกแถว ยกเว้น T07 → `/guides/argus-g4-vs-caliburn-g5` คำค้น "argus g4 vs caliburn g5")
+- **ขอ Cowork ตอนอ่าน 10-05 (เพิ่ม):** คำ "marbo" · "esko bar switch 20k" · "พอตเปลี่ยนหัว" ไปลงหน้าไหน · สถานะ index ของบทความใหม่ 5 เรื่อง · ตาราง URL + คำค้นที่ต้องดู = `git show articles-10a-topics-done:docs/ARTICLES_10A.md` §4 (slug ตรงตามที่ขึ้นจริงทุกแถว ยกเว้น T07 → `/guides/argus-g4-vs-caliburn-g5` คำค้น "argus g4 vs caliburn g5")
 
 ## รอบข้อมูล "spec facts: every number has a manufacturer source" ก้อน 1 (2026-09-24) — เนื้อหาเปลี่ยนบนหน้าที่พักไว้ถึง 05/10 + ลิงก์ภายในที่ย้าย + ชื่อหน้าที่เปลี่ยน (บันทึกโดย doc-keeper ตามบรีฟ `_incoming/round-data/briefs/doc-keeper-1.md` — ก้อนกลางรอบ chat 1 เท่านั้น ยังไม่ปิดรอบ ไม่มี tag ไม่ merge)
 
