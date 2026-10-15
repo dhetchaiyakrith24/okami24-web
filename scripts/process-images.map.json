@@ -63,7 +63,7 @@
   "role": "card",
   "note": "round img-1610 16/10 - card = the Aloe Grape re-shoot (was the small maker main.png); thai.myjoiway.com API img (official)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of aloe-grape (_incoming/img-1610/b5/in/f3-aloe-grape.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -245,7 +245,7 @@
   "id": "aloe-grape",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of aloe-grape (_incoming/img-1610/b5/in/f3-aloe-grape.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -267,7 +267,7 @@
   "id": "berries-party",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of berries-party (_incoming/img-1610/b5/in/f3-berries-party.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -289,7 +289,7 @@
   "id": "blueberry-lime",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of blueberry-lime (_incoming/img-1610/b5/in/f3-blueberry-lime.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -329,7 +329,7 @@
   "id": "english-iced-tea",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of english-iced-tea (_incoming/img-1610/b5/in/f3-english-iced-tea.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -351,7 +351,7 @@
   "id": "golden-energy",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of golden-energy (_incoming/img-1610/b5/in/f3-golden-energy.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -382,7 +382,7 @@
   "id": "green-tangerine-mint",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of green-tangerine-mint (_incoming/img-1610/b5/in/f3-green-tangerine-mint.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -395,7 +395,7 @@
   "id": "hokkaido-ice-cream",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks); this render came out soft (phoneSharp 5.41 < 90% of the card) -> mild unsharp mask on the key (sharp sigma 1.2, m1 0.6, m2 1.6)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1; this render came out soft (phoneSharp 5.41) -> mild unsharp mask on the RGB of the key only, alpha untouched (b5/sharpen.js; round 1 joined channels wrongly = yellow)",
    "reference": "JOIWAY option photo of hokkaido-ice-cream (_incoming/img-1610/b5/in/f3-hokkaido-ice-cream.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -417,7 +417,7 @@
   "id": "hokkaido-peach",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1; render B of a second pair (the first came out darker than the set - checker #516 round 1)",
    "reference": "JOIWAY option photo of hokkaido-peach (_incoming/img-1610/b5/in/f3-hokkaido-peach.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -430,7 +430,7 @@
   "id": "japanese-sake",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of japanese-sake (_incoming/img-1610/b5/in/f3-japanese-sake.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -497,7 +497,7 @@
   "id": "thai-ovaltine",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of thai-ovaltine (_incoming/img-1610/b5/in/f3-thai-ovaltine.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -510,7 +510,7 @@
   "id": "thai-tea",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of thai-tea (_incoming/img-1610/b5/in/f3-thai-tea.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -523,7 +523,7 @@
   "id": "virginia-tobacco",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of virginia-tobacco (_incoming/img-1610/b5/in/f3-virginia-tobacco.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -536,7 +536,7 @@
   "id": "vodak",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name VODKA (as printed; site id vodak); renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name VODKA (as printed; site id vodak); renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of vodak (_incoming/img-1610/b5/in/f3-vodak.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
@@ -558,7 +558,7 @@
   "id": "watermelon-orange",
   "note": "round img-1610 16/10 - studio re-shoot (was the small maker photo); NEW flavour added 2026-09-06 (owner: show every flavour the maker offers)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh (matte3 --device + protect boxes, foot trim, side boxes cleared, specks)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker option photo as the only image, prompt = _incoming/img-1610/prompts.md \"F3\" with the printed name; renders smaller than the set were scaled to the aloe-grape geometry (b5/fitf3.js); keyed by b5/keyf3.sh, then the black base cut to its real cup outline (b5/basecut.js: shared bottom curve b5/baseshape.json + quarter-ellipse cup sides 4 px inside the rim), specks, sides clipped (b5/sideclip.js), rim corners opened (b5/rimopen.js) - checker #516 round 1",
    "reference": "JOIWAY option photo of watermelon-orange (_incoming/img-1610/b5/in/f3-watermelon-orange.png, from thai.myjoiway.com)",
    "fidelitySheet": "_incoming/img-1610/b5/fid/f3-all.jpg (maker photo beside the new file for all 14) - printed name, 12000+, flavour illustration, green/amber/black checked by eye"
   },
