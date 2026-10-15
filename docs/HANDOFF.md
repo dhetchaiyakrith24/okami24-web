@@ -30,15 +30,32 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   · an approved image exception reused for the exact same case = do it, then report (IMAGE_SPEC §4). Friday's picks (owner may object):
   new look with nothing to compare and no reference image = draft + other parts meanwhile (13.3) · conflicting TECHNICAL rules =
   Friday picks ("แทนกฎกลาง §12 ข้อ 28", 13.3) · `voopooTitle` keeps its name (§18). Evidence = `_incoming/house-1510/` (computer only).
-  Leftovers (own work, not started): rule-audit rows 20 (old rulings only in `git show` — round 7 lifted 15/10, others not
-  checked) · 40 (self-merge-check `--base` prints BLOCKED for "site touched") · 45 (re-measure the scan baseline on the test server
-  at the next full close) · `scripts/lab/seo-c7.js:11` has 2 raw invisible characters (`thai-raw-chars-check.js` exit 1, pre-existing).
   DONE 15/10 — LOCK ROUND → #491 ee0725b8 (checker PASS 0394616f, round 1 FAIL A–E fixed): rule-audit L1–L3, L5–L10 +
   LESSONS พ22 → `scripts/pre-checker-gate.js` (run before every checker, `--done` after its report — TEAM_RULES 13.4) +
   new denies in guard-tool / pre-commit / lib/chrome.js · `--self-test` = 53 planted cases, run weekly by house-check ·
   house-check now catches a renamed quoted heading and a dead pointer on a "deleted" line about something else.
   Known gaps (checker, not blocking): `(cd wt && build)` in a subshell is denied · `node x.js --title "a /b"` trips L3 ·
   `node --flag scripts/x.js /a` slips L3 · rm / sed -i / redirects in a read tree are discipline, not locked.
+3h NEXT CHAT (moved at 525k, 15/10 — the owner: "ครับทำเลย" to the leftovers, then a cleanup of Artifacts · git · computer folders).
+  In this order, each step done = merged + one line in the report:
+  (1) LEFTOVERS (Friday's own, no owner question): rule-audit row 20 = find rulings still only in `git show` of old HANDOFFs
+      (`git log -p -- docs/HANDOFF.md` before aa21cbb) and lift the still-valid ones into §18 / their home · row 40 =
+      self-merge-check `--base` prints BLOCKED for "site touched" — make it print the right verdict · `scripts/lab/seo-c7.js:11`
+      2 raw invisible characters (`node scripts/thai-raw-chars-check.js` must end clean) · lock-round known gaps (lines above)
+      if cheap · row 45 (re-measure the scan baseline) stays for the next full round close.
+  (2) ARTIFACTS: list the owner's claude.ai artifacts (Artifact tool, action list, scope mine) → table: title · last update ·
+      still used? (grep the URL in the repo + §16/§18) · proposal keep/delete. Deleting is permanent and outside git =
+      TEAM_RULES 13.3 #1: show the list to the owner in chat, delete only what he confirms. Known: the half-filled Claude Docs
+      page in item 5 · the review-sheet artifact FyeA5PgJswtYDvoh3xUwSr still holds "answers" for an own round (keep).
+  (3) GIT: local branches (`git branch`, 27 incl. main on 15/10) + remote (`git branch -r`, 31) + tags (59) + worktree
+      `_incoming/wt-stock` (stock round — ask that round's state first, 3u) → merged-into-main branches = delete (commits stay
+      in main); unmerged = list with last commit + owner question only if it is his call; tags = keep (round checkpoints) unless
+      one is clearly junk · `git gc` size before/after · deleting REMOTE branches = outside the computer → list first (13.3 #1).
+  (4) COMPUTER FOLDERS of THIS project only (repo + `_incoming/`; central §12 item 32 = never touch another project's folder —
+      if the owner means other folders, ask which, and say other projects are off-limits unless he confirms in chat):
+      `node scripts/house-check.js` lists `_incoming/` folders nobody references → proposal: archive / delete per folder with
+      size and date; deleting non-git files = 13.3 #1 (owner confirms the list) · never touch `รายงานจากแอดมิน แชท/`.
+  Report in the central §12 item 10 format; the deletion lists go to the owner as ONE set of yes/no choices (A/B per group).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
