@@ -41,7 +41,8 @@ the standing list is:
   `.claude/memory/MEMORY.md`) · `.claude/memory/*.md` (Friday's memory, loaded every chat)
 - `docs/CLOUD.md` (cloud capability table + how a round opens in the cloud) · `docs/rounds/README.md`
 - `AGENTS.md` at the repo root
-- `docs/HANDOFF.md` §16–§18 · `docs/THAI_STYLE.md` · `docs/TEMPLATES.md` · `docs/IMAGE_SPEC.md` §0
+- `docs/HANDOFF.md` §16–§18 · `docs/THAI_STYLE.md` · `docs/TEMPLATES.md` · `docs/IMAGE_SPEC.md` (whole file) · `docs/รอพี่ตรวจ.md` ·
+  `docs/RECOVERY.md` · `.claude/LESSONS.md` · `.claude/LESSONS-images.md`
 - `.claude/agents/*.md` (every agent, including yourself)
 - `.claude/skills/*/SKILL.md` (the handoff skill is `okami24-handoff`, in the repo since 2026-09-25) · `.claude/launch.json`
 
