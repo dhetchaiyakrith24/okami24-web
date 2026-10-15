@@ -29,7 +29,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   artifacts deleted (kept: ใบตรวจของพี่ · Logo Redesign; not ours / unsure = untouched) — MISTAKE: the half-filled Claude Docs page
   (code/artifact/92a058d3…) was the same artifact as "ทางแก้ค่าส่งออเดอร์ Dropship" (to keep) → gone for good; its substance lives in
   `docs/cloud-results/stock-api-sku-survey.md` last section (lesson = LESSONS พ31) · computer: `_incoming/wt-rescue` (links
-  removed first, targets intact) + `.agents/` deleted, ~OKami24-เก็บ → `OKami24-archiveincoming-01-10`, empty ~Claude outputs removed ·
+  removed first, targets intact) + `.agents/` deleted, ~\OKami24-เก็บ → `OKami24-archive\incoming-01-10`, empty ~\Claude outputs removed ·
   closed round briefs out of `docs/rounds/` (#497, git keeps them) · rule rows C4 + A5 applied (#497). OKM photo / OKM CT = not ours
   unless the owner says so (central §12 item 32).
   Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
@@ -178,9 +178,8 @@ Agents: when to call each = TEAM_RULES 13.2 (+ the `description` line of its fil
   an agent added or edited is usable at once in the running chat
 Render after a merge: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl. Higgsfield generate/upscale MCP
   tools are DENIED in `.claude/settings.json` (the web app in the owner's Chrome is the way · IMAGE_SPEC §0 item 7).
-Work folders (owner 14/10 "move, never delete"): round work = `_incoming/<round>/` (not in git) · finished, unreferenced folders
-  move to `C:\Users\dhetc\OKami24-archive\_incoming\` (skill house-clean home 8) · image provenance keeps pointing at `_incoming/` (§18)
-  · `Higgs Okm/` at the repo root = Higgsfield masters named by `scripts/process-images.map.json` (stays put).
+Work folders: round work = `_incoming/<round>/` (not in git) · what Friday may move or delete alone = skill house-clean
+  "รายการเดียว" (its one home) · image provenance keeps pointing at `_incoming/` (§18).
 Higgsfield (web app in the owner's Chrome): the draft box is SHARED across tabs and chats — open a new tab, set refs + prompt
   and click Generate in one go · free = the "365 Unlimited" models (Seedream 4.5 · Seedream 5.0 Lite · Nano Banana v1 ·
   GPT Image · FLUX.2 Pro 1K · Kling O1 Image) — check the button reads "Unlimited" before EVERY click · refs = the Chrome extension's
