@@ -759,12 +759,12 @@
   "id": "silver",
   "replaces": "/assets/products/argus-g4/variants/silver.webp",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js); checker #505 round 1: body edges clipped to the measured straight sides and made solid inside (key had left a dark slab / streaks); screen bottom row 00800 replaced by the orange render's 00000 pixels (same UI, b4/fixag.js)",
    "reference": "VOOPOO shop.voopoo.com gallery photo of the silver ARGUS G4 (_incoming/argus-g4/raw/voopoo-Sliver-12.jpg, 2533 px, device column; input _incoming/img-1610/b4/in/ag4-silver.png; render _incoming/img-1610/b4/out/ag4-silver-A.png)",
    "fidelitySheet": "_incoming/img-1610/b4/fid/fid-silver.png + _incoming/img-1610/b4/key/all8.jpg (maker photo beside the new file for all 8) - screen, side button, ARGUS lettering, body colour and texture checked by eye"
   },
   "note": "round img-1610 16/10 - studio re-shoot (was the maker photo cut from white: jagged edges)",
-  "fileName": "variant-silver-v2.webp"
+  "fileName": "variant-silver-v3.webp"
  },
  {
   "source": "_incoming/img-1610/b4/key/P-ag4-blue.png",
@@ -787,12 +787,12 @@
   "id": "gray",
   "replaces": "/assets/products/argus-g4/variants/gray.webp",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js)",
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the maker photo as the only image, prompt = docs/IMAGE_PROMPTS.md v3 light + colour-fidelity line + large in frame (_incoming/img-1610/b4/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --device (black: --ft 10 + body protected), foot slab trimmed, backdrop streaks outside the device column cleared, the clear pod silhouette taken from the clean purple key and aligned on the pod top (b4 podcopy.js); checker #505 round 1: body edges clipped to the measured straight sides and made solid inside (key had left a dark slab / streaks)",
    "reference": "VOOPOO shop.voopoo.com gallery photo of the gray ARGUS G4 (_incoming/argus-g4/raw/voopoo-Sliver-8.jpg, 2533 px, device column; input _incoming/img-1610/b4/in/ag4-gray.png; render _incoming/img-1610/b4/out/ag4-gray-A.png)",
    "fidelitySheet": "_incoming/img-1610/b4/fid/fid-gray.png + _incoming/img-1610/b4/key/all8.jpg (maker photo beside the new file for all 8) - screen, side button, ARGUS lettering, body colour and texture checked by eye"
   },
   "note": "round img-1610 16/10 - studio re-shoot (was the maker photo cut from white: jagged edges)",
-  "fileName": "variant-gray-v2.webp"
+  "fileName": "variant-gray-v3.webp"
  },
  {
   "source": "_incoming/img-1610/b4/key/P-ag4-brown.png",

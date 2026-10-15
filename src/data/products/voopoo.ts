@@ -111,12 +111,12 @@ export const voopooProducts: Product[] = [
     storyStartRight: true,
     storyCover: { src: "/assets/products/argus-g4-mini/story-cover.webp", alt: "Official VOOPOO banner — the ARGUS G4 beside the ARGUS G4 mini", sourceName: "VOOPOO", sourceUrl: G4_PAGE, width: 2133, height: 1194 },
     lineupImage: {
-      src: "/assets/products/argus-g4/lineup-v3.webp",
+      src: "/assets/products/argus-g4/lineup-v4.webp",
       alt: "VOOPOO ARGUS G4, colours 1–4 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
     lineupImage2: {
-      src: "/assets/products/argus-g4/lineup2-v3.webp",
+      src: "/assets/products/argus-g4/lineup2-v4.webp",
       alt: "VOOPOO ARGUS G4, colours 5–8 of 8",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -143,7 +143,7 @@ export const voopooProducts: Product[] = [
         id: "silver",
         name: "Silver",
         swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/argus-g4/variant-silver-v2.webp", alt: "VOOPOO ARGUS G4, Silver" },
+        image: { src: "/assets/products/argus-g4/variant-silver-v3.webp", alt: "VOOPOO ARGUS G4, Silver" },
       },
       {
         id: "blue",
@@ -155,7 +155,7 @@ export const voopooProducts: Product[] = [
         id: "gray",
         name: "Gray",
         swatchHex: "#5c5f63",
-        image: { src: "/assets/products/argus-g4/variant-gray-v2.webp", alt: "VOOPOO ARGUS G4, Gray" },
+        image: { src: "/assets/products/argus-g4/variant-gray-v3.webp", alt: "VOOPOO ARGUS G4, Gray" },
       },
       {
         id: "brown",
