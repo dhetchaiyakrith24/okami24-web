@@ -24,13 +24,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   IMAGE_SPEC §4) · rule-audit 15/10 full (`_incoming/house-1510b/rule-audit.md`, 31 new rows): its docs rows applied in #495, its rules/skill/agent rows in #496 (d1828883) ·
   weekly task prompt = 8 homes. Computer: 15 merged local branches deleted · finished `_incoming/` folders + 36 loose logs moved to
   `C:\Users\dhetc\OKami24-archive\_incoming\` (§17 "Work folders") · "Claude outputs" moved there too.
-  Left for the owner (one yes/no set, รอพี่ตรวจ): the merged GitHub branches house-check lists outside the stock round (the app's guard refused Friday's delete · the stock
-  round's own ones = kept) · old
-  OKami24 artifacts · closed round briefs in docs/rounds (owner Q1 made that folder the record) · `_incoming/wt-rescue` (holds
-  dangling links, could not be moved) · the half-filled Claude Docs page
-  claude.ai/code/artifact/92a058d3-edb8-4321-abd6-4eb655f5dbe3 · `.agents/` (old copy of catalog-research) · folders OKami24-เก็บ / OKM photo / OKM CT /
-  ~\Claude outputs outside the repo (not named by any project rule = central §12 item 32 until the owner says they are ours).
-  Rule-audit rows waiting on the owner: C4 (house-clean owner column vs 13.3) · A5 (LESSONS ช20 → rule?) · old #44 proposal D.
+  Owner 16/10 "ตามแนะนำทั้ง 5" → done: GitHub = merged branches deleted, the 11 unmerged old ones kept as tags `archive/<name>`
+  then deleted (left: main · inbox · gsc-data · the stock round's), repo setting "delete branch on merge" ON · 9 old OKami24
+  artifacts deleted (kept: ใบตรวจของพี่ · Logo Redesign; not ours / unsure = untouched) — MISTAKE: the half-filled Claude Docs page
+  (code/artifact/92a058d3…) was the same artifact as "ทางแก้ค่าส่งออเดอร์ Dropship" (to keep) → gone for good; its substance lives in
+  `docs/cloud-results/stock-api-sku-survey.md` last section (lesson = LESSONS พ31) · computer: `_incoming/wt-rescue` (links
+  removed first, targets intact) + `.agents/` deleted, ~OKami24-เก็บ → `OKami24-archiveincoming-01-10`, empty ~Claude outputs removed ·
+  closed round briefs out of `docs/rounds/` (#497, git keeps them) · rule rows C4 + A5 applied (#497). OKM photo / OKM CT = not ours
+  unless the owner says so (central §12 item 32).
   Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
   redirect into a checker-read tree = discipline (rule-audit L1 proposes a lock) · scan tools against the live site (L2).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
