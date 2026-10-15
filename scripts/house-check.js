@@ -144,7 +144,9 @@ const localAll = gitLines("git branch --format=%(refname:short)").filter((b) => 
 const localMerged = new Set(gitLines("git branch --merged origin/main --format=%(refname:short)"));
 const remoteAll = gitLines("git branch -r --format=%(refname:short)").filter((b) => !/^origin(\/(HEAD|main))?$/.test(b));
 const remoteMerged = new Set(gitLines("git branch -r --merged origin/main --format=%(refname:short)"));
-const lm = localAll.filter((b) => localMerged.has(b) && !inWt.has(b));
+// a branch cut from main minutes ago also reads "merged" — only ones whose last commit is over 7 days old are offered
+const weekAgo = Date.now() / 1000 - 7 * 86400;
+const lm = localAll.filter((b) => localMerged.has(b) && !inWt.has(b) && Number(gitLines(`git log -1 --format=%ct ${b}`)[0] || 0) < weekAgo);
 const rm = remoteAll.filter((b) => remoteMerged.has(b));
 console.log(`  local  ${localAll.length} · merged ${lm.length} (safe to delete${lm.length ? `: ${lm.join(" ")}` : ""})`);
 const lastOf = (b) => gitLines(`git log -1 --format=%cs·%s ${b}`)[0] || "";
@@ -158,7 +160,8 @@ if (pack) console.log(`  repo   ${pack.replace("size-pack: ", "")} packed`);
 // 5c. loose folders at the repo root (owner 15/10 "อย่าให้กระจัดกระจาย") — anything untracked at the top level that is
 // not a tool's own folder, the work folder _incoming/, or the owner's folder
 console.log("\n## loose files/folders at the repo root (not in git, not a known tool folder)");
-const KNOWN_ROOT = new Set(["_incoming", "node_modules", ".next", ".data", ".git", ".agents", "next-env.d.ts", "tsconfig.tsbuildinfo", "รายงานจากแอดมิน แชท"]);
+// "Higgs Okm" = the Higgsfield image masters: scripts/process-images.map.json names them as image provenance (stays put)
+const KNOWN_ROOT = new Set(["_incoming", "node_modules", ".next", ".data", ".git", ".agents", "next-env.d.ts", "tsconfig.tsbuildinfo", "รายงานจากแอดมิน แชท", "Higgs Okm"]);
 const topTracked = new Set(tracked.map((f) => f.split("/")[0]));
 const loose = fs.readdirSync(".").filter((n) => !topTracked.has(n) && !KNOWN_ROOT.has(n));
 for (const n of loose) {
