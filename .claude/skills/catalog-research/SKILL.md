@@ -47,7 +47,7 @@ Tiers 3–4 may corroborate identity, variants and image provenance only — the
 sentence shown on the site; a product fact on the site comes from the manufacturer (owner ruling 2026-09-26,
 round "cloud" — the rule and its named exceptions: `docs/THAI_STYLE.md` §5 "ขยายเป็นทุกที่บนเว็บ").
 
-Watch for the "หัว(เปล่า) doesn't reliably mean bare coil" pattern (see the README section) —
+Watch for the "หัว(เปล่า) doesn't reliably mean bare coil" pattern ([catalog-method] in HANDOFF §17 — "src files the skills use") —
 check what the *children* actually differentiate by (resistance = likely a coil; color/flavor =
 likely a pod/cartridge/prefilled product) rather than trusting the Shipnity name or id prefix.
 
@@ -112,7 +112,7 @@ Source real photos, then reject anything that fails ANY of:
       `npx tsx scripts/product-image.ts info <file>` before committing to it — don't eyeball
       dimensions.
 
-Efficient techniques (see README for the full writeup): a variant-specific product page's own
+Efficient techniques (full writeup = [catalog-method], HANDOFF §17): a variant-specific product page's own
 `og:image` meta tag; Shopify/WooCommerce `variants` JSON blobs embedded in raw HTML mapping each
 option to its own image URL; `curl` as a fallback when a domain blocks automated content-reading;
 CDN size-suffix/query-param variants (`_w1728`, `?wid=800`) for a larger source than the default

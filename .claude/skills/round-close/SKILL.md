@@ -17,8 +17,8 @@ owner's dev server on port 3000, never two Chrome jobs at once).
 0. `node scripts/self-merge-check.js --base <base>` ends in `PASS` (nothing a visitor gets changed — the allow-list of
    13.7) → that output with its command IS the proof: skip steps 1–2 and the server gates of step 3; run 13.5 #2 (ก)
    for the files touched. `BLOCKED` = continue below.
-1. **Thai text on a page changed** → `node scripts/wordbreak-scan.js` on the pages the round touched (scope-auditor's
-   list), both widths, output under `_incoming/<round>/`, then `node scripts/wb-diff.js <before> <after>` against a scan
+1. **Thai text on a page changed** → `node scripts/wordbreak-scan.js` on the pages the round touched (the round's page
+   list, skill `round-open` step 4), both widths, output under `_incoming/<round>/`, then `node scripts/wb-diff.js <before> <after>` against a scan
    of the round's base build (or the previous close's scan when it was made on the same kind of machine — skill
    `tier-b-proof` step 1). No Thai on-page change = skip.
 2. Tier B: what a visitor reads that changed + shots of those spots only = skill `tier-b-proof` · shot count = 13.5 #7.
@@ -39,7 +39,7 @@ every PR that touches the site) plus the Thai-copy gates on the touched pages.
 - `npx tsx scripts/count-storefront.ts` — printed counts = HANDOFF §16 item 6 unless the round changed the catalog
   (then write the new counts there)
 - the i18n contract test (HANDOFF §17 "src files the skills use" [i18n-test]) · `node scripts/thai-raw-chars-check.js`
-- `node scripts/scan.js` against the test server (skill `thai-check`) · `node scripts/og-gate.js --base <test server>`
+- `node scripts/scan.js --pages` against the test server (which pages = skill `thai-check` gate 1) · `node scripts/og-gate.js --base <test server>`
 - `npx tsx scripts/content-dates.ts --check` — fails = the post-commit hook did not run (`docs/RECOVERY.md` 2ค) →
   run `npx tsx scripts/content-dates.ts` and commit
 

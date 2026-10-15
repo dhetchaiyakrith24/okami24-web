@@ -13,25 +13,30 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 
 1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #474 e111ac8e (never split หน่วยงาน, owner item 54;
   live 200) [ตรวจแล้ว] · last merge = #484 be9c09cc (house audit 15/10, no site file). Rollback = revert one PR. Render: ~1 min
-  of 502 + ~2 min after the deploy job ends — wait, then curl. Night chain OFF. Owner decisions: ask in chat + one line in
+  of 502 + ~2 min after the deploy job ends — wait, then curl. Night = the owner says ไปนอน → keep working in the same chat (TEAM_RULES 13.6). Owner decisions: ask in chat + one line in
   `docs/รอพี่ตรวจ.md` (no review-sheet artifact — §18). Images: Higgsfield web app in the owner's Chrome, free "365 Unlimited"
   models only · the Higgsfield MCP generate/upscale tools are DENIED in `.claude/settings.json` · credits only on the owner's yes
   in chat (IMAGE_SPEC §0 item 7) · tool tips = LESSONS-images 29 + §17 "Higgsfield".
-2 ahead of main: nothing. Worktrees: only `_incoming/wt-stock` (stock round · own node_modules copy · test server
-  `next start -p 3413`, stopped). Untracked folder `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's (admin price reports +
-  chat screenshots): never in git, never delete (listed in `.git/info/exclude` on the computer 15/10 — hidden from git status).
-  `git branch --show-current` before every commit. Git hooks: core.hooksPath must read `.githooks` (session-sync resets it).
-3 DONE 15/10 — house audit (item 3n, owner's 7 questions) → #484 merge be9c09cc (checker PASS round 3 at 6cb7d10; rounds 1–2
-  FAIL on a lost planner rule, a lost THAI_STYLE item, `git branch:*` in the allow-list, one HANDOFF phrase). Report + evidence =
-  `_incoming/house-1510/` (computer only: report.md · compliance.md · rule-audit.md 52 rows · tx-*.txt). Rulings = §18
-  "Answered 15/10". Weekly task `okami24-house-weekly` created 15/10 (Sunday 20:00, prompt = skill house-clean (ก)) — the app did
-  NOT keep auto mode on it: its git-write step can pause on a prompt until the owner sets the task's mode or approves once
-  (รอพี่ตรวจ item 61). Earlier round "housekeeping 14/10" = tag `house-clean-1410-done`.
-  House-audit leftovers (own work, not started): rule-audit rows 20 (rulings still only in `git show` of old HANDOFFs → §18) ·
-  40 (self-merge-check `--base` prints BLOCKED for "site touched") · 45 (re-measure the scan baseline on the test server at the
-  next full close) · house-check skips a dead pointer on a line that says "deleted/removed" (known limit) · the LOCK ROUND =
-  rule-audit 14/10 L1–L3, L5–L10 + "do not touch the tree/3412 while the checker reads" → one "pre-checker gate" script, its own
-  round (Friday's pick 15/10).
+2 open PRs (15/10 housekeeping "เกลาทีละบ้าน", owner "แก้และทำเลย"): #488 `house-homes` (skill house-clean 6-home step · the
+  Friday rows of `_incoming/house-1510/homes-audit.md` · checker round 1 FAIL on 3 wording points, fixed, round 2 next) ·
+  #487 `rules-sync/c1ca27c` (central copy @c1ca27c, sha matches `.claude/rules-source.json` + the web adapted to it: new report
+  format 12.10, Remote Control tool in 13.6, tags 12.9, §5–12) — merge #488 first, then merge main into #487, checker, merge.
+  Worktrees: `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped) ·
+  `_incoming/wt-rules` (#487, remove after merge). Untracked folder `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's (admin
+  price reports + chat screenshots): never in git, never delete (listed in `.git/info/exclude` on the computer — hidden from git
+  status). `git branch --show-current` before every commit. Git hooks: core.hooksPath must read `.githooks` (session-sync resets it).
+3 DONE 15/10 — house audit 3n → #484 (be9c09cc) · "เกลาทีละบ้าน" round 1 (#488 + #487 above) · weekly task
+  `okami24-house-weekly` prompt now has the 6-home step (Sunday 20:00; its mode may still need the owner's Auto — รอพี่ตรวจ 61).
+  Owner answers 15/10 (written into the rules): night = the owner says ไปนอน → keep working in the same chat, night chain off
+  (TEAM_RULES 13.6) · AI upscale of a poster with text = allowed when original pixels go back over every text/pattern (IMAGE_SPEC §0 7)
+  · an approved image exception reused for the exact same case = do it, then report (IMAGE_SPEC §4). Friday's picks (owner may object):
+  new look with nothing to compare and no reference image = draft + other parts meanwhile (13.3) · conflicting TECHNICAL rules =
+  Friday picks ("แทนกฎกลาง §12 ข้อ 28", 13.3) · `voopooTitle` keeps its name (§18). Evidence = `_incoming/house-1510/` (computer only).
+  Leftovers (own work, not started): rule-audit rows 20 (old rulings only in `git show` — round 7 lifted 15/10, others not
+  checked) · 40 (self-merge-check `--base` prints BLOCKED for "site touched") · 45 (re-measure the scan baseline on the test server
+  at the next full close) · house-check misses a renamed HEADING pointer and a dead pointer on a "deleted/removed" line · the LOCK
+  ROUND (rule-audit 14/10 L1–L3, L5–L10 + "do not touch the tree/3412 while the checker reads" → one "pre-checker gate" script) ·
+  `scripts/lab/seo-c7.js:11` has 2 raw invisible characters (`thai-raw-chars-check.js` exit 1, pre-existing).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
@@ -58,7 +63,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   - IMAGE SWEEP (owner 10/10 "ทำให้ครบทั้งเว็บ"): audit `_incoming/img-audit-1010/`, worst first: coil-94 card + 0.4Ω option ·
     coil-55 · joiway-f4 card+21 · zero-nano card · joiway-f3 15 green "12000+" options · argus-g4 card+7 · caliburn-g5-lite (+SE) ·
     zero-pro card · pod-159 card (LAST, 13.7 big (2), own PR + BSOT §21) · relx-smash-go-12k · caliburn-g4-classic · argus-g4
-    gallery. DONE: coil-74 #428. Then the 21 warehouse products (รอพี่ตรวจ 41). Seedream 4.5 needs "no glowing lines, no LED
+    gallery · caliburn-g5 colours other than Mystic Forest (broken edges, patches) · Drag S3 / X3 "still graphic, body too white"
+    (owner 02/10) · old row-style group images (argus-g4-mini …) + Caliburn G3 Pro has none (moved from IMAGE_SPEC §0 15/10).
+    DONE: coil-74 #428. Then the 21 warehouse products (รอพี่ตรวจ 41). Seedream 4.5 needs "no glowing lines, no LED
     light, no spotlight, even dark backdrop".
   - Taste notes: coil-53/coil-70 cards lean left · faint stray pixels on 94-2/94-3 pod bottoms at 2.7x
     (`_incoming/chk-coil2/pod92b.jpg`) · the charging article's record-level clip sits at the end · Drag 6 group image "still
@@ -69,7 +76,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     15/10) · search "Sugus" alias · MOOOD who-for line → "…ที่มีกลิ่นให้เลือกหลายกลิ่น" (§18) · INFY 20K "explain the
     absence" FAQ (cut at the page's next touch, §18 06/10 pm) · nexBAR 18K counts 31 flavours, shows 20.
   - Copy items moved from THAI_STYLE §6 (15/10, record = THAI_STYLE_LOG end): /e-liquid page description = switch to version ข
-    the day e-liquid goes on sale · hidden products' "research-voice" taglines (tfit-m-power-20k · infy-20k · joiway-f3) rewrite as
+    the day e-liquid goes on sale · "research-voice" taglines written while hidden (tfit-m-power-20k · infy-20k · joiway-f3 — all live now) rewrite as
     a group · M Switch Kit / Zero Pro / Zero Nano are switch systems typed pod-kit + Coil-72 (built-in-coil pod) still typed coil — Coil-89 already moved (data) ·
     "ท็อปฟิล" vs "Top Fill เติมบน" (transliteration sweep) · designer: `text-wrap: balance` on mobile H2/H3 · (closed: "พอตใช้แล้วทิ้ง"
     split mid-word = the owner ruled NOT to bind it, THAI_STYLE §5 — reword only) · รอพี่ตรวจ 60 = BSOT ~line 588 says src/proxy.ts
@@ -78,7 +85,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     pod-systems link slot (designer) · LINE OA rich menu / pinned post (owner: later) · Analytics = NOT now (revisit before the
     first paid ad).
   - Own rounds (owner 07/10): typo-tolerant search Thai + English (site + Google) · a lifestyle / real-shot strip at the end of
-    product pages (sheet 16 A; answers in https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr collection "answers").
+    product pages (sheet 16 A, the owner wants one sample shot first; answers in https://claude.ai/artifact/FyeA5PgJswtYDvoh3xUwSr collection "answers") · every product
+    gets an SEO article in "more details" (owner 01/10).
+  - Slip check (owner 10/10): a correct transfer judged wrong AGAIN → switch to EasySlip's `matchedAccount` (the owner's step =
+    รอพี่ตรวจ 57), then test one K+ QR + one Krungsri slip and drop our receiver-match.
   - Next SEO round: M Bar 10K airflow row + head · G5 hero tagline repeats · product FAQ answers absent from server HTML · shared
     GPP note on 8 UWELL pages · term brackets site-wide (`node scripts/paren-terms.js`; keep device-screen ones).
   - Cleanup: `lineupFirst` unused · `dict.product.anatomyTitle` en/zh · zh spec/FAQ English · article H3 font reads narrow ·
@@ -106,7 +116,7 @@ Do not touch unless the round file names it: layout outside the named spot · im
   CategoryLabel.tsx / label-lang · card-headline-spec.ts rules · dictionary catalog.card* / trust.* (set ก) · TrustBar row
   layout / 4 icons · sticky th on /compare · ScrollHintFrame · headings K1–K3 · locked word "อุ่นยาสูบ" · the ban on
   "ไม่เผาไหม้" in every language · FAQ eyebrow "ถาม-ตอบ" · /search eyebrow = footer.tools · THAI_STYLE_LOG §7 rows of
-  round 30.4ข · ProductHero stats / PuffCount / Coil-72/89 category (data round) · footer.tagline / cart (their own rounds)
+  round 30.4ข · ProductHero stats / PuffCount / Coil-72 category (data round) · footer.tagline / cart (their own rounds)
   — never: joiner/NBSP outside the list · two Chrome jobs at once · fixing tier-B orphan words one by one · placeholders
   in an empty spec row · screenshots without a scan first (13.5 #7)
 Site copy (every round): every new sentence = 3 languages (new articles = Thai first, `thaiOnly: true` — §18) · Friday picks
@@ -148,17 +158,18 @@ src files the skills use (the one list — skills may not name a file under src/
 Verify: which set = 13.5 · the full list with commands = skill `round-close` step 3 · pass = what each script prints ·
   the last full-set counts = §16 item 6
 Git: commit message English, prefix feat/fix/copy/data/docs/chore/agents/rules · Thai text via `git commit -F <file>` ·
-  push/merge/deploy = 13.7 · tag = skill `round-close` step 5 · a check that never starts (job with 0 steps) = read the
+  push/merge/deploy = 13.7 · main's branch protection requires `copy` + `checks` (admins enforced, no force push; owner 14/10
+  item 55 — a skipped `checks` on a docs-only PR counts as passed) · tag = skill `round-close` step 5 · a check that never starts (job with 0 steps) = read the
   check-run annotations first (`gh api …/check-runs/<id>/annotations`) — 12/10 it was the Actions quota
-Agents: when to call each = the `description` line of its file in `.claude/agents/` · never one call per sub-item ·
+Agents: when to call each = TEAM_RULES 13.2 (+ the `description` line of its file in `.claude/agents/`) · never one call per sub-item ·
   an agent added or edited is usable at once in the running chat
 Higgsfield (web app in the owner's Chrome): the draft box is SHARED across tabs and chats — open a new tab, set refs + prompt
   and click Generate in one go · free = the "365 Unlimited" models (Seedream 4.5 · Seedream 5.0 Lite · Nano Banana v1 ·
   GPT Image · FLUX.2 Pro 1K · Kling O1 Image) — check the button reads "Unlimited" before EVERY click · refs = the Chrome extension's
   file_upload on the uploads panel's hidden input (the app's built-in browser pane has no upload tool: 3 KB base64 chunks +
   sha256 check — slow) · results via MCP `show_generations` (read-only) · prompt box = Lexical editor (LESSONS-images 29)
-Night chain: its rules live in the routine `friday-chat-move` prompt (TEAM_RULES 13.6) · before the first night the owner
-  archives routine-born chats still open (a run still "Running" makes the next slot "Skipped")
+Scheduled tasks: unattended = the task's mode set to Auto in the app (TEAM_RULES 13.6) · a new task: "Run now" once while the owner
+  is there and "Always allow" each prompt, or skill `fewer-permission-prompts` · one command per Bash call
 ```
 
 ## 18. Permanent owner rulings — settled, never re-ask (central §12 item 17)
@@ -173,10 +184,13 @@ admin page and OTP are parked · caliburn-g4-pro = Pod-168 (Max's code, owner 08
 
 **Head copy and SEO:** e-liquid stock is 0 on the storefront → "น้ำยา" stays out of head copy except `/e-liquid` itself ·
 "พอตไฟฟ้า" and "บุหรี่ไฟฟ้า" are both allowed in head copy · misspelled search terms → hidden search aliases only, never
-visible copy · "Marbo" in Latin only in visible copy (aliases hidden) — EXCEPT one sentence per owner page for Thai names with typing evidence (owner 07/10, sheet 35 = 1: มาโบ · เอสโคบาร์ · จอยเวย์ · ไอคอส · อินฟี่ in the brand ledes; THAI_STYLE layer 1) · the head-copy trim rule: cut at a sentence/phrase
+visible copy · brand names in Latin, incl. "Marbo" (the one exception + hidden aliases = THAI_STYLE §2 layer 1 and §3 "รอบ 8") · the head-copy trim rule: cut at a sentence/phrase
 boundary, never mid-word, never a dangling connective, never a bare floating number, never a stranded clause-opener
-(THAI_STYLE_LOG §7) · round 7 close (SEO ค) head-copy rulings: `git show aa21cbb:docs/HANDOFF.md` lines 262–275 ·
-new articles = THAI FIRST (`thaiOnly: true`, translated later) · free SEO tools only (round SEO ฉ) · `okami24.net` / `.com` NXDOMAIN — leave them · `voopooTitle` rename NOT done · no `OKAMI24_METRICS_TOKEN` — read the
+(THAI_STYLE_LOG §7) · round 7 (SEO ค, owner via Cowork 23/09): home page top word "Pod System", "บุหรี่ไฟฟ้า" second · "Marbo" and
+"M Bar" must both rank ("SALTHUB (Marbo)" brand title · "M Bar = Marbo" body line · FAQ "Marbo กับ M Bar") · wholesale FAQ =
+"ติดต่อหลังไมค์ทางไลน์", no numbers, no discount · breadcrumb "Home" stays (no "หน้าแรก" — no ranking effect) · LINE-click counter =
+in-site count, no cookies, nothing sent outside ·
+new articles = THAI FIRST (`thaiOnly: true`, translated later) · free SEO tools only (round SEO ฉ) · `okami24.net` / `.com` NXDOMAIN — leave them · `voopooTitle` (code name of the home section "Pod Kit / พอตคิท") keeps its name — a rename changes nothing a visitor sees (Friday 15/10) · no `OKAMI24_METRICS_TOKEN` — read the
 Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
 
 **Sources named in articles (owner 13/10, chat):** no Thai agency or Thai source is named or linked as a source on the
@@ -213,7 +227,7 @@ in the product hero in place of the brand chip, linked to the brand page; maker-
 **Copy and wording:** words already on the site without a key are not "new words" · `readMoreEyebrow` = "อ่านต่อ", not
 `footer.learn` · en/zh age-gate wording and en/zh `/about` copy APPROVED · the dialog nicotine sentence stays plain group ก ·
 SALTHUB wording = option ข-1, no "แท้" · SALTHUB owns Marbo/M Bar (BSOT §21) · the 8 words locked as one set in THAI_STYLE §3 ·
-5 typography WORD JOINER bindings allowed (THAI_STYLE §5) · zh H1 wrapping mid-word (服/务) at 390 — leave it · collapsed
+WORD JOINER bindings = only the list in THAI_STYLE §5 · zh H1 wrapping mid-word (服/务) at 390 — leave it · collapsed
 LINE pill off-centre icon — the owner's own list · no NBSP outside the list · an empty product card may show a real maker
 fact or the desktop-style option count, never placeholder text · spec-table header on INFY / RELX ("ข้อมูลที่ยืนยันได้จริง …")
 — no label, leave as is (01/10).
@@ -221,9 +235,7 @@ fact or the desktop-style option count, never placeholder text · spec-table hea
 **Product facts (data rounds 24–25/09, 30/09):** a per-row source link is required for rows touched in a round + rows of
 the 7 products the live 10B guides link to; older verified rows are grandfathered · every unverified number is hidden
 from render · when a fact is missing, state the fact or say nothing — never explain the absence · product facts come
-from the manufacturer only, everywhere on the site (THAI_STYLE) — named exceptions only: ARGUS G4 battery figures + the P3 and i3 facts as they are (owner sheet 12 A + 13 A, 07/10) · INFY 20K 20 mL + adjustable airflow (owner's ruling as source) · RELX Creator pod fit
-Creator 20K + Muro Connector ("ร้านยืนยัน") · Esko Bar Switch 20K shows all 20 of the maker's flavours · "magnetic /
-แม่เหล็ก" only where the maker's own page, poster or manual says so (VOOPOO's unreachable site = the one open question).
+from the manufacturer only, everywhere on the site — the one list of named exceptions = THAI_STYLE §5 "ขยายเป็นทุกที่บนเว็บ".
 
 **01/10 (owner, chat):** UWELL G4 Pro KOKO — UWELL's own site is the reference for its look ("อ้างอิงเว็บหลักได้เลย") · M Bar 10K opens on the card ·
 จอพิกเซล / หน้าอีโมจิ approved (THAI_STYLE §3) · later the same day: the KOKO sheet "ทำเลย" · the G4 Pro KOKO card may change
@@ -233,26 +245,23 @@ not on the site) · unclear source = skip.
 **Images:** image theft = handled by #322 (new images need nothing) · a logo over the image = owner "เอาแค่นี้ก่อน", do not
 re-propose · the first photo of a multi-option product = one sharp single device, Caliburn style; other colours/flavours
 by swipe (IMAGE_SPEC §0 item 5) · all-options image ("ทั้งหมด"): pod systems get a NEW one (owner 01/10 evening, design left
-to Friday: plain, luxurious, premium, depth); disposables / pod-replacement products get none (IMAGE_SPEC §0 item 5) ·
-every product gets an SEO article in "more details" = its own later round.
+to Friday: plain, luxurious, premium, depth); disposables / pod-replacement products get none (IMAGE_SPEC §0 item 5).
 **Review sheet + image work (owner 07/10 night, chat):** "ใบตรวจแบบที่ทำมาล่าสุดไม่ต้องทำแล้ว … เอาไว้งานใหญ่ที่ต้องดู Before - after จริงๆ
 เช่นสินค้าตัวนี้แก้ยาก ต้นแบบมาเละ ค่อยทำ" + "ทำงานรูปภาพเสร็จ ขึ้นเว็บเลย … เดี๋ยวพี่ไปดูในเว็บเอง" → NO review-sheet artifact by default
 (the 07/10 one is retired) · owner decisions = asked in chat + one line in `docs/รอพี่ตรวจ.md` · image work = checker passes → merge →
 live, no review page; the owner checks the live site · a before/after review page ONLY for a big, hard case (a product that is hard to
-fix, a broken source photo) · images = the free Chrome route; credits only on the owner's yes in chat (IMAGE_SPEC §0 item 7) · two chats at once: no
-worktree rule — the night routine `friday-chat-move` checks for another working chat before any checkout/commit/build (its step 0b).
+fix, a broken source photo) · images = the free Chrome route; credits only on the owner's yes in chat (IMAGE_SPEC §0 item 7) · two chats at once: the
+second chat works in its own git worktree, never switches the main folder's branch (LESSONS พ22 · พ27).
 
 **Answered 03/10 (moved from §16 04/10):** "ultra-shatterproof" stays OFF both G4 Pro pages · G5 repeats = A keep · logos: Kardinal = the maker's "Kardinal" word logo, site name "KS" stays · DOTMOD = text chip · batch 1c words locked (THAI_STYLE ก้อน 1c) incl. "แรงถึงคอ".
 
 **Answered 06/10 (owner, chat: "ครับไปเลยครับ" to the recommended answers in `_incoming/sitewide-template/REPORT-0610.md` §4):**
-M Bar 10K may drop its 4 owner-approved Thai lines for the stage page · M Bar 15K → reusable/pod-system category (own PR) · wrong
+M Bar 10K may drop its 4 owner-approved Thai lines for the stage page · M Bar 15K → reusable/pod-system category · wrong
 facts in head copy are fixed now, not held for the SEO round (Zero Pro "5,000 พัฟต่อหัวพอต", M Bar 15K "cotton mesh/ชาร์จเร็ว/15 รส") ·
 Zero Cartridge per-flavour photos = yes (in the option-photo round) · JOIWAY F4 = the TWINS edition (maker + our photos), not NOS ·
-RELX Smash Go cover = RELX's KV with the models, kept · TFIT M Power = unhide (own PR) · Smash Go 874 and nexBAR-type LOW pages = accepted
+RELX Smash Go cover = RELX's KV with the models, kept · Smash Go 874 and nexBAR-type LOW pages = accepted
 exceptions when the maker has nothing more to say (never pad) · RELX's printed "+30%" stays in the coil poster · RELX Creator
-all-colours image = publish the draft · pod-180 stays brandless · MOOOD = check its site in a real browser, then fix data / brand ·
-INFY 20K + Muro ×3 (no maker material) = skipped this round · IQOS colour completeness = its own round · WOTOFO's 11 flavours without
-photos + every other option without a photo + white-box coils = a new "option photos" round (Higgsfield, first set to the owner).
+all-colours image = publish the draft · pod-180 stays brandless (WOTOFO options without a photo = the 08/10 answer below + IMAGE_SPEC §4).
 **Answered 06/10 pm (owner, chat):** article sections that say "the maker doesn't state X, so we don't print it — ask LINE" read as
 "we don't know" = unprofessional → cut (M Bar 10K + JOIWAY F4 nicotine, M Switch Kit battery); never write that pattern again ·
 JOIWAY F4: "2 โหมด" belongs to the NOS edition → cut; the named exception "2 โหมด 2 รส" is gone · F4 review video = the shop's own
@@ -264,24 +273,7 @@ never use a Vivid render for them (22) · MURO 3ML boxes at 340×490 = fine for 
 **Answered 12/10 (owner, chat, round 3g):** backup domain = okami-24.com (not .net; canonical stays okami24.store, no 301 between them) ·
 okami-pod.com (old site) = ignore, never touch or propose ("ไม่ต้องสนใจ ทิ้งได้เลย") · GitHub Actions budget $15/month, stop at the limit;
 batch docs edits into one PR per batch · DNS guide health/quit-smoking writing = neutral, foreign official sources (SEO ฉ file).
-**Slip check (owner 10/10):** a correct transfer judged wrong AGAIN → switch to EasySlip's `matchedAccount` (owner registers
-the shop account himself, test one K+ QR + one Krungsri slip, then drop our receiver-match) — รอพี่ตรวจ item 57.
-**Answered 14/10 (owner, chat, item 55 "ให้ GitHub"):** main's branch protection requires BOTH `copy` and `checks` (set 14/10 by
-Friday: `gh api …/branches/main/protection/required_status_checks` → contexts copy + checks; strict off; admins enforced; no force
-push) — a PR cannot merge before the full build/verify job passes; a docs-only PR still merges because its skipped `checks` counts.
-**Answered 14/10 (owner, chat, sheet items 39 · 54 · 40 · 38):** 39 = checks run on the TEST SERVER, not the live site (Render
-bandwidth over the free tier; TEAM_RULES 13.5 head) · 54 = "1" lock "หน่วยงาน" site-wide, title unchanged · 40 = "C" stock read scheduled each
-morning, the owner confirms before merge · 38 = free models first, no credits (unchanged).
-**Answered 15/10 (owner, chat):** night runs do not move chats — the app compacts, the run re-reads rules + §16 after each
-compaction (central §12 item 29; routine prompt rewritten) · image provenance in src data / `process-images.map.json` stays
-pointing at `_incoming/` — do not re-point it at the archive to free disk (owner: "ยังไม่ทำตามที่แนะนำ").
-**Answered 15/10 (owner, chat — house audit 3n, `_incoming/house-1510/report.md`):** TEAM_RULES 13.3 gets item 9 (what central
-§8–§9 says to ask + 【แตะได้】 lock prompts) · a colour/flavour the maker has and the site lacks = add it, then report (IMAGE_SPEC §5) ·
-housekeeping may fix dead pointers + exact duplicates, then report; everything else waits for the owner's pick · web image work
-"done" = merged + shots in the report (TEAM_RULES 13.5) · §16 is written before a long task only at the chat-move threshold
-(skill okami24-handoff (ค)) · a method the owner dictates = a goal: object in one line, then the better way ("ทำตามที่สั่ง" = exact,
-13.8) · WEEKLY HOUSEKEEPING: Sunday 20:00 · checks = rules (conflict · duplicate · dead pointer) · sizes vs last week · leftovers ·
-locks on + % rules followed · report = 5-line Thai summary in the task's chat + full file in `_incoming/` · rule-auditor every
-2nd week · never touches central rules · BSOT/prices · the owner's folder · src/ (Friday's pick when the owner did not follow the
-question) · scheduled-task prompt `okami24-stock-sync` = keep · technical choices (locks, scripts, check method) are Friday's —
-never asked (the owner could not follow the lock questions) · central item 13 vs 15 = left as is (the web exception covers it).
+**Answered 14–15/10 (owner, chat) — only what has no other home** (the rest lives in TEAM_RULES 13.3 · 13.5 · 13.7 · 13.8 ·
+THAI_STYLE §5 · IMAGE_SPEC §5 · skills house-clean / okami24-handoff · central §12 item 29): image provenance in src data /
+`process-images.map.json` stays pointing at `_incoming/` — do not re-point it at the archive to free disk ("ยังไม่ทำตามที่แนะนำ") ·
+scheduled-task prompt `okami24-stock-sync` = keep · central item 13 vs 15 = left as is (the web exception covers it).
