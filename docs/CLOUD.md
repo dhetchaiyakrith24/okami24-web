@@ -67,7 +67,7 @@
 
 ## 5. ตรวจเว็บจริงหลัง deploy จากคลาวด์ (รอบมือถือ 26/09)
 
-- ทำได้ตอนนี้ [ลองแล้ว]: `curl -sS -o /dev/null -w "%{http_code}" https://okami24.store/<หน้า>` = หน้าตอบไหม · `curl -s https://okami24.store/<หน้า>` แล้วค้นคำใน HTML (HTML ดิบมีทุกภาษาปนกัน ใช้ยืนยันได้แค่ว่ามีคำนั้นในหน้า — ตัด U+2060/NBSP ก่อนค้น `.claude/LESSONS.md` 1ข) · `node scripts/head-audit.js https://okami24.store <โฟลเดอร์>` (title/meta/H1 จากเว็บจริง — node ดึงเว็บจริงได้ 200 [ลองแล้ว] · สคริปต์ทั้งตัวยังไม่ได้รันบนคลาวด์)
+- ทำได้ตอนนี้ [ลองแล้ว]: `curl -sS -o /dev/null -w "%{http_code}" https://okami24.store/<หน้า>` = หน้าตอบไหม · `curl -s https://okami24.store/<หน้า>` แล้วค้นคำใน HTML (HTML ดิบมีทุกภาษาปนกัน ใช้ยืนยันได้แค่ว่ามีคำนั้นในหน้า — ตัด U+2060/NBSP ก่อนค้น `.claude/LESSONS.md` 1ข) · `node scripts/head-audit.js` เทียบ title/meta/H1 = บนเครื่องทดสอบเท่านั้น (TEAM_RULES 13.5 — เว็บจริงใช้แค่ curl หน้าที่แตะหลัง merge · bandwidth ของ Render)
 - ยังทำไม่ได้: ถ่ายภาพเว็บจริง และอ่านข้อความที่ลูกค้าอังกฤษเห็นจริงด้วยคุกกี้ `okami24_locale=en` — ต้องใช้ Chromium ซึ่งยังไม่เชื่อใบรับรองของเครือข่ายคลาวด์ (ตารางข้อ 1) · เมื่อแก้แล้ว วิธีคือ `node scripts/shot.js <ไฟล์.png> https://okami24.store/<หน้า> --ready --cookie okami24_locale=en` และ `node scripts/visible-text.js scan --base https://okami24.store --out <โฟลเดอร์> --locales en <หน้า>` แล้วตั้งกลับ `th` (คุกกี้อยู่ในโปรไฟล์ชั่วคราวของสคริปต์ ปิดแล้วหายเอง)
 
 ## 6. ภาพหลักฐานให้ Javis/เจ้าของดูหลัง merge — เปิดจากมือถือ (รอบ A 27/09 · merge ไม่รอดูก่อนแล้วตั้งแต่ 30/09)
