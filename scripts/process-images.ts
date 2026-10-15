@@ -89,6 +89,11 @@ interface MapEntry {
    *  max-age and Cloudflare keeps it (next.config.ts headers), so a new file under the old name reaches visitors
    *  only after a month. A new name is fetched at once (image-fix round 2026-09-29). Plain name, no folders. */
   fileName?: string;
+  /** 0–1: move the product sideways so its visual weight (alpha-weighted centre) sits this far from the
+   *  bounding-box centre toward the canvas centre — for lopsided groups (a tall box with coils lying to one side)
+   *  that look "leaning" when only their bounding box is centred (owner taste note, coil-53/coil-70, round img-1610).
+   *  Clamped so the product never leaves the canvas. Omit = bounding-box centre (unchanged behaviour). */
+  balance?: number;
   note?: string;
 }
 
@@ -245,8 +250,14 @@ async function processEntry(e: MapEntry): Promise<Decision> {
   const cropped = await fromRaw(raw).extract(box).png().toBuffer();
   const w = Math.max(1, Math.round(box.width * scale)), h = Math.max(1, Math.round(box.height * scale));
   const resized = await sharp(cropped).resize({ width: w, height: h, fit: "fill", kernel: "lanczos3" }).png().toBuffer();
+  let left = Math.round((cw - w) / 2);
+  if (e.balance) {
+    const r = await toRaw(resized); let sx = 0, sa = 0;
+    for (let y = 0; y < r.height; y++) for (let x = 0; x < r.width; x++) { const a = r.data[(y * r.width + x) * 4 + 3]; sx += x * a; sa += a; }
+    if (sa > 0) left = Math.max(0, Math.min(cw - w, Math.round(left + e.balance * (cw / 2 - sx / sa - left))));
+  }
   const canvas = sharp({ create: { width: cw, height: ch, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
-    .composite([{ input: resized, left: Math.round((cw - w) / 2), top: Math.round((ch - h) / 2) }]);
+    .composite([{ input: resized, left, top: Math.round((ch - h) / 2) }]);
   const { buf, quality, overCap } = await encodeWithin(canvas, MAX_BYTES[e.role]); d.bytes = buf.length; d.quality = quality; d.overCap = overCap;
   if (overCap) d.reason = `WARNING: ${Math.round(buf.length / 1024)}KB over the ${Math.round(MAX_BYTES[e.role] / 1024)}KB cap at q${WEBP_QUALITY} — quality is NOT lowered (IMAGE_SPEC §1–§2). Use a better source.`;
   if (DRY) return { ...d, action: "would-write" };
