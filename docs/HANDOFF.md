@@ -17,7 +17,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   `docs/รอพี่ตรวจ.md` (no review-sheet artifact — §18). Images: Higgsfield web app in the owner's Chrome, free "365 Unlimited"
   models only · the Higgsfield MCP generate/upscale tools are DENIED in `.claude/settings.json` · credits only on the owner's yes
   in chat (IMAGE_SPEC §0 item 7) · tool tips = LESSONS-images 29 + §17 "Higgsfield".
-2 ahead of main: nothing. Worktrees: only `_incoming/wt-stock` (stock round · own node_modules copy · test server
+2 ahead of main: branch `house-homes` (pushed, NOT checked yet, no PR): skill house-clean "เกลาทีละบ้าน" (6 homes, owner 15/10
+  "แก้และทำเลย") + รอพี่ตรวจ item order fixed + this §16. Worktrees: only `_incoming/wt-stock` (stock round · own node_modules copy · test server
   `next start -p 3413`, stopped). Untracked folder `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's (admin price reports +
   chat screenshots): never in git, never delete (listed in `.git/info/exclude` on the computer 15/10 — hidden from git status).
   `git branch --show-current` before every commit. Git hooks: core.hooksPath must read `.githooks` (session-sync resets it).
@@ -32,6 +33,20 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   next full close) · house-check skips a dead pointer on a line that says "deleted/removed" (known limit) · the LOCK ROUND =
   rule-audit 14/10 L1–L3, L5–L10 + "do not touch the tree/3412 while the checker reads" → one "pre-checker gate" script, its own
   round (Friday's pick 15/10).
+3h NEXT CHAT (chat moved at 640k, 15/10) — continue "เกลาทีละบ้าน" on branch `house-homes`, in this order:
+  (a) apply the 47 Friday-may-do rows of `_incoming/house-1510/homes-audit.md` (computer only; homes: lessons · guides ·
+      rulings · rules) — verify each [เชื่อว่า] row against git first · no file under src/ public/
+  (b) owner picks = only what the owner can judge, one by one with an example he sees (TEAM_RULES 13.3; technical = decide):
+      night chain "ปิดอยู่" = state or ban? · `voopooTitle` "rename NOT done" = banned or not yet? · Owner eye #3 exception for
+      pasting original pixels over text? · delete 2 stale pointer files in the account memory folder (outside git, 13.3 #1) ·
+      TEAM_RULES 13.3 vs central §6 reference-image wait / central 12.28 vs "technical = Friday" = Friday drafts, owner rules
+  (c) receive the new central copy = PR #487 (rules-sync/c1ca27c, smogz-rules#14 merged c1ca27c): check the sha per
+      `.claude/rules-source.json`, then in the SAME PR adapt the web: every "รายงาน 4 หัวข้อ" → central 12.10 new report
+      format · central 12.31 Remote Control tool name into TEAM_RULES 13.6 · tags per new 12.9 (okami24-handoff rule 1 ·
+      HANDOFF line 6 · researcher/rule-auditor/scope-auditor/seo-auditor) · no "ไม่เห็นจุดเสี่ยง" line (round-open) · CLAUDE.md
+      "central §1–12" → "§5–12" · review sheet only for big multi-image work (12.22) → checker → merge
+  (d) update the scheduled task `okami24-house-weekly` prompt: add step "tidy home by home" (skill house-clean (ก) step 3)
+  (e) report to the owner in the new 12.10 format + the plain-Thai goal summary of housekeeping he asked for 15/10.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
