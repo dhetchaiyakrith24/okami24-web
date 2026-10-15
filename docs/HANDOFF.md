@@ -35,7 +35,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   git or as a deletion (weekly prompt + §17 point to it) · skill `find-skills` (vercel-labs original + our vetting, 16/10) + `scripts/skill-scan.js` (outside skills are read
   raw at a pinned commit, scanned, owner's OK first; house-check runs its bait self-test + scans our skills weekly).
   Outside skills (owner 16/10): 1st = find-skills (vercel-labs original, 76/94 author lines kept word for word (80.9%) + our vetting A–F; replaces
-  skill-vet) · 2nd = content-strategy (coreyhaines31/marketingskills, owner OK — lands in its own PR after this one) · NEXT = seo-audit's missing parts (multi-language,
+  skill-vet) · 2nd = content-strategy (coreyhaines31/marketingskills, owner OK; 309/314 author lines kept word for word = 98.4%; for the SEO round's keyword/article plan) · NEXT = seo-audit's missing parts (multi-language,
   local SEO, AI-writing check) folded into our seo-auditor — proposal to the owner first. Merged branches (local + GitHub) =
   Friday deletes without asking (owner 16/10, TEAM_RULES 13.3 #1). OKM photo / OKM CT = not ours
   unless the owner says so (central §12 item 32).
