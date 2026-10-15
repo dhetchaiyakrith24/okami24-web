@@ -963,9 +963,9 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-53/card-v3.webp",
+      src: "/assets/products/coil-53/card-v4.webp",
       alt: "UWELL CALIBURN G 1.0Ω coil box with four coils, studio photo",
-      angle: "Front, studio re-shoot 09/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from Element Vape's photos of the 1 Ω box and its blister of 4 (round cotton holes of the 1 Ω coil); the render's three coils + one copied coil = the 4 of the box; box art, every printed mark and the coil shape checked by eye against those photos. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      angle: "Card re-centred on its visual weight 16/10 (round img-1610, process-images `balance`). Front, studio re-shoot 09/10 — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) from Element Vape's photos of the 1 Ω box and its blister of 4 (round cotton holes of the 1 Ω coil); the render's three coils + one copied coil = the 4 of the box; box art, every printed mark and the coil shape checked by eye against those photos. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from Element Vape's product photos",
       sourceUrl: "https://www.elementvape.com/uwell-caliburn-g-coils",

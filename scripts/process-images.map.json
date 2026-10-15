@@ -7544,8 +7544,9 @@
    "reference": "Element Vape's photos of the CALIBURN G 1Ω box (front, unobstructed) and the 1Ω box with its blister of 4 (the coils cropped out alone: round cotton holes, no oval window) — https://www.elementvape.com/uwell-caliburn-g-coils (inputs: _incoming/coil5/c53-boxref.png + _incoming/coil5/c53-coilref.png; render _incoming/coil5/out/c53-J.png, 4-coil composite _incoming/coil5/out/c53-J4.png)",
    "fidelitySheet": "_incoming/coil5/fid-c53-v2.jpg — box art, every printed word and number, coil shape checked by eye against the reference (IoU does not apply: the reference coils are in a blister / standing, the re-shoot lays them on the floor)"
   },
-  "note": "coil-53 re-shoot 09/10 (same direction as the coil-94 / coil-38 box shots the owner passed 09/10) — was the box + blister render on white",
-  "fileName": "card-v3.webp"
+  "note": "coil-53 re-shoot 09/10 (same direction as the coil-94 / coil-38 box shots the owner passed 09/10) — was the box + blister render on white · img-1610 16/10: card re-centred on its visual weight (balance 0.6 — owner taste note 'leans left')",
+  "fileName": "card-v4.webp",
+  "balance": 0.6
  },
  {
   "source": "_incoming/coil5/D-c53-v2.png",
