@@ -4,9 +4,10 @@
 //
 //   node scripts/house-check.js            prints the report; compares with the previous run in _incoming/house-last.json
 //
-// Sections: sizes (rules loaded every chat · HANDOFF · §16 · LESSONS) · locks (git hooks on?) · rules followed (merged PRs,
+// Sections: sizes (rules loaded every chat · HANDOFF · §16 · LESSONS) · locks (git hooks on? · do they still bite =
+// scripts/pre-checker-gate.js --self-test · a checker note left on) · rules followed (merged PRs,
 // last 7 days) · this project's scheduled-task folders · dead pointers (a backticked repo path that does
-// not exist · a "13.x" the rules file has no heading for) · files nobody references (scripts · docs · agents · skills) ·
+// not exist · a "13.x" the rules file has no heading for · <FILE> [§N] "heading" whose words are gone) · files nobody references (scripts · docs · agents · skills) ·
 // _incoming/ folders nobody references (size, date) · stray git worktrees.
 const { execSync } = require("child_process");
 const fs = require("fs");
@@ -52,8 +53,27 @@ for (const [f, t] of Object.entries(text)) {
   t.split("\n").forEach((line, i) => {
     for (const m of line.matchAll(/`((?:docs|scripts|\.claude|src|\.github|\.githooks)\/[^`\s*<>{}]+?)`/g)) {
       const p = m[1].replace(/[:#].*$/, "").replace(/\/$/, "");
-      // a line that records the deletion on purpose ("was deleted" · ลบแล้ว) is history, not a dead pointer
-      if (!fs.existsSync(p) && !/\$|<|\{|\*/.test(m[1]) && !/\b(deleted|removed)\b|ลบแล้ว|ลบไป/i.test(line)) { dead++; console.log(`  ${f}:${i + 1}  missing ${p}`); }
+      // a pointer that records its OWN deletion ("`x` … was deleted" · "deleted `x`" · ลบ `x` แล้ว) is history, not a dead
+      // pointer — the word must follow it within 50 characters or precede it within 15: before 15/10 any "deleted" on
+      // the line hid every dead pointer on it
+      const end = m.index + m[0].length;
+      const near = line.slice(Math.max(0, m.index - 15), m.index) + " " + line.slice(end, end + 50);
+      if (!fs.existsSync(p) && !/\$|<|\{|\*/.test(m[1]) && !/\b(deleted|removed)\b|ลบแล้ว|ลบไป/i.test(near)) { dead++; console.log(`  ${f}:${i + 1}  missing ${p}`); }
+    }
+    // a pointer to a HEADING by its words: <FILE> [§N] "heading" — the words must still be in that file (in §N when given).
+    // 15/10: house-clean pointed at HANDOFF §18 "Answered 15/10" after the heading was renamed; nothing caught it.
+    for (const m of /\.md$/.test(f) ? line.matchAll(/\b([A-Z][A-Z_]{2,}(?:-[a-z]+)?)(?:\.md)?\s*(?:§\s?(\d+)\s*)?["“]([^"”\n]{3,80})["”]/g) : []) {
+      const target = [`docs/${m[1]}.md`, `.claude/${m[1]}.md`].find((t) => text[t]);
+      if (!target) continue;
+      let body = text[target];
+      if (m[2]) {
+        const at = body.search(new RegExp(`^##+ ${m[2]}\\.`, "m"));
+        if (at < 0) continue; // no numbered sections in that file — the "13.x"/path checks cover it
+        const next = body.slice(at + 3).search(/^## /m);
+        body = body.slice(at, next < 0 ? undefined : at + 3 + next);
+      }
+      const want = m[3].replace(/\*/g, "").trim().toLowerCase();
+      if (!body.replace(/\*/g, "").toLowerCase().includes(want)) { dead++; console.log(`  ${f}:${i + 1}  ${m[1]}${m[2] ? ` §${m[2]}` : ""} has no "${m[3]}"`); }
     }
     if (/\.md$/.test(f) && f !== "docs/THAI_STYLE.md") {
       for (const m of line.matchAll(/(?<![\d.§])13\.(\d{1,2})(?![\d.]\d)/g)) {
@@ -124,6 +144,15 @@ try {
 }
 const hookCmds = JSON.stringify(settings.hooks || {});
 for (const s of ["guard-tool.js", "session-sync.js"]) console.log(`  ${s.padEnd(16)} ${hookCmds.includes(s) ? "wired in .claude/settings.json" : "NOT wired"}`);
+// do the locks still bite? one planted example per rule (lock round 15/10 — a lock that rots is silent, like hooksPath "nul")
+try {
+  const out = execSync("node scripts/pre-checker-gate.js --self-test", { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+  console.log(`  pre-checker-gate --self-test: ${out.trim().split("\n").pop()}`);
+} catch (e) {
+  const out = String(e.stdout || "");
+  console.log(`  pre-checker-gate --self-test: FAIL\n${out.split("\n").filter((l) => /FAIL/.test(l)).join("\n")}`);
+}
+for (const n of require("./lib/checker-lock").readAll(ROOT)) console.log(`  checker note still on: ${n.sha.slice(0, 8)} (${n.branch}) since ${n.started} — --done if that checker reported`);
 
 // 7. rules followed — PRs merged in the last 7 days (needs `gh` = the computer) · TEAM_RULES 13.4 / 13.7
 console.log("\n## rules followed — PRs merged in the last 7 days");
