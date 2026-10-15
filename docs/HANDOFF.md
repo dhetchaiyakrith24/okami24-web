@@ -58,15 +58,18 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   【ห้ามแตะ】 product images + image map (image round) · every price file. Order = SEO_LANDSCAPE §9.6.
   DONE [ตรวจแล้ว]: batch 1 key list #499 · batches 2 + 5 #502 d5fae710 · #514 ff2b9de6 (checker PASS db388bd3, round 2 of 3): Thai guide
   /guides/comparing-voopoo-drag-models + /how-to-order · /shipping · /faq heads and copy for "สั่งพอตออนไลน์ / พอตส่งด่วน / ซื้อพอตที่ไหน"
-  + 3 /faq ordering items (BSOT §3/§8/§10/§12).
+  + 3 /faq ordering items (BSOT §3/§8/§10/§12) · #519 64cf1051 (checker PASS 4b70ea0e + one 13.5 #2 (จ) fix): 5 old /faq answers
+  whose collapsed line ends flipped meaning ("ไม่ | ส่งขึ้นเซิร์ฟเวอร์", "ตั้งใจไม่ | ฟันธง") reworded.
   Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them (§9.6 row 3 lists the pages).
   Drafts waiting for 22/10 (they link frozen pages) in `_incoming/seo-keys/`: b4-flavour · b4-switch (also owner item 65) · b4-argus ·
-  b4-disposable — each lists its "links after 22/10" and its open data questions. Working notes = `_incoming/seo-keys/next-notes.md`.
+  b4-disposable · b6-genuine ("พอตของแท้ ดูยังไง" — row 24 measures "พอตของแท้" on / until 22/10; owner item 67) — each lists its
+  "links after 22/10" and its open questions. Maker check pages = `_incoming/seo-keys/authenticity-research.md`. Working notes = `_incoming/seo-keys/next-notes.md`.
   NEXT: 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" section) → batch 3 head set (seo-auditor reads the paper set
   first; baseline = `_incoming/seo-keys/seo-auditor-open.md`; "สั่ง/ซื้อพอตออนไลน์" now sits on /how-to-order — `/` keeps
   "ร้านพอตออนไลน์") → merge the 4 drafts → FAQAccordion server HTML (answers render only when opened, so FAQ answer links are not
   in the HTML — shared by /faq, product and guide FAQs → whole-sitemap scan, after 22/10) · "พอตของแท้" = researcher on maker check
-  pages (16/10) decides write/skip · flavour FAQs on non-frozen pages (pod-180 · /brands/relx · zero-cartridge). Owner list 63–66 open.
+  pages done (draft b6-genuine) · product flavour FAQs wait for the FAQAccordion fix (product FAQs are neither in the HTML nor in
+  JSON-LD today, 16/10). Owner list 63–67 open.
   Line breaks in collapsed FAQ answers: scan with `_incoming/seo-keys/wb-openscan.js` (each answer opened) — LESSONS พ34.
   Tool (owner 16/10): skill `content-strategy` (#508) = the way to plan pillars, clusters, buyer stages and the article order for the
   remaining batches — its OKami24 rules at its end (keymap = SEO_LANDSCAPE §0).
