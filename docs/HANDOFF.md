@@ -12,7 +12,7 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
 1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #474 e111ac8e (never split หน่วยงาน, owner item 54;
-  live 200) [ตรวจแล้ว] · last merge = #487 4f4eff22 (central copy @c1ca27c + web adapted, no site file). Rollback = revert one PR. Render: ~1 min
+  live 200) [ตรวจแล้ว] · last merge = #491 ee0725b8 (lock round: pre-checker gate + locks, no site file). Rollback = revert one PR. Render: ~1 min
   of 502 + ~2 min after the deploy job ends — wait, then curl. Night = the owner says ไปนอน → keep working in the same chat (TEAM_RULES 13.6). Owner decisions: ask in chat + one line in
   `docs/รอพี่ตรวจ.md` (no review-sheet artifact — §18). Images: Higgsfield web app in the owner's Chrome, free "365 Unlimited"
   models only · the Higgsfield MCP generate/upscale tools are DENIED in `.claude/settings.json` · credits only on the owner's yes
@@ -33,9 +33,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Leftovers (own work, not started): rule-audit rows 20 (old rulings only in `git show` — round 7 lifted 15/10, others not
   checked) · 40 (self-merge-check `--base` prints BLOCKED for "site touched") · 45 (re-measure the scan baseline on the test server
   at the next full close) · `scripts/lab/seo-c7.js:11` has 2 raw invisible characters (`thai-raw-chars-check.js` exit 1, pre-existing).
-  LOCK ROUND 15/10 (branch `lock-round`, own chat): rule-audit L1–L3, L5–L10 + LESSONS พ22 → `scripts/pre-checker-gate.js`
-  (run before every checker, TEAM_RULES 13.4) + new denies in guard-tool / pre-commit / lib/chrome.js · house-check now
-  catches a renamed quoted heading and a dead pointer on a "deleted" line about something else.
+  DONE 15/10 — LOCK ROUND → #491 ee0725b8 (checker PASS 0394616f, round 1 FAIL A–E fixed): rule-audit L1–L3, L5–L10 +
+  LESSONS พ22 → `scripts/pre-checker-gate.js` (run before every checker, `--done` after its report — TEAM_RULES 13.4) +
+  new denies in guard-tool / pre-commit / lib/chrome.js · `--self-test` = 53 planted cases, run weekly by house-check ·
+  house-check now catches a renamed quoted heading and a dead pointer on a "deleted" line about something else.
+  Known gaps (checker, not blocking): `(cd wt && build)` in a subshell is denied · `node x.js --title "a /b"` trips L3 ·
+  `node --flag scripts/x.js /a` slips L3 · rm / sed -i / redirects in a read tree are discipline, not locked.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
