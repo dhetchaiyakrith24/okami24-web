@@ -16,7 +16,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
 2 ahead of main: nothing once #497 merges (its branch auto-deletes on GitHub). Only worktree:
   `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
-3 DONE 15/10 — house audit #484 · tidy home by home #488 · central copy + web adapted #487 · LOCK ROUND #491 (pre-checker gate,
+3 NIGHT 16/10 (owner asleep): this chat watches the side chats 3i + 3s per TEAM_RULES 13.6 "กลางคืน" (check their PRs for real,
+  open their continuation chats, archive the old ones) · morning = one report. Since the house round: #513 license text dropped ·
+  #515 side-chat rule. Nothing of this chat's own is open.
+  DONE 15/10 — house audit #484 · tidy home by home #488 · central copy + web adapted #487 · LOCK ROUND #491 (pre-checker gate,
   `--self-test` run weekly by house-check) · HOUSE ROUND ข (3h, owner "เก็บบ้านทั้งเซต + รอบสัปดาห์รู้"): #494 leftovers (raw chars 0 ·
   `self-merge-check --base` = PASS / SITE-TOUCHED · L3 node-flag slip + quoted-arg false deny fixed) + skill house-clean = 8 homes
   (7 docs + briefs · 8 git / `_incoming` / root folders / scheduled-task folders / Artifacts) + house-check git & root sections ·
