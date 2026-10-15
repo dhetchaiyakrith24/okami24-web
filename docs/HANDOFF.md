@@ -38,6 +38,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   unless the owner says so (central §12 item 32).
   Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
   redirect into a checker-read tree = discipline (rule-audit L1 proposes a lock) · scan tools against the live site (L2).
+3i OPEN ROUND "image sweep" = `docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt` (own chat; owns the main folder's `_incoming/img-1610/`,
+  worktrees `_incoming/img-1610/wt-img` (work, own node_modules) · `wt-gate` (checker tree) · `wt-base` (base build 47320ddd, before
+  shots `_incoming/img-1610/shots/before-*` for every product of the round)). Nano Banana Pro Unlimited free in Chrome to ~19/10.
+  LIVE [ตรวจแล้ว]: #501 coil-94/55/53 · #503 JOIWAY F4 card + 16 pairs. OPEN: PR #505 ARGUS G4 — checker round 2 FAIL (silver + gray
+  bottoms) → next check is round 3 of 3. Chat moved at ~810k context 16/10 ~03:00: full state, file-by-file next steps and how the
+  shared Higgsfield draft/queue really behaves = `_incoming/img-1610/NEXT.md` (read it first). NEXT: re-render ARGUS silver → fix →
+  checker round 3 → merge · SALTHUB zero-nano + zero-pro cards · JOIWAY F3 14 green flavours · then the round order in NEXT.md.
 3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (own chat, worktree `.claude/worktrees/seo-all-keys-a38889`,
   branch `claude/seo-all-keys-a38889` · own build tree `_incoming/wt-build` inside it + test server `next start -p 3414`; script
   `_incoming/seo-keys/setup-build.sh <commit>` rebuilds it) · 【ห้ามแตะ】 product images + image map (image round) · every price file.
