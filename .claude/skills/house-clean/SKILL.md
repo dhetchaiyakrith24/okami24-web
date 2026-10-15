@@ -44,7 +44,7 @@ description: /เก็บบ้าน — เก็บบ้านฝั่ง 
    เอกสาร/บรีฟที่ล้าหลัง) · ตัวชี้ที่ชี้ของที่ลบ = `git show <sha>:<ไฟล์>` · เนื้อหาที่ยังใช้ย้ายไปบ้านจริงก่อนลบ
 1. **branch ที่ merge เข้า main แล้ว ในเครื่องและบน GitHub** (TEAM_RULES 13.3 #1 · เจ้าของ 16/10 "ได้") — ในเครื่อง: commit ล่าสุดเก่ากว่า 7 วัน →
    `git branch -d` (branch ที่เพิ่งแตกอาจเป็นงานของแชทกลางวัน) · บน GitHub: `git push origin --delete <ชื่อ>` เมื่อปลาย branch อยู่ใน main
-   (`git merge-base --is-ancestor`) · ไม่แตะ: branch ที่ worktree ใช้อยู่ · branch ที่เอกสารเอ่ยชื่อ (`main` `inbox` `gsc-data` · ของรอบที่ยังเปิด) ·
+   (`git merge-base --is-ancestor`) และ commit ปลายเก่ากว่า 7 วัน และไม่มี PR ที่ยังเปิดจาก branch นั้น (branch ที่เพิ่งแตกจาก main ก็ "อยู่ใน main") · ไม่แตะ: branch ที่ worktree ใช้อยู่ · branch ที่เอกสารเอ่ยชื่อ (`main` `inbox` `gsc-data` · ของรอบที่ยังเปิด) ·
    ตัวกันของแอปปัด = ลงรายการ ไม่หาทางเลี่ยง
 2. **worktree** → `git worktree prune` · ถอดได้เฉพาะ worktree ที่**จบแล้วครบทุกข้อ**: branch ของมัน merge เข้า main แล้ว (หรือไม่มี branch และ
    commit ที่ชี้อยู่ใน main) · `git -C <wt> status --porcelain` ว่าง (ไม่มีไฟล์ค้างหรือไฟล์นอก git) · ไม่มีโน้ต checker และไม่มีเครื่องทดสอบรันอยู่ ·
