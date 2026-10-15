@@ -20,7 +20,8 @@ process.chdir(ROOT);
 const rd = (f) => fs.readFileSync(f, "utf8").replace(/\r\n/g, "\n");
 // core.quotepath=off: a Thai file name (docs/rounds/…) comes back as text, not "\340…" — else it is never read
 const tracked = execSync("git -c core.quotepath=off ls-files", { encoding: "utf8" }).split("\n").filter(Boolean).filter((f) => fs.existsSync(f));
-const LIVE = (f) => !/^(docs\/rounds|docs\/archive|docs\/cloud-results|public)\//.test(f) && !/THAI_STYLE_LOG|LAUNCH_AUDIT/.test(f);
+// docs/seo-audit = an outside author's text kept word for word (its own links are his, not ours)
+const LIVE = (f) => !/^(docs\/rounds|docs\/archive|docs\/cloud-results|docs\/seo-audit|public)\//.test(f) && !/THAI_STYLE_LOG|LAUNCH_AUDIT/.test(f);
 const text = {};
 for (const f of tracked.filter((f) => /\.(md|js|ts|tsx|json|txt|yml|sh)$|^\.githooks\//.test(f))) text[f] = rd(f);
 
@@ -151,7 +152,7 @@ const rm = remoteAll.filter((b) => remoteMerged.has(b));
 console.log(`  local  ${localAll.length} · merged ${lm.length} (safe to delete${lm.length ? `: ${lm.join(" ")}` : ""})`);
 const lastOf = (b) => gitLines(`git log -1 --format=%cs·%s ${b}`)[0] || "";
 for (const b of localAll.filter((b) => !localMerged.has(b))) console.log(`    unmerged ${b.padEnd(30)} ${inWt.has(b) ? "(checked out in a worktree) " : ""}${lastOf(b).slice(0, 90)}`);
-console.log(`  remote ${remoteAll.length} · merged ${rm.length}${rm.length ? ` (on GitHub — list for the owner first, 13.3 #1: ${rm.join(" ")})` : ""}`);
+console.log(`  remote ${remoteAll.length} · merged ${rm.length}${rm.length ? ` (Friday deletes them — TEAM_RULES 13.3 #1, skill house-clean "รายการเดียว" item 1 — except a branch a doc names, an open round's, or a tip under 7 days: ${rm.join(" ")})` : ""}`);
 for (const b of remoteAll.filter((b) => !remoteMerged.has(b))) console.log(`    unmerged ${b.padEnd(30)} ${lastOf(b).slice(0, 90)}`);
 console.log(`  tags   ${gitLines("git tag").length} (round checkpoints — kept)`);
 const pack = gitLines("git count-objects -vH").find((l) => l.startsWith("size-pack"));
@@ -195,7 +196,7 @@ try {
   const out = String(e.stdout || "");
   console.log(`  pre-checker-gate --self-test: FAIL\n${out.split("\n").filter((l) => /FAIL/.test(l)).join("\n")}`);
 }
-// outside-skill scanner (skill skill-vet, owner 16/10): the bait must still trip it, and our own skills stay clean of
+// outside-skill scanner (skill find-skills, owner 16/10): the bait must still trip it, and our own skills stay clean of
 // anything a person cannot see or that acts on load
 for (const [label, cmd] of [
   ["skill-scan --self-test", "node scripts/skill-scan.js --self-test"],

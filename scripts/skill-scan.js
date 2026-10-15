@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-require-imports -- plain Node CLI helper, CommonJS on purpose */
-// skill-scan.js — hidden-instruction scan for an OUTSIDE agent skill (skill `skill-vet`, step 5 · owner 16/10).
+// skill-scan.js — hidden-instruction scan for an OUTSIDE agent skill (skill `find-skills`, OKami24 step C · owner 16/10).
 // Adapted from the Dive Records find-skills scanner (owner's brief 16/10, read once with his OK) to this repo's ways.
 // Reads RAW files only: at a pinned commit through `gh api` (git tree + blobs — never a rendered page or WebFetch,
 // they drop hidden characters and comments), or local files. Read-only: never writes, installs or runs the skill.
@@ -62,7 +62,13 @@ function scanText(text) {
     if (base > 0) add("hidden", "frontmatter indented", 1, `${base} space(s) — read it by hand`);
     fm.forEach((l, k) => {
       if (!l.trim() || indent(l) > base || l.trim().startsWith("#")) return; // a YAML comment is not a key
-      if (/^(name|description)\s*:/.test(l.trim())) return;
+      if (/^(name|description)\s*:/.test(l.trim())) {
+        // an unquoted value holding ": " or " #" is cut there by YAML — the skill then loads with a wrong or short
+        // description (16/10: round-close and tier-b-proof were cut at " #" for weeks)
+        const v = l.trim().replace(/^(name|description)\s*:\s*/, "");
+        if (!/^["']/.test(v) && /: | #/.test(v)) add("hidden", "frontmatter value cut by YAML", k + 1, l);
+        return;
+      }
       add("hidden", "frontmatter beyond name/description", k + 1, l);
     });
   }
@@ -157,6 +163,7 @@ function selfTest() {
     "เลือกความแรงนิโคตินให้เหมาะกับตัวเอง แล้วชาร์จแบตให้เต็มก่อนใช้ครั้งแรก",
     "สอบถามเพิ่มเติมทางไลน์ของร้านได้ตลอด ส่งของทุกวันจันทร์ถึงเสาร์",
   ].join("\n");
+  check(scanText(["---", "name: z", "description: does a thing. Note: also #5 here", "---"].join("\n")).some((f) => f.label === "frontmatter value cut by YAML"), "a description YAML would cut at ': ' or ' #' flagged");
   const m = scanText(more);
   check(m.some((f) => f.label === "frontmatter tab-indented"), "tab-indented frontmatter key flagged");
   check(m.some((f) => f.label === "control character"), "C1 control (U+0085) flagged");
@@ -191,7 +198,7 @@ function main() {
     n += found.length;
   }
   console.log(`\nscan: ${files.length} file(s)${hiddenOnly ? " (hidden-only)" : ""} · ${n} line(s) to look at`);
-  if (n) console.log("Read every flagged line in context and name it benign or suspicious in the owner report (skill skill-vet step 5).");
+  if (n) console.log("Read every flagged line in context and name it benign or suspicious in the owner report (skill find-skills step C).");
   process.exit(n ? 1 : 0);
 }
 

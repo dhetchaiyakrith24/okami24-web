@@ -32,18 +32,34 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   removed first, targets intact) + `.agents/` deleted, ~\OKami24-เก็บ → `OKami24-archive\incoming-01-10`, empty ~\Claude outputs removed ·
   closed round briefs out of `docs/rounds/` (#497, git keeps them) · rule rows C4 + A5 applied (#497).
   Owner brief 16/10 (from the Dive Records chat) → #500: house-clean "รายการเดียว" = the one home for what Friday does alone outside
-  git or as a deletion (weekly prompt + §17 point to it) · new skill `skill-vet` + `scripts/skill-scan.js` (outside skills are read
+  git or as a deletion (weekly prompt + §17 point to it) · skill `find-skills` (vercel-labs original + our vetting, 16/10) + `scripts/skill-scan.js` (outside skills are read
   raw at a pinned commit, scanned, owner's OK first; house-check runs its bait self-test + scans our skills weekly).
-  NEXT: the first outside skill — Friday proposes one to the owner before adopting (owner: "ก่อนลงถามพี่ก่อนว่าจะลงตัวไหน"). OKM photo / OKM CT = not ours
+  Outside skills (owner 16/10): 1st = find-skills (vercel-labs original, 76/94 author lines kept word for word (80.9%) + our vetting A–F; replaces
+  skill-vet) · 2nd = content-strategy (coreyhaines31/marketingskills, owner OK; 309/314 author lines kept word for word = 98.4%; for the SEO round's keyword/article plan) · NEXT = seo-audit's missing parts (multi-language,
+  local SEO, AI-writing check) folded into our seo-auditor — proposal to the owner first. Merged branches (local + GitHub) =
+  Friday deletes without asking (owner 16/10, TEAM_RULES 13.3 #1). OKM photo / OKM CT = not ours
   unless the owner says so (central §12 item 32).
   Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
   redirect into a checker-read tree = discipline (rule-audit L1 proposes a lock) · scan tools against the live site (L2).
+3i OPEN ROUND "image sweep" = `docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt` (own chat; owns the main folder's `_incoming/img-1610/`,
+  worktrees `_incoming/img-1610/wt-img` (work, own node_modules) · `wt-gate` (checker tree) · `wt-base` (base build 47320ddd, before
+  shots `_incoming/img-1610/shots/before-*` for every product of the round)). Nano Banana Pro Unlimited free in Chrome to ~19/10.
+  LIVE [ตรวจแล้ว]: #501 coil-94/55/53 · #503 JOIWAY F4 card + 16 pairs. OPEN: PR #505 ARGUS G4 — checker round 2 FAIL (silver + gray
+  bottoms) → next check is round 3 of 3. Chat moved at ~810k context 16/10 ~03:00: full state, file-by-file next steps and how the
+  shared Higgsfield draft/queue really behaves = `_incoming/img-1610/NEXT.md` (read it first). NEXT: re-render ARGUS silver → fix →
+  checker round 3 → merge · SALTHUB zero-nano + zero-pro cards · JOIWAY F3 14 green flavours · then the round order in NEXT.md.
 3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (own chat, worktree `.claude/worktrees/seo-all-keys-a38889`,
   branch `claude/seo-all-keys-a38889` · own build tree `_incoming/wt-build` inside it + test server `next start -p 3414`; script
   `_incoming/seo-keys/setup-build.sh <commit>` rebuilds it) · 【ห้ามแตะ】 product images + image map (image round) · every price file.
-  Batch 1 = the key list SEO_LANDSCAPE §9 (16/10, 5 researchers) · batches 2–6 = §9.6 (2 pod system cluster · 3 head · 4 choosing
-  articles · 5 strengthen · 6 buying/trust + GSC 22/10) · evidence `_incoming/seo-keys/` (scope-auditor-open.md = checker page lists).
-  Stopped at: batch 1 PR (docs) · seo-auditor open read running on 3414.
+  Order = SEO_LANDSCAPE §9.6. DONE [ตรวจแล้ว]: batch 1 key list #499 · batches 2 + 5 #502 d5fae710 (2 new Thai guides refilling-a-pod +
+  how-long-a-pod-device-lasts · 6 guides strengthened, body/FAQ only; checker PASS 143d66fa, title fix after it per 13.5 #2 (จ)).
+  Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them (§9.6 row 3 lists the pages).
+  NEXT: 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" section) → batch 3 head set (seo-auditor reads the paper set
+  first; baseline = `_incoming/seo-keys/seo-auditor-open.md`) → batch 4 = drafts ready `_incoming/seo-keys/b4-flavour-draft.md` +
+  `b4-switch-draft.md` (each lists the links to add after 22/10; switch-pod waits on รอพี่ตรวจ 65) · still to draft: disposables
+  "ยี่ห้อไหนดี" · VOOPOO Drag / Argus families · batch 6 buying/trust. Owner list 63–66 open.
+  Tool (owner 16/10): skill `content-strategy` (#508) = the way to plan pillars, clusters, buyer stages and the article order for the
+  remaining batches — its OKami24 rules at its end (keymap = SEO_LANDSCAPE §0).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
