@@ -951,9 +951,9 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-55/card-v2.webp",
+      src: "/assets/products/coil-55/card-v3.webp",
       alt: "UWELL CALIBURN G2 empty refillable pod cartridge, studio photo",
-      angle: "Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapesourcing's photo of the CALIBURN G2 pod (800 px); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      angle: "Front, studio re-shoot 16/10 (round img-1610: re-shot large in frame from a larger Vapesourcing photo — render, prompt and check in scripts/process-images.map.json `aiRender`). Before: Front, studio re-shoot (round \"option photos\" batch 4, 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Vapesourcing's photo of the CALIBURN G2 pod (800 px); shape checked against that photo (scripts/ai-fidelity-sheet.js, outline + IoU) and every printed mark by eye. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from Vapesourcing's product photo",
       sourceUrl: "https://image.vapesourcing.com/images/202111/uwell-caliburn-g2-pod3_(1).jpg",

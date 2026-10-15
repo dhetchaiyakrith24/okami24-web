@@ -7499,16 +7499,16 @@
   "fileName": "variant-coil-38-4-v2.webp"
  },
  {
-  "source": "_incoming/option-photos/b4/key/D-c55.png",
+  "source": "_incoming/img-1610/b1/key/D-c55.png",
   "slug": "coil-55",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light with this pod's part list (_incoming/option-photos/b4/prompts.js / prompts2.js); keyed off the #2b2e33 backdrop by _incoming/option-photos/b4/matte3.js (look-pilot/matte2.js + a low flood threshold for smoky plastic; foot line by hand), floor cut at the foot (the ProductMaster view has no ownFloor flag, so the page draws its own floor)",
-   "reference": "Vapesourcing's photo of the CALIBURN G2 pod (800 px) — https://image.vapesourcing.com/images/202111/uwell-caliburn-g2-pod3_(1).jpg (input: _incoming/option-photos/b4/in/; render _incoming/option-photos/b4/out/c55-S1.png)",
-   "fidelitySheet": "_incoming/option-photos/b4/fid/c55.png — shape IoU vs the reference cut (refcut/) ≥ 0.95; logo, every printed mark, cap/tank/base colours checked by eye"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light + 'large in frame' (_incoming/img-1610/b1/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --ft 8 --fblur 2 --grow 1.5 --device, foot slab trimmed, floor line under the base cleared, specks dropped",
+   "reference": "Vapesourcing's front photo of the CALIBURN G2 pod (larger than the 08/10 one; PRO FOCS / MAX / UWELL moulding visible) (input: _incoming/img-1610/b1/in/c55.png from _incoming/option-photos/b4/in/c55v.png; render _incoming/img-1610/b1/out/c55-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b1/fid/fid-c55.png — reference outline (red) lies on the render's edges; IoU 0.716 understates (the clear tank of the white-background reference is lost in its cut, LESSONS-images 29); cap, tank, PRO FOCS mark, base and red tab checked by eye"
   },
-  "note": "round \"option photos\" batch 4 (coils) 08/10 — studio re-shoot, was the retailer photo on white",
-  "fileName": "card-v2.webp"
+  "note": "round img-1610 16/10 — re-shot large in frame (the 08/10 render had the pod small in a 2K frame, so the card was soft)",
+  "fileName": "card-v3.webp"
  },
  {
   "source": "_incoming/coil7/D-c74-v2.png",
