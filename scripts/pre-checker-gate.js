@@ -65,8 +65,11 @@ function forbiddenWords(style = rd("docs/THAI_STYLE.md"), skill = rd(".claude/sk
   const lines = style.split("\n");
   const head = lines.findIndex((l) => /^\|\s*ใช้คำนี้\s*\|\s*ห้ามใช้\s*\|/.test(l));
   for (let i = head + 2; head >= 0 && i < lines.length && lines[i].startsWith("|"); i++) {
-    for (let w of lines[i].split("|")[2].split("·")) {
-      w = w.replace(/\([^)]*\)/g, "").replace(/\*/g, "").split("—")[0].trim();
+    // notes in brackets go first — "— (ไม่มีคำห้าม · ไม่ใช้ "อีลิควิด")" holds a · of its own; its ไม่ใช้ "…" word still counts
+    const cell = lines[i].split("|")[2];
+    for (const m of cell.matchAll(/ไม่ใช้\s*["“]([^"”\s]+)["”]/g)) words.add(m[1]);
+    for (let w of cell.replace(/\([^)]*\)/g, "").split("·")) {
+      w = w.replace(/\*/g, "").split("—")[0].trim();
       if (w && !/[A-Za-z]/.test(w) && w !== "คำ") words.add(w);
     }
   }
@@ -237,6 +240,7 @@ function selfTest() {
   console.log("## gate checks — a clean branch passes, each planted example fails");
   ok(run(clean, Object.keys(CHECKS)).length === 0, "clean example passes every check");
   ok(words.length >= 10 && words.includes("ดิสโพส") && words.includes("คาร์ทริดจ์"), `word list read from THAI_STYLE §3 + skill thai-check (${words.length} words)`);
+  ok(words.every((w) => !/[()"'“”\s]/.test(w)), `every word is a bare word (no bracket, quote or space): ${words.join(" ")}`);
   ok(fails("branch", { branch: "main" }), "branch: on main (L6)");
   ok(fails("branch", { branch: "" }), "branch: detached HEAD");
   ok(fails("branch", { containsMain: false }), "branch: behind origin/main");
@@ -264,27 +268,36 @@ function selfTest() {
 
   console.log("\n## locks at the act — scripts/guard-tool.js (hook) on planted commands");
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "okami24-gate-"));
+  const noNotes = path.join(tmp, "no-notes"); // the real "checker reading" note (if one is on now) must not change the answers
+  fs.mkdirSync(noNotes);
   const guard = (input, env = {}) => {
-    const r = spawnSync(process.execPath, [path.join(ROOT, "scripts", "guard-tool.js")], { input: JSON.stringify(input), encoding: "utf8", env: { ...process.env, ...env } });
+    const r = spawnSync(process.execPath, [path.join(ROOT, "scripts", "guard-tool.js")], { input: JSON.stringify(input), encoding: "utf8", env: { ...process.env, OKAMI24_CHECKER_LOCK_DIR: noNotes, ...env } });
     try {
       return JSON.parse(r.stdout).hookSpecificOutput.permissionDecision;
     } catch {
       return "none";
     }
   };
-  const sh = (command, tool = "Bash") => ({ tool_name: tool, tool_input: { command }, cwd: ROOT });
+  const sh = (command, cwd = ROOT) => ({ tool_name: "Bash", tool_input: { command }, cwd });
+  const wt = path.join(ROOT, "_incoming", "wt-x");
   ok(guard(sh("npm run build")) === "deny", "L2 bare `npm run build` in the main folder → deny");
-  ok(guard(sh("npx next build")) === "deny", "L2 bare `npx next build` → deny");
-  ok(guard(sh("cd _incoming/wt-x && npx next build")) === "none", "L2 a build inside a worktree under _incoming/ → allowed");
-  ok(guard(sh("git add -A")) === "deny" && guard(sh("git add .")) === "deny", "L5 `git add -A` / `git add .` → deny");
+  ok(guard(sh("npx next build")) === "deny" && guard(sh("node_modules/.bin/next build")) === "deny", "L2 bare `npx next build` / `.bin/next build` → deny");
+  ok(guard(sh("npx next build > _incoming/b.log 2>&1")) === "deny", "L2 a log under _incoming/ does not make it a worktree build → deny");
+  ok(guard(sh("cd _incoming/wt-x && npx next build")) === "none", "L2 `cd` into a worktree under _incoming/, then build → allowed");
+  ok(guard(sh("npx next build", wt)) === "none", "L2 the shell already sits in the worktree → allowed");
+  ok(guard(sh("git add -A")) === "deny" && guard(sh("git add .")) === "deny" && guard(sh("git add ./")) === "deny", "L5 `git add -A` / `.` / `./` → deny");
   ok(guard(sh('git commit -am "x y"')) === "deny", "L5 `git commit -a` → deny");
   ok(guard(sh("git add scripts/a.js docs/b.md")) === "none", "L5 add by name → allowed");
   ok(guard(sh("node scripts/self-merge-check.js --pr 9 && gh pr merge 9 --merge")) === "deny", "L7 self-merge-check + merge in one command → deny");
   ok(guard(sh('git commit -m "self-merge-check then gh pr merge"')) === "none", "L7 the words inside a commit message → allowed");
+  ok(guard(sh("git merge-base --is-ancestor a b && node scripts/self-merge-check.js")) === "none", "L7 `git merge-base` is not a merge → allowed");
   if (process.platform === "win32") {
     ok(guard(sh('node scripts/scan.js --pages "/about /faq"')) === "deny", "L3 Git Bash page path without MSYS_NO_PATHCONV=1 → deny");
+    ok(guard(sh('node scripts/scan.js --pages "/"')) === "deny", 'L3 the home page "/" alone → deny');
     ok(guard(sh('MSYS_NO_PATHCONV=1 node scripts/scan.js --pages "/about"')) === "none", "L3 with MSYS_NO_PATHCONV=1 → allowed");
     ok(guard(sh("node scripts/x.js /c/Users/a.txt")) === "none", "L3 a /c/… drive path → allowed");
+    ok(guard(sh("node scripts/x.js | sed -n '/a/p'")) === "none", "L3 a pipe after the script → allowed");
+    ok(guard(sh('git commit -m "ran node scripts/scan.js --pages /about"')) === "none" && guard(sh('gh pr create --title "foo /bar"')) === "none", "L3 a commit message / gh title quoting it → allowed");
   } else console.log("  skip L3 (Git Bash path rewriting exists on Windows only)");
   ok(guard(sh("git push --force")) === "deny", "B force push still → deny (old lock intact)");
   const env = { OKAMI24_CHECKER_LOCK_DIR: tmp };
@@ -297,6 +310,8 @@ function selfTest() {
   ok(guard({ tool_name: "Edit", tool_input: { file_path: path.join(ROOT, "docs", "HANDOFF.md") }, cwd: ROOT }, env) === "deny", "พ22 note on → Edit in the read tree → deny");
   ok(guard({ tool_name: "Write", tool_input: { file_path: path.join(ROOT, "_incoming", "next", "plan.md") }, cwd: ROOT }, env) === "none", "พ22 note on → Write under _incoming/ → allowed");
   ok(guard(sh("git -C _incoming/wt-x checkout -b next"), env) === "none", "พ22 note on → git in a worktree under _incoming/ → allowed");
+  ok(guard(sh("git checkout main 2>&1 | tee _incoming/x.log"), env) === "deny", "พ22 note on → a log under _incoming/ does not excuse a checkout → deny");
+  ok(guard(sh("git checkout main", wt), env) === "none", "พ22 note on → the shell sits in another worktree → allowed");
   ok(guard(sh("node scripts/pre-checker-gate.js --done"), env) === "none", "พ22 note on → --done → allowed");
 
   console.log("\n## locks at the act — .githooks/pre-commit and scripts/lib/chrome.js");

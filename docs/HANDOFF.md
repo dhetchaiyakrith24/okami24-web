@@ -128,7 +128,8 @@ Test server: `node scripts/test-server.js build` then `start` (port 3412 · SITE
   stop → start · stop = `node scripts/test-server.js stop` (kills only the PID on 3412 · `status`) ·
   port 3000 + `.claude/launch.json` "vapor-dev" = the owner's own dev server, agents never start it · never build while
   the server runs (`test-server.js build` and `verify:catalog --full` refuse; a bare `next build` / `npm run build` in the
-  main folder is denied by `scripts/guard-tool.js` — only a worktree under `_incoming/` builds bare) · while the checker
+  main folder is denied by `scripts/guard-tool.js` — a build whose folder (the shell's cwd, or a `cd` before it) is a
+  worktree under `_incoming/` passes) · while the checker
   reads (note of `scripts/pre-checker-gate.js`, TEAM_RULES 13.4) start/stop/build of 3412 is denied too ·
   a SECOND server (3412 busy with another chat): a worktree with a real copy of node_modules (robocopy ~1 min; a junction
   cannot build), then `SITE_URL=https://okami24.store npx next build` + `next start -p 3413` with the test-server env

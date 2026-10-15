@@ -11,7 +11,8 @@
 //      normal permission prompt asks the owner                                                   → allow / ask
 // Lock round 15/10 (rule-audit 14/10 L2 L3 L5 L7 + LESSONS พ22) — each a rule that was kept only by memory:
 //   D  no bare `next build` / `npm run build` in the main folder — `node scripts/test-server.js build` (right env,
-//      refuses while 3412 is up); a worktree under _incoming/ builds bare (HANDOFF §17 "Test server")   → deny
+//      refuses while 3412 is up); a build that runs IN a worktree under _incoming/ (the shell's cwd, or a `cd` before
+//      it) passes (HANDOFF §17 "Test server")                                                     → deny
 //   E  no blind `git add -A` / `--all` / `.` / `*` and no `git commit -a` — add files by name (TEAM_RULES 13.7)  → deny
 //   F  self-merge-check and the merge never in one command — run it alone, read its last line, then merge
 //      (TEAM_RULES 13.7)                                                                         → deny
@@ -44,12 +45,12 @@ const WRITE_TARGETS = [
   new RegExp(String.raw`\b(Set-Content|Add-Content|Out-File|Copy-Item|Move-Item|Remove-Item|Clear-Content|New-Item|Rename-Item)\b` + ARGS + NAME, "i"),
   new RegExp(String.raw`(WriteAllText|WriteAllLines|AppendAllText|writeFileSync|appendFileSync)\s*\(\s*\x60?` + NAME, "i"),
 ];
+// heredoc bodies (the opener line and its redirect stay) and PowerShell here-strings = message text
+const stripBodies = (cmd) => cmd.replace(/(<<-?\s*["']?(\w+)["']?)([^\n]*)\n[\s\S]*?\n\s*\2(?=\s|$)/g, "$1$3").replace(/@'[\s\S]*?'@|@"[\s\S]*?"@/g, "''");
 function blankText(cmd) {
-  return cmd
+  return stripBodies(cmd)
     .replace(/(["'])[^"'\n]*[\\/]git(?:\.exe)?\1/gi, "git") // '& "C:/Program Files/Git/cmd/git.exe" push' = git push
     .replace(/(["'])\s*imagename\s+eq\s+([^"'\n]+)\1/gi, "IMAGENAME eq $2") // taskkill /FI "IMAGENAME eq node.exe"
-    .replace(/(<<-?\s*["']?(\w+)["']?)([^\n]*)\n[\s\S]*?\n\s*\2(?=\s|$)/g, "$1$3") // heredoc body only — the opener line (and its redirect) stays
-    .replace(/@'[\s\S]*?'@|@"[\s\S]*?"@/g, "''") // PowerShell here-strings
     .replace(/"(?:[^"\\]|\\.)*\s(?:[^"\\]|\\.)*"/g, '""') // double-quoted text with a space
     .replace(/'[^']*\s[^']*'/g, "''"); // single-quoted text with a space
 }
@@ -83,7 +84,7 @@ const KILL_NODE = [
   /\bwmic\b[^\n]*node\.exe[^\n]*\b(delete|terminate)\b/i,
 ];
 
-function checkShell(cmd) {
+function checkShell(cmd, cwd) {
   const plain = blankText(cmd); // quoted text / heredocs / here-strings (messages) never trip A, B or C
   const segs = segments(plain);
   // A
@@ -111,34 +112,36 @@ function checkShell(cmd) {
     const hit = WRITE_TARGETS.map((re) => seg.match(re)).find(Boolean);
     if (hit) lockedDecision(hit[0].match(new RegExp(NAME, "i"))[0]);
   }
-  const worktreeWork = /_incoming[\\/]/.test(cmd); // a worktree under _incoming/ (HANDOFF §17 "a SECOND server")
-  for (const seg of segs) {
+  const dirs = placeOf(segs, cwd);
+  segs.forEach((seg, i) => {
     const g = gitCall(seg);
-    // D
-    if (isBuild(seg) && !worktreeWork) {
+    // D — judged by where the build runs (the hook's cwd, or a `cd` before it), never by "_incoming/" anywhere in the line
+    if (isBuild(seg) && inside(norm(dirs[i]), norm(ROOT))) {
       decide("deny", "No bare build in the main folder (HANDOFF §17 \"Test server\"): run `node scripts/test-server.js build` — right env, and it refuses while 3412 is up.");
     }
     // E
-    if (g && g.sub === "add" && g.args.some((a) => /^(-A|--all|\.|\*|:\/|-[a-zA-Z]*A[a-zA-Z]*)$/.test(a))) {
+    if (g && g.sub === "add" && g.args.some((a) => /^(-A|--all|\.\/?|\*|:\/|-[a-zA-Z]*A[a-zA-Z]*)$/.test(a))) {
       decide("deny", "No blind add (TEAM_RULES 13.7): `git status --short`, then `git add <file> <file>` by name.");
     }
     if (g && g.sub === "commit" && g.args.some((a) => a === "--all" || /^-[a-zA-Z]*a[a-zA-Z]*$/.test(a))) {
       decide("deny", "No `git commit -a` (TEAM_RULES 13.7): `git status --short`, `git add <file>` by name, then commit.");
     }
-  }
+  });
   // F
-  if (/self-merge-check/.test(plain) && /\bgh\s+pr\s+merge\b|\bgh\s+api\b[^\n]*\/merge\b|(?:^|[\s&;|])git\s+merge\b/.test(plain)) {
+  if (/self-merge-check/.test(plain) && /\bgh\s+pr\s+merge\b|\bgh\s+api\b[^\n]*\/merge\b|(?:^|[\s&;|])git\s+merge(?![-\w])/.test(plain)) {
     decide("deny", "Run `node scripts/self-merge-check.js` ALONE, read its last line (BLOCKED = no merge), then merge in a separate command (TEAM_RULES 13.7).");
   }
 }
 
-// G — Windows Git Bash rewrites a leading "/" argument into its install folder; the raw command is read (a page list is
-// usually quoted: --pages "/a /b"). /c/… (a drive) and /tmp-style system folders are real paths and pass.
+// G — Windows Git Bash rewrites a leading "/" argument (and "/" alone) into its install folder. Quoted text is kept (a
+// page list is quoted: --pages "/a /b"), but only a segment that STARTS with node/tsx running scripts/… is read — a
+// commit message, heredoc or `gh pr --body` that quotes such a command never trips it. /c/… (a drive) and /tmp-style
+// system folders are real paths and pass.
 function checkPathConversion(cmd) {
   if (process.platform !== "win32" || /MSYS_NO_PATHCONV=1/.test(cmd)) return;
-  for (const seg of cmd.split(/\n|&&|\|\|?|;/)) { // the script's own arguments only — not a `| sed '/x/p'` after it
-    const m = seg.match(/\b(?:node|tsx)\b[^\n]*?\bscripts\/[\w./-]+\.(?:c?js|mjs|ts)\b(.*)$/);
-    if (m && /(?:^|[\s"'=,])\/(?![a-zA-Z]\/|\/|(?:tmp|dev|usr|etc|mnt|proc|bin|opt|home)\b)[\w-]/.test(m[1])) {
+  for (const seg of stripBodies(cmd).split(/\n|&&|\|\|?|;/)) { // the script's own arguments only — not a `| sed '/x/p'` after it
+    const m = seg.match(/^\s*(?:\w+=\S*\s+)*(?:timeout\s+\d+\s+)?(?:node|npx\s+tsx|tsx)\s+(?:\S*\/)?scripts\/[\w./-]+\.(?:c?js|mjs|ts)\b(.*)$/);
+    if (m && /(?:^|[\s"'=,])\/(?:(?=[\s"',]|$)|(?![a-zA-Z]\/|\/|(?:tmp|dev|usr|etc|mnt|proc|bin|opt|home)\b)[\w-])/.test(m[1])) {
       decide("deny", "Git Bash will turn the page path into C:/Program Files/Git/… and the script scans the wrong pages. Put `MSYS_NO_PATHCONV=1 ` in front of the command (HANDOFF §17 \"Windows shell\").");
     }
   }
@@ -154,22 +157,21 @@ function checkerReading() {
   }));
 }
 const inside = (p, tree) => (p + "/").startsWith(tree + "/") && !(p + "/").startsWith(tree + "/_incoming/");
+// Covers the acts that move or rebuild a tree (git, builds, the test server) and the Edit/Write tools — not every shell
+// write (rm · sed -i · a redirect): those stay Friday's discipline (TEAM_RULES 13.4 says so). Where a segment runs = the
+// hook's cwd moved by any `cd` before it, or git's own -C.
 function checkReadingShell(cmd, cwd) {
-  const plain = blankText(cmd);
-  const lowered = cmd.replace(/\\/g, "/").toLowerCase();
+  const segs = segments(blankText(cmd));
+  const dirs = placeOf(segs, cwd);
   for (const r of checkerReading()) {
-    const rel = path.relative(ROOT, r.tree).replace(/\\/g, "/").toLowerCase();
-    const touchesTree = inside(norm(cwd || ROOT), r.tree)
-      ? !/_incoming\//.test(lowered)
-      : lowered.includes(r.tree) || Boolean(rel && !rel.startsWith("..") && lowered.includes(rel));
-    for (const seg of segments(plain)) {
+    segs.forEach((seg, i) => {
       if (/test-server\.js["']?\s+(build|start|stop|restart)\b/.test(seg)) decide("deny", r.msg); // 3412 is the machine's, not one tree's
-      if (!touchesTree) continue;
       const g = gitCall(seg);
+      if (!inside(norm(g && g.dir ? resolveArg(dirs[i], g.dir) : dirs[i]), r.tree)) return;
       if (g && /^(checkout|switch|reset|merge|pull|rebase|commit|restore|clean|cherry-pick|revert|am|apply)$/.test(g.sub)) decide("deny", r.msg);
       if (g && g.sub === "stash" && !/^(list|show)$/.test(g.args[0] || "")) decide("deny", r.msg);
       if (isBuild(seg)) decide("deny", r.msg);
-    }
+    });
   }
 }
 function checkReadingEdit(file, cwd) {
@@ -179,11 +181,24 @@ function checkReadingEdit(file, cwd) {
 }
 
 function gitCall(seg) {
-  const m = seg.match(/(?:^|[\s&'"\\/])git(?:\.exe)?["']?\s+(?:-[cC]\s+\S+\s+|--?[\w-]+(?:=\S+)?\s+)*([a-z][\w-]*)\b(.*)$/i);
+  const m = seg.match(/(?:^|[\s&'"\\/])git(?:\.exe)?["']?\s+((?:-[cC]\s+\S+\s+|--?[\w-]+(?:=\S+)?\s+)*)([a-z][\w-]*)\b(.*)$/i);
   if (!m) return null;
-  return { sub: m[1].toLowerCase(), args: m[2].trim().split(/\s+/).filter(Boolean).map((a) => a.replace(/^["']|["']$/g, "")) };
+  const c = m[1].match(/-C\s+(\S+)/);
+  return { sub: m[2].toLowerCase(), dir: c ? c[1] : null, args: m[3].trim().split(/\s+/).filter(Boolean).map((a) => a.replace(/^["']|["']$/g, "")) };
 }
-const isBuild = (seg) => /(?:^|\s)(?:npx\s+)?next\s+build\b|\bnpm\s+run\s+build\b|\b(?:pnpm|yarn)\s+(?:run\s+)?build\b/.test(seg);
+function resolveArg(dir, arg) {
+  return path.resolve(dir, String(arg).replace(/^["']|["']$/g, "").replace(/^\/([a-zA-Z])\//, "$1:/")); // Git Bash /c/… = C:/…
+}
+// the folder each segment runs in: the hook's cwd, moved by any `cd` / `pushd` / `Set-Location` segment before it
+function placeOf(segs, cwd) {
+  let dir = cwd || ROOT;
+  return segs.map((seg) => {
+    const m = seg.match(/^(?:cd|pushd|chdir|Set-Location|sl)\s+(?:-Path\s+)?(\S+)$/i);
+    if (m) dir = resolveArg(dir, m[1]);
+    return dir;
+  });
+}
+const isBuild = (seg) => /(?:^|[\s/])(?:npx\s+)?next\s+build\b|\bnpm\s+run\s+build\b|\b(?:pnpm|yarn)\s+(?:run\s+)?build\b/.test(seg);
 
 let raw = "";
 process.stdin.on("data", (d) => (raw += d));
@@ -200,7 +215,7 @@ process.stdin.on("end", () => {
     const cwd = input.cwd || process.cwd();
     if (tool === "Bash" || tool === "PowerShell") {
       const cmd = String(ti.command || "");
-      checkShell(cmd);
+      checkShell(cmd, cwd);
       if (tool === "Bash") checkPathConversion(cmd);
       checkReadingShell(cmd, cwd);
     }
