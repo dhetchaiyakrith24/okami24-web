@@ -34,7 +34,7 @@ broke. The owner wants an auditor who **does not know who wrote what** and judge
 Every file that gives an instruction or a rule. The main agent tells you the list for this round;
 the standing list is:
 
-- `.claude/rules/central-rules.md` (central rules, §1–§12 — the synced copy; never skip it). Not readable = say so in the report.
+- `.claude/rules/central-rules.md` (central rules, §5–§12 — the synced copy; never skip it). Not readable = say so in the report.
 - `.claude/TEAM_RULES.md` (section 13 + the house map at its head + the legal-status block)
   · skip `.claude/worktrees/` (other checkouts, not this repo)
 - `CLAUDE.md` at the repo root (a different file — imports `AGENTS.md`, `.claude/TEAM_RULES.md` and
