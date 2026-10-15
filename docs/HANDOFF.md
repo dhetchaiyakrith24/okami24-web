@@ -34,6 +34,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   unless the owner says so (central §12 item 32).
   Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
   redirect into a checker-read tree = discipline (rule-audit L1 proposes a lock) · scan tools against the live site (L2).
+3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (own chat, worktree `.claude/worktrees/seo-all-keys-a38889`,
+  branch `claude/seo-all-keys-a38889` · own build tree `_incoming/wt-build` inside it + test server `next start -p 3414`; script
+  `_incoming/seo-keys/setup-build.sh <commit>` rebuilds it) · 【ห้ามแตะ】 product images + image map (image round) · every price file.
+  Batch 1 = the key list SEO_LANDSCAPE §9 (16/10, 5 researchers) · batches 2–6 = §9.6 (2 pod system cluster · 3 head · 4 choosing
+  articles · 5 strengthen · 6 buying/trust + GSC 22/10) · evidence `_incoming/seo-keys/` (scope-auditor-open.md = checker page lists).
+  Stopped at: batch 1 PR (docs) · seo-auditor open read running on 3414.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
