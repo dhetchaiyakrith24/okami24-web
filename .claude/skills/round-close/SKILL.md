@@ -80,7 +80,9 @@ Word-break fixes and anything the gates or the designer flagged → one commit. 
 - Owner rulings on Thai words/sentences → `docs/THAI_STYLE_LOG.md` §7 (and the word table in THAI_STYLE §3 when the
   owner locked a word) — the main agent writes them.
 - The round file that ran is in `docs/rounds/` (re-copy if edited during the round) → delete its copy under `rounds/`
-  on branch `inbox`, if any (a commit on `inbox` that only removes that file).
+  on branch `inbox`, if any (a commit on `inbox` that only removes that file) · after the close tag, delete the file from
+  `docs/rounds/` too unless a live file names it (owner 16/10 — git keeps it: `git show <close tag>:docs/rounds/<name>`,
+  `docs/rounds/README.md`).
 
 ## Step 7 — The report (Thai, central §12 item 10 · `docs/TEMPLATES.md` (ข))
 
