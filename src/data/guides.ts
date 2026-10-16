@@ -20,7 +20,8 @@ const VOOPOO_SHOP = "https://shop.voopoo.com/products/";
 /**
  * Section posters (owner 16/10: "ในหน้าพวกบทความเรามีรูปประกอบหรือวีดีโอใส่ลงไปหน่อยดีมั้ย"). Every file, size, source
  * and credit is the same poster the product page already shows (products/*.ts `features[].image`) — no new renders;
- * each sits under the one section whose subject is exactly what the poster shows. Alt = Thai (these guides are Thai-only).
+ * each sits under the one section whose subject is exactly what the poster shows. Alt = Thai (Thai-only guides and the TH
+ * arrays); the en / zh arrays of translated guides use SECTION_IMAGES_EN / _ZH below.
  */
 export const SECTION_IMAGES = {
   drag6Battery: { src: "/assets/products/drag-6/story-battery-v2.webp", alt: "โปสเตอร์ของ VOOPOO: DRAG 6 กับแบตในตัว 4400mAh ที่เห็นผ่านตัวเครื่อง", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-6`, width: 1600, height: 1600 },
@@ -46,7 +47,41 @@ export const SECTION_IMAGES = {
   mSwitchCharge: { src: "/assets/products/m-switch-kit/story-charge.webp", alt: "โปสเตอร์ของ SALTHUB: ช่องชาร์จ Type-C และจอบอกระดับแบตของ M Switch", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
   mSwitchAirflow: { src: "/assets/products/m-switch-kit/story-airflow.webp", alt: "โปสเตอร์ของ SALTHUB: ปุ่มปรับลมของ M Switch", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
   argusG4Fill: { src: "/assets/products/argus-g4/story-fill-v2.webp", alt: "โปสเตอร์ของ VOOPOO: ARGUS G4 เติมน้ำยาด้านบน และปุ่มเลื่อนปรับลม", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g4`, width: 1591, height: 609 },
+  argusG3MiniTiny: { src: "/assets/products/argus-g3-mini/story-tiny.webp", alt: "โปสเตอร์ของ VOOPOO: ARGUS G3 mini แบต 1350mAh หนัก 40.85 กรัม", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g3-mini`, width: 1600, height: 1149 },
+  caliburnG4ProKokoModes: { src: "/assets/products/caliburn-g4-pro-koko/story-modes.webp", alt: "ภาพจากคลิปของ UWELL: หน้าจอโหมด Customize ของ Caliburn G4 Pro KOKO ปรับไฟช่วงต้น กลาง และท้ายของการสูบแต่ละครั้ง", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro-koko", width: 1200, height: 1013 },
+  dragX3Screen: { src: "/assets/products/drag-x3/story-screen-v2.webp", alt: "โปสเตอร์ของ VOOPOO: จอทัช 1.66 นิ้วของ DRAG X3 และหัวพอต PnP X", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-x3`, width: 1600, height: 1161 },
+  dragX3Battery: { src: "/assets/products/drag-x3/story-battery-v2.webp", alt: "โปสเตอร์ของ VOOPOO: DRAG X3 ใช้ถ่าน 18650 หรือ 21700 และมีเซนเซอร์แตะปลดล็อก", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-x3`, width: 1600, height: 1161 },
 } satisfies Record<string, StoryImage>;
+
+type SectionImageKey = keyof typeof SECTION_IMAGES;
+/** The same poster with the alt of another locale — a translated guide repeats `image` in each locale's array (GuideSection.image). */
+function sectionImagesIn<K extends SectionImageKey>(alts: Record<K, string>): Record<K, StoryImage> {
+  return Object.fromEntries((Object.keys(alts) as K[]).map((k) => [k, { ...SECTION_IMAGES[k], alt: alts[k] }])) as Record<K, StoryImage>;
+}
+
+/** English alts for the posters in the guides that have en/th/zh arrays (round "SEO all keys", 16/10). Thai = SECTION_IMAGES. */
+export const SECTION_IMAGES_EN = sectionImagesIn({
+  argusG3MiniTiny: "VOOPOO's ARGUS G3 mini poster — a 1350mAh battery and 40.85 g",
+  mBar10kModes: "SALTHUB's M Bar 10K poster — double-click the bottom button to switch Eco / Soft / Boost",
+  mBar15kSwap: "SALTHUB's poster — a clear M Switch Pod being fitted into the M Switch body",
+  caliburnG4ProKokoModes: "Still from UWELL's KOKO film — Customize mode on the Caliburn G4 Pro KOKO, power set for the start, middle and end of a puff",
+  dragX3Screen: "VOOPOO's DRAG X3 poster — the 1.66-inch touchscreen and the PnP X cartridge",
+  argusG4Battery: "VOOPOO's ARGUS G4 poster — a see-through view of the 1650mAh battery and a 45-minute full charge",
+  argusG4Ohm: "VOOPOO's ARGUS G4 poster — the Multi-Ohm cartridge: flip for 1.0Ω or 0.7Ω, press the button twice for 0.4Ω",
+  dragX3Battery: "VOOPOO's DRAG X3 poster — 18650 and 21700 cells, and the capacitive unlock sensor",
+});
+
+/** Chinese alts, same posters (used by src/i18n/guides-copy.ts GUIDES_COPY_ZH). */
+export const SECTION_IMAGES_ZH = sectionImagesIn({
+  argusG3MiniTiny: "VOOPOO 的 ARGUS G3 mini 海报：1350mAh 电池，重 40.85 克",
+  mBar10kModes: "SALTHUB 的 M Bar 10K 海报：双击底部按键切换 Eco / Soft / Boost",
+  mBar15kSwap: "SALTHUB 海报：透明的 M Switch Pod 烟弹正插入 M Switch 机身",
+  caliburnG4ProKokoModes: "UWELL KOKO 影片截图：Caliburn G4 Pro KOKO 的 Customize 模式，分别设定一口的开始、中段和结尾功率",
+  dragX3Screen: "VOOPOO 的 DRAG X3 海报：1.66 英寸触摸屏与 PnP X 烟弹",
+  argusG4Battery: "VOOPOO 的 ARGUS G4 海报：透视可见的 1650mAh 电池，约 45 分钟充满",
+  argusG4Ohm: "VOOPOO 的 ARGUS G4 海报：Multi-Ohm 烟弹，翻转切换 1.0Ω 或 0.7Ω，双击按键使用 0.4Ω",
+  dragX3Battery: "VOOPOO 的 DRAG X3 海报：兼容 18650 / 21700 电芯，以及电容式解锁感应",
+});
 
 // Round SEO ข batch 4 (2026-09-21): publishedAt = the commit that first added all seven records
 // (f29d7fc, 2026-08-29, read from git log — never invented). The modified date is no longer typed
@@ -131,6 +166,7 @@ const allGuides: Guide[] = [
           "It carries a 1350mAh battery and weighs 40.85 g. The included pod is the ARGUS Top Fill Cartridge V2 at 0.7 ohm, 3mL (2mL in TPD regions), with the iCOSM CODE 2.0 anti-leak system.",
           "One thing to know before you decide: this shop does not yet sell ARGUS pods separately — the pod that ships in the box is what you get here.",
         ],
+        image: SECTION_IMAGES_EN.argusG3MiniTiny,
       },
       {
         heading: "Real example: a disposable with adjustable airflow (M Bar 9K)",
@@ -274,6 +310,7 @@ const allGuides: Guide[] = [
           "It has three power modes — Eco, Soft and Boost — cycled with a double-click, and an RGB indicator that changes colour to show which mode is active, plus a battery LED in 25% steps. No menu involved.",
           "The trade-off is the one above: flavor and nicotine strength are whatever came prefilled, and once the e-liquid is gone the whole device is discarded.",
         ],
+        image: SECTION_IMAGES_EN.mBar10kModes,
       },
       {
         heading: "A middle ground: switch-style systems",
@@ -288,6 +325,7 @@ const allGuides: Guide[] = [
           "The cartridge is the [M Switch Pod](/products/m-switch-pod): prefilled, made for the M Switch Kit. When it runs out you swap in a new pod and the body stays.",
           "Compared with an M Bar 10K, where the whole device is discarded, an M Switch discards only the pod — the same simplicity (no filling, no coil changes) with less waste per swap. Still undecided on the format? Start again from [Choosing your first pod](/guides/choosing-your-first-pod-system).",
         ],
+        image: SECTION_IMAGES_EN.mBar15kSwap,
         video: SECTION_CLIPS.mSwitch,
       },
     ],
@@ -338,6 +376,7 @@ const allGuides: Guide[] = [
           "The modes are preset draw characters plus a Custom slot, running from a smooth, mild hit to a stronger, more robust one. It takes UWELL GPP pods and the older G3 pods.",
           "What an onboard touchscreen can do, and what it costs, is in [Onboard Touch Displays](/technology/onboard-touch-displays).",
         ],
+        image: SECTION_IMAGES_EN.caliburnG4ProKokoModes,
         video: SECTION_CLIPS.caliburnG4ProKoko,
       },
       {
@@ -348,6 +387,7 @@ const allGuides: Guide[] = [
           "The DRAG X3 uses VOOPOO's PnP X coils — VOOPOO's own DRAG X3 page says it takes every one of them.",
           "Know your draw style but not your device yet? Start from [Choosing your first pod](/guides/choosing-your-first-pod-system).",
         ],
+        image: SECTION_IMAGES_EN.dragX3Screen,
       },
     ],
     faq: [
@@ -404,6 +444,7 @@ const allGuides: Guide[] = [
             paragraphs: [
               "A 1650mAh built-in battery, charged over USB-C at 5V/2A; the sheet says roughly 45 minutes to full. The mAh figure is for comparing with other devices — how many hours you get depends on the wattage you run and how often you fire. How to charge it properly is in [Battery care](/guides/battery-care-and-charging).",
             ],
+            image: SECTION_IMAGES_EN.argusG4Battery,
           },
           {
             heading: "Wattage, voltage and resistance",
@@ -417,6 +458,7 @@ const allGuides: Guide[] = [
               "A 0.85\" HD screen showing battery, wattage, resistance, lock state and puff count. The body is zinc alloy, leather and aluminum alloy. The pod line reads: ARGUS top-fill cartridge platform, multiple resistances — and that line is the one to keep reading about in the last section.",
               "What one pod shape in several resistances means is in [Multi-Resistance Cartridges](/technology/multi-resistance-cartridges).",
             ],
+            image: SECTION_IMAGES_EN.argusG4Ohm,
           },
         ],
         video: SECTION_CLIPS.argusG4,
@@ -546,6 +588,7 @@ const allGuides: Guide[] = [
           "For the [ARGUS G4](/products/argus-g4), “the rate the manufacturer specifies” means USB-C at 5V/2A. Its verified spec says the 1650mAh built-in battery charges to full in about 45 minutes.",
           "That 45 minutes is the spec-sheet figure, not something we timed ourselves. How long a charge lasts afterwards depends on the wattage you set, screen use and how often you fire. How to compare mAh figures between models is in [How to read a spec sheet](/guides/reading-a-spec-sheet).",
         ],
+        image: SECTION_IMAGES_EN.argusG4Battery,
       },
       {
         heading: "External cells (18650 / 21700)",
@@ -553,6 +596,7 @@ const allGuides: Guide[] = [
           "Devices that take a swappable external cell, like the [DRAG X3](/products/drag-x3), should be charged with a dedicated external charger when possible, and cells should be inspected for wrapper damage before use.",
           "The DRAG X3's verified spec: no built-in battery, a single 18650 or 21700 cell, and the cell is not included in the box — it is bought separately. The upside is that with a spare cell you swap and keep going while the other one charges.",
         ],
+        image: SECTION_IMAGES_EN.dragX3Battery,
       },
     ],
     faq: [
