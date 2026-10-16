@@ -627,6 +627,16 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "iqosheet-16-verified-garnet-red": null,
     "iqosheet-16-verified-electric-purple": null,
   } },
+  // Round list19 (17/10): IQOS ILUMA i ONE — the warehouse holds Breeze Blue only (Max children -1 Pebble Grey · -2 Azure Blue are
+  // the original ILUMA ONE, kept off this record; -4 Oasis Limited · -5 Bright not identified yet).
+  "iqosheet-17": { parent: "IQOSHEET-17", options: {
+    "IQOSHEET-17-3": "IQOSHEET-17-3",
+    "iqosheet-17-verified-digital-violet": null,
+    "iqosheet-17-verified-vivid-terracotta": null,
+    "iqosheet-17-verified-midnight-black": null,
+    "iqosheet-17-verified-spring-green": null,
+    "iqosheet-17-verified-electric-purple": null,
+  } },
   "iqosheet-18": { parent: "IQOSHEET-18", options: {
     "IQOSHEET-18-1": "IQOSHEET-18-1",
     "IQOSHEET-18-3": "IQOSHEET-18-3",

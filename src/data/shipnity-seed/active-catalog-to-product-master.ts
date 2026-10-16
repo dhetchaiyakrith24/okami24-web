@@ -409,6 +409,10 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   //     the non-i ILUMA ONE entirely, raising a real question about what generation "Pebble Grey"
   //     stock in Thailand actually is.
   // See publication-approvals.ts's own comment for the pricing angle this evidence also affects.
+  // RESOLVED round list19 (17/10, Friday's ruling for the warehouse-listing task): this record IS the IQOS ILUMA i ONE —
+  // the warehouse's in-stock child "Breeze Blue" (Shipnity Max IQOSHEET-17-3) — under IQOS's real model name. The
+  // original-ILUMA-ONE children (Pebble Grey -1 · Azure Blue -2, both out of stock in Shipnity Max) are a different model:
+  // OTHER_MODEL_CHILDREN keeps them off this record; their own page is a later item (one Shipnity parent → one record).
   "IQOSHEET-17": { brandId: "iqos", familyId: "iluma", categoryId: "heated-tobacco-devices", evidence: 'name "Iqos iluma one" — child "Pebble Grey" (SKU G0000592) exact-matches ONLY the ORIGINAL ILUMA ONE\'s official 5-color lineup on iqos.com/my+/id (with confirmed negative-control 404s for Breeze Blue on that lineup); child "Breeze Blue" (SKU G0002077) exact-matches ONLY the NEWER ILUMA i ONE\'s official 6-color lineup on iqos.com/ph+/my (with confirmed negative-control 404s for Pebble Grey on that lineup) — independently corroborated by distinct PMI SKU codes and visibly different chassis renders. A genuine two-generation conflict within one Shipnity parent, not a single resolvable identity' },
 };
 
@@ -593,8 +597,10 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "อุปกรณ์รุ่น ILUMA i (รุ่นกลาง) จากแบรนด์ IQOS ใช้ร่วมกับก้าน TEREA เท่านั้น",
   },
   "IQOSHEET-17": {
-    tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA ONE",
-    shortDescription: "อุปกรณ์รุ่น ILUMA ONE จากแบรนด์ IQOS — ข้อมูล Shipnity ปัจจุบันมี 2 รุ่นย่อยปนกัน (ตัวถังเดิมสีเทา และรุ่น i สีฟ้า) ยังไม่แยกชัดเจน",
+    // Round list19 (17/10): the record is the ILUMA i ONE (TAXONOMY_MATCHES comment). Every fact = iqos.com/ph ILUMA i ONE pages.
+    // The name is the card title already; a tagline that repeats it broke "ILUMA i | ONE" on the 1440 card (wordbreak scan).
+    tagline: "เครื่องอุ่นยาสูบตัวเดียวจบ พกใส่กระเป๋าได้",
+    shortDescription: "ILUMA i ONE ตัวสูบกับที่ชาร์จรวมเป็นชิ้นเดียว ชาร์จเต็มใช้ได้ 20 ก้านติดกัน มีระบบ Autostart และ FlexPuff ใช้กับก้าน TEREA เท่านั้น",
   },
   // Image-fix round 2026-09-30: nexBar CLEAR 18K, no brand (owner ruling) — writer draft A, owner "ตามแนะนำ".
   "Pod-180": {
@@ -879,12 +885,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/iqosheet-17/card.webp",
-      alt: "IQOS ILUMA ONE, Pebble Grey, isolated official product render (original, non-\"i\" generation)",
-      angle: "Official manufacturer render, sourced directly from iqos.com/ph's own dedicated \"ILUMA ONE Pebble Grey\" product page. IMPORTANT: this photo shows ONLY the Pebble Grey (original ILUMA ONE, SKU G0000592) child accurately — the other active child, Breeze Blue, is a DIFFERENT real device (the newer ILUMA i ONE, SKU G0002077) with a visibly different chassis and different real specs (touch screen, Autostart, Pause Mode), not shown here. A second official Breeze Blue/ILUMA i ONE render was independently sourced and verified in the catalog-intelligence mission (2026-09-02) but is deliberately NOT added as a local asset here — this record is not close to publishable (see the owner-decision note in publication-approvals.ts), and adding product-specific asset files for an identity that may end up split across two different slugs would be premature; its citation is kept here for whoever resolves this: https://www.iqos.com/ph/en/shop/iluma-i-one-breeze-blue-kit.html . Present for DEV-review/documentation completeness only — see publication-approvals.ts for why this record is NOT published despite having real media, real price, and real brand/category evidence.",
+      src: "/assets/products/iqosheet-17/card-v2.webp",
+      alt: "IQOS ILUMA i ONE, Breeze Blue, official product render",
+      angle: "Official manufacturer render (round list19, 17/10): iqos.com/ph's ILUMA i ONE Breeze Blue kit page og:image pmi_G0002077_00, fetched as a 2048 px transparent PNG; the IQOS caption line printed under the device is cropped off (scripts/process-images.map.json). Breeze Blue = the warehouse's in-stock colour.",
       transparentBackground: true,
       sourceName: "IQOS (official brand site)",
-      sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-one-kit-pebble-grey.html",
+      sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html",
     },
   ],
   "Coil-56": [
@@ -1232,6 +1238,20 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html"],
   },
+  // Round list19 (17/10, in-app browser): the ILUMA i ONE page's own text — "pocket-sized integrated design and smooth,
+  // aluminum finishing", FAQ "20 consecutive uses without recharge · 4 extra puffs with FlexPuff · Autostart / Autostop",
+  // "Compare the models" row "20 uses per full charge · FlexPuff · Used with TEREA · 1728 mAh Holder battery capacity".
+  // One-piece device = one battery, so the plain "battery" key is right here (unlike the two-part i / i PRIME above).
+  "IQOSHEET-17": {
+    specifications: [
+      { key: "battery", label: "แบตเตอรี่", value: "1728mAh", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
+      { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "สูงสุด 20 ก้านติดกัน", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
+      { key: "design", label: "ตัวเครื่อง", value: "ชิ้นเดียว พกใส่กระเป๋าได้ ผิวอะลูมิเนียม", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
+      { key: "features", label: "ฟีเจอร์", value: "Autostart / Autostop · FlexPuff (ได้พัฟเพิ่มสูงสุด 4 ครั้งเมื่อก้านยังไม่หมด)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA เท่านั้น", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html" },
+    ],
+    sourceUrls: ["https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html", "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html"],
+  },
   "IQOSHEET-18": {
     specifications: [
       { key: "battery-charger", label: "แบตเตอรี่กล่องชาร์จ (Pocket Charger)", value: "2700mAh ชาร์จเต็มประมาณ 135 นาที", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
@@ -1415,6 +1435,15 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "iqosheet-18-verified-leaf-green": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/leaf-green.webp", alt: "IQOS ILUMA i, Leaf Green", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS's own Leaf Green photo", sourceUrl: "https://www.iqos.com/my/en/shop/iluma-i-leaf-green-kit.html" },
     "iqosheet-18-verified-bold-ruby": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-18/variants/bold-ruby.webp", alt: "IQOS ILUMA i, Bold Ruby", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from IQOS Japan's own Bold Ruby photo", sourceUrl: "https://jp.iqos.com/iqos-iluma-i-bold-ruby" },
   },
+  // Round list19 (17/10): ILUMA i ONE — each colour = that colour's own iqos.com/ph kit page og:image (2048 px transparent PNG).
+  "IQOSHEET-17": {
+    "IQOSHEET-17-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-breeze-blue.webp", alt: "IQOS ILUMA i ONE, Breeze Blue", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
+    "iqosheet-17-verified-digital-violet": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-digital-violet.webp", alt: "IQOS ILUMA i ONE, Digital Violet", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-digital-violet.html" },
+    "iqosheet-17-verified-vivid-terracotta": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-vivid-terracotta.webp", alt: "IQOS ILUMA i ONE, Vivid Terracotta", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-vivid-terracotta.html" },
+    "iqosheet-17-verified-midnight-black": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-midnight-black.webp", alt: "IQOS ILUMA i ONE, Midnight Black", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-midnight-black.html" },
+    "iqosheet-17-verified-spring-green": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-spring-green.webp", alt: "IQOS ILUMA i ONE, Spring Green", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-spring-green.html" },
+    "iqosheet-17-verified-electric-purple": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-17/variant-electric-purple.webp", alt: "IQOS ILUMA i ONE, Electric Purple", transparentBackground: true, sourceName: "IQOS (official brand site)", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-electric-purple.html" },
+  },
   // IQOSHEET-14 (Lambda i8) — owner quality-review pass (2026-09-03) found a cleaner 1000×1000
   // per-color studio source on the same lambdasmoke.com page (see VERIFIED_MEDIA's angle note
   // above), superseding the earlier note here that claimed a usable crop wasn't available.
@@ -1560,6 +1589,24 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
     // Japan only (jp.iqos.com, on sale from 2026-09-16).
     { code: "bold-ruby", label: "Bold Ruby", sourceUrl: "https://jp.iqos.com/iqos-iluma-i-bold-ruby" },
   ],
+  // Round list19 (17/10): ILUMA i ONE — iqos.com/ph FAQ "Available in 5 colors: Breeze Blue, Digital Violet, Vivid Terracotta,
+  // Midnight Black, Spring Green" + its own Electric Purple kit page. Breeze Blue is the Shipnity child (IQOSHEET-17-3).
+  "IQOSHEET-17": [
+    { code: "digital-violet", label: "Digital Violet", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-digital-violet.html" },
+    { code: "vivid-terracotta", label: "Vivid Terracotta", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-vivid-terracotta.html" },
+    { code: "midnight-black", label: "Midnight Black", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-midnight-black.html" },
+    { code: "spring-green", label: "Spring Green", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-spring-green.html" },
+    { code: "electric-purple", label: "Electric Purple", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-electric-purple.html" },
+  ],
+};
+
+/**
+ * A Shipnity child that is a DIFFERENT real model from the record its parent projects to (round list19, 17/10). It is kept
+ * off that record — reported in `excludedChildren`, never shown as one of its options — because one Shipnity parent
+ * projects to one record (`projectParent`). Key = Shipnity variant id; value = why.
+ */
+const OTHER_MODEL_CHILDREN: Record<string, string> = {
+  "IQOSHEET-17-1": "Pebble Grey is a colour of the original IQOS ILUMA ONE (SKU G0000592), not of the ILUMA i ONE this record is — its own page is a later item",
 };
 
 // Tier-1 disposable growth mission (2026-09-03) — real OKami24-channel review videos, each
@@ -1577,6 +1624,11 @@ export function buildVariantStructure(
 ): VariantStructureResult {
   const excludedChildren: ExcludedChild[] = [];
   const variantChildren = children.filter((c) => {
+    const otherModel = OTHER_MODEL_CHILDREN[c.shipnityVariantId];
+    if (otherModel) {
+      excludedChildren.push({ shipnityVariantId: c.shipnityVariantId, rawLabel: c.rawLabel, role: c.childRole, reason: otherModel });
+      return false;
+    }
     if (c.childRole === "variant") return true;
     const reasonByRole: Record<string, string> = {
       "accessory-component": "accessory/component, not a product option — never merged into flavor/color/resistance options",
@@ -1740,6 +1792,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "Pod-180": { name: "nexBar CLEAR 18K", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
   "IQOSHEET-16": { name: "IQOS ILUMA i PRIME", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
   "IQOSHEET-18": { name: "IQOS ILUMA i", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+  "IQOSHEET-17": { name: "IQOS ILUMA i ONE", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
 };
 
 function deriveDisplayName(rawName: string, brandId: string | null, shipnityId?: string): string {

@@ -125,6 +125,14 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // actually stocked — Shipnity's single ฿2900 cannot be trusted to apply to either specifically.
   // No official IQOS Thailand storefront exists to resolve this independently (th.iqos.com does
   // not resolve; iqos.com/th/* 404s) — this is not resolvable by further web research.
+  //
+  // RESOLVED round list19 (2026-10-17) — the block above is history. Friday ruled the record = IQOS ILUMA i ONE (the in-stock
+  // "Breeze Blue" child); the original-ILUMA-ONE child is kept off it (OTHER_MODEL_CHILDREN, active-catalog-to-product-master.ts).
+  // Price = Shipnity MAX "ราคาขาย" for the parent and for the Breeze Blue child (IQOSHEET-17-3): ฿2,900 in the Max product
+  // list read 2026-10-08 (_incoming/stock-api/shipnity-max-products-2026-10-08.json) and again on 2026-10-17 (the warehouse-
+  // listing chat). Owner rule for the warehouse products: price = the warehouse "ราคาขาย" (owner list item 41, BSOT §4
+  // "ใส่ตามคลัง"). The other Max children (Oasis Limited ฿3,200 · Bright) are not mapped to this record — no IQOS evidence yet.
+  "IQOSHEET-17": { sellingPrice: 2900, lastPriceReview: "2026-10-17" },
   // Catalog-intelligence mission (2026-09-02) — fourth media wave. Same pricing rule throughout:
   // a single, unambiguous `operationalSellingPrice` in active-catalog-source.ts with no conflicting
   // price anywhere else in the project. What changed for each of these is MEDIA plus, in three
