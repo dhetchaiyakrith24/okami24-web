@@ -107,7 +107,7 @@ export const relxProducts: Product[] = [
   {
     // Round p63 (owner 16/10, list item 63 — BSOT §4): customers search "relx infinity". RELX's global store (relxnow.com)
     // sells only the Infinity 2 Plus Device now (no page for the first Infinity or the Infinity 2). The warehouse lists it
-    // (Shipnity Max Pod-105, every colour "ไม่มีของ" on 08/10) — sku-map maps the codes; no price row = browse-only.
+    // (Shipnity Max Pod-105, every colour "ไม่มีของ" on 08/10) — sku-map maps the codes; price = warehouse ฿990 (owner item 69, 16/10 — legacy-price-approvals), shown with the sold-out state.
     id: "relx-infinity-2-plus",
     slug: "relx-infinity-2-plus",
     brandId: "relx",
