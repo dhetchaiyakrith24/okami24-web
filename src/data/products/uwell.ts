@@ -1605,12 +1605,12 @@ export const uwellProducts: Product[] = [
     specifications: [
       { key: "battery", label: "Battery", value: "900mAh built-in", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
       { key: "charge-time", label: "Charging", value: "USB-C, 2A fast charging", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
-      { key: "output", label: "Output", value: "Up to 25W", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "output", label: "Max output", value: "25W", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
       { key: "screen", label: "Display", value: "OLED: power adjustment, puff counter, three firing modes", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
       { key: "airflow", label: "Airflow", value: "Dual airflow system", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
       { key: "pod", label: "Pod capacity", value: "2.5mL (INT & FDA); 2mL (TPD)", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
-      { key: "pod-compat", label: "Pods", value: "Caliburn G3 integrated coil cartridges: FeCrAl meshed 0.6Ω / 0.9Ω / 1.2Ω", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
-      { key: "refill", label: "Refill", value: "Side refill or top refill — one type per kit", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "pod-compat", label: "Pod platform", value: "Caliburn G3 integrated coil cartridges: FeCrAl meshed 0.6Ω / 0.9Ω / 1.2Ω", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "refill", label: "Fill style", value: "Side refill or top refill — one type per kit", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
       { key: "materials", label: "Materials", value: "Cartridge PCTG, device aluminium alloy", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
       { key: "dimensions", label: "Dimensions", value: "115.5 × 24 × 13.9 mm", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
       { key: "weight", label: "Weight", value: "Approx. 47g", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
@@ -1644,7 +1644,8 @@ export const uwellProducts: Product[] = [
         image: { src: "/assets/products/caliburn-g3/story-in-the-box.webp", alt: "UWELL's Caliburn G3 picture — the INT / FDA kit contents", sourceName: "UWELL", sourceUrl: G3_OFFICIAL, width: 1206, height: 809 },
       },
     ],
-    compatibility: [{ type: "pod" as const, label: "Caliburn G3 pod", note: "Caliburn G3 integrated coil cartridges." }, usbC],
+    // Not `usbC` (its 5V/2A note): UWELL's G3 page says only "2A Fast Charging".
+    compatibility: [{ type: "pod" as const, label: "Caliburn G3 pod", note: "Caliburn G3 integrated coil cartridges." }, { type: "charging" as const, label: "USB-C", note: "2A fast charging." }],
     whoIsThisFor: [
       "You're after the standard Caliburn G3, not the G3 Pro, and want UWELL's full spec and every colour it comes in.",
     ],

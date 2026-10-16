@@ -257,7 +257,6 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     specifications: {
       battery: "900mAh ในตัว",
       "charge-time": "USB-C ชาร์จเร็ว 2A",
-      output: "สูงสุด 25W",
       screen: "จอ OLED ปรับวัตต์ ดูจำนวนพัฟ เลือกระบบยิงได้ 3 แบบ",
       airflow: "ระบบลมคู่",
       pod: "2.5mL (2mL ในเวอร์ชัน TPD)",
