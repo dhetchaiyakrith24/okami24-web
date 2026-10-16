@@ -62,8 +62,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (~5 min; pass a sha, never HEAD — HEAD = the build tree's own); worktree `node_modules` = a junction to the build tree's copy) ·
   【ห้ามแตะ】 product images + image map (image round) · every price file. Order = SEO_LANDSCAPE §9.6.
   DONE [ตรวจแล้ว]: batch 1 key list #499 · batches 2 + 5 #502 · #514 DRAG guide + /how-to-order · /shipping · /faq buying copy ·
-  #519 old /faq answers whose collapsed line ends flipped meaning.
-  IN PR (branch seo-keys-guides-a, chat 3): batches 4 + 6 = five Thai guides choosing-a-switch-pod · choosing-a-disposable ·
+  #519 old /faq answers whose collapsed line ends flipped meaning · #536 5f3bfa8a (checker PASS c6927648, round 2 of 3): batches 4 + 6 = five Thai guides choosing-a-switch-pod · choosing-a-disposable ·
   choosing-a-pod-flavor · comparing-voopoo-argus-models (title B) · checking-a-genuine-pod (fail = BSOT §12, links /warranty).
   Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them + no change on them (read-next boxes
   included). Tools chat 3 (`_incoming/seo-keys/`): `linkmap.js` (every sitemap page's links + title/meta/H1, `--diff` flags frozen
@@ -82,12 +81,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Kept on purpose (checker #536 noted): Zero Nano 500mAh (verified row, source salthub.com, no model URL) and every nexBar CLEAR 18K
   number (maker poster the owner supplied, no URL) — the guides repeat what those product pages already print; cut both if the
   owner wants strict maker-URL only. Switch guide body says "เครื่องระบบสวิตช์" (THAI_STYLE 10B line: "พอตเปลี่ยนหัว" = title, links, first explanation).
-  NEXT: merge the guides PR → batch 5 on pages that are not frozen (charging / can't-draw / blinking light by brand from maker
+  Second-pass key research DONE 16/10 = SEO_LANDSCAPE §9.7 (+ §9.6 rows 8–10) · cluster notes `_incoming/seo-keys/r2-*.md`.
+  NEXT (§9.6 row 9, pages not frozen): images + shop clips in the five new guides + the DRAG guide (owner 16/10 via the main chat:
+  section images from existing `public/assets/products` story/lineup/variant webp, Thai alt, placed at their section · section clips only
+  from the shop's own channels, the SECTION_CLIPS pattern in src/data/guides.ts, oEmbed-checked · tier B = before/after 390 + 1440) → IQOS
+  ILUMA lights/reset/charging guide from the official manual (§9.7) → batch 5 on pages that are not frozen (charging / can't-draw / blinking light by brand from maker
   manuals · pod/coil care · Marbo flavour names · Caliburn comparisons; m-switch-kit "เปลี่ยนหัว" = frozen → after 22/10) →
   second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
   head set (seo-auditor reads the paper set first; baseline `_incoming/seo-keys/seo-auditor-open.md` in the chat-2 worktree) →
   held links → FAQAccordion server HTML (answers render only when opened — shared by /faq, product and guide FAQs → whole-sitemap
-  scan, after 22/10) → product flavour FAQs. Owner list 63 open. Answered 16/10: 64 · 65 · 66 · 67 (§18 "Head copy", THAI_STYLE
+  scan, after 22/10) → product flavour FAQs. Answered 16/10: 63 (BSOT §4 — pages for unstocked models, own chat products-63; its keys = §9.7 NP rows) · 64 · 65 · 66 · 67 (§18 "Head copy", THAI_STYLE
   round 10B line, BSOT §12 "Authenticity").
   Line breaks: new copy must leave 0 latin-term / compound / negation / number-unit flags at 390 + 1440 (approved guides carry only
   single-word-last-line) — model names outside MODEL_NAMES (TFIT M Power · nexBAR 18K · RELX Creator · Muro Connector · QR code)
