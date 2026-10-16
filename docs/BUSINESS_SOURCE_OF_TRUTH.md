@@ -304,7 +304,8 @@ shop's PromptPay QR is recognised by the QR's reference (08/10) · quota shown f
   — the site must never say a code will be texted while this is off.
 
 **Cancellation / refund (owner 2026-09-06, answer 2):** a customer may cancel **before
-transferring**. **After the transfer there is no cancellation and no refund.** Say this on the
+transferring**. **After the transfer there is no cancellation and no refund** (a failed authenticity check is a
+claim, not a cancellation — see §12 "Authenticity"). Say this on the
 how-to-order page and on the order page next to the bank details.
 
 ---
