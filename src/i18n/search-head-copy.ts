@@ -413,6 +413,8 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round "SEO all keys" batches 4 + 6 (16/10, chat 3): thai-copy's head lines for the buying guides (SEO_LANDSCAPE §9.2 #3–#7).
   "choosing-a-switch-pod":
     "พอตเปลี่ยนหัว รุ่นไหนดี ยี่ห้อไหนดี เลือกตามความต้องการ ทั้งพัฟต่อหัว จอ โหมด กลิ่น และขนาด พร้อมตัวอย่าง M Switch · Zero · RELX Creator · Esko Bar Switch 20K",
+  "choosing-a-disposable":
+    "พอตใช้แล้วทิ้ง ยี่ห้อไหนดี ตัวไหนดี เลือกตามที่อยากได้ ทั้งพัฟ จอ โหมด สองกลิ่นในเครื่องเดียว และจำนวนกลิ่น พร้อมเทียบ Marbo 9K กับ 10K และ INFY กับ Esko Bar",
 };
 
 /** Row C19 — keyed by technology entry id. */
