@@ -36,6 +36,15 @@ export const SECTION_IMAGES = {
   joiwayF4Twin: { src: "/assets/products/joiway-f4/story-twin.webp", alt: "โปสเตอร์ของ JOIWAY: Joiway F4 มีปากดูดสองฝั่ง ฝั่งละหนึ่งกลิ่น", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 809 },
   tfitBattery: { src: "/assets/products/tfit-m-power-20k/story-battery.webp", alt: "โปสเตอร์ของ TFIT: M Power 20K ชาร์จผ่านสาย USB-C ที่ฐานเครื่อง", sourceName: "TFIT", sourceUrl: "https://www.tfitvape.com/", width: 1600, height: 792 },
   relxSmashGoPocket: { src: "/assets/products/relx-smash-go-12k/story-pocket.webp", alt: "ภาพของ RELX: Smash Go 12K ขนาดพอดีกระเป๋า และปากดูดที่ออกแบบให้สูบสบาย", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 1224, height: 1224 },
+  mBar15kSwap: { src: "/assets/products/m-bar-15k/story-swap.webp", alt: "โปสเตอร์ของ SALTHUB: หัวพอต M Switch Pod แบบใสกำลังเสียบเข้ากับตัวเครื่อง M Switch", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-bar-15k/", width: 1600, height: 988 },
+  mSwitchScreen: { src: "/assets/products/m-switch-kit/story-screen.webp", alt: "โปสเตอร์ของ SALTHUB: จอของ M Switch บอกระดับแบต สถานะกำลังชาร์จ และชาร์จเต็ม", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
+  zeroProModes: { src: "/assets/products/zero-pro/story-modes.webp", alt: "โปสเตอร์ของ SALTHUB: Zero Pro มี 3 โหมด Low-end · Mid-range · High-end", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/zero-pro/", width: 1600, height: 853 },
+  mSwitchLanyard: { src: "/assets/products/m-switch-kit/story-lanyard.webp", alt: "โปสเตอร์ของ SALTHUB: M Switch มาพร้อมสายคล้องคอ", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
+  caliburnG4ProOneTap: { src: "/assets/products/caliburn-g4-pro/story-one-tap.webp", alt: "ภาพจากคลิปของ UWELL: สลับโหมดบนจอทัชของ Caliburn G4 Pro", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro", width: 1600, height: 900 },
+  caliburnG5Battery: { src: "/assets/products/caliburn-g5/story-battery-v4.webp", alt: "โปสเตอร์ของ UWELL: แบต 1600mAh ของ Caliburn G5", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2413, height: 1131, transparent: true },
+  caliburnG4Airflow: { src: "/assets/products/caliburn-g4/story-airflow.webp", alt: "ภาพจากคลิปของ UWELL: ปุ่มเลื่อนปรับลมของ Caliburn G4", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4", width: 900, height: 1200 },
+  caliburnG4Pods: { src: "/assets/products/caliburn-g4/story-pods.webp", alt: "ตารางของ UWELL: หัวพอต GPP แบบเติมด้านบนและเติมด้านข้าง", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4", width: 1800, height: 1200 },
+  caliburnG5TripleTap: { src: "/assets/products/caliburn-g5/story-triple-tap.webp", alt: "โปสเตอร์ของ UWELL: สลับโหมด Caliburn G5 ด้วยการแตะตัวเครื่องสามครั้ง", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1050, height: 613 },
 } satisfies Record<string, StoryImage>;
 
 // Round SEO ข batch 4 (2026-09-21): publishedAt = the commit that first added all seven records
@@ -1348,6 +1357,7 @@ const allGuides: Guide[] = [
               "[Caliburn G4 Classic](/products/caliburn-g4-classic) ก็ไม่มีจอ ใช้ไฟ RGB 14 ดวงบอกระดับแบต และสูบได้ทั้งแบบดูดและกดปุ่ม",
               "[Caliburn G5 Lite](/products/caliburn-g5-lite) กับ G5 Lite SE ตัดจอสีกับระบบแตะของ G5 ออก ใช้ไฟ LED 4 ขีดบอกระดับแบต",
             ],
+            image: SECTION_IMAGES.caliburnG4ProOneTap,
           },
           {
             heading: "แบต",
@@ -1356,6 +1366,7 @@ const allGuides: Guide[] = [
               // Data round (2026-09-24): the charge-time line ("G4 ~30 min, G4 Mini ~58 min at 2A") is cut — neither figure is
               // on a UWELL page or manual (held article, fixed in the file only; it stays held).
             ],
+            image: SECTION_IMAGES.caliburnG5Battery,
           },
           {
             heading: "ช่องลม",
@@ -1363,6 +1374,7 @@ const allGuides: Guide[] = [
               "G4 Pro ปรับช่องลมได้ละเอียดแบบไม่มีขั้น G3 Pro ปรับได้เต็มช่วง G5 ปรับช่องลมด้านข้างแบบไม่มีขั้น ตั้งแต่ MTL ถึง RDL",
               "G5 Lite กับ G5 Lite SE ปรับได้สองทาง คือกลับด้านหัวพอตและปรับแบบไม่มีขั้น G4 Classic ก็ปรับแบบไม่มีขั้นและกลับด้านหัวพอตได้ ส่วน G4 กับ G4 Mini ใช้ปุ่มเลื่อนปรับลมคู่กับการกลับด้านหัวพอต",
             ],
+            image: SECTION_IMAGES.caliburnG4Airflow,
           },
           {
             heading: "ระบบหัวพอต",
@@ -1370,6 +1382,7 @@ const allGuides: Guide[] = [
               "G5 · G5 Lite · G5 Lite SE · G4 · G4 Mini และ G4 Classic ใช้หัวพอต GPP (G Pod Platform) ของ UWELL ส่วน G4 Pro ใช้ได้ทั้ง GPP และหัวพอต G3 สำหรับ G3 Pro หน้าสินค้าระบุหัวพอต G3 มาในกล่อง 2 หัว คือ 0.4 โอห์ม (3mL) กับ 0.9 โอห์ม (2.5mL)",
               "หัว GPP ที่มากับ G4 และ G4 Mini คือ 0.4 โอห์มกับ 0.9 โอห์ม ส่วน 0.6 โอห์มกับ 1.2 โอห์มซื้อแยก เรื่องดูแลหัวพอตอยู่ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
             ],
+            image: SECTION_IMAGES.caliburnG4Pods,
           },
         ],
       },
@@ -1441,6 +1454,7 @@ const allGuides: Guide[] = [
           "ARGUS G4 ใช้จอ HD 0.85 นิ้ว โชว์แบต วัตต์ ค่าโอห์ม สถานะล็อก และจำนวนพัฟ ส่วน G5 เป็นจอสี 0.85 นิ้ว",
           "G5 สลับโหมดด้วยระบบ Smart Triple-Tap Control คือแตะตัวเครื่องสามครั้ง ตามคู่มือของ UWELL ไม่มีปุ่ม ส่วน ARGUS G4 มีปุ่มเดียว กดสองครั้งติดกันเพื่อเปลี่ยนค่าโอห์ม กดสามครั้งเพื่อปรับวัตต์ และกดห้าครั้งเพื่อเข้าเมนู",
         ],
+        image: SECTION_IMAGES.caliburnG5TripleTap,
       },
       {
         heading: "ระบบหัวพอตและแนวการสูบ",
@@ -1457,6 +1471,7 @@ const allGuides: Guide[] = [
           "แบต ARGUS G4 1650mAh ส่วน G5 1600mAh ต่างกัน 50mAh ทั้งคู่ชาร์จผ่าน USB-C โดย ARGUS G4 สเปกระบุ 5V/2A ชาร์จเต็มในราว 45 นาที",
           "ชาร์จหนึ่งครั้งใช้ได้นานแค่ไหน ขึ้นกับวัตต์ที่ตั้งและสูบถี่แค่ไหน",
         ],
+        image: SECTION_IMAGES.caliburnG5Battery,
       },
       {
         heading: "เหมาะกับใคร",
@@ -2089,6 +2104,8 @@ const allGuides: Guide[] = [
           "ส่วนตระกูล Zero โปสเตอร์ Zero Pro ของ SALTHUB ระบุไว้ที่ 5,000 พัฟ ตระกูลนี้มีเรื่องอื่นให้เลือกมากกว่า อย่างโหมดและขนาดเครื่อง ตามหัวข้อด้านล่าง",
           "ตัวเลขพัฟคือจำนวนที่ผู้ผลิตระบุ จะสูบได้ใกล้ตัวเลขนั้นแค่ไหน ขึ้นกับวิธีสูบของแต่ละคน ส่วน Esko Bar Switch 20K กับ M Switch ต่างกันตรงไหนอีกบ้าง ร้านเทียบไว้ทีละข้อที่[Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch)",
         ],
+        image: SECTION_IMAGES.mBar15kSwap,
+        video: SECTION_CLIPS.mSwitch,
       },
       {
         heading: "อยากมีจอไว้ดูแบต",
@@ -2096,6 +2113,7 @@ const allGuides: Guide[] = [
           "รุ่นที่ผู้ผลิตเขียนเรื่องจอไว้ชัดมีสองรุ่น รุ่นแรกคือ RELX Creator มีจอพิกเซลที่โชว์หน้าอีโมจิ กดปุ่มครั้งเดียวก็ดูแบตได้ อีกรุ่นคือ M Switch Kit มีจอดิจิทัลบอกระดับแบต แสดงทั้งตอนกำลังชาร์จและเมื่อชาร์จเต็ม",
           "RELX Creator ขายเฉพาะตัวเครื่อง หัวพอตซื้อแยก ตัวเครื่องมีแบต 800mAh และกดปุ่มสองครั้งติดกันเพื่อสลับระหว่าง 15 วัตต์ในโหมด Normal กับ 25 วัตต์ในโหมด Boost",
         ],
+        image: SECTION_IMAGES.mSwitchScreen,
       },
       {
         heading: "อยากปรับแรงสูบได้",
@@ -2103,6 +2121,7 @@ const allGuides: Guide[] = [
           "ถ้าอยากสลับระหว่างสูบเบา ๆ กับสูบให้แรงขึ้นบนเครื่องเดียว Zero Pro มี 3 โหมด คือ Low-end · Mid-range · High-end ส่วน Esko Bar Switch 20K มีโหมด High กับ Low และ RELX Creator สลับได้ระหว่าง Normal กับ Boost ตามหัวข้อข้างบน",
           "เรื่องช่องลม M Switch Kit มีปุ่มเลื่อนปรับลม Esko Bar Switch 20K ปรับช่องลมได้ 3 ระดับ เครื่อง RELX Creator ก็ปรับช่องลมได้ ส่วน Zero Pro ลมเข้าทางด้านข้างของเครื่อง",
         ],
+        image: SECTION_IMAGES.zeroProModes,
       },
       {
         heading: "อยากได้กลิ่นให้เลือกเยอะ",
@@ -2117,6 +2136,7 @@ const allGuides: Guide[] = [
           "Zero Nano เป็นเครื่องระบบสวิตช์ตัวเล็กของตระกูล Zero แบต 500mAh และใช้หัว Zero Cartridge เดียวกับ Zero Pro ส่วน Zero Pro เป็นเครื่องทรงเพรียว หน้าตาคล้ายปากกา แบต 380mAh",
           "ถ้าอยากห้อยเครื่องไว้กับตัว M Switch Kit มีสายคล้องคอมาให้ด้วย ตามที่ SALTHUB ระบุ",
         ],
+        image: SECTION_IMAGES.mSwitchLanyard,
       },
       {
         heading: "อยากได้แบตอึด",
