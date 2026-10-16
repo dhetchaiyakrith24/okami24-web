@@ -74,8 +74,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   vs G4 mini ต่างกันยังไง เทียบ VOOPOO ARGUS 4 รุ่น" · genuine guide: INFY ¶ → /brands/infy · Esko Bar ¶ → pod-159 · existing FAQs that
   say a SALTHUB box has "QR + serial" (choosing-your-first-pod-system, open-system-vs-disposable, en/zh too) → today's photo check +
   link here. Left plain ON PURPOSE (they pushed SEO_BASELINE owner pages out of boxes — measured): brand links in the genuine guide,
-  category links in the switch / flavour guides, RELX Creator in the disposable guide, /brands/voopoo in the ARGUS guide, the
+  category links in the switch / flavour guides (the flavour guide keeps /products/pod-systems — that box did not move), RELX Creator in the disposable guide, /brands/voopoo in the ARGUS guide, the
   disposable guide's relatedProductSlugs.
+  Kept on purpose (checker #536 noted): Zero Nano 500mAh (verified row, source salthub.com, no model URL) and every nexBar CLEAR 18K
+  number (maker poster the owner supplied, no URL) — the guides repeat what those product pages already print; cut both if the
+  owner wants strict maker-URL only. Switch guide body says "เครื่องระบบสวิตช์" (THAI_STYLE 10B line: "พอตเปลี่ยนหัว" = title, links, first explanation).
   NEXT: merge the guides PR → batch 5 on pages that are not frozen (charging / can't-draw / blinking light by brand from maker
   manuals · pod/coil care · Marbo flavour names · Caliburn comparisons; m-switch-kit "เปลี่ยนหัว" = frozen → after 22/10) →
   second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
