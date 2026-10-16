@@ -51,8 +51,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   shots `_incoming/img-1610/shots/before-*` for every product of the round)). Nano Banana Pro Unlimited free in Chrome to ~19/10.
   LIVE [ตรวจแล้ว]: #501 coil-94/55/53 · #503 JOIWAY F4 · #505 ARGUS G4 · #512 SALTHUB Zero Pro + Nano · #516 JOIWAY F3 ·
   #522 Caliburn G5 Lite (+SE card) · #526 RELX Smash Go 12K (one master + scripted stripes) · #528 Caliburn G4 Classic 4 colours +
-  card + lineup (checker PASS 570cf13c; bottom = one shared silver silhouette). NEXT: argus-g4 gallery (hero/detail) → caliburn-g5
-  other colours → the rest of the round order. State, prompts, pipelines, page helpers, lessons to fold in =
+  card + lineup (checker PASS 570cf13c; bottom = one shared silver silhouette) · #533 DRAG 6 all-colours = two studio line-ups
+  4 + 3 standing in a row (checker PASS ec96207e; colour photos untouched). VOID 16/10 (already done / not drawn): argus-g4 gallery
+  (storyDetails page never renders role "detail" assets) · caliburn-g5 colours (UWELL renders since 02/10) · Drag S3/X3 (07/10) ·
+  row line-ups (argus-g4-mini 07/10, G3 Pro 02/10) · M Bar 10K anatomy size = component layout, next design round. NEXT (re-sweep
+  by eye 16/10): caliburn-g5-lite-se 8 colours → caliburn-g4-mini 11 colours → rest. State, prompts, pipelines, page helpers, lessons to fold in =
   `_incoming/img-1610/NEXT.md` (read it first) · prompts `_incoming/img-1610/prompts.md`.
 3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side chat 2, worktree `.claude/worktrees/seo-all-keys-2-c830d3`,
   own build tree `_incoming/wt-build` inside it + test server `next start -p 3414`; `_incoming/seo-keys/setup-build.sh <ref>` moves +
