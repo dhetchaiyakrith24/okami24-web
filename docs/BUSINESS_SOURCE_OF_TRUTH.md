@@ -395,7 +395,7 @@ differentiator.
   | 6 | Breaks after a while of use | **case by case, only inside the 7-day window** (owner's note: "รับภายใน 7 วันนับจากวันได้รับของ") |
   | 7 | Doesn't like it / changed mind / wants another flavour | not covered |
 
-  This list is the whole policy — do not add symptoms to it, and do not soften a "not covered"
+  This list + the "Authenticity" bullet below (owner 2026-10-16) is the whole policy — do not add symptoms to it, and do not soften a "not covered"
   line on the website.
 - **Authenticity (owner 2026-10-16, answering owner list item 67):** if the customer checks the
   item on the brand's own official authenticity page and it **fails**, they message LINE with the

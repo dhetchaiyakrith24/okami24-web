@@ -34,7 +34,7 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
     summary: [
       { label: "เคลมได้ภายใน", value: "7 วัน", note: `นับจากวันที่ได้รับของ · ส่งเรื่องทาง LINE ${line}` },
       { label: "ต้องมี", value: "คลิปตอนแกะกล่อง", note: "ไม่มีคลิป พิจารณาให้ไม่ได้" },
-      { label: "เคลมผ่านได้", value: "ของใหม่ตัวเดิม", note: "ไม่คืนเป็นเงินสด ยกเว้นเช็คของแท้ไม่ผ่าน · ตอบใน 3 วันทำการ" },
+      { label: "เคลมผ่านได้", value: "ของใหม่ตัวเดิม", note: "ไม่คืนเป็นเงินสด ยกเว้นกรณีเช็คของแท้ไม่ผ่าน · ตอบใน 3 วันทำการ" },
     ],
     window: { title: "เคลมได้ภายใน 7 วัน", body: <>ถ้าสินค้าที่ได้รับมีปัญหา แจ้งเราภายใน <B>7 วันนับจากวันที่ได้รับของ</B> เกินจากนี้เราพิจารณาให้ไม่ได้</> },
     video: {
@@ -58,13 +58,13 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
       title: "เคลมแล้วได้อะไร",
       p1: <B>เคลมผ่าน เราส่งของใหม่ตัวเดิมไปให้</B>,
       p2: "ถ้าตัวนั้นหมดสต๊อกพอดี เปลี่ยนเป็นตัวอื่นราคาเท่ากันให้เลือก",
-      p3: <><B>เราไม่คืนเป็นเงินสด ยกเว้นกรณีเดียว คือเช็คของแท้ไม่ผ่าน</B> ถ้าเช็คที่เว็บทางการของแบรนด์แล้วไม่ผ่าน ส่งผลเช็คพร้อมคลิปตอนแกะกล่องมาทางไลน์ภายใน 7 วัน เราตรวจสอบแล้วจะเปลี่ยนของใหม่หรือคืนเงินให้ — บอกไว้ตรงนี้ตั้งแต่แรก จะได้ไม่ต้องมาเถียงกันทีหลัง</>,
+      p3: <><B>เราไม่คืนเป็นเงินสด ยกเว้นกรณีเดียว คือสินค้าเช็คของแท้ไม่ผ่าน</B> บอกไว้ตรงนี้ตั้งแต่แรก จะได้ไม่ต้องมาเถียงกันทีหลัง ถ้าเช็คที่เว็บทางการของแบรนด์แล้วไม่ผ่าน ให้ส่งผลเช็คพร้อมคลิปตอนแกะกล่องมาทางไลน์ภายใน 7 วันนับจากวันที่ได้รับของ เราจะตรวจสอบให้ แล้วแจ้งกลับว่าจะเปลี่ยนของใหม่หรือคืนเงินให้</>,
     },
     steps: {
       title: "ขั้นตอนเคลม",
       items: [
         { title: "ทักไลน์ภายใน 7 วันหลังได้รับของ", body: <>ทักไลน์ <LineLink /> ระบุว่าต้องการเคลม</> },
-        { title: "ส่งหลักฐาน", body: "เลขคำสั่งซื้อ + คลิปตอนแกะกล่อง + รูปหรือคลิปอาการที่เป็น (เช็คของแท้ไม่ผ่าน แนบภาพผลเช็คแทน)" },
+        { title: "ส่งหลักฐาน", body: "เลขคำสั่งซื้อ + คลิปตอนแกะกล่อง + รูปหรือคลิปอาการที่เป็น ถ้าเป็นกรณีเช็คของแท้ไม่ผ่าน ให้แนบภาพผลเช็คแทนรูปอาการ" },
         { title: "รอแอดมินพิจารณา ไม่เกิน 3 วันทำการ", body: "ได้คำตอบทางไลน์ว่าเคลมผ่านหรือไม่ผ่าน และเพราะอะไร" },
         { title: "เคลมผ่าน ส่งของกลับมาให้เรา", body: "ต้องส่งของกลับทุกกรณี แอดมินแจ้งที่อยู่ให้ทางไลน์ตอนที่เคลมผ่านแล้ว ไม่ต้องส่งไปก่อน แพ็กให้แน่นเหมือนตอนที่ได้รับ" },
         { title: "ค่าส่ง — ขากลับคุณออก ขาไปใหม่เราออก", body: "ค่าส่งของกลับมาหาเรา ลูกค้าออกเอง ส่วนของใหม่ที่เราส่งไปให้ เราออกค่าส่งเอง ไม่คิดเพิ่ม" },
@@ -86,7 +86,7 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
     summary: [
       { label: "Claim window", value: "7 days", note: `From the day you receive it · submit on LINE ${line}` },
       { label: "Required", value: "An unboxing video", note: "Without it we can’t consider the claim" },
-      { label: "If approved", value: "A new unit of the same item", note: "No cash refunds, except a failed authenticity check · answer within 3 working days" },
+      { label: "If approved", value: "A new unit of the same item", note: "No cash refunds unless the item fails the authenticity check · answer within 3 working days" },
     ],
     window: { title: "Claim within 7 days", body: <>If there’s a problem with what you received, tell us within <B>7 days of the date you received it.</B> After that we can’t consider the claim.</> },
     video: {
@@ -110,13 +110,13 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
       title: "What you get if a claim is approved",
       p1: <B>If the claim is approved, we send you a new unit of the same item.</B>,
       p2: "If that item happens to be out of stock, you can pick something else at the same price.",
-      p3: <><B>We don’t give cash refunds, with one exception: a failed authenticity check.</B> If the item fails the check on the brand’s official website, send us the result and your unboxing video on LINE within 7 days; once we’ve checked it, we replace the item or refund you — we say so up front so there’s nothing to argue about later.</>,
+      p3: <><B>We don’t give cash refunds, with one exception: an item that fails the authenticity check.</B> We say this up front so there’s nothing to argue about later. If the item fails the check on the brand’s official website, send us the result and your unboxing video on LINE within 7 days of receiving it. We’ll look into it, then let you know whether we’ll replace the item or refund you.</>,
     },
     steps: {
       title: "How to make a claim",
       items: [
         { title: "Message us on LINE within 7 days of receiving it", body: <>Message LINE <LineLink /> and say you want to make a claim.</> },
-        { title: "Send your evidence", body: "Your order number + the unboxing video + a photo or video of the fault (for a failed authenticity check, a screenshot of the result instead)." },
+        { title: "Send your evidence", body: "Your order number + the unboxing video + a photo or video of the fault. If the item failed the authenticity check, send a screenshot of the result instead of the fault photo." },
         { title: "An admin reviews it, within 3 working days", body: "You get an answer on LINE saying whether the claim is approved or not, and why." },
         { title: "If approved, send the item back to us", body: "The item always has to come back. An admin sends you the address on LINE once the claim is approved — don’t send it before that. Pack it as securely as it arrived." },
         { title: "Shipping — you pay to send it back, we pay to send the replacement", body: "You cover the cost of sending the item back to us. We cover the shipping on the replacement we send you, at no extra charge." },
@@ -162,13 +162,13 @@ export const CLAIMS: ServiceCopy<ClaimsCopy> = {
       title: "售后通过后能得到什么",
       p1: <B>售后通过，我们会寄一件同款新品给您。</B>,
       p2: "如果该商品刚好缺货，可以另选一件同价位的商品。",
-      p3: <><B>我们不退现金，唯一的例外是正品验证未通过。</B>如果在品牌官网验证未通过，请在 7 天内通过 LINE 发来验证结果和开箱视频；我们核实后会为您换新或退款 —— 事先在这里说清楚，免得日后争执。</>,
+      p3: <><B>我们不退现金，唯一的例外是商品未通过正品验证。</B>事先在这里说清楚，免得日后争执。如果商品在品牌官网验证未通过，请在收货之日起 7 天内通过 LINE 发来验证结果和开箱视频；我们核实后，会告知您是换新还是退款。</>,
     },
     steps: {
       title: "售后流程",
       items: [
         { title: "收货后 7 天内通过 LINE 联系我们", body: <>通过 LINE <LineLink /> 联系我们，说明要申请售后。</> },
-        { title: "提交凭证", body: "订单编号 + 开箱视频 + 故障情况的照片或视频（正品验证未通过时，改为附上验证结果截图）。" },
+        { title: "提交凭证", body: "订单编号 + 开箱视频 + 故障情况的照片或视频。如属正品验证未通过，请改为附上验证结果截图。" },
         { title: "管理员审核，不超过 3 个工作日", body: "我们会在 LINE 上答复售后是否通过，以及原因。" },
         { title: "通过后，把商品寄回给我们", body: "任何情况下都需要寄回商品。售后通过后，管理员会在 LINE 上告知地址 —— 请不要提前寄出。请像收到时那样包装牢固。" },
         { title: "运费 —— 寄回由您承担，新品寄出由我们承担", body: "把商品寄回给我们的运费由客户自付；我们寄出的新品运费由我们承担，不另收费。" },

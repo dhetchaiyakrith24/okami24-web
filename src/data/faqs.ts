@@ -64,7 +64,7 @@ export const siteFaqs: SiteFAQ[] = [
     category: "ordering",
     question: "What if something’s wrong with my order when it arrives?",
     answer:
-      "You can claim with us within 7 days of receiving it, and an unboxing video is required as evidence. If the claim is approved we send you a new one of the same item — or, if that’s out of stock, another item at the same price. There’s no cash refund, except when the item fails the authenticity check on the brand’s official website — then, once we’ve checked it, we replace it or refund you. The claims page lists exactly which problems are covered.",
+      "You can claim with us within 7 days of receiving it, and an unboxing video is required as evidence. If the claim is approved we send you a new one of the same item — or, if that’s out of stock, another item at the same price. There’s no cash refund, with one exception: an item that fails the authenticity check on the brand’s official website. In that case, send us the result and your unboxing video on LINE; once we’ve looked into it, we’ll let you know whether we replace it or refund you. The claims page lists exactly which problems are covered.",
     action: { href: "/warranty", labelKey: "warranty" },
   },
   {
