@@ -8520,16 +8520,16 @@
   "fileName": "variant-iqosheet-15-verified-riviera-pearl.webp"
  },
  {
-  "source": "_incoming/img-1610/b15/out/k-D.png",
+  "source": "_incoming/img-1610/b17/out/k-C2.png",
   "slug": "relx-infinity-2-plus",
   "role": "card",
-  "note": "round img-1610 16/10 - card = studio re-shoot (checker #540 r1: the RELX store image filled 68% of the card)",
+  "note": "round img-1610 16/10 night - card-v3 = studio re-shoot with the real cap (checker #540 r2 taste note: card-v2 cap was plain glossy black with a shallow dimple + a thin seam line on the left)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan - no credits), studio re-shoot of RELX's front render on a mid-grey sweep; prompt: same straight front view, cap solid opaque glossy black with its round dimple, no lettering; 4 renders, D picked (A/B see-through cap, C dented edge); keyed by _incoming/img-1610/b14/key2.js (EDGEFOOT=1 SH=50 T=16 MW=4), trimmed, fit 940x1175 in 1000x1250, webp q82",
-   "reference": "RELX's own front render relx-infinity-2-plus-vape-device-black-sapphire-front.png (1025 px, relxnow.com Shopify CDN) - input _incoming/img-1610/b15/in/black-sapphire.png; render _incoming/img-1610/b15/out/r-D.png; notes _incoming/img-1610/b15/SOURCE.md"
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan - no credits), studio re-shoot of RELX's front render on a mid-grey sweep; prompt: same straight front view, solid opaque glossy black cap whose front is almost filled by a round satin medium-grey disc (thin black rim, soft V-shaped groove at the top centre), no seam lines; 4 renders in 2 rounds, C picked (A/B disc near-white and oversized, D disc too light); keyed by _incoming/img-1610/b14/key2.js (EDGEFOOT=1 SH=50 T=16 MW=4) then _incoming/img-1610/b17/fixedge.js (straight body sides, rounded base read from the render per row), trimmed, fit 940x1175 in 1000x1250, webp q82",
+   "reference": "RELX's own front render relx-infinity-2-plus-vape-device-black-sapphire-front.png (1025 px, relxnow.com Shopify CDN) - input _incoming/img-1610/b15/in/bs-916.png; render _incoming/img-1610/b17/out/r-C.png; notes _incoming/img-1610/b17/SOURCE.md"
   },
-  "fileName": "card-v2.webp",
-  "replaces": "/assets/products/relx-infinity-2-plus/card.webp"
+  "fileName": "card-v3.webp",
+  "replaces": "/assets/products/relx-infinity-2-plus/card-v2.webp"
  },
  {
   "source": "_incoming/p63/relx/src/black-sapphire.png",
