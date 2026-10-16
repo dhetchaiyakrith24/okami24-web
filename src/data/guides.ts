@@ -2244,6 +2244,98 @@ const allGuides: Guide[] = [
     ],
     relatedProductSlugs: ["tfit-m-power-20k", "m-bar-10k", "relx-smash-go-12k"],
   },
+  {
+    // Round "SEO all keys" batch 4 (SEO_LANDSCAPE §9.2 #3 — "พอตกลิ่นไหนดี · มีกลิ่นอะไรบ้าง · ไม่เย็น"): flavour names grouped by
+    // the words in the name only (never a taste or popularity claim). Lists = flavorVariants of each product file; Muro + INFY
+    // lists come from retailer pages, so the text says "กลิ่นที่หน้าสินค้ารวมไว้". INFY 20K / JOIWAY F4 links wait for 22/10.
+    id: "choosing-a-pod-flavor",
+    slug: "choosing-a-pod-flavor",
+    title: "พอตกลิ่นไหนดี เลือกจากสายที่ชอบ เย็น ผลไม้ ชา หรือยาสูบ",
+    dek: "พอตกลิ่นไหนดี ไม่มีคำตอบเดียว เริ่มจากสายที่ชอบก่อน เย็น องุ่น ผลไม้ ชาและขนม หรือยาสูบ แล้วดูว่ารุ่นไหนมีกลิ่นนั้น พร้อมวิธีดูจากชื่อว่ากลิ่นไหนเย็น",
+    category: "buying-guide",
+    readingTimeMin: 6,
+    publishedAt: "2026-10-16",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "พอตกลิ่นไหนดี เริ่มจากสายที่ชอบก่อน",
+        paragraphs: [
+          "พอตกลิ่นไหนดี ไม่มีคำตอบเดียว เพราะแต่ละคนชอบรสชาติไม่เหมือนกัน กลิ่นที่คนหนึ่งว่าหอม อีกคนอาจรู้สึกว่าหวานไปหรือเย็นไป ร้านเราจึงแนะนำให้เลือกสายที่ชอบก่อน ว่าชอบเย็น ชอบองุ่นหรือผลไม้ ชอบแนวชาและขนม หรือชอบยาสูบ แล้วค่อยดูว่ารุ่นไหนมีกลิ่นในสายนั้น",
+          "สายในบทความนี้แบ่งจากคำในชื่อกลิ่น ชื่อกลิ่นเขียนเป็นภาษาอังกฤษตรงกับตัวเลือกบนหน้าสินค้า ชื่อที่มีทั้งผลไม้และคำที่สื่อถึงความเย็น เราจัดไว้สายเย็น ส่วนชื่อที่มีผลไม้คู่กับขนม เราจัดไว้สายผลไม้ และเราเทียบได้จากชื่อเท่านั้น ไม่ได้เทียบรสของแต่ละกลิ่น",
+          "ถ้าใช้ Marbo อยู่ กลิ่นของ M Bar 9K · M Bar 10K และหัวพอต M Switch Pod แยกตามสายไว้แล้วใน [Marbo กลิ่นไหนดี](/guides/choosing-a-marbo-flavor) บทความนี้จึงเล่าถึงรุ่นอื่นเป็นหลัก รายชื่อกลิ่นที่ยกมาคือกลิ่นที่หน้าสินค้าของแต่ละรุ่นรวมไว้ ไม่ได้แปลว่าทุกกลิ่นมีของอยู่ตอนนี้ อยากรู้ว่ากลิ่นไหนมีของ ทักถามทางไลน์ @okm24 ได้",
+        ],
+      },
+      {
+        heading: "สายเย็น: ชื่อที่มี Ice · Mint · Menthol · Blast · Freeze",
+        paragraphs: [
+          "จากที่ร้านเจอ กลิ่นเย็นเป็นสายที่ลูกค้าถามถึงบ่อย และในสายนี้ยังแยกได้อีกสองแบบ แบบแรกคือชื่อที่มีแค่ Mint หรือ Menthol ไม่มีผลไม้อยู่ในชื่อ อย่าง Double Mint ใน [TFIT M Power 20K](/products/tfit-m-power-20k) และ [RELX Smash Go 12K](/products/relx-smash-go-12k) หรือ Mint ใน [MOOOD Monster 14K](/products/mood-monster-14k) ส่วนคนที่มองหากลิ่นเมนทอล มี Extreme Menthol ใน [Muro SC 8000](/products/muro-sc-8000) และ Menthol Freeze ใน INFY 20K",
+          "แบบที่สองคือชื่อที่มีผลไม้คู่กับคำที่สื่อถึงความเย็น สองรุ่นที่มีกลิ่นแบบนี้ให้เลือกหลายกลิ่นคือ [JOIWAY F3](/products/joiway-f3) เช่น Lychee Ice · Green Apple Ice · Hokkaido Melon Ice และ [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) เช่น Mango Ice · Peach Ice · Pomegranate Ice",
+          "ชื่อที่ควรระวังคือชื่อที่มีคำว่า Ice Cream อย่าง Vanilla Ice Cream ใน [Muro Connector 20K](/products/muro-connector-20k) คำนี้หมายถึงไอศกรีม ไม่ได้บอกความเย็น เราจึงจัดไว้สายชา นม และขนม",
+        ],
+      },
+      {
+        heading: "ไม่ชอบเย็น เลือกกลิ่นแบบไหนดี",
+        paragraphs: [
+          "ถ้าไม่ชอบความเย็น ให้เลี่ยงชื่อที่มี Ice · Mint · Menthol · Blast หรือ Freeze ไว้ก่อน แล้วเลือกจากสายองุ่น ผลไม้ ชาและขนม หรือยาสูบ ที่ชื่อไม่มีคำเหล่านี้ แต่เพราะเราเทียบได้จากชื่อเท่านั้น ถ้าอยากรู้ว่ากลิ่นที่สนใจให้ความรู้สึกเย็นหรือเปล่า ทักถามร้านทางไลน์ @okm24 ก่อนได้",
+        ],
+      },
+      {
+        heading: "สายองุ่น: ชื่อที่มี Grape",
+        paragraphs: [
+          "องุ่นเป็นอีกสายที่ลูกค้าที่ร้านถามถึงบ่อย และหลายรุ่นก็มีองุ่นให้เลือกมากกว่าหนึ่งแบบ คนที่หาองุ่นเคียวโฮ ชื่อในรายการคือ Kyoho Grape ซึ่งมีใน MOOOD Monster 14K · Muro Connector 20K และ INFY 20K ส่วนองุ่นคู่กับลิ้นจี่ ชื่อในรายการคือ Grape Lychee มีใน RELX Smash Go 12K · MOOOD Monster 14K และ INFY 20K",
+          "ชื่อที่มีองุ่นคู่กับอย่างอื่นก็อยู่สายนี้ เช่น Grape Apple กับ Sakura Grape ใน TFIT M Power 20K · Funta Grape กับ Aloe Grape ใน JOIWAY F3 และ Grape Aloe ในหัวพอต [Zero Cartridge](/products/zero-cartridge) ส่วน Grape Ice ซึ่งมีทั้งใน JOIWAY F3 และ WOTOFO nexBAR 18K เราจัดไว้สายเย็น",
+          "อีกชื่อที่ควรรู้คือ Grapefruit ใน Zero Cartridge ชื่อมีคำว่า Grape ก็จริง แต่เป็นผลไม้ตระกูลส้ม ไม่ใช่องุ่น เราจึงจัดไว้สายผลไม้",
+        ],
+      },
+      {
+        heading: "สายผลไม้",
+        paragraphs: [
+          "ชื่อที่เป็นผลไม้ และไม่มีคำที่สื่อถึงความเย็นหรือ Grape อยู่ในสายนี้ ใครมองหากลิ่นแตงโม มี Watermelon ในหลายรุ่น เช่น TFIT M Power 20K · RELX Smash Go 12K · MOOOD Monster 14K และหัวพอต [Muro 3ML](/products/muro-3ml)",
+          "กลิ่นพีช มี Peach ใน Zero Cartridge · Hokkaido Peach ใน JOIWAY F3 และ Peach Strawberry ใน RELX Smash Go 12K ส่วนกลิ่นลิ้นจี่ มี Lychee ใน MOOOD Monster 14K และ Zero Cartridge และกลิ่นมะม่วง มี Green Mango ใน RELX Smash Go 12K และ Mango ใน Zero Cartridge",
+          "ชื่อที่มีผลไม้คู่กับขนม อย่าง Strawberry Ice Cream ใน INFY 20K หรือ Blueberry Bubblegum ใน Muro 3ML ก็อยู่สายนี้ ถ้าชอบแนวหวานแบบขนม ลองดูหัวข้อถัดไปประกอบกันได้",
+        ],
+      },
+      {
+        heading: "สายชา นม และขนม",
+        paragraphs: [
+          "ชื่อที่บอกเครื่องดื่มหรือขนมเป็นหลักอยู่ในสายนี้ ฝั่งชามี Thai Tea กับ Lemon Tea ใน JOIWAY F3 · Oolong Tea กับ Fruit Tea ใน Zero Cartridge และ Green Tea ใน Muro Connector 20K คนที่หากลิ่นชาไทย ชื่อในรายการคือ Thai Tea",
+          "ฝั่งนมมี Thai Ovaltine ใน JOIWAY F3 และ Yakult ใน Zero Cartridge · Muro SC 8000 กับ Muro Connector 20K ส่วน INFY 20K มี Milk Tea Cha กับ Matcha",
+          "ฝั่งขนมมี American Cookies · Hokkaido Ice Cream · Rainbow Candy ใน JOIWAY F3 · Rainbow Candy ใน TFIT M Power 20K และ Vanilla Ice Cream กับ Taro Ice Cream ใน Muro Connector 20K",
+        ],
+      },
+      {
+        heading: "สายยาสูบ",
+        paragraphs: [
+          "สำหรับคนที่ชอบรสแนวยาสูบมากกว่าผลไม้หรือของหวาน ในรุ่นที่บทความนี้ยกมา ชื่อที่บอกตรง ๆ ว่าเป็นยาสูบมีสามกลิ่น คือ Virginia Tobacco ใน JOIWAY F3 · Caramel Tobacco ใน WOTOFO nexBAR 18K และ Cigar ในหัวพอต Zero Cartridge",
+        ],
+      },
+      {
+        heading: "แนวอื่น",
+        paragraphs: [
+          "ชื่อที่ไม่ได้บอกผลไม้ ความเย็น ชา หรือยาสูบตรง ๆ อยู่ตรงนี้ อย่าง Cola ที่มีในหลายรุ่น เช่น RELX Smash Go 12K · MOOOD Monster 14K และ Zero Cartridge หรือ Mineral Water ใน Muro 3ML · Muro SC 8000 · Muro Connector 20K และ INFY 20K",
+          "JOIWAY F3 ยังมีชื่อที่ฟังเป็นเครื่องดื่มอีก อย่าง Golden Energy กับ Japanese Sake ส่วน Double Shisha ใน Muro 3ML ชื่อไม่ได้บอกว่ารสอะไร เราจึงจัดไว้ตรงนี้",
+        ],
+      },
+      {
+        heading: "ยังเลือกไม่ได้ หรืออยากเปลี่ยนกลิ่นบ่อย",
+        paragraphs: [
+          "ถ้าตัดสินใจไม่ได้ระหว่างสองกลิ่น JOIWAY F4 มาเป็นคู่กลิ่นในเครื่องเดียว น้ำยาสองกลิ่นแยกกันอยู่คนละถังน้ำยา หมุนปากดูดเพื่อสลับกลิ่น เช่น Grape Ice + Lychee Ice หรือ Rainbow Candy + Strawberry Ice",
+          "ถ้าอยากเปลี่ยนกลิ่นโดยไม่ต้องเปลี่ยนเครื่อง เครื่องที่ใช้หัวพอตบรรจุสำเร็จช่วยได้ กลิ่นอยู่ที่หัวพอต ส่วนตัวเครื่องใช้ตัวเดิม อย่างหัวพอต Zero Cartridge ที่ใช้กับเครื่อง Zero Pro และ Zero Nano ของ SALTHUB ข้อดีข้อเสียเมื่อเทียบกับพอตใช้แล้วทิ้ง อ่านได้ที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)",
+          "ถ้าใช้[พอตซิสเต็ม](/products/pod-systems)ที่เติมน้ำยาเอง กลิ่นไม่ได้ผูกกับเครื่อง เลือกจากน้ำยาได้ตามแนวที่ชอบ ลักษณะของแต่ละแนวดูได้ที่ [ผลไม้](/e-liquid/fruit) · [เมนทอลและความเย็น](/e-liquid/menthol-cooling) · [ของหวาน](/e-liquid/dessert) · [เครื่องดื่ม](/e-liquid/beverage) และ [สไตล์ยาสูบ](/e-liquid/tobacco-style) ก่อนเปลี่ยนไปน้ำยากลิ่นใหม่ ควรรู้ไว้ว่า UWELL แนะนำไม่ให้ใช้คอยล์ตัวเดียวกับน้ำยาหลายกลิ่น วิธีเติมทีละขั้นอยู่ที่ [เติมน้ำยาพอตยังไง](/guides/refilling-a-pod)",
+          "อีกเรื่องที่ร้านเจอ คือพอสูบกลิ่นเดิมไปสักพัก ลิ้นจะเริ่มชิน จนรู้สึกว่ารสไม่ชัดเท่าตอนแรก ทั้งที่เครื่องยังทำงานปกติ ถ้าเป็นแบบนี้ ลองสลับไปกลิ่นในสายอื่นบ้างก็ได้ อ่านเรื่องนี้ต่อได้ที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
+          "ถ้าอยากเห็นตัวอย่างก่อนเลือก คลิปของร้านในหน้านี้คัดกลิ่นพอตใช้แล้วทิ้งมาเล่าไว้ 5 กลิ่น ส่วนรุ่นทั้งหมดดูได้ในหมวด [พอตใช้แล้วทิ้ง](/products/disposables) และ [หัวพอต](/products/pods-cartridges)",
+        ],
+      },
+    ],
+    faq: [
+      { question: "พอตกลิ่นไหนดี", answer: "แต่ละคนชอบรสชาติไม่เหมือนกัน จึงไม่มีกลิ่นเดียวที่ถูกใจทุกคน ร้านแนะนำให้เลือกสายที่ชอบก่อน ชอบเย็นดูชื่อที่มี Ice · Mint · Menthol ชอบผลไม้ดูชื่อผลไม้ ชอบแนวชาและขนมดูชื่อที่มี Tea · Ice Cream · Cookies ส่วนคนที่ชอบยาสูบดูชื่อที่มี Tobacco หรือ Cigar แล้วค่อยดูว่ารุ่นไหนมีกลิ่นนั้น" },
+      { question: "พอตมีกลิ่นอะไรบ้าง", answer: "แต่ละรุ่นมีไม่เท่ากัน เช่น TFIT M Power 20K มี 10 กลิ่น JOIWAY F3 มี 30 กลิ่น และ WOTOFO nexBAR 18K มี 31 กลิ่น กลิ่นทั้งหมดของแต่ละรุ่นดูได้ที่ตัวเลือกบนหน้าสินค้า ถ้าแบ่งเป็นสาย จะมีสายเย็น สายองุ่น สายผลไม้ สายชา นม และขนม สายยาสูบ และแนวอื่น" },
+      { question: "พอตกลิ่นไหนไม่เย็น", answer: "ดูจากชื่อก่อน ชื่อที่มี Ice · Mint · Menthol · Blast หรือ Freeze เป็นสายเย็น ถ้าไม่ชอบเย็น ให้เลือกจากชื่อที่ไม่มีคำเหล่านี้ อย่างสายองุ่น ผลไม้ ชา หรือยาสูบ ส่วนชื่อที่มีคำว่า Ice Cream หมายถึงไอศกรีม ไม่ได้บอกความเย็น เราเทียบได้จากชื่อเท่านั้น ถ้าไม่แน่ใจ ทักถามร้านทางไลน์ @okm24 ได้" },
+      { question: "พอตกลิ่นยาสูบมีไหม", answer: "มีในบางรุ่น ในรุ่นที่บทความนี้ยกมา ชื่อที่บอกตรง ๆ ว่าเป็นยาสูบคือ Virginia Tobacco ใน JOIWAY F3 · Caramel Tobacco ใน WOTOFO nexBAR 18K และ Cigar ในหัวพอต Zero Cartridge ถ้าใช้พอตซิสเต็มที่เติมน้ำยาเอง เลือกน้ำยาแนวสไตล์ยาสูบได้อีกทาง กลิ่นไหนมีของตอนนี้ ทักถามทางไลน์ @okm24 ได้" },
+      { question: "พอตกลิ่นชาไทยมีไหม", answer: "ชื่อในรายการคือ Thai Tea ใน JOIWAY F3 ส่วนแนวชาอื่น มี Lemon Tea ใน JOIWAY F3 และ MOOOD Monster 14K · Oolong Tea กับ Fruit Tea ใน Zero Cartridge และ Green Tea ใน Muro Connector 20K" },
+    ],
+    reviewVideo: { videoId: "UNPLCyZX0qY", title: "TOP 5 กลิ่นยอดนิยมของพอตใช้แล้วทิ้ง 2026", channelName: "OKAMI", publishedAt: "2026-05-06" },
+  },
 ];
 
 /** The public articles — everything outside HELD_GUIDE_IDS. */
