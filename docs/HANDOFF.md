@@ -69,8 +69,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   posters (`image` on GuideSection/ArticleSubsection → ArticleFigure; SECTION_IMAGES in guides.ts, same files/credits as the product
   records, Thai alt) in the DRAG · disposable · ARGUS · switch · Caliburn · ARGUS-vs-G5 guides + clips argusG4 (ARGUS guide) and mSwitch
   (switch guide). Genuine guide: no maker image of a check exists → none. DRAG: no clip on the three shop channels (searched 16/10).
-  Dropped on sight: Caliburn G4 airflow still (big light close-up), GPP pod chart (white block). Checker note: the G5 triple-tap alt
-  says "tap three times" but the picture only shows a finger on the body → reword the alt in the next guide batch.
+  Dropped on sight: Caliburn G4 airflow still (big light close-up), GPP pod chart (white block) · #551 0e6c8633 (checker PASS
+  6f100ad1) = posters in esko-bar-switch-vs-m-switch · fixing-no-draw · refilling-a-pod · disposable-vs-switch-pod + a Caliburn G3 line
+  with its link in comparing-caliburn-models + a DRAG X line in the DRAG guide (link HELD: it moved the DRAG guide into /products/pod-kits'
+  box over choosing-your-first-pod-system, SEO_BASELINE row 17 — add after 22/10 and re-run linkmap) + G5 triple-tap alt fixed ·
+  #553 32d86d85 (checker r1 FAIL → r3 PASS 4a821ed9) = new Thai guide /guides/iqos-iluma-i-reset-and-charging (§9.7 row 1; ILUMA i +
+  i PRIME; iqos.com support pages only, notes `_incoming/seo-images/iqos-research.md`; reset steps = ILUMA i only, no i PRIME page found).
+  The MTL / RDL / DTL clip `_s48AaDCtf4` is already the record clip of understanding-mtl-vs-dtl — nothing to place.
   Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them + no change on them (read-next boxes
   included). Tools chat 3 (`_incoming/seo-keys/`): `linkmap.js` (every sitemap page's links + title/meta/H1, `--diff` flags frozen
   pages) · `wbfix-gen.tsx` + `wb-driver2.js` (word-swap / seed candidates measured in the real element, FAQ answers opened) ·
@@ -89,11 +94,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   number (maker poster the owner supplied, no URL) — the guides repeat what those product pages already print; cut both if the
   owner wants strict maker-URL only. Switch guide body says "เครื่องระบบสวิตช์" (THAI_STYLE 10B line: "พอตเปลี่ยนหัว" = title, links, first explanation).
   Second-pass key research DONE 16/10 = SEO_LANDSCAPE §9.7 (+ §9.6 rows 8–10) · cluster notes `_incoming/seo-keys/r2-*.md`.
-  NEXT (§9.6 row 9, pages not frozen): posters in the other guides with none (Thai-only ones first; a translated guide needs the
-  image in its th/en/zh arrays with alt per locale; skip white charts and posters whose product page swaps a phone version) · clip
-  `_s48AaDCtf4` "MTL / RDL / DTL ต่างกันยังไง?" (OKM YARZ, 2026-09-19, oEmbed-checked 16/10) not placed yet → understanding-mtl-vs-dtl
-  (translated) · link /products/drag-x (products-63, live) from the DRAG guide → IQOS
-  ILUMA lights/reset/charging guide from the official manual (§9.7) → batch 5 on pages that are not frozen (charging / can't-draw / blinking light by brand from maker
+  NEXT (§9.6 row 9, pages not frozen): posters in the translated guides (th/en/zh arrays, alt per locale; skip white charts and
+  posters whose product page swaps a phone version) → batch 5 on pages that are not frozen (charging / can't-draw / blinking light by brand from maker
   manuals · pod/coil care · Marbo flavour names · Caliburn comparisons; m-switch-kit "เปลี่ยนหัว" = frozen → after 22/10) →
   second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
   head set (seo-auditor reads the paper set first; baseline `_incoming/seo-keys/seo-auditor-open.md` in the chat-2 worktree) →
@@ -105,25 +107,24 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   split; wording only (thai-typography.ts is locked).
   Tool (owner 16/10): skill `content-strategy` (#508) = the way to plan pillars, clusters, buyer stages and the article order for the
   remaining batches — its OKami24 rules at its end (keymap = SEO_LANDSCAPE §0).
-3p OPEN ROUND "p63 searched models" = `docs/rounds/รอบลงสินค้า-63-16-10.txt` · side chat products-63-2, worktree
-  `.claude/worktrees/sad-nash-5bf72f` (hooksPath .githooks set with --worktree) · trees `_incoming/wt-build` (branch, port 3415) +
-  `_incoming/wt-base` (main, 3416) via `_incoming/p63/build.sh <tree> <ref> <port>` · evidence `_incoming/p63/research.md` (verdict per
-  name, maker quotes, warehouse rows) · hand-over note = side-session notes folder `p63-handover.md`. Owner item 63 (BSOT §4): a page per
+3p OPEN ROUND "p63 searched models" = `docs/rounds/รอบลงสินค้า-63-16-10.txt` · since 16/10 evening owned by side chat 4 (seo-all-keys-4,
+  line rule 13.6 — products-63-2 archived); its files copied to `.claude/worktrees/mystifying-driscoll-575ab6/_incoming/p63/` (big g3
+  build outputs left behind) · evidence `_incoming/p63/research.md` (verdict per name, maker quotes, warehouse rows). Owner item 63 (BSOT §4): a page per
   searched model, maker facts only, no price row (browse-only), options mapped in `sku-map.ts` (null = sold out; real warehouse codes where
   the warehouse lists the model).
   LIVE [ตรวจแล้ว]: #537 VOOPOO DRAG X https://okami24.store/products/drag-x · #534 UWELL Caliburn G3 https://okami24.store/products/caliburn-g3
-  (checker r2 PASS 6b0993c0, curl 200; card + 6 colours = image chat re-shoots, img-1610 b13).
+  (checker r2 PASS 6b0993c0, curl 200; card + 6 colours = image chat re-shoots, img-1610 b13) · #540 840034de RELX Infinity 2 Plus
+  https://okami24.store/products/relx-infinity-2-plus (checker r2 PASS 0aedc4a1: mode-wattage quotes + card-v2 re-shoot img-1610 b15;
+  taste note: real cap = light-grey disc with a V notch, render = black — image line told, a card-v3 would come by message).
   MERGED, NOT LIVE: #544 TEREA prep — all 21 iqos.com/id flavours (6 as VERIFIED_ADDITIONAL_VARIANTS), every pack image re-cut from the
   maker's 2000px renders to the five sticks; classify.ts "dimension"/"edition" (4 warehouse flavours were dropped). Publishing = one
   IQOSHEET-15 line in publication-approvals.ts + the sku-map rows (`_incoming/p63/terea-skumap.patch`) once owner item 69 gives a price;
   that PR brings heated-tobacco-consumables back to every page's nav → whole-sitemap scan.
-  OPEN: #540 p63-relx RELX Infinity 2 Plus + owner item 69 — r1 FAIL: (a) mode wattages are in RELX's JS-rendered "What's Special" tab
-  (quotes in research.md, cited in 6a52dc5b — give the checker the quotes), (b) card fill 68% → card remake queued with the image chat.
   Small follow-up (checker #534 r2 notes): uwell.ts comment near the top names sold-out.ts (the source is sku-map null) · the old G3 card
   map entry (cobalt-blue.jpg) still sits beside the new one.
   NOT REAL (report only): M Bar 18K · Marbo 25K · RELX Diva / Sparta / Novo · nexBAR Switch 15K (owner item 68: nexPOD 15K instead?).
   JOIWAY 12K / 20K = F3 / F4 already live (alias = SEO chat after 22/10).
-  NEXT: #540 when its card arrives · TEREA publish after item 69 · item 68 · after the 22/10 GSC read: INFY 12K + Esko Bar 20K
+  NEXT: TEREA publish after item 69 (Friday relays the answer) · item 68 · after the 22/10 GSC read: INFY 12K + Esko Bar 20K
   ("ESKO BAR 498", warehouse Pod-130) · then round-close (tag p63-1610).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
