@@ -51,6 +51,8 @@ export const COMPAT_NOTES_TH: Record<string, string> = {
   "5V/2A charging on current-generation devices.": "ชาร์จ 5V/2A",
   "5V/2A charging.": "ชาร์จ 5V/2A",
   "5V/3A charging.": "ชาร์จ 5V/3A",
+  // Round p63 (16/10): RELX Infinity 2 Plus.
+  "RELX prefilled pods, 1.9mL each.": "หัวพอตบรรจุสำเร็จของ RELX หัวละ 1.9mL",
   "Takes every PnP X coil; PnP X 0.15Ω and 0.3Ω come in the kit.": "ใช้คอยล์ PnP X ได้ทุกตัว ในกล่องมี 0.15Ω และ 0.3Ω",
   "0.4–3.0Ω resistance range.": "ช่วงโอห์ม 0.4–3.0Ω",
   "0.1–3.0Ω resistance range.": "ช่วงโอห์ม 0.1–3.0Ω",

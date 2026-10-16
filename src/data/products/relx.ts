@@ -1,6 +1,8 @@
 import type { Product } from "@/types/catalog";
 
-const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable via USB-C." };
+const INFINITY_PAGE = "https://relxnow.com/products/relx-infinity-2-plus-device";
+const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
+const typeC ={ type: "charging" as const, label: "USB-C", note: "Rechargeable via USB-C." };
 
 export const relxProducts: Product[] = [
   {
@@ -101,6 +103,73 @@ export const relxProducts: Product[] = [
     faqs: [],
     relatedProductSlugs: ["relx-creator"],
     sourceUrls: ["https://www.relxnow.com/products/relx-smash-go-12k"],
+  },
+  {
+    // Round p63 (owner 16/10, list item 63 — BSOT §4): customers search "relx infinity". RELX's global store (relxnow.com)
+    // sells only the Infinity 2 Plus Device now (no page for the first Infinity or the Infinity 2). The warehouse lists it
+    // (Shipnity Max Pod-105, every colour "ไม่มีของ" on 08/10) — sku-map maps the codes; no price row = browse-only.
+    id: "relx-infinity-2-plus",
+    slug: "relx-infinity-2-plus",
+    brandId: "relx",
+    familyId: "relx-infinity",
+    categoryId: "pod-kits",
+    systemType: "pod-kit",
+    name: "RELX Infinity 2 Plus",
+    displayName: "RELX INFINITY 2 PLUS",
+    searchAliases: ["RELX Infinity", "Infinity 2 Plus"],
+    tagline: "RELX's current Infinity, with three power modes from 6.5W to 10W.",
+    shortDescription:
+      "A closed pod system from RELX with Eco, Smooth and Boost modes at 6.5W, 8W and 10W. Its 440mAh battery charges over USB-C, reaching 80% in 15 minutes by RELX's figure, and a 4-stage indicator shows what's left. It takes RELX Pod, RELX Pod Pro and RELX Pod Pro 2.",
+    isFlagship: false,
+    attributes: {
+      batteryMah: 440,
+      wattageMin: 6.5,
+      wattageMax: 10,
+      screenType: "led-indicator",
+      portability: "compact",
+      beginnerFriendly: false,
+      chargingType: "USB-C",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/relx-infinity-2-plus/card.webp",
+        alt: "RELX Infinity 2 Plus, Black Sapphire, front view",
+        angle: "front, isolated — RELX's own store image (the largest single-device file RELX has)",
+        transparentBackground: true,
+        sourceName: "RELX (official store, relxnow.com)",
+        sourceUrl: INFINITY_PAGE,
+      },
+    ],
+    openOnCardPhoto: true,
+    // RELX's six colours in its store's order, one RELX store image each.
+    colorVariants: [
+      { id: "misty-leaf", name: "Misty Leaf", swatchHex: "#d9e3cd", image: infinityPhoto("misty-leaf", "Misty Leaf") },
+      { id: "blue-bay", name: "Blue Bay", swatchHex: "#b4cddb", image: infinityPhoto("blue-bay", "Blue Bay") },
+      { id: "black-sapphire", name: "Black Sapphire", swatchHex: "#3d424c", image: infinityPhoto("black-sapphire", "Black Sapphire") },
+      { id: "rose-gold", name: "Rose Gold", swatchHex: "#f9d3d2", image: infinityPhoto("rose-gold", "Rose Gold") },
+      { id: "meteor-flash", name: "Meteor Flash", swatchHex: "#c5c5c7", image: infinityPhoto("meteor-flash", "Meteor Flash") },
+      { id: "bronze-dusk", name: "Bronze Dusk", swatchHex: "#b39280", image: infinityPhoto("bronze-dusk", "Bronze Dusk") },
+    ],
+    // relxnow.com spec block + description (read 16/10).
+    specifications: [
+      { key: "power", label: "Power modes", value: "Eco 6.5W · Smooth 8W · Boost 10W", sourceStatus: "verified", sourceUrl: INFINITY_PAGE },
+      { key: "battery", label: "Battery", value: "440mAh built-in", sourceStatus: "verified", sourceUrl: INFINITY_PAGE },
+      { key: "charging", label: "Charging", value: "USB-C · 80% in 15 minutes (RELX's figure)", sourceStatus: "verified", sourceUrl: INFINITY_PAGE },
+      { key: "indicator", label: "Display", value: "4-stage battery indicator", sourceStatus: "verified", sourceUrl: INFINITY_PAGE },
+      { key: "pods", label: "Pod platform", value: "RELX Pod · RELX Pod Pro · RELX Pod Pro 2 — 1.9mL, up to 600 puffs (RELX's figures)", sourceStatus: "verified", sourceUrl: INFINITY_PAGE },
+    ],
+    features: [
+      { id: "modes", title: "Eco, Smooth and Boost", description: "Switch between Eco at 6.5W, Smooth at 8W and Boost at 10W. RELX says Boost gives up to 15% more vapor than Smooth." },
+      { id: "charging", title: "80% in 15 minutes", description: "The 440mAh battery charges over USB-C, and RELX quotes 15 minutes to reach 80%." },
+      { id: "indicator", title: "4-stage battery indicator", description: "Four steps of light show how much charge is left, so you know when to plug in." },
+    ],
+    compatibility: [{ type: "pod", label: "RELX Pod · Pod Pro · Pod Pro 2", note: "RELX prefilled pods, 1.9mL each." }, typeC],
+    whoIsThisFor: ["You already use RELX Pod or Pod Pro pods and want the current Infinity body they fit."],
+    faqs: [],
+    relatedProductSlugs: ["relx-creator"],
+    sourceUrls: [INFINITY_PAGE],
   },
   {
     id: "relx-creator",

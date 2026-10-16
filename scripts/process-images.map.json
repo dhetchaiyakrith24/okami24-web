@@ -8022,5 +8022,53 @@
   },
   "note": "round img-1610 16/10 - the old card is a small shop photo (audit 10/10)",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/p63/relx/src/black-sapphire.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "card",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/relx/src/black-sapphire.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "black-sapphire",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/relx/src/blue-bay.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "blue-bay",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/relx/src/bronze-dusk.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "bronze-dusk",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/relx/src/meteor-flash.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "meteor-flash",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/relx/src/rose-gold.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "rose-gold",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/relx/src/misty-leaf.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "misty-leaf",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
  }
 ]
