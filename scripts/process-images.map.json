@@ -7958,6 +7958,19 @@
   "fileName": "variant-coil-72-4.webp"
  },
  {
+  "source": "_incoming/img-1610/b17/out/ke-B.png",
+  "slug": "pod-159",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-18/10 - no credits), studio re-shoot of ESKO BAR's own two-device render (purple + yellow floating, same composition) on a flat #2b2e33 backdrop, prompt in _incoming/img-1610/prompts.md (ESKO BAR SWITCH card); 2 renders, B picked (A: purple read slightly translucent); keyed by _incoming/img-1610/b17/floodkey.js (flood from the border, T 14), trimmed, fit 940x1175 in 1000x1250",
+   "reference": "ESKO BAR's own render of the SWITCH device pair (the previous card, eskobarvape.com/product/pod-system/, 500x868) - input _incoming/img-1610/b17/in/esko-45.png; render _incoming/img-1610/b17/out/e-B.png; notes _incoming/img-1610/b17/SOURCE.md",
+   "fidelitySheet": "_incoming/img-1610/b17/fid/fid-esko.png - shape IoU 0.987, colour dE median 1.2 max 2.1; every printed mark (ESKO BAR green/black, SWITCH, the L / H rings, 99) checked by eye"
+  },
+  "note": "round img-1610 16/10 night - card = 2x re-shoot of the maker render (was 500x868 at 100% fill, under the 1000x1250 card standard)",
+  "fileName": "card-v2.webp",
+  "replaces": "/assets/products/pod-159/card.webp"
+ },
+ {
   "source": "_incoming/img-1610/b14/key/D-gpp-04.png",
   "slug": "coil-94",
   "role": "card",
@@ -8520,16 +8533,17 @@
   "fileName": "variant-iqosheet-15-verified-riviera-pearl.webp"
  },
  {
-  "source": "_incoming/img-1610/b15/out/k-D.png",
+  "source": "_incoming/img-1610/b17/out/k-C2.png",
   "slug": "relx-infinity-2-plus",
   "role": "card",
-  "note": "round img-1610 16/10 - card = studio re-shoot (checker #540 r1: the RELX store image filled 68% of the card)",
+  "note": "round img-1610 16/10 night - card-v3 = studio re-shoot with the real cap (checker #540 r2 taste note: card-v2 cap was plain glossy black with a shallow dimple + a thin seam line on the left)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan - no credits), studio re-shoot of RELX's front render on a mid-grey sweep; prompt: same straight front view, cap solid opaque glossy black with its round dimple, no lettering; 4 renders, D picked (A/B see-through cap, C dented edge); keyed by _incoming/img-1610/b14/key2.js (EDGEFOOT=1 SH=50 T=16 MW=4), trimmed, fit 940x1175 in 1000x1250, webp q82",
-   "reference": "RELX's own front render relx-infinity-2-plus-vape-device-black-sapphire-front.png (1025 px, relxnow.com Shopify CDN) - input _incoming/img-1610/b15/in/black-sapphire.png; render _incoming/img-1610/b15/out/r-D.png; notes _incoming/img-1610/b15/SOURCE.md"
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan - no credits), studio re-shoot of RELX's front render on a mid-grey sweep; prompt: same straight front view, solid opaque glossy black cap whose front is almost filled by a round satin medium-grey disc (thin black rim, soft V-shaped groove at the top centre), no seam lines; 4 renders in 2 rounds, C picked (A/B disc near-white and oversized, D disc too light); keyed by _incoming/img-1610/b14/key2.js (EDGEFOOT=1 SH=50 T=16 MW=4) then _incoming/img-1610/b17/fixedge.js (straight body sides, rounded base read from the render per row), trimmed, fit 940x1175 in 1000x1250, webp q82",
+   "reference": "RELX's own front render relx-infinity-2-plus-vape-device-black-sapphire-front.png (1025 px, relxnow.com Shopify CDN) - input _incoming/img-1610/b15/in/bs-916.png; render _incoming/img-1610/b17/out/r-C.png; notes _incoming/img-1610/b17/SOURCE.md",
+   "fidelitySheet": "_incoming/img-1610/b17/fid/fid-relx.png - shape IoU 0.977, colour dE median 6.9 max 14.7 against RELX's flat render (studio light: rim highlights + a slightly darker satin body; card-v2 scored dE 16.9 on the same sheet); cap disc, V groove, 4-bar display, purple dots and the orange button checked by eye"
   },
-  "fileName": "card-v2.webp",
-  "replaces": "/assets/products/relx-infinity-2-plus/card.webp"
+  "fileName": "card-v3.webp",
+  "replaces": "/assets/products/relx-infinity-2-plus/card-v2.webp"
  },
  {
   "source": "_incoming/p63/relx/src/black-sapphire.png",
