@@ -484,9 +484,9 @@ export const uwellProducts: Product[] = [
     lineupImage: {
       // Image-sitewide round, set 1 (02/10): the G5 layout the owner picked (the card colour big in front, the other
       // 7 behind in two upright tiers, soft shadow + faint reflection) from UWELL's own fronts — _incoming/image-sitewide/set1/.
-      src: "/assets/products/caliburn-g5-lite-se/lineup-v2.webp",
+      src: "/assets/products/caliburn-g5-lite-se/lineup-v3.webp",
       alt: "UWELL Caliburn G5 Lite SE, all 8 colours",
-      sourceName: "OKami24 composite (from UWELL's own colour renders)",
+      sourceName: "OKami24 composite (from the img-1610 studio re-shoots of UWELL's own colour renders)",
     },
     // Site-wide template round, batch 1a (03/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — UWELL's own G5 Lite page
     // (https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se) told one poster per block; text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.
@@ -497,6 +497,8 @@ export const uwellProducts: Product[] = [
     // Site-wide template round batch 1a (owner 03/10: set-1 UWELL colours re-tilted): every colour image = UWELL's own render cut
     // from the maker's colour strip (pc/spe3-lite*.webp — the largest UWELL serves), turned 12° in 2D, no AI; the page opens on the
     // card, the colour upright on 4:5 (_incoming/sitewide-template/1a/tilt.js).
+    // Round img-1610 (16/10): every colour + the lineup re-shot in a studio with Nano Banana Pro from those UWELL renders
+    // (same 12° layout, _incoming/img-1610/b12/site-se.js + b6/poster.js) — the 03/10 crops were 726 px and flat.
     openOnCardPhoto: true,
     // Real UWELL color/finish lineup — ALL 8 now have a real, OFFICIAL photo (owner quality
     // review, 2026-09-03, THIRD pass — see the card asset's angle note). All 8 finishes are
@@ -507,49 +509,49 @@ export const uwellProducts: Product[] = [
         id: "black-leather",
         name: "Black Leather",
         swatchHex: "#454545",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-black-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Black Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-black-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Black Leather" },
       },
       {
         id: "blue-leather",
         name: "Blue Leather",
         swatchHex: "#3fb6b5",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-blue-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Blue Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-blue-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Blue Leather" },
       },
       {
         id: "brown-leather",
         name: "Brown Leather",
         swatchHex: "#9d664e",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-brown-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Brown Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-brown-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Brown Leather" },
       },
       {
         id: "gray-leather",
         name: "Gray Leather",
         swatchHex: "#9ca7a9",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-gray-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Gray Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-gray-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Gray Leather" },
       },
       {
         id: "orange-leather",
         name: "Orange Leather",
         swatchHex: "#e67831",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-orange-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Orange Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-orange-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Orange Leather" },
       },
       {
         id: "pink-leather",
         name: "Pink Leather",
         swatchHex: "#eec7c8",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-pink-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Pink Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-pink-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Pink Leather" },
       },
       {
         id: "purple-leather",
         name: "Purple Leather",
         swatchHex: "#ceafde",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-purple-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Purple Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-purple-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Purple Leather" },
       },
       {
         id: "white-leather",
         name: "White Leather",
         swatchHex: "#e8e0d5",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-white-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, White Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-white-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, White Leather" },
       },
     ],
     specifications: [
