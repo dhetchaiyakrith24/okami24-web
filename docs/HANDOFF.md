@@ -69,7 +69,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   "ร้านพอตออนไลน์") → merge the 4 drafts → FAQAccordion server HTML (answers render only when opened, so FAQ answer links are not
   in the HTML — shared by /faq, product and guide FAQs → whole-sitemap scan, after 22/10) · "พอตของแท้" = researcher on maker check
   pages done (draft b6-genuine) · product flavour FAQs wait for the FAQAccordion fix (product FAQs are neither in the HTML nor in
-  JSON-LD today, 16/10). Owner list 63–67 open.
+  JSON-LD today, 16/10). Owner list 63 open. Answered 16/10: 64 "ราคาส่ง" + 66 "เติมน้ำยาพอตยังไง" title (§18 "Head copy") ·
+  65 "พอตเปลี่ยนหัว" in that guide's title (THAI_STYLE round 10B line) · 67 = BSOT §12 "Authenticity" (fail + video + 7 days →
+  replace or refund, the only refund case) → b6-genuine's "ไม่ผ่าน" answer must say exactly that and link /warranty.
   Line breaks in collapsed FAQ answers: scan with `_incoming/seo-keys/wb-openscan.js` (each answer opened) — LESSONS พ34.
   Tool (owner 16/10): skill `content-strategy` (#508) = the way to plan pillars, clusters, buyer stages and the article order for the
   remaining batches — its OKami24 rules at its end (keymap = SEO_LANDSCAPE §0).
@@ -232,13 +234,14 @@ service pages (`/warranty /shipping /how-to-order /privacy`) are not touched and
 admin page and OTP are parked · caliburn-g4-pro = Pod-168 (Max's code, owner 08/10 — the old Pod-181 belongs to the retired system) · muro-3ml = ฿150 (admin list, "Selling prices" below) · the 20 owner-estimate rows in
 `legacy-price-approvals.ts` change when an admin reports that price ("Selling prices") or when the stock API lands.
 
-**Head copy and SEO:** e-liquid stock is 0 on the storefront → "น้ำยา" stays out of head copy except `/e-liquid` itself ·
+**Head copy and SEO:** e-liquid stock is 0 on the storefront → "น้ำยา" stays out of head copy except `/e-liquid` itself and the refill how-to guide, whose title may read
+"เติมน้ำยาพอตยังไง" (owner 16/10, list item 66 — a how-to, not a page selling e-liquid) ·
 "พอตไฟฟ้า" and "บุหรี่ไฟฟ้า" are both allowed in head copy · misspelled search terms → hidden search aliases only, never
 visible copy · brand names in Latin, incl. "Marbo" (the one exception + hidden aliases = THAI_STYLE §2 layer 1 and §3 "รอบ 8") · the head-copy trim rule: cut at a sentence/phrase
 boundary, never mid-word, never a dangling connective, never a bare floating number, never a stranded clause-opener
 (THAI_STYLE_LOG §7) · round 7 (SEO ค, owner via Cowork 23/09): home page top word "Pod System", "บุหรี่ไฟฟ้า" second · "Marbo" and
 "M Bar" must both rank ("SALTHUB (Marbo)" brand title · "M Bar = Marbo" body line · FAQ "Marbo กับ M Bar") · wholesale FAQ =
-"ติดต่อหลังไมค์ทางไลน์", no numbers, no discount · breadcrumb "Home" stays (no "หน้าแรก" — no ranking effect) · LINE-click counter =
+"ติดต่อหลังไมค์ทางไลน์", no numbers, no discount; its question may use the word "ราคาส่ง" (owner 16/10, list item 64) · breadcrumb "Home" stays (no "หน้าแรก" — no ranking effect) · LINE-click counter =
 in-site count, no cookies, nothing sent outside ·
 new articles = THAI FIRST (`thaiOnly: true`, translated later) · free SEO tools only (round SEO ฉ) · `okami24.net` / `.com` NXDOMAIN — leave them · `voopooTitle` (code name of the home section "Pod Kit / พอตคิท") keeps its name — a rename changes nothing a visitor sees (Friday 15/10) · no `OKAMI24_METRICS_TOKEN` — read the
 Render Web Shell instead (`docs/DEPLOY-RENDER.md`).
