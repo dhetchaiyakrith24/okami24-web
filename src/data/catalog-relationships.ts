@@ -128,6 +128,7 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
       ["caliburn-g4-classic", "listed by name in UWELL's own G Pod Platform device enumeration"],
       ["caliburn-g3-pro", "listed by name in UWELL's own G Pod Platform device enumeration; UWELL states the upgraded cartridges are also compatible with the CALIBURN G3 series"],
       ["caliburn-g3-pro-koko", "listed by name in UWELL's own G Pod Platform device enumeration"],
+      ["caliburn-g3", "listed by name (\"G3\") in UWELL's own G Pod Platform device enumeration, which states GPP cartridges are fully compatible with the CALIBURN G5·G4·G3 series (round p63, 16/10)"],
     ] as const
   ).map(([device, evidence]): DeviceConsumableEdge => ({
     device,

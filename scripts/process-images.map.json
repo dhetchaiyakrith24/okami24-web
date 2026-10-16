@@ -8022,5 +8022,88 @@
   },
   "note": "round img-1610 16/10 - the old card is a small shop photo (audit 10/10)",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/p63/g3/src/cobalt-blue.jpg",
+  "slug": "caliburn-g3",
+  "role": "card",
+  "crop": {
+   "x0": 0.407,
+   "y0": 0.229,
+   "x1": 0.593,
+   "y1": 0.599
+  },
+  "minLong": 670,
+  "note": "UWELL Promotion Material zip (maker page Download), Phone Size Pics 1080x1920; device 676 px tall — the largest maker file of this colour (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/g3/src/cobalt-blue.jpg",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "cobalt-blue",
+  "crop": {
+   "x0": 0.407,
+   "y0": 0.229,
+   "x1": 0.593,
+   "y1": 0.599
+  },
+  "minLong": 670,
+  "note": "UWELL Promotion Material zip (maker page Download), Phone Size Pics 1080x1920; device 676 px tall — the largest maker file of this colour (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/g3/src/midnight-gold.jpg",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "midnight-gold",
+  "crop": {
+   "x0": 0.407,
+   "y0": 0.229,
+   "x1": 0.593,
+   "y1": 0.599
+  },
+  "minLong": 670,
+  "note": "UWELL Promotion Material zip (maker page Download), Phone Size Pics 1080x1920; device 676 px tall — the largest maker file of this colour (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/g3/src/pastel-pink.jpg",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "pastel-pink",
+  "crop": {
+   "x0": 0.407,
+   "y0": 0.229,
+   "x1": 0.593,
+   "y1": 0.599
+  },
+  "minLong": 670,
+  "note": "UWELL Promotion Material zip (maker page Download), Phone Size Pics 1080x1920; device 676 px tall — the largest maker file of this colour (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/g3/src/mauve-violet.jpg",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "mauve-violet",
+  "crop": {
+   "x0": 0.407,
+   "y0": 0.229,
+   "x1": 0.593,
+   "y1": 0.599
+  },
+  "minLong": 670,
+  "note": "UWELL Promotion Material zip (maker page Download), Phone Size Pics 1080x1920; device 676 px tall — the largest maker file of this colour (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/g3/src/serene-lake.jpg",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "serene-lake",
+  "crop": {
+   "x0": 0.407,
+   "y0": 0.229,
+   "x1": 0.593,
+   "y1": 0.599
+  },
+  "minLong": 670,
+  "note": "UWELL Promotion Material zip (maker page Download), Phone Size Pics 1080x1920; device 676 px tall — the largest maker file of this colour (round p63, 16/10)"
  }
 ]
