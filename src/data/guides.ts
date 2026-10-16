@@ -1,4 +1,4 @@
-import type { ArticleReviewVideo, Guide } from "@/types/catalog";
+import type { ArticleReviewVideo, Guide, StoryImage } from "@/types/catalog";
 
 /**
  * Section clips (owner 05/10: "เรามีคลิป Youtube ถ้ามีใส่คั่นไว้ในแต่ละหัวข้อด้วย"). Only the shop's own three channels
@@ -14,6 +14,29 @@ export const SECTION_CLIPS = {
   mSwitch: { videoId: "DaJHk4e6_Y8", title: "30 วันกับ M SWITCH 15K เป็นยังไงบ้าง? (หัวรุ่นแรก)", channelName: "POD SYSTEM OKAMI II", publishedAt: "2026-04-12" },
   mBar9kSweets: { videoId: "SijUuq9qRpE", title: "M BAR 9K รวมกลิ่นสายขนม มีรสอะไรบ้าง? 2026", channelName: "OKAMI", publishedAt: "2026-08-19" },
 } satisfies Record<string, ArticleReviewVideo>;
+
+const VOOPOO_SHOP = "https://shop.voopoo.com/products/";
+
+/**
+ * Section posters (owner 16/10: "ในหน้าพวกบทความเรามีรูปประกอบหรือวีดีโอใส่ลงไปหน่อยดีมั้ย"). Every file, size, source
+ * and credit is the same poster the product page already shows (products/*.ts `features[].image`) — no new renders;
+ * each sits under the one section whose subject is exactly what the poster shows. Alt = Thai (these guides are Thai-only).
+ */
+export const SECTION_IMAGES = {
+  drag6Battery: { src: "/assets/products/drag-6/story-battery-v2.webp", alt: "โปสเตอร์ของ VOOPOO: DRAG 6 กับแบตในตัว 4400mAh ที่เห็นผ่านตัวเครื่อง", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-6`, width: 1600, height: 1600 },
+  dragX3Unlock: { src: "/assets/products/drag-x3/story-unlock-v2.webp", alt: "โปสเตอร์ของ VOOPOO: DRAG X3 ปลดล็อกได้ด้วยการแตะเซนเซอร์ กดปุ่ม หรือตั้งให้ปลดล็อกค้างไว้", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-x3`, width: 1600, height: 824 },
+  dragS3Coils: { src: "/assets/products/drag-s3/story-coils.webp", alt: "โปสเตอร์ของ VOOPOO: หัวพอต PnP X และคอยล์ของ DRAG S3 ตั้งแต่ 0.15 ถึง 1.0 โอห์ม", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-s3`, width: 1024, height: 1385 },
+  drag6Airflow: { src: "/assets/products/drag-6/story-tank-v2.webp", alt: "โปสเตอร์ของ VOOPOO: ช่องลม Golden Triangle แหวนปรับลม และการเติมน้ำยาด้านบนของ DRAG 6", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-6`, width: 1600, height: 706 },
+  argusP3Touch: { src: "/assets/products/argus-p3/story-touch.webp", alt: "โปสเตอร์ของ VOOPOO: จอทัชของ ARGUS P3 แสดงข้อมูลการสูบ หน้าปัด และโหมดต่าง ๆ", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-p3`, width: 1024, height: 1193 },
+  argusG4Ohm: { src: "/assets/products/argus-g4/story-ohm-v3.webp", alt: "โปสเตอร์ของ VOOPOO: หัว Multi-Ohm ของ ARGUS G4 พลิกหัวเพื่อสลับ 1.0 กับ 0.7 โอห์ม กดปุ่มสองครั้งเพื่อใช้ 0.4 โอห์ม", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g4`, width: 1592, height: 1367 },
+  argusG4Battery: { src: "/assets/products/argus-g4/story-battery-v2.webp", alt: "โปสเตอร์ของ VOOPOO: แบต 1650mAh ของ ARGUS G4 ที่เห็นผ่านตัวเครื่อง", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g4`, width: 1590, height: 1098 },
+  argusPods: { src: "/assets/products/argus-g4/story-pods.webp", alt: "โปสเตอร์ของ VOOPOO: หัวพอตตระกูล ARGUS ใช้ร่วมกันได้ ทั้งหัว 3.5mL และ 2mL", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g4`, width: 1600, height: 900 },
+  nexbar18kScreen: { src: "/assets/products/wotofo-nexbar-18k/story-screen.webp", alt: "ภาพของ WOTOFO: จอ LED ของ nexBAR 18K", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
+  mBar10kModes: { src: "/assets/products/m-bar-10k/story-modes.webp", alt: "โปสเตอร์ของ SALTHUB: M Bar 10K กดปุ่มด้านล่างสองครั้งเพื่อสลับโหมด Eco · Soft · Boost", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1078 },
+  joiwayF4Twin: { src: "/assets/products/joiway-f4/story-twin.webp", alt: "โปสเตอร์ของ JOIWAY: Joiway F4 มีปากดูดสองฝั่ง ฝั่งละหนึ่งกลิ่น", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 809 },
+  tfitBattery: { src: "/assets/products/tfit-m-power-20k/story-battery.webp", alt: "โปสเตอร์ของ TFIT: M Power 20K ชาร์จผ่านสาย USB-C ที่ฐานเครื่อง", sourceName: "TFIT", sourceUrl: "https://www.tfitvape.com/", width: 1600, height: 792 },
+  relxSmashGoPocket: { src: "/assets/products/relx-smash-go-12k/story-pocket.webp", alt: "ภาพของ RELX: Smash Go 12K ขนาดพอดีกระเป๋า และปากดูดที่ออกแบบให้สูบสบาย", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 1224, height: 1224 },
+} satisfies Record<string, StoryImage>;
 
 // Round SEO ข batch 4 (2026-09-21): publishedAt = the commit that first added all seven records
 // (f29d7fc, 2026-08-29, read from git log — never invented). The modified date is no longer typed
@@ -1939,6 +1962,7 @@ const allGuides: Guide[] = [
               "[DRAG X3](/products/drag-x3) ไม่มีแบตในตัว ใช้ถ่าน 18650 หรือ 21700 หนึ่งก้อน ซึ่งในกล่องไม่มีมาให้ ต้องซื้อแยก ตัวเครื่องชาร์จผ่าน USB-C ที่ 5V/2A ใช้เวลาชาร์จ 2–3 ชั่วโมง และถ้ามีถ่านสำรองที่ชาร์จไว้อีกก้อน ก็สลับใส่แล้วสูบต่อได้ทันที วิธีชาร์จและดูแลถ่านอ่านได้ที่ [ชาร์จพอตกี่นาทีถึงเต็ม และวิธีดูแลแบต](/guides/battery-care-and-charging)",
               "ตัวเลข mAh ใช้เทียบกันได้ระหว่าง DRAG 6 กับ DRAG S3 ที่มีแบตในตัว ส่วนชาร์จหนึ่งครั้งใช้ได้นานแค่ไหน ขึ้นกับวัตต์ที่ตั้งและสูบถี่แค่ไหน วิธีอ่านตัวเลขเหล่านี้อยู่ที่ [วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet)",
             ],
+            image: SECTION_IMAGES.drag6Battery,
           },
           {
             heading: "วัตต์ ชิป และโหมด",
@@ -1955,6 +1979,7 @@ const allGuides: Guide[] = [
               "เรื่องการปลดล็อก DRAG 6 กับ DRAG S3 มีเซ็นเซอร์อยู่ที่ปุ่มยิง แตะเพื่อปลดล็อก และพอปล่อยนิ้ว เครื่องจะล็อกกลับให้เอง ส่วน DRAG X3 เลือกได้สามแบบจากเมนู คือแตะเพื่อปลดล็อก กดปุ่มเพื่อปลดล็อก หรือปลดล็อกค้างไว้",
               "ทั้งสามรุ่นกดห้าครั้งเพื่อเปิดหรือปิดเครื่อง และกดสามครั้งเพื่อเข้าเมนูเหมือนกัน ถ้าเปลี่ยนจากรุ่นหนึ่งไปอีกรุ่นก็ใช้งานได้คุ้นมือ",
             ],
+            image: SECTION_IMAGES.dragX3Unlock,
           },
           {
             heading: "ถังน้ำยา หัวพอต และคอยล์",
@@ -1963,6 +1988,7 @@ const allGuides: Guide[] = [
               "DRAG S3 กับ DRAG X3 ใช้หัวพอตแบบเดียวกัน คือ PnP X Cartridge จุ 5mL (2mL ในเวอร์ชัน TPD) เติมด้านข้าง ทั้งสองรุ่นมีหัวพอตแบบ DTL มาในชุด และถ้าอยากสูบ MTL ก็เปลี่ยนเป็นหัวพอตแบบ MTL ได้ในเครื่องเดิม สำหรับ DRAG S3 ในกล่องมีคอยล์ PnP X 0.6 โอห์มกับ 0.8 โอห์มด้วย",
               "ทั้งสามรุ่นใช้คอยล์ PnP X ได้ทุกตัว ถ้ามี DRAG มากกว่าหนึ่งเครื่อง ก็ใช้คอยล์ชุดเดียวกันได้ ส่วนวิธีดูแลคอยล์และหัวพอตให้ใช้ได้นาน อ่านได้ที่ [หัวพอตใช้ได้กี่วัน เปลี่ยนเมื่อไหร่](/guides/coil-and-pod-maintenance)",
             ],
+            image: SECTION_IMAGES.dragS3Coils,
           },
           {
             heading: "ช่องลมและแนวการสูบ",
@@ -1970,6 +1996,7 @@ const allGuides: Guide[] = [
               "DRAG 6 ปรับลมด้วยแหวนปรับลมแบบหมุน ใช้ช่องลมแบบ Golden Triangle และสูบได้ทั้ง MTL และ DTL ด้าน DRAG X3 มีช่องลมอยู่ด้านบน และสูบได้ทั้ง DTL และ MTL ตามหัวพอตที่ใส่ ส่วน DRAG S3 มีช่องลมอยู่ด้านบนและปรับได้ด้วยการเลื่อน VOOPOO วางรุ่นนี้ไว้สำหรับสูบ MTL · RDL และ DTL แบบเบา ๆ",
               "ถ้ายังไม่แน่ใจว่าตัวเองสูบแนวไหน MTL คือดูดเข้าปากก่อนแล้วค่อยลงปอด ส่วน DTL คือดูดลงปอดตรง ๆ สองแนวนี้ให้ความรู้สึกต่างกันยังไง อ่านได้ที่ [MTL กับ DTL สูบต่างกันยังไง](/guides/understanding-mtl-vs-dtl)",
             ],
+            image: SECTION_IMAGES.drag6Airflow,
           },
           {
             heading: "ขนาดและตัวเครื่อง",
@@ -2165,6 +2192,7 @@ const allGuides: Guide[] = [
           "ถ้าแค่อยากรู้ว่าแบตเหลือเท่าไหร่ M Bar 10K มีไฟ LED สี่ดวงบอกแบตทีละ 25% และมีไฟ RGB บอกว่ากำลังใช้โหมดไหนอยู่",
           "บางรุ่นดูน้ำยาที่เหลือได้จากตัวเครื่องเลย Joiway F3 มีถังน้ำยาใสอยู่ด้านบน ใต้ปากดูด TFIT M Power 20K ถังด้านบนก็ใส มองจากข้างนอกก็รู้ว่าเหลือเท่าไหร่",
         ],
+        image: SECTION_IMAGES.nexbar18kScreen,
       },
       {
         heading: "อยากปรับแรงสูบหรือปรับลมได้",
@@ -2172,6 +2200,7 @@ const allGuides: Guide[] = [
           "หากอยากสลับระหว่างสูบนุ่ม ๆ กับสูบให้แรงขึ้นในเครื่องเดียว M Bar 10K มี 3 โหมด Eco · Soft · Boost กดปุ่มด้านล่างสองครั้งติดกันเพื่อสลับ WOTOFO nexBAR 18K มีโหมด NORM 16 วัตต์ กับ TURBO 19 วัตต์ ส่วน nexBar CLEAR 18K มีโหมด Normal ที่ผู้ผลิตบอกว่าสูบนุ่มและใช้ได้นานขึ้น กับโหมด Turbo ที่ให้รสเต็มและไอหนา",
           "เรื่องช่องลม รุ่นที่ผู้ผลิตระบุว่าปรับได้มี M Bar 9K · M Bar 10K · Joiway F3 · TFIT M Power 20K และ nexBar CLEAR 18K ส่วน WOTOFO nexBAR 18K ปรับได้ 2 ระดับ และ INFY 20K ร้านยืนยันว่าปรับช่องลมได้",
         ],
+        image: SECTION_IMAGES.mBar10kModes,
       },
       {
         heading: "อยากได้สองกลิ่นในเครื่องเดียว",
@@ -2179,6 +2208,7 @@ const allGuides: Guide[] = [
           "Joiway F4 เป็นรุ่น TWINS ของ JOIWAY ข้างในมีถังน้ำยาสองถัง ถังละหนึ่งกลิ่น หมุนปากดูดไปที่ถังไหนก็สูบกลิ่นนั้น และสลับได้ทุกเมื่อที่ต้องการ ข้างในใช้คอยล์ mesh สองชุด แบต 650mAh ชาร์จซ้ำได้ผ่าน USB-C",
           "นับจากรายชื่อกลิ่นบนหน้าสินค้า Joiway F4 มี 16 คู่กลิ่น เหมาะกับคนที่เบื่อกลิ่นเดิมเร็ว ชอบเปลี่ยนกลิ่นระหว่างวัน และอยากเลือกจากคู่ที่จับมาให้แล้วมากกว่าจับคู่เอง",
         ],
+        image: SECTION_IMAGES.joiwayF4Twin,
       },
       {
         heading: "อยากได้กลิ่นให้เลือกเยอะ",
@@ -2195,6 +2225,7 @@ const allGuides: Guide[] = [
           "ถ้าดูขนาดแบตที่ผู้ผลิตระบุ WOTOFO nexBAR 18K แบต 750mAh Joiway F4 กับ nexBar CLEAR 18K แบตรุ่นละ 650mAh M Bar 9K · M Bar 10K และ TFIT M Power 20K แบตรุ่นละ 600mAh ส่วน RELX Smash Go 12K แบต 400mAh",
           "ตัวเลข mAh บอกขนาดแบตคร่าว ๆ ส่วนชาร์จหนึ่งครั้งใช้ได้นานแค่ไหน ยังขึ้นกับวิธีสูบและโหมดที่ใช้ วิธีชาร์จที่ร้านใช้เองอยู่ที่ [ชาร์จพอตกี่นาที ชาร์จข้ามคืนได้ไหม](/guides/battery-care-and-charging)",
         ],
+        image: SECTION_IMAGES.tfitBattery,
       },
       {
         heading: "อยากได้ขนาดที่พกง่าย",
@@ -2202,6 +2233,7 @@ const allGuides: Guide[] = [
           "RELX ออกแบบ Smash Go 12K ให้ขนาดพอดีกระเป๋า พกไปไหนก็สะดวก และทำปากดูดให้แนบริมฝีปากได้สบาย",
           "ถ้าอยากเทียบเป็นตัวเลข TFIT ระบุขนาด M Power 20K ไว้ที่เส้นผ่านศูนย์กลาง 30mm สูง 98mm หนัก 70 กรัม ส่วน WOTOFO ระบุขนาด nexBAR 18K ไว้ที่ 101 × 44 × 26.7mm",
         ],
+        image: SECTION_IMAGES.relxSmashGoPocket,
       },
       {
         heading: "Marbo 9K กับ 10K ต่างกันยังไง",
@@ -2370,6 +2402,7 @@ const allGuides: Guide[] = [
               "ARGUS G4 mini ไม่มีจอ ใช้ไฟ Energy Bar บอกสถานะแทน ไฟสีขาวคือ 0.7 โอห์ม ไฟสีเขียวคือ 1.0 โอห์ม และไฟสี่ขีดบอกระดับแบต ขีดละ 25%",
               "ARGUS G3 mini ไม่มีปุ่ม สูบได้เลย และเครื่องจะปรับวัตต์ให้เองตามหัวพอตที่ใส่ สูงสุด 30 วัตต์ ส่วน G4 mini กับ P3 ก็สูบได้เลยโดยไม่ต้องกดปุ่มเช่นกัน",
             ],
+            image: SECTION_IMAGES.argusP3Touch,
           },
           {
             heading: "การเปลี่ยนค่าโอห์ม",
@@ -2378,6 +2411,7 @@ const allGuides: Guide[] = [
               "P3 มากับหัวพอต ARGUS Snap Cartridge สองหัว คือ 0.4 โอห์มกับ 0.7 โอห์ม ส่วน G3 mini มากับ ARGUS Top Fill Cartridge V2 0.7 โอห์มหนึ่งหัว และหัวรุ่นเดียวกันนี้มีแบบ 0.4 โอห์มกับ 1.0 โอห์มให้เลือกด้วย",
               "ตามตารางของ VOOPOO สำหรับหัว ARGUS Top Fill Cartridge V2 หัว 0.4 โอห์มใช้สูบแบบ RDL ที่ 18–30 วัตต์ หัว 0.7 โอห์มใช้ที่ 14–18 วัตต์ และหัว 1.0 โอห์มใช้ที่ 10–14 วัตต์ สองค่าหลังนี้เป็นแนว MTL คือดูดเข้าปากก่อน ถ้ายังไม่แน่ใจว่าตัวเองสูบแนวไหน อ่าน[MTL กับ DTL](/guides/understanding-mtl-vs-dtl)ก่อนได้",
             ],
+            image: SECTION_IMAGES.argusG4Ohm,
           },
           {
             heading: "แบต วัตต์ และการชาร์จ",
@@ -2386,6 +2420,7 @@ const allGuides: Guide[] = [
               "G4 ปรับได้ 5–35 วัตต์ G4 mini และ P3 อยู่ที่ 5–30 วัตต์ และ G3 mini สูงสุด 30 วัตต์โดยเครื่องปรับให้เอง ช่วงโอห์มของ G4 · G4 mini และ P3 อยู่ที่ 0.4–3.0 โอห์มเท่ากัน ตัวเลขนี้บอกว่าเครื่องรับค่าไหนได้ ไม่ได้แปลว่ามีหัวพอตทุกค่าให้เลือก อ่านเพิ่มได้ที่[วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet)",
               "ทุกรุ่นชาร์จผ่าน USB-C โดย G4 กับ P3 ชาร์จที่ 5V/2A และ VOOPOO ระบุว่า G4 ชาร์จเต็มในประมาณ 45 นาที ส่วน P3 ประมาณ 40 นาที สำหรับ G4 mini ชาร์จที่ 5V/1.5A และ G3 mini ที่ 5V/1A",
             ],
+            image: SECTION_IMAGES.argusG4Battery,
           },
           {
             heading: "ช่องลม",
@@ -2410,6 +2445,7 @@ const allGuides: Guide[] = [
               "หัวพอตที่มาในกล่องของทั้งสี่รุ่นเป็นแบบเติมด้านบน หัว Multi-Ohm จุ 3.5mL และหัว ARGUS Top Fill Cartridge V2 ที่มากับ G3 mini จุ 3mL ทั้งสองแบบจุ 2mL ในเวอร์ชัน TPD ส่วนหัว Snap ของ P3 จุ 2mL เปิดฝาแล้วเติมได้จากด้านบน",
               "ถ้าอยากได้หัวพอต ARGUS เพิ่ม ทักไลน์ @okm24 ถามร้านก่อนได้",
             ],
+            image: SECTION_IMAGES.argusPods,
           },
         ],
       },
@@ -2420,6 +2456,7 @@ const allGuides: Guide[] = [
           "G4 mini ตัวเล็กและเบากว่า ยาว 113 mm หนัก 56 กรัม ส่วน G4 ยาว 121 mm หนัก 65 กรัมในแบบอะลูมิเนียมอัลลอย หรือ 85 กรัมในแบบซิงค์อัลลอยกับหนัง เรื่องชาร์จ G4 ใช้ 5V/2A และเต็มในประมาณ 45 นาที ส่วน G4 mini ใช้ 5V/1.5A",
           "ถ้าอยากดูวัตต์ ค่าโอห์ม และจำนวนพัฟบนจอ และอยากได้สามค่าโอห์มจากหัวพอตหัวเดียว ลองดู G4 ถ้าดูสถานะจากไฟก็เพียงพอ และอยากได้เครื่องที่เล็กและเบากว่า G4 mini จะเหมาะกว่า",
         ],
+        video: SECTION_CLIPS.argusG4,
       },
       {
         heading: "ARGUS G4 mini vs G3 mini",

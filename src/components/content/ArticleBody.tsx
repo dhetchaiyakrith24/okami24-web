@@ -1,8 +1,9 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import type { ArticleFAQItem, ArticleReviewVideo, GuideSection } from "@/types/catalog";
+import type { ArticleFAQItem, ArticleReviewVideo, GuideSection, StoryImage } from "@/types/catalog";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import { FAQAccordion } from "@/components/content/FAQAccordion";
@@ -63,6 +64,30 @@ export function renderInline(text: string, locale: string, keyPrefix: string): R
   return out;
 }
 
+/** Section poster (owner 16/10). The product page's poster card (rounded, hairline border, black ground) and its credit
+ *  line, so a poster looks the same wherever it appears. A tall poster is narrowed so it stays about 560px high. */
+function ArticleFigure({ img, linkLabel }: { img: StoryImage; linkLabel: string }) {
+  const maxWidth = img.height > img.width ? Math.round((560 * img.width) / img.height) : undefined;
+  return (
+    <figure className="mx-auto mt-3 flex w-full flex-col gap-2" style={maxWidth ? { maxWidth } : undefined}>
+      <div className={img.transparent ? undefined : "overflow-hidden rounded-2xl border border-surface-border-soft bg-black"}>
+        <Image src={img.src} alt={img.alt} width={img.width} height={img.height} sizes="(min-width: 768px) 720px, 100vw" className="block h-auto w-full" />
+      </div>
+      <figcaption className="label-mono text-[0.6rem] text-foreground-dim" lang="en">
+        © {img.sourceName}
+        {img.sourceUrl && (
+          <>
+            {" · "}
+            <a href={img.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="transition-colors hover:text-foreground hover:underline">
+              {linkLabel}
+            </a>
+          </>
+        )}
+      </figcaption>
+    </figure>
+  );
+}
+
 export function ArticleBody({
   sections,
   translated,
@@ -105,8 +130,10 @@ export function ArticleBody({
                   {renderInline(p, locale, `s${i}sub${si}p${pi}`)}
                 </p>
               ))}
+              {sub.image && <ArticleFigure img={sub.image} linkLabel={dict.product.gallerySourceLinkLabel} />}
             </div>
           ))}
+          {section.image && <ArticleFigure img={section.image} linkLabel={dict.product.gallerySourceLinkLabel} />}
           {section.video && (
             // Owner 05/10: a shop clip about this section's subject, after its text — the same card as the article's clip.
             <div className="mt-3">
