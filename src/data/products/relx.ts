@@ -134,11 +134,12 @@ export const relxProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/relx-infinity-2-plus/card.webp",
+        // Image round img-1610 16/10 (checker #540 r1: the RELX store file filled 68% of the card): card-v2 = studio re-shoot.
+        src: "/assets/products/relx-infinity-2-plus/card-v2.webp",
         alt: "RELX Infinity 2 Plus, Black Sapphire, front view",
-        angle: "front, isolated — RELX's own store image (the largest single-device file RELX has)",
+        angle: "front, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from RELX's own Black Sapphire front render",
         transparentBackground: true,
-        sourceName: "RELX (official store, relxnow.com)",
+        sourceName: "OKami24 render (Higgsfield) from RELX's store image (relxnow.com)",
         sourceUrl: INFINITY_PAGE,
       },
     ],
