@@ -726,7 +726,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     },
     tagline: "Infinity รุ่นปัจจุบันของ RELX สลับได้ 3 โหมด ตั้งแต่ 6.5 ถึง 10 วัตต์",
     shortDescription:
-      "เครื่องระบบสวิตช์ของ RELX มี 3 โหมด Eco 6.5 วัตต์ Smooth 8 วัตต์ และ Boost 10 วัตต์ แบต 440mAh ชาร์จ USB-C 15 นาทีได้ถึง 80% ใช้กับหัวพอตบรรจุสำเร็จของ RELX ทั้ง RELX Pod, Pod Pro และ Pod Pro 2",
+      "เครื่องระบบสวิตช์ของ RELX มี 3 โหมด Eco 6.5 วัตต์ Smooth 8 วัตต์ และ Boost 10 วัตต์ แบต 440mAh ชาร์จ 15 นาทีได้ถึง 80% ใช้กับหัวพอตบรรจุสำเร็จของ RELX ทั้ง RELX Pod, Pod Pro และ Pod Pro 2",
   },
   "relx-creator": {
     whoIsThisFor: {
