@@ -47,7 +47,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   redirect into a checker-read tree = discipline (rule-audit L1 proposes a lock) · scan tools against the live site (L2).
 3i OPEN ROUND "image sweep" = `docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt` (image chats; own the main folder's `_incoming/img-1610/`,
   worktrees `_incoming/img-1610/wt-img` (work, own node_modules) · `wt-gate` (checker tree) · `wt-base` (base build 47320ddd, before
-  shots `_incoming/img-1610/shots/before-*` for every product of the round)). Nano Banana Pro Unlimited free in Chrome to ~19/10.
+  shots `_incoming/img-1610/shots/before-*` for every product of the round)). Nano Banana Pro Unlimited free in Chrome until ~evening 18/10 (owner 16/10: 3 days from 15/10) — render first, key later.
   LIVE [ตรวจแล้ว]: #501 coil-94/55/53 · #503 JOIWAY F4 · #505 ARGUS G4 · #512 SALTHUB Zero Pro + Nano · #516 JOIWAY F3 ·
   #522 Caliburn G5 Lite (+SE card) · #526 RELX Smash Go 12K (one master + scripted stripes) · #528 Caliburn G4 Classic 4 colours +
   card + lineup (checker PASS 570cf13c; bottom = one shared silver silhouette) · #533 DRAG 6 all-colours = two studio line-ups
