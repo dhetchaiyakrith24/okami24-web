@@ -42,7 +42,6 @@ export const SECTION_IMAGES = {
   mSwitchLanyard: { src: "/assets/products/m-switch-kit/story-lanyard.webp", alt: "โปสเตอร์ของ SALTHUB: M Switch มาพร้อมสายคล้องคอ", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
   caliburnG4ProOneTap: { src: "/assets/products/caliburn-g4-pro/story-one-tap.webp", alt: "ภาพจากคลิปของ UWELL: สลับโหมดบนจอทัชของ Caliburn G4 Pro", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro", width: 1600, height: 900 },
   caliburnG5Battery: { src: "/assets/products/caliburn-g5/story-battery-v4.webp", alt: "โปสเตอร์ของ UWELL: แบต 1600mAh ของ Caliburn G5", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2413, height: 1131, transparent: true },
-  caliburnG4Airflow: { src: "/assets/products/caliburn-g4/story-airflow.webp", alt: "ภาพจากคลิปของ UWELL: ปุ่มเลื่อนปรับลมของ Caliburn G4", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4", width: 900, height: 1200 },
   caliburnG4Pods: { src: "/assets/products/caliburn-g4/story-pods.webp", alt: "ตารางของ UWELL: หัวพอต GPP แบบเติมด้านบนและเติมด้านข้าง", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4", width: 1800, height: 1200 },
   caliburnG5TripleTap: { src: "/assets/products/caliburn-g5/story-triple-tap.webp", alt: "โปสเตอร์ของ UWELL: สลับโหมด Caliburn G5 ด้วยการแตะตัวเครื่องสามครั้ง", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1050, height: 613 },
 } satisfies Record<string, StoryImage>;
@@ -1374,7 +1373,6 @@ const allGuides: Guide[] = [
               "G4 Pro ปรับช่องลมได้ละเอียดแบบไม่มีขั้น G3 Pro ปรับได้เต็มช่วง G5 ปรับช่องลมด้านข้างแบบไม่มีขั้น ตั้งแต่ MTL ถึง RDL",
               "G5 Lite กับ G5 Lite SE ปรับได้สองทาง คือกลับด้านหัวพอตและปรับแบบไม่มีขั้น G4 Classic ก็ปรับแบบไม่มีขั้นและกลับด้านหัวพอตได้ ส่วน G4 กับ G4 Mini ใช้ปุ่มเลื่อนปรับลมคู่กับการกลับด้านหัวพอต",
             ],
-            image: SECTION_IMAGES.caliburnG4Airflow,
           },
           {
             heading: "ระบบหัวพอต",
