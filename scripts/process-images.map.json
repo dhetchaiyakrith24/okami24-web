@@ -8202,5 +8202,310 @@
   },
   "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
   "fileName": "variant-blue.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/black-green.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-1",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BLACK+GREEN+PACK-pmi_G0000693_00_id-1783303624000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-1.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-1.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/green.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-2",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+GREEN+PACK-pmi_G0000699_00_id-1782351563000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-2.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-2.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/blue.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-3",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BLUE+PACK-pmi_G0000694_00_id-1783303624000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-3.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-3.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/sienna.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-4",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+SIENNA+PACK-pmi_G0000705_00_id-1783303661000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-4.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-4.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/purple-wave.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-5",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+PURPLE+WAVE+PACK-pmi_G0000703_00_id-1783303712071.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-5.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-5.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/bronze.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-6",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BRONZE+PACK-pmi_G0000697_00_id-1783303652000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-6.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-6.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/bright-wave.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-7",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BRIGHT+WAVE+PACK-pmi_G0000696_00_id-1782354880000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-7.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-7.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/dimensions-apricity.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-8",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+DIMENSIONS+APRICITY+PACK-pmi_G0000768_00_id-1782351565000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-8.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/dimensions-yugen.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-9",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+DIMENSIONS+YUGEN+PACK-pmi_G0000716_00_id-1783303653000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-9.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/golden-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-11",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+GOLDEN+EDITION+PACK-pmi_G0001478_00_id-1783303679000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-11.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-11.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/berrine-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-13",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BERRINE+EDITION+PACK-pmi_G0001650_00_id-1782351567000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-13.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/mulint-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-14",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+MULINT+EDITION+PACK-pmi_G0001648_00_id-1783303679000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-14.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/oasis-pearl.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-15",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+OASIS+PEARL+PACK-pmi_G0000948_00_id-1782351566000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-15.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-15.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/sun-pearl.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-16",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+SUN+PEARL+PACK-pmi_G0000949_00_id-1783303650000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-16.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-16.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/black-ruby.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-17",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BLACK+RUBY+PACK-pmi_G0002278_00_id-1783303712099.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-17.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-17.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/passion-fruit-pearl.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-passion-fruit-pearl",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+PASSION+FRUIT+PEARL+PACK-pmi_G0003227_00_id-1789638278000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-verified-passion-fruit-pearl.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/strawberry-pearl.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-strawberry-pearl",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+STRAWBERRY+PEARL+PACK-pmi_G0003228_00_id-1789638279000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-verified-strawberry-pearl.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/auburn-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-auburn-edition",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+AUBURN+EDITION+PACK-pmi_G0001652_00_id-1783303679000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-verified-auburn-edition.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/perint-pearl-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-perint-pearl-edition",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+PERINT+PEARL+EDITION+PACK-pmi_G0002500_00_id-1783303683000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-verified-perint-pearl-edition.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/bermin-pearl-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-bermin-pearl-edition",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BERMIN+PEARL+EDITION+PACK-pmi_G0002498_00_id-1783303682000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-verified-bermin-pearl-edition.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/riviera-pearl.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-riviera-pearl",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+RIVIERA+PEARL+PACK-pmi_G0002220_00_id-1782705843615.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-verified-riviera-pearl.webp"
  }
 ]

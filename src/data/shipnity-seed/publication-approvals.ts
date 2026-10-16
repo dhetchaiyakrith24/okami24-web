@@ -89,7 +89,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "Coil-1": { sellingPrice: 150, lastPriceReview: "2026-10-06" }, // owner override 2026-10-06: admin list row "Coil Voopoo Vinci" (was ฿130)
   "Coil-72": { sellingPrice: 300, lastPriceReview: "2026-10-06" }, // owner override 2026-10-06: admin list row "Coil Vmate" (was ฿350)
   "Coil-94": { sellingPrice: 450, lastPriceReview: "2026-09-02" },
-  "Pod-159": { sellingPrice: 450, lastPriceReview: "2026-10-06" }, // owner override 2026-10-06: admin list row "Esko Bar Switch 20K" (was ฿549)
+  "Pod-159": { sellingPrice: 550, lastPriceReview: "2026-10-16" }, // admin ICE on LINE 2026-10-16, forwarded by the owner: "ปรับราคาเป็น 550" (was ฿450; owner rule 06/10: an admin-reported price applies at once)
   "coil-54": { sellingPrice: 250, lastPriceReview: "2026-09-02" },
   // Heated-tobacco wave — same pricing rule, same full readiness (identity/brand/category/media/
   // price all real and cited — see TAXONOMY_MATCHES/VERIFIED_MEDIA/VERIFIED_SPECIFICATIONS
