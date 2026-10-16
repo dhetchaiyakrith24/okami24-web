@@ -8111,5 +8111,96 @@
   "slug": "drag-x",
   "role": "card",
   "note": "VOOPOO DRAG X page image drag2-main.png (VOOPOO CDN sen.voopoo.com.cn), 579x837 transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/card.webp",
+  "slug": "caliburn-g3",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-cobalt-blue.png, _incoming/img-1610/b13/out/cobalt-blue-A.png, render hf_20261016_104007_1dc6da00-7a1c-46d4-b1dc-0ed8f4038c99); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL Promotion Material zip, 3. Phone Size Pics/Cobalt-Blue.jpg (_incoming/p63/g3/src/cobalt-blue.jpg)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-cobalt-blue.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534 checker r1: UWELL's card file showed the device 676 px tall (card fill 57%) → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "replaces": "/assets/products/caliburn-g3/card.webp",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/variant-silver.webp",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "silver",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-silver.png, _incoming/img-1610/b13/out/silver-A.png, render hf_20261016_104527_67ca42ac-9b00-4695-9192-e3028bdfed8e); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL's page image of this colour files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-1.webp (_incoming/p63/g3/p1.webp)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-silver.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "fileName": "variant-silver.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/variant-gray.webp",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "gray",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-gray.png, _incoming/img-1610/b13/out/gray-B.png, render hf_20261016_105006_c7aa3d7d-8d7e-4f9c-97fd-1360db9fe49c); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL's page image of this colour files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-2.webp (_incoming/p63/g3/p2.webp)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-gray.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "fileName": "variant-gray.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/variant-black.webp",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "black",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-black.png, _incoming/img-1610/b13/out/black-B.png, render hf_20261016_105454_a0a4037c-64f4-4241-91cc-b1b699cdceb6); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL's page image of this colour files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-3.webp (_incoming/p63/g3/p3.webp)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-black.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "fileName": "variant-black.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/variant-red.webp",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "red",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-red.png, _incoming/img-1610/b13/out/red-B.png, render hf_20261016_105923_0b862384-24ab-4872-9458-e4200dd4fd7f); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL's page image of this colour files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-4.webp (_incoming/p63/g3/p4.webp)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-red.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "fileName": "variant-red.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/variant-green.webp",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "green",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-green.png, _incoming/img-1610/b13/out/green-B.png, render hf_20261016_110349_7858f0ce-0520-4b34-9a94-1e924c7a5417); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL's page image of this colour files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-5.webp (_incoming/p63/g3/p5.webp)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-green.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "fileName": "variant-green.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/variant-blue.webp",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "blue",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-blue.png, _incoming/img-1610/b13/out/blue-A.png, render hf_20261016_110829_c0742e91-cc56-4778-8e53-fbf86a4a4d63); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL's page image of this colour files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-6.webp (_incoming/p63/g3/p6.webp)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-blue.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "fileName": "variant-blue.webp"
  }
 ]

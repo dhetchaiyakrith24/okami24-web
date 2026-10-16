@@ -1575,26 +1575,26 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g3/card.webp",
+        src: "/assets/products/caliburn-g3/card-v2.webp",
         alt: "UWELL Caliburn G3, Cobalt Blue, front view",
-        angle: "front, isolated — UWELL's own product photo (Promotion Material, phone-size shot) cut from its white ground",
+        angle: "front, isolated — studio re-shoot of UWELL's own Cobalt Blue phone-size photo (UWELL's file shows the device 676 px tall)",
         transparentBackground: true,
-        sourceName: "UWELL (official promotion material)",
+        sourceName: "OKami24 render (Higgsfield) from UWELL's own Cobalt Blue photo",
         sourceUrl: G3_OFFICIAL,
       },
     ],
     openOnCardPhoto: true,
     // UWELL's 11 colours in its own order; every name is printed on UWELL's colour images
     // (files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-1…p-11.webp). Photos: UWELL's promotion material
-    // has full-size shots of the five 2024 colours only; the six 2023 colours exist as ~400 px page images, too small for
-    // a colour photo — swatch-only until a remake (IMAGE_SPEC §0 item 7), swatch = the median body colour of UWELL's image.
+    // has full-size shots of the five 2024 colours only; the six 2023 colours exist as ~400 px page images — their photos
+    // are studio re-shoots of those UWELL images (image chat img-1610 b13, 16/10), swatch = the median body colour of UWELL's image.
     colorVariants: [
-      { id: "silver", name: "Silver", swatchHex: "#c2c2c6" },
-      { id: "gray", name: "Gray", swatchHex: "#55545b" },
-      { id: "black", name: "Black", swatchHex: "#3b3b3f" },
-      { id: "red", name: "Red", swatchHex: "#c12927" },
-      { id: "green", name: "Green", swatchHex: "#536e5c" },
-      { id: "blue", name: "Blue", swatchHex: "#263959" },
+      { id: "silver", name: "Silver", swatchHex: "#c2c2c6", image: { src: "/assets/products/caliburn-g3/variant-silver.webp", alt: "UWELL Caliburn G3, Silver" } },
+      { id: "gray", name: "Gray", swatchHex: "#55545b", image: { src: "/assets/products/caliburn-g3/variant-gray.webp", alt: "UWELL Caliburn G3, Gray" } },
+      { id: "black", name: "Black", swatchHex: "#3b3b3f", image: { src: "/assets/products/caliburn-g3/variant-black.webp", alt: "UWELL Caliburn G3, Black" } },
+      { id: "red", name: "Red", swatchHex: "#c12927", image: { src: "/assets/products/caliburn-g3/variant-red.webp", alt: "UWELL Caliburn G3, Red" } },
+      { id: "green", name: "Green", swatchHex: "#536e5c", image: { src: "/assets/products/caliburn-g3/variant-green.webp", alt: "UWELL Caliburn G3, Green" } },
+      { id: "blue", name: "Blue", swatchHex: "#263959", image: { src: "/assets/products/caliburn-g3/variant-blue.webp", alt: "UWELL Caliburn G3, Blue" } },
       { id: "midnight-gold", name: "Midnight Gold", swatchHex: "#3e3d42", image: { src: "/assets/products/caliburn-g3/variant-midnight-gold.webp", alt: "UWELL Caliburn G3, Midnight Gold" } },
       { id: "cobalt-blue", name: "Cobalt Blue", swatchHex: "#2b62c2", image: { src: "/assets/products/caliburn-g3/variant-cobalt-blue.webp", alt: "UWELL Caliburn G3, Cobalt Blue" } },
       { id: "pastel-pink", name: "Pastel Pink", swatchHex: "#cbbbc4", image: { src: "/assets/products/caliburn-g3/variant-pastel-pink.webp", alt: "UWELL Caliburn G3, Pastel Pink" } },
