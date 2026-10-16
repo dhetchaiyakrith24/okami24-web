@@ -615,7 +615,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   },
   "IQOSHEET-15": {
     tagline: "ก้าน TEREA สำหรับ IQOS ILUMA",
-    shortDescription: "ก้าน TEREA สำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International)",
+    // Round p63 16/10 (owner item 69): the price is per pack - said here so it is never read as a carton price.
+    shortDescription: "ก้าน TEREA สำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International) ราคาต่อ 1 ซอง",
   },
   "IQOSHEET-16": {
     tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i PRIME",
