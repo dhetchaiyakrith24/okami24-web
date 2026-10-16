@@ -782,12 +782,12 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-94/card-v3.webp",
-      alt: "UWELL CALIBURN G3 refillable pod, studio photo",
-      angle: "Front, studio re-shoot 16/10 (round img-1610: the 08/10 render was milky; re-lit on dark so the clear pod reads glassy, large in frame — render, prompt and check in scripts/process-images.map.json `aiRender`). Before: Front, studio re-shoot (round \"3 coil photos\", 08/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of Black Note's photos of each CALIBURN G3 pod option (0.4Ω pod; 0.6Ω / 0.9Ω boxes with 4 pods; 1.2Ω CRC Version box with 4 pods); shape checked against that photo (scripts/ai-fidelity-sheet.js outline overlay) and every printed mark by eye; card = the single-pod render of the 0.4Ω option (the box shots of the other options are too busy at card size). Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      src: "/assets/products/coil-94/card-gpp.webp",
+      alt: "UWELL CALIBURN GPP Integrated Coil Cartridge, box and 3 pods, studio photo",
+      angle: "Front, studio re-shoot 16/10 (round img-1610: the shop now sells the new GPP 3-pack, admin 16/10) — OKami24 render (Higgsfield, IMAGE_SPEC §0 items 7–8) of the shop's own stock photo of each resistance: the box upright with its 3 pods standing in front; every printed word and the ring colour checked by eye against that photo; card = the 0.4Ω pack. Was the CALIBURN G3 Refillable Pod (4 pods). Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
-      sourceName: "OKami24 render (Higgsfield) from Black Note's product photos",
-      sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/",
+      sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack",
+      sourceUrl: "https://www.myuwell.com/g-pod-platform",
     },
   ],
   "Pod-159": [
@@ -1318,10 +1318,10 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Coil-72-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-72/variant-coil-72-4.webp", alt: "VOOPOO VMATE Top Fill Cartridge pod, studio photo (the 0.4Ω and 0.7Ω pods look the same; the resistance is printed on the box only)", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Vapormo's and Vapesourcing's product photos", sourceUrl: "https://www.vapormo.com/products/voopoo-vmate-v2-pod-cartridge-for-vmate-vmate-e-kit-2pcs-pack" },
   },
   "Coil-94": {
-    "Coil-94-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-1-v2.webp", alt: "UWELL CALIBURN G3 pod, 0.4Ω meshed, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Black Note's product photos", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
-    "Coil-94-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-2-v3.webp", alt: "UWELL CALIBURN G3 Refillable Pod 0.6Ω meshed, box and 4 pods, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Black Note's product photos", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
-    "Coil-94-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-3-v3.webp", alt: "UWELL CALIBURN G3 Refillable Pod 0.9Ω meshed, box and 4 pods, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Black Note's product photos", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
-    "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-4-v3.webp", alt: "UWELL CALIBURN G3 Refillable Pod CRC Version 1.2Ω meshed, box and 4 pods, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Black Note's product photos", sourceUrl: "https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/" },
+    "Coil-94-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-1-gpp.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 0.4Ω, box and 3 pods (red ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
+    "Coil-94-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-2-gpp.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 0.6Ω, box and 3 pods (orange ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
+    "Coil-94-3": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-3-gpp.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 0.9Ω, box and 3 pods (yellow ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
+    "Coil-94-4": { kind: "official-photo", role: "detail", src: "/assets/products/coil-94/variant-coil-94-4-gpp.webp", alt: "UWELL CALIBURN GPP Integrated Coil Cartridge 1.2Ω, box and 3 pods (green ring), studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's own stock photo of the GPP 3-pack", sourceUrl: "https://www.myuwell.com/g-pod-platform" },
   },
   "Coil-70": {
     "Coil-70-2": { kind: "official-photo", role: "detail", src: "/assets/products/coil-70/variant-coil-70-2-v2.webp", alt: "dotmod dotCoil 0.7Ω (14-20w) coil box with five brass coils, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from Element Vape's product photo", sourceUrl: "https://www.elementvape.com/dotmod-dotcoils" },

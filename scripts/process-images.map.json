@@ -7947,68 +7947,68 @@
   "fileName": "variant-coil-72-4.webp"
  },
  {
-  "source": "_incoming/img-1610/b1/key/D-c94-04.png",
+  "source": "_incoming/img-1610/b14/key/D-gpp-04.png",
   "slug": "coil-94",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light + 'large in frame' + 'the dark backdrop shows through the clear and smoky parts, never milky white' (_incoming/img-1610/b1/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --ft 8 --device, foot slab trimmed (coil3/foottrim.js), specks dropped (img-1610/specks.js)",
-   "reference": "Black Note's photo of the CALIBURN G3 3ml 0.4Ω pod (bn-04.webp, 144 px wide — the only photo of this option; no 0.4Ω box photo exists, researcher 16/10) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/img-1610/b1/in/c94-04w.png; render _incoming/img-1610/b1/out/c94-04-A.png)",
-   "fidelitySheet": "_incoming/img-1610/b1/fid/fid-c94-04.png — shape IoU 0.992; MIN mark, CE, crossed bin, red stripe, side tab checked by eye (colour dE does not apply: re-lit on dark on purpose, IMAGE_SPEC §0 item 8 (3))"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot: box upright on a #2b2e33 sweep with its 3 pods standing in front of the box's right half — image 1 = this resistance's quadrant of the admin sheet (prompt builders __GPP / __GPP2 in _incoming/img-1610/b14/prompts.md); keyed by _incoming/img-1610/b14/key2.js (silhouette = first pixel off the row backdrop from the top and each side, box left edge + right pod side = fitted straight lines, foot = top of the contact-shadow core per column, median-smoothed; clear pod interiors keep the render colour)",
+   "reference": "the shop's own stock photo of the CALIBURN GPP Integrated Coil Cartridge 3-pack (admin Maprang 16/10, real stock) — _incoming/img-1610/ref/coil-94-gpp-3pcs-admin-1610.jpg, 0.4Ω quadrant (input _incoming/img-1610/b14/in/gpp-04.png; render _incoming/img-1610/b14/out/g04-B.png)",
+   "fidelitySheet": "_incoming/img-1610/b14/fid/fid-04.jpg — box art and every printed word (GPP · PRO FOCS UWELL · 3 PCS · UWELL · CALIBURN GPP Integrated Coil Cartridge · CALIBURN), 3 pods, red rings checked by eye against the admin photo (IoU / colour numbers do not apply: the photo lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round img-1610 16/10 — re-shot: the 08/10 render copied the white-background look (milky pod); card = the 0.4Ω pod",
-  "fileName": "card-v3.webp"
+  "note": "round img-1610 16/10 — the shop now sells the new GPP 3-pack (admin Maprang 16/10): was the old CALIBURN G3 Refillable Pod box + 4 pods · card = the 0.4Ω pack",
+  "fileName": "card-gpp.webp"
  },
  {
-  "source": "_incoming/img-1610/b1/key/D-c94-04.png",
+  "source": "_incoming/img-1610/b14/key/D-gpp-04.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-1",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light + 'large in frame' + 'the dark backdrop shows through the clear and smoky parts, never milky white' (_incoming/img-1610/b1/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --ft 8 --device, foot slab trimmed (coil3/foottrim.js), specks dropped (img-1610/specks.js)",
-   "reference": "Black Note's photo of the CALIBURN G3 3ml 0.4Ω pod (bn-04.webp, 144 px wide — the only photo of this option; no 0.4Ω box photo exists, researcher 16/10) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/img-1610/b1/in/c94-04w.png; render _incoming/img-1610/b1/out/c94-04-A.png)",
-   "fidelitySheet": "_incoming/img-1610/b1/fid/fid-c94-04.png — shape IoU 0.992; MIN mark, CE, crossed bin, red stripe, side tab checked by eye (colour dE does not apply: re-lit on dark on purpose, IMAGE_SPEC §0 item 8 (3))"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot: box upright on a #2b2e33 sweep with its 3 pods standing in front of the box's right half — image 1 = this resistance's quadrant of the admin sheet (prompt builders __GPP / __GPP2 in _incoming/img-1610/b14/prompts.md); keyed by _incoming/img-1610/b14/key2.js (silhouette = first pixel off the row backdrop from the top and each side, box left edge + right pod side = fitted straight lines, foot = top of the contact-shadow core per column, median-smoothed; clear pod interiors keep the render colour)",
+   "reference": "the shop's own stock photo of the CALIBURN GPP Integrated Coil Cartridge 3-pack (admin Maprang 16/10, real stock) — _incoming/img-1610/ref/coil-94-gpp-3pcs-admin-1610.jpg, 0.4Ω quadrant (input _incoming/img-1610/b14/in/gpp-04.png; render _incoming/img-1610/b14/out/g04-B.png)",
+   "fidelitySheet": "_incoming/img-1610/b14/fid/fid-04.jpg — box art and every printed word (GPP · PRO FOCS UWELL · 3 PCS · UWELL · CALIBURN GPP Integrated Coil Cartridge · CALIBURN), 3 pods, red rings checked by eye against the admin photo (IoU / colour numbers do not apply: the photo lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round img-1610 16/10 — re-shot (was the milky 08/10 render)",
-  "fileName": "variant-coil-94-1-v2.webp"
+  "note": "round img-1610 16/10 — the shop now sells the new GPP 3-pack (admin Maprang 16/10): was the old CALIBURN G3 Refillable Pod box + 4 pods",
+  "fileName": "variant-coil-94-1-gpp.webp"
  },
  {
-  "source": "_incoming/img-1610/b1/key/D-c94-06-v3.png",
+  "source": "_incoming/img-1610/b14/key/D-gpp-06.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-2",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the Black Note box photo, image 2 (0.6 / 0.9) = the approved 0.4Ω pod render; box upright on a #2b2e33 sweep with its 4 pods standing in front (prompts: _incoming/coil3/b2/prompts.txt); keyed off the backdrop by _incoming/coil3/matte3.js --device (box + each pod protected, floor cut per pod foot), clear pod silhouettes restored by b2/podfill.js, placed by place.js, specks dropped by fix/clean.js; AI-garbled side-sticker word softened (b2/soften.js, 0.6 / 0.9), the 0.6 red top strip's garbled letters replaced by its plain strip texture (b2/strip.js) and the 1.2 box logo word re-set to the real \"PRO FOCS\" (b2/logofix.js)",
-   "reference": "Black Note's photo of this CALIBURN G3 option (box + 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-06.png; render _incoming/coil3/b2/c94-06-C2.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c94-06-v2.png — box art, every printed mark and the pods checked by eye against the reference (IoU / colour numbers do not apply: the reference lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot: box upright on a #2b2e33 sweep with its 3 pods standing in front of the box's right half — image 1 = this resistance's quadrant of the admin sheet, image 2 = the 0.4Ω render (same shot, only the ring colour changes) (prompt builders __GPP / __GPP2 in _incoming/img-1610/b14/prompts.md); keyed by _incoming/img-1610/b14/key2.js (silhouette = first pixel off the row backdrop from the top and each side, box left edge + right pod side = fitted straight lines, foot = top of the contact-shadow core per column, median-smoothed; clear pod interiors keep the render colour)",
+   "reference": "the shop's own stock photo of the CALIBURN GPP Integrated Coil Cartridge 3-pack (admin Maprang 16/10, real stock) — _incoming/img-1610/ref/coil-94-gpp-3pcs-admin-1610.jpg, 0.6Ω quadrant (input _incoming/img-1610/b14/in/gpp-06.png; render _incoming/img-1610/b14/out/g06-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b14/fid/fid-06.jpg — box art and every printed word (GPP · PRO FOCS UWELL · 3 PCS · UWELL · CALIBURN GPP Integrated Coil Cartridge · CALIBURN), 3 pods, orange rings checked by eye against the admin photo (IoU / colour numbers do not apply: the photo lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B) · img-1610 16/10: faint stray pixels along the pod bottoms dropped (img-1610/specks.js — owner taste note)",
-  "fileName": "variant-coil-94-2-v3.webp"
+  "note": "round img-1610 16/10 — the shop now sells the new GPP 3-pack (admin Maprang 16/10): was the old CALIBURN G3 Refillable Pod box + 4 pods",
+  "fileName": "variant-coil-94-2-gpp.webp"
  },
  {
-  "source": "_incoming/img-1610/b1/key/D-c94-09-v3.png",
+  "source": "_incoming/img-1610/b14/key/D-gpp-09.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-3",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the Black Note box photo, image 2 (0.6 / 0.9) = the approved 0.4Ω pod render; box upright on a #2b2e33 sweep with its 4 pods standing in front (prompts: _incoming/coil3/b2/prompts.txt); keyed off the backdrop by _incoming/coil3/matte3.js --device (box + each pod protected, floor cut per pod foot), clear pod silhouettes restored by b2/podfill.js, placed by place.js, specks dropped by fix/clean.js; AI-garbled side-sticker word softened (b2/soften.js, 0.6 / 0.9), the 0.6 red top strip's garbled letters replaced by its plain strip texture (b2/strip.js) and the 1.2 box logo word re-set to the real \"PRO FOCS\" (b2/logofix.js)",
-   "reference": "Black Note's photo of this CALIBURN G3 option (box + 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-09.png; render _incoming/coil3/b2/c94-09-C1.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c94-09-v2.png — box art, every printed mark and the pods checked by eye against the reference (IoU / colour numbers do not apply: the reference lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot: box upright on a #2b2e33 sweep with its 3 pods standing in front of the box's right half — image 1 = this resistance's quadrant of the admin sheet, image 2 = the 0.4Ω render (same shot, only the ring colour changes) (prompt builders __GPP / __GPP2 in _incoming/img-1610/b14/prompts.md); keyed by _incoming/img-1610/b14/key2.js (silhouette = first pixel off the row backdrop from the top and each side, box left edge + right pod side = fitted straight lines, foot = top of the contact-shadow core per column, median-smoothed; clear pod interiors keep the render colour)",
+   "reference": "the shop's own stock photo of the CALIBURN GPP Integrated Coil Cartridge 3-pack (admin Maprang 16/10, real stock) — _incoming/img-1610/ref/coil-94-gpp-3pcs-admin-1610.jpg, 0.9Ω quadrant (input _incoming/img-1610/b14/in/gpp-09.png; render _incoming/img-1610/b14/out/g09-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b14/fid/fid-09.jpg — box art and every printed word (GPP · PRO FOCS UWELL · 3 PCS · UWELL · CALIBURN GPP Integrated Coil Cartridge · CALIBURN), 3 pods, yellow rings checked by eye against the admin photo (IoU / colour numbers do not apply: the photo lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B) · img-1610 16/10: faint stray pixels along the pod bottoms dropped (img-1610/specks.js — owner taste note)",
-  "fileName": "variant-coil-94-3-v3.webp"
+  "note": "round img-1610 16/10 — the shop now sells the new GPP 3-pack (admin Maprang 16/10): was the old CALIBURN G3 Refillable Pod box + 4 pods",
+  "fileName": "variant-coil-94-3-gpp.webp"
  },
  {
-  "source": "_incoming/img-1610/b1/key/D-c94-12-v3.png",
+  "source": "_incoming/img-1610/b14/key/D-gpp-12.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-4",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the Black Note box photo, image 2 (0.6 / 0.9) = the approved 0.4Ω pod render; box upright on a #2b2e33 sweep with its 4 pods standing in front (prompts: _incoming/coil3/b2/prompts.txt); keyed off the backdrop by _incoming/coil3/matte3.js --device (box + each pod protected, floor cut per pod foot), clear pod silhouettes restored by b2/podfill.js, placed by place.js, specks dropped by fix/clean.js; AI-garbled side-sticker word softened (b2/soften.js, 0.6 / 0.9), the 0.6 red top strip's garbled letters replaced by its plain strip texture (b2/strip.js) and the 1.2 box logo word re-set to the real \"PRO FOCS\" (b2/logofix.js)",
-   "reference": "Black Note's photo of this CALIBURN G3 option (box + 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-12.png; render _incoming/coil3/b2/c94-12-C1.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c94-12-v2.png — box art, every printed mark and the pods checked by eye against the reference (IoU / colour numbers do not apply: the reference lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot: box upright on a #2b2e33 sweep with its 3 pods standing in front of the box's right half — image 1 = this resistance's quadrant of the admin sheet, image 2 = the 0.4Ω render (same shot, only the ring colour changes) (prompt builders __GPP / __GPP2 in _incoming/img-1610/b14/prompts.md); keyed by _incoming/img-1610/b14/key2.js (silhouette = first pixel off the row backdrop from the top and each side, box left edge + right pod side = fitted straight lines, foot = top of the contact-shadow core per column, median-smoothed; clear pod interiors keep the render colour)",
+   "reference": "the shop's own stock photo of the CALIBURN GPP Integrated Coil Cartridge 3-pack (admin Maprang 16/10, real stock) — _incoming/img-1610/ref/coil-94-gpp-3pcs-admin-1610.jpg, 1.2Ω quadrant (input _incoming/img-1610/b14/in/gpp-12.png; render _incoming/img-1610/b14/out/g12-B.png)",
+   "fidelitySheet": "_incoming/img-1610/b14/fid/fid-12.jpg — box art and every printed word (GPP · PRO FOCS UWELL · 3 PCS · UWELL · CALIBURN GPP Integrated Coil Cartridge · CALIBURN), 3 pods, green rings checked by eye against the admin photo (IoU / colour numbers do not apply: the photo lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B) · img-1610 16/10: faint stray pixels dropped (img-1610/specks.js)",
-  "fileName": "variant-coil-94-4-v3.webp"
+  "note": "round img-1610 16/10 — the shop now sells the new GPP 3-pack (admin Maprang 16/10): was the old CALIBURN G3 Refillable Pod box + 4 pods",
+  "fileName": "variant-coil-94-4-gpp.webp"
  },
  {
   "source": "_incoming/img-1610/b3/key/P-zp.png",
