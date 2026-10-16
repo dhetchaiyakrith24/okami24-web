@@ -1100,7 +1100,7 @@ export const voopooProducts: Product[] = [
     features: [
       { id: "chip", title: "GENE.TT chip", description: "VOOPOO rates the GENE.TT chip at 0.001 seconds to fire, and it remembers the wattage you last set." },
       { id: "smart", title: "SMART mode", description: "Fit a coil and SMART mode reads it, then suggests a wattage to start from." },
-      { id: "airflow", title: "Magnetic pod, Infinite Airflow", description: "The 4.5mL PCTG pod attaches magnetically and works with what VOOPOO calls its Infinite Airflow System." },
+      { id: "airflow", title: "A magnetic pod", description: "The 4.5mL PCTG pod is held on by magnets; VOOPOO calls it the simplest, cleanest way to fill." },
       { id: "battery", title: "One 18650, charged over USB-C", description: "The DRAG X takes a single 18650 cell, bought separately, and fast-charges it in the device over USB-C." },
     ],
     compatibility: [{ type: "coil", label: "PnP coils", note: "PnP-VM1 0.3Ω and PnP-VM6 0.15Ω come in the kit; PnP-RBA fits." }, { type: "charging", label: "USB-C", note: "USB-C fast charging." }],
