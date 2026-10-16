@@ -200,6 +200,13 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     shipnityProductId: "Disposable-39",
     evidence: 'owner-confirmed 2026-10-06: admin current-price list row "RELX Smash Go 12K" ฿299 → ฿320 · match was — shipnity-backoffice: "RELX Smash GO 12K" (Disposable-39, ฿299) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
   },
+  "relx-infinity-2-plus": {
+    sellingPrice: 990,
+    lastPriceReview: "2026-10-16",
+    basis: "owner-confirmed",
+    shipnityProductId: "Pod-105",
+    evidence: 'owner-confirmed 2026-10-16: owner item 69 "ใส่ตามคลัง" — Shipnity Max "RELX Infinity 2 Plus" (Pod-105, ฿990), every option out of stock that day — the page shows the price with the sold-out state',
+  },
   "relx-creator": {
     sellingPrice: 250,
     lastPriceReview: "2026-09-21",
