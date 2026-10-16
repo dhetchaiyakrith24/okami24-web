@@ -55,6 +55,7 @@ const MANUFACTURER_HOSTS = [
 export const SOURCED_PUBLISHED_ROW_PRODUCTS = [
   "pod-159", // data round chat 2 (eskobarvape.com)
   "coil-55", "coil-68", "coil-54", "iqosheet-16", "iqosheet-18", // round data 2
+  "iqosheet-17", // round list19 (17/10, iqos.com/ph)
 ] as const;
 
 /** A number in one product's copy that is another product's verified fact, named as such in the sentence. */

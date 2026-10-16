@@ -8598,5 +8598,96 @@
   },
   "note": "round img-1610 16/10 - card = the Slate Grey re-shoot upright (card-v2 = UWELL render upright, made outside the map 03/10)",
   "fileName": "card-v3.webp"
+ },
+ {
+  "source": "_incoming/list19/iqos/ione-breeze-blue.png",
+  "slug": "iqosheet-17",
+  "role": "card",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.855
+  },
+  "note": "IQOS official kit render pmi_G0002077_00 (2048 px transparent PNG, ?width=2048) from iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html og:image; crop drops IQOS caption line under the device (list19 17/10)",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/list19/iqos/ione-breeze-blue.png",
+  "slug": "iqosheet-17",
+  "role": "variant",
+  "id": "breeze-blue",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.855
+  },
+  "note": "IQOS official kit render pmi_G0002077_00 (2048 px transparent PNG, ?width=2048) from iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html og:image; crop drops IQOS caption line under the device (list19 17/10)"
+ },
+ {
+  "source": "_incoming/list19/iqos/ione-digital-violet.png",
+  "slug": "iqosheet-17",
+  "role": "variant",
+  "id": "digital-violet",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.855
+  },
+  "note": "IQOS official kit render pmi_G0002081_00 (2048 px transparent PNG, ?width=2048) from iqos.com/ph/en/shop/iluma-i-one-kit-digital-violet.html og:image; crop drops IQOS caption line under the device (list19 17/10)"
+ },
+ {
+  "source": "_incoming/list19/iqos/ione-vivid-terracotta.png",
+  "slug": "iqosheet-17",
+  "role": "variant",
+  "id": "vivid-terracotta",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.855
+  },
+  "note": "IQOS official kit render pmi_G0002083_00 (2048 px transparent PNG, ?width=2048) from iqos.com/ph/en/shop/iluma-i-one-kit-vivid-terracotta.html og:image; crop drops IQOS caption line under the device (list19 17/10)"
+ },
+ {
+  "source": "_incoming/list19/iqos/ione-midnight-black.png",
+  "slug": "iqosheet-17",
+  "role": "variant",
+  "id": "midnight-black",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.855
+  },
+  "note": "IQOS official kit render pmi_G0002085_00 (2048 px transparent PNG, ?width=2048) from iqos.com/ph/en/shop/iluma-i-one-kit-midnight-black.html og:image; crop drops IQOS caption line under the device (list19 17/10)"
+ },
+ {
+  "source": "_incoming/list19/iqos/ione-spring-green.png",
+  "slug": "iqosheet-17",
+  "role": "variant",
+  "id": "spring-green",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.855
+  },
+  "note": "IQOS official kit render pmi_G0002079_00 (2048 px transparent PNG, ?width=2048) from iqos.com/ph/en/shop/iluma-i-one-kit-spring-green.html og:image; crop drops IQOS caption line under the device (list19 17/10)"
+ },
+ {
+  "source": "_incoming/list19/iqos/ione-electric-purple.png",
+  "slug": "iqosheet-17",
+  "role": "variant",
+  "id": "electric-purple",
+  "crop": {
+   "x0": 0,
+   "y0": 0,
+   "x1": 1,
+   "y1": 0.855
+  },
+  "note": "IQOS official kit render pmi_G0002612_00 (2048 px transparent PNG, ?width=2048) from iqos.com/ph/en/shop/iluma-i-one-kit-electric-purple.html og:image; crop drops IQOS caption line under the device (list19 17/10)"
  }
 ]

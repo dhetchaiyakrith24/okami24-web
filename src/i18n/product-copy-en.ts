@@ -37,6 +37,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "coil-89": { tagline: "Jellybox V pod by RINCOE" },
   "coil-94": { tagline: "Caliburn G4&G3 Series pod by UWELL" },
   "iqosheet-16": { tagline: "IQOS ILUMA i PRIME heated tobacco device" },
+  "iqosheet-17": { tagline: "IQOS ILUMA i ONE all-in-one heated tobacco device" },
   "iqosheet-18": { tagline: "IQOS ILUMA i heated tobacco device" },
   "pod-159": { tagline: "Esko Bar Switch 20K kit by ESKO BAR" },
   "pod-180": { tagline: "nexBar CLEAR 18K disposable" },

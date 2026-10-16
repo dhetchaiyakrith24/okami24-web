@@ -160,6 +160,14 @@ export const DEVICE_CONSUMABLE_EDGES: DeviceConsumableEdge[] = [
     tier: "official",
   },
   {
+    device: "iqosheet-17",
+    consumable: "iqosheet-15",
+    role: "stick",
+    evidence: "IQOS's ILUMA i ONE page: \"Designed to be used with TEREA tobacco sticks\" and its model table row \"Used with TEREA\" (round list19, 17/10).",
+    sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-holder-breeze-blue.html",
+    tier: "official",
+  },
+  {
     device: "iqosheet-14",
     consumable: "iqosheet-15",
     role: "stick",
