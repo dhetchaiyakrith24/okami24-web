@@ -47,12 +47,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 3i OPEN ROUND "image sweep" = `docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt` (image chats; own the main folder's `_incoming/img-1610/`,
   worktrees `_incoming/img-1610/wt-img` (work, own node_modules) · `wt-gate` (checker tree) · `wt-base` (base build 47320ddd, before
   shots `_incoming/img-1610/shots/before-*` for every product of the round)). Nano Banana Pro Unlimited free in Chrome to ~19/10.
-  LIVE [ตรวจแล้ว]: #501 coil-94/55/53 · #503 JOIWAY F4 card + 16 pairs · #505 ARGUS G4 · #512 SALTHUB Zero Pro + Zero Nano cards ·
-  #516 JOIWAY F3 card + 14 green flavours · #522 Caliburn G5 Lite 8 colours + card + lineup + G5 Lite SE card (checker r2 PASS b07d99b8,
-  merged 854133e5; 12° colours kept = owner layout 03/10). NEXT: relx-smash-go-12k (11 images = one black body + a colour stripe →
-  ONE master render + scripted stripes; first master pair b7/out/grape-A/B renders the device too small → re-render portrait) →
-  the rest of the round order. State, prompts, pipelines, page helpers, lessons to fold in = `_incoming/img-1610/NEXT.md` (read it
-  first) · prompts `_incoming/img-1610/prompts.md`.
+  LIVE [ตรวจแล้ว]: #501 coil-94/55/53 · #503 JOIWAY F4 · #505 ARGUS G4 · #512 SALTHUB Zero Pro + Nano · #516 JOIWAY F3 ·
+  #522 Caliburn G5 Lite 8 colours + card + lineup + SE card (12° kept = owner layout 03/10) · #526 RELX Smash Go 12K card + 10
+  flavours (one studio master + scripted stripe colours; the maker's 10 photos = 5 identical colour groups; checker PASS e0b30409,
+  merged 5e0a3c18). NEXT: caliburn-g4-classic (already 840-px AI renders from 01/10 → lighting upgrade) → the rest of the round
+  order. State, prompts, pipelines, page helpers, lessons to fold in = `_incoming/img-1610/NEXT.md` (read it first) · prompts
+  `_incoming/img-1610/prompts.md`.
 3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side chat 2, worktree `.claude/worktrees/seo-all-keys-2-c830d3`,
   own build tree `_incoming/wt-build` inside it + test server `next start -p 3414`; `_incoming/seo-keys/setup-build.sh <ref>` moves +
   rebuilds it — the first run's node_modules copy = PowerShell robocopy; the worktree root's `node_modules` = a junction to it) ·
