@@ -1255,149 +1255,160 @@
   }
  },
  {
-  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_1.webp",
+  "source": "_incoming/img-1610/b16/key/D-slate-grey.png",
   "slug": "caliburn-g4-mini",
   "role": "variant",
   "id": "slate-grey",
-  "crop": {
-   "x0": 0,
-   "y0": 0,
-   "x1": 0.5,
-   "y1": 1
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard, upright like G4 Classic; image-fix round 2026-09-28 — UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<1-12>.webp (523x1123, transparent, front + back). The maker page names no colours on these files; order = its colour-button list (hex #9096a0 · #2d2c2c · #c9c9c9 · #eacbcd · #3c9dc9 · #7fb75b · #ddd4b6/#2d708d · #8ee3d5/#95a7e4 · #afb7bc/#2a3849 · #a0da9b/#2c583a · #c0a0cd/#5c3f70 · #e2decf/#b1a676), matched one by one to the retailer-named photos already on the site. Variant = front device (crop x<0.5, gap x 235-288)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-slate-grey.png) - render _incoming/img-1610/b16/out/slate-grey-A.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
   },
-  "note": "image-fix round 2026-09-28 — UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<1-12>.webp (523x1123, transparent, front + back). The maker page names no colours on these files; order = its colour-button list (hex #9096a0 · #2d2c2c · #c9c9c9 · #eacbcd · #3c9dc9 · #7fb75b · #ddd4b6/#2d708d · #8ee3d5/#95a7e4 · #afb7bc/#2a3849 · #a0da9b/#2c583a · #c0a0cd/#5c3f70 · #e2decf/#b1a676), matched one by one to the retailer-named photos already on the site. Variant = front device (crop x<0.5, gap x 235-288)"
+  "fileName": "variant-slate-grey-v3.webp"
  },
  {
-  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_2.webp",
+  "source": "_incoming/img-1610/b16/key/D-night-black.png",
   "slug": "caliburn-g4-mini",
   "role": "variant",
   "id": "night-black",
-  "crop": {
-   "x0": 0,
-   "y0": 0,
-   "x1": 0.5,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-night-black.png) - render _incoming/img-1610/b16/out/night-black-A.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
+  },
+  "fileName": "variant-night-black-v3.webp",
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard, upright like G4 Classic; "
  },
  {
-  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_3.webp",
+  "source": "_incoming/img-1610/b16/key/D-light-silver.png",
   "slug": "caliburn-g4-mini",
   "role": "variant",
   "id": "light-silver",
-  "crop": {
-   "x0": 0,
-   "y0": 0,
-   "x1": 0.5,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-light-silver.png) - render _incoming/img-1610/b16/out/light-silver-A.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
+  },
+  "fileName": "variant-light-silver-v3.webp",
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard, upright like G4 Classic; "
  },
  {
-  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_4.webp",
+  "source": "_incoming/img-1610/b16/key/D-bright-pink.png",
   "slug": "caliburn-g4-mini",
   "role": "variant",
   "id": "bright-pink",
-  "crop": {
-   "x0": 0,
-   "y0": 0,
-   "x1": 0.5,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-bright-pink.png) - render _incoming/img-1610/b16/out/bright-pink-A.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
+  },
+  "fileName": "variant-bright-pink-v3.webp",
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard, upright like G4 Classic; "
  },
  {
-  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_5.webp",
+  "source": "_incoming/img-1610/b16/key/D-lake-blue.png",
   "slug": "caliburn-g4-mini",
   "role": "variant",
   "id": "lake-blue",
-  "crop": {
-   "x0": 0,
-   "y0": 0,
-   "x1": 0.5,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-lake-blue.png) - render _incoming/img-1610/b16/out/lake-blue-B.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
+  },
+  "fileName": "variant-lake-blue-v3.webp",
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard, upright like G4 Classic; "
  },
  {
-  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_6.webp",
+  "source": "_incoming/img-1610/b16/key/D-grass-green.png",
   "slug": "caliburn-g4-mini",
   "role": "variant",
   "id": "grass-green",
-  "crop": {
-   "x0": 0,
-   "y0": 0,
-   "x1": 0.5,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-grass-green.png) - render _incoming/img-1610/b16/out/grass-green-B.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
+  },
+  "fileName": "variant-grass-green-v3.webp",
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard, upright like G4 Classic; "
  },
  {
-  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_7.webp",
+  "source": "_incoming/img-1610/b16/key/D-coast-gold.png",
   "slug": "caliburn-g4-mini",
   "role": "variant",
   "id": "coast-gold",
-  "crop": {
-   "x0": 0,
-   "y0": 0,
-   "x1": 0.5,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-coast-gold.png) - render _incoming/img-1610/b16/out/coast-gold-B.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
+  },
+  "fileName": "variant-coast-gold-v3.webp",
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard, upright like G4 Classic; "
  },
  {
-  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_8.webp",
+  "source": "_incoming/img-1610/b16/key/D-peafowl-emerald.png",
   "slug": "caliburn-g4-mini",
   "role": "variant",
   "id": "peafowl-emerald",
-  "crop": {
-   "x0": 0,
-   "y0": 0,
-   "x1": 0.5,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-peafowl-emerald.png) - render _incoming/img-1610/b16/out/peafowl-emerald-B.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
+  },
+  "fileName": "variant-peafowl-emerald-v3.webp",
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard, upright like G4 Classic; "
  },
  {
-  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_9.webp",
+  "source": "_incoming/img-1610/b16/key/D-dusty-indigo.png",
   "slug": "caliburn-g4-mini",
   "role": "variant",
   "id": "dusty-indigo",
-  "crop": {
-   "x0": 0,
-   "y0": 0,
-   "x1": 0.5,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-dusty-indigo.png) - render _incoming/img-1610/b16/out/dusty-indigo-B.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
+  },
+  "fileName": "variant-dusty-indigo-v3.webp",
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard, upright like G4 Classic; "
  },
  {
-  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_10.webp",
+  "source": "_incoming/img-1610/b16/key/D-paddy-green.png",
   "slug": "caliburn-g4-mini",
   "role": "variant",
   "id": "paddy-green",
-  "crop": {
-   "x0": 0,
-   "y0": 0,
-   "x1": 0.5,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-paddy-green.png) - render _incoming/img-1610/b16/out/paddy-green-B.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
+  },
+  "fileName": "variant-paddy-green-v3.webp",
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard, upright like G4 Classic; "
  },
  {
-  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_11.webp",
+  "source": "_incoming/img-1610/b16/key/D-phoenix-purple.png",
   "slug": "caliburn-g4-mini",
   "role": "variant",
   "id": "phoenix-purple",
-  "crop": {
-   "x0": 0,
-   "y0": 0,
-   "x1": 0.5,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-phoenix-purple.png) - render _incoming/img-1610/b16/out/phoenix-purple-A.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
+  },
+  "fileName": "variant-phoenix-purple-v3.webp",
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard, upright like G4 Classic; "
  },
  {
-  "source": "_incoming/image-fix/src/uwell/g4-mini/caliburn-g4-mini_pc_12.webp",
+  "source": "_incoming/img-1610/b16/key/D-champagne-gold.png",
   "slug": "caliburn-g4-mini",
   "role": "variant",
   "id": "champagne-gold",
-  "crop": {
-   "x0": 0,
-   "y0": 0,
-   "x1": 0.5,
-   "y1": 1
-  }
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-champagne-gold.png) - render _incoming/img-1610/b16/out/champagne-gold-A.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
+  },
+  "fileName": "variant-champagne-gold-v3.webp",
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard, upright like G4 Classic; "
  },
  {
   "source": "_incoming/web-product-images/m-bar-10k/out/grape-2.cut.png",
@@ -8561,5 +8572,17 @@
   "role": "variant",
   "id": "misty-leaf",
   "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/img-1610/b16/key/D-slate-grey.png",
+  "slug": "caliburn-g4-mini",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot straight from the front with UWELL's own colour render as the only image, prompt = _incoming/img-1610/prompts.md \"G4 mini\"; keyed by b16/kk.sh (matte3 + foot trim + side boxes + specks + pod hole fill) + b16/botcut.js (bottom 340 rows = ONE outline from the Bright Pink key, scaled to each body and anchored on its contact-shadow line) + b16/podtone.js (mid-grey renders: pod toned to the set) + b16/tone.js (body gain toward UWELL's own render of the colour)",
+   "reference": "UWELL official render files.myuwell.com/uwell/product/caliburn-g4-mini/pc/<n>.webp (front device, _incoming/img-1610/b16/in/g4m-slate-grey.png) - render _incoming/img-1610/b16/out/slate-grey-A.png",
+   "fidelitySheet": "_incoming/img-1610/b16/fid/g4m-all.jpg (UWELL render beside the new file for all 12) - pod, light bar, G4 mini mark, body colour and gradient checked by eye"
+  },
+  "note": "round img-1610 16/10 - card = the Slate Grey re-shoot upright (card-v2 = UWELL render upright, made outside the map 03/10)",
+  "fileName": "card-v3.webp"
  }
 ]
