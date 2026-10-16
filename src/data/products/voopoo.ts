@@ -56,11 +56,27 @@ export const voopooProducts: Product[] = [
         sourceName: "OKami24 render (Higgsfield) from VOOPOO's official gallery photo",
         sourceUrl: "https://shop.voopoo.com/products/argus-g4",
       },
+      // Gallery 16/10 (round img-1610): every tile is a file from VOOPOO's own ARGUS G4 page (its CDN
+      // sen.voopoo.com.cn/.../images/product/detail/argus-g4/ — banner.jpg, part11/pro1·pro2·pro8.webp, part5-pro1·pro2.webp,
+      // already the largest the page serves; its "-m" files are portrait crops, not bigger). Written at native size by
+      // _incoming/img-1610/b9/gallery.js (not process-images: its 1600 square canvas would shrink a 4:3 photo in the 4:3 tile).
+      // The screen and back shots (828 / 768 px) were enlarged 2x on Higgsfield Nano Banana Pro (Unlimited, 0 credits) with
+      // VOOPOO's own pixels put back over the screen and every printed mark (LESSONS-images 25 · b9/upscale.js) — sharp on a 3x phone.
       {
         kind: "official-photo",
         role: "detail",
-        src: "/assets/products/argus-g4/hero.webp",
-        alt: "VOOPOO ARGUS G4, gold/lilac colourway, styled studio shot on a satin surface",
+        src: "/assets/products/argus-g4/detail-campaign.webp",
+        alt: "VOOPOO ARGUS G4 campaign image \"Power Beyond Limits\" — two models holding an Orange and a Purple ARGUS G4",
+        angle: "Campaign hero",
+        transparentBackground: false,
+        sourceName: "VOOPOO",
+        sourceUrl: "https://www.voopoo.com/argus-series/argus-g4",
+      },
+      {
+        kind: "official-photo",
+        role: "detail",
+        src: "/assets/products/argus-g4/detail-orange.webp",
+        alt: "VOOPOO ARGUS G4 in Orange, styled studio shot on a satin surface",
         angle: "Hero / styled shot",
         transparentBackground: false,
         sourceName: "VOOPOO",
@@ -69,8 +85,18 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "detail",
-        src: "/assets/products/argus-g4/detail-angle.webp",
-        alt: "VOOPOO ARGUS G4, blue-to-pink gradient colourway, angled isolated shot",
+        src: "/assets/products/argus-g4/detail-screen-v2.webp",
+        alt: "VOOPOO ARGUS G4 screen close-up, showing wattage, battery, resistance and lock status",
+        angle: "Screen / interface detail",
+        transparentBackground: false,
+        sourceName: "VOOPOO",
+        sourceUrl: "https://www.voopoo.com/argus-series/argus-g4",
+      },
+      {
+        kind: "official-photo",
+        role: "detail",
+        src: "/assets/products/argus-g4/detail-back-v2.webp",
+        alt: "VOOPOO ARGUS G4 in Blue, back of the device at an angle",
         angle: "Alternate colourway, 3/4 angle",
         transparentBackground: false,
         sourceName: "VOOPOO",
@@ -79,9 +105,19 @@ export const voopooProducts: Product[] = [
       {
         kind: "official-photo",
         role: "detail",
-        src: "/assets/products/argus-g4/detail-screen.webp",
-        alt: "VOOPOO ARGUS G4 screen close-up, showing wattage, battery, resistance and lock status",
-        angle: "Screen / interface detail",
+        src: "/assets/products/argus-g4/detail-purple.webp",
+        alt: "VOOPOO ARGUS G4 in Purple, styled studio shot on a satin surface",
+        angle: "Hero / styled shot",
+        transparentBackground: false,
+        sourceName: "VOOPOO",
+        sourceUrl: "https://www.voopoo.com/argus-series/argus-g4",
+      },
+      {
+        kind: "official-photo",
+        role: "detail",
+        src: "/assets/products/argus-g4/detail-silver.webp",
+        alt: "VOOPOO ARGUS G4 in Silver, styled studio shot on a satin surface",
+        angle: "Hero / styled shot",
         transparentBackground: false,
         sourceName: "VOOPOO",
         sourceUrl: "https://www.voopoo.com/argus-series/argus-g4",
