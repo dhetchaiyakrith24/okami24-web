@@ -56,13 +56,20 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   row line-ups (argus-g4-mini 07/10, G3 Pro 02/10) · M Bar 10K anatomy size = component layout, next design round. NEXT (re-sweep
   by eye 16/10): caliburn-g5-lite-se 8 colours → caliburn-g4-mini 11 colours → rest. State, prompts, pipelines, page helpers, lessons to fold in =
   `_incoming/img-1610/NEXT.md` (read it first) · prompts `_incoming/img-1610/prompts.md`.
-3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side chat 3, worktree `.claude/worktrees/seo-all-keys-a38889`,
-  own build tree `_incoming/wt-build` + test server `next start -p 3414`; `_incoming/seo-keys/setup-build.sh <sha>` moves + rebuilds it
-  (~5 min; pass a sha, never HEAD — HEAD = the build tree's own); worktree `node_modules` = a junction to the build tree's copy) ·
+3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side chat 4 seo-all-keys-4, worktree `.claude/worktrees/mystifying-driscoll-575ab6`,
+  own build tree `_incoming/wt4` + test server `next start -p 3414`; `_incoming/seo-images/setup-build.sh <sha>` (run from the worktree root) moves + rebuilds it
+  (~5 min; pass a sha, never HEAD — HEAD = the build tree's own); worktree `node_modules` = a junction to the build tree's copy;
+  chat 3's tools copied to `_incoming/seo-keys/`) ·
   【ห้ามแตะ】 product images + image map (image round) · every price file. Order = SEO_LANDSCAPE §9.6.
   DONE [ตรวจแล้ว]: batch 1 key list #499 · batches 2 + 5 #502 · #514 DRAG guide + /how-to-order · /shipping · /faq buying copy ·
   #519 old /faq answers whose collapsed line ends flipped meaning · #536 5f3bfa8a (checker PASS c6927648, round 2 of 3): batches 4 + 6 = five Thai guides choosing-a-switch-pod · choosing-a-disposable ·
-  choosing-a-pod-flavor · comparing-voopoo-argus-models (title B) · checking-a-genuine-pod (fail = BSOT §12, links /warranty).
+  choosing-a-pod-flavor · comparing-voopoo-argus-models (title B) · checking-a-genuine-pod (fail = BSOT §12, links /warranty) ·
+  #543 c9b82f10 (checker PASS 91dbcd3b, designer r1 = tall posters ~760px from md) + #546 4ff511ed (checker PASS e18e83b2) = section
+  posters (`image` on GuideSection/ArticleSubsection → ArticleFigure; SECTION_IMAGES in guides.ts, same files/credits as the product
+  records, Thai alt) in the DRAG · disposable · ARGUS · switch · Caliburn · ARGUS-vs-G5 guides + clips argusG4 (ARGUS guide) and mSwitch
+  (switch guide). Genuine guide: no maker image of a check exists → none. DRAG: no clip on the three shop channels (searched 16/10).
+  Dropped on sight: Caliburn G4 airflow still (big light close-up), GPP pod chart (white block). Checker note: the G5 triple-tap alt
+  says "tap three times" but the picture only shows a finger on the body → reword the alt in the next guide batch.
   Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them + no change on them (read-next boxes
   included). Tools chat 3 (`_incoming/seo-keys/`): `linkmap.js` (every sitemap page's links + title/meta/H1, `--diff` flags frozen
   pages) · `wbfix-gen.tsx` + `wb-driver2.js` (word-swap / seed candidates measured in the real element, FAQ answers opened) ·
@@ -81,9 +88,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   number (maker poster the owner supplied, no URL) — the guides repeat what those product pages already print; cut both if the
   owner wants strict maker-URL only. Switch guide body says "เครื่องระบบสวิตช์" (THAI_STYLE 10B line: "พอตเปลี่ยนหัว" = title, links, first explanation).
   Second-pass key research DONE 16/10 = SEO_LANDSCAPE §9.7 (+ §9.6 rows 8–10) · cluster notes `_incoming/seo-keys/r2-*.md`.
-  NEXT (§9.6 row 9, pages not frozen): images + shop clips in the five new guides + the DRAG guide (owner 16/10 via the main chat:
-  section images from existing `public/assets/products` story/lineup/variant webp, Thai alt, placed at their section · section clips only
-  from the shop's own channels, the SECTION_CLIPS pattern in src/data/guides.ts, oEmbed-checked · tier B = before/after 390 + 1440) → IQOS
+  NEXT (§9.6 row 9, pages not frozen): posters in the other guides with none (Thai-only ones first; a translated guide needs the
+  image in its th/en/zh arrays with alt per locale; skip white charts and posters whose product page swaps a phone version) · clip
+  `_s48AaDCtf4` "MTL / RDL / DTL ต่างกันยังไง?" (OKM YARZ, 2026-09-19, oEmbed-checked 16/10) not placed yet → understanding-mtl-vs-dtl
+  (translated) · link /products/drag-x (products-63, live) from the DRAG guide → IQOS
   ILUMA lights/reset/charging guide from the official manual (§9.7) → batch 5 on pages that are not frozen (charging / can't-draw / blinking light by brand from maker
   manuals · pod/coil care · Marbo flavour names · Caliburn comparisons; m-switch-kit "เปลี่ยนหัว" = frozen → after 22/10) →
   second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
