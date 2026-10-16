@@ -455,6 +455,28 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     tagline: "แบตเตอรี่ในตัว 3000mAh สูงสุด 60 วัตต์",
     shortDescription: "DRAG รุ่นแบตเตอรี่ในตัว: 3000mAh 5–60 วัตต์ จอ TFT ขนาด 0.96 นิ้ว และชาร์จผ่าน USB-C",
   },
+  "drag-x": {
+    whoIsThisFor: {
+      0: "กำลังหา DRAG X รุ่นแรก ไม่ใช่ DRAG X3 และอยากดูสเปกทั้งหมดที่ VOOPOO ระบุไว้",
+    },
+    specifications: {
+      battery: "ถ่าน 18650 ก้อนเดียว (ไม่รวมในกล่อง)",
+      charging: "USB-C ชาร์จเร็ว",
+      pod: "4.5mL (2mL ในเวอร์ชัน TPD) หัวพอต PCTG ยึดด้วยแม่เหล็ก",
+      coils: "คอยล์ PnP รวมถึง PnP-RBA · ในกล่องมี PnP-VM1 0.3Ω (32–40W) และ PnP-VM6 0.15Ω (60–80W)",
+      materials: "อัลลอยและหนัง",
+      chip: "GENE.TT มีโหมด SMART และโหมด SCORE",
+    },
+    features: {
+      chip: { title: "ชิป GENE.TT ยิงได้ใน 0.001 วินาที", description: "VOOPOO ระบุว่าชิป GENE.TT ยิงได้ภายใน 0.001 วินาที และเครื่องจะจำวัตต์ที่ตั้งไว้ครั้งล่าสุดให้ ไม่ต้องตั้งใหม่ทุกครั้ง" },
+      smart: { title: "โหมด SMART ช่วยแนะนำวัตต์", description: "ใส่คอยล์แล้ว เครื่องจะอ่านคอยล์ที่ใส่และแนะนำวัตต์ที่เหมาะให้ ไม่ต้องเดาเองว่าควรเริ่มที่เท่าไร" },
+      airflow: { title: "หัวพอตแม่เหล็ก กับระบบลม Infinite Airflow", description: "หัวพอต PCTG ขนาด 4.5mL ยึดกับตัวเครื่องด้วยแม่เหล็ก และใช้ระบบลมที่ VOOPOO เรียกว่า Infinite Airflow System" },
+      battery: { title: "ใช้ถ่าน 18650 ก้อนเดียว", description: "DRAG X ใช้ถ่าน 18650 หนึ่งก้อน ถ่านไม่ได้มาในกล่อง ต้องซื้อแยก และชาร์จได้ในตัวเครื่องผ่าน USB-C แบบชาร์จเร็ว" },
+    },
+    tagline: "DRAG X รุ่นแรกของ VOOPOO ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ถึง 80 วัตต์",
+    shortDescription:
+      "DRAG X รุ่นแรกของ VOOPOO ใช้ถ่าน 18650 หนึ่งก้อนที่ต้องซื้อแยก ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP ได้รวมถึง PnP-RBA และมีหัวพอต 4.5mL ที่ยึดกับตัวเครื่องด้วยแม่เหล็ก",
+  },
   "drag-x3": {
     faqs: {
       "dragx3-battery": {

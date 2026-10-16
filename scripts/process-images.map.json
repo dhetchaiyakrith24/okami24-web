@@ -8022,5 +8022,11 @@
   },
   "note": "round img-1610 16/10 - the old card is a small shop photo (audit 10/10)",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/p63/dragx/src/card.png",
+  "slug": "drag-x",
+  "role": "card",
+  "note": "VOOPOO DRAG X page image drag2-main.png (VOOPOO CDN sen.voopoo.com.cn), 579x837 transparent (round p63, 16/10)"
  }
 ]
