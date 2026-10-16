@@ -77,6 +77,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Line breaks in collapsed FAQ answers: scan with `_incoming/seo-keys/wb-openscan.js` (each answer opened) — LESSONS พ34.
   Tool (owner 16/10): skill `content-strategy` (#508) = the way to plan pillars, clusters, buyer stages and the article order for the
   remaining batches — its OKami24 rules at its end (keymap = SEO_LANDSCAPE §0).
+3p OPEN ROUND "p63 searched models" = `docs/rounds/รอบลงสินค้า-63-16-10.txt` (side chat, worktree `.claude/worktrees/seo-all-keys-2-c830d3`
+  — reused after SEO chat 2 moved on; own trees `_incoming/wt-build` (branch builds, port 3415) + `_incoming/wt-base` (main, 3416) via
+  `_incoming/p63/build.sh <tree> <ref> <port>`). Owner item 63 (BSOT §4): a page per searched model, maker facts only, no price
+  row (browse-only), every option null in `sku-map.ts` (= sold out). Research per name = `_incoming/p63/research.md`.
+  Verdicts 16/10: REAL → Caliburn G3 (batch 1, PR p63-uwell) · Drag X (2020; maker page read via web.archive.org — voopoo.com
+  does not resolve here; no colour list on it) · RELX Infinity = "Infinity 2 Plus Device" (relxnow.com) · TEREA (ProductMaster
+  IQOSHEET-15, withdrawn 03/09 for 5 missing pack photos; 21 flavours on iqos.com/id) · INFY 12K + Esko Bar 20K ("ESKO BAR 498")
+  = batch 7 after the 22/10 GSC read (frozen brand pages) · JOIWAY 12K/20K = the F3/F4 already live (alias = SEO chat after 22/10).
+  NOT REAL → M Bar 18K · Marbo 25K · RELX Diva / Sparta / Novo · nexBAR Switch 15K (owner item 68: nexPOD 15K instead?).
+  Caliburn G3: 6 of 11 colours swatch-only (UWELL's images too small) → remake queue for the image round.
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
