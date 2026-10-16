@@ -598,7 +598,8 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   },
   "IQOSHEET-17": {
     // Round list19 (17/10): the record is the ILUMA i ONE (TAXONOMY_MATCHES comment). Every fact = iqos.com/ph ILUMA i ONE pages.
-    tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i ONE ตัวเดียวจบ พกใส่กระเป๋าได้",
+    // The name is the card title already; a tagline that repeats it broke "ILUMA i | ONE" on the 1440 card (wordbreak scan).
+    tagline: "เครื่องอุ่นยาสูบตัวเดียวจบ พกใส่กระเป๋าได้",
     shortDescription: "ILUMA i ONE ตัวสูบกับที่ชาร์จรวมเป็นชิ้นเดียว ชาร์จเต็มใช้ได้ 20 ก้านติดกัน มีระบบ Autostart และ FlexPuff ใช้กับก้าน TEREA เท่านั้น",
   },
   // Image-fix round 2026-09-30: nexBar CLEAR 18K, no brand (owner ruling) — writer draft A, owner "ตามแนะนำ".
