@@ -419,6 +419,8 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
     "พอตกลิ่นไหนดี และมีกลิ่นอะไรบ้าง รวมกลิ่นจากหลายแบรนด์แยกเป็นสาย เย็น องุ่น ผลไม้ ชาและขนม ยาสูบ พร้อมวิธีเลือกกลิ่นไม่เย็นจากชื่อกลิ่น",
   "comparing-voopoo-argus-models":
     "VOOPOO ARGUS รุ่นไหนดี เทียบ ARGUS G4 · G4 mini · G3 mini · P3 ทีละคู่ ทั้งแบต วัตต์ จอ การเปลี่ยนค่าโอห์ม ช่องลม และหัวพอตที่ใช้ร่วมกันได้ ก่อนเลือกซื้อ",
+  "checking-a-genuine-pod":
+    "พอตของแท้ดูยังไง เช็คเองได้ที่เว็บทางการของแบรนด์ รวมหน้าเช็คของ UWELL RELX INFY SALTHUB Esko Bar และ VOOPOO พร้อมวิธีใช้ และสิ่งที่ควรทำเมื่อซื้อพอตออนไลน์",
 };
 
 /** Row C19 — keyed by technology entry id. */
