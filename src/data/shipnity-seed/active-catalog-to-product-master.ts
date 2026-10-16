@@ -1207,8 +1207,8 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "charge-time", label: "การชาร์จ", value: "5V / 2A ชาร์จเต็มประมาณ 2.5 ชั่วโมง", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
       { key: "temperature", label: "อุณหภูมิ", value: "ปรับได้ 200–300°C", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
       { key: "session-time", label: "เวลาต่อก้าน", value: "ปรับได้ 3–6 นาที", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
-      { key: "heating", label: "ระบบความร้อน", value: "Smart Induction Heating System มีจอ LED", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
-      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA / SENTIA และก้าน Smartcore อื่น ๆ", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "heating", label: "ระบบอุ่น", value: "Smart Induction · จอ LED", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA / SENTIA", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
       { key: "materials", label: "วัสดุ", value: "อะลูมิเนียมอัลลอย + PPSU + PEEK", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
       { key: "dimensions", label: "ขนาด", value: "102.8 × 28.9 × 20.8 mm", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
       { key: "weight", label: "น้ำหนัก", value: "83 กรัม", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
@@ -1804,6 +1804,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "Pod-180": { name: "nexBar CLEAR 18K", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
   "IQOSHEET-16": { name: "IQOS ILUMA i PRIME", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
   "IQOSHEET-18": { name: "IQOS ILUMA i", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+  "IQOSHEET-14": { name: "LAMBDA i8", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
   "IQOSHEET-17": { name: "IQOS ILUMA i ONE", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
 };
 
