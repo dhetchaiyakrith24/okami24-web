@@ -581,8 +581,9 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // Heated-tobacco wave — factual, identity-level copy only, no health/reduced-harm claims
   // (heat-not-burn is not risk-free; this project makes no such claim anywhere).
   "IQOSHEET-14": {
-    tagline: "เครื่องอุ่นยาสูบ LAMBDA i8 (ไม่ใช่ผลิตภัณฑ์ IQOS/PMI)",
-    shortDescription: "อุปกรณ์ heat-not-burn รุ่น i8 จากแบรนด์ LAMBDA ใช้ร่วมกับก้าน TEREA/SENTIA Smartcore",
+    // Round list19 (17/10): every number = a verified spec row (LAMBDA's own i8 page). The name is the card title already.
+    tagline: "เครื่องอุ่นยาสูบระบบเหนี่ยวนำ ปรับอุณหภูมิได้",
+    shortDescription: "เครื่องอุ่นยาสูบของแบรนด์ LAMBDA ไม่ใช่ IQOS แบต 3200mAh ชาร์จเต็มใช้ได้ 35–40 ก้าน ปรับอุณหภูมิได้ 200–300°C และปรับเวลาต่อก้านได้ 3–6 นาที LAMBDA ระบุว่าใช้กับก้าน TEREA และ SENTIA ได้",
   },
   "IQOSHEET-15": {
     tagline: "ก้าน TEREA สำหรับ IQOS ILUMA",
@@ -823,24 +824,15 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
   // Heated-tobacco wave — official first-party media throughout (found via each specific
   // color/flavor product page's own `og:image` meta tag, which points at the brand's real CDN
   // asset for that exact page, not a generic/shared image).
+  // Round list19 (17/10): the 09-03 crop (blurry, withdrawn 09-06) is replaced by LAMBDA's own per-colour store photo.
   "IQOSHEET-14": [
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/iqosheet-14/card.webp",
-      alt: "LAMBDA i8 heat-not-burn device, Red — one of OKami24's 2 real stocked colors, screen powered on",
-      angle: "OWNER QUALITY-REVIEW REPLACEMENT (2026-09-03) — REPLACES the previous 6-device marketing-banner composite entirely, which failed review on two separate grounds: (1) presentation — a wide logo/text lockup, large uneven whitespace gaps between devices, exactly the \"raw retailer/gallery media pasted in\" failure class the owner named; (2) product truth — it visually presented all 6 of lambdasmoke.com's catalog colors (Gold/Green/Black/Gray/Red/White) as this parent's lineup, but active-catalog-source.ts's real Shipnity children are only Red and Gold — the other 4 are not stocked. Fixed by cropping this exact color's own device from lambdasmoke.com's own neutral-gray studio product photography (same page, a different gallery image than the rejected banner) — full device, screen powered on, no other device fragments, no logo/text overlay. Gold (the other real color) is the second, detail-role asset below rather than folded into one composite, so neither color is misrepresented or invented via compositing.",
-      transparentBackground: false,
-      sourceName: "LAMBDA (official brand site, lambdasmoke.com)",
-      sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html",
-    },
-    {
-      kind: "official-photo",
-      role: "detail",
-      src: "/assets/products/iqosheet-14/variants/gold.webp",
-      alt: "LAMBDA i8 heat-not-burn device, Gold — the other real stocked color, screen powered on",
-      angle: "Same source photo and crop treatment as the Red card image above (see its angle note) — the true second color, shown separately rather than composited so nothing about either device is fabricated.",
-      transparentBackground: false,
+      src: "/assets/products/iqosheet-14/card-v2.webp",
+      alt: "LAMBDA i8 heat-not-burn device, Red, official product photo",
+      angle: "Front, upright, screen on — LAMBDA's own store gallery photo of the Red i8 (lambdasmoke.com, 1000x1000 on white; white cut off by scripts/process-images.ts). Red = one of the two colours the warehouse holds (Shipnity Max IQOSHEET-14-4).",
+      transparentBackground: true,
       sourceName: "LAMBDA (official brand site, lambdasmoke.com)",
       sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html",
     },
@@ -1207,11 +1199,19 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: ["https://ihavevape.net/product/nexbar-clear-18k-puffs/", "https://pod789.com/product/nexbar-18k-2/"],
   },
+  // Round list19 (17/10, in-app browser): every row = the "Description" block of LAMBDA's own i8 store page.
   "IQOSHEET-14": {
     specifications: [
-      { key: "battery", label: "แบตเตอรี่", value: "3200mAh", sourceStatus: "verified" },
-      { key: "temperature", label: "อุณหภูมิ", value: "ปรับได้ 200-300°C", sourceStatus: "verified" },
-      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA / SENTIA Smartcore Sticks", sourceStatus: "verified" },
+      { key: "battery", label: "แบตเตอรี่", value: "3200mAh", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "sessions", label: "จำนวนก้านต่อการชาร์จ 1 ครั้ง", value: "35–40 ก้าน", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "charge-time", label: "การชาร์จ", value: "5V / 2A ชาร์จเต็มประมาณ 2.5 ชั่วโมง", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "temperature", label: "อุณหภูมิ", value: "ปรับได้ 200–300°C", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "session-time", label: "เวลาต่อก้าน", value: "ปรับได้ 3–6 นาที", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "heating", label: "ระบบอุ่น", value: "Smart Induction · จอ LED", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "compatible-sticks", label: "ใช้ได้กับก้าน", value: "TEREA / SENTIA", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "materials", label: "วัสดุ", value: "อะลูมิเนียมอัลลอย + PPSU + PEEK", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "dimensions", label: "ขนาด", value: "102.8 × 28.9 × 20.8 mm", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+      { key: "weight", label: "น้ำหนัก", value: "83 กรัม", sourceStatus: "verified", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
     ],
     sourceUrls: ["https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html"],
   },
@@ -1447,9 +1447,14 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // IQOSHEET-14 (Lambda i8) — owner quality-review pass (2026-09-03) found a cleaner 1000×1000
   // per-color studio source on the same lambdasmoke.com page (see VERIFIED_MEDIA's angle note
   // above), superseding the earlier note here that claimed a usable crop wasn't available.
+  // Round list19 (17/10): one LAMBDA store photo per colour (the 6 colours LAMBDA lists).
   "IQOSHEET-14": {
-    "IQOSHEET-14-4": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/card.webp", alt: "LAMBDA i8 heat-not-burn device, Red", transparentBackground: false, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
-    "IQOSHEET-14-6": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variants/gold.webp", alt: "LAMBDA i8 heat-not-burn device, Gold", transparentBackground: false, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    "IQOSHEET-14-4": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-red.webp", alt: "LAMBDA i8 heat-not-burn device, Red", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    "IQOSHEET-14-6": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-gold.webp", alt: "LAMBDA i8 heat-not-burn device, Gold", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    "iqosheet-14-verified-black": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-black.webp", alt: "LAMBDA i8 heat-not-burn device, Black", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    "iqosheet-14-verified-green": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-green.webp", alt: "LAMBDA i8 heat-not-burn device, Green", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    "iqosheet-14-verified-gray": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-gray.webp", alt: "LAMBDA i8 heat-not-burn device, Gray", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    "iqosheet-14-verified-white": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-14/variant-white.webp", alt: "LAMBDA i8 heat-not-burn device, White", transparentBackground: true, sourceName: "LAMBDA (official brand site, lambdasmoke.com)", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
   },
 };
 
@@ -1591,6 +1596,13 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
   ],
   // Round list19 (17/10): ILUMA i ONE — iqos.com/ph FAQ "Available in 5 colors: Breeze Blue, Digital Violet, Vivid Terracotta,
   // Midnight Black, Spring Green" + its own Electric Purple kit page. Breeze Blue is the Shipnity child (IQOSHEET-17-3).
+  // Round list19 (17/10): LAMBDA lists "Color: Black, Gray, Red, Green, Gold, White" on its i8 page; Red and Gold are Shipnity children.
+  "IQOSHEET-14": [
+    { code: "black", label: "Black", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    { code: "green", label: "Green", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    { code: "gray", label: "Gray", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+    { code: "white", label: "White", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
+  ],
   "IQOSHEET-17": [
     { code: "digital-violet", label: "Digital Violet", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-digital-violet.html" },
     { code: "vivid-terracotta", label: "Vivid Terracotta", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-vivid-terracotta.html" },
@@ -1792,6 +1804,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "Pod-180": { name: "nexBar CLEAR 18K", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
   "IQOSHEET-16": { name: "IQOS ILUMA i PRIME", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-prime-kit-aspen-green.html" },
   "IQOSHEET-18": { name: "IQOS ILUMA i", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
+  "IQOSHEET-14": { name: "LAMBDA i8", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
   "IQOSHEET-17": { name: "IQOS ILUMA i ONE", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
 };
 
