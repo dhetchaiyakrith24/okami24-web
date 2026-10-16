@@ -2,7 +2,7 @@ import type { Product } from "@/types/catalog";
 
 const INFINITY_PAGE = "https://relxnow.com/products/relx-infinity-2-plus-device";
 const infinityPhoto = (id: string, name: string) => ({ src: `/assets/products/relx-infinity-2-plus/variant-${id}.webp`, alt: `RELX Infinity 2 Plus, ${name}` });
-const typeC ={ type: "charging" as const, label: "USB-C", note: "Rechargeable via USB-C." };
+const typeC = { type: "charging" as const, label: "USB-C", note: "Rechargeable via USB-C." };
 
 export const relxProducts: Product[] = [
   {
@@ -152,7 +152,9 @@ export const relxProducts: Product[] = [
       { id: "meteor-flash", name: "Meteor Flash", swatchHex: "#c5c5c7", image: infinityPhoto("meteor-flash", "Meteor Flash") },
       { id: "bronze-dusk", name: "Bronze Dusk", swatchHex: "#b39280", image: infinityPhoto("bronze-dusk", "Bronze Dusk") },
     ],
-    // relxnow.com spec block + description (read 16/10).
+    // relxnow.com spec block + description + the "What's Special" tab (rendered by script — read in a browser 16/10):
+    // "Eco Mode … operates at 6.5W" · "Smooth Mode … is set at 8W" · "Boost Mode … reaches an impressive 10W" ·
+    // "4-Stage Battery Indicator". Quotes: _incoming/p63/research.md (checker #540 r1 read only the static HTML).
     specifications: [
       { key: "power", label: "Power modes", value: "Eco 6.5W · Smooth 8W · Boost 10W", sourceStatus: "verified", sourceUrl: INFINITY_PAGE },
       { key: "battery", label: "Battery", value: "440mAh built-in", sourceStatus: "verified", sourceUrl: INFINITY_PAGE },
