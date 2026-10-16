@@ -322,3 +322,19 @@ Rows 1–10 (above) keep their dates ("pod" / "pod system" = row 9). Also on 22/
   owner question รอพี่ตรวจ 66). Brand read-next boxes moved (battery-care-and-charging now links more products, checker #502):
   /brands/uwell slot 3 coil-and-pod-maintenance → battery-care-and-charging (GSC uwell 15/74 — watch) · /brands/relx and /brands/wotofo
   gain battery-care in front (2 → 3) · /brands/tfit 0 → 1.
+
+## Round "SEO all keys" batches 4 + 6 (16/10/2026, chat 3, branch seo-keys-guides-a) - what changed before the 22/10 read
+
+- NEW Thai-only guides (appended to allGuides): /guides/choosing-a-switch-pod ("พอตเปลี่ยนหัว รุ่นไหนดี", owner item 65) ·
+  /guides/choosing-a-disposable ("พอตใช้แล้วทิ้ง ยี่ห้อไหนดี") · /guides/choosing-a-pod-flavor ("พอตกลิ่นไหนดี") ·
+  /guides/comparing-voopoo-argus-models ("VOOPOO ARGUS รุ่นไหนดี") · /guides/checking-a-genuine-pod ("พอตของแท้ ดูยังไง").
+- Two new variables for this read: the ARGUS guide names "G4 · G4 mini" in its title (watch row 2 measures the bare "argus g4" on
+  /products/argus-g4 — title B on purpose, the "ARGUS G4 vs G4 mini" title waits for the read) · the genuine guide owns
+  "พอตของแท้ ดูยังไง" (row 24 measures "พอตของแท้" landing on `/`; a row on the guide = the question split as planned, not a loss).
+- No head change on any existing page (title / meta / H1 of all sitemap pages measured on the test server before/after) · no link
+  into watch-row pages 1–8 · no change at all on a watch-row page (read-next boxes included).
+- Read-next boxes that moved (measured, `_incoming/seo-keys/lm-*.json`): /products/disposables slot disposable-vs-switch-pod →
+  choosing-a-disposable · /products/argus-p3 choosing-wattage-and-airflow → the ARGUS guide · /products/argus-g3-mini
+  high-output-chip-platforms → the ARGUS guide · zero-pro / zero-nano / zero-cartridge / relx-creator gain the switch guide ·
+  /brands/moood and /brands/tfit gain the disposable + flavour guides. Links held back until after the read = HANDOFF §16 3s.
+- Targets: each guide gets its own "…รุ่นไหนดี / ยี่ห้อไหนดี / กลิ่นไหนดี / ของแท้ ดูยังไง" rows · read 01/11 · 15/11 · 10/12.
