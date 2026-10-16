@@ -2110,7 +2110,7 @@ const allGuides: Guide[] = [
           "ถ้าอยากได้พัฟต่อหัวเยอะ ลองดู Esko Bar Switch 20K หรือ RELX Creator คู่กับหัว Muro Connector 20K",
           "ถ้าอยากมีจอไว้ดูแบต ลองดู RELX Creator หรือ M Switch Kit ถ้าอยากปรับแรงสูบได้ ลองดู Zero Pro · Esko Bar Switch 20K หรือ RELX Creator",
           "ถ้าอยากได้เครื่องตัวเล็กไว้พกติดตัว ลองดู Zero Nano หรือ Zero Pro และถ้าใช้ M Bar อยู่แล้ว M Switch ก็เป็นของ SALTHUB เจ้าเดียวกัน",
-          "ราคาตัวเครื่องและหัวพอตของแต่ละรุ่นดูได้ที่หน้าสินค้าของรุ่นนั้น หรือดูรวมในหมวด[พอตคิท](/products/pod-kits)กับ[หัวพอต](/products/pods-cartridges)",
+          "ราคาตัวเครื่องและหัวพอตของแต่ละรุ่นดูได้ที่หน้าสินค้าของรุ่นนั้น หรือดูรวมในหมวดพอตคิทกับหัวพอต",
           "ถ้าเครื่องดูดไม่ขึ้นหรือไฟกะพริบ ไล่เช็คได้ที่[พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
         ],
       },
@@ -2145,7 +2145,7 @@ const allGuides: Guide[] = [
         heading: "พอตใช้แล้วทิ้ง ยี่ห้อไหนดี ตัวไหนดี",
         paragraphs: [
           "พอตใช้แล้วทิ้งยี่ห้อไหนดี ตัวไหนดี ไม่มีคำตอบเดียวที่ใช้ได้กับทุกคน เพราะแต่ละคนมองหาไม่เหมือนกัน บางคนอยากได้รุ่นที่พัฟเยอะ บางคนอยากมีจอไว้ดูแบต บางคนอยากได้กลิ่นให้เลือกเยอะ หรืออยากได้สองกลิ่นในเครื่องเดียว ร้านเราจึงไม่จัดอันดับ แต่แยกรุ่นที่มีบนเว็บให้ดูตามสิ่งที่คุณอยากได้ทีละแบบ",
-          "ตอนนี้บนเว็บเรามีพอตใช้แล้วทิ้งจากหลายยี่ห้อ SALTHUB มี [M Bar 9K](/products/m-bar-9k) กับ [M Bar 10K](/products/m-bar-10k) RELX มี [RELX Smash Go 12K](/products/relx-smash-go-12k) JOIWAY มี [Joiway F3](/products/joiway-f3) กับ Joiway F4 TFIT มี [TFIT M Power 20K](/products/tfit-m-power-20k) WOTOFO มี [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) MOOOD มี [MOOOD Monster 14K Puffs](/products/mood-monster-14k) และ INFY มี INFY 20K นอกจากนี้ยังมี [nexBar CLEAR 18K](/products/pod-180) กับ [Muro SC 8000 Puffs](/products/muro-sc-8000) ที่บนเว็บไม่ได้ระบุแบรนด์",
+          "ตอนนี้บนเว็บเรามีพอตใช้แล้วทิ้งจากหลายยี่ห้อ SALTHUB มี [M Bar 9K](/products/m-bar-9k) กับ [M Bar 10K](/products/m-bar-10k) RELX มี [RELX Smash Go 12K](/products/relx-smash-go-12k) JOIWAY มี Joiway F3 กับ Joiway F4 TFIT มี [TFIT M Power 20K](/products/tfit-m-power-20k) WOTOFO มี [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) MOOOD มี [MOOOD Monster 14K Puffs](/products/mood-monster-14k) และ INFY มี INFY 20K นอกจากนี้ยังมี [nexBar CLEAR 18K](/products/pod-180) กับ [Muro SC 8000 Puffs](/products/muro-sc-8000) ที่บนเว็บไม่ได้ระบุแบรนด์",
           "ถ้ายังลังเลว่าจะเอาพอตใช้แล้วทิ้ง หรืออยากเก็บตัวเครื่องไว้แล้วเปลี่ยนแค่หัว อ่าน [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) ก่อนได้ ส่วนถ้ากำลังชั่งกับพอตที่เติมน้ำยาเอง อ่าน [พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม](/guides/open-system-vs-disposable) บทความนี้พูดถึงการเลือกรุ่นอย่างเดียว",
         ],
       },
@@ -2242,7 +2242,6 @@ const allGuides: Guide[] = [
       { question: "พอตใช้แล้วทิ้งรุ่นไหนมีจอ", answer: "WOTOFO nexBAR 18K มีจอ LED ที่บอกแบต น้ำยาที่เหลือ และโหมดที่ใช้อยู่ Joiway F4 ก็มีจอ LED เช่นกัน ส่วนถ้าแค่อยากรู้ระดับแบต M Bar 10K มีไฟ LED บอกแบตทีละ 25%" },
       { question: "พอตใช้แล้วทิ้งสองกลิ่นในเครื่องเดียว มีรุ่นไหน", answer: "Joiway F4 ของ JOIWAY มีถังน้ำยาสองถัง ถังละหนึ่งกลิ่น หมุนปากดูดเพื่อสลับกลิ่น บนหน้าสินค้าของเว็บเรามีให้ดู 16 คู่กลิ่น" },
     ],
-    relatedProductSlugs: ["tfit-m-power-20k", "m-bar-10k", "relx-smash-go-12k"],
   },
   {
     // Round "SEO all keys" batch 4 (SEO_LANDSCAPE §9.2 #3 — "พอตกลิ่นไหนดี · มีกลิ่นอะไรบ้าง · ไม่เย็น"): flavour names grouped by
@@ -2269,7 +2268,7 @@ const allGuides: Guide[] = [
         heading: "สายเย็น: ชื่อที่มี Ice · Mint · Menthol · Blast · Freeze",
         paragraphs: [
           "จากที่ร้านเจอ กลิ่นเย็นเป็นสายที่ลูกค้าถามถึงบ่อย และในสายนี้ยังแยกได้อีกสองแบบ แบบแรกคือชื่อที่มีแค่ Mint หรือ Menthol ไม่มีผลไม้อยู่ในชื่อ อย่าง Double Mint ใน [TFIT M Power 20K](/products/tfit-m-power-20k) และ [RELX Smash Go 12K](/products/relx-smash-go-12k) หรือ Mint ใน [MOOOD Monster 14K](/products/mood-monster-14k) ส่วนคนที่มองหากลิ่นเมนทอล มี Extreme Menthol ใน [Muro SC 8000](/products/muro-sc-8000) และ Menthol Freeze ใน INFY 20K",
-          "แบบที่สองคือชื่อที่มีผลไม้คู่กับคำที่สื่อถึงความเย็น สองรุ่นที่มีกลิ่นแบบนี้ให้เลือกหลายกลิ่นคือ [JOIWAY F3](/products/joiway-f3) เช่น Lychee Ice · Green Apple Ice · Hokkaido Melon Ice และ [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) เช่น Mango Ice · Peach Ice · Pomegranate Ice",
+          "แบบที่สองคือชื่อที่มีผลไม้คู่กับคำที่สื่อถึงความเย็น สองรุ่นที่มีกลิ่นแบบนี้ให้เลือกหลายกลิ่นคือ JOIWAY F3 เช่น Lychee Ice · Green Apple Ice · Hokkaido Melon Ice และ [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) เช่น Mango Ice · Peach Ice · Pomegranate Ice",
           "ชื่อที่ควรระวังคือชื่อที่มีคำว่า Ice Cream อย่าง Vanilla Ice Cream ใน [Muro Connector 20K](/products/muro-connector-20k) คำนี้หมายถึงไอศกรีม ไม่ได้บอกความเย็น เราจึงจัดไว้สายชา นม และขนม",
         ],
       },
@@ -2323,7 +2322,7 @@ const allGuides: Guide[] = [
           "ถ้าอยากเปลี่ยนกลิ่นโดยไม่ต้องเปลี่ยนเครื่อง เครื่องที่ใช้หัวพอตบรรจุสำเร็จช่วยได้ กลิ่นอยู่ที่หัวพอต ส่วนตัวเครื่องใช้ตัวเดิม อย่างหัวพอต Zero Cartridge ที่ใช้กับเครื่อง Zero Pro และ Zero Nano ของ SALTHUB ข้อดีข้อเสียเมื่อเทียบกับพอตใช้แล้วทิ้ง อ่านได้ที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)",
           "ถ้าใช้[พอตซิสเต็ม](/products/pod-systems)ที่เติมน้ำยาเอง กลิ่นไม่ได้ผูกกับเครื่อง เลือกจากน้ำยาได้ตามแนวที่ชอบ ลักษณะของแต่ละแนวดูได้ที่ [ผลไม้](/e-liquid/fruit) · [เมนทอลและความเย็น](/e-liquid/menthol-cooling) · [ของหวาน](/e-liquid/dessert) · [เครื่องดื่ม](/e-liquid/beverage) และ [สไตล์ยาสูบ](/e-liquid/tobacco-style) ก่อนเปลี่ยนไปน้ำยากลิ่นใหม่ ควรรู้ไว้ว่า UWELL แนะนำไม่ให้ใช้คอยล์ตัวเดียวกับน้ำยาหลายกลิ่น วิธีเติมทีละขั้นอยู่ที่ [เติมน้ำยาพอตยังไง](/guides/refilling-a-pod)",
           "อีกเรื่องที่ร้านเจอ คือพอสูบกลิ่นเดิมไปสักพัก ลิ้นจะเริ่มชิน จนรู้สึกว่ารสไม่ชัดเท่าตอนแรก ทั้งที่เครื่องยังทำงานปกติ ถ้าเป็นแบบนี้ ลองสลับไปกลิ่นในสายอื่นบ้างก็ได้ อ่านเรื่องนี้ต่อได้ที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
-          "ถ้าอยากเห็นตัวอย่างก่อนเลือก คลิปของร้านในหน้านี้คัดกลิ่นพอตใช้แล้วทิ้งมาเล่าไว้ 5 กลิ่น ส่วนรุ่นทั้งหมดดูได้ในหมวด [พอตใช้แล้วทิ้ง](/products/disposables) และ [หัวพอต](/products/pods-cartridges)",
+          "ถ้าอยากเห็นตัวอย่างก่อนเลือก คลิปของร้านในหน้านี้คัดกลิ่นพอตใช้แล้วทิ้งมาเล่าไว้ 5 กลิ่น ส่วนรุ่นทั้งหมดดูได้ในหมวดพอตใช้แล้วทิ้งและหมวดหัวพอต",
         ],
       },
     ],
@@ -2445,7 +2444,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "ถ้าอยากได้จอไว้ดูค่าต่าง ๆ และอยากได้สามค่าโอห์มจากหัวพอตหัวเดียว ลองดู G4 ถ้าอยากได้แบตเท่า G4 ในตัวเครื่องที่เล็กและเบากว่า โดยไม่ต้องมีจอ ลองดู G4 mini",
           "ถ้าอยากได้เครื่องที่เบาที่สุดในสี่รุ่นและใช้ง่าย หยิบขึ้นมาก็สูบได้เลย ลองดู G3 mini และถ้าอยากได้จอทัชเต็มจอกับการตั้งกราฟวัตต์เอง ลองดู P3",
-          "ราคาของแต่ละรุ่นดูได้ที่หน้าสินค้าของรุ่นนั้น หรือดูทุกรุ่นของแบรนด์ได้ที่หน้า [VOOPOO](/brands/voopoo) ถ้ากำลังเทียบ ARGUS G4 กับ Caliburn อยู่ อ่าน [ARGUS G4 vs Caliburn G5](/guides/argus-g4-vs-caliburn-g5) ต่อได้",
+          "ราคาของแต่ละรุ่นดูได้ที่หน้าสินค้าของรุ่นนั้น หรือดูทุกรุ่นของแบรนด์ได้ที่หน้า VOOPOO ถ้ากำลังเทียบ ARGUS G4 กับ Caliburn อยู่ อ่าน [ARGUS G4 vs Caliburn G5](/guides/argus-g4-vs-caliburn-g5) ต่อได้",
         ],
       },
     ],
@@ -2486,14 +2485,14 @@ const allGuides: Guide[] = [
         paragraphs: [
           "ถ้าใช้ Caliburn หรือสินค้าอื่นของ UWELL เช็คได้ที่หน้า [myuwell.com/verify](https://www.myuwell.com/verify) ซึ่งเป็นหน้าเช็คของแท้ของ UWELL เอง",
           "หน้านี้เช็คได้สองทาง ทางแรกคือพิมพ์รหัสลงในช่อง โดยพิมพ์ติดกันทั้งชุด ตัดช่องว่างและขีดออก แล้วกด Submit ทางที่สองคือขูดแถบเคลือบออก แล้วสแกน QR code ที่อยู่ข้างใต้ ถ้าเป็นของแท้ หน้าเว็บจะขึ้นข้อความยืนยันว่าเป็นรหัสของแท้",
-          "หน้าเช็คของ UWELL บอกแค่วิธีกรอก ส่วนรหัสอยู่ตรงไหนของกล่อง ถ้าหาไม่เจอ ทักไลน์ถามร้านได้ ส่วนรุ่นของ UWELL ที่มีบนเว็บเรา ดูได้ที่หน้า [UWELL](/brands/uwell)",
+          "หน้าเช็คของ UWELL บอกแค่วิธีกรอก ส่วนรหัสอยู่ตรงไหนของกล่อง ถ้าหาไม่เจอ ทักไลน์ถามร้านได้",
         ],
       },
       {
         heading: "RELX เช็คด้วยรหัส 14 หลักหรือ QR code",
         paragraphs: [
           "RELX เปิดหน้าเช็คไว้ที่ [relxnow.com/pages/verify](https://relxnow.com/pages/verify) ที่ข้างกล่องจะมีรหัส 14 หลัก พิมพ์รหัสนี้ลงในช่อง แล้วกด Verify",
-          "อีกทางคือสแกน QR code บนพอต โดยสแกนค้างไว้ประมาณ 3–5 วินาที รุ่นของ RELX ที่มีบนเว็บเรา ดูได้ที่หน้า [RELX](/brands/relx)",
+          "อีกทางคือสแกน QR code บนพอต โดยสแกนค้างไว้ประมาณ 3–5 วินาที",
         ],
       },
       {
@@ -2507,14 +2506,14 @@ const allGuides: Guide[] = [
         heading: "SALTHUB และ Esko Bar เช็คด้วยการถ่ายรูป",
         paragraphs: [
           "SALTHUB เจ้าของตระกูล M Bar · M Switch และ Zero แนะนำให้ดูเครื่องหมายกันปลอมและฉลากรับรองบนกล่อง แล้วเช็คต่อที่หน้า [salthub.com/authenticate](https://www.salthub.com/authenticate/)",
-          "หน้าเช็คของ SALTHUB ใช้การถ่ายรูปแทนการกรอกรหัส ให้ถ่ายรูปฉลากรับรองให้ชัดและซูมให้พอดี โดยต้องถ่ายจากตัวฉลากจริงบนกล่อง ไม่ใช่ถ่ายจากรูปบนหน้าจอ เมื่อภาพชัดพอ ระบบจะถ่ายให้เอง รุ่นของ SALTHUB ที่มีบนเว็บเรา ดูได้ที่หน้า [SALTHUB](/brands/salthub)",
+          "หน้าเช็คของ SALTHUB ใช้การถ่ายรูปแทนการกรอกรหัส ให้ถ่ายรูปฉลากรับรองให้ชัดและซูมให้พอดี โดยต้องถ่ายจากตัวฉลากจริงบนกล่อง ไม่ใช่ถ่ายจากรูปบนหน้าจอ เมื่อภาพชัดพอ ระบบจะถ่ายให้เอง",
           "Esko Bar ใช้ระบบเช็คแบบถ่ายรูปตัวเดียวกับ SALTHUB อยู่บนหน้า Authentic Verification System ที่ [eskobarvape.com/verify](https://eskobarvape.com/verify) เปิดหน้านี้แล้วทำตามขั้นที่ขึ้นบนหน้าได้เลย",
         ],
       },
       {
         heading: "VOOPOO มีสติกเกอร์รหัสสองแบบ",
         paragraphs: [
-          "สินค้าของ VOOPOO มีสติกเกอร์รหัสกันปลอม และ VOOPOO บอกไว้ว่าสติกเกอร์นี้มีสองแบบ ซึ่งเป็นของแท้ทั้งสองแบบ รหัสนี้เช็คได้ที่เว็บของ VOOPOO ตามที่อธิบายไว้ใน[หน้ารหัสกันปลอมของ VOOPOO](https://shop.voopoo.com/pages/security-code) รุ่นของ VOOPOO ที่มีบนเว็บเรา ดูได้ที่หน้า [VOOPOO](/brands/voopoo)",
+          "สินค้าของ VOOPOO มีสติกเกอร์รหัสกันปลอม และ VOOPOO บอกไว้ว่าสติกเกอร์นี้มีสองแบบ ซึ่งเป็นของแท้ทั้งสองแบบ รหัสนี้เช็คได้ที่เว็บของ VOOPOO ตามที่อธิบายไว้ใน[หน้ารหัสกันปลอมของ VOOPOO](https://shop.voopoo.com/pages/security-code)",
         ],
       },
       {
