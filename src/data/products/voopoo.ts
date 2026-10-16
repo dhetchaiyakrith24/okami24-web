@@ -4,6 +4,8 @@ const usbC2A = { type: "charging" as const, label: "USB-C", note: "5V/2A chargin
 const usbC15A = { type: "charging" as const, label: "USB-C", note: "5V/1.5A charging." };
 const S3_PAGE = "https://shop.voopoo.com/products/drag-s3";
 const X3_PAGE = "https://shop.voopoo.com/products/drag-x3";
+// VOOPOO's own page; read 16/10 through its web.archive.org snapshot of 18/01/2026 (www.voopoo.com does not resolve from the shop's ISP).
+const DRAG_X_PAGE = "https://www.voopoo.com/drag-series/drag-x.html";
 const G4M_PAGE = "https://shop.voopoo.com/products/argus-g4-mini";
 const G3M_PAGE = "https://shop.voopoo.com/products/argus-g3-mini";
 const P3_PAGE = "https://shop.voopoo.com/products/argus-p3";
@@ -1044,6 +1046,68 @@ export const voopooProducts: Product[] = [
     faqs: [],
     relatedProductSlugs: ["drag-x3", "drag-6"],
     sourceUrls: ["https://www.voopoo.com/drag-series/drag-s3", S3_PAGE],
+  },
+  {
+    // Round p63 (owner 16/10, list item 63 — BSOT §4 "Models customers search for but the shop does not stock"): people
+    // search "voopoo drag x". The original 2020 DRAG X: VOOPOO's own page (www.voopoo.com does not resolve from the shop's
+    // ISP; read via web.archive.org, snapshot 18/01/2026 — DRAG_X_PAGE). shop.voopoo.com no longer sells it. The page lists
+    // no colours, so the record has no options. No price row = browse-only; sku-map `product: null` = sold out.
+    id: "drag-x",
+    slug: "drag-x",
+    brandId: "voopoo",
+    familyId: "drag",
+    categoryId: "pod-kits",
+    systemType: "pod-kit",
+    name: "DRAG X",
+    displayName: "VOOPOO DRAG X",
+    tagline: "The DRAG X: a single 18650 and up to 80W.",
+    shortDescription:
+      "VOOPOO's DRAG X runs on one 18650 cell, sold separately, from 5 to 80W. It takes PnP coils including the PnP-RBA, and holds 4.5mL in a magnetic pod.",
+    isFlagship: false,
+    attributes: {
+      batteryMah: undefined,
+      wattageMin: 5,
+      wattageMax: 80,
+      capacityMl: 4.5,
+      portability: "standard",
+      beginnerFriendly: false,
+      chargingType: "USB-C",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/drag-x/card.webp",
+        alt: "VOOPOO DRAG X, carbon-fibre panel, tilted",
+        angle: "tilted, isolated — VOOPOO's own page image (drag2-main.png), transparent",
+        transparentBackground: true,
+        sourceName: "VOOPOO (official page image)",
+        sourceUrl: DRAG_X_PAGE,
+      },
+    ],
+    specifications: [
+      { key: "output", label: "Output range", value: "5–80W", sourceStatus: "verified", sourceUrl: DRAG_X_PAGE },
+      { key: "voltage", label: "Output voltage", value: "3.2–4.2V", sourceStatus: "verified", sourceUrl: DRAG_X_PAGE },
+      { key: "resistance", label: "Resistance range", value: "0.1–3.0Ω", sourceStatus: "verified", sourceUrl: DRAG_X_PAGE },
+      { key: "battery", label: "Battery", value: "Single external 18650 cell (not included)", sourceStatus: "verified", sourceUrl: DRAG_X_PAGE },
+      { key: "charging", label: "Charging", value: "USB-C fast charging", sourceStatus: "verified", sourceUrl: DRAG_X_PAGE },
+      { key: "pod", label: "Pod capacity", value: "4.5mL, PCTG, magnetic", sourceStatus: "verified", sourceUrl: DRAG_X_PAGE },
+      { key: "coils", label: "Coil", value: "PnP coils incl. PnP-RBA · in the box: PnP-VM1 0.3Ω (32–40W), PnP-VM6 0.15Ω (60–80W)", sourceStatus: "verified", sourceUrl: DRAG_X_PAGE },
+      { key: "size", label: "Dimensions", value: "124 × 32.5 × 28 mm", sourceStatus: "verified", sourceUrl: DRAG_X_PAGE },
+      { key: "materials", label: "Materials", value: "Alloy and leather", sourceStatus: "verified", sourceUrl: DRAG_X_PAGE },
+      { key: "chip", label: "Chipset", value: "GENE.TT · SMART mode · SCORE ranking mode", sourceStatus: "verified", sourceUrl: DRAG_X_PAGE },
+    ],
+    features: [
+      { id: "chip", title: "GENE.TT chip", description: "VOOPOO rates the GENE.TT chip at 0.001 seconds to fire." },
+      { id: "smart", title: "SMART mode", description: "Fit a coil and SMART mode reads it, then suggests a wattage to start from. It also remembers the wattage you last set." },
+      { id: "airflow", title: "A magnetic pod", description: "The 4.5mL PCTG pod is held on by magnets; VOOPOO calls it the simplest, cleanest way to fill." },
+      { id: "battery", title: "One 18650, charged over USB-C", description: "The DRAG X takes a single 18650 cell, bought separately, and fast-charges it in the device over USB-C." },
+    ],
+    compatibility: [{ type: "coil", label: "PnP coils", note: "PnP-VM1 0.3Ω and PnP-VM6 0.15Ω come in the kit; PnP-RBA fits." }, { type: "charging", label: "USB-C", note: "USB-C fast charging." }],
+    whoIsThisFor: ["You're looking for the DRAG X itself, not the DRAG X3, and want the full spec VOOPOO lists."],
+    faqs: [],
+    relatedProductSlugs: ["drag-x3", "drag-s3"],
+    sourceUrls: [DRAG_X_PAGE],
   },
   {
     id: "drag-x3",
