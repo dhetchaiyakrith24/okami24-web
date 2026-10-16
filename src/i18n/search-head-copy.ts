@@ -323,6 +323,8 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "caliburn-g5": "UWELL Caliburn G5 พอตซิสเต็มที่มีจอสี 0.85 นิ้ว แตะสามครั้งเพื่อสลับโหมดวัตต์ แบต 1600mAh ปรับได้ 5–35 วัตต์",
   // Round p63 (16/10): the plain G3 page — searchers of "caliburn g3" land on the G3 Pro today (SEO_LANDSCAPE §9.5).
   "caliburn-g3": "Caliburn G3 รุ่นมาตรฐาน ไม่ใช่ G3 Pro เป็นพอตซิสเต็มจาก UWELL แบต 900mAh ปรับได้สูงสุด 25 วัตต์ มีจอ OLED บอกวัตต์และจำนวนพัฟ หน้านี้รวมทุกสีที่ UWELL ผลิต",
+  // Round p63 (16/10): the DRAG X (2020) — searched as "voopoo drag x" (SEO_LANDSCAPE §9.5).
+  "drag-x": "VOOPOO DRAG X (ไม่ใช่ DRAG X3) เป็นพอตคิทที่ใช้ถ่าน 18650 ก้อนเดียว ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP ได้ และมีหัวพอต 4.5mL ยึดด้วยแม่เหล็ก",
   "caliburn-g3-pro": "Caliburn G3 Pro มีจอเต็มหน้าเครื่องบอกวัตต์และจำนวนพัฟ แบต 1000mAh ปรับลมได้ละเอียด ให้หัวพอต 0.4 กับ 0.9 โอห์มมาในกล่อง",
   "caliburn-g3-pro-koko": "Caliburn G3 Pro KOKO ทรงกล่อง จอสี 1.8 นิ้วที่เปลี่ยนธีมหน้าจอได้ แบต 1250mAh และใช้หัวพอต G3 ได้ทุกหัว",
   "caliburn-g4-classic": "Caliburn G4 Classic แบต 1400mAh ใช้สีไฟบอกแบตที่เหลือแทนจอ สูบได้เลยโดยไม่ต้องกดปุ่ม และปรับช่องลมได้ละเอียดแบบไม่มีขั้น",
@@ -412,6 +414,17 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round "SEO all keys" batch 4 (16/10): thai-copy's head line for the Drag family comparison.
   "comparing-voopoo-drag-models":
     "DRAG 6 กับ DRAG S3 ต่างกันยังไง และ DRAG X3 ต่างจาก DRAG 6 ตรงไหน เทียบแบต วัตต์ จอ หัวพอต และขนาดของ VOOPOO DRAG ทีละเรื่อง ให้เลือกได้ตรงกับการใช้งาน",
+  // Round "SEO all keys" batches 4 + 6 (16/10, chat 3): thai-copy's head lines for the buying guides (SEO_LANDSCAPE §9.2 #3–#7).
+  "choosing-a-switch-pod":
+    "พอตเปลี่ยนหัว รุ่นไหนดี ยี่ห้อไหนดี เลือกตามความต้องการ ทั้งพัฟต่อหัว จอ โหมด กลิ่น และขนาด พร้อมตัวอย่าง M Switch · Zero · RELX Creator · Esko Bar Switch 20K",
+  "choosing-a-disposable":
+    "พอตใช้แล้วทิ้ง ยี่ห้อไหนดี ตัวไหนดี เลือกตามที่อยากได้ ทั้งพัฟ จอ โหมด สองกลิ่นในเครื่องเดียว และจำนวนกลิ่น พร้อมเทียบ Marbo 9K กับ 10K และ INFY กับ Esko Bar",
+  "choosing-a-pod-flavor":
+    "พอตกลิ่นไหนดี และมีกลิ่นอะไรบ้าง รวมกลิ่นจากหลายแบรนด์แยกเป็นสาย เย็น องุ่น ผลไม้ ชาและขนม ยาสูบ พร้อมวิธีเลือกกลิ่นไม่เย็นจากชื่อกลิ่น",
+  "comparing-voopoo-argus-models":
+    "VOOPOO ARGUS รุ่นไหนดี เทียบ ARGUS G4 · G4 mini · G3 mini · P3 ทีละคู่ ทั้งแบต วัตต์ จอ การเปลี่ยนค่าโอห์ม ช่องลม และหัวพอตที่ใช้ร่วมกันได้ ก่อนเลือกซื้อ",
+  "checking-a-genuine-pod":
+    "พอตของแท้ดูยังไง เช็คเองได้ที่เว็บทางการของแบรนด์ รวมหน้าเช็คของ UWELL RELX INFY SALTHUB Esko Bar และ VOOPOO พร้อมวิธีใช้ และสิ่งที่ควรทำเมื่อซื้อพอตออนไลน์",
 };
 
 /** Row C19 — keyed by technology entry id. */
