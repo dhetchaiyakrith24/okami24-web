@@ -51,6 +51,8 @@ export const COMPAT_NOTES_TH: Record<string, string> = {
   "5V/2A charging on current-generation devices.": "ชาร์จ 5V/2A",
   "5V/2A charging.": "ชาร์จ 5V/2A",
   "5V/3A charging.": "ชาร์จ 5V/3A",
+  // Round p63 (16/10): RELX Infinity 2 Plus.
+  "RELX prefilled pods, 1.9mL each.": "หัวพอตบรรจุสำเร็จของ RELX หัวละ 1.9mL",
   // Round p63 (16/10): Caliburn G3 — UWELL's page says "2A Fast Charging", no voltage.
   "2A fast charging.": "ชาร์จเร็ว 2A",
   "Caliburn G3 integrated coil cartridges.": "หัวพอต Caliburn G3 ที่มีคอยล์ในตัว",

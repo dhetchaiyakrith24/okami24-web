@@ -103,6 +103,17 @@ export const families: ProductFamily[] = [
       "RELX's standalone disposable line, distinct from the Creator closed pod system.",
   },
   {
+    // Round p63 (16/10): RELX Infinity 2 Plus — a device for RELX's prefilled pods (relxnow.com).
+    id: "relx-infinity",
+    slug: "relx-infinity",
+    brandId: "relx",
+    categoryId: "pod-kits",
+    name: "RELX Infinity",
+    tagline: "A device you keep, prefilled pods you swap.",
+    description:
+      "RELX's Infinity device takes RELX Pod, Pod Pro and Pod Pro 2 prefilled pods; this generation is the Infinity 2 Plus.",
+  },
+  {
     // 2026-09-30 (round "image-sitewide"): the RELX Creator is a device + prefilled pods, not a disposable (owner 30/09).
     id: "relx-creator",
     slug: "relx-creator",

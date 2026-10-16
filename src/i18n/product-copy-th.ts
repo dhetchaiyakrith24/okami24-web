@@ -746,6 +746,25 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       "พอตใช้แล้วทิ้งชาร์จซ้ำได้จากไลน์อัพทางการของ RELX รองรับสูงสุด 12,000 พัฟ แบตเตอรี่ 400mAh คอยล์ MEGA MESH มี 10 รส ยืนยันตรงจาก relxnow.com",
   },
   // Round "image-sitewide" 2026-09-30 (writer draft A): re-published as a device + prefilled pods, not a disposable.
+  "relx-infinity-2-plus": {
+    whoIsThisFor: {
+      0: "ใช้หัวพอต RELX Pod หรือ Pod Pro อยู่แล้ว และอยากได้ตัวเครื่อง Infinity รุ่นปัจจุบันที่ใส่หัวพอตเดิมได้",
+    },
+    specifications: {
+      battery: "440mAh ในตัว",
+      charging: "USB-C · 80% ใน 15 นาที (ตัวเลขของ RELX)",
+      indicator: "ไฟบอกแบต 4 ระดับ",
+      pods: "RELX Pod · RELX Pod Pro · RELX Pod Pro 2 หัวละ 1.9mL สูงสุด 600 พัฟ (ตัวเลขของ RELX)",
+    },
+    features: {
+      modes: { title: "3 โหมด Eco · Smooth · Boost", description: "สลับได้ระหว่าง Eco 6.5 วัตต์ Smooth 8 วัตต์ และ Boost 10 วัตต์ RELX บอกว่าโหมด Boost ให้ควันมากกว่าโหมด Smooth สูงสุด 15%" },
+      charging: { title: "ชาร์จ 15 นาที ได้แบต 80%", description: "แบต 440mAh ชาร์จผ่าน USB-C และตามตัวเลขของ RELX ชาร์จ 15 นาทีก็ได้ถึง 80%" },
+      indicator: { title: "ไฟบอกแบต 4 ระดับ", description: "ไฟบนตัวเครื่องแบ่งแบตที่เหลือเป็น 4 ระดับ ดูแวบเดียวก็รู้ว่าควรชาร์จเมื่อไร" },
+    },
+    tagline: "Infinity รุ่นปัจจุบันของ RELX สลับได้ 3 โหมด ตั้งแต่ 6.5 ถึง 10 วัตต์",
+    shortDescription:
+      "เครื่องระบบสวิตช์ของ RELX มี 3 โหมด Eco 6.5 วัตต์ Smooth 8 วัตต์ และ Boost 10 วัตต์ แบต 440mAh ชาร์จ 15 นาทีได้ถึง 80% ใช้กับหัวพอตบรรจุสำเร็จของ RELX ทั้ง RELX Pod, Pod Pro และ Pod Pro 2",
+  },
   "relx-creator": {
     whoIsThisFor: {
       0: "อยากได้ตัวเครื่องที่ใช้ซ้ำได้ แต่ไม่อยากเติมน้ำยาเอง",

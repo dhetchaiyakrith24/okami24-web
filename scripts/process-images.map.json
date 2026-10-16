@@ -8507,5 +8507,59 @@
   },
   "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+RIVIERA+PEARL+PACK-pmi_G0002220_00_id-1782705843615.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
   "fileName": "variant-iqosheet-15-verified-riviera-pearl.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b15/out/k-D.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "card",
+  "note": "round img-1610 16/10 - card = studio re-shoot (checker #540 r1: the RELX store image filled 68% of the card)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan - no credits), studio re-shoot of RELX's front render on a mid-grey sweep; prompt: same straight front view, cap solid opaque glossy black with its round dimple, no lettering; 4 renders, D picked (A/B see-through cap, C dented edge); keyed by _incoming/img-1610/b14/key2.js (EDGEFOOT=1 SH=50 T=16 MW=4), trimmed, fit 940x1175 in 1000x1250, webp q82",
+   "reference": "RELX's own front render relx-infinity-2-plus-vape-device-black-sapphire-front.png (1025 px, relxnow.com Shopify CDN) - input _incoming/img-1610/b15/in/black-sapphire.png; render _incoming/img-1610/b15/out/r-D.png; notes _incoming/img-1610/b15/SOURCE.md"
+  },
+  "fileName": "card-v2.webp",
+  "replaces": "/assets/products/relx-infinity-2-plus/card.webp"
+ },
+ {
+  "source": "_incoming/p63/relx/src/black-sapphire.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "black-sapphire",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/relx/src/blue-bay.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "blue-bay",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/relx/src/bronze-dusk.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "bronze-dusk",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/relx/src/meteor-flash.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "meteor-flash",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/relx/src/rose-gold.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "rose-gold",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/relx/src/misty-leaf.png",
+  "slug": "relx-infinity-2-plus",
+  "role": "variant",
+  "id": "misty-leaf",
+  "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
  }
 ]
