@@ -16,11 +16,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
 2 ahead of main: nothing once #497 merges (its branch auto-deletes on GitHub). Only worktree:
   `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
-3 WATCH (16/10): this chat watches the side chats 3i + 3s per TEAM_RULES 13.6 (check their PRs for real, archive old chats) ·
-  a side chat ends "ขอย้ายแชท" in a turn the owner did not type → owner 16/10 "ใช้ปุ่มเปิดแชทต่อได้ ถ้าระบบไม่ให้กด ก็ทำการ์ด":
-  write the continuation brief to `_incoming/next-chat.md` (first line `status: ready`) and run the ad-hoc scheduled task
-  `okami24-chat-continue` (tested 16/10 from an owner turn) · refused → propose the card for the morning. Since the house round:
-  #513 license text · #515 + #525 side-chat rules · #524 authenticity claims (owner items 64–67). Nothing of this chat's own is open.
+3 WATCH (16/10): this chat = the main chat; it watches the side chats (3i image · 3s SEO · 3p products, to fold into 2 lines) and moves
+  them itself per TEAM_RULES 13.6 "โครงแชท" (both starter buttons in Auto; line 1 tested 16/10 from an automated turn). Since the
+  house round: #513 license text · #515 #525 #532 side-chat rules · #524 authenticity claims (owner items 64–67) · #531 items 60 + 63.
+  Nothing of this chat's own is open.
   DONE 15/10 — house audit #484 · tidy home by home #488 · central copy + web adapted #487 · LOCK ROUND #491 (pre-checker gate,
   `--self-test` run weekly by house-check) · HOUSE ROUND ข (3h, owner "เก็บบ้านทั้งเซต + รอบสัปดาห์รู้"): #494 leftovers (raw chars 0 ·
   `self-merge-check --base` = PASS / SITE-TOUCHED · L3 node-flag slip + quoted-arg false deny fixed) + skill house-clean = 8 homes
@@ -52,18 +51,26 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   LIVE [ตรวจแล้ว]: #501 coil-94/55/53 · #503 JOIWAY F4 · #505 ARGUS G4 · #512 SALTHUB Zero Pro + Nano · #516 JOIWAY F3 ·
   #522 Caliburn G5 Lite (+SE card) · #526 RELX Smash Go 12K (one master + scripted stripes) · #528 Caliburn G4 Classic 4 colours +
   card + lineup (checker PASS 570cf13c; bottom = one shared silver silhouette) · #533 DRAG 6 all-colours = two studio line-ups
-  4 + 3 standing in a row (checker PASS ec96207e; colour photos untouched). VOID 16/10 (already done / not drawn): argus-g4 gallery
+  4 + 3 standing in a row (checker PASS ec96207e; colour photos untouched) · Caliburn G3 card + 6 swatch colours made here for
+  side chat products-63 (live through their #534) · #549 Caliburn G5 Lite SE 8 colours + lineup (checker PASS 26c70a7, merged b2ee1959) · #552 coil-94 = the new GPP 3-pack (admin 16/10): card + 4 resistances,
+  box + 3 pods (checker PASS 61a52f38, merged 52b5c41a) · RELX Infinity 2 Plus card (94 %) delivered to the SEO line for #540 (`_incoming/img-1610/b15/site/card-v2.webp`). VOID 16/10 (already done / not drawn): argus-g4 gallery
   (storyDetails page never renders role "detail" assets) · caliburn-g5 colours (UWELL renders since 02/10) · Drag S3/X3 (07/10) ·
-  row line-ups (argus-g4-mini 07/10, G3 Pro 02/10) · M Bar 10K anatomy size = component layout, next design round. NEXT (re-sweep
-  by eye 16/10): caliburn-g5-lite-se 8 colours → caliburn-g4-mini 11 colours → rest. State, prompts, pipelines, page helpers, lessons to fold in =
+  row line-ups (argus-g4-mini 07/10, G3 Pro 02/10) · M Bar 10K anatomy size = component layout, next design round. NEXT: caliburn-g4-mini 12 colours (flat renders) → eye the rest of audit2/sheets → mood-monster-14k (label art = risky). Chat moved 16/10 ~20:10 at a batch boundary (nothing unchecked). State, prompts, pipelines, page helpers, lessons to fold in =
   `_incoming/img-1610/NEXT.md` (read it first) · prompts `_incoming/img-1610/prompts.md`.
-3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side chat 3, worktree `.claude/worktrees/seo-all-keys-a38889`,
-  own build tree `_incoming/wt-build` + test server `next start -p 3414`; `_incoming/seo-keys/setup-build.sh <sha>` moves + rebuilds it
-  (~5 min; pass a sha, never HEAD — HEAD = the build tree's own); worktree `node_modules` = a junction to the build tree's copy) ·
+3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side chat 4 seo-all-keys-4, worktree `.claude/worktrees/mystifying-driscoll-575ab6`,
+  own build tree `_incoming/wt4` + test server `next start -p 3414`; `_incoming/seo-images/setup-build.sh <sha>` (run from the worktree root) moves + rebuilds it
+  (~5 min; pass a sha, never HEAD — HEAD = the build tree's own); worktree `node_modules` = a junction to the build tree's copy;
+  chat 3's tools copied to `_incoming/seo-keys/`) ·
   【ห้ามแตะ】 product images + image map (image round) · every price file. Order = SEO_LANDSCAPE §9.6.
   DONE [ตรวจแล้ว]: batch 1 key list #499 · batches 2 + 5 #502 · #514 DRAG guide + /how-to-order · /shipping · /faq buying copy ·
   #519 old /faq answers whose collapsed line ends flipped meaning · #536 5f3bfa8a (checker PASS c6927648, round 2 of 3): batches 4 + 6 = five Thai guides choosing-a-switch-pod · choosing-a-disposable ·
-  choosing-a-pod-flavor · comparing-voopoo-argus-models (title B) · checking-a-genuine-pod (fail = BSOT §12, links /warranty).
+  choosing-a-pod-flavor · comparing-voopoo-argus-models (title B) · checking-a-genuine-pod (fail = BSOT §12, links /warranty) ·
+  #543 c9b82f10 (checker PASS 91dbcd3b, designer r1 = tall posters ~760px from md) + #546 4ff511ed (checker PASS e18e83b2) = section
+  posters (`image` on GuideSection/ArticleSubsection → ArticleFigure; SECTION_IMAGES in guides.ts, same files/credits as the product
+  records, Thai alt) in the DRAG · disposable · ARGUS · switch · Caliburn · ARGUS-vs-G5 guides + clips argusG4 (ARGUS guide) and mSwitch
+  (switch guide). Genuine guide: no maker image of a check exists → none. DRAG: no clip on the three shop channels (searched 16/10).
+  Dropped on sight: Caliburn G4 airflow still (big light close-up), GPP pod chart (white block). Checker note: the G5 triple-tap alt
+  says "tap three times" but the picture only shows a finger on the body → reword the alt in the next guide batch.
   Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them + no change on them (read-next boxes
   included). Tools chat 3 (`_incoming/seo-keys/`): `linkmap.js` (every sitemap page's links + title/meta/H1, `--diff` flags frozen
   pages) · `wbfix-gen.tsx` + `wb-driver2.js` (word-swap / seed candidates measured in the real element, FAQ answers opened) ·
@@ -82,9 +89,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   number (maker poster the owner supplied, no URL) — the guides repeat what those product pages already print; cut both if the
   owner wants strict maker-URL only. Switch guide body says "เครื่องระบบสวิตช์" (THAI_STYLE 10B line: "พอตเปลี่ยนหัว" = title, links, first explanation).
   Second-pass key research DONE 16/10 = SEO_LANDSCAPE §9.7 (+ §9.6 rows 8–10) · cluster notes `_incoming/seo-keys/r2-*.md`.
-  NEXT (§9.6 row 9, pages not frozen): images + shop clips in the five new guides + the DRAG guide (owner 16/10 via the main chat:
-  section images from existing `public/assets/products` story/lineup/variant webp, Thai alt, placed at their section · section clips only
-  from the shop's own channels, the SECTION_CLIPS pattern in src/data/guides.ts, oEmbed-checked · tier B = before/after 390 + 1440) → IQOS
+  NEXT (§9.6 row 9, pages not frozen): posters in the other guides with none (Thai-only ones first; a translated guide needs the
+  image in its th/en/zh arrays with alt per locale; skip white charts and posters whose product page swaps a phone version) · clip
+  `_s48AaDCtf4` "MTL / RDL / DTL ต่างกันยังไง?" (OKM YARZ, 2026-09-19, oEmbed-checked 16/10) not placed yet → understanding-mtl-vs-dtl
+  (translated) · link /products/drag-x (products-63, live) from the DRAG guide → IQOS
   ILUMA lights/reset/charging guide from the official manual (§9.7) → batch 5 on pages that are not frozen (charging / can't-draw / blinking light by brand from maker
   manuals · pod/coil care · Marbo flavour names · Caliburn comparisons; m-switch-kit "เปลี่ยนหัว" = frozen → after 22/10) →
   second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
@@ -97,6 +105,26 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   split; wording only (thai-typography.ts is locked).
   Tool (owner 16/10): skill `content-strategy` (#508) = the way to plan pillars, clusters, buyer stages and the article order for the
   remaining batches — its OKami24 rules at its end (keymap = SEO_LANDSCAPE §0).
+3p OPEN ROUND "p63 searched models" = `docs/rounds/รอบลงสินค้า-63-16-10.txt` · side chat products-63-2, worktree
+  `.claude/worktrees/sad-nash-5bf72f` (hooksPath .githooks set with --worktree) · trees `_incoming/wt-build` (branch, port 3415) +
+  `_incoming/wt-base` (main, 3416) via `_incoming/p63/build.sh <tree> <ref> <port>` · evidence `_incoming/p63/research.md` (verdict per
+  name, maker quotes, warehouse rows) · hand-over note = side-session notes folder `p63-handover.md`. Owner item 63 (BSOT §4): a page per
+  searched model, maker facts only, no price row (browse-only), options mapped in `sku-map.ts` (null = sold out; real warehouse codes where
+  the warehouse lists the model).
+  LIVE [ตรวจแล้ว]: #537 VOOPOO DRAG X https://okami24.store/products/drag-x · #534 UWELL Caliburn G3 https://okami24.store/products/caliburn-g3
+  (checker r2 PASS 6b0993c0, curl 200; card + 6 colours = image chat re-shoots, img-1610 b13).
+  MERGED, NOT LIVE: #544 TEREA prep — all 21 iqos.com/id flavours (6 as VERIFIED_ADDITIONAL_VARIANTS), every pack image re-cut from the
+  maker's 2000px renders to the five sticks; classify.ts "dimension"/"edition" (4 warehouse flavours were dropped). Publishing = one
+  IQOSHEET-15 line in publication-approvals.ts + the sku-map rows (`_incoming/p63/terea-skumap.patch`) once owner item 69 gives a price;
+  that PR brings heated-tobacco-consumables back to every page's nav → whole-sitemap scan.
+  OPEN: #540 p63-relx RELX Infinity 2 Plus + owner item 69 — r1 FAIL: (a) mode wattages are in RELX's JS-rendered "What's Special" tab
+  (quotes in research.md, cited in 6a52dc5b — give the checker the quotes), (b) card fill 68% → card remake queued with the image chat.
+  Small follow-up (checker #534 r2 notes): uwell.ts comment near the top names sold-out.ts (the source is sku-map null) · the old G3 card
+  map entry (cobalt-blue.jpg) still sits beside the new one.
+  NOT REAL (report only): M Bar 18K · Marbo 25K · RELX Diva / Sparta / Novo · nexBAR Switch 15K (owner item 68: nexPOD 15K instead?).
+  JOIWAY 12K / 20K = F3 / F4 already live (alias = SEO chat after 22/10).
+  NEXT: #540 when its card arrives · TEREA publish after item 69 · item 68 · after the 22/10 GSC read: INFY 12K + Esko Bar 20K
+  ("ESKO BAR 498", warehouse Pod-130) · then round-close (tag p63-1610).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano

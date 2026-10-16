@@ -7947,68 +7947,68 @@
   "fileName": "variant-coil-72-4.webp"
  },
  {
-  "source": "_incoming/img-1610/b1/key/D-c94-04.png",
+  "source": "_incoming/img-1610/b14/key/D-gpp-04.png",
   "slug": "coil-94",
   "role": "card",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light + 'large in frame' + 'the dark backdrop shows through the clear and smoky parts, never milky white' (_incoming/img-1610/b1/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --ft 8 --device, foot slab trimmed (coil3/foottrim.js), specks dropped (img-1610/specks.js)",
-   "reference": "Black Note's photo of the CALIBURN G3 3ml 0.4Ω pod (bn-04.webp, 144 px wide — the only photo of this option; no 0.4Ω box photo exists, researcher 16/10) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/img-1610/b1/in/c94-04w.png; render _incoming/img-1610/b1/out/c94-04-A.png)",
-   "fidelitySheet": "_incoming/img-1610/b1/fid/fid-c94-04.png — shape IoU 0.992; MIN mark, CE, crossed bin, red stripe, side tab checked by eye (colour dE does not apply: re-lit on dark on purpose, IMAGE_SPEC §0 item 8 (3))"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot: box upright on a #2b2e33 sweep with its 3 pods standing in front of the box's right half — image 1 = this resistance's quadrant of the admin sheet (prompt builders __GPP / __GPP2 in _incoming/img-1610/b14/prompts.md); keyed by _incoming/img-1610/b14/key2.js (silhouette = first pixel off the row backdrop from the top and each side, box left edge + right pod side = fitted straight lines, foot = top of the contact-shadow core per column, median-smoothed; clear pod interiors keep the render colour)",
+   "reference": "the shop's own stock photo of the CALIBURN GPP Integrated Coil Cartridge 3-pack (admin Maprang 16/10, real stock) — _incoming/img-1610/ref/coil-94-gpp-3pcs-admin-1610.jpg, 0.4Ω quadrant (input _incoming/img-1610/b14/in/gpp-04.png; render _incoming/img-1610/b14/out/g04-B.png)",
+   "fidelitySheet": "_incoming/img-1610/b14/fid/fid-04.jpg — box art and every printed word (GPP · PRO FOCS UWELL · 3 PCS · UWELL · CALIBURN GPP Integrated Coil Cartridge · CALIBURN), 3 pods, red rings checked by eye against the admin photo (IoU / colour numbers do not apply: the photo lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round img-1610 16/10 — re-shot: the 08/10 render copied the white-background look (milky pod); card = the 0.4Ω pod",
-  "fileName": "card-v3.webp"
+  "note": "round img-1610 16/10 — the shop now sells the new GPP 3-pack (admin Maprang 16/10): was the old CALIBURN G3 Refillable Pod box + 4 pods · card = the 0.4Ω pack",
+  "fileName": "card-gpp.webp"
  },
  {
-  "source": "_incoming/img-1610/b1/key/D-c94-04.png",
+  "source": "_incoming/img-1610/b14/key/D-gpp-04.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-1",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot with the reference as the only image; prompt = docs/IMAGE_PROMPTS.md v3 light + 'large in frame' + 'the dark backdrop shows through the clear and smoky parts, never milky white' (_incoming/img-1610/b1/prompts.md); keyed off the #2b2e33 backdrop by _incoming/coil3/matte3.js --ft 8 --device, foot slab trimmed (coil3/foottrim.js), specks dropped (img-1610/specks.js)",
-   "reference": "Black Note's photo of the CALIBURN G3 3ml 0.4Ω pod (bn-04.webp, 144 px wide — the only photo of this option; no 0.4Ω box photo exists, researcher 16/10) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/img-1610/b1/in/c94-04w.png; render _incoming/img-1610/b1/out/c94-04-A.png)",
-   "fidelitySheet": "_incoming/img-1610/b1/fid/fid-c94-04.png — shape IoU 0.992; MIN mark, CE, crossed bin, red stripe, side tab checked by eye (colour dE does not apply: re-lit on dark on purpose, IMAGE_SPEC §0 item 8 (3))"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot: box upright on a #2b2e33 sweep with its 3 pods standing in front of the box's right half — image 1 = this resistance's quadrant of the admin sheet (prompt builders __GPP / __GPP2 in _incoming/img-1610/b14/prompts.md); keyed by _incoming/img-1610/b14/key2.js (silhouette = first pixel off the row backdrop from the top and each side, box left edge + right pod side = fitted straight lines, foot = top of the contact-shadow core per column, median-smoothed; clear pod interiors keep the render colour)",
+   "reference": "the shop's own stock photo of the CALIBURN GPP Integrated Coil Cartridge 3-pack (admin Maprang 16/10, real stock) — _incoming/img-1610/ref/coil-94-gpp-3pcs-admin-1610.jpg, 0.4Ω quadrant (input _incoming/img-1610/b14/in/gpp-04.png; render _incoming/img-1610/b14/out/g04-B.png)",
+   "fidelitySheet": "_incoming/img-1610/b14/fid/fid-04.jpg — box art and every printed word (GPP · PRO FOCS UWELL · 3 PCS · UWELL · CALIBURN GPP Integrated Coil Cartridge · CALIBURN), 3 pods, red rings checked by eye against the admin photo (IoU / colour numbers do not apply: the photo lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round img-1610 16/10 — re-shot (was the milky 08/10 render)",
-  "fileName": "variant-coil-94-1-v2.webp"
+  "note": "round img-1610 16/10 — the shop now sells the new GPP 3-pack (admin Maprang 16/10): was the old CALIBURN G3 Refillable Pod box + 4 pods",
+  "fileName": "variant-coil-94-1-gpp.webp"
  },
  {
-  "source": "_incoming/img-1610/b1/key/D-c94-06-v3.png",
+  "source": "_incoming/img-1610/b14/key/D-gpp-06.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-2",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the Black Note box photo, image 2 (0.6 / 0.9) = the approved 0.4Ω pod render; box upright on a #2b2e33 sweep with its 4 pods standing in front (prompts: _incoming/coil3/b2/prompts.txt); keyed off the backdrop by _incoming/coil3/matte3.js --device (box + each pod protected, floor cut per pod foot), clear pod silhouettes restored by b2/podfill.js, placed by place.js, specks dropped by fix/clean.js; AI-garbled side-sticker word softened (b2/soften.js, 0.6 / 0.9), the 0.6 red top strip's garbled letters replaced by its plain strip texture (b2/strip.js) and the 1.2 box logo word re-set to the real \"PRO FOCS\" (b2/logofix.js)",
-   "reference": "Black Note's photo of this CALIBURN G3 option (box + 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-06.png; render _incoming/coil3/b2/c94-06-C2.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c94-06-v2.png — box art, every printed mark and the pods checked by eye against the reference (IoU / colour numbers do not apply: the reference lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot: box upright on a #2b2e33 sweep with its 3 pods standing in front of the box's right half — image 1 = this resistance's quadrant of the admin sheet, image 2 = the 0.4Ω render (same shot, only the ring colour changes) (prompt builders __GPP / __GPP2 in _incoming/img-1610/b14/prompts.md); keyed by _incoming/img-1610/b14/key2.js (silhouette = first pixel off the row backdrop from the top and each side, box left edge + right pod side = fitted straight lines, foot = top of the contact-shadow core per column, median-smoothed; clear pod interiors keep the render colour)",
+   "reference": "the shop's own stock photo of the CALIBURN GPP Integrated Coil Cartridge 3-pack (admin Maprang 16/10, real stock) — _incoming/img-1610/ref/coil-94-gpp-3pcs-admin-1610.jpg, 0.6Ω quadrant (input _incoming/img-1610/b14/in/gpp-06.png; render _incoming/img-1610/b14/out/g06-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b14/fid/fid-06.jpg — box art and every printed word (GPP · PRO FOCS UWELL · 3 PCS · UWELL · CALIBURN GPP Integrated Coil Cartridge · CALIBURN), 3 pods, orange rings checked by eye against the admin photo (IoU / colour numbers do not apply: the photo lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B) · img-1610 16/10: faint stray pixels along the pod bottoms dropped (img-1610/specks.js — owner taste note)",
-  "fileName": "variant-coil-94-2-v3.webp"
+  "note": "round img-1610 16/10 — the shop now sells the new GPP 3-pack (admin Maprang 16/10): was the old CALIBURN G3 Refillable Pod box + 4 pods",
+  "fileName": "variant-coil-94-2-gpp.webp"
  },
  {
-  "source": "_incoming/img-1610/b1/key/D-c94-09-v3.png",
+  "source": "_incoming/img-1610/b14/key/D-gpp-09.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-3",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the Black Note box photo, image 2 (0.6 / 0.9) = the approved 0.4Ω pod render; box upright on a #2b2e33 sweep with its 4 pods standing in front (prompts: _incoming/coil3/b2/prompts.txt); keyed off the backdrop by _incoming/coil3/matte3.js --device (box + each pod protected, floor cut per pod foot), clear pod silhouettes restored by b2/podfill.js, placed by place.js, specks dropped by fix/clean.js; AI-garbled side-sticker word softened (b2/soften.js, 0.6 / 0.9), the 0.6 red top strip's garbled letters replaced by its plain strip texture (b2/strip.js) and the 1.2 box logo word re-set to the real \"PRO FOCS\" (b2/logofix.js)",
-   "reference": "Black Note's photo of this CALIBURN G3 option (box + 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-09.png; render _incoming/coil3/b2/c94-09-C1.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c94-09-v2.png — box art, every printed mark and the pods checked by eye against the reference (IoU / colour numbers do not apply: the reference lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot: box upright on a #2b2e33 sweep with its 3 pods standing in front of the box's right half — image 1 = this resistance's quadrant of the admin sheet, image 2 = the 0.4Ω render (same shot, only the ring colour changes) (prompt builders __GPP / __GPP2 in _incoming/img-1610/b14/prompts.md); keyed by _incoming/img-1610/b14/key2.js (silhouette = first pixel off the row backdrop from the top and each side, box left edge + right pod side = fitted straight lines, foot = top of the contact-shadow core per column, median-smoothed; clear pod interiors keep the render colour)",
+   "reference": "the shop's own stock photo of the CALIBURN GPP Integrated Coil Cartridge 3-pack (admin Maprang 16/10, real stock) — _incoming/img-1610/ref/coil-94-gpp-3pcs-admin-1610.jpg, 0.9Ω quadrant (input _incoming/img-1610/b14/in/gpp-09.png; render _incoming/img-1610/b14/out/g09-A.png)",
+   "fidelitySheet": "_incoming/img-1610/b14/fid/fid-09.jpg — box art and every printed word (GPP · PRO FOCS UWELL · 3 PCS · UWELL · CALIBURN GPP Integrated Coil Cartridge · CALIBURN), 3 pods, yellow rings checked by eye against the admin photo (IoU / colour numbers do not apply: the photo lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B) · img-1610 16/10: faint stray pixels along the pod bottoms dropped (img-1610/specks.js — owner taste note)",
-  "fileName": "variant-coil-94-3-v3.webp"
+  "note": "round img-1610 16/10 — the shop now sells the new GPP 3-pack (admin Maprang 16/10): was the old CALIBURN G3 Refillable Pod box + 4 pods",
+  "fileName": "variant-coil-94-3-gpp.webp"
  },
  {
-  "source": "_incoming/img-1610/b1/key/D-c94-12-v3.png",
+  "source": "_incoming/img-1610/b14/key/D-gpp-12.png",
   "slug": "coil-94",
   "role": "variant",
   "id": "coil-94-4",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited — no credits), real-studio re-shoot: image 1 = the Black Note box photo, image 2 (0.6 / 0.9) = the approved 0.4Ω pod render; box upright on a #2b2e33 sweep with its 4 pods standing in front (prompts: _incoming/coil3/b2/prompts.txt); keyed off the backdrop by _incoming/coil3/matte3.js --device (box + each pod protected, floor cut per pod foot), clear pod silhouettes restored by b2/podfill.js, placed by place.js, specks dropped by fix/clean.js; AI-garbled side-sticker word softened (b2/soften.js, 0.6 / 0.9), the 0.6 red top strip's garbled letters replaced by its plain strip texture (b2/strip.js) and the 1.2 box logo word re-set to the real \"PRO FOCS\" (b2/logofix.js)",
-   "reference": "Black Note's photo of this CALIBURN G3 option (box + 4 pods) — https://www.blacknote.com/e-juice/uwell-caliburn-g3-pods/ (input: _incoming/coil3/in/c94-12.png; render _incoming/coil3/b2/c94-12-C1.png)",
-   "fidelitySheet": "_incoming/coil3/fid/c94-12-v2.png — box art, every printed mark and the pods checked by eye against the reference (IoU / colour numbers do not apply: the reference lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
+   "tool": "Higgsfield Nano Banana Pro 2K 1:1 (web app through Chrome, Unlimited plan 16-19/10 — no credits), studio re-shoot: box upright on a #2b2e33 sweep with its 3 pods standing in front of the box's right half — image 1 = this resistance's quadrant of the admin sheet, image 2 = the 0.4Ω render (same shot, only the ring colour changes) (prompt builders __GPP / __GPP2 in _incoming/img-1610/b14/prompts.md); keyed by _incoming/img-1610/b14/key2.js (silhouette = first pixel off the row backdrop from the top and each side, box left edge + right pod side = fitted straight lines, foot = top of the contact-shadow core per column, median-smoothed; clear pod interiors keep the render colour)",
+   "reference": "the shop's own stock photo of the CALIBURN GPP Integrated Coil Cartridge 3-pack (admin Maprang 16/10, real stock) — _incoming/img-1610/ref/coil-94-gpp-3pcs-admin-1610.jpg, 1.2Ω quadrant (input _incoming/img-1610/b14/in/gpp-12.png; render _incoming/img-1610/b14/out/g12-B.png)",
+   "fidelitySheet": "_incoming/img-1610/b14/fid/fid-12.jpg — box art and every printed word (GPP · PRO FOCS UWELL · 3 PCS · UWELL · CALIBURN GPP Integrated Coil Cartridge · CALIBURN), 3 pods, green rings checked by eye against the admin photo (IoU / colour numbers do not apply: the photo lays the pods flat on white, the re-shoot stands them in front of the box on charcoal, LESSONS 29)"
   },
-  "note": "round \"3 coil photos\" follow-up 08/10 evening — box shot re-shot more photographic (owner B) · img-1610 16/10: faint stray pixels dropped (img-1610/specks.js)",
-  "fileName": "variant-coil-94-4-v3.webp"
+  "note": "round img-1610 16/10 — the shop now sells the new GPP 3-pack (admin Maprang 16/10): was the old CALIBURN G3 Refillable Pod box + 4 pods",
+  "fileName": "variant-coil-94-4-gpp.webp"
  },
  {
   "source": "_incoming/img-1610/b3/key/P-zp.png",
@@ -8022,6 +8022,491 @@
   },
   "note": "round img-1610 16/10 - the old card is a small shop photo (audit 10/10)",
   "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/p63/g3/src/cobalt-blue.jpg",
+  "slug": "caliburn-g3",
+  "role": "card",
+  "crop": {
+   "x0": 0.407,
+   "y0": 0.229,
+   "x1": 0.593,
+   "y1": 0.599
+  },
+  "minLong": 670,
+  "note": "UWELL Promotion Material zip (maker page Download), Phone Size Pics 1080x1920; device 676 px tall — the largest maker file of this colour (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/g3/src/cobalt-blue.jpg",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "cobalt-blue",
+  "crop": {
+   "x0": 0.407,
+   "y0": 0.229,
+   "x1": 0.593,
+   "y1": 0.599
+  },
+  "minLong": 670,
+  "note": "UWELL Promotion Material zip (maker page Download), Phone Size Pics 1080x1920; device 676 px tall — the largest maker file of this colour (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/g3/src/midnight-gold.jpg",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "midnight-gold",
+  "crop": {
+   "x0": 0.407,
+   "y0": 0.229,
+   "x1": 0.593,
+   "y1": 0.599
+  },
+  "minLong": 670,
+  "note": "UWELL Promotion Material zip (maker page Download), Phone Size Pics 1080x1920; device 676 px tall — the largest maker file of this colour (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/g3/src/pastel-pink.jpg",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "pastel-pink",
+  "crop": {
+   "x0": 0.407,
+   "y0": 0.229,
+   "x1": 0.593,
+   "y1": 0.599
+  },
+  "minLong": 670,
+  "note": "UWELL Promotion Material zip (maker page Download), Phone Size Pics 1080x1920; device 676 px tall — the largest maker file of this colour (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/g3/src/mauve-violet.jpg",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "mauve-violet",
+  "crop": {
+   "x0": 0.407,
+   "y0": 0.229,
+   "x1": 0.593,
+   "y1": 0.599
+  },
+  "minLong": 670,
+  "note": "UWELL Promotion Material zip (maker page Download), Phone Size Pics 1080x1920; device 676 px tall — the largest maker file of this colour (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/g3/src/serene-lake.jpg",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "serene-lake",
+  "crop": {
+   "x0": 0.407,
+   "y0": 0.229,
+   "x1": 0.593,
+   "y1": 0.599
+  },
+  "minLong": 670,
+  "note": "UWELL Promotion Material zip (maker page Download), Phone Size Pics 1080x1920; device 676 px tall — the largest maker file of this colour (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/dragx/src/card.png",
+  "slug": "drag-x",
+  "role": "card",
+  "note": "VOOPOO DRAG X page image drag2-main.png (VOOPOO CDN sen.voopoo.com.cn), 579x837 transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/card.webp",
+  "slug": "caliburn-g3",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-cobalt-blue.png, _incoming/img-1610/b13/out/cobalt-blue-A.png, render hf_20261016_104007_1dc6da00-7a1c-46d4-b1dc-0ed8f4038c99); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL Promotion Material zip, 3. Phone Size Pics/Cobalt-Blue.jpg (_incoming/p63/g3/src/cobalt-blue.jpg)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-cobalt-blue.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534 checker r1: UWELL's card file showed the device 676 px tall (card fill 57%) → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "replaces": "/assets/products/caliburn-g3/card.webp",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/variant-silver.webp",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "silver",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-silver.png, _incoming/img-1610/b13/out/silver-A.png, render hf_20261016_104527_67ca42ac-9b00-4695-9192-e3028bdfed8e); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL's page image of this colour files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-1.webp (_incoming/p63/g3/p1.webp)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-silver.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "fileName": "variant-silver.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/variant-gray.webp",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "gray",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-gray.png, _incoming/img-1610/b13/out/gray-B.png, render hf_20261016_105006_c7aa3d7d-8d7e-4f9c-97fd-1360db9fe49c); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL's page image of this colour files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-2.webp (_incoming/p63/g3/p2.webp)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-gray.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "fileName": "variant-gray.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/variant-black.webp",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "black",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-black.png, _incoming/img-1610/b13/out/black-B.png, render hf_20261016_105454_a0a4037c-64f4-4241-91cc-b1b699cdceb6); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL's page image of this colour files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-3.webp (_incoming/p63/g3/p3.webp)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-black.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "fileName": "variant-black.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/variant-red.webp",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "red",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-red.png, _incoming/img-1610/b13/out/red-B.png, render hf_20261016_105923_0b862384-24ab-4872-9458-e4200dd4fd7f); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL's page image of this colour files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-4.webp (_incoming/p63/g3/p4.webp)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-red.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "fileName": "variant-red.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/variant-green.webp",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "green",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-green.png, _incoming/img-1610/b13/out/green-B.png, render hf_20261016_110349_7858f0ce-0520-4b34-9a94-1e924c7a5417); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL's page image of this colour files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-5.webp (_incoming/p63/g3/p5.webp)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-green.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "fileName": "variant-green.webp"
+ },
+ {
+  "source": "_incoming/img-1610/b13/site/variant-blue.webp",
+  "slug": "caliburn-g3",
+  "role": "variant",
+  "id": "blue",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app, Unlimited — 0 credits), studio re-shoot with UWELL's own front of this colour as image 1 (_incoming/img-1610/b13/in/g3-blue.png, _incoming/img-1610/b13/out/blue-A.png, render hf_20261016_110829_c0742e91-cc56-4778-8e53-fbf86a4a4d63); keyed by _incoming/coil3/matte3.js → _incoming/img-1610/b13/shape.js → _incoming/img-1610/b13/podref.js → specks.js → _incoming/img-1610/b13/gain.js (body matched to UWELL's body mean); pre-sized by _incoming/img-1610/b13/site.js",
+   "reference": "UWELL's page image of this colour files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-6.webp (_incoming/p63/g3/p6.webp)",
+   "fidelitySheet": "_incoming/img-1610/b13/fid-blue.png (scripts/ai-fidelity-sheet.js vs the UWELL front; shape IoU 0.99+, silver 0.93; eye pass: CALIBURN [G3] lettering, fire button, airflow window, OLED 25W / 0.60Ω — _incoming/img-1610/b13/SOURCE.md)"
+  },
+  "note": "round p63 #534: UWELL has this 2023 colour only as a ~400 px page image → re-shoot by the image chat (img-1610 b13, 16/10)",
+  "fileName": "variant-blue.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/black-green.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-1",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BLACK+GREEN+PACK-pmi_G0000693_00_id-1783303624000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-1.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-1.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/green.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-2",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+GREEN+PACK-pmi_G0000699_00_id-1782351563000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-2.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-2.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/blue.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-3",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BLUE+PACK-pmi_G0000694_00_id-1783303624000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-3.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-3.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/sienna.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-4",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+SIENNA+PACK-pmi_G0000705_00_id-1783303661000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-4.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-4.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/purple-wave.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-5",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+PURPLE+WAVE+PACK-pmi_G0000703_00_id-1783303712071.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-5.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-5.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/bronze.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-6",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BRONZE+PACK-pmi_G0000697_00_id-1783303652000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-6.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-6.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/bright-wave.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-7",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BRIGHT+WAVE+PACK-pmi_G0000696_00_id-1782354880000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-7.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-7.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/dimensions-apricity.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-8",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+DIMENSIONS+APRICITY+PACK-pmi_G0000768_00_id-1782351565000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-8.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/dimensions-yugen.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-9",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+DIMENSIONS+YUGEN+PACK-pmi_G0000716_00_id-1783303653000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-9.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/golden-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-11",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+GOLDEN+EDITION+PACK-pmi_G0001478_00_id-1783303679000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-11.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-11.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/berrine-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-13",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BERRINE+EDITION+PACK-pmi_G0001650_00_id-1782351567000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-13.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/mulint-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-14",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+MULINT+EDITION+PACK-pmi_G0001648_00_id-1783303679000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-14.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/oasis-pearl.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-15",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+OASIS+PEARL+PACK-pmi_G0000948_00_id-1782351566000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-15.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-15.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/sun-pearl.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-16",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+SUN+PEARL+PACK-pmi_G0000949_00_id-1783303650000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-16.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-16.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/black-ruby.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-17",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BLACK+RUBY+PACK-pmi_G0002278_00_id-1783303712099.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-17.webp",
+  "replaces": "/assets/products/iqosheet-15/variants/IQOSHEET-15-17.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/passion-fruit-pearl.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-passion-fruit-pearl",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+PASSION+FRUIT+PEARL+PACK-pmi_G0003227_00_id-1789638278000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-verified-passion-fruit-pearl.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/strawberry-pearl.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-strawberry-pearl",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+STRAWBERRY+PEARL+PACK-pmi_G0003228_00_id-1789638279000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-verified-strawberry-pearl.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/auburn-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-auburn-edition",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+AUBURN+EDITION+PACK-pmi_G0001652_00_id-1783303679000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-verified-auburn-edition.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/perint-pearl-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-perint-pearl-edition",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+PERINT+PEARL+EDITION+PACK-pmi_G0002500_00_id-1783303683000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-verified-perint-pearl-edition.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/bermin-pearl-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-bermin-pearl-edition",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+BERMIN+PEARL+EDITION+PACK-pmi_G0002498_00_id-1783303682000.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-verified-bermin-pearl-edition.webp"
+ },
+ {
+  "source": "_incoming/p63/terea2000/riviera-pearl.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "iqosheet-15-verified-riviera-pearl",
+  "crop": {
+   "x0": 0,
+   "y0": 0.2,
+   "x1": 1,
+   "y1": 0.835
+  },
+  "note": "IQOS official pack image media.iqos.com/is/image/pmintl/product/2000px/TEREA+RIVIERA+PEARL+PACK-pmi_G0002220_00_id-1782705843615.png (iqos.com/id, 2000x2000 transparent; round p63 batch 6, 16/10). Cropped to the five sticks (y 0.2-0.835): drops the temporary \"NEW\" / \"NEW LOOK SAME TASTE\" badge and the flavour pills, whose width differs per flavour (one to three pills) and would otherwise size the sticks differently on each flavour",
+  "fileName": "variant-iqosheet-15-verified-riviera-pearl.webp"
  },
  {
   "source": "_incoming/img-1610/b15/out/k-D.png",
@@ -8076,11 +8561,5 @@
   "role": "variant",
   "id": "misty-leaf",
   "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
- },
- {
-  "source": "_incoming/p63/dragx/src/card.png",
-  "slug": "drag-x",
-  "role": "card",
-  "note": "VOOPOO DRAG X page image drag2-main.png (VOOPOO CDN sen.voopoo.com.cn), 579x837 transparent (round p63, 16/10)"
  }
 ]

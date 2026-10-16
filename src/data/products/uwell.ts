@@ -21,6 +21,7 @@ const g3PodCompatibility = {
 };
 
 const usbC = { type: "charging" as const, label: "USB-C", note: "5V/2A charging on current-generation devices." };
+const G3_OFFICIAL = "https://www.myuwell.com/products/pod-system/caliburn-g3.html";
 // Round 30.4ค batch 3 (owner 2026-09-15): the 5V/2A note stays only on the three devices whose spec
 // sheet carries a 2A charging figure (G4 · G4 Mini · G3 Pro). The other seven Caliburn devices have
 // no charging figure in their specifications, so the note — unverifiable for them — is dropped in
@@ -483,9 +484,9 @@ export const uwellProducts: Product[] = [
     lineupImage: {
       // Image-sitewide round, set 1 (02/10): the G5 layout the owner picked (the card colour big in front, the other
       // 7 behind in two upright tiers, soft shadow + faint reflection) from UWELL's own fronts — _incoming/image-sitewide/set1/.
-      src: "/assets/products/caliburn-g5-lite-se/lineup-v2.webp",
+      src: "/assets/products/caliburn-g5-lite-se/lineup-v3.webp",
       alt: "UWELL Caliburn G5 Lite SE, all 8 colours",
-      sourceName: "OKami24 composite (from UWELL's own colour renders)",
+      sourceName: "OKami24 composite (from the img-1610 studio re-shoots of UWELL's own colour renders)",
     },
     // Site-wide template round, batch 1a (03/10): the G5 template (docs/PRODUCT_PAGE_TEMPLATE.md) — UWELL's own G5 Lite page
     // (https://www.myuwell.com/caliburn/caliburn-g5-lite-g5-lite-se) told one poster per block; text in src/i18n/story-copy.ts, article in src/data/product-articles.ts.
@@ -496,6 +497,8 @@ export const uwellProducts: Product[] = [
     // Site-wide template round batch 1a (owner 03/10: set-1 UWELL colours re-tilted): every colour image = UWELL's own render cut
     // from the maker's colour strip (pc/spe3-lite*.webp — the largest UWELL serves), turned 12° in 2D, no AI; the page opens on the
     // card, the colour upright on 4:5 (_incoming/sitewide-template/1a/tilt.js).
+    // Round img-1610 (16/10): every colour + the lineup re-shot in a studio with Nano Banana Pro from those UWELL renders
+    // (same 12° layout, _incoming/img-1610/b12/site-se.js + b6/poster.js) — the 03/10 crops were 726 px and flat.
     openOnCardPhoto: true,
     // Real UWELL color/finish lineup — ALL 8 now have a real, OFFICIAL photo (owner quality
     // review, 2026-09-03, THIRD pass — see the card asset's angle note). All 8 finishes are
@@ -506,49 +509,49 @@ export const uwellProducts: Product[] = [
         id: "black-leather",
         name: "Black Leather",
         swatchHex: "#454545",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-black-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Black Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-black-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Black Leather" },
       },
       {
         id: "blue-leather",
         name: "Blue Leather",
         swatchHex: "#3fb6b5",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-blue-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Blue Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-blue-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Blue Leather" },
       },
       {
         id: "brown-leather",
         name: "Brown Leather",
         swatchHex: "#9d664e",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-brown-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Brown Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-brown-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Brown Leather" },
       },
       {
         id: "gray-leather",
         name: "Gray Leather",
         swatchHex: "#9ca7a9",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-gray-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Gray Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-gray-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Gray Leather" },
       },
       {
         id: "orange-leather",
         name: "Orange Leather",
         swatchHex: "#e67831",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-orange-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Orange Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-orange-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Orange Leather" },
       },
       {
         id: "pink-leather",
         name: "Pink Leather",
         swatchHex: "#eec7c8",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-pink-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Pink Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-pink-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Pink Leather" },
       },
       {
         id: "purple-leather",
         name: "Purple Leather",
         swatchHex: "#ceafde",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-purple-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, Purple Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-purple-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, Purple Leather" },
       },
       {
         id: "white-leather",
         name: "White Leather",
         swatchHex: "#e8e0d5",
-        image: { src: "/assets/products/caliburn-g5-lite-se/variant-white-leather-v2.webp", alt: "UWELL Caliburn G5 Lite SE, White Leather" },
+        image: { src: "/assets/products/caliburn-g5-lite-se/variant-white-leather-v3.webp", alt: "UWELL Caliburn G5 Lite SE, White Leather" },
       },
     ],
     specifications: [
@@ -1541,6 +1544,117 @@ export const uwellProducts: Product[] = [
     faqs: [],
     relatedProductSlugs: ["caliburn-g4"],
     sourceUrls: ["https://www.myuwell.com/"],
+  },
+  {
+    // Round p63 (owner 16/10, list item 63 — BSOT §4 "Models customers search for but the shop does not stock"): people
+    // search "caliburn g3" and land on the G3 Pro (SEO_LANDSCAPE §9.5). The shop has no stock: no price row
+    // (legacy-price-approvals.ts) = browse-only, every colour on the sold-out list (src/data/stock/sold-out.ts).
+    // Facts: UWELL's own page (two spec blocks — the one under "G3 ECO / battery detachable" is the ECO version: 750mAh,
+    // 120mm, 48g; this record is the standard G3: 900mAh, matching UWELL's "20% more than G2" poster).
+    id: "caliburn-g3",
+    slug: "caliburn-g3",
+    brandId: "uwell",
+    familyId: "caliburn",
+    categoryId: "pod-systems",
+    systemType: "open-pod",
+    name: "Caliburn G3",
+    displayName: "UWELL CALIBURN G3",
+    tagline: "The slim Caliburn with an OLED screen that shows your wattage and puffs.",
+    shortDescription:
+      "900mAh, up to 25W, an OLED screen that shows the wattage and your puffs, and 2A fast charging over Type-C.",
+    isFlagship: false,
+    attributes: {
+      batteryMah: 900,
+      wattageMax: 25,
+      capacityMl: 2.5,
+      // No `screenType`: the enum's "color-display" reads "หน้าจอสี", and UWELL says only "OLED" (the spec row carries it).
+      portability: "compact",
+      // Not a maker fact — the shop's own beginner filter; no colour is in stock, so it stays out of that filter.
+      beginnerFriendly: false,
+      chargingType: "USB-C, 2A",
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/caliburn-g3/card-v2.webp",
+        alt: "UWELL Caliburn G3, Cobalt Blue, front view",
+        angle: "front, isolated — studio re-shoot of UWELL's own Cobalt Blue phone-size photo (UWELL's file shows the device 676 px tall)",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from UWELL's own Cobalt Blue photo",
+        sourceUrl: G3_OFFICIAL,
+      },
+    ],
+    openOnCardPhoto: true,
+    // UWELL's 11 colours in its own order; every name is printed on UWELL's colour images
+    // (files.myuwell.com/uwell/product/caliburn-g3/mo20231214/color/p-1…p-11.webp). Photos: UWELL's promotion material
+    // has full-size shots of the five 2024 colours only; the six 2023 colours exist as ~400 px page images — their photos
+    // are studio re-shoots of those UWELL images (image chat img-1610 b13, 16/10), swatch = the median body colour of UWELL's image.
+    colorVariants: [
+      { id: "silver", name: "Silver", swatchHex: "#c2c2c6", image: { src: "/assets/products/caliburn-g3/variant-silver.webp", alt: "UWELL Caliburn G3, Silver" } },
+      { id: "gray", name: "Gray", swatchHex: "#55545b", image: { src: "/assets/products/caliburn-g3/variant-gray.webp", alt: "UWELL Caliburn G3, Gray" } },
+      { id: "black", name: "Black", swatchHex: "#3b3b3f", image: { src: "/assets/products/caliburn-g3/variant-black.webp", alt: "UWELL Caliburn G3, Black" } },
+      { id: "red", name: "Red", swatchHex: "#c12927", image: { src: "/assets/products/caliburn-g3/variant-red.webp", alt: "UWELL Caliburn G3, Red" } },
+      { id: "green", name: "Green", swatchHex: "#536e5c", image: { src: "/assets/products/caliburn-g3/variant-green.webp", alt: "UWELL Caliburn G3, Green" } },
+      { id: "blue", name: "Blue", swatchHex: "#263959", image: { src: "/assets/products/caliburn-g3/variant-blue.webp", alt: "UWELL Caliburn G3, Blue" } },
+      { id: "midnight-gold", name: "Midnight Gold", swatchHex: "#3e3d42", image: { src: "/assets/products/caliburn-g3/variant-midnight-gold.webp", alt: "UWELL Caliburn G3, Midnight Gold" } },
+      { id: "cobalt-blue", name: "Cobalt Blue", swatchHex: "#2b62c2", image: { src: "/assets/products/caliburn-g3/variant-cobalt-blue.webp", alt: "UWELL Caliburn G3, Cobalt Blue" } },
+      { id: "pastel-pink", name: "Pastel Pink", swatchHex: "#cbbbc4", image: { src: "/assets/products/caliburn-g3/variant-pastel-pink.webp", alt: "UWELL Caliburn G3, Pastel Pink" } },
+      { id: "mauve-violet", name: "Mauve Violet", swatchHex: "#6c52a5", image: { src: "/assets/products/caliburn-g3/variant-mauve-violet.webp", alt: "UWELL Caliburn G3, Mauve Violet" } },
+      { id: "serene-lake", name: "Serene Lake", swatchHex: "#337c7a", image: { src: "/assets/products/caliburn-g3/variant-serene-lake.webp", alt: "UWELL Caliburn G3, Serene Lake" } },
+    ],
+    // Every row read from UWELL's page (the standard G3's spec block, not the ECO's) on 16/10 — _incoming/p63/research.md.
+    specifications: [
+      { key: "battery", label: "Battery", value: "900mAh built-in", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "charge-time", label: "Charging", value: "USB-C, 2A fast charging", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "output", label: "Max output", value: "25W", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "screen", label: "Display", value: "OLED: power adjustment, puff counter, three firing modes", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "airflow", label: "Airflow", value: "Dual airflow system", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "pod", label: "Pod capacity", value: "2.5mL (INT & FDA); 2mL (TPD)", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "pod-compat", label: "Pod platform", value: "Caliburn G3 integrated coil cartridges: FeCrAl meshed 0.6Ω / 0.9Ω / 1.2Ω", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "refill", label: "Fill style", value: "Side refill or top refill — one type per kit", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "materials", label: "Materials", value: "Cartridge PCTG, device aluminium alloy", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "dimensions", label: "Dimensions", value: "115.5 × 24 × 13.9 mm", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+      { key: "weight", label: "Weight", value: "Approx. 47g", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
+    ],
+    // UWELL's own page pictures, one per block (files.myuwell.com/uwell/product/caliburn-g3/pc…), text on them is UWELL's —
+    // the "more details" story (storyDetails) the other Caliburn pages use; no article or cover for this model.
+    storyDetails: true,
+    features: [
+      {
+        id: "battery",
+        title: "900mAh in a slim body",
+        description: "UWELL put 20% more battery in it than the Caliburn G2.",
+        image: { src: "/assets/products/caliburn-g3/story-battery.webp", alt: "UWELL's Caliburn G3 picture — 900 mAh, 20% increment", sourceName: "UWELL", sourceUrl: G3_OFFICIAL, width: 1920, height: 1080 },
+      },
+      {
+        id: "cartridge",
+        title: "The coil is built into the pod",
+        description: "Each Caliburn G3 cartridge has its own meshed coil. When the flavour fades, change the pod.",
+        image: { src: "/assets/products/caliburn-g3/story-cartridge.webp", alt: "UWELL's Caliburn G3 picture — integrated coil cartridge", sourceName: "UWELL", sourceUrl: G3_OFFICIAL, width: 1920, height: 1080 },
+      },
+      {
+        id: "pod-06",
+        title: "A 0.6Ω pod for up to 25W",
+        description: "UWELL made the 0.6Ω cartridge for up to 25W.",
+        image: { src: "/assets/products/caliburn-g3/story-06-pod.webp", alt: "UWELL's Caliburn G3 picture — new 0.6 Ω cartridge", sourceName: "UWELL", sourceUrl: G3_OFFICIAL, width: 1920, height: 1080 },
+      },
+      {
+        id: "in-the-box",
+        title: "What's in the box",
+        description: "The device, a 0.6Ω and a 0.9Ω pod, a Type-C cable and the user manual (INT / FDA kit).",
+        image: { src: "/assets/products/caliburn-g3/story-in-the-box.webp", alt: "UWELL's Caliburn G3 picture — the INT / FDA kit contents", sourceName: "UWELL", sourceUrl: G3_OFFICIAL, width: 1206, height: 809 },
+      },
+    ],
+    // Not `usbC` (its 5V/2A note): UWELL's G3 page says only "2A Fast Charging".
+    compatibility: [{ type: "pod" as const, label: "Caliburn G3 pod", note: "Caliburn G3 integrated coil cartridges." }, { type: "charging" as const, label: "USB-C", note: "2A fast charging." }],
+    whoIsThisFor: [
+      "You're after the standard Caliburn G3, not the G3 Pro, and want UWELL's full spec and every colour it comes in.",
+    ],
+    faqs: [],
+    // Not caliburn-g5 / -lite (SEO watch rows frozen until 22/10 — round p63 file).
+    relatedProductSlugs: ["caliburn-g3-pro", "caliburn-g4"],
+    sourceUrls: [G3_OFFICIAL, "https://www.myuwell.com/g-pod-platform"],
   },
   {
     id: "caliburn-g3-pro",

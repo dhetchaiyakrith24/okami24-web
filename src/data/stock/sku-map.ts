@@ -100,6 +100,20 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "classic-black": null,
     "classic-silver": null,
   } },
+  // Round p63 (owner 16/10, item 63): a model customers search for that the warehouse does not stock — every colour null.
+  "caliburn-g3": { parent: null, options: {
+    silver: null,
+    gray: null,
+    black: null,
+    red: null,
+    green: null,
+    blue: null,
+    "midnight-gold": null,
+    "cobalt-blue": null,
+    "pastel-pink": null,
+    "mauve-violet": null,
+    "serene-lake": null,
+  } },
   "caliburn-g3-pro": { parent: null, options: {
     "pink-green": null,
     "frozen-aurora": null,

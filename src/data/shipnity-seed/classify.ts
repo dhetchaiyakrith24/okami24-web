@@ -82,6 +82,9 @@ const COLOR_WORDS = [
   "bright", "beige", "sapphire", "midnight", "aspen", "terracotta", "violet", "razer", "supreme",
   "lava", "aurora", "twilight", "stripe", "matcha", "clear", "sienna", "emerald", "ruby", "pearl",
   "orange",
+  // TEREA pack lines (IQOSHEET-15): iqos.com/id names some by line, not colour — "Dimension(s) Apricity / Yugen",
+  // "Berrine / Mulint Edition". Without these words the 4 stayed "unresolved" and dropped off the page (round p63, 16/10).
+  "dimension", "edition",
   "สี", "ดำ", "แดง", "ขาว", "เขียว", "เหลือง", "น้ำเงิน", "ฟ้า", "ม่วง", "ชมพู", "เทา", "ทอง",
   "เงิน", "น้ำตาล", "ส้ม", "ครีม",
 ];

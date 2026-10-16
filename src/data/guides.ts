@@ -1,4 +1,4 @@
-import type { ArticleReviewVideo, Guide } from "@/types/catalog";
+import type { ArticleReviewVideo, Guide, StoryImage } from "@/types/catalog";
 
 /**
  * Section clips (owner 05/10: "เรามีคลิป Youtube ถ้ามีใส่คั่นไว้ในแต่ละหัวข้อด้วย"). Only the shop's own three channels
@@ -14,6 +14,39 @@ export const SECTION_CLIPS = {
   mSwitch: { videoId: "DaJHk4e6_Y8", title: "30 วันกับ M SWITCH 15K เป็นยังไงบ้าง? (หัวรุ่นแรก)", channelName: "POD SYSTEM OKAMI II", publishedAt: "2026-04-12" },
   mBar9kSweets: { videoId: "SijUuq9qRpE", title: "M BAR 9K รวมกลิ่นสายขนม มีรสอะไรบ้าง? 2026", channelName: "OKAMI", publishedAt: "2026-08-19" },
 } satisfies Record<string, ArticleReviewVideo>;
+
+const VOOPOO_SHOP = "https://shop.voopoo.com/products/";
+
+/**
+ * Section posters (owner 16/10: "ในหน้าพวกบทความเรามีรูปประกอบหรือวีดีโอใส่ลงไปหน่อยดีมั้ย"). Every file, size, source
+ * and credit is the same poster the product page already shows (products/*.ts `features[].image`) — no new renders;
+ * each sits under the one section whose subject is exactly what the poster shows. Alt = Thai (these guides are Thai-only).
+ */
+export const SECTION_IMAGES = {
+  drag6Battery: { src: "/assets/products/drag-6/story-battery-v2.webp", alt: "โปสเตอร์ของ VOOPOO: DRAG 6 กับแบตในตัว 4400mAh ที่เห็นผ่านตัวเครื่อง", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-6`, width: 1600, height: 1600 },
+  dragX3Unlock: { src: "/assets/products/drag-x3/story-unlock-v2.webp", alt: "โปสเตอร์ของ VOOPOO: DRAG X3 ปลดล็อกได้ด้วยการแตะเซนเซอร์ กดปุ่ม หรือตั้งให้ปลดล็อกค้างไว้", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-x3`, width: 1600, height: 824 },
+  dragS3Coils: { src: "/assets/products/drag-s3/story-coils.webp", alt: "โปสเตอร์ของ VOOPOO: หัวพอต PnP X และคอยล์ของ DRAG S3 ตั้งแต่ 0.15 ถึง 1.0 โอห์ม", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-s3`, width: 1024, height: 1385 },
+  drag6Airflow: { src: "/assets/products/drag-6/story-tank-v2.webp", alt: "โปสเตอร์ของ VOOPOO: ช่องลม Golden Triangle แหวนปรับลม และการเติมน้ำยาด้านบนของ DRAG 6", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-6`, width: 1600, height: 706 },
+  argusP3Touch: { src: "/assets/products/argus-p3/story-touch.webp", alt: "โปสเตอร์ของ VOOPOO: จอทัชของ ARGUS P3 แสดงข้อมูลการสูบ หน้าปัด และโหมดต่าง ๆ", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-p3`, width: 1024, height: 1193 },
+  argusG4Ohm: { src: "/assets/products/argus-g4/story-ohm-v3.webp", alt: "โปสเตอร์ของ VOOPOO: หัว Multi-Ohm ของ ARGUS G4 พลิกหัวเพื่อสลับ 1.0 กับ 0.7 โอห์ม กดปุ่มสองครั้งเพื่อใช้ 0.4 โอห์ม", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g4`, width: 1592, height: 1367 },
+  argusG4Battery: { src: "/assets/products/argus-g4/story-battery-v2.webp", alt: "โปสเตอร์ของ VOOPOO: แบต 1650mAh ของ ARGUS G4 ที่เห็นผ่านตัวเครื่อง", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g4`, width: 1590, height: 1098 },
+  argusPods: { src: "/assets/products/argus-g4/story-pods.webp", alt: "โปสเตอร์ของ VOOPOO: หัวพอตตระกูล ARGUS ใช้ร่วมกันได้ ทั้งหัว 3.5mL และ 2mL", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g4`, width: 1600, height: 900 },
+  nexbar18kScreen: { src: "/assets/products/wotofo-nexbar-18k/story-screen.webp", alt: "ภาพของ WOTOFO: จอ LED ของ nexBAR 18K", sourceName: "WOTOFO", sourceUrl: "https://www.wotofo.com/products/wotofo-nexbar-18k", width: 1600, height: 1600 },
+  mBar10kModes: { src: "/assets/products/m-bar-10k/story-modes.webp", alt: "โปสเตอร์ของ SALTHUB: M Bar 10K กดปุ่มด้านล่างสองครั้งเพื่อสลับโหมด Eco · Soft · Boost", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1078 },
+  joiwayF4Twin: { src: "/assets/products/joiway-f4/story-twin.webp", alt: "โปสเตอร์ของ JOIWAY: Joiway F4 มีปากดูดสองฝั่ง ฝั่งละหนึ่งกลิ่น", sourceName: "JOIWAY", sourceUrl: "https://thai.myjoiway.com/", width: 1600, height: 809 },
+  tfitBattery: { src: "/assets/products/tfit-m-power-20k/story-battery.webp", alt: "โปสเตอร์ของ TFIT: M Power 20K ชาร์จผ่านสาย USB-C ที่ฐานเครื่อง", sourceName: "TFIT", sourceUrl: "https://www.tfitvape.com/", width: 1600, height: 792 },
+  relxSmashGoPocket: { src: "/assets/products/relx-smash-go-12k/story-pocket.webp", alt: "ภาพของ RELX: Smash Go 12K ขนาดพอดีกระเป๋า และปากดูดที่ออกแบบให้สูบสบาย", sourceName: "RELX", sourceUrl: "https://relxnow.com/products/relx-smash-go-12k", width: 1224, height: 1224 },
+  mBar15kSwap: { src: "/assets/products/m-bar-15k/story-swap.webp", alt: "โปสเตอร์ของ SALTHUB: หัวพอต M Switch Pod แบบใสกำลังเสียบเข้ากับตัวเครื่อง M Switch", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-bar-15k/", width: 1600, height: 988 },
+  mSwitchScreen: { src: "/assets/products/m-switch-kit/story-screen.webp", alt: "โปสเตอร์ของ SALTHUB: จอของ M Switch บอกระดับแบต สถานะกำลังชาร์จ และชาร์จเต็ม", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
+  zeroProModes: { src: "/assets/products/zero-pro/story-modes.webp", alt: "โปสเตอร์ของ SALTHUB: Zero Pro มี 3 โหมด Low-end · Mid-range · High-end", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/zero-pro/", width: 1600, height: 853 },
+  mSwitchLanyard: { src: "/assets/products/m-switch-kit/story-lanyard.webp", alt: "โปสเตอร์ของ SALTHUB: M Switch มาพร้อมสายคล้องคอ", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
+  caliburnG4ProOneTap: { src: "/assets/products/caliburn-g4-pro/story-one-tap.webp", alt: "ภาพจากคลิปของ UWELL: สลับโหมดบนจอทัชของ Caliburn G4 Pro", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro", width: 1600, height: 900 },
+  caliburnG5Battery: { src: "/assets/products/caliburn-g5/story-battery-v4.webp", alt: "โปสเตอร์ของ UWELL: แบต 1600mAh ของ Caliburn G5", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2413, height: 1131, transparent: true },
+  caliburnG5TripleTap: { src: "/assets/products/caliburn-g5/story-triple-tap.webp", alt: "ภาพของ UWELL: นิ้วแตะตัวเครื่อง Caliburn G5 ซึ่งเป็นวิธีสลับโหมดของรุ่นนี้", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1050, height: 613 },
+  mSwitchCharge: { src: "/assets/products/m-switch-kit/story-charge.webp", alt: "โปสเตอร์ของ SALTHUB: ช่องชาร์จ Type-C และจอบอกระดับแบตของ M Switch", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
+  mSwitchAirflow: { src: "/assets/products/m-switch-kit/story-airflow.webp", alt: "โปสเตอร์ของ SALTHUB: ปุ่มปรับลมของ M Switch", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
+  argusG4Fill: { src: "/assets/products/argus-g4/story-fill-v2.webp", alt: "โปสเตอร์ของ VOOPOO: ARGUS G4 เติมน้ำยาด้านบน และปุ่มเลื่อนปรับลม", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g4`, width: 1591, height: 609 },
+} satisfies Record<string, StoryImage>;
 
 // Round SEO ข batch 4 (2026-09-21): publishedAt = the commit that first added all seven records
 // (f29d7fc, 2026-08-29, read from git log — never invented). The modified date is no longer typed
@@ -868,6 +901,7 @@ const allGuides: Guide[] = [
           {
             heading: "ทิ้งทั้งเครื่อง หรือทิ้งแค่หัว",
             paragraphs: ["พอตใช้แล้วทิ้งอย่าง [M Bar 9K](/products/m-bar-9k) กับ [M Bar 10K](/products/m-bar-10k) พอน้ำยาหมดก็ทิ้งทั้งเครื่อง พอตเปลี่ยนหัวทิ้งแค่หัว ขยะต่อครั้งจึงน้อยกว่า"],
+            image: SECTION_IMAGES.mBar15kSwap,
           },
           {
             heading: "แบตหมดไม่ได้แปลว่าต้องทิ้ง",
@@ -1007,6 +1041,7 @@ const allGuides: Guide[] = [
           "M Switch ดูดไม่ขึ้น ไฟกะพริบ ไล่เช็คตามลำดับเดียวกันได้เลย แกะพลาสติกที่ก้นพอต ชาร์จแบต เช็ดขั้วสัมผัสใต้หัวพอต ถอด [M Switch Pod](/products/m-switch-pod) แล้วเสียบกลับให้เข้าที่ และเว้นจังหวะระหว่างพัฟบ้าง",
           "พอตใช้แล้วทิ้งก็ไล่แบบเดียวกัน แต่ถ้าใช้มาจนใกล้จำนวนพัฟบนกล่องแล้ว อาการดูดไม่ขึ้นอาจมาจากน้ำยาหรือแบตที่หมดอายุการใช้งาน กรณีนี้เปลี่ยนเป็นตัวใหม่จะตรงกว่า ตัวเลขพัฟบนกล่องหมายถึงอะไร อ่านได้ที่ [พอตใช้แล้วทิ้ง 1 ตัว ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
         ],
+        image: SECTION_IMAGES.mSwitchScreen,
       },
       {
         heading: "Marbo ดูดไม่ขึ้น ไฟกะพริบ เช็คอะไรบ้าง",
@@ -1257,9 +1292,9 @@ const allGuides: Guide[] = [
           { heading: "จำนวนพัฟต่อหัว", paragraphs: ["Esko Bar Switch 20K หัวละ 20,000 พัฟ ส่วน M Switch หัวละ 15,000 พัฟ"] },
           { heading: "ความจุน้ำยา", paragraphs: ["Esko Bar Switch 20K ระบุความจุน้ำยา 18mL"] },
           { heading: "ความเข้มข้นนิโคติน", paragraphs: ["M Switch ระบุไว้ 30mg แบบ salt nic"] },
-          { heading: "แบตและการชาร์จ", paragraphs: ["Esko Bar Switch 20K แบต 850mAh ชาร์จที่ 5V 0.85A ส่วนตัวเครื่อง M Switch มีจอบอกระดับแบต ทั้งคู่ชาร์จผ่าน USB-C"] },
+          { heading: "แบตและการชาร์จ", paragraphs: ["Esko Bar Switch 20K แบต 850mAh ชาร์จที่ 5V 0.85A ส่วนตัวเครื่อง M Switch มีจอบอกระดับแบต ทั้งคู่ชาร์จผ่าน USB-C"], image: SECTION_IMAGES.mSwitchCharge },
           { heading: "คอยล์", paragraphs: ["Esko เขียนว่าเป็นระบบ Dual Coil (คอยล์สองตัว) ส่วน M Switch ใช้คอยล์ cotton mesh 1.0 โอห์ม"] },
-          { heading: "โหมดและช่องลม", paragraphs: ["Esko มีโหมด High กับ Low ปรับช่องลมได้ 3 ระดับ ส่วน M Switch มีปุ่มเลื่อนปรับลม"] },
+          { heading: "โหมดและช่องลม", paragraphs: ["Esko มีโหมด High กับ Low ปรับช่องลมได้ 3 ระดับ ส่วน M Switch มีปุ่มเลื่อนปรับลม"], image: SECTION_IMAGES.mSwitchAirflow },
         ],
       },
       {
@@ -1325,6 +1360,7 @@ const allGuides: Guide[] = [
               "[Caliburn G4 Classic](/products/caliburn-g4-classic) ก็ไม่มีจอ ใช้ไฟ RGB 14 ดวงบอกระดับแบต และสูบได้ทั้งแบบดูดและกดปุ่ม",
               "[Caliburn G5 Lite](/products/caliburn-g5-lite) กับ G5 Lite SE ตัดจอสีกับระบบแตะของ G5 ออก ใช้ไฟ LED 4 ขีดบอกระดับแบต",
             ],
+            image: SECTION_IMAGES.caliburnG4ProOneTap,
           },
           {
             heading: "แบต",
@@ -1333,6 +1369,7 @@ const allGuides: Guide[] = [
               // Data round (2026-09-24): the charge-time line ("G4 ~30 min, G4 Mini ~58 min at 2A") is cut — neither figure is
               // on a UWELL page or manual (held article, fixed in the file only; it stays held).
             ],
+            image: SECTION_IMAGES.caliburnG5Battery,
           },
           {
             heading: "ช่องลม",
@@ -1381,6 +1418,7 @@ const allGuides: Guide[] = [
           "G4 แบต 1300mAh มากกว่า G3 Pro ที่ 1000mAh ทั้งคู่มีจอ G4 เป็นจอสี ส่วน G3 Pro เป็นจอ LCD โอบด้านข้าง ปรับได้ 5–35 วัตต์ และปรับช่องลมได้เต็มช่วง ทั้งคู่ชาร์จผ่าน USB-C ที่ 2A",
           "ต่างกันชัดที่หัวพอต G4 ใช้ GPP มาในกล่อง 0.4 โอห์มกับ 0.9 โอห์ม ส่วน G3 Pro ใช้หัวพอต G3 มาในกล่อง 2 หัว 0.4 โอห์ม (3mL) กับ 0.9 โอห์ม (2.5mL) จะซื้อหัวพอตเพิ่ม ดูให้ตรงกับระบบของเครื่อง",
           "อยากได้แบตมากกว่า ดู G4 อยากปรับวัตต์และช่องลมเองได้เต็มช่วง ดู G3 Pro ค่าโอห์มกับช่องลมส่งผลกับแนวการสูบยังไง อ่าน [MTL กับ DTL](/guides/understanding-mtl-vs-dtl) หรือดู Caliburn ทั้งหมดที่ [UWELL](/brands/uwell)",
+          "ส่วน [Caliburn G3](/products/caliburn-g3) เป็นคนละรุ่นกับ G3 Pro แบต 900mAh ตั้งได้สูงสุด 25 วัตต์ มีจอ OLED บอกวัตต์และจำนวนพัฟ และใช้หัวพอตของ Caliburn G3 ที่มีคอยล์ในตัว 0.6 · 0.9 · 1.2 โอห์ม",
         ],
       },
     ],
@@ -1418,6 +1456,7 @@ const allGuides: Guide[] = [
           "ARGUS G4 ใช้จอ HD 0.85 นิ้ว โชว์แบต วัตต์ ค่าโอห์ม สถานะล็อก และจำนวนพัฟ ส่วน G5 เป็นจอสี 0.85 นิ้ว",
           "G5 สลับโหมดด้วยระบบ Smart Triple-Tap Control คือแตะตัวเครื่องสามครั้ง ตามคู่มือของ UWELL ไม่มีปุ่ม ส่วน ARGUS G4 มีปุ่มเดียว กดสองครั้งติดกันเพื่อเปลี่ยนค่าโอห์ม กดสามครั้งเพื่อปรับวัตต์ และกดห้าครั้งเพื่อเข้าเมนู",
         ],
+        image: SECTION_IMAGES.caliburnG5TripleTap,
       },
       {
         heading: "ระบบหัวพอตและแนวการสูบ",
@@ -1434,6 +1473,7 @@ const allGuides: Guide[] = [
           "แบต ARGUS G4 1650mAh ส่วน G5 1600mAh ต่างกัน 50mAh ทั้งคู่ชาร์จผ่าน USB-C โดย ARGUS G4 สเปกระบุ 5V/2A ชาร์จเต็มในราว 45 นาที",
           "ชาร์จหนึ่งครั้งใช้ได้นานแค่ไหน ขึ้นกับวัตต์ที่ตั้งและสูบถี่แค่ไหน",
         ],
+        image: SECTION_IMAGES.caliburnG5Battery,
       },
       {
         heading: "เหมาะกับใคร",
@@ -1778,6 +1818,7 @@ const allGuides: Guide[] = [
           "หัวพอตที่เติมเองได้คือหัวพอตของพอตซิสเต็ม อย่างหัวพอต GPP ของตระกูล Caliburn จาก UWELL รวมถึงพอตคิทที่ใช้หัวพอตแบบเติม อย่างสาย ARGUS กับ DRAG ดูรุ่นทั้งหมดได้ในหมวดพอตคิท",
           "หัวพอตแบบเติมยังแบ่งตามตำแหน่งช่องเติมน้ำยาได้อีกสองแบบ คือเติมด้านบนกับเติมด้านข้าง หัวพอต GPP ของ UWELL มีทั้งสองแบบ และหัวที่มากับกล่องจะเป็นแบบไหน ขึ้นกับเวอร์ชันที่วางขาย อย่าง Caliburn G4 Pro เวอร์ชัน INT กับ FDA มากับหัวพอตเติมด้านข้าง ส่วนเวอร์ชัน TPD กับ CRC มากับหัวพอตเติมด้านบน ก่อนเติมจึงควรดูให้แน่ใจว่าช่องเติมของหัวที่อยู่ในมืออยู่ตรงไหน",
         ],
+        image: SECTION_IMAGES.argusG4Fill,
       },
       {
         heading: "หัวพอตแบบไหนเติมไม่ได้",
@@ -1939,6 +1980,7 @@ const allGuides: Guide[] = [
               "[DRAG X3](/products/drag-x3) ไม่มีแบตในตัว ใช้ถ่าน 18650 หรือ 21700 หนึ่งก้อน ซึ่งในกล่องไม่มีมาให้ ต้องซื้อแยก ตัวเครื่องชาร์จผ่าน USB-C ที่ 5V/2A ใช้เวลาชาร์จ 2–3 ชั่วโมง และถ้ามีถ่านสำรองที่ชาร์จไว้อีกก้อน ก็สลับใส่แล้วสูบต่อได้ทันที วิธีชาร์จและดูแลถ่านอ่านได้ที่ [ชาร์จพอตกี่นาทีถึงเต็ม และวิธีดูแลแบต](/guides/battery-care-and-charging)",
               "ตัวเลข mAh ใช้เทียบกันได้ระหว่าง DRAG 6 กับ DRAG S3 ที่มีแบตในตัว ส่วนชาร์จหนึ่งครั้งใช้ได้นานแค่ไหน ขึ้นกับวัตต์ที่ตั้งและสูบถี่แค่ไหน วิธีอ่านตัวเลขเหล่านี้อยู่ที่ [วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet)",
             ],
+            image: SECTION_IMAGES.drag6Battery,
           },
           {
             heading: "วัตต์ ชิป และโหมด",
@@ -1955,6 +1997,7 @@ const allGuides: Guide[] = [
               "เรื่องการปลดล็อก DRAG 6 กับ DRAG S3 มีเซ็นเซอร์อยู่ที่ปุ่มยิง แตะเพื่อปลดล็อก และพอปล่อยนิ้ว เครื่องจะล็อกกลับให้เอง ส่วน DRAG X3 เลือกได้สามแบบจากเมนู คือแตะเพื่อปลดล็อก กดปุ่มเพื่อปลดล็อก หรือปลดล็อกค้างไว้",
               "ทั้งสามรุ่นกดห้าครั้งเพื่อเปิดหรือปิดเครื่อง และกดสามครั้งเพื่อเข้าเมนูเหมือนกัน ถ้าเปลี่ยนจากรุ่นหนึ่งไปอีกรุ่นก็ใช้งานได้คุ้นมือ",
             ],
+            image: SECTION_IMAGES.dragX3Unlock,
           },
           {
             heading: "ถังน้ำยา หัวพอต และคอยล์",
@@ -1963,6 +2006,7 @@ const allGuides: Guide[] = [
               "DRAG S3 กับ DRAG X3 ใช้หัวพอตแบบเดียวกัน คือ PnP X Cartridge จุ 5mL (2mL ในเวอร์ชัน TPD) เติมด้านข้าง ทั้งสองรุ่นมีหัวพอตแบบ DTL มาในชุด และถ้าอยากสูบ MTL ก็เปลี่ยนเป็นหัวพอตแบบ MTL ได้ในเครื่องเดิม สำหรับ DRAG S3 ในกล่องมีคอยล์ PnP X 0.6 โอห์มกับ 0.8 โอห์มด้วย",
               "ทั้งสามรุ่นใช้คอยล์ PnP X ได้ทุกตัว ถ้ามี DRAG มากกว่าหนึ่งเครื่อง ก็ใช้คอยล์ชุดเดียวกันได้ ส่วนวิธีดูแลคอยล์และหัวพอตให้ใช้ได้นาน อ่านได้ที่ [หัวพอตใช้ได้กี่วัน เปลี่ยนเมื่อไหร่](/guides/coil-and-pod-maintenance)",
             ],
+            image: SECTION_IMAGES.dragS3Coils,
           },
           {
             heading: "ช่องลมและแนวการสูบ",
@@ -1970,6 +2014,7 @@ const allGuides: Guide[] = [
               "DRAG 6 ปรับลมด้วยแหวนปรับลมแบบหมุน ใช้ช่องลมแบบ Golden Triangle และสูบได้ทั้ง MTL และ DTL ด้าน DRAG X3 มีช่องลมอยู่ด้านบน และสูบได้ทั้ง DTL และ MTL ตามหัวพอตที่ใส่ ส่วน DRAG S3 มีช่องลมอยู่ด้านบนและปรับได้ด้วยการเลื่อน VOOPOO วางรุ่นนี้ไว้สำหรับสูบ MTL · RDL และ DTL แบบเบา ๆ",
               "ถ้ายังไม่แน่ใจว่าตัวเองสูบแนวไหน MTL คือดูดเข้าปากก่อนแล้วค่อยลงปอด ส่วน DTL คือดูดลงปอดตรง ๆ สองแนวนี้ให้ความรู้สึกต่างกันยังไง อ่านได้ที่ [MTL กับ DTL สูบต่างกันยังไง](/guides/understanding-mtl-vs-dtl)",
             ],
+            image: SECTION_IMAGES.drag6Airflow,
           },
           {
             heading: "ขนาดและตัวเครื่อง",
@@ -2010,6 +2055,7 @@ const allGuides: Guide[] = [
           "VOOPOO DRAG รุ่นไหนดี ขึ้นอยู่กับว่าคุณอยากได้อะไรจากเครื่อง ร้านเราจึงไม่จัดอันดับ แต่สรุปตามการใช้งานไว้ให้แบบนี้",
           "ถ้าอยากได้วัตต์สูง จอใหญ่ และปรับค่าได้ละเอียดด้วยล้อหมุน ลองดู DRAG 6 ถ้าอยากได้เครื่องตัวเล็กที่มีแบตในตัว และสูบ MTL หรือ RDL เป็นหลัก ลองดู DRAG S3 และถ้าชอบใช้ถ่านที่ถอดเปลี่ยนได้กับจอทัช ลองดู DRAG X3",
           "ถ้าเพิ่งเริ่มใช้พอตเป็นเครื่องแรก และยังไม่แน่ใจว่าต้องการเครื่องวัตต์สูงแบบ DRAG หรือเปล่า อ่าน [Pod System ตัวไหนดี เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system) ก่อนได้",
+          "ส่วน DRAG X ใช้ถ่าน 18650 หนึ่งก้อนที่ซื้อแยก ตั้งได้ 5–80 วัตต์ และใช้คอยล์ตระกูล PnP สเปกทั้งหมดอยู่ที่หน้าสินค้าของรุ่นนี้",
           "ราคาของแต่ละรุ่นดูได้ที่หน้าสินค้าของรุ่นนั้น และถ้าอยากถามเรื่องสีหรือรุ่นที่มีของตอนนี้ ทักไลน์ @okm24 ได้เลย",
         ],
       },
@@ -2062,6 +2108,8 @@ const allGuides: Guide[] = [
           "ส่วนตระกูล Zero โปสเตอร์ Zero Pro ของ SALTHUB ระบุไว้ที่ 5,000 พัฟ ตระกูลนี้มีเรื่องอื่นให้เลือกมากกว่า อย่างโหมดและขนาดเครื่อง ตามหัวข้อด้านล่าง",
           "ตัวเลขพัฟคือจำนวนที่ผู้ผลิตระบุ จะสูบได้ใกล้ตัวเลขนั้นแค่ไหน ขึ้นกับวิธีสูบของแต่ละคน ส่วน Esko Bar Switch 20K กับ M Switch ต่างกันตรงไหนอีกบ้าง ร้านเทียบไว้ทีละข้อที่[Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch)",
         ],
+        image: SECTION_IMAGES.mBar15kSwap,
+        video: SECTION_CLIPS.mSwitch,
       },
       {
         heading: "อยากมีจอไว้ดูแบต",
@@ -2069,6 +2117,7 @@ const allGuides: Guide[] = [
           "รุ่นที่ผู้ผลิตเขียนเรื่องจอไว้ชัดมีสองรุ่น รุ่นแรกคือ RELX Creator มีจอพิกเซลที่โชว์หน้าอีโมจิ กดปุ่มครั้งเดียวก็ดูแบตได้ อีกรุ่นคือ M Switch Kit มีจอดิจิทัลบอกระดับแบต แสดงทั้งตอนกำลังชาร์จและเมื่อชาร์จเต็ม",
           "RELX Creator ขายเฉพาะตัวเครื่อง หัวพอตซื้อแยก ตัวเครื่องมีแบต 800mAh และกดปุ่มสองครั้งติดกันเพื่อสลับระหว่าง 15 วัตต์ในโหมด Normal กับ 25 วัตต์ในโหมด Boost",
         ],
+        image: SECTION_IMAGES.mSwitchScreen,
       },
       {
         heading: "อยากปรับแรงสูบได้",
@@ -2076,6 +2125,7 @@ const allGuides: Guide[] = [
           "ถ้าอยากสลับระหว่างสูบเบา ๆ กับสูบให้แรงขึ้นบนเครื่องเดียว Zero Pro มี 3 โหมด คือ Low-end · Mid-range · High-end ส่วน Esko Bar Switch 20K มีโหมด High กับ Low และ RELX Creator สลับได้ระหว่าง Normal กับ Boost ตามหัวข้อข้างบน",
           "เรื่องช่องลม M Switch Kit มีปุ่มเลื่อนปรับลม Esko Bar Switch 20K ปรับช่องลมได้ 3 ระดับ เครื่อง RELX Creator ก็ปรับช่องลมได้ ส่วน Zero Pro ลมเข้าทางด้านข้างของเครื่อง",
         ],
+        image: SECTION_IMAGES.zeroProModes,
       },
       {
         heading: "อยากได้กลิ่นให้เลือกเยอะ",
@@ -2090,6 +2140,7 @@ const allGuides: Guide[] = [
           "Zero Nano เป็นเครื่องระบบสวิตช์ตัวเล็กของตระกูล Zero แบต 500mAh และใช้หัว Zero Cartridge เดียวกับ Zero Pro ส่วน Zero Pro เป็นเครื่องทรงเพรียว หน้าตาคล้ายปากกา แบต 380mAh",
           "ถ้าอยากห้อยเครื่องไว้กับตัว M Switch Kit มีสายคล้องคอมาให้ด้วย ตามที่ SALTHUB ระบุ",
         ],
+        image: SECTION_IMAGES.mSwitchLanyard,
       },
       {
         heading: "อยากได้แบตอึด",
@@ -2165,6 +2216,7 @@ const allGuides: Guide[] = [
           "ถ้าแค่อยากรู้ว่าแบตเหลือเท่าไหร่ M Bar 10K มีไฟ LED สี่ดวงบอกแบตทีละ 25% และมีไฟ RGB บอกว่ากำลังใช้โหมดไหนอยู่",
           "บางรุ่นดูน้ำยาที่เหลือได้จากตัวเครื่องเลย Joiway F3 มีถังน้ำยาใสอยู่ด้านบน ใต้ปากดูด TFIT M Power 20K ถังด้านบนก็ใส มองจากข้างนอกก็รู้ว่าเหลือเท่าไหร่",
         ],
+        image: SECTION_IMAGES.nexbar18kScreen,
       },
       {
         heading: "อยากปรับแรงสูบหรือปรับลมได้",
@@ -2172,6 +2224,7 @@ const allGuides: Guide[] = [
           "หากอยากสลับระหว่างสูบนุ่ม ๆ กับสูบให้แรงขึ้นในเครื่องเดียว M Bar 10K มี 3 โหมด Eco · Soft · Boost กดปุ่มด้านล่างสองครั้งติดกันเพื่อสลับ WOTOFO nexBAR 18K มีโหมด NORM 16 วัตต์ กับ TURBO 19 วัตต์ ส่วน nexBar CLEAR 18K มีโหมด Normal ที่ผู้ผลิตบอกว่าสูบนุ่มและใช้ได้นานขึ้น กับโหมด Turbo ที่ให้รสเต็มและไอหนา",
           "เรื่องช่องลม รุ่นที่ผู้ผลิตระบุว่าปรับได้มี M Bar 9K · M Bar 10K · Joiway F3 · TFIT M Power 20K และ nexBar CLEAR 18K ส่วน WOTOFO nexBAR 18K ปรับได้ 2 ระดับ และ INFY 20K ร้านยืนยันว่าปรับช่องลมได้",
         ],
+        image: SECTION_IMAGES.mBar10kModes,
       },
       {
         heading: "อยากได้สองกลิ่นในเครื่องเดียว",
@@ -2179,6 +2232,7 @@ const allGuides: Guide[] = [
           "Joiway F4 เป็นรุ่น TWINS ของ JOIWAY ข้างในมีถังน้ำยาสองถัง ถังละหนึ่งกลิ่น หมุนปากดูดไปที่ถังไหนก็สูบกลิ่นนั้น และสลับได้ทุกเมื่อที่ต้องการ ข้างในใช้คอยล์ mesh สองชุด แบต 650mAh ชาร์จซ้ำได้ผ่าน USB-C",
           "นับจากรายชื่อกลิ่นบนหน้าสินค้า Joiway F4 มี 16 คู่กลิ่น เหมาะกับคนที่เบื่อกลิ่นเดิมเร็ว ชอบเปลี่ยนกลิ่นระหว่างวัน และอยากเลือกจากคู่ที่จับมาให้แล้วมากกว่าจับคู่เอง",
         ],
+        image: SECTION_IMAGES.joiwayF4Twin,
       },
       {
         heading: "อยากได้กลิ่นให้เลือกเยอะ",
@@ -2195,6 +2249,7 @@ const allGuides: Guide[] = [
           "ถ้าดูขนาดแบตที่ผู้ผลิตระบุ WOTOFO nexBAR 18K แบต 750mAh Joiway F4 กับ nexBar CLEAR 18K แบตรุ่นละ 650mAh M Bar 9K · M Bar 10K และ TFIT M Power 20K แบตรุ่นละ 600mAh ส่วน RELX Smash Go 12K แบต 400mAh",
           "ตัวเลข mAh บอกขนาดแบตคร่าว ๆ ส่วนชาร์จหนึ่งครั้งใช้ได้นานแค่ไหน ยังขึ้นกับวิธีสูบและโหมดที่ใช้ วิธีชาร์จที่ร้านใช้เองอยู่ที่ [ชาร์จพอตกี่นาที ชาร์จข้ามคืนได้ไหม](/guides/battery-care-and-charging)",
         ],
+        image: SECTION_IMAGES.tfitBattery,
       },
       {
         heading: "อยากได้ขนาดที่พกง่าย",
@@ -2202,6 +2257,7 @@ const allGuides: Guide[] = [
           "RELX ออกแบบ Smash Go 12K ให้ขนาดพอดีกระเป๋า พกไปไหนก็สะดวก และทำปากดูดให้แนบริมฝีปากได้สบาย",
           "ถ้าอยากเทียบเป็นตัวเลข TFIT ระบุขนาด M Power 20K ไว้ที่เส้นผ่านศูนย์กลาง 30mm สูง 98mm หนัก 70 กรัม ส่วน WOTOFO ระบุขนาด nexBAR 18K ไว้ที่ 101 × 44 × 26.7mm",
         ],
+        image: SECTION_IMAGES.relxSmashGoPocket,
       },
       {
         heading: "Marbo 9K กับ 10K ต่างกันยังไง",
@@ -2370,6 +2426,7 @@ const allGuides: Guide[] = [
               "ARGUS G4 mini ไม่มีจอ ใช้ไฟ Energy Bar บอกสถานะแทน ไฟสีขาวคือ 0.7 โอห์ม ไฟสีเขียวคือ 1.0 โอห์ม และไฟสี่ขีดบอกระดับแบต ขีดละ 25%",
               "ARGUS G3 mini ไม่มีปุ่ม สูบได้เลย และเครื่องจะปรับวัตต์ให้เองตามหัวพอตที่ใส่ สูงสุด 30 วัตต์ ส่วน G4 mini กับ P3 ก็สูบได้เลยโดยไม่ต้องกดปุ่มเช่นกัน",
             ],
+            image: SECTION_IMAGES.argusP3Touch,
           },
           {
             heading: "การเปลี่ยนค่าโอห์ม",
@@ -2378,6 +2435,7 @@ const allGuides: Guide[] = [
               "P3 มากับหัวพอต ARGUS Snap Cartridge สองหัว คือ 0.4 โอห์มกับ 0.7 โอห์ม ส่วน G3 mini มากับ ARGUS Top Fill Cartridge V2 0.7 โอห์มหนึ่งหัว และหัวรุ่นเดียวกันนี้มีแบบ 0.4 โอห์มกับ 1.0 โอห์มให้เลือกด้วย",
               "ตามตารางของ VOOPOO สำหรับหัว ARGUS Top Fill Cartridge V2 หัว 0.4 โอห์มใช้สูบแบบ RDL ที่ 18–30 วัตต์ หัว 0.7 โอห์มใช้ที่ 14–18 วัตต์ และหัว 1.0 โอห์มใช้ที่ 10–14 วัตต์ สองค่าหลังนี้เป็นแนว MTL คือดูดเข้าปากก่อน ถ้ายังไม่แน่ใจว่าตัวเองสูบแนวไหน อ่าน[MTL กับ DTL](/guides/understanding-mtl-vs-dtl)ก่อนได้",
             ],
+            image: SECTION_IMAGES.argusG4Ohm,
           },
           {
             heading: "แบต วัตต์ และการชาร์จ",
@@ -2386,6 +2444,7 @@ const allGuides: Guide[] = [
               "G4 ปรับได้ 5–35 วัตต์ G4 mini และ P3 อยู่ที่ 5–30 วัตต์ และ G3 mini สูงสุด 30 วัตต์โดยเครื่องปรับให้เอง ช่วงโอห์มของ G4 · G4 mini และ P3 อยู่ที่ 0.4–3.0 โอห์มเท่ากัน ตัวเลขนี้บอกว่าเครื่องรับค่าไหนได้ ไม่ได้แปลว่ามีหัวพอตทุกค่าให้เลือก อ่านเพิ่มได้ที่[วิธีอ่านสเปกพอต](/guides/reading-a-spec-sheet)",
               "ทุกรุ่นชาร์จผ่าน USB-C โดย G4 กับ P3 ชาร์จที่ 5V/2A และ VOOPOO ระบุว่า G4 ชาร์จเต็มในประมาณ 45 นาที ส่วน P3 ประมาณ 40 นาที สำหรับ G4 mini ชาร์จที่ 5V/1.5A และ G3 mini ที่ 5V/1A",
             ],
+            image: SECTION_IMAGES.argusG4Battery,
           },
           {
             heading: "ช่องลม",
@@ -2410,6 +2469,7 @@ const allGuides: Guide[] = [
               "หัวพอตที่มาในกล่องของทั้งสี่รุ่นเป็นแบบเติมด้านบน หัว Multi-Ohm จุ 3.5mL และหัว ARGUS Top Fill Cartridge V2 ที่มากับ G3 mini จุ 3mL ทั้งสองแบบจุ 2mL ในเวอร์ชัน TPD ส่วนหัว Snap ของ P3 จุ 2mL เปิดฝาแล้วเติมได้จากด้านบน",
               "ถ้าอยากได้หัวพอต ARGUS เพิ่ม ทักไลน์ @okm24 ถามร้านก่อนได้",
             ],
+            image: SECTION_IMAGES.argusPods,
           },
         ],
       },
@@ -2420,6 +2480,7 @@ const allGuides: Guide[] = [
           "G4 mini ตัวเล็กและเบากว่า ยาว 113 mm หนัก 56 กรัม ส่วน G4 ยาว 121 mm หนัก 65 กรัมในแบบอะลูมิเนียมอัลลอย หรือ 85 กรัมในแบบซิงค์อัลลอยกับหนัง เรื่องชาร์จ G4 ใช้ 5V/2A และเต็มในประมาณ 45 นาที ส่วน G4 mini ใช้ 5V/1.5A",
           "ถ้าอยากดูวัตต์ ค่าโอห์ม และจำนวนพัฟบนจอ และอยากได้สามค่าโอห์มจากหัวพอตหัวเดียว ลองดู G4 ถ้าดูสถานะจากไฟก็เพียงพอ และอยากได้เครื่องที่เล็กและเบากว่า G4 mini จะเหมาะกว่า",
         ],
+        video: SECTION_CLIPS.argusG4,
       },
       {
         heading: "ARGUS G4 mini vs G3 mini",
@@ -2542,6 +2603,95 @@ const allGuides: Guide[] = [
       { question: "RELX เช็คของแท้ยังไง", answer: "พิมพ์รหัส 14 หลักที่ข้างกล่องลงในหน้า relxnow.com/pages/verify แล้วกด Verify หรือสแกน QR บนพอตค้างไว้ประมาณ 3–5 วินาที เว็บของ RELX คือ relxnow.com ส่วน relx.com เป็นเว็บของบริษัทอื่นที่ชื่อเหมือนกัน" },
       { question: "ซื้อพอตออนไลน์ยังไงไม่โดนของปลอม", answer: "ได้ของแล้วเช็คกับเว็บของแบรนด์ทันทีก่อนเริ่มใช้ ดูชื่อเว็บให้ตรงก่อนกรอกรหัส และถ่ายคลิปตอนแกะกล่องไว้ทุกครั้ง ถ้าเช็คแล้วมีข้อสงสัย ทักไลน์ @okm24 พร้อมผลเช็คและคลิปมาให้ร้านดูได้ทุกวัน ตลอด 24 ชั่วโมง" },
       { question: "เช็คของแท้ไม่ผ่าน ต้องทำยังไง", answer: "ลองกรอกรหัสใหม่ให้ตรงทีละตัว และดูว่าเปิดหน้าเช็คจากเว็บของแบรนด์จริง ถ้ายังเช็คไม่ผ่าน ส่งแคปหน้าจอผลเช็คพร้อมคลิปตอนแกะกล่องมาทางไลน์ @okm24 ภายใน 7 วันนับจากวันที่ได้รับของ ร้านจะตรวจสอบให้ แล้วแจ้งกลับว่าจะเปลี่ยนของใหม่หรือคืนเงินให้ ซึ่งเป็นกรณีเดียวที่ร้านคืนเงิน" },
+    ],
+  },
+  {
+    // Round "SEO all keys" §9.6 row 9 / §9.7 (AC 16/10: iluma รีเซ็ต 9 · ชาร์จไม่เข้า 6 · ไฟแดง 3 · วิธีใช้ 2). The shop sells ILUMA i
+    // (iqosheet-18) and ILUMA i PRIME (iqosheet-16), so the article is about those two. Every fact = an iqos.com support page read
+    // 16/10 (_incoming/seo-images/iqos-research.md): reset / battery / charging / how to use = gb "get to know your IQOS ILUMA i";
+    // screen symbols = ch ILUMA i FAQ (touch-screen part: i PRIME + i) + me ILUMA i PRIME troubleshooting (also the holder-light
+    // steps); Pause = ch ILUMA i FAQ (i + i PRIME, Performance Mode, first 3 min / 8 puffs); the red light = gb "device lights meaning" (original ILUMA). No i PRIME-specific reset page was found → the
+    // reset steps are written for ILUMA i only. Official pages disagree on the original ILUMA's temperature range → only the i
+    // range (0–40 °C) is written. No health or safety claims. Wording: thai-copy pass 16/10 (locked words USB-C · หัวชาร์จ ·
+    // ขั้วสัมผัส · จอทัช · รุ่นก่อน · พัฟ).
+    id: "iqos-iluma-i-reset-and-charging",
+    slug: "iqos-iluma-i-reset-and-charging",
+    title: "IQOS ILUMA i รีเซ็ตยังไง ชาร์จไม่เข้า สัญลักษณ์บนจอหมายถึงอะไร",
+    dek: "IQOS ILUMA i รีเซ็ตได้ด้วยการวาง Holder ไว้ใน Pocket Charger แล้วกดปุ่มค้างไว้ 10 วินาที บทความนี้รวมความหมายของสัญลักษณ์บนจอ วิธีชาร์จ สิ่งที่ควรเช็คเมื่อชาร์จไม่เข้า และวิธีใช้ทีละขั้น โดยอ้างอิงจากหน้าช่วยเหลือของ IQOS",
+    category: "maintenance",
+    readingTimeMin: 5,
+    publishedAt: "2026-10-16",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "IQOS ILUMA i รีเซ็ตยังไง",
+        paragraphs: [
+          "IQOS ILUMA i รีเซ็ตด้วยการวาง Holder ไว้ใน Pocket Charger แล้วกดปุ่มของ Pocket Charger ค้างไว้ 10 วินาที เมื่อไฟดับ กะพริบสองครั้ง แล้วติดขึ้นมาใหม่ แปลว่ารีเซ็ตเสร็จ ถ้าเครื่องของคุณเป็น ILUMA i PRIME แนะนำให้ดูวิธีรีเซ็ตในคู่มือที่มากับกล่อง",
+          "บทความนี้เขียนสำหรับ [IQOS ILUMA i](/products/iqosheet-18) และ [IQOS ILUMA i PRIME](/products/iqosheet-16) ที่มีบนเว็บเรา ข้อมูลทั้งหมดมาจาก[หน้าช่วยเหลือของ IQOS](https://www.iqos.com/gb/en/support/faq/get-to-know-your-iqos-ilumai.html) ถ้าเครื่องของคุณเป็นรุ่นอื่น แนะนำให้ดูคู่มือของรุ่นนั้นแทน เพราะวิธีกดและความหมายของไฟในแต่ละรุ่นไม่เหมือนกัน",
+        ],
+      },
+      {
+        heading: "สัญลักษณ์บนจอ ILUMA i หมายถึงอะไร",
+        paragraphs: [
+          "ILUMA i และ ILUMA i PRIME มีจอทัชบนตัว Holder เมื่อเครื่องมีอะไรผิดปกติ จอจะขึ้นสัญลักษณ์ให้เห็น ความหมายของแต่ละแบบตามที่ IQOS อธิบายไว้มีดังนี้",
+          "ตัว E กะพริบ 3 ครั้ง แปลว่ามีแม่เหล็กอยู่ใกล้เครื่อง เครื่องทำงานผิดปกติ หรืออัปเดตเฟิร์มแวร์ไม่สำเร็จ วิธีแก้คือรีเซ็ตเครื่อง",
+          "เลข 0 กะพริบ 3 ครั้ง แปลว่าแบตของ Holder เหลือน้อย ให้วาง Holder ลงใน Pocket Charger ที่ยังมีแบตเพื่อชาร์จ",
+          "เส้นแนวตั้งสองเส้น เส้นหนึ่งอยู่ด้านบน อีกเส้นอยู่ด้านล่าง สลับข้างกันสามครั้ง แปลว่าอุณหภูมิอยู่นอกช่วงที่เครื่องใช้งานได้ คือ 0–40 องศาเซลเซียส",
+          "เส้นแนวนอนที่มีวงกลมอยู่ข้างใต้ แปลว่าเครื่องถูกล็อกอยู่ ปลดล็อกได้ในแอป IQOS ส่วนเส้นแนวนอนแบบคลื่นสามเส้น แปลว่า AutoStart ถูกปิดไว้ เปิดได้ในแอปเช่นกัน",
+        ],
+      },
+      {
+        heading: "ILUMA ไฟแดงกะพริบ ทำยังไง",
+        paragraphs: [
+          "ไฟแดงกะพริบที่ Holder เป็นไฟของ ILUMA รุ่นก่อนที่ไม่มีจอ IQOS อธิบายว่าไฟนี้หมายถึงเครื่องมีปัญหาและควรรีเซ็ต และแม่เหล็กที่อยู่ใกล้เครื่องก็ทำให้ขึ้นไฟแดงได้เช่นกัน จึงไม่ควรวาง Holder ไว้ใกล้แม่เหล็กระหว่างใช้",
+          "ส่วน ILUMA i และ ILUMA i PRIME ให้ดูสัญลักษณ์บนจอตามหัวข้อก่อนหน้า ถ้ารีเซ็ตแล้วยังขึ้นอยู่ ทักมาที่ไลน์ @okm24 แล้วเล่าอาการให้ร้านฟังได้เลย",
+        ],
+      },
+      {
+        heading: "ดูยังไงว่าแบตเหลือเท่าไหร่",
+        paragraphs: [
+          "กดปุ่มของ Pocket Charger สั้น ๆ แล้วดูว่าไฟติดกี่ดวง ถ้าติด 4 ดวง แบตเหลือมากกว่า 75% ถ้าติดดวงเดียว แบตเหลือน้อยกว่า 25% และถ้าไฟสีส้มกะพริบ 3 ครั้ง แปลว่าแบตหมดแล้ว ต้องชาร์จก่อนใช้",
+          "ส่วนแบตของ Holder ดูได้ด้วยการเอียง Holder เข้าหาตัว หรือแตะจอสั้น ๆ",
+        ],
+      },
+      {
+        heading: "ชาร์จ ILUMA i ยังไง",
+        paragraphs: [
+          "IQOS แนะนำให้ชาร์จด้วยหัวชาร์จ 5V 2A แบบ USB-C คู่กับสาย USB-C โดย Pocket Charger ใช้เวลาชาร์จจนเต็มประมาณ 2 ชั่วโมง 15 นาที และจะวาง Holder ไว้ข้างในระหว่างชาร์จหรือไม่ก็ได้",
+          "ไม่จำเป็นต้องรอให้เต็มทุกครั้งก่อนใช้ แต่ครั้งแรก IQOS แนะนำให้ชาร์จจนเต็มก่อน",
+        ],
+      },
+      {
+        heading: "ILUMA i ชาร์จไม่เข้า เช็คอะไรบ้าง",
+        paragraphs: [
+          "ถ้าชาร์จช้าหรือชาร์จไม่ขึ้นเลย ให้ใช้หัวชาร์จและสายของ IQOS หรือหัวชาร์จทั่วไปที่จ่ายไฟ 5V 2A และมีเครื่องหมายรับรองความปลอดภัย แล้วดูว่าช่องชาร์จของเครื่องสะอาด ไม่มีฝุ่นหรือเศษอะไรติดอยู่",
+          "ถ้าไฟของ Holder ไม่ติด หน้าช่วยเหลือของ i PRIME แนะนำให้ไล่เช็คตามลำดับนี้ ดูก่อนว่ามีไฟสีขาวติดนิ่งบน Pocket Charger อย่างน้อยหนึ่งดวง แล้วเช็ดขั้วสัมผัสให้สะอาด วาง Holder กลับเข้าไปและรอจนไฟสีขาวติดนิ่ง จากนั้นหยิบ Holder ออกมาแล้วกดปุ่มบน Holder สั้น ๆ",
+          "ถ้าจอทัชไม่ตอบสนอง ให้ถอดถุงมือออกก่อน เช็ดนิ้วและหน้าจอให้สะอาดและแห้ง แล้วดูว่าจอไม่มีรอยร้าว ถ้าจอยังขึ้นไฟหรือสัญลักษณ์อยู่ ให้รีเซ็ตเครื่อง",
+        ],
+      },
+      {
+        heading: "วิธีใช้ ILUMA i ทีละขั้น",
+        paragraphs: [
+          "เริ่มจากกดปุ่มของ Pocket Charger ค้างไว้ 4 วินาทีเพื่อเปิดเครื่อง จากนั้นวาง Holder ลงไปแล้วปิดฝาเพื่อชาร์จ",
+          "เสียบก้าน TEREA เข้าไปใน Holder ให้ลึกถึงเส้นบนก้นกรอง จนรู้สึกว่า Holder สั่น จากนั้นเครื่องจะเริ่มอุ่นเอง หรือจะปัดขึ้นบนจอเพื่อเริ่มก็ได้ การอุ่นใช้เวลาประมาณ 20 วินาที",
+          "เมื่อ Holder สั่นอีกครั้งก็เริ่มสูบได้ วงไฟบนจอจะนับถอยหลังให้เห็นเวลาที่เหลือ และ Holder จะสั่นเตือนอีกครั้งเมื่อเหลือ 30 วินาทีสุดท้าย หรือ 2 พัฟสุดท้าย",
+          "สูบเสร็จแล้วดึงก้านออกไปทิ้ง แล้ววาง Holder กลับเข้า Pocket Charger เพื่อชาร์จต่อ",
+        ],
+      },
+      {
+        heading: "ILUMA i หยุดพักระหว่างสูบได้",
+        paragraphs: [
+          "ILUMA i และ ILUMA i PRIME มีโหมดหยุดพัก ใช้ได้ในโหมด Performance ซึ่งเป็นค่าเริ่มต้น ในช่วง 3 นาทีแรกหรือ 8 พัฟแรกของการสูบ และพักได้หนึ่งครั้งจากการสูบสองครั้งที่ต่อกัน ปัดลงให้สุดความยาวจอเพื่อหยุดพัก จอจะขึ้นเส้นแนวตั้งสั้นสองเส้นที่ด้านบน เมื่อจะสูบต่อให้ปัดขึ้นให้สุดความยาวจอ เครื่องจะอุ่นใหม่ก่อนแล้วจึงสูบต่อได้ พักได้นานสุด 8 นาที เกินจากนั้นเครื่องจะปิดเอง",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["iqosheet-18", "iqosheet-16"],
+    faq: [
+      { question: "IQOS ILUMA i รีเซ็ตยังไง", answer: "วาง Holder ไว้ใน Pocket Charger แล้วกดปุ่มค้างไว้ 10 วินาที เมื่อไฟดับ กะพริบสองครั้ง แล้วติดขึ้นมาใหม่ แปลว่ารีเซ็ตเสร็จแล้ว" },
+      { question: "ILUMA ไฟแดงกะพริบ หมายถึงอะไร", answer: "สำหรับ ILUMA รุ่นก่อนที่ไม่มีจอ ไฟแดงกะพริบที่ Holder หมายถึงเครื่องมีปัญหาและควรรีเซ็ต ส่วน ILUMA i และ ILUMA i PRIME ให้ดูสัญลักษณ์บนจอ เช่น ตัว E ที่กะพริบสามครั้ง ซึ่งแก้ได้ด้วยการรีเซ็ตเช่นกัน" },
+      { question: "ILUMA i ชาร์จไม่เข้า ทำยังไง", answer: "เช็คว่าใช้หัวชาร์จและสายของ IQOS หรือหัวชาร์จที่จ่ายไฟ 5V 2A และมีเครื่องหมายรับรองความปลอดภัย และดูว่าช่องชาร์จของเครื่องสะอาด ไม่มีฝุ่นหรือเศษอะไรติดอยู่" },
+      { question: "ILUMA i ชาร์จนานแค่ไหน", answer: "IQOS ระบุว่าการชาร์จ Pocket Charger จนเต็มใช้เวลาประมาณ 2 ชั่วโมง 15 นาที เมื่อใช้หัวชาร์จ 5V 2A แบบ USB-C" },
+      { question: "เลข 0 กะพริบบนจอ ILUMA i หมายถึงอะไร", answer: "แปลว่าแบตของ Holder เหลือน้อย ให้วาง Holder ลงใน Pocket Charger ที่ยังมีแบตเพื่อชาร์จ" },
     ],
   },
 ];

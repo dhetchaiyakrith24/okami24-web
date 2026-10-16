@@ -250,6 +250,43 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "แบต 1400mAh สูงสุด 35 วัตต์ สูบได้ทั้งแบบดูดและกดปุ่ม",
   },
+  "caliburn-g3": {
+    whoIsThisFor: {
+      0: "กำลังหา Caliburn G3 รุ่นมาตรฐาน ไม่ใช่ G3 Pro และอยากดูสเปกกับสีทั้งหมดที่ UWELL ทำออกมา",
+    },
+    specifications: {
+      battery: "900mAh ในตัว",
+      "charge-time": "USB-C ชาร์จเร็ว 2A",
+      screen: "จอ OLED ปรับวัตต์ ดูจำนวนพัฟ เลือกระบบยิงได้ 3 แบบ",
+      airflow: "ระบบลมคู่",
+      pod: "2.5mL (2mL ในเวอร์ชัน TPD)",
+      "pod-compat": "หัวพอต Caliburn G3 คอยล์ mesh ในตัว มีค่า 0.6Ω 0.9Ω และ 1.2Ω",
+      refill: "มีทั้งแบบเติมด้านข้างและเติมด้านบน แต่ละชุดมาแบบใดแบบหนึ่ง",
+      materials: "หัวพอต PCTG ตัวเครื่องอะลูมิเนียมอัลลอย",
+      weight: "ประมาณ 47 กรัม",
+    },
+    features: {
+      battery: {
+        title: "แบต 900mAh ในตัวเครื่องทรงเพรียว",
+        description: "UWELL เพิ่มแบตให้มากกว่า Caliburn G2 อีก 20%",
+      },
+      cartridge: {
+        title: "คอยล์อยู่ในหัวพอต",
+        description: "หัวพอต Caliburn G3 ทุกหัวมีคอยล์ mesh ในตัว เมื่อรสชาติเริ่มดรอปก็เปลี่ยนหัวพอตใหม่ได้เลย",
+      },
+      "pod-06": {
+        title: "หัวพอต 0.6 โอห์ม ใช้ได้ถึง 25 วัตต์",
+        description: "UWELL ทำหัวพอต 0.6 โอห์มมาให้ใช้ได้ถึง 25 วัตต์",
+      },
+      "in-the-box": {
+        title: "ในกล่องมีอะไรบ้าง",
+        description: "ชุด INT และ FDA มีตัวเครื่อง หัวพอต 0.6 และ 0.9 โอห์ม สายชาร์จ และคู่มือการใช้งาน",
+      },
+    },
+    tagline: "Caliburn ทรงเพรียว พร้อมจอ OLED ที่บอกวัตต์และจำนวนพัฟ",
+    shortDescription:
+      "แบต 900mAh ในตัว ปรับได้สูงสุด 25 วัตต์ มีจอ OLED ไว้ตั้งวัตต์และดูจำนวนพัฟ และชาร์จเร็วผ่าน USB-C ที่ 2A",
+  },
   "caliburn-g3-pro": {
     whoIsThisFor: {
       0: "อยากได้ Caliburn จอใหญ่ ไว้ดูวัตต์ แบต และจำนวนพัฟ",

@@ -413,11 +413,17 @@ export interface GuideSection {
    *  from YouTube's own data. A translated guide carries it in every locale's array (the arrays replace each other). Not
    *  in JSON-LD — the record-level clip stays the article's one VideoObject. */
   video?: ArticleReviewVideo;
+  /** Optional maker poster about exactly this section's subject (owner 16/10: "ในหน้าพวกบทความเรามีรูปประกอบ…ดีมั้ย"),
+   *  shown after the section's text and before its clip. Only files the product pages already show (no new renders);
+   *  `alt` in the locale of the array it sits in (a translated guide repeats it per locale, like `video`). */
+  image?: StoryImage;
 }
 
 export interface ArticleSubsection {
   heading: string;
   paragraphs: string[];
+  /** Same as `GuideSection.image`, for a poster about exactly this H3's subject. */
+  image?: StoryImage;
 }
 
 export interface ArticleFAQItem {
