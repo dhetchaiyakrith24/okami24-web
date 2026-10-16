@@ -1615,7 +1615,9 @@ export const uwellProducts: Product[] = [
       { key: "dimensions", label: "Dimensions", value: "115.5 × 24 × 13.9 mm", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
       { key: "weight", label: "Weight", value: "Approx. 47g", sourceStatus: "verified", sourceUrl: G3_OFFICIAL },
     ],
-    // UWELL's own page pictures, one per card (files.myuwell.com/uwell/product/caliburn-g3/pc…), text on them is UWELL's.
+    // UWELL's own page pictures, one per block (files.myuwell.com/uwell/product/caliburn-g3/pc…), text on them is UWELL's —
+    // the "more details" story (storyDetails) the other Caliburn pages use; no article or cover for this model.
+    storyDetails: true,
     features: [
       {
         id: "battery",
