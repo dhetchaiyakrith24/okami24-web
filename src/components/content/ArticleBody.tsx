@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ArticleFAQItem, ArticleReviewVideo, GuideSection, StoryImage } from "@/types/catalog";
@@ -65,11 +65,15 @@ export function renderInline(text: string, locale: string, keyPrefix: string): R
 }
 
 /** Section poster (owner 16/10). The product page's poster card (rounded, hairline border, black ground) and its credit
- *  line, so a poster looks the same wherever it appears. A tall poster is narrowed so it stays about 560px high. */
+ *  line, so a poster looks the same wherever it appears. From md up a tall poster is narrowed so it stays about 760px
+ *  high (designer 16/10: a 560px cap made the DRAG S3 coil labels unreadable at 1440); phones keep the full width. */
 function ArticleFigure({ img, linkLabel }: { img: StoryImage; linkLabel: string }) {
-  const maxWidth = img.height > img.width ? Math.round((560 * img.width) / img.height) : undefined;
+  const maxWidth = img.height > img.width ? Math.round((760 * img.width) / img.height) : undefined;
   return (
-    <figure className="mx-auto mt-3 flex w-full flex-col gap-2" style={maxWidth ? { maxWidth } : undefined}>
+    <figure
+      className="mx-auto mt-3 flex w-full flex-col gap-2 md:max-w-[var(--figure-max)]"
+      style={maxWidth ? ({ "--figure-max": `${maxWidth}px` } as CSSProperties) : undefined}
+    >
       <div className={img.transparent ? undefined : "overflow-hidden rounded-2xl border border-surface-border-soft bg-black"}>
         <Image src={img.src} alt={img.alt} width={img.width} height={img.height} sizes="(min-width: 768px) 720px, 100vw" className="block h-auto w-full" />
       </div>
