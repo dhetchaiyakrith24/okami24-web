@@ -42,7 +42,10 @@ export const SECTION_IMAGES = {
   mSwitchLanyard: { src: "/assets/products/m-switch-kit/story-lanyard.webp", alt: "โปสเตอร์ของ SALTHUB: M Switch มาพร้อมสายคล้องคอ", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
   caliburnG4ProOneTap: { src: "/assets/products/caliburn-g4-pro/story-one-tap.webp", alt: "ภาพจากคลิปของ UWELL: สลับโหมดบนจอทัชของ Caliburn G4 Pro", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro", width: 1600, height: 900 },
   caliburnG5Battery: { src: "/assets/products/caliburn-g5/story-battery-v4.webp", alt: "โปสเตอร์ของ UWELL: แบต 1600mAh ของ Caliburn G5", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2413, height: 1131, transparent: true },
-  caliburnG5TripleTap: { src: "/assets/products/caliburn-g5/story-triple-tap.webp", alt: "โปสเตอร์ของ UWELL: สลับโหมด Caliburn G5 ด้วยการแตะตัวเครื่องสามครั้ง", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1050, height: 613 },
+  caliburnG5TripleTap: { src: "/assets/products/caliburn-g5/story-triple-tap.webp", alt: "ภาพของ UWELL: นิ้วแตะตัวเครื่อง Caliburn G5 ซึ่งเป็นวิธีสลับโหมดของรุ่นนี้", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1050, height: 613 },
+  mSwitchCharge: { src: "/assets/products/m-switch-kit/story-charge.webp", alt: "โปสเตอร์ของ SALTHUB: ช่องชาร์จ Type-C และจอบอกระดับแบตของ M Switch", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
+  mSwitchAirflow: { src: "/assets/products/m-switch-kit/story-airflow.webp", alt: "โปสเตอร์ของ SALTHUB: ปุ่มปรับลมของ M Switch", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
+  argusG4Fill: { src: "/assets/products/argus-g4/story-fill-v2.webp", alt: "โปสเตอร์ของ VOOPOO: ARGUS G4 เติมน้ำยาด้านบน และปุ่มเลื่อนปรับลม", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g4`, width: 1591, height: 609 },
 } satisfies Record<string, StoryImage>;
 
 // Round SEO ข batch 4 (2026-09-21): publishedAt = the commit that first added all seven records
@@ -898,6 +901,7 @@ const allGuides: Guide[] = [
           {
             heading: "ทิ้งทั้งเครื่อง หรือทิ้งแค่หัว",
             paragraphs: ["พอตใช้แล้วทิ้งอย่าง [M Bar 9K](/products/m-bar-9k) กับ [M Bar 10K](/products/m-bar-10k) พอน้ำยาหมดก็ทิ้งทั้งเครื่อง พอตเปลี่ยนหัวทิ้งแค่หัว ขยะต่อครั้งจึงน้อยกว่า"],
+            image: SECTION_IMAGES.mBar15kSwap,
           },
           {
             heading: "แบตหมดไม่ได้แปลว่าต้องทิ้ง",
@@ -1037,6 +1041,7 @@ const allGuides: Guide[] = [
           "M Switch ดูดไม่ขึ้น ไฟกะพริบ ไล่เช็คตามลำดับเดียวกันได้เลย แกะพลาสติกที่ก้นพอต ชาร์จแบต เช็ดขั้วสัมผัสใต้หัวพอต ถอด [M Switch Pod](/products/m-switch-pod) แล้วเสียบกลับให้เข้าที่ และเว้นจังหวะระหว่างพัฟบ้าง",
           "พอตใช้แล้วทิ้งก็ไล่แบบเดียวกัน แต่ถ้าใช้มาจนใกล้จำนวนพัฟบนกล่องแล้ว อาการดูดไม่ขึ้นอาจมาจากน้ำยาหรือแบตที่หมดอายุการใช้งาน กรณีนี้เปลี่ยนเป็นตัวใหม่จะตรงกว่า ตัวเลขพัฟบนกล่องหมายถึงอะไร อ่านได้ที่ [พอตใช้แล้วทิ้ง 1 ตัว ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
         ],
+        image: SECTION_IMAGES.mSwitchScreen,
       },
       {
         heading: "Marbo ดูดไม่ขึ้น ไฟกะพริบ เช็คอะไรบ้าง",
@@ -1287,9 +1292,9 @@ const allGuides: Guide[] = [
           { heading: "จำนวนพัฟต่อหัว", paragraphs: ["Esko Bar Switch 20K หัวละ 20,000 พัฟ ส่วน M Switch หัวละ 15,000 พัฟ"] },
           { heading: "ความจุน้ำยา", paragraphs: ["Esko Bar Switch 20K ระบุความจุน้ำยา 18mL"] },
           { heading: "ความเข้มข้นนิโคติน", paragraphs: ["M Switch ระบุไว้ 30mg แบบ salt nic"] },
-          { heading: "แบตและการชาร์จ", paragraphs: ["Esko Bar Switch 20K แบต 850mAh ชาร์จที่ 5V 0.85A ส่วนตัวเครื่อง M Switch มีจอบอกระดับแบต ทั้งคู่ชาร์จผ่าน USB-C"] },
+          { heading: "แบตและการชาร์จ", paragraphs: ["Esko Bar Switch 20K แบต 850mAh ชาร์จที่ 5V 0.85A ส่วนตัวเครื่อง M Switch มีจอบอกระดับแบต ทั้งคู่ชาร์จผ่าน USB-C"], image: SECTION_IMAGES.mSwitchCharge },
           { heading: "คอยล์", paragraphs: ["Esko เขียนว่าเป็นระบบ Dual Coil (คอยล์สองตัว) ส่วน M Switch ใช้คอยล์ cotton mesh 1.0 โอห์ม"] },
-          { heading: "โหมดและช่องลม", paragraphs: ["Esko มีโหมด High กับ Low ปรับช่องลมได้ 3 ระดับ ส่วน M Switch มีปุ่มเลื่อนปรับลม"] },
+          { heading: "โหมดและช่องลม", paragraphs: ["Esko มีโหมด High กับ Low ปรับช่องลมได้ 3 ระดับ ส่วน M Switch มีปุ่มเลื่อนปรับลม"], image: SECTION_IMAGES.mSwitchAirflow },
         ],
       },
       {
@@ -1413,6 +1418,7 @@ const allGuides: Guide[] = [
           "G4 แบต 1300mAh มากกว่า G3 Pro ที่ 1000mAh ทั้งคู่มีจอ G4 เป็นจอสี ส่วน G3 Pro เป็นจอ LCD โอบด้านข้าง ปรับได้ 5–35 วัตต์ และปรับช่องลมได้เต็มช่วง ทั้งคู่ชาร์จผ่าน USB-C ที่ 2A",
           "ต่างกันชัดที่หัวพอต G4 ใช้ GPP มาในกล่อง 0.4 โอห์มกับ 0.9 โอห์ม ส่วน G3 Pro ใช้หัวพอต G3 มาในกล่อง 2 หัว 0.4 โอห์ม (3mL) กับ 0.9 โอห์ม (2.5mL) จะซื้อหัวพอตเพิ่ม ดูให้ตรงกับระบบของเครื่อง",
           "อยากได้แบตมากกว่า ดู G4 อยากปรับวัตต์และช่องลมเองได้เต็มช่วง ดู G3 Pro ค่าโอห์มกับช่องลมส่งผลกับแนวการสูบยังไง อ่าน [MTL กับ DTL](/guides/understanding-mtl-vs-dtl) หรือดู Caliburn ทั้งหมดที่ [UWELL](/brands/uwell)",
+          "ส่วน [Caliburn G3](/products/caliburn-g3) เป็นคนละรุ่นกับ G3 Pro แบต 900mAh ตั้งได้สูงสุด 25 วัตต์ มีจอ OLED บอกวัตต์และจำนวนพัฟ และใช้หัวพอตของ Caliburn G3 ที่มีคอยล์ในตัว 0.6 · 0.9 · 1.2 โอห์ม",
         ],
       },
     ],
@@ -1812,6 +1818,7 @@ const allGuides: Guide[] = [
           "หัวพอตที่เติมเองได้คือหัวพอตของพอตซิสเต็ม อย่างหัวพอต GPP ของตระกูล Caliburn จาก UWELL รวมถึงพอตคิทที่ใช้หัวพอตแบบเติม อย่างสาย ARGUS กับ DRAG ดูรุ่นทั้งหมดได้ในหมวดพอตคิท",
           "หัวพอตแบบเติมยังแบ่งตามตำแหน่งช่องเติมน้ำยาได้อีกสองแบบ คือเติมด้านบนกับเติมด้านข้าง หัวพอต GPP ของ UWELL มีทั้งสองแบบ และหัวที่มากับกล่องจะเป็นแบบไหน ขึ้นกับเวอร์ชันที่วางขาย อย่าง Caliburn G4 Pro เวอร์ชัน INT กับ FDA มากับหัวพอตเติมด้านข้าง ส่วนเวอร์ชัน TPD กับ CRC มากับหัวพอตเติมด้านบน ก่อนเติมจึงควรดูให้แน่ใจว่าช่องเติมของหัวที่อยู่ในมืออยู่ตรงไหน",
         ],
+        image: SECTION_IMAGES.argusG4Fill,
       },
       {
         heading: "หัวพอตแบบไหนเติมไม่ได้",
@@ -2048,6 +2055,7 @@ const allGuides: Guide[] = [
           "VOOPOO DRAG รุ่นไหนดี ขึ้นอยู่กับว่าคุณอยากได้อะไรจากเครื่อง ร้านเราจึงไม่จัดอันดับ แต่สรุปตามการใช้งานไว้ให้แบบนี้",
           "ถ้าอยากได้วัตต์สูง จอใหญ่ และปรับค่าได้ละเอียดด้วยล้อหมุน ลองดู DRAG 6 ถ้าอยากได้เครื่องตัวเล็กที่มีแบตในตัว และสูบ MTL หรือ RDL เป็นหลัก ลองดู DRAG S3 และถ้าชอบใช้ถ่านที่ถอดเปลี่ยนได้กับจอทัช ลองดู DRAG X3",
           "ถ้าเพิ่งเริ่มใช้พอตเป็นเครื่องแรก และยังไม่แน่ใจว่าต้องการเครื่องวัตต์สูงแบบ DRAG หรือเปล่า อ่าน [Pod System ตัวไหนดี เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system) ก่อนได้",
+          "ส่วน [DRAG X](/products/drag-x) ใช้ถ่าน 18650 หนึ่งก้อนที่ซื้อแยก ตั้งได้ 5–80 วัตต์ และใช้คอยล์ตระกูล PnP สเปกทั้งหมดอยู่ที่หน้าสินค้าของรุ่นนี้",
           "ราคาของแต่ละรุ่นดูได้ที่หน้าสินค้าของรุ่นนั้น และถ้าอยากถามเรื่องสีหรือรุ่นที่มีของตอนนี้ ทักไลน์ @okm24 ได้เลย",
         ],
       },
