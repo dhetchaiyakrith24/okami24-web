@@ -193,11 +193,11 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         answer: "พอตซิสเต็มอย่าง Caliburn ใช้น้ำยาขวดที่ซื้อแยก เติมลงหัวพอตเอง ส่วนพอตใช้แล้วทิ้งอย่าง M Bar 9K และหัวพอต M Switch Pod บรรจุน้ำยามาสำเร็จ ไม่ต้องซื้อน้ำยาแยก",
       },
       {
-        // Owner's genuine-check ruling (2026-09-21, Q2=ก): exactly three parts, Salthub + UWELL only,
+        // Owner's genuine-check ruling (2026-09-21, Q2=ก): Salthub + UWELL only, + the failed-check outcome (owner 16/10, BSOT §12 "Authenticity"),
         // claim wording = BSOT §12 in the owner's five phrases ("คลิปตอนแกะกล่อง" = the wording the
         // approved service pages already use for the same thing).
         question: "เช็คของแท้ยังไง",
-        answer: "ของ Salthub เช่น M Bar 9K และ M Switch ที่กล่องมี QR code กับเลขซีเรียล เช็คเองได้ที่เว็บทางการของ Salthub (salthub.com/authenticate) ส่วนของ UWELL เช่น Caliburn ที่กล่องมีแถบขูด ขูดออกจะเจอ QR code กับรหัสตัวเลข เช็คได้ที่เว็บทางการของ UWELL (myuwell.com/verify) ถ้าสินค้ามีปัญหา แจ้งเคลมได้ภายใน 7 วัน ต้องมีคลิปตอนแกะกล่อง ทางร้านเปลี่ยนสินค้าตัวเดิมให้ หรือเลือกรุ่นอื่นราคาเท่ากัน ไม่คืนเป็นเงินสด และตอบกลับภายใน 3 วันทำการ",
+        answer: "ของ Salthub เช่น M Bar 9K และ M Switch ที่กล่องมี QR code กับเลขซีเรียล เช็คเองได้ที่เว็บทางการของ Salthub (salthub.com/authenticate) ส่วนของ UWELL เช่น Caliburn ที่กล่องมีแถบขูด ขูดออกจะเจอ QR code กับรหัสตัวเลข เช็คได้ที่เว็บทางการของ UWELL (myuwell.com/verify) ถ้าเช็คแล้วไม่ผ่าน ให้ส่งผลเช็คพร้อมคลิปตอนแกะกล่องมาทางไลน์ภายใน 7 วัน ทางร้านจะตรวจสอบ แล้วแจ้งว่าจะเปลี่ยนของใหม่หรือคืนเงินให้ ส่วนสินค้าที่มีปัญหาอื่น แจ้งเคลมได้ภายใน 7 วัน ต้องมีคลิปตอนแกะกล่อง ทางร้านเปลี่ยนสินค้าตัวเดิมให้ หรือเลือกรุ่นอื่นราคาเท่ากัน ไม่คืนเป็นเงินสด และตอบกลับภายใน 3 วันทำการ",
       },
     ],
   },
@@ -330,7 +330,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
       },
       {
         question: "เช็คของแท้ยังไง",
-        answer: "ของ Salthub เช่น M Bar และ M Switch ที่กล่องมี QR code กับเลขซีเรียล เช็คเองได้ที่เว็บทางการของ Salthub (salthub.com/authenticate) ส่วนของ UWELL เช่น Caliburn ที่กล่องมีแถบขูด ขูดออกจะเจอ QR code กับรหัสตัวเลข เช็คได้ที่เว็บทางการของ UWELL (myuwell.com/verify) ถ้าสินค้ามีปัญหา แจ้งเคลมได้ภายใน 7 วัน ต้องมีคลิปตอนแกะกล่อง ทางร้านเปลี่ยนสินค้าตัวเดิมให้ หรือเลือกรุ่นอื่นราคาเท่ากัน ไม่คืนเป็นเงินสด และตอบกลับภายใน 3 วันทำการ",
+        answer: "ของ Salthub เช่น M Bar และ M Switch ที่กล่องมี QR code กับเลขซีเรียล เช็คเองได้ที่เว็บทางการของ Salthub (salthub.com/authenticate) ส่วนของ UWELL เช่น Caliburn ที่กล่องมีแถบขูด ขูดออกจะเจอ QR code กับรหัสตัวเลข เช็คได้ที่เว็บทางการของ UWELL (myuwell.com/verify) ถ้าเช็คแล้วไม่ผ่าน ให้ส่งผลเช็คพร้อมคลิปตอนแกะกล่องมาทางไลน์ภายใน 7 วัน ทางร้านจะตรวจสอบ แล้วแจ้งว่าจะเปลี่ยนของใหม่หรือคืนเงินให้ ส่วนสินค้าที่มีปัญหาอื่น แจ้งเคลมได้ภายใน 7 วัน ต้องมีคลิปตอนแกะกล่อง ทางร้านเปลี่ยนสินค้าตัวเดิมให้ หรือเลือกรุ่นอื่นราคาเท่ากัน ไม่คืนเป็นเงินสด และตอบกลับภายใน 3 วันทำการ",
       },
     ],
   },
@@ -899,7 +899,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
       { question: "Caliburn G5 使用哪种烟弹？", answer: "UWELL GPP 烟弹，有 0.4、0.6、0.9 和 1.2 欧姆四种阻值。同一种烟弹适用于大多数现款 Caliburn 设备。" },
       { question: "ARGUS G3 mini 使用哪种烟弹？", answer: "随附 ARGUS Top Fill Cartridge V2，0.7 欧姆。本店目前尚未单独销售 ARGUS 烟弹。" },
       { question: "开放式换弹设备用什么烟油？", answer: "Caliburn 这类开放式换弹设备使用另外购买的瓶装烟油，自行注入烟弹。M Bar 9K 这类一次性设备和 M Switch Pod 烟弹出厂已预填烟油，无需另购或注油。" },
-      { question: "怎么辨别正品？", answer: "Salthub 产品（如 M Bar 9K、M Switch）包装盒上有 QR 码和序列号，可在 Salthub 官网 salthub.com/authenticate 自行查验。Uwell 产品（如 Caliburn）包装盒上有刮开涂层，下面是 QR 码和数字码，可在 myuwell.com/verify 查验。若产品有问题，请在 7 天内提出并提供开箱视频；本店更换同款商品，或换成同价位的其他型号，不退现金，并在 3 个工作日内回复。" },
+      { question: "怎么辨别正品？", answer: "Salthub 产品（如 M Bar 9K、M Switch）包装盒上有 QR 码和序列号，可在 Salthub 官网 salthub.com/authenticate 自行查验。Uwell 产品（如 Caliburn）包装盒上有刮开涂层，下面是 QR 码和数字码，可在 myuwell.com/verify 查验。若验证未通过，请在 7 天内通过 LINE 发来验证结果和开箱视频，本店核实后，会告知您换新还是退款。若产品有其他问题，请在 7 天内提出并提供开箱视频；本店更换同款商品，或换成同价位的其他型号，不退现金，并在 3 个工作日内回复。" },
     ],
   },
   "what-is-a-pod-system": {
@@ -1003,7 +1003,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
     faq: [
       { question: "M Bar 10K 和 M Switch 有什么区别？", answer: "M Bar 10K 是整台一次性设备，额定最多 10,000 口，600mAh 可充电电池。M Switch Kit 保留机身，只更换 M Switch Pod 烟弹，每颗额定最多 15,000 口。" },
       { question: "M Switch Kit 使用哪种烟弹？", answer: "M Switch Pod，预填烟弹，直接插换，无需注油。" },
-      { question: "怎么辨别正品？", answer: "Salthub 产品（如 M Bar、M Switch）包装盒上有 QR 码和序列号，可在 Salthub 官网 salthub.com/authenticate 自行查验。Uwell 产品（如 Caliburn）包装盒上有刮开涂层，下面是 QR 码和数字码，可在 myuwell.com/verify 查验。若产品有问题，请在 7 天内提出并提供开箱视频；本店更换同款商品，或换成同价位的其他型号，不退现金，并在 3 个工作日内回复。" },
+      { question: "怎么辨别正品？", answer: "Salthub 产品（如 M Bar、M Switch）包装盒上有 QR 码和序列号，可在 Salthub 官网 salthub.com/authenticate 自行查验。Uwell 产品（如 Caliburn）包装盒上有刮开涂层，下面是 QR 码和数字码，可在 myuwell.com/verify 查验。若验证未通过，请在 7 天内通过 LINE 发来验证结果和开箱视频，本店核实后，会告知您换新还是退款。若产品有其他问题，请在 7 天内提出并提供开箱视频；本店更换同款商品，或换成同价位的其他型号，不退现金，并在 3 个工作日内回复。" },
     ],
   },
   "understanding-mtl-vs-dtl": {

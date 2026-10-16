@@ -131,7 +131,7 @@ const allGuides: Guide[] = [
         // Owner's genuine-check ruling (2026-09-21, Q2=ก): exactly three parts, no brand beyond the
         // two with a verified official check page, claim wording = BSOT §12 only.
         question: "How do I check a product is genuine?",
-        answer: "Salthub products such as the M Bar 9K and M Switch have a QR code and serial number on the box; check them on Salthub's official site at salthub.com/authenticate. Uwell products such as the Caliburn have a scratch-off strip on the box with a QR code and numeric code underneath; check them at myuwell.com/verify. If a product has a problem, claim within 7 days with an unboxing video; the shop replaces the same item or swaps to a model of the same price, with no cash refund, and replies within 3 business days.",
+        answer: "Salthub products such as the M Bar 9K and M Switch have a QR code and serial number on the box; check them on Salthub's official site at salthub.com/authenticate. Uwell products such as the Caliburn have a scratch-off strip on the box with a QR code and numeric code underneath; check them at myuwell.com/verify. If the product fails the check, send the result and your unboxing video to the shop on LINE within 7 days; the shop will review it and let you know whether it will replace the item or refund you. For any other problem, claim within 7 days with an unboxing video; the shop replaces the same item or swaps to a model of the same price, with no cash refund, and replies within 3 business days.",
       },
     ],
   },
@@ -270,7 +270,7 @@ const allGuides: Guide[] = [
       },
       {
         question: "How do I check a product is genuine?",
-        answer: "Salthub products such as the M Bar and M Switch have a QR code and serial number on the box; check them on Salthub's official site at salthub.com/authenticate. Uwell products such as the Caliburn have a scratch-off strip on the box with a QR code and numeric code underneath; check them at myuwell.com/verify. If a product has a problem, claim within 7 days with an unboxing video; the shop replaces the same item or swaps to a model of the same price, with no cash refund, and replies within 3 business days.",
+        answer: "Salthub products such as the M Bar and M Switch have a QR code and serial number on the box; check them on Salthub's official site at salthub.com/authenticate. Uwell products such as the Caliburn have a scratch-off strip on the box with a QR code and numeric code underneath; check them at myuwell.com/verify. If the product fails the check, send the result and your unboxing video to the shop on LINE within 7 days; the shop will review it and let you know whether it will replace the item or refund you. For any other problem, claim within 7 days with an unboxing video; the shop replaces the same item or swaps to a model of the same price, with no cash refund, and replies within 3 business days.",
       },
     ],
   },

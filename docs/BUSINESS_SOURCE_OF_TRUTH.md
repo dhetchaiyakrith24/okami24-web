@@ -375,7 +375,8 @@ differentiator.
 
 **Claim policy details (owner 2026-09-06, answers 13–17):**
 - **Outcome of an approved claim (13):** replacement with the **same item**. If it is out of
-  stock, the customer picks **another item of the same price**. **No cash refund**, ever.
+  stock, the customer picks **another item of the same price**. **No cash refund** — the one
+  exception is a failed authenticity check (bullet "Authenticity" below).
 - **Shipping costs (14):** the customer pays to send the item back; the shop pays to send the
   replacement.
 - **Return (15):** the item **must** be sent back in every approved case. Admin gives the return
@@ -394,8 +395,14 @@ differentiator.
   | 6 | Breaks after a while of use | **case by case, only inside the 7-day window** (owner's note: "รับภายใน 7 วันนับจากวันได้รับของ") |
   | 7 | Doesn't like it / changed mind / wants another flavour | not covered |
 
-  This list is the whole policy — do not add symptoms to it, and do not soften a "not covered"
+  This list + the "Authenticity" bullet below (owner 2026-10-16) is the whole policy — do not add symptoms to it, and do not soften a "not covered"
   line on the website.
+- **Authenticity (owner 2026-10-16, answering owner list item 67):** if the customer checks the
+  item on the brand's own official authenticity page and it **fails**, they message LINE with the
+  check result + the unboxing video, inside the same 7-day window. The shop reviews it, then
+  **replaces the item or refunds** (the shop decides after review). This is the **only case with a
+  cash refund**; every other claim stays "no cash refund". The unboxing video is also the proof
+  that the parcel really came from OKami24 (owner's reason — say it on the site).
 - **Published at /warranty on 2026-09-06** (owner wording), linked from the footer help column,
   the shipping page and the sitemap. The old `/preview/claims-policy` draft route is deleted.
 - **Owner decision 2026-09-07:** the original interview file's wording "ภายใน 7 วัน เคลมทุกกรณี" is
