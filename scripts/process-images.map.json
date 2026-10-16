@@ -8689,5 +8689,54 @@
    "y1": 0.855
   },
   "note": "IQOS official kit render pmi_G0002612_00 (2048 px transparent PNG, ?width=2048) from iqos.com/ph/en/shop/iluma-i-one-kit-electric-purple.html og:image; crop drops IQOS caption line under the device (list19 17/10)"
+ },
+ {
+  "source": "_incoming/list19/lambda/red.jpg",
+  "slug": "iqosheet-14",
+  "role": "card",
+  "note": "LAMBDA official store lambdasmoke.com i8 page gallery photo ..._1715766869952_0.jpg (1000x1000 on white, served _w2048 = 1000 px) - colour red (list19 17/10)",
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/list19/lambda/black.jpg",
+  "slug": "iqosheet-14",
+  "role": "variant",
+  "id": "black",
+  "note": "LAMBDA official store lambdasmoke.com i8 page gallery photo ..._1715766811589_0.jpg (1000x1000 on white, served _w2048 = 1000 px) - colour black (list19 17/10)"
+ },
+ {
+  "source": "_incoming/list19/lambda/green.jpg",
+  "slug": "iqosheet-14",
+  "role": "variant",
+  "id": "green",
+  "note": "LAMBDA official store lambdasmoke.com i8 page gallery photo ..._1715766834592_0.jpg (1000x1000 on white, served _w2048 = 1000 px) - colour green (list19 17/10)"
+ },
+ {
+  "source": "_incoming/list19/lambda/gray.jpg",
+  "slug": "iqosheet-14",
+  "role": "variant",
+  "id": "gray",
+  "note": "LAMBDA official store lambdasmoke.com i8 page gallery photo ..._1715766849652_0.jpg (1000x1000 on white, served _w2048 = 1000 px) - colour gray (list19 17/10)"
+ },
+ {
+  "source": "_incoming/list19/lambda/red.jpg",
+  "slug": "iqosheet-14",
+  "role": "variant",
+  "id": "red",
+  "note": "LAMBDA official store lambdasmoke.com i8 page gallery photo ..._1715766869952_0.jpg (1000x1000 on white, served _w2048 = 1000 px) - colour red (list19 17/10)"
+ },
+ {
+  "source": "_incoming/list19/lambda/gold.jpg",
+  "slug": "iqosheet-14",
+  "role": "variant",
+  "id": "gold",
+  "note": "LAMBDA official store lambdasmoke.com i8 page gallery photo ..._1715766886908_0.jpg (1000x1000 on white, served _w2048 = 1000 px) - colour gold (list19 17/10)"
+ },
+ {
+  "source": "_incoming/list19/lambda/white.jpg",
+  "slug": "iqosheet-14",
+  "role": "variant",
+  "id": "white",
+  "note": "LAMBDA official store lambdasmoke.com i8 page gallery photo ..._1715766907182_0.jpg (1000x1000 on white, served _w2048 = 1000 px) - colour white (list19 17/10)"
  }
 ]

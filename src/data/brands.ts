@@ -244,6 +244,10 @@ export const brands: Brand[] = [
     name: "LAMBDA",
     fullName: "LAMBDA",
     tagline: "Smart Induction Heating System.",
+    taglineTh: "เครื่องอุ่นยาสูบระบบเหนี่ยวนำ",
+    // Round list19 (17/10): first LAMBDA product on the site (i8) — the brand page shows from now on.
+    descriptionTh:
+      "LAMBDA เป็นผู้ผลิตเครื่องอุ่นยาสูบจากเซินเจิ้น ไม่เกี่ยวข้องกับ Philip Morris International เครื่องของ LAMBDA ไม่ใช่เครื่อง IQOS แต่ LAMBDA ระบุว่าใช้กับก้าน TEREA และ SENTIA ได้",
     description:
       "A Shenzhen-based heat-not-burn device manufacturer, not affiliated with Philip Morris International — its devices (e.g. the i8) are third-party heaters marketed as compatible with TEREA and SENTIA Smartcore sticks, not official IQOS hardware.",
     referenceUrl: "https://www.lambdasmoke.com/",

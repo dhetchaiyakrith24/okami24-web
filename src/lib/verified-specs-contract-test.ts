@@ -42,6 +42,8 @@ const MANUFACTURER_HOSTS = [
   "voopoo.com", "shop.voopoo.com", "iqos.com", "nevoks.com", "wotofo.com",
   // batch 4a (06/10): JOIWAY's Thai site — it serves JOIWAY's product API + poster files (_incoming/joiway/SOURCE.md)
   "thai.myjoiway.com",
+  // round list19 (17/10): LAMBDA's own store (lambdasmoke.com, "Shenzhen Original Technology Co., Ltd.")
+  "lambdasmoke.com", "www.lambdasmoke.com",
   // batch 4g (05/10): TFIT's own site — its product API + poster files (_incoming/sitewide-template/4/facts-tfit-m-power-20k.md)
   "tfitvape.com",
   // batch 5f (06/10): MOOOD's own site — offline now; its pages and files read from the Wayback Machine
@@ -55,7 +57,7 @@ const MANUFACTURER_HOSTS = [
 export const SOURCED_PUBLISHED_ROW_PRODUCTS = [
   "pod-159", // data round chat 2 (eskobarvape.com)
   "coil-55", "coil-68", "coil-54", "iqosheet-16", "iqosheet-18", // round data 2
-  "iqosheet-17", // round list19 (17/10, iqos.com/ph)
+  "iqosheet-17", "iqosheet-14", // round list19 (17/10, iqos.com/ph · lambdasmoke.com)
 ] as const;
 
 /** A number in one product's copy that is another product's verified fact, named as such in the sentence. */

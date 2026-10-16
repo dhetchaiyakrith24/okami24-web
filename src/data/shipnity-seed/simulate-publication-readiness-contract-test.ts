@@ -137,7 +137,8 @@ export function runSimulationContractTests(): SimulationContractResult[] {
   checkWithdrawn("Coil-92");
   checkWithdrawn("Coil-63");
   checkWithdrawn("Pod-169");
-  checkWithdrawn("IQOSHEET-14");
+  // IQOSHEET-14 republished round list19 (2026-10-17) with LAMBDA's own per-colour photos: 2 Shipnity children + 4 verified colours.
+  checkGenuinelyPublished("IQOSHEET-14", 2390, 6);
 
   // A product with no minimum copy (e.g. eliquid-62 — no brand/category/copy at all) must
   // correctly simulate as NOT ready, proving the simulation isn't rubber-stamping everything.

@@ -153,6 +153,11 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   //   ^ WITHDRAWN 2026-09-06 (owner decision, LAUNCH_AUDIT item 11): the card shows an INFY PLUS
   //     device with a flavour set that is not the one sold here — wrong-variant imagery.
   //     Entry removed = unpublished; data/media/copy kept. Re-add to republish with a correct photo.
+  // REPUBLISHED round list19 (2026-10-17): LAMBDA's own per-colour store photos replace the withdrawn crop (all 6 colours).
+  // Price = Shipnity MAX "ราคาขาย" ฿2,390 for IQOSHEET-14 and every child (Max list 2026-10-08 + re-read 2026-10-17);
+  // owner rule for warehouse products = the warehouse price (owner list item 41).
+  "IQOSHEET-14": { sellingPrice: 2390, lastPriceReview: "2026-10-17" },
+  // History — the 2026-09-02 approval below was withdrawn 2026-09-06:
   // "IQOSHEET-14": { sellingPrice: 2390, lastPriceReview: "2026-09-02" },
   //   ^ WITHDRAWN 2026-09-06 (owner decision, LAUNCH_AUDIT item 11): LAMBDA card is a blurry crop
   //     from a lifestyle photo — not acceptable for a ฿2,390 device. Entry removed = unpublished;

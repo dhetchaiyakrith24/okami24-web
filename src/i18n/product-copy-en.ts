@@ -36,6 +36,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "coil-87": { tagline: "Voopoo TPP Pod (empty pod)" },
   "coil-89": { tagline: "Jellybox V pod by RINCOE" },
   "coil-94": { tagline: "Caliburn G4&G3 Series pod by UWELL" },
+  "iqosheet-14": { tagline: "LAMBDA i8 induction heat-not-burn device" },
   "iqosheet-16": { tagline: "IQOS ILUMA i PRIME heated tobacco device" },
   "iqosheet-17": { tagline: "IQOS ILUMA i ONE all-in-one heated tobacco device" },
   "iqosheet-18": { tagline: "IQOS ILUMA i heated tobacco device" },
