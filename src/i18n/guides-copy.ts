@@ -8,7 +8,7 @@
  */
 import type { ArticleFAQItem, GuideSection } from "@/types/catalog";
 // Owner 05/10: a section's shop clip lives in every locale's array (they replace each other) — one definition, in guides.ts.
-import { SECTION_CLIPS } from "@/data/guides";
+import { SECTION_CLIPS, SECTION_IMAGES, SECTION_IMAGES_ZH } from "@/data/guides";
 
 export interface GuideCopy {
   title: string;
@@ -156,6 +156,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           "แบต 1350mAh ตัวเครื่องหนัก 40.85 กรัม หัวพอตในกล่องคือ ARGUS Top Fill Cartridge V2 0.7 โอห์ม 3mL (2mL ในเวอร์ชัน TPD) มีระบบกันรั่ว iCOSM CODE 2.0",
           "บอกตรง ๆ ก่อนตัดสินใจ ตอนนี้เว็บเรายังไม่มีหัวพอต ARGUS ขายแยก ที่ได้คือหัวที่มาในกล่อง",
         ],
+        image: SECTION_IMAGES.argusG3MiniTiny,
       },
       {
         heading: "ตัวอย่างจริง: พอตใช้แล้วทิ้งปรับช่องลมได้ (M Bar 9K)",
@@ -302,6 +303,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           "มี 3 โหมดวัตต์ Eco · Soft · Boost กดสองครั้งติดกันเพื่อสลับ ไฟ RGB เปลี่ยนสีบอกว่าอยู่โหมดไหน ส่วนไฟบอกแบตแสดงทีละ 25% ไม่ต้องเข้าเมนูอะไรเลย",
           "ส่วนที่ต้องแลกก็ตามหัวข้อแรก รสชาติกับความเข้มข้นนิโคตินได้ตามที่บรรจุมา เลือกเองไม่ได้ และพอน้ำยาหมดก็ทิ้งทั้งเครื่อง",
         ],
+        image: SECTION_IMAGES.mBar10kModes,
       },
       {
         heading: "ตรงกลาง: เครื่องระบบสวิตช์",
@@ -316,6 +318,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           "หัวพอตที่ใช้คือ [M Switch Pod](/products/m-switch-pod) บรรจุน้ำยาสำเร็จ ทำมาสำหรับ M Switch Kit น้ำยาหมดก็ถอดเปลี่ยนหัวใหม่ ตัวเครื่องใช้ตัวเดิม",
           "เทียบกับ M Bar 10K ที่ทิ้งทั้งเครื่อง M Switch ทิ้งแค่หัวพอต ใช้ง่ายเท่ากัน คือไม่ต้องเติมน้ำยา ไม่ต้องเปลี่ยนคอยล์ ต่างกันที่ขยะต่อครั้งน้อยกว่า เทียบสองแบบนี้ละเอียดอ่านต่อที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) ถ้ายังตัดสินใจไม่ได้ว่าจะเอาแบบไหน กลับไปเริ่มที่ [เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system)",
         ],
+        image: SECTION_IMAGES.mBar15kSwap,
         video: SECTION_CLIPS.mSwitch,
       },
     ],
@@ -372,6 +375,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           "ตัวโหมดเป็นโหมดที่ตั้งค่ามาให้ บวกช่อง Custom ให้ปรับเอง ไล่ตั้งแต่ไอนุ่มเบาไปจนถึงหนักและแน่นขึ้น หัวพอตที่ใช้ได้คือ UWELL GPP และหัวพอต G3 รุ่นก่อน",
           "ส่วนจอทัชบนพอตทำอะไรได้บ้าง และแลกกับอะไร อ่านที่ [จอทัชสกรีนบนพอต](/technology/onboard-touch-displays)",
         ],
+        image: SECTION_IMAGES.caliburnG4ProKokoModes,
         video: SECTION_CLIPS.caliburnG4ProKoko,
       },
       {
@@ -382,6 +386,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           "คอยล์ที่ใช้กับ DRAG X3 คือคอยล์ PnP X ของ VOOPOO หน้า DRAG X3 บนเว็บของ VOOPOO เองระบุว่าใช้คอยล์ PnP X ได้ทุกตัว",
           "รู้แล้วว่าตัวเองสูบแนวไหน แต่ยังไม่ได้เลือกเครื่อง เริ่มจาก [เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system)",
         ],
+        image: SECTION_IMAGES.dragX3Screen,
       },
     ],
     faq: [
@@ -433,6 +438,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
             paragraphs: [
               "แบตในตัว 1650mAh ชาร์จผ่าน USB-C ที่ 5V/2A สเปกระบุว่าเต็มในราว 45 นาที ตัวเลข mAh เอาไว้เทียบกับรุ่นอื่น ส่วนจะอยู่ได้กี่ชั่วโมงขึ้นกับว่าคุณสูบกี่วัตต์และถี่แค่ไหน วิธีชาร์จให้ถูกอยู่ที่ [วิธีดูแลแบต](/guides/battery-care-and-charging)",
             ],
+            image: SECTION_IMAGES.argusG4Battery,
           },
           {
             heading: "วัตต์ แรงดันไฟ และโอห์ม",
@@ -446,6 +452,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
               "จอ HD 0.85 นิ้ว โชว์แบต วัตต์ ค่าโอห์ม สถานะล็อก และจำนวนพัฟ ตัวเครื่องเป็นซิงค์อัลลอย หนัง และอะลูมิเนียมอัลลอย ส่วนบรรทัดหัวพอตที่ใช้ได้เขียนว่าเป็นระบบหัวพอต ARGUS เติมด้านบน มีหลายค่าโอห์ม บรรทัดนี้แหละที่ต้องอ่านต่อในหัวข้อสุดท้าย",
               "หัวพอตทรงเดียวแต่มีหลายโอห์ม หมายความว่ายังไง อ่านที่ [ระบบหัวพอตหลายโอห์ม](/technology/multi-resistance-cartridges)",
             ],
+            image: SECTION_IMAGES.argusG4Ohm,
           },
         ],
         video: SECTION_CLIPS.argusG4,
@@ -626,6 +633,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           "เครื่องที่มีเปอร์เซ็นต์แบตบนจอ ชาร์จเต็มแล้วร้านแนะนำให้ถอดสายออกเลย ส่วนเครื่องที่ไม่มีอะไรบอก ก็ต้องกะเวลาเอาเอง ชาร์จไปสักสองสามรอบก็จะกะได้แม่นขึ้นเหมือนมีนาฬิกาในใจ",
           "บางรุ่นบอกสถานะการชาร์จด้วยไฟ อย่าง [Caliburn G4 Mini](/products/caliburn-g4-mini) ตามคู่มือของ UWELL ไฟที่กะพริบตอนชาร์จบอกระดับแบต แดงคือแบตต่ำ น้ำเงินคือกลาง เขียวคือเพียงพอ ชาร์จเต็มแล้วไฟเขียวจะติดค้าง ไฟกะพริบแบบอื่นแปลว่าอะไร ดูได้ที่ [พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
         ],
+        image: SECTION_IMAGES.argusG4Battery,
       },
       {
         heading: "พอตใช้แล้วทิ้งชาร์จได้ไหม และชาร์จกี่นาที",
@@ -692,6 +700,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           "เครื่องที่ใช้ถ่านถอดเปลี่ยนได้อย่าง [DRAG X3](/products/drag-x3) ถ้าทำได้ให้ชาร์จด้วยแท่นชาร์จแยก และเช็คก่อนใช้ว่าฟิล์มหุ้มถ่านไม่ฉีกหรือลอก",
           "สเปกของ DRAG X3 ที่ยืนยันแล้วคือไม่มีแบตในตัว ใช้ถ่าน 18650 หรือ 21700 หนึ่งก้อน และถ่านไม่ได้แถมมาในกล่อง ต้องซื้อแยก ข้อดีที่ตามมาคือมีถ่านสำรองไว้ก้อนหนึ่ง ก็สลับใช้ต่อได้ทันทีระหว่างที่อีกก้อนชาร์จอยู่",
         ],
+        image: SECTION_IMAGES.dragX3Battery,
       },
     ],
     faq: [
@@ -880,6 +889,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           "电池 1350mAh，机身重 40.85 g。随附烟弹为 ARGUS Top Fill Cartridge V2，0.7 欧姆、3mL（TPD 地区为 2mL），配 iCOSM CODE 2.0 防漏系统。",
           "决定前先说清楚一点：本店目前尚未单独销售 ARGUS 烟弹，这里能买到的是盒内随附的那一颗。",
         ],
+        image: SECTION_IMAGES_ZH.argusG3MiniTiny,
       },
       {
         heading: "实例：可调气流的一次性设备（M Bar 9K）",
@@ -983,6 +993,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           "它有 Eco、Soft、Boost 三种功率模式，双击切换；RGB 指示灯会变色显示当前模式，另有按 25% 递减的电量 LED。全程不需要进入菜单。",
           "代价就是上面说的那一条：口味和尼古丁浓度只能是预填的那一种，烟油用完后整台设备就丢弃。",
         ],
+        image: SECTION_IMAGES_ZH.mBar10kModes,
       },
       {
         heading: "折中方案：换弹主机系统",
@@ -997,6 +1008,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           "配套烟弹是 [M Switch Pod](/products/m-switch-pod)：预填烟弹，专为 M Switch Kit 制作。用完换一颗新烟弹，机身留着。",
           "与整台丢弃的 M Bar 10K 相比，M Switch 只丢弃烟弹——同样简单（不注油、不换雾化芯），每次更换产生的废弃物更少。还没决定要哪种形态？回到 [选择你的第一款设备](/guides/choosing-your-first-pod-system) 从头开始。",
         ],
+        image: SECTION_IMAGES_ZH.mBar15kSwap,
         video: SECTION_CLIPS.mSwitch,
       },
     ],
@@ -1030,6 +1042,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           "这些模式是预设的吸感档位，外加一个可自定义的 Custom 档，从柔和轻盈到更强更扎实的击喉感。可用烟弹为 UWELL GPP 以及旧款 G3 烟弹。",
           "机身触控屏能做什么、代价是什么，见 [机身触控屏](/technology/onboard-touch-displays)。",
         ],
+        image: SECTION_IMAGES_ZH.caliburnG4ProKokoModes,
         video: SECTION_CLIPS.caliburnG4ProKoko,
       },
       {
@@ -1040,6 +1053,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           "DRAG X3 使用 VOOPOO 的 PnP X 雾化芯——VOOPOO 官方的 DRAG X3 页面写明，全部 PnP X 雾化芯都能用。",
           "已经知道自己的吸法，但还没选好设备？从 [选择你的第一款设备](/guides/choosing-your-first-pod-system) 开始。",
         ],
+        image: SECTION_IMAGES_ZH.dragX3Screen,
       },
     ],
     faq: [
@@ -1070,9 +1084,9 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           "拿 [ARGUS G4](/products/argus-g4) 的规格表逐行来看。下面每个数字都是其产品页上已验证的一行。",
         ],
         subsections: [
-          { heading: "电池与充电", paragraphs: ["1650mAh 内置电池，通过 USB-C 以 5V/2A 充电；规格表写明约 45 分钟充满。mAh 用来与其他设备比较——实际能用几小时取决于你设定的功率和抽吸频率。正确的充电方式见 [电池保养](/guides/battery-care-and-charging)。"] },
+          { heading: "电池与充电", paragraphs: ["1650mAh 内置电池，通过 USB-C 以 5V/2A 充电；规格表写明约 45 分钟充满。mAh 用来与其他设备比较——实际能用几小时取决于你设定的功率和抽吸频率。正确的充电方式见 [电池保养](/guides/battery-care-and-charging)。"], image: SECTION_IMAGES_ZH.argusG4Battery },
           { heading: "功率、电压与阻值", paragraphs: ["功率范围 5–35W，输出电压 3.2–4.2V，阻值范围 0.4–3.0Ω（阻值和功率如何影响吸法，见 [MTL 与 DTL](/guides/understanding-mtl-vs-dtl)）。在这个范围内把功率设在哪里，见 [如何选择功率与进气量](/guides/choosing-wattage-and-airflow)。"] },
-          { heading: "屏幕与烟弹", paragraphs: ["0.85 英寸 HD 屏幕，显示电量、功率、阻值、锁定状态和口数。机身为锌合金、皮革和铝合金。烟弹那一行写的是：ARGUS 顶部注油烟弹平台，多种阻值——这一行正是最后一节要继续说的。", "同一外形却有多种阻值的烟弹意味着什么，见 [多阻值烟弹平台](/technology/multi-resistance-cartridges)。"] },
+          { heading: "屏幕与烟弹", paragraphs: ["0.85 英寸 HD 屏幕，显示电量、功率、阻值、锁定状态和口数。机身为锌合金、皮革和铝合金。烟弹那一行写的是：ARGUS 顶部注油烟弹平台，多种阻值——这一行正是最后一节要继续说的。", "同一外形却有多种阻值的烟弹意味着什么，见 [多阻值烟弹平台](/technology/multi-resistance-cartridges)。"], image: SECTION_IMAGES_ZH.argusG4Ohm },
         ],
         video: SECTION_CLIPS.argusG4,
       },
@@ -1157,6 +1171,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           "对 [ARGUS G4](/products/argus-g4) 来说，「厂商指定的充电速率」就是 USB-C 5V/2A。其已验证的规格写明 1650mAh 内置电池约 45 分钟充满。",
           "这 45 分钟是规格表上的数字，不是我们自己计时的结果。充满一次之后能用多久，取决于设定的功率、屏幕使用和抽吸频率。不同型号之间怎么比较 mAh，见 [如何解读设备规格表](/guides/reading-a-spec-sheet)。",
         ],
+        image: SECTION_IMAGES_ZH.argusG4Battery,
       },
       {
         heading: "外置电芯（18650 / 21700）",
@@ -1164,6 +1179,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
           "像 [DRAG X3](/products/drag-x3) 这类使用可更换外置电芯的设备，应尽量使用专用外部充电器充电，并在每次使用前检查电芯外皮是否有破损。",
           "DRAG X3 已验证的规格：没有内置电池，使用单颗 18650 或 21700 电芯，且电芯不随机附带——需另外购买。好处是备一颗电芯，就能在另一颗充电时直接换上继续用。",
         ],
+        image: SECTION_IMAGES_ZH.dragX3Battery,
       },
     ],
     faq: [
