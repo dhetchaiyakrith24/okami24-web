@@ -1416,7 +1416,7 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g4-classic/card-v2.webp",
+        src: "/assets/products/caliburn-g4-classic/card-v3.webp",
         alt: "UWELL Caliburn G4 Classic, Classic Silver, three-quarter view",
         angle: "tilted, isolated — OKami24 Higgsfield remake (IMAGE_SPEC §0 item 7) from UWELL's own front photo of this model",
         transparentBackground: true,
@@ -1442,7 +1442,7 @@ export const uwellProducts: Product[] = [
     storyCover: { src: "/assets/products/caliburn-g4-classic/story-cover.webp", alt: "Official UWELL banner — the Caliburn G4 Classic and its light", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-classic", width: 1920, height: 1080 },
     openOnCardPhoto: true,
     lineupImage: {
-      src: "/assets/products/caliburn-g4-classic/lineup-v2.webp",
+      src: "/assets/products/caliburn-g4-classic/lineup-v3.webp",
       alt: "UWELL Caliburn G4 Classic, all 4 colours",
       sourceName: "OKami24 composite (from this page's colour photos)",
     },
@@ -1451,25 +1451,25 @@ export const uwellProducts: Product[] = [
         id: "abyss-blue",
         name: "Abyss Blue",
         swatchHex: "#4d636d",
-        image: { src: "/assets/products/caliburn-g4-classic/variant-abyss-blue-v2.webp", alt: "UWELL Caliburn G4 Classic, Abyss Blue" },
+        image: { src: "/assets/products/caliburn-g4-classic/variant-abyss-blue-v3.webp", alt: "UWELL Caliburn G4 Classic, Abyss Blue" },
       },
       {
         id: "alpine-green",
         name: "Alpine Green",
         swatchHex: "#324c42",
-        image: { src: "/assets/products/caliburn-g4-classic/variant-alpine-green-v3.webp", alt: "UWELL Caliburn G4 Classic, Alpine Green" },
+        image: { src: "/assets/products/caliburn-g4-classic/variant-alpine-green-v4.webp", alt: "UWELL Caliburn G4 Classic, Alpine Green" },
       },
       {
         id: "classic-black",
         name: "Classic Black",
         swatchHex: "#1a1a1a",
-        image: { src: "/assets/products/caliburn-g4-classic/variant-classic-black-v2.webp", alt: "UWELL Caliburn G4 Classic, Classic Black" },
+        image: { src: "/assets/products/caliburn-g4-classic/variant-classic-black-v3.webp", alt: "UWELL Caliburn G4 Classic, Classic Black" },
       },
       {
         id: "classic-silver",
         name: "Classic Silver",
         swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/caliburn-g4-classic/variant-classic-silver-v2.webp", alt: "UWELL Caliburn G4 Classic, Classic Silver" },
+        image: { src: "/assets/products/caliburn-g4-classic/variant-classic-silver-v3.webp", alt: "UWELL Caliburn G4 Classic, Classic Silver" },
       },
     ],
     specifications: [

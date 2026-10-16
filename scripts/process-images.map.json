@@ -4716,69 +4716,69 @@
   "fileName": "card-v2.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g4c-abyss-blue.png",
+  "source": "_incoming/img-1610/b8/key/D-abyss-blue.png",
   "slug": "caliburn-g4-classic",
   "role": "variant",
   "id": "abyss-blue",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Classic Silver render, Higgs Okm/2026-10-01 night - colours/colour-caliburn-g4-classic-classic-silver.png, same orientation as UWELL's front photo) cut out by Higgsfield image_background_remover (job b0d87918-7990-4be3-a6f4-9782735b55ab, 1 credit) + _incoming/image-sitewide/b-uwell/recolour-g4c.js moves the body colour (CIELAB), Classic Silver lifted to UWELL's near-white satin by _incoming/image-sitewide/b-uwell/silver-g4c.js; button and clear pod untouched; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
-   "reference": "body colour: the shop's photo of this colour (/assets/products/caliburn-g4-classic/variant-abyss-blue.webp), matching UWELL's colour collage files.myuwell.com/uwell/product/caliburn-g4-classic/mo/spe9.webp",
-   "fidelitySheet": "_incoming/image-sitewide/b-uwell/g4c-sheet.png"
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the site colour photo (the 01/10 render) on #2b2e33 as the only image, prompt = _incoming/img-1610/prompts.md \"G4 Classic\"; keyed by b8/keyg4.sh (matte3 + foot trim + side boxes + specks + pod hole fill), bottom = ONE silhouette from the classic-silver key aligned on each render's contact line (b8/silcut.js)",
+   "reference": "the site's own abyss-blue photo (variant-abyss-blue-v2.webp, from the 01/10 render of UWELL's colour) - render _incoming/img-1610/b8/out/abyss-blue-B.png",
+   "fidelitySheet": "_incoming/img-1610/b8/fid/g4c-all.jpg (old site photo beside the new file for all 4) - pod, button ring, bottom mark, body colour checked by eye"
   },
-  "note": "image-sitewide round, owner 01/10 'เดินงานแก้รูปสินค้าให้เสร็จ' — the KOKO method on G4 Classic (old colour photos 182x404)",
-  "fileName": "variant-abyss-blue-v2.webp"
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard; image-sitewide round, owner 01/10 'เดินงานแก้รูปสินค้าให้เสร็จ' — the KOKO method on G4 Classic (old colour photos 182x404)",
+  "fileName": "variant-abyss-blue-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g4c-alpine-green.png",
+  "source": "_incoming/img-1610/b8/key/D-alpine-green.png",
   "slug": "caliburn-g4-classic",
   "role": "variant",
   "id": "alpine-green",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Classic Silver render, Higgs Okm/2026-10-01 night - colours/colour-caliburn-g4-classic-classic-silver.png, same orientation as UWELL's front photo) cut out by Higgsfield image_background_remover (job b0d87918-7990-4be3-a6f4-9782735b55ab, 1 credit) + _incoming/image-sitewide/b-uwell/recolour-g4c.js moves the body colour (CIELAB), Classic Silver lifted to UWELL's near-white satin by _incoming/image-sitewide/b-uwell/silver-g4c.js; button and clear pod untouched; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
-   "reference": "body colour: measured on UWELL's own colour collage files.myuwell.com/uwell/product/caliburn-g4-classic/mo/spe9.webp (soft-lit group shots: deep forest green, CIELAB L 24-28 a -9..-12 b 1-3) -> target L 30 a -12.5 b 2.5 (recolour-g4c.js OVERRIDE)",
-   "fidelitySheet": "_incoming/image-sitewide/b-uwell/g4c-green/cmp.png"
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the site colour photo (the 01/10 render) on #2b2e33 as the only image, prompt = _incoming/img-1610/prompts.md \"G4 Classic\"; keyed by b8/keyg4.sh (matte3 + foot trim + side boxes + specks + pod hole fill), bottom = ONE silhouette from the classic-silver key aligned on each render's contact line (b8/silcut.js)",
+   "reference": "the site's own alpine-green photo (variant-alpine-green-v3.webp, from the 01/10 render of UWELL's colour) - render _incoming/img-1610/b8/out/alpine-green-B.png",
+   "fidelitySheet": "_incoming/img-1610/b8/fid/g4c-all.jpg (old site photo beside the new file for all 4) - pod, button ring, bottom mark, body colour checked by eye"
   },
-  "note": "image-sitewide round, owner 01/10 'ปรับให้เข้มตาม UWELL' — v2 followed the shop's retailer photo (lighter, olive); v3 follows UWELL's own photos",
-  "fileName": "variant-alpine-green-v3.webp"
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard; image-sitewide round, owner 01/10 'ปรับให้เข้มตาม UWELL' — v2 followed the shop's retailer photo (lighter, olive); v3 follows UWELL's own photos",
+  "fileName": "variant-alpine-green-v4.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g4c-classic-black.png",
+  "source": "_incoming/img-1610/b8/key/D-classic-black.png",
   "slug": "caliburn-g4-classic",
   "role": "variant",
   "id": "classic-black",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Classic Silver render, Higgs Okm/2026-10-01 night - colours/colour-caliburn-g4-classic-classic-silver.png, same orientation as UWELL's front photo) cut out by Higgsfield image_background_remover (job b0d87918-7990-4be3-a6f4-9782735b55ab, 1 credit) + _incoming/image-sitewide/b-uwell/recolour-g4c.js moves the body colour (CIELAB), Classic Silver lifted to UWELL's near-white satin by _incoming/image-sitewide/b-uwell/silver-g4c.js; button and clear pod untouched; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
-   "reference": "body colour: the shop's photo of this colour (/assets/products/caliburn-g4-classic/variant-classic-black.webp), matching UWELL's colour collage files.myuwell.com/uwell/product/caliburn-g4-classic/mo/spe9.webp",
-   "fidelitySheet": "_incoming/image-sitewide/b-uwell/g4c-sheet.png"
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the site colour photo (the 01/10 render) on #2b2e33 as the only image, prompt = _incoming/img-1610/prompts.md \"G4 Classic\"; keyed by b8/keyg4.sh (matte3 + foot trim + side boxes + specks + pod hole fill), bottom = ONE silhouette from the classic-silver key aligned on each render's contact line (b8/silcut.js)",
+   "reference": "the site's own classic-black photo (variant-classic-black-v2.webp, from the 01/10 render of UWELL's colour) - render _incoming/img-1610/b8/out/classic-black-B.png",
+   "fidelitySheet": "_incoming/img-1610/b8/fid/g4c-all.jpg (old site photo beside the new file for all 4) - pod, button ring, bottom mark, body colour checked by eye"
   },
-  "note": "image-sitewide round, owner 01/10 'เดินงานแก้รูปสินค้าให้เสร็จ' — the KOKO method on G4 Classic (old colour photos 182x404)",
-  "fileName": "variant-classic-black-v2.webp"
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard; image-sitewide round, owner 01/10 'เดินงานแก้รูปสินค้าให้เสร็จ' — the KOKO method on G4 Classic (old colour photos 182x404)",
+  "fileName": "variant-classic-black-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/g4c-classic-silver.png",
+  "source": "_incoming/img-1610/b8/key/D-classic-silver.png",
   "slug": "caliburn-g4-classic",
   "role": "variant",
   "id": "classic-silver",
   "aiRender": {
-   "tool": "Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Classic Silver render, Higgs Okm/2026-10-01 night - colours/colour-caliburn-g4-classic-classic-silver.png, same orientation as UWELL's front photo) cut out by Higgsfield image_background_remover (job b0d87918-7990-4be3-a6f4-9782735b55ab, 1 credit) + _incoming/image-sitewide/b-uwell/recolour-g4c.js moves the body colour (CIELAB), Classic Silver lifted to UWELL's near-white satin by _incoming/image-sitewide/b-uwell/silver-g4c.js; button and clear pod untouched; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
-   "reference": "the master itself; UWELL's own Classic Silver front photo (/assets/products/caliburn-g4-classic/card.png) for shape",
-   "fidelitySheet": "_incoming/image-sitewide/b-uwell/g4c-sheet.png"
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the site colour photo (the 01/10 render) on #2b2e33 as the only image, prompt = _incoming/img-1610/prompts.md \"G4 Classic\"; keyed by b8/keyg4.sh (matte3 + foot trim + side boxes + specks + pod hole fill), bottom = ONE silhouette from the classic-silver key aligned on each render's contact line (b8/silcut.js)",
+   "reference": "the site's own classic-silver photo (variant-classic-silver-v2.webp, from the 01/10 render of UWELL's colour) - render _incoming/img-1610/b8/out/classic-silver-B.png",
+   "fidelitySheet": "_incoming/img-1610/b8/fid/g4c-all.jpg (old site photo beside the new file for all 4) - pod, button ring, bottom mark, body colour checked by eye"
   },
-  "note": "image-sitewide round, owner 01/10 'เดินงานแก้รูปสินค้าให้เสร็จ' — the KOKO method on G4 Classic (old colour photos 182x404)",
-  "fileName": "variant-classic-silver-v2.webp"
+  "note": "round img-1610 16/10 - studio re-shoot to the G5 light standard; image-sitewide round, owner 01/10 'เดินงานแก้รูปสินค้าให้เสร็จ' — the KOKO method on G4 Classic (old colour photos 182x404)",
+  "fileName": "variant-classic-silver-v3.webp"
  },
  {
-  "source": "_incoming/image-sitewide/b-uwell/site/card-g4c.png",
+  "source": "_incoming/img-1610/b8/key/card-tilt.png",
   "slug": "caliburn-g4-classic",
   "role": "card",
   "replaces": "/assets/products/caliburn-g4-classic/card.png",
   "aiRender": {
-   "tool": "the classic-silver photo of this set tilted 12 degrees in 2D (_incoming/image-sitewide/tilt-card.js) — no new render; Higgsfield nano_banana_pro 4k, ONE master (the night 01/10 Classic Silver render, Higgs Okm/2026-10-01 night - colours/colour-caliburn-g4-classic-classic-silver.png, same orientation as UWELL's front photo) cut out by Higgsfield image_background_remover (job b0d87918-7990-4be3-a6f4-9782735b55ab, 1 credit) + _incoming/image-sitewide/b-uwell/recolour-g4c.js moves the body colour (CIELAB), Classic Silver lifted to UWELL's near-white satin by _incoming/image-sitewide/b-uwell/silver-g4c.js; button and clear pod untouched; pre-sized by _incoming/image-sitewide/b-uwell/presize.js",
-   "reference": "the master itself; UWELL's own Classic Silver front photo (/assets/products/caliburn-g4-classic/card.png) for shape",
-   "fidelitySheet": "_incoming/image-sitewide/b-uwell/g4c-sheet.png"
+   "tool": "Higgsfield Nano Banana Pro 2K 9:16 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the site colour photo (the 01/10 render) on #2b2e33 as the only image, prompt = _incoming/img-1610/prompts.md \"G4 Classic\"; keyed by b8/keyg4.sh (matte3 + foot trim + side boxes + specks + pod hole fill), bottom = ONE silhouette from the classic-silver key aligned on each render's contact line (b8/silcut.js)",
+   "reference": "the site's own classic-silver photo (variant-classic-silver-v2.webp, from the 01/10 render of UWELL's colour) - render _incoming/img-1610/b8/out/classic-silver-B.png",
+   "fidelitySheet": "_incoming/img-1610/b8/fid/g4c-all.jpg (old site photo beside the new file for all 4) - pod, button ring, bottom mark, body colour checked by eye"
   },
-  "note": "image-sitewide round 3b (b) 01/10 — the page opens on one sharp tilted device (openOnCardPhoto)",
-  "fileName": "card-v2.webp"
+  "note": "round img-1610 16/10 - card = the Classic Silver re-shoot turned 12° like card-v2; image-sitewide round 3b (b) 01/10 — the page opens on one sharp tilted device (openOnCardPhoto)",
+  "fileName": "card-v3.webp"
  },
  {
   "source": "_incoming/image-sitewide/b-voopoo/site/g3m-sky-blue.png",
