@@ -54,27 +54,38 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   card + lineup (checker PASS 570cf13c; bottom = one shared silver silhouette). NEXT: argus-g4 gallery (hero/detail) → caliburn-g5
   other colours → the rest of the round order. State, prompts, pipelines, page helpers, lessons to fold in =
   `_incoming/img-1610/NEXT.md` (read it first) · prompts `_incoming/img-1610/prompts.md`.
-3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side chat 2, worktree `.claude/worktrees/seo-all-keys-2-c830d3`,
-  own build tree `_incoming/wt-build` inside it + test server `next start -p 3414`; `_incoming/seo-keys/setup-build.sh <ref>` moves +
-  rebuilds it — the first run's node_modules copy = PowerShell robocopy; the worktree root's `node_modules` = a junction to it) ·
+3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side chat 3, worktree `.claude/worktrees/seo-all-keys-a38889`,
+  own build tree `_incoming/wt-build` + test server `next start -p 3414`; `_incoming/seo-keys/setup-build.sh <sha>` moves + rebuilds it
+  (~5 min; pass a sha, never HEAD — HEAD = the build tree's own); worktree `node_modules` = a junction to the build tree's copy) ·
   【ห้ามแตะ】 product images + image map (image round) · every price file. Order = SEO_LANDSCAPE §9.6.
-  DONE [ตรวจแล้ว]: batch 1 key list #499 · batches 2 + 5 #502 d5fae710 · #514 ff2b9de6 (checker PASS db388bd3, round 2 of 3): Thai guide
-  /guides/comparing-voopoo-drag-models + /how-to-order · /shipping · /faq heads and copy for "สั่งพอตออนไลน์ / พอตส่งด่วน / ซื้อพอตที่ไหน"
-  + 3 /faq ordering items (BSOT §3/§8/§10/§12) · #519 64cf1051 (checker PASS 4b70ea0e + one 13.5 #2 (จ) fix): 5 old /faq answers
-  whose collapsed line ends flipped meaning ("ไม่ | ส่งขึ้นเซิร์ฟเวอร์", "ตั้งใจไม่ | ฟันธง") reworded.
-  Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them (§9.6 row 3 lists the pages).
-  Drafts waiting for 22/10 (they link frozen pages) in `_incoming/seo-keys/`: b4-flavour · b4-switch (also owner item 65) · b4-argus ·
-  b4-disposable · b6-genuine ("พอตของแท้ ดูยังไง" — row 24 measures "พอตของแท้" on / until 22/10; owner item 67) — each lists its
-  "links after 22/10" and its open questions. Maker check pages = `_incoming/seo-keys/authenticity-research.md`. Working notes = `_incoming/seo-keys/next-notes.md`.
-  NEXT: 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" section) → batch 3 head set (seo-auditor reads the paper set
-  first; baseline = `_incoming/seo-keys/seo-auditor-open.md`; "สั่ง/ซื้อพอตออนไลน์" now sits on /how-to-order — `/` keeps
-  "ร้านพอตออนไลน์") → merge the 4 drafts → FAQAccordion server HTML (answers render only when opened, so FAQ answer links are not
-  in the HTML — shared by /faq, product and guide FAQs → whole-sitemap scan, after 22/10) · "พอตของแท้" = researcher on maker check
-  pages done (draft b6-genuine) · product flavour FAQs wait for the FAQAccordion fix (product FAQs are neither in the HTML nor in
-  JSON-LD today, 16/10). Owner list 63 open. Answered 16/10: 64 "ราคาส่ง" + 66 "เติมน้ำยาพอตยังไง" title (§18 "Head copy") ·
-  65 "พอตเปลี่ยนหัว" in that guide's title (THAI_STYLE round 10B line) · 67 = BSOT §12 "Authenticity" (fail + video + 7 days →
-  replace or refund, the only refund case) → b6-genuine's "ไม่ผ่าน" answer must say exactly that and link /warranty.
-  Line breaks in collapsed FAQ answers: scan with `_incoming/seo-keys/wb-openscan.js` (each answer opened) — LESSONS พ34.
+  DONE [ตรวจแล้ว]: batch 1 key list #499 · batches 2 + 5 #502 · #514 DRAG guide + /how-to-order · /shipping · /faq buying copy ·
+  #519 old /faq answers whose collapsed line ends flipped meaning.
+  IN PR (branch seo-keys-guides-a, chat 3): batches 4 + 6 = five Thai guides choosing-a-switch-pod · choosing-a-disposable ·
+  choosing-a-pod-flavor · comparing-voopoo-argus-models (title B) · checking-a-genuine-pod (fail = BSOT §12, links /warranty).
+  Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them + no change on them (read-next boxes
+  included). Tools chat 3 (`_incoming/seo-keys/`): `linkmap.js` (every sitemap page's links + title/meta/H1, `--diff` flags frozen
+  pages) · `wbfix-gen.tsx` + `wb-driver2.js` (word-swap / seed candidates measured in the real element, FAQ answers opened) ·
+  `wb-openscan.js` (LESSONS พ34).
+  HELD LINKS — add right after the 22/10 read, then re-run linkmap (boxes move): switch guide: M Switch Kit → m-switch-kit (H2 1 ¶2 ·
+  H2 2 ¶2 · H2 4 ¶1 · summary) · Esko Bar Switch 20K → pod-159 (H2 1 ¶2 · H2 3 ¶1) · INFY 20K → infy-20k (INFY H2) · relatedProductSlugs
+  + m-switch-kit, pod-159 · disposable guide: Joiway F4 → joiway-f4 · INFY 20K → infy-20k · Esko Bar Switch 20K → pod-159 (INFY vs Esko) ·
+  Joiway F3 → joiway-f3 (held: it put the guide into /brands/joiway's box) · flavour guide: INFY 20K → infy-20k · JOIWAY F4 → joiway-f4 ·
+  JOIWAY F3 → joiway-f3 · ARGUS guide: argus-g4 + argus-g4-mini (model list H2 1 ¶2 + front of relatedProductSlugs) + title A "ARGUS G4
+  vs G4 mini ต่างกันยังไง เทียบ VOOPOO ARGUS 4 รุ่น" · genuine guide: INFY ¶ → /brands/infy · Esko Bar ¶ → pod-159 · existing FAQs that
+  say a SALTHUB box has "QR + serial" (choosing-your-first-pod-system, open-system-vs-disposable, en/zh too) → today's photo check +
+  link here. Left plain ON PURPOSE (they pushed SEO_BASELINE owner pages out of boxes — measured): brand links in the genuine guide,
+  category links in the switch / flavour guides, RELX Creator in the disposable guide, /brands/voopoo in the ARGUS guide, the
+  disposable guide's relatedProductSlugs.
+  NEXT: merge the guides PR → batch 5 on pages that are not frozen (charging / can't-draw / blinking light by brand from maker
+  manuals · pod/coil care · Marbo flavour names · Caliburn comparisons; m-switch-kit "เปลี่ยนหัว" = frozen → after 22/10) →
+  second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
+  head set (seo-auditor reads the paper set first; baseline `_incoming/seo-keys/seo-auditor-open.md` in the chat-2 worktree) →
+  held links → FAQAccordion server HTML (answers render only when opened — shared by /faq, product and guide FAQs → whole-sitemap
+  scan, after 22/10) → product flavour FAQs. Owner list 63 open. Answered 16/10: 64 · 65 · 66 · 67 (§18 "Head copy", THAI_STYLE
+  round 10B line, BSOT §12 "Authenticity").
+  Line breaks: new copy must leave 0 latin-term / compound / negation / number-unit flags at 390 + 1440 (approved guides carry only
+  single-word-last-line) — model names outside MODEL_NAMES (TFIT M Power · nexBAR 18K · RELX Creator · Muro Connector · QR code)
+  split; wording only (thai-typography.ts is locked).
   Tool (owner 16/10): skill `content-strategy` (#508) = the way to plan pillars, clusters, buyer stages and the article order for the
   remaining batches — its OKami24 rules at its end (keymap = SEO_LANDSCAPE §0).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
