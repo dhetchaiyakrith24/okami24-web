@@ -132,6 +132,13 @@ This must become the website's main commerce/catalog data layer for:
 - cross-sell
 - merchant knowledge
 
+### Models customers search for but the shop does not stock (owner 2026-10-16, list item 63)
+**Owner: "ลงทั้งหมดครับ ของไม่มีขายไม่เป็นไรเอา Seo".** Every model on the item-63 list gets a product page even when the
+warehouse has none: Caliburn G3 (non-Pro) · VOOPOO Drag X · M Bar 18K · Marbo 25K · INFY 12K · JOIWAY 12K / 20K ·
+Esko Bar 20K (non-switch) · nexBAR Switch 15K · RELX Infinity / Diva / Sparta / Novo · TEREA sticks. Facts and images come
+from the manufacturer only; the page shows the sold-out state (`src/data/stock/sold-out.ts`) and **no price unless the
+warehouse supplies one** (prices are never typed by hand). Same catalogue rule as "show every flavour the maker offers".
+
 ---
 
 ## 5. Pricing
@@ -593,8 +600,9 @@ depend on the visitor again.
 
 - **The site never guesses.** It does not read the visitor's country (no `cf-ipcountry`, no
   `x-vercel-ip-country`, no geo-IP service) and does not read the browser's `Accept-Language`.
-  The guessing code — `src/proxy.ts` and `src/i18n/detect-locale.ts` — was **deleted** rather than
-  pointed at the new host's header, on the owner's instruction: "ยิ่งน้อยยิ่งพลาดยาก". A contract
+  The guessing code — `src/i18n/detect-locale.ts` and the country check in `src/proxy.ts` — was **deleted** rather than
+  pointed at the new host's header, on the owner's instruction: "ยิ่งน้อยยิ่งพลาดยาก". (`src/proxy.ts` came back on
+  2026-09-30 for another job only — it makes the image optimizer answer WebP — and reads no country or language.) A contract
   test in `src/i18n/i18n-contract-test.ts` fails the build if geo detection reappears.
 - **The language button stays visible** on every page (header, all widths) so foreign visitors can
   switch themselves. Thai customers are the business; other languages are a courtesy.
