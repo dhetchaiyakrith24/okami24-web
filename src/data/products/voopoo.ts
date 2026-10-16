@@ -808,15 +808,22 @@ export const voopooProducts: Product[] = [
       { id: "green", name: "Green", swatchHex: "#77b190", image: { src: "/assets/products/drag-6/variant-green-v2.webp", alt: "VOOPOO DRAG 6, Green" } },
       { id: "metal-gray", name: "Metal Gray", swatchHex: "#8c8f93", image: { src: "/assets/products/drag-6/variant-metal-gray-v2.webp", alt: "VOOPOO DRAG 6, Metal Gray" } },
     ],
-    // All-colours image (IMAGE_SPEC §0 item 5): owner 04/10 "Drag 6 ได้ครับ" — the HYBRID draft replaces the VMATE-MAX row
-    // (lineup-v2). Layout = the RELX poster zigzag the owner sent for Drag 6 (b-edge/relx-studio.js d6), devices = the same 7
-    // choked 4K renders as the colour photos above; only the LOW-FREQUENCY light (a 24×48 ratio grid per device) comes from an
-    // AI relight, so no AI pixel or text lands on a device; floor = a mirror of each true device (b-edge/d6-hybrid.js,
-    // d6-hy-publish.js under _incoming/image-sitewide/).
+    // All-colours images (IMAGE_SPEC §0 item 5). 16/10 (round img-1610): the hybrid lineup-v3 of 04/10 was still "too small"
+    // and "still graphic" (owner) → two groups (4 + 3, maker order) of NEW studio re-shoots standing on the floor in one row,
+    // like Drag S3 / X3 (owner's Drag exception 07/10). Each colour = Higgsfield Nano Banana Pro 2K (Unlimited, 0 credits), image 1 =
+    // VOOPOO's own photo of that colour (shop.voopoo.com gallery, standalone device; Black on a mid-grey backdrop so its edge
+    // can be keyed), IMAGE_PROMPTS v3 Drag wording; keyed by look-batch/run.js, foot band cut to the real outline
+    // (look-batch/drag-6/footcut.js), row by look-batch/lineup-row.js --row --pick. The colour photos above are unchanged
+    // (owner-passed exception, IMAGE_SPEC §0 item 8). Picks + checks: _incoming/img-1610/b11/.
     lineupImage: {
-      src: "/assets/products/drag-6/lineup-v3.webp",
-      alt: "VOOPOO DRAG 6, all 7 colors",
-      sourceName: "OKami24 composite (OKami24's renders of each colour; light from a Higgsfield relight)",
+      src: "/assets/products/drag-6/lineup-v4.webp",
+      alt: "VOOPOO DRAG 6, colours 1–4 of 7",
+      sourceName: "OKami24 composite (OKami24 studio renders of each colour, Higgsfield, from VOOPOO's photos)",
+    },
+    lineupImage2: {
+      src: "/assets/products/drag-6/lineup2-v4.webp",
+      alt: "VOOPOO DRAG 6, colours 5–7 of 7",
+      sourceName: "OKami24 composite (OKami24 studio renders of each colour, Higgsfield, from VOOPOO's photos)",
     },
     specifications: [
       { key: "battery", label: "Battery", value: "4400mAh built-in (two 2200mAh cells)", sourceStatus: "verified" },
