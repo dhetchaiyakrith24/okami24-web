@@ -57,8 +57,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (storyDetails page never renders role "detail" assets) · caliburn-g5 colours (UWELL renders since 02/10) · Drag S3/X3 (07/10) ·
   row line-ups (argus-g4-mini 07/10, G3 Pro 02/10) · M Bar 10K anatomy size = component layout, next design round. NEXT: caliburn-g4-mini 12 colours (flat renders) → eye the rest of audit2/sheets → mood-monster-14k (label art = risky). Chat moved 16/10 ~20:10 at a batch boundary (nothing unchecked). State, prompts, pipelines, page helpers, lessons to fold in =
   `_incoming/img-1610/NEXT.md` (read it first) · prompts `_incoming/img-1610/prompts.md`.
-3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side chat 4 seo-all-keys-4, worktree `.claude/worktrees/mystifying-driscoll-575ab6`,
-  own build tree `_incoming/wt4` + test server `next start -p 3414`; `_incoming/seo-images/setup-build.sh <sha>` (run from the worktree root) moves + rebuilds it
+3s OPEN ROUND "SEO all keys" = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side-chat line 2 since 16/10 ~20:15, worktree `.claude/worktrees/seo-line2`,
+  own build tree `_incoming/wt5` + test server 3415 (3416 = this line's second port); `_incoming/seo-images/setup-build5.sh <sha>` (run from the worktree root) moves + rebuilds it
   (~5 min; pass a sha, never HEAD — HEAD = the build tree's own); worktree `node_modules` = a junction to the build tree's copy;
   chat 3's tools copied to `_incoming/seo-keys/`) ·
   【ห้ามแตะ】 product images + image map (image round) · every price file. Order = SEO_LANDSCAPE §9.6.
@@ -94,9 +94,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   number (maker poster the owner supplied, no URL) — the guides repeat what those product pages already print; cut both if the
   owner wants strict maker-URL only. Switch guide body says "เครื่องระบบสวิตช์" (THAI_STYLE 10B line: "พอตเปลี่ยนหัว" = title, links, first explanation).
   Second-pass key research DONE 16/10 = SEO_LANDSCAPE §9.7 (+ §9.6 rows 8–10) · cluster notes `_incoming/seo-keys/r2-*.md`.
-  NEXT (§9.6 row 9, pages not frozen): posters in the translated guides (th/en/zh arrays, alt per locale; skip white charts and
-  posters whose product page swaps a phone version) → batch 5 on pages that are not frozen (charging / can't-draw / blinking light by brand from maker
-  manuals · pod/coil care · Marbo flavour names · Caliburn comparisons; m-switch-kit "เปลี่ยนหัว" = frozen → after 22/10) →
+  DONE line 2 [ตรวจแล้ว]: #557 fce9d1e3 (checker PASS 4b2e0176) = 9 posters × th/en/zh in 5 translated guides (SECTION_IMAGES_EN / _ZH;
+  skipped: G5 triple-tap (phone version), white pod charts, what-is-a-pod-system until 22/10) · #558 d1ed192e (checker r1 FAIL → r2 PASS
+  c6422d00) = comparing-caliburn-models H2 + FAQ "G4 vs G4 Mini" + FIX: the guide said G4 / G4 Mini ship with 0.4 + 0.9 (verified rows:
+  Mini = one 0.6Ω, G4 = by market version). §9.4 checked 16/10: charging / no-draw / coil / disposable-fade / burnt FAQs already done.
+  NEXT (pages not frozen): Caliburn G4 Pro vs G5 + G5 Lite vs Lite SE wait (G5 / G5 Lite = watch row 3) → §9.7 row 9 heads (seo-auditor
+  reads the paper set first) → "พอต 15k คือ" → open-system-vs-disposable / disposable-vs-switch-pod FAQs (§9.4 word "มาโบ" rule) →
   second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
   head set (seo-auditor reads the paper set first; baseline `_incoming/seo-keys/seo-auditor-open.md` in the chat-2 worktree) →
   held links → FAQAccordion server HTML (answers render only when opened — shared by /faq, product and guide FAQs → whole-sitemap
@@ -124,7 +127,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   map entry (cobalt-blue.jpg) still sits beside the new one.
   NOT REAL (report only): M Bar 18K · Marbo 25K · RELX Diva / Sparta / Novo · nexBAR Switch 15K (owner item 68: nexPOD 15K instead?).
   JOIWAY 12K / 20K = F3 / F4 already live (alias = SEO chat after 22/10).
-  NEXT: TEREA publish after item 69 (Friday relays the answer) · item 68 · after the 22/10 GSC read: INFY 12K + Esko Bar 20K
+  Owner 16/10 (relayed by Friday, words checked in the main chat): item 69 = TEREA ฿220 per pack (20 sticks; print no carton count) ·
+  item 68 = add WOTOFO nexPOD 15K. TEREA BLOCKED 16/10: the app's auto-mode classifier denied the edit of publication-approvals.ts
+  ("Real-World Transactions") — not worked around; ready to apply = one line `"IQOSHEET-15": { sellingPrice: 220, lastPriceReview:
+  "2026-10-16" }` + `_incoming/p63/terea-skumap.patch` + shortDescription "… ราคาต่อ 1 ซอง" (worktree `.claude/worktrees/seo-line2-terea`,
+  branch p63-terea-publish, clean) — needs the owner (or a chat the owner opens) to allow that edit. RELX ฿990 / Esko ฿389 of item 69:
+  owner's answer covered TEREA only → still open.
+  NEXT: TEREA publish once allowed · nexPOD 15K page (maker facts + images, sold out, no price) · after the 22/10 GSC read: INFY 12K + Esko Bar 20K
   ("ESKO BAR 498", warehouse Pod-130) · then round-close (tag p63-1610).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
