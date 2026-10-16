@@ -53,9 +53,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   card + lineup (checker PASS 570cf13c; bottom = one shared silver silhouette) · #533 DRAG 6 all-colours = two studio line-ups
   4 + 3 standing in a row (checker PASS ec96207e; colour photos untouched) · Caliburn G3 card + 6 swatch colours made here for
   side chat products-63 (live through their #534) · #549 Caliburn G5 Lite SE 8 colours + lineup (checker PASS 26c70a7, merged b2ee1959) · #552 coil-94 = the new GPP 3-pack (admin 16/10): card + 4 resistances,
-  box + 3 pods (checker PASS 61a52f38, merged 52b5c41a) · RELX Infinity 2 Plus card (94 %) delivered to the SEO line for #540 (`_incoming/img-1610/b15/site/card-v2.webp`). VOID 16/10 (already done / not drawn): argus-g4 gallery
+  box + 3 pods (checker PASS 61a52f38, merged 52b5c41a) · #562 Caliburn G4 mini 12 colours + card + 2 lineups, upright like G4 Classic
+  (checker PASS 6ce518ae, merged 0ae8d8a8, live 200 page + 15 files; one shared bottom outline, pipeline b16/) · RELX Infinity 2 Plus card (94 %) delivered to the SEO line for #540 (`_incoming/img-1610/b15/site/card-v2.webp`). VOID 16/10 (already done / not drawn): argus-g4 gallery
   (storyDetails page never renders role "detail" assets) · caliburn-g5 colours (UWELL renders since 02/10) · Drag S3/X3 (07/10) ·
-  row line-ups (argus-g4-mini 07/10, G3 Pro 02/10) · M Bar 10K anatomy size = component layout, next design round. NEXT: caliburn-g4-mini 12 colours (flat renders) → eye the rest of audit2/sheets → mood-monster-14k (label art = risky). Chat moved 16/10 ~20:10 at a batch boundary (nothing unchecked). State, prompts, pipelines, page helpers, lessons to fold in =
+  row line-ups (argus-g4-mini 07/10, G3 Pro 02/10) · M Bar 10K anatomy size = component layout, next design round. NEXT: eye the rest of audit2/sheets → mood-monster-14k (label art = risky) · RELX Infinity 2 Plus cap card-v3 (secondary). Chat moved 16/10 ~22:15 at a batch boundary after #562 (nothing unchecked). State, prompts, pipelines, page helpers, lessons to fold in =
   `_incoming/img-1610/NEXT.md` (read it first) · prompts `_incoming/img-1610/prompts.md`.
 3s OPEN ROUND "SEO all keys" — PAUSED 16/10 ~21:15 until the weekly quota reset 18/10 22:00 (owner "พักสาย SEO เก็บไว้ให้รูป";
   nothing unchecked, nothing open) = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side-chat line 2 since 16/10 ~20:15, worktree `.claude/worktrees/seo-line2`,
