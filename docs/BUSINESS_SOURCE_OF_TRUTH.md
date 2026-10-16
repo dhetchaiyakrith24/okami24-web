@@ -138,6 +138,9 @@ warehouse has none: Caliburn G3 (non-Pro) · VOOPOO Drag X · M Bar 18K · Marbo
 Esko Bar 20K (non-switch) · nexBAR Switch 15K · RELX Infinity / Diva / Sparta / Novo · TEREA sticks. Facts and images come
 from the manufacturer only; the page shows the sold-out state (`src/data/stock/sold-out.ts`) and **no price unless the
 warehouse supplies one** (prices are never typed by hand). Same catalogue rule as "show every flavour the maker offers".
+Owner 2026-10-16 (items 68–69): the warehouse price applies where the warehouse lists the model ("ใส่ตามคลัง") — TEREA ฿220 per pack
+of 20 sticks, RELX Infinity 2 Plus ฿990, Esko Bar 20000 ฿389 (for its page when it is made) · WOTOFO nexPOD 15K replaces the non-existent
+"nexBAR Switch 15K".
 
 ---
 

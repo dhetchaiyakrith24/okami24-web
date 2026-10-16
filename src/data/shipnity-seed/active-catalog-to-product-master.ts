@@ -582,7 +582,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   },
   "IQOSHEET-15": {
     tagline: "ก้าน TEREA สำหรับ IQOS ILUMA",
-    shortDescription: "ก้าน TEREA สำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International)",
+    shortDescription: "ก้าน TEREA สำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International) ขายเป็นซอง ซองละ 20 ก้าน",
   },
   "IQOSHEET-16": {
     tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i PRIME",

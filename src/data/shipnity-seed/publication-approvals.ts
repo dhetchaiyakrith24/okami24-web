@@ -149,19 +149,10 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   //   ^ WITHDRAWN 2026-09-06 (owner decision, LAUNCH_AUDIT item 11): LAMBDA card is a blurry crop
   //     from a lifestyle photo — not acceptable for a ฿2,390 device. Entry removed = unpublished;
   //     data/media/copy kept. Re-add to republish once an isolated product photo exists.
-  // IQOSHEET-15 (IQOS TEREA) — WITHDRAWN from publication (owner quality review, 2026-09-03,
-  // Sections 6/7). Was approved above at ฿220 as of 2026-09-02; the owner's screenshot-based
-  // review does not approve the current TEREA presentation and asked for it to come down "for
-  // now, until a future review approves it again." Re-evaluating against the new visual/truth
-  // standard (Section 7) confirms real coherence gaps behind that call: only 11 of this parent's
-  // 16 real active flavor children have an exact official photo (the other 5 fall back to a
-  // neutral placeholder), so the published flavor family is not yet uniformly backed by real
-  // per-flavor media — an inconsistent set, not a complete one, even though every flavor name
-  // itself is a verified real TEREA flavor. Removing this entry (rather than deleting any TEREA
-  // data) is the actual, literal unpublish action per this file's own contract — every other
-  // TEREA data/media/copy asset is left in place so a future pass can re-approve without
-  // rebuilding. See docs/BUSINESS_SOURCE_OF_TRUTH.md if this withdrawal should also be reflected
-  // there.
+  // IQOSHEET-15 (IQOS TEREA) — withdrawn 2026-09-03 (owner: images not uniform); republished 2026-10-16: round p63 rebuilt
+  // every flavour with its own iqos.com/id pack image (#544), and the owner approved the warehouse price per pack
+  // (owner item 69: "มันคือราคาต่อ 1 ซองถูกต้องไหม 1 ซอง 20 ตัว … ถ้าใช่แก้ตามนี้รันงานได้เลย" — Shipnity Max IQOSHEET-15 ฿220, every option "/ 1 ซอง").
+  "IQOSHEET-15": { sellingPrice: 220, lastPriceReview: "2026-10-16" },
   "IQOSHEET-16": { sellingPrice: 4900, lastPriceReview: "2026-09-02" },
   "IQOSHEET-18": { sellingPrice: 3900, lastPriceReview: "2026-09-02" },
   // Tier-1 disposable growth mission (2026-09-03): Pod-180 (nexBar CLEAR 18K — no brand since 2026-09-30) was the last
