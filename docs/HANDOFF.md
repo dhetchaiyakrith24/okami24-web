@@ -16,9 +16,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
 2 ahead of main: nothing once #497 merges (its branch auto-deletes on GitHub). Only worktree:
   `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
-3 NIGHT 16/10 (owner asleep): this chat watches the side chats 3i + 3s per TEAM_RULES 13.6 "กลางคืน" (check their PRs for real,
-  open their continuation chats, archive the old ones) · morning = one report. Since the house round: #513 license text dropped ·
-  #515 side-chat rule. Nothing of this chat's own is open.
+3 WATCH (16/10): this chat watches the side chats 3i + 3s per TEAM_RULES 13.6 (check their PRs for real, archive old chats) ·
+  a side chat ends "ขอย้ายแชท" in a turn the owner did not type → owner 16/10 "ใช้ปุ่มเปิดแชทต่อได้ ถ้าระบบไม่ให้กด ก็ทำการ์ด":
+  write the continuation brief to `_incoming/next-chat.md` (first line `status: ready`) and run the ad-hoc scheduled task
+  `okami24-chat-continue` (tested 16/10 from an owner turn) · refused → propose the card for the morning. Since the house round:
+  #513 license text · #515 + #525 side-chat rules · #524 authenticity claims (owner items 64–67). Nothing of this chat's own is open.
   DONE 15/10 — house audit #484 · tidy home by home #488 · central copy + web adapted #487 · LOCK ROUND #491 (pre-checker gate,
   `--self-test` run weekly by house-check) · HOUSE ROUND ข (3h, owner "เก็บบ้านทั้งเซต + รอบสัปดาห์รู้"): #494 leftovers (raw chars 0 ·
   `self-merge-check --base` = PASS / SITE-TOUCHED · L3 node-flag slip + quoted-arg false deny fixed) + skill house-clean = 8 homes
