@@ -1428,7 +1428,7 @@ const allGuides: Guide[] = [
               "G5 · G5 Lite · G5 Lite SE · G4 · G4 Mini และ G4 Classic ใช้หัวพอต GPP (G Pod Platform) ของ UWELL ส่วน G4 Pro ใช้ได้ทั้ง GPP และหัวพอต G3 สำหรับ G3 Pro หน้าสินค้าระบุหัวพอต G3 มาในกล่อง 2 หัว คือ 0.4 โอห์ม (3mL) กับ 0.9 โอห์ม (2.5mL)",
               // Round "SEO all keys" 16/10: the old line ("G4 and G4 Mini come with 0.4 + 0.9, 0.6 and 1.2 sold separately") contradicted
               // the verified rows — G4 Mini box = one 0.6Ω, G4 box = by market version (uwell.ts "included-pod" / pod-compat rows).
-              "หัว GPP ที่มาในกล่องของ G4 กับ G4 Mini ไม่เหมือนกัน G4 Mini มาพร้อมหัว 0.6 โอห์ม 1 หัว ส่วน G4 ขึ้นกับเวอร์ชันที่วางขาย อย่างเวอร์ชัน INT มาพร้อมหัว 0.4 โอห์มกับ 0.9 โอห์ม เรื่องดูแลหัวพอตอยู่ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
+              "หัว GPP ที่มาในกล่องของ G4 กับ G4 Mini ต่างกัน G4 Mini มาพร้อมหัว 0.6 โอห์ม 1 หัว ส่วน G4 ขึ้นกับเวอร์ชันที่วางขาย อย่างเวอร์ชัน INT มาพร้อมหัว 0.4 โอห์มกับ 0.9 โอห์ม เรื่องดูแลหัวพอตอยู่ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
             ],
           },
         ],
