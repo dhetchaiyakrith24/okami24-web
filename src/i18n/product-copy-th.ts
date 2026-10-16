@@ -468,7 +468,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       chip: "GENE.TT มีโหมด SMART และโหมด SCORE",
     },
     features: {
-      chip: { title: "ชิป GENE.TT ยิงได้ใน 0.001 วินาที", description: "VOOPOO ระบุว่าชิป GENE.TT ยิงได้ภายใน 0.001 วินาที" },
+      chip: { title: "ชิป GENE.TT ยิงได้ใน 0.001 วินาที", description: "VOOPOO ระบุว่าชิป GENE.TT ยิงได้เร็วภายใน 0.001 วินาที" },
       smart: { title: "โหมด SMART ช่วยแนะนำวัตต์", description: "ใส่คอยล์แล้ว เครื่องจะอ่านค่าคอยล์ แล้วแนะนำวัตต์ที่เหมาะให้ และจำวัตต์ที่ตั้งไว้ครั้งล่าสุด" },
       airflow: { title: "หัวพอตยึดด้วยแม่เหล็ก", description: "หัวพอต PCTG 4.5mL ใช้แม่เหล็กยึดกับตัวเครื่อง VOOPOO บอกว่าเติมน้ำยาได้ง่ายและสะอาด" },
       battery: { title: "ใช้ถ่าน 18650 ก้อนเดียว", description: "DRAG X ใช้ถ่าน 18650 หนึ่งก้อน ชาร์จในตัวเครื่องผ่าน USB-C ได้เร็ว ส่วนตัวถ่านต้องซื้อแยก" },
