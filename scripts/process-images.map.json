@@ -8070,5 +8070,11 @@
   "role": "variant",
   "id": "misty-leaf",
   "note": "RELX global store image (relxnow.com product JSON, Shopify CDN), single device, transparent (round p63, 16/10)"
+ },
+ {
+  "source": "_incoming/p63/dragx/src/card.png",
+  "slug": "drag-x",
+  "role": "card",
+  "note": "VOOPOO DRAG X page image drag2-main.png (VOOPOO CDN sen.voopoo.com.cn), 579x837 transparent (round p63, 16/10)"
  }
 ]

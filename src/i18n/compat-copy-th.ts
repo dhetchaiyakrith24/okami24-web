@@ -53,6 +53,9 @@ export const COMPAT_NOTES_TH: Record<string, string> = {
   "5V/3A charging.": "ชาร์จ 5V/3A",
   // Round p63 (16/10): RELX Infinity 2 Plus.
   "RELX prefilled pods, 1.9mL each.": "หัวพอตบรรจุสำเร็จของ RELX หัวละ 1.9mL",
+  // Round p63 (16/10): VOOPOO DRAG X.
+  "PnP-VM1 0.3Ω and PnP-VM6 0.15Ω come in the kit; PnP-RBA fits.": "ในกล่องมีคอยล์ PnP-VM1 0.3Ω และ PnP-VM6 0.15Ω ใส่ PnP-RBA ได้",
+  "USB-C fast charging.": "ชาร์จเร็วผ่าน USB-C",
   "Takes every PnP X coil; PnP X 0.15Ω and 0.3Ω come in the kit.": "ใช้คอยล์ PnP X ได้ทุกตัว ในกล่องมี 0.15Ω และ 0.3Ω",
   "0.4–3.0Ω resistance range.": "ช่วงโอห์ม 0.4–3.0Ω",
   "0.1–3.0Ω resistance range.": "ช่วงโอห์ม 0.1–3.0Ω",
