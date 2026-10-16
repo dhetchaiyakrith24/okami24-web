@@ -410,6 +410,9 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round "SEO all keys" batch 4 (16/10): thai-copy's head line for the Drag family comparison.
   "comparing-voopoo-drag-models":
     "DRAG 6 กับ DRAG S3 ต่างกันยังไง และ DRAG X3 ต่างจาก DRAG 6 ตรงไหน เทียบแบต วัตต์ จอ หัวพอต และขนาดของ VOOPOO DRAG ทีละเรื่อง ให้เลือกได้ตรงกับการใช้งาน",
+  // Round "SEO all keys" batches 4 + 6 (16/10, chat 3): thai-copy's head lines for the buying guides (SEO_LANDSCAPE §9.2 #3–#7).
+  "choosing-a-switch-pod":
+    "พอตเปลี่ยนหัว รุ่นไหนดี ยี่ห้อไหนดี เลือกตามความต้องการ ทั้งพัฟต่อหัว จอ โหมด กลิ่น และขนาด พร้อมตัวอย่าง M Switch · Zero · RELX Creator · Esko Bar Switch 20K",
 };
 
 /** Row C19 — keyed by technology entry id. */

@@ -2023,6 +2023,109 @@ const allGuides: Guide[] = [
     ],
     relatedProductSlugs: ["drag-6", "drag-s3", "drag-x3"],
   },
+  {
+    // Round "SEO all keys" batch 4 (SEO_LANDSCAPE §9.2 #4 — autocomplete "พอตเปลี่ยนหัว รุ่นไหนดี / ยี่ห้อไหนดี / 20k / 15k"):
+    // the switch-system devices on the storefront, grouped by what the buyer wants. "พอตเปลี่ยนหัว" in title/H1 = owner item 65
+    // (16/10, THAI_STYLE round 10B line). Numbers = verified spec rows of salthub.ts / relx.ts / Pod-159 (eskobarvape) / flavour
+    // lists (thai-copy 16/10, sources in the round's b4-switch-draft.md). Muro Connector puffs left out (retailer source only).
+    // No link to m-switch-kit / pod-159 / infy-20k until the 22/10 GSC read (SEO_BASELINE watch rows) — HANDOFF §16 3s.
+    id: "choosing-a-switch-pod",
+    slug: "choosing-a-switch-pod",
+    title: "พอตเปลี่ยนหัว รุ่นไหนดี ยี่ห้อไหนดี ดูจากอะไร",
+    dek: "พอตเปลี่ยนหัวรุ่นไหนดี ขึ้นอยู่กับว่าคุณอยากได้อะไร ร้านเราแยกรุ่นที่มีบนเว็บให้ดูตามความต้องการ ทั้งพัฟต่อหัว จอ โหมด จำนวนกลิ่น และขนาดเครื่อง",
+    category: "buying-guide",
+    readingTimeMin: 6,
+    publishedAt: "2026-10-16",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "พอตเปลี่ยนหัว รุ่นไหนดี",
+        paragraphs: [
+          "พอตเปลี่ยนหัวรุ่นไหนดี หรือยี่ห้อไหนดี คำตอบขึ้นอยู่กับว่าคุณอยากได้อะไรจากเครื่อง บางคนอยากได้พัฟต่อหัวเยอะ บางคนอยากมีจอไว้ดูแบต บางคนอยากได้กลิ่นให้เลือกเยอะ หรืออยากได้เครื่องตัวเล็กไว้พกติดตัว ร้านเราจึงไม่จัดอันดับ แต่แยกรุ่นที่มีบนเว็บให้ดูตามความต้องการทีละแบบ",
+          "พอตเปลี่ยนหัวคือพอตที่เก็บตัวเครื่องไว้ชาร์จใช้ต่อ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จเมื่อหัวเดิมหมด ไม่ต้องเติมน้ำยาเอง บนเว็บเราเรียกแบบนี้ว่าเครื่องระบบสวิตช์ รุ่นที่มีให้ดูตอนนี้มาจากสามยี่ห้อ ของ SALTHUB คือ M Switch Kit · [Zero Pro](/products/zero-pro) · [Zero Nano](/products/zero-nano) ของ RELX คือ [RELX Creator](/products/relx-creator) และของ Esko Bar คือ Esko Bar Switch 20K",
+          "ถ้ายังลังเลว่าจะเลือกพอตเปลี่ยนหัวหรือพอตใช้แล้วทิ้ง อ่าน[พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)ก่อนได้ บทความนี้พูดถึงการเลือกรุ่นอย่างเดียว",
+        ],
+      },
+      {
+        heading: "ก่อนเลือกตัวเครื่อง ดูหัวพอตไปด้วย",
+        paragraphs: [
+          "ตัวเครื่องซื้อครั้งเดียว แต่หัวพอตต้องซื้อไปเรื่อย ๆ ตลอดที่ใช้ ร้านเราจึงแนะนำให้ดูหัวพอตของรุ่นนั้นไปพร้อมกัน ว่าหัวละกี่พัฟ มีกลิ่นให้เลือกเท่าไหร่ และใส่กับเครื่องรุ่นไหนได้บ้าง",
+          "[M Switch Pod](/products/m-switch-pod) ใช้กับตัวเครื่อง M Switch Kit ส่วน [Zero Cartridge](/products/zero-cartridge) หัวเดียวกันใส่ได้ทั้ง Zero Pro และ Zero Nano ถ้ามีสองเครื่องก็ใช้หัวร่วมกันได้ Esko Bar Switch 20K ใช้หัวพอตของ Esko Bar Switch เอง และ RELX Creator ใส่ได้ทั้งหัว RELX Creator Pod กับหัว [Muro Connector](/products/muro-connector-20k) สองรุ่นนี้ร้านยืนยันจากของจริงที่มีอยู่",
+          "ถ้าจะใช้หัวพอตรุ่นอื่นนอกจากที่บอกไว้ ทักไลน์ @okm24 ถามร้านก่อนได้",
+        ],
+      },
+      {
+        heading: "อยากได้พัฟต่อหัวเยอะ ดูรุ่น 20K กับ 15K",
+        paragraphs: [
+          "ถ้ากำลังหาพอตเปลี่ยนหัว 20K บนเว็บเรามีสองทาง ทางแรกคือ Esko Bar Switch 20K ที่ผู้ผลิตระบุไว้หัวละสูงสุด 20,000 พัฟ ทางที่สองคือ RELX Creator คู่กับหัว Muro Connector 20K ซึ่งร้านยืนยันว่าใส่ด้วยกันได้",
+          "ส่วนพอตเปลี่ยนหัว 15K คือ M Switch ของ SALTHUB ตระกูลเดียวกับที่หลายร้านเรียกว่า Marbo ใช้หัว M Switch Pod ที่ SALTHUB ระบุไว้หัวละสูงสุด 15,000 พัฟ และร้านเราเรียกชุดนี้ว่า M Bar 15K หรือ Marbo 15K",
+          "ส่วนตระกูล Zero โปสเตอร์ Zero Pro ของ SALTHUB ระบุไว้ที่ 5,000 พัฟ ตระกูลนี้มีเรื่องอื่นให้เลือกมากกว่า อย่างโหมดและขนาดเครื่อง ตามหัวข้อด้านล่าง",
+          "ตัวเลขพัฟคือจำนวนที่ผู้ผลิตระบุ จะสูบได้ใกล้ตัวเลขนั้นแค่ไหน ขึ้นกับวิธีสูบของแต่ละคน ส่วน Esko Bar Switch 20K กับ M Switch ต่างกันตรงไหนอีกบ้าง ร้านเทียบไว้ทีละข้อที่[Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch)",
+        ],
+      },
+      {
+        heading: "อยากมีจอไว้ดูแบต",
+        paragraphs: [
+          "รุ่นที่ผู้ผลิตเขียนเรื่องจอไว้ชัดมีสองรุ่น รุ่นแรกคือ RELX Creator มีจอพิกเซลที่โชว์หน้าอีโมจิ กดปุ่มครั้งเดียวก็ดูแบตได้ อีกรุ่นคือ M Switch Kit มีจอดิจิทัลบอกระดับแบต แสดงทั้งตอนกำลังชาร์จและเมื่อชาร์จเต็ม",
+          "RELX Creator ขายเฉพาะตัวเครื่อง หัวพอตซื้อแยก ตัวเครื่องมีแบต 800mAh และกดปุ่มสองครั้งติดกันเพื่อสลับระหว่าง 15 วัตต์ในโหมด Normal กับ 25 วัตต์ในโหมด Boost",
+        ],
+      },
+      {
+        heading: "อยากปรับแรงสูบได้",
+        paragraphs: [
+          "ถ้าอยากสลับระหว่างสูบเบา ๆ กับสูบให้แรงขึ้นบนเครื่องเดียว Zero Pro มี 3 โหมด คือ Low-end · Mid-range · High-end ส่วน Esko Bar Switch 20K มีโหมด High กับ Low และ RELX Creator สลับได้ระหว่าง Normal กับ Boost ตามหัวข้อข้างบน",
+          "เรื่องช่องลม M Switch Kit มีปุ่มเลื่อนปรับลม Esko Bar Switch 20K ปรับช่องลมได้ 3 ระดับ RELX Creator ก็ปรับช่องลมได้เช่นกัน ส่วน Zero Pro ลมเข้าทางด้านข้างของเครื่อง",
+        ],
+      },
+      {
+        heading: "อยากได้กลิ่นให้เลือกเยอะ",
+        paragraphs: [
+          "นับจากรายชื่อกลิ่นบนหน้าสินค้าของเว็บเรา Zero Cartridge มี 22 กลิ่น หัวพอตของ Esko Bar Switch 20K มี 20 กลิ่น หัว Muro Connector มี 20 กลิ่น และ M Switch Pod มี 17 กลิ่น",
+          "กลิ่นไหนมีของตอนนี้ ทักไลน์ @okm24 ถามได้ ส่วนกลิ่นไหนของ M Switch Pod เป็นสายเย็นหรือสายองุ่น ร้านแยกไว้ให้ที่[Marbo กลิ่นไหนดี](/guides/choosing-a-marbo-flavor)",
+        ],
+      },
+      {
+        heading: "อยากได้เครื่องตัวเล็ก พกง่าย",
+        paragraphs: [
+          "Zero Nano เป็นเครื่องระบบสวิตช์ตัวเล็กของตระกูล Zero แบต 500mAh และใช้หัว Zero Cartridge เดียวกับ Zero Pro ส่วน Zero Pro เป็นเครื่องทรงเพรียว หน้าตาคล้ายปากกา แบต 380mAh",
+          "ถ้าอยากห้อยเครื่องไว้กับตัว M Switch Kit มีสายคล้องคอมาให้ด้วย ตามที่ SALTHUB ระบุ",
+        ],
+      },
+      {
+        heading: "อยากได้แบตอึด",
+        paragraphs: [
+          "ถ้าดูจากขนาดแบตที่ผู้ผลิตระบุ Esko Bar Switch 20K แบต 850mAh · RELX Creator 800mAh · Zero Nano 500mAh และ Zero Pro 380mAh",
+          "ตัวเลข mAh ใช้เทียบได้ว่าชาร์จหนึ่งครั้งอยู่ได้นานกว่ากันแค่ไหน แต่ใช้จริงได้นานเท่าไหร่ยังขึ้นกับวิธีสูบของแต่ละคน ส่วนวิธีชาร์จให้แบตอยู่กับเราได้นาน ร้านเล่าไว้ที่[ชาร์จพอตกี่นาที ชาร์จข้ามคืนได้ไหม](/guides/battery-care-and-charging)",
+        ],
+      },
+      {
+        heading: "แล้ว INFY เปลี่ยนหัวได้ไหม",
+        paragraphs: [
+          "หลายคนค้นหาพอตเปลี่ยนหัวของ INFY ด้วย INFY 20K ที่มีบนเว็บเราเป็นพอตใช้แล้วทิ้ง ใช้จนหมดแล้วเปลี่ยนทั้งเครื่อง ร้านยืนยันความจุ 20mL และช่องลมที่ปรับได้ ถ้ากำลังมองหาหัวพอตของ INFY สำหรับเปลี่ยน ทักไลน์ @okm24 ถามร้านก่อนได้",
+        ],
+      },
+      {
+        heading: "สรุปสั้น ๆ ก่อนเลือก",
+        paragraphs: [
+          "ถ้าอยากได้พัฟต่อหัวเยอะ ลองดู Esko Bar Switch 20K หรือ RELX Creator คู่กับหัว Muro Connector 20K",
+          "ถ้าอยากมีจอไว้ดูแบต ลองดู RELX Creator หรือ M Switch Kit ถ้าอยากปรับแรงสูบได้ ลองดู Zero Pro · Esko Bar Switch 20K หรือ RELX Creator",
+          "ถ้าอยากได้เครื่องตัวเล็กไว้พกติดตัว ลองดู Zero Nano หรือ Zero Pro และถ้าใช้ M Bar อยู่แล้ว M Switch ก็เป็นของ SALTHUB เจ้าเดียวกัน",
+          "ราคาตัวเครื่องและหัวพอตของแต่ละรุ่นดูได้ที่หน้าสินค้าของรุ่นนั้น หรือดูรวมในหมวด[พอตคิท](/products/pod-kits)กับ[หัวพอต](/products/pods-cartridges)",
+          "ถ้าเครื่องดูดไม่ขึ้นหรือไฟกะพริบ ไล่เช็คได้ที่[พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
+        ],
+      },
+    ],
+    faq: [
+      { question: "พอตเปลี่ยนหัว รุ่นไหนดี", answer: "ขึ้นอยู่กับว่าอยากได้อะไร ถ้าอยากได้พัฟต่อหัวเยอะ ดู Esko Bar Switch 20K หรือ RELX Creator คู่กับหัว Muro Connector 20K ถ้าอยากมีจอ ดู RELX Creator หรือ M Switch Kit ถ้าอยากปรับแรงสูบได้ ดู Zero Pro ที่มี 3 โหมด และถ้าอยากได้เครื่องตัวเล็ก ดู Zero Nano" },
+      { question: "พอตเปลี่ยนหัว ยี่ห้อไหนดี", answer: "บนเว็บเรามีสามยี่ห้อ SALTHUB มี M Switch Kit · Zero Pro · Zero Nano RELX มี RELX Creator และ Esko Bar มี Esko Bar Switch 20K ยี่ห้อไหนดีขึ้นอยู่กับว่ารุ่นไหนตรงกับสิ่งที่คุณอยากได้" },
+      { question: "พอตเปลี่ยนหัว 20K มีรุ่นไหนบ้าง", answer: "บนเว็บเรามี Esko Bar Switch 20K ที่ผู้ผลิตระบุไว้หัวละสูงสุด 20,000 พัฟ และอีกทางคือหัว Muro Connector 20K ซึ่งร้านยืนยันว่าใส่กับตัวเครื่อง RELX Creator ได้" },
+      { question: "M Bar 15K กับ M Switch เป็นรุ่นเดียวกันไหม", answer: "ใช่ ร้านเราเรียกชุด M Switch Kit ของ SALTHUB ว่า M Bar 15K หรือ Marbo 15K ใช้หัว M Switch Pod ที่ SALTHUB ระบุไว้หัวละสูงสุด 15,000 พัฟ" },
+      { question: "Zero Cartridge ใส่กับเครื่องไหนได้บ้าง", answer: "ใส่ได้ทั้ง Zero Pro และ Zero Nano ของ SALTHUB หัวเดียวกันใช้ได้ทั้งสองเครื่อง" },
+      { question: "INFY 20K เปลี่ยนหัวได้ไหม", answer: "INFY 20K ที่มีบนเว็บเราเป็นพอตใช้แล้วทิ้ง ใช้จนหมดแล้วเปลี่ยนทั้งเครื่อง ร้านยืนยันความจุ 20mL ไว้ ถ้ากำลังมองหาหัวพอตของ INFY สำหรับเปลี่ยน ทักไลน์ @okm24 ถามร้านก่อนได้" },
+    ],
+    relatedProductSlugs: ["relx-creator", "zero-pro", "zero-nano", "m-switch-pod", "zero-cartridge"],
+    reviewVideo: { videoId: "d0BYge07CeY", title: "5 พอตใช้แล้วทิ้งเปลี่ยนหัวได้ 2026", channelName: "OKAMI", publishedAt: "2026-07-22" },
+  },
 ];
 
 /** The public articles — everything outside HELD_GUIDE_IDS. */
