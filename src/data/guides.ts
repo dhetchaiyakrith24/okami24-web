@@ -42,7 +42,6 @@ export const SECTION_IMAGES = {
   mSwitchLanyard: { src: "/assets/products/m-switch-kit/story-lanyard.webp", alt: "โปสเตอร์ของ SALTHUB: M Switch มาพร้อมสายคล้องคอ", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/m-switch-kit/", width: 1600, height: 988 },
   caliburnG4ProOneTap: { src: "/assets/products/caliburn-g4-pro/story-one-tap.webp", alt: "ภาพจากคลิปของ UWELL: สลับโหมดบนจอทัชของ Caliburn G4 Pro", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro", width: 1600, height: 900 },
   caliburnG5Battery: { src: "/assets/products/caliburn-g5/story-battery-v4.webp", alt: "โปสเตอร์ของ UWELL: แบต 1600mAh ของ Caliburn G5", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 2413, height: 1131, transparent: true },
-  caliburnG4Pods: { src: "/assets/products/caliburn-g4/story-pods.webp", alt: "ตารางของ UWELL: หัวพอต GPP แบบเติมด้านบนและเติมด้านข้าง", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4", width: 1800, height: 1200 },
   caliburnG5TripleTap: { src: "/assets/products/caliburn-g5/story-triple-tap.webp", alt: "โปสเตอร์ของ UWELL: สลับโหมด Caliburn G5 ด้วยการแตะตัวเครื่องสามครั้ง", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g5", width: 1050, height: 613 },
 } satisfies Record<string, StoryImage>;
 
@@ -1380,7 +1379,6 @@ const allGuides: Guide[] = [
               "G5 · G5 Lite · G5 Lite SE · G4 · G4 Mini และ G4 Classic ใช้หัวพอต GPP (G Pod Platform) ของ UWELL ส่วน G4 Pro ใช้ได้ทั้ง GPP และหัวพอต G3 สำหรับ G3 Pro หน้าสินค้าระบุหัวพอต G3 มาในกล่อง 2 หัว คือ 0.4 โอห์ม (3mL) กับ 0.9 โอห์ม (2.5mL)",
               "หัว GPP ที่มากับ G4 และ G4 Mini คือ 0.4 โอห์มกับ 0.9 โอห์ม ส่วน 0.6 โอห์มกับ 1.2 โอห์มซื้อแยก เรื่องดูแลหัวพอตอยู่ที่ [วิธีดูแลคอยล์และหัวพอต](/guides/coil-and-pod-maintenance)",
             ],
-            image: SECTION_IMAGES.caliburnG4Pods,
           },
         ],
       },
