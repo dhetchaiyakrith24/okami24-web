@@ -204,6 +204,8 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "cherry-pink": null,
     "brooklyn-gray": null,
   } },
+  // Round p63 (owner 16/10, item 63): searched model the warehouse does not stock — no options on the maker page.
+  "drag-x": { parent: null, product: null },
   "drag-x3": { parent: null, options: {
     "gray-metal": null,
     "spray-black": null,
