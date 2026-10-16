@@ -104,22 +104,26 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   split; wording only (thai-typography.ts is locked).
   Tool (owner 16/10): skill `content-strategy` (#508) = the way to plan pillars, clusters, buyer stages and the article order for the
   remaining batches — its OKami24 rules at its end (keymap = SEO_LANDSCAPE §0).
-3p OPEN ROUND "p63 searched models" = `docs/rounds/รอบลงสินค้า-63-16-10.txt` (on branch p63-uwell until #534 merges) · side chat,
-  worktree `.claude/worktrees/seo-all-keys-2-c830d3` (hooksPath .githooks set per worktree) · trees `_incoming/wt-build` (branch, port 3415)
-  + `_incoming/wt-base` (main, 3416) via `_incoming/p63/build.sh <tree> <ref> <port>` · evidence `_incoming/p63/research.md` (verdict per
+3p OPEN ROUND "p63 searched models" = `docs/rounds/รอบลงสินค้า-63-16-10.txt` · side chat products-63-2, worktree
+  `.claude/worktrees/sad-nash-5bf72f` (hooksPath .githooks set with --worktree) · trees `_incoming/wt-build` (branch, port 3415) +
+  `_incoming/wt-base` (main, 3416) via `_incoming/p63/build.sh <tree> <ref> <port>` · evidence `_incoming/p63/research.md` (verdict per
   name, maker quotes, warehouse rows) · hand-over note = side-session notes folder `p63-handover.md`. Owner item 63 (BSOT §4): a page per
   searched model, maker facts only, no price row (browse-only), options mapped in `sku-map.ts` (null = sold out; real warehouse codes where
   the warehouse lists the model).
-  LIVE [ตรวจแล้ว]: #537 VOOPOO DRAG X https://okami24.store/products/drag-x (curl 200; maker page via its web.archive.org snapshot).
-  OPEN (commits on the branch NOT yet passed by the checker): #534 p63-uwell Caliburn G3 — r1 fixes 1f6eca16 unchecked; waits for the image
-  chat's card (Cobalt Blue) + 6 colour remakes (`_incoming/p63/image-requests.md`), then checker r2 · #540 p63-relx RELX Infinity 2 Plus +
-  owner item 69 — r1 FAIL: (a) mode wattages "not on RELX's page" = they ARE, in the JS-rendered "What's Special" tab (quotes in
-  research.md, cited in 6a52dc5b — give the checker the quotes), (b) card fill 68% → card remake queued with the image chat.
+  LIVE [ตรวจแล้ว]: #537 VOOPOO DRAG X https://okami24.store/products/drag-x · #534 UWELL Caliburn G3 https://okami24.store/products/caliburn-g3
+  (checker r2 PASS 6b0993c0, curl 200; card + 6 colours = image chat re-shoots, img-1610 b13).
+  MERGED, NOT LIVE: #544 TEREA prep — all 21 iqos.com/id flavours (6 as VERIFIED_ADDITIONAL_VARIANTS), every pack image re-cut from the
+  maker's 2000px renders to the five sticks; classify.ts "dimension"/"edition" (4 warehouse flavours were dropped). Publishing = one
+  IQOSHEET-15 line in publication-approvals.ts + the sku-map rows (`_incoming/p63/terea-skumap.patch`) once owner item 69 gives a price;
+  that PR brings heated-tobacco-consumables back to every page's nav → whole-sitemap scan.
+  OPEN: #540 p63-relx RELX Infinity 2 Plus + owner item 69 — r1 FAIL: (a) mode wattages are in RELX's JS-rendered "What's Special" tab
+  (quotes in research.md, cited in 6a52dc5b — give the checker the quotes), (b) card fill 68% → card remake queued with the image chat.
+  Small follow-up (checker #534 r2 notes): uwell.ts comment near the top names sold-out.ts (the source is sku-map null) · the old G3 card
+  map entry (cobalt-blue.jpg) still sits beside the new one.
   NOT REAL (report only): M Bar 18K · Marbo 25K · RELX Diva / Sparta / Novo · nexBAR Switch 15K (owner item 68: nexPOD 15K instead?).
   JOIWAY 12K / 20K = F3 / F4 already live (alias = SEO chat after 22/10).
-  NEXT: TEREA — the warehouse stocks it (IQOSHEET-15 ฿220): publish the ProductMaster record with all 21 iqos.com/id pack images
-  (`_incoming/p63/terea/`, crop rows 226–773 × x 202–798) once owner item 69 gives a price; brings heated-tobacco-consumables back to
-  every page's nav → whole-sitemap scan · after the 22/10 GSC read: INFY 12K + Esko Bar 20K ("ESKO BAR 498", warehouse Pod-130).
+  NEXT: #540 when its card arrives · TEREA publish after item 69 · item 68 · after the 22/10 GSC read: INFY 12K + Esko Bar 20K
+  ("ESKO BAR 498", warehouse Pod-130) · then round-close (tag p63-1610).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
