@@ -1219,9 +1219,9 @@ export const uwellProducts: Product[] = [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/caliburn-g4-mini/card-v2.webp",
+        src: "/assets/products/caliburn-g4-mini/card-v3.webp",
         alt: "UWELL Caliburn G4 Mini, Slate Grey, front, isolated product shot",
-        angle: "Front, upright on 4:5 — the front device of UWELL's own render (batch 1b, 03/10)",
+        angle: "Front, upright on 4:5 — studio re-shoot of the Slate Grey device (img-1610, 16/10)",
         transparentBackground: true,
         sourceName: "UWELL",
         sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-mini",
@@ -1236,13 +1236,15 @@ export const uwellProducts: Product[] = [
     // picked (Slate Grey big in front, the other 11 in two upright tiers) from the same 12 UWELL fronts — _incoming/image-sitewide/set1/.
     // Template round 03/10 (owner: "ภาพรวมเล็กไป ขยายใหญ่หน่อย"): two groups of 6 like G3 Pro — solid colours (hero Slate Grey) /
     // gradient finishes (hero Peafowl Emerald), set1/poster.js g4m-a / g4m-b; pills "ทั้งหมด 1" / "ทั้งหมด 2".
+    // Image round img-1610 (16/10): all 12 colours + card re-shot in a studio (upright, straight-on, like G4 Classic), UWELL's
+    // render of each colour as the reference; lineups rebuilt from those keys (provenance in scripts/process-images.map.json).
     lineupImage: {
-      src: "/assets/products/caliburn-g4-mini/lineup-v3.webp",
+      src: "/assets/products/caliburn-g4-mini/lineup-v4.webp",
       alt: "UWELL Caliburn G4 Mini, the 6 solid colours",
       sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
     lineupImage2: {
-      src: "/assets/products/caliburn-g4-mini/lineup2-v3.webp",
+      src: "/assets/products/caliburn-g4-mini/lineup2-v4.webp",
       alt: "UWELL Caliburn G4 Mini, the 6 gradient finishes",
       sourceName: "OKami24 composite (from UWELL's own colour renders)",
     },
@@ -1261,73 +1263,73 @@ export const uwellProducts: Product[] = [
         id: "bright-pink",
         name: "Bright Pink",
         swatchHex: "#dcc6c9",
-        image: { src: "/assets/products/caliburn-g4-mini/variant-bright-pink-v2.webp", alt: "UWELL Caliburn G4 Mini, Bright Pink" },
+        image: { src: "/assets/products/caliburn-g4-mini/variant-bright-pink-v3.webp", alt: "UWELL Caliburn G4 Mini, Bright Pink" },
       },
       {
         id: "champagne-gold",
         name: "Champagne Gold",
         swatchHex: "#b2a480",
-        image: { src: "/assets/products/caliburn-g4-mini/variant-champagne-gold-v2.webp", alt: "UWELL Caliburn G4 Mini, Champagne Gold" },
+        image: { src: "/assets/products/caliburn-g4-mini/variant-champagne-gold-v3.webp", alt: "UWELL Caliburn G4 Mini, Champagne Gold" },
       },
       {
         id: "coast-gold",
         name: "Coast Gold",
         swatchHex: "#cbc7b2",
-        image: { src: "/assets/products/caliburn-g4-mini/variant-coast-gold-v2.webp", alt: "UWELL Caliburn G4 Mini, Coast Gold" },
+        image: { src: "/assets/products/caliburn-g4-mini/variant-coast-gold-v3.webp", alt: "UWELL Caliburn G4 Mini, Coast Gold" },
       },
       {
         id: "dusty-indigo",
         name: "Dusty Indigo",
         swatchHex: "#556f8e",
-        image: { src: "/assets/products/caliburn-g4-mini/variant-dusty-indigo-v2.webp", alt: "UWELL Caliburn G4 Mini, Dusty Indigo" },
+        image: { src: "/assets/products/caliburn-g4-mini/variant-dusty-indigo-v3.webp", alt: "UWELL Caliburn G4 Mini, Dusty Indigo" },
       },
       {
         id: "grass-green",
         name: "Grass Green",
         swatchHex: "#7cb342",
-        image: { src: "/assets/products/caliburn-g4-mini/variant-grass-green-v2.webp", alt: "UWELL Caliburn G4 Mini, Grass Green" },
+        image: { src: "/assets/products/caliburn-g4-mini/variant-grass-green-v3.webp", alt: "UWELL Caliburn G4 Mini, Grass Green" },
       },
       {
         id: "lake-blue",
         name: "Lake Blue",
         swatchHex: "#3d7ea6",
-        image: { src: "/assets/products/caliburn-g4-mini/variant-lake-blue-v2.webp", alt: "UWELL Caliburn G4 Mini, Lake Blue" },
+        image: { src: "/assets/products/caliburn-g4-mini/variant-lake-blue-v3.webp", alt: "UWELL Caliburn G4 Mini, Lake Blue" },
       },
       {
         id: "light-silver",
         name: "Light Silver",
         swatchHex: "#c8ccd0",
-        image: { src: "/assets/products/caliburn-g4-mini/variant-light-silver-v2.webp", alt: "UWELL Caliburn G4 Mini, Light Silver" },
+        image: { src: "/assets/products/caliburn-g4-mini/variant-light-silver-v3.webp", alt: "UWELL Caliburn G4 Mini, Light Silver" },
       },
       {
         id: "night-black",
         name: "Night Black",
         swatchHex: "#525154",
-        image: { src: "/assets/products/caliburn-g4-mini/variant-night-black-v2.webp", alt: "UWELL Caliburn G4 Mini, Night Black" },
+        image: { src: "/assets/products/caliburn-g4-mini/variant-night-black-v3.webp", alt: "UWELL Caliburn G4 Mini, Night Black" },
       },
       {
         id: "paddy-green",
         name: "Paddy Green",
         swatchHex: "#348248",
-        image: { src: "/assets/products/caliburn-g4-mini/variant-paddy-green-v2.webp", alt: "UWELL Caliburn G4 Mini, Paddy Green" },
+        image: { src: "/assets/products/caliburn-g4-mini/variant-paddy-green-v3.webp", alt: "UWELL Caliburn G4 Mini, Paddy Green" },
       },
       {
         id: "peafowl-emerald",
         name: "Peafowl Emerald",
         swatchHex: "#70b4a6",
-        image: { src: "/assets/products/caliburn-g4-mini/variant-peafowl-emerald-v2.webp", alt: "UWELL Caliburn G4 Mini, Peafowl Emerald" },
+        image: { src: "/assets/products/caliburn-g4-mini/variant-peafowl-emerald-v3.webp", alt: "UWELL Caliburn G4 Mini, Peafowl Emerald" },
       },
       {
         id: "phoenix-purple",
         name: "Phoenix Purple",
         swatchHex: "#7b4a8e",
-        image: { src: "/assets/products/caliburn-g4-mini/variant-phoenix-purple-v2.webp", alt: "UWELL Caliburn G4 Mini, Phoenix Purple" },
+        image: { src: "/assets/products/caliburn-g4-mini/variant-phoenix-purple-v3.webp", alt: "UWELL Caliburn G4 Mini, Phoenix Purple" },
       },
       {
         id: "slate-grey",
         name: "Slate Grey",
         swatchHex: "#8d919c",
-        image: { src: "/assets/products/caliburn-g4-mini/variant-slate-grey-v2.webp", alt: "UWELL Caliburn G4 Mini, Slate Grey" },
+        image: { src: "/assets/products/caliburn-g4-mini/variant-slate-grey-v3.webp", alt: "UWELL Caliburn G4 Mini, Slate Grey" },
       },
     ],
     specifications: [
