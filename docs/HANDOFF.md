@@ -79,7 +79,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   i PRIME; iqos.com support pages only, notes `_incoming/seo-images/iqos-research.md`; reset steps = ILUMA i only, no i PRIME page found).
   The MTL / RDL / DTL clip `_s48AaDCtf4` is already the record clip of understanding-mtl-vs-dtl — nothing to place.
   Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them + no change on them (read-next boxes
-  included). Tools chat 3 (`_incoming/seo-keys/`): `linkmap.js` (every sitemap page's links + title/meta/H1, `--diff` flags frozen
+  included). **Exception 18/10 (owner "list everything" overrode the hold, through Friday): /brands/infy CHANGED before the 22/10
+  read** — INFY PLUS 2.5ML Cartridge (/products/pod-169) joined its product grid (round list19) — read the brand page's 22/10
+  numbers with that in mind. Tools chat 3 (`_incoming/seo-keys/`): `linkmap.js` (every sitemap page's links + title/meta/H1, `--diff` flags frozen
   pages) · `wbfix-gen.tsx` + `wb-driver2.js` (word-swap / seed candidates measured in the real element, FAQ answers opened) ·
   `wb-openscan.js` (LESSONS พ34).
   HELD LINKS — add right after the 22/10 read, then re-run linkmap (boxes move): switch guide: M Switch Kit → m-switch-kit (H2 1 ¶2 ·

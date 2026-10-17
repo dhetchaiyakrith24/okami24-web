@@ -602,8 +602,9 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "หัวพอตเปล่ารุ่น Feelin C1 จากแบรนด์ NEVOKS",
   },
   "Pod-169": {
-    tagline: "หัวพอต infy 2.5 ml จากแบรนด์ INFY",
-    shortDescription: "หัวพอตรุ่น infy 2.5 ml จากแบรนด์ INFY",
+    // Round list19 (18/10): infy.my's own 2.5ML Cartridge page (2.5ml, INFY PLUS) + Max's 28 flavours.
+    tagline: "หัวพอต INFY PLUS ความจุ 2.5ml",
+    shortDescription: "หัวพอต INFY PLUS ความจุน้ำยา 2.5ml คอยล์ในตัว ใช้หมดแล้วเปลี่ยนหัวใหม่ ร้านมีให้เลือก 28 กลิ่น",
   },
   // Heated-tobacco wave — factual, identity-level copy only, no health/reduced-harm claims
   // (heat-not-burn is not risk-free; this project makes no such claim anywhere).
@@ -815,16 +816,19 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://www.3fvape.com/new-arrivals/48028-authentic-voopoo-tpp-empty-pod-cartridge-for-tpp-tank-atomizer-drag-3-kit-drag-x-plus-kit-black-55ml-2-pcs.html",
     },
   ],
+  // Round list19 (18/10): one clear INFY PLUS pod (Grape Jelly, in stock) — OKami24 re-shoot (batch 7) of the shop's flavour poster —
+  // replaces the box line-up withdrawn 06/09 (its flavours were not the ones sold here). A clear pod cannot be flood-keyed (the body
+  // shows the sweep), so the silhouette was drawn from points read on the render (list19/infy/clearkey.js).
   "Pod-169": [
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/pod-169/card.webp",
-      alt: "INFY PLUS 2.5ML prefilled pod cartridge retail boxes, seven flavours from the INFY \"This Is Salts\" series",
-      angle: "First-party INFY brand product render, cropped to the product cluster to remove a large decorative backdrop (composition only — nothing about the product was removed, recoloured or relabelled). PRODUCT-LEVEL LINEUP SHOT, flagged as exactly that per the README's multi-variant rule, not a per-flavour image. IDENTITY PROOF: every box reads \"INFY PLUS\" / \"2.5 ML CAPACITY\" / \"THIS IS SALTS · MALAYSIA SERIES\", matching this record's name (\"หัว infy 2.5 ml\") and infy.my's own 2.5ML Cartridge product page. DISCLOSED LIMITATION: of the seven flavours pictured, only \"Tropical Mix Fruit\" is one of this record's nine active children — INFY's own published media covers the brand's wider (largely Malaysian) flavour range, and no first-party photo exists for the other eight Thai-market flavours. The frame is therefore truthful about WHAT the product is and is not a claim about which flavours are stocked; the variant picker remains the authority on that.",
-      transparentBackground: false,
-      sourceName: "INFY / This Is Salts (infy.my — the brand's own site, first-party)",
-      sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/",
+      src: "/assets/products/pod-169/card-v2.webp",
+      alt: "INFY PLUS 2.5ml clear pod cartridge, Grape Jelly, studio photo",
+      angle: "Front, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's INFY PLUS flavour poster. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's INFY PLUS flavour poster",
+      sourceUrl: "https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/",
     },
   ],
   // Full-catalog mission — second media wave. All tier-2 (real retailer product photography of
@@ -1420,6 +1424,11 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
 // ===================================================================================
 
 const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
+  // Round list19 (18/10): INFY PLUS — the one flavour with a re-shoot (Grape Jelly); the other 27 show the no-photo panel (the pods
+  // differ only by the small printed flavour label; relabelling one photo would make up an image — IMAGE_SPEC §0 item 7).
+  "Pod-169": {
+    "Pod-169-1": { kind: "official-photo", role: "detail", src: "/assets/products/pod-169/variant-pod-169-1.webp", alt: "INFY PLUS 2.5ml clear pod cartridge, Grape Jelly, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's INFY PLUS flavour poster", sourceUrl: "https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/" },
+  },
   // Round list19 (18/10): Marbo Saltnic — one re-shoot per bottle photo the shop has (5 of 10; Purple · Black · Green · Ice Sparkling ·
   // Purple 50mg have no photo, they show the no-photo panel).
   "ELIQUID-1": {
@@ -1987,6 +1996,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "Pod-150": { name: "KS Quikpro 15K Cartridge", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+  "Pod-169": { name: "INFY PLUS 2.5ML Cartridge", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },
 };
 
 function deriveDisplayName(rawName: string, brandId: string | null, shipnityId?: string): string {

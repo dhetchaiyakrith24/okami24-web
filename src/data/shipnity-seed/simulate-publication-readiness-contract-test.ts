@@ -136,7 +136,8 @@ export function runSimulationContractTests(): SimulationContractResult[] {
   };
   checkWithdrawn("Coil-92");
   checkWithdrawn("Coil-63");
-  checkWithdrawn("Pod-169");
+  // Pod-169 INFY PLUS republished round list19 (2026-10-18) with an OKami24 re-shoot of one clear pod: the 28 Max flavours at ฿129.
+  checkGenuinelyPublished("Pod-169", 129, 28);
   // IQOSHEET-14 republished round list19 (2026-10-17) with LAMBDA's own per-colour photos: 2 Shipnity children + 4 verified colours.
   checkGenuinelyPublished("IQOSHEET-14", 2390, 6);
 
