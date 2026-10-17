@@ -114,7 +114,7 @@ export function runSimulationContractTests(): SimulationContractResult[] {
       real.product.variants.length === expectedVariantCount;
     check(`${id} is genuinely published in real data with the ฿${expectedPrice} price and ${expectedVariantCount} real variant(s)`, ok, JSON.stringify(real));
   };
-  checkGenuinelyPublished("Coil-38", 450, 2);
+  checkGenuinelyPublished("Coil-38", 450, 4); // list19 stage 2 (18/10): Max children DM1 + DM3 added
   checkGenuinelyPublished("Coil-53", 450, 1); // owner override 2026-10-06 (admin list)
   checkGenuinelyPublished("Coil-55", 250, 0); // owner override 2026-10-06 (admin list)
   checkGenuinelyPublished("Coil-56", 300, 1);
