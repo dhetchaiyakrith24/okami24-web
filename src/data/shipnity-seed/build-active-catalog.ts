@@ -22,7 +22,7 @@ import { OWNER_APPROVED_PUBLICATION } from "./publication-approvals";
  * Records Max no longer lists keep their 31/08 data (their pages, if any, are sold out through sku-map.ts — owner 08/10).
  */
 /** Stage 2 (18/10): published records moved onto Max, a few per PR. The published-catalogue dump proves each move. */
-export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38", "Pod-150", "Pod-154", "Pod-149"]);
+export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38", "Pod-150", "Pod-154", "Pod-149", "ELIQUID-1"]);
 export const FROZEN_SEED_IDS = new Set<string>(
   [...Object.keys(OWNER_APPROVED_PUBLICATION), "IQOSHEET-15"].filter((id) => !MOVED_TO_MAX_IDS.has(id))
 );
@@ -55,7 +55,23 @@ export interface ActiveParentRecord {
 type SeedInput = Omit<RawActiveParent, "operationalCost">;
 
 /** A Max label typo fixed by the record's own pack print (round list19 18/10: Pop Up 10K pod shows "Sugus Pineapple"). */
-const MAX_LABEL_FIX: Record<string, string> = { "Pod-154-11": "Sugus Pineapple" };
+const MAX_LABEL_FIX: Record<string, string> = {
+  "Pod-154-11": "Sugus Pineapple",
+  // Round list19 (18/10): Marbo Saltnic — Max labels every bottle "<a Thai spelling the site never prints (THAI_STYLE §3 round 8)> <colour>".
+  // Name = what the bottle prints (shop pack photos, _incoming/img-1610/masters/src/index.json): red prints "Tobacco", gold "GOLD",
+  // silver "PLATINUM", blue "BLUE", pink "Ice Strawberry"; white = Max's own "Ice Sparking" (Sparkling); purple / black / green
+  // have no pack evidence → the colour as sold.
+  "ELQ-1-1": "Purple",
+  "ELQ-1-2": "Black",
+  "ELQ-1-3": "Tobacco",
+  "ELQ-1-4": "Gold",
+  "ELQ-1-5": "Platinum",
+  "ELQ-1-6": "Green",
+  "ELQ-1-7": "Blue",
+  "ELQ-1-8": "Ice Strawberry",
+  "ELQ-1-9": "Ice Sparkling",
+  "ELQ-1-10": "Purple 50mg",
+};
 
 function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) | null {
   if (FROZEN_SEED_IDS.has(raw.shipnityProductId)) return null;
@@ -63,10 +79,15 @@ function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) |
   const m = MAX_SEED[raw.shipnityProductId];
   if (!m) return null;
   const prefixes = [raw.shipnityProductId, m.maxParentId];
+  const hasParentPriced = m.children.some((c) => c.sellingPrice === m.operationalSellingPrice);
   const children = m.children.filter((c) => {
     const ok = prefixes.some((pre) => c.shipnityVariantId.startsWith(pre + "-") && /^\d+$/.test(c.shipnityVariantId.slice(pre.length + 1)));
     if (!ok) maxDroppedChildren.push({ shipnityProductId: raw.shipnityProductId, shipnityVariantId: c.shipnityVariantId, rawLabel: c.rawLabel, reason: `not a plain child code (Max ราคาขาย ฿${c.sellingPrice})` });
-    return ok;
+    // One price per product (as fromMaxOnly): a plain-coded child at another price than its siblings at the parent price is a bundle
+    // (ELIQUID-1-1 ฿807, a Marbo multi-pack). A parent with no child at its own price (Pod-171) keeps every child.
+    const samePrice = !ok || !hasParentPriced || c.sellingPrice === m.operationalSellingPrice;
+    if (!samePrice) maxDroppedChildren.push({ shipnityProductId: raw.shipnityProductId, shipnityVariantId: c.shipnityVariantId, rawLabel: c.rawLabel, reason: `other price than the parent (Max ราคาขาย ฿${c.sellingPrice} vs ฿${m.operationalSellingPrice})` });
+    return ok && samePrice;
   });
   return {
     shipnityProductId: raw.shipnityProductId,

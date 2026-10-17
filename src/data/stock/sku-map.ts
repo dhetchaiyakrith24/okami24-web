@@ -662,6 +662,19 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-149-7": "Pod-149-7",
     "Pod-149-8": "Pod-149-8",
   } },
+  // Round list19 (18/10): Marbo Saltnic — Max parent ELQ-1 (old seed id ELIQUID-1); the ฿807 bundle ELIQUID-1-1 is not an option.
+  "eliquid-1": { parent: "ELQ-1", options: {
+    "ELQ-1-1": "ELQ-1-1",
+    "ELQ-1-2": "ELQ-1-2",
+    "ELQ-1-3": "ELQ-1-3",
+    "ELQ-1-4": "ELQ-1-4",
+    "ELQ-1-5": "ELQ-1-5",
+    "ELQ-1-6": "ELQ-1-6",
+    "ELQ-1-7": "ELQ-1-7",
+    "ELQ-1-8": "ELQ-1-8",
+    "ELQ-1-9": "ELQ-1-9",
+    "ELQ-1-10": "ELQ-1-10",
+  } },
   "pod-154": { parent: "Pod-154", options: {
     "Pod-154-1": "Pod-154-1",
     "Pod-154-2": "Pod-154-2",
