@@ -10,7 +10,7 @@
 
 import { rawActiveParents, excludedNonProductRows, type RawActiveParent } from "./active-catalog-source";
 import { classifyParentChildren, type OptionType, type Provenance, type ChildRole } from "./classify";
-import { MAX_SEED, MAX_SEED_DATE } from "./max-seed";
+import { MAX_SEED, MAX_SEED_DATE, MAX_ONLY_IDS } from "./max-seed";
 import { OWNER_APPROVED_PUBLICATION } from "./publication-approvals";
 
 /**
@@ -56,6 +56,7 @@ type SeedInput = Omit<RawActiveParent, "operationalCost">;
 
 function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) | null {
   if (FROZEN_SEED_IDS.has(raw.shipnityProductId)) return null;
+  if (MAX_ONLY_IDS.includes(raw.shipnityProductId)) return null; // already built from Max by fromMaxOnly
   const m = MAX_SEED[raw.shipnityProductId];
   if (!m) return null;
   const prefixes = [raw.shipnityProductId, m.maxParentId];
@@ -100,6 +101,43 @@ function buildParent(seedRaw: RawActiveParent): ActiveParentRecord {
   };
 }
 
-export const activeCatalogSeed: ActiveParentRecord[] = rawActiveParents.map(buildParent);
+/**
+ * Max-only records (round list19 18/10): products Shipnity MAX sells that the old 31/08 export never had. Their children are
+ * the Max rows whose parent is that code (Max gives them "Variation N" codes, not "<parent>-<n>"); a child at another
+ * ราคาขาย than the parent (e.g. a loose pod listed under a kit) is not an option of the record — it goes to maxDroppedChildren.
+ */
+/** Max writes a kit's option as "<bundle> <flavour>" (KS kit: "เครื่อง + หัว Watermelon" = device + one pod); the record's option is
+ *  the flavour, and the page text says what the kit holds. Prefix stripped per record, nothing else changes. */
+const MAX_ONLY_LABEL_PREFIX: Record<string, string> = {
+  "KS-QUIKPRO-KIT": "เครื่อง + หัว ",
+};
+
+function fromMaxOnly(id: string): RawActiveParent {
+  const m = MAX_SEED[id];
+  const children = m.children.filter((c) => {
+    const ok = c.sellingPrice === m.operationalSellingPrice;
+    if (!ok) maxDroppedChildren.push({ shipnityProductId: id, shipnityVariantId: c.shipnityVariantId, rawLabel: c.rawLabel, reason: `other price than the parent (Max ราคาขาย ฿${c.sellingPrice} vs ฿${m.operationalSellingPrice})` });
+    return ok;
+  });
+  return {
+    shipnityProductId: id,
+    name: m.name,
+    operationalSellingPrice: m.operationalSellingPrice,
+    operationalCost: 0, // never read — buildParent drops cost; Max has no cost column
+    sourcePages: [],
+    children: children.map((c) => {
+      const pre = MAX_ONLY_LABEL_PREFIX[id];
+      return { shipnityVariantId: c.shipnityVariantId, rawLabel: pre && c.rawLabel.startsWith(pre) ? c.rawLabel.slice(pre.length) : c.rawLabel };
+    }),
+  };
+}
+
+export const activeCatalogSeed: ActiveParentRecord[] = [
+  ...rawActiveParents.map(buildParent),
+  ...MAX_ONLY_IDS.map((id) => {
+    const rec = buildParent(fromMaxOnly(id));
+    return { ...rec, maxParentId: MAX_SEED[id].maxParentId, source: "max" as const };
+  }),
+];
 
 export { excludedNonProductRows };
