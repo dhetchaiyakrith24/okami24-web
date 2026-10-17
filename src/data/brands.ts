@@ -96,6 +96,10 @@ export const brands: Brand[] = [
     name: "SKE",
     fullName: "SKE (Speed Skier Extreme)",
     tagline: "Embrace Challenges, Keep Original Intention.",
+    taglineTh: "พอตใช้แล้วทิ้งตระกูล Crystal Bar",
+    // Round list19 (18/10): first SKE product on the site — skevape.com's own line-up (Crystal Bar collection page, SKE Bar 6K / 15K).
+    descriptionTh:
+      "SKE เป็นแบรนด์บุหรี่ไฟฟ้าที่รู้จักจากพอตใช้แล้วทิ้งตระกูล Crystal Bar และยังมีตระกูล SKE Bar",
     description:
       "An e-cigarette brand best known for the Crystal Bar disposable line, alongside the SKE Bar and other high-puff-count disposable series.",
     referenceUrl: "https://www.skevape.com/",

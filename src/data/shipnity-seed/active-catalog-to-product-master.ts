@@ -229,6 +229,10 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // own scratch-code checker on physical stock — a wrong call here is a counterfeit-goods risk,
   // not just a data-accuracy one.
   //   (was: "Pod-149": { brandId: "ske", categoryId: "disposables", systemType: "disposable", ... })
+  // OWNER RULING round list19 (18/10, through Friday): "list it, using warehouse data only" — the record is listed under the name the
+  // warehouse sells it by (Shipnity MAX "SKE Crystal B20000 Puffs"), with no maker spec, no maker photo and no "official" wording;
+  // skevape.com (read 18/10) lists Crystal Bar 600 / SKE Bar 6K / 15K / Fresa 40K and no B20000 — the authenticity risk above is the owner's.
+  "Pod-149": { brandId: "ske", categoryId: "disposables", systemType: "disposable", evidence: 'owner ruling 18/10: list on warehouse data only — Shipnity MAX parent "Product 1141360" "SKE Crystal B20000 Puffs" with 8 flavour children Pod-149-1..8; no SKE page for this model (skevape.com 18/10)' },
   // Catalog-intelligence mission (2026-09-02) — re-checked against kardinal.com's OWN Quikpro
   // page directly (official first-party — note the brand's real domain is kardinal.com/
   // kardinalstick.com; there is NO Thailand-market edition, so any "Kardinal Stick Official"-
@@ -545,6 +549,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // "Pod-149" copy removed alongside its brand-claim withdrawal above — see TAXONOMY_MATCHES's
   // comment. Copy that names "แบรนด์ SKE" would misattribute the product; MINIMUM_COPY never
   // fabricates a brand name that isn't independently supportable.
+  "Pod-149": {
+    // Round list19 (18/10): warehouse facts only (owner ruling) — the Max name "SKE Crystal B20000 Puffs" and its 8 flavours.
+    tagline: "พอตใช้แล้วทิ้ง SKE Crystal B20000",
+    shortDescription: "พอตใช้แล้วทิ้ง SKE Crystal B20000 ชื่อรุ่นระบุ 20,000 พัฟ ร้านมีให้เลือก 8 กลิ่น",
+  },
   "Pod-154": {
     // Round list19 (18/10): warehouse facts only — the name says 10K, the pod print says 10000 PUFFS, Max lists the battery base.
     tagline: "หัวพอต Pop Up 10K",
@@ -697,6 +706,19 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
+  // Round list19 (18/10): SKE Crystal B20000 — OKami24 re-shoot (batch 7) of the shop's Thai Milk Green Tea poster (the in-stock flavour).
+  "Pod-149": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/pod-149/card.webp",
+      alt: "SKE Crystal B20000 disposable, Thai Milk Green Tea, studio photo",
+      angle: "Front three-quarter, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's poster. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster",
+      sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/",
+    },
+  ],
   // Round list19 (18/10): Pop Up 10K — OKami24 re-shoots (batch 7) of the shop's flavour posters; card = the Coke pod (in stock).
   "Pod-154": [
     {
@@ -1072,6 +1094,13 @@ interface VerifiedSpecEntry {
 }
 
 const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
+  // Round list19 (18/10): warehouse facts only — the model name "B20000 Puffs" (Max) and the device print "B20000".
+  "Pod-149": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 20,000", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
   // Round list19 (18/10): warehouse facts only (no maker page) — the name "10K" and the pod's own print "10000 PUFFS".
   "Pod-154": {
     specifications: [
@@ -1369,6 +1398,10 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
 // ===================================================================================
 
 const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
+  // Round list19 (18/10): SKE Crystal B20000 — the shop has a poster for Thai Milk Green Tea only; the other 7 show the no-photo panel.
+  "Pod-149": {
+    "Pod-149-6": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-6.webp", alt: "SKE Crystal B20000 disposable, Thai Milk Green Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
+  },
   // Round list19 (18/10): Pop Up 10K — one re-shoot per flavour poster the shop has (14 of 18; Strawberry · Mixberry · Lime Soda ·
   // Guava Kiwi have no poster, they show the no-photo panel).
   "Pod-154": {

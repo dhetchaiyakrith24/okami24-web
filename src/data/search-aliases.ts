@@ -46,6 +46,7 @@ export const TERM_SEARCH_ALIASES: Record<string, string[]> = {
   "แลมบ์ดา": ["lambda"],
   "แลมบ์ด้า": ["lambda"],
   "เคเอส": ["ks"],
+  "เอสเคอี": ["ske"],
   "ไอคอส": ["iqos"],
   "ไอโคส": ["iqos"],
   "ไอค๊อส": ["iqos"],
