@@ -8961,5 +8961,77 @@
    "reference": "pod789 SKE Crystal B20000 Thai Milk Green Tea poster - _incoming/img-1610/masters/src/pod-149 (index masters/src/index.json)",
    "fidelitySheet": "_incoming/img-1610/masters/sheet-pod-149.jpg (poster beside renders A/B) - SKE logo, CRYSTAL B20000, display window, green body checked by eye"
   }
+ },
+ {
+  "source": "_incoming/list19/marbo/red.png",
+  "slug": "eliquid-1",
+  "role": "card",
+  "note": "round list19 18/10 - Marbo Saltnic Tobacco (red) re-shoot (in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop's bottle photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/e1-red-A.png; keyed off the charcoal sweep by b17/floodkey.js (T=14), base edge rebuilt and floor reflection cleared (list19/e1/cut.js, copy beside this source; bottom row set by hand from the row profile)",
+   "reference": "ihavevape.net Marbo Saltnic Tobacco bottle photo (https://ihavevape.net/product/marboro-classic/) - _incoming/img-1610/masters/src/eliquid-1/ihavevape-marboro-clas-0.webp (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/e1/fidelity.jpg (the shop's 5 bottle photos above the 5 keyed re-shoots) - SALT chevron label, Marbo wordmark, GOLD / PLATINUM / BLUE / Tobacco / Ice Strawberry print, cap colour checked by eye"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/marbo/red.png",
+  "slug": "eliquid-1",
+  "role": "variant",
+  "id": "elq-1-3",
+  "note": "round list19 18/10 - Tobacco (Max ELQ-1-3)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop's bottle photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/e1-red-A.png; keyed off the charcoal sweep by b17/floodkey.js (T=14), base edge rebuilt and floor reflection cleared (list19/e1/cut.js, copy beside this source; bottom row set by hand from the row profile)",
+   "reference": "ihavevape.net Marbo Saltnic Tobacco bottle photo (https://ihavevape.net/product/marboro-classic/) - _incoming/img-1610/masters/src/eliquid-1/ihavevape-marboro-clas-0.webp (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/e1/fidelity.jpg (the shop's 5 bottle photos above the 5 keyed re-shoots) - SALT chevron label, Marbo wordmark, GOLD / PLATINUM / BLUE / Tobacco / Ice Strawberry print, cap colour checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/marbo/gold.png",
+  "slug": "eliquid-1",
+  "role": "variant",
+  "id": "elq-1-4",
+  "note": "round list19 18/10 - Gold (Max ELQ-1-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop's bottle photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/e1-gold-A.png; keyed off the charcoal sweep by b17/floodkey.js (T=14), base edge rebuilt and floor reflection cleared (list19/e1/cut.js, copy beside this source; bottom row set by hand from the row profile)",
+   "reference": "ihavevape.net Marbo Saltnic Gold bottle photo (https://ihavevape.net/product/marboro-saltnic-gold/) - _incoming/img-1610/masters/src/eliquid-1/ihavevape-marboro-salt-0.webp (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/e1/fidelity.jpg (the shop's 5 bottle photos above the 5 keyed re-shoots) - SALT chevron label, Marbo wordmark, GOLD / PLATINUM / BLUE / Tobacco / Ice Strawberry print, cap colour checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/marbo/silver.png",
+  "slug": "eliquid-1",
+  "role": "variant",
+  "id": "elq-1-5",
+  "note": "round list19 18/10 - Platinum (Max ELQ-1-5)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop's bottle photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/e1-silver-A.png; keyed off the charcoal sweep by b17/floodkey.js (T=14), base edge rebuilt and floor reflection cleared (list19/e1/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Marbo Saltnic Platinum bottle photo (https://ihavevape.net/product/marbo-platinum/) - _incoming/img-1610/masters/src/eliquid-1/ihavevape-marbo-platin-0.webp (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/e1/fidelity.jpg (the shop's 5 bottle photos above the 5 keyed re-shoots) - SALT chevron label, Marbo wordmark, GOLD / PLATINUM / BLUE / Tobacco / Ice Strawberry print, cap colour checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/marbo/blue.png",
+  "slug": "eliquid-1",
+  "role": "variant",
+  "id": "elq-1-7",
+  "note": "round list19 18/10 - Blue (Max ELQ-1-7)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop's bottle photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/e1-blue-A.png; keyed off the charcoal sweep by b17/floodkey.js (T=14), base edge rebuilt and floor reflection cleared (list19/e1/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Marbo Saltnic Blue bottle photo (https://ihavevape.net/product/marbo-blue/) - _incoming/img-1610/masters/src/eliquid-1/ihavevape-marbo-blue-0.webp (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/e1/fidelity.jpg (the shop's 5 bottle photos above the 5 keyed re-shoots) - SALT chevron label, Marbo wordmark, GOLD / PLATINUM / BLUE / Tobacco / Ice Strawberry print, cap colour checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/marbo/pink.png",
+  "slug": "eliquid-1",
+  "role": "variant",
+  "id": "elq-1-8",
+  "note": "round list19 18/10 - Ice Strawberry (Max ELQ-1-8)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop's bottle photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/e1-pink-A.png; keyed off the charcoal sweep by b17/floodkey.js (T=14), base edge rebuilt and floor reflection cleared (list19/e1/cut.js, copy beside this source; bottom row set by hand from the row profile)",
+   "reference": "ihavevape.net Marbo Saltnic Ice Strawberry bottle photo (https://ihavevape.net/product/marbo-ice-strawberry-2/) - _incoming/img-1610/masters/src/eliquid-1/ihavevape-marbo-ice-st-0.webp (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/e1/fidelity.jpg (the shop's 5 bottle photos above the 5 keyed re-shoots) - SALT chevron label, Marbo wordmark, GOLD / PLATINUM / BLUE / Tobacco / Ice Strawberry print, cap colour checked by eye"
+  }
  }
 ]
