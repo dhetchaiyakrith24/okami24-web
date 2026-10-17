@@ -354,6 +354,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "iqosheet-17": "IQOS ILUMA i ONE เครื่องอุ่นยาสูบตัวเดียวจบ ชาร์จเต็มใช้ได้ 20 ก้านติดกัน มี Autostart และ FlexPuff ใช้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 6 สีที่ IQOS ทำออกมา",
   "iqosheet-18": "IQOS ILUMA i เครื่องอุ่นยาสูบ ใช้ได้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 7 สีที่ IQOS ทำออกมา",
   // Round list19 (18/10): every number = a verified spec row of pod-150 (kardinal.com).
+  "eliquid-1": "Marbo Saltnic น้ำยา salt nic ขวด 30ml มีให้เลือก 10 กลิ่น",
   "pod-149": "SKE Crystal B20000 พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 20,000 พัฟ มีให้เลือก 8 กลิ่น",
   "pod-169": "INFY PLUS หัวพอตความจุ 2.5ml คอยล์ในตัว ใช้หมดแล้วเปลี่ยนหัวใหม่ มีให้เลือก 28 กลิ่น",
   "pod-154": "Pop Up 10K หัวพอต หัวละสูงสุด 10,000 พัฟ ใช้กับฐานแบตเตอรี่ของ Pop Up มีให้เลือก 18 กลิ่น",

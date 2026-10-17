@@ -305,7 +305,7 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // has explicitly decided whether to sell this line at all under this packaging. Taxonomy
   // (brandId/categoryId) is left resolved below since Salt Hub genuinely is the real brand — only
   // publication is held.
-  "ELIQUID-1": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "MARBORO SALT NIC 30 ML"; 3 independent Thai retailers (thai-vapes.com "Salt Hub - Marbo Salt Nic", vape69th.com, goatvapethai.com) consistently attribute the Marboro salt-nic line to Salt Hub; salthub.com\'s own favicon and the physical bottle label ("A product by: Salt hub") independently confirm this. See the trademark-risk flag above — NOT cleared for publication regardless of data completeness.' },
+  "ELIQUID-1": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "MARBORO SALT NIC 30 ML"; 3 independent Thai retailers (thai-vapes.com "Salt Hub - Marbo Salt Nic", vape69th.com, goatvapethai.com) consistently attribute the Marboro salt-nic line to Salt Hub; salthub.com\'s own favicon and the physical bottle label ("A product by: Salt hub") independently confirm this. Trademark-risk hold above lifted for this record by the owner 18/10 ("list everything", through Friday) — listed on warehouse facts only.' },
   "Eliquid-109": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Marboro Freebase ขวดยาว" — same Marboro/Salt Hub evidence as ELIQUID-1, different nicotine formulation (freebase vs. salt nic) and bottle format. See the trademark-risk flag above — NOT cleared for publication regardless of data completeness.' },
   "eliquid-133": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Yogurt Salt Hub" states the brand explicitly and directly — no inference needed, though the actual bottle label reads only "Yogurt probiotics — The Original" with no visible Salt Hub/Marbo branding (retailer-asserted attribution). See the trademark-risk flag above — held alongside ELIQUID-1/Eliquid-109 pending owner review, plus an unresolved 30mg/35mg nicotine-strength conflict across sources.' },
 
@@ -578,8 +578,9 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // language. No family grouping clause: no ProductFamily record exists for "Marboro" or
   // "Yogurt" — same convention as every brand-explicit-no-family entry above.
   "ELIQUID-1": {
-    tagline: "น้ำยา MARBORO SALT NIC 30 ML จากแบรนด์ SALTHUB",
-    shortDescription: "น้ำยารุ่น MARBORO SALT NIC 30 ML จากแบรนด์ SALTHUB",
+    // Round list19 (18/10): warehouse facts only — the old Shipnity name "SALT NIC 30 ML", Max's 10 flavours; the brand in Latin only.
+    tagline: "น้ำยา Marbo Saltnic ขวด 30ml",
+    shortDescription: "น้ำยา Marbo Saltnic ขวด 30ml นิโคตินแบบ salt nic ร้านมีให้เลือก 10 กลิ่น",
   },
   "Eliquid-109": {
     tagline: "น้ำยา Marboro Freebase ขวดยาว จากแบรนด์ SALTHUB",
@@ -707,6 +708,19 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
+  // Round list19 (18/10): Marbo Saltnic — OKami24 re-shoot (batch 7) of the shop's Tobacco (red) bottle photo, an in-stock flavour.
+  "ELIQUID-1": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/eliquid-1/card.webp",
+      alt: "Marbo Saltnic 30ml e-liquid bottle, Tobacco, studio photo",
+      angle: "Front, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's bottle photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo",
+      sourceUrl: "https://ihavevape.net/product/marboro-classic/",
+    },
+  ],
   // Round list19 (18/10): SKE Crystal B20000 — OKami24 re-shoot (batch 7) of the shop's Thai Milk Green Tea poster (the in-stock flavour).
   "Pod-149": [
     {
@@ -1098,6 +1112,14 @@ interface VerifiedSpecEntry {
 }
 
 const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
+  // Round list19 (18/10): warehouse facts only — the old Shipnity name "MARBORO SALT NIC 30 ML" (bottle size, nicotine type).
+  "ELIQUID-1": {
+    specifications: [
+      { key: "capacity", label: "ขนาดขวด", value: "30ml", sourceStatus: "verified" },
+      { key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
   // Round list19 (18/10): warehouse facts only — the model name "B20000 Puffs" (Max) and the device print "B20000".
   "Pod-149": {
     specifications: [
@@ -1406,6 +1428,15 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // differ only by the small printed flavour label; relabelling one photo would make up an image — IMAGE_SPEC §0 item 7).
   "Pod-169": {
     "Pod-169-1": { kind: "official-photo", role: "detail", src: "/assets/products/pod-169/variant-pod-169-1.webp", alt: "INFY PLUS 2.5ml clear pod cartridge, Grape Jelly, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's INFY PLUS flavour poster", sourceUrl: "https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/" },
+  },
+  // Round list19 (18/10): Marbo Saltnic — one re-shoot per bottle photo the shop has (5 of 10; Purple · Black · Green · Ice Sparkling ·
+  // Purple 50mg have no photo, they show the no-photo panel).
+  "ELIQUID-1": {
+    "ELQ-1-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-3.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Tobacco, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marboro-classic/" },
+    "ELQ-1-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-4.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Gold, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marboro-saltnic-gold/" },
+    "ELQ-1-5": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-5.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Platinum, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marbo-platinum/" },
+    "ELQ-1-7": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-7.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marbo-blue/" },
+    "ELQ-1-8": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-8.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Ice Strawberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marbo-ice-strawberry-2/" },
   },
   // Round list19 (18/10): SKE Crystal B20000 — the shop has a poster for Thai Milk Green Tea only; the other 7 show the no-photo panel.
   "Pod-149": {

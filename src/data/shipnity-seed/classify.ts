@@ -69,6 +69,9 @@ const OWNER_CONFIRMED_PARENT_TYPE: Record<string, OptionType> = {
   "Pod-173": "color",
   "coil-62": "color",
   "Eliquid-66": "flavor",
+  // Round list19 (18/10, owner "list everything", via Friday): Marbo Saltnic flavours are sold under pack colours ("Gold",
+  // "Blue", one "Purple 50mg") — colour words + one mg mark would read as a mixed axis; every child is one flavour bottle.
+  "ELIQUID-1": "flavor",
   "coil-78": "resistance", // not present in the active view, kept for completeness/documentation
 };
 

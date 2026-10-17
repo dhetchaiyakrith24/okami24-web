@@ -43,6 +43,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "pod-150": { tagline: "KS Quikpro replacement cartridge, 15ml" },
   "ks-quikpro-kit": { tagline: "KS Quikpro device with one 15ml cartridge" },
   "pod-149": { tagline: "SKE Crystal B20000 disposable" },
+  "eliquid-1": { tagline: "Marbo Saltnic e-liquid, 30ml bottle" },
   "pod-154": { tagline: "Pop Up 10K refill pod" },
   "pod-169": { tagline: "INFY PLUS prefilled pod cartridge, 2.5ml" },
   "pod-159": { tagline: "Esko Bar Switch 20K kit by ESKO BAR" },
