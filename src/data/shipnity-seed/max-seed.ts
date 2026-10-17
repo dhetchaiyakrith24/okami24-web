@@ -2742,6 +2742,109 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
         "inStock": false
       }
     ]
+  },
+  "RELX-LUMI-18K": {
+    "maxParentId": "Disposable-44",
+    "name": "RELX LUMI 18k",
+    "operationalSellingPrice": 349,
+    "children": [
+      {
+        "shipnityVariantId": "Disposable-44-1",
+        "rawLabel": "Grape",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-2",
+        "rawLabel": "Aloe Grape",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-3",
+        "rawLabel": "Watermelon",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-4",
+        "rawLabel": "Mixberry",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-5",
+        "rawLabel": "Apple Aloe",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-6",
+        "rawLabel": "Double Mint",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-7",
+        "rawLabel": "Jasmine Green Tea",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-8",
+        "rawLabel": "Gummy",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-9",
+        "rawLabel": "Pink Guava",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-10",
+        "rawLabel": "Mineral Water",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-11",
+        "rawLabel": "Sea Salt Lemon Candy",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Disposable-44-12",
+        "rawLabel": "Cola",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-13",
+        "rawLabel": "Lychee",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-14",
+        "rawLabel": "Double Mint 5%",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-15",
+        "rawLabel": "Watermelon 5%",
+        "sellingPrice": 349,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-44-16",
+        "rawLabel": "Grape 5%",
+        "sellingPrice": 349,
+        "inStock": true
+      }
+    ]
   }
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","RELX-LUMI-18K"];
