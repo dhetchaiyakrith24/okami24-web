@@ -98,6 +98,8 @@ const FLAVOR_WORDS = [
   "twist", "fizzy", "orange", "mixed", "muro", "smooth", "spearmint",
   // round list19 (18/10): KS Quikpro "Mineral" — a flavour on kardinal.com/products/quikpro; without it the child stayed unresolved.
   "mineral",
+  // round list19 (18/10): Pop Up 10K "Malee" (a fruit-juice flavour) stayed unresolved without it.
+  "malee",
   "องุ่น", "แตงโม", "สตรอเบอร์รี่", "มะม่วง", "แอปเปิ้ล", "มินท์", "เมนทอล", "บลูเบอร์รี่",
   "ลิ้นจี่", "โคล่า", "กล้วย", "มะนาว", "ยาสูบ", "แตง", "ฝรั่ง",
 ];

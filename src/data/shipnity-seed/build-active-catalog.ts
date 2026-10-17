@@ -22,7 +22,7 @@ import { OWNER_APPROVED_PUBLICATION } from "./publication-approvals";
  * Records Max no longer lists keep their 31/08 data (their pages, if any, are sold out through sku-map.ts — owner 08/10).
  */
 /** Stage 2 (18/10): published records moved onto Max, a few per PR. The published-catalogue dump proves each move. */
-export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38", "Pod-150"]);
+export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38", "Pod-150", "Pod-154"]);
 export const FROZEN_SEED_IDS = new Set<string>(
   [...Object.keys(OWNER_APPROVED_PUBLICATION), "IQOSHEET-15"].filter((id) => !MOVED_TO_MAX_IDS.has(id))
 );
@@ -54,6 +54,9 @@ export interface ActiveParentRecord {
 
 type SeedInput = Omit<RawActiveParent, "operationalCost">;
 
+/** A Max label typo fixed by the record's own pack print (round list19 18/10: Pop Up 10K pod shows "Sugus Pineapple"). */
+const MAX_LABEL_FIX: Record<string, string> = { "Pod-154-11": "Sugus Pineapple" };
+
 function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) | null {
   if (FROZEN_SEED_IDS.has(raw.shipnityProductId)) return null;
   if (MAX_ONLY_IDS.includes(raw.shipnityProductId)) return null; // already built from Max by fromMaxOnly
@@ -70,7 +73,7 @@ function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) |
     name: m.name,
     operationalSellingPrice: m.operationalSellingPrice,
     sourcePages: [],
-    children: children.map((c) => ({ shipnityVariantId: c.shipnityVariantId, rawLabel: c.rawLabel })),
+    children: children.map((c) => ({ shipnityVariantId: c.shipnityVariantId, rawLabel: MAX_LABEL_FIX[c.shipnityVariantId] ?? c.rawLabel })),
     ...(m.maxParentId !== raw.shipnityProductId ? { maxParentId: m.maxParentId } : {}),
   };
 }

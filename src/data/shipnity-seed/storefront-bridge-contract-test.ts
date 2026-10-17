@@ -231,9 +231,10 @@ export function runStorefrontBridgeContractTests(): BridgeContractResult[] {
   const publishedByBrand = new Map<string, string[]>();
   for (const slug of publishedSlugs) {
     const c = candidateBySlug.get(slug);
-    if (!c?.categoryId || !c.brandId) continue;
+    // Round list19 (18/10): a brandless product (Pod-180, Pod-154) still sits in its category — only the brand map needs a brand.
+    if (!c?.categoryId) continue;
     publishedByCategory.set(c.categoryId, [...(publishedByCategory.get(c.categoryId) ?? []), slug]);
-    publishedByBrand.set(c.brandId, [...(publishedByBrand.get(c.brandId) ?? []), slug]);
+    if (c.brandId) publishedByBrand.set(c.brandId, [...(publishedByBrand.get(c.brandId) ?? []), slug]);
   }
   for (const [categoryId, expected] of publishedByCategory) {
     const actual = getPublishedProductsByCategory(categoryId);
