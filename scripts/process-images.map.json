@@ -8750,5 +8750,12 @@
    "fidelitySheet": "_incoming/img-1610/masters/sheet-pod-150.jpg (reference beside renders A/B) - black translucent body, slanted mouthpiece, side channel, base port checked by eye"
   },
   "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/ks/device-black.png",
+  "slug": "ks-quikpro-kit",
+  "role": "card",
+  "note": "round list19 18/10 - Kardinal official Quikpro render Black_Individual (2674x3342 transparent PNG) from kardinal.com/products/quikpro",
+  "fileName": "card.webp"
  }
 ]
