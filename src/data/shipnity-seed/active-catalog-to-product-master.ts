@@ -541,7 +541,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // fabricates a brand name that isn't independently supportable.
   "Pod-150": {
     // Round list19 (18/10): every fact = kardinal.com/products/quikpro (spec list, FAQ, cartridge diagram).
-    tagline: "หัวพอตของเครื่อง Quikpro น้ำยา 15ml",
+    tagline: "หัวพอต Quikpro น้ำยา 15ml",
     shortDescription: "หัวพอตของเครื่อง Quikpro จากแบรนด์ KS (Kardinal) บรรจุน้ำยา 15ml หัวละสูงสุด 15,000 พัฟ (แล้วแต่การใช้งาน) ใช้จนหมดแล้วเปลี่ยนหัวใหม่",
   },
   "Disposable-34": {
@@ -1036,7 +1036,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "Pod-150": {
     specifications: [
       { key: "capacity", label: "ความจุ", value: "15ml", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
-      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 15,000 (แล้วแต่การใช้งาน)", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 15,000", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
       { key: "refill", label: "การใช้งาน", value: "ใช้จนหมดแล้วเปลี่ยนหัวใหม่", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
       { key: "dimensions", label: "ขนาดหัว", value: "สูง 76.7 mm · หนา 24.4 mm", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
       { key: "weight", label: "น้ำหนักหัว", value: "29.4 g", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
