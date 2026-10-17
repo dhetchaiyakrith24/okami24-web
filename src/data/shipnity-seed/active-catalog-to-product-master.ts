@@ -1059,7 +1059,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
       { key: "charging", label: "การชาร์จ", value: "USB-C ราว 30 นาที", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
       { key: "capacity", label: "ความจุหัวพอต", value: "15ml", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
       { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 15,000", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
-      { key: "colors", label: "สีตัวเครื่องที่ KS ทำออกมา", value: "Black · Blue · Grey · Red", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+      { key: "colors", label: "สีตัวเครื่อง", value: "Black · Blue · Grey · Red", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
     ],
     sourceUrls: ["https://www.kardinal.com/products/quikpro"],
   },
