@@ -188,6 +188,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "Pod-150": { sellingPrice: 299, lastPriceReview: "2026-10-18" },
   // Round list19 (18/10): KS Quikpro kit (Max-only, "Product 780") — Max "ราคาขาย" ฿389 for the parent and its 4 kit options (same read).
   "KS-QUIKPRO-KIT": { sellingPrice: 389, lastPriceReview: "2026-10-18" },
+  // Round list19 (18/10): Pop Up 10K pod — Max "ราคาขาย" ฿199 for the parent and every flavour (same 17/10 read).
+  "Pod-154": { sellingPrice: 199, lastPriceReview: "2026-10-18" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {

@@ -244,6 +244,9 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // Round list19 (18/10): Max-only record (Max "Product 780" "KS Quik Pro 15000 คำ") = the Kardinal Quikpro device sold with one
   // cartridge; its Max options are the cartridge flavour of the bundle (kardinal.com/products/quikpro).
   "KS-QUIKPRO-KIT": { brandId: "kardinal-stick", categoryId: "pod-kits", systemType: "pod-kit", evidence: 'Shipnity MAX "KS Quik Pro 15000 คำ" with options "เครื่อง + หัว <flavour>" (device + one cartridge) = Kardinal Quikpro, kardinal.com/products/quikpro (official): device + 15ml cartridge, up to 15,000 puffs' },
+  // Round list19 (18/10, owner "ทำเลยครับทั้งหมด"): Pop Up 10K refill pod — no maker site found (Thai-market line), sold without a brand on
+  // the site (same as Pod-180); every fact = the warehouse (Shipnity MAX name "Pop Up 10K หัวเติม", its 18 flavour rows + battery base row).
+  "Pod-154": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Pop Up 10K หัวเติม" (refill pod) with 18 flavour children + a "ฐานแบตเตอรี่" (battery base) child; no maker site found 16-18/10 — listed on warehouse facts only, without a brand' },
   "Pod-150": { brandId: "kardinal-stick", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "KS Quikpro 15K หัวพอต" ("หัวพอต" = pod cartridge) states the brand explicitly ("KS"); kardinal.com (official) confirms Quikpro as a real hybrid-cartridge product rated "up to 15,000 puffs" — an exact match to this parent\'s own "15K" name; official 15-flavor list confirmed, though this record\'s "Watermelon" child is not among them (flagged for owner review)' },
   // Catalog-intelligence mission — BRAND CLAIM WITHDRAWN (this entry previously asserted
   // brandId:"instabar"). Re-checked against instabar.net's OWN /products.json catalogue rather
@@ -542,6 +545,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // "Pod-149" copy removed alongside its brand-claim withdrawal above — see TAXONOMY_MATCHES's
   // comment. Copy that names "แบรนด์ SKE" would misattribute the product; MINIMUM_COPY never
   // fabricates a brand name that isn't independently supportable.
+  "Pod-154": {
+    // Round list19 (18/10): warehouse facts only — the name says 10K, the pod print says 10000 PUFFS, Max lists the battery base.
+    tagline: "หัวพอต Pop Up 10K",
+    shortDescription: "หัวพอต Pop Up 10K หัวละสูงสุด 10,000 พัฟ ใช้กับฐานแบตเตอรี่ของ Pop Up ร้านมีให้เลือก 18 กลิ่น",
+  },
   "KS-QUIKPRO-KIT": {
     // Round list19 (18/10): every fact = kardinal.com/products/quikpro (spec list, FAQ). Max sells it as device + one cartridge.
     tagline: "ชุดเครื่อง Quikpro พร้อมหัวพอต 1 หัว",
@@ -689,6 +697,19 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
+  // Round list19 (18/10): Pop Up 10K — OKami24 re-shoots (batch 7) of the shop's flavour posters; card = the Coke pod (in stock).
+  "Pod-154": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/pod-154/card.webp",
+      alt: "Pop Up 10K pod on its battery base, Coke, studio photo",
+      angle: "Front, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's Pop Up 10K flavour poster. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster",
+      sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/",
+    },
+  ],
   // Round list19 (18/10): Kardinal's own Quikpro render (Black, transparent PNG) from kardinal.com/products/quikpro.
   "KS-QUIKPRO-KIT": [
     {
@@ -1051,6 +1072,13 @@ interface VerifiedSpecEntry {
 }
 
 const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
+  // Round list19 (18/10): warehouse facts only (no maker page) — the name "10K" and the pod's own print "10000 PUFFS".
+  "Pod-154": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 10,000", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
   // Round list19 (18/10): kardinal.com/products/quikpro spec list "Finish Black Blue Grey Red · Liquid Capacity 15ml · Capacity 600mAh ·
   // Charging Time 30 minutes · In the Box … USB-C Charge Cable", FAQ "up to 15,000 puffs, depending on personal usage".
   "KS-QUIKPRO-KIT": {
@@ -1341,6 +1369,24 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
 // ===================================================================================
 
 const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
+  // Round list19 (18/10): Pop Up 10K — one re-shoot per flavour poster the shop has (14 of 18; Strawberry · Mixberry · Lime Soda ·
+  // Guava Kiwi have no poster, they show the no-photo panel).
+  "Pod-154": {
+    "Pod-154-1": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-1.webp", alt: "Pop Up 10K pod on its battery base, Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-2": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-2.webp", alt: "Pop Up 10K pod on its battery base, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-3": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-3.webp", alt: "Pop Up 10K pod on its battery base, Coke, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-4": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-4.webp", alt: "Pop Up 10K pod on its battery base, Mint Extra, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-5": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-5.webp", alt: "Pop Up 10K pod on its battery base, Hales Blue Boy, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-8": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-8.webp", alt: "Pop Up 10K pod on its battery base, Mangosteen, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-9": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-9.webp", alt: "Pop Up 10K pod on its battery base, Malee, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-10": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-10.webp", alt: "Pop Up 10K pod on its battery base, Peach, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-11": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-11.webp", alt: "Pop Up 10K pod on its battery base, Sugus Pineapple, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-12": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-12.webp", alt: "Pop Up 10K pod on its battery base, Sugus Raspberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-13": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-13.webp", alt: "Pop Up 10K pod on its battery base, Orange Soda, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-14": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-14.webp", alt: "Pop Up 10K pod on its battery base, Blueberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-17": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-17.webp", alt: "Pop Up 10K pod on its battery base, Jele Lychee, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+    "Pod-154-18": { kind: "official-photo", role: "detail", src: "/assets/products/pod-154/variant-pod-154-18.webp", alt: "Pop Up 10K pod on its battery base, Jelly Bear, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pop Up 10K poster", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+  },
   // Image-fix round 2026-09-30: nexBar CLEAR 18K — every flavour is the same clear device; our passed front card is the
   // template and each maker flavour poster (https://pod789.com/product/nexbar-18k-2/) gives the e-liquid colour and the printed flavour label.
   "Pod-180": {
@@ -1876,6 +1922,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "IQOSHEET-17": { name: "IQOS ILUMA i ONE", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
   "Pod-150": { name: "KS Quikpro 15K Cartridge", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+  "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
 };
 
 function deriveDisplayName(rawName: string, brandId: string | null, shipnityId?: string): string {

@@ -8757,5 +8757,185 @@
   "role": "card",
   "note": "round list19 18/10 - Kardinal official Quikpro render Black_Individual (2674x3342 transparent PNG) from kardinal.com/products/quikpro",
   "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/p154/coke.png",
+  "slug": "pod-154",
+  "role": "card",
+  "note": "round list19 18/10 - card = the Coke pod re-shoot (in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Coke) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/p154/grape.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-1",
+  "note": "round list19 18/10 - Grape (Max Pod-154-1)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Grape) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/watermelon.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-2",
+  "note": "round list19 18/10 - Watermelon (Max Pod-154-2)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Watermelon) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/coke.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-3",
+  "note": "round list19 18/10 - Coke (Max Pod-154-3)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Coke) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/mint-extra.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-4",
+  "note": "round list19 18/10 - Mint Extra (Max Pod-154-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Mint Extra) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/hales-blue-boy.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-5",
+  "note": "round list19 18/10 - Hales Blue Boy (Max Pod-154-5)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Hales Blue Boy) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/mangosteen.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-8",
+  "note": "round list19 18/10 - Mangosteen (Max Pod-154-8)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Mangosteen) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/malee.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-9",
+  "note": "round list19 18/10 - Malee (Max Pod-154-9)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Malee) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/peach.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-10",
+  "note": "round list19 18/10 - Peach (Max Pod-154-10)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Peach) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/sugus-pineapple.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-11",
+  "note": "round list19 18/10 - Sugus Pineapple (Max Pod-154-11)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Sugus Pineapple) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/sugus-raspberry.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-12",
+  "note": "round list19 18/10 - Sugus Raspberry (Max Pod-154-12)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Sugus Raspberry) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/orange-soda.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-13",
+  "note": "round list19 18/10 - Orange Soda (Max Pod-154-13)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Orange Soda) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/blueberry.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-14",
+  "note": "round list19 18/10 - Blueberry (Max Pod-154-14)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Blueberry) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/jele-lychee.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-17",
+  "note": "round list19 18/10 - Jele Lychee (Max Pod-154-17)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Jele Lychee) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/p154/jelly-bear.png",
+  "slug": "pod-154",
+  "role": "variant",
+  "id": "pod-154-18",
+  "note": "round list19 18/10 - Jelly Bear (Max Pod-154-18)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour poster crop as the only image (masters/in), prompt builder masters/SOURCE.md __M; keyed off the charcoal sweep by b17/floodkey.js (T=14), the black base rebuilt to the body's straight sides + an elliptical bottom, floor band + reflection cleared (list19/p154/cut.js, copy beside this source)",
+   "reference": "ihavevape.net Pop Up 10K flavour poster (Jelly Bear) - _incoming/img-1610/masters/src/pod-154 (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/p154/sheet.jpg (all 14 keyed picks) beside _incoming/img-1610/masters/sheet-pod-154.jpg (posters) - printed flavour name, POP UP logo, 10000 PUFFS, VC base checked by eye"
+  }
  }
 ]
