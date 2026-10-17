@@ -100,6 +100,8 @@ const FLAVOR_WORDS = [
   "mineral",
   // round list19 (18/10): Pop Up 10K "Malee" (a fruit-juice flavour) stayed unresolved without it.
   "malee",
+  // round list19 (18/10): INFY PLUS "Tropical Mix Fruit" and "Sprite" (a soda flavour) stayed unresolved and dropped off the page.
+  "tropical", "sprite",
   "องุ่น", "แตงโม", "สตรอเบอร์รี่", "มะม่วง", "แอปเปิ้ล", "มินท์", "เมนทอล", "บลูเบอร์รี่",
   "ลิ้นจี่", "โคล่า", "กล้วย", "มะนาว", "ยาสูบ", "แตง", "ฝรั่ง",
 ];
