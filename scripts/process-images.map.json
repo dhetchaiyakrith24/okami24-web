@@ -8738,5 +8738,17 @@
   "role": "variant",
   "id": "white",
   "note": "LAMBDA official store lambdasmoke.com i8 page gallery photo ..._1715766907182_0.jpg (1000x1000 on white, served _w2048 = 1000 px) - colour white (list19 17/10)"
+ },
+ {
+  "source": "_incoming/list19/ks/p150-pod.png",
+  "slug": "pod-150",
+  "role": "card",
+  "note": "round list19 18/10 - KS Quikpro cartridge (the pod alone, no device); the maker's only cartridge image on kardinal.com/products/quikpro is a line-art dimension diagram, so the card is a studio re-shoot",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 17/10), studio re-shoot with the shop's flavour-box poster pod crop as the only image (masters/in/p150-pod2), prompt builder masters/SOURCE.md __M; render masters/out/p150-pod2-B.png; keyed off the grey sweep by b17/floodkey.js (T=14), floor band + reflection cut below the measured elliptical base and outside the pod's column span (list19/p150-cut.js, copy beside this source)",
+   "reference": "maneevp.com KS Quikpro flavour-box poster (pod part) - _incoming/img-1610/masters/in/p150-pod2 (index masters/src/index.json); shape cross-checked against Kardinal's own Quikpro device render (kardinal.com/products/quikpro, Black) and its cartridge dimension diagram (76.7 x 24.4 mm, slanted mouthpiece)",
+   "fidelitySheet": "_incoming/img-1610/masters/sheet-pod-150.jpg (reference beside renders A/B) - black translucent body, slanted mouthpiece, side channel, base port checked by eye"
+  },
+  "fileName": "card.webp"
  }
 ]

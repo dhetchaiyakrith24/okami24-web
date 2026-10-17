@@ -45,6 +45,7 @@ export const TERM_SEARCH_ALIASES: Record<string, string[]> = {
   // round list19 (17/10): LAMBDA (i8) — the two Thai spellings of the brand name.
   "แลมบ์ดา": ["lambda"],
   "แลมบ์ด้า": ["lambda"],
+  "เคเอส": ["ks"],
   "ไอคอส": ["iqos"],
   "ไอโคส": ["iqos"],
   "ไอค๊อส": ["iqos"],

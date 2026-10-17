@@ -106,6 +106,11 @@ export const brands: Brand[] = [
     name: "KS",
     fullName: "Kardinal Stick",
     tagline: "Engineering the Future of Alternative Tobacco.",
+    taglineTh: "พอตจาก Kardinal ประเทศมาเลเซีย",
+    // Round list19 (18/10): first KS product on the site (Quikpro cartridge) — kardinal.com/about "Established in 2017 in the
+    // historic city of Malacca, Malaysia".
+    descriptionTh:
+      "KS (Kardinal Stick) เป็นผู้ผลิตบุหรี่ไฟฟ้าจากเมืองมะละกา ประเทศมาเลเซีย ก่อตั้งปี 2017 ทำพอตระบบปิดและตระกูล Quik / Quikpro ทั้งแบบใช้แล้วทิ้งและแบบเปลี่ยนหัว",
     description:
       "A Southeast Asian e-cigarette manufacturer, founded in 2017 in Malacca, Malaysia, known for its closed-pod systems and the Quik/Quikpro disposable and hybrid-cartridge line.",
     founded: "2017",

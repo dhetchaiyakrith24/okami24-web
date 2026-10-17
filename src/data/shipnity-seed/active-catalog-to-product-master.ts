@@ -540,8 +540,9 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // comment. Copy that names "แบรนด์ SKE" would misattribute the product; MINIMUM_COPY never
   // fabricates a brand name that isn't independently supportable.
   "Pod-150": {
-    tagline: "หัวพอต KS Quikpro 15K จากแบรนด์ KS",
-    shortDescription: "หัวพอตรุ่น KS Quikpro 15K จากแบรนด์ KS",
+    // Round list19 (18/10): every fact = kardinal.com/products/quikpro (spec list, FAQ, cartridge diagram).
+    tagline: "หัวพอต Quikpro น้ำยา 15ml",
+    shortDescription: "หัวพอตของเครื่อง Quikpro จากแบรนด์ KS (Kardinal) บรรจุน้ำยา 15ml หัวละสูงสุด 15,000 พัฟ (แล้วแต่การใช้งาน) ใช้จนหมดแล้วเปลี่ยนหัวใหม่",
   },
   "Disposable-34": {
     tagline: "พอตใช้แล้วทิ้ง Insta Bar PX 15000 Puffs จากแบรนด์ INSTABAR",
@@ -669,6 +670,7 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 //   page, which explicitly states "up to 15,000 puffs" for the cartridge — an exact match. The only
 //   cartridge-specific image on that page is a grey technical dimension diagram (line-art, no
 //   color/material), not a product photograph — rejected as not representative. Stays blocked.
+//   RESOLVED round list19 (18/10): card = OKami24 re-shoot of the pod (VERIFIED_MEDIA["Pod-150"]).
 // - Pod-149 (SKE Crystal B20K), Disposable-34 (Insta Bar PX 15000), coil-62 (Feelin C1 "Matcha
 //   Clear" cartridge): quick official-site checks found real product lines at skevape.com/
 //   instabar.net/nevoks.com but no exact model/puff-count/color match in the results returned
@@ -679,6 +681,20 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
+  // Round list19 (18/10): the maker's only cartridge image is a line-art diagram, so the card is an OKami24 re-shoot of the pod
+  // (batch 7 master, aiRender in scripts/process-images.map.json). Same black pod for every flavour; the flavour shows only on the box.
+  "Pod-150": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/pod-150/card.webp",
+      alt: "KS Quikpro replacement cartridge, black translucent pod, studio photo",
+      angle: "Front, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the pod on the shop's flavour-box poster; shape checked against Kardinal's Quikpro device render and cartridge diagram. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the KS Quikpro flavour-box poster",
+      sourceUrl: "https://www.kardinal.com/products/quikpro",
+    },
+  ],
   // ---------------------------------------------------------------------------------
   // Catalog-intelligence mission (2026-09-02) — media wave. Every asset below was
   // downloaded, decoded, checked through `checkQuality()` at role "card", AND looked at
@@ -1014,6 +1030,20 @@ interface VerifiedSpecEntry {
 }
 
 const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
+  // Round list19 (18/10): kardinal.com/products/quikpro — spec list "Liquid Capacity 15ml", FAQ "Each 15ml cartridge can provide up to
+  // 15,000 puffs, depending on personal usage" / "the e-liquid cartridge is replaceable, it is not refillable", cartridge diagram
+  // "Height 76.7 mm · Depth 24.4 mm · Weight 29.4 g".
+  "Pod-150": {
+    specifications: [
+      { key: "capacity", label: "ความจุ", value: "15ml", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 15,000", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+      { key: "refill", label: "การใช้งาน", value: "ใช้จนหมดแล้วเปลี่ยนหัวใหม่", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+      { key: "dimensions", label: "ขนาดหัว", value: "สูง 76.7 mm · หนา 24.4 mm", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+      { key: "weight", label: "น้ำหนักหัว", value: "29.4 g", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "เครื่อง KS Quikpro", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+    ],
+    sourceUrls: ["https://www.kardinal.com/products/quikpro"],
+  },
   // ---------------------------------------------------------------------------------
   // Catalog-intelligence mission (2026-09-02). Discrete, individually-sourced manufacturer
   // facts only — no marketing paragraphs, and anything a source did not actually state is
@@ -1530,6 +1560,11 @@ export interface VerifiedAdditionalOptionValue {
 }
 
 export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOptionValue[]> = {
+  // Round list19 (18/10): kardinal.com/products/quikpro "Flavours" lists 15; Grape Berry is the one the warehouse (Pod-150) does not carry.
+  // (The warehouse's "Cola Lemon" = Kardinal's "Lemon Cola"; its "Watermelon" is not on Kardinal's list — kept, it is the warehouse's real child.)
+  "Pod-150": [
+    { code: "grape-berry", label: "Grape Berry", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+  ],
   // Image-fix round 2026-09-30: nexBar CLEAR 18K — the maker's poster lists 15 flavours; these 5 are not in Shipnity.
   "Pod-180": [
     { code: "blueberry", label: "Blueberry", sourceUrl: "https://ihavevape.net/product/nexbar-clear-18k-puffs/" },
@@ -1806,6 +1841,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "IQOSHEET-18": { name: "IQOS ILUMA i", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-kit-breeze-blue.html" },
   "IQOSHEET-14": { name: "LAMBDA i8", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
   "IQOSHEET-17": { name: "IQOS ILUMA i ONE", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
+  "Pod-150": { name: "KS Quikpro 15K Cartridge", sourceUrl: "https://www.kardinal.com/products/quikpro" },
 };
 
 function deriveDisplayName(rawName: string, brandId: string | null, shipnityId?: string): string {

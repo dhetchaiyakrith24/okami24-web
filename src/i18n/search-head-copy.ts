@@ -353,6 +353,8 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round list19 (17/10): every number = a verified spec row of iqosheet-17.
   "iqosheet-17": "IQOS ILUMA i ONE เครื่องอุ่นยาสูบตัวเดียวจบ ชาร์จเต็มใช้ได้ 20 ก้านติดกัน มี Autostart และ FlexPuff ใช้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 6 สีที่ IQOS ทำออกมา",
   "iqosheet-18": "IQOS ILUMA i เครื่องอุ่นยาสูบ ใช้ได้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 7 สีที่ IQOS ทำออกมา",
+  // Round list19 (18/10): every number = a verified spec row of pod-150 (kardinal.com).
+  "pod-150": "KS Quikpro 15K หัวพอตน้ำยา 15ml หัวละสูงสุด 15,000 พัฟ ใช้จนหมดแล้วเปลี่ยนหัวใหม่ ดูได้ทุกกลิ่นที่ KS ทำออกมา",
   "pod-180": "พอตใช้แล้วทิ้ง nexBar CLEAR 18K ตัวใส สูงสุด 18,000 พัฟ น้ำยา 18mL แบต 650mAh ชาร์จผ่าน USB-C มี 2 โหมด Normal กับ Turbo",
 };
 

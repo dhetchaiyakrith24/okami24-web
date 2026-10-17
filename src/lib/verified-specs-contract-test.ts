@@ -44,6 +44,8 @@ const MANUFACTURER_HOSTS = [
   "thai.myjoiway.com",
   // round list19 (17/10): LAMBDA's own store (lambdasmoke.com, "Shenzhen Original Technology Co., Ltd.")
   "lambdasmoke.com", "www.lambdasmoke.com",
+  // round list19 (18/10): Kardinal, maker of KS (kardinal.com — brands.ts referenceUrl)
+  "kardinal.com", "www.kardinal.com",
   // batch 4g (05/10): TFIT's own site — its product API + poster files (_incoming/sitewide-template/4/facts-tfit-m-power-20k.md)
   "tfitvape.com",
   // batch 5f (06/10): MOOOD's own site — offline now; its pages and files read from the Wayback Machine
@@ -58,6 +60,7 @@ export const SOURCED_PUBLISHED_ROW_PRODUCTS = [
   "pod-159", // data round chat 2 (eskobarvape.com)
   "coil-55", "coil-68", "coil-54", "iqosheet-16", "iqosheet-18", // round data 2
   "iqosheet-17", "iqosheet-14", // round list19 (17/10, iqos.com/ph · lambdasmoke.com)
+  "pod-150", // round list19 (18/10, kardinal.com)
 ] as const;
 
 /** A number in one product's copy that is another product's verified fact, named as such in the sentence. */
