@@ -71,7 +71,9 @@ export function runActiveCatalogSeedValidation(): ValidationReport {
 
       // 3. Child must be correctly nested under the parent it claims (also catches transcription
       // typos where a child id's prefix doesn't match the parent it was placed under)
-      if (!c.shipnityVariantId.startsWith(`${p.shipnityProductId}-`)) {
+      // Round list19 (17/10): a Max-sourced record may sit under Max's re-coded parent (maxParentId) — its children carry that code.
+      const owner = p.maxParentId && c.shipnityVariantId.startsWith(`${p.maxParentId}-`) ? p.maxParentId : p.shipnityProductId;
+      if (!c.shipnityVariantId.startsWith(`${owner}-`)) {
         issues.push({
           check: "child-under-correct-parent",
           detail: `${c.shipnityVariantId} is listed under parent ${p.shipnityProductId} but its id prefix doesn't match`,
@@ -79,7 +81,7 @@ export function runActiveCatalogSeedValidation(): ValidationReport {
       }
 
       // 5. No invented child code — suffix after the parent id must be a plain positive integer
-      const suffix = c.shipnityVariantId.slice(p.shipnityProductId.length + 1);
+      const suffix = c.shipnityVariantId.slice(owner.length + 1);
       if (!/^\d+$/.test(suffix)) {
         issues.push({
           check: "no-invented-child-code",
