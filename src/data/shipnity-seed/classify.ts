@@ -96,6 +96,8 @@ const FLAVOR_WORDS = [
   "slush", "pineapple", "tea", "gummy", "gummies", "jelly", "cream", "raspberry", "shisha",
   "mangosteen", "hales", "vanilla", "yakult", "baraku", "fanta", "sugus", "jele", "bear", "click",
   "twist", "fizzy", "orange", "mixed", "muro", "smooth", "spearmint",
+  // round list19 (18/10): KS Quikpro "Mineral" — a flavour on kardinal.com/products/quikpro; without it the child stayed unresolved.
+  "mineral",
   "องุ่น", "แตงโม", "สตรอเบอร์รี่", "มะม่วง", "แอปเปิ้ล", "มินท์", "เมนทอล", "บลูเบอร์รี่",
   "ลิ้นจี่", "โคล่า", "กล้วย", "มะนาว", "ยาสูบ", "แตง", "ฝรั่ง",
 ];

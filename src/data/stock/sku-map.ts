@@ -641,6 +641,25 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
   } },
   // Round list19 (17/10): IQOS ILUMA i ONE — the warehouse holds Breeze Blue only (Max children -1 Pebble Grey · -2 Azure Blue are
   // the original ILUMA ONE, kept off this record; -4 Oasis Limited · -5 Bright not identified yet).
+  // Round list19 (18/10): KS Quikpro 15K cartridge — the 15 Max children; Grape Berry is Kardinal's flavour the warehouse does not carry.
+  "pod-150": { parent: "Pod-150", options: {
+    "Pod-150-1": "Pod-150-1",
+    "Pod-150-2": "Pod-150-2",
+    "Pod-150-3": "Pod-150-3",
+    "Pod-150-4": "Pod-150-4",
+    "Pod-150-5": "Pod-150-5",
+    "Pod-150-6": "Pod-150-6",
+    "Pod-150-7": "Pod-150-7",
+    "Pod-150-8": "Pod-150-8",
+    "Pod-150-9": "Pod-150-9",
+    "Pod-150-10": "Pod-150-10",
+    "Pod-150-11": "Pod-150-11",
+    "Pod-150-12": "Pod-150-12",
+    "Pod-150-13": "Pod-150-13",
+    "Pod-150-14": "Pod-150-14",
+    "Pod-150-15": "Pod-150-15",
+    "pod-150-verified-grape-berry": null,
+  } },
   "iqosheet-17": { parent: "IQOSHEET-17", options: {
     "IQOSHEET-17-3": "IQOSHEET-17-3",
     "iqosheet-17-verified-digital-violet": null,

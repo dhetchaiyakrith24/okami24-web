@@ -182,6 +182,10 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // for the sourcing. Same pricing rule as every entry above: single, unambiguous
   // operationalSellingPrice, no conflicting price found anywhere else in the project.
   "Pod-180": { sellingPrice: 359, lastPriceReview: "2026-09-03" },
+  // Round list19 (18/10): KS Quikpro 15K cartridge — price = Shipnity MAX "ราคาขาย" ฿299 for the parent and every child
+  // (Max product list read 2026-10-17, _incoming/img-1610/list19/max/shipnity-max-products-2026-10-17.json; owner rule for the
+  // warehouse products: price = the warehouse "ราคาขาย", owner list item 41 / BSOT §4).
+  "Pod-150": { sellingPrice: 299, lastPriceReview: "2026-10-18" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {
