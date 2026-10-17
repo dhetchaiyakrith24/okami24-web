@@ -60,7 +60,7 @@ export const SOURCED_PUBLISHED_ROW_PRODUCTS = [
   "pod-159", // data round chat 2 (eskobarvape.com)
   "coil-55", "coil-68", "coil-54", "iqosheet-16", "iqosheet-18", // round data 2
   "iqosheet-17", "iqosheet-14", // round list19 (17/10, iqos.com/ph · lambdasmoke.com)
-  "pod-150", // round list19 (18/10, kardinal.com)
+  "pod-150", "ks-quikpro-kit", // round list19 (18/10, kardinal.com)
 ] as const;
 
 /** A number in one product's copy that is another product's verified fact, named as such in the sentence. */

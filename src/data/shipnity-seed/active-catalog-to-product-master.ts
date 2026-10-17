@@ -241,6 +241,9 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // or a 64px flavor icon, both failing the card-image resolution floor; every available
   // photograph is of the reusable BATTERY DEVICE, not this cartridge — using one would misrepresent
   // the product being sold.
+  // Round list19 (18/10): Max-only record (Max "Product 780" "KS Quik Pro 15000 คำ") = the Kardinal Quikpro device sold with one
+  // cartridge; its Max options are the cartridge flavour of the bundle (kardinal.com/products/quikpro).
+  "KS-QUIKPRO-KIT": { brandId: "kardinal-stick", categoryId: "pod-kits", systemType: "pod-kit", evidence: 'Shipnity MAX "KS Quik Pro 15000 คำ" with options "เครื่อง + หัว <flavour>" (device + one cartridge) = Kardinal Quikpro, kardinal.com/products/quikpro (official): device + 15ml cartridge, up to 15,000 puffs' },
   "Pod-150": { brandId: "kardinal-stick", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'name "KS Quikpro 15K หัวพอต" ("หัวพอต" = pod cartridge) states the brand explicitly ("KS"); kardinal.com (official) confirms Quikpro as a real hybrid-cartridge product rated "up to 15,000 puffs" — an exact match to this parent\'s own "15K" name; official 15-flavor list confirmed, though this record\'s "Watermelon" child is not among them (flagged for owner review)' },
   // Catalog-intelligence mission — BRAND CLAIM WITHDRAWN (this entry previously asserted
   // brandId:"instabar"). Re-checked against instabar.net's OWN /products.json catalogue rather
@@ -539,6 +542,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // "Pod-149" copy removed alongside its brand-claim withdrawal above — see TAXONOMY_MATCHES's
   // comment. Copy that names "แบรนด์ SKE" would misattribute the product; MINIMUM_COPY never
   // fabricates a brand name that isn't independently supportable.
+  "KS-QUIKPRO-KIT": {
+    // Round list19 (18/10): every fact = kardinal.com/products/quikpro (spec list, FAQ). Max sells it as device + one cartridge.
+    tagline: "ชุดเครื่อง Quikpro พร้อมหัวพอต 1 หัว",
+    shortDescription: "ชุดเครื่อง Quikpro จากแบรนด์ KS (Kardinal) ได้ตัวเครื่องพร้อมหัวพอตน้ำยา 15ml 1 หัว เลือกกลิ่นของหัวได้ แบต 600mAh ชาร์จผ่าน USB-C ราว 30 นาที หัวละสูงสุด 15,000 พัฟ",
+  },
   "Pod-150": {
     // Round list19 (18/10): every fact = kardinal.com/products/quikpro (spec list, FAQ, cartridge diagram).
     tagline: "หัวพอต Quikpro น้ำยา 15ml",
@@ -681,6 +689,19 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
+  // Round list19 (18/10): Kardinal's own Quikpro render (Black, transparent PNG) from kardinal.com/products/quikpro.
+  "KS-QUIKPRO-KIT": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/ks-quikpro-kit/card.webp",
+      alt: "KS Quikpro device with cartridge, Black, official product render",
+      angle: "Front, upright — Kardinal's official Quikpro render (Black_Individual, 2674x3342 transparent PNG) from kardinal.com/products/quikpro.",
+      transparentBackground: true,
+      sourceName: "Kardinal (official brand site)",
+      sourceUrl: "https://www.kardinal.com/products/quikpro",
+    },
+  ],
   // Round list19 (18/10): the maker's only cartridge image is a line-art diagram, so the card is an OKami24 re-shoot of the pod
   // (batch 7 master, aiRender in scripts/process-images.map.json). Same black pod for every flavour; the flavour shows only on the box.
   "Pod-150": [
@@ -1030,6 +1051,18 @@ interface VerifiedSpecEntry {
 }
 
 const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
+  // Round list19 (18/10): kardinal.com/products/quikpro spec list "Finish Black Blue Grey Red · Liquid Capacity 15ml · Capacity 600mAh ·
+  // Charging Time 30 minutes · In the Box … USB-C Charge Cable", FAQ "up to 15,000 puffs, depending on personal usage".
+  "KS-QUIKPRO-KIT": {
+    specifications: [
+      { key: "battery", label: "แบตเตอรี่", value: "600mAh", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+      { key: "charging", label: "การชาร์จ", value: "USB-C ราว 30 นาที", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+      { key: "capacity", label: "ความจุหัวพอต", value: "15ml", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 15,000", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+      { key: "colors", label: "สีตัวเครื่อง", value: "Black · Blue · Grey · Red", sourceStatus: "verified", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+    ],
+    sourceUrls: ["https://www.kardinal.com/products/quikpro"],
+  },
   // Round list19 (18/10): kardinal.com/products/quikpro — spec list "Liquid Capacity 15ml", FAQ "Each 15ml cartridge can provide up to
   // 15,000 puffs, depending on personal usage" / "the e-liquid cartridge is replaceable, it is not refillable", cartridge diagram
   // "Height 76.7 mm · Depth 24.4 mm · Weight 29.4 g".
@@ -1842,6 +1875,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "IQOSHEET-14": { name: "LAMBDA i8", sourceUrl: "https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html" },
   "IQOSHEET-17": { name: "IQOS ILUMA i ONE", sourceUrl: "https://www.iqos.com/ph/en/shop/iluma-i-one-kit-breeze-blue.html" },
   "Pod-150": { name: "KS Quikpro 15K Cartridge", sourceUrl: "https://www.kardinal.com/products/quikpro" },
+  "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
 };
 
 function deriveDisplayName(rawName: string, brandId: string | null, shipnityId?: string): string {

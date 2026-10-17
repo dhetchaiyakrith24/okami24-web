@@ -642,6 +642,14 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
   // Round list19 (17/10): IQOS ILUMA i ONE — the warehouse holds Breeze Blue only (Max children -1 Pebble Grey · -2 Azure Blue are
   // the original ILUMA ONE, kept off this record; -4 Oasis Limited · -5 Bright not identified yet).
   // Round list19 (18/10): KS Quikpro 15K cartridge — the 15 Max children; Grape Berry is Kardinal's flavour the warehouse does not carry.
+  // Round list19 (18/10): KS Quikpro kit — Max-only codes ("Variation N") are not in the 13/10 warehouse snapshot, so the kit options
+  // Max marked "ไม่มีของ" on 17/10 (all 4) are null = sold out; map a code here when Max shows it in stock.
+  "ks-quikpro-kit": { parent: "Product 780", options: {
+    "Variation 2216": null,
+    "Variation 2213": null,
+    "Variation 2215": null,
+    "Variation 2217": null,
+  } },
   "pod-150": { parent: "Pod-150", options: {
     "Pod-150-1": "Pod-150-1",
     "Pod-150-2": "Pod-150-2",
