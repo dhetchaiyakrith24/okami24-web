@@ -21,7 +21,11 @@ import { OWNER_APPROVED_PUBLICATION } from "./publication-approvals";
  * "Pod-171-10aa") is not an option of the record — it is listed in `maxDroppedChildren` instead (one price per record).
  * Records Max no longer lists keep their 31/08 data (their pages, if any, are sold out through sku-map.ts — owner 08/10).
  */
-export const FROZEN_SEED_IDS = new Set<string>([...Object.keys(OWNER_APPROVED_PUBLICATION), "IQOSHEET-15"]);
+/** Stage 2 (18/10): published records moved onto Max, a few per PR. The published-catalogue dump proves each move. */
+export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38"]);
+export const FROZEN_SEED_IDS = new Set<string>(
+  [...Object.keys(OWNER_APPROVED_PUBLICATION), "IQOSHEET-15"].filter((id) => !MOVED_TO_MAX_IDS.has(id))
+);
 export const maxDroppedChildren: { shipnityProductId: string; shipnityVariantId: string; rawLabel: string; reason: string }[] = [];
 export { MAX_SEED_DATE };
 

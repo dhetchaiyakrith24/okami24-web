@@ -581,7 +581,9 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Coil-1-14": "Coil-1-14",
   } },
   "coil-38": { parent: "Coil-38", options: {
+    "Coil-38-1": "Coil-38-1",
     "Coil-38-2": "Coil-38-2",
+    "Coil-38-3": "Coil-38-3",
     "Coil-38-4": "Coil-38-4",
   } },
   "coil-53": { parent: "Coil-53", options: {
