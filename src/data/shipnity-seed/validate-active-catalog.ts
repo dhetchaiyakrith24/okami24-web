@@ -15,6 +15,7 @@
  */
 
 import { activeCatalogSeed, excludedNonProductRows } from "./build-active-catalog";
+import { MAX_SEED, MAX_ONLY_IDS } from "./max-seed";
 
 export interface ValidationIssue {
   check: string;
@@ -71,6 +72,15 @@ export function runActiveCatalogSeedValidation(): ValidationReport {
 
       // 3. Child must be correctly nested under the parent it claims (also catches transcription
       // typos where a child id's prefix doesn't match the parent it was placed under)
+      // Round list19 (18/10): a Max-only record (MAX_ONLY_IDS) — Max gives its children their own codes ("Variation N"); the check
+      // is that Max itself lists the child under that parent (max-seed.ts children of the record's maxParentId).
+      if (MAX_ONLY_IDS.includes(p.shipnityProductId)) {
+        if (!MAX_SEED[p.shipnityProductId]?.children.some((m) => m.shipnityVariantId === c.shipnityVariantId)) {
+          issues.push({ check: "child-under-correct-parent", detail: `${c.shipnityVariantId} is not a Max child of ${p.maxParentId}` });
+        }
+        if (!c.rawLabel.trim()) issues.push({ check: "no-blank-name", detail: `${c.shipnityVariantId} has blank rawLabel` });
+        continue;
+      }
       // Round list19 (17/10): a Max-sourced record may sit under Max's re-coded parent (maxParentId) — its children carry that code.
       const owner = p.maxParentId && c.shipnityVariantId.startsWith(`${p.maxParentId}-`) ? p.maxParentId : p.shipnityProductId;
       if (!c.shipnityVariantId.startsWith(`${owner}-`)) {
