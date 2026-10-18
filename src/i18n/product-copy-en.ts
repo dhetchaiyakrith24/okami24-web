@@ -45,6 +45,8 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "ks-quikpro-kit": { tagline: "KS Quikpro device with one 15ml cartridge" },
   "pod-149": { tagline: "SKE Crystal B20000 disposable" },
   "eliquid-1": { tagline: "Marbo Saltnic e-liquid, 30ml bottle" },
+  "eliquid-72": { tagline: "Pepo salt nic e-liquid" },
+  "eliquid-73": { tagline: "Dundu salt nic e-liquid" },
   "pod-154": { tagline: "Pop Up 10K refill pod" },
   "pod-142": { tagline: "Reswa Sportcan 12K disposable" },
   "nexswitch-16k-kit": { tagline: "Nexswitch kit with one pod" },

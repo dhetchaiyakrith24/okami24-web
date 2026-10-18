@@ -9540,6 +9540,78 @@
   }
  },
  {
+  "source": "_incoming/list19/pepo/grape.png",
+  "slug": "eliquid-72",
+  "role": "card",
+  "note": "round list19 19/10 - Pepo Grape (in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop bottle photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/e72-grape-A.png; cut by shape (list19/e1/shape.js), shoulder gaps filled (gapfill.js), the dropper cone redrawn from the Mixberry bottle outline (conefit.js, same cap moulding) - copies beside this source",
+   "reference": "ihavevape.net Pepo group poster (bottles ~120 px, x3) (https://ihavevape.net/product/pepo-salt-nic/) - _incoming/img-1610/masters/src (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/e/eq-sheet.jpg - PEPO / DUNDU SALT wordmarks, flavour print, mascot, cap colour checked by eye against the shop photos"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/pepo/grape.png",
+  "slug": "eliquid-72",
+  "role": "variant",
+  "id": "elq-5-1",
+  "note": "round list19 19/10 - Pepo Grape (Max ELQ-5-1)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop bottle photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/e72-grape-A.png; cut by shape (list19/e1/shape.js), shoulder gaps filled (gapfill.js), the dropper cone redrawn from the Mixberry bottle outline (conefit.js, same cap moulding) - copies beside this source",
+   "reference": "ihavevape.net Pepo group poster (bottles ~120 px, x3) (https://ihavevape.net/product/pepo-salt-nic/) - _incoming/img-1610/masters/src (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/e/eq-sheet.jpg - PEPO / DUNDU SALT wordmarks, flavour print, mascot, cap colour checked by eye against the shop photos"
+  }
+ },
+ {
+  "source": "_incoming/list19/pepo/mixberry.png",
+  "slug": "eliquid-72",
+  "role": "variant",
+  "id": "elq-5-3",
+  "note": "round list19 19/10 - Pepo Mixed Berry (Max ELQ-5-3)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop bottle photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/e72-mixberry-A.png; cut by shape (list19/e1/shape.js), shoulder gaps filled (gapfill.js), the dropper cone redrawn from the Mixberry bottle outline (conefit.js, same cap moulding) - copies beside this source",
+   "reference": "ihavevape.net Pepo group poster (bottles ~120 px, x3) (https://ihavevape.net/product/pepo-salt-nic/) - _incoming/img-1610/masters/src (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/e/eq-sheet.jpg - PEPO / DUNDU SALT wordmarks, flavour print, mascot, cap colour checked by eye against the shop photos"
+  }
+ },
+ {
+  "source": "_incoming/list19/pepo/pineapple.png",
+  "slug": "eliquid-72",
+  "role": "variant",
+  "id": "elq-5-4",
+  "note": "round list19 19/10 - Pepo Pineapple (Max ELQ-5-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop bottle photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/e72-pineapple-A.png; cut by shape (list19/e1/shape.js), shoulder gaps filled (gapfill.js), the dropper cone redrawn from the Mixberry bottle outline (conefit.js, same cap moulding) - copies beside this source",
+   "reference": "ihavevape.net Pepo group poster (bottles ~120 px, x3) (https://ihavevape.net/product/pepo-salt-nic/) - _incoming/img-1610/masters/src (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/e/eq-sheet.jpg - PEPO / DUNDU SALT wordmarks, flavour print, mascot, cap colour checked by eye against the shop photos"
+  }
+ },
+ {
+  "source": "_incoming/list19/pepo/peach.png",
+  "slug": "eliquid-72",
+  "role": "variant",
+  "id": "elq-5-5",
+  "note": "round list19 19/10 - Pepo Peach (Max ELQ-5-5)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop bottle photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/e72-peach-A.png; cut by shape (list19/e1/shape.js), shoulder gaps filled (gapfill.js), the dropper cone redrawn from the Mixberry bottle outline (conefit.js, same cap moulding) - copies beside this source",
+   "reference": "ihavevape.net Pepo group poster (bottles ~120 px, x3) (https://ihavevape.net/product/pepo-salt-nic/) - _incoming/img-1610/masters/src (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/e/eq-sheet.jpg - PEPO / DUNDU SALT wordmarks, flavour print, mascot, cap colour checked by eye against the shop photos"
+  }
+ },
+ {
+  "source": "_incoming/list19/pepo/dundu-grape.png",
+  "slug": "eliquid-73",
+  "role": "card",
+  "note": "round list19 19/10 - Dundu Grape (the one flavour)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop bottle photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/e73-grape-A.png; keyed by flood (b17/floodkey.js T=14) + cutfloor.js, the dropper cone redrawn from the Mixberry outline (conefit.js), grey floor shadow cleared in the bottom band (greycut.js), holes refilled (holefill.js), straight walls filled (wallfill.js) - copies beside this source (checker #598 r1: the shape cut lost the base)",
+   "reference": "ihavevape.net Dundu Salt Nic bottle photo 600 px (https://ihavevape.net/product/dundu-salt-nic/) - _incoming/img-1610/masters/src (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/e/eq-sheet.jpg - PEPO / DUNDU SALT wordmarks, flavour print, mascot, cap colour checked by eye against the shop photos"
+  },
+  "fileName": "card.webp"
+ },
+ {
   "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/cola.png",
   "slug": "esko-bar-switch-pod",
   "role": "card",
