@@ -15,7 +15,7 @@
 /** The locked Thai word for each category (THAI_STYLE §3) — the word a customer would type. */
 const CATEGORY_WORD_TH: Record<string, string> = {
   "pod-systems": "พอตซิสเต็ม",
-  "pod-kits": "พอตคิท",
+  "switch-pods": "พอตเปลี่ยนหัว",
   disposables: "พอตใช้แล้วทิ้ง",
   "pods-cartridges": "หัวพอต",
   "coils-accessories": "คอยล์",
@@ -24,6 +24,11 @@ const CATEGORY_WORD_TH: Record<string, string> = {
   // "IQOS iluma Prime เครื่อง IQOS" would repeat itself.
 };
 
+/** Owner 19/10 retired the "pod-kits" category (its devices moved to pod-systems and switch-pods), but every product
+ *  title is frozen until the 22/10 GSC read (HANDOFF §16 3s) — so a device whose systemType is "pod-kit" keeps the word
+ *  its title had. Moving those titles to the new category word is a separate change after the read. */
+const TITLE_WORD_HELD_TH: Record<string, string> = { "pod-kit": "พอตคิท" };
+
 /**
  * "{model name} {category word} ของแท้" — the model name leads because that is what people type
  * into Google, and Google truncates the end of a title, not the start.
@@ -31,8 +36,8 @@ const CATEGORY_WORD_TH: Record<string, string> = {
  * (Shipnity names such as "หัวเปล่า Voopoo PnP-X"), or an English "Coil"/"Pod" in the name —
  * otherwise "VOOPOO Coil Vinci คอยล์".
  */
-export function productTitleTh(displayName: string, categoryId: string): string {
-  const word = CATEGORY_WORD_TH[categoryId];
+export function productTitleTh(displayName: string, categoryId: string, systemType?: string | null): string {
+  const word = (systemType ? TITLE_WORD_HELD_TH[systemType] : undefined) ?? CATEGORY_WORD_TH[categoryId];
   const nameSaysWhatItIs = /[฀-๿]/.test(displayName) || /\b(coil|pod)s?\b/i.test(displayName);
   return word && !nameSaysWhatItIs ? `${displayName} ${word} ของแท้` : `${displayName} ของแท้`;
 }

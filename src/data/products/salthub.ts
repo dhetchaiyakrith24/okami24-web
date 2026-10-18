@@ -295,7 +295,7 @@ export const salthubProducts: Product[] = [
     // Batch 3f (06/10): owner 06/10 (HANDOFF §18) "M Bar 15K → reusable/pod-system category" — SALTHUB sells it as the M Switch
     // body + a clear swap-in M Bar cartridge (poster 08 "Combination device and cartridge"; 3/facts-m-bar-15k.md), the same shape
     // as the M Switch Kit, so it sits in the Kit's category. Head copy: the wrong facts (disposable · cotton mesh · fast) fixed.
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     systemType: "pod-kit",
     name: "M Bar 15K",
     displayName: "SALTHUB M BAR 15K",
@@ -424,7 +424,7 @@ export const salthubProducts: Product[] = [
     slug: "m-switch-kit",
     brandId: "salthub",
     familyId: "m-switch",
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     systemType: "pod-kit",
     name: "M Switch Kit",
     displayName: "SALTHUB M SWITCH KIT",
@@ -691,7 +691,7 @@ export const salthubProducts: Product[] = [
     slug: "zero-pro",
     brandId: "salthub",
     familyId: "zero",
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     systemType: "pod-kit",
     name: "Zero Pro",
     displayName: "SALTHUB ZERO PRO",
@@ -837,7 +837,7 @@ export const salthubProducts: Product[] = [
     slug: "zero-nano",
     brandId: "salthub",
     familyId: "zero",
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     systemType: "pod-kit",
     name: "Zero Nano",
     displayName: "SALTHUB ZERO NANO",

@@ -8,23 +8,25 @@ export const categories: Category[] = [
     shortName: "Pod Systems",
     labelTh: "Pod System / พอตซิสเต็ม",
     description:
-      "Refillable pods: choose your own e-liquid, swap the pod, pick the ohms. Right now that's the UWELL Caliburn family, every model with real specs to compare.",
+      "Fill your own e-liquid, swap the pod or coil, pick the ohms: the UWELL Caliburn family plus VOOPOO ARGUS, DRAG, VINCI and VMATE, some with settable wattage.",
     descriptionTh:
-      "พอตซิสเต็มคือพอตที่เติมน้ำยาเอง เปลี่ยนหัวพอตได้ เลือกโอห์มได้ ตอนนี้มีตระกูล Caliburn ของ UWELL ทุกรุ่นดูสเปกจริงและเทียบกันได้ เหมาะกับคนที่อยากเลือกน้ำยาเอง",
-    systemTypes: ["open-pod"],
+      "พอตซิสเต็มคือพอตที่เติมน้ำยาเอง และเปลี่ยนหัวพอตหรือคอยล์ได้ มีตระกูล Caliburn ของ UWELL กับ ARGUS DRAG VINCI และ VMATE ของ VOOPOO บางรุ่นตั้งวัตต์เองได้ด้วย",
+    systemTypes: ["open-pod", "pod-kit"],
   },
+  // Owner 19/10 ("พอตคิทรวม pod system" + "เพิ่มหัวข้อ พอตเปลี่ยนหัว"): the old "pod-kits" category is retired. Its
+  // refillable devices (VOOPOO ARGUS · DRAG · VINCI · VMATE) joined pod-systems above, and /products/pod-kits redirects
+  // there (next.config.ts) — GSC split the bare query "pod" between the two pages. This one holds the devices you keep
+  // while swapping PREFILLED pods, never filling (maker pages checked 19/10: M Switch · Zero · RELX Infinity 2 Plus ·
+  // RELX Creator · nexPOD 15K · ESKO BAR SWITCH · KS Quikpro; Nexswitch 16K has no maker page — warehouse facts). Their
+  // pods stay in pods-cartridges.
   {
-    id: "pod-kits",
-    slug: "pod-kits",
-    name: "Pod Kits & Pod Mods",
-    shortName: "Pod Kits",
-    labelTh: "Pod Kit / พอตคิท",
-    description:
-      "Reusable pods: you only swap the pod or coil. ARGUS and DRAG let you set the wattage; switch-style devices like M Switch keep it simple with prefilled pods.",
-    descriptionTh:
-      // Round SEO E "pod" (09/10): opens on its own name instead of "พอตคิทคือพอตที่…" — GSC moved the bare query "pod" from
-      // pod-systems (owner page, SEO_LANDSCAPE §0) to this page on 02–03/10; the generic "…คือพอต" definition is the one we drop.
-      "Pod Kit หรือพอตคิท เครื่องที่ใช้ซ้ำได้ เปลี่ยนแค่หัวพอตหรือคอยล์ อยากปรับวัตต์เองก็มีสาย ARGUS กับ DRAG อยากง่ายก็มี M Switch ระบบสวิตช์ที่ใช้หัวพอตบรรจุสำเร็จ",
+    id: "switch-pods",
+    slug: "switch-pods",
+    name: "Switch Pod Devices",
+    shortName: "Switch Pods",
+    labelTh: "Switch Pod / พอตเปลี่ยนหัว",
+    description: "Keep the device, swap the pod. Each pod comes prefilled, so there's nothing to fill and no device to throw away. From SALTHUB, RELX, WOTOFO, ESKO BAR and KS.",
+    descriptionTh: "พอตเปลี่ยนหัว เก็บตัวเครื่องไว้ใช้ต่อ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จ ไม่ต้องเติมน้ำยาเอง และไม่ต้องทิ้งทั้งเครื่อง มีทั้ง SALTHUB RELX WOTOFO ESKO BAR และ KS",
     systemTypes: ["pod-kit"],
   },
   {

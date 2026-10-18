@@ -7,7 +7,7 @@ import { NOINDEX_FOLLOW, canonicalFor, pageBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "เปรียบเทียบสินค้า",
-  description: "เทียบพอตซิสเต็ม พอตคิท หรือพอตใช้แล้วทิ้งได้สูงสุด 4 รุ่น เห็นเฉพาะสเปกที่ยืนยันแล้วและมีครบทุกรุ่น ไม่จัดอันดับว่ารุ่นไหนดีที่สุด",
+  description: "เทียบพอตซิสเต็ม พอตเปลี่ยนหัว หรือพอตใช้แล้วทิ้งได้สูงสุด 4 รุ่น เห็นเฉพาะสเปกที่ยืนยันแล้วและมีครบทุกรุ่น ไม่จัดอันดับว่ารุ่นไหนดีที่สุด",
   // noindex — an interactive selection tool, not unique static content; the real content
   // (individual products) already has its own indexable pages. Canonical to the query-less base
   // path kept as defense in depth against the unbounded `?slugs=...` combination space.

@@ -112,7 +112,7 @@ export const relxProducts: Product[] = [
     slug: "relx-infinity-2-plus",
     brandId: "relx",
     familyId: "relx-infinity",
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     systemType: "pod-kit",
     name: "RELX Infinity 2 Plus",
     displayName: "RELX INFINITY 2 PLUS",
@@ -185,7 +185,7 @@ export const relxProducts: Product[] = [
     // grey-and-yellow edition is not on that list (a regional edition — owner's photo).
     brandId: "relx",
     familyId: "relx-creator",
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     systemType: "pod-kit",
     name: "RELX Creator",
     displayName: "RELX CREATOR",

@@ -9,7 +9,7 @@ import type { StorefrontProductView } from "@/data/shipnity-seed/storefront-prev
  * verified row → no line; the card keeps the row's height so a grid stays level.
  *
  * Rule per category (owner's draft, the picks are the owner's to confirm):
- *   pod-systems / pod-kits   battery + top wattage
+ *   pod-systems / switch-pods   battery + top wattage (the retired pod-kits had the same rule, owner 19/10)
  *   disposables              rated puffs, else battery
  *   pods-cartridges          pod capacity, else a single resistance
  *   coils-accessories        a single resistance, else capacity
@@ -95,7 +95,7 @@ function pick(
   const nonEmpty = (xs: Array<HeadlineSpec | undefined>) => xs.filter((x): x is HeadlineSpec => Boolean(x));
   switch (categoryId) {
     case "pod-systems":
-    case "pod-kits":
+    case "switch-pods":
       return nonEmpty([battery(rows, attrs.batteryMah), maxWatt(rows, attrs.wattageMax)]);
     case "disposables":
       // A disposable with no verified puff figure but a verified battery shows that.

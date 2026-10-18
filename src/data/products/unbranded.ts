@@ -571,7 +571,7 @@ export const unbrandedProducts: Product[] = [
     hiddenFromStorefront: { since: "2026-09-06", reason: "no card photo (IMAGE_SPEC §4); only source is a Facebook album" },
     brandId: "Unbranded",
     familyId: "Next",
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     systemType: "pod-kit",
     name: "Next Pro 2 Beyond",
     displayName: "Next Pro 2 Beyond",

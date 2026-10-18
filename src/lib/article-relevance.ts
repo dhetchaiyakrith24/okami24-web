@@ -88,7 +88,12 @@ function verifiedSpec(specs: ReadonlyArray<Pick<Specification, "key" | "value" |
 }
 
 const POD_OR_COIL = new Set(["pods-cartridges", "coils-accessories"]);
-const DEVICE_CATEGORIES = new Set(["pod-systems", "pod-kits", "disposables"]);
+const DEVICE_CATEGORIES = new Set(["pod-systems", "switch-pods", "disposables"]);
+// Owner 19/10: the "pod-kits" devices moved into pod-systems / switch-pods. The open-system-vs-disposable rule keeps
+// the set it had (pod-systems meant the Caliburn family) so no read-next box moves before the 22/10 GSC read
+// (HANDOFF §16 3s); widening it to the VOOPOO refill devices is a later, separate change.
+const comparedFormat = (p: { categoryId: string; systemType: string | null }) =>
+  p.categoryId === "disposables" || (p.categoryId === "pod-systems" && p.systemType !== "pod-kit");
 
 /** Rules for a legacy product record (the rich one: typed attributes + spec rows). */
 function legacyRules(p: Product): RelatedArticle[] {
@@ -97,7 +102,7 @@ function legacyRules(p: Product): RelatedArticle[] {
 
   // The two format articles: only for the formats they compare.
   if (p.attributes.beginnerFriendly && DEVICE_CATEGORIES.has(p.categoryId)) out.push(article("guide", "choosing-your-first-pod-system", `attributes.beginnerFriendly = true, category ${p.categoryId}`));
-  if (p.categoryId === "disposables" || p.categoryId === "pod-systems") out.push(article("guide", "open-system-vs-disposable", `category ${p.categoryId} is one of the two formats the article compares`));
+  if (comparedFormat(p)) out.push(article("guide", "open-system-vs-disposable", `category ${p.categoryId} is one of the two formats the article compares`));
 
   // Facts the product itself states.
   if (p.attributes.batteryMah !== undefined || spec(/battery|แบต/i)) out.push(article("guide", "battery-care-and-charging", spec(/battery|แบต/i) ?? `attributes.batteryMah = ${p.attributes.batteryMah}`));
@@ -138,7 +143,7 @@ function publishedRules(p: StorefrontProductView): RelatedArticle[] {
   const mesh = verifiedSpec(p.specifications, /mesh/i);
   if (mesh) out.push(article("technology", "mesh-coil-systems", mesh));
   if (DEVICE_CATEGORIES.has(p.categoryId)) out.push(article("guide", "choosing-your-first-pod-system", `published device, category ${p.categoryId}`));
-  if (p.categoryId === "disposables" || p.categoryId === "pod-systems") out.push(article("guide", "open-system-vs-disposable", `category ${p.categoryId} is one of the two formats the article compares`));
+  if (comparedFormat(p)) out.push(article("guide", "open-system-vs-disposable", `category ${p.categoryId} is one of the two formats the article compares`));
   const battery = verifiedSpec(p.specifications, /battery|แบต|mAh/i);
   if (battery) out.push(article("guide", "battery-care-and-charging", battery));
   return out.filter((a): a is RelatedArticle => a !== null);

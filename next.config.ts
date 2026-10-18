@@ -98,9 +98,16 @@ const nextConfig: NextConfig = {
    *
    * m-bar-15k (owner 2026-10-08, chat): with the clear M Bar pod off the site (BSOT "M Bar 15K / M Switch Pod"),
    * the 15K is the M Switch body + the black pod = the M Switch Kit, so its page folds into the Kit's.
+   *
+   * pod-kits (owner 2026-10-19, chat): the category is retired — its refillable devices joined pod-systems and the
+   * prefilled-pod devices got their own switch-pods page — so the old category URL goes to pod-systems, which ends
+   * the two pages splitting the bare query "pod" (GSC 18/10).
    */
   async redirects() {
-    return [{ source: "/products/m-bar-15k", destination: "/products/m-switch-kit", permanent: true }];
+    return [
+      { source: "/products/m-bar-15k", destination: "/products/m-switch-kit", permanent: true },
+      { source: "/products/pod-kits", destination: "/products/pod-systems", permanent: true },
+    ];
   },
 };
 

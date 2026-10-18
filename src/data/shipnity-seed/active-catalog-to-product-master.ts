@@ -210,7 +210,7 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // Third Phase 3.5 wave — disposables/cartridges, verified against each brand's official
   // first-party site (WebFetch, not a retailer or reseller). Every one of these has flavor-shaped
   // children (a real prefilled-product signature), consistent with its resolved systemType.
-  "Pod-159": { brandId: "esko-bar", categoryId: "pod-kits", systemType: "pod-kit", evidence: 'name "เครื่อง Esko Bar Switch 20k" ("เครื่อง" = device) states the brand explicitly; eskobarvape.com (official) lists "ESKO BAR SWITCH POD" as a real reusable-body product line distinct from its disposable line' },
+  "Pod-159": { brandId: "esko-bar", categoryId: "switch-pods", systemType: "pod-kit", evidence: 'name "เครื่อง Esko Bar Switch 20k" ("เครื่อง" = device) states the brand explicitly; eskobarvape.com (official) lists "ESKO BAR SWITCH POD" as a real reusable-body product line distinct from its disposable line' },
   // Catalog-intelligence mission (2026-09-02) — BRAND CLAIM WITHDRAWN (this entry previously
   // asserted brandId:"ske"/categoryId:"disposables"). Re-checked directly against skevape.com's
   // OWN sitemap and full product-page enumeration rather than search snippets: SKE's real
@@ -247,11 +247,11 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // the product being sold.
   // Round list19 (18/10): Max-only record (Max "Product 780" "KS Quik Pro 15000 คำ") = the Kardinal Quikpro device sold with one
   // cartridge; its Max options are the cartridge flavour of the bundle (kardinal.com/products/quikpro).
-  "KS-QUIKPRO-KIT": { brandId: "kardinal-stick", categoryId: "pod-kits", systemType: "pod-kit", evidence: 'Shipnity MAX "KS Quik Pro 15000 คำ" with options "เครื่อง + หัว <flavour>" (device + one cartridge) = Kardinal Quikpro, kardinal.com/products/quikpro (official): device + 15ml cartridge, up to 15,000 puffs' },
+  "KS-QUIKPRO-KIT": { brandId: "kardinal-stick", categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "KS Quik Pro 15000 คำ" with options "เครื่อง + หัว <flavour>" (device + one cartridge) = Kardinal Quikpro, kardinal.com/products/quikpro (official): device + 15ml cartridge, up to 15,000 puffs' },
   // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): Nexswitch 16000 — one Max parent ("Product 1176446") holding the kit (device + one
   // pod, ฿419, Pod-161-*) and the refill pod (฿269, Pod-162-*) → two records. The device and pods print SNOWWOLF, but no maker page
   // was found (researcher 18/10: snowwolf has no "nex Switch" page) → sold without a brand, warehouse facts only (same as Pop Up 10K).
-  "NEXSWITCH-16K-KIT": { brandId: null, brandless: true, categoryId: "pod-kits", systemType: "pod-kit", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "เครื่อง + หัวพอต <flavour>" (device + one pod, ฿419); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
+  "NEXSWITCH-16K-KIT": { brandId: null, brandless: true, categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "เครื่อง + หัวพอต <flavour>" (device + one pod, ฿419); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
   "NEXSWITCH-16K-POD": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "หัวพอต <flavour>" (refill pod, ฿269); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
   // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): RELX LUMI 18K — Max-only record (Max "Disposable-44" "RELX LUMI 18k", 16 flavours).
   // relxnow.com has no LUMI page (researcher 18/10) → warehouse facts only; the device prints RELX (shop posters, masters/src/disposable-44).

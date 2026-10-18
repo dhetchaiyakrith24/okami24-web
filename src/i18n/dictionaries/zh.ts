@@ -59,7 +59,7 @@ export const zh: Dictionary = {
     headingLine1: "Pod System",
     headingLine2: "正品",
     headingAccent: "真实参数",
-    description: "很多人叫它电子烟，我们叫它 pod。这里有烟弹系统、烟弹套装和一次性烟具，每一款都写明真实参数，可以对比完再决定。想问或想下单，加 LINE @okm24。",
+    description: "很多人叫它电子烟，我们叫它 pod。这里有烟弹系统、换弹式设备和一次性烟具，每一款都写明真实参数，可以对比完再决定。想问或想下单，加 LINE @okm24。",
     ctaPrimary: "浏览全部产品",
     ctaSecondary: "使用选购助手",
     statProducts: "产品数量",
@@ -236,7 +236,7 @@ export const zh: Dictionary = {
   },
   compare: {
     metaTitle: "产品对比",
-    metaDescription: "并排对比最多四款烟弹系统、烟弹套装或一次性设备——仅显示经过验证的共同参数。",
+    metaDescription: "并排对比最多四款烟弹系统、换弹式设备或一次性设备——仅显示经过验证的共同参数。",
     pageTitle: "设备对比",
     pageDescription: "选择 2 到 4 款产品。仅显示所有所选设备共有且经过独立验证的参数，差异之处会高亮显示。",
     rowBrand: "品牌",

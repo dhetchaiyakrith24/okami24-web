@@ -112,12 +112,12 @@ export const TERM_SEARCH_ALIASES: Record<string, string[]> = {
   // The site's own home H1 names neither word (Thai H1: "Pod System ของแท้ ข้อมูลจริง"); "บุหรี่ไฟฟ้า" is what many customers still type
   // (Search Console records "บุหรี่ไฟฟ้า drag", docs/SEO_BASELINE.md) — owner 2026-09-22: accept
   // it as a typed word; it stays banned in the site's own copy. Both mean a device: the three
-  // device categories (พอตซิสเต็ม · พอตคิท · พอตใช้แล้วทิ้ง), not the pods and coils.
-  "พอตไฟฟ้า": ["พอตซิสเต็ม", "พอตคิท", "พอตใช้แล้วทิ้ง"],
-  "บุหรี่ไฟฟ้า": ["พอตซิสเต็ม", "พอตคิท", "พอตใช้แล้วทิ้ง"],
-  "เครื่องพอต": ["พอตซิสเต็ม", "พอตคิท", "พอตใช้แล้วทิ้ง"],
+  // device categories (พอตซิสเต็ม · พอตเปลี่ยนหัว · พอตใช้แล้วทิ้ง — owner 19/10 retired พอตคิท), not the pods and coils.
+  "พอตไฟฟ้า": ["พอตซิสเต็ม", "พอตเปลี่ยนหัว", "พอตใช้แล้วทิ้ง"],
+  "บุหรี่ไฟฟ้า": ["พอตซิสเต็ม", "พอตเปลี่ยนหัว", "พอตใช้แล้วทิ้ง"],
+  "เครื่องพอต": ["พอตซิสเต็ม", "พอตเปลี่ยนหัว", "พอตใช้แล้วทิ้ง"],
   "พอตทิ้ง": ["พอตใช้แล้วทิ้ง"],
-  "พอตเปลี่ยนหัว": ["พอตซิสเต็ม", "พอตคิท"],
+  // "พอตเปลี่ยนหัว" is a category label since 19/10 (switch-pods) — it matches its own devices, no alias.
   "หัวเปล่า": ["หัวพอต"],
   "แทงค์": ["หัวพอต"],
   // ── round 7 "SEO ค" B4 (2026-09-23): spellings people actually typed into Google and reached
