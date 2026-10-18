@@ -278,6 +278,8 @@ Live changes not yet listed above (batch 3 + 6b have their own sections; details
   If Search Console starts showing field Core Web Vitals, that is the row to watch — the site had "not enough data" on 12/10.
 - #582 (18/10) on-page + this PR (18/10): /e-liquid meta description — only the clause "ยังไม่มีขายหน้าร้าน" → "มี Marbo Saltnic แล้ว" (Marbo
   Saltnic live, round list19); title, H1 and the measured words "กลุ่มรสชาติ" / "salt nic" / "freebase" unchanged — read 01/11 with that in mind.
+- p63 (19/10, Friday ordered it before the 22/10 read): NEW /products/esko-bar-20k (ESKO BAR 20000 = maker "ESKO BAR 498", ฿389) —
+  it joins /brands/esko-bar's product grid (watch row) and /products/disposables. Read esko-bar's 22/10 numbers with that in mind.
 
 Requested indexing: 12/10 the 5 set-1 guides + what-is-a-pod-system + pod-kits · 13/10 salt-nic-vs-freebase, choosing-wattage-and-airflow,
 understanding-mtl-vs-dtl, taking-a-pod-on-a-plane, quit-smoking-with-a-pod · 14/10 products/wotofo-nexbar-18k (+ "validate fix" of the
