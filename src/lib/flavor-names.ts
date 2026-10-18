@@ -13,6 +13,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // 2026-09-24: twin-flavour names ("A + B") are listed by part.
   // Round p63 (18/10): + the WOTOFO nexPOD 15K Pro Kit names.
   // Round p63 (18/10): + the IQOS TEREA pack names (the TEREA options became flavours), sorted in by length.
+  // Round list19 (19/10): + the Reswa Sportcan names (Max labels).
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
   "Watermelon Dragon Fruit",
@@ -197,5 +198,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Cola Ice",
   "Thai Tea",
   "Milk Tea",
+  "Ice Cola",
+  "Red Bull",
   "Love 77",
 ];

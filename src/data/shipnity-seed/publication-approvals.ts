@@ -198,6 +198,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "KS-QUIKPRO-KIT": { sellingPrice: 389, lastPriceReview: "2026-10-18" },
   // Round list19 (18/10): Pop Up 10K pod — Max "ราคาขาย" ฿199 for the parent and every flavour (same 17/10 read).
   "Pod-154": { sellingPrice: 199, lastPriceReview: "2026-10-18" },
+  // Round list19 (19/10): Reswa Sportcan 12000 (Max "Product 1129596") — Max ราคาขาย ฿229 for the parent and its 5 flavours (read 2026-10-17).
+  "Pod-142": { sellingPrice: 229, lastPriceReview: "2026-10-19" },
   // Round list19 (18/10, owner ruling "list it, warehouse data only"): SKE Crystal B20000 — Max "ราคาขาย" ฿329 (parent "Product 1141360"
   // and its 8 children Pod-149-*, 17/10 read).
   "Pod-149": { sellingPrice: 329, lastPriceReview: "2026-10-18" },
