@@ -1488,13 +1488,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   // Round list19 (19/10): VOOPOO's table on the PnP X page (re-read 19/10): resistance → wattage, and the compatible DRAG devices.
   "Coil-92": {
     specifications: [
-      { key: "wattage", label: "วัตต์ 0.15Ω", value: "60-80W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
-      { key: "wattage-0-2", label: "วัตต์ 0.2Ω", value: "40-60W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
-      { key: "wattage-0-3", label: "วัตต์ 0.3Ω", value: "32-40W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
-      { key: "wattage-0-45", label: "วัตต์ 0.45Ω", value: "25-32W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
-      { key: "wattage-0-6", label: "วัตต์ 0.6Ω", value: "18-23W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
-      { key: "wattage-0-8", label: "วัตต์ 0.8Ω", value: "12-16W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
-      { key: "wattage-1-0", label: "วัตต์ 1.0Ω", value: "10-13W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage", label: "กำลังไฟที่แนะนำ (0.15Ω)", value: "60-80W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage-0-2", label: "กำลังไฟที่แนะนำ (0.2Ω)", value: "40-60W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage-0-3", label: "กำลังไฟที่แนะนำ (0.3Ω)", value: "32-40W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage-0-45", label: "กำลังไฟที่แนะนำ (0.45Ω)", value: "25-32W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage-0-6", label: "กำลังไฟที่แนะนำ (0.6Ω)", value: "18-23W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage-0-8", label: "กำลังไฟที่แนะนำ (0.8Ω)", value: "12-16W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage-1-0", label: "กำลังไฟที่แนะนำ (1.0Ω)", value: "10-13W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
       { key: "compatible-devices", label: "ใช้ได้กับ", value: "DRAG X2 / S2 / 4 / X3 / S3", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
     ],
     sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils"],
