@@ -514,6 +514,31 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "DRAG X ของ VOOPOO ใช้ถ่าน 18650 หนึ่งก้อนที่ต้องซื้อแยก ปรับได้ 5–80 วัตต์ ใช้คอยล์ PnP ได้รวมถึง PnP-RBA และมีหัวพอต 4.5mL ที่ยึดกับตัวเครื่องด้วยแม่เหล็ก",
   },
+  // Round p63 (owner item 68, 18/10): WOTOFO nexPOD 15K Pro Kit — maker facts only (wotofo.com kit / device / pod pages).
+  "nexpod-15k": {
+    whoIsThisFor: {
+      0: "กำลังหาเครื่องระบบสวิตช์ 15K ของ WOTOFO และอยากดูสเปกที่ WOTOFO ระบุไว้สำหรับ nexPOD 15K Pro Kit",
+    },
+    specifications: {
+      pod: "18mL เติมน้ำยามาแล้ว",
+      resistance: "0.8Ω nexMESH",
+      puffs: "หัวละ 15,000 พัฟ",
+      output: "หัวพอตเติมมาแล้ว 16W หรือ 12W · หัวพอตเติมเอง 25W หรือ 20W",
+      airflow: "ปรับได้ 2 ระดับ",
+      display: "แสดงแบตเตอรี่และวัตต์",
+      charging: "รองรับชาร์จเร็ว",
+      materials: "อะลูมิเนียม",
+      box: "ตัวเครื่อง nexPOD 15K Pro 1 ชิ้น · หัวพอต nexPOD 15K เติมมาแล้ว 1 ชิ้น",
+    },
+    features: {
+      recognition: { title: "รู้เองว่าใส่หัวพอตแบบไหน", description: "WOTOFO ระบุว่าตัวเครื่องอ่านได้ว่าใส่หัวพอตแบบไหน แล้วตั้งวัตต์เริ่มต้นให้เอง หัวพอตเติมมาแล้วเริ่มที่ 16W หัวพอตเติมเองเริ่มที่ 25W" },
+      modes: { title: "ปรับแรงได้ 2 ระดับ", description: "กดปุ่ม 1 ครั้งตอนจอติด หัวพอตเติมมาแล้วจะสลับจาก 16W เป็น 12W ส่วนหัวพอตเติมเองสลับจาก 25W เป็น 20W" },
+      reuse: { title: "เก็บตัวเครื่อง เปลี่ยนแค่หัวพอต", description: "น้ำยาหมดก็เปลี่ยนแค่หัวพอต ตัวเครื่องอะลูมิเนียม 1200mAh ใช้ซ้ำได้" },
+    },
+    tagline: "เครื่องระบบสวิตช์ของ WOTOFO แบต 1200mAh ใช้หัวพอต nexPOD 15K ขนาด 18mL",
+    shortDescription:
+      "nexPOD 15K Pro Kit ของ WOTOFO มีตัวเครื่องอะลูมิเนียม 1200mAh ใช้ซ้ำได้ กับหัวพอตเติมน้ำยามาแล้ว 1 ชิ้น (18mL คอยล์ nexMESH 0.8Ω หัวละ 15,000 พัฟ) ตัวเครื่องรู้เองว่าใส่หัวพอตแบบไหนแล้วตั้งวัตต์ให้",
+  },
   "drag-x3": {
     faqs: {
       "dragx3-battery": {

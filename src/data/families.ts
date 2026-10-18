@@ -161,6 +161,16 @@ export const families: ProductFamily[] = [
     description: "WOTOFO's nexBAR disposable series, sold in several puff-count tiers (10K and 18K among them).",
   },
   {
+    id: "wotofo-nexpod",
+    slug: "wotofo-nexpod",
+    brandId: "wotofo",
+    categoryId: "pod-kits",
+    name: "WOTOFO nexPOD",
+    tagline: "WOTOFO's pod-swap line.",
+    // Round p63 (18/10): a reusable device that takes prefilled nexPOD pods (wotofo.com nexPOD 15K pages).
+    description: "WOTOFO's nexPOD line: a reusable device that takes prefilled nexPOD pods.",
+  },
+  {
     id: "moood-monster",
     slug: "moood-monster",
     brandId: "moood",

@@ -9057,5 +9057,53 @@
    "reference": "maneevp.com INFY PLUS Grape Jelly poster (https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/) - _incoming/img-1610/masters/src/pod-169/maneevp-infy-plus-09.jpg (index masters/src/index.json)",
    "fidelitySheet": "_incoming/img-1610/masters/sheet-pod-169.jpg (poster beside renders A/B) - INFY PLUS mark, GRAPE JELLY label, pod shape and mouthpiece checked by eye; key edges list19/infy/edges.jpg"
   }
+ },
+ {
+  "source": "_incoming/p63/nexpod/out/Black.png",
+  "slug": "nexpod-15k",
+  "role": "card",
+  "note": "WOTOFO's own nexPOD 15K Pro Kit render Black_nexpod_15k_pro_kit.jpg (cdn.shopify.com, wotofo.com/products/nexpod-15k-pro-kit-20mg gallery, 2000x2000 on pure black); the assembled device (left object) cut out by _incoming/p63/nexpod/key.js — border-connected black flood fill + soft edge, floor reflection cut at the foot line (round p63, owner item 68, 18/10)"
+ },
+ {
+  "source": "_incoming/p63/nexpod/out/Black.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "black",
+  "note": "WOTOFO's own nexPOD 15K Pro Kit render Black_nexpod_15k_pro_kit.jpg (cdn.shopify.com, wotofo.com/products/nexpod-15k-pro-kit-20mg gallery, 2000x2000 on pure black); the assembled device (left object) cut out by _incoming/p63/nexpod/key.js — border-connected black flood fill + soft edge, floor reflection cut at the foot line (round p63, owner item 68, 18/10)"
+ },
+ {
+  "source": "_incoming/p63/nexpod/out/Silver.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "silver",
+  "note": "WOTOFO's own nexPOD 15K Pro Kit render Silver_nexpod_15k_pro_kit.jpg (cdn.shopify.com, wotofo.com/products/nexpod-15k-pro-kit-20mg gallery, 2000x2000 on pure black); the assembled device (left object) cut out by _incoming/p63/nexpod/key.js — border-connected black flood fill + soft edge, floor reflection cut at the foot line (round p63, owner item 68, 18/10)"
+ },
+ {
+  "source": "_incoming/p63/nexpod/out/Blue.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "blue",
+  "note": "WOTOFO's own nexPOD 15K Pro Kit render Blue_nexpod_15k_pro_kit.jpg (cdn.shopify.com, wotofo.com/products/nexpod-15k-pro-kit-20mg gallery, 2000x2000 on pure black); the assembled device (left object) cut out by _incoming/p63/nexpod/key.js — border-connected black flood fill + soft edge, floor reflection cut at the foot line (round p63, owner item 68, 18/10)"
+ },
+ {
+  "source": "_incoming/p63/nexpod/out/Cosmic_Orange.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "cosmic-orange",
+  "note": "WOTOFO's own nexPOD 15K Pro Kit render Cosmic_Orange_nexpod_15k_pro_kit.jpg (cdn.shopify.com, wotofo.com/products/nexpod-15k-pro-kit-20mg gallery, 2000x2000 on pure black); the assembled device (left object) cut out by _incoming/p63/nexpod/key.js — border-connected black flood fill + soft edge, floor reflection cut at the foot line (round p63, owner item 68, 18/10)"
+ },
+ {
+  "source": "_incoming/p63/nexpod/out/Red.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "red",
+  "note": "WOTOFO's own nexPOD 15K Pro Kit render Red_nexpod_15k_pro_kit.jpg (cdn.shopify.com, wotofo.com/products/nexpod-15k-pro-kit-20mg gallery, 2000x2000 on pure black); the assembled device (left object) cut out by _incoming/p63/nexpod/key.js — border-connected black flood fill + soft edge, floor reflection cut at the foot line (round p63, owner item 68, 18/10)"
+ },
+ {
+  "source": "_incoming/p63/nexpod/out/Rose_Gold.png",
+  "slug": "nexpod-15k",
+  "role": "variant",
+  "id": "rose-gold",
+  "note": "WOTOFO's own nexPOD 15K Pro Kit render Rose_Gold_nexpod_15k_pro_kit.jpg (cdn.shopify.com, wotofo.com/products/nexpod-15k-pro-kit-20mg gallery, 2000x2000 on pure black); the assembled device (left object) cut out by _incoming/p63/nexpod/key.js — border-connected black flood fill + soft edge, floor reflection cut at the foot line (round p63, owner item 68, 18/10)"
  }
 ]
