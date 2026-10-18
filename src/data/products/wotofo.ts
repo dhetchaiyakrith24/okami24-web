@@ -166,7 +166,7 @@ export const wotofoProducts: Product[] = [
     isFlagship: false,
     attributes: {
       batteryMah: 1200,
-      puffCount: 15000,
+      // No puffCount: WOTOFO rates 15,000 puffs per POD, and the hero stat would read it as the device (spec row "puffs" says per pod).
       capacityMl: 18,
       portability: "compact",
       beginnerFriendly: false,
