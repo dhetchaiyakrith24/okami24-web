@@ -349,7 +349,7 @@ export const en: Dictionary = {
     eyebrow: "E-Liquid",
     pageTitle: "E-Liquid Flavor Families",
     pageDescription:
-      "This section is an editorial character guide to flavor families, not a catalog of specific branded bottled e-liquid — we don't have verified sourcing for individual e-liquid SKUs, so we're not inventing any.",
+      "This section is a guide to what each flavor family tastes like. The e-liquids the shop sells, with prices and flavors, are on their own product pages.",
     disclaimer:
       "This section makes no health, safety, or comparative claims about vaping, and does not distinguish nicotine-free from nicotine-containing products for every listing here. Nicotine strength always varies by product — check the product page or ask via LINE OA.",
     familyEyebrow: "E-Liquid · Flavor Family",
@@ -361,7 +361,7 @@ export const en: Dictionary = {
     nicP3: "Salt nic is the one used in pod devices, which usually run at lower wattage and suit a tighter MTL draw.",
     nicP4: "Freebase is the one used in refillable devices that run at higher wattage.",
     nicP5: "Those devices have more open airflow, so they are a different draw style from a small pod.",
-    nicNotSold: "We don't sell e-liquid on the site yet — this page is here to explain the difference, nothing more.",
+    nicNotSold: "Each e-liquid the shop sells says in its product specs whether it is salt nic or freebase.",
     nicCta: "Not sure which one your device takes? Ask on LINE @okm24.",
     familyDisclaimer:
       "This is an editorial flavor-family description, not a listing of specific branded e-liquid products — we don't have verified sourcing for individual SKUs in this category.",
