@@ -1405,7 +1405,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "resistance", label: "ค่าโอห์ม", value: "0.8Ω / 1.0Ω / 1.2Ω", sourceStatus: "verified" },
       { key: "coil", label: "ชนิดคอยล์", value: "0.8Ω = Caliburn G (UN2 Meshed) · 1.0Ω = Caliburn G (Meshed) · 1.2Ω = Caliburn G2 (UN2 Meshed)", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-gk2" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Caliburn GK2 (ทั้ง 3 ค่า) · Caliburn G2 (0.8Ω และ 1.2Ω)", sourceStatus: "verified" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Caliburn GK2: 0.8Ω / 1.0Ω / 1.2Ω · Caliburn G2: 0.8Ω / 1.2Ω", sourceStatus: "verified" },
     ],
     sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-gk2", "https://www.myuwell.com/caliburn/caliburn-g2"],
   },
