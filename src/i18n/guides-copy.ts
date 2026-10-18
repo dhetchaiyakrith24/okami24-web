@@ -335,6 +335,10 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
         question: "เช็คของแท้ยังไง",
         answer: "ของ Salthub เช่น M Bar และ M Switch ที่กล่องมี QR code กับเลขซีเรียล เช็คเองได้ที่เว็บทางการของ Salthub (salthub.com/authenticate) ส่วนของ UWELL เช่น Caliburn ที่กล่องมีแถบขูด ขูดออกจะเจอ QR code กับรหัสตัวเลข เช็คได้ที่เว็บทางการของ UWELL (myuwell.com/verify) ถ้าเช็คแล้วไม่ผ่าน ให้ส่งผลเช็คพร้อมคลิปตอนแกะกล่องมาทางไลน์ภายใน 7 วัน ทางร้านจะตรวจสอบ แล้วแจ้งว่าจะเปลี่ยนของใหม่หรือคืนเงินให้ ส่วนสินค้าที่มีปัญหาอื่น แจ้งเคลมได้ภายใน 7 วัน ต้องมีคลิปตอนแกะกล่อง ทางร้านเปลี่ยนสินค้าตัวเดิมให้ หรือเลือกรุ่นอื่นราคาเท่ากัน ไม่คืนเป็นเงินสด และตอบกลับภายใน 3 วันทำการ",
       },
+      {
+        question: "พอตซิสเต็มกับ Marbo ต่างกันยังไง",
+        answer: "พอตซิสเต็มเติมน้ำยาเอง และเปลี่ยนหัวพอตหรือคอยล์ได้ ตัวเครื่องเก็บไว้ใช้ต่อ ส่วน Marbo เป็นชื่อที่หลายร้านใช้เรียกพอตของ SALTHUB ซึ่งไม่ต้องเติมน้ำยาทุกรุ่น M Bar 9K กับ M Bar 10K เป็นพอตใช้แล้วทิ้งที่ชาร์จซ้ำได้ผ่าน USB-C ใช้ไปจนน้ำยาหมดแล้วจึงทิ้งทั้งเครื่อง ส่วน M Switch เป็นพอตเปลี่ยนหัว เก็บตัวเครื่องไว้ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จ",
+      },
     ],
   },
   // Round SEO ฉ batch 6b topic 9 (owner 12/10): Thai wording reworked by thai-copy (no term brackets — THAI_STYLE layer 4) +
@@ -1016,6 +1020,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
       { question: "M Bar 10K 和 M Switch 有什么区别？", answer: "M Bar 10K 是整台一次性设备，额定最多 10,000 口，600mAh 可充电电池。M Switch Kit 保留机身，只更换 M Switch Pod 烟弹，每颗额定最多 15,000 口。" },
       { question: "M Switch Kit 使用哪种烟弹？", answer: "M Switch Pod，预填烟弹，直接插换，无需注油。" },
       { question: "怎么辨别正品？", answer: "Salthub 产品（如 M Bar、M Switch）包装盒上有 QR 码和序列号，可在 Salthub 官网 salthub.com/authenticate 自行查验。Uwell 产品（如 Caliburn）包装盒上有刮开涂层，下面是 QR 码和数字码，可在 myuwell.com/verify 查验。若验证未通过，请在 7 天内通过 LINE 发来验证结果和开箱视频，本店核实后，会告知您换新还是退款。若产品有其他问题，请在 7 天内提出并提供开箱视频；本店更换同款商品，或换成同价位的其他型号，不退现金，并在 3 个工作日内回复。" },
+      { question: "开放式换弹设备和 Marbo 有什么区别？", answer: "开放式换弹设备需自行注入瓶装烟油，烟弹或雾化芯可自行更换，机身保留使用。Marbo 是很多店铺对 SALTHUB 预填烟油产品的统称，都无需注油：M Bar 9K、M Bar 10K 是一次性设备，可通过 USB-C 充电，烟油用完后整台丢弃；M Switch 则是换弹式设备，机身留着，只更换预填烟油的烟弹。" },
     ],
   },
   "understanding-mtl-vs-dtl": {
