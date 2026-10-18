@@ -34,6 +34,7 @@ const MAX_PARENT_OF = {
 const MAX_ONLY_RECORDS = {
   "KS-QUIKPRO-KIT": "Product 780", // KS Quik Pro 15000 คำ (device + pod)
   "RELX-LUMI-18K": "Disposable-44", // RELX LUMI 18k (round list19 18/10)
+  "ESKO-BAR-20K": "Pod-130", // Esko Bar 20000 Puffs = ESKO BAR 498 (round p63 19/10, owner item 69 ฿389)
 };
 const seedSrc = fs.readFileSync(path.join(__dirname, "..", "src", "data", "shipnity-seed", "active-catalog-source.ts"), "utf8");
 const seedIds = [...seedSrc.matchAll(/shipnityProductId: "([^"]+)"/g)].map((m) => m[1]).filter((id) => id !== "Close" && id !== "test"); // excludedNonProductRows

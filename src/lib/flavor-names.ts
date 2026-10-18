@@ -11,6 +11,7 @@
 export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // generated from the catalog by the contract test's listing (npx tsx src/lib/flavor-names-contract-test.ts --list),
   // 2026-09-24: twin-flavour names ("A + B") are listed by part.
+  // Round p63 (19/10): + the ESKO BAR 20000 names.
   // Round p63 (18/10): + the WOTOFO nexPOD 15K Pro Kit names.
   // Round p63 (18/10): + the IQOS TEREA pack names (the TEREA options became flavours), sorted in by length.
   // Round list19 (19/10): + the RELX LUMI 18K names (the "5%" options are Max's own labels), sorted in by length.
@@ -50,6 +51,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Watermelon Lychee",
   "Cherry Strawberry",
   "Jasmine Green Tea",
+  "Extra Menthol 5%",
   "Strawberry Pearl",
   "American Cookies",
   "English Iced Tea",
@@ -60,6 +62,8 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Lychee Raspberry",
   "Strawberry Grape",
   "Dimensions Yugen",
+  "Banana Icecream",
+  "Sour Strawberry",
   "Berrine Edition",
   "Emerald Edition",
   "Extreme Menthol",
@@ -75,6 +79,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Sugus Pineapple",
   "Sugus Raspberry",
   "Apple Aloe Vera",
+  "Red Lemon Soda",
   "Auburn Edition",
   "Golden Edition",
   "Mulint Edition",
@@ -118,6 +123,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Ice Sparkling",
   "Grape Gummies",
   "Watermelon 5%",
+  "Purple Grape",
   "Apple Baraku",
   "Apple Shisha",
   "Grape Lychee",
@@ -128,6 +134,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Sakura Grape",
   "Berry Garden",
   "Peach Orange",
+  "Berry Grape",
   "Monster Ice",
   "Black Green",
   "Bright Wave",

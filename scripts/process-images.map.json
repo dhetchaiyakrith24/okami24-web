@@ -9132,5 +9132,147 @@
    "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-lumi.jpg (reference left, render right) - clear slanted pod, three holes in the inner frame, RELX lettering, blue-to-mint body checked by eye"
   },
   "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/498-6.png",
+  "slug": "esko-bar-20k",
+  "role": "card",
+  "minLong": 600,
+  "note": "ESKO BAR's own transparent device render 498-6.png (eskobarvape.com/product/eskobar, 349x603 — the largest device-only file on the maker page; round p63, owner item 69, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/a.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-11",
+  "minLong": 600,
+  "fileName": "variant-mixberry.webp",
+  "note": "ESKO BAR's own flavour render a.png, alt \"ESKO BAR 498 mixberry\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/b.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-12",
+  "minLong": 600,
+  "fileName": "variant-cola.webp",
+  "note": "ESKO BAR's own flavour render b.png, alt \"ESKO BAR 498 cola\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/c.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-13",
+  "minLong": 600,
+  "fileName": "variant-sour-strawberry.webp",
+  "note": "ESKO BAR's own flavour render c.png, alt \"ESKO BAR 498 sour strawberry\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/d.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-2",
+  "minLong": 600,
+  "fileName": "variant-grape.webp",
+  "note": "ESKO BAR's own flavour render d.png, alt \"ESKO BAR 498 grape\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/e.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-14",
+  "minLong": 600,
+  "fileName": "variant-e-melon.webp",
+  "note": "ESKO BAR's own flavour render e.png, alt \"ESKO BAR 498 e-melon\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/f.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-1",
+  "minLong": 600,
+  "fileName": "variant-purple-grape.webp",
+  "note": "ESKO BAR's own flavour render f.png, alt \"ESKO BAR 498 purple grape\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/g.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-15",
+  "minLong": 600,
+  "fileName": "variant-apple-aloe.webp",
+  "note": "ESKO BAR's own flavour render g.png, alt \"ESKO BAR 498 apple aloe\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/h.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-3",
+  "minLong": 600,
+  "fileName": "variant-watermelon-strawberry.webp",
+  "note": "ESKO BAR's own flavour render h.png, alt \"ESKO BAR 498 watermelon strawberry\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/i.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-4",
+  "minLong": 600,
+  "fileName": "variant-blueberry-ice.webp",
+  "note": "ESKO BAR's own flavour render i.png, alt \"ESKO BAR 498 blueberry ice\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/j.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-5",
+  "minLong": 600,
+  "fileName": "variant-strawberry-banana.webp",
+  "note": "ESKO BAR's own flavour render j.png, alt \"ESKO BAR 498 strawberry banana\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/k.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-6",
+  "minLong": 600,
+  "fileName": "variant-strawberry-kiwi.webp",
+  "note": "ESKO BAR's own flavour render k.png, alt \"ESKO BAR 498 strawberry kiwi\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/l.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-7",
+  "minLong": 600,
+  "fileName": "variant-pink-guava.webp",
+  "note": "ESKO BAR's own flavour render l.png, alt \"ESKO BAR 498 pink guava\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/m.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-8",
+  "minLong": 600,
+  "fileName": "variant-bubblegum.webp",
+  "note": "ESKO BAR's own flavour render m.png, alt \"ESKO BAR 498 bubblegum\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/n.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-9",
+  "minLong": 600,
+  "fileName": "variant-watermelon-ice.webp",
+  "note": "ESKO BAR's own flavour render n.png, alt \"ESKO BAR 498 watermelon ice\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
+ },
+ {
+  "source": "_incoming/p63/esko20k/src/o.png",
+  "slug": "esko-bar-20k",
+  "role": "variant",
+  "id": "Pod-130-10",
+  "minLong": 600,
+  "fileName": "variant-berry-grape.webp",
+  "note": "ESKO BAR's own flavour render o.png, alt \"ESKO BAR 498 berry grape\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
  }
 ]
