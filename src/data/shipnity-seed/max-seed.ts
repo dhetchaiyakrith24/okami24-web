@@ -2845,6 +2845,145 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
         "inStock": true
       }
     ]
+  },
+  "ESKO-BAR-20K": {
+    "maxParentId": "Pod-130",
+    "name": "Esko Bar 20000 Puffs",
+    "operationalSellingPrice": 389,
+    "children": [
+      {
+        "shipnityVariantId": "Pod-130-1",
+        "rawLabel": "Purple Grape",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-2",
+        "rawLabel": "Grape",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-3",
+        "rawLabel": "Watermelon Strawberry",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-4",
+        "rawLabel": "Blueberry Ice",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-5",
+        "rawLabel": "Strawberry Banana",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-6",
+        "rawLabel": "Strawberry Kiwi",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-7",
+        "rawLabel": "Pink Guava",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-8",
+        "rawLabel": "Bubblegum",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-9",
+        "rawLabel": "Watermelon Ice",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-10",
+        "rawLabel": "Berry Grape",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-11",
+        "rawLabel": "Mixberry",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-12",
+        "rawLabel": "Cola",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-13",
+        "rawLabel": "Sour Strawberry",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-14",
+        "rawLabel": "E-Melon",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-15",
+        "rawLabel": "Apple Aloe",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-16",
+        "rawLabel": "Banana Icecream",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-17",
+        "rawLabel": "Lychee",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-18",
+        "rawLabel": "Double Mint",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-19",
+        "rawLabel": "Red Lemon Soda",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-20",
+        "rawLabel": "Extra Menthol 5%",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-21",
+        "rawLabel": "Mineral",
+        "sellingPrice": 389,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-130-22",
+        "rawLabel": "Mango",
+        "sellingPrice": 389,
+        "inStock": false
+      }
+    ]
   }
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","RELX-LUMI-18K"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","RELX-LUMI-18K","ESKO-BAR-20K"];

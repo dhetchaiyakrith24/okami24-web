@@ -47,6 +47,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "eliquid-1": { tagline: "Marbo Saltnic e-liquid, 30ml bottle" },
   "pod-154": { tagline: "Pop Up 10K refill pod" },
   "relx-lumi-18k": { tagline: "RELX LUMI 18K disposable" },
+  "esko-bar-20k": { tagline: "ESKO BAR 20000-puff disposable, 600mAh, 18ml" },
   "pod-169": { tagline: "INFY PLUS prefilled pod cartridge, 2.5ml" },
   "pod-159": { tagline: "Esko Bar Switch 20K kit by ESKO BAR" },
   "pod-180": { tagline: "nexBar CLEAR 18K disposable" },
