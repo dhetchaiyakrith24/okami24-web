@@ -882,7 +882,7 @@ const allGuides: Guide[] = [
       },
       {
         // SEO all keys §9.7 (19/10): "พอต 15k คือ · กี่คำ". 15,000 = the nexPOD 15K pod row (wotofo.com), a verified spec of /products/nexpod-15k.
-        question: "พอต 15K คืออะไร สูบได้กี่คำ",
+        question: "พอต 15K คืออะไร สูบได้กี่พัฟ", // THAI_STYLE พัฟ row: not "คำ" (checker #590 note), though people search "กี่คำ"
         answer: "K ในชื่อรุ่นย่อมาจากหลักพัน 15K จึงหมายถึง 15,000 พัฟ เป็นจำนวนพัฟสูงสุดที่ผู้ผลิตระบุ อย่าง WOTOFO nexPOD 15K ระบุไว้หัวละ 15,000 พัฟ จะสูบได้ใกล้ตัวเลขนั้นแค่ไหน ขึ้นกับว่าแต่ละคนสูบถี่และดูดยาวแค่ไหน ให้ดูปริมาณน้ำยาที่บอกเป็น mL คู่กันด้วย",
       },
       {
