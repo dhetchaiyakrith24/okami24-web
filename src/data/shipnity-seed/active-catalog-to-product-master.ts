@@ -1817,6 +1817,14 @@ export const VERIFIED_REVIEW_VIDEOS: Record<string, { videoId: string; title: st
   "Pod-159": { videoId: "kJd5rnEtg_Y", title: "ESKO BAR 20K และ ESKO BAR SWITCH 20K เล็กเจอใหญ่", channelName: "OKM YARZ", publishedAt: "2026-01-27" },
 };
 
+/**
+ * Parents whose option labels show the maker's own name only (round p63, 18/10). The warehouse adds a Thai colour hint
+ * to each TEREA pack ("Black Green เขียวเข้ม"); IQOS names the pack "Black Green" and the pack photo shows the colour, so
+ * the hint is cut from the LABEL (the value code stays as it was) — the same label then reads right on th / en / zh pages.
+ */
+const MAKER_NAME_ONLY_LABELS = new Set<string>(["iqosheet-15"]); // keyed like `parentInternalId` (lower-case)
+const TRAILING_THAI_HINT = /\s+[฀-๿][฀-๿\s-]*$/;
+
 export function buildVariantStructure(
   parentInternalId: string,
   children: ActiveChildRecord[],
@@ -1863,7 +1871,8 @@ export function buildVariantStructure(
   for (const c of variantChildren) {
     const label = c.cleanedValue ?? c.rawLabel;
     const code = slugifyValue(label);
-    if (!valueMap.has(code)) valueMap.set(code, { code, label });
+    const shown = MAKER_NAME_ONLY_LABELS.has(parentInternalId) ? label.replace(TRAILING_THAI_HINT, "") : label;
+    if (!valueMap.has(code)) valueMap.set(code, { code, label: shown });
   }
   // Manufacturer-verified values beyond current Shipnity stock (see
   // `VerifiedAdditionalOptionValue`'s doc comment) — merged onto the SAME axis only, never used to
