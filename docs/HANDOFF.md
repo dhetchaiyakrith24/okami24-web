@@ -64,6 +64,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   owner wants strict maker-URL only. Switch guide body says "เครื่องระบบสวิตช์" (THAI_STYLE 10B line: "พอตเปลี่ยนหัว" = title, links, first explanation).
   Second-pass key research DONE 16/10 = SEO_LANDSCAPE §9.7 (+ §9.6 rows 8–10) · cluster notes `_incoming/seo-keys/r2-*.md`.
   DONE line 2 [ตรวจแล้ว]: #557 · #558 (what each did = the PR). §9.4 checked 16/10: charging / no-draw / coil / disposable-fade / burnt FAQs already done.
+  DONE 19/10 [ตรวจแล้ว curl 200]: #585 /e-liquid meta (SEO_BASELINE logged) · #590 §9.7 batch 9 — Thai searched names beside the Marbo
+  flavour names (choosing-a-marbo-flavor) + FAQ "พอต 15K คืออะไร สูบได้กี่พัฟ" (how-long-a-disposable-lasts; "กี่คำ" is the searched form but
+  THAI_STYLE พัฟ row rules it out). §9.7 "head meta ราคา" rows on unlocked model pages = nothing to do (every description already says
+  "ราคา ฿…"). §9.7 left for batch 9: relx-creator H2 "หัวที่ใช้ได้" · blinking/charging/burnt guide phrases ("มาโบ ไฟกะพริบ" — light
+  meanings only from a maker manual) · INFY 12K page (NP).
+  22/10 READ adds (Friday 18/10, `_incoming/p63/gsc-2210-todo.md` in this worktree): snippet gaps "esko bar" 87 impr pos 3.6 0 clicks ·
+  "joiway" 179 impr pos 6.2 3 clicks (/brands/joiway 417 impr 15 clicks) → fix the ranking pages' title/description with the held
+  heads · weekly clicks 214 (29/09–05/10) → 160 (09–15/10), impressions 1,470 → 918: say whether it is specific pages or the general dip ·
+  /brands/esko-bar intro still names only the Switch (now 2 products) · /brands/esko-bar + /brands/infy changed before the read (logged).
   NEXT (pages not frozen): Caliburn G4 Pro vs G5 + G5 Lite vs Lite SE wait (G5 / G5 Lite = watch row 3) → §9.7 row 9 heads (seo-auditor
   reads the paper set first) → "พอต 15k คือ" → open-system-vs-disposable / disposable-vs-switch-pod FAQs (§9.4 word "มาโบ" rule) →
   second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
@@ -98,7 +107,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   map entry (cobalt-blue.jpg) still sits beside the new one.
   NOT REAL (report only): M Bar 18K · Marbo 25K · RELX Diva / Sparta / Novo · nexBAR Switch 15K (→ nexPOD 15K, owner item 68, live).
   JOIWAY 12K / 20K = F3 / F4 already live (alias = SEO chat after 22/10).
-  NEXT: after the 22/10 GSC read: INFY 12K + Esko Bar 20000 at ฿389 ("ESKO BAR 498", warehouse Pod-130; owner "ใส่ตามคลัง") · then round-close (tag p63-1610).
+  LIVE 19/10 [ตรวจแล้ว curl 200]: #589 ESKO BAR 20000 ฿389 https://okami24.store/products/esko-bar-20k (Max-only record ESKO-BAR-20K =
+  Pod-130 = maker "ESKO BAR 498"; 22 flavours, 15 with the maker's flavour render; card small — the maker's only device-only file is
+  603 px → image-line re-shoot candidate). NEXT: INFY 12K (NP) · then round-close (tag p63-1610).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
