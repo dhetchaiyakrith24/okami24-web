@@ -36,9 +36,13 @@ export const COMPAT_LABELS_TH: Record<string, string> = {
   "M Bar-compatible reusable devices": "เครื่องใช้ซ้ำที่รองรับ M Bar",
   "RELX Creator Pod": "หัวพอต RELX Creator Pod",
   "Muro Connector pod": "หัวพอต Muro Connector",
+  // Round p63 (18/10): WOTOFO nexPOD 15K Pro Kit.
+  "nexPOD 15K pods": "หัวพอต nexPOD 15K",
 };
 
 export const COMPAT_NOTES_TH: Record<string, string> = {
+  // Round p63 (18/10): WOTOFO nexPOD 15K Pro Device page "Compatible Pods".
+  "WOTOFO lists the nexPOD 15K Prefilled Pod and the nexPOD 15K Refillable Pod for this device.": "WOTOFO ระบุว่าเครื่องนี้ใช้ได้ทั้งหัวพอตแบบเติมมาแล้วและแบบเติมเองของ nexPOD 15K",
   // Batch 2d (04/10): DRAG S3 / X3 cartridge note (thai-copy).
   "PnP X Cartridge DTL (5mL) in the kit; takes every PnP X coil.": "ในกล่องมีหัวพอต PnP X Cartridge DTL 5mL ใช้คอยล์ PnP X ได้ทุกตัว",
   "Shared top-fill pod platform used across most current Caliburn devices; resistance options sold separately.":

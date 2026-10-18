@@ -12,6 +12,16 @@ const photo = (id: string, name: string) => ({
   alt: `WOTOFO nexBAR 18K, ${name}`,
 });
 
+// nexPOD 15K Pro Kit (round p63, owner item 68, 18/10) — WOTOFO's own pages (Shopify JSON read 18/10).
+const KIT_PAGE = "https://wotofo.com/products/nexpod-15k-pro-kit-20mg";
+const DEVICE_PAGE = "https://wotofo.com/products/nexpod-15k-pro-device";
+const POD_PAGE = "https://wotofo.com/products/nexpod-15k-prefilled-pod-20mg";
+/** One colour = the device cut from WOTOFO's own 2000px kit render of that colour (pure black backdrop keyed out). */
+const kit = (id: string, name: string) => ({
+  src: `/assets/products/nexpod-15k/variant-${id}.webp`,
+  alt: `WOTOFO nexPOD 15K Pro, ${name}, with a prefilled pod fitted`,
+});
+
 export const wotofoProducts: Product[] = [
   {
     // Image-fix round (owner 2026-09-29/30): the shop sells nexBar CLEAR 18K (Shipnity Pod-180), not this model —
@@ -138,5 +148,96 @@ export const wotofoProducts: Product[] = [
     relatedProductSlugs: [],
     // + WOTOFO's own review (battery percentage, the grooved slider, the button: batch 5a, checker #283 r1).
     sourceUrls: [OFFICIAL_20MG, OFFICIAL_50MG, "https://www.wotofo.com/blogs/disposable-vape/wotofo-nexbar-18k-review"],
+  },
+  {
+    // Round p63 (owner item 68, 16/10): searched "nexBAR Switch 15K" does not exist on wotofo.com; its real pod-swap model is the
+    // nexPOD 15K. Page for the Pro Kit (WOTOFO's current kit) — browse-only, no price, every option sold out (sku-map null).
+    id: "nexpod-15k",
+    slug: "nexpod-15k",
+    brandId: "wotofo",
+    familyId: "wotofo-nexpod",
+    categoryId: "pod-kits",
+    systemType: "pod-kit",
+    name: "WOTOFO nexPOD 15K Pro Kit",
+    displayName: "WOTOFO nexPOD 15K Pro Kit",
+    tagline: "A 1200 mAh aluminium device that takes WOTOFO's prefilled 18 mL nexPOD 15K pods.",
+    shortDescription:
+      "WOTOFO's nexPOD 15K Pro Kit: a reusable 1200 mAh aluminium device and one prefilled pod (18 mL, 0.8Ω nexMESH coil, 15,000 puffs per pod). The device reads which pod is fitted and sets its wattage.",
+    isFlagship: false,
+    attributes: {
+      batteryMah: 1200,
+      // No puffCount: WOTOFO rates 15,000 puffs per POD, and the hero stat would read it as the device (spec row "puffs" says per pod).
+      capacityMl: 18,
+      portability: "compact",
+      beginnerFriendly: false,
+    },
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/nexpod-15k/card.webp",
+        alt: "WOTOFO nexPOD 15K Pro, Black, with a prefilled pod fitted",
+        angle: "front, isolated — cut from WOTOFO's own 2000px kit render (Black_nexpod_15k_pro_kit.jpg, pure black backdrop keyed out)",
+        transparentBackground: true,
+        sourceName: "WOTOFO (official store, wotofo.com)",
+        sourceUrl: KIT_PAGE,
+      },
+    ],
+    colorVariants: [
+      { id: "black", name: "Black", swatchHex: "#1c1c1e", availability: "unknown", image: kit("black", "Black"), sourceUrl: DEVICE_PAGE },
+      { id: "silver", name: "Silver", swatchHex: "#c9cbcd", availability: "unknown", image: kit("silver", "Silver"), sourceUrl: DEVICE_PAGE },
+      { id: "blue", name: "Blue", swatchHex: "#a9c4d4", availability: "unknown", image: kit("blue", "Blue"), sourceUrl: DEVICE_PAGE },
+      { id: "cosmic-orange", name: "Cosmic Orange", swatchHex: "#e2621f", availability: "unknown", image: kit("cosmic-orange", "Cosmic Orange"), sourceUrl: DEVICE_PAGE },
+      { id: "red", name: "Red", swatchHex: "#c3343a", availability: "unknown", image: kit("red", "Red"), sourceUrl: DEVICE_PAGE },
+      { id: "rose-gold", name: "Rose Gold", swatchHex: "#e2b2a6", availability: "unknown", image: kit("rose-gold", "Rose Gold"), sourceUrl: DEVICE_PAGE },
+    ],
+    // The kit's own flavour choice (17 on the kit page's selector) + the 3 more its page copy names (Mixed Berries,
+    // Strawberry Banana, Strawberry Watermelon Ice) — catalog completeness rule. Flavour photos on wotofo.com carry the box
+    // and its text, so the flavours stay swatch-only.
+    flavorVariants: [
+      { id: "forest-berries", name: "Forest Berries", swatchHex: "#5b3f8a", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "blueberry-watermelon", name: "Blueberry Watermelon", swatchHex: "#6a5fb8", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "grape-ice", name: "Grape Ice", swatchHex: "#7a5aa8", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "guava-kiwi-passion-fruit", name: "Guava Kiwi Passion Fruit", swatchHex: "#e2d6a6", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "just-mint", name: "Just Mint", swatchHex: "#7fc4a4", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "love-77", name: "Love 77", swatchHex: "#c9d65a", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "mango-ice", name: "Mango Ice", swatchHex: "#f0b52a", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "melon-kiwi-banana", name: "Melon Kiwi Banana", swatchHex: "#c8d870", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "mixed-berries", name: "Mixed Berries", swatchHex: "#a0408a", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "monster-ice", name: "Monster Ice", swatchHex: "#9cc43a", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "peach-ice", name: "Peach Ice", swatchHex: "#f2a07a", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "peach-mango-watermelon", name: "Peach Mango Watermelon", swatchHex: "#e8a6c0", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "pineapple-ice", name: "Pineapple Ice", swatchHex: "#f0d23a", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "pomegranate-ice", name: "Pomegranate Ice", swatchHex: "#b0283a", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "strawberry-banana", name: "Strawberry Banana", swatchHex: "#e8d02e", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "strawberry-ice", name: "Strawberry Ice", swatchHex: "#d8384a", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "strawberry-kiwi", name: "Strawberry Kiwi", swatchHex: "#e6a0b8", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "strawberry-watermelon-ice", name: "Strawberry Watermelon Ice", swatchHex: "#e0506a", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "three-melons", name: "Three Melons", swatchHex: "#a8d070", availability: "unknown", sourceUrl: KIT_PAGE },
+      { id: "watermelon-ice", name: "Watermelon Ice", swatchHex: "#d8383f", availability: "unknown", sourceUrl: KIT_PAGE },
+    ],
+    specifications: [
+      { key: "battery", label: "Battery", value: "1200mAh", sourceStatus: "verified", sourceUrl: DEVICE_PAGE },
+      { key: "pod", label: "Pod capacity", value: "18mL prefilled", sourceStatus: "verified", sourceUrl: POD_PAGE },
+      { key: "resistance", label: "Coil", value: "0.8Ω nexMESH", sourceStatus: "verified", sourceUrl: POD_PAGE },
+      { key: "puffs", label: "Puffs", value: "15,000 per pod", sourceStatus: "verified", sourceUrl: POD_PAGE },
+      { key: "output", label: "Output", value: "Prefilled pod 16W or 12W · refillable pod 25W or 20W", sourceStatus: "verified", sourceUrl: KIT_PAGE },
+      { key: "airflow", label: "Airflow", value: "2-level adjustable", sourceStatus: "verified", sourceUrl: DEVICE_PAGE },
+      { key: "display", label: "Display", value: "Battery level and output wattage", sourceStatus: "verified", sourceUrl: DEVICE_PAGE },
+      { key: "charging", label: "Charging", value: "Fast charging supported", sourceStatus: "verified", sourceUrl: DEVICE_PAGE },
+      { key: "nicotine", label: "Nicotine", value: "20mg", sourceStatus: "verified", sourceUrl: KIT_PAGE },
+      { key: "materials", label: "Body", value: "Aluminium", sourceStatus: "verified", sourceUrl: KIT_PAGE },
+      { key: "box", label: "In the box", value: "1 × nexPOD 15K Pro Device · 1 × nexPOD 15K Prefilled Pod", sourceStatus: "verified", sourceUrl: KIT_PAGE },
+    ],
+    features: [
+      { id: "recognition", title: "Reads the pod it holds", description: "WOTOFO says the Pro Device recognises which pod is fitted and sets a matching default wattage: 16W for the prefilled pod, 25W for the refillable one." },
+      { id: "modes", title: "Two power levels", description: "One click with the screen on switches the prefilled pod from 16W to 12W, or the refillable pod from 25W to 20W." },
+      { id: "reuse", title: "Keep the device, swap the pod", description: "When a pod runs dry only the pod is replaced; the 1200mAh aluminium device is built to be used again." },
+    ],
+    compatibility: [{ type: "pod", label: "nexPOD 15K pods", note: "WOTOFO lists the nexPOD 15K Prefilled Pod and the nexPOD 15K Refillable Pod for this device." }],
+    whoIsThisFor: ["You searched for a 15K pod-swap device from WOTOFO and want what WOTOFO itself lists for the nexPOD 15K Pro Kit."],
+    faqs: [],
+    relatedProductSlugs: ["wotofo-nexbar-18k"],
+    sourceUrls: [KIT_PAGE, DEVICE_PAGE, POD_PAGE],
   },
 ];
