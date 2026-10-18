@@ -48,6 +48,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "pod-154": { tagline: "Pop Up 10K refill pod" },
   "nexswitch-16k-kit": { tagline: "Nexswitch kit with one pod" },
   "nexswitch-16k-pod": { tagline: "Nexswitch 16K refill pod" },
+  "relx-lumi-18k": { tagline: "RELX LUMI 18K disposable" },
   "pod-169": { tagline: "INFY PLUS prefilled pod cartridge, 2.5ml" },
   "pod-159": { tagline: "Esko Bar Switch 20K kit by ESKO BAR" },
   "pod-180": { tagline: "nexBar CLEAR 18K disposable" },

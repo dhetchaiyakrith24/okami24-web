@@ -253,6 +253,9 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // was found (researcher 18/10: snowwolf has no "nex Switch" page) → sold without a brand, warehouse facts only (same as Pop Up 10K).
   "NEXSWITCH-16K-KIT": { brandId: null, brandless: true, categoryId: "pod-kits", systemType: "pod-kit", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "เครื่อง + หัวพอต <flavour>" (device + one pod, ฿419); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
   "NEXSWITCH-16K-POD": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "หัวพอต <flavour>" (refill pod, ฿269); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
+  // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): RELX LUMI 18K — Max-only record (Max "Disposable-44" "RELX LUMI 18k", 16 flavours).
+  // relxnow.com has no LUMI page (researcher 18/10) → warehouse facts only; the device prints RELX (shop posters, masters/src/disposable-44).
+  "RELX-LUMI-18K": { brandId: "relx", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX parent "Disposable-44" "RELX LUMI 18k" with 16 flavour children (฿349); the device prints RELX (shop posters ihavevape.net/product/relx-lumi-18k); no LUMI page on relxnow.com 18/10 — listed on warehouse facts only' },
   // Round list19 (18/10, owner "ทำเลยครับทั้งหมด"): Pop Up 10K refill pod — no maker site found (Thai-market line), sold without a brand on
   // the site (same as Pod-180); every fact = the warehouse (Shipnity MAX name "Pop Up 10K หัวเติม", its 18 flavour rows + battery base row).
   "Pod-154": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Pop Up 10K หัวเติม" (refill pod) with 18 flavour children + a "ฐานแบตเตอรี่" (battery base) child; no maker site found 16-18/10 — listed on warehouse facts only, without a brand' },
@@ -568,6 +571,10 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     // Round list19 (19/10): warehouse facts only — Max "หัวพอต <flavour>"; the pod prints "16K POD".
     tagline: "หัวพอต Nexswitch 16K",
     shortDescription: "หัวพอต Nexswitch 16K หัวละสูงสุด 16,000 พัฟ ใช้กับตัวเครื่อง Nexswitch ร้านมีให้เลือก 10 กลิ่น",
+  "RELX-LUMI-18K": {
+    // Round list19 (19/10): warehouse facts only — the Max name "RELX LUMI 18k" (no maker page for the puff count or the battery).
+    tagline: "พอตใช้แล้วทิ้ง RELX LUMI 18K",
+    shortDescription: "พอตใช้แล้วทิ้ง RELX LUMI ชื่อรุ่นระบุ 18,000 พัฟ ร้านมีให้เลือก 16 กลิ่น",
   },
   "Pod-154": {
     // Round list19 (18/10): warehouse facts only — the name says 10K, the pod print says 10000 PUFFS, Max lists the battery base.
@@ -750,6 +757,20 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster",
       sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/",
+    },
+  ],
+  // Round list19 (19/10): RELX LUMI 18K — no maker image; card = OKami24 re-shoot of RELX's LUMI poster (blue-mint device). The shop
+  // posters do not tie a body colour to a flavour, so the 16 flavours show no per-flavour photo.
+  "RELX-LUMI-18K": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/relx-lumi-18k/card.webp",
+      alt: "RELX LUMI 18K disposable, blue-mint, studio photo",
+      angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of RELX's LUMI poster. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from RELX's LUMI poster",
+      sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/",
     },
   ],
   // Round list19 (18/10): Pop Up 10K — OKami24 re-shoots (batch 7) of the shop's flavour posters; card = the Coke pod (in stock).
@@ -1155,6 +1176,9 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "NEXSWITCH-16K-POD": {
     specifications: [
       { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 16,000", sourceStatus: "verified" },
+  // Round list19 (19/10): warehouse facts only (no maker page) — the Max name "RELX LUMI 18k".
+  "RELX-LUMI-18K": {
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 18,000", sourceStatus: "verified" },
     ],
     sourceUrls: [],
   },
@@ -2049,6 +2073,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
   "NEXSWITCH-16K-KIT": { name: "Nexswitch 16K Kit", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   "NEXSWITCH-16K-POD": { name: "Nexswitch 16K Pod", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+  "RELX-LUMI-18K": { name: "RELX LUMI 18K", sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/" },
   "Pod-169": { name: "INFY PLUS 2.5ML Cartridge", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },
 };
 

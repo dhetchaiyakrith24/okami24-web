@@ -202,6 +202,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // refill-pod options Pod-162-* (Max list read 2026-10-17).
   "NEXSWITCH-16K-KIT": { sellingPrice: 419, lastPriceReview: "2026-10-19" },
   "NEXSWITCH-16K-POD": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
+  // Round list19 (19/10): RELX LUMI 18K (Max-only "Disposable-44") — Max ราคาขาย ฿349 for the parent and its 16 flavours (read 2026-10-17).
+  "RELX-LUMI-18K": { sellingPrice: 349, lastPriceReview: "2026-10-19" },
   // Round list19 (18/10, owner ruling "list it, warehouse data only"): SKE Crystal B20000 — Max "ราคาขาย" ฿329 (parent "Product 1141360"
   // and its 8 children Pod-149-*, 17/10 read).
   "Pod-149": { sellingPrice: 329, lastPriceReview: "2026-10-18" },

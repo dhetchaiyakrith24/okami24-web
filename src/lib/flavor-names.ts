@@ -13,6 +13,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // 2026-09-24: twin-flavour names ("A + B") are listed by part.
   // Round p63 (18/10): + the WOTOFO nexPOD 15K Pro Kit names.
   // Round p63 (18/10): + the IQOS TEREA pack names (the TEREA options became flavours), sorted in by length.
+  // Round list19 (19/10): + the RELX LUMI 18K names (the "5%" options are Max's own labels), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
   "Watermelon Dragon Fruit",
@@ -27,6 +28,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Watermelon Bubblegum",
   "Strawberry Ice Cream",
   "Watermelon Raspberry",
+  "Sea Salt Lemon Candy",
   "Passion Fruit Pearl",
   "Blueberry Bubblegum",
   "Blueberry Raspberry",
@@ -47,6 +49,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Melon Kiwi Banana",
   "Watermelon Lychee",
   "Cherry Strawberry",
+  "Jasmine Green Tea",
   "Strawberry Pearl",
   "American Cookies",
   "English Iced Tea",
@@ -92,6 +95,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Sea Salt Lemon",
   "Sour Bubblegum",
   "Ice Strawberry",
+  "Double Mint 5%",
   "Riviera Pearl",
   "Berries Party",
   "Blueberry Ice",
@@ -113,6 +117,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Pineapple Ice",
   "Ice Sparkling",
   "Grape Gummies",
+  "Watermelon 5%",
   "Apple Baraku",
   "Apple Shisha",
   "Grape Lychee",
@@ -197,5 +202,6 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Cola Ice",
   "Thai Tea",
   "Milk Tea",
+  "Grape 5%",
   "Love 77",
 ];

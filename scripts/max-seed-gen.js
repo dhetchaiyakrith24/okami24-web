@@ -37,6 +37,7 @@ const MAX_ONLY_RECORDS = {
   "KS-QUIKPRO-KIT": "Product 780", // KS Quik Pro 15000 คำ (device + pod)
   "NEXSWITCH-16K-KIT": { max: "Product 1176446", childPrefix: "Pod-161-" }, // Nexswitch 16000 Puffs — "เครื่อง + หัวพอต <flavour>"
   "NEXSWITCH-16K-POD": { max: "Product 1176446", childPrefix: "Pod-162-" }, // Nexswitch 16000 Puffs — "หัวพอต <flavour>"
+  "RELX-LUMI-18K": "Disposable-44", // RELX LUMI 18k (round list19 18/10)
 };
 const seedSrc = fs.readFileSync(path.join(__dirname, "..", "src", "data", "shipnity-seed", "active-catalog-source.ts"), "utf8");
 const seedIds = [...seedSrc.matchAll(/shipnityProductId: "([^"]+)"/g)].map((m) => m[1]).filter((id) => id !== "Close" && id !== "test"); // excludedNonProductRows
