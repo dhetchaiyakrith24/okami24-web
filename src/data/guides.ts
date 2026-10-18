@@ -701,7 +701,7 @@ const allGuides: Guide[] = [
       {
         heading: "สายองุ่น: ชื่อที่มี Grape",
         paragraphs: [
-          "องุ่นเป็นอีกกลิ่นที่ลูกค้าที่ร้านถามถึงบ่อย ทั้งสามรุ่นมีกลิ่นองุ่นมากกว่าหนึ่งแบบ ชื่อที่มี Grape คู่กับอย่างอื่น เช่น Grape Aloe หรือ Grape Lychee ที่เป็นองุ่นคู่กับลิ้นจี่ เราจัดไว้สายนี้ ส่วนคนที่หาองุ่นเคียวโฮ ชื่อในรายการคือ Kyoho Grape ซึ่งมีครบทั้งสามรุ่น",
+          "องุ่นเป็นอีกกลิ่นที่ลูกค้าที่ร้านถามถึงบ่อย ทั้งสามรุ่นมีกลิ่นองุ่นมากกว่าหนึ่งแบบ ชื่อที่มี Grape คู่กับอย่างอื่น เช่น Grape Aloe ที่คนค้นว่าองุ่นอโล หรือ Grape Lychee ที่เป็นองุ่นคู่กับลิ้นจี่ เราจัดไว้สายนี้ ส่วนคนที่หาองุ่นเคียวโฮ ชื่อในรายการคือ Kyoho Grape ซึ่งมีครบทั้งสามรุ่น",
           "M Bar 9K (4 กลิ่น): Grape · Grape Aloe · Grape Lychee · Kyoho Grape",
           "M Bar 10K (2 กลิ่น): Grape · Kyoho Grape",
           "M Switch Pod (4 กลิ่น): Grape · Grape Aloe · Grape Lychee · Kyoho Grape",
@@ -710,7 +710,8 @@ const allGuides: Guide[] = [
       {
         heading: "สายผลไม้",
         paragraphs: [
-          "ชื่อที่เป็นผลไม้ และไม่มีคำที่สื่อถึงความเย็นหรือ Grape อยู่ในกลุ่มนี้ รวมถึงชื่อที่มีผลไม้คู่กับขนมหรือเครื่องดื่ม อย่าง Watermelon Bubblegum กับ Strawberry Milkshake ใครมองหากลิ่นแตงโม มี Watermelon ครบทั้งสามรุ่น ส่วนกลิ่นพีช มี Peach ใน M Bar 9K และ Peach Strawberry ทั้งใน M Bar 9K และ M Switch Pod",
+          "ชื่อที่เป็นผลไม้ และไม่มีคำที่สื่อถึงความเย็นหรือ Grape อยู่ในกลุ่มนี้ รวมถึงชื่อที่มีผลไม้คู่กับขนมหรือเครื่องดื่ม อย่าง Watermelon Bubblegum กับ Strawberry Milkshake ใครมองหากลิ่นแตงโม มี Watermelon ครบทั้งสามรุ่น ส่วนกลิ่นพีช มี Peach ใน M Bar 9K และ Peach Strawberry ที่คนค้นว่าพีชสตอ ทั้งใน M Bar 9K และ M Switch Pod",
+          "ชื่อไทยที่คนค้นบ่อยในสายนี้ พิ้งเบอร์รี่คือ Pink Berry มีครบทั้งสามรุ่น แอปเปิ้ลอโลคือ Apple Aloe มีใน M Bar 9K กับ M Switch Pod ส่วนกลิ่นมะม่วงมีใน M Switch Pod ชื่อ Mango Passion",
           "M Bar 9K (11 กลิ่น): Apple Aloe · Mixberry · Orange Sour · Peach · Peach Strawberry · Pink Berry · Sparkling Lemon · Strawberry · Strawberry Milkshake · Watermelon · Watermelon Bubblegum",
           "M Bar 10K (4 กลิ่น): All Berry · Pink Berry · Strawberry Kiwi · Watermelon",
           "M Switch Pod (10 กลิ่น): Apple Aloe · Black Berry · Mango Passion · Mixberry · Peach Strawberry · Pink Berry · Strawberry · Strawberry Watermelon · Watermelon · Watermelon Bubblegum",
@@ -719,7 +720,7 @@ const allGuides: Guide[] = [
       {
         heading: "แนวอื่น",
         paragraphs: [
-          "ชื่อที่ไม่ได้บอกผลไม้หรือความเย็นตรง ๆ เช่น Cola · Matcha Latte · Rainbow Candy ส่วน Zapple ชื่อไม่ได้บอกว่ารสอะไร เราจึงจัดไว้ตรงนี้ คนที่มองหากลิ่นเรนโบว์หรือกลิ่นกัมมี่ ทั้ง Rainbow Candy และ Sour Gummy มีใน M Bar 9K",
+          "ชื่อที่ไม่ได้บอกผลไม้หรือความเย็นตรง ๆ เช่น Cola · Matcha Latte · Rainbow Candy ส่วน Zapple ชื่อไม่ได้บอกว่ารสอะไร เราจึงจัดไว้ตรงนี้ คนที่มองหากลิ่นเรนโบว์หรือกลิ่นกัมมี่ ทั้ง Rainbow Candy และ Sour Gummy มีใน M Bar 9K กลิ่นโคล่าคือ Cola มีครบทั้งสามรุ่น ส่วนกลิ่นมัทฉะคือ Matcha Latte มีใน M Bar 10K",
           "M Bar 9K (4 กลิ่น): Cola · Rainbow Candy · Sour Gummy · Zapple",
           "M Bar 10K (2 กลิ่น): Cola · Matcha Latte",
           "M Switch Pod (1 กลิ่น): Cola",
@@ -878,6 +879,11 @@ const allGuides: Guide[] = [
       {
         question: "9,000 พัฟ ใช้ได้กี่วัน",
         answer: "คิดเป็นวันไม่ได้ 9,000 พัฟคือจำนวนสูงสุดที่ผู้ผลิตระบุ ส่วนจะหมดในกี่วัน ขึ้นกับว่าแต่ละคนสูบถี่และดูดยาวแค่ไหน",
+      },
+      {
+        // SEO all keys §9.7 (19/10): "พอต 15k คือ · กี่คำ". 15,000 = the nexPOD 15K pod row (wotofo.com), a verified spec of /products/nexpod-15k.
+        question: "พอต 15K คืออะไร สูบได้กี่พัฟ", // THAI_STYLE พัฟ row: not "คำ" (checker #590 note), though people search "กี่คำ"
+        answer: "K ในชื่อรุ่นย่อมาจากหลักพัน 15K จึงหมายถึง 15,000 พัฟ เป็นจำนวนพัฟสูงสุดที่ผู้ผลิตระบุ อย่าง WOTOFO nexPOD 15K ระบุไว้หัวละ 15,000 พัฟ จะสูบได้ใกล้ตัวเลขนั้นแค่ไหน ขึ้นกับว่าแต่ละคนสูบถี่และดูดยาวแค่ไหน ให้ดูปริมาณน้ำยาที่บอกเป็น mL คู่กันด้วย",
       },
       {
         question: "พอตใช้แล้วทิ้งแบตหมด แต่น้ำยายังเหลือ ทำไง",
