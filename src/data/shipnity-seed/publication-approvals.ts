@@ -76,7 +76,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // identity conflict in the same source (see VERIFIED_MEDIA["Coil-53"] / TAXONOMY_MATCHES["Coil-53"]
   // — the retail box explicitly reads "1 Ω", and myuwell.com's own Caliburn G2 page confirms 1.0Ω
   // as a real, G2-compatible UWELL coil resistance). Single unambiguous operationalSellingPrice.
-  "Coil-53": { sellingPrice: 450, lastPriceReview: "2026-10-06" }, // owner override 2026-10-06: admin list row "Coil Caliburn G" + owner in chat "450 เหมือนกัน" (was ฿550)
+  "Coil-53": { sellingPrice: 450, lastPriceReview: "2026-10-19" }, // owner override 2026-10-06: admin list row "Coil Caliburn G" + owner in chat "450 เหมือนกัน" (was ฿550) · owner re-confirmed ฿450 on 2026-10-19 (chat "1 450"; Max lists ฿550)
   // Full-catalog mission (2026-09-02): second media wave closed the gap for 7 more taxonomy-
   // resolved candidates (see VERIFIED_MEDIA entries in active-catalog-to-product-master.ts).
   // Same pricing rule throughout: single, unambiguous operationalSellingPrice, no conflicting
@@ -214,6 +214,9 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // Round list19 (18/10, owner "list everything"): Marbo Saltnic — Max "ราคาขาย" ฿269 for parent ELQ-1 and its 10 flavours (17/10 read;
   // the ฿807 child ELIQUID-1-1 is a bundle, not an option).
   "ELIQUID-1": { sellingPrice: 269, lastPriceReview: "2026-10-18" },
+  // Round list19 (19/10): Pepo Salt Nic (Max ELQ-5) and Dundu Salt Nic (Max Eliquid-73) — Max ราคาขาย ฿300 each (read 2026-10-17).
+  "Eliquid-72": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
+  "Eliquid-73": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {
