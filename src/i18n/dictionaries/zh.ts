@@ -343,7 +343,7 @@ export const zh: Dictionary = {
     eyebrow: "烟油",
     pageTitle: "电子烟油风味系列",
     pageDescription:
-      "本板块是风味系列的编辑向导，并非某一品牌瓶装烟油的完整目录——由于尚无经核实的单品烟油信息来源，因此不会编造任何内容。",
+      "本板块介绍各风味系列的口感特点。本店在售烟油的价格与口味，请看各自的商品页面。",
     disclaimer:
       "本板块不对电子烟做出任何健康、安全或对比性声明，也未对每个条目标注是否含尼古丁。尼古丁浓度因产品而异，请查看商品页面或通过 LINE OA 咨询。",
     familyEyebrow: "烟油 · 风味系列",
@@ -356,7 +356,7 @@ export const zh: Dictionary = {
     nicP3: "salt nic 用在换弹式小烟上，这类机器功率较低，多半是 MTL（先吸入口腔）的抽法。",
     nicP4: "freebase 用在功率更高、自己注油的机器上。",
     nicP5: "这类机器进气更开，抽法和小烟不同。",
-    nicNotSold: "目前本站还没有开卖烟油，这一页只是先把区别说清楚。",
+    nicNotSold: "本店在售的每款烟油，都会在商品规格中注明是 salt nic 还是 freebase。",
     nicCta: "不确定自己的机器该用哪一种，可以用 LINE @okm24 问。",
   },
   products: {
