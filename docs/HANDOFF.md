@@ -11,73 +11,38 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · last site merge = #474 e111ac8e (never split หน่วยงาน, owner item 54;
-  live 200) [ตรวจแล้ว] · since then only rules / scripts / docs PRs (#484 … #496). Standing rules this block used to repeat live in
+1 main: `git fetch && git log -1 --oneline origin/main` · at the weekly house run 18/10 20:00 = #580 438cd6e7 (round list19,
+  INFY PLUS cartridge) [ตรวจแล้ว] · 0 open PRs. Standing rules this block used to repeat live in
   TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
-2 ahead of main: nothing once #497 merges (its branch auto-deletes on GitHub). Only worktree:
-  `_incoming/wt-stock` (stock round · own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
+2 worktrees = `git worktree list` (20 on 18/10 — each side chat's own, nested under `.claude/worktrees/` and `_incoming/`) ·
+  `_incoming/wt-stock` = stock round (own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
 3 WATCH (16/10): this chat = the main chat; it watches the side chats (3i image · 3s SEO · 3p products, to fold into 2 lines) and moves
   them itself per TEAM_RULES 13.6 "โครงแชท" (both starter buttons in Auto; line 1 tested 16/10 from an automated turn). Since the
   house round: #513 license text · #515 #525 #532 side-chat rules · #524 authenticity claims (owner items 64–67) · #531 items 60 + 63.
   Nothing of this chat's own is open.
-  DONE 15/10 — house audit #484 · tidy home by home #488 · central copy + web adapted #487 · LOCK ROUND #491 (pre-checker gate,
-  `--self-test` run weekly by house-check) · HOUSE ROUND ข (3h, owner "เก็บบ้านทั้งเซต + รอบสัปดาห์รู้"): #494 leftovers (raw chars 0 ·
-  `self-merge-check --base` = PASS / SITE-TOUCHED · L3 node-flag slip + quoted-arg false deny fixed) + skill house-clean = 8 homes
-  (7 docs + briefs · 8 git / `_incoming` / root folders / scheduled-task folders / Artifacts) + house-check git & root sections ·
-  #495 docs: 47 history copies in docs/archive + ARTICLES_10A deleted (git keeps them) · 24 old owner rulings lifted (§18 end,
-  IMAGE_SPEC §4) · rule-audit 15/10 full (`_incoming/house-1510b/rule-audit.md`, 31 new rows): its docs rows applied in #495, its rules/skill/agent rows in #496 (d1828883) ·
-  weekly task prompt = 8 homes. Computer: 15 merged local branches deleted · finished `_incoming/` folders + 36 loose logs moved to
-  `C:\Users\dhetc\OKami24-archive\_incoming\` (§17 "Work folders") · "Claude outputs" moved there too.
-  Owner 16/10 "ตามแนะนำทั้ง 5" → done: GitHub = merged branches deleted, the 11 unmerged old ones kept as tags `archive/<name>`
-  then deleted (left: main · inbox · gsc-data · the stock round's), repo setting "delete branch on merge" ON · 9 old OKami24
-  artifacts deleted (kept: ใบตรวจของพี่ · Logo Redesign; not ours / unsure = untouched) — MISTAKE: the half-filled Claude Docs page
-  (code/artifact/92a058d3…) was the same artifact as "ทางแก้ค่าส่งออเดอร์ Dropship" (to keep) → gone for good; its substance lives in
-  `docs/cloud-results/stock-api-sku-survey.md` last section (lesson = LESSONS พ31) · computer: `_incoming/wt-rescue` (links
-  removed first, targets intact) + `.agents/` deleted, ~\OKami24-เก็บ → `OKami24-archive\incoming-01-10`, empty ~\Claude outputs removed ·
-  closed round briefs out of `docs/rounds/` (#497, git keeps them) · rule rows C4 + A5 applied (#497).
-  Owner brief 16/10 (from the Dive Records chat) → #500: house-clean "รายการเดียว" = the one home for what Friday does alone outside
-  git or as a deletion (weekly prompt + §17 point to it) · skill `find-skills` (vercel-labs original + our vetting, 16/10) + `scripts/skill-scan.js` (outside skills are read
-  raw at a pinned commit, scanned, owner's OK first; house-check runs its bait self-test + scans our skills weekly).
-  Outside skills (owner 16/10): 1st = find-skills (vercel-labs original, 76/94 author lines kept word for word (80.9%) + our vetting A–F; replaces
-  skill-vet) · 2nd = content-strategy (coreyhaines31/marketingskills, owner OK; 309/314 author lines kept word for word = 98.4%; for the SEO round's keyword/article plan) · 3rd = seo-audit's text kept whole in
-  `docs/seo-audit/` + 4 extra lenses in agent seo-auditor, each inside the owner's old rulings (#510). Merged branches (local + GitHub) =
-  Friday deletes without asking (owner 16/10, TEAM_RULES 13.3 #1). OKM photo / OKM CT = not ours
-  unless the owner says so (central §12 item 32).
+  House rounds 15–16/10 (#484 … #500, #508, #510) DONE — what they built lives in its home (skill house-clean · TEAM_RULES 13.3 #1 ·
+  skills find-skills / content-strategy · `docs/seo-audit/`); the 16/10 artifact mistake = LESSONS พ31; full text =
+  `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
   Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
   redirect into a checker-read tree = discipline (rule-audit L1 proposes a lock) · scan tools against the live site (L2).
 3i OPEN ROUND "image sweep" = `docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt` (image chats; own the main folder's `_incoming/img-1610/`,
   worktrees `_incoming/img-1610/wt-img` (work, own node_modules) · `wt-gate` (checker tree) · `wt-base` (base build 47320ddd, before
   shots `_incoming/img-1610/shots/before-*` for every product of the round)). Nano Banana Pro Unlimited free in Chrome until ~evening 18/10 (owner 16/10: 3 days from 15/10) — render first, key later.
-  LIVE [ตรวจแล้ว]: #501 coil-94/55/53 · #503 JOIWAY F4 · #505 ARGUS G4 · #512 SALTHUB Zero Pro + Nano · #516 JOIWAY F3 ·
-  #522 Caliburn G5 Lite (+SE card) · #526 RELX Smash Go 12K (one master + scripted stripes) · #528 Caliburn G4 Classic 4 colours +
-  card + lineup (checker PASS 570cf13c; bottom = one shared silver silhouette) · #533 DRAG 6 all-colours = two studio line-ups
-  4 + 3 standing in a row (checker PASS ec96207e; colour photos untouched) · Caliburn G3 card + 6 swatch colours made here for
-  side chat products-63 (live through their #534) · #549 Caliburn G5 Lite SE 8 colours + lineup (checker PASS 26c70a7, merged b2ee1959) · #552 coil-94 = the new GPP 3-pack (admin 16/10): card + 4 resistances,
-  box + 3 pods (checker PASS 61a52f38, merged 52b5c41a) · #562 Caliburn G4 mini 12 colours + card + 2 lineups, upright like G4 Classic
-  (checker PASS 6ce518ae, merged 0ae8d8a8, live 200 page + 15 files; one shared bottom outline, pipeline b16/) · RELX Infinity 2 Plus card (94 %) for #540 · #566 RELX Infinity 2 Plus card-v3 (real cap: grey disc + V groove; checker PASS b9ef6215) · #567 ESKO BAR SWITCH (pod-159) card-v2 1000x1250 2x re-shoot (checker PASS 16b380a3) — both merged 16/10 ~22:40, live 200 page + new card files [ตรวจแล้ว 17/10]. VOID 16/10 (already done / not drawn): argus-g4 gallery
+  LIVE [ตรวจแล้ว 17/10]: #501 #503 #505 #512 #516 #522 #526 #528 #533 #549 #552 #562 #566 #567 (what each shot = the PR; method
+  notes worth keeping: G4 Classic / G4 mini bottoms = one shared silhouette, pipeline b16/ — `_incoming/img-1610/NEXT.md`). VOID 16/10 (already done / not drawn): argus-g4 gallery
   (storyDetails page never renders role "detail" assets) · caliburn-g5 colours (UWELL renders since 02/10) · Drag S3/X3 (07/10) ·
   row line-ups (argus-g4-mini 07/10, G3 Pro 02/10) · M Bar 10K anatomy size = component layout, next design round. audit2 eye pass DONE (live pages fine; low-res sets not on the site = VOID; mood-monster-14k kept, Friday 16/10). Batch 7 RENDERED 16-17/10 (line-1 chat, no site change): masters for 19 of the 21 warehouse products + Pop Up 14 flavours + Marbo 5 colours + Pepo 4 + 1 lifestyle sample (G5 Mystic Forest forest scene, 16:9) = `_incoming/img-1610/masters/` (SOURCE.md = table, out/picks.txt = picks/rejects); IQOS ILUMA ONE = official iqos.com PNGs; Pod-168 G4 Pro Stripe Black already on the site. Open: Feelin C1 ref unresolved · Double Mint Watermelon/Peach + Pop Up Strawberry/Mixberry/Lime Soda/Guava Kiwi have no ref · Breeze Blue = the ILUMA i ONE model. Keying + INFY label swaps need no Nano Banana (after 18/10). Higgsfield dropped to 1 unlimited job at a time ~00:45 17/10. State, prompts, pipelines, page helpers, lessons to fold in =
   `_incoming/img-1610/NEXT.md` (read it first) · prompts `_incoming/img-1610/prompts.md`.
-3s OPEN ROUND "SEO all keys" — PAUSED 16/10 ~21:15 until the weekly quota reset 18/10 22:00 (owner "พักสาย SEO เก็บไว้ให้รูป";
-  nothing unchecked, nothing open) = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side-chat line 2 since 16/10 ~20:15, worktree `.claude/worktrees/seo-line2`,
-  own build tree `_incoming/wt5` + test server 3415 (3416 = this line's second port); `_incoming/seo-images/setup-build5.sh <sha>` (run from the worktree root) moves + rebuilds it
-  (~5 min; pass a sha, never HEAD — HEAD = the build tree's own); worktree `node_modules` = a junction to the build tree's copy;
-  chat 3's tools copied to `_incoming/seo-keys/`) ·
+3s OPEN ROUND "SEO all keys" — RESUMED 18/10 ~22:30 (quota reset; Friday "เริ่ม") = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt`
+  (side-chat line 2; also owns 3p) · worktree `.claude/worktrees/mystifying-driscoll-575ab6` · build trees `_incoming/wt7-<port>` +
+  test servers 3415 (after) / 3416 (before = main): `bash _incoming/p63/setup-build7.sh <sha> <port>` (real node_modules copy, ~5 min;
+  pass a sha) · older line-2 tools: `.claude/worktrees/seo-line2/_incoming/seo-keys/` (chat 3's) ·
   【ห้ามแตะ】 product images + image map (image round) · every price file. Order = SEO_LANDSCAPE §9.6.
-  DONE [ตรวจแล้ว]: batch 1 key list #499 · batches 2 + 5 #502 · #514 DRAG guide + /how-to-order · /shipping · /faq buying copy ·
-  #519 old /faq answers whose collapsed line ends flipped meaning · #536 5f3bfa8a (checker PASS c6927648, round 2 of 3): batches 4 + 6 = five Thai guides choosing-a-switch-pod · choosing-a-disposable ·
-  choosing-a-pod-flavor · comparing-voopoo-argus-models (title B) · checking-a-genuine-pod (fail = BSOT §12, links /warranty) ·
-  #543 c9b82f10 (checker PASS 91dbcd3b, designer r1 = tall posters ~760px from md) + #546 4ff511ed (checker PASS e18e83b2) = section
-  posters (`image` on GuideSection/ArticleSubsection → ArticleFigure; SECTION_IMAGES in guides.ts, same files/credits as the product
-  records, Thai alt) in the DRAG · disposable · ARGUS · switch · Caliburn · ARGUS-vs-G5 guides + clips argusG4 (ARGUS guide) and mSwitch
-  (switch guide). Genuine guide: no maker image of a check exists → none. DRAG: no clip on the three shop channels (searched 16/10).
-  Dropped on sight: Caliburn G4 airflow still (big light close-up), GPP pod chart (white block) · #551 0e6c8633 (checker PASS
-  6f100ad1) = posters in esko-bar-switch-vs-m-switch · fixing-no-draw · refilling-a-pod · disposable-vs-switch-pod + a Caliburn G3 line
-  with its link in comparing-caliburn-models + a DRAG X line in the DRAG guide (link HELD: it moved the DRAG guide into /products/pod-kits'
-  box over choosing-your-first-pod-system, SEO_BASELINE row 17 — add after 22/10 and re-run linkmap) + G5 triple-tap alt fixed ·
-  #553 32d86d85 (checker r1 FAIL → r3 PASS 4a821ed9) = new Thai guide /guides/iqos-iluma-i-reset-and-charging (§9.7 row 1; ILUMA i +
-  i PRIME; iqos.com support pages only, notes `_incoming/seo-images/iqos-research.md`; reset steps = ILUMA i only, no i PRIME page found).
-  The MTL / RDL / DTL clip `_s48AaDCtf4` is already the record clip of understanding-mtl-vs-dtl — nothing to place.
+  DONE [ตรวจแล้ว]: #499 #502 #514 #519 #536 #543 #546 #551 #553 (what each did = the PR; full list = `git show 438cd6e7:docs/HANDOFF.md`).
+  Do-not-redo facts: genuine guide has no maker image of a check · DRAG has no clip on the three shop channels (16/10) · dropped on
+  sight: Caliburn G4 airflow still, GPP pod chart (white block) · the MTL / RDL / DTL clip `_s48AaDCtf4` is already understanding-mtl-vs-dtl's
+  record clip · HELD with the links below: the DRAG X link in the DRAG guide (it moved the DRAG guide into /products/pod-kits' box over
+  choosing-your-first-pod-system, SEO_BASELINE row 17).
   Frozen until the 22/10 GSC read: heads of SEO_BASELINE watch rows 1–8 + no new links into them + no change on them (read-next boxes
   included). **Exception 18/10 (owner "list everything" overrode the hold, through Friday): /brands/infy CHANGED before the 22/10
   read** — INFY PLUS 2.5ML Cartridge (/products/pod-169) joined its product grid (round list19) — read the brand page's 22/10
@@ -98,10 +63,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   number (maker poster the owner supplied, no URL) — the guides repeat what those product pages already print; cut both if the
   owner wants strict maker-URL only. Switch guide body says "เครื่องระบบสวิตช์" (THAI_STYLE 10B line: "พอตเปลี่ยนหัว" = title, links, first explanation).
   Second-pass key research DONE 16/10 = SEO_LANDSCAPE §9.7 (+ §9.6 rows 8–10) · cluster notes `_incoming/seo-keys/r2-*.md`.
-  DONE line 2 [ตรวจแล้ว]: #557 fce9d1e3 (checker PASS 4b2e0176) = 9 posters × th/en/zh in 5 translated guides (SECTION_IMAGES_EN / _ZH;
-  skipped: G5 triple-tap (phone version), white pod charts, what-is-a-pod-system until 22/10) · #558 d1ed192e (checker r1 FAIL → r2 PASS
-  c6422d00) = comparing-caliburn-models H2 + FAQ "G4 vs G4 Mini" + FIX: the guide said G4 / G4 Mini ship with 0.4 + 0.9 (verified rows:
-  Mini = one 0.6Ω, G4 = by market version). §9.4 checked 16/10: charging / no-draw / coil / disposable-fade / burnt FAQs already done.
+  DONE line 2 [ตรวจแล้ว]: #557 · #558 (what each did = the PR). §9.4 checked 16/10: charging / no-draw / coil / disposable-fade / burnt FAQs already done.
   NEXT (pages not frozen): Caliburn G4 Pro vs G5 + G5 Lite vs Lite SE wait (G5 / G5 Lite = watch row 3) → §9.7 row 9 heads (seo-auditor
   reads the paper set first) → "พอต 15k คือ" → open-system-vs-disposable / disposable-vs-switch-pod FAQs (§9.4 word "มาโบ" rule) →
   second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
@@ -123,22 +85,20 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (checker r2 PASS 6b0993c0, curl 200; card + 6 colours = image chat re-shoots, img-1610 b13) · #540 840034de RELX Infinity 2 Plus
   https://okami24.store/products/relx-infinity-2-plus (checker r2 PASS 0aedc4a1: mode-wattage quotes + card-v2 re-shoot img-1610 b15;
   taste note: real cap = light-grey disc with a V notch, render = black — image line told, a card-v3 would come by message).
-  MERGED, NOT LIVE: #544 TEREA prep — all 21 iqos.com/id flavours (6 as VERIFIED_ADDITIONAL_VARIANTS), every pack image re-cut from the
-  maker's 2000px renders to the five sticks; classify.ts "dimension"/"edition" (4 warehouse flavours were dropped). Publishing = one
-  IQOSHEET-15 line in publication-approvals.ts + the sku-map rows (`_incoming/p63/terea-skumap.patch`) once owner item 69 gives a price;
-  that PR brings heated-tobacco-consumables back to every page's nav → whole-sitemap scan.
+  LIVE 18/10 [ตรวจแล้ว curl 200] (side-chat line 2, worktree mystifying-driscoll-575ab6): #583 IQOS TEREA ฿220/pack
+  https://okami24.store/products/iqosheet-15 (checker full set r3 PASS 847130cd: 22 flavours each with IQOS's own pack image — Emerald
+  Edition from its archived iqos.com/id page, SKU G0001475; option labels = maker names ("Dimensions …"); axis = flavour; spec row
+  "ขายเป็น 1 ซอง (20 ก้าน)" under the price because the 390 hero hides the tagline) · #584 WOTOFO nexPOD 15K Pro Kit
+  https://okami24.store/products/nexpod-15k (checker PASS 19301574: 6 colours cut from WOTOFO's kit renders by `_incoming/p63/nexpod/key.js`,
+  20 kit flavours, no price, all sold out, no puffCount — 15,000 is per pod) · #585 /e-liquid meta "มี Marbo Saltnic แล้ว" (SEO_BASELINE logged).
+  Left on purpose: TEREA en/zh still show the Thai spec rows (every ProductMaster spec row does — site-wide gap, cleanup list) ·
+  warehouse child IQOSHEET-15-18 "Black Purple" (Shipnity MAX, not on iqos.com/id) not on the page — needs a maker source first ·
+  the nexPOD 15K pods (40 flavours 20mg / 15 at 50mg on wotofo.com) = a separate product if ever wanted.
   Small follow-up (checker #534 r2 notes): uwell.ts comment near the top names sold-out.ts (the source is sku-map null) · the old G3 card
   map entry (cobalt-blue.jpg) still sits beside the new one.
-  NOT REAL (report only): M Bar 18K · Marbo 25K · RELX Diva / Sparta / Novo · nexBAR Switch 15K (owner item 68: nexPOD 15K instead?).
+  NOT REAL (report only): M Bar 18K · Marbo 25K · RELX Diva / Sparta / Novo · nexBAR Switch 15K (→ nexPOD 15K, owner item 68, live).
   JOIWAY 12K / 20K = F3 / F4 already live (alias = SEO chat after 22/10).
-  Owner 16/10 (relayed by Friday, words checked in the main chat): item 69 = TEREA ฿220 per pack (20 sticks; print no carton count) ·
-  item 68 = add WOTOFO nexPOD 15K. Price edits = the MAIN chat (owner "ได้ Friday แก้เอง"; this line's edit was denied by the
-  auto-mode classifier): TEREA ฿220/pack + RELX Infinity 2 Plus Pod-105 ฿990 + Esko Bar 20000 Pod-130 ฿389 (owner "ใส่ตามคลัง").
-  Branch p63-terea-publish df7dfaa4 (pushed, no PR) = TEREA sku-map rows + shortDescription "… ราคาต่อ 1 ซอง"; missing only the
-  publication-approvals line; on the site a stick = "ก้าน" ("1 ซอง 20 ก้าน" where a count is shown), no carton count; whole-sitemap
-  scan (category back in every nav) + checker full set (money).
-  NEXT (after 18/10 22:00): nexPOD 15K page (maker facts + images, sold out, no price) · after the 22/10 GSC read: INFY 12K + Esko Bar 20K
-  ("ESKO BAR 498", warehouse Pod-130) · then round-close (tag p63-1610).
+  NEXT: after the 22/10 GSC read: INFY 12K + Esko Bar 20000 at ฿389 ("ESKO BAR 498", warehouse Pod-130; owner "ใส่ตามคลัง") · then round-close (tag p63-1610).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
@@ -163,13 +123,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
     ProductRail + FavoritesList/FinderTool/SearchTool; give it a `taglineTh` prop, server callers pass the tagline; CatalogBrowser
     + RelatedProducts take a slug→tagline map) · then framer-motion on home (owner-approved hero animations — designer first).
     Before = a build of main on the test server.
-  - IMAGE SWEEP (owner 10/10 "ทำให้ครบทั้งเว็บ"): audit `_incoming/img-audit-1010/`, worst first: coil-94 card + 0.4Ω option ·
-    coil-55 · joiway-f4 card+21 · zero-nano card · joiway-f3 15 green "12000+" options · argus-g4 card+7 · caliburn-g5-lite (+SE) ·
-    zero-pro card · pod-159 card (LAST, 13.7 big (2), own PR + BSOT §21) · relx-smash-go-12k · caliburn-g4-classic · argus-g4
-    gallery · caliburn-g5 colours other than Mystic Forest (broken edges, patches) · Drag S3 / X3 "still graphic, body too white"
-    (owner 02/10) · old row-style group images (argus-g4-mini …) + Caliburn G3 Pro has none (moved from IMAGE_SPEC §0 15/10).
-    DONE: coil-74 #428. Then the 21 warehouse products (รอพี่ตรวจ 41). Seedream 4.5 needs "no glowing lines, no LED
-    light, no spotlight, even dark backdrop".
+  - IMAGE SWEEP (owner 10/10 "ทำให้ครบทั้งเว็บ"): every item of the 10/10 list is live or VOID (item 3i) — what is left = the 21
+    warehouse products (รอพี่ตรวจ 41, masters in 3i batch 7). Seedream 4.5 needs "no glowing lines, no LED light, no spotlight, even
+    dark backdrop". Old list = `git show 438cd6e7:docs/HANDOFF.md` §16 item 5.
   - Taste notes: coil-53/coil-70 cards lean left · faint stray pixels on 94-2/94-3 pod bottoms at 2.7x
     (`_incoming/chk-coil2/pod92b.jpg`) · the charging article's record-level clip sits at the end · Drag 6 group image "still
     graphic" (owner 04/10, later) · the M Bar 10K anatomy sheet "looks a bit big" → polish its size (owner 29/09, from the old HANDOFF).
