@@ -614,7 +614,9 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "เครื่องอุ่นยาสูบของแบรนด์ LAMBDA ไม่ใช่ IQOS แบต 3200mAh ชาร์จเต็มใช้ได้ 35–40 ก้าน ปรับอุณหภูมิได้ 200–300°C และปรับเวลาต่อก้านได้ 3–6 นาที LAMBDA ระบุว่าใช้กับก้าน TEREA และ SENTIA ได้",
   },
   "IQOSHEET-15": {
-    tagline: "ก้าน TEREA สำหรับ IQOS ILUMA",
+    // Checker #583 r1: the page shows the tagline, not shortDescription — the per-pack unit sits here so ฿220 is never
+    // read as a price per stick or per carton.
+    tagline: "ก้าน TEREA สำหรับ IQOS ILUMA ราคาต่อซอง ซองละ 20 ก้าน",
     // Round p63 16/10 (owner item 69): the price is per pack - said here so it is never read as a carton price.
     shortDescription: "ก้าน TEREA สำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International) ราคาต่อ 1 ซอง",
   },
@@ -1564,7 +1566,8 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // official names ("Dimensions Apricity"/"Dimensions Yugen" — plural), a near-exact Shipnity
   // transcription quirk left uncorrected here deliberately: active-catalog-source.ts's own
   // contract is a verbatim transcription of what Shipnity showed, never silently mutated, and a
-  // one-word difference does not rise to "misleading" — noted here instead of a code change.
+  // one-word difference does not rise to "misleading" — noted here instead of a code change. (18/10: the shown LABEL now
+  // carries the maker spelling — MAKER_LABEL_SPELLING; the source transcription is still untouched.)
   // Only "IQOSHEET-15-10" (Emerald Edition) has no verified photo: it is confirmed to be a real,
   // officially-announced TEREA flavor, but absent from iqos.com/id's live shop grid as of this
   // research (likely rotated out / limited release) — no substitute image was invented for it.
@@ -1824,6 +1827,9 @@ export const VERIFIED_REVIEW_VIDEOS: Record<string, { videoId: string; title: st
  */
 const MAKER_NAME_ONLY_LABELS = new Set<string>(["iqosheet-15"]); // keyed like `parentInternalId` (lower-case)
 const TRAILING_THAI_HINT = /\s+[฀-๿][฀-๿\s-]*$/;
+/** The warehouse's spelling → the maker's (checker #583 r1: IQOS names the line "Dimensions", plural — see the IQOSHEET-15
+ *  media note below). Label only; the value code stays the warehouse's. */
+const MAKER_LABEL_SPELLING: Record<string, string> = { "Dimension Apricity": "Dimensions Apricity", "Dimension Yugen": "Dimensions Yugen" };
 
 export function buildVariantStructure(
   parentInternalId: string,
@@ -1871,7 +1877,8 @@ export function buildVariantStructure(
   for (const c of variantChildren) {
     const label = c.cleanedValue ?? c.rawLabel;
     const code = slugifyValue(label);
-    const shown = MAKER_NAME_ONLY_LABELS.has(parentInternalId) ? label.replace(TRAILING_THAI_HINT, "") : label;
+    const makerOnly = MAKER_NAME_ONLY_LABELS.has(parentInternalId) ? label.replace(TRAILING_THAI_HINT, "") : label;
+    const shown = MAKER_NAME_ONLY_LABELS.has(parentInternalId) ? (MAKER_LABEL_SPELLING[makerOnly] ?? makerOnly) : label;
     if (!valueMap.has(code)) valueMap.set(code, { code, label: shown });
   }
   // Manufacturer-verified values beyond current Shipnity stock (see
