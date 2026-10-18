@@ -33,11 +33,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (storyDetails page never renders role "detail" assets) · caliburn-g5 colours (UWELL renders since 02/10) · Drag S3/X3 (07/10) ·
   row line-ups (argus-g4-mini 07/10, G3 Pro 02/10) · M Bar 10K anatomy size = component layout, next design round. audit2 eye pass DONE (live pages fine; low-res sets not on the site = VOID; mood-monster-14k kept, Friday 16/10). Batch 7 RENDERED 16-17/10 (line-1 chat, no site change): masters for 19 of the 21 warehouse products + Pop Up 14 flavours + Marbo 5 colours + Pepo 4 + 1 lifestyle sample (G5 Mystic Forest forest scene, 16:9) = `_incoming/img-1610/masters/` (SOURCE.md = table, out/picks.txt = picks/rejects); IQOS ILUMA ONE = official iqos.com PNGs; Pod-168 G4 Pro Stripe Black already on the site. Open: Feelin C1 ref unresolved · Double Mint Watermelon/Peach + Pop Up Strawberry/Mixberry/Lime Soda/Guava Kiwi have no ref · Breeze Blue = the ILUMA i ONE model. Keying + INFY label swaps need no Nano Banana (after 18/10). Higgsfield dropped to 1 unlimited job at a time ~00:45 17/10. State, prompts, pipelines, page helpers, lessons to fold in =
   `_incoming/img-1610/NEXT.md` (read it first) · prompts `_incoming/img-1610/prompts.md`.
-3s OPEN ROUND "SEO all keys" — PAUSED 16/10 ~21:15 until the weekly quota reset 18/10 22:00 (owner "พักสาย SEO เก็บไว้ให้รูป";
-  nothing unchecked, nothing open) = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt` (side-chat line 2 since 16/10 ~20:15, worktree `.claude/worktrees/seo-line2`,
-  own build tree `_incoming/wt5` + test server 3415 (3416 = this line's second port); `_incoming/seo-images/setup-build5.sh <sha>` (run from the worktree root) moves + rebuilds it
-  (~5 min; pass a sha, never HEAD — HEAD = the build tree's own); worktree `node_modules` = a junction to the build tree's copy;
-  chat 3's tools copied to `_incoming/seo-keys/`) ·
+3s OPEN ROUND "SEO all keys" — RESUMED 18/10 ~22:30 (quota reset; Friday "เริ่ม") = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt`
+  (side-chat line 2; also owns 3p) · worktree `.claude/worktrees/mystifying-driscoll-575ab6` · build trees `_incoming/wt7-<port>` +
+  test servers 3415 (after) / 3416 (before = main): `bash _incoming/p63/setup-build7.sh <sha> <port>` (real node_modules copy, ~5 min;
+  pass a sha) · older line-2 tools: `.claude/worktrees/seo-line2/_incoming/seo-keys/` (chat 3's) ·
   【ห้ามแตะ】 product images + image map (image round) · every price file. Order = SEO_LANDSCAPE §9.6.
   DONE [ตรวจแล้ว]: #499 #502 #514 #519 #536 #543 #546 #551 #553 (what each did = the PR; full list = `git show 438cd6e7:docs/HANDOFF.md`).
   Do-not-redo facts: genuine guide has no maker image of a check · DRAG has no clip on the three shop channels (16/10) · dropped on
@@ -86,22 +85,20 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   (checker r2 PASS 6b0993c0, curl 200; card + 6 colours = image chat re-shoots, img-1610 b13) · #540 840034de RELX Infinity 2 Plus
   https://okami24.store/products/relx-infinity-2-plus (checker r2 PASS 0aedc4a1: mode-wattage quotes + card-v2 re-shoot img-1610 b15;
   taste note: real cap = light-grey disc with a V notch, render = black — image line told, a card-v3 would come by message).
-  MERGED, NOT LIVE: #544 TEREA prep — all 21 iqos.com/id flavours (6 as VERIFIED_ADDITIONAL_VARIANTS), every pack image re-cut from the
-  maker's 2000px renders to the five sticks; classify.ts "dimension"/"edition" (4 warehouse flavours were dropped). Publishing = one
-  IQOSHEET-15 line in publication-approvals.ts + the sku-map rows (`_incoming/p63/terea-skumap.patch`) once owner item 69 gives a price;
-  that PR brings heated-tobacco-consumables back to every page's nav → whole-sitemap scan.
+  LIVE 18/10 [ตรวจแล้ว curl 200] (side-chat line 2, worktree mystifying-driscoll-575ab6): #583 IQOS TEREA ฿220/pack
+  https://okami24.store/products/iqosheet-15 (checker full set r3 PASS 847130cd: 22 flavours each with IQOS's own pack image — Emerald
+  Edition from its archived iqos.com/id page, SKU G0001475; option labels = maker names ("Dimensions …"); axis = flavour; spec row
+  "ขายเป็น 1 ซอง (20 ก้าน)" under the price because the 390 hero hides the tagline) · #584 WOTOFO nexPOD 15K Pro Kit
+  https://okami24.store/products/nexpod-15k (checker PASS 19301574: 6 colours cut from WOTOFO's kit renders by `_incoming/p63/nexpod/key.js`,
+  20 kit flavours, no price, all sold out, no puffCount — 15,000 is per pod) · #585 /e-liquid meta "มี Marbo Saltnic แล้ว" (SEO_BASELINE logged).
+  Left on purpose: TEREA en/zh still show the Thai spec rows (every ProductMaster spec row does — site-wide gap, cleanup list) ·
+  warehouse child IQOSHEET-15-18 "Black Purple" (Shipnity MAX, not on iqos.com/id) not on the page — needs a maker source first ·
+  the nexPOD 15K pods (40 flavours 20mg / 15 at 50mg on wotofo.com) = a separate product if ever wanted.
   Small follow-up (checker #534 r2 notes): uwell.ts comment near the top names sold-out.ts (the source is sku-map null) · the old G3 card
   map entry (cobalt-blue.jpg) still sits beside the new one.
-  NOT REAL (report only): M Bar 18K · Marbo 25K · RELX Diva / Sparta / Novo · nexBAR Switch 15K (owner item 68: nexPOD 15K instead?).
+  NOT REAL (report only): M Bar 18K · Marbo 25K · RELX Diva / Sparta / Novo · nexBAR Switch 15K (→ nexPOD 15K, owner item 68, live).
   JOIWAY 12K / 20K = F3 / F4 already live (alias = SEO chat after 22/10).
-  Owner 16/10 (relayed by Friday, words checked in the main chat): item 69 = TEREA ฿220 per pack (20 sticks; print no carton count) ·
-  item 68 = add WOTOFO nexPOD 15K. Price edits = the MAIN chat (owner "ได้ Friday แก้เอง"; this line's edit was denied by the
-  auto-mode classifier): TEREA ฿220/pack + RELX Infinity 2 Plus Pod-105 ฿990 + Esko Bar 20000 Pod-130 ฿389 (owner "ใส่ตามคลัง").
-  Branch p63-terea-publish df7dfaa4 (pushed, no PR) = TEREA sku-map rows + shortDescription "… ราคาต่อ 1 ซอง"; missing only the
-  publication-approvals line; on the site a stick = "ก้าน" ("1 ซอง 20 ก้าน" where a count is shown), no carton count; whole-sitemap
-  scan (category back in every nav) + checker full set (money).
-  NEXT (after 18/10 22:00): nexPOD 15K page (maker facts + images, sold out, no price) · after the 22/10 GSC read: INFY 12K + Esko Bar 20K
-  ("ESKO BAR 498", warehouse Pod-130) · then round-close (tag p63-1610).
+  NEXT: after the 22/10 GSC read: INFY 12K + Esko Bar 20000 at ฿389 ("ESKO BAR 498", warehouse Pod-130; owner "ใส่ตามคลัง") · then round-close (tag p63-1610).
 3u OPEN ROUND "stock: Shipnity API + SKU" = `docs/rounds/รอบเชื่อมสต็อก-Shipnity-API-SKU-08-10.txt` (own chat).
   【ห้ามแตะ】 coil-1/72/94 photos · every price file. Owner rulings = §18 "Stock" + BSOT §4 "Which Shipnity".
   Done [ตรวจแล้ว]: survey #393 (`docs/cloud-results/stock-api-sku-survey.md`) · SKU map #395 (null = sold out) · #400 Zero Nano
