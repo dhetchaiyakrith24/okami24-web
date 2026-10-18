@@ -616,7 +616,10 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Coil-38-4": "Coil-38-4",
   } },
   "coil-53": { parent: "Coil-53", options: {
+    // Round list19 (19/10): Max 0.8Ω and 1.2Ω (both "ไม่มีของ" 17/10).
+    "Coil-53-1": "Coil-53-1",
     "Coil-53-2": "Coil-53-2",
+    "Coil-53-3": "Coil-53-3",
   } },
   "coil-55": { parent: "Coil-55-1", product: "Coil-55-1" },
   "coil-56": { parent: null, options: {

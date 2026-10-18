@@ -105,7 +105,7 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // "1.0 ohm" — an exact match to this record's own active variant. Kept as categoryId
   // "coils-accessories"/systemType "coil" (unchanged) — the resolution is about the resistance
   // value's identity, not the product type.
-  "Coil-53": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn" (UWELL CALIBURN family) + Shipnity "Coil-" prefix; active variant (1.0Ω) is the real UWELL "Caliburn G" replacement-coil resistance, documented as Caliburn G2-compatible on myuwell.com\'s own G2 page and confirmed by Giant Vapes\' "Caliburn G Replacement Coils" (0.8Ω/1.0Ω) listing' },
+  "Coil-53": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn" (UWELL CALIBURN family) + Shipnity "Coil-" prefix; Max children 0.8Ω / 1.0Ω / 1.2Ω = UWELL\'s "CALIBURN G series\' coils" (myuwell.com/caliburn/caliburn-gk2, 19/10: "CALIBURN G2 1.2Ω mesh coil, CALIBURN G 0.8Ω mesh coil, and CALIBURN G 1.0Ω coil"; the G2 page lists its coils as UN2 Meshed-H 1.2Ω and 0.8Ω)' },
   // Correction (this session) — resolves the Phase 3.4 "Coil-55 vs Coil-53" deferral below (kept
   // for history). "หัวแทงค์" (tank-head) is NOT the coil: 10+ independent retailers consistently
   // describe "UWELL Caliburn G2 Empty Replacement Pod" as a real, distinct product — the
@@ -466,8 +466,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // TAXONOMY_MATCHES["Coil-53"]. Worded to state the real product (Caliburn G, 1.0Ω) plus the
   // actual compatibility fact (G2), never a native-G2-coil claim.
   "Coil-53": {
-    tagline: "คอยล์ Caliburn G 1.0 โอห์ม จากแบรนด์ UWELL ใช้ได้กับ Caliburn G2",
-    shortDescription: "คอยล์ Caliburn G 1.0 โอห์ม จากแบรนด์ UWELL ใช้ได้กับ Caliburn G และ Caliburn G2",
+    // Round list19 (19/10): Max sells three values under "Coil Caliburn G2" — UWELL names all three "CALIBURN G series' coils"
+    // (GK2 page): 1.2Ω = CALIBURN G2 coil, 0.8Ω and 1.0Ω = CALIBURN G coils. The old "1.0Ω works with G2" line cited the G2
+    // page, which no longer says so (19/10) → dropped.
+    tagline: "คอยล์ UWELL ตระกูล Caliburn G มีให้เลือก 0.8, 1.0 และ 1.2 โอห์ม",
+    shortDescription: "คอยล์ UWELL ตระกูล Caliburn G ร้านมีให้เลือก 3 ค่า ได้แก่ 0.8 โอห์ม 1.0 โอห์ม และ 1.2 โอห์ม (คอยล์ Caliburn G2) เครื่อง Caliburn GK2 ใช้ได้ทั้ง 3 ค่า",
   },
   // New this session — resolves the Phase 3.4 deferral. Worded distinctly from Coil-53 ("คอยล์"
   // = coil vs "พอตเปล่า" = empty pod) on purpose: these are two genuinely different real products
@@ -1400,10 +1403,11 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   },
   "Coil-53": {
     specifications: [
-      { key: "resistance", label: "ค่าโอห์ม", value: "1.0Ω", sourceStatus: "verified" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Caliburn G / Caliburn G2", sourceStatus: "verified" },
+      { key: "resistance", label: "ค่าโอห์ม", value: "0.8Ω / 1.0Ω / 1.2Ω", sourceStatus: "verified" },
+      { key: "coil", label: "รุ่นคอยล์", value: "G 0.8Ω · G 1.0Ω · G2 1.2Ω", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-gk2" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "GK2 (ทุกค่า) · G2 (0.8/1.2Ω)", sourceStatus: "verified" },
     ],
-    sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-g2", "https://giantvapes.com/products/uwell-caliburn-g-replacement-coils"],
+    sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-gk2", "https://www.myuwell.com/caliburn/caliburn-g2"],
   },
   "Coil-89": {
     specifications: [
