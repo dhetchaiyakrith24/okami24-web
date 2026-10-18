@@ -614,8 +614,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "เครื่องอุ่นยาสูบของแบรนด์ LAMBDA ไม่ใช่ IQOS แบต 3200mAh ชาร์จเต็มใช้ได้ 35–40 ก้าน ปรับอุณหภูมิได้ 200–300°C และปรับเวลาต่อก้านได้ 3–6 นาที LAMBDA ระบุว่าใช้กับก้าน TEREA และ SENTIA ได้",
   },
   "IQOSHEET-15": {
-    tagline: "ก้าน TEREA สำหรับ IQOS ILUMA",
-    shortDescription: "ก้าน TEREA สำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International)",
+    // Checker #583 r1: the page shows the tagline, not shortDescription — the per-pack unit sits here so ฿220 is never
+    // read as a price per stick or per carton.
+    tagline: "ก้าน TEREA สำหรับ IQOS ILUMA ราคาต่อซอง ซองละ 20 ก้าน",
+    // Round p63 16/10 (owner item 69): the price is per pack - said here so it is never read as a carton price.
+    shortDescription: "ก้าน TEREA สำหรับอุปกรณ์ IQOS ILUMA จากแบรนด์ IQOS (Philip Morris International) ราคาต่อ 1 ซอง",
   },
   "IQOSHEET-16": {
     tagline: "เครื่องอุ่นยาสูบ IQOS ILUMA i PRIME",
@@ -1362,10 +1365,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     sourceUrls: ["https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html"],
   },
   "IQOSHEET-15": {
-    specifications: [{ key: "compatible-devices", label: "ใช้ได้กับอุปกรณ์", value: "IQOS ILUMA (ทุกรุ่น) เท่านั้น — ใช้กับรุ่นก่อนหน้า ILUMA ไม่ได้", sourceStatus: "verified" }],
+    // Round p63 (18/10): the sale unit, first, so ฿220 reads per pack at every width (the 390 hero hides the tagline).
+    // iqos.com/gb buy-terea: "Each pack contains 20 sticks".
+    specifications: [{ key: "pack-size", label: "ขายเป็น", value: "1 ซอง (20 ก้าน)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/gb/en/discover-heated-tobacco/buy-terea.html" }, { key: "compatible-devices", label: "ใช้ได้กับอุปกรณ์", value: "IQOS ILUMA (ทุกรุ่น) เท่านั้น — ใช้กับรุ่นก่อนหน้า ILUMA ไม่ได้", sourceStatus: "verified" }],
     sourceUrls: [
       "https://www.iqos.com/id/en/news/information/find-the-terea-tobacco-stick-flavor-variant-that-suits-for-you.html",
       "https://www.iqos.com/gb/en/blog/difference-between-iqos-iluma-and-iqos-3-duo.html",
+      "https://www.iqos.com/gb/en/discover-heated-tobacco/buy-terea.html",
     ],
   },
   // Round data 2 (2026-09-25, real browser): the single "2380mAh" row is gone — iqos.com/ph no longer prints 2380 anywhere
@@ -1563,7 +1569,8 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // official names ("Dimensions Apricity"/"Dimensions Yugen" — plural), a near-exact Shipnity
   // transcription quirk left uncorrected here deliberately: active-catalog-source.ts's own
   // contract is a verbatim transcription of what Shipnity showed, never silently mutated, and a
-  // one-word difference does not rise to "misleading" — noted here instead of a code change.
+  // one-word difference does not rise to "misleading" — noted here instead of a code change. (18/10: the shown LABEL now
+  // carries the maker spelling — MAKER_LABEL_SPELLING; the source transcription is still untouched.)
   // Only "IQOSHEET-15-10" (Emerald Edition) has no verified photo: it is confirmed to be a real,
   // officially-announced TEREA flavor, but absent from iqos.com/id's live shop grid as of this
   // research (likely rotated out / limited release) — no substitute image was invented for it.
@@ -1571,8 +1578,11 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // iqos.com/id still lists + the 6 VERIFIED_ADDITIONAL_VARIANTS below. Every file = the maker's 2000px pack render cropped
   // to the five sticks (scripts/process-images.map.json), so every flavour shows the sticks at the same size; the 11 older
   // 1000px files (with the flavour pills, 700px) were replaced by the same crop. Emerald Edition (IQOSHEET-15-10) is
-  // still on no maker page → NEUTRAL_VARIANT_FALLBACK.
+  // still on no maker page → NEUTRAL_VARIANT_FALLBACK. Checker #583 r1 (18/10): iqos.com/id's own Emerald Edition page
+  // (SKU G0001475, read through its Wayback capture of 2025-10-13) points at a pack render iqos.com still serves — cropped
+  // the same way, so every TEREA flavour now has its own pack image.
   "IQOSHEET-15": {
+    "IQOSHEET-15-10": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variant-iqosheet-15-10.webp", alt: "IQOS TEREA Emerald Edition, five sticks", transparentBackground: true, sourceName: "IQOS (official site, iqos.com — Indonesia)", sourceUrl: "https://www.iqos.com/id/id/shop/iqos-terea-emerald-edition.html" },
     "IQOSHEET-15-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variant-iqosheet-15-1.webp", alt: "IQOS TEREA Black Green, five sticks — official flavor note: Frosty Pear", transparentBackground: true, sourceName: "IQOS (official brand CDN, media.iqos.com — Indonesia)", sourceUrl: "https://media.iqos.com/is/image/pmintl/product/2000px/TEREA+BLACK+GREEN+PACK-pmi_G0000693_00_id-1783303624000.png" },
     "IQOSHEET-15-2": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variant-iqosheet-15-2.webp", alt: "IQOS TEREA Green, five sticks", transparentBackground: true, sourceName: "IQOS (official brand CDN, media.iqos.com — Indonesia)", sourceUrl: "https://media.iqos.com/is/image/pmintl/product/2000px/TEREA+GREEN+PACK-pmi_G0000699_00_id-1782351563000.png" },
     "IQOSHEET-15-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variant-iqosheet-15-3.webp", alt: "IQOS TEREA Blue, five sticks", transparentBackground: true, sourceName: "IQOS (official brand CDN, media.iqos.com — Indonesia)", sourceUrl: "https://media.iqos.com/is/image/pmintl/product/2000px/TEREA+BLUE+PACK-pmi_G0000694_00_id-1783303624000.png" },
@@ -1816,6 +1826,17 @@ export const VERIFIED_REVIEW_VIDEOS: Record<string, { videoId: string; title: st
   "Pod-159": { videoId: "kJd5rnEtg_Y", title: "ESKO BAR 20K และ ESKO BAR SWITCH 20K เล็กเจอใหญ่", channelName: "OKM YARZ", publishedAt: "2026-01-27" },
 };
 
+/**
+ * Parents whose option labels show the maker's own name only (round p63, 18/10). The warehouse adds a Thai colour hint
+ * to each TEREA pack ("Black Green เขียวเข้ม"); IQOS names the pack "Black Green" and the pack photo shows the colour, so
+ * the hint is cut from the LABEL (the value code stays as it was) — the same label then reads right on th / en / zh pages.
+ */
+const MAKER_NAME_ONLY_LABELS = new Set<string>(["iqosheet-15"]); // keyed like `parentInternalId` (lower-case)
+const TRAILING_THAI_HINT = /\s+[฀-๿][฀-๿\s-]*$/;
+/** The warehouse's spelling → the maker's (checker #583 r1: IQOS names the line "Dimensions", plural — see the IQOSHEET-15
+ *  media note below). Label only; the value code stays the warehouse's. */
+const MAKER_LABEL_SPELLING: Record<string, string> = { "Dimension Apricity": "Dimensions Apricity", "Dimension Yugen": "Dimensions Yugen" };
+
 export function buildVariantStructure(
   parentInternalId: string,
   children: ActiveChildRecord[],
@@ -1862,7 +1883,9 @@ export function buildVariantStructure(
   for (const c of variantChildren) {
     const label = c.cleanedValue ?? c.rawLabel;
     const code = slugifyValue(label);
-    if (!valueMap.has(code)) valueMap.set(code, { code, label });
+    const makerOnly = MAKER_NAME_ONLY_LABELS.has(parentInternalId) ? label.replace(TRAILING_THAI_HINT, "") : label;
+    const shown = MAKER_NAME_ONLY_LABELS.has(parentInternalId) ? (MAKER_LABEL_SPELLING[makerOnly] ?? makerOnly) : label;
+    if (!valueMap.has(code)) valueMap.set(code, { code, label: shown });
   }
   // Manufacturer-verified values beyond current Shipnity stock (see
   // `VerifiedAdditionalOptionValue`'s doc comment) — merged onto the SAME axis only, never used to
