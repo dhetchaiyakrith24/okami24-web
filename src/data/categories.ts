@@ -25,8 +25,8 @@ export const categories: Category[] = [
     name: "Switch Pod Devices",
     shortName: "Switch Pods",
     labelTh: "Switch Pod / พอตเปลี่ยนหัว",
-    description: "Keep the device, swap the pod. Each pod comes prefilled, so there's nothing to fill and no device to throw away. From SALTHUB, RELX, WOTOFO, ESKO BAR and KS.",
-    descriptionTh: "พอตเปลี่ยนหัว เก็บตัวเครื่องไว้ใช้ต่อ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จ ไม่ต้องเติมน้ำยาเอง และไม่ต้องทิ้งทั้งเครื่อง มีทั้ง SALTHUB RELX WOTOFO ESKO BAR และ KS",
+    description: "Keep the device, swap the pod. Each pod comes prefilled, so there's nothing to fill and no device to throw away. From SALTHUB, RELX, ESKO BAR, WOTOFO and KS.",
+    descriptionTh: "พอตเปลี่ยนหัว เก็บตัวเครื่องไว้ใช้ต่อ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จ ไม่ต้องเติมน้ำยาเอง และไม่ต้องทิ้งทั้งเครื่อง มีทั้ง SALTHUB RELX ESKO BAR WOTOFO และ KS",
     systemTypes: ["pod-kit"],
   },
   {
