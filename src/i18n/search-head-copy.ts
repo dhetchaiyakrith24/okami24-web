@@ -367,6 +367,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "nexswitch-16k-pod": "Nexswitch 16K หัวพอต หัวละสูงสุด 16,000 พัฟ ใช้กับตัวเครื่อง Nexswitch มีให้เลือก 10 กลิ่น",
   "relx-lumi-18k": "RELX LUMI 18K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 18,000 พัฟ มีให้เลือก 16 กลิ่น",
   // Round p63 (19/10): numbers = the maker's spec block (eskobarvape.com/product/eskobar).
+  "esko-bar-switch-pod": "ESKO BAR SWITCH 20K หัวพอต หัวละสูงสุด 20,000 พัฟ ความจุ 18mL ใช้กับเครื่อง ESKO BAR SWITCH มีให้เลือก 20 กลิ่น",
   "esko-bar-20k": "ESKO BAR 20000 พอตใช้แล้วทิ้ง สูงสุด 20,000 พัฟ แบต 600mAh ชาร์จได้ น้ำยา 18ml คอยล์ mesh คู่ 1.0Ω มีให้เลือก 22 กลิ่น",
   "ks-quikpro-kit": "KS Quikpro 15K ชุดเครื่องพร้อมหัวพอต 1 หัว แบต 600mAh ชาร์จ USB-C ราว 30 นาที หัวละสูงสุด 15,000 พัฟ ตัวเครื่องมี 4 สี",
   "pod-150": "KS Quikpro 15K หัวพอตน้ำยา 15ml หัวละสูงสุด 15,000 พัฟ ใช้จนหมดแล้วเปลี่ยนหัวใหม่ ดูได้ทุกกลิ่นที่ KS ทำออกมา",

@@ -9610,5 +9610,277 @@
    "fidelitySheet": "_incoming/img-1610/list19/e/eq-sheet.jpg - PEPO / DUNDU SALT wordmarks, flavour print, mascot, cap colour checked by eye against the shop photos"
   },
   "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/cola.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "card",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-cola.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/cola.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - ESKO BAR SWITCH 20K refill pod card = the Cola pod (same source as pod-159 variant cola)",
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/apple-aloe.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "apple-aloe",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-apple-aloe.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/apple-aloe.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-apple-aloe.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/blueberry-jam.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "blueberry-jam",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-blueberry-jam.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/blueberry-jam.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-blueberry-jam.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/blueberry.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "blueberry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-blueberry.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/blueberry.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-blueberry.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/chocolate-mint.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "chocolate-mint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-chocolate-mint.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/chocolate-mint.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-chocolate-mint.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/coconut.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "coconut",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-coconut.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/coconut.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-coconut.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/cola.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "cola",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-cola.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/cola.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-cola.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/cool-mint.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "cool-mint",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-cool-mint.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/cool-mint.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-cool-mint.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/extra-menthol.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "extra-menthol",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-extra-menthol.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/extra-menthol.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-extra-menthol.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/grape.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "grape",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-grape.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/grape.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-grape.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/honeydew.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "honeydew",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-honeydew.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/honeydew.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-honeydew.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/lychee.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "lychee",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-lychee.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/lychee.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-lychee.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/mango.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "mango",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-mango.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/mango.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-mango.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/mix-berry.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "mix-berry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-mix-berry.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/mix-berry.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-mix-berry.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/pineapple.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "pineapple",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-pineapple.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/pineapple.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-pineapple.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/pink-guava.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "pink-guava",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-pink-guava.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/pink-guava.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-pink-guava.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/strawberry-banana.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "strawberry-banana",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-strawberry-banana.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/strawberry-banana.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-strawberry-banana.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/strawberry.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "strawberry",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-strawberry.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/strawberry.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-strawberry.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/watermelon-ice.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "watermelon-ice",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-watermelon-ice.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/watermelon-ice.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-watermelon-ice.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/watermelon-lime.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "watermelon-lime",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-watermelon-lime.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/watermelon-lime.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-watermelon-lime.webp"
+ },
+ {
+  "source": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/cut/yogurt.png",
+  "slug": "esko-bar-switch-pod",
+  "role": "variant",
+  "id": "yogurt",
+  "aiRender": {
+   "tool": "Higgsfield nano_banana_pro 2k — ONE master pod (2 credits, job out/job-master-nbpro.json) for all 20 flavours; the flavour line (and Extra Menthol's strength line) re-typeset by label.js, no AI redraw",
+   "reference": "ESKO BAR maker pod photo eskobarvape.com/assets/product-pod542-flavor-yogurt.jpg (_incoming/web-product-images/pod-159-esko-bar-switch-20k/refs/yogurt.jpg) — same pod for every flavour, only the printed name differs",
+   "fidelitySheet": "_incoming/web-product-images/pod-159-esko-bar-switch-20k/out/label-check2.png + out/calib.png — text read by eye against the maker's pod; master IoU/colour not needed (the only change vs the master is the text)"
+  },
+  "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
+  "fileName": "variant-yogurt.webp"
  }
 ]
