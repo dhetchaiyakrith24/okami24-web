@@ -517,7 +517,7 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   // Round p63 (owner item 68, 18/10): WOTOFO nexPOD 15K Pro Kit — maker facts only (wotofo.com kit / device / pod pages).
   "nexpod-15k": {
     whoIsThisFor: {
-      0: "กำลังหาเครื่องระบบสวิตช์ 15K ของ WOTOFO และอยากดูสเปกที่ WOTOFO ระบุไว้สำหรับ nexPOD 15K Pro Kit",
+      0: "กำลังหาเครื่องระบบสวิตช์ 15K ของ WOTOFO และอยากดูสเปกครบตามที่ผู้ผลิตระบุ",
     },
     specifications: {
       // Not "เติมน้ำยา": a spec value is search text, and "น้ำยา" must not return a device (catalog-search test).
