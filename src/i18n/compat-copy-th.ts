@@ -112,9 +112,9 @@ const GPP_MATCH_EN = " The cartridge's four resistances (0.4/0.6/0.9/1.2Ω meshe
 export const COMPAT_EVIDENCE_TH: Record<string, string> = {
   // Round list19 (19/10): the three DRAG ↔ PnP X coil edges show on coil-92 now that the coil page is published again.
   "VOOPOO's own DRAG 6 page states the kit's UFORCE-X Tank II takes every PnP X coil, and the kit ships with PnP X 0.15Ω and 0.3Ω coils.":
-    "VOOPOO ระบุในหน้า DRAG 6 ว่าถังน้ำยา UFORCE-X ของชุดนี้ใช้คอยล์ PnP X ได้ทุกตัว และในกล่องมีคอยล์ PnP X 0.15Ω กับ 0.3Ω มาให้",
+    "VOOPOO ระบุในหน้า DRAG 6 ว่าถังน้ำยา UFORCE-X ของชุดนี้ใช้คอยล์ PnP X ได้ทุกตัว และในกล่องมีคอยล์ PnP X 0.15Ω กับ 0.3Ω",
   "VOOPOO's own DRAG S3 page states the full PnP X coil lineup (0.15–1.0Ω) fits, and the kit ships with PnP X 0.6Ω and 0.8Ω coils.":
-    "VOOPOO ระบุในหน้า DRAG S3 ว่าใช้คอยล์ PnP X ได้ครบทุกค่า (0.15–1.0Ω) และในกล่องมีคอยล์ PnP X 0.6Ω กับ 0.8Ω มาให้",
+    "VOOPOO ระบุในหน้า DRAG S3 ว่าใช้คอยล์ PnP X ได้ครบทุกค่า (0.15–1.0Ω) และในกล่องมีคอยล์ PnP X 0.6Ω กับ 0.8Ω",
   "VOOPOO's own DRAG X3 page states it is compatible with all PnP X coils.":
     "VOOPOO ระบุในหน้า DRAG X3 ว่าใช้คอยล์ PnP X ได้ทุกตัว",
   ["UWELL: its own official page states all G Pod Platform cartridges are compatible with CALIBURN GPP series devices, and the GPP cartridge ships in the kit." + GPP_MATCH_EN]:
