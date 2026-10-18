@@ -67,7 +67,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   DONE 19/10 [ตรวจแล้ว curl 200]: #585 /e-liquid meta (SEO_BASELINE logged) · #590 §9.7 batch 9 — Thai searched names beside the Marbo
   flavour names (choosing-a-marbo-flavor) + FAQ "พอต 15K คืออะไร สูบได้กี่พัฟ" (how-long-a-disposable-lasts; "กี่คำ" is the searched form but
   THAI_STYLE พัฟ row rules it out). §9.7 "head meta ราคา" rows on unlocked model pages = nothing to do (every description already says
-  "ราคา ฿…"). §9.7 left for batch 9: relx-creator H2 "หัวที่ใช้ได้" · blinking/charging/burnt guide phrases ("มาโบ ไฟกะพริบ" — light
+  "ราคา ฿…"). §9.7 left for the next batch: relx-creator H2 "หัวที่ใช้ได้" · blinking/charging/burnt guide phrases ("มาโบ ไฟกะพริบ" — light
   meanings only from a maker manual) · INFY 12K page (NP).
   22/10 READ adds (Friday 18/10, `_incoming/p63/gsc-2210-todo.md` in this worktree): snippet gaps "esko bar" 87 impr pos 3.6 0 clicks ·
   "joiway" 179 impr pos 6.2 3 clicks (/brands/joiway 417 impr 15 clicks) → fix the ranking pages' title/description with the held
