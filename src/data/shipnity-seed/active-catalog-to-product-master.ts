@@ -252,6 +252,11 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // The can prints "SPORTCAN BY RESWA", but no Reswa maker site was found → sold without a brand, warehouse facts only (as Pop Up 10K).
   // The hidden legacy entry reswa-sportcan-12k (src/data/products/unbranded.ts, 3 flavours, banner-crop photos) stays hidden.
   "Pod-142": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "Reswa Sportcan 12000 Puffs" (Max parent "Product 1129596", old seed Pod-142) with 5 flavour children (฿229); the can prints "SPORTCAN BY RESWA"; no maker site found 18-19/10 — listed on warehouse facts only, without a brand' },
+  // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): Nexswitch 16000 — one Max parent ("Product 1176446") holding the kit (device + one
+  // pod, ฿419, Pod-161-*) and the refill pod (฿269, Pod-162-*) → two records. The device and pods print SNOWWOLF, but no maker page
+  // was found (researcher 18/10: snowwolf has no "nex Switch" page) → sold without a brand, warehouse facts only (same as Pop Up 10K).
+  "NEXSWITCH-16K-KIT": { brandId: null, brandless: true, categoryId: "pod-kits", systemType: "pod-kit", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "เครื่อง + หัวพอต <flavour>" (device + one pod, ฿419); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
+  "NEXSWITCH-16K-POD": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "หัวพอต <flavour>" (refill pod, ฿269); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
   // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): RELX LUMI 18K — Max-only record (Max "Disposable-44" "RELX LUMI 18k", 16 flavours).
   // relxnow.com has no LUMI page (researcher 18/10) → warehouse facts only; the device prints RELX (shop posters, masters/src/disposable-44).
   "RELX-LUMI-18K": { brandId: "relx", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX parent "Disposable-44" "RELX LUMI 18k" with 16 flavour children (฿349); the device prints RELX (shop posters ihavevape.net/product/relx-lumi-18k); no LUMI page on relxnow.com 18/10 — listed on warehouse facts only' },
@@ -569,6 +574,16 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "พอตใช้แล้วทิ้ง Reswa Sportcan 12K",
     shortDescription: "พอตใช้แล้วทิ้ง Reswa Sportcan ทรงกระป๋อง ชื่อรุ่นระบุ 12,000 พัฟ ร้านมีให้เลือก 5 กลิ่น",
   },
+  "NEXSWITCH-16K-KIT": {
+    // Round list19 (19/10): warehouse facts only — Max sells the device with one pod ("เครื่อง + หัวพอต"); the pod prints "16K POD".
+    tagline: "ชุดเครื่อง Nexswitch พร้อมหัวพอต 1 หัว",
+    shortDescription: "ชุดเครื่อง Nexswitch 16K ได้ตัวเครื่องพร้อมหัวพอต 1 หัว เลือกกลิ่นของหัวได้ หัวละสูงสุด 16,000 พัฟ ร้านมีให้เลือก 10 กลิ่น",
+  },
+  "NEXSWITCH-16K-POD": {
+    // Round list19 (19/10): warehouse facts only — Max "หัวพอต <flavour>"; the pod prints "16K POD".
+    tagline: "หัวพอต Nexswitch 16K",
+    shortDescription: "หัวพอต Nexswitch 16K หัวละสูงสุด 16,000 พัฟ ใช้กับตัวเครื่อง Nexswitch ร้านมีให้เลือก 10 กลิ่น",
+  },
   "RELX-LUMI-18K": {
     // Round list19 (19/10): warehouse facts only — the Max name "RELX LUMI 18k" (no maker page for the puff count or the battery).
     tagline: "พอตใช้แล้วทิ้ง RELX LUMI 18K",
@@ -787,6 +802,19 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from RELX's LUMI poster",
       sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/",
+    },
+  ],
+  // Round list19 (19/10): Nexswitch 16K kit — OKami24 re-shoot (one master, the Mixberry blue kit) from the shop's colour grid.
+  "NEXSWITCH-16K-KIT": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/nexswitch-16k-kit/card.webp",
+      alt: "Nexswitch 16K kit, Mixberry (blue), studio photo",
+      angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's Nexswitch poster. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster",
+      sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/",
     },
   ],
   // Round p63 (19/10): ESKO BAR's own transparent device render (498-6.png, the largest device-only file on the maker page).
@@ -1202,6 +1230,19 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: [],
   },
+  // Round list19 (19/10): warehouse facts only (no maker page) — the Max name "16000 Puffs" and the pod's own print "16K POD".
+  "NEXSWITCH-16K-KIT": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 16,000", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
+  "NEXSWITCH-16K-POD": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 16,000", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
   // Round list19 (19/10): warehouse facts only (no maker page) — the Max name "RELX LUMI 18k".
   "RELX-LUMI-18K": {
     specifications: [
@@ -1547,6 +1588,20 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Pod-142-3": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-3.webp", alt: "Reswa Sportcan 12K disposable, Oolong Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
     "Pod-142-4": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-4.webp", alt: "Reswa Sportcan 12K disposable, Ice Cola, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
     "Pod-142-5": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-5.webp", alt: "Reswa Sportcan 12K disposable, Lemon Soda, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
+  },
+  // Round list19 (19/10): Nexswitch 16K kit — the body colour follows the flavour (shop's colour grid); one master render, the other
+  // nine recoloured to the grid's colour of that flavour (aiRender in the map).
+  "NEXSWITCH-16K-KIT": {
+    "Pod-161-1": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-1.webp", alt: "Nexswitch 16K kit, Grape Ice, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-2": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-2.webp", alt: "Nexswitch 16K kit, Grape Lychee, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-3": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-3.webp", alt: "Nexswitch 16K kit, Mixberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-4": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-4.webp", alt: "Nexswitch 16K kit, Strawberry Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-5": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-5.webp", alt: "Nexswitch 16K kit, Mineral, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-6": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-6.webp", alt: "Nexswitch 16K kit, Honeydew Melon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-7": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-7.webp", alt: "Nexswitch 16K kit, Cola Lemon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-8": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-8.webp", alt: "Nexswitch 16K kit, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-9": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-9.webp", alt: "Nexswitch 16K kit, Pink Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-161-10": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-10.webp", alt: "Nexswitch 16K kit, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   },
   // Round list19 (18/10): Pop Up 10K — one re-shoot per flavour poster the shop has (14 of 18; Strawberry · Mixberry · Lime Soda ·
   // Guava Kiwi have no poster, they show the no-photo panel).
@@ -2141,6 +2196,8 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
   "Pod-142": { name: "Reswa Sportcan 12K", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
+  "NEXSWITCH-16K-KIT": { name: "Nexswitch 16K Kit", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+  "NEXSWITCH-16K-POD": { name: "Nexswitch 16K Pod", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   "RELX-LUMI-18K": { name: "RELX LUMI 18K", sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/" },
   "ESKO-BAR-20K": { name: "ESKO BAR 20000", sourceUrl: "https://eskobarvape.com/product/eskobar" },
   "Pod-169": { name: "INFY PLUS 2.5ML Cartridge", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },

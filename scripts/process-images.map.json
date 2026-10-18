@@ -9276,6 +9276,138 @@
   "note": "ESKO BAR's own flavour render o.png, alt \"ESKO BAR 498 berry grape\" (eskobarvape.com/product/eskobar, 570x700 transparent — the only size the maker serves; round p63, 19/10)"
  },
  {
+  "source": "_incoming/list19/nex/kit-mixberry.png",
+  "slug": "nexswitch-16k-kit",
+  "role": "card",
+  "note": "round list19 19/10 - card = the Mixberry (blue) master re-shoot",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/nex/kit-grape-ice.png",
+  "slug": "nexswitch-16k-kit",
+  "role": "variant",
+  "id": "pod-161-1",
+  "note": "round list19 19/10 - Grape Ice kit (Max Pod-161-1)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/nex/kit-grape-lychee.png",
+  "slug": "nexswitch-16k-kit",
+  "role": "variant",
+  "id": "pod-161-2",
+  "note": "round list19 19/10 - Grape Lychee kit (Max Pod-161-2)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/nex/kit-mixberry.png",
+  "slug": "nexswitch-16k-kit",
+  "role": "variant",
+  "id": "pod-161-3",
+  "note": "round list19 19/10 - Mixberry kit (Max Pod-161-3)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/nex/kit-strawberry-watermelon.png",
+  "slug": "nexswitch-16k-kit",
+  "role": "variant",
+  "id": "pod-161-4",
+  "note": "round list19 19/10 - Strawberry Watermelon kit (Max Pod-161-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/nex/kit-mineral.png",
+  "slug": "nexswitch-16k-kit",
+  "role": "variant",
+  "id": "pod-161-5",
+  "note": "round list19 19/10 - Mineral kit (Max Pod-161-5)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/nex/kit-honeydew-melon.png",
+  "slug": "nexswitch-16k-kit",
+  "role": "variant",
+  "id": "pod-161-6",
+  "note": "round list19 19/10 - Honeydew Melon kit (Max Pod-161-6)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/nex/kit-cola-lemon.png",
+  "slug": "nexswitch-16k-kit",
+  "role": "variant",
+  "id": "pod-161-7",
+  "note": "round list19 19/10 - Cola Lemon kit (Max Pod-161-7)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/nex/kit-mint.png",
+  "slug": "nexswitch-16k-kit",
+  "role": "variant",
+  "id": "pod-161-8",
+  "note": "round list19 19/10 - Mint kit (Max Pod-161-8)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/nex/kit-pink-berry.png",
+  "slug": "nexswitch-16k-kit",
+  "role": "variant",
+  "id": "pod-161-9",
+  "note": "round list19 19/10 - Pink Berry kit (Max Pod-161-9)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/nex/kit-watermelon.png",
+  "slug": "nexswitch-16k-kit",
+  "role": "variant",
+  "id": "pod-161-10",
+  "note": "round list19 19/10 - Watermelon kit (Max Pod-161-10)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): ONE master render (Mixberry, blue) with the shop's colour-grid crop + Mixberry poster as images; keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=14) + cutfloor.js (c-nexB.png). The other 9 body colours = nexrecolor.js on that master: per pixel p = a + w*C (least squares, C = master blue) rewritten a + w*T, T = that flavour's body colour read from the shop's colour grid with one sample box for all crops, so every colour has the identical shape; screen glass, gold wolf badge and black parts untouched - copies beside this source",
+   "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
+  }
+ },
+ {
   "source": "_incoming/list19/reswa/icecola.png",
   "slug": "pod-142",
   "role": "card",

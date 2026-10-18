@@ -767,6 +767,19 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-142-4": "Pod-142-4",
     "Pod-142-5": "Pod-142-5",
   } },
+  // Round list19 (19/10): Nexswitch 16K kit (device + one pod) — Max Pod-161-* under Max parent "Product 1176446".
+  "nexswitch-16k-kit": { parent: "Product 1176446", options: {
+    "Pod-161-1": "Pod-161-1",
+    "Pod-161-2": "Pod-161-2",
+    "Pod-161-3": "Pod-161-3",
+    "Pod-161-4": "Pod-161-4",
+    "Pod-161-5": "Pod-161-5",
+    "Pod-161-6": "Pod-161-6",
+    "Pod-161-7": "Pod-161-7",
+    "Pod-161-8": "Pod-161-8",
+    "Pod-161-9": "Pod-161-9",
+    "Pod-161-10": "Pod-161-10",
+  } },
   // Round list19 (19/10): RELX LUMI 18K — the 16 Max flavour rows (Disposable-44-11 Sea Salt Lemon Candy sold out on 13/10).
   // Round p63 (19/10): ESKO BAR 20000 — the 22 Max flavour rows (every one "ไม่มีของ" in the Max list of 17/10).
   "esko-bar-20k": { parent: "Pod-130", options: {

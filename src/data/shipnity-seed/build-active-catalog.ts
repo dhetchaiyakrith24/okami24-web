@@ -134,6 +134,8 @@ function buildParent(seedRaw: RawActiveParent): ActiveParentRecord {
  *  the flavour, and the page text says what the kit holds. Prefix stripped per record, nothing else changes. */
 const MAX_ONLY_LABEL_PREFIX: Record<string, string> = {
   "KS-QUIKPRO-KIT": "เครื่อง + หัว ",
+  "NEXSWITCH-16K-KIT": "เครื่อง + หัวพอต ",
+  "NEXSWITCH-16K-POD": "หัวพอต ",
 };
 
 function fromMaxOnly(id: string): RawActiveParent {
