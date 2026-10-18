@@ -14,6 +14,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // Round p63 (19/10): + the ESKO BAR 20000 names.
   // Round p63 (18/10): + the WOTOFO nexPOD 15K Pro Kit names.
   // Round p63 (18/10): + the IQOS TEREA pack names (the TEREA options became flavours), sorted in by length.
+  // Round list19 (19/10): + the Reswa Sportcan names (Max labels).
   // Round list19 (19/10): + the RELX LUMI 18K names (the "5%" options are Max's own labels), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
@@ -209,6 +210,8 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Cola Ice",
   "Thai Tea",
   "Milk Tea",
+  "Ice Cola",
+  "Red Bull",
   "Grape 5%",
   "Love 77",
 ];

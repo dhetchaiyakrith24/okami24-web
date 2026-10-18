@@ -759,6 +759,14 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-169-27": "Pod-169-27",
     "Pod-169-28": "Pod-169-28",
   } },
+  // Round list19 (19/10): Reswa Sportcan 12K — the 5 Max flavour rows (Max parent "Product 1129596").
+  "pod-142": { parent: "Product 1129596", options: {
+    "Pod-142-1": "Pod-142-1",
+    "Pod-142-2": "Pod-142-2",
+    "Pod-142-3": "Pod-142-3",
+    "Pod-142-4": "Pod-142-4",
+    "Pod-142-5": "Pod-142-5",
+  } },
   // Round list19 (19/10): Nexswitch 16K kit (device + one pod) — Max Pod-161-* under Max parent "Product 1176446".
   "nexswitch-16k-kit": { parent: "Product 1176446", options: {
     "Pod-161-1": "Pod-161-1",

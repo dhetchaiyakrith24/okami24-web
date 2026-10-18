@@ -198,6 +198,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "KS-QUIKPRO-KIT": { sellingPrice: 389, lastPriceReview: "2026-10-18" },
   // Round list19 (18/10): Pop Up 10K pod — Max "ราคาขาย" ฿199 for the parent and every flavour (same 17/10 read).
   "Pod-154": { sellingPrice: 199, lastPriceReview: "2026-10-18" },
+  // Round list19 (19/10): Reswa Sportcan 12000 (Max "Product 1129596") — Max ราคาขาย ฿229 for the parent and its 5 flavours (read 2026-10-17).
+  "Pod-142": { sellingPrice: 229, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): Nexswitch 16000 (Max "Product 1176446") — Max ราคาขาย ฿419 for the kit options Pod-161-* and ฿269 for the
   // refill-pod options Pod-162-* (Max list read 2026-10-17).
   "NEXSWITCH-16K-KIT": { sellingPrice: 419, lastPriceReview: "2026-10-19" },
