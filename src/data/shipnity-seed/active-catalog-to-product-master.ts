@@ -1575,8 +1575,11 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // iqos.com/id still lists + the 6 VERIFIED_ADDITIONAL_VARIANTS below. Every file = the maker's 2000px pack render cropped
   // to the five sticks (scripts/process-images.map.json), so every flavour shows the sticks at the same size; the 11 older
   // 1000px files (with the flavour pills, 700px) were replaced by the same crop. Emerald Edition (IQOSHEET-15-10) is
-  // still on no maker page → NEUTRAL_VARIANT_FALLBACK.
+  // still on no maker page → NEUTRAL_VARIANT_FALLBACK. Checker #583 r1 (18/10): iqos.com/id's own Emerald Edition page
+  // (SKU G0001475, read through its Wayback capture of 2025-10-13) points at a pack render iqos.com still serves — cropped
+  // the same way, so every TEREA flavour now has its own pack image.
   "IQOSHEET-15": {
+    "IQOSHEET-15-10": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variant-iqosheet-15-10.webp", alt: "IQOS TEREA Emerald Edition, five sticks", transparentBackground: true, sourceName: "IQOS (official site, iqos.com — Indonesia)", sourceUrl: "https://www.iqos.com/id/id/shop/iqos-terea-emerald-edition.html" },
     "IQOSHEET-15-1": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variant-iqosheet-15-1.webp", alt: "IQOS TEREA Black Green, five sticks — official flavor note: Frosty Pear", transparentBackground: true, sourceName: "IQOS (official brand CDN, media.iqos.com — Indonesia)", sourceUrl: "https://media.iqos.com/is/image/pmintl/product/2000px/TEREA+BLACK+GREEN+PACK-pmi_G0000693_00_id-1783303624000.png" },
     "IQOSHEET-15-2": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variant-iqosheet-15-2.webp", alt: "IQOS TEREA Green, five sticks", transparentBackground: true, sourceName: "IQOS (official brand CDN, media.iqos.com — Indonesia)", sourceUrl: "https://media.iqos.com/is/image/pmintl/product/2000px/TEREA+GREEN+PACK-pmi_G0000699_00_id-1782351563000.png" },
     "IQOSHEET-15-3": { kind: "official-photo", role: "detail", src: "/assets/products/iqosheet-15/variant-iqosheet-15-3.webp", alt: "IQOS TEREA Blue, five sticks", transparentBackground: true, sourceName: "IQOS (official brand CDN, media.iqos.com — Indonesia)", sourceUrl: "https://media.iqos.com/is/image/pmintl/product/2000px/TEREA+BLUE+PACK-pmi_G0000694_00_id-1783303624000.png" },
