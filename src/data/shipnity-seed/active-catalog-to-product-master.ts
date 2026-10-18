@@ -820,6 +820,19 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/",
     },
   ],
+  // Round list19 (19/10): Nexswitch 16K refill pod — card = the Watermelon pod (the master body every pod photo shares).
+  "NEXSWITCH-16K-POD": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/nexswitch-16k-pod/card.webp",
+      alt: "Nexswitch 16K refill pod, Watermelon, studio photo",
+      angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's Nexswitch poster (the loose SNOWWOLF 16K pod). Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster",
+      sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/",
+    },
+  ],
   // Round p63 (19/10): ESKO BAR's own transparent device render (498-6.png, the largest device-only file on the maker page).
   "ESKO-BAR-20K": [
     {
@@ -1606,6 +1619,16 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Pod-161-8": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-8.webp", alt: "Nexswitch 16K kit, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
     "Pod-161-9": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-9.webp", alt: "Nexswitch 16K kit, Pink Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
     "Pod-161-10": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-10.webp", alt: "Nexswitch 16K kit, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+  },
+  // Round list19 (19/10): Nexswitch 16K refill pod — one body (the Watermelon render) for every flavour, each label moved onto it
+  // from that flavour's own render (labellift.js). Grape Ice · Grape Lychee · Cola Lemon · Mint · Pink Berry = no-photo panel
+  // (Higgsfield's free window ended before their renders; the Grape Lychee render came out with a grey metal body).
+  "NEXSWITCH-16K-POD": {
+    "Pod-162-3": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-pod/variant-pod-162-3.webp", alt: "Nexswitch 16K refill pod, Mixberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-162-4": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-pod/variant-pod-162-4.webp", alt: "Nexswitch 16K refill pod, Strawberry Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-162-5": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-pod/variant-pod-162-5.webp", alt: "Nexswitch 16K refill pod, Mineral, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-162-6": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-pod/variant-pod-162-6.webp", alt: "Nexswitch 16K refill pod, Honeydew Melon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-162-10": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-pod/variant-pod-162-10.webp", alt: "Nexswitch 16K refill pod, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   },
   // Round list19 (18/10): Pop Up 10K — one re-shoot per flavour poster the shop has (14 of 18; Strawberry · Mixberry · Lime Soda ·
   // Guava Kiwi have no poster, they show the no-photo panel).
