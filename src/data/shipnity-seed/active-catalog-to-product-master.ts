@@ -1182,16 +1182,18 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://giantvapes.com/products/voopoo-tpp-coils",
     },
   ],
+  // Round list19 (19/10): the 2026-09-06 card (a retailer photo with warped lettering, LAUNCH_AUDIT item 11) replaced by an OKami24
+  // re-shoot (batch 7) of the 0.15Ω coil — VOOPOO's own PnP X photos all carry the AIGC marker (IMAGE_SPEC §0 item 7).
   "Coil-92": [
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/coil-92/card.webp",
-      alt: "VOOPOO PnP X replacement coil, 0.15Ω, isolated product shot",
-      angle: "Front, isolated (cropped locally from the retailer's own variant-specific product photo — confirmed via the page's own variant→image JSON mapping that this exact file is served for the '0.15 ohm' option, not a generic/shared image; alpha-keyed from a clean white studio background). The resistance and wattage ('0.15Ω' / '60-80W') are etched directly onto the physical coil itself and legible in the photo, removing any variant-matching ambiguity — the same official VOOPOO Shopline source considered earlier this project was an AI-generated image (self-flagged XMP metadata) and was correctly rejected; this is a real photograph from an independent retailer instead.",
+      src: "/assets/products/coil-92/card-v2.webp",
+      alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo",
+      angle: "Front, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of a shop photo of the 0.15Ω coil; the etched 0.15Ω / 60-80W checked by eye. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
-      sourceName: "Giant Vapes (US vape retailer)",
-      sourceUrl: "https://giantvapes.com/products/voopoo-pnp-x-replacement-coils",
+      sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.15Ω coil",
+      sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/",
     },
   ],
   "Coil-55": [
@@ -1452,8 +1454,18 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   //  research established that none of the devices it names — DRAG 3, DRAG X Plus — exists in this
   //  catalog, so the claim had no linkable endpoint and no independent confirmation. See
   //  src/data/catalog-relationships.ts for how device compatibility is now recorded instead.)
+  // Round list19 (19/10): VOOPOO's table on the PnP X page (re-read 19/10): resistance → wattage, and the compatible DRAG devices.
   "Coil-92": {
-    specifications: [{ key: "wattage", label: "กำลังไฟที่แนะนำ (0.15Ω)", value: "60-80W (DTL)", sourceStatus: "verified" }],
+    specifications: [
+      { key: "wattage", label: "กำลังไฟ 0.15Ω", value: "60-80W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage-0-2", label: "กำลังไฟ 0.2Ω", value: "40-60W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage-0-3", label: "กำลังไฟ 0.3Ω", value: "32-40W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage-0-45", label: "กำลังไฟ 0.45Ω", value: "25-32W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage-0-6", label: "กำลังไฟ 0.6Ω", value: "18-23W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage-0-8", label: "กำลังไฟ 0.8Ω", value: "12-16W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "wattage-1-0", label: "กำลังไฟ 1.0Ω", value: "10-13W", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "DRAG X2 / S2 / 4 / X3 / S3", sourceStatus: "verified", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+    ],
     sourceUrls: ["https://shop.voopoo.com/products/pnp-x-coils"],
   },
   "Coil-53": {
@@ -1668,6 +1680,10 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Pod-161-8": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-8.webp", alt: "Nexswitch 16K kit, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
     "Pod-161-9": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-9.webp", alt: "Nexswitch 16K kit, Pink Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
     "Pod-161-10": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-10.webp", alt: "Nexswitch 16K kit, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+  },
+  // Round list19 (19/10): PnP X — the 0.15Ω option shows the card re-shoot (its own coil); the other resistances have no photo yet.
+  "Coil-92": {
+    "Coil-92-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-92/variant-coil-92-1.webp", alt: "VOOPOO PnP X replacement coil, 0.15Ω, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the PnP X 0.15Ω coil", sourceUrl: "https://maneevp.com/product/voopoo-pnp-x-coil/" },
   },
   // Round list19 (19/10): Nexswitch 16K refill pod — one body (the Watermelon render) for every flavour, each label moved onto it
   // from that flavour's own render (labellift.js). Grape Ice · Grape Lychee · Cola Lemon · Mint · Pink Berry = no-photo panel
@@ -1972,6 +1988,12 @@ export interface VerifiedAdditionalOptionValue {
 }
 
 export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOptionValue[]> = {
+  // Round list19 (19/10): VOOPOO sells PnP X in 7 resistances; the warehouse (Coil-92) carries 0.15 / 0.2 / 0.3 / 0.6Ω.
+  "Coil-92": [
+    { code: "0-45ω", label: "0.45Ω", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+    { code: "0-8ω", label: "0.8Ω", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+    { code: "1-0ω", label: "1.0Ω", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },
+  ],
   // Round list19 (18/10): kardinal.com/products/quikpro "Flavours" lists 15; Grape Berry is the one the warehouse (Pod-150) does not carry.
   // (The warehouse's "Cola Lemon" = Kardinal's "Lemon Cola"; its "Watermelon" is not on Kardinal's list — kept, it is the warehouse's real child.)
   "Pod-150": [

@@ -62,7 +62,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // Same pricing rule, third wave: real tier-2 media closed the gap (see VERIFIED_MEDIA["Coil-92"]
   // — the resistance/wattage is etched directly on the photographed coil, no variant ambiguity).
   // Single unambiguous operationalSellingPrice.
-  // "Coil-92": { sellingPrice: 130, lastPriceReview: "2026-09-01" },
+  "Coil-92": { sellingPrice: 130, lastPriceReview: "2026-10-19" }, // round list19 19/10: back with a new card (see below); Max ราคาขาย ฿130 per coil (17/10) — the ฿400 box of 5 is not an option
   //   ^ WITHDRAWN 2026-09-06 (owner decision, LAUNCH_AUDIT item 11): the only card image has
   //     warped lettering on the coil (looks AI-generated) — not fit to sell from. Entry removed
   //     = the literal unpublish action (same mechanism as IQOSHEET-15 below); all Coil-92 data,

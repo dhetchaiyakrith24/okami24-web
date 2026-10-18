@@ -615,6 +615,16 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Coil-38-3": "Coil-38-3",
     "Coil-38-4": "Coil-38-4",
   } },
+  // Round list19 (19/10): VOOPOO PnP X — Max Coil-92-1..4 (per coil); VOOPOO's 0.45 / 0.8 / 1.0Ω are not in the warehouse.
+  "coil-92": { parent: "Coil-92", options: {
+    "Coil-92-1": "Coil-92-1",
+    "Coil-92-2": "Coil-92-2",
+    "Coil-92-3": "Coil-92-3",
+    "Coil-92-4": "Coil-92-4",
+    "coil-92-verified-0-45ω": null,
+    "coil-92-verified-0-8ω": null,
+    "coil-92-verified-1-0ω": null,
+  } },
   "coil-53": { parent: "Coil-53", options: {
     // Round list19 (19/10): Max 0.8Ω and 1.2Ω (both "ไม่มีของ" 17/10).
     "Coil-53-1": "Coil-53-1",
