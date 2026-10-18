@@ -31,8 +31,12 @@ const MAX_PARENT_OF = {
 };
 // Max-only products (no old seed record) → the record id they get here (round list19 18/10, owner "ทำเลยครับทั้งหมด"). The record id
 // is the storefront slug once lowercased (same rule as every seed record), so it is a readable model name, not Max's "Product N".
+// A value may also be { max, childPrefix }: one Max parent that holds two products (Nexswitch: kit ฿419 rows Pod-161-* and
+// refill-pod ฿269 rows Pod-162-*) → one record per child-code prefix, priced at its own children's ราคาขาย.
 const MAX_ONLY_RECORDS = {
   "KS-QUIKPRO-KIT": "Product 780", // KS Quik Pro 15000 คำ (device + pod)
+  "NEXSWITCH-16K-KIT": { max: "Product 1176446", childPrefix: "Pod-161-" }, // Nexswitch 16000 Puffs — "เครื่อง + หัวพอต <flavour>"
+  "NEXSWITCH-16K-POD": { max: "Product 1176446", childPrefix: "Pod-162-" }, // Nexswitch 16000 Puffs — "หัวพอต <flavour>"
 };
 const seedSrc = fs.readFileSync(path.join(__dirname, "..", "src", "data", "shipnity-seed", "active-catalog-source.ts"), "utf8");
 const seedIds = [...seedSrc.matchAll(/shipnityProductId: "([^"]+)"/g)].map((m) => m[1]).filter((id) => id !== "Close" && id !== "test"); // excludedNonProductRows
@@ -49,12 +53,16 @@ for (const id of seedIds) {
   out[id] = { maxParentId: maxId, name: p[2], operationalSellingPrice: num(p[3]), children };
 }
 const maxOnly = [];
-for (const [id, maxId] of Object.entries(MAX_ONLY_RECORDS)) {
+for (const [id, spec] of Object.entries(MAX_ONLY_RECORDS)) {
+  const maxId = typeof spec === "string" ? spec : spec.max;
+  const prefix = typeof spec === "string" ? "" : spec.childPrefix;
   const p = parents.get(maxId);
   if (!p) { missing.push(id); continue; }
-  const children = rows.filter((r) => r[0] === "C" && r[6] === maxId)
+  const children = rows.filter((r) => r[0] === "C" && r[6] === maxId && r[1].startsWith(prefix))
     .map((r) => ({ shipnityVariantId: r[1], rawLabel: r[2], sellingPrice: num(r[3]), inStock: r[4] === "มีของ" }));
-  out[id] = { maxParentId: maxId, name: p[2], operationalSellingPrice: num(p[3]), children };
+  const prices = [...new Set(children.map((c) => c.sellingPrice))];
+  if (prefix && prices.length !== 1) { console.error(`${id}: children under ${prefix} carry ${prices.length} prices — one record needs one price`); process.exit(1); }
+  out[id] = { maxParentId: maxId, name: p[2], operationalSellingPrice: prefix ? prices[0] : num(p[3]), children };
   maxOnly.push(id);
 }
 const body = `/**

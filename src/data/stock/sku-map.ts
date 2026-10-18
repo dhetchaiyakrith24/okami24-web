@@ -759,6 +759,32 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-169-27": "Pod-169-27",
     "Pod-169-28": "Pod-169-28",
   } },
+  // Round list19 (19/10): Nexswitch 16K kit (device + one pod) — Max Pod-161-* under Max parent "Product 1176446".
+  "nexswitch-16k-kit": { parent: "Product 1176446", options: {
+    "Pod-161-1": "Pod-161-1",
+    "Pod-161-2": "Pod-161-2",
+    "Pod-161-3": "Pod-161-3",
+    "Pod-161-4": "Pod-161-4",
+    "Pod-161-5": "Pod-161-5",
+    "Pod-161-6": "Pod-161-6",
+    "Pod-161-7": "Pod-161-7",
+    "Pod-161-8": "Pod-161-8",
+    "Pod-161-9": "Pod-161-9",
+    "Pod-161-10": "Pod-161-10",
+  } },
+  // Round list19 (19/10): Nexswitch 16K refill pod — Max Pod-162-* under Max parent "Product 1176446".
+  "nexswitch-16k-pod": { parent: "Product 1176446", options: {
+    "Pod-162-1": "Pod-162-1",
+    "Pod-162-2": "Pod-162-2",
+    "Pod-162-3": "Pod-162-3",
+    "Pod-162-4": "Pod-162-4",
+    "Pod-162-5": "Pod-162-5",
+    "Pod-162-6": "Pod-162-6",
+    "Pod-162-7": "Pod-162-7",
+    "Pod-162-8": "Pod-162-8",
+    "Pod-162-9": "Pod-162-9",
+    "Pod-162-10": "Pod-162-10",
+  } },
   "pod-154": { parent: "Pod-154", options: {
     "Pod-154-1": "Pod-154-1",
     "Pod-154-2": "Pod-154-2",

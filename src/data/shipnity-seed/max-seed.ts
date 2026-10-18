@@ -2742,6 +2742,140 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
         "inStock": false
       }
     ]
+  },
+  "NEXSWITCH-16K-KIT": {
+    "maxParentId": "Product 1176446",
+    "name": "Nexswitch 16000 Puffs",
+    "operationalSellingPrice": 419,
+    "children": [
+      {
+        "shipnityVariantId": "Pod-161-1",
+        "rawLabel": "เครื่อง + หัวพอต Grape Ice",
+        "sellingPrice": 419,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-161-2",
+        "rawLabel": "เครื่อง + หัวพอต Grape Lychee",
+        "sellingPrice": 419,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-161-3",
+        "rawLabel": "เครื่อง + หัวพอต Mixberry",
+        "sellingPrice": 419,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-161-4",
+        "rawLabel": "เครื่อง + หัวพอต Strawberry Watermelon",
+        "sellingPrice": 419,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-161-5",
+        "rawLabel": "เครื่อง + หัวพอต Mineral",
+        "sellingPrice": 419,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-161-6",
+        "rawLabel": "เครื่อง + หัวพอต Honeydew Melon",
+        "sellingPrice": 419,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-161-7",
+        "rawLabel": "เครื่อง + หัวพอต Cola Lemon",
+        "sellingPrice": 419,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-161-8",
+        "rawLabel": "เครื่อง + หัวพอต Mint",
+        "sellingPrice": 419,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-161-9",
+        "rawLabel": "เครื่อง + หัวพอต Pink Berry",
+        "sellingPrice": 419,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-161-10",
+        "rawLabel": "เครื่อง + หัวพอต Watermelon",
+        "sellingPrice": 419,
+        "inStock": false
+      }
+    ]
+  },
+  "NEXSWITCH-16K-POD": {
+    "maxParentId": "Product 1176446",
+    "name": "Nexswitch 16000 Puffs",
+    "operationalSellingPrice": 269,
+    "children": [
+      {
+        "shipnityVariantId": "Pod-162-1",
+        "rawLabel": "หัวพอต Grape Ice",
+        "sellingPrice": 269,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-162-2",
+        "rawLabel": "หัวพอต Grape Lychee",
+        "sellingPrice": 269,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-162-3",
+        "rawLabel": "หัวพอต Mixberry",
+        "sellingPrice": 269,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-162-4",
+        "rawLabel": "หัวพอต Strawberry Watermelon",
+        "sellingPrice": 269,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-162-5",
+        "rawLabel": "หัวพอต Mineral",
+        "sellingPrice": 269,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-162-6",
+        "rawLabel": "หัวพอต Honeydew Melon",
+        "sellingPrice": 269,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-162-7",
+        "rawLabel": "หัวพอต Cola Lemon",
+        "sellingPrice": 269,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-162-8",
+        "rawLabel": "หัวพอต Mint",
+        "sellingPrice": 269,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-162-9",
+        "rawLabel": "หัวพอต Pink Berry",
+        "sellingPrice": 269,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-162-10",
+        "rawLabel": "หัวพอต Watermelon",
+        "sellingPrice": 269,
+        "inStock": false
+      }
+    ]
   }
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD"];

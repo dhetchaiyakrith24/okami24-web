@@ -248,6 +248,11 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // Round list19 (18/10): Max-only record (Max "Product 780" "KS Quik Pro 15000 คำ") = the Kardinal Quikpro device sold with one
   // cartridge; its Max options are the cartridge flavour of the bundle (kardinal.com/products/quikpro).
   "KS-QUIKPRO-KIT": { brandId: "kardinal-stick", categoryId: "pod-kits", systemType: "pod-kit", evidence: 'Shipnity MAX "KS Quik Pro 15000 คำ" with options "เครื่อง + หัว <flavour>" (device + one cartridge) = Kardinal Quikpro, kardinal.com/products/quikpro (official): device + 15ml cartridge, up to 15,000 puffs' },
+  // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): Nexswitch 16000 — one Max parent ("Product 1176446") holding the kit (device + one
+  // pod, ฿419, Pod-161-*) and the refill pod (฿269, Pod-162-*) → two records. The device and pods print SNOWWOLF, but no maker page
+  // was found (researcher 18/10: snowwolf has no "nex Switch" page) → sold without a brand, warehouse facts only (same as Pop Up 10K).
+  "NEXSWITCH-16K-KIT": { brandId: null, brandless: true, categoryId: "pod-kits", systemType: "pod-kit", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "เครื่อง + หัวพอต <flavour>" (device + one pod, ฿419); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
+  "NEXSWITCH-16K-POD": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Nexswitch 16000 Puffs" options "หัวพอต <flavour>" (refill pod, ฿269); no maker page found 18/10 — listed on warehouse facts only, without a brand' },
   // Round list19 (18/10, owner "ทำเลยครับทั้งหมด"): Pop Up 10K refill pod — no maker site found (Thai-market line), sold without a brand on
   // the site (same as Pod-180); every fact = the warehouse (Shipnity MAX name "Pop Up 10K หัวเติม", its 18 flavour rows + battery base row).
   "Pod-154": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Pop Up 10K หัวเติม" (refill pod) with 18 flavour children + a "ฐานแบตเตอรี่" (battery base) child; no maker site found 16-18/10 — listed on warehouse facts only, without a brand' },
@@ -553,6 +558,16 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     // Round list19 (18/10): warehouse facts only (owner ruling) — the Max name "SKE Crystal B20000 Puffs" and its 8 flavours.
     tagline: "พอตใช้แล้วทิ้ง SKE Crystal B20000",
     shortDescription: "พอตใช้แล้วทิ้ง SKE Crystal B20000 ชื่อรุ่นระบุ 20,000 พัฟ ร้านมีให้เลือก 8 กลิ่น",
+  },
+  "NEXSWITCH-16K-KIT": {
+    // Round list19 (19/10): warehouse facts only — Max sells the device with one pod ("เครื่อง + หัวพอต"); the pod prints "16K POD".
+    tagline: "ชุดเครื่อง Nexswitch พร้อมหัวพอต 1 หัว",
+    shortDescription: "ชุดเครื่อง Nexswitch 16K ได้ตัวเครื่องพร้อมหัวพอต 1 หัว เลือกกลิ่นของหัวได้ หัวละสูงสุด 16,000 พัฟ ร้านมีให้เลือก 10 กลิ่น",
+  },
+  "NEXSWITCH-16K-POD": {
+    // Round list19 (19/10): warehouse facts only — Max "หัวพอต <flavour>"; the pod prints "16K POD".
+    tagline: "หัวพอต Nexswitch 16K",
+    shortDescription: "หัวพอต Nexswitch 16K หัวละสูงสุด 16,000 พัฟ ใช้กับตัวเครื่อง Nexswitch ร้านมีให้เลือก 10 กลิ่น",
   },
   "Pod-154": {
     // Round list19 (18/10): warehouse facts only — the name says 10K, the pod print says 10000 PUFFS, Max lists the battery base.
@@ -1127,6 +1142,19 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "Pod-149": {
     specifications: [
       { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 20,000", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
+  // Round list19 (19/10): warehouse facts only (no maker page) — the Max name "16000 Puffs" and the pod's own print "16K POD".
+  "NEXSWITCH-16K-KIT": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 16,000", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
+  "NEXSWITCH-16K-POD": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 16,000", sourceStatus: "verified" },
     ],
     sourceUrls: [],
   },
@@ -2019,6 +2047,8 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "Pod-150": { name: "KS Quikpro 15K Cartridge", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+  "NEXSWITCH-16K-KIT": { name: "Nexswitch 16K Kit", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+  "NEXSWITCH-16K-POD": { name: "Nexswitch 16K Pod", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   "Pod-169": { name: "INFY PLUS 2.5ML Cartridge", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },
 };
 
