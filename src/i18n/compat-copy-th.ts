@@ -128,15 +128,15 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
   // ↔ coil-53) are published, so the coil and both pod pages showed these notes in English on the
   // Thai site — the accessories pages sat outside the "53 product pages" scope of earlier rounds.
   // Owner-supplied Thai; vocabulary checked by thai-copy against THAI_STYLE §3.
-  "The Caliburn G2 replacement pod is designed for UWELL's Caliburn G and G2 coils, which is the line this 1.0Ω coil belongs to. Note this generation is NOT interchangeable with the later GPP platform used by the G3/G4/G5 devices.":
+  "The Caliburn G2 replacement pod is designed for UWELL's Caliburn G and G2 coils, the line these coils belong to. Note this generation is NOT interchangeable with the later GPP platform used by the G3/G4/G5 devices.":
     // "ใช้กับระบบหัวพอต GPP ของเครื่อง…" (not the owner's first "ใช้ข้ามกับ…ที่อยู่ในเครื่อง"): at 390px
     // the card's text-xs column broke the locked word "หัวพอต" in two ("ระบบหัว | พอต GPP"); this
     // wording breaks before "GPP" instead (measured, _incoming/30.4b/k7-variants.json A3).
-    "หัวพอต Caliburn G2 ออกแบบมาสำหรับคอยล์ตระกูล Caliburn G และ G2 ซึ่งเป็นตระกูลเดียวกับคอยล์ 1.0 โอห์มตัวนี้ รุ่นนี้ใช้กับระบบหัวพอต GPP ของเครื่อง G3/G4/G5 ไม่ได้",
-  "The Caliburn X pod is stated to take Caliburn G or G2 coils (0.8/1.0/1.2Ω), which is the line this 1.0Ω coil belongs to. It is explicitly not for the A or original Caliburn series.":
+    "หัวพอต Caliburn G2 ออกแบบมาสำหรับคอยล์ตระกูล Caliburn G และ G2 ซึ่งเป็นตระกูลเดียวกับคอยล์ชุดนี้ รุ่นนี้ใช้กับระบบหัวพอต GPP ของเครื่อง G3/G4/G5 ไม่ได้",
+  "The Caliburn X pod is stated to take Caliburn G or G2 coils (0.8/1.0/1.2Ω), the line these coils belong to. It is explicitly not for the A or original Caliburn series.":
     // "หน้าร้านค้าปลีก", not "แบรนด์": the source is a retailer listing (tier "retailer") — the
     // evidence tier is never promoted in translation (file header; thai-copy 2026-09-17).
-    "หน้าร้านค้าปลีกระบุว่าหัวพอต Caliburn X ใช้คอยล์ตระกูล Caliburn G หรือ G2 ได้ (0.8/1.0/1.2Ω) ซึ่งเป็นตระกูลเดียวกับคอยล์ 1.0 โอห์มตัวนี้ และระบุชัดว่าใช้กับตระกูล A หรือ Caliburn รุ่นแรกไม่ได้",
+    "หน้าร้านค้าปลีกระบุว่าหัวพอต Caliburn X ใช้คอยล์ตระกูล Caliburn G หรือ G2 ได้ (0.8/1.0/1.2Ω) ซึ่งเป็นตระกูลเดียวกับคอยล์ชุดนี้ และระบุชัดว่าใช้กับตระกูล A หรือ Caliburn รุ่นแรกไม่ได้",
   // Round p63 (18/10): TEREA (iqosheet-15) goes on sale, so its four edges show on the TEREA page and on the
   // ILUMA i / i PRIME / i ONE / LAMBDA i8 pages. Same facts as the English strings; the LAMBDA one keeps its attribution.
   "IQOS states TEREA sticks are designed exclusively for IQOS ILUMA devices, and that ILUMA is designed to be used only with TEREA sticks — the SMARTCORE induction system heats the stick from within, so earlier IQOS generations cannot use them.":
