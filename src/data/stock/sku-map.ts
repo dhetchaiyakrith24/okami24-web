@@ -719,6 +719,17 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-149-8": "Pod-149-8",
   } },
   // Round list19 (18/10): Marbo Saltnic — Max parent ELQ-1 (old seed id ELIQUID-1); the ฿807 bundle ELIQUID-1-1 is not an option.
+  // Round list19 (19/10): Pepo Salt Nic (Max ELQ-5, old seed Eliquid-72) · Dundu Salt Nic (Max Eliquid-73).
+  "eliquid-72": { parent: "ELQ-5", options: {
+    "ELQ-5-1": "ELQ-5-1",
+    "ELQ-5-2": "ELQ-5-2",
+    "ELQ-5-3": "ELQ-5-3",
+    "ELQ-5-4": "ELQ-5-4",
+    "ELQ-5-5": "ELQ-5-5",
+  } },
+  "eliquid-73": { parent: "Eliquid-73", options: {
+    "Eliquid-73-1": "Eliquid-73-1",
+  } },
   "eliquid-1": { parent: "ELQ-1", options: {
     "ELQ-1-1": "ELQ-1-1",
     "ELQ-1-2": "ELQ-1-2",

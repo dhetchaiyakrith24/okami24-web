@@ -166,6 +166,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Grape Jelly",
   "Jasmine Tea",
   "Purple 50mg",
+  "Mixed Berry",
   "Black Ruby",
   "Aloe Grape",
   "Apple Aloe",
