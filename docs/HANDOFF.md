@@ -34,9 +34,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   row line-ups (argus-g4-mini 07/10, G3 Pro 02/10) · M Bar 10K anatomy size = component layout, next design round. audit2 eye pass DONE (live pages fine; low-res sets not on the site = VOID; mood-monster-14k kept, Friday 16/10). Batch 7 RENDERED 16-17/10 (line-1 chat, no site change): masters for 19 of the 21 warehouse products + Pop Up 14 flavours + Marbo 5 colours + Pepo 4 + 1 lifestyle sample (G5 Mystic Forest forest scene, 16:9) = `_incoming/img-1610/masters/` (SOURCE.md = table, out/picks.txt = picks/rejects); IQOS ILUMA ONE = official iqos.com PNGs; Pod-168 G4 Pro Stripe Black already on the site. Open: Feelin C1 ref unresolved · Double Mint Watermelon/Peach + Pop Up Strawberry/Mixberry/Lime Soda/Guava Kiwi have no ref · Breeze Blue = the ILUMA i ONE model. Keying + INFY label swaps need no Nano Banana (after 18/10). Higgsfield dropped to 1 unlimited job at a time ~00:45 17/10. State, prompts, pipelines, page helpers, lessons to fold in =
   `_incoming/img-1610/NEXT.md` (read it first) · prompts `_incoming/img-1610/prompts.md`.
 3s OPEN ROUND "SEO all keys" — RESUMED 18/10 ~22:30 (quota reset; Friday "เริ่ม") = `docs/rounds/รอบ-SEO-คีย์ทั้งหมด-16-10.txt`
-  (side-chat line 2; also owns 3p) · worktree `.claude/worktrees/mystifying-driscoll-575ab6` · build trees `_incoming/wt7-<port>` +
-  test servers 3415 (after) / 3416 (before = main): `bash _incoming/p63/setup-build7.sh <sha> <port>` (real node_modules copy, ~5 min;
-  pass a sha) · older line-2 tools: `.claude/worktrees/seo-line2/_incoming/seo-keys/` (chat 3's) ·
+  (side-chat line 2; also owns 3p) · worktree since 19/10 `.claude/worktrees/seo-line2-c` (chat c) · build trees `_incoming/wt7-<port>` +
+  test servers 3419 (after) / 3418 (before = main): `bash _incoming/l2c/setup-build.sh <sha> <port>` (real node_modules copy, ~5 min;
+  pass a SHA, never HEAD) · chat b's worktree `mystifying-driscoll-575ab6` (`_incoming/p63/`) · older line-2 tools: `.claude/worktrees/seo-line2/_incoming/seo-keys/` (chat 3's) ·
   【ห้ามแตะ】 product images + image map (image round) · every price file. Order = SEO_LANDSCAPE §9.6.
   DONE [ตรวจแล้ว]: #499 #502 #514 #519 #536 #543 #546 #551 #553 (what each did = the PR; full list = `git show 438cd6e7:docs/HANDOFF.md`).
   Do-not-redo facts: genuine guide has no maker image of a check · DRAG has no clip on the three shop channels (16/10) · dropped on
@@ -73,6 +73,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   "joiway" 179 impr pos 6.2 3 clicks (/brands/joiway 417 impr 15 clicks) → fix the ranking pages' title/description with the held
   heads · weekly clicks 214 (29/09–05/10) → 160 (09–15/10), impressions 1,470 → 918: say whether it is specific pages or the general dip ·
   /brands/esko-bar intro still names only the Switch (now 2 products) · /brands/esko-bar + /brands/infy changed before the read (logged).
+  **CATEGORY RESTRUCTURE 19/10 = #595 (merged 63b83c06, live 200/308, owner "ทำเลยตอนนี้")** — pod-kits retired: VOOPOO refill devices →
+  /products/pod-systems · new /products/switch-pods "Switch Pod / พอตเปลี่ยนหัว" (M Switch · Zero · RELX Infinity 2 Plus · RELX Creator ·
+  nexPOD · ESKO BAR SWITCH · KS Quikpro · Nexswitch 16K) · /products/pod-kits 308 → pod-systems. **The 22/10 read of pod-systems and
+  pod-kits is MIXED by this change (owner accepted)** — "pod" was split pod-systems 5.1 (25/88) vs pod-kits 8.1 (7/67), GSC 18/10;
+  watch rows 2 (argus-g4) + 7 (pod-159): title/meta/H1 unchanged, but breadcrumb + JSON-LD category moved with the merge.
+  HELD until after the read (search-titles.ts TITLE_WORD_HELD_TH · article-relevance.ts comparedFormat): product titles keep "พอตคิท"
+  (switch-pod devices → "พอตเปลี่ยนหัว", VOOPOO → "พอตซิสเต็ม"?) · open-system-vs-disposable box → VOOPOO too · first-pod guide H2 + ¶1
+  still say "พอตคิท" (thai-typography.ts entries tie to them — locked) · switch-pods ↔ the two switch guides link to each other in
+  <main> (seo-auditor) · breadcrumb name = shortName vs H1 labelTh (all categories) · ItemList on category pages (none has one).
+  Known limit: a category has no zh field — zh shows its English name/lede (every category).
   NEXT (pages not frozen): Caliburn G4 Pro vs G5 + G5 Lite vs Lite SE wait (G5 / G5 Lite = watch row 3) → §9.7 row 9 heads (seo-auditor
   reads the paper set first) → "พอต 15k คือ" → open-system-vs-disposable / disposable-vs-switch-pod FAQs (§9.4 word "มาโบ" rule) →
   second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
