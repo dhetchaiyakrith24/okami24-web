@@ -616,7 +616,10 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Coil-38-4": "Coil-38-4",
   } },
   "coil-53": { parent: "Coil-53", options: {
+    // Round list19 (19/10): Max 0.8Ω and 1.2Ω (both "ไม่มีของ" 17/10).
+    "Coil-53-1": "Coil-53-1",
     "Coil-53-2": "Coil-53-2",
+    "Coil-53-3": "Coil-53-3",
   } },
   "coil-55": { parent: "Coil-55-1", product: "Coil-55-1" },
   "coil-56": { parent: null, options: {
@@ -759,6 +762,14 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-169-27": "Pod-169-27",
     "Pod-169-28": "Pod-169-28",
   } },
+  // Round list19 (19/10): Reswa Sportcan 12K — the 5 Max flavour rows (Max parent "Product 1129596").
+  "pod-142": { parent: "Product 1129596", options: {
+    "Pod-142-1": "Pod-142-1",
+    "Pod-142-2": "Pod-142-2",
+    "Pod-142-3": "Pod-142-3",
+    "Pod-142-4": "Pod-142-4",
+    "Pod-142-5": "Pod-142-5",
+  } },
   // Round list19 (19/10): Nexswitch 16K kit (device + one pod) — Max Pod-161-* under Max parent "Product 1176446".
   "nexswitch-16k-kit": { parent: "Product 1176446", options: {
     "Pod-161-1": "Pod-161-1",
@@ -771,6 +782,19 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-161-8": "Pod-161-8",
     "Pod-161-9": "Pod-161-9",
     "Pod-161-10": "Pod-161-10",
+  } },
+  // Round list19 (19/10): Nexswitch 16K refill pod — Max Pod-162-* under Max parent "Product 1176446".
+  "nexswitch-16k-pod": { parent: "Product 1176446", options: {
+    "Pod-162-1": "Pod-162-1",
+    "Pod-162-2": "Pod-162-2",
+    "Pod-162-3": "Pod-162-3",
+    "Pod-162-4": "Pod-162-4",
+    "Pod-162-5": "Pod-162-5",
+    "Pod-162-6": "Pod-162-6",
+    "Pod-162-7": "Pod-162-7",
+    "Pod-162-8": "Pod-162-8",
+    "Pod-162-9": "Pod-162-9",
+    "Pod-162-10": "Pod-162-10",
   } },
   // Round list19 (19/10): RELX LUMI 18K — the 16 Max flavour rows (Disposable-44-11 Sea Salt Lemon Candy sold out on 13/10).
   // Round p63 (19/10): ESKO BAR 20000 — the 22 Max flavour rows (every one "ไม่มีของ" in the Max list of 17/10).

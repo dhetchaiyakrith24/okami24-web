@@ -105,7 +105,7 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // "1.0 ohm" — an exact match to this record's own active variant. Kept as categoryId
   // "coils-accessories"/systemType "coil" (unchanged) — the resolution is about the resistance
   // value's identity, not the product type.
-  "Coil-53": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn" (UWELL CALIBURN family) + Shipnity "Coil-" prefix; active variant (1.0Ω) is the real UWELL "Caliburn G" replacement-coil resistance, documented as Caliburn G2-compatible on myuwell.com\'s own G2 page and confirmed by Giant Vapes\' "Caliburn G Replacement Coils" (0.8Ω/1.0Ω) listing' },
+  "Coil-53": { brandId: "uwell", familyId: "caliburn", categoryId: "coils-accessories", systemType: "coil", evidence: 'name contains "Caliburn" (UWELL CALIBURN family) + Shipnity "Coil-" prefix; Max children 0.8Ω / 1.0Ω / 1.2Ω = UWELL\'s "CALIBURN G series\' coils" (myuwell.com/caliburn/caliburn-gk2, 19/10: "CALIBURN G2 1.2Ω mesh coil, CALIBURN G 0.8Ω mesh coil, and CALIBURN G 1.0Ω coil"; the G2 page lists its coils as UN2 Meshed-H 1.2Ω and 0.8Ω)' },
   // Correction (this session) — resolves the Phase 3.4 "Coil-55 vs Coil-53" deferral below (kept
   // for history). "หัวแทงค์" (tank-head) is NOT the coil: 10+ independent retailers consistently
   // describe "UWELL Caliburn G2 Empty Replacement Pod" as a real, distinct product — the
@@ -248,6 +248,10 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // Round list19 (18/10): Max-only record (Max "Product 780" "KS Quik Pro 15000 คำ") = the Kardinal Quikpro device sold with one
   // cartridge; its Max options are the cartridge flavour of the bundle (kardinal.com/products/quikpro).
   "KS-QUIKPRO-KIT": { brandId: "kardinal-stick", categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "KS Quik Pro 15000 คำ" with options "เครื่อง + หัว <flavour>" (device + one cartridge) = Kardinal Quikpro, kardinal.com/products/quikpro (official): device + 15ml cartridge, up to 15,000 puffs' },
+  // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): Reswa Sportcan 12000 — old seed Pod-142 = Max "Product 1129596" (children Pod-142-*).
+  // The can prints "SPORTCAN BY RESWA", but no Reswa maker site was found → sold without a brand, warehouse facts only (as Pop Up 10K).
+  // The hidden legacy entry reswa-sportcan-12k (src/data/products/unbranded.ts, 3 flavours, banner-crop photos) stays hidden.
+  "Pod-142": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "Reswa Sportcan 12000 Puffs" (Max parent "Product 1129596", old seed Pod-142) with 5 flavour children (฿229); the can prints "SPORTCAN BY RESWA"; no maker site found 18-19/10 — listed on warehouse facts only, without a brand' },
   // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): Nexswitch 16000 — one Max parent ("Product 1176446") holding the kit (device + one
   // pod, ฿419, Pod-161-*) and the refill pod (฿269, Pod-162-*) → two records. The device and pods print SNOWWOLF, but no maker page
   // was found (researcher 18/10: snowwolf has no "nex Switch" page) → sold without a brand, warehouse facts only (same as Pop Up 10K).
@@ -462,8 +466,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // TAXONOMY_MATCHES["Coil-53"]. Worded to state the real product (Caliburn G, 1.0Ω) plus the
   // actual compatibility fact (G2), never a native-G2-coil claim.
   "Coil-53": {
-    tagline: "คอยล์ Caliburn G 1.0 โอห์ม จากแบรนด์ UWELL ใช้ได้กับ Caliburn G2",
-    shortDescription: "คอยล์ Caliburn G 1.0 โอห์ม จากแบรนด์ UWELL ใช้ได้กับ Caliburn G และ Caliburn G2",
+    // Round list19 (19/10): Max sells three values under "Coil Caliburn G2" — UWELL names all three "CALIBURN G series' coils"
+    // (GK2 page): 1.2Ω = CALIBURN G2 coil, 0.8Ω and 1.0Ω = CALIBURN G coils. The old "1.0Ω works with G2" line cited the G2
+    // page, which no longer says so (19/10) → dropped.
+    tagline: "คอยล์ UWELL ตระกูล Caliburn G มีให้เลือก 0.8, 1.0 และ 1.2 โอห์ม",
+    shortDescription: "คอยล์ UWELL ตระกูล Caliburn G ร้านมีให้เลือก 3 ค่า ได้แก่ 0.8 โอห์ม 1.0 โอห์ม และ 1.2 โอห์ม (คอยล์ Caliburn G2) เครื่อง Caliburn GK2 ใช้ได้ทั้ง 3 ค่า",
   },
   // New this session — resolves the Phase 3.4 deferral. Worded distinctly from Coil-53 ("คอยล์"
   // = coil vs "พอตเปล่า" = empty pod) on purpose: these are two genuinely different real products
@@ -564,6 +571,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     // Round list19 (18/10): warehouse facts only (owner ruling) — the Max name "SKE Crystal B20000 Puffs" and its 8 flavours.
     tagline: "พอตใช้แล้วทิ้ง SKE Crystal B20000",
     shortDescription: "พอตใช้แล้วทิ้ง SKE Crystal B20000 ชื่อรุ่นระบุ 20,000 พัฟ ร้านมีให้เลือก 8 กลิ่น",
+  },
+  "Pod-142": {
+    // Round list19 (19/10): warehouse facts only — the Max name "Reswa Sportcan 12000 Puffs".
+    tagline: "พอตใช้แล้วทิ้ง Reswa Sportcan 12K",
+    shortDescription: "พอตใช้แล้วทิ้ง Reswa Sportcan ทรงกระป๋อง ชื่อรุ่นระบุ 12,000 พัฟ ร้านมีให้เลือก 5 กลิ่น",
   },
   "NEXSWITCH-16K-KIT": {
     // Round list19 (19/10): warehouse facts only — Max sells the device with one pod ("เครื่อง + หัวพอต"); the pod prints "16K POD".
@@ -768,6 +780,19 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/",
     },
   ],
+  // Round list19 (19/10): Reswa Sportcan 12K — OKami24 re-shoots of the shop's flavour posters; card = Ice Cola (in stock).
+  "Pod-142": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/pod-142/card.webp",
+      alt: "Reswa Sportcan 12K disposable, Ice Cola, studio photo",
+      angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's Reswa Sportcan flavour poster. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster",
+      sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/",
+    },
+  ],
   // Round list19 (19/10): RELX LUMI 18K — no maker image; card = OKami24 re-shoot of RELX's LUMI poster (blue-mint device). The shop
   // posters do not tie a body colour to a flavour, so the 16 flavours show no per-flavour photo.
   "RELX-LUMI-18K": [
@@ -790,6 +815,19 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       src: "/assets/products/nexswitch-16k-kit/card.webp",
       alt: "Nexswitch 16K kit, Mixberry (blue), studio photo",
       angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's Nexswitch poster. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster",
+      sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/",
+    },
+  ],
+  // Round list19 (19/10): Nexswitch 16K refill pod — card = the Watermelon pod (the master body every pod photo shares).
+  "NEXSWITCH-16K-POD": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/nexswitch-16k-pod/card.webp",
+      alt: "Nexswitch 16K refill pod, Watermelon, studio photo",
+      angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's Nexswitch poster (the loose SNOWWOLF 16K pod). Source, prompt and check in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster",
       sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/",
@@ -1201,6 +1239,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: [],
   },
+  // Round list19 (19/10): warehouse facts only (no maker page) — the Max name "12000 Puffs".
+  "Pod-142": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 12,000", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
   // Round list19 (19/10): warehouse facts only (no maker page) — the Max name "16000 Puffs" and the pod's own print "16K POD".
   "NEXSWITCH-16K-KIT": {
     specifications: [
@@ -1371,10 +1416,11 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   },
   "Coil-53": {
     specifications: [
-      { key: "resistance", label: "ค่าโอห์ม", value: "1.0Ω", sourceStatus: "verified" },
-      { key: "compatible-devices", label: "ใช้ได้กับ", value: "Caliburn G / Caliburn G2", sourceStatus: "verified" },
+      { key: "resistance", label: "ค่าโอห์ม", value: "0.8Ω / 1.0Ω / 1.2Ω", sourceStatus: "verified" },
+      { key: "coil", label: "รุ่นคอยล์", value: "G 0.8Ω · G 1.0Ω · G2 1.2Ω", sourceStatus: "verified", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-gk2" },
+      { key: "compatible-devices", label: "ใช้ได้กับ", value: "GK2 (ทุกค่า) · G2 (0.8/1.2Ω)", sourceStatus: "verified" },
     ],
-    sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-g2", "https://giantvapes.com/products/uwell-caliburn-g-replacement-coils"],
+    sourceUrls: ["https://www.myuwell.com/caliburn/caliburn-gk2", "https://www.myuwell.com/caliburn/caliburn-g2"],
   },
   "Coil-89": {
     specifications: [
@@ -1552,6 +1598,14 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   "Pod-149": {
     "Pod-149-6": { kind: "official-photo", role: "detail", src: "/assets/products/pod-149/variant-pod-149-6.webp", alt: "SKE Crystal B20000 disposable, Thai Milk Green Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster", sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/" },
   },
+  // Round list19 (19/10): Reswa Sportcan 12K — one re-shoot per flavour poster (4 of 5). Red Bull shows the no-photo panel: its can
+  // carries another company's trademark (the Red Bull logo), so it is not reproduced (Friday's decision 18/10).
+  "Pod-142": {
+    "Pod-142-2": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-2.webp", alt: "Reswa Sportcan 12K disposable, Green Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
+    "Pod-142-3": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-3.webp", alt: "Reswa Sportcan 12K disposable, Oolong Tea, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
+    "Pod-142-4": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-4.webp", alt: "Reswa Sportcan 12K disposable, Ice Cola, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
+    "Pod-142-5": { kind: "official-photo", role: "detail", src: "/assets/products/pod-142/variant-pod-142-5.webp", alt: "Reswa Sportcan 12K disposable, Lemon Soda, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
+  },
   // Round list19 (19/10): Nexswitch 16K kit — the body colour follows the flavour (shop's colour grid); one master render, the other
   // nine recoloured to the grid's colour of that flavour (aiRender in the map).
   "NEXSWITCH-16K-KIT": {
@@ -1565,6 +1619,16 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Pod-161-8": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-8.webp", alt: "Nexswitch 16K kit, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
     "Pod-161-9": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-9.webp", alt: "Nexswitch 16K kit, Pink Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
     "Pod-161-10": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-kit/variant-pod-161-10.webp", alt: "Nexswitch 16K kit, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+  },
+  // Round list19 (19/10): Nexswitch 16K refill pod — one body (the Watermelon render) for every flavour, each label moved onto it
+  // from that flavour's own render (labellift.js). Grape Ice · Grape Lychee · Cola Lemon · Mint · Pink Berry = no-photo panel
+  // (Higgsfield's free window ended before their renders; the Grape Lychee render came out with a grey metal body).
+  "NEXSWITCH-16K-POD": {
+    "Pod-162-3": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-pod/variant-pod-162-3.webp", alt: "Nexswitch 16K refill pod, Mixberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-162-4": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-pod/variant-pod-162-4.webp", alt: "Nexswitch 16K refill pod, Strawberry Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-162-5": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-pod/variant-pod-162-5.webp", alt: "Nexswitch 16K refill pod, Mineral, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-162-6": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-pod/variant-pod-162-6.webp", alt: "Nexswitch 16K refill pod, Honeydew Melon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+    "Pod-162-10": { kind: "official-photo", role: "detail", src: "/assets/products/nexswitch-16k-pod/variant-pod-162-10.webp", alt: "Nexswitch 16K refill pod, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   },
   // Round list19 (18/10): Pop Up 10K — one re-shoot per flavour poster the shop has (14 of 18; Strawberry · Mixberry · Lime Soda ·
   // Guava Kiwi have no poster, they show the no-photo panel).
@@ -2158,6 +2222,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "Pod-150": { name: "KS Quikpro 15K Cartridge", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+  "Pod-142": { name: "Reswa Sportcan 12K", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
   "NEXSWITCH-16K-KIT": { name: "Nexswitch 16K Kit", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   "NEXSWITCH-16K-POD": { name: "Nexswitch 16K Pod", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   "RELX-LUMI-18K": { name: "RELX LUMI 18K", sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/" },

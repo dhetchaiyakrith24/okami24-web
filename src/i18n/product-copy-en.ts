@@ -25,7 +25,7 @@ import { thaiTypography } from "@/lib/thai-typography";
 export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "coil-1": { tagline: "Vinci coil by VOOPOO" },
   "coil-38": { tagline: "TPP coil by VOOPOO" },
-  "coil-53": { tagline: "Caliburn G coil (1.0Ω) by UWELL, works with Caliburn G2" },
+  "coil-53": { tagline: "UWELL Caliburn G-series coil, 0.8 / 1.0 / 1.2Ω" },
   "coil-55": { tagline: "Caliburn G2 empty pod by UWELL" },
   "coil-56": { tagline: "Voopoo PnP-X pod" },
   "coil-68": { tagline: "ITO-X pod by VOOPOO" },
@@ -46,7 +46,9 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "pod-149": { tagline: "SKE Crystal B20000 disposable" },
   "eliquid-1": { tagline: "Marbo Saltnic e-liquid, 30ml bottle" },
   "pod-154": { tagline: "Pop Up 10K refill pod" },
+  "pod-142": { tagline: "Reswa Sportcan 12K disposable" },
   "nexswitch-16k-kit": { tagline: "Nexswitch kit with one pod" },
+  "nexswitch-16k-pod": { tagline: "Nexswitch 16K refill pod" },
   "relx-lumi-18k": { tagline: "RELX LUMI 18K disposable" },
   "esko-bar-20k": { tagline: "ESKO BAR 20000-puff disposable, 600mAh, 18ml" },
   "pod-169": { tagline: "INFY PLUS prefilled pod cartridge, 2.5ml" },

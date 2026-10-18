@@ -9406,5 +9406,137 @@
    "reference": "pod789.com Nexswitch colour grid (10 kits) + per-flavour posters - _incoming/img-1610/masters/src/pod-161, crops masters/in/nex/kit-*.png · page https://pod789.com/product/nex-switch-snowwolf-16k/",
    "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexkit.jpg (each recolour beside the shop's grid crop of the same flavour) - body + frame colour per flavour, wolf badge, screen display, fingerprint button checked by eye"
   }
+ },
+ {
+  "source": "_incoming/list19/reswa/icecola.png",
+  "slug": "pod-142",
+  "role": "card",
+  "note": "round list19 19/10 - card = the Ice Cola re-shoot (in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the shop's flavour poster as the only image (prompt _incoming/img-1610/list19/hf/prompts-d.md RESWA); keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=8) + cutfloor.js, the black base rebuilt from the can's straight sides with an elliptical bottom measured on the render (canbase.js via reswakey.sh) - copies beside this source",
+   "reference": "ihavevape.net Reswa Sportcan flavour poster (Ice Cola) - _incoming/img-1610/masters/src/pod-142 · page https://ihavevape.net/product/res-wa-sport-can-12000-puffs/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-reswa.jpg (poster beside each keyed render) - SPORT can logo, SPORTCAN BY RESWA, vertical flavour name, window print, round logo mark, flip cap checked by eye"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/reswa/greentea.png",
+  "slug": "pod-142",
+  "role": "variant",
+  "id": "pod-142-2",
+  "note": "round list19 19/10 - Green Tea (Max Pod-142-2)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the shop's flavour poster as the only image (prompt _incoming/img-1610/list19/hf/prompts-d.md RESWA); keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=8) + cutfloor.js, the black base rebuilt from the can's straight sides with an elliptical bottom measured on the render (canbase.js via reswakey.sh) - copies beside this source",
+   "reference": "ihavevape.net Reswa Sportcan flavour poster (Green Tea) - _incoming/img-1610/masters/src/pod-142 · page https://ihavevape.net/product/res-wa-sport-can-12000-puffs/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-reswa.jpg (poster beside each keyed render) - SPORT can logo, SPORTCAN BY RESWA, vertical flavour name, window print, round logo mark, flip cap checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/reswa/oolongtea.png",
+  "slug": "pod-142",
+  "role": "variant",
+  "id": "pod-142-3",
+  "note": "round list19 19/10 - Oolong Tea (Max Pod-142-3)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the shop's flavour poster as the only image (prompt _incoming/img-1610/list19/hf/prompts-d.md RESWA); keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=8) + cutfloor.js, the black base rebuilt from the can's straight sides with an elliptical bottom measured on the render (canbase.js via reswakey.sh) - copies beside this source",
+   "reference": "ihavevape.net Reswa Sportcan flavour poster (Oolong Tea) - _incoming/img-1610/masters/src/pod-142 · page https://ihavevape.net/product/res-wa-sport-can-12000-puffs/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-reswa.jpg (poster beside each keyed render) - SPORT can logo, SPORTCAN BY RESWA, vertical flavour name, window print, round logo mark, flip cap checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/reswa/icecola.png",
+  "slug": "pod-142",
+  "role": "variant",
+  "id": "pod-142-4",
+  "note": "round list19 19/10 - Ice Cola (Max Pod-142-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the shop's flavour poster as the only image (prompt _incoming/img-1610/list19/hf/prompts-d.md RESWA); keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=8) + cutfloor.js, the black base rebuilt from the can's straight sides with an elliptical bottom measured on the render (canbase.js via reswakey.sh) - copies beside this source",
+   "reference": "ihavevape.net Reswa Sportcan flavour poster (Ice Cola) - _incoming/img-1610/masters/src/pod-142 · page https://ihavevape.net/product/res-wa-sport-can-12000-puffs/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-reswa.jpg (poster beside each keyed render) - SPORT can logo, SPORTCAN BY RESWA, vertical flavour name, window print, round logo mark, flip cap checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/reswa/lemonsoda.png",
+  "slug": "pod-142",
+  "role": "variant",
+  "id": "pod-142-5",
+  "note": "round list19 19/10 - Lemon Soda (Max Pod-142-5)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits), studio re-shoot with the shop's flavour poster as the only image (prompt _incoming/img-1610/list19/hf/prompts-d.md RESWA); keyed off the charcoal sweep by img-1610 b17/floodkey.js (T=8) + cutfloor.js, the black base rebuilt from the can's straight sides with an elliptical bottom measured on the render (canbase.js via reswakey.sh) - copies beside this source",
+   "reference": "ihavevape.net Reswa Sportcan flavour poster (Lemon Soda) - _incoming/img-1610/masters/src/pod-142 · page https://ihavevape.net/product/res-wa-sport-can-12000-puffs/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-reswa.jpg (poster beside each keyed render) - SPORT can logo, SPORTCAN BY RESWA, vertical flavour name, window print, round logo mark, flip cap checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/nexpod/pod-watermelon.png",
+  "slug": "nexswitch-16k-pod",
+  "role": "card",
+  "note": "round list19 19/10 - card = the Watermelon pod (the shared body)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): one render per flavour of the loose SNOWWOLF 16K pod in the shop poster (prompt NEXPOD, _incoming/img-1610/list19/hf/prompts-d.md + this chat), on a mid-grey sweep. ONE body for every flavour = the Watermelon render; each flavour label moved onto it from its own render by labellift.js (ring bbox -> ring bbox; backgrounds = blur(erode) of the black body, marks lifted and added); keyed by polykey.js (quadratic backdrop model, T=14) + cutfloor.js + basecut.js (maxY 1882) + roundbase.js (R 70); the Watermelon alpha applied to every flavour (applyalpha.js) - tools beside this source",
+   "reference": "pod789.com Nexswitch per-flavour posters (the loose pod at lower right) - _incoming/img-1610/masters/src/pod-161 · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexpod.jpg - label text, fruit picture and SNOWWOLF / 16K POD rings checked by eye against each poster"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/nexpod/pod-mixberry.png",
+  "slug": "nexswitch-16k-pod",
+  "role": "variant",
+  "id": "pod-162-3",
+  "note": "round list19 19/10 - Mixberry pod (Max Pod-162-3)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): one render per flavour of the loose SNOWWOLF 16K pod in the shop poster (prompt NEXPOD, _incoming/img-1610/list19/hf/prompts-d.md + this chat), on a mid-grey sweep. ONE body for every flavour = the Watermelon render; each flavour label moved onto it from its own render by labellift.js (ring bbox -> ring bbox; backgrounds = blur(erode) of the black body, marks lifted and added); keyed by polykey.js (quadratic backdrop model, T=14) + cutfloor.js + basecut.js (maxY 1882) + roundbase.js (R 70); the Watermelon alpha applied to every flavour (applyalpha.js) - tools beside this source",
+   "reference": "pod789.com Nexswitch per-flavour posters (the loose pod at lower right) - _incoming/img-1610/masters/src/pod-161 · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexpod.jpg - label text, fruit picture and SNOWWOLF / 16K POD rings checked by eye against each poster"
+  }
+ },
+ {
+  "source": "_incoming/list19/nexpod/pod-strawberry-watermelon.png",
+  "slug": "nexswitch-16k-pod",
+  "role": "variant",
+  "id": "pod-162-4",
+  "note": "round list19 19/10 - Strawberry Watermelon pod (Max Pod-162-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): one render per flavour of the loose SNOWWOLF 16K pod in the shop poster (prompt NEXPOD, _incoming/img-1610/list19/hf/prompts-d.md + this chat), on a mid-grey sweep. ONE body for every flavour = the Watermelon render; each flavour label moved onto it from its own render by labellift.js (ring bbox -> ring bbox; backgrounds = blur(erode) of the black body, marks lifted and added); keyed by polykey.js (quadratic backdrop model, T=14) + cutfloor.js + basecut.js (maxY 1882) + roundbase.js (R 70); the Watermelon alpha applied to every flavour (applyalpha.js) - tools beside this source",
+   "reference": "pod789.com Nexswitch per-flavour posters (the loose pod at lower right) - _incoming/img-1610/masters/src/pod-161 · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexpod.jpg - label text, fruit picture and SNOWWOLF / 16K POD rings checked by eye against each poster"
+  }
+ },
+ {
+  "source": "_incoming/list19/nexpod/pod-mineral.png",
+  "slug": "nexswitch-16k-pod",
+  "role": "variant",
+  "id": "pod-162-5",
+  "note": "round list19 19/10 - Mineral pod (Max Pod-162-5)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): one render per flavour of the loose SNOWWOLF 16K pod in the shop poster (prompt NEXPOD, _incoming/img-1610/list19/hf/prompts-d.md + this chat), on a mid-grey sweep. ONE body for every flavour = the Watermelon render; each flavour label moved onto it from its own render by labellift.js (ring bbox -> ring bbox; backgrounds = blur(erode) of the black body, marks lifted and added); keyed by polykey.js (quadratic backdrop model, T=14) + cutfloor.js + basecut.js (maxY 1882) + roundbase.js (R 70); the Watermelon alpha applied to every flavour (applyalpha.js) - tools beside this source",
+   "reference": "pod789.com Nexswitch per-flavour posters (the loose pod at lower right) - _incoming/img-1610/masters/src/pod-161 · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexpod.jpg - label text, fruit picture and SNOWWOLF / 16K POD rings checked by eye against each poster"
+  }
+ },
+ {
+  "source": "_incoming/list19/nexpod/pod-honeydew-melon.png",
+  "slug": "nexswitch-16k-pod",
+  "role": "variant",
+  "id": "pod-162-6",
+  "note": "round list19 19/10 - Honeydew Melon pod (Max Pod-162-6)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): one render per flavour of the loose SNOWWOLF 16K pod in the shop poster (prompt NEXPOD, _incoming/img-1610/list19/hf/prompts-d.md + this chat), on a mid-grey sweep. ONE body for every flavour = the Watermelon render; each flavour label moved onto it from its own render by labellift.js (ring bbox -> ring bbox; backgrounds = blur(erode) of the black body, marks lifted and added); keyed by polykey.js (quadratic backdrop model, T=14) + cutfloor.js + basecut.js (maxY 1882) + roundbase.js (R 70); the Watermelon alpha applied to every flavour (applyalpha.js) - tools beside this source",
+   "reference": "pod789.com Nexswitch per-flavour posters (the loose pod at lower right) - _incoming/img-1610/masters/src/pod-161 · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexpod.jpg - label text, fruit picture and SNOWWOLF / 16K POD rings checked by eye against each poster"
+  }
+ },
+ {
+  "source": "_incoming/list19/nexpod/pod-watermelon.png",
+  "slug": "nexswitch-16k-pod",
+  "role": "variant",
+  "id": "pod-162-10",
+  "note": "round list19 19/10 - Watermelon pod (Max Pod-162-10)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 3:4 (web app through Chrome, Unlimited plan 16-19/10 - no credits): one render per flavour of the loose SNOWWOLF 16K pod in the shop poster (prompt NEXPOD, _incoming/img-1610/list19/hf/prompts-d.md + this chat), on a mid-grey sweep. ONE body for every flavour = the Watermelon render; each flavour label moved onto it from its own render by labellift.js (ring bbox -> ring bbox; backgrounds = blur(erode) of the black body, marks lifted and added); keyed by polykey.js (quadratic backdrop model, T=14) + cutfloor.js + basecut.js (maxY 1882) + roundbase.js (R 70); the Watermelon alpha applied to every flavour (applyalpha.js) - tools beside this source",
+   "reference": "pod789.com Nexswitch per-flavour posters (the loose pod at lower right) - _incoming/img-1610/masters/src/pod-161 · page https://pod789.com/product/nex-switch-snowwolf-16k/",
+   "fidelitySheet": "_incoming/img-1610/list19/hf/sheet-nexpod.jpg - label text, fruit picture and SNOWWOLF / 16K POD rings checked by eye against each poster"
+  }
  }
 ]
