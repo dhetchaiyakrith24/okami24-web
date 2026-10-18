@@ -85,7 +85,7 @@ export const en: Dictionary = {
     mBarP2:
       "It's rechargeable over USB-C rather than single-use, positioning it between a traditional disposable and a reusable switch-style device.",
     mBarCta: "Browse disposables",
-    voopooTitle: "Pod Kits & Pod Mods",
+    voopooTitle: "VOOPOO pod systems",
     voopooDescription: "From the ultra-light VMATE i3 to the 220W DRAG 6 — ARGUS, DRAG, VINCI, and V series in one lineup.",
     flavorTitle: "Five flavor families, one editorial map.",
     flavorDescription:

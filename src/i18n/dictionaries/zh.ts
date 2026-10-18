@@ -82,7 +82,7 @@ export const zh: Dictionary = {
     mBarP1: "M Bar 10K 不像多数一次性烟具只有单一固定输出，而是提供 Eco、Soft、Boost 三种可切换的功率模式——双击切换，并通过 RGB 指示灯显示。",
     mBarP2: "它支持 USB-C 充电而非用完即弃，介于传统一次性烟具与可重复使用的换弹式设备之间。",
     mBarCta: "浏览一次性烟具",
-    voopooTitle: "Pod Kit 与 Pod Mod",
+    voopooTitle: "VOOPOO 系列烟弹系统",
     voopooDescription: "从超轻的 VMATE i3 到 220W 的 DRAG 6——ARGUS、DRAG、VINCI 与 V 系列尽在一处。",
     flavorTitle: "五大口味家族，一份口味指南。",
     flavorDescription: "这不是瓶装烟油的产品目录，而是一份口味指南：告诉你每个口味家族实际尝起来是什么样，让你在购买前就知道自己在选什么。",
