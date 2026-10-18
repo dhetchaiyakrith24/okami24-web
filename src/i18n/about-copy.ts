@@ -73,9 +73,9 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     who: "OKami24 (ย่อว่า OKM) ขายพอตซิสเต็ม พอตใช้แล้วทิ้ง และน้ำยาของแท้จากแบรนด์ที่เรามั่นใจ ตั้งราคาตรง ๆ ไม่ปั่นราคา ทักมาแล้วแอดมินตอบเอง ไม่ใช่บอท",
     selectionTitle: "สินค้าที่เราคัดสรร",
     selection: {
-      beforeCount: "เว็บนี้รวมพอตซิสเต็ม พอตคิท พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS จาก ",
+      beforeCount: "เว็บนี้รวมพอตซิสเต็ม พอตเปลี่ยนหัว พอตใช้แล้วทิ้ง หัวพอต คอยล์ และ IQOS จาก ",
       afterCount:
-        " แบรนด์ที่เราคัดมา เช่น UWELL VOOPOO SALTHUB มีหน้าเปรียบเทียบและตัวช่วยเลือกสินค้าไว้ช่วยหารุ่นที่เหมาะกับคุณ สเปกบนหน้าสินค้ามาจากข้อมูลของผู้ผลิตเป็นหลัก ทั้งเว็บทางการ โปสเตอร์ และคู่มือ ทุกค่าเช็คที่มาก่อนขึ้นหน้าเว็บ",
+        " แบรนด์ที่เราคัดมา เช่น UWELL VOOPOO SALTHUB มีหน้าเปรียบเทียบและตัวช่วยเลือกรุ่นที่เหมาะกับคุณ สเปกบนหน้าสินค้ามาจากข้อมูลของผู้ผลิตเป็นหลัก ทั้งเว็บทางการ โปสเตอร์ และคู่มือ ทุกค่าเช็คที่มาก่อนขึ้นหน้าเว็บ",
     },
     afterSaleTitle: "บริการหลังการขาย",
     afterSale:
@@ -102,7 +102,7 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     who: "OKami24 (OKM for short) sells genuine pod systems, disposables and e-liquid from brands we trust. The price you see is the price we charge — no games. Message us and the admin replies, not a bot.",
     selectionTitle: "The products we’ve selected",
     selection: {
-      beforeCount: "This site brings together pod systems, pod kits, disposables, replacement pods, coils and IQOS from ",
+      beforeCount: "This site brings together pod systems, switch pods, disposables, replacement pods, coils and IQOS from ",
       afterCount:
         " brands we’ve picked — UWELL, VOOPOO and SALTHUB among them. A compare page and the Finder help you land on the model that fits you. The specs on a product page come mainly from the maker’s own material — its official site, posters and manuals — and every value’s source is checked before it goes on the page.",
     },
@@ -134,7 +134,7 @@ export const ABOUT: ServiceCopy<AboutCopy> = {
     selection: {
       beforeCount: "本站汇集了来自我们精选的 ",
       afterCount:
-        " 个品牌的烟弹系统、烟弹套装、一次性烟具、更换烟弹、芯和 IQOS，例如 UWELL、VOOPOO、SALTHUB。站内有对比页和选购助手，帮你找到适合自己的型号。产品页上的参数主要来自厂商自己的资料，包括官网、海报和说明书；每一项参数上架前都核对过来源。",
+        " 个品牌的烟弹系统、换弹式设备、一次性烟具、更换烟弹、芯和 IQOS，例如 UWELL、VOOPOO、SALTHUB。站内有对比页和选购助手，帮你找到适合自己的型号。产品页上的参数主要来自厂商自己的资料，包括官网、海报和说明书；每一项参数上架前都核对过来源。",
     },
     afterSaleTitle: "售后服务",
     afterSale: "商品如有问题，可在收货后 7 天内申请售后。必须提供开箱视频，没有视频我们无法受理。全部条件见售后政策页面。",

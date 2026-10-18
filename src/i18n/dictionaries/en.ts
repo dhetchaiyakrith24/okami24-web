@@ -58,7 +58,7 @@ export const en: Dictionary = {
     headingLine2: "Genuine.",
     headingAccent: "Documented.",
     description:
-      "Most people call it an e-cigarette; we call it a pod. Pod systems, pod kits and disposables — real specs on every model, so you can compare before you decide. Ask or order on LINE @okm24.",
+      "Most people call it an e-cigarette; we call it a pod. Pod systems, switch pods and disposables — real specs on every model, so you can compare before you decide. Ask or order on LINE @okm24.",
     ctaPrimary: "Explore the catalog",
     ctaSecondary: "Take the Finder",
     statProducts: "Products",
@@ -85,7 +85,7 @@ export const en: Dictionary = {
     mBarP2:
       "It's rechargeable over USB-C rather than single-use, positioning it between a traditional disposable and a reusable switch-style device.",
     mBarCta: "Browse disposables",
-    voopooTitle: "Pod Kits & Pod Mods",
+    voopooTitle: "VOOPOO pod systems",
     voopooDescription: "From the ultra-light VMATE i3 to the 220W DRAG 6 — ARGUS, DRAG, VINCI, and V series in one lineup.",
     flavorTitle: "Five flavor families, one editorial map.",
     flavorDescription:
@@ -241,7 +241,7 @@ export const en: Dictionary = {
   },
   compare: {
     metaTitle: "Compare",
-    metaDescription: "Compare up to four pod systems, pod kits, or disposables side by side — verified, shared attributes only.",
+    metaDescription: "Compare up to four pod systems, switch pods, or disposables side by side — verified, shared attributes only.",
     pageTitle: "Compare Devices",
     pageDescription:
       "Pick two to four products. Only attributes shared and independently verified across every selected device are shown as specifications — differences are highlighted.",

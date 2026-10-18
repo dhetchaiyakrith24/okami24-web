@@ -156,7 +156,7 @@ export const wotofoProducts: Product[] = [
     slug: "nexpod-15k",
     brandId: "wotofo",
     familyId: "wotofo-nexpod",
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     systemType: "pod-kit",
     name: "WOTOFO nexPOD 15K Pro Kit",
     displayName: "WOTOFO nexPOD 15K Pro Kit",

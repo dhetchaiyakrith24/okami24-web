@@ -109,10 +109,10 @@ export function runCatalogSearchContractTests(): CatalogSearchContractResult[] {
   // "no e-liquid to fill" is not an answer to "e-liquid" (the reason description paragraphs are
   // kept out of the search text). Prefilled pods and coils may answer.
   {
-    const devices = new Set(["pod-systems", "pod-kits", "disposables", "heated-tobacco-devices"]);
+    const devices = new Set(["pod-systems", "switch-pods", "disposables", "heated-tobacco-devices"]);
     const got = all.filter((e) => queryScore("น้ำยา", e.text) > 0).map((e) => e.hit);
     const wrong = got.filter((h) => devices.has(h.categoryId)).map((h) => h.slug);
-    check(`"น้ำยา" returns no device (pod system / pod kit / disposable / HNB device)`, wrong.length === 0, wrong.length ? `devices returned: ${wrong.join(", ")}` : `returned ${got.length}: ${got.map((h) => h.slug).join(", ") || "nothing"}`);
+    check(`"น้ำยา" returns no device (pod system / switch pod / disposable / HNB device)`, wrong.length === 0, wrong.length ? `devices returned: ${wrong.join(", ")}` : `returned ${got.length}: ${got.map((h) => h.slug).join(", ") || "nothing"}`);
   }
 
   // ---- 3. Every alias finds exactly what its English term finds as a phrase ("m bar" as one

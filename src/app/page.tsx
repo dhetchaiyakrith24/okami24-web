@@ -113,7 +113,7 @@ export default function Home() {
         eyebrow="VOOPOO"
         title={<HomeText k="voopooTitle" />}
         description={<HomeText k="voopooDescription" />}
-        viewAllHref="/products/pod-kits"
+        viewAllHref="/products/pod-systems"
         products={voopooProducts}
       />
 

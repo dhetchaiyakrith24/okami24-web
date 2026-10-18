@@ -250,7 +250,7 @@ const allGuides: Guide[] = [
         heading: "Refill it yourself, or use a prefilled pod",
         paragraphs: [
           "A pod system uses bottled e-liquid you buy separately and fill yourself, so the flavor and nicotine strength are your choice.",
-          "On this site, [pod kits](/products/pod-kits) are reusable devices too, where you swap only the pod or coil: ARGUS and DRAG let you set the wattage, and switch-style devices like M Switch take prefilled pods with nothing to fill.",
+          "If you'd rather not fill anything but still want to keep the device, a [switch pod](/products/switch-pods) takes prefilled pods: when one runs out, you swap in a new pod, as with SALTHUB's M Switch.",
           "[Disposables](/products/disposables) are ready out of the box, with the e-liquid already inside, and most can be recharged until it runs out. What each format gains and gives up is in [Open-system vs. disposable](/guides/open-system-vs-disposable).",
         ],
       },
@@ -271,8 +271,8 @@ const allGuides: Guide[] = [
     relatedProductSlugs: ["caliburn-g5", "caliburn-g5-lite", "coil-94"],
     faq: [
       {
-        question: "How is a pod system different from a pod kit?",
-        answer: "Both keep the device and swap only the pod or coil. On this site, pod systems are the devices you refill yourself and choose the resistance for, such as the Caliburn family; pod kits include ARGUS and DRAG, which let you set the wattage, and switch-style devices like M Switch that take prefilled pods.",
+        question: "How is a pod system different from a switch pod?",
+        answer: "Both let you keep the device; the difference is the pod. With a pod system you fill it with your own e-liquid and choose the resistance, as on the Caliburn family or VOOPOO's ARGUS and DRAG, some of which let you set the wattage. A switch pod takes prefilled pods instead: when one runs out you swap in a new one, with nothing to fill, as on SALTHUB's M Switch or the RELX Infinity 2 Plus.",
       },
       {
         question: "How is a pod system different from a disposable?",
@@ -1878,7 +1878,7 @@ const allGuides: Guide[] = [
       {
         heading: "หัวพอตแบบไหนเติมเองได้",
         paragraphs: [
-          "หัวพอตที่เติมเองได้คือหัวพอตของพอตซิสเต็ม อย่างหัวพอต GPP ของตระกูล Caliburn จาก UWELL รวมถึงพอตคิทที่ใช้หัวพอตแบบเติม อย่างสาย ARGUS กับ DRAG ดูรุ่นทั้งหมดได้ในหมวดพอตคิท",
+          "หัวพอตที่เติมเองได้คือหัวพอตของพอตซิสเต็ม อย่างหัวพอต GPP ของตระกูล Caliburn จาก UWELL รวมถึงพอตคิทที่ใช้หัวพอตแบบเติม อย่างสาย ARGUS กับ DRAG ดูรุ่นทั้งหมดได้ในหมวดพอตซิสเต็ม",
           "หัวพอตแบบเติมยังแบ่งตามตำแหน่งช่องเติมน้ำยาได้อีกสองแบบ คือเติมด้านบนกับเติมด้านข้าง หัวพอต GPP ของ UWELL มีทั้งสองแบบ และหัวที่มากับกล่องจะเป็นแบบไหน ขึ้นกับเวอร์ชันที่วางขาย อย่าง Caliburn G4 Pro เวอร์ชัน INT กับ FDA มากับหัวพอตเติมด้านข้าง ส่วนเวอร์ชัน TPD กับ CRC มากับหัวพอตเติมด้านบน ก่อนเติมจึงควรดูให้แน่ใจว่าช่องเติมของหัวที่อยู่ในมืออยู่ตรงไหน",
         ],
         image: SECTION_IMAGES.argusG4Fill,
@@ -1995,7 +1995,7 @@ const allGuides: Guide[] = [
         heading: "เปลี่ยนแค่หัวพอต หรือถึงเวลาเปลี่ยนเครื่อง",
         paragraphs: [
           "ถ้าปัญหาอยู่ที่รส ควัน หรือน้ำยารั่ว ลองเปลี่ยนหัวพอตหรือคอยล์ก่อน ตัวเครื่องยังใช้ต่อได้ หัวพอตสำหรับเปลี่ยนดูได้ในหมวด[หัวพอต](/products/pods-cartridges) และ[คอยล์และอุปกรณ์เสริม](/products/coils-accessories) เช็คให้ตรงรุ่นเครื่องก่อนทุกครั้ง",
-          "แต่ถ้าแบตหมดไวขึ้นจนไม่พอกับการใช้งานในแต่ละวัน แบตในตัวเปลี่ยนเองไม่ได้ ถึงจุดนั้นร้านแนะนำให้มองหาเครื่องใหม่ ดูรุ่นทั้งหมดได้ในหมวด[พอตซิสเต็ม](/products/pod-systems) และหมวดพอตคิท",
+          "แต่ถ้าแบตหมดไวขึ้นจนไม่พอกับการใช้งานในแต่ละวัน แบตในตัวเปลี่ยนเองไม่ได้ ถึงจุดนั้นร้านแนะนำให้มองหาเครื่องใหม่ ดูรุ่นทั้งหมดได้ในหมวด[พอตซิสเต็ม](/products/pod-systems) และ[พอตเปลี่ยนหัว](/products/switch-pods)",
           "ถ้ากำลังชั่งใจว่าจะใช้พอตซิสเต็มต่อ หรือเปลี่ยนไปใช้พอตใช้แล้วทิ้ง ข้อดีข้อเสียของแต่ละแบบอยู่ที่[พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม](/guides/open-system-vs-disposable) และพอตใช้แล้วทิ้งใช้ได้นานแค่ไหน อ่านที่[พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
         ],
       },
@@ -2224,7 +2224,7 @@ const allGuides: Guide[] = [
           "ถ้าอยากได้พัฟต่อหัวเยอะ ดู Esko Bar Switch 20K ที่ผู้ผลิตระบุไว้หัวละสูงสุด 20,000 พัฟ",
           "ถ้าอยากมีจอไว้ดูแบต ลองดู RELX Creator หรือ M Switch Kit ถ้าอยากปรับแรงสูบได้ ดู Zero Pro · Esko Bar Switch 20K หรือ RELX Creator",
           "ถ้าอยากได้เครื่องตัวเล็กไว้พกติดตัว ลองดู Zero Nano หรือ Zero Pro และถ้าใช้ M Bar อยู่แล้ว M Switch ก็เป็นของ SALTHUB เจ้าเดียวกัน",
-          "ราคาตัวเครื่องและหัวพอตของแต่ละรุ่นดูได้ที่หน้าสินค้าของรุ่นนั้น หรือดูรวมในหมวดพอตคิทกับหัวพอต",
+          "ราคาตัวเครื่องและหัวพอตของแต่ละรุ่นดูได้ที่หน้าสินค้าของรุ่นนั้น หรือดูรวมในหมวดพอตเปลี่ยนหัวกับหัวพอต",
           "ถ้าเครื่องดูดไม่ขึ้นหรือไฟกะพริบ ไล่เช็คได้ที่[พอตดูดไม่ขึ้น ไฟกะพริบ แก้ยังไง](/guides/fixing-no-draw-and-blinking-light)",
         ],
       },

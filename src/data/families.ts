@@ -15,7 +15,7 @@ export const families: ProductFamily[] = [
     id: "argus",
     slug: "argus",
     brandId: "voopoo",
-    categoryId: "pod-kits",
+    categoryId: "pod-systems",
     name: "ARGUS",
     tagline: "Multi-resistance pod kits built for everyday carry.",
     description:
@@ -25,7 +25,7 @@ export const families: ProductFamily[] = [
     id: "drag",
     slug: "drag",
     brandId: "voopoo",
-    categoryId: "pod-kits",
+    categoryId: "pod-systems",
     name: "DRAG",
     tagline: "VOOPOO's flagship, chip-driven pod mods.",
     description:
@@ -35,7 +35,7 @@ export const families: ProductFamily[] = [
     id: "vinci",
     slug: "vinci",
     brandId: "voopoo",
-    categoryId: "pod-kits",
+    categoryId: "pod-systems",
     name: "VINCI",
     tagline: "Balanced pod mods for daily flavor-chasing.",
     description:
@@ -45,7 +45,7 @@ export const families: ProductFamily[] = [
     id: "vmate",
     slug: "vmate",
     brandId: "voopoo",
-    categoryId: "pod-kits",
+    categoryId: "pod-systems",
     name: "VMATE",
     tagline: "Ultra-light pods for pure portability.",
     description:
@@ -65,7 +65,7 @@ export const families: ProductFamily[] = [
     id: "m-switch",
     slug: "m-switch",
     brandId: "salthub",
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     name: "M Switch",
     tagline: "A reusable body, swappable pre-filled cartridges.",
     description:
@@ -75,7 +75,7 @@ export const families: ProductFamily[] = [
     id: "zero",
     slug: "zero",
     brandId: "salthub",
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     name: "Zero",
     tagline: "Compact switch-style devices with adjustable output.",
     description:
@@ -107,7 +107,7 @@ export const families: ProductFamily[] = [
     id: "relx-infinity",
     slug: "relx-infinity",
     brandId: "relx",
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     name: "RELX Infinity",
     tagline: "A device you keep, prefilled pods you swap.",
     description:
@@ -118,7 +118,7 @@ export const families: ProductFamily[] = [
     id: "relx-creator",
     slug: "relx-creator",
     brandId: "relx",
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     name: "RELX Creator",
     tagline: "A device you keep, prefilled pods you swap.",
     description:
@@ -164,7 +164,7 @@ export const families: ProductFamily[] = [
     id: "wotofo-nexpod",
     slug: "wotofo-nexpod",
     brandId: "wotofo",
-    categoryId: "pod-kits",
+    categoryId: "switch-pods",
     name: "WOTOFO nexPOD",
     tagline: "WOTOFO's pod-swap line.",
     // Round p63 (18/10): a reusable device that takes prefilled nexPOD pods (wotofo.com nexPOD 15K pages).
