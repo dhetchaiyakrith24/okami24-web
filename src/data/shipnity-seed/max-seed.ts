@@ -3118,6 +3118,121 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
         "inStock": false
       }
     ]
+  },
+  "ESKO-BAR-SWITCH-POD": {
+    "maxParentId": "Pod-160",
+    "name": "หัวพอต Esko Bar Switch 20k",
+    "operationalSellingPrice": 349,
+    "children": [
+      {
+        "shipnityVariantId": "Pod-160-1",
+        "rawLabel": "Grape",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-2",
+        "rawLabel": "Cool Mint",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-3",
+        "rawLabel": "Watermelon Ice",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-4",
+        "rawLabel": "Cola",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-5",
+        "rawLabel": "Mix Berry",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-6",
+        "rawLabel": "Strawberry Banana",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-7",
+        "rawLabel": "Pink Guava",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-8",
+        "rawLabel": "Honeydew",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-9",
+        "rawLabel": "Apple Aloe",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-10",
+        "rawLabel": "Pineapple",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-11",
+        "rawLabel": "Lychee",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-12",
+        "rawLabel": "Blueberry",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-13",
+        "rawLabel": "Strawberry",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-14",
+        "rawLabel": "Yogurt",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-15",
+        "rawLabel": "Watermelon Lime",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-16",
+        "rawLabel": "Extra Menthol",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-17",
+        "rawLabel": "Mango",
+        "sellingPrice": 349,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-160-18",
+        "rawLabel": "Blueberry Jam",
+        "sellingPrice": 349,
+        "inStock": false
+      }
+    ]
   }
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD"];

@@ -895,6 +895,29 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "iqosheet-18-verified-leaf-green": "IQOSHEET-18-4",
     "iqosheet-18-verified-bold-ruby": null,
   } },
+  // Round list19 (19/10): ESKO BAR SWITCH 20K refill pod — Max Pod-160-1..18; the maker's 2 extra flavours are not in the warehouse.
+  "esko-bar-switch-pod": { parent: "Pod-160", options: {
+    "Pod-160-1": "Pod-160-1",
+    "Pod-160-2": "Pod-160-2",
+    "Pod-160-3": "Pod-160-3",
+    "Pod-160-4": "Pod-160-4",
+    "Pod-160-5": "Pod-160-5",
+    "Pod-160-6": "Pod-160-6",
+    "Pod-160-7": "Pod-160-7",
+    "Pod-160-8": "Pod-160-8",
+    "Pod-160-9": "Pod-160-9",
+    "Pod-160-10": "Pod-160-10",
+    "Pod-160-11": "Pod-160-11",
+    "Pod-160-12": "Pod-160-12",
+    "Pod-160-13": "Pod-160-13",
+    "Pod-160-14": "Pod-160-14",
+    "Pod-160-15": "Pod-160-15",
+    "Pod-160-16": null, // not in the 13/10 warehouse read (Max stock "?")
+    "Pod-160-17": null, // not in the 13/10 warehouse read (Max stock "?")
+    "Pod-160-18": null, // not in the 13/10 warehouse read (Max stock "?")
+    "esko-bar-switch-pod-verified-chocolate-mint": null,
+    "esko-bar-switch-pod-verified-coconut": null,
+  } },
   "pod-159": { parent: "Pod-159", options: {
     "Pod-159-2": "Pod-159-2",
     "Pod-159-4": "Pod-159-4",

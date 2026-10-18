@@ -261,6 +261,9 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // relxnow.com has no LUMI page (researcher 18/10) → warehouse facts only; the device prints RELX (shop posters, masters/src/disposable-44).
   "RELX-LUMI-18K": { brandId: "relx", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX parent "Disposable-44" "RELX LUMI 18k" with 16 flavour children (฿349); the device prints RELX (shop posters ihavevape.net/product/relx-lumi-18k); no LUMI page on relxnow.com 18/10 — listed on warehouse facts only' },
   // Round p63 (19/10, owner item 69 "ใส่ตามคลัง"): Esko Bar 20000 — Max-only record (Max "Pod-130" "Esko Bar 20000 Puffs", 22 flavours, ฿389).
+  // Round list19 (19/10, owner "list everything"): the refill pod of the ESKO BAR SWITCH (pod-159) — Max-only "Pod-160" "หัวพอต Esko Bar
+  // Switch 20k", 18 flavours; eskobarvape.com/product/pod-system/ (pod542) sells the pod with 20 flavours.
+  "ESKO-BAR-SWITCH-POD": { brandId: "esko-bar", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX parent "Pod-160" "หัวพอต Esko Bar Switch 20k" (18 flavours, ฿349) = the ESKO BAR SWITCH prefilled pod on eskobarvape.com/product/pod-system/ (pod542: up to 20,000 puffs per pod, 18ml, 20 flavours)' },
   // The maker sells it as "ESKO BAR 498 Disposable Vape | 20000 Puffs" (eskobarvape.com/product/eskobar: 20000 puffs, 600mAh, 18ml, 15 flavours).
   "ESKO-BAR-20K": { brandId: "esko-bar", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX parent "Pod-130" "Esko Bar 20000 Puffs" with 22 flavour children (฿389); ESKO BAR\'s own page https://eskobarvape.com/product/eskobar names the 20000-puff disposable "ESKO BAR 498" and lists 15 of the 22 flavours by the same names (the other 7 are warehouse-only children, kept as real options)' },
   // Round list19 (18/10, owner "ทำเลยครับทั้งหมด"): Pop Up 10K refill pod — no maker site found (Thai-market line), sold without a brand on
@@ -592,6 +595,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "พอตใช้แล้วทิ้ง RELX LUMI 18K",
     shortDescription: "พอตใช้แล้วทิ้ง RELX LUMI ชื่อรุ่นระบุ 18,000 พัฟ ร้านมีให้เลือก 16 กลิ่น",
   },
+  // Round list19 (19/10): numbers = the maker's pod542 page (per pod: up to 20,000 puffs, 18ml).
+  "ESKO-BAR-SWITCH-POD": {
+    tagline: "หัวพอต ESKO BAR SWITCH 20K",
+    shortDescription: "หัวพอตสำหรับเครื่อง ESKO BAR SWITCH หัวละสูงสุด 20,000 พัฟ ความจุ 18mL ร้านมีให้เลือก 20 กลิ่น",
+  },
   // Round p63 (19/10): numbers = the maker's spec block (https://eskobarvape.com/product/eskobar).
   "ESKO-BAR-20K": {
     tagline: "พอตใช้แล้วทิ้ง ESKO BAR 20000 พัฟ แบต 600mAh ความจุ 18ml", // not "น้ำยา": a tagline is search text (catalog-search test)
@@ -831,6 +839,20 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from the shop's Nexswitch poster",
       sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/",
+    },
+  ],
+  // Round list19 (19/10): ESKO BAR SWITCH pod card = the Cola pod (same file family as pod-159's pod photos: one master pod, the
+  // maker's flavour line re-typeset — image-fix round 2026-09-29).
+  "ESKO-BAR-SWITCH-POD": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/esko-bar-switch-pod/card.webp",
+      alt: "ESKO BAR SWITCH 20K prefilled pod, Cola",
+      angle: "Front — the pod photo already used for this flavour on the ESKO BAR SWITCH device page (pod-159). Source and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render from ESKO BAR's own pod photo",
+      sourceUrl: "https://eskobarvape.com/product/pod-system/",
     },
   ],
   // Round p63 (19/10): ESKO BAR's own transparent device render (498-6.png, the largest device-only file on the maker page).
@@ -1266,6 +1288,15 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: [],
   },
+  // Round list19 (19/10): ESKO BAR SWITCH pod — the maker's pod542 page (the pod's own numbers; battery/charging belong to the device).
+  "ESKO-BAR-SWITCH-POD": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "หัวละสูงสุด 20,000", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+      { key: "capacity", label: "ความจุหัวพอต", value: "18mL", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+      { key: "coil", label: "คอยล์", value: "คอยล์คู่ ทำงานพร้อมกัน", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    ],
+    sourceUrls: ["https://eskobarvape.com/product/pod-system/"],
+  },
   // Round p63 (19/10): ESKO BAR 498 spec block on the maker page. Charging: the page says "fast charging" but names no port or time.
   "ESKO-BAR-20K": {
     specifications: [
@@ -1696,6 +1727,29 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "pod-159-verified-yogurt": { kind: "official-photo", role: "detail", src: "/assets/products/pod-159/variant-yogurt.webp", alt: "ESKO BAR SWITCH prefilled pod, Yogurt", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   },
   // Round p63 (19/10): ESKO BAR 20000 — the maker's own flavour render for 15 of the 22 Max flavours (eskobarvape.com a..o.png,
+  // Round list19 (19/10): ESKO BAR SWITCH pod — every flavour has its pod photo (the pod-159 sources, one master pod).
+  "ESKO-BAR-SWITCH-POD": {
+    "Pod-160-1": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-grape.webp", alt: "ESKO BAR SWITCH prefilled pod, Grape", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-2": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-cool-mint.webp", alt: "ESKO BAR SWITCH prefilled pod, Cool Mint", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-3": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-watermelon-ice.webp", alt: "ESKO BAR SWITCH prefilled pod, Watermelon Ice", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-4": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-cola.webp", alt: "ESKO BAR SWITCH prefilled pod, Cola", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-5": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-mix-berry.webp", alt: "ESKO BAR SWITCH prefilled pod, Mix Berry", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-6": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-strawberry-banana.webp", alt: "ESKO BAR SWITCH prefilled pod, Strawberry Banana", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-7": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-pink-guava.webp", alt: "ESKO BAR SWITCH prefilled pod, Pink Guava", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-8": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-honeydew.webp", alt: "ESKO BAR SWITCH prefilled pod, Honeydew", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-9": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-apple-aloe.webp", alt: "ESKO BAR SWITCH prefilled pod, Apple Aloe", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-10": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-pineapple.webp", alt: "ESKO BAR SWITCH prefilled pod, Pineapple", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-11": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-lychee.webp", alt: "ESKO BAR SWITCH prefilled pod, Lychee", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-12": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-blueberry.webp", alt: "ESKO BAR SWITCH prefilled pod, Blueberry", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-13": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-strawberry.webp", alt: "ESKO BAR SWITCH prefilled pod, Strawberry", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-14": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-yogurt.webp", alt: "ESKO BAR SWITCH prefilled pod, Yogurt", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-15": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-watermelon-lime.webp", alt: "ESKO BAR SWITCH prefilled pod, Watermelon Lime", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-16": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-extra-menthol.webp", alt: "ESKO BAR SWITCH prefilled pod, Extra Menthol", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-17": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-mango.webp", alt: "ESKO BAR SWITCH prefilled pod, Mango", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "Pod-160-18": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-blueberry-jam.webp", alt: "ESKO BAR SWITCH prefilled pod, Blueberry Jam", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "esko-bar-switch-pod-verified-chocolate-mint": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-chocolate-mint.webp", alt: "ESKO BAR SWITCH prefilled pod, Chocolate Mint", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    "esko-bar-switch-pod-verified-coconut": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-coconut.webp", alt: "ESKO BAR SWITCH prefilled pod, Coconut", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+  },
   // each named in its alt text, e.g. "ESKO BAR 498 mixberry"). The 7 warehouse-only flavours have no maker image → no photo.
   "ESKO-BAR-20K": {
     "Pod-130-11": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-mixberry.webp", alt: "ESKO BAR 498 (20000 puffs), Mixberry, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
@@ -1946,6 +2000,11 @@ export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOpti
   // list follows the manufacturer page, which names 20 flavors (re-read in a real browser the same
   // day) — 2 active + these 18. Blueberry Jam, Chocolate Mint, Coconut, Extra Menthol and Mango are
   // back with the same non-purchasable status as the other flavors the shop does not stock.
+  // Round list19 (19/10): the refill pod — the maker's 20 flavours; these 2 are not in Max's 18 (Pod-160).
+  "ESKO-BAR-SWITCH-POD": [
+    { code: "chocolate-mint", label: "Chocolate Mint", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+    { code: "coconut", label: "Coconut", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
+  ],
   // All 20 have a per-flavour pod photo since 2026-09-29 (VERIFIED_VARIANT_MEDIA["Pod-159"]).
   "Pod-159": [
     { code: "apple-aloe", label: "Apple Aloe", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
@@ -2227,6 +2286,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "NEXSWITCH-16K-POD": { name: "Nexswitch 16K Pod", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   "RELX-LUMI-18K": { name: "RELX LUMI 18K", sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/" },
   "ESKO-BAR-20K": { name: "ESKO BAR 20000", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+  "ESKO-BAR-SWITCH-POD": { name: "ESKO BAR SWITCH 20K Pod", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   "Pod-169": { name: "INFY PLUS 2.5ML Cartridge", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },
 };
 
