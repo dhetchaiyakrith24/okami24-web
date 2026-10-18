@@ -249,6 +249,7 @@ export const PRODUCT_TITLE_HEAD_TH: Record<string, string> = {
   "coil-1": "คอยล์ VOOPOO Vinci สำหรับ VINCI Pod ของแท้",
   "coil-38": "คอยล์ VOOPOO TPP สำหรับ DRAG 3 ของแท้",
   "coil-53": "คอยล์ UWELL Caliburn G2 ของแท้",
+  "coil-92": "คอยล์ VOOPOO PnP X ของแท้",
   "coil-54": "หัวพอตเปล่า NEVOKS Feelin Mini ของแท้",
   "coil-55": "หัวพอตเปล่า UWELL Caliburn G2 ของแท้",
   "coil-56": "หัวพอตเปล่า VOOPOO PnP-X ของแท้",

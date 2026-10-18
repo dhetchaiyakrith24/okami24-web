@@ -9882,5 +9882,29 @@
   },
   "note": "round list19 19/10 - the pod-159 source for this flavour, reused for the refill-pod page (same pod)",
   "fileName": "variant-yogurt.webp"
+ },
+ {
+  "source": "_incoming/list19/pnpx/pnpx-015.png",
+  "slug": "coil-92",
+  "role": "card",
+  "note": "round list19 19/10 - PnP X 0.15Ω re-shoot (in stock) replaces the withdrawn retailer card",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop coil photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/c92-015-A.png; keyed by flood (b17/floodkey.js T=6 so the black O-rings stay), rows cut at the brass base (y 1900), O-ring rows bridged (gapfill.js WIN=60 Q=0.9), holes refilled (holefill.js), floor shadow under the flange cleared outside the brass-ring span, largest blob kept - copies beside this source",
+   "reference": "maneevp.com VOOPOO PnP X 0.15Ω coil photo 1000 px (https://maneevp.com/product/voopoo-pnp-x-coil/) - _incoming/img-1610/masters/src/coil-92 (index masters/src/index.json); VOOPOO own PNP-X-*-NEW.png carry the AIGC marker (rejected)",
+   "fidelitySheet": "_incoming/img-1610/list19/e/c92-dark.jpg - PnP X logo, etched 0.15Ω / 60-80W, cotton windows, O-rings, flange flat checked by eye against the shop photo"
+  },
+  "fileName": "card-v2.webp"
+ },
+ {
+  "source": "_incoming/list19/pnpx/pnpx-015.png",
+  "slug": "coil-92",
+  "role": "variant",
+  "id": "coil-92-1",
+  "note": "round list19 19/10 - PnP X 0.15Ω (Max Coil-92-1)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-19/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot with the shop coil photo as the only image (masters/in), prompt builder masters/SOURCE.md __M; render masters/out/c92-015-A.png; keyed by flood (b17/floodkey.js T=6 so the black O-rings stay), rows cut at the brass base (y 1900), O-ring rows bridged (gapfill.js WIN=60 Q=0.9), holes refilled (holefill.js), floor shadow under the flange cleared outside the brass-ring span, largest blob kept - copies beside this source",
+   "reference": "maneevp.com VOOPOO PnP X 0.15Ω coil photo 1000 px (https://maneevp.com/product/voopoo-pnp-x-coil/) - _incoming/img-1610/masters/src/coil-92 (index masters/src/index.json); VOOPOO own PNP-X-*-NEW.png carry the AIGC marker (rejected)",
+   "fidelitySheet": "_incoming/img-1610/list19/e/c92-dark.jpg - PnP X logo, etched 0.15Ω / 60-80W, cotton windows, O-rings, flange flat checked by eye against the shop photo"
+  }
  }
 ]
