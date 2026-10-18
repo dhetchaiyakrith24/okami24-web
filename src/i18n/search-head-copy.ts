@@ -362,6 +362,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "pod-154": "Pop Up 10K หัวพอต หัวละสูงสุด 10,000 พัฟ ใช้กับฐานแบตเตอรี่ของ Pop Up มีให้เลือก 18 กลิ่น",
   "pod-142": "Reswa Sportcan 12K พอตใช้แล้วทิ้งทรงกระป๋อง ชื่อรุ่นระบุ 12,000 พัฟ มีให้เลือก 5 กลิ่น",
   "nexswitch-16k-kit": "Nexswitch 16K ชุดเครื่องพร้อมหัวพอต 1 หัว หัวละสูงสุด 16,000 พัฟ มีให้เลือก 10 กลิ่น",
+  "nexswitch-16k-pod": "Nexswitch 16K หัวพอต หัวละสูงสุด 16,000 พัฟ ใช้กับตัวเครื่อง Nexswitch มีให้เลือก 10 กลิ่น",
   "relx-lumi-18k": "RELX LUMI 18K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 18,000 พัฟ มีให้เลือก 16 กลิ่น",
   // Round p63 (19/10): numbers = the maker's spec block (eskobarvape.com/product/eskobar).
   "esko-bar-20k": "ESKO BAR 20000 พอตใช้แล้วทิ้ง สูงสุด 20,000 พัฟ แบต 600mAh ชาร์จได้ น้ำยา 18ml คอยล์ mesh คู่ 1.0Ω มีให้เลือก 22 กลิ่น",
