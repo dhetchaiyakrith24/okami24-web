@@ -235,7 +235,7 @@ export const wotofoProducts: Product[] = [
       { id: "reuse", title: "Keep the device, swap the pod", description: "When a pod runs dry only the pod is replaced; the 1200mAh aluminium device is built to be used again." },
     ],
     compatibility: [{ type: "pod", label: "nexPOD 15K pods", note: "WOTOFO lists the nexPOD 15K Prefilled Pod and the nexPOD 15K Refillable Pod for this device." }],
-    whoIsThisFor: ["You searched for a 15K pod-swap device from WOTOFO and want what WOTOFO itself lists for the nexPOD 15K Pro Kit."],
+    whoIsThisFor: ["You're looking for a 15K pod-swap device from WOTOFO and want the full spec WOTOFO lists for the nexPOD 15K Pro Kit."],
     faqs: [],
     relatedProductSlugs: ["wotofo-nexbar-18k"],
     sourceUrls: [KIT_PAGE, DEVICE_PAGE, POD_PAGE],
