@@ -83,6 +83,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   still say "พอตคิท" (thai-typography.ts entries tie to them — locked) · switch-pods ↔ the two switch guides link to each other in
   <main> (seo-auditor) · breadcrumb name = shortName vs H1 labelTh (all categories) · ItemList on category pages (none has one).
   Known limit: a category has no zh field — zh shows its English name/lede (every category).
+  DONE 19/10 [ตรวจแล้ว curl 200]: #597 — choosing-a-switch-pod covers all 9 switch devices (was "สามยี่ห้อ") + category links +
+  FAQs "พอตเปลี่ยนหัว 15K" · "RELX Infinity 2 Plus ใช้หัวอะไร" · "พอตเปลี่ยนหัว ใช้ได้นานแค่ไหน" · "พอตซิสเต็มกับ Marbo" (th/en/zh).
+  Checked 19/10, nothing to do before 22/10: charging / burnt / blinking guides already carry the §9.4/§9.7 FAQ phrasings · IQOS
+  + Caliburn titles already carry the price · relx-creator already has "หัวพอตที่ทำมาคู่กัน" H2 + "ใช้กับหัวพอตรุ่นไหนได้บ้าง" FAQ.
+  So the unfrozen 3s queue is EMPTY until 22/10; what is left = the 22/10 read, the held titles/links/boxes above, FAQAccordion.
+  Line-break tool (19/10): measure candidate wording in the running page (Browser pane JS, Range rects per character, both widths)
+  before rebuilding — `_incoming/l2c/` in worktree seo-line2-c has the harness used for #597.
   NEXT (pages not frozen): Caliburn G4 Pro vs G5 + G5 Lite vs Lite SE wait (G5 / G5 Lite = watch row 3) → §9.7 row 9 heads (seo-auditor
   reads the paper set first) → "พอต 15k คือ" → open-system-vs-disposable / disposable-vs-switch-pod FAQs (§9.4 word "มาโบ" rule) →
   second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
