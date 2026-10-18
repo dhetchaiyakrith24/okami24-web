@@ -99,7 +99,7 @@ export function compatNoteTh(note: string | undefined): string | undefined {
  * edge, so each Thai note reads correctly on the device page and on the consumable page. The
  * evidence tier stays as stated ("หน้าร้านค้าปลีก" is never promoted to "ทางการ"); numbers, brand
  * system names and quoted alt text are kept character for character. Edges whose other endpoint
- * is not yet published (IQOS / LAMBDA / PnP X / G2-generation pods) have no entry yet — they are
+ * is not yet published (PnP X / G2-generation pods) have no entry yet — they are
  * not visible on the storefront.
  */
 const GPP_MATCH_TH = "ตัวเลือกโอห์มของหัวพอตรุ่นนี้ที่ OKami24 ลงไว้ (0.4/0.6/0.9/1.2Ω mesh) ตรงกับที่ UWELL ระบุครบทั้ง 4 ค่า";
@@ -133,6 +133,14 @@ export const COMPAT_EVIDENCE_TH: Record<string, string> = {
     // "หน้าร้านค้าปลีก", not "แบรนด์": the source is a retailer listing (tier "retailer") — the
     // evidence tier is never promoted in translation (file header; thai-copy 2026-09-17).
     "หน้าร้านค้าปลีกระบุว่าหัวพอต Caliburn X ใช้คอยล์ตระกูล Caliburn G หรือ G2 ได้ (0.8/1.0/1.2Ω) ซึ่งเป็นตระกูลเดียวกับคอยล์ 1.0 โอห์มตัวนี้ และระบุชัดว่าใช้กับตระกูล A หรือ Caliburn รุ่นแรกไม่ได้",
+  // Round p63 (18/10): TEREA (iqosheet-15) goes on sale, so its four edges show on the TEREA page and on the
+  // ILUMA i / i PRIME / i ONE / LAMBDA i8 pages. Same facts as the English strings; the LAMBDA one keeps its attribution.
+  "IQOS states TEREA sticks are designed exclusively for IQOS ILUMA devices, and that ILUMA is designed to be used only with TEREA sticks — the SMARTCORE induction system heats the stick from within, so earlier IQOS generations cannot use them.":
+    "IQOS ระบุว่าก้าน TEREA ออกแบบมาให้ใช้กับเครื่อง ILUMA เท่านั้น และเครื่อง ILUMA ใช้กับก้าน TEREA เท่านั้น ระบบ SMARTCORE ให้ความร้อนจากด้านในก้าน เครื่อง IQOS รุ่นก่อนหน้าจึงใช้ก้านนี้ไม่ได้",
+  "IQOS's ILUMA i ONE page: \"Designed to be used with TEREA tobacco sticks\" and its model table row \"Used with TEREA\" (round list19, 17/10).":
+    "IQOS ระบุในหน้า ILUMA i ONE ว่าเครื่องนี้ออกแบบมาให้ใช้กับก้าน TEREA และตารางเทียบรุ่นก็ระบุว่าใช้กับ TEREA",
+  "LAMBDA's own product page markets the i8 as compatible with TEREA and SENTIA SMARTCORE sticks. This is LAMBDA's manufacturer claim about its own device — IQOS does not endorse third-party hardware and states TEREA is designed for IQOS ILUMA devices.":
+    "LAMBDA ระบุในหน้าสินค้าของตัวเองว่า i8 ใช้กับก้าน TEREA และ SENTIA แบบ SMARTCORE ได้ ข้อนี้เป็นคำของ LAMBDA เกี่ยวกับเครื่องของตัวเอง IQOS ไม่ได้รับรองเครื่องจากแบรนด์อื่น และระบุว่า TEREA ออกแบบมาสำหรับเครื่อง IQOS ILUMA",
 };
 
 /** Thai evidence note for a compatibility card, or the data string when there is no entry. */

@@ -180,6 +180,9 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // TEREA data/media/copy asset is left in place so a future pass can re-approve without
   // rebuilding. See docs/BUSINESS_SOURCE_OF_TRUTH.md if this withdrawal should also be reflected
   // there.
+  // REPUBLISHED round p63 (2026-10-18): every iqos.com/id flavour now carries the maker's own pack render (#544).
+  // Price = ฿220 per pack of 20 sticks (owner list item 69, 16/10 — BSOT §4; Shipnity MAX "ราคาขาย" is ฿220 too).
+  "IQOSHEET-15": { sellingPrice: 220, lastPriceReview: "2026-10-18" },
   "IQOSHEET-16": { sellingPrice: 4900, lastPriceReview: "2026-09-02" },
   "IQOSHEET-18": { sellingPrice: 3900, lastPriceReview: "2026-09-02" },
   // Tier-1 disposable growth mission (2026-09-03): Pod-180 (nexBar CLEAR 18K — no brand since 2026-09-30) was the last

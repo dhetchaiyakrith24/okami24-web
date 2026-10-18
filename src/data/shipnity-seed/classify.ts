@@ -72,6 +72,9 @@ const OWNER_CONFIRMED_PARENT_TYPE: Record<string, OptionType> = {
   // Round list19 (18/10, owner "list everything", via Friday): Marbo Saltnic flavours are sold under pack colours ("Gold",
   // "Blue", one "Purple 50mg") — colour words + one mg mark would read as a mixed axis; every child is one flavour bottle.
   "ELIQUID-1": "flavor",
+  // Round p63 (18/10): TEREA packs are named by colour line ("Black Green", "Sienna") but each one is a flavour —
+  // iqos.com/id sells them as flavours (rasa); as "colour" the card read "22 สี".
+  "IQOSHEET-15": "flavor",
   "coil-78": "resistance", // not present in the active view, kept for completeness/documentation
 };
 

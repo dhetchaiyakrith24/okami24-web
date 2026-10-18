@@ -9059,6 +9059,20 @@
   }
  },
  {
+  "source": "_incoming/p63/emerald/emerald-edition.png",
+  "slug": "iqosheet-15",
+  "role": "variant",
+  "id": "IQOSHEET-15-10",
+  "crop": {
+   "x0": 0,
+   "y0": 0.146,
+   "x1": 1,
+   "y1": 0.81
+  },
+  "note": "IQOS official pack image of TEREA Emerald Edition (SKU G0001475), iqos.com/id product page https://www.iqos.com/id/id/shop/iqos-terea-emerald-edition.html (page read through the Wayback Machine capture 2025-10-13; the image itself downloaded live from iqos.com /vanity/content/pmisite/id/id/.rrp.G0001475.00.3900x3900…/terea-emerald-edition-pack-1302738026.2025-10-10T19:00:00.000.jpg = 2048x2048 transparent PNG; round p63, checker #583 r1, 18/10). Cropped to the five sticks with the same margins as the other TEREA packs (drops the flavour pills)",
+  "fileName": "variant-iqosheet-15-10.webp"
+ },
+ {
   "source": "_incoming/p63/nexpod/out/Black.png",
   "slug": "nexpod-15k",
   "role": "card",
