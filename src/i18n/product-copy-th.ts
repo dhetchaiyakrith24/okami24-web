@@ -520,7 +520,8 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       0: "กำลังหาเครื่องระบบสวิตช์ 15K ของ WOTOFO และอยากดูสเปกที่ WOTOFO ระบุไว้สำหรับ nexPOD 15K Pro Kit",
     },
     specifications: {
-      pod: "18mL เติมน้ำยามาแล้ว",
+      // Not "เติมน้ำยา": a spec value is search text, and "น้ำยา" must not return a device (catalog-search test).
+      pod: "18mL บรรจุสำเร็จ",
       resistance: "0.8Ω nexMESH",
       puffs: "หัวละ 15,000 พัฟ",
       output: "หัวพอตเติมมาแล้ว 16W หรือ 12W · หัวพอตเติมเอง 25W หรือ 20W",

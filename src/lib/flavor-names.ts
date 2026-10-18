@@ -11,12 +11,15 @@
 export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // generated from the catalog by the contract test's listing (npx tsx src/lib/flavor-names-contract-test.ts --list),
   // 2026-09-24: twin-flavour names ("A + B") are listed by part.
+  // Round p63 (18/10): + the WOTOFO nexPOD 15K Pro Kit names.
   // Round p63 (18/10): + the IQOS TEREA pack names (the TEREA options became flavours), sorted in by length.
+  "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
   "Watermelon Dragon Fruit",
   "Peach Mango Watermelon",
   "Strawberry Watermelon",
   "Watermelon Strawberry",
+  "Blueberry Watermelon",
   "Bermin Pearl Edition",
   "Perint Pearl Edition",
   "Green Tangerine Mint",
@@ -120,6 +123,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Sakura Grape",
   "Berry Garden",
   "Peach Orange",
+  "Monster Ice",
   "Black Green",
   "Bright Wave",
   "Oasis Pearl",
@@ -175,6 +179,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Mint Extra",
   "Grape Yoyo",
   "Lemon Coke",
+  "Just Mint",
   "Sun Pearl",
   "All Berry",
   "Cool Mint",
@@ -192,4 +197,5 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Cola Ice",
   "Thai Tea",
   "Milk Tea",
+  "Love 77",
 ];
