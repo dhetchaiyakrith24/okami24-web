@@ -1791,7 +1791,6 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "pod-159-verified-watermelon-lime": { kind: "official-photo", role: "detail", src: "/assets/products/pod-159/variant-watermelon-lime.webp", alt: "ESKO BAR SWITCH prefilled pod, Watermelon Lime", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     "pod-159-verified-yogurt": { kind: "official-photo", role: "detail", src: "/assets/products/pod-159/variant-yogurt.webp", alt: "ESKO BAR SWITCH prefilled pod, Yogurt", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   },
-  // Round p63 (19/10): ESKO BAR 20000 — the maker's own flavour render for 15 of the 22 Max flavours (eskobarvape.com a..o.png,
   // Round list19 (19/10): ESKO BAR SWITCH pod — every flavour has its pod photo (the pod-159 sources, one master pod).
   "ESKO-BAR-SWITCH-POD": {
     "Pod-160-1": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-grape.webp", alt: "ESKO BAR SWITCH prefilled pod, Grape", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
@@ -1815,6 +1814,7 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "esko-bar-switch-pod-verified-chocolate-mint": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-chocolate-mint.webp", alt: "ESKO BAR SWITCH prefilled pod, Chocolate Mint", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     "esko-bar-switch-pod-verified-coconut": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-switch-pod/variant-coconut.webp", alt: "ESKO BAR SWITCH prefilled pod, Coconut", transparentBackground: true, sourceName: "OKami24 render from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   },
+  // Round p63 (19/10): ESKO BAR 20000 — the maker's own flavour render for 15 of the 22 Max flavours (eskobarvape.com a..o.png,
   // each named in its alt text, e.g. "ESKO BAR 498 mixberry"). The 7 warehouse-only flavours have no maker image → no photo.
   "ESKO-BAR-20K": {
     "Pod-130-11": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-mixberry.webp", alt: "ESKO BAR 498 (20000 puffs), Mixberry, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
