@@ -772,18 +772,6 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-161-9": "Pod-161-9",
     "Pod-161-10": "Pod-161-10",
   } },
-  // Round list19 (19/10): Nexswitch 16K refill pod — Max Pod-162-* under Max parent "Product 1176446".
-  "nexswitch-16k-pod": { parent: "Product 1176446", options: {
-    "Pod-162-1": "Pod-162-1",
-    "Pod-162-2": "Pod-162-2",
-    "Pod-162-3": "Pod-162-3",
-    "Pod-162-4": "Pod-162-4",
-    "Pod-162-5": "Pod-162-5",
-    "Pod-162-6": "Pod-162-6",
-    "Pod-162-7": "Pod-162-7",
-    "Pod-162-8": "Pod-162-8",
-    "Pod-162-9": "Pod-162-9",
-    "Pod-162-10": "Pod-162-10",
   // Round list19 (19/10): RELX LUMI 18K — the 16 Max flavour rows (Disposable-44-11 Sea Salt Lemon Candy sold out on 13/10).
   "relx-lumi-18k": { parent: "Disposable-44", options: {
     "Disposable-44-1": "Disposable-44-1",
