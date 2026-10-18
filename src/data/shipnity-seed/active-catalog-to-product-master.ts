@@ -1365,10 +1365,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     sourceUrls: ["https://www.lambdasmoke.com/LAMBDA-i8--Smart-Induction-Heat-Not-Burn-Device-Compatible-With-TEREA-SENTIA-Smartcore-Sticks-p5610276.html"],
   },
   "IQOSHEET-15": {
-    specifications: [{ key: "compatible-devices", label: "ใช้ได้กับอุปกรณ์", value: "IQOS ILUMA (ทุกรุ่น) เท่านั้น — ใช้กับรุ่นก่อนหน้า ILUMA ไม่ได้", sourceStatus: "verified" }],
+    // Round p63 (18/10): the sale unit, first, so ฿220 reads per pack at every width (the 390 hero hides the tagline).
+    // iqos.com/gb buy-terea: "Each pack contains 20 sticks".
+    specifications: [{ key: "pack-size", label: "ขายเป็น", value: "1 ซอง (20 ก้าน)", sourceStatus: "verified", sourceUrl: "https://www.iqos.com/gb/en/discover-heated-tobacco/buy-terea.html" }, { key: "compatible-devices", label: "ใช้ได้กับอุปกรณ์", value: "IQOS ILUMA (ทุกรุ่น) เท่านั้น — ใช้กับรุ่นก่อนหน้า ILUMA ไม่ได้", sourceStatus: "verified" }],
     sourceUrls: [
       "https://www.iqos.com/id/en/news/information/find-the-terea-tobacco-stick-flavor-variant-that-suits-for-you.html",
       "https://www.iqos.com/gb/en/blog/difference-between-iqos-iluma-and-iqos-3-duo.html",
+      "https://www.iqos.com/gb/en/discover-heated-tobacco/buy-terea.html",
     ],
   },
   // Round data 2 (2026-09-25, real browser): the single "2380mAh" row is gone — iqos.com/ph no longer prints 2380 anywhere
