@@ -20,7 +20,10 @@ export const metadata: Metadata = {
   // "ให้รสแบบไหน" promise, the two new keys and the owner's own "ยังไม่มีขายหน้าร้าน" (159 chars).
   // Round SEO ฉ batch 6b (owner 13/10, item 50): the question "salt nic กับ freebase ต่างกันยังไง" now belongs to
   // /guides/salt-nic-vs-freebase — this line keeps the bare words only (seo-auditor's wording).
-  description: "น้ำยา 5 กลุ่มรสชาติ ผลไม้ เมนทอลและความเย็น ของหวาน เครื่องดื่ม ยาสูบ ให้รสแบบไหน และเป็น salt nic หรือ freebase ยังไม่มีขายหน้าร้าน ถามทาง LINE @okm24 ได้",
+  // Round p63 (18/10): Marbo Saltnic (/products/eliquid-1) is on sale, so the owner's "ยังไม่มีขายหน้าร้าน" is no longer true
+  // (#582 fixed the on-page line). Only that clause changes — the measured words (SEO_BASELINE: "กลุ่มรสชาติ", "salt nic",
+  // "freebase") and the title/H1 stay as they are for the 01/11 read; 157 characters.
+  description: "น้ำยา 5 กลุ่มรสชาติ ผลไม้ เมนทอลและความเย็น ของหวาน เครื่องดื่ม ยาสูบ ให้รสแบบไหน และเป็น salt nic หรือ freebase มี Marbo Saltnic แล้ว ถามทาง LINE @okm24 ได้",
   ...canonicalFor("/e-liquid"),
 };
 

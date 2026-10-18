@@ -276,6 +276,8 @@ Live changes not yet listed above (batch 3 + 6b have their own sections; details
 - #463 (13/10 21:57): NEW /guides/quit-smoking-with-a-pod (Thai-only; foreign health-agency sources, both sides).
 - #465 (14/10 00:54) + #466 (14/10 01:33): no visible change; mobile JS gzip −33…−48% (lab LCP −1.1…−1.8 s; SEO_LANDSCAPE §7 row 8).
   If Search Console starts showing field Core Web Vitals, that is the row to watch — the site had "not enough data" on 12/10.
+- #582 (18/10) on-page + this PR (18/10): /e-liquid meta description — only the clause "ยังไม่มีขายหน้าร้าน" → "มี Marbo Saltnic แล้ว" (Marbo
+  Saltnic live, round list19); title, H1 and the measured words "กลุ่มรสชาติ" / "salt nic" / "freebase" unchanged — read 01/11 with that in mind.
 
 Requested indexing: 12/10 the 5 set-1 guides + what-is-a-pod-system + pod-kits · 13/10 salt-nic-vs-freebase, choosing-wattage-and-airflow,
 understanding-mtl-vs-dtl, taking-a-pod-on-a-plane, quit-smoking-with-a-pod · 14/10 products/wotofo-nexbar-18k (+ "validate fix" of the
