@@ -200,6 +200,10 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "Pod-154": { sellingPrice: 199, lastPriceReview: "2026-10-18" },
   // Round list19 (19/10): Reswa Sportcan 12000 (Max "Product 1129596") — Max ราคาขาย ฿229 for the parent and its 5 flavours (read 2026-10-17).
   "Pod-142": { sellingPrice: 229, lastPriceReview: "2026-10-19" },
+  // Round list19 (19/10): RELX LUMI 18K (Max-only "Disposable-44") — Max ราคาขาย ฿349 for the parent and its 16 flavours (read 2026-10-17).
+  "RELX-LUMI-18K": { sellingPrice: 349, lastPriceReview: "2026-10-19" },
+  // Round p63 (19/10): ESKO BAR 20000 (Max-only "Pod-130") — owner list item 69 "ใส่ตามคลัง": Max ราคาขาย ฿389 for the parent and its 22 flavours (read 2026-10-17).
+  "ESKO-BAR-20K": { sellingPrice: 389, lastPriceReview: "2026-10-19" },
   // Round list19 (18/10, owner ruling "list it, warehouse data only"): SKE Crystal B20000 — Max "ราคาขาย" ฿329 (parent "Product 1141360"
   // and its 8 children Pod-149-*, 17/10 read).
   "Pod-149": { sellingPrice: 329, lastPriceReview: "2026-10-18" },

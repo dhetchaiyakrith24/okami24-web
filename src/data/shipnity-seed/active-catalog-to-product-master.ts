@@ -252,6 +252,12 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // The can prints "SPORTCAN BY RESWA", but no Reswa maker site was found → sold without a brand, warehouse facts only (as Pop Up 10K).
   // The hidden legacy entry reswa-sportcan-12k (src/data/products/unbranded.ts, 3 flavours, banner-crop photos) stays hidden.
   "Pod-142": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "Reswa Sportcan 12000 Puffs" (Max parent "Product 1129596", old seed Pod-142) with 5 flavour children (฿229); the can prints "SPORTCAN BY RESWA"; no maker site found 18-19/10 — listed on warehouse facts only, without a brand' },
+  // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): RELX LUMI 18K — Max-only record (Max "Disposable-44" "RELX LUMI 18k", 16 flavours).
+  // relxnow.com has no LUMI page (researcher 18/10) → warehouse facts only; the device prints RELX (shop posters, masters/src/disposable-44).
+  "RELX-LUMI-18K": { brandId: "relx", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX parent "Disposable-44" "RELX LUMI 18k" with 16 flavour children (฿349); the device prints RELX (shop posters ihavevape.net/product/relx-lumi-18k); no LUMI page on relxnow.com 18/10 — listed on warehouse facts only' },
+  // Round p63 (19/10, owner item 69 "ใส่ตามคลัง"): Esko Bar 20000 — Max-only record (Max "Pod-130" "Esko Bar 20000 Puffs", 22 flavours, ฿389).
+  // The maker sells it as "ESKO BAR 498 Disposable Vape | 20000 Puffs" (eskobarvape.com/product/eskobar: 20000 puffs, 600mAh, 18ml, 15 flavours).
+  "ESKO-BAR-20K": { brandId: "esko-bar", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX parent "Pod-130" "Esko Bar 20000 Puffs" with 22 flavour children (฿389); ESKO BAR\'s own page https://eskobarvape.com/product/eskobar names the 20000-puff disposable "ESKO BAR 498" and lists 15 of the 22 flavours by the same names (the other 7 are warehouse-only children, kept as real options)' },
   // Round list19 (18/10, owner "ทำเลยครับทั้งหมด"): Pop Up 10K refill pod — no maker site found (Thai-market line), sold without a brand on
   // the site (same as Pod-180); every fact = the warehouse (Shipnity MAX name "Pop Up 10K หัวเติม", its 18 flavour rows + battery base row).
   "Pod-154": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Pop Up 10K หัวเติม" (refill pod) with 18 flavour children + a "ฐานแบตเตอรี่" (battery base) child; no maker site found 16-18/10 — listed on warehouse facts only, without a brand' },
@@ -563,6 +569,16 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "พอตใช้แล้วทิ้ง Reswa Sportcan 12K",
     shortDescription: "พอตใช้แล้วทิ้ง Reswa Sportcan ทรงกระป๋อง ชื่อรุ่นระบุ 12,000 พัฟ ร้านมีให้เลือก 5 กลิ่น",
   },
+  "RELX-LUMI-18K": {
+    // Round list19 (19/10): warehouse facts only — the Max name "RELX LUMI 18k" (no maker page for the puff count or the battery).
+    tagline: "พอตใช้แล้วทิ้ง RELX LUMI 18K",
+    shortDescription: "พอตใช้แล้วทิ้ง RELX LUMI ชื่อรุ่นระบุ 18,000 พัฟ ร้านมีให้เลือก 16 กลิ่น",
+  },
+  // Round p63 (19/10): numbers = the maker's spec block (https://eskobarvape.com/product/eskobar).
+  "ESKO-BAR-20K": {
+    tagline: "พอตใช้แล้วทิ้ง ESKO BAR 20000 พัฟ แบต 600mAh ความจุ 18ml", // not "น้ำยา": a tagline is search text (catalog-search test)
+    shortDescription: "พอตใช้แล้วทิ้ง ESKO BAR รุ่น 498 สูงสุด 20,000 พัฟ คอยล์ mesh คู่ 1.0Ω แบต 600mAh ชาร์จได้ ร้านมีให้เลือก 22 กลิ่น",
+  },
   "Pod-154": {
     // Round list19 (18/10): warehouse facts only — the name says 10K, the pod print says 10000 PUFFS, Max lists the battery base.
     tagline: "หัวพอต Pop Up 10K",
@@ -757,6 +773,33 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from the shop's Reswa Sportcan poster",
       sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/",
+    },
+  ],
+  // Round list19 (19/10): RELX LUMI 18K — no maker image; card = OKami24 re-shoot of RELX's LUMI poster (blue-mint device). The shop
+  // posters do not tie a body colour to a flavour, so the 16 flavours show no per-flavour photo.
+  "RELX-LUMI-18K": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/relx-lumi-18k/card.webp",
+      alt: "RELX LUMI 18K disposable, blue-mint, studio photo",
+      angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of RELX's LUMI poster. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from RELX's LUMI poster",
+      sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/",
+    },
+  ],
+  // Round p63 (19/10): ESKO BAR's own transparent device render (498-6.png, the largest device-only file on the maker page).
+  "ESKO-BAR-20K": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/esko-bar-20k/card.webp",
+      alt: "ESKO BAR 498 (20000 puffs) disposable, yellow, tilted",
+      angle: "Tilted, isolated — ESKO BAR's own transparent render 498-6.png from https://eskobarvape.com/product/eskobar",
+      transparentBackground: true,
+      sourceName: "ESKO BAR (official site, eskobarvape.com)",
+      sourceUrl: "https://eskobarvape.com/product/eskobar",
     },
   ],
   // Round list19 (18/10): Pop Up 10K — OKami24 re-shoots (batch 7) of the shop's flavour posters; card = the Coke pod (in stock).
@@ -1159,6 +1202,26 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     ],
     sourceUrls: [],
   },
+  // Round list19 (19/10): warehouse facts only (no maker page) — the Max name "RELX LUMI 18k".
+  "RELX-LUMI-18K": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 18,000", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
+  // Round p63 (19/10): ESKO BAR 498 spec block on the maker page. Charging: the page says "fast charging" but names no port or time.
+  "ESKO-BAR-20K": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 20,000", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+      { key: "battery", label: "แบตเตอรี่", value: "600mAh ชาร์จได้", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+      { key: "capacity", label: "ความจุน้ำยา", value: "18ml", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+      { key: "coil", label: "คอยล์", value: "Dual Mesh 1.0Ω", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+      { key: "nicotine", label: "นิโคติน", value: "3%", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+      { key: "size", label: "ขนาด", value: "126 × 30 × 30 mm", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+      { key: "materials", label: "วัสดุ", value: "PCTG + PC + SUS", sourceStatus: "verified", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    ],
+    sourceUrls: ["https://eskobarvape.com/product/eskobar"],
+  },
   // Round list19 (18/10): warehouse facts only (no maker page) — the name "10K" and the pod's own print "10000 PUFFS".
   "Pod-154": {
     specifications: [
@@ -1550,6 +1613,25 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "pod-159-verified-watermelon-lime": { kind: "official-photo", role: "detail", src: "/assets/products/pod-159/variant-watermelon-lime.webp", alt: "ESKO BAR SWITCH prefilled pod, Watermelon Lime", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
     "pod-159-verified-yogurt": { kind: "official-photo", role: "detail", src: "/assets/products/pod-159/variant-yogurt.webp", alt: "ESKO BAR SWITCH prefilled pod, Yogurt", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from ESKO BAR's own pod photo", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   },
+  // Round p63 (19/10): ESKO BAR 20000 — the maker's own flavour render for 15 of the 22 Max flavours (eskobarvape.com a..o.png,
+  // each named in its alt text, e.g. "ESKO BAR 498 mixberry"). The 7 warehouse-only flavours have no maker image → no photo.
+  "ESKO-BAR-20K": {
+    "Pod-130-11": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-mixberry.webp", alt: "ESKO BAR 498 (20000 puffs), Mixberry, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-12": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-cola.webp", alt: "ESKO BAR 498 (20000 puffs), Cola, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-13": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-sour-strawberry.webp", alt: "ESKO BAR 498 (20000 puffs), Sour Strawberry, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-2": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-grape.webp", alt: "ESKO BAR 498 (20000 puffs), Grape, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-14": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-e-melon.webp", alt: "ESKO BAR 498 (20000 puffs), E-Melon, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-1": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-purple-grape.webp", alt: "ESKO BAR 498 (20000 puffs), Purple Grape, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-15": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-apple-aloe.webp", alt: "ESKO BAR 498 (20000 puffs), Apple Aloe, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-3": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-watermelon-strawberry.webp", alt: "ESKO BAR 498 (20000 puffs), Watermelon Strawberry, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-4": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-blueberry-ice.webp", alt: "ESKO BAR 498 (20000 puffs), Blueberry Ice, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-5": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-strawberry-banana.webp", alt: "ESKO BAR 498 (20000 puffs), Strawberry Banana, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-6": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-strawberry-kiwi.webp", alt: "ESKO BAR 498 (20000 puffs), Strawberry Kiwi, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-7": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-pink-guava.webp", alt: "ESKO BAR 498 (20000 puffs), Pink Guava, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-8": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-bubblegum.webp", alt: "ESKO BAR 498 (20000 puffs), Bubblegum, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-9": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-watermelon-ice.webp", alt: "ESKO BAR 498 (20000 puffs), Watermelon Ice, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+    "Pod-130-10": { kind: "official-photo", role: "detail", src: "/assets/products/esko-bar-20k/variant-berry-grape.webp", alt: "ESKO BAR 498 (20000 puffs), Berry Grape, maker flavour render", transparentBackground: true, sourceName: "ESKO BAR (official site, eskobarvape.com)", sourceUrl: "https://eskobarvape.com/product/eskobar" },
+  },
   "Coil-1": {
     "Coil-1-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-1.webp", alt: "VOOPOO PnP-TW15 coil 0.15Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images", sourceUrl: "https://shop.voopoo.com/products/pnp-coils" },
     "Coil-1-14": { kind: "official-photo", role: "detail", src: "/assets/products/coil-1/variant-coil-1-14.webp", alt: "VOOPOO PnP-DW60 coil 0.6Ω with its box, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's own product images", sourceUrl: "https://shop.voopoo.com/products/pnp-coils" },
@@ -1861,6 +1943,8 @@ const OTHER_MODEL_CHILDREN: Record<string, string> = {
 export const VERIFIED_REVIEW_VIDEOS: Record<string, { videoId: string; title: string; channelName: string; publishedAt: string }> = {
   // publishedAt = the clip's YouTube upload date (round "clip" 2026-09-27, read from YouTube's own video data).
   "Pod-159": { videoId: "kJd5rnEtg_Y", title: "ESKO BAR 20K และ ESKO BAR SWITCH 20K เล็กเจอใหญ่", channelName: "OKM YARZ", publishedAt: "2026-01-27" },
+  // Round p63 (19/10): the same OKM YARZ clip reviews both ESKO BAR 20K models ("เล็กเจอใหญ่").
+  "ESKO-BAR-20K": { videoId: "kJd5rnEtg_Y", title: "ESKO BAR 20K และ ESKO BAR SWITCH 20K เล็กเจอใหญ่", channelName: "OKM YARZ", publishedAt: "2026-01-27" },
 };
 
 /**
@@ -2057,6 +2141,8 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
   "Pod-142": { name: "Reswa Sportcan 12K", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
+  "RELX-LUMI-18K": { name: "RELX LUMI 18K", sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/" },
+  "ESKO-BAR-20K": { name: "ESKO BAR 20000", sourceUrl: "https://eskobarvape.com/product/eskobar" },
   "Pod-169": { name: "INFY PLUS 2.5ML Cartridge", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },
 };
 
