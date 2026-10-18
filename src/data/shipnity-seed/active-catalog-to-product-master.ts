@@ -248,6 +248,9 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // Round list19 (18/10): Max-only record (Max "Product 780" "KS Quik Pro 15000 คำ") = the Kardinal Quikpro device sold with one
   // cartridge; its Max options are the cartridge flavour of the bundle (kardinal.com/products/quikpro).
   "KS-QUIKPRO-KIT": { brandId: "kardinal-stick", categoryId: "pod-kits", systemType: "pod-kit", evidence: 'Shipnity MAX "KS Quik Pro 15000 คำ" with options "เครื่อง + หัว <flavour>" (device + one cartridge) = Kardinal Quikpro, kardinal.com/products/quikpro (official): device + 15ml cartridge, up to 15,000 puffs' },
+  // Round list19 (19/10, owner "ทำเลยครับทั้งหมด"): RELX LUMI 18K — Max-only record (Max "Disposable-44" "RELX LUMI 18k", 16 flavours).
+  // relxnow.com has no LUMI page (researcher 18/10) → warehouse facts only; the device prints RELX (shop posters, masters/src/disposable-44).
+  "RELX-LUMI-18K": { brandId: "relx", categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX parent "Disposable-44" "RELX LUMI 18k" with 16 flavour children (฿349); the device prints RELX (shop posters ihavevape.net/product/relx-lumi-18k); no LUMI page on relxnow.com 18/10 — listed on warehouse facts only' },
   // Round list19 (18/10, owner "ทำเลยครับทั้งหมด"): Pop Up 10K refill pod — no maker site found (Thai-market line), sold without a brand on
   // the site (same as Pod-180); every fact = the warehouse (Shipnity MAX name "Pop Up 10K หัวเติม", its 18 flavour rows + battery base row).
   "Pod-154": { brandId: null, brandless: true, categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "Pop Up 10K หัวเติม" (refill pod) with 18 flavour children + a "ฐานแบตเตอรี่" (battery base) child; no maker site found 16-18/10 — listed on warehouse facts only, without a brand' },
@@ -554,6 +557,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "พอตใช้แล้วทิ้ง SKE Crystal B20000",
     shortDescription: "พอตใช้แล้วทิ้ง SKE Crystal B20000 ชื่อรุ่นระบุ 20,000 พัฟ ร้านมีให้เลือก 8 กลิ่น",
   },
+  "RELX-LUMI-18K": {
+    // Round list19 (19/10): warehouse facts only — the Max name "RELX LUMI 18k" (no maker page for the puff count or the battery).
+    tagline: "พอตใช้แล้วทิ้ง RELX LUMI 18K",
+    shortDescription: "พอตใช้แล้วทิ้ง RELX LUMI ชื่อรุ่นระบุ 18,000 พัฟ ร้านมีให้เลือก 16 กลิ่น",
+  },
   "Pod-154": {
     // Round list19 (18/10): warehouse facts only — the name says 10K, the pod print says 10000 PUFFS, Max lists the battery base.
     tagline: "หัวพอต Pop Up 10K",
@@ -735,6 +743,20 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from the shop's SKE Crystal B20000 poster",
       sourceUrl: "https://pod789.com/product/ske-crystal-20000-puffs/",
+    },
+  ],
+  // Round list19 (19/10): RELX LUMI 18K — no maker image; card = OKami24 re-shoot of RELX's LUMI poster (blue-mint device). The shop
+  // posters do not tie a body colour to a flavour, so the 16 flavours show no per-flavour photo.
+  "RELX-LUMI-18K": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/relx-lumi-18k/card.webp",
+      alt: "RELX LUMI 18K disposable, blue-mint, studio photo",
+      angle: "Front, upright — studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of RELX's LUMI poster. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from RELX's LUMI poster",
+      sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/",
     },
   ],
   // Round list19 (18/10): Pop Up 10K — OKami24 re-shoots (batch 7) of the shop's flavour posters; card = the Coke pod (in stock).
@@ -1127,6 +1149,13 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   "Pod-149": {
     specifications: [
       { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 20,000", sourceStatus: "verified" },
+    ],
+    sourceUrls: [],
+  },
+  // Round list19 (19/10): warehouse facts only (no maker page) — the Max name "RELX LUMI 18k".
+  "RELX-LUMI-18K": {
+    specifications: [
+      { key: "puffs", label: "จำนวนพัฟที่ระบุ", value: "สูงสุด 18,000", sourceStatus: "verified" },
     ],
     sourceUrls: [],
   },
@@ -2019,6 +2048,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "Pod-150": { name: "KS Quikpro 15K Cartridge", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "KS-QUIKPRO-KIT": { name: "KS Quikpro 15K Kit", sourceUrl: "https://www.kardinal.com/products/quikpro" },
   "Pod-154": { name: "Pop Up 10K Pod", sourceUrl: "https://ihavevape.net/product/pop-up-10000-puffs/" },
+  "RELX-LUMI-18K": { name: "RELX LUMI 18K", sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/" },
   "Pod-169": { name: "INFY PLUS 2.5ML Cartridge", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },
 };
 
