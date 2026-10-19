@@ -2731,7 +2731,7 @@ const allGuides: Guide[] = [
         heading: "IQOS ILUMA i รีเซ็ตยังไง",
         paragraphs: [
           "IQOS ILUMA i รีเซ็ตด้วยการวาง Holder ไว้ใน Pocket Charger แล้วกดปุ่มของ Pocket Charger ค้างไว้ 10 วินาที เมื่อไฟดับ กะพริบสองครั้ง แล้วติดขึ้นมาใหม่ แปลว่ารีเซ็ตเสร็จ ถ้าเครื่องของคุณเป็น ILUMA i PRIME แนะนำให้ดูวิธีรีเซ็ตในคู่มือที่มากับกล่อง",
-          "บทความนี้เขียนสำหรับ [IQOS ILUMA i](/products/iqosheet-18) และ [IQOS ILUMA i PRIME](/products/iqosheet-16) ที่มีบนเว็บเรา ข้อมูลทั้งหมดมาจาก[หน้าช่วยเหลือของ IQOS](https://www.iqos.com/gb/en/support/faq/get-to-know-your-iqos-ilumai.html) ถ้าเครื่องของคุณเป็นรุ่นอื่น แนะนำให้ดูคู่มือของรุ่นนั้นแทน เพราะวิธีกดและความหมายของไฟในแต่ละรุ่นไม่เหมือนกัน",
+          "บทความนี้เขียนสำหรับ [IQOS ILUMA i](/products/iqosheet-18) และ [IQOS ILUMA i PRIME](/products/iqosheet-16) ที่มีบนเว็บเรา ข้อมูลทั้งหมดมาจาก[หน้าช่วยเหลือของ IQOS](https://www.iqos.com/gb/en/support/faq/get-to-know-your-iqos-ilumai.html) ถ้าเครื่องของคุณเป็นรุ่นอื่น แนะนำให้ดูคู่มือของรุ่นนั้นแทน เพราะวิธีกดและความหมายของไฟในแต่ละรุ่นไม่เหมือนกัน ถ้ายังเลือกรุ่นอยู่ อ่านต่อได้ที่ [ILUMA i ONE vs ILUMA i ต่างกันยังไง](/guides/iqos-iluma-i-one-vs-iluma-i)",
         ],
       },
       {
@@ -2796,6 +2796,163 @@ const allGuides: Guide[] = [
       { question: "ILUMA i ชาร์จไม่เข้า ทำยังไง", answer: "เช็คว่าใช้หัวชาร์จและสายของ IQOS หรือหัวชาร์จที่จ่ายไฟ 5V 2A และมีเครื่องหมายรับรองความปลอดภัย และดูว่าช่องชาร์จของเครื่องสะอาด ไม่มีฝุ่นหรือเศษอะไรติดอยู่" },
       { question: "ILUMA i ชาร์จนานแค่ไหน", answer: "IQOS ระบุว่าการชาร์จ Pocket Charger จนเต็มใช้เวลาประมาณ 2 ชั่วโมง 15 นาที เมื่อใช้หัวชาร์จ 5V 2A แบบ USB-C" },
       { question: "เลข 0 กะพริบบนจอ ILUMA i หมายถึงอะไร", answer: "แปลว่าแบตของ Holder เหลือน้อย ให้วาง Holder ลงใน Pocket Charger ที่ยังมีแบตเพื่อชาร์จ" },
+    ],
+  },
+  {
+    // Round SEO line 2 (autocomplete 19/10: "terea กลิ่น ไหน ดี" · "terea กลิ่น ไหน หอม" · "terea แต่ละ กลิ่น" ·
+    // "terea sienna / sun pearl / oasis pearl กลิ่น" · "terea คืออะไร"). Flavour notes and the four groups (classic tobacco ·
+    // menthol · clove · Pearl capsule) = IQOS Indonesia flavour guide
+    // https://www.iqos.com/id/en/news/information/find-the-terea-tobacco-stick-flavor-variant-that-suits-for-you.html
+    // (names and line-ups differ by country — said once in the text). Only flavours on our TEREA page (iqosheet-15); Emerald
+    // Edition left out (official descriptions conflict). Dimensions Yugen sits under menthol because IQOS lists it there.
+    // "Black Green = เย็นแรง" is IQOS's own wording, written as theirs, no "ที่สุด" (no numbers). IQOS Egypt strength 7/10
+    // (Sienna · Blue) not used: "ความเข้มข้น" is locked to nicotine strength (THAI_STYLE §3). 1 pack = 20 sticks; ILUMA-only =
+    // product page row; LAMBDA i8 takes TEREA = LAMBDA's own page (lambdasmoke.com), said as LAMBDA's claim. No price, no
+    // stock, no health claims. Wording: thai-copy 19/10.
+    id: "choosing-a-terea-flavor",
+    slug: "choosing-a-terea-flavor",
+    title: "TEREA กลิ่นไหนดี แต่ละกลิ่นต่างกันยังไง",
+    dek: "TEREA กลิ่นไหนดี เริ่มจากกลุ่มที่ชอบก่อน IQOS แบ่งกลิ่นไว้สี่กลุ่ม คือ ยาสูบคลาสสิก เมนทอล กานพลู และแคปซูล บทความนี้เล่าว่าแต่ละกลิ่นต่างกันยังไง วิธีบีบแคปซูลของกลิ่น Pearl และ TEREA ใช้กับเครื่องไหนได้บ้าง",
+    category: "buying-guide",
+    readingTimeMin: 6,
+    publishedAt: "2026-10-19",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "TEREA กลิ่นไหนดี เริ่มจากกลุ่มที่ชอบก่อน",
+        paragraphs: [
+          "TEREA กลิ่นไหนดี ไม่มีคำตอบเดียว เพราะแต่ละคนชอบรสไม่เหมือนกัน ร้านเราจึงแนะนำให้เริ่มจากกลุ่มที่ชอบก่อน IQOS แบ่งกลิ่นของ TEREA ไว้สี่กลุ่ม คือ ยาสูบคลาสสิก เมนทอล กานพลู และแคปซูล แล้วค่อยเลือกกลิ่นที่ชอบในนั้นอีกที",
+          "คำอธิบายกลิ่นในบทความนี้มาจาก[หน้าแนะนำกลิ่น TEREA ของ IQOS อินโดนีเซีย](https://www.iqos.com/id/en/news/information/find-the-terea-tobacco-stick-flavor-variant-that-suits-for-you.html) ชื่อกลิ่นและไลน์อัพของ TEREA ต่างกันไปตามประเทศ เราจึงยกมาเฉพาะกลิ่นที่อยู่บนหน้าสินค้า [TEREA](/products/iqosheet-15) ของเว็บเรา และเขียนชื่อเป็นภาษาอังกฤษให้ตรงกับตัวเลือกบนหน้าสินค้า",
+          "กลิ่นที่ยกมาคือกลิ่นที่หน้าสินค้ารวมไว้ ไม่ได้แปลว่าทุกกลิ่นมีของอยู่ตอนนี้ อยากรู้ว่ากลิ่นไหนมีของ ทักถามทางไลน์ @okm24 ได้",
+        ],
+      },
+      {
+        heading: "กลุ่มยาสูบคลาสสิก: Bronze · Sienna · Dimensions Apricity",
+        paragraphs: [
+          "กลุ่มนี้เหมาะกับคนที่ชอบรสยาสูบเป็นหลัก และไม่ได้มองหาความเย็นของเมนทอล แต่ละกลิ่นต่างกันที่กลิ่นที่ตามมากับรสยาสูบ",
+          "Bronze ให้รสยาสูบนุ่ม ๆ มีกลิ่นโกโก้และผลไม้แห้งตามมา Sienna เป็นยาสูบที่มีโทนไม้และกลิ่นชาผสมอยู่ ส่วน Dimensions Apricity เพิ่มกลิ่นผลไม้ โทนไม้ และความนุ่มแบบครีมเข้าไปในรสยาสูบ",
+        ],
+      },
+      {
+        heading: "กลุ่มเมนทอล: TEREA สายเย็นแบบไหนดี",
+        paragraphs: [
+          "กลุ่มนี้มีความเย็นของเมนทอลเป็นหลัก แต่ละกลิ่นต่างกันที่สิ่งที่มาคู่กับความเย็น Blue เป็นเมนทอลเย็นคู่กับเปปเปอร์มินต์ และมีความนุ่มแบบครีม เหมาะกับคนที่อยากได้เย็นแบบมินต์โดยไม่มีผลไม้มาปน",
+          "ถ้าชอบเย็นคู่กับผลไม้เขียว Green และ Bright Wave ให้ความเย็นของเมนทอลกับผลไม้เขียวสด ซึ่ง IQOS อธิบายสองกลิ่นนี้ไว้ใกล้กันมาก ส่วน Black Green ที่ IQOS อธิบายว่าเป็นเมนทอลเย็นแรงคู่กับผลไม้เขียว เหมาะกับคนที่อยากได้ความเย็นชัดกว่า",
+          "ถ้าชอบเย็นคู่กับผลไม้สีเข้ม Purple Wave เป็นเมนทอลเย็นกับผลไม้ป่าสีเข้ม และ Black Ruby เป็นเมนทอลเย็นกับเรดเบอร์รี่ มีกลิ่นดอกไม้ตามมา ส่วน Dimensions Yugen ให้รสยาสูบกับผลไม้และดอกไม้ที่สดชื่น IQOS จัดไว้ในกลุ่มเมนทอล ถึงคำอธิบายจะไม่ได้พูดถึงความเย็นตรง ๆ",
+        ],
+      },
+      {
+        heading: "กลุ่มกานพลู: Golden · Auburn · Berrine · Mulint Edition",
+        paragraphs: [
+          "ทุกกลิ่นในกลุ่มนี้มีกานพลูอยู่ในรสยาสูบ ต่างกันที่กลิ่นที่มาคู่กัน Golden Edition เป็นยาสูบละมุนกับกานพลูอินโดนีเซีย และมีกลิ่นพลัมหมัก ส่วน Auburn Edition มีกานพลูคู่กับแอปริคอตและวานิลลา",
+          "ถ้าอยากได้กานพลูคู่กับความเย็น Berrine Edition มีกานพลูกับเมนทอลเย็น และมีกลิ่นผลไม้กับดอกไม้ ส่วน Mulint Edition มีกานพลูกับเมนทอลเย็นคู่กับเบอร์รี่",
+        ],
+      },
+      {
+        heading: "กลุ่มแคปซูล Pearl: บีบก่อนใช้",
+        paragraphs: [
+          "กลิ่นที่ชื่อลงท้ายด้วย Pearl มีแคปซูลอยู่ในก้นกรอง ก่อนใช้ให้บีบที่ก้นกรองจนแคปซูลแตกและได้ยินเสียงคลิก เพื่อให้กลิ่นในแคปซูลออกมา",
+          "Oasis Pearl และ Sun Pearl ให้รสยาสูบ และปลายก้านมีความหวาน Oasis Pearl มีกลิ่นผลไม้เขตร้อน ส่วน Sun Pearl มีกลิ่นผลไม้เขียวรสหวาน",
+          "Passion Fruit Pearl มีรสยาสูบกับเมนทอล แคปซูลเป็นกลิ่นเสาวรส และมีกานพลูอยู่เล็กน้อย ส่วน Strawberry Pearl เป็นยาสูบละมุนกับแคปซูลกลิ่นสตรอเบอร์รี่และโหระพา และมีกานพลูเล็กน้อยเช่นกัน",
+        ],
+      },
+      {
+        heading: "TEREA ใช้กับเครื่องไหน",
+        paragraphs: [
+          "TEREA 1 ซองมี 20 ก้าน และ IQOS ระบุว่าใช้กับเครื่องตระกูล ILUMA เท่านั้น บนเว็บเรามี [ILUMA i ONE](/products/iqosheet-17) · [ILUMA i](/products/iqosheet-18) และ [ILUMA i PRIME](/products/iqosheet-16) ราคาของก้านและเครื่องดูได้ที่หน้าสินค้า",
+          "ถ้ายังไม่แน่ใจว่าจะเลือกรุ่นไหน ความต่างของสามรุ่นนี้อ่านได้ที่ [ILUMA i ONE vs ILUMA i ต่างกันยังไง](/guides/iqos-iluma-i-one-vs-iluma-i)",
+          "อีกทางหนึ่งคือ [LAMBDA i8](/products/iqosheet-14) ซึ่งเป็นเครื่องอุ่นยาสูบของ LAMBDA ไม่ใช่เครื่องของ IQOS ตามข้อมูลบนเว็บของ LAMBDA เครื่องนี้ใช้ก้าน TEREA และ SENTIA ได้",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["iqosheet-15", "iqosheet-17", "iqosheet-18", "iqosheet-16"],
+    faq: [
+      { question: "TEREA คืออะไร", answer: "TEREA คือก้านยาสูบของ IQOS สำหรับเครื่องอุ่นยาสูบตระกูล ILUMA 1 ซองมี 20 ก้าน และมีกลิ่นให้เลือกสี่กลุ่ม คือ ยาสูบคลาสสิก เมนทอล กานพลู และแคปซูล" },
+      { question: "TEREA กลิ่นไหนหอม", answer: "ความหอมเป็นเรื่องที่แต่ละคนรู้สึกไม่เหมือนกัน ถ้าชอบกลิ่นดอกไม้ ลองดู Black Ruby หรือ Dimensions Yugen ถ้าชอบหอมหวานแบบผลไม้ ลองดู Sun Pearl หรือ Oasis Pearl และถ้าชอบหอมแบบขนม Bronze มีกลิ่นโกโก้ ส่วน Auburn Edition มีวานิลลา" },
+      { question: "TEREA กลิ่นไหนเย็นแรง", answer: "ในคำอธิบายของ IQOS กลิ่นที่บอกว่าเป็นเมนทอลเย็นแรงคือ Black Green ซึ่งมาคู่กับผลไม้เขียว ถ้าอยากได้เย็นแบบมินต์ที่ไม่มีผลไม้ ลองดู Blue ที่เป็นเมนทอลกับเปปเปอร์มินต์" },
+      { question: "TEREA Pearl ต้องบีบไหม", answer: "ต้องบีบ กลิ่นที่ชื่อลงท้ายด้วย Pearl มีแคปซูลอยู่ในก้นกรอง ก่อนใช้ให้บีบจนแคปซูลแตกและได้ยินเสียงคลิก เพื่อให้กลิ่นในแคปซูลออกมา" },
+      { question: "TEREA Sienna · Sun Pearl · Oasis Pearl กลิ่นเป็นยังไง", answer: "Sienna เป็นยาสูบที่มีโทนไม้และกลิ่นชาผสมอยู่ Sun Pearl เป็นยาสูบที่ปลายก้านหวาน มีกลิ่นผลไม้เขียว และ Oasis Pearl เป็นยาสูบที่ปลายก้านหวาน มีกลิ่นผลไม้เขตร้อน ทั้งสอง Pearl ต้องบีบแคปซูลก่อนใช้" },
+    ],
+  },
+  {
+    // Round SEO line 2 (autocomplete 19/10: "iluma i one vs iluma i" · "iluma i one vs iluma i prime" · "iluma i one ใช้ยังไง" ·
+    // "iluma i one ราคา" → answered as "ราคาดูที่หน้าสินค้า", no price typed). Model facts = IQOS Tunisia comparison
+    // https://www.iqos.com/tn/fr/actualites/iqos-iluma-i/iqos-iluma-i-differences.html (confirmed by IQOS Egypt): i ONE one piece,
+    // up to 20 in a row, 1 h 30 min charge, FlexPuff, auto start/stop · i = Holder + Pocket Charger, 3 in a row, 2 h 15 min,
+    // touch screen, Pause, FlexPuff, FlexBattery · i PRIME = same system, more premium design, 3 in a row (2 with Pause in
+    // Performance), detailed screen, Pause up to 8 min, FlexPuff +4, FlexBattery Performance/Eco in the app. Battery figures,
+    // aluminium, "20 sticks per full charge" (i PRIME only) and "USB-C cable in box" (i PRIME only) = our product rows.
+    // AutoStop written loosely ("หยุดเองโดยอัตโนมัติ"). i ONE how-to kept to the basics + "see the manual". LAMBDA i8 =
+    // lambdasmoke.com, not IQOS, said as LAMBDA's data. "ไอคอส" not used: its one-sentence home is /brands/iqos (THAI_STYLE §2
+    // layer 1). Title carries "vs" as people type it (autocomplete). Wording: thai-copy 19/10.
+    id: "iqos-iluma-i-one-vs-iluma-i",
+    slug: "iqos-iluma-i-one-vs-iluma-i",
+    title: "IQOS ILUMA i ONE vs ILUMA i และ i PRIME ต่างไหม",
+    dek: "ILUMA i ONE เป็นเครื่องชิ้นเดียว สูบต่อกันได้สูงสุด 20 ก้าน ส่วน ILUMA i และ ILUMA i PRIME มี Holder กับ Pocket Charger รวมถึงจอทัชและโหมดหยุดพัก บทความนี้เทียบสามรุ่นทีละเรื่องจากข้อมูลของ IQOS พร้อมวิธีเลือกให้ตรงกับการใช้งาน",
+    category: "buying-guide",
+    readingTimeMin: 6,
+    publishedAt: "2026-10-19",
+    thaiOnly: true,
+    body: [
+      {
+        heading: "ILUMA i ONE กับ ILUMA i ต่างกันยังไง",
+        paragraphs: [
+          "ILUMA i ONE เป็นเครื่องชิ้นเดียว สูบต่อกันได้สูงสุด 20 ก้าน ส่วน ILUMA i และ ILUMA i PRIME มีสองชิ้น คือ Holder ที่ใช้สูบ กับ Pocket Charger ที่ใช้ชาร์จ Holder สูบต่อกันได้สูงสุด 3 ก้านแล้ววางกลับลงไปชาร์จ และมีจอทัชกับโหมดหยุดพักเพิ่มเข้ามา",
+          "ILUMA i PRIME ใช้ระบบเดียวกับ ILUMA i แต่ดีไซน์พรีเมียมกว่า และจอแสดงข้อมูลได้ละเอียดกว่า ข้อมูลในบทความนี้มาจาก[หน้าเทียบรุ่นของ IQOS](https://www.iqos.com/tn/fr/actualites/iqos-iluma-i/iqos-iluma-i-differences.html) และหน้าสินค้าบนเว็บเรา ส่วนราคาของแต่ละรุ่นดูได้ที่หน้าสินค้า",
+        ],
+      },
+      {
+        heading: "IQOS ILUMA i ONE: เครื่องชิ้นเดียว",
+        paragraphs: [
+          "[ILUMA i ONE](/products/iqosheet-17) รวมทุกอย่างไว้ในเครื่องเดียว ไม่มี Holder แยก ตัวเครื่องเป็นอะลูมิเนียม แบต 1728mAh สูบต่อกันได้สูงสุด 20 ก้าน และชาร์จเต็มในประมาณ 1 ชั่วโมง 30 นาที",
+          "เสียบก้านแล้วเครื่องจะเริ่มอุ่นให้เอง และหยุดเองโดยอัตโนมัติ นอกจากนี้ยังมี FlexPuff ที่ปรับจำนวนพัฟตามจังหวะการสูบ เพิ่มได้สูงสุด 4 พัฟ",
+        ],
+      },
+      {
+        heading: "IQOS ILUMA i: สองชิ้น มีจอทัช",
+        paragraphs: [
+          "[ILUMA i](/products/iqosheet-18) มีสองชิ้น ตัว Holder ใช้สูบ แบต 300mAh ส่วนตัวชาร์จ Pocket Charger แบต 2700mAh ชาร์จ Holder หนึ่งครั้งสูบต่อกันได้สูงสุด 3 ก้าน แล้ววางกลับลงไปชาร์จต่อ ส่วน Pocket Charger ชาร์จเต็มในราว 135 นาที",
+          "บน Holder มีจอทัช มีโหมดหยุดพักระหว่างสูบ มี FlexPuff และมี FlexBattery ที่เลือกได้ระหว่างโหมด Performance กับ Eco วิธีชาร์จ รีเซ็ต และความหมายของสัญลักษณ์บนจอ อ่านได้ที่ [IQOS ILUMA i รีเซ็ตยังไง ชาร์จไม่เข้า](/guides/iqos-iluma-i-reset-and-charging)",
+        ],
+      },
+      {
+        heading: "IQOS ILUMA i PRIME: ระบบเดียวกับ i ดีไซน์พรีเมียมกว่า",
+        paragraphs: [
+          "[ILUMA i PRIME](/products/iqosheet-16) ใช้ระบบเดียวกับ ILUMA i คือมี Holder กับ Pocket Charger แบตก็เท่ากัน แบต 2700mAh อยู่ใน Pocket Charger และแบต 300mAh อยู่ใน Holder ชาร์จเต็มหนึ่งครั้งรองรับได้สูงสุด 20 ก้าน สิ่งที่ต่างคือดีไซน์ที่พรีเมียมกว่า และจอทัชที่แสดงข้อมูลได้ละเอียดกว่า",
+          "Holder สูบต่อกันได้สูงสุด 3 ก้าน หรือ 2 ก้านถ้าเปิดโหมดหยุดพักในโหมด Performance ซึ่งพักได้นานสุด 8 นาที มี FlexPuff ที่เพิ่มได้สูงสุด 4 พัฟ และ FlexBattery ที่เลือกโหมด Performance หรือ Eco ได้ในแอป IQOS ในกล่องมีสาย USB-C มาให้ด้วย",
+        ],
+      },
+      {
+        heading: "สามรุ่นต่างกันตรงไหนบ้าง",
+        paragraphs: [
+          "เรื่องแรกคือจำนวนชิ้น ILUMA i ONE เป็นเครื่องชิ้นเดียว หยิบแล้วสูบได้เลย ส่วนอีกสองรุ่นต้องใช้ Holder กับ Pocket Charger คู่กัน",
+          "เรื่องที่สองคือการสูบต่อเนื่อง ILUMA i ONE สูบต่อกันได้สูงสุด 20 ก้าน ส่วน Holder ของ ILUMA i และ ILUMA i PRIME สูบต่อกันได้สูงสุด 3 ก้านแล้วต้องวางกลับไปชาร์จ ทั้งนี้ตัวชาร์จของ i PRIME เมื่อชาร์จเต็มหนึ่งครั้งรองรับได้สูงสุด 20 ก้าน",
+          "เรื่องที่สามคือจอทัชและโหมดหยุดพัก ซึ่งมีเฉพาะสองรุ่นที่มี Holder ส่วน FlexPuff มีครบทั้งสามรุ่น และทั้งสามรุ่นใช้ได้กับก้าน TEREA เท่านั้น เรื่องเวลาชาร์จ ILUMA i ONE ใช้ราว 90 นาที ส่วนอีกสองรุ่นชาร์จ Pocket Charger ราว 135 นาที",
+        ],
+      },
+      {
+        heading: "LAMBDA i8: อีกทางที่ไม่ใช่ IQOS",
+        paragraphs: [
+          "[LAMBDA i8](/products/iqosheet-14) เป็นเครื่องอุ่นยาสูบที่ผลิตโดย LAMBDA ซึ่งเป็นคนละแบรนด์กับ IQOS ตามข้อมูลบนเว็บของ LAMBDA เครื่องนี้ใช้ก้านได้ทั้ง TEREA และ SENTIA แบต 3200mAh ชาร์จหนึ่งครั้งสูบได้ 35–40 ก้าน และชาร์จเต็มในราว 150 นาทีด้วยหัวชาร์จ 5V 2A",
+          "จุดที่ต่างจากตระกูล ILUMA คือปรับอุณหภูมิได้ตั้งแต่ 200–300 องศาเซลเซียส เวลาสูบต่อก้านอยู่ที่ 3–6 นาที และมีจอ LED บนตัวเครื่อง",
+        ],
+      },
+      {
+        heading: "เลือกรุ่นไหนดี ดูจากการใช้งาน",
+        paragraphs: [
+          "ถ้าอยากได้เครื่องชิ้นเดียว ไม่ต้องมี Pocket Charger และสูบต่อกันได้หลายก้านโดยไม่ต้องวางชาร์จ ILUMA i ONE ตรงกับการใช้งานแบบนี้",
+          "ถ้าอยากเห็นข้อมูลบนจอและหยุดพักระหว่างสูบได้ โดยวาง Holder กลับไปชาร์จทุก 3 ก้านได้สบาย ๆ ตัวเลือกที่ตรงกว่าคือ ILUMA i และถ้าชอบระบบเดียวกันแต่อยากได้ดีไซน์ที่พรีเมียมขึ้นกับจอที่ละเอียดกว่า ลองดู ILUMA i PRIME",
+          "ถ้าอยากได้แบตที่สูบได้หลายก้านต่อการชาร์จหนึ่งครั้ง และอยากปรับอุณหภูมิเอง LAMBDA i8 เป็นอีกทางหนึ่ง เลือกเครื่องได้แล้ว ลองดูว่าจะเริ่มจากกลิ่นไหนใน [TEREA กลิ่นไหนดี](/guides/choosing-a-terea-flavor) และถ้าอยากถามก่อนตัดสินใจ ทักร้านทางไลน์ @okm24 ได้",
+        ],
+      },
+    ],
+    relatedProductSlugs: ["iqosheet-17", "iqosheet-18", "iqosheet-16", "iqosheet-14"],
+    faq: [
+      { question: "ILUMA i ONE vs ILUMA i ต่างกันยังไง", answer: "ILUMA i ONE เป็นเครื่องชิ้นเดียว สูบต่อกันได้สูงสุด 20 ก้าน และชาร์จเต็มในประมาณ 1 ชั่วโมง 30 นาที ส่วน ILUMA i แยกเป็น Holder กับ Pocket Charger โดย Holder สูบต่อกันได้สูงสุด 3 ก้านแล้ววางกลับไปชาร์จ และมีจอทัชกับโหมดหยุดพัก" },
+      { question: "ILUMA i ONE vs ILUMA i PRIME ต่างกันยังไง", answer: "ILUMA i ONE เป็นเครื่องชิ้นเดียว สูบต่อกันได้สูงสุด 20 ก้าน ส่วน ILUMA i PRIME ใช้ Holder กับ Pocket Charger มีดีไซน์ที่พรีเมียมกว่า มีจอทัชที่แสดงข้อมูลละเอียด และมีโหมดหยุดพักได้นานสุด 8 นาทีในโหมด Performance" },
+      { question: "ILUMA i กับ ILUMA i PRIME ต่างกันยังไง", answer: "ทั้งสองรุ่นใช้ระบบ Holder กับ Pocket Charger เหมือนกัน แบตเท่ากัน และมีจอทัช โหมดหยุดพัก FlexPuff และ FlexBattery เหมือนกัน ส่วนที่ต่างคือ ILUMA i PRIME มีดีไซน์ที่พรีเมียมกว่า และจอแสดงข้อมูลได้ละเอียดกว่า" },
+      { question: "ILUMA i ONE ใช้ยังไง", answer: "เสียบก้าน TEREA ลงในตัวเครื่อง เครื่องจะเริ่มอุ่นให้เอง เมื่ออุ่นเสร็จก็เริ่มสูบได้ และสูบเสร็จแล้วดึงก้านออก i ONE เป็นเครื่องชิ้นเดียว จึงไม่ต้องย้าย Holder เข้าออกเหมือน ILUMA i ขั้นตอนละเอียดดูได้ในคู่มือที่มากับกล่อง" },
+      { question: "IQOS ILUMA ใช้ก้านอะไร", answer: "ILUMA i ONE · ILUMA i และ ILUMA i PRIME ใช้ได้กับก้าน TEREA เท่านั้น 1 ซองมี 20 ก้าน ส่วน LAMBDA i8 ซึ่งไม่ใช่เครื่องของ IQOS ทาง LAMBDA ระบุว่าใช้ได้ทั้งก้าน TEREA และ SENTIA" },
     ],
   },
 ];
