@@ -222,11 +222,11 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     evidence: 'owner-confirmed 2026-10-06: admin current-price list row "M Switch Kit" ฿550 → ฿600 · match was — shipnity-backoffice: "ชุดเซ็ท M Switch 15k" (Pod-156, ฿550) — the device + pod set — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
   },
   "tfit-m-power-20k": {
-    sellingPrice: 320,
-    lastPriceReview: "2026-09-21",
-    basis: "shipnity",
+    sellingPrice: 350,
+    lastPriceReview: "2026-10-19",
+    basis: "owner-confirmed",
     shipnityProductId: "Disposable-41",
-    evidence: 'shipnity-backoffice: "TFIT M Power 20000" (Disposable-41, ฿320) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+    evidence: 'owner-confirmed 2026-10-19: owner in chat "Tfit M power ราคา 350.- ครับ แก้เลยครับ" ฿320 → ฿350 (Max says ฿320 for Disposable-41 and its 11 flavours until the admin updates it) · match was — shipnity-backoffice: "TFIT M Power 20000" (Disposable-41, ฿320) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
   },
   "foli-bar-15k": {
     sellingPrice: 349,

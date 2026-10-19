@@ -205,7 +205,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "NEXSWITCH-16K-KIT": { sellingPrice: 419, lastPriceReview: "2026-10-19" },
   "NEXSWITCH-16K-POD": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): RELX LUMI 18K (Max-only "Disposable-44") — Max ราคาขาย ฿349 for the parent and its 16 flavours (read 2026-10-17).
-  "RELX-LUMI-18K": { sellingPrice: 349, lastPriceReview: "2026-10-19" },
+  // owner-confirmed 2026-10-19: owner in chat "Relax lumi 18k ราคา 399 ครับ แก้เลยครับ" — owner override (was ฿349). Max says ฿349 until the admin updates it.
+  "RELX-LUMI-18K": { sellingPrice: 399, lastPriceReview: "2026-10-19" },
   // Round p63 (19/10): ESKO BAR 20000 (Max-only "Pod-130") — owner list item 69 "ใส่ตามคลัง": Max ราคาขาย ฿389 for the parent and its 22 flavours (read 2026-10-17).
   "ESKO-BAR-20K": { sellingPrice: 389, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): ESKO BAR SWITCH 20K refill pod (Max-only "Pod-160") — Max ราคาขาย ฿349 for the parent and its 18 flavours (read 2026-10-17).
@@ -228,6 +229,12 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // "PUNTA-ICE": { sellingPrice: 150, lastPriceReview: "2026-10-19" },
   // "INFY-POD": { sellingPrice: 690, lastPriceReview: "2026-10-19" },
   // "VMATE-PRO-2": { sellingPrice: 890, lastPriceReview: "2026-10-19" },
+  // owner-confirmed 2026-10-19: "ราคา Graple Freebase: ฿160.-" — one price for the parent and its option (Max says ฿795 parent / ฿159 child
+  // until the admin updates it). Held until a card photo exists.
+  // "GRAPLE-FREEBASE": { sellingPrice: 160, lastPriceReview: "2026-10-19" },
+  // owner-confirmed 2026-10-19: "ราคา MQ Bar 22K: ฿390.-" — one price for the parent and all 11 flavours (Max says ฿369 parent / ฿359
+  // flavours until the admin updates it). Held until a card photo exists.
+  // "MQ-BAR-22K": { sellingPrice: 390, lastPriceReview: "2026-10-19" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {
