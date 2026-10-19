@@ -342,3 +342,11 @@ Rows 1–10 (above) keep their dates ("pod" / "pod system" = row 9). Also on 22/
   high-output-chip-platforms → the ARGUS guide · zero-pro / zero-nano / zero-cartridge / relx-creator gain the switch guide ·
   /brands/moood and /brands/tfit gain the disposable + flavour guides. Links held back until after the read = HANDOFF §16 3s.
 - Targets: each guide gets its own "…รุ่นไหนดี / ยี่ห้อไหนดี / กลิ่นไหนดี / ของแท้ ดูยังไง" rows · read 01/11 · 15/11 · 10/12.
+
+## 19–20/10/2026 (side chat line 2) - changed before the 22/10 read (owner lifted the hold 19/10; the read is mixed, owner accepted)
+
+- #615 (live 20/10): home brand strip — `/` links /brands/esko-bar (row 5) and /brands/joiway (row 6) plus 6 other brand pages.
+- #623 (live 20/10): NEW Thai-only /guides/iqos-iluma-i-one-vs-iluma-i ("iluma i one vs iluma i" · "iluma i prime") and
+  /guides/choosing-a-terea-flavor ("terea กลิ่นไหนดี") — no row yet; read them from 01/11.
+- #626: guides keep one clip each — rows 11–21 guides lost section clips (text/head unchanged); VideoObject unchanged
+  (it comes from the main clip only). KOKO + mesh clips moved to /products/caliburn-g4-pro-koko and /technology/mesh-coil-systems.
