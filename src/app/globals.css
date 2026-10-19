@@ -239,19 +239,6 @@ img {
     gap: 0.875rem;
     padding: 0.75rem 0.875rem;
   }
-
-  /* [M1] final bullet: the three brand names that used to take a full screen each inside the
-     desktop intro become one slow strip under the hero. The track holds the list twice, so a
-     -50% travel lands the copy exactly where the original started and the loop has no seam. */
-  .okami-brand-marquee-track {
-    animation: okami-brand-marquee 32s linear infinite;
-  }
-  /* Both ends fade instead of stopping dead, so names slide in and out of the strip rather than
-     appearing and vanishing at a hard edge — the same mask technique round B's chip rows use. */
-  .okami-brand-marquee {
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
-  }
 }
 
 @keyframes okami-hero-media-in {
@@ -534,7 +521,7 @@ html[data-okami-lite="1"] .okami-hero-bg {
   .okami-hero-line-2,
   .okami-hero-line-3,
   .okami-hero-cta,
-  .okami-brand-marquee-track {
+  .okami-brand-strip-track {
     animation: none !important;
   }
   .okami-hero-sheen {
