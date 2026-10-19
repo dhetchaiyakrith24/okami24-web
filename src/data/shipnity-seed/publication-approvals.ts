@@ -234,7 +234,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "GRAPLE-FREEBASE": { sellingPrice: 160, lastPriceReview: "2026-10-19" },
   // owner-confirmed 2026-10-19: "ราคา MQ Bar 22K: ฿390.-" — one price for the parent and all 11 flavours (Max says ฿369 parent / ฿359
   // flavours until the admin updates it). Held until a card photo exists.
-  // "MQ-BAR-22K": { sellingPrice: 390, lastPriceReview: "2026-10-19" },
+  "MQ-BAR-22K": { sellingPrice: 390, lastPriceReview: "2026-10-19" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {
