@@ -17,6 +17,8 @@
  * velocity) and a surge whenever the hero changes product (`surge()`), so the ribbons carry the
  * change. The caller starts/stops the loop (off-screen, hidden tab) and decides when only a single
  * still frame is wanted (reduced motion / Save-Data). No WebGL = no ribbons (the hero still works).
+ * By default the engine runs in a worker on an OffscreenCanvas (hero-ribbons.worker.ts), so the
+ * page's main thread has no animation loop at all; mainThreadDriver() is the fallback.
  */
 
 type Ribbon = {
@@ -118,8 +120,6 @@ void main() {
   gl_FragColor = vec4(g.rgb * a, a);
 }`;
 
-export type RibbonFocus = { x: number; y: number };
-
 type Uniforms = Record<string, WebGLUniformLocation | null>;
 
 /** One instanced draw: which lines (k · index · opacity falloff), how wide, which look. */
@@ -128,8 +128,7 @@ type Batch = { buf: WebGLBuffer; count: number; ribbon: Ribbon; kind: "halo" | "
 /**
  * The per-line values of every ribbon, as instance data — built once per detail level, so a frame
  * is a handful of uniforms and nine instanced draws instead of one draw per line (measured 20/10:
- * one draw per line, ~450 GL calls a frame, cost ~4.5 s of main-thread time across a Lighthouse
- * mobile run; the frame itself is GPU work).
+ * one draw per line, ~450 GL calls a frame).
  */
 function lineSets(r: Ribbon, phone: boolean) {
   const n = phone ? Math.round(r.n * 0.6) : r.n;
@@ -146,7 +145,20 @@ function lineSets(r: Ribbon, phone: boolean) {
   return { halo, line, core };
 }
 
-export class HeroRibbons {
+type Ctx2Canvas = HTMLCanvasElement | OffscreenCanvas;
+const frameLater: (cb: (t: number) => void) => number =
+  typeof requestAnimationFrame === "function" ? (cb) => requestAnimationFrame(cb) : (cb) => setTimeout(() => cb(performance.now()), 16) as unknown as number;
+const cancelFrame: (id: number) => void =
+  typeof cancelAnimationFrame === "function" ? (id) => cancelAnimationFrame(id) : (id) => clearTimeout(id);
+
+/**
+ * The renderer. It knows nothing about the page: the owner of the canvas tells it the size, the
+ * focus point and the scroll position (`size` · `focus` · `scroll`), so the same code runs on the
+ * main thread or inside a worker on an OffscreenCanvas (hero-ribbons.worker.ts — the default: a
+ * main-thread animation loop made the browser re-tick every other animation on the page each frame,
+ * measured 20/10 as ~1 s of style work per 5 s from the brand strip alone).
+ */
+export class RibbonEngine {
   private gl: WebGLRenderingContext;
   private inst: ANGLE_instanced_arrays | null;
   private prog: WebGLProgram;
@@ -158,31 +170,31 @@ export class HeroRibbons {
   private h = 0;
   private dpr = 1;
   private phone = false;
+  private fx = 0;
+  private fy = 0;
+  private scrollY = 0;
   private t = 0;
   private last = 0;
   private raf = 0;
   private running = false;
   private surgeLeft = 0;
   private scrollV = 0;
-  private lastY = 0;
-  private lastYT = 0;
+  private lastScrollT = 0;
 
   /** Returns null when WebGL is unavailable — the caller simply shows no ribbons. */
-  static create(canvas: HTMLCanvasElement, focus: () => RibbonFocus): HeroRibbons | null {
-    const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false, powerPreference: "low-power" });
+  static create(canvas: Ctx2Canvas): RibbonEngine | null {
+    const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false, powerPreference: "low-power" }) as WebGLRenderingContext | null;
     if (!gl) return null;
     try {
-      return new HeroRibbons(canvas, gl, focus);
+      return new RibbonEngine(canvas, gl);
     } catch {
       return null;
     }
   }
 
   private constructor(
-    private canvas: HTMLCanvasElement,
+    private canvas: Ctx2Canvas,
     gl: WebGLRenderingContext,
-    /** where the bundle crosses — the product's centre, in canvas CSS pixels */
-    private focus: () => RibbonFocus,
   ) {
     this.gl = gl;
     this.inst = gl.getExtension("ANGLE_instanced_arrays");
@@ -233,20 +245,31 @@ export class HeroRibbons {
     });
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.ONE, gl.ONE);
-    this.resize();
-    this.lastY = window.scrollY;
-    this.lastYT = performance.now();
-    window.addEventListener("scroll", this.onScroll, { passive: true });
   }
 
-  resize() {
-    const r = this.canvas.getBoundingClientRect();
-    this.phone = window.innerWidth < 1024;
-    this.dpr = Math.min(window.devicePixelRatio || 1, 2);
-    this.w = r.width;
-    this.h = r.height;
-    this.canvas.width = Math.max(1, Math.round(r.width * this.dpr));
-    this.canvas.height = Math.max(1, Math.round(r.height * this.dpr));
+  /** CSS size of the canvas, device pixel ratio (capped at 2 by the caller), phone layout or not */
+  size(w: number, h: number, dpr: number, phone: boolean) {
+    this.w = w;
+    this.h = h;
+    this.dpr = dpr;
+    this.phone = phone;
+    this.canvas.width = Math.max(1, Math.round(w * dpr));
+    this.canvas.height = Math.max(1, Math.round(h * dpr));
+  }
+
+  /** where the bundle crosses — the product's centre, in canvas CSS pixels */
+  focus(x: number, y: number) {
+    this.fx = x;
+    this.fy = y;
+  }
+
+  /** the page's scroll position; the speed of change gives the "beat" */
+  scroll(y: number) {
+    const now = performance.now();
+    const dt = Math.max(16, now - this.lastScrollT);
+    this.scrollV = this.scrollV * 0.6 + Math.abs((y - this.scrollY) / dt) * 1000 * 0.4;
+    this.scrollY = y;
+    this.lastScrollT = now;
   }
 
   /** The hero changed product — the ribbons speed up and brighten for ~1.6 s. */
@@ -258,12 +281,12 @@ export class HeroRibbons {
     if (this.running) return;
     this.running = true;
     this.last = performance.now();
-    this.raf = requestAnimationFrame(this.frame);
+    this.raf = frameLater(this.frame);
   }
 
   stop() {
     this.running = false;
-    cancelAnimationFrame(this.raf);
+    cancelFrame(this.raf);
   }
 
   /** One still frame (reduced motion, Save-Data). */
@@ -272,32 +295,18 @@ export class HeroRibbons {
     this.draw(16);
   }
 
-  destroy() {
-    this.stop();
-    window.removeEventListener("scroll", this.onScroll);
-  }
-
-  private onScroll = () => {
-    const now = performance.now();
-    const dy = window.scrollY - this.lastY;
-    const dt = Math.max(16, now - this.lastYT);
-    this.scrollV = this.scrollV * 0.6 + Math.abs(dy / dt) * 1000 * 0.4;
-    this.lastY = window.scrollY;
-    this.lastYT = now;
-  };
-
   private frame = (now: number) => {
     if (!this.running) return;
     const dt = Math.min(64, now - this.last);
     this.last = now;
     this.draw(dt);
-    this.raf = requestAnimationFrame(this.frame);
+    this.raf = frameLater(this.frame);
   };
 
   private draw(dt: number) {
     const { gl, u, a, w, h, phone, dpr, inst } = this;
     if (!w || !h || gl.isContextLost()) return;
-    const heroP = Math.min(1, Math.max(0, window.scrollY / h));
+    const heroP = Math.min(1, Math.max(0, this.scrollY / h));
     this.surgeLeft = Math.max(0, this.surgeLeft - dt / 1600);
     const surge = Math.sin((Math.min(1, this.surgeLeft) * Math.PI) / 2);
     this.scrollV *= Math.pow(0.9, dt / 16);
@@ -316,11 +325,14 @@ export class HeroRibbons {
     gl.vertexAttribPointer(a.u, 1, gl.FLOAT, false, 8, 0);
     gl.enableVertexAttribArray(a.side);
     gl.vertexAttribPointer(a.side, 1, gl.FLOAT, false, 8, 4);
+    if (inst) {
+      inst.vertexAttribDivisorANGLE(a.u, 0);
+      inst.vertexAttribDivisorANGLE(a.side, 0);
+    }
 
-    const f = this.focus();
     const strength = (1 - heroP * 0.65) * (1 + surge * 0.55);
     gl.uniform2f(u.u_res, w, h);
-    gl.uniform2f(u.u_focus, f.x, f.y - heroP * h * 0.15);
+    gl.uniform2f(u.u_focus, this.fx, this.fy - heroP * h * 0.15);
     gl.uniform1f(u.u_ang, phone ? -0.52 : -0.26);
     gl.uniform1f(u.u_len, Math.hypot(w, h) * 1.25);
     gl.uniform1f(u.u_span, phone ? Math.max(h * 0.62, 420) : h);
@@ -370,4 +382,60 @@ export class HeroRibbons {
       }
     }
   }
+}
+
+/** Messages the page sends to hero-ribbons.worker.ts — one per RibbonEngine method. */
+export type RibbonMessage =
+  | { type: "init"; canvas: OffscreenCanvas }
+  | { type: "size"; w: number; h: number; dpr: number; phone: boolean }
+  | { type: "focus"; x: number; y: number }
+  | { type: "scroll"; y: number }
+  | { type: "surge" }
+  | { type: "run"; on: boolean; still: boolean };
+
+/** What the page holds: the same calls whether the engine runs in a worker or right here. */
+export type RibbonDriver = {
+  size(w: number, h: number, dpr: number, phone: boolean): void;
+  focus(x: number, y: number): void;
+  scroll(y: number): void;
+  surge(): void;
+  run(on: boolean, still: boolean): void;
+  destroy(): void;
+};
+
+/** Applies one message to an engine — shared by the worker and the main-thread fallback. */
+export function applyRibbonMessage(engine: RibbonEngine, m: Exclude<RibbonMessage, { type: "init" }>) {
+  switch (m.type) {
+    case "size":
+      engine.size(m.w, m.h, m.dpr, m.phone);
+      break;
+    case "focus":
+      engine.focus(m.x, m.y);
+      break;
+    case "scroll":
+      engine.scroll(m.y);
+      break;
+    case "surge":
+      engine.surge();
+      break;
+    case "run":
+      if (m.still) engine.still();
+      else if (m.on) engine.start();
+      else engine.stop();
+      break;
+  }
+}
+
+/** Main-thread engine behind the same driver shape (no OffscreenCanvas / no worker). */
+export function mainThreadDriver(canvas: HTMLCanvasElement): RibbonDriver | null {
+  const engine = RibbonEngine.create(canvas);
+  if (!engine) return null;
+  return {
+    size: (w, h, dpr, phone) => applyRibbonMessage(engine, { type: "size", w, h, dpr, phone }),
+    focus: (x, y) => applyRibbonMessage(engine, { type: "focus", x, y }),
+    scroll: (y) => applyRibbonMessage(engine, { type: "scroll", y }),
+    surge: () => applyRibbonMessage(engine, { type: "surge" }),
+    run: (on, still) => applyRibbonMessage(engine, { type: "run", on, still }),
+    destroy: () => engine.stop(),
+  };
 }

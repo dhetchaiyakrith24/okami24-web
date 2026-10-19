@@ -5,7 +5,7 @@ import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
-import { HeroRibbons } from "@/lib/hero-ribbons";
+import { mainThreadDriver, type RibbonDriver, type RibbonMessage } from "@/lib/hero-ribbons";
 import type { HeroType } from "@/data/home-hero";
 
 /** One slot as page.tsx resolved it from the catalog — the client never sees the catalog itself
@@ -26,6 +26,39 @@ const TYPE_TAG: Record<HeroType, string> = {
   disposables: "Disposable",
   "heated-tobacco-devices": "Heated Tobacco",
 };
+
+/** The ribbon engine in a worker on an OffscreenCanvas; null when the browser cannot (the main
+ *  thread then draws — mainThreadDriver). A worker that cannot get WebGL answers "fail": no ribbons. */
+function workerDriver(canvas: HTMLCanvasElement, onReady: () => void): RibbonDriver | null {
+  if (typeof Worker === "undefined" || typeof canvas.transferControlToOffscreen !== "function") return null;
+  let worker: Worker;
+  try {
+    worker = new Worker(new URL("../../lib/hero-ribbons.worker.ts", import.meta.url));
+  } catch {
+    return null;
+  }
+  let off: OffscreenCanvas;
+  try {
+    off = canvas.transferControlToOffscreen();
+  } catch {
+    worker.terminate();
+    return null;
+  }
+  worker.onmessage = (e: MessageEvent) => {
+    if (e.data === "ready") onReady();
+    else worker.terminate();
+  };
+  const post = (m: RibbonMessage, transfer: Transferable[] = []) => worker.postMessage(m, transfer);
+  post({ type: "init", canvas: off }, [off]);
+  return {
+    size: (w, h, dpr, phone) => post({ type: "size", w, h, dpr, phone }),
+    focus: (x, y) => post({ type: "focus", x, y }),
+    scroll: (y) => post({ type: "scroll", y }),
+    surge: () => post({ type: "surge" }),
+    run: (on, still) => post({ type: "run", on, still }),
+    destroy: () => worker.terminate(),
+  };
+}
 
 /**
  * The homepage hero (round "หน้าแรก hero", owner 20/10 — the draft he approved is
@@ -53,9 +86,8 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
   // in viewport, a lazy image loads at once and the four competed with the first one (phone LCP)
   const [warm, setWarm] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
-  const ribbonsRef = useRef<HeroRibbons | null>(null);
+  const ribbonsRef = useRef<RibbonDriver | null>(null);
   const tx = (s: string) => (locale === "th" ? thaiTypographyNode(s) : s);
 
   const curRef = useRef(0);
@@ -71,43 +103,52 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
 
   useEffect(() => {
     const section = sectionRef.current;
-    const canvas = canvasRef.current;
     const stage = stageRef.current;
-    if (!section || !canvas || !stage) return;
+    if (!section || !stage) return;
     const still =
       window.matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.dataset.okamiLite === "1";
     // no setAuto here: under reduced motion / Save-Data globals.css removes the bar animation, so
     // animationend never fires and nothing rotates by itself
 
-    // the bundle crosses behind the product: its centre, measured on resize only
-    let focus = { x: 0, y: 0 };
-    const measure = () => {
-      const s = stage.getBoundingClientRect();
-      const c = canvas.getBoundingClientRect();
-      focus = { x: s.left - c.left + s.width / 2, y: s.top - c.top + s.height / 2 };
-    };
+    // A fresh canvas per mount: an OffscreenCanvas transfer can happen only once per element.
+    const canvas = document.createElement("canvas");
+    canvas.className = "okh-canvas";
+    canvas.setAttribute("aria-hidden", "true");
+    section.prepend(canvas);
 
-    let ribbons: HeroRibbons | null = null;
+    let ribbons: RibbonDriver | null = null;
     let visible = true;
     let disposed = false;
-    const run = () => {
+    const sync = () => {
       if (!ribbons) return;
-      if (still) ribbons.still();
-      else if (visible && !document.hidden) ribbons.start();
-      else ribbons.stop();
+      const c = canvas.getBoundingClientRect();
+      const s = stage.getBoundingClientRect();
+      // the bundle crosses behind the product: its centre, in canvas pixels
+      ribbons.size(c.width, c.height, Math.min(window.devicePixelRatio || 1, 2), window.innerWidth < 1024);
+      ribbons.focus(s.left - c.left + s.width / 2, s.top - c.top + s.height / 2);
+      ribbons.scroll(window.scrollY);
     };
-    // The ribbons wait until the page has loaded and the browser is idle: the product photo and
-    // the headline paint first, then the light fades in (globals.css, [data-on]). Measured 20/10:
-    // starting them during load cost the phone LCP ~1.3 s in Lighthouse.
+    const run = () => ribbons?.run(visible && !document.hidden, still);
+    const onScroll = () => ribbons?.scroll(window.scrollY);
+
+    // The ribbons wait until the page has loaded and the browser is idle: the product photo and the
+    // headline paint first, then the light fades in (globals.css, [data-on]). Measured 20/10: starting
+    // them during load cost the phone LCP ~1.3 s in Lighthouse. They run in a worker when the browser
+    // can (OffscreenCanvas): a main-thread loop made the page re-tick every other animation each frame.
     const begin = () => {
       if (disposed) return;
       setWarm(true);
-      measure();
-      ribbons = HeroRibbons.create(canvas, () => focus);
+      const viaWorker = workerDriver(canvas, () => {
+        if (!disposed) canvas.dataset.on = "1";
+      });
+      ribbons = viaWorker ?? mainThreadDriver(canvas);
       // null = no WebGL: the hero works without its ribbons (rotation and pausing still run)
       ribbonsRef.current = ribbons;
-      if (ribbons) canvas.dataset.on = "1";
+      if (!ribbons) return;
+      if (!viaWorker) canvas.dataset.on = "1";
+      sync();
       run();
+      window.addEventListener("scroll", onScroll, { passive: true });
     };
     const idle = () =>
       typeof window.requestIdleCallback === "function" ? window.requestIdleCallback(begin, { timeout: 1500 }) : setTimeout(begin, 300);
@@ -115,8 +156,7 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
     else window.addEventListener("load", idle, { once: true });
 
     const ro = new ResizeObserver(() => {
-      measure();
-      ribbons?.resize();
+      sync();
       run();
     });
     ro.observe(section);
@@ -130,11 +170,13 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
     return () => {
       disposed = true;
       window.removeEventListener("load", idle);
+      window.removeEventListener("scroll", onScroll);
       ro.disconnect();
       io.disconnect();
       document.removeEventListener("visibilitychange", run);
       ribbons?.destroy();
       ribbonsRef.current = null;
+      canvas.remove();
     };
   }, []);
 
@@ -143,8 +185,6 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
 
   return (
     <section ref={sectionRef} className="okh relative isolate overflow-hidden border-b border-surface-border-soft bg-surface-0">
-      <canvas ref={canvasRef} aria-hidden className="okh-canvas" />
-
       <div className="okh-grid mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div className="okh-copy">
           <h1 className="font-display font-semibold text-foreground">
