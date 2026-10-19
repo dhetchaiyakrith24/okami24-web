@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import qrcode from "qrcode-generator";
 import { CONTACT } from "@/data/contact";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -12,6 +13,7 @@ import { lineOaMessageUrl } from "@/lib/line-order";
  * ready-message link, the message itself (copyable), close. Designer spec 19/10: one 420px column like the age gate,
  * QR dark-on-light (#0e0e10 on #f3f1ec) so phones read it on the dark theme, focus trapped, Esc / backdrop / X close,
  * focus returns to the button that opened it. Phones never see this — their tap opens LINE directly.
+ * Rendered into document.body (portal): inside the product hero it sat under the hero image's stacking context.
  */
 export function LineOrderDialog({ message, mode, onClose }: { message: string; mode: "order" | "ask"; onClose: () => void }) {
   const { locale } = useLocale();
@@ -93,7 +95,7 @@ export function LineOrderDialog({ message, mode, onClose }: { message: string; m
   const lines = message.split("\n");
   const urlLine = lines[lines.length - 1];
 
-  return (
+  return createPortal(
     <div
       className="line-order-backdrop fixed inset-0 z-[90] flex items-center justify-center overflow-y-auto bg-surface-0/80 px-5 py-8 backdrop-blur-sm"
       onMouseDown={(e) => (downOnBackdrop.current = e.target === e.currentTarget)}
@@ -172,6 +174,7 @@ export function LineOrderDialog({ message, mode, onClose }: { message: string; m
           </a>
         </p>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
