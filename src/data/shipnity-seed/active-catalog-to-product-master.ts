@@ -812,6 +812,19 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
+  // Image sweep (19/10): MQ Bar 22K card — OKami24 studio re-shoot of the device on the shop's Kyoho Grape poster.
+  "MQ-BAR-22K": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/mq-bar-22k/card.webp",
+      alt: "MQ Bar 22K disposable vape, studio photo",
+      angle: "Front, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of the device on the shop's Kyoho Grape poster.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K Kyoho Grape poster",
+      sourceUrl: "https://maneevp.com/wp-content/uploads/2026/09/mq-bar-22k-product-cover-800x800-1.webp",
+    },
+  ],
   // Image sweep (19/10): Graple Freebase card — OKami24 studio re-shoot of the front bottle on the shop's Graple poster (Phatjuice bottle).
   "GRAPLE-FREEBASE": [
     {
@@ -1771,6 +1784,10 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
 // ===================================================================================
 
 const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
+  // Image sweep (19/10): MQ Bar 22K — Kyoho Grape has the card device (violet ring as on its poster); the other 10 flavours = no-photo panel for now.
+  "MQ-BAR-22K": {
+    "Disposable-43-1": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-1.webp", alt: "MQ Bar 22K Kyoho Grape disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K Kyoho Grape poster", sourceUrl: "https://maneevp.com/wp-content/uploads/2026/09/mq-bar-22k-product-cover-800x800-1.webp" },
+  },
   // Image sweep (19/10): Graple Freebase — its one option has the card bottle.
   "GRAPLE-FREEBASE": {
     "ELQ-2-1": { kind: "official-photo", role: "detail", src: "/assets/products/graple-freebase/variant-elq-2-1.webp", alt: "Graple freebase e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Graple poster", sourceUrl: "https://ihavevape.net/product/graple/" },

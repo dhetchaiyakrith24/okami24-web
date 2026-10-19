@@ -10220,6 +10220,30 @@
   }
  },
  {
+  "source": "_incoming/list19/mq/mq.png",
+  "slug": "mq-bar-22k",
+  "role": "card",
+  "note": "image sweep 19/10 - MQ Bar 22K (Max Disposable-43, Kyoho Grape in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10 - the Pro run of the model test, list19/g/mt/nbpro.png, 2 credits already spent then), studio re-shoot of the device on the shop Kyoho Grape poster (list19/i/in/mq-kyoho.png = device cropped, 3x), prompt in list19/g/mt/RESULT.md; body cut by shape (list19/e1/shape.js GAP 2108 + e/wallfill.js), black base drawn (list19/h/basefix.js GAP 2104 L 714 R 1141 RX 0.21 RY 0.165), alpha erode 2 px - copy beside this source",
+   "reference": "maneevp.com MQ Bar 22K Kyoho Grape poster 800 px - _incoming/img-1610/masters/src/disposable-43-mq/kyoho.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/g/mt/label-sheet-5.jpg (22K PUFF / MQBAR / display icons vs the poster), list19/i/mq-edges.jpg + mq-base.jpg + mq-base2.jpg (tip, collar, base corners at 1:1 on the site background)"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/mq/mq.png",
+  "slug": "mq-bar-22k",
+  "role": "variant",
+  "id": "disposable-43-1",
+  "note": "image sweep 19/10 - MQ Bar 22K Kyoho Grape (Max Disposable-43-1): the card device, violet ring as on the Kyoho Grape poster",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10 - the Pro run of the model test, list19/g/mt/nbpro.png, 2 credits already spent then), studio re-shoot of the device on the shop Kyoho Grape poster (list19/i/in/mq-kyoho.png = device cropped, 3x), prompt in list19/g/mt/RESULT.md; body cut by shape (list19/e1/shape.js GAP 2108 + e/wallfill.js), black base drawn (list19/h/basefix.js GAP 2104 L 714 R 1141 RX 0.21 RY 0.165), alpha erode 2 px - copy beside this source",
+   "reference": "maneevp.com MQ Bar 22K Kyoho Grape poster 800 px - _incoming/img-1610/masters/src/disposable-43-mq/kyoho.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/g/mt/label-sheet-5.jpg (22K PUFF / MQBAR / display icons vs the poster), list19/i/mq-edges.jpg + mq-base.jpg + mq-base2.jpg (tip, collar, base corners at 1:1 on the site background)"
+  }
+ },
+ {
   "source": "_incoming/list19/vmate/gilt-black.png",
   "slug": "vmate-pro-2",
   "role": "card",
