@@ -44,6 +44,8 @@ const MANUFACTURER_HOSTS = [
   "thai.myjoiway.com",
   // round list19 (17/10): LAMBDA's own store (lambdasmoke.com, "Shenzhen Original Technology Co., Ltd.")
   "lambdasmoke.com", "www.lambdasmoke.com",
+  // image sweep (19/10): INFY's own site (brands.ts referenceUrl; its device page carries the INFY POD battery / charging rows)
+  "infy.my", "www.infy.my",
   // round list19 (18/10): Kardinal, maker of KS (kardinal.com — brands.ts referenceUrl)
   "kardinal.com", "www.kardinal.com",
   // batch 4g (05/10): TFIT's own site — its product API + poster files (_incoming/sitewide-template/4/facts-tfit-m-power-20k.md)
