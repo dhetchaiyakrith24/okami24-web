@@ -825,6 +825,19 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://ihavevape.net/product/graple/",
     },
   ],
+  // Image sweep (19/10): Punta Ice card = Peach Ice (the one flavour in stock) — OKami24 studio re-shoot of the bottle on the shop's Peach Ice photo.
+  "PUNTA-ICE": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/punta-ice/card.webp",
+      alt: "Punta Ice Peach Ice e-liquid bottle, studio photo",
+      angle: "Front, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of the bottle on the shop's Peach Ice photo.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice Peach Ice photo",
+      sourceUrl: "https://ihavevape.net/wp-content/uploads/2024/10/Punta-Ice-Peach-Ice.jpg.webp",
+    },
+  ],
   // Image sweep (19/10): INFY POD card = Blue Violet (in stock) — OKami24 re-shoot of INFY's own colour photo (the maker file is ~620 px
   // tall, below MIN_SOURCE_LONG → re-shot, IMAGE_SPEC §0 item 7). Source, prompt and check per file in scripts/process-images.map.json `aiRender`.
   "INFY-POD": [
@@ -1760,6 +1773,10 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // Image sweep (19/10): Graple Freebase — its one option has the card bottle.
   "GRAPLE-FREEBASE": {
     "ELQ-2-1": { kind: "official-photo", role: "detail", src: "/assets/products/graple-freebase/variant-elq-2-1.webp", alt: "Graple freebase e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Graple poster", sourceUrl: "https://ihavevape.net/product/graple/" },
+  },
+  // Image sweep (19/10): Punta Ice — Peach Ice has the card bottle; the other 6 flavours = no-photo panel for now.
+  "PUNTA-ICE": {
+    "eliquid-78-7": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-7.webp", alt: "Punta Ice Peach Ice e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice Peach Ice photo", sourceUrl: "https://ihavevape.net/wp-content/uploads/2024/10/Punta-Ice-Peach-Ice.jpg.webp" },
   },
   // Image sweep (19/10): INFY POD — 18 of 19 colours have a photo (re-shoots of INFY's own colour photos). Max's "Frost Pink" (Pod-158-11)
   // is not on infy.my → no-photo panel (infy.my sells "Floss Pink", kept as its own maker colour — whether they are one colour is unconfirmed).

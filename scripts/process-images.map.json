@@ -10218,5 +10218,29 @@
    "reference": "ihavevape.net Graple poster 600 px (https://ihavevape.net/product/graple/) - _incoming/img-1610/masters/src/elq-2-graple/ihavevape-graple.webp",
    "fidelitySheet": "_incoming/img-1610/list19/h/chk-graple.jpg (poster vs both renders), graple-label.jpg (phatjuice / signatureBLEND / graple / 50PG | 50VG | 30ML / www.phatjuice.com.my letter by letter), graple-edges.jpg (tip, base corners at 1:1 on the site background)"
   }
+ },
+ {
+  "source": "_incoming/list19/punta/peach-ice.png",
+  "slug": "punta-ice",
+  "role": "card",
+  "note": "image sweep 19/10 - Punta Ice (Max eliquid-78), card = Peach Ice (in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the bottle on the shop Peach Ice photo (list19/i/in/punta-peach.jpg = bottle cropped, 3x), prompt in list19/i/NOTES.md; render list19/i/r/punta-1.png; body cut by shape (list19/e1/shape.js GAP 1978 + e/wallfill.js), base arc drawn (list19/h/basefix.js), alpha erode 2 px - copy beside this source",
+   "reference": "ihavevape.net Punta Ice Peach Ice photo 600 px (bottle + box on white) - _incoming/img-1610/masters/src/elq-punta/peach-ice.webp",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-punta.jpg (photo vs both renders: PUNTA ICE / PEACH ICE letter by letter), punta-edges.jpg (cap, base at 1:1 on the site background)"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/punta/peach-ice.png",
+  "slug": "punta-ice",
+  "role": "variant",
+  "id": "eliquid-78-7",
+  "note": "image sweep 19/10 - Punta Ice Peach Ice (Max eliquid-78-7)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the bottle on the shop Peach Ice photo (list19/i/in/punta-peach.jpg = bottle cropped, 3x), prompt in list19/i/NOTES.md; render list19/i/r/punta-1.png; body cut by shape (list19/e1/shape.js GAP 1978 + e/wallfill.js), base arc drawn (list19/h/basefix.js), alpha erode 2 px - copy beside this source",
+   "reference": "ihavevape.net Punta Ice Peach Ice photo 600 px (bottle + box on white) - _incoming/img-1610/masters/src/elq-punta/peach-ice.webp",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-punta.jpg (photo vs both renders: PUNTA ICE / PEACH ICE letter by letter), punta-edges.jpg (cap, base at 1:1 on the site background)"
+  }
  }
 ]
