@@ -371,6 +371,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round p63 (19/10): numbers = the maker's spec block (eskobarvape.com/product/eskobar).
   "super-cool-saltnic": "น้ำยา Super Cool นิโคตินแบบ salt nic มีให้เลือก 10 กลิ่น",
   "infy-pod": "INFY POD ตัวเครื่อง แบตเตอรี่ 400mAh ชาร์จ Type-C มีให้เลือก 19 สี",
+  "mq-bar-22k": "MQ Bar 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22K มีให้เลือก 11 กลิ่น",
   "graple-freebase": "Graple น้ำยา freebase กลิ่นองุ่น",
   "esko-bar-switch-pod": "ESKO BAR SWITCH 20K หัวพอต หัวละสูงสุด 20,000 พัฟ ความจุ 18mL ใช้กับเครื่อง ESKO BAR SWITCH มีให้เลือก 20 กลิ่น",
   "esko-bar-20k": "ESKO BAR 20000 พอตใช้แล้วทิ้ง สูงสุด 20,000 พัฟ แบต 600mAh ชาร์จได้ น้ำยา 18ml คอยล์ mesh คู่ 1.0Ω มีให้เลือก 22 กลิ่น",

@@ -959,6 +959,20 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "infy-pod-verified-mimosa-yellow": null,
     "infy-pod-verified-ocean-blue": null,
   } },
+  // Image sweep (19/10): MQ Bar 22K — Max Disposable-43, 11 flavours.
+  "mq-bar-22k": { parent: "Disposable-43", options: {
+    "Disposable-43-1": "Disposable-43-1",
+    "Disposable-43-2": "Disposable-43-2",
+    "Disposable-43-3": "Disposable-43-3",
+    "Disposable-43-4": "Disposable-43-4",
+    "Disposable-43-5": "Disposable-43-5",
+    "Disposable-43-6": "Disposable-43-6",
+    "Disposable-43-7": "Disposable-43-7",
+    "Disposable-43-8": "Disposable-43-8",
+    "Disposable-43-9": "Disposable-43-9",
+    "Disposable-43-10": "Disposable-43-10",
+    "Disposable-43-11": "Disposable-43-11",
+  } },
   // Image sweep (19/10): Graple Freebase — Max ELQ-2, one child.
   "graple-freebase": { parent: "ELQ-2", options: {
     "ELQ-2-1": "ELQ-2-1",
