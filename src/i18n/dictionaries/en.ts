@@ -66,6 +66,24 @@ export const en: Dictionary = {
     statFamilies: "Families",
     viewProduct: "View →",
   },
+  // Round "หน้าแรก hero" (owner 20/10) — thai-copy option A, translated from the Thai.
+  heroShowcase: {
+    kicker: "Pod System · E-cigarettes",
+    headingLine1: "Find the right one.",
+    headingAccent: "Start here.",
+    lede1: "Each type works a little differently. Browse them one by one at your own pace,",
+    lede2: "or let us recommend one for you.",
+    ctaFinder: "Use the Product Finder",
+    ctaAll: "Browse all products",
+    viewCategory: "Browse this category",
+    tabsLabel: "Product types",
+    types: {
+      "pod-systems": { label: "Pod System", desc: "Fill it yourself, and change the pod or coil whenever you need to." },
+      "switch-pods": { label: "Switch Pod", desc: "Keep the device. When a pod runs dry, simply swap in a new one." },
+      "disposables": { label: "Disposable", desc: "Ready out of the box, with nothing to fill." },
+      "heated-tobacco-devices": { label: "Heated Tobacco", desc: "Heats the tobacco in TEREA sticks, with no e-liquid involved." },
+    },
+  },
   // The English homepage copy exactly as it was hardcoded before round 30.3ข — moved, not rewritten.
   home: {
     flagshipTitle: "One flagship per brand, chosen for depth of documentation.",
