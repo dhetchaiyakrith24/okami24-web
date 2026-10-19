@@ -225,7 +225,6 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
         >
-          <div className="okh-floor" aria-hidden />
           {slots.map((s, i) => {
             const mask = getImageProps({ src: s.image.src, alt: "", width: 480, height: 600, quality: 60 }).props.src;
             return (
@@ -237,23 +236,33 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
                 aria-hidden={i !== cur}
                 tabIndex={i === cur ? 0 : -1}
               >
-                <span className="okh-float">
+                {/* the pose box stands still on the floor: contact shadow + reflection sit on the photo's
+                    base line (every card photo's device ends at 97 % of its 4:5 box); only the photo floats */}
+                <span className="okh-pose">
+                  <span className="okh-shadow" aria-hidden />
                   {i === 0 || warm ? (
-                    <Image
-                      src={s.image.src}
-                      alt={s.image.alt}
-                      fill
-                      sizes="(min-width: 1024px) 40vw, 70vw"
-                      className="object-contain"
-                      loading={i === 0 ? "eager" : "lazy"}
-                      fetchPriority={i === 0 ? "high" : undefined}
-                    />
+                    <span className="okh-reflect" aria-hidden>
+                      <Image src={s.image.src} alt="" fill sizes="(min-width: 1024px) 40vw, 70vw" className="object-contain" loading="lazy" />
+                    </span>
                   ) : null}
-                  {/* mounted after load (warm) so its mask file never competes with the first photo; on the
-                      first slot the light then sweeps as the ribbons fade in */}
-                  {warm ? (
-                    <span className="okh-sheen" style={{ "--okh-mask": `url(${mask})` } as CSSProperties} aria-hidden />
-                  ) : null}
+                  <span className="okh-float">
+                    {i === 0 || warm ? (
+                      <Image
+                        src={s.image.src}
+                        alt={s.image.alt}
+                        fill
+                        sizes="(min-width: 1024px) 40vw, 70vw"
+                        className="object-contain"
+                        loading={i === 0 ? "eager" : "lazy"}
+                        fetchPriority={i === 0 ? "high" : undefined}
+                      />
+                    ) : null}
+                    {/* mounted after load (warm) so its mask file never competes with the first photo; on the
+                        first slot the light then sweeps as the ribbons fade in */}
+                    {warm ? (
+                      <span className="okh-sheen" style={{ "--okh-mask": `url(${mask})` } as CSSProperties} aria-hidden />
+                    ) : null}
+                  </span>
                 </span>
               </Link>
             );

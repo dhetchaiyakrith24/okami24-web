@@ -790,24 +790,14 @@ html:lang(th) .label-mono:not(:lang(en)) {
 /* --- stage: the product --- */
 .okh-stage {
   position: relative;
-  height: clamp(230px, 36svh, 330px);
+  height: clamp(250px, 38svh, 350px);
   margin-top: 0.25rem;
-}
-.okh-floor {
-  position: absolute;
-  left: 50%;
-  bottom: 7%;
-  width: 62%;
-  height: 14%;
-  transform: translateX(-50%);
-  background: radial-gradient(closest-side, rgba(255, 106, 44, 0.32), rgba(255, 106, 44, 0));
-  filter: blur(6px);
 }
 .okh-prod {
   position: absolute;
-  inset: 0 -4% 4% 0;
+  inset: 0 -4% 11% 0;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
   opacity: 0;
   pointer-events: none;
@@ -829,11 +819,55 @@ html:lang(th) .label-mono:not(:lang(en)) {
   transition-duration: 0.7s;
   transition-delay: 0s;
 }
-.okh-float {
+/* Round hero, owner 20/10 "สินค้าลอยๆ": the product stands on a floor. The pose box does not move; the base line is
+   3 % above its bottom (every card photo's device ends at 97 % of the 4:5 box). */
+.okh-pose {
   position: relative;
   display: block;
   height: 100%;
   aspect-ratio: 4 / 5;
+}
+/* the floor: a warm pool of light centred on the base line */
+.okh-pose::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 3%;
+  width: 115%;
+  height: 14%;
+  transform: translate(-50%, 50%);
+  background: radial-gradient(closest-side, rgba(255, 106, 44, 0.26), rgba(255, 106, 44, 0));
+  pointer-events: none;
+}
+/* contact shadow right under the device — darker when it settles, lighter as it lifts */
+.okh-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 3%;
+  width: 44%;
+  height: 4.5%;
+  transform: translate(-50%, 50%);
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+  animation: okh-shadow 7s ease-in-out infinite;
+  pointer-events: none;
+}
+/* the glossy-floor reflection: the same photo mirrored at the base line, fading out fast */
+.okh-reflect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 94%;
+  height: 100%;
+  transform: scaleY(-1);
+  opacity: 0.2;
+  -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 16%);
+  mask-image: linear-gradient(to top, #000 0%, transparent 16%);
+  pointer-events: none;
+}
+.okh-float {
+  position: absolute;
+  inset: 0;
+  display: block;
   animation: okh-float 7s ease-in-out infinite;
   /* its own layer: the drop-shadowed photo is rastered once, the float is pure compositing */
   will-change: transform;
@@ -864,7 +898,9 @@ html:lang(th) .label-mono:not(:lang(en)) {
   animation: okh-sheen 2.2s cubic-bezier(0.4, 0, 0.2, 1) 0.7s 1 both;
 }
 @keyframes okh-sheen { from { transform: translateX(22%); } to { transform: translateX(-22%); } }
-@keyframes okh-float { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
+/* a breath, not a hover: up 3 px, back down onto the floor */
+@keyframes okh-float { 0%, 100% { transform: translateY(-3px); } 50% { transform: none; } }
+@keyframes okh-shadow { 0%, 100% { opacity: 0.75; transform: translate(-50%, 50%) scale(0.92); } 50% { opacity: 1; transform: translate(-50%, 50%) scale(1); } }
 
 .okh-meta {
   position: absolute;
@@ -950,6 +986,12 @@ html:lang(th) .label-mono:not(:lang(en)) {
 .okh-tab[aria-pressed="true"] .okh-t,
 .okh-tab:hover .okh-t { color: var(--foreground); }
 
+/* --- tablet (40–64rem): a wide stage — product centred, a little taller --- */
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .okh-stage { height: clamp(320px, 42svh, 460px); }
+  .okh-prod { inset: 0 0 11% 0; justify-content: center; }
+}
+
 /* --- desktop --- */
 @media (min-width: 64rem) {
   .okh { min-height: calc(100svh - 5rem); }
@@ -971,8 +1013,8 @@ html:lang(th) .label-mono:not(:lang(en)) {
   .okh-btn { height: 3.25rem; padding: 0 1.625rem; }
   .okh-btn svg { display: block; }
   .okh-stage { height: min(74vh, 700px); align-self: center; margin: 0 0 1.5rem; }
-  .okh-prod { inset: 0 0 6% 0; justify-content: center; }
-  .okh-float { height: 96%; }
+  .okh-prod { inset: 0 0 10% 0; justify-content: center; }
+  .okh-pose { height: 96%; }
   .okh-meta { left: auto; right: 0; bottom: 12%; max-width: none; align-items: flex-end; text-align: right; gap: 0.5rem; }
   .okh-idx, .okh-brand { font-size: 0.6875rem; }
   .okh-name { font-size: 1.875rem; }
@@ -1001,10 +1043,11 @@ html:lang(th) .label-mono:not(:lang(en)) {
 
 /* --- still: reduced motion / Save-Data (the ribbons draw one frame; HeroShowcase stops rotating) --- */
 @media (prefers-reduced-motion: reduce) {
-  .okh-float, .okh-prod[data-state="on"] .okh-sheen::before, .okh-meta { animation: none; }
+  .okh-float, .okh-shadow, .okh-prod[data-state="on"] .okh-sheen::before, .okh-meta { animation: none; }
   .okh-prod { transition: opacity 0.3s ease; transform: none; filter: none; }
   .okh-bar[data-run] { animation: none; transform: none; }
 }
 html[data-okami-lite="1"] .okh-float,
+html[data-okami-lite="1"] .okh-shadow,
 html[data-okami-lite="1"] .okh-prod[data-state="on"] .okh-sheen::before { animation: none; }
 html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; transform: none; }
