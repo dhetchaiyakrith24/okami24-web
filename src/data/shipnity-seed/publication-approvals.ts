@@ -221,6 +221,11 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // Round list19 (19/10): Pepo Salt Nic (Max ELQ-5) and Dundu Salt Nic (Max Eliquid-73) — Max ราคาขาย ฿300 each (read 2026-10-17).
   "Eliquid-72": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
   "Eliquid-73": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
+  // Round list19 (19/10): prepared, held until a card photo exists (IMAGE_SPEC §4) — Max ราคาขาย read 2026-10-17:
+  // "SUPER-COOL-SALTNIC": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
+  // "PUNTA-ICE": { sellingPrice: 150, lastPriceReview: "2026-10-19" },
+  // "INFY-POD": { sellingPrice: 690, lastPriceReview: "2026-10-19" },
+  // "VMATE-PRO-2": { sellingPrice: 890, lastPriceReview: "2026-10-19" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {

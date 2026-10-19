@@ -327,6 +327,12 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // Round list19 (19/10, owner "list everything"): Pepo / Dundu salt-nic e-liquids — no maker site found; the bottles print only
   // "PEPO" / "DUNDU SALT" → sold without a brand, warehouse facts only (as Pop Up 10K).
   "Eliquid-72": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Pepo Salt Nic" (Max parent ELQ-5, old seed Eliquid-72), 5 flavours; no maker site found — listed on warehouse facts only, without a brand' },
+  // Round list19 (19/10, owner "list everything first"): prepared, NOT published — no card photo yet (IMAGE_SPEC §4); approval held in
+  // publication-approvals.ts until a card exists. Warehouse facts only.
+  "SUPER-COOL-SALTNIC": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Super Cool Salt Nic" (ELQ-6), 10 flavours, ฿269; no maker site checked yet — prepared on warehouse facts only, without a brand' },
+  "PUNTA-ICE": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Punta Ice" (eliquid-78), 7 flavours, ฿150; no maker site checked yet — prepared on warehouse facts only, without a brand' },
+  "INFY-POD": { brandId: "infy", categoryId: "pod-systems", systemType: "pod-kit", evidence: 'Shipnity MAX "INFY POD" (Pod-158), 14 colours, ฿690 — the name states the brand (INFY, already a brand here through pod-169); device only' },
+  "VMATE-PRO-2": { brandId: "voopoo", familyId: "vmate", categoryId: "pod-systems", systemType: "pod-kit", evidence: 'Shipnity MAX "Vmate Pro 2" (Pod-176), 4 colours, ฿890 — Vmate is the VOOPOO line already sold here (Vmate i3, Pod-177)' },
   "Eliquid-73": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Dundu Salt Nic" (Eliquid-73), 1 flavour; no maker site found — listed on warehouse facts only, without a brand' },
   "Eliquid-109": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Marboro Freebase ขวดยาว" — same Marboro/Salt Hub evidence as ELIQUID-1, different nicotine formulation (freebase vs. salt nic) and bottle format. See the trademark-risk flag above — NOT cleared for publication regardless of data completeness.' },
   "eliquid-133": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Yogurt Salt Hub" states the brand explicitly and directly — no inference needed, though the actual bottle label reads only "Yogurt probiotics — The Original" with no visible Salt Hub/Marbo branding (retailer-asserted attribution). See the trademark-risk flag above — held alongside ELIQUID-1/Eliquid-109 pending owner review, plus an unresolved 30mg/35mg nicotine-strength conflict across sources.' },
@@ -632,6 +638,23 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   // Thai vape retail (including in this session's own research results), not invented marketing
   // language. No family grouping clause: no ProductFamily record exists for "Marboro" or
   // "Yogurt" — same convention as every brand-explicit-no-family entry above.
+  // Round list19 (19/10): prepared, not published (no card photo) — warehouse facts only (Max names, option counts).
+  "SUPER-COOL-SALTNIC": {
+    tagline: "น้ำยา Super Cool Salt Nic",
+    shortDescription: "น้ำยา Super Cool นิโคตินแบบ salt nic ร้านมีให้เลือก 10 กลิ่น",
+  },
+  "PUNTA-ICE": {
+    tagline: "น้ำยา Punta Ice",
+    shortDescription: "น้ำยา Punta Ice ร้านมีให้เลือก 7 กลิ่น",
+  },
+  "INFY-POD": {
+    tagline: "ตัวเครื่อง INFY POD",
+    shortDescription: "ตัวเครื่อง INFY POD ร้านมีให้เลือก 14 สี",
+  },
+  "VMATE-PRO-2": {
+    tagline: "ตัวเครื่อง VOOPOO Vmate Pro 2",
+    shortDescription: "ตัวเครื่อง VOOPOO Vmate Pro 2 ร้านมีให้เลือก 4 สี",
+  },
   "Eliquid-72": {
     // Round list19 (19/10): warehouse facts only — the Max name "Pepo Salt Nic".
     tagline: "น้ำยา Pepo Salt Nic",
@@ -1289,6 +1312,8 @@ interface VerifiedSpecEntry {
 const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   // Round list19 (19/10): warehouse facts only — the Max names "Pepo Salt Nic" / "Dundu Salt Nic" (nicotine type).
   "Eliquid-72": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
+  // Round list19 (19/10): prepared, not published — the Max name "Super Cool Salt Nic" (nicotine type).
+  "SUPER-COOL-SALTNIC": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
   "Eliquid-73": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
   // Round list19 (18/10): warehouse facts only — the old Shipnity name "MARBORO SALT NIC 30 ML" (bottle size, nicotine type).
   "ELIQUID-1": {
