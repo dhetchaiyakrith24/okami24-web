@@ -72,7 +72,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   22/10 READ adds (Friday 18/10, `_incoming/p63/gsc-2210-todo.md` in this worktree): snippet gaps "esko bar" 87 impr pos 3.6 0 clicks ·
   "joiway" 179 impr pos 6.2 3 clicks (/brands/joiway 417 impr 15 clicks) → fix the ranking pages' title/description with the held
   heads · weekly clicks 214 (29/09–05/10) → 160 (09–15/10), impressions 1,470 → 918: say whether it is specific pages or the general dip ·
-  /brands/esko-bar intro still names only the Switch (now 2 products) · /brands/esko-bar + /brands/infy changed before the read (logged).
+  /brands/esko-bar intro still names only the Switch (now 2 products) · /brands/esko-bar + /brands/infy changed before the read (logged) · 19/10 also /brands/esko-bar
+  (+ ESKO BAR SWITCH 20K pods, #600) and /brands/voopoo (+ PnP X coils, #601) each gained a card (owner "list everything") — read
+  both pages' 22/10 numbers with that in mind.
   **CATEGORY RESTRUCTURE 19/10 = #595 (merged 63b83c06, live 200/308, owner "ทำเลยตอนนี้")** — pod-kits retired: VOOPOO refill devices →
   /products/pod-systems · new /products/switch-pods "Switch Pod / พอตเปลี่ยนหัว" (M Switch · Zero · RELX Infinity 2 Plus · RELX Creator ·
   nexPOD · ESKO BAR SWITCH · KS Quikpro · Nexswitch 16K) · /products/pod-kits 308 → pod-systems. **The 22/10 read of pod-systems and
