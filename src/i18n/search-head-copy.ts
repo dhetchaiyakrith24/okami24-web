@@ -411,7 +411,10 @@ export const GUIDE_DESCRIPTION_HEAD_TH: Record<string, string> = {
     "MTL กับ DTL ต่างกันยังไง MTL ดูดเข้าปากก่อนแล้วค่อยลงปอด ช่องลมแคบ โอห์มสูง วัตต์ต่ำ ส่วน DTL ดูดลงปอดตรง ๆ ช่องลมโล่ง โอห์มต่ำ วัตต์สูง และ RDL อยู่ตรงกลาง",
   // Round SEO ฉ batch 6b topic 8 (12/10): the new Thai-only article — its dek says "น้ำยา", which stays out of head copy.
   "salt-nic-vs-freebase":
-    "salt nic กับ freebase ต่างกันยังไง แบบไหนเข้ากับพอตตัวเล็ก แบบไหนเข้ากับเครื่องวัตต์สูง ตัวเลข 3% กับ 5% บอกอะไร และสัดส่วน PG/VG มีผลกับรสและควันยังไง",
+    "salt nic กับ freebase ต่างกันยังไง แบบไหนเข้ากับพอตตัวเล็ก แบบไหนเข้ากับเครื่องวัตต์สูง และตัวเลข 3% กับ 5% บอกอะไร",
+  // Clip job 20/10: the new PG/VG guide — its dek says "น้ำยา", which stays out of head copy (thai-copy 19/10).
+  "pg-vg-in-e-liquid":
+    "PG กับ VG คือส่วนผสมหลักสองตัวที่อยู่ข้างขวด บทความนี้อธิบายว่าต่างกันยังไงตอนสูบ ตัวเลข 50/50 หรือ 70/30 อ่านยังไง และเลือกสัดส่วนแบบไหนให้เข้ากับคอยล์",
   // Round SEO ฉ batch 6c topic 10 (13/10): the searcher's question first, then the three rules people look for.
   "taking-a-pod-on-a-plane":
     "พอตขึ้นเครื่องบินได้ไหม ตามกติกาการบิน พอตต้องอยู่ในกระเป๋าถือ โหลดใต้เครื่องไม่ได้ และสูบหรือชาร์จบนเครื่องไม่ได้ พร้อมวิธีพกพาวเวอร์แบงก์และถ่านสำรอง",
