@@ -358,6 +358,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "iqosheet-18": "IQOS ILUMA i เครื่องอุ่นยาสูบ ใช้ได้กับก้าน TEREA เท่านั้น ดูได้ทั้ง 7 สีที่ IQOS ทำออกมา",
   // Round list19 (18/10): every number = a verified spec row of pod-150 (kardinal.com).
   "eliquid-1": "Marbo Saltnic น้ำยา salt nic ขวด 30ml มีให้เลือก 10 กลิ่น",
+  "eliquid-109": "Marbo Freebase น้ำยา freebase ขวดยาว มีให้เลือก 4 กลิ่น",
   "eliquid-72": "Pepo Salt Nic น้ำยา salt nic มีให้เลือก 5 กลิ่น",
   "eliquid-73": "Dundu Salt Nic น้ำยา salt nic กลิ่นองุ่น",
   "pod-149": "SKE Crystal B20000 พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 20,000 พัฟ มีให้เลือก 8 กลิ่น",

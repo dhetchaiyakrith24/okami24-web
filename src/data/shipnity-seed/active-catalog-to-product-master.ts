@@ -328,7 +328,7 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // "PEPO" / "DUNDU SALT" → sold without a brand, warehouse facts only (as Pop Up 10K).
   "Eliquid-72": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Pepo Salt Nic" (Max parent ELQ-5, old seed Eliquid-72), 5 flavours; no maker site found — listed on warehouse facts only, without a brand' },
   "Eliquid-73": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Dundu Salt Nic" (Eliquid-73), 1 flavour; no maker site found — listed on warehouse facts only, without a brand' },
-  "Eliquid-109": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Marboro Freebase ขวดยาว" — same Marboro/Salt Hub evidence as ELIQUID-1, different nicotine formulation (freebase vs. salt nic) and bottle format. See the trademark-risk flag above — NOT cleared for publication regardless of data completeness.' },
+  "Eliquid-109": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Marboro Freebase ขวดยาว" — same Marboro/Salt Hub evidence as ELIQUID-1, different nicotine formulation (freebase vs. salt nic) and bottle format. Trademark-risk hold above lifted for this record by the owner 18/10 ("list everything", through Friday) — listed on warehouse facts only.' },
   "eliquid-133": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Yogurt Salt Hub" states the brand explicitly and directly — no inference needed, though the actual bottle label reads only "Yogurt probiotics — The Original" with no visible Salt Hub/Marbo branding (retailer-asserted attribution). See the trademark-risk flag above — held alongside ELIQUID-1/Eliquid-109 pending owner review, plus an unresolved 30mg/35mg nicotine-strength conflict across sources.' },
 
   // Catalog-intelligence mission (2026-09-02) — Eliquid-64 ("Double Mint Salt Nic") deliberately
@@ -648,8 +648,9 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     shortDescription: "น้ำยา Marbo Saltnic ขวด 30ml นิโคตินแบบ salt nic ร้านมีให้เลือก 10 กลิ่น",
   },
   "Eliquid-109": {
-    tagline: "น้ำยา Marboro Freebase ขวดยาว จากแบรนด์ SALTHUB",
-    shortDescription: "น้ำยารุ่น Marboro Freebase ขวดยาว จากแบรนด์ SALTHUB",
+    // Round list19 (19/10): warehouse facts only — the Max name "Marbo Freebase ขวดยาว", Max's 4 flavours; the brand in Latin only.
+    tagline: "น้ำยา Marbo Freebase ขวดยาว",
+    shortDescription: "น้ำยา Marbo Freebase ขวดยาว นิโคตินแบบ freebase ร้านมีให้เลือก 4 กลิ่น",
   },
   "eliquid-133": {
     tagline: "น้ำยา Yogurt Salt Hub จากแบรนด์ SALTHUB",
@@ -776,6 +777,19 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
+  // Round list19 (19/10): Marbo Freebase — OKami24 re-shoot (batch 7) of the shop's Ice Sparkling bottle photo, an in-stock flavour.
+  "Eliquid-109": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/eliquid-109/card.webp",
+      alt: "Marbo Freebase tall-bottle e-liquid, Ice Sparkling, studio photo",
+      angle: "Front, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's bottle photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Freebase bottle photo",
+      sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/",
+    },
+  ],
   // Round list19 (18/10): Marbo Saltnic — OKami24 re-shoot (batch 7) of the shop's Tobacco (red) bottle photo, an in-stock flavour.
   // Round list19 (19/10): Pepo / Dundu — OKami24 re-shoots (batch 7) of the shop's bottle photos (Pepo card = Grape, in stock).
   "Eliquid-72": [
@@ -1290,6 +1304,8 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   // Round list19 (19/10): warehouse facts only — the Max names "Pepo Salt Nic" / "Dundu Salt Nic" (nicotine type).
   "Eliquid-72": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
   "Eliquid-73": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
+  // Round list19 (19/10): warehouse facts only — the Max name "Marbo Freebase ขวดยาว" (nicotine type).
+  "Eliquid-109": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "freebase", sourceStatus: "verified" }], sourceUrls: [] },
   // Round list19 (18/10): warehouse facts only — the old Shipnity name "MARBORO SALT NIC 30 ML" (bottle size, nicotine type).
   "ELIQUID-1": {
     specifications: [
@@ -1676,6 +1692,10 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "ELQ-5-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-3.webp", alt: "Pepo Salt Nic e-liquid bottle, Mixed Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
     "ELQ-5-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-4.webp", alt: "Pepo Salt Nic e-liquid bottle, Pineapple, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
     "ELQ-5-5": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-5.webp", alt: "Pepo Salt Nic e-liquid bottle, Peach, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
+  },
+  // Round list19 (19/10): Marbo Freebase — 1 of 4 flavours has a photo (Ice Sparkling); Purple · Gold · Pink show the no-photo panel.
+  "Eliquid-109": {
+    "ELQ-3-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-109/variant-elq-3-4.webp", alt: "Marbo Freebase tall-bottle e-liquid, Ice Sparkling, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Freebase bottle photo", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
   },
   // Round list19 (18/10): Marbo Saltnic — one re-shoot per bottle photo the shop has (5 of 10; Purple · Black · Green · Ice Sparkling ·
   // Purple 50mg have no photo, they show the no-photo panel).
@@ -2359,6 +2379,9 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "ESKO-BAR-20K": { name: "ESKO BAR 20000", sourceUrl: "https://eskobarvape.com/product/eskobar" },
   "ESKO-BAR-SWITCH-POD": { name: "ESKO BAR SWITCH 20K Pod", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   "Pod-169": { name: "INFY PLUS 2.5ML Cartridge", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },
+  // Round list19 (19/10): Max name "Marbo Freebase ขวดยาว" carries a Thai word that showed on English/Chinese pages; the shop page names
+  // the line "Marbo Freebase" (brand prefix kept as on Marbo Saltnic).
+  "Eliquid-109": { name: "SALTHUB Marbo Freebase", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
 };
 
 function deriveDisplayName(rawName: string, brandId: string | null, shipnityId?: string): string {
