@@ -616,6 +616,10 @@ export const uwellProducts: Product[] = [
     shortDescription:
       "A 2000mAh, 35W pod device with a 2\" smart touchscreen and Pro-FOCS 4.0 flavor tuning, switching between Storm, Waves, and Custom draw modes.",
     isFlagship: false,
+    // The shop's KOKO clip (owner 19/10 "1 คลิปหลักต่อหน้า"): it used to sit in the MTL/DTL guide as a section clip; the
+    // guide now keeps only its own main clip and the clip moves to the model it is about. Title / channel / date as read
+    // from YouTube's player data on 2026-10-05 (guides.ts SECTION_CLIPS.caliburnG4ProKoko).
+    reviewVideo: { videoId: "3-CrWMaLbUE", title: "UWELL CALIBURN G4 PRO KOKO พอตสุดล้ำพร้อมจอสัมผัส!", channelName: "OKM YARZ", publishedAt: "2026-03-07" },
     attributes: {
       batteryMah: 2000,
       wattageMax: 35,
