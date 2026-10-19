@@ -56,6 +56,7 @@ export const SECTION_IMAGES = {
   vmateI3Family: { src: "/assets/products/vmate-i3/story-family.webp", alt: "โปสเตอร์ของ VOOPOO: หัวพอตตระกูล VMATE แต่ละค่าโอห์มบอกช่วงวัตต์ และบอกว่าเหมาะกับน้ำยา Freebase หรือ Nic Salt", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}vmate-i3`, width: 1024, height: 1065 },
   caliburnG4ProBattery: { src: "/assets/products/caliburn-g4-pro/story-battery.webp", alt: "ภาพจากคลิปของ UWELL: Caliburn G4 Pro แบต 1800mAh ที่ผู้ผลิตระบุว่าใช้ได้สูงสุด 7 วัน", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro", width: 1800, height: 1333 },
   argusG3MiniCartridge: { src: "/assets/products/argus-g3-mini/story-cartridge.webp", alt: "โปสเตอร์ของ VOOPOO: หัวพอต ARGUS Top Fill Cartridge V2 ขนาด 3mL และ 2mL มี 0.4 · 0.7 และ 1.0 โอห์ม", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g3-mini`, width: 1024, height: 1056 },
+  mBar10kNonstop: { src: "/assets/products/m-bar-10k/story-nonstop.webp", alt: "โปสเตอร์ของ SALTHUB: M Bar 10K สูงสุด 10,000 พัฟ", sourceName: "SALTHUB", sourceUrl: "https://www.salthub.com/mbar-10k/", width: 1920, height: 1079 },
   dragX3Battery: { src: "/assets/products/drag-x3/story-battery-v2.webp", alt: "โปสเตอร์ของ VOOPOO: DRAG X3 ใช้ถ่าน 18650 หรือ 21700 และมีเซนเซอร์แตะปลดล็อก", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-x3`, width: 1600, height: 1161 },
 } satisfies Record<string, StoryImage>;
 
@@ -67,6 +68,7 @@ function sectionImagesIn<K extends SectionImageKey>(alts: Record<K, string>): Re
 
 /** English alts for the posters in the guides that have en/th/zh arrays (round "SEO all keys", 16/10). Thai = SECTION_IMAGES. */
 export const SECTION_IMAGES_EN = sectionImagesIn({
+  vmateI3Family: "VOOPOO's VMATE pod chart — each resistance with its wattage range and whether it suits freebase or nic salt",
   caliburnG4ClassicRefill: "UWELL's render — filling the Caliburn G4 Classic pod without taking it out",
   argusG3MiniTiny: "VOOPOO's ARGUS G3 mini poster — a 1350mAh battery and 40.85 g",
   mBar10kModes: "SALTHUB's M Bar 10K poster — double-click the bottom button to switch Eco / Soft / Boost",
@@ -80,6 +82,7 @@ export const SECTION_IMAGES_EN = sectionImagesIn({
 
 /** Chinese alts, same posters (used by src/i18n/guides-copy.ts GUIDES_COPY_ZH). */
 export const SECTION_IMAGES_ZH = sectionImagesIn({
+  vmateI3Family: "VOOPOO 的 VMATE 烟弹图表：每种阻值的功率范围，以及适合游离碱烟油还是尼古丁盐烟油",
   caliburnG4ClassicRefill: "UWELL 渲染图：无需取下烟弹，直接给 Caliburn G4 Classic 的烟弹注油",
   argusG3MiniTiny: "VOOPOO 的 ARGUS G3 mini 海报：1350mAh 电池，重 40.85 克",
   mBar10kModes: "SALTHUB 的 M Bar 10K 海报：双击底部按键切换 Eco / Soft / Boost",
@@ -644,6 +647,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "Start at the low end of the wattage range printed for your coil or pod, with the airflow mostly closed for MTL (or mostly open for DTL), then step up a little at a time. Not sure which draw style is yours? Read [MTL vs DTL](/guides/understanding-mtl-vs-dtl) first.",
         ],
+        image: SECTION_IMAGES_EN.vmateI3Family,
       },
       // Round SEO ข (2026-09-21): sections + FAQ below from verified rows only — source map
       // _incoming/seo-b/writer-B-sources.md.
@@ -820,6 +824,7 @@ const allGuides: Guide[] = [
           "จากที่ร้านเห็น ตัวเลขพัฟที่สูงกว่าไม่ได้แปลว่าจะใช้ได้นานขึ้นตามไปทุกครั้ง เพราะแต่ละยี่ห้อมีวิธีระบุตัวเลขพัฟไม่เหมือนกัน ถึงน้ำยาในเครื่องจะพอ ๆ กัน ตัวเลขบนกล่องก็อาจต่างกันได้",
           "ร้านเราจึงดูสองอย่างบนกล่องคู่กันเสมอ คือจำนวนพัฟ และปริมาณน้ำยาที่บอกเป็น mL จำนวนพัฟคือตัวเลขที่ผู้ผลิตระบุ ส่วนปริมาณน้ำยาคือของที่อยู่ในเครื่องจริง ดูแค่ตัวเลข K ตัวโต ๆ หน้ากล่องอย่างเดียว ก็คล้ายเลือกมือถือจากขนาดจออย่างเดียว",
         ],
+        image: SECTION_IMAGES.mBar10kNonstop,
         video: { videoId: "4DoUt2ABgmU", title: "พอตใช้แล้วทิ้ง พัฟเยอะ ใช้ได้นานกว่าจริงไหม?", channelName: "OKAMI", publishedAt: "2026-09-29" },
       },
       {
@@ -829,6 +834,7 @@ const allGuides: Guide[] = [
           "จากที่ร้านใช้เอง ตัวเลขหรือขีดน้ำยาบนจอเป็นค่าประมาณ ไม่ใช่ตัววัดที่แม่นทุกหยด แต่ละรุ่นก็แสดงผลคนละแบบ และบางครั้งก็ไม่ตรงกับน้ำยาที่เหลืออยู่จริง",
           "ร้านเราจึงดูจอคู่กับอาการของเครื่องเสมอ ถ้ารสเริ่มจาง ควันบางลง หรือเริ่มมีรสไหม้ปน ก็แปลว่าใกล้ถึงเวลาเปลี่ยนแล้ว ถึงจอจะยังเหลือขีดอยู่ก็ตาม กลับกัน ถ้าจอใกล้หมดแต่รสยังดีอยู่ ก็สูบต่อได้ตามปกติ",
         ],
+        image: SECTION_IMAGES.nexbar18kScreen,
         video: { videoId: "tEqKAnqmCjs", title: "ตัวเลขน้ำยาบนหน้าจอพอตใช้แล้วทิ้ง เชื่อได้แค่ไหน?", channelName: "OKM YARZ", publishedAt: "2026-10-03" },
       },
       {
@@ -1752,6 +1758,7 @@ const allGuides: Guide[] = [
           "ร้านเราจึงแนะนำให้ใส่พอตไว้ในถุงซิปล็อก หรือห่อด้วยทิชชู่ให้แน่นก่อนเก็บลงกระเป๋า ถ้าจะซึมก็ซึมอยู่ในถุงหรือในทิชชู่ ไม่เลอะของอื่นในกระเป๋า",
           "เก็บถุงนี้ไว้ในช่องที่หยิบออกมาได้ง่าย เพราะเจ้าหน้าที่อาจขอดูตอนตรวจกระเป๋า ถ้าลงเครื่องแล้วเจอน้ำยาเยิ้ม เช็ดให้แห้งและเช็คเครื่องตามขั้นใน[หัวพอตรั่ว แก้ยังไง](/guides/fixing-a-leaking-pod) ก่อนสูบต่อ",
         ],
+        image: SECTION_IMAGES.caliburnG4AntiLeak,
       },
       {
         heading: "ก่อนบิน เช็คสายการบินและประเทศปลายทางอีกครั้ง",
