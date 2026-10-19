@@ -704,7 +704,10 @@ html:lang(th) .label-mono:not(:lang(en)) {
   height: 100%;
   pointer-events: none;
   z-index: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease;
 }
+.okh-canvas[data-on] { opacity: 1; }
 .okh-grid {
   position: relative;
   z-index: 2;

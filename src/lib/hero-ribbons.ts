@@ -10,8 +10,8 @@
  * Why WebGL and not canvas 2D (the draft): measured 20/10 at 1440×900, the same picture stroked
  * with canvas 2D ran at ~17 fps (raster cost of ~14k gradient segments a frame), while the path
  * maths costs nothing on a GPU. Here the whole path is computed in the vertex shader from a handful
- * of uniforms: the CPU uploads one static strip per detail level once, then each frame only sets
- * uniforms and issues one draw per line.
+ * of uniforms: the CPU uploads one static strip and the per-line values once per detail level, then each
+ * frame only sets uniforms and issues nine instanced draws.
  *
  * Motion is "medium" (owner): a slow drift, a beat when the visitor scrolls (speed follows scroll
  * velocity) and a surge whenever the hero changes product (`surge()`), so the ribbons carry the
@@ -46,19 +46,23 @@ attribute float a_u;
 attribute float a_side;
 uniform vec2 u_res;
 uniform vec2 u_focus;
-uniform float u_ang, u_len, u_span, u_T, u_k, u_i, u_halfw;
+attribute float a_k; // line offset across the bundle (-0.5 … 0.5)
+attribute float a_i; // line index (its small wobble)
+attribute float a_f; // line opacity falloff
+uniform float u_ang, u_len, u_span, u_T, u_halfw, u_alpha;
 uniform vec4 u_r1; // amp f1 f2 s1
 uniform vec4 u_r2; // s2 p1 p2 w
 uniform vec3 u_r3; // tw ts yc
 varying float v_u;
 varying float v_side;
+varying float v_alpha;
 const float TAU = 6.2831853;
 const float PI = 3.1415927;
 vec2 pathAt(float u) {
   float base = u_span * (u_r3.z + u_r1.x * sin(TAU * (u_r1.y * u + u_T * u_r1.w + u_r2.y))
              + u_r1.x * 0.45 * sin(TAU * (u_r1.z * u - u_T * u_r2.x + u_r2.z)));
-  float y = base + u_k * u_r2.w * u_span * sin(PI * (u_r3.x * u * 2.0 + u_T * u_r3.y + u_k * 0.12))
-          + sin(TAU * (2.6 * u + u_T * 0.18 + u_i * 0.045)) * 1.6;
+  float y = base + a_k * u_r2.w * u_span * sin(PI * (u_r3.x * u * 2.0 + u_T * u_r3.y + a_k * 0.12))
+          + sin(TAU * (2.6 * u + u_T * 0.18 + a_i * 0.045)) * 1.6;
   float x = (u - 0.5) * u_len;
   float c = cos(u_ang);
   float s = sin(u_ang);
@@ -72,13 +76,15 @@ void main() {
   gl_Position = vec4(clip.x, -clip.y, 0.0, 1.0);
   v_u = a_u;
   v_side = a_side;
+  v_alpha = u_alpha * a_f;
 }`;
 
 const FRAG = `
 precision mediump float;
 varying float v_u;
 varying float v_side;
-uniform float u_alpha, u_fade, u_core, u_halo, u_feather;
+varying float v_alpha;
+uniform float u_fade, u_core, u_halo, u_feather;
 vec4 stop2(float u, float a, vec4 ca, float b, vec4 cb) { return mix(ca, cb, clamp((u - a) / (b - a), 0.0, 1.0)); }
 vec4 mainGrad(float u) {
   // along the band: faint behind the headline (left), full behind the product, out at the edges
@@ -108,7 +114,7 @@ void main() {
   vec4 g = u_core > 0.5 ? coreGrad(v_u) : mainGrad(v_u);
   float d = abs(v_side);
   float edge = u_halo > 0.5 ? exp(-d * d * 3.5) : 1.0 - smoothstep(1.0 - u_feather, 1.0, d);
-  float a = g.a * u_alpha * edge;
+  float a = g.a * v_alpha * edge;
   gl_FragColor = vec4(g.rgb * a, a);
 }`;
 
@@ -116,13 +122,38 @@ export type RibbonFocus = { x: number; y: number };
 
 type Uniforms = Record<string, WebGLUniformLocation | null>;
 
+/** One instanced draw: which lines (k · index · opacity falloff), how wide, which look. */
+type Batch = { buf: WebGLBuffer; count: number; ribbon: Ribbon; kind: "halo" | "line" | "core"; values: number[] };
+
+/**
+ * The per-line values of every ribbon, as instance data — built once per detail level, so a frame
+ * is a handful of uniforms and nine instanced draws instead of one draw per line (measured 20/10:
+ * one draw per line, ~450 GL calls a frame, cost ~4.5 s of main-thread time across a Lighthouse
+ * mobile run; the frame itself is GPU work).
+ */
+function lineSets(r: Ribbon, phone: boolean) {
+  const n = phone ? Math.round(r.n * 0.6) : r.n;
+  const halo: number[] = [];
+  const line: number[] = [];
+  const core: number[] = [];
+  for (let i = 0; i < n; i++) {
+    const k = i / (n - 1) - 0.5;
+    const f = 0.55 + 0.45 * Math.cos(k * Math.PI);
+    line.push(k, i, f);
+    if (i % HALO.every === 0) halo.push(k, i, f);
+    if (r.core && Math.abs(k) < 0.06) core.push(k, i, 1);
+  }
+  return { halo, line, core };
+}
+
 export class HeroRibbons {
   private gl: WebGLRenderingContext;
+  private inst: ANGLE_instanced_arrays | null;
   private prog: WebGLProgram;
   private u: Uniforms = {};
-  private strips: { buf: WebGLBuffer; count: number; segs: number }[] = [];
-  private aU = 0;
-  private aSide = 0;
+  private strips: { buf: WebGLBuffer; count: number }[] = [];
+  private batches: Batch[][] = [];
+  private a: Record<"u" | "side" | "k" | "i" | "f", number> = { u: 0, side: 0, k: 0, i: 0, f: 0 };
   private w = 0;
   private h = 0;
   private dpr = 1;
@@ -154,6 +185,7 @@ export class HeroRibbons {
     private focus: () => RibbonFocus,
   ) {
     this.gl = gl;
+    this.inst = gl.getExtension("ANGLE_instanced_arrays");
     const sh = (type: number, src: string) => {
       const s = gl.createShader(type)!;
       gl.shaderSource(s, src);
@@ -168,23 +200,37 @@ export class HeroRibbons {
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog) || "link");
     this.prog = prog;
     gl.useProgram(prog);
-    for (const name of ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_k", "u_i", "u_halfw", "u_r1", "u_r2", "u_r3", "u_alpha", "u_fade", "u_core", "u_halo", "u_feather"]) {
+    for (const name of ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather"]) {
       this.u[name] = gl.getUniformLocation(prog, name);
     }
-    this.aU = gl.getAttribLocation(prog, "a_u");
-    this.aSide = gl.getAttribLocation(prog, "a_side");
-    // two detail levels: phone and desktop
-    for (const segs of [120, 180]) {
+    this.a = {
+      u: gl.getAttribLocation(prog, "a_u"),
+      side: gl.getAttribLocation(prog, "a_side"),
+      k: gl.getAttribLocation(prog, "a_k"),
+      i: gl.getAttribLocation(prog, "a_i"),
+      f: gl.getAttribLocation(prog, "a_f"),
+    };
+    // two detail levels: phone, desktop — the strip along the path, and every ribbon's line sets
+    [true, false].forEach((phone, level) => {
+      const segs = phone ? 120 : 180;
       const data = new Float32Array((segs + 1) * 4);
-      for (let j = 0; j <= segs; j++) {
-        const u = j / segs;
-        data.set([u, -1, u, 1], j * 4);
-      }
+      for (let j = 0; j <= segs; j++) data.set([j / segs, -1, j / segs, 1], j * 4);
       const buf = gl.createBuffer()!;
       gl.bindBuffer(gl.ARRAY_BUFFER, buf);
       gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
-      this.strips.push({ buf, count: (segs + 1) * 2, segs });
-    }
+      this.strips[level] = { buf, count: (segs + 1) * 2 };
+      this.batches[level] = RIBBONS.flatMap((ribbon) => {
+        const sets = lineSets(ribbon, phone);
+        return (["halo", "line", "core"] as const).flatMap((kind) => {
+          const v = sets[kind];
+          if (!v.length) return [];
+          const b = gl.createBuffer()!;
+          gl.bindBuffer(gl.ARRAY_BUFFER, b);
+          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(v), gl.STATIC_DRAW);
+          return [{ buf: b, count: v.length / 3, ribbon, kind, values: v }];
+        });
+      });
+    });
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.ONE, gl.ONE);
     this.resize();
@@ -249,7 +295,7 @@ export class HeroRibbons {
   };
 
   private draw(dt: number) {
-    const { gl, u, w, h, phone, dpr } = this;
+    const { gl, u, a, w, h, phone, dpr, inst } = this;
     if (!w || !h || gl.isContextLost()) return;
     const heroP = Math.min(1, Math.max(0, window.scrollY / h));
     this.surgeLeft = Math.max(0, this.surgeLeft - dt / 1600);
@@ -263,12 +309,13 @@ export class HeroRibbons {
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.useProgram(this.prog);
 
-    const strip = this.strips[phone ? 0 : 1];
+    const level = phone ? 0 : 1;
+    const strip = this.strips[level];
     gl.bindBuffer(gl.ARRAY_BUFFER, strip.buf);
-    gl.enableVertexAttribArray(this.aU);
-    gl.vertexAttribPointer(this.aU, 1, gl.FLOAT, false, 8, 0);
-    gl.enableVertexAttribArray(this.aSide);
-    gl.vertexAttribPointer(this.aSide, 1, gl.FLOAT, false, 8, 4);
+    gl.enableVertexAttribArray(a.u);
+    gl.vertexAttribPointer(a.u, 1, gl.FLOAT, false, 8, 0);
+    gl.enableVertexAttribArray(a.side);
+    gl.vertexAttribPointer(a.side, 1, gl.FLOAT, false, 8, 4);
 
     const f = this.focus();
     const strength = (1 - heroP * 0.65) * (1 + surge * 0.55);
@@ -281,42 +328,43 @@ export class HeroRibbons {
     gl.uniform1f(u.u_fade, phone ? 0.18 : 0.36);
 
     // a crisp line: its CSS width plus ~0.75 device px of feather each side
-    const line = (cssWidth: number) => {
+    const crisp = (cssWidth: number) => {
       const feather = 0.75 / dpr;
       const half = cssWidth / 2 + feather;
       gl.uniform1f(u.u_halfw, half);
       gl.uniform1f(u.u_feather, feather / half);
     };
 
-    for (const r of RIBBONS) {
-      const n = phone ? Math.round(r.n * 0.6) : r.n;
-      gl.uniform4f(u.u_r1, r.amp, r.f1, r.f2, r.s1);
-      gl.uniform4f(u.u_r2, r.s2, r.p1, r.p2, r.w);
-      gl.uniform3f(u.u_r3, r.tw, r.ts, r.yc);
-      // halo first (soft, wide), then the crisp lines on top
-      gl.uniform1f(u.u_halo, 1);
-      gl.uniform1f(u.u_core, 0);
-      gl.uniform1f(u.u_halfw, HALO.halfWidth);
-      for (let i = 0; i < n; i += HALO.every) {
-        const k = i / (n - 1) - 0.5;
-        gl.uniform1f(u.u_k, k);
-        gl.uniform1f(u.u_i, i);
-        gl.uniform1f(u.u_alpha, r.a * strength * HALO.alpha * (0.55 + 0.45 * Math.cos(k * Math.PI)));
-        gl.drawArrays(gl.TRIANGLE_STRIP, 0, strip.count);
+    let current: Ribbon | null = null;
+    // batches are in ribbon order, halo → line → core: halo first (soft, wide), crisp lines on top
+    for (const b of this.batches[level]) {
+      const r = b.ribbon;
+      if (r !== current) {
+        current = r;
+        gl.uniform4f(u.u_r1, r.amp, r.f1, r.f2, r.s1);
+        gl.uniform4f(u.u_r2, r.s2, r.p1, r.p2, r.w);
+        gl.uniform3f(u.u_r3, r.tw, r.ts, r.yc);
       }
-      gl.uniform1f(u.u_halo, 0);
-      for (let i = 0; i < n; i++) {
-        const k = i / (n - 1) - 0.5;
-        gl.uniform1f(u.u_k, k);
-        gl.uniform1f(u.u_i, i);
-        gl.uniform1f(u.u_core, 0);
-        line(phone ? 0.9 : 1);
-        gl.uniform1f(u.u_alpha, r.a * strength * (0.55 + 0.45 * Math.cos(k * Math.PI)));
-        gl.drawArrays(gl.TRIANGLE_STRIP, 0, strip.count);
-        if (r.core && Math.abs(k) < 0.06) {
-          gl.uniform1f(u.u_core, 1);
-          line(1.6);
-          gl.uniform1f(u.u_alpha, 0.45 * strength);
+      gl.uniform1f(u.u_halo, b.kind === "halo" ? 1 : 0);
+      gl.uniform1f(u.u_core, b.kind === "core" ? 1 : 0);
+      if (b.kind === "halo") gl.uniform1f(u.u_halfw, HALO.halfWidth);
+      else crisp(b.kind === "core" ? 1.6 : phone ? 0.9 : 1);
+      gl.uniform1f(u.u_alpha, b.kind === "core" ? 0.45 * strength : r.a * strength * (b.kind === "halo" ? HALO.alpha : 1));
+      if (inst) {
+        gl.bindBuffer(gl.ARRAY_BUFFER, b.buf);
+        for (const [loc, off] of [[a.k, 0], [a.i, 4], [a.f, 8]] as const) {
+          gl.enableVertexAttribArray(loc);
+          gl.vertexAttribPointer(loc, 1, gl.FLOAT, false, 12, off);
+          inst.vertexAttribDivisorANGLE(loc, 1);
+        }
+        inst.drawArraysInstancedANGLE(gl.TRIANGLE_STRIP, 0, strip.count, b.count);
+      } else {
+        // no instancing: the same values as constant attributes, one draw per line
+        for (const loc of [a.k, a.i, a.f]) gl.disableVertexAttribArray(loc);
+        for (let j = 0; j < b.count; j++) {
+          gl.vertexAttrib1f(a.k, b.values[j * 3]);
+          gl.vertexAttrib1f(a.i, b.values[j * 3 + 1]);
+          gl.vertexAttrib1f(a.f, b.values[j * 3 + 2]);
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, strip.count);
         }
       }

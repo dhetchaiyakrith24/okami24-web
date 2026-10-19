@@ -82,18 +82,33 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
       const c = canvas.getBoundingClientRect();
       focus = { x: s.left - c.left + s.width / 2, y: s.top - c.top + s.height / 2 };
     };
-    measure();
-    const ribbons = HeroRibbons.create(canvas, () => focus);
-    // null = no WebGL: the hero works without its ribbons (rotation and pausing still run)
-    ribbonsRef.current = ribbons;
 
+    let ribbons: HeroRibbons | null = null;
     let visible = true;
+    let disposed = false;
     const run = () => {
       if (!ribbons) return;
       if (still) ribbons.still();
       else if (visible && !document.hidden) ribbons.start();
       else ribbons.stop();
     };
+    // The ribbons wait until the page has loaded and the browser is idle: the product photo and
+    // the headline paint first, then the light fades in (globals.css, [data-on]). Measured 20/10:
+    // starting them during load cost the phone LCP ~1.3 s in Lighthouse.
+    const begin = () => {
+      if (disposed) return;
+      measure();
+      ribbons = HeroRibbons.create(canvas, () => focus);
+      // null = no WebGL: the hero works without its ribbons (rotation and pausing still run)
+      ribbonsRef.current = ribbons;
+      if (ribbons) canvas.dataset.on = "1";
+      run();
+    };
+    const idle = () =>
+      typeof window.requestIdleCallback === "function" ? window.requestIdleCallback(begin, { timeout: 1500 }) : setTimeout(begin, 300);
+    if (document.readyState === "complete") idle();
+    else window.addEventListener("load", idle, { once: true });
+
     const ro = new ResizeObserver(() => {
       measure();
       ribbons?.resize();
@@ -107,8 +122,9 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
     });
     io.observe(section);
     document.addEventListener("visibilitychange", run);
-    run();
     return () => {
+      disposed = true;
+      window.removeEventListener("load", idle);
       ro.disconnect();
       io.disconnect();
       document.removeEventListener("visibilitychange", run);

@@ -107,16 +107,26 @@ export function HomeLeadLine() {
       if (!raf) raf = requestAnimationFrame(update);
     };
 
-    const ro = new ResizeObserver(() => build());
+    // first measure once the page has loaded and the browser is idle (it reads every section's layout —
+    // kept out of the load path); after that, any size change (lazy images, fonts) re-measures
+    let ready = false;
+    const ro = new ResizeObserver(() => {
+      if (ready) build();
+    });
     ro.observe(wrap);
     window.addEventListener("scroll", onScroll, { passive: true });
-    // images below load lazily and move the sections — rebuild once the page has settled too
-    window.addEventListener("load", build);
-    build();
+    const begin = () => {
+      ready = true;
+      build();
+    };
+    const idle = () =>
+      typeof window.requestIdleCallback === "function" ? window.requestIdleCallback(begin, { timeout: 2000 }) : setTimeout(begin, 400);
+    if (document.readyState === "complete") idle();
+    else window.addEventListener("load", idle, { once: true });
     return () => {
       ro.disconnect();
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("load", build);
+      window.removeEventListener("load", idle);
       if (raf) cancelAnimationFrame(raf);
     };
   }, []);
