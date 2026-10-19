@@ -52,8 +52,8 @@ export const SECTION_IMAGES = {
   dragX3Screen: { src: "/assets/products/drag-x3/story-screen-v2.webp", alt: "โปสเตอร์ของ VOOPOO: จอทัช 1.66 นิ้วของ DRAG X3 และหัวพอต PnP X", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-x3`, width: 1600, height: 1161 },
   // Guide-media batch 1 (19/10, owner 17/10 "ลงรูป + คลิป ตามบทความที่เราเขียนเพื่อ Seo"): same posters the product pages show.
   caliburnG4AntiLeak: { src: "/assets/products/caliburn-g4/story-anti-leak.webp", alt: "ภาพของ UWELL: ข้างในหัวพอต GPP ที่เชื่อมปิดด้วยคลื่นอัลตราโซนิก และช่องรูปตัว U ที่กันน้ำยารั่ว", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4", width: 2693, height: 955 },
-  caliburnG4MiniRefill: { src: "/assets/products/caliburn-g4-mini/story-pods.webp", alt: "ภาพของ UWELL: เติมน้ำยาเข้าหัวพอตของ Caliburn G4 mini โดยไม่ต้องถอดหัวพอตออก", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-mini", width: 920, height: 1201 },
-  argusG3MiniIcosm: { src: "/assets/products/argus-g3-mini/story-icosm.webp", alt: "โปสเตอร์ของ VOOPOO: คอยล์ในหัวพอต ARGUS ที่มีสำลี Golden Cotton อยู่รอบขดลวด", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g3-mini`, width: 1024, height: 1618 },
+  caliburnG4ClassicRefill: { src: "/assets/products/caliburn-g4-classic/story-pods.webp", alt: "ภาพของ UWELL: เติมน้ำยาเข้าหัวพอตของ Caliburn G4 Classic โดยไม่ต้องถอดหัวพอตออก", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-classic", width: 1162, height: 834 },
+  vmateI3Family: { src: "/assets/products/vmate-i3/story-family.webp", alt: "โปสเตอร์ของ VOOPOO: หัวพอตตระกูล VMATE แต่ละค่าโอห์มบอกช่วงวัตต์ และบอกว่าเหมาะกับน้ำยา Freebase หรือ Nic Salt", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}vmate-i3`, width: 1024, height: 1065 },
   caliburnG4ProBattery: { src: "/assets/products/caliburn-g4-pro/story-battery.webp", alt: "ภาพจากคลิปของ UWELL: Caliburn G4 Pro แบต 1800mAh ที่ผู้ผลิตระบุว่าใช้ได้สูงสุด 7 วัน", sourceName: "UWELL", sourceUrl: "https://www.myuwell.com/caliburn/caliburn-g4-pro", width: 1800, height: 1333 },
   argusG3MiniCartridge: { src: "/assets/products/argus-g3-mini/story-cartridge.webp", alt: "โปสเตอร์ของ VOOPOO: หัวพอต ARGUS Top Fill Cartridge V2 ขนาด 3mL และ 2mL มี 0.4 · 0.7 และ 1.0 โอห์ม", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}argus-g3-mini`, width: 1024, height: 1056 },
   dragX3Battery: { src: "/assets/products/drag-x3/story-battery-v2.webp", alt: "โปสเตอร์ของ VOOPOO: DRAG X3 ใช้ถ่าน 18650 หรือ 21700 และมีเซนเซอร์แตะปลดล็อก", sourceName: "VOOPOO", sourceUrl: `${VOOPOO_SHOP}drag-x3`, width: 1600, height: 1161 },
@@ -67,7 +67,7 @@ function sectionImagesIn<K extends SectionImageKey>(alts: Record<K, string>): Re
 
 /** English alts for the posters in the guides that have en/th/zh arrays (round "SEO all keys", 16/10). Thai = SECTION_IMAGES. */
 export const SECTION_IMAGES_EN = sectionImagesIn({
-  caliburnG4MiniRefill: "UWELL's render — filling the Caliburn G4 mini pod without taking it out",
+  caliburnG4ClassicRefill: "UWELL's render — filling the Caliburn G4 Classic pod without taking it out",
   argusG3MiniTiny: "VOOPOO's ARGUS G3 mini poster — a 1350mAh battery and 40.85 g",
   mBar10kModes: "SALTHUB's M Bar 10K poster — double-click the bottom button to switch Eco / Soft / Boost",
   mBar15kSwap: "SALTHUB's poster — a clear M Switch Pod being fitted into the M Switch body",
@@ -80,7 +80,7 @@ export const SECTION_IMAGES_EN = sectionImagesIn({
 
 /** Chinese alts, same posters (used by src/i18n/guides-copy.ts GUIDES_COPY_ZH). */
 export const SECTION_IMAGES_ZH = sectionImagesIn({
-  caliburnG4MiniRefill: "UWELL 渲染图：无需取下烟弹，直接给 Caliburn G4 mini 的烟弹注油",
+  caliburnG4ClassicRefill: "UWELL 渲染图：无需取下烟弹，直接给 Caliburn G4 Classic 的烟弹注油",
   argusG3MiniTiny: "VOOPOO 的 ARGUS G3 mini 海报：1350mAh 电池，重 40.85 克",
   mBar10kModes: "SALTHUB 的 M Bar 10K 海报：双击底部按键切换 Eco / Soft / Boost",
   mBar15kSwap: "SALTHUB 海报：透明的 M Switch Pod 烟弹正插入 M Switch 机身",
@@ -529,7 +529,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "How long should a new pod sit before the first draw? There is no fixed number — let a freshly filled pod sit for several minutes before the first draw. That gives the coil's wicking material time to fully saturate, reducing the chance of a dry, burnt-tasting first few hits.",
         ],
-        image: SECTION_IMAGES_EN.caliburnG4MiniRefill,
+        image: SECTION_IMAGES_EN.caliburnG4ClassicRefill,
       },
       {
         heading: "Signs a coil pod needs replacing",
@@ -1179,7 +1179,6 @@ const allGuides: Guide[] = [
           "พอตไหม้คืออาการที่สำลีในคอยล์มีน้ำยาไม่พอ ตอนสูบคอยล์ก็ร้อนตามปกติ แต่ความร้อนไปลงที่สำลีแห้ง ๆ แทนที่จะทำให้น้ำยากลายเป็นไอ รสที่ได้จึงขม ฝาด และบาดคอ เป็นรสที่ใครเจอครั้งแรกแล้วก็จำได้ไปอีกนาน",
           "อาการนี้เกิดได้กับพอตทุกแบบ ทั้งพอตซิสเต็มที่เติมน้ำยาเอง และพอตใช้แล้วทิ้ง จากที่ร้านเจอ ส่วนใหญ่มาจากวิธีใช้ซึ่งปรับได้ ไม่ได้แปลว่าเครื่องเสียเสมอไป",
         ],
-        image: SECTION_IMAGES.argusG3MiniIcosm,
       },
       {
         heading: "พอตไหม้ดูยังไง แยกให้ออกจากรสดรอป",
@@ -1213,6 +1212,7 @@ const allGuides: Guide[] = [
           "ก่อนใส่คอยล์ใหม่ ถ้าถังน้ำยาถอดล้างได้ ล้างให้สะอาดแล้วปล่อยให้แห้งสนิทก่อน ถ้ารีบ ใช้เครื่องเป่าผมช่วยได้ เพราะน้ำยาเก่าที่ติดขอบถังจะพากลิ่นไหม้ตามมาหาคอยล์ใหม่ด้วย",
           "ถ้ายังไม่ถึงขั้นไหม้ แค่รสเริ่มดรอปและสำลีเริ่มคล้ำ ร้านมีวิธีที่ใช้เองกับคอยล์แบบถอดได้ ถอดคอยล์ออกมา ใช้ทิชชู่ซับคราบน้ำยาเก่าที่สำลีจนสีอ่อนลง ห้ามเอาไปล้างน้ำ จากนั้นใส่กลับ เติมน้ำยาใหม่ แล้วรอให้น้ำยาซึมก่อนสูบ วิธีนี้ช่วยยืดเวลาได้อีกหน่อย แต่ใช้ได้กับคอยล์ที่ยังไม่ไหม้เท่านั้น",
         ],
+        image: SECTION_IMAGES.argusG3MiniCartridge,
         video: { videoId: "nh4vVnHMshQ", title: "เช็คอาการพอตเสื่อม สัญญาณเตือนว่าควรเปลี่ยนใหม่", channelName: "OKAMI", publishedAt: "2025-12-19" },
       },
       {
@@ -1290,7 +1290,7 @@ const allGuides: Guide[] = [
           "หัวพอตแบบเติมน้ำยาเองต้องเหลือที่ว่างให้อากาศอยู่บ้าง ถ้าเติมจนปริ่มขอบ พอเครื่องอุ่นขึ้นตอนใช้งาน น้ำยาไม่มีที่ให้ขยับ ก็หาทางออกทางช่องลมแทน ร้านเราเติมราว 80–90% ของหัวพอต และไม่เกินขีดบอกระดับ ถ้ารุ่นนั้นมีขีดไว้",
           "อีกจังหวะที่น้ำยาเด้งเข้าปากบ่อย คือเพิ่งเติมเสร็จแล้วสูบทันที ให้พักหัวพอตไว้สักครู่ก่อน ให้น้ำยาซึมเข้าสำลีและนิ่งก่อน ข้อนี้ช่วยทั้งเรื่องรั่วและเรื่องไหม้ไปพร้อมกัน ฝั่งไหม้อ่านต่อได้ที่ [พอตไหม้ เกิดจากอะไร](/guides/fixing-a-burnt-pod)",
         ],
-        image: SECTION_IMAGES.caliburnG4MiniRefill,
+        image: SECTION_IMAGES.caliburnG4ClassicRefill,
       },
       {
         heading: "เก็บเครื่องตั้งตรง และอย่าทิ้งไว้ที่ร้อนจัด",
@@ -1630,6 +1630,7 @@ const allGuides: Guide[] = [
           "บางเครื่องก็ทำมาให้ใช้ได้ทั้งสองแบบ [ARGUS G4 mini](/products/argus-g4-mini) ใช้หัวพอตที่กลับด้านเพื่อเปลี่ยนโอห์มได้ VOOPOO ระบุว่าด้าน 1.0 โอห์มสูบแบบ MTL ที่แน่น เหมาะกับ salt nic ส่วนด้าน 0.7 โอห์มสูบได้ตั้งแต่ MTL แบบลมโล่งไปจนถึง RDL และเหมาะกับ freebase มากกว่า",
           "ถ้าใช้พอตซิสเต็มที่เติมน้ำยาเอง ให้เลือกแบบที่เข้ากับเครื่องก่อน แล้วค่อยเลือกกลิ่นที่ชอบ กลุ่มรสแต่ละแบบดูได้ที่ [กลุ่มรสชาติของน้ำยาบุหรี่ไฟฟ้า](/e-liquid) ตอนนี้หน้าร้านเรายังไม่มีน้ำยาแบบขวดขาย ถ้าอยากรู้ว่าเครื่องที่ใช้อยู่เข้ากับแบบไหน ทักไลน์ @okm24 ถามร้านได้",
         ],
+        image: SECTION_IMAGES.vmateI3Family,
         video: { videoId: "MM_PibfhO0s", title: "ทำไมพอตส่วนใหญ่ถึงเลือกใช้ Salt Nic?", channelName: "OKAMI", publishedAt: "2026-09-12" },
       },
       {
