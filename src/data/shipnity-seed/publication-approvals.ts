@@ -231,7 +231,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // "VMATE-PRO-2": { sellingPrice: 890, lastPriceReview: "2026-10-19" },
   // owner-confirmed 2026-10-19: "ราคา Graple Freebase: ฿160.-" — one price for the parent and its option (Max says ฿795 parent / ฿159 child
   // until the admin updates it). Held until a card photo exists.
-  // "GRAPLE-FREEBASE": { sellingPrice: 160, lastPriceReview: "2026-10-19" },
+  "GRAPLE-FREEBASE": { sellingPrice: 160, lastPriceReview: "2026-10-19" },
   // owner-confirmed 2026-10-19: "ราคา MQ Bar 22K: ฿390.-" — one price for the parent and all 11 flavours (Max says ฿369 parent / ฿359
   // flavours until the admin updates it). Held until a card photo exists.
   // "MQ-BAR-22K": { sellingPrice: 390, lastPriceReview: "2026-10-19" },
