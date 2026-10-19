@@ -49,6 +49,9 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
   const [auto, setAuto] = useState(true);
   const [hover, setHover] = useState(false);
   const [onScreen, setOnScreen] = useState(true);
+  // the other three photos are requested only once the page has loaded (or the hero moves on):
+  // in viewport, a lazy image loads at once and the four competed with the first one (phone LCP)
+  const [warm, setWarm] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
@@ -62,6 +65,7 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
     curRef.current = i;
     setPrev(c);
     setCur(i);
+    setWarm(true);
     ribbonsRef.current?.surge();
   }, []);
 
@@ -97,6 +101,7 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
     // starting them during load cost the phone LCP ~1.3 s in Lighthouse.
     const begin = () => {
       if (disposed) return;
+      setWarm(true);
       measure();
       ribbons = HeroRibbons.create(canvas, () => focus);
       // null = no WebGL: the hero works without its ribbons (rotation and pausing still run)
@@ -189,16 +194,22 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
                 tabIndex={i === cur ? 0 : -1}
               >
                 <span className="okh-float">
-                  <Image
-                    src={s.image.src}
-                    alt={s.image.alt}
-                    fill
-                    sizes="(min-width: 1024px) 40vw, 70vw"
-                    className="object-contain"
-                    loading={i === 0 ? "eager" : "lazy"}
-                    fetchPriority={i === 0 ? "high" : undefined}
-                  />
-                  <span className="okh-sheen" style={{ "--okh-mask": `url(${mask})` } as CSSProperties} aria-hidden />
+                  {i === 0 || warm ? (
+                    <Image
+                      src={s.image.src}
+                      alt={s.image.alt}
+                      fill
+                      sizes="(min-width: 1024px) 40vw, 70vw"
+                      className="object-contain"
+                      loading={i === 0 ? "eager" : "lazy"}
+                      fetchPriority={i === 0 ? "high" : undefined}
+                    />
+                  ) : null}
+                  {/* mounted after load (warm) so its mask file never competes with the first photo; on the
+                      first slot the light then sweeps as the ribbons fade in */}
+                  {warm ? (
+                    <span className="okh-sheen" style={{ "--okh-mask": `url(${mask})` } as CSSProperties} aria-hidden />
+                  ) : null}
                 </span>
               </Link>
             );
