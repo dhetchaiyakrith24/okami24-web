@@ -130,7 +130,7 @@ export function OrderViaLineButton({
         {dict.productActions.orderOnLineCta}
       </a>
       <span className="text-xs text-foreground-muted" aria-live="polite">
-        {touch ? lineCopy.touchHint : copied ? dict.productActions.orderOnLineCopied : dict.productActions.orderOnLineHint}
+        {touch ? (copied ? dict.productActions.orderOnLineCopied : lineCopy.touchHint) : lineCopy.mouseHint}
       </span>
       {dialog}
     </div>

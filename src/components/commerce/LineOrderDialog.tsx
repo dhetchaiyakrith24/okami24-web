@@ -34,8 +34,9 @@ export function LineOrderDialog({ message, mode, onClose }: { message: string; m
     for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (code.isDark(r, c)) d += `M${c + 4} ${r + 4}h1v1h-1z`;
     return { size: n + 8, d, modules: n };
   }, [url]);
-  // ≥ 3 px per module (designer): 208 px holds up to ~61 modules, beyond that the code grows to 240.
-  const px = qr.modules > 61 ? 240 : 208;
+  // ≥ 3 px per module (designer; checker #613): 208 px fits up to 61 modules + the 8-module quiet zone; a longer message
+  // grows the code to 3 px a module — the card's 324 px inner width holds 100 modules, more than any product message needs.
+  const px = Math.max(208, qr.size * 3);
 
   useEffect(() => {
     const opener = document.activeElement as HTMLElement | null;
@@ -167,7 +168,7 @@ export function LineOrderDialog({ message, mode, onClose }: { message: string; m
           </button>
         </div>
         <p className="mt-5 text-center text-xs text-foreground-dim">
-          <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" data-line-spot="buy-dialog-friend" className="underline-offset-4 hover:text-foreground hover:underline">
+          <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" data-line-spot="buy-note" className="underline-offset-4 hover:text-foreground hover:underline">
             {copy.addFriend}
             {String.fromCharCode(0xa0)}
             {CONTACT.lineId}

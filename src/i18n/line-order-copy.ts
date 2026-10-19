@@ -21,6 +21,7 @@ export const LINE_ORDER_COPY: Record<
     optionLabel: string;
     codeLabel: string;
     touchHint: string;
+    mouseHint: string;
   }
 > = {
   th: {
@@ -37,6 +38,7 @@ export const LINE_ORDER_COPY: Record<
     optionLabel: "ตัวเลือก",
     codeLabel: "รหัส",
     touchHint: "กดแล้วเปิดไลน์ร้านพร้อมข้อความสินค้า กดส่งได้เลย",
+    mouseHint: "กดแล้วขึ้น QR ให้สแกนด้วยมือถือ แชทร้านเปิดพร้อมข้อความสินค้า",
   },
   en: {
     titleOrder: "Scan to order on LINE",
@@ -52,6 +54,7 @@ export const LINE_ORDER_COPY: Record<
     optionLabel: "Option",
     codeLabel: "Code",
     touchHint: "Opens our LINE chat with this product's message — just tap send.",
+    mouseHint: "Shows a QR to scan with your phone — our LINE chat opens with this product's message.",
   },
   zh: {
     titleOrder: "扫码用 LINE 下单",
@@ -67,5 +70,6 @@ export const LINE_ORDER_COPY: Record<
     optionLabel: "选项",
     codeLabel: "编号",
     touchHint: "点击后打开本店 LINE 聊天，商品消息已填好，直接发送即可。",
+    mouseHint: "点击后显示二维码，用手机扫码即可打开本店 LINE 聊天，商品消息已填好。",
   },
 };
