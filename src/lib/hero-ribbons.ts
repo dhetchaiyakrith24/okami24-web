@@ -263,7 +263,7 @@ export class RibbonEngine {
     this.fy = y;
   }
 
-  /** the page's scroll position; the speed of change gives the "beat" */
+  /** how far the page has scrolled past the hero's top (≤ 0 = hero not reached yet); its speed gives the "beat" */
   scroll(y: number) {
     const now = performance.now();
     const dt = Math.max(16, now - this.lastScrollT);
@@ -306,7 +306,7 @@ export class RibbonEngine {
   private draw(dt: number) {
     const { gl, u, a, w, h, phone, dpr, inst } = this;
     if (!w || !h || gl.isContextLost()) return;
-    const heroP = Math.min(1, Math.max(0, this.scrollY / h));
+    const heroP = Math.min(1, Math.max(0, this.scrollY / h)); // share of the hero scrolled away
     this.surgeLeft = Math.max(0, this.surgeLeft - dt / 1600);
     const surge = Math.sin((Math.min(1, this.surgeLeft) * Math.PI) / 2);
     this.scrollV *= Math.pow(0.9, dt / 16);

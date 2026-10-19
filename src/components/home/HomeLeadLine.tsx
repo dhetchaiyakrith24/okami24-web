@@ -84,8 +84,11 @@ export function HomeLeadLine() {
 
       // start where the hero's ribbons fade out (right side), then down the gutter
       let side = right;
-      let d = `M ${w * 0.82} 0 C ${w * 0.9} 24, ${right} 24, ${right} 90`;
-      let y = 90;
+      // a thin first child (the brand strip) is skipped: the line starts under it, never across the logos
+      const first = kids[0];
+      const y0 = first && first.offsetHeight < 160 ? first.getBoundingClientRect().bottom - wr.top : 0;
+      let d = `M ${w * 0.82} ${y0} C ${w * 0.9} ${y0 + 24}, ${right} ${y0 + 24}, ${right} ${y0 + 90}`;
+      let y = y0 + 90;
       for (const c of crossings) {
         if (c - 60 <= y) continue;
         const other = side === right ? left : right;

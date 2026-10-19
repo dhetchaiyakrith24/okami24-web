@@ -119,6 +119,9 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
     let ribbons: RibbonDriver | null = null;
     let visible = true;
     let disposed = false;
+    // scroll is sent relative to the hero itself: on desktop the cinematic intro (DESKTOP_INTRO) puts
+    // the hero ~5 screens down, and the page's own scrollY dimmed the ribbons there (checker #634)
+    let heroTop = 0;
     const sync = () => {
       if (!ribbons) return;
       const c = canvas.getBoundingClientRect();
@@ -126,10 +129,11 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
       // the bundle crosses behind the product: its centre, in canvas pixels
       ribbons.size(c.width, c.height, Math.min(window.devicePixelRatio || 1, 2), window.innerWidth < 1024);
       ribbons.focus(s.left - c.left + s.width / 2, s.top - c.top + s.height / 2);
-      ribbons.scroll(window.scrollY);
+      heroTop = section.getBoundingClientRect().top + window.scrollY;
+      ribbons.scroll(window.scrollY - heroTop);
     };
     const run = () => ribbons?.run(visible && !document.hidden, still);
-    const onScroll = () => ribbons?.scroll(window.scrollY);
+    const onScroll = () => ribbons?.scroll(window.scrollY - heroTop);
 
     // The ribbons wait until the page has loaded and the browser is idle: the product photo and the
     // headline paint first, then the light fades in (globals.css, [data-on]). Measured 20/10: starting
