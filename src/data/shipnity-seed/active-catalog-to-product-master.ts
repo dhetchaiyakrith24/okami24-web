@@ -1356,7 +1356,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     specifications: [
       { key: "battery", label: "แบตเตอรี่", value: "400mAh", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
       { key: "charging", label: "การชาร์จ", value: "Type-C", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
-      { key: "indicator", label: "ไฟแสดงสถานะ", value: "ไฟ LED หลายสี บอกการชาร์จ การสูบ และการใส่หัวพอต", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
+      { key: "indicator", label: "ไฟ LED", value: "หลายสี บอกการชาร์จ การสูบ และการใส่หัวพอต", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
     ],
     sourceUrls: ["https://www.infy.my/infy-device/"],
   },
