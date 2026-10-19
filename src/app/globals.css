@@ -835,26 +835,35 @@ html:lang(th) .label-mono:not(:lang(en)) {
   height: 100%;
   aspect-ratio: 4 / 5;
   animation: okh-float 7s ease-in-out infinite;
+  /* its own layer: the drop-shadowed photo is rastered once, the float is pure compositing */
+  will-change: transform;
 }
 .okh-float img {
   filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 106, 44, 0.12));
 }
-/* one thin warm reflection crosses the device as it arrives — clipped to its own silhouette */
+/* one thin warm reflection crosses the device as it arrives — clipped to its own silhouette. The
+   band moves by transform (compositor only); animating background-position repainted every frame. */
 .okh-sheen {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   pointer-events: none;
   mix-blend-mode: screen;
   -webkit-mask: var(--okh-mask) center / contain no-repeat;
   mask: var(--okh-mask) center / contain no-repeat;
-  background: linear-gradient(105deg, transparent 47%, rgba(255, 225, 200, 0.28) 50%, transparent 53%);
-  background-size: 260% 100%;
-  background-position: 130% 0;
 }
-.okh-prod[data-state="on"] .okh-sheen {
+.okh-sheen::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100%;
+  background: linear-gradient(105deg, transparent 47.5%, rgba(255, 225, 200, 0.28) 50%, transparent 52.5%);
+  transform: translateX(22%);
+  will-change: transform;
+}
+.okh-prod[data-state="on"] .okh-sheen::before {
   animation: okh-sheen 2.2s cubic-bezier(0.4, 0, 0.2, 1) 0.7s 1 both;
 }
-@keyframes okh-sheen { from { background-position: 130% 0; } to { background-position: -40% 0; } }
+@keyframes okh-sheen { from { transform: translateX(22%); } to { transform: translateX(-22%); } }
 @keyframes okh-float { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
 
 .okh-meta {
@@ -917,19 +926,22 @@ html:lang(th) .label-mono:not(:lang(en)) {
   height: 1px;
   background: var(--surface-border);
 }
+/* the progress line grows by transform, not width — a width animation re-laid-out the page every frame */
 .okh-bar {
   position: absolute;
   left: 0;
   top: 0;
   height: 1px;
-  width: 0;
+  width: 100%;
   background: var(--accent-ember);
   box-shadow: 0 0 10px var(--accent-ember);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
 }
 .okh-bar[data-run] { animation: okh-progress 6.5s linear both; }
-.okh-bar[data-full] { width: 100%; }
+.okh-bar[data-full] { transform: none; }
 .okh-tabs[data-paused] .okh-bar { animation-play-state: paused; }
-@keyframes okh-progress { from { width: 0; } to { width: 100%; } }
+@keyframes okh-progress { from { transform: scaleX(0); } to { transform: none; } }
 .okh-n { font-size: 0.625rem; letter-spacing: 0.14em; }
 .okh-n em { display: none; font-style: normal; }
 .okh-t { font-size: 0.75rem; line-height: 1.35; font-weight: 500; color: var(--foreground-muted); transition: color 0.4s; }
@@ -989,10 +1001,10 @@ html:lang(th) .label-mono:not(:lang(en)) {
 
 /* --- still: reduced motion / Save-Data (the ribbons draw one frame; HeroShowcase stops rotating) --- */
 @media (prefers-reduced-motion: reduce) {
-  .okh-float, .okh-prod[data-state="on"] .okh-sheen, .okh-meta { animation: none; }
+  .okh-float, .okh-prod[data-state="on"] .okh-sheen::before, .okh-meta { animation: none; }
   .okh-prod { transition: opacity 0.3s ease; transform: none; filter: none; }
-  .okh-bar[data-run] { animation: none; width: 100%; }
+  .okh-bar[data-run] { animation: none; transform: none; }
 }
 html[data-okami-lite="1"] .okh-float,
-html[data-okami-lite="1"] .okh-prod[data-state="on"] .okh-sheen { animation: none; }
-html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; width: 100%; }
+html[data-okami-lite="1"] .okh-prod[data-state="on"] .okh-sheen::before { animation: none; }
+html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; transform: none; }
