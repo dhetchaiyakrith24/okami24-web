@@ -11,7 +11,7 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · at the main-chat move 20/10 ~02:00 = #630 68d42170 (white brand-logo strip)
+1 main: `git fetch && git log -1 --oneline origin/main` · 20/10 ~03:00 = #634 f00ec3d7 (new homepage hero)
   [ตรวจแล้ว] · open PRs: `gh pr list` (side lines were told to park; anything still open is theirs). Standing rules this block used to repeat live in
   TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
 2 worktrees = `git worktree list` (20 on 18/10 — each side chat's own, nested under `.claude/worktrees/` and `_incoming/`) ·
@@ -20,16 +20,22 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Both side lines were told to park (commit + push, no test server): line 1 = image sweep (session 1-mq-bar-22k) · line 2 = SEO
   (session seo-line2-c, near 600k → needs a new chat before any long job). Side chats = linked chats only (TEAM_RULES 13.6) · the owner
   gets 2 combined summaries a day · Friday's running notes (not in git) = `_incoming/friday-queue.md`.
-3h FOCUS ROUND "homepage hero" (no round file yet — write one with skill round-open; brief = `_incoming/hero-brief.md`, the owner
-  interview 20/10). The owner CANNOT PICTURE IT YET → the first deliverable is VISUAL: designer draft(s) at 390 + 1440 (+ a short
-  recording of the motion from a test build), before any build. Decisions already made (do not re-ask): dark calm-luxury layout ·
-  orange (shop colour) light ribbons drawn in CODE, medium motion, softly down the whole homepage · message "เลือกรุ่นที่ใช่" (CTA →
-  finder) · hero rotates by TYPE (pod system → switch pod → disposable → IQOS), one product each, swappable data, Friday proposes swaps ·
-  mobile = new design but keep the current mobile hero restorable in one step · Higgsfield makes the visuals (cinematic product
-  stills / short clips), code makes ribbons + transitions. Test clips `_incoming/img-1610/hero-test/` (README): light-sweep 16:9 =
-  usable (device true, loops; light is WHITE → needs ember orange), 9:16 and floating-roll = failed · 72 credits per clip · balance
-  4,644 [ตรวจแล้ว 20/10]. Owner's reference reels = frame sheets in `_incoming/hero-refs/` (originals in the session uploads) — horyx.studio, textura.eu, a
-  dark ribbon SaaS site. Credits = existing only; never buy (owner).
+3h ROUND "homepage hero" = `docs/rounds/รอบหน้าแรก-hero-20-10.txt` (brief `_incoming/hero-brief.md`, draft the owner approved
+  "ทิศนี้ใช่ ไปต่อได้เลย" = `_incoming/hero-draft/`). LIVE: #634 merged f00ec3d7 (batches 1–3 in one PR, checker r2 PASS 191103bb):
+  HeroShowcase (4 slots by type = `src/data/home-hero.ts`, swap = one line) · WebGL ribbons in a worker (OffscreenCanvas) ·
+  HomeLeadLine down the page · one-step restores `PHONE_HERO = "classic"` / `DESKTOP_INTRO`. Lighthouse mobile / median 3:
+  before LCP 5789 TBT 77 0.78 → after 5863 / 81 / 0.78. Evidence `_incoming/hero-2010/` (gates, lh, shots, clips) + checker
+  `_incoming/chk-hero/`. Build tree for this round: `bash _incoming/hero-2010/build.sh <sha> 3421`; before-server 3419 =
+  `_incoming/hero-2010/before.sh` (wt7-3419, ≡ main 97517650 for src/public — older than main now).
+  WAITING ON THE OWNER (asked 20/10, both = touch of owner-approved items, 13.3 #5): (1) desktop cinematic intro — remove so the
+  new hero is the first screen (Friday's pick; DESKTOP_INTRO=false) or keep (current, true) · (2) H1 lock "Pod System" +
+  "บุหรี่ไฟฟ้า" — kept via the kicker line inside the H1 (Friday's pick, live) or drop it. Checker notes for the owner: the old
+  hero's counters (products/brands/families) left with it; classic restore leaves a hidden second H1.
+  NEXT (owner 20/10 ~02:30, after the hero; Friday's opinion already given in chat): (a) phone product cards smaller, more per
+  screen — Friday's pick = keep 2 columns, compact phone card (square photo, tighter text) on every page using the card →
+  whole-sitemap scan (shared part); alt = home rails as swipe rows · (b) LINE order message without the page URL (keep the code
+  line) — `src/lib/line-order.ts` + the dialog's last-line display. Screenshot = `_incoming/hero-2010/owner-cards-2010.png`.
+  Round close (tag hero-2010) after the owner's two answers land.
   House rounds 15–16/10 (#484 … #500, #508, #510) DONE — what they built lives in its home (skill house-clean · TEAM_RULES 13.3 #1 ·
   skills find-skills / content-strategy · `docs/seo-audit/`); the 16/10 artifact mistake = LESSONS พ31; full text =
   `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
