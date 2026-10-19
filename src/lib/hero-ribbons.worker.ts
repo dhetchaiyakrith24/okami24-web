@@ -11,7 +11,7 @@ let engine: RibbonEngine | null = null;
 scope.onmessage = (e) => {
   const m = e.data;
   if (m.type === "init") {
-    engine = RibbonEngine.create(m.canvas);
+    engine = RibbonEngine.create(m.canvas, m.mode);
     scope.postMessage(engine ? "ready" : "fail");
     return;
   }

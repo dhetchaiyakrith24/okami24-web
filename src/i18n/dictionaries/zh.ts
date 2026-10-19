@@ -82,7 +82,7 @@ export const zh: Dictionary = {
       "pod-systems": { label: "烟弹系统", desc: "自己加注烟油，烟弹和雾化芯都可以更换。" },
       "switch-pods": { label: "换弹式设备", desc: "主机留着继续用，烟油用完只换烟弹。" },
       "disposables": { label: "一次性电子烟", desc: "开箱即可使用，无需加注烟油。" },
-      "heated-tobacco-devices": { label: "加热烟草设备", desc: "加热 TEREA 烟支中的烟草，无需烟油。" },
+      "heated-tobacco-devices": { label: "IQOS TEREA", desc: "TEREA 烟支，抽吸感接近真烟。" },
     },
   },
   // Round 30.3ข: plain, meaning-for-meaning Chinese for the homepage sections (owner: en/zh only

@@ -81,7 +81,7 @@ export const en: Dictionary = {
       "pod-systems": { label: "Pod System", desc: "Fill it yourself, and change the pod or coil whenever you need to." },
       "switch-pods": { label: "Switch Pod", desc: "Keep the device. When a pod runs dry, simply swap in a new one." },
       "disposables": { label: "Disposable", desc: "Ready out of the box, with nothing to fill." },
-      "heated-tobacco-devices": { label: "Heated Tobacco", desc: "Heats the tobacco in TEREA sticks, with no e-liquid involved." },
+      "heated-tobacco-devices": { label: "IQOS TEREA", desc: "TEREA sticks with a draw close to a real cigarette." },
     },
   },
   // The English homepage copy exactly as it was hardcoded before round 30.3ข — moved, not rewritten.

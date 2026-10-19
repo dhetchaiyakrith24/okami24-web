@@ -90,7 +90,7 @@ export const th: Dictionary = {
       "pod-systems": { label: "พอตซิสเต็ม", desc: "เติมน้ำยาเอง และเปลี่ยนหัวพอตหรือคอยล์ได้" },
       "switch-pods": { label: "พอตเปลี่ยนหัว", desc: "ตัวเครื่องใช้ต่อได้ น้ำยาหมดก็เปลี่ยนแค่หัวพอต" },
       "disposables": { label: "พอตใช้แล้วทิ้ง", desc: "แกะกล่องแล้วสูบได้เลย ไม่ต้องเติมน้ำยา" },
-      "heated-tobacco-devices": { label: "เครื่องอุ่นยาสูบ", desc: "อุ่นยาสูบในก้าน TEREA ไม่ต้องใช้น้ำยา" },
+      "heated-tobacco-devices": { label: "IQOS TEREA", desc: "ก้าน TEREA ให้ฟีลสูบคล้ายบุหรี่จริง" },
     },
   },
   // Round 30.3ข — every sentence here was approved by the owner from thai-copy's before→after

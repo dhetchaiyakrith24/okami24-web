@@ -6,7 +6,7 @@ import { guides } from "@/data/guides";
 import { HomeIntro } from "@/components/home/HomeIntro";
 import { Hero } from "@/components/home/Hero";
 import { HeroShowcase, type HeroSlotView } from "@/components/home/HeroShowcase";
-import { HomeLeadLine } from "@/components/home/HomeLeadLine";
+import { HomeFlow } from "@/components/home/HomeFlow";
 import { DESKTOP_INTRO, HOME_HERO_SLOTS, PHONE_HERO } from "@/data/home-hero";
 import { getCatalogItem } from "@/lib/catalog-index";
 import { getCategory } from "@/data/categories";
@@ -102,9 +102,10 @@ export default function Home() {
       ) : (
         <HeroShowcase slots={heroSlots} />
       )}
-      {/* everything below the hero sits in one positioned box so the lead line (the hero's ribbons
-          carried down the page, HomeLeadLine) can measure the sections and run beside them */}
-      <div className="relative">
+      {/* everything below the hero sits in one box: the hero's light carried down the page (HomeFlow)
+          runs on a sticky stage behind its sections, which are see-through there (globals.css .okh-flow) */}
+      <div className="okh-flow">
+        <HomeFlow />
         <BrandMarquee />
         <CategoryNav />
 
@@ -168,7 +169,6 @@ export default function Home() {
         <HomeProductIndex eyebrow="Catalog Index" />
 
         <GuideTeaserGrid guides={guides.slice(0, 3)} />
-        <HomeLeadLine />
       </div>
     </>
   );

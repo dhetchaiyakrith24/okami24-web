@@ -5,7 +5,8 @@ import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
-import { mainThreadDriver, type RibbonDriver, type RibbonMessage } from "@/lib/hero-ribbons";
+import { mainThreadDriver, type RibbonDriver } from "@/lib/hero-ribbons";
+import { workerDriver } from "./ribbon-driver";
 import type { HeroType } from "@/data/home-hero";
 
 /** One slot as page.tsx resolved it from the catalog — the client never sees the catalog itself
@@ -26,39 +27,6 @@ const TYPE_TAG: Record<HeroType, string> = {
   disposables: "Disposable",
   "heated-tobacco-devices": "Heated Tobacco",
 };
-
-/** The ribbon engine in a worker on an OffscreenCanvas; null when the browser cannot (the main
- *  thread then draws — mainThreadDriver). A worker that cannot get WebGL answers "fail": no ribbons. */
-function workerDriver(canvas: HTMLCanvasElement, onReady: () => void): RibbonDriver | null {
-  if (typeof Worker === "undefined" || typeof canvas.transferControlToOffscreen !== "function") return null;
-  let worker: Worker;
-  try {
-    worker = new Worker(new URL("../../lib/hero-ribbons.worker.ts", import.meta.url));
-  } catch {
-    return null;
-  }
-  let off: OffscreenCanvas;
-  try {
-    off = canvas.transferControlToOffscreen();
-  } catch {
-    worker.terminate();
-    return null;
-  }
-  worker.onmessage = (e: MessageEvent) => {
-    if (e.data === "ready") onReady();
-    else worker.terminate();
-  };
-  const post = (m: RibbonMessage, transfer: Transferable[] = []) => worker.postMessage(m, transfer);
-  post({ type: "init", canvas: off }, [off]);
-  return {
-    size: (w, h, dpr, phone) => post({ type: "size", w, h, dpr, phone }),
-    focus: (x, y) => post({ type: "focus", x, y }),
-    scroll: (y) => post({ type: "scroll", y }),
-    surge: () => post({ type: "surge" }),
-    run: (on, still) => post({ type: "run", on, still }),
-    destroy: () => worker.terminate(),
-  };
-}
 
 /**
  * The homepage hero (round "หน้าแรก hero", owner 20/10 — the draft he approved is
