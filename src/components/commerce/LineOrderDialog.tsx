@@ -124,7 +124,7 @@ export function LineOrderDialog({ message, mode, onClose }: { message: string; m
           </svg>
         </button>
         <span lang="en" className="label-mono text-xs text-ember">
-          LINE {CONTACT.lineId}
+          LINE <span className="normal-case">{CONTACT.lineId}</span>
         </span>
         <h2 id="line-order-title" className="mt-3 font-display text-2xl font-semibold tracking-tight text-foreground">
           {mode === "ask" ? copy.titleAsk : copy.titleOrder}
