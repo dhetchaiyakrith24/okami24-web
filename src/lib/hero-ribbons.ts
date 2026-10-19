@@ -183,7 +183,8 @@ void main() {
   // follows): a short, near-white hot spot just behind the head — always there while the line is laid
   // by scrolling, flaring while the visitor scrolls; plus a wider warm wash around it
   float near = (v_g - (u_head.x - 0.08)) / 0.18;
-  float hot = exp(-near * near);
+  // zero unless a scroll switch is on: the hero, reduced motion and both switches off stay exactly #639 (checker #640)
+  float hot = (u_head.y > 0.5 || u_head.z > 0.0) ? exp(-near * near) : 0.0;
   float wide = (v_g - u_head.x) / 0.7;
   // owner 20/10 ~06:40: the knot +15 % brighter and +15 % wider spread; the main line unchanged
   float lead = (u_head.y > 0.5 ? 1.05 : 0.0) + 4.85 * u_head.z;
