@@ -946,6 +946,10 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "infy-pod-verified-mimosa-yellow": null,
     "infy-pod-verified-ocean-blue": null,
   } },
+  // Image sweep (19/10): Graple Freebase — Max ELQ-2, one child.
+  "graple-freebase": { parent: "ELQ-2", options: {
+    "ELQ-2-1": "ELQ-2-1",
+  } },
   "esko-bar-switch-pod": { parent: "Pod-160", options: {
     "Pod-160-1": "Pod-160-1",
     "Pod-160-2": "Pod-160-2",

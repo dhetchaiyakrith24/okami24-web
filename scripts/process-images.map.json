@@ -10194,5 +10194,29 @@
    "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
    "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
   }
+ },
+ {
+  "source": "_incoming/list19/graple/graple.png",
+  "slug": "graple-freebase",
+  "role": "card",
+  "note": "image sweep 19/10 - Graple Freebase (Max ELQ-2-1, in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the FRONT bottle of the shop poster (list19/h/in/graple-front.png = poster turned 11° upright, front bottle cropped, 3x), prompt in list19/h/HF-NOTES.md (Graple); render list19/h/r/graple-1.png; cap + body cut by shape (list19/e1/shape.js + e/wallfill.js), glass base drawn (list19/h/basefix.js), alpha erode 3 px - copy beside this source",
+   "reference": "ihavevape.net Graple poster 600 px (https://ihavevape.net/product/graple/) - _incoming/img-1610/masters/src/elq-2-graple/ihavevape-graple.webp",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-graple.jpg (poster vs both renders), graple-label.jpg (phatjuice / signatureBLEND / graple / 50PG | 50VG | 30ML / www.phatjuice.com.my letter by letter), graple-edges.jpg (tip, base corners at 1:1 on the site background)"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/graple/graple.png",
+  "slug": "graple-freebase",
+  "role": "variant",
+  "id": "elq-2-1",
+  "note": "image sweep 19/10 - Graple Freebase, its one option (Max ELQ-2-1)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the FRONT bottle of the shop poster (list19/h/in/graple-front.png = poster turned 11° upright, front bottle cropped, 3x), prompt in list19/h/HF-NOTES.md (Graple); render list19/h/r/graple-1.png; cap + body cut by shape (list19/e1/shape.js + e/wallfill.js), glass base drawn (list19/h/basefix.js), alpha erode 3 px - copy beside this source",
+   "reference": "ihavevape.net Graple poster 600 px (https://ihavevape.net/product/graple/) - _incoming/img-1610/masters/src/elq-2-graple/ihavevape-graple.webp",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-graple.jpg (poster vs both renders), graple-label.jpg (phatjuice / signatureBLEND / graple / 50PG | 50VG | 30ML / www.phatjuice.com.my letter by letter), graple-edges.jpg (tip, base corners at 1:1 on the site background)"
+  }
  }
 ]
