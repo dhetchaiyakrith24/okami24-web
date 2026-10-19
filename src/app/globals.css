@@ -589,7 +589,7 @@ html:lang(th) .label-mono:not(:lang(en)) {
 
 /* Brand strip (owner 19/10; logos owner 20/10 "Logo แบบ A"): every width, linked official logos, the old strip's slow feel —
    18.25 px/s (measured live 20/10: half-track 2446 px / 134 s at 390, 3434 px / 188 s at 1440). The logo track is a
-   different length, so the loop is set to keep that same px/s: half-track ÷ 18.25 (numbers below, measured on the build).
+   different length, so the loop is set to keep that same px/s: half-track ÷ 18.25 — measured on the build 20/10: 2010 px → 110 s at 390, 3330 px → 182 s at 1440.
    Logos: white at one opacity (0.65 on phones — no hover there — 0.55 from lg); hover / focus = full white + a 24 px ember
    line under the logo; :active gives the same light on a tap. Hover / focus pauses it; reduced motion = a still row you scroll. */
 .okami-brand-strip {
