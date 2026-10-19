@@ -92,6 +92,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   So the unfrozen 3s queue is EMPTY until 22/10; what is left = the 22/10 read, the held titles/links/boxes above, FAQAccordion.
   Line-break tool (19/10): measure candidate wording in the running page (Browser pane JS, Range rects per character, both widths)
   before rebuilding — `_incoming/l2c/` in worktree seo-line2-c has the harness used for #597.
+  GUIDE MEDIA (owner 17/10 "ลงรูป + คลิป ตามบทความ"): DONE 19/10 [ตรวจแล้ว curl 200] #607 (leaking · burnt · how-long-a-pod-device ·
+  coil care th/en/zh · salt-nic) · #608 (wattage th/en/zh · how-long-a-disposable · plane) — product-page posters only (SECTION_IMAGES).
+  Still no section image, ON PURPOSE: what-is-a-pod-system (row 10, after 22/10) · iqos-iluma-i guide (only colour photos, no screen /
+  charging poster) · checking-a-genuine-pod (no maker image of a check) · the two flavour guides + quit-smoking (no poster shows the
+  section's subject; TFIT Watermelon ≠ the M Bar/M Switch flavour lists) · cant-open-the-website. Tall portrait posters (> ~1.2 h/w)
+  fill the 1440 screen — use landscape ones. No new shop clips found for the touched sections.
   NEXT (pages not frozen): Caliburn G4 Pro vs G5 + G5 Lite vs Lite SE wait (G5 / G5 Lite = watch row 3) → §9.7 row 9 heads (seo-auditor
   reads the paper set first) → "พอต 15k คือ" → open-system-vs-disposable / disposable-vs-switch-pod FAQs (§9.4 word "มาโบ" rule) →
   second-pass key research (§9 append) → 22/10 read (SEO_BASELINE rows 1–10 + 22 + 24 + the "SEO all keys" sections) → batch 3
