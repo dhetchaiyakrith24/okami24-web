@@ -169,7 +169,7 @@ export function LineOrderDialog({ message, mode, onClose }: { message: string; m
         <p className="mt-5 text-center text-xs text-foreground-dim">
           <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" data-line-spot="buy-dialog-friend" className="underline-offset-4 hover:text-foreground hover:underline">
             {copy.addFriend}
-            {" "}
+            {String.fromCharCode(0xa0)}
             {CONTACT.lineId}
           </a>
         </p>
