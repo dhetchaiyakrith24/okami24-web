@@ -31,6 +31,7 @@ export function workerDriver(canvas: HTMLCanvasElement, onReady: () => void, mod
     focus: (x, y) => post({ type: "focus", x, y }),
     scroll: (y) => post({ type: "scroll", y }),
     surge: () => post({ type: "surge" }),
+    style: (draw, glow) => post({ type: "style", draw, glow }),
     holes: (rects, areaH, route) => post({ type: "holes", rects, areaH, route }),
     run: (on, still) => post({ type: "run", on, still }),
     destroy: () => worker.terminate(),

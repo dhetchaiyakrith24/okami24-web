@@ -30,3 +30,14 @@ export const PHONE_HERO: "showcase" | "classic" = "showcase";
  * Owner 20/10: "เอาฉากเปิดบนคอมออก ให้ hero ใหม่เป็นจอแรก" → false. true puts the intro back (code untouched).
  */
 export const DESKTOP_INTRO = false;
+
+/**
+ * The light that flows down the homepage below the hero (HomeFlow). Owner 20/10 ~05:40: "keep this
+ * version" (#639 — the ribbon fully laid on the page, brightness swelling by itself) and try the
+ * scroll as the thing that plays the light:
+ *   FLOW_DRAW_ON_SCROLL — the line is laid as the visitor scrolls; nothing waits further down.
+ *   FLOW_GLOW_ON_SCROLL — the part of the line at the scroll position brightens while scrolling.
+ * Both false = the #639 version, unchanged. Either can be on alone.
+ */
+export const FLOW_DRAW_ON_SCROLL = true;
+export const FLOW_GLOW_ON_SCROLL = true;

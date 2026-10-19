@@ -131,6 +131,9 @@ uniform vec3 u_pulse; // amount, time, wave offset — bright and dim patches dr
 // CSS px (x, y, w, h). The ribbon fades softly to a glow behind them, so no sharp line crosses a word.
 uniform vec4 u_holes[16];
 uniform float u_nholes, u_canvasH, u_dpr;
+// flow layer, scroll-driven (owner 20/10 ~05:40): x = route position of the scroll "head", y = draw
+// only up to the head (the line is laid as the visitor scrolls), z = glow while scrolling (0 … 1)
+uniform vec3 u_head;
 vec4 stop2(float u, float a, vec4 ca, float b, vec4 cb) { return mix(ca, cb, clamp((u - a) / (b - a), 0.0, 1.0)); }
 vec4 mainGrad(float u) {
   // along the band: faint behind the headline (left), full behind the product, out at the edges.
@@ -165,6 +168,9 @@ void main() {
   float edge = u_halo > 0.5 ? exp(-d * d * 3.5) : 1.0 - smoothstep(1.0 - u_feather, 1.0, d);
   float beat = 0.5 + 0.5 * sin(6.2831853 * (v_g * 0.42 - u_pulse.y * 0.09));
   float a = g.a * v_alpha * edge * mix(1.0, 0.35 + 1.05 * beat * beat, u_pulse.x);
+  if (u_head.y > 0.5) a *= 1.0 - smoothstep(u_head.x - 0.35, u_head.x + 0.02, v_g);
+  float near = (v_g - u_head.x) / 0.45;
+  a *= 1.0 + u_head.z * 1.6 * exp(-near * near);
   vec2 p = vec2(gl_FragCoord.x, u_canvasH - gl_FragCoord.y) / u_dpr;
   for (int i = 0; i < 16; i++) {
     if (float(i) >= u_nholes) break;
@@ -253,6 +259,11 @@ export class RibbonEngine {
   /** flow layer: the route's control points (x, y …, CSS px from the top of the flow area) */
   private route: number[] = [];
   private ptBuf = new Float32Array(48);
+  /** flow layer, scroll-driven: draw up to the scroll head · glow around it while scrolling */
+  private drawOnScroll = false;
+  private glowOnScroll = false;
+  private head = 0;
+  private glow = 0;
 
   /** Returns null when WebGL is unavailable — the caller simply shows no ribbons. */
   static create(canvas: Ctx2Canvas, mode: RibbonMode = "hero"): RibbonEngine | null {
@@ -286,7 +297,7 @@ export class RibbonEngine {
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog) || "link");
     this.prog = prog;
     gl.useProgram(prog);
-    for (const name of ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse", "u_holes", "u_nholes", "u_canvasH", "u_dpr", "u_flow", "u_flowF", "u_npts", "u_s0", "u_pts"]) {
+    for (const name of ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse", "u_holes", "u_nholes", "u_canvasH", "u_dpr", "u_head", "u_flow", "u_flowF", "u_npts", "u_s0", "u_pts"]) {
       this.u[name] = gl.getUniformLocation(prog, name);
     }
     this.a = {
@@ -344,6 +355,12 @@ export class RibbonEngine {
     this.scrollV = this.scrollV * 0.6 + Math.abs((y - this.scrollY) / dt) * 1000 * 0.4;
     this.scrollY = y;
     this.lastScrollT = now;
+  }
+
+  /** Flow layer style (src/data/home-hero.ts): both false = the ribbon fully drawn, glow by time only. */
+  style(drawOnScroll: boolean, glowOnScroll: boolean) {
+    this.drawOnScroll = drawOnScroll;
+    this.glowOnScroll = glowOnScroll;
   }
 
   /** Flow layer: the text blocks without a box (x, y, w, h per block, CSS px from the top of the flow
@@ -450,6 +467,22 @@ export class RibbonEngine {
       gl.uniform2fv(u.u_pts, this.ptBuf);
       gl.uniform1f(u.u_npts, np);
       gl.uniform1f(u.u_s0, i0);
+      // the scroll head: the route position at 82 % down the screen, eased so the line flows instead
+      // of jumping with each scroll event; the glow follows the scroll speed and fades when it stops
+      const ty = this.scrollY + h * 0.82;
+      let target = 0;
+      for (let i = 0; i + 1 < pts; i++) {
+        const y0 = this.route[i * 2 + 1];
+        const y1 = this.route[i * 2 + 3];
+        if (ty >= y1) target = i + 1;
+        else if (ty > y0) {
+          target = i + (ty - y0) / Math.max(1, y1 - y0);
+          break;
+        } else break;
+      }
+      this.head += (target - this.head) * Math.min(1, dt / 140);
+      this.glow = Math.max(this.glow * Math.pow(0.93, dt / 16), Math.min(1, this.scrollV / 700));
+      gl.uniform3f(u.u_head, this.head, this.drawOnScroll ? 1 : 0, this.glowOnScroll ? this.glow : 0);
     } else {
       strength = (1 - heroP * 0.65) * (1 + surge * 0.55);
       gl.uniform2f(u.u_focus, this.fx, this.fy - heroP * h * 0.15);
@@ -462,6 +495,7 @@ export class RibbonEngine {
       gl.uniform1f(u.u_nholes, 0);
       gl.uniform1f(u.u_flow, 0);
       gl.uniform1f(u.u_flowF, 0);
+      gl.uniform3f(u.u_head, 0, 0, 0);
       gl.uniform1f(u.u_npts, 2);
       gl.uniform1f(u.u_s0, 0);
     }
@@ -518,6 +552,7 @@ export type RibbonMessage =
   | { type: "focus"; x: number; y: number }
   | { type: "scroll"; y: number }
   | { type: "surge" }
+  | { type: "style"; draw: boolean; glow: boolean }
   | { type: "holes"; rects: number[]; areaH: number; route: number[] }
   | { type: "run"; on: boolean; still: boolean };
 
@@ -527,6 +562,7 @@ export type RibbonDriver = {
   focus(x: number, y: number): void;
   scroll(y: number): void;
   surge(): void;
+  style(draw: boolean, glow: boolean): void;
   holes(rects: number[], areaH: number, route: number[]): void;
   run(on: boolean, still: boolean): void;
   destroy(): void;
@@ -546,6 +582,9 @@ export function applyRibbonMessage(engine: RibbonEngine, m: Exclude<RibbonMessag
       break;
     case "surge":
       engine.surge();
+      break;
+    case "style":
+      engine.style(m.draw, m.glow);
       break;
     case "holes":
       engine.holes(m.rects, m.areaH, m.route);
@@ -567,6 +606,7 @@ export function mainThreadDriver(canvas: HTMLCanvasElement, mode: RibbonMode = "
     focus: (x, y) => applyRibbonMessage(engine, { type: "focus", x, y }),
     scroll: (y) => applyRibbonMessage(engine, { type: "scroll", y }),
     surge: () => applyRibbonMessage(engine, { type: "surge" }),
+    style: (draw, glow) => applyRibbonMessage(engine, { type: "style", draw, glow }),
     holes: (rects, areaH, route) => applyRibbonMessage(engine, { type: "holes", rects, areaH, route }),
     run: (on, still) => applyRibbonMessage(engine, { type: "run", on, still }),
     destroy: () => engine.stop(),
