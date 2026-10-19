@@ -587,20 +587,52 @@ html:lang(th) .label-mono:not(:lang(en)) {
   border-radius: 999px;
 }
 
-/* Brand strip (owner 19/10, designer option A): every width, linked names, the old strip's slow feel — 18 px/s measured
-   (583 px in 32 s); the longer track needs a longer loop: 2446 px at 390 → 134 s, 3422 px on desktop → 188 s. Hover / focus
-   pauses it; reduced motion = a still row you scroll. */
+/* Brand strip (owner 19/10; logos owner 20/10 "Logo แบบ A"): every width, linked official logos, the old strip's slow feel —
+   18.25 px/s (measured live 20/10: half-track 2446 px / 134 s at 390, 3434 px / 188 s at 1440). The logo track is a
+   different length, so the loop is set to keep that same px/s: half-track ÷ 18.25 (numbers below, measured on the build).
+   Logos: white at one opacity (0.65 on phones — no hover there — 0.55 from lg); hover / focus = full white + a 24 px ember
+   line under the logo; :active gives the same light on a tap. Hover / focus pauses it; reduced motion = a still row you scroll. */
 .okami-brand-strip {
   -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
 }
 .okami-brand-strip-track {
-  min-height: 56px;
-  animation: okami-brand-marquee 134s linear infinite;
+  min-height: 64px;
+  animation: okami-brand-marquee 110s linear infinite;
 }
 .okami-brand-strip:hover .okami-brand-strip-track,
 .okami-brand-strip:focus-within .okami-brand-strip-track {
   animation-play-state: paused;
+}
+.okami-brand-logo img {
+  display: block;
+  width: var(--mw);
+  height: var(--mh);
+  filter: brightness(0) invert(1);
+  opacity: 0.65;
+  transition: opacity 200ms ease;
+  -webkit-user-drag: none;
+}
+.okami-brand-logo::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 24px;
+  height: 2px;
+  margin-left: -12px;
+  border-radius: 2px;
+  background: var(--color-ember);
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+.okami-brand-logo:hover img,
+.okami-brand-logo:focus-visible img,
+.okami-brand-logo:active img,
+.okami-brand-logo:hover::after,
+.okami-brand-logo:focus-visible::after,
+.okami-brand-logo:active::after {
+  opacity: 1;
 }
 @media (min-width: 64rem) {
   .okami-brand-strip {
@@ -608,8 +640,13 @@ html:lang(th) .label-mono:not(:lang(en)) {
     mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
   }
   .okami-brand-strip-track {
-    min-height: 72px;
-    animation-duration: 188s;
+    min-height: 88px;
+    animation-duration: 182s;
+  }
+  .okami-brand-logo img {
+    width: var(--dw);
+    height: var(--dh);
+    opacity: 0.55;
   }
 }
 @media (prefers-reduced-motion: reduce) {
