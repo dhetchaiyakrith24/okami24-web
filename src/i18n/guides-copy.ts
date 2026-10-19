@@ -766,6 +766,7 @@ export const GUIDES_COPY_TH: Record<string, GuideCopy> = {
           "ตั้งวัตต์สูงเกินช่วง คอยล์จะร้อนจัด ควันเยอะขึ้นก็จริง แต่รสจะเริ่มเปลี่ยน น้ำยาหมดไวขึ้น และคอยล์อายุสั้นลง ถ้าสูงเกินไปมาก สำลีก็ไหม้ได้ คล้ายเร่งไฟแรงสุดตอนทอดไข่ เร็วขึ้นก็จริง แต่ได้ไข่ไหม้มาแทน ส่วนตั้งต่ำเกินไป ควันจะบาง และสูบแล้วรู้สึกไม่ค่อยมีแรง",
           "เครื่องบางรุ่นยังกำหนดช่วงวัตต์แยกตามโอห์มของหัวพอตด้วย ตัวอย่างอยู่ในหัวข้อ Caliburn G3 Pro ด้านล่าง ส่วนอาการไหม้และวิธีกัน อ่านต่อได้ที่ [พอตไหม้ เกิดจากอะไร](/guides/fixing-a-burnt-pod)",
         ],
+        image: SECTION_IMAGES.vmateI3Family,
         video: { videoId: "kMCAzQ0H3us", title: "ปรับ Watt แล้วฟีลพอตเปลี่ยนยังไง?", channelName: "OKM YARZ", publishedAt: "2026-07-27" },
       },
       {
@@ -1209,6 +1210,7 @@ export const GUIDES_COPY_ZH: Record<string, GuideCopy> = {
         paragraphs: [
           "从所装雾化芯或烟弹标注的功率范围低端开始：MTL 吸法把进气关到接近闭合（DTL 则接近全开），再一小步一小步往上调。还不确定自己是哪种吸法？先读 [MTL 与 DTL 的差异](/guides/understanding-mtl-vs-dtl)。",
         ],
+        image: SECTION_IMAGES_ZH.vmateI3Family,
       },
       {
         heading: "真实例子：Caliburn G3 Pro 盒内附带两种阻值的烟弹",
