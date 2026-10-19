@@ -10242,5 +10242,53 @@
    "reference": "vapemanshop.com Super Cool Grape Blast photo 1200 px (COF Super Cool Salt Series label) - _incoming/img-1610/masters/src/elq-6-supercool/Grape-Blast.jpg",
    "fidelitySheet": "_incoming/img-1610/list19/i/chk-sc.jpg (photo vs both renders: COF / Super / COOL / SALT SERIES / Grape Blast / Cloudy O Funky cap), sc-edges.jpg + sc-zoom.jpg (cap collar and base at 1:1 on the site background)"
   }
+ },
+ {
+  "source": "_incoming/list19/supercool/laimoon.png",
+  "slug": "super-cool-saltnic",
+  "role": "variant",
+  "id": "elq-6-4",
+  "note": "image sweep 19/10 - Super Cool Laimoon (Max ELQ-6-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the bottle on the vapemanshop Laimoon photo (list19/i/in/sc-laimoon.jpg), prompt window.__sc in list19/i/NOTES.md; render list19/i/r/sc-laimoon-2.png; body cut by shape + wallfill (from 0.48), base cut per column (list19/i/basebright.js) or drawn (basefix.js, Black Hexx), alpha erode 2 px - copy beside this source",
+   "reference": "vapemanshop.com Super Cool Laimoon photo 1200 px - _incoming/img-1610/masters/src/elq-6-supercool/Laimoon.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-sc4.jpg + chk-bh.jpg (photo vs renders, label words), sc4-edges.jpg + bh-edges.jpg (cap, collar, base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/supercool/strawberry-frost.png",
+  "slug": "super-cool-saltnic",
+  "role": "variant",
+  "id": "elq-6-8",
+  "note": "image sweep 19/10 - Super Cool Strawberry Frost (Max ELQ-6-8)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the bottle on the vapemanshop Strawberry Frost photo (list19/i/in/sc-strawberry.jpg), prompt window.__sc in list19/i/NOTES.md; render list19/i/r/sc-strawberry-2.png; body cut by shape + wallfill (from 0.48), base cut per column (list19/i/basebright.js) or drawn (basefix.js, Black Hexx), alpha erode 2 px - copy beside this source",
+   "reference": "vapemanshop.com Super Cool Strawberry Frost photo 1200 px - _incoming/img-1610/masters/src/elq-6-supercool/Strawberry.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-sc4.jpg + chk-bh.jpg (photo vs renders, label words), sc4-edges.jpg + bh-edges.jpg (cap, collar, base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/supercool/white-polo.png",
+  "slug": "super-cool-saltnic",
+  "role": "variant",
+  "id": "elq-6-9",
+  "note": "image sweep 19/10 - Super Cool White Polo (Max ELQ-6-9)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the bottle on the vapemanshop White Polo photo (list19/i/in/sc-whitepolo.jpg), prompt window.__sc in list19/i/NOTES.md; render list19/i/r/sc-whitepolo-1.png; body cut by shape + wallfill (from 0.48), base cut per column (list19/i/basebright.js) or drawn (basefix.js, Black Hexx), alpha erode 2 px - copy beside this source",
+   "reference": "vapemanshop.com Super Cool White Polo photo 1200 px - _incoming/img-1610/masters/src/elq-6-supercool/White-Polo.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-sc4.jpg + chk-bh.jpg (photo vs renders, label words), sc4-edges.jpg + bh-edges.jpg (cap, collar, base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/supercool/black-hexx.png",
+  "slug": "super-cool-saltnic",
+  "role": "variant",
+  "id": "elq-6-10",
+  "note": "image sweep 19/10 - Super Cool Black Hexx (Max ELQ-6-10)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the bottle on the vapemanshop Black Hexx photo (list19/i/in/sc-blackhexx.jpg), prompt window.__sc in list19/i/NOTES.md; render list19/i/r/sc-blackhexx-3.png (re-shot on mid-grey: the black cap could not be keyed on charcoal); body cut by shape + wallfill (from 0.48), base cut per column (list19/i/basebright.js) or drawn (basefix.js, Black Hexx), alpha erode 2 px - copy beside this source",
+   "reference": "vapemanshop.com Super Cool Black Hexx photo 1200 px - _incoming/img-1610/masters/src/elq-6-supercool/Black-Hexx.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-sc4.jpg + chk-bh.jpg (photo vs renders, label words), sc4-edges.jpg + bh-edges.jpg (cap, collar, base at 1:1 on the site background)"
+  }
  }
 ]
