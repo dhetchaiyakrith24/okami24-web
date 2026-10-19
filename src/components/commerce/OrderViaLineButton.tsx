@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState, useSyncExternalStore } from "react";
 import { CONTACT } from "@/data/contact";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { LineOrderDialog } from "@/components/commerce/LineOrderDialog";
@@ -31,6 +31,8 @@ import { cn } from "@/lib/utils";
  * the picked option, a code and the page already typed. A touch device follows it (LINE opens); a mouse device gets
  * LineOrderDialog on the same page instead (QR to scan with the phone + the message to copy). The clipboard copy stays.
  */
+const noopSubscribe = () => () => {};
+
 const buttonClasses =
   "inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-ember px-6 py-3 text-sm font-semibold tracking-tight text-[#181008] transition-colors duration-200 hover:bg-ember-strong focus-visible:outline-2 focus-visible:outline-ember";
 
@@ -68,12 +70,8 @@ export function OrderViaLineButton({
   const lineCopy = LINE_ORDER_COPY[locale];
   const [copied, setCopied] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [pageUrl, setPageUrl] = useState("");
-  const [touch, setTouch] = useState(false);
-  useEffect(() => {
-    setPageUrl(window.location.origin + window.location.pathname);
-    setTouch(window.matchMedia("(pointer: coarse)").matches);
-  }, []);
+  // Touch screen = the tap follows the link (LINE opens); server render assumes a mouse.
+  const touch = useSyncExternalStore(noopSubscribe, () => window.matchMedia("(pointer: coarse)").matches, () => false);
   const message = lineOrderMessage({
     lead: mode === "ask" ? lineCopy.leadAsk : lineCopy.leadOrder,
     productName,
@@ -81,7 +79,7 @@ export function OrderViaLineButton({
     option: variantLabel,
     codeLabel: lineCopy.codeLabel,
     code: productCode,
-    url: canonicalUrl ?? pageUrl,
+    url: canonicalUrl ?? "",
   });
   const href = lineOaMessageUrl(message);
   const closeDialog = useCallback(() => setDialogOpen(false), []);
