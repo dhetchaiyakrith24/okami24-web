@@ -77,6 +77,9 @@ const OWNER_CONFIRMED_PARENT_TYPE: Record<string, OptionType> = {
   // Round p63 (18/10): TEREA packs are named by colour line ("Black Green", "Sienna") but each one is a flavour —
   // iqos.com/id sells them as flavours (rasa); as "colour" the card read "22 สี".
   "IQOSHEET-15": "flavor",
+  // Image sweep (19/10): Super Cool Salt Nic (Max ELQ-6) — e-liquid flavours whose names carry colour words ("Pinky Blush", "White Polo",
+  // "Black Hexx"); every child is one flavour bottle (COF Super Cool Salt Series label), not a colour.
+  "SUPER-COOL-SALTNIC": "flavor",
   "coil-78": "resistance", // not present in the active view, kept for completeness/documentation
 };
 

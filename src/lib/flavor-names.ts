@@ -16,6 +16,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // Round p63 (18/10): + the IQOS TEREA pack names (the TEREA options became flavours), sorted in by length.
   // Round list19 (19/10): + the Reswa Sportcan names (Max labels).
   // Round list19 (19/10): + the RELX LUMI 18K names (the "5%" options are Max's own labels), sorted in by length.
+  // Image sweep (19/10): + the Super Cool Salt Nic names (Max labels), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
   "Watermelon Dragon Fruit",
@@ -63,6 +64,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Lychee Raspberry",
   "Strawberry Grape",
   "Dimensions Yugen",
+  "Strawberry Frost",
   "Banana Icecream",
   "Sour Strawberry",
   "Berrine Edition",
@@ -124,6 +126,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Ice Sparkling",
   "Grape Gummies",
   "Watermelon 5%",
+  "Blueraz Berry",
   "Purple Grape",
   "Apple Baraku",
   "Apple Shisha",
@@ -135,6 +138,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Sakura Grape",
   "Berry Garden",
   "Peach Orange",
+  "Shine Muscat",
   "Berry Grape",
   "Monster Ice",
   "Black Green",
@@ -167,6 +171,8 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Jasmine Tea",
   "Purple 50mg",
   "Mixed Berry",
+  "Grape Blast",
+  "Pinky Blush",
   "Black Ruby",
   "Aloe Grape",
   "Apple Aloe",
@@ -193,6 +199,9 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Mint Extra",
   "Grape Yoyo",
   "Lemon Coke",
+  "Black Hexx",
+  "King Melon",
+  "White Polo",
   "Just Mint",
   "Sun Pearl",
   "All Berry",

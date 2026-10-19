@@ -10218,5 +10218,29 @@
    "reference": "ihavevape.net Graple poster 600 px (https://ihavevape.net/product/graple/) - _incoming/img-1610/masters/src/elq-2-graple/ihavevape-graple.webp",
    "fidelitySheet": "_incoming/img-1610/list19/h/chk-graple.jpg (poster vs both renders), graple-label.jpg (phatjuice / signatureBLEND / graple / 50PG | 50VG | 30ML / www.phatjuice.com.my letter by letter), graple-edges.jpg (tip, base corners at 1:1 on the site background)"
   }
+ },
+ {
+  "source": "_incoming/list19/supercool/grape-blast.png",
+  "slug": "super-cool-saltnic",
+  "role": "card",
+  "note": "image sweep 19/10 - Super Cool Salt Nic (Max ELQ-6), card = Grape Blast (in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the bottle on the vapemanshop Grape Blast photo (list19/i/in/sc-grape.jpg = bottle cropped, 1.7x); render list19/i/r/sc-grape-2.png (render 1 redrew the label - rejected); body cut by shape (list19/e1/shape.js GAP 2060 + e/wallfill.js from 0.46), base = first dark contact row per column with a robust curve fit (list19/i/basebright.js T 40), alpha erode 2 px - copy beside this source",
+   "reference": "vapemanshop.com Super Cool Grape Blast photo 1200 px (COF Super Cool Salt Series label) - _incoming/img-1610/masters/src/elq-6-supercool/Grape-Blast.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-sc.jpg (photo vs both renders: COF / Super / COOL / SALT SERIES / Grape Blast / Cloudy O Funky cap), sc-edges.jpg + sc-zoom.jpg (cap collar and base at 1:1 on the site background)"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/supercool/grape-blast.png",
+  "slug": "super-cool-saltnic",
+  "role": "variant",
+  "id": "elq-6-1",
+  "note": "image sweep 19/10 - Super Cool Grape Blast (Max ELQ-6-1)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the bottle on the vapemanshop Grape Blast photo (list19/i/in/sc-grape.jpg = bottle cropped, 1.7x); render list19/i/r/sc-grape-2.png (render 1 redrew the label - rejected); body cut by shape (list19/e1/shape.js GAP 2060 + e/wallfill.js from 0.46), base = first dark contact row per column with a robust curve fit (list19/i/basebright.js T 40), alpha erode 2 px - copy beside this source",
+   "reference": "vapemanshop.com Super Cool Grape Blast photo 1200 px (COF Super Cool Salt Series label) - _incoming/img-1610/masters/src/elq-6-supercool/Grape-Blast.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-sc.jpg (photo vs both renders: COF / Super / COOL / SALT SERIES / Grape Blast / Cloudy O Funky cap), sc-edges.jpg + sc-zoom.jpg (cap collar and base at 1:1 on the site background)"
+  }
  }
 ]
