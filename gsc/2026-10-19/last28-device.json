@@ -1,0 +1,38 @@
+{
+ "request": {
+  "startDate": "2026-09-20",
+  "endDate": "2026-10-17",
+  "dimensions": [
+   "device"
+  ]
+ },
+ "rows": [
+  {
+   "keys": [
+    "MOBILE"
+   ],
+   "clicks": 423,
+   "impressions": 2648,
+   "ctr": 0.15974320241691842,
+   "position": 7.67560422960725
+  },
+  {
+   "keys": [
+    "DESKTOP"
+   ],
+   "clicks": 164,
+   "impressions": 776,
+   "ctr": 0.211340206185567,
+   "position": 17.582474226804123
+  },
+  {
+   "keys": [
+    "TABLET"
+   ],
+   "clicks": 4,
+   "impressions": 36,
+   "ctr": 0.1111111111111111,
+   "position": 7.138888888888889
+  }
+ ]
+}

@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-09-19",
-  "endDate": "2026-10-16",
+  "startDate": "2026-09-20",
+  "endDate": "2026-10-17",
   "dimensions": [
    "country"
   ]
@@ -11,10 +11,10 @@
    "keys": [
     "tha"
    ],
-   "clicks": 581,
-   "impressions": 3271,
-   "ctr": 0.1776215224701926,
-   "position": 9.37114032405992
+   "clicks": 590,
+   "impressions": 3386,
+   "ctr": 0.17424689899586532,
+   "position": 9.382457176609568
   },
   {
    "keys": [
@@ -63,15 +63,6 @@
   },
   {
    "keys": [
-    "ecu"
-   ],
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 42
-  },
-  {
-   "keys": [
     "fra"
    ],
    "clicks": 0,
@@ -117,12 +108,21 @@
   },
   {
    "keys": [
+    "ita"
+   ],
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 75
+  },
+  {
+   "keys": [
     "jpn"
    ],
    "clicks": 0,
-   "impressions": 2,
+   "impressions": 3,
    "ctr": 0,
-   "position": 77.5
+   "position": 55
   },
   {
    "keys": [
@@ -219,9 +219,9 @@
     "tur"
    ],
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 3,
    "ctr": 0,
-   "position": 35
+   "position": 15.333333333333334
   },
   {
    "keys": [
