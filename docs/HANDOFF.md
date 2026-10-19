@@ -25,6 +25,10 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
   Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
   redirect into a checker-read tree = discipline (rule-audit L1 proposes a lock) · scan tools against the live site (L2).
+3i PARKED 20/10 (owner "หยุดงานอื่นและ Focus แค่งานนี้" = homepage hero only): image sweep stopped after #619 MQ Bar 22K · #620 Vmate Pro 2 ·
+  #621 Punta Ice · #624 Next Pro 2 Beyond · #625 Super Cool Salt Nic (all merged + live 200, 20/10). Nothing open; test servers stopped.
+  Resume = brief _incoming/next-chat.md (status ready: Marbo Saltnic first — owner 19/10 points — then the queue). Hero test clips (Caliburn G5,
+  Seedance 2.0 light-sweep / floating-roll, 216 credits) = _incoming/img-1610/hero-test/README.md. Higgsfield balance 4,644.4 (20/10).
 3i OPEN ROUND "image sweep" = `docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt` (image chats; own the main folder's `_incoming/img-1610/`,
   worktrees `_incoming/img-1610/wt-img` (work, own node_modules) · `wt-gate` (checker tree) · `wt-base` (base build 47320ddd, before
   shots `_incoming/img-1610/shots/before-*` for every product of the round)). Nano Banana Pro Unlimited free in Chrome until ~evening 18/10 (owner 16/10: 3 days from 15/10) — render first, key later.
