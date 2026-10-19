@@ -931,6 +931,16 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-176-3": "Pod-176-3",
     "Pod-176-4": "Pod-176-4",
   } },
+  // Image sweep (19/10): Punta Ice — Max eliquid-78, 7 flavours.
+  "punta-ice": { parent: "eliquid-78", options: {
+    "eliquid-78-1": "eliquid-78-1",
+    "eliquid-78-2": "eliquid-78-2",
+    "eliquid-78-3": "eliquid-78-3",
+    "eliquid-78-4": "eliquid-78-4",
+    "eliquid-78-5": "eliquid-78-5",
+    "eliquid-78-6": "eliquid-78-6",
+    "eliquid-78-7": "eliquid-78-7",
+  } },
   // Image sweep (19/10): INFY POD — Max Pod-158-1..14; the maker's 5 extra colours are not in the warehouse.
   "infy-pod": { parent: "Pod-158", options: {
     "Pod-158-1": "Pod-158-1",

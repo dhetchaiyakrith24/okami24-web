@@ -61,6 +61,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "mq-bar-22k": { tagline: "MQ Bar 22K disposable" },
   "graple-freebase": { tagline: "Graple freebase e-liquid" },
   "vmate-pro-2": { tagline: "VOOPOO Vmate Pro 2 device" },
+  "punta-ice": { tagline: "Punta Ice e-liquid" },
   "infy-pod": { tagline: "INFY POD device body" },
   "pod-180": { tagline: "nexBar CLEAR 18K disposable" },
   "coil-54": { tagline: "Feelin Mini pod by NEVOKS" },

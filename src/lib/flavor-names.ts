@@ -16,6 +16,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // Round p63 (18/10): + the IQOS TEREA pack names (the TEREA options became flavours), sorted in by length.
   // Round list19 (19/10): + the Reswa Sportcan names (Max labels).
   // Round list19 (19/10): + the RELX LUMI 18K names (the "5%" options are Max's own labels), sorted in by length.
+  // Image sweep (19/10): + the Punta Ice names (Max labels), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
   "Watermelon Dragon Fruit",
@@ -80,6 +81,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Sugus Pineapple",
   "Sugus Raspberry",
   "Apple Aloe Vera",
+  "Mango Bubblegum",
   "Red Lemon Soda",
   "Auburn Edition",
   "Golden Edition",
@@ -102,6 +104,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Sour Bubblegum",
   "Ice Strawberry",
   "Double Mint 5%",
+  "Mint Bubblegum",
   "Riviera Pearl",
   "Berries Party",
   "Blueberry Ice",
@@ -124,6 +127,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Ice Sparkling",
   "Grape Gummies",
   "Watermelon 5%",
+  "Bubblegum Ice",
   "Purple Grape",
   "Apple Baraku",
   "Apple Shisha",
@@ -207,6 +211,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Peach Ice",
   "Lime Soda",
   "Red Apple",
+  "Guava Ice",
   "Blue Ice",
   "Cola Ice",
   "Thai Tea",
