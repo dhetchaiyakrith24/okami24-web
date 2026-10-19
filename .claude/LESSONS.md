@@ -222,6 +222,17 @@ JS gzip −33…−48% · LCP −1.1…−1.8 วิ · พิสูจน์ "�
 (ด่าน `client` ของ `scripts/pre-checker-gate.js` จับ import แบบนี้ที่ branch เพิ่ม — รายชื่อตารางอยู่ในสคริปต์ · 15/10 ย้อนตรวจ 150 PR จับ #433 Footer ได้) ·
 งานความเร็วถัดไปเริ่มจาก `scripts/lab/js-weight.js` + ค้นข้อความเด่นใน chunk ที่ใหญ่สุด ไม่เดาจากโค้ด
 
+
+## 38. แอนิเมชันหน้าแรกทำให้ "เว็บช้า" ทั้งที่ภาพลื่น — วัดงานของเธรดหลักขณะหน้าเปิดนิ่ง ไม่ใช่วัดแค่เฟรมเรต (รอบหน้าแรก hero 20/10 · #634)
+
+ร่าง hero ลื่นในตา แต่ Lighthouse มือถือ LCP +1.3 วิ TBT +160 ms · ไล่ด้วย `_incoming/hero-2010/metrics.js` (CDP Performance.getMetrics
+5 วิตอนหน้านิ่ง: จำนวน/เวลา style recalc · layout) เจอ 4 ต้นเหตุ แก้ทีละข้อแล้ววัดซ้ำ: (1) เส้นแสง canvas 2D ~14k เส้นย่อยต่อเฟรม = 17 fps ที่ 1440
+→ WebGL คำนวณเส้นใน vertex shader + instanced draw (9 คำสั่ง/เฟรม) (2) แถบเวลาที่ animate `width` = จัดหน้าใหม่ทุกเฟรม → `transform: scaleX` ·
+แสงวาบ `background-position` → transform (3) รูปอีก 3 ใบที่ "lazy" แต่อยู่ในจอ (opacity 0) โหลดทันทีแย่งรูปแรก → render หลัง load
+(4) **มี requestAnimationFrame บนเธรดหลัก = Chrome ต้อง tick แอนิเมชันอื่นทั้งหน้าบนเธรดหลักทุกเฟรม** (แถบโลโก้กิน ~1 วิต่อ 5 วิ) → ย้ายตัววาดไป
+Worker + OffscreenCanvas · ผล = LCP/TBT/คะแนนเท่าเดิม
+**ใช้ซ้ำเมื่อไหร่:** ทุกงานที่เพิ่มการเคลื่อนไหวต่อเนื่อง — วัด metrics.js ก่อน/หลังพร้อม Lighthouse · animate ได้แค่ transform/opacity · ลูปวาดต่อเนื่องอยู่ใน worker ·
+ของหนักเริ่มหลัง `load` + idle
 ---
 
 # สิ่งที่พลาด (หมวด 12 ข้อ 27 — เจ้าของพูดเอง = จดเลย)
