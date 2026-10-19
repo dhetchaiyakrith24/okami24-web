@@ -118,8 +118,10 @@ export const en: Dictionary = {
     viewAll: "View all →",
     // Round 8 B1: the all-products text index (variant ก, see th.ts).
     indexTitle: "Pick from every model — grouped by category.",
-    indexDescription: "The rails above are a selection; this is the full list, grouped by category — every page one tap away.",
+    indexDescription: "The full list, by category — open one, and every model page is a tap away.",
     indexViewAll: "Open the full catalog →",
+    typeViewAll: "See all {n} models",
+    indexOpenCategory: "Open this category →",
   },
   search: {
     title: "Find a product",

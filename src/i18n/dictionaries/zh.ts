@@ -113,8 +113,10 @@ export const zh: Dictionary = {
     viewAll: "查看全部 →",
     // Round 8 B1: the all-products text index (variant ก, see th.ts).
     indexTitle: "从所有机型里挑，已按分类整理好。",
-    indexDescription: "上面几排是精选，这里是完整清单，按分类排好，每一页都点得到。",
+    indexDescription: "按分类排好的完整清单，打开分类，每款产品页都点得到。",
     indexViewAll: "打开产品总览 →",
+    typeViewAll: "查看全部 {n} 款",
+    indexOpenCategory: "打开此分类 →",
   },
   search: {
     title: "查找产品",

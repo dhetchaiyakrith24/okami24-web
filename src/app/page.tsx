@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { allProducts, getFlagshipProducts, getProduct, getProductsByFamily, getProductsByBrand } from "@/data/products";
+import { allProducts, getFlagshipProducts, getProduct } from "@/data/products";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { brands } from "@/data/brands";
 import { guides } from "@/data/guides";
@@ -12,13 +12,11 @@ import { getCatalogItem } from "@/lib/catalog-index";
 import { getCategory } from "@/data/categories";
 import { BrandMarquee } from "@/components/home/BrandMarquee";
 import { CategoryNav } from "@/components/home/CategoryNav";
-import { ProductRailSection } from "@/components/home/ProductRailSection";
-import { EditorialSplit } from "@/components/home/EditorialSplit";
-import { FlavorTeaser } from "@/components/home/FlavorTeaser";
+import { HomeTypeSection } from "@/components/home/HomeTypeSection";
+import { HOME_TYPE_SECTIONS } from "@/data/home-sections";
 import { CompareCTA } from "@/components/home/CompareCTA";
 import { GuideTeaserGrid } from "@/components/home/GuideTeaserGrid";
 import { HomeProductIndex } from "@/components/home/HomeProductIndex";
-import { HomeText } from "@/components/home/HomeCopy";
 import { CONTACT } from "@/data/contact";
 import { canonicalFor, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
@@ -29,8 +27,6 @@ export const metadata: Metadata = canonicalFor("/");
 export default function Home() {
   const flagships = getFlagshipProducts();
   const flagship = getProduct("caliburn-g5")!;
-  const caliburnFamily = getProductsByFamily("caliburn");
-  const voopooProducts = getProductsByBrand("voopoo");
   const mBar10k = getProduct("m-bar-10k")!;
 
   // The hero's four slots (src/data/home-hero.ts), resolved here so the client component only gets
@@ -109,55 +105,14 @@ export default function Home() {
         <BrandMarquee />
         <CategoryNav />
 
-        {/* Round 30.3ข (owner, 2026-09-11): the section copy moved into the dictionaries (`home`)
-            and is read through <HomeText> in the visitor's language — English used to be hardcoded
-            here, so the Thai homepage read Thai only down to the hero. The eyebrows stay English
-            on purpose (THAI_STYLE §5 group ก). */}
-        <ProductRailSection
-          eyebrow="Flagship Devices"
-          title={<HomeText k="flagshipTitle" />}
-          description={<HomeText k="flagshipDescription" />}
-          viewAllHref="/products"
-          products={flagships}
-        />
-
-        <EditorialSplit
-          eyebrow="Technology · Control"
-          title={<HomeText k="controlTitle" />}
-          paragraphs={[<HomeText key="p1" k="controlP1" />, <HomeText key="p2" k="controlP2" />]}
-          ctaHref="/technology/gesture-and-triple-tap-control"
-          ctaLabel={<HomeText k="controlCta" />}
-          product={flagship}
-        />
-
-        <ProductRailSection
-          eyebrow="UWELL · Caliburn Family"
-          title={<HomeText k="caliburnTitle" />}
-          description={<HomeText k="caliburnDescription" />}
-          viewAllHref="/products/pod-systems"
-          products={caliburnFamily}
-        />
-
-        <EditorialSplit
-          eyebrow="SALTHUB · M Bar"
-          title={<HomeText k="mBarTitle" />}
-          paragraphs={[<HomeText key="p1" k="mBarP1" />, <HomeText key="p2" k="mBarP2" />]}
-          ctaHref="/products/disposables"
-          ctaLabel={<HomeText k="mBarCta" />}
-          product={mBar10k}
-          reverse
-          tone="surface-1"
-        />
-
-        <ProductRailSection
-          eyebrow="VOOPOO"
-          title={<HomeText k="voopooTitle" />}
-          description={<HomeText k="voopooDescription" />}
-          viewAllHref="/products/pod-systems"
-          products={voopooProducts}
-        />
-
-        <FlavorTeaser />
+        {/* Round "หน้าแรก hero" (owner 20/10 ~03:40): the page is organised by product TYPE, not around one
+            line — a section per hero tab, each with every product of the type as the shop's own cards
+            (src/data/home-sections.ts). The flagship rail, the Caliburn and VOOPOO rails, the two
+            editorial blocks and the flavour teaser were cut to keep the page clean (Friday's pick, owner
+            asked for less clutter); one revert brings them back. */}
+        {HOME_TYPE_SECTIONS.map((s) => (
+          <HomeTypeSection key={s.type} type={s.type} categories={s.categories} first={s.first} />
+        ))}
 
         <CompareCTA products={flagships} />
 

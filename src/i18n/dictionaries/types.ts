@@ -124,6 +124,10 @@ export interface Dictionary {
     indexTitle: string;
     indexDescription: string;
     indexViewAll: string;
+    /** Round "หน้าแรก hero" (owner 20/10): the type sections' phone button — "{n}" = models in the type. */
+    typeViewAll: string;
+    /** …and the link inside each collapsible box of the full index, to that category's page. */
+    indexOpenCategory: string;
   };
   search: {
     /** No `eyebrow` here since round 30.4ข batch 4 (owner, 2026-09-17): the /search header reuses
