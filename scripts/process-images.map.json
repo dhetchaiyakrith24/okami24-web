@@ -10286,7 +10286,7 @@
   "id": "elq-6-8",
   "note": "image sweep 19/10 - Super Cool Strawberry Frost (Max ELQ-6-8)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the bottle on the vapemanshop Strawberry Frost photo (list19/i/in/sc-strawberry.jpg), prompt window.__sc in list19/i/NOTES.md; render list19/i/r/sc-strawberry-2.png; body cut by shape + wallfill (from 0.48), base cut per column (list19/i/basebright.js) or drawn (basefix.js, Black Hexx), alpha erode 2 px - copy beside this source",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the bottle on the vapemanshop Strawberry Frost photo (list19/i/in/sc-strawberry.jpg), prompt window.__sc in list19/i/NOTES.md; render list19/i/r/sc-strawberry-2.png; strawberry seeds the render drew on the label right edge (x 1218, y 1433-1807) replaced by the brushed-silver label band from just below (checker #625 r1); body cut by shape + wallfill (from 0.48), base cut per column (list19/i/basebright.js) or drawn (basefix.js, Black Hexx), alpha erode 2 px - copy beside this source",
    "reference": "vapemanshop.com Super Cool Strawberry Frost photo 1200 px - _incoming/img-1610/masters/src/elq-6-supercool/Strawberry.jpg",
    "fidelitySheet": "_incoming/img-1610/list19/i/chk-sc4.jpg + chk-bh.jpg (photo vs renders, label words), sc4-edges.jpg + bh-edges.jpg (cap, collar, base at 1:1 on the site background)"
   }
