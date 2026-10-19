@@ -24,7 +24,7 @@ export function BrandMarquee() {
 
   return (
     <nav aria-label="Brands" className="okami-brand-strip relative overflow-hidden border-y border-surface-border-soft bg-surface-1/40">
-      <div className="okami-brand-strip-track flex w-max items-center gap-8 px-4 lg:gap-14">
+      <div className="okami-brand-strip-track flex w-max items-center gap-8 px-4 lg:gap-14 lg:px-7">
         {track.map((b, i) => {
           const clone = i >= items.length;
           return (
