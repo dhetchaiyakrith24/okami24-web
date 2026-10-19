@@ -40,7 +40,16 @@ export function OrderViaLineButton({
   className,
   hideHint = false,
   productCode,
+  mode = "order",
+  label,
+  linkClassName,
 }: {
+  /** "ask" = the sold-out enquiry (same dialog, "ask" wording, outline button styled by the caller). */
+  mode?: "order" | "ask";
+  /** Button text when not the order CTA (sold-out: "สอบถามทาง LINE"). */
+  label?: string;
+  /** Replaces the ember button classes (sold-out outline button). */
+  linkClassName?: string;
   productName: string;
   /** What the admin looks up: the picked Shipnity variant code when there is one, else the product slug. */
   productCode: string;
@@ -63,7 +72,7 @@ export function OrderViaLineButton({
     setTouch(window.matchMedia("(pointer: coarse)").matches);
   }, []);
   const message = lineOrderMessage({
-    lead: lineCopy.leadOrder,
+    lead: mode === "ask" ? lineCopy.leadAsk : lineCopy.leadOrder,
     productName,
     optionLabel: lineCopy.optionLabel,
     option: variantLabel,
@@ -99,13 +108,13 @@ export function OrderViaLineButton({
     }
   };
 
-  const dialog = dialogOpen ? <LineOrderDialog message={message} mode="order" onClose={closeDialog} /> : null;
+  const dialog = dialogOpen ? <LineOrderDialog message={message} mode={mode} onClose={closeDialog} /> : null;
 
   if (hideHint) {
     return (
       <>
-        <a href={href} target="_blank" rel="noopener noreferrer" onClick={onClick} data-line-spot="buy" className={cn(buttonClasses, className)}>
-          {dict.productActions.orderOnLineCta}
+        <a href={href} target="_blank" rel="noopener noreferrer" onClick={onClick} data-line-spot="buy" className={linkClassName ?? cn(buttonClasses, className)}>
+          {label ?? dict.productActions.orderOnLineCta}
         </a>
         {dialog}
       </>

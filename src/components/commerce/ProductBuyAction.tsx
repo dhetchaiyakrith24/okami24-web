@@ -67,18 +67,19 @@ export function ProductBuyAction({
     return (
       <div className={compact ? "flex items-center gap-3" : "flex flex-col items-start gap-2"}>
         <span className="label-mono text-xs text-ember">{dict.productActions.outOfStockLabel}</span>
-        <a
-          href={CONTACT.lineUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-line-spot="buy"
-          className={cn(
+        {/* 19/10: the enquiry opens the same LINE ready-message / scan dialog as the order button, in "ask" wording. */}
+        <OrderViaLineButton
+          productName={productName}
+          variantLabel={variantLabel}
+          productCode={productCode ?? slug}
+          mode="ask"
+          hideHint
+          label={dict.productActions.outOfStockCta}
+          linkClassName={cn(
             "inline-flex items-center justify-center gap-2 rounded-full border border-surface-border text-sm font-semibold tracking-tight text-foreground transition-colors duration-200 hover:border-foreground-dim hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-ember",
             compact ? "min-h-11 px-5 py-2.5" : "px-6 py-3"
           )}
-        >
-          {dict.productActions.outOfStockCta}
-        </a>
+        />
       </div>
     );
   }
