@@ -106,9 +106,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   mention · 2–4 related guides · FAQ + JSON-LD.
   HOME LOGO STRIP DONE 20/10 [ตรวจแล้ว curl 200]: #630 (owner "Logo แบบ A") — 8 official logos, all white, equal weight, 18.25 px/s kept;
   files + sources in BrandMarquee.tsx comment. Checker taste note: IQOS (thin strokes) reads a bit lighter — bump only if the owner says so.
-  NEXT (Friday 20/10, line 2 moved chats at 607k context before it): HOMEPAGE HERO REDESIGN — step 1 = DESIGNER DRAFT ONLY (1–2
-  directions at 390 + 1440 + motion described or a short screen recording) → paths to Friday → owner picks before any build. Brief =
-  `_incoming/hero-brief.md` in the MAIN folder (read in full). Leave a slot where a Higgsfield clip (line 1 testing) could replace a still.
+  PARKED 20/10 (owner: stop all other work, homepage hero only — a NEW main chat drives it with the owner from `_incoming/hero-brief.md`
+  in the main folder; line 2 does NOT start it). Line 2 state: everything merged + live, no branch with unmerged work, test servers 3418/
+  3419 stopped. Resume line 2 only when Friday says so: 22/10 GSC read + held titles/links (above) · clip-job leftovers (above).
   Line-break tool (19/10): measure candidate wording in the running page (Browser pane JS, Range rects per character, both widths)
   before rebuilding — `_incoming/l2c/` in worktree seo-line2-c has the harness used for #597.
   GUIDE MEDIA (owner 17/10 "ลงรูป + คลิป ตามบทความ"): DONE 19/10 [ตรวจแล้ว curl 200] #607 (leaking · burnt · how-long-a-pod-device ·
