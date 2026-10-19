@@ -624,6 +624,8 @@ html:lang(th) .label-mono:not(:lang(en)) {
   .okami-brand-strip [data-clone] {
     display: none;
   }
+}
+
 /* LINE order dialog (19/10, designer): backdrop fades in 180ms, card rises 8px + scales from .98 in 220ms;
    reduced motion = fade only. */
 @keyframes line-order-fade { from { opacity: 0; } to { opacity: 1; } }
