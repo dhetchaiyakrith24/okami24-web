@@ -111,12 +111,18 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   #626 ONE CLIP PER GUIDE (owner "1 เรื่อง 1 บทความ · 1 คลิปหลักต่อหน้า"): 40 section clips removed from 15 guides (rows 11–21 guides
   included) · KOKO clip → /products/caliburn-g4-pro-koko · mesh clip → /technology/mesh-coil-systems · #627 content-dates fix (main deploy
   was red: concurrent merges left 3 guide dates stale — after merging main into a guide branch, run `npx tsx scripts/content-dates.ts`).
-  CLIP JOB NEXT (Friday 19/10): freed clips with search demand → own one-topic guide, else the model's product page; never two pages
-  per keyword. Inventory of all 62 clip ids + autocomplete 19/10 = `_incoming/l2c/` (clips + `ac-clips.tsv`, worktree seo-line2-c).
-  Next = NEW /guides PG/VG ("pg vg คืออะไร" AC ×10, clip i5SPcPp9HAE; facts + draft `_incoming/l2c/pgvg-draft.md`; salt-nic guide's
-  two PG/VG H2s shrink to a link). Freed clips with no page and no demand found = unused (list in the draft folder). Standard for every
-  guide from 19/10 (Friday): 1 main query in title/H1/¶1/slug · 3–8 secondary · 1 image per main section · 1 main clip · every product
-  named links its page on first mention · 2–4 related guides · FAQ + JSON-LD.
+  CLIP JOB (Friday 19/10): freed clips with search demand → own one-topic guide, else the model's product page; never two pages
+  per keyword. Inventory of all 62 clip ids + autocomplete 19/10 = `_incoming/l2c/` (worktree seo-line2-c). DONE 20/10 [ตรวจแล้ว curl
+  200]: #629 NEW /guides/pg-vg-in-e-liquid (clip i5SPcPp9HAE; salt-nic PG/VG part → link). Left: freed clips with no page + no demand
+  found (Fast Charge · mAh · disposable-fade set · leak/burnt extras) = unused; "เลิกบุหรี่ไฟฟ้า" (AC ×9) = health sources needed, parked;
+  "m switch รีวิว" (AC ×4) would compete with /products/m-switch-kit — skipped. Standard for every guide from 19/10 (Friday): 1 main
+  query in title/H1/¶1/slug · 3–8 secondary · 1 image per main section · 1 main clip · every product named links its page on first
+  mention · 2–4 related guides · FAQ + JSON-LD.
+  HOME LOGO STRIP DONE 20/10 [ตรวจแล้ว curl 200]: #630 (owner "Logo แบบ A") — 8 official logos, all white, equal weight, 18.25 px/s kept;
+  files + sources in BrandMarquee.tsx comment. Checker taste note: IQOS (thin strokes) reads a bit lighter — bump only if the owner says so.
+  PARKED 20/10 (owner: stop all other work, homepage hero only — a NEW main chat drives it with the owner from `_incoming/hero-brief.md`
+  in the main folder; line 2 does NOT start it). Line 2 state: everything merged + live, no branch with unmerged work, test servers 3418/
+  3419 stopped. Resume line 2 only when Friday says so: 22/10 GSC read + held titles/links (above) · clip-job leftovers (above).
   Line-break tool (19/10): measure candidate wording in the running page (Browser pane JS, Range rects per character, both widths)
   before rebuilding — `_incoming/l2c/` in worktree seo-line2-c has the harness used for #597.
   GUIDE MEDIA (owner 17/10 "ลงรูป + คลิป ตามบทความ"): DONE 19/10 [ตรวจแล้ว curl 200] #607 (leaking · burnt · how-long-a-pod-device ·
