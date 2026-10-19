@@ -82,6 +82,8 @@ const MAX_LABEL_FIX: Record<string, string> = {
   // Image sweep (19/10): INFY POD — two Max spellings of INFY's own colour names (infy.my/product/infy-closed-pod-<colour>).
   "Pod-158-8": "Purple Moon",
   "Pod-158-13": "Champagne Gold",
+  // Image sweep (19/10): Vmate Pro 2 — Max "Glit Black"; the device and VOOPOO's line-up print "Gilt Black".
+  "Pod-176-1": "Gilt Black",
 };
 
 function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) | null {

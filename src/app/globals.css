@@ -239,19 +239,6 @@ img {
     gap: 0.875rem;
     padding: 0.75rem 0.875rem;
   }
-
-  /* [M1] final bullet: the three brand names that used to take a full screen each inside the
-     desktop intro become one slow strip under the hero. The track holds the list twice, so a
-     -50% travel lands the copy exactly where the original started and the loop has no seam. */
-  .okami-brand-marquee-track {
-    animation: okami-brand-marquee 32s linear infinite;
-  }
-  /* Both ends fade instead of stopping dead, so names slide in and out of the strip rather than
-     appearing and vanishing at a hard edge — the same mask technique round B's chip rows use. */
-  .okami-brand-marquee {
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
-  }
 }
 
 @keyframes okami-hero-media-in {
@@ -534,7 +521,7 @@ html[data-okami-lite="1"] .okami-hero-bg {
   .okami-hero-line-2,
   .okami-hero-line-3,
   .okami-hero-cta,
-  .okami-brand-marquee-track {
+  .okami-brand-strip-track {
     animation: none !important;
   }
   .okami-hero-sheen {
@@ -598,6 +585,46 @@ html:lang(th) .label-mono:not(:lang(en)) {
 .rail-scroll::-webkit-scrollbar-thumb {
   background: var(--surface-3);
   border-radius: 999px;
+}
+
+/* Brand strip (owner 19/10, designer option A): every width, linked names, the old strip's slow feel — 18 px/s measured
+   (583 px in 32 s); the longer track needs a longer loop: 2446 px at 390 → 134 s, 3422 px on desktop → 188 s. Hover / focus
+   pauses it; reduced motion = a still row you scroll. */
+.okami-brand-strip {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+}
+.okami-brand-strip-track {
+  min-height: 56px;
+  animation: okami-brand-marquee 134s linear infinite;
+}
+.okami-brand-strip:hover .okami-brand-strip-track,
+.okami-brand-strip:focus-within .okami-brand-strip-track {
+  animation-play-state: paused;
+}
+@media (min-width: 64rem) {
+  .okami-brand-strip {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  }
+  .okami-brand-strip-track {
+    min-height: 72px;
+    animation-duration: 188s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .okami-brand-strip {
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: linear-gradient(to right, #000 0%, #000 90%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 0%, #000 90%, transparent 100%);
+  }
+  .okami-brand-strip-track {
+    animation: none;
+  }
+  .okami-brand-strip [data-clone] {
+    display: none;
+  }
 }
 
 /* LINE order dialog (19/10, designer): backdrop fades in 180ms, card rises 8px + scales from .98 in 220ms;

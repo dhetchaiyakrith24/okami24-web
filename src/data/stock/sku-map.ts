@@ -924,6 +924,13 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "iqosheet-18-verified-bold-ruby": null,
   } },
   // Round list19 (19/10): ESKO BAR SWITCH 20K refill pod — Max Pod-160-1..18; the maker's 2 extra flavours are not in the warehouse.
+  // Image sweep (19/10): Vmate Pro 2 — Max Pod-176, 4 colours.
+  "vmate-pro-2": { parent: "Pod-176", options: {
+    "Pod-176-1": "Pod-176-1",
+    "Pod-176-2": "Pod-176-2",
+    "Pod-176-3": "Pod-176-3",
+    "Pod-176-4": "Pod-176-4",
+  } },
   // Image sweep (19/10): Next Pro 2 Beyond (legacy) — Max Pod-173-1..6 (the Max colour names = the legacy colour names).
   "next-pro-2-beyond": { parent: "Pod-173", options: {
     "razer-black": "Pod-173-1",
@@ -954,6 +961,20 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "infy-pod-verified-lime-green": null,
     "infy-pod-verified-mimosa-yellow": null,
     "infy-pod-verified-ocean-blue": null,
+  } },
+  // Image sweep (19/10): MQ Bar 22K — Max Disposable-43, 11 flavours.
+  "mq-bar-22k": { parent: "Disposable-43", options: {
+    "Disposable-43-1": "Disposable-43-1",
+    "Disposable-43-2": "Disposable-43-2",
+    "Disposable-43-3": "Disposable-43-3",
+    "Disposable-43-4": "Disposable-43-4",
+    "Disposable-43-5": "Disposable-43-5",
+    "Disposable-43-6": "Disposable-43-6",
+    "Disposable-43-7": "Disposable-43-7",
+    "Disposable-43-8": "Disposable-43-8",
+    "Disposable-43-9": "Disposable-43-9",
+    "Disposable-43-10": "Disposable-43-10",
+    "Disposable-43-11": "Disposable-43-11",
   } },
   // Image sweep (19/10): Graple Freebase — Max ELQ-2, one child.
   "graple-freebase": { parent: "ELQ-2", options: {
