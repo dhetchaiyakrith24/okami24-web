@@ -740,6 +740,13 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
   "eliquid-73": { parent: "Eliquid-73", options: {
     "Eliquid-73-1": "Eliquid-73-1",
   } },
+  // Round list19 (19/10): Marbo Freebase (Max ELQ-3, old seed Eliquid-109).
+  "eliquid-109": { parent: "ELQ-3", options: {
+    "ELQ-3-1": "ELQ-3-1",
+    "ELQ-3-2": "ELQ-3-2",
+    "ELQ-3-3": "ELQ-3-3",
+    "ELQ-3-4": "ELQ-3-4",
+  } },
   "eliquid-1": { parent: "ELQ-1", options: {
     "ELQ-1-1": "ELQ-1-1",
     "ELQ-1-2": "ELQ-1-2",
