@@ -215,7 +215,9 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "Pod-149": { sellingPrice: 329, lastPriceReview: "2026-10-18" },
   // Round list19 (18/10, owner "list everything"): Marbo Saltnic — Max "ราคาขาย" ฿269 for parent ELQ-1 and its 10 flavours (17/10 read;
   // the ฿807 child ELIQUID-1-1 is a bundle, not an option).
-  "ELIQUID-1": { sellingPrice: 269, lastPriceReview: "2026-10-18" },
+  // owner-confirmed 2026-10-19: owner in chat "ปรับราคา mar saltnic ครับ 290" + "ครับทำเลย" to the plan "all 10 flavours ฿290" — owner override
+  // (was ฿269). Max still lists ฿269 for ELQ-1 and its flavours; the site price is the owner's and differs from Max until the admin updates Max.
+  "ELIQUID-1": { sellingPrice: 290, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): Pepo Salt Nic (Max ELQ-5) and Dundu Salt Nic (Max Eliquid-73) — Max ราคาขาย ฿300 each (read 2026-10-17).
   "Eliquid-72": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
   "Eliquid-73": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
