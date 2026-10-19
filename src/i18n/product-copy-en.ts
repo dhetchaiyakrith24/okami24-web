@@ -58,6 +58,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "pod-169": { tagline: "INFY PLUS prefilled pod cartridge, 2.5ml" },
   "pod-159": { tagline: "Esko Bar Switch 20K kit by ESKO BAR" },
   "esko-bar-switch-pod": { tagline: "ESKO BAR SWITCH 20K refill pod" },
+  "infy-pod": { tagline: "INFY POD device body" },
   "pod-180": { tagline: "nexBar CLEAR 18K disposable" },
   "coil-54": { tagline: "Feelin Mini pod by NEVOKS" },
 };

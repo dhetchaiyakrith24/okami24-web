@@ -9966,5 +9966,233 @@
    "reference": "maneevp.com Marbo Freebase poster 1000 px (https://maneevp.com/product/marbo-freebase-30ml-nic6/) maneevp-marbo-free-04.jpg - _incoming/img-1610/masters/src (index masters/src/index.json)",
    "fidelitySheet": "_incoming/img-1610/list19/g/pink-sheet.jpg - Marbo wordmark, Salt hub mark, M emblem, flavour line spelled as on the poster, checked by eye"
   }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/blue-violet.png",
+  "slug": "infy-pod",
+  "role": "card",
+  "note": "round list19 image sweep 19/10 - INFY POD Blue Violet (Max Pod-158-7, in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/infy-pod/premium-black.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-1",
+  "note": "round list19 image sweep 19/10 - INFY POD Premium Black (Max Pod-158-1)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/pearl-white.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-2",
+  "note": "round list19 image sweep 19/10 - INFY POD Pearl White (Max Pod-158-2)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/peach-pink.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-3",
+  "note": "round list19 image sweep 19/10 - INFY POD Peach Pink (Max Pod-158-3)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/ruby-red.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-4",
+  "note": "round list19 image sweep 19/10 - INFY POD Ruby Red (Max Pod-158-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/aster-purple.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-5",
+  "note": "round list19 image sweep 19/10 - INFY POD Aster Purple (Max Pod-158-5)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/jade-pink.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-6",
+  "note": "round list19 image sweep 19/10 - INFY POD Jade Pink (Max Pod-158-6)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/blue-violet.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-7",
+  "note": "round list19 image sweep 19/10 - INFY POD Blue Violet (Max Pod-158-7)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/purple-moon.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-8",
+  "note": "round list19 image sweep 19/10 - INFY POD Purple Moon (Max Pod-158-8)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/ivory-pink.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-9",
+  "note": "round list19 image sweep 19/10 - INFY POD Ivory Pink (Max Pod-158-9)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/royal-silver.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-10",
+  "note": "round list19 image sweep 19/10 - INFY POD Royal Silver (Max Pod-158-10)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/frost-blue.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-12",
+  "note": "round list19 image sweep 19/10 - INFY POD Frost Blue (Max Pod-158-12)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/champagne-gold.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-13",
+  "note": "round list19 image sweep 19/10 - INFY POD Champagne Gold (Max Pod-158-13)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/moss-green.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "pod-158-14",
+  "note": "round list19 image sweep 19/10 - INFY POD Moss Green (Max Pod-158-14)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/flame-yellow.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "flame-yellow",
+  "note": "round list19 image sweep 19/10 - INFY POD Flame Yellow (maker colour, not in the warehouse)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/floss-pink.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "floss-pink",
+  "note": "round list19 image sweep 19/10 - INFY POD Floss Pink (maker colour, not in the warehouse)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/lime-green.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "lime-green",
+  "note": "round list19 image sweep 19/10 - INFY POD Lime Green (maker colour, not in the warehouse)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/mimosa-yellow.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "mimosa-yellow",
+  "note": "round list19 image sweep 19/10 - INFY POD Mimosa Yellow (maker colour, not in the warehouse)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/infy-pod/ocean-blue.png",
+  "slug": "infy-pod",
+  "role": "variant",
+  "id": "ocean-blue",
+  "note": "round list19 image sweep 19/10 - INFY POD Ocean Blue (maker colour, not in the warehouse)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with INFY's own colour photo as the only image (list19/h/in/infy-*.png = 2x crop of the maker file), prompt builder window.__infy (list19/h/HF-NOTES.md); renders list19/h/r; cut by a fitted rounded-rectangle mask (list19/h/rrmask.js, 3 px inset) - copy beside this source",
+   "reference": "infy.my maker colour photo 1000 px (https://www.infy.my/infy-device/) - _incoming/img-1610/masters/src/pod-158-infy",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-A.jpg chk-B.jpg chk-C.jpg (colour vs the maker photo) + words.jpg words2.jpg (INFY wordmark letter by letter) + e1/e2/e3.jpg (edges on the site background), checked by eye"
+  }
  }
 ]

@@ -227,7 +227,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // Round list19 (19/10): prepared, held until a card photo exists (IMAGE_SPEC §4) — Max ราคาขาย read 2026-10-17:
   // "SUPER-COOL-SALTNIC": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
   // "PUNTA-ICE": { sellingPrice: 150, lastPriceReview: "2026-10-19" },
-  // "INFY-POD": { sellingPrice: 690, lastPriceReview: "2026-10-19" },
+  "INFY-POD": { sellingPrice: 690, lastPriceReview: "2026-10-19" },
   // "VMATE-PRO-2": { sellingPrice: 890, lastPriceReview: "2026-10-19" },
   // owner-confirmed 2026-10-19: "ราคา Graple Freebase: ฿160.-" — one price for the parent and its option (Max says ฿795 parent / ฿159 child
   // until the admin updates it). Held until a card photo exists.
