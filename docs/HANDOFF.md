@@ -11,20 +11,34 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · at the weekly house run 18/10 20:00 = #580 438cd6e7 (round list19,
-  INFY PLUS cartridge) [ตรวจแล้ว] · 0 open PRs. Standing rules this block used to repeat live in
+1 main: `git fetch && git log -1 --oneline origin/main` · at the main-chat move 20/10 ~02:00 = #630 68d42170 (white brand-logo strip)
+  [ตรวจแล้ว] · open PRs: `gh pr list` (side lines were told to park; anything still open is theirs). Standing rules this block used to repeat live in
   TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
 2 worktrees = `git worktree list` (20 on 18/10 — each side chat's own, nested under `.claude/worktrees/` and `_incoming/`) ·
   `_incoming/wt-stock` = stock round (own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
-3 WATCH (16/10): this chat = the main chat; it watches the side chats (3i image · 3s SEO · 3p products, to fold into 2 lines) and moves
-  them itself per TEAM_RULES 13.6 "โครงแชท" (both starter buttons in Auto; line 1 tested 16/10 from an automated turn). Since the
-  house round: #513 license text · #515 #525 #532 side-chat rules · #524 authenticity claims (owner items 64–67) · #531 items 60 + 63.
-  Nothing of this chat's own is open.
+3 MAIN CHAT MOVED 20/10 ~02:00 at 83 % context. Owner 20/10: "หยุดงานอื่นและ Focus แค่งานนี้" = the HOMEPAGE HERO only (3h below).
+  Both side lines were told to park (commit + push, no test server): line 1 = image sweep (session 1-mq-bar-22k) · line 2 = SEO
+  (session seo-line2-c, near 600k → needs a new chat before any long job). Side chats = linked chats only (TEAM_RULES 13.6) · the owner
+  gets 2 combined summaries a day · Friday's running notes (not in git) = `_incoming/friday-queue.md`.
+3h FOCUS ROUND "homepage hero" (no round file yet — write one with skill round-open; brief = `_incoming/hero-brief.md`, the owner
+  interview 20/10). The owner CANNOT PICTURE IT YET → the first deliverable is VISUAL: designer draft(s) at 390 + 1440 (+ a short
+  recording of the motion from a test build), before any build. Decisions already made (do not re-ask): dark calm-luxury layout ·
+  orange (shop colour) light ribbons drawn in CODE, medium motion, softly down the whole homepage · message "เลือกรุ่นที่ใช่" (CTA →
+  finder) · hero rotates by TYPE (pod system → switch pod → disposable → IQOS), one product each, swappable data, Friday proposes swaps ·
+  mobile = new design but keep the current mobile hero restorable in one step · Higgsfield makes the visuals (cinematic product
+  stills / short clips), code makes ribbons + transitions. Test clips `_incoming/img-1610/hero-test/` (README): light-sweep 16:9 =
+  usable (device true, loops; light is WHITE → needs ember orange), 9:16 and floating-roll = failed · 72 credits per clip · balance
+  4,644 [ตรวจแล้ว 20/10]. Owner's reference reels = frame sheets in `_incoming/hero-refs/` (originals in the session uploads) — horyx.studio, textura.eu, a
+  dark ribbon SaaS site. Credits = existing only; never buy (owner).
   House rounds 15–16/10 (#484 … #500, #508, #510) DONE — what they built lives in its home (skill house-clean · TEAM_RULES 13.3 #1 ·
   skills find-skills / content-strategy · `docs/seo-audit/`); the 16/10 artifact mistake = LESSONS พ31; full text =
   `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
   Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
   redirect into a checker-read tree = discipline (rule-audit L1 proposes a lock) · scan tools against the live site (L2).
+3i PARKED 20/10 (owner "หยุดงานอื่นและ Focus แค่งานนี้" = homepage hero only): image sweep stopped after #619 MQ Bar 22K · #620 Vmate Pro 2 ·
+  #621 Punta Ice · #624 Next Pro 2 Beyond · #625 Super Cool Salt Nic (all merged + live 200, 20/10). Nothing open; test servers stopped.
+  Resume = brief _incoming/next-chat.md (status ready: Marbo Saltnic first — owner 19/10 points — then the queue). Hero test clips (Caliburn G5,
+  Seedance 2.0 light-sweep / floating-roll, 216 credits) = _incoming/img-1610/hero-test/README.md. Higgsfield balance 4,644.4 (20/10).
 3i OPEN ROUND "image sweep" = `docs/rounds/รอบรูปทั้งเว็บ-NanoBananaPro-16-10.txt` (image chats; own the main folder's `_incoming/img-1610/`,
   worktrees `_incoming/img-1610/wt-img` (work, own node_modules) · `wt-gate` (checker tree) · `wt-base` (base build 47320ddd, before
   shots `_incoming/img-1610/shots/before-*` for every product of the round)). Nano Banana Pro Unlimited free in Chrome until ~evening 18/10 (owner 16/10: 3 days from 15/10) — render first, key later.
