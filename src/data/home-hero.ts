@@ -27,6 +27,6 @@ export const PHONE_HERO: "showcase" | "classic" = "showcase";
 
 /**
  * Desktop: the scroll-scrubbed cinematic intro (HomeIntro → cinematic/) above the hero.
- * Waiting on the owner (question 1, 20/10) — true keeps it, false makes the new hero the first screen.
+ * Owner 20/10: "เอาฉากเปิดบนคอมออก ให้ hero ใหม่เป็นจอแรก" → false. true puts the intro back (code untouched).
  */
-export const DESKTOP_INTRO = true;
+export const DESKTOP_INTRO = false;
