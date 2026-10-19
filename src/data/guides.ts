@@ -2887,7 +2887,7 @@ const allGuides: Guide[] = [
     // layer 1). Title carries "vs" as people type it (autocomplete). Wording: thai-copy 19/10.
     id: "iqos-iluma-i-one-vs-iluma-i",
     slug: "iqos-iluma-i-one-vs-iluma-i",
-    title: "IQOS ILUMA i ONE vs ILUMA i vs i PRIME ต่างกันยังไง",
+    title: "IQOS ILUMA i ONE vs ILUMA i vs i PRIME ต่างกันไหม",
     dek: "ILUMA i ONE เป็นเครื่องชิ้นเดียว สูบต่อกันได้สูงสุด 20 ก้าน ส่วน ILUMA i และ ILUMA i PRIME แยกเป็น Holder กับ Pocket Charger และมีจอทัชกับโหมดหยุดพัก บทความนี้เทียบสามรุ่นทีละเรื่องจากข้อมูลของ IQOS พร้อมวิธีเลือกให้ตรงกับการใช้งาน",
     category: "buying-guide",
     readingTimeMin: 6,
