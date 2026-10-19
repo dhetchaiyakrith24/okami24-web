@@ -886,6 +886,14 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "พอตใช้แล้วทิ้งของ TFIT รองรับสูงสุด 20,000 พัฟ ใช้คอยล์ mesh สองตัว แบต 600mAh ชาร์จผ่าน USB-C และปรับช่องลมได้ตามที่ชอบ",
   },
+  // Image sweep (19/10): warehouse facts only.
+  "next-pro-2-beyond": {
+    tagline: "ตัวเครื่องพอต Next Pro 2 Beyond",
+    shortDescription: "ตัวเครื่องพอต Next Pro 2 Beyond ร้านมีให้เลือก 6 สี",
+    whoIsThisFor: {
+      0: "ผู้ที่ต้องการตัวเครื่อง Next Pro 2 Beyond ในสีที่ชอบ ร้านมีให้เลือก 6 สี",
+    },
+  },
   "infy-20k": {
     // 2026-09-30: the page went live — the who-for line and the FAQ (Thai text moved here from infy.ts, unchanged).
     whoIsThisFor: {
