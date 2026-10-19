@@ -89,12 +89,13 @@ varying float v_alpha;
 uniform float u_fade, u_core, u_halo, u_feather;
 vec4 stop2(float u, float a, vec4 ca, float b, vec4 cb) { return mix(ca, cb, clamp((u - a) / (b - a), 0.0, 1.0)); }
 vec4 mainGrad(float u) {
-  // along the band: faint behind the headline (left), full behind the product, out at the edges
-  vec4 c0 = vec4(1.0, 0.416, 0.173, 0.0);
-  vec4 c1 = vec4(1.0, 0.416, 0.173, 0.25);
-  vec4 c2 = vec4(1.0, 0.471, 0.235, 1.0);
-  vec4 c3 = vec4(1.0, 0.627, 0.392, 1.0);
-  vec4 c4 = vec4(1.0, 0.416, 0.173, 0.7);
+  // along the band: faint behind the headline (left), full behind the product, out at the edges.
+  // Colour = the shop orange leaning a little to the logo red (owner 20/10 ~04:30).
+  vec4 c0 = vec4(1.0, 0.36, 0.165, 0.0);
+  vec4 c1 = vec4(1.0, 0.36, 0.165, 0.25);
+  vec4 c2 = vec4(1.0, 0.41, 0.215, 1.0);
+  vec4 c3 = vec4(1.0, 0.56, 0.37, 1.0);
+  vec4 c4 = vec4(1.0, 0.36, 0.165, 0.7);
   float a = u_fade * 0.6;
   float b = u_fade + 0.12;
   if (u < a) return stop2(u, 0.0, c0, a, c1);
