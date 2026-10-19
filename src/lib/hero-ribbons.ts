@@ -89,7 +89,7 @@ vec2 spine(float u) {
   return 0.5 * (2.0 * b + (c - a) * t + (2.0 * a - 5.0 * b + 4.0 * c - d) * t2 + (3.0 * b - a - 3.0 * c + d) * t2 * t);
 }
 float knot(float u) {
-  float k = (u_s0 + u * (u_npts - 1.0) - (u_headV.x - 0.08)) / 0.22;
+  float k = (u_s0 + u * (u_npts - 1.0) - (u_headV.x - 0.08)) / 0.25;
   return exp(-k * k);
 }
 vec2 flowAt(float u) {
@@ -182,11 +182,12 @@ void main() {
   // the leading point (owner 20/10 ~06:20: a bright point that leads the eye, not just a line that
   // follows): a short, near-white hot spot just behind the head — always there while the line is laid
   // by scrolling, flaring while the visitor scrolls; plus a wider warm wash around it
-  float near = (v_g - (u_head.x - 0.08)) / 0.16;
+  float near = (v_g - (u_head.x - 0.08)) / 0.18;
   float hot = exp(-near * near);
-  float wide = (v_g - u_head.x) / 0.6;
-  float lead = (u_head.y > 0.5 ? 0.9 : 0.0) + 4.2 * u_head.z;
-  a *= 1.0 + lead * hot + u_head.z * 1.2 * exp(-wide * wide);
+  float wide = (v_g - u_head.x) / 0.7;
+  // owner 20/10 ~06:40: the knot +15 % brighter and +15 % wider spread; the main line unchanged
+  float lead = (u_head.y > 0.5 ? 1.05 : 0.0) + 4.85 * u_head.z;
+  a *= 1.0 + lead * hot + u_head.z * 1.4 * exp(-wide * wide);
   g.rgb = mix(g.rgb, vec3(1.0, 0.88, 0.76), clamp(hot * (0.45 + 0.55 * u_head.z), 0.0, 1.0) * 0.85);
   vec2 p = vec2(gl_FragCoord.x, u_canvasH - gl_FragCoord.y) / u_dpr;
   for (int i = 0; i < 16; i++) {
@@ -538,7 +539,7 @@ export class RibbonEngine {
       gl.uniform1f(u.u_halo, b.kind === "halo" ? 1 : 0);
       if (this.mode === "flow") {
         const pinch = this.drawOnScroll ? 0.55 + 0.45 * this.glow : this.glowOnScroll ? this.glow : 0;
-        gl.uniform3f(u.u_headV, this.head, pinch, pinch * (b.kind === "halo" ? 4.5 : b.kind === "line" ? 0.5 : 0));
+        gl.uniform3f(u.u_headV, this.head, pinch, pinch * (b.kind === "halo" ? 5.2 : b.kind === "line" ? 0.5 : 0));
       } else gl.uniform3f(u.u_headV, 0, 0, 0);
       gl.uniform1f(u.u_core, b.kind === "core" ? 1 : 0);
       if (b.kind === "halo") gl.uniform1f(u.u_halfw, this.mode === "flow" ? HALO.halfWidth * 1.6 : HALO.halfWidth);
