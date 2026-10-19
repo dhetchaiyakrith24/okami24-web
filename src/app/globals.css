@@ -587,7 +587,7 @@ html:lang(th) .label-mono:not(:lang(en)) {
   border-radius: 999px;
 }
 
-/* Brand strip (owner 19/10, designer option A): every width, linked names, same slow feel (~22 px/s — the old strip's
+/* Brand strip (owner 19/10, designer option A): every width, linked names, same slow feel (18 px/s, measured on the old strip: 583 px in 32 s; new half-track 2446 px at 390 → 134 s, 3422 px at 1440 → 188 s;
    speed; the longer list needs a longer loop). Hover / focus pauses it; reduced motion = a still row you scroll. */
 .okami-brand-strip {
   -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
@@ -595,7 +595,7 @@ html:lang(th) .label-mono:not(:lang(en)) {
 }
 .okami-brand-strip-track {
   min-height: 56px;
-  animation: okami-brand-marquee 120s linear infinite;
+  animation: okami-brand-marquee 134s linear infinite;
 }
 .okami-brand-strip:hover .okami-brand-strip-track,
 .okami-brand-strip:focus-within .okami-brand-strip-track {
@@ -608,7 +608,7 @@ html:lang(th) .label-mono:not(:lang(en)) {
   }
   .okami-brand-strip-track {
     min-height: 72px;
-    animation-duration: 150s;
+    animation-duration: 188s;
   }
 }
 @media (prefers-reduced-motion: reduce) {
