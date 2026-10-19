@@ -89,7 +89,20 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   FAQs "พอตเปลี่ยนหัว 15K" · "RELX Infinity 2 Plus ใช้หัวอะไร" · "พอตเปลี่ยนหัว ใช้ได้นานแค่ไหน" · "พอตซิสเต็มกับ Marbo" (th/en/zh).
   Checked 19/10, nothing to do before 22/10: charging / burnt / blinking guides already carry the §9.4/§9.7 FAQ phrasings · IQOS
   + Caliburn titles already carry the price · relx-creator already has "หัวพอตที่ทำมาคู่กัน" H2 + "ใช้กับหัวพอตรุ่นไหนได้บ้าง" FAQ.
-  So the unfrozen 3s queue is EMPTY until 22/10; what is left = the 22/10 read, the held titles/links/boxes above, FAQAccordion.
+  **22/10 HOLD LIFTED (owner 19/10 via Friday: "ถ้าเรามีโจทย์ที่ชัดอยู่แล้ว แก้เลยครับ ไม่ต้องรอผล")** — the 22/10 read will be MIXED (owner
+  accepted); still do the read on 22/10, judging each row with the changes below in mind. Live 19–20/10 [ตรวจแล้ว curl 200]:
+  #615 home brand strip (owner "ขึ้นเว็บเลย") — `/` now links 8 brand pages ×5 incl. watch-row owners /brands/joiway (row 6) and
+  /brands/esko-bar (row 5): new homepage links before the read · #623 NEW /guides/iqos-iluma-i-one-vs-iluma-i + /guides/choosing-a-terea-flavor
+  (Thai-only; IQOS read-next boxes on /brands/iqos + iqosheet-14/16/17/18 moved; iqosheet-16 lost its battery-guide link = row 14) ·
+  #626 ONE CLIP PER GUIDE (owner "1 เรื่อง 1 บทความ · 1 คลิปหลักต่อหน้า"): 40 section clips removed from 15 guides (rows 11–21 guides
+  included) · KOKO clip → /products/caliburn-g4-pro-koko · mesh clip → /technology/mesh-coil-systems · #627 content-dates fix (main deploy
+  was red: concurrent merges left 3 guide dates stale — after merging main into a guide branch, run `npx tsx scripts/content-dates.ts`).
+  CLIP JOB NEXT (Friday 19/10): freed clips with search demand → own one-topic guide, else the model's product page; never two pages
+  per keyword. Inventory of all 62 clip ids + autocomplete 19/10 = `_incoming/l2c/` (clips + `ac-clips.tsv`, worktree seo-line2-c).
+  Next = NEW /guides PG/VG ("pg vg คืออะไร" AC ×10, clip i5SPcPp9HAE; facts + draft `_incoming/l2c/pgvg-draft.md`; salt-nic guide's
+  two PG/VG H2s shrink to a link). Freed clips with no page and no demand found = unused (list in the draft folder). Standard for every
+  guide from 19/10 (Friday): 1 main query in title/H1/¶1/slug · 3–8 secondary · 1 image per main section · 1 main clip · every product
+  named links its page on first mention · 2–4 related guides · FAQ + JSON-LD.
   Line-break tool (19/10): measure candidate wording in the running page (Browser pane JS, Range rects per character, both widths)
   before rebuilding — `_incoming/l2c/` in worktree seo-line2-c has the harness used for #597.
   GUIDE MEDIA (owner 17/10 "ลงรูป + คลิป ตามบทความ"): DONE 19/10 [ตรวจแล้ว curl 200] #607 (leaking · burnt · how-long-a-pod-device ·
