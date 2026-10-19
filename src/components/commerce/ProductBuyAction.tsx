@@ -43,6 +43,8 @@ export function ProductBuyAction({
   noteClassName = "text-xs text-foreground-muted hover:text-foreground",
   compact = false,
   choiceMissingLabel = null,
+  productCode,
+  pageUrl,
 }: {
   available: boolean;
   orderingEnabled: boolean;
@@ -57,6 +59,10 @@ export function ProductBuyAction({
    *  have no photos opens with nothing pre-selected). Not a stock state — "out of stock" must never show for it.
    *  Cart mode shows a disabled button with this label; LINE mode orders as usual (the chat asks the option). */
   choiceMissingLabel?: string | null;
+  /** 19/10 LINE ready-message: the code the admin looks up (published: the picked Shipnity variant code). Default = slug. */
+  productCode?: string;
+  /** Canonical page address for the LINE message (server-computed). */
+  pageUrl?: string;
 }) {
   const { dict } = useLocale();
 
@@ -64,18 +70,19 @@ export function ProductBuyAction({
     return (
       <div className={compact ? "flex items-center gap-3" : "flex flex-col items-start gap-2"}>
         <span className="label-mono text-xs text-ember">{dict.productActions.outOfStockLabel}</span>
-        <a
-          href={CONTACT.lineUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-line-spot="buy"
-          className={cn(
+        {/* 19/10: the enquiry opens the same LINE ready-message / scan dialog as the order button, in "ask" wording. */}
+        <OrderViaLineButton
+          productName={productName}
+          variantLabel={variantLabel}
+          productCode={productCode ?? slug} pageUrl={pageUrl}
+          mode="ask"
+          hideHint
+          label={dict.productActions.outOfStockCta}
+          linkClassName={cn(
             "inline-flex items-center justify-center gap-2 rounded-full border border-surface-border text-sm font-semibold tracking-tight text-foreground transition-colors duration-200 hover:border-foreground-dim hover:bg-surface-2 focus-visible:outline-2 focus-visible:outline-ember",
             compact ? "min-h-11 px-5 py-2.5" : "px-6 py-3"
           )}
-        >
-          {dict.productActions.outOfStockCta}
-        </a>
+        />
       </div>
     );
   }
@@ -90,7 +97,7 @@ export function ProductBuyAction({
 
   if (!orderingEnabled) {
     /* Online ordering off (owner 2026-09-07): same slot, same weight, LINE instead of the cart. */
-    return <OrderViaLineButton productName={productName} variantLabel={variantLabel} hideHint={compact} />;
+    return <OrderViaLineButton productName={productName} variantLabel={variantLabel} hideHint={compact} productCode={productCode ?? slug} pageUrl={pageUrl} />;
   }
 
   return (

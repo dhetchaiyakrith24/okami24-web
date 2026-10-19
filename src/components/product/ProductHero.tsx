@@ -1,5 +1,6 @@
 "use client";
 
+import type { LineOrderCodes } from "@/lib/line-order-codes";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -68,7 +69,10 @@ export function ProductHero({
   orderingEnabled = true,
   copyTh: copyThAll,
   brandSlug,
+  lineCodes,
 }: {
+  /** 19/10 LINE order message: this product's warehouse codes (src/lib/line-order-codes.ts), from the server page. */
+  lineCodes?: LineOrderCodes;
   product: Product;
   /** PRODUCT_COPY_TH[product.slug] and the brand page slug, from the server page (round SEO ฉ batch 4, 14/10): importing
    *  the Thai copy table and the brand list here shipped every product's Thai text to the browser of every product page. */
@@ -373,6 +377,7 @@ export function ProductHero({
                 orderingEnabled={orderingEnabled}
                 slug={product.slug}
                 variantId={cartVariantId}
+                productCode={(cartVariantId ? lineCodes?.byOption[cartVariantId] : undefined) ?? lineCodes?.fallback} pageUrl={lineCodes?.pageUrl}
                 productName={product.displayName}
                 variantLabel={selectedColor?.name ?? selectedFlavor?.name ?? null}
                 formClassName="flex flex-wrap gap-3"
@@ -466,6 +471,7 @@ export function ProductHero({
           orderingEnabled={orderingEnabled}
           slug={product.slug}
           variantId={cartVariantId}
+          productCode={(cartVariantId ? lineCodes?.byOption[cartVariantId] : undefined) ?? lineCodes?.fallback} pageUrl={lineCodes?.pageUrl}
           productName={product.displayName}
           variantLabel={selectedColor?.name ?? selectedFlavor?.name ?? null}
           compact

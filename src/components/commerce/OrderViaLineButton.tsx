@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState, useSyncExternalStore } from "react";
 import { CONTACT } from "@/data/contact";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+import dynamic from "next/dynamic";
+import { LINE_ORDER_COPY } from "@/i18n/line-order-copy";
+import { lineOaMessageUrl, lineOrderMessage } from "@/lib/line-order";
 import { cn } from "@/lib/utils";
 
 /**
@@ -23,7 +26,15 @@ import { cn } from "@/lib/utils";
  * matters.
  *
  * Same visual weight as the primary Button (bg-ember) — this is THE buy action while it is on.
+ *
+ * 19/10 (owner): the link is LINE's ready-message link (src/lib/line-order.ts) — the shop's chat opens with the product,
+ * the picked option, a code and the page already typed. A touch device follows it (LINE opens); a mouse device gets
+ * LineOrderDialog on the same page instead (QR to scan with the phone + the message to copy). The clipboard copy stays.
  */
+const noopSubscribe = () => () => {};
+// The dialog (and its QR library) loads only when a mouse user opens it — product pages carry no extra script for it.
+const LineOrderDialog = dynamic(() => import("@/components/commerce/LineOrderDialog").then((m) => m.LineOrderDialog), { ssr: false });
+
 const buttonClasses =
   "inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-ember px-6 py-3 text-sm font-semibold tracking-tight text-[#181008] transition-colors duration-200 hover:bg-ember-strong focus-visible:outline-2 focus-visible:outline-ember";
 
@@ -32,8 +43,23 @@ export function OrderViaLineButton({
   variantLabel = null,
   className,
   hideHint = false,
+  productCode,
+  pageUrl: canonicalUrl,
+  mode = "order",
+  label,
+  linkClassName,
 }: {
+  /** "ask" = the sold-out enquiry (same dialog, "ask" wording, outline button styled by the caller). */
+  mode?: "order" | "ask";
+  /** Canonical page address for the message; without it the current page address is used. */
+  pageUrl?: string;
+  /** Button text when not the order CTA (sold-out: "สอบถามทาง LINE"). */
+  label?: string;
+  /** Replaces the ember button classes (sold-out outline button). */
+  linkClassName?: string;
   productName: string;
+  /** What the admin looks up: the picked Shipnity variant code when there is one, else the product slug. */
+  productCode: string;
   /** The colour/flavour the customer has selected right now, if the product has options. */
   variantLabel?: string | null;
   className?: string;
@@ -42,9 +68,33 @@ export function OrderViaLineButton({
    *  hint/confirmation line is omitted. Default false = exactly the original render. */
   hideHint?: boolean;
 }) {
-  const { dict } = useLocale();
+  const { dict, locale } = useLocale();
+  const lineCopy = LINE_ORDER_COPY[locale];
   const [copied, setCopied] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  // Touch screen = the tap follows the link (LINE opens); server render assumes a mouse.
+  const touch = useSyncExternalStore(noopSubscribe, () => window.matchMedia("(pointer: coarse)").matches, () => false);
+  const message = lineOrderMessage({
+    lead: mode === "ask" ? lineCopy.leadAsk : lineCopy.leadOrder,
+    productName,
+    optionLabel: lineCopy.optionLabel,
+    option: variantLabel,
+    codeLabel: lineCopy.codeLabel,
+    code: productCode,
+    url: canonicalUrl ?? "",
+  });
+  const href = lineOaMessageUrl(message);
+  const closeDialog = useCallback(() => setDialogOpen(false), []);
   const clipboardText = `${dict.productActions.orderOnLineClipboardPrefix} ${[productName, variantLabel].filter(Boolean).join(" ")} — ${CONTACT.lineId}`;
+
+  const onClick = (e: React.MouseEvent) => {
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      copyProductDetails();
+    } else {
+      e.preventDefault();
+      setDialogOpen(true);
+    }
+  };
 
   const copyProductDetails = () => {
     try {
@@ -61,22 +111,28 @@ export function OrderViaLineButton({
     }
   };
 
+  const dialog = dialogOpen ? <LineOrderDialog message={message} mode={mode} onClose={closeDialog} /> : null;
+
   if (hideHint) {
     return (
-      <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" onClick={copyProductDetails} data-line-spot="buy" className={cn(buttonClasses, className)}>
-        {dict.productActions.orderOnLineCta}
-      </a>
+      <>
+        <a href={href} target="_blank" rel="noopener noreferrer" onClick={onClick} data-line-spot="buy" className={linkClassName ?? cn(buttonClasses, className)}>
+          {label ?? dict.productActions.orderOnLineCta}
+        </a>
+        {dialog}
+      </>
     );
   }
 
   return (
     <div className={cn("flex flex-col items-start gap-2", className)}>
-      <a href={CONTACT.lineUrl} target="_blank" rel="noopener noreferrer" onClick={copyProductDetails} data-line-spot="buy" className={buttonClasses}>
+      <a href={href} target="_blank" rel="noopener noreferrer" onClick={onClick} data-line-spot="buy" className={buttonClasses}>
         {dict.productActions.orderOnLineCta}
       </a>
       <span className="text-xs text-foreground-muted" aria-live="polite">
-        {copied ? dict.productActions.orderOnLineCopied : dict.productActions.orderOnLineHint}
+        {touch ? (copied ? dict.productActions.orderOnLineCopied : lineCopy.touchHint) : lineCopy.mouseHint}
       </span>
+      {dialog}
     </div>
   );
 }

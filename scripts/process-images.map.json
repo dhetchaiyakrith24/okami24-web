@@ -9930,5 +9930,41 @@
    "reference": "maneevp.com Marbo Freebase Ice Sparkling bottle photo 1000 px (https://maneevp.com/product/marbo-freebase-30ml-nic6/) - _incoming/img-1610/masters/src (index masters/src/index.json)",
    "fidelitySheet": "_incoming/img-1610/list19/f/k1-prev.jpg - Marbo wordmark, Salt hub mark, Sparkling print, cap and blue label checked by eye against the shop photo"
   }
+ },
+ {
+  "source": "_incoming/list19/marbo-free/purple.png",
+  "slug": "eliquid-109",
+  "role": "variant",
+  "id": "elq-3-1",
+  "note": "round list19 image sweep 19/10 - Marbo Freebase Purple (prints Ice Grape)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with the shop poster bottle crop as the only image (masters/in/e109-purple.png), prompt list19/g (window.__MF in the chat); render list19/g/purple-2.png; cut by shape (list19/e1/shape.js) + wallfill.js + clampwall.js (label lines past the wall cut) + a grey reflection band on the right wall replaced by the body 30 px left (list19/g) + alpha erode 5 px (list19/g/erode1.js) - copies beside this source",
+   "reference": "maneevp.com Marbo Freebase poster 1000 px (https://maneevp.com/product/marbo-freebase-30ml-nic6/) maneevp-marbo-free-02.jpg - _incoming/img-1610/masters/src (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/g/purple-sheet.jpg - Marbo wordmark, Salt hub mark, M emblem, flavour line spelled as on the poster, checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/marbo-free/gold.png",
+  "slug": "eliquid-109",
+  "role": "variant",
+  "id": "elq-3-2",
+  "note": "round list19 image sweep 19/10 - Marbo Freebase Gold (prints GOLD)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with the shop poster bottle crop as the only image (masters/in/e109-gold.png), prompt list19/g (window.__MF in the chat); render list19/g/gold-3.png; cut by shape (list19/e1/shape.js) + wallfill.js + alpha erode 5 px (list19/g/erode1.js) - copies beside this source",
+   "reference": "maneevp.com Marbo Freebase poster 1000 px (https://maneevp.com/product/marbo-freebase-30ml-nic6/) maneevp-marbo-free-03.jpg - _incoming/img-1610/masters/src (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/g/gold-sheet2.jpg - Marbo wordmark, Salt hub mark, M emblem, flavour line spelled as on the poster, checked by eye"
+  }
+ },
+ {
+  "source": "_incoming/list19/marbo-free/pink.png",
+  "slug": "eliquid-109",
+  "role": "variant",
+  "id": "elq-3-3",
+  "note": "round list19 image sweep 19/10 - Marbo Freebase Pink (prints Ice Strawberry)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot with the shop poster bottle crop as the only image (masters/in/e109-pink.png), prompt list19/g (window.__MF in the chat); render list19/g/pink-2.png; cut by shape (list19/e1/shape.js) + wallfill.js + alpha erode 5 px (list19/g/erode1.js) - copies beside this source",
+   "reference": "maneevp.com Marbo Freebase poster 1000 px (https://maneevp.com/product/marbo-freebase-30ml-nic6/) maneevp-marbo-free-04.jpg - _incoming/img-1610/masters/src (index masters/src/index.json)",
+   "fidelitySheet": "_incoming/img-1610/list19/g/pink-sheet.jpg - Marbo wordmark, Salt hub mark, M emblem, flavour line spelled as on the poster, checked by eye"
+  }
  }
 ]

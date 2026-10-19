@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { CONTACT } from "@/data/contact";
 import { LINE_CLICK_ENDPOINT } from "@/lib/metrics/line-click-input";
+import { LINE_OA_MESSAGE_BASE } from "@/lib/line-order";
 
 /**
  * Counts clicks on the site's LINE links (round 8, owner ruling 2026-09-23 "option ก": in-site,
@@ -27,7 +28,7 @@ export function LineClickTracker() {
       if (event.button !== 0) return;
       const target = event.target instanceof Element ? event.target : null;
       const anchor = target?.closest("a[href]");
-      if (!(anchor instanceof HTMLAnchorElement) || !anchor.href.startsWith(CONTACT.lineUrl)) return;
+      if (!(anchor instanceof HTMLAnchorElement) || !(anchor.href.startsWith(CONTACT.lineUrl) || anchor.href.startsWith(LINE_OA_MESSAGE_BASE))) return; // 19/10: ready-message link counts too
 
       const spot = anchor.closest("[data-line-spot]")?.getAttribute("data-line-spot") ?? (anchor.closest("footer") ? "footer" : "other");
       const payload = JSON.stringify({ page: window.location.pathname, spot });

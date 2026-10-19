@@ -1,5 +1,6 @@
 "use client";
 
+import type { LineOrderCodes } from "@/lib/line-order-codes";
 import { useState } from "react";
 import Image from "next/image";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -64,7 +65,11 @@ export function PilotProductDetail({
   orderingEnabled = true,
   worksWith,
   fitsDevices,
+  lineCodes,
 }: {
+  /** 19/10 LINE order message: this product's warehouse codes (src/lib/line-order-codes.ts), from the server page. */
+  lineCodes?: LineOrderCodes;
+
   product: StorefrontProductView;
   related: StorefrontProductView[];
   /** The compatibility lists (`getCompatibleConsumables` / `getCompatibleDevices`), computed by the server page:
@@ -233,6 +238,7 @@ export function PilotProductDetail({
                 orderingEnabled={orderingEnabled}
                 slug={product.slug}
                 variantId={selectedVariantId}
+                productCode={(selectedVariantId ? lineCodes?.byOption[selectedVariantId] : undefined) ?? lineCodes?.fallback} pageUrl={lineCodes?.pageUrl}
                 productName={product.displayName}
                 variantLabel={selectedVariant?.label ?? null}
                 choiceMissingLabel={choiceMissingLabel}
@@ -348,7 +354,7 @@ export function PilotProductDetail({
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
       {showBuy && (
         <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant?.label ?? null}>
-          <ProductBuyAction available={available} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} choiceMissingLabel={choiceMissingLabel} compact />
+          <ProductBuyAction available={available} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productCode={(selectedVariantId ? lineCodes?.byOption[selectedVariantId] : undefined) ?? lineCodes?.fallback} pageUrl={lineCodes?.pageUrl} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} choiceMissingLabel={choiceMissingLabel} compact />
         </MobileBuyBar>
       )}
     </>

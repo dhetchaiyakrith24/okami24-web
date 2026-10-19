@@ -637,4 +637,12 @@ html:lang(th) .label-mono:not(:lang(en)) {
   .okami-brand-strip [data-clone] {
     display: none;
   }
+/* LINE order dialog (19/10, designer): backdrop fades in 180ms, card rises 8px + scales from .98 in 220ms;
+   reduced motion = fade only. */
+@keyframes line-order-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes line-order-rise { from { opacity: 0; transform: translateY(8px) scale(0.98); } to { opacity: 1; transform: none; } }
+.line-order-backdrop { animation: line-order-fade 180ms ease-out; }
+.line-order-card { animation: line-order-rise 220ms ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  .line-order-card { animation: line-order-fade 180ms ease-out; }
 }
