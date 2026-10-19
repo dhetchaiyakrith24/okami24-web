@@ -949,7 +949,7 @@ html:lang(th) .label-mono:not(:lang(en)) {
     padding-bottom: 2.125rem;
   }
   .okh-copy { max-width: 37.5rem; }
-  .okh-kicker { margin-bottom: 1.5rem; }
+  .okh-kicker { margin-bottom: 1.5rem; font-size: 0.8125rem; color: var(--foreground-muted); }
   .okh-h1 { font-size: clamp(2.75rem, 2rem + 3.4vw, 5.375rem); line-height: 1.08; }
   .okh-lede { margin-top: 1.625rem; font-size: 1.125rem; line-height: 1.65; }
   .okh-cta { display: flex; flex-wrap: wrap; margin: 1.625rem 0 0; gap: 0.75rem; }
