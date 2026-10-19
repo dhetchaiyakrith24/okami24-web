@@ -55,14 +55,46 @@ uniform float u_ang, u_len, u_span, u_T, u_halfw, u_alpha, u_off;
 uniform vec4 u_r1; // amp f1 f2 s1
 uniform vec4 u_r2; // s2 p1 p2 w
 uniform vec3 u_r3; // tw ts yc
+// flow layer: the ribbon follows a route laid on the PAGE (control points of a Catmull-Rom spline,
+// already in canvas px for this frame), so it scrolls with the boxes instead of swaying on screen.
+// u_s0 = index of the first point in the whole route, so the waves and the pulse stay tied to the page.
+uniform float u_flow, u_npts, u_s0;
+uniform vec2 u_pts[24];
 varying float v_u;
+varying float v_g;
 varying float v_side;
 varying float v_alpha;
 const float TAU = 6.2831853;
 const float PI = 3.1415927;
+vec2 P(float i) {
+  float j = clamp(i, 0.0, u_npts - 1.0);
+  for (int k = 0; k < 24; k++) {
+    if (float(k) == j) return u_pts[k];
+  }
+  return u_pts[0];
+}
+vec2 spine(float u) {
+  float s = clamp(u, 0.0, 1.0) * (u_npts - 1.0);
+  float i = min(floor(s), u_npts - 2.0);
+  float t = s - i;
+  vec2 a = P(i - 1.0);
+  vec2 b = P(i);
+  vec2 c = P(i + 1.0);
+  vec2 d = P(i + 2.0);
+  float t2 = t * t;
+  return 0.5 * (2.0 * b + (c - a) * t + (2.0 * a - 5.0 * b + 4.0 * c - d) * t2 + (3.0 * b - a - 3.0 * c + d) * t2 * t);
+}
+vec2 flowAt(float u) {
+  vec2 c = spine(u);
+  vec2 tg = normalize(spine(u + 0.002) - c + vec2(0.0, 1e-4));
+  float w = (u_s0 + u * (u_npts - 1.0)) * 0.45;
+  float lat = u_span * (u_r3.z * 0.5 + u_r1.x * 0.4 * sin(TAU * (u_r1.y * w + u_T * u_r1.w + u_r2.y)))
+            + a_k * u_r2.w * u_span * sin(PI * (u_r3.x * w * 2.0 + u_T * u_r3.y + a_k * 0.12))
+            + sin(TAU * (2.6 * w + u_T * 0.18 + a_i * 0.045)) * 1.6;
+  return c + vec2(-tg.y, tg.x) * lat;
+}
 vec2 pathAt(float u) {
-  // w = the position along the path the waves are read at: u, moved by u_off (the flow layer slides
-  // its waves along as the page scrolls, so the ribbon bends differently at every point of the page)
+  if (u_flow > 0.5) return flowAt(u);
   float w = u + u_off;
   float base = u_span * (u_r3.z + u_r1.x * sin(TAU * (u_r1.y * w + u_T * u_r1.w + u_r2.y))
              + u_r1.x * 0.45 * sin(TAU * (u_r1.z * w - u_T * u_r2.x + u_r2.z)));
@@ -80,6 +112,7 @@ void main() {
   vec2 clip = pos / u_res * 2.0 - 1.0;
   gl_Position = vec4(clip.x, -clip.y, 0.0, 1.0);
   v_u = a_u;
+  v_g = u_s0 + a_u * (u_npts - 1.0);
   v_side = a_side;
   v_alpha = u_alpha * a_f;
 }`;
@@ -87,10 +120,17 @@ void main() {
 const FRAG = `
 precision mediump float;
 varying float v_u;
+varying float v_g;
+// (its own name: a uniform shared by both shaders must have one precision, and the vertex side is highp)
+uniform float u_flowF;
 varying float v_side;
 varying float v_alpha;
 uniform float u_fade, u_core, u_halo, u_feather;
 uniform vec3 u_pulse; // amount, time, wave offset — bright and dim patches drifting along the ribbon (flow layer)
+// flow layer: the text blocks that sit on the page without a box (headings, ledes, links), in canvas
+// CSS px (x, y, w, h). The ribbon fades softly to a glow behind them, so no sharp line crosses a word.
+uniform vec4 u_holes[16];
+uniform float u_nholes, u_canvasH, u_dpr;
 vec4 stop2(float u, float a, vec4 ca, float b, vec4 cb) { return mix(ca, cb, clamp((u - a) / (b - a), 0.0, 1.0)); }
 vec4 mainGrad(float u) {
   // along the band: faint behind the headline (left), full behind the product, out at the edges.
@@ -118,22 +158,33 @@ vec4 coreGrad(float u) {
   return stop2(u, 0.75, h, 1.0, z);
 }
 void main() {
-  vec4 g = u_core > 0.5 ? coreGrad(v_u) : mainGrad(v_u);
+  // flow: one even colour along the route (its ends are off screen) · hero: the band's gradient
+  vec4 g = u_flowF > 0.5 ? (u_core > 0.5 ? vec4(1.0, 0.784, 0.627, 1.0) : vec4(1.0, 0.4, 0.2, 1.0))
+         : (u_core > 0.5 ? coreGrad(v_u) : mainGrad(v_u));
   float d = abs(v_side);
   float edge = u_halo > 0.5 ? exp(-d * d * 3.5) : 1.0 - smoothstep(1.0 - u_feather, 1.0, d);
-  float beat = 0.5 + 0.5 * sin(6.2831853 * (v_u * 1.35 + u_pulse.z - u_pulse.y * 0.09));
+  float beat = 0.5 + 0.5 * sin(6.2831853 * (v_g * 0.42 - u_pulse.y * 0.09));
   float a = g.a * v_alpha * edge * mix(1.0, 0.35 + 1.05 * beat * beat, u_pulse.x);
+  vec2 p = vec2(gl_FragCoord.x, u_canvasH - gl_FragCoord.y) / u_dpr;
+  for (int i = 0; i < 16; i++) {
+    if (float(i) >= u_nholes) break;
+    vec4 r = u_holes[i];
+    vec2 q = abs(p - (r.xy + r.zw * 0.5)) - r.zw * 0.5;
+    float dist = length(max(q, 0.0)) + min(max(q.x, q.y), 0.0);
+    a *= mix(0.1, 1.0, smoothstep(-6.0, 44.0, dist));
+  }
   gl_FragColor = vec4(g.rgb * a, a);
 }`;
 
 type Uniforms = Record<string, WebGLUniformLocation | null>;
 
 /**
- * "hero" = the band across the hero, through the product · "flow" = the same ribbons turned upright
+ * "hero" = the band across the hero, through the product · "flow" = the same ribbons
  * and carried down the rest of the homepage behind the sections (HomeFlow, owner 20/10 ~05:00: like
  * his reference — thick and soft like the hero's, behind frosted boxes, brightness that swells and
- * dims). In flow mode `scroll` is the page's scroll past the top of the flow area: the ribbon sweeps
- * from side to side and its waves slide along as the visitor scrolls.
+ * dims). In flow mode the ribbon follows a route laid on the page (`holes`: route points + the text
+ * blocks it fades behind); `scroll` = the page's scroll past the top of the flow area, used only to
+ * place that route on the sticky canvas — the ribbon scrolls with the page and never sways.
  */
 export type RibbonMode = "hero" | "flow";
 
@@ -195,6 +246,13 @@ export class RibbonEngine {
   private surgeLeft = 0;
   private scrollV = 0;
   private lastScrollT = 0;
+  /** flow layer: text blocks to fade behind, relative to the top of the flow area (x, y, w, h …) */
+  private holeRects: number[] = [];
+  private areaH = 0;
+  private holeBuf = new Float32Array(64);
+  /** flow layer: the route's control points (x, y …, CSS px from the top of the flow area) */
+  private route: number[] = [];
+  private ptBuf = new Float32Array(48);
 
   /** Returns null when WebGL is unavailable — the caller simply shows no ribbons. */
   static create(canvas: Ctx2Canvas, mode: RibbonMode = "hero"): RibbonEngine | null {
@@ -228,7 +286,7 @@ export class RibbonEngine {
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog) || "link");
     this.prog = prog;
     gl.useProgram(prog);
-    for (const name of ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse"]) {
+    for (const name of ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse", "u_holes", "u_nholes", "u_canvasH", "u_dpr", "u_flow", "u_flowF", "u_npts", "u_s0", "u_pts"]) {
       this.u[name] = gl.getUniformLocation(prog, name);
     }
     this.a = {
@@ -288,6 +346,14 @@ export class RibbonEngine {
     this.lastScrollT = now;
   }
 
+  /** Flow layer: the text blocks without a box (x, y, w, h per block, CSS px from the top of the flow
+   *  area) and that area's height — the canvas is a sticky stage, so its top moves through the area. */
+  holes(rects: number[], areaH: number, route: number[] = []) {
+    this.holeRects = rects;
+    this.areaH = areaH;
+    this.route = route;
+  }
+
   /** The hero changed product — the ribbons speed up and brighten for ~1.6 s. */
   surge() {
     this.surgeLeft = 1;
@@ -326,7 +392,8 @@ export class RibbonEngine {
     this.surgeLeft = Math.max(0, this.surgeLeft - dt / 1600);
     const surge = Math.sin((Math.min(1, this.surgeLeft) * Math.PI) / 2);
     this.scrollV *= Math.pow(0.9, dt / 16);
-    const speed = 1 + Math.min(this.scrollV / 900, 1.6) + surge * 3.2;
+    // the flow layer keeps its own slow pace: scrolling moves it with the page, never faster
+    const speed = this.mode === "flow" ? 1 : 1 + Math.min(this.scrollV / 900, 1.6) + surge * 3.2;
     this.t += (dt / 1000) * speed;
 
     gl.viewport(0, 0, this.canvas.width, this.canvas.height);
@@ -350,16 +417,39 @@ export class RibbonEngine {
     gl.uniform2f(u.u_res, w, h);
     gl.uniform1f(u.u_T, this.t);
     if (this.mode === "flow") {
-      // one sweep across the page every ~1.8 screens; it starts on the left, where the hero's light leaves
-      const phase = this.scrollY / (h * 1.8);
-      strength = phone ? 0.5 : 0.58;
-      gl.uniform2f(u.u_focus, w * (0.5 - (phone ? 0.22 : 0.27) * Math.cos(phase)), h * 0.5);
-      gl.uniform1f(u.u_ang, Math.PI / 2 + 0.24 * Math.sin(phase));
-      gl.uniform1f(u.u_len, h * 1.5);
-      gl.uniform1f(u.u_span, phone ? 420 : Math.min(w * 0.55, 760));
-      gl.uniform1f(u.u_fade, 0.14);
-      gl.uniform1f(u.u_off, this.scrollY / (h * 3.2));
-      gl.uniform3f(u.u_pulse, 1, this.t, this.scrollY / (h * 2.4));
+      strength = phone ? 0.55 : 0.6;
+      gl.uniform1f(u.u_flow, 1);
+      gl.uniform1f(u.u_flowF, 1);
+      gl.uniform1f(u.u_span, phone ? 520 : Math.min(w * 0.7, 940));
+      gl.uniform1f(u.u_fade, 0);
+      gl.uniform3f(u.u_pulse, 1, this.t, 0);
+      // the stage is sticky: its top sits at scroll 0 … areaH - h of the flow area
+      const top = Math.min(Math.max(this.scrollY, 0), Math.max(0, this.areaH - h));
+      let n = 0;
+      for (let i = 0; i + 3 < this.holeRects.length && n < 16; i += 4) {
+        const y = this.holeRects[i + 1] - top;
+        if (y + this.holeRects[i + 3] < -60 || y > h + 60) continue;
+        this.holeBuf.set([this.holeRects[i], y, this.holeRects[i + 2], this.holeRects[i + 3]], n * 4);
+        n++;
+      }
+      gl.uniform4fv(u.u_holes, this.holeBuf);
+      gl.uniform1f(u.u_nholes, n);
+      gl.uniform1f(u.u_canvasH, this.canvas.height);
+      gl.uniform1f(u.u_dpr, dpr);
+      // the part of the route on and around the screen: from the last point above it to the first below it
+      const pts = this.route.length / 2;
+      let i0 = 0;
+      let i1 = pts - 1;
+      for (let i = 0; i < pts; i++) if (this.route[i * 2 + 1] < top - h * 0.4) i0 = i;
+      for (let i = pts - 1; i >= 0; i--) if (this.route[i * 2 + 1] > top + h * 1.4) i1 = i;
+      i0 = Math.max(0, i0 - 1);
+      i1 = Math.min(pts - 1, i1 + 1, i0 + 23);
+      const np = i1 - i0 + 1;
+      if (np < 2) return;
+      for (let i = 0; i < np; i++) this.ptBuf.set([this.route[(i0 + i) * 2], this.route[(i0 + i) * 2 + 1] - top], i * 2);
+      gl.uniform2fv(u.u_pts, this.ptBuf);
+      gl.uniform1f(u.u_npts, np);
+      gl.uniform1f(u.u_s0, i0);
     } else {
       strength = (1 - heroP * 0.65) * (1 + surge * 0.55);
       gl.uniform2f(u.u_focus, this.fx, this.fy - heroP * h * 0.15);
@@ -369,6 +459,11 @@ export class RibbonEngine {
       gl.uniform1f(u.u_fade, phone ? 0.18 : 0.36);
       gl.uniform1f(u.u_off, 0);
       gl.uniform3f(u.u_pulse, 0, 0, 0);
+      gl.uniform1f(u.u_nholes, 0);
+      gl.uniform1f(u.u_flow, 0);
+      gl.uniform1f(u.u_flowF, 0);
+      gl.uniform1f(u.u_npts, 2);
+      gl.uniform1f(u.u_s0, 0);
     }
 
     // a crisp line: its CSS width plus ~0.75 device px of feather each side
@@ -391,7 +486,7 @@ export class RibbonEngine {
       }
       gl.uniform1f(u.u_halo, b.kind === "halo" ? 1 : 0);
       gl.uniform1f(u.u_core, b.kind === "core" ? 1 : 0);
-      if (b.kind === "halo") gl.uniform1f(u.u_halfw, HALO.halfWidth);
+      if (b.kind === "halo") gl.uniform1f(u.u_halfw, this.mode === "flow" ? HALO.halfWidth * 1.6 : HALO.halfWidth);
       else crisp(b.kind === "core" ? 1.6 : phone ? 0.9 : 1);
       gl.uniform1f(u.u_alpha, b.kind === "core" ? (this.mode === "flow" ? 0.2 : 0.45) * strength : r.a * strength * (b.kind === "halo" ? HALO.alpha : 1));
       if (inst) {
@@ -423,6 +518,7 @@ export type RibbonMessage =
   | { type: "focus"; x: number; y: number }
   | { type: "scroll"; y: number }
   | { type: "surge" }
+  | { type: "holes"; rects: number[]; areaH: number; route: number[] }
   | { type: "run"; on: boolean; still: boolean };
 
 /** What the page holds: the same calls whether the engine runs in a worker or right here. */
@@ -431,6 +527,7 @@ export type RibbonDriver = {
   focus(x: number, y: number): void;
   scroll(y: number): void;
   surge(): void;
+  holes(rects: number[], areaH: number, route: number[]): void;
   run(on: boolean, still: boolean): void;
   destroy(): void;
 };
@@ -450,6 +547,9 @@ export function applyRibbonMessage(engine: RibbonEngine, m: Exclude<RibbonMessag
     case "surge":
       engine.surge();
       break;
+    case "holes":
+      engine.holes(m.rects, m.areaH, m.route);
+      break;
     case "run":
       if (m.still) engine.still();
       else if (m.on) engine.start();
@@ -467,6 +567,7 @@ export function mainThreadDriver(canvas: HTMLCanvasElement, mode: RibbonMode = "
     focus: (x, y) => applyRibbonMessage(engine, { type: "focus", x, y }),
     scroll: (y) => applyRibbonMessage(engine, { type: "scroll", y }),
     surge: () => applyRibbonMessage(engine, { type: "surge" }),
+    holes: (rects, areaH, route) => applyRibbonMessage(engine, { type: "holes", rects, areaH, route }),
     run: (on, still) => applyRibbonMessage(engine, { type: "run", on, still }),
     destroy: () => engine.stop(),
   };
