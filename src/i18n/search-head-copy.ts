@@ -371,6 +371,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   // Round p63 (19/10): numbers = the maker's spec block (eskobarvape.com/product/eskobar).
   "vmate-pro-2": "VOOPOO Vmate Pro 2 ตัวเครื่อง มีให้เลือก 4 สี",
   "punta-ice": "น้ำยา Punta Ice มีให้เลือก 7 กลิ่น",
+  "next-pro-2-beyond": "Next Pro 2 Beyond ตัวเครื่องพอต มีให้เลือก 6 สี",
   "infy-pod": "INFY POD ตัวเครื่อง แบตเตอรี่ 400mAh ชาร์จ Type-C มีให้เลือก 19 สี",
   "mq-bar-22k": "MQ Bar 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22K มีให้เลือก 11 กลิ่น",
   "graple-freebase": "Graple น้ำยา freebase กลิ่นองุ่น",

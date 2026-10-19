@@ -941,6 +941,15 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "eliquid-78-6": "eliquid-78-6",
     "eliquid-78-7": "eliquid-78-7",
   } },
+  // Image sweep (19/10): Next Pro 2 Beyond (legacy) — Max Pod-173-1..6 (the Max colour names = the legacy colour names).
+  "next-pro-2-beyond": { parent: "Pod-173", options: {
+    "razer-black": "Pod-173-1",
+    "supreme-red": "Pod-173-2",
+    "white-lava": "Pod-173-3",
+    "aurora": "Pod-173-4",
+    "lemon-mint": "Pod-173-5",
+    "twilight-sky": "Pod-173-6",
+  } },
   // Image sweep (19/10): INFY POD — Max Pod-158-1..14; the maker's 5 extra colours are not in the warehouse.
   "infy-pod": { parent: "Pod-158", options: {
     "Pod-158-1": "Pod-158-1",

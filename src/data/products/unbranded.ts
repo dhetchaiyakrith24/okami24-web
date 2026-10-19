@@ -568,16 +568,16 @@ export const unbrandedProducts: Product[] = [
   {
     id: "next-pro-2-beyond",
     slug: "next-pro-2-beyond",
-    hiddenFromStorefront: { since: "2026-09-06", reason: "no card photo (IMAGE_SPEC §4); only source is a Facebook album" },
     brandId: "Unbranded",
     familyId: "Next",
     categoryId: "switch-pods",
     systemType: "pod-kit",
     name: "Next Pro 2 Beyond",
     displayName: "Next Pro 2 Beyond",
-    tagline: "A RELX-Infinity-style pod kit with 3 power levels.",
-    shortDescription:
-      "A pod kit built around a RELX-Infinity-style universal pod connector, with 3 switchable power levels (Soft/Standard/Boost) and a 440mAh battery, currently stocked in 6 colors.",
+    // Image sweep (19/10): published with a studio card; the copy says only warehouse facts (the retailer-sourced specs stay
+    // unverified rows, which the page does not show).
+    tagline: "Next Pro 2 Beyond pod device.",
+    shortDescription: "The Next Pro 2 Beyond pod device, in 6 colors.",
     isFlagship: false,
     attributes: {
       batteryMah: 440,
@@ -587,19 +587,32 @@ export const unbrandedProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "USB-C",
     },
-    assets: [],
+    // Image sweep (19/10): card = Twilight Sky (in stock); every colour = an OKami24 studio re-shoot (Higgsfield) of that colour on the
+    // retailer's 6-colour line-up photo (IMAGE_SPEC §0 item 7) — source, prompt and check per file in scripts/process-images.map.json `aiRender`.
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/next-pro-2-beyond/card.webp",
+        alt: "Next Pro 2 Beyond pod device, Twilight Sky, studio photo",
+        angle: "Front, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of the retailer's line-up photo.",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from the retailer's Next Pro 2 Beyond line-up photo",
+        sourceUrl: "https://maneevp.com/wp-content/uploads/2024/01/NEXT-Pro-2-Beyond-Close-System-Pod-01.jpg",
+      },
+    ],
     // Real color lineup — all 6 names are genuine Shipnity operational data. Specs (440mAh,
     // USB-C, 3 power levels/LED colors) come from this session's multi-retailer research
     // convergence (10+ independent listings), not a first-party source — kept as verified-enough
     // to state as fact (near-universal agreement across unrelated sellers), same bar already used
     // elsewhere in this catalog for tier-2/3 evidence.
     colorVariants: [
-      { id: "razer-black", name: "Razer Black", swatchHex: "#1a1a1a" },
-      { id: "supreme-red", name: "Supreme Red", swatchHex: "#b83a3a" },
-      { id: "white-lava", name: "White Lava", swatchHex: "#e8e4de" },
-      { id: "aurora", name: "Aurora", swatchHex: "#6b8ec9" },
-      { id: "lemon-mint", name: "Lemon Mint", swatchHex: "#c9d94b" },
-      { id: "twilight-sky", name: "Twilight Sky", swatchHex: "#4a5a9e" },
+      { id: "razer-black", name: "Razer Black", swatchHex: "#1a1a1a", image: { src: "/assets/products/next-pro-2-beyond/variant-razer-black.webp", alt: "Next Pro 2 Beyond, Razer Black — device" } },
+      { id: "supreme-red", name: "Supreme Red", swatchHex: "#b83a3a", image: { src: "/assets/products/next-pro-2-beyond/variant-supreme-red.webp", alt: "Next Pro 2 Beyond, Supreme Red — device" } },
+      { id: "white-lava", name: "White Lava", swatchHex: "#e8e4de", image: { src: "/assets/products/next-pro-2-beyond/variant-white-lava.webp", alt: "Next Pro 2 Beyond, White Lava — device" } },
+      { id: "aurora", name: "Aurora", swatchHex: "#6b8ec9", image: { src: "/assets/products/next-pro-2-beyond/variant-aurora.webp", alt: "Next Pro 2 Beyond, Aurora — device" } },
+      { id: "lemon-mint", name: "Lemon Mint", swatchHex: "#c9d94b", image: { src: "/assets/products/next-pro-2-beyond/variant-lemon-mint.webp", alt: "Next Pro 2 Beyond, Lemon Mint — device" } },
+      { id: "twilight-sky", name: "Twilight Sky", swatchHex: "#4a5a9e", image: { src: "/assets/products/next-pro-2-beyond/variant-twilight-sky.webp", alt: "Next Pro 2 Beyond, Twilight Sky — device" } },
     ],
     specifications: [
       { key: "battery", label: "Battery", value: "440mAh built-in, USB-C", sourceStatus: "unverified" },
@@ -607,8 +620,8 @@ export const unbrandedProducts: Product[] = [
       { key: "pod", label: "Pod connector", value: "RELX-Infinity-style universal pod", sourceStatus: "unverified" },
     ],
     features: [],
-    compatibility: [{ type: "charging", label: "USB-C", note: "Rechargeable via USB-C." }],
-    whoIsThisFor: ["Owners of a RELX-Infinity-compatible pod ecosystem wanting an alternative device."],
+    compatibility: [],
+    whoIsThisFor: ["Anyone choosing the Next Pro 2 Beyond device in one of its 6 colors."],
     faqs: [],
     relatedProductSlugs: [],
     // Only source located this pass is a Facebook photo album (owner-supplied, 2026-09-04) — real
