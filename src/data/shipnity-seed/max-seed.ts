@@ -3471,6 +3471,92 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
         "inStock": false
       }
     ]
+  },
+  "GRAPLE-FREEBASE": {
+    "maxParentId": "ELQ-2",
+    "name": "Graple Freebase",
+    "operationalSellingPrice": 795,
+    "children": [
+      {
+        "shipnityVariantId": "ELQ-2-1",
+        "rawLabel": "องุ่นยาว",
+        "sellingPrice": 159,
+        "inStock": true
+      }
+    ]
+  },
+  "MQ-BAR-22K": {
+    "maxParentId": "Disposable-43",
+    "name": "MQ Bar 22K",
+    "operationalSellingPrice": 369,
+    "children": [
+      {
+        "shipnityVariantId": "Disposable-43-1",
+        "rawLabel": "Kyoho Grape",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-43-2",
+        "rawLabel": "Grape Lychee",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-43-3",
+        "rawLabel": "Blue Ice",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-43-4",
+        "rawLabel": "Double Mint",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-43-5",
+        "rawLabel": "Pink Berry",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-43-6",
+        "rawLabel": "Mixberry",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-43-7",
+        "rawLabel": "Strawberry",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-43-8",
+        "rawLabel": "Peach Strawberry",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-43-9",
+        "rawLabel": "Watermelon",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-43-10",
+        "rawLabel": "Cola",
+        "sellingPrice": 359,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Disposable-43-11",
+        "rawLabel": "Rainbow Candy",
+        "sellingPrice": 359,
+        "inStock": true
+      }
+    ]
   }
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K"];

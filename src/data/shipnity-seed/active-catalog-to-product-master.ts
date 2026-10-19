@@ -331,6 +331,8 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   // publication-approvals.ts until a card exists. Warehouse facts only.
   "SUPER-COOL-SALTNIC": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Super Cool Salt Nic" (ELQ-6), 10 flavours, ฿269; no maker site checked yet — prepared on warehouse facts only, without a brand' },
   "PUNTA-ICE": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Punta Ice" (eliquid-78), 7 flavours, ฿150; no maker site checked yet — prepared on warehouse facts only, without a brand' },
+  "GRAPLE-FREEBASE": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Graple Freebase" (ELQ-2), 1 option; no maker site checked yet — prepared on warehouse facts only, without a brand' },
+  "MQ-BAR-22K": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "MQ Bar 22K" (Disposable-43), 11 flavours; no maker source found 19/10 — prepared on warehouse facts only, without a brand' },
   "INFY-POD": { brandId: "infy", categoryId: "pod-systems", systemType: "pod-kit", evidence: 'Shipnity MAX "INFY POD" (Pod-158), 14 colours, ฿690 — the name states the brand (INFY, already a brand here through pod-169); device only' },
   "VMATE-PRO-2": { brandId: "voopoo", familyId: "vmate", categoryId: "pod-systems", systemType: "pod-kit", evidence: 'Shipnity MAX "Vmate Pro 2" (Pod-176), 4 colours, ฿890 — Vmate is the VOOPOO line already sold here (Vmate i3, Pod-177)' },
   "Eliquid-73": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Dundu Salt Nic" (Eliquid-73), 1 flavour; no maker site found — listed on warehouse facts only, without a brand' },
@@ -646,6 +648,14 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
   "PUNTA-ICE": {
     tagline: "น้ำยา Punta Ice",
     shortDescription: "น้ำยา Punta Ice ร้านมีให้เลือก 7 กลิ่น",
+  },
+  "GRAPLE-FREEBASE": {
+    tagline: "น้ำยา Graple Freebase",
+    shortDescription: "น้ำยา Graple นิโคตินแบบ freebase กลิ่นองุ่น",
+  },
+  "MQ-BAR-22K": {
+    tagline: "พอตใช้แล้วทิ้ง MQ Bar 22K",
+    shortDescription: "พอตใช้แล้วทิ้ง MQ Bar ชื่อรุ่นระบุ 22K ร้านมีให้เลือก 11 กลิ่น",
   },
   "INFY-POD": {
     tagline: "ตัวเครื่อง INFY POD",
@@ -1326,6 +1336,8 @@ interface VerifiedSpecEntry {
 const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   // Round list19 (19/10): warehouse facts only — the Max names "Pepo Salt Nic" / "Dundu Salt Nic" (nicotine type).
   "Eliquid-72": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
+  // Round list19 (19/10): prepared, not published — the Max name "Graple Freebase" (nicotine type).
+  "GRAPLE-FREEBASE": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "freebase", sourceStatus: "verified" }], sourceUrls: [] },
   // Round list19 (19/10): prepared, not published — the Max name "Super Cool Salt Nic" (nicotine type).
   "SUPER-COOL-SALTNIC": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
   "Eliquid-73": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
