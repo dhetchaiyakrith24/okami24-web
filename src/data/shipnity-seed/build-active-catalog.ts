@@ -77,6 +77,8 @@ const MAX_LABEL_FIX: Record<string, string> = {
   "ELQ-3-2": "Gold",
   "ELQ-3-3": "Pink",
   "ELQ-3-4": "Ice Sparkling",
+  // Round list19 (19/10): Graple Freebase — Max's one child is a Thai word for the grape bottle; the product name says grape.
+  "ELQ-2-1": "Grape",
 };
 
 function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) | null {
@@ -144,10 +146,15 @@ const MAX_ONLY_LABEL_PREFIX: Record<string, string> = {
   "NEXSWITCH-16K-POD": "หัวพอต ",
 };
 
+/** Max-only records whose Max parent and children carry different prices, where the owner set ONE price for the parent and every
+ *  option (owner in chat 2026-10-19: "ราคา Graple Freebase: ฿160.-" · "ราคา MQ Bar 22K: ฿390.-"). Every child is an option here; the
+ *  price itself lives only in publication-approvals.ts. */
+const OWNER_ONE_PRICE_MAX_ONLY = new Set<string>(["GRAPLE-FREEBASE", "MQ-BAR-22K"]);
+
 function fromMaxOnly(id: string): RawActiveParent {
   const m = MAX_SEED[id];
   const children = m.children.filter((c) => {
-    const ok = c.sellingPrice === m.operationalSellingPrice;
+    const ok = OWNER_ONE_PRICE_MAX_ONLY.has(id) || c.sellingPrice === m.operationalSellingPrice;
     if (!ok) maxDroppedChildren.push({ shipnityProductId: id, shipnityVariantId: c.shipnityVariantId, rawLabel: c.rawLabel, reason: `other price than the parent (Max ราคาขาย ฿${c.sellingPrice} vs ฿${m.operationalSellingPrice})` });
     return ok;
   });

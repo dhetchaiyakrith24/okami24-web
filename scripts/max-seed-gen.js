@@ -45,6 +45,8 @@ const MAX_ONLY_RECORDS = {
   "PUNTA-ICE": "eliquid-78", // Punta Ice
   "INFY-POD": "Pod-158", // INFY POD
   "VMATE-PRO-2": "Pod-176", // Vmate Pro 2
+  "GRAPLE-FREEBASE": "ELQ-2", // Graple Freebase (Max parent ฿795, its one child ฿159; owner price ฿160 for both, 19/10)
+  "MQ-BAR-22K": "Disposable-43", // MQ Bar 22K (Max parent ฿369, children ฿359; owner price ฿390 for all, 19/10)
 };
 const seedSrc = fs.readFileSync(path.join(__dirname, "..", "src", "data", "shipnity-seed", "active-catalog-source.ts"), "utf8");
 const seedIds = [...seedSrc.matchAll(/shipnityProductId: "([^"]+)"/g)].map((m) => m[1]).filter((id) => id !== "Close" && id !== "test"); // excludedNonProductRows
