@@ -51,7 +51,7 @@ uniform vec2 u_focus;
 attribute float a_k; // line offset across the bundle (-0.5 … 0.5)
 attribute float a_i; // line index (its small wobble)
 attribute float a_f; // line opacity falloff
-uniform float u_ang, u_len, u_span, u_T, u_halfw, u_alpha;
+uniform float u_ang, u_len, u_span, u_T, u_halfw, u_alpha, u_off;
 uniform vec4 u_r1; // amp f1 f2 s1
 uniform vec4 u_r2; // s2 p1 p2 w
 uniform vec3 u_r3; // tw ts yc
@@ -61,10 +61,13 @@ varying float v_alpha;
 const float TAU = 6.2831853;
 const float PI = 3.1415927;
 vec2 pathAt(float u) {
-  float base = u_span * (u_r3.z + u_r1.x * sin(TAU * (u_r1.y * u + u_T * u_r1.w + u_r2.y))
-             + u_r1.x * 0.45 * sin(TAU * (u_r1.z * u - u_T * u_r2.x + u_r2.z)));
-  float y = base + a_k * u_r2.w * u_span * sin(PI * (u_r3.x * u * 2.0 + u_T * u_r3.y + a_k * 0.12))
-          + sin(TAU * (2.6 * u + u_T * 0.18 + a_i * 0.045)) * 1.6;
+  // w = the position along the path the waves are read at: u, moved by u_off (the flow layer slides
+  // its waves along as the page scrolls, so the ribbon bends differently at every point of the page)
+  float w = u + u_off;
+  float base = u_span * (u_r3.z + u_r1.x * sin(TAU * (u_r1.y * w + u_T * u_r1.w + u_r2.y))
+             + u_r1.x * 0.45 * sin(TAU * (u_r1.z * w - u_T * u_r2.x + u_r2.z)));
+  float y = base + a_k * u_r2.w * u_span * sin(PI * (u_r3.x * w * 2.0 + u_T * u_r3.y + a_k * 0.12))
+          + sin(TAU * (2.6 * w + u_T * 0.18 + a_i * 0.045)) * 1.6;
   float x = (u - 0.5) * u_len;
   float c = cos(u_ang);
   float s = sin(u_ang);
@@ -87,6 +90,7 @@ varying float v_u;
 varying float v_side;
 varying float v_alpha;
 uniform float u_fade, u_core, u_halo, u_feather;
+uniform vec3 u_pulse; // amount, time, wave offset — bright and dim patches drifting along the ribbon (flow layer)
 vec4 stop2(float u, float a, vec4 ca, float b, vec4 cb) { return mix(ca, cb, clamp((u - a) / (b - a), 0.0, 1.0)); }
 vec4 mainGrad(float u) {
   // along the band: faint behind the headline (left), full behind the product, out at the edges.
@@ -117,11 +121,21 @@ void main() {
   vec4 g = u_core > 0.5 ? coreGrad(v_u) : mainGrad(v_u);
   float d = abs(v_side);
   float edge = u_halo > 0.5 ? exp(-d * d * 3.5) : 1.0 - smoothstep(1.0 - u_feather, 1.0, d);
-  float a = g.a * v_alpha * edge;
+  float beat = 0.5 + 0.5 * sin(6.2831853 * (v_u * 1.35 + u_pulse.z - u_pulse.y * 0.09));
+  float a = g.a * v_alpha * edge * mix(1.0, 0.35 + 1.05 * beat * beat, u_pulse.x);
   gl_FragColor = vec4(g.rgb * a, a);
 }`;
 
 type Uniforms = Record<string, WebGLUniformLocation | null>;
+
+/**
+ * "hero" = the band across the hero, through the product · "flow" = the same ribbons turned upright
+ * and carried down the rest of the homepage behind the sections (HomeFlow, owner 20/10 ~05:00: like
+ * his reference — thick and soft like the hero's, behind frosted boxes, brightness that swells and
+ * dims). In flow mode `scroll` is the page's scroll past the top of the flow area: the ribbon sweeps
+ * from side to side and its waves slide along as the visitor scrolls.
+ */
+export type RibbonMode = "hero" | "flow";
 
 /** One instanced draw: which lines (k · index · opacity falloff), how wide, which look. */
 type Batch = { buf: WebGLBuffer; count: number; ribbon: Ribbon; kind: "halo" | "line" | "core"; values: number[] };
@@ -183,11 +197,11 @@ export class RibbonEngine {
   private lastScrollT = 0;
 
   /** Returns null when WebGL is unavailable — the caller simply shows no ribbons. */
-  static create(canvas: Ctx2Canvas): RibbonEngine | null {
+  static create(canvas: Ctx2Canvas, mode: RibbonMode = "hero"): RibbonEngine | null {
     const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false, powerPreference: "low-power" }) as WebGLRenderingContext | null;
     if (!gl) return null;
     try {
-      return new RibbonEngine(canvas, gl);
+      return new RibbonEngine(canvas, gl, mode);
     } catch {
       return null;
     }
@@ -196,6 +210,7 @@ export class RibbonEngine {
   private constructor(
     private canvas: Ctx2Canvas,
     gl: WebGLRenderingContext,
+    private mode: RibbonMode,
   ) {
     this.gl = gl;
     this.inst = gl.getExtension("ANGLE_instanced_arrays");
@@ -213,7 +228,7 @@ export class RibbonEngine {
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog) || "link");
     this.prog = prog;
     gl.useProgram(prog);
-    for (const name of ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather"]) {
+    for (const name of ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse"]) {
       this.u[name] = gl.getUniformLocation(prog, name);
     }
     this.a = {
@@ -331,14 +346,30 @@ export class RibbonEngine {
       inst.vertexAttribDivisorANGLE(a.side, 0);
     }
 
-    const strength = (1 - heroP * 0.65) * (1 + surge * 0.55);
+    let strength: number;
     gl.uniform2f(u.u_res, w, h);
-    gl.uniform2f(u.u_focus, this.fx, this.fy - heroP * h * 0.15);
-    gl.uniform1f(u.u_ang, phone ? -0.52 : -0.26);
-    gl.uniform1f(u.u_len, Math.hypot(w, h) * 1.25);
-    gl.uniform1f(u.u_span, phone ? Math.max(h * 0.62, 420) : h);
     gl.uniform1f(u.u_T, this.t);
-    gl.uniform1f(u.u_fade, phone ? 0.18 : 0.36);
+    if (this.mode === "flow") {
+      // one sweep across the page every ~1.8 screens; it starts on the left, where the hero's light leaves
+      const phase = this.scrollY / (h * 1.8);
+      strength = phone ? 0.5 : 0.58;
+      gl.uniform2f(u.u_focus, w * (0.5 - (phone ? 0.22 : 0.27) * Math.cos(phase)), h * 0.5);
+      gl.uniform1f(u.u_ang, Math.PI / 2 + 0.24 * Math.sin(phase));
+      gl.uniform1f(u.u_len, h * 1.5);
+      gl.uniform1f(u.u_span, phone ? 420 : Math.min(w * 0.55, 760));
+      gl.uniform1f(u.u_fade, 0.14);
+      gl.uniform1f(u.u_off, this.scrollY / (h * 3.2));
+      gl.uniform3f(u.u_pulse, 1, this.t, this.scrollY / (h * 2.4));
+    } else {
+      strength = (1 - heroP * 0.65) * (1 + surge * 0.55);
+      gl.uniform2f(u.u_focus, this.fx, this.fy - heroP * h * 0.15);
+      gl.uniform1f(u.u_ang, phone ? -0.52 : -0.26);
+      gl.uniform1f(u.u_len, Math.hypot(w, h) * 1.25);
+      gl.uniform1f(u.u_span, phone ? Math.max(h * 0.62, 420) : h);
+      gl.uniform1f(u.u_fade, phone ? 0.18 : 0.36);
+      gl.uniform1f(u.u_off, 0);
+      gl.uniform3f(u.u_pulse, 0, 0, 0);
+    }
 
     // a crisp line: its CSS width plus ~0.75 device px of feather each side
     const crisp = (cssWidth: number) => {
@@ -362,7 +393,7 @@ export class RibbonEngine {
       gl.uniform1f(u.u_core, b.kind === "core" ? 1 : 0);
       if (b.kind === "halo") gl.uniform1f(u.u_halfw, HALO.halfWidth);
       else crisp(b.kind === "core" ? 1.6 : phone ? 0.9 : 1);
-      gl.uniform1f(u.u_alpha, b.kind === "core" ? 0.45 * strength : r.a * strength * (b.kind === "halo" ? HALO.alpha : 1));
+      gl.uniform1f(u.u_alpha, b.kind === "core" ? (this.mode === "flow" ? 0.2 : 0.45) * strength : r.a * strength * (b.kind === "halo" ? HALO.alpha : 1));
       if (inst) {
         gl.bindBuffer(gl.ARRAY_BUFFER, b.buf);
         for (const [loc, off] of [[a.k, 0], [a.i, 4], [a.f, 8]] as const) {
@@ -387,7 +418,7 @@ export class RibbonEngine {
 
 /** Messages the page sends to hero-ribbons.worker.ts — one per RibbonEngine method. */
 export type RibbonMessage =
-  | { type: "init"; canvas: OffscreenCanvas }
+  | { type: "init"; canvas: OffscreenCanvas; mode?: RibbonMode }
   | { type: "size"; w: number; h: number; dpr: number; phone: boolean }
   | { type: "focus"; x: number; y: number }
   | { type: "scroll"; y: number }
@@ -428,8 +459,8 @@ export function applyRibbonMessage(engine: RibbonEngine, m: Exclude<RibbonMessag
 }
 
 /** Main-thread engine behind the same driver shape (no OffscreenCanvas / no worker). */
-export function mainThreadDriver(canvas: HTMLCanvasElement): RibbonDriver | null {
-  const engine = RibbonEngine.create(canvas);
+export function mainThreadDriver(canvas: HTMLCanvasElement, mode: RibbonMode = "hero"): RibbonDriver | null {
+  const engine = RibbonEngine.create(canvas, mode);
   if (!engine) return null;
   return {
     size: (w, h, dpr, phone) => applyRibbonMessage(engine, { type: "size", w, h, dpr, phone }),

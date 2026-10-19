@@ -985,20 +985,39 @@ html:lang(th) .label-mono:not(:lang(en)) {
   .okh-d { display: block; font-size: 0.8125rem; line-height: 1.5; color: var(--foreground-muted); }
 }
 
-/* --- the lead line down the page (HomeLeadLine) --- */
-.okh-lead {
-  position: absolute;
-  inset: 0 0 auto 0;
-  width: 100%;
+/* --- the hero's light carried down the page (HomeFlow) ---
+   A sticky, screen-tall stage sits behind every section of the wrapper. The sections are see-through
+   here (the surface-1 ones keep a tint), and the boxes inside them are frosted glass: the light shows
+   through them blurred, never sharp on a product or a word (owner 20/10, his reference). */
+.okh-flow { position: relative; isolation: isolate; background: var(--surface-0); }
+.okh-flow-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100lvh;
+  margin-bottom: -100vh;
+  margin-bottom: -100lvh;
+  z-index: 0;
+  overflow: hidden;
   pointer-events: none;
-  z-index: 5;
-  overflow: visible;
 }
-.okh-lead-line { opacity: 0.6; }
-.okh-lead-strand { opacity: 0.32; }
-.okh-lead:not([data-on]) { visibility: hidden; }
-@media (min-width: 64rem) {
-  .okh-lead-line { opacity: 0.9; }
+.okh-flow-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+.okh-flow-canvas[data-on] { opacity: 1; }
+.okh-flow > :not(.okh-flow-stage) { position: relative; z-index: 1; }
+.okh-flow > section.bg-surface-0 { background-color: transparent; }
+.okh-flow > section.bg-surface-1 { background-color: color-mix(in srgb, var(--surface-1) 55%, transparent); }
+.okh-flow > nav { -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.okh-flow section :is(.bg-surface-0, .bg-surface-1) {
+  background-color: color-mix(in srgb, var(--surface-1) 42%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  backdrop-filter: blur(16px) saturate(1.2);
 }
 
 /* --- still: reduced motion / Save-Data (the ribbons draw one frame; HeroShowcase stops rotating) --- */
