@@ -225,7 +225,7 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // Round list19 (19/10): Marbo Freebase (Max ELQ-3, old seed Eliquid-109) — Max ราคาขาย ฿159 for the parent and its 4 flavours (read 2026-10-17).
   "Eliquid-109": { sellingPrice: 159, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): prepared, held until a card photo exists (IMAGE_SPEC §4) — Max ราคาขาย read 2026-10-17:
-  // "SUPER-COOL-SALTNIC": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
+  "SUPER-COOL-SALTNIC": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
   "PUNTA-ICE": { sellingPrice: 150, lastPriceReview: "2026-10-19" },
   "INFY-POD": { sellingPrice: 690, lastPriceReview: "2026-10-19" },
   "VMATE-PRO-2": { sellingPrice: 890, lastPriceReview: "2026-10-19" },

@@ -950,6 +950,19 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "lemon-mint": "Pod-173-5",
     "twilight-sky": "Pod-173-6",
   } },
+  // Image sweep (19/10): Super Cool Salt Nic — Max ELQ-6, 10 flavours.
+  "super-cool-saltnic": { parent: "ELQ-6", options: {
+    "ELQ-6-1": "ELQ-6-1",
+    "ELQ-6-2": "ELQ-6-2",
+    "ELQ-6-3": "ELQ-6-3",
+    "ELQ-6-4": "ELQ-6-4",
+    "ELQ-6-5": "ELQ-6-5",
+    "ELQ-6-6": "ELQ-6-6",
+    "ELQ-6-7": "ELQ-6-7",
+    "ELQ-6-8": "ELQ-6-8",
+    "ELQ-6-9": "ELQ-6-9",
+    "ELQ-6-10": "ELQ-6-10",
+  } },
   // Image sweep (19/10): INFY POD — Max Pod-158-1..14; the maker's 5 extra colours are not in the warehouse.
   "infy-pod": { parent: "Pod-158", options: {
     "Pod-158-1": "Pod-158-1",
