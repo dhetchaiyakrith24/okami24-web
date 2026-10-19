@@ -657,9 +657,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "พอตใช้แล้วทิ้ง MQ Bar 22K",
     shortDescription: "พอตใช้แล้วทิ้ง MQ Bar ชื่อรุ่นระบุ 22K ร้านมีให้เลือก 11 กลิ่น",
   },
+  // Image sweep (19/10): numbers = INFY's own device page (infy.my/infy-device: 400mAh, Type-C); colours = Max's 14 + the maker's 5
+  // the warehouse does not carry (VERIFIED_ADDITIONAL_VARIANTS).
   "INFY-POD": {
     tagline: "ตัวเครื่อง INFY POD",
-    shortDescription: "ตัวเครื่อง INFY POD ร้านมีให้เลือก 14 สี",
+    shortDescription: "ตัวเครื่อง INFY POD แบตเตอรี่ 400mAh ชาร์จ Type-C มีให้เลือก 19 สี",
   },
   "VMATE-PRO-2": {
     tagline: "ตัวเครื่อง VOOPOO Vmate Pro 2",
@@ -810,6 +812,46 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
 // ===================================================================================
 
 const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
+  // Image sweep (19/10): MQ Bar 22K card — OKami24 studio re-shoot of the device on the shop's Kyoho Grape poster.
+  "MQ-BAR-22K": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/mq-bar-22k/card.webp",
+      alt: "MQ Bar 22K disposable vape, studio photo",
+      angle: "Front, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of the device on the shop's Kyoho Grape poster.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K Kyoho Grape poster",
+      sourceUrl: "https://maneevp.com/wp-content/uploads/2026/09/mq-bar-22k-product-cover-800x800-1.webp",
+    },
+  ],
+  // Image sweep (19/10): Graple Freebase card — OKami24 studio re-shoot of the front bottle on the shop's Graple poster (Phatjuice bottle).
+  "GRAPLE-FREEBASE": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/graple-freebase/card.webp",
+      alt: "Graple freebase e-liquid bottle, studio photo",
+      angle: "Front, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of the front bottle on the shop's Graple poster.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's Graple poster",
+      sourceUrl: "https://ihavevape.net/product/graple/",
+    },
+  ],
+  // Image sweep (19/10): INFY POD card = Blue Violet (in stock) — OKami24 re-shoot of INFY's own colour photo (the maker file is ~620 px
+  // tall, below MIN_SOURCE_LONG → re-shot, IMAGE_SPEC §0 item 7). Source, prompt and check per file in scripts/process-images.map.json `aiRender`.
+  "INFY-POD": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/infy-pod/card.webp",
+      alt: "INFY POD device body, Blue Violet, studio photo",
+      angle: "Front, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of INFY's own Blue Violet photo.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from INFY's own device photo",
+      sourceUrl: "https://www.infy.my/infy-device/",
+    },
+  ],
   // Round list19 (19/10): Marbo Freebase — OKami24 re-shoot (batch 7) of the shop's Ice Sparkling bottle photo, an in-stock flavour.
   "Eliquid-109": [
     {
@@ -1334,6 +1376,16 @@ interface VerifiedSpecEntry {
 }
 
 const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
+  // Image sweep (19/10): infy.my/infy-device — "Battery Capacity 400mAh", "Type-C charging port", a "multi-colored LED system" that shows
+  // charging status, vaping activity and when a new cartridge is inserted.
+  "INFY-POD": {
+    specifications: [
+      { key: "battery", label: "แบตเตอรี่", value: "400mAh", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
+      { key: "charging", label: "การชาร์จ", value: "Type-C", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
+      { key: "indicator", label: "ไฟสถานะ", value: "LED หลายสี", sourceStatus: "verified", sourceUrl: "https://www.infy.my/infy-device/" },
+    ],
+    sourceUrls: ["https://www.infy.my/infy-device/"],
+  },
   // Round list19 (19/10): warehouse facts only — the Max names "Pepo Salt Nic" / "Dundu Salt Nic" (nicotine type).
   "Eliquid-72": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
   // Round list19 (19/10): prepared, not published — the Max name "Graple Freebase" (nicotine type).
@@ -1718,6 +1770,36 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
 // ===================================================================================
 
 const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
+  // Image sweep (19/10): MQ Bar 22K — Kyoho Grape has the card device (violet ring as on its poster); the other 10 flavours = no-photo panel for now.
+  "MQ-BAR-22K": {
+    "Disposable-43-1": { kind: "official-photo", role: "detail", src: "/assets/products/mq-bar-22k/variant-disposable-43-1.webp", alt: "MQ Bar 22K Kyoho Grape disposable vape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's MQ Bar 22K Kyoho Grape poster", sourceUrl: "https://maneevp.com/wp-content/uploads/2026/09/mq-bar-22k-product-cover-800x800-1.webp" },
+  },
+  // Image sweep (19/10): Graple Freebase — its one option has the card bottle.
+  "GRAPLE-FREEBASE": {
+    "ELQ-2-1": { kind: "official-photo", role: "detail", src: "/assets/products/graple-freebase/variant-elq-2-1.webp", alt: "Graple freebase e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Graple poster", sourceUrl: "https://ihavevape.net/product/graple/" },
+  },
+  // Image sweep (19/10): INFY POD — 18 of 19 colours have a photo (re-shoots of INFY's own colour photos). Max's "Frost Pink" (Pod-158-11)
+  // is not on infy.my → no-photo panel (infy.my sells "Floss Pink", kept as its own maker colour — whether they are one colour is unconfirmed).
+  "INFY-POD": {
+    "Pod-158-1": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-1.webp", alt: "INFY POD device body, Premium Black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "Pod-158-2": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-2.webp", alt: "INFY POD device body, Pearl White, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "Pod-158-3": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-3.webp", alt: "INFY POD device body, Peach Pink, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "Pod-158-4": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-4.webp", alt: "INFY POD device body, Ruby Red, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "Pod-158-5": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-5.webp", alt: "INFY POD device body, Aster Purple, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "Pod-158-6": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-6.webp", alt: "INFY POD device body, Jade Pink, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "Pod-158-7": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-7.webp", alt: "INFY POD device body, Blue Violet, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "Pod-158-8": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-8.webp", alt: "INFY POD device body, Purple Moon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "Pod-158-9": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-9.webp", alt: "INFY POD device body, Ivory Pink, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "Pod-158-10": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-10.webp", alt: "INFY POD device body, Royal Silver, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "Pod-158-12": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-12.webp", alt: "INFY POD device body, Frost Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "Pod-158-13": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-13.webp", alt: "INFY POD device body, Champagne Gold, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "Pod-158-14": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-pod-158-14.webp", alt: "INFY POD device body, Moss Green, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "infy-pod-verified-flame-yellow": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-flame-yellow.webp", alt: "INFY POD device body, Flame Yellow, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "infy-pod-verified-floss-pink": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-floss-pink.webp", alt: "INFY POD device body, Floss Pink, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "infy-pod-verified-lime-green": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-lime-green.webp", alt: "INFY POD device body, Lime Green, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "infy-pod-verified-mimosa-yellow": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-mimosa-yellow.webp", alt: "INFY POD device body, Mimosa Yellow, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+    "infy-pod-verified-ocean-blue": { kind: "official-photo", role: "detail", src: "/assets/products/infy-pod/variant-ocean-blue.webp", alt: "INFY POD device body, Ocean Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from INFY's own device photo", sourceUrl: "https://www.infy.my/infy-device/" },
+  },
   // Round list19 (18/10): INFY PLUS — the one flavour with a re-shoot (Grape Jelly); the other 27 show the no-photo panel (the pods
   // differ only by the small printed flavour label; relabelling one photo would make up an image — IMAGE_SPEC §0 item 7).
   "Pod-169": {
@@ -2103,6 +2185,14 @@ export interface VerifiedAdditionalOptionValue {
 }
 
 export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOptionValue[]> = {
+  // Image sweep (19/10): infy.my sells the INFY Device in 19 colours (product pages infy-closed-pod-<colour>); these 5 are not in Max (Pod-158).
+  "INFY-POD": [
+    { code: "flame-yellow", label: "Flame Yellow", sourceUrl: "https://www.infy.my/product/infy-closed-pod-flame-yellow/" },
+    { code: "floss-pink", label: "Floss Pink", sourceUrl: "https://www.infy.my/product/infy-closed-pod-floss-pink/" },
+    { code: "lime-green", label: "Lime Green", sourceUrl: "https://www.infy.my/product/infy-closed-pod-lime-green/" },
+    { code: "mimosa-yellow", label: "Mimosa Yellow", sourceUrl: "https://www.infy.my/product/infy-closed-pod-mimosa-yellow/" },
+    { code: "ocean-blue", label: "Ocean Blue", sourceUrl: "https://www.infy.my/product/infy-closed-pod-ocean-blue/" },
+  ],
   // Round list19 (19/10): VOOPOO sells PnP X in 7 resistances; the warehouse (Coil-92) carries 0.15 / 0.2 / 0.3 / 0.6Ω.
   "Coil-92": [
     { code: "0-45ω", label: "0.45Ω", sourceUrl: "https://shop.voopoo.com/products/pnp-x-coils" },

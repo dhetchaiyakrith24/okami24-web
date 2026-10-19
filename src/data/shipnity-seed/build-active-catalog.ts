@@ -79,6 +79,9 @@ const MAX_LABEL_FIX: Record<string, string> = {
   "ELQ-3-4": "Ice Sparkling",
   // Round list19 (19/10): Graple Freebase — Max's one child is a Thai word for the grape bottle; the product name says grape.
   "ELQ-2-1": "Grape",
+  // Image sweep (19/10): INFY POD — two Max spellings of INFY's own colour names (infy.my/product/infy-closed-pod-<colour>).
+  "Pod-158-8": "Purple Moon",
+  "Pod-158-13": "Champagne Gold",
 };
 
 function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) | null {

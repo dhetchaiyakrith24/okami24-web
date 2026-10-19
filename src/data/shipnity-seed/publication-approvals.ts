@@ -227,14 +227,14 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // Round list19 (19/10): prepared, held until a card photo exists (IMAGE_SPEC §4) — Max ราคาขาย read 2026-10-17:
   // "SUPER-COOL-SALTNIC": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
   // "PUNTA-ICE": { sellingPrice: 150, lastPriceReview: "2026-10-19" },
-  // "INFY-POD": { sellingPrice: 690, lastPriceReview: "2026-10-19" },
+  "INFY-POD": { sellingPrice: 690, lastPriceReview: "2026-10-19" },
   // "VMATE-PRO-2": { sellingPrice: 890, lastPriceReview: "2026-10-19" },
   // owner-confirmed 2026-10-19: "ราคา Graple Freebase: ฿160.-" — one price for the parent and its option (Max says ฿795 parent / ฿159 child
   // until the admin updates it). Held until a card photo exists.
-  // "GRAPLE-FREEBASE": { sellingPrice: 160, lastPriceReview: "2026-10-19" },
+  "GRAPLE-FREEBASE": { sellingPrice: 160, lastPriceReview: "2026-10-19" },
   // owner-confirmed 2026-10-19: "ราคา MQ Bar 22K: ฿390.-" — one price for the parent and all 11 flavours (Max says ฿369 parent / ฿359
   // flavours until the admin updates it). Held until a card photo exists.
-  // "MQ-BAR-22K": { sellingPrice: 390, lastPriceReview: "2026-10-19" },
+  "MQ-BAR-22K": { sellingPrice: 390, lastPriceReview: "2026-10-19" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {
