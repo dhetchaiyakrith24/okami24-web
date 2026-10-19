@@ -3233,6 +3233,244 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
         "inStock": false
       }
     ]
+  },
+  "SUPER-COOL-SALTNIC": {
+    "maxParentId": "ELQ-6",
+    "name": "Super Cool Salt Nic",
+    "operationalSellingPrice": 269,
+    "children": [
+      {
+        "shipnityVariantId": "ELQ-6-1",
+        "rawLabel": "Grape Blast",
+        "sellingPrice": 269,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "ELQ-6-2",
+        "rawLabel": "Shine Muscat",
+        "sellingPrice": 269,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "ELQ-6-3",
+        "rawLabel": "Yacool",
+        "sellingPrice": 269,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "ELQ-6-4",
+        "rawLabel": "Laimoon",
+        "sellingPrice": 269,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "ELQ-6-5",
+        "rawLabel": "Blueraz Berry",
+        "sellingPrice": 269,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "ELQ-6-6",
+        "rawLabel": "Pinky Blush",
+        "sellingPrice": 269,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "ELQ-6-7",
+        "rawLabel": "King Melon",
+        "sellingPrice": 269,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "ELQ-6-8",
+        "rawLabel": "Strawberry Frost",
+        "sellingPrice": 269,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "ELQ-6-9",
+        "rawLabel": "White Polo",
+        "sellingPrice": 269,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "ELQ-6-10",
+        "rawLabel": "Black Hexx",
+        "sellingPrice": 269,
+        "inStock": true
+      }
+    ]
+  },
+  "PUNTA-ICE": {
+    "maxParentId": "eliquid-78",
+    "name": "Punta Ice",
+    "operationalSellingPrice": 150,
+    "children": [
+      {
+        "shipnityVariantId": "eliquid-78-1",
+        "rawLabel": "Grape Ice",
+        "sellingPrice": 150,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "eliquid-78-2",
+        "rawLabel": "Mint Bubblegum",
+        "sellingPrice": 150,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "eliquid-78-3",
+        "rawLabel": "Guava Ice",
+        "sellingPrice": 150,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "eliquid-78-4",
+        "rawLabel": "Bubblegum Ice",
+        "sellingPrice": 150,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "eliquid-78-5",
+        "rawLabel": "Peach Mango Watermelon",
+        "sellingPrice": 150,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "eliquid-78-6",
+        "rawLabel": "Mango Bubblegum",
+        "sellingPrice": 150,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "eliquid-78-7",
+        "rawLabel": "Peach Ice",
+        "sellingPrice": 150,
+        "inStock": true
+      }
+    ]
+  },
+  "INFY-POD": {
+    "maxParentId": "Pod-158",
+    "name": "INFY POD",
+    "operationalSellingPrice": 690,
+    "children": [
+      {
+        "shipnityVariantId": "Pod-158-1",
+        "rawLabel": "Premium Black",
+        "sellingPrice": 690,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-158-2",
+        "rawLabel": "Pearl White",
+        "sellingPrice": 690,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-158-3",
+        "rawLabel": "Peach Pink",
+        "sellingPrice": 690,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-158-4",
+        "rawLabel": "Ruby Red",
+        "sellingPrice": 690,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-158-5",
+        "rawLabel": "Aster Purple",
+        "sellingPrice": 690,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-158-6",
+        "rawLabel": "Jade Pink",
+        "sellingPrice": 690,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-158-7",
+        "rawLabel": "Blue Violet",
+        "sellingPrice": 690,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-158-8",
+        "rawLabel": "Purple Mood",
+        "sellingPrice": 690,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-158-9",
+        "rawLabel": "Ivory Pink",
+        "sellingPrice": 690,
+        "inStock": true
+      },
+      {
+        "shipnityVariantId": "Pod-158-10",
+        "rawLabel": "Royal Silver",
+        "sellingPrice": 690,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-158-11",
+        "rawLabel": "Frost Pink",
+        "sellingPrice": 690,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-158-12",
+        "rawLabel": "Frost Blue",
+        "sellingPrice": 690,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-158-13",
+        "rawLabel": "Champange Gold",
+        "sellingPrice": 690,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-158-14",
+        "rawLabel": "Moss Green",
+        "sellingPrice": 690,
+        "inStock": true
+      }
+    ]
+  },
+  "VMATE-PRO-2": {
+    "maxParentId": "Pod-176",
+    "name": "Vmate Pro 2",
+    "operationalSellingPrice": 890,
+    "children": [
+      {
+        "shipnityVariantId": "Pod-176-1",
+        "rawLabel": "Glit Black",
+        "sellingPrice": 890,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-176-2",
+        "rawLabel": "Space Grey",
+        "sellingPrice": 890,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-176-3",
+        "rawLabel": "Navy Blue",
+        "sellingPrice": 890,
+        "inStock": false
+      },
+      {
+        "shipnityVariantId": "Pod-176-4",
+        "rawLabel": "Neon",
+        "sellingPrice": 890,
+        "inStock": false
+      }
+    ]
   }
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2"];
