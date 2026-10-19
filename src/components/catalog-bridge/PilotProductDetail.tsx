@@ -233,6 +233,7 @@ export function PilotProductDetail({
                 orderingEnabled={orderingEnabled}
                 slug={product.slug}
                 variantId={selectedVariantId}
+                productCode={selectedVariantId ?? product.slug}
                 productName={product.displayName}
                 variantLabel={selectedVariant?.label ?? null}
                 choiceMissingLabel={choiceMissingLabel}
@@ -348,7 +349,7 @@ export function PilotProductDetail({
       {product.sourceUrls.length > 0 && <SourceNote product={product} />}
       {showBuy && (
         <MobileBuyBar priceText={`฿${product.sellingPrice!.toLocaleString("th-TH")}`} optionLabel={selectedVariant?.label ?? null}>
-          <ProductBuyAction available={available} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} choiceMissingLabel={choiceMissingLabel} compact />
+          <ProductBuyAction available={available} orderingEnabled={orderingEnabled} slug={product.slug} variantId={selectedVariantId} productCode={selectedVariantId ?? product.slug} productName={product.displayName} variantLabel={selectedVariant?.label ?? null} choiceMissingLabel={choiceMissingLabel} compact />
         </MobileBuyBar>
       )}
     </>

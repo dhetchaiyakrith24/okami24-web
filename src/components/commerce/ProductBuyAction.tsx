@@ -43,6 +43,7 @@ export function ProductBuyAction({
   noteClassName = "text-xs text-foreground-muted hover:text-foreground",
   compact = false,
   choiceMissingLabel = null,
+  productCode,
 }: {
   available: boolean;
   orderingEnabled: boolean;
@@ -57,6 +58,8 @@ export function ProductBuyAction({
    *  have no photos opens with nothing pre-selected). Not a stock state — "out of stock" must never show for it.
    *  Cart mode shows a disabled button with this label; LINE mode orders as usual (the chat asks the option). */
   choiceMissingLabel?: string | null;
+  /** 19/10 LINE ready-message: the code the admin looks up (published: the picked Shipnity variant code). Default = slug. */
+  productCode?: string;
 }) {
   const { dict } = useLocale();
 
@@ -90,7 +93,7 @@ export function ProductBuyAction({
 
   if (!orderingEnabled) {
     /* Online ordering off (owner 2026-09-07): same slot, same weight, LINE instead of the cart. */
-    return <OrderViaLineButton productName={productName} variantLabel={variantLabel} hideHint={compact} />;
+    return <OrderViaLineButton productName={productName} variantLabel={variantLabel} hideHint={compact} productCode={productCode ?? slug} />;
   }
 
   return (
