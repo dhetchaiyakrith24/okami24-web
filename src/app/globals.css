@@ -970,6 +970,20 @@ html:lang(th) .label-mono:not(:lang(en)) {
   .okh-d { display: block; font-size: 0.8125rem; line-height: 1.5; color: var(--foreground-muted); }
 }
 
+/* --- the lead line down the page (HomeLeadLine) --- */
+.okh-lead {
+  position: absolute;
+  inset: 0 0 auto 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 5;
+  overflow: visible;
+}
+.okh-lead-line { opacity: 0.55; }
+@media (min-width: 64rem) {
+  .okh-lead-line { opacity: 0.9; }
+}
+
 /* --- still: reduced motion / Save-Data (the ribbons draw one frame; HeroShowcase stops rotating) --- */
 @media (prefers-reduced-motion: reduce) {
   .okh-float, .okh-prod[data-state="on"] .okh-sheen, .okh-meta { animation: none; }
