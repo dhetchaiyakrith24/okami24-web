@@ -11,18 +11,17 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 20/10 ~06:00 = #639 2d2ee03d (flow light + tab 04 IQOS TEREA)
-  [ตรวจแล้ว deploy run 39330815360 success · curl / 200 with okh-flow-stage + the new tab line] · open PRs: `gh pr list`
-  (#640 draft = mine, below · #637 draft = parked, below). Standing rules this block used to repeat live in TEAM_RULES 13.6 / 13.7 ·
-  §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
+1 main: `git fetch && git log -1 --oneline origin/main` · 20/10 ~07:00 = #640 e74d6835 (flow light laid as you scroll + leading knot)
+  — deploy + live check: see the end of the 20/10 report (curl / 200 + new bundle) · open PRs: `gh pr list` (#637 draft = parked,
+  below). Standing rules this block used to repeat live in TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
 2 worktrees = `git worktree list` (each side chat's own, nested under `.claude/worktrees/` and `_incoming/`) ·
   `_incoming/wt-stock` = stock round (own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
-  Hero round trees (own node_modules): `_incoming/hero-2010/wt-3421` = main fd608092 build (before side), test server 3421 RUNNING ·
-  `wt-3422` = branch hero-scroll-2010, server 3422 RUNNING at d5b5661f · `wt-3423` = branch home-types-2010, server 3423 RUNNING at
-  428ef199 (OLD — rebuild at the branch head before any proof). Stop them when the round closes.
-  Branches ahead of main (none checked unless said): hero-scroll-2010 = d5b5661f (#640 draft) · home-types-2010 = 428ef199 + 9fd0ff81
-  + merge 5b6f4180 (main merged in, no PR yet) · hero-ground = #637 draft (parked).
-3 MAIN CHAT MOVED 20/10 ~06:00 at ~64 % context (3h). Owner 20/10: "หยุดงานอื่นและ Focus แค่งานนี้" = the HOMEPAGE only (3h below).
+  Hero round trees (own node_modules): `_incoming/hero-2010/wt-3421` = old main fd608092 build, test server 3421 RUNNING ·
+  `wt-3422` = branch hero-scroll-2010 (merged), server 3422 RUNNING at fcde39bf (= #640 site code) · `wt-3423` = branch
+  home-types-2010, server 3423 RUNNING at 428ef199 (OLD — merge origin/main and rebuild at the branch head before any proof).
+  Stop them when the round closes. Branches ahead of main (none checked): home-types-2010 = 428ef199 + 9fd0ff81 + merge 5b6f4180
+  (needs origin/main merged again — #640 touched hero-ribbons/HomeFlow/home-hero.ts, home-types did not) · hero-ground = #637 draft (parked).
+3 MAIN CHAT MOVED 20/10 ~07:00 at ~70 % context (3h; owner paused for the night). Owner 20/10: "หยุดงานอื่นและ Focus แค่งานนี้" = the HOMEPAGE only (3h below).
   Both side lines parked (line 1 = image sweep · line 2 = SEO) — see 3i / 3s. Side chats = linked chats only (TEAM_RULES 13.6) · the owner
   gets 2 combined summaries a day · Friday's running notes (not in git) = `_incoming/friday-queue.md`.
 3h ROUND "homepage hero" = `docs/rounds/รอบหน้าแรก-hero-20-10.txt` (brief `_incoming/hero-brief.md` · approved draft `_incoming/hero-draft/`).
@@ -33,11 +32,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   16 px blur, `.okh-flow` scoped to the homepage), fades to a 10 % glow behind boxless text, pulses in place; ribbon colour leans
   to the logo red; hero tab 04 = "IQOS TEREA" + "ก้าน TEREA ให้ฟีลสูบคล้ายบุหรี่จริง". Checker r1 FAIL (sharp line through text) →
   r2 PASS 3b04b711. Owner on the clip: "ประมาณนี้ได้ละ" + "เก็บแบบฉบับนี้ไว้" (= keep it restorable).
+  LIVE #640 e74d6835 (owner "Merge ได้เลย" after the clips): FLOW_DRAW_ON_SCROLL + FLOW_GLOW_ON_SCROLL = true in
+  `src/data/home-hero.ts` — the line is laid as you scroll (nothing waits below; scrolling up retracts) and a bright knot leads the
+  eye at ~60 % of the screen (lines pinch + bloom, owner's reference stills; +15 % brightness/bloom on his ask); both false = #639
+  exactly (checker r2 PASS fcde39bf). Owner's last word 20/10 ~06:40: "พักงานก่อน พรุ่งนี้ว่ากันใหม่".
+  Checker taste notes (not blocking): on fast scrolls the knot sits ~30–40 % down the screen (easing) · phone knot smaller ·
+  the knot's 55 % floor behind a heading reads "just passes" on Owner eye 5.
   NEXT, in this order:
-  a) #640 draft (hero-scroll-2010 d5b5661f, NOT checked): FLOW_DRAW_ON_SCROLL (line laid as you scroll, nothing waiting below) +
-     FLOW_GLOW_ON_SCROLL (glow where you scroll) in `src/data/home-hero.ts`, both true; both false = #639. Clips sent to the owner
-     (`_incoming/hero-lead/fix3/flow3-{d,m}.mp4`) — owner's verdict not in yet. Then: Lighthouse after + gate + checker (tier B) → merge.
-  b) home-types-2010 (no PR yet, NOT checked; draft shots sent to the owner, no objection yet): homepage by TYPE — HomeTypeSection +
+  a) home-types-2010 (no PR yet, NOT checked; draft shots sent to the owner, no objection yet): homepage by TYPE — HomeTypeSection +
      `src/data/home-sections.ts` (Pod System · Switch Pod · Disposable · IQOS TEREA, every product as the shop's own cards, Friday's
      picks first, phone 6 cards + "ดูทั้งหมด N รุ่น"); cut the flagship / Caliburn / VOOPOO rails, both editorial blocks, flavour
      teaser; Catalog Index → closed <details> box per category; guides heading "คู่มือเลือกซื้อ" (owner cut "บอกตรง ๆ").
@@ -45,7 +47,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
      taglines (RELX Infinity 2 Plus "3 | โหมด", a "Turbo" last word — same kind of flags already on category pages, data-round
      item) · Lighthouse 3423 LCP 6086 / TBT 93 / 0.77 vs 3422 5812 / 59 / 0.78 measured while the checker loaded the machine →
      RE-MEASURE idle; if still worse, lighter cards above the fold. Rebuild 3423 at the branch head, then PR → gate → checker.
-  c) Item 1 (hero product scenes): owner said "1 ได้ครับ" = spend existing Higgsfield credits on ONE Caliburn G5 scene test.
+  b) Item 1 (hero product scenes): owner said "1 ได้ครับ" = spend existing Higgsfield credits on ONE Caliburn G5 scene test.
      The Higgsfield MCP generate_image call was DENIED by the permission system twice (also after the owner's yes, he was on the
      phone) — not retried. Ask him to approve the prompt from the desktop, or run it through the Higgsfield web app in Chrome.
      Refs already uploaded (media ids in `_incoming/hero-scenes/ref/` names g5/mswitch/infy/iluma1 · ids 876b8fcb… / 7a18b6a1… /
@@ -56,7 +58,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   comparisons — owner's own words, told him, kept.
   Earlier queue (owner 20/10 ~02:30, opinion given): phone product cards compact (keep 2 columns, square photo) · LINE order message
   without the page URL — `_incoming/friday-queue.md`.
-  Round close (skill round-close, tag hero-2010) when a)–c) land; stop test servers 3421–3423.
+  Round close (skill round-close, tag hero-2010) when a)–b) land; stop test servers 3421–3423.
   House rounds 15–16/10 (#484 … #500, #508, #510) DONE — what they built lives in its home (skill house-clean · TEAM_RULES 13.3 #1 ·
   skills find-skills / content-strategy · `docs/seo-audit/`); the 16/10 artifact mistake = LESSONS พ31; full text =
   `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
