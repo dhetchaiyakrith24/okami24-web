@@ -16,7 +16,7 @@ import { getBrand } from "@/data/brands";
  * ESKO BAR = eskobar.com logo file. SVG paths are unchanged, only the fill set to white (read 20/10/2026).
  *
  * The first 8 logos are real links inside a <nav> (alt = brand name = the link's name); the loop copies are aria-hidden,
- * alt="" and out of the tab order. Hover / focus pauses the strip; reduced motion = a still row scrolled by hand (globals.css).
+ * alt="" and out of the tab order. Logos load lazily at low priority: 8 eager files cost the phone LCP ~300 ms (Lighthouse 20/10). Hover / focus pauses the strip; reduced motion = a still row scrolled by hand (globals.css).
  */
 const STRIP_LOGOS = [
   { id: "voopoo", src: "/assets/brands/voopoo-logo.png", ratio: 728 / 120 },
@@ -68,7 +68,7 @@ export function BrandMarquee() {
               style={{ "--mw": `${item.m.w}px`, "--mh": `${item.m.h}px`, "--dw": `${item.d.w}px`, "--dh": `${item.d.h}px` } as React.CSSProperties}
             >
               {/* eslint-disable-next-line @next/next/no-img-element -- tiny white logo files (SVG / PNG) with explicit sizes; nothing for the optimizer to do */}
-              <img src={item.src} alt={clone ? "" : item.brand.name} width={item.m.w} height={item.m.h} loading={clone ? "lazy" : "eager"} decoding="async" draggable={false} />
+              <img src={item.src} alt={clone ? "" : item.brand.name} width={item.m.w} height={item.m.h} loading="lazy" decoding="async" fetchPriority="low" draggable={false} />
             </Link>
           );
         })}
