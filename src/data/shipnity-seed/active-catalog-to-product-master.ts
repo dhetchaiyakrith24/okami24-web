@@ -1336,8 +1336,9 @@ interface VerifiedSpecEntry {
 const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
   // Round list19 (19/10): warehouse facts only — the Max names "Pepo Salt Nic" / "Dundu Salt Nic" (nicotine type).
   "Eliquid-72": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
-  // Round list19 (19/10): prepared, not published — the Max name "Super Cool Salt Nic" (nicotine type).
+  // Round list19 (19/10): prepared, not published — the Max name "Graple Freebase" (nicotine type).
   "GRAPLE-FREEBASE": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "freebase", sourceStatus: "verified" }], sourceUrls: [] },
+  // Round list19 (19/10): prepared, not published — the Max name "Super Cool Salt Nic" (nicotine type).
   "SUPER-COOL-SALTNIC": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
   "Eliquid-73": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
   // Round list19 (19/10): warehouse facts only — the Max name "Marbo Freebase ขวดยาว" (nicotine type).

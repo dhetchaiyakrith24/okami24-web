@@ -166,7 +166,8 @@ function fromMaxOnly(id: string): RawActiveParent {
     sourcePages: [],
     children: children.map((c) => {
       const pre = MAX_ONLY_LABEL_PREFIX[id];
-      return { shipnityVariantId: c.shipnityVariantId, rawLabel: pre && c.rawLabel.startsWith(pre) ? c.rawLabel.slice(pre.length) : c.rawLabel };
+      const fixed = MAX_LABEL_FIX[c.shipnityVariantId];
+      return { shipnityVariantId: c.shipnityVariantId, rawLabel: fixed ?? (pre && c.rawLabel.startsWith(pre) ? c.rawLabel.slice(pre.length) : c.rawLabel) };
     }),
   };
 }
