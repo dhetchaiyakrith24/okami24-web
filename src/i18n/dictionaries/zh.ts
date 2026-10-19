@@ -67,6 +67,24 @@ export const zh: Dictionary = {
     statFamilies: "产品系列",
     viewProduct: "查看 →",
   },
+  // Round "หน้าแรก hero" (owner 20/10) — thai-copy option A, translated from the Thai.
+  heroShowcase: {
+    kicker: "Pod System · 电子烟",
+    headingLine1: "选对那一款，",
+    headingAccent: "从这里开始。",
+    lede1: "每种类型用法各不相同。你可以按自己的节奏逐一了解，",
+    lede2: "也可以让我们帮你推荐。",
+    ctaFinder: "使用选购助手",
+    ctaAll: "浏览全部产品",
+    viewCategory: "查看此类全部型号",
+    tabsLabel: "产品类型",
+    types: {
+      "pod-systems": { label: "烟弹系统", desc: "自己加注烟油，烟弹和雾化芯都可以更换。" },
+      "switch-pods": { label: "换弹式设备", desc: "主机留着继续用，烟油用完只换烟弹。" },
+      "disposables": { label: "一次性电子烟", desc: "开箱即可使用，无需加注烟油。" },
+      "heated-tobacco-devices": { label: "加热烟草设备", desc: "加热 TEREA 烟支中的烟草，无需烟油。" },
+    },
+  },
   // Round 30.3ข: plain, meaning-for-meaning Chinese for the homepage sections (owner: en/zh only
   // need to be accurate and non-empty). Brand and model names stay as in the English original.
   home: {

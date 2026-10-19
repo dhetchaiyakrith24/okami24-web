@@ -75,6 +75,24 @@ export const th: Dictionary = {
     statFamilies: "ตระกูลสินค้า",
     viewProduct: "ดูสินค้า →",
   },
+  // Round "หน้าแรก hero" (owner 20/10) — thai-copy option A.
+  heroShowcase: {
+    kicker: "Pod System · บุหรี่ไฟฟ้า",
+    headingLine1: "เลือกรุ่นที่ใช่",
+    headingAccent: "เริ่มจากตรงนี้",
+    lede1: "แต่ละแบบใช้งานต่างกัน จะดูทีละแบบตามสบาย",
+    lede2: "หรือจะให้เราช่วยแนะนำก็ได้",
+    ctaFinder: "ใช้ตัวช่วยเลือกสินค้า",
+    ctaAll: "ดูสินค้าทั้งหมด",
+    viewCategory: "ดูรุ่นในหมวดนี้",
+    tabsLabel: "ประเภทสินค้า",
+    types: {
+      "pod-systems": { label: "พอตซิสเต็ม", desc: "เติมน้ำยาเอง และเปลี่ยนหัวพอตหรือคอยล์ได้" },
+      "switch-pods": { label: "พอตเปลี่ยนหัว", desc: "ตัวเครื่องใช้ต่อได้ น้ำยาหมดก็เปลี่ยนแค่หัวพอต" },
+      "disposables": { label: "พอตใช้แล้วทิ้ง", desc: "แกะกล่องแล้วสูบได้เลย ไม่ต้องเติมน้ำยา" },
+      "heated-tobacco-devices": { label: "เครื่องอุ่นยาสูบ", desc: "อุ่นยาสูบในก้าน TEREA ไม่ต้องใช้น้ำยา" },
+    },
+  },
   // Round 30.3ข — every sentence here was approved by the owner from thai-copy's before→after
   // table (docs/THAI_STYLE.md §7 "รอบ 30.3ข"). Locked words only (THAI_STYLE §3).
   home: {

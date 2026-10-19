@@ -1,3 +1,4 @@
+import type { HeroType } from "@/data/home-hero";
 /**
  * Phase 3.2 first i18n slice — deliberately NOT the whole site. Covers: header/nav, footer nav,
  * the homepage hero, the search page + tool, and CatalogBrowser's generic controls. Brand names,
@@ -70,6 +71,22 @@ export interface Dictionary {
     statBrands: string;
     statFamilies: string;
     viewProduct: string;
+  };
+  /** Round "หน้าแรก hero" (owner 20/10, thai-copy option A): the new homepage hero (HeroShowcase).
+   *  `kicker` is the small first line INSIDE the H1, so the words locked for the home H1 stay in it
+   *  (THAI_STYLE §3 round 8 — "Pod System" + "บุหรี่ไฟฟ้า"). `lede2` never breaks inside itself (it is
+   *  the lede's second line at 390). `types` is keyed by category slug (src/data/home-hero.ts). */
+  heroShowcase: {
+    kicker: string;
+    headingLine1: string;
+    headingAccent: string;
+    lede1: string;
+    lede2: string;
+    ctaFinder: string;
+    ctaAll: string;
+    viewCategory: string;
+    tabsLabel: string;
+    types: Record<HeroType, { label: string; desc: string }>;
   };
   /** Round 30.3ข (owner, 2026-09-11): the homepage sections below the hero — every H2, the lede
    *  under it, the two editorial paragraphs, and the section CTAs/labels — used to be English

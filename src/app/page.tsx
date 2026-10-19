@@ -5,6 +5,10 @@ import { brands } from "@/data/brands";
 import { guides } from "@/data/guides";
 import { HomeIntro } from "@/components/home/HomeIntro";
 import { Hero } from "@/components/home/Hero";
+import { HeroShowcase, type HeroSlotView } from "@/components/home/HeroShowcase";
+import { DESKTOP_INTRO, HOME_HERO_SLOTS, PHONE_HERO } from "@/data/home-hero";
+import { getCatalogItem } from "@/lib/catalog-index";
+import { getCategory } from "@/data/categories";
 import { BrandMarquee } from "@/components/home/BrandMarquee";
 import { CategoryNav } from "@/components/home/CategoryNav";
 import { ProductRailSection } from "@/components/home/ProductRailSection";
@@ -27,6 +31,23 @@ export default function Home() {
   const caliburnFamily = getProductsByFamily("caliburn");
   const voopooProducts = getProductsByBrand("voopoo");
   const mBar10k = getProduct("m-bar-10k")!;
+
+  // The hero's four slots (src/data/home-hero.ts), resolved here so the client component only gets
+  // the four small records it shows. A product that is no longer visible, or has no card photo,
+  // drops its slot rather than breaking the hero.
+  const heroSlots: HeroSlotView[] = HOME_HERO_SLOTS.flatMap(({ type, product }) => {
+    const item = getCatalogItem(product);
+    const category = getCategory(type);
+    if (!item?.image || !category) return [];
+    return [{
+      type,
+      categoryHref: `/products/${category.slug}`,
+      productHref: item.href,
+      name: item.name,
+      brand: item.brandName ?? "",
+      image: item.image,
+    }];
+  });
 
   // The hero's two counters used to be hardcoded ("28 products", "3 brands") and had drifted far
   // from the catalog — /products already showed 53. Both are now counted from the same two sources
@@ -64,8 +85,21 @@ export default function Home() {
             'try{var c=navigator.connection;if(c&&(c.saveData||/(^|-)2g$/.test(c.effectiveType||"")))document.documentElement.dataset.okamiLite="1"}catch(e){}',
         }}
       />
-      <HomeIntro />
-      <Hero flagship={flagship} backdrop={mBar10k} productCount={productCount} brandCount={brandCount} />
+      {DESKTOP_INTRO ? <HomeIntro /> : null}
+      {/* Round "หน้าแรก hero" (owner 20/10): the new hero everywhere; PHONE_HERO = "classic" puts the
+          previous phone hero (Hero.tsx) back below 64rem in one step, desktop keeps the new one. */}
+      {PHONE_HERO === "classic" ? (
+        <>
+          <div className="lg:hidden">
+            <Hero flagship={flagship} backdrop={mBar10k} productCount={productCount} brandCount={brandCount} />
+          </div>
+          <div className="hidden lg:block">
+            <HeroShowcase slots={heroSlots} />
+          </div>
+        </>
+      ) : (
+        <HeroShowcase slots={heroSlots} />
+      )}
       <BrandMarquee />
       <CategoryNav />
 

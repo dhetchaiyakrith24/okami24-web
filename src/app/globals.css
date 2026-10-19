@@ -673,3 +673,308 @@ html:lang(th) .label-mono:not(:lang(en)) {
 @media (prefers-reduced-motion: reduce) {
   .line-order-card { animation: line-order-fade 180ms ease-out; }
 }
+
+/* ==========================================================================
+   Homepage hero "showcase" (round "หน้าแรก hero", owner 20/10 — HeroShowcase.tsx; the draft he
+   approved = _incoming/hero-draft/). Phone first; the desktop layout starts at lg (64rem), the
+   same breakpoint as the header and HomeIntro.
+   ========================================================================== */
+.okh {
+  /* the hero leaves room for the brand strip and the top of the category tiles to peek in */
+  min-height: calc(100svh - 4rem - 140px);
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 40rem) {
+  .okh { min-height: calc(100svh - 5rem - 140px); }
+}
+.okh::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 140px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--surface-0));
+}
+.okh-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.okh-glow {
+  filter: blur(28px);
+  mix-blend-mode: screen;
+}
+.okh-grid {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "copy" "stage" "tabs" "cta";
+  align-content: start;
+  padding-top: 1.375rem;
+}
+.okh-copy { grid-area: copy; }
+.okh-stage { grid-area: stage; }
+.okh-tabs { grid-area: tabs; }
+.okh-cta { grid-area: cta; }
+
+/* --- copy --- */
+.okh-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--foreground-dim);
+}
+.okh-kicker i {
+  display: block;
+  width: 1.75rem;
+  height: 1px;
+  background: var(--accent-ember);
+}
+.okh-h1 {
+  display: block;
+  font-size: 2.75rem;
+  line-height: 1.14;
+  letter-spacing: -0.005em;
+}
+.okh-lede {
+  margin-top: 0.625rem;
+  font-size: 0.90625rem;
+  line-height: 1.55;
+  color: var(--foreground-muted);
+}
+
+/* --- buttons --- */
+.okh-cta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.625rem;
+  margin: 1rem 0 0.5rem;
+}
+.okh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  height: 3.125rem;
+  padding: 0 1.25rem;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: background-color 0.25s, border-color 0.25s, transform 0.25s;
+}
+.okh-btn svg { width: 1rem; height: 1rem; }
+.okh-btn-primary {
+  background: var(--accent-ember);
+  color: #160803;
+  box-shadow: 0 0 0 1px rgba(255, 131, 71, 0.5), 0 10px 40px -10px rgba(255, 106, 44, 0.7);
+}
+.okh-btn-primary:hover { background: var(--accent-ember-strong); transform: translateY(-1px); }
+.okh-btn-ghost { border: 1px solid var(--surface-border); color: var(--foreground); }
+.okh-btn-ghost:hover { border-color: var(--foreground-dim); }
+
+/* --- stage: the product --- */
+.okh-stage {
+  position: relative;
+  height: clamp(230px, 36svh, 330px);
+  margin-top: 0.25rem;
+}
+.okh-floor {
+  position: absolute;
+  left: 50%;
+  bottom: 7%;
+  width: 62%;
+  height: 14%;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(255, 106, 44, 0.32), rgba(255, 106, 44, 0));
+  filter: blur(6px);
+}
+.okh-prod {
+  position: absolute;
+  inset: 0 -4% 4% 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(28px) scale(0.95);
+  filter: blur(10px);
+  transition: opacity 0.9s ease, transform 1.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.9s ease;
+}
+.okh-prod[data-state="on"] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  pointer-events: auto;
+  transition-delay: 0.35s;
+}
+.okh-prod[data-state="out"] {
+  opacity: 0;
+  transform: translateY(-22px) scale(1.02);
+  filter: blur(10px);
+  transition-duration: 0.7s;
+  transition-delay: 0s;
+}
+.okh-float {
+  position: relative;
+  display: block;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  animation: okh-float 7s ease-in-out infinite;
+}
+.okh-float img {
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 106, 44, 0.12));
+}
+/* one thin warm reflection crosses the device as it arrives — clipped to its own silhouette */
+.okh-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  -webkit-mask: var(--okh-mask) center / contain no-repeat;
+  mask: var(--okh-mask) center / contain no-repeat;
+  background: linear-gradient(105deg, transparent 47%, rgba(255, 225, 200, 0.28) 50%, transparent 53%);
+  background-size: 260% 100%;
+  background-position: 130% 0;
+}
+.okh-prod[data-state="on"] .okh-sheen {
+  animation: okh-sheen 2.2s cubic-bezier(0.4, 0, 0.2, 1) 0.7s 1 both;
+}
+@keyframes okh-sheen { from { background-position: 130% 0; } to { background-position: -40% 0; } }
+@keyframes okh-float { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
+
+.okh-meta {
+  position: absolute;
+  left: 0;
+  bottom: 12%;
+  z-index: 1;
+  isolation: isolate;
+  max-width: 52%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  animation: okh-meta-in 0.6s ease 0.5s both;
+}
+.okh-meta::before {
+  content: "";
+  position: absolute;
+  inset: -30px -40px;
+  z-index: -1;
+  background: radial-gradient(closest-side, rgba(14, 14, 16, 0.7), rgba(14, 14, 16, 0));
+  pointer-events: none;
+}
+@keyframes okh-meta-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.okh-idx { font-size: 0.625rem; letter-spacing: 0.14em; color: var(--accent-ember); }
+.okh-name { font-size: 1.375rem; font-weight: 600; line-height: 1.15; color: var(--foreground); }
+.okh-name:hover { color: var(--accent-ember-strong); }
+.okh-brand { font-size: 0.625rem; letter-spacing: 0.14em; color: var(--foreground-dim); }
+.okh-go {
+  margin-top: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--foreground);
+  border-bottom: 1px solid rgba(255, 106, 44, 0.6);
+  padding-bottom: 0.1875rem;
+}
+.okh-go:hover { color: var(--accent-ember-strong); }
+
+/* --- type tabs + progress --- */
+.okh-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.375rem;
+}
+.okh-tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-height: 2.75rem;
+  padding-top: 0.75rem;
+  text-align: left;
+  color: var(--foreground-dim);
+  cursor: pointer;
+}
+.okh-tab::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--surface-border);
+}
+.okh-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  width: 0;
+  background: var(--accent-ember);
+  box-shadow: 0 0 10px var(--accent-ember);
+}
+.okh-bar[data-run] { animation: okh-progress 6.5s linear both; }
+.okh-bar[data-full] { width: 100%; }
+.okh-tabs[data-paused] .okh-bar { animation-play-state: paused; }
+@keyframes okh-progress { from { width: 0; } to { width: 100%; } }
+.okh-n { font-size: 0.625rem; letter-spacing: 0.14em; }
+.okh-n em { display: none; font-style: normal; }
+.okh-t { font-size: 0.75rem; line-height: 1.35; font-weight: 500; color: var(--foreground-muted); transition: color 0.4s; }
+.okh-d { display: none; }
+.okh-tab[aria-pressed="true"] .okh-n { color: var(--accent-ember); }
+.okh-tab[aria-pressed="true"] .okh-t,
+.okh-tab:hover .okh-t { color: var(--foreground); }
+
+/* --- desktop --- */
+@media (min-width: 64rem) {
+  .okh { min-height: calc(100svh - 5rem); }
+  .okh::after { height: 140px; }
+  .okh-grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-rows: 1fr auto auto 1fr auto;
+    grid-template-areas: ". stage" "copy stage" "cta stage" ". stage" "tabs tabs";
+    column-gap: 1.5rem;
+    align-content: stretch;
+    padding-top: 2.5rem;
+    padding-bottom: 2.125rem;
+  }
+  .okh-copy { max-width: 37.5rem; }
+  .okh-kicker { margin-bottom: 1.5rem; }
+  .okh-h1 { font-size: clamp(2.75rem, 2rem + 3.4vw, 5.375rem); line-height: 1.08; }
+  .okh-lede { margin-top: 1.625rem; font-size: 1.125rem; line-height: 1.65; }
+  .okh-cta { display: flex; flex-wrap: wrap; margin: 1.625rem 0 0; gap: 0.75rem; }
+  .okh-btn { height: 3.25rem; padding: 0 1.625rem; }
+  .okh-stage { height: min(74vh, 700px); align-self: center; margin: 0 0 1.5rem; }
+  .okh-prod { inset: 0 0 6% 0; justify-content: center; }
+  .okh-float { height: 96%; }
+  .okh-meta { left: auto; right: 0; bottom: 12%; max-width: none; align-items: flex-end; text-align: right; gap: 0.5rem; }
+  .okh-idx, .okh-brand { font-size: 0.6875rem; }
+  .okh-name { font-size: 1.875rem; }
+  .okh-go { font-size: 0.875rem; }
+  .okh-tabs { gap: 1.5rem; margin-top: 0; }
+  .okh-tab { padding-top: 1.125rem; gap: 0.375rem; }
+  .okh-n { font-size: 0.6875rem; }
+  .okh-n em { display: inline; }
+  .okh-t { font-size: 1rem; }
+  .okh-d { display: block; font-size: 0.8125rem; line-height: 1.5; color: var(--foreground-muted); }
+}
+
+/* --- still: reduced motion / Save-Data (the ribbons draw one frame; HeroShowcase stops rotating) --- */
+@media (prefers-reduced-motion: reduce) {
+  .okh-float, .okh-prod[data-state="on"] .okh-sheen, .okh-meta { animation: none; }
+  .okh-prod { transition: opacity 0.3s ease; transform: none; filter: none; }
+  .okh-bar[data-run] { animation: none; width: 100%; }
+}
+html[data-okami-lite="1"] .okh-float,
+html[data-okami-lite="1"] .okh-prod[data-state="on"] .okh-sheen { animation: none; }
+html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; width: 100%; }
