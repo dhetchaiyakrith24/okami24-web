@@ -2731,7 +2731,7 @@ const allGuides: Guide[] = [
         heading: "IQOS ILUMA i รีเซ็ตยังไง",
         paragraphs: [
           "IQOS ILUMA i รีเซ็ตด้วยการวาง Holder ไว้ใน Pocket Charger แล้วกดปุ่มของ Pocket Charger ค้างไว้ 10 วินาที เมื่อไฟดับ กะพริบสองครั้ง แล้วติดขึ้นมาใหม่ แปลว่ารีเซ็ตเสร็จ ถ้าเครื่องของคุณเป็น ILUMA i PRIME แนะนำให้ดูวิธีรีเซ็ตในคู่มือที่มากับกล่อง",
-          "บทความนี้เขียนสำหรับ [IQOS ILUMA i](/products/iqosheet-18) และ [IQOS ILUMA i PRIME](/products/iqosheet-16) ที่มีบนเว็บเรา ข้อมูลทั้งหมดมาจาก[หน้าช่วยเหลือของ IQOS](https://www.iqos.com/gb/en/support/faq/get-to-know-your-iqos-ilumai.html) ถ้าเครื่องของคุณเป็นรุ่นอื่น แนะนำให้ดูคู่มือของรุ่นนั้นแทน เพราะวิธีกดและความหมายของไฟในแต่ละรุ่นไม่เหมือนกัน ถ้ายังเลือกรุ่นอยู่ ความต่างของ ILUMA i ONE · ILUMA i และ i PRIME อยู่ใน[IQOS ILUMA i ONE vs ILUMA i ต่างกันยังไง](/guides/iqos-iluma-i-one-vs-iluma-i)",
+          "บทความนี้เขียนสำหรับ [IQOS ILUMA i](/products/iqosheet-18) และ [IQOS ILUMA i PRIME](/products/iqosheet-16) ที่มีบนเว็บเรา ข้อมูลทั้งหมดมาจาก[หน้าช่วยเหลือของ IQOS](https://www.iqos.com/gb/en/support/faq/get-to-know-your-iqos-ilumai.html) ถ้าเครื่องของคุณเป็นรุ่นอื่น แนะนำให้ดูคู่มือของรุ่นนั้นแทน เพราะวิธีกดและความหมายของไฟในแต่ละรุ่นไม่เหมือนกัน ถ้ายังเลือกรุ่นอยู่ ความต่างของทั้งสามรุ่นอยู่ใน[IQOS ILUMA i ONE vs ILUMA i และ i PRIME ต่างกันยังไง](/guides/iqos-iluma-i-one-vs-iluma-i)",
         ],
       },
       {
@@ -2860,7 +2860,7 @@ const allGuides: Guide[] = [
         heading: "TEREA ใช้กับเครื่องไหน",
         paragraphs: [
           "TEREA 1 ซองมี 20 ก้าน และ IQOS ระบุว่าใช้กับเครื่องตระกูล ILUMA เท่านั้น บนเว็บเรามี [ILUMA i ONE](/products/iqosheet-17) · [ILUMA i](/products/iqosheet-18) และ [ILUMA i PRIME](/products/iqosheet-16) ราคาของก้านและเครื่องดูได้ที่หน้าสินค้า",
-          "ถ้ายังไม่แน่ใจว่าจะเลือกรุ่นไหน ความต่างของสามรุ่นนี้อยู่ใน [IQOS ILUMA i ONE vs ILUMA i ต่างกันยังไง](/guides/iqos-iluma-i-one-vs-iluma-i)",
+          "ถ้ายังไม่แน่ใจว่าจะเลือกรุ่นไหน ความต่างของสามรุ่นนี้อยู่ใน [IQOS ILUMA i ONE vs ILUMA i และ i PRIME ต่างกันยังไง](/guides/iqos-iluma-i-one-vs-iluma-i)",
           "อีกทางหนึ่งคือ [LAMBDA i8](/products/iqosheet-14) ซึ่งเป็นเครื่องอุ่นยาสูบของ LAMBDA ไม่ใช่เครื่องของ IQOS ตามข้อมูลบนเว็บของ LAMBDA เครื่องนี้ใช้ก้าน TEREA และ SENTIA ได้",
         ],
       },
@@ -2887,7 +2887,7 @@ const allGuides: Guide[] = [
     // layer 1). Title carries "vs" as people type it (autocomplete). Wording: thai-copy 19/10.
     id: "iqos-iluma-i-one-vs-iluma-i",
     slug: "iqos-iluma-i-one-vs-iluma-i",
-    title: "IQOS ILUMA i ONE vs ILUMA i ต่างกันยังไง เทียบ i PRIME",
+    title: "IQOS ILUMA i ONE vs ILUMA i และ i PRIME ต่างกันยังไง",
     dek: "ILUMA i ONE เป็นเครื่องชิ้นเดียว สูบต่อกันได้สูงสุด 20 ก้าน ส่วน ILUMA i และ ILUMA i PRIME แยกเป็น Holder กับ Pocket Charger และมีจอทัชกับโหมดหยุดพัก บทความนี้เทียบสามรุ่นทีละเรื่องจากข้อมูลของ IQOS พร้อมวิธีเลือกให้ตรงกับการใช้งาน",
     category: "buying-guide",
     readingTimeMin: 6,
@@ -2911,29 +2911,29 @@ const allGuides: Guide[] = [
       {
         heading: "IQOS ILUMA i: Holder กับ Pocket Charger และจอทัช",
         paragraphs: [
-          "[ILUMA i](/products/iqosheet-18) แยกเป็น Holder ที่ใช้สูบ แบต 300mAh กับ Pocket Charger แบต 2700mAh ที่ใช้ชาร์จ Holder ชาร์จ Holder หนึ่งครั้งสูบต่อกันได้สูงสุด 3 ก้าน แล้ววางกลับลงใน Pocket Charger เพื่อชาร์จต่อ ส่วน Pocket Charger ชาร์จเต็มในประมาณ 2 ชั่วโมง 15 นาที",
+          "[ILUMA i](/products/iqosheet-18) มีสองชิ้น ตัว Holder ใช้สูบ แบต 300mAh ส่วนตัวชาร์จ Pocket Charger แบต 2700mAh ชาร์จ Holder หนึ่งครั้งสูบต่อกันได้สูงสุด 3 ก้าน แล้ววางกลับลงไปชาร์จต่อ ส่วน Pocket Charger ชาร์จเต็มในราว 135 นาที",
           "บน Holder มีจอทัช มีโหมดหยุดพักระหว่างสูบ มี FlexPuff และมี FlexBattery ที่เลือกได้ระหว่างโหมด Performance กับ Eco วิธีชาร์จ รีเซ็ต และความหมายของสัญลักษณ์บนจอ อ่านได้ที่ [IQOS ILUMA i รีเซ็ตยังไง ชาร์จไม่เข้า](/guides/iqos-iluma-i-reset-and-charging)",
         ],
       },
       {
         heading: "IQOS ILUMA i PRIME: ระบบเดียวกับ i ดีไซน์พรีเมียมกว่า",
         paragraphs: [
-          "[ILUMA i PRIME](/products/iqosheet-16) ใช้ Holder กับ Pocket Charger เหมือน ILUMA i และแบตเท่ากัน คือ Pocket Charger 2700mAh กับ Holder 300mAh โดย Pocket Charger ที่ชาร์จเต็มหนึ่งครั้งรองรับได้สูงสุด 20 ก้าน สิ่งที่ต่างคือดีไซน์ที่พรีเมียมกว่า และจอทัชที่แสดงข้อมูลได้ละเอียดกว่า",
+          "[ILUMA i PRIME](/products/iqosheet-16) ใช้ระบบเดียวกับ ILUMA i คือมี Holder กับ Pocket Charger แบตก็เท่ากัน แบต 2700mAh อยู่ใน Pocket Charger และแบต 300mAh อยู่ใน Holder ชาร์จเต็มหนึ่งครั้งรองรับได้สูงสุด 20 ก้าน สิ่งที่ต่างคือดีไซน์ที่พรีเมียมกว่า และจอทัชที่แสดงข้อมูลได้ละเอียดกว่า",
           "Holder สูบต่อกันได้สูงสุด 3 ก้าน หรือ 2 ก้านถ้าเปิดโหมดหยุดพักในโหมด Performance ซึ่งพักได้นานสุด 8 นาที มี FlexPuff ที่เพิ่มได้สูงสุด 4 พัฟ และ FlexBattery ที่เลือกโหมด Performance หรือ Eco ได้ในแอป IQOS ในกล่องมีสาย USB-C มาให้ด้วย",
         ],
       },
       {
         heading: "สามรุ่นต่างกันตรงไหนบ้าง",
         paragraphs: [
-          "เรื่องแรกคือจำนวนชิ้น ILUMA i ONE เป็นเครื่องชิ้นเดียว หยิบแล้วสูบได้เลย ส่วน ILUMA i และ ILUMA i PRIME ต้องใช้ Holder กับ Pocket Charger คู่กัน",
-          "เรื่องที่สองคือการสูบต่อเนื่อง ILUMA i ONE สูบต่อกันได้สูงสุด 20 ก้าน ส่วน Holder ของ ILUMA i และ ILUMA i PRIME สูบต่อกันได้สูงสุด 3 ก้านแล้วต้องวางกลับไปชาร์จ ซึ่ง Pocket Charger ของ i PRIME ชาร์จเต็มหนึ่งครั้งรองรับได้สูงสุด 20 ก้าน",
-          "เรื่องที่สามคือจอทัชและโหมดหยุดพัก ซึ่งมีใน ILUMA i และ ILUMA i PRIME ส่วน FlexPuff มีครบทั้งสามรุ่น และทั้งสามรุ่นใช้ได้กับก้าน TEREA เท่านั้น เวลาชาร์จก็ต่างกันด้วย ILUMA i ONE ใช้ประมาณ 1 ชั่วโมง 30 นาที ส่วน Pocket Charger ของอีกสองรุ่นใช้ประมาณ 2 ชั่วโมง 15 นาที",
+          "เรื่องแรกคือจำนวนชิ้น ILUMA i ONE เป็นเครื่องชิ้นเดียว หยิบแล้วสูบได้เลย ส่วนอีกสองรุ่นต้องใช้ Holder กับ Pocket Charger คู่กัน",
+          "เรื่องที่สองคือการสูบต่อเนื่อง ILUMA i ONE สูบต่อกันได้สูงสุด 20 ก้าน ส่วน Holder ของ ILUMA i และ ILUMA i PRIME สูบต่อกันได้สูงสุด 3 ก้านแล้วต้องวางกลับไปชาร์จ ทั้งนี้ตัวชาร์จของ i PRIME เมื่อชาร์จเต็มหนึ่งครั้งรองรับได้สูงสุด 20 ก้าน",
+          "เรื่องที่สามคือจอทัชและโหมดหยุดพัก ซึ่งมีเฉพาะสองรุ่นที่มี Holder ส่วน FlexPuff มีครบทั้งสามรุ่น และทั้งสามรุ่นใช้ได้กับก้าน TEREA เท่านั้น เรื่องเวลาชาร์จ ILUMA i ONE ใช้ราว 90 นาที ส่วนอีกสองรุ่นชาร์จ Pocket Charger ราว 135 นาที",
         ],
       },
       {
         heading: "LAMBDA i8: อีกทางที่ไม่ใช่ IQOS",
         paragraphs: [
-          "[LAMBDA i8](/products/iqosheet-14) เป็นเครื่องอุ่นยาสูบของ LAMBDA ไม่ใช่เครื่องของ IQOS ตามข้อมูลบนเว็บของ LAMBDA เครื่องนี้ใช้ก้าน TEREA และ SENTIA ได้ แบต 3200mAh ชาร์จหนึ่งครั้งสูบได้ 35–40 ก้าน และชาร์จเต็มในประมาณ 2 ชั่วโมงครึ่งด้วยหัวชาร์จ 5V 2A",
+          "[LAMBDA i8](/products/iqosheet-14) เป็นเครื่องอุ่นยาสูบที่ผลิตโดย LAMBDA ซึ่งเป็นคนละแบรนด์กับ IQOS ตามข้อมูลบนเว็บของ LAMBDA เครื่องนี้ใช้ก้านได้ทั้ง TEREA และ SENTIA แบต 3200mAh ชาร์จหนึ่งครั้งสูบได้ 35–40 ก้าน และชาร์จเต็มในราว 150 นาทีด้วยหัวชาร์จ 5V 2A",
           "จุดที่ต่างจากตระกูล ILUMA คือปรับอุณหภูมิได้ตั้งแต่ 200–300 องศาเซลเซียส เวลาสูบต่อก้านอยู่ที่ 3–6 นาที และมีจอ LED บนตัวเครื่อง",
         ],
       },
@@ -2941,7 +2941,7 @@ const allGuides: Guide[] = [
         heading: "เลือกรุ่นไหนดี ดูจากการใช้งาน",
         paragraphs: [
           "ถ้าอยากได้เครื่องชิ้นเดียว ไม่ต้องมี Pocket Charger และสูบต่อกันได้หลายก้านโดยไม่ต้องวางชาร์จ ILUMA i ONE ตรงกับการใช้งานแบบนี้",
-          "ถ้าอยากเห็นข้อมูลบนจอ หยุดพักระหว่างสูบได้ และไม่ติดที่ต้องวาง Holder กลับไปชาร์จทุก 3 ก้าน ILUMA i เป็นตัวเลือกที่ตรงกว่า ถ้าชอบระบบเดียวกันแต่อยากได้ดีไซน์ที่พรีเมียมขึ้นและจอที่ละเอียดกว่า ลองดู ILUMA i PRIME",
+          "ถ้าอยากเห็นข้อมูลบนจอและหยุดพักระหว่างสูบได้ โดยวาง Holder กลับไปชาร์จทุก 3 ก้านได้สบาย ๆ ตัวเลือกที่ตรงกว่าคือ ILUMA i และถ้าชอบระบบเดียวกันแต่อยากได้ดีไซน์ที่พรีเมียมขึ้นกับจอที่ละเอียดกว่า ลองดู ILUMA i PRIME",
           "ถ้าอยากได้แบตที่สูบได้หลายก้านต่อการชาร์จหนึ่งครั้ง และอยากปรับอุณหภูมิเอง LAMBDA i8 เป็นอีกทางหนึ่ง เลือกเครื่องได้แล้ว ลองดูว่าจะเริ่มจากกลิ่นไหนใน [TEREA กลิ่นไหนดี](/guides/choosing-a-terea-flavor) และถ้าอยากถามก่อนตัดสินใจ ทักร้านทางไลน์ @okm24 ได้",
         ],
       },
