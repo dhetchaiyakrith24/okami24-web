@@ -599,3 +599,42 @@ html:lang(th) .label-mono:not(:lang(en)) {
   background: var(--surface-3);
   border-radius: 999px;
 }
+
+/* Brand strip (owner 19/10, designer option A): every width, linked names, same slow feel (~22 px/s — the old strip's
+   speed; the longer list needs a longer loop). Hover / focus pauses it; reduced motion = a still row you scroll. */
+.okami-brand-strip {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+}
+.okami-brand-strip-track {
+  min-height: 56px;
+  animation: okami-brand-marquee 120s linear infinite;
+}
+.okami-brand-strip:hover .okami-brand-strip-track,
+.okami-brand-strip:focus-within .okami-brand-strip-track {
+  animation-play-state: paused;
+}
+@media (min-width: 64rem) {
+  .okami-brand-strip {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  }
+  .okami-brand-strip-track {
+    min-height: 72px;
+    animation-duration: 150s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .okami-brand-strip {
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: linear-gradient(to right, #000 0%, #000 90%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 0%, #000 90%, transparent 100%);
+  }
+  .okami-brand-strip-track {
+    animation: none;
+  }
+  .okami-brand-strip [data-clone] {
+    display: none;
+  }
+}
