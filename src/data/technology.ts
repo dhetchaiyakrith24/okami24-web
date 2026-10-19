@@ -34,6 +34,9 @@ export const technologyEntries: TechnologyEntry[] = [
     ],
     // caliburn-g5 dropped (batch 1 finding C3): its spec sheet has no coil row, so the body cannot name it.
     relatedProductSlugs: ["m-bar-9k", "m-bar-10k"],
+    // The shop's mesh clip (owner 19/10 "1 คลิปหลักต่อหน้า"): it used to be one of five clips in the wattage guide; this
+    // page owns "mesh coil คือ" (autocomplete 19/10), so the clip lives here. Title / channel / date as the guide carried it.
+    reviewVideo: { videoId: "HX7i9eqk_dg", title: "ทำไมพอตรุ่นใหม่ถึงหนีไปใช้ Mesh Coil กันหมด", channelName: "OKAMI", publishedAt: "2026-08-05" },
   },
   {
     id: "multi-resistance-cartridges",

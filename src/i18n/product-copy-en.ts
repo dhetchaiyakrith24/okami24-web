@@ -60,6 +60,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "esko-bar-switch-pod": { tagline: "ESKO BAR SWITCH 20K refill pod" },
   "mq-bar-22k": { tagline: "MQ Bar 22K disposable" },
   "graple-freebase": { tagline: "Graple freebase e-liquid" },
+  "vmate-pro-2": { tagline: "VOOPOO Vmate Pro 2 device" },
   "super-cool-saltnic": { tagline: "Super Cool salt nic e-liquid" },
   "infy-pod": { tagline: "INFY POD device body" },
   "pod-180": { tagline: "nexBar CLEAR 18K disposable" },

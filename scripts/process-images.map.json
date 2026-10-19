@@ -10244,6 +10244,66 @@
   }
  },
  {
+  "source": "_incoming/list19/vmate/gilt-black.png",
+  "slug": "vmate-pro-2",
+  "role": "card",
+  "note": "image sweep 19/10 - Vmate Pro 2 (Max Pod-176), card = Gilt Black",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the Gilt Black device cropped from the VOOPOO line-up (list19/i/in/vm-gilt-black.png, 3x), prompt window.__vm in list19/i/NOTES.md; render list19/i/r/vm-gilt-black-1.png; body cut by shape (list19/e1/shape.js + e/wallfill.js), base = the bottom of the green light band per column with a robust curve fit (list19/i/basegreen.js), alpha erode 2 px - copy beside this source",
+   "reference": "ihavevape.net VOOPOO Vmate Pro 2 colour line-up 1500 px (VOOPOO artwork, https://ihavevape.net/product/voopoo-vmate-pro-2/) - _incoming/img-1610/masters/src/vmate-pro-2/lineup.webp (+ gilt-black.webp, VOOPOO Gilt Black render 1500 px)",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-vm-gb.jpg chk-vm-sg-nb.jpg chk-vm-neon.jpg (line-up crop vs both renders: VMATE / PRO2 / ECO / screen), vm-edges.jpg + vm-base.jpg (pod top and base at 1:1 on the site background)"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/vmate/gilt-black.png",
+  "slug": "vmate-pro-2",
+  "role": "variant",
+  "id": "pod-176-1",
+  "note": "image sweep 19/10 - Vmate Pro 2 Gilt Black (Max Pod-176-1)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the Gilt Black device cropped from the VOOPOO line-up (list19/i/in/vm-gilt-black.png, 3x), prompt window.__vm in list19/i/NOTES.md; render list19/i/r/vm-gilt-black-1.png; body cut by shape (list19/e1/shape.js + e/wallfill.js), base = the bottom of the green light band per column with a robust curve fit (list19/i/basegreen.js), alpha erode 2 px - copy beside this source",
+   "reference": "ihavevape.net VOOPOO Vmate Pro 2 colour line-up 1500 px (VOOPOO artwork, https://ihavevape.net/product/voopoo-vmate-pro-2/) - _incoming/img-1610/masters/src/vmate-pro-2/lineup.webp (+ gilt-black.webp, VOOPOO Gilt Black render 1500 px)",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-vm-gb.jpg chk-vm-sg-nb.jpg chk-vm-neon.jpg (line-up crop vs both renders: VMATE / PRO2 / ECO / screen), vm-edges.jpg + vm-base.jpg (pod top and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/vmate/space-grey.png",
+  "slug": "vmate-pro-2",
+  "role": "variant",
+  "id": "pod-176-2",
+  "note": "image sweep 19/10 - Vmate Pro 2 Space Grey (Max Pod-176-2)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the Space Grey device cropped from the VOOPOO line-up (list19/i/in/vm-space-grey.png, 3x), prompt window.__vm in list19/i/NOTES.md; render list19/i/r/vm-space-grey-2.png; body cut by shape (list19/e1/shape.js + e/wallfill.js), base = the bottom of the green light band per column with a robust curve fit (list19/i/basegreen.js), alpha erode 2 px - copy beside this source",
+   "reference": "ihavevape.net VOOPOO Vmate Pro 2 colour line-up 1500 px (VOOPOO artwork, https://ihavevape.net/product/voopoo-vmate-pro-2/) - _incoming/img-1610/masters/src/vmate-pro-2/lineup.webp (+ gilt-black.webp, VOOPOO Gilt Black render 1500 px)",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-vm-gb.jpg chk-vm-sg-nb.jpg chk-vm-neon.jpg (line-up crop vs both renders: VMATE / PRO2 / ECO / screen), vm-edges.jpg + vm-base.jpg (pod top and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/vmate/navy-blue.png",
+  "slug": "vmate-pro-2",
+  "role": "variant",
+  "id": "pod-176-3",
+  "note": "image sweep 19/10 - Vmate Pro 2 Navy Blue (Max Pod-176-3)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the Navy Blue device cropped from the VOOPOO line-up (list19/i/in/vm-navy-blue.png, 3x), prompt window.__vm in list19/i/NOTES.md; render list19/i/r/vm-navy-blue-2.png; body cut by shape (list19/e1/shape.js + e/wallfill.js), base = the bottom of the green light band per column with a robust curve fit (list19/i/basegreen.js), alpha erode 2 px - copy beside this source",
+   "reference": "ihavevape.net VOOPOO Vmate Pro 2 colour line-up 1500 px (VOOPOO artwork, https://ihavevape.net/product/voopoo-vmate-pro-2/) - _incoming/img-1610/masters/src/vmate-pro-2/lineup.webp (+ gilt-black.webp, VOOPOO Gilt Black render 1500 px)",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-vm-gb.jpg chk-vm-sg-nb.jpg chk-vm-neon.jpg (line-up crop vs both renders: VMATE / PRO2 / ECO / screen), vm-edges.jpg + vm-base.jpg (pod top and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/vmate/neon.png",
+  "slug": "vmate-pro-2",
+  "role": "variant",
+  "id": "pod-176-4",
+  "note": "image sweep 19/10 - Vmate Pro 2 Neon (Max Pod-176-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the Neon device cropped from the VOOPOO line-up (list19/i/in/vm-neon.png, 3x), prompt window.__vm in list19/i/NOTES.md; render list19/i/r/vm-neon-1.png; body cut by shape (list19/e1/shape.js + e/wallfill.js), base = the bottom of the green light band per column with a robust curve fit (list19/i/basegreen.js), alpha erode 2 px - copy beside this source",
+   "reference": "ihavevape.net VOOPOO Vmate Pro 2 colour line-up 1500 px (VOOPOO artwork, https://ihavevape.net/product/voopoo-vmate-pro-2/) - _incoming/img-1610/masters/src/vmate-pro-2/lineup.webp (+ gilt-black.webp, VOOPOO Gilt Black render 1500 px)",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-vm-gb.jpg chk-vm-sg-nb.jpg chk-vm-neon.jpg (line-up crop vs both renders: VMATE / PRO2 / ECO / screen), vm-edges.jpg + vm-base.jpg (pod top and base at 1:1 on the site background)"
+  }
+ },
+ {
   "source": "_incoming/list19/supercool/grape-blast.png",
   "slug": "super-cool-saltnic",
   "role": "card",

@@ -924,6 +924,13 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "iqosheet-18-verified-bold-ruby": null,
   } },
   // Round list19 (19/10): ESKO BAR SWITCH 20K refill pod — Max Pod-160-1..18; the maker's 2 extra flavours are not in the warehouse.
+  // Image sweep (19/10): Vmate Pro 2 — Max Pod-176, 4 colours.
+  "vmate-pro-2": { parent: "Pod-176", options: {
+    "Pod-176-1": "Pod-176-1",
+    "Pod-176-2": "Pod-176-2",
+    "Pod-176-3": "Pod-176-3",
+    "Pod-176-4": "Pod-176-4",
+  } },
   // Image sweep (19/10): Super Cool Salt Nic — Max ELQ-6, 10 flavours.
   "super-cool-saltnic": { parent: "ELQ-6", options: {
     "ELQ-6-1": "ELQ-6-1",

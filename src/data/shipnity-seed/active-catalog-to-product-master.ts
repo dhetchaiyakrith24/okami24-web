@@ -838,6 +838,20 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://ihavevape.net/product/graple/",
     },
   ],
+  // Image sweep (19/10): Vmate Pro 2 card = Gilt Black — OKami24 studio re-shoot of VOOPOO's own colour line-up render (each device there is
+  // ~520 px tall, below MIN_SOURCE_LONG → re-shot, IMAGE_SPEC §0 item 7). Source, prompt and check per file in scripts/process-images.map.json `aiRender`.
+  "VMATE-PRO-2": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/vmate-pro-2/card.webp",
+      alt: "VOOPOO Vmate Pro 2 device, Gilt Black, studio photo",
+      angle: "Front three-quarter, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of VOOPOO's own Gilt Black render.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up",
+      sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/",
+    },
+  ],
   // Image sweep (19/10): Super Cool card = Grape Blast — OKami24 studio re-shoot of the bottle on a shop's Grape Blast photo (COF "Super
   // Cool Salt Series" label; the brand is not added here — label evidence only, no maker page found).
   "SUPER-COOL-SALTNIC": [
@@ -1791,6 +1805,14 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
   // Image sweep (19/10): Graple Freebase — its one option has the card bottle.
   "GRAPLE-FREEBASE": {
     "ELQ-2-1": { kind: "official-photo", role: "detail", src: "/assets/products/graple-freebase/variant-elq-2-1.webp", alt: "Graple freebase e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Graple poster", sourceUrl: "https://ihavevape.net/product/graple/" },
+  },
+  // Image sweep (19/10): Vmate Pro 2 — all 4 warehouse colours have a photo (re-shoots of VOOPOO's line-up render). VOOPOO's line-up also
+  // shows Glacier Silver, Fresh Green and Lavender, not in the warehouse; voopoo.com does not resolve from here, so they wait for a maker page.
+  "VMATE-PRO-2": {
+    "Pod-176-1": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-1.webp", alt: "VOOPOO Vmate Pro 2 device, Gilt Black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
+    "Pod-176-2": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-2.webp", alt: "VOOPOO Vmate Pro 2 device, Space Grey, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
+    "Pod-176-3": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-3.webp", alt: "VOOPOO Vmate Pro 2 device, Navy Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
+    "Pod-176-4": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-4.webp", alt: "VOOPOO Vmate Pro 2 device, Neon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
   },
   // Image sweep (19/10): Super Cool — Grape Blast has the card bottle; Laimoon, Strawberry Frost, White Polo and Black Hexx = re-shoots of the
   // same shop's flavour photos; the other 5 (no clean photo found) = no-photo panel for now.
