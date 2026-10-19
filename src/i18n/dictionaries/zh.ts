@@ -107,7 +107,7 @@ export const zh: Dictionary = {
     compareTitle: "最多四款设备并排对比。",
     compareDescription: "只对比经过核实且各款共有的参数——差异会高亮显示，每款设备都会给出“适合谁”的说明，而不是宣布谁胜出。",
     compareCta: "并排对比设备",
-    guidesTitle: "不只是营销文案的选购指南。",
+    guidesTitle: "选购指南",
     guidesAll: "全部指南 →",
     guideReadingTime: "阅读约 {n} 分钟",
     viewAll: "查看全部 →",

@@ -112,7 +112,7 @@ export const en: Dictionary = {
     compareDescription:
       "Only verified, shared attributes are compared — differences are highlighted, and every device gets a “best fit for” note instead of a declared winner.",
     compareCta: "Compare devices side by side",
-    guidesTitle: "Buying guidance that isn't just marketing copy.",
+    guidesTitle: "Buying guides",
     guidesAll: "All guides →",
     guideReadingTime: "{n} min read",
     viewAll: "View all →",
