@@ -11,31 +11,40 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 20/10 ~03:00 = #634 f00ec3d7 (new homepage hero)
+1 main: `git fetch && git log -1 --oneline origin/main` · 20/10 ~04:00 = #636 dd33ee93 (desktop intro off)
   [ตรวจแล้ว] · open PRs: `gh pr list` (side lines were told to park; anything still open is theirs). Standing rules this block used to repeat live in
   TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
 2 worktrees = `git worktree list` (20 on 18/10 — each side chat's own, nested under `.claude/worktrees/` and `_incoming/`) ·
   `_incoming/wt-stock` = stock round (own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
-3 MAIN CHAT MOVED 20/10 ~02:00 at 83 % context. Owner 20/10: "หยุดงานอื่นและ Focus แค่งานนี้" = the HOMEPAGE HERO only (3h below).
+3 MAIN CHAT MOVED 20/10 ~02:00 at 83 % context, and again ~04:00 at 65 % (3h). Owner 20/10: "หยุดงานอื่นและ Focus แค่งานนี้" = the HOMEPAGE HERO only (3h below).
   Both side lines were told to park (commit + push, no test server): line 1 = image sweep (session 1-mq-bar-22k) · line 2 = SEO
   (session seo-line2-c, near 600k → needs a new chat before any long job). Side chats = linked chats only (TEAM_RULES 13.6) · the owner
   gets 2 combined summaries a day · Friday's running notes (not in git) = `_incoming/friday-queue.md`.
-3h ROUND "homepage hero" = `docs/rounds/รอบหน้าแรก-hero-20-10.txt` (brief `_incoming/hero-brief.md`, draft the owner approved
-  "ทิศนี้ใช่ ไปต่อได้เลย" = `_incoming/hero-draft/`). LIVE: #634 merged f00ec3d7 (batches 1–3 in one PR, checker r2 PASS 191103bb):
-  HeroShowcase (4 slots by type = `src/data/home-hero.ts`, swap = one line) · WebGL ribbons in a worker (OffscreenCanvas) ·
-  HomeLeadLine down the page · one-step restores `PHONE_HERO = "classic"` / `DESKTOP_INTRO`. Lighthouse mobile / median 3:
-  before LCP 5789 TBT 77 0.78 → after 5863 / 81 / 0.78. Evidence `_incoming/hero-2010/` (gates, lh, shots, clips) + checker
-  `_incoming/chk-hero/`. Build tree for this round: `bash _incoming/hero-2010/build.sh <sha> 3421`; before-server 3419 =
-  `_incoming/hero-2010/before.sh` (wt7-3419, ≡ main 97517650 for src/public — older than main now).
-  WAITING ON THE OWNER (asked 20/10, both = touch of owner-approved items, 13.3 #5): (1) desktop cinematic intro — remove so the
-  new hero is the first screen (Friday's pick; DESKTOP_INTRO=false) or keep (current, true) · (2) H1 lock "Pod System" +
-  "บุหรี่ไฟฟ้า" — kept via the kicker line inside the H1 (Friday's pick, live) or drop it. Checker notes for the owner: the old
-  hero's counters (products/brands/families) left with it; classic restore leaves a hidden second H1.
-  NEXT (owner 20/10 ~02:30, after the hero; Friday's opinion already given in chat): (a) phone product cards smaller, more per
-  screen — Friday's pick = keep 2 columns, compact phone card (square photo, tighter text) on every page using the card →
-  whole-sitemap scan (shared part); alt = home rails as swipe rows · (b) LINE order message without the page URL (keep the code
-  line) — `src/lib/line-order.ts` + the dialog's last-line display. Screenshot = `_incoming/hero-2010/owner-cards-2010.png`.
-  Round close (tag hero-2010) after the owner's two answers land.
+3h ROUND "homepage hero" = `docs/rounds/รอบหน้าแรก-hero-20-10.txt` (brief `_incoming/hero-brief.md` · approved draft
+  `_incoming/hero-draft/`). MAIN CHAT MOVED 20/10 ~04:00 at 65 % context (owner opens the new chat).
+  LIVE [ตรวจแล้ว curl 200]: #634 f00ec3d7 = HeroShowcase (4 slots by type = `src/data/home-hero.ts`) + WebGL ribbons in a worker +
+  HomeLeadLine · #636 dd33ee93 = DESKTOP_INTRO false (owner 20/10 "เอาฉากเปิดบนคอมออก ให้ hero ใหม่เป็นจอแรก"; checker PASS
+  2d0ac432). H1 kicker "Pod System · บุหรี่ไฟฟ้า" = live, owner did not object (asked 20/10, no answer — keep).
+  DRAFT PR #637 (branch hero-ground, worktree `_incoming/hero-2010/wt-3423`, test server 3423, NOT checked): product on a floor
+  (contact shadow + glossy reflection), float 3 px, tablet layout centred. Proof + Lighthouse equal (PR body). Owner's newer
+  feedback (below, item 1) may replace it — decide with the owner's answer before sending it to the checker.
+  OWNER 20/10 ~03:40 — THREE NEW ITEMS (screenshots were his live hero at 1314 / 1602 / 2000 px + UWELL's official Caliburn AIR
+  hero + our "Catalog Index" block):
+  1 Hero products feel floating / flat ("ลอยๆ ไม่มีมิติ"), the cut-out edge makes it worse. Open to Higgsfield building new
+    product renders/scenes; likes UWELL Caliburn AIR's official hero = product BIG, full-screen scene, slightly overlapping the
+    headline (depth). Mobile: owner unsure → Friday proposes. Friday's pick (to confirm): Higgsfield scene per type (product true
+    to the real device — fidelity frame by frame, existing credits only), full-bleed on desktop, product crossing the headline;
+    phone = same scene cropped tall, product behind the headline with a dark gradient for legibility.
+  2 Lead line down the page: wants it like the reference video — smooth, flowing, passing BEHIND the text boxes with depth, desk +
+    phone. He wrote "เส้นเขียว" (the reference's line is green) — the 20/10 ruling was ORANGE ONLY → asked: colour stays orange?
+  3 Re-organise the homepage: not Caliburn-centred. Sections by type, e.g. "Pod System" (Caliburn line + best/most beautiful/popular
+    picks), then "พอตใช้แล้วทิ้ง" with every product/brand as the existing cards (he sees 5 cards per row on desktop). Clean,
+    varied, cut clutter; the bottom "Catalog Index" list → collapsible category boxes that still work. Friday must ask: what
+    "ขายดี" means (no sales data — owner picks, or Friday picks "flagship / best photo" without a bestseller claim) · which
+    sections to cut (Friday's pick: the two editorial blocks + flavour teaser; keep compare + guides) · draft first (big layout).
+  Earlier queue (owner 20/10 ~02:30, opinion given): phone product cards compact (keep 2 columns, square photo) · LINE order message
+  without the page URL — `_incoming/friday-queue.md`.
+  Round close (tag hero-2010) when the hero work above lands.
   House rounds 15–16/10 (#484 … #500, #508, #510) DONE — what they built lives in its home (skill house-clean · TEAM_RULES 13.3 #1 ·
   skills find-skills / content-strategy · `docs/seo-audit/`); the 16/10 artifact mistake = LESSONS พ31; full text =
   `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
