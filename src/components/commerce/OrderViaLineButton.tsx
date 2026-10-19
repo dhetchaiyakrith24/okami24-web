@@ -3,7 +3,7 @@
 import { useCallback, useState, useSyncExternalStore } from "react";
 import { CONTACT } from "@/data/contact";
 import { useLocale } from "@/components/i18n/LocaleProvider";
-import { LineOrderDialog } from "@/components/commerce/LineOrderDialog";
+import dynamic from "next/dynamic";
 import { LINE_ORDER_COPY } from "@/i18n/line-order-copy";
 import { lineOaMessageUrl, lineOrderMessage } from "@/lib/line-order";
 import { cn } from "@/lib/utils";
@@ -32,6 +32,8 @@ import { cn } from "@/lib/utils";
  * LineOrderDialog on the same page instead (QR to scan with the phone + the message to copy). The clipboard copy stays.
  */
 const noopSubscribe = () => () => {};
+// The dialog (and its QR library) loads only when a mouse user opens it — product pages carry no extra script for it.
+const LineOrderDialog = dynamic(() => import("@/components/commerce/LineOrderDialog").then((m) => m.LineOrderDialog), { ssr: false });
 
 const buttonClasses =
   "inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-ember px-6 py-3 text-sm font-semibold tracking-tight text-[#181008] transition-colors duration-200 hover:bg-ember-strong focus-visible:outline-2 focus-visible:outline-ember";
