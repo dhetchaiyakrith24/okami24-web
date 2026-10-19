@@ -51,7 +51,6 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
   const [onScreen, setOnScreen] = useState(true);
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const glowRef = useRef<HTMLCanvasElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const ribbonsRef = useRef<HeroRibbons | null>(null);
   const tx = (s: string) => (locale === "th" ? thaiTypographyNode(s) : s);
@@ -69,9 +68,8 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
   useEffect(() => {
     const section = sectionRef.current;
     const canvas = canvasRef.current;
-    const glow = glowRef.current;
     const stage = stageRef.current;
-    if (!section || !canvas || !glow || !stage) return;
+    if (!section || !canvas || !stage) return;
     const still =
       window.matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.dataset.okamiLite === "1";
     // no setAuto here: under reduced motion / Save-Data globals.css removes the bar animation, so
@@ -85,20 +83,21 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
       focus = { x: s.left - c.left + s.width / 2, y: s.top - c.top + s.height / 2 };
     };
     measure();
-    const ribbons = new HeroRibbons(canvas, glow, () => focus);
+    const ribbons = HeroRibbons.create(canvas, () => focus);
+    // null = no WebGL: the hero works without its ribbons (rotation and pausing still run)
     ribbonsRef.current = ribbons;
 
     let visible = true;
     const run = () => {
+      if (!ribbons) return;
       if (still) ribbons.still();
       else if (visible && !document.hidden) ribbons.start();
       else ribbons.stop();
     };
     const ro = new ResizeObserver(() => {
       measure();
-      ribbons.resize();
+      ribbons?.resize();
       run();
-      if (still) ribbons.still();
     });
     ro.observe(section);
     const io = new IntersectionObserver(([e]) => {
@@ -113,7 +112,7 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
       ro.disconnect();
       io.disconnect();
       document.removeEventListener("visibilitychange", run);
-      ribbons.destroy();
+      ribbons?.destroy();
       ribbonsRef.current = null;
     };
   }, []);
@@ -124,7 +123,6 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
   return (
     <section ref={sectionRef} className="okh relative isolate overflow-hidden border-b border-surface-border-soft bg-surface-0">
       <canvas ref={canvasRef} aria-hidden className="okh-canvas" />
-      <canvas ref={glowRef} aria-hidden className="okh-canvas okh-glow" />
 
       <div className="okh-grid mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div className="okh-copy">

@@ -705,10 +705,6 @@ html:lang(th) .label-mono:not(:lang(en)) {
   pointer-events: none;
   z-index: 0;
 }
-.okh-glow {
-  filter: blur(28px);
-  mix-blend-mode: screen;
-}
 .okh-grid {
   position: relative;
   z-index: 2;
@@ -774,7 +770,11 @@ html:lang(th) .label-mono:not(:lang(en)) {
   font-weight: 600;
   transition: background-color 0.25s, border-color 0.25s, transform 0.25s;
 }
-.okh-btn svg { width: 1rem; height: 1rem; }
+.okh-btn { white-space: nowrap; }
+.okh-btn svg { display: none; width: 1rem; height: 1rem; }
+@media (max-width: 63.99rem) {
+  .okh-btn { font-size: 0.875rem; padding: 0 1rem; }
+}
 .okh-btn-primary {
   background: var(--accent-ember);
   color: #160803;
@@ -954,6 +954,7 @@ html:lang(th) .label-mono:not(:lang(en)) {
   .okh-lede { margin-top: 1.625rem; font-size: 1.125rem; line-height: 1.65; }
   .okh-cta { display: flex; flex-wrap: wrap; margin: 1.625rem 0 0; gap: 0.75rem; }
   .okh-btn { height: 3.25rem; padding: 0 1.625rem; }
+  .okh-btn svg { display: block; }
   .okh-stage { height: min(74vh, 700px); align-self: center; margin: 0 0 1.5rem; }
   .okh-prod { inset: 0 0 6% 0; justify-content: center; }
   .okh-float { height: 96%; }

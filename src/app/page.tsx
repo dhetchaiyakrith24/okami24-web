@@ -43,7 +43,8 @@ export default function Home() {
       type,
       categoryHref: `/products/${category.slug}`,
       productHref: item.href,
-      name: item.name,
+      // legacy products carry a short model name ("Caliburn G5"); displayName repeats the brand in caps
+      name: getProduct(product)?.name ?? item.name,
       brand: item.brandName ?? "",
       image: item.image,
     }];
