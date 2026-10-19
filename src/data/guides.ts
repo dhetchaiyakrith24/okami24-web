@@ -2924,7 +2924,7 @@ const allGuides: Guide[] = [
     // per guide) and its topic gets its own page — "pg vg คืออะไร" ×10 Google autocomplete suggestions 19/10 (+ "pg vg 50 50",
     // "pg vg 70 30", "pg vg ในน้ำยาบุหรี่ไฟฟ้า คือ", "สาร pg vg คือ"). salt-nic-vs-freebase keeps a short PG/VG note linking here.
     // Facts from makers only, opened 19/10 (researcher): Aspire https://www.aspirecig.com/community/understanding-pgvg-ratios-in-e-liquids-a-comprehensive-guide/
-    // (components · PG flavour/throat hit · VG clouds/smooth · 50PG/50VG labels · coil table · no more than 70% PG · >50% PG in
+    // ("the two primary components" · PG flavour/throat hit · VG clouds/smooth · 50PG/50VG labels · coil table · no more than 70% PG · >50% PG in
     // 0.5–1Ω may leak / taste burnt) · Vaporesso https://store.vaporesso.com/blogs/news/best-vg-pg-for-vaping (PG thin, VG thick
     // sweet · first number read as VG · pods/MTL need thinner, higher-PG juice) · Innokin https://www.innokin.com/blog/how-to-buy-vape-juice-the-ultimate-guide
     // (VG thicker, sweeter) · GeekVape https://store.geekvape.com/blogs/vaping-guide/6-super-easy-ways-to-stop-your-coil-from-burning
@@ -2945,7 +2945,7 @@ const allGuides: Guide[] = [
       {
         heading: "PG VG ในน้ำยาบุหรี่ไฟฟ้าคืออะไร",
         paragraphs: [
-          "PG VG คืออะไร ตอบสั้น ๆ คือส่วนผสมหลักสองตัวของน้ำยาบุหรี่ไฟฟ้า Aspire อธิบายว่าน้ำยาทุกขวดใช้สองตัวนี้เป็นฐาน แล้วค่อยเติมกลิ่นและนิโคตินลงไป ส่วนชื่อเต็ม PG คือ Propylene Glycol และ VG คือ Vegetable Glycerin",
+          "PG VG คืออะไร ตอบสั้น ๆ คือส่วนผสมหลักสองตัวของน้ำยาบุหรี่ไฟฟ้า ตามที่ Aspire อธิบายไว้ โดย PG มาจากคำว่า Propylene Glycol และ VG มาจากคำว่า Vegetable Glycerin",
           "สาร PG VG สองตัวนี้มีเนื้อไม่เหมือนกัน Vaporesso และ Innokin อธิบายว่า PG ใสและไหลง่าย ส่วน VG ได้มาจากน้ำมันพืช เนื้อข้นกว่าและมีรสหวานกว่า PG",
           "ความต่างของเนื้อน้ำยาตรงนี้เองที่ทำให้สูบแล้วรู้สึกต่างกัน และทำให้น้ำยาแต่ละสัดส่วนเข้ากับคอยล์ต่างกัน สองเรื่องนี้อยู่ในหัวข้อถัดไป",
         ],
@@ -2995,7 +2995,7 @@ const allGuides: Guide[] = [
     ],
     relatedProductSlugs: ["argus-g4"],
     faq: [
-      { question: "PG VG คืออะไร", answer: "PG กับ VG คือส่วนผสมหลักสองตัวของน้ำยาบุหรี่ไฟฟ้า PG ย่อมาจาก Propylene Glycol ส่วน VG ย่อมาจาก Vegetable Glycerin Aspire อธิบายว่าน้ำยาใช้สองตัวนี้เป็นฐาน แล้วค่อยเติมกลิ่นและนิโคตินลงไป" },
+      { question: "PG VG คืออะไร", answer: "PG กับ VG คือส่วนผสมหลักสองตัวของน้ำยาบุหรี่ไฟฟ้า ตามที่ Aspire อธิบายไว้ PG ย่อมาจาก Propylene Glycol ส่วน VG ย่อมาจาก Vegetable Glycerin" },
       { question: "PG กับ VG ต่างกันยังไง", answer: "Aspire อธิบายว่า PG พารสได้ชัดและให้ความรู้สึกแรงถึงคอ ส่วน VG ให้ควันหนาและนุ่มกว่า GeekVape อธิบายเพิ่มว่า VG ข้นกว่า จึงซึมเข้าสำลีช้ากว่า PG" },
       { question: "PG VG 70/30 คือ VG 70 หรือ PG 70", answer: "เป็นได้ทั้งสองแบบ เพราะแต่ละแบรนด์เรียงตัวเลขไม่เหมือนกัน Vaporesso อ่านตัวเลขแรกเป็น VG ส่วน Aspire เขียน PG ขึ้นก่อน ให้ดูตัวอักษรบนขวดว่าเขียน VG/PG หรือ PG/VG แล้วอ่านตัวเลขตามลำดับนั้น" },
       { question: "พอตควรใช้ PG VG เท่าไหร่", answer: "ดูโอห์มของคอยล์ก่อน ตารางของ Aspire แนะนำ PG 70% กับคอยล์ 1.5–2.5 โอห์ม 50/50 กับคอยล์ 0.5–1.4 โอห์ม และ VG 80% กับคอยล์ 0.1–0.4 โอห์ม ส่วนพอต Sonder Q ที่ใช้ salt nic นั้น GeekVape แนะนำ 50/50 หรือ PG สูงกว่านั้น" },
