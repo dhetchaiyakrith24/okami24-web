@@ -44,6 +44,7 @@ export function ProductBuyAction({
   compact = false,
   choiceMissingLabel = null,
   productCode,
+  pageUrl,
 }: {
   available: boolean;
   orderingEnabled: boolean;
@@ -60,6 +61,8 @@ export function ProductBuyAction({
   choiceMissingLabel?: string | null;
   /** 19/10 LINE ready-message: the code the admin looks up (published: the picked Shipnity variant code). Default = slug. */
   productCode?: string;
+  /** Canonical page address for the LINE message (server-computed). */
+  pageUrl?: string;
 }) {
   const { dict } = useLocale();
 
@@ -71,7 +74,7 @@ export function ProductBuyAction({
         <OrderViaLineButton
           productName={productName}
           variantLabel={variantLabel}
-          productCode={productCode ?? slug}
+          productCode={productCode ?? slug} pageUrl={pageUrl}
           mode="ask"
           hideHint
           label={dict.productActions.outOfStockCta}
@@ -94,7 +97,7 @@ export function ProductBuyAction({
 
   if (!orderingEnabled) {
     /* Online ordering off (owner 2026-09-07): same slot, same weight, LINE instead of the cart. */
-    return <OrderViaLineButton productName={productName} variantLabel={variantLabel} hideHint={compact} productCode={productCode ?? slug} />;
+    return <OrderViaLineButton productName={productName} variantLabel={variantLabel} hideHint={compact} productCode={productCode ?? slug} pageUrl={pageUrl} />;
   }
 
   return (

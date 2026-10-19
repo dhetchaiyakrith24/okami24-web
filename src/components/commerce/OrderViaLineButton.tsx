@@ -40,12 +40,15 @@ export function OrderViaLineButton({
   className,
   hideHint = false,
   productCode,
+  pageUrl: canonicalUrl,
   mode = "order",
   label,
   linkClassName,
 }: {
   /** "ask" = the sold-out enquiry (same dialog, "ask" wording, outline button styled by the caller). */
   mode?: "order" | "ask";
+  /** Canonical page address for the message; without it the current page address is used. */
+  pageUrl?: string;
   /** Button text when not the order CTA (sold-out: "สอบถามทาง LINE"). */
   label?: string;
   /** Replaces the ember button classes (sold-out outline button). */
@@ -78,7 +81,7 @@ export function OrderViaLineButton({
     option: variantLabel,
     codeLabel: lineCopy.codeLabel,
     code: productCode,
-    url: pageUrl,
+    url: canonicalUrl ?? pageUrl,
   });
   const href = lineOaMessageUrl(message);
   const closeDialog = useCallback(() => setDialogOpen(false), []);
