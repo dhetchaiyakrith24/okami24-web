@@ -2379,6 +2379,9 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "ESKO-BAR-20K": { name: "ESKO BAR 20000", sourceUrl: "https://eskobarvape.com/product/eskobar" },
   "ESKO-BAR-SWITCH-POD": { name: "ESKO BAR SWITCH 20K Pod", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
   "Pod-169": { name: "INFY PLUS 2.5ML Cartridge", sourceUrl: "https://www.infy.my/infy-2-5ml-cartridge/" },
+  // Round list19 (19/10): Max name "Marbo Freebase ขวดยาว" carries a Thai word that showed on English/Chinese pages; the shop page names
+  // the line "Marbo Freebase" (brand prefix kept as on Marbo Saltnic).
+  "Eliquid-109": { name: "SALTHUB Marbo Freebase", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
 };
 
 function deriveDisplayName(rawName: string, brandId: string | null, shipnityId?: string): string {
