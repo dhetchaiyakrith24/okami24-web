@@ -219,6 +219,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // Round list19 (19/10): Pepo Salt Nic (Max ELQ-5) and Dundu Salt Nic (Max Eliquid-73) — Max ราคาขาย ฿300 each (read 2026-10-17).
   "Eliquid-72": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
   "Eliquid-73": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
+  // Round list19 (19/10): Marbo Freebase (Max ELQ-3, old seed Eliquid-109) — Max ราคาขาย ฿159 for the parent and its 4 flavours (read 2026-10-17).
+  "Eliquid-109": { sellingPrice: 159, lastPriceReview: "2026-10-19" },
 };
 
 export function getPublicationApproval(shipnityProductId: string): PublicationApproval | undefined {

@@ -22,7 +22,7 @@ import { OWNER_APPROVED_PUBLICATION } from "./publication-approvals";
  * Records Max no longer lists keep their 31/08 data (their pages, if any, are sold out through sku-map.ts — owner 08/10).
  */
 /** Stage 2 (18/10): published records moved onto Max, a few per PR. The published-catalogue dump proves each move. */
-export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38", "Pod-150", "Pod-154", "Pod-149", "ELIQUID-1", "Pod-169", "Pod-142", "Coil-53", "Eliquid-72", "Eliquid-73", "Coil-92"]);
+export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38", "Pod-150", "Pod-154", "Pod-149", "ELIQUID-1", "Pod-169", "Pod-142", "Coil-53", "Eliquid-72", "Eliquid-73", "Coil-92", "Eliquid-109"]);
 export const FROZEN_SEED_IDS = new Set<string>(
   [...Object.keys(OWNER_APPROVED_PUBLICATION), "IQOSHEET-15"].filter((id) => !MOVED_TO_MAX_IDS.has(id))
 );
@@ -71,6 +71,12 @@ const MAX_LABEL_FIX: Record<string, string> = {
   "ELQ-1-8": "Ice Strawberry",
   "ELQ-1-9": "Ice Sparkling",
   "ELQ-1-10": "Purple 50mg",
+  // Round list19 (19/10): Marbo Freebase — Max labels three bottles by a Thai colour word; no pack evidence ties them to a flavour →
+  // the colour as sold. "Ice Sparking" = the bottle print "Sparkling" (as ELQ-1-9).
+  "ELQ-3-1": "Purple",
+  "ELQ-3-2": "Gold",
+  "ELQ-3-3": "Pink",
+  "ELQ-3-4": "Ice Sparkling",
 };
 
 function fromMax(raw: RawActiveParent): (SeedInput & { maxParentId?: string }) | null {
