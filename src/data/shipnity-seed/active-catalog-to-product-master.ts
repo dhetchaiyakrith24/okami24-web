@@ -852,6 +852,19 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/",
     },
   ],
+  // Image sweep (19/10): Punta Ice card = Peach Ice (the one flavour in stock) — OKami24 studio re-shoot of the bottle on the shop's Peach Ice photo.
+  "PUNTA-ICE": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/punta-ice/card.webp",
+      alt: "Punta Ice Peach Ice e-liquid bottle, studio photo",
+      angle: "Front, studio re-shoot (image sweep 19/10, IMAGE_SPEC §0 item 7) of the bottle on the shop's Peach Ice photo.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice Peach Ice photo",
+      sourceUrl: "https://ihavevape.net/wp-content/uploads/2024/10/Punta-Ice-Peach-Ice.jpg.webp",
+    },
+  ],
   // Image sweep (19/10): Super Cool card = Grape Blast — OKami24 studio re-shoot of the bottle on a shop's Grape Blast photo (COF "Super
   // Cool Salt Series" label; the brand is not added here — label evidence only, no maker page found).
   "SUPER-COOL-SALTNIC": [
@@ -1813,6 +1826,10 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Pod-176-2": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-2.webp", alt: "VOOPOO Vmate Pro 2 device, Space Grey, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
     "Pod-176-3": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-3.webp", alt: "VOOPOO Vmate Pro 2 device, Navy Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
     "Pod-176-4": { kind: "official-photo", role: "detail", src: "/assets/products/vmate-pro-2/variant-pod-176-4.webp", alt: "VOOPOO Vmate Pro 2 device, Neon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from VOOPOO's Vmate Pro 2 colour line-up", sourceUrl: "https://ihavevape.net/product/voopoo-vmate-pro-2/" },
+  },
+  // Image sweep (19/10): Punta Ice — Peach Ice has the card bottle; the other 6 flavours = no-photo panel for now.
+  "PUNTA-ICE": {
+    "eliquid-78-7": { kind: "official-photo", role: "detail", src: "/assets/products/punta-ice/variant-eliquid-78-7.webp", alt: "Punta Ice Peach Ice e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Punta Ice Peach Ice photo", sourceUrl: "https://ihavevape.net/wp-content/uploads/2024/10/Punta-Ice-Peach-Ice.jpg.webp" },
   },
   // Image sweep (19/10): Super Cool — Grape Blast has the card bottle; Laimoon, Strawberry Frost, White Polo and Black Hexx = re-shoots of the
   // same shop's flavour photos; the other 5 (no clean photo found) = no-photo panel for now.

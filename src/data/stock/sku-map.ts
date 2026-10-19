@@ -931,6 +931,25 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "Pod-176-3": "Pod-176-3",
     "Pod-176-4": "Pod-176-4",
   } },
+  // Image sweep (19/10): Punta Ice — Max eliquid-78, 7 flavours.
+  "punta-ice": { parent: "eliquid-78", options: {
+    "eliquid-78-1": "eliquid-78-1",
+    "eliquid-78-2": "eliquid-78-2",
+    "eliquid-78-3": "eliquid-78-3",
+    "eliquid-78-4": "eliquid-78-4",
+    "eliquid-78-5": "eliquid-78-5",
+    "eliquid-78-6": "eliquid-78-6",
+    "eliquid-78-7": "eliquid-78-7",
+  } },
+  // Image sweep (19/10): Next Pro 2 Beyond (legacy) — Max Pod-173-1..6 (the Max colour names = the legacy colour names).
+  "next-pro-2-beyond": { parent: "Pod-173", options: {
+    "razer-black": "Pod-173-1",
+    "supreme-red": "Pod-173-2",
+    "white-lava": "Pod-173-3",
+    "aurora": "Pod-173-4",
+    "lemon-mint": "Pod-173-5",
+    "twilight-sky": "Pod-173-6",
+  } },
   // Image sweep (19/10): Super Cool Salt Nic — Max ELQ-6, 10 flavours.
   "super-cool-saltnic": { parent: "ELQ-6", options: {
     "ELQ-6-1": "ELQ-6-1",

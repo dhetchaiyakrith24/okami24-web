@@ -10304,6 +10304,114 @@
   }
  },
  {
+  "source": "_incoming/list19/punta/peach-ice.png",
+  "slug": "punta-ice",
+  "role": "card",
+  "note": "image sweep 19/10 - Punta Ice (Max eliquid-78), card = Peach Ice (in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the bottle on the shop Peach Ice photo (list19/i/in/punta-peach.jpg = bottle cropped, 3x), prompt in list19/i/NOTES.md; render list19/i/r/punta-1.png; body cut by shape (list19/e1/shape.js GAP 1978 + e/wallfill.js), base arc drawn (list19/h/basefix.js), alpha erode 2 px - copy beside this source",
+   "reference": "ihavevape.net Punta Ice Peach Ice photo 600 px (bottle + box on white) - _incoming/img-1610/masters/src/elq-punta/peach-ice.webp",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-punta.jpg (photo vs both renders: PUNTA ICE / PEACH ICE letter by letter), punta-edges.jpg (cap, base at 1:1 on the site background)"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/punta/peach-ice.png",
+  "slug": "punta-ice",
+  "role": "variant",
+  "id": "eliquid-78-7",
+  "note": "image sweep 19/10 - Punta Ice Peach Ice (Max eliquid-78-7)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10), studio re-shoot of the bottle on the shop Peach Ice photo (list19/i/in/punta-peach.jpg = bottle cropped, 3x), prompt in list19/i/NOTES.md; render list19/i/r/punta-1.png; body cut by shape (list19/e1/shape.js GAP 1978 + e/wallfill.js), base arc drawn (list19/h/basefix.js), alpha erode 2 px - copy beside this source",
+   "reference": "ihavevape.net Punta Ice Peach Ice photo 600 px (bottle + box on white) - _incoming/img-1610/masters/src/elq-punta/peach-ice.webp",
+   "fidelitySheet": "_incoming/img-1610/list19/i/chk-punta.jpg (photo vs both renders: PUNTA ICE / PEACH ICE letter by letter), punta-edges.jpg (cap, base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/next/razer-black.png",
+  "slug": "next-pro-2-beyond",
+  "role": "variant",
+  "id": "razer-black",
+  "note": "image sweep 19/10 - Next Pro 2 Beyond razer-black",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10, img-sweep-1), studio re-shoot of the razer-black device cropped from the line-up (list19/h/in/next-razer-black.png); render list19/h/r/next-razer-black-1.png; body cut by shape (list19/e1/shape.js + e/wallfill.js), straight walls filled (list19/i/fillwalls.js), base drawn (list19/h/basefix.js RX/RY 0.09), alpha erode 2 px - copy beside this source",
+   "reference": "maneevp.com Next Pro 2 Beyond 6-colour line-up 1000 px (white, no text; https://maneevp.com/wp-content/uploads/2024/01/NEXT-Pro-2-Beyond-Close-System-Pod-01.jpg) - _incoming/img-1610/masters/src/pod-173-next/maneevp-next-pro-2-beyond-01.jpg; colour names = pod789 chart pod789-color-next-2-beyond.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-next-razer-black.jpg (line-up crop vs render, NEXT logos: next-picks.jpg), list19/i/next-edges.jpg + next-red.jpg (pod top and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/next/supreme-red.png",
+  "slug": "next-pro-2-beyond",
+  "role": "variant",
+  "id": "supreme-red",
+  "note": "image sweep 19/10 - Next Pro 2 Beyond supreme-red",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10, img-sweep-1), studio re-shoot of the supreme-red device cropped from the line-up (list19/h/in/next-supreme-red.png); render list19/h/r/next-supreme-red-1.png; body cut by shape (list19/e1/shape.js + e/wallfill.js), straight walls filled (list19/i/fillwalls.js), base drawn (list19/h/basefix.js RX/RY 0.09), alpha erode 2 px - copy beside this source",
+   "reference": "maneevp.com Next Pro 2 Beyond 6-colour line-up 1000 px (white, no text; https://maneevp.com/wp-content/uploads/2024/01/NEXT-Pro-2-Beyond-Close-System-Pod-01.jpg) - _incoming/img-1610/masters/src/pod-173-next/maneevp-next-pro-2-beyond-01.jpg; colour names = pod789 chart pod789-color-next-2-beyond.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-next-supreme-red.jpg (line-up crop vs render, NEXT logos: next-picks.jpg), list19/i/next-edges.jpg + next-red.jpg (pod top and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/next/white-lava.png",
+  "slug": "next-pro-2-beyond",
+  "role": "variant",
+  "id": "white-lava",
+  "note": "image sweep 19/10 - Next Pro 2 Beyond white-lava",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10, img-sweep-1), studio re-shoot of the white-lava device cropped from the line-up (list19/h/in/next-white-lava.png); render list19/h/r/next-white-lava-1.png; body cut by shape (list19/e1/shape.js + e/wallfill.js), straight walls filled (list19/i/fillwalls.js), base drawn (list19/h/basefix.js RX/RY 0.09), alpha erode 2 px - copy beside this source",
+   "reference": "maneevp.com Next Pro 2 Beyond 6-colour line-up 1000 px (white, no text; https://maneevp.com/wp-content/uploads/2024/01/NEXT-Pro-2-Beyond-Close-System-Pod-01.jpg) - _incoming/img-1610/masters/src/pod-173-next/maneevp-next-pro-2-beyond-01.jpg; colour names = pod789 chart pod789-color-next-2-beyond.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-next-white-lava.jpg (line-up crop vs render, NEXT logos: next-picks.jpg), list19/i/next-edges.jpg + next-red.jpg (pod top and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/next/aurora.png",
+  "slug": "next-pro-2-beyond",
+  "role": "variant",
+  "id": "aurora",
+  "note": "image sweep 19/10 - Next Pro 2 Beyond aurora",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10, img-sweep-1), studio re-shoot of the aurora device cropped from the line-up (list19/h/in/next-aurora.png); render list19/h/r/next-aurora-1.png; body cut by shape (list19/e1/shape.js + e/wallfill.js), straight walls filled (list19/i/fillwalls.js), base drawn (list19/h/basefix.js RX/RY 0.09), alpha erode 2 px - copy beside this source",
+   "reference": "maneevp.com Next Pro 2 Beyond 6-colour line-up 1000 px (white, no text; https://maneevp.com/wp-content/uploads/2024/01/NEXT-Pro-2-Beyond-Close-System-Pod-01.jpg) - _incoming/img-1610/masters/src/pod-173-next/maneevp-next-pro-2-beyond-01.jpg; colour names = pod789 chart pod789-color-next-2-beyond.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-next-aurora.jpg (line-up crop vs render, NEXT logos: next-picks.jpg), list19/i/next-edges.jpg + next-red.jpg (pod top and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/next/lemon-mint.png",
+  "slug": "next-pro-2-beyond",
+  "role": "variant",
+  "id": "lemon-mint",
+  "note": "image sweep 19/10 - Next Pro 2 Beyond lemon-mint",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10, img-sweep-1), studio re-shoot of the lemon-mint device cropped from the line-up (list19/h/in/next-lemon-mint.png); render list19/h/r/next-lemon-mint-1.png; body cut by shape (list19/e1/shape.js + e/wallfill.js), straight walls filled (list19/i/fillwalls.js), base drawn (list19/h/basefix.js RX/RY 0.09), alpha erode 2 px - copy beside this source",
+   "reference": "maneevp.com Next Pro 2 Beyond 6-colour line-up 1000 px (white, no text; https://maneevp.com/wp-content/uploads/2024/01/NEXT-Pro-2-Beyond-Close-System-Pod-01.jpg) - _incoming/img-1610/masters/src/pod-173-next/maneevp-next-pro-2-beyond-01.jpg; colour names = pod789 chart pod789-color-next-2-beyond.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-next-lemon-mint.jpg (line-up crop vs render, NEXT logos: next-picks.jpg), list19/i/next-edges.jpg + next-red.jpg (pod top and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/next/twilight-sky.png",
+  "slug": "next-pro-2-beyond",
+  "role": "card",
+  "note": "image sweep 19/10 - Next Pro 2 Beyond (legacy, Max Pod-173), card = Twilight Sky (in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10, img-sweep-1), studio re-shoot of the twilight-sky device cropped from the line-up (list19/h/in/next-twilight-sky.png); render list19/h/r/next-twilight-sky-1.png; body cut by shape (list19/e1/shape.js + e/wallfill.js), straight walls filled (list19/i/fillwalls.js), base drawn (list19/h/basefix.js RX/RY 0.09), alpha erode 2 px - copy beside this source",
+   "reference": "maneevp.com Next Pro 2 Beyond 6-colour line-up 1000 px (white, no text; https://maneevp.com/wp-content/uploads/2024/01/NEXT-Pro-2-Beyond-Close-System-Pod-01.jpg) - _incoming/img-1610/masters/src/pod-173-next/maneevp-next-pro-2-beyond-01.jpg; colour names = pod789 chart pod789-color-next-2-beyond.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-next-twilight-sky.jpg (line-up crop vs render, NEXT logos: next-picks.jpg), list19/i/next-edges.jpg + next-red.jpg (pod top and base at 1:1 on the site background)"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/next/twilight-sky.png",
+  "slug": "next-pro-2-beyond",
+  "role": "variant",
+  "id": "twilight-sky",
+  "note": "image sweep 19/10 - Next Pro 2 Beyond twilight-sky",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 19/10, img-sweep-1), studio re-shoot of the twilight-sky device cropped from the line-up (list19/h/in/next-twilight-sky.png); render list19/h/r/next-twilight-sky-1.png; body cut by shape (list19/e1/shape.js + e/wallfill.js), straight walls filled (list19/i/fillwalls.js), base drawn (list19/h/basefix.js RX/RY 0.09), alpha erode 2 px - copy beside this source",
+   "reference": "maneevp.com Next Pro 2 Beyond 6-colour line-up 1000 px (white, no text; https://maneevp.com/wp-content/uploads/2024/01/NEXT-Pro-2-Beyond-Close-System-Pod-01.jpg) - _incoming/img-1610/masters/src/pod-173-next/maneevp-next-pro-2-beyond-01.jpg; colour names = pod789 chart pod789-color-next-2-beyond.jpg",
+   "fidelitySheet": "_incoming/img-1610/list19/h/chk-next-twilight-sky.jpg (line-up crop vs render, NEXT logos: next-picks.jpg), list19/i/next-edges.jpg + next-red.jpg (pod top and base at 1:1 on the site background)"
+  }
+ },
+ {
   "source": "_incoming/list19/supercool/grape-blast.png",
   "slug": "super-cool-saltnic",
   "role": "card",
