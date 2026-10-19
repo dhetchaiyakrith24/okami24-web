@@ -205,7 +205,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "NEXSWITCH-16K-KIT": { sellingPrice: 419, lastPriceReview: "2026-10-19" },
   "NEXSWITCH-16K-POD": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): RELX LUMI 18K (Max-only "Disposable-44") — Max ราคาขาย ฿349 for the parent and its 16 flavours (read 2026-10-17).
-  "RELX-LUMI-18K": { sellingPrice: 349, lastPriceReview: "2026-10-19" },
+  // owner-confirmed 2026-10-19: owner in chat "Relax lumi 18k ราคา 399 ครับ แก้เลยครับ" — owner override (was ฿349). Max says ฿349 until the admin updates it.
+  "RELX-LUMI-18K": { sellingPrice: 399, lastPriceReview: "2026-10-19" },
   // Round p63 (19/10): ESKO BAR 20000 (Max-only "Pod-130") — owner list item 69 "ใส่ตามคลัง": Max ราคาขาย ฿389 for the parent and its 22 flavours (read 2026-10-17).
   "ESKO-BAR-20K": { sellingPrice: 389, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): ESKO BAR SWITCH 20K refill pod (Max-only "Pod-160") — Max ราคาขาย ฿349 for the parent and its 18 flavours (read 2026-10-17).
