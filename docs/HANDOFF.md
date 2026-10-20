@@ -64,8 +64,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   c) Hero product scenes — owner "จัดเต็มเลยครับตรงนี้" (= go full). Start with the ONE Caliburn G5 test he already approved
      ("1 ได้ครับ"); state the credit cost per image before any batch (IMAGE_SPEC §0); then one scene per hero type if he likes it.
   Details for c):
-  c0) The Higgsfield MCP generate_image call was DENIED by the permission system twice (also after the owner's yes, he was on the
-     phone) — not retried. Ask him to approve the prompt from the desktop, or run it through the Higgsfield web app in Chrome.
+  c0) 20/10 night: the deny was lifted (#661, owner) · G5 test = 2 variants via MCP seedream_v5_pro 16:9, 2.5 credits each →
+     `_incoming/hero-scenes/g5-a.png` / `g5-b.png` (Friday recommends B: softer rim light; A reads like neon strips) — owner to pick.
      Refs already uploaded (media ids in `_incoming/hero-scenes/ref/` names g5/mswitch/infy/iluma1 · ids 876b8fcb… / 7a18b6a1… /
      998aed1f… / e0445381…, valid while the account keeps them) · prompt = the dark studio / orange-red rim light / glossy floor one
      in this chat's notes: `_incoming/hero-lead/scene-prompt.txt`. Decide #637 (product on a floor) once the scenes are judged.
@@ -342,8 +342,9 @@ Git: commit message English, prefix feat/fix/copy/data/docs/chore/agents/rules �
   check-run annotations first (`gh api …/check-runs/<id>/annotations`) — 12/10 it was the Actions quota
 Agents: when to call each = TEAM_RULES 13.2 (+ the `description` line of its file in `.claude/agents/`) · never one call per sub-item ·
   an agent added or edited is usable at once in the running chat
-Render after a merge: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl. Higgsfield generate/upscale MCP
-  tools are DENIED in `.claude/settings.json` (the web app in the owner's Chrome is the way · IMAGE_SPEC §0 item 7).
+Render after a merge: ~1 min of 502 + ~2 min after the deploy job ends — wait, then curl. Higgsfield MCP: `generate_image`
+  is ALLOWED (owner 20/10, #661); every other credit-spending Higgsfield tool stays DENIED in `.claude/settings.json` · credits =
+  IMAGE_SPEC §0 item 7 (cost first, owner's yes).
 Work folders: round work = `_incoming/<round>/` (not in git) · what Friday may move or delete alone = skill house-clean
   "รายการเดียว" (its one home) · image provenance keeps pointing at `_incoming/` (§18).
 Higgsfield (web app in the owner's Chrome): the draft box is SHARED across tabs and chats — open a new tab, set refs + prompt
