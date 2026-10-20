@@ -2,6 +2,7 @@
 
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import type { Dictionary } from "@/i18n/dictionaries";
+import type { HeroType } from "@/data/home-hero";
 import type { Guide } from "@/types/catalog";
 import type { GuideHeadCopy } from "@/lib/guide-head-copy";
 import { FLAVOR_COPY_TH, FLAVOR_COPY_ZH } from "@/i18n/flavor-copy";
@@ -22,6 +23,14 @@ export function HomeText({ k, n }: { k: keyof Dictionary["home"]; n?: number }) 
   const raw = dict.home[k];
   const text = n === undefined ? raw : raw.replace("{n}", String(n));
   // round 9: the dictionary deep-map returns plain strings, so the joined runs are laid here
+  return <>{locale === "th" ? thaiTypographyNode(text) : text}</>;
+}
+
+/** A product type's name or one-line description — the hero tabs' words (dict.heroShowcase.types),
+ *  reused as the titles of the type sections below the hero (src/data/home-sections.ts). */
+export function HomeTypeText({ type, field }: { type: HeroType; field: "label" | "desc" }) {
+  const { dict, locale } = useLocale();
+  const text = dict.heroShowcase.types[type][field];
   return <>{locale === "th" ? thaiTypographyNode(text) : text}</>;
 }
 

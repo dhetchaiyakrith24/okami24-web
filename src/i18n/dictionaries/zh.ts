@@ -109,14 +109,16 @@ export const zh: Dictionary = {
     compareTitle: "最多四款设备并排对比。",
     compareDescription: "只对比经过核实且各款共有的参数——差异会高亮显示，每款设备都会给出“适合谁”的说明，而不是宣布谁胜出。",
     compareCta: "并排对比设备",
-    guidesTitle: "不只是营销文案的选购指南。",
+    guidesTitle: "选购指南",
     guidesAll: "全部指南 →",
     guideReadingTime: "阅读约 {n} 分钟",
     viewAll: "查看全部 →",
     // Round 8 B1: the all-products text index (variant ก, see th.ts).
     indexTitle: "从所有机型里挑，已按分类整理好。",
-    indexDescription: "上面几排是精选，这里是完整清单，按分类排好，每一页都点得到。",
+    indexDescription: "按分类排好的完整清单，打开分类，每款产品页都点得到。",
     indexViewAll: "打开产品总览 →",
+    typeViewAll: "查看全部 {n} 款",
+    indexOpenCategory: "打开此分类 →",
   },
   search: {
     title: "查找产品",

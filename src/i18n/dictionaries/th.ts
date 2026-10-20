@@ -126,7 +126,7 @@ export const th: Dictionary = {
     compareDescription:
       "เทียบเฉพาะสเปกที่ยืนยันแล้วและมีเหมือนกันทุกรุ่น จุดที่ต่างจะไฮไลต์ให้ และแต่ละรุ่นมีโน้ต “เหมาะกับใคร” แทนการฟันธงว่ารุ่นไหนชนะ",
     compareCta: "เปรียบเทียบสินค้า",
-    guidesTitle: "คู่มือเลือกซื้อ บอกตรง ๆ",
+    guidesTitle: "คู่มือเลือกซื้อ",
     guidesAll: "คู่มือทั้งหมด →",
     guideReadingTime: "อ่าน {n} นาที",
     viewAll: "ดูทั้งหมด →",
@@ -134,8 +134,10 @@ export const th: Dictionary = {
     // (_incoming/round8/writer-1-result.md §2, thai-copy's pick; description tail per thai-copy) —
     // variant ก ("ทุกรุ่นในเว็บนี้ รวมไว้ที่เดียว") is in the ก screenshots for the owner.
     indexTitle: "เลือกจากทุกรุ่น แยกตามหมวดให้แล้ว",
-    indexDescription: "แถวด้านบนคัดมาบางรุ่น ตรงนี้คือรายการเต็ม เรียงตามหมวด กดเข้าไปดูสเปกได้ทุกรุ่น",
+    indexDescription: "รายการเต็มทุกหมวด กดเปิดหมวดที่สนใจ แล้วเข้าไปดูสเปกได้ทุกรุ่น",
     indexViewAll: "เปิดหน้ารวมสินค้า →",
+    typeViewAll: "ดูทั้งหมด {n} รุ่น",
+    indexOpenCategory: "เปิดหน้าหมวดนี้ →",
   },
   search: {
     title: "ค้นหาสินค้า",

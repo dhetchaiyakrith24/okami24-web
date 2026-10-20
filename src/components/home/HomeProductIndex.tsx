@@ -74,34 +74,45 @@ export function HomeProductIndex({ eyebrow }: { eyebrow: string }) {
             <HomeText k="indexViewAll" />
           </Link>
         </div>
-        {/* 4 columns at lg (designer #1): 10 · 13 · 10 · 12 entries side by side, then the two
-            short categories (6 · 2) as a natural tail — 3 columns left a large empty corner. */}
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Round "หน้าแรก hero" (owner 20/10 ~03:40): the long four-column list became one closed box per
+            category — the page stays short, and a visitor opens only the type they want. The links stay
+            in the HTML inside <details> (closed boxes are still crawled), so every product page keeps its
+            link from `/` (the reason this block exists — header above). The box's heading keeps the
+            category label the category pages use; its count is the number of links inside. */}
+        <div className="grid grid-cols-1 items-start gap-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
           {groups.map(({ category, entries }) => (
-            <div key={category.id} className="flex flex-col gap-3">
-              <h3 className="font-display text-lg font-semibold leading-tight text-foreground">
-                <Link href={`/products/${category.slug}`} className="hover:text-ember">
+            <details key={category.id} className="okh-index group/box rounded-2xl border border-surface-border bg-surface-0">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 [&::-webkit-details-marker]:hidden">
+                <h3 className="font-display text-lg font-semibold leading-tight text-foreground">
                   <CategoryLabel label={category.labelTh} />
+                </h3>
+                <span className="flex shrink-0 items-center gap-2 text-foreground-muted">
+                  <span className="label-mono text-xs" lang="en">
+                    {entries.length}
+                  </span>
+                  <svg viewBox="0 0 16 16" className="h-4 w-4 transition-transform group-open/box:rotate-180" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden>
+                    <path d="M4 6l4 4 4-4" />
+                  </svg>
+                </span>
+              </summary>
+              <div className="border-t border-surface-border-soft px-5 pb-4 pt-3">
+                {/* one link per line (a model name must never break across two sub-columns); whole row
+                    tappable; brand prefix muted, model name full foreground (designer #1, AA contrast) */}
+                <ul className="flex flex-col">
+                  {entries.map((entry) => (
+                    <li key={entry.slug} className="text-sm leading-snug">
+                      <Link href={`/products/${entry.slug}`} className="block py-1 text-foreground transition-colors hover:text-ember">
+                        {entry.brand && <span className="text-foreground-muted">{entry.brand} </span>}
+                        {entry.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                <Link href={`/products/${category.slug}`} className="label-mono mt-3 inline-block text-xs text-ember hover:underline">
+                  <HomeText k="indexOpenCategory" />
                 </Link>
-              </h3>
-              {/* One link per line at every width: the first 390px scan showed two sub-columns
-                  splitting model names mid-term ("Voopoo | PnP-X"), and a model name is the one
-                  thing this list must never break. */}
-              {/* Whole row tappable (`block py-1`, no list gap) — same 27px pitch as before, but the
-                  hit area is the row, not the 19px text line (designer #1). Colours: brand prefix
-                  muted (8.2:1 on surface-1), model name full foreground — the dim prefix measured
-                  4.0:1 at 14px, under AA. */}
-              <ul className="flex flex-col">
-                {entries.map((entry) => (
-                  <li key={entry.slug} className="text-sm leading-snug">
-                    <Link href={`/products/${entry.slug}`} className="block py-1 text-foreground transition-colors hover:text-ember">
-                      {entry.brand && <span className="text-foreground-muted">{entry.brand} </span>}
-                      {entry.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              </div>
+            </details>
           ))}
         </div>
       </Container>
