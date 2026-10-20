@@ -43,9 +43,9 @@ export default function Home() {
       // legacy products carry a short model name ("Caliburn G5"); displayName repeats the brand in caps
       name: getProduct(product)?.name ?? item.name,
       brand: item.brandName ?? "",
-      // the hero's own cut-out when the slot has one (home-hero.ts `photo`), else the card photo
-      image: photo ? { src: photo, alt: item.image.alt } : item.image,
-      ...(photo ? { flying: true } : {}),
+      image: item.image,
+      // desktop only: the hero's own flying cut-out (home-hero.ts `photo`); phones keep the card photo
+      ...(photo ? { photo } : {}),
     }];
   });
 

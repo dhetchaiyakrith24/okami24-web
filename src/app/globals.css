@@ -889,21 +889,22 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
   animation: okh-sheen 2.2s cubic-bezier(0.4, 0, 0.2, 1) 0.7s 1 both;
 }
 @keyframes okh-sheen { from { transform: translateX(22%); } to { transform: translateX(-22%); } }
-/* a flying cut-out (home-hero.ts `photo`, owner 20/10): it sits IN the ribbons' light — a warm glow around
-   it and a warm wash on its lower-right half (clipped to its silhouette by the sheen mask), and no floor
-   ellipse under something that floats */
-.okh-prod[data-flying] .okh-float img {
-  filter: drop-shadow(0 0 18px rgba(255, 106, 44, 0.38)) drop-shadow(0 0 60px rgba(255, 106, 44, 0.18)) drop-shadow(0 40px 50px rgba(0, 0, 0, 0.55));
+/* a flying cut-out (home-hero.ts `photo`, desktop only — phones keep the standing card photo, owner 20/10):
+   it sits IN the ribbons' light — a warm glow around it and a warm wash on its lower-right half (clipped to
+   its silhouette by the sheen mask), and no floor ellipse under something that floats */
+@media (min-width: 64rem) {
+  /* lying across the stage: a little smaller and up-left so its far end stops short of the name block */
+  .okh-prod[data-flying] .okh-float { aspect-ratio: 3 / 2; height: auto; width: 86%; margin: 0 14% 12% 0; }
+  .okh-prod[data-flying] .okh-float img {
+    filter: drop-shadow(0 0 28px rgba(255, 106, 44, 0.16)) drop-shadow(0 40px 50px rgba(0, 0, 0, 0.55));
+  }
+  .okh-prod[data-flying] .okh-sheen {
+    -webkit-mask: var(--okh-mask-d) center / contain no-repeat;
+    mask: var(--okh-mask-d) center / contain no-repeat;
+  }
+  .okh-floor { transition: opacity 0.6s ease; }
+  .okh-stage:has(.okh-prod[data-flying][data-state="on"]) .okh-floor { opacity: 0; }
 }
-.okh-prod[data-flying] .okh-sheen::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(140deg, transparent 38%, rgba(255, 106, 44, 0.42) 100%);
-  mix-blend-mode: soft-light;
-}
-.okh-floor { transition: opacity 0.6s ease; }
-.okh-stage:has(.okh-prod[data-flying][data-state="on"]) .okh-floor { opacity: 0; }
 @keyframes okh-float { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
 
 .okh-meta {

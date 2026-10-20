@@ -12,13 +12,13 @@ export const HERO_TYPES = ["pod-systems", "switch-pods", "disposables", "heated-
 export type HeroType = (typeof HERO_TYPES)[number];
 
 /**
- * `photo` (optional): a hero-only cut-out of that product at a dynamic angle (owner 20/10: tilted, floating
- * toward the camera, whole device, transparent so the ribbons run on behind it) used instead of the card
- * photo. OKami24 render (Higgsfield gpt_image_2_5, transparent) from the product's own card photo; logo,
- * pattern and screen readout checked 1:1 against it. Remove the field = that slot is back to the card photo.
+ * `photo` (optional, desktop only): the product lying almost flat across the stage, pod toward the headline,
+ * end toward the name (owner 20–21/10), transparent so the ribbons run on behind it; phones keep the standing
+ * card photo. It is the product's own card photo rotated (AI re-renders warped the device — owner: "บิดๆ
+ * เบี้ยวๆ"). Remove the field = that slot is back to the card photo everywhere.
  */
 export const HOME_HERO_SLOTS: { type: HeroType; product: string; photo?: string }[] = [
-  { type: "pod-systems", product: "caliburn-g5", photo: "/assets/hero/caliburn-g5-left.webp" },
+  { type: "pod-systems", product: "caliburn-g5", photo: "/assets/hero/caliburn-g5-lying.webp" },
   { type: "switch-pods", product: "m-switch-kit" },
   { type: "disposables", product: "infy-20k" },
   { type: "heated-tobacco-devices", product: "iqosheet-17" },
