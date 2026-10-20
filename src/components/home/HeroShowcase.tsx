@@ -9,6 +9,7 @@ import { mainThreadDriver, type RibbonDriver } from "@/lib/hero-ribbons";
 import { workerDriver } from "./ribbon-driver";
 import { fxIsOff, markFx, onFxChange, setFxOff } from "@/lib/fx-pref";
 import type { HeroType } from "@/data/home-hero";
+import { HeroCards } from "./HeroCards";
 
 /** One slot as page.tsx resolved it from the catalog — the client never sees the catalog itself
  *  (LESSONS 37: a client component that imports the whole-shop tables ships them to every phone). */
@@ -22,6 +23,10 @@ export type HeroSlotView = {
   /** desktop only: the hero's own flying cut-out (home-hero.ts `photo`); phones keep `image` (owner 20/10:
    *  the tilted render read as warped on a phone) */
   photo?: string;
+  /** the owner-approved selling price, null = none yet (desktop cards) */
+  price: number | null;
+  /** how many colours / flavours the model comes in, from 2 up (desktop cards) */
+  options: { n: number; kind: "colors" | "flavors" } | null;
 };
 
 const PHOTO_SIZES = "(min-width: 1024px) 40vw, 70vw";
@@ -66,8 +71,11 @@ const TYPE_TAG: Record<HeroType, string> = {
  * frame and no auto-rotation (globals.css removes the bar animation).
  * The light switch in the stage's corner (owner 20/10, lib/fx-pref.ts) turns the hero's and the flow
  * layer's ribbons off for this browser: off at load = they never start; flipped = they stop and fade.
+ * Desktop "cards" (home-hero.ts DESKTOP_HERO, owner 21/10 — the Artefakt direction): from 64rem up the stage and the tabs
+ * give way to the four slots as cards in a row (HeroCards) over a lattice of small squares that lights up in the shop's
+ * orange around the cursor; the ribbons then cross behind the card row. Phones are unchanged.
  */
-export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
+export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView[]; desktop?: "cards" | "stage" }) {
   const { dict, locale } = useLocale();
   const copy = dict.heroShowcase;
   const [cur, setCur] = useState(0);
@@ -80,6 +88,8 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
   const [warm, setWarm] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const latticeRef = useRef<HTMLDivElement>(null);
   const ribbonsRef = useRef<RibbonDriver | null>(null);
   const fxOff = useSyncExternalStore(onFxChange, fxIsOff, () => false);
   const tx = (s: string) => (locale === "th" ? thaiTypographyNode(s) : s);
@@ -123,7 +133,8 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
     const sync = () => {
       if (!ribbons) return;
       const c = canvas.getBoundingClientRect();
-      const s = stage.getBoundingClientRect();
+      // desktop "cards": the stage is hidden there (no box) — the bundle crosses behind the card row instead
+      const s = (stage.offsetWidth ? stage : (cardsRef.current ?? stage)).getBoundingClientRect();
       // the bundle crosses behind the product: its centre, in canvas pixels
       ribbons.size(c.width, c.height, Math.min(window.devicePixelRatio || 1, 2), window.innerWidth < 1024);
       ribbons.focus(s.left - c.left + s.width / 2, s.top - c.top + s.height / 2);
@@ -194,11 +205,50 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
     };
   }, []);
 
+  // The lattice glow follows the cursor (desktop "cards"): one style write per animation frame while the mouse moves,
+  // nothing while it rests — no running loop (LESSONS 38). The glow's own easing is a CSS transition (globals.css).
+  useEffect(() => {
+    const section = sectionRef.current;
+    const lattice = latticeRef.current;
+    if (desktop !== "cards" || !section || !lattice) return;
+    let frame = 0;
+    let x = 0;
+    let y = 0;
+    const paint = () => {
+      frame = 0;
+      lattice.style.setProperty("--mx", `${x}px`);
+      lattice.style.setProperty("--my", `${y}px`);
+    };
+    const move = (e: PointerEvent) => {
+      if (e.pointerType !== "mouse") return;
+      const r = section.getBoundingClientRect();
+      x = e.clientX - r.left;
+      y = e.clientY - r.top;
+      lattice.dataset.hot = "1";
+      if (!frame) frame = requestAnimationFrame(paint);
+    };
+    const leave = () => {
+      delete lattice.dataset.hot;
+    };
+    section.addEventListener("pointermove", move, { passive: true });
+    section.addEventListener("pointerleave", leave);
+    return () => {
+      cancelAnimationFrame(frame);
+      section.removeEventListener("pointermove", move);
+      section.removeEventListener("pointerleave", leave);
+    };
+  }, [desktop]);
+
   const paused = hover || !onScreen;
   const slot = slots[cur];
 
   return (
-    <section ref={sectionRef} className="okh relative isolate overflow-hidden border-b border-surface-border-soft bg-surface-0">
+    <section
+      ref={sectionRef}
+      className="okh relative isolate overflow-hidden border-b border-surface-border-soft bg-surface-0"
+      data-desk={desktop}
+    >
+      {desktop === "cards" ? <div ref={latticeRef} className="okh-lattice" aria-hidden /> : null}
       <div className="okh-grid mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12">
         <div className="okh-copy">
           <h1 className="font-display font-semibold text-foreground">
@@ -227,7 +277,19 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
           <Link href="/products" className="okh-btn okh-btn-ghost">
             {tx(copy.ctaAll)}
           </Link>
+          {/* desktop "cards": the light switch lives here (the stage that holds it on phones is hidden from 64rem up) */}
+          {desktop === "cards" ? (
+            <button type="button" className="okh-fx okh-fx-desk" data-off={fxOff ? "1" : undefined} onClick={() => setFxOff(!fxOff)}>
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden>
+                <path d="M8 1.5v2.2M8 12.3v2.2M1.5 8h2.2M12.3 8h2.2M3.4 3.4l1.5 1.5M11.1 11.1l1.5 1.5M3.4 12.6l1.5-1.5M11.1 4.9l1.5-1.5" />
+                <circle cx="8" cy="8" r="2.3" />
+              </svg>
+              {fxOff ? copy.fxOn : copy.fxOff}
+            </button>
+          ) : null}
         </div>
+
+        {desktop === "cards" ? <HeroCards ref={cardsRef} slots={slots} typeTag={TYPE_TAG} /> : null}
 
         <div
           ref={stageRef}

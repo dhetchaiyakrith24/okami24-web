@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { allProducts, getFlagshipProducts, getProduct } from "@/data/products";
-import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
+import { getPublishedProduct, getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { brands } from "@/data/brands";
 import { guides } from "@/data/guides";
 import { HomeIntro } from "@/components/home/HomeIntro";
 import { Hero } from "@/components/home/Hero";
 import { HeroShowcase, type HeroSlotView } from "@/components/home/HeroShowcase";
 import { HomeFlow } from "@/components/home/HomeFlow";
-import { DESKTOP_INTRO, HOME_FLOW, HOME_HERO_SLOTS, PHONE_HERO } from "@/data/home-hero";
+import { DESKTOP_HERO, DESKTOP_INTRO, HOME_FLOW, HOME_HERO_SLOTS, PHONE_HERO } from "@/data/home-hero";
 import { getCatalogItem } from "@/lib/catalog-index";
 import { getCategory } from "@/data/categories";
 import { BrandMarquee } from "@/components/home/BrandMarquee";
@@ -36,6 +36,14 @@ export default function Home() {
     const item = getCatalogItem(product);
     const category = getCategory(type);
     if (!item?.image || !category) return [];
+    // the desktop cards (DESKTOP_HERO "cards") say how many colours / flavours the model comes in — counted from the
+    // same data as the shop cards (OptionCountBadge · PilotProductCard), never typed
+    const legacy = getProduct(product);
+    const published = legacy ? undefined : getPublishedProduct(product);
+    const colors = legacy?.colorVariants?.length ?? (published?.optionAxisCode === "color" ? published.variants.length : 0);
+    const flavors = legacy?.flavorVariants?.length ?? (published?.optionAxisCode === "flavor" ? published.variants.length : 0);
+    const most = Math.max(colors, flavors);
+    const options = most >= 2 ? { n: most, kind: flavors > colors ? ("flavors" as const) : ("colors" as const) } : null;
     return [{
       type,
       categoryHref: `/products/${category.slug}`,
@@ -44,8 +52,12 @@ export default function Home() {
       name: getProduct(product)?.name ?? item.name,
       brand: item.brandName ?? "",
       image: item.image,
-      // desktop only: the hero's own flying cut-out (home-hero.ts `photo`); phones keep the card photo
-      ...(photo ? { photo } : {}),
+      // the owner-approved selling price (null = none yet: the card then shows no price)
+      price: item.sellingPrice,
+      options,
+      // desktop only: the hero's own flying cut-out (home-hero.ts `photo`); phones keep the card photo. The desktop
+      // cards show the card photo, so the cut-out is not sent then (it would never be seen)
+      ...(photo && DESKTOP_HERO === "stage" ? { photo } : {}),
     }];
   });
 
@@ -94,11 +106,11 @@ export default function Home() {
             <Hero flagship={flagship} backdrop={mBar10k} productCount={productCount} brandCount={brandCount} />
           </div>
           <div className="hidden lg:block">
-            <HeroShowcase slots={heroSlots} />
+            <HeroShowcase slots={heroSlots} desktop={DESKTOP_HERO} />
           </div>
         </>
       ) : (
-        <HeroShowcase slots={heroSlots} />
+        <HeroShowcase slots={heroSlots} desktop={DESKTOP_HERO} />
       )}
       {/* everything below the hero sits in one box: the hero's light carried down the page (HomeFlow)
           runs on a sticky stage behind its sections, which are see-through there (globals.css .okh-flow) */}

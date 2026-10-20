@@ -1050,6 +1050,144 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   .okh-d { display: block; font-size: 0.8125rem; line-height: 1.5; color: var(--foreground-muted); }
 }
 
+/* --- desktop "cards" (home-hero.ts DESKTOP_HERO, owner 21/10 — the getlayers Artefakt direction) ---
+   From 64rem up the stage and the tabs give way to the four slots as cards in a row (HeroCards) over a lattice of
+   small squares; the squares around the cursor light up in the shop's orange (HeroShowcase writes --mx/--my once per
+   frame while the mouse moves; the registered properties ease the glow after it). Phones never see any of this. */
+@property --mx { syntax: "<length>"; inherits: false; initial-value: -60rem; }
+@property --my { syntax: "<length>"; inherits: false; initial-value: -60rem; }
+.okh-cards, .okh-lattice, .okh-fx-desk { display: none; }
+@media (min-width: 64rem) {
+  .okh[data-desk="cards"] .okh-stage,
+  .okh[data-desk="cards"] .okh-tabs { display: none; }
+  .okh[data-desk="cards"] .okh-grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    grid-template-rows: auto auto;
+    grid-template-areas: "copy cta" "cards cards";
+    row-gap: clamp(1.75rem, 4.5vh, 3rem);
+    align-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+  .okh[data-desk="cards"] .okh-h1 { font-size: clamp(2.5rem, 1.6rem + 2.6vw, 4.5rem); }
+  .okh[data-desk="cards"] .okh-lede { margin-top: 1.125rem; }
+  .okh[data-desk="cards"] .okh-cta { align-self: end; justify-content: flex-end; align-items: center; margin: 0; }
+  .okh[data-desk="cards"] .okh-fx-desk { display: inline-flex; position: static; min-height: 3.25rem; padding: 0 1.125rem; font-size: 0.8125rem; }
+
+  .okh-lattice {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    /* 16 px cells, 12 px squares: the base lattice barely there, the lit one only inside the glow */
+    --okh-cell: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect x='2' y='2' width='12' height='12' rx='1.5' fill='%23fff'/%3E%3C/svg%3E");
+  }
+  .okh-lattice::before,
+  .okh-lattice::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    -webkit-mask: var(--okh-cell) 0 0 / 16px 16px repeat;
+    mask: var(--okh-cell) 0 0 / 16px 16px repeat;
+  }
+  .okh-lattice::before { background: rgb(255 255 255 / 0.028); }
+  .okh-lattice::after {
+    background: radial-gradient(circle 15rem at var(--mx) var(--my), rgb(255 106 44 / 0.34), rgb(255 106 44 / 0.1) 45%, transparent 72%);
+    opacity: 0;
+    transition: opacity 0.5s ease, --mx 0.32s cubic-bezier(0.2, 0.7, 0.2, 1), --my 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .okh-lattice[data-hot]::after { opacity: 1; }
+  /* the light switch off = the glow goes too */
+  html[data-okami-fx="off"] .okh-lattice::after { opacity: 0; }
+
+  .okh-cards {
+    display: grid;
+    grid-area: cards;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .okh[data-desk="stage"] .okh-cards { display: none; }
+  .okh-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem 1.125rem 1.125rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--surface-1) 78%, transparent);
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .okh-card:hover {
+    border-color: color-mix(in srgb, var(--accent-ember) 70%, transparent);
+    background: color-mix(in srgb, var(--surface-1) 90%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 25%, transparent), 0 24px 60px -30px rgb(255 106 44 / 0.45);
+    transform: translateY(-3px);
+  }
+  .okh-card:focus-visible { outline: 2px solid var(--accent-ember); outline-offset: 3px; }
+  .okh-card-top { display: flex; justify-content: space-between; font-size: 0.6875rem; letter-spacing: 0.14em; color: var(--foreground-dim); }
+  .okh-card-plus { font-size: 0.875rem; line-height: 1; transition: transform 0.3s ease, color 0.3s ease; }
+  .okh-card:hover .okh-card-plus { transform: rotate(90deg); color: var(--accent-ember); }
+  .okh-card-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "brand price" "name price"; column-gap: 0.75rem; row-gap: 0.25rem; }
+  .okh-card-brand { grid-area: brand; font-size: 0.6875rem; letter-spacing: 0.14em; color: var(--accent-ember); }
+  .okh-card-name {
+    grid-area: name;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--foreground);
+  }
+  .okh-card-price { grid-area: price; align-self: end; font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--foreground); }
+  .okh-card-img { position: relative; display: block; aspect-ratio: 5 / 4; }
+  .okh-card-img img { transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .okh-card:hover .okh-card-img img { transform: scale(1.05) translateY(-2%); }
+  .okh-card-foot { position: relative; display: block; height: 2.25rem; }
+  .okh-card-tags,
+  .okh-card-cta {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .okh-card-tags { gap: 0.5rem; }
+  .okh-card-tags em {
+    display: inline-flex;
+    align-items: center;
+    height: 1.75rem;
+    padding: 0 0.625rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 4px;
+    font-style: normal;
+    font-size: 0.75rem;
+    color: var(--foreground-muted);
+  }
+  .okh-card-tags em.label-mono { font-size: 0.625rem; letter-spacing: 0.12em; }
+  .okh-card-cta {
+    justify-content: space-between;
+    padding: 0 0.875rem;
+    border: 1px solid var(--foreground-muted);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--foreground);
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  .okh-card:hover .okh-card-tags,
+  .okh-card:focus-visible .okh-card-tags { opacity: 0; transform: translateY(-6px); }
+  .okh-card:hover .okh-card-cta,
+  .okh-card:focus-visible .okh-card-cta { opacity: 1; transform: none; }
+}
+@media (min-width: 64rem) and (prefers-reduced-motion: reduce) {
+  .okh-card, .okh-card-img img, .okh-card-tags, .okh-card-cta, .okh-card-plus { transition: none; }
+  .okh-card:hover, .okh-card:hover .okh-card-img img { transform: none; }
+  .okh-lattice::after { transition: opacity 0.2s ease; }
+}
+
 /* --- the hero's light carried down the page (HomeFlow) ---
    A layer behind every section of the wrapper holds the light on canvases that sit ON the page (tiles
    one screen tall, moved ahead of the visitor by HomeFlow), so the browser scrolls the light together
