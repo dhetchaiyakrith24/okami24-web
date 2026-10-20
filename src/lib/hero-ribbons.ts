@@ -234,6 +234,22 @@ void main() {
 
 type Uniforms = Record<string, WebGLUniformLocation | null>;
 
+/** Adds the half-resolution soft strokes (phone flow layer) onto the canvas: one quad, one texture read. */
+const QUAD_VERT = `
+attribute vec2 a_p;
+varying vec2 v_t;
+void main() {
+  v_t = a_p * 0.5 + 0.5;
+  gl_Position = vec4(a_p, 0.0, 1.0);
+}`;
+const QUAD_FRAG = `
+precision mediump float;
+uniform sampler2D u_tex;
+varying vec2 v_t;
+void main() {
+  gl_FragColor = texture2D(u_tex, v_t);
+}`;
+
 /**
  * "hero" = the band across the hero, through the product · "flow" = the same ribbons
  * and carried down the rest of the homepage behind the sections (HomeFlow, owner 20/10 ~05:00: like
@@ -301,7 +317,68 @@ type Target = {
   top: number;
   /** flow: moved or resized since its last full draw — clear and draw all of it next frame */
   dirty: boolean;
+  /** phone flow: the half-resolution buffer the soft strokes are drawn into (made on first use) */
+  soft?: Soft | null;
 };
+
+type Soft = { fb: WebGLFramebuffer; tex: WebGLTexture; prog: WebGLProgram; quad: WebGLBuffer; loc: number; uTex: WebGLUniformLocation | null; w: number; h: number };
+
+function compile(gl: WebGLRenderingContext, vert: string, frag: string): WebGLProgram {
+  const sh = (type: number, src: string) => {
+    const s = gl.createShader(type)!;
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s) || "shader");
+    return s;
+  };
+  const prog = gl.createProgram()!;
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, vert));
+  gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, frag));
+  gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog) || "link");
+  return prog;
+}
+
+/** The target's half-resolution buffer, sized to its canvas — null when the GPU refuses one (then the
+ *  soft strokes are drawn at full resolution, as before). */
+function softPass(tg: Target): Soft | null {
+  if (tg.soft === null) return null;
+  const { gl } = tg;
+  const w = Math.max(1, Math.ceil(tg.canvas.width / 2));
+  const h = Math.max(1, Math.ceil(tg.canvas.height / 2));
+  try {
+    let s = tg.soft;
+    if (!s) {
+      const prog = compile(gl, QUAD_VERT, QUAD_FRAG);
+      const quad = gl.createBuffer()!;
+      gl.bindBuffer(gl.ARRAY_BUFFER, quad);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+      const tex = gl.createTexture()!;
+      gl.bindTexture(gl.TEXTURE_2D, tex);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      s = { fb: gl.createFramebuffer()!, tex, prog, quad, loc: gl.getAttribLocation(prog, "a_p"), uTex: gl.getUniformLocation(prog, "u_tex"), w: 0, h: 0 };
+      tg.soft = s;
+    }
+    if (s.w !== w || s.h !== h) {
+      gl.bindTexture(gl.TEXTURE_2D, s.tex);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, w, h, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, s.fb);
+      gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, s.tex, 0);
+      const ok = gl.checkFramebufferStatus(gl.FRAMEBUFFER) === gl.FRAMEBUFFER_COMPLETE;
+      gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+      if (!ok) throw new Error("fb");
+      s.w = w;
+      s.h = h;
+    }
+    return s;
+  } catch {
+    tg.soft = null;
+    return null;
+  }
+}
 
 const UNIFORMS = ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse", "u_holes", "u_nholes", "u_boxes", "u_nboxes", "u_boxBase", "u_cut", "u_head", "u_headV", "u_flow", "u_flowF", "u_npts", "u_s0", "u_pts"];
 
@@ -309,18 +386,7 @@ function makeTarget(canvas: Ctx2Canvas): Target | null {
   const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false, powerPreference: "low-power" }) as WebGLRenderingContext | null;
   if (!gl) return null;
   try {
-    const sh = (type: number, src: string) => {
-      const s = gl.createShader(type)!;
-      gl.shaderSource(s, src);
-      gl.compileShader(s);
-      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s) || "shader");
-      return s;
-    };
-    const prog = gl.createProgram()!;
-    gl.attachShader(prog, sh(gl.VERTEX_SHADER, VERT));
-    gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FRAG));
-    gl.linkProgram(prog);
-    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog) || "link");
+    const prog = compile(gl, VERT, FRAG);
     gl.useProgram(prog);
     const u: Uniforms = {};
     for (const name of UNIFORMS) u[name] = gl.getUniformLocation(prog, name);
@@ -557,11 +623,11 @@ export class RibbonEngine {
 
     gl.viewport(0, 0, tg.canvas.width, tg.canvas.height);
     const partial = y0 > 0 || y1 < h;
+    const rowTop = Math.round(y0 * dpr);
+    const rowBottom = Math.min(tg.canvas.height, Math.round(y1 * dpr));
     if (partial) {
-      const top = Math.round(y0 * dpr);
-      const bottom = Math.min(tg.canvas.height, Math.round(y1 * dpr));
       gl.enable(gl.SCISSOR_TEST);
-      gl.scissor(0, tg.canvas.height - bottom, tg.canvas.width, bottom - top);
+      gl.scissor(0, tg.canvas.height - rowBottom, tg.canvas.width, rowBottom - rowTop);
     } else gl.disable(gl.SCISSOR_TEST);
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
@@ -570,15 +636,18 @@ export class RibbonEngine {
     const flow = this.mode === "flow";
     const level = flow && phone ? 2 : phone ? 0 : 1;
     const strip = tg.strips[phone ? 0 : 1];
-    gl.bindBuffer(gl.ARRAY_BUFFER, strip.buf);
-    gl.enableVertexAttribArray(a.u);
-    gl.vertexAttribPointer(a.u, 1, gl.FLOAT, false, 8, 0);
-    gl.enableVertexAttribArray(a.side);
-    gl.vertexAttribPointer(a.side, 1, gl.FLOAT, false, 8, 4);
-    if (inst) {
-      inst.vertexAttribDivisorANGLE(a.u, 0);
-      inst.vertexAttribDivisorANGLE(a.side, 0);
-    }
+    const bindStrip = () => {
+      gl.bindBuffer(gl.ARRAY_BUFFER, strip.buf);
+      gl.enableVertexAttribArray(a.u);
+      gl.vertexAttribPointer(a.u, 1, gl.FLOAT, false, 8, 0);
+      gl.enableVertexAttribArray(a.side);
+      gl.vertexAttribPointer(a.side, 1, gl.FLOAT, false, 8, 4);
+      if (inst) {
+        inst.vertexAttribDivisorANGLE(a.u, 0);
+        inst.vertexAttribDivisorANGLE(a.side, 0);
+      }
+    };
+    bindStrip();
 
     let strength: number;
     gl.uniform2f(u.u_res, w, h);
@@ -654,8 +723,7 @@ export class RibbonEngine {
     const haloGain = level === 2 ? 3 : 1;
 
     let current: Ribbon | null = null;
-    // batches are in ribbon order, halo → line → core: halo first (soft, wide), crisp lines on top
-    for (const b of tg.batches[level]) {
+    const drawBatch = (b: Batch) => {
       const r = b.ribbon;
       if (r !== current) {
         current = r;
@@ -692,7 +760,44 @@ export class RibbonEngine {
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, strip.count);
         }
       }
+    };
+    const soft = level === 2 ? softPass(tg) : null;
+    if (!soft) {
+      // batches are in ribbon order, halo → line → core: halo first (soft, wide), crisp lines on top
+      for (const b of tg.batches[level]) drawBatch(b);
+      return;
     }
+    // phone flow: the soft strokes at half resolution (blur by nature; measured 20/10 they were most of
+    // the frame), added onto the canvas, then the crisp lines at full resolution — blending is additive,
+    // so the order of the passes leaves the sum unchanged
+    gl.bindFramebuffer(gl.FRAMEBUFFER, soft.fb);
+    gl.viewport(0, 0, soft.w, soft.h);
+    if (partial) {
+      const sTop = Math.floor(rowTop / 2);
+      const sBottom = Math.min(soft.h, Math.ceil(rowBottom / 2) + 1);
+      gl.scissor(0, soft.h - sBottom, soft.w, sBottom - sTop);
+    }
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    for (const b of tg.batches[level]) if (b.kind === "halo") drawBatch(b);
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    gl.viewport(0, 0, tg.canvas.width, tg.canvas.height);
+    if (partial) gl.scissor(0, tg.canvas.height - rowBottom, tg.canvas.width, rowBottom - rowTop);
+    for (const loc of [a.u, a.side, a.k, a.i, a.f]) {
+      gl.disableVertexAttribArray(loc);
+      if (inst) inst.vertexAttribDivisorANGLE(loc, 0);
+    }
+    gl.useProgram(soft.prog);
+    gl.bindBuffer(gl.ARRAY_BUFFER, soft.quad);
+    gl.enableVertexAttribArray(soft.loc);
+    gl.vertexAttribPointer(soft.loc, 2, gl.FLOAT, false, 0, 0);
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, soft.tex);
+    gl.uniform1i(soft.uTex, 0);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    gl.disableVertexAttribArray(soft.loc);
+    gl.useProgram(tg.prog);
+    bindStrip();
+    for (const b of tg.batches[level]) if (b.kind !== "halo") drawBatch(b);
   }
 }
 
