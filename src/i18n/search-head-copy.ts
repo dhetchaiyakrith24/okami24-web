@@ -79,8 +79,8 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   // Round SEO ฉ batch 3 (12/10): relx / iqos / wotofo metas step back to brand level like joiway/infy in #354 — the model
   // names and prices belong to the product pages (SEO_LANDSCAPE §0.6). Wording = thai-copy 12/10, read by seo-auditor 12/10.
   relx: () => ({
-    title: `RELX ของแท้ พอตใช้แล้วทิ้งและพอตคิท${OKM_TITLE_SUFFIX}`,
-    description: "RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และเครื่องระบบสวิตช์ที่เปลี่ยนแค่หัวพอต บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+    title: `RELX ของแท้ พอตใช้แล้วทิ้งและพอตเปลี่ยนหัว${OKM_TITLE_SUFFIX}`,
+    description: "RELX ของแท้ที่ OKami24 (OKM) มีให้เลือกทั้งพอตใช้แล้วทิ้งที่แกะกล่องใช้ได้เลย และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
   }),
   // "15k" belongs to /products/m-switch-kit (the shop's "M Bar 15K"; the m-bar-15k page redirects there since 08/10) —
   // no 15K, no price in this head.
@@ -89,8 +89,8 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
     description: "SALTHUB เจ้าของ M Bar ที่หลายร้านเรียกว่า Marbo มีทั้งพอตใช้แล้วทิ้ง M Bar 9K และ 10K กับเครื่องระบบสวิตช์ M Switch และ Zero สั่งทาง LINE @okm24",
   }),
   voopoo: () => ({
-    title: `VOOPOO พอตคิท หัวพอต คอยล์ ของแท้${OKM_TITLE_SUFFIX}`,
-    description: "VOOPOO ของแท้ที่ OKami24 (OKM) มีพอตคิทตระกูล ARGUS DRAG VINCI และ VMATE พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+    title: `VOOPOO ของแท้ พอตซิสเต็ม หัวพอต และคอยล์${OKM_TITLE_SUFFIX}`,
+    description: "VOOPOO ของแท้ที่ OKami24 (OKM) มีพอตซิสเต็มตระกูล ARGUS DRAG VINCI และ VMATE พร้อมหัวพอตและคอยล์แท้สำหรับเปลี่ยน บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
   }),
   uwell: () => ({
     title: `UWELL Caliburn พอตซิสเต็ม ของแท้ ราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
@@ -108,15 +108,13 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
     title: `IQOS ของแท้ เครื่องอุ่นยาสูบ ILUMA${OKM_TITLE_SUFFIX}`,
     description: "IQOS หรือที่คนไทยเรียกกันว่าไอคอส เป็นเครื่องอุ่นยาสูบที่ใช้ได้กับก้าน TEREA เท่านั้น ที่ร้านมีเครื่องตระกูล ILUMA ของแท้ให้เลือก สั่งทาง LINE @okm24",
   }),
-  "esko-bar": (priceOf) => {
-    const p = priceOf("pod-159");
-    return {
-      // Round SEO D: the model price left the brand title (pod-159 owns "esko bar switch 20k"); 20 = the flavours listed
-      // for pod-159 (BSOT §21) — "กลิ่น" is the locked word for a flavour option (THAI_STYLE, round 10B).
-      title: `ESKO BAR เครื่องระบบสวิตช์ ของแท้ 20 กลิ่น${OKM_TITLE_SUFFIX}`,
-      description: `ESKO BAR ที่ร้านมีคือ Esko Bar Switch 20K ของแท้ ตัวเครื่องใช้ซ้ำได้ เปลี่ยนแค่หัวพอตบรรจุสำเร็จ มีให้เลือก 20 กลิ่น${p ? ` ราคา ${p}` : ""} สั่งทาง LINE @okm24`,
-    };
-  },
+  // SEO all keys 20/10: "esko bar" sat at position 3.6 with 0 clicks (GSC 18/10) under a title that spoke only to the switch
+  // device — the brand now has the ESKO BAR 20000 disposable, the Switch 20K device and its pods, so the head names both
+  // formats, no model and no price (the product pages own "esko bar switch 20k" / "esko bar 20k"). Wording = thai-copy 20/10.
+  "esko-bar": () => ({
+    title: `ESKO BAR พอตใช้แล้วทิ้ง พอตเปลี่ยนหัว ของแท้${OKM_TITLE_SUFFIX}`,
+    description: "ESKO BAR หรือที่หลายคนเรียกว่าเอสโคบาร์ มีทั้งพอตใช้แล้วทิ้ง และพอตเปลี่ยนหัวที่ใช้ตัวเครื่องเดิม เปลี่ยนแค่หัวพอต บอกราคาทุกรุ่น สั่งทาง LINE @okm24",
+  }),
   // Image-fix round 2026-09-30: Pod-180 is nexBar CLEAR 18K (no brand); the WOTOFO page lists WOTOFO nexBAR 18K, sold
   // out — so no price and no stock claim here (owner "ตามแนะนำ").
   // SEO ฉ batch 3: the 18K spec line is the product page's (wotofo-nexbar-18k); the first clause is the brand lede in
@@ -148,9 +146,11 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   },
   // Round SEO D: "joiway f4" queries landed on this page (GSC 0/10) — the model names and prices left the title (batch 4)
   // and the description (close, seo-auditor 08/10): /products/joiway-f4 owns "joiway f4". Wording = thai-copy 08/10.
+  // SEO all keys 20/10: "joiway" pos 6.2, 3 clicks / 179 impressions — the title says what sets the brand apart (คู่กลิ่น)
+  // and the meta carries the Thai name people type (จอยเวย์), like ไอคอส / อินฟี่. thai-copy 20/10.
   joiway: () => ({
-    title: `JOIWAY พอตใช้แล้วทิ้ง ของแท้ บอกราคาทุกรุ่น${OKM_TITLE_SUFFIX}`,
-    description: "JOIWAY ของแท้ที่ OKami24 (OKM) มีทั้งพอตใช้แล้วทิ้งรุ่นกลิ่นเดียว และรุ่นคู่กลิ่นในเครื่องเดียว พร้อมคลิปรีวิวใช้จริงบน YouTube สั่งทาง LINE @okm24",
+    title: `JOIWAY พอตใช้แล้วทิ้ง ของแท้ มีรุ่นคู่กลิ่น${OKM_TITLE_SUFFIX}`,
+    description: "JOIWAY หรือที่หลายคนเรียกว่าจอยเวย์ มีพอตใช้แล้วทิ้งทั้งรุ่นกลิ่นเดียว และรุ่นคู่กลิ่นในเครื่องเดียว พร้อมคลิปรีวิวใช้จริงบน YouTube สั่งทาง LINE @okm24",
   }),
   // Round SEO D close (seo-auditor 08/10): with no override this page's description was its lede, which names "INFY 20K"
   // — /products/infy-20k owns "infy 20k". Title kept exactly as the default (brandTitleTh + the layout suffix); the
