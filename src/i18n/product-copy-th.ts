@@ -886,6 +886,11 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "พอตใช้แล้วทิ้งของ TFIT รองรับสูงสุด 20,000 พัฟ ใช้คอยล์ mesh สองตัว แบต 600mAh ชาร์จผ่าน USB-C และปรับช่องลมได้ตามที่ชอบ",
   },
+  // maxlist (21/10): warehouse facts only — Max "Foli Bar 15k" (Disposable-42).
+  "foli-bar-15k": {
+    tagline: "พอตใช้แล้วทิ้ง Foli Bar 15K",
+    shortDescription: "พอตใช้แล้วทิ้ง Foli Bar 15K ชื่อรุ่นระบุ 15,000 พัฟ ร้านมีให้เลือก 12 กลิ่น",
+  },
   // maxlist (21/10): warehouse facts only — Max "หัวพอต Vazer One" (Pod-115).
   "vazer-one-pod": {
     tagline: "หัวพอต Vazer One",

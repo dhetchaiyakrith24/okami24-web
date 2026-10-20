@@ -230,7 +230,7 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
   },
   "foli-bar-15k": {
     sellingPrice: 349,
-    lastPriceReview: "2026-09-21",
+    lastPriceReview: "2026-10-21",
     basis: "shipnity",
     shipnityProductId: "Disposable-42",
     evidence: 'shipnity-backoffice: "Foli Bar 15k" (Disposable-42, ฿349) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',

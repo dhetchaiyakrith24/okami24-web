@@ -997,6 +997,21 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "vanilla-custard": null,
     "watermelon": null,
   } },
+  // maxlist (21/10): Foli Bar 15K (legacy) — Max Disposable-42-1..12.
+  "foli-bar-15k": { parent: "Disposable-42", options: {
+    "apple-aloe": "Disposable-42-1",
+    "grape": "Disposable-42-2",
+    "grape-aloe": "Disposable-42-3",
+    "blueberry": "Disposable-42-4",
+    "cola-ice": "Disposable-42-5",
+    "lychee-ice": "Disposable-42-6",
+    "double-mint": "Disposable-42-7",
+    "mix-berry": "Disposable-42-8",
+    "strawberry-ice": "Disposable-42-9",
+    "red-bull-ice": "Disposable-42-10",
+    "watermelon": "Disposable-42-11",
+    "peach": "Disposable-42-12",
+  } },
   // maxlist (21/10): VOOPOO Argus Pod cartridge (legacy seed Coil-21, now on Max) — Coil-21-1..4.
   "coil-21": { parent: "Coil-21", options: {
     "Coil-21-1": "Coil-21-1",

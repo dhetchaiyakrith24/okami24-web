@@ -162,6 +162,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Banana Freeze",
   "Lemon Ice Tea",
   "Thai Milk Tea",
+  "Red Bull Ice", // maxlist 21/10: Foli Bar 15K
   "Purple Grape",
   "Apple Baraku",
   "Apple Shisha",
