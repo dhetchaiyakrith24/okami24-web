@@ -2463,10 +2463,11 @@ const allGuides: Guide[] = [
     // Round "SEO all keys" batch 4 (SEO_LANDSCAPE §9.2 #6 — "argus g4 vs g4 mini · g4 mini vs g3 mini · voopoo argus รุ่นไหนดี"):
     // ARGUS against ARGUS only, like comparing-voopoo-drag-models. Every number = a verified voopoo.ts row (shop.voopoo.com).
     // G4's 1.0Ω route follows the pod row + poster (pod turned 180°). Title A since 20/10 (owner lifted the 22/10 hold; watch row 2 = the bare
-    // "argus g4" on /products/argus-g4 — this title leads with the pair, not the bare model); links to argus-g4 / argus-g4-mini added 20/10.
+    // "argus g4" on /products/argus-g4 — this title leads with the pair, not the bare model; "VOOPOO ARGUS" left the
+    // title — it split mid-name on the /guides card at 1440 and the H1 at 390, measured 20/10 — and stays in the slug and body); links to argus-g4 / argus-g4-mini added 20/10.
     id: "comparing-voopoo-argus-models",
     slug: "comparing-voopoo-argus-models",
-    title: "ARGUS G4 vs G4 mini ต่างกันยังไง เทียบ VOOPOO ARGUS 4 รุ่น",
+    title: "ARGUS G4 vs G4 mini ต่างกันยังไง เทียบครบ 4 รุ่น",
     dek: "ARGUS G4 กับ G4 mini แบต 1650mAh เท่ากัน ต่างกันที่จอกับวัตต์สูงสุด ส่วน G3 mini เบาที่สุดในสี่รุ่น และ P3 มีจอทัช 2.01 นิ้ว ร้านเทียบให้ดูทีละคู่",
     category: "buying-guide",
     readingTimeMin: 6,
