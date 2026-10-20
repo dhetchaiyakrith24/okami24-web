@@ -66,6 +66,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "infy-pod": { tagline: "INFY POD device body" },
   "relx-essential-2": { tagline: "RELX Essential 2 device body" },
   "relx-infinity-pro-2-pod": { tagline: "RELX Infinity Pro 2 pods" },
+  "coil-21": { tagline: "VOOPOO Argus Pod cartridge" },
   "pod-180": { tagline: "nexBar CLEAR 18K disposable" },
   "coil-54": { tagline: "Feelin Mini pod by NEVOKS" },
 };
