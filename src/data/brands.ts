@@ -87,7 +87,7 @@ export const brands: Brand[] = [
       "A disposable-vape brand offering both single-use ESKO BAR Disposable devices and the ESKO BAR SWITCH reusable pod system.",
     descriptionTh:
       // Round SEO D batch 5 (owner 07/10): the Thai name people type ("เอสโคบาร์", autocomplete 07/10), one mention.
-      "ESKO BAR หรือที่หลายคนเรียกว่าเอสโคบาร์ เป็นแบรนด์พอตใช้แล้วทิ้งและเครื่องระบบสวิตช์ ที่ร้านมี ESKO BAR 20000 พอตใช้แล้วทิ้ง 22 กลิ่น กับ Esko Bar Switch 20K ตัวเครื่องที่ใช้ซ้ำได้ เปลี่ยนแค่หัวพอตบรรจุสำเร็จ และมีหัวพอต 20 กลิ่นแยกขาย",
+      "ESKO BAR หรือที่หลายคนเรียกว่าเอสโคบาร์ เป็นแบรนด์พอตใช้แล้วทิ้งและเครื่องระบบสวิตช์ ที่ร้านมีทั้ง ESKO BAR 20000 พอตใช้แล้วทิ้ง 22 กลิ่น กับ Esko Bar Switch 20K ตัวเครื่องที่ใช้ซ้ำได้ เปลี่ยนแค่หัวพอตบรรจุสำเร็จ และมีหัวพอต 20 กลิ่นแยกขาย",
     referenceUrl: "https://eskobarvape.com/",
   },
   {
