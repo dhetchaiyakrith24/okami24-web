@@ -19,6 +19,17 @@ Match rule: a Max parent counts as "on the site" when any of its codes is in `sr
 | 9 | Coil-21 | คอยล์ Argus Pod | 450 | 4 (1) | no product in code | new page; VOOPOO Argus Pod coils | 9 |
 | 10 | ELQ-64 | Double Mint Salt Nic | 300 | 6 (2) | no product in code | new page; Thai-market brand, no maker site → identity check first | 10 |
 
+## A2. Status after the first listing PRs (21/10 early)
+
+| Row | State |
+|---|---|
+| ELQ-4 Muro Salt Nic | **LIVE** (PR #660, 6 flavours, ฿250) |
+| Pod-157 Relx Essential 2 | PR in review — 4 Max colours + Orange (shop colour, not in Max; sold-out option) · ฿490 |
+| Eliquid-169 Muro Freebase | blocked: no bottle photo found (owner photo wanted) · price to use = Max ฿220 (legacy approval 250 is old) |
+| Pod-27 Infinity Pro 2 pods | waiting for the owner's credit answer (42 flavours, ~55 px pods on the 14 official posters) |
+| Pod-137 Relx Creator Pod 20K | skipped: identity not confirmed — shops sell "Creator Boost 20000" / "Creator Pod Clear 18K", none names a 31-flavour "Creator Pod 20K" |
+| Disposable-42 Foli Bar · Pod-115 Vazer One · Pod-142 Reswa Sportcan · Coil-21 Argus Pod · ELQ-64 Double Mint | not started (need card images) |
+
 ## B. Max parents that ARE on the site (checked in sku-map, not hidden) — 54 parents, no action
 Includes everything list19 listed (Disposable-43, Pod-176, eliquid-78, Pod-173, ELQ-6) and the Nexswitch, Esko, Infy, M Switch,
 Marbo, Muro Connector/SC, IQOS, Lambda i8, Joiway F3, Caliburn/Vinci/TPP coils lines. Full parent list with prices =

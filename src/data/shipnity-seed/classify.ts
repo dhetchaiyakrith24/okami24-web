@@ -80,6 +80,9 @@ const OWNER_CONFIRMED_PARENT_TYPE: Record<string, OptionType> = {
   // Image sweep (19/10): Super Cool Salt Nic (Max ELQ-6) — e-liquid flavours whose names carry colour words ("Pinky Blush", "White Polo",
   // "Black Hexx"); every child is one flavour bottle (COF Super Cool Salt Series label), not a colour.
   "SUPER-COOL-SALTNIC": "flavor",
+  // maxlist (20/10): RELX Infinity Pro 2 pods (Max Pod-27) — 42 flavour pods; Max writes the 50 mg ones as "<flavour> Nic / 50mg." — a nicotine mark
+  // on a flavour pod would read as a mixed axis, but every child is one flavour pod (the pack prints the flavour + its nicotine strength).
+  "RELX-INFINITY-PRO-2-POD": "flavor",
   "coil-78": "resistance", // not present in the active view, kept for completeness/documentation
 };
 
