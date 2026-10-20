@@ -19,16 +19,20 @@ Match rule: a Max parent counts as "on the site" when any of its codes is in `sr
 | 9 | Coil-21 | คอยล์ Argus Pod | 450 | 4 (1) | no product in code | new page; VOOPOO Argus Pod coils | 9 |
 | 10 | ELQ-64 | Double Mint Salt Nic | 300 | 6 (2) | no product in code | new page; Thai-market brand, no maker site → identity check first | 10 |
 
-## A2. Status after the first listing PRs (21/10 early)
+## A2. Status 21/10 (after the listing PRs)
 
 | Row | State |
 |---|---|
 | ELQ-4 Muro Salt Nic | **LIVE** (PR #660, 6 flavours, ฿250) |
-| Pod-157 Relx Essential 2 | PR in review — 4 Max colours + Orange (shop colour, not in Max; sold-out option) · ฿490 |
-| Eliquid-169 Muro Freebase | blocked: no bottle photo found (owner photo wanted) · price to use = Max ฿220 (legacy approval 250 is old) |
-| Pod-27 Infinity Pro 2 pods | waiting for the owner's credit answer (42 flavours, ~55 px pods on the 14 official posters) |
+| Pod-157 Relx Essential 2 | **LIVE** (PR #664, 4 Max colours + the shop's Orange, ฿490) |
+| Pod-27 RELX Infinity Pro 2 pods | **LIVE** (PR #664, 42 flavours, ฿149, card = Watermelon Ice pack, 41 flavours no-photo panel) |
+| Coil-21 VOOPOO Argus Pod | PR #666 in review (4 options, ฿450, card from the 0-credit master) |
+| Eliquid-169 Muro Freebase | blocked: no bottle photo found (owner photo wanted) · price to use = Max ฿220 (the legacy approval's 250 is old) |
+| Disposable-42 Foli Bar 15k | blocked: identity + image — two Foli lines are sold ("Foli Bar 15000" on pod789 = Max's name, smoky tapered device; "Foli Cool Bar 15000" on ihavevape, short black device); the only "Foli Bar" artwork is a 600 px poster with ~45 px devices → owner photo of the real stock needed |
 | Pod-137 Relx Creator Pod 20K | skipped: identity not confirmed — shops sell "Creator Boost 20000" / "Creator Pod Clear 18K", none names a 31-flavour "Creator Pod 20K" |
-| Disposable-42 Foli Bar · Pod-115 Vazer One · Pod-142 Reswa Sportcan · Coil-21 Argus Pod · ELQ-64 Double Mint | not started (need card images) |
+| ELQ-64 Double Mint Salt Nic | ready to render (6 renders = 24 credits; maneevp 1000 px posters for 5 flavours + a small group shot for Mint) — waiting for the owner's credit answer |
+| Pod-142 Reswa Sportcan 12K | ready to render (5 renders = 20 credits; ihavevape 600 px posters for all 5) — waiting for credits |
+| Pod-115 Vazer One | ready to render (Max 5 flavours = 20 credits; the maker's own 22 posters at 1000 px) — waiting for credits; the maker's other 17 flavours would cost 68 more |
 
 ## B. Max parents that ARE on the site (checked in sku-map, not hidden) — 54 parents, no action
 Includes everything list19 listed (Disposable-43, Pod-176, eliquid-78, Pod-173, ELQ-6) and the Nexswitch, Esko, Infy, M Switch,

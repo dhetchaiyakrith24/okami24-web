@@ -973,6 +973,13 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "ELQ-6-10": "ELQ-6-10",
   } },
   // Image sweep (19/10): INFY POD — Max Pod-158-1..14; the maker's 5 extra colours are not in the warehouse.
+  // maxlist (21/10): VOOPOO Argus Pod cartridge (legacy seed Coil-21, now on Max) — Coil-21-1..4.
+  "coil-21": { parent: "Coil-21", options: {
+    "Coil-21-1": "Coil-21-1",
+    "Coil-21-2": "Coil-21-2",
+    "Coil-21-3": "Coil-21-3",
+    "Coil-21-4": "Coil-21-4",
+  } },
   // maxlist (20/10): RELX Infinity Pro 2 pods — Max Pod-27-1..42.
   "relx-infinity-pro-2-pod": { parent: "Pod-27", options: {
     "Pod-27-1": "Pod-27-1",

@@ -232,6 +232,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "RELX-ESSENTIAL-2": { sellingPrice: 490, lastPriceReview: "2026-10-20" },
   // maxlist (20/10): RELX Infinity Pro 2 pods (Max-only "Pod-27") — Max ราคาขาย ฿149 for the parent and its 42 flavours (read 2026-10-20).
   "RELX-INFINITY-PRO-2-POD": { sellingPrice: 149, lastPriceReview: "2026-10-20" },
+  // maxlist (21/10): VOOPOO Argus Pod cartridge (Max Coil-21) — Max ราคาขาย ฿450 for the parent and its 4 options (read 2026-10-20).
+  "Coil-21": { sellingPrice: 450, lastPriceReview: "2026-10-21" },
   "VMATE-PRO-2": { sellingPrice: 890, lastPriceReview: "2026-10-19" },
   // owner-confirmed 2026-10-19: "ราคา Graple Freebase: ฿160.-" — one price for the parent and its option (Max says ฿795 parent / ฿159 child
   // until the admin updates it). Held until a card photo exists.

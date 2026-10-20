@@ -10650,5 +10650,29 @@
    "reference": "pod789.com RELX Infinity Pro 2 pod Watermelon Ice poster 600 px (the poster is RELX's own artwork; https://pod789.com/product/relx-infinity-pro-2/) - _incoming/maxlist-2010/ref/ip2/i15.jpg",
    "fidelitySheet": "_incoming/maxlist-2010/r/cmp-ip2.jpg (poster crop vs both renders: RELX / Pod Pro 2 / 3% Nicotine / Watermelon Ice / 1.9ml / Adjustable Power with Infinity 2 / WARNING panel letter by letter), _incoming/maxlist-2010/ke/sheet3.jpg (edges on the site background)"
   }
+ },
+ {
+  "source": "_incoming/list19/argus-pod/pod.png",
+  "slug": "coil-21",
+  "role": "card",
+  "fileName": "card.webp",
+  "note": "maxlist 21/10 - VOOPOO Argus Pod cartridge (Max Coil-21), card = Argus mix (in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-17/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot of the shop's Argus Pod cartridge photo (reference crop masters/in/c21-pod-x3.png); render masters/out/c21-pod-A.png; cut = flood key (b17/floodkey.js T=10) restricted to the pod's walls (dome 471-1389, base 497-1362) and the base row 1817 with 18 px corners, alpha erode 2 px - copy beside this source",
+   "reference": "pod789.com Argus Coil photo 600 px (https://pod789.com/product/argus-pod/) - _incoming/img-1610/masters/src/coil-21/pod789-argus-pod-0.jpg",
+   "fidelitySheet": "_incoming/img-1610/masters/out/z-c21-pod-A.jpg (render), _incoming/maxlist-2010/c21/cut-sheet.jpg (cut on the site background: dome, base, floor strips removed)"
+  }
+ },
+ {
+  "source": "_incoming/list19/argus-pod/pod.png",
+  "slug": "coil-21",
+  "role": "variant",
+  "id": "coil-21-1",
+  "note": "maxlist 21/10 - VOOPOO Argus Pod cartridge (Max Coil-21), Argus mix (Max Coil-21-1)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, Unlimited plan 16-17/10 - no credits), batch 7 (img-1610 16-17/10), studio re-shoot of the shop's Argus Pod cartridge photo (reference crop masters/in/c21-pod-x3.png); render masters/out/c21-pod-A.png; cut = flood key (b17/floodkey.js T=10) restricted to the pod's walls (dome 471-1389, base 497-1362) and the base row 1817 with 18 px corners, alpha erode 2 px - copy beside this source",
+   "reference": "pod789.com Argus Coil photo 600 px (https://pod789.com/product/argus-pod/) - _incoming/img-1610/masters/src/coil-21/pod789-argus-pod-0.jpg",
+   "fidelitySheet": "_incoming/img-1610/masters/out/z-c21-pod-A.jpg (render), _incoming/maxlist-2010/c21/cut-sheet.jpg (cut on the site background: dome, base, floor strips removed)"
+  }
  }
 ]
