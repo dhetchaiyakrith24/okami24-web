@@ -220,6 +220,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   // (was ฿269). Max still lists ฿269 for ELQ-1 and its flavours; the site price is the owner's and differs from Max until the admin updates Max.
   "ELIQUID-1": { sellingPrice: 290, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): Pepo Salt Nic (Max ELQ-5) and Dundu Salt Nic (Max Eliquid-73) — Max ราคาขาย ฿300 each (read 2026-10-17).
+  // maxlist (21/10): Double Mint Salt Nic (Max ELQ-64) — Max ราคาขาย ฿300 for the parent and its 6 flavours (read 2026-10-20); owner 21/10 "ลงคลังปกติ".
+  "Eliquid-64": { sellingPrice: 300, lastPriceReview: "2026-10-21" },
   "Eliquid-72": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
   "Eliquid-73": { sellingPrice: 300, lastPriceReview: "2026-10-19" },
   // Round list19 (19/10): Marbo Freebase (Max ELQ-3, old seed Eliquid-109) — Max ราคาขาย ฿159 for the parent and its 4 flavours (read 2026-10-17).

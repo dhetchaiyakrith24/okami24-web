@@ -326,6 +326,7 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "ELIQUID-1": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "MARBORO SALT NIC 30 ML"; 3 independent Thai retailers (thai-vapes.com "Salt Hub - Marbo Salt Nic", vape69th.com, goatvapethai.com) consistently attribute the Marboro salt-nic line to Salt Hub; salthub.com\'s own favicon and the physical bottle label ("A product by: Salt hub") independently confirm this. Trademark-risk hold above lifted for this record by the owner 18/10 ("list everything", through Friday) — listed on warehouse facts only.' },
   // Round list19 (19/10, owner "list everything"): Pepo / Dundu salt-nic e-liquids — no maker site found; the bottles print only
   // "PEPO" / "DUNDU SALT" → sold without a brand, warehouse facts only (as Pop Up 10K).
+  "Eliquid-64": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Double Mint Salt Nic" (ELQ-64), 6 flavours, ฿300; no maker site — listed on warehouse facts only, without a brand; owner 21/10 "ลงคลังปกติ"' },
   "Eliquid-72": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Pepo Salt Nic" (Max parent ELQ-5, old seed Eliquid-72), 5 flavours; no maker site found — listed on warehouse facts only, without a brand' },
   // Round list19 (19/10, owner "list everything first"): prepared, NOT published — no card photo yet (IMAGE_SPEC §4); approval held in
   // publication-approvals.ts until a card exists. Warehouse facts only.
@@ -343,19 +344,9 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "Eliquid-109": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Marboro Freebase ขวดยาว" — same Marboro/Salt Hub evidence as ELIQUID-1, different nicotine formulation (freebase vs. salt nic) and bottle format. Trademark-risk hold above lifted for this record by the owner 18/10 ("list everything", through Friday) — listed on warehouse facts only.' },
   "eliquid-133": { brandId: "salthub", categoryId: "e-liquid", evidence: 'name "Yogurt Salt Hub" states the brand explicitly and directly — no inference needed, though the actual bottle label reads only "Yogurt probiotics — The Original" with no visible Salt Hub/Marbo branding (retailer-asserted attribution). See the trademark-risk flag above — held alongside ELIQUID-1/Eliquid-109 pending owner review, plus an unresolved 30mg/35mg nicotine-strength conflict across sources.' },
 
-  // Catalog-intelligence mission (2026-09-02) — Eliquid-64 ("Double Mint Salt Nic") deliberately
-  // has NO entry here, and none should be added without an explicit owner decision. Research
-  // confirmed "Double Mint" is the product LINE name, not the flavor (its real variant list is
-  // Apple, Grape, Lychee, Mint, Peach, Watermelon — this record's Watermelon/Peach children match
-  // exactly, "Mint" is a sibling flavor). The line's actual bottle label reads "RIGLEY'S
-  // DOUBLEMINT CHEWING GUM" rendered in Wrigley's own green-arrow trade dress, with the brand name
-  // deliberately misspelled by one letter — a direct counterfeit of a real, actively-owned Mars/
-  // Wrigley trademark, not a genre convention (unlike the milder Marbo/Marlboro case above; this
-  // one is unambiguous). There is no legitimate brand to resolve "Double Mint" to. This is
-  // recorded here specifically so a future session does not re-research and admit it as if it
-  // were an ordinary "brand identity unresolved" case — it is not unresolved, it is a confirmed
-  // counterfeit, and the correct default is to never carry it into the catalog under this
-  // packaging, pending an explicit owner decision to the contrary.
+  // Eliquid-64 ("Double Mint Salt Nic", Max ELQ-64): the catalog-intelligence mission (2026-09-02) kept it out — "Double Mint" is the product LINE, and the
+  // bottle label reads "RIGLEY'S DOUBLEMINT CHEWING GUM" in Wrigley's trade dress. OWNER DECISION 2026-10-21 ("ลงคลังปกติครับ", via Friday): list it as
+  // the warehouse sells it, by the Max name, without a brand (like Pepo / Dundu). The line's flavours are Apple, Grape, Lychee, Mint, Peach, Watermelon.
 
   // Part B (device wave 2) — "Feelin" resolves to NEVOKS (nevoks.com, official): both Feelin Mini
   // and Feelin C1 are confirmed real pod-system products in Nevoks' own FEELIN series. Both
@@ -681,6 +672,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "ตัวเครื่อง VOOPOO Vmate Pro 2",
     shortDescription: "ตัวเครื่อง VOOPOO Vmate Pro 2 ร้านมีให้เลือก 4 สี",
   },
+  "Eliquid-64": {
+    // maxlist (21/10): warehouse facts only — the Max name "Double Mint Salt Nic".
+    tagline: "น้ำยา Double Mint Salt Nic",
+    shortDescription: "น้ำยา Double Mint นิโคตินแบบ salt nic ร้านมีให้เลือก 6 กลิ่น",
+  },
   "Eliquid-72": {
     // Round list19 (19/10): warehouse facts only — the Max name "Pepo Salt Nic".
     tagline: "น้ำยา Pepo Salt Nic",
@@ -962,6 +958,19 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
   ],
   // Round list19 (18/10): Marbo Saltnic — OKami24 re-shoot (batch 7) of the shop's Tobacco (red) bottle photo, an in-stock flavour.
   // Round list19 (19/10): Pepo / Dundu — OKami24 re-shoots (batch 7) of the shop's bottle photos (Pepo card = Grape, in stock).
+  // maxlist (21/10): Double Mint — card = Watermelon (in stock); every flavour = an OKami24 studio re-shoot (Higgsfield) of the bottle on the shop's posters.
+  "Eliquid-64": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/eliquid-64/card.webp",
+      alt: "Double Mint Salt Nic e-liquid bottle, Watermelon, studio photo",
+      angle: "Front, studio re-shoot (maxlist 21/10, IMAGE_SPEC §0 item 7) of the shop's bottle poster. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster",
+      sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/",
+    },
+  ],
   "Eliquid-72": [
     {
       kind: "official-photo",
@@ -1482,6 +1491,7 @@ const VERIFIED_SPECIFICATIONS: Record<string, VerifiedSpecEntry> = {
     sourceUrls: ["https://www.infy.my/infy-device/"],
   },
   // Round list19 (19/10): warehouse facts only — the Max names "Pepo Salt Nic" / "Dundu Salt Nic" (nicotine type).
+  "Eliquid-64": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
   "Eliquid-72": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "salt nic", sourceStatus: "verified" }], sourceUrls: [] },
   // Round list19 (19/10): prepared, not published — the Max name "Graple Freebase" (nicotine type).
   "GRAPLE-FREEBASE": { specifications: [{ key: "type", label: "ชนิดนิโคติน", value: "freebase", sourceStatus: "verified" }], sourceUrls: [] },
@@ -1934,6 +1944,14 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "Pod-169-1": { kind: "official-photo", role: "detail", src: "/assets/products/pod-169/variant-pod-169-1.webp", alt: "INFY PLUS 2.5ml clear pod cartridge, Grape Jelly, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's INFY PLUS flavour poster", sourceUrl: "https://maneevp.com/product/this-is-salts-infy-plus-cartridge-2-5ml/" },
   },
   // Round list19 (19/10): Pepo — one re-shoot per bottle on the shop's group poster (4 of 5; Mint has no photo → no-photo panel).
+  "Eliquid-64": {
+    "ELQ-64-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-1.webp", alt: "Double Mint Salt Nic e-liquid bottle, Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
+    "ELQ-64-2": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-2.webp", alt: "Double Mint Salt Nic e-liquid bottle, Mint, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
+    "ELQ-64-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-3.webp", alt: "Double Mint Salt Nic e-liquid bottle, Watermelon, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
+    "ELQ-64-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-4.webp", alt: "Double Mint Salt Nic e-liquid bottle, Lychee, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
+    "ELQ-64-5": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-5.webp", alt: "Double Mint Salt Nic e-liquid bottle, Peach, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
+    "ELQ-64-6": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-64/variant-elq-64-6.webp", alt: "Double Mint Salt Nic e-liquid bottle, Green Apple, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Double Mint Salt Nic poster", sourceUrl: "https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/" },
+  },
   "Eliquid-72": {
     "ELQ-5-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-1.webp", alt: "Pepo Salt Nic e-liquid bottle, Grape, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
     "ELQ-5-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-72/variant-elq-5-3.webp", alt: "Pepo Salt Nic e-liquid bottle, Mixed Berry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Pepo Salt Nic bottle photo", sourceUrl: "https://ihavevape.net/product/pepo-salt-nic/" },
