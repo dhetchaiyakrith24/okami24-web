@@ -12,7 +12,8 @@
 //         the owner 02/10.)
 //   ok    off the site (docs · skills · agents · rules text · ordinary scripts)
 // Also BIG: a PR that edits 13.7 itself (its merge rule). --pr also reads the PR description: no `Checker: PASS <head sha>`
-// / `Checker: SKIP <reason>` line = BLOCKED (TEAM_RULES 13.4, owner 15/10). Still Friday's to check: every GitHub check green.
+// / `Checker: SKIP <reason>` line = BLOCKED (TEAM_RULES 13.4, owner 15/10). --pr also BLOCKS until the GitHub checks of
+// the PR head are finished and green and the deploy workflow really ran on it (not a draft-time skip — ciProblems).
 // "Not sure = big": the off-site list is an ALLOW-list.
 //
 // Usage:
@@ -150,6 +151,37 @@ function changedFiles(argv) {
   return git(["diff", "--name-only", "origin/main...HEAD"]);
 }
 
+// --pr: the GitHub checks of the PR head (statusCheckRollup). Since #665 a draft PR skips the deploy workflow,
+// and GitHub counts a skipped required check as passed — 21/10 PR #666 sat ready with `checks` SKIPPED (its
+// ready_for_review run was cancelled by a later draft-time run). So: the deploy workflow must have run on the
+// head (`decide` SUCCESS; `checks` SUCCESS, or SKIPPED only because decide found nothing on the site) and every
+// other check must be finished and green. Returns the problems, [] when fine.
+function ciProblems(rollup) {
+  const all = rollup.filter((c) => c && c.__typename === "CheckRun");
+  // the rollup can list an older run of a check next to the newer one: keep only the newest per name
+  const when = (c) => Date.parse(c.startedAt || c.completedAt || "") || 0;
+  const newest = new Map();
+  for (const c of all) if (!newest.has(c.name) || when(c) >= when(newest.get(c.name))) newest.set(c.name, c);
+  const runs = [...newest.values()];
+  const last = (name) => newest.get(name);
+  const out = [];
+  const decide = last("decide");
+  const checks = last("checks");
+  if (!decide) out.push("the deploy workflow has not run on the PR head yet - wait, or `gh pr ready` if it is a draft");
+  else if (decide.status !== "COMPLETED") out.push("GitHub checks still running (decide) - wait");
+  else if (decide.conclusion === "SKIPPED")
+    out.push("the deploy workflow SKIPPED the head (it ran while the PR was a draft) - `gh pr ready --undo` then `gh pr ready`, wait for checks");
+  else if (decide.conclusion !== "SUCCESS") out.push(`deploy/decide is ${decide.conclusion}`);
+  if (checks && checks.status !== "COMPLETED") out.push("GitHub checks still running (checks) - wait");
+  else if (checks && !["SUCCESS", "SKIPPED"].includes(checks.conclusion)) out.push(`deploy/checks is ${checks.conclusion}`);
+  for (const c of runs) {
+    if (c.name === "decide" || c.name === "checks" || c.name === "deploy") continue;
+    if (c.status !== "COMPLETED") out.push(`GitHub check ${c.name} still running - wait`);
+    else if (!["SUCCESS", "SKIPPED", "NEUTRAL"].includes(c.conclusion)) out.push(`GitHub check ${c.name} is ${c.conclusion}`);
+  }
+  return out;
+}
+
 function main() {
   const argv = process.argv.slice(2);
   const sizing = argv.includes("--base");
@@ -205,7 +237,9 @@ function main() {
     const pr = argv.indexOf("--pr");
     if (pr !== -1 && !sizing) {
       // the build/hook lists are read from the local tree, and the pin must be the PR's own head
-      const view = JSON.parse(execFileSync("gh", ["pr", "view", argv[pr + 1], "--json", "headRefOid,body"], { cwd: ROOT, encoding: "utf8" }));
+      const view = JSON.parse(
+        execFileSync("gh", ["pr", "view", argv[pr + 1], "--json", "headRefOid,body,statusCheckRollup"], { cwd: ROOT, encoding: "utf8" }),
+      );
       const prHead = view.headRefOid;
       if (prHead !== head) {
         blocked++;
@@ -216,6 +250,12 @@ function main() {
         blocked++;
         console.log(`BLOCKED  (repo) ${why}`);
       } else console.log("checker line ok");
+      const ciWhy = ciProblems(view.statusCheckRollup || []);
+      for (const p of ciWhy) {
+        blocked++;
+        console.log(`BLOCKED  (repo) ${p}`);
+      }
+      if (!ciWhy.length) console.log("GitHub checks ok (the deploy workflow ran on the head)");
     }
     if (head) console.log(`HEAD ${head}`);
   }
