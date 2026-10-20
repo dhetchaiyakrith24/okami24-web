@@ -69,7 +69,9 @@ Word-break fixes and anything the gates or the designer flagged → one commit. 
    (English name, no spaces — pattern: `git tag -n1`; Thai message the owner can read) → `git push` + `git push origin --tags`.
    **Cloud: no tag** (push refused `HTTP 403`) — name the base commit and the close commit in the report and in
    `docs/cloud-results/<round>.md`.
-4. Merge per 13.7 (`node scripts/self-merge-check.js` alone, at the pinned head, then merge). The site deploys itself after the merge; a manual deploy or a rollback = 13.7.
+4. Merge per 13.7 (`node scripts/self-merge-check.js` alone, at the pinned head, then merge). With `--pr` it also reads the
+   GitHub checks: BLOCKED "SKIPPED the head" = the deploy workflow ran while the PR was a draft → `gh pr ready --undo`,
+   `gh pr ready`, wait, re-run it. The site deploys itself after the merge; a manual deploy or a rollback = 13.7.
 
 ## Step 6 — Documents that close the round
 
