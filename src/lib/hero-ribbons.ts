@@ -81,6 +81,8 @@ varying float v_u;
 varying float v_g;
 varying float v_side;
 varying float v_alpha;
+// a different noise offset per stroke, so the dither of strokes stacked on one pixel does not add up
+varying float v_seed;
 // hole fade at the two strengths the fragment mixes by the knot (0.1 away from it, 0.55 at it) · box fade
 varying float v_h1;
 varying float v_h2;
@@ -156,6 +158,7 @@ void main() {
   v_g = u_s0 + a_u * (u_npts - 1.0);
   v_side = a_side;
   v_alpha = u_alpha * a_f;
+  v_seed = fract(a_i * 0.6180339 + a_k * 3.71 + u_r1.y * 1.37);
   float h1 = 1.0;
   float h2 = 1.0;
   for (int i = 0; i < 16; i++) {
@@ -182,6 +185,8 @@ varying float v_g;
 uniform float u_flowF;
 varying float v_side;
 varying float v_alpha;
+// a different noise offset per stroke, so the dither of strokes stacked on one pixel does not add up
+varying float v_seed;
 uniform float u_fade, u_core, u_halo, u_feather;
 uniform vec3 u_pulse; // amount, time, wave offset — bright and dim patches drifting along the ribbon (flow layer)
 // flow layer: fades behind text blocks and boxes, worked out per vertex (VERT u_holes / u_boxes)
@@ -241,10 +246,12 @@ void main() {
   g.rgb = mix(g.rgb, vec3(1.0, 0.88, 0.76), clamp(hot * (0.45 + 0.55 * u_head.z), 0.0, 1.0) * 0.85);
   a *= mix(v_h1, v_h2, hot) * v_box;
   // dither: faint glow over a dark page falls between the 256 steps of a colour channel and showed as
-  // bands, some greenish (owner 20/10); a sub-step of noise per stroke lets the sum fall smoothly. Only
-  // where the stroke has light, so the dark page around it stays exactly black.
-  float n = fract(52.9829189 * fract(dot(gl_FragCoord.xy, vec2(0.06711056, 0.00583715))));
-  gl_FragColor = vec4(g.rgb * a, a) + (n - 0.5) / 255.0 * clamp(a * 255.0, 0.0, 1.0);
+  // bands, some greenish (owner 20/10); a sub-step of noise lets the sum fall smoothly. Soft strokes only
+  // (the faint glow), its own offset per stroke (one shared pattern stacked into grain at the knot —
+  // checker #645 r2), and only where the stroke has light, so the dark page around it stays black.
+  vec2 q = gl_FragCoord.xy + v_seed * vec2(113.0, 71.0);
+  float n = fract(52.9829189 * fract(dot(q, vec2(0.06711056, 0.00583715))));
+  gl_FragColor = vec4(g.rgb * a, a) + u_halo * (n - 0.5) / 255.0 * clamp(a * 255.0, 0.0, 1.0);
 }`;
 
 type Uniforms = Record<string, WebGLUniformLocation | null>;
