@@ -1,7 +1,7 @@
 {
  "request": {
-  "startDate": "2026-07-20",
-  "endDate": "2026-10-17",
+  "startDate": "2026-07-21",
+  "endDate": "2026-10-18",
   "dimensions": [
    "date"
   ]
@@ -375,6 +375,15 @@
    "impressions": 143,
    "ctr": 0.1048951048951049,
    "position": 10.041958041958042
+  },
+  {
+   "keys": [
+    "2026-10-17"
+   ],
+   "clicks": 13,
+   "impressions": 172,
+   "ctr": 0.0755813953488372,
+   "position": 9.55813953488372
   }
  ]
 }
