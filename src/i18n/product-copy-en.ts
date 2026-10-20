@@ -47,6 +47,7 @@ export const PRODUCT_COPY_EN: Record<string, ProductCopyEn> = {
   "pod-149": { tagline: "SKE Crystal B20000 disposable" },
   "eliquid-1": { tagline: "Marbo Saltnic e-liquid, 30ml bottle" },
   "eliquid-109": { tagline: "Marbo Freebase e-liquid, tall bottle" },
+  "eliquid-64": { tagline: "Double Mint salt nic e-liquid" },
   "eliquid-72": { tagline: "Pepo salt nic e-liquid" },
   "eliquid-73": { tagline: "Dundu salt nic e-liquid" },
   "pod-154": { tagline: "Pop Up 10K refill pod" },

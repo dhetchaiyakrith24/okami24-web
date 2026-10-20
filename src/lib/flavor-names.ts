@@ -177,6 +177,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Dark Sparkle",
   "Lime Tobacco",
   "Smooth Mango",
+  "Green Apple", // maxlist 21/10: Double Mint Salt Nic
   "Berry Grape",
   "Monster Ice",
   "Black Green",
