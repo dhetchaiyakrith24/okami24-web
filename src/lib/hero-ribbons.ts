@@ -60,6 +60,10 @@ uniform vec3 u_r3; // tw ts yc
 // u_s0 = index of the first point in the whole route, so the waves and the pulse stay tied to the page.
 uniform float u_flow, u_npts, u_s0;
 uniform vec2 u_pts[24];
+// the leading knot (owner's reference: the bundle pinches into one bright bend that blooms):
+// x = route position of the head, y = how hard the lines pinch there, z = how much wider this
+// draw's strip gets there (the halo pass blooms). Its own name: the fragment side has u_head.
+uniform vec3 u_headV;
 varying float v_u;
 varying float v_g;
 varying float v_side;
@@ -84,12 +88,17 @@ vec2 spine(float u) {
   float t2 = t * t;
   return 0.5 * (2.0 * b + (c - a) * t + (2.0 * a - 5.0 * b + 4.0 * c - d) * t2 + (3.0 * b - a - 3.0 * c + d) * t2 * t);
 }
+float knot(float u) {
+  float k = (u_s0 + u * (u_npts - 1.0) - (u_headV.x - 0.08)) / 0.25;
+  return exp(-k * k);
+}
 vec2 flowAt(float u) {
   vec2 c = spine(u);
   vec2 tg = normalize(spine(u + 0.002) - c + vec2(0.0, 1e-4));
   float w = (u_s0 + u * (u_npts - 1.0)) * 0.45;
+  float pinch = 1.0 - 0.82 * knot(u) * u_headV.y;
   float lat = u_span * (u_r3.z * 0.5 + u_r1.x * 0.4 * sin(TAU * (u_r1.y * w + u_T * u_r1.w + u_r2.y)))
-            + a_k * u_r2.w * u_span * sin(PI * (u_r3.x * w * 2.0 + u_T * u_r3.y + a_k * 0.12))
+            + pinch * a_k * u_r2.w * u_span * sin(PI * (u_r3.x * w * 2.0 + u_T * u_r3.y + a_k * 0.12))
             + sin(TAU * (2.6 * w + u_T * 0.18 + a_i * 0.045)) * 1.6;
   return c + vec2(-tg.y, tg.x) * lat;
 }
@@ -108,7 +117,8 @@ vec2 pathAt(float u) {
 void main() {
   vec2 p = pathAt(a_u);
   vec2 t = normalize(pathAt(a_u + 0.0015) - p);
-  vec2 pos = p + vec2(-t.y, t.x) * a_side * u_halfw;
+  float bloom = u_flow > 0.5 ? 1.0 + u_headV.z * knot(a_u) : 1.0;
+  vec2 pos = p + vec2(-t.y, t.x) * a_side * u_halfw * bloom;
   vec2 clip = pos / u_res * 2.0 - 1.0;
   gl_Position = vec4(clip.x, -clip.y, 0.0, 1.0);
   v_u = a_u;
@@ -131,6 +141,9 @@ uniform vec3 u_pulse; // amount, time, wave offset — bright and dim patches dr
 // CSS px (x, y, w, h). The ribbon fades softly to a glow behind them, so no sharp line crosses a word.
 uniform vec4 u_holes[16];
 uniform float u_nholes, u_canvasH, u_dpr;
+// flow layer, scroll-driven (owner 20/10 ~05:40): x = route position of the scroll "head", y = draw
+// only up to the head (the line is laid as the visitor scrolls), z = glow while scrolling (0 … 1)
+uniform vec3 u_head;
 vec4 stop2(float u, float a, vec4 ca, float b, vec4 cb) { return mix(ca, cb, clamp((u - a) / (b - a), 0.0, 1.0)); }
 vec4 mainGrad(float u) {
   // along the band: faint behind the headline (left), full behind the product, out at the edges.
@@ -165,13 +178,25 @@ void main() {
   float edge = u_halo > 0.5 ? exp(-d * d * 3.5) : 1.0 - smoothstep(1.0 - u_feather, 1.0, d);
   float beat = 0.5 + 0.5 * sin(6.2831853 * (v_g * 0.42 - u_pulse.y * 0.09));
   float a = g.a * v_alpha * edge * mix(1.0, 0.35 + 1.05 * beat * beat, u_pulse.x);
+  if (u_head.y > 0.5) a *= 1.0 - smoothstep(u_head.x - 0.35, u_head.x + 0.02, v_g);
+  // the leading point (owner 20/10 ~06:20: a bright point that leads the eye, not just a line that
+  // follows): a short, near-white hot spot just behind the head — always there while the line is laid
+  // by scrolling, flaring while the visitor scrolls; plus a wider warm wash around it
+  float near = (v_g - (u_head.x - 0.08)) / 0.18;
+  // zero unless a scroll switch is on: the hero, reduced motion and both switches off stay exactly #639 (checker #640)
+  float hot = (u_head.y > 0.5 || u_head.z > 0.0) ? exp(-near * near) : 0.0;
+  float wide = (v_g - u_head.x) / 0.7;
+  // owner 20/10 ~06:40: the knot +15 % brighter and +15 % wider spread; the main line unchanged
+  float lead = (u_head.y > 0.5 ? 1.05 : 0.0) + 4.85 * u_head.z;
+  a *= 1.0 + lead * hot + u_head.z * 1.4 * exp(-wide * wide);
+  g.rgb = mix(g.rgb, vec3(1.0, 0.88, 0.76), clamp(hot * (0.45 + 0.55 * u_head.z), 0.0, 1.0) * 0.85);
   vec2 p = vec2(gl_FragCoord.x, u_canvasH - gl_FragCoord.y) / u_dpr;
   for (int i = 0; i < 16; i++) {
     if (float(i) >= u_nholes) break;
     vec4 r = u_holes[i];
     vec2 q = abs(p - (r.xy + r.zw * 0.5)) - r.zw * 0.5;
     float dist = length(max(q, 0.0)) + min(max(q.x, q.y), 0.0);
-    a *= mix(0.1, 1.0, smoothstep(-6.0, 44.0, dist));
+    a *= mix(mix(0.1, 0.55, hot), 1.0, smoothstep(-6.0, 44.0, dist));
   }
   gl_FragColor = vec4(g.rgb * a, a);
 }`;
@@ -253,6 +278,11 @@ export class RibbonEngine {
   /** flow layer: the route's control points (x, y …, CSS px from the top of the flow area) */
   private route: number[] = [];
   private ptBuf = new Float32Array(48);
+  /** flow layer, scroll-driven: draw up to the scroll head · glow around it while scrolling */
+  private drawOnScroll = false;
+  private glowOnScroll = false;
+  private head = 0;
+  private glow = 0;
 
   /** Returns null when WebGL is unavailable — the caller simply shows no ribbons. */
   static create(canvas: Ctx2Canvas, mode: RibbonMode = "hero"): RibbonEngine | null {
@@ -286,7 +316,7 @@ export class RibbonEngine {
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog) || "link");
     this.prog = prog;
     gl.useProgram(prog);
-    for (const name of ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse", "u_holes", "u_nholes", "u_canvasH", "u_dpr", "u_flow", "u_flowF", "u_npts", "u_s0", "u_pts"]) {
+    for (const name of ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse", "u_holes", "u_nholes", "u_canvasH", "u_dpr", "u_head", "u_headV", "u_flow", "u_flowF", "u_npts", "u_s0", "u_pts"]) {
       this.u[name] = gl.getUniformLocation(prog, name);
     }
     this.a = {
@@ -344,6 +374,12 @@ export class RibbonEngine {
     this.scrollV = this.scrollV * 0.6 + Math.abs((y - this.scrollY) / dt) * 1000 * 0.4;
     this.scrollY = y;
     this.lastScrollT = now;
+  }
+
+  /** Flow layer style (src/data/home-hero.ts): both false = the ribbon fully drawn, glow by time only. */
+  style(drawOnScroll: boolean, glowOnScroll: boolean) {
+    this.drawOnScroll = drawOnScroll;
+    this.glowOnScroll = glowOnScroll;
   }
 
   /** Flow layer: the text blocks without a box (x, y, w, h per block, CSS px from the top of the flow
@@ -450,6 +486,22 @@ export class RibbonEngine {
       gl.uniform2fv(u.u_pts, this.ptBuf);
       gl.uniform1f(u.u_npts, np);
       gl.uniform1f(u.u_s0, i0);
+      // the scroll head: the route position at 60 % down the screen, eased so the line flows instead
+      // of jumping with each scroll event; the glow follows the scroll speed and fades when it stops
+      const ty = this.scrollY + h * 0.6;
+      let target = 0;
+      for (let i = 0; i + 1 < pts; i++) {
+        const y0 = this.route[i * 2 + 1];
+        const y1 = this.route[i * 2 + 3];
+        if (ty >= y1) target = i + 1;
+        else if (ty > y0) {
+          target = i + (ty - y0) / Math.max(1, y1 - y0);
+          break;
+        } else break;
+      }
+      this.head += (target - this.head) * Math.min(1, dt / 140);
+      this.glow = Math.max(this.glow * Math.pow(0.96, dt / 16), Math.min(1, this.scrollV / 450));
+      gl.uniform3f(u.u_head, this.head, this.drawOnScroll ? 1 : 0, this.glowOnScroll ? this.glow : 0);
     } else {
       strength = (1 - heroP * 0.65) * (1 + surge * 0.55);
       gl.uniform2f(u.u_focus, this.fx, this.fy - heroP * h * 0.15);
@@ -462,6 +514,7 @@ export class RibbonEngine {
       gl.uniform1f(u.u_nholes, 0);
       gl.uniform1f(u.u_flow, 0);
       gl.uniform1f(u.u_flowF, 0);
+      gl.uniform3f(u.u_head, 0, 0, 0);
       gl.uniform1f(u.u_npts, 2);
       gl.uniform1f(u.u_s0, 0);
     }
@@ -485,6 +538,10 @@ export class RibbonEngine {
         gl.uniform3f(u.u_r3, r.tw, r.ts, r.yc);
       }
       gl.uniform1f(u.u_halo, b.kind === "halo" ? 1 : 0);
+      if (this.mode === "flow") {
+        const pinch = this.drawOnScroll ? 0.55 + 0.45 * this.glow : this.glowOnScroll ? this.glow : 0;
+        gl.uniform3f(u.u_headV, this.head, pinch, pinch * (b.kind === "halo" ? 5.2 : b.kind === "line" ? 0.5 : 0));
+      } else gl.uniform3f(u.u_headV, 0, 0, 0);
       gl.uniform1f(u.u_core, b.kind === "core" ? 1 : 0);
       if (b.kind === "halo") gl.uniform1f(u.u_halfw, this.mode === "flow" ? HALO.halfWidth * 1.6 : HALO.halfWidth);
       else crisp(b.kind === "core" ? 1.6 : phone ? 0.9 : 1);
@@ -518,6 +575,7 @@ export type RibbonMessage =
   | { type: "focus"; x: number; y: number }
   | { type: "scroll"; y: number }
   | { type: "surge" }
+  | { type: "style"; draw: boolean; glow: boolean }
   | { type: "holes"; rects: number[]; areaH: number; route: number[] }
   | { type: "run"; on: boolean; still: boolean };
 
@@ -527,6 +585,7 @@ export type RibbonDriver = {
   focus(x: number, y: number): void;
   scroll(y: number): void;
   surge(): void;
+  style(draw: boolean, glow: boolean): void;
   holes(rects: number[], areaH: number, route: number[]): void;
   run(on: boolean, still: boolean): void;
   destroy(): void;
@@ -546,6 +605,9 @@ export function applyRibbonMessage(engine: RibbonEngine, m: Exclude<RibbonMessag
       break;
     case "surge":
       engine.surge();
+      break;
+    case "style":
+      engine.style(m.draw, m.glow);
       break;
     case "holes":
       engine.holes(m.rects, m.areaH, m.route);
@@ -567,6 +629,7 @@ export function mainThreadDriver(canvas: HTMLCanvasElement, mode: RibbonMode = "
     focus: (x, y) => applyRibbonMessage(engine, { type: "focus", x, y }),
     scroll: (y) => applyRibbonMessage(engine, { type: "scroll", y }),
     surge: () => applyRibbonMessage(engine, { type: "surge" }),
+    style: (draw, glow) => applyRibbonMessage(engine, { type: "style", draw, glow }),
     holes: (rects, areaH, route) => applyRibbonMessage(engine, { type: "holes", rects, areaH, route }),
     run: (on, still) => applyRibbonMessage(engine, { type: "run", on, still }),
     destroy: () => engine.stop(),

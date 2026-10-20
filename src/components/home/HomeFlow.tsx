@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { mainThreadDriver, type RibbonDriver } from "@/lib/hero-ribbons";
 import { workerDriver } from "./ribbon-driver";
+import { FLOW_DRAW_ON_SCROLL, FLOW_GLOW_ON_SCROLL } from "@/data/home-hero";
 
 /**
  * The hero's light carried down the whole homepage (round "หน้าแรก hero"; owner 20/10 ~05:00, from
@@ -159,6 +160,8 @@ export function HomeFlow() {
       ribbons = viaWorker ?? mainThreadDriver(canvas, "flow");
       if (!ribbons) return;
       if (!viaWorker) canvas.dataset.on = "1";
+      // reduced motion / Save-Data: the whole line, still (no laying, no glow)
+      ribbons.style(FLOW_DRAW_ON_SCROLL && !still, FLOW_GLOW_ON_SCROLL && !still);
       sync();
       run();
       window.addEventListener("scroll", onScroll, { passive: true });
