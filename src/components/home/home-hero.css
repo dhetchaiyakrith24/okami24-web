@@ -473,7 +473,16 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
     color: var(--foreground);
   }
   .okh-card-price { flex: none; font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--foreground); }
-  .okh-card-img { position: relative; display: block; aspect-ratio: 1 / 1; margin: 0.25rem 0 0.5rem; }
+  /* the photo's height follows the screen's height, so the whole row (name, price, tags) ends inside the first screen and
+     above the site's LINE button on short laptop screens too (checker #677: 1366×768 / 1280×720 cut the row, the button
+     covered the last price); square at most */
+  .okh-card-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: clamp(8.5rem, calc(100svh - 40rem), 20rem);
+    margin: 0.25rem 0 0.5rem;
+  }
   .okh-card-img img { transform: scale(1.1); transform-origin: 50% 55%; transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
   .okh-card:hover .okh-card-img img { transform: scale(1.16); }
   .okh-card-foot { position: relative; display: block; height: 2.25rem; }
@@ -498,6 +507,12 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
     color: var(--foreground-muted);
   }
   .okh-card-tags em.label-mono { font-size: 0.625rem; letter-spacing: 0.12em; }
+  .okh-card-tags em { flex: none; white-space: nowrap; }
+  /* narrow cards (64–80rem): the colour/flavour count stays, the type chip goes — in en/zh the two no longer fit one
+     line (checker #677: "HEATED / TOBACCO", "17 / flavours" at 1024) */
+  @media (max-width: 79.99rem) {
+    .okh-card-tags em.label-mono { display: none; }
+  }
   /* a real button, not an outline (designer 21/10: the outline read as a text field) */
   .okh-card-cta {
     justify-content: space-between;
@@ -515,6 +530,13 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   .okh-card:focus-visible .okh-card-tags { opacity: 0; transform: translateY(-6px); }
   .okh-card:hover .okh-card-cta,
   .okh-card:focus-visible .okh-card-cta { opacity: 1; transform: none; }
+}
+/* Save-Data / 2G (html[data-okami-lite], page.tsx) = as still as reduced motion (checker #677) */
+@media (min-width: 64rem) {
+  html[data-okami-lite="1"] :is(.okh-card, .okh-card-img img, .okh-card-tags, .okh-card-cta, .okh-card-arrow) { transition: none; }
+  html[data-okami-lite="1"] :is(.okh-card:hover, .okh-card:hover .okh-card-arrow) { transform: none; }
+  html[data-okami-lite="1"] .okh-card:hover .okh-card-img img { transform: scale(1.1); }
+  html[data-okami-lite="1"] .okh-lattice::after { transition: opacity 0.2s ease; }
 }
 @media (min-width: 64rem) and (prefers-reduced-motion: reduce) {
   .okh-card, .okh-card-img img, .okh-card-tags, .okh-card-cta, .okh-card-arrow { transition: none; }
