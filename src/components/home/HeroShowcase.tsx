@@ -249,7 +249,7 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
             const maskD = s.photo ? getImageProps({ src: s.photo, alt: "", width: 600, height: 600, quality: 60 }).props.src : null;
             return (
               <Link
-                key={s.type}
+                key={s.productHref}
                 href={s.categoryHref}
                 className="okh-prod"
                 data-state={i === cur ? "on" : i === prev ? "out" : undefined}
@@ -291,7 +291,7 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
         <div className="okh-tabs" role="group" aria-label={copy.tabsLabel} data-paused={paused ? "1" : undefined}>
           {slots.map((s, i) => (
             <button
-              key={s.type}
+              key={s.productHref}
               type="button"
               className="okh-tab"
               aria-pressed={i === cur}
@@ -311,9 +311,13 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
               />
               <span className="okh-n label-mono" lang="en">
                 {String(i + 1).padStart(2, "0")}
-                {locale === "en" ? null : <em> · {TYPE_TAG[s.type]}</em>}
+                <em> · {TYPE_TAG[s.type]}</em>
               </span>
-              <span className="okh-t">{tx(copy.types[s.type].label)}</span>
+              {/* owner 21/10 "ทาง 1": the four slots are brands now (two can share a type) — the tab names the brand, the
+                  English tag beside the number names the type */}
+              <span className="okh-t" lang="en">
+                {s.brand}
+              </span>
               <span className="okh-d">{tx(copy.types[s.type].desc)}</span>
             </button>
           ))}
