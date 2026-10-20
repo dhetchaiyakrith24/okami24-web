@@ -667,29 +667,42 @@ export const unbrandedProducts: Product[] = [
   {
     id: "muro-salt-nic",
     slug: "muro-salt-nic",
-    hiddenFromStorefront: { since: "2026-09-06", reason: "no card photo (IMAGE_SPEC §4)" },
     brandId: "Unbranded",
     familyId: "Muro",
     categoryId: "e-liquid",
     systemType: "e-liquid",
     name: "Muro Salt Nic",
     displayName: "Muro Salt Nic",
-    tagline: "30mL salt nicotine e-liquid.",
-    shortDescription: "A salt nicotine e-liquid from the Muro line, currently stocked in 6 flavors.",
+    // Max read 20/10: ELQ-4 "Muro Salt Nic" ฿250, 6 flavours. Copy says warehouse facts only (bottle size / nicotine rows stay unverified).
+    tagline: "Muro salt nic e-liquid.",
+    shortDescription: "Muro salt nic e-liquid in 6 flavors.",
     isFlagship: false,
     attributes: {
       capacityMl: 30,
       liquidBase: "salt-nic",
       beginnerFriendly: false,
     },
-    assets: [],
+    // maxlist 20/10: card = Grape; every flavour = an OKami24 studio re-shoot (Higgsfield) of that bottle on the shop's six-bottle poster
+    // (IMAGE_SPEC §0 item 7) — source, prompt and check per file in scripts/process-images.map.json `aiRender`.
+    assets: [
+      {
+        kind: "official-photo",
+        role: "card",
+        src: "/assets/products/muro-salt-nic/card.webp",
+        alt: "Muro Salt Nic e-liquid bottle, Grape, studio photo",
+        angle: "Front, studio re-shoot (maxlist 20/10, IMAGE_SPEC §0 item 7) of the shop's six-bottle poster.",
+        transparentBackground: true,
+        sourceName: "OKami24 render (Higgsfield) from the shop's Muro Saltnic poster",
+        sourceUrl: "https://pod789.com/product/muro-saltnic/",
+      },
+    ],
     flavorVariants: [
-      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown" },
-      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
-      { id: "click-mint", name: "Click Mint", swatchHex: "#3ea88a", availability: "unknown" },
-      { id: "strawberry-twist", name: "Strawberry Twist", swatchHex: "#c9405f", availability: "unknown" },
-      { id: "big-cola", name: "Big Cola", swatchHex: "#4a2f1f", availability: "unknown" },
-      { id: "peach", name: "Peach", swatchHex: "#e8a08a", availability: "unknown" },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/muro-salt-nic/variant-grape.webp", alt: "Muro Salt Nic e-liquid bottle, Grape, studio photo" } },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown", image: { src: "/assets/products/muro-salt-nic/variant-watermelon.webp", alt: "Muro Salt Nic e-liquid bottle, Watermelon, studio photo" } },
+      { id: "click-mint", name: "Click Mint", swatchHex: "#3ea88a", availability: "unknown", image: { src: "/assets/products/muro-salt-nic/variant-click-mint.webp", alt: "Muro Salt Nic e-liquid bottle, Click Mint, studio photo" } },
+      { id: "strawberry-twist", name: "Strawberry Twist", swatchHex: "#c9405f", availability: "unknown", image: { src: "/assets/products/muro-salt-nic/variant-strawberry-twist.webp", alt: "Muro Salt Nic e-liquid bottle, Strawberry Twist, studio photo" } },
+      { id: "big-cola", name: "Big Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/muro-salt-nic/variant-big-cola.webp", alt: "Muro Salt Nic e-liquid bottle, Big Cola, studio photo" } },
+      { id: "peach", name: "Peach", swatchHex: "#e8a08a", availability: "unknown", image: { src: "/assets/products/muro-salt-nic/variant-peach.webp", alt: "Muro Salt Nic e-liquid bottle, Peach, studio photo" } },
     ],
     specifications: [
       { key: "type", label: "Nicotine type", value: "Salt nicotine", sourceStatus: "verified" },

@@ -251,10 +251,10 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
   },
   "muro-salt-nic": {
     sellingPrice: 250,
-    lastPriceReview: "2026-09-21",
+    lastPriceReview: "2026-10-20",
     basis: "shipnity",
-    shipnityProductId: "eliquid-62",
-    evidence: 'shipnity-backoffice: "Muro Salt Nic" (eliquid-62, ฿250; the code is lower-case in Shipnity) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+    shipnityProductId: "ELQ-4",
+    evidence: 'shipnity-max: "Muro Salt Nic" (ELQ-4, ฿250 ราคาขาย) — Shipnity Max product list read 2026-10-20 (maxlist round); was eliquid-62 in the 2026-09-21 backoffice read, same price',
   },
 
   // ---- Prices round 2026-09-21, basis "owner-estimate": 20 products with no Shipnity parent ----

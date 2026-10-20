@@ -18,6 +18,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // Round list19 (19/10): + the RELX LUMI 18K names (the "5%" options are Max's own labels), sorted in by length.
   // Image sweep (19/10): + the Punta Ice names (Max labels), sorted in by length.
   // Image sweep (19/10): + the Super Cool Salt Nic names (Max labels), sorted in by length.
+  // maxlist (20/10): + the Muro Salt Nic names (Max labels), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
   "Watermelon Dragon Fruit",
@@ -66,6 +67,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Strawberry Grape",
   "Dimensions Yugen",
   "Strawberry Frost",
+  "Strawberry Twist",
   "Banana Icecream",
   "Sour Strawberry",
   "Berrine Edition",
@@ -206,6 +208,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Black Hexx",
   "King Melon",
   "White Polo",
+  "Click Mint",
   "Just Mint",
   "Sun Pearl",
   "All Berry",
@@ -228,5 +231,6 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Ice Cola",
   "Red Bull",
   "Grape 5%",
+  "Big Cola",
   "Love 77",
 ];

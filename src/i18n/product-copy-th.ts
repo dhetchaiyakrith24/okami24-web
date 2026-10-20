@@ -886,6 +886,14 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "พอตใช้แล้วทิ้งของ TFIT รองรับสูงสุด 20,000 พัฟ ใช้คอยล์ mesh สองตัว แบต 600mAh ชาร์จผ่าน USB-C และปรับช่องลมได้ตามที่ชอบ",
   },
+  // maxlist (20/10): warehouse facts only — Max "Muro Salt Nic" (ELQ-4).
+  "muro-salt-nic": {
+    tagline: "น้ำยา Muro Salt Nic",
+    shortDescription: "น้ำยา Muro นิโคตินแบบ salt nic ร้านมีให้เลือก 6 กลิ่น",
+    whoIsThisFor: {
+      0: "ผู้ที่ใช้พอตและอยากได้น้ำยา Muro แบบ salt nic ในกลิ่นที่ชอบ ร้านมีให้เลือก 6 กลิ่น",
+    },
+  },
   // Image sweep (19/10): warehouse facts only.
   "next-pro-2-beyond": {
     tagline: "ตัวเครื่องพอต Next Pro 2 Beyond",

@@ -941,6 +941,15 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "eliquid-78-6": "eliquid-78-6",
     "eliquid-78-7": "eliquid-78-7",
   } },
+  // maxlist (20/10): Muro Salt Nic (legacy) — Max ELQ-4-1..6 (the Max flavour names = the legacy flavour names).
+  "muro-salt-nic": { parent: "ELQ-4", options: {
+    "grape": "ELQ-4-1",
+    "watermelon": "ELQ-4-2",
+    "click-mint": "ELQ-4-3",
+    "strawberry-twist": "ELQ-4-4",
+    "big-cola": "ELQ-4-5",
+    "peach": "ELQ-4-6",
+  } },
   // Image sweep (19/10): Next Pro 2 Beyond (legacy) — Max Pod-173-1..6 (the Max colour names = the legacy colour names).
   "next-pro-2-beyond": { parent: "Pod-173", options: {
     "razer-black": "Pod-173-1",
