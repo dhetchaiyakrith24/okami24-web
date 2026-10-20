@@ -487,7 +487,7 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
     position: relative;
     display: block;
     width: 100%;
-    height: clamp(8rem, calc(100svh - 41.5rem), 20rem);
+    height: clamp(7rem, calc(100svh - 42.5rem), 20rem);
     margin: 0.25rem 0 0.5rem;
   }
   .okh-card-img img { transform: scale(1.1); transform-origin: 50% 55%; transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
