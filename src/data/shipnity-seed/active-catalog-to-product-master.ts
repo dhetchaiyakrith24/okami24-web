@@ -334,6 +334,8 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "GRAPLE-FREEBASE": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Graple Freebase" (ELQ-2), 1 option; no maker site checked yet — prepared on warehouse facts only, without a brand' },
   "MQ-BAR-22K": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "MQ Bar 22K" (Disposable-43), 11 flavours; no maker source found 19/10 — prepared on warehouse facts only, without a brand' },
   // maxlist (20/10, owner "ลงตามทุกตัวที่ Max มี"): RELX Essential 2 — Max-only record (Pod-157). RELX is already a brand here; relxnow.com has no Essential 2 page.
+  // maxlist (20/10): RELX Infinity Pro 2 pods — Max-only record (Pod-27, 42 flavours incl. the 50mg ones). RELX is already a brand here; relxnow.com has no page for these pods.
+  "RELX-INFINITY-PRO-2-POD": { brandId: "relx", categoryId: "pods-cartridges", systemType: "pod-cartridge", evidence: 'Shipnity MAX "หัวพอต RELX Infinity Pro 2" (Pod-27), 42 flavours, ฿149 — the name states the brand (RELX, already a brand here); the pack prints "RELX Pod Pro 2"; no page on relxnow.com — warehouse facts only' },
   "RELX-ESSENTIAL-2": { brandId: "relx", categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "Relx Essential 2" (Pod-157), 4 colours, ฿490 — the name states the brand (RELX, already a brand here); no Essential 2 page on relxnow.com (searched 20/10) — warehouse facts only, device only' },
   "INFY-POD": { brandId: "infy", categoryId: "pod-systems", systemType: "pod-kit", evidence: 'Shipnity MAX "INFY POD" (Pod-158), 14 colours, ฿690 — the name states the brand (INFY, already a brand here through pod-169); device only' },
   "VMATE-PRO-2": { brandId: "voopoo", familyId: "vmate", categoryId: "pod-systems", systemType: "pod-kit", evidence: 'Shipnity MAX "Vmate Pro 2" (Pod-176), 4 colours, ฿890 — Vmate is the VOOPOO line already sold here (Vmate i3, Pod-177)' },
@@ -659,6 +661,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "พอตใช้แล้วทิ้ง MQ Bar 22K",
     shortDescription: "พอตใช้แล้วทิ้ง MQ Bar ชื่อรุ่นระบุ 22K ร้านมีให้เลือก 11 กลิ่น",
   },
+  // maxlist (20/10): warehouse facts only — the Max name "หัวพอต RELX Infinity Pro 2" (no maker page).
+  "RELX-INFINITY-PRO-2-POD": {
+    tagline: "หัวพอต RELX Infinity Pro 2",
+    shortDescription: "หัวพอต RELX Infinity Pro 2 ร้านมีให้เลือก 42 กลิ่น",
+  },
   // maxlist (20/10): warehouse facts only — the Max name "Relx Essential 2" (no maker page); colours = Max's 4 + the shop's 5th (Orange).
   "RELX-ESSENTIAL-2": {
     tagline: "ตัวเครื่อง RELX Essential 2",
@@ -884,6 +891,20 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from the shop's Super Cool Grape Blast photo",
       sourceUrl: "https://vapemanshop.com/wp-content/uploads/2023/10/Super-Cool-SaltNic-30ml-35mg-Grape-Blast.jpg",
+    },
+  ],
+  // maxlist (20/10): RELX Infinity Pro 2 pod card = the Watermelon Ice pack (in stock) — OKami24 re-shoot of RELX's own flavour poster as sold by the shop. The other 41
+  // flavours show the no-photo panel (owner 20/10: card only; the packs differ only by the printed flavour, relabelling one photo would make up images).
+  "RELX-INFINITY-PRO-2-POD": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/relx-infinity-pro-2-pod/card.webp",
+      alt: "RELX Pod Pro 2 pack, Watermelon Ice, studio photo",
+      angle: "Front, upright — studio re-shoot (maxlist 20/10, IMAGE_SPEC §0 item 7) of RELX's own Watermelon Ice flavour poster. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from RELX's Pod Pro 2 Watermelon Ice poster",
+      sourceUrl: "https://pod789.com/product/relx-infinity-pro-2/",
     },
   ],
   // maxlist (20/10): RELX Essential 2 card = Nebula Blue (in stock) — OKami24 re-shoot of the shop's five-colour line-up photo (no maker file found).
@@ -2600,6 +2621,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "Pod-142": { name: "Reswa Sportcan 12K", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
   "NEXSWITCH-16K-KIT": { name: "Nexswitch 16K Kit", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   "NEXSWITCH-16K-POD": { name: "Nexswitch 16K Pod", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+  "RELX-INFINITY-PRO-2-POD": { name: "RELX Infinity Pro 2 Pod", sourceUrl: "https://pod789.com/product/relx-infinity-pro-2/" },
   "RELX-ESSENTIAL-2": { name: "RELX Essential 2", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
   "RELX-LUMI-18K": { name: "RELX LUMI 18K", sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/" },
   "ESKO-BAR-20K": { name: "ESKO BAR 20000", sourceUrl: "https://eskobarvape.com/product/eskobar" },

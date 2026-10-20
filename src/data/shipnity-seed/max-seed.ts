@@ -3568,6 +3568,55 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
       { "shipnityVariantId": "Pod-157-3", "rawLabel": "Grey", "sellingPrice": 490, "inStock": true },
       { "shipnityVariantId": "Pod-157-4", "rawLabel": "Nebula Blue", "sellingPrice": 490, "inStock": true }
     ]
+  },
+  "RELX-INFINITY-PRO-2-POD": {
+    "maxParentId": "Pod-27",
+    "name": "หัวพอต RELX Infinity Pro 2",
+    "operationalSellingPrice": 149,
+    "children": [
+      { "shipnityVariantId": "Pod-27-1", "rawLabel": "Tangy Grape", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-2", "rawLabel": "Strawberry Burst", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-3", "rawLabel": "Ludou Ice ถั่วเขียว", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-4", "rawLabel": "Dark Sparkle โคล่า", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-5", "rawLabel": "Watermelon Ice", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-6", "rawLabel": "Menthol Xtra เย็น / 50mg", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-7", "rawLabel": "Orange Sparkle", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-8", "rawLabel": "Smooth Mango", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-9", "rawLabel": "Rich Tobacco ยาสูบ / 50mg.", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-10", "rawLabel": "Banana Freeze", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-11", "rawLabel": "Honeydew Melon", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-12", "rawLabel": "Lime Tobacco", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-13", "rawLabel": "Lime Ice", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-14", "rawLabel": "Lemon Zest เลม่อน โซดา", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-15", "rawLabel": "Lemon Mint / 50mg.", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-16", "rawLabel": "Ice Tobacco ยาสูบเย็น", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-17", "rawLabel": "Blueberry Splash", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-18", "rawLabel": "Taro Scoop", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-19", "rawLabel": "Thai Milk Tea", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-20", "rawLabel": "Oolong Ice Tea", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-21", "rawLabel": "Longjing Ice Tea", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-22", "rawLabel": "Iced Black Tea", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-23", "rawLabel": "Mint Freeze / 50mg.", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-24", "rawLabel": "Classic Tobacco / 50mg.", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-25", "rawLabel": "Green Grape Ice", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-26", "rawLabel": "Lemon Ice Tea", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-27", "rawLabel": "Hibiscus Ice Tea", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-28", "rawLabel": "Grape Nic / 50mg.", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-29", "rawLabel": "Watermelon Ice Nic / 50mg.", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-30", "rawLabel": "Spearmint Nic / 50mg.", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-31", "rawLabel": "Green Apple Nic / 50mg.", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-32", "rawLabel": "Triple Berry Nic / 50mg.", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-33", "rawLabel": "Peppermint Nic / 50mg.", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-34", "rawLabel": "Mint Tobacco Nic / 50mg.", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-35", "rawLabel": "Citrus Nic / 50mg.", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-36", "rawLabel": "Raspberry Mint Nic / 50mg.", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-37", "rawLabel": "Jasmine Green Tea", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-38", "rawLabel": "Pink Guava", "sellingPrice": 149, "inStock": false },
+      { "shipnityVariantId": "Pod-27-39", "rawLabel": "Fresh Peach", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-40", "rawLabel": "Strawberry Nic / 50mg.", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-41", "rawLabel": "Lychee Ice", "sellingPrice": 149, "inStock": true },
+      { "shipnityVariantId": "Pod-27-42", "rawLabel": "Ice Sparking Nic / 50mg.", "sellingPrice": 149, "inStock": true }
+    ]
   }
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2","RELX-INFINITY-PRO-2-POD"];
