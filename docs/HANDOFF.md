@@ -11,70 +11,41 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 20/10 ~22:00 = #648 53ab8eca (homepage by type; #645 flow smooth, #646 light switch before it)
-  — live check per PR: curl / 200 + the new chunk/markup · open PRs: `gh pr list` (#637 draft = parked, below · #643 = the stock
-  chat's docs PR, not this round's). Standing rules this block used to repeat live in TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
-2 worktrees = `git worktree list` (each side chat's own, nested under `.claude/worktrees/` and `_incoming/`) ·
-  `_incoming/wt-stock` = stock round (own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
-  Hero round trees (own node_modules): `_incoming/hero-2010/wt-3421` = old main fd608092 build (round "before"), server 3421 RUNNING ·
-  `wt-3422` = detached at main 9a67509a build (= site code before #648), server 3422 RUNNING · `wt-3424` = Friday's work tree (docs
-  branches), server 3424 RUNNING at 9c725c7d · `wt-3423` = branch home-types-2010 (merged #648), server 3423 RUNNING at 625bd5fb (= #648
-  site code). Rebuild + restart a tree: `bash _incoming/hero-2010/rebuild-3424.sh <port>` (builds the tree as it is, ~25 s) ·
-  `build.sh <sha> <port>` checks out detached first. Stop all servers when the round closes.
-  Branches ahead of main (none checked): hero-ground = #637 draft (parked).
-3 MAIN CHAT MOVED 20/10 ~22:30 at 63 % context (625k, long work next: 3h a–c). Session tools worth reusing (not in git):
-  `_incoming/hero-2010/` fps-scroll.js · flow-shots.js (FXOFF / RM / MID env) · rec-scroll.js · lh/run3.sh · rebuild-3424.sh. Owner 20/10: "หยุดงานอื่นและ Focus แค่งานนี้" = the HOMEPAGE only (3h below).
-  Both side lines parked (line 1 = image sweep · line 2 = SEO) — see 3i / 3s. Side chats = linked chats only (TEAM_RULES 13.6) · the owner
-  gets 2 combined summaries a day · Friday's running notes (not in git) = `_incoming/friday-queue.md`.
-3h ROUND "homepage hero" = `docs/rounds/รอบหน้าแรก-hero-20-10.txt` (brief `_incoming/hero-brief.md` · approved draft `_incoming/hero-draft/`).
-  The owner's three items of 20/10 ~03:40 widened the round to the whole homepage (his own chat instruction — the round file's
-  【ห้ามแตะ】"sections under the hero" no longer holds for these items).
-  LIVE [ตรวจแล้ว curl 200]: #634 HeroShowcase + ribbons · #636 desktop intro off · #639 2d2ee03d = the hero's ribbons carried down the
-  page (HomeFlow, engine "flow" mode): a loose S laid ON THE PAGE through the gaps, close along / behind the boxes (frosted 42 % +
-  16 px blur, `.okh-flow` scoped to the homepage), fades to a 10 % glow behind boxless text, pulses in place; ribbon colour leans
-  to the logo red; hero tab 04 = "IQOS TEREA" + "ก้าน TEREA ให้ฟีลสูบคล้ายบุหรี่จริง". Checker r1 FAIL (sharp line through text) →
-  r2 PASS 3b04b711. Owner on the clip: "ประมาณนี้ได้ละ" + "เก็บแบบฉบับนี้ไว้" (= keep it restorable).
-  LIVE #640 e74d6835 (owner "Merge ได้เลย" after the clips): FLOW_DRAW_ON_SCROLL + FLOW_GLOW_ON_SCROLL = true in
-  `src/data/home-hero.ts` — the line is laid as you scroll (nothing waits below; scrolling up retracts) and a bright knot leads the
-  eye at ~60 % of the screen (lines pinch + bloom, owner's reference stills; +15 % brightness/bloom on his ask); both false = #639
-  exactly (checker r2 PASS fcde39bf). Owner's last word 20/10 ~06:40: "พักงานก่อน พรุ่งนี้ว่ากันใหม่".
-  Checker taste notes (not blocking): on fast scrolls the knot sits ~30–40 % down the screen (easing) · phone knot smaller ·
-  the knot's 55 % floor behind a heading reads "just passes" on Owner eye 5.
-  LIVE #645 5ab00ff9 (owner 20/10 "jerky on the phone" + "nothing we add may cost speed"; checker r1 PASS · r2 FAIL dither grain · r3
-  PASS 59250c4b): flow light on 3 page-anchored tiles (scrolls with the boxes) · per-vertex text/box fades · line past the head
-  collapses · phones: 1.25x, a third of the soft strokes ×3 at half resolution, NO backdrop blur on boxes (ribbon glows ×2.2 inside
-  them) · soft strokes fade to 0 at the edge, capped at 80 % of a bend's radius (no spokes), per-stroke dither on soft strokes.
-  Phone-emulation scroll fps 7.6 → 44–51; Lighthouse unchanged. Owner has NOT yet said it is fine on his phone (asked to try).
-  LIVE #646 242dde38 (checker PASS 9c725c7d): light switch "ปิดแสง/เปิดแสง" in the hero stage (phone top-left, desktop top-right),
-  `lib/fx-pref.ts` localStorage "okami24-fx"; off at load = no engine starts. Reduced motion = still light (owner chose, 20/10).
-  LIVE #648 53ab8eca (checker r1 PASS + 2 taste notes fixed · r2 PASS · r3 PASS 625bd5fb): homepage by TYPE — HomeTypeSection +
-     `src/data/home-sections.ts` (Pod System · Switch Pod · Disposable · IQOS TEREA, Friday's picks first); flagship / Caliburn / VOOPOO
-     rails, both editorial blocks, flavour teaser cut; Catalog Index = closed <details> per category; guides heading "คู่มือเลือกซื้อ".
-     Each section puts only its first RAIL_CARDS = 6 cards in the page + "ดูทั้งหมด N รุ่น" (Friday's call vs the owner's earlier
-     "every product": every product = LCP +245 ms / FCP +145 ms; 6 = LCP 5806 vs main 5860, FCP 1094 vs 1254 — reported to the owner).
-     Lone last card centred on phone/tablet; rails snap-aligned with their heading; tablet card overlap fixed in this file only (main's
-     other rails — none left on `/` — had it too). Known: IQOS see-all would point at heated-tobacco-devices while N counts the sticks too
-     (no button today: 5 ≤ 6). Unused now (kept for a revert): EditorialSplit, FlavorTeaser, ProductRailSection, dict flagship*/control*.
-  Owner 20/10 ~22:20 on the live homepage (his 27" screen shots): "โดยรวมโอเค ดูเรียบร้อย" — then 3 items, in this order (NEXT):
-  a) CompareCTA box ("เทียบพอตพร้อมกันได้สูงสุด 4 รุ่น"): the three pods above the heading look small → size them up so they sit
-     in proportion with the heading (390 + 1440 + a wide screen), tier B, homepage only.
-  b) Wide screens: on a 27" (2560 px) the homepage shows wide empty sides — every page is capped by Container max-w-[1400px]. Friday
-     told him: 1440–1920 screens fill more; options A leave · B (recommended) homepage type rails bleed to the right screen edge on wide
-     screens, headings stay aligned · C widen the whole site (every page, big). [รอเจ้าของ] his pick — B if he does not object.
-  c) Hero product scenes — owner "จัดเต็มเลยครับตรงนี้" (= go full). Start with the ONE Caliburn G5 test he already approved
-     ("1 ได้ครับ"); state the credit cost per image before any batch (IMAGE_SPEC §0); then one scene per hero type if he likes it.
-  Details for c):
-  c0) 20/10 night: the deny was lifted (#661, owner) · G5 test = 2 variants via MCP seedream_v5_pro 16:9, 2.5 credits each →
-     `_incoming/hero-scenes/g5-a.png` / `g5-b.png` (Friday recommends B: softer rim light; A reads like neon strips) — owner to pick.
-     Refs already uploaded (media ids in `_incoming/hero-scenes/ref/` names g5/mswitch/infy/iluma1 · ids 876b8fcb… / 7a18b6a1… /
-     998aed1f… / e0445381…, valid while the account keeps them) · prompt = the dark studio / orange-red rim light / glossy floor one
-     in this chat's notes: `_incoming/hero-lead/scene-prompt.txt`. Decide #637 (product on a floor) once the scenes are judged.
-  Owner's open taste notes: checker r2 — phone ribbon fainter/thinner than the hero's (raise phone strength/span if the owner agrees) ·
-  checker r1 b: "คล้ายบุหรี่จริง" compares the draw with cigarettes while the e-liquid disclaimer says the site makes no vaping
-  comparisons — owner's own words, told him, kept.
-  Earlier queue (owner 20/10 ~02:30, opinion given): phone product cards compact (keep 2 columns, square photo) · LINE order message
-  without the page URL — `_incoming/friday-queue.md`.
-  Round close (skill round-close, tag hero-2010) when a)–c) land; stop test servers 3421–3424.
+1 main: `git fetch && git log -1 --oneline origin/main` · 21/10 ~02:00 = 9a49d6d4 (#670). LIVE [ตรวจแล้ว curl 200] this chat: #651 compare-box pods ·
+  #652 wide rails → REVERTED #658 (owner "มีแค่ข้างขวา") · #661 settings: Higgsfield MCP `generate_image` ALLOWED (other credit tools denied) ·
+  #662 #663 docs · #665 CI: draft PRs skip the deploy workflow · #667 gate: `self-merge-check --pr` BLOCKS until the deploy workflow really ran
+  on the head (draft-time skip / not started / failed) · #668 hero products lie across the stage on desktop (real card photos rotated).
+  Open PRs (`gh pr list`): #671 hero brands + calm float (checker r1 FAIL → fixed 287a83d2, NEEDS r2) · #672 DRAFT flow light off ·
+  #643 stock chat docs · #637 draft parked (superseded by #671's floor shadow — close it after #671 merges).
+  GitHub Actions budget mail 21/10: $13.50 of $15 for October [ตรวจแล้ว owner screenshot]; owner chose "$30 + ลดรอบ" — he raises the cap
+  himself (github.com/settings/billing → Budgets); #665/#667 = the "ลดรอบ" part (checker estimates 10–20 % saving [เชื่อว่า]).
+2 worktrees = `git worktree list` · hero round trees `_incoming/hero-2010/wt-342x` (own node_modules): wt-3424 = branch hero-float-calm-2110
+  (#671, server 3424 built at 4b11b0fa — rebuild for 287a83d2: `bash _incoming/hero-2010/rebuild-3424.sh 3424`) · wt-3422 = branch
+  home-flow-off-2110 (#672, server 3422 stale — rebuild it the same way with port 3422) · wt-3423 = old #648 build (3423 = an old "before")
+  · wt-3421 = older main. Stop all 4 servers at round close. Helpers (not in git): `_incoming/hero-2010/` slot-shot.js (`<port> <w> <h>
+  <slot> <out>`, clicks that tab) · compare-shot.js · rail-measure.js · click-probe.js · flow-shots.js. Hero image sources `_incoming/hero-scenes/`.
+  `_incoming/wt-stock` = stock round. Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
+3 MAIN CHAT MOVED 21/10 ~02:00 at 78 % context (owner "เราก็ต้อง Hand เหมือนกัน"). Side chats (linked to the new main chat only after it
+  messages them): line 1 = `1-double-mint-foli` (session local_fcb45c4a-e1bb-49b2-ae43-9aabe813209e, round 3m, waiting for the OWNER to type the
+  credit yes IN THAT CHAT — the safety system refuses approvals relayed by Friday) · line 2 SEO = `2-seo-gsc-22-10-seo`
+  (local_d6b80e36-6498-4b43-9595-94695bbd34d0, idle after #657/#659; GSC read due 22/10). Owner rules learned 20–21/10: a credit / money
+  approval must be typed by the owner in the chat that spends it · merging a side chat's PR from Friday's session was refused once (#664) —
+  let the side chat merge its own PRs · new PRs = draft while working, `gh pr ready` before the gate (TEAM_RULES 13.7).
+3h ROUND "homepage hero" = `docs/rounds/รอบหน้าแรก-hero-20-10.txt` (owner widened it to the whole homepage 20/10). LIVE: #634 … #648 (see git) +
+  this chat's #651 #668. Owner decisions 20–21/10 (keep): hero = the dark ribbons stage · desktop products LIE across the stage (G5 pod toward
+  "ใช่", end toward the name) using the product's OWN card photo rotated — AI re-renders were rejected ("บิดๆ เบี้ยวๆ") · phones keep the standing
+  card photo · the four slots = strong BRANDS ("ทาง 1"): UWELL Caliburn G5 · VOOPOO ARGUS G4 (not P3: square body) · SALTHUB M Switch ·
+  IQOS ILUMA i ONE (Friday's pick) — M Switch leans the other way so its text reads upright · tabs show the brand · keep the hero light and
+  the 4 brands on desktop + phones · the scroll flow light below the hero = keep the code, switch it OFF (#672, `HOME_FLOW = false`) ·
+  wide rails bleeding right = rejected (reverted) · compare-box pods bigger = live.
+  NEXT (in order): (1) #671: rebuild 3424 at 287a83d2 → checker r2 NARROW (reduced motion + Save-Data: no drift on desktop flying photos;
+  re-shoot 1440 slot 0) → merge → curl / → send the owner 1440 + 390 live shots. Checker r1 taste notes to weigh (not blocking): the warm floor
+  pool is faint at 1440/1920 · tabs 01 UWELL and 02 VOOPOO show the same type description line · at 1024 ARGUS's end sits close to "02/04".
+  (2) #672 (draft): rebuild 3422 → before/after 390 + 1440 of the page below the hero (sections were see-through over the flow light, now
+  plain) → `gh pr ready` → gate → checker → merge. (3) Round close (skill round-close, tag hero-2010), stop servers 3421–3424, close #637.
+  Owner's open taste notes still standing: phone product cards compact (keep 2 columns, square photo) · LINE order message without the page
+  URL — `_incoming/friday-queue.md`. Credits this chat [เชื่อว่า from get_cost before each run]: hero tests ≈ 15.25 (Seedream 5 · GPT Image
+  2.75 ×3 · Nano Banana 2) — all rejected; none is on the site (the live hero uses real card photos).
   House rounds 15–16/10 (#484 … #500, #508, #510) DONE — what they built lives in its home (skill house-clean · TEAM_RULES 13.3 #1 ·
   skills find-skills / content-strategy · `docs/seo-audit/`); the 16/10 artifact mistake = LESSONS พ31; full text =
   `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
