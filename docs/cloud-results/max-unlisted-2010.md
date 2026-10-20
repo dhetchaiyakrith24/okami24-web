@@ -1,0 +1,39 @@
+# Shipnity Max × site — what Max has and the site lacks (round maxlist-2010, chunk 1)
+
+Read: Max product list, live, 20/10 22:50 (783 rows = 66 parent codes, all "แสดงเพิ่ม" expanded; product list only, no order pages).
+Match rule: a Max parent counts as "on the site" when any of its codes is in `src/data/stock/sku-map.ts` AND the product is not
+`hiddenFromStorefront`. Price = Max "ราคาขาย" (owner decision, item 41). Nothing here edits Max or the site.
+
+## A. Max has it, site has no live page (10 rows)
+
+| # | Max code | Max name | ราคาขาย | Max kids (in stock) | Site state | Blocker / next step | Order |
+|---|---|---|---|---|---|---|---|
+| 1 | Disposable-42 | Foli Bar 15k | 349 | 12 (12) | `foli-bar-15k` exists in code, **hidden** (no card photo, 9-flavour SKU; Max now has 12 flavours) | unhide needs card image (IMAGE_SPEC §4) + 12 flavours matched | 1 |
+| 2 | ELQ-4 | Muro Salt Nic | 250 | 6 (6) | `muro-salt-nic` in code, **hidden** (no card photo) | card image (Muro brand shots exist for Muro line) | 2 |
+| 3 | Eliquid-169 | Muro Freebase | 220 | 6 (3) | `muro-freebase` in code, **hidden** (no card photo) | card image | 3 |
+| 4 | Pod-115 | หัวพอต Vazer One | 59 | 5 (1) | `vazer-one-pod` in code, **hidden** (card showed another site's URL) | clean photo from maker vazerpod.com | 4 |
+| 5 | Pod-142 | Reswa Sportcan 12000 | 229 | 5 (1) | `reswa-sportcan-12k` in code, **hidden** (banner crop) | clean card image | 5 |
+| 6 | Pod-157 | Relx Essential 2 | 490 | 4 (3) | no product in code | new page; maker = RELX official (tier 1) | 6 |
+| 7 | Pod-137 | Relx Creator Pod 20K | 349 | 31 (0) | no product in code (RELX Creator device page exists, pods only as accessory text) | new page; all 31 flavours sold out = "สินค้าหมด" | 7 |
+| 8 | Pod-27 | หัวพอต RELX Infinity Pro 2 | 149 | 42 (18) | no product in code (Infinity 2 Plus is a different device) | new page; 42 flavours incl. 50 mg | 8 |
+| 9 | Coil-21 | คอยล์ Argus Pod | 450 | 4 (1) | no product in code | new page; VOOPOO Argus Pod coils | 9 |
+| 10 | ELQ-64 | Double Mint Salt Nic | 300 | 6 (2) | no product in code | new page; Thai-market brand, no maker site → identity check first | 10 |
+
+## B. Max parents that ARE on the site (checked in sku-map, not hidden) — 54 parents, no action
+Includes everything list19 listed (Disposable-43, Pod-176, eliquid-78, Pod-173, ELQ-6) and the Nexswitch, Esko, Infy, M Switch,
+Marbo, Muro Connector/SC, IQOS, Lambda i8, Joiway F3, Caliburn/Vinci/TPP coils lines. Full parent list with prices =
+`_incoming/maxlist-2010/max-parents-2010-live.txt` (not in git).
+
+## C. Earlier-list (16/10, 21 items) rows that are NOT in Max any more or are done
+- Done/listed since: Pod-149 · Pod-150 · Pod-154 · Pod-169 · ELQ-1 (Marbo) · ELQ-5 (Pepo) · ELQ-3 (Marbo Freebase tall) · IQOSHEET-14/15/17 · Eliquid-73.
+- **Not in the live Max list on 20/10:** Coil-63 (Jellybox Nano), Coil-62 (Feelin C1), Eliquid-44 (Dooze), Eliquid-66 (BAAM),
+  eliquid-133 (Yogurt Salt Hub), Disposable-34 (Insta Bar PX 15000) → cannot take a Max price → **blocked: not in Max now**
+  (ask owner only if he wants them anyway; otherwise dropped).
+- Pod-168 Caliburn G4 Pro = already on the site (void).
+- Test rows in Max (`test`, `Close` ยิงปิด) = not products, ignored.
+
+## D. Order and blockers
+1. Foli Bar 15K → Muro Salt Nic → Muro Freebase (one Muro PR: two products of one brand) → Vazer One → Reswa Sportcan.
+2. New pages: Relx Essential 2 → Relx Infinity Pro 2 pods → Relx Creator Pod 20K (RELX PR, 2–3 products) → Argus Pod coils → Double Mint.
+3. Blockers: card images for 1–5 (the 19 masters in `_incoming/img-1610/masters` do not include these; new renders = tell Friday count + credits first).
+   Higgsfield MCP generate is denied → renders only via Chrome tab. SEO-locked links: none of these rows link into the locked pages.
