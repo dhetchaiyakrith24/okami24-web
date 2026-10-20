@@ -11,17 +11,16 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 20/10 ~20:00 = #646 242dde38 (light switch; #645 flow smooth before it)
+1 main: `git fetch && git log -1 --oneline origin/main` · 20/10 ~22:00 = #648 53ab8eca (homepage by type; #645 flow smooth, #646 light switch before it)
   — live check per PR: curl / 200 + the new chunk/markup · open PRs: `gh pr list` (#637 draft = parked, below). Standing rules this block used to repeat live in TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
 2 worktrees = `git worktree list` (each side chat's own, nested under `.claude/worktrees/` and `_incoming/`) ·
   `_incoming/wt-stock` = stock round (own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
   Hero round trees (own node_modules): `_incoming/hero-2010/wt-3421` = old main fd608092 build (round "before"), server 3421 RUNNING ·
-  `wt-3422` = detached at main 5ab00ff9 (#645) build, server 3422 RUNNING · `wt-3424` = Friday's work tree (branches flow-smooth /
-  fx-toggle merged; now docs-hero-2010e), server 3424 RUNNING at 9c725c7d (#646 code) · `wt-3423` = branch home-types-2010, server
-  STOPPED; local merge 74fce3cc of origin/main NOT pushed and OLD again — merge origin/main (#645 #646 touched HeroShowcase / HomeFlow /
-  globals.css / hero dictionaries) and rebuild at the head before any proof. Rebuild + restart a tree: `bash _incoming/hero-2010/rebuild-3424.sh
-  <port>` (builds the tree as it is, ~25 s) · `build.sh <sha> <port>` checks out detached first. Stop all servers when the round closes.
-  Branches ahead of main (none checked): home-types-2010 · hero-ground = #637 draft (parked).
+  `wt-3422` = detached at main 9a67509a build (= site code before #648), server 3422 RUNNING · `wt-3424` = Friday's work tree (docs
+  branches), server 3424 RUNNING at 9c725c7d · `wt-3423` = branch home-types-2010 (merged #648), server 3423 RUNNING at 625bd5fb (= #648
+  site code). Rebuild + restart a tree: `bash _incoming/hero-2010/rebuild-3424.sh <port>` (builds the tree as it is, ~25 s) ·
+  `build.sh <sha> <port>` checks out detached first. Stop all servers when the round closes.
+  Branches ahead of main (none checked): hero-ground = #637 draft (parked).
 3 MAIN CHAT MOVED 20/10 ~07:00 at ~70 % context (3h; owner paused for the night). Owner 20/10: "หยุดงานอื่นและ Focus แค่งานนี้" = the HOMEPAGE only (3h below).
   Both side lines parked (line 1 = image sweep · line 2 = SEO) — see 3i / 3s. Side chats = linked chats only (TEAM_RULES 13.6) · the owner
   gets 2 combined summaries a day · Friday's running notes (not in git) = `_incoming/friday-queue.md`.
@@ -46,17 +45,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Phone-emulation scroll fps 7.6 → 44–51; Lighthouse unchanged. Owner has NOT yet said it is fine on his phone (asked to try).
   LIVE #646 242dde38 (checker PASS 9c725c7d): light switch "ปิดแสง/เปิดแสง" in the hero stage (phone top-left, desktop top-right),
   `lib/fx-pref.ts` localStorage "okami24-fx"; off at load = no engine starts. Reduced motion = still light (owner chose, 20/10).
-  NEXT, in this order:
-  a) home-types-2010 (no PR yet, NOT checked; draft shots sent to the owner, no objection yet): homepage by TYPE — HomeTypeSection +
-     `src/data/home-sections.ts` (Pod System · Switch Pod · Disposable · IQOS TEREA, every product as the shop's own cards, Friday's
-     picks first, phone 6 cards + "ดูทั้งหมด N รุ่น"); cut the flagship / Caliburn / VOOPOO rails, both editorial blocks, flavour
-     teaser; Catalog Index → closed <details> box per category; guides heading "คู่มือเลือกซื้อ" (owner cut "บอกตรง ๆ").
-     Proof so far (at 428ef199, before the main merge): visible-text changes only on `/` · wordbreak new flags = 2 existing card
-     taglines (RELX Infinity 2 Plus "3 | โหมด", a "Turbo" last word — same kind of flags already on category pages, data-round
-     item) · Lighthouse 3423 LCP 6086 / TBT 93 / 0.77 vs 3422 5812 / 59 / 0.78 measured while the checker loaded the machine →
-     RE-MEASURE idle; if still worse, lighter cards above the fold (owner 20/10: anything added must not cost speed, or very
-     little). Also measure scroll fps on 390 (`fps-scroll.js`, SRC=mouse) — more cards = more phone glow boxes. Merge main, rebuild
-     3423 at the branch head, then PR → gate → checker.
+  LIVE #648 53ab8eca (checker r1 PASS + 2 taste notes fixed · r2 PASS · r3 PASS 625bd5fb): homepage by TYPE — HomeTypeSection +
+     `src/data/home-sections.ts` (Pod System · Switch Pod · Disposable · IQOS TEREA, Friday's picks first); flagship / Caliburn / VOOPOO
+     rails, both editorial blocks, flavour teaser cut; Catalog Index = closed <details> per category; guides heading "คู่มือเลือกซื้อ".
+     Each section puts only its first RAIL_CARDS = 6 cards in the page + "ดูทั้งหมด N รุ่น" (Friday's call vs the owner's earlier
+     "every product": every product = LCP +245 ms / FCP +145 ms; 6 = LCP 5806 vs main 5860, FCP 1094 vs 1254 — reported to the owner).
+     Lone last card centred on phone/tablet; rails snap-aligned with their heading; tablet card overlap fixed in this file only (main's
+     other rails — none left on `/` — had it too). Known: IQOS see-all would point at heated-tobacco-devices while N counts the sticks too
+     (no button today: 5 ≤ 6). Unused now (kept for a revert): EditorialSplit, FlavorTeaser, ProductRailSection, dict flagship*/control*.
+  NEXT:
   b) Item 1 (hero product scenes): owner said "1 ได้ครับ" = spend existing Higgsfield credits on ONE Caliburn G5 scene test.
      The Higgsfield MCP generate_image call was DENIED by the permission system twice (also after the owner's yes, he was on the
      phone) — not retried. Ask him to approve the prompt from the desktop, or run it through the Higgsfield web app in Chrome.
