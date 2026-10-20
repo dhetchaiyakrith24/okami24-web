@@ -713,7 +713,7 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
 .okh-fx {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: 3;
   display: inline-flex;
   align-items: center;
@@ -996,6 +996,8 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
   .okh-btn { height: 3.25rem; padding: 0 1.625rem; }
   .okh-btn svg { display: block; }
   .okh-stage { height: min(74vh, 700px); align-self: center; margin: 0 0 1.5rem; }
+  /* phones: top-left (the product stands right of centre) · desktop: top-right (the name sits bottom-right) */
+  .okh-fx { left: auto; right: 0; }
   .okh-prod { inset: 0 0 6% 0; justify-content: center; }
   .okh-float { height: 96%; }
   .okh-meta { left: auto; right: 0; bottom: 12%; max-width: none; align-items: flex-end; text-align: right; gap: 0.5rem; }
