@@ -40,6 +40,10 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
   const category = getCategory(categories[0]);
   if (!items.length || !category) return null;
   const href = `/products/${category.slug}`;
+  // a lone card on the last grid row sits centred (checker #648: IQOS has 5 — the 5th stood alone by a gap)
+  const shown = Math.min(items.length, RAIL_CARDS);
+  const lonePhone = Math.min(shown, PHONE_CARDS) % 2 === 1 ? Math.min(shown, PHONE_CARDS) - 1 : -1;
+  const loneTablet = Math.min(shown, TABLET_CARDS) % 4 === 1 ? Math.min(shown, TABLET_CARDS) - 1 : -1;
 
   return (
     <section className="border-b border-surface-border-soft bg-surface-0 py-14 lg:py-20">
@@ -62,7 +66,7 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
         </div>
       </Container>
       <Container>
-        <div className="rail-scroll -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 max-lg:mx-0 max-lg:grid max-lg:grid-cols-4 max-lg:gap-3 max-lg:overflow-visible max-lg:px-0 max-lg:pb-0 max-sm:grid-cols-2 sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12">
+        <div className="rail-scroll -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-5 px-5 pb-4 max-lg:mx-0 max-lg:grid max-lg:grid-cols-4 max-lg:gap-3 max-lg:overflow-visible max-lg:px-0 max-lg:pb-0 max-sm:grid-cols-2 sm:-mx-8 sm:scroll-px-8 sm:px-8 lg:-mx-12 lg:scroll-px-12 lg:px-12">
           {items.slice(0, RAIL_CARDS).map((item, i) => (
             <div
               key={item.slug}
@@ -70,6 +74,8 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
                 "w-[240px] shrink-0 snap-start max-lg:w-auto sm:w-[280px]",
                 i >= PHONE_CARDS && "max-sm:hidden",
                 i >= TABLET_CARDS && "max-lg:hidden",
+                i === lonePhone && "max-sm:col-span-2 max-sm:mx-auto max-sm:w-[calc(50%-0.375rem)]",
+                i === loneTablet && "sm:max-lg:col-span-4 sm:max-lg:mx-auto sm:max-lg:w-[calc(25%-0.5625rem)]",
               )}
             >
               {item.legacy ? <ProductCard product={item.legacy} /> : <PilotProductCard product={item.published!} />}
