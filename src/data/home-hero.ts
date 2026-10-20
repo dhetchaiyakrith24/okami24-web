@@ -11,8 +11,14 @@
 export const HERO_TYPES = ["pod-systems", "switch-pods", "disposables", "heated-tobacco-devices"] as const;
 export type HeroType = (typeof HERO_TYPES)[number];
 
-export const HOME_HERO_SLOTS: { type: HeroType; product: string }[] = [
-  { type: "pod-systems", product: "caliburn-g5" },
+/**
+ * `scene` (optional): a studio photograph of that product (dark set, warm rim light — owner 20/10 "ทาง 1"
+ * + test B) shown in the stage instead of the cut-out card photo. OKami24 render (Higgsfield seedream_v5_pro)
+ * from the product's own card photo; logo, pattern and screen readout checked 1:1 against it. Remove the
+ * field = that slot is back to the card photo.
+ */
+export const HOME_HERO_SLOTS: { type: HeroType; product: string; scene?: string }[] = [
+  { type: "pod-systems", product: "caliburn-g5", scene: "/assets/hero/caliburn-g5-scene.webp" },
   { type: "switch-pods", product: "m-switch-kit" },
   { type: "disposables", product: "infy-20k" },
   { type: "heated-tobacco-devices", product: "iqosheet-17" },

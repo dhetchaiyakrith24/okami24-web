@@ -19,6 +19,8 @@ export type HeroSlotView = {
   name: string;
   brand: string;
   image: { src: string; alt: string };
+  /** a studio photograph of the product (home-hero.ts `scene`) shown instead of the cut-out */
+  scene?: string;
 };
 
 /** The English tag above each tab's label — an English eyebrow by design (THAI_STYLE §5 group ก). */
@@ -229,9 +231,27 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
                 href={s.categoryHref}
                 className="okh-prod"
                 data-state={i === cur ? "on" : i === prev ? "out" : undefined}
+                data-scene={s.scene ? "1" : undefined}
                 aria-hidden={i !== cur}
                 tabIndex={i === cur ? 0 : -1}
               >
+                {s.scene ? (
+                  // the studio photograph fills the stage; its edges melt into the page so the ribbons
+                  // behind it still show around the set (globals.css .okh-scene)
+                  <span className="okh-scene">
+                    {i === 0 || warm ? (
+                      <Image
+                        src={s.scene}
+                        alt={s.image.alt}
+                        fill
+                        sizes="(min-width: 1024px) 60vw, 100vw"
+                        className="object-cover"
+                        loading={i === 0 ? "eager" : "lazy"}
+                        fetchPriority={i === 0 ? "high" : undefined}
+                      />
+                    ) : null}
+                  </span>
+                ) : (
                 <span className="okh-float">
                   {i === 0 || warm ? (
                     <Image
@@ -250,6 +270,7 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
                     <span className="okh-sheen" style={{ "--okh-mask": `url(${mask})` } as CSSProperties} aria-hidden />
                   ) : null}
                 </span>
+                )}
               </Link>
             );
           })}
