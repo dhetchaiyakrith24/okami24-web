@@ -11,11 +11,17 @@
 export const HERO_TYPES = ["pod-systems", "switch-pods", "disposables", "heated-tobacco-devices"] as const;
 export type HeroType = (typeof HERO_TYPES)[number];
 
-export const HOME_HERO_SLOTS: { type: HeroType; product: string }[] = [
-  { type: "pod-systems", product: "caliburn-g5" },
-  { type: "switch-pods", product: "m-switch-kit" },
-  { type: "disposables", product: "infy-20k" },
-  { type: "heated-tobacco-devices", product: "iqosheet-17" },
+/**
+ * `photo` (optional, desktop only): the product lying almost flat across the stage, pod toward the headline,
+ * end toward the name (owner 20–21/10), transparent so the ribbons run on behind it; phones keep the standing
+ * card photo. It is the product's own card photo rotated (AI re-renders warped the device — owner: "บิดๆ
+ * เบี้ยวๆ"). Remove the field = that slot is back to the card photo everywhere.
+ */
+export const HOME_HERO_SLOTS: { type: HeroType; product: string; photo?: string }[] = [
+  { type: "pod-systems", product: "caliburn-g5", photo: "/assets/hero/caliburn-g5-lying.webp" },
+  { type: "switch-pods", product: "m-switch-kit", photo: "/assets/hero/m-switch-kit-lying.webp" },
+  { type: "disposables", product: "infy-20k", photo: "/assets/hero/infy-20k-lying.webp" },
+  { type: "heated-tobacco-devices", product: "iqosheet-17", photo: "/assets/hero/iqos-iluma-one-lying.webp" },
 ];
 
 /**
