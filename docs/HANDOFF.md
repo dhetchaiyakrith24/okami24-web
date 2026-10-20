@@ -80,6 +80,14 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
   Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
   redirect into a checker-read tree = discipline (rule-audit L1 proposes a lock) · scan tools against the live site (L2).
+3m OPEN ROUND "Max list" (owner 20/10 "ลงตามทุกตัวที่ Shipnity Max มีและเว็บเรายังไม่มี") = `docs/rounds/รอบลงสินค้าคลัง-ShipnityMax-20-10.txt` · line-1 side chat
+  (`line1-maxlist`), handed over 21/10 · table Max × site = `docs/cloud-results/max-unlisted-2010.md` (status table A2 is the live one) · brief for the next chat =
+  `_incoming/next-chat-products.md` (not in git). LIVE 21/10 [curl 200]: #660 Muro Salt Nic ฿250 · #664 RELX Essential 2 ฿490 + RELX Infinity Pro 2 pods ฿149 ·
+  #666 VOOPOO Argus Pod (coil-21) ฿450 · #669 Vazer One ฿59 (21 flavours). Reswa Sportcan was already live (pod-142). OPEN: Double Mint Salt Nic (owner "ลงคลังปกติ" 21/10;
+  refs + `_incoming/maxlist/edit-dm.js` ready, 6 renders = 24 credits) · Foli Cool Bar 15K (Max Disposable-42; flavours match the ihavevape Cool Bar line 12 of 12;
+  `_incoming/maxlist/edit-foli.js` ready, 12 renders = 48 credits) · Muro Freebase (needs an owner bottle photo; price Max ฿220) · Creator Pod 20K (skipped: identity unconfirmed).
+  Credits: renders cost 4 per run of 2 images; the owner must type the yes in THAT chat (a relayed yes is refused by the permission classifier); measured 68 (button) + 20 (balance 4177.4 → 4157.4).
+  New PR rule (Friday 21/10): open as draft, push, `gh pr ready` once, then the gate; merge only when `checks` = pass (not skipping).
 3i PARKED 20/10 (owner "หยุดงานอื่นและ Focus แค่งานนี้" = homepage hero only): image sweep stopped after #619 MQ Bar 22K · #620 Vmate Pro 2 ·
   #621 Punta Ice · #624 Next Pro 2 Beyond · #625 Super Cool Salt Nic (all merged + live 200, 20/10). Nothing open; test servers stopped.
   Resume = brief _incoming/next-chat.md (status ready: Marbo Saltnic first — owner 19/10 points — then the queue). Hero test clips (Caliburn G5,
