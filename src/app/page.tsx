@@ -45,6 +45,7 @@ export default function Home() {
       brand: item.brandName ?? "",
       // the hero's own cut-out when the slot has one (home-hero.ts `photo`), else the card photo
       image: photo ? { src: photo, alt: item.image.alt } : item.image,
+      ...(photo ? { flying: true } : {}),
     }];
   });
 

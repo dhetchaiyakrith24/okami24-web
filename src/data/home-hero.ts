@@ -18,7 +18,7 @@ export type HeroType = (typeof HERO_TYPES)[number];
  * pattern and screen readout checked 1:1 against it. Remove the field = that slot is back to the card photo.
  */
 export const HOME_HERO_SLOTS: { type: HeroType; product: string; photo?: string }[] = [
-  { type: "pod-systems", product: "caliburn-g5", photo: "/assets/hero/caliburn-g5-fly.webp" },
+  { type: "pod-systems", product: "caliburn-g5", photo: "/assets/hero/caliburn-g5-left.webp" },
   { type: "switch-pods", product: "m-switch-kit" },
   { type: "disposables", product: "infy-20k" },
   { type: "heated-tobacco-devices", product: "iqosheet-17" },

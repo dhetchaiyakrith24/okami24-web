@@ -19,6 +19,8 @@ export type HeroSlotView = {
   name: string;
   brand: string;
   image: { src: string; alt: string };
+  /** true = `image` is the hero's own flying cut-out (home-hero.ts `photo`), not the standing card photo */
+  flying?: boolean;
 };
 
 /** The English tag above each tab's label — an English eyebrow by design (THAI_STYLE §5 group ก). */
@@ -229,6 +231,7 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
                 href={s.categoryHref}
                 className="okh-prod"
                 data-state={i === cur ? "on" : i === prev ? "out" : undefined}
+                data-flying={s.flying ? "1" : undefined}
                 aria-hidden={i !== cur}
                 tabIndex={i === cur ? 0 : -1}
               >
