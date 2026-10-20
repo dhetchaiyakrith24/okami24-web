@@ -19,9 +19,9 @@ export type HeroType = (typeof HERO_TYPES)[number];
  */
 export const HOME_HERO_SLOTS: { type: HeroType; product: string; photo?: string }[] = [
   { type: "pod-systems", product: "caliburn-g5", photo: "/assets/hero/caliburn-g5-lying.webp" },
-  { type: "switch-pods", product: "m-switch-kit" },
-  { type: "disposables", product: "infy-20k" },
-  { type: "heated-tobacco-devices", product: "iqosheet-17" },
+  { type: "switch-pods", product: "m-switch-kit", photo: "/assets/hero/m-switch-kit-lying.webp" },
+  { type: "disposables", product: "infy-20k", photo: "/assets/hero/infy-20k-lying.webp" },
+  { type: "heated-tobacco-devices", product: "iqosheet-17", photo: "/assets/hero/iqos-iluma-one-lying.webp" },
 ];
 
 /**
