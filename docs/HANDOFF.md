@@ -29,13 +29,15 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Not done, owner did not ask again: checker #671 r1 taste notes (warm floor pool faint at 1440/1920 · tabs 01 UWELL and 02 VOOPOO repeat the same
   type line · at 1024 ARGUS's end sits close to "02/04"). Owner's open taste notes: phone product cards compact (keep 2 columns, square photo) ·
   LINE order message without the page URL — `_incoming/friday-queue.md`. Hero AI tests ≈ 15.25 credits, all rejected, none on the site.
-3u OPEN ROUND "homepage upgrade" (owner 21/10 answers 1 1 1 + "เริ่มขั้น 1 ได้เลย") = `docs/rounds/รอบยกระดับหน้าเว็บ-Artefakt-21-10.txt` · reference getlayers
+3w OPEN ROUND "homepage upgrade" (owner 21/10 answers 1 1 1 + "เริ่มขั้น 1 ได้เลย") = `docs/rounds/รอบยกระดับหน้าเว็บ-Artefakt-21-10.txt` · reference getlayers
   Artefakt (lattice lit under the cursor · 4-card row · labels that "tune in"; studied from its 3 preview clips, no live demo). Owner: no purchase,
-  Friday drafts · desktop hero = 4 cards replacing the lying product · phones unchanged. Branch `home-upgrade-2110`; test tree `_incoming/hero-2010/wt-3424`
-  (detached at the branch head, server 3424) · before = server 3422 (main's site code). Helpers `_incoming/upgrade-2110/shot.js` (`<port> <w> <h> <out>
-  [hover=<i>] [mouse=x,y] [locale=] [reduce]`). BATCH 1 (tier B) = DESKTOP_HERO "cards" (home-hero.ts; "stage" = #671 back) · HeroCards.tsx ·
-  .okh-lattice / .okh-card CSS: draft built — NEXT: shots 1024/1440/1920 + 390 unchanged · send the owner the draft (shots + hover clip) · Lighthouse
-  before/after · visible-text · designer · gate → checker → merge. Batches 2 (rest of the homepage) and 3 (category/product pages) open after.
+  Friday drafts · phones unchanged. BATCH 1 DONE = #677 (merge 9baf2c73, checker r1 FAIL → r2 PASS 3697f7ba): desktop hero = 4 brand cards
+  (DESKTOP_HERO "cards"; "stage" = #671 back) over a cursor-lit lattice · hero CSS moved out of globals.css (LESSONS 40: Turbopack CSS merge size;
+  every other page now 1 stylesheet 94 KB, homepage 2 files, mobile `/` FCP +~110 ms, score same). Owner has seen drafts v1/v2 (sent 21/10), not
+  yet said keep/revert. Known: 720–768 px tall screens show 112 px photos (row must clear the site LINE button) · LINE button itself untouched.
+  NEXT: batch 2 = the card look + lattice for the rest of the homepage (type sections, rails) — tier B, designer + checker; batch 3 = category /
+  product pages. Test tree `_incoming/hero-2010/wt-3424` (server 3424) · before = 3422 · helpers `_incoming/upgrade-2110/` shot.js · measure.js
+  (row vs LINE button) · rec-hover.js (owner clip) · split-css.js (one-off, done).
   House rounds 15–16/10 (#484 … #500, #508, #510) DONE — what they built lives in its home (skill house-clean · TEAM_RULES 13.3 #1 ·
   skills find-skills / content-strategy · `docs/seo-audit/`); the 16/10 artifact mistake = LESSONS พ31; full text =
   `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
