@@ -172,7 +172,11 @@ function ciProblems(rollup) {
   else if (decide.conclusion === "SKIPPED")
     out.push("the deploy workflow SKIPPED the head (it ran while the PR was a draft) - `gh pr ready --undo` then `gh pr ready`, wait for checks");
   else if (decide.conclusion !== "SUCCESS") out.push(`deploy/decide is ${decide.conclusion}`);
-  if (checks && checks.status !== "COMPLETED") out.push("GitHub checks still running (checks) - wait");
+  // decide SUCCESS always leads to a `checks` run (SUCCESS, or SKIPPED when nothing reaches the site) — it shows up a
+  // few seconds after decide, so none yet = not started, never "fine" (checker #667 r1)
+  if (decide && decide.status === "COMPLETED" && decide.conclusion === "SUCCESS" && !checks)
+    out.push("GitHub checks not started yet (checks) - wait");
+  else if (checks && checks.status !== "COMPLETED") out.push("GitHub checks still running (checks) - wait");
   else if (checks && !["SUCCESS", "SKIPPED"].includes(checks.conclusion)) out.push(`deploy/checks is ${checks.conclusion}`);
   for (const c of runs) {
     if (c.name === "decide" || c.name === "checks" || c.name === "deploy") continue;
