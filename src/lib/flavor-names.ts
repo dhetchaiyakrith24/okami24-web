@@ -19,6 +19,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   // Image sweep (19/10): + the Punta Ice names (Max labels), sorted in by length.
   // Image sweep (19/10): + the Super Cool Salt Nic names (Max labels), sorted in by length.
   // maxlist (20/10): + the Muro Salt Nic names (Max labels), sorted in by length.
+  // maxlist (21/10): + the Vazer One names (the maker's flavours), sorted in by length.
   // maxlist (20/10): + the RELX Infinity Pro 2 pod names (Max Pod-27 labels), sorted in by length.
   "Strawberry Watermelon Ice",
   "Guava Kiwi Passion Fruit",
@@ -36,6 +37,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Watermelon Raspberry",
   "Sea Salt Lemon Candy",
   "Classic Tobacco 50mg",
+  "Strawberry Ice-Cream",
   "Passion Fruit Pearl",
   "Blueberry Bubblegum",
   "Blueberry Raspberry",
@@ -105,6 +107,7 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Lemon Mint 50mg",
   "Peppermint 50mg",
   "Strawberry 50mg",
+  "Vanilla Custard",
   "Red Lemon Soda",
   "Auburn Edition",
   "Golden Edition",
@@ -245,6 +248,8 @@ export const MULTI_WORD_FLAVOR_NAMES: ReadonlyArray<string> = [
   "Grape 50mg",
   "Lemon Zest",
   "Taro Scoop",
+  "Gummy Bear",
+  "Milk Honey",
   "Just Mint",
   "Sun Pearl",
   "All Berry",
