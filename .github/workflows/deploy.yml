@@ -20,6 +20,8 @@ on:
   push:
     branches: [main]
   pull_request:
+    # ready_for_review: a draft PR runs nothing (job `decide` below); marking it ready runs the full set once
+    types: [opened, synchronize, reopened, ready_for_review]
   workflow_dispatch:
     inputs:
       deploy:
@@ -33,6 +35,10 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   decide:
+    # Draft PRs skip the whole workflow (owner 21/10 "ลดรอบ": every push to an open PR rebuilt the site, which
+    # used up the month's Actions minutes). Work in progress = draft; "Ready for review" before the checker.
+    # A skipped required job counts as passed, but a draft cannot be merged anyway.
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
     runs-on: ubuntu-24.04
     outputs:
       deploy: ${{ steps.d.outputs.deploy }}
