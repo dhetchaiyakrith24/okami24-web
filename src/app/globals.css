@@ -889,26 +889,6 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
   animation: okh-sheen 2.2s cubic-bezier(0.4, 0, 0.2, 1) 0.7s 1 both;
 }
 @keyframes okh-sheen { from { transform: translateX(22%); } to { transform: translateX(-22%); } }
-/* a slot with a studio photograph (home-hero.ts `scene`, owner 20/10): the set fills a little more than the
-   stage and its edges melt into the page, so the hero's ribbons still pass around it; the code-drawn floor
-   glow steps back while it shows (the photograph has its own floor and rim light) */
-.okh-prod[data-scene] { inset: -4% -6% 0 -6%; justify-content: center; }
-.okh-scene {
-  position: absolute;
-  inset: 0;
-  /* fade every edge (the two gradients intersect): no hard line where the set ends */
-  -webkit-mask:
-    linear-gradient(to right, transparent 0, #000 28%, #000 80%, transparent 100%),
-    linear-gradient(to bottom, transparent 0, #000 12%, #000 74%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask:
-    linear-gradient(to right, transparent 0, #000 28%, #000 80%, transparent 100%),
-    linear-gradient(to bottom, transparent 0, #000 12%, #000 74%, transparent 100%);
-  mask-composite: intersect;
-}
-.okh-scene img { object-position: 72% 50%; }
-.okh-floor { transition: opacity 0.6s ease; }
-.okh-stage:has(.okh-prod[data-scene][data-state="on"]) .okh-floor { opacity: 0; }
 @keyframes okh-float { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
 
 .okh-meta {

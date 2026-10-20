@@ -32,7 +32,7 @@ export default function Home() {
   // The hero's four slots (src/data/home-hero.ts), resolved here so the client component only gets
   // the four small records it shows. A product that is no longer visible, or has no card photo,
   // drops its slot rather than breaking the hero.
-  const heroSlots: HeroSlotView[] = HOME_HERO_SLOTS.flatMap(({ type, product, scene }) => {
+  const heroSlots: HeroSlotView[] = HOME_HERO_SLOTS.flatMap(({ type, product, photo }) => {
     const item = getCatalogItem(product);
     const category = getCategory(type);
     if (!item?.image || !category) return [];
@@ -43,8 +43,8 @@ export default function Home() {
       // legacy products carry a short model name ("Caliburn G5"); displayName repeats the brand in caps
       name: getProduct(product)?.name ?? item.name,
       brand: item.brandName ?? "",
-      image: item.image,
-      ...(scene ? { scene } : {}),
+      // the hero's own cut-out when the slot has one (home-hero.ts `photo`), else the card photo
+      image: photo ? { src: photo, alt: item.image.alt } : item.image,
     }];
   });
 
