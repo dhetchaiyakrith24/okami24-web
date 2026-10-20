@@ -10573,7 +10573,7 @@
   "role": "card",
   "note": "maxlist 20/10 - RELX Essential 2 Nebula Blue (Max Pod-157)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot of the Nebula Blue device cropped 3x from the shop's five-colour line-up (maxlist-2010/in/ess-nebula-blue.png); pick ess-t4 (Higgsfield 163116 2a75457f); device cut with a fitted rounded rectangle (maxlist-2010/rrdev.js: walls by edge, top = first row against the backdrop, top corner radius 0.33 w, base 0.12 w), inset 3 px - copy beside this source",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot (checker r1 re-roll: solid matte cap, plain disc) of the Nebula Blue device cropped 3x from the shop's five-colour line-up (maxlist-2010/in/ess-nebula-blue.png); pick ess-blue-r1 (Higgsfield 165203 efe038c6); device cut with a fitted rounded rectangle (maxlist-2010/rrdev.js: walls by edge, top = first row against the backdrop, top corner radius 0.33 w, base 0.12 w), inset 3 px - copy beside this source",
    "reference": "maneevp.com RELX Essential 2 Pod Device five-colour line-up 1000 px, white, no text on the device (https://maneevp.com/product/relx-essential-2-pod-device/) - _incoming/maxlist-2010/ref/ess2/e1.jpg",
    "fidelitySheet": "_incoming/maxlist-2010/r/ess-t*.jpg + ess-t3.jpg (line-up crop vs renders: dark mouthpiece disc, indicator line, body colour), _incoming/maxlist-2010/ke/edges2.jpg + sheet2.jpg (cap top and base at 1:1 on the site background)"
   },
@@ -10586,7 +10586,7 @@
   "id": "pod-157-1",
   "note": "maxlist 20/10 - RELX Essential 2 Black (Max Pod-157)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot of the Black device cropped 3x from the shop's five-colour line-up (maxlist-2010/in/ess-black.png); pick ess-black-1 (Higgsfield 163345 4780d8c9); device cut with a fitted rounded rectangle (maxlist-2010/rrdev.js: walls by edge, top = first row against the backdrop, top corner radius 0.33 w, base 0.12 w), inset 3 px - copy beside this source",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot (checker r1 re-roll: solid matte cap, plain disc) of the Black device cropped 3x from the shop's five-colour line-up (maxlist-2010/in/ess-black.png); pick ess-black-r1 (Higgsfield 165225 bec2c880); device cut with a fitted rounded rectangle (maxlist-2010/rrdev.js: walls by edge, top = first row against the backdrop, top corner radius 0.33 w, base 0.12 w), inset 3 px - copy beside this source",
    "reference": "maneevp.com RELX Essential 2 Pod Device five-colour line-up 1000 px, white, no text on the device (https://maneevp.com/product/relx-essential-2-pod-device/) - _incoming/maxlist-2010/ref/ess2/e1.jpg",
    "fidelitySheet": "_incoming/maxlist-2010/r/ess-t*.jpg + ess-t3.jpg (line-up crop vs renders: dark mouthpiece disc, indicator line, body colour), _incoming/maxlist-2010/ke/edges2.jpg + sheet2.jpg (cap top and base at 1:1 on the site background)"
   }
@@ -10610,7 +10610,7 @@
   "id": "pod-157-3",
   "note": "maxlist 20/10 - RELX Essential 2 Grey (Max Pod-157)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot of the Grey device cropped 3x from the shop's five-colour line-up (maxlist-2010/in/ess-grey.png); pick ess-t8 (Higgsfield 163312 974e5219); device cut with a fitted rounded rectangle (maxlist-2010/rrdev.js: walls by edge, top = first row against the backdrop, top corner radius 0.33 w, base 0.12 w), inset 3 px - copy beside this source",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot of the Grey device cropped 3x from the shop's five-colour line-up (maxlist-2010/in/ess-grey.png); pick ess-t7 (Higgsfield 163312 ded7357a); device cut with a fitted rounded rectangle (maxlist-2010/rrdev.js: walls by edge, top = first row against the backdrop, top corner radius 0.33 w, base 0.12 w), inset 3 px - copy beside this source",
    "reference": "maneevp.com RELX Essential 2 Pod Device five-colour line-up 1000 px, white, no text on the device (https://maneevp.com/product/relx-essential-2-pod-device/) - _incoming/maxlist-2010/ref/ess2/e1.jpg",
    "fidelitySheet": "_incoming/maxlist-2010/r/ess-t*.jpg + ess-t3.jpg (line-up crop vs renders: dark mouthpiece disc, indicator line, body colour), _incoming/maxlist-2010/ke/edges2.jpg + sheet2.jpg (cap top and base at 1:1 on the site background)"
   }
@@ -10622,7 +10622,7 @@
   "id": "pod-157-4",
   "note": "maxlist 20/10 - RELX Essential 2 Nebula Blue (Max Pod-157)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot of the Nebula Blue device cropped 3x from the shop's five-colour line-up (maxlist-2010/in/ess-nebula-blue.png); pick ess-t4 (Higgsfield 163116 2a75457f); device cut with a fitted rounded rectangle (maxlist-2010/rrdev.js: walls by edge, top = first row against the backdrop, top corner radius 0.33 w, base 0.12 w), inset 3 px - copy beside this source",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot (checker r1 re-roll: solid matte cap, plain disc) of the Nebula Blue device cropped 3x from the shop's five-colour line-up (maxlist-2010/in/ess-nebula-blue.png); pick ess-blue-r1 (Higgsfield 165203 efe038c6); device cut with a fitted rounded rectangle (maxlist-2010/rrdev.js: walls by edge, top = first row against the backdrop, top corner radius 0.33 w, base 0.12 w), inset 3 px - copy beside this source",
    "reference": "maneevp.com RELX Essential 2 Pod Device five-colour line-up 1000 px, white, no text on the device (https://maneevp.com/product/relx-essential-2-pod-device/) - _incoming/maxlist-2010/ref/ess2/e1.jpg",
    "fidelitySheet": "_incoming/maxlist-2010/r/ess-t*.jpg + ess-t3.jpg (line-up crop vs renders: dark mouthpiece disc, indicator line, body colour), _incoming/maxlist-2010/ke/edges2.jpg + sheet2.jpg (cap top and base at 1:1 on the site background)"
   }
