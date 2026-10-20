@@ -19,7 +19,29 @@ export type HeroSlotView = {
   name: string;
   brand: string;
   image: { src: string; alt: string };
+  /** desktop only: the hero's own flying cut-out (home-hero.ts `photo`); phones keep `image` (owner 20/10:
+   *  the tilted render read as warped on a phone) */
+  photo?: string;
 };
+
+const PHOTO_SIZES = "(min-width: 1024px) 40vw, 70vw";
+
+/** The slot's photo: the card photo, or — when the slot has a flying cut-out — a <picture> that serves the
+ *  cut-out from 64rem up and the card photo below (art direction; the browser fetches only one). */
+function SlotPhoto({ s, first }: { s: HeroSlotView; first: boolean }) {
+  const load = first ? ({ loading: "eager", fetchPriority: "high" } as const) : ({ loading: "lazy" } as const);
+  if (!s.photo) {
+    return <Image src={s.image.src} alt={s.image.alt} fill sizes={PHOTO_SIZES} className="object-contain" {...load} />;
+  }
+  const desktop = getImageProps({ src: s.photo, alt: "", fill: true, sizes: "40vw" }).props.srcSet;
+  const { props: phone } = getImageProps({ src: s.image.src, alt: s.image.alt, fill: true, sizes: PHOTO_SIZES, ...load });
+  return (
+    <picture>
+      <source media="(min-width: 64rem)" srcSet={desktop} sizes="40vw" />
+      <img {...phone} alt={s.image.alt} className="object-contain" />
+    </picture>
+  );
+}
 
 /** The English tag above each tab's label — an English eyebrow by design (THAI_STYLE §5 group ก). */
 const TYPE_TAG: Record<HeroType, string> = {
@@ -223,31 +245,28 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
           </button>
           {slots.map((s, i) => {
             const mask = getImageProps({ src: s.image.src, alt: "", width: 480, height: 600, quality: 60 }).props.src;
+            // the flying cut-out's own silhouette for the sheen from 64rem up (globals.css --okh-mask-d)
+            const maskD = s.photo ? getImageProps({ src: s.photo, alt: "", width: 600, height: 600, quality: 60 }).props.src : null;
             return (
               <Link
                 key={s.type}
                 href={s.categoryHref}
                 className="okh-prod"
                 data-state={i === cur ? "on" : i === prev ? "out" : undefined}
+                data-flying={s.photo ? "1" : undefined}
                 aria-hidden={i !== cur}
                 tabIndex={i === cur ? 0 : -1}
               >
                 <span className="okh-float">
-                  {i === 0 || warm ? (
-                    <Image
-                      src={s.image.src}
-                      alt={s.image.alt}
-                      fill
-                      sizes="(min-width: 1024px) 40vw, 70vw"
-                      className="object-contain"
-                      loading={i === 0 ? "eager" : "lazy"}
-                      fetchPriority={i === 0 ? "high" : undefined}
-                    />
-                  ) : null}
+                  {i === 0 || warm ? <SlotPhoto s={s} first={i === 0} /> : null}
                   {/* mounted after load (warm) so its mask file never competes with the first photo; on the
                       first slot the light then sweeps as the ribbons fade in */}
                   {warm ? (
-                    <span className="okh-sheen" style={{ "--okh-mask": `url(${mask})` } as CSSProperties} aria-hidden />
+                    <span
+                      className="okh-sheen"
+                      style={{ "--okh-mask": `url(${mask})`, ...(maskD ? { "--okh-mask-d": `url(${maskD})` } : {}) } as CSSProperties}
+                      aria-hidden
+                    />
                   ) : null}
                 </span>
               </Link>

@@ -32,7 +32,7 @@ export default function Home() {
   // The hero's four slots (src/data/home-hero.ts), resolved here so the client component only gets
   // the four small records it shows. A product that is no longer visible, or has no card photo,
   // drops its slot rather than breaking the hero.
-  const heroSlots: HeroSlotView[] = HOME_HERO_SLOTS.flatMap(({ type, product }) => {
+  const heroSlots: HeroSlotView[] = HOME_HERO_SLOTS.flatMap(({ type, product, photo }) => {
     const item = getCatalogItem(product);
     const category = getCategory(type);
     if (!item?.image || !category) return [];
@@ -44,6 +44,8 @@ export default function Home() {
       name: getProduct(product)?.name ?? item.name,
       brand: item.brandName ?? "",
       image: item.image,
+      // desktop only: the hero's own flying cut-out (home-hero.ts `photo`); phones keep the card photo
+      ...(photo ? { photo } : {}),
     }];
   });
 
