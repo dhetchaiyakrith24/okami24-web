@@ -886,6 +886,14 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
     shortDescription:
       "พอตใช้แล้วทิ้งของ TFIT รองรับสูงสุด 20,000 พัฟ ใช้คอยล์ mesh สองตัว แบต 600mAh ชาร์จผ่าน USB-C และปรับช่องลมได้ตามที่ชอบ",
   },
+  // maxlist (21/10): warehouse facts only — Max "หัวพอต Vazer One" (Pod-115).
+  "vazer-one-pod": {
+    tagline: "หัวพอต Vazer One",
+    shortDescription: "หัวพอต Vazer One บรรจุน้ำยาสำเร็จ มีให้เลือก 21 กลิ่น",
+    whoIsThisFor: {
+      0: "ผู้ที่ใช้เครื่องที่ใส่หัวพอต Vazer One ได้ และต้องการหัวพอตกลิ่นที่ชอบ",
+    },
+  },
   // maxlist (20/10): warehouse facts only — Max "Muro Salt Nic" (ELQ-4).
   "muro-salt-nic": {
     tagline: "น้ำยา Muro Salt Nic",

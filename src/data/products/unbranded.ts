@@ -463,15 +463,15 @@ export const unbrandedProducts: Product[] = [
   {
     id: "vazer-one-pod",
     slug: "vazer-one-pod",
-    hiddenFromStorefront: { since: "2026-09-06", reason: "owner decision (LAUNCH_AUDIT item 11): card image shows another website's URL in large text — hidden until a clean photo exists" },
     brandId: "Unbranded",
     familyId: "Vazer",
     categoryId: "pods-cartridges",
     systemType: "pod-cartridge",
     name: "Vazer One",
     displayName: "Vazer One",
-    tagline: "A prefilled replacement pod.",
-    shortDescription: "A prefilled replacement pod from the Vazer line, currently stocked in 3 flavors.",
+    // maxlist 21/10: Max Pod-115 "หัวพอต Vazer One" ฿59, 5 flavours; the maker sells 21 (the rest show sold out, no photo).
+    tagline: "Vazer One prefilled pod.",
+    shortDescription: "The Vazer One prefilled replacement pod, in 21 flavors.",
     isFlagship: false,
     attributes: {
       screenType: "none",
@@ -480,29 +480,43 @@ export const unbrandedProducts: Product[] = [
       beginnerFriendly: true,
       chargingType: "N/A — cartridge only",
     },
-    // Real retail-box photography — vazerpod.com's own product photos (redistributed via a Thai
-    // retailer's Shopify CDN, pod999th.myshopify.com), found this pass (2026-09-04) now that
-    // Google/general-web sourcing is approved for this cluster. Shows the full retail box (the
-    // pod itself is visible through the box's own window) rather than a bare isolated pod — no
-    // isolated-pod-only photo was found — but this is real, first-party packaging (the box prints
-    // "WWW.VAZERPOD.COM" directly on it), same "real packaging is acceptable media" convention
-    // already used elsewhere in this catalog (e.g. Coil-89's RINCOE box).
+    // maxlist 21/10: card = Mango (in stock); the 5 warehouse flavours = OKami24 studio re-shoots (Higgsfield) of the flavour boxes on the maker's own
+    // posters as sold by maneevp.com (IMAGE_SPEC §0 item 7) — source, prompt and check per file in scripts/process-images.map.json `aiRender`. The maker's other 16
+    // flavours (its 20 posters + Blueberry on the line-up poster) are listed as the catalog completeness rule wants; they show the no-photo panel and sold out.
     assets: [
       {
         kind: "official-photo",
         role: "card",
-        src: "/assets/products/vazer-one-pod/variants/cola.webp",
-        alt: "Vazer One, Cola flavor, retail box photo",
-        angle: "Front, isolated (retail packaging)",
+        src: "/assets/products/vazer-one-pod/card.webp",
+        alt: "Vazer One pod box, Mango, studio photo",
+        angle: "Three-quarter, studio re-shoot (maxlist 21/10, IMAGE_SPEC §0 item 7) of the maker's Mango flavour poster.",
         transparentBackground: true,
-        sourceName: "Vazer (redistributed via a Thai retailer's Shopify store)",
-        sourceUrl: "https://vazerpod.com/",
+        sourceName: "OKami24 render (Higgsfield) from the Vazer One Mango poster",
+        sourceUrl: "https://maneevp.com/product/vazer-one-2-2ml/",
       },
     ],
     flavorVariants: [
-      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variants/cola.webp", alt: "Vazer One, Cola" } },
-      { id: "cola-lemon", name: "Cola Lemon", swatchHex: "#6a5a1f", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variants/cola-lemon.webp", alt: "Vazer One, Cola Lemon" } },
-      { id: "mango", name: "Mango", swatchHex: "#e08a3a", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variants/mango.webp", alt: "Vazer One, Mango" } },
+      { id: "grape", name: "Grape", swatchHex: "#6b4a8e", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-grape.webp", alt: "Vazer One pod box, Grape, studio photo" } },
+      { id: "cola", name: "Cola", swatchHex: "#4a2f1f", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-cola.webp", alt: "Vazer One pod box, Cola, studio photo" } },
+      { id: "cola-lemon", name: "Cola Lemon", swatchHex: "#6a5a1f", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-cola-lemon.webp", alt: "Vazer One pod box, Cola Lemon, studio photo" } },
+      { id: "mix-berries", name: "Mix Berries", swatchHex: "#8e3a6b", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-mix-berries.webp", alt: "Vazer One pod box, Mix Berries, studio photo" } },
+      { id: "mango", name: "Mango", swatchHex: "#e08a3a", availability: "unknown", image: { src: "/assets/products/vazer-one-pod/variant-mango.webp", alt: "Vazer One pod box, Mango, studio photo" } },
+      { id: "blueberry", name: "Blueberry", swatchHex: "#3a4a8e", availability: "unknown" },
+      { id: "grapefruit", name: "Grapefruit", swatchHex: "#e8805a", availability: "unknown" },
+      { id: "gummy-bear", name: "Gummy Bear", swatchHex: "#d94f6b", availability: "unknown" },
+      { id: "lemon-soda", name: "Lemon Soda", swatchHex: "#c9d94b", availability: "unknown" },
+      { id: "lychee", name: "Lychee", swatchHex: "#f0c0d0", availability: "unknown" },
+      { id: "melon", name: "Melon", swatchHex: "#b8d98a", availability: "unknown" },
+      { id: "milk-honey", name: "Milk Honey", swatchHex: "#d9a84a", availability: "unknown" },
+      { id: "mint", name: "Mint", swatchHex: "#3ea88a", availability: "unknown" },
+      { id: "peach", name: "Peach", swatchHex: "#e8a08a", availability: "unknown" },
+      { id: "pineapple", name: "Pineapple", swatchHex: "#e8c43a", availability: "unknown" },
+      { id: "raspberry", name: "Raspberry", swatchHex: "#c9405f", availability: "unknown" },
+      { id: "rootbeer", name: "Rootbeer", swatchHex: "#4a2f1f", availability: "unknown" },
+      { id: "strawberry", name: "Strawberry", swatchHex: "#d94f6b", availability: "unknown" },
+      { id: "strawberry-ice-cream", name: "Strawberry Ice-Cream", swatchHex: "#f0a0b8", availability: "unknown" },
+      { id: "vanilla-custard", name: "Vanilla Custard", swatchHex: "#f0e0a0", availability: "unknown" },
+      { id: "watermelon", name: "Watermelon", swatchHex: "#d94f6b", availability: "unknown" },
     ],
     specifications: [{ key: "format", label: "Format", value: "Prefilled replacement pod", sourceStatus: "verified" }],
     features: [],

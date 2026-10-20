@@ -973,6 +973,30 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "ELQ-6-10": "ELQ-6-10",
   } },
   // Image sweep (19/10): INFY POD — Max Pod-158-1..14; the maker's 5 extra colours are not in the warehouse.
+  // maxlist (21/10): Vazer One (legacy) — Max Pod-115-1..5; the maker's other flavours have no warehouse SKU (null → "สินค้าหมด").
+  "vazer-one-pod": { parent: "Pod-115", options: {
+    "grape": "Pod-115-1",
+    "cola": "Pod-115-2",
+    "cola-lemon": "Pod-115-3",
+    "mix-berries": "Pod-115-4",
+    "mango": "Pod-115-5",
+    "blueberry": null,
+    "grapefruit": null,
+    "gummy-bear": null,
+    "lemon-soda": null,
+    "lychee": null,
+    "melon": null,
+    "milk-honey": null,
+    "mint": null,
+    "peach": null,
+    "pineapple": null,
+    "raspberry": null,
+    "rootbeer": null,
+    "strawberry": null,
+    "strawberry-ice-cream": null,
+    "vanilla-custard": null,
+    "watermelon": null,
+  } },
   // maxlist (21/10): VOOPOO Argus Pod cartridge (legacy seed Coil-21, now on Max) — Coil-21-1..4.
   "coil-21": { parent: "Coil-21", options: {
     "Coil-21-1": "Coil-21-1",

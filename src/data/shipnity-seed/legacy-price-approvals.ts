@@ -153,10 +153,10 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
   },
   "vazer-one-pod": {
     sellingPrice: 59,
-    lastPriceReview: "2026-09-05",
+    lastPriceReview: "2026-10-21",
     basis: "shipnity",
     shipnityProductId: "Pod-115",
-    evidence: 'active-parent-name: Shipnity "หัวพอต Vazer One" (Pod-115, 5 flavours, ฿59); 3 of 3 legacy flavours are in the Excel list',
+    evidence: 'shipnity-max: "หัวพอต Vazer One" (Pod-115, ฿59 ราคาขาย, 5 flavours: Grape · Cola · Cola Lemon · Mix Berries · Mango) — Shipnity Max product list read 2026-10-20 (maxlist round); same price as the 2026-09-05 read',
   },
   "reswa-sportcan-12k": {
     sellingPrice: 229,

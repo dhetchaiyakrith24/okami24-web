@@ -374,6 +374,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "punta-ice": "น้ำยา Punta Ice มีให้เลือก 7 กลิ่น",
   "next-pro-2-beyond": "Next Pro 2 Beyond ตัวเครื่องพอต มีให้เลือก 6 สี",
   "muro-salt-nic": "Muro Salt Nic น้ำยา salt nic มีให้เลือก 6 กลิ่น",
+  "vazer-one-pod": "หัวพอต Vazer One มีให้เลือก 21 กลิ่น",
   "super-cool-saltnic": "น้ำยา Super Cool นิโคตินแบบ salt nic มีให้เลือก 10 กลิ่น",
   "infy-pod": "INFY POD ตัวเครื่อง แบตเตอรี่ 400mAh ชาร์จ Type-C มีให้เลือก 19 สี",
   "relx-essential-2": "RELX Essential 2 ตัวเครื่อง มีให้เลือก 5 สี",
