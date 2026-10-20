@@ -12,20 +12,25 @@ import { FLOW_DRAW_ON_SCROLL, FLOW_GLOW_ON_SCROLL } from "@/data/home-hero";
  *
  * The same ribbon engine as the hero, in "flow" mode: the ribbons follow a route laid on the PAGE
  * (routeOf — owner ~05:20: it scrolls with the boxes, never sways), starting on the left where the
- * hero's light leaves. They are drawn on one screen-sized canvas in a sticky stage that sits BEHIND
- * every section of the wrapper (`.okh-flow` in page.tsx): the sections are see-through there, their
- * boxes are frosted glass (globals.css) so the light shows through them blurred, and behind text
- * without a box the ribbon fades to a soft glow (textBlocks — checker #639: no sharp line through a word).
+ * hero's light leaves. They are drawn on TILES: three screen-tall canvases that sit on the page in a
+ * layer BEHIND every section of the wrapper (`.okh-flow` in page.tsx) and are moved ahead of the
+ * visitor as the page scrolls (place) — so the browser itself scrolls the light with the boxes (owner
+ * 20/10: "jerky on the phone" — the earlier screen-fixed canvas, redrawn for each scroll position,
+ * trailed the page by a frame or two). The sections are see-through there, their boxes are frosted
+ * glass (globals.css) so the light shows through them blurred — on phones the ribbon itself turns to a
+ * soft glow inside the boxes instead of a backdrop blur (boxRects) — and behind text without a box the
+ * ribbon fades to a soft glow (textBlocks — checker #639: no sharp line through a word).
  *
  * Like the hero: it starts after load + idle, runs in a worker when the browser can, stops when the
- * flow area is off screen or the tab is hidden; reduced motion / Save-Data draw one still frame
- * (redrawn when the page scrolls).
+ * flow area is off screen or the tab is hidden; reduced motion / Save-Data draw one still frame per tile.
  */
 /** text that sits on the page without a box of its own — the ribbon fades to a glow behind it */
 const TEXT = "h2, h3, p, a, button, .label-mono";
 /** a frosted box (globals.css .okh-flow) — text inside one is already over a blurred ribbon */
 const BOX = ".bg-surface-0, .bg-surface-1";
 const PAD = 14;
+/** canvases moved down the page as it scrolls: the two the screen can overlap + one placed ahead */
+const TILES = 3;
 
 /**
  * The text blocks the ribbon must not cross sharply (checker #639: a thin bright line through the
@@ -68,6 +73,25 @@ function textBlocks(wrap: HTMLElement, wr: DOMRect): number[] {
     blocks = out;
   }
   return blocks.flatMap((b) => [b.x, b.y, b.w, b.h]);
+}
+
+/**
+ * Phones: the frosted boxes (globals.css: the brand strip + the outermost box inside each section), as
+ * x, y, w, h from the top of the flow area — the ribbon turns to a soft glow inside them.
+ */
+function boxRects(wrap: HTMLElement, wr: DOMRect): number[] {
+  const out: number[] = [];
+  Array.from(wrap.children).forEach((el) => {
+    const boxes = el.tagName === "NAV" ? [el] : el.tagName === "SECTION" ? Array.from(el.querySelectorAll(BOX)) : [];
+    boxes.forEach((b) => {
+      const outer = b.parentElement?.closest(BOX);
+      if (b !== el && outer && el.contains(outer)) return;
+      const r = b.getBoundingClientRect();
+      if (r.width < 2 || r.height < 2 || r.right < wr.left || r.left > wr.right) return;
+      out.push(r.left - wr.left, r.top - wr.top, r.width, r.height);
+    });
+  });
+  return out;
 }
 
 /**
@@ -116,55 +140,110 @@ export function HomeFlow() {
     const still =
       window.matchMedia("(prefers-reduced-motion: reduce)").matches || document.documentElement.dataset.okamiLite === "1";
 
-    // a fresh canvas per mount: an OffscreenCanvas transfer can happen only once per element
-    const canvas = document.createElement("canvas");
-    canvas.className = "okh-flow-canvas";
-    stage.append(canvas);
+    // fresh canvases per mount: an OffscreenCanvas transfer can happen only once per element
+    const canvases = Array.from({ length: TILES }, () => {
+      const c = document.createElement("canvas");
+      c.className = "okh-flow-canvas";
+      stage.append(c);
+      return c;
+    });
+    // one large-viewport height (100lvh): stays put while a phone's address bar slides in and out
+    const probe = document.createElement("div");
+    probe.className = "okh-flow-probe";
+    stage.append(probe);
 
     let ribbons: RibbonDriver | null = null;
     let visible = false;
     let disposed = false;
     let top = 0;
+    let tileH = 0;
+    let lastY = 0;
     let raf = 0;
+    /** which tile each canvas shows (-1 = parked above the area, not drawn) */
+    const tileOf = canvases.map(() => -1);
+    const run = () => ribbons?.run(visible && !document.hidden, still);
+
+    // the tile the screen starts in and the next one, plus one more in the direction of travel; a canvas
+    // is only ever moved while off screen, so the light never jumps
+    const place = (force = false) => {
+      if (!ribbons || !tileH) return;
+      const y = window.scrollY - top;
+      const last = Math.max(0, Math.ceil(wrap.scrollHeight / tileH) - 1);
+      const k = Math.min(last, Math.max(0, Math.floor(y / tileH)));
+      const want = [k, k + 1, y >= lastY ? k + 2 : k - 1].filter((t, i, all) => t >= 0 && t <= last && all.indexOf(t) === i);
+      lastY = y;
+      const kept = new Set<number>();
+      const free: number[] = [];
+      tileOf.forEach((t, i) => {
+        if (want.includes(t) && !kept.has(t)) kept.add(t);
+        else free.push(i);
+      });
+      let changed = force;
+      for (const t of want) {
+        if (kept.has(t)) continue;
+        const i = free.shift();
+        if (i === undefined) break;
+        tileOf[i] = t;
+        kept.add(t);
+        changed = true;
+      }
+      // a canvas left over (the ends of the area) parks above it, so no two canvases ever overlap
+      for (const i of free) {
+        if (tileOf[i] !== -1) {
+          tileOf[i] = -1;
+          changed = true;
+        }
+      }
+      if (!changed) return;
+      const tops = tileOf.map((t) => (t < 0 ? -2 * tileH : t * tileH));
+      canvases.forEach((c, i) => (c.style.transform = `translate3d(0, ${tops[i]}px, 0)`));
+      ribbons.tiles(tops);
+      if (still) run();
+    };
     const sync = () => {
       if (!ribbons) return;
       const phone = window.innerWidth < 1024;
-      ribbons.size(stage.clientWidth, stage.clientHeight, Math.min(window.devicePixelRatio || 1, phone ? 1.5 : 2), phone);
+      tileH = Math.round(probe.getBoundingClientRect().height) || window.innerHeight;
+      canvases.forEach((c) => (c.style.height = `${tileH}px`));
+      ribbons.size(stage.clientWidth, tileH, Math.min(window.devicePixelRatio || 1, phone ? 1.5 : 2), phone);
       const wr = wrap.getBoundingClientRect();
       top = wr.top + window.scrollY;
-      ribbons.holes(textBlocks(wrap, wr), wrap.scrollHeight, routeOf(wrap, wr));
+      ribbons.holes(textBlocks(wrap, wr), wrap.scrollHeight, routeOf(wrap, wr), phone ? boxRects(wrap, wr) : []);
       ribbons.scroll(window.scrollY - top);
+      place(true);
     };
-    const run = () => ribbons?.run(visible && !document.hidden, still);
     const onScroll = () => {
       if (!ribbons) return;
       ribbons.scroll(window.scrollY - top);
-      // still mode has no loop: redraw the one frame for the new scroll position, once per frame
-      if (still && !raf) {
-        raf = requestAnimationFrame(() => {
-          raf = 0;
-          run();
-        });
-      }
+      place();
+    };
+    // a product rail swiped sideways moves its boxes: measure again, once per frame
+    const onInnerScroll = (e: Event) => {
+      if (e.target === document || raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        sync();
+      });
     };
 
     const begin = () => {
       if (disposed) return;
       const viaWorker = workerDriver(
-        canvas,
+        canvases,
         () => {
-          if (!disposed) canvas.dataset.on = "1";
+          if (!disposed) canvases.forEach((c) => (c.dataset.on = "1"));
         },
         "flow",
       );
-      ribbons = viaWorker ?? mainThreadDriver(canvas, "flow");
+      ribbons = viaWorker ?? mainThreadDriver(canvases, "flow");
       if (!ribbons) return;
-      if (!viaWorker) canvas.dataset.on = "1";
+      if (!viaWorker) canvases.forEach((c) => (c.dataset.on = "1"));
       // reduced motion / Save-Data: the whole line, still (no laying, no glow)
       ribbons.style(FLOW_DRAW_ON_SCROLL && !still, FLOW_GLOW_ON_SCROLL && !still);
       sync();
       run();
       window.addEventListener("scroll", onScroll, { passive: true });
+      wrap.addEventListener("scroll", onInnerScroll, { passive: true, capture: true });
     };
     const idle = () =>
       typeof window.requestIdleCallback === "function" ? window.requestIdleCallback(begin, { timeout: 2000 }) : setTimeout(begin, 400);
@@ -176,7 +255,6 @@ export function HomeFlow() {
       run();
     });
     ro.observe(stage);
-    ro.observe(wrap);
     const io = new IntersectionObserver(([e]) => {
       visible = e.isIntersecting;
       run();
@@ -187,12 +265,14 @@ export function HomeFlow() {
       disposed = true;
       window.removeEventListener("load", idle);
       window.removeEventListener("scroll", onScroll);
+      wrap.removeEventListener("scroll", onInnerScroll, { capture: true });
       if (raf) cancelAnimationFrame(raf);
       ro.disconnect();
       io.disconnect();
       document.removeEventListener("visibilitychange", run);
       ribbons?.destroy();
-      canvas.remove();
+      canvases.forEach((c) => c.remove());
+      probe.remove();
     };
   }, []);
 
