@@ -8,7 +8,8 @@ import { thaiTypographyNode } from "@/lib/thai-typography";
 import type { HeroType } from "@/data/home-hero";
 import type { HeroSlotView } from "./HeroShowcase";
 
-const NOISE = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789#$%&*/<>";
+// letters and digits only — symbols in the display face read as broken glyphs, not as "tuning in" (designer 21/10)
+const NOISE = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
 
 /** True when the visitor asked for less motion, or Save-Data / 2G is on (`html[data-okami-lite]`, page.tsx). */
 function still() {
@@ -65,7 +66,7 @@ const PHOTO_SIZES = "(min-width: 1024px) 40vw, 70vw";
 
 /**
  * The desktop hero's four slots as cards in a row (DESKTOP_HERO "cards", owner 21/10 — the Artefakt "collection" row):
- * index · brand · model · price · the product's own card photo · type tag + colour/flavour count, which turn into a
+ * index · brand (top) · the product's own card photo · model + price · type tag + colour/flavour count, which turn into a
  * "view product" bar on hover. Shown from 64rem up only (globals.css); phones keep the stage + tabs.
  * The photos use the stage's `sizes`, so card 1 and the (hidden) stage's first photo are the same file — one download.
  */
@@ -100,7 +101,9 @@ export const HeroCards = forwardRef<HTMLDivElement, { slots: HeroSlotView[]; typ
     return (
       <div ref={ref} className="okh-cards">
         {slots.map((s, i) => {
-          const run = intro + hover[i];
+          // the brand label re-tunes on every hover; the model name only once, when the row first shows — a name that
+          // scrambles while the visitor reads it is just unreadable (designer 21/10)
+          const brandRun = intro + hover[i];
           const options = s.options
             ? (s.options.kind === "flavors" ? dict.catalog.optionCountFlavors : dict.catalog.optionCountColors).replace("{n}", String(s.options.n))
             : null;
@@ -111,18 +114,14 @@ export const HeroCards = forwardRef<HTMLDivElement, { slots: HeroSlotView[]; typ
               className="okh-card"
               onMouseEnter={() => setHover((h) => h.map((v, j) => (j === i ? v + 1 : v)))}
             >
-              <span className="okh-card-top label-mono" lang="en" aria-hidden>
-                <span>{String(i + 1).padStart(2, "0")}</span>
-                <span className="okh-card-plus">+</span>
-              </span>
-              <span className="okh-card-head">
-                <span className="okh-card-brand label-mono" lang="en">
-                  <Decode text={s.brand} run={run} delay={i * 110} />
+              <span className="okh-card-top label-mono" lang="en">
+                <span aria-hidden>{String(i + 1).padStart(2, "0")}</span>
+                <span className="okh-card-brand">
+                  <Decode text={s.brand} run={brandRun} delay={i * 110} />
                 </span>
-                <span className="okh-card-name font-display" lang="en">
-                  <Decode text={s.name} run={run} delay={i * 110 + 60} />
-                </span>
-                {s.price !== null ? <span className="okh-card-price">฿{s.price.toLocaleString("th-TH")}</span> : null}
+                <svg className="okh-card-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+                  <path d="M5 11l6-6M6 5h5v5" />
+                </svg>
               </span>
               <span className="okh-card-img">
                 <Image
@@ -134,6 +133,12 @@ export const HeroCards = forwardRef<HTMLDivElement, { slots: HeroSlotView[]; typ
                   {...(i === 0 ? ({ loading: "eager", fetchPriority: "high" } as const) : ({ loading: "lazy" } as const))}
                 />
               </span>
+              <span className="okh-card-head">
+                <span className="okh-card-name font-display" lang="en">
+                  <Decode text={s.name} run={intro} delay={i * 110 + 60} />
+                </span>
+                {s.price !== null ? <span className="okh-card-price">฿{s.price.toLocaleString("th-TH")}</span> : null}
+              </span>
               <span className="okh-card-foot">
                 <span className="okh-card-tags">
                   <em className="label-mono" lang="en">
@@ -141,7 +146,13 @@ export const HeroCards = forwardRef<HTMLDivElement, { slots: HeroSlotView[]; typ
                   </em>
                   {options ? <em>{tx(options)}</em> : null}
                 </span>
-                <span className="okh-card-cta">{tx(dict.hero.viewProduct)}</span>
+                <span className="okh-card-cta">
+                  {/* the shop's existing "view product" words; the arrow is drawn here so it can sit at the far end */}
+                  <span>{tx(dict.hero.viewProduct.replace(/\s*→\s*$/, ""))}</span>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </span>
               </span>
             </Link>
           );
