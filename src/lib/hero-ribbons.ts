@@ -74,6 +74,9 @@ uniform vec4 u_holes[16];
 uniform float u_nholes;
 uniform vec4 u_boxes[16];
 uniform float u_nboxes, u_boxBase;
+// flow layer, line laid by scrolling: past this route position nothing shows (the fragment fades it to
+// zero just after the head), so the strip collapses there and the rest of the route costs no pixels
+uniform float u_cut;
 varying float v_u;
 varying float v_g;
 varying float v_side;
@@ -136,7 +139,8 @@ void main() {
   vec2 p = pathAt(a_u);
   vec2 t = normalize(pathAt(a_u + 0.0015) - p);
   float bloom = u_flow > 0.5 ? 1.0 + u_headV.z * knot(a_u) : 1.0;
-  vec2 pos = p + vec2(-t.y, t.x) * a_side * u_halfw * bloom;
+  float keep = u_s0 + a_u * (u_npts - 1.0) > u_cut ? 0.0 : 1.0;
+  vec2 pos = p + vec2(-t.y, t.x) * a_side * u_halfw * bloom * keep;
   vec2 clip = pos / u_res * 2.0 - 1.0;
   gl_Position = vec4(clip.x, -clip.y, 0.0, 1.0);
   v_u = a_u;
@@ -299,7 +303,7 @@ type Target = {
   dirty: boolean;
 };
 
-const UNIFORMS = ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse", "u_holes", "u_nholes", "u_boxes", "u_nboxes", "u_boxBase", "u_head", "u_headV", "u_flow", "u_flowF", "u_npts", "u_s0", "u_pts"];
+const UNIFORMS = ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse", "u_holes", "u_nholes", "u_boxes", "u_nboxes", "u_boxBase", "u_cut", "u_head", "u_headV", "u_flow", "u_flowF", "u_npts", "u_s0", "u_pts"];
 
 function makeTarget(canvas: Ctx2Canvas): Target | null {
   const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false, powerPreference: "low-power" }) as WebGLRenderingContext | null;
@@ -618,6 +622,8 @@ export class RibbonEngine {
       gl.uniform1f(u.u_npts, np);
       gl.uniform1f(u.u_s0, i0);
       gl.uniform3f(u.u_head, this.head, this.drawOnScroll ? 1 : 0, this.glowOnScroll ? this.glow : 0);
+      // one strip segment past the fade-out, so the end of the line keeps its shape
+      gl.uniform1f(u.u_cut, this.drawOnScroll ? this.head + 0.05 + (np - 1) / (phone ? 120 : 180) : 1e9);
     } else {
       strength = (1 - heroP * 0.65) * (1 + surge * 0.55);
       gl.uniform2f(u.u_focus, this.fx, this.fy - heroP * h * 0.15);
@@ -634,6 +640,7 @@ export class RibbonEngine {
       gl.uniform3f(u.u_head, 0, 0, 0);
       gl.uniform1f(u.u_npts, 2);
       gl.uniform1f(u.u_s0, 0);
+      gl.uniform1f(u.u_cut, 1e9);
     }
 
     // a crisp line: its CSS width plus ~0.75 device px of feather each side

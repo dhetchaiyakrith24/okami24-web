@@ -205,7 +205,8 @@ export function HomeFlow() {
       const phone = window.innerWidth < 1024;
       tileH = Math.round(probe.getBoundingClientRect().height) || window.innerHeight;
       canvases.forEach((c) => (c.style.height = `${tileH}px`));
-      ribbons.size(stage.clientWidth, tileH, Math.min(window.devicePixelRatio || 1, phone ? 1.5 : 2), phone);
+      // phones: 1.25 device px per CSS px — the flow light is soft and sits behind boxes (the hero keeps 1.5)
+      ribbons.size(stage.clientWidth, tileH, Math.min(window.devicePixelRatio || 1, phone ? 1.25 : 2), phone);
       const wr = wrap.getBoundingClientRect();
       top = wr.top + window.scrollY;
       ribbons.holes(textBlocks(wrap, wr), wrap.scrollHeight, routeOf(wrap, wr), phone ? boxRects(wrap, wr) : []);
