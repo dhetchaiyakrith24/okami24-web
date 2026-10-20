@@ -108,16 +108,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   numbers with that in mind. Tools chat 3 (`_incoming/seo-keys/`): `linkmap.js` (every sitemap page's links + title/meta/H1, `--diff` flags frozen
   pages) · `wbfix-gen.tsx` + `wb-driver2.js` (word-swap / seed candidates measured in the real element, FAQ answers opened) ·
   `wb-openscan.js` (LESSONS พ34).
-  HELD LINKS — add right after the 22/10 read, then re-run linkmap (boxes move): switch guide: M Switch Kit → m-switch-kit (H2 1 ¶2 ·
-  H2 2 ¶2 · H2 4 ¶1 · summary) · Esko Bar Switch 20K → pod-159 (H2 1 ¶2 · H2 3 ¶1) · INFY 20K → infy-20k (INFY H2) · relatedProductSlugs
-  + m-switch-kit, pod-159 · disposable guide: Joiway F4 → joiway-f4 · INFY 20K → infy-20k · Esko Bar Switch 20K → pod-159 (INFY vs Esko) ·
-  Joiway F3 → joiway-f3 (held: it put the guide into /brands/joiway's box) · flavour guide: INFY 20K → infy-20k · JOIWAY F4 → joiway-f4 ·
-  JOIWAY F3 → joiway-f3 · ARGUS guide: argus-g4 + argus-g4-mini (model list H2 1 ¶2 + front of relatedProductSlugs) + title A "ARGUS G4
-  vs G4 mini ต่างกันยังไง เทียบ VOOPOO ARGUS 4 รุ่น" · genuine guide: INFY ¶ → /brands/infy · Esko Bar ¶ → pod-159 · existing FAQs that
-  say a SALTHUB box has "QR + serial" (choosing-your-first-pod-system, open-system-vs-disposable, en/zh too) → today's photo check +
-  link here. Left plain ON PURPOSE (they pushed SEO_BASELINE owner pages out of boxes — measured): brand links in the genuine guide,
-  category links in the switch / flavour guides (the flavour guide keeps /products/pod-systems — that box did not move), RELX Creator in the disposable guide, /brands/voopoo in the ARGUS guide, the
-  disposable guide's relatedProductSlugs.
+  HELD LINKS + HELD TITLES DONE 20/10 [ตรวจแล้ว curl 200] = #657 (line 2 chat d, merge 1f170a80): every held link in (switch · disposable ·
+  flavour · ARGUS · genuine → /brands/infy + /brands/esko-bar, both brands now have several products · DRAG guide → drag-x) · ARGUS guide title
+  "ARGUS G4 vs G4 mini ต่างกันยังไง เทียบครบ 4 รุ่น" ("VOOPOO ARGUS" split mid-name, measured) · SALTHUB "QR + serial" FAQs fixed th/en/zh ·
+  product titles พอตคิท → พอตซิสเต็ม (VOOPOO) / พอตเปลี่ยนหัว (switch) · brand heads + intros esko-bar / joiway ("JOIWAY จอยเวย์ …", seo-auditor) /
+  relx / voopoo · open-system-vs-disposable box reaches every pod-systems device. Still left plain ON PURPOSE: category links in the switch /
+  flavour guides, RELX Creator in the disposable guide, /brands/voopoo in the ARGUS guide, the disposable guide's relatedProductSlugs.
   Kept on purpose (checker #536 noted): Zero Nano 500mAh (verified row, source salthub.com, no model URL) and every nexBar CLEAR 18K
   number (maker poster the owner supplied, no URL) — the guides repeat what those product pages already print; cut both if the
   owner wants strict maker-URL only. Switch guide body says "เครื่องระบบสวิตช์" (THAI_STYLE 10B line: "พอตเปลี่ยนหัว" = title, links, first explanation).
@@ -139,10 +135,11 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   nexPOD · ESKO BAR SWITCH · KS Quikpro · Nexswitch 16K) · /products/pod-kits 308 → pod-systems. **The 22/10 read of pod-systems and
   pod-kits is MIXED by this change (owner accepted)** — "pod" was split pod-systems 5.1 (25/88) vs pod-kits 8.1 (7/67), GSC 18/10;
   watch rows 2 (argus-g4) + 7 (pod-159): title/meta/H1 unchanged, but breadcrumb + JSON-LD category moved with the merge.
-  HELD until after the read (search-titles.ts TITLE_WORD_HELD_TH · article-relevance.ts comparedFormat): product titles keep "พอตคิท"
-  (switch-pod devices → "พอตเปลี่ยนหัว", VOOPOO → "พอตซิสเต็ม"?) · open-system-vs-disposable box → VOOPOO too · first-pod guide H2 + ¶1
-  still say "พอตคิท" (thai-typography.ts entries tie to them — locked) · switch-pods ↔ the two switch guides link to each other in
-  <main> (seo-auditor) · breadcrumb name = shortName vs H1 labelTh (all categories) · ItemList on category pages (none has one).
+  Still open from the held list: "พอตคิท" in 5 VOOPOO product metas/taglines (argus-p3 · argus-g3-mini · drag-x · vinci-s · vmate-i3 —
+  THAI_STYLE allows it as the VOOPOO device word; ARGUS P3/G4 taglines tie to locked thai-typography entries) · first-pod guide H2 + ¶1
+  "พอตคิท" (locked entries) · switch-pods ↔ the two switch guides link each other in <main> · breadcrumb name = shortName vs H1 labelTh
+  (all categories) · ItemList on category pages · choosing-a-disposable lacks the new disposables (ESKO BAR 20000, RELX LUMI 18K …).
+  Pre-existing, not line 2: en/zh of /products/pod-159 + /brands/voopoo show Thai text nodes (spec labels, Shipnity coil names).
   Known limit: a category has no zh field — zh shows its English name/lede (every category).
   DONE 19/10 [ตรวจแล้ว curl 200]: #597 — choosing-a-switch-pod covers all 9 switch devices (was "สามยี่ห้อ") + category links +
   FAQs "พอตเปลี่ยนหัว 15K" · "RELX Infinity 2 Plus ใช้หัวอะไร" · "พอตเปลี่ยนหัว ใช้ได้นานแค่ไหน" · "พอตซิสเต็มกับ Marbo" (th/en/zh).
@@ -165,9 +162,9 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   mention · 2–4 related guides · FAQ + JSON-LD.
   HOME LOGO STRIP DONE 20/10 [ตรวจแล้ว curl 200]: #630 (owner "Logo แบบ A") — 8 official logos, all white, equal weight, 18.25 px/s kept;
   files + sources in BrandMarquee.tsx comment. Checker taste note: IQOS (thin strokes) reads a bit lighter — bump only if the owner says so.
-  LINE 2 MOVED CHATS 20/10 (63 % context; owner 20/10: SEO continues) — brief = main folder `_incoming/next-chat-seo.md` (queue: 22/10
-  GSC read → held titles → held links → NEXT list → clip leftovers). State: everything merged + live, no open PR/branch, test servers
-  3418/3419 stopped. Line 1 (`line1-maxlist`) edits product/category data meanwhile; homepage files belong to round 3h — not line 2.
+  LINE 2 = chat d since 20/10 (worktree sad-nash-5bf72f, tools `_incoming/l2d/`; builds still via seo-line2-c `setup-build.sh`) — queue:
+  22/10 GSC read (SEO_BASELINE rows + its 19–20/10 section; row 2 moves on three variables) → NEXT list below → clip leftovers. Line 1
+  (`line1-maxlist`) edits product/category data meanwhile; homepage files belong to round 3h — not line 2.
   Line-break tool (19/10): measure candidate wording in the running page (Browser pane JS, Range rects per character, both widths)
   before rebuilding — `_incoming/l2c/` in worktree seo-line2-c has the harness used for #597.
   GUIDE MEDIA (owner 17/10 "ลงรูป + คลิป ตามบทความ"): DONE 19/10 [ตรวจแล้ว curl 200] #607 (leaking · burnt · how-long-a-pod-device ·
