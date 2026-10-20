@@ -6,8 +6,10 @@ import type { HeroType } from "@/data/home-hero";
  * every product/brand as the existing cards"). Same four types, same order as the hero's tabs; the
  * section titles reuse the hero tabs' words (dict.heroShowcase.types), so no new copy.
  *
- * Every product of the section's categories is shown (desktop: the sideways rail; phones: the first
- * PHONE_CARDS cards, then "see all N"). `first` = the models that lead the row — Friday's picks for
+ * Each section shows its first RAIL_CARDS products (desktop: the sideways rail; phones: the first
+ * PHONE_CARDS), then "see all N" to the category page, where every product is. Owner 20/10: nothing
+ * added to the homepage may cost speed — every product in the page made it ~45 % heavier and its
+ * first paint ~0.25 s later in Lighthouse (measured), so the rest live one tap away. `first` = the models that lead the row — Friday's picks for
  * the best-looking / flagship models of each type, swappable here in one line. Owner 20/10: no
  * "best seller" wording anywhere (there are no sales figures), so the order carries no claim.
  */
@@ -34,6 +36,8 @@ export const HOME_TYPE_SECTIONS: { type: HeroType; categories: string[]; first: 
   },
 ];
 
+/** cards each section puts in the page at all (the rest = "see all N") — one number to change */
+export const RAIL_CARDS = 6;
 /** cards shown per section on a phone (two rows of two … three rows) before "see all N" */
 export const PHONE_CARDS = 6;
 /** cards shown per section on a tablet (two rows of four) */

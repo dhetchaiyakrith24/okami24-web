@@ -2,7 +2,7 @@ import Link from "next/link";
 import { allProducts } from "@/data/products";
 import { getPublishedProducts } from "@/data/shipnity-seed/storefront-bridge";
 import { getCategory } from "@/data/categories";
-import { PHONE_CARDS, TABLET_CARDS } from "@/data/home-sections";
+import { PHONE_CARDS, RAIL_CARDS, TABLET_CARDS } from "@/data/home-sections";
 import type { HeroType } from "@/data/home-hero";
 import { Container } from "@/components/ui/Container";
 import { ProductCard } from "@/components/catalog/ProductCard";
@@ -19,10 +19,10 @@ const TYPE_TAG: Record<HeroType, string> = {
 };
 
 /**
- * One product type on the homepage (src/data/home-sections.ts): every product of its categories as
- * the shop's own cards — the legacy card and the ProductMaster card, exactly as the category pages
- * show them. Desktop = the sideways rail (ProductRail's classes); phones and tablets = a grid that
- * stops after the first rows, then a "see all N" button to the category page.
+ * One product type on the homepage (src/data/home-sections.ts): the first RAIL_CARDS products of its
+ * categories (the picks first) as the shop's own cards — the legacy card and the ProductMaster card,
+ * exactly as the category pages show them. Desktop = the sideways rail (ProductRail's classes); phones
+ * and tablets = a grid that stops after the first rows; then a "see all N" button to the category page.
  */
 export function HomeTypeSection({ type, categories, first }: { type: HeroType; categories: string[]; first: string[] }) {
   const items = categories.flatMap((categoryId) => [
@@ -63,7 +63,7 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
       </Container>
       <Container>
         <div className="rail-scroll -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 max-lg:mx-0 max-lg:grid max-lg:grid-cols-4 max-lg:gap-3 max-lg:overflow-visible max-lg:px-0 max-lg:pb-0 max-sm:grid-cols-2 sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12">
-          {items.map((item, i) => (
+          {items.slice(0, RAIL_CARDS).map((item, i) => (
             <div
               key={item.slug}
               className={cn(
@@ -77,9 +77,14 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
           ))}
         </div>
         {items.length > PHONE_CARDS ? (
+          // phones/tablets always (the grid stops early) · desktop only when the rail is cut short
           <Link
             href={href}
-            className="mt-5 flex h-12 items-center justify-center rounded-full border border-surface-border text-sm font-semibold text-foreground transition-colors hover:border-ember hover:text-ember lg:hidden"
+            className={cn(
+              "mt-5 flex h-12 items-center justify-center rounded-full border border-surface-border text-sm font-semibold text-foreground transition-colors hover:border-ember hover:text-ember",
+              items.length <= RAIL_CARDS && "lg:hidden",
+              "lg:mx-auto lg:w-fit lg:px-8",
+            )}
           >
             <HomeText k="typeViewAll" n={items.length} />
           </Link>
