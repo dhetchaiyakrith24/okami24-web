@@ -10830,5 +10830,161 @@
    "reference": "maneevp.com Doublemint Salt Nic group poster (https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/) - _incoming/maxlist-2010/ref/dm/p2.jpg",
    "fidelitySheet": "_incoming/maxlist-2010/dm/cmp-green-apple.jpg (poster crop vs both renders: RIGLEY'S / DOUBLEMINT / CHEWING GUM / flavour / SALT NIC / 30mg letter by letter, label colour, cap), _incoming/maxlist-2010/dm/k/sheet.jpg (cut on the site background)"
   }
+ },
+ {
+  "source": "_incoming/list19/foli/apple-aloe.png",
+  "slug": "foli-bar-15k",
+  "role": "card",
+  "note": "maxlist 21/10 - Foli Bar 15K Apple Aloe (in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Apple Aloe device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-apple-aloe.png, 600 px), mid-grey backdrop; pick apple-aloe-a (Higgsfield 190427 516c881f); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-apple-aloe.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/foli/apple-aloe.png",
+  "slug": "foli-bar-15k",
+  "role": "variant",
+  "id": "apple-aloe",
+  "note": "maxlist 21/10 - Foli Bar 15K Apple Aloe (Max Disposable-42)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Apple Aloe device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-apple-aloe.png, 600 px), mid-grey backdrop; pick apple-aloe-a (Higgsfield 190427 516c881f); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-apple-aloe.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/foli/grape.png",
+  "slug": "foli-bar-15k",
+  "role": "variant",
+  "id": "grape",
+  "note": "maxlist 21/10 - Foli Bar 15K Grape (Max Disposable-42)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Grape device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-grape.png, 600 px), mid-grey backdrop; pick grape-a (Higgsfield 190721 cd8a50bc); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-grape.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/foli/grape-aloe.png",
+  "slug": "foli-bar-15k",
+  "role": "variant",
+  "id": "grape-aloe",
+  "note": "maxlist 21/10 - Foli Bar 15K Grape Aloe (Max Disposable-42)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Grape Aloe device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-grape-aloe.png, 600 px), mid-grey backdrop; pick grape-aloe-a (Higgsfield 190726 4ad623d3); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-grape-aloe.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/foli/blueberry.png",
+  "slug": "foli-bar-15k",
+  "role": "variant",
+  "id": "blueberry",
+  "note": "maxlist 21/10 - Foli Bar 15K Blueberry (Max Disposable-42)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Blueberry device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-blueberry.png, 600 px), mid-grey backdrop; pick blueberry-a (Higgsfield 190729 17f58864); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-blueberry.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/foli/cola-ice.png",
+  "slug": "foli-bar-15k",
+  "role": "variant",
+  "id": "cola-ice",
+  "note": "maxlist 21/10 - Foli Bar 15K Cola Ice (Max Disposable-42)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Cola Ice device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-cola-ice.png, 600 px), mid-grey backdrop; pick cola-ice-a (Higgsfield 190733 92d8a925); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-cola-ice.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/foli/lychee-ice.png",
+  "slug": "foli-bar-15k",
+  "role": "variant",
+  "id": "lychee-ice",
+  "note": "maxlist 21/10 - Foli Bar 15K Lychee Ice (Max Disposable-42)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Lychee Ice device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-lychee-ice.png, 600 px), mid-grey backdrop; pick lychee-ice-a (Higgsfield 190738 3565d73d); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-lychee-ice.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/foli/double-mint.png",
+  "slug": "foli-bar-15k",
+  "role": "variant",
+  "id": "double-mint",
+  "note": "maxlist 21/10 - Foli Bar 15K Double Mint (Max Disposable-42)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Double Mint device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-double-mint.png, 600 px), mid-grey backdrop; pick double-mint-a (Higgsfield 190741 d04c3ac7); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-double-mint.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/foli/mix-berry.png",
+  "slug": "foli-bar-15k",
+  "role": "variant",
+  "id": "mix-berry",
+  "note": "maxlist 21/10 - Foli Bar 15K Mix Berry (Max Disposable-42)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Mix Berry device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-mix-berry.png, 600 px), mid-grey backdrop; pick mix-berry-a (Higgsfield 190745 53cb40d4); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-mix-berry.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/foli/strawberry-ice.png",
+  "slug": "foli-bar-15k",
+  "role": "variant",
+  "id": "strawberry-ice",
+  "note": "maxlist 21/10 - Foli Bar 15K Strawberry Ice (Max Disposable-42)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Strawberry Ice device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-strawberry-ice.png, 600 px), mid-grey backdrop; pick strawberry-ice-a (Higgsfield 190748 9c332185); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-strawberry-ice.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/foli/red-bull-ice.png",
+  "slug": "foli-bar-15k",
+  "role": "variant",
+  "id": "red-bull-ice",
+  "note": "maxlist 21/10 - Foli Bar 15K Red Bull Ice (Max Disposable-42)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Red Bull Ice device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-red-bull-ice.png, 600 px), mid-grey backdrop; pick red-bull-ice-a (Higgsfield 190752 119dbc81); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-red-bull-ice.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/foli/watermelon.png",
+  "slug": "foli-bar-15k",
+  "role": "variant",
+  "id": "watermelon",
+  "note": "maxlist 21/10 - Foli Bar 15K Watermelon (Max Disposable-42)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Watermelon device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-watermelon.png, 600 px), mid-grey backdrop; pick watermelon-a (Higgsfield 190755 8a8f1b14); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-watermelon.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/foli/peach.png",
+  "slug": "foli-bar-15k",
+  "role": "variant",
+  "id": "peach",
+  "note": "maxlist 21/10 - Foli Bar 15K Peach (Max Disposable-42)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Peach device from its ihavevape.net flavour photo (maxlist-2010/foli/ref-peach.png, 600 px), mid-grey backdrop; pick peach-a (Higgsfield 190758 5173ed96); cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px (maxlist-2010/foli/cutfoli.js) - copy beside this source",
+   "reference": "ihavevape.net FOLI Cool Bar 15K flavour photo (https://ihavevape.net/product/foli-cool-bar-15000-puffs/) - _incoming/maxlist-2010/ref/foli/ihv/foli-cool-bar-15k-peach.webp",
+   "fidelitySheet": "_incoming/maxlist-2010/foli/zsheet-1.jpg + zsheet-2.jpg (device crop of the photo vs both renders: FOLI / COOL BAR letter by letter, their colours and gradient, level window), _incoming/maxlist-2010/foli/k/sheet.jpg (cut on the site background)"
+  }
  }
 ]
