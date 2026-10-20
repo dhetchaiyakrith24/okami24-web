@@ -110,7 +110,7 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
     const begin = () => {
       if (disposed) return;
       setWarm(true);
-      const viaWorker = workerDriver(canvas, () => {
+      const viaWorker = workerDriver([canvas], () => {
         if (!disposed) canvas.dataset.on = "1";
       });
       ribbons = viaWorker ?? mainThreadDriver(canvas);

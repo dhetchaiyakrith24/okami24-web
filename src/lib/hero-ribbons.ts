@@ -64,18 +64,39 @@ uniform vec2 u_pts[24];
 // x = route position of the head, y = how hard the lines pinch there, z = how much wider this
 // draw's strip gets there (the halo pass blooms). Its own name: the fragment side has u_head.
 uniform vec3 u_headV;
+// flow layer: the text blocks that sit on the page without a box (headings, ledes, links) and, on
+// phones, the boxes themselves — canvas CSS px (x, y, w, h). Worked out per vertex, not per pixel
+// (20/10 owner: "jerky on the phone" — a 16-step loop in every pixel of every line was most of the
+// frame): the ribbon fades softly to a glow behind text (no sharp line crosses a word, checker #639);
+// inside a box only this draw's share u_boxBase is left (phones: the box shows a soft glow, as the
+// frosted glass did, without the per-frame backdrop blur).
+uniform vec4 u_holes[16];
+uniform float u_nholes;
+uniform vec4 u_boxes[16];
+uniform float u_nboxes, u_boxBase;
+// flow layer, line laid by scrolling: past this route position nothing shows (the fragment fades it to
+// zero just after the head), so the strip collapses there and the rest of the route costs no pixels
+uniform float u_cut;
 varying float v_u;
 varying float v_g;
 varying float v_side;
 varying float v_alpha;
+// a different noise offset per stroke, so the dither of strokes stacked on one pixel does not add up
+varying float v_seed;
+// hole fade at the two strengths the fragment mixes by the knot (0.1 away from it, 0.55 at it) · box fade
+varying float v_h1;
+varying float v_h2;
+varying float v_box;
 const float TAU = 6.2831853;
 const float PI = 3.1415927;
+float rectDist(vec2 p, vec4 r) {
+  vec2 q = abs(p - (r.xy + r.zw * 0.5)) - r.zw * 0.5;
+  return length(max(q, 0.0)) + min(max(q.x, q.y), 0.0);
+}
+// a vertex shader may index a uniform array with any integer (GLSL ES 1.00 appendix A) — the earlier
+// 24-step search ran four times per spine point, most of the vertex work (measured 20/10)
 vec2 P(float i) {
-  float j = clamp(i, 0.0, u_npts - 1.0);
-  for (int k = 0; k < 24; k++) {
-    if (float(k) == j) return u_pts[k];
-  }
-  return u_pts[0];
+  return u_pts[int(clamp(i, 0.0, u_npts - 1.0) + 0.5)];
 }
 vec2 spine(float u) {
   float s = clamp(u, 0.0, 1.0) * (u_npts - 1.0);
@@ -118,13 +139,42 @@ void main() {
   vec2 p = pathAt(a_u);
   vec2 t = normalize(pathAt(a_u + 0.0015) - p);
   float bloom = u_flow > 0.5 ? 1.0 + u_headV.z * knot(a_u) : 1.0;
-  vec2 pos = p + vec2(-t.y, t.x) * a_side * u_halfw * bloom;
+  float keep = u_s0 + a_u * (u_npts - 1.0) > u_cut ? 0.0 : 1.0;
+  float hw = u_halfw * bloom;
+  // flow: on the inside of a tight bend a wide stroke (the knot's bloom) folded over itself and showed
+  // as spokes (owner 20/10 "it looks broken") — there it reaches at most 80 % of the bend's radius
+  // (the crisp lines are too narrow to fold: only the soft strokes pay for the extra point)
+  if (u_flow > 0.5 && u_halfw > 6.0) {
+    vec2 pm = pathAt(a_u - 0.0015);
+    vec2 t0 = normalize(p - pm + vec2(0.0, 1e-4));
+    float turn = t0.x * t.y - t0.y * t.x;
+    float r = max(length(p - pm), 1e-3) / max(abs(turn), 1e-5);
+    if (turn * a_side > 0.0) hw = min(hw, r * 0.8);
+  }
+  vec2 pos = p + vec2(-t.y, t.x) * a_side * hw * keep;
   vec2 clip = pos / u_res * 2.0 - 1.0;
   gl_Position = vec4(clip.x, -clip.y, 0.0, 1.0);
   v_u = a_u;
   v_g = u_s0 + a_u * (u_npts - 1.0);
   v_side = a_side;
   v_alpha = u_alpha * a_f;
+  v_seed = fract(a_i * 0.6180339 + a_k * 3.71 + u_r1.y * 1.37);
+  float h1 = 1.0;
+  float h2 = 1.0;
+  for (int i = 0; i < 16; i++) {
+    if (float(i) >= u_nholes) break;
+    float s = smoothstep(-6.0, 44.0, rectDist(pos, u_holes[i]));
+    h1 *= mix(0.1, 1.0, s);
+    h2 *= mix(0.55, 1.0, s);
+  }
+  float bx = 1.0;
+  for (int i = 0; i < 16; i++) {
+    if (float(i) >= u_nboxes) break;
+    bx *= mix(u_boxBase, 1.0, smoothstep(-3.0, 16.0, rectDist(pos, u_boxes[i])));
+  }
+  v_h1 = h1;
+  v_h2 = h2;
+  v_box = bx;
 }`;
 
 const FRAG = `
@@ -135,12 +185,14 @@ varying float v_g;
 uniform float u_flowF;
 varying float v_side;
 varying float v_alpha;
+// a different noise offset per stroke, so the dither of strokes stacked on one pixel does not add up
+varying float v_seed;
 uniform float u_fade, u_core, u_halo, u_feather;
 uniform vec3 u_pulse; // amount, time, wave offset — bright and dim patches drifting along the ribbon (flow layer)
-// flow layer: the text blocks that sit on the page without a box (headings, ledes, links), in canvas
-// CSS px (x, y, w, h). The ribbon fades softly to a glow behind them, so no sharp line crosses a word.
-uniform vec4 u_holes[16];
-uniform float u_nholes, u_canvasH, u_dpr;
+// flow layer: fades behind text blocks and boxes, worked out per vertex (VERT u_holes / u_boxes)
+varying float v_h1;
+varying float v_h2;
+varying float v_box;
 // flow layer, scroll-driven (owner 20/10 ~05:40): x = route position of the scroll "head", y = draw
 // only up to the head (the line is laid as the visitor scrolls), z = glow while scrolling (0 … 1)
 uniform vec3 u_head;
@@ -175,7 +227,9 @@ void main() {
   vec4 g = u_flowF > 0.5 ? (u_core > 0.5 ? vec4(1.0, 0.784, 0.627, 1.0) : vec4(1.0, 0.4, 0.2, 1.0))
          : (u_core > 0.5 ? coreGrad(v_u) : mainGrad(v_u));
   float d = abs(v_side);
-  float edge = u_halo > 0.5 ? exp(-d * d * 3.5) : 1.0 - smoothstep(1.0 - u_feather, 1.0, d);
+  // soft stroke: a bell that reaches zero at the strip's edge (it stopped at 3 %, which showed as rims
+  // where many overlap — owner 20/10 "it looks broken")
+  float edge = u_halo > 0.5 ? max(0.0, (exp(-d * d * 3.5) - 0.0302) / 0.9698) : 1.0 - smoothstep(1.0 - u_feather, 1.0, d);
   float beat = 0.5 + 0.5 * sin(6.2831853 * (v_g * 0.42 - u_pulse.y * 0.09));
   float a = g.a * v_alpha * edge * mix(1.0, 0.35 + 1.05 * beat * beat, u_pulse.x);
   if (u_head.y > 0.5) a *= 1.0 - smoothstep(u_head.x - 0.35, u_head.x + 0.02, v_g);
@@ -190,26 +244,44 @@ void main() {
   float lead = (u_head.y > 0.5 ? 1.05 : 0.0) + 4.85 * u_head.z;
   a *= 1.0 + lead * hot + u_head.z * 1.4 * exp(-wide * wide);
   g.rgb = mix(g.rgb, vec3(1.0, 0.88, 0.76), clamp(hot * (0.45 + 0.55 * u_head.z), 0.0, 1.0) * 0.85);
-  vec2 p = vec2(gl_FragCoord.x, u_canvasH - gl_FragCoord.y) / u_dpr;
-  for (int i = 0; i < 16; i++) {
-    if (float(i) >= u_nholes) break;
-    vec4 r = u_holes[i];
-    vec2 q = abs(p - (r.xy + r.zw * 0.5)) - r.zw * 0.5;
-    float dist = length(max(q, 0.0)) + min(max(q.x, q.y), 0.0);
-    a *= mix(mix(0.1, 0.55, hot), 1.0, smoothstep(-6.0, 44.0, dist));
-  }
-  gl_FragColor = vec4(g.rgb * a, a);
+  a *= mix(v_h1, v_h2, hot) * v_box;
+  // dither: faint glow over a dark page falls between the 256 steps of a colour channel and showed as
+  // bands, some greenish (owner 20/10); a sub-step of noise lets the sum fall smoothly. Soft strokes only
+  // (the faint glow), its own offset per stroke (one shared pattern stacked into grain at the knot —
+  // checker #645 r2), and only where the stroke has light, so the dark page around it stays black.
+  vec2 q = gl_FragCoord.xy + v_seed * vec2(113.0, 71.0);
+  float n = fract(52.9829189 * fract(dot(q, vec2(0.06711056, 0.00583715))));
+  gl_FragColor = vec4(g.rgb * a, a) + u_halo * (n - 0.5) / 255.0 * clamp(a * 255.0, 0.0, 1.0);
 }`;
 
 type Uniforms = Record<string, WebGLUniformLocation | null>;
+
+/** Adds the half-resolution soft strokes (phone flow layer) onto the canvas: one quad, one texture read. */
+const QUAD_VERT = `
+attribute vec2 a_p;
+varying vec2 v_t;
+void main() {
+  v_t = a_p * 0.5 + 0.5;
+  gl_Position = vec4(a_p, 0.0, 1.0);
+}`;
+const QUAD_FRAG = `
+precision mediump float;
+uniform sampler2D u_tex;
+varying vec2 v_t;
+void main() {
+  gl_FragColor = texture2D(u_tex, v_t);
+}`;
 
 /**
  * "hero" = the band across the hero, through the product · "flow" = the same ribbons
  * and carried down the rest of the homepage behind the sections (HomeFlow, owner 20/10 ~05:00: like
  * his reference — thick and soft like the hero's, behind frosted boxes, brightness that swells and
  * dims). In flow mode the ribbon follows a route laid on the page (`holes`: route points + the text
- * blocks it fades behind); `scroll` = the page's scroll past the top of the flow area, used only to
- * place that route on the sticky canvas — the ribbon scrolls with the page and never sways.
+ * blocks it fades behind) and is drawn on TILES — canvases that sit on the page itself (`tiles`: each
+ * one's top in the flow area), so the browser scrolls the light together with the boxes (owner 20/10:
+ * "jerky on the phone" — a screen-fixed canvas redrawn for each scroll position always trails the
+ * page by a frame or two). `scroll` = how far the page has scrolled past the top of the flow area:
+ * it only picks which tiles to draw, lays the line and places the knot.
  */
 export type RibbonMode = "hero" | "flow";
 
@@ -219,9 +291,9 @@ type Batch = { buf: WebGLBuffer; count: number; ribbon: Ribbon; kind: "halo" | "
 /**
  * The per-line values of every ribbon, as instance data — built once per detail level, so a frame
  * is a handful of uniforms and nine instanced draws instead of one draw per line (measured 20/10:
- * one draw per line, ~450 GL calls a frame).
+ * one draw per line, ~450 GL calls a frame). `haloEvery` = every Nth line also gets a wide soft stroke.
  */
-function lineSets(r: Ribbon, phone: boolean) {
+function lineSets(r: Ribbon, phone: boolean, haloEvery: number) {
   const n = phone ? Math.round(r.n * 0.6) : r.n;
   const halo: number[] = [];
   const line: number[] = [];
@@ -230,11 +302,22 @@ function lineSets(r: Ribbon, phone: boolean) {
     const k = i / (n - 1) - 0.5;
     const f = 0.55 + 0.45 * Math.cos(k * Math.PI);
     line.push(k, i, f);
-    if (i % HALO.every === 0) halo.push(k, i, f);
+    if (i % haloEvery === 0) halo.push(k, i, f);
     if (r.core && Math.abs(k) < 0.06) core.push(k, i, 1);
   }
   return { halo, line, core };
 }
+
+/**
+ * Detail levels: 0 = phone, 1 = desktop, 2 = the phone flow layer — a third of the wide soft strokes,
+ * each three times as strong (the soft strokes were most of the pixels drawn; three nearby strokes
+ * blur into the same glow as one stroke three times as bright — measured 20/10).
+ */
+const LEVELS = [
+  { phone: true, haloEvery: HALO.every },
+  { phone: false, haloEvery: HALO.every },
+  { phone: true, haloEvery: HALO.every * 3 },
+];
 
 type Ctx2Canvas = HTMLCanvasElement | OffscreenCanvas;
 const frameLater: (cb: (t: number) => void) => number =
@@ -242,21 +325,140 @@ const frameLater: (cb: (t: number) => void) => number =
 const cancelFrame: (id: number) => void =
   typeof cancelAnimationFrame === "function" ? (id) => cancelAnimationFrame(id) : (id) => clearTimeout(id);
 
+/** One canvas and its GL state. The hero has one; the flow layer has one per tile. */
+type Target = {
+  canvas: Ctx2Canvas;
+  gl: WebGLRenderingContext;
+  inst: ANGLE_instanced_arrays | null;
+  prog: WebGLProgram;
+  u: Uniforms;
+  a: Record<"u" | "side" | "k" | "i" | "f", number>;
+  strips: { buf: WebGLBuffer; count: number }[];
+  batches: Batch[][];
+  /** flow: the tile's top, CSS px from the top of the flow area */
+  top: number;
+  /** flow: moved or resized since its last full draw — clear and draw all of it next frame */
+  dirty: boolean;
+  /** phone flow: the half-resolution buffer the soft strokes are drawn into (made on first use) */
+  soft?: Soft | null;
+};
+
+type Soft = { fb: WebGLFramebuffer; tex: WebGLTexture; prog: WebGLProgram; quad: WebGLBuffer; loc: number; uTex: WebGLUniformLocation | null; w: number; h: number };
+
+function compile(gl: WebGLRenderingContext, vert: string, frag: string): WebGLProgram {
+  const sh = (type: number, src: string) => {
+    const s = gl.createShader(type)!;
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s) || "shader");
+    return s;
+  };
+  const prog = gl.createProgram()!;
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, vert));
+  gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, frag));
+  gl.linkProgram(prog);
+  if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog) || "link");
+  return prog;
+}
+
+/** The target's half-resolution buffer, sized to its canvas — null when the GPU refuses one (then the
+ *  soft strokes are drawn at full resolution, as before). */
+function softPass(tg: Target): Soft | null {
+  if (tg.soft === null) return null;
+  const { gl } = tg;
+  const w = Math.max(1, Math.ceil(tg.canvas.width / 2));
+  const h = Math.max(1, Math.ceil(tg.canvas.height / 2));
+  try {
+    let s = tg.soft;
+    if (!s) {
+      const prog = compile(gl, QUAD_VERT, QUAD_FRAG);
+      const quad = gl.createBuffer()!;
+      gl.bindBuffer(gl.ARRAY_BUFFER, quad);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+      const tex = gl.createTexture()!;
+      gl.bindTexture(gl.TEXTURE_2D, tex);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      s = { fb: gl.createFramebuffer()!, tex, prog, quad, loc: gl.getAttribLocation(prog, "a_p"), uTex: gl.getUniformLocation(prog, "u_tex"), w: 0, h: 0 };
+      tg.soft = s;
+    }
+    if (s.w !== w || s.h !== h) {
+      gl.bindTexture(gl.TEXTURE_2D, s.tex);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, w, h, 0, gl.RGBA, gl.UNSIGNED_BYTE, null);
+      gl.bindFramebuffer(gl.FRAMEBUFFER, s.fb);
+      gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, s.tex, 0);
+      const ok = gl.checkFramebufferStatus(gl.FRAMEBUFFER) === gl.FRAMEBUFFER_COMPLETE;
+      gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+      if (!ok) throw new Error("fb");
+      s.w = w;
+      s.h = h;
+    }
+    return s;
+  } catch {
+    tg.soft = null;
+    return null;
+  }
+}
+
+const UNIFORMS = ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse", "u_holes", "u_nholes", "u_boxes", "u_nboxes", "u_boxBase", "u_cut", "u_head", "u_headV", "u_flow", "u_flowF", "u_npts", "u_s0", "u_pts"];
+
+function makeTarget(canvas: Ctx2Canvas): Target | null {
+  const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false, powerPreference: "low-power" }) as WebGLRenderingContext | null;
+  if (!gl) return null;
+  try {
+    const prog = compile(gl, VERT, FRAG);
+    gl.useProgram(prog);
+    const u: Uniforms = {};
+    for (const name of UNIFORMS) u[name] = gl.getUniformLocation(prog, name);
+    const a = {
+      u: gl.getAttribLocation(prog, "a_u"),
+      side: gl.getAttribLocation(prog, "a_side"),
+      k: gl.getAttribLocation(prog, "a_k"),
+      i: gl.getAttribLocation(prog, "a_i"),
+      f: gl.getAttribLocation(prog, "a_f"),
+    };
+    // the strip along the path (phone, desktop) and every ribbon's line sets per detail level
+    const strips = [true, false].map((phone) => {
+      const segs = phone ? 120 : 180;
+      const data = new Float32Array((segs + 1) * 4);
+      for (let j = 0; j <= segs; j++) data.set([j / segs, -1, j / segs, 1], j * 4);
+      const buf = gl.createBuffer()!;
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
+      return { buf, count: (segs + 1) * 2 };
+    });
+    const batches = LEVELS.map(({ phone, haloEvery }) =>
+      RIBBONS.flatMap((ribbon) => {
+        const sets = lineSets(ribbon, phone, haloEvery);
+        return (["halo", "line", "core"] as const).flatMap((kind) => {
+          const v = sets[kind];
+          if (!v.length) return [];
+          const b = gl.createBuffer()!;
+          gl.bindBuffer(gl.ARRAY_BUFFER, b);
+          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(v), gl.STATIC_DRAW);
+          return [{ buf: b, count: v.length / 3, ribbon, kind, values: v }];
+        });
+      }),
+    );
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.ONE, gl.ONE);
+    return { canvas, gl, inst: gl.getExtension("ANGLE_instanced_arrays"), prog, u, a, strips, batches, top: 0, dirty: true };
+  } catch {
+    return null;
+  }
+}
+
 /**
- * The renderer. It knows nothing about the page: the owner of the canvas tells it the size, the
- * focus point and the scroll position (`size` · `focus` · `scroll`), so the same code runs on the
- * main thread or inside a worker on an OffscreenCanvas (hero-ribbons.worker.ts — the default: a
+ * The renderer. It knows nothing about the page: the owner of the canvases tells it the size, the
+ * focus point and the scroll position (`size` · `focus` · `scroll` · `tiles`), so the same code runs
+ * on the main thread or inside a worker on OffscreenCanvases (hero-ribbons.worker.ts — the default: a
  * main-thread animation loop made the browser re-tick every other animation on the page each frame,
  * measured 20/10 as ~1 s of style work per 5 s from the brand strip alone).
  */
 export class RibbonEngine {
-  private gl: WebGLRenderingContext;
-  private inst: ANGLE_instanced_arrays | null;
-  private prog: WebGLProgram;
-  private u: Uniforms = {};
-  private strips: { buf: WebGLBuffer; count: number }[] = [];
-  private batches: Batch[][] = [];
-  private a: Record<"u" | "side" | "k" | "i" | "f", number> = { u: 0, side: 0, k: 0, i: 0, f: 0 };
+  private targets: Target[];
   private w = 0;
   private h = 0;
   private dpr = 1;
@@ -273,8 +475,11 @@ export class RibbonEngine {
   private lastScrollT = 0;
   /** flow layer: text blocks to fade behind, relative to the top of the flow area (x, y, w, h …) */
   private holeRects: number[] = [];
+  /** flow layer, phones: the boxes the ribbon passes behind (x, y, w, h …) */
+  private boxRects: number[] = [];
   private areaH = 0;
   private holeBuf = new Float32Array(64);
+  private boxBuf = new Float32Array(64);
   /** flow layer: the route's control points (x, y …, CSS px from the top of the flow area) */
   private route: number[] = [];
   private ptBuf = new Float32Array(48);
@@ -285,80 +490,36 @@ export class RibbonEngine {
   private glow = 0;
 
   /** Returns null when WebGL is unavailable — the caller simply shows no ribbons. */
-  static create(canvas: Ctx2Canvas, mode: RibbonMode = "hero"): RibbonEngine | null {
-    const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: true, antialias: false, depth: false, stencil: false, powerPreference: "low-power" }) as WebGLRenderingContext | null;
-    if (!gl) return null;
-    try {
-      return new RibbonEngine(canvas, gl, mode);
-    } catch {
-      return null;
+  static create(canvases: Ctx2Canvas | Ctx2Canvas[], mode: RibbonMode = "hero"): RibbonEngine | null {
+    const targets: Target[] = [];
+    for (const c of Array.isArray(canvases) ? canvases : [canvases]) {
+      const t = makeTarget(c);
+      if (!t) return null;
+      targets.push(t);
     }
+    return targets.length ? new RibbonEngine(targets, mode) : null;
   }
 
   private constructor(
-    private canvas: Ctx2Canvas,
-    gl: WebGLRenderingContext,
+    targets: Target[],
     private mode: RibbonMode,
   ) {
-    this.gl = gl;
-    this.inst = gl.getExtension("ANGLE_instanced_arrays");
-    const sh = (type: number, src: string) => {
-      const s = gl.createShader(type)!;
-      gl.shaderSource(s, src);
-      gl.compileShader(s);
-      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s) || "shader");
-      return s;
-    };
-    const prog = gl.createProgram()!;
-    gl.attachShader(prog, sh(gl.VERTEX_SHADER, VERT));
-    gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FRAG));
-    gl.linkProgram(prog);
-    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog) || "link");
-    this.prog = prog;
-    gl.useProgram(prog);
-    for (const name of ["u_res", "u_focus", "u_ang", "u_len", "u_span", "u_T", "u_halfw", "u_alpha", "u_r1", "u_r2", "u_r3", "u_fade", "u_core", "u_halo", "u_feather", "u_off", "u_pulse", "u_holes", "u_nholes", "u_canvasH", "u_dpr", "u_head", "u_headV", "u_flow", "u_flowF", "u_npts", "u_s0", "u_pts"]) {
-      this.u[name] = gl.getUniformLocation(prog, name);
-    }
-    this.a = {
-      u: gl.getAttribLocation(prog, "a_u"),
-      side: gl.getAttribLocation(prog, "a_side"),
-      k: gl.getAttribLocation(prog, "a_k"),
-      i: gl.getAttribLocation(prog, "a_i"),
-      f: gl.getAttribLocation(prog, "a_f"),
-    };
-    // two detail levels: phone, desktop — the strip along the path, and every ribbon's line sets
-    [true, false].forEach((phone, level) => {
-      const segs = phone ? 120 : 180;
-      const data = new Float32Array((segs + 1) * 4);
-      for (let j = 0; j <= segs; j++) data.set([j / segs, -1, j / segs, 1], j * 4);
-      const buf = gl.createBuffer()!;
-      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-      gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW);
-      this.strips[level] = { buf, count: (segs + 1) * 2 };
-      this.batches[level] = RIBBONS.flatMap((ribbon) => {
-        const sets = lineSets(ribbon, phone);
-        return (["halo", "line", "core"] as const).flatMap((kind) => {
-          const v = sets[kind];
-          if (!v.length) return [];
-          const b = gl.createBuffer()!;
-          gl.bindBuffer(gl.ARRAY_BUFFER, b);
-          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(v), gl.STATIC_DRAW);
-          return [{ buf: b, count: v.length / 3, ribbon, kind, values: v }];
-        });
-      });
-    });
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.ONE, gl.ONE);
+    this.targets = targets;
   }
 
-  /** CSS size of the canvas, device pixel ratio (capped at 2 by the caller), phone layout or not */
+  /** CSS size of each canvas (a tile, in flow mode), device pixel ratio (capped by the caller), phone layout or not */
   size(w: number, h: number, dpr: number, phone: boolean) {
+    // unchanged = keep the canvases (resizing one clears it and costs a reallocation)
+    if (w === this.w && h === this.h && dpr === this.dpr && phone === this.phone) return;
     this.w = w;
     this.h = h;
     this.dpr = dpr;
     this.phone = phone;
-    this.canvas.width = Math.max(1, Math.round(w * dpr));
-    this.canvas.height = Math.max(1, Math.round(h * dpr));
+    for (const tg of this.targets) {
+      tg.canvas.width = Math.max(1, Math.round(w * dpr));
+      tg.canvas.height = Math.max(1, Math.round(h * dpr));
+      tg.dirty = true;
+    }
   }
 
   /** where the bundle crosses — the product's centre, in canvas CSS pixels */
@@ -367,7 +528,7 @@ export class RibbonEngine {
     this.fy = y;
   }
 
-  /** how far the page has scrolled past the hero's top (≤ 0 = hero not reached yet); its speed gives the "beat" */
+  /** how far the page has scrolled past the hero's / flow area's top; its speed gives the "beat" */
   scroll(y: number) {
     const now = performance.now();
     const dt = Math.max(16, now - this.lastScrollT);
@@ -382,12 +543,25 @@ export class RibbonEngine {
     this.glowOnScroll = glowOnScroll;
   }
 
-  /** Flow layer: the text blocks without a box (x, y, w, h per block, CSS px from the top of the flow
-   *  area) and that area's height — the canvas is a sticky stage, so its top moves through the area. */
-  holes(rects: number[], areaH: number, route: number[] = []) {
+  /** Flow layer: the text blocks without a box and (phones) the boxes (x, y, w, h each, CSS px from the
+   *  top of the flow area), that area's height and the route's control points. */
+  holes(rects: number[], areaH: number, route: number[] = [], boxes: number[] = []) {
     this.holeRects = rects;
+    this.boxRects = boxes;
     this.areaH = areaH;
     this.route = route;
+    for (const tg of this.targets) tg.dirty = true;
+  }
+
+  /** Flow layer: where each tile now sits (CSS px from the top of the flow area), one per canvas. */
+  tiles(tops: number[]) {
+    tops.forEach((top, i) => {
+      const tg = this.targets[i];
+      if (tg && tg.top !== top) {
+        tg.top = top;
+        tg.dirty = true;
+      }
+    });
   }
 
   /** The hero changed product — the ribbons speed up and brighten for ~1.6 s. */
@@ -407,10 +581,10 @@ export class RibbonEngine {
     cancelFrame(this.raf);
   }
 
-  /** One still frame (reduced motion, Save-Data). */
+  /** One still frame (reduced motion, Save-Data) — every tile drawn in full. */
   still() {
     this.stop();
-    this.draw(16);
+    this.draw(16, true);
   }
 
   private frame = (now: number) => {
@@ -421,58 +595,110 @@ export class RibbonEngine {
     this.raf = frameLater(this.frame);
   };
 
-  private draw(dt: number) {
-    const { gl, u, a, w, h, phone, dpr, inst } = this;
-    if (!w || !h || gl.isContextLost()) return;
-    const heroP = Math.min(1, Math.max(0, this.scrollY / h)); // share of the hero scrolled away
+  private draw(dt: number, all = false) {
+    const { w, h } = this;
+    if (!w || !h) return;
     this.surgeLeft = Math.max(0, this.surgeLeft - dt / 1600);
     const surge = Math.sin((Math.min(1, this.surgeLeft) * Math.PI) / 2);
     this.scrollV *= Math.pow(0.9, dt / 16);
     // the flow layer keeps its own slow pace: scrolling moves it with the page, never faster
     const speed = this.mode === "flow" ? 1 : 1 + Math.min(this.scrollV / 900, 1.6) + surge * 3.2;
     this.t += (dt / 1000) * speed;
+    if (this.mode !== "flow") {
+      this.render(this.targets[0], surge, 0, h);
+      return;
+    }
+    // the scroll head: the route position at 60 % down the screen, eased so the line flows instead
+    // of jumping with each scroll event; the glow follows the scroll speed and fades when it stops
+    const ty = this.scrollY + h * 0.6;
+    const pts = this.route.length / 2;
+    let target = 0;
+    for (let i = 0; i + 1 < pts; i++) {
+      const y0 = this.route[i * 2 + 1];
+      const y1 = this.route[i * 2 + 3];
+      if (ty >= y1) target = i + 1;
+      else if (ty > y0) {
+        target = i + (ty - y0) / Math.max(1, y1 - y0);
+        break;
+      } else break;
+    }
+    this.head += (target - this.head) * Math.min(1, dt / 140);
+    this.glow = Math.max(this.glow * Math.pow(0.96, dt / 16), Math.min(1, this.scrollV / 450));
+    // draw only the band around the screen (the scroll position here trails the page by a frame or
+    // two, hence the margin); a tile that just moved is cleared and drawn in full
+    const lo = this.scrollY - h * 0.25;
+    const hi = this.scrollY + h * 1.25;
+    for (const tg of this.targets) {
+      if (all || tg.dirty) {
+        this.render(tg, surge, 0, h);
+        tg.dirty = false;
+      } else if (tg.top < hi && tg.top + h > lo) this.render(tg, surge, Math.max(0, lo - tg.top), Math.min(h, hi - tg.top));
+    }
+  }
 
-    gl.viewport(0, 0, this.canvas.width, this.canvas.height);
+  /** Draws one canvas, only the rows y0 … y1 (CSS px from its top) — the rest keeps what it had. */
+  private render(tg: Target, surge: number, y0: number, y1: number) {
+    const { gl, u, a, inst } = tg;
+    const { w, h, phone, dpr } = this;
+    if (gl.isContextLost() || y1 <= y0) return;
+    const heroP = Math.min(1, Math.max(0, this.scrollY / h)); // share of the hero scrolled away
+
+    gl.viewport(0, 0, tg.canvas.width, tg.canvas.height);
+    const partial = y0 > 0 || y1 < h;
+    const rowTop = Math.round(y0 * dpr);
+    const rowBottom = Math.min(tg.canvas.height, Math.round(y1 * dpr));
+    if (partial) {
+      gl.enable(gl.SCISSOR_TEST);
+      gl.scissor(0, tg.canvas.height - rowBottom, tg.canvas.width, rowBottom - rowTop);
+    } else gl.disable(gl.SCISSOR_TEST);
     gl.clearColor(0, 0, 0, 0);
     gl.clear(gl.COLOR_BUFFER_BIT);
-    gl.useProgram(this.prog);
+    gl.useProgram(tg.prog);
 
-    const level = phone ? 0 : 1;
-    const strip = this.strips[level];
-    gl.bindBuffer(gl.ARRAY_BUFFER, strip.buf);
-    gl.enableVertexAttribArray(a.u);
-    gl.vertexAttribPointer(a.u, 1, gl.FLOAT, false, 8, 0);
-    gl.enableVertexAttribArray(a.side);
-    gl.vertexAttribPointer(a.side, 1, gl.FLOAT, false, 8, 4);
-    if (inst) {
-      inst.vertexAttribDivisorANGLE(a.u, 0);
-      inst.vertexAttribDivisorANGLE(a.side, 0);
-    }
+    const flow = this.mode === "flow";
+    const level = flow && phone ? 2 : phone ? 0 : 1;
+    const strip = tg.strips[phone ? 0 : 1];
+    const bindStrip = () => {
+      gl.bindBuffer(gl.ARRAY_BUFFER, strip.buf);
+      gl.enableVertexAttribArray(a.u);
+      gl.vertexAttribPointer(a.u, 1, gl.FLOAT, false, 8, 0);
+      gl.enableVertexAttribArray(a.side);
+      gl.vertexAttribPointer(a.side, 1, gl.FLOAT, false, 8, 4);
+      if (inst) {
+        inst.vertexAttribDivisorANGLE(a.u, 0);
+        inst.vertexAttribDivisorANGLE(a.side, 0);
+      }
+    };
+    bindStrip();
 
     let strength: number;
     gl.uniform2f(u.u_res, w, h);
     gl.uniform1f(u.u_T, this.t);
-    if (this.mode === "flow") {
+    if (flow) {
       strength = phone ? 0.55 : 0.6;
       gl.uniform1f(u.u_flow, 1);
       gl.uniform1f(u.u_flowF, 1);
       gl.uniform1f(u.u_span, phone ? 520 : Math.min(w * 0.7, 940));
       gl.uniform1f(u.u_fade, 0);
       gl.uniform3f(u.u_pulse, 1, this.t, 0);
-      // the stage is sticky: its top sits at scroll 0 … areaH - h of the flow area
-      const top = Math.min(Math.max(this.scrollY, 0), Math.max(0, this.areaH - h));
-      let n = 0;
-      for (let i = 0; i + 3 < this.holeRects.length && n < 16; i += 4) {
-        const y = this.holeRects[i + 1] - top;
-        if (y + this.holeRects[i + 3] < -60 || y > h + 60) continue;
-        this.holeBuf.set([this.holeRects[i], y, this.holeRects[i + 2], this.holeRects[i + 3]], n * 4);
-        n++;
-      }
+      const top = tg.top;
+      const near = (buf: Float32Array, rects: number[]) => {
+        let n = 0;
+        for (let i = 0; i + 3 < rects.length && n < 16; i += 4) {
+          const y = rects[i + 1] - top;
+          if (y + rects[i + 3] < y0 - 60 || y > y1 + 60) continue;
+          buf.set([rects[i], y, rects[i + 2], rects[i + 3]], n * 4);
+          n++;
+        }
+        return n;
+      };
+      const nh = near(this.holeBuf, this.holeRects);
       gl.uniform4fv(u.u_holes, this.holeBuf);
-      gl.uniform1f(u.u_nholes, n);
-      gl.uniform1f(u.u_canvasH, this.canvas.height);
-      gl.uniform1f(u.u_dpr, dpr);
-      // the part of the route on and around the screen: from the last point above it to the first below it
+      gl.uniform1f(u.u_nholes, nh);
+      const nb = near(this.boxBuf, this.boxRects);
+      gl.uniform4fv(u.u_boxes, this.boxBuf);
+      gl.uniform1f(u.u_nboxes, nb);
+      // the part of the route on and around this tile: from the last point above it to the first below it
       const pts = this.route.length / 2;
       let i0 = 0;
       let i1 = pts - 1;
@@ -486,22 +712,9 @@ export class RibbonEngine {
       gl.uniform2fv(u.u_pts, this.ptBuf);
       gl.uniform1f(u.u_npts, np);
       gl.uniform1f(u.u_s0, i0);
-      // the scroll head: the route position at 60 % down the screen, eased so the line flows instead
-      // of jumping with each scroll event; the glow follows the scroll speed and fades when it stops
-      const ty = this.scrollY + h * 0.6;
-      let target = 0;
-      for (let i = 0; i + 1 < pts; i++) {
-        const y0 = this.route[i * 2 + 1];
-        const y1 = this.route[i * 2 + 3];
-        if (ty >= y1) target = i + 1;
-        else if (ty > y0) {
-          target = i + (ty - y0) / Math.max(1, y1 - y0);
-          break;
-        } else break;
-      }
-      this.head += (target - this.head) * Math.min(1, dt / 140);
-      this.glow = Math.max(this.glow * Math.pow(0.96, dt / 16), Math.min(1, this.scrollV / 450));
       gl.uniform3f(u.u_head, this.head, this.drawOnScroll ? 1 : 0, this.glowOnScroll ? this.glow : 0);
+      // one strip segment past the fade-out, so the end of the line keeps its shape
+      gl.uniform1f(u.u_cut, this.drawOnScroll ? this.head + 0.05 + (np - 1) / (phone ? 120 : 180) : 1e9);
     } else {
       strength = (1 - heroP * 0.65) * (1 + surge * 0.55);
       gl.uniform2f(u.u_focus, this.fx, this.fy - heroP * h * 0.15);
@@ -512,11 +725,13 @@ export class RibbonEngine {
       gl.uniform1f(u.u_off, 0);
       gl.uniform3f(u.u_pulse, 0, 0, 0);
       gl.uniform1f(u.u_nholes, 0);
+      gl.uniform1f(u.u_nboxes, 0);
       gl.uniform1f(u.u_flow, 0);
       gl.uniform1f(u.u_flowF, 0);
       gl.uniform3f(u.u_head, 0, 0, 0);
       gl.uniform1f(u.u_npts, 2);
       gl.uniform1f(u.u_s0, 0);
+      gl.uniform1f(u.u_cut, 1e9);
     }
 
     // a crisp line: its CSS width plus ~0.75 device px of feather each side
@@ -526,10 +741,11 @@ export class RibbonEngine {
       gl.uniform1f(u.u_halfw, half);
       gl.uniform1f(u.u_feather, feather / half);
     };
+    // the phone flow level draws a third of the soft strokes (LEVELS): each carries three times as much
+    const haloGain = level === 2 ? 3 : 1;
 
     let current: Ribbon | null = null;
-    // batches are in ribbon order, halo → line → core: halo first (soft, wide), crisp lines on top
-    for (const b of this.batches[level]) {
+    const drawBatch = (b: Batch) => {
       const r = b.ribbon;
       if (r !== current) {
         current = r;
@@ -538,14 +754,16 @@ export class RibbonEngine {
         gl.uniform3f(u.u_r3, r.tw, r.ts, r.yc);
       }
       gl.uniform1f(u.u_halo, b.kind === "halo" ? 1 : 0);
-      if (this.mode === "flow") {
+      // inside a box (phones): the soft strokes stay as the glow seen through the glass, the crisp lines go
+      gl.uniform1f(u.u_boxBase, b.kind === "halo" ? 2.2 : 0);
+      if (flow) {
         const pinch = this.drawOnScroll ? 0.55 + 0.45 * this.glow : this.glowOnScroll ? this.glow : 0;
         gl.uniform3f(u.u_headV, this.head, pinch, pinch * (b.kind === "halo" ? 5.2 : b.kind === "line" ? 0.5 : 0));
       } else gl.uniform3f(u.u_headV, 0, 0, 0);
       gl.uniform1f(u.u_core, b.kind === "core" ? 1 : 0);
-      if (b.kind === "halo") gl.uniform1f(u.u_halfw, this.mode === "flow" ? HALO.halfWidth * 1.6 : HALO.halfWidth);
+      if (b.kind === "halo") gl.uniform1f(u.u_halfw, flow ? HALO.halfWidth * 1.6 : HALO.halfWidth);
       else crisp(b.kind === "core" ? 1.6 : phone ? 0.9 : 1);
-      gl.uniform1f(u.u_alpha, b.kind === "core" ? (this.mode === "flow" ? 0.2 : 0.45) * strength : r.a * strength * (b.kind === "halo" ? HALO.alpha : 1));
+      gl.uniform1f(u.u_alpha, b.kind === "core" ? (flow ? 0.2 : 0.45) * strength : r.a * strength * (b.kind === "halo" ? HALO.alpha * haloGain : 1));
       if (inst) {
         gl.bindBuffer(gl.ARRAY_BUFFER, b.buf);
         for (const [loc, off] of [[a.k, 0], [a.i, 4], [a.f, 8]] as const) {
@@ -564,19 +782,57 @@ export class RibbonEngine {
           gl.drawArrays(gl.TRIANGLE_STRIP, 0, strip.count);
         }
       }
+    };
+    const soft = level === 2 ? softPass(tg) : null;
+    if (!soft) {
+      // batches are in ribbon order, halo → line → core: halo first (soft, wide), crisp lines on top
+      for (const b of tg.batches[level]) drawBatch(b);
+      return;
     }
+    // phone flow: the soft strokes at half resolution (blur by nature; measured 20/10 they were most of
+    // the frame), added onto the canvas, then the crisp lines at full resolution — blending is additive,
+    // so the order of the passes leaves the sum unchanged
+    gl.bindFramebuffer(gl.FRAMEBUFFER, soft.fb);
+    gl.viewport(0, 0, soft.w, soft.h);
+    if (partial) {
+      const sTop = Math.floor(rowTop / 2);
+      const sBottom = Math.min(soft.h, Math.ceil(rowBottom / 2) + 1);
+      gl.scissor(0, soft.h - sBottom, soft.w, sBottom - sTop);
+    }
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    for (const b of tg.batches[level]) if (b.kind === "halo") drawBatch(b);
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+    gl.viewport(0, 0, tg.canvas.width, tg.canvas.height);
+    if (partial) gl.scissor(0, tg.canvas.height - rowBottom, tg.canvas.width, rowBottom - rowTop);
+    for (const loc of [a.u, a.side, a.k, a.i, a.f]) {
+      gl.disableVertexAttribArray(loc);
+      if (inst) inst.vertexAttribDivisorANGLE(loc, 0);
+    }
+    gl.useProgram(soft.prog);
+    gl.bindBuffer(gl.ARRAY_BUFFER, soft.quad);
+    gl.enableVertexAttribArray(soft.loc);
+    gl.vertexAttribPointer(soft.loc, 2, gl.FLOAT, false, 0, 0);
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, soft.tex);
+    gl.uniform1i(soft.uTex, 0);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    gl.disableVertexAttribArray(soft.loc);
+    gl.useProgram(tg.prog);
+    bindStrip();
+    for (const b of tg.batches[level]) if (b.kind !== "halo") drawBatch(b);
   }
 }
 
 /** Messages the page sends to hero-ribbons.worker.ts — one per RibbonEngine method. */
 export type RibbonMessage =
-  | { type: "init"; canvas: OffscreenCanvas; mode?: RibbonMode }
+  | { type: "init"; canvases: OffscreenCanvas[]; mode?: RibbonMode }
   | { type: "size"; w: number; h: number; dpr: number; phone: boolean }
   | { type: "focus"; x: number; y: number }
   | { type: "scroll"; y: number }
   | { type: "surge" }
   | { type: "style"; draw: boolean; glow: boolean }
-  | { type: "holes"; rects: number[]; areaH: number; route: number[] }
+  | { type: "holes"; rects: number[]; areaH: number; route: number[]; boxes: number[] }
+  | { type: "tiles"; tops: number[] }
   | { type: "run"; on: boolean; still: boolean };
 
 /** What the page holds: the same calls whether the engine runs in a worker or right here. */
@@ -586,7 +842,8 @@ export type RibbonDriver = {
   scroll(y: number): void;
   surge(): void;
   style(draw: boolean, glow: boolean): void;
-  holes(rects: number[], areaH: number, route: number[]): void;
+  holes(rects: number[], areaH: number, route: number[], boxes: number[]): void;
+  tiles(tops: number[]): void;
   run(on: boolean, still: boolean): void;
   destroy(): void;
 };
@@ -610,7 +867,10 @@ export function applyRibbonMessage(engine: RibbonEngine, m: Exclude<RibbonMessag
       engine.style(m.draw, m.glow);
       break;
     case "holes":
-      engine.holes(m.rects, m.areaH, m.route);
+      engine.holes(m.rects, m.areaH, m.route, m.boxes);
+      break;
+    case "tiles":
+      engine.tiles(m.tops);
       break;
     case "run":
       if (m.still) engine.still();
@@ -621,8 +881,8 @@ export function applyRibbonMessage(engine: RibbonEngine, m: Exclude<RibbonMessag
 }
 
 /** Main-thread engine behind the same driver shape (no OffscreenCanvas / no worker). */
-export function mainThreadDriver(canvas: HTMLCanvasElement, mode: RibbonMode = "hero"): RibbonDriver | null {
-  const engine = RibbonEngine.create(canvas, mode);
+export function mainThreadDriver(canvases: HTMLCanvasElement | HTMLCanvasElement[], mode: RibbonMode = "hero"): RibbonDriver | null {
+  const engine = RibbonEngine.create(canvases, mode);
   if (!engine) return null;
   return {
     size: (w, h, dpr, phone) => applyRibbonMessage(engine, { type: "size", w, h, dpr, phone }),
@@ -630,7 +890,8 @@ export function mainThreadDriver(canvas: HTMLCanvasElement, mode: RibbonMode = "
     scroll: (y) => applyRibbonMessage(engine, { type: "scroll", y }),
     surge: () => applyRibbonMessage(engine, { type: "surge" }),
     style: (draw, glow) => applyRibbonMessage(engine, { type: "style", draw, glow }),
-    holes: (rects, areaH, route) => applyRibbonMessage(engine, { type: "holes", rects, areaH, route }),
+    holes: (rects, areaH, route, boxes) => applyRibbonMessage(engine, { type: "holes", rects, areaH, route, boxes }),
+    tiles: (tops) => applyRibbonMessage(engine, { type: "tiles", tops }),
     run: (on, still) => applyRibbonMessage(engine, { type: "run", on, still }),
     destroy: () => engine.stop(),
   };

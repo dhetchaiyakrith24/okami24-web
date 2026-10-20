@@ -986,26 +986,29 @@ html:lang(th) .label-mono:not(:lang(en)) {
 }
 
 /* --- the hero's light carried down the page (HomeFlow) ---
-   A sticky, screen-tall stage sits behind every section of the wrapper. The sections are see-through
-   here (the surface-1 ones keep a tint), and the boxes inside them are frosted glass: the light shows
-   through them blurred, never sharp on a product or a word (owner 20/10, his reference). */
+   A layer behind every section of the wrapper holds the light on canvases that sit ON the page (tiles
+   one screen tall, moved ahead of the visitor by HomeFlow), so the browser scrolls the light together
+   with the boxes — a screen-fixed canvas redrawn for each scroll position trailed by a frame or two
+   ("jerky on the phone", owner 20/10). The sections are see-through here (the surface-1 ones keep a
+   tint), and the boxes inside them are frosted glass: the light shows through them blurred, never sharp
+   on a product or a word (owner 20/10, his reference). Phones: no backdrop blur (re-blurring every box
+   on every frame of moving light was the other big cost) — the ribbon itself turns to a soft glow
+   inside the boxes (hero-ribbons.ts u_boxes), the box tint stays. */
 .okh-flow { position: relative; isolation: isolate; background: var(--surface-0); }
 .okh-flow-stage {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  height: 100lvh;
-  margin-bottom: -100vh;
-  margin-bottom: -100lvh;
+  position: absolute;
+  inset: 0;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
 }
+.okh-flow-probe { position: fixed; top: 0; left: 0; width: 1px; height: 100vh; height: 100lvh; visibility: hidden; }
 .okh-flow-canvas {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   opacity: 0;
   transition: opacity 1.4s ease;
 }
@@ -1018,6 +1021,10 @@ html:lang(th) .label-mono:not(:lang(en)) {
   background-color: color-mix(in srgb, var(--surface-1) 42%, transparent);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   backdrop-filter: blur(16px) saturate(1.2);
+}
+@media (max-width: 1023px) {
+  .okh-flow > nav,
+  .okh-flow section :is(.bg-surface-0, .bg-surface-1) { -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
 
 /* --- still: reduced motion / Save-Data (the ribbons draw one frame; HeroShowcase stops rotating) --- */
