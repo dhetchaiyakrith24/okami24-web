@@ -895,16 +895,32 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
 @media (min-width: 64rem) {
   /* lying across the stage: a little smaller and up-left so its far end stops short of the name block */
   .okh-prod[data-flying] .okh-float { aspect-ratio: 3 / 2; height: auto; width: 86%; margin: 0 14% 12% 0; }
+  /* owner 21/10 "ลอยแบบไม่มีเหตุผล ลอยแข็งๆ เด่นๆ": the same cure as the standing photos' draft (#637) — a
+     much calmer drift, the photo toned a touch into the dark set, and a soft shadow on the floor below so it
+     reads as held above the ground on purpose (a levitation shot), not pasted on */
+  .okh-prod[data-flying] .okh-float { animation: okh-float-calm 9s ease-in-out infinite; }
   .okh-prod[data-flying] .okh-float img {
-    filter: drop-shadow(0 0 28px rgba(255, 106, 44, 0.16)) drop-shadow(0 40px 50px rgba(0, 0, 0, 0.55));
+    filter: brightness(0.92) drop-shadow(0 0 22px rgba(255, 106, 44, 0.12)) drop-shadow(0 28px 34px rgba(0, 0, 0, 0.5));
   }
   .okh-prod[data-flying] .okh-sheen {
     -webkit-mask: var(--okh-mask-d) center / contain no-repeat;
     mask: var(--okh-mask-d) center / contain no-repeat;
   }
-  .okh-floor { transition: opacity 0.6s ease; }
-  .okh-stage:has(.okh-prod[data-flying][data-state="on"]) .okh-floor { opacity: 0; }
+  .okh-floor { transition: opacity 0.6s ease, background 0.6s ease; }
+  .okh-stage:has(.okh-prod[data-flying][data-state="on"]) .okh-floor {
+    left: 46%;
+    bottom: 9%;
+    width: 66%;
+    height: 11%;
+    /* a warm pool of light on the floor with the product's dark shadow in it — on a near-black page a shadow
+       alone does not read */
+    background:
+      radial-gradient(closest-side, rgba(6, 4, 3, 0.9), rgba(6, 4, 3, 0.55) 45%, rgba(6, 4, 3, 0) 70%),
+      radial-gradient(closest-side, rgba(255, 106, 44, 0.3), rgba(255, 106, 44, 0.1) 60%, rgba(255, 106, 44, 0));
+    filter: blur(10px);
+  }
 }
+@keyframes okh-float-calm { 0%, 100% { transform: translateY(-2.5px); } 50% { transform: translateY(2.5px); } }
 @keyframes okh-float { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
 
 .okh-meta {
