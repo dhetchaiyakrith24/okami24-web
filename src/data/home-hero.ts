@@ -27,6 +27,14 @@ export const HOME_HERO_SLOTS: { type: HeroType; product: string; photo?: string 
 ];
 
 /**
+ * Desktop (64rem up) body of the hero. Owner 21/10 (round "homepage upgrade", the getlayers Artefakt direction):
+ * "cards" = the four slots side by side as cards over a lattice that lights up under the cursor · "stage" = one
+ * lying product at a time + the tabs (#671, live 21/10). Phones keep the stage + tabs either way. One value is the
+ * whole switch back.
+ */
+export const DESKTOP_HERO: "cards" | "stage" = "cards";
+
+/**
  * Phones (below 64rem): "showcase" = the new hero · "classic" = the previous phone hero
  * (Hero.tsx, owner-liked "calm, plain") on phones while desktop keeps the new one. One value is the
  * whole switch back (owner 20/10: keep the current mobile hero restorable in one step).
