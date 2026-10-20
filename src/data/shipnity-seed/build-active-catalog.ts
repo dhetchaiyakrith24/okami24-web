@@ -22,7 +22,7 @@ import { OWNER_APPROVED_PUBLICATION } from "./publication-approvals";
  * Records Max no longer lists keep their 31/08 data (their pages, if any, are sold out through sku-map.ts — owner 08/10).
  */
 /** Stage 2 (18/10): published records moved onto Max, a few per PR. The published-catalogue dump proves each move. */
-export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38", "Pod-150", "Pod-154", "Pod-149", "ELIQUID-1", "Pod-169", "Pod-142", "Coil-53", "Eliquid-72", "Eliquid-73", "Coil-92", "Eliquid-109"]);
+export const MOVED_TO_MAX_IDS = new Set<string>(["Coil-72", "Coil-38", "Pod-150", "Pod-154", "Pod-149", "ELIQUID-1", "Pod-169", "Pod-142", "Coil-53", "Eliquid-72", "Eliquid-73", "Coil-92", "Eliquid-109", "Coil-21"]);
 export const FROZEN_SEED_IDS = new Set<string>(
   [...Object.keys(OWNER_APPROVED_PUBLICATION), "IQOSHEET-15"].filter((id) => !MOVED_TO_MAX_IDS.has(id))
 );
@@ -57,6 +57,33 @@ type SeedInput = Omit<RawActiveParent, "operationalCost">;
 /** A Max label typo fixed by the record's own pack print (round list19 18/10: Pop Up 10K pod shows "Sugus Pineapple"). */
 const MAX_LABEL_FIX: Record<string, string> = {
   "Pod-154-11": "Sugus Pineapple",
+  // maxlist (21/10): VOOPOO Argus Pod (Coil-21) — Max writes the Thai hint "coil เวอร์ชั่นใหม่" and the packaging note "/ยกกล่อง"; the site prints neither (THAI_STYLE §3).
+  "Coil-21-1": "Argus mix",
+  "Coil-21-2": "1.2Ω",
+  "Coil-21-3": "Top Fill 0.4Ω 2ml",
+  "Coil-21-4": "Top Fill 0.7Ω 2ml",
+  // maxlist (20/10): RELX Infinity Pro 2 pods (Pod-27) — Max writes the 50 mg ones "<flavour> Nic / 50mg." and adds a Thai hint to six names; the label
+  // here is the flavour as RELX prints it (+ the strength mark), without the Thai spelling the site never prints (THAI_STYLE §3).
+  "Pod-27-3": "Ludou Ice",
+  "Pod-27-4": "Dark Sparkle",
+  "Pod-27-6": "Menthol Xtra 50mg",
+  "Pod-27-9": "Rich Tobacco 50mg",
+  "Pod-27-14": "Lemon Zest",
+  "Pod-27-15": "Lemon Mint 50mg",
+  "Pod-27-16": "Ice Tobacco",
+  "Pod-27-23": "Mint Freeze 50mg",
+  "Pod-27-24": "Classic Tobacco 50mg",
+  "Pod-27-28": "Grape 50mg",
+  "Pod-27-29": "Watermelon Ice 50mg",
+  "Pod-27-30": "Spearmint 50mg",
+  "Pod-27-31": "Green Apple 50mg",
+  "Pod-27-32": "Triple Berry 50mg",
+  "Pod-27-33": "Peppermint 50mg",
+  "Pod-27-34": "Mint Tobacco 50mg",
+  "Pod-27-35": "Citrus 50mg",
+  "Pod-27-36": "Raspberry Mint 50mg",
+  "Pod-27-40": "Strawberry 50mg",
+  "Pod-27-42": "Ice Sparking 50mg",
   // Round list19 (18/10): Marbo Saltnic — Max labels every bottle "<a Thai spelling the site never prints (THAI_STYLE §3 round 8)> <colour>".
   // Name = what the bottle prints (shop pack photos, _incoming/img-1610/masters/src/index.json): red prints "Tobacco", gold "GOLD",
   // silver "PLATINUM", blue "BLUE", pink "Ice Strawberry"; white = Max's own "Ice Sparking" (Sparkling); purple / black / green
