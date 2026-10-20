@@ -10482,5 +10482,89 @@
    "reference": "vapemanshop.com Super Cool Black Hexx photo 1200 px - _incoming/img-1610/masters/src/elq-6-supercool/Black-Hexx.jpg",
    "fidelitySheet": "_incoming/img-1610/list19/i/chk-sc4.jpg + chk-bh.jpg (photo vs renders, label words), sc4-edges.jpg + bh-edges.jpg (cap, collar, base at 1:1 on the site background)"
   }
+ },
+ {
+  "source": "_incoming/list19/muro/watermelon.png",
+  "slug": "muro-salt-nic",
+  "role": "variant",
+  "id": "watermelon",
+  "note": "maxlist 20/10 - Muro Salt Nic Watermelon (Max ELQ-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot of the Watermelon bottle cropped 4x from the shop poster (maxlist-2010/in/muro-watermelon.png), mid-grey backdrop; pick watermelon-1 (Higgsfield 155355 ea24c2f7); body cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px - copy beside this source",
+   "reference": "pod789.com Muro Saltnic poster 600 px, six bottles on one image (https://pod789.com/product/muro-saltnic/) - _incoming/maxlist-2010/ref/muro-salt-pod789.jpg",
+   "fidelitySheet": "_incoming/maxlist-2010/r/cmp-watermelon.jpg (poster crop vs both renders: MURO / WATERMELON / SALT letter by letter, colour block), _incoming/maxlist-2010/k/edges.jpg (cap and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/muro/peach.png",
+  "slug": "muro-salt-nic",
+  "role": "variant",
+  "id": "peach",
+  "note": "maxlist 20/10 - Muro Salt Nic Peach (Max ELQ-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot of the Peach bottle cropped 4x from the shop poster (maxlist-2010/in/muro-peach.png), mid-grey backdrop; pick peach-2 (Higgsfield 155639 4fe72cd2); body cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px - copy beside this source",
+   "reference": "pod789.com Muro Saltnic poster 600 px, six bottles on one image (https://pod789.com/product/muro-saltnic/) - _incoming/maxlist-2010/ref/muro-salt-pod789.jpg",
+   "fidelitySheet": "_incoming/maxlist-2010/r/cmp-peach.jpg (poster crop vs both renders: MURO / PEACH / SALT letter by letter, colour block), _incoming/maxlist-2010/k/edges.jpg (cap and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/muro/strawberry-twist.png",
+  "slug": "muro-salt-nic",
+  "role": "variant",
+  "id": "strawberry-twist",
+  "note": "maxlist 20/10 - Muro Salt Nic Strawberry Twist (Max ELQ-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot of the Strawberry Twist bottle cropped 4x from the shop poster (maxlist-2010/in/muro-strawberry-twist.png), mid-grey backdrop; pick strawberry-twist-1 (Higgsfield 155725 7063ed51); body cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px - copy beside this source",
+   "reference": "pod789.com Muro Saltnic poster 600 px, six bottles on one image (https://pod789.com/product/muro-saltnic/) - _incoming/maxlist-2010/ref/muro-salt-pod789.jpg",
+   "fidelitySheet": "_incoming/maxlist-2010/r/cmp-strawberry-twist.jpg (poster crop vs both renders: MURO / STRAWBERRY TWIST / SALT letter by letter, colour block), _incoming/maxlist-2010/k/edges.jpg (cap and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/muro/click-mint.png",
+  "slug": "muro-salt-nic",
+  "role": "variant",
+  "id": "click-mint",
+  "note": "maxlist 20/10 - Muro Salt Nic Click Mint (Max ELQ-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot of the Click Mint bottle cropped 4x from the shop poster (maxlist-2010/in/muro-click-mint.png), mid-grey backdrop; pick click-mint-1 (Higgsfield 155821 2682bbe6); body cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px - copy beside this source",
+   "reference": "pod789.com Muro Saltnic poster 600 px, six bottles on one image (https://pod789.com/product/muro-saltnic/) - _incoming/maxlist-2010/ref/muro-salt-pod789.jpg",
+   "fidelitySheet": "_incoming/maxlist-2010/r/cmp-click-mint.jpg (poster crop vs both renders: MURO / CLICK MINT / SALT letter by letter, colour block), _incoming/maxlist-2010/k/edges.jpg (cap and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/muro/grape.png",
+  "slug": "muro-salt-nic",
+  "role": "card",
+  "note": "maxlist 20/10 - Muro Salt Nic (legacy, Max ELQ-4), card = Grape (Max ELQ-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot of the Grape bottle cropped 4x from the shop poster (maxlist-2010/in/muro-grape.png), mid-grey backdrop; pick grape-1 (Higgsfield 155906 1c48fd9b); body cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px - copy beside this source",
+   "reference": "pod789.com Muro Saltnic poster 600 px, six bottles on one image (https://pod789.com/product/muro-saltnic/) - _incoming/maxlist-2010/ref/muro-salt-pod789.jpg",
+   "fidelitySheet": "_incoming/maxlist-2010/r/cmp-grape.jpg (poster crop vs both renders: MURO / GRAPE / SALT letter by letter, colour block), _incoming/maxlist-2010/k/edges.jpg (cap and base at 1:1 on the site background)"
+  },
+  "fileName": "card.webp"
+ },
+ {
+  "source": "_incoming/list19/muro/grape.png",
+  "slug": "muro-salt-nic",
+  "role": "variant",
+  "id": "grape",
+  "note": "maxlist 20/10 - Muro Salt Nic Grape (Max ELQ-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot of the Grape bottle cropped 4x from the shop poster (maxlist-2010/in/muro-grape.png), mid-grey backdrop; pick grape-1 (Higgsfield 155906 1c48fd9b); body cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px - copy beside this source",
+   "reference": "pod789.com Muro Saltnic poster 600 px, six bottles on one image (https://pod789.com/product/muro-saltnic/) - _incoming/maxlist-2010/ref/muro-salt-pod789.jpg",
+   "fidelitySheet": "_incoming/maxlist-2010/r/cmp-grape.jpg (poster crop vs both renders: MURO / GRAPE / SALT letter by letter, colour block), _incoming/maxlist-2010/k/edges.jpg (cap and base at 1:1 on the site background)"
+  }
+ },
+ {
+  "source": "_incoming/list19/muro/big-cola.png",
+  "slug": "muro-salt-nic",
+  "role": "variant",
+  "id": "big-cola",
+  "note": "maxlist 20/10 - Muro Salt Nic Big Cola (Max ELQ-4)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 20/10 owner yes, maxlist line 1), studio re-shoot of the Big Cola bottle cropped 4x from the shop poster (maxlist-2010/in/muro-big-cola.png), mid-grey backdrop; pick big-cola-1 (Higgsfield 155952 14e4dc3b); body cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px - copy beside this source",
+   "reference": "pod789.com Muro Saltnic poster 600 px, six bottles on one image (https://pod789.com/product/muro-saltnic/) - _incoming/maxlist-2010/ref/muro-salt-pod789.jpg",
+   "fidelitySheet": "_incoming/maxlist-2010/r/cmp-big-cola.jpg (poster crop vs both renders: MURO / BIG COLA / SALT letter by letter, colour block), _incoming/maxlist-2010/k/edges.jpg (cap and base at 1:1 on the site background)"
+  }
  }
 ]
