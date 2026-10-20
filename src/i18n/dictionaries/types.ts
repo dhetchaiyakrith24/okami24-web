@@ -86,6 +86,9 @@ export interface Dictionary {
     ctaAll: string;
     viewCategory: string;
     tabsLabel: string;
+    /** the light switch in the hero (owner 20/10): the action each press does */
+    fxOff: string;
+    fxOn: string;
     types: Record<HeroType, { label: string; desc: string }>;
   };
   /** Round 30.3ข (owner, 2026-09-11): the homepage sections below the hero — every H2, the lede

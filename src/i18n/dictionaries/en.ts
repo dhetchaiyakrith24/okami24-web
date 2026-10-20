@@ -77,6 +77,8 @@ export const en: Dictionary = {
     ctaAll: "Browse all products",
     viewCategory: "Browse this category",
     tabsLabel: "Product types",
+    fxOff: "Lights off",
+    fxOn: "Lights on",
     types: {
       "pod-systems": { label: "Pod System", desc: "Fill it yourself, and change the pod or coil whenever you need to." },
       "switch-pods": { label: "Switch Pod", desc: "Keep the device. When a pod runs dry, simply swap in a new one." },

@@ -78,6 +78,8 @@ export const zh: Dictionary = {
     ctaAll: "浏览全部产品",
     viewCategory: "查看此类全部型号",
     tabsLabel: "产品类型",
+    fxOff: "关闭光效",
+    fxOn: "开启光效",
     types: {
       "pod-systems": { label: "烟弹系统", desc: "自己加注烟油，烟弹和雾化芯都可以更换。" },
       "switch-pods": { label: "换弹式设备", desc: "主机留着继续用，烟油用完只换烟弹。" },

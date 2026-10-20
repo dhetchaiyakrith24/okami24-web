@@ -1,12 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type CSSProperties } from "react";
 import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { thaiTypographyNode } from "@/lib/thai-typography";
 import { mainThreadDriver, type RibbonDriver } from "@/lib/hero-ribbons";
 import { workerDriver } from "./ribbon-driver";
+import { fxIsOff, markFx, onFxChange, setFxOff } from "@/lib/fx-pref";
 import type { HeroType } from "@/data/home-hero";
 
 /** One slot as page.tsx resolved it from the catalog — the client never sees the catalog itself
@@ -41,6 +42,8 @@ const TYPE_TAG: Record<HeroType, string> = {
  * the product pauses it; off-screen or a hidden tab pauses the bar and stops the ribbon loop.
  * Reduced motion and Save-Data (`html[data-okami-lite]`, set in page.tsx) get one still ribbon
  * frame and no auto-rotation (globals.css removes the bar animation).
+ * The light switch in the stage's corner (owner 20/10, lib/fx-pref.ts) turns the hero's and the flow
+ * layer's ribbons off for this browser: off at load = they never start; flipped = they stop and fade.
  */
 export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
   const { dict, locale } = useLocale();
@@ -56,6 +59,7 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
   const sectionRef = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const ribbonsRef = useRef<RibbonDriver | null>(null);
+  const fxOff = useSyncExternalStore(onFxChange, fxIsOff, () => false);
   const tx = (s: string) => (locale === "th" ? thaiTypographyNode(s) : s);
 
   const curRef = useRef(0);
@@ -87,6 +91,10 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
     let ribbons: RibbonDriver | null = null;
     let visible = true;
     let disposed = false;
+    let off = fxIsOff();
+    markFx(off);
+    let loaded = false;
+    let started = false;
     // scroll is sent relative to the hero itself: on desktop the cinematic intro (DESKTOP_INTRO) puts
     // the hero ~5 screens down, and the page's own scrollY dimmed the ribbons there (checker #634)
     let heroTop = 0;
@@ -100,16 +108,16 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
       heroTop = section.getBoundingClientRect().top + window.scrollY;
       ribbons.scroll(window.scrollY - heroTop);
     };
-    const run = () => ribbons?.run(visible && !document.hidden, still);
+    const run = () => ribbons?.run(visible && !document.hidden && !off, still && !off);
     const onScroll = () => ribbons?.scroll(window.scrollY - heroTop);
 
     // The ribbons wait until the page has loaded and the browser is idle: the product photo and the
     // headline paint first, then the light fades in (globals.css, [data-on]). Measured 20/10: starting
     // them during load cost the phone LCP ~1.3 s in Lighthouse. They run in a worker when the browser
     // can (OffscreenCanvas): a main-thread loop made the page re-tick every other animation each frame.
-    const begin = () => {
-      if (disposed) return;
-      setWarm(true);
+    const start = () => {
+      if (disposed || started || off) return;
+      started = true;
       const viaWorker = workerDriver([canvas], () => {
         if (!disposed) canvas.dataset.on = "1";
       });
@@ -122,6 +130,17 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
       run();
       window.addEventListener("scroll", onScroll, { passive: true });
     };
+    const begin = () => {
+      if (disposed) return;
+      setWarm(true);
+      loaded = true;
+      start();
+    };
+    const unFx = onFxChange((o) => {
+      off = o;
+      if (loaded) start();
+      run();
+    });
     const idle = () =>
       typeof window.requestIdleCallback === "function" ? window.requestIdleCallback(begin, { timeout: 1500 }) : setTimeout(begin, 300);
     if (document.readyState === "complete") idle();
@@ -146,6 +165,7 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
       ro.disconnect();
       io.disconnect();
       document.removeEventListener("visibilitychange", run);
+      unFx();
       ribbons?.destroy();
       ribbonsRef.current = null;
       canvas.remove();
@@ -194,6 +214,13 @@ export function HeroShowcase({ slots }: { slots: HeroSlotView[] }) {
           onMouseLeave={() => setHover(false)}
         >
           <div className="okh-floor" aria-hidden />
+          <button type="button" className="okh-fx" data-off={fxOff ? "1" : undefined} onClick={() => setFxOff(!fxOff)}>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden>
+              <path d="M8 1.5v2.2M8 12.3v2.2M1.5 8h2.2M12.3 8h2.2M3.4 3.4l1.5 1.5M11.1 11.1l1.5 1.5M3.4 12.6l1.5-1.5M11.1 4.9l1.5-1.5" />
+              <circle cx="8" cy="8" r="2.3" />
+            </svg>
+            {fxOff ? copy.fxOn : copy.fxOff}
+          </button>
           {slots.map((s, i) => {
             const mask = getImageProps({ src: s.image.src, alt: "", width: 480, height: 600, quality: 60 }).props.src;
             return (

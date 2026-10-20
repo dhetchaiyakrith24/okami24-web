@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { mainThreadDriver, type RibbonDriver } from "@/lib/hero-ribbons";
 import { workerDriver } from "./ribbon-driver";
 import { FLOW_DRAW_ON_SCROLL, FLOW_GLOW_ON_SCROLL } from "@/data/home-hero";
+import { fxIsOff, onFxChange } from "@/lib/fx-pref";
 
 /**
  * The hero's light carried down the whole homepage (round "หน้าแรก hero"; owner 20/10 ~05:00, from
@@ -23,6 +24,7 @@ import { FLOW_DRAW_ON_SCROLL, FLOW_GLOW_ON_SCROLL } from "@/data/home-hero";
  *
  * Like the hero: it starts after load + idle, runs in a worker when the browser can, stops when the
  * flow area is off screen or the tab is hidden; reduced motion / Save-Data draw one still frame per tile.
+ * The hero's light switch (lib/fx-pref.ts) turns it off too: off at load = it never starts.
  */
 /** text that sits on the page without a box of its own — the ribbon fades to a glow behind it */
 const TEXT = "h2, h3, p, a, button, .label-mono";
@@ -159,9 +161,12 @@ export function HomeFlow() {
     let tileH = 0;
     let lastY = 0;
     let raf = 0;
+    let off = fxIsOff();
+    let loaded = false;
+    let started = false;
     /** which tile each canvas shows (-1 = parked above the area, not drawn) */
     const tileOf = canvases.map(() => -1);
-    const run = () => ribbons?.run(visible && !document.hidden, still);
+    const run = () => ribbons?.run(visible && !document.hidden && !off, still && !off);
 
     // the tile the screen starts in and the next one, plus one more in the direction of travel; a canvas
     // is only ever moved while off screen, so the light never jumps
@@ -227,8 +232,9 @@ export function HomeFlow() {
       });
     };
 
-    const begin = () => {
-      if (disposed) return;
+    const start = () => {
+      if (disposed || started || off) return;
+      started = true;
       const viaWorker = workerDriver(
         canvases,
         () => {
@@ -246,6 +252,16 @@ export function HomeFlow() {
       window.addEventListener("scroll", onScroll, { passive: true });
       wrap.addEventListener("scroll", onInnerScroll, { passive: true, capture: true });
     };
+    const begin = () => {
+      if (disposed) return;
+      loaded = true;
+      start();
+    };
+    const unFx = onFxChange((o) => {
+      off = o;
+      if (loaded) start();
+      run();
+    });
     const idle = () =>
       typeof window.requestIdleCallback === "function" ? window.requestIdleCallback(begin, { timeout: 2000 }) : setTimeout(begin, 400);
     if (document.readyState === "complete") idle();
@@ -271,6 +287,7 @@ export function HomeFlow() {
       ro.disconnect();
       io.disconnect();
       document.removeEventListener("visibilitychange", run);
+      unFx();
       ribbons?.destroy();
       canvases.forEach((c) => c.remove());
       probe.remove();
