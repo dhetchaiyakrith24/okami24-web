@@ -10,6 +10,7 @@ import { workerDriver } from "./ribbon-driver";
 import { fxIsOff, markFx, onFxChange, setFxOff } from "@/lib/fx-pref";
 import type { HeroType } from "@/data/home-hero";
 import { HeroCards } from "./HeroCards";
+import "./home-hero.css";
 
 /** One slot as page.tsx resolved it from the catalog — the client never sees the catalog itself
  *  (LESSONS 37: a client component that imports the whole-shop tables ships them to every phone). */

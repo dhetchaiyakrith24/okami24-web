@@ -1,0 +1,571 @@
+/* The homepage hero (HeroShowcase + HeroCards) — imported by HeroShowcase.tsx, so only the homepage loads it.
+   Moved out of globals.css 21/10 (round homepage upgrade): the shared stylesheet sat at Turbopack's merge size and split
+   into two render-blocking files on every page once the desktop cards were added. Rules unchanged. */
+/* ==========================================================================
+   Homepage hero "showcase" (round "หน้าแรก hero", owner 20/10 — HeroShowcase.tsx; the draft he
+   approved = _incoming/hero-draft/). Phone first; the desktop layout starts at lg (64rem), the
+   same breakpoint as the header and HomeIntro.
+   ========================================================================== */
+.okh {
+  /* the hero leaves room for the brand strip and the top of the category tiles to peek in */
+  min-height: calc(100svh - 4rem - 140px);
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 40rem) {
+  .okh { min-height: calc(100svh - 5rem - 140px); }
+}
+.okh::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 140px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--surface-0));
+}
+.okh-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+.okh-canvas[data-on] { opacity: 1; }
+/* the light switch (owner 20/10, lib/fx-pref.ts): off = both ribbon layers fade out (and stop) */
+html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity: 0; }
+.okh-fx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 2rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface-0) 70%, transparent);
+  color: var(--foreground-muted);
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.okh-fx:hover { color: var(--foreground); border-color: var(--foreground-dim); }
+.okh-fx:focus-visible { outline: 2px solid var(--accent-ember); outline-offset: 2px; }
+.okh-fx svg { width: 0.875rem; height: 0.875rem; color: var(--accent-ember); transition: opacity 0.2s ease; }
+.okh-fx[data-off] svg { color: currentColor; opacity: 0.6; }
+.okh-grid {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "copy" "stage" "tabs" "cta";
+  align-content: start;
+  padding-top: 1.375rem;
+}
+.okh-copy { grid-area: copy; }
+.okh-stage { grid-area: stage; }
+.okh-tabs { grid-area: tabs; }
+.okh-cta { grid-area: cta; }
+
+/* --- copy --- */
+.okh-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--foreground-dim);
+}
+.okh-kicker i {
+  display: block;
+  width: 1.75rem;
+  height: 1px;
+  background: var(--accent-ember);
+}
+.okh-h1 {
+  display: block;
+  font-size: 2.75rem;
+  line-height: 1.14;
+  letter-spacing: -0.005em;
+}
+.okh-lede {
+  margin-top: 0.625rem;
+  font-size: 0.90625rem;
+  line-height: 1.55;
+  color: var(--foreground-muted);
+}
+
+/* --- buttons --- */
+.okh-cta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.625rem;
+  margin: 1rem 0 0.5rem;
+}
+.okh-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  height: 3.125rem;
+  padding: 0 1.25rem;
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: background-color 0.25s, border-color 0.25s, transform 0.25s;
+}
+.okh-btn { white-space: nowrap; }
+.okh-btn svg { display: none; width: 1rem; height: 1rem; }
+@media (max-width: 63.99rem) {
+  .okh-btn { font-size: 0.875rem; padding: 0 1rem; }
+}
+.okh-btn-primary {
+  background: var(--accent-ember);
+  color: #160803;
+  box-shadow: 0 0 0 1px rgba(255, 131, 71, 0.5), 0 10px 40px -10px rgba(255, 106, 44, 0.7);
+}
+.okh-btn-primary:hover { background: var(--accent-ember-strong); transform: translateY(-1px); }
+.okh-btn-ghost { border: 1px solid var(--surface-border); color: var(--foreground); }
+.okh-btn-ghost:hover { border-color: var(--foreground-dim); }
+
+/* --- stage: the product --- */
+.okh-stage {
+  position: relative;
+  height: clamp(230px, 36svh, 330px);
+  margin-top: 0.25rem;
+}
+.okh-floor {
+  position: absolute;
+  left: 50%;
+  bottom: 7%;
+  width: 62%;
+  height: 14%;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(255, 106, 44, 0.32), rgba(255, 106, 44, 0));
+  filter: blur(6px);
+}
+.okh-prod {
+  position: absolute;
+  inset: 0 -4% 4% 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(28px) scale(0.95);
+  filter: blur(10px);
+  transition: opacity 0.9s ease, transform 1.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.9s ease;
+}
+.okh-prod[data-state="on"] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  pointer-events: auto;
+  transition-delay: 0.35s;
+}
+.okh-prod[data-state="out"] {
+  opacity: 0;
+  transform: translateY(-22px) scale(1.02);
+  filter: blur(10px);
+  transition-duration: 0.7s;
+  transition-delay: 0s;
+}
+.okh-float {
+  position: relative;
+  display: block;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  animation: okh-float 7s ease-in-out infinite;
+  /* its own layer: the drop-shadowed photo is rastered once, the float is pure compositing */
+  will-change: transform;
+}
+.okh-float img {
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 106, 44, 0.12));
+}
+/* one thin warm reflection crosses the device as it arrives — clipped to its own silhouette. The
+   band moves by transform (compositor only); animating background-position repainted every frame. */
+.okh-sheen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  -webkit-mask: var(--okh-mask) center / contain no-repeat;
+  mask: var(--okh-mask) center / contain no-repeat;
+}
+.okh-sheen::before {
+  content: "";
+  position: absolute;
+  inset: 0 -100%;
+  background: linear-gradient(105deg, transparent 47.5%, rgba(255, 225, 200, 0.28) 50%, transparent 52.5%);
+  transform: translateX(22%);
+  will-change: transform;
+}
+.okh-prod[data-state="on"] .okh-sheen::before {
+  animation: okh-sheen 2.2s cubic-bezier(0.4, 0, 0.2, 1) 0.7s 1 both;
+}
+@keyframes okh-sheen { from { transform: translateX(22%); } to { transform: translateX(-22%); } }
+/* a flying cut-out (home-hero.ts `photo`, desktop only — phones keep the standing card photo, owner 20/10):
+   it sits IN the ribbons' light — a warm glow around it and a warm wash on its lower-right half (clipped to
+   its silhouette by the sheen mask), and no floor ellipse under something that floats */
+@media (min-width: 64rem) {
+  /* lying across the stage: a little smaller and up-left so its far end stops short of the name block */
+  .okh-prod[data-flying] .okh-float { aspect-ratio: 3 / 2; height: auto; width: 86%; margin: 0 14% 12% 0; }
+  /* owner 21/10 "ลอยแบบไม่มีเหตุผล ลอยแข็งๆ เด่นๆ": the same cure as the standing photos' draft (#637) — a
+     much calmer drift, the photo toned a touch into the dark set, and a soft shadow on the floor below so it
+     reads as held above the ground on purpose (a levitation shot), not pasted on */
+  .okh-prod[data-flying] .okh-float { animation: okh-float-calm 9s ease-in-out infinite; }
+  .okh-prod[data-flying] .okh-float img {
+    filter: brightness(0.92) drop-shadow(0 0 22px rgba(255, 106, 44, 0.12)) drop-shadow(0 28px 34px rgba(0, 0, 0, 0.5));
+  }
+  .okh-prod[data-flying] .okh-sheen {
+    -webkit-mask: var(--okh-mask-d) center / contain no-repeat;
+    mask: var(--okh-mask-d) center / contain no-repeat;
+  }
+  .okh-floor { transition: opacity 0.6s ease, background 0.6s ease; }
+  .okh-stage:has(.okh-prod[data-flying][data-state="on"]) .okh-floor {
+    left: 46%;
+    bottom: 9%;
+    width: 66%;
+    height: 11%;
+    /* a warm pool of light on the floor with the product's dark shadow in it — on a near-black page a shadow
+       alone does not read */
+    background:
+      radial-gradient(closest-side, rgba(6, 4, 3, 0.9), rgba(6, 4, 3, 0.55) 45%, rgba(6, 4, 3, 0) 70%),
+      radial-gradient(closest-side, rgba(255, 106, 44, 0.3), rgba(255, 106, 44, 0.1) 60%, rgba(255, 106, 44, 0));
+    filter: blur(10px);
+  }
+}
+@keyframes okh-float-calm { 0%, 100% { transform: translateY(-2.5px); } 50% { transform: translateY(2.5px); } }
+/* reduced motion / Save-Data stay still for the flying photos too (the rule above out-ranks the plain .okh-float
+   off-switches further down — checker #671 r1) */
+@media (prefers-reduced-motion: reduce) {
+  .okh-prod[data-flying] .okh-float { animation: none; }
+}
+html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
+@keyframes okh-float { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
+
+.okh-meta {
+  position: absolute;
+  left: 0;
+  bottom: 12%;
+  z-index: 1;
+  isolation: isolate;
+  max-width: 52%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  animation: okh-meta-in 0.6s ease 0.5s both;
+}
+.okh-meta::before {
+  content: "";
+  position: absolute;
+  inset: -30px -40px;
+  z-index: -1;
+  background: radial-gradient(closest-side, rgba(14, 14, 16, 0.7), rgba(14, 14, 16, 0));
+  pointer-events: none;
+}
+@keyframes okh-meta-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.okh-idx { font-size: 0.625rem; letter-spacing: 0.14em; color: var(--accent-ember); }
+.okh-name { font-size: 1.375rem; font-weight: 600; line-height: 1.15; color: var(--foreground); }
+.okh-name:hover { color: var(--accent-ember-strong); }
+.okh-brand { font-size: 0.625rem; letter-spacing: 0.14em; color: var(--foreground-dim); }
+.okh-go {
+  margin-top: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--foreground);
+  border-bottom: 1px solid rgba(255, 106, 44, 0.6);
+  padding-bottom: 0.1875rem;
+}
+.okh-go:hover { color: var(--accent-ember-strong); }
+
+/* --- type tabs + progress --- */
+.okh-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.375rem;
+}
+.okh-tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-height: 2.75rem;
+  padding-top: 0.75rem;
+  text-align: left;
+  color: var(--foreground-dim);
+  cursor: pointer;
+}
+.okh-tab::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--surface-border);
+}
+/* the progress line grows by transform, not width — a width animation re-laid-out the page every frame */
+.okh-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  width: 100%;
+  background: var(--accent-ember);
+  box-shadow: 0 0 10px var(--accent-ember);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+.okh-bar[data-run] { animation: okh-progress 6.5s linear both; }
+.okh-bar[data-full] { transform: none; }
+.okh-tabs[data-paused] .okh-bar { animation-play-state: paused; }
+@keyframes okh-progress { from { transform: scaleX(0); } to { transform: none; } }
+.okh-n { font-size: 0.625rem; letter-spacing: 0.14em; }
+.okh-n em { display: none; font-style: normal; }
+.okh-t { font-size: 0.75rem; line-height: 1.35; font-weight: 500; color: var(--foreground-muted); transition: color 0.4s; }
+.okh-d { display: none; }
+.okh-tab[aria-pressed="true"] .okh-n { color: var(--accent-ember); }
+.okh-tab[aria-pressed="true"] .okh-t,
+.okh-tab:hover .okh-t { color: var(--foreground); }
+
+/* --- desktop --- */
+@media (min-width: 64rem) {
+  .okh { min-height: calc(100svh - 5rem); }
+  .okh::after { height: 140px; }
+  .okh-grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    grid-template-rows: 1fr auto auto 1fr auto;
+    grid-template-areas: ". stage" "copy stage" "cta stage" ". stage" "tabs tabs";
+    column-gap: 1.5rem;
+    align-content: stretch;
+    padding-top: 2.5rem;
+    padding-bottom: 2.125rem;
+  }
+  .okh-copy { max-width: 37.5rem; }
+  .okh-kicker { margin-bottom: 1.5rem; font-size: 0.8125rem; color: var(--foreground-muted); }
+  .okh-h1 { font-size: clamp(2.75rem, 2rem + 3.4vw, 5.375rem); line-height: 1.08; }
+  .okh-lede { margin-top: 1.625rem; font-size: 1.125rem; line-height: 1.65; }
+  .okh-cta { display: flex; flex-wrap: wrap; margin: 1.625rem 0 0; gap: 0.75rem; }
+  .okh-btn { height: 3.25rem; padding: 0 1.625rem; }
+  .okh-btn svg { display: block; }
+  .okh-stage { height: min(74vh, 700px); align-self: center; margin: 0 0 1.5rem; }
+  /* phones: top-left (the product stands right of centre) · desktop: top-right (the name sits bottom-right) */
+  .okh-fx { left: auto; right: 0; }
+  .okh-prod { inset: 0 0 6% 0; justify-content: center; }
+  .okh-float { height: 96%; }
+  .okh-meta { left: auto; right: 0; bottom: 12%; max-width: none; align-items: flex-end; text-align: right; gap: 0.5rem; }
+  .okh-idx, .okh-brand { font-size: 0.6875rem; }
+  .okh-name { font-size: 1.875rem; }
+  .okh-go { font-size: 0.875rem; }
+  .okh-tabs { gap: 1.5rem; margin-top: 0; }
+  .okh-tab { padding-top: 1.125rem; gap: 0.375rem; }
+  .okh-n { font-size: 0.6875rem; }
+  .okh-n em { display: inline; }
+  .okh-t { font-size: 1rem; }
+  .okh-d { display: block; font-size: 0.8125rem; line-height: 1.5; color: var(--foreground-muted); }
+}
+
+/* --- desktop "cards" (home-hero.ts DESKTOP_HERO, owner 21/10 — the getlayers Artefakt direction) ---
+   From 64rem up the stage and the tabs give way to the four slots as cards in a row (HeroCards) over a lattice of
+   small squares; the squares around the cursor light up in the shop's orange (HeroShowcase writes --mx/--my once per
+   frame while the mouse moves; the registered properties ease the glow after it). Phones never see any of this. */
+@property --mx { syntax: "<length>"; inherits: false; initial-value: -60rem; }
+@property --my { syntax: "<length>"; inherits: false; initial-value: -60rem; }
+.okh-cards, .okh-lattice, .okh-fx-desk { display: none; }
+@media (min-width: 64rem) {
+  .okh[data-desk="cards"] .okh-stage,
+  .okh[data-desk="cards"] .okh-tabs { display: none; }
+  .okh[data-desk="cards"] .okh-grid {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "copy cta" "cards cards";
+    row-gap: clamp(1.75rem, 4.5vh, 3rem);
+    align-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+  .okh[data-desk="cards"] .okh-h1 { font-size: clamp(2.5rem, 1.6rem + 2.6vw, 4.5rem); }
+  .okh[data-desk="cards"] .okh-lede { margin-top: 1.125rem; }
+  .okh[data-desk="cards"] .okh-cta { align-self: end; justify-content: flex-end; align-items: center; margin: 0; }
+  /* the ribbons cross this corner now: the outline button gets the page colour behind its label */
+  .okh[data-desk="cards"] .okh-btn-ghost { background: color-mix(in srgb, var(--surface-0) 88%, transparent); }
+  .okh[data-desk="cards"] .okh-fx-desk { display: inline-flex; top: 1.5rem; left: auto; right: 3rem; min-height: 2rem; font-size: 0.75rem; }
+
+  .okh-lattice {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    /* 16 px cells, 12 px squares: the base lattice barely there, the lit one only inside the glow */
+    --okh-cell: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect x='2' y='2' width='12' height='12' rx='1.5' fill='%23fff'/%3E%3C/svg%3E");
+  }
+  .okh-lattice::before,
+  .okh-lattice::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    -webkit-mask: var(--okh-cell) 0 0 / 16px 16px repeat;
+    mask: var(--okh-cell) 0 0 / 16px 16px repeat;
+  }
+  .okh-lattice::before { background: rgb(255 255 255 / 0.028); }
+  .okh-lattice::after {
+    background: radial-gradient(circle 15rem at var(--mx) var(--my), rgb(255 106 44 / 0.34), rgb(255 106 44 / 0.1) 45%, transparent 72%);
+    opacity: 0;
+    transition: opacity 0.5s ease, --mx 0.32s cubic-bezier(0.2, 0.7, 0.2, 1), --my 0.32s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .okh-lattice[data-hot]::after { opacity: 1; }
+  /* the light switch off = the glow goes too */
+  html[data-okami-fx="off"] .okh-lattice::after { opacity: 0; }
+
+  .okh-cards {
+    display: grid;
+    grid-area: cards;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .okh[data-desk="stage"] .okh-cards { display: none; }
+  .okh-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem 1.125rem 1.125rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--surface-1) 94%, transparent);
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .okh-card:hover {
+    border-color: color-mix(in srgb, var(--accent-ember) 70%, transparent);
+    background: var(--surface-1);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 25%, transparent), 0 24px 60px -30px rgb(255 106 44 / 0.45);
+    transform: translateY(-3px);
+  }
+  .okh-card:focus-visible { outline: 2px solid var(--accent-ember); outline-offset: 3px; }
+  .okh-card-top { display: flex; justify-content: space-between; font-size: 0.6875rem; letter-spacing: 0.14em; color: var(--foreground-dim); }
+  .okh-card-plus { font-size: 0.875rem; line-height: 1; transition: transform 0.3s ease, color 0.3s ease; }
+  .okh-card:hover .okh-card-plus { transform: rotate(90deg); color: var(--accent-ember); }
+  .okh-card-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "brand price" "name price"; column-gap: 0.75rem; row-gap: 0.25rem; }
+  .okh-card-brand { grid-area: brand; font-size: 0.6875rem; letter-spacing: 0.14em; color: var(--accent-ember); }
+  .okh-card-name {
+    grid-area: name;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: clamp(1.0625rem, 0.6rem + 0.9vw, 1.375rem);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--foreground);
+  }
+  .okh-card-price { grid-area: price; align-self: end; font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--foreground); }
+  .okh-card-img { position: relative; display: block; aspect-ratio: 5 / 4; margin-top: 0.75rem; }
+  .okh-card-img img { transform: scale(1.12); transform-origin: 50% 72%; transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .okh-card:hover .okh-card-img img { transform: scale(1.17); }
+  .okh-card-foot { position: relative; display: block; height: 2.25rem; }
+  .okh-card-tags,
+  .okh-card-cta {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .okh-card-tags { gap: 0.5rem; }
+  .okh-card-tags em {
+    display: inline-flex;
+    align-items: center;
+    height: 1.75rem;
+    padding: 0 0.625rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 4px;
+    font-style: normal;
+    font-size: 0.75rem;
+    color: var(--foreground-muted);
+  }
+  .okh-card-tags em.label-mono { font-size: 0.625rem; letter-spacing: 0.12em; }
+  .okh-card-cta {
+    justify-content: space-between;
+    padding: 0 0.875rem;
+    border: 1px solid var(--foreground-muted);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--foreground);
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  .okh-card:hover .okh-card-tags,
+  .okh-card:focus-visible .okh-card-tags { opacity: 0; transform: translateY(-6px); }
+  .okh-card:hover .okh-card-cta,
+  .okh-card:focus-visible .okh-card-cta { opacity: 1; transform: none; }
+}
+@media (min-width: 64rem) and (prefers-reduced-motion: reduce) {
+  .okh-card, .okh-card-img img, .okh-card-tags, .okh-card-cta, .okh-card-plus { transition: none; }
+  .okh-card:hover { transform: none; }
+  .okh-card:hover .okh-card-img img { transform: scale(1.12); }
+  .okh-lattice::after { transition: opacity 0.2s ease; }
+}
+
+/* --- the hero's light carried down the page (HomeFlow) ---
+   A layer behind every section of the wrapper holds the light on canvases that sit ON the page (tiles
+   one screen tall, moved ahead of the visitor by HomeFlow), so the browser scrolls the light together
+   with the boxes — a screen-fixed canvas redrawn for each scroll position trailed by a frame or two
+   ("jerky on the phone", owner 20/10). The sections are see-through here (the surface-1 ones keep a
+   tint), and the boxes inside them are frosted glass: the light shows through them blurred, never sharp
+   on a product or a word (owner 20/10, his reference). Phones: no backdrop blur (re-blurring every box
+   on every frame of moving light was the other big cost) — the ribbon itself turns to a soft glow
+   inside the boxes (hero-ribbons.ts u_boxes), the box tint stays. */
+.okh-flow { position: relative; isolation: isolate; background: var(--surface-0); }
+.okh-flow-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.okh-flow-probe { position: fixed; top: 0; left: 0; width: 1px; height: 100vh; height: 100lvh; visibility: hidden; }
+.okh-flow-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+.okh-flow-canvas[data-on] { opacity: 1; }
+.okh-flow > :not(.okh-flow-stage) { position: relative; z-index: 1; }
+.okh-flow > section.bg-surface-0 { background-color: transparent; }
+.okh-flow > section.bg-surface-1 { background-color: color-mix(in srgb, var(--surface-1) 55%, transparent); }
+.okh-flow > nav { -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.okh-flow section :is(.bg-surface-0, .bg-surface-1) {
+  background-color: color-mix(in srgb, var(--surface-1) 42%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  backdrop-filter: blur(16px) saturate(1.2);
+}
+@media (max-width: 1023px) {
+  .okh-flow > nav,
+  .okh-flow section :is(.bg-surface-0, .bg-surface-1) { -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+
+/* --- still: reduced motion / Save-Data (the ribbons draw one frame; HeroShowcase stops rotating) --- */
+@media (prefers-reduced-motion: reduce) {
+  .okh-float, .okh-prod[data-state="on"] .okh-sheen::before, .okh-meta { animation: none; }
+  .okh-prod { transition: opacity 0.3s ease; transform: none; filter: none; }
+  .okh-bar[data-run] { animation: none; transform: none; }
+}
+html[data-okami-lite="1"] .okh-float,
+html[data-okami-lite="1"] .okh-prod[data-state="on"] .okh-sheen::before { animation: none; }
+html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; transform: none; }

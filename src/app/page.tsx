@@ -4,7 +4,7 @@ import { getPublishedProduct, getPublishedProducts } from "@/data/shipnity-seed/
 import { brands } from "@/data/brands";
 import { guides } from "@/data/guides";
 import { HomeIntro } from "@/components/home/HomeIntro";
-import { Hero } from "@/components/home/Hero";
+import { HeroClassic } from "@/components/home/HeroClassic";
 import { HeroShowcase, type HeroSlotView } from "@/components/home/HeroShowcase";
 import { HomeFlow } from "@/components/home/HomeFlow";
 import { DESKTOP_HERO, DESKTOP_INTRO, HOME_FLOW, HOME_HERO_SLOTS, PHONE_HERO } from "@/data/home-hero";
@@ -103,7 +103,7 @@ export default function Home() {
       {PHONE_HERO === "classic" ? (
         <>
           <div className="lg:hidden">
-            <Hero flagship={flagship} backdrop={mBar10k} productCount={productCount} brandCount={brandCount} />
+            <HeroClassic flagship={flagship} backdrop={mBar10k} productCount={productCount} brandCount={brandCount} />
           </div>
           <div className="hidden lg:block">
             <HeroShowcase slots={heroSlots} desktop={DESKTOP_HERO} />
