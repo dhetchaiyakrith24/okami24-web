@@ -174,7 +174,8 @@ function ciProblems(rollup) {
   else if (decide.conclusion !== "SUCCESS") out.push(`deploy/decide is ${decide.conclusion}`);
   // decide SUCCESS always leads to a `checks` run (SUCCESS, or SKIPPED when nothing reaches the site) — it shows up a
   // few seconds after decide, so none yet = not started, never "fine" (checker #667 r1)
-  if (decide && decide.status === "COMPLETED" && decide.conclusion === "SUCCESS" && !checks)
+  // a `checks` that started before this decide is a leftover of an older (draft-time) run (checker #667 r2)
+  if (decide && decide.status === "COMPLETED" && decide.conclusion === "SUCCESS" && (!checks || when(checks) < when(decide)))
     out.push("GitHub checks not started yet (checks) - wait");
   else if (checks && checks.status !== "COMPLETED") out.push("GitHub checks still running (checks) - wait");
   else if (checks && !["SUCCESS", "SKIPPED"].includes(checks.conclusion)) out.push(`deploy/checks is ${checks.conclusion}`);
