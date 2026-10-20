@@ -38,6 +38,13 @@ export const PHONE_HERO: "showcase" | "classic" = "showcase";
 export const DESKTOP_INTRO = false;
 
 /**
+ * The light that flows down the homepage below the hero (HomeFlow) at all. Owner 21/10: "เก็บแสงส้มตอนเลื่อน
+ * และมันวิ่งตาม เข้าคลังไว้ ไม่เปิดใช้" — kept in the code, switched off; the hero's own light and the four
+ * brand slots stay on desktop and phones. true = back exactly as #645/#640 (the two flags below still apply).
+ */
+export const HOME_FLOW = false;
+
+/**
  * The light that flows down the homepage below the hero (HomeFlow). Owner 20/10 ~05:40: "keep this
  * version" (#639 — the ribbon fully laid on the page, brightness swelling by itself) and try the
  * scroll as the thing that plays the light:

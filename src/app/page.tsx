@@ -7,7 +7,7 @@ import { HomeIntro } from "@/components/home/HomeIntro";
 import { Hero } from "@/components/home/Hero";
 import { HeroShowcase, type HeroSlotView } from "@/components/home/HeroShowcase";
 import { HomeFlow } from "@/components/home/HomeFlow";
-import { DESKTOP_INTRO, HOME_HERO_SLOTS, PHONE_HERO } from "@/data/home-hero";
+import { DESKTOP_INTRO, HOME_FLOW, HOME_HERO_SLOTS, PHONE_HERO } from "@/data/home-hero";
 import { getCatalogItem } from "@/lib/catalog-index";
 import { getCategory } from "@/data/categories";
 import { BrandMarquee } from "@/components/home/BrandMarquee";
@@ -102,8 +102,8 @@ export default function Home() {
       )}
       {/* everything below the hero sits in one box: the hero's light carried down the page (HomeFlow)
           runs on a sticky stage behind its sections, which are see-through there (globals.css .okh-flow) */}
-      <div className="okh-flow">
-        <HomeFlow />
+      <div className={HOME_FLOW ? "okh-flow" : undefined}>
+        {HOME_FLOW ? <HomeFlow /> : null}
         <BrandMarquee />
         <CategoryNav />
 
