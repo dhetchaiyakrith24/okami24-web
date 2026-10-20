@@ -733,7 +733,7 @@ export class RibbonEngine {
       }
       gl.uniform1f(u.u_halo, b.kind === "halo" ? 1 : 0);
       // inside a box (phones): the soft strokes stay as the glow seen through the glass, the crisp lines go
-      gl.uniform1f(u.u_boxBase, b.kind === "halo" ? 0.8 : 0.06);
+      gl.uniform1f(u.u_boxBase, b.kind === "halo" ? 2.2 : 0);
       if (flow) {
         const pinch = this.drawOnScroll ? 0.55 + 0.45 * this.glow : this.glowOnScroll ? this.glow : 0;
         gl.uniform3f(u.u_headV, this.head, pinch, pinch * (b.kind === "halo" ? 5.2 : b.kind === "line" ? 0.5 : 0));

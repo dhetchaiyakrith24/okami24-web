@@ -85,7 +85,7 @@ function boxRects(wrap: HTMLElement, wr: DOMRect): number[] {
     const boxes = el.tagName === "NAV" ? [el] : el.tagName === "SECTION" ? Array.from(el.querySelectorAll(BOX)) : [];
     boxes.forEach((b) => {
       const outer = b.parentElement?.closest(BOX);
-      if (b !== el && outer && el.contains(outer)) return;
+      if (b !== el && outer && outer !== el && el.contains(outer)) return;
       const r = b.getBoundingClientRect();
       if (r.width < 2 || r.height < 2 || r.right < wr.left || r.left > wr.right) return;
       out.push(r.left - wr.left, r.top - wr.top, r.width, r.height);
