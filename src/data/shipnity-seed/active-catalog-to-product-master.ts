@@ -893,6 +893,19 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       sourceUrl: "https://vapemanshop.com/wp-content/uploads/2023/10/Super-Cool-SaltNic-30ml-35mg-Grape-Blast.jpg",
     },
   ],
+  // maxlist (21/10): VOOPOO Argus Pod cartridge (Max Coil-21) — card = the Argus mix (in stock): OKami24 re-shoot (batch 7, Unlimited plan, 0 credits) of the shop's cartridge photo.
+  "Coil-21": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/coil-21/card.webp",
+      alt: "VOOPOO Argus Pod cartridge, studio photo",
+      angle: "Front, studio re-shoot (maxlist 21/10, IMAGE_SPEC §0 item 7) of a shop photo of the Argus Pod cartridge. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from a shop photo of the VOOPOO Argus Pod cartridge",
+      sourceUrl: "https://pod789.com/product/argus-pod/",
+    },
+  ],
   // maxlist (20/10): RELX Infinity Pro 2 pod card = the Watermelon Ice pack (in stock) — OKami24 re-shoot of RELX's own flavour poster as sold by the shop. The other 41
   // flavours show the no-photo panel (owner 20/10: card only; the packs differ only by the printed flavour, relabelling one photo would make up images).
   "RELX-INFINITY-PRO-2-POD": [
@@ -1880,6 +1893,10 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "ELQ-6-8": { kind: "official-photo", role: "detail", src: "/assets/products/super-cool-saltnic/variant-elq-6-8.webp", alt: "Super Cool Strawberry Frost salt nic e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Super Cool Strawberry Frost photo", sourceUrl: "https://vapemanshop.com/wp-content/uploads/2023/10/Super-Cool-SaltNic-30ml-35mg-Strawberry.jpg" },
     "ELQ-6-9": { kind: "official-photo", role: "detail", src: "/assets/products/super-cool-saltnic/variant-elq-6-9.webp", alt: "Super Cool White Polo salt nic e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Super Cool White Polo photo", sourceUrl: "https://vapemanshop.com/wp-content/uploads/2023/10/Super-Cool-SaltNic-30ml-35mg-White-Polo.jpg" },
     "ELQ-6-10": { kind: "official-photo", role: "detail", src: "/assets/products/super-cool-saltnic/variant-elq-6-10.webp", alt: "Super Cool Black Hexx salt nic e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Super Cool Black Hexx photo", sourceUrl: "https://vapemanshop.com/wp-content/uploads/2023/10/Super-Cool-SaltNic-30ml-35mg-Black-Hexx.jpg" },
+  },
+  // maxlist (21/10): Argus Pod — the Argus mix option shows the cartridge re-shoot; the 1.2Ω and the two Top Fill options have no photo yet (the Top Fill cartridge is a different part).
+  "Coil-21": {
+    "Coil-21-1": { kind: "official-photo", role: "detail", src: "/assets/products/coil-21/variant-coil-21-1.webp", alt: "VOOPOO Argus Pod cartridge, Argus mix, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a shop photo of the VOOPOO Argus Pod cartridge", sourceUrl: "https://pod789.com/product/argus-pod/" },
   },
   // maxlist (20/10): RELX Essential 2 — one re-shoot per colour on the shop's line-up (Max's 4 + Orange).
   "RELX-ESSENTIAL-2": {
