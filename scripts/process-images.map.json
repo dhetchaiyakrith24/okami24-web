@@ -10777,7 +10777,7 @@
   "role": "card",
   "note": "maxlist 21/10 - Double Mint Salt Nic Watermelon (in stock)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Watermelon bottle cropped from the shop poster (maxlist-2010/in/dm-watermelon.png), mid-grey backdrop; pick watermelon-b (Higgsfield 185308 73cf2868); body cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px - copy beside this source",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Watermelon bottle cropped from the shop poster (maxlist-2010/in/dm-watermelon.png), mid-grey backdrop; pick watermelon-b (Higgsfield 185308 73cf2868); label and shoulders cut by colour key vs the backdrop (maxlist-2010/dm/grapecut.js T16, clipped to the label edge x 579-1264 below row 1100; checker #674 r1: the shape cut left a notch on the left label edge), base from the shape cut + basefix.js, alpha erode 2 px - copy beside this source",
    "reference": "maneevp.com Doublemint Salt Nic group poster (https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/) - _incoming/maxlist-2010/ref/dm/p2.jpg",
    "fidelitySheet": "_incoming/maxlist-2010/dm/cmp-watermelon.jpg (poster crop vs both renders: RIGLEY'S / DOUBLEMINT / CHEWING GUM / flavour / SALT NIC / 30mg letter by letter, label colour, cap), _incoming/maxlist-2010/dm/k/sheet.jpg (cut on the site background)"
   },
@@ -10790,7 +10790,7 @@
   "id": "elq-64-3",
   "note": "maxlist 21/10 - Double Mint Salt Nic Watermelon (Max ELQ-64-3)",
   "aiRender": {
-   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Watermelon bottle cropped from the shop poster (maxlist-2010/in/dm-watermelon.png), mid-grey backdrop; pick watermelon-b (Higgsfield 185308 73cf2868); body cut by shape + wallfill (from 0.46), base drawn (basefix.js), alpha erode 2 px - copy beside this source",
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (Higgsfield MCP, account credits 21/10 owner yes in line-1 chat, maxlist line 1), studio re-shoot of the Watermelon bottle cropped from the shop poster (maxlist-2010/in/dm-watermelon.png), mid-grey backdrop; pick watermelon-b (Higgsfield 185308 73cf2868); label and shoulders cut by colour key vs the backdrop (maxlist-2010/dm/grapecut.js T16, clipped to the label edge x 579-1264 below row 1100; checker #674 r1: the shape cut left a notch on the left label edge), base from the shape cut + basefix.js, alpha erode 2 px - copy beside this source",
    "reference": "maneevp.com Doublemint Salt Nic group poster (https://maneevp.com/product/doublemint-salt-nic-30ml-nic30/) - _incoming/maxlist-2010/ref/dm/p2.jpg",
    "fidelitySheet": "_incoming/maxlist-2010/dm/cmp-watermelon.jpg (poster crop vs both renders: RIGLEY'S / DOUBLEMINT / CHEWING GUM / flavour / SALT NIC / 30mg letter by letter, label colour, cap), _incoming/maxlist-2010/dm/k/sheet.jpg (cut on the site background)"
   }
