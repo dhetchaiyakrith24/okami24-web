@@ -921,6 +921,12 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
   }
 }
 @keyframes okh-float-calm { 0%, 100% { transform: translateY(-2.5px); } 50% { transform: translateY(2.5px); } }
+/* reduced motion / Save-Data stay still for the flying photos too (the rule above out-ranks the plain .okh-float
+   off-switches further down — checker #671 r1) */
+@media (prefers-reduced-motion: reduce) {
+  .okh-prod[data-flying] .okh-float { animation: none; }
+}
+html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
 @keyframes okh-float { 0%, 100% { transform: translateY(-6px); } 50% { transform: translateY(6px); } }
 
 .okh-meta {
