@@ -22,7 +22,7 @@ export const brands: Brand[] = [
     description:
       "A device manufacturer spanning four current product series — ARGUS, DRAG, VINCI, and V — ranging from compact beginner pod kits to high-output, chip-driven pod mods with GENE-series firmware and swappable resistance pod platforms.",
     descriptionTh:
-      "VOOPOO ผู้ผลิตพอตคิทสาย ARGUS DRAG VINCI และ VMATE ตั้งแต่รุ่นเล็กสำหรับมือใหม่ไปจนถึง DRAG 6 ที่ให้ได้ถึง 220 วัตต์ ที่ร้านมีทั้งตัวเครื่อง หัวพอต และคอยล์แท้",
+      "VOOPOO เป็นผู้ผลิตพอตซิสเต็มหลายตระกูล ทั้ง ARGUS DRAG VINCI และ VMATE มีตั้งแต่รุ่นเล็กสำหรับมือใหม่ไปจนถึง DRAG 6 ที่ปรับได้สูงสุด 220 วัตต์ ที่ร้านมีทั้งตัวเครื่อง หัวพอต และคอยล์แท้",
     referenceUrl: "https://www.voopoo.com/",
   },
   {
@@ -87,7 +87,7 @@ export const brands: Brand[] = [
       "A disposable-vape brand offering both single-use ESKO BAR Disposable devices and the ESKO BAR SWITCH reusable pod system.",
     descriptionTh:
       // Round SEO D batch 5 (owner 07/10): the Thai name people type ("เอสโคบาร์", autocomplete 07/10), one mention.
-      "ESKO BAR หรือที่หลายคนเรียกว่าเอสโคบาร์ เป็นแบรนด์พอตใช้แล้วทิ้งและเครื่องระบบสวิตช์ ที่ร้านมี Esko Bar Switch 20K เครื่องที่เปลี่ยนแค่หัวพอตบรรจุสำเร็จ ไม่ต้องเติมน้ำยา",
+      "ESKO BAR หรือที่หลายคนเรียกว่าเอสโคบาร์ เป็นแบรนด์พอตใช้แล้วทิ้งและเครื่องระบบสวิตช์ ที่ร้านมีทั้ง ESKO BAR 20000 พอตใช้แล้วทิ้ง 22 กลิ่น กับ Esko Bar Switch 20K ตัวเครื่องที่ใช้ซ้ำได้ เปลี่ยนแค่หัวพอตบรรจุสำเร็จ และมีหัวพอต 20 กลิ่นแยกขาย",
     referenceUrl: "https://eskobarvape.com/",
   },
   {
@@ -211,11 +211,11 @@ export const brands: Brand[] = [
     name: "RELX",
     fullName: "RELX (Shenzhen RELX Technology Co., Ltd)",
     tagline: "A global closed-pod and disposable vape brand.",
-    taglineTh: "พอตใช้แล้วทิ้งและพอตระบบสวิตช์",
+    taglineTh: "พอตใช้แล้วทิ้งและพอตเปลี่ยนหัว",
     description:
-      "A major international vape brand (relxnow.com, self-described \"RELX Global Official\") spanning a modular closed-pod system (RELX Creator Pro device + Creator Pod cartridges) alongside standalone high-puff disposables such as Smash GO.",
+      "A major international vape brand (relxnow.com). The shop carries the Smash Go 12K and LUMI 18K disposables, and two switch-pod devices: the Infinity 2 Plus, which takes the RELX Pod family, and the RELX Creator, which takes RELX Creator Pods.",
     descriptionTh:
-      "RELX แบรนด์พอตรายใหญ่ระดับสากล ที่ร้านมี Smash Go 12K พอตใช้แล้วทิ้งจากไลน์อัพทางการ รองรับสูงสุด 12,000 พัฟ มีให้เลือก 10 รส",
+      "RELX แบรนด์พอตรายใหญ่ระดับสากล ที่ร้านมีพอตใช้แล้วทิ้ง Smash Go 12K กับ LUMI 18K รวมถึงเครื่องระบบสวิตช์ RELX Creator กับ Infinity 2 Plus ที่ใช้หัวพอตบรรจุสำเร็จของ RELX",
     referenceUrl: "https://www.relxnow.com/",
   },
   {

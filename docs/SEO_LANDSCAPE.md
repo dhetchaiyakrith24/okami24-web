@@ -71,7 +71,7 @@
 |---|---|---|---|---|
 | esko bar · esko · ชื่อเรียก "เอสโคบาร์" | **esko bar 0/87 3.6** · esko 0/3 · esko bar vape 0/1 · eskobarvape 0/1 · eski bar 0/1 · eskbar 0/1 | `/brands/esko-bar` | esko bar → brands/esko-bar 0/87 | **ก้อน 4: head ใหม่** (ติดหน้า 1 แต่ไม่มีคนกด) |
 | esko bar switch 20k | esko bar switch 20k 0/7 9.1 · esko switch 0/2 1.0 · esko bar switch 0/1 · …kit 0/1 · …ราคา 0/1 · หัว esko bar 1/1 · หัว esko 0/2 | `/products/pod-159` | 20k → pod-159 0/7 | brands/esko-bar ถอยชื่อรุ่น+ราคาออกจาก title (ก้อน 4) |
-| esko bar 20k (ตัวไม่สวิตช์) | esko bar 20k 0/3 16.7 | — | — | **หน้าที่ขาด** [ยังไม่มีข้อมูล ร้านขายไหม] |
+| esko bar 20k (ตัวไม่สวิตช์) | esko bar 20k 0/3 16.7 | `/products/esko-bar-20k` (ลงแล้ว — ร้านขาย ESKO BAR 20000) | — | หน้ามีแล้ว · หน้าแบรนด์ถอยชื่อรุ่น (20/10) |
 | joiway · ชื่อเรียก "จอยเวย์" | **joiway 1/120 6.3** · joi way 0/4 · joiway ราคา 0/4 · joway pod 0/3 · joiway pod 0/2 · pod joiway 0/2 · joiwat 0/2 · joiway vape 0/1 · joiwy 0/1 · oiway 0/1 · pot joiway 0/1 · พอ ต joiway ราคา 0/1 · บุหรี่ไฟฟ้า joiway 0/1 | `/brands/joiway` | joiway → brands/joiway 1/120 | **ก้อน 4: head ใหม่** |
 | joiway f4 · double flavor | joiway f4 0/10 10.3 · joiway double flavor 0/3 10 | `/products/joiway-f4` | **f4 → brands/joiway 0/10 (หน้าแบรนด์แย่ง)** | ก้อน 4: brand ถอยชื่อรุ่น/ราคา · meta ของ F4 ไม่มีคำ "F4" → เติม |
 | joiway f3 | joiway f3 0/1 4.0 | `/products/joiway-f3` | — | — |

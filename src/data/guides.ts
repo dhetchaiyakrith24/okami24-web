@@ -210,7 +210,7 @@ const allGuides: Guide[] = [
         // Owner's genuine-check ruling (2026-09-21, Q2=ก): exactly three parts, no brand beyond the
         // two with a verified official check page, claim wording = BSOT §12 only.
         question: "How do I check a product is genuine?",
-        answer: "Salthub products such as the M Bar 9K and M Switch have a QR code and serial number on the box; check them on Salthub's official site at salthub.com/authenticate. Uwell products such as the Caliburn have a scratch-off strip on the box with a QR code and numeric code underneath; check them at myuwell.com/verify. If the product fails the check, send the result and your unboxing video to the shop on LINE within 7 days; the shop will review it and let you know whether it will replace the item or refund you. For any other problem, claim within 7 days with an unboxing video; the shop replaces the same item or swaps to a model of the same price, with no cash refund, and replies within 3 business days.",
+        answer: "Salthub products such as the M Bar 9K and M Switch are checked on Salthub's official site at salthub.com/authenticate by photographing the authentication label on the box. Uwell products such as the Caliburn have a scratch-off strip on the box with a QR code and numeric code underneath; check them at myuwell.com/verify. If the product fails the check, send the result and your unboxing video to the shop on LINE within 7 days; the shop will review it and let you know whether it will replace the item or refund you. For any other problem, claim within 7 days with an unboxing video; the shop replaces the same item or swaps to a model of the same price, with no cash refund, and replies within 3 business days.",
       },
     ],
   },
@@ -351,7 +351,7 @@ const allGuides: Guide[] = [
       },
       {
         question: "How do I check a product is genuine?",
-        answer: "Salthub products such as the M Bar and M Switch have a QR code and serial number on the box; check them on Salthub's official site at salthub.com/authenticate. Uwell products such as the Caliburn have a scratch-off strip on the box with a QR code and numeric code underneath; check them at myuwell.com/verify. If the product fails the check, send the result and your unboxing video to the shop on LINE within 7 days; the shop will review it and let you know whether it will replace the item or refund you. For any other problem, claim within 7 days with an unboxing video; the shop replaces the same item or swaps to a model of the same price, with no cash refund, and replies within 3 business days.",
+        answer: "Salthub products such as the M Bar and M Switch are checked on Salthub's official site at salthub.com/authenticate by photographing the authentication label on the box. Uwell products such as the Caliburn have a scratch-off strip on the box with a QR code and numeric code underneath; check them at myuwell.com/verify. If the product fails the check, send the result and your unboxing video to the shop on LINE within 7 days; the shop will review it and let you know whether it will replace the item or refund you. For any other problem, claim within 7 days with an unboxing video; the shop replaces the same item or swaps to a model of the same price, with no cash refund, and replies within 3 business days.",
       },
       {
         question: "How is an open-system pod different from Marbo?",
@@ -2113,7 +2113,7 @@ const allGuides: Guide[] = [
           "VOOPOO DRAG รุ่นไหนดี ขึ้นอยู่กับว่าคุณอยากได้อะไรจากเครื่อง ร้านเราจึงไม่จัดอันดับ แต่สรุปตามการใช้งานไว้ให้แบบนี้",
           "ถ้าอยากได้วัตต์สูง จอใหญ่ และปรับค่าได้ละเอียดด้วยล้อหมุน ลองดู DRAG 6 ถ้าอยากได้เครื่องตัวเล็กที่มีแบตในตัว และสูบ MTL หรือ RDL เป็นหลัก ลองดู DRAG S3 และถ้าชอบใช้ถ่านที่ถอดเปลี่ยนได้กับจอทัช ลองดู DRAG X3",
           "ถ้าเพิ่งเริ่มใช้พอตเป็นเครื่องแรก และยังไม่แน่ใจว่าต้องการเครื่องวัตต์สูงแบบ DRAG หรือเปล่า อ่าน [Pod System ตัวไหนดี เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system) ก่อนได้",
-          "ส่วน DRAG X ใช้ถ่าน 18650 หนึ่งก้อนที่ซื้อแยก ตั้งได้ 5–80 วัตต์ และใช้คอยล์ตระกูล PnP สเปกทั้งหมดอยู่ที่หน้าสินค้าของรุ่นนี้",
+          "ส่วน [DRAG X](/products/drag-x) ใช้ถ่าน 18650 หนึ่งก้อนที่ซื้อแยก ตั้งได้ 5–80 วัตต์ และใช้คอยล์ตระกูล PnP สเปกทั้งหมดอยู่ที่หน้าสินค้าของรุ่นนี้",
           "ราคาของแต่ละรุ่นดูได้ที่หน้าสินค้าของรุ่นนั้น และถ้าอยากถามเรื่องสีหรือรุ่นที่มีของตอนนี้ ทักไลน์ @okm24 ได้เลย",
         ],
       },
@@ -2132,7 +2132,7 @@ const allGuides: Guide[] = [
     // the switch-system devices on the storefront, grouped by what the buyer wants. "พอตเปลี่ยนหัว" in title/H1 = owner item 65
     // (16/10, THAI_STYLE round 10B line). Numbers = verified spec rows of salthub.ts / relx.ts / Pod-159 (eskobarvape) / flavour
     // lists (thai-copy 16/10, sources in the round's b4-switch-draft.md). Muro Connector puffs left out (retailer source only).
-    // No link to m-switch-kit / pod-159 / infy-20k until the 22/10 GSC read (SEO_BASELINE watch rows) — HANDOFF §16 3s.
+    // Links to m-switch-kit / pod-159 / infy-20k added 20/10 (owner lifted the 22/10 hold).
     id: "choosing-a-switch-pod",
     slug: "choosing-a-switch-pod",
     title: "พอตเปลี่ยนหัว รุ่นไหนดี ยี่ห้อไหนดี ดูจากอะไร",
@@ -2147,7 +2147,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "เครื่องระบบสวิตช์รุ่นไหนดี หรือยี่ห้อไหนดี คำตอบขึ้นอยู่กับว่าคุณอยากได้อะไรจากเครื่อง บางคนอยากได้พัฟต่อหัวเยอะ บางคนอยากมีจอไว้ดูแบต บางคนอยากได้กลิ่นให้เลือกเยอะ หรืออยากได้เครื่องตัวเล็กไว้พกติดตัว ร้านเราจึงไม่จัดอันดับ แต่แยกรุ่นที่มีบนเว็บให้ดูตามความต้องการทีละแบบ",
           "พอตเปลี่ยนหัวคือพอตที่เก็บเครื่องไว้ชาร์จใช้ต่อ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จเมื่อหัวเดิมหมด ไม่ต้องเติมน้ำยาเอง บนเว็บเรารวมเครื่องแบบนี้ไว้ในหมวด[พอตเปลี่ยนหัว](/products/switch-pods) และเรียกตัวเครื่องว่าเครื่องระบบสวิตช์",
-          "รุ่นที่มีบนเว็บตอนนี้ ของ SALTHUB มี M Switch Kit · [Zero Pro](/products/zero-pro) · [Zero Nano](/products/zero-nano) ของ RELX มี [RELX Creator](/products/relx-creator) กับ [RELX Infinity 2 Plus](/products/relx-infinity-2-plus) ของ Esko Bar มี Esko Bar Switch 20K ของ WOTOFO มี [nexPOD 15K Pro Kit](/products/nexpod-15k) ของ KS มี [KS Quikpro 15K Kit](/products/ks-quikpro-kit) และอีกรุ่นที่ไม่ได้ระบุยี่ห้อคือ [Nexswitch 16K Kit](/products/nexswitch-16k-kit)",
+          "รุ่นที่มีบนเว็บตอนนี้ ของ SALTHUB มี [M Switch Kit](/products/m-switch-kit) · [Zero Pro](/products/zero-pro) · [Zero Nano](/products/zero-nano) ของ RELX มี [RELX Creator](/products/relx-creator) กับ [RELX Infinity 2 Plus](/products/relx-infinity-2-plus) ของ Esko Bar มี [Esko Bar Switch 20K](/products/pod-159) ของ WOTOFO มี [nexPOD 15K Pro Kit](/products/nexpod-15k) ของ KS มี [KS Quikpro 15K Kit](/products/ks-quikpro-kit) และอีกรุ่นที่ไม่ได้ระบุยี่ห้อคือ [Nexswitch 16K Kit](/products/nexswitch-16k-kit)",
           "ถ้ายังลังเลว่าจะเลือกเครื่องระบบสวิตช์หรือพอตใช้แล้วทิ้ง อ่าน[พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)ก่อนได้ บทความนี้พูดถึงการเลือกรุ่นอย่างเดียว",
         ],
       },
@@ -2155,7 +2155,7 @@ const allGuides: Guide[] = [
         heading: "ก่อนเลือกตัวเครื่อง ดูหัวพอตไปด้วย",
         paragraphs: [
           "ตัวเครื่องซื้อครั้งเดียว แต่หัวพอตต้องซื้อไปเรื่อย ๆ ตลอดที่ใช้ ร้านเราจึงแนะนำให้ดูหัวพอตของรุ่นนั้นไปพร้อมกัน ว่าหัวละกี่พัฟ มีกลิ่นให้เลือกเท่าไหร่ และใส่กับเครื่องรุ่นไหนได้บ้าง",
-          "[M Switch Pod](/products/m-switch-pod) ใช้กับตัวเครื่อง M Switch Kit ส่วน [Zero Cartridge](/products/zero-cartridge) หัวเดียวกันใส่ได้ทั้ง Zero Pro และ Zero Nano ถ้ามีสองเครื่องก็ใช้หัวร่วมกันได้ Esko Bar Switch 20K ใช้หัวพอตของ Esko Bar Switch เอง และ RELX Creator ใส่ได้ทั้งหัว RELX Creator Pod กับหัว [Muro Connector](/products/muro-connector-20k) สองรุ่นนี้ร้านยืนยันจากของจริงที่มีอยู่",
+          "[M Switch Pod](/products/m-switch-pod) ใช้กับตัวเครื่อง [M Switch Kit](/products/m-switch-kit) ส่วน [Zero Cartridge](/products/zero-cartridge) หัวเดียวกันใส่ได้ทั้ง Zero Pro และ Zero Nano ถ้ามีสองเครื่องก็ใช้หัวร่วมกันได้ Esko Bar Switch 20K ใช้หัวพอตของ [Esko Bar Switch](/products/esko-bar-switch-pod) เอง และ RELX Creator ใส่ได้ทั้งหัว RELX Creator Pod กับหัว [Muro Connector](/products/muro-connector-20k) สองรุ่นนี้ร้านยืนยันจากของจริงที่มีอยู่",
           "RELX Infinity 2 Plus ใส่ได้ทั้งหัว RELX Pod · RELX Pod Pro และ RELX Pod Pro 2 ซึ่ง RELX ระบุไว้ว่าเป็นหัวพอตบรรจุสำเร็จขนาด 1.9mL หัวละสูงสุด 600 พัฟ ตอนนี้หัวพอตกลุ่มนี้ยังไม่มีขายบนเว็บเรา",
           "สามรุ่นที่เหลือมีหัวพอตมาในกล่องหนึ่งหัว เมื่อหัวหมด ของ KS ใช้หัว [KS Quikpro 15K Cartridge](/products/pod-150) ซึ่ง KS ตอบไว้ว่าถอดเปลี่ยนได้ แต่เติมน้ำยาเองไม่ได้ ของ Nexswitch ใช้หัว [Nexswitch 16K Pod](/products/nexswitch-16k-pod) ส่วน nexPOD 15K มาพร้อมหัวพอตบรรจุสำเร็จ และใส่หัวแบบเติมน้ำยาเองที่ WOTOFO ขายแยกได้ด้วย",
           "ถ้าต้องการหัวพอตที่ยังไม่มีบนเว็บ หรือจะใช้หัวพอตแบบอื่นนอกจากที่บอกไว้ ทักไลน์ @okm24 ถามร้านก่อนได้",
@@ -2164,7 +2164,7 @@ const allGuides: Guide[] = [
       {
         heading: "อยากได้พัฟต่อหัวเยอะ ดูรุ่น 20K กับ 15K",
         paragraphs: [
-          "ถ้ากำลังหาเครื่องระบบสวิตช์รุ่น 20K บนเว็บเรามี Esko Bar Switch 20K ที่ผู้ผลิตระบุไว้หัวละสูงสุด 20,000 พัฟ ถัดลงมาคือ Nexswitch 16K Kit ซึ่งข้อมูลที่มากับสินค้าระบุไว้หัวละสูงสุด 16,000 พัฟ",
+          "ถ้ากำลังหาเครื่องระบบสวิตช์รุ่น 20K บนเว็บเรามี [Esko Bar Switch 20K](/products/pod-159) ที่ผู้ผลิตระบุไว้หัวละสูงสุด 20,000 พัฟ ถัดลงมาคือ Nexswitch 16K Kit ซึ่งข้อมูลที่มากับสินค้าระบุไว้หัวละสูงสุด 16,000 พัฟ",
           "ส่วนรุ่น 15K มีให้ดูสามรุ่น เริ่มจาก M Switch ของ SALTHUB ตระกูลเดียวกับที่หลายร้านเรียกว่า Marbo ใช้หัวพอต M Switch Pod ที่ SALTHUB ระบุไว้หัวละสูงสุด 15,000 พัฟ และร้านเราเรียกชุดนี้ว่า M Bar 15K หรือ Marbo 15K",
           "อีกสองรุ่นคือ nexPOD 15K ของ WOTOFO ใช้หัวบรรจุสำเร็จขนาด 18mL กับ KS Quikpro ที่ใช้หัวขนาด 15mL ผู้ผลิตทั้งสองเจ้าระบุไว้หัวละสูงสุด 15,000 พัฟเท่ากัน",
           "ส่วนตระกูล Zero โปสเตอร์ Zero Pro ของ SALTHUB ระบุไว้ที่ 5,000 พัฟ ตระกูลนี้มีเรื่องอื่นให้เลือกมากกว่า อย่างโหมดและขนาดเครื่อง ตามหัวข้อด้านล่าง",
@@ -2175,7 +2175,7 @@ const allGuides: Guide[] = [
       {
         heading: "อยากมีจอไว้ดูแบต",
         paragraphs: [
-          "รุ่นที่ผู้ผลิตเขียนเรื่องจอไว้ชัดมีสามรุ่น RELX Creator มีจอพิกเซลที่โชว์หน้าอีโมจิ กดปุ่มครั้งเดียวก็ดูแบตได้ M Switch Kit มีจอดิจิทัลบอกระดับแบต แสดงทั้งตอนกำลังชาร์จและเมื่อชาร์จเต็ม ส่วน nexPOD 15K มีจอบอกทั้งระดับแบตและวัตต์ที่ใช้อยู่",
+          "รุ่นที่ผู้ผลิตเขียนเรื่องจอไว้ชัดมีสามรุ่น RELX Creator มีจอพิกเซลที่โชว์หน้าอีโมจิ กดปุ่มครั้งเดียวก็ดูแบตได้ [M Switch Kit](/products/m-switch-kit) มีจอดิจิทัลบอกระดับแบต แสดงทั้งตอนกำลังชาร์จและเมื่อชาร์จเต็ม ส่วน nexPOD 15K มีจอบอกทั้งระดับแบตและวัตต์ที่ใช้อยู่",
           "ส่วน RELX Infinity 2 Plus ไม่มีจอ แต่ใช้ไฟบอกระดับแบต 4 ขั้นแทน ดูได้ว่าแบตเหลือประมาณเท่าไหร่",
           "RELX Creator ขายเฉพาะตัวเครื่อง หัวพอตซื้อแยก ตัวเครื่องมีแบต 800mAh และกดปุ่มสองครั้งติดกันเพื่อสลับระหว่าง 15 วัตต์ในโหมด Normal กับ 25 วัตต์ในโหมด Boost",
         ],
@@ -2217,14 +2217,14 @@ const allGuides: Guide[] = [
       {
         heading: "แล้ว INFY เปลี่ยนหัวได้ไหม",
         paragraphs: [
-          "หลายคนถามด้วยว่า INFY เปลี่ยนหัวได้ไหม INFY 20K ที่มีบนเว็บเราเป็นพอตใช้แล้วทิ้ง ใช้จนหมดแล้วเปลี่ยนทั้งเครื่อง ร้านยืนยันความจุ 20mL และช่องลมที่ปรับได้ ถ้ากำลังมองหาหัวพอตของ INFY สำหรับเปลี่ยน ทักไลน์ @okm24 ถามร้านก่อนได้",
+          "หลายคนถามด้วยว่า INFY เปลี่ยนหัวได้ไหม [INFY 20K](/products/infy-20k) ที่มีบนเว็บเราเป็นพอตใช้แล้วทิ้ง ใช้จนหมดแล้วเปลี่ยนทั้งเครื่อง ร้านยืนยันความจุ 20mL และช่องลมที่ปรับได้ ถ้ากำลังมองหาหัวพอตของ INFY สำหรับเปลี่ยน ทักไลน์ @okm24 ถามร้านก่อนได้",
         ],
       },
       {
         heading: "สรุปสั้น ๆ ก่อนเลือก",
         paragraphs: [
           "ถ้าอยากได้พัฟต่อหัวเยอะ ดู Esko Bar Switch 20K ที่ผู้ผลิตระบุไว้หัวละสูงสุด 20,000 พัฟ หรือ Nexswitch 16K Kit ที่ระบุไว้หัวละสูงสุด 16,000 พัฟ ส่วนรุ่น 15K มีให้เลือกสามรุ่น คือ M Switch · nexPOD 15K และ KS Quikpro",
-          "ถ้าอยากมีจอไว้ดูแบต ลองดู RELX Creator · M Switch Kit หรือ nexPOD 15K Pro Kit ถ้าอยากปรับแรงสูบได้ ดู Zero Pro · RELX Infinity 2 Plus · Esko Bar Switch 20K · nexPOD 15K Pro Kit หรือ RELX Creator",
+          "ถ้าอยากมีจอไว้ดูแบต ลองดู RELX Creator · [M Switch Kit](/products/m-switch-kit) หรือ nexPOD 15K Pro Kit ถ้าอยากปรับแรงสูบได้ ดู Zero Pro · RELX Infinity 2 Plus · Esko Bar Switch 20K · nexPOD 15K Pro Kit หรือ RELX Creator",
           "ถ้าเน้นแบตอึด nexPOD 15K Pro Kit มีแบต 1200mAh ตามที่ WOTOFO ระบุ และถ้าอยากชาร์จได้ไว RELX Infinity 2 Plus ชาร์จได้ 80% ใน 15 นาทีตามที่ RELX ระบุ",
           "ถ้าอยากได้เครื่องตัวเล็กไว้พกติดตัว ลองดู Zero Nano หรือ Zero Pro และถ้าใช้ M Bar อยู่แล้ว M Switch ก็เป็นของ SALTHUB เจ้าเดียวกัน",
           "ราคาตัวเครื่องและหัวพอตของแต่ละรุ่นดูได้ที่หน้าสินค้าของรุ่นนั้น หรือดูรวมในหมวดพอตเปลี่ยนหัวกับหัวพอต",
@@ -2242,7 +2242,7 @@ const allGuides: Guide[] = [
       { question: "Zero Cartridge ใส่กับเครื่องไหนได้บ้าง", answer: "ใส่ได้ทั้ง Zero Pro และ Zero Nano ของ SALTHUB หัวเดียวกันใช้ได้ทั้งสองเครื่อง" },
       { question: "INFY 20K เปลี่ยนหัวได้ไหม", answer: "INFY 20K ที่มีบนเว็บเราเป็นพอตใช้แล้วทิ้ง ใช้จนหมดแล้วเปลี่ยนทั้งเครื่อง ร้านยืนยันความจุ 20mL ไว้ ถ้ากำลังมองหาหัวพอตของ INFY สำหรับเปลี่ยน ทักไลน์ @okm24 ถามร้านก่อนได้" },
     ],
-    relatedProductSlugs: ["relx-creator", "zero-pro", "zero-nano", "m-switch-pod", "zero-cartridge"],
+    relatedProductSlugs: ["m-switch-kit", "pod-159", "relx-creator", "zero-pro", "zero-nano", "m-switch-pod", "zero-cartridge"],
     reviewVideo: { videoId: "d0BYge07CeY", title: "5 พอตใช้แล้วทิ้งเปลี่ยนหัวได้ 2026", channelName: "OKAMI", publishedAt: "2026-07-22" },
   },
   {
@@ -2250,7 +2250,7 @@ const allGuides: Guide[] = [
     // one article over every disposable on the storefront (no X-vs-Y pages — doorway risk). Numbers = verified spec rows and
     // maker-poster feature blocks already on each product page; INFY = shop-confirmed rows (THAI_STYLE §5); Muro numbers unsaid
     // (retailer source). MOOOD = 19 flavours (its 21 options count two nicotine variants). Joiway F4 / INFY 20K / pod-159 links
-    // wait for the 22/10 read (HANDOFF §16 3s).
+    // added 20/10 (owner lifted the 22/10 hold).
     id: "choosing-a-disposable",
     slug: "choosing-a-disposable",
     title: "พอตใช้แล้วทิ้ง ยี่ห้อไหนดี ตัวไหนดี ดูจากอะไร",
@@ -2264,7 +2264,7 @@ const allGuides: Guide[] = [
         heading: "พอตใช้แล้วทิ้ง ยี่ห้อไหนดี ตัวไหนดี",
         paragraphs: [
           "พอตใช้แล้วทิ้งยี่ห้อไหนดี ตัวไหนดี ไม่มีคำตอบเดียวที่ใช้ได้กับทุกคน เพราะแต่ละคนมองหาไม่เหมือนกัน บางคนอยากได้รุ่นที่พัฟเยอะ บางคนอยากมีจอไว้ดูแบต บางคนอยากได้กลิ่นให้เลือกเยอะ หรืออยากได้สองกลิ่นในเครื่องเดียว ร้านเราจึงไม่จัดอันดับ แต่แยกรุ่นที่มีบนเว็บให้ดูตามสิ่งที่คุณอยากได้ทีละแบบ",
-          "ตอนนี้บนเว็บเรามีพอตใช้แล้วทิ้งจากหลายยี่ห้อ SALTHUB มี [M Bar 9K](/products/m-bar-9k) กับ [M Bar 10K](/products/m-bar-10k) RELX มี [RELX Smash Go 12K](/products/relx-smash-go-12k) JOIWAY มี Joiway F3 กับ Joiway F4 TFIT มี [TFIT M Power 20K](/products/tfit-m-power-20k) WOTOFO มี [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) MOOOD มี [MOOOD Monster 14K Puffs](/products/mood-monster-14k) และ INFY มี INFY 20K นอกจากนี้ยังมี [nexBar CLEAR 18K](/products/pod-180) กับ [Muro SC 8000 Puffs](/products/muro-sc-8000) ที่บนเว็บไม่ได้ระบุแบรนด์",
+          "ตอนนี้บนเว็บเรามีพอตใช้แล้วทิ้งจากหลายยี่ห้อ SALTHUB มี [M Bar 9K](/products/m-bar-9k) กับ [M Bar 10K](/products/m-bar-10k) RELX มี [RELX Smash Go 12K](/products/relx-smash-go-12k) JOIWAY มี [Joiway F3](/products/joiway-f3) กับ [Joiway F4](/products/joiway-f4) TFIT มี [TFIT M Power 20K](/products/tfit-m-power-20k) WOTOFO มี [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) MOOOD มี [MOOOD Monster 14K Puffs](/products/mood-monster-14k) และ INFY มี [INFY 20K](/products/infy-20k) นอกจากนี้ยังมี [nexBar CLEAR 18K](/products/pod-180) กับ [Muro SC 8000 Puffs](/products/muro-sc-8000) ที่บนเว็บไม่ได้ระบุแบรนด์",
           "ถ้ายังลังเลว่าจะเอาพอตใช้แล้วทิ้ง หรืออยากเก็บตัวเครื่องไว้แล้วเปลี่ยนแค่หัว อ่าน [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) ก่อนได้ ส่วนถ้ากำลังชั่งกับพอตที่เติมน้ำยาเอง อ่าน [พอตใช้แล้วทิ้ง หรือพอตซิสเต็ม](/guides/open-system-vs-disposable) บทความนี้พูดถึงการเลือกรุ่นอย่างเดียว",
         ],
       },
@@ -2339,7 +2339,7 @@ const allGuides: Guide[] = [
         heading: "INFY กับ Esko Bar ต่างกันยังไง",
         paragraphs: [
           "INFY กับ Esko Bar มีรุ่น 20K บนเว็บเราทั้งคู่ แต่เป็นพอตคนละแบบ INFY 20K เป็นพอตใช้แล้วทิ้ง ใช้จนหมดแล้วเปลี่ยนทั้งเครื่อง ร้านยืนยันความจุไว้ 20mL และปรับช่องลมได้ บนหน้าสินค้ามีให้ดู 24 กลิ่น",
-          "ส่วน Esko Bar Switch 20K เป็นเครื่องระบบสวิตช์ เก็บตัวเครื่องไว้ชาร์จใช้ต่อ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จ Esko Bar ระบุไว้หัวละสูงสุด 20,000 พัฟ หัวพอตจุ 18mL ตัวเครื่องแบต 850mAh มีโหมด High กับ Low และปรับช่องลมได้ 3 ระดับ",
+          "ส่วน [Esko Bar Switch 20K](/products/pod-159) เป็นเครื่องระบบสวิตช์ เก็บตัวเครื่องไว้ชาร์จใช้ต่อ แล้วเปลี่ยนแค่หัวพอตบรรจุสำเร็จ Esko Bar ระบุไว้หัวละสูงสุด 20,000 พัฟ หัวพอตจุ 18mL ตัวเครื่องแบต 850mAh มีโหมด High กับ Low และปรับช่องลมได้ 3 ระดับ",
           "ถ้าอยากแกะแล้วใช้ได้เลย หมดแล้วเปลี่ยนใหม่ทั้งเครื่อง INFY 20K ตรงกว่า ถ้าอยากเก็บตัวเครื่องไว้ใช้ต่อ Esko Bar Switch 20K ตรงกว่า สองแบบนี้ต่างกันยังไง อ่านต่อได้ที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod) และถ้ากำลังเทียบ Esko Bar Switch 20K กับ M Switch ร้านเทียบไว้ทีละข้อที่ [Esko Bar Switch 20K กับ M Switch](/guides/esko-bar-switch-vs-m-switch)",
         ],
       },
@@ -2370,7 +2370,7 @@ const allGuides: Guide[] = [
   {
     // Round "SEO all keys" batch 4 (SEO_LANDSCAPE §9.2 #3 — "พอตกลิ่นไหนดี · มีกลิ่นอะไรบ้าง · ไม่เย็น"): flavour names grouped by
     // the words in the name only (never a taste or popularity claim). Lists = flavorVariants of each product file; Muro + INFY
-    // lists come from retailer pages, so the text says "กลิ่นที่หน้าสินค้ารวมไว้". INFY 20K / JOIWAY F4 links wait for 22/10.
+    // lists come from retailer pages, so the text says "กลิ่นที่หน้าสินค้ารวมไว้". INFY 20K / JOIWAY F3 / F4 links added 20/10.
     id: "choosing-a-pod-flavor",
     slug: "choosing-a-pod-flavor",
     title: "พอตกลิ่นไหนดี เลือกจากสายที่ชอบ ทั้งเย็น ผลไม้ ชา หรือยาสูบ",
@@ -2391,8 +2391,8 @@ const allGuides: Guide[] = [
       {
         heading: "สายเย็น: ชื่อที่มี Ice · Mint · Menthol · Blast · Freeze",
         paragraphs: [
-          "จากที่ร้านเจอ กลิ่นเย็นเป็นสายที่ลูกค้าถามถึงบ่อย และในสายนี้ยังแยกได้อีกสองแบบ แบบแรกคือชื่อที่มีแค่ Mint หรือ Menthol ไม่มีผลไม้อยู่ในชื่อ อย่าง Double Mint ใน [TFIT M Power 20K](/products/tfit-m-power-20k) และ [RELX Smash Go 12K](/products/relx-smash-go-12k) หรือ Mint ใน [MOOOD Monster 14K](/products/mood-monster-14k) ส่วนคนที่มองหากลิ่นเมนทอล มี Extreme Menthol ใน [Muro SC 8000](/products/muro-sc-8000) และ Menthol Freeze ใน INFY 20K",
-          "แบบที่สองคือชื่อที่มีผลไม้คู่กับคำที่สื่อถึงความเย็น สองรุ่นที่มีกลิ่นแบบนี้ให้เลือกหลายกลิ่น ได้แก่ JOIWAY F3 เช่น Lychee Ice · Green Apple Ice · Hokkaido Melon Ice และ [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) เช่น Mango Ice · Peach Ice · Pomegranate Ice",
+          "จากที่ร้านเจอ กลิ่นเย็นเป็นสายที่ลูกค้าถามถึงบ่อย และในสายนี้ยังแยกได้อีกสองแบบ แบบแรกคือชื่อที่มีแค่ Mint หรือ Menthol ไม่มีผลไม้อยู่ในชื่อ อย่าง Double Mint ใน [TFIT M Power 20K](/products/tfit-m-power-20k) และ [RELX Smash Go 12K](/products/relx-smash-go-12k) หรือ Mint ใน [MOOOD Monster 14K](/products/mood-monster-14k) ส่วนคนที่มองหากลิ่นเมนทอล มี Extreme Menthol ใน [Muro SC 8000](/products/muro-sc-8000) และ Menthol Freeze ใน [INFY 20K](/products/infy-20k)",
+          "แบบที่สองคือชื่อที่มีผลไม้คู่กับคำที่สื่อถึงความเย็น สองรุ่นที่มีกลิ่นแบบนี้ให้เลือกหลายกลิ่น ได้แก่ [JOIWAY F3](/products/joiway-f3) เช่น Lychee Ice · Green Apple Ice · Hokkaido Melon Ice และ [WOTOFO nexBAR 18K](/products/wotofo-nexbar-18k) เช่น Mango Ice · Peach Ice · Pomegranate Ice",
           "ชื่อที่ควรระวังคือชื่อที่มีคำว่า Ice Cream อย่าง Vanilla Ice Cream ใน [Muro Connector 20K](/products/muro-connector-20k) คำนี้หมายถึงไอศกรีม ไม่ได้บอกความเย็น เราจึงจัดไว้สายชา นม และขนม",
         ],
       },
@@ -2442,7 +2442,7 @@ const allGuides: Guide[] = [
       {
         heading: "ยังเลือกไม่ได้ หรืออยากเปลี่ยนกลิ่นบ่อย",
         paragraphs: [
-          "ถ้าตัดสินใจไม่ได้ระหว่างสองกลิ่น JOIWAY F4 มาเป็นคู่กลิ่นในเครื่องเดียว น้ำยาสองกลิ่นแยกกันอยู่คนละถังน้ำยา หมุนปากดูดเพื่อสลับกลิ่น เช่น Grape Ice + Lychee Ice หรือ Rainbow Candy + Strawberry Ice",
+          "ถ้าตัดสินใจไม่ได้ระหว่างสองกลิ่น [JOIWAY F4](/products/joiway-f4) มาเป็นคู่กลิ่นในเครื่องเดียว น้ำยาสองกลิ่นแยกกันอยู่คนละถังน้ำยา หมุนปากดูดเพื่อสลับกลิ่น เช่น Grape Ice + Lychee Ice หรือ Rainbow Candy + Strawberry Ice",
           "ถ้าอยากเปลี่ยนกลิ่นโดยไม่ต้องเปลี่ยนเครื่อง เครื่องที่ใช้หัวพอตบรรจุสำเร็จช่วยได้ กลิ่นอยู่ที่หัวพอต ส่วนตัวเครื่องใช้ตัวเดิม อย่างหัวพอต Zero Cartridge ที่ใช้กับเครื่อง Zero Pro และ Zero Nano ของ SALTHUB ข้อดีข้อเสียเมื่อเทียบกับพอตใช้แล้วทิ้ง อ่านได้ที่ [พอตใช้แล้วทิ้ง กับ พอตเปลี่ยนหัว](/guides/disposable-vs-switch-pod)",
           "ถ้าใช้[พอตซิสเต็ม](/products/pod-systems)ที่เติมน้ำยาเอง กลิ่นไม่ได้ผูกกับเครื่อง เลือกจากน้ำยาได้ตามแนวที่ชอบ ลักษณะของแต่ละแนวดูได้ที่ [ผลไม้](/e-liquid/fruit) · [เมนทอลและความเย็น](/e-liquid/menthol-cooling) · [ของหวาน](/e-liquid/dessert) · [เครื่องดื่ม](/e-liquid/beverage) และ [สไตล์ยาสูบ](/e-liquid/tobacco-style) ก่อนเปลี่ยนไปน้ำยากลิ่นใหม่ ควรรู้ไว้ว่า UWELL แนะนำไม่ให้ใช้คอยล์ตัวเดียวกับน้ำยาหลายกลิ่น วิธีเติมทีละขั้นอยู่ที่ [เติมน้ำยาพอตยังไง](/guides/refilling-a-pod)",
           "อีกเรื่องที่ร้านเจอ คือพอสูบกลิ่นเดิมไปสักพัก ลิ้นจะเริ่มชิน จนรู้สึกว่ารสไม่ชัดเท่าตอนแรก ทั้งที่เครื่องก็ทำงานปกติ ถ้าเป็นแบบนี้ ลองสลับไปกลิ่นในสายอื่นบ้างก็ได้ อ่านเรื่องนี้ต่อได้ที่ [พอตใช้แล้วทิ้ง ใช้ได้กี่วัน](/guides/how-long-a-disposable-lasts)",
@@ -2462,11 +2462,12 @@ const allGuides: Guide[] = [
   {
     // Round "SEO all keys" batch 4 (SEO_LANDSCAPE §9.2 #6 — "argus g4 vs g4 mini · g4 mini vs g3 mini · voopoo argus รุ่นไหนดี"):
     // ARGUS against ARGUS only, like comparing-voopoo-drag-models. Every number = a verified voopoo.ts row (shop.voopoo.com).
-    // G4's 1.0Ω route follows the pod row + poster (pod turned 180°). Title B until the 22/10 read (watch row 2 = the bare
-    // "argus g4" on /products/argus-g4); links to argus-g4 / argus-g4-mini + those two in relatedProductSlugs after that read.
+    // G4's 1.0Ω route follows the pod row + poster (pod turned 180°). Title A since 20/10 (owner lifted the 22/10 hold; watch row 2 = the bare
+    // "argus g4" on /products/argus-g4 — this title leads with the pair, not the bare model; "VOOPOO ARGUS" left the
+    // title — it split mid-name on the /guides card at 1440 and the H1 at 390, measured 20/10 — and stays in the slug and body); links to argus-g4 / argus-g4-mini added 20/10.
     id: "comparing-voopoo-argus-models",
     slug: "comparing-voopoo-argus-models",
-    title: "VOOPOO ARGUS รุ่นไหนดี เทียบ G4 · G4 mini · G3 mini · P3",
+    title: "ARGUS G4 vs G4 mini ต่างกันยังไง เทียบครบ 4 รุ่น",
     dek: "ARGUS G4 กับ G4 mini แบต 1650mAh เท่ากัน ต่างกันที่จอกับวัตต์สูงสุด ส่วน G3 mini เบาที่สุดในสี่รุ่น และ P3 มีจอทัช 2.01 นิ้ว ร้านเทียบให้ดูทีละคู่",
     category: "buying-guide",
     readingTimeMin: 6,
@@ -2477,7 +2478,7 @@ const allGuides: Guide[] = [
         heading: "สรุปก่อน: ARGUS สี่รุ่นต่างกันตรงไหน",
         paragraphs: [
           "ARGUS G4 กับ G4 mini ต่างกันยังไง ตอบสั้น ๆ คือสองรุ่นนี้แบตเท่ากันที่ 1650mAh และใช้หัวพอต Multi-Ohm เหมือนกัน ที่ต่างคือ G4 มีจอ HD 0.85 นิ้ว ปรับได้ 5–35 วัตต์ และกดปุ่มเพื่อใช้ 0.4 โอห์มได้อีกค่า ส่วน G4 mini ไม่มีจอ วัตต์อยู่ที่ 5–30 วัตต์ และเบากว่าที่ 56 กรัม",
-          "บนเว็บเรามี ARGUS ให้เลือกสี่รุ่น คือ ARGUS G4 · ARGUS G4 mini · [ARGUS G3 mini](/products/argus-g3-mini) และ [ARGUS P3](/products/argus-p3) ทั้งสี่รุ่นใช้หัวพอตตระกูล ARGUS เหมือนกัน และต่างกันอยู่ห้าเรื่อง คือจอกับการควบคุม วิธีเปลี่ยนค่าโอห์ม แบตกับวัตต์ ช่องลม และน้ำหนัก",
+          "บนเว็บเรามี ARGUS ให้เลือกสี่รุ่น คือ [ARGUS G4](/products/argus-g4) · [ARGUS G4 mini](/products/argus-g4-mini) · [ARGUS G3 mini](/products/argus-g3-mini) และ [ARGUS P3](/products/argus-p3) ทั้งสี่รุ่นใช้หัวพอตตระกูล ARGUS เหมือนกัน และต่างกันอยู่ห้าเรื่อง คือจอกับการควบคุม วิธีเปลี่ยนค่าโอห์ม แบตกับวัตต์ ช่องลม และน้ำหนัก",
           "ตัวเลขทุกตัวในบทความนี้มาจากหน้าเว็บและโปสเตอร์ของ VOOPOO ชุดเดียวกับตารางสเปกบนหน้าสินค้าของแต่ละรุ่น",
         ],
       },
@@ -2584,14 +2585,14 @@ const allGuides: Guide[] = [
       { question: "ARGUS P3 กับ G4 ต่างกันยังไง", answer: "P3 มีจอทัชเต็มจอ 2.01 นิ้ว ตั้งกราฟวัตต์เองได้ แบต 1500mAh ปรับได้ 5–30 วัตต์ ส่วน G4 มีจอ HD 0.85 นิ้ว สั่งงานด้วยปุ่มเดียว แบต 1650mAh ปรับได้ 5–35 วัตต์ และเปลี่ยนได้สามค่าโอห์มจากหัว Multi-Ohm หัวเดียว" },
       { question: "ARGUS ใช้หัวพอตร่วมกันได้ไหม", answer: "ได้ VOOPOO ระบุว่าทั้งสี่รุ่นใช้หัวพอตตระกูล ARGUS ร่วมกันได้ เช่น หัว Multi-Ohm ใช้ได้ทั้ง G4 และ G4 mini และหัว Top Fill Cartridge V2 อยู่ในรายการของทั้งสี่รุ่น สำหรับ P3 กับ G3 mini ให้เช็คค่าโอห์มและวัตต์ของหัวพอตให้ตรงกับเครื่องก่อนใช้" },
     ],
-    relatedProductSlugs: ["argus-g3-mini", "argus-p3"],
+    relatedProductSlugs: ["argus-g4", "argus-g4-mini", "argus-g3-mini", "argus-p3"],
   },
   {
     // Round "SEO all keys" batch 6 (SEO_LANDSCAPE §9.2 #7 — "พอตของแท้ ดูยังไง · เช็คพอตของแท้ · ซื้อพอตออนไลน์ยังไงไม่โดนของปลอม"):
     // each maker's own check page, opened by the researcher / Friday 16/10 (_incoming/seo-keys/authenticity-research.md).
     // A failed check = BSOT §12 "Authenticity" (owner item 67, 16/10): video + result within 7 days, the shop reviews, then
     // replaces or refunds — the only refund case. No relatedProductSlugs (six brands — LESSONS 35). INFY / Esko Bar brand
-    // links wait for the 22/10 read.
+    // links added 20/10 (owner lifted the 22/10 hold; both brands now carry several products, so the brand page, not one model).
     id: "checking-a-genuine-pod",
     slug: "checking-a-genuine-pod",
     title: "พอตของแท้ ดูยังไง เช็คเองได้ที่เว็บทางการของแบรนด์",
@@ -2627,7 +2628,7 @@ const allGuides: Guide[] = [
       {
         heading: "INFY ขูดสติกเกอร์ซีเรียลแล้วสแกน QR code",
         paragraphs: [
-          "INFY ติดสติกเกอร์ซีเรียลไว้ที่กล่อง ขูดออกแล้วจะเจอ QR code ให้สแกน แล้วกรอกรหัสบนหน้าเช็คของ INFY ที่ [infy.my/authentication](https://www.infy.my/authentication/)",
+          "[INFY](/brands/infy) ติดสติกเกอร์ซีเรียลไว้ที่กล่อง ขูดออกแล้วจะเจอ QR code ให้สแกน แล้วกรอกรหัสบนหน้าเช็คของ INFY ที่ [infy.my/authentication](https://www.infy.my/authentication/)",
           "INFY บอกไว้ว่าสินค้าแต่ละชิ้นมีรหัสเฉพาะของตัวเอง รหัสบนกล่องจึงใช้เช็คได้เฉพาะชิ้นนั้น",
         ],
       },
@@ -2636,7 +2637,7 @@ const allGuides: Guide[] = [
         paragraphs: [
           "SALTHUB เจ้าของตระกูล M Bar · M Switch และ Zero แนะนำให้ดูเครื่องหมายกันปลอมและฉลากรับรองบนกล่อง แล้วเช็คต่อที่หน้า [salthub.com/authenticate](https://www.salthub.com/authenticate/)",
           "หน้าเช็คของ SALTHUB ใช้การถ่ายรูปแทนการกรอกรหัส ให้ถ่ายรูปฉลากรับรองให้ชัดและซูมให้พอดี โดยต้องถ่ายจากตัวฉลากจริงบนกล่อง ไม่ใช่ถ่ายจากรูปบนหน้าจอ เมื่อภาพชัดพอ ระบบจะถ่ายให้เอง",
-          "Esko Bar ใช้ระบบเช็คแบบถ่ายรูปตัวเดียวกับ SALTHUB อยู่บนหน้าเช็คของแท้ที่ [eskobarvape.com/verify](https://eskobarvape.com/verify) เปิดหน้านี้แล้วทำตามขั้นที่ขึ้นบนหน้าได้เลย",
+          "[Esko Bar](/brands/esko-bar) ใช้ระบบเช็คแบบถ่ายรูปตัวเดียวกับ SALTHUB อยู่บนหน้าเช็คของแท้ที่ [eskobarvape.com/verify](https://eskobarvape.com/verify) เปิดหน้านี้แล้วทำตามขั้นที่ขึ้นบนหน้าได้เลย",
         ],
       },
       {
