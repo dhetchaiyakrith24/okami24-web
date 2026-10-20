@@ -1072,7 +1072,7 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   .okh[data-desk="cards"] .okh-h1 { font-size: clamp(2.5rem, 1.6rem + 2.6vw, 4.5rem); }
   .okh[data-desk="cards"] .okh-lede { margin-top: 1.125rem; }
   .okh[data-desk="cards"] .okh-cta { align-self: end; justify-content: flex-end; align-items: center; margin: 0; }
-  .okh[data-desk="cards"] .okh-fx-desk { display: inline-flex; position: static; min-height: 3.25rem; padding: 0 1.125rem; font-size: 0.8125rem; }
+  .okh[data-desk="cards"] .okh-fx-desk { display: inline-flex; position: static; min-height: 2.25rem; margin-left: 0.25rem; border-color: transparent; background: none; font-size: 0.75rem; }
 
   .okh-lattice {
     display: block;
@@ -1116,12 +1116,12 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
     padding: 1rem 1.125rem 1.125rem;
     border: 1px solid rgb(255 255 255 / 0.1);
     border-radius: 6px;
-    background: color-mix(in srgb, var(--surface-1) 78%, transparent);
+    background: color-mix(in srgb, var(--surface-1) 94%, transparent);
     transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
   .okh-card:hover {
     border-color: color-mix(in srgb, var(--accent-ember) 70%, transparent);
-    background: color-mix(in srgb, var(--surface-1) 90%, transparent);
+    background: var(--surface-1);
     box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 25%, transparent), 0 24px 60px -30px rgb(255 106 44 / 0.45);
     transform: translateY(-3px);
   }
@@ -1142,8 +1142,8 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   }
   .okh-card-price { grid-area: price; align-self: end; font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--foreground); }
   .okh-card-img { position: relative; display: block; aspect-ratio: 5 / 4; }
-  .okh-card-img img { transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
-  .okh-card:hover .okh-card-img img { transform: scale(1.05) translateY(-2%); }
+  .okh-card-img img { transform: scale(1.16); transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .okh-card:hover .okh-card-img img { transform: scale(1.22) translateY(-2%); }
   .okh-card-foot { position: relative; display: block; height: 2.25rem; }
   .okh-card-tags,
   .okh-card-cta {
@@ -1184,7 +1184,8 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
 }
 @media (min-width: 64rem) and (prefers-reduced-motion: reduce) {
   .okh-card, .okh-card-img img, .okh-card-tags, .okh-card-cta, .okh-card-plus { transition: none; }
-  .okh-card:hover, .okh-card:hover .okh-card-img img { transform: none; }
+  .okh-card:hover { transform: none; }
+  .okh-card:hover .okh-card-img img { transform: scale(1.16); }
   .okh-lattice::after { transition: opacity 0.2s ease; }
 }
 
