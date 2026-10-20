@@ -65,8 +65,10 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
           </Link>
         </div>
       </Container>
-      <Container>
-        <div className="rail-scroll -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-5 px-5 pb-4 max-lg:mx-0 max-lg:grid max-lg:grid-cols-4 max-lg:gap-3 max-lg:overflow-visible max-lg:px-0 max-lg:pb-0 max-sm:grid-cols-2 sm:-mx-8 sm:scroll-px-8 sm:px-8 lg:-mx-12 lg:scroll-px-12 lg:px-12">
+      {/* desktop: the rail starts under the heading and runs on to the screen's right edge (owner 20/10, wide screens —
+          option B); the left inset = the Container's edge + its padding, so headings and first cards stay aligned */}
+      <Container className="lg:max-w-none lg:pl-[max(3rem,calc((100%-1400px)/2+3rem))] lg:pr-0">
+        <div className="rail-scroll -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-5 px-5 pb-4 max-lg:mx-0 max-lg:grid max-lg:grid-cols-4 max-lg:gap-3 max-lg:overflow-visible max-lg:px-0 max-lg:pb-0 max-sm:grid-cols-2 sm:-mx-8 sm:scroll-px-8 sm:px-8 lg:-ml-12 lg:mr-0 lg:scroll-px-12 lg:px-12">
           {items.slice(0, RAIL_CARDS).map((item, i) => (
             <div
               key={item.slug}
@@ -82,6 +84,8 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
             </div>
           ))}
         </div>
+      </Container>
+      <Container>
         {items.length > PHONE_CARDS ? (
           // phones/tablets always (the grid stops early) · desktop only when the rail is cut short
           <Link
