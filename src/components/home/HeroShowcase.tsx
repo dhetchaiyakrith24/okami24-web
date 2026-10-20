@@ -38,7 +38,6 @@ function SlotPhoto({ s, first }: { s: HeroSlotView; first: boolean }) {
   return (
     <picture>
       <source media="(min-width: 64rem)" srcSet={desktop} sizes="40vw" />
-      {/* eslint-disable-next-line @next/next/no-img-element -- getImageProps art direction (Next docs) */}
       <img {...phone} alt={s.image.alt} className="object-contain" />
     </picture>
   );
