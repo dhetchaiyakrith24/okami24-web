@@ -890,6 +890,9 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
   "foli-bar-15k": {
     tagline: "พอตใช้แล้วทิ้ง Foli Bar 15K",
     shortDescription: "พอตใช้แล้วทิ้ง Foli Bar 15K ชื่อรุ่นระบุ 15,000 พัฟ ร้านมีให้เลือก 12 กลิ่น",
+    whoIsThisFor: {
+      0: "คนที่อยากได้พอตใช้แล้วทิ้งรุ่นพัฟเยอะ และมีกลิ่นให้เลือกหลายแบบ",
+    },
   },
   // maxlist (21/10): warehouse facts only — Max "หัวพอต Vazer One" (Pod-115).
   "vazer-one-pod": {
