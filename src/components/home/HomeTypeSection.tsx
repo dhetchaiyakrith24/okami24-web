@@ -71,7 +71,7 @@ export function HomeTypeSection({ type, categories, first }: { type: HeroType; c
             <div
               key={item.slug}
               className={cn(
-                "w-[240px] shrink-0 snap-start max-lg:w-auto sm:w-[280px]",
+                "w-[240px] shrink-0 snap-start max-lg:w-auto lg:w-[280px]",
                 i >= PHONE_CARDS && "max-sm:hidden",
                 i >= TABLET_CARDS && "max-lg:hidden",
                 i === lonePhone && "max-sm:col-span-2 max-sm:mx-auto max-sm:w-[calc(50%-0.375rem)]",
