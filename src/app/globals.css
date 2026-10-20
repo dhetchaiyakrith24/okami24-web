@@ -708,6 +708,31 @@ html:lang(th) .label-mono:not(:lang(en)) {
   transition: opacity 1.4s ease;
 }
 .okh-canvas[data-on] { opacity: 1; }
+/* the light switch (owner 20/10, lib/fx-pref.ts): off = both ribbon layers fade out (and stop) */
+html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity: 0; }
+.okh-fx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 2rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface-0) 70%, transparent);
+  color: var(--foreground-muted);
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.okh-fx:hover { color: var(--foreground); border-color: var(--foreground-dim); }
+.okh-fx:focus-visible { outline: 2px solid var(--accent-ember); outline-offset: 2px; }
+.okh-fx svg { width: 0.875rem; height: 0.875rem; color: var(--accent-ember); transition: opacity 0.2s ease; }
+.okh-fx[data-off] svg { color: currentColor; opacity: 0.6; }
 .okh-grid {
   position: relative;
   z-index: 2;
@@ -971,6 +996,8 @@ html:lang(th) .label-mono:not(:lang(en)) {
   .okh-btn { height: 3.25rem; padding: 0 1.625rem; }
   .okh-btn svg { display: block; }
   .okh-stage { height: min(74vh, 700px); align-self: center; margin: 0 0 1.5rem; }
+  /* phones: top-left (the product stands right of centre) · desktop: top-right (the name sits bottom-right) */
+  .okh-fx { left: auto; right: 0; }
   .okh-prod { inset: 0 0 6% 0; justify-content: center; }
   .okh-float { height: 96%; }
   .okh-meta { left: auto; right: 0; bottom: 12%; max-width: none; align-items: flex-end; text-align: right; gap: 0.5rem; }
@@ -986,26 +1013,29 @@ html:lang(th) .label-mono:not(:lang(en)) {
 }
 
 /* --- the hero's light carried down the page (HomeFlow) ---
-   A sticky, screen-tall stage sits behind every section of the wrapper. The sections are see-through
-   here (the surface-1 ones keep a tint), and the boxes inside them are frosted glass: the light shows
-   through them blurred, never sharp on a product or a word (owner 20/10, his reference). */
+   A layer behind every section of the wrapper holds the light on canvases that sit ON the page (tiles
+   one screen tall, moved ahead of the visitor by HomeFlow), so the browser scrolls the light together
+   with the boxes — a screen-fixed canvas redrawn for each scroll position trailed by a frame or two
+   ("jerky on the phone", owner 20/10). The sections are see-through here (the surface-1 ones keep a
+   tint), and the boxes inside them are frosted glass: the light shows through them blurred, never sharp
+   on a product or a word (owner 20/10, his reference). Phones: no backdrop blur (re-blurring every box
+   on every frame of moving light was the other big cost) — the ribbon itself turns to a soft glow
+   inside the boxes (hero-ribbons.ts u_boxes), the box tint stays. */
 .okh-flow { position: relative; isolation: isolate; background: var(--surface-0); }
 .okh-flow-stage {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  height: 100lvh;
-  margin-bottom: -100vh;
-  margin-bottom: -100lvh;
+  position: absolute;
+  inset: 0;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
 }
+.okh-flow-probe { position: fixed; top: 0; left: 0; width: 1px; height: 100vh; height: 100lvh; visibility: hidden; }
 .okh-flow-canvas {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   opacity: 0;
   transition: opacity 1.4s ease;
 }
@@ -1018,6 +1048,10 @@ html:lang(th) .label-mono:not(:lang(en)) {
   background-color: color-mix(in srgb, var(--surface-1) 42%, transparent);
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   backdrop-filter: blur(16px) saturate(1.2);
+}
+@media (max-width: 1023px) {
+  .okh-flow > nav,
+  .okh-flow section :is(.bg-surface-0, .bg-surface-1) { -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
 
 /* --- still: reduced motion / Save-Data (the ribbons draw one frame; HeroShowcase stops rotating) --- */

@@ -86,6 +86,8 @@ export const th: Dictionary = {
     ctaAll: "ดูสินค้าทั้งหมด",
     viewCategory: "ดูรุ่นในหมวดนี้",
     tabsLabel: "ประเภทสินค้า",
+    fxOff: "ปิดแสง",
+    fxOn: "เปิดแสง",
     types: {
       "pod-systems": { label: "พอตซิสเต็ม", desc: "เติมน้ำยาเอง และเปลี่ยนหัวพอตหรือคอยล์ได้" },
       "switch-pods": { label: "พอตเปลี่ยนหัว", desc: "ตัวเครื่องใช้ต่อได้ น้ำยาหมดก็เปลี่ยนแค่หัวพอต" },
