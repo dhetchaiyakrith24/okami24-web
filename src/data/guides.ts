@@ -2113,7 +2113,7 @@ const allGuides: Guide[] = [
           "VOOPOO DRAG รุ่นไหนดี ขึ้นอยู่กับว่าคุณอยากได้อะไรจากเครื่อง ร้านเราจึงไม่จัดอันดับ แต่สรุปตามการใช้งานไว้ให้แบบนี้",
           "ถ้าอยากได้วัตต์สูง จอใหญ่ และปรับค่าได้ละเอียดด้วยล้อหมุน ลองดู DRAG 6 ถ้าอยากได้เครื่องตัวเล็กที่มีแบตในตัว และสูบ MTL หรือ RDL เป็นหลัก ลองดู DRAG S3 และถ้าชอบใช้ถ่านที่ถอดเปลี่ยนได้กับจอทัช ลองดู DRAG X3",
           "ถ้าเพิ่งเริ่มใช้พอตเป็นเครื่องแรก และยังไม่แน่ใจว่าต้องการเครื่องวัตต์สูงแบบ DRAG หรือเปล่า อ่าน [Pod System ตัวไหนดี เลือกพอตเครื่องแรก](/guides/choosing-your-first-pod-system) ก่อนได้",
-          "ส่วน DRAG X ใช้ถ่าน 18650 หนึ่งก้อนที่ซื้อแยก ตั้งได้ 5–80 วัตต์ และใช้คอยล์ตระกูล PnP สเปกทั้งหมดอยู่ที่หน้าสินค้าของรุ่นนี้",
+          "ส่วน [DRAG X](/products/drag-x) ใช้ถ่าน 18650 หนึ่งก้อนที่ซื้อแยก ตั้งได้ 5–80 วัตต์ และใช้คอยล์ตระกูล PnP สเปกทั้งหมดอยู่ที่หน้าสินค้าของรุ่นนี้",
           "ราคาของแต่ละรุ่นดูได้ที่หน้าสินค้าของรุ่นนั้น และถ้าอยากถามเรื่องสีหรือรุ่นที่มีของตอนนี้ ทักไลน์ @okm24 ได้เลย",
         ],
       },
@@ -2132,7 +2132,7 @@ const allGuides: Guide[] = [
     // the switch-system devices on the storefront, grouped by what the buyer wants. "พอตเปลี่ยนหัว" in title/H1 = owner item 65
     // (16/10, THAI_STYLE round 10B line). Numbers = verified spec rows of salthub.ts / relx.ts / Pod-159 (eskobarvape) / flavour
     // lists (thai-copy 16/10, sources in the round's b4-switch-draft.md). Muro Connector puffs left out (retailer source only).
-    // No link to m-switch-kit / pod-159 / infy-20k until the 22/10 GSC read (SEO_BASELINE watch rows) — HANDOFF §16 3s.
+    // Links to m-switch-kit / pod-159 / infy-20k added 20/10 (owner lifted the 22/10 hold).
     id: "choosing-a-switch-pod",
     slug: "choosing-a-switch-pod",
     title: "พอตเปลี่ยนหัว รุ่นไหนดี ยี่ห้อไหนดี ดูจากอะไร",
@@ -2250,7 +2250,7 @@ const allGuides: Guide[] = [
     // one article over every disposable on the storefront (no X-vs-Y pages — doorway risk). Numbers = verified spec rows and
     // maker-poster feature blocks already on each product page; INFY = shop-confirmed rows (THAI_STYLE §5); Muro numbers unsaid
     // (retailer source). MOOOD = 19 flavours (its 21 options count two nicotine variants). Joiway F4 / INFY 20K / pod-159 links
-    // wait for the 22/10 read (HANDOFF §16 3s).
+    // added 20/10 (owner lifted the 22/10 hold).
     id: "choosing-a-disposable",
     slug: "choosing-a-disposable",
     title: "พอตใช้แล้วทิ้ง ยี่ห้อไหนดี ตัวไหนดี ดูจากอะไร",
@@ -2370,7 +2370,7 @@ const allGuides: Guide[] = [
   {
     // Round "SEO all keys" batch 4 (SEO_LANDSCAPE §9.2 #3 — "พอตกลิ่นไหนดี · มีกลิ่นอะไรบ้าง · ไม่เย็น"): flavour names grouped by
     // the words in the name only (never a taste or popularity claim). Lists = flavorVariants of each product file; Muro + INFY
-    // lists come from retailer pages, so the text says "กลิ่นที่หน้าสินค้ารวมไว้". INFY 20K / JOIWAY F4 links wait for 22/10.
+    // lists come from retailer pages, so the text says "กลิ่นที่หน้าสินค้ารวมไว้". INFY 20K / JOIWAY F3 / F4 links added 20/10.
     id: "choosing-a-pod-flavor",
     slug: "choosing-a-pod-flavor",
     title: "พอตกลิ่นไหนดี เลือกจากสายที่ชอบ ทั้งเย็น ผลไม้ ชา หรือยาสูบ",

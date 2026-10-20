@@ -146,10 +146,11 @@ export const BRAND_HEAD_TH: Record<string, (priceOf: PriceOf) => { title: string
   },
   // Round SEO D: "joiway f4" queries landed on this page (GSC 0/10) — the model names and prices left the title (batch 4)
   // and the description (close, seo-auditor 08/10): /products/joiway-f4 owns "joiway f4". Wording = thai-copy 08/10.
-  // SEO all keys 20/10: "joiway" pos 6.2, 3 clicks / 179 impressions — the title says what sets the brand apart (คู่กลิ่น)
-  // and the meta carries the Thai name people type (จอยเวย์), like ไอคอส / อินฟี่. thai-copy 20/10.
+  // SEO all keys 20/10: "joiway" pos 6.2, 3 clicks / 179 impressions — title + meta carry the Thai name people type (จอยเวย์,
+  // SEO_LANDSCAPE row 75); "คู่กลิ่น" stays out of the title — it is F4's selling point and the brand page already takes
+  // "joiway f4" queries (row 76, seo-auditor 20/10). thai-copy 20/10.
   joiway: () => ({
-    title: `JOIWAY พอตใช้แล้วทิ้ง ของแท้ มีรุ่นคู่กลิ่น${OKM_TITLE_SUFFIX}`,
+    title: `JOIWAY จอยเวย์ พอตใช้แล้วทิ้ง ของแท้${OKM_TITLE_SUFFIX}`,
     description: "JOIWAY หรือที่หลายคนเรียกว่าจอยเวย์ มีพอตใช้แล้วทิ้งทั้งรุ่นกลิ่นเดียว และรุ่นคู่กลิ่นในเครื่องเดียว พร้อมคลิปรีวิวใช้จริงบน YouTube สั่งทาง LINE @okm24",
   }),
   // Round SEO D close (seo-auditor 08/10): with no override this page's description was its lede, which names "INFY 20K"

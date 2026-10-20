@@ -350,3 +350,11 @@ Rows 1–10 (above) keep their dates ("pod" / "pod system" = row 9). Also on 22/
   /guides/choosing-a-terea-flavor ("terea กลิ่นไหนดี") — no row yet; read them from 01/11.
 - #626: guides keep one clip each — rows 11–21 guides lost section clips (text/head unchanged); VideoObject unchanged
   (it comes from the main clip only). KOKO + mesh clips moved to /products/caliburn-g4-pro-koko and /technology/mesh-coil-systems.
+- 20/10 line 2 (branch seo-l2d-2010): product titles drop the retired "พอตคิท" — VOOPOO devices "… พอตซิสเต็ม ของแท้" (row 2
+  argus-g4 included), switch devices "… พอตเปลี่ยนหัว ของแท้" (row 7 pod-159 included) · /brands/esko-bar (row 5) title + meta
+  rewritten to brand level for both formats ("ESKO BAR พอตใช้แล้วทิ้ง พอตเปลี่ยนหัว ของแท้", meta names เอสโคบาร์) · /brands/joiway
+  (row 6) title "JOIWAY จอยเวย์ พอตใช้แล้วทิ้ง ของแท้" + meta with จอยเวย์ · /brands/relx + /brands/voopoo heads lose พอตคิท ·
+  ARGUS guide title/H1 "ARGUS G4 vs G4 mini ต่างกันยังไง เทียบครบ 4 รุ่น" and NEW links into argus-g4 / argus-g4-mini — so row 2
+  moves on THREE variables at once (own title word, the guide title, new inbound links); read it as mixed · held guide links in
+  (switch / disposable / flavour / ARGUS / genuine / DRAG guides) → new inbound links into rows 5, 6, 7 owners + infy-20k,
+  joiway-f3/f4, m-switch-kit; read-next boxes on brand + product pages moved (linkmap diff in the PR).
