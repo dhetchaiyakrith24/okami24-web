@@ -12,7 +12,8 @@
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
 1 main: `git fetch && git log -1 --oneline origin/main` · 20/10 ~22:00 = #648 53ab8eca (homepage by type; #645 flow smooth, #646 light switch before it)
-  — live check per PR: curl / 200 + the new chunk/markup · open PRs: `gh pr list` (#637 draft = parked, below). Standing rules this block used to repeat live in TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
+  — live check per PR: curl / 200 + the new chunk/markup · open PRs: `gh pr list` (#637 draft = parked, below · #643 = the stock
+  chat's docs PR, not this round's). Standing rules this block used to repeat live in TEAM_RULES 13.6 / 13.7 · §17 · §18 · IMAGE_SPEC §0 (credits on the owner's yes).
 2 worktrees = `git worktree list` (each side chat's own, nested under `.claude/worktrees/` and `_incoming/`) ·
   `_incoming/wt-stock` = stock round (own node_modules copy · test server `next start -p 3413`, stopped). Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
   Hero round trees (own node_modules): `_incoming/hero-2010/wt-3421` = old main fd608092 build (round "before"), server 3421 RUNNING ·
@@ -21,7 +22,8 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   site code). Rebuild + restart a tree: `bash _incoming/hero-2010/rebuild-3424.sh <port>` (builds the tree as it is, ~25 s) ·
   `build.sh <sha> <port>` checks out detached first. Stop all servers when the round closes.
   Branches ahead of main (none checked): hero-ground = #637 draft (parked).
-3 MAIN CHAT MOVED 20/10 ~07:00 at ~70 % context (3h; owner paused for the night). Owner 20/10: "หยุดงานอื่นและ Focus แค่งานนี้" = the HOMEPAGE only (3h below).
+3 MAIN CHAT MOVED 20/10 ~22:30 at 63 % context (625k, long work next: 3h a–c). Session tools worth reusing (not in git):
+  `_incoming/hero-2010/` fps-scroll.js · flow-shots.js (FXOFF / RM / MID env) · rec-scroll.js · lh/run3.sh · rebuild-3424.sh. Owner 20/10: "หยุดงานอื่นและ Focus แค่งานนี้" = the HOMEPAGE only (3h below).
   Both side lines parked (line 1 = image sweep · line 2 = SEO) — see 3i / 3s. Side chats = linked chats only (TEAM_RULES 13.6) · the owner
   gets 2 combined summaries a day · Friday's running notes (not in git) = `_incoming/friday-queue.md`.
 3h ROUND "homepage hero" = `docs/rounds/รอบหน้าแรก-hero-20-10.txt` (brief `_incoming/hero-brief.md` · approved draft `_incoming/hero-draft/`).
@@ -53,9 +55,16 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
      Lone last card centred on phone/tablet; rails snap-aligned with their heading; tablet card overlap fixed in this file only (main's
      other rails — none left on `/` — had it too). Known: IQOS see-all would point at heated-tobacco-devices while N counts the sticks too
      (no button today: 5 ≤ 6). Unused now (kept for a revert): EditorialSplit, FlavorTeaser, ProductRailSection, dict flagship*/control*.
-  NEXT:
-  b) Item 1 (hero product scenes): owner said "1 ได้ครับ" = spend existing Higgsfield credits on ONE Caliburn G5 scene test.
-     The Higgsfield MCP generate_image call was DENIED by the permission system twice (also after the owner's yes, he was on the
+  Owner 20/10 ~22:20 on the live homepage (his 27" screen shots): "โดยรวมโอเค ดูเรียบร้อย" — then 3 items, in this order (NEXT):
+  a) CompareCTA box ("เทียบพอตพร้อมกันได้สูงสุด 4 รุ่น"): the three pods above the heading look small → size them up so they sit
+     in proportion with the heading (390 + 1440 + a wide screen), tier B, homepage only.
+  b) Wide screens: on a 27" (2560 px) the homepage shows wide empty sides — every page is capped by Container max-w-[1400px]. Friday
+     told him: 1440–1920 screens fill more; options A leave · B (recommended) homepage type rails bleed to the right screen edge on wide
+     screens, headings stay aligned · C widen the whole site (every page, big). [รอเจ้าของ] his pick — B if he does not object.
+  c) Hero product scenes — owner "จัดเต็มเลยครับตรงนี้" (= go full). Start with the ONE Caliburn G5 test he already approved
+     ("1 ได้ครับ"); state the credit cost per image before any batch (IMAGE_SPEC §0); then one scene per hero type if he likes it.
+  Details for c):
+  c0) The Higgsfield MCP generate_image call was DENIED by the permission system twice (also after the owner's yes, he was on the
      phone) — not retried. Ask him to approve the prompt from the desktop, or run it through the Higgsfield web app in Chrome.
      Refs already uploaded (media ids in `_incoming/hero-scenes/ref/` names g5/mswitch/infy/iluma1 · ids 876b8fcb… / 7a18b6a1… /
      998aed1f… / e0445381…, valid while the account keeps them) · prompt = the dark studio / orange-red rim light / glossy floor one
@@ -65,7 +74,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   comparisons — owner's own words, told him, kept.
   Earlier queue (owner 20/10 ~02:30, opinion given): phone product cards compact (keep 2 columns, square photo) · LINE order message
   without the page URL — `_incoming/friday-queue.md`.
-  Round close (skill round-close, tag hero-2010) when a)–b) land; stop test servers 3421–3423.
+  Round close (skill round-close, tag hero-2010) when a)–c) land; stop test servers 3421–3424.
   House rounds 15–16/10 (#484 … #500, #508, #510) DONE — what they built lives in its home (skill house-clean · TEAM_RULES 13.3 #1 ·
   skills find-skills / content-strategy · `docs/seo-audit/`); the 16/10 artifact mistake = LESSONS พ31; full text =
   `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
