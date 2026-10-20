@@ -29,11 +29,13 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Not done, owner did not ask again: checker #671 r1 taste notes (warm floor pool faint at 1440/1920 · tabs 01 UWELL and 02 VOOPOO repeat the same
   type line · at 1024 ARGUS's end sits close to "02/04"). Owner's open taste notes: phone product cards compact (keep 2 columns, square photo) ·
   LINE order message without the page URL — `_incoming/friday-queue.md`. Hero AI tests ≈ 15.25 credits, all rejected, none on the site.
-3u NEXT (owner 21/10, DISCUSS FIRST — no code yet): "ยกระดับหน้าเว็บทั้งหมด" — references getlayers.ai templates Artefakt (dark e-commerce: lattice
-  that lights under the cursor, 4-card collection row, labels that decode) and Relay (SaaS, one light streak down the page). Owner idea: desktop
-  hero = 4 product cards in a row instead of one lying product. Friday proposed: Artefakt direction · no purchase yet (prompts $99 lifetime /
-  source $169 sale [เชื่อว่า]) — Friday drafts on the test machine first · 4 cards replace the lying product on desktop, phones unchanged. Waiting
-  for the owner's 3 answers (direction · buy or not · cards replace or add) → then a new round file + skill round-open.
+3u OPEN ROUND "homepage upgrade" (owner 21/10 answers 1 1 1 + "เริ่มขั้น 1 ได้เลย") = `docs/rounds/รอบยกระดับหน้าเว็บ-Artefakt-21-10.txt` · reference getlayers
+  Artefakt (lattice lit under the cursor · 4-card row · labels that "tune in"; studied from its 3 preview clips, no live demo). Owner: no purchase,
+  Friday drafts · desktop hero = 4 cards replacing the lying product · phones unchanged. Branch `home-upgrade-2110`; test tree `_incoming/hero-2010/wt-3424`
+  (detached at the branch head, server 3424) · before = server 3422 (main's site code). Helpers `_incoming/upgrade-2110/shot.js` (`<port> <w> <h> <out>
+  [hover=<i>] [mouse=x,y] [locale=] [reduce]`). BATCH 1 (tier B) = DESKTOP_HERO "cards" (home-hero.ts; "stage" = #671 back) · HeroCards.tsx ·
+  .okh-lattice / .okh-card CSS: draft built — NEXT: shots 1024/1440/1920 + 390 unchanged · send the owner the draft (shots + hover clip) · Lighthouse
+  before/after · visible-text · designer · gate → checker → merge. Batches 2 (rest of the homepage) and 3 (category/product pages) open after.
   House rounds 15–16/10 (#484 … #500, #508, #510) DONE — what they built lives in its home (skill house-clean · TEAM_RULES 13.3 #1 ·
   skills find-skills / content-strategy · `docs/seo-audit/`); the 16/10 artifact mistake = LESSONS พ31; full text =
   `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
