@@ -228,6 +228,8 @@ export const OWNER_APPROVED_PUBLICATION: Record<string, PublicationApproval> = {
   "SUPER-COOL-SALTNIC": { sellingPrice: 269, lastPriceReview: "2026-10-19" },
   "PUNTA-ICE": { sellingPrice: 150, lastPriceReview: "2026-10-19" },
   "INFY-POD": { sellingPrice: 690, lastPriceReview: "2026-10-19" },
+  // maxlist (20/10): RELX Essential 2 (Max-only "Pod-157") — Max ราคาขาย ฿490 for the parent and its 4 colours (read 2026-10-20).
+  "RELX-ESSENTIAL-2": { sellingPrice: 490, lastPriceReview: "2026-10-20" },
   "VMATE-PRO-2": { sellingPrice: 890, lastPriceReview: "2026-10-19" },
   // owner-confirmed 2026-10-19: "ราคา Graple Freebase: ฿160.-" — one price for the parent and its option (Max says ฿795 parent / ฿159 child
   // until the admin updates it). Held until a card photo exists.

@@ -376,6 +376,7 @@ export const PRODUCT_DESCRIPTION_HEAD_TH: Record<string, string> = {
   "muro-salt-nic": "Muro Salt Nic น้ำยา salt nic มีให้เลือก 6 กลิ่น",
   "super-cool-saltnic": "น้ำยา Super Cool นิโคตินแบบ salt nic มีให้เลือก 10 กลิ่น",
   "infy-pod": "INFY POD ตัวเครื่อง แบตเตอรี่ 400mAh ชาร์จ Type-C มีให้เลือก 19 สี",
+  "relx-essential-2": "RELX Essential 2 ตัวเครื่อง มีให้เลือก 5 สี",
   "mq-bar-22k": "MQ Bar 22K พอตใช้แล้วทิ้ง ชื่อรุ่นระบุ 22K มีให้เลือก 11 กลิ่น",
   "graple-freebase": "Graple น้ำยา freebase กลิ่นองุ่น",
   "esko-bar-switch-pod": "ESKO BAR SWITCH 20K หัวพอต หัวละสูงสุด 20,000 พัฟ ความจุ 18mL ใช้กับเครื่อง ESKO BAR SWITCH มีให้เลือก 20 กลิ่น",

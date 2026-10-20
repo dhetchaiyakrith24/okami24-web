@@ -3557,6 +3557,17 @@ export const MAX_SEED: Record<string, MaxSeedParent> = {
         "inStock": true
       }
     ]
+  },
+  "RELX-ESSENTIAL-2": {
+    "maxParentId": "Pod-157",
+    "name": "Relx Essential 2",
+    "operationalSellingPrice": 490,
+    "children": [
+      { "shipnityVariantId": "Pod-157-1", "rawLabel": "Black", "sellingPrice": 490, "inStock": false },
+      { "shipnityVariantId": "Pod-157-2", "rawLabel": "Steel silver", "sellingPrice": 490, "inStock": true },
+      { "shipnityVariantId": "Pod-157-3", "rawLabel": "Grey", "sellingPrice": 490, "inStock": true },
+      { "shipnityVariantId": "Pod-157-4", "rawLabel": "Nebula Blue", "sellingPrice": 490, "inStock": true }
+    ]
   }
 };
-export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K"];
+export const MAX_ONLY_IDS: readonly string[] = ["KS-QUIKPRO-KIT","NEXSWITCH-16K-KIT","NEXSWITCH-16K-POD","RELX-LUMI-18K","ESKO-BAR-20K","ESKO-BAR-SWITCH-POD","SUPER-COOL-SALTNIC","PUNTA-ICE","INFY-POD","VMATE-PRO-2","GRAPLE-FREEBASE","MQ-BAR-22K","RELX-ESSENTIAL-2"];

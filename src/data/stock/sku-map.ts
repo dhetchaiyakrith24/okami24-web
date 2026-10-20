@@ -973,6 +973,14 @@ export const SHIPNITY_SKU_MAP: Record<string, SkuMapEntry> = {
     "ELQ-6-10": "ELQ-6-10",
   } },
   // Image sweep (19/10): INFY POD — Max Pod-158-1..14; the maker's 5 extra colours are not in the warehouse.
+  // maxlist (20/10): RELX Essential 2 — Max Pod-157-1..4; the shop's Orange is not in the warehouse (null → "สินค้าหมด").
+  "relx-essential-2": { parent: "Pod-157", options: {
+    "Pod-157-1": "Pod-157-1",
+    "Pod-157-2": "Pod-157-2",
+    "Pod-157-3": "Pod-157-3",
+    "Pod-157-4": "Pod-157-4",
+    "relx-essential-2-verified-orange": null,
+  } },
   "infy-pod": { parent: "Pod-158", options: {
     "Pod-158-1": "Pod-158-1",
     "Pod-158-2": "Pod-158-2",

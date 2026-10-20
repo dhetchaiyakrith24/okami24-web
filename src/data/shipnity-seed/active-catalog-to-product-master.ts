@@ -333,6 +333,8 @@ const TAXONOMY_MATCHES: Record<string, TaxonomyMatch> = {
   "PUNTA-ICE": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Punta Ice" (eliquid-78), 7 flavours, ฿150; no maker site checked yet — prepared on warehouse facts only, without a brand' },
   "GRAPLE-FREEBASE": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Graple Freebase" (ELQ-2), 1 option; no maker site checked yet — prepared on warehouse facts only, without a brand' },
   "MQ-BAR-22K": { brandId: null, brandless: true, categoryId: "disposables", systemType: "disposable", evidence: 'Shipnity MAX "MQ Bar 22K" (Disposable-43), 11 flavours; no maker source found 19/10 — prepared on warehouse facts only, without a brand' },
+  // maxlist (20/10, owner "ลงตามทุกตัวที่ Max มี"): RELX Essential 2 — Max-only record (Pod-157). RELX is already a brand here; relxnow.com has no Essential 2 page.
+  "RELX-ESSENTIAL-2": { brandId: "relx", categoryId: "switch-pods", systemType: "pod-kit", evidence: 'Shipnity MAX "Relx Essential 2" (Pod-157), 4 colours, ฿490 — the name states the brand (RELX, already a brand here); no Essential 2 page on relxnow.com (searched 20/10) — warehouse facts only, device only' },
   "INFY-POD": { brandId: "infy", categoryId: "pod-systems", systemType: "pod-kit", evidence: 'Shipnity MAX "INFY POD" (Pod-158), 14 colours, ฿690 — the name states the brand (INFY, already a brand here through pod-169); device only' },
   "VMATE-PRO-2": { brandId: "voopoo", familyId: "vmate", categoryId: "pod-systems", systemType: "pod-kit", evidence: 'Shipnity MAX "Vmate Pro 2" (Pod-176), 4 colours, ฿890 — Vmate is the VOOPOO line already sold here (Vmate i3, Pod-177)' },
   "Eliquid-73": { brandId: null, brandless: true, categoryId: "e-liquid", evidence: 'Shipnity MAX "Dundu Salt Nic" (Eliquid-73), 1 flavour; no maker site found — listed on warehouse facts only, without a brand' },
@@ -657,6 +659,11 @@ const MINIMUM_COPY: Record<string, MinimumCopy> = {
     tagline: "พอตใช้แล้วทิ้ง MQ Bar 22K",
     shortDescription: "พอตใช้แล้วทิ้ง MQ Bar ชื่อรุ่นระบุ 22K ร้านมีให้เลือก 11 กลิ่น",
   },
+  // maxlist (20/10): warehouse facts only — the Max name "Relx Essential 2" (no maker page); colours = Max's 4 + the shop's 5th (Orange).
+  "RELX-ESSENTIAL-2": {
+    tagline: "ตัวเครื่อง RELX Essential 2",
+    shortDescription: "ตัวเครื่อง RELX Essential 2 ร้านมีให้เลือก 5 สี",
+  },
   // Image sweep (19/10): numbers = INFY's own device page (infy.my/infy-device: 400mAh, Type-C); colours = Max's 14 + the maker's 5
   // the warehouse does not carry (VERIFIED_ADDITIONAL_VARIANTS).
   "INFY-POD": {
@@ -877,6 +884,19 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
       transparentBackground: true,
       sourceName: "OKami24 render (Higgsfield) from the shop's Super Cool Grape Blast photo",
       sourceUrl: "https://vapemanshop.com/wp-content/uploads/2023/10/Super-Cool-SaltNic-30ml-35mg-Grape-Blast.jpg",
+    },
+  ],
+  // maxlist (20/10): RELX Essential 2 card = Nebula Blue (in stock) — OKami24 re-shoot of the shop's five-colour line-up photo (no maker file found).
+  "RELX-ESSENTIAL-2": [
+    {
+      kind: "official-photo",
+      role: "card",
+      src: "/assets/products/relx-essential-2/card.webp",
+      alt: "RELX Essential 2 device, Nebula Blue, studio photo",
+      angle: "Front, upright — studio re-shoot (maxlist 20/10, IMAGE_SPEC §0 item 7) of the shop's colour line-up photo. Source, prompt and check in scripts/process-images.map.json `aiRender`.",
+      transparentBackground: true,
+      sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up",
+      sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/",
     },
   ],
   // Image sweep (19/10): INFY POD card = Blue Violet (in stock) — OKami24 re-shoot of INFY's own colour photo (the maker file is ~620 px
@@ -1840,6 +1860,14 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "ELQ-6-9": { kind: "official-photo", role: "detail", src: "/assets/products/super-cool-saltnic/variant-elq-6-9.webp", alt: "Super Cool White Polo salt nic e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Super Cool White Polo photo", sourceUrl: "https://vapemanshop.com/wp-content/uploads/2023/10/Super-Cool-SaltNic-30ml-35mg-White-Polo.jpg" },
     "ELQ-6-10": { kind: "official-photo", role: "detail", src: "/assets/products/super-cool-saltnic/variant-elq-6-10.webp", alt: "Super Cool Black Hexx salt nic e-liquid bottle, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Super Cool Black Hexx photo", sourceUrl: "https://vapemanshop.com/wp-content/uploads/2023/10/Super-Cool-SaltNic-30ml-35mg-Black-Hexx.jpg" },
   },
+  // maxlist (20/10): RELX Essential 2 — one re-shoot per colour on the shop's line-up (Max's 4 + Orange).
+  "RELX-ESSENTIAL-2": {
+    "Pod-157-1": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-1.webp", alt: "RELX Essential 2 device, Black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "Pod-157-2": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-2.webp", alt: "RELX Essential 2 device, Steel Silver, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "Pod-157-3": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-3.webp", alt: "RELX Essential 2 device, Grey, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "Pod-157-4": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-pod-157-4.webp", alt: "RELX Essential 2 device, Nebula Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+    "relx-essential-2-verified-orange": { kind: "official-photo", role: "detail", src: "/assets/products/relx-essential-2/variant-orange.webp", alt: "RELX Essential 2 device, Orange, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's RELX Essential 2 colour line-up", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+  },
   // Image sweep (19/10): INFY POD — 18 of 19 colours have a photo (re-shoots of INFY's own colour photos). Max's "Frost Pink" (Pod-158-11)
   // is not on infy.my → no-photo panel (infy.my sells "Floss Pink", kept as its own maker colour — whether they are one colour is unconfirmed).
   "INFY-POD": {
@@ -2247,6 +2275,10 @@ export interface VerifiedAdditionalOptionValue {
 }
 
 export const VERIFIED_ADDITIONAL_VARIANTS: Record<string, VerifiedAdditionalOptionValue[]> = {
+  // maxlist (20/10): the shop's RELX Essential 2 colour line-up shows 5 colours; Max (Pod-157) carries 4 — Orange is not in the warehouse.
+  "RELX-ESSENTIAL-2": [
+    { code: "orange", label: "Orange", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
+  ],
   // Image sweep (19/10): infy.my sells the INFY Device in 19 colours (product pages infy-closed-pod-<colour>); these 5 are not in Max (Pod-158).
   "INFY-POD": [
     { code: "flame-yellow", label: "Flame Yellow", sourceUrl: "https://www.infy.my/product/infy-closed-pod-flame-yellow/" },
@@ -2568,6 +2600,7 @@ const MANUFACTURER_DISPLAY_NAMES: Record<string, { name: string; sourceUrl: stri
   "Pod-142": { name: "Reswa Sportcan 12K", sourceUrl: "https://ihavevape.net/product/res-wa-sport-can-12000-puffs/" },
   "NEXSWITCH-16K-KIT": { name: "Nexswitch 16K Kit", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
   "NEXSWITCH-16K-POD": { name: "Nexswitch 16K Pod", sourceUrl: "https://pod789.com/product/nex-switch-snowwolf-16k/" },
+  "RELX-ESSENTIAL-2": { name: "RELX Essential 2", sourceUrl: "https://maneevp.com/product/relx-essential-2-pod-device/" },
   "RELX-LUMI-18K": { name: "RELX LUMI 18K", sourceUrl: "https://ihavevape.net/product/relx-lumi-18k/" },
   "ESKO-BAR-20K": { name: "ESKO BAR 20000", sourceUrl: "https://eskobarvape.com/product/eskobar" },
   "ESKO-BAR-SWITCH-POD": { name: "ESKO BAR SWITCH 20K Pod", sourceUrl: "https://eskobarvape.com/product/pod-system/" },
