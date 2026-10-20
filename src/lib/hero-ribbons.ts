@@ -91,12 +91,10 @@ float rectDist(vec2 p, vec4 r) {
   vec2 q = abs(p - (r.xy + r.zw * 0.5)) - r.zw * 0.5;
   return length(max(q, 0.0)) + min(max(q.x, q.y), 0.0);
 }
+// a vertex shader may index a uniform array with any integer (GLSL ES 1.00 appendix A) — the earlier
+// 24-step search ran four times per spine point, most of the vertex work (measured 20/10)
 vec2 P(float i) {
-  float j = clamp(i, 0.0, u_npts - 1.0);
-  for (int k = 0; k < 24; k++) {
-    if (float(k) == j) return u_pts[k];
-  }
-  return u_pts[0];
+  return u_pts[int(clamp(i, 0.0, u_npts - 1.0) + 0.5)];
 }
 vec2 spine(float u) {
   float s = clamp(u, 0.0, 1.0) * (u_npts - 1.0);
@@ -140,7 +138,18 @@ void main() {
   vec2 t = normalize(pathAt(a_u + 0.0015) - p);
   float bloom = u_flow > 0.5 ? 1.0 + u_headV.z * knot(a_u) : 1.0;
   float keep = u_s0 + a_u * (u_npts - 1.0) > u_cut ? 0.0 : 1.0;
-  vec2 pos = p + vec2(-t.y, t.x) * a_side * u_halfw * bloom * keep;
+  float hw = u_halfw * bloom;
+  // flow: on the inside of a tight bend a wide stroke (the knot's bloom) folded over itself and showed
+  // as spokes (owner 20/10 "it looks broken") — there it reaches at most 80 % of the bend's radius
+  // (the crisp lines are too narrow to fold: only the soft strokes pay for the extra point)
+  if (u_flow > 0.5 && u_halfw > 6.0) {
+    vec2 pm = pathAt(a_u - 0.0015);
+    vec2 t0 = normalize(p - pm + vec2(0.0, 1e-4));
+    float turn = t0.x * t.y - t0.y * t.x;
+    float r = max(length(p - pm), 1e-3) / max(abs(turn), 1e-5);
+    if (turn * a_side > 0.0) hw = min(hw, r * 0.8);
+  }
+  vec2 pos = p + vec2(-t.y, t.x) * a_side * hw * keep;
   vec2 clip = pos / u_res * 2.0 - 1.0;
   gl_Position = vec4(clip.x, -clip.y, 0.0, 1.0);
   v_u = a_u;
@@ -213,7 +222,9 @@ void main() {
   vec4 g = u_flowF > 0.5 ? (u_core > 0.5 ? vec4(1.0, 0.784, 0.627, 1.0) : vec4(1.0, 0.4, 0.2, 1.0))
          : (u_core > 0.5 ? coreGrad(v_u) : mainGrad(v_u));
   float d = abs(v_side);
-  float edge = u_halo > 0.5 ? exp(-d * d * 3.5) : 1.0 - smoothstep(1.0 - u_feather, 1.0, d);
+  // soft stroke: a bell that reaches zero at the strip's edge (it stopped at 3 %, which showed as rims
+  // where many overlap — owner 20/10 "it looks broken")
+  float edge = u_halo > 0.5 ? max(0.0, (exp(-d * d * 3.5) - 0.0302) / 0.9698) : 1.0 - smoothstep(1.0 - u_feather, 1.0, d);
   float beat = 0.5 + 0.5 * sin(6.2831853 * (v_g * 0.42 - u_pulse.y * 0.09));
   float a = g.a * v_alpha * edge * mix(1.0, 0.35 + 1.05 * beat * beat, u_pulse.x);
   if (u_head.y > 0.5) a *= 1.0 - smoothstep(u_head.x - 0.35, u_head.x + 0.02, v_g);
@@ -229,7 +240,11 @@ void main() {
   a *= 1.0 + lead * hot + u_head.z * 1.4 * exp(-wide * wide);
   g.rgb = mix(g.rgb, vec3(1.0, 0.88, 0.76), clamp(hot * (0.45 + 0.55 * u_head.z), 0.0, 1.0) * 0.85);
   a *= mix(v_h1, v_h2, hot) * v_box;
-  gl_FragColor = vec4(g.rgb * a, a);
+  // dither: faint glow over a dark page falls between the 256 steps of a colour channel and showed as
+  // bands, some greenish (owner 20/10); a sub-step of noise per stroke lets the sum fall smoothly. Only
+  // where the stroke has light, so the dark page around it stays exactly black.
+  float n = fract(52.9829189 * fract(dot(gl_FragCoord.xy, vec2(0.06711056, 0.00583715))));
+  gl_FragColor = vec4(g.rgb * a, a) + (n - 0.5) / 255.0 * clamp(a * 255.0, 0.0, 1.0);
 }`;
 
 type Uniforms = Record<string, WebGLUniformLocation | null>;
