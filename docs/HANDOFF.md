@@ -45,6 +45,12 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Nano Banana Pro **2K only** (owner bought a 3-day Unlimited 21/10 ~21:20, Chrome only; 4K costs credits): all missing flavour photos,
   biggest first (RELX Infinity Pro 2 pods 42 · INFY PLUS 27 · nexPOD 15K 20 · pod-150 16 · Vazer One 16 · nexBAR 18K 11 · SKE B20000 7 · Esko 20K 7).
   Credits balance 3,949.4 [line 1's report]. Blueraz Berry / Pinky Blush (Super Cool) = no reference anywhere.
+  LINE 1 STOPPED 22/10 [its report: tree clean, all pushed, 0 credits today]: OPEN draft #713 SKE Crystal B20000 6 flavours (branch
+  ske-crystal-2210, head d2e0add5 · gate PASS + verify --full PASS · checker was still reading at the stop — its result goes in the PR body;
+  passed = Checker line → ready → merge → curl; no result = re-run the checker on d2e0add5). Next: Pepo Mint + Dundu Grape (refs found, 2 small
+  PRs) → RELX Pro 2 (~19 of 32 missing flavours have official MY/US pack renders) → look for flavour-specific packs for KS 15K pods / Esko 20K /
+  Nexswitch 16K (ruling above). Stay no-photo: Reswa Red Bull (trademark, 18/10) · Double Mint · Pop Up ×4 · Super Cool ×2 · INFY ×7 · KS Grape
+  Berry. Its notes = `line1-marbo-v3-2110.md` in its worktree.
   line 2 SEO = `2-seo-gsc-22-10-seo` (local_d6b80e36-6498-4b43-9595-94695bbd34d0), PAUSED 21/10, nothing open (its stop note = 3s +
   first line of `_incoming/next-chat-seo.md` in its worktree). Its doubled-label finding was fixed in #708.
   Owner rules learned 21/10: a relayed credit approval worked for line 1 when quoted verbatim · Friday never types a password (Shipnity Max
