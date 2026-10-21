@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "@/components/i18n/LocaleProvider";
@@ -98,8 +98,9 @@ export const HeroCards = forwardRef<HTMLDivElement, { slots: HeroSlotView[]; typ
       };
     }, [ref]);
 
+    // --okh-n: how many cards share the row (the "deck" layout overlaps them to fit)
     return (
-      <div ref={ref} className="okh-cards">
+      <div ref={ref} className="okh-cards" style={{ "--okh-n": slots.length } as CSSProperties}>
         {slots.map((s, i) => {
           // the brand label re-tunes on every hover; the model name only once, when the row first shows — a name that
           // scrambles while the visitor reads it is just unreadable (designer 21/10)

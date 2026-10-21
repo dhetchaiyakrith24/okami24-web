@@ -451,25 +451,50 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
      padding, so no name or price is covered; a tight edge shadow — checker #679); the hovered / focused card lifts and grows
      to the front, the other three blur and dim. It grows from its centre, so it never reaches the buttons above or the
      LINE button below (measure.js). Reduced motion / Save-Data: no lift or zoom, the blur and dimming stay. */
-  .okh[data-layout="focus"] .okh-cards { gap: 0; }
-  .okh[data-layout="focus"] .okh-card {
+  .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-cards { gap: 0; }
+  .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-card {
     padding-inline: 1.375rem 2.25rem;
     box-shadow: -8px 0 14px -10px rgb(0 0 0 / 0.75);
     transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease;
   }
-  .okh[data-layout="focus"] .okh-card + .okh-card { margin-left: -1.125rem; }
-  .okh[data-layout="focus"] .okh-card:nth-child(1) { z-index: 1; }
-  .okh[data-layout="focus"] .okh-card:nth-child(2) { z-index: 2; }
-  .okh[data-layout="focus"] .okh-card:nth-child(3) { z-index: 3; }
-  .okh[data-layout="focus"] .okh-card:nth-child(4) { z-index: 4; }
-  .okh[data-layout="focus"] .okh-cards:has(.okh-card:is(:hover, :focus-visible)) .okh-card:not(:hover, :focus-visible) {
+  .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-card + .okh-card { margin-left: -1.125rem; }
+  .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-card:nth-child(1) { z-index: 1; }
+  .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-card:nth-child(2) { z-index: 2; }
+  .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-card:nth-child(3) { z-index: 3; }
+  .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-card:nth-child(4) { z-index: 4; }
+  .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-cards:has(.okh-card:is(:hover, :focus-visible)) .okh-card:not(:hover, :focus-visible) {
     filter: blur(3px) brightness(0.55);
   }
-  .okh[data-layout="focus"] .okh-card:is(:hover, :focus-visible) {
+  .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-card:is(:hover, :focus-visible) {
     z-index: 10;
-    transform: translateY(-14px) scale(1.07);
+    transform: translateY(-10px) scale(1.05);
     box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 35%, transparent), 0 30px 70px -24px rgb(0 0 0 / 0.9), 0 24px 60px -30px rgb(255 106 44 / 0.5);
   }
+
+  /* the lifted card needs room above the row: the gap above it is at least the lift + 12 px at every height (checker #682:
+     at 768 px tall the lifted card covered the lede and the buttons) */
+  .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-cards { margin-top: 1.25rem; }
+  .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-card-img { height: clamp(7rem, calc(100svh - 43.75rem), 20rem); }
+
+  /* DESKTOP_CARD_LAYOUT "deck" (owner 21/10 "ซ้อนๆแบบไพ่ แต่แนวสูงเท่ากัน อารมณ์แบบเรียงซ้อนหลายใบ … เพิ่มสินค้าได้"): a hand of
+     cards spread flat — every card the same width (--okh-cw) and height, each one over the one before, overlapping as much
+     as the row needs to fit all of them (--okh-n, set by HeroCards). At rest each card shows its left part: brand, the
+     photo (moved left inside its box) and the model; hover / focus lifts the whole card to the front, the others blur
+     (the "focus" rules above). */
+  .okh[data-layout="deck"] .okh-cards {
+    --okh-cw: min(24rem, calc(170% / var(--okh-n)));
+    display: flex;
+  }
+  .okh[data-layout="deck"] .okh-card { flex: 0 0 var(--okh-cw); width: var(--okh-cw); padding-inline: 1.375rem; }
+  .okh[data-layout="deck"] .okh-card + .okh-card {
+    margin-left: calc((100% - var(--okh-n) * var(--okh-cw)) / (var(--okh-n) - 1));
+  }
+  .okh[data-layout="deck"] .okh-card:nth-child(5) { z-index: 5; }
+  .okh[data-layout="deck"] .okh-card:nth-child(6) { z-index: 6; }
+  .okh[data-layout="deck"] .okh-card:nth-child(7) { z-index: 7; }
+  .okh[data-layout="deck"] .okh-card:nth-child(8) { z-index: 8; }
+  .okh[data-layout="deck"] .okh-card:is(:hover, :focus-visible) { z-index: 10; }
+  .okh[data-layout="deck"] .okh-card-img img { object-position: 22% 50%; }
 
   .okh-cards {
     display: grid;
@@ -579,11 +604,11 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   html[data-okami-lite="1"] .okh-card:hover .okh-card-img img { transform: scale(1.1); }
   html[data-okami-lite="1"] .okh-lattice::after { transition: opacity 0.2s ease; }
   html[data-okami-lite="1"] .okh[data-layout] .okh-card { transition: none; }
-  html[data-okami-lite="1"] .okh[data-layout="focus"] .okh-card:is(:hover, :focus-visible) { transform: none; }
+  html[data-okami-lite="1"] .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-card:is(:hover, :focus-visible) { transform: none; }
 }
 @media (min-width: 64rem) and (prefers-reduced-motion: reduce) {
   .okh[data-layout] .okh-card { transition: none; }
-  .okh[data-layout="focus"] .okh-card:is(:hover, :focus-visible) { transform: none; }
+  .okh:is([data-layout="focus"], [data-layout="deck"]) .okh-card:is(:hover, :focus-visible) { transform: none; }
   .okh-card, .okh-card-img img, .okh-card-tags, .okh-card-cta, .okh-card-arrow { transition: none; }
   .okh-card:hover, .okh-card:hover .okh-card-arrow { transform: none; }
   .okh-card:hover .okh-card-img img { transform: scale(1.1); }

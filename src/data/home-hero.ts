@@ -18,12 +18,16 @@ export type HeroType = (typeof HERO_TYPES)[number];
  * card photo. It is the product's own card photo rotated (AI re-renders warped the device — owner: "บิดๆ
  * เบี้ยวๆ"). Remove the field = that slot is back to the card photo everywhere.
  */
-export const HOME_HERO_SLOTS: { type: HeroType; product: string; photo?: string }[] = [
+export const HOME_HERO_SLOTS: { type: HeroType; product: string; photo?: string; desktopOnly?: boolean }[] = [
   { type: "pod-systems", product: "caliburn-g5", photo: "/assets/hero/caliburn-g5-lying.webp" },
   // ARGUS G4, not P3: P3 is a square box that does not read as "lying"; G4 is slim, sharp, ember-orange
   { type: "pod-systems", product: "argus-g4", photo: "/assets/hero/argus-g4-lying.webp" },
   { type: "switch-pods", product: "m-switch-kit", photo: "/assets/hero/m-switch-kit-lying.webp" },
   { type: "heated-tobacco-devices", product: "iqosheet-17", photo: "/assets/hero/iqos-iluma-one-lying.webp" },
+  // desktop deck only (owner 21/10 "มันอาจเพิ่มสินค้าได้ด้วย"): two more strong brands, and the disposables the four lack —
+  // Friday's picks, the leads of the homepage disposables row (home-sections.ts). Phones keep the four above.
+  { type: "disposables", product: "relx-smash-go-12k", desktopOnly: true },
+  { type: "disposables", product: "infy-20k", desktopOnly: true },
 ];
 
 /**
@@ -40,10 +44,11 @@ export const DESKTOP_HERO: "cards" | "stage" = "cards";
  *   "lattice" = the #677 grid of squares lit around the cursor.
  * DESKTOP_CARD_LAYOUT — "row" = side by side (#677) · "focus" = one level row, each card overlapping the one before a little;
  *   the hovered card lifts and grows to the front, the others blur (owner 21/10 "1111 … ซ้อนนะ … การ์ดอื่นๆ เบลอไป";
- *   the #679 stagger / fan drafts are in git).
+ *   the #679 stagger / fan drafts are in git) · "deck" = the same, spread like a hand of cards: every card the same height,
+ *   overlapping far more, so the row holds more slots (owner 21/10 "ซ้อนๆแบบไพ่ แต่แนวสูงเท่ากัน … เพิ่มสินค้าได้").
  */
 export const DESKTOP_BG: "none" | "spot" | "lattice" = "spot";
-export const DESKTOP_CARD_LAYOUT: "row" | "focus" = "focus";
+export const DESKTOP_CARD_LAYOUT: "row" | "focus" | "deck" = "deck";
 
 /**
  * Phones (below 64rem): "showcase" = the new hero · "classic" = the previous phone hero

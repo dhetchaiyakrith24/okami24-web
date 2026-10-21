@@ -28,6 +28,8 @@ export type HeroSlotView = {
   price: number | null;
   /** how many colours / flavours the model comes in, from 2 up (desktop cards) */
   options: { n: number; kind: "colors" | "flavors" } | null;
+  /** an extra card in the desktop deck only — never a phone tab (home-hero.ts `desktopOnly`) */
+  desktopOnly?: boolean;
 };
 
 const PHOTO_SIZES = "(min-width: 1024px) 40vw, 70vw";
@@ -76,7 +78,9 @@ const TYPE_TAG: Record<HeroType, string> = {
  * give way to the four slots as cards in a row (HeroCards) over a lattice of small squares that lights up in the shop's
  * orange around the cursor; the ribbons then cross behind the card row. Phones are unchanged.
  */
-export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView[]; desktop?: "cards" | "stage" }) {
+export function HeroShowcase({ slots: allSlots, desktop = "stage" }: { slots: HeroSlotView[]; desktop?: "cards" | "stage" }) {
+  // phones (stage + tabs) show the four regular slots; the desktop cards also show the desktop-only ones (home-hero.ts)
+  const slots = allSlots.filter((s) => !s.desktopOnly);
   const { dict, locale } = useLocale();
   const copy = dict.heroShowcase;
   const [cur, setCur] = useState(0);
@@ -292,7 +296,7 @@ export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView
           ) : null}
         </div>
 
-        {desktop === "cards" ? <HeroCards ref={cardsRef} slots={slots} typeTag={TYPE_TAG} /> : null}
+        {desktop === "cards" ? <HeroCards ref={cardsRef} slots={allSlots} typeTag={TYPE_TAG} /> : null}
 
         <div
           ref={stageRef}
