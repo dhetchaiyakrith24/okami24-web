@@ -35,7 +35,7 @@ export const HOME_HERO_SLOTS: { type: HeroType; product: string; photo?: string 
 export const DESKTOP_HERO: "cards" | "stage" = "cards";
 
 /**
- * DESKTOP_TRAVEL (owner 21/10 "สินค้าเคลื่อนตามการเลื่อน", designer direction B "เปิดแถว" — DRAFT): "lineup" = the hero holds
+ * DESKTOP_TRAVEL (owner 21/10 "สินค้าเคลื่อนตามการเลื่อน", designer direction B "เปิดแถว"; owner saw the clip 21/10: "ทำเต็มขึ้นเว็บได้เลย"): "lineup" = the hero holds
  * for ~0.6 screen while the visitor scrolls; the words fade, the card frames dissolve and the four devices grow into one
  * level row, then the row scrolls away with the page · "none" = the hero scrolls like any section. Desktop only; reduced
  * motion / Save-Data / browsers without scroll-driven animation / screens under 44rem tall = "none".

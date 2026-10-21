@@ -690,7 +690,7 @@ html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; transform: none;
   .okh-rail > :hover { transform: none; }
 }
 
-/* --- DESKTOP_TRAVEL "lineup" (home-hero.ts, owner 21/10 "สินค้าเคลื่อนตามการเลื่อน", designer direction B — DRAFT) ---
+/* --- DESKTOP_TRAVEL "lineup" (home-hero.ts, owner 21/10 "สินค้าเคลื่อนตามการเลื่อน", designer direction B; owner OK on the clip 21/10) ---
    The hero sticks inside a box 0.6 screen taller than itself; over that stretch of scroll the words fade up and out, the
    card frames dissolve and the four devices grow into one level row (left to right, a beat apart), then the row scrolls
    away with the page. Everything runs on the scroll (CSS scroll-driven animation, compositor properties for the moving
