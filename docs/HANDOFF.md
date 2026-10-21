@@ -11,7 +11,11 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 21/10 ~23:30 = 5af862b8 (#706, handoff docs; site = 6ea47c20 #705). DEPLOYS CHANGED 21/10 (round 3d, #702): Render builds +
+1 main: `git fetch && git log -1 --oneline origin/main` · 22/10 (day closed by the owner) = 20cced3b (#712). Since the move: #707 rounds 3d/3w closed (tags
+  render-build-2110 · home-upgrade-2110) · #708 home hero card links read each label once (Decode = one span; was "VOOPOOVOOPOOARGUS G4ARGUS G4"
+  in server HTML) [ตรวจแล้ว checker PASS 315e603b, live curl] — its deploy answered 502 for ~1 min at the switch-over, then 200 on / and the 4
+  card pages [ตรวจแล้ว curl] (watch: does every Render deploy blip?) · line 1 images #709 RELX Infinity Pro 2 pods 10 flavours · #710/#711 INFY
+  PLUS pods (every flavour with a poster) · #712 KS Quikpro kit 4 flavours. DEPLOYS CHANGED 21/10 (round 3d, #702): Render builds +
   deploys every merge to main itself — service setting Auto-Deploy = "On Commit" (set in the dashboard 21/10 23:10 with the owner's OK);
   GitHub `deploy` workflow = fast PR checks only (decide + checks = verify:commerce + verify:catalog, no build). The Render BLUEPRINT IS
   "Sync paused" (last sync a month ago) → render.yaml edits do NOT reach Render; the dashboard settings are the truth. Last deploy:
@@ -22,21 +26,33 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   #699 Punta · #700 MQ Bar · #701/#703 Super Cool · #704 TEREA card (real 4 packs, render) · #705 RELX LUMI 18K.
   Open PRs: #685 stock sync 21/10 (owner confirms before merge, 13.7) · #643 stock docs. GitHub budget email 21/10: $13.50 of $15 used [owner's
   screenshot]; the owner had chosen "$30" — the cap may still be $15 (his step).
-2 Nothing ahead of main. Branch `rounds-close-2110` = the 3d/3w close (docs only). Test servers (stop/rebuild freely): 3422 = wt-3422 at 797880f4 ·
-  3423 = wt-3423 (home-phone-ground, merged) · 3424 = wt-3424 at a4c519ad (stopped for verify --full). Rebuild: `bash
+2 Main folder: nothing ahead of main except branch `docs-handoff-2210` = this handoff. Line 1's branches = its own report (item 3). Test servers
+  (stop/rebuild freely, all up 22/10): 3422 = wt-3422 at 085805d9 · 3423 = wt-3423 (home-phone-ground, merged) · 3424 = wt-3424 at 315e603b (#708). Rebuild: `bash
   _incoming/hero-2010/rebuild-3424.sh <port>`. Helpers `_incoming/upgrade-2110/` (shot.js rail=, b5/rec-scroll.js, b5/hit-probe.js,
   b5/y0-probe.js, b5/pin-probe.js, b6/floor-probe.js, b4/decode-probe.js). NEW LOCK (#702): pre-checker-gate check `full` = a PR that reaches
   the site needs `npx tsx scripts/verify-catalog.ts --full` passed on its head in a TEST WORKTREE (env: SITE_URL only — OKAMI24_DATA_DIR breaks
   the backup contract test) → stamp in .git/verify-full/<sha>. PR flow now: draft → gate → checker → `gh pr ready` once → checks → merge.
 3 MAIN CHAT = local_4ae9f252-496d-4dd1-8816-9ae3de33e062 since 21/10 ~23:20 (both side chats told to report to it). Owner 21/10 ~23:30:
   "เอาแค่แชทลูกแชทเดียว … งานรูปหลักๆ ลุยเลยสร้างเลย" → ONE side chat = line 1 (images, full speed); line 2 PAUSED (told to push and go idle);
-  the 22/10 GSC read = the main chat. Side chats:
+  the GSC read = the main chat. **Owner 22/10: "ค่อยทำพรุ่งนี้" — main + side chat stopped for the day; resume 23/10.**
+  NEXT (main, 23/10): (1) GSC read that was due 22/10 (SEO_BASELINE rows 1–8 + 22 + 24; judge with the 19–21/10 changes: home links, #708
+  anchor fix) · (2) small fix: hero card index "01–04" (aria-hidden) still sits inside each card link → anchor text "02VOOPOO…" (checker #708
+  note) · (3) restart line 1 on the image queue. Friday's image ruling 22/10 (taste, owner may overrule — told him): look-alike flavour sets
+  (KS Quikpro 15K pods 16 · Esko Bar 20K 7 · Nexswitch 16K pods 5) → photo = pod/device + THAT flavour's own pack/box/label when one exists
+  (MURO SC 8000 + #712 precedent); none = keep the no-photo panel (no repeated photo, no fruit props). Pop Up 10K ×4 · Super Cool ×2 = no
+  reference anywhere. Side chats:
   line 1 = `1-products-2110b` (local_0ede4203-ce72-489e-a165-15bd25f9a0d0, worktree mystifying-driscoll-575ab6) — image sweep on
   Nano Banana Pro **2K only** (owner bought a 3-day Unlimited 21/10 ~21:20, Chrome only; 4K costs credits): all missing flavour photos,
   biggest first (RELX Infinity Pro 2 pods 42 · INFY PLUS 27 · nexPOD 15K 20 · pod-150 16 · Vazer One 16 · nexBAR 18K 11 · SKE B20000 7 · Esko 20K 7).
   Credits balance 3,949.4 [line 1's report]. Blueraz Berry / Pinky Blush (Super Cool) = no reference anywhere.
-  line 2 SEO = `2-seo-gsc-22-10-seo` (local_d6b80e36-6498-4b43-9595-94695bbd34d0), PAUSED 21/10; GSC read due 22/10 (also check: the decoded
-  hero/tag labels carry the word twice in HTML, sr-only + visible — checker #695 asked for an SEO eye).
+  LINE 1 STOPPED 22/10 [its report: tree clean, all pushed, 0 credits today]: OPEN draft #713 SKE Crystal B20000 6 flavours (branch
+  ske-crystal-2210, head d2e0add5 · gate PASS + verify --full PASS · checker was still reading at the stop — its result goes in the PR body;
+  passed = Checker line → ready → merge → curl; no result = re-run the checker on d2e0add5). Next: Pepo Mint + Dundu Grape (refs found, 2 small
+  PRs) → RELX Pro 2 (~19 of 32 missing flavours have official MY/US pack renders) → look for flavour-specific packs for KS 15K pods / Esko 20K /
+  Nexswitch 16K (ruling above). Stay no-photo: Reswa Red Bull (trademark, 18/10) · Double Mint · Pop Up ×4 · Super Cool ×2 · INFY ×7 · KS Grape
+  Berry. Its notes = `line1-marbo-v3-2110.md` in its worktree.
+  line 2 SEO = `2-seo-gsc-22-10-seo` (local_d6b80e36-6498-4b43-9595-94695bbd34d0), PAUSED 21/10, nothing open (its stop note = 3s +
+  first line of `_incoming/next-chat-seo.md` in its worktree). Its doubled-label finding was fixed in #708.
   Owner rules learned 21/10: a relayed credit approval worked for line 1 when quoted verbatim · Friday never types a password (Shipnity Max
   login asked 21/10 — refused; owner may log in once himself) · every ready-PR push costs Actions money → draft until checker PASS.
 3d CLOSED 21/10 — round "move the build to Render" (#702), tag `render-build-2110` (round file: `git show render-build-2110:docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt`).
@@ -205,7 +221,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 4 SIZE: §16 is ~35 KB, over the 15 KB spec — trim the 3m/3i/3s/3p/3u blocks at the next house-clean (git keeps the text).
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md` — nothing waiting on the owner is written here.
 5 open / dated:
-  - GSC reads: 22/10 (SEO_BASELINE last section rows 1–8 + 22 + 24, and round SEO ง's "validate fix" started 07/10) · 01/11
+  - GSC reads: 22/10 → done 23/10 by the main chat (SEO_BASELINE last section rows 1–8 + 22 + 24, and round SEO ง's "validate fix" started 07/10) · 01/11
     (rows 9–21, 23) · 15/11 · 10/12. `_incoming/seo-d/` kept until 22/10. GSC in the owner's Chrome: screenshots time out —
     drive it by `find` refs; type the URL into "ตรวจสอบ URL ใน okami24.store" + Enter TWICE (the first is swallowed).
   - Search Console 2–4 weeks after 12/10: no okami-24.com URL shows instead of .store.
