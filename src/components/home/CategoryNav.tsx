@@ -10,7 +10,7 @@ export function CategoryNav() {
   return (
     <section className="border-b border-surface-border-soft bg-surface-1">
       <Container className="py-8">
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="okh-rail grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {categories.map((category) => (
             <Link
               key={category.id}
