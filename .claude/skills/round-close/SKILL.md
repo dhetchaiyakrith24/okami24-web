@@ -30,8 +30,8 @@ A new look, slot or component in the round → `designer` **one time** with the 
 
 ## Step 3 — Verify set (names only)
 
-Full-set work (13.5 #3) runs the whole list; light-set work runs 13.5 #2 (GitHub runs `verify:catalog --full` on
-every PR that touches the site) plus the Thai-copy gates on the touched pages.
+Full-set work (13.5 #3) runs the whole list; light-set work runs 13.5 #2 (GitHub runs the fast `verify:catalog` on
+every PR that touches the site; the full build runs on the test server and on Render at deploy — 21/10) plus the Thai-copy gates on the touched pages.
 
 - `npx tsc --noEmit` · `npx eslint <files touched this round>` · `npm run verify:commerce`
 - `SITE_URL=<production origin> npm run verify:catalog -- --full` — builds by itself: stop the test server first

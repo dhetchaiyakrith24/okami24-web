@@ -251,7 +251,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
 6 verify baseline = round SEO ฉ close 14/10 (`_incoming/seo-f/b7/*.log`, numbers as printed) [ตรวจแล้ว]: tsc 0 (empty log) ·
   verify:commerce 17/17 · i18n 16/16 · content-dates current (57 paths) · raw NBSP/U+2060 in source 0 (again 0 on 15/10 after
   #494) · scan.js 0/118 + og-gate 118/118 (both against the live site — before the 14/10 test-server rule) · storefront 55 shown /
-  55 buyable (37 legacy + 18 ProductMaster). verify:catalog --full = GitHub `checks` on every site PR.
+  55 buyable (37 legacy + 18 ProductMaster). verify:catalog --full = the local test server before the checker (since 21/10 GitHub `checks` = the fast verify, no build; Render builds at deploy).
 Copy-paste line for the next chat: `อ่าน docs/HANDOFF.md §16 ก่อน` (+ the round file the owner approves next)
   (cloud chat: + `docs/CLOUD.md` item 3)
 ```

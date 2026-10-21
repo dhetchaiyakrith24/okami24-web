@@ -16,14 +16,14 @@
 
 **ยังไม่เคยซ้อมจริง** (รอพี่ตรวจ ข้อ 59) — ขั้น 9.4 ของรอบเก็บบ้าน: ซ้อม 1 ครั้งนอกเวลาขาย โดย Friday พาทำทีละขั้น
 
-### 1ก. เว็บขึ้นเองหลัง merge (รอบ A "ต่อท่อ" 27/09) — ปิดชั่วคราว / ดูว่าขึ้น commit ไหน
+### 1ก. เว็บขึ้นเองหลัง merge (ตั้งแต่ 21/10: Render สร้างและขึ้นเว็บเอง) — ปิดชั่วคราว / ดูว่าขึ้น commit ไหน
 
-ตั้งแต่รอบ A: merge งานที่แตะเว็บเข้า `main` แล้ว GitHub รันด่านเอง ผ่านครบ = สั่ง Render ขึ้นเว็บเอง (`.github/workflows/deploy.yml`) · **[ยังไม่ได้ลองบนมือถือ]**
-- **ไม่ขึ้นเอง (Summary บอก "SKIP deploy" + เหตุผล):** merge ที่ไม่แตะเว็บ · merge ที่แก้ตัว workflow เองด้วย (แม้แตะเว็บ) · ด่านไม่ผ่าน · ยังไม่มีกุญแจ · main ขยับระหว่างตรวจ **และ commit ใหม่แตะเว็บ** (รอบของ commit ใหม่ขึ้นแทน — ถ้า commit ใหม่ไม่แตะเว็บ รอบเดิมขึ้นเองตั้งแต่ PR #119 30/09 · รอบที่เริ่มก่อน #119 ยังใช้ตรรกะเดิม) — อยากให้ขึ้นเลย: Actions → deploy → **Run workflow** → branch `main` → ติ๊ก deploy → Run (ด่านรันก่อนเสมอ)
-- **ดูว่าขึ้น commit ไหน สำเร็จไหม:** GitHub → รีโป okami24-web → แท็บ **Actions** → workflow **deploy** → แถวบนสุด → กล่องสรุป (Summary) บอก "DEPLOY started — commit xxxxxxx" หรือ "SKIP deploy — เหตุผล" · ขึ้นเว็บจริงสำเร็จไหม = Render → okami24 → **Events** (ขั้นนี้ GitHub ไม่เห็น)
+ตั้งแต่รอบ "ย้ายการสร้างเว็บไป Render" (21/10): merge อะไรก็ตามเข้า `main` = Render สร้างเว็บและขึ้นเว็บเอง (`render.yaml` `autoDeployTrigger: commit`) — GitHub ไม่สร้างเว็บแล้ว (ตรวจแค่ PR) · build ล้ม = Render ไม่ขึ้นเว็บ เว็บเดิมเปิดต่อ · **[ยังไม่ได้ลองบนมือถือ]**
+- **ดูว่าขึ้น commit ไหน สำเร็จไหม:** Render → okami24 → **Events** (หรือ **Deploys**) → แถวบนสุดบอกรหัส commit 7 ตัว + Live / Failed
+- **ไม่ขึ้น / อยากให้ขึ้นใหม่:** Render → okami24 → ปุ่ม **Manual Deploy** → **Deploy latest commit**
 - **ของพังหลังขึ้นเอง:** ทำข้อ 1 (Rollback) ก่อนเสมอ — แล้วค่อยแก้โค้ด · หลัง Rollback โค้ดใน `main` ยังเป็นของพัง: merge ที่แตะเว็บครั้งถัดไปจะดันของพังกลับขึ้นด้วย → บอกทีมให้ revert ก่อน หรือปิดตัวขึ้นเอง (ข้อถัดไป) จนกว่า revert จะ merge
-- **ปิดตัวขึ้นเองชั่วคราว (ไม่ต้องแก้โค้ด):** GitHub → **Actions** → เมนูซ้ายเลือก **deploy** → ปุ่ม **⋯** มุมขวา → **Disable workflow** · เปิดคืน = ที่เดิม **Enable workflow** · ระหว่างปิด merge ไม่ขึ้นเว็บเลย (ขึ้นเว็บด้วยมือใน Render = Cowork)
-- **ถอดกุญแจทิ้งถาวร:** GitHub → Settings → Secrets and variables → Actions → `RENDER_DEPLOY_HOOK_URL` → Remove · และ Render → okami24 → Settings → Deploy Hook → สร้างใหม่ (กุญแจเก่าใช้ไม่ได้ทันที)
+- **ปิดตัวขึ้นเองชั่วคราว:** Render → okami24 → **Settings** → **Auto-Deploy** → **Off** · เปิดคืน = ที่เดิม **On Commit** · ระหว่างปิด merge ไม่ขึ้นเว็บเลย (ขึ้นด้วยมือ = Manual Deploy) · ถาวร = แก้ `render.yaml` เป็น `autoDeployTrigger: off`
+- **กุญแจ deploy hook เก่า** (`RENDER_DEPLOY_HOOK_URL` ใน GitHub) ไม่มีใครใช้แล้วตั้งแต่ 21/10 · ลบได้: GitHub → Settings → Secrets and variables → Actions → Remove · และ Render → okami24 → Settings → Deploy Hook → สร้างใหม่ (กุญแจเก่าใช้ไม่ได้ทันที)
 
 ## 2. อยากกลับไป "ก่อนรอบไหน" → บอกชื่อ tag
 
