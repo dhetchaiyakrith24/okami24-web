@@ -157,7 +157,9 @@ html[data-okami-fx="off"] :is(.okh-canvas, .okh-flow-canvas)[data-on] { opacity:
 }
 .okh-prod {
   position: absolute;
-  inset: 0 -4% 4% 0;
+  /* phones: the photo stands right of centre — moved in from the edge a little (owner 21/10 "ขยับตัวพอตมาทางซ้ายเล็กน้อย
+     ทุกตัว"); desktop sets its own inset below */
+  inset: 0 4% 4% 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
