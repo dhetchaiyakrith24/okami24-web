@@ -659,3 +659,21 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
 html[data-okami-lite="1"] .okh-float,
 html[data-okami-lite="1"] .okh-prod[data-state="on"] .okh-sheen::before { animation: none; }
 html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; transform: none; }
+
+/* --- the rest of the homepage (round homepage upgrade, batch 2 — owner 21/10 "2 ได้ครับ") ---
+   The hero cards' hover carried to the product rails of every type section (HomeTypeSection) and the category tiles
+   (CategoryNav): on desktop with a real pointer, the card under the mouse lifts a little and its neighbours blur and dim.
+   The shop's own cards are untouched (the class sits on the homepage rows only); phones / touch screens see nothing new.
+   The rail scrolls sideways, which clips anything above its box, so it gets the lift's room as padding. */
+@media (min-width: 64rem) and (hover: hover) {
+  .okh-rail { padding-top: 0.75rem; margin-top: -0.75rem; }
+  .okh-rail > * { transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease; }
+  .okh-rail:has(> :hover) > :not(:hover) { filter: blur(2px) brightness(0.6); }
+  .okh-rail > :hover { transform: translateY(-6px); }
+  html[data-okami-lite="1"] .okh-rail > * { transition: none; }
+  html[data-okami-lite="1"] .okh-rail > :hover { transform: none; }
+}
+@media (min-width: 64rem) and (hover: hover) and (prefers-reduced-motion: reduce) {
+  .okh-rail > * { transition: none; }
+  .okh-rail > :hover { transform: none; }
+}
