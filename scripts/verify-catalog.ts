@@ -18,7 +18,7 @@
  */
 
 import { spawnSync } from "node:child_process";
-import { readdirSync, statSync } from "node:fs";
+import { mkdirSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import net from "node:net";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -252,7 +252,26 @@ async function main() {
     process.exitCode = 1;
   } else {
     console.log(`\nAll ${results.length} step(s) passed.`);
+    if (FULL) stampFull();
   }
+}
+
+/** A clean --full pass of this exact commit = the build + leak check GitHub used to run (moved to the test machine 21/10,
+ *  round "move the build to Render"). scripts/pre-checker-gate.js (check "full") reads the stamp before a PR that reaches
+ *  the site goes to the checker. Stored in the repo's common git dir, so a worktree's pass counts for the main folder
+ *  too. Only a clean tree is stamped — the commit must be exactly what was built. */
+function stampFull() {
+  const git = (args: string[]) => spawnSync("git", args, { encoding: "utf-8" }).stdout?.trim() ?? "";
+  const head = git(["rev-parse", "HEAD"]);
+  if (!head) return;
+  if (git(["status", "--porcelain"])) {
+    console.log("(not stamped: the tree has uncommitted changes — commit, then run --full again)");
+    return;
+  }
+  const dir = path.join(path.resolve(git(["rev-parse", "--git-common-dir"])), "verify-full");
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(path.join(dir, head), new Date().toISOString() + "\n");
+  console.log(`(stamped verify:catalog --full for ${head.slice(0, 8)} — pre-checker-gate reads it)`);
 }
 
 main();

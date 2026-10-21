@@ -109,7 +109,8 @@ layout) · คำนอกตาราง THAI_STYLE = เลือกเอง�
    รอบเดียวบรีฟแคบ → ด่าน GitHub เขียว → merge → เปิดหน้าจริงด้วย curl · **งานชุดยาวแบบที่เจ้าของผ่านแล้ว** (เช่น ทีละแบรนด์) = checker
    ครั้งเดียวตอนจบชุด (PR ระหว่างชุด = `Checker: SKIP series n/N (13.5 #1)` · PR สุดท้าย = `PASS`) ด่าน GitHub ทุก PR
 2. **ชุดเบา = ค่าเริ่มต้น** ของงานที่ถอยได้ด้วย revert ครั้งเดียว:
-   (ก) tsc + eslint ไฟล์ที่แตะ + `npm run verify:catalog` แบบเร็ว (build เต็ม = ด่าน GitHub ทำให้) ·
+   (ก) tsc + eslint ไฟล์ที่แตะ + **PR ที่แตะเว็บ = `npx tsx scripts/verify-catalog.ts --full` บน worktree ทดสอบของ PR ที่ commit หัว** (build + leak check —
+       ย้ายจาก GitHub มาเครื่องทดสอบ 21/10 · ห้ามรันในโฟลเดอร์หลัก · `pre-checker-gate` ด่าน `full` ตกถ้าไม่มี) ·
    (ข) ข้อความที่ลูกค้าเห็นเปลี่ยน = ด่านของสกิล `thai-check` (`scripts/scan.js --pages` หน้าที่แตะ + หน้าที่ข้อความนั้นขึ้น · ทั้ง sitemap ตาม #5 · + `scripts/locale-hydration-scan.js`
        เฉพาะหน้าที่แตะ) (เจ้าของ 14/10) ·
    (ค) ชั้น B: `scripts/visible-text.js` ก่อน/หลัง เฉพาะหน้าที่แตะ + หน้าที่การ์ดหรือข้อความของหน้านั้นขึ้นด้วย (หน้าแบรนด์ หมวด
@@ -196,8 +197,8 @@ layout) · คำนอกตาราง THAI_STYLE = เลือกเอง�
   `BLOCKED` = ห้าม merge · รายการไฟล์ของ (1)(2) + "ไม่แตะเว็บ" = `scripts/lib/site-paths.js` ที่เดียว
 * **ทาง merge:** merge commit (ไม่ squash · ไม่ข้ามด่านด้วยสิทธิ์แอดมิน) ตรึง commit หัวที่ด่านตรวจ — PR ขยับหลังตรวจ = ตรวจใหม่
 * **deploy และถอยเว็บ = Friday ทำเองได้** (เจ้าของ 01/10) — **Render สร้างและขึ้นเว็บเองทุก merge เข้า main** (`render.yaml` `autoDeployTrigger: commit` ·
-  เจ้าของ 21/10 "จะได้ไม่เสียเงิน 2 ต่อ") · ด่าน GitHub = ตรวจ PR แบบเร็ว (tsc · eslint · contract tests ไม่ build) · build เต็ม + leak check = เครื่องทดสอบก่อน checker
-  และ Render ตอนขึ้นเว็บ (build ล้ม = ไม่ขึ้น เว็บเดิมอยู่ต่อ) · ดูว่าขึ้นไหม / ไม่ขึ้นเอง = `docs/RECOVERY.md` 1ก · **deploy ด้วยมือ** = Render → okami24 → Manual Deploy
+  เจ้าของ 21/10 "จะได้ไม่เสียเงิน 2 ต่อ") · ด่าน GitHub = ตรวจ PR แบบเร็ว (tsc · eslint · contract tests ไม่ build) · build เต็ม + leak check = `verify:catalog --full`
+  บนเครื่องทดสอบก่อน checker (13.5 #2 (ก) · ด่าน `full`) · Render build อีกครั้งตอนขึ้นเว็บ (build ล้ม = ไม่ขึ้น เว็บเดิมอยู่ต่อ) · ดูว่าขึ้นไหม / ไม่ขึ้นเอง = `docs/RECOVERY.md` 1ก · **deploy ด้วยมือ** = Render → okami24 → Manual Deploy
   (ผ่านเบราว์เซอร์ที่เจ้าของล็อกอินไว้) · build บน Render ล้มเพราะเน็ต/ของภายนอก (เช่น ฟอนต์ Google ใน `next build`) = deploy ซ้ำ 1 ครั้ง ล้มซ้ำ = 13.3 #6 ·
   **ถอยเว็บ** (เว็บพังวงกว้าง — พังบางหน้า = แก้เฉพาะจุด ข้อ "PR ละ 1–3 สินค้า" ด้านบน) = revert PR ที่ทำให้พัง แล้ว merge (เว็บขึ้นเองตามปกติ — git กับเว็บตรงกันเสมอ) · เว็บล่มและรอ revert ไม่ได้ = Render → Rollback
   (`docs/RECOVERY.md` ข้อ 1 — ผ่านเบราว์เซอร์ที่เจ้าของล็อกอิน Render ไว้แล้วเท่านั้น · Friday ไม่ใส่รหัสผ่าน 13.3 #2 · เข้าไม่ได้ = บอกเจ้าของกดข้อ 1) แล้วตามด้วย revert · รายงานทุกครั้ง: ทำอะไร · run / commit ไหน · เว็บจริงตอบอะไรหลังทำ (curl)

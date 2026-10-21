@@ -26,8 +26,8 @@
 //                                                    #   committed or not + untracked; judges "site touched?" only:
 //                                                    #   last line PASS (nothing a visitor gets changed, exit 0) or
 //                                                    #   SITE-TOUCHED (exit 1) - a sizing answer, never a merge verdict
-// Last line (merge verdict): SMALL · SITE · BIG — or BLOCKED when it cannot judge (not this repo · render.yaml would
-// deploy on merge · local HEAD is not the PR head · --pr: no valid Checker line · empty diff). Exit 0 for SMALL/SITE/BIG, 1 for BLOCKED.
+// Last line (merge verdict): SMALL · SITE · BIG — or BLOCKED when it cannot judge (not this repo · render.yaml's
+// deploy mode unwritten · local HEAD is not the PR head · --pr: no valid Checker line · empty diff). Exit 0 for SMALL/SITE/BIG, 1 for BLOCKED.
 // Also prints `HEAD <sha>` — merge exactly that commit (pin it in the merge call).
 // --files keeps its PASS/BLOCKED lines (list test) · --base prints PASS / SITE-TOUCHED (rule-audit 15/10 row 40:
 // BLOCKED meant two things) — skill round-close reads it.
@@ -81,7 +81,10 @@ function repoProblems() {
   } catch {
     /* handled below */
   }
-  if (!/^\s*autoDeploy:\s*false\s*$/m.test(y)) out.push("render.yaml has no `autoDeploy: false` - a merge to main would deploy");
+  // since 21/10 Render deploys every merge itself (autoDeployTrigger: commit); the gate only insists the mode is written
+  // down with the current field, so nobody merges without knowing what a merge does
+  if (!/^\s*autoDeployTrigger:\s*(commit|checksPass|off)\s*$/m.test(y) || /^\s*autoDeploy:/m.test(y))
+    out.push("render.yaml must set the deploy mode with `autoDeployTrigger:` (no deprecated `autoDeploy:`) - cannot tell what a merge does");
   return out;
 }
 

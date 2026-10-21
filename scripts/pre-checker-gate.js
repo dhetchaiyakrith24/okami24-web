@@ -13,6 +13,8 @@
 //     locked     render.yaml · .env* · ordering-mode.ts · thai-typography.ts only with a 【แตะได้】 line (13.7 · L8)
 //     words      added src/ lines carry no forbidden word — THAI_STYLE §3 "ห้ามใช้" column + the grep groups of skill
 //                thai-check gates 4–5 (read from those files every run, never copied here)          (L9)
+//     full       a PR that reaches the site has a clean `verify:catalog --full` pass of this exact commit (build + leak
+//                check — moved from GitHub to the test machine 21/10; run it in the PR's worktree, never the main folder)
 //     client     an added import in a "use client" file pulls no whole table into the browser
 //                (LESSONS 37 — `import type` is fine)                                                (L10)
 //   locked at the act (scripts/guard-tool.js · .githooks/pre-commit · scripts/lib/chrome.js)
@@ -39,6 +41,7 @@ const fs = require("fs");
 const os = require("os");
 const path = require("path");
 const { lockedName, allowedByRound, openRoundText } = require("./lib/round-file");
+const { siteReason } = require("./lib/site-paths");
 const checkerLock = require("./lib/checker-lock");
 
 const ROOT = path.resolve(__dirname, "..");
@@ -126,6 +129,15 @@ function checkLocked(s) {
     .filter((f) => lockedName(f) && !allowedByRound(lockedName(f), s.roundText))
     .map((f) => `${f} is locked — no 【แตะได้】 line of the open round's file names it (TEAM_RULES 13.7)`);
 }
+function checkFull(s) {
+  const site = s.files.filter((f) => siteReason(f));
+  if (!site.length || s.fullStamp) return [];
+  const some = site.slice(0, 3).join(" · ") + (site.length > 3 ? " …" : "");
+  return [
+    `${site.length} file(s) reach the site (${some}) and ${String(s.head).slice(0, 8)} has no clean verify:catalog --full pass — ` +
+      `run "npx tsx scripts/verify-catalog.ts --full" in the PR's test worktree on this commit (TEAM_RULES 13.5 #2 (ก))`,
+  ];
+}
 function checkWords(s) {
   const words = s.words.map((w) => [w, wordRe(w)]);
   const out = [];
@@ -178,7 +190,7 @@ function checkClient(s) {
   }
   return out;
 }
-const CHECKS = { branch: checkBranch, tree: checkTree, pushed: checkPushed, hooks: checkHooks, paths: checkPaths, locked: checkLocked, words: checkWords, client: checkClient };
+const CHECKS = { branch: checkBranch, tree: checkTree, pushed: checkPushed, hooks: checkHooks, paths: checkPaths, locked: checkLocked, full: checkFull, words: checkWords, client: checkClient };
 
 // ---------------------------------------------------------------- read the real state
 function addedLines(diff) {
@@ -192,6 +204,10 @@ function addedLines(diff) {
     else if (file && line.startsWith(" ")) n++;
   }
   return out;
+}
+function fullStamped(sha, cwd = ROOT) {
+  const common = tryGit(["rev-parse", "--git-common-dir"], { cwd });
+  return !!(sha && common && fs.existsSync(path.join(path.resolve(cwd, common), "verify-full", sha)));
 }
 function realState(base, head = "HEAD", cwd = ROOT) {
   const branch = tryGit(["branch", "--show-current"], { cwd }) || "";
@@ -210,6 +226,7 @@ function realState(base, head = "HEAD", cwd = ROOT) {
     added,
     content,
     roundText: openRoundText(cwd),
+    fullStamp: fullStamped(tryGit(["rev-parse", head], { cwd }), cwd),
     words: forbiddenWords(),
     allows,
     notes: [],
@@ -234,7 +251,7 @@ function selfTest() {
     files: ["scripts/x.js", "src/components/Foo.tsx"],
     added: { "src/components/Foo.tsx": [{ n: 3, text: 'import { brandName } from "@/data/brands";' }, { n: 4, text: 'const label = "พอดี พอตใช้แล้วทิ้ง";' }] },
     content: { "src/components/Foo.tsx": '"use client";\n\nimport { brandName } from "@/data/brands";\nconst label = "พอดี พอตใช้แล้วทิ้ง";\n' },
-    roundText: "", words, allows: [], notes: [],
+    roundText: "", fullStamp: true, words, allows: [], notes: [],
   };
   const fails = (name, patch) => run({ ...clean, ...patch, notes: [] }, [name]).length > 0;
   console.log("## gate checks — a clean branch passes, each planted example fails");
@@ -248,6 +265,8 @@ function selfTest() {
   ok(fails("pushed", { remoteHead: "b".repeat(40) }), "pushed: HEAD not on GitHub");
   ok(fails("hooks", { hooksPath: "nul" }), "hooks: core.hooksPath off (15/10 incident)");
   ok(fails("paths", { files: ["_incoming/x/report.md"] }), "paths: _incoming/ file in the diff (L5)");
+  ok(fails("full", { fullStamp: false }), "full: a site PR without a clean verify:catalog --full pass of its head (21/10)");
+  ok(!fails("full", { files: ["docs/x.md"], fullStamp: false }), "full: a docs-only PR needs no --full pass");
   ok(fails("paths", { files: ["scripts/run.log"] }), "paths: a log file in the diff (L5)");
   ok(fails("locked", { files: ["src/lib/thai-typography.ts"] }), "locked: thai-typography.ts without 【แตะได้】 (L8)");
   ok(!fails("locked", { files: ["src/lib/thai-typography.ts"], roundText: "【แตะได้】 src/lib/thai-typography.ts" }), "locked: the same file with a 【แตะได้】 line passes");
