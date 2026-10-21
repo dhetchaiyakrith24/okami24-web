@@ -902,6 +902,14 @@ export const PRODUCT_COPY_TH: Record<string, ProductCopyTh> = {
       0: "ผู้ที่ใช้เครื่องที่ใส่หัวพอต Vazer One ได้ และต้องการหัวพอตกลิ่นที่ชอบ",
     },
   },
+  // Image sweep (21/10): warehouse facts only — Max "Muro Freebase" (Eliquid-169).
+  "muro-freebase": {
+    tagline: "น้ำยา Muro Freebase",
+    shortDescription: "น้ำยา Muro นิโคตินแบบ freebase ร้านมีให้เลือก 6 กลิ่น",
+    whoIsThisFor: {
+      0: "ผู้ที่ใช้เครื่องระบบเปิดและอยากได้น้ำยา Muro แบบ freebase ในกลิ่นที่ชอบ ร้านมีให้เลือก 6 กลิ่น",
+    },
+  },
   // maxlist (20/10): warehouse facts only — Max "Muro Salt Nic" (ELQ-4).
   "muro-salt-nic": {
     tagline: "น้ำยา Muro Salt Nic",

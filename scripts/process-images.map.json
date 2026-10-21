@@ -10543,6 +10543,89 @@
   }
  },
  {
+  "source": "_incoming/muro-free/c/watermelon-1.png",
+  "slug": "muro-freebase",
+  "role": "card",
+  "note": "image sweep 21/10 - Muro Freebase card (Watermelon, in stock)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10; owner 21/10 via Friday \"หารูปถ้ารูปไม่ได้มาตรฐานก็สร้างใหม่ใน Higg\"), studio re-shoot straightened from the flavour poster crop (_incoming/muro-free/in/watermelon.png = 3x crop of the 600 px poster), prompt builder window.__MF (same light as Marbo v3, mid-grey backdrop for the black bottle); render _incoming/muro-free/r/watermelon-1.png; cut _incoming/muro-free/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/muro-free/br.jpg, 2 px erode)",
+   "reference": "ihavevape.net Muro Freebase Watermelon poster (https://ihavevape.net/product/muro-freebase/ - wp-content/uploads/2022/10/free8-copy.webp, 600 px, below IMAGE_SPEC) - _incoming/muro-free/src/free8-copy.webp",
+   "fidelitySheet": "_incoming/muro-free/fidelity.jpg (poster crop vs render, all 6), edges.jpg (cap tip and base corners on the site background), br.jpg (base rows at 1:1)"
+  }
+ },
+ {
+  "source": "_incoming/muro-free/c/grape-1.png",
+  "slug": "muro-freebase",
+  "role": "variant",
+  "id": "grape",
+  "note": "image sweep 21/10 - Muro Freebase Grape",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10; owner 21/10 via Friday \"หารูปถ้ารูปไม่ได้มาตรฐานก็สร้างใหม่ใน Higg\"), studio re-shoot straightened from the flavour poster crop (_incoming/muro-free/in/grape.png = 3x crop of the 600 px poster), prompt builder window.__MF (same light as Marbo v3, mid-grey backdrop for the black bottle); render _incoming/muro-free/r/grape-1.png; cut _incoming/muro-free/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/muro-free/br.jpg, 2 px erode)",
+   "reference": "ihavevape.net Muro Freebase Grape poster (https://ihavevape.net/product/muro-freebase/ - wp-content/uploads/2022/10/free5-copy.webp, 600 px, below IMAGE_SPEC) - _incoming/muro-free/src/free5-copy.webp",
+   "fidelitySheet": "_incoming/muro-free/fidelity.jpg (poster crop vs render, all 6), edges.jpg (cap tip and base corners on the site background), br.jpg (base rows at 1:1)"
+  }
+ },
+ {
+  "source": "_incoming/muro-free/c/watermelon-1.png",
+  "slug": "muro-freebase",
+  "role": "variant",
+  "id": "watermelon",
+  "note": "image sweep 21/10 - Muro Freebase Watermelon",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10; owner 21/10 via Friday \"หารูปถ้ารูปไม่ได้มาตรฐานก็สร้างใหม่ใน Higg\"), studio re-shoot straightened from the flavour poster crop (_incoming/muro-free/in/watermelon.png = 3x crop of the 600 px poster), prompt builder window.__MF (same light as Marbo v3, mid-grey backdrop for the black bottle); render _incoming/muro-free/r/watermelon-1.png; cut _incoming/muro-free/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/muro-free/br.jpg, 2 px erode)",
+   "reference": "ihavevape.net Muro Freebase Watermelon poster (https://ihavevape.net/product/muro-freebase/ - wp-content/uploads/2022/10/free8-copy.webp, 600 px, below IMAGE_SPEC) - _incoming/muro-free/src/free8-copy.webp",
+   "fidelitySheet": "_incoming/muro-free/fidelity.jpg (poster crop vs render, all 6), edges.jpg (cap tip and base corners on the site background), br.jpg (base rows at 1:1)"
+  }
+ },
+ {
+  "source": "_incoming/muro-free/c/click-mint-1.png",
+  "slug": "muro-freebase",
+  "role": "variant",
+  "id": "click-mint",
+  "note": "image sweep 21/10 - Muro Freebase Click Mint",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10; owner 21/10 via Friday \"หารูปถ้ารูปไม่ได้มาตรฐานก็สร้างใหม่ใน Higg\"), studio re-shoot straightened from the flavour poster crop (_incoming/muro-free/in/click-mint.png = 3x crop of the 600 px poster), prompt builder window.__MF (same light as Marbo v3, mid-grey backdrop for the black bottle); render _incoming/muro-free/r/click-mint-1.png; cut _incoming/muro-free/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/muro-free/br.jpg, 2 px erode)",
+   "reference": "ihavevape.net Muro Freebase Click Mint poster (https://ihavevape.net/product/muro-freebase/ - wp-content/uploads/2022/10/free4-copy.webp, 600 px, below IMAGE_SPEC) - _incoming/muro-free/src/free4-copy.webp",
+   "fidelitySheet": "_incoming/muro-free/fidelity.jpg (poster crop vs render, all 6), edges.jpg (cap tip and base corners on the site background), br.jpg (base rows at 1:1)"
+  }
+ },
+ {
+  "source": "_incoming/muro-free/c/strawberry-twist-1.png",
+  "slug": "muro-freebase",
+  "role": "variant",
+  "id": "strawberry-twist",
+  "note": "image sweep 21/10 - Muro Freebase Strawberry Twist",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10; owner 21/10 via Friday \"หารูปถ้ารูปไม่ได้มาตรฐานก็สร้างใหม่ใน Higg\"), studio re-shoot straightened from the flavour poster crop (_incoming/muro-free/in/strawberry-twist.png = 3x crop of the 600 px poster), prompt builder window.__MF (same light as Marbo v3, mid-grey backdrop for the black bottle); render _incoming/muro-free/r/strawberry-twist-1.png; cut _incoming/muro-free/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/muro-free/br.jpg, 2 px erode)",
+   "reference": "ihavevape.net Muro Freebase Strawberry Twist poster (https://ihavevape.net/product/muro-freebase/ - wp-content/uploads/2022/10/free7-copy.webp, 600 px, below IMAGE_SPEC) - _incoming/muro-free/src/free7-copy.webp",
+   "fidelitySheet": "_incoming/muro-free/fidelity.jpg (poster crop vs render, all 6), edges.jpg (cap tip and base corners on the site background), br.jpg (base rows at 1:1)"
+  }
+ },
+ {
+  "source": "_incoming/muro-free/c/peach-1.png",
+  "slug": "muro-freebase",
+  "role": "variant",
+  "id": "peach",
+  "note": "image sweep 21/10 - Muro Freebase Peach",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10; owner 21/10 via Friday \"หารูปถ้ารูปไม่ได้มาตรฐานก็สร้างใหม่ใน Higg\"), studio re-shoot straightened from the flavour poster crop (_incoming/muro-free/in/peach.png = 3x crop of the 600 px poster), prompt builder window.__MF (same light as Marbo v3, mid-grey backdrop for the black bottle); render _incoming/muro-free/r/peach-1.png; cut _incoming/muro-free/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/muro-free/br.jpg, 2 px erode)",
+   "reference": "ihavevape.net Muro Freebase Peach poster (https://ihavevape.net/product/muro-freebase/ - wp-content/uploads/2022/10/free6-copy.webp, 600 px, below IMAGE_SPEC) - _incoming/muro-free/src/free6-copy.webp",
+   "fidelitySheet": "_incoming/muro-free/fidelity.jpg (poster crop vs render, all 6), edges.jpg (cap tip and base corners on the site background), br.jpg (base rows at 1:1)"
+  }
+ },
+ {
+  "source": "_incoming/muro-free/c/big-cola-1.png",
+  "slug": "muro-freebase",
+  "role": "variant",
+  "id": "big-cola",
+  "note": "image sweep 21/10 - Muro Freebase Big Cola",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5 (web app through Chrome, account credits 21/10; owner 21/10 via Friday \"หารูปถ้ารูปไม่ได้มาตรฐานก็สร้างใหม่ใน Higg\"), studio re-shoot straightened from the flavour poster crop (_incoming/muro-free/in/big-cola.png = 3x crop of the 600 px poster), prompt builder window.__MF (same light as Marbo v3, mid-grey backdrop for the black bottle); render _incoming/muro-free/r/big-cola-1.png; cut _incoming/muro-free/cut.js (colour-distance sides, base drawn at the base row read on 1:1 crops _incoming/muro-free/br.jpg, 2 px erode)",
+   "reference": "ihavevape.net Muro Freebase Big Cola poster (https://ihavevape.net/product/muro-freebase/ - wp-content/uploads/2022/10/free3-copy.webp, 600 px, below IMAGE_SPEC) - _incoming/muro-free/src/free3-copy.webp",
+   "fidelitySheet": "_incoming/muro-free/fidelity.jpg (poster crop vs render, all 6), edges.jpg (cap tip and base corners on the site background), br.jpg (base rows at 1:1)"
+  }
+ },
+ {
   "source": "_incoming/list19/muro/watermelon.png",
   "slug": "muro-salt-nic",
   "role": "variant",

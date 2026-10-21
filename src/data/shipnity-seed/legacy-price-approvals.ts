@@ -243,11 +243,11 @@ export const LEGACY_APPROVED_PRICING: Record<string, LegacyPriceApproval> = {
     evidence: 'shipnity-backoffice: "Next Pro 2 Beyond" (Pod-173, ฿790) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
   },
   "muro-freebase": {
-    sellingPrice: 250,
-    lastPriceReview: "2026-09-21",
+    sellingPrice: 220,
+    lastPriceReview: "2026-10-17",
     basis: "shipnity",
     shipnityProductId: "Eliquid-169",
-    evidence: 'shipnity-backoffice: "Muro Freebase" (Eliquid-169, ฿250) — Shipnity backoffice screenshots 2026-09-21 (Cowork read, 9 pages)',
+    evidence: 'shipnity-max: "Muro Freebase" (Eliquid-169, ฿220 ราคาขาย, every child) — Shipnity Max product list read 2026-10-17 (MAX_SEED in max-seed.ts); was ฿250 in the 2026-09-21 backoffice read',
   },
   "muro-salt-nic": {
     sellingPrice: 250,
