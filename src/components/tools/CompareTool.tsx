@@ -8,6 +8,7 @@ import { familyName, formatBattery, formatPuffs, formatWattage } from "@/lib/uti
 import { useLocale } from "@/components/i18n/LocaleProvider";
 import { ThaiText } from "@/components/i18n/ThaiText";
 import { specLabelTh } from "@/i18n/spec-labels-th";
+import { specLabelEn, specValueEn } from "@/i18n/spec-seed-en";
 import { PRODUCT_COPY_TH } from "@/i18n/product-copy-th";
 import type { Specification } from "@/types/catalog";
 import { categoryName as categoryNameOf } from "@/lib/utils";
@@ -122,7 +123,8 @@ export function CompareTool({ initialSlugs }: { initialSlugs: string[] }) {
   // overlay in product-copy-th.ts (keyed by spec key) when the locale is Thai — PM products, whose
   // spec values are Thai in the data already, have no overlay and fall through unchanged.
   const specs = useMemo(() => {
-    if (locale !== "th") return verifiedSpecRows(items);
+    // Warehouse-listed products store Thai rows; English/Chinese visitors read them through spec-seed-en.ts (21/10).
+    if (locale !== "th") return verifiedSpecRows(items, (_slug, spec) => specValueEn(spec.value)).map((row) => ({ ...row, label: specLabelEn(row.label) }));
     const rows = verifiedSpecRows(items, (slug, spec) => { const v = PRODUCT_COPY_TH[slug]?.specifications?.[spec.key]; return v ? thaiTypography(v) : spec.value; });
     return rows.map((row) => ({ ...row, label: specLabelTh(row.label) }));
   }, [items, locale]);
