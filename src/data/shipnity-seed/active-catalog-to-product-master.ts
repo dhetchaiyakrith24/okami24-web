@@ -999,7 +999,7 @@ const VERIFIED_MEDIA: Record<string, ProductAsset[]> = {
     {
       kind: "official-photo",
       role: "card",
-      src: "/assets/products/eliquid-1/card.webp",
+      src: "/assets/products/eliquid-1/card-v3.webp",
       alt: "Marbo Saltnic 30ml e-liquid bottle, Tobacco, studio photo",
       angle: "Front, studio re-shoot (round list19, IMAGE_SPEC §0 item 7) of the shop's bottle photo. Source, prompt and check per file in scripts/process-images.map.json `aiRender`.",
       transparentBackground: true,
@@ -1966,14 +1966,20 @@ const VERIFIED_VARIANT_MEDIA: Record<string, Record<string, ProductAsset>> = {
     "ELQ-3-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-109/variant-elq-3-3.webp", alt: "Marbo Freebase tall-bottle e-liquid, Pink, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Freebase bottle photo", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
     "ELQ-3-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-109/variant-elq-3-4.webp", alt: "Marbo Freebase tall-bottle e-liquid, Ice Sparkling, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Freebase bottle photo", sourceUrl: "https://maneevp.com/product/marbo-freebase-30ml-nic6/" },
   },
-  // Round list19 (18/10): Marbo Saltnic — one re-shoot per bottle photo the shop has (5 of 10; Purple · Black · Green · Ice Sparkling ·
-  // Purple 50mg have no photo, they show the no-photo panel).
+  // Marbo Saltnic — every flavour has a photo (image sweep 21/10, owner 19/10: every flavour must show): one studio re-shoot per bottle, same light on all.
+  // Purple / Black = the warehouse's own ELQ-1 listing photo (the bottles print "Marboro" + "Ice Grape" / "Ice Blast"); Green = ihavevape;
+  // Ice Sparkling = vppods. Purple 50mg is the same purple bottle at a higher nicotine strength, so it shows the Purple photo.
   "ELIQUID-1": {
-    "ELQ-1-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-3.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Tobacco, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marboro-classic/" },
-    "ELQ-1-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-4.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Gold, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marboro-saltnic-gold/" },
-    "ELQ-1-5": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-5.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Platinum, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marbo-platinum/" },
-    "ELQ-1-7": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-7.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marbo-blue/" },
-    "ELQ-1-8": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-8.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Ice Strawberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marbo-ice-strawberry-2/" },
+    "ELQ-1-1": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-1.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Purple, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the warehouse's Marbo Saltnic bottle photo" },
+    "ELQ-1-2": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-2.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Black, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the warehouse's Marbo Saltnic bottle photo" },
+    "ELQ-1-3": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-3-v3.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Tobacco, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marboro-classic/" },
+    "ELQ-1-4": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-4-v3.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Gold, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marboro-saltnic-gold/" },
+    "ELQ-1-5": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-5-v3.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Platinum, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marbo-platinum/" },
+    "ELQ-1-7": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-7-v3.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Blue, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marbo-blue/" },
+    "ELQ-1-8": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-8-v3.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Ice Strawberry, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marbo-ice-strawberry-2/" },
+    "ELQ-1-6": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-6.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Green, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the shop's Marbo Saltnic bottle photo", sourceUrl: "https://ihavevape.net/product/marbo-green/" },
+    "ELQ-1-9": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-9.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Ice Sparkling, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from a retailer's Marbo Ice Sparkling poster" },
+    "ELQ-1-10": { kind: "official-photo", role: "detail", src: "/assets/products/eliquid-1/variant-elq-1-1.webp", alt: "Marbo Saltnic 30ml e-liquid bottle, Purple 50mg, studio photo", transparentBackground: true, sourceName: "OKami24 render (Higgsfield) from the warehouse's Marbo Saltnic bottle photo" },
   },
   // Round list19 (18/10): SKE Crystal B20000 — the shop has a poster for Thai Milk Green Tea only; the other 7 show the no-photo panel.
   "Pod-149": {
