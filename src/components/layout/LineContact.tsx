@@ -1,7 +1,12 @@
 "use client";
 
+import { useCallback, useState } from "react";
+import dynamic from "next/dynamic";
 import { CONTACT } from "@/data/contact";
 import { useLocale } from "@/components/i18n/LocaleProvider";
+
+// loaded on the first click only — the QR code library stays out of every page's first load
+const LineOrderDialog = dynamic(() => import("@/components/commerce/LineOrderDialog").then((m) => m.LineOrderDialog), { ssr: false });
 
 /**
  * Global floating LINE contact affordance, present on every route. Sits at a lower
@@ -15,12 +20,24 @@ import { useLocale } from "@/components/i18n/LocaleProvider";
  * checkout pages already use. That makes this a Client Component; it renders no state of its own,
  * so the only cost is that the label follows the locale cookie like every other translated string
  * (see LocaleProvider.tsx). `scripts/thai-leak-scan.js` is the gate that now fails on this shape.
+ *
+ * Owner 21/10 "ปุ่มไลน์… กดยังไม่ขึ้น QR … ยังเด้งไปเปิดหน้าเว็บใหม่": with a mouse the click opens the same QR dialog the
+ * product page's order button uses (mode "contact": the add-friend link, no message) instead of a new tab; a touch screen
+ * still follows the link, which opens the LINE app. The href stays, so no-JS and middle-click keep working.
  */
 export function LineContact() {
   const { dict } = useLocale();
   const label = dict.nav.contactLine;
+  const [open, setOpen] = useState(false);
+  const close = useCallback(() => setOpen(false), []);
+  const onClick = (e: React.MouseEvent) => {
+    if (window.matchMedia("(pointer: coarse)").matches || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    setOpen(true);
+  };
   return (
     <>
+      {open ? <LineOrderDialog mode="contact" onClose={close} /> : null}
       {/* Desktop: compact icon pill, expands to show the label on hover AND keyboard focus.
           Below lg (tablet widths, where this pill already shows) it also climbs above a product
           page's mobile buy bar via --okami-fab-lift from globals.css (owner B-ก, 2026-09-08);
@@ -31,6 +48,7 @@ export function LineContact() {
         rel="noopener noreferrer"
         aria-label={label}
         data-line-spot="pill"
+        onClick={onClick}
         className="group fixed bottom-8 right-8 z-30 hidden items-center gap-2 overflow-hidden rounded-full border border-surface-border bg-surface-1/95 px-3.5 py-3.5 text-foreground shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-red/50 hover:px-5 focus-visible:border-red/50 focus-visible:px-5 focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-2 max-lg:bottom-[calc(2rem+var(--okami-fab-lift,0px))] sm:flex"
       >
         <LineIcon className="h-5 w-5 shrink-0 text-red" />
@@ -59,6 +77,7 @@ export function LineContact() {
         rel="noopener noreferrer"
         aria-label={label}
         data-line-spot="pill"
+        onClick={onClick}
         className="okami-line-fab fixed z-30 flex h-12 w-12 items-center justify-center rounded-full border border-surface-border bg-surface-1/95 text-red shadow-2xl backdrop-blur-md transition-colors focus-visible:outline-2 focus-visible:outline-red focus-visible:outline-offset-2 sm:hidden"
         style={{
           // + --okami-fab-lift: above the product page's sticky buy bar on phones (B-ก, 2026-09-08)

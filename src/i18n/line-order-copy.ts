@@ -10,6 +10,9 @@ export const LINE_ORDER_COPY: Record<
   {
     titleOrder: string;
     titleAsk: string;
+    /** the site-wide LINE button on a computer (owner 21/10): a QR of the shop's add-friend link, no message */
+    titleContact: string;
+    bodyContact: string;
     body: string;
     messageLabel: string;
     copy: string;
@@ -27,6 +30,8 @@ export const LINE_ORDER_COPY: Record<
   th: {
     titleOrder: "สแกนเพื่อสั่งทางไลน์",
     titleAsk: "สแกนเพื่อถามทางไลน์",
+    titleContact: "สแกนเพื่อแชทกับร้านทางไลน์",
+    bodyContact: "เปิดกล้องหรือไลน์บนมือถือแล้วสแกน จะเข้าแชทของร้านทันที",
     body: "เปิดกล้องหรือไลน์บนมือถือแล้วสแกน แชทร้านจะเปิดพร้อมข้อความนี้ กดส่งได้เลย",
     messageLabel: "ข้อความที่จะส่ง",
     copy: "ก็อปข้อความ",
@@ -43,6 +48,8 @@ export const LINE_ORDER_COPY: Record<
   en: {
     titleOrder: "Scan to order on LINE",
     titleAsk: "Scan to ask on LINE",
+    titleContact: "Scan to chat with us on LINE",
+    bodyContact: "Scan with your phone camera or LINE — our chat opens, ready for your message.",
     body: "Scan with your phone camera or LINE — our chat opens with this message ready to send.",
     messageLabel: "Your message",
     copy: "Copy message",
@@ -59,6 +66,8 @@ export const LINE_ORDER_COPY: Record<
   zh: {
     titleOrder: "扫码用 LINE 下单",
     titleAsk: "扫码用 LINE 咨询",
+    titleContact: "扫码用 LINE 联系我们",
+    bodyContact: "用手机相机或 LINE 扫码，即可打开本店聊天。",
     body: "用手机相机或 LINE 扫码，打开本店聊天，消息已填好，直接发送即可。",
     messageLabel: "将发送的消息",
     copy: "复制消息",
