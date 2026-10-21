@@ -9206,6 +9206,42 @@
   "fileName": "card.webp"
  },
  {
+  "source": "_incoming/relx/final/lumi-pink.png",
+  "slug": "relx-lumi-18k",
+  "role": "variant",
+  "id": "pink",
+  "note": "image sweep 21/10 - RELX LUMI 18K lilac-to-pink colourway (flavours: Grape, Aloe Grape, Mixberry, Gummy, Pink Guava, Lychee, Grape 5%)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device only from one flavour poster per colourway, the poster's \"MANEE VAPE\" watermark not reproduced; prompt builder window.__LU; cut = flood-key top (img-1610/b17/floodkey.js, keeps the clear pod) + shape body with rounded base corners (_incoming/q2/cut.js RX 0.28 RY 0.2), 1 px erode",
+   "reference": "maneevp.com RELX LUMI 18K flavour poster (https://maneevp.com/product/relx-lumi-18k/ - wp-content/uploads/2026/09/relx-lumi-18k-grape-nic3.jpg, 800 px, watermark) - _incoming/relx/lumi/",
+   "fidelitySheet": "_incoming/relx/fid-lumi.jpg (poster crop beside render), edges-lumi.jpg, lumi-sheet.jpg (all 16 posters: colourway per flavour)"
+  }
+ },
+ {
+  "source": "_incoming/relx/final/lumi-aqua.png",
+  "slug": "relx-lumi-18k",
+  "role": "variant",
+  "id": "aqua",
+  "note": "image sweep 21/10 - RELX LUMI 18K blue-to-aqua colourway (flavours: Apple Aloe, Double Mint, Sea Salt Lemon Candy, Double Mint 5%)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device only from one flavour poster per colourway, the poster's \"MANEE VAPE\" watermark not reproduced; prompt builder window.__LU; cut = flood-key top (img-1610/b17/floodkey.js, keeps the clear pod) + shape body with rounded base corners (_incoming/q2/cut.js RX 0.28 RY 0.2), 1 px erode",
+   "reference": "maneevp.com RELX LUMI 18K flavour poster (https://maneevp.com/product/relx-lumi-18k/ - wp-content/uploads/2026/09/relx-lumi-18k-apple-aloe-nic3.jpg, 800 px, watermark) - _incoming/relx/lumi/",
+   "fidelitySheet": "_incoming/relx/fid-lumi.jpg (poster crop beside render), edges-lumi.jpg, lumi-sheet.jpg (all 16 posters: colourway per flavour)"
+  }
+ },
+ {
+  "source": "_incoming/relx/final/lumi-silver.png",
+  "slug": "relx-lumi-18k",
+  "role": "variant",
+  "id": "silver",
+  "note": "image sweep 21/10 - RELX LUMI 18K silver colourway (flavours: Watermelon, Jasmine Green Tea, Mineral Water, Cola, Watermelon 5%)",
+  "aiRender": {
+   "tool": "Higgsfield Nano Banana Pro 2K 4:5, Unlimited plan (0 credits), web app through Chrome; studio re-shoot of the device only from one flavour poster per colourway, the poster's \"MANEE VAPE\" watermark not reproduced; prompt builder window.__LU; cut = flood-key top (img-1610/b17/floodkey.js, keeps the clear pod) + shape body with rounded base corners (_incoming/q2/cut.js RX 0.28 RY 0.2), 1 px erode",
+   "reference": "maneevp.com RELX LUMI 18K flavour poster (https://maneevp.com/product/relx-lumi-18k/ - wp-content/uploads/2026/09/relx-lumi-18k-mineral-water-nic3.jpg, 800 px, watermark) - _incoming/relx/lumi/",
+   "fidelitySheet": "_incoming/relx/fid-lumi.jpg (poster crop beside render), edges-lumi.jpg, lumi-sheet.jpg (all 16 posters: colourway per flavour)"
+  }
+ },
+ {
   "source": "_incoming/p63/esko20k/src/498-6.png",
   "slug": "esko-bar-20k",
   "role": "card",
