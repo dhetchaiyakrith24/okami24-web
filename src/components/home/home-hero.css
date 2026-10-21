@@ -542,6 +542,12 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
     height: clamp(7rem, calc(100svh - 42.5rem), 20rem);
     margin: 0.25rem 0 0.5rem;
   }
+  /* owner 21/10 "ตัวเครื่องมีการขยับไปมาเล็กน้อย": each device floats and rocks a little on its own beat (the frame
+     moves, so the photo's hover zoom below still applies); reduced motion / Save-Data = still (blocks at the end) */
+  .okh-card-img { animation: okh-sway 5.6s ease-in-out infinite; }
+  .okh-card:nth-child(2) .okh-card-img { animation-duration: 6.2s; animation-delay: -1.6s; }
+  .okh-card:nth-child(3) .okh-card-img { animation-duration: 5.9s; animation-delay: -3.1s; }
+  .okh-card:nth-child(4) .okh-card-img { animation-duration: 6.5s; animation-delay: -4.4s; }
   .okh-card-img img { transform: scale(1.1); transform-origin: 50% 55%; transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
   .okh-card:hover .okh-card-img img { transform: scale(1.16); }
   .okh-card-foot { position: relative; display: block; height: 2.25rem; }
@@ -598,8 +604,14 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   html[data-okami-lite="1"] .okh-lattice::after { transition: opacity 0.2s ease; }
   html[data-okami-lite="1"] .okh[data-layout] .okh-card { transition: none; }
   html[data-okami-lite="1"] .okh[data-layout="stagger"] .okh-card:is(:hover, :focus-visible) { transform: none; }
+  html[data-okami-lite="1"] .okh-card .okh-card-img { animation: none; }
+}
+@keyframes okh-sway {
+  0%, 100% { transform: translateY(-5px) rotate(-1.5deg); }
+  50% { transform: translateY(5px) rotate(1.5deg); }
 }
 @media (min-width: 64rem) and (prefers-reduced-motion: reduce) {
+  .okh-card .okh-card-img { animation: none; }
   .okh[data-layout] .okh-card { transition: none; }
   .okh[data-layout="stagger"] .okh-card:is(:hover, :focus-visible) { transform: none; }
   .okh-card, .okh-card-img img, .okh-card-tags, .okh-card-cta, .okh-card-arrow { transition: none; }
