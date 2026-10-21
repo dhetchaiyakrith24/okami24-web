@@ -707,7 +707,7 @@ html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; transform: none;
     html:not([data-okami-lite="1"]) .okh-pin > .okh { position: sticky; top: 5rem; }
 
     /* each card a beat after the one before it */
-    .okh[data-travel] .okh-card { --okh-a: 16%; --okh-b: 74%; }
+    .okh[data-travel] .okh-card { --okh-a: 16%; --okh-b: 74%; --okh-gap: 24px; }
     .okh[data-travel] .okh-card:nth-child(2) { --okh-a: 20%; --okh-b: 78%; }
     .okh[data-travel] .okh-card:nth-child(3) { --okh-a: 24%; --okh-b: 82%; }
     .okh[data-travel] .okh-card:nth-child(4) { --okh-a: 28%; --okh-b: 86%; }
@@ -751,6 +751,21 @@ html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; transform: none;
     .okh[data-travel] .okh-card-ph img { filter: drop-shadow(0 28px 34px rgb(0 0 0 / 0.55)); }
     /* the grown photo boxes overlap their neighbours' transparent margins: clicks go to the card underneath */
     .okh[data-travel] .okh-card-ph { pointer-events: none; }
+    /* …and the card's own click area grows upward with its device (checker #697 r3: the top of a grown device was not a
+       link) — a strip the card's width above it, scaled from 0 at rest so it never covers the buttons above the row */
+    .okh[data-travel] .okh-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 100%;
+      height: var(--okh-grow);
+      transform-origin: 50% 100%;
+      scale: 1 0;
+      animation: okh-t-hit cubic-bezier(0.45, 0, 0.2, 1) both;
+      animation-timeline: --okh-pin;
+      animation-range: contain var(--okh-a) contain var(--okh-b);
+    }
 
     /* while the row moves under a resting mouse: no lift, no neighbour blur, no zoom */
     .okh[data-layout="stagger"][data-moving] .okh-cards:has(.okh-card:is(:hover, :focus-visible)) .okh-card:not(:hover, :focus-visible) { filter: none; }
@@ -763,4 +778,5 @@ html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; transform: none;
 @keyframes okh-t-frame { to { border-color: transparent; background-color: transparent; box-shadow: none; } }
 @keyframes okh-t-card { to { translate: 0 var(--okh-dy, 0px); } }
 @keyframes okh-t-lift { to { translate: 0 calc(-1 * var(--okh-grow, 0px)); } }
-@keyframes okh-t-grow { to { scale: 1; } }
+@keyframes okh-t-grow { to { scale: 1; translate: 0 calc(-1 * var(--okh-gap, 0px)); } }
+@keyframes okh-t-hit { to { scale: 1 1; } }

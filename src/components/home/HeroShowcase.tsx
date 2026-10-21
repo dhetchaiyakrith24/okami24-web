@@ -272,7 +272,9 @@ export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView
       if (!h) return;
       // the end size of the approved clip (21/10): ~370 px of device at 1440×900, ~360 at 1366×768
       const H = Math.max(h, Math.min(360, Math.max(224, vh * 0.45)));
-      const grow = H - h;
+      // room between the brand label, the grown device and the name (the approved clip breathed more than a tight fit)
+      const gap = 24;
+      const grow = H - h + 2 * gap;
       const tops = cards.map((c) => c.offsetTop + (c.querySelector<HTMLElement>(".okh-card-top")?.offsetTop ?? 0));
       const bottoms = cards.map((c) => {
         const hd = c.querySelector<HTMLElement>(".okh-card-head");
