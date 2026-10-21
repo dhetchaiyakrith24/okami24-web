@@ -36,8 +36,9 @@ export const HOME_TYPE_SECTIONS: { type: HeroType; categories: string[]; first: 
   },
 ];
 
-/** cards each section puts in the page at all (the rest = "see all N") — one number to change */
-export const RAIL_CARDS = 6;
+/** cards each section puts in the page at all (the rest = "see all N") — one number to change.
+ *  Owner 21/10: 6 → 8 ("เพิ่มเป็น 8") — the desktop rail and the tablet grid; phones keep PHONE_CARDS. */
+export const RAIL_CARDS = 8;
 /** cards shown per section on a phone (two rows of two … three rows) before "see all N" */
 export const PHONE_CARDS = 6;
 /** cards shown per section on a tablet (two rows of four) */
