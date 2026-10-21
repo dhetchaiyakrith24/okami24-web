@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 
@@ -7,7 +8,7 @@ import { Container } from "@/components/ui/Container";
  * (see `breadcrumbJsonLd` in `lib/seo.ts`). The last item is the current page — plain text, not a
  * link, matching standard breadcrumb convention.
  */
-export function Breadcrumbs({ trail }: { trail: { name: string; path: string }[] }) {
+export function Breadcrumbs({ trail }: { trail: { name: ReactNode; path: string }[] }) {
   if (trail.length === 0) return null;
   return (
     <nav aria-label="Breadcrumb" className="border-b border-surface-border-soft bg-surface-1">

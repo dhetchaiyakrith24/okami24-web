@@ -63,6 +63,7 @@ import { absoluteUrl, breadcrumbJsonLd, canonicalFor, collectionPageJsonLd, NOIN
 import { categoriesWithProducts, categoryIsEmpty } from "@/lib/category-visibility";
 import { relatedArticlesForCollection, relatedArticlesForLegacy, relatedArticlesForPublished } from "@/lib/article-relevance";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { PilotNameText } from "@/components/catalog-bridge/PilotNameText";
 import { categoryName as categoryNameOf } from "@/lib/utils";
 import { getCompatibleConsumables, getCompatibleDevices } from "@/data/catalog-relationships";
 import { getLegacyApprovedPrice } from "@/data/shipnity-seed/legacy-price-approvals";
@@ -264,7 +265,8 @@ export default async function ProductOrCategoryPage({ params }: { params: Promis
         <>
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(publishedJsonLd) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(publishedTrail)) }} />
-          <Breadcrumbs trail={publishedTrail} />
+          {/* en/zh read the English name overlay (product-names-en.ts); JSON-LD above keeps the stored name. */}
+          <Breadcrumbs trail={publishedTrail.map((t, i) => (i === publishedTrail.length - 1 ? { ...t, name: <PilotNameText slug={publishedProduct.slug} name={t.name} /> } : t))} />
           <PilotProductDetail product={publishedProduct} related={getPublishedRelatedProducts(publishedProduct)} relatedArticles={relatedArticlesForPublished(publishedProduct)} relatedArticlesOtherLocales={relatedArticlesForPublished(publishedProduct, { skipThaiOnly: true })} imageDisplayMap={publishedImageDisplayMap} orderingEnabled={ORDERING_ENABLED} lineCodes={lineOrderCodes(publishedProduct.slug)} worksWith={getCompatibleConsumables(publishedProduct.slug)} fitsDevices={getCompatibleDevices(publishedProduct.slug)} />
         </>
       );
