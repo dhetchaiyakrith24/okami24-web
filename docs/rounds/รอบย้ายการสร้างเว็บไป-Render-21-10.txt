@@ -1,0 +1,27 @@
+รอบย้ายการสร้างเว็บไป Render — ฉบับ 1 · เขียน 21/10 ค่ำ (Friday จากคำเจ้าของ 21/10)
+main = git fetch ก่อนเริ่ม · เริ่มหลัง "เปิดแถว" (#697) + เงามือถือ (#698) ขึ้นเว็บ
+
+【รอบนี้ทำเพื่ออะไร】
+ เจ้าของ 21/10 เห็นอีเมล GitHub "ใช้ไป 90% ของงบ" (13.50 จาก 15 ดอลลาร์) แล้วถาม "งั้นเราไม่ใช้ Github ได้มั้ย เราขึ้นตรงเลย Render
+ แบบที่อีกเว็บทำ" · Friday อธิบายว่าโค้ดยังอยู่ GitHub แต่เลิกใช้เครื่องสร้างเว็บของ GitHub ได้ เพราะวันนี้จ่ายซ้ำ 2 ต่อ
+ (GitHub สร้างเพื่อตรวจ + Render สร้างอีกรอบตอนขึ้นเว็บ · ระหว่างทำงานเครื่องทดสอบในคอมก็สร้างอยู่แล้ว) · เจ้าของ: "ครับงั้นตามนั้นเลย
+ จะได้ไม่เสียเงิน 2 ต่อ"
+ ตัวเลขวันที่ 21/10 (gh run list): deploy workflow 56 รอบ = 41 จากการ push เข้า PR + 15 จาก merge
+
+【แตะได้】 render.yaml (autoDeploy / buildCommand / buildFilter — ห้ามแตะ envVars และค่าลับ) · .github/workflows/deploy.yml ·
+ scripts/self-merge-check.js · scripts/pre-checker-gate.js · scripts/lib/site-paths.js (ถ้าจำเป็น) · .claude/TEAM_RULES.md 13.4 / 13.7 (ส่วน
+ ด่าน GitHub + draft) · docs/HANDOFF.md §17 · docs/RECOVERY.md (ข้อ deploy) · docs/DEPLOY-RENDER.md
+
+【ห้ามแตะ】
+ ค่าใน envVars ทุกตัว (OKAMI24_ORDERING ยัง off) · ค่าลับทุกตัว (Friday ไม่เห็น ไม่ใส่) · หน้าเว็บ · ข้อมูลสินค้า · ราคา
+
+【ก้อน 1】ข้อเท็จจริงของ Render จากเอกสารทางการ (researcher) — autoDeploy / buildFilter / build ล้มแล้วเว็บเดิมยังอยู่ไหม / นาทีสร้างเว็บ
+ ที่รวมในแผน / render.yaml เปลี่ยนแล้ว Render รับเองหรือเจ้าของต้องกด Sync
+【ก้อน 2】Render สร้างและขึ้นเว็บเองเมื่อ merge (autoDeploy) · ด่านตรวจข้อมูลสินค้าย้ายเข้าขั้นสร้างเว็บของ Render (ตก = ไม่ขึ้นเว็บ เว็บเดิมอยู่)
+ · merge ที่ไม่แตะเว็บ (เอกสารล้วน) ไม่สร้างใหม่ (buildFilter) · GitHub Actions เหลือเฉพาะงานเบาที่ไม่สร้างเว็บ (หรือปิด)
+ · self-merge-check / pre-checker-gate / 13.7 ปรับให้ใช้ผลตรวจบนเครื่องทดสอบแทนด่าน build ของ GitHub
+ รู้ได้ยังไงว่าเสร็จ: merge PR ทดสอบ 1 ตัว → Render ขึ้นเว็บเอง (curl 200 + ของใหม่ขึ้น) · PR เอกสารล้วน → Render ไม่สร้าง ·
+ GitHub Actions ไม่มีรอบ build ใหม่ · ลอง build ล้มโดยตั้งใจบน branch ทดสอบไม่ได้บน main — ใช้เอกสาร Render เป็นหลักฐาน
+【ส่งมอบ】 รายงานเจ้าของ: เลิกจ่ายซ้ำแล้ว · ถ้าต้องกดอะไรใน Render เอง = บอกทีละขั้น · ถอยกลับ = revert PR (autoDeploy กลับ false + workflow เดิม)
+
+【ตรวจ】 ชุดเต็ม 13.5 #3 (ไฟล์ข้อ (1) ของ 13.7) · checker บังคับ
