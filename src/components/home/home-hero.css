@@ -476,7 +476,8 @@ html[data-okami-lite="1"] .okh-prod[data-flying] .okh-float { animation: none; }
   .okh[data-layout="fan"] .okh-card:hover {
     box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-ember) 25%, transparent), 0 24px 60px -30px rgb(255 106 44 / 0.45), -18px 0 36px -14px rgb(0 0 0 / 0.85);
   }
-  .okh[data-layout="stagger"] .okh-card:nth-child(even) { margin-top: 1.5rem; }
+  /* the 1st and 3rd sit lower: the last card stays high, clear of the LINE button in the corner */
+  .okh[data-layout="stagger"] .okh-card:nth-child(odd) { margin-top: 1.5rem; }
   .okh[data-layout="fan"] .okh-card { transform-origin: 50% 100%; }
   .okh[data-layout="fan"] .okh-card:nth-child(1) { margin-top: 1.25rem; rotate: -3deg; }
   .okh[data-layout="fan"] .okh-card:nth-child(2) { rotate: -1deg; }
