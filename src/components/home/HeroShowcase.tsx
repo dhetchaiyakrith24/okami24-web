@@ -270,7 +270,8 @@ export function HeroShowcase({ slots, desktop = "stage" }: { slots: HeroSlotView
       const imgBox = cards[0].querySelector<HTMLElement>(".okh-card-img");
       const h = imgBox?.offsetHeight ?? 0;
       if (!h) return;
-      const H = Math.max(h, Math.min(416, Math.max(224, vh * 0.52)));
+      // the end size of the approved clip (21/10): ~370 px of device at 1440×900, ~360 at 1366×768
+      const H = Math.max(h, Math.min(360, Math.max(224, vh * 0.45)));
       const grow = H - h;
       const tops = cards.map((c) => c.offsetTop + (c.querySelector<HTMLElement>(".okh-card-top")?.offsetTop ?? 0));
       const bottoms = cards.map((c) => {
