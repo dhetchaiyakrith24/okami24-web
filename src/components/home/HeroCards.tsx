@@ -71,14 +71,17 @@ export const HeroCards = forwardRef<HTMLDivElement, { slots: HeroSlotView[]; typ
                 </svg>
               </span>
               <span className="okh-card-img">
-                <Image
-                  src={s.image.src}
-                  alt={s.image.alt}
-                  fill
-                  sizes={PHOTO_SIZES}
-                  className="object-contain"
-                  {...(i === 0 ? ({ loading: "eager", fetchPriority: "high" } as const) : ({ loading: "lazy" } as const))}
-                />
+                {/* DESKTOP_TRAVEL: the photo sits in a box as tall as the row's end size, shrunk to fit at rest — sharp at both ends */}
+                <span className="okh-card-ph">
+                  <Image
+                    src={s.image.src}
+                    alt={s.image.alt}
+                    fill
+                    sizes={PHOTO_SIZES}
+                    className="object-contain"
+                    {...(i === 0 ? ({ loading: "eager", fetchPriority: "high" } as const) : ({ loading: "lazy" } as const))}
+                  />
+                </span>
               </span>
               <span className="okh-card-head">
                 <span className="okh-card-name font-display" lang="en">
