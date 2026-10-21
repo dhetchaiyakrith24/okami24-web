@@ -12,8 +12,9 @@ main = git fetch ก่อนเริ่ม · เริ่มหลัง "เ
  scripts/self-merge-check.js · scripts/pre-checker-gate.js · scripts/lib/site-paths.js (ถ้าจำเป็น) · .claude/TEAM_RULES.md 13.4 / 13.7 (ส่วน
  ด่าน GitHub + draft) · docs/HANDOFF.md §17 · docs/RECOVERY.md (ข้อ deploy) · docs/DEPLOY-RENDER.md
 
-【แตะได้】 render.yaml — เฉพาะสวิตช์ขึ้นเว็บเอง (autoDeploy → autoDeployTrigger) · ไม่แตะค่าลับและสวิตช์ตะกร้า · เจ้าของอนุญาตในแชท 21/10 ~21:30 ตอบคำถาม
- "…Friday เขียนบรรทัดนั้นโดยอ้างคำตอบของพี่ตรงนี้ได้ไหมคะ?" ด้วยตัวเลือก "อนุญาต (แนะนำ)" (ไม่ใช่ Friday อนุญาตตัวเอง)
+【แตะได้】 render.yaml — เฉพาะสวิตช์ขึ้นเว็บเอง (autoDeploy → autoDeployTrigger)
+  ↑ เจ้าของอนุญาตในแชท 21/10 ~21:30 ตอบคำถาม "…Friday เขียนบรรทัดนั้นโดยอ้างคำตอบของพี่ตรงนี้ได้ไหมคะ?" ด้วยตัวเลือก
+  "อนุญาต (แนะนำ)" · ค่าลับและสวิตช์ตะกร้าใน envVars = ห้ามแตะ (ดู【ห้ามแตะ】)
 
 【ห้ามแตะ】
  ค่าใน envVars ทุกตัว (OKAMI24_ORDERING ยัง off) · ค่าลับทุกตัว (Friday ไม่เห็น ไม่ใส่) · หน้าเว็บ · ข้อมูลสินค้า · ราคา
