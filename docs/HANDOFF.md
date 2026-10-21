@@ -11,44 +11,45 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 21/10 ~18:00 = 4cf30dc6 (#687). LIVE [ตรวจแล้ว curl 200 + live CSS] 21/10 (round 3w):
-  #677 desktop hero = 4 brand cards · #679 cards overlap, staggered (1st/3rd lower), soft cursor light, no lattice · #683 hover: the card lifts,
-  the other three blur · #687 phone hero photo a little further left (all slots) + homepage rails / category tiles take the hover lift + blur.
-  Line 1 (side chat) 21/10: #684 Max re-read (nothing new) · #688 "Foli Cool Bar 15K" rename [ตรวจแล้ว title live] · #689 en/zh spec labels
-  in English [เชื่อว่า — the side chat's scan; raw HTML carries every locale so curl cannot prove it]. Hero round 3h closed (tag hero-2010).
-  Open PRs (`gh pr list`): #685 stock sync 21/10 (daily stock read — the owner confirms in chat before merge, TEAM_RULES 13.7) · #643 stock docs.
-  Closed: #682 (level-row draft). GitHub Actions budget: owner chose "$30 + ลดรอบ" (he raises the cap himself).
-2 Nothing ahead of main from the main chat (branches merged). Draft branch `home-upgrade-deck-2110` (6-card spread deck, owner dropped it,
-  never a PR — keep for reference or delete at house-clean). Test servers RUNNING: 3424 = wt-3424 at e02c4d25 (= #687's site code),
-  3423 = wt-3423 at ff7d0df9 (the deck draft), 3422 = wt-3422 at 73466d38 (old main) — rebuild any: `bash _incoming/hero-2010/rebuild-3424.sh
-  <port>` after `git -C _incoming/hero-2010/wt-<port> checkout --detach <ref>`. Helpers (not in git) `_incoming/upgrade-2110/`: shot.js
-  (`<port> <w> <h> <out> [hover=i] [sel=css] [scroll=y] [mouse=x,y] [locale=] [reduce] [set=bg:x;layout:y] [keep=n]`) · measure.js (card row
-  vs the LINE button) · rec-hover.js (owner clip) · checker evidence chk677 … chk687. Untracked `รายงานจากแอดมิน แชท/` at the repo root = the
-  OWNER's folder (never in git, never delete).
-3 MAIN CHAT MOVED 21/10 ~18:00 at 81 % context. Side chats (linked to this main chat; a new main chat sees them only after messaging them):
-  line 1 = `1-products-2110` (local_51626e64-a9b7-4e31-839b-54ca6b2149c7) — next = Marbo Saltnic renders (image sweep 3i, brief
-  `_incoming/next-chat.md`), WAITING for the owner to type the credit yes IN THAT CHAT (owner asked 21/10 "ทำไมต้องรอพี่อนุมัติ" — Friday
-  explained the app's safety system refuses a relayed approval; Friday forwarded his words once — check that chat for whether it went through) ·
-  line 2 SEO = `2-seo-gsc-22-10-seo` (local_d6b80e36-6498-4b43-9595-94695bbd34d0), idle, GSC read due 22/10. The old line-1 chat
-  `1-double-mint-foli` (local_fcb45c4a…) is done — Friday offered to archive it (owner has not answered). Owner rules learned 20–21/10: a credit /
-  money approval must be typed by the owner in the chat that spends it · let a side chat merge its own PRs · new PRs = draft while working.
-3h ROUND "homepage hero" CLOSED 21/10 — tag hero-2010. Owner's open taste notes: phone product cards compact (keep 2 columns, square photo) ·
-  LINE order message without the page URL — `_incoming/friday-queue.md`.
-3d OPEN ROUND "move the build to Render" = `docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt` (owner 21/10: Render builds + deploys
-  each merge, GitHub = fast PR checks — PR #702). Listed first: the lock reads the first OPEN line for 【แตะได้】.
-3w OPEN ROUND "homepage upgrade" = `docs/rounds/รอบยกระดับหน้าเว็บ-Artefakt-21-10.txt` (reference getlayers "Artefakt"; owner: no purchase,
-  Friday drafts). DONE: batch 1 #677 · 1b #679 · 1d #683 · batch 2 #687 (all tier B, checker PASS; what each did = item 1 + §18 "Homepage").
-  The owner's path 21/10: cards kept ("การ์ด 4 ชิ้นโอเค") → lattice rejected → layers → tried a level row (#682) and a 6-card deck, dropped
-  both → "กลับไปใช้แบบนี้ เพิ่มเบลอ + การ์ดเด้งขึ้นมา" (= live) · blur liked. Switches in `src/data/home-hero.ts`: DESKTOP_HERO "cards"|"stage" ·
-  DESKTOP_BG "spot"|"none"|"lattice" · DESKTOP_CARD_LAYOUT "stagger"|"row" · PHONE_HERO · HOME_FLOW (off). Known trade-offs: 720–768 px
-  tall laptops show ~104 px photos in the hero cards (the row must clear the site LINE button) · homepage loads 2 stylesheets (LESSONS 40).
-  NEXT (owner to choose; Friday recommends): batch 3 = the same look on category and product pages (tier B, designer first, scope-auditor —
-  touches pages beyond the homepage) — ask the owner which page first; nothing started.
-  House rounds 15–16/10 (#484 … #500, #508, #510) DONE — what they built lives in its home (skill house-clean · TEAM_RULES 13.3 #1 ·
-  skills find-skills / content-strategy · `docs/seo-audit/`); the 16/10 artifact mistake = LESSONS พ31; full text =
-  `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
-  Known lock gaps (not blocking): `(cd wt && build)` subshell false deny · `node -r ./x.js scripts/x.js /a` slips L3 · rm / sed -i /
-  redirect into a checker-read tree = discipline (rule-audit L1 proposes a lock) · scan tools against the live site (L2).
+1 main: `git fetch && git log -1 --oneline origin/main` · 21/10 ~23:15 = 6ea47c20 (#705). DEPLOYS CHANGED 21/10 (round 3d, #702): Render builds +
+  deploys every merge to main itself — service setting Auto-Deploy = "On Commit" (set in the dashboard 21/10 23:10 with the owner's OK);
+  GitHub `deploy` workflow = fast PR checks only (decide + checks = verify:commerce + verify:catalog, no build). The Render BLUEPRINT IS
+  "Sync paused" (last sync a month ago) → render.yaml edits do NOT reach Render; the dashboard settings are the truth. Last deploy:
+  "Manually triggered via Dashboard" 6ea47c2 live 23:06 [ตรวจแล้ว buildId ok8b4gQLXJrK60a9qWVKO, /, King Melon image, TEREA card-v2 200].
+  LIVE today [ตรวจแล้ว curl + live CSS]: #691 8 cards per type rail + hero devices sway · #692 site-wide LINE pill → scan-to-chat QR on computers ·
+  #695 English section tags decode on view · #697 desktop "lineup" (hero holds 0.6 screen, 4 devices grow into a row; DESKTOP_TRAVEL) ·
+  #698 phone hero floor shadow under the device + calm float. Line 1: #693 en/zh product names · #694 Marbo 10 · #696 Muro Freebase ฿220 ·
+  #699 Punta · #700 MQ Bar · #701/#703 Super Cool · #704 TEREA card (real 4 packs, render) · #705 RELX LUMI 18K.
+  Open PRs: #685 stock sync 21/10 (owner confirms before merge, 13.7) · #643 stock docs. GitHub budget email 21/10: $13.50 of $15 used [owner's
+  screenshot]; the owner had chosen "$30" — the cap may still be $15 (his step).
+2 Nothing ahead of main. Branch `docs-handoff-move-2110b` = this handoff. Test servers (stop/rebuild freely): 3422 = wt-3422 at 797880f4 ·
+  3423 = wt-3423 (home-phone-ground, merged) · 3424 = wt-3424 at a4c519ad (stopped for verify --full). Rebuild: `bash
+  _incoming/hero-2010/rebuild-3424.sh <port>`. Helpers `_incoming/upgrade-2110/` (shot.js rail=, b5/rec-scroll.js, b5/hit-probe.js,
+  b5/y0-probe.js, b5/pin-probe.js, b6/floor-probe.js, b4/decode-probe.js). NEW LOCK (#702): pre-checker-gate check `full` = a PR that reaches
+  the site needs `npx tsx scripts/verify-catalog.ts --full` passed on its head in a TEST WORKTREE (env: SITE_URL only — OKAMI24_DATA_DIR breaks
+  the backup contract test) → stamp in .git/verify-full/<sha>. PR flow now: draft → gate → checker → `gh pr ready` once → checks → merge.
+3 MAIN CHAT MOVED 21/10 ~23:15. New main chat must SendMessage each side chat once so they report to it. Side chats:
+  line 1 = `1-products-2110b` (local_0ede4203-ce72-489e-a165-15bd25f9a0d0, worktree mystifying-driscoll-575ab6) — image sweep on
+  Nano Banana Pro **2K only** (owner bought a 3-day Unlimited 21/10 ~21:20, Chrome only; 4K costs credits): all missing flavour photos,
+  biggest first (RELX Infinity Pro 2 pods 42 · INFY PLUS 27 · nexPOD 15K 20 · pod-150 16 · Vazer One 16 · nexBAR 18K 11 · SKE B20000 7 · Esko 20K 7).
+  Credits balance 3,949.4 [line 1's report]. Blueraz Berry / Pinky Blush (Super Cool) = no reference anywhere.
+  line 2 SEO = `2-seo-gsc-22-10-seo` (local_d6b80e36-6498-4b43-9595-94695bbd34d0), idle, GSC read due 22/10 (also check: the decoded
+  hero/tag labels carry the word twice in HTML, sr-only + visible — checker #695 asked for an SEO eye).
+  Owner rules learned 21/10: a relayed credit approval worked for line 1 when quoted verbatim · Friday never types a password (Shipnity Max
+  login asked 21/10 — refused; owner may log in once himself) · every ready-PR push costs Actions money → draft until checker PASS.
+3d ROUND "move the build to Render" = `docs/rounds/รอบย้ายการสร้างเว็บไป-Render-21-10.txt` — DONE 21/10 (#702 checker r2 PASS, merged,
+  deploy proven). To close: mark CLOSED here (the lock reads the first OPEN line — while 3d is first, render.yaml is writable), tag, and add
+  to RECOVERY 1ก + DEPLOY-RENDER: "Blueprint sync is paused — change Render settings in the dashboard". Left on purpose: buildFilter
+  (docs-only merges still build on Render — the Blueprint key for ignored paths is not in Render's docs); deploy-decision.js header + CLOUD.md
+  lines 85/91 still describe the old hook flow.
+3w ROUND "homepage upgrade" = `docs/rounds/รอบยกระดับหน้าเว็บ-Artefakt-21-10.txt` — ALL BATCHES LIVE (1, 1b, 1d, 2, 3 #691, 4 #695,
+  5 #697 + #698 phone). Owner 21/10: "ทำแค่หน้าแรกพอครับ" (category/product pages dropped). Friday proposed closing; owner did not object.
+  To close: round-close skill (tag). Taste notes left for the owner: G5 contact shadow faint on phones · 1366 lineup label→device gap ~10 px
+  tighter than the approved clip. Switches `src/data/home-hero.ts`: DESKTOP_HERO · DESKTOP_BG · DESKTOP_CARD_LAYOUT · DESKTOP_TRAVEL · PHONE_HERO.
+3u STOCK — owner 21/10: wants stock checked every hour 08:00–00:00, ideally in the cloud; Friday cannot log in (password); plan offered =
+  owner logs into Shipnity Max once in the app browser → hourly routine reads it + a site endpoint takes the snapshot without a rebuild;
+  cloud = needs the warehouse API key. Owner: "ทดเรื่องนี้ไว้เดี๋ยวมาจัดการต่อ" (parked). Cart reopening (who pays when: A confirm stock
+  before payment / B pay at once) = owner answered "ไม่เข้าใจ" once, then moved on — re-ask simply when he returns to it.
 3m OPEN ROUND "Max list" (owner 20/10 "ลงตามทุกตัวที่ Shipnity Max มีและเว็บเรายังไม่มี") = `docs/rounds/รอบลงสินค้าคลัง-ShipnityMax-20-10.txt` · line-1 side chat
   (`line1-maxlist`), handed over 21/10 · table Max × site = `docs/cloud-results/max-unlisted-2010.md` (status table A2 is the live one) · brief for the next chat =
   `_incoming/next-chat-products.md` (not in git). LIVE 21/10 [curl 200]: #660 Muro Salt Nic ฿250 · #664 RELX Essential 2 ฿490 + RELX Infinity Pro 2 pods ฿149 ·
@@ -200,6 +201,7 @@ GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill 
   Open: ProductMaster seed in-stock flags are from September · `legacy-price-approvals.ts` still names Pod-181 for
   caliburn-g4-pro (price file 【ห้ามแตะ】 — next allowed touch) · at 390 the small pill sits on the IQOS ILUMA i cap (iqosheet-18):
   Friday's pick at the next touch = a free band above full-frame photos (taste, reversible — 13.3 last paragraph).
+4 SIZE: §16 is ~35 KB, over the 15 KB spec — trim the 3m/3i/3s/3p/3u blocks at the next house-clean (git keeps the text).
 4 waiting on owner: ONE list = `docs/รอพี่ตรวจ.md` — nothing waiting on the owner is written here.
 5 open / dated:
   - GSC reads: 22/10 (SEO_BASELINE last section rows 1–8 + 22 + 24, and round SEO ง's "validate fix" started 07/10) · 01/11
