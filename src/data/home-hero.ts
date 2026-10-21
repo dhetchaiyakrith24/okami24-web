@@ -35,6 +35,14 @@ export const HOME_HERO_SLOTS: { type: HeroType; product: string; photo?: string 
 export const DESKTOP_HERO: "cards" | "stage" = "cards";
 
 /**
+ * DESKTOP_TRAVEL (owner 21/10 "สินค้าเคลื่อนตามการเลื่อน", designer direction B "เปิดแถว" — DRAFT): "lineup" = the hero holds
+ * for ~0.6 screen while the visitor scrolls; the words fade, the card frames dissolve and the four devices grow into one
+ * level row, then the row scrolls away with the page · "none" = the hero scrolls like any section. Desktop only; reduced
+ * motion / Save-Data / browsers without scroll-driven animation / screens under 44rem tall = "none".
+ */
+export const DESKTOP_TRAVEL: "lineup" | "none" = "lineup";
+
+/**
  * Desktop "cards" only. Owner 21/10 (after #677): "ฉากหลังตาราง … ไม่เอาได้มั้ย" and "อยากให้เรียงแบบมี Layers ทับซ้อนกันเล็กน้อย".
  * DESKTOP_BG — "none" = plain dark + the ribbons · "spot" = a soft orange light that follows the cursor, no pattern ·
  *   "lattice" = the #677 grid of squares lit around the cursor.

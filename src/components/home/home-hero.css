@@ -689,3 +689,71 @@ html[data-okami-lite="1"] .okh-bar[data-run] { animation: none; transform: none;
   .okh-rail > * { transition: none; }
   .okh-rail > :hover { transform: none; }
 }
+
+/* --- DESKTOP_TRAVEL "lineup" (home-hero.ts, owner 21/10 "สินค้าเคลื่อนตามการเลื่อน", designer direction B — DRAFT) ---
+   The hero sticks inside a box 0.6 screen taller than itself; over that stretch of scroll the words fade up and out, the
+   card frames dissolve and the four devices grow into one level row (left to right, a beat apart), then the row scrolls
+   away with the page. Everything runs on the scroll (CSS scroll-driven animation, compositor properties for the moving
+   parts); HeroShowcase only measures where each card goes, once per resize, and sets data-travel. No support, reduced
+   motion, Save-Data, phones, short screens = no extra height and no motion: the hero exactly as before. */
+.okh-card-ph { position: absolute; inset: 0; display: block; }
+@supports (animation-timeline: view()) {
+  @media (min-width: 64rem) and (min-height: 44rem) and (prefers-reduced-motion: no-preference) {
+    html:not([data-okami-lite="1"]) .okh-pin {
+      height: calc(100svh - 5rem + 60svh);
+      view-timeline: --okh-pin block;
+      view-timeline-inset: 5rem 0;
+    }
+    html:not([data-okami-lite="1"]) .okh-pin > .okh { position: sticky; top: 5rem; }
+
+    /* each card a beat after the one before it */
+    .okh[data-travel] .okh-card { --okh-a: 16%; --okh-b: 74%; }
+    .okh[data-travel] .okh-card:nth-child(2) { --okh-a: 20%; --okh-b: 78%; }
+    .okh[data-travel] .okh-card:nth-child(3) { --okh-a: 24%; --okh-b: 82%; }
+    .okh[data-travel] .okh-card:nth-child(4) { --okh-a: 28%; --okh-b: 86%; }
+
+    .okh[data-travel] :is(.okh-copy, .okh-cta) {
+      animation: okh-t-out ease-in both;
+      animation-timeline: --okh-pin;
+      animation-range: contain 4% contain 26%;
+    }
+    .okh[data-travel] .okh-card {
+      animation: okh-t-frame linear both, okh-t-card cubic-bezier(0.45, 0, 0.2, 1) both;
+      animation-timeline: --okh-pin, --okh-pin;
+      animation-range: contain 10% contain 32%, contain var(--okh-a) contain var(--okh-b);
+    }
+    .okh[data-travel] .okh-card-foot {
+      animation: okh-t-gone linear both;
+      animation-timeline: --okh-pin;
+      animation-range: contain 10% contain 32%;
+    }
+    /* the label rides above the growing device */
+    .okh[data-travel] .okh-card-top {
+      animation: okh-t-lift cubic-bezier(0.45, 0, 0.2, 1) both;
+      animation-timeline: --okh-pin;
+      animation-range: contain var(--okh-a) contain var(--okh-b);
+    }
+    /* the photo box is the row's end size, shrunk from its foot to the card's photo size at rest */
+    .okh[data-travel] .okh-card-ph {
+      inset: auto 0 0 0;
+      height: var(--okh-H);
+      transform-origin: 50% 100%;
+      scale: var(--okh-k);
+      animation: okh-t-grow cubic-bezier(0.45, 0, 0.2, 1) both;
+      animation-timeline: --okh-pin;
+      animation-range: contain var(--okh-a) contain var(--okh-b);
+    }
+    .okh[data-travel] .okh-card-ph img { filter: drop-shadow(0 28px 34px rgb(0 0 0 / 0.55)); }
+
+    /* while the row moves under a resting mouse: no lift, no neighbour blur, no zoom */
+    .okh[data-layout="stagger"][data-moving] .okh-cards:has(.okh-card:is(:hover, :focus-visible)) .okh-card:not(:hover, :focus-visible) { filter: none; }
+    .okh[data-layout="stagger"][data-moving] .okh-card:is(:hover, :focus-visible) { transform: none; }
+    .okh[data-moving] .okh-card:hover .okh-card-img img { transform: scale(1.1); }
+  }
+}
+@keyframes okh-t-out { to { opacity: 0; translate: 0 -4vh; visibility: hidden; } }
+@keyframes okh-t-gone { to { opacity: 0; visibility: hidden; } }
+@keyframes okh-t-frame { to { border-color: transparent; background-color: transparent; box-shadow: none; } }
+@keyframes okh-t-card { to { translate: 0 var(--okh-dy, 0px); } }
+@keyframes okh-t-lift { to { translate: 0 calc(-1 * var(--okh-grow, 0px)); } }
+@keyframes okh-t-grow { to { scale: 1; } }
