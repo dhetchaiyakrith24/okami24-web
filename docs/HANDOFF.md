@@ -11,38 +11,37 @@
 โปรเจกต์: เว็บร้าน OKami24 (Next.js 16 + TS + Tailwind v4 + SQLite) · โฟลเดอร์ C:\Users\dhetc\Claude-Web-Lab-v3-checkpoint-3.3.3
 GitHub github.com/dhetchaiyakrith24/okami24-web (private) · read first = skill round-open step 1
 
-1 main: `git fetch && git log -1 --oneline origin/main` · 21/10 = 208ba91e (#672) + the hero close PR. LIVE [ตรวจแล้ว curl 200] 21/10: #671 hero = 4 BRANDS
-  (UWELL · VOOPOO · SALTHUB · IQOS) + calm drift over a floor shadow (checker r1 FAIL → r2 PASS f2facee7) · #672 the scroll flow light below the hero
-  switched OFF, code kept (`HOME_FLOW`, checker PASS e0167000). Earlier this week: #651 #658 #661 #665 #667 #668 (see git).
-  Open PRs (`gh pr list`): #643 stock chat docs. GitHub Actions budget 21/10: $13.50 of $15 (owner chose "$30 + ลดรอบ" — he raises the cap
-  himself, github.com/settings/billing → Budgets; #665/#667 = the "ลดรอบ" part).
-2 worktrees = `git worktree list` · hero trees `_incoming/hero-2010/wt-342x` (own node_modules): wt-3422 = branch home-flow-off-2110 at e0167000
-  = main's site code; server 3422 LEFT RUNNING as the "before" of the next homepage round (rebuild any tree: `bash _incoming/hero-2010/rebuild-3424.sh
-  <port>`) · servers 3421 / 3423 / 3424 stopped. Helpers (not in git) `_incoming/hero-2010/`: slot-shot.js (`<port> <w> <h> <slot> <out>`) ·
-  flow-shots.js · chk671/probe.js (per-slot animation names, normal/reduce) · chk/pair.js (before|after image). Owner shots 21/10 = `owner671/`.
-  `_incoming/wt-stock` = stock round. Untracked `รายงานจากแอดมิน แชท/` at the repo root = the OWNER's folder (never in git, never delete).
-3 MAIN CHAT 21/10 (moved ~02:00 at 78 %). Side chats: line 1 = `1-double-mint-foli` (local_fcb45c4a-e1bb-49b2-ae43-9aabe813209e, round 3m,
-  waiting for the OWNER to type the credit yes IN THAT CHAT) · line 2 SEO = `2-seo-gsc-22-10-seo` (local_d6b80e36-6498-4b43-9595-94695bbd34d0,
-  GSC read due 22/10). Owner rules learned 20–21/10: a credit / money approval must be typed by the owner in the chat that spends it · let a
-  side chat merge its own PRs (#664) · new PRs = draft while working, `gh pr ready` before the gate (TEAM_RULES 13.7).
-3h ROUND "homepage hero" CLOSED 21/10 — tag hero-2010 (#634 … #672; owner rulings → §18 "Homepage"; round file kept: `src/data/home-hero.ts` names it).
-  Not done, owner did not ask again: checker #671 r1 taste notes (warm floor pool faint at 1440/1920 · tabs 01 UWELL and 02 VOOPOO repeat the same
-  type line · at 1024 ARGUS's end sits close to "02/04"). Owner's open taste notes: phone product cards compact (keep 2 columns, square photo) ·
-  LINE order message without the page URL — `_incoming/friday-queue.md`. Hero AI tests ≈ 15.25 credits, all rejected, none on the site.
-3w OPEN ROUND "homepage upgrade" (owner 21/10 answers 1 1 1 + "เริ่มขั้น 1 ได้เลย") = `docs/rounds/รอบยกระดับหน้าเว็บ-Artefakt-21-10.txt` · reference getlayers
-  Artefakt (lattice lit under the cursor · 4-card row · labels that "tune in"; studied from its 3 preview clips, no live demo). Owner: no purchase,
-  Friday drafts · phones unchanged. BATCH 1 DONE = #677 (merge 9baf2c73, checker r1 FAIL → r2 PASS 3697f7ba): desktop hero = 4 brand cards
-  (DESKTOP_HERO "cards"; "stage" = #671 back) over a cursor-lit lattice · hero CSS moved out of globals.css (LESSONS 40: Turbopack CSS merge size;
-  every other page now 1 stylesheet 94 KB, homepage 2 files, mobile `/` FCP +~110 ms, score same). Owner 21/10 on the live cards: "การ์ด 4 ชิ้นโอเค"
-  (keep) — but no lattice, and layers (→ 1b). Known: 720–768 px tall screens show 112 px photos (row must clear the site LINE button) · LINE button itself untouched.
-  BATCH 1b DONE = #679 (merge bd0bad00, checker r1 FAIL → r2 PASS 6434fbee): owner 21/10 "ฉากหลังตาราง ไม่เอา" + "Layers ทับซ้อนกันเล็กน้อย" → DESKTOP_BG "spot" (soft cursor light, no squares) + DESKTOP_CARD_LAYOUT
-  "stagger" (edges overlap, 1st/3rd lower) shipped as Friday's pick; drafts sent (stagger · fan · spot clip); "none" / "fan" / "lattice" / "row" = one value each.
-  BATCH 1d DONE = #683 (merge b01462cc, checker PASS 040c524f + hover-strip fix bb31d13e): owner 21/10 tried a level overlapping row
-  (#682, closed) and a 6-card spread deck (draft, branch home-upgrade-deck-2110, never a PR) → "กลับไปใช้แบบนี้ เพิ่มเบลอ + การ์ดเด้งขึ้นมา" =
-  the stagger + hover: the card lifts 10 px / grows 5 %, the other three blur + dim. Owner likes the blur. 4 cards stay (no extra slots).
-  NEXT: batch 2 = the card look (+ the spot light, not the lattice) for the rest of the homepage (type sections, rails) — tier B, designer + checker; batch 3 = category /
-  product pages. Test tree `_incoming/hero-2010/wt-3424` (server 3424) · before = 3422 · helpers `_incoming/upgrade-2110/` shot.js · measure.js
-  (row vs LINE button) · rec-hover.js (owner clip) · split-css.js (one-off, done).
+1 main: `git fetch && git log -1 --oneline origin/main` · 21/10 ~18:00 = 4cf30dc6 (#687). LIVE [ตรวจแล้ว curl 200 + live CSS] 21/10 (round 3w):
+  #677 desktop hero = 4 brand cards · #679 cards overlap, staggered (1st/3rd lower), soft cursor light, no lattice · #683 hover: the card lifts,
+  the other three blur · #687 phone hero photo a little further left (all slots) + homepage rails / category tiles take the hover lift + blur.
+  Line 1 (side chat) 21/10: #684 Max re-read (nothing new) · #688 "Foli Cool Bar 15K" rename [ตรวจแล้ว title live] · #689 en/zh spec labels
+  in English [เชื่อว่า — the side chat's scan; raw HTML carries every locale so curl cannot prove it]. Hero round 3h closed (tag hero-2010).
+  Open PRs (`gh pr list`): #685 stock sync 21/10 (daily stock read — the owner confirms in chat before merge, TEAM_RULES 13.7) · #643 stock docs.
+  Closed: #682 (level-row draft). GitHub Actions budget: owner chose "$30 + ลดรอบ" (he raises the cap himself).
+2 Nothing ahead of main from the main chat (branches merged). Draft branch `home-upgrade-deck-2110` (6-card spread deck, owner dropped it,
+  never a PR — keep for reference or delete at house-clean). Test servers RUNNING: 3424 = wt-3424 at e02c4d25 (= #687's site code),
+  3423 = wt-3423 at ff7d0df9 (the deck draft), 3422 = wt-3422 at 73466d38 (old main) — rebuild any: `bash _incoming/hero-2010/rebuild-3424.sh
+  <port>` after `git -C _incoming/hero-2010/wt-<port> checkout --detach <ref>`. Helpers (not in git) `_incoming/upgrade-2110/`: shot.js
+  (`<port> <w> <h> <out> [hover=i] [sel=css] [scroll=y] [mouse=x,y] [locale=] [reduce] [set=bg:x;layout:y] [keep=n]`) · measure.js (card row
+  vs the LINE button) · rec-hover.js (owner clip) · checker evidence chk677 … chk687. Untracked `รายงานจากแอดมิน แชท/` at the repo root = the
+  OWNER's folder (never in git, never delete).
+3 MAIN CHAT MOVED 21/10 ~18:00 at 81 % context. Side chats (linked to this main chat; a new main chat sees them only after messaging them):
+  line 1 = `1-products-2110` (local_51626e64-a9b7-4e31-839b-54ca6b2149c7) — next = Marbo Saltnic renders (image sweep 3i, brief
+  `_incoming/next-chat.md`), WAITING for the owner to type the credit yes IN THAT CHAT (owner asked 21/10 "ทำไมต้องรอพี่อนุมัติ" — Friday
+  explained the app's safety system refuses a relayed approval; Friday forwarded his words once — check that chat for whether it went through) ·
+  line 2 SEO = `2-seo-gsc-22-10-seo` (local_d6b80e36-6498-4b43-9595-94695bbd34d0), idle, GSC read due 22/10. The old line-1 chat
+  `1-double-mint-foli` (local_fcb45c4a…) is done — Friday offered to archive it (owner has not answered). Owner rules learned 20–21/10: a credit /
+  money approval must be typed by the owner in the chat that spends it · let a side chat merge its own PRs · new PRs = draft while working.
+3h ROUND "homepage hero" CLOSED 21/10 — tag hero-2010. Owner's open taste notes: phone product cards compact (keep 2 columns, square photo) ·
+  LINE order message without the page URL — `_incoming/friday-queue.md`.
+3w OPEN ROUND "homepage upgrade" = `docs/rounds/รอบยกระดับหน้าเว็บ-Artefakt-21-10.txt` (reference getlayers "Artefakt"; owner: no purchase,
+  Friday drafts). DONE: batch 1 #677 · 1b #679 · 1d #683 · batch 2 #687 (all tier B, checker PASS; what each did = item 1 + §18 "Homepage").
+  The owner's path 21/10: cards kept ("การ์ด 4 ชิ้นโอเค") → lattice rejected → layers → tried a level row (#682) and a 6-card deck, dropped
+  both → "กลับไปใช้แบบนี้ เพิ่มเบลอ + การ์ดเด้งขึ้นมา" (= live) · blur liked. Switches in `src/data/home-hero.ts`: DESKTOP_HERO "cards"|"stage" ·
+  DESKTOP_BG "spot"|"none"|"lattice" · DESKTOP_CARD_LAYOUT "stagger"|"row" · PHONE_HERO · HOME_FLOW (off). Known trade-offs: 720–768 px
+  tall laptops show ~104 px photos in the hero cards (the row must clear the site LINE button) · homepage loads 2 stylesheets (LESSONS 40).
+  NEXT (owner to choose; Friday recommends): batch 3 = the same look on category and product pages (tier B, designer first, scope-auditor —
+  touches pages beyond the homepage) — ask the owner which page first; nothing started.
   House rounds 15–16/10 (#484 … #500, #508, #510) DONE — what they built lives in its home (skill house-clean · TEAM_RULES 13.3 #1 ·
   skills find-skills / content-strategy · `docs/seo-audit/`); the 16/10 artifact mistake = LESSONS พ31; full text =
   `git show 438cd6e7:docs/HANDOFF.md` §16 item 3. OKM photo / OKM CT = not ours unless the owner says so (central §12 item 32).
